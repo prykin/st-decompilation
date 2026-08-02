@@ -27,7 +27,7 @@ int * __thiscall FUN_0074cb34(void *this,int *param_1)
                      *(int *)((int)this + 0x54) != 0);
   if (iVar2 < 0) {
 LAB_0074cbe0:
-    param_1 = (int *)0x0;
+    param_1 = nullptr;
   }
   else {
     /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */

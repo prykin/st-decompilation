@@ -10,7 +10,7 @@
 void __thiscall StartSystemTy::sub_005DAB30(StartSystemTy *this)
 
 {
-  if ((undefined4 *)this->field_068E != (undefined4 *)0x0) {
+  if ((undefined4 *)this->field_068E != nullptr) {
     FUN_006b6110((undefined4 *)this->field_068E);
   }
   this->field_068E = 0;

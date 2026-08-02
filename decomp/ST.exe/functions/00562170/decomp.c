@@ -16,7 +16,7 @@ int FUN_00562170(int *param_1,int param_2)
   iVar4 = 0;
   local_c = 0;
   local_8 = 0;
-  local_10 = (int *)0x0;
+  local_10 = nullptr;
   if (0 < DAT_0080338c) {
     local_14 = 0;
     do {

@@ -49,7 +49,7 @@ void __cdecl FUN_006ad2a0(byte *param_1)
     }
   }
   local_30c[0] = '\0';
-  if ((param_1 != (byte *)0x0) &&
+  if ((param_1 != nullptr) &&
      (iVar3 = Library::MSVCRT::FUN_007300e0(local_30c,0x200,param_1,(undefined4 *)&stack0x00000008),
      iVar3 < 0)) {
     uVar4 = 0xffffffff;

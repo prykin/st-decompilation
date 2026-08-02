@@ -35,9 +35,9 @@ FUN_0057b670(int *param_1,uint param_2,uint param_3,short *param_4,short *param_
 
   this = param_1;
   uVar4 = 0;
-  local_8 = (void *)0x0;
+  local_8 = nullptr;
   /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
-  if (param_1 == (int *)0x0) {
+  if (param_1 == nullptr) {
     return 1;
   }
   if ((param_2 & 0xff) != 0) {
@@ -67,7 +67,7 @@ LAB_0057b6da:
   thunk_FUN_0057a2c0((AnonShape_0057A2C0_A829D396 *)this,param_3,(int *)&local_8,param_4,iVar3,
                      param_1,param_5);
 LAB_0057b6ff:
-  if (local_8 != (void *)0x0) {
+  if (local_8 != nullptr) {
     thunk_FUN_00416270(this,(undefined2 *)&param_2,(int *)&param_5,(int *)&param_4);
     if (*(int *)((int)this + 0x259) == 0x99) {
       /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
@@ -130,7 +130,7 @@ LAB_0057b6ff:
         uVar4 = uVar4 + 1;
       } while ((int)uVar4 < (int)(uVar2 + 1));
     }
-    if (local_8 != (void *)0x0) {
+    if (local_8 != nullptr) {
       FreeAndNull(&local_8);
     }
   }

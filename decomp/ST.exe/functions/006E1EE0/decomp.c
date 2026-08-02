@@ -252,7 +252,7 @@ LAB_006e22a2:
           /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
           param_2 = (undefined4 *)((int)param_2 + -1);
           iVar2 = iVar2 + *(int *)&this->field_0x2b8 * 2;
-        } while (param_2 != (undefined4 *)0x0);
+        } while (param_2 != nullptr);
       }
     }
     else {

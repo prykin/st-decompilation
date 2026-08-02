@@ -35,7 +35,7 @@ void FUN_00746c84(int *param_1,char *param_2,undefined4 *param_3)
       return;
     }
   }
-  FUN_0074b8a6((int *)(-(uint)(param_1 != (int *)0x0) & (uint)(param_1 + 3)),param_3);
+  FUN_0074b8a6((int *)(-(uint)(param_1 != nullptr) & (uint)(param_1 + 3)),param_3);
   return;
 }
 

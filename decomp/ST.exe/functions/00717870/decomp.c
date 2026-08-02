@@ -13,14 +13,14 @@ void __thiscall ST3DSMAPContext::sub_00717870(ST3DSMAPContext *this)
   int iVar1;
 
   iVar1 = 0;
-  *(undefined4 *)&this[1].field_0x4e = 0;
-  *(undefined4 *)&this[1].field_0x36 = 0;
+  this->field_04BA = 0;
+  this->field_04A2 = 0;
   do {
-    FUN_006a5e90(*(short **)(*(int *)&this[1].field_0x6 + iVar1));
+    FUN_006a5e90(*(short **)((int)this->field_0472 + iVar1));
     iVar1 = iVar1 + 4;
   } while (iVar1 < 0x140);
-  FreeAndNull((void **)&this[1].field_0x6);
-  FreeAndNull((void **)&this[1].field_0x2);
+  FreeAndNull(&this->field_0472);
+  FreeAndNull(&this->field_046E);
   this->field_0466 = 0;
   return;
 }

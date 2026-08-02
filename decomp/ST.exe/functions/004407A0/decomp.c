@@ -12,11 +12,11 @@ void FUN_004407a0(char param_1,undefined4 param_2,undefined4 param_3)
   undefined3 in_stack_00000005;
 
   array = (DArrayTy *)g_packedRecords_A62x8[param_1].field5_0x5;
-  if (((array != (DArrayTy *)0x0) && (dVar1 = array->count, dVar1 != 0)) &&
+  if (((array != nullptr) && (dVar1 = array->count, dVar1 != 0)) &&
      (index = 0, 0 < (int)dVar1)) {
     do {
       DArrayGetElement(array,index,&param_1);
-      if (_param_1 != (STGroupBoatC *)0x0) {
+      if (_param_1 != nullptr) {
         STGroupBoatC::ReMakePVecAndTgtListExt(_param_1,(char)param_2,(short)param_3);
       }
       index = index + 1;

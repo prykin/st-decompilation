@@ -22,7 +22,7 @@ uint __thiscall FUN_00678e00(void *this,byte *param_1)
         piVar3 = (int *)(*(int *)(iVar2 + 8) * uVar8 + *(int *)(iVar2 + 0x1c));
       }
       else {
-        piVar3 = (int *)0x0;
+        piVar3 = nullptr;
       }
       if (*piVar3 != 0) {
         if (((iVar2 == 0) || ((int)uVar8 < 0)) || ((int)uVar6 <= (int)uVar8)) {
@@ -34,7 +34,7 @@ LAB_00678e60:
             piVar3 = (int *)(*(int *)(iVar2 + 8) * uVar8 + *(int *)(iVar2 + 0x1c));
           }
           else {
-            piVar3 = (int *)0x0;
+            piVar3 = nullptr;
           }
           iVar4 = *piVar3;
           if (piVar3[1] != 0) {

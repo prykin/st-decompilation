@@ -314,10 +314,10 @@ cf_common_exit_005B0DCE:
             local_8 = *(uint **)(this_01->field_1C97->growCapacity + iVar13 * 4);
           }
           else {
-            local_8 = (uint *)0x0;
+            local_8 = nullptr;
           }
         }
-        local_c = (char *)0x0;
+        local_c = nullptr;
         FUN_006b4170((AnonShape_006B5B10_E0D06CF1 *)this_01->field_1C7B,0,0,
                      (uint)(message->arg1).words.high,
                      ((AnonShape_006B5B10_E0D06CF1 *)this_01->field_1C7B)->field_0004,0x13,0);
@@ -378,7 +378,7 @@ LAB_005b1da4:
               pbVar20 = *(byte **)(this_01->field_1C9F->growCapacity + uVar17 * 4);
             }
             else {
-              pbVar20 = (byte *)0x0;
+              pbVar20 = nullptr;
             }
             pbVar25 = &DAT_007cc8b4;
             pbVar21 = pbVar20;
@@ -403,9 +403,9 @@ LAB_005b1b6c:
               pcVar19 = &this_01->field_1DA7;
               FUN_006b78c0(pcVar19,pcVar19);
               Library::MSVCRT::FUN_0072e730
-                        ((byte *)pcVar19,local_188,local_28c,(byte *)0x0,(byte *)0x0);
+                        ((byte *)pcVar19,local_188,local_28c,nullptr,nullptr);
               Library::MSVCRT::__makepath
-                        (pcVar19,(char *)local_188,(char *)local_28c,(char *)0x0,(char *)0x0);
+                        (pcVar19,(char *)local_188,(char *)local_28c,nullptr,nullptr);
             }
             else {
               uVar27 = 0xffffffff;
@@ -511,7 +511,7 @@ LAB_005b1b6c:
       if (DAT_008067a0 != '\0') {
         pDVar8 = this_01->field_1A5B->field_0686;
         if ((int)pDVar8->elementSize < 1) {
-          pcVar19 = (char *)0x0;
+          pcVar19 = nullptr;
         }
         else {
           pcVar19 = *(char **)pDVar8->growCapacity;
@@ -521,7 +521,7 @@ LAB_005b1b6c:
         if (CONCAT31(extraout_var,bVar11) != 0) {
           pDVar8 = this_01->field_1A5B->field_0686;
           if ((int)pDVar8->elementSize < 1) {
-            CFsgsConnection::SendChatMessage((CFsgsConnection *)&DAT_00802a90,(char *)0x0);
+            CFsgsConnection::SendChatMessage((CFsgsConnection *)&DAT_00802a90,nullptr);
           }
           else {
             CFsgsConnection::SendChatMessage
@@ -557,7 +557,7 @@ LAB_005b1b6c:
       uVar17 = 0;
       pDVar8 = this_00->field_0686;
       if ((int)pDVar8->elementSize < 1) {
-        pcVar19 = (char *)0x0;
+        pcVar19 = nullptr;
       }
       else {
         pcVar19 = *(char **)pDVar8->growCapacity;
@@ -652,7 +652,7 @@ LAB_005b2011:
       pcVar19 = *(char **)(this_01->field_1C9F->growCapacity + *(int *)&this_01->field_0x31 * 4);
     }
     else {
-      pcVar19 = (char *)0x0;
+      pcVar19 = nullptr;
     }
     uVar27 = 0xffffffff;
     do {
@@ -715,7 +715,7 @@ LAB_005b2011:
     (*(code *)this_01->field_0000->field_0008)();
     pMVar16 = this_01->field_1A5B->field_02E6;
 LAB_005b1644:
-    if (pMVar16 != (MMsgTy *)0x0) {
+    if (pMVar16 != nullptr) {
       MMsgTy::HidePanel(pMVar16,1,0,1);
     }
     goto cf_common_exit_005B2053;
@@ -741,7 +741,7 @@ LAB_005b1644:
     /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
     (*(code *)this_01->field_0000->field_0008)();
     pMVar16 = this_01->field_1A5B->field_02E6;
-    if (pMVar16 != (MMsgTy *)0x0) {
+    if (pMVar16 != nullptr) {
       MMsgTy::HidePanel(pMVar16,1,0,1);
     }
     break;
@@ -836,7 +836,7 @@ LAB_005b1644:
       pcVar19 = *(char **)(this_01->field_1C97->growCapacity + (int)local_8 * 4);
     }
     else {
-      pcVar19 = (char *)0x0;
+      pcVar19 = nullptr;
     }
     uVar27 = 0xffffffff;
     do {
@@ -956,7 +956,7 @@ LAB_005b1644:
           pcVar19 = *(char **)(this_01->field_1C97->growCapacity + iVar13 * 4);
         }
         else {
-          pcVar19 = (char *)0x0;
+          pcVar19 = nullptr;
         }
         uVar27 = 0xffffffff;
         do {
@@ -1011,7 +1011,7 @@ LAB_005b1644:
           this_01->field_0x20b4 = 0;
           /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
           (*(code *)this_01->field_0000->field_0008)();
-          if (this_01->field_1A5B->field_02E6 != (MMsgTy *)0x0) {
+          if (this_01->field_1A5B->field_02E6 != nullptr) {
             local_38 = 0;
             local_3c = 0x10001;
             local_34 = 0;
@@ -1043,7 +1043,7 @@ LAB_005b1644:
     this_01->field_0x20b5 = 0;
     /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
     (*(code *)this_01->field_0000->field_0008)();
-    if (this_01->field_1A5B->field_02E6 != (MMsgTy *)0x0) {
+    if (this_01->field_1A5B->field_02E6 != nullptr) {
       local_18 = 0;
       local_14 = 0;
       local_1c = 0x10101;
@@ -1121,7 +1121,7 @@ LAB_005b1644:
       pcVar19 = *(char **)(this_01->field_1C97->growCapacity + (int)local_8 * 4);
     }
     else {
-      pcVar19 = (char *)0x0;
+      pcVar19 = nullptr;
     }
     uVar27 = 0xffffffff;
     do {
@@ -1200,7 +1200,7 @@ switchD_005b1362_caseD_6:
     this_01->field_20B7 = 0;
     /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
     (*(code *)this_01->field_0000->field_0008)();
-    if (this_01->field_1A5B->field_02E6 != (MMsgTy *)0x0) {
+    if (this_01->field_1A5B->field_02E6 != nullptr) {
       local_28 = 0;
       local_24 = 0;
       local_2c = 0x10101;
@@ -1220,7 +1220,7 @@ switchD_005b1362_caseD_6:
 LAB_005b1108:
     (*(code *)this_01->field_0000->field_0008)();
     pMVar16 = this_01->field_1A5B->field_02E6;
-    if (pMVar16 != (MMsgTy *)0x0) {
+    if (pMVar16 != nullptr) {
       MMsgTy::HidePanel(pMVar16,1,0,1);
     }
   }

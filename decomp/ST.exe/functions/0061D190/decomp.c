@@ -98,7 +98,7 @@ int __thiscall STLightC::GetMessage(STLightC *this,STMessage *message)
         local_1c.unknown = (int)this_00->field_0018;
         iVar5 = 0x475;
       }
-      SoundClassTy::PlaySound((SoundClassTy *)&g_sound,SOUND_MODE_2,(char *)0x0,iVar5,&local_1c,0);
+      SoundClassTy::PlaySound((SoundClassTy *)&g_sound,SOUND_MODE_2,nullptr,iVar5,&local_1c,0);
       iVar5 = this_00->field_004F + 1;
       this_00->field_004F = iVar5;
       if (this_00->field_005F * 4 <= iVar5) {
@@ -119,7 +119,7 @@ int __thiscall STLightC::GetMessage(STLightC *this,STMessage *message)
         sub_0061D8F0(local_8,puVar8);
         pSVar10 = this_00 + 1;
         for (iVar5 = 0xb; iVar5 != 0; iVar5 = iVar5 + -1) {
-          pSVar10->vtable = (STLightCVTable *)0x0;
+          pSVar10->vtable = nullptr;
           pSVar10 = (STLightC *)&pSVar10->field_0x4;
         }
         *(undefined1 *)&pSVar10->vtable = 0;

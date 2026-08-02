@@ -10,14 +10,14 @@ int __thiscall FUN_0041d350(void *this,uint param_1)
   int iVar1;
   int iVar2;
 
-  if (g_visibleClass_00802A88 == (VisibleClassTy *)0x0) {
+  if (g_visibleClass_00802A88 == nullptr) {
     return 0;
   }
   iVar1 = (int)*(short *)((int)this + 0x5b);
   iVar2 = (int)*(short *)((int)this + 0x5d);
   if ((((-1 < iVar1) && (iVar1 < g_visibleClass_00802A88->field_0020)) && (-1 < iVar2)) &&
      (((iVar2 < g_visibleClass_00802A88->field_0024 && (param_1 < 8)) &&
-      (g_visibleClass_00802A88->field_0074[param_1] != (byte *)0x0)))) {
+      (g_visibleClass_00802A88->field_0074[param_1] != nullptr)))) {
     return (uint)(g_visibleClass_00802A88->field_0074[param_1]
                   [iVar1 + g_visibleClass_00802A88->field_0020 * iVar2] != 0);
   }

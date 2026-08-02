@@ -12,10 +12,10 @@ STRubbishC * __cdecl CreateSTRubbish(void)
   STRubbishC *pSVar1;
 
   pSVar1 = (STRubbishC *)FUN_006b04d0(0x1fe);
-  if (pSVar1 != (STRubbishC *)0x0) {
+  if (pSVar1 != nullptr) {
     pSVar1 = STRubbishC::STRubbishC(pSVar1);
     return pSVar1;
   }
-  return (STRubbishC *)0x0;
+  return nullptr;
 }
 

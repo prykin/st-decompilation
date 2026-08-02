@@ -46,19 +46,19 @@ undefined4 __thiscall STGenBombC::LoadImagSpr(STGenBombC *this,int param_1,int p
     }
     STDebugBreak(); /* noreturn in standalone pseudocode */
   }
-  if (local_10->field_0252 == (STT3DSprC *)0x0) {
+  if (local_10->field_0252 == nullptr) {
     pAVar6 = (AnonShape_004AB810_8E5693D5 *)Library::MSVCRT::FUN_0072e530(0x40);
-    if (pAVar6 == (AnonShape_004AB810_8E5693D5 *)0x0) {
-      this_00 = (STT3DSprC *)0x0;
+    if (pAVar6 == nullptr) {
+      this_00 = nullptr;
     }
     else {
       this_00 = (STT3DSprC *)thunk_FUN_004ab810(pAVar6);
     }
     pSVar4->field_0252 = this_00;
-    if (this_00 == (STT3DSprC *)0x0) {
+    if (this_00 == nullptr) {
       return 0xffffffff;
     }
-    iVar5 = STT3DSprC::Init(this_00,DAT_008073cc,0x5a,0x45,(STDcResourcC *)0x0,0xb4,0x8c,0x11);
+    iVar5 = STT3DSprC::Init(this_00,DAT_008073cc,0x5a,0x45,nullptr,0xb4,0x8c,0x11);
     if (iVar5 != 0) {
       RaiseInternalException
                 (-1,g_overwriteContext_007ED77C,"E:\\__titans\\nick\\to_GnBom.cpp",0x509);
@@ -137,7 +137,7 @@ LAB_00613424:
   local_8 = 1;
 LAB_0061364b:
   pVVar3 = g_visibleClass_00802A88;
-  if (g_visibleClass_00802A88 == (VisibleClassTy *)0x0) {
+  if (g_visibleClass_00802A88 == nullptr) {
     g_currentExceptionFrame = local_5c.previous;
     return local_8;
   }
@@ -186,7 +186,7 @@ LAB_0061364b:
     else {
       bVar9 = true;
     }
-    if ((bVar9) && (pVVar3->field_004C != (byte *)0x0)) {
+    if ((bVar9) && (pVVar3->field_004C != nullptr)) {
       bVar9 = pVVar3->field_004C
               [local_14 + (g_centeredOffsets5[local_c] + local_18) * pVVar3->field_0030] != 0;
     }

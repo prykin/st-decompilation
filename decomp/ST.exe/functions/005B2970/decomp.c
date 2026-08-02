@@ -46,7 +46,7 @@ void __thiscall MainMenuTy::InitMainMenu(MainMenuTy *this,char param_1)
     DAT_00802a99 = 0;
     DAT_008067a0 = '\0';
   }
-  if (g_cursorClass_00802A30 != (CursorClassTy *)0x0) {
+  if (g_cursorClass_00802A30 != nullptr) {
     if (g_cursorClass_00802A30->field_00A9 == 0) {
       Library::DKW::DDX::FUN_006b8b10((int *)g_cursorClass_00802A30->field_00AD);
     }
@@ -72,7 +72,7 @@ void __thiscall MainMenuTy::InitMainMenu(MainMenuTy *this,char param_1)
     if (this_01->field_1AA7[iVar2 + -10] != 0) {
       puVar5 = Library::DKW::FLC::FUN_006c4a20(this_01->field_1AA7[iVar2 + -10]);
       this_01->field_1AA7[iVar2] = (uint)puVar5;
-      if (puVar5 != (undefined4 *)0x0) {
+      if (puVar5 != nullptr) {
         switch(iVar2) {
         case 0:
           uVar9 = 0x5d;
@@ -126,28 +126,28 @@ switchD_005b2a8d_default:
       MMObjTy::InitSprBut((MMObjTy *)this_01,
                           (RecoveredRecord_MMObjTy_005B5240 *)&this_01->field_0x9b,
                           "MM_MBUT00",0xf2,0x13a,7,8,0,0,0x9d,0x38,0x33,
-                          "MM_MABUT00",6,8,9,6,0x28,0,(ccFntTy *)0x0,0,0,0,-1,-1);
+                          "MM_MABUT00",6,8,9,6,0x28,0,nullptr,0,0,0,-1,-1);
       MMObjTy::InitSprBut((MMObjTy *)this_01,
                           (RecoveredRecord_MMObjTy_005B5240 *)&this_01->field_0x296,
                           "MM_MBUT01",0x191,0x13a,9,8,0,0,0x9d,0x38,0x33,
-                          "MM_MABUT01",8,8,8,6,0x32,0,(ccFntTy *)0x0,0,0,0,-1,-1);
+                          "MM_MABUT01",8,8,8,6,0x32,0,nullptr,0,0,0,-1,-1);
       MMObjTy::InitSprBut((MMObjTy *)this_01,
                           (RecoveredRecord_MMObjTy_005B5240 *)&this_01->field_0x491,
                           "MM_MBUT02",0xf2,0x173,8,6,0,0,0x9d,0x38,0x33,
-                          "MM_MABUT02",8,7,10,5,0x28,0,(ccFntTy *)0x0,0,0,0,-1,-1);
+                          "MM_MABUT02",8,7,10,5,0x28,0,nullptr,0,0,0,-1,-1);
       MMObjTy::InitSprBut((MMObjTy *)this_01,
                           (RecoveredRecord_MMObjTy_005B5240 *)&this_01->field_0x68c,
                           "MM_MBUT03",0x191,0x173,8,6,0,0,0x9d,0x38,0x33,
-                          "MM_MABUT03",8,7,8,5,0x32,0,(ccFntTy *)0x0,0,0,0,-1,-1);
+                          "MM_MABUT03",8,7,8,5,0x32,0,nullptr,0,0,0,-1,-1);
       MMObjTy::InitSprBut((MMObjTy *)this_01,
                           (RecoveredRecord_MMObjTy_005B5240 *)&this_01->field_0x887,
                           "MM_MBUT04",0x143,0x1ac,7,8,0,0,0x9d,0x38,0x33,
-                          "MM_MABUT04",8,9,9,6,0x32,0,(ccFntTy *)0x0,0,0,0,-1,-1);
+                          "MM_MABUT04",8,9,9,6,0x32,0,nullptr,0,0,0,-1,-1);
       puVar4 = (ushort *)FUN_0070a9f0(g_cMf32_00806780,"MM_BKG",0,1);
       g_startSystem_0081176C->field_002C = puVar4;
       DarkScreen(g_dDXContext_0080759C,1,0);
       /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-      if (*(MMsgTy **)(this_01->field_1A5B + 0x2e6) != (MMsgTy *)0x0) {
+      if (*(MMsgTy **)(this_01->field_1A5B + 0x2e6) != nullptr) {
         /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
         MMsgTy::HidePanel(*(MMsgTy **)(this_01->field_1A5B + 0x2e6),0,0,1);
         /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
@@ -155,9 +155,9 @@ switchD_005b2a8d_default:
         *(undefined4 *)(*(int *)(this_01->field_1A5B + 0x2e6) + 0x1cab) = this_01->field_0008;
       }
       FUN_006bc360(g_startSystem_0081176C->field_002C,(undefined4 *)&this_01->field_0x1adf,
-                   (int *)0x0);
+                   nullptr);
       this_00 = g_cursorClass_00802A30;
-      if (g_cursorClass_00802A30 != (CursorClassTy *)0x0) {
+      if (g_cursorClass_00802A30 != nullptr) {
         iVar2 = g_cursorClass_00802A30->field_00C9;
         iVar6 = g_cursorClass_00802A30->field_00C5;
         g_cursorClass_00802A30->field_0493 = CASE_1;
@@ -171,7 +171,7 @@ switchD_005b2a8d_default:
       thunk_FUN_00568bc0(&g_sound,0);
       /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
       if ((DAT_00807300._1_1_ & 8) != 0) {
-        thunk_FUN_0056a130(&g_sound,0x10,'\x02',0,(uint *)0x0);
+        thunk_FUN_0056a130(&g_sound,0x10,'\x02',0,nullptr);
       }
       if (DAT_00808446 == '\0') {
         this_01->field_1A6B = 2;

@@ -9,7 +9,7 @@ undefined4 FUN_00748eca(int param_1,uint param_2,uint *param_3)
   if (param_2 < 4) {
     return 0;
   }
-  if (param_3 == (uint *)0x0) {
+  if (param_3 == nullptr) {
     return 0x80004003;
   }
   uVar1 = *param_3;
@@ -29,7 +29,7 @@ undefined4 FUN_00748eca(int param_1,uint param_2,uint *param_3)
     return 0x80070057;
   }
   if ((0x27 < param_2) && ((param_3[2] & 8) != 0)) {
-    if ((undefined4 *)param_3[9] == (undefined4 *)0x0) {
+    if ((undefined4 *)param_3[9] == nullptr) {
       return 0x80004003;
     }
     local_8 = FUN_0074bc6a((undefined4 *)param_3[9]);

@@ -12,10 +12,10 @@ STMineSetC * __cdecl CreateSTMineSet(void)
   STMineSetC *pSVar1;
 
   pSVar1 = (STMineSetC *)FUN_006b04d0(0x367);
-  if (pSVar1 != (STMineSetC *)0x0) {
+  if (pSVar1 != nullptr) {
     pSVar1 = STMineSetC::STMineSetC(pSVar1);
     return pSVar1;
   }
-  return (STMineSetC *)0x0;
+  return nullptr;
 }
 

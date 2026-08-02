@@ -98,7 +98,7 @@ void __cdecl FUN_00575640(short *param_1,undefined4 *param_2,short *param_3)
       local_18 = local_18 + 1;
     } while (local_1c < *(int *)((int)psVar2 + 0x455));
   }
-  if (param_3 != (short *)0x0) {
+  if (param_3 != nullptr) {
     /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
     param_1 = Library::DKW::LIB::MemAlloc(uVar10);
     puVar11 = (byte *)(param_2);
@@ -136,7 +136,7 @@ void __cdecl FUN_00575640(short *param_1,undefined4 *param_2,short *param_3)
       } while (iVar13 < psVar2[1]);
     }
     /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
-    param_3 = (short *)0x0;
+    param_3 = nullptr;
     local_1c = 5;
     do {
       iVar13 = 0;

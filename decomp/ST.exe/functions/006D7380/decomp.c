@@ -8,7 +8,7 @@ undefined4 __thiscall FUN_006d7380(void *this,int param_1)
 
   uVar3 = 0;
   piVar1 = *(int **)((int)this + 0x40);
-  if (piVar1 == (int *)0x0) {
+  if (piVar1 == nullptr) {
     return 0x8004025f;
   }
   if (param_1 == 1) {

@@ -52,7 +52,7 @@ void __thiscall FSGSTy::InitFSGS(FSGSTy *this,byte param_1)
   DAT_008067a0 = 0;
   StartSystemTy::GetIP(this_01->field_1A5B);
   DAT_00802a99 = 0;
-  if (g_cursorClass_00802A30 != (CursorClassTy *)0x0) {
+  if (g_cursorClass_00802A30 != nullptr) {
     if (g_cursorClass_00802A30->field_00A9 == 0) {
       Library::DKW::DDX::FUN_006b8b10((int *)g_cursorClass_00802A30->field_00AD);
     }
@@ -61,7 +61,7 @@ void __thiscall FSGSTy::InitFSGS(FSGSTy *this,byte param_1)
     }
   }
   pMVar1 = this_01->field_1A5B->field_02E6;
-  if (pMVar1 != (MMsgTy *)0x0) {
+  if (pMVar1 != nullptr) {
     MMsgTy::HideSprites(pMVar1);
     this_01->field_1A5B->field_02E6->field_1CAB = 0;
   }
@@ -69,15 +69,15 @@ void __thiscall FSGSTy::InitFSGS(FSGSTy *this,byte param_1)
   g_startSystem_0081176C->field_002C = puVar4;
   this_01->field_005D = g_startSystem_0081176C->field_002C;
   puVar4 = Library::Ourlib::MFRLOAD::mfRLoad
-                     (DAT_00806784,CASE_B,"SET_ACC",0xffffffff,0,1,0,(undefined4 *)0x0);
+                     (DAT_00806784,CASE_B,"SET_ACC",0xffffffff,0,1,0,nullptr);
   this_01->field_1A83 = puVar4;
   puVar4 = Library::Ourlib::MFRLOAD::mfRLoad
-                     (DAT_00806784,CASE_B,"FILE_LIST",0xffffffff,0,1,0,(undefined4 *)0x0);
+                     (DAT_00806784,CASE_B,"FILE_LIST",0xffffffff,0,1,0,nullptr);
   this_01->field_1A87 = puVar4;
   puVar4 = Library::Ourlib::MFRLOAD::mfRLoad
-                     (DAT_00806784,CASE_B,&DAT_007cc07c,0xffffffff,0,1,0,(undefined4 *)0x0);
+                     (DAT_00806784,CASE_B,&DAT_007cc07c,0xffffffff,0,1,0,nullptr);
   this_01->field_1A8B = puVar4;
-  FUN_006bc360(this_01->field_005D,local_450,(int *)0x0);
+  FUN_006bc360(this_01->field_005D,local_450,nullptr);
   this_01->field_1A5B->field_0140 = 0xf;
   Library::Ourlib::PALETTE::FUN_00718780
             ((int)local_450,0,0x100,0x8b,0x15,(undefined4 *)&this_01->field_1A5B->field_0x144);
@@ -93,11 +93,11 @@ void __thiscall FSGSTy::InitFSGS(FSGSTy *this,byte param_1)
   this_01->field_1F87 = 0xf;
   this_01->field_1F8B = 1;
   this_01->field_1F83 = 0x4d;
-  pFVar6 = (FSGSTy_field_1FB3DArray *)Library::DKW::TBL::DArrayCreate((DArrayTy *)0x0,5,0x10c,5);
+  pFVar6 = (FSGSTy_field_1FB3DArray *)Library::DKW::TBL::DArrayCreate(nullptr,5,0x10c,5);
   this_01->field_1FB3 = pFVar6;
   this_01->field_1A6F = this_01->field_1A5B->field_0030;
   this_01->field_1A73 = this_01->field_1A5B->field_0034;
-  pcVar7 = (ccFntTy *)thunk_FUN_00594850((int)this_01->field_005D,(undefined *)0x0,DAT_00807dd9);
+  pcVar7 = (ccFntTy *)thunk_FUN_00594850((int)this_01->field_005D,nullptr,DAT_00807dd9);
   this_01->field_1A77 = pcVar7;
   pcVar7->field_007E = 1;
   *(undefined2 *)&pcVar7->field_0x9e = 0;
@@ -156,7 +156,7 @@ void __thiscall FSGSTy::InitFSGS(FSGSTy *this,byte param_1)
   FUN_006b3af0((int *)g_ddxContext_008075A8,*puVar10);
   SpriteClassTy::InitSprite
             ((SpriteClassTy *)&this_01->field_1B28,(int *)g_ddxContext_008075A8,0x31,'\a',
-             (undefined4 *)0x0,0,0);
+             nullptr,0,0);
   /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
   (**(code **)(this_01->field_1B28 + 4))(DAT_00806784,7,0,"MM_SLDUP",0xffffffff);
   this_01->field_1B30 = 0;
@@ -165,7 +165,7 @@ void __thiscall FSGSTy::InitFSGS(FSGSTy *this,byte param_1)
   }
   SpriteClassTy::InitSprite
             ((SpriteClassTy *)&this_01->field_1BB9,(int *)g_ddxContext_008075A8,0x31,'\a',
-             (undefined4 *)0x0,0,0);
+             nullptr,0,0);
   /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
   (**(code **)(this_01->field_1BB9 + 4))(DAT_00806784,7,0,"MM_SLDDN",0xffffffff);
   this_01->field_1BC1 = 0;
@@ -174,7 +174,7 @@ void __thiscall FSGSTy::InitFSGS(FSGSTy *this,byte param_1)
   }
   SpriteClassTy::InitSprite
             ((SpriteClassTy *)&this_01->field_1C4A,(int *)g_ddxContext_008075A8,0x31,'\a',
-             (undefined4 *)0x0,0,0);
+             nullptr,0,0);
   /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
   (**(code **)(this_01->field_1C4A + 4))(DAT_00806784,7,0,"MM_SLDT",0xffffffff);
   this_01->field_1C52 = 0;
@@ -183,7 +183,7 @@ void __thiscall FSGSTy::InitFSGS(FSGSTy *this,byte param_1)
   }
   SpriteClassTy::InitSprite
             ((SpriteClassTy *)&this_01->field_1CDB,(int *)g_ddxContext_008075A8,0x31,'\a',
-             (undefined4 *)0x0,0,0);
+             nullptr,0,0);
   /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
   (**(code **)(this_01->field_1CDB + 4))(DAT_00806784,7,0,"MM_SLDUP",0xffffffff);
   this_01->field_1CE3 = 0;
@@ -192,7 +192,7 @@ void __thiscall FSGSTy::InitFSGS(FSGSTy *this,byte param_1)
   }
   SpriteClassTy::InitSprite
             ((SpriteClassTy *)&this_01->field_1D6C,(int *)g_ddxContext_008075A8,0x31,'\a',
-             (undefined4 *)0x0,0,0);
+             nullptr,0,0);
   /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
   (**(code **)(this_01->field_1D6C + 4))(DAT_00806784,7,0,"MM_SLDDN",0xffffffff);
   this_01->field_1D74 = 0;
@@ -201,7 +201,7 @@ void __thiscall FSGSTy::InitFSGS(FSGSTy *this,byte param_1)
   }
   SpriteClassTy::InitSprite
             ((SpriteClassTy *)&this_01->field_1DFD,(int *)g_ddxContext_008075A8,0x31,'\a',
-             (undefined4 *)0x0,0,0);
+             nullptr,0,0);
   /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
   (**(code **)(this_01->field_1DFD + 4))(DAT_00806784,7,0,"MM_SLDT",0xffffffff);
   this_01->field_1E05 = 0;
@@ -220,7 +220,7 @@ void __thiscall FSGSTy::InitFSGS(FSGSTy *this,byte param_1)
   this_01->field_1E19 = 0;
   this_01->field_1C6A = 0;
   this_01->field_1C66 = 0;
-  pDVar11 = Library::DKW::TBL::SArrayCreate((DArrayTy *)0x0,10,10);
+  pDVar11 = Library::DKW::TBL::SArrayCreate(nullptr,10,10);
   this_01->field_1B08 = pDVar11;
   Library::DKW::TBL::FUN_006b5aa0(&pDVar11->flags,"License agreement");
   Library::DKW::TBL::FUN_006b5aa0(&this_01->field_1B08->flags,"Nothing to do");
@@ -228,7 +228,7 @@ void __thiscall FSGSTy::InitFSGS(FSGSTy *this,byte param_1)
   thunk_FUN_0055ddf0((undefined4 *)g_dDXContext_0080759C,(int *)g_ddxContext_008075A8,
                      this_01->field_005D,10,2);
   if ((5 < param_1) && (param_1 < 9)) {
-    pDVar11 = Library::DKW::TBL::SArrayCreate((DArrayTy *)0x0,100,100);
+    pDVar11 = Library::DKW::TBL::SArrayCreate(nullptr,100,100);
     this_01->field_1E9E = &pDVar11->flags;
   }
   this_01->field_1A62 = 0;
@@ -252,7 +252,7 @@ void __thiscall FSGSTy::InitFSGS(FSGSTy *this,byte param_1)
   SetState(this_01,bVar14);
 LAB_00596510:
   this_00 = g_cursorClass_00802A30;
-  if (g_cursorClass_00802A30 != (CursorClassTy *)0x0) {
+  if (g_cursorClass_00802A30 != nullptr) {
     iVar3 = g_cursorClass_00802A30->field_00C9;
     iVar12 = g_cursorClass_00802A30->field_00C5;
     g_cursorClass_00802A30->field_0493 = CASE_1;
@@ -263,7 +263,7 @@ LAB_00596510:
     this_00->field_04DF = -1;
   }
   pMVar1 = this_01->field_1A5B->field_02E6;
-  if (pMVar1 != (MMsgTy *)0x0) {
+  if (pMVar1 != nullptr) {
     MMsgTy::ShowSprites(pMVar1);
     this_01->field_1A5B->field_02E6->field_1CAB = this_01->field_0008;
   }

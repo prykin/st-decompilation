@@ -32,7 +32,7 @@ undefined4 __thiscall FUN_006ecc70(void *this,int *param_1,uint *param_2)
   int *local_8;
 
   local_8 = (int *)FUN_006bfb70(param_2[0x38] << 4);
-  if (local_8 != (int *)0x0) {
+  if (local_8 != nullptr) {
     local_10 = (uint *)param_2[0x39];
     local_18 = (uint *)param_2[0x3c];
     param_2[0x3b] = (uint)local_8;
@@ -115,7 +115,7 @@ undefined4 __thiscall FUN_006ecc70(void *this,int *param_1,uint *param_2)
           *local_18 = *local_10 & 1;
           *param_2 = *param_2 | 0x20;
           local_18[1] = local_30;
-          if (*(int **)this != (int *)0x0) {
+          if (*(int **)this != nullptr) {
             /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
             FUN_006b5f80(*(int **)this,*(int *)((int)this + 0x20) + *local_8,
                          *(int *)((int)this + 0x24) + *local_c,local_c[1],local_c[2]);

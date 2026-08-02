@@ -62,7 +62,7 @@ STAllPlayersC::RegisterObject
     }
     STDebugBreak(); /* noreturn in standalone pseudocode */
   }
-  if (param_4 == (int *)0x0) {
+  if (param_4 == nullptr) {
     RaiseInternalException
               (-0x5001fffc,g_overwriteContext_007ED77C,"E:\\__titans\\wlad\\to_allpl.cpp",
                0x5bd);
@@ -143,7 +143,7 @@ LAB_0042e4fd:
     iVar6 = (int)param_1;
     *(short *)&g_packedRecords_A62x8[iVar6].field_0xd =
          *(short *)&g_packedRecords_A62x8[iVar6].field_0xd + 1;
-    if (pMVar3 != (MoneyTy *)0x0) {
+    if (pMVar3 != nullptr) {
       MoneyTy::sub_0052BDA0(pMVar3,param_1,(uint)*(ushort *)&g_packedRecords_A62x8[iVar6].field_0xd);
     }
     /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
@@ -262,7 +262,7 @@ LAB_0042e4fd:
     iVar6 = (int)param_1;
     *(short *)&g_packedRecords_A62x8[iVar6].field_0xd =
          *(short *)&g_packedRecords_A62x8[iVar6].field_0xd + 1;
-    if (pMVar3 != (MoneyTy *)0x0) {
+    if (pMVar3 != nullptr) {
       MoneyTy::sub_0052BDA0(pMVar3,param_1,(uint)*(ushort *)&g_packedRecords_A62x8[iVar6].field_0xd);
     }
     /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
@@ -403,7 +403,7 @@ LAB_0042eb3e:
     if (uVar12 != 0) {
       while (uVar2 = uVar2 - 1, -1 < (int)uVar2) {
         DArrayGetElement(local_1c,uVar2,&local_c);
-        if (local_c == (STGroupBoatC *)0x0) {
+        if (local_c == nullptr) {
           uVar12 = uVar2;
           local_14 = uVar2;
         }
@@ -421,7 +421,7 @@ LAB_0042eb3e:
   }
   else {
     if (((uVar10 != 0xffff) && (iVar9 == 0)) &&
-       (local_c = thunk_FUN_0042b760(param_1,uVar10), local_c == (STGroupBoatC *)0x0)) {
+       (local_c = thunk_FUN_0042b760(param_1,uVar10), local_c == nullptr)) {
       param_2 = 0xfffe;
     }
     uVar12 = local_14;
@@ -449,8 +449,8 @@ LAB_0042ebf6:
   /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
   iVar9 = (**(code **)(*param_4 + 0x2c))();
   if (iVar9 == 0x1d) {
-    if (local_24 == (DArrayTy *)0x0) {
-      local_24 = Library::DKW::TBL::DArrayCreate((DArrayTy *)0x0,1,2,1);
+    if (local_24 == nullptr) {
+      local_24 = Library::DKW::TBL::DArrayCreate(nullptr,1,2,1);
       g_packedRecords_A62x8[param_1].field603_0x2e7 = local_24;
     }
     pDVar4 = local_24;

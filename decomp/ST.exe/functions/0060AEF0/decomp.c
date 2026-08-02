@@ -77,8 +77,8 @@ int __fastcall FUN_0060aef0(void *param_1)
   local_1c = &stack0xfffffef8;
   local_88 = 0;
   local_4c = 0;
-  local_74 = (undefined1 *)0x0;
-  local_ac = (undefined1 *)0x0;
+  local_74 = nullptr;
+  local_ac = nullptr;
   ExceptionList = &local_14;
   puVar9 = &stack0xfffffef8;
   /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
@@ -164,7 +164,7 @@ int __fastcall FUN_0060aef0(void *param_1)
                  (sVar17 = (short)local_40, sVar17 < 0)) ||
                 ((g_worldGrid.sizeY <= sVar17 || (sVar11 = (short)local_3c, sVar11 < 0)))) ||
                (g_worldGrid.sizeZ <= sVar11)) {
-              pSVar20 = (STFishC *)0x0;
+              pSVar20 = nullptr;
             }
             else {
               pSVar20 = (STFishC *)
@@ -172,7 +172,7 @@ int __fastcall FUN_0060aef0(void *param_1)
                         [(int)g_worldGrid.planeStride * (int)sVar11 +
                          (int)g_worldGrid.sizeX * (int)sVar17 + (int)sVar18].objects[0];
             }
-            if ((pSVar20 != (STFishC *)0x0) &&
+            if ((pSVar20 != nullptr) &&
                (iVar12 = pSVar20->vfunc_F0(), iVar12 != 0)) {
               if ((*(int *)&pSVar20->field_0x20 == 1000) &&
                  (dVar13 = pSVar20->slot_2C(),
@@ -196,8 +196,8 @@ int __fastcall FUN_0060aef0(void *param_1)
               /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
               if (*(int *)((int)param_1 + 0x1f5) == 0x43) {
                 if ((uVar16 < 8) &&
-                   ((g_playSystem_00802A38 == (STPlaySystemC *)0x0 ||
-                    ((byte)(&DAT_008087e9)[uVar16 * 0x51] < 8)))) {
+                   ((g_playSystem_00802A38 == nullptr ||
+                    (g_bulkInitializedRecords_008087C7[uVar16].field_0022 < 8)))) {
                   bVar3 = *(byte *)&pSVar20->field_0024;
                   /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
                   _local_b8 = CONCAT31(uStack_b7,bVar3);
@@ -230,8 +230,8 @@ LAB_0060b2ce:
                     bVar22 = iVar12 < 0;
                   }
                   else {
-                    bVar22 = (&DAT_008087ea)[(uint)bVar4 * 0x51] !=
-                             (&DAT_008087ea)[(uint)bVar3 * 0x51];
+                    bVar22 = g_bulkInitializedRecords_008087C7[bVar4].field_0023 !=
+                             g_bulkInitializedRecords_008087C7[bVar3].field_0023;
                   }
                   if ((bVar22) && (iVar12 = (*pSVar20->vtable->vfunc_F8)(), iVar12 != 0)) {
                     puVar1 = (undefined4 *)(local_74 + local_88 * 0xc);
@@ -272,8 +272,8 @@ LAB_0060b2ce:
               }
               else {
                 if ((uVar16 < 8) &&
-                   ((g_playSystem_00802A38 == (STPlaySystemC *)0x0 ||
-                    ((byte)(&DAT_008087e9)[uVar16 * 0x51] < 8)))) {
+                   ((g_playSystem_00802A38 == nullptr ||
+                    (g_bulkInitializedRecords_008087C7[uVar16].field_0022 < 8)))) {
                   bVar3 = *(byte *)&pSVar20->field_0024;
                   /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
                   _local_c8 = CONCAT31(uStack_c7,bVar3);
@@ -306,8 +306,8 @@ LAB_0060b48b:
                     bVar22 = iVar12 < 0;
                   }
                   else {
-                    bVar22 = (&DAT_008087ea)[(uint)bVar4 * 0x51] !=
-                             (&DAT_008087ea)[(uint)bVar3 * 0x51];
+                    bVar22 = g_bulkInitializedRecords_008087C7[bVar4].field_0023 !=
+                             g_bulkInitializedRecords_008087C7[bVar3].field_0023;
                   }
                   if (bVar22) {
                     iVar12 = (*pSVar20->vtable->vfunc_F8)();
@@ -329,7 +329,7 @@ LAB_0060b48b:
                   iVar12 = iVar12 + (uVar16 >> 0x10) % (iVar12 * 3 + 1U);
                   STFishC::sub_004162B0(pSVar20,local_70,local_a0,local_34);
                   pVVar8 = g_visibleClass_00802A88;
-                  if (g_visibleClass_00802A88 != (VisibleClassTy *)0x0) {
+                  if (g_visibleClass_00802A88 != nullptr) {
                     iVar19 = (int)local_34[0];
                     if ((((DAT_0080874d == -1) || (g_visibleClass_00802A88->field_00F8 == 0)) ||
                         (VisibleClassTy::sub_00558C00
@@ -347,7 +347,7 @@ LAB_0060b48b:
                       else {
                         bVar22 = true;
                       }
-                      if ((bVar22) && (pVVar8->field_004C != (byte *)0x0)) {
+                      if ((bVar22) && (pVVar8->field_004C != nullptr)) {
                         bVar22 = pVVar8->field_004C
                                  [local_d4[0] +
                                   (g_centeredOffsets5[iVar19] + local_d8) * pVVar8->field_0030] != 0
@@ -477,7 +477,7 @@ cf_continue_loop_0060B649:
           local_EAX_2593 = thunk_FUN_004ad650((STT3DSprC *)&pSVar20->field_01D5);
           thunk_FUN_00637d80(local_EAX_2593,iVar12);
           thunk_FUN_0060bdd0(param_1,&pSVar20->vtable);
-          if (DAT_00811798 != (void *)0x0) {
+          if (DAT_00811798 != nullptr) {
             pSVar20->slot_2C();
             thunk_FUN_006211e0(DAT_00811798,local_7c,local_8c,pSVar20->field_0024);
           }

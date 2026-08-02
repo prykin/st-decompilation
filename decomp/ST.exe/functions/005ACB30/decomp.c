@@ -25,16 +25,16 @@ void __thiscall ChooseMapTy::DoneChooseMap(ChooseMapTy *this)
   pCVar3 = local_8;
   if (iVar4 == 0) {
     MMObjTy::DoneMMObj((MMObjTy *)local_8);
-    if (((pCVar3->field_004D != 0x6121) && (g_int_00811764 != (int *)0x0)) && (DAT_0080877e != '\0')
+    if (((pCVar3->field_004D != 0x6121) && (g_int_00811764 != nullptr)) && (DAT_0080877e != '\0')
        ) {
-      FUN_00715360(g_int_00811764,0,'\x10',(char *)0x0,0,0,0xffffffff);
+      FUN_00715360(g_int_00811764,0,'\x10',nullptr,0,0,0xffffffff);
       thunk_FUN_005dac60();
     }
     if (pCVar3->field_1C8F != (HANDLE)0x0) {
       FindCloseChangeNotification(pCVar3->field_1C8F);
       pCVar3->field_1C8F = (HANDLE)0x0;
     }
-    if (g_cursorClass_00802A30 != (CursorClassTy *)0x0) {
+    if (g_cursorClass_00802A30 != nullptr) {
       if (g_cursorClass_00802A30->field_00A9 == 0) {
         Library::DKW::DDX::FUN_006b8b10((int *)g_cursorClass_00802A30->field_00AD);
       }
@@ -46,13 +46,13 @@ void __thiscall ChooseMapTy::DoneChooseMap(ChooseMapTy *this)
     if (((iVar4 != 0x6120) && (iVar4 != 0x6121)) && (iVar4 != 0x6105)) {
       DarkScreen(g_dDXContext_0080759C,10,2);
     }
-    if (g_startSystem_0081176C->field_002C != (ushort *)0x0) {
+    if (g_startSystem_0081176C->field_002C != nullptr) {
       cMf32::RecMemFree(g_cMf32_00806780,(uint *)&g_startSystem_0081176C->field_002C);
     }
-    if (pCVar3->field_20B8 != (HoloTy *)0x0) {
+    if (pCVar3->field_20B8 != nullptr) {
       HoloTy::Done(pCVar3->field_20B8);
       Library::MSVCRT::FUN_0072e2b0(pCVar3->field_20B8);
-      pCVar3->field_20B8 = (HoloTy *)0x0;
+      pCVar3->field_20B8 = nullptr;
     }
     SpriteClassTy::CloseSprite((SpriteClassTy *)&pCVar3->field_1A70);
     SpriteClassTy::CloseSprite((SpriteClassTy *)&pCVar3->field_1B01);
@@ -71,10 +71,10 @@ void __thiscall ChooseMapTy::DoneChooseMap(ChooseMapTy *this)
       FUN_006b3bb0((int *)g_ddxContext_008075A8,pCVar3->field_1C87);
     }
     pCVar3->field_1C87 = 0xffffffff;
-    if (pCVar3->field_20BC != (HoloTy *)0x0) {
+    if (pCVar3->field_20BC != nullptr) {
       HoloTy::Done(pCVar3->field_20BC);
       Library::MSVCRT::FUN_0072e2b0(pCVar3->field_20BC);
-      pCVar3->field_20BC = (HoloTy *)0x0;
+      pCVar3->field_20BC = nullptr;
     }
     if (pCVar3->field_0x20b4 != '\0') {
       if (g_startSystem_0081176C->field_0391 != 0xffffffff) {
@@ -90,10 +90,10 @@ void __thiscall ChooseMapTy::DoneChooseMap(ChooseMapTy *this)
         FUN_006b3af0((int *)g_ddxContext_008075A8,g_startSystem_0081176C->field_0540);
       }
     }
-    if (pCVar3->field_20C0 != (HoloTy *)0x0) {
+    if (pCVar3->field_20C0 != nullptr) {
       HoloTy::Done(pCVar3->field_20C0);
       Library::MSVCRT::FUN_0072e2b0(pCVar3->field_20C0);
-      pCVar3->field_20C0 = (HoloTy *)0x0;
+      pCVar3->field_20C0 = nullptr;
     }
     if ((pCVar3->field_20B7 != '\0') &&
        (((CVar1 = pCVar3->field_1A5F, CVar1 == CASE_C || (CVar1 == CASE_4)) ||
@@ -111,29 +111,29 @@ void __thiscall ChooseMapTy::DoneChooseMap(ChooseMapTy *this)
         FUN_006b3af0((int *)g_ddxContext_008075A8,g_startSystem_0081176C->field_0554);
       }
     }
-    if (pCVar3->field_1C7B != (AnonPointee_ChooseMapTy_1C7B *)0x0) {
+    if (pCVar3->field_1C7B != nullptr) {
       FreeAndNull(&pCVar3->field_1C7B);
     }
-    pCVar3->field_1C7F = (ushort *)0x0;
-    if (pCVar3->field_1C8B != (AnonPointee_ChooseMapTy_1C8B *)0x0) {
+    pCVar3->field_1C7F = nullptr;
+    if (pCVar3->field_1C8B != nullptr) {
       FreeAndNull(&pCVar3->field_1C8B);
     }
     if ((pCVar3->field_0x20b6 != '\0') &&
-       (this_00 = pCVar3->field_1A5B->field_02E6, this_00 != (MMsgTy *)0x0)) {
+       (this_00 = pCVar3->field_1A5B->field_02E6, this_00 != nullptr)) {
       MMsgTy::HideSprites(this_00);
       pCVar3->field_1A5B->field_02E6->field_1CAB = 0;
     }
-    if (pCVar3->field_1C97 != (DArrayTy *)0x0) {
+    if (pCVar3->field_1C97 != nullptr) {
       FUN_006b5570(pCVar3->field_1C97);
-      pCVar3->field_1C97 = (DArrayTy *)0x0;
+      pCVar3->field_1C97 = nullptr;
     }
-    if (pCVar3->field_1C9B != (DArrayTy *)0x0) {
+    if (pCVar3->field_1C9B != nullptr) {
       DArrayDestroy(pCVar3->field_1C9B);
-      pCVar3->field_1C9B = (DArrayTy *)0x0;
+      pCVar3->field_1C9B = nullptr;
     }
-    if (pCVar3->field_1C9F != (DArrayTy *)0x0) {
+    if (pCVar3->field_1C9F != nullptr) {
       FUN_006b5570(pCVar3->field_1C9F);
-      pCVar3->field_1C9F = (DArrayTy *)0x0;
+      pCVar3->field_1C9F = nullptr;
     }
     if (pCVar3->field_004D != 0) {
       AppClassTy::PostNextMessage((AppClassTy *)&DAT_00807620,(undefined4 *)&pCVar3->field_0x3d);

@@ -26,7 +26,7 @@ void __thiscall HelpPanelTy::CheckBkView(HelpPanelTy *this,int param_1,ushort pa
   HelpPanelTy *local_c;
   uint local_8;
 
-  if ((this->field_0218 != (AnonPointee_HelpPanelTy_0218 *)0x0) &&
+  if ((this->field_0218 != nullptr) &&
      ((int)this->field_0218->field_0008 < (int)((uint)param_2 + param_1))) {
     local_50.previous = g_currentExceptionFrame;
     g_currentExceptionFrame = &local_50;

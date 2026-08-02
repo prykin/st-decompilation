@@ -23,7 +23,7 @@ void __thiscall STPlaySystemC::AddToRep(STPlaySystemC *this,undefined4 *param_1,
   STPlaySystemC *local_c;
   int *local_8;
 
-  if ((param_1 != (undefined4 *)0x0) && (param_2 != 0)) {
+  if ((param_1 != nullptr) && (param_2 != 0)) {
     local_50.previous = g_currentExceptionFrame;
     g_currentExceptionFrame = &local_50;
     local_c = this;
@@ -42,7 +42,7 @@ void __thiscall STPlaySystemC::AddToRep(STPlaySystemC *this,undefined4 *param_1,
         local_8 = (int *)*puVar7;
         iVar3 = FUN_006b98c0(puVar7,local_8);
         if (iVar3 != 0) {
-          if (local_8 != (int *)0x0) {
+          if (local_8 != nullptr) {
             FreeAndNull(&local_8);
           }
           pSVar2->field_0069 = pSVar2->field_0069 - 1;

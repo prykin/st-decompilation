@@ -5,7 +5,7 @@
 void FUN_006c2ac0(int *param_1)
 
 {
-  if (param_1 != (int *)0x0) {
+  if (param_1 != nullptr) {
     FreeAndNull(&param_1);
   }
   return;

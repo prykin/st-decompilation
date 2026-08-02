@@ -37,14 +37,14 @@ void __thiscall TradePanelTy::DoneTradePanel(TradePanelTy *this)
       StartSystemTy::sub_006E56B0(pTVar2->field_000C,pTVar2->field_01CC);
     }
     pTVar2->field_01CC = 0;
-    if (pTVar2->field_01DD != (ccFntTy *)0x0) {
+    if (pTVar2->field_01DD != nullptr) {
       ccFntTy::operator_delete((uint *)pTVar2->field_01DD);
-      pTVar2->field_01DD = (ccFntTy *)0x0;
+      pTVar2->field_01DD = nullptr;
     }
-    pTVar2->field_01D9 = (ushort *)0x0;
-    pTVar2->field_01D5 = (ushort *)0x0;
-    pTVar2->field_01D1 = (ushort *)0x0;
-    g_tradePanel_00802A44 = (TradePanelTy *)0x0;
+    pTVar2->field_01D9 = nullptr;
+    pTVar2->field_01D5 = nullptr;
+    pTVar2->field_01D1 = nullptr;
+    g_tradePanel_00802A44 = nullptr;
     g_currentExceptionFrame = local_4c.previous;
     return;
   }

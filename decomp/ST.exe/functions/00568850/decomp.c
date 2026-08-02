@@ -17,7 +17,7 @@ void __thiscall FUN_00568850(void *this,int param_1)
       iVar1 = 2;
       piVar2 = (int *)((int)local_8 + 0xe2b);
       do {
-        FUN_006c1f00(iVar1,&local_c,(uint *)0x0);
+        FUN_006c1f00(iVar1,&local_c,nullptr);
         if (((local_c == 1) &&
             ((((3 < iVar1 && (iVar1 < 0xb)) || ((0x11 < iVar1 && (iVar1 < 0x15)))) ||
              ((10 < iVar1 && (iVar1 < 0x12)))))) && (*piVar2 == *(int *)(param_1 + 8))) {

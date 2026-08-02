@@ -17,7 +17,7 @@ ushort * FUN_005f1700(int param_1,int param_2,int param_3,int param_4,int param_
   char *local_c;
   uint local_8;
 
-  local_10 = (ushort *)0x0;
+  local_10 = nullptr;
   if (param_1 == 1) {
     local_c = (&PTR_s_basis_40_007ce534)[param_2];
   }
@@ -32,7 +32,7 @@ ushort * FUN_005f1700(int param_1,int param_2,int param_3,int param_4,int param_
     return local_10;
   }
   puVar3 = Library::Ourlib::MFRLOAD::mfRLoad
-                     (DAT_00806774,CASE_1D,local_c,0xffffffff,0,1,0,(undefined4 *)0x0);
+                     (DAT_00806774,CASE_1D,local_c,0xffffffff,0,1,0,nullptr);
   if (param_3 != 0) {
     g_currentExceptionFrame = local_5c.previous;
     return puVar3;

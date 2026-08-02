@@ -45,9 +45,9 @@ void __thiscall FSGSTy::CheckUpdate(FSGSTy *this)
   }
   wsprintfA((LPSTR)&DAT_0080f33a,"%s%s%s",&DAT_00807680,PTR_s_UPDATES__0079c020,
             PTR_s_ST_INF_0079c024);
-  pcVar6 = (char *)thunk_FUN_00649ff0(&DAT_0080f33a,&local_8,(undefined4 *)0x0,(int *)0x0);
+  pcVar6 = (char *)thunk_FUN_00649ff0(&DAT_0080f33a,&local_8,nullptr,nullptr);
   pFVar4 = local_c;
-  if (pcVar6 == (char *)0x0) {
+  if (pcVar6 == nullptr) {
     DoLogon(local_c);
     g_currentExceptionFrame = local_90.previous;
     return;
@@ -99,8 +99,8 @@ void __thiscall FSGSTy::CheckUpdate(FSGSTy *this)
   local_4c[4] = 0x6956;
   this_00 = pFVar4->field_1A5B->field_02E6;
   local_2c[2] = local_4c[2];
-  if (this_00 != (MMsgTy *)0x0) {
-    MMsgTy::SetMessage(this_00,0x25b7,'\x01',local_2c,local_4c,(undefined4 *)0x0,local_8,0x25b8);
+  if (this_00 != nullptr) {
+    MMsgTy::SetMessage(this_00,0x25b7,'\x01',local_2c,local_4c,nullptr,local_8,0x25b8);
     g_currentExceptionFrame = local_90.previous;
     return;
   }

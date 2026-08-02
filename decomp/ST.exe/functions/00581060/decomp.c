@@ -7,7 +7,7 @@ void FUN_00581060(void)
   undefined4 local_24 [4];
   undefined4 local_14;
 
-  if (DAT_008117bc != (undefined4 *)0x0) {
+  if (DAT_008117bc != nullptr) {
     memset(local_24, 0, 0x20); /* compiler bulk-zero initialization */
     local_14 = 0x5de2;
     /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */

@@ -62,7 +62,7 @@ void __thiscall MainMenuTy::PaintMainMenu(MainMenuTy *this)
     puVar3 = pMVar2->field_1AA7;
     iVar4 = 10;
     do {
-      if ((AnonShape_006C4AA0_6E9A3AA4 *)*puVar3 != (AnonShape_006C4AA0_6E9A3AA4 *)0x0) {
+      if ((AnonShape_006C4AA0_6E9A3AA4 *)*puVar3 != nullptr) {
         FUN_006c4aa0((AnonShape_006C4AA0_6E9A3AA4 *)*puVar3);
       }
       puVar3 = puVar3 + 1;

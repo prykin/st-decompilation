@@ -39,8 +39,8 @@ FUN_00715360(int *param_1,int param_2,char param_3,char *param_4,uint param_5,in
   uint local_c;
   AnonShape_00715360_91615618 *local_8;
 
-  local_8 = (AnonShape_00715360_91615618 *)0x0;
-  if (param_1 == (int *)0x0) {
+  local_8 = nullptr;
+  if (param_1 == nullptr) {
     return 0;
   }
   local_6c.previous = g_currentExceptionFrame;
@@ -48,15 +48,15 @@ FUN_00715360(int *param_1,int param_2,char param_3,char *param_4,uint param_5,in
   iVar1 = Library::MSVCRT::__setjmp3(local_6c.jumpBuffer,0);
   if (iVar1 != 0) {
     g_currentExceptionFrame = local_6c.previous;
-    if (local_8 != (AnonShape_00715360_91615618 *)0x0) {
+    if (local_8 != nullptr) {
       FreeAndNull(&local_8);
     }
     return iVar1;
   }
-  if (((int)param_5 < 0x16) || (param_4 == (char *)0x0)) {
+  if (((int)param_5 < 0x16) || (param_4 == nullptr)) {
     local_28 = param_3;
     local_27 = param_7;
-    if ((0 < (int)param_5) && (param_4 != (char *)0x0)) {
+    if ((0 < (int)param_5) && (param_4 != nullptr)) {
       pcVar5 = local_23;
       memmove(pcVar5, param_4, param_5); /* compiler REP MOVS byte copy */
       param_4 = (char *)((byte *)param_4 + param_5);
@@ -93,7 +93,7 @@ FUN_00715360(int *param_1,int param_2,char param_3,char *param_4,uint param_5,in
       uVar2 = iVar1 + 9;
     }
     Library::DKW::DDX::FUN_006b7650(param_1,param_2,local_8,uVar2);
-    if (local_8 != (AnonShape_00715360_91615618 *)0x0) {
+    if (local_8 != nullptr) {
       FreeAndNull(&local_8);
       g_currentExceptionFrame = local_6c.previous;
       return 0;

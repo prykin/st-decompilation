@@ -64,17 +64,17 @@ uint __thiscall STGroupBoatC::GrpPatrol(STGroupBoatC *this,int param_1)
   }
   memset(&this->field_0089, 0, 0x54); /* compiler bulk-zero initialization */
   this->field_0065 = 0;
-  if (this->field_0226 != (DArrayTy *)0x0) {
+  if (this->field_0226 != nullptr) {
     DArrayDestroy(this->field_0226);
-    this->field_0226 = (DArrayTy *)0x0;
+    this->field_0226 = nullptr;
   }
-  if (this->field_022A != (DArrayTy *)0x0) {
+  if (this->field_022A != nullptr) {
     DArrayDestroy(this->field_022A);
-    this->field_022A = (DArrayTy *)0x0;
+    this->field_022A = nullptr;
   }
-  if (this->field_022E != (DArrayTy *)0x0) {
+  if (this->field_022E != nullptr) {
     DArrayDestroy(this->field_022E);
-    this->field_022E = (DArrayTy *)0x0;
+    this->field_022E = nullptr;
   }
   this->field_0232 = -1;
   this->field_0236 = 1;
@@ -86,12 +86,12 @@ uint __thiscall STGroupBoatC::GrpPatrol(STGroupBoatC *this,int param_1)
   local_28 = local_2c;
   if ((int)local_2c < 1) {
     DArrayDestroy(this->field_0103);
-    this->field_0103 = (DArrayTy *)0x0;
+    this->field_0103 = nullptr;
     return 0;
   }
   uVar11 = 0;
   iVar3 = -30000;
-  local_30 = (DArrayTy *)0x0;
+  local_30 = nullptr;
   local_c = 30000;
   local_8 = 30000;
   local_24 = (short *)0xffff8ad0;
@@ -100,7 +100,7 @@ uint __thiscall STGroupBoatC::GrpPatrol(STGroupBoatC *this,int param_1)
       /* ST_PSEUDO[dynamic_array_indexing]: expected DArrayAt<T>(array, index) (runtime elementSize cannot be a static C array) */
       if ((uVar11 < local_2c) &&
          (psVar4 = (short *)(this->field_0103->elementSize * uVar11 + (int)this->field_0103->data),
-         psVar4 != (short *)0x0)) {
+         psVar4 != nullptr)) {
         iVar8 = (int)*psVar4;
         if (iVar8 < local_c) {
           local_c = iVar8;
@@ -126,7 +126,7 @@ uint __thiscall STGroupBoatC::GrpPatrol(STGroupBoatC *this,int param_1)
       if ((ushort)local_18 != 0xffff) {
         pSVar5 = STAllPlayersC::GetObjPtr
                            (g_allPlayers_007FA174,this->field_0024,(ushort)local_18,CASE_1);
-        if (pSVar5 == (STGameObjC *)0x0) {
+        if (pSVar5 == nullptr) {
           RaiseInternalException
                     (-0x5001fffc,g_overwriteContext_007ED77C,"E:\\__titans\\wlad\\to_grpb.cpp"
                      ,0x77d);
@@ -203,7 +203,7 @@ uint __thiscall STGroupBoatC::GrpPatrol(STGroupBoatC *this,int param_1)
     local_14 = local_14 + 1;
   } while ((short)local_14 < 5);
   if (this->field_0103->count == 0) {
-    psVar4 = (short *)0x0;
+    psVar4 = nullptr;
   }
   else {
     psVar4 = this->field_0103->data;
@@ -221,7 +221,7 @@ uint __thiscall STGroupBoatC::GrpPatrol(STGroupBoatC *this,int param_1)
                           (int)((DArrayTy *)local_34)->data);
       }
       else {
-        psVar4 = (short *)0x0;
+        psVar4 = nullptr;
       }
       iVar8 = local_c;
       if (g_pathingScratchGrid.cells
@@ -241,7 +241,7 @@ uint __thiscall STGroupBoatC::GrpPatrol(STGroupBoatC *this,int param_1)
       if ((ushort)local_18 != 0xffff) {
         pSVar5 = STAllPlayersC::GetObjPtr
                            (g_allPlayers_007FA174,this->field_0024,(ushort)local_18,CASE_1);
-        if (pSVar5 == (STGameObjC *)0x0) {
+        if (pSVar5 == nullptr) {
           RaiseInternalException
                     (-0x5001fffc,g_overwriteContext_007ED77C,"E:\\__titans\\wlad\\to_grpb.cpp"
                      ,0x7a7);
@@ -259,7 +259,7 @@ uint __thiscall STGroupBoatC::GrpPatrol(STGroupBoatC *this,int param_1)
       local_20 = GVar13 + 1;
     } while ((int)local_20 < local_1c);
   }
-  if (local_30 != (DArrayTy *)0x0) {
+  if (local_30 != nullptr) {
 joined_r0x0049bc58:
     local_28 = local_28 - 1;
     if (-1 < (int)local_28) {
@@ -286,7 +286,7 @@ joined_r0x0049bc58:
           if ((ushort)local_18 != 0xffff) {
             pSVar5 = STAllPlayersC::GetObjPtr
                                (g_allPlayers_007FA174,this->field_0024,(ushort)local_18,CASE_1);
-            if (pSVar5 == (STGameObjC *)0x0) {
+            if (pSVar5 == nullptr) {
               RaiseInternalException
                         (-0x5001fffc,g_overwriteContext_007ED77C,
                          "E:\\__titans\\wlad\\to_grpb.cpp",0x7bd);
@@ -309,11 +309,11 @@ joined_r0x0049bc58:
     }
     if (this->field_0103->count == 0) {
       DArrayDestroy(this->field_0103);
-      this->field_0103 = (DArrayTy *)0x0;
+      this->field_0103 = nullptr;
       return 0;
     }
   }
-  pDVar6 = Library::DKW::TBL::DArrayCreate((DArrayTy *)0x0,this->field_0103->count,6,1);
+  pDVar6 = Library::DKW::TBL::DArrayCreate(nullptr,this->field_0103->count,6,1);
   pDVar7 = this->field_0103;
   this->field_0226 = pDVar6;
   uVar11 = 0;
@@ -326,10 +326,10 @@ joined_r0x0049bc58:
     } while ((int)uVar11 < (int)pDVar7->count);
   }
   DArrayDestroy(this->field_0103);
-  this->field_0103 = (DArrayTy *)0x0;
+  this->field_0103 = nullptr;
   /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
   ReMakePatrolPoints(this,unaff_EDI);
-  pDVar7 = Library::DKW::TBL::DArrayCreate((DArrayTy *)0x0,(uint)this->field_0027,0x16,1);
+  pDVar7 = Library::DKW::TBL::DArrayCreate(nullptr,(uint)this->field_0027,0x16,1);
   this->field_022E = pDVar7;
   uVar11 = 0;
   local_6c = 0;
@@ -347,7 +347,7 @@ joined_r0x0049bc58:
   }
   bVar2 = thunk_FUN_00430750(CASE_8);
   this->field_023A = ((this->field_0242 * 0xc9) / (int)(uint)bVar2) / 3;
-  local_30 = Library::DKW::TBL::DArrayCreate((DArrayTy *)0x0,0,2,1);
+  local_30 = Library::DKW::TBL::DArrayCreate(nullptr,0,2,1);
   uVar11 = 0;
   local_44 = g_playSystem_00802A38->field_00E4;
   pDVar7 = this->field_022E;
@@ -358,7 +358,7 @@ joined_r0x0049bc58:
         this_00 = (STBoatC *)
                   STAllPlayersC::GetObjPtr
                             (g_allPlayers_007FA174,this->field_0024,(ushort)local_68[0],CASE_1);
-        if (this_00 == (STBoatC *)0x0) {
+        if (this_00 == nullptr) {
           iVar3 = ReportDebugMessage("E:\\__titans\\wlad\\to_grpb.cpp",0x7ed,0,0,"%s"
                                      ,"STGroupBoatC::GrpPatrol NULL value");
           if (iVar3 != 0) {

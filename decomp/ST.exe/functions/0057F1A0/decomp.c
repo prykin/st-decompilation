@@ -12,10 +12,10 @@ STDcResourcC * __cdecl CreateSTDcResourc(void)
   STDcResourcC *pSVar1;
 
   pSVar1 = (STDcResourcC *)FUN_006b04d0(0x277);
-  if (pSVar1 != (STDcResourcC *)0x0) {
+  if (pSVar1 != nullptr) {
     pSVar1 = STDcResourcC::STDcResourcC(pSVar1);
     return pSVar1;
   }
-  return (STDcResourcC *)0x0;
+  return nullptr;
 }
 

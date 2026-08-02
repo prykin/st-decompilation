@@ -30,10 +30,10 @@ undefined4 FUN_0075ae60(undefined4 *param_1)
   if (0 < (int)param_1[7]) {
     local_8 = (undefined4 *)(param_1[0x34] + 0x4c);
     /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
-    param_1 = (undefined4 *)0x0;
+    param_1 = nullptr;
     do {
       psVar1 = (short *)*local_8;
-      if (psVar1 == (short *)0x0) {
+      if (psVar1 == nullptr) {
         return 0;
       }
       if (*psVar1 == 0) {

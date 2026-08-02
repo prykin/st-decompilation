@@ -13,10 +13,10 @@ int __thiscall FUN_00714e80(void *this,char *param_1)
   char *pcVar7;
   char *pcVar8;
 
-  if (param_1 == (char *)0x0) {
+  if (param_1 == nullptr) {
     return -0x34;
   }
-  if (*(char **)this == (char *)0x0) {
+  if (*(char **)this == nullptr) {
     uVar3 = 0;
   }
   else {

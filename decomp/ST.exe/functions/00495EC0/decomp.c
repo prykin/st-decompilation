@@ -29,7 +29,7 @@ DumpClassC::WritePtr
   }
   if (g_worldGrid.cells
       [(int)g_worldGrid.sizeX * (int)param_2 + (int)g_worldGrid.planeStride * (int)param_3 +
-       (int)param_1].objects[param_4] == (STWorldObject *)0x0) {
+       (int)param_1].objects[param_4] == nullptr) {
     g_worldGrid.cells
     [(int)g_worldGrid.sizeX * (int)param_2 + (int)g_worldGrid.planeStride * (int)param_3 +
      (int)param_1].objects[param_4] = (STWorldObject *)param_5;

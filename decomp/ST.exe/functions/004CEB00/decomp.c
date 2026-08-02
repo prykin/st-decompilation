@@ -87,7 +87,7 @@ switchD_004ceb68_caseD_32:
   case CASE_2:
     iVar5 = thunk_FUN_004b31c0((int *)this->field_0024,0);
     if (iVar5 == 0) {
-      if (DAT_00811798 == (void *)0x0) {
+      if (DAT_00811798 == nullptr) {
         return local_10;
       }
       thunk_FUN_00621580(DAT_00811798,this->field_0024,8);
@@ -114,13 +114,13 @@ switchD_004ceb68_caseD_32:
                  ((g_worldGrid.sizeZ <= sVar10 ||
                   (g_worldGrid.cells
                    [(int)sVar10 * (int)g_worldGrid.planeStride + (int)g_worldGrid.sizeX * (int)sVar6
-                    + (int)sVar3].objects[0] == (STWorldObject *)0x0)))))) {
+                    + (int)sVar3].objects[0] == nullptr)))))) {
             this->field_04E0[0] = local_8;
             iVar5 = this->field_05B8;
             this->field_04DC = 1;
             this->field_04E0[1] = local_c;
             this->field_04E0[2] = iVar5 + 1;
-            if (DAT_00800bcc == (void *)0x0) {
+            if (DAT_00800bcc == nullptr) {
               thunk_FUN_004cf430();
             }
             thunk_FUN_004d0970(DAT_00800bcc,this->field_04E0[0],this->field_04E0[1],
@@ -179,7 +179,7 @@ switchD_004ceb68_caseD_32:
     while( true ) {
       if (iVar5 == 0) break;
       iVar5 = iVar5 + -1;
-      *ppbVar13 = (byte *)0x0;
+      *ppbVar13 = nullptr;
       ppbVar13 = ppbVar13 + 1;
     }
     *(undefined1 *)ppbVar13 = 0;

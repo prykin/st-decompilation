@@ -29,7 +29,7 @@ byte * __cdecl EventDataPack(AnonShape_0065CD10_BA40DE58 *param_1,uint *param_2)
   int local_c;
   AnonShape_0065CD10_CB9334E9 *local_8;
 
-  local_8 = (AnonShape_0065CD10_CB9334E9 *)0x0;
+  local_8 = nullptr;
   local_c = 0;
   local_50.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_50;
@@ -63,7 +63,7 @@ byte * __cdecl EventDataPack(AnonShape_0065CD10_BA40DE58 *param_1,uint *param_2)
     param_1->field_046A = iVar2;
     iVar2 = FUN_006c87f0(param_1->field_0456);
     param_1->field_045E = iVar2;
-    if (&param_1->field_046E == (int *)0x0) {
+    if (&param_1->field_046E == nullptr) {
       iVar7 = 0;
     }
     else {
@@ -96,7 +96,7 @@ byte * __cdecl EventDataPack(AnonShape_0065CD10_BA40DE58 *param_1,uint *param_2)
         else {
           iVar2 = 0;
         }
-        if (*(uint **)(iVar2 + 0xf) != (uint *)0x0) {
+        if (*(uint **)(iVar2 + 0xf) != nullptr) {
           FUN_006affc0(*(uint **)(iVar2 + 0xf),puVar8,&local_c);
           iVar7 = (int)puVar8 + (-0x49e - (int)local_8);
           puVar8 = (uint *)((int)puVar8 + *(int *)(iVar2 + 0x17));
@@ -114,7 +114,7 @@ byte * __cdecl EventDataPack(AnonShape_0065CD10_BA40DE58 *param_1,uint *param_2)
     FUN_006c8840(local_8->field_0456,puVar8,&local_c);
     local_8->field_045A = (int)puVar8 + (-0x49e - (int)local_8);
     puVar9 = (undefined4 *)((int)puVar8 + local_8->field_045E);
-    if (&param_1->field_046E == (int *)0x0) {
+    if (&param_1->field_046E == nullptr) {
       uVar6 = 0;
     }
     else {
@@ -129,7 +129,7 @@ byte * __cdecl EventDataPack(AnonShape_0065CD10_BA40DE58 *param_1,uint *param_2)
     return (byte *)local_8;
   }
   g_currentExceptionFrame = local_50.previous;
-  if (local_8 != (AnonShape_0065CD10_CB9334E9 *)0x0) {
+  if (local_8 != nullptr) {
     FreeAndNull(&local_8);
   }
   iVar7 = ReportDebugMessage("E:\\__titans\\ai\\ai_event_d.cpp",0x89,0,iVar2,"%s",
@@ -138,6 +138,6 @@ byte * __cdecl EventDataPack(AnonShape_0065CD10_BA40DE58 *param_1,uint *param_2)
     STDebugBreak(); /* noreturn in standalone pseudocode */
   }
   RaiseInternalException(iVar2,0,"E:\\__titans\\ai\\ai_event_d.cpp",0x8a);
-  return (byte *)0x0;
+  return nullptr;
 }
 

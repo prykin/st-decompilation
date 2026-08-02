@@ -17,7 +17,7 @@ void __thiscall BldLabPanelTy::Update(BldLabPanelTy *this,void *param_1)
   dword local_c;
   BldLabPanelTy *local_8;
 
-  if (this->field_027A != (BldLabPanelTy_field_027ADArray *)0x0) {
+  if (this->field_027A != nullptr) {
     local_c = this->field_027A->count;
     local_50.previous = g_currentExceptionFrame;
     g_currentExceptionFrame = &local_50;

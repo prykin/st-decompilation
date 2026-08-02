@@ -14,12 +14,12 @@ PopUpTy * __cdecl CreatePopUp(void)
   int iVar2;
 
   this = (PopUpTy *)FUN_006b04d0(0xa1);
-  if (this != (PopUpTy *)0x0) {
+  if (this != nullptr) {
     sub_006E5FB0(this);
     *(undefined **)this = &UNK_0079ace8;
-    this->field_0090 = (ushort *)0x0;
-    this->field_0094 = (ccFntTy *)0x0;
-    this->field_0098 = (uint *)0x0;
+    this->field_0090 = nullptr;
+    this->field_0094 = nullptr;
+    this->field_0098 = nullptr;
     puVar1 = &this->field_0054;
     iVar2 = 0xf;
     do {
@@ -31,6 +31,6 @@ PopUpTy * __cdecl CreatePopUp(void)
     this->field_009C = 0;
     return this;
   }
-  return (PopUpTy *)0x0;
+  return nullptr;
 }
 

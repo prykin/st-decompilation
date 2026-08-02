@@ -23,7 +23,7 @@ uint FUN_00496a90(int param_1,int param_2,int param_3,undefined4 param_4,int par
         piVar3 = (int *)(pDVar5->elementSize * uVar4 + (int)pDVar5->data);
       }
       else {
-        piVar3 = (int *)0x0;
+        piVar3 = nullptr;
       }
       if ((piVar3[4] == param_5) &&
          (((uVar2 = uVar4, *piVar3 != param_1 || (piVar3[1] != param_2)) || (piVar3[2] != param_3)))

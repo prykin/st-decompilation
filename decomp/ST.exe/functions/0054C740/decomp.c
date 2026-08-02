@@ -25,13 +25,13 @@ void CreatePlaySystem(void)
   errorCode = Library::MSVCRT::__setjmp3(local_50.jumpBuffer,0);
   if (errorCode == 0) {
     this = (STPlaySystemC *)Library::MSVCRT::FUN_0072e530(0xf8);
-    if (this == (STPlaySystemC *)0x0) {
-      g_playSystem_00802A38 = (STPlaySystemC *)0x0;
+    if (this == nullptr) {
+      g_playSystem_00802A38 = nullptr;
     }
     else {
       g_playSystem_00802A38 = STPlaySystemC::STPlaySystemC(this,g_appClass_00806728);
     }
-    if (g_playSystem_00802A38 == (STPlaySystemC *)0x0) {
+    if (g_playSystem_00802A38 == nullptr) {
       RaiseInternalException
                 (-1,g_overwriteContext_007ED77C,"E:\\__titans\\Andrey\\tplaysys.cpp",0x7d);
     }
@@ -50,14 +50,14 @@ void CreatePlaySystem(void)
       bVar3 = 0;
       local_8 = local_8 & 0xffffff00;
       do {
-        thunk_FUN_00435850((char)local_8,1,(int *)0x0);
+        thunk_FUN_00435850((char)local_8,1,nullptr);
         bVar3 = bVar3 + 1;
         /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
         local_8 = CONCAT31(local_8._1_3_,bVar3);
       } while (bVar3 < 8);
     }
     CreateAi();
-    if (g_cMf32_00806754 != (cMf32 *)0x0) {
+    if (g_cMf32_00806754 != nullptr) {
       local_c = &local_8;
       local_8 = 0x32;
       cMf32::RecGet(g_cMf32_00806754,0xc,PTR_s_LAST_NAME_0079ae2c,(int *)&local_c,0);

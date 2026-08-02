@@ -42,16 +42,16 @@ STAllPlayersC::GetTOBJList
       STDebugBreak(); /* noreturn in standalone pseudocode */
     }
     RaiseInternalException(iVar4,0,"E:\\__titans\\wlad\\to_allpl.cpp",0x1fc0);
-    return (uint *)0x0;
+    return nullptr;
   }
-  local_8 = Library::DKW::TBL::DArrayCreate((DArrayTy *)0x0,0,2,1);
+  local_8 = Library::DKW::TBL::DArrayCreate(nullptr,0,2,1);
   iVar4 = 0;
   if (0 < local_c) {
     do {
       /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
       piVar1 = *(int **)(*(int *)(local_10 + 0x1c) + iVar4 * 4);
       /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-      if (((piVar1 == (int *)0x0) || (SVar5 = (**(code **)(*piVar1 + 0x2c))(), SVar5 != param_2)) ||
+      if (((piVar1 == nullptr) || (SVar5 = (**(code **)(*piVar1 + 0x2c))(), SVar5 != param_2)) ||
          (iVar6 = (**(code **)(*piVar1 + 0xf8))(), iVar6 == 0)) {
 switchD_0043e836_caseD_3a:
         bVar3 = false;

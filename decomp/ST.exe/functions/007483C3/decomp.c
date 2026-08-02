@@ -27,7 +27,7 @@ int __thiscall FUN_007483c3(void *this,int *param_1,int *param_2)
   if (((iVar2 < 0) || (iVar2 = (**(code **)(*(int *)this + 0x3c))(*param_2,&local_14), iVar2 < 0))
      || (iVar2 = (**(code **)(*param_1 + 0x10))(param_1,*param_2,0), iVar2 < 0)) {
     piVar3 = (int *)*param_2;
-    if (piVar3 != (int *)0x0) {
+    if (piVar3 != nullptr) {
       /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
       (**(code **)(*piVar3 + 8))(piVar3);
       *param_2 = 0;
@@ -41,7 +41,7 @@ int __thiscall FUN_007483c3(void *this,int *param_1,int *param_2)
       /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
       param_2 = piVar3;
       piVar3 = (int *)*piVar1;
-      if (piVar3 == (int *)0x0) {
+      if (piVar3 == nullptr) {
         return (int)param_2;
       }
       /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */

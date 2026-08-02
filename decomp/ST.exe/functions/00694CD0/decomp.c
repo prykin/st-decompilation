@@ -30,7 +30,7 @@ void __thiscall CGenerate::sub_00694CD0(CGenerate *this,AnonShape_00694CD0_AC50F
         puVar7 = (uint *)(*(int *)(iVar3 + 8) * local_8 + *(int *)(iVar3 + 0x1c));
       }
       else {
-        puVar7 = (uint *)0x0;
+        puVar7 = nullptr;
       }
       local_c = *puVar7 >> 0x10;
       thunk_FUN_00693b20((short)*puVar7,local_c,(int)(puVar7[0xe] - puVar7[0xc]) / 2 + puVar7[0xc],
@@ -51,7 +51,7 @@ void __thiscall CGenerate::sub_00694CD0(CGenerate *this,AnonShape_00694CD0_AC50F
         psVar8 = (short *)(*(int *)(iVar5 + 8) * local_8 + *(int *)(iVar5 + 0x1c));
       }
       else {
-        psVar8 = (short *)0x0;
+        psVar8 = nullptr;
       }
       if (*(short *)(DAT_00853dd4 +
                     ((int)psVar8[2] * iVar3 * iVar4 * 4 + (int)psVar8[1] * *this->field_0008 * 2 +

@@ -9,9 +9,9 @@ void __fastcall AiFltClassTy::sub_0065D720(AnonShape_0065D720_52DE2AAB *param_1,
 {
   STGroupBoatC *pSVar1;
 
-  if ((param_1->field_007D != 0xfffe) && (g_allPlayers_007FA174 != (STAllPlayersC *)0x0)) {
+  if ((param_1->field_007D != 0xfffe) && (g_allPlayers_007FA174 != nullptr)) {
     pSVar1 = thunk_FUN_0042b760(param_1->field_0024,param_1->field_007D);
-    if (pSVar1 != (STGroupBoatC *)0x0) {
+    if (pSVar1 != nullptr) {
       thunk_FUN_00423380((int)pSVar1);
       return;
     }

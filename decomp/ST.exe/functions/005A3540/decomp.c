@@ -31,14 +31,14 @@ void __thiscall FSGSTy::SetGameList(FSGSTy *this,int param_1,int *param_2)
   FSGSTy_field_1EBEElement *element_1ebe;
   uint local_8;
 
-  if ((this->field_1A5F == CASE_8) && (this->field_1EBE != (FSGSTy_field_1EBEDArray *)0x0)) {
+  if ((this->field_1A5F == CASE_8) && (this->field_1EBE != nullptr)) {
     local_60.previous = g_currentExceptionFrame;
     g_currentExceptionFrame = &local_60;
     local_10 = this;
     iVar3 = Library::MSVCRT::__setjmp3(local_60.jumpBuffer,0);
     this_00 = g_cursorClass_00802A30;
     if (iVar3 == 0) {
-      if (g_cursorClass_00802A30 != (CursorClassTy *)0x0) {
+      if (g_cursorClass_00802A30 != nullptr) {
         iVar3 = g_cursorClass_00802A30->field_00C9;
         iVar6 = g_cursorClass_00802A30->field_00C5;
         g_cursorClass_00802A30->field_0493 = CASE_1;
@@ -56,9 +56,9 @@ void __thiscall FSGSTy::SetGameList(FSGSTy *this,int param_1,int *param_2)
         element_1ebe = DArrayAt<FSGSTy_field_1EBEElement>(pFVar12, (uint)*(ushort *)&this_01->field_0x31);
       }
       else {
-        element_1ebe = (FSGSTy_field_1EBEElement *)0x0;
+        element_1ebe = nullptr;
       }
-      if (element_1ebe != (FSGSTy_field_1EBEElement *)0x0) {
+      if (element_1ebe != nullptr) {
         puVar8 = element_1ebe;
         puVar5 = local_2bc;
         memmove(puVar5, puVar8, 0x25c); /* compiler REP MOVS byte copy */
@@ -81,12 +81,12 @@ void __thiscall FSGSTy::SetGameList(FSGSTy *this,int param_1,int *param_2)
           }
           *(undefined4 *)&this_01->field_0x31 = uVar4;
           FUN_006e6080(this_01,2,this_01->field_1B20,(undefined4 *)&this_01->field_0x1d);
-          if (element_1ebe != (FSGSTy_field_1EBEElement *)0x0) {
+          if (element_1ebe != nullptr) {
             uVar7 = 0;
             local_8 = this_01->field_1EBE->count;
             if (local_8 != 0) {
               if (local_8 == 0) {
-                puVar5 = (uint *)0x0;
+                puVar5 = nullptr;
                 goto LAB_005a37da;
               }
               do {
@@ -94,7 +94,7 @@ void __thiscall FSGSTy::SetGameList(FSGSTy *this,int param_1,int *param_2)
                 puVar5 = (uint *)((int)&this_01->field_1EBE->data->field_0000 +
                                  this_01->field_1EBE->elementSize * uVar7);
 LAB_005a37da:
-                if (puVar5 != (uint *)0x0) {
+                if (puVar5 != nullptr) {
                   pbVar10 = local_290;
                   pbVar9 = (byte *)(puVar5 + 0xb);
                   do {

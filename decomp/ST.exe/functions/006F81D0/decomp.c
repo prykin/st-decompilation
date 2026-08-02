@@ -193,7 +193,7 @@ LAB_006f827e:
                 puVar10 = puVar10 + -1;
                 /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
                 param_1 = puVar11;
-              } while (puVar10 != (undefined1 *)0x0);
+              } while (puVar10 != nullptr);
             }
           }
           /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
@@ -217,7 +217,7 @@ LAB_006f827e:
               }
               /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
               param_1 = param_1 + -1;
-            } while (param_1 != (undefined1 *)0x0);
+            } while (param_1 != nullptr);
           }
         }
         iVar9 = (param_9 - param_10) - param_11;

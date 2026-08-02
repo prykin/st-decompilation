@@ -311,7 +311,7 @@ void __thiscall MainMenuTy::SetMode(MainMenuTy *this,char param_1,int param_2)
     local_13d = 1;
     local_151 = 2;
     local_14d = 0x6943;
-    if (*(MMsgTy **)(pSVar1 + 0x2e6) != (MMsgTy *)0x0) {
+    if (*(MMsgTy **)(pSVar1 + 0x2e6) != nullptr) {
       MMsgTy::SetPanel(*(MMsgTy **)(pSVar1 + 0x2e6),0,(int)&local_24c,0,0);
     }
     Library::DKW::DDX::FUN_006ba9e0(g_dDXContext_0080759C,0xe9,0x14,0x14c,0x18,0);

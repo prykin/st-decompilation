@@ -37,7 +37,7 @@ undefined4 __cdecl FUN_0057b350(int *param_1,int param_2,int *param_3)
   else {
     pvVar7 = Library::DKW::LIB::MemAlloc(param_2 << 3);
     *param_3 = (int)pvVar7;
-    if (pvVar7 != (void *)0x0) {
+    if (pvVar7 != nullptr) {
       local_8 = 0;
       local_c = -0xc9;
       local_18 = 3;

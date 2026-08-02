@@ -29,86 +29,86 @@ void __thiscall STAppC::DoneApp(STAppC *this)
       FreeAndNull(&local_8->field_1189);
     }
     pSVar3->field_118D = 0;
-    if (PTR_00806740 != (DArrayTy *)0x0) {
+    if (PTR_00806740 != nullptr) {
       DArrayDestroy(PTR_00806740);
     }
-    PTR_00806740 = (DArrayTy *)0x0;
+    PTR_00806740 = nullptr;
     thunk_FUN_005711d0(pSVar3,(int *)&g_parentSystem_0081163C);
     thunk_FUN_005711d0(pSVar3,(int *)&g_startSystem_0081176C);
     CloseGameDBs(pSVar3);
     DestroyBaseSystem();
-    if ((DArrayTy *)pSVar3->field_4EE2 != (DArrayTy *)0x0) {
+    if ((DArrayTy *)pSVar3->field_4EE2 != nullptr) {
       DArrayDestroy((DArrayTy *)pSVar3->field_4EE2);
     }
-    pSVar3->field_4EE2 = (uint *)0x0;
-    if ((DArrayTy *)pSVar3->field_4EE6 != (DArrayTy *)0x0) {
+    pSVar3->field_4EE2 = nullptr;
+    if ((DArrayTy *)pSVar3->field_4EE6 != nullptr) {
       DArrayDestroy((DArrayTy *)pSVar3->field_4EE6);
     }
-    pSVar3->field_4EE6 = (uint *)0x0;
-    if (g_anonShape_006C3FC0_72DDFA27_008075A0 != (AnonShape_006C3FC0_72DDFA27 *)0x0) {
+    pSVar3->field_4EE6 = nullptr;
+    if (g_anonShape_006C3FC0_72DDFA27_008075A0 != nullptr) {
       FUN_006c3aa0((int *)g_anonShape_006C3FC0_72DDFA27_008075A0);
-      g_anonShape_006C3FC0_72DDFA27_008075A0 = (AnonShape_006C3FC0_72DDFA27 *)0x0;
+      g_anonShape_006C3FC0_72DDFA27_008075A0 = nullptr;
     }
-    if (g_int_008075A4 != (int *)0x0) {
+    if (g_int_008075A4 != nullptr) {
       FUN_006c2ac0(g_int_008075A4);
-      g_int_008075A4 = (int *)0x0;
+      g_int_008075A4 = nullptr;
     }
-    if (g_ddxContext_008075A8 != (DDXContext_008075A8 *)0x0) {
+    if (g_ddxContext_008075A8 != nullptr) {
       Library::DKW::DDX::FUN_006b3cc0((int *)g_ddxContext_008075A8);
-      g_ddxContext_008075A8 = (DDXContext_008075A8 *)0x0;
+      g_ddxContext_008075A8 = nullptr;
     }
-    if (g_dDXContext_0080759C != (DDXContext *)0x0) {
+    if (g_dDXContext_0080759C != nullptr) {
       FUN_006ba600((undefined4 *)g_dDXContext_0080759C);
-      g_dDXContext_0080759C = (DDXContext *)0x0;
+      g_dDXContext_0080759C = nullptr;
     }
     thunk_FUN_0055d910();
-    if (g_cMf32_00806758 != (cMf32 *)0x0) {
+    if (g_cMf32_00806758 != nullptr) {
       cMf32::delete(g_cMf32_00806758);
     }
-    g_cMf32_00806758 = (cMf32 *)0x0;
-    if (g_cMf32_00806760 != (cMf32 *)0x0) {
+    g_cMf32_00806758 = nullptr;
+    if (g_cMf32_00806760 != nullptr) {
       cMf32::RecMemFree(g_cMf32_00806760,&DAT_0080679c);
       if (DAT_00806764 != 0) {
         FUN_0070a300(&DAT_00806764);
       }
       cMf32::delete(g_cMf32_00806760);
-      g_cMf32_00806760 = (cMf32 *)0x0;
+      g_cMf32_00806760 = nullptr;
     }
     if (DAT_00806784 != 0) {
       FUN_0070a300(&DAT_00806784);
     }
-    if (g_cMf32_00806780 != (cMf32 *)0x0) {
+    if (g_cMf32_00806780 != nullptr) {
       cMf32::delete(g_cMf32_00806780);
     }
-    g_cMf32_00806780 = (cMf32 *)0x0;
-    if (g_cMf32_00806798 != (cMf32 *)0x0) {
+    g_cMf32_00806780 = nullptr;
+    if (g_cMf32_00806798 != nullptr) {
       cMf32::delete(g_cMf32_00806798);
     }
-    g_cMf32_00806798 = (cMf32 *)0x0;
-    if (g_cMf32_0080675C != (cMf32 *)0x0) {
+    g_cMf32_00806798 = nullptr;
+    if (g_cMf32_0080675C != nullptr) {
       cMf32::delete(g_cMf32_0080675C);
     }
-    g_cMf32_0080675C = (cMf32 *)0x0;
-    if (pSVar3->field_4EDE != (DArrayTy *)0x0) {
+    g_cMf32_0080675C = nullptr;
+    if (pSVar3->field_4EDE != nullptr) {
       DArrayDestroy(pSVar3->field_4EDE);
     }
-    pSVar3->field_4EDE = (DArrayTy *)0x0;
-    if ((DArrayTy *)pSVar3->field_4EA7 != (DArrayTy *)0x0) {
+    pSVar3->field_4EDE = nullptr;
+    if ((DArrayTy *)pSVar3->field_4EA7 != nullptr) {
       FUN_006b5570((DArrayTy *)pSVar3->field_4EA7);
     }
-    pSVar3->field_4EA7 = (uint *)0x0;
-    if ((DArrayTy *)pSVar3->field_4EAB != (DArrayTy *)0x0) {
+    pSVar3->field_4EA7 = nullptr;
+    if ((DArrayTy *)pSVar3->field_4EAB != nullptr) {
       FUN_006b5570((DArrayTy *)pSVar3->field_4EAB);
     }
-    pSVar3->field_4EAB = (uint *)0x0;
-    if (pSVar3->field_4EDA != (DArrayTy *)0x0) {
+    pSVar3->field_4EAB = nullptr;
+    if (pSVar3->field_4EDA != nullptr) {
       FUN_006b5570(pSVar3->field_4EDA);
     }
-    pSVar3->field_4EDA = (DArrayTy *)0x0;
-    if (pSVar3->field_7D12 != (ushort *)0x0) {
+    pSVar3->field_4EDA = nullptr;
+    if (pSVar3->field_7D12 != nullptr) {
       FreeAndNull(&pSVar3->field_7D12);
     }
-    if (pSVar3->field_76F2 != (void *)0x0) {
+    if (pSVar3->field_76F2 != nullptr) {
       FreeAndNull(&pSVar3->field_76F2);
     }
     thunk_FUN_005713b0((int)pSVar3);
@@ -129,7 +129,7 @@ void __thiscall STAppC::DoneApp(STAppC *this)
     g_hWnd_00806748 = (HWND)0x0;
     UnregisterClassA("STWindowClass",g_hInstance_00856D70);
     pSVar3 = local_8;
-    if (local_8->field_115A != (AnonPointee_STAppC_115A *)0x0) {
+    if (local_8->field_115A != nullptr) {
       FreeAndNull(&local_8->field_115A);
     }
     AppClassTy::DoneApp((AppClassTy *)pSVar3);

@@ -24,7 +24,7 @@ void __thiscall STBoatC::sub_0048D930(STBoatC *this)
         (((-1 < sVar2 && (sVar2 < g_worldGrid.sizeZ)) &&
          (pSVar4 = g_worldGrid.cells
                    [(int)g_worldGrid.planeStride * (int)sVar2 + (int)g_worldGrid.sizeX * (int)sVar3
-                    + (int)sVar1].objects[0], pSVar4 != (STWorldObject *)0x0)))) &&
+                    + (int)sVar1].objects[0], pSVar4 != nullptr)))) &&
        (*(int *)&pSVar4->field_0x18 == this->field_04A1)) {
       thunk_FUN_004e18e0(pSVar4,this->field_0018);
       thunk_FUN_004e1690(pSVar4,this->field_0018);
@@ -37,7 +37,7 @@ void __thiscall STBoatC::sub_0048D930(STBoatC *this)
         ((((sVar3 < g_worldGrid.sizeY && (-1 < sVar2)) && (sVar2 < g_worldGrid.sizeZ)) &&
          ((pSVar4 = g_worldGrid.cells
                     [(int)g_worldGrid.planeStride * (int)sVar2 + (int)g_worldGrid.sizeX * (int)sVar3
-                     + (int)sVar1].objects[0], pSVar4 != (STWorldObject *)0x0 &&
+                     + (int)sVar1].objects[0], pSVar4 != nullptr &&
           (*(int *)&pSVar4->field_0x18 == this->field_04AB)))))))) {
       thunk_FUN_004e18e0(pSVar4,this->field_0018);
       thunk_FUN_004e1690(pSVar4,this->field_0018);
@@ -52,7 +52,7 @@ void __thiscall STBoatC::sub_0048D930(STBoatC *this)
         (((-1 < sVar2 && (sVar2 < g_worldGrid.sizeZ)) &&
          (pSVar4 = g_worldGrid.cells
                    [(int)g_worldGrid.planeStride * (int)sVar2 + (int)g_worldGrid.sizeX * (int)sVar3
-                    + (int)sVar1].objects[0], pSVar4 != (STWorldObject *)0x0)))) &&
+                    + (int)sVar1].objects[0], pSVar4 != nullptr)))) &&
        (*(int *)&pSVar4->field_0x18 == this->field_0532)) {
       thunk_FUN_004e18e0(pSVar4,this->field_0018);
       thunk_FUN_004e1690(pSVar4,this->field_0018);

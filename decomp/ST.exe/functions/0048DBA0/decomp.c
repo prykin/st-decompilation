@@ -21,7 +21,7 @@ void __thiscall STBoatC::sub_0048DBA0(STBoatC *this)
       this_00 = g_worldGrid.cells
                 [(int)g_worldGrid.planeStride * (int)sVar2 + (int)g_worldGrid.sizeX * (int)sVar3 +
                  (int)sVar1].objects[0];
-      if ((this_00 != (STWorldObject *)0x0) && (*(int *)&this_00->field_0x18 == this->field_055A)) {
+      if ((this_00 != nullptr) && (*(int *)&this_00->field_0x18 == this->field_055A)) {
         thunk_FUN_004e22a0(this_00,this->field_0568,this->field_0018);
         thunk_FUN_004e2000(this_00,this->field_0568,this->field_0018);
       }

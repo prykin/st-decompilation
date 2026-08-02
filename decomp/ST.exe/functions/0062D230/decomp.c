@@ -12,7 +12,7 @@ uint __thiscall FUN_0062d230(void *this,int *param_1)
 
   /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
   array = *(DArrayTy **)((int)this + *param_1 * 4 + 0x30);
-  if (array != (DArrayTy *)0x0) {
+  if (array != nullptr) {
     uVar1 = array->count;
     index = 0;
     if (0 < (int)uVar1) {
@@ -20,7 +20,7 @@ uint __thiscall FUN_0062d230(void *this,int *param_1)
       /* ST_PSEUDO[dynamic_array_indexing]: expected DArrayAt<T>(array, index) (runtime stride) */
       while ((((!bVar3 ||
                (pvVar2 = (void *)(array->elementSize * index + (int)array->data),
-               pvVar2 == (void *)0x0)) || (*(int *)((int)pvVar2 + 4) != param_1[1])) ||
+               pvVar2 == nullptr)) || (*(int *)((int)pvVar2 + 4) != param_1[1])) ||
              (((*(int *)((int)pvVar2 + 8) != param_1[2] ||
                (*(int *)((int)pvVar2 + 0xc) != param_1[3])) ||
               (*(int *)((int)pvVar2 + 0x14) != param_1[5]))))) {

@@ -50,8 +50,8 @@ byte * __thiscall STLightC::sub_0061D710(STLightC *this,int *param_1)
   }
   size = iVar11 + 0x20 + this->field_00A3->count * this->field_00A3->elementSize;
   pbVar2 = Library::DKW::LIB::MemAlloc(size);
-  if (this == (STLightC *)0x0) {
-    puVar9 = (byte *)0x0;
+  if (this == nullptr) {
+    puVar9 = nullptr;
   }
   else {
     puVar9 = (byte *)&this->field_0x1c;
@@ -73,7 +73,7 @@ byte * __thiscall STLightC::sub_0061D710(STLightC *this,int *param_1)
     pbVar12 = pbVar12 + 1;
     pbVar10 = pbVar10 + 1;
   }
-  local_c = (byte *)0x0;
+  local_c = nullptr;
   if (0 < this->field_0093) {
     do {
       iVar4 = *(int *)((int)this->field_009B + (int)local_c * 4);

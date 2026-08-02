@@ -7,7 +7,7 @@ void FUN_006ba7b0(AnonShape_006BA7B0_E82BD3A2 *param_1,undefined4 param_2,undefi
                  undefined4 *param_4)
 
 {
-  if (param_4 != (undefined4 *)0x0) {
+  if (param_4 != nullptr) {
     *param_4 = param_1->field_0010;
     param_4[1] = param_1->field_0014;
   }

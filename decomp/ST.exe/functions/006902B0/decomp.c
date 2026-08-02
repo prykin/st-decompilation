@@ -27,8 +27,8 @@ void __thiscall AiTactClassTy::sub_006902B0(AiTactClassTy *this,short param_1,ui
       /* ST_PSEUDO[dynamic_array_indexing]: expected DArrayAt<T>(array, index) (runtime elementSize cannot be a static C array) */
       if ((((bVar4) &&
            (puVar1 = (undefined1 *)((int)&pAVar2->data->field_0000 + pAVar2->elementSize * uVar3),
-           (undefined4 *)puVar1 != (undefined4 *)0x0)) &&
-          (this_00 = *(AiFltClassTy **)(puVar1 + 4), this_00 != (AiFltClassTy *)0x0)) &&
+           (undefined4 *)puVar1 != nullptr)) &&
+          (this_00 = *(AiFltClassTy **)(puVar1 + 4), this_00 != nullptr)) &&
          (this_00->field_007B == param_1)) {
         AiFltClassTy::GetAiMess(this_00,param_2);
       }

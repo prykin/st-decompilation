@@ -67,7 +67,7 @@ TraksClassTy::TraksCreate
   if (((param_15 & 1) == 0) && (DAT_0080731e == 0)) {
     return 0;
   }
-  if (this->field_0024 == (TraksClassTy_field_0024DArray *)0x0) {
+  if (this->field_0024 == nullptr) {
     return 0;
   }
   if (param_4 < 0) {
@@ -92,7 +92,7 @@ TraksClassTy::TraksCreate
   local_14 = iVar7;
   if ((param_15 & 2) != 0) goto LAB_0055693a;
   sVar5 = (short)local_18;
-  if (g_sT3DSMAPContext_00807598 != (ST3DSMAPContext *)0x0) {
+  if (g_sT3DSMAPContext_00807598 != nullptr) {
     if (((((int)(short)local_10 < g_sT3DSMAPContext_00807598->field_0048) ||
          (g_sT3DSMAPContext_00807598->field_0058 < (int)(short)local_10)) ||
         ((int)sVar5 < g_sT3DSMAPContext_00807598->field_0044)) ||
@@ -107,7 +107,7 @@ TraksClassTy::TraksCreate
     }
   }
   pVVar2 = g_visibleClass_00802A88;
-  if (g_visibleClass_00802A88 == (VisibleClassTy *)0x0) goto LAB_0055693a;
+  if (g_visibleClass_00802A88 == nullptr) goto LAB_0055693a;
   iVar7 = (int)(short)iVar7;
   if ((DAT_0080874d == -1) || (g_visibleClass_00802A88->field_00F8 == 0)) {
 LAB_00556926:
@@ -126,7 +126,7 @@ LAB_00556926:
     else {
       bVar9 = true;
     }
-    if ((bVar9) && (pVVar2->field_004C != (byte *)0x0)) {
+    if ((bVar9) && (pVVar2->field_004C != nullptr)) {
       bVar9 = pVVar2->field_004C
               [local_5c + (g_centeredOffsets5[iVar7] + local_8) * pVVar2->field_0030] != 0;
     }
@@ -184,7 +184,7 @@ LAB_0055693a:
   if (*(int *)(&DAT_007c900c + param_1 * 0x18) != 1) {
     piVar6 = DAT_00806774;
   }
-  puVar13 = (undefined4 *)0x0;
+  puVar13 = nullptr;
   iVar12 = 0;
   iVar3 = 1;
   bVar11 = 0;

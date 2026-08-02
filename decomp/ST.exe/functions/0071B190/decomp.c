@@ -8,7 +8,7 @@ void * __cdecl FUN_0071b190(void)
   undefined4 *this;
 
   this = (undefined4 *)Library::MSVCRT::FUN_0072e530(0x90);
-  if (this != (undefined4 *)0x0) {
+  if (this != nullptr) {
     sub_006E5FB0(this);
     *this = &VTable_0079E284;
     this[6] = 0;
@@ -29,6 +29,6 @@ void * __cdecl FUN_0071b190(void)
     InitializeCriticalSection((LPCRITICAL_SECTION)(this + 0x1e));
     return this;
   }
-  return (void *)0x0;
+  return nullptr;
 }
 

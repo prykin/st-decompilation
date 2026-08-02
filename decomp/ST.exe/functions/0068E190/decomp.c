@@ -18,7 +18,7 @@ undefined4 __thiscall FUN_0068e190(void *this,int param_1)
         piVar3 = (int *)(*(int *)(iVar1 + 8) * uVar4 + *(int *)(iVar1 + 0x1c));
       }
       else {
-        piVar3 = (int *)0x0;
+        piVar3 = nullptr;
       }
       if (*piVar3 == param_1) {
         if (iVar1 == 0) {

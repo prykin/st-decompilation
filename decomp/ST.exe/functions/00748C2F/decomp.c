@@ -4,10 +4,10 @@ undefined4 FUN_00748c2f(int param_1,undefined4 *param_2,undefined4 *param_3)
 {
   undefined4 uVar1;
 
-  if (param_2 == (undefined4 *)0x0) {
+  if (param_2 == nullptr) {
     *(ushort *)(param_1 + 4) = *(ushort *)(param_1 + 4) & 0xfeef;
   }
-  else if (param_3 == (undefined4 *)0x0) {
+  else if (param_3 == nullptr) {
     *(undefined4 *)(param_1 + 0x20) = *param_2;
     *(undefined4 *)(param_1 + 0x24) = param_2[1];
     *(uint *)(param_1 + 4) = *(uint *)(param_1 + 4) & 0xfffffeff | 0x10;

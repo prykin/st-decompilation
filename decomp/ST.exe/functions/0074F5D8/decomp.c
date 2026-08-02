@@ -7,7 +7,7 @@ undefined4 FUN_0074f5d8(int param_1,double *param_2)
   LPCRITICAL_SECTION lpCriticalSection;
   undefined4 uVar1;
 
-  if (param_2 == (double *)0x0) {
+  if (param_2 == nullptr) {
     uVar1 = 0x80004003;
   }
   else {

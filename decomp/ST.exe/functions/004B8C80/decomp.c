@@ -101,7 +101,7 @@ undefined4 __fastcall FUN_004b8c80(TLOBaseTy *param_1)
         (iVar4 = thunk_FUN_004ac910(&param_1->field_01D5,'\x0e'),
         param_1->field_01F5->field_0208 + *(int *)&param_1->field_0x2a1 <= iVar4)) &&
        (*(int *)&param_1->field_0x29d == 0)) {
-      TLOBaseTy::sub_004C4550(param_1,(int *)0x0);
+      TLOBaseTy::sub_004C4550(param_1,nullptr);
     }
   }
   else if (TVar2 == CASE_6) {
@@ -244,7 +244,7 @@ cf_common_exit_004B8F5A:
       if (((iVar4 == param_1->field_01F5->field_020C) &&
           (local_8 = 1, param_1->field_05AC == CASE_65)) &&
          ((param_1->field_0408 != 0 &&
-          ((param_1->field_040C != (AnonShape_005EFAE0_B406B78B *)0x0 &&
+          ((param_1->field_040C != nullptr &&
            (iVar4 = STPlaySystemC::sub_006E62D0
                               (g_playSystem_00802A38,param_1->field_040C,(int *)&local_c),
            iVar4 == 0)))))) {

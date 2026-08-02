@@ -109,7 +109,7 @@ void FUN_007603b0(int *param_1,AnonShape_007603B0_DAA8AD99 *param_2,int *param_3
     local_1c = piVar8[3];
     iVar7 = piVar8[1];
     if ((((((iVar7 == 0 && iVar4 == 0) && local_1c == 0) && iVar10 == 0) &&
-         local_14 == (AnonNested_007603B0_0050_0992C9A2 *)0x0) && iVar2 == 0) && iVar3 == 0) {
+         local_14 == nullptr) && iVar2 == 0) && iVar3 == 0) {
       uVar1 = *(undefined1 *)((*piVar8 + 0x10 >> 5 & 0x3ffU) + iVar6);
       *puVar5 = uVar1;
       puVar5[1] = uVar1;

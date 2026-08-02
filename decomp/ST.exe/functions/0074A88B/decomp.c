@@ -10,7 +10,7 @@ void __fastcall FUN_0074a88b(AnonShape_0074A88B_B70E22D8 *param_1)
       (*(char *)(iVar1 + 0xa1) == '\0')) &&
      ((param_1->field_0070 == 0 && (param_1->field_00B0 == 1)))) {
     if (iVar1 == 0) {
-      piVar2 = (int *)0x0;
+      piVar2 = nullptr;
     }
     else {
       piVar2 = (int *)(iVar1 + 0xc);

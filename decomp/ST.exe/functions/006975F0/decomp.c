@@ -25,7 +25,7 @@ void __thiscall CGenerate::sub_006975F0(CGenerate *this)
   int local_8;
 
   pCVar1 = this->field_5853;
-  if (pCVar1 != (CGenerate_field_5853DArray *)0x0) {
+  if (pCVar1 != nullptr) {
     uVar2 = pCVar1->count;
     iVar8 = 0;
     uVar9 = 0;
@@ -36,13 +36,13 @@ void __thiscall CGenerate::sub_006975F0(CGenerate *this)
           element_5853 = DArrayAt<CGenerate_field_5853Element>(pCVar1, uVar9);
         }
         else {
-          element_5853 = (CGenerate_field_5853Element *)0x0;
+          element_5853 = nullptr;
         }
         iVar5 = element_5853->field_0000;
         if ((((iVar5 < 2) && ((char)element_5853[1] == '\0')) && (0 < (int)element_5853->field_0005)) &&
            (((element_5853->field_000D == 1 && (iVar5 == 0)) ||
             ((element_5853->field_000D == 2 && (iVar5 == 1)))))) {
-          if ((element_5853 != (CGenerate_field_5853Element *)0x0) && (element_5853->field_0011 < 10)) {
+          if ((element_5853 != nullptr) && (element_5853->field_0011 < 10)) {
             iVar8 = iVar8 + 1;
           }
           local_8 = local_8 + element_5853->field_0011;
@@ -65,12 +65,12 @@ void __thiscall CGenerate::sub_006975F0(CGenerate *this)
             element_5853_2 = DArrayAt<CGenerate_field_5853Element>(pCVar1, uVar9);
           }
           else {
-            element_5853_2 = (CGenerate_field_5853Element *)0x0;
+            element_5853_2 = nullptr;
           }
           if (((((char)element_5853_2[1] == '\0') && (0 < (int)element_5853_2->field_0005)) &&
               (((element_5853_2->field_000D == 1 && (element_5853_2->field_0000 == 0)) ||
                ((element_5853_2->field_000D == 2 && (element_5853_2->field_0000 == 1)))))) &&
-             ((element_5853_2 != (CGenerate_field_5853Element *)0x0 &&
+             ((element_5853_2 != nullptr &&
               (((element_5853_2->field_0011 <= local_20 &&
                 (uVar6 = Library::MSVCRT::FUN_0072e6c0(),
                 (int)uVar6 % (int)(((iVar8 < 4) - 1 & 3) + 2) != 0)) &&

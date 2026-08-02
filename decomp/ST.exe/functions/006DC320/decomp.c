@@ -135,7 +135,7 @@ void __fastcall FUN_006dc320(AnonShape_006DC320_0C876EFA *param_1)
   lVar6 = Library::MSVCRT::__ftol();
   param_1->field_03D8 = (int)lVar6;
   param_1->field_03E0 = 1;
-  if (param_1->field_0280 == (short *)0x0) goto LAB_006dcafd;
+  if (param_1->field_0280 == nullptr) goto LAB_006dcafd;
   local_8 = param_1->field_03DC;
   iVar5 = local_8 / 2;
   local_10 = SUB84((double)(int)*param_1->field_0280 * param_1->field_00C8,0);

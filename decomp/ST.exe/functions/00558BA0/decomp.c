@@ -12,10 +12,10 @@ void * __cdecl FUN_00558ba0(void)
   VisibleClassTy *pVVar1;
 
   pVVar1 = (VisibleClassTy *)FUN_006b04d0(0x298);
-  if (pVVar1 != (VisibleClassTy *)0x0) {
+  if (pVVar1 != nullptr) {
     pVVar1 = VisibleClassTy::VisibleClassTy(pVVar1);
     return pVVar1;
   }
-  return (void *)0x0;
+  return nullptr;
 }
 

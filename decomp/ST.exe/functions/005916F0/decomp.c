@@ -25,7 +25,7 @@ void __thiscall CampaignTy::DoneCampaign(CampaignTy *this)
   pCVar2 = local_8;
   if (iVar3 == 0) {
     MMObjTy::DoneMMObj((MMObjTy *)local_8);
-    if (g_cursorClass_00802A30 != (CursorClassTy *)0x0) {
+    if (g_cursorClass_00802A30 != nullptr) {
       if (g_cursorClass_00802A30->field_00A9 == 0) {
         Library::DKW::DDX::FUN_006b8b10((int *)g_cursorClass_00802A30->field_00AD);
       }
@@ -35,12 +35,12 @@ void __thiscall CampaignTy::DoneCampaign(CampaignTy *this)
     }
     DarkScreen(g_dDXContext_0080759C,10,2);
     thunk_FUN_00568bc0(&g_sound,1);
-    if (g_startSystem_0081176C->field_002C != (ushort *)0x0) {
+    if (g_startSystem_0081176C->field_002C != nullptr) {
       cMf32::RecMemFree(g_cMf32_00806780,(uint *)&g_startSystem_0081176C->field_002C);
     }
     /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
     this_00 = *(MMsgTy **)(pCVar2->field_1A5B + 0x2e6);
-    if (this_00 != (MMsgTy *)0x0) {
+    if (this_00 != nullptr) {
       MMsgTy::HideSprites(this_00);
       *(undefined4 *)(*(int *)(pCVar2->field_1A5B + 0x2e6) + 0x1cab) = 0;
     }
@@ -49,7 +49,7 @@ void __thiscall CampaignTy::DoneCampaign(CampaignTy *this)
     do {
       iVar6 = 0xf;
       do {
-        if ((undefined4 *)*puVar4 != (undefined4 *)0x0) {
+        if ((undefined4 *)*puVar4 != nullptr) {
           FUN_006c4a70((undefined4 *)*puVar4);
           *puVar4 = 0;
         }
@@ -65,7 +65,7 @@ void __thiscall CampaignTy::DoneCampaign(CampaignTy *this)
     iVar3 = 4;
     puVar5 = local_8->field_1BD7;
     do {
-      if ((undefined4 *)*puVar5 != (undefined4 *)0x0) {
+      if ((undefined4 *)*puVar5 != nullptr) {
         FUN_006c4a70((undefined4 *)*puVar5);
         *puVar5 = 0;
       }

@@ -52,7 +52,7 @@ uint * FUN_0043f7b0(byte param_1,int *param_2,uint *param_3,int param_4,int para
   if (g_worldGrid.sizeZ + -1 < param_5 + param_8) {
     iVar6 = g_worldGrid.sizeZ + -1;
   }
-  array = Library::DKW::TBL::DArrayCreate((DArrayTy *)0x0,0xf,4,10);
+  array = Library::DKW::TBL::DArrayCreate(nullptr,0xf,4,10);
   iVar8 = g_worldGrid.sizeX * param_4 + local_8 + (iVar9 + -1) * (int)g_worldGrid.planeStride;
   if (iVar9 <= iVar6) {
     local_14 = (iVar6 - iVar9) + 1;
@@ -70,7 +70,7 @@ uint * FUN_0043f7b0(byte param_1,int *param_2,uint *param_3,int param_4,int para
             do {
               piVar3 = *(int **)((int)g_worldGrid.cells[1].objects + iVar10);
               /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
-              if ((piVar3 != (int *)0x0) &&
+              if ((piVar3 != nullptr) &&
                  ((((iVar7 = piVar3[8], param_6 = piVar3, iVar7 == 0x14 || (iVar7 == 1000)) ||
                    (iVar7 == 0x3e9)) && (param_2 != piVar3)))) {
                 if (param_9 == 0) {
@@ -101,8 +101,8 @@ LAB_0043f9bd:
                     bVar11 = iVar7 < 0;
                   }
                   else {
-                    bVar11 = (&DAT_008087ea)[(uint)bVar5 * 0x51] !=
-                             (&DAT_008087ea)[(uint)bVar1 * 0x51];
+                    bVar11 = g_bulkInitializedRecords_008087C7[bVar5].field_0023 !=
+                             g_bulkInitializedRecords_008087C7[bVar1].field_0023;
                   }
                   if (!bVar11) goto LAB_0043f9fa;
                   /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
@@ -119,7 +119,7 @@ LAB_0043f9bd:
 LAB_0043f9fa:
               piVar3 = *(int **)((int)g_worldGrid.cells[1].objects + iVar10 + 4);
               /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
-              if (((piVar3 != (int *)0x0) && (param_6 = piVar3, piVar3[8] == 0x1ae)) &&
+              if (((piVar3 != nullptr) && (param_6 = piVar3, piVar3[8] == 0x1ae)) &&
                  (param_2 != piVar3)) {
                 if (param_9 == 0) {
                   bVar1 = *(byte *)(piVar3 + 9);
@@ -151,8 +151,8 @@ LAB_0043fad9:
                     bVar11 = iVar7 < 0;
                   }
                   else {
-                    bVar11 = (&DAT_008087ea)[(uint)bVar5 * 0x51] !=
-                             (&DAT_008087ea)[(uint)bVar1 * 0x51];
+                    bVar11 = g_bulkInitializedRecords_008087C7[bVar5].field_0023 !=
+                             g_bulkInitializedRecords_008087C7[bVar1].field_0023;
                   }
                   if (!bVar11) goto LAB_0043fb16;
                   /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
@@ -180,7 +180,7 @@ LAB_0043fb16:
   }
   if (array->count == 0) {
     DArrayDestroy(array);
-    array = (DArrayTy *)0x0;
+    array = nullptr;
   }
   return &array->flags;
 }

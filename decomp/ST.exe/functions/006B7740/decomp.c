@@ -4,13 +4,13 @@ void FUN_006b7740(int *param_1)
 {
   int *piVar1;
 
-  if (param_1 != (int *)0x0) {
+  if (param_1 != nullptr) {
     FUN_006b76d0(param_1);
     if ((*(byte *)(param_1 + 1) & 4) != 0) {
       CoUninitialize();
     }
     piVar1 = (int *)*param_1;
-    if (piVar1 != (int *)0x0) {
+    if (piVar1 != nullptr) {
       /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
       (**(code **)(*piVar1 + 8))(piVar1);
       *param_1 = 0;

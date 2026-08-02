@@ -19,7 +19,7 @@ FUN_006a0da0(void *this,uint param_1,int param_2,uint param_3,int param_4,int pa
     uVar1 = thunk_FUN_006a2bf0(2,0,1,param_6,param_6);
     local_c[2] = (ushort)uVar1;
     thunk_FUN_006a2700(*(int **)((int)this + 8),param_1,param_2,0,param_3,param_4,local_c,
-                       (undefined *)0x0,0);
+                       nullptr,0);
   }
   return;
 }

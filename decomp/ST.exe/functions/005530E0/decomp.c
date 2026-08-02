@@ -12,21 +12,21 @@ byte * __cdecl FUN_005530e0(int param_1)
   undefined2 local_c;
   byte *local_8;
 
-  local_8 = (byte *)0x0;
+  local_8 = nullptr;
   if (param_1 < 0) {
-    return (byte *)0x0;
+    return nullptr;
   }
   local_54.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_54;
   iVar1 = Library::MSVCRT::__setjmp3(local_54.jumpBuffer,0);
   if (iVar1 == 0) {
-    if (g_array_00802A4C == (DArrayTy *)0x0) {
+    if (g_array_00802A4C == nullptr) {
       thunk_FUN_005531f0();
     }
     local_8 = (byte *)thunk_FUN_00553060(param_1);
-    if (local_8 == (byte *)0x0) {
+    if (local_8 == nullptr) {
       local_8 = (byte *)thunk_FUN_00552f50(param_1);
-      if (local_8 != (byte *)0x0) {
+      if (local_8 != nullptr) {
         uStack_e = SUB42(local_8,0);
         local_c = (undefined2)((uint)local_8 >> 0x10);
         local_10 = (undefined2)param_1;
@@ -37,7 +37,7 @@ byte * __cdecl FUN_005530e0(int param_1)
     return local_8;
   }
   g_currentExceptionFrame = local_54.previous;
-  if (local_8 == (byte *)0x0) {
+  if (local_8 == nullptr) {
     FreeAndNull(&local_8);
   }
   return local_8;

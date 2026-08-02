@@ -43,7 +43,7 @@ void FUN_006f4e70(byte *param_1,int param_2,uint *param_3,int param_4,int param_
             param_1 = param_1 + uVar5;
             param_3 = (uint *)((int)param_3 + uVar5 * 2);
             pbVar10 = pbVar9 + -uVar5;
-            if (pbVar10 == (byte *)0x0 || (int)pbVar9 < (int)uVar5) goto LAB_006f4f0f;
+            if (pbVar10 == nullptr || (int)pbVar9 < (int)uVar5) goto LAB_006f4f0f;
             bVar4 = *param_6;
             uVar5 = (uint)bVar4;
             param_6 = param_6 + 1;
@@ -132,7 +132,7 @@ LAB_006f4fab:
           param_1 = param_1 + uVar6;
           param_3 = (uint *)((int)param_3 + uVar6 * 2);
           pbVar10 = pbVar9 + -uVar6;
-          if (pbVar10 == (byte *)0x0 || (int)pbVar9 < (int)uVar6) break;
+          if (pbVar10 == nullptr || (int)pbVar9 < (int)uVar6) break;
           bVar4 = *pbVar11;
           uVar6 = (uint)bVar4;
           pbVar11 = pbVar11 + 1;

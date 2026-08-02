@@ -73,7 +73,7 @@ STAllPlayersC::GetTOBJImage
   case CASE_26:
   case CASE_27:
   case CASE_28:
-    local_c = (int *)0x0;
+    local_c = nullptr;
     local_154[0] = '\0';
     /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
     local_8 = CONCAT31(local_8._1_3_,0x1d);
@@ -83,10 +83,10 @@ STAllPlayersC::GetTOBJImage
     if (local_154[0] != '\0') {
       puVar3 = Library::Ourlib::MFRLOAD::mfRLoad
                          (local_c,(Global_mfRLoad_param_2Enum)local_8,local_154,0xffffffff,0,1,0,
-                          (undefined4 *)0x0);
+                          nullptr);
       local_1c = *(undefined4 *)(*(int *)((int)puVar3 + 0x21) + param_2 * 4);
     }
-    local_c = (int *)0x0;
+    local_c = nullptr;
     local_154[0] = '\0';
     /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
     local_8 = CONCAT31(local_8._1_3_,0x1d);
@@ -96,10 +96,10 @@ STAllPlayersC::GetTOBJImage
     if (local_154[0] != '\0') {
       puVar3 = Library::Ourlib::MFRLOAD::mfRLoad
                          (local_c,(Global_mfRLoad_param_2Enum)local_8,local_154,0xffffffff,0,1,0,
-                          (undefined4 *)0x0);
+                          nullptr);
       local_20 = *(undefined4 *)(*(int *)((int)puVar3 + 0x21) + param_2 * 4);
     }
-    local_c = (int *)0x0;
+    local_c = nullptr;
     local_154[0] = '\0';
     /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
     local_8 = CONCAT31(local_8._1_3_,0x1d);
@@ -109,7 +109,7 @@ STAllPlayersC::GetTOBJImage
     if (local_154[0] != '\0') {
       puVar3 = Library::Ourlib::MFRLOAD::mfRLoad
                          (local_c,(Global_mfRLoad_param_2Enum)local_8,local_154,0xffffffff,0,1,0,
-                          (undefined4 *)0x0);
+                          nullptr);
       local_24 = *(undefined4 *)(*(int *)((int)puVar3 + 0x21) + param_2 * 4);
     }
     uVar4 = ST3DSMAPContext::sub_00709470(g_sT3DSMAPContext_00807598,local_54,0x11,1,10,0xff);
@@ -191,7 +191,7 @@ STAllPlayersC::GetTOBJImage
     local_10 = local_54;
     GVar7 = 0;
     do {
-      local_c = (int *)0x0;
+      local_c = nullptr;
       local_154[0] = '\0';
       /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
       local_8 = CONCAT31(local_8._1_3_,0x1d);
@@ -201,7 +201,7 @@ STAllPlayersC::GetTOBJImage
       if (local_154[0] != '\0') {
         puVar3 = Library::Ourlib::MFRLOAD::mfRLoad
                            (local_c,(Global_mfRLoad_param_2Enum)local_8,local_154,0xffffffff,0,1,0,
-                            (undefined4 *)0x0);
+                            nullptr);
         if ((int)(*(int *)puVar3 - CASE_1) < (int)param_2) {
           /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
           param_2 = *(int *)puVar3 - CASE_1;
@@ -218,7 +218,7 @@ STAllPlayersC::GetTOBJImage
   case CASE_DF:
   case CASE_E0:
   case CASE_E2:
-    local_c = (int *)0x0;
+    local_c = nullptr;
     local_154[0] = '\0';
     /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
     local_8 = CONCAT31(local_8._1_3_,0x1d);
@@ -242,7 +242,7 @@ STAllPlayersC::GetTOBJImage
   case CASE_F9:
   case CASE_FA:
   case CASE_FB:
-    local_c = (int *)0x0;
+    local_c = nullptr;
     local_154[0] = '\0';
     /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
     local_8 = CONCAT31(local_8._1_3_,0x1d);
@@ -251,7 +251,7 @@ STAllPlayersC::GetTOBJImage
     thunk_FUN_0057a140(param_1,SVar2,0xe,&local_c,local_154,(undefined1 *)&local_8,&param_2);
     goto joined_r0x0044c40d;
   case CASE_FD:
-    local_c = (int *)0x0;
+    local_c = nullptr;
     local_154[0] = '\0';
     /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
     local_8 = CONCAT31(local_8._1_3_,0x1d);
@@ -260,7 +260,7 @@ STAllPlayersC::GetTOBJImage
     thunk_FUN_005ec740(param_1,SVar2,0xe,&local_c,local_154,(undefined1 *)&local_8,&param_2);
     break;
   case CASE_FE:
-    local_c = (int *)0x0;
+    local_c = nullptr;
     local_154[0] = '\0';
     /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
     local_8 = CONCAT31(local_8._1_3_,0x1d);
@@ -275,7 +275,7 @@ joined_r0x0044c40d:
 LAB_0044c44d:
     puVar3 = Library::Ourlib::MFRLOAD::mfRLoad
                        (local_c,(Global_mfRLoad_param_2Enum)local_8,local_154,0xffffffff,0,1,0,
-                        (undefined4 *)0x0);
+                        nullptr);
     local_1c = *(undefined4 *)(*(int *)((int)puVar3 + 0x21) + param_2 * 4);
   }
 cf_common_exit_0044C477:

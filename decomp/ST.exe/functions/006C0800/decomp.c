@@ -42,11 +42,11 @@ void FUN_006c0800(short *param_1,byte param_2,undefined4 param_3,undefined4 para
   iVar2 = FUN_006bfbf0((AnonShape_006BFBF0_13F73F95 *)(&DAT_00854ff8 + iVar5));
   if (iVar2 != 0) {
     piVar1 = (int *)(&DAT_00855004)[param_11 * 0x31];
-    if (piVar1 != (int *)0x0) {
+    if (piVar1 != nullptr) {
       /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
       (**(code **)(*piVar1 + 0x48))(piVar1);
       piVar1 = (int *)(&DAT_00855008)[param_11 * 0x31];
-      if (piVar1 != (int *)0x0) {
+      if (piVar1 != nullptr) {
         /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
         (**(code **)(*piVar1 + 8))(piVar1);
         (&DAT_00855008)[param_11 * 0x31] = 0;

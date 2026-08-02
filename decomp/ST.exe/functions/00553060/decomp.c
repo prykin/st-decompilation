@@ -9,7 +9,7 @@ undefined4 __cdecl FUN_00553060(int param_1)
   uint uVar3;
   bool bVar4;
 
-  if (g_array_00802A4C != (DArrayTy *)0x0) {
+  if (g_array_00802A4C != nullptr) {
     uVar1 = g_array_00802A4C->count;
     uVar3 = 0;
     if (0 < (int)uVar1) {
@@ -18,7 +18,7 @@ undefined4 __cdecl FUN_00553060(int param_1)
         /* ST_PSEUDO[dynamic_array_indexing]: expected DArrayAt<T>(g_array_00802A4C, uVar3) (runtime stride) */
         if ((((bVar4) &&
              (psVar2 = (short *)(g_array_00802A4C->elementSize * uVar3 + (int)g_array_00802A4C->data
-                                ), psVar2 != (short *)0x0)) && (*(int *)(psVar2 + 1) != 0)) &&
+                                ), psVar2 != nullptr)) && (*(int *)(psVar2 + 1) != 0)) &&
            (*psVar2 == param_1)) {
           return *(undefined4 *)(psVar2 + 1);
         }

@@ -91,7 +91,7 @@ void __thiscall FSGSTy::SetState(FSGSTy *this,byte param_1)
     RaiseInternalException(iVar8,0,"E:\\__titans\\Start\\fsgs_obj.cpp",0x397);
     return;
   }
-  if (g_cursorClass_00802A30 != (CursorClassTy *)0x0) {
+  if (g_cursorClass_00802A30 != nullptr) {
     if (g_cursorClass_00802A30->field_00A9 == 0) {
       Library::DKW::DDX::FUN_006b8b10((int *)g_cursorClass_00802A30->field_00AD);
     }
@@ -101,25 +101,25 @@ void __thiscall FSGSTy::SetState(FSGSTy *this,byte param_1)
   }
   this_00 = local_14;
   local_14->field_0065 = param_1;
-  if (local_14->field_1F23 != (HoloTy *)0x0) {
+  if (local_14->field_1F23 != nullptr) {
     HoloTy::Done(local_14->field_1F23);
     Library::MSVCRT::FUN_0072e2b0(this_00->field_1F23);
-    this_00->field_1F23 = (HoloTy *)0x0;
+    this_00->field_1F23 = nullptr;
   }
-  if (this_00->field_1F27 != (HoloTy *)0x0) {
+  if (this_00->field_1F27 != nullptr) {
     HoloTy::Done(this_00->field_1F27);
     Library::MSVCRT::FUN_0072e2b0(this_00->field_1F27);
-    this_00->field_1F27 = (HoloTy *)0x0;
+    this_00->field_1F27 = nullptr;
   }
-  if (this_00->field_1F2B != (HoloTy *)0x0) {
+  if (this_00->field_1F2B != nullptr) {
     HoloTy::Done(this_00->field_1F2B);
     Library::MSVCRT::FUN_0072e2b0(this_00->field_1F2B);
-    this_00->field_1F2B = (HoloTy *)0x0;
+    this_00->field_1F2B = nullptr;
   }
-  if (this_00->field_1F2F != (HoloTy *)0x0) {
+  if (this_00->field_1F2F != nullptr) {
     HoloTy::Done(this_00->field_1F2F);
     Library::MSVCRT::FUN_0072e2b0(this_00->field_1F2F);
-    this_00->field_1F2F = (HoloTy *)0x0;
+    this_00->field_1F2F = nullptr;
   }
   switch(this_00->field_0065) {
   case CASE_6:
@@ -154,16 +154,16 @@ void __thiscall FSGSTy::SetState(FSGSTy *this,byte param_1)
     FUN_006b2330(g_ddxContext_008075A8,&local_8,0x32,0x4035e9,0x1b8,0x106,(ushort *)0x2563);
     Library::DKW::DDX::FUN_006b3640((int *)g_ddxContext_008075A8,local_8,0xffffffff,0xb4,0xaa);
     pHVar6 = (HoloTy *)Library::MSVCRT::FUN_0072e530(0x33);
-    if (pHVar6 == (HoloTy *)0x0) {
-      pHVar6 = (HoloTy *)0x0;
+    if (pHVar6 == nullptr) {
+      pHVar6 = nullptr;
     }
     else {
       pHVar6->field_0002 = 1;
       pHVar6->field_0000 = 0;
       *(undefined4 *)&pHVar6->field_0x3 = 0xffffffff;
       pHVar6->field_0001 = CASE_2;
-      pHVar6->field_0007 = (void *)0x0;
-      pHVar6->field_000B = (void *)0x0;
+      pHVar6->field_0007 = nullptr;
+      pHVar6->field_000B = nullptr;
       pHVar6->field_000F = 0;
       *(undefined4 *)&pHVar6->field_0x1b = 1;
       pHVar6->field_0013 = 1;
@@ -174,7 +174,7 @@ void __thiscall FSGSTy::SetState(FSGSTy *this,byte param_1)
       pHVar6->field_002B = 1;
     }
     this_00->field_1F23 = pHVar6;
-    if (pHVar6 != (HoloTy *)0x0) {
+    if (pHVar6 != nullptr) {
       uVar14 = 0;
       cVar10 = '\x01';
       bVar9 = 0x10;
@@ -241,16 +241,16 @@ void __thiscall FSGSTy::SetState(FSGSTy *this,byte param_1)
         FUN_006b35d0((int *)this_00->field_1C92,this_00->field_1C4E);
       }
       pHVar6 = (HoloTy *)Library::MSVCRT::FUN_0072e530(0x33);
-      if (pHVar6 == (HoloTy *)0x0) {
-        pHVar6 = (HoloTy *)0x0;
+      if (pHVar6 == nullptr) {
+        pHVar6 = nullptr;
       }
       else {
         pHVar6->field_0002 = 1;
         pHVar6->field_0000 = 0;
         *(undefined4 *)&pHVar6->field_0x3 = 0xffffffff;
         pHVar6->field_0001 = CASE_2;
-        pHVar6->field_0007 = (void *)0x0;
-        pHVar6->field_000B = (void *)0x0;
+        pHVar6->field_0007 = nullptr;
+        pHVar6->field_000B = nullptr;
         pHVar6->field_000F = 0;
         *(undefined4 *)&pHVar6->field_0x1b = 1;
         pHVar6->field_0013 = 1;
@@ -261,7 +261,7 @@ void __thiscall FSGSTy::SetState(FSGSTy *this,byte param_1)
         pHVar6->field_002B = 1;
       }
       this_00->field_1F23 = pHVar6;
-      if (pHVar6 != (HoloTy *)0x0) {
+      if (pHVar6 != nullptr) {
         uVar14 = 0;
         cVar10 = '\x01';
         bVar9 = 0x10;
@@ -296,19 +296,19 @@ void __thiscall FSGSTy::SetState(FSGSTy *this,byte param_1)
     }
     else {
       if (FVar1 == CASE_9) {
-        FUN_006b2330(g_ddxContext_008075A8,&local_8,0x32,0x401032,0x2e1,0x175,(ushort *)0x0);
+        FUN_006b2330(g_ddxContext_008075A8,&local_8,0x32,0x401032,0x2e1,0x175,nullptr);
         Library::DKW::DDX::FUN_006b3640((int *)g_ddxContext_008075A8,local_8,0xffffffff,0x22,0x5e);
         pHVar6 = (HoloTy *)Library::MSVCRT::FUN_0072e530(0x33);
-        if (pHVar6 == (HoloTy *)0x0) {
-          pHVar6 = (HoloTy *)0x0;
+        if (pHVar6 == nullptr) {
+          pHVar6 = nullptr;
         }
         else {
           pHVar6->field_0002 = 1;
           pHVar6->field_0000 = 0;
           *(undefined4 *)&pHVar6->field_0x3 = 0xffffffff;
           pHVar6->field_0001 = CASE_2;
-          pHVar6->field_0007 = (void *)0x0;
-          pHVar6->field_000B = (void *)0x0;
+          pHVar6->field_0007 = nullptr;
+          pHVar6->field_000B = nullptr;
           pHVar6->field_000F = 0;
           *(undefined4 *)&pHVar6->field_0x1b = 1;
           pHVar6->field_0013 = 1;
@@ -319,7 +319,7 @@ void __thiscall FSGSTy::SetState(FSGSTy *this,byte param_1)
           pHVar6->field_002B = 1;
         }
         this_00->field_1F23 = pHVar6;
-        if (pHVar6 != (HoloTy *)0x0) {
+        if (pHVar6 != nullptr) {
           uVar14 = 0;
           cVar10 = '\x01';
           bVar9 = 0x10;
@@ -386,16 +386,16 @@ LAB_00598221:
         FUN_006b2330(g_ddxContext_008075A8,&local_8,0x32,0x4035e9,0x1b8,local_10,local_c);
         Library::DKW::DDX::FUN_006b3640((int *)g_ddxContext_008075A8,local_8,0xffffffff,0xb4,uVar14);
         pHVar6 = (HoloTy *)Library::MSVCRT::FUN_0072e530(0x33);
-        if (pHVar6 == (HoloTy *)0x0) {
-          pHVar6 = (HoloTy *)0x0;
+        if (pHVar6 == nullptr) {
+          pHVar6 = nullptr;
         }
         else {
           pHVar6->field_0002 = 1;
           pHVar6->field_0000 = 0;
           *(undefined4 *)&pHVar6->field_0x3 = 0xffffffff;
           pHVar6->field_0001 = CASE_2;
-          pHVar6->field_0007 = (void *)0x0;
-          pHVar6->field_000B = (void *)0x0;
+          pHVar6->field_0007 = nullptr;
+          pHVar6->field_000B = nullptr;
           pHVar6->field_000F = 0;
           *(undefined4 *)&pHVar6->field_0x1b = 1;
           pHVar6->field_0013 = 1;
@@ -406,7 +406,7 @@ LAB_00598221:
           pHVar6->field_002B = 1;
         }
         this_00->field_1F23 = pHVar6;
-        if (pHVar6 != (HoloTy *)0x0) {
+        if (pHVar6 != nullptr) {
           uVar13 = 0;
           cVar10 = '\x01';
           bVar9 = 0x10;
@@ -525,16 +525,16 @@ LAB_00598221:
                  (ushort *)&this_00->field_1A5B->field_0140);
     Library::DKW::DDX::FUN_006b3640((int *)g_ddxContext_008075A8,local_8,0xffffffff,0x13,0x5e);
     pHVar6 = (HoloTy *)Library::MSVCRT::FUN_0072e530(0x33);
-    if (pHVar6 == (HoloTy *)0x0) {
-      pHVar6 = (HoloTy *)0x0;
+    if (pHVar6 == nullptr) {
+      pHVar6 = nullptr;
     }
     else {
       pHVar6->field_0002 = 1;
       pHVar6->field_0000 = 0;
       *(undefined4 *)&pHVar6->field_0x3 = 0xffffffff;
       pHVar6->field_0001 = CASE_2;
-      pHVar6->field_0007 = (void *)0x0;
-      pHVar6->field_000B = (void *)0x0;
+      pHVar6->field_0007 = nullptr;
+      pHVar6->field_000B = nullptr;
       pHVar6->field_000F = 0;
       *(undefined4 *)&pHVar6->field_0x1b = 1;
       pHVar6->field_0013 = 1;
@@ -545,7 +545,7 @@ LAB_00598221:
       pHVar6->field_002B = 1;
     }
     this_00->field_1F27 = pHVar6;
-    if (pHVar6 != (HoloTy *)0x0) {
+    if (pHVar6 != nullptr) {
       uVar14 = 0;
       cVar10 = '\x01';
       bVar9 = 0x10;
@@ -612,16 +612,16 @@ LAB_00598221:
                  (ushort *)&this_00->field_1A5B->field_0140);
     Library::DKW::DDX::FUN_006b3640((int *)g_ddxContext_008075A8,local_8,0xffffffff,0x1e9,0x5e);
     pHVar6 = (HoloTy *)Library::MSVCRT::FUN_0072e530(0x33);
-    if (pHVar6 == (HoloTy *)0x0) {
-      pHVar6 = (HoloTy *)0x0;
+    if (pHVar6 == nullptr) {
+      pHVar6 = nullptr;
     }
     else {
       pHVar6->field_0002 = 1;
       pHVar6->field_0000 = 0;
       *(undefined4 *)&pHVar6->field_0x3 = 0xffffffff;
       pHVar6->field_0001 = CASE_2;
-      pHVar6->field_0007 = (void *)0x0;
-      pHVar6->field_000B = (void *)0x0;
+      pHVar6->field_0007 = nullptr;
+      pHVar6->field_000B = nullptr;
       pHVar6->field_000F = 0;
       *(undefined4 *)&pHVar6->field_0x1b = 1;
       pHVar6->field_0013 = 1;
@@ -632,7 +632,7 @@ LAB_00598221:
       pHVar6->field_002B = 1;
     }
     this_00->field_1F2B = pHVar6;
-    if (pHVar6 != (HoloTy *)0x0) {
+    if (pHVar6 != nullptr) {
       uVar14 = 0;
       cVar10 = '\x01';
       bVar9 = 0x10;
@@ -682,16 +682,16 @@ LAB_00598221:
                  (ushort *)&this_00->field_1A5B->field_0140);
     Library::DKW::DDX::FUN_006b3640((int *)g_ddxContext_008075A8,local_8,0xffffffff,0x199,0x5e);
     pHVar6 = (HoloTy *)Library::MSVCRT::FUN_0072e530(0x33);
-    if (pHVar6 == (HoloTy *)0x0) {
-      pHVar6 = (HoloTy *)0x0;
+    if (pHVar6 == nullptr) {
+      pHVar6 = nullptr;
     }
     else {
       pHVar6->field_0002 = 1;
       pHVar6->field_0000 = 0;
       *(undefined4 *)&pHVar6->field_0x3 = 0xffffffff;
       pHVar6->field_0001 = CASE_2;
-      pHVar6->field_0007 = (void *)0x0;
-      pHVar6->field_000B = (void *)0x0;
+      pHVar6->field_0007 = nullptr;
+      pHVar6->field_000B = nullptr;
       pHVar6->field_000F = 0;
       *(undefined4 *)&pHVar6->field_0x1b = 1;
       pHVar6->field_0013 = 1;
@@ -702,7 +702,7 @@ LAB_00598221:
       pHVar6->field_002B = 1;
     }
     this_00->field_1F2F = pHVar6;
-    if (pHVar6 != (HoloTy *)0x0) {
+    if (pHVar6 != nullptr) {
       uVar14 = 0;
       cVar10 = '\x01';
       bVar9 = 0x10;
@@ -760,16 +760,16 @@ LAB_00598221:
                  (ushort *)&this_00->field_1A5B->field_0140);
     Library::DKW::DDX::FUN_006b3640((int *)g_ddxContext_008075A8,local_8,0xffffffff,0x13,0x5e);
     pHVar6 = (HoloTy *)Library::MSVCRT::FUN_0072e530(0x33);
-    if (pHVar6 == (HoloTy *)0x0) {
-      pHVar6 = (HoloTy *)0x0;
+    if (pHVar6 == nullptr) {
+      pHVar6 = nullptr;
     }
     else {
       pHVar6->field_0002 = 1;
       pHVar6->field_0000 = 0;
       *(undefined4 *)&pHVar6->field_0x3 = 0xffffffff;
       pHVar6->field_0001 = CASE_2;
-      pHVar6->field_0007 = (void *)0x0;
-      pHVar6->field_000B = (void *)0x0;
+      pHVar6->field_0007 = nullptr;
+      pHVar6->field_000B = nullptr;
       pHVar6->field_000F = 0;
       *(undefined4 *)&pHVar6->field_0x1b = 1;
       pHVar6->field_0013 = 1;
@@ -780,7 +780,7 @@ LAB_00598221:
       pHVar6->field_002B = 1;
     }
     this_00->field_1F2B = pHVar6;
-    if (pHVar6 != (HoloTy *)0x0) {
+    if (pHVar6 != nullptr) {
       uVar14 = 0;
       cVar10 = '\x01';
       bVar9 = 0x10;
@@ -829,7 +829,7 @@ LAB_00599290:
   local_119 = local_140;
 switchD_00597fa6_caseD_9:
   pSVar3 = this_00->field_1A5B;
-  if (pSVar3->field_02E6 != (MMsgTy *)0x0) {
+  if (pSVar3->field_02E6 != nullptr) {
     puVar5 = local_270;
     for (iVar8 = 6; iVar8 != 0; iVar8 = iVar8 + -1) {
       *puVar5 = 0xffffffff;
@@ -839,7 +839,7 @@ switchD_00597fa6_caseD_9:
     MMsgTy::SetPanel(pSVar3->field_02E6,0,(int)&local_210,0,0);
     MMsgTy::StatePanel(this_00->field_1A5B->field_02E6,(int)local_270);
   }
-  if (g_cursorClass_00802A30 != (CursorClassTy *)0x0) {
+  if (g_cursorClass_00802A30 != nullptr) {
     if (g_cursorClass_00802A30->field_00A9 == 0) {
       Library::DKW::DDX::FUN_006b8a60((byte *)g_cursorClass_00802A30->field_00AD);
     }

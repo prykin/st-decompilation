@@ -11,7 +11,7 @@ void FUN_00550830(int param_1)
 
   if (param_1 != 0) {
     wsprintfA((LPSTR)&DAT_0080f33a,s__s>__s_007c40dc,param_1,param_1 + 0x40);
-    if (g_popUp_008016D8 != (PopUpTy *)0x0) {
+    if (g_popUp_008016D8 != nullptr) {
       /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
       if (*(byte *)(param_1 + 0x450) == 0xff) {
         uVar1 = 8;
@@ -35,7 +35,7 @@ void FUN_00550830(int param_1)
       soundId = 0x3a;
     }
     SoundClassTy::PlaySound
-              ((SoundClassTy *)&g_sound,SOUND_MODE_5,(char *)0x0,soundId,(SoundPosition *)0x0,0);
+              ((SoundClassTy *)&g_sound,SOUND_MODE_5,nullptr,soundId,nullptr,0);
   }
   return;
 }

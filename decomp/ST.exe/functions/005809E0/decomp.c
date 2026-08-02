@@ -30,7 +30,7 @@ undefined4 __cdecl FUN_005809e0(short param_1,short param_2,int param_3,int para
        (((g_worldGrid.sizeY <= param_2 || (sVar3 < 0)) || (g_worldGrid.sizeZ <= sVar3)))) ||
       (this = g_worldGrid.cells
               [(int)g_worldGrid.planeStride * (int)sVar3 + (int)g_worldGrid.sizeX * (int)param_2 +
-               (int)param_1].objects[0], this == (STWorldObject *)0x0)))) {
+               (int)param_1].objects[0], this == nullptr)))) {
     return 1;
   }
   iVar2 = this->GetObjectTypeId();

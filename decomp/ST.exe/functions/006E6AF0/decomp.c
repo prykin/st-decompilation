@@ -8,7 +8,11 @@
    [STMethodOwnerApplier] Structural method owner recovered as ST3DSMAPContext.
    Evidence: this_call_owners=[ST3DSMAPContext]; agreed_this_calls=5; incoming_this_accesses=3;
    incoming_edx_uses=0; incoming_stack_parameter_uses=9; direct_non_thunk_callers=1;
-   incoming_ecx_receiver_callers=1; attributed_named_callers=1; owner_evidence_coverage=adequate */
+   incoming_ecx_receiver_callers=1; attributed_named_callers=1; owner_evidence_coverage=adequate
+
+   [STSwitchEnumApplier] Switch target field_00A8 uses
+   /SubmarineTitans/Recovered/Enums/ST3DSMAPContext_field_00A8State. Cases:
+   CASE_0=0;CASE_1=1;CASE_2=2;CASE_3=3 */
 
 void __thiscall
 ST3DSMAPContext::sub_006E6AF0(ST3DSMAPContext *this,AnonShape_006E6AF0_D2F012A7 *param_1)
@@ -40,20 +44,20 @@ ST3DSMAPContext::sub_006E6AF0(ST3DSMAPContext *this,AnonShape_006E6AF0_D2F012A7 
   pbVar4 = *(byte **)(param_1->field_0018 + (uint)(byte)param_1->field_0x16 * 4);
   iVar1 = 0;
   local_20 = this;
-  switch(*(undefined4 *)&this->field_0xa8) {
-  case 0:
+  switch(this->field_00A8) {
+  case CASE_0:
     lVar11 = Library::MSVCRT::__ftol();
     iVar9 = (int)lVar11;
     break;
-  case 1:
+  case CASE_1:
     lVar11 = Library::MSVCRT::__ftol();
     iVar9 = (int)lVar11;
     break;
-  case 2:
+  case CASE_2:
     lVar11 = Library::MSVCRT::__ftol();
     iVar9 = (int)lVar11;
     break;
-  case 3:
+  case CASE_3:
     lVar11 = Library::MSVCRT::__ftol();
     iVar9 = (int)lVar11;
     break;
@@ -77,7 +81,7 @@ switchD_006e6b1d_default:
     param_1 = (AnonShape_006E6AF0_D2F012A7 *)((DAT_00856d88 - DAT_00856d8c * local_34) + local_38);
     if (DAT_00856d84 < local_34) {
       iVar9 = local_34 - DAT_00856d84;
-      local_8 = *(int *)&local_20->field_0x3dc - local_34;
+      local_8 = local_20->field_03DC - local_34;
     }
     else {
       iVar9 = DAT_00856d84 - local_34;

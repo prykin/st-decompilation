@@ -16,7 +16,7 @@ STPlaySystemC * __thiscall STPlaySystemC::STPlaySystemC(STPlaySystemC *this,AppC
   this->field_00E4 = 0;
   this->field_0028 = 0;
   this->field_002C = 0;
-  this->field_0024 = (cMf32 *)0x0;
+  this->field_0024 = nullptr;
   this->field_00F4 = 0;
   this->field_00F0 = 1;
   return this;

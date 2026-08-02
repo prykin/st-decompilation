@@ -12,10 +12,10 @@ AiPlrClassTy * __cdecl CreateAiPlr(void)
   AiPlrClassTy *pAVar1;
 
   pAVar1 = (AiPlrClassTy *)FUN_006b04d0(0x702);
-  if (pAVar1 != (AiPlrClassTy *)0x0) {
+  if (pAVar1 != nullptr) {
     pAVar1 = AiPlrClassTy::AiPlrClassTy(pAVar1);
     return pAVar1;
   }
-  return (AiPlrClassTy *)0x0;
+  return nullptr;
 }
 

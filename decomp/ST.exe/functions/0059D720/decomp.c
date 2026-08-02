@@ -34,12 +34,12 @@ void __thiscall FSGSTy::InfoCtrls(FSGSTy *this,void *param_1)
   int local_8;
 
   pbVar3 = this->field_1B0C;
-  if (pbVar3 != (byte *)0x0) {
+  if (pbVar3 != nullptr) {
     pbVar7 = &DAT_00807e1d;
     ppcVar8 = local_8dc;
     local_c = this;
     for (iVar6 = 0x223; iVar6 != 0; iVar6 = iVar6 + -1) {
-      *ppcVar8 = (ccFntTy *)0x0;
+      *ppcVar8 = nullptr;
       ppcVar8 = ppcVar8 + 1;
     }
     do {
@@ -63,22 +63,22 @@ LAB_0059d780:
     g_currentExceptionFrame = &local_50;
     iVar6 = Library::MSVCRT::__setjmp3(local_50.jumpBuffer,0);
     if (iVar6 == 0) {
-      pDVar4 = Library::DKW::TBL::SArrayCreate((DArrayTy *)0x0,1,1);
+      pDVar4 = Library::DKW::TBL::SArrayCreate(nullptr,1,1);
       this_00 = local_c;
       local_c->field_1AF8 = pDVar4;
       Library::DKW::TBL::FUN_006b5aa0(&pDVar4->flags,&DAT_008016a0);
-      pDVar4 = Library::DKW::TBL::SArrayCreate((DArrayTy *)0x0,1,1);
+      pDVar4 = Library::DKW::TBL::SArrayCreate(nullptr,1,1);
       this_00->field_1AFC = pDVar4;
       Library::DKW::TBL::FUN_006b5aa0(&pDVar4->flags,&DAT_008016a0);
-      pDVar4 = Library::DKW::TBL::SArrayCreate((DArrayTy *)0x0,1,1);
+      pDVar4 = Library::DKW::TBL::SArrayCreate(nullptr,1,1);
       this_00->field_1B00 = pDVar4;
       Library::DKW::TBL::FUN_006b5aa0(&pDVar4->flags,&DAT_008016a0);
-      pDVar4 = Library::DKW::TBL::SArrayCreate((DArrayTy *)0x0,1,1);
+      pDVar4 = Library::DKW::TBL::SArrayCreate(nullptr,1,1);
       this_00->field_1B04 = &pDVar4->flags;
       Library::DKW::TBL::FUN_006b5aa0(&pDVar4->flags,&DAT_008016a0);
       ppcVar8 = local_8dc;
       for (iVar6 = 0x223; iVar5 = local_8, iVar6 != 0; iVar6 = iVar6 + -1) {
-        *ppcVar8 = (ccFntTy *)0x0;
+        *ppcVar8 = nullptr;
         ppcVar8 = ppcVar8 + 1;
       }
       local_8dc[0] = (ccFntTy *)0x1;
@@ -103,15 +103,15 @@ LAB_0059d780:
       local_890 = local_8b0;
       local_6c = local_8b0;
       (*this_00->field_000C->vtable->CreateObject)
-                ((SystemClassTy *)this_00->field_000C,6,&this_00->field_1AD8,(int *)0x0,local_8dc,0);
+                ((SystemClassTy *)this_00->field_000C,6,&this_00->field_1AD8,nullptr,local_8dc,0);
       local_8bc = this_00->field_1AFC;
       local_8dc[3] = (ccFntTy *)0x15e;
       (*this_00->field_000C->vtable->CreateObject)
-                ((SystemClassTy *)this_00->field_000C,6,&this_00->field_1ADC,(int *)0x0,local_8dc,0);
+                ((SystemClassTy *)this_00->field_000C,6,&this_00->field_1ADC,nullptr,local_8dc,0);
       local_8bc = this_00->field_1B00;
       local_8dc[3] = (ccFntTy *)0x1ea;
       (*this_00->field_000C->vtable->CreateObject)
-                ((SystemClassTy *)this_00->field_000C,6,&this_00->field_1AE0,(int *)0x0,local_8dc,0);
+                ((SystemClassTy *)this_00->field_000C,6,&this_00->field_1AE0,nullptr,local_8dc,0);
       local_8dc[1] = (ccFntTy *)0xc8;
       if (iVar5 != 0) {
         local_8dc[1] = (ccFntTy *)0xcc;
@@ -123,7 +123,7 @@ LAB_0059d780:
       local_8dc[6] = (ccFntTy *)0x4b;
       local_888 = 0x6981;
       (*this_00->field_000C->vtable->CreateObject)
-                ((SystemClassTy *)this_00->field_000C,6,&this_00->field_1AE4,(int *)0x0,local_8dc,0);
+                ((SystemClassTy *)this_00->field_000C,6,&this_00->field_1AE4,nullptr,local_8dc,0);
       this_00->field_002D = 0x61;
       *(undefined4 *)&this_00->field_0x35 = 0;
       FUN_006e6080(this_00,0xf,0,(undefined4 *)&this_00->field_0x1d);

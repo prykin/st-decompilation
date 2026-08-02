@@ -16,7 +16,7 @@ int __fastcall FUN_00550110(STPlaySystemC *param_1)
     STPlaySystemC::sub_00550190(param_1);
     return 1;
   }
-  if (param_1->field_003D != (AnonPointee_STPlaySystemC_003D *)0x0) {
+  if (param_1->field_003D != nullptr) {
     param_1->field_003D->field_0005 = param_1->field_0057;
     bVar2 = param_1->field_0057 != 0;
     if (bVar2) {

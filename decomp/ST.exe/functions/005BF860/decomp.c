@@ -122,25 +122,25 @@ LAB_005bfb27:
     }
   }
   else if (cVar1 == '\x03') {
-    if (*(HoloTy **)&local_c->field_0x453 != (HoloTy *)0x0) {
+    if (*(HoloTy **)&local_c->field_0x453 != nullptr) {
       iVar5 = HoloTy::NextFas(*(HoloTy **)&local_c->field_0x453);
       if (iVar5 != 0) {
         local_8 = 0;
       }
     }
-    if (*(HoloTy **)&this_00->field_0x457 != (HoloTy *)0x0) {
+    if (*(HoloTy **)&this_00->field_0x457 != nullptr) {
       iVar5 = HoloTy::NextFas(*(HoloTy **)&this_00->field_0x457);
       if (iVar5 != 0) {
         local_8 = 0;
       }
     }
     if (local_8 != 0) {
-      if (*(HoloTy **)&this_00->field_0x453 != (HoloTy *)0x0) {
+      if (*(HoloTy **)&this_00->field_0x453 != nullptr) {
         HoloTy::Done(*(HoloTy **)&this_00->field_0x453);
         Library::MSVCRT::FUN_0072e2b0(*(HoloTy **)&this_00->field_0x453);
         *(undefined4 *)&this_00->field_0x453 = 0;
       }
-      if (*(HoloTy **)&this_00->field_0x457 != (HoloTy *)0x0) {
+      if (*(HoloTy **)&this_00->field_0x457 != nullptr) {
         HoloTy::Done(*(HoloTy **)&this_00->field_0x457);
         Library::MSVCRT::FUN_0072e2b0(*(HoloTy **)&this_00->field_0x457);
         *(undefined4 *)&this_00->field_0x457 = 0;
@@ -152,7 +152,7 @@ LAB_005bfb27:
     }
   }
   else if (cVar1 == '\x04') {
-    if (*(HoloTy **)&local_c->field_0x453 != (HoloTy *)0x0) {
+    if (*(HoloTy **)&local_c->field_0x453 != nullptr) {
       iVar5 = HoloTy::NextFas(*(HoloTy **)&local_c->field_0x453);
       if (iVar5 == 0) {
         uVar7 = *(uint *)(*(int *)&this_00->field_0x453 + 3);
@@ -164,7 +164,7 @@ LAB_005bfb27:
         local_8 = 0;
       }
     }
-    if (*(HoloTy **)&this_00->field_0x457 != (HoloTy *)0x0) {
+    if (*(HoloTy **)&this_00->field_0x457 != nullptr) {
       iVar5 = HoloTy::NextFas(*(HoloTy **)&this_00->field_0x457);
       if (iVar5 == 0) {
         uVar7 = *(uint *)(*(int *)&this_00->field_0x457 + 3);

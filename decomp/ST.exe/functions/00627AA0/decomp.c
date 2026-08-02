@@ -24,8 +24,8 @@ bool __thiscall FUN_00627aa0(void *this,uint param_1)
   if (7 < param_1) {
     return false;
   }
-  if ((g_playSystem_00802A38 != (STPlaySystemC *)0x0) && (7 < (byte)(&DAT_008087e9)[param_1 * 0x51])
-     ) {
+  if ((g_playSystem_00802A38 != nullptr) &&
+     (7 < g_bulkInitializedRecords_008087C7[param_1].field_0022)) {
     return false;
   }
   bVar1 = *(byte *)((int)this + 0x24);
@@ -55,7 +55,8 @@ LAB_00627bb8:
     bVar5 = iVar3 < 0;
   }
   else {
-    bVar5 = (&DAT_008087ea)[(uint)bVar1 * 0x51] != (&DAT_008087ea)[(param_1 & 0xff) * 0x51];
+    bVar5 = g_bulkInitializedRecords_008087C7[bVar1].field_0023 !=
+            g_bulkInitializedRecords_008087C7[param_1 & 0xff].field_0023;
   }
   if (bVar5) goto LAB_00627c8a;
   if (DAT_00808a8f == '\0') {
@@ -83,7 +84,8 @@ LAB_00627c7a:
     bVar5 = iVar3 < 0;
   }
   else {
-    bVar5 = (&DAT_008087ea)[(param_1 & 0xff) * 0x51] != (&DAT_008087ea)[(uint)bVar1 * 0x51];
+    bVar5 = g_bulkInitializedRecords_008087C7[param_1 & 0xff].field_0023 !=
+            g_bulkInitializedRecords_008087C7[bVar1].field_0023;
   }
   if (!bVar5) {
 switchD_00627c97_default:

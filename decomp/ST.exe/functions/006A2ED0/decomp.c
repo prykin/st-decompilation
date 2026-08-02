@@ -32,14 +32,14 @@ byte * __cdecl FUN_006a2ed0(short *param_1)
   HoloTy *local_14;
   short *local_8;
 
-  local_8 = (short *)0x0;
+  local_8 = nullptr;
   pAVar2 = (AnonShape_006DBCA0_EF06575F *)FUN_006b04d0(0x4f2);
-  if (pAVar2 == (AnonShape_006DBCA0_EF06575F *)0x0) {
-    local_14 = (HoloTy *)0x0;
+  if (pAVar2 == nullptr) {
+    local_14 = nullptr;
   }
   else {
     local_14 = (HoloTy *)FUN_006dbca0(pAVar2);
-    if (local_14 != (HoloTy *)0x0) goto LAB_006a2f2f;
+    if (local_14 != nullptr) goto LAB_006a2f2f;
   }
   RaiseInternalException
             (-2,g_overwriteContext_007ED77C,"E:\\__titans\\Maps\\prepare.cpp",0xcf);
@@ -49,8 +49,7 @@ LAB_006a2f2f:
              (double)((float)-(int)*param_1 * _DAT_0079d84c),
              (double)((float)(int)*param_1 * _DAT_0079d84c),
              (double)((float)-(int)param_1[1] * _DAT_0079d84c),
-             (double)((float)(int)param_1[1] * _DAT_0079d84c),0x4024000000000000,0x4023ee97865e3540,
-             0);
+             (double)((float)(int)param_1[1] * _DAT_0079d84c),10.0,9.965999793052674,0);
   *(undefined4 *)((int)&local_14[5].field_0027 + 2) = 0xe0;
   *(undefined4 *)((int)&local_14[5].field_0023 + 2) = 2;
   *(undefined4 *)((int)&local_14[0x15].field_0007 + 2) = 0xe6e4e2e0;
@@ -61,7 +60,7 @@ LAB_006a2f2f:
     piVar9 = (int *)((int)param_1 + 0x459);
     do {
       puVar5 = (byte *)*piVar9;
-      if ((puVar5 != (undefined4 *)0x0) && (*(short *)(puVar5 + 2) != 0)) {
+      if ((puVar5 != nullptr) && (*(short *)(puVar5 + 2) != 0)) {
         *puVar5 = *(undefined4 *)((int)&local_14[6].field_000B + 3);
         *(undefined4 **)((int)&local_14[6].field_000B + 3) = puVar5;
         piVar1 = (int *)((int)&local_14[6].field_0007 + 3);
@@ -73,10 +72,8 @@ LAB_006a2f2f:
     } while (iVar6 < *(int *)((int)param_1 + 0x455));
   }
   ST3DSMAPContext::sub_006DD610
-            ((ST3DSMAPContext *)local_14,8,SUB84((double)((float)(int)*param_1 * _DAT_007904f4),0),
-             (int)((ulonglong)(double)((float)(int)*param_1 * _DAT_007904f4) >> 0x20),
-             SUB84((double)((float)(int)param_1[1] * _DAT_007904f4),0),
-             (int)((ulonglong)(double)((float)(int)param_1[1] * _DAT_007904f4) >> 0x20));
+            ((ST3DSMAPContext *)local_14,8,(double)((float)(int)*param_1 * _DAT_007904f4),
+             (double)((float)(int)param_1[1] * _DAT_007904f4));
   ST3DSMAPContext::sub_006DDBE0((ST3DSMAPContext *)local_14);
   ST3DSMAPContext::sub_006DDD50((ST3DSMAPContext *)local_14);
   local_8 = (short *)Library::DKW::LIB::FUN_006aac10(0x4b79);
@@ -98,7 +95,7 @@ LAB_006a2f2f:
     *(undefined1 *)((int)puVar13 + 2) = *(undefined1 *)((int)puVar5 + 2);
   } while (iVar6 < 0x4b79);
   /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
-  puVar3 = cMf32::RecGet(in_stack_00000008,1,PTR_s_PALETTE_0079d848,(int *)0x0,1);
+  puVar3 = cMf32::RecGet(in_stack_00000008,1,PTR_s_PALETTE_0079d848,nullptr,1);
   pbVar4 = (byte *)FUN_006b50c0(0x8b,0x8b,8,0x100,(undefined4 *)(puVar3 + 0x14),1);
   uVar12 = *(uint *)(pbVar4 + 0x14);
   if (uVar12 == 0) {
@@ -164,11 +161,11 @@ LAB_006a2f2f:
     param_1 = (short *)((int)param_1 + 0x8b);
     local_18 = local_18 + -1;
   } while (local_18 != 0);
-  if (local_14 != (HoloTy *)0x0) {
+  if (local_14 != nullptr) {
     ST3DSMAPContext::sub_006DBCF0((ST3DSMAPContext *)local_14);
     Library::MSVCRT::FUN_0072e2b0(local_14);
   }
-  if (local_8 != (short *)0x0) {
+  if (local_8 != nullptr) {
     FreeAndNull(&local_8);
   }
   return pbVar4;

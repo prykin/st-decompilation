@@ -16,7 +16,7 @@ undefined4 __fastcall FUN_004d2760(AnonShape_004D2760_CB2BA53E *param_1)
   AnonShape_004D2760_CB2BA53E *local_c;
   AnonShape_004D2760_CB2BA53E *local_8;
 
-  local_8 = (AnonShape_004D2760_CB2BA53E *)0x0;
+  local_8 = nullptr;
   if (*(int *)&param_1[1].field_0x38 != 0) {
     sub_0041C5A0(param_1);
     TLOBaseTy::sub_00417D30((TLOBaseTy *)param_1);
@@ -57,7 +57,7 @@ undefined4 __fastcall FUN_004d2760(AnonShape_004D2760_CB2BA53E *param_1)
     *(undefined4 *)&param_1[1].field_0xe4 = 0xfe;
   }
   TLOBaseTy::sub_00419D30((TLOBaseTy *)param_1,*(int *)&param_1[1].field_0xe4);
-  if (g_array_007FA170 != (DArrayTy *)0x0) {
+  if (g_array_007FA170 != nullptr) {
     dVar1 = g_array_007FA170->count;
     uVar5 = 0;
     if (0 < (int)dVar1) {
@@ -73,13 +73,13 @@ undefined4 __fastcall FUN_004d2760(AnonShape_004D2760_CB2BA53E *param_1)
     }
     if (dVar1 == 0) {
       DArrayDestroy(g_array_007FA170);
-      g_array_007FA170 = (DArrayTy *)0x0;
+      g_array_007FA170 = nullptr;
     }
   }
   iVar4 = param_1->field_0259;
   if (iVar4 == 100) {
     pDVar2 = *(DArrayTy **)&g_packedRecords_A62x8[*(int *)&param_1->field_0x24].field_0x9d6;
-    if (pDVar2 != (DArrayTy *)0x0) {
+    if (pDVar2 != nullptr) {
       uVar5 = 0;
       if (0 < (int)pDVar2->count) {
         do {
@@ -103,7 +103,7 @@ undefined4 __fastcall FUN_004d2760(AnonShape_004D2760_CB2BA53E *param_1)
   }
   else if (iVar4 == 0x4d) {
     pDVar2 = *(DArrayTy **)&g_packedRecords_A62x8[*(int *)&param_1->field_0x24].field_0x9e2;
-    if (pDVar2 != (DArrayTy *)0x0) {
+    if (pDVar2 != nullptr) {
       uVar5 = 0;
       if (0 < (int)pDVar2->count) {
         do {
@@ -127,7 +127,7 @@ undefined4 __fastcall FUN_004d2760(AnonShape_004D2760_CB2BA53E *param_1)
   }
   else if (iVar4 == 0x43) {
     pDVar2 = *(DArrayTy **)&g_packedRecords_A62x8[*(int *)&param_1->field_0x24].field_0x9ee;
-    if (pDVar2 != (DArrayTy *)0x0) {
+    if (pDVar2 != nullptr) {
       uVar5 = 0;
       if (0 < (int)pDVar2->count) {
         do {
@@ -151,7 +151,7 @@ undefined4 __fastcall FUN_004d2760(AnonShape_004D2760_CB2BA53E *param_1)
   }
   else if (iVar4 == 0x73) {
     pDVar2 = *(DArrayTy **)&g_packedRecords_A62x8[*(int *)&param_1->field_0x24].field_0x9f2;
-    if (pDVar2 != (DArrayTy *)0x0) {
+    if (pDVar2 != nullptr) {
       uVar5 = 0;
       if (0 < (int)pDVar2->count) {
         do {
@@ -174,7 +174,7 @@ undefined4 __fastcall FUN_004d2760(AnonShape_004D2760_CB2BA53E *param_1)
     }
   }
   else if (iVar4 == 0x3a) {
-    if (g_array_007FA16C != (DArrayTy *)0x0) {
+    if (g_array_007FA16C != nullptr) {
       dVar1 = g_array_007FA16C->count;
       uVar5 = 0;
       if (0 < (int)dVar1) {
@@ -190,13 +190,13 @@ undefined4 __fastcall FUN_004d2760(AnonShape_004D2760_CB2BA53E *param_1)
       }
       if (dVar1 == 0) {
         DArrayDestroy(g_array_007FA16C);
-        g_array_007FA16C = (DArrayTy *)0x0;
+        g_array_007FA16C = nullptr;
       }
     }
   }
   else if (iVar4 == 0x65) {
     pDVar2 = *(DArrayTy **)&g_packedRecords_A62x8[*(int *)&param_1->field_0x24].field_0x9e6;
-    if (pDVar2 != (DArrayTy *)0x0) {
+    if (pDVar2 != nullptr) {
       uVar5 = 0;
       if (0 < (int)pDVar2->count) {
         do {
@@ -220,7 +220,7 @@ undefined4 __fastcall FUN_004d2760(AnonShape_004D2760_CB2BA53E *param_1)
   }
   else if ((iVar4 == 0x3b) &&
           (pDVar2 = *(DArrayTy **)&g_packedRecords_A62x8[*(int *)&param_1->field_0x24].field_0x9ea,
-          pDVar2 != (DArrayTy *)0x0)) {
+          pDVar2 != nullptr)) {
     uVar5 = 0;
     if (0 < (int)pDVar2->count) {
       do {
@@ -243,14 +243,14 @@ undefined4 __fastcall FUN_004d2760(AnonShape_004D2760_CB2BA53E *param_1)
   puVar6 = (undefined4 *)&param_1[1].field_0xe8;
   iVar4 = 3;
   do {
-    if ((STT3DSprC *)*puVar6 != (STT3DSprC *)0x0) {
+    if ((STT3DSprC *)*puVar6 != nullptr) {
       thunk_FUN_004ad310((STT3DSprC *)*puVar6);
       Library::MSVCRT::FUN_0072e2b0((HoloTy *)*puVar6);
     }
     puVar6 = puVar6 + 1;
     iVar4 = iVar4 + -1;
   } while (iVar4 != 0);
-  if (*(STT3DSprC **)&param_1[1].field_0xf4 != (STT3DSprC *)0x0) {
+  if (*(STT3DSprC **)&param_1[1].field_0xf4 != nullptr) {
     thunk_FUN_004ad310(*(STT3DSprC **)&param_1[1].field_0xf4);
     Library::MSVCRT::FUN_0072e2b0(*(HoloTy **)&param_1[1].field_0xf4);
   }

@@ -16,7 +16,7 @@ undefined4 * __cdecl FUN_00668330(undefined4 *param_1)
   InternalExceptionFrame local_4c;
   AnonShape_00668330_F270680B *local_8;
 
-  local_8 = (AnonShape_00668330_F270680B *)0x0;
+  local_8 = nullptr;
   local_4c.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_4c;
   iVar1 = Library::MSVCRT::__setjmp3(local_4c.jumpBuffer,0);
@@ -36,7 +36,7 @@ undefined4 * __cdecl FUN_00668330(undefined4 *param_1)
     do {
       if (*(int *)((int)&pAVar2->field_01EB + iVar1) != 0) {
         /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-        uVar3 = FUN_006b0060((uint *)0x0,
+        uVar3 = FUN_006b0060(nullptr,
                              (uint *)(*(int *)(&pAVar2->field_0x1ef + iVar1) + 0x25f + (int)param_1)
                             );
         *(undefined4 *)((int)&local_8->field_01EB + iVar1) = uVar3;
@@ -44,18 +44,18 @@ undefined4 * __cdecl FUN_00668330(undefined4 *param_1)
       }
       iVar1 = iVar1 + 0xc;
     } while (iVar1 < 0x54);
-    if (pAVar2->field_01EB == (uint *)0x0) {
-      pDVar4 = Library::DKW::TBL::DArrayCreate((DArrayTy *)0x0,10,0x2c,10);
+    if (pAVar2->field_01EB == nullptr) {
+      pDVar4 = Library::DKW::TBL::DArrayCreate(nullptr,10,0x2c,10);
       local_8->field_01EB = &pDVar4->flags;
       pAVar2 = local_8;
     }
-    if (pAVar2->field_0203 == (uint *)0x0) {
-      pDVar4 = Library::DKW::TBL::DArrayCreate((DArrayTy *)0x0,10,0x14,10);
+    if (pAVar2->field_0203 == nullptr) {
+      pDVar4 = Library::DKW::TBL::DArrayCreate(nullptr,10,0x14,10);
       local_8->field_0203 = &pDVar4->flags;
       pAVar2 = local_8;
     }
-    if (pAVar2->field_020F == (uint *)0x0) {
-      pDVar4 = Library::DKW::TBL::DArrayCreate((DArrayTy *)0x0,10,0xc,10);
+    if (pAVar2->field_020F == nullptr) {
+      pDVar4 = Library::DKW::TBL::DArrayCreate(nullptr,10,0xc,10);
       local_8->field_020F = &pDVar4->flags;
       pAVar2 = local_8;
     }
@@ -65,6 +65,6 @@ undefined4 * __cdecl FUN_00668330(undefined4 *param_1)
   g_currentExceptionFrame = local_4c.previous;
   thunk_FUN_006686c0((int *)&local_8);
   RaiseInternalException(iVar1,0,"E:\\__titans\\ai\\ai_flt_d.cpp",0x4e);
-  return (undefined4 *)0x0;
+  return nullptr;
 }
 

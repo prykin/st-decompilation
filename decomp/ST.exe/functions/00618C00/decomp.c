@@ -112,7 +112,7 @@ LAB_00618ce0:
         }
         uVar4 = sub_006191A0(this_00,(int)this_00->field_00C9,(int)this_00->field_00CB);
         this_00->field_0150 = (char)uVar4;
-        if ((void *)this_00->field_007D != (void *)0x0) {
+        if ((void *)this_00->field_007D != nullptr) {
           thunk_FUN_00617a20((void *)this_00->field_007D,this_00->field_008B,this_00->field_0018,
                              this_00);
         }
@@ -124,7 +124,7 @@ LAB_00618ce0:
       }
     }
     else if (SVar1 == MESS_SHARED_0003) {
-      if ((void *)local_8->field_007D != (void *)0x0) {
+      if ((void *)local_8->field_007D != nullptr) {
         if (local_8->field_014B != '\0') {
           thunk_FUN_00618900((void *)local_8->field_007D,local_8->field_0145,0);
         }
@@ -140,7 +140,7 @@ LAB_00618ce0:
     if (((local_8->field_007D != 0) &&
         (iVar3 = STPlaySystemC::sub_006E62D0
                            (g_playSystem_00802A38,local_8->field_0079,(int *)&local_14), iVar3 != -4
-        )) && (this_00->field_007D = local_14, local_14 != (void *)0x0)) {
+        )) && (this_00->field_007D = local_14, local_14 != nullptr)) {
       thunk_FUN_00617a20(local_14,this_00->field_008B,this_00->field_0018,this_00);
     }
   }

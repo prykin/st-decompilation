@@ -34,7 +34,7 @@ ChooseMapTy::OutListProc
     }
     STDebugBreak(); /* noreturn in standalone pseudocode */
   }
-  if ((local_c != (AnonShape_005E6640_0F1EE66B *)0x0) && (local_c->field_1AEC != (BITMAPINFO *)0x0))
+  if ((local_c != nullptr) && (local_c->field_1AEC != nullptr))
   {
     bVar2 = 0;
     local_8 = local_8 & 0xffffff00;
@@ -48,7 +48,7 @@ ChooseMapTy::OutListProc
     } while (bVar2 < 0x16);
     if (bVar4 != 0xff) {
       Library::DKW::DDX::FUN_006b4680
-                (param_1,param_4,param_5,local_c->field_1AEC,(uint *)0x0,0,param_5 + -0x3f,param_6,
+                (param_1,param_4,param_5,local_c->field_1AEC,nullptr,0,param_5 + -0x3f,param_6,
                  param_7,0);
     }
   }

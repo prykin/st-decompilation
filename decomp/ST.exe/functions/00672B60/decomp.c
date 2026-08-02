@@ -25,17 +25,17 @@ int FUN_00672b60(char *param_1,AnonShape_GLOBAL_0081194C_4D1525E6 *param_2)
   short *local_c;
   short *local_8;
 
-  local_c = (short *)0x0;
-  local_10 = (short *)0x0;
-  local_14 = (short *)0x0;
-  local_8 = (short *)0x0;
-  if (DAT_00811958 == (int *)0x0) {
+  local_c = nullptr;
+  local_10 = nullptr;
+  local_14 = nullptr;
+  local_8 = nullptr;
+  if (DAT_00811958 == nullptr) {
     DAT_00857540 = 0;
     DAT_00811908 = 0;
     DAT_007d2d24 = 0x600;
   }
   local_1c = Library::DKW::LIB::FUN_006aac10(0x30);
-  if (local_1c == (int *)0x0) {
+  if (local_1c == nullptr) {
     return -2;
   }
   local_60.previous = g_currentExceptionFrame;
@@ -46,7 +46,7 @@ int FUN_00672b60(char *param_1,AnonShape_GLOBAL_0081194C_4D1525E6 *param_2)
     FUN_006a5e90(local_c);
     FUN_006a5e90(local_10);
     FUN_006a5e90(local_14);
-    if (DAT_0085753c == (char *)0x0) {
+    if (DAT_0085753c == nullptr) {
       FUN_006a5e90(local_8);
     }
     piVar2 = local_1c;
@@ -57,19 +57,19 @@ int FUN_00672b60(char *param_1,AnonShape_GLOBAL_0081194C_4D1525E6 *param_2)
     RaiseInternalException(exceptionCode,0,"E:\\__titans\\ai\\Ai_lex.c",0xfd);
     return exceptionCode;
   }
-  if (DAT_0085755c == (short *)0x0) {
+  if (DAT_0085755c == nullptr) {
     local_c = Library::DKW::LIB::MemAlloc(0x401);
     *(undefined1 *)local_c = 0;
   }
-  if (DAT_00857528 == (short *)0x0) {
+  if (DAT_00857528 == nullptr) {
     local_10 = Library::DKW::LIB::MemAlloc(0x401);
     *(char *)local_10 = '\0';
   }
-  if (DAT_00811948 == (short *)0x0) {
+  if (DAT_00811948 == nullptr) {
     local_14 = Library::DKW::LIB::MemAlloc(0x401);
     *(char *)local_14 = '\0';
   }
-  if (DAT_0085753c == (char *)0x0) {
+  if (DAT_0085753c == nullptr) {
     local_8 = Library::DKW::LIB::MemAlloc(0x105);
     *(char *)local_8 = '\0';
   }
@@ -87,7 +87,7 @@ int FUN_00672b60(char *param_1,AnonShape_GLOBAL_0081194C_4D1525E6 *param_2)
   piVar2[7] = (int)pcVar3;
   PTR_0081194c = param_2;
   local_18 = 0;
-  if (param_1 != (char *)0x0) {
+  if (param_1 != nullptr) {
     /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
     local_18 = (**(code **)param_2)(param_1);
     if (local_18 == 0) {
@@ -119,16 +119,16 @@ int FUN_00672b60(char *param_1,AnonShape_GLOBAL_0081194C_4D1525E6 *param_2)
       }
     }
   }
-  if (DAT_0085755c == (short *)0x0) {
+  if (DAT_0085755c == nullptr) {
     DAT_0085755c = local_c;
   }
-  if (DAT_00857528 == (short *)0x0) {
+  if (DAT_00857528 == nullptr) {
     DAT_00857528 = local_10;
   }
-  if (DAT_00811948 == (short *)0x0) {
+  if (DAT_00811948 == nullptr) {
     DAT_00811948 = local_14;
   }
-  if (DAT_0085753c == (char *)0x0) {
+  if (DAT_0085753c == nullptr) {
     DAT_0085753c = (char *)local_8;
   }
   DAT_00857560 = local_18;

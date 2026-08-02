@@ -17,7 +17,7 @@ SettMapMTy * __cdecl CreateSettMapM(void)
   int local_8;
 
   this = (SettMapMTy *)FUN_006b04d0(0x2245);
-  if (this != (SettMapMTy *)0x0) {
+  if (this != nullptr) {
     sub_006E5FB0(this);
     this->field_0000 = (AnonPointee_SettMapMTy_0000 *)&VTable_0079C018;
     *(undefined4 *)&this->field_0x18 = 0;
@@ -68,12 +68,12 @@ SettMapMTy * __cdecl CreateSettMapM(void)
     this->field_21E7 = 0;
     memset(&this->field_0x2161, 0, 0x80); /* compiler bulk-zero initialization */
     iVar1 = 0;
-    this->field_1E2F = (DArrayTy *)0x0;
-    this->field_1F43 = (void *)0x0;
+    this->field_1E2F = nullptr;
+    this->field_1F43 = nullptr;
     this->field_1F3F = 0;
-    this->field_1F4F = (ushort *)0x0;
-    this->field_1F4B = (ushort *)0x0;
-    this->field_1F84 = (DArrayTy *)0x0;
+    this->field_1F4F = nullptr;
+    this->field_1F4B = nullptr;
+    this->field_1F84 = nullptr;
     memset(&this->field_1F8C, 0, 0x140); /* compiler bulk-zero initialization */
     iVar1 = 0;
     this->field_211D = 0;
@@ -90,7 +90,7 @@ SettMapMTy * __cdecl CreateSettMapM(void)
     memset(&this->field_2125, 0, 0x38); /* compiler bulk-zero initialization */
     iVar1 = 0;
     *(undefined4 *)&this->field_0x215d = 0;
-    this->field_21F8 = (HoloTy *)0x0;
+    this->field_21F8 = nullptr;
     *(undefined4 *)&this->field_0x21f4 = 0;
     *(undefined4 *)&this->field_0x21f0 = 0;
     *(undefined4 *)&this->field_0x21ec = 0;
@@ -109,7 +109,7 @@ SettMapMTy * __cdecl CreateSettMapM(void)
     this->field_0000 = (AnonPointee_SettMapMTy_0000 *)&VTable_0079C124;
     this->field_21FC = 0;
     this->field_2200 = -1;
-    this->field_2204 = (AnonPointee_SettMapMTy_2204 *)0x0;
+    this->field_2204 = nullptr;
     this->field_2211 = 0;
     this->field_2221 = 0;
     this->field_220D = 0;
@@ -122,14 +122,14 @@ SettMapMTy * __cdecl CreateSettMapM(void)
     this->field_222A = 0;
     this->field_2208 = 1;
     this->field_222E = 0;
-    this->field_222F = (DArrayTy *)0x0;
-    this->field_2237 = (DArrayTy *)0x0;
+    this->field_222F = nullptr;
+    this->field_2237 = nullptr;
     this->field_2243 = 1;
     this->field_2244 = 1;
     this->field_223B = 0;
     this->field_223F = 0;
     return this;
   }
-  return (SettMapMTy *)0x0;
+  return nullptr;
 }
 

@@ -8,7 +8,7 @@ int __thiscall FUN_004c93e0(void *this,int param_1)
 
   iVar3 = *(int *)((int)this + 0x3d4);
   iVar1 = 0;
-  if (((iVar3 != 0) && (piVar2 = *(int **)((int)this + 0x607), piVar2 != (int *)0x0)) && (0 < iVar3)
+  if (((iVar3 != 0) && (piVar2 = *(int **)((int)this + 0x607), piVar2 != nullptr)) && (0 < iVar3)
      ) {
     do {
       if ((param_1 == 0) || (*piVar2 == param_1)) {

@@ -94,7 +94,7 @@ void __thiscall STAllPlayersC::RestoreTmp(STAllPlayersC *this,int param_1)
 
   /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
   local_8 = CONCAT31(local_8._1_3_,DAT_0080874d);
-  local_c = (DArrayTy *)0x0;
+  local_c = nullptr;
   local_24 = 0;
   local_70.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_70;
@@ -275,7 +275,7 @@ LAB_00439b10:
           else if ((iVar3 == 0x1a4) || (iVar3 == 0x1b8)) {
 LAB_0043986a:
             iVar3 = CheckTmps(cVar12,1,pSVar6->field_0020,*(char *)&pSVar6->field_0024,
-                              (DArrayTy *)0x0,pSVar6->field_0032);
+                              nullptr,pSVar6->field_0032);
             if (0 < iVar3) {
               ActivateTV(this_00,cVar12,1,iVar3);
               goto cf_common_exit_0043A47C;
@@ -302,7 +302,7 @@ LAB_0043986a:
         else if ((iVar3 == 0x1a4) || (iVar3 == 0x1b8)) {
 LAB_00439956:
           cVar12 = (char)local_8;
-          iVar3 = CheckTmps(cVar12,1,pSVar6->field_0020,*(char *)&pSVar6->field_0024,(DArrayTy *)0x0
+          iVar3 = CheckTmps(cVar12,1,pSVar6->field_0020,*(char *)&pSVar6->field_0024,nullptr
                             ,pSVar6->field_0032);
           if (-1 < iVar3) {
             ActivateTV(this_00,cVar12,1,iVar3);
@@ -366,7 +366,7 @@ LAB_0043953a:
           if (((STGameObjC *)g_packedRecords_A62x8[(int)pSVar4].field338_0x177 == local_20) &&
              (*(STGameObjC **)&pAVar1->field_0x4 == local_20)) {
             CalibrateTmp(this_00,(char)local_8,0,1,&pAVar1->field_000A->flags,(int *)&local_c,
-                         (int *)0x0,(int *)0x0);
+                         nullptr,nullptr);
             ResetActivityFromObjs(this_00,local_8,0x3c,local_c,0,0);
             DArrayDestroy(local_c);
           }
@@ -478,7 +478,7 @@ LAB_00439566:
 LAB_004397fb:
           uVar5 = local_8;
           cVar12 = (char)local_8;
-          iVar3 = CheckTmps(cVar12,1,pSVar6->field_0020,*(char *)&pSVar6->field_0024,(DArrayTy *)0x0
+          iVar3 = CheckTmps(cVar12,1,pSVar6->field_0020,*(char *)&pSVar6->field_0024,nullptr
                             ,pSVar6->field_0032);
           if (0 < iVar3) {
             ActivateTV(this_00,cVar12,1,iVar3);
@@ -498,7 +498,7 @@ LAB_00439672:
       }
       else if ((iVar3 == 0x1a4) || (iVar3 == 0x1b8)) {
 LAB_0043963c:
-        iVar3 = CheckTmps(cVar12,1,pSVar6->field_0020,*(char *)&pSVar6->field_0024,(DArrayTy *)0x0,
+        iVar3 = CheckTmps(cVar12,1,pSVar6->field_0020,*(char *)&pSVar6->field_0024,nullptr,
                           pSVar6->field_0032);
         if (0 < iVar3) {
           ActivateTV(this_00,cVar12,1,iVar3);
@@ -523,7 +523,7 @@ LAB_0043963c:
 LAB_004396d1:
         uVar5 = local_8;
         cVar12 = (char)local_8;
-        iVar3 = CheckTmps(cVar12,1,pSVar6->field_0020,*(char *)&pSVar6->field_0024,(DArrayTy *)0x0,
+        iVar3 = CheckTmps(cVar12,1,pSVar6->field_0020,*(char *)&pSVar6->field_0024,nullptr,
                           pSVar6->field_0032);
         if (0 < iVar3) {
           ActivateTV(this_00,cVar12,1,iVar3);
@@ -538,7 +538,7 @@ LAB_004396d1:
 LAB_004398e7:
       uVar5 = local_8;
       cVar12 = (char)local_8;
-      iVar3 = CheckTmps(cVar12,1,pSVar6->field_0020,*(char *)&pSVar6->field_0024,(DArrayTy *)0x0,
+      iVar3 = CheckTmps(cVar12,1,pSVar6->field_0020,*(char *)&pSVar6->field_0024,nullptr,
                         pSVar6->field_0032);
       /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
       uVar10 = extraout_ECX;
@@ -559,7 +559,7 @@ LAB_00439712:
       }
 LAB_00439740:
       cVar12 = (char)local_8;
-      iVar3 = CheckTmps(cVar12,1,pSVar6->field_0020,*(char *)&pSVar6->field_0024,(DArrayTy *)0x0,
+      iVar3 = CheckTmps(cVar12,1,pSVar6->field_0020,*(char *)&pSVar6->field_0024,nullptr,
                         pSVar6->field_0032);
       if (-1 < iVar3) {
         ActivateTV(this_00,cVar12,1,iVar3);
@@ -601,7 +601,7 @@ LAB_0043a27b:
             uVar5 = local_8;
             cVar12 = (char)local_8;
             iVar3 = CheckTmps(cVar12,1,pSVar6->field_0020,*(char *)&pSVar6->field_0024,
-                              (DArrayTy *)0x0,pSVar6->field_0032);
+                              nullptr,pSVar6->field_0032);
             if (0 < iVar3) {
               ActivateTV(this_00,cVar12,1,iVar3);
               goto cf_common_exit_0043A47C;
@@ -615,7 +615,7 @@ LAB_0043a27b:
 LAB_0043a247:
           uVar5 = local_8;
           cVar12 = (char)local_8;
-          iVar3 = CheckTmps(cVar12,1,pSVar6->field_0020,*(char *)&pSVar6->field_0024,(DArrayTy *)0x0
+          iVar3 = CheckTmps(cVar12,1,pSVar6->field_0020,*(char *)&pSVar6->field_0024,nullptr
                             ,pSVar6->field_0032);
           /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
           uVar10 = extraout_EDX_00;
@@ -637,7 +637,7 @@ LAB_0043a2bc:
             goto cf_common_exit_0043A47C;
           }
 LAB_0043a2ea:
-          iVar3 = CheckTmps(cVar12,1,pSVar6->field_0020,*(char *)&pSVar6->field_0024,(DArrayTy *)0x0
+          iVar3 = CheckTmps(cVar12,1,pSVar6->field_0020,*(char *)&pSVar6->field_0024,nullptr
                             ,pSVar6->field_0032);
           if (0 < iVar3) {
             ActivateTV(this_00,cVar12,1,iVar3);
@@ -669,7 +669,7 @@ LAB_0043a320:
 LAB_0043a3c8:
           uVar5 = local_8;
           cVar12 = (char)local_8;
-          iVar3 = CheckTmps(cVar12,1,pSVar6->field_0020,*(char *)&pSVar6->field_0024,(DArrayTy *)0x0
+          iVar3 = CheckTmps(cVar12,1,pSVar6->field_0020,*(char *)&pSVar6->field_0024,nullptr
                             ,pSVar6->field_0032);
           if (0 < iVar3) {
             ActivateTV(this_00,cVar12,1,iVar3);
@@ -684,7 +684,7 @@ LAB_0043a3c8:
 LAB_0043a394:
         uVar5 = local_8;
         cVar12 = (char)local_8;
-        iVar3 = CheckTmps(cVar12,1,pSVar6->field_0020,*(char *)&pSVar6->field_0024,(DArrayTy *)0x0,
+        iVar3 = CheckTmps(cVar12,1,pSVar6->field_0020,*(char *)&pSVar6->field_0024,nullptr,
                           pSVar6->field_0032);
         /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
         uVar11 = extraout_var_13;
@@ -705,7 +705,7 @@ LAB_0043a405:
         }
 LAB_0043a42c:
         cVar12 = (char)local_8;
-        iVar3 = CheckTmps(cVar12,1,pSVar6->field_0020,*(char *)&pSVar6->field_0024,(DArrayTy *)0x0,
+        iVar3 = CheckTmps(cVar12,1,pSVar6->field_0020,*(char *)&pSVar6->field_0024,nullptr,
                           pSVar6->field_0032);
         if (-1 < iVar3) {
           ActivateTV(this_00,cVar12,1,iVar3);
@@ -744,7 +744,7 @@ LAB_0043a463:
         else if ((iVar3 == 0x1a4) || (iVar3 == 0x1b8)) {
 LAB_00439eb7:
           cVar12 = (char)local_8;
-          iVar3 = CheckTmps(cVar12,1,pSVar6->field_0020,*(char *)&pSVar6->field_0024,(DArrayTy *)0x0
+          iVar3 = CheckTmps(cVar12,1,pSVar6->field_0020,*(char *)&pSVar6->field_0024,nullptr
                             ,pSVar6->field_0032);
           if (-1 < iVar3) {
             ActivateTV(this_00,cVar12,1,iVar3);
@@ -775,7 +775,7 @@ LAB_00439eb7:
       }
       else if ((iVar3 == 0x1a4) || (iVar3 == 0x1b8)) {
 LAB_00439dfb:
-        iVar3 = CheckTmps(cVar12,1,pSVar6->field_0020,*(char *)&pSVar6->field_0024,(DArrayTy *)0x0,
+        iVar3 = CheckTmps(cVar12,1,pSVar6->field_0020,*(char *)&pSVar6->field_0024,nullptr,
                           pSVar6->field_0032);
         if (0 < iVar3) {
           ActivateTV(this_00,cVar12,1,iVar3);
@@ -799,7 +799,7 @@ LAB_00439dfb:
 LAB_0043a177:
         uVar5 = local_8;
         cVar12 = (char)local_8;
-        iVar3 = CheckTmps(cVar12,0,local_20->field_0020,pAVar1->field_0x4,(DArrayTy *)0x0,
+        iVar3 = CheckTmps(cVar12,0,local_20->field_0020,pAVar1->field_0x4,nullptr,
                           *(short *)&pAVar1->field_0x8);
         if (0 < iVar3) {
           ActivateTV(this_00,cVar12,0,iVar3);
@@ -813,7 +813,7 @@ LAB_0043a177:
         iVar3 = 0;
       }
       else if (iVar3 == 0x3c) {
-        iVar3 = CheckTmps(cVar12,0,local_20->field_0020,pAVar1->field_0x4,(DArrayTy *)0x0,
+        iVar3 = CheckTmps(cVar12,0,local_20->field_0020,pAVar1->field_0x4,nullptr,
                           *(short *)&pAVar1->field_0x8);
         if (0 < iVar3) {
           ActivateTV(this_00,cVar12,0,iVar3);
@@ -837,7 +837,7 @@ LAB_0043a177:
           }
           goto cf_common_exit_0043A47C;
         }
-        iVar3 = CheckTmps(cVar12,0,local_20->field_0020,pAVar1->field_0x4,(DArrayTy *)0x0,
+        iVar3 = CheckTmps(cVar12,0,local_20->field_0020,pAVar1->field_0x4,nullptr,
                           *(short *)&pAVar1->field_0x8);
         if (0 < iVar3) {
           ActivateTV(this_00,cVar12,0,iVar3);
@@ -870,7 +870,7 @@ LAB_0043a177:
       if (iVar3 == 0) goto LAB_0043a177;
       cVar12 = (char)local_8;
       if (iVar3 == 0x3c) {
-        iVar3 = CheckTmps(cVar12,0,local_20->field_0020,pAVar1->field_0x4,(DArrayTy *)0x0,
+        iVar3 = CheckTmps(cVar12,0,local_20->field_0020,pAVar1->field_0x4,nullptr,
                           *(short *)&pAVar1->field_0x8);
         if (0 < iVar3) {
           ActivateTV(this_00,cVar12,0,iVar3);
@@ -893,7 +893,7 @@ LAB_0043a177:
           }
           goto cf_common_exit_0043A47C;
         }
-        iVar3 = CheckTmps(cVar12,0,local_20->field_0020,pAVar1->field_0x4,(DArrayTy *)0x0,
+        iVar3 = CheckTmps(cVar12,0,local_20->field_0020,pAVar1->field_0x4,nullptr,
                           *(short *)&pAVar1->field_0x8);
         if (-1 < iVar3) {
           ActivateTV(this_00,cVar12,0,iVar3);

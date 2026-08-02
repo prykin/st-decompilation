@@ -116,7 +116,7 @@ uint __fastcall CGenerate::sub_0069CB50(int *param_1)
   pDVar3 = (DArrayTy *)
            thunk_FUN_0069c8b0((int)local_78,*(int *)param_1[2] << 1,((int *)param_1[2])[1] << 1);
   local_138 = pDVar3;
-  if (pDVar3 == (DArrayTy *)0x0) {
+  if (pDVar3 == nullptr) {
     uVar14 = Library::MSVCRT::FUN_0072e6c0();
     thunk_FUN_006a0ae0(param_1,100,100,0,0x3e9,uVar14 % DAT_007d88d4);
   }
@@ -135,9 +135,9 @@ uint __fastcall CGenerate::sub_0069CB50(int *param_1)
             piVar4 = (int *)(pDVar3->elementSize * uVar9 + (int)pDVar3->data);
           }
           else {
-            piVar4 = (int *)0x0;
+            piVar4 = nullptr;
           }
-          if (((piVar4 != (int *)0x0) && (*piVar4 == 0)) && (0 < piVar4[1])) {
+          if (((piVar4 != nullptr) && (*piVar4 == 0)) && (0 < piVar4[1])) {
             *(uint *)(local_74 + iVar13 * 4) = uVar9;
             *(int *)(local_70 + iVar13 * 4) = piVar4[1];
             iVar13 = iVar13 + 1;
@@ -178,10 +178,10 @@ uint __fastcall CGenerate::sub_0069CB50(int *param_1)
                       (pDVar3->elementSize * *(uint *)(local_74 + iVar8 * 4) + (int)pDVar3->data);
           }
           else {
-            pAVar15 = (AnonShape_0069CB50_B339E56A *)0x0;
+            pAVar15 = nullptr;
           }
           local_30 = pAVar15;
-          if (pAVar15 == (AnonShape_0069CB50_B339E56A *)0x0) {
+          if (pAVar15 == nullptr) {
             local_140 = local_140 + 1;
           }
           else {
@@ -196,7 +196,7 @@ uint __fastcall CGenerate::sub_0069CB50(int *param_1)
                 piVar4 = (int *)(pDVar3->elementSize * uVar14 + (int)pDVar3->data);
               }
               else {
-                piVar4 = (int *)0x0;
+                piVar4 = nullptr;
               }
               local_dc = *piVar4;
               if (((-1 < local_dc) && (*(int *)((int)local_78 + local_dc * 0xe + 6) < 0)) &&
@@ -255,9 +255,9 @@ uint __fastcall CGenerate::sub_0069CB50(int *param_1)
             piVar4 = (int *)(pDVar3->elementSize * uVar14 + (int)pDVar3->data);
           }
           else {
-            piVar4 = (int *)0x0;
+            piVar4 = nullptr;
           }
-          if ((piVar4 != (int *)0x0) && (*piVar4 == 0xff)) {
+          if ((piVar4 != nullptr) && (*piVar4 == 0xff)) {
             *(uint *)(local_74 + iVar13 * 4) = uVar14;
             *(undefined4 *)(local_70 + iVar13 * 4) = *(undefined4 *)(piVar4[3] + 0xc);
             iVar8 = iVar8 + *(int *)(piVar4[3] + 0xc);
@@ -275,8 +275,8 @@ uint __fastcall CGenerate::sub_0069CB50(int *param_1)
         local_17c = 0;
         while ((0 < local_140 && (local_17c < local_134))) {
           iVar10 = 0;
-          local_b4 = (void *)0x0;
-          local_28 = (undefined4 *)0x0;
+          local_b4 = nullptr;
+          local_28 = nullptr;
           uVar14 = Library::MSVCRT::FUN_0072e6c0();
           iVar5 = (int)uVar14 % local_ac;
           iVar13 = 0;
@@ -301,10 +301,10 @@ uint __fastcall CGenerate::sub_0069CB50(int *param_1)
                        (int)local_138->data);
           }
           else {
-            local_30 = (AnonShape_0069CB50_B339E56A *)0x0;
+            local_30 = nullptr;
           }
           local_15c = local_148;
-          if (local_30 == (AnonShape_0069CB50_B339E56A *)0x0) {
+          if (local_30 == nullptr) {
             local_140 = local_140 + 1;
           }
           else {
@@ -322,10 +322,10 @@ uint __fastcall CGenerate::sub_0069CB50(int *param_1)
                   piVar4 = (int *)(pDVar3->elementSize * local_e4 + (int)pDVar3->data);
                 }
                 else {
-                  piVar4 = (int *)0x0;
+                  piVar4 = nullptr;
                 }
                 iVar13 = thunk_FUN_00696310(param_1,*piVar4,*(int *)param_1[2] << 1,local_68,
-                                            (int *)0x0);
+                                            nullptr);
                 iVar8 = 0;
                 if (0 < iVar13) {
                   do {
@@ -661,9 +661,9 @@ LAB_0069d7b2:
             piVar4 = (int *)(local_138->elementSize * uVar14 + (int)local_138->data);
           }
           else {
-            piVar4 = (int *)0x0;
+            piVar4 = nullptr;
           }
-          if (((piVar4 != (int *)0x0) && (0 < piVar4[2])) && (*piVar4 != 0xff)) {
+          if (((piVar4 != nullptr) && (0 < piVar4[2])) && (*piVar4 != 0xff)) {
             *(uint *)(local_74 + iVar13 * 4) = uVar14;
             *(int *)(local_70 + iVar13 * 4) = piVar4[2];
             iVar13 = iVar13 + 1;
@@ -707,10 +707,10 @@ LAB_0069d7b2:
                       );
           }
           else {
-            pAVar15 = (AnonShape_0069CB50_B339E56A *)0x0;
+            pAVar15 = nullptr;
           }
           local_30 = pAVar15;
-          if (pAVar15 == (AnonShape_0069CB50_B339E56A *)0x0) {
+          if (pAVar15 == nullptr) {
             local_140 = local_140 + 1;
           }
           else {
@@ -725,7 +725,7 @@ LAB_0069d7b2:
                 piVar4 = (int *)(pDVar3->elementSize * uVar14 + (int)pDVar3->data);
               }
               else {
-                piVar4 = (int *)0x0;
+                piVar4 = nullptr;
               }
               local_dc = *piVar4;
               if (((-1 < local_dc) && (*(int *)((int)local_78 + local_dc * 0xe + 6) < 0)) &&
@@ -822,7 +822,7 @@ LAB_0069d7b2:
     }
   }
   pDVar3 = local_138;
-  if (local_138 != (DArrayTy *)0x0) {
+  if (local_138 != nullptr) {
     uVar14 = 0;
     if (0 < (int)local_138->count) {
       bVar18 = local_138->count != 0;
@@ -832,9 +832,9 @@ LAB_0069d7b2:
           pvVar7 = (void *)(pDVar3->elementSize * uVar14 + (int)pDVar3->data);
         }
         else {
-          pvVar7 = (void *)0x0;
+          pvVar7 = nullptr;
         }
-        if ((pvVar7 != (void *)0x0) && (*(DArrayTy **)((int)pvVar7 + 0xc) != (DArrayTy *)0x0)) {
+        if ((pvVar7 != nullptr) && (*(DArrayTy **)((int)pvVar7 + 0xc) != nullptr)) {
           DArrayDestroy(*(DArrayTy **)((int)pvVar7 + 0xc));
         }
         uVar14 = uVar14 + 1;
@@ -860,7 +860,7 @@ LAB_0069d454:
   if (7 < iVar8) {
     iVar8 = local_e8 - 5;
   }
-  iVar5 = thunk_FUN_00696310(param_1,local_68[local_e8],*(int *)param_1[2] << 1,local_10c,(int *)0x0
+  iVar5 = thunk_FUN_00696310(param_1,local_68[local_e8],*(int *)param_1[2] << 1,local_10c,nullptr
                             );
   if (iVar5 == 8) {
     iVar5 = 0;

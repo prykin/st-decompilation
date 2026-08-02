@@ -20,7 +20,7 @@ undefined4 __thiscall FUN_0060bdd0(void *this,undefined4 *param_1)
 
   ppiVar2 = local_58;
   for (iVar1 = 8; iVar1 != 0; iVar1 = iVar1 + -1) {
-    *ppiVar2 = (int *)0x0;
+    *ppiVar2 = nullptr;
     ppiVar2 = ppiVar2 + 1;
   }
   memset(local_38, 0, 0x1c); /* compiler bulk-zero initialization */

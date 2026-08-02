@@ -10,8 +10,8 @@ char * FUN_006c49b0(char *param_1)
   char *pcVar5;
   char *pcVar6;
 
-  pcVar2 = (char *)0x0;
-  if (param_1 != (char *)0x0) {
+  pcVar2 = nullptr;
+  if (param_1 != nullptr) {
     uVar3 = 0xffffffff;
     pcVar2 = param_1;
     do {
@@ -21,7 +21,7 @@ char * FUN_006c49b0(char *param_1)
       pcVar2 = pcVar2 + 1;
     } while (cVar1 != '\0');
     pcVar2 = Library::DKW::LIB::MemAlloc(~uVar3);
-    if (pcVar2 != (char *)0x0) {
+    if (pcVar2 != nullptr) {
       uVar3 = 0xffffffff;
       do {
         pcVar5 = param_1;

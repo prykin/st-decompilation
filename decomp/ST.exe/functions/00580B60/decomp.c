@@ -19,7 +19,7 @@ undefined4 * __thiscall STFieldC::CreateField(STFieldC *this,int param_1,int par
   STFieldC *local_c;
   undefined4 *local_8;
 
-  local_8 = (undefined4 *)0x0;
+  local_8 = nullptr;
   local_50.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_50;
   local_c = this;
@@ -44,13 +44,13 @@ undefined4 * __thiscall STFieldC::CreateField(STFieldC *this,int param_1,int par
     text = "ResSmall";
   }
   puVar4 = Library::Ourlib::MFRLOAD::mfRLoad
-                     (DAT_00806774,CASE_1D,text,0xffffffff,0,1,0,(undefined4 *)0x0);
-  if ((puVar4 != (ushort *)0x0) && ((void *)pSVar2->field_0211 != (void *)0x0)) {
+                     (DAT_00806774,CASE_1D,text,0xffffffff,0,1,0,nullptr);
+  if ((puVar4 != nullptr) && ((void *)pSVar2->field_0211 != nullptr)) {
     puVar5 = FUN_006e6460((void *)pSVar2->field_0211,*(undefined4 *)((int)puVar4 + 0x21),
                           *(int *)puVar4,(short)(*(int *)((int)puVar4 + 9) / 2),
                           (short)(*(int *)((int)puVar4 + 0xd) / 2),1,1);
-    local_8 = (undefined4 *)0x0;
-    if (puVar5 != (undefined4 *)0x0) {
+    local_8 = nullptr;
+    if (puVar5 != nullptr) {
       local_8 = puVar5;
       FUN_006e6540((int)puVar5,(float)param_1 * _DAT_007904f8 + _DAT_007904f4,
                    (float)param_2 * _DAT_007904f8 + _DAT_007904f4,-1);

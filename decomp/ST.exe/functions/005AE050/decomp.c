@@ -63,10 +63,10 @@ void __thiscall ChooseMapTy::ShowDescription(ChooseMapTy *this,uint param_1)
         );
   pAVar3 = (AnonShape_006B5B10_E0D06CF1 *)g_startSystem_0081176C->field_0544;
   FUN_006b4170(pAVar3,0,0,0,pAVar3->field_0004,pAVar3->field_0008,0xff);
-  if ((DArrayTy *)g_startSystem_0081176C->field_0548 != (DArrayTy *)0x0) {
+  if ((DArrayTy *)g_startSystem_0081176C->field_0548 != nullptr) {
     FUN_006b5570((DArrayTy *)g_startSystem_0081176C->field_0548);
   }
-  pDVar9 = Library::DKW::TBL::SArrayCreate((DArrayTy *)0x0,10,10);
+  pDVar9 = Library::DKW::TBL::SArrayCreate(nullptr,10,10);
   pCVar17 = local_10;
   g_startSystem_0081176C->field_0548 = &pDVar9->flags;
   uVar14 = local_10->field_1C9F->elementSize;
@@ -120,7 +120,7 @@ void __thiscall ChooseMapTy::ShowDescription(ChooseMapTy *this,uint param_1)
       pcVar10 = *(char **)(local_10->field_1C97->growCapacity + iVar7 * 4);
     }
     else {
-      pcVar10 = (char *)0x0;
+      pcVar10 = nullptr;
     }
     uVar14 = 0xffffffff;
     do {
@@ -155,7 +155,7 @@ void __thiscall ChooseMapTy::ShowDescription(ChooseMapTy *this,uint param_1)
     }
     pcVar11 = local_14;
     g_currentExceptionFrame = local_bc.previous;
-    if (local_14 != (cMf32 *)0x0) {
+    if (local_14 != nullptr) {
       StartSystemTy::LoadMapData(g_startSystem_0081176C,local_14,pCVar17->field_1A5F);
       cMf32::delete(pcVar11);
     }
@@ -195,7 +195,7 @@ void __thiscall ChooseMapTy::ShowDescription(ChooseMapTy *this,uint param_1)
       pcVar18 = *(char **)(pCVar17->field_1C9F->growCapacity + param_1 * 4);
     }
     else {
-      pcVar18 = (char *)0x0;
+      pcVar18 = nullptr;
     }
     uVar14 = 0xffffffff;
     do {
@@ -251,7 +251,7 @@ void __thiscall ChooseMapTy::ShowDescription(ChooseMapTy *this,uint param_1)
     if (iVar7 == 0) {
       pcVar11 = (cMf32 *)Library::Ourlib::MF32INT::FUN_006f0ec0(0x345,&local_10->field_1FAF,0,0,0);
       local_14 = pcVar11;
-      if (g_dArray_0080C4CB != (DArrayTy *)0x0) {
+      if (g_dArray_0080C4CB != nullptr) {
         FUN_006b5570(g_dArray_0080C4CB);
       }
       g_dArray_0080C4CB =
@@ -260,19 +260,19 @@ void __thiscall ChooseMapTy::ShowDescription(ChooseMapTy *this,uint param_1)
       local_8 = &DAT_0080ed16;
       puVar8 = cMf32::RecGet(pcVar11,0xc,PTR_s_MISSION_0079c064,(int *)&local_8,0);
       pcVar11 = local_14;
-      if (puVar8 == (ushort *)0x0) {
+      if (puVar8 == nullptr) {
         local_c = 0;
       }
       iVar7 = local_c;
       local_8 = &DAT_0080874e;
       cMf32::RecGet(local_14,0xc,PTR_DAT_0079c068,(int *)&local_8,0);
       cMf32::delete(pcVar11);
-      if ((DArrayTy *)g_startSystem_0081176C->field_0548 != (DArrayTy *)0x0) {
+      if ((DArrayTy *)g_startSystem_0081176C->field_0548 != nullptr) {
         FUN_006b5570((DArrayTy *)g_startSystem_0081176C->field_0548);
       }
-      if (g_dArray_0080C4CB == (DArrayTy *)0x0) {
-        g_dArray_0080C4CB = Library::DKW::TBL::SArrayCreate((DArrayTy *)0x0,10,10);
-        pDVar9 = Library::DKW::TBL::SArrayCreate((DArrayTy *)0x0,10,10);
+      if (g_dArray_0080C4CB == nullptr) {
+        g_dArray_0080C4CB = Library::DKW::TBL::SArrayCreate(nullptr,10,10);
+        pDVar9 = Library::DKW::TBL::SArrayCreate(nullptr,10,10);
         g_startSystem_0081176C->field_0548 = &pDVar9->flags;
       }
       else {
@@ -285,10 +285,10 @@ void __thiscall ChooseMapTy::ShowDescription(ChooseMapTy *this,uint param_1)
                             (g_startSystem_0081176C->field_0034,g_dArray_0080C4CB,
                              " ,.;:!?/\\()[]{}",(uint *)&DAT_007c21ec,
                              g_startSystem_0081176C->field_0544->field_0004 + -0x14,0,0xffffffff,
-                             (char *)0x0,1);
+                             nullptr,1);
         g_startSystem_0081176C->field_0548 = puVar13;
-        if (g_startSystem_0081176C->field_0548 == (uint *)0x0) {
-          pDVar9 = Library::DKW::TBL::SArrayCreate((DArrayTy *)0x0,10,10);
+        if (g_startSystem_0081176C->field_0548 == nullptr) {
+          pDVar9 = Library::DKW::TBL::SArrayCreate(nullptr,10,10);
           g_startSystem_0081176C->field_0548 = &pDVar9->flags;
           g_currentExceptionFrame = local_100.previous;
           goto LAB_005ae53a;
@@ -320,7 +320,7 @@ LAB_005ae53a:
   *(uint *)&pCVar17->field_0x31 = (uint)(iVar7 != 0);
   FUN_006e6080(pCVar17,2,g_startSystem_0081176C->field_0389,(undefined4 *)puVar12);
   pSVar5 = pCVar17->field_1A5B;
-  if (pSVar5->field_02E6 != (MMsgTy *)0x0) {
+  if (pSVar5->field_02E6 != nullptr) {
     psVar22 = local_34;
     for (iVar16 = 6; iVar16 != 0; iVar16 = iVar16 + -1) {
       psVar22[0] = 0;

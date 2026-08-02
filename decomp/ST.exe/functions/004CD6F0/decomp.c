@@ -8,7 +8,7 @@ undefined4 __fastcall FUN_004cd6f0(int param_1)
   TLOBaseTy *local_8;
 
   iVar3 = 0;
-  local_8 = (TLOBaseTy *)0x0;
+  local_8 = nullptr;
   /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
   if (0 < *(int *)(param_1 + 0x524)) {
     puVar2 = (undefined4 *)(param_1 + 0x4d0);

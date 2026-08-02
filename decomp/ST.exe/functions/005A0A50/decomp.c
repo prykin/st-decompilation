@@ -23,14 +23,14 @@ void __thiscall FSGSTy::sub_005A0A50(FSGSTy *this)
     StartSystemTy::sub_006E56B0(this->field_000C,this->field_1EB6);
   }
   this->field_1EB6 = 0;
-  if (this->field_1AE8 != (DArrayTy *)0x0) {
+  if (this->field_1AE8 != nullptr) {
     FUN_006b5570(this->field_1AE8);
   }
-  this->field_1AE8 = (DArrayTy *)0x0;
-  if (this->field_1AEC != (DArrayTy *)0x0) {
+  this->field_1AE8 = nullptr;
+  if (this->field_1AEC != nullptr) {
     FUN_006b5570(this->field_1AEC);
   }
-  this->field_1AEC = (DArrayTy *)0x0;
+  this->field_1AEC = nullptr;
   return;
 }
 

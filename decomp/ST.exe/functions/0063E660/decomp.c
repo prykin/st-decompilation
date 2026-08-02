@@ -7,7 +7,7 @@ void __fastcall FUN_0063e660(AnonShape_0063E660_4D42AB87 *param_1)
   int iVar3;
   uint uVar4;
 
-  if (param_1->field_0336 != (AnonNested_0063E660_0336_9C5AD80D *)0x0) {
+  if (param_1->field_0336 != nullptr) {
     iVar1 = param_1->field_0336->field_000C;
     uVar4 = 0;
     if (0 < iVar1) {
@@ -23,7 +23,7 @@ void __fastcall FUN_0063e660(AnonShape_0063E660_4D42AB87 *param_1)
       } while ((int)uVar4 < iVar1);
     }
     DArrayDestroy((DArrayTy *)param_1->field_0336);
-    param_1->field_0336 = (AnonNested_0063E660_0336_9C5AD80D *)0x0;
+    param_1->field_0336 = nullptr;
   }
   return;
 }

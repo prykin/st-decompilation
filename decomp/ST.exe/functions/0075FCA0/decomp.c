@@ -20,7 +20,7 @@ void FUN_0075fca0(undefined4 *param_1)
         do {
           if (piVar5[-5] == *piVar3) {
             piVar3 = *(int **)(iVar1 + 0x34 + iVar2 * 4);
-            if (piVar3 != (int *)0x0) goto LAB_0075fcef;
+            if (piVar3 != nullptr) goto LAB_0075fcef;
             break;
           }
           iVar2 = iVar2 + 1;

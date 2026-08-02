@@ -37,7 +37,7 @@ void __thiscall FUN_00721080(void *this,int param_1,uint param_2)
       pcVar6 = *(char **)(*(int *)(iVar8 + 0x14) + uVar5 * 4);
     }
     else {
-      pcVar6 = (char *)0x0;
+      pcVar6 = nullptr;
     }
     uVar3 = 0xffffffff;
     do {
@@ -67,7 +67,7 @@ LAB_0072111d:
     pcVar6 = *(char **)(*(int *)(*(int *)((int)this + 0x138) + 0x14) + uVar5 * 4);
   }
   else {
-    pcVar6 = (char *)0x0;
+    pcVar6 = nullptr;
   }
   uVar3 = 0xffffffff;
   do {
@@ -81,7 +81,7 @@ LAB_0072111d:
       pcVar6 = *(char **)(*(int *)(*(int *)((int)this + 0x138) + 0x14) + uVar5 * 4);
     }
     else {
-      pcVar6 = (char *)0x0;
+      pcVar6 = nullptr;
     }
     uVar3 = 0xffffffff;
     do {
@@ -113,7 +113,7 @@ LAB_0072122f:
           pcVar6 = *(char **)(*(int *)(*(int *)((int)this + 0x138) + 0x14) + iVar8 * 4);
         }
         else {
-          pcVar6 = (char *)0x0;
+          pcVar6 = nullptr;
         }
         iVar4 = -1;
         pcVar7 = pcVar6;

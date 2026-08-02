@@ -117,7 +117,7 @@ void __thiscall ChooseMapTy::CreateCtrls(ChooseMapTy *this,char param_1)
   }
   ppcVar10 = local_fe4;
   for (iVar4 = 0x223; iVar4 != 0; iVar4 = iVar4 + -1) {
-    *ppcVar10 = (ccFntTy *)0x0;
+    *ppcVar10 = nullptr;
     ppcVar10 = ppcVar10 + 1;
   }
   memset(local_80, 0, 0x58); /* compiler bulk-zero initialization */
@@ -199,7 +199,7 @@ LAB_005aecc2:
     local_48 = 0x6327;
     local_50 = local_70;
     (*this_00->field_000C->vtable->CreateObject)
-              ((SystemClassTy *)this_00->field_000C,5,&this_00->field_1C83,(int *)0x0,local_80,0);
+              ((SystemClassTy *)this_00->field_000C,5,&this_00->field_1C83,nullptr,local_80,0);
     Library::DKW::DDX::FUN_006b3430((int *)g_ddxContext_008075A8,this_00->field_1C87);
     goto LAB_005aecc2;
   }
@@ -261,7 +261,7 @@ LAB_005aecc2:
   local_288 = local_570;
   local_118 = local_570;
   (*this_00->field_000C->vtable->CreateObject)
-            ((SystemClassTy *)this_00->field_000C,7,&this_00->field_1A6C,(int *)0x0,local_598,0);
+            ((SystemClassTy *)this_00->field_000C,7,&this_00->field_1A6C,nullptr,local_598,0);
   if (this_00->field_1A74 != 0xffffffff) {
     Library::DKW::DDX::FUN_006b34d0
               ((uint *)this_00->field_1AB8,this_00->field_1A74,0xfffffffe,this_00->field_1A8C,
@@ -292,7 +292,7 @@ LAB_005aef44:
     StartSystemTy::CreateChatView(g_startSystem_0081176C);
     ppcVar10 = local_fe4;
     for (iVar4 = 0x223; iVar4 != 0; iVar4 = iVar4 + -1) {
-      *ppcVar10 = (ccFntTy *)0x0;
+      *ppcVar10 = nullptr;
       ppcVar10 = ppcVar10 + 1;
     }
     local_fe4[0] = (ccFntTy *)0x1;
@@ -313,11 +313,11 @@ LAB_005aef44:
     local_f54 = 0;
     local_f50 = 0xc0a2;
     (*pSVar1->vtable->CreateObject)
-              ((SystemClassTy *)pSVar1,6,&g_startSystem_0081176C->field_054C,(int *)0x0,local_fe4,0);
+              ((SystemClassTy *)pSVar1,6,&g_startSystem_0081176C->field_054C,nullptr,local_fe4,0);
     Library::DKW::DDX::FUN_006b3430((int *)g_ddxContext_008075A8,g_startSystem_0081176C->field_0554);
   }
   pSVar1 = this_00->field_1A5B;
-  if (pSVar1->field_02E6 != (MMsgTy *)0x0) {
+  if (pSVar1->field_02E6 != nullptr) {
     memset(&local_28, 0, 0x1a); /* compiler bulk-zero initialization */
     local_1c = 1;
     local_1e = 1;

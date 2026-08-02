@@ -56,33 +56,33 @@ SubmarineTitans::Recovered::HiddenThis::AnonReceiver_00660180::FUN_00660180
       local_20 = param_1[4];
       local_1e = param_1[5];
       if ((*(ushort *)&this->field_0x7d == 0xfffe) ||
-         (g_allPlayers_007FA174 == (STAllPlayersC *)0x0)) {
-        pSVar3 = (STGroupBoatC *)0x0;
+         (g_allPlayers_007FA174 == nullptr)) {
+        pSVar3 = nullptr;
       }
       else {
         pSVar3 = thunk_FUN_0042b760(this->field_0x24,*(ushort *)&this->field_0x7d);
       }
-      if (pSVar3 == (STGroupBoatC *)0x0) {
+      if (pSVar3 == nullptr) {
         return 0xffffffff;
       }
       pSVar3->sub_00498D20(2,local_34);
       return 0;
     }
   }
-  local_1c = (DArrayTy *)0x0;
+  local_1c = nullptr;
   local_18 = 0;
-  local_8 = (DArrayTy *)0x0;
+  local_8 = nullptr;
   local_78.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_78;
   iVar2 = Library::MSVCRT::__setjmp3(local_78.jumpBuffer,0);
   if (iVar2 != 0) {
     g_currentExceptionFrame = local_78.previous;
-    if (local_8 != (DArrayTy *)0x0) {
+    if (local_8 != nullptr) {
       DArrayDestroy(local_8);
     }
     return 0xffffffff;
   }
-  array = Library::DKW::TBL::DArrayCreate((DArrayTy *)0x0,1,6,10);
+  array = Library::DKW::TBL::DArrayCreate(nullptr,1,6,10);
   local_14 = param_1[3] / 2 + *param_1;
   sStack_12 = param_1[4] / 2 + param_1[1];
   asStack_10[0] = param_1[5] / 2 + param_1[2];
@@ -93,20 +93,20 @@ SubmarineTitans::Recovered::HiddenThis::AnonReceiver_00660180::FUN_00660180
   Library::DKW::TBL::DArrayAppend(array,&local_14);
   local_18 = 1;
   local_1c = array;
-  if ((local_c->field_007D == 0xfffe) || (g_allPlayers_007FA174 == (STAllPlayersC *)0x0)) {
-    pSVar3 = (STGroupBoatC *)0x0;
+  if ((local_c->field_007D == 0xfffe) || (g_allPlayers_007FA174 == nullptr)) {
+    pSVar3 = nullptr;
   }
   else {
     pSVar3 = thunk_FUN_0042b760(local_c->field_0024,local_c->field_007D);
   }
-  if (pSVar3 == (STGroupBoatC *)0x0) {
+  if (pSVar3 == nullptr) {
     RaiseInternalException
               (-1,g_overwriteContext_007ED77C,"E:\\__titans\\ai\\ai_flt.cpp",0x467);
   }
   else {
     pSVar3->sub_00498D20(6,&local_1c);
   }
-  if (array != (DArrayTy *)0x0) {
+  if (array != nullptr) {
     DArrayDestroy(array);
   }
   g_currentExceptionFrame = local_78.previous;

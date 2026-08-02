@@ -19,7 +19,7 @@ void __fastcall FUN_0061dfe0(STLightC *param_1)
   param_1->field_00AC = uVar2;
   pSVar3 = param_1->field_00A3;
   iVar4 = ((uVar2 >> 0x10) % 3 + 3) * 0x200 + DAT_008032d0;
-  if (pSVar3 != (STLightC_field_00A3DArray *)0x0) {
+  if (pSVar3 != nullptr) {
     local_8 = 0;
     if (0 < (int)pSVar3->count) {
       bVar6 = pSVar3->count != 0;
@@ -27,7 +27,7 @@ void __fastcall FUN_0061dfe0(STLightC *param_1)
         /* ST_PSEUDO[dynamic_array_indexing]: expected DArrayAt<T>(array, index) (runtime elementSize cannot be a static C array) */
         if ((bVar6) &&
            (piVar5 = (int *)((int)&pSVar3->data->field_0000 + pSVar3->elementSize * local_8),
-           piVar5 != (int *)0x0)) {
+           piVar5 != nullptr)) {
           piVar1 = (int *)((int)piVar5 + 0x26);
           ST3DSMAPContext::sub_006E88C0
                     (g_sT3DSMAPContext_00807598,piVar1,piVar5[1],piVar5[2],piVar5[3],piVar5[4],

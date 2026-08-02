@@ -31,7 +31,7 @@ FUN_005f23d0(void *this,int param_1,int param_2,int param_3,uint param_4,int par
   if (iVar3 == 0) {
     return local_8;
   }
-  if (g_visibleClass_00802A88 == (VisibleClassTy *)0x0) {
+  if (g_visibleClass_00802A88 == nullptr) {
 cf_common_exit_005F26AF:
     iVar5 = thunk_FUN_005f15f0(local_c,(ushort)iVar5,(short)param_2,0,(char)param_4,0,'\0');
     if (-1 < iVar5) {
@@ -47,7 +47,7 @@ cf_common_exit_005F26AF:
              (((param_6 < pVVar1->field_0030 &&
                (iVar4 = param_3 + g_centeredOffsets5[0], -1 < iVar4)) &&
               (iVar4 < pVVar1->field_0034)))))) &&
-           ((pVVar1->field_004C != (byte *)0x0 &&
+           ((pVVar1->field_004C != nullptr &&
             (pVVar1->field_004C[param_6 + iVar4 * pVVar1->field_0030] == 0)))) &&
           (DAT_0080874d != -1)) &&
          ((((g_visibleClass_00802A88->field_00F8 != 0 &&
@@ -56,7 +56,7 @@ cf_common_exit_005F26AF:
                         param_2,&param_5,&local_10), pVVar1 = g_visibleClass_00802A88, -1 < param_5)
             ) && ((param_5 < pVVar2->field_0030 &&
                   (((local_10 = local_10 + g_centeredOffsets5[0], -1 < local_10 &&
-                    (local_10 < pVVar2->field_0034)) && (pVVar2->field_004C != (byte *)0x0)))))) &&
+                    (local_10 < pVVar2->field_0034)) && (pVVar2->field_004C != nullptr)))))) &&
           (((pVVar2->field_004C[param_5 + local_10 * pVVar2->field_0030] == 0 &&
             (DAT_0080874d != -1)) && (g_visibleClass_00802A88->field_00F8 != 0)))))) {
         iVar4 = param_2 + 1;
@@ -67,7 +67,7 @@ cf_common_exit_005F26AF:
         pVVar2 = g_visibleClass_00802A88;
         if (((((-1 < local_14) && (local_14 < pVVar1->field_0030)) &&
              ((local_18 = local_18 + g_centeredOffsets5[0], iVar5 = iVar3, -1 < local_18 &&
-              ((((local_18 < pVVar1->field_0034 && (pVVar1->field_004C != (byte *)0x0)) &&
+              ((((local_18 < pVVar1->field_0034 && (pVVar1->field_004C != nullptr)) &&
                 (pVVar1->field_004C[local_14 + local_18 * pVVar1->field_0030] == 0)) &&
                ((DAT_0080874d != -1 && (g_visibleClass_00802A88->field_00F8 != 0)))))))) &&
             ((VisibleClassTy::sub_00558C00
@@ -76,7 +76,7 @@ cf_common_exit_005F26AF:
              ((param_1 < pVVar2->field_0030 &&
               (local_1c = g_centeredOffsets5[0] + local_1c, -1 < local_1c)))))) &&
            ((local_1c < pVVar2->field_0034 &&
-            ((pVVar2->field_004C != (byte *)0x0 &&
+            ((pVVar2->field_004C != nullptr &&
              (pVVar2->field_004C[param_1 + local_1c * pVVar2->field_0030] == 0))))))
         goto cf_common_exit_005F26AF;
       }

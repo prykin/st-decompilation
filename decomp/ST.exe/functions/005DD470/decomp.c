@@ -60,9 +60,9 @@ void __thiscall StartSystemTy::ChatMessage(StartSystemTy *this,STMessage *param_
   }
   SVar2 = param_1->id;
   if (SVar2 == MESS_STARTSYSTEMTY_633F) {
-    if ((((local_8->field_067E != (ushort *)0x0) && (DAT_0080c4fa != 0)) &&
+    if ((((local_8->field_067E != nullptr) && (DAT_0080c4fa != 0)) &&
         (-1 < (int)local_8->field_0558)) &&
-       ((param_1 != (STMessage *)0x0 && (dVar4 = (param_1->arg2).u32, dVar4 != 0)))) {
+       ((param_1 != nullptr && (dVar4 = (param_1->arg2).u32, dVar4 != 0)))) {
       pcVar5 = local_8->field_0034;
       local_10 = dVar4;
       if (pcVar5->field_00A0 != 0) {
@@ -80,9 +80,9 @@ void __thiscall StartSystemTy::ChatMessage(StartSystemTy *this,STMessage *param_
             resourceString = *(uint **)(*(int *)(iVar10 + 0x14) + uVar12 * 4);
           }
           else {
-            resourceString = (uint *)0x0;
+            resourceString = nullptr;
           }
-          if (resourceString != (uint *)0x0) {
+          if (resourceString != nullptr) {
             ccFntTy::SetSurf(this_00->field_0034,(int)this_00->field_067E,0,0,
                              (uVar12 - uVar11) * local_c,*(int *)(this_00->field_067E + 2),local_c);
             ccFntTy::WrStr(this_00->field_0034,resourceString,0,-1,0);
@@ -114,7 +114,7 @@ void __thiscall StartSystemTy::ChatMessage(StartSystemTy *this,STMessage *param_
         puVar8 = (undefined4 *)((int)puVar8 + 1);
       }
       ccFntTy::SetSurf(this_00->field_0034,(int)this_00->field_0682,0,0,0,0,0);
-      if ((param_1->arg0).ptr != (undefined4 *)0x0) {
+      if ((param_1->arg0).ptr != nullptr) {
         ccFntTy::WrStr(this_00->field_0034,*(uint **)(param_1->arg0).ptr,0,-1,2);
       }
       uVar1 = (param_1->arg1).words.low;

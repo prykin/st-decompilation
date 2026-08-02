@@ -27,9 +27,9 @@ ST3DSMAPContext::sub_006E9EF0
   byte *pbVar5;
   int iVar6;
 
-  if (param_1 < *(uint *)&this->field_0x310) {
-    puVar1 = (uint *)(*(int *)&this->field_0x31c + param_1 * 0x114);
-    uVar3 = *(uint *)(*(int *)&this->field_0x31c + param_1 * 0x114);
+  if (param_1 < (uint)this->field_0310) {
+    puVar1 = (uint *)(this->field_031C + param_1 * 0x114);
+    uVar3 = *(uint *)(this->field_031C + param_1 * 0x114);
     if ((uVar3 & 0x8000) != 0) {
       if (puVar1[0x25] <= param_2) {
         FUN_006e91a0();
@@ -42,7 +42,7 @@ ST3DSMAPContext::sub_006E9EF0
         if (puVar1[0x2a] == 0) {
           puVar4 = Library::DKW::LIB::FUN_006aac10(puVar1[0x25] * 8);
           puVar1[0x2a] = (uint)puVar4;
-          if (puVar4 == (undefined4 *)0x0) {
+          if (puVar4 == nullptr) {
             return;
           }
         }

@@ -48,7 +48,7 @@ void __thiscall STBoatC::_CheckDefenceShots(STBoatC *this,int param_1)
     return;
   }
   pDVar4 = local_10->field_047B;
-  if ((pDVar4 != (DArrayTy *)0x0) && (index = 0, 0 < (int)pDVar4->count)) {
+  if ((pDVar4 != nullptr) && (index = 0, 0 < (int)pDVar4->count)) {
     do {
       DArrayGetElement(pDVar4,index,local_24);
       if (local_20 != 0xffff) {
@@ -60,7 +60,7 @@ void __thiscall STBoatC::_CheckDefenceShots(STBoatC *this,int param_1)
         }
         else {
           this_00 = STAllPlayersC::GetObjPtr(g_allPlayers_007FA174,local_24[0],local_20,CASE_1);
-          if (this_00 != (STGameObjC *)0x0) {
+          if (this_00 != nullptr) {
             iVar3 = this_00->vfunc_F8();
             if (iVar3 == 1) {
               iVar3 = this_00->vfunc_F0();

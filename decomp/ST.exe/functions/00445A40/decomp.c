@@ -42,9 +42,9 @@ STAllPlayersC::RegisterPGPair(STAllPlayersC *this,uint param_1,uint *param_2,uin
   uint local_c;
   short local_8 [2];
 
-  local_18 = (DArrayTy *)0x0;
-  local_14 = (DArrayTy *)0x0;
-  local_28 = (DArrayTy *)0x0;
+  local_18 = nullptr;
+  local_14 = nullptr;
+  local_28 = nullptr;
   local_38 = 0;
   local_88.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_88;
@@ -52,13 +52,13 @@ STAllPlayersC::RegisterPGPair(STAllPlayersC *this,uint param_1,uint *param_2,uin
   iVar2 = Library::MSVCRT::__setjmp3(local_88.jumpBuffer,0);
   if (iVar2 != 0) {
     g_currentExceptionFrame = local_88.previous;
-    if (local_28 != (DArrayTy *)0x0) {
+    if (local_28 != nullptr) {
       DArrayDestroy(local_28);
     }
-    if (local_18 != (DArrayTy *)0x0) {
+    if (local_18 != nullptr) {
       DArrayDestroy(local_18);
     }
-    if (local_14 != (DArrayTy *)0x0) {
+    if (local_14 != nullptr) {
       DArrayDestroy(local_14);
     }
     if (iVar2 != -0x5001fff7) {
@@ -71,7 +71,7 @@ STAllPlayersC::RegisterPGPair(STAllPlayersC *this,uint param_1,uint *param_2,uin
     }
     return;
   }
-  if ((((param_2 == (uint *)0x0) || (param_3 == (uint *)0x0)) ||
+  if ((((param_2 == nullptr) || (param_3 == nullptr)) ||
       (uVar6 = param_2[3], local_10 = uVar6, uVar6 == 0)) || (local_c = param_3[3], local_c == 0)) {
     uVar6 = local_10;
     RaiseInternalException
@@ -88,7 +88,7 @@ STAllPlayersC::RegisterPGPair(STAllPlayersC *this,uint param_1,uint *param_2,uin
       DArrayGetElement(local_18,uVar7,local_8);
       this_01 = local_34;
       pSVar3 = GetObjPtr(local_34,objPtr,local_8[0],CASE_1);
-      if ((pSVar3 == (STGameObjC *)0x0) || (iVar2 = pSVar3->vfunc_F8(), iVar2 == 0)
+      if ((pSVar3 == nullptr) || (iVar2 = pSVar3->vfunc_F8(), iVar2 == 0)
          ) {
         DArrayRemoveAt(local_18,uVar7);
         uVar6 = uVar6 - 1;
@@ -108,7 +108,7 @@ STAllPlayersC::RegisterPGPair(STAllPlayersC *this,uint param_1,uint *param_2,uin
     do {
       DArrayGetElement(local_14,uVar6,local_8);
       pSVar3 = GetObjPtr(this_01,objPtr,local_8[0],CASE_1);
-      if (((pSVar3 == (STGameObjC *)0x0) || (iVar2 = thunk_FUN_00490d90(pSVar3), iVar2 == 0)) ||
+      if (((pSVar3 == nullptr) || (iVar2 = thunk_FUN_00490d90(pSVar3), iVar2 == 0)) ||
          ((iVar2 = pSVar3->vfunc_F8(), iVar2 == 0 || (pSVar3->field_0030 == -1))))
       {
         DArrayRemoveAt(local_14,uVar6);
@@ -133,8 +133,8 @@ STAllPlayersC::RegisterPGPair(STAllPlayersC *this,uint param_1,uint *param_2,uin
         do {
           DArrayGetElement(local_14,uVar7,&local_1a);
           if (local_8[0] == local_1a) {
-            if (pDVar4 == (DArrayTy *)0x0) {
-              pDVar4 = Library::DKW::TBL::DArrayCreate((DArrayTy *)0x0,1,2,1);
+            if (pDVar4 == nullptr) {
+              pDVar4 = Library::DKW::TBL::DArrayCreate(nullptr,1,2,1);
               local_28 = pDVar4;
             }
             Library::DKW::TBL::DArrayAppend(pDVar4,local_8);
@@ -155,7 +155,7 @@ STAllPlayersC::RegisterPGPair(STAllPlayersC *this,uint param_1,uint *param_2,uin
       this_01 = local_34;
     } while ((local_38 != 1) && (uVar6 = uVar6 + 1, (int)uVar6 < (int)local_10));
   }
-  if (pDVar4 == (DArrayTy *)0x0) goto LAB_00445e36;
+  if (pDVar4 == nullptr) goto LAB_00445e36;
   if ((local_10 == 0) && (local_c == 0)) {
     local_30 = pDVar4->count;
     local_20 = 0;
@@ -215,7 +215,7 @@ LAB_00445dca:
   local_10 = local_18->count;
   local_c = local_14->count;
   DArrayDestroy(pDVar4);
-  local_28 = (DArrayTy *)0x0;
+  local_28 = nullptr;
 LAB_00445e36:
   uVar6 = 0;
   if (0 < (int)local_c) {
@@ -240,23 +240,23 @@ LAB_00445e36:
       uVar6 = uVar6 + 1;
     } while ((int)uVar6 < (int)local_10);
   }
-  local_44 = Library::DKW::TBL::DArrayCreate((DArrayTy *)0x0,local_10,2,1);
+  local_44 = Library::DKW::TBL::DArrayCreate(nullptr,local_10,2,1);
   Library::DKW::TBL::FUN_006afe40((int *)&local_44,&local_18->flags);
-  local_40 = Library::DKW::TBL::DArrayCreate((DArrayTy *)0x0,local_c,2,1);
+  local_40 = Library::DKW::TBL::DArrayCreate(nullptr,local_c,2,1);
   Library::DKW::TBL::FUN_006afe40((int *)&local_40,&local_14->flags);
-  local_3c = Library::DKW::TBL::DArrayCreate((DArrayTy *)0x0,1,4,1);
+  local_3c = Library::DKW::TBL::DArrayCreate(nullptr,1,4,1);
   if (g_packedRecords_A62x8[objPtr].field2377_0x9f6 == 0) {
-    pDVar4 = Library::DKW::TBL::DArrayCreate((DArrayTy *)0x0,1,0xc,1);
+    pDVar4 = Library::DKW::TBL::DArrayCreate(nullptr,1,0xc,1);
     g_packedRecords_A62x8[objPtr].field2377_0x9f6 = pDVar4;
   }
   Library::DKW::TBL::DArrayAppend
             ((DArrayTy *)g_packedRecords_A62x8[objPtr].field2377_0x9f6,&local_44);
   OptimizeGuardBoats(this_01,objPtr);
   DistributeGuardBoats(this_01,objPtr);
-  if (local_18 != (DArrayTy *)0x0) {
+  if (local_18 != nullptr) {
     DArrayDestroy(local_18);
   }
-  if (local_14 != (DArrayTy *)0x0) {
+  if (local_14 != nullptr) {
     DArrayDestroy(local_14);
   }
   g_currentExceptionFrame = local_88.previous;

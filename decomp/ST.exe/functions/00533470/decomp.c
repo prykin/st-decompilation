@@ -49,7 +49,7 @@ undefined4 __thiscall OptPanelTy::CheckFiles(OptPanelTy *this,byte *param_1)
       pbVar5 = *(byte **)(local_c->field_01E9->growCapacity + uVar9 * 4);
     }
     else {
-      pbVar5 = (byte *)0x0;
+      pbVar5 = nullptr;
     }
     do {
       bVar1 = *pbVar5;

@@ -14,7 +14,7 @@ Visible * __cdecl CreateVisible(void)
   Visible *this;
 
   this = (Visible *)FUN_006b04d0(0x118);
-  if (this != (Visible *)0x0) {
+  if (this != nullptr) {
     sub_006E5FB0(this);
     *(undefined4 *)this = 0x79c01c;
     memset(&this->field_0x88, 0, 0x80); /* compiler bulk-zero initialization */
@@ -25,6 +25,6 @@ Visible * __cdecl CreateVisible(void)
     *(undefined4 *)&this->field_0x84 = 1;
     return this;
   }
-  return (Visible *)0x0;
+  return nullptr;
 }
 

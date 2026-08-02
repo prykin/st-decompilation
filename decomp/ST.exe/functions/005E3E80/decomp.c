@@ -28,12 +28,12 @@ MTaskTy::CreateTextSSpr
   local_c = param_5;
   local_14 = param_3;
   local_10 = param_4;
-  local_8 = (AnonShape_005E3E80_D5AAB6C7 *)0x0;
+  local_8 = nullptr;
   local_5c.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_5c;
   iVar3 = Library::MSVCRT::__setjmp3(local_5c.jumpBuffer,0);
   if (iVar3 == 0) {
-    if (((param_1 == (uint *)0x0) || ((char)*param_1 == '\0')) || (param_6 == (ccFntTy *)0x0)) {
+    if (((param_1 == nullptr) || ((char)*param_1 == '\0')) || (param_6 == nullptr)) {
       RaiseInternalException
                 (-0x34,g_overwriteContext_007ED77C,"E:\\__titans\\Start\\task_obj.cpp",0x46c);
     }
@@ -87,12 +87,12 @@ MTaskTy::CreateTextSSpr
   iVar4 = ReportDebugMessage("E:\\__titans\\Start\\task_obj.cpp",0x485,0,iVar3,"%s",
                              "MTaskTy::CreateTextSSpr");
   if (iVar4 == 0) {
-    if (param_6 != (ccFntTy *)0x0) {
+    if (param_6 != nullptr) {
       ccFntTy::EraseSufr(param_6);
     }
     FUN_00725e30((int *)&local_8);
     RaiseInternalException(iVar3,0,"E:\\__titans\\Start\\task_obj.cpp",0x488);
-    return (undefined4 *)0x0;
+    return nullptr;
   }
   STDebugBreak(); /* noreturn in standalone pseudocode */
 }

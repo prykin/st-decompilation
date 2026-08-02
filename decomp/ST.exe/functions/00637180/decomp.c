@@ -10,7 +10,7 @@ void __fastcall FUN_00637180(AnonShape_00637180_4094267C *param_1)
   int iVar4;
   uint uVar5;
 
-  if (param_1->field_002C != (AnonNested_00637180_002C_C78B37DA *)0x0) {
+  if (param_1->field_002C != nullptr) {
     iVar1 = *(int *)&param_1->field_002C->field_0xc;
     uVar5 = 0;
     if (0 < iVar1) {

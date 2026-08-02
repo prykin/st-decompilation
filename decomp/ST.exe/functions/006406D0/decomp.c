@@ -341,7 +341,7 @@ LAB_00642c6e:
     }
     this_00->field_0x27d = 0;
     *(undefined4 *)&this_00->field_0x27e = 0;
-    pDVar13 = Library::DKW::TBL::DArrayCreate((DArrayTy *)0x0,0,8,1);
+    pDVar13 = Library::DKW::TBL::DArrayCreate(nullptr,0,8,1);
     *(DArrayTy **)((int)&this_00->field_023E + 3) = pDVar13;
     *(undefined4 *)&this_00->field_0x270 = 1;
     *(undefined4 *)&this_00->field_0x278 = 0xffffffff;
@@ -356,7 +356,7 @@ LAB_00642c6e:
     case CASE_9A:
     case CASE_AC:
     case CASE_B4:
-      if (g_allPlayers_007FA174 == (STAllPlayersC *)0x0) {
+      if (g_allPlayers_007FA174 == nullptr) {
         bVar7 = 1;
       }
       else {
@@ -393,7 +393,7 @@ LAB_00642c6e:
     case CASE_B9:
     case CASE_BA:
     case CASE_BF:
-      if (g_allPlayers_007FA174 == (STAllPlayersC *)0x0) {
+      if (g_allPlayers_007FA174 == nullptr) {
         bVar7 = 1;
       }
       else {
@@ -488,7 +488,7 @@ switchD_00640ad9_caseD_a2:
       local_4c = STAllPlayersC::GetObjPtr
                            (g_allPlayers_007FA174,(char)this_00->field_0024,
                             *(ushort *)&this_00->field_0x262,CASE_1);
-      if ((local_4c != (STGameObjC *)0x0) &&
+      if ((local_4c != nullptr) &&
          (iVar10 = (*local_4c->vtable->vfunc_2C)(), iVar10 == 0x3f)) {
         this_00->field_0x288 = 1;
       }
@@ -983,10 +983,10 @@ switchD_00640c2d_caseD_a2:
     local_4c = STAllPlayersC::GetObjPtr
                          (g_allPlayers_007FA174,(char)this_00->field_0024,
                           *(ushort *)&this_00->field_0x262,CASE_1);
-    if ((local_4c == (STGameObjC *)0x0) || (this_00->field_0x27d == '\b')) {
+    if ((local_4c == nullptr) || (this_00->field_0x27d == '\b')) {
       *(undefined4 *)&this_00->field_0x264 = 0;
     }
-    if (local_4c != (STGameObjC *)0x0) {
+    if (local_4c != nullptr) {
       local_d8 = thunk_FUN_004ad650((STT3DSprC *)&local_4c->field_0x1d5);
     }
   }
@@ -1100,7 +1100,7 @@ cf_common_exit_00642C8B:
     pSVar18 = STAllPlayersC::GetObjPtr
                         (g_allPlayers_007FA174,(char)this_00->field_0024,
                          *(ushort *)&this_00->field_0x262,CASE_1);
-    if (pSVar18 == (STGameObjC *)0x0) {
+    if (pSVar18 == nullptr) {
       iVar10 = *(int *)&this_00->field_0x1c;
 LAB_00641a40:
       uVar17 = iVar10 * 0x41c64e6d + 0x3039;

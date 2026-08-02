@@ -39,7 +39,7 @@ void __thiscall SettMapMTy::RunGame(SettMapMTy *this)
     /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
     (*(code *)pSVar2->field_0000->field_0008)();
     this_00 = pSVar2->field_1A5B->field_02E6;
-    if (this_00 != (MMsgTy *)0x0) {
+    if (this_00 != nullptr) {
       MMsgTy::HidePanel(this_00,1,0,1);
     }
     g_currentExceptionFrame = local_4c.previous;

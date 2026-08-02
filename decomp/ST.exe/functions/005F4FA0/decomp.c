@@ -27,7 +27,7 @@ int __thiscall STBHEShellC::sub_005F4FA0(STBHEShellC *this)
   local_c = 0;
   bVar4 = false;
   iVar5 = 0;
-  if ((this->field_0169 != (STBHEShellC_field_0169DArray *)0x0) &&
+  if ((this->field_0169 != nullptr) &&
      (local_8 = 0, 0 < this->field_010D)) {
     do {
       uVar7 = local_8 * this->field_0109;
@@ -49,7 +49,7 @@ int __thiscall STBHEShellC::sub_005F4FA0(STBHEShellC *this)
             /* ST_PSEUDO[dynamic_array_indexing]: expected DArrayAt<T>(array, index) (runtime elementSize cannot be a static C array) */
             if (((uVar7 < pSVar1->count) &&
                 (pcVar8 = &pSVar1->data->field_0000 + pSVar1->elementSize * uVar7,
-                pcVar8 != (char *)0x0)) && (*pcVar8 != '\x02')) {
+                pcVar8 != nullptr)) && (*pcVar8 != '\x02')) {
               *(int *)(pcVar8 + 2) =
                    (*(int *)(pcVar8 + 0x12) * (&this->field_0139)[local_8]) / 10000 +
                    this->field_0111;

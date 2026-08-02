@@ -18,7 +18,7 @@ int DArrayRemoveAt(DArrayTy *array,uint index)
   byte *puVar4;
   byte *puVar5;
 
-  if (array != (DArrayTy *)0x0) {
+  if (array != nullptr) {
     if (index < array->count) {
       dVar1 = array->elementSize;
       puVar5 = (byte *)(dVar1 * index + (int)array->data);

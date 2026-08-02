@@ -81,7 +81,7 @@ int __thiscall STParticleC::sub_0062A370(STParticleC *this,int param_1)
   }
   if (uVar2 == 2) {
     /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-    if ((this->field_00EB != (AnonPointee_STParticleC_00EB *)0x0) &&
+    if ((this->field_00EB != nullptr) &&
        (iVar3 = (**(code **)(this->field_00EB->field_0000 + 0xe0))
                           (this->field_00EF,(int)&param_1 + 2,&local_6,&local_8,&local_24),
        iVar3 == 0)) {

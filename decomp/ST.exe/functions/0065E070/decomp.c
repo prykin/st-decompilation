@@ -54,7 +54,7 @@ FUN_0065e070(int param_1,undefined4 param_2,uint param_3,uint param_4,uint param
   local_c = 0;
   do {
     local_1c = (DArrayTy *)*local_10;
-    if (local_1c != (DArrayTy *)0x0) {
+    if (local_1c != nullptr) {
       local_18 = 0;
       if (0 < (int)local_1c->count) {
         bVar13 = local_1c->count != 0;
@@ -64,10 +64,10 @@ FUN_0065e070(int param_1,undefined4 param_2,uint param_3,uint param_4,uint param
             puVar4 = (ushort *)(local_1c->elementSize * local_18 + (int)local_1c->data);
           }
           else {
-            puVar4 = (ushort *)0x0;
+            puVar4 = nullptr;
           }
           this = STAllPlayersC::GetObjPtr(g_allPlayers_007FA174,(char)local_c,*puVar4,CASE_1);
-          if ((this == (STGameObjC *)0x0) || (iVar9 = this->vfunc_F8(), iVar9 == 0))
+          if ((this == nullptr) || (iVar9 = this->vfunc_F8(), iVar9 == 0))
           goto cf_continue_loop_0065E27E;
           uVar5 = (*this->vtable->vfunc_2C)();
           STFishC::sub_004162B0((STFishC *)this,&local_8,&local_6,(undefined2 *)((int)&param_3 + 2));
@@ -98,7 +98,7 @@ LAB_0065e1b6:
           if (param_4 == 0x3fffffff) {
 LAB_0065e218:
             pbVar8 = param_7;
-            if ((param_7 != (byte *)0x0) && (*param_7 != 0)) {
+            if ((param_7 != nullptr) && (*param_7 != 0)) {
               (*this->vtable->vfunc_74)(local_2c);
               pbVar11 = local_2c;
               do {

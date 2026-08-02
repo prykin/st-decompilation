@@ -25,7 +25,7 @@ undefined4 __fastcall FUN_005edc20(AnonShape_005EDC20_3D37DB9E *param_1)
        ((sVar1 < g_worldGrid.sizeZ &&
         (this = g_worldGrid.cells
                 [(int)g_worldGrid.planeStride * (int)sVar1 + (int)g_worldGrid.sizeX * (int)sVar2 +
-                 (int)sVar3].objects[0], this != (STWorldObject *)0x0)))) {
+                 (int)sVar3].objects[0], this != nullptr)))) {
       iVar4 = this->GetObjectTypeId();
       if ((iVar4 == 0x52) || (iVar4 == 0x5f)) {
         if ((*(int *)&this[0x23].field_0x1c == *(int *)&param_1->field_0x18) &&

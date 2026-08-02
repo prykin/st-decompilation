@@ -18,7 +18,7 @@ void FUN_00496f70(int param_1,int param_2,undefined4 param_3,int param_4)
         piVar3 = (int *)(g_array_007FB270->elementSize * uVar2 + (int)g_array_007FB270->data);
       }
       else {
-        piVar3 = (int *)0x0;
+        piVar3 = nullptr;
       }
       iVar1 = FUN_006acf90(*piVar3,(uint)(piVar3[1] < param_2),param_1,param_2);
       if (iVar1 < piVar3[3]) {

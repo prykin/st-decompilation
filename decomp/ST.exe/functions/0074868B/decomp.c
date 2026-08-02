@@ -24,7 +24,7 @@ FUN_0074868b(AnonShape_0074868B_7E9383CB *param_1,LPCRITICAL_SECTION lpCriticalS
     /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
     (*(code *)lpCriticalSection->DebugInfo->CriticalSection)(lpCriticalSection);
     param_1->field_0004 = lpCriticalSection;
-    if (piVar1 != (int *)0x0) {
+    if (piVar1 != nullptr) {
       /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
       (**(code **)(*piVar1 + 8))(piVar1);
     }

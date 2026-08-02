@@ -32,7 +32,7 @@ MTaskTy::PaintBut(MTaskTy *this,int *param_1,UINT param_2,int param_3,int param_
   char local_8;
   undefined3 uStack_7;
 
-  if (param_1 != (int *)0x0) {
+  if (param_1 != nullptr) {
     local_c = *(undefined4 **)(*param_1 + 4);
     local_14 = *(undefined4 **)(*param_1 + 8);
     puVar4 = local_14;

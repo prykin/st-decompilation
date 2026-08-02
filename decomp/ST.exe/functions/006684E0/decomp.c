@@ -29,7 +29,7 @@ byte * __cdecl FltDataPack(AnonShape_GLOBAL_008489C4_F7BABFAC *param_1,uint *par
   int local_c;
   byte *local_8;
 
-  local_8 = (byte *)0x0;
+  local_8 = nullptr;
   local_c = 0;
   local_50.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_50;
@@ -39,7 +39,7 @@ byte * __cdecl FltDataPack(AnonShape_GLOBAL_008489C4_F7BABFAC *param_1,uint *par
     ppuVar8 = &param_1->field_01EB;
     do {
       puVar10 = *ppuVar8;
-      if (puVar10 != (uint *)0x0) {
+      if (puVar10 != nullptr) {
         iVar7 = puVar10[3] * puVar10[2] + 0x1c;
         local_c = local_c + iVar7;
         ppuVar8[2] = (uint *)iVar7;
@@ -67,7 +67,7 @@ byte * __cdecl FltDataPack(AnonShape_GLOBAL_008489C4_F7BABFAC *param_1,uint *par
     puVar10 = (uint *)(pbVar6 + 0x25f);
     local_8 = pbVar6;
     do {
-      if (*(uint **)(pbVar6 + iVar5 + 0x1eb) != (uint *)0x0) {
+      if (*(uint **)(pbVar6 + iVar5 + 0x1eb) != nullptr) {
         FUN_006affc0(*(uint **)(pbVar6 + iVar5 + 0x1eb),puVar10,&local_c);
         *(int *)(local_8 + iVar5 + 0x1ef) = (int)puVar10 + (-0x25f - (int)local_8);
         puVar10 = (uint *)((int)puVar10 + *(int *)(local_8 + iVar5 + 499));
@@ -79,7 +79,7 @@ byte * __cdecl FltDataPack(AnonShape_GLOBAL_008489C4_F7BABFAC *param_1,uint *par
     return pbVar6;
   }
   g_currentExceptionFrame = local_50.previous;
-  if (local_8 != (byte *)0x0) {
+  if (local_8 != nullptr) {
     FreeAndNull(&local_8);
   }
   iVar7 = ReportDebugMessage("E:\\__titans\\ai\\ai_flt_d.cpp",0x75,0,iVar5,"%s",
@@ -88,6 +88,6 @@ byte * __cdecl FltDataPack(AnonShape_GLOBAL_008489C4_F7BABFAC *param_1,uint *par
     STDebugBreak(); /* noreturn in standalone pseudocode */
   }
   RaiseInternalException(iVar5,0,"E:\\__titans\\ai\\ai_flt_d.cpp",0x76);
-  return (byte *)0x0;
+  return nullptr;
 }
 

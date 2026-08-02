@@ -20,7 +20,7 @@ undefined4 * __cdecl FUN_0065cb00(undefined4 *param_1)
   InternalExceptionFrame local_4c;
   AnonShape_0065CB00_C527AFF0 *local_8;
 
-  local_8 = (AnonShape_0065CB00_C527AFF0 *)0x0;
+  local_8 = nullptr;
   local_4c.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_4c;
   iVar1 = Library::MSVCRT::__setjmp3(local_4c.jumpBuffer,0);
@@ -38,7 +38,7 @@ undefined4 * __cdecl FUN_0065cb00(undefined4 *param_1)
     local_8->field_0001 = 0x49f;
     local_8->field_0005 = 2;
     iVar1 = local_8->field_047A;
-    if (&local_8->field_046E == (int *)0x0) {
+    if (&local_8->field_046E == nullptr) {
       uVar7 = 0;
     }
     else {
@@ -46,7 +46,7 @@ undefined4 * __cdecl FUN_0065cb00(undefined4 *param_1)
     }
     puVar2 = (byte *)(Library::DKW::LIB::FUN_006aac10(uVar7));
     local_8->field_0476 = puVar2;
-    if (&local_8->field_046E == (int *)0x0) {
+    if (&local_8->field_046E == nullptr) {
       uVar7 = 0;
     }
     else {
@@ -55,10 +55,10 @@ undefined4 * __cdecl FUN_0065cb00(undefined4 *param_1)
     puVar2 = (byte *)(iVar1 + 0x49e + (int)param_1);
     puVar8 = (byte *)(local_8->field_0476);
     memmove(puVar8, puVar2, uVar7); /* compiler REP MOVS byte copy */
-    uVar3 = FUN_006b0060((uint *)0x0,(uint *)(local_8->field_0466 + 0x49e + (int)param_1));
+    uVar3 = FUN_006b0060(nullptr,(uint *)(local_8->field_0466 + 0x49e + (int)param_1));
     local_8->field_0462 = uVar3;
     puVar4 = Library::DKW::TBL::FUN_006c8680
-                       ((uint *)0x0,(uint *)(local_8->field_045A + 0x49e + (int)param_1));
+                       (nullptr,(uint *)(local_8->field_045A + 0x49e + (int)param_1));
     uVar7 = 0;
     local_8->field_0456 = puVar4;
     iVar1 = local_8->field_0462;
@@ -73,7 +73,7 @@ undefined4 * __cdecl FUN_0065cb00(undefined4 *param_1)
           iVar1 = 0;
         }
         if (*(int *)(iVar1 + 0xf) != 0) {
-          uVar3 = FUN_006b0060((uint *)0x0,(uint *)(*(int *)(iVar1 + 0x13) + 0x49e + (int)param_1));
+          uVar3 = FUN_006b0060(nullptr,(uint *)(*(int *)(iVar1 + 0x13) + 0x49e + (int)param_1));
           *(undefined4 *)(iVar1 + 0xf) = uVar3;
           pAVar5 = local_8;
         }
@@ -88,6 +88,6 @@ undefined4 * __cdecl FUN_0065cb00(undefined4 *param_1)
   g_currentExceptionFrame = local_4c.previous;
   thunk_FUN_0065d0f0((int *)&local_8);
   RaiseInternalException(iVar1,0,"E:\\__titans\\ai\\ai_event_d.cpp",0x4c);
-  return (undefined4 *)0x0;
+  return nullptr;
 }
 

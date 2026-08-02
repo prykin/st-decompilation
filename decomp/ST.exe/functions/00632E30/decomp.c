@@ -189,7 +189,7 @@ LAB_00632f7e:
             puVar6 = (undefined4 *)(*(int *)(iVar12 + 8) * uVar11 + *(int *)(iVar12 + 0x1c));
           }
           else {
-            puVar6 = (undefined4 *)0x0;
+            puVar6 = nullptr;
           }
           *(undefined1 *)(puVar6 + 3) = 0;
           *(undefined4 *)((int)puVar6 + 0x21) = 0;

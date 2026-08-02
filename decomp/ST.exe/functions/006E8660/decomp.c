@@ -1,5 +1,3 @@
-#include "../../pseudocode_runtime.h"
-
 
 /* [STMethodOwnerApplier] Structural method owner recovered as ST3DSMAPContext.
    Evidence: this_call_owners=[ST3DSMAPContext]; agreed_this_calls=31; incoming_this_accesses=10;
@@ -12,7 +10,7 @@ ST3DSMAPContext::sub_006E8660
           uint param_6,uint param_7,uint param_8)
 
 {
-  void *pvVar1;
+  byte *pbVar1;
   undefined4 *puVar2;
   int iVar3;
   AnonShape_006E8840_CF3FA5BA *pAVar4;
@@ -20,21 +18,21 @@ ST3DSMAPContext::sub_006E8660
   int local_8;
 
   *param_1 = -1;
-  pAVar5 = *(AnonShape_006E8840_CF3FA5BA **)&this->field_0x2e8;
-  pAVar4 = (AnonShape_006E8840_CF3FA5BA *)0x0;
-  if (pAVar5 == (AnonShape_006E8840_CF3FA5BA *)0x0) {
-    local_8 = *(int *)&this->field_0x314;
+  pAVar5 = (AnonShape_006E8840_CF3FA5BA *)this->field_02E8;
+  pAVar4 = nullptr;
+  if (pAVar5 == nullptr) {
+    local_8 = this->field_0314;
   }
   else {
-    *(undefined4 *)&this->field_0x2e8 = *(undefined4 *)&pAVar5->field_0x8;
-    if (pAVar5 == *(AnonShape_006E8840_CF3FA5BA **)&this->field_0x2ec) {
-      *(undefined4 *)&this->field_0x2ec = 0;
-      *(undefined4 *)&this->field_0x2e8 = 0;
+    this->field_02E8 = *(undefined4 *)&pAVar5->field_0x8;
+    if (pAVar5 == (AnonShape_006E8840_CF3FA5BA *)this->field_02EC) {
+      this->field_02EC = 0;
+      this->field_02E8 = 0;
     }
-    local_8 = ((int)pAVar5 - *(int *)&this->field_0x31c) / 0x114;
+    local_8 = ((int)pAVar5 - (int)this->field_031C) / 0x114;
     pAVar4 = pAVar5;
   }
-  if (local_8 < *(int *)&this->field_0x314) {
+  if (local_8 < this->field_0314) {
     pAVar5 = pAVar4;
     for (iVar3 = 0x45; iVar3 != 0; iVar3 = iVar3 + -1) {
       *(undefined4 *)pAVar5 = 0;
@@ -42,23 +40,28 @@ ST3DSMAPContext::sub_006E8660
     }
   }
   else {
-    if (*(int *)&this->field_0x318 <= *(int *)&this->field_0x314) {
-      pvVar1 = Library::DKW::LIB::MemRealloc
-                         (*(AnonPointee_TLOBaseTy_0607 **)&this->field_0x31c,
-                          (*(int *)&this->field_0x318 + 10) * 0x114);
-      if (pvVar1 == (void *)0x0) {
+    if (this->field_0318 <= this->field_0314) {
+      pbVar1 = Library::DKW::LIB::MemRealloc(this->field_031C,(this->field_0318 + 10) * 0x114);
+      if (pbVar1 == nullptr) {
         return 0xfffffffe;
       }
-      *(void **)&this->field_0x31c = pvVar1;
-      memset((void *)((int)pvVar1 + *(int *)&this->field_0x314 * 0x114), 0, 0xac8); /* compiler bulk-zero initialization */
-      *(int *)&this->field_0x318 = *(int *)&this->field_0x318 + 10;
+      this->field_031C = pbVar1;
+      pbVar1 = pbVar1 + this->field_0314 * 0x114;
+      for (iVar3 = 0x2b2; iVar3 != 0; iVar3 = iVar3 + -1) {
+        pbVar1[0] = 0;
+        pbVar1[1] = 0;
+        pbVar1[2] = 0;
+        pbVar1[3] = 0;
+        pbVar1 = pbVar1 + 4;
+      }
+      this->field_0318 = this->field_0318 + 10;
     }
-    local_8 = *(int *)&this->field_0x314;
-    *(int *)&this->field_0x314 = local_8 + 1;
-    pAVar4 = (AnonShape_006E8840_CF3FA5BA *)(*(int *)&this->field_0x31c + local_8 * 0x114);
+    local_8 = this->field_0314;
+    this->field_0314 = local_8 + 1;
+    pAVar4 = (AnonShape_006E8840_CF3FA5BA *)(this->field_031C + local_8 * 0x114);
   }
-  if (*(int *)&this->field_0x310 <= local_8) {
-    *(int *)&this->field_0x310 = local_8 + 1;
+  if ((int)this->field_0310 <= local_8) {
+    this->field_0310 = local_8 + 1;
   }
   *(uint *)&pAVar4->field_0x84 = param_6;
   *(uint *)&pAVar4->field_0x88 = param_7;
@@ -73,7 +76,7 @@ ST3DSMAPContext::sub_006E8660
   if (0 < (int)param_2) {
     puVar2 = Library::DKW::LIB::FUN_006aac10(param_2 << 2);
     *(undefined4 **)(pAVar4 + 1) = puVar2;
-    if (puVar2 == (undefined4 *)0x0) {
+    if (puVar2 == nullptr) {
       return 0xfffffffe;
     }
   }

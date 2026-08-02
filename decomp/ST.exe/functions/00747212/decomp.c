@@ -17,7 +17,7 @@ int __thiscall FUN_00747212(int param_1,uint *param_2)
 
   /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
   piVar2 = *(int **)(param_1 + 0x18);
-  if (piVar2 == (int *)0x0) {
+  if (piVar2 == nullptr) {
     iVar4 = -0x7ffbfded;
   }
   else {

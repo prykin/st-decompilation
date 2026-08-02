@@ -51,7 +51,7 @@ int __thiscall STGroupC::GetMessage(STGroupC *this,STMessage *message)
       this_00->field_0024 = *(char *)(iVar2 + 4);
       this_00->field_0025 = *(undefined2 *)(iVar2 + 0x14);
       this_00->field_0027 = *(undefined2 *)(iVar2 + 0x18);
-      puVar3 = Library::DKW::TBL::FUN_006ae310((uint *)0x0,5,2,5,0x4045c5);
+      puVar3 = Library::DKW::TBL::FUN_006ae310(nullptr,5,2,5,0x4045c5);
       this_00->field_0029 = puVar3;
       local_c = *(int *)(iVar2 + 0x1c);
       if (0 < local_c) {
@@ -77,12 +77,12 @@ int __thiscall STGroupC::GetMessage(STGroupC *this,STMessage *message)
   else if (message->id == MESS_SHARED_0003) {
     thunk_FUN_00423e00(this_00);
     DArrayDestroy((DArrayTy *)this_00->field_0029);
-    this_00->field_0029 = (uint *)0x0;
+    this_00->field_0029 = nullptr;
     STAllPlayersC::UnRegisterGroup
               (g_allPlayers_007FA174,this_00->field_0024,this_00->field_0025,(int)this_00);
-    if ((DArrayTy *)this_00->field_002D != (DArrayTy *)0x0) {
+    if ((DArrayTy *)this_00->field_002D != nullptr) {
       DArrayDestroy((DArrayTy *)this_00->field_002D);
-      this_00->field_002D = (uint *)0x0;
+      this_00->field_002D = nullptr;
       g_currentExceptionFrame = local_50.previous;
       return 0;
     }

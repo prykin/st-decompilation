@@ -40,7 +40,7 @@ void __thiscall AiTactClassTy::GiveObjByClaim(AiTactClassTy *this,uint *param_1)
   iVar5 = Library::MSVCRT::__setjmp3(local_50.jumpBuffer,0);
   this_00 = local_8;
   if (iVar5 == 0) {
-    if ((param_1 != (uint *)0x0) && (param_1[3] != 0)) {
+    if ((param_1 != nullptr) && (param_1[3] != 0)) {
       ClaimSave(local_8);
       pAVar9 = this_00->field_00A5;
       if (0 < (int)pAVar9->count) {
@@ -51,10 +51,10 @@ void __thiscall AiTactClassTy::GiveObjByClaim(AiTactClassTy *this,uint *param_1)
             element_00a5 = DArrayAt<AiTactClassTy_field_00A5Element>(pAVar9, uVar10);
           }
           else {
-            element_00a5 = (AiTactClassTy_field_00A5Element *)0x0;
+            element_00a5 = nullptr;
           }
-          if (((undefined4 *)element_00a5 != (undefined4 *)0x0) &&
-             (element_00a5->field_0004 != (AnonShape_00660D40_E58DF1E6 *)0x0))
+          if (((undefined4 *)element_00a5 != nullptr) &&
+             (element_00a5->field_0004 != nullptr))
           {
             thunk_FUN_00660d40(element_00a5->field_0004);
           }
@@ -70,16 +70,16 @@ void __thiscall AiTactClassTy::GiveObjByClaim(AiTactClassTy *this,uint *param_1)
           puVar6 = (ushort *)(param_1[2] * local_c + param_1[7]);
         }
         else {
-          puVar6 = (ushort *)0x0;
+          puVar6 = nullptr;
         }
-        if (g_allPlayers_007FA174 == (STAllPlayersC *)0x0) {
-          objPtr = (STGameObjC *)0x0;
+        if (g_allPlayers_007FA174 == nullptr) {
+          objPtr = nullptr;
         }
         else {
           objPtr = STAllPlayersC::GetObjPtr
                              (g_allPlayers_007FA174,*(char *)&this_00->field_0024,*puVar6,CASE_1);
         }
-        if (objPtr != (STGameObjC *)0x0) {
+        if (objPtr != nullptr) {
           iVar5 = (*objPtr->vtable->vfunc_2C)();
           if (iVar5 == 0x78) {
             iVar5 = (*objPtr->vtable->vfunc_2C)();
@@ -96,9 +96,9 @@ void __thiscall AiTactClassTy::GiveObjByClaim(AiTactClassTy *this,uint *param_1)
                 element_00bd_2 = DArrayAt<AiTactClassTy_field_00BDElement>(pAVar2, uVar10);
               }
               else {
-                element_00bd_2 = (AiTactClassTy_field_00BDElement *)0x0;
+                element_00bd_2 = nullptr;
               }
-              if ((element_00bd_2 != (AiTactClassTy_field_00BDElement *)0x0) && (-1 < element_00bd_2->field_0030)) {
+              if ((element_00bd_2 != nullptr) && (-1 < element_00bd_2->field_0030)) {
                 uVar1 = element_00bd_2->field_000C;
                 iVar5 = (*objPtr->vtable->vfunc_2C)();
                 if (iVar5 == 0x78) {
@@ -118,14 +118,14 @@ void __thiscall AiTactClassTy::GiveObjByClaim(AiTactClassTy *this,uint *param_1)
                 element_00bd_2 = DArrayAt<AiTactClassTy_field_00BDElement>(pAVar2, uVar10);
               }
               else {
-                element_00bd_2 = (AiTactClassTy_field_00BDElement *)0x0;
+                element_00bd_2 = nullptr;
               }
-              if ((element_00bd_2 != (AiTactClassTy_field_00BDElement *)0x0) &&
+              if ((element_00bd_2 != nullptr) &&
                  (uVar3 = element_00bd_2->field_0030, -1 < (int)uVar3)) {
                 pAVar9 = this_00->field_00A5;
-                if ((pAVar9 == (AiTactClassTy_field_00A5DArray *)0x0) ||
+                if ((pAVar9 == nullptr) ||
                    (((int)uVar3 < 0 || ((int)pAVar9->count <= (int)uVar3)))) {
-                  this_01 = (AiFltClassTy *)0x0;
+                  this_01 = nullptr;
                 }
                 else {
                   this_01 = pARam00000004;

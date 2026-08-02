@@ -40,11 +40,11 @@ void __thiscall TraksClassTy::PrepareAfterSave(TraksClassTy *this,ushort *param_
     local_c->field_001C = *(undefined4 *)(param_1 + 0xc);
     if ((char)param_1[0xe] == '\0') {
       pTVar4 = (TraksClassTy_field_0024DArray *)
-               Library::DKW::TBL::DArrayCreate((DArrayTy *)0x0,0x32,0x3c,0x32);
+               Library::DKW::TBL::DArrayCreate(nullptr,0x32,0x3c,0x32);
       pTVar2->field_0024 = pTVar4;
     }
     else {
-      pTVar4 = (TraksClassTy_field_0024DArray *)FUN_006b0060((uint *)0x0,(uint *)(param_1 + 0x2e));
+      pTVar4 = (TraksClassTy_field_0024DArray *)FUN_006b0060(nullptr,(uint *)(param_1 + 0x2e));
       pTVar2->field_0024 = pTVar4;
       pTVar4->iteratorIndex = 0;
       while( true ) {
@@ -55,14 +55,14 @@ void __thiscall TraksClassTy::PrepareAfterSave(TraksClassTy *this,ushort *param_
           pTVar4->iteratorIndex = uVar8 + 1;
         }
         else {
-          element_0024 = (TraksClassTy_field_0024Element *)0x0;
+          element_0024 = nullptr;
         }
-        if (element_0024 == (TraksClassTy_field_0024Element *)0x0) break;
+        if (element_0024 == nullptr) break;
         piVar7 = DAT_00806764;
         if (*(int *)(&DAT_007c900c + element_0024->field_0000 * 0x18) != 1) {
           piVar7 = DAT_00806774;
         }
-        puVar11 = (undefined4 *)0x0;
+        puVar11 = nullptr;
         iVar10 = 0;
         iVar3 = 1;
         bVar9 = 0;

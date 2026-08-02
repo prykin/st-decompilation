@@ -4,7 +4,7 @@ int __fastcall FUN_004620f0(STBoatC *param_1)
 {
   int iVar1;
 
-  if ((DArrayTy *)param_1->field_047B != (DArrayTy *)0x0) {
+  if ((DArrayTy *)param_1->field_047B != nullptr) {
     DArrayDestroy((DArrayTy *)param_1->field_047B);
     param_1->field_047B = 0;
   }

@@ -22,7 +22,7 @@ void __cdecl FUN_0065d030(AnonShape_0065D030_CB0F82F0 *param_1)
         else {
           iVar1 = 0;
         }
-        if (*(DArrayTy **)(iVar1 + 0xf) != (DArrayTy *)0x0) {
+        if (*(DArrayTy **)(iVar1 + 0xf) != nullptr) {
           DArrayDestroy(*(DArrayTy **)(iVar1 + 0xf));
           *(undefined4 *)(iVar1 + 0xf) = 0;
         }

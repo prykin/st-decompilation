@@ -42,8 +42,8 @@ void __thiscall STBoatC::_AddDefenceShots(STBoatC *this,char param_1,short param
     }
     return;
   }
-  if (local_10->field_047B == (DArrayTy *)0x0) {
-    pDVar4 = Library::DKW::TBL::DArrayCreate((DArrayTy *)0x0,10,0xe,5);
+  if (local_10->field_047B == nullptr) {
+    pDVar4 = Library::DKW::TBL::DArrayCreate(nullptr,10,0xe,5);
     pSVar2->field_047B = pDVar4;
   }
   index = pSVar2->field_047B->count;

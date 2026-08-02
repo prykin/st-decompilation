@@ -47,30 +47,30 @@ int __thiscall SettMapTy::NoneSettMap(SettMapTy *this,int *param_1)
     }
   }
   else if (cVar1 == '\x03') {
-    if (((local_c->field_0x21e1 != '\0') && (local_c->field_21E8 != (HoloTy *)0x0)) &&
+    if (((local_c->field_0x21e1 != '\0') && (local_c->field_21E8 != nullptr)) &&
        (iVar7 = HoloTy::NextFas(local_c->field_21E8), iVar7 != 0)) {
       local_8 = 0;
     }
-    if (((this_00->field_0x21e5 != '\0') && (this_00->field_21F4 != (HoloTy *)0x0)) &&
+    if (((this_00->field_0x21e5 != '\0') && (this_00->field_21F4 != nullptr)) &&
        (iVar7 = HoloTy::NextFas(this_00->field_21F4), iVar7 != 0)) {
       local_8 = 0;
     }
     SVar2 = this_00->field_1E26;
     if (((SVar2 != CASE_6) && (SVar2 != CASE_7)) &&
        ((SVar2 != CASE_E &&
-        (((this_00->field_0x21e2 != '\0' && (this_00->field_21EC != (HoloTy *)0x0)) &&
+        (((this_00->field_0x21e2 != '\0' && (this_00->field_21EC != nullptr)) &&
          (iVar7 = HoloTy::NextFas(this_00->field_21EC), iVar7 != 0)))))) {
       local_8 = 0;
     }
     SVar2 = this_00->field_1E26;
     if ((((SVar2 == CASE_6) || (SVar2 == CASE_7)) || (SVar2 == CASE_E)) &&
-       (((this_00->field_0x21e3 != '\0' && (this_00->field_21F0 != (HoloTy *)0x0)) &&
+       (((this_00->field_0x21e3 != '\0' && (this_00->field_21F0 != nullptr)) &&
         (iVar7 = HoloTy::NextFas(this_00->field_21F0), iVar7 != 0)))) {
       local_8 = 0;
     }
     SVar2 = this_00->field_1E26;
     if (((((SVar2 != CASE_6) && (SVar2 != CASE_1)) && (SVar2 != CASE_2)) &&
-        ((this_00->field_0x21e6 != '\0' && (this_00->field_21F8 != (HoloTy *)0x0)))) &&
+        ((this_00->field_0x21e6 != '\0' && (this_00->field_21F8 != nullptr)))) &&
        (iVar7 = HoloTy::NextFas(this_00->field_21F8), iVar7 != 0)) {
       local_8 = 0;
     }
@@ -85,25 +85,25 @@ int __thiscall SettMapTy::NoneSettMap(SettMapTy *this,int *param_1)
       }
       local_8 = 0;
     }
-    if ((g_startSystem_0081176C->field_02E6 != (MMsgTy *)0x0) &&
+    if ((g_startSystem_0081176C->field_02E6 != nullptr) &&
        (g_startSystem_0081176C->field_02E6->field_0065 != '\x01')) {
       local_8 = 0;
     }
     if (local_8 != 0) {
-      if (this_00->field_21F0 != (HoloTy *)0x0) {
+      if (this_00->field_21F0 != nullptr) {
         HoloTy::Done(this_00->field_21F0);
         Library::MSVCRT::FUN_0072e2b0(this_00->field_21F0);
-        this_00->field_21F0 = (HoloTy *)0x0;
+        this_00->field_21F0 = nullptr;
       }
       SVar2 = this_00->field_1E26;
       if ((((SVar2 == CASE_6) || (SVar2 == CASE_7)) || (SVar2 == CASE_E)) &&
          (this_00->field_0x21e3 != '\0')) {
         Library::DKW::DDX::FUN_006b3430((int *)g_ddxContext_008075A8,this_00->field_1F80);
       }
-      if (this_00->field_21E8 != (HoloTy *)0x0) {
+      if (this_00->field_21E8 != nullptr) {
         HoloTy::Done(this_00->field_21E8);
         Library::MSVCRT::FUN_0072e2b0(this_00->field_21E8);
-        this_00->field_21E8 = (HoloTy *)0x0;
+        this_00->field_21E8 = nullptr;
       }
       if (this_00->field_0x21e1 != '\0') {
         if (this_00->field_1C6F != 0xffffffff) {
@@ -129,18 +129,18 @@ int __thiscall SettMapTy::NoneSettMap(SettMapTy *this,int *param_1)
           iVar7 = iVar7 + -1;
         } while (iVar7 != 0);
       }
-      if (this_00->field_21F4 != (HoloTy *)0x0) {
+      if (this_00->field_21F4 != nullptr) {
         HoloTy::Done(this_00->field_21F4);
         Library::MSVCRT::FUN_0072e2b0(this_00->field_21F4);
-        this_00->field_21F4 = (HoloTy *)0x0;
+        this_00->field_21F4 = nullptr;
       }
       if (this_00->field_0x21e5 != '\0') {
         Library::DKW::DDX::FUN_006b3430((int *)g_ddxContext_008075A8,this_00->field_1E22);
       }
-      if (this_00->field_21EC != (HoloTy *)0x0) {
+      if (this_00->field_21EC != nullptr) {
         HoloTy::Done(this_00->field_21EC);
         Library::MSVCRT::FUN_0072e2b0(this_00->field_21EC);
-        this_00->field_21EC = (HoloTy *)0x0;
+        this_00->field_21EC = nullptr;
       }
       SVar2 = this_00->field_1E26;
       if (((SVar2 != CASE_6) && (SVar2 != CASE_7)) && (SVar2 != CASE_E)) {
@@ -172,10 +172,10 @@ int __thiscall SettMapTy::NoneSettMap(SettMapTy *this,int *param_1)
           FUN_006b3af0((int *)g_startSystem_0081176C->field_0340,g_startSystem_0081176C->field_02FC);
         }
       }
-      if (this_00->field_21F8 != (HoloTy *)0x0) {
+      if (this_00->field_21F8 != nullptr) {
         HoloTy::Done(this_00->field_21F8);
         Library::MSVCRT::FUN_0072e2b0(this_00->field_21F8);
-        this_00->field_21F8 = (HoloTy *)0x0;
+        this_00->field_21F8 = nullptr;
       }
       if (this_00->field_0x21e6 != '\0') {
         if (g_startSystem_0081176C->field_0560 != 0xffffffff) {
@@ -223,7 +223,7 @@ int __thiscall SettMapTy::NoneSettMap(SettMapTy *this,int *param_1)
       }
       local_8 = 0;
     }
-    if ((this_00->field_0x21e1 != '\0') && (this_00->field_21E8 != (HoloTy *)0x0)) {
+    if ((this_00->field_0x21e1 != '\0') && (this_00->field_21E8 != nullptr)) {
       iVar7 = HoloTy::NextFas(this_00->field_21E8);
       if (iVar7 == 0) {
         uVar4 = *(uint *)&this_00->field_21E8->field_0x3;
@@ -235,7 +235,7 @@ int __thiscall SettMapTy::NoneSettMap(SettMapTy *this,int *param_1)
         local_8 = 0;
       }
     }
-    if ((this_00->field_0x21e5 != '\0') && (this_00->field_21F4 != (HoloTy *)0x0)) {
+    if ((this_00->field_0x21e5 != '\0') && (this_00->field_21F4 != nullptr)) {
       iVar7 = HoloTy::NextFas(this_00->field_21F4);
       if (iVar7 == 0) {
         uVar4 = *(uint *)&this_00->field_21F4->field_0x3;
@@ -249,7 +249,7 @@ int __thiscall SettMapTy::NoneSettMap(SettMapTy *this,int *param_1)
     }
     SVar2 = this_00->field_1E26;
     if ((((SVar2 != CASE_6) && (SVar2 != CASE_7)) && (SVar2 != CASE_E)) &&
-       ((this_00->field_0x21e2 != '\0' && (this_00->field_21EC != (HoloTy *)0x0)))) {
+       ((this_00->field_0x21e2 != '\0' && (this_00->field_21EC != nullptr)))) {
       iVar7 = HoloTy::NextFas(this_00->field_21EC);
       if (iVar7 == 0) {
         uVar4 = *(uint *)&this_00->field_21EC->field_0x3;
@@ -263,7 +263,7 @@ int __thiscall SettMapTy::NoneSettMap(SettMapTy *this,int *param_1)
     }
     SVar2 = this_00->field_1E26;
     if ((((SVar2 == CASE_6) || (SVar2 == CASE_7)) || (SVar2 == CASE_E)) &&
-       ((this_00->field_0x21e3 != '\0' && (this_00->field_21F0 != (HoloTy *)0x0)))) {
+       ((this_00->field_0x21e3 != '\0' && (this_00->field_21F0 != nullptr)))) {
       iVar7 = HoloTy::NextFas(this_00->field_21F0);
       if (iVar7 == 0) {
         uVar4 = *(uint *)&this_00->field_21F0->field_0x3;
@@ -277,7 +277,7 @@ int __thiscall SettMapTy::NoneSettMap(SettMapTy *this,int *param_1)
     }
     SVar2 = this_00->field_1E26;
     if ((((SVar2 != CASE_6) && (SVar2 != CASE_1)) && (SVar2 != CASE_2)) &&
-       ((this_00->field_0x21e6 != '\0' && (this_00->field_21F8 != (HoloTy *)0x0)))) {
+       ((this_00->field_0x21e6 != '\0' && (this_00->field_21F8 != nullptr)))) {
       iVar7 = HoloTy::NextFas(this_00->field_21F8);
       if (iVar7 == 0) {
         uVar4 = *(uint *)&this_00->field_21F8->field_0x3;
@@ -289,7 +289,7 @@ int __thiscall SettMapTy::NoneSettMap(SettMapTy *this,int *param_1)
         local_8 = 0;
       }
     }
-    if ((g_startSystem_0081176C->field_02E6 != (MMsgTy *)0x0) &&
+    if ((g_startSystem_0081176C->field_02E6 != nullptr) &&
        (g_startSystem_0081176C->field_02E6->field_0065 != '\x02')) {
       local_8 = 0;
     }

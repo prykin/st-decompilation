@@ -17,7 +17,7 @@ FUN_00575120(void *this,AnonShape_005745E0_AF52CC75 *param_1,int param_2,int par
   local_8 = this;
   do {
     puVar1 = (undefined4 *)*puVar4;
-    if (puVar1 != (undefined4 *)0x0) {
+    if (puVar1 != nullptr) {
       puVar1[6] = 0;
       thunk_FUN_005745e0(param_1,puVar1);
     }

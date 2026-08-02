@@ -31,7 +31,7 @@ FUN_00649ff0(uint *param_1,undefined4 *param_2,undefined4 *param_3,int *param_4)
   memset(&DAT_008117c0, 0, 0x104); /* compiler bulk-zero initialization */
   iVar6 = 0;
   memset(&stack0xfffffcd0, 0, 0x318); /* compiler bulk-zero initialization */
-  local_8 = (DArrayTy *)0x0;
+  local_8 = nullptr;
   local_c = DAT_00807dd5 >> 0x10 & 0xff;
   local_18 = DAT_00807dd5 & 0xffff;
   uVar9 = DAT_00807dd5 >> 0x18;
@@ -106,14 +106,14 @@ FUN_00649ff0(uint *param_1,undefined4 *param_2,undefined4 *param_3,int *param_4)
   FUN_006b78c0(&stack0xfffffcd0,&stack0xfffffcd0);
   array = (DArrayTy *)
           thunk_FUN_00683c70((LPCSTR)param_1,(AnonShape_00683C70_22193481 *)&stack0xfffffcd0,
-                             &local_14,param_4,(undefined *)0x0);
-  if (array != (DArrayTy *)0x0) {
+                             &local_14,param_4,nullptr);
+  if (array != nullptr) {
     if (local_14 != CASE_A) {
       local_8 = array;
       thunk_FUN_0068cda0((int *)&local_8,local_14);
-      return (undefined4 *)0x0;
+      return nullptr;
     }
-    local_8 = (DArrayTy *)0x0;
+    local_8 = nullptr;
     uVar7 = array->count;
     local_10 = array;
     if (uVar7 != 0) {
@@ -123,7 +123,7 @@ FUN_00649ff0(uint *param_1,undefined4 *param_2,undefined4 *param_3,int *param_4)
           pcVar4 = (char *)(array->elementSize * uVar7 + (int)array->data);
         }
         else {
-          pcVar4 = (char *)0x0;
+          pcVar4 = nullptr;
         }
         if (((*pcVar4 != '\0') &&
             (iVar6 = Library::MSVCRT::__strcmpi((char *)&DAT_008117c0,pcVar4), iVar6 != 0)) ||
@@ -145,7 +145,7 @@ FUN_00649ff0(uint *param_1,undefined4 *param_2,undefined4 *param_3,int *param_4)
             /* ST_PSEUDO[dynamic_array_indexing]: expected DArrayAt<T>(array, uVar8) (runtime stride) */
             if (((bVar13) &&
                 (pvVar5 = (void *)(array->elementSize * uVar8 + (int)array->data),
-                pvVar5 != (void *)0x0)) &&
+                pvVar5 != nullptr)) &&
                ((*(int *)((int)pvVar5 + 0x108) < 0 &&
                 ((puVar2 = *(uint **)((int)pvVar5 + 0x110), (int)local_c <= (int)puVar2 &&
                  (piVar3 = *(int **)((int)pvVar5 + 0x10c), (int)piVar3 <= (int)local_c)))))) {
@@ -167,7 +167,7 @@ FUN_00649ff0(uint *param_1,undefined4 *param_2,undefined4 *param_3,int *param_4)
           /* ST_PSEUDO[dynamic_array_indexing]: expected DArrayAt<T>(array, uVar9) (runtime stride) */
           if (((-1 < (int)uVar9) && (uVar9 < uVar7)) &&
              (pvVar5 = (void *)(array->elementSize * uVar9 + (int)array->data),
-             pvVar5 != (void *)0x0)) {
+             pvVar5 != nullptr)) {
             uVar7 = 0xffffffff;
             pcVar4 = (char *)((int)pvVar5 + 0x114);
             do {
@@ -183,10 +183,10 @@ FUN_00649ff0(uint *param_1,undefined4 *param_2,undefined4 *param_3,int *param_4)
             pcVar12 = (char *)&DAT_008117c0;
             memmove(pcVar12, pcVar4, uVar7); /* compiler REP MOVS byte copy */
             uVar7 = 0;
-            if (param_2 != (undefined4 *)0x0) {
+            if (param_2 != nullptr) {
               *param_2 = *(undefined4 *)((int)pvVar5 + 0x218);
             }
-            if (param_3 != (undefined4 *)0x0) {
+            if (param_3 != nullptr) {
               *param_3 = 1;
             }
             goto LAB_0064a336;
@@ -204,7 +204,7 @@ FUN_00649ff0(uint *param_1,undefined4 *param_2,undefined4 *param_3,int *param_4)
             /* ST_PSEUDO[dynamic_array_indexing]: expected DArrayAt<T>(array, uVar8) (runtime stride) */
             if (((bVar13) &&
                 (pvVar5 = (void *)(array->elementSize * uVar8 + (int)array->data),
-                pvVar5 != (void *)0x0)) &&
+                pvVar5 != nullptr)) &&
                ((*(uint *)((int)pvVar5 + 0x108) == local_c &&
                 ((puVar2 = *(uint **)((int)pvVar5 + 0x110), (int)local_18 <= (int)puVar2 &&
                  (piVar3 = *(int **)((int)pvVar5 + 0x10c), (int)piVar3 <= (int)local_18)))))) {
@@ -226,7 +226,7 @@ FUN_00649ff0(uint *param_1,undefined4 *param_2,undefined4 *param_3,int *param_4)
           /* ST_PSEUDO[dynamic_array_indexing]: expected DArrayAt<T>(array, uVar9) (runtime stride) */
           if (((-1 < (int)uVar9) && (uVar9 < uVar7)) &&
              (pvVar5 = (void *)(array->elementSize * uVar9 + (int)array->data),
-             pvVar5 != (void *)0x0)) {
+             pvVar5 != nullptr)) {
             uVar7 = 0xffffffff;
             pcVar4 = (char *)((int)pvVar5 + 0x114);
             do {
@@ -241,26 +241,26 @@ FUN_00649ff0(uint *param_1,undefined4 *param_2,undefined4 *param_3,int *param_4)
             pcVar4 = pcVar12 + -uVar7;
             pcVar12 = (char *)&DAT_008117c0;
             memmove(pcVar12, pcVar4, uVar7); /* compiler REP MOVS byte copy */
-            if (param_2 != (undefined4 *)0x0) {
+            if (param_2 != nullptr) {
               *param_2 = *(undefined4 *)((int)pvVar5 + 0x218);
             }
-            if (param_3 != (undefined4 *)0x0) {
+            if (param_3 != nullptr) {
               *param_3 = 2;
             }
 LAB_0064a336:
-            if (local_10 != (DArrayTy *)0x0) {
+            if (local_10 != nullptr) {
               DArrayDestroy(local_10);
             }
             return &DAT_008117c0;
           }
         }
-        if (array == (DArrayTy *)0x0) {
-          return (undefined4 *)0x0;
+        if (array == nullptr) {
+          return nullptr;
         }
       }
     }
     DArrayDestroy(array);
   }
-  return (undefined4 *)0x0;
+  return nullptr;
 }
 

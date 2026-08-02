@@ -8,7 +8,7 @@ undefined4 __fastcall FUN_004d9700(TLOBaseTy *param_1)
   uint index;
   TLOBaseTy *local_8;
 
-  if (g_array_007FA16C != (DArrayTy *)0x0) {
+  if (g_array_007FA16C != nullptr) {
     index = 0;
     local_8 = param_1;
     if (0 < (int)g_array_007FA16C->count) {
@@ -23,7 +23,7 @@ undefined4 __fastcall FUN_004d9700(TLOBaseTy *param_1)
     }
     if (g_array_007FA16C->count == 0) {
       DArrayDestroy(g_array_007FA16C);
-      g_array_007FA16C = (DArrayTy *)0x0;
+      g_array_007FA16C = nullptr;
     }
   }
   return 0;

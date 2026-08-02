@@ -120,7 +120,7 @@ int __thiscall PrividerTy::GetMessage(PrividerTy *this,STMessage *message)
           if ((iVar10 == 0) && (iVar10 = thunk_FUN_005daa90(), iVar10 == 0)) {
             DAT_0080877e = 0;
             CloseButtons(this_00,'\0');
-            if (this_00->field_1A5B->field_02E6 != (MMsgTy *)0x0) {
+            if (this_00->field_1A5B->field_02E6 != nullptr) {
               local_18 = 0x1000000;
               local_14 = 0;
               local_10 = 0;
@@ -171,7 +171,7 @@ LAB_005bccb9:
               FUN_006e6080(this_00,2,this_00->field_1A73,(undefined4 *)puVar1);
             }
             pSVar4 = this_00->field_1A5B;
-            if (pSVar4->field_02E6 != (MMsgTy *)0x0) {
+            if (pSVar4->field_02E6 != nullptr) {
               memset(&local_48, 0, 0x1a); /* compiler bulk-zero initialization */
               /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
               local_48._2_2_ = ((*(int *)(g_startSystem_0081176C->field_068E + 4) < 1) - 1 & 2) - 1;
@@ -275,8 +275,8 @@ switchD_005bc9da_caseD_6949:
     iVar10 = thunk_FUN_005dab70(0,uVar12);
     if (iVar10 != 0) {
       pMVar14 = this_00->field_1A5B->field_02E6;
-      if (pMVar14 != (MMsgTy *)0x0) {
-        MMsgTy::SetMessage(pMVar14,0x2134,'\0',(undefined4 *)0x0,(undefined4 *)0x0,(undefined4 *)0x0
+      if (pMVar14 != nullptr) {
+        MMsgTy::SetMessage(pMVar14,0x2134,'\0',nullptr,nullptr,nullptr
                            ,0,0);
       }
       break;
@@ -293,7 +293,7 @@ switchD_005bc9da_caseD_6949:
       this_00->field_1A69 = this_00->field_0061;
       this_00->field_1A6D = 0;
       pCVar7 = g_cursorClass_00802A30;
-      if (g_cursorClass_00802A30 != (CursorClassTy *)0x0) {
+      if (g_cursorClass_00802A30 != nullptr) {
         iVar10 = g_cursorClass_00802A30->field_00C9;
         iVar13 = g_cursorClass_00802A30->field_00C5;
         g_cursorClass_00802A30->field_0493 = CASE_5;
@@ -311,7 +311,7 @@ switchD_005bc9da_caseD_6949:
     CloseButtons(this_00,'\x01');
     pMVar14 = this_00->field_1A5B->field_02E6;
 cf_common_exit_005BCD75:
-    if (pMVar14 != (MMsgTy *)0x0) {
+    if (pMVar14 != nullptr) {
       MMsgTy::HidePanel(pMVar14,1,0,1);
     }
     break;
@@ -319,7 +319,7 @@ cf_common_exit_005BCD75:
     this_00->field_1A71 = 0;
     pCVar7 = g_cursorClass_00802A30;
     DAT_0080877e = 1;
-    if (g_cursorClass_00802A30 != (CursorClassTy *)0x0) {
+    if (g_cursorClass_00802A30 != nullptr) {
       iVar10 = g_cursorClass_00802A30->field_00C9;
       iVar13 = g_cursorClass_00802A30->field_00C5;
       g_cursorClass_00802A30->field_0493 = CASE_1;
@@ -333,13 +333,13 @@ cf_common_exit_005BCD75:
       thunk_FUN_005b6350(this_00,0x6942,(message->arg0).u32,0);
       CloseButtons(this_00,'\x01');
       pMVar14 = this_00->field_1A5B->field_02E6;
-      if (pMVar14 != (MMsgTy *)0x0) {
+      if (pMVar14 != nullptr) {
         MMsgTy::HidePanel(pMVar14,1,0,1);
       }
     }
     else {
       CloseButtons(this_00,'\0');
-      if (this_00->field_1A5B->field_02E6 != (MMsgTy *)0x0) {
+      if (this_00->field_1A5B->field_02E6 != nullptr) {
         local_2c = 0x10100;
         local_24 = 0;
         local_28 = 0x100;
@@ -354,16 +354,16 @@ cf_common_exit_005BCD75:
                    (ushort *)&this_00->field_1A5B->field_0140);
       Library::DKW::DDX::FUN_006b3640((int *)g_ddxContext_008075A8,local_8,0xffffffff,0x79,0x197);
       pHVar11 = (HoloTy *)Library::MSVCRT::FUN_0072e530(0x33);
-      if (pHVar11 == (HoloTy *)0x0) {
-        pHVar11 = (HoloTy *)0x0;
+      if (pHVar11 == nullptr) {
+        pHVar11 = nullptr;
       }
       else {
         pHVar11->field_0002 = 1;
         pHVar11->field_0000 = 0;
         *(undefined4 *)&pHVar11->field_0x3 = 0xffffffff;
         pHVar11->field_0001 = CASE_2;
-        pHVar11->field_0007 = (void *)0x0;
-        pHVar11->field_000B = (void *)0x0;
+        pHVar11->field_0007 = nullptr;
+        pHVar11->field_000B = nullptr;
         pHVar11->field_000F = 0;
         *(undefined4 *)&pHVar11->field_0x1b = 1;
         pHVar11->field_0013 = 1;
@@ -374,7 +374,7 @@ cf_common_exit_005BCD75:
         pHVar11->field_002B = 1;
       }
       this_00->field_1C9A = pHVar11;
-      if (pHVar11 != (HoloTy *)0x0) {
+      if (pHVar11 != nullptr) {
         uVar18 = 0;
         cVar17 = '\x01';
         bVar16 = 0x10;

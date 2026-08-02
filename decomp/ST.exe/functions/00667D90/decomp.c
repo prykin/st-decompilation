@@ -71,7 +71,7 @@ int __thiscall AiFltClassTy::GetMessage(AiFltClassTy *this,STMessage *message)
       }
       else if (SVar1 == MESS_ID_CREATE) {
         puVar2 = (message->arg0).ptr;
-        if (puVar2 == (undefined4 *)0x0) {
+        if (puVar2 == nullptr) {
           RaiseInternalException
                     (-6,g_overwriteContext_007ED77C,"E:\\__titans\\ai\\ai_flt.cpp",0xe70);
         }
@@ -83,7 +83,7 @@ int __thiscall AiFltClassTy::GetMessage(AiFltClassTy *this,STMessage *message)
           this_00->field_001C = this_00->field_0086;
         }
         if (puVar2[3] == 0) {
-          uVar5 = thunk_FUN_00435850(*(char *)&this_00->field_0024,1,(int *)0x0);
+          uVar5 = thunk_FUN_00435850(*(char *)&this_00->field_0024,1,nullptr);
           this_00->field_007D = (short)uVar5;
           sub_0065D6A0(this_00);
           uVar5 = this_00->field_001C * 0x41c64e6d + 0x3039;
@@ -99,22 +99,22 @@ int __thiscall AiFltClassTy::GetMessage(AiFltClassTy *this,STMessage *message)
           this_00->field_0170 = *(short *)&this_00->field_022F->field_0xc;
           this_00->field_0127 = *(undefined2 *)&this_00->field_0223->field_0xc;
         }
-        if ((this_00->field_007D == 0xfffe) || (g_allPlayers_007FA174 == (STAllPlayersC *)0x0)) {
-          this_01 = (STGroupBoatC *)0x0;
+        if ((this_00->field_007D == 0xfffe) || (g_allPlayers_007FA174 == nullptr)) {
+          this_01 = nullptr;
         }
         else {
           this_01 = thunk_FUN_0042b760(*(char *)&this_00->field_0024,this_00->field_007D);
         }
-        if (this_01 != (STGroupBoatC *)0x0) {
+        if (this_01 != nullptr) {
           STGroupC::SetAVPar((STGroupC *)this_01,1);
         }
       }
     }
     else if (SVar1 == MESS_SHARED_010F) {
-      local_8 = (AnonShape_0060EA30_DCEB68AD *)0x0;
+      local_8 = nullptr;
       local_c = PrepareToSave(local_10,(uint *)&local_8);
       STPlaySystemC::SaveObjData(g_playSystem_00802A38,this_00->field_0018,local_c,local_8);
-      if (local_c != (byte *)0x0) {
+      if (local_c != nullptr) {
         FreeAndNull(&local_c);
       }
     }

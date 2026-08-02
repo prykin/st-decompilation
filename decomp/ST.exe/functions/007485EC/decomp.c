@@ -19,7 +19,7 @@ void FUN_007485ec(int *param_1,char *param_2,undefined4 *param_3)
     pcVar3 = pcVar3 + 1;
   } while (bVar4);
   if (bVar4) {
-    FUN_0074b8a6((int *)(-(uint)(param_1 != (int *)0x0) & (uint)(param_1 + 0x26)),param_3);
+    FUN_0074b8a6((int *)(-(uint)(param_1 != nullptr) & (uint)(param_1 + 0x26)),param_3);
   }
   else {
     FUN_00747bdf(param_1,param_2,param_3);

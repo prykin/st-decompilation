@@ -70,7 +70,7 @@ TLOBldMark::sub_004C6440
     pVVar4 = g_visibleClass_00802A88;
     if (((((-1 < iVar9) && (iVar9 < g_worldGrid.sizeX)) && (-1 < local_8)) &&
         (local_8 < g_worldGrid.sizeY)) &&
-       ((((((g_visibleClass_00802A88 == (VisibleClassTy *)0x0 || (DAT_0080874d == 0xff)) ||
+       ((((((g_visibleClass_00802A88 == nullptr || (DAT_0080874d == 0xff)) ||
            ((g_visibleClass_00802A88->field_00F8 == 0 ||
             ((VisibleClassTy::sub_00558C00
                         (g_visibleClass_00802A88,g_visibleClass_00802A88->field_010C,local_10,
@@ -80,7 +80,7 @@ TLOBldMark::sub_004C6440
            (((pVVar4->field_0030 <= local_30 ||
              (iVar9 = *piVar8 + local_34, piVar8 = local_20, iVar9 < 0)) ||
             (pVVar4->field_0034 <= iVar9)))))) ||
-         ((pVVar4->field_004C == (byte *)0x0 ||
+         ((pVVar4->field_004C == nullptr ||
           (pVVar4->field_004C[local_30 + iVar9 * pVVar4->field_0030] != 0)))) &&
         (iVar9 = local_10,
         thunk_FUN_004ae0b0((short)local_10,local_8,local_c,this->field_001C,(uint)DAT_0080874d,
@@ -177,15 +177,15 @@ LAB_004c6848:
     }
   }
   this->field_0030 = iVar9;
-  if (param_3 != (int *)0x0) {
+  if (param_3 != nullptr) {
     *param_3 = iVar9;
   }
   this->field_0034 = local_8;
-  if (param_3 != (int *)0x0) {
+  if (param_3 != nullptr) {
     *param_4 = local_8;
   }
   this->field_0038 = local_c;
-  if (param_3 != (int *)0x0) {
+  if (param_3 != nullptr) {
     *param_5 = local_c;
   }
   if (local_1c == 0) {

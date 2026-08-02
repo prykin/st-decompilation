@@ -9,9 +9,9 @@ void __fastcall FUN_005f9e40(AnonShape_005F9E40_7E333F34 *param_1)
   int iVar2;
 
   puVar1 = (undefined4 *)param_1->field_02E6;
-  if (puVar1 != (undefined4 *)0x0) {
+  if (puVar1 != nullptr) {
     this = (STT3DSprC *)*puVar1;
-    if (this != (STT3DSprC *)0x0) {
+    if (this != nullptr) {
       STT3DSprC::SetCurFase(this,'\x0e',puVar1[8]);
       STT3DSprC::ShowCurFase(this,'\x0e');
       iVar2 = param_1->field_02E6;

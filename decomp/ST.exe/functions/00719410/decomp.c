@@ -18,7 +18,7 @@ FUN_00719410(undefined4 param_1,Global_sub_00719410_param_2Enum param_2,undefine
   local_18 = 0;
   dwParam1 = 0;
   local_14 = 0;
-  local_10 = (char *)0x0;
+  local_10 = nullptr;
   local_c = 0;
   local_8 = 0;
   switch(param_2) {

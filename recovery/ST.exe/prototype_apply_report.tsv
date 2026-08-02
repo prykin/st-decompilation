@@ -100,7 +100,6 @@ function_address	target	status	detail
 00691480	parameter:0	disabled	apply flags are 0
 00692C10	parameter:2	disabled	apply flags are 0
 00695C10	parameter:4	disabled	apply flags are 0
-006B0BA0	parameter:0	disabled	apply flags are 0
 006B5110	parameter:0	disabled	apply flags are 0
 006B8F10	parameter:0	disabled	apply flags are 0
 006B9940	parameter:2	disabled	apply flags are 0
@@ -124,7 +123,6 @@ function_address	target	status	detail
 006E89B0	parameter:5	disabled	apply flags are 0
 006EFC50	parameter:4	disabled	apply flags are 0
 006F1910	parameter:1	disabled	apply flags are 0
-007192D0	parameter:0	disabled	apply flags are 0
 0074E337	parameter:1	disabled	apply flags are 0
 00753300	parameter:2	disabled	apply flags are 0
 00753F10	parameter:1	disabled	apply flags are 0

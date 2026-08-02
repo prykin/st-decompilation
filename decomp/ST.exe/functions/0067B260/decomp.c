@@ -21,7 +21,7 @@ void __fastcall FUN_0067b260(int param_1)
       array = *(DArrayTy **)(param_1 + 0x6a1);
       /* ST_PSEUDO[dynamic_array_indexing]: expected DArrayAt<T>(array, index) (runtime stride) */
       if ((((index < array->count) &&
-           (pcVar1 = (char *)(array->elementSize * index + (int)array->data), pcVar1 != (char *)0x0)
+           (pcVar1 = (char *)(array->elementSize * index + (int)array->data), pcVar1 != nullptr)
            ) && ((short)*pcVar1 == *(short *)(param_1 + 0x660))) && (pcVar1[7] == '\0')) {
         DArrayRemoveAt(array,index);
       }

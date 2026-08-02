@@ -13,10 +13,10 @@ HelpPanelTy * __cdecl CreateHelpPanel(void)
   HelpPanelTy *pHVar2;
 
   pAVar1 = (AnonShape_00510C80_2C2DC38C *)FUN_006b04d0(0x254);
-  if (pAVar1 != (AnonShape_00510C80_2C2DC38C *)0x0) {
+  if (pAVar1 != nullptr) {
     pHVar2 = (HelpPanelTy *)thunk_FUN_00510c80(pAVar1);
     return pHVar2;
   }
-  return (HelpPanelTy *)0x0;
+  return nullptr;
 }
 

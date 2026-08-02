@@ -77,12 +77,12 @@ int * __fastcall FUN_00586320(AnonShape_00586320_9792A2C7 *param_1)
           (((pSVar4 = g_worldGrid.cells
                       [(int)(short)local_14 * (int)g_worldGrid.sizeX +
                        (int)sVar11 * (int)g_worldGrid.planeStride + (int)sVar12].objects[0],
-            pSVar4 != (STWorldObject *)0x0 &&
+            pSVar4 != nullptr &&
             (((pSVar4->value_20 == 1000 || (pSVar4->value_20 == 0x14)) &&
              (iVar7 = (*pSVar4->vtable[5].slots_00_28[0])(), iVar7 != 0)))) &&
            (pSVar4[1].vtable < (STWorldObjectVTable *)0x8)))) &&
-         (((g_playSystem_00802A38 == (STPlaySystemC *)0x0 ||
-           ((byte)(&DAT_008087e9)[(int)pSVar4[1].vtable * 0x51] < 8)) &&
+         (((g_playSystem_00802A38 == nullptr ||
+           (g_bulkInitializedRecords_008087C7[(int)pSVar4[1].vtable].field_0022 < 8)) &&
           (iVar7 = (*pSVar4->vtable[5].slots_00_28[2])(), iVar7 != 0)))) {
         bVar1 = *(byte *)&pSVar4[1].vtable;
         bVar2 = param_1->field_0024;
@@ -178,12 +178,12 @@ LAB_00586713:
                (pSVar4 = g_worldGrid.cells
                          [(int)sVar8 * (int)g_worldGrid.planeStride +
                           (int)g_worldGrid.sizeX * (int)sVar11 + (int)sVar12].objects[0],
-               pSVar4 != (STWorldObject *)0x0)))) &&
+               pSVar4 != nullptr)))) &&
              (((pSVar4->value_20 == 1000 || (pSVar4->value_20 == 0x14)) &&
               ((iVar7 = (*pSVar4->vtable[5].slots_00_28[0])(), iVar7 != 0 &&
                (pSVar4[1].vtable < (STWorldObjectVTable *)0x8)))))))) &&
-           ((g_playSystem_00802A38 == (STPlaySystemC *)0x0 ||
-            ((byte)(&DAT_008087e9)[(int)pSVar4[1].vtable * 0x51] < 8)))) {
+           ((g_playSystem_00802A38 == nullptr ||
+            (g_bulkInitializedRecords_008087C7[(int)pSVar4[1].vtable].field_0022 < 8)))) {
           bVar1 = *(byte *)&pSVar4[1].vtable;
           bVar2 = param_1->field_0024;
           iVar7 = param_1->field_0010;
@@ -236,7 +236,7 @@ LAB_00586713:
     if (local_34 < 6) goto LAB_005866e6;
     local_1c = local_1c + 1;
     if (4 < local_1c) {
-      return (int *)0x0;
+      return nullptr;
     }
   } while( true );
 }

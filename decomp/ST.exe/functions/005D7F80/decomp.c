@@ -22,14 +22,14 @@ void __thiscall SIDTy::DoneSID(SIDTy *this)
   pSVar2 = local_8;
   if (errorCode == 0) {
     MMObjTy::DoneMMObj((MMObjTy *)local_8);
-    if (pSVar2->field_1CD0 != (DArrayTy *)0x0) {
+    if (pSVar2->field_1CD0 != nullptr) {
       FUN_006b5570(pSVar2->field_1CD0);
     }
-    pSVar2->field_1CD0 = (DArrayTy *)0x0;
-    if (pSVar2->field_1CCC != (DArrayTy *)0x0) {
+    pSVar2->field_1CD0 = nullptr;
+    if (pSVar2->field_1CCC != nullptr) {
       FUN_006b5570(pSVar2->field_1CCC);
     }
-    pSVar2->field_1CCC = (DArrayTy *)0x0;
+    pSVar2->field_1CCC = nullptr;
     SpriteClassTy::CloseSprite((SpriteClassTy *)&pSVar2->field_1A60);
     SpriteClassTy::CloseSprite((SpriteClassTy *)&pSVar2->field_1B01);
     SpriteClassTy::CloseSprite((SpriteClassTy *)&pSVar2->field_1B92);
@@ -38,16 +38,16 @@ void __thiscall SIDTy::DoneSID(SIDTy *this)
       FUN_006b3bb0((int *)g_ddxContext_008075A8,pSVar2->field_1CB4);
     }
     pSVar2->field_1CB4 = 0xffffffff;
-    if (pSVar2->field_1CB8 != (ushort *)0x0) {
+    if (pSVar2->field_1CB8 != nullptr) {
       FreeAndNull(&pSVar2->field_1CB8);
     }
-    if (pSVar2->field_1CC8 != (ushort *)0x0) {
+    if (pSVar2->field_1CC8 != nullptr) {
       FreeAndNull(&pSVar2->field_1CC8);
     }
-    if (pSVar2->field_1CBC != (ushort *)0x0) {
+    if (pSVar2->field_1CBC != nullptr) {
       FreeAndNull(&pSVar2->field_1CBC);
     }
-    if (pSVar2->field_1CC0 != (ushort *)0x0) {
+    if (pSVar2->field_1CC0 != nullptr) {
       FreeAndNull(&pSVar2->field_1CC0);
     }
     if (pSVar2->field_004D != 0) {

@@ -26,7 +26,7 @@ void __thiscall STAllPlayersC::DeletePGPairs(STAllPlayersC *this,char param_1)
   exceptionCode = Library::MSVCRT::__setjmp3(local_58.jumpBuffer,0);
   array = local_8;
   if (exceptionCode == 0) {
-    if (local_8 != (DArrayTy *)0x0) {
+    if (local_8 != nullptr) {
       dVar1 = local_8->count;
       if ((dVar1 != 0) && (index = 0, 0 < (int)dVar1)) {
         do {

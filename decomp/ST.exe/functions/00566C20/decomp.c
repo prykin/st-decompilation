@@ -47,7 +47,7 @@ int __thiscall SoundManagerTy::GetMessage(SoundManagerTy *this,STMessage *messag
       local_8->field_0028 = message->arg0;
     }
     else if (SVar2 == MESS_SHARED_0003) {
-      DAT_008033f0 = (SoundManagerTy *)0x0;
+      DAT_008033f0 = nullptr;
       sub_00566900(local_8);
     }
     goto LAB_00566d75;

@@ -57,20 +57,20 @@ SubmarineTitans::Recovered::HiddenThis::AnonReceiver_004EEFB0::FUN_005c8200
     (*(code *)local_c->field_0000->field_0028)();
     return;
   }
-  if (local_c->field_1F3F != (cMf32 *)0x0) {
+  if (local_c->field_1F3F != nullptr) {
     cMf32::delete(local_c->field_1F3F);
   }
   wsprintfA(&DAT_00853de4,"%s%s%s",&DAT_00807680,PTR_s_MISSIONS__0079c0e8,
             PTR_s_RANDOM_0079c0f4);
   pcVar3 = (cMf32 *)Library::Ourlib::MF32INT::FUN_006f0ec0(0x345,&DAT_00853de4,0,0,0);
   this_00->field_1F3F = pcVar3;
-  if (g_startSystem_0081176C->field_02F4 != (ushort *)0x0) {
+  if (g_startSystem_0081176C->field_02F4 != nullptr) {
     FreeAndNull(&g_startSystem_0081176C->field_02F4);
   }
   puVar4 = Library::Ourlib::MFIMG::mfImgLoad(this_00->field_1F3F,0xc,PTR_s_SMALL_MAP_0079c114,2,0);
   g_startSystem_0081176C->field_02F4 = puVar4;
-  if (g_startSystem_0081176C->field_02F4 != (ushort *)0x0) {
-    FUN_006c7f90(g_startSystem_0081176C->field_02F4,(byte *)0x0,g_dDXContext_0080759C->field_04B4,0);
+  if (g_startSystem_0081176C->field_02F4 != nullptr) {
+    FUN_006c7f90(g_startSystem_0081176C->field_02F4,nullptr,g_dDXContext_0080759C->field_04B4,0);
   }
   local_84 = DAT_0080995c;
   puVar8 = (byte *)(&DAT_00809960);
@@ -79,7 +79,7 @@ SubmarineTitans::Recovered::HiddenThis::AnonReceiver_004EEFB0::FUN_005c8200
   iVar2 = 0;
   local_8 = &DAT_008087b6;
   puVar4 = cMf32::RecGet(this_00->field_1F3F,0,PTR_s_DESCRIPTOR_0079c110,(int *)&local_8,0);
-  if (puVar4 == (ushort *)0x0) {
+  if (puVar4 == nullptr) {
     RaiseInternalException
               (-1,g_overwriteContext_007ED77C,"E:\\__titans\\Start\\sett_obj.cpp",0x45a);
   }
@@ -97,30 +97,30 @@ SubmarineTitans::Recovered::HiddenThis::AnonReceiver_004EEFB0::FUN_005c8200
   puVar8 = (byte *)(local_c8);
   puVar11 = (byte *)(&DAT_00809960);
   memmove(puVar11, puVar8, 0x20); /* compiler REP MOVS byte copy */
-  if (g_dArray_0080C4C7 != (DArrayTy *)0x0) {
+  if (g_dArray_0080C4C7 != nullptr) {
     FUN_006b5570(g_dArray_0080C4C7);
   }
   g_dArray_0080C4C7 =
        (DArrayTy *)
        Library::Ourlib::MFSARR::mfSarLoad(this_00->field_1F3F,PTR_s_DESCRIPTION_0079c108,0);
-  if (g_dArray_0080C4C7 == (DArrayTy *)0x0) {
-    g_dArray_0080C4C7 = Library::DKW::TBL::SArrayCreate((DArrayTy *)0x0,10,10);
+  if (g_dArray_0080C4C7 == nullptr) {
+    g_dArray_0080C4C7 = Library::DKW::TBL::SArrayCreate(nullptr,10,10);
   }
-  if (g_dArray_0080C4CB != (DArrayTy *)0x0) {
+  if (g_dArray_0080C4CB != nullptr) {
     FUN_006b5570(g_dArray_0080C4CB);
   }
   g_dArray_0080C4CB =
        (DArrayTy *)
        Library::Ourlib::MFSARR::mfSarLoad(this_00->field_1F3F,PTR_s_OBJECTIVES_0079c10c,0);
-  if (g_dArray_0080C4CB == (DArrayTy *)0x0) {
-    g_dArray_0080C4CB = Library::DKW::TBL::SArrayCreate((DArrayTy *)0x0,10,10);
+  if (g_dArray_0080C4CB == nullptr) {
+    g_dArray_0080C4CB = Library::DKW::TBL::SArrayCreate(nullptr,10,10);
   }
   memset(&DAT_0080c3c3, 0, 0x104); /* compiler bulk-zero initialization */
   iVar2 = 0;
   local_8 = &DAT_0080c3c3;
   puVar4 = cMf32::RecGet(this_00->field_1F3F,0xc,PTR_s_TITLE_MISSION_0079c104,(int *)&local_8,0);
-  if ((puVar4 == (ushort *)0x0) || ((char)DAT_0080c3c3 == '\0')) {
-    Library::MSVCRT::FUN_0072e730(&DAT_00853de4,(byte *)0x0,(byte *)0x0,local_218,(byte *)0x0);
+  if ((puVar4 == nullptr) || ((char)DAT_0080c3c3 == '\0')) {
+    Library::MSVCRT::FUN_0072e730(&DAT_00853de4,nullptr,nullptr,local_218,nullptr);
     uVar6 = 0xffffffff;
     pbVar9 = local_218;
     do {
@@ -138,24 +138,23 @@ SubmarineTitans::Recovered::HiddenThis::AnonReceiver_004EEFB0::FUN_005c8200
   }
   local_8 = &DAT_00853de0;
   puVar4 = cMf32::RecGet(this_00->field_1F3F,0xc,PTR_s_GENERATE_RND_0079c0f8,(int *)&local_8,0);
-  if (puVar4 == (ushort *)0x0) {
+  if (puVar4 == nullptr) {
     RaiseInternalException
               (-1,g_overwriteContext_007ED77C,"E:\\__titans\\Start\\sett_obj.cpp",0x475);
   }
   local_8 = &this_00->field_1F53;
   puVar4 = cMf32::RecGet(this_00->field_1F3F,0xc,PTR_s_INTERFACE_RND_0079c0fc,(int *)&local_8,0);
-  if (puVar4 == (ushort *)0x0) {
+  if (puVar4 == nullptr) {
     RaiseInternalException
               (-1,g_overwriteContext_007ED77C,"E:\\__titans\\Start\\sett_obj.cpp",0x477);
   }
   wsprintfA(&DAT_00853de4,"%s%s%s",&DAT_00807680,PTR_s_MISSIONS__0079c0e8,
             PTR_s_RANDOM_0079c0f4);
   this_00->field_1F47 = 1;
-  if (((DAT_0080877e != '\0') && (DAT_008067a0 != '\0')) && (g_int_00811764 != (int *)0x0)) {
+  if (((DAT_0080877e != '\0') && (DAT_008067a0 != '\0')) && (g_int_00811764 != nullptr)) {
     FUN_006b6160(&this_00->field_0x1a5f,(int)(g_int_00811764 + 6));
     this_00->field_1A7F = 1;
-    /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-    this_00->field_1A80 = DAT_008087c4._2_1_;
+    this_00->field_1A80 = DAT_008087c6;
     this_00->field_1A81 = (char)(DAT_008087c2 >> 1);
     wsprintfA((LPSTR)&local_18,"%08x",DAT_0080995c);
     this_00->field_1A82 = local_18;

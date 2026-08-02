@@ -38,15 +38,15 @@ void __thiscall OptPanelTy::PrepMissObj(OptPanelTy *this)
     RaiseInternalException(iVar3,0,"E:\\__titans\\Andrey\\optpanel.cpp",0x3d1);
     return;
   }
-  if ((DArrayTy *)local_8->field_02F9 != (DArrayTy *)0x0) {
+  if ((DArrayTy *)local_8->field_02F9 != nullptr) {
     FUN_006b5570((DArrayTy *)local_8->field_02F9);
   }
-  pDVar4 = Library::DKW::TBL::SArrayCreate((DArrayTy *)0x0,10,10);
+  pDVar4 = Library::DKW::TBL::SArrayCreate(nullptr,10,10);
   this_00->field_02F9 = &pDVar4->flags;
   iVar3 = 0;
   if (0 < (int)g_dArray_0080C4CB->elementSize) {
     if ((int)g_dArray_0080C4CB->elementSize < 1) {
-      pcVar5 = (char *)0x0;
+      pcVar5 = nullptr;
       goto LAB_00532af5;
     }
     do {
@@ -58,13 +58,13 @@ LAB_00532af5:
   }
   puVar6 = ccFntTy::FormIndentSarr
                      (this_00->field_017C,(DArrayTy *)this_00->field_02F9," ,.;:!?/\\()[]{}",
-                      (uint *)&DAT_007c21ec,200,0,0xffffffff,(char *)0x0,1);
-  if ((DArrayTy *)this_00->field_02F9 != (DArrayTy *)0x0) {
+                      (uint *)&DAT_007c21ec,200,0,0xffffffff,nullptr,1);
+  if ((DArrayTy *)this_00->field_02F9 != nullptr) {
     FUN_006b5570((DArrayTy *)this_00->field_02F9);
   }
   this_00->field_02F9 = puVar6;
-  if (puVar6 == (uint *)0x0) {
-    pDVar4 = Library::DKW::TBL::SArrayCreate((DArrayTy *)0x0,10,10);
+  if (puVar6 == nullptr) {
+    pDVar4 = Library::DKW::TBL::SArrayCreate(nullptr,10,10);
     this_00->field_02F9 = &pDVar4->flags;
   }
   puVar6 = this_00->field_02F9;

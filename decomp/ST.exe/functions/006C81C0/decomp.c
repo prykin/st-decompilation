@@ -10,11 +10,11 @@ int * FUN_006c81c0(int param_1,int param_2,int param_3,int param_4,int param_5)
   int iVar6;
 
   if (param_5 < 1) {
-    return (int *)0x0;
+    return nullptr;
   }
   piVar3 = Library::DKW::LIB::MemAlloc(param_5 * 8);
-  if (piVar3 == (int *)0x0) {
-    return (int *)0x0;
+  if (piVar3 == nullptr) {
+    return nullptr;
   }
   *piVar3 = param_1;
   piVar3[1] = param_2;

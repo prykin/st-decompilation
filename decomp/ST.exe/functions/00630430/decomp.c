@@ -30,7 +30,7 @@ int __thiscall STManRuinC::GetMessage(STManRuinC *this,STMessage *message)
   STManRuinC *local_c;
   ushort *local_8;
 
-  local_8 = (ushort *)0x0;
+  local_8 = nullptr;
   local_58.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_58;
   local_c = this;
@@ -64,7 +64,7 @@ int __thiscall STManRuinC::GetMessage(STManRuinC *this,STMessage *message)
     return 0;
   }
   if (SVar1 == MESS_ID_NONE) {
-    if ((local_c->field_003C != (STManRuinC_field_003CDArray *)0x0) &&
+    if ((local_c->field_003C != nullptr) &&
        (uVar2 = local_c->field_003C->count, uVar2 != 0)) {
       while (uVar2 = uVar2 - 1, -1 < (int)uVar2) {
         pSVar3 = this_00->field_003C;
@@ -72,15 +72,15 @@ int __thiscall STManRuinC::GetMessage(STManRuinC *this,STMessage *message)
           element_003c = DArrayAt<STManRuinC_field_003CElement>(pSVar3, uVar2);
         }
         else {
-          element_003c = (STManRuinC_field_003CElement *)0x0;
+          element_003c = nullptr;
         }
-        if (element_003c != (undefined4 *)0x0) {
+        if (element_003c != nullptr) {
           if ((element_003c[1] == 1) && (element_003c[2] == 0)) {
             iVar5 = thunk_FUN_00630ff0();
             element_003c[2] = iVar5;
             if (iVar5 != 0) {
               puVar7 = sub_00630C50(this_00,*element_003c,element_003c[3],1,1,0);
-              if (puVar7 == (ushort *)0x0) {
+              if (puVar7 == nullptr) {
                 element_003c[2] = 0;
               }
               else {
@@ -117,10 +117,10 @@ int __thiscall STManRuinC::GetMessage(STManRuinC *this,STMessage *message)
     return 0;
   }
   local_c->field_0071 = local_c->field_0018 * DAT_00808754;
-  if (g_cMf32_00806754 != (cMf32 *)0x0) {
+  if (g_cMf32_00806754 != nullptr) {
     local_8 = Library::Ourlib::MFAOBJ::mfAObjLoad(g_cMf32_00806754,PTR_DAT_0079d198,0,0);
   }
-  if (local_8 == (ushort *)0x0) {
+  if (local_8 == nullptr) {
 LAB_006304e7:
     this_00->field_001C = 0;
     this_00->field_0020 = 0xff;
@@ -134,16 +134,16 @@ LAB_006304e7:
       sub_00631450(this_00);
       goto LAB_00630558;
     }
-    if (local_8 == (ushort *)0x0) goto LAB_006304e7;
+    if (local_8 == nullptr) goto LAB_006304e7;
     puVar10 = (byte *)((message->arg0).ptr);
     puVar11 = (byte *)(&this_00->field_001C);
     memmove(puVar11, puVar10, 0x14); /* compiler REP MOVS byte copy */
   }
-  if (this_00->field_0034 == (byte *)0x0) {
+  if (this_00->field_0034 == nullptr) {
     uVar2 = (int)g_worldGrid.sizeX * (int)g_worldGrid.sizeY * 5;
     pbVar6 = Library::DKW::LIB::MemAlloc(uVar2);
     this_00->field_0034 = pbVar6;
-    if (pbVar6 == (byte *)0x0) {
+    if (pbVar6 == nullptr) {
       thunk_FUN_006308b0(this_00);
     }
     else {
@@ -152,7 +152,7 @@ LAB_006304e7:
     }
   }
 LAB_00630558:
-  if ((local_8 != (ushort *)0x0) && (g_cMf32_00806754 != (cMf32 *)0x0)) {
+  if ((local_8 != nullptr) && (g_cMf32_00806754 != nullptr)) {
     cMf32::RecMemFree(g_cMf32_00806754,(uint *)&local_8);
     g_currentExceptionFrame = local_58.previous;
     return 0;

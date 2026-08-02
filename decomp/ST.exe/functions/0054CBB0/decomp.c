@@ -20,7 +20,7 @@ undefined4 FUN_0054cbb0(int param_1,undefined4 *param_2)
         return uVar1;
       }
     }
-    if (param_2 != (undefined4 *)0x0) {
+    if (param_2 != nullptr) {
       *param_2 = *(undefined4 *)(iVar4 * 8 + 0x7c823c);
     }
     uVar1 = 0;

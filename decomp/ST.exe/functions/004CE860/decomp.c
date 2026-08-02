@@ -12,7 +12,7 @@ undefined4 __thiscall TLOBaseTy::sub_004CE860(TLOBaseTy *this)
   TLOBaseTy *local_8;
 
   array = *(DArrayTy **)&g_packedRecords_A62x8[(int)this->field_0024].field_0x9de;
-  if ((array != (DArrayTy *)0x0) && (index = 0, local_8 = this, 0 < (int)array->count)) {
+  if ((array != nullptr) && (index = 0, local_8 = this, 0 < (int)array->count)) {
     while( true ) {
       DArrayGetElement(array,index,&local_8);
       if (local_8->field_04E0[*(int *)&this->field_0x369 + -1] != 0) break;

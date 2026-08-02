@@ -98,7 +98,7 @@ undefined4 __fastcall FUN_004d32c0(TLOBaseTy *param_1)
             *piVar6 = (uVar12 >> 0x10) % 0x65 + 0x19 + g_playSystem_00802A38->field_00E4;
             piVar6 = piVar6 + 4;
           } while (iVar10 != 0);
-          if (g_manBasis_00811784 != (STManBasisC *)0x0) {
+          if (g_manBasis_00811784 != nullptr) {
             local_EAX_406 = LookupRecordByte(*(char *)&param_1->field_0024);
             /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
             thunk_FUN_005f23d0(g_manBasis_00811784,param_1->field_025D,param_1->field_0261,
@@ -123,7 +123,7 @@ undefined4 __fastcall FUN_004d32c0(TLOBaseTy *param_1)
           else {
             if ((*(char **)(PTR_PTR_007bb198 +
                            (*(int *)&param_1->field_0x368 * 3 + *(int *)&param_1->field_0x36c) * 0xc
-                           ) != (char *)0x0) &&
+                           ) != nullptr) &&
                (iVar10 = STT3DSprC::LoadSequence
                                    ((STT3DSprC *)&param_1->field_01D5,0xe,DAT_0080678c,
                                     *(char **)(PTR_PTR_007bb198 +
@@ -165,7 +165,7 @@ undefined4 __fastcall FUN_004d32c0(TLOBaseTy *param_1)
             STT3DSprC::StartShow((STT3DSprC *)puVar11,0xd,g_playSystem_00802A38->field_00E4);
             if (*(char **)(PTR_PTR_007bb198 +
                           (*(int *)&param_1->field_0x368 * 3 + *(int *)&param_1->field_0x36c) * 0xc
-                          + 8) != (char *)0x0) {
+                          + 8) != nullptr) {
               iVar10 = STT3DSprC::LoadSequence
                                  ((STT3DSprC *)puVar11,0xc,DAT_0080678c,
                                   *(char **)(PTR_PTR_007bb198 +
@@ -451,7 +451,7 @@ LAB_004d3f38:
 LAB_004d3f76:
           if (((99 < *(int *)&param_1->field_0x2a8) && (param_1->field_02E8 == 0)) &&
              ((iVar10 = thunk_FUN_004d3290((int)param_1), iVar10 == 0 &&
-              (DAT_00811798 != (void *)0x0)))) {
+              (DAT_00811798 != nullptr)))) {
             thunk_FUN_00621580(DAT_00811798,param_1->field_0024,8);
           }
         }
@@ -605,7 +605,7 @@ LAB_004d43f5:
         }
         uVar12 = local_14 / 100;
         if ((*(int *)&param_1->field_0x2b8 == 0) &&
-           (uVar12 = uVar12 << 2, DAT_00811798 != (void *)0x0)) {
+           (uVar12 = uVar12 << 2, DAT_00811798 != nullptr)) {
           thunk_FUN_00621580(DAT_00811798,param_1->field_0024,5);
         }
         if (*(int *)&param_1->field_0x2b0 + uVar12 <= g_playSystem_00802A38->field_00E4) {
@@ -690,7 +690,7 @@ LAB_004d43f5:
             *(undefined4 *)&param_1->field_0x2c4 = 0;
           }
           if (*(int *)&param_1->field_0x2b4 == 0) {
-            if (DAT_00811798 != (void *)0x0) {
+            if (DAT_00811798 != nullptr) {
               if (*(int *)&param_1->field_0x2bc == 0) {
                 thunk_FUN_00621580(DAT_00811798,param_1->field_0024,4);
               }

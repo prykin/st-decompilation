@@ -84,7 +84,7 @@ STAllPlayersC::AddObjToTmp
 LAB_0042bc00:
   piVar6 = (int *)(param_3 * 0x10 + local_10);
   if (*piVar6 == 0) {
-    pDVar3 = Library::DKW::TBL::DArrayCreate((DArrayTy *)0x0,0,2,1);
+    pDVar3 = Library::DKW::TBL::DArrayCreate(nullptr,0,2,1);
     *(DArrayTy **)((int)piVar6 + 10) = pDVar3;
     *(undefined2 *)((int)piVar6 + 0xe) = 0;
     piVar6[1] = (int)param_4;

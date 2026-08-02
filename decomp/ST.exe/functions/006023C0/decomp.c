@@ -12,10 +12,10 @@ STDestC * __cdecl CreateSTDest(void)
   STDestC *pSVar1;
 
   pSVar1 = (STDestC *)FUN_006b04d0(0x3af);
-  if (pSVar1 != (STDestC *)0x0) {
+  if (pSVar1 != nullptr) {
     pSVar1 = STDestC::STDestC(pSVar1);
     return pSVar1;
   }
-  return (STDestC *)0x0;
+  return nullptr;
 }
 

@@ -50,7 +50,7 @@ void __thiscall AiFltClassTy::_AddObjFlt(AiFltClassTy *this,uint objPtr,int para
     g_currentExceptionFrame = local_4c.previous;
     return;
   }
-  if (g_allPlayers_007FA174 != (STAllPlayersC *)0x0) {
+  if (g_allPlayers_007FA174 != nullptr) {
     /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
     iVar5 = (**(code **)(*(int *)objPtr + 0x2c))();
     if ((iVar5 < 0x32) || (0x73 < iVar5)) {
@@ -65,7 +65,7 @@ void __thiscall AiFltClassTy::_AddObjFlt(AiFltClassTy *this,uint objPtr,int para
       RaiseInternalException
                 (-100,g_overwriteContext_007ED77C,"E:\\__titans\\ai\\ai_flt.cpp",0x9b);
     }
-    array = Library::DKW::TBL::DArrayCreate((DArrayTy *)0x0,1,2,1);
+    array = Library::DKW::TBL::DArrayCreate(nullptr,1,2,1);
     Library::DKW::TBL::DArrayAppend(array,(void *)(objPtr + 0x32));
     /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
     iVar5 = (**(code **)(*(int *)objPtr + 0x2c))();
@@ -86,7 +86,7 @@ void __thiscall AiFltClassTy::_AddObjFlt(AiFltClassTy *this,uint objPtr,int para
     }
     STAllPlayersC::AddObjsToGroup
               (g_allPlayers_007FA174,*(char *)&pAVar3->field_0024,pAVar3->field_007D,&array->flags,
-               (undefined2 *)0x0);
+               nullptr);
     DArrayDestroy(array);
     g_currentExceptionFrame = local_4c.previous;
     return;

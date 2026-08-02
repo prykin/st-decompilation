@@ -9,12 +9,12 @@ FUN_0074f368(undefined4 param_1,undefined4 *param_2,char *param_3,undefined4 par
   char *pcVar3;
   bool bVar4;
 
-  if (param_2 == (undefined4 *)0x0) {
+  if (param_2 == nullptr) {
     return 0x80004003;
   }
-  if (param_3 == (char *)0x0) {
+  if (param_3 == nullptr) {
 LAB_0074f393:
-    if (param_6 != (char *)0x0) {
+    if (param_6 != nullptr) {
       iVar2 = 0x10;
       bVar4 = true;
       pcVar3 = &DAT_007a1dd8;

@@ -278,6 +278,11 @@ public class STAbiConsistencyAnalyzer extends GhidraScript {
         for (Map.Entry<Long, List<String>> entry : typedStores.entrySet())
             evidence.computeIfAbsent(entry.getKey(), ignored -> new ArrayList<>())
                 .addAll(entry.getValue());
+        Map<Long, List<String>> typedForwards =
+            typedDoubleForwardEvidence(function, slots);
+        for (Map.Entry<Long, List<String>> entry : typedForwards.entrySet())
+            evidence.computeIfAbsent(entry.getKey(), ignored -> new ArrayList<>())
+                .addAll(entry.getValue());
         if (evidence.isEmpty()) return false;
 
         // Retire x87 prototypes created with dynamic storage. On 32-bit x86
@@ -526,11 +531,7 @@ public class STAbiConsistencyAnalyzer extends GhidraScript {
         Structure owner = ownerStructure(function);
         if (owner == null || !"__thiscall".equals(function.getCallingConventionName()))
             return result;
-        Set<Long> qwordStarts = new HashSet<>();
-        for (ParameterSlot slot : slots)
-            if (slot.offset >= pointerSize * 2L && slot.span == 8 &&
-                    genericQword(slot.parameter.getFormalDataType()))
-                qwordStarts.add(slot.offset);
+        Set<Long> qwordStarts = candidateQwordStarts(slots);
         if (qwordStarts.isEmpty()) return result;
 
         Set<String> thisAliases = new HashSet<>();
@@ -641,6 +642,148 @@ public class STAbiConsistencyAnalyzer extends GhidraScript {
                 " and independently consumed as double; sites=" +
                 String.join(", ",
                     fieldSites.getOrDefault(entry.getKey(), List.of())));
+        }
+        return result;
+    }
+
+    /**
+     * A wrapper often forwards one incoming double as two ordinary PUSHes to a
+     * callee whose prototype is already typed.  Follow only exact EBP-slot to
+     * register to PUSH copies inside one straight-line block.  This turns the
+     * common `0, 0x40240000` spelling back into one `double` argument without
+     * learning anything from the constant itself.
+     */
+    private Map<Long, List<String>> typedDoubleForwardEvidence(Function function,
+            List<ParameterSlot> slots) {
+        Map<Long, List<String>> result = new TreeMap<>();
+        Set<Long> qwordStarts = candidateQwordStarts(slots);
+        if (qwordStarts.isEmpty()) return result;
+
+        Map<String, Long> origins = new TreeMap<>();
+        List<Long> pushed = new ArrayList<>();
+        InstructionIterator instructions = listing.getInstructions(function.getBody(), true);
+        while (instructions.hasNext()) {
+            Instruction instruction = instructions.next();
+            String mnemonic = instruction.getMnemonicString().toUpperCase(Locale.ROOT);
+            List<String> operands = operandRepresentations(instruction);
+            if ("PUSH".equals(mnemonic) && !operands.isEmpty()) {
+                String sourceRegister = fullRegister(operands.get(0));
+                Long origin = sourceRegister.isBlank() ?
+                    incomingCandidateWord(instruction, 0, qwordStarts) :
+                    origins.get(sourceRegister);
+                pushed.add(origin);
+                continue;
+            }
+            if ("CALL".equals(mnemonic)) {
+                Function target = directCalledFunction(instruction);
+                if (target != null) target = resolveThunk(target);
+                collectTypedDoubleForwardEvidence(function, instruction, target,
+                    pushed, qwordStarts, result);
+                pushed.clear();
+                for (String register : List.of("EAX", "ECX", "EDX"))
+                    origins.remove(register);
+                continue;
+            }
+            if (instruction.getFlowType().isJump() ||
+                    instruction.getFlowType().isTerminal()) {
+                origins.clear();
+                pushed.clear();
+                continue;
+            }
+            if ("MOV".equals(mnemonic) && operands.size() >= 2) {
+                String destination = fullRegister(operands.get(0));
+                if (!destination.isBlank()) {
+                    String source = fullRegister(operands.get(1));
+                    Long origin = source.isBlank() ?
+                        incomingCandidateWord(instruction, 1, qwordStarts) :
+                        origins.get(source);
+                    if (origin == null) origins.remove(destination);
+                    else origins.put(destination, origin);
+                    continue;
+                }
+            }
+            if (!operands.isEmpty()) {
+                String destination = fullRegister(operands.get(0));
+                if (!destination.isBlank() && writesFirstOperand(mnemonic))
+                    origins.remove(destination);
+            }
+            // Any explicit ESP adjustment or stack restore makes older PUSHes
+            // ambiguous; ordinary register scheduling between PUSHes remains OK.
+            if (instruction.toString().toUpperCase(Locale.ROOT).contains("ESP"))
+                pushed.clear();
+        }
+        return result;
+    }
+
+    private void collectTypedDoubleForwardEvidence(Function function,
+            Instruction call, Function target, List<Long> pushed,
+            Set<Long> qwordStarts, Map<Long, List<String>> result) {
+        if (target == null || target.hasVarArgs() || pushed.isEmpty()) return;
+        List<Parameter> stack = explicitParameters(target).stream()
+            .filter(Parameter::hasStackStorage)
+            .sorted(Comparator.comparingInt(Parameter::getStackOffset)).toList();
+        if (stack.isEmpty()) return;
+        int base = stack.get(0).getStackOffset();
+        if (base < 0 || base % pointerSize != 0) return;
+        int end = base;
+        Set<Integer> occupied = new HashSet<>();
+        List<Integer> doubleWords = new ArrayList<>();
+        for (Parameter parameter : stack) {
+            int offset = parameter.getStackOffset();
+            int span = parameterSpan(parameter);
+            if (offset < base || offset % pointerSize != 0 || span % pointerSize != 0)
+                return;
+            int firstWord = (offset - base) / pointerSize;
+            for (int word = 0; word < span / pointerSize; word++)
+                if (!occupied.add(firstWord + word)) return;
+            end = Math.max(end, offset + span);
+            DataType type = unwrap(parameter.getFormalDataType());
+            if (type != null && type.getLength() == 8 &&
+                    "/double".equals(type.getPathName())) doubleWords.add(firstWord);
+        }
+        int wordCount = (end - base) / pointerSize;
+        if (wordCount < 2 || pushed.size() < wordCount) return;
+        for (int word = 0; word < wordCount; word++)
+            if (!occupied.contains(word)) return;
+
+        int pushedBase = pushed.size() - wordCount;
+        for (int lowWord : doubleWords) {
+            int lowPush = pushedBase + wordCount - 1 - lowWord;
+            int highPush = pushedBase + wordCount - 1 - (lowWord + 1);
+            if (lowPush < pushedBase || highPush < pushedBase) continue;
+            Long low = pushed.get(lowPush), high = pushed.get(highPush);
+            if (low == null || high == null || high != low + pointerSize ||
+                    !qwordStarts.contains(low)) continue;
+            result.computeIfAbsent(low, ignored -> new ArrayList<>()).add(
+                addr(call.getAddress()) + " forwards adjacent incoming dwords to " +
+                target.getName(true) + " parameter stack slot +0x" +
+                Integer.toHexString(lowWord * pointerSize) + " typed /double");
+        }
+    }
+
+    private Long incomingCandidateWord(Instruction instruction, int operand,
+            Set<Long> qwordStarts) {
+        Long offset = stackOffset(instruction, operand);
+        if (offset == null) return null;
+        return qwordStarts.contains(offset) || qwordStarts.contains(offset - pointerSize) ?
+            offset : null;
+    }
+
+    private Set<Long> candidateQwordStarts(List<ParameterSlot> slots) {
+        Set<Long> result = new HashSet<>();
+        for (int index = 0; index < slots.size(); index++) {
+            ParameterSlot first = slots.get(index);
+            if (first.offset < pointerSize * 2L) continue;
+            if (first.span == 8 && genericQword(first.parameter.getFormalDataType())) {
+                result.add(first.offset);
+                continue;
+            }
+            if (first.span != 4 || !genericDword(first.parameter.getFormalDataType()) ||
+                    index + 1 >= slots.size()) continue;
+            ParameterSlot second = slots.get(index + 1);
+            if (second.offset == first.offset + pointerSize && second.span == 4 &&
+                    genericDword(second.parameter.getFormalDataType()))
+                result.add(first.offset);
         }
         return result;
     }

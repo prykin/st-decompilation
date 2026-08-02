@@ -7,7 +7,7 @@ int * FUN_0075f560(int param_1,int param_2)
   int iVar3;
 
   iVar3 = 0;
-  piVar1 = (int *)0x0;
+  piVar1 = nullptr;
   if (0 < param_2) {
     piVar2 = (int *)(param_1 + 0x18);
     do {

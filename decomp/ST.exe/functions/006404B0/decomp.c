@@ -53,7 +53,7 @@ void __thiscall FUN_006404b0(void *this,int param_1,int param_2,uint param_3)
     }
     local_10.unknown = *(int *)((int)this + 0x18);
     if (soundId != 0) {
-      SoundClassTy::PlaySound((SoundClassTy *)&g_sound,SOUND_MODE_6,(char *)0x0,soundId,&local_10,0);
+      SoundClassTy::PlaySound((SoundClassTy *)&g_sound,SOUND_MODE_6,nullptr,soundId,&local_10,0);
     }
   }
   return;

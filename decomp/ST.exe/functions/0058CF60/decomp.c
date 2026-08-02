@@ -12,10 +12,10 @@ void * __cdecl FUN_0058cf60(void)
   STSatC *pSVar1;
 
   pSVar1 = (STSatC *)FUN_006b04d0(0x29b);
-  if (pSVar1 != (STSatC *)0x0) {
+  if (pSVar1 != nullptr) {
     pSVar1 = STSatC::STSatC(pSVar1);
     return pSVar1;
   }
-  return (void *)0x0;
+  return nullptr;
 }
 

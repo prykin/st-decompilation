@@ -37,10 +37,10 @@ SubmarineTitans::Recovered::HiddenThis::AnonReceiver_00678E00::FUN_00679120
         value = (void **)(*(int *)(iVar1 + 8) * local_20 + *(int *)(iVar1 + 0x1c));
       }
       else {
-        value = (void **)0x0;
+        value = nullptr;
       }
-      if ((value[1] == (void *)0x0) && (*value != (void *)0x0)) {
-        local_10 = (void *)0x0;
+      if ((value[1] == nullptr) && (*value != nullptr)) {
+        local_10 = nullptr;
         if ((param_2 < 0) || ((param_3 < 0 || (param_4 < 0)))) {
           param_2 = (int)pAVar2->field_063A;
           param_3 = (int)pAVar2->field_063C;

@@ -12,10 +12,10 @@ void __thiscall SoundManagerTy::sub_00566900(SoundManagerTy *this)
 
 {
   thunk_FUN_00568940(&g_sound,CASE_B);
-  if (this->field_0018 != (cMf32 *)0x0) {
+  if (this->field_0018 != nullptr) {
     cMf32::delete(this->field_0018);
   }
-  this->field_0018 = (cMf32 *)0x0;
+  this->field_0018 = nullptr;
   this->field_0028 = 0;
   this->field_002C = 0;
   this->field_0030 = 0;

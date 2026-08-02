@@ -113,7 +113,7 @@ LAB_005829e6:
            ((pSVar13 = STAllPlayersC::GetObjPtr
                                  (g_allPlayers_007FA174,*(char *)&this->field_0241,
                                   *(ushort *)&this->field_0x245,CASE_1),
-            pSVar13 == (STGameObjC *)0x0 ||
+            pSVar13 == nullptr ||
             (iVar10 = pSVar13->vfunc_F8(), iVar10 == 0)))) {
           this->field_023D = 0;
         }
@@ -130,12 +130,12 @@ LAB_005829f4:
             (pSVar7 = g_worldGrid.cells
                       [(int)sVar6 * (int)g_worldGrid.sizeX +
                        (int)g_worldGrid.planeStride * (int)sVar5 + (int)sVar4].objects[0],
-            pSVar7 != (STWorldObject *)0x0)))) &&
+            pSVar7 != nullptr)))) &&
           ((pSVar7->value_20 == 1000 || (pSVar7->value_20 == 0x14)))) &&
          ((iVar10 = (*pSVar7->vtable[5].slots_00_28[0])(), iVar10 != 0 &&
           ((pSVar7[1].vtable < (STWorldObjectVTable *)0x8 &&
-           ((g_playSystem_00802A38 == (STPlaySystemC *)0x0 ||
-            ((byte)(&DAT_008087e9)[(int)pSVar7[1].vtable * 0x51] < 8)))))))) {
+           ((g_playSystem_00802A38 == nullptr ||
+            (g_bulkInitializedRecords_008087C7[(int)pSVar7[1].vtable].field_0022 < 8)))))))) {
         iVar10 = this->field_0010;
         bVar2 = *(byte *)&pSVar7[1].vtable;
         bVar3 = *(byte *)&this->field_0024;
@@ -226,7 +226,7 @@ LAB_00582958:
     if (((uVar11 == 1) && (this->field_0241 != 0xff)) &&
        (pSVar13 = STAllPlayersC::GetObjPtr
                             (g_allPlayers_007FA174,*(char *)&this->field_0241,
-                             *(ushort *)&this->field_0x245,CASE_1), pSVar13 != (STGameObjC *)0x0)) {
+                             *(ushort *)&this->field_0x245,CASE_1), pSVar13 != nullptr)) {
       memset(&DAT_008116c8, 0, 0x1c); /* compiler bulk-zero initialization */
       iVar10 = 0;
       DAT_008116c8 = DAT_007e6760;
@@ -276,7 +276,7 @@ LAB_00582958:
          ((0 < *(int *)&this->field_0x252 &&
           (pSVar13 = STAllPlayersC::GetObjPtr
                                (g_allPlayers_007FA174,*(char *)&this->field_0241,
-                                *(ushort *)&this->field_0x245,CASE_1), pSVar13 != (STGameObjC *)0x0)
+                                *(ushort *)&this->field_0x245,CASE_1), pSVar13 != nullptr)
           ))) {
         (*pSVar13->vtable->vfunc_E0)
                   (*(undefined4 *)&this->field_0x252,&local_14,&local_10,&local_c,&local_18);
@@ -295,7 +295,7 @@ LAB_00582958:
       if ((this->field_0241 == 0xff) ||
          ((pSVar13 = STAllPlayersC::GetObjPtr
                                (g_allPlayers_007FA174,(char)this->field_0241,
-                                *(ushort *)&this->field_0x245,CASE_1), pSVar13 == (STGameObjC *)0x0
+                                *(ushort *)&this->field_0x245,CASE_1), pSVar13 == nullptr
           || (iVar12 = pSVar13->vfunc_F8(), iVar12 == 0)))) {
         this->field_023D = 0;
         goto switchD_00582651_default;

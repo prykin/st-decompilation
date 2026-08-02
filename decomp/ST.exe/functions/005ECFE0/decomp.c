@@ -36,7 +36,7 @@ FUN_005ecfe0(void *this,int param_1,int param_2,int param_3,int param_4,int para
          ((((g_worldGrid.sizeY <= sVar1 || (sVar4 < 0)) || (g_worldGrid.sizeZ <= sVar4)) ||
           ((g_worldGrid.cells
             [(int)g_worldGrid.planeStride * (int)sVar4 + (int)g_worldGrid.sizeX * (int)sVar1 +
-             (int)sVar2].objects[0] == (STWorldObject *)0x0 ||
+             (int)sVar2].objects[0] == nullptr ||
            (g_worldGrid.cells
             [(int)g_worldGrid.planeStride * (int)sVar4 + (int)g_worldGrid.sizeX * (int)sVar1 +
              (int)sVar2].objects[0] == this)))))))) &&

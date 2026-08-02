@@ -67,9 +67,9 @@ STAllPlayersC::DestroyObjectMsg
     }
     STDebugBreak(); /* noreturn in standalone pseudocode */
   }
-  if (((array != (DArrayTy *)0x0) &&
+  if (((array != nullptr) &&
       (iVar3 = DArrayGetElement(array,param_2 & 0xffff,&param_1), iVar3 != -4)) &&
-     (_param_1 != (undefined4 *)0x0)) {
+     (_param_1 != nullptr)) {
     local_20 = 10000;
     local_1c = 0;
     local_18 = 0xfe;

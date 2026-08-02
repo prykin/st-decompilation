@@ -112,7 +112,7 @@ void __thiscall CPanelTy::SetControlBoat(CPanelTy *this)
       iVar13 = 2;
       iVar10 = 5;
       switch(local_14 + iVar8) {
-      case (Global_sub_00529590_param_1Enum *)0x0:
+      case nullptr:
         iVar13 = 0x3f;
         break;
       case (Global_sub_00529590_param_1Enum *)0x1:
@@ -135,7 +135,7 @@ switchD_0050248c_caseD_2:
       else {
         local_10 = (uint)local_14[6];
       }
-      pcVar22 = (char *)0x0;
+      pcVar22 = nullptr;
       uVar18 = 0;
       uVar17 = 1;
       iVar8 = 0;
@@ -165,7 +165,7 @@ LAB_0050254c:
     local_34 = 0xb200;
     local_3c = local_5c;
     (*this_00->field_000C->vtable->CreateObject)
-              ((SystemClassTy *)this_00->field_000C,9,&this_00->field_02FE,(int *)0x0,local_6c,0);
+              ((SystemClassTy *)this_00->field_000C,9,&this_00->field_02FE,nullptr,local_6c,0);
     sub_004F1610(this_00,'\x01');
     uVar7 = this_00->field_09C0[0];
     if (uVar7 == 0) goto LAB_00502622;
@@ -185,7 +185,7 @@ LAB_00502622:
     uVar23 = 0;
     uVar21 = 0;
     iVar10 = 0;
-    pcVar4 = (char *)0x0;
+    pcVar4 = nullptr;
     iVar8 = 0x3b04;
     uVar17 = 0;
     sVar16 = 2;
@@ -200,7 +200,7 @@ LAB_00502622:
     uVar23 = 0;
     uVar21 = 0;
     iVar10 = 0;
-    pcVar4 = (char *)0x0;
+    pcVar4 = nullptr;
     iVar8 = 0x3b05;
     uVar17 = 0;
     sVar16 = 2;
@@ -230,7 +230,7 @@ LAB_00502622:
       uVar14 = 0;
       iVar19 = 0;
       iVar6 = 0x4e36 - (uint)(bVar9 != 0);
-      pcVar4 = (char *)0x0;
+      pcVar4 = nullptr;
       uVar17 = 0;
       sVar16 = 2;
       iVar10 = iVar8 + -0x10;

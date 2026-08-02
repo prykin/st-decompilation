@@ -22,7 +22,7 @@ uint __thiscall FUN_0062dfd0(void *this,int param_1,int param_2,int *param_3)
         /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
         if ((((local_8 < *(uint *)(iVar3 + 0xc)) &&
              (piVar4 = (int *)(*(int *)(iVar3 + 8) * local_8 + *(int *)(iVar3 + 0x1c)),
-             piVar4 != (int *)0x0)) && (*piVar4 == param_2)) && (uVar2 = piVar4[2], -1 < (int)uVar2)
+             piVar4 != nullptr)) && (*piVar4 == param_2)) && (uVar2 = piVar4[2], -1 < (int)uVar2)
            ) {
           /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
           iVar3 = *(int *)((int)this + param_1 * 4 + 0x50);

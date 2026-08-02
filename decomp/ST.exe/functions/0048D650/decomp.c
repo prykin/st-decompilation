@@ -32,7 +32,7 @@ int __thiscall FUN_0048d650(void *this,STFishC *param_1)
           ((g_worldGrid.sizeZ <= sVar3 ||
            (g_worldGrid.cells
             [(int)g_worldGrid.planeStride * (int)sVar3 + (int)g_worldGrid.sizeX * (int)sVar4 +
-             (int)sVar1].objects[0] == (STWorldObject *)0x0)))))) {
+             (int)sVar1].objects[0] == nullptr)))))) {
         iVar2 = FUN_006aadd0((int)*(short *)((int)this + 0x47),(int)*(short *)((int)this + 0x49),
                              (int)*(short *)((int)this + 0x4b),(short)param_1 + local_10,
                              local_8[0] + iVar5,local_c[0] + 1);

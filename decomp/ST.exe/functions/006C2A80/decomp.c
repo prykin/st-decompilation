@@ -15,7 +15,7 @@ uint FUN_006c2a80(int *param_1,DDXContext *param_2)
 
   *param_1 = 0;
   puVar1 = Library::DKW::LIB::FUN_006aac10(0xb8);
-  if (puVar1 == (undefined4 *)0x0) {
+  if (puVar1 == nullptr) {
     return 0xfffffffe;
   }
   puVar1[1] = param_2;

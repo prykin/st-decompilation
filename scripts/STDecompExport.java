@@ -13,7 +13,6 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.StandardCopyOption;
 import java.security.MessageDigest;
-import java.time.Instant;
 import java.util.ArrayDeque;
 import java.util.ArrayList;
 import java.util.Base64;
@@ -84,7 +83,11 @@ public class STDecompExport extends GhidraScript {
     private static final int MAX_FILENAME_COMPONENT = 96;
     private static final int COVERAGE_PADDING_RUN = 16;
     private static final int COVERAGE_MAX_RANGE = 0x10000;
-    private static final String FUNCTION_ANALYSIS_CACHE_SCHEMA = "1";
+    private static final String FUNCTION_ANALYSIS_CACHE_SCHEMA = "2";
+    // Bump only when normalize/catalogue semantics change. Hashing this entire source file
+    // made an unrelated manifest or I/O edit rescan all 5,000+ bodies.
+    private static final String FUNCTION_ANALYSIS_LOGIC_ID =
+        "st-function-analysis-v2-null-x87-subnormal";
     private static final Pattern INT3_ASSIGNMENT = Pattern.compile(
         "^(\\s*)([A-Za-z_][A-Za-z0-9_]*)\\s*=\\s*\\(code \\*\\)swi\\(3\\);\\s*$");
     private static final Pattern ASSIGNED_INDIRECT_CALL = Pattern.compile(
@@ -168,6 +171,13 @@ public class STDecompExport extends GhidraScript {
     private static final Pattern HEX_ADDRESS = Pattern.compile("0x([0-9A-Fa-f]{6,8})");
     private static final Pattern INTEGER_LITERAL = Pattern.compile(
         "(?i)(?<![A-Za-z0-9_])(?:0x([0-9a-f]+)|(\\d+))(?![A-Za-z0-9_])");
+    private static final Pattern SCIENTIFIC_LITERAL = Pattern.compile(
+        "(?<![A-Za-z0-9_.])[-+]?(?:[0-9]+\\.[0-9]*|[0-9]*\\.[0-9]+)" +
+        "(?:[eE][-+]?[0-9]+)(?![A-Za-z0-9_.])");
+    private static final Pattern TYPED_NULL_POINTER = Pattern.compile(
+        "\\((?:const\\s+)?(?:struct\\s+|class\\s+)?" +
+        "[A-Za-z_$][A-Za-z0-9_$:<>]*(?:\\s+[A-Za-z_$][A-Za-z0-9_$:<>]*)*" +
+        "\\s*\\*+\\s*\\)\\s*0x0\\b");
     private static final Pattern RAW_INDIRECT_CALL = Pattern.compile(
         "\\(\\*\\*?\\(code \\*\\*?\\)|\\(\\*\\(code \\*\\)");
     private static final Pattern RAW_OFFSET_DEREFERENCE = Pattern.compile(
@@ -294,8 +304,7 @@ public class STDecompExport extends GhidraScript {
         listing = currentProgram.getListing();
         references = currentProgram.getReferenceManager();
         symbols = currentProgram.getSymbolTable();
-        functionAnalysisSourceHash = fileSha256(Path.of(
-            getSourceFile().getAbsolutePath()).toAbsolutePath().normalize());
+        functionAnalysisSourceHash = sha256Text(FUNCTION_ANALYSIS_LOGIC_ID);
         darrayDescriptors = recoveredDArrayDescriptors();
         globalRecordStrides = recoveredGlobalRecordStrides();
         Path outputDirectory = outputRoot.toPath().toAbsolutePath().normalize();
@@ -903,17 +912,21 @@ public class STDecompExport extends GhidraScript {
             "analysis_source_sha256\tnormalization_count\t" +
             "pseudocode_rows_b64\tquality_rows_b64\tquality_aggregates_b64";
         if (lines.isEmpty() || !header.equals(lines.get(0))) return result;
-        int rejected = 0;
+        int stale = 0;
+        int malformed = 0;
         for (int line = 1; line < lines.size(); line++) {
             if (lines.get(line).isBlank()) continue;
             try {
                 String[] fields = lines.get(line).split("\t", -1);
                 if (fields.length != 8 ||
-                        !FUNCTION_ANALYSIS_CACHE_SCHEMA.equals(fields[0]) ||
                         !fields[1].matches("[0-9A-Fa-f]{8,16}") ||
-                        !fields[2].matches("[0-9a-f]{64}") ||
+                        !fields[2].matches("[0-9a-f]{64}")) {
+                    malformed++;
+                    continue;
+                }
+                if (!FUNCTION_ANALYSIS_CACHE_SCHEMA.equals(fields[0]) ||
                         !functionAnalysisSourceHash.equals(fields[3])) {
-                    rejected++;
+                    stale++;
                     continue;
                 }
                 int normalizationCount = Integer.parseInt(fields[4]);
@@ -923,17 +936,19 @@ public class STDecompExport extends GhidraScript {
                 List<String> qualityRows = decodeCacheRows(fields[6]);
                 Map<String, Integer> aggregates = decodeCacheAggregates(fields[7]);
                 if (!aggregates.equals(cachedQualityAggregates(qualityRows))) {
-                    rejected++;
+                    malformed++;
                     continue;
                 }
                 result.put(fields[1].toUpperCase(Locale.ROOT),
                     new CachedFunctionAnalysis(fields[2], normalizationCount,
                         pseudocodeRows, qualityRows, aggregates));
             }
-            catch (RuntimeException exception) { rejected++; }
+            catch (RuntimeException exception) { malformed++; }
         }
-        if (rejected > 0)
-            println("Ignored malformed function-analysis cache rows: " + rejected);
+        if (stale > 0)
+            println("Ignored stale function-analysis cache rows: " + stale);
+        if (malformed > 0)
+            println("Ignored malformed function-analysis cache rows: " + malformed);
         return result;
     }
 
@@ -1042,9 +1057,23 @@ public class STDecompExport extends GhidraScript {
             }
         }
         String normalized = String.join(System.lineSeparator(), output);
-        NormalizedCode semicolons = normalizeDetachedSemicolons(normalized);
+        NormalizedCode nullPointers = normalizeTypedNullPointers(normalized);
+        NormalizedCode semicolons = normalizeDetachedSemicolons(nullPointers.code);
         return new NormalizedCode(semicolons.code,
-            replacements + semicolons.replacements);
+            replacements + nullPointers.replacements + semicolons.replacements);
+    }
+
+    /** The corpus is a C++ projection; every typed `(T *)0x0` is the same null value. */
+    private NormalizedCode normalizeTypedNullPointers(String code) {
+        Matcher matcher = TYPED_NULL_POINTER.matcher(code);
+        StringBuffer output = new StringBuffer();
+        int replacements = 0;
+        while (matcher.find()) {
+            matcher.appendReplacement(output, "nullptr");
+            replacements++;
+        }
+        matcher.appendTail(output);
+        return new NormalizedCode(output.toString(), replacements);
     }
 
     /**
@@ -1087,25 +1116,150 @@ public class STDecompExport extends GhidraScript {
      * pattern before replacing the presentation artifact with `return 0`.
      */
     private NormalizedCode normalizeMachinePseudocode(Function function, String code) {
-        if (function == null || code == null || code.isEmpty() ||
-                !code.contains("(uint3)") ||
-                !hasGuardedPartialAlZeroReturn(function))
+        if (function == null || code == null || code.isEmpty())
             return new NormalizedCode(code, 0);
-        Matcher matcher = PARTIAL_AL_ZERO_RETURN.matcher(code);
-        int candidates = 0;
-        while (matcher.find()) candidates++;
-        if (candidates != 1) return new NormalizedCode(code, 0);
-        matcher.reset();
-        StringBuffer output = new StringBuffer();
+        String normalized = code;
         int replacements = 0;
-        while (matcher.find()) {
-            matcher.appendReplacement(output, Matcher.quoteReplacement(
-                matcher.group("indent") +
-                "return 0; /* cmp eax,0xff; xor al,al */"));
-            replacements++;
+        if (code.contains("(uint3)") && hasGuardedPartialAlZeroReturn(function)) {
+            Matcher matcher = PARTIAL_AL_ZERO_RETURN.matcher(code);
+            int candidates = 0;
+            while (matcher.find()) candidates++;
+            if (candidates == 1) {
+                matcher.reset();
+                StringBuffer output = new StringBuffer();
+                while (matcher.find()) {
+                    matcher.appendReplacement(output, Matcher.quoteReplacement(
+                        matcher.group("indent") +
+                        "return 0; /* cmp eax,0xff; xor al,al */"));
+                    replacements++;
+                }
+                matcher.appendTail(output);
+                normalized = output.toString();
+            }
         }
-        matcher.appendTail(output);
-        return new NormalizedCode(output.toString(), replacements);
+        NormalizedCode x87 = normalizeSavedX87AcrossFtol(function, normalized);
+        return new NormalizedCode(x87.code, replacements + x87.replacements);
+    }
+
+    /**
+     * VC6 `_ftol` consumes only the x87 top value. A value below it remains live and is
+     * commonly saved with FST (without pop) before the call. Ghidra can spell that proven
+     * survivor as extraout_ST0 after field typing changes. Replace it only for the exact
+     * FST -> __ftol -> FILD -> FMUL ST1 -> FSTP sequence on one receiver.
+     */
+    private NormalizedCode normalizeSavedX87AcrossFtol(Function function, String code) {
+        if (!code.contains("extraout_ST0")) return new NormalizedCode(code, 0);
+        X87SavedValue proof = savedX87Value(function);
+        if (proof == null) return new NormalizedCode(code, 0);
+        Structure owner = firstPointerStructure(function);
+        if (owner == null) return new NormalizedCode(code, 0);
+        DataTypeComponent saved = owner.getComponentAt(proof.savedOffset);
+        DataTypeComponent destination = owner.getComponentAt(proof.destinationOffset);
+        if (saved == null || destination == null ||
+                saved.getOffset() != proof.savedOffset ||
+                destination.getOffset() != proof.destinationOffset ||
+                saved.getLength() != 8 || destination.getLength() != 8 ||
+                saved.getFieldName() == null || destination.getFieldName() == null)
+            return new NormalizedCode(code, 0);
+        Pattern assignment = Pattern.compile("(?m)^\\s*([A-Za-z_$][A-Za-z0-9_$]*)->" +
+            Pattern.quote(destination.getFieldName()) + "\\s*=.*extraout_ST0.*;$");
+        Matcher use = assignment.matcher(code);
+        if (!use.find() || use.find()) return new NormalizedCode(code, 0);
+        use.reset();
+        if (!use.find()) return new NormalizedCode(code, 0);
+        String receiver = use.group(1);
+        if (receiver.isBlank()) return new NormalizedCode(code, 0);
+        String replacement = receiver + "->" + saved.getFieldName();
+        int occurrences = 0;
+        Matcher raw = Pattern.compile("\\bextraout_ST0\\b").matcher(code);
+        while (raw.find()) occurrences++;
+        Pattern declaration = Pattern.compile(
+            "(?m)^\\s*float10\\s+extraout_ST0\\s*;\\s*(?:\\R|$)");
+        Matcher declared = declaration.matcher(code);
+        if (occurrences != 2 || !declared.find() || declared.find())
+            return new NormalizedCode(code, 0);
+        String assignmentLine = code.substring(use.start(), use.end());
+        String rewrittenLine = assignmentLine.replaceFirst("\\bextraout_ST0\\b",
+            Matcher.quoteReplacement(replacement));
+        String rewritten = code.substring(0, use.start()) + rewrittenLine +
+            code.substring(use.end());
+        Matcher remainingDeclaration = declaration.matcher(rewritten);
+        if (!remainingDeclaration.find()) return new NormalizedCode(code, 0);
+        rewritten = rewritten.substring(0, remainingDeclaration.start()) +
+            rewritten.substring(remainingDeclaration.end());
+        if (Pattern.compile("\\bextraout_ST0\\b").matcher(rewritten).find())
+            return new NormalizedCode(code, 0);
+        return new NormalizedCode(rewritten, 2);
+    }
+
+    private X87SavedValue savedX87Value(Function function) {
+        List<Instruction> instructions = new ArrayList<>();
+        InstructionIterator iterator = listing.getInstructions(function.getBody(), true);
+        while (iterator.hasNext()) instructions.add(iterator.next());
+        for (int call = 0; call < instructions.size(); call++) {
+            Instruction instruction = instructions.get(call);
+            if (!"CALL".equalsIgnoreCase(instruction.getMnemonicString())) continue;
+            Function target = directCalledFunction(instruction);
+            if (target == null || !target.getName(true).toLowerCase(Locale.ROOT)
+                    .contains("__ftol")) continue;
+            X87Memory saved = null;
+            for (int index = call - 1; index >= 0 && index >= call - 80; index--) {
+                String mnemonic = instructions.get(index).getMnemonicString()
+                    .toUpperCase(Locale.ROOT);
+                if (mnemonic.equals("FST")) {
+                    saved = x87Memory(instructions.get(index));
+                    if (saved != null) break;
+                }
+            }
+            if (saved == null) continue;
+            boolean fild = false, multiplyLower = false;
+            X87Memory destination = null;
+            for (int index = call + 1; index < instructions.size() && index <= call + 12;
+                    index++) {
+                Instruction next = instructions.get(index);
+                String mnemonic = next.getMnemonicString().toUpperCase(Locale.ROOT);
+                if (mnemonic.equals("FILD")) fild = true;
+                else if (fild && mnemonic.equals("FMUL") &&
+                        next.toString().toUpperCase(Locale.ROOT).contains("ST1"))
+                    multiplyLower = true;
+                else if (multiplyLower && mnemonic.equals("FSTP")) {
+                    destination = x87Memory(next);
+                    break;
+                }
+                else if (mnemonic.equals("CALL") || next.getFlowType().isJump()) break;
+            }
+            if (destination != null && saved.base.equals(destination.base))
+                return new X87SavedValue((int)saved.offset, (int)destination.offset);
+        }
+        return null;
+    }
+
+    private X87Memory x87Memory(Instruction instruction) {
+        if (!instruction.toString().toLowerCase(Locale.ROOT)
+                .contains("double ptr")) return null;
+        Matcher matcher = Pattern.compile(
+            "(?i)\\[([A-Z][A-Z0-9]{1,3})(?:\\s*\\+\\s*(0x[0-9a-f]+|[0-9]+))?\\]")
+            .matcher(instruction.toString());
+        if (!matcher.find()) return null;
+        Long offset = fingerprintImmediate(matcher.group(2) == null ? "0" : matcher.group(2));
+        return offset == null || offset > Integer.MAX_VALUE ? null :
+            new X87Memory(matcher.group(1).toUpperCase(Locale.ROOT), offset);
+    }
+
+    private Structure firstPointerStructure(Function function) {
+        for (Parameter parameter : function.getParameters())
+            if (parameter.getDataType() instanceof Pointer pointer &&
+                    pointer.getDataType() instanceof Structure structure)
+                return structure;
+        return null;
+    }
+
+    private Function directCalledFunction(Instruction instruction) {
+        for (Address flow : instruction.getFlows()) {
+            Function function = currentProgram.getFunctionManager().getFunctionAt(flow);
+            if (function != null) return function;
+        }
+        return null;
     }
 
     private boolean hasGuardedPartialAlZeroReturn(Function function) {
@@ -3272,6 +3426,9 @@ public class STDecompExport extends GhidraScript {
                 RAW_INDIRECT_CALL, line, index + 1);
             addQualityMatches(evidence, "packed_or_unaligned_piece",
                 PACKED_PIECE, line, index + 1);
+            if (containsSuspiciousSubnormal(line))
+                addQuality(evidence, "suspicious_subnormal_literal", 1,
+                    index + 1, line);
             addQualityMatches(evidence, "raw_pointer_offset",
                 RAW_OFFSET_DEREFERENCE, line, index + 1);
             if (line.matches(".*\\b(?:unaff_|in_)[A-Za-z0-9_]+.*"))
@@ -3343,7 +3500,8 @@ public class STDecompExport extends GhidraScript {
             case "raw_pointer_offset", "packed_or_unaligned_piece",
                  "generic_global_aggregate", "undefined_type",
                  "flattened_global_record_array", "dynamic_array_indexing",
-                 "string_based_aggregate_address", "stack_slot_reuse" -> "medium";
+                 "string_based_aggregate_address", "stack_slot_reuse",
+                 "suspicious_subnormal_literal" -> "medium";
             default -> "low";
         };
     }
@@ -3351,6 +3509,7 @@ public class STDecompExport extends GhidraScript {
     private String qualityStage(String kind) {
         return switch (kind) {
             case "return_width_artifact", "unresolved_register_input" -> "abi_recovery";
+            case "suspicious_subnormal_literal" -> "abi_recovery";
             case "stack_slot_reuse" -> "ssa_lifetime_presentation";
             case "raw_indirect_call" -> "call_signature_recovery";
             case "raw_pointer_offset", "anonymous_shape_type" -> "layout_recovery";
@@ -3421,6 +3580,8 @@ public class STDecompExport extends GhidraScript {
                 "apply the inferred packed record and its nested arrays after base/stride proof";
             case "stack_slot_reuse" ->
                 "retain the ABI parameter type, but split the post-overwrite stack-slot lifetime into a source-level local";
+            case "suspicious_subnormal_literal" ->
+                "recover an adjacent split-dword double ABI/storage slot; do not classify printable bytes as text without an independent pointer/string use";
             default -> "review machine-code evidence before changing the Ghidra database";
         };
     }
@@ -3450,6 +3611,8 @@ public class STDecompExport extends GhidraScript {
         }
         if (PACKED_PIECE.matcher(line).find() || (concat && !extraout))
             kinds.add("packed_or_unaligned_piece");
+        if (containsSuspiciousSubnormal(line))
+            kinds.add("suspicious_subnormal_literal");
         // Prefer a more specific diagnosis over an additional generic offset hint.
         if (RAW_OFFSET_DEREFERENCE.matcher(line).find() &&
                 !kinds.contains("dynamic_array_indexing") &&
@@ -3614,6 +3777,7 @@ public class STDecompExport extends GhidraScript {
                 "candidate structure field after proof; otherwise retain buffer arithmetic";
             case "stack_slot_reuse" ->
                 "compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable";
+            case "suspicious_subnormal_literal" -> subnormalInlineTransform(line);
             default -> intendedTransform(kind);
         };
     }
@@ -3636,6 +3800,41 @@ public class STDecompExport extends GhidraScript {
             return "expected DArrayAt<T>(" + matcher.group(1) + ", " +
                 oneLine(matcher.group(2)) + ") (runtime stride)";
         return "expected DArrayAt<T>(array, index) (runtime elementSize cannot be a static C array)";
+    }
+
+    private boolean containsSuspiciousSubnormal(String line) {
+        Matcher matcher = SCIENTIFIC_LITERAL.matcher(line == null ? "" : line);
+        while (matcher.find()) {
+            try {
+                double value = Double.parseDouble(matcher.group());
+                if (value != 0.0 && Double.isFinite(value) &&
+                        Math.abs(value) < Double.MIN_NORMAL) return true;
+            }
+            catch (NumberFormatException ignored) { }
+        }
+        return false;
+    }
+
+    private String subnormalInlineTransform(String line) {
+        Matcher matcher = SCIENTIFIC_LITERAL.matcher(line == null ? "" : line);
+        while (matcher.find()) {
+            try {
+                double value = Double.parseDouble(matcher.group());
+                if (value == 0.0 || !Double.isFinite(value) ||
+                        Math.abs(value) >= Double.MIN_NORMAL) continue;
+                long bits = Double.doubleToRawLongBits(value);
+                long swapped = bits << 32 | bits >>> 32;
+                double candidate = Double.longBitsToDouble(swapped);
+                String suffix = Double.isFinite(candidate) && candidate != 0.0 &&
+                    Math.abs(candidate) >= Double.MIN_NORMAL ?
+                    "; swapping its 32-bit halves yields " + candidate : "";
+                return "suspicious IEEE-754 subnormal raw_bits=0x" +
+                    String.format("%016X", bits) + suffix +
+                    "; recover split qword ABI/storage before accepting the literal";
+            }
+            catch (NumberFormatException ignored) { }
+        }
+        return "suspicious subnormal literal; review split qword ABI/storage";
     }
 
     private void addIdiom(Map<String, IdiomEvidence> evidence, String kind, int lineNumber,
@@ -3707,6 +3906,8 @@ public class STDecompExport extends GhidraScript {
                 "propagate a compatible structure type across the pointer family and render a named field access";
             case "stack_slot_reuse" ->
                 "split the optimized physical argument-slot reuse into the original parameter and a distinct local variable";
+            case "suspicious_subnormal_literal" ->
+                "merge the proven adjacent dword halves into one double ABI/storage slot";
             default -> "review and express the machine operation as typed, compilable source";
         };
     }
@@ -3729,6 +3930,8 @@ public class STDecompExport extends GhidraScript {
             case "raw_pointer_offset" -> "typed dereference over param/local plus constant offset";
             case "stack_slot_reuse" ->
                 "machine reads an incoming EBP argument slot, later overwrites it, and reads the post-write lifetime";
+            case "suspicious_subnormal_literal" ->
+                "finite nonzero scientific literal below Double.MIN_NORMAL; report raw qword and swapped-dword interpretation";
             default -> "text pattern";
         };
     }
@@ -5251,7 +5454,6 @@ public class STDecompExport extends GhidraScript {
         writeJson(programRoot.resolve("manifest.json"), jsonObject(
             field("schema", "st-decomp-corpus"),
             rawField("schema_version", "1"),
-            field("generated_at_utc", Instant.now().toString()),
             field("ghidra_version", applicationVersion()),
             field("program", currentProgram.getName()),
             rawField("function_count", Integer.toString(exportedFunctionCount)),
@@ -5436,23 +5638,20 @@ public class STDecompExport extends GhidraScript {
         }
     }
 
-    private String fileSha256(Path path) throws Exception {
+    private String sha256Text(String value) throws Exception {
         MessageDigest digest = MessageDigest.getInstance("SHA-256");
-        try (java.io.InputStream input = Files.newInputStream(path)) {
-            byte[] buffer = new byte[65536];
-            int count;
-            while ((count = input.read(buffer)) >= 0)
-                if (count > 0) digest.update(buffer, 0, count);
-        }
+        digest.update(value.getBytes(StandardCharsets.UTF_8));
         StringBuilder result = new StringBuilder();
-        for (byte value : digest.digest())
-            result.append(String.format("%02x", value & 0xff));
+        for (byte item : digest.digest())
+            result.append(String.format("%02x", item & 0xff));
         return result.toString();
     }
 
     private record CachedFunctionAnalysis(String fingerprint, int normalizationCount,
         List<String> pseudocodeRows, List<String> qualityRows,
         Map<String, Integer> qualityOccurrences) { }
+    private record X87Memory(String base, long offset) { }
+    private record X87SavedValue(int savedOffset, int destinationOffset) { }
 
     private static class StackSlotLifetime {
         final String parameterName;

@@ -8,7 +8,7 @@ int __thiscall FUN_00746e32(void *this,uint *param_1)
   int iVar4;
 
   piVar2 = *(int **)((int)this + 0x14);
-  if (piVar2 == (int *)0x0) {
+  if (piVar2 == nullptr) {
     iVar4 = -0x7ffbfded;
   }
   else {

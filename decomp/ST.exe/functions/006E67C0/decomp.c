@@ -8,10 +8,10 @@ FUN_006e67c0(void *this,undefined4 param_1,undefined4 param_2,undefined4 param_3
 
   puVar1 = *(undefined4 **)((int)this + 0x452);
   do {
-    if (puVar1 == (undefined4 *)0x0) {
+    if (puVar1 == nullptr) {
 LAB_006e67ea:
       puVar1 = Library::DKW::LIB::FUN_006aac10(0x1c);
-      if (puVar1 != (undefined4 *)0x0) {
+      if (puVar1 != nullptr) {
         FUN_006b9910((undefined4 *)((int)this + 0x452),(int)puVar1);
 LAB_006e67fe:
         puVar1[2] = param_1;
@@ -24,7 +24,7 @@ LAB_006e67fe:
       return;
     }
     if (puVar1[1] == param_6) {
-      if (puVar1 != (undefined4 *)0x0) goto LAB_006e67fe;
+      if (puVar1 != nullptr) goto LAB_006e67fe;
       goto LAB_006e67ea;
     }
     puVar1 = (undefined4 *)*puVar1;

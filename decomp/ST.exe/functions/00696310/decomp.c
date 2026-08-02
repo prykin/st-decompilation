@@ -30,7 +30,7 @@ void __thiscall FUN_00696310(void *this,int param_1,int param_2,int *param_3,int
     iVar1 = (-(uint)(iVar1 != 0) & 4) + 4;
   }
   uVar3 = (uint)(byte)(&DAT_0079d77c)[iVar1];
-  if (param_4 != (int *)0x0) {
+  if (param_4 != nullptr) {
     *param_4 = iVar1;
   }
   if (uVar3 != 0) {

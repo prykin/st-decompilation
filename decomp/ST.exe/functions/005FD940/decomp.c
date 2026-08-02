@@ -20,7 +20,7 @@ int __thiscall FUN_005fd940(void *this,int param_1)
           iVar2 = local_8;
         }
         pSVar1 = *(STT3DSprC **)(iVar4 + 0x42 + *(int *)((int)this + 0x233));
-        if (pSVar1 != (STT3DSprC *)0x0) {
+        if (pSVar1 != nullptr) {
           thunk_FUN_004ad310(pSVar1);
           Library::MSVCRT::FUN_0072e2b0(*(HoloTy **)(iVar4 + 0x42 + *(int *)((int)this + 0x233)));
           *(undefined4 *)(iVar4 + 0x42 + *(int *)((int)this + 0x233)) = 0;

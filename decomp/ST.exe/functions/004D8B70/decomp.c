@@ -14,7 +14,7 @@ undefined4 FUN_004d8b70(char param_1)
   if (uVar5 == 0xff) {
     return 0;
   }
-  if ((uVar5 == DAT_0080874d) && (g_money_008016D4 != (MoneyTy *)0x0)) {
+  if ((uVar5 == DAT_0080874d) && (g_money_008016D4 != nullptr)) {
     if (g_packedRecords_A62x8[uVar5].field0_0x0 == '\x03') {
       uVar2 = thunk_FUN_004e41c0(uVar5);
       iVar3 = thunk_FUN_004e4180(uVar5);

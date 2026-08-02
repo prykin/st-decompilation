@@ -40,14 +40,14 @@ void __thiscall AiPlrClassTy::sub_0067BFD0(AiPlrClassTy *this,DArrayTy *param_1,
       /* ST_PSEUDO[dynamic_array_indexing]: expected DArrayAt<T>(param_1, local_8) (runtime stride) */
       if ((((bVar6) &&
            (puVar3 = (ushort *)(param_1->elementSize * local_8 + (int)param_1->data),
-           puVar3 != (ushort *)0x0)) && (*puVar3 != 0)) &&
+           puVar3 != nullptr)) && (*puVar3 != 0)) &&
          ((puVar1 = (ushort *)thunk_FUN_0067bc80(param_2,*(uint *)(puVar3 + 4)),
-          puVar1 != (ushort *)0x0 ||
-          (puVar1 = (ushort *)thunk_FUN_0067bc10(param_2), puVar1 != (ushort *)0x0)))) {
+          puVar1 != nullptr ||
+          (puVar1 = (ushort *)thunk_FUN_0067bc10(param_2), puVar1 != nullptr)))) {
         *(uint *)(puVar3 + 6) = (uint)*puVar1;
         ppAVar4 = &local_40;
         for (iVar2 = 0xd; this_00 = local_c, iVar2 != 0; iVar2 = iVar2 + -1) {
-          *ppAVar4 = (AnonShape_0068FD00_A5257008 *)0x0;
+          *ppAVar4 = nullptr;
           ppAVar4 = ppAVar4 + 1;
         }
         local_40 = (AnonShape_0068FD00_A5257008 *)0x67;

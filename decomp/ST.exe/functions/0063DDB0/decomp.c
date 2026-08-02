@@ -8,7 +8,7 @@ void __thiscall STTmMineC::FUN_0063ddb0(STTmMineC *this,int param_1)
   STTmMineC_field_0336DArray *pSVar2;
   uint uVar3;
 
-  if (this->field_0336 != (STTmMineC_field_0336DArray *)0x0) {
+  if (this->field_0336 != nullptr) {
     dVar1 = this->field_0336->count;
     uVar3 = 0;
     if (0 < (int)dVar1) {
@@ -16,7 +16,7 @@ void __thiscall STTmMineC::FUN_0063ddb0(STTmMineC *this,int param_1)
         pSVar2 = this->field_0336;
         /* ST_PSEUDO[dynamic_array_indexing]: expected DArrayAt<T>(array, index) (runtime elementSize cannot be a static C array) */
         if ((uVar3 < pSVar2->count) &&
-           (&pSVar2->data->field_0000 + pSVar2->elementSize * uVar3 != (char *)0x0)) {
+           (&pSVar2->data->field_0000 + pSVar2->elementSize * uVar3 != nullptr)) {
           LoadImagSpr(this,uVar3,param_1);
         }
         uVar3 = uVar3 + 1;

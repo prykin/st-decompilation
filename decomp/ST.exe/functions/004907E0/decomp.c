@@ -14,17 +14,17 @@ void __thiscall FUN_004907e0(void *this,short *param_1,short *param_2,short *par
                               ,*(short *)((int)this + 0x6c));
   uVar2 = *puVar3;
   sVar1 = *(short *)(puVar3 + 1);
-  if (param_1 != (short *)0x0) {
+  if (param_1 != nullptr) {
     /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
     local_c._0_2_ = (short)uVar2;
     *param_1 = *(short *)((int)this + 0x41) + (short)local_c;
   }
-  if (param_2 != (short *)0x0) {
+  if (param_2 != nullptr) {
     /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
     local_c._2_2_ = (short)((uint)uVar2 >> 0x10);
     *param_2 = *(short *)((int)this + 0x43) - local_c._2_2_;
   }
-  if (param_3 != (short *)0x0) {
+  if (param_3 != nullptr) {
     *param_3 = *(short *)((int)this + 0x45) + sVar1;
   }
   return;

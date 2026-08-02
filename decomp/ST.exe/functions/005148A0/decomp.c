@@ -32,7 +32,7 @@ void __thiscall HelpPanelTy::sub_005148A0(HelpPanelTy *this,int param_1)
       uVar2 = *(uint *)&pAVar1->field_0xc;
       if (uVar2 != 0) {
         if (uVar2 == 0) {
-          piVar3 = (int *)0x0;
+          piVar3 = nullptr;
           goto LAB_0051490d;
         }
         do {

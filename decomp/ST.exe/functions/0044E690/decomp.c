@@ -32,7 +32,7 @@ STBoatC * __thiscall STBoatC::STBoatC(STBoatC *this)
   this->field_0459 = 0;
   this->field_045D = 0;
   this->field_0461 = 0;
-  this->field_0465 = (void *)0x0;
+  this->field_0465 = nullptr;
   psVar3 = &this->field_0469;
   for (iVar1 = 9; iVar1 != 0; iVar1 = iVar1 + -1) {
     *(undefined4 *)psVar3 = 0;

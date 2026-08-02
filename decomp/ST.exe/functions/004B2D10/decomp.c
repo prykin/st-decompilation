@@ -79,9 +79,9 @@ undefined4 __cdecl FUN_004b2d10(byte param_1,int param_2,int param_3,int param_4
             this = g_worldGrid.cells
                    [g_worldGrid.sizeX * param_2 + iVar7 + g_worldGrid.planeStride * local_2c].
                    objects[0];
-            if ((((this != (STWorldObject *)0x0) && (this[1].vtable < (STWorldObjectVTable *)0x8))
-                && ((g_playSystem_00802A38 == (STPlaySystemC *)0x0 ||
-                    ((byte)(&DAT_008087e9)[(int)this[1].vtable * 0x51] < 8)))) &&
+            if ((((this != nullptr) && (this[1].vtable < (STWorldObjectVTable *)0x8))
+                && ((g_playSystem_00802A38 == nullptr ||
+                    (g_bulkInitializedRecords_008087C7[(int)this[1].vtable].field_0022 < 8)))) &&
                (iVar6 = this->GetObjectTypeId(), iVar6 == 0x73)) {
               bVar1 = *(byte *)&this[1].vtable;
               if (g_appClass_00806728->field_146F == '\0') {

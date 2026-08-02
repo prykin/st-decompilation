@@ -21,23 +21,23 @@ void __thiscall IntercomPanelTy::DoneIntercomPanel(IntercomPanelTy *this)
   errorCode = Library::MSVCRT::__setjmp3(local_4c.jumpBuffer,0);
   pIVar2 = local_8;
   if (errorCode == 0) {
-    if (local_8->field_0198 != (DArrayTy *)0x0) {
+    if (local_8->field_0198 != nullptr) {
       FUN_006b5570(local_8->field_0198);
-      pIVar2->field_0198 = (DArrayTy *)0x0;
+      pIVar2->field_0198 = nullptr;
     }
     if (pIVar2->field_01A0 != 0) {
       StartSystemTy::sub_006E56B0(pIVar2->field_000C,pIVar2->field_01A0);
     }
     pIVar2->field_01A0 = 0;
-    g_intercomPanel_0080169C = (IntercomPanelTy *)0x0;
-    if (pIVar2->field_0180 != (uint *)0x0) {
+    g_intercomPanel_0080169C = nullptr;
+    if (pIVar2->field_0180 != nullptr) {
       ccFntTy::operator_delete(pIVar2->field_0180);
-      pIVar2->field_0180 = (void *)0x0;
+      pIVar2->field_0180 = nullptr;
     }
-    if (pIVar2->field_0184 != (ushort *)0x0) {
+    if (pIVar2->field_0184 != nullptr) {
       cMf32::RecMemFree(g_cMf32_00806790,(uint *)&pIVar2->field_0184);
     }
-    if (pIVar2->field_019C != (ushort *)0x0) {
+    if (pIVar2->field_019C != nullptr) {
       cMf32::RecMemFree(g_cMf32_00806790,(uint *)&pIVar2->field_019C);
     }
     g_currentExceptionFrame = local_4c.previous;

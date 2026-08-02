@@ -38,18 +38,18 @@ void __thiscall FUN_004e3200(void *this,int *param_1)
   undefined4 local_c;
   undefined4 local_8;
 
-  puVar6 = (undefined1 *)0x0;
+  puVar6 = nullptr;
   local_8 = 0;
   local_c = 0;
   local_10 = 0;
   local_14 = 0;
   /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
   if (*param_1 == 0) {
-    pDVar3 = Library::DKW::TBL::DArrayCreate((DArrayTy *)0x0,5,0x30,5);
+    pDVar3 = Library::DKW::TBL::DArrayCreate(nullptr,5,0x30,5);
     *param_1 = (int)pDVar3;
   }
   if (param_1[1] == 0) {
-    pDVar3 = Library::DKW::TBL::DArrayCreate((DArrayTy *)0x0,5,0x30,5);
+    pDVar3 = Library::DKW::TBL::DArrayCreate(nullptr,5,0x30,5);
     param_1[1] = (int)pDVar3;
   }
   *(undefined4 *)(*param_1 + 0xc) = 0;
@@ -167,10 +167,10 @@ LAB_004e336e:
   do {
     /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
     param_1 = *(int **)(*piVar8 + 0xc);
-    while (param_1 != (int *)0x0) {
+    while (param_1 != nullptr) {
       pDVar3 = (DArrayTy *)*piVar8;
       /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
-      param_1 = (int *)0x0;
+      param_1 = nullptr;
       index_00 = 0;
       if ((int)(pDVar3->count - 2) < 0) break;
       do {

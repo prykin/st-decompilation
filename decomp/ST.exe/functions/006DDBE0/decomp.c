@@ -29,19 +29,17 @@ void __thiscall ST3DSMAPContext::sub_006DDBE0(ST3DSMAPContext *this)
   puStack_c = &DAT_0079dfd8;
   puStack_10 = &LAB_0072d964;
   local_14 = ExceptionList;
-  /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-  if (((*(int *)&this->field_0x4 == 0) ||
-      ((*(uint *)(*(int *)&this->field_0x4 + 0xc) & 0x1100) != 0x100)) &&
-     ((*(int *)&this->field_0x2dc == 0 || (this->field_02D8 != 0)))) {
-    uVar4 = *(int *)&this->field_0x38 - *(int *)&this->field_0x30;
-    iVar3 = *(int *)&this->field_0x3c - *(int *)&this->field_0x34;
+  if (((this->field_0004 == nullptr) ||
+      ((this->field_0004->field_000C & 0x1100) != 0x100)) &&
+     ((this->field_02DC == 0 || (this->field_02D8 != 0)))) {
+    uVar4 = this->field_0038 - this->field_0030;
+    iVar3 = this->field_003C - this->field_0034;
     ExceptionList = &local_14;
-    FUN_006b01d0(*(int *)&this->field_0xc,this->field_0028,*(int *)&this->field_0x30,
-                 *(int *)&this->field_0x34,uVar4,iVar3,(byte)*(undefined4 *)&this->field_0x128);
-    if (*(int *)&this->field_0x124 == 1) {
+    FUN_006b01d0(this->field_000C,this->field_0028,this->field_0030,this->field_0034,uVar4,iVar3,
+                 (byte)this->field_0128);
+    if (this->field_0124 == 1) {
       puVar2 = (undefined4 *)
-               (this->field_0028 * *(int *)&this->field_0x34 + *(int *)&this->field_0x14 +
-               *(int *)&this->field_0x30);
+               ((int)this->field_0014 + this->field_0030 + this->field_0028 * this->field_0034);
       while (iVar3 != 0) {
         puVar5 = puVar2;
         for (uVar1 = uVar4 >> 2; uVar1 != 0; uVar1 = uVar1 - 1) {
@@ -57,9 +55,7 @@ void __thiscall ST3DSMAPContext::sub_006DDBE0(ST3DSMAPContext *this)
       }
     }
     else {
-      local_2c = (ushort *)
-                 (*(int *)&this->field_0x14 +
-                 (this->field_0028 * *(int *)&this->field_0x34 + *(int *)&this->field_0x30) * 2);
+      local_2c = this->field_0014 + this->field_0028 * this->field_0034 + this->field_0030;
       local_8 = 1;
       while (iVar3 != 0) {
         FUN_006ce6c0(local_2c,uVar4,30000);

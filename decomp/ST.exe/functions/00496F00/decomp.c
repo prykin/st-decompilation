@@ -21,7 +21,7 @@ undefined4 FUN_00496f00(int param_1)
         pvVar3 = (void *)(g_array_007FB270->elementSize * uVar4 + (int)g_array_007FB270->data);
       }
       else {
-        pvVar3 = (void *)0x0;
+        pvVar3 = nullptr;
       }
       if (*(int *)((int)pvVar3 + 8) == param_1) break;
       uVar4 = uVar4 + 1;

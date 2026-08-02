@@ -17,7 +17,7 @@ undefined4 __thiscall FUN_005f9050(void *this,int *param_1,undefined4 *param_2)
          ((this_00 = g_worldGrid.cells
                      [(int)g_worldGrid.planeStride * (int)sVar1 +
                       (int)g_worldGrid.sizeX * (int)local_6 + (int)local_8].objects[0],
-          this_00 != (STWorldObject *)0x0 && (this_00->value_20 == 1000)))))) &&
+          this_00 != nullptr && (this_00->value_20 == 1000)))))) &&
        (iVar2 = this_00->GetObjectTypeId(), iVar2 == 0x6e)))) &&
      (((*(int *)&this_00->field_0x18 == *(int *)((int)this + 0x255) &&
        (iVar2 = thunk_FUN_004dd740((int)this_00), iVar2 == 0)) &&

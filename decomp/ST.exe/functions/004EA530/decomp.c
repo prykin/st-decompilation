@@ -12,7 +12,7 @@ undefined4 __thiscall FUN_004ea530(void *this,short param_1,short param_2,short 
                  g_worldGrid.cells
                  [(int)g_worldGrid.planeStride * (int)param_3 +
                   (int)g_worldGrid.sizeX * (int)param_2 + (int)param_1].objects[0],
-      this_00 != (AnonShape_004EA460_7CF77153 *)0x0)))) {
+      this_00 != nullptr)))) {
     /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
     iVar1 = (**(code **)(*(int *)this_00 + 0x2c))();
     /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */

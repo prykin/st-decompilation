@@ -28,8 +28,8 @@ void __thiscall FSGSTy::PaintLadder(FSGSTy *this,int param_1)
   StartServTy *local_8;
 
   local_14 = this->field_1EDB;
-  if (((this->field_1E8E != 0) && (this->field_1E92 != (tagBITMAPINFO *)0x0)) &&
-     (local_14 != (void *)0x0)) {
+  if (((this->field_1E8E != 0) && (this->field_1E92 != nullptr)) &&
+     (local_14 != nullptr)) {
     local_8c.previous = g_currentExceptionFrame;
     g_currentExceptionFrame = &local_8c;
     local_10 = this;

@@ -41,9 +41,9 @@ void __thiscall AiPlrClassTy::Offensive(AiPlrClassTy *this,void *param_1)
   DArrayTy *local_c;
   uint local_8;
 
-  local_c = (DArrayTy *)0x0;
+  local_c = nullptr;
   if ((((this->field_0676 != '\0') && (this->field_0640 != 0xff)) &&
-      (this->field_0695 != (DArrayTy *)0x0)) && (g_allPlayers_007FA174 != (STAllPlayersC *)0x0)) {
+      (this->field_0695 != nullptr)) && (g_allPlayers_007FA174 != nullptr)) {
     local_80.previous = g_currentExceptionFrame;
     g_currentExceptionFrame = &local_80;
     local_20 = this;
@@ -54,7 +54,7 @@ void __thiscall AiPlrClassTy::Offensive(AiPlrClassTy *this,void *param_1)
       if (local_20->field_0689 == 0) {
         if ((iVar4 == 0) || (iVar4 * 3 + local_20->field_0685 <= local_20->field_06FE)) {
           local_20->field_0685 = local_20->field_06FE;
-          array = Library::DKW::TBL::DArrayCreate((DArrayTy *)0x0,5,0x10,5);
+          array = Library::DKW::TBL::DArrayCreate(nullptr,5,0x10,5);
           local_c = array;
           sub_0067A240(this_00,thunk_FUN_0067ba50,array);
           uVar11 = array->count;
@@ -70,9 +70,9 @@ void __thiscall AiPlrClassTy::Offensive(AiPlrClassTy *this,void *param_1)
                 psVar5 = (short *)(array->elementSize * uVar14 + (int)array->data);
               }
               else {
-                psVar5 = (short *)0x0;
+                psVar5 = nullptr;
               }
-              if ((psVar5 != (short *)0x0) && (*psVar5 != 0)) {
+              if ((psVar5 != nullptr) && (*psVar5 != 0)) {
                 iVar4 = iVar4 + psVar5[1];
                 local_10 = local_10 + *(int *)(psVar5 + 2);
               }
@@ -96,11 +96,11 @@ void __thiscall AiPlrClassTy::Offensive(AiPlrClassTy *this,void *param_1)
                   piVar6 = (int *)(*(int *)(iVar4 + 8) * local_8 + *(int *)(iVar4 + 0x1c));
                 }
                 else {
-                  piVar6 = (int *)0x0;
+                  piVar6 = nullptr;
                 }
                 piVar6 = (int *)*piVar6;
                 /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-                if ((piVar6 != (int *)0x0) && (iVar7 = (**(code **)(*piVar6 + 0xf8))(), iVar7 != 0))
+                if ((piVar6 != nullptr) && (iVar7 = (**(code **)(*piVar6 + 0xf8))(), iVar7 != 0))
                 {
                   /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
                   iVar7 = (**(code **)(*piVar6 + 0x2c))();
@@ -128,10 +128,10 @@ void __thiscall AiPlrClassTy::Offensive(AiPlrClassTy *this,void *param_1)
                     puVar9 = (undefined4 *)(*(int *)(iVar4 + 8) * local_8 + *(int *)(iVar4 + 0x1c));
                   }
                   else {
-                    puVar9 = (undefined4 *)0x0;
+                    puVar9 = nullptr;
                   }
                   pSVar1 = (STFishC *)*puVar9;
-                  if ((pSVar1 != (STFishC *)0x0) &&
+                  if ((pSVar1 != nullptr) &&
                      (iVar7 = (*pSVar1->vtable->vfunc_F8)(), iVar7 != 0)) {
                     memset(&local_3c, 0, 0x1c); /* compiler bulk-zero initialization */
                     /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
@@ -160,7 +160,7 @@ void __thiscall AiPlrClassTy::Offensive(AiPlrClassTy *this,void *param_1)
             }
           }
 LAB_0067c61b:
-          if (array != (DArrayTy *)0x0) {
+          if (array != nullptr) {
             DArrayDestroy(array);
           }
           g_currentExceptionFrame = local_80.previous;
@@ -175,7 +175,7 @@ LAB_0067c61b:
           local_20->field_0685 = local_20->field_06FE;
           thunk_FUN_0067be20((int)local_20,uVar11,local_20->field_06AD);
           iVar4 = thunk_FUN_0067bd50(this_00->field_06AD);
-          pDVar12 = Library::DKW::TBL::DArrayCreate((DArrayTy *)0x0,5,0x10,5);
+          pDVar12 = Library::DKW::TBL::DArrayCreate(nullptr,5,0x10,5);
           local_c = pDVar12;
           sub_0067A240(this_00,thunk_FUN_0067ba50,pDVar12);
           iVar4 = iVar4 + pDVar12->count;
@@ -201,13 +201,13 @@ LAB_0067c61b:
                                  (*(int *)(iVar4 + 8) * local_8 + *(int *)(iVar4 + 0x1c));
                       }
                       else {
-                        puVar9 = (undefined4 *)0x0;
+                        puVar9 = nullptr;
                       }
                       pSVar1 = (STFishC *)*puVar9;
-                      if (((pSVar1 != (STFishC *)0x0) &&
+                      if (((pSVar1 != nullptr) &&
                           (iVar7 = (*pSVar1->vtable->vfunc_F8)(), iVar4 = local_18, iVar7 != 0)) &&
                          (puVar13 = thunk_FUN_0067bd00(this_00->field_06AD,uVar11), iVar4 = local_18
-                         , puVar13 == (ushort *)0x0)) {
+                         , puVar13 == nullptr)) {
                         uVar3 = (undefined2)local_8;
                         memset(&local_3c, 0, 0x1c); /* compiler bulk-zero initialization */
                         /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
@@ -253,9 +253,9 @@ LAB_0067c61b:
       if (iVar7 != 0) {
         STDebugBreak(); /* noreturn in standalone pseudocode */
       }
-      if (local_c != (DArrayTy *)0x0) {
+      if (local_c != nullptr) {
         DArrayDestroy(local_c);
-        local_c = (DArrayTy *)0x0;
+        local_c = nullptr;
       }
       RaiseInternalException(iVar4,0,"E:\\__titans\\ai\\ai_plr.cpp",0x573);
     }

@@ -8,7 +8,7 @@ void FUN_004d8530(STResourceC *param_1)
   int iVar1;
   STResourceC *local_8;
 
-  if (g_array_007FA150 != (DArrayTy *)0x0) {
+  if (g_array_007FA150 != nullptr) {
     g_array_007FA150->iteratorIndex = 0;
     iVar1 = DArrayGetNext(g_array_007FA150,(byte *)&local_8);
     if (-1 < iVar1) {

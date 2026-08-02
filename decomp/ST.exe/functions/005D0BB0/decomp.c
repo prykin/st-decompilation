@@ -31,7 +31,7 @@ SettMapMTy::ChangePlayerTeam(SettMapMTy *this,uint param_1,uint param_2,uint par
   SettMapMTy *local_c;
   uint local_8;
 
-  if ((this->field_1F84 != (SettMapMTy_field_1F84DArray *)0x0) && (DAT_00808a8f == param_2)) {
+  if ((this->field_1F84 != nullptr) && (DAT_00808a8f == param_2)) {
     local_54.previous = g_currentExceptionFrame;
     g_currentExceptionFrame = &local_54;
     local_c = this;
@@ -43,9 +43,9 @@ SettMapMTy::ChangePlayerTeam(SettMapMTy *this,uint param_1,uint param_2,uint par
         element_1f84 = DArrayAt<SettMapMTy_field_1F84Element>(pSVar8, param_1);
       }
       else {
-        element_1f84 = (SettMapMTy_field_1F84Element *)0x0;
+        element_1f84 = nullptr;
       }
-      if (element_1f84 != (SettMapMTy_field_1F84Element *)0x0) {
+      if (element_1f84 != nullptr) {
         if (param_2 != 0) {
           uVar9 = param_1 + 1;
           element_1f84->field_004A = (byte)param_3;
@@ -57,9 +57,9 @@ SettMapMTy::ChangePlayerTeam(SettMapMTy *this,uint param_1,uint param_2,uint par
                 element_1f84 = DArrayAt<SettMapMTy_field_1F84Element>(pSVar8, uVar9);
               }
               else {
-                element_1f84 = (SettMapMTy_field_1F84Element *)0x0;
+                element_1f84 = nullptr;
               }
-              if ((element_1f84 == (SettMapMTy_field_1F84Element *)0x0) || (element_1f84->field_0000 != '\0')) break;
+              if ((element_1f84 == nullptr) || (element_1f84->field_0000 != '\0')) break;
               element_1f84->field_004A = (byte)param_3;
               pSVar8 = local_c->field_1F84;
               uVar9 = uVar9 + 1;

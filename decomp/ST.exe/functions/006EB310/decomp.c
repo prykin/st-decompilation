@@ -7,11 +7,9 @@
 uint __thiscall ST3DSMAPContext::sub_006EB310(ST3DSMAPContext *this,uint param_1)
 
 {
-  uint uVar1;
-
-  if ((param_1 < *(uint *)&this->field_0x310) &&
-     (uVar1 = *(uint *)(*(int *)&this->field_0x31c + param_1 * 0x114), (uVar1 & 0x8000) != 0)) {
-    return uVar1 & 1;
+  if ((param_1 < (uint)this->field_0310) &&
+     ((*(uint *)(this->field_031C + param_1 * 0x114) & 0x8000) != 0)) {
+    return *(uint *)(this->field_031C + param_1 * 0x114) & 1;
   }
   return 0;
 }

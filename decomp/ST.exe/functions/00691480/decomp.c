@@ -28,7 +28,7 @@ void __cdecl FUN_00691480(AnonShape_00691480_E757992C *param_1)
           }
           if (*(int *)(iVar2 + 4) == 0) {
             /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
-            param_1 = (AnonShape_00691480_E757992C *)0x0;
+            param_1 = nullptr;
           }
           else {
             /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
@@ -44,7 +44,7 @@ void __cdecl FUN_00691480(AnonShape_00691480_E757992C *param_1)
     piVar4 = &pAVar1->field_0085;
     iVar2 = 8;
     do {
-      if ((DArrayTy *)*piVar4 != (DArrayTy *)0x0) {
+      if ((DArrayTy *)*piVar4 != nullptr) {
         DArrayDestroy((DArrayTy *)*piVar4);
         *piVar4 = 0;
       }

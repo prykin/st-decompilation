@@ -15,7 +15,7 @@ undefined4 FUN_00748e2b(AnonShape_00748E2B_93115374 *param_1,uint param_2,uint *
   undefined4 local_8;
 
   if (param_2 != 0) {
-    if (param_3 == (uint *)0x0) {
+    if (param_3 == nullptr) {
       return 0x80004003;
     }
     local_34[0] = param_2;

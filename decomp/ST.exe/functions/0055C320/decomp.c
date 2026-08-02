@@ -69,7 +69,7 @@ FUN_0055c320(void *this,byte *param_1,char *param_2,char *param_3,
     pcVar8 = pcVar8 + 4;
   }
   /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
-  param_1 = (byte *)0x0;
+  param_1 = nullptr;
   for (uVar3 = uVar3 & 3; uVar3 != 0; uVar3 = uVar3 - 1) {
     *pcVar8 = *pcVar9;
     pcVar9 = pcVar9 + 1;
@@ -97,7 +97,7 @@ FUN_0055c320(void *this,byte *param_1,char *param_2,char *param_3,
   param_1 = (byte *)Library::DKW::LIB::FUN_006aac10((uint)(param_1 + param_4->field_0008));
   *(void **)((int)this + 0x644) = param_1;
   /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
-  if (param_1 == (byte *)0x0) {
+  if (param_1 == nullptr) {
     *(undefined1 *)((int)this + 10) = 1;
     return;
   }
@@ -108,7 +108,7 @@ FUN_0055c320(void *this,byte *param_1,char *param_2,char *param_3,
     return;
   }
   if (iVar5 < 1) {
-    pcVar9 = (char *)0x0;
+    pcVar9 = nullptr;
     goto LAB_0055c414;
   }
   do {
@@ -126,7 +126,7 @@ LAB_0055c414:
       pbVar7 = *(byte **)(param_4->field_0014 + iVar6 * 4);
     }
     else {
-      pbVar7 = (byte *)0x0;
+      pbVar7 = nullptr;
     }
     pbVar10 = param_1;
     memmove(pbVar10, pbVar7, uVar3); /* compiler REP MOVS byte copy */

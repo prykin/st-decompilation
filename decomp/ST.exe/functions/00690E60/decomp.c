@@ -12,10 +12,10 @@ AiTactClassTy * __cdecl CreateAiTact(void)
   AiTactClassTy *pAVar1;
 
   pAVar1 = (AiTactClassTy *)FUN_006b04d0(0x144);
-  if (pAVar1 != (AiTactClassTy *)0x0) {
+  if (pAVar1 != nullptr) {
     pAVar1 = AiTactClassTy::AiTactClassTy(pAVar1);
     return pAVar1;
   }
-  return (AiTactClassTy *)0x0;
+  return nullptr;
 }
 

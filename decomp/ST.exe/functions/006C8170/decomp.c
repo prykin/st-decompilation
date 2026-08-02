@@ -13,8 +13,8 @@ char * FUN_006c8170(char *resourceString)
   char *pcVar5;
   char *pcVar6;
 
-  pcVar2 = (char *)0x0;
-  if (resourceString != (char *)0x0) {
+  pcVar2 = nullptr;
+  if (resourceString != nullptr) {
     uVar3 = 0xffffffff;
     pcVar2 = resourceString;
     do {
@@ -24,7 +24,7 @@ char * FUN_006c8170(char *resourceString)
       pcVar2 = pcVar2 + 1;
     } while (cVar1 != '\0');
     pcVar2 = (char *)FUN_006bfb70(~uVar3);
-    if (pcVar2 != (char *)0x0) {
+    if (pcVar2 != nullptr) {
       uVar3 = 0xffffffff;
       do {
         pcVar5 = resourceString;

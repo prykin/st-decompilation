@@ -15,7 +15,7 @@ int FUN_006b08f0(AnonShape_GLOBAL_0080759C_9638EF10 *param_1,int param_2,UINT pa
 
   iVar3 = 0;
   local_8 = 0;
-  if ((param_1 != (AnonShape_GLOBAL_0080759C_9638EF10 *)0x0) && (param_1->field_0040 != 0)) {
+  if ((param_1 != nullptr) && (param_1->field_0040 != 0)) {
     if (((*(uint *)&param_1->field_0x8 & 0x20000001) == 0) && (*(int *)&param_1->field_0x24 < 9)) {
       if ((int)param_3 < 10) {
         iVar3 = 10 - param_3;
@@ -38,7 +38,7 @@ int FUN_006b08f0(AnonShape_GLOBAL_0080759C_9638EF10 *param_1,int param_2,UINT pa
       else {
         piVar1 = (int *)param_1->field_003C;
         iVar3 = local_8;
-        if (piVar1 != (int *)0x0) {
+        if (piVar1 != nullptr) {
           /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
           iVar3 = (**(code **)(*piVar1 + 0x18))(piVar1,0,0,0x100,local_40c[0].palPalEntry);
           local_8 = iVar3;

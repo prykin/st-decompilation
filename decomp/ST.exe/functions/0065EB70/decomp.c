@@ -15,8 +15,8 @@ FUN_0065eb70(void *this,uint param_1,int param_2,uint *param_3,uint param_4,uint
   iVar4 = param_2;
   iVar2 = 0;
   local_8 = 0;
-  local_c = (uint *)0x0;
-  if (((g_allPlayers_007FA174 != (STAllPlayersC *)0x0) && (param_3 != (uint *)0x0)) && (0 < param_2)
+  local_c = nullptr;
+  if (((g_allPlayers_007FA174 != nullptr) && (param_3 != nullptr)) && (0 < param_2)
      ) {
     if (((int)param_1 < 0) || (8 < (int)param_1)) {
       param_1 = *(uint *)((int)this + 0x97);
@@ -43,7 +43,7 @@ FUN_0065eb70(void *this,uint param_1,int param_2,uint *param_3,uint param_4,uint
           param_7 = CONCAT31(param_7._1_3_,0xff);
         }
         _EnumPlObj(param_1,param_4,param_5,param_6,(char)param_7,0,0,0,-1,-1,-1,thunk_FUN_0065e860,
-                   local_c,(undefined *)0x0);
+                   local_c,nullptr);
         if (DAT_00811900 == 0) {
           local_8 = 0;
         }
@@ -83,7 +83,7 @@ FUN_0065eb70(void *this,uint param_1,int param_2,uint *param_3,uint param_4,uint
           }
         }
       }
-      if (local_c != (uint *)0x0) {
+      if (local_c != nullptr) {
         FreeAndNull(&local_c);
       }
       return local_8;

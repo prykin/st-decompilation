@@ -46,7 +46,7 @@ _EnumRCCont(short param_1,short param_2,byte *param_3,short param_4,short param_
     RaiseInternalException(iVar3,0,"E:\\__titans\\ai\\ai_mdef.cpp",0x3bb);
     return iVar3;
   }
-  if (g_array_007FA160 == (DArrayTy *)0x0) {
+  if (g_array_007FA160 == nullptr) {
     RaiseInternalException
               (-0x34,g_overwriteContext_007ED77C,"E:\\__titans\\ai\\ai_mdef.cpp",0x39c);
   }
@@ -62,17 +62,17 @@ _EnumRCCont(short param_1,short param_2,byte *param_3,short param_4,short param_
       puVar4 = (undefined4 *)(pDVar7->elementSize * uVar8 + (int)pDVar7->data);
     }
     else {
-      puVar4 = (undefined4 *)0x0;
+      puVar4 = nullptr;
     }
     this = (STFishC *)*puVar4;
-    if (((this != (STFishC *)0x0) &&
+    if (((this != nullptr) &&
         (local_10 = uVar8, local_1c = (*this->vtable[1].vfunc_08)(this), pDVar7 = g_array_007FA160,
         (short)local_1c == param_1)) &&
        ((param_2 == 0 ||
         (iVar3 = (*this->vtable[1].vfunc_0C)(), pDVar7 = g_array_007FA160, iVar3 == param_2)))) {
       iVar3 = 1;
       local_14 = 1;
-      if ((param_3 != (byte *)0x0) && (*param_3 != 0)) {
+      if ((param_3 != nullptr) && (*param_3 != 0)) {
         (*this->vtable->vfunc_74)(local_2c);
         pbVar9 = local_2c;
         pbVar5 = param_3;
@@ -113,7 +113,7 @@ LAB_00677cee:
         pDVar7 = g_array_007FA160;
         uVar8 = local_10;
         /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-        if (((iVar3 != 0) && (param_10 != (undefined *)0x0)) &&
+        if (((iVar3 != 0) && (param_10 != nullptr)) &&
            (iVar3 = (*(code *)param_10)(local_1c,local_10,this,param_11), pDVar7 = g_array_007FA160,
            uVar8 = local_10, iVar3 != 0)) {
           g_currentExceptionFrame = local_70.previous;

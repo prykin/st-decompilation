@@ -112,7 +112,7 @@ LAB_006f63e0:
                     param_13 = param_13 + 1;
                   }
                   pbVar2 = pbVar2 + -1;
-                } while (pbVar2 != (byte *)0x0);
+                } while (pbVar2 != nullptr);
               }
             }
             else {
@@ -138,13 +138,13 @@ LAB_006f63e0:
                   }
                   /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
                   param_1 = param_1 + -1;
-                } while (param_1 != (byte *)0x0);
+                } while (param_1 != nullptr);
               }
             }
             /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
             param_1 = pbVar11;
             if (param_10 < 1) {
-              pbVar2 = (byte *)0x0;
+              pbVar2 = nullptr;
               break;
             }
             bVar6 = *param_6;

@@ -10,7 +10,7 @@ void __thiscall CGenerate::sub_006A09F0(CGenerate *this,byte *param_1,uint param
   CHAR local_108 [260];
 
   wsprintfA(local_108,"%s%08u",&DAT_007c8400,this->field_570B);
-  cMf32::RecPut(this->field_0018,0xc,local_108,param_1,param_2,(undefined4 *)0x0,'\0',(uint *)0x0);
+  cMf32::RecPut(this->field_0018,0xc,local_108,param_1,param_2,nullptr,'\0',nullptr);
   this->field_570B = this->field_570B + 1;
   return;
 }

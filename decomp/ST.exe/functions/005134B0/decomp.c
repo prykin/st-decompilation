@@ -23,7 +23,7 @@ void __thiscall HelpPanelTy::PutToSHlp(HelpPanelTy *this,int param_1)
   local_14 = this->field_01A1;
   local_13 = this->field_01A3;
   local_f = this->field_01A7;
-  if (this->field_01CB != (DArrayTy *)0x0) {
+  if (this->field_01CB != nullptr) {
     local_58.previous = g_currentExceptionFrame;
     g_currentExceptionFrame = &local_58;
     local_8 = this;

@@ -100,7 +100,7 @@ ChooseMapTy::InitChooseMap
     g_startSystem_0081176C->field_02EB = 2;
   }
   _DAT_0080f32e = 0;
-  if (g_cursorClass_00802A30 != (CursorClassTy *)0x0) {
+  if (g_cursorClass_00802A30 != nullptr) {
     if (g_cursorClass_00802A30->field_00A9 == 0) {
       Library::DKW::DDX::FUN_006b8b10((int *)g_cursorClass_00802A30->field_00AD);
     }
@@ -303,12 +303,12 @@ LAB_005ab4e5:
   puVar7 = (ushort *)FUN_0070a9f0(g_cMf32_00806780,"LOADSINGLE",0,1);
   g_startSystem_0081176C->field_002C = puVar7;
   this_02->field_005D = g_startSystem_0081176C->field_002C;
-  FUN_006bc360(g_startSystem_0081176C->field_002C,local_86c,(int *)0x0);
+  FUN_006bc360(g_startSystem_0081176C->field_002C,local_86c,nullptr);
   this_02->field_1A5B->field_0140 = 0x1f;
   Library::Ourlib::PALETTE::FUN_00718780
             ((int)local_86c,0,0x100,0x8b,0x15,(undefined4 *)&this_02->field_1A5B->field_0x144);
   puVar7 = Library::Ourlib::MFRLOAD::mfRLoad
-                     (DAT_00806784,CASE_B,"FILE_LIST",0xffffffff,0,1,0,(undefined4 *)0x0);
+                     (DAT_00806784,CASE_B,"FILE_LIST",0xffffffff,0,1,0,nullptr);
   this_02->field_1C7F = puVar7;
   puVar7 = Library::Ourlib::MFIMG::mfImgLoad(g_cMf32_00806780,1,"MM_MAPB",0,1);
   DibPut((AnonShape_006B5B10_E0D06CF1 *)g_startSystem_0081176C->field_02F0,0,0,'\x01',(byte *)puVar7
@@ -349,10 +349,10 @@ switchD_005ab66b_caseD_6:
         pAVar2 = (AnonShape_006B5B10_E0D06CF1 *)g_startSystem_0081176C->field_0544;
         local_c = param_2 - 1;
         FUN_006b4170(pAVar2,0,0,0,pAVar2->field_0004,pAVar2->field_0008,0xff);
-        if ((DArrayTy *)g_startSystem_0081176C->field_0548 != (DArrayTy *)0x0) {
+        if ((DArrayTy *)g_startSystem_0081176C->field_0548 != nullptr) {
           FUN_006b5570((DArrayTy *)g_startSystem_0081176C->field_0548);
         }
-        pDVar8 = Library::DKW::TBL::SArrayCreate((DArrayTy *)0x0,10,10);
+        pDVar8 = Library::DKW::TBL::SArrayCreate(nullptr,10,10);
         g_startSystem_0081176C->field_0548 = &pDVar8->flags;
         uVar13 = param_2 - 1;
         if (g_startSystem_0081176C->field_0389 != 0) {
@@ -383,14 +383,14 @@ switchD_005ab66b_caseD_6:
           DarkScreen(g_dDXContext_0080759C,1,0);
         }
         this_00 = this_02->field_1A5B->field_02E6;
-        if (this_00 != (MMsgTy *)0x0) {
+        if (this_00 != nullptr) {
           MMsgTy::ShowSprites(this_00);
           this_02->field_1A5B->field_02E6->field_1CAB = this_02->field_0008;
         }
         PaintChooseMap(this_02,'\x01');
         SpriteClassTy::InitSprite
                   ((SpriteClassTy *)&this_02->field_1A70,(int *)g_ddxContext_008075A8,0x31,'\a',
-                   (undefined4 *)0x0,0,0);
+                   nullptr,0,0);
         /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
         (**(code **)(this_02->field_1A70 + 4))(DAT_00806784,7,0,"MM_SLDUP",0xffffffff);
         this_02->field_1A8C = 0x2f8;
@@ -398,7 +398,7 @@ switchD_005ab66b_caseD_6:
         this_02->field_1A78 = 0;
         SpriteClassTy::InitSprite
                   ((SpriteClassTy *)&this_02->field_1B01,(int *)g_ddxContext_008075A8,0x31,'\a',
-                   (undefined4 *)0x0,0,0);
+                   nullptr,0,0);
         /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
         (**(code **)(this_02->field_1B01 + 4))(DAT_00806784,7,0,"MM_SLDDN",0xffffffff);
         this_02->field_1B1D = 0x2f8;
@@ -406,7 +406,7 @@ switchD_005ab66b_caseD_6:
         this_02->field_1B09 = 0;
         SpriteClassTy::InitSprite
                   ((SpriteClassTy *)&this_02->field_1B92,(int *)g_ddxContext_008075A8,0x31,'\a',
-                   (undefined4 *)0x0,0,0);
+                   nullptr,0,0);
         /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
         (**(code **)(this_02->field_1B92 + 4))(DAT_00806784,7,0,"MM_SLDT",0xffffffff);
         iVar5 = 1;
@@ -449,16 +449,16 @@ switchD_005ab66b_caseD_6:
                      (ushort *)&this_02->field_1A5B->field_0140);
         Library::DKW::DDX::FUN_006b3640((int *)g_ddxContext_008075A8,local_8,0xffffffff,0x112,0x38);
         pHVar11 = (HoloTy *)Library::MSVCRT::FUN_0072e530(0x33);
-        if (pHVar11 == (HoloTy *)0x0) {
-          pHVar11 = (HoloTy *)0x0;
+        if (pHVar11 == nullptr) {
+          pHVar11 = nullptr;
         }
         else {
           pHVar11->field_0002 = 1;
           pHVar11->field_0000 = 0;
           *(undefined4 *)&pHVar11->field_0x3 = 0xffffffff;
           pHVar11->field_0001 = CASE_2;
-          pHVar11->field_0007 = (void *)0x0;
-          pHVar11->field_000B = (void *)0x0;
+          pHVar11->field_0007 = nullptr;
+          pHVar11->field_000B = nullptr;
           pHVar11->field_000F = 0;
           *(undefined4 *)&pHVar11->field_0x1b = 1;
           pHVar11->field_0013 = 1;
@@ -469,7 +469,7 @@ switchD_005ab66b_caseD_6:
           pHVar11->field_002B = 1;
         }
         this_02->field_20B8 = pHVar11;
-        if (pHVar11 != (HoloTy *)0x0) {
+        if (pHVar11 != nullptr) {
           uVar13 = 0;
           cVar22 = '\x01';
           bVar21 = 0x10;
@@ -535,16 +535,16 @@ switchD_005ab66b_caseD_6:
                        (ushort *)&this_02->field_1A5B->field_0140);
           Library::DKW::DDX::FUN_006b3640((int *)g_ddxContext_008075A8,local_8,0xffffffff,10,0xb4);
           pHVar11 = (HoloTy *)Library::MSVCRT::FUN_0072e530(0x33);
-          if (pHVar11 == (HoloTy *)0x0) {
-            pHVar11 = (HoloTy *)0x0;
+          if (pHVar11 == nullptr) {
+            pHVar11 = nullptr;
           }
           else {
             pHVar11->field_0002 = 1;
             pHVar11->field_0000 = 0;
             *(undefined4 *)&pHVar11->field_0x3 = 0xffffffff;
             pHVar11->field_0001 = CASE_2;
-            pHVar11->field_0007 = (void *)0x0;
-            pHVar11->field_000B = (void *)0x0;
+            pHVar11->field_0007 = nullptr;
+            pHVar11->field_000B = nullptr;
             pHVar11->field_000F = 0;
             *(undefined4 *)&pHVar11->field_0x1b = 1;
             pHVar11->field_0013 = 1;
@@ -555,7 +555,7 @@ switchD_005ab66b_caseD_6:
             pHVar11->field_002B = 1;
           }
           this_02->field_20BC = pHVar11;
-          if (pHVar11 != (HoloTy *)0x0) {
+          if (pHVar11 != nullptr) {
             uVar13 = 0;
             cVar22 = '\x01';
             bVar21 = 0x10;
@@ -642,16 +642,16 @@ switchD_005ab66b_caseD_6:
                        g_startSystem_0081176C->field_060D);
           }
           pHVar11 = (HoloTy *)Library::MSVCRT::FUN_0072e530(0x33);
-          if (pHVar11 == (HoloTy *)0x0) {
-            pHVar11 = (HoloTy *)0x0;
+          if (pHVar11 == nullptr) {
+            pHVar11 = nullptr;
           }
           else {
             pHVar11->field_0002 = 1;
             pHVar11->field_0000 = 0;
             *(undefined4 *)&pHVar11->field_0x3 = 0xffffffff;
             pHVar11->field_0001 = CASE_2;
-            pHVar11->field_0007 = (void *)0x0;
-            pHVar11->field_000B = (void *)0x0;
+            pHVar11->field_0007 = nullptr;
+            pHVar11->field_000B = nullptr;
             pHVar11->field_000F = 0;
             *(undefined4 *)&pHVar11->field_0x1b = 1;
             pHVar11->field_0013 = 1;
@@ -662,7 +662,7 @@ switchD_005ab66b_caseD_6:
             pHVar11->field_002B = 1;
           }
           this_02->field_20C0 = pHVar11;
-          if (pHVar11 != (HoloTy *)0x0) {
+          if (pHVar11 != nullptr) {
             uVar13 = 0;
             cVar22 = '\x01';
             bVar21 = 0x10;
@@ -742,22 +742,22 @@ switchD_005ab66b_caseD_6:
                              this_02->field_005D,10,2);
         }
         pHVar11 = this_02->field_20B8;
-        if (((pHVar11 != (HoloTy *)0x0) && (pHVar11->field_0000 != '\0')) &&
+        if (((pHVar11 != nullptr) && (pHVar11->field_0000 != '\0')) &&
            (-1 < (int)*(uint *)&pHVar11->field_0x3)) {
           Library::DKW::DDX::FUN_006b3430((int *)g_ddxContext_008075A8,*(uint *)&pHVar11->field_0x3);
         }
         pHVar11 = this_02->field_20BC;
-        if (((pHVar11 != (HoloTy *)0x0) && (pHVar11->field_0000 != '\0')) &&
+        if (((pHVar11 != nullptr) && (pHVar11->field_0000 != '\0')) &&
            (-1 < (int)*(uint *)&pHVar11->field_0x3)) {
           Library::DKW::DDX::FUN_006b3430((int *)g_ddxContext_008075A8,*(uint *)&pHVar11->field_0x3);
         }
         pHVar11 = this_02->field_20C0;
-        if (((pHVar11 != (HoloTy *)0x0) && (pHVar11->field_0000 != '\0')) &&
+        if (((pHVar11 != nullptr) && (pHVar11->field_0000 != '\0')) &&
            (-1 < (int)*(uint *)&pHVar11->field_0x3)) {
           Library::DKW::DDX::FUN_006b3430((int *)g_ddxContext_008075A8,*(uint *)&pHVar11->field_0x3);
         }
         this_01 = g_cursorClass_00802A30;
-        if (g_cursorClass_00802A30 != (CursorClassTy *)0x0) {
+        if (g_cursorClass_00802A30 != nullptr) {
           iVar5 = g_cursorClass_00802A30->field_00C9;
           iVar20 = g_cursorClass_00802A30->field_00C5;
           g_cursorClass_00802A30->field_0493 = CASE_1;
@@ -859,7 +859,7 @@ switchD_005ab66b_caseD_6:
       }
       pSVar3 = this_02->field_1A5B;
       local_115 = local_13c;
-      if (pSVar3->field_02E6 != (MMsgTy *)0x0) {
+      if (pSVar3->field_02E6 != nullptr) {
         puVar10 = local_26c;
         for (iVar5 = 6; iVar5 != 0; iVar5 = iVar5 + -1) {
           *puVar10 = 0xffffffff;
@@ -869,7 +869,7 @@ switchD_005ab66b_caseD_6:
         MMsgTy::SetPanel(pSVar3->field_02E6,0,(int)&local_20c,0,0);
         MMsgTy::StatePanel(this_02->field_1A5B->field_02E6,(int)local_26c);
       }
-      if ((DAT_008067a0 != '\0') && (g_int_00811764 != (int *)0x0)) {
+      if ((DAT_008067a0 != '\0') && (g_int_00811764 != nullptr)) {
         FUN_006b6160(local_46c,(int)(g_int_00811764 + 6));
         local_44c = 0;
         CFsgsConnection::UpdateGame((CFsgsConnection *)&DAT_00802a90,4,local_46c);
@@ -877,7 +877,7 @@ switchD_005ab66b_caseD_6:
       thunk_FUN_00568bc0(&g_sound,0);
       /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
       if ((DAT_00807300._1_1_ & 8) != 0) {
-        thunk_FUN_0056a130(&g_sound,0x14,'\x02',0,(uint *)0x0);
+        thunk_FUN_0056a130(&g_sound,0x14,'\x02',0,nullptr);
       }
       thunk_FUN_005b6730(this_02,0xb,'\0',-1);
       g_currentExceptionFrame = local_250.previous;

@@ -11,7 +11,7 @@ void __thiscall TLOEmbryoTy::sub_0041C3F0(TLOEmbryoTy *this,undefined *param_1)
   undefined4 uVar2;
 
   if (((-1 < (int)param_1) &&
-      (this->field_0101 = param_1, g_visibleClass_00802A88 != (VisibleClassTy *)0x0)) &&
+      (this->field_0101 = param_1, g_visibleClass_00802A88 != nullptr)) &&
      ((this->field_01D1 & 1) == 0)) {
     VisibleClassTy::sub_00558DC0
               (g_visibleClass_00802A88,(int)this->field_005B,(int)this->field_005D,

@@ -34,7 +34,7 @@ AiEventClassTy::_CreateMine
   g_currentExceptionFrame = &local_6c;
   iVar3 = Library::MSVCRT::__setjmp3(local_6c.jumpBuffer,0);
   if (iVar3 == 0) {
-    if (g_allPlayers_007FA174 != (STAllPlayersC *)0x0) {
+    if (g_allPlayers_007FA174 != nullptr) {
       if ((((param_2 == 0xa6) || (param_2 == 0xa7)) || (param_2 == 0xbd)) || (param_2 == 0xaf)) {
         bVar2 = true;
       }
@@ -60,7 +60,7 @@ AiEventClassTy::_CreateMine
         iVar3 = thunk_FUN_00675950(local_c,local_8,(short)local_10,(short *)&local_c,
                                    (short *)&local_8,(short *)&local_10,1);
         if (iVar3 != 0) {
-          if (param_7 == (char *)0x0) {
+          if (param_7 == nullptr) {
             param_7 = &DAT_008016a0;
           }
           thunk_FUN_00627850((int)param_2,(uint)param_1,0,0,(int)(short)local_c,(int)(short)local_8,

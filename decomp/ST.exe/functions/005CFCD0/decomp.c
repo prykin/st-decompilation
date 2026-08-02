@@ -23,7 +23,7 @@ void __thiscall SettMapMTy::UpdatePing(SettMapMTy *this,int param_1,undefined4 p
   InternalExceptionFrame local_4c;
   SettMapMTy *local_8;
 
-  if (this->field_1F84 != (SettMapMTy_field_1F84DArray *)0x0) {
+  if (this->field_1F84 != nullptr) {
     local_4c.previous = g_currentExceptionFrame;
     g_currentExceptionFrame = &local_4c;
     local_8 = this;
@@ -39,9 +39,9 @@ void __thiscall SettMapMTy::UpdatePing(SettMapMTy *this,int param_1,undefined4 p
             element_1f84 = DArrayAt<SettMapMTy_field_1F84Element>(pSVar1, uVar7);
           }
           else {
-            element_1f84 = (SettMapMTy_field_1F84Element *)0x0;
+            element_1f84 = nullptr;
           }
-          if (((element_1f84 != (SettMapMTy_field_1F84Element *)0x0) && (element_1f84->element == param_1)) &&
+          if (((element_1f84 != nullptr) && (element_1f84->element == param_1)) &&
              ((element_1f84->field_0004 == '\x02' || (element_1f84->field_0004 == '\x03')))) break;
           uVar7 = uVar7 + 1;
           bVar8 = uVar7 < uVar2;

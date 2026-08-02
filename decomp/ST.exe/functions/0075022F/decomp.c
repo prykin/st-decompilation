@@ -5,12 +5,12 @@ undefined4 __thiscall FUN_0075022f(void *this,int *param_1)
   int *piVar1;
 
   EnterCriticalSection((LPCRITICAL_SECTION)((int)this + 8));
-  if (param_1 != (int *)0x0) {
+  if (param_1 != nullptr) {
     /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
     (**(code **)(*param_1 + 4))(param_1);
   }
   piVar1 = *(int **)((int)this + 0x60);
-  if (piVar1 != (int *)0x0) {
+  if (piVar1 != nullptr) {
     if (*(int *)((int)this + 0x54) != 0) {
       /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
       (**(code **)(*piVar1 + 0x18))(piVar1,*(int *)((int)this + 0x54));

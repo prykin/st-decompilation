@@ -15,7 +15,7 @@ MReportTy * __cdecl CreateMReport(void)
   int iVar1;
 
   this = (MReportTy *)FUN_006b04d0(0x45b);
-  if (this != (MReportTy *)0x0) {
+  if (this != nullptr) {
     sub_006E5FB0(this);
     *(undefined4 *)&this->field_0x18 = 0;
     this->field_005D = 0;
@@ -31,14 +31,14 @@ MReportTy * __cdecl CreateMReport(void)
     iVar1 = 0;
     this->field_0065 = 2;
     this->field_0066 = 1;
-    this->field_0073 = (AnonPointee_MReportTy_0073 *)0x0;
+    this->field_0073 = nullptr;
     this->field_007B = 0;
-    this->field_0077 = (AnonPointee_MReportTy_0077 *)0x0;
+    this->field_0077 = nullptr;
     this->field_006F = 0;
-    this->field_008B = (ccFntTy *)0x0;
-    this->field_0087 = (ccFntTy *)0x0;
-    this->field_0083 = (ccFntTy *)0x0;
-    this->field_007F = (ushort *)0x0;
+    this->field_008B = nullptr;
+    this->field_0087 = nullptr;
+    this->field_0083 = nullptr;
+    this->field_007F = nullptr;
     this->field_008F = 0;
     this->field_0093 = 0;
     this->field_0097 = 0;
@@ -52,15 +52,15 @@ MReportTy * __cdecl CreateMReport(void)
     this->field_02A3 = 0;
     this->field_006A = 0;
     this->field_006B = 0;
-    this->field_0347 = (DArrayTy *)0x0;
+    this->field_0347 = nullptr;
     *(undefined4 *)&this->field_0x34b = 0;
     this->field_034F = 0;
     memset(&this->field_0353, 0, 0xfc); /* compiler bulk-zero initialization */
     this->field_044F = 0;
-    this->field_0457 = (HoloTy *)0x0;
-    this->field_0453 = (HoloTy *)0x0;
+    this->field_0457 = nullptr;
+    this->field_0453 = nullptr;
     return this;
   }
-  return (MReportTy *)0x0;
+  return nullptr;
 }
 

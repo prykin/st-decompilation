@@ -31,11 +31,11 @@ void __fastcall FUN_006e52d0(AnonShape_006E52D0_AF06BCD2 *param_1)
     DArrayDestroy((DArrayTy *)param_1->field_0010);
     param_1->field_0010 = 0;
   }
-  if ((DArrayTy *)param_1->field_0004 != (DArrayTy *)0x0) {
+  if ((DArrayTy *)param_1->field_0004 != nullptr) {
     DArrayDestroy((DArrayTy *)param_1->field_0004);
     param_1->field_0004 = 0;
   }
-  if ((DArrayTy *)param_1->field_0008 != (DArrayTy *)0x0) {
+  if ((DArrayTy *)param_1->field_0008 != nullptr) {
     DArrayDestroy((DArrayTy *)param_1->field_0008);
     param_1->field_0008 = 0;
   }

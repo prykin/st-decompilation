@@ -31,7 +31,7 @@ STAppC * __thiscall STAppC::STAppC(STAppC *this,undefined4 param_1)
   this->field_0E3B = 0xffffffff;
   this->vtable = &STAppCVTable;
   g_appClass_00806728 = (AppClassTy *)this;
-  this->field_115A = (AnonPointee_STAppC_115A *)0x0;
+  this->field_115A = nullptr;
   DAT_0080673c = 0;
   this->field_115E = 1;
   this->field_115F = 0;
@@ -51,12 +51,12 @@ STAppC * __thiscall STAppC::STAppC(STAppC *this,undefined4 param_1)
   this->field_117C = 0;
   this->field_112D = 1;
   this->field_112E = 1;
-  this->field_4EDE = (DArrayTy *)0x0;
-  this->field_4EE2 = (uint *)0x0;
-  this->field_4EE6 = (uint *)0x0;
+  this->field_4EDE = nullptr;
+  this->field_4EE2 = nullptr;
+  this->field_4EE6 = nullptr;
   this->field_4EEA = 0;
   this->field_4EF2 = 0;
-  this->field_7D12 = (ushort *)0x0;
+  this->field_7D12 = nullptr;
   this->field_7D16 = 0;
   this->field_4EF6 = 1;
   this->field_4EFA = 0;
@@ -64,15 +64,15 @@ STAppC * __thiscall STAppC::STAppC(STAppC *this,undefined4 param_1)
   this->field_7D0E = 0;
   DVar1 = sub_006E51B0(this);
   this->field_1134 = DVar1;
-  this->field_76F2 = (void *)0x0;
+  this->field_76F2 = nullptr;
   this->field_854E = 0;
   this->field_8552 = 0;
   this->field_8556 = 0;
   memset(&this->field_0x1196, 0, 0x1999); /* compiler bulk-zero initialization */
   iVar2 = 0;
   memset(&this->field_4DA3, 0, 0x104); /* compiler bulk-zero initialization */
-  this->field_4EA7 = (uint *)0x0;
-  this->field_4EAB = (uint *)0x0;
+  this->field_4EA7 = nullptr;
+  this->field_4EAB = nullptr;
   this->field_4EFE = 0;
   return this;
 }

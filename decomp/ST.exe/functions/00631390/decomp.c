@@ -16,8 +16,8 @@ uint __thiscall STManRuinC::sub_00631390(STManRuinC *this,undefined4 *param_1)
   byte *pbVar7;
   byte *puVar8;
 
-  if (this == (STManRuinC *)0x0) {
-    puVar8 = (byte *)0x0;
+  if (this == nullptr) {
+    puVar8 = nullptr;
   }
   else {
     puVar8 = (byte *)(&this->field_001C);
@@ -25,18 +25,18 @@ uint __thiscall STManRuinC::sub_00631390(STManRuinC *this,undefined4 *param_1)
   puVar6 = (byte *)(param_1);
   memmove(puVar8, puVar6, 0x55); /* compiler REP MOVS byte copy */
   pbVar7 = (byte *)((int)param_1 + 0x55);
-  this->field_003C = (STManRuinC_field_003CDArray *)0x0;
+  this->field_003C = nullptr;
   this->field_0061 = 0xffffffff;
-  if (this->field_0038 != (STManRuinC_field_0038DArray *)0x0) {
-    pSVar1 = (STManRuinC_field_0038DArray *)FUN_006b0060((uint *)0x0,(uint *)((int)param_1 + 0x59));
+  if (this->field_0038 != nullptr) {
+    pSVar1 = (STManRuinC_field_0038DArray *)FUN_006b0060(nullptr,(uint *)((int)param_1 + 0x59));
     this->field_0038 = pSVar1;
     pbVar7 = (byte *)((int)param_1 + 0x59 + *(int *)pbVar7);
   }
-  if (this->field_0034 != (byte *)0x0) {
+  if (this->field_0034 != nullptr) {
     pbVar2 = Library::DKW::LIB::MemAlloc(this->field_0030);
     this->field_0034 = pbVar2;
   }
-  if (this->field_0034 != (byte *)0x0) {
+  if (this->field_0034 != nullptr) {
     uVar5 = this->field_0030;
     pbVar2 = this->field_0034;
     memmove(pbVar2, pbVar7, uVar5); /* compiler REP MOVS byte copy */

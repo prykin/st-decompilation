@@ -74,7 +74,7 @@ FUN_00627850(undefined4 param_1,undefined4 param_2,undefined4 param_3,undefined4
   local_5c = 0x1ae;
   local_48 = param_1;
   local_11 = param_10;
-  if (param_9 != (char *)0x0) {
+  if (param_9 != nullptr) {
     uVar4 = 0xffffffff;
     pcVar8 = param_9;
     do {

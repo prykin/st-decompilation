@@ -26,14 +26,14 @@ void __thiscall STManRuinC::sub_00631010(STManRuinC *this)
   uint local_8;
 
   pSVar1 = this->field_0038;
-  if (pSVar1 != (STManRuinC_field_0038DArray *)0x0) {
+  if (pSVar1 != nullptr) {
     local_8 = pSVar1->count - 1;
     if (-1 < (int)local_8) {
       if (local_8 < pSVar1->count) {
         element_0038 = DArrayAt<STManRuinC_field_0038Element>(pSVar1, local_8);
       }
       else {
-        element_0038 = (STManRuinC_field_0038Element *)0x0;
+        element_0038 = nullptr;
       }
       if (element_0038->field_000C + 0x2eeU < g_playSystem_00802A38->field_00E4) {
         piVar2 = element_0038->field_0010;
@@ -55,7 +55,7 @@ void __thiscall STManRuinC::sub_00631010(STManRuinC *this)
           }
           else {
             puVar4 = sub_00630C50(this,this->field_0040,this->field_004C,1,1,this->field_0050);
-            if (puVar4 != (ushort *)0x0) {
+            if (puVar4 != nullptr) {
               this->field_0044 = 2;
             }
           }

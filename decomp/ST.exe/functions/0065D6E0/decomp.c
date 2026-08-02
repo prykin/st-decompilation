@@ -9,10 +9,10 @@ void __fastcall AiFltClassTy::sub_0065D6E0(AnonShape_0065D6E0_0F9074F6 *param_1,
 {
   STGroupBoatC *this;
 
-  if ((param_1->field_007D != 0xfffe) && (g_allPlayers_007FA174 != (STAllPlayersC *)0x0)) {
+  if ((param_1->field_007D != 0xfffe) && (g_allPlayers_007FA174 != nullptr)) {
     this = thunk_FUN_0042b760(param_1->field_0024,param_1->field_007D);
-    if (this != (STGroupBoatC *)0x0) {
-      thunk_FUN_004232e0(this,(AiFltClassTy *)0x0);
+    if (this != nullptr) {
+      thunk_FUN_004232e0(this,nullptr);
     }
   }
   return;

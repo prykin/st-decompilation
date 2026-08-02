@@ -17,7 +17,7 @@ void __cdecl FUN_0067d0a0(AnonShape_0067D0A0_8092D907 *param_1)
 
   ppDVar3 = &param_1->field_00C2;
   pDVar1 = param_1->field_00C2;
-  if (pDVar1 != (DArrayTy *)0x0) {
+  if (pDVar1 != nullptr) {
     uVar4 = 0;
     if (0 < (int)pDVar1->count) {
       bVar6 = pDVar1->count != 0;
@@ -27,9 +27,9 @@ void __cdecl FUN_0067d0a0(AnonShape_0067D0A0_8092D907 *param_1)
           piVar2 = (int *)(pDVar1->elementSize * uVar4 + (int)pDVar1->data);
         }
         else {
-          piVar2 = (int *)0x0;
+          piVar2 = nullptr;
         }
-        if (((AnonShape_0067D0A0_8092D907 *)*piVar2 != (AnonShape_0067D0A0_8092D907 *)0x0) &&
+        if (((AnonShape_0067D0A0_8092D907 *)*piVar2 != nullptr) &&
            (piVar2[1] == 0)) {
           param_1 = (AnonShape_0067D0A0_8092D907 *)*piVar2;
           thunk_FUN_00691540((int *)&param_1);
@@ -43,9 +43,9 @@ void __cdecl FUN_0067d0a0(AnonShape_0067D0A0_8092D907 *param_1)
   }
   iVar5 = 5;
   do {
-    if (*ppDVar3 != (DArrayTy *)0x0) {
+    if (*ppDVar3 != nullptr) {
       DArrayDestroy(*ppDVar3);
-      *ppDVar3 = (DArrayTy *)0x0;
+      *ppDVar3 = nullptr;
     }
     ppDVar3 = ppDVar3 + 3;
     iVar5 = iVar5 + -1;

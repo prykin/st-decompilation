@@ -6814,13 +6814,9 @@ function_address	function	target_kind	target_ordinal	target_name	current_type	st
 006DBD20	ST3DSMAPContext::sub_006DBD20	parameter	3	param_4	/undefined4	Stack[0xc]:4	DEFAULT		0	0	no_evidence		-
 006DC050	ST3DSMAPContext::sub_006DC050	parameter	1	param_2	/undefined4	Stack[0x4]:4	DEFAULT		0	0	no_evidence		-
 006DC050	ST3DSMAPContext::sub_006DC050	parameter	3	param_4	/undefined4	Stack[0xc]:4	DEFAULT		0	0	no_evidence		-
-006DC050	ST3DSMAPContext::sub_006DC050	parameter	10	param_11	/undefined8	Stack[0x38]:8	DEFAULT		0	0	no_evidence		-
-006DC050	ST3DSMAPContext::sub_006DC050	parameter	11	param_12	/undefined8	Stack[0x40]:8	DEFAULT		0	0	no_evidence		-
 006DC320	FUN_006dc320	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
 006DCD60	FUN_006dcd60	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
 006DD050	Library::Ourlib::STREND::FUN_006dd050	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
-006DD610	ST3DSMAPContext::sub_006DD610	parameter	3	param_3	/undefined4	Stack[0xc]:4	DEFAULT		0	0	no_evidence		-
-006DD610	ST3DSMAPContext::sub_006DD610	parameter	5	param_5	/undefined4	Stack[0x14]:4	DEFAULT		0	0	no_evidence		-
 006DD660	Library::Ourlib::STREND::FUN_006dd660	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
 006DD6E0	Library::Ourlib::STREND::FUN_006dd6e0	parameter	2	param_2	/undefined4	Stack[0x8]:4	DEFAULT		0	0	no_evidence		-
 006DD6E0	Library::Ourlib::STREND::FUN_006dd6e0	parameter	3	param_3	/undefined4	Stack[0xc]:4	DEFAULT	/double	1	1	width_mismatch	{/double=1}	006DBD20 -> 006DD6E0 @ 006DBE80; ST3DSMAPContext::sub_006DBD20 parameter param_8
@@ -6840,10 +6836,6 @@ function_address	function	target_kind	target_ordinal	target_name	current_type	st
 006DDD50	ST3DSMAPContext::sub_006DDD50	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
 006DE9C0	ST3DSMAPContext::sub_006DE9C0	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
 006E1050	ST3DSMAPContext::sub_006E1050	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
-006E1460	ST3DSMAPContext::sub_006E1460	parameter	1	param_1	/undefined4	Stack[0x4]:4	DEFAULT		0	0	conflicting_evidence	{/double=1, pointer:/double=1}	006E1460 -> 006E1320 @ 006E14EC | 006E1460 -> 006E1460 @ 006E1BD9; /SubmarineTitans/Recovered/LibraryContexts/ST3DSMAPContext+0x98
-006E1460	ST3DSMAPContext::sub_006E1460	parameter	2	param_2	/undefined4	Stack[0x8]:4	DEFAULT		0	0	no_evidence		-
-006E1460	ST3DSMAPContext::sub_006E1460	parameter	3	param_3	/undefined4	Stack[0xc]:4	DEFAULT		0	0	conflicting_evidence	{/double=1, pointer:/double=1}	006E1460 -> 006E1320 @ 006E14EC | 006E1460 -> 006E1460 @ 006E1BD9; /SubmarineTitans/Recovered/LibraryContexts/ST3DSMAPContext+0xa0
-006E1460	ST3DSMAPContext::sub_006E1460	parameter	4	param_4	/undefined4	Stack[0x10]:4	DEFAULT		0	0	no_evidence		-
 006E1460	ST3DSMAPContext::sub_006E1460	return		<RETURN>	/undefined4	EAX:4	DEFAULT		0	0	no_evidence		-
 006E1C20	ST3DSMAPContext::sub_006E1C20	return		<RETURN>	/undefined4	EAX:4	DEFAULT		0	0	no_evidence		-
 006E1DD0	FUN_006e1dd0	return		<RETURN>	/undefined4	EAX:4	DEFAULT		0	0	no_evidence		-

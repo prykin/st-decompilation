@@ -43,11 +43,11 @@ CGenerate::CteateField
     puVar4 = Library::DKW::LIB::MemAlloc(pCVar2->field_582F * ((-(uint)(param_6 != 0) & 7) + 1) * 2);
     pCVar2->field_584F = puVar4;
     pCVar5 = (CGenerate_field_5853DArray *)
-             Library::DKW::TBL::DArrayCreate((DArrayTy *)0x0,10,0x1d,10);
+             Library::DKW::TBL::DArrayCreate(nullptr,10,0x1d,10);
     pCVar2->field_5853 = pCVar5;
     g_currentExceptionFrame = local_50.previous;
-    if (((pCVar2->field_584B == (byte *)0x0) || (pCVar2->field_584F == (ushort *)0x0)) ||
-       (uVar6 = 1, pCVar2->field_5853 == (CGenerate_field_5853DArray *)0x0)) {
+    if (((pCVar2->field_584B == nullptr) || (pCVar2->field_584F == nullptr)) ||
+       (uVar6 = 1, pCVar2->field_5853 == nullptr)) {
       return local_c;
     }
   }

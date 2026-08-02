@@ -11,7 +11,7 @@ int __thiscall FUN_00714f00(void *this,char *source,size_t param_2)
   size_t sVar4;
   char *pcVar5;
 
-  if (source == (char *)0x0) {
+  if (source == nullptr) {
     return -0x34;
   }
   uVar3 = 0xffffffff;
@@ -26,7 +26,7 @@ int __thiscall FUN_00714f00(void *this,char *source,size_t param_2)
   if ((int)param_2 <= (int)(~uVar3 - 1)) {
     sVar4 = param_2;
   }
-  if (*(char **)this == (char *)0x0) {
+  if (*(char **)this == nullptr) {
     uVar3 = 0;
   }
   else {

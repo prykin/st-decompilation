@@ -34,7 +34,7 @@ undefined4 __cdecl FUN_005db030(byte *param_1,undefined4 param_2,char param_3)
   }
   Library::MSVCRT::FUN_0072e730(param_1,local_378,local_274,local_47c,(byte *)0x8f000405);
   Library::MSVCRT::__makepath
-            ((char *)local_170,(char *)local_378,(char *)local_274,(char *)local_47c,(char *)0x0);
+            ((char *)local_170,(char *)local_378,(char *)local_274,(char *)local_47c,nullptr);
   local_6c = g_currentExceptionFrame;
   iStackY_44 = 0x5db0d9;
   g_currentExceptionFrame = (InternalExceptionFrame *)&local_6c;
@@ -49,12 +49,12 @@ undefined4 __cdecl FUN_005db030(byte *param_1,undefined4 param_2,char param_3)
   iVar3 = 0;
   uVar10 = 0x5db113;
   puVar4 = cMf32::RecGet(this,0,PTR_s_DESCRIPTOR_0079c1d8,piVar11,0);
-  if (puVar4 == (ushort *)0x0) goto cf_common_exit_005DB1E1;
+  if (puVar4 == nullptr) goto cf_common_exit_005DB1E1;
   if ((char)*piVar11 == '\x05') {
     iVar3 = 0;
     uVar10 = 0x5db13b;
     puVar4 = cMf32::RecGet(this,0x80,PTR_s_SAVE_PLAYER_0079c1c8,(int *)&stack0xffffffe0,0);
-    if (puVar4 == (ushort *)0x0) goto cf_common_exit_005DB1E1;
+    if (puVar4 == nullptr) goto cf_common_exit_005DB1E1;
   }
   bVar2 = false;
   if ((local_1e18 != 0) && (local_1e10 == *(int *)((int)piVar11 + 1))) {

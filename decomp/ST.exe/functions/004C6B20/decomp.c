@@ -12,10 +12,10 @@ TLOBldMark * __cdecl CreateTLOBldMark(void)
   TLOBldMark *pTVar1;
 
   pTVar1 = (TLOBldMark *)FUN_006b04d0(0x3c);
-  if (pTVar1 != (TLOBldMark *)0x0) {
+  if (pTVar1 != nullptr) {
     pTVar1 = TLOBldMark::TLOBldMark(pTVar1);
     return pTVar1;
   }
-  return (TLOBldMark *)0x0;
+  return nullptr;
 }
 

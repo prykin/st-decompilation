@@ -9,7 +9,7 @@ undefined4 __thiscall TLOBaseTy::sub_004CC900(TLOBaseTy *this)
 {
   uint uVar1;
 
-  if (((this->field_0603 != (STT3DSprC *)0x0) && (this->field_0444 != 0)) && (this->field_0448 != 0)
+  if (((this->field_0603 != nullptr) && (this->field_0444 != 0)) && (this->field_0448 != 0)
      ) {
     this->field_0448 = 0;
     STT3DSprC::StopShow(this->field_0603,0xe);

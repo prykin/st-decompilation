@@ -29,7 +29,7 @@ void __thiscall FUN_006315d0(void *this,int param_1,int param_2,int param_3,int 
   DArrayTy *local_8;
 
   local_8 = *(DArrayTy **)((int)this + 0x38);
-  if ((local_8 != (DArrayTy *)0x0) && (iVar7 = *(int *)((int)this + 0x34), iVar7 != 0)) {
+  if ((local_8 != nullptr) && (iVar7 = *(int *)((int)this + 0x34), iVar7 != 0)) {
     iVar2 = (g_worldGrid.sizeX * param_3 + param_2) * (int)g_worldGrid.sizeY + param_1;
     /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
     if (param_4 == 1) {
@@ -57,7 +57,7 @@ void __thiscall FUN_006315d0(void *this,int param_1,int param_2,int param_3,int 
           psVar3 = (short *)(local_8->elementSize * uVar9 + (int)local_8->data);
         }
         else {
-          psVar3 = (short *)0x0;
+          psVar3 = nullptr;
         }
         iVar7 = (int)*psVar3;
         if (psVar3[3] == 1) {
@@ -74,7 +74,7 @@ LAB_00631713:
                 puVar4 = (undefined4 *)(local_8->elementSize * uVar9 + (int)local_8->data);
               }
               else {
-                puVar4 = (undefined4 *)0x0;
+                puVar4 = nullptr;
               }
               puVar10 = puVar4;
               psVar3 = &local_24;
@@ -96,7 +96,7 @@ LAB_00631713:
               if ((this_00->field_0048 == 0) ||
                  (puVar5 = STManRuinC::sub_00630C50
                                      (this_00,this_00->field_0040,this_00->field_004C,1,1,0),
-                 puVar5 != (ushort *)0x0)) {
+                 puVar5 != nullptr)) {
                 this_00->field_0044 = 2;
               }
               uVar6 = STManRuinC::sub_00631880(this_00,&this_00->field_0040,this_00->field_0061);

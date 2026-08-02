@@ -74,7 +74,7 @@ cf_break_loop_004AE25B:
                (((-1 < sVar14 && (sVar14 < g_worldGrid.sizeZ)) &&
                 (g_worldGrid.cells
                  [(int)sVar14 * (int)g_worldGrid.planeStride + (int)sVar3 * (int)g_worldGrid.sizeX +
-                  (int)sVar13].objects[0] != (STWorldObject *)0x0)))))) ||
+                  (int)sVar13].objects[0] != nullptr)))))) ||
              (((sVar13 < 0 || (g_worldGrid.sizeX <= sVar13)) ||
               ((sVar3 < 0 ||
                (((g_worldGrid.sizeY <= sVar3 || (sVar14 < 0)) ||
@@ -103,7 +103,7 @@ cf_break_loop_004AE25B:
                  (sVar4 < g_worldGrid.sizeY)) && ((-1 < sVar14 && (sVar14 < g_worldGrid.sizeZ)))) &&
                (g_worldGrid.cells
                 [(int)sVar14 * (int)g_worldGrid.planeStride + (int)sVar4 * (int)g_worldGrid.sizeX +
-                 (int)sVar3].objects[0] != (STWorldObject *)0x0)) ||
+                 (int)sVar3].objects[0] != nullptr)) ||
               (((-1 < sVar3 && (sVar3 < g_worldGrid.sizeX)) &&
                ((-1 < sVar4 &&
                 ((((sVar4 < g_worldGrid.sizeY && (-1 < sVar14)) && (sVar14 < g_worldGrid.sizeZ)) &&
@@ -147,7 +147,7 @@ LAB_004ae41c:
   case CASE_61:
     local_c = 0;
     local_10 = (STFishC *)thunk_FUN_004d85e0(_param_1,param_2,param_3);
-    if (local_10 != (STFishC *)0x0) {
+    if (local_10 != nullptr) {
       dVar7 = local_10->slot_2C();
                     /* WARNING (jumptable): Sanity check requires truncation of jumptable */
                     /* WARNING: Could not find normalized switch variable to match jumptable */
@@ -181,7 +181,7 @@ LAB_004ae41c:
                ((sVar4 = (short)iVar6, sVar4 < 0 ||
                 (((g_worldGrid.sizeY <= sVar4 || (sVar15 = (short)iVar5, sVar15 < 0)) ||
                  (g_worldGrid.sizeZ <= sVar15)))))) {
-              local_10 = (STFishC *)0x0;
+              local_10 = nullptr;
             }
             else {
               local_10 = (STFishC *)
@@ -189,11 +189,11 @@ LAB_004ae41c:
                          [(int)sVar4 * (int)sVar14 + (int)sVar15 * (int)g_worldGrid.planeStride +
                           (int)sVar3].objects[1];
             }
-            if (((local_10 != (STFishC *)0x0) && (*(int *)&local_10->field_0x20 != 0xbe)) ||
-               (puVar8 = thunk_FUN_004d85e0(iVar17,iVar6,iVar5), puVar8 != (uint *)0x0))
+            if (((local_10 != nullptr) && (*(int *)&local_10->field_0x20 != 0xbe)) ||
+               (puVar8 = thunk_FUN_004d85e0(iVar17,iVar6,iVar5), puVar8 != nullptr))
             goto cf_break_loop_004AEC96;
             iVar5 = iVar5 + 1;
-            local_10 = (STFishC *)0x0;
+            local_10 = nullptr;
             sVar14 = g_worldGrid.sizeX;
           } while (iVar5 < param_3 + 1);
         }
@@ -202,7 +202,7 @@ LAB_004ae41c:
     if (((int)param_4 < 0x54) || (0x5a < (int)param_4)) {
       if (param_4 == 100) {
         pDVar11 = *(DArrayTy **)&g_packedRecords_A62x8[param_5].field_0x9d6;
-        if ((pDVar11 != (DArrayTy *)0x0) && (uVar18 = 0, 0 < (int)pDVar11->count)) {
+        if ((pDVar11 != nullptr) && (uVar18 = 0, 0 < (int)pDVar11->count)) {
           do {
             DArrayGetElement(pDVar11,uVar18,&local_10);
             STFishC::sub_004162B0(local_10,(short *)((int)&param_9 + 2),&local_6,&local_8);
@@ -221,7 +221,7 @@ LAB_004ae41c:
         pDVar11 = *(DArrayTy **)&g_packedRecords_A62x8[param_5].field_0x9e2;
         /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
         param_10 = (int *)&g_packedRecords_A62x8[param_5].field_0x9e2;
-        if (pDVar11 != (DArrayTy *)0x0) {
+        if (pDVar11 != nullptr) {
           iVar10 = DAT_00795118 / 0xc9;
           uVar18 = 0;
           if (0 < (int)pDVar11->count) {
@@ -245,7 +245,7 @@ LAB_004ae41c:
         pDVar11 = *(DArrayTy **)&g_packedRecords_A62x8[param_5].field_0x9ee;
         /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
         param_10 = (int *)&g_packedRecords_A62x8[param_5].field_0x9ee;
-        if (pDVar11 != (DArrayTy *)0x0) {
+        if (pDVar11 != nullptr) {
           iVar10 = DAT_007950f0 / 0xc9;
           uVar18 = 0;
           if (0 < (int)pDVar11->count) {
@@ -269,7 +269,7 @@ LAB_004ae41c:
         pDVar11 = *(DArrayTy **)&g_packedRecords_A62x8[param_5].field_0x9f2;
         /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
         param_10 = (int *)&g_packedRecords_A62x8[param_5].field_0x9f2;
-        if (pDVar11 != (DArrayTy *)0x0) {
+        if (pDVar11 != nullptr) {
           iVar10 = DAT_007951b0 / 0xc9;
           uVar18 = 0;
           if (0 < (int)pDVar11->count) {
@@ -293,7 +293,7 @@ LAB_004ae41c:
         pDVar11 = *(DArrayTy **)&g_packedRecords_A62x8[param_5].field_0x9e6;
         /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
         param_10 = (int *)&g_packedRecords_A62x8[param_5].field_0x9e6;
-        if (pDVar11 != (DArrayTy *)0x0) {
+        if (pDVar11 != nullptr) {
           iVar10 = DAT_00795178 / 0xc9;
           uVar18 = 0;
           if (0 < (int)pDVar11->count) {
@@ -322,14 +322,14 @@ LAB_004ae41c:
             ((g_worldGrid.sizeZ <= sVar13 ||
              (pSVar1 = g_worldGrid.cells
                        [(int)sVar13 * (int)g_worldGrid.planeStride + (int)sVar14 * (int)sVar3 +
-                        (int)param_1].objects[0], pSVar1 == (STWorldObject *)0x0)))))))) ||
+                        (int)param_1].objects[0], pSVar1 == nullptr)))))))) ||
          (((iVar10 = pSVar1->GetObjectTypeId(), iVar10 != 0x53 ||
-           ((param_10 != (int *)0x0 && (*(int **)&pSVar1->field_0x18 != param_10)))) &&
+           ((param_10 != nullptr && (*(int **)&pSVar1->field_0x18 != param_10)))) &&
           (((iVar10 = pSVar1->GetObjectTypeId(), sVar14 = g_worldGrid.sizeX,
             iVar10 < 0x54 ||
             (iVar10 = pSVar1->GetObjectTypeId(), sVar14 = g_worldGrid.sizeX,
             0x5a < iVar10)) ||
-           ((param_10 != (int *)0x0 && (*(int **)&pSVar1[0x29].field_0xf != param_10)))))))) {
+           ((param_10 != nullptr && (*(int **)&pSVar1[0x29].field_0xf != param_10)))))))) {
         sVar3 = (short)param_2;
         if (((_param_1 + -1 < 0) ||
             ((((sVar4 = (short)(_param_1 + -1), sVar4 < 0 || (sVar14 <= sVar4)) || (sVar3 < 0)) ||
@@ -337,29 +337,29 @@ LAB_004ae41c:
               ((g_worldGrid.sizeZ <= sVar13 ||
                (pSVar1 = g_worldGrid.cells
                          [(int)sVar13 * (int)g_worldGrid.planeStride + (int)sVar3 * (int)sVar14 +
-                          (int)sVar4].objects[0], pSVar1 == (STWorldObject *)0x0)))))))) ||
+                          (int)sVar4].objects[0], pSVar1 == nullptr)))))))) ||
            (((iVar10 = pSVar1->GetObjectTypeId(), piVar2 = param_10, iVar10 != 0x53
-             || ((param_10 != (int *)0x0 && (*(int **)&pSVar1->field_0x18 != param_10)))) &&
+             || ((param_10 != nullptr && (*(int **)&pSVar1->field_0x18 != param_10)))) &&
             (((iVar10 = pSVar1->GetObjectTypeId(), sVar14 = g_worldGrid.sizeX,
               iVar10 < 0x54 ||
               (iVar10 = pSVar1->GetObjectTypeId(), sVar14 = g_worldGrid.sizeX,
               0x5a < iVar10)) ||
-             ((piVar2 != (int *)0x0 && (*(int **)&pSVar1[0x29].field_0xf != piVar2)))))))) {
+             ((piVar2 != nullptr && (*(int **)&pSVar1[0x29].field_0xf != piVar2)))))))) {
           /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
           if (((_param_1 + 1 < (int)sVar14) &&
               ((((((sVar4 = (short)(_param_1 + 1), -1 < sVar4 && (sVar4 < sVar14)) && (-1 < sVar3))
                  && ((sVar3 < g_worldGrid.sizeY && (-1 < sVar13)))) && (sVar13 < g_worldGrid.sizeZ))
                && (pSVar1 = g_worldGrid.cells
                             [(int)sVar13 * (int)g_worldGrid.planeStride + (int)sVar3 * (int)sVar14 +
-                             (int)sVar4].objects[0], pSVar1 != (STWorldObject *)0x0)))) &&
+                             (int)sVar4].objects[0], pSVar1 != nullptr)))) &&
              (((iVar10 = pSVar1->GetObjectTypeId(), piVar2 = param_10,
                iVar10 == 0x53 &&
-               ((param_10 == (int *)0x0 || (*(int **)&pSVar1->field_0x18 == param_10)))) ||
+               ((param_10 == nullptr || (*(int **)&pSVar1->field_0x18 == param_10)))) ||
               ((iVar10 = pSVar1->GetObjectTypeId(), sVar14 = g_worldGrid.sizeX,
                0x53 < iVar10 &&
                ((iVar10 = pSVar1->GetObjectTypeId(), sVar14 = g_worldGrid.sizeX,
                 iVar10 < 0x5b &&
-                ((piVar2 == (int *)0x0 || (*(int **)&pSVar1[0x29].field_0xf == piVar2)))))))))) {
+                ((piVar2 == nullptr || (*(int **)&pSVar1[0x29].field_0xf == piVar2)))))))))) {
             local_c = 1;
           }
           /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
@@ -371,13 +371,13 @@ LAB_004ae41c:
                      (pSVar1 = g_worldGrid.cells
                                [(int)sVar13 * (int)g_worldGrid.planeStride +
                                 (int)sVar14 * (int)sVar3 + (int)param_1].objects[0],
-                     pSVar1 != (STWorldObject *)0x0)))) &&
+                     pSVar1 != nullptr)))) &&
                    (((iVar10 = pSVar1->GetObjectTypeId(), piVar2 = param_10,
                      iVar10 == 0x53 &&
-                     ((param_10 == (int *)0x0 || (*(int **)&pSVar1->field_0x18 == param_10)))) ||
+                     ((param_10 == nullptr || (*(int **)&pSVar1->field_0x18 == param_10)))) ||
                     (((iVar10 = pSVar1->GetObjectTypeId(), 0x53 < iVar10 &&
                       (iVar10 = pSVar1->GetObjectTypeId(), iVar10 < 0x5b)) &&
-                     ((piVar2 == (int *)0x0 || (*(int **)&pSVar1[0x29].field_0xf == piVar2))))))))))
+                     ((piVar2 == nullptr || (*(int **)&pSVar1[0x29].field_0xf == piVar2))))))))))
           {
             local_c = 1;
           }
@@ -396,13 +396,13 @@ switchD_004ae472_caseD_3:
     local_24 = 1;
   }
 LAB_004aecb2:
-  if (param_6 != (undefined4 *)0x0) {
+  if (param_6 != nullptr) {
     *param_6 = local_20;
   }
-  if (param_7 != (int *)0x0) {
+  if (param_7 != nullptr) {
     *param_7 = local_18;
   }
-  if (param_8 != (int *)0x0) {
+  if (param_8 != nullptr) {
     *param_8 = local_c;
   }
   return local_24;

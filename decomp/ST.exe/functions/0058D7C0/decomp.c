@@ -89,15 +89,15 @@ int __thiscall STSharkC::GetMessage(STSharkC *this,STMessage *message)
       local_18 = (byte *)STT3DSprC::SaveSpr((STT3DSprC *)&this_00->field_01D5,&local_8);
       local_14 = (byte *)STAllPlayersC::SaveGObjData((STAllPlayersC *)this_00,(int *)&local_10);
       local_c = Library::DKW::LIB::MemAlloc(local_10 + 0x66 + local_8);
-      if (local_18 == (byte *)0x0) {
+      if (local_18 == nullptr) {
         g_currentExceptionFrame = local_80.previous;
         return 0;
       }
-      if (local_14 == (byte *)0x0) {
+      if (local_14 == nullptr) {
         g_currentExceptionFrame = local_80.previous;
         return 0;
       }
-      if (local_c == (AnonShape_0058D7C0_99A937C6 *)0x0) {
+      if (local_c == nullptr) {
         g_currentExceptionFrame = local_80.previous;
         return 0;
       }
@@ -222,7 +222,7 @@ LAB_0058dc72:
           else {
             local_1c = *(undefined4 **)&this_00->field_0x26f;
             *(int *)((int)&this_00->field_023E + 3) = (int)PTR_00806724->entryCount;
-            if (local_1c == (undefined4 *)0x0) {
+            if (local_1c == nullptr) {
               *(undefined4 *)&this_00->field_0x27b = 0;
             }
             else if (*(int *)&this_00->field_0x273 == 0) {
@@ -283,14 +283,14 @@ LAB_0058dc72:
       *(undefined4 *)((int)&this_00->field_023E + 3) = *(undefined4 *)((int)local_1c + 0x52);
       *(undefined4 *)&this_00->field_0x245 = *(undefined4 *)((int)local_1c + 0x56);
       local_3c = Library::DKW::LIB::MemAlloc(0x44);
-      if (local_3c != (void *)0x0) {
+      if (local_3c != nullptr) {
         iVar5 = 0;
         do {
           *(int **)(iVar5 + (int)local_3c) = DAT_0080676c;
           iVar5 = iVar5 + 4;
         } while (iVar5 < 0x44);
         iVar5 = *(int *)((int)&this_00->field_023E + 3);
-        if (((iVar5 < 1) || (PTR_00806724 == (AnonShape_GLOBAL_00806724_3210464F *)0x0)) ||
+        if (((iVar5 < 1) || (PTR_00806724 == nullptr)) ||
            (PTR_00806724 == (AnonShape_GLOBAL_00806724_3210464F *)0xffffffd0)) {
           local_38 = 0;
         }

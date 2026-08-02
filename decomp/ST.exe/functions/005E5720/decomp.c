@@ -17,11 +17,11 @@ MTaskTy * __cdecl CreateMTask(void)
   int iVar2;
 
   this = (MTaskTy *)FUN_006b04d0(0x6d7);
-  if (this != (MTaskTy *)0x0) {
+  if (this != nullptr) {
     sub_006E5FB0(this);
     *(VTable_0079C018 **)this = &VTable_0079C018;
     *(undefined4 *)&this->field_0x18 = 0;
-    this->field_005D = (cMf32 *)0x0;
+    this->field_005D = nullptr;
     memset(&this->field_0x1d, 0, 0x20); /* compiler bulk-zero initialization */
     iVar2 = 0;
     memset(&this->field_0x3d, 0, 0x20); /* compiler bulk-zero initialization */
@@ -39,9 +39,9 @@ MTaskTy * __cdecl CreateMTask(void)
     this->field_006F = 0;
     *(undefined4 *)&this->field_0x85 = 0;
     this->field_0080 = 0;
-    this->field_0081 = (ushort *)0x0;
-    this->field_008D = (ccFntTy *)0x0;
-    this->field_0089 = (ccFntTy *)0x0;
+    this->field_0081 = nullptr;
+    this->field_008D = nullptr;
+    this->field_0089 = nullptr;
     this->field_0291 = 0;
     *(undefined4 *)&this->field_0x295 = 0;
     *(undefined4 *)&this->field_0x299 = 0;
@@ -60,17 +60,17 @@ MTaskTy * __cdecl CreateMTask(void)
     this->field_0484 = -1;
     this->field_0488 = 0;
     this->field_063F = -1;
-    this->field_0643 = (AnonPointee_MTaskTy_0643 *)0x0;
+    this->field_0643 = nullptr;
     memset(&this->field_0653, 0, 0x84); /* compiler bulk-zero initialization */
-    this->field_0070 = (cMf32 *)0x0;
+    this->field_0070 = nullptr;
     this->field_0078 = 0;
-    this->field_0074 = (DArrayTy *)0x0;
+    this->field_0074 = nullptr;
     this->field_007C = 0;
-    this->field_064F = (DArrayTy *)0x0;
-    this->field_064B = (DArrayTy *)0x0;
-    this->field_0647 = (DArrayTy *)0x0;
+    this->field_064F = nullptr;
+    this->field_064B = nullptr;
+    this->field_0647 = nullptr;
     return this;
   }
-  return (MTaskTy *)0x0;
+  return nullptr;
 }
 

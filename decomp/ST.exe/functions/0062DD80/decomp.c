@@ -44,7 +44,7 @@ STManRub3C::AddNewColl3(STManRub3C *this,int param_1,int param_2,int param_3,int
     return 0xffff;
   }
   if (local_c->field_0030[param_1 + 0x10] == 0) {
-    pDVar5 = Library::DKW::TBL::DArrayCreate((DArrayTy *)0x0,10,0xc,10);
+    pDVar5 = Library::DKW::TBL::DArrayCreate(nullptr,10,0xc,10);
     pSVar3->field_0030[param_1 + 0x10] = (uint)pDVar5;
   }
   else {
@@ -58,9 +58,9 @@ STManRub3C::AddNewColl3(STManRub3C *this,int param_1,int param_2,int param_3,int
           piVar6 = (int *)(*(int *)(uVar1 + 8) * uVar8 + *(int *)(uVar1 + 0x1c));
         }
         else {
-          piVar6 = (int *)0x0;
+          piVar6 = nullptr;
         }
-        if ((piVar6 != (int *)0x0) && (*piVar6 == param_2)) {
+        if ((piVar6 != nullptr) && (*piVar6 == param_2)) {
           local_8 = 1;
           piVar6[1] = param_3;
           piVar6[2] = param_4;
@@ -70,7 +70,7 @@ STManRub3C::AddNewColl3(STManRub3C *this,int param_1,int param_2,int param_3,int
     }
   }
   pDVar5 = (DArrayTy *)pSVar3->field_0030[param_1 + 0x10];
-  if ((pDVar5 != (DArrayTy *)0x0) && (local_8 == 0)) {
+  if ((pDVar5 != nullptr) && (local_8 == 0)) {
     local_1c = param_2;
     local_18 = param_3;
     local_14 = param_4;

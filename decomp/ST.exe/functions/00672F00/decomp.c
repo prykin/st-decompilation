@@ -26,8 +26,8 @@ int FUN_00672f00(void)
     DAT_00857560 = 0;
   }
   FUN_006b98c0((int *)&DAT_00811958,piVar3);
-  if (piVar3 != (int *)0x0) {
-    if ((DAT_00857528 != (char *)0x0) && ((char *)piVar3[6] != (char *)0x0)) {
+  if (piVar3 != nullptr) {
+    if ((DAT_00857528 != nullptr) && ((char *)piVar3[6] != nullptr)) {
       uVar4 = 0xffffffff;
       pcVar6 = (char *)piVar3[6];
       do {
@@ -45,7 +45,7 @@ int FUN_00672f00(void)
       uVar5 = 0;
     }
     FUN_006a5e90((short *)piVar3[6]);
-    if ((DAT_00811948 != (char *)0x0) && ((char *)piVar3[0xb] != (char *)0x0)) {
+    if ((DAT_00811948 != nullptr) && ((char *)piVar3[0xb] != nullptr)) {
       uVar4 = 0xffffffff;
       pcVar6 = (char *)piVar3[0xb];
       do {
@@ -62,7 +62,7 @@ int FUN_00672f00(void)
       memmove(pcVar7, pcVar6, uVar4); /* compiler REP MOVS byte copy */
     }
     FUN_006a5e90((short *)piVar3[0xb]);
-    if ((DAT_0085753c != (char *)0x0) && ((char *)piVar3[7] != (char *)0x0)) {
+    if ((DAT_0085753c != nullptr) && ((char *)piVar3[7] != nullptr)) {
       uVar4 = 0xffffffff;
       pcVar6 = (char *)piVar3[7];
       do {
@@ -88,18 +88,18 @@ int FUN_00672f00(void)
     PTR_0081194c = (AnonShape_GLOBAL_0081194C_4D1525E6 *)piVar3[2];
     DAT_00857554 = piVar3[8];
   }
-  if (DAT_00811958 == (int *)0x0) {
+  if (DAT_00811958 == nullptr) {
     FreeAndNull(&DAT_00857528);
     FreeAndNull(&DAT_00811948);
     FreeAndNull((void **)&DAT_0085755c);
     FreeAndNull(&DAT_0085753c);
-    for (puVar2 = DAT_00811908; puVar2 != (undefined4 *)0x0; puVar2 = (undefined4 *)*puVar2) {
+    for (puVar2 = DAT_00811908; puVar2 != nullptr; puVar2 = (undefined4 *)*puVar2) {
       FUN_006a5e90((short *)puVar2[1]);
       FUN_006a5e90((short *)puVar2[2]);
     }
     FUN_006b9890((int *)&DAT_00811908);
   }
   FUN_006a5e90((short *)piVar3);
-  return (uint)(DAT_00811958 != (int *)0x0);
+  return (uint)(DAT_00811958 != nullptr);
 }
 

@@ -14,7 +14,7 @@ int __cdecl FUN_0067fc10(byte *param_1)
   iVar6 = 0;
   if (0 < iVar2) {
     if (iVar2 < 1) {
-      pbVar5 = (byte *)0x0;
+      pbVar5 = nullptr;
       pbVar3 = param_1;
       goto LAB_0067fc3b;
     }

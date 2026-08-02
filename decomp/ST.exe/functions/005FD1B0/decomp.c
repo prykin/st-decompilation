@@ -59,7 +59,7 @@ FUN_005fd1b0(undefined4 param_1,undefined4 param_2,undefined4 param_3,undefined4
   local_160[5] = 0xfe;
   local_160[6] = param_2;
   local_132 = param_13;
-  if (param_11 != (char *)0x0) {
+  if (param_11 != nullptr) {
     uVar3 = 0xffffffff;
     pcVar5 = param_11;
     do {

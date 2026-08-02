@@ -45,14 +45,14 @@ LAB_004e9090:
   }
 LAB_004e914a:
   if (((param_1->field_05AC == CASE_6C) &&
-      (param_1->field_061B != (AnonPointee_TLOBaseTy_061B *)0x0)) && (param_1->field_04E0[7] == 0))
+      (param_1->field_061B != nullptr)) && (param_1->field_04E0[7] == 0))
   {
     iVar2 = STPlaySystemC::sub_006E62D0
                       (g_playSystem_00802A38,(AnonShape_005EFAE0_B406B78B *)param_1->field_04E0[6],
-                       (int *)0x0);
+                       nullptr);
     if (iVar2 != 0) {
       param_1->field_04E0[6] = 0;
-      param_1->field_061B = (AnonPointee_TLOBaseTy_061B *)0x0;
+      param_1->field_061B = nullptr;
     }
   }
   return 0;

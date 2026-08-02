@@ -10,8 +10,8 @@
 void __thiscall ST3DSMAPContext::sub_006E8640(ST3DSMAPContext *this,char *text,char *param_2)
 
 {
-  *(char **)&this->field_0x2a0 = text;
-  *(char **)&this->field_0x2a4 = param_2;
+  this->field_02A0 = text;
+  this->field_02A4 = param_2;
   return;
 }
 

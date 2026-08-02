@@ -5,9 +5,9 @@ undefined4 __fastcall FUN_004ce670(AnonShape_004CE670_5D83C685 *param_1)
   int iVar1;
   void *local_8;
 
-  local_8 = (void *)0x0;
+  local_8 = nullptr;
   if ((param_1->field_04D4 != 0) &&
-     ((AnonShape_005EFAE0_B406B78B *)param_1->field_05D3 != (AnonShape_005EFAE0_B406B78B *)0x0)) {
+     ((AnonShape_005EFAE0_B406B78B *)param_1->field_05D3 != nullptr)) {
     iVar1 = STPlaySystemC::sub_006E62D0
                       (g_playSystem_00802A38,(AnonShape_005EFAE0_B406B78B *)param_1->field_05D3,
                        (int *)&local_8);

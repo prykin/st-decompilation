@@ -53,7 +53,7 @@ HelpPanelTy::DrawWeapon
     GVar9 = (Global_sub_005259B0_param_1Enum)param_3;
     uVar3 = thunk_FUN_005259b0(GVar9,0,'\x01');
     pbVar4 = (byte *)FUN_0070b3a0((AnonShape_GLOBAL_0081175C_57F682DD *)local_8->field_0244,uVar3);
-    if (pbVar4 != (byte *)0x0) {
+    if (pbVar4 != nullptr) {
       if (*(int *)(pbVar4 + 8) + -0xf < 1) {
         iVar2 = 0;
       }

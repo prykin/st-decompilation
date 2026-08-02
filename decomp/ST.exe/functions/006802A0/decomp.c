@@ -22,7 +22,7 @@ void __cdecl FUN_006802a0(int exceptionCode,char *resourceString)
   char *pcVar4;
   char *pcVar5;
 
-  if (resourceString != (char *)0x0) {
+  if (resourceString != nullptr) {
     uVar2 = 0xffffffff;
     do {
       pcVar4 = resourceString;

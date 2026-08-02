@@ -4,13 +4,13 @@ FUN_00717910(void *this,byte *param_1,int param_2,int param_3,byte *param_4,int 
             ,uint param_7,uint param_8)
 
 {
-  if (*(int **)this != (int *)0x0) {
+  if (*(int **)this != nullptr) {
     /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
     FUN_006b5f80(*(int **)this,*(int *)((int)this + 0x20) + param_2,
                  *(int *)((int)this + 0x24) + param_3,param_7,param_8);
   }
   FUN_006d2820(param_1,*(AnonShape_006B5B10_E0D06CF1 **)((int)this + 0x28),param_4,param_5,param_6,
-               param_7,param_8,0,(byte *)0x0,0,0,(byte *)0x0);
+               param_7,param_8,0,nullptr,0,0,nullptr);
   return;
 }
 

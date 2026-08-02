@@ -27,7 +27,7 @@ void FUN_005335e0(void)
   }
   if (DAT_00808783 == '\x03') {
     uVar5 = 0xffffffff;
-    local_c = (uint *)0x0;
+    local_c = nullptr;
     pcVar7 = (char *)((int)local_8 + 0x1f5);
     pcVar9 = pcVar7;
     do {
@@ -39,7 +39,7 @@ void FUN_005335e0(void)
     local_10 = ~uVar5 + 0xd;
     puVar3 = Library::DKW::LIB::FUN_006aac10(local_10);
     local_c = puVar3;
-    if (puVar3 != (uint *)0x0) {
+    if (puVar3 != nullptr) {
       *(undefined1 *)puVar3 = 2;
       *(uint *)((int)puVar3 + 1) = ~uVar5;
       *(undefined4 *)((int)puVar3 + 5) = DAT_008087be;

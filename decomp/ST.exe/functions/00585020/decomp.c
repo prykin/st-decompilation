@@ -104,7 +104,7 @@ void __fastcall FUN_00585020(AnonShape_00585020_1C9B1418 *param_1)
            (pSVar2 = g_worldGrid.cells
                      [(int)g_worldGrid.planeStride * (int)sVar6 +
                       (int)g_worldGrid.sizeX * (int)local_8 + (int)local_10].objects[0],
-           pSVar2 != (STWorldObject *)0x0)))) && (pSVar2->value_20 != 0xaa)) {
+           pSVar2 != nullptr)))) && (pSVar2->value_20 != 0xaa)) {
         thunk_FUN_00584c50(param_1,&pSVar2->vtable);
         thunk_FUN_005860d0(param_1,(int)(short)param_1->field_0041,(int)(short)param_1->field_0043,
                            0x464);
@@ -138,7 +138,7 @@ void __fastcall FUN_00585020(AnonShape_00585020_1C9B1418 *param_1)
       param_1->field_023D = g_playSystem_00802A38->field_00E4;
       iVar3 = (int)((ulonglong)((longlong)param_1->field_024D * -0x2aaaaaab) >> 0x20);
       param_1->field_024D = iVar3 - (iVar3 >> 0x1f);
-      if (g_visibleClass_00802A88 != (VisibleClassTy *)0x0) {
+      if (g_visibleClass_00802A88 != nullptr) {
         sVar6 = param_1->field_0043;
         if (sVar6 < 0) {
           iVar3 = (short)((sVar6 / 0xc9 + (sVar6 >> 0xf)) -
@@ -158,7 +158,7 @@ void __fastcall FUN_00585020(AnonShape_00585020_1C9B1418 *param_1)
                               (short)((longlong)(int)sVar6 * 0x28c1979 >> 0x3f));
         }
         VisibleClassTy::VisHoleCreate
-                  (g_visibleClass_00802A88,iVar5,iVar3,(undefined *)0x0,
+                  (g_visibleClass_00802A88,iVar5,iVar3,nullptr,
                    *(uint *)&param_1->field_0x24,(undefined *)0x5,500);
       }
       param_1->field_0231 = 1;
@@ -232,7 +232,7 @@ void __fastcall FUN_00585020(AnonShape_00585020_1C9B1418 *param_1)
          ((pSVar2 = g_worldGrid.cells
                     [(int)g_worldGrid.planeStride * (int)sVar6 +
                      (int)g_worldGrid.sizeX * (int)local_8 + (int)local_10].objects[0],
-          pSVar2 != (STWorldObject *)0x0 && (pSVar2->value_20 != 0xaa)))) {
+          pSVar2 != nullptr && (pSVar2->value_20 != 0xaa)))) {
         thunk_FUN_00584c50(param_1,&pSVar2->vtable);
       }
       param_1->field_0231 = 2;

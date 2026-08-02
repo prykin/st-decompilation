@@ -57,7 +57,7 @@ void __thiscall FUN_0069e4d0(void *this,int param_1,int param_2,int param_3,int 
       iVar7 = iVar1 * param_4 + iVar7;
       local_14 = (int *)(param_1 + 6 + iVar7 * 0xe);
       if (*local_14 < 0) {
-        local_1c = thunk_FUN_00696310(local_18,iVar7,param_4,local_a0,(int *)0x0);
+        local_1c = thunk_FUN_00696310(local_18,iVar7,param_4,local_a0,nullptr);
         iVar7 = 0;
         if (0 < local_1c) {
           local_8 = local_a0;
@@ -127,7 +127,7 @@ LAB_0069e69c:
           local_14 = (int *)(iVar5 * param_4 + (int)local_14);
           iVar5 = param_1 + (int)local_14 * 0xe;
           if ((*(int *)(iVar5 + 6) < 0) && (*(int *)(iVar5 + 2) == 0)) {
-            local_1c = thunk_FUN_00696310(local_18,(int)local_14,param_4,local_a0,(int *)0x0);
+            local_1c = thunk_FUN_00696310(local_18,(int)local_14,param_4,local_a0,nullptr);
             iVar5 = local_c;
             piVar9 = local_14;
             iVar7 = 0;
@@ -197,7 +197,7 @@ LAB_0069e887:
           local_14 = (int *)(iVar3 * param_4 + iVar5);
           iVar5 = param_1 + (int)local_14 * 0xe;
           if ((*(int *)(iVar5 + 6) < 0) && (*(int *)(iVar5 + 2) == 0)) {
-            local_1c = thunk_FUN_00696310(local_18,(int)local_14,param_4,local_a0,(int *)0x0);
+            local_1c = thunk_FUN_00696310(local_18,(int)local_14,param_4,local_a0,nullptr);
             iVar5 = local_c;
             piVar9 = local_14;
             iVar3 = 0;

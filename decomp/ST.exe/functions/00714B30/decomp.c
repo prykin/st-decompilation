@@ -13,9 +13,9 @@ undefined4 __thiscall FUN_00714b30(void *this,int param_1)
 
   iVar2 = param_1;
   iVar5 = 0;
-  local_8 = (AnonShape_006B5B10_E0D06CF1 *)0x0;
+  local_8 = nullptr;
   local_c = 0;
-  if (((*(int *)((int)this + 0x58) == 0) || (*(ccFntTy **)this == (ccFntTy *)0x0)) ||
+  if (((*(int *)((int)this + 0x58) == 0) || (*(ccFntTy **)this == nullptr)) ||
      (*(int *)((int)this + 8) <= param_1)) {
     return 0xffffffcc;
   }

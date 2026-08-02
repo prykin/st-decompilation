@@ -21,8 +21,8 @@ int __thiscall AiBossClassTy::InitData(AiBossClassTy *this,undefined4 *param_1)
   local_8 = this;
   iVar2 = Library::MSVCRT::__setjmp3(local_4c.jumpBuffer,0);
   if (iVar2 == 0) {
-    if (local_8 == (AiBossClassTy *)0x0) {
-      puVar5 = (byte *)0x0;
+    if (local_8 == nullptr) {
+      puVar5 = nullptr;
     }
     else {
       puVar5 = (byte *)&local_8->field_0x5d3;

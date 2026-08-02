@@ -93,7 +93,7 @@ undefined4 FUN_004e51b0(int *param_1,uint *param_2,uint *param_3)
       /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
       param_2 = (uint *)((int)param_2 + 0x96);
       local_14 = (uint *)((int)local_14 + -1);
-    } while (local_14 != (uint *)0x0);
+    } while (local_14 != nullptr);
   }
   iVar7 = (int)param_3 + 1;
   if (iVar7 < 3) {
@@ -137,7 +137,7 @@ LAB_004e5403:
       piVar6 = (int *)(&PTR_DAT_007c0dc8)[local_c];
       puVar11 = (uint *)*piVar6;
       piVar12 = piVar6;
-      while (puVar11 != (uint *)0x0) {
+      while (puVar11 != nullptr) {
         if ((puVar11 == param_3) && ((uint)*(byte *)(piVar12 + 1) == iVar7 + 1U)) {
           iVar7 = 0;
           if (*(int *)(iVar8 * 0x19 + 5 + (int)piVar6) == 0) goto LAB_004e54d9;
@@ -251,14 +251,14 @@ LAB_004e5655:
           iVar9 = DArrayGetNext(*(DArrayTy **)((int)&g_packedRecords_A62x8[0].field6_0x9 + iVar7),
                                 (byte *)&param_1);
           while (-1 < iVar9) {
-            if (param_1 != (int *)0x0) {
+            if (param_1 != nullptr) {
               /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
               iVar9 = (**(code **)(*param_1 + 0x2c))();
               /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
               if ((iVar9 == 0x36) || (iVar9 = (**(code **)(*param_1 + 0x2c))(), iVar9 == 0x5d)) {
                 thunk_FUN_004e4d60((AnonShape_004E4D60_C16F78E8 *)param_1);
               }
-              if (param_1 != (int *)0x0) {
+              if (param_1 != nullptr) {
                 /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
                 iVar9 = (**(code **)(*param_1 + 0x2c))();
                 /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
@@ -266,7 +266,7 @@ LAB_004e5655:
                   thunk_FUN_004e4f30((STMineSetC *)param_1);
                 }
                 /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-                if ((param_1 != (int *)0x0) &&
+                if ((param_1 != nullptr) &&
                    (((iVar9 = (**(code **)(*param_1 + 0x2c))(), iVar9 == 5 ||
                      (iVar9 = (**(code **)(*param_1 + 0x2c))(), iVar9 == 0x21)) ||
                     (iVar9 = (**(code **)(*param_1 + 0x2c))(), iVar9 == 0x11)))) {

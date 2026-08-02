@@ -51,7 +51,7 @@ STAllPlayersC::_DeleteGuardBoat(STAllPlayersC *this,char param_1,short param_2,i
     }
     return local_18;
   }
-  if (local_10 == (DArrayTy *)0x0) {
+  if (local_10 == nullptr) {
     RaiseInternalException
               (-0x5001fff7,g_overwriteContext_007ED77C,"E:\\__titans\\wlad\\to_allpl.cpp",
                0x28ba);

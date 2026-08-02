@@ -24,7 +24,7 @@ void __thiscall SettMapMTy::DeleteCtrls(SettMapMTy *this)
   local_8 = this;
   iVar2 = Library::MSVCRT::__setjmp3(local_4c.jumpBuffer,0);
   if (iVar2 == 0) {
-    if (g_cursorClass_00802A30 != (CursorClassTy *)0x0) {
+    if (g_cursorClass_00802A30 != nullptr) {
       if (g_cursorClass_00802A30->field_00A9 == 0) {
         Library::DKW::DDX::FUN_006b8b10((int *)g_cursorClass_00802A30->field_00AD);
       }
@@ -50,22 +50,22 @@ void __thiscall SettMapMTy::DeleteCtrls(SettMapMTy *this)
         StartSystemTy::sub_006E56B0(this_00->field_000C,g_startSystem_0081176C->field_0550);
         g_startSystem_0081176C->field_0550 = 0;
       }
-      if (this_00->field_21F8 != (HoloTy *)0x0) {
+      if (this_00->field_21F8 != nullptr) {
         HoloTy::Done(this_00->field_21F8);
         Library::MSVCRT::FUN_0072e2b0(this_00->field_21F8);
-        this_00->field_21F8 = (HoloTy *)0x0;
+        this_00->field_21F8 = nullptr;
       }
       pHVar3 = (HoloTy *)Library::MSVCRT::FUN_0072e530(0x33);
-      if (pHVar3 == (HoloTy *)0x0) {
-        pHVar3 = (HoloTy *)0x0;
+      if (pHVar3 == nullptr) {
+        pHVar3 = nullptr;
       }
       else {
         pHVar3->field_0002 = 1;
         pHVar3->field_0000 = 0;
         *(undefined4 *)&pHVar3->field_0x3 = 0xffffffff;
         pHVar3->field_0001 = CASE_2;
-        pHVar3->field_0007 = (void *)0x0;
-        pHVar3->field_000B = (void *)0x0;
+        pHVar3->field_0007 = nullptr;
+        pHVar3->field_000B = nullptr;
         pHVar3->field_000F = 0;
         *(undefined4 *)&pHVar3->field_0x1b = 1;
         pHVar3->field_0013 = 1;
@@ -76,7 +76,7 @@ void __thiscall SettMapMTy::DeleteCtrls(SettMapMTy *this)
         pHVar3->field_002B = 1;
       }
       this_00->field_21F8 = pHVar3;
-      if (pHVar3 != (HoloTy *)0x0) {
+      if (pHVar3 != nullptr) {
         uVar7 = 0;
         cVar6 = '\x01';
         bVar5 = 0x10;

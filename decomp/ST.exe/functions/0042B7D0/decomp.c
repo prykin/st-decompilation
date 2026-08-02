@@ -63,7 +63,7 @@ STAllPlayersC::AddObjsToGroup
   if (0 < (int)uVar7) {
     do {
       DArrayGetElement(local_14,uVar6,&local_c);
-      if (local_c != (STGroupC *)0x0) {
+      if (local_c != nullptr) {
         iVar3 = thunk_FUN_00423d80(local_c,groupContent);
         if (iVar3 == 1) {
           local_5 = 0;
@@ -87,7 +87,7 @@ STAllPlayersC::AddObjsToGroup
     if ((param_2 == 0xfffe) || (local_20 == 0)) {
       while (uVar7 = uVar7 - 1, -1 < (int)uVar7) {
         DArrayGetElement(array,uVar7,&local_c);
-        if (local_c == (STGroupC *)0x0) {
+        if (local_c == nullptr) {
           uVar6 = uVar7;
         }
       }
@@ -103,7 +103,7 @@ STAllPlayersC::AddObjsToGroup
       local_5 = 2;
       /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
       (**(code **)(local_10->vtable + 8))(0x65,&local_5);
-      if (param_4 != (undefined2 *)0x0) {
+      if (param_4 != nullptr) {
         *param_4 = (short)uVar6;
       }
     }
@@ -120,10 +120,10 @@ STAllPlayersC::AddObjsToGroup
     if (0 < (int)dVar1) {
       do {
         DArrayGetElement(array,uVar7,&local_c);
-        if (((local_c != (STGroupC *)0x0) && (local_c->field_0027 == 0)) &&
+        if (((local_c != nullptr) && (local_c->field_0027 == 0)) &&
            (iVar3 = thunk_FUN_004233a0((int)local_c), iVar3 == 0)) {
           thunk_FUN_0054cf70(g_playSystem_00802A38,*(uint *)&local_c->field_0x8);
-          local_c = (STGroupC *)0x0;
+          local_c = nullptr;
           Library::DKW::TBL::DArrayPut(array,uVar7,&local_c);
         }
         uVar7 = uVar7 + 1;

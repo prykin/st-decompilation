@@ -14,7 +14,7 @@ void __thiscall CGenerate::sub_00696740(CGenerate *this,int param_1)
   dword dVar1;
   uint uVar2;
 
-  if (this->field_5853 != (CGenerate_field_5853DArray *)0x0) {
+  if (this->field_5853 != nullptr) {
     dVar1 = this->field_5853->count;
     uVar2 = 0;
     if (0 < (int)dVar1) {

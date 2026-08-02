@@ -125,14 +125,14 @@ undefined4 __thiscall STBoatC::sub_004926C0(STBoatC *this,int param_1)
        (local_8 = (int)g_worldGrid.planeStride,
        g_worldGrid.cells
        [(int)(short)uVar2 * (int)g_worldGrid.sizeX + g_worldGrid.planeStride * 4 + (int)(short)uVar1
-       ].objects[0] == (STWorldObject *)0x0)))) &&
+       ].objects[0] == nullptr)))) &&
      ((((short)uVar1 < 0 || (g_worldGrid.sizeX <= (short)uVar1)) ||
       (((short)uVar2 < 0 ||
        (((g_worldGrid.sizeY <= (short)uVar2 || (g_worldGrid.sizeZ < 5)) ||
         (local_8 = (int)g_worldGrid.planeStride,
         g_worldGrid.cells
         [(int)(short)uVar2 * (int)g_worldGrid.sizeX + g_worldGrid.planeStride * 4 +
-         (int)(short)uVar1].objects[1] == (STWorldObject *)0x0)))))))) {
+         (int)(short)uVar1].objects[1] == nullptr)))))))) {
     *(ushort *)&this->field_0x5f2 = uVar1;
     *(ushort *)&this->field_0x5f4 = uVar2;
     *(undefined2 *)&this->field_0x5f6 = 4;
@@ -154,12 +154,12 @@ undefined4 __thiscall STBoatC::sub_004926C0(STBoatC *this,int param_1)
               ((g_worldGrid.sizeZ <= sVar5 ||
                (g_worldGrid.cells
                 [(int)sVar4 * (int)g_worldGrid.sizeX + sVar5 * local_8 + (int)sVar3].objects[0] ==
-                (STWorldObject *)0x0)))) &&
+                nullptr)))) &&
              ((((g_worldGrid.sizeX <= sVar3 || (g_worldGrid.sizeY <= sVar4)) || (sVar5 < 0)) ||
               ((g_worldGrid.sizeZ <= sVar5 ||
                (g_worldGrid.cells
                 [(int)sVar4 * (int)g_worldGrid.sizeX + sVar5 * local_8 + (int)sVar3].objects[1] ==
-                (STWorldObject *)0x0)))))))))) {
+                nullptr)))))))))) {
           *(short *)&this->field_0x5f6 = sVar5;
           *(short *)&this->field_0x5f4 = sVar4;
           *(short *)&this->field_0x5f2 = sVar3;

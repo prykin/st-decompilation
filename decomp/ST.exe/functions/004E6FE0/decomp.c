@@ -18,7 +18,7 @@ int FUN_004e6fe0(int param_1)
     uVar1 = LookupRecordByte((char)param_1);
     uVar3 = 0;
     do {
-      if ((&PTR_DAT_007bfc04)[(uVar1 & 0xff) - 1] + uVar3 != (undefined *)0x0) {
+      if ((&PTR_DAT_007bfc04)[(uVar1 & 0xff) - 1] + uVar3 != nullptr) {
         iVar2 = thunk_FUN_004e60d0(param_1,uVar4);
         /* ST_PSEUDO[flattened_global_record_array]: expected typedRecordArray[index].field after inferred base/stride proof */
         if ((int)(uint)*(byte *)(uVar4 + 0x7f555b + param_1 * 0xa62) <= iVar2) {

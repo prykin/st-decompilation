@@ -14,7 +14,7 @@ undefined4 * __thiscall FUN_006e9080(void *this,uint param_1,uint param_2,uint p
     if (param_1 != 0xffffffff) {
       FUN_006e8c50();
     }
-    return (undefined4 *)0x0;
+    return nullptr;
   }
   uVar2 = puVar1[0x28];
   if ((((uVar2 != 0) && (param_2 < puVar1[0x25])) &&
@@ -34,6 +34,6 @@ undefined4 * __thiscall FUN_006e9080(void *this,uint param_1,uint param_2,uint p
   }
   FUN_006e91a0();
   Library::Ourlib::ST3DSMAP::SprClose(this,param_1);
-  return (undefined4 *)0x0;
+  return nullptr;
 }
 

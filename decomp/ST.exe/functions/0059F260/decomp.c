@@ -34,7 +34,7 @@ void __thiscall FSGSTy::LadderCtrls(FSGSTy *this)
   ppcVar8 = local_8e0;
   local_10 = this;
   for (iVar6 = 0x223; iVar6 != 0; iVar6 = iVar6 + -1) {
-    *ppcVar8 = (ccFntTy *)0x0;
+    *ppcVar8 = nullptr;
     ppcVar8 = ppcVar8 + 1;
   }
   local_54.previous = g_currentExceptionFrame;
@@ -42,16 +42,16 @@ void __thiscall FSGSTy::LadderCtrls(FSGSTy *this)
   iVar6 = Library::MSVCRT::__setjmp3(local_54.jumpBuffer,0);
   this_00 = local_10;
   if (iVar6 == 0) {
-    if (local_10->field_1AE8 != (DArrayTy *)0x0) {
+    if (local_10->field_1AE8 != nullptr) {
       FUN_006b5570(local_10->field_1AE8);
     }
-    pDVar2 = Library::DKW::TBL::SArrayCreate((DArrayTy *)0x0,1,1);
+    pDVar2 = Library::DKW::TBL::SArrayCreate(nullptr,1,1);
     this_00->field_1AE8 = pDVar2;
     Library::DKW::TBL::FUN_006b5aa0(&pDVar2->flags,&DAT_008016a0);
     if (this_00->field_1E8E != 0) {
       FreeAndNull((void **)&this_00->field_1E8E);
     }
-    if (this_00->field_1E92 != (tagBITMAPINFO *)0x0) {
+    if (this_00->field_1E92 != nullptr) {
       FreeAndNull(&this_00->field_1E92);
     }
     iVar6 = 1;
@@ -86,7 +86,7 @@ void __thiscall FSGSTy::LadderCtrls(FSGSTy *this)
     local_c = 0;
     ppcVar8 = local_8e0;
     for (iVar6 = 0x223; iVar6 != 0; iVar6 = iVar6 + -1) {
-      *ppcVar8 = (ccFntTy *)0x0;
+      *ppcVar8 = nullptr;
       ppcVar8 = ppcVar8 + 1;
     }
     local_8e0[2] = this_00->field_1A73;
@@ -105,7 +105,7 @@ void __thiscall FSGSTy::LadderCtrls(FSGSTy *this)
     local_88c = 0x6988;
     local_854 = local_894;
     (*this_00->field_000C->vtable->CreateObject)
-              ((SystemClassTy *)this_00->field_000C,6,&this_00->field_1AC4,(int *)0x0,local_8e0,0);
+              ((SystemClassTy *)this_00->field_000C,6,&this_00->field_1AC4,nullptr,local_8e0,0);
     this_00->field_002D = 0x61;
     *(undefined4 *)&this_00->field_0x35 = 0;
     FUN_006e6080(this_00,0xf,0,(undefined4 *)&this_00->field_0x1d);

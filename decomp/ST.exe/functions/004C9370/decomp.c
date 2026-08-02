@@ -13,7 +13,7 @@ int __thiscall TLOBaseTy::sub_004C9370(TLOBaseTy *this,int param_1,int param_2,i
 
   iVar3 = this->field_03D4;
   iVar1 = 0;
-  if (((iVar3 != 0) && (pAVar2 = this->field_0607, pAVar2 != (AnonPointee_TLOBaseTy_0607 *)0x0)) &&
+  if (((iVar3 != 0) && (pAVar2 = this->field_0607, pAVar2 != nullptr)) &&
      (0 < iVar3)) {
     do {
       if (((pAVar2->field_0000 == param_1) && (pAVar2->field_0004 == param_2)) &&

@@ -104,7 +104,7 @@ ST3DSMAPContext::sub_00709470
     iVar11 = iVar11 - param_3;
   }
   local_14 = this;
-  FUN_006b0ba0(*(int *)&this->field_0x4,&local_414,0,0x100);
+  FUN_006b0ba0(this->field_0004,&local_414,0,0x100);
   puVar4 = (undefined1 *)((int)&local_414 + 2);
   iVar13 = 0x100;
   do {
@@ -135,7 +135,7 @@ ST3DSMAPContext::sub_00709470
       piVar8 = param_1 + param_2 + -1;
       do {
         pbVar6 = (byte *)*piVar8;
-        if (((pbVar6 != (byte *)0x0) && (0 < *(int *)(pbVar6 + 4))) && (0 < *(int *)(pbVar6 + 8))) {
+        if (((pbVar6 != nullptr) && (0 < *(int *)(pbVar6 + 4))) && (0 < *(int *)(pbVar6 + 8))) {
           FUN_006b84d0(pAVar5,0,param_4 - local_8,param_4 - param_3,pbVar6);
         }
         piVar8 = piVar8 + -1;

@@ -130,7 +130,7 @@ uint * __thiscall FUN_0074b06d(void *this,int *param_1,uint *param_2,uint *param
       *(uint **)((int)this + 0xe8) = param_2;
     }
     /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
-    param_3 = (uint *)0x0;
+    param_3 = nullptr;
   }
   else {
     *(int *)((int)this + 0xd0) = *(int *)((int)this + 0xd0) + 1;

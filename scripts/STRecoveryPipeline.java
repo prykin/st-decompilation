@@ -17,9 +17,6 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.StandardCopyOption;
 import java.nio.file.StandardOpenOption;
-import java.nio.file.attribute.FileTime;
-import java.time.Duration;
-import java.time.Instant;
 import java.security.MessageDigest;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -73,7 +70,15 @@ public class STRecoveryPipeline extends GhidraScript {
             "local_lifetime_summary.txt"),
         "STControlFlowLabelAnalyzer.java", List.of(
             "control_flow_label_proposals.tsv", "control_flow_label_unresolved.tsv",
-            "control_flow_label_summary.txt"));
+            "control_flow_label_summary.txt"),
+        "STFunctionPointerFieldAnalyzer.java", List.of(
+            "function_pointer_field_proposals.tsv",
+            "function_pointer_field_failures.tsv",
+            "function_pointer_field_summary.txt"),
+        "STClassLayoutAnalyzer.java", List.of(
+            "class_layout_proposals.tsv", "class_field_proposals.tsv",
+            "class_nested_type_proposals.tsv", "class_nested_field_proposals.tsv",
+            "class_layout_summary.txt"));
     private static final Map<String, List<String>> CACHEABLE_ANALYZER_INPUTS = Map.of(
         "STDArrayElementAnalyzer.java", List.of(),
         "STPointerShapeAnalyzer.java", List.of(),
@@ -82,7 +87,11 @@ public class STRecoveryPipeline extends GhidraScript {
         "STPointerRoleRepairAnalyzer.java", List.of(),
         "STPrototypeAnalyzer.java", List.of(),
         "STLocalLifetimeAnalyzer.java", List.of(),
-        "STControlFlowLabelAnalyzer.java", List.of());
+        "STControlFlowLabelAnalyzer.java", List.of(),
+        "STFunctionPointerFieldAnalyzer.java", List.of(),
+        "STClassLayoutAnalyzer.java", List.of(
+            "constructor_class_sizes.tsv", "vtable_proposals.tsv",
+            "class_array_proposals.tsv", "inline_aggregate_proposals.tsv"));
     private static final Set<String> MUTATING_STATUSES = Set.of(
         "applied", "created", "converted", "updated", "partial", "renamed", "repaired");
     private static final Set<String> UNCHANGED_STATUSES = Set.of(
@@ -105,7 +114,7 @@ public class STRecoveryPipeline extends GhidraScript {
     private Path activeRun;
     private Path eventsPath;
     private Path logPath;
-    private Instant runStarted;
+    private long runStartedNanos;
     private String runMode = "";
     private String currentSection = "startup";
     private long runModificationBefore;
@@ -148,7 +157,7 @@ public class STRecoveryPipeline extends GhidraScript {
         println("ST recovery pipeline: mode=" + options.mode +
             ", repository=" + repository);
         println("No proposal flags are changed by the pipeline. Review-only rows remain disabled.");
-        Instant started = Instant.now();
+        long started = System.nanoTime();
         startRun(options.mode, started);
         try {
             preflightScripts();
@@ -168,11 +177,11 @@ public class STRecoveryPipeline extends GhidraScript {
             if (programMutationObserved && !currentProgram.isChanged())
                 throw new IllegalStateException("Pipeline observed committed Program mutations, " +
                     "but Program.isChanged() is false at completion; refusing a false success");
-            long seconds = Duration.between(started, Instant.now()).toSeconds();
+            long seconds = elapsedNanos(started) / 1_000_000_000L;
             logLine("pipeline_complete duration_s=" + seconds +
                 " program_changed=" + currentProgram.isChanged());
             finishRun("completed", null);
-            println("ST recovery pipeline complete in " + seconds + " s.");
+            println("ST recovery pipeline complete.");
         }
         catch (Throwable failure) {
             try {
@@ -185,6 +194,10 @@ public class STRecoveryPipeline extends GhidraScript {
             }
             printerr("Pipeline stopped after the first failed step: " + message(failure));
             rethrow(failure);
+        }
+        finally {
+            println("Total pipeline time: " +
+                formatDuration(elapsedNanos(started) / 1_000_000_000L));
         }
         println("Pipeline report: " + reportPath.toAbsolutePath().normalize());
         println("Program changed after pipeline: " + currentProgram.isChanged());
@@ -267,9 +280,7 @@ public class STRecoveryPipeline extends GhidraScript {
                 "pointer_shape_target_proposals.tsv", "pointer_shape_apply_report.tsv");
             changed += pair("STTypeFamilyAnalyzer.java", "STTypeFamilyApplier.java",
                 "type_family_proposals.tsv", "type_family_apply_report.tsv");
-            analyzer("STClassArrayAnalyzer.java");
-            changed += pair("STClassLayoutAnalyzer.java", "STClassLayoutApplier.java",
-                "class_layout_proposals.tsv", "class_layout_apply_report.tsv");
+            changed += runClassLayoutFixpoint();
             changed += runDArrayTypes();
             changed += pair("STSwitchEnumAnalyzer.java", "STSwitchEnumApplier.java",
                 "switch_enum_proposals.tsv", "switch_enum_apply_report.tsv");
@@ -292,10 +303,17 @@ public class STRecoveryPipeline extends GhidraScript {
         // from implementation-based analyzers.
         runStructuralFixpoint();
 
-        // Structural vtable discovery may expose fresh generic slots after the deep loop.
-        // Re-run indirect typing after the last table rebuild so the exported database always
-        // contains the final slot prototypes rather than orphaned function definitions.
+        // Callback-field discovery is deliberately outside the broad deep fixed point. It is
+        // one of the most expensive whole-program decompiler passes, while its evidence depends
+        // on the final layouts produced by that loop. Running it in every intermediate Program
+        // epoch repeated several minutes of work without making those early proposals safer.
+        // The export ABI fixed point below still reruns it after any later mutation, and deep-only
+        // mode still receives one current callback/indirect propagation pass here.
         section("post-structural indirect propagation");
+        pair("STFunctionPointerFieldAnalyzer.java",
+            "STFunctionPointerFieldApplier.java",
+            "function_pointer_field_proposals.tsv",
+            "function_pointer_field_apply_report.tsv");
         pair("STIndirectCallAnalyzer.java", "STIndirectCallApplier.java",
             "indirect_call_proposals.tsv", "indirect_call_apply_report.tsv");
 
@@ -390,7 +408,11 @@ public class STRecoveryPipeline extends GhidraScript {
         println("Export return rollback repairs: mutating rows=" + repairedReturns);
 
         for (int pass = 1; pass <= 4; pass++) {
-            int changed = pair("STIndirectCallAnalyzer.java", "STIndirectCallApplier.java",
+            int changed = pair("STFunctionPointerFieldAnalyzer.java",
+                "STFunctionPointerFieldApplier.java",
+                "function_pointer_field_proposals.tsv",
+                "function_pointer_field_apply_report.tsv");
+            changed += pair("STIndirectCallAnalyzer.java", "STIndirectCallApplier.java",
                 "indirect_call_proposals.tsv", "indirect_call_apply_report.tsv");
             println("Export indirect ABI stabilization pass " + pass +
                 ": mutating rows=" + changed);
@@ -478,9 +500,7 @@ public class STRecoveryPipeline extends GhidraScript {
             changed += pair("STConstructorAnalyzer.java", "STConstructorApplier.java",
                 "constructor_proposals.tsv", "constructor_apply_report.tsv",
                 MUTATING_STATUSES, recoveryProgram.resolve("vtable_proposals.tsv"));
-            analyzer("STClassArrayAnalyzer.java");
-            changed += pair("STClassLayoutAnalyzer.java", "STClassLayoutApplier.java",
-                "class_layout_proposals.tsv", "class_layout_apply_report.tsv");
+            changed += runClassLayoutFixpoint();
             changed += runDArrayTypes();
             println("Structural pass " + pass + ": mutating report rows=" + changed);
             if (changed == 0) return;
@@ -505,6 +525,35 @@ public class STRecoveryPipeline extends GhidraScript {
             if (changed == 0) return;
         }
         throw new IllegalStateException("Type lifecycle did not reach a fixed point in " +
+            MAX_STRUCTURAL_PASSES + " passes");
+    }
+
+    /**
+     * Class layouts can reveal a nested pointee which makes another field type exact on the
+     * next decompile. Converge that local dependency chain here instead of restarting every
+     * unrelated whole-program analyzer for each 7 -> 2 -> 1 layout staircase. The enclosing
+     * structural/deep loop still runs once more after any accumulated mutation, so vtables,
+     * DArrays, pointer shapes and ABI propagation consume the final layout state.
+     */
+    private int runClassLayoutFixpoint() throws Exception {
+        int totalChanged = 0;
+        Map<String, Integer> seenStates = new LinkedHashMap<>();
+        for (int pass = 1; pass <= MAX_STRUCTURAL_PASSES; pass++) {
+            analyzer("STClassArrayAnalyzer.java");
+            analyzer("STInlineAggregateAnalyzer.java");
+            int changed = pair("STClassLayoutAnalyzer.java", "STClassLayoutApplier.java",
+                "class_layout_proposals.tsv", "class_layout_apply_report.tsv");
+            totalChanged += changed;
+            println("Class-layout local pass " + pass + ": mutating rows=" + changed);
+            if (changed == 0) return totalChanged;
+            String fingerprint = deepStateFingerprint();
+            Integer previous = seenStates.putIfAbsent(fingerprint, pass);
+            if (previous != null)
+                throw new IllegalStateException(
+                    "Class-layout recovery entered a repeated state at passes " + previous +
+                    " and " + pass + "; inspect pass snapshots");
+        }
+        throw new IllegalStateException("Class-layout recovery did not reach a fixed point in " +
             MAX_STRUCTURAL_PASSES + " passes");
     }
 
@@ -861,7 +910,7 @@ public class STRecoveryPipeline extends GhidraScript {
                 " source_sha256=" + hash);
             event("build_start", 0, script, "building", 0, -1, -1,
                 "build_sequence=" + ordinal + "; source_sha256=" + hash);
-            Instant started = Instant.now();
+            long started = System.nanoTime();
             StringWriter diagnostics = new StringWriter();
             Throwable failure = null;
             String status = "loaded";
@@ -893,7 +942,7 @@ public class STRecoveryPipeline extends GhidraScript {
                 buildFailures++;
                 failed.add(script);
             }
-            long milliseconds = Duration.between(started, Instant.now()).toMillis();
+            long milliseconds = elapsedNanos(started) / 1_000_000L;
             String diagnosticText = diagnostics.toString();
             String text = "script=" + script + "\nsource=" +
                 source.toAbsolutePath().normalize() + "\nsource_sha256=" + hash +
@@ -945,7 +994,7 @@ public class STRecoveryPipeline extends GhidraScript {
         logLine("step_start sequence=" + ordinal + " script=" + script +
             (argument.isBlank() ? "" : " argument=" + argument));
         event("step_start", ordinal, script, "running", 0, -1, -1, argument);
-        Instant started = Instant.now();
+        long started = System.nanoTime();
         lastStepMutatedProgram = false;
         long modificationBefore = currentProgram.getModificationNumber();
         long modificationAfter = modificationBefore;
@@ -969,7 +1018,7 @@ public class STRecoveryPipeline extends GhidraScript {
             failure = problem;
             modificationAfter = currentProgram.getModificationNumber();
         }
-        long milliseconds = Duration.between(started, Instant.now()).toMillis();
+        long milliseconds = elapsedNanos(started) / 1_000_000L;
         try {
             finishStepCapture(capture, failure == null ? "completed" : "failed",
                 milliseconds, modificationBefore, modificationAfter, failure);
@@ -1350,7 +1399,7 @@ public class STRecoveryPipeline extends GhidraScript {
         return false;
     }
 
-    private void startRun(String mode, Instant started) throws Exception {
+    private void startRun(String mode, long startedNanos) throws Exception {
         runsRoot = recoveryProgram.resolve("runs");
         Files.createDirectories(runsRoot);
         activeRun = runsRoot.resolve(".current");
@@ -1368,7 +1417,7 @@ public class STRecoveryPipeline extends GhidraScript {
             StandardOpenOption.CREATE, StandardOpenOption.TRUNCATE_EXISTING);
         Files.writeString(logPath, "", StandardCharsets.UTF_8,
             StandardOpenOption.CREATE, StandardOpenOption.TRUNCATE_EXISTING);
-        runStarted = started;
+        runStartedNanos = startedNanos;
         runMode = mode;
         runModificationBefore = currentProgram.getModificationNumber();
         logLine("pipeline_start mode=" + mode + " program=" + currentProgram.getName() +
@@ -1425,7 +1474,6 @@ public class STRecoveryPipeline extends GhidraScript {
         logLine("run_archive hash=" + id + " status=" + status);
         Path target = runsRoot.resolve(id);
         moveRun(activeRun, target);
-        Files.setLastModifiedTime(target, FileTime.from(Instant.now()));
         Files.writeString(recoveryProgram.resolve("latest_run.txt"), id + "\n",
             StandardCharsets.UTF_8);
         activeRun = null;
@@ -1678,7 +1726,18 @@ public class STRecoveryPipeline extends GhidraScript {
     }
 
     private long elapsedMilliseconds() {
-        return runStarted == null ? 0 : Duration.between(runStarted, Instant.now()).toMillis();
+        return runStartedNanos == 0 ? 0 : elapsedNanos(runStartedNanos) / 1_000_000L;
+    }
+
+    private long elapsedNanos(long startedNanos) {
+        return Math.max(0L, System.nanoTime() - startedNanos);
+    }
+
+    private String formatDuration(long totalSeconds) {
+        long hours = totalSeconds / 3600;
+        long minutes = totalSeconds / 60 % 60;
+        long seconds = totalSeconds % 60;
+        return String.format(Locale.ROOT, "%02d:%02d:%02d", hours, minutes, seconds);
     }
 
     private String deepStateFingerprint() throws Exception {

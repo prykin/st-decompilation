@@ -18,7 +18,7 @@ void __thiscall STJumpMineC::sub_00619A20(STJumpMineC *this)
     LoadImagJMine(this,this->field_008F);
   }
   pVVar1 = g_visibleClass_00802A88;
-  if (g_visibleClass_00802A88 == (VisibleClassTy *)0x0) {
+  if (g_visibleClass_00802A88 == nullptr) {
     if (this->field_00C4 == '\0') {
       return;
     }
@@ -34,7 +34,7 @@ void __thiscall STJumpMineC::sub_00619A20(STJumpMineC *this)
         ((pVVar1->field_0030 <= local_8 ||
          ((local_c = g_centeredOffsets5[iVar2] + local_c, local_c < 0 ||
           (pVVar1->field_0034 <= local_c)))))) ||
-       ((pVVar1->field_004C == (byte *)0x0 ||
+       ((pVVar1->field_004C == nullptr ||
         (pVVar1->field_004C[local_8 + local_c * pVVar1->field_0030] != 0)))) {
       iVar2 = this->field_00AB + 1;
       this->field_00AB = iVar2;

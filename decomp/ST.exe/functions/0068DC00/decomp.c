@@ -15,7 +15,7 @@ AiTactClassTy * __thiscall AiTactClassTy::AiTactClassTy(AiTactClassTy *this)
   memset(&this->field_0020, 0, 0x10c); /* compiler bulk-zero initialization */
   this->field_0020 = 0x38e;
   this->field_009D = 0xff;
-  this->field_0130 = (void *)0x0;
+  this->field_0130 = nullptr;
   this->field_0134 = 0;
   this->field_0138 = 0;
   this->field_013C = 0;

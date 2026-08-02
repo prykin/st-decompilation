@@ -56,7 +56,7 @@ byte * __thiscall STAllPlayersC::SaveAllPlData(STAllPlayersC *this,int *param_1)
         local_10 = local_34;
         puVar6 = (byte *)&local_14[-1].field_0x68f;
         do {
-          if ((uint *)*puVar6 != (uint *)0x0) {
+          if ((uint *)*puVar6 != nullptr) {
             local_c = (byte *)FUN_006b0020((uint *)*puVar6,(int *)&local_8);
             FreeAndNull(&local_c);
             iVar2 = (int)&(local_8->field_0000).flags + iVar2;
@@ -64,18 +64,18 @@ byte * __thiscall STAllPlayersC::SaveAllPlData(STAllPlayersC *this,int *param_1)
           }
           puVar6 = (byte *)(puVar6 + 1);
           local_10 = (AnonShape_00443F30_9F0248D4 *)((int)&local_10[-1].field_0008 + 3);
-        } while (local_10 != (AnonShape_00443F30_9F0248D4 *)0x0);
+        } while (local_10 != nullptr);
       }
       local_10 = (AnonShape_00443F30_9F0248D4 *)0x5;
       pAVar11 = local_14;
       do {
-        if (*(uint **)&pAVar11[-1].field_0x7ed != (uint *)0x0) {
+        if (*(uint **)&pAVar11[-1].field_0x7ed != nullptr) {
           local_c = (byte *)FUN_006b0020(*(uint **)&pAVar11[-1].field_0x7ed,(int *)&local_8);
           FreeAndNull(&local_c);
           iVar2 = (int)&(local_8->field_0000).flags + iVar2;
           local_28 = iVar2;
         }
-        if (*(uint **)pAVar11 != (uint *)0x0) {
+        if (*(uint **)pAVar11 != nullptr) {
           local_c = (byte *)FUN_006b0020(*(uint **)pAVar11,(int *)&local_8);
           FreeAndNull(&local_c);
           iVar2 = (int)&(local_8->field_0000).flags + iVar2;
@@ -83,11 +83,11 @@ byte * __thiscall STAllPlayersC::SaveAllPlData(STAllPlayersC *this,int *param_1)
         }
         pAVar11 = (AnonShape_00443F30_5DF553AC *)&pAVar11->field_0x10;
         local_10 = (AnonShape_00443F30_9F0248D4 *)((int)&local_10[-1].field_0008 + 3);
-      } while (local_10 != (AnonShape_00443F30_9F0248D4 *)0x0);
+      } while (local_10 != nullptr);
       local_10 = (AnonShape_00443F30_9F0248D4 *)0xa;
       puVar6 = (byte *)&local_14->field_0x54;
       do {
-        if ((uint *)*puVar6 != (uint *)0x0) {
+        if ((uint *)*puVar6 != nullptr) {
           local_c = (byte *)FUN_006b0020((uint *)*puVar6,(int *)&local_8);
           FreeAndNull(&local_c);
           iVar2 = (int)&(local_8->field_0000).flags + iVar2;
@@ -95,7 +95,7 @@ byte * __thiscall STAllPlayersC::SaveAllPlData(STAllPlayersC *this,int *param_1)
         }
         puVar6 = (byte *)(puVar6 + 4);
         local_10 = (AnonShape_00443F30_9F0248D4 *)((int)&local_10[-1].field_0008 + 3);
-      } while (local_10 != (AnonShape_00443F30_9F0248D4 *)0x0);
+      } while (local_10 != nullptr);
       local_10 = (AnonShape_00443F30_9F0248D4 *)0x6;
       puVar12 = (uint *)&local_14->field_0x631;
       do {
@@ -105,32 +105,32 @@ byte * __thiscall STAllPlayersC::SaveAllPlData(STAllPlayersC *this,int *param_1)
         puVar12 = puVar12 + 0x11;
         local_10 = (AnonShape_00443F30_9F0248D4 *)((int)&local_10[-1].field_0008 + 3);
         local_28 = iVar2;
-      } while (local_10 != (AnonShape_00443F30_9F0248D4 *)0x0);
+      } while (local_10 != nullptr);
       local_20 = &local_14->field_0839->field_0000;
-      local_10 = (AnonShape_00443F30_9F0248D4 *)0x0;
-      if (((AnonNested_00443F30_0839_FB957E77 *)local_20 != (AnonNested_00443F30_0839_FB957E77 *)0x0
+      local_10 = nullptr;
+      if (((AnonNested_00443F30_0839_FB957E77 *)local_20 != nullptr
           ) && (local_24 = (AnonShape_00443F30_5DF553AC *)
                            (((AnonNested_00443F30_0839_FB957E77 *)local_20)->field_0000).count,
-               local_24 != (AnonShape_00443F30_5DF553AC *)0x0)) {
+               local_24 != nullptr)) {
         uVar13 = 0;
         iVar2 = iVar2 + (int)local_24 * 0x18;
         local_28 = iVar2;
         if (0 < (int)local_24) {
           do {
             DArrayGetElement(local_20,uVar13,&local_40);
-            if (local_40 != (uint *)0x0) {
+            if (local_40 != nullptr) {
               local_c = (byte *)FUN_006b0020(local_40,(int *)&local_8);
               FreeAndNull(&local_c);
               iVar2 = (int)&(local_8->field_0000).flags + iVar2;
               local_28 = iVar2;
             }
-            if (local_3c != (uint *)0x0) {
+            if (local_3c != nullptr) {
               local_c = (byte *)FUN_006b0020(local_3c,(int *)&local_8);
               FreeAndNull(&local_c);
               iVar2 = (int)&(local_8->field_0000).flags + iVar2;
               local_28 = iVar2;
             }
-            if (local_38 != (uint *)0x0) {
+            if (local_38 != nullptr) {
               local_c = (byte *)FUN_006b0020(local_38,(int *)&local_8);
               FreeAndNull(&local_c);
               iVar2 = (int)&(local_8->field_0000).flags + iVar2;
@@ -272,7 +272,7 @@ byte * __thiscall STAllPlayersC::SaveAllPlData(STAllPlayersC *this,int *param_1)
         pbVar9 = pbVar9 + 0x14;
         local_10 = (AnonShape_00443F30_9F0248D4 *)((int)&local_10[-1].field_0008 + 3);
         puVar6 = (byte *)(puVar6 + 4);
-      } while (local_10 != (AnonShape_00443F30_9F0248D4 *)0x0);
+      } while (local_10 != nullptr);
       pbVar9 = pbVar4 + 0x238;
       *(undefined4 *)(pbVar4 + 0x230) = *(undefined4 *)((int)piVar8 + 0x1fa);
       local_10 = (AnonShape_00443F30_9F0248D4 *)0xa;
@@ -285,7 +285,7 @@ byte * __thiscall STAllPlayersC::SaveAllPlData(STAllPlayersC *this,int *param_1)
         pbVar9 = pbVar9 + 0x14;
         local_10 = (AnonShape_00443F30_9F0248D4 *)((int)&local_10[-1].field_0008 + 3);
         puVar6 = (byte *)(puVar6 + 4);
-      } while (local_10 != (AnonShape_00443F30_9F0248D4 *)0x0);
+      } while (local_10 != nullptr);
       *(undefined4 *)(pbVar4 + 0x2fc) = *(undefined4 *)((int)piVar8 + 0x29e);
       *(undefined4 *)(pbVar4 + 0x300) = *(undefined4 *)((int)piVar8 + 0x2a2);
       *(undefined4 *)(pbVar4 + 0x304) = *(undefined4 *)((int)piVar8 + 0x2a6);
@@ -366,22 +366,22 @@ byte * __thiscall STAllPlayersC::SaveAllPlData(STAllPlayersC *this,int *param_1)
     pbVar9 = pbVar3 + 0x555c;
     memmove(pbVar9, puVar6, 0x18); /* compiler REP MOVS byte copy */
     local_1c = (DArrayTy *)0x5590;
-    local_20 = (DArrayTy *)0x0;
+    local_20 = nullptr;
     *(dword *)(pbVar3 + 0x5574) = g_array_007FA154->count;
     *(dword *)(pbVar3 + 0x5578) = g_array_007FA158->count;
     *(dword *)(pbVar3 + 0x557c) = g_array_007FA15C->count;
     *(dword *)(pbVar3 + 0x5580) = g_array_007FA160->count;
     *(dword *)(pbVar3 + 0x5584) = g_array_007FA164->count;
-    local_10 = (AnonShape_00443F30_9F0248D4 *)0x0;
+    local_10 = nullptr;
     pAVar14 = local_34;
     local_2c = pbVar3;
     do {
-      local_18 = (DArrayTy *)0x0;
+      local_18 = nullptr;
       pDVar10 = local_20;
       local_14 = local_24;
       if (0 < (int)pAVar14) {
         do {
-          if (*(uint **)local_14 == (uint *)0x0) {
+          if (*(uint **)local_14 == nullptr) {
             pbVar9 = pbVar3 + (int)(&pDVar10->count + (int)local_18 * 2);
             pbVar9[0] = 0xff;
             pbVar9[1] = 0xff;
@@ -424,14 +424,14 @@ byte * __thiscall STAllPlayersC::SaveAllPlData(STAllPlayersC *this,int *param_1)
       local_24 = (AnonShape_00443F30_5DF553AC *)&local_24[1].field_0x225;
       local_20 = (DArrayTy *)((int)&pDVar10[0x55].elementSize + 3);
     } while ((int)local_24 < 0x7fa13f);
-    local_14 = (AnonShape_00443F30_5DF553AC *)0x0;
+    local_14 = nullptr;
     local_10 = (AnonShape_00443F30_9F0248D4 *)&g_packedRecords_A62x8[0].field393_0x1bd;
     do {
-      local_24 = (AnonShape_00443F30_5DF553AC *)0x0;
+      local_24 = nullptr;
       local_18 = (DArrayTy *)local_10;
       do {
         if ((uint *)((AnonShape_00443F30_9F0248D4 *)((int)local_18 + -0x54))->field_0004 ==
-            (uint *)0x0) {
+            nullptr) {
           local_20 = (DArrayTy *)(pbVar3 + (int)(&local_14->field_0x0 + (int)local_24));
           *(undefined4 *)((int)&local_20[0xb].growCallback + 2) = 0xffffffff;
           *(undefined4 *)((int)&local_20[0xb].data + 2) = 0;
@@ -460,7 +460,7 @@ byte * __thiscall STAllPlayersC::SaveAllPlData(STAllPlayersC *this,int *param_1)
           local_1c = (DArrayTy *)((int)&local_1c->flags + (int)local_8);
           pbVar3 = local_2c;
         }
-        if (*(uint **)local_18 == (uint *)0x0) {
+        if (*(uint **)local_18 == nullptr) {
           *(undefined4 *)((int)&local_20[0xe].data + 2) = 0xffffffff;
           pbVar9 = (byte *)((int)&local_20[0xf].flags + 2);
           pbVar9[0] = 0;
@@ -495,13 +495,13 @@ byte * __thiscall STAllPlayersC::SaveAllPlData(STAllPlayersC *this,int *param_1)
       local_10 = (AnonShape_00443F30_9F0248D4 *)((int)&local_10[0xdd].field_0004 + 2);
       local_14 = (AnonShape_00443F30_5DF553AC *)&local_14[1].field_0x26e;
     } while ((int)local_10 < 0x7fa2ed);
-    local_18 = (DArrayTy *)0x0;
+    local_18 = nullptr;
     local_10 = (AnonShape_00443F30_9F0248D4 *)&g_packedRecords_A62x8[0].field452_0x211;
     do {
-      local_24 = (AnonShape_00443F30_5DF553AC *)0x0;
+      local_24 = nullptr;
       local_20 = (DArrayTy *)local_10;
       do {
-        if ((uint *)local_20->flags == (uint *)0x0) {
+        if ((uint *)local_20->flags == nullptr) {
           pbVar9 = pbVar3 + (int)local_18 + (int)local_24 + 0x246;
           pbVar9[0] = 0xff;
           pbVar9[1] = 0xff;
@@ -569,7 +569,7 @@ byte * __thiscall STAllPlayersC::SaveAllPlData(STAllPlayersC *this,int *param_1)
         pbVar4 = pbVar4 + (int)local_8;
         local_20 = (DArrayTy *)&local_20[2].iteratorIndex;
         local_30 = (int *)((int)local_30 + -1);
-      } while (local_30 != (int *)0x0);
+      } while (local_30 != nullptr);
       local_18 = (DArrayTy *)((int)&local_18[0x53].flags + 2);
       local_24 = (AnonShape_00443F30_5DF553AC *)
                  ((int)&((AnonShape_00443F30_9F0248D4 *)((int)local_24 + 0xaa4))->field_0004 + 3);
@@ -579,15 +579,15 @@ byte * __thiscall STAllPlayersC::SaveAllPlData(STAllPlayersC *this,int *param_1)
     do {
       local_10->field_0008 = (DArrayTy *)local_30[5];
       local_20 = (DArrayTy *)*local_30;
-      if ((local_20 == (DArrayTy *)0x0) ||
+      if ((local_20 == nullptr) ||
          (local_24 = (AnonShape_00443F30_5DF553AC *)local_20->count,
-         local_24 == (AnonShape_00443F30_5DF553AC *)0x0)) {
+         local_24 == nullptr)) {
         *(undefined4 *)local_10 = 0xffffffff;
         local_10->field_0004 = 0;
         pbVar3 = pbVar4;
       }
       else {
-        local_18 = (DArrayTy *)0x0;
+        local_18 = nullptr;
         local_8 = (AnonNested_00443F30_0839_FB957E77 *)((int)local_24 * 0x18);
         *(DArrayTy **)local_10 = local_1c;
         local_10->field_0004 = local_8;
@@ -598,9 +598,9 @@ byte * __thiscall STAllPlayersC::SaveAllPlData(STAllPlayersC *this,int *param_1)
           do {
             local_14 = pAVar11;
             DArrayGetElement(local_20,(uint)local_18,&local_40);
-            if (local_40 == (uint *)0x0) {
+            if (local_40 == nullptr) {
               *(undefined4 *)&pAVar11[-1].field_0x835 = 0xffffffff;
-              pAVar11[-1].field_0839 = (AnonNested_00443F30_0839_FB957E77 *)0x0;
+              pAVar11[-1].field_0839 = nullptr;
             }
             else {
               local_c = (byte *)FUN_006b0020(local_40,(int *)&local_8);
@@ -623,7 +623,7 @@ byte * __thiscall STAllPlayersC::SaveAllPlData(STAllPlayersC *this,int *param_1)
               local_1c = (DArrayTy *)((int)&(local_8->field_0000).flags + (int)&local_1c->flags);
               pAVar11 = local_14;
             }
-            if (local_3c == (uint *)0x0) {
+            if (local_3c == nullptr) {
               *(undefined4 *)pAVar11 = 0xffffffff;
               *(undefined4 *)&pAVar11->field_0x4 = 0;
             }
@@ -648,7 +648,7 @@ byte * __thiscall STAllPlayersC::SaveAllPlData(STAllPlayersC *this,int *param_1)
               local_1c = (DArrayTy *)((int)&(local_8->field_0000).flags + (int)&local_1c->flags);
               pAVar11 = local_14;
             }
-            if (local_38 == (uint *)0x0) {
+            if (local_38 == nullptr) {
               *(undefined4 *)&pAVar11->field_0x8 = 0xffffffff;
               *(undefined4 *)&pAVar11->field_0xc = 0;
             }

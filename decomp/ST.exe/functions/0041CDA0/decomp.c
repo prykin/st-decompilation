@@ -19,14 +19,14 @@ VisibleClassTy::sub_0041CDA0(VisibleClassTy *this,int param_1,int param_2,int pa
   }
   if (((-1 < param_1) &&
       (((param_1 < this->field_0020 && (-1 < param_2)) && (param_2 < this->field_0024)))) &&
-     (this->field_0038 != (byte *)0x0)) {
+     (this->field_0038 != nullptr)) {
     iVar2 = this->field_0020 * param_2;
     pbVar1 = this->field_0038 + (iVar2 + param_1) * 2;
-    if ((pbVar1 != (byte *)0x0) && (pbVar1[1] != 0)) {
+    if ((pbVar1 != nullptr) && (pbVar1[1] != 0)) {
       if (7 < param_4) {
         return 1;
       }
-      if (this->field_003C[param_4 + 6] == (void *)0x0) {
+      if (this->field_003C[param_4 + 6] == nullptr) {
         return 1;
       }
       if (*(char *)((int)this->field_003C[param_4 + 6] + param_1 + iVar2) == '\0') {

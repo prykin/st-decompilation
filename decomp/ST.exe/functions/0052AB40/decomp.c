@@ -35,7 +35,7 @@ void __cdecl CreateMiniMap(short *param_1,int *param_2,uint param_3,byte *param_
   *param_2 = 0;
   param_2[1] = 0;
   local_8 = 1.4142135;
-  local_10 = (ST3DSMAPContext *)0x0;
+  local_10 = nullptr;
   local_20 = 0;
   param_2[2] = 0;
   local_14 = 0;
@@ -44,18 +44,18 @@ void __cdecl CreateMiniMap(short *param_1,int *param_2,uint param_3,byte *param_
   g_currentExceptionFrame = &local_68;
   iVar5 = Library::MSVCRT::__setjmp3(local_68.jumpBuffer,0);
   if (iVar5 == 0) {
-    if (g_cLoading_00802A58 != (cLoadingTy *)0x0) {
+    if (g_cLoading_00802A58 != nullptr) {
       cLoadingTy::SetProcess(g_cLoading_00802A58,0,"Preparing mini-map...",900);
     }
     pAVar6 = (AnonShape_006DBCA0_EF06575F *)FUN_006b04d0(0x4f2);
-    if (pAVar6 == (AnonShape_006DBCA0_EF06575F *)0x0) {
-      this = (ST3DSMAPContext *)0x0;
+    if (pAVar6 == nullptr) {
+      this = nullptr;
     }
     else {
       this = (ST3DSMAPContext *)FUN_006dbca0(pAVar6);
     }
     local_10 = this;
-    if (this == (ST3DSMAPContext *)0x0) {
+    if (this == nullptr) {
       RaiseInternalException
                 (-2,g_overwriteContext_007ED77C,"E:\\__titans\\Andrey\\minimap.cpp",0x16);
     }
@@ -67,30 +67,29 @@ void __cdecl CreateMiniMap(short *param_1,int *param_2,uint param_3,byte *param_
                (double)((float)(int)local_1c * local_8 * _DAT_007904f4),
                (double)((float)local_18 * local_8 * _DAT_007904f4),
                (double)((float)-(int)param_1[1] * local_8 * _DAT_007904f4),
-               (double)((float)(int)param_1[1] * local_8 * _DAT_007904f4),0x4024000000000000,
-               0x4023ee97865e3540,0);
-    *(uint *)&this->field_0x128 = (uint)*param_4;
-    *(undefined4 *)&this->field_0x124 = 2;
+               (double)((float)(int)param_1[1] * local_8 * _DAT_007904f4),10.0,9.965999793052674,0);
+    this->field_0128 = (uint)*param_4;
+    this->field_0124 = 2;
     bVar2 = param_4[1];
     bVar3 = param_4[2];
     bVar4 = param_4[3];
-    this->field_0x438 = param_4[0];
-    this->field_0x439 = bVar2;
-    this->field_0x43a = bVar3;
-    this->field_0x43b = bVar4;
+    this->field_0438 = param_4[0];
+    this->field_0439 = bVar2;
+    this->field_043A = bVar3;
+    this->field_043B = bVar4;
     bVar2 = param_4[5];
     iVar5 = 0;
-    this->field_0x43c = param_4[4];
-    this->field_0x43d = bVar2;
+    this->field_043C = param_4[4];
+    this->field_043D = bVar2;
     /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
     if (0 < *(int *)((int)param_1 + 0x455)) {
       piVar9 = (int *)((int)param_1 + 0x459);
       do {
         puVar7 = (undefined4 *)*piVar9;
-        if ((puVar7 != (undefined4 *)0x0) && (*(short *)(puVar7 + 2) != 0)) {
-          *puVar7 = *(undefined4 *)&this->field_0x140;
-          *(undefined4 **)&this->field_0x140 = puVar7;
-          *(int *)&this->field_0x13c = *(int *)&this->field_0x13c + 1;
+        if ((puVar7 != nullptr) && (*(short *)(puVar7 + 2) != 0)) {
+          *puVar7 = this->field_0140;
+          this->field_0140 = puVar7;
+          this->field_013C = this->field_013C + 1;
         }
         iVar5 = iVar5 + 1;
         piVar9 = piVar9 + 1;
@@ -102,21 +101,19 @@ void __cdecl CreateMiniMap(short *param_1,int *param_2,uint param_3,byte *param_
     local_c = param_2;
     do {
       uVar8 = local_1c;
-      if (g_cLoading_00802A58 != (cLoadingTy *)0x0) {
-        cLoadingTy::SetState(g_cLoading_00802A58,CASE_1,local_14,(char *)0x0);
+      if (g_cLoading_00802A58 != nullptr) {
+        cLoadingTy::SetState(g_cLoading_00802A58,CASE_1,local_14,nullptr);
       }
       local_14 = local_14 + 1;
       local_18 = (int)*param_1;
       ST3DSMAPContext::sub_006DD610
-                (this,uVar8 | 8,SUB84((double)((float)local_18 * _DAT_007904f4),0),
-                 (int)((ulonglong)(double)((float)local_18 * _DAT_007904f4) >> 0x20),
-                 SUB84((double)((float)(int)param_1[1] * _DAT_007904f4),0),
-                 (int)((ulonglong)(double)((float)(int)param_1[1] * _DAT_007904f4) >> 0x20));
+                (this,uVar8 | 8,(double)((float)local_18 * _DAT_007904f4),
+                 (double)((float)(int)param_1[1] * _DAT_007904f4));
       ST3DSMAPContext::sub_006DDBE0(this);
       ST3DSMAPContext::sub_006DDD50(this);
       puVar7 = Library::DKW::LIB::FUN_006aac10(local_24);
       *local_c = (int)puVar7;
-      if (puVar7 == (undefined4 *)0x0) {
+      if (puVar7 == nullptr) {
         RaiseInternalException
                   (-2,g_overwriteContext_007ED77C,"E:\\__titans\\Andrey\\minimap.cpp",0x2f);
       }
@@ -124,7 +121,7 @@ void __cdecl CreateMiniMap(short *param_1,int *param_2,uint param_3,byte *param_
       if (0 < (int)param_3) {
         local_18 = 0;
         do {
-          puVar7 = (undefined4 *)(this->field_0028 * iVar5 + *(int *)&this->field_0xc);
+          puVar7 = (undefined4 *)(this->field_0028 * iVar5 + this->field_000C);
           puVar11 = (undefined4 *)(*local_c + local_18);
           for (uVar8 = param_3 >> 2; uVar8 != 0; uVar8 = uVar8 - 1) {
             *puVar11 = *puVar7;
@@ -157,7 +154,7 @@ void __cdecl CreateMiniMap(short *param_1,int *param_2,uint param_3,byte *param_
       STDebugBreak(); /* noreturn in standalone pseudocode */
     }
   }
-  if (this != (ST3DSMAPContext *)0x0) {
+  if (this != nullptr) {
     ST3DSMAPContext::sub_006DBCF0(this);
     Library::MSVCRT::FUN_0072e2b0((HoloTy *)this);
   }
@@ -171,8 +168,8 @@ void __cdecl CreateMiniMap(short *param_1,int *param_2,uint param_3,byte *param_
     RaiseInternalException
               (iVar5,g_overwriteContext_007ED77C,"E:\\__titans\\Andrey\\minimap.cpp",0x42);
   }
-  if (g_cLoading_00802A58 != (cLoadingTy *)0x0) {
-    cLoadingTy::SetState(g_cLoading_00802A58,CASE_2,0,(char *)0x0);
+  if (g_cLoading_00802A58 != nullptr) {
+    cLoadingTy::SetState(g_cLoading_00802A58,CASE_2,0,nullptr);
   }
   return;
 }

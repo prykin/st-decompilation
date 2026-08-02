@@ -32,11 +32,11 @@ undefined4 FUN_004b7750(uint param_1)
     if (iVar4 < iVar3) {
       pDVar7 = (DArrayTy *)g_packedRecords_A62x8[iVar2].field6_0x9;
       iVar3 = 0;
-      if ((pDVar7 != (DArrayTy *)0x0) && (local_10 = 0, pDVar7->count != 0)) {
+      if ((pDVar7 != nullptr) && (local_10 = 0, pDVar7->count != 0)) {
 LAB_004b77c4:
         DArrayGetElement(pDVar7,local_10,local_c);
         /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-        if ((local_c[0] != (int *)0x0) &&
+        if ((local_c[0] != nullptr) &&
            ((iVar4 = (**(code **)(*local_c[0] + 0x2c))(), iVar4 != 0x78 ||
             (iVar4 = thunk_FUN_004b7520(param_1,*(Global_sub_004B7520_param_2Enum *)
                                                  ((int)local_c[0] + 0x259)), iVar4 != 0)))) {

@@ -38,7 +38,7 @@ void __thiscall FUN_0064d0e0(void *this,int param_1,char *param_2,undefined4 par
     pcVar1 = LoadResourceString(0x1d4c - param_1,g_module_00807618);
     text = LoadResourceString(0x1b5f,g_module_00807618);
     wsprintfA((LPSTR)local_404,text,param_1,pcVar1,param_2);
-    if (g_popUp_008016D8 != (PopUpTy *)0x0) {
+    if (g_popUp_008016D8 != nullptr) {
       thunk_FUN_0052d320(g_popUp_008016D8,(char *)local_404,8);
     }
     thunk_FUN_0064a5b0(local_404);
@@ -52,7 +52,7 @@ void __thiscall FUN_0064d0e0(void *this,int param_1,char *param_2,undefined4 par
       pcVar1 = LoadResourceString(0x1b61,g_module_00807618);
       wsprintfA((LPSTR)local_404,pcVar1,iVar2,param_3,param_4);
     }
-    if (g_popUp_008016D8 != (PopUpTy *)0x0) {
+    if (g_popUp_008016D8 != nullptr) {
       thunk_FUN_0052d320(g_popUp_008016D8,(char *)local_404,8);
     }
     thunk_FUN_0064a5b0(local_404);

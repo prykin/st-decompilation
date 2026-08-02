@@ -43,12 +43,12 @@ void __thiscall UpgPanelTy::InitUpgPanel(UpgPanelTy *this)
     SpecPanelTy::InitPanel
               ((SpecPanelTy *)this_00,pCVar3,iVar2,uVar5,iVar6,iVar9,UVar10,uVar11,uVar12);
     puVar4 = Library::Ourlib::MFRLOAD::mfRLoad
-                       (DAT_00806794,CASE_B,&DAT_007c20a0,0xffffffff,0,1,0,(undefined4 *)0x0);
+                       (DAT_00806794,CASE_B,&DAT_007c20a0,0xffffffff,0,1,0,nullptr);
     this_00->field_03EB = puVar4;
     puVar4 = Library::Ourlib::MFRLOAD::mfRLoad
-                       (DAT_00806794,CASE_B,&DAT_007c38c8,0xffffffff,0,1,0,(undefined4 *)0x0);
+                       (DAT_00806794,CASE_B,&DAT_007c38c8,0xffffffff,0,1,0,nullptr);
     this_00->field_03EF = puVar4;
-    puVar13 = (undefined4 *)0x0;
+    puVar13 = nullptr;
     iVar6 = 0;
     iVar2 = 1;
     bVar8 = 0;

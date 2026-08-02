@@ -108,7 +108,7 @@ void FUN_006cf950(uint *param_1)
           return;
         }
         piVar1 = *(int **)(param_1[0x33] + param_1[0x31] * 4);
-        if (piVar1 != (int *)0x0) {
+        if (piVar1 != nullptr) {
           local_a0 = 0x7c;
           local_9c = 6;
           /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */

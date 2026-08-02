@@ -8,8 +8,8 @@ undefined4 * __fastcall FUN_00609950(STGroupBoatC *param_1)
 
   STGameObjC::STGameObjC((STGameObjC *)param_1);
   param_1->vtable = (STGroupBoatCVTable *)&VTable_0079CC28;
-  if (param_1 == (STGroupBoatC *)0x0) {
-    puVar2 = (undefined4 *)0x0;
+  if (param_1 == nullptr) {
+    puVar2 = nullptr;
   }
   else {
     puVar2 = (undefined4 *)&param_1->field_0x1d5;

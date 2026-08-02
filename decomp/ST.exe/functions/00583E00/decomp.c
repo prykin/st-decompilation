@@ -12,10 +12,10 @@ void * __cdecl FUN_00583e00(void)
   STJellyGunC *pSVar1;
 
   pSVar1 = (STJellyGunC *)FUN_006b04d0(0x294);
-  if (pSVar1 != (STJellyGunC *)0x0) {
+  if (pSVar1 != nullptr) {
     pSVar1 = STJellyGunC::STJellyGunC(pSVar1);
     return pSVar1;
   }
-  return (void *)0x0;
+  return nullptr;
 }
 

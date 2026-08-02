@@ -39,6 +39,8 @@ Original binaries are local under ignored `bin/` and must not be committed.
 - Treat `manual_type_conflicts.tsv` as a review queue, not an apply list. Strong
   contradictory evidence makes a protected type suspicious, but never licenses
   silently replacing `USER_DEFINED`/`IMPORTED` work.
+- Do not emit wall-clock start/end timestamps into committed corpus, recovery,
+  or handoff artifacts. Elapsed durations are diagnostic and may be retained.
 
 ## Important technical constraints
 
@@ -80,6 +82,13 @@ Original binaries are local under ignored `bin/` and must not be committed.
 - `RecoveredRecord_<Owner>_<Address>` is a deterministic generated identity for
   one complete one-owner pointer shape. It is not an asserted original type name
   and never licenses geometry-only merging.
+- A non-vtable function-pointer field is automatic only when one exact generated
+  structure member has both a stored function-address family with a unanimous
+  trusted ABI and an indirect call loaded from that same member.
+- A bulk zero span proves an extent, not an array element type. Install a fixed
+  inline array only when independent indexed-stride evidence agrees; install a
+  nested by-value member only for an exact complete typed copy into an
+  automation-owned range.
 
 ## Validation and hygiene
 

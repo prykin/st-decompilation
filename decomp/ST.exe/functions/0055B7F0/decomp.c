@@ -16,8 +16,8 @@ void __thiscall VisibleClassTy::sub_0055B7F0(VisibleClassTy *this,int param_1,un
   bool bVar5;
 
   if ((((this->field_0114 != 0) && (param_2 < (undefined *)0x8)) &&
-      ((g_playSystem_00802A38 == (STPlaySystemC *)0x0 ||
-       ((byte)(&DAT_008087e9)[(int)param_2 * 0x51] < 8)))) &&
+      ((g_playSystem_00802A38 == nullptr ||
+       (g_bulkInitializedRecords_008087C7[(int)param_2].field_0022 < 8)))) &&
      (param_2 != (undefined *)(uint)DAT_0080874d)) {
     if (param_1 == 0) {
       if ((param_2 + 0xfc)[(int)this] == '\0') {
@@ -39,7 +39,7 @@ void __thiscall VisibleClassTy::sub_0055B7F0(VisibleClassTy *this,int param_1,un
           element_0110 = DArrayAt<VisibleClassTy_field_0110Element>(pVVar2, uVar4);
         }
         else {
-          element_0110 = (VisibleClassTy_field_0110Element *)0x0;
+          element_0110 = nullptr;
         }
         piVar3 = (int *)(uint)(byte)element_0110->field_0001;
         if (piVar3 == (int *)param_2) {

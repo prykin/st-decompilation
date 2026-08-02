@@ -27,8 +27,8 @@ int __thiscall AiFltClassTy::InitData(AiFltClassTy *this,undefined4 *param_1)
   iVar4 = Library::MSVCRT::__setjmp3(local_50.jumpBuffer,0);
   pAVar3 = local_c;
   if (iVar4 == 0) {
-    if (local_c == (AiFltClassTy *)0x0) {
-      puVar9 = (byte *)0x0;
+    if (local_c == nullptr) {
+      puVar9 = nullptr;
     }
     else {
       puVar9 = (byte *)(&local_c->field_0020);
@@ -41,32 +41,32 @@ int __thiscall AiFltClassTy::InitData(AiFltClassTy *this,undefined4 *param_1)
     local_8 = 7;
     ppDVar8 = ppDVar1;
     do {
-      if (*ppDVar8 != (DArrayTy *)0x0) {
+      if (*ppDVar8 != nullptr) {
         pDVar5 = (DArrayTy *)
-                 FUN_006b0060((uint *)0x0,(uint *)((int)ppDVar8[1] + 0x25f + (int)param_1));
+                 FUN_006b0060(nullptr,(uint *)((int)ppDVar8[1] + 0x25f + (int)param_1));
         *ppDVar8 = pDVar5;
       }
       ppDVar8 = ppDVar8 + 3;
       local_8 = local_8 + -1;
     } while (local_8 != 0);
-    if (*ppDVar1 == (DArrayTy *)0x0) {
-      pDVar5 = Library::DKW::TBL::DArrayCreate((DArrayTy *)0x0,10,0x2c,10);
+    if (*ppDVar1 == nullptr) {
+      pDVar5 = Library::DKW::TBL::DArrayCreate(nullptr,10,0x2c,10);
       *ppDVar1 = pDVar5;
     }
-    if (pAVar3->field_0217 == (DArrayTy *)0x0) {
-      pDVar5 = Library::DKW::TBL::DArrayCreate((DArrayTy *)0x0,0x14,0x34,10);
+    if (pAVar3->field_0217 == nullptr) {
+      pDVar5 = Library::DKW::TBL::DArrayCreate(nullptr,0x14,0x34,10);
       pAVar3->field_0217 = pDVar5;
     }
-    if (pAVar3->field_0223 == (AnonPointee_AiFltClassTy_0223 *)0x0) {
-      pDVar5 = Library::DKW::TBL::DArrayCreate((DArrayTy *)0x0,10,0x14,10);
+    if (pAVar3->field_0223 == nullptr) {
+      pDVar5 = Library::DKW::TBL::DArrayCreate(nullptr,10,0x14,10);
       pAVar3->field_0223 = (AnonPointee_AiFltClassTy_0223 *)pDVar5;
     }
-    if (pAVar3->field_022F == (AnonPointee_AiFltClassTy_022F *)0x0) {
-      pDVar5 = Library::DKW::TBL::DArrayCreate((DArrayTy *)0x0,10,0xc,10);
+    if (pAVar3->field_022F == nullptr) {
+      pDVar5 = Library::DKW::TBL::DArrayCreate(nullptr,10,0xc,10);
       pAVar3->field_022F = (AnonPointee_AiFltClassTy_022F *)pDVar5;
     }
-    if (pAVar3->field_023B == (DArrayTy *)0x0) {
-      pDVar5 = Library::DKW::TBL::DArrayCreate((DArrayTy *)0x0,10,4,10);
+    if (pAVar3->field_023B == nullptr) {
+      pDVar5 = Library::DKW::TBL::DArrayCreate(nullptr,10,4,10);
       pAVar3->field_023B = pDVar5;
     }
     g_currentExceptionFrame = local_50.previous;

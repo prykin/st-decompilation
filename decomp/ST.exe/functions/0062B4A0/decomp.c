@@ -66,7 +66,7 @@ uint __thiscall STParticleC::sub_0062B4A0(STParticleC *this)
     uVar5 = FUN_006ddbd0();
     pVVar4 = g_visibleClass_00802A88;
     uVar6 = uVar5;
-    if (((uVar5 == 0) || (g_visibleClass_00802A88 == (VisibleClassTy *)0x0)) ||
+    if (((uVar5 == 0) || (g_visibleClass_00802A88 == nullptr)) ||
        ((DAT_0080874d == -1 || (uVar6 = 0, g_visibleClass_00802A88->field_00F8 == 0))))
     goto cf_common_exit_0062B616;
     VisibleClassTy::sub_00558C00
@@ -78,7 +78,7 @@ uint __thiscall STParticleC::sub_0062B4A0(STParticleC *this)
         ((((pVVar4->field_0030 <= local_14 ||
            (uVar6 = g_centeredOffsets5[local_10] + local_c, (int)uVar6 < 0)) ||
           (pVVar4->field_0034 <= (int)uVar6)) ||
-         ((pVVar4->field_004C == (byte *)0x0 ||
+         ((pVVar4->field_004C == nullptr ||
           (uVar6 = (uint)pVVar4->field_004C[local_14 + uVar6 * pVVar4->field_0030], uVar6 != 0))))))
        )) goto cf_common_exit_0062B616;
   }

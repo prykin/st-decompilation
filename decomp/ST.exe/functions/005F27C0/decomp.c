@@ -68,7 +68,7 @@ int __thiscall STBHEShellC::GetMessage(STBHEShellC *this,STMessage *message)
         g_currentExceptionFrame = local_6c.previous;
         return 0;
       }
-      pcVar12 = (code *)0x0;
+      pcVar12 = nullptr;
     }
     else {
       if (SVar1 != MESS_STSPRGAMEOBJC_0113) {
@@ -290,7 +290,7 @@ LAB_005f2d8b:
       this_00->field_0104 = CASE_4;
     }
     pVVar4 = g_visibleClass_00802A88;
-    if (g_visibleClass_00802A88 != (VisibleClassTy *)0x0) {
+    if (g_visibleClass_00802A88 != nullptr) {
       iVar5 = this_00->field_009B;
       sVar3 = (short)(iVar5 >> 0x1f);
       if (iVar5 < 0) {
@@ -336,7 +336,7 @@ LAB_005f2d8b:
         else {
           bVar11 = true;
         }
-        if ((bVar11) && (pVVar4->field_004C != (byte *)0x0)) {
+        if ((bVar11) && (pVVar4->field_004C != nullptr)) {
           bVar11 = pVVar4->field_004C
                    [local_24 + (g_centeredOffsets5[local_18] + local_28) * pVVar4->field_0030] != 0;
         }

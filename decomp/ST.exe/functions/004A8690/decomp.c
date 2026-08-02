@@ -32,7 +32,7 @@ void __thiscall STGroupBoatC::GenSwitch(STGroupBoatC *this,int param_1)
         /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
         this_00 = STAllPlayersC::GetObjPtr
                             (g_allPlayers_007FA174,this->field_0024,local_8._0_2_,CASE_1);
-        if (this_00 == (STGameObjC *)0x0) {
+        if (this_00 == nullptr) {
           iVar3 = ReportDebugMessage("E:\\__titans\\wlad\\to_grpb.cpp",0x1742,0,0,
                                      "%s","STGroupBoatC::GenSwitch NULL");
           if (iVar3 != 0) {

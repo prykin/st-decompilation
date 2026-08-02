@@ -30,7 +30,7 @@ int __thiscall STRubbishC::sub_0062FCA0(STRubbishC *this,AnonShape_0062FCA0_22A9
         iVar3 = 5;
         do {
           piVar1 = (int *)*puVar5;
-          if (((piVar1 != (int *)0x0) && (piVar1[1] != 3)) && (piVar1[1] != 6)) {
+          if (((piVar1 != nullptr) && (piVar1[1] != 3)) && (piVar1[1] != 6)) {
             *piVar1 = *piVar1 + iVar4 / 5;
           }
           puVar5 = puVar5 + 1;

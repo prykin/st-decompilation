@@ -16,7 +16,7 @@ undefined4 FUN_006c19d0(int param_1,uint param_2)
   if (param_1 != 0) {
     iVar4 = param_2 * 0xc4;
     if ((((&DAT_00854ff8)[iVar4] & 2) == 0) &&
-       (piVar1 = (int *)(&DAT_00855004)[param_2 * 0x31], piVar1 != (int *)0x0)) {
+       (piVar1 = (int *)(&DAT_00855004)[param_2 * 0x31], piVar1 != nullptr)) {
       /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
       uVar3 = (**(code **)(*piVar1 + 0x48))(piVar1);
     }
@@ -25,7 +25,7 @@ undefined4 FUN_006c19d0(int param_1,uint param_2)
   }
   iVar4 = param_2 * 0xc4;
   if ((((&DAT_00854ff8)[iVar4] & 2) != 0) &&
-     (piVar1 = (int *)(&DAT_00855004)[param_2 * 0x31], piVar1 != (int *)0x0)) {
+     (piVar1 = (int *)(&DAT_00855004)[param_2 * 0x31], piVar1 != nullptr)) {
     if ((*(int *)(&DAT_008550b8 + iVar4) < 1) &&
        ((*(byte *)(&DAT_00854ffc + param_2 * 0x31) & 1) == 0)) {
       uVar5 = 0;

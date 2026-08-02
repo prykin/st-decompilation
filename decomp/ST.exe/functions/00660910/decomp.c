@@ -17,7 +17,7 @@ undefined4 __thiscall FUN_00660910(void *this,short param_1,short param_2,short 
     pSVar1 = g_worldGrid.cells
              [(int)g_worldGrid.planeStride * (int)param_3 + (int)g_worldGrid.sizeX * (int)param_2 +
               (int)param_1].objects[0];
-    if (pSVar1 != (STWorldObject *)0x0) {
+    if (pSVar1 != nullptr) {
       local_c = *(undefined1 *)&pSVar1[1].vtable;
       uStack_b = *(undefined2 *)&pSVar1[1].field_0xe;
       uVar2 = *(undefined4 *)&pSVar1->field_0x18;
@@ -25,9 +25,9 @@ undefined4 __thiscall FUN_00660910(void *this,short param_1,short param_2,short 
       local_8 = (undefined2)((uint)uVar2 >> 8);
       local_6 = (undefined1)((uint)uVar2 >> 0x18);
       if ((*(ushort *)((int)this + 0x7d) != 0xfffe) &&
-         (g_allPlayers_007FA174 != (STAllPlayersC *)0x0)) {
+         (g_allPlayers_007FA174 != nullptr)) {
         this_00 = thunk_FUN_0042b760(*(char *)((int)this + 0x24),*(ushort *)((int)this + 0x7d));
-        if (this_00 != (STGroupBoatC *)0x0) {
+        if (this_00 != nullptr) {
           this_00->sub_00498D20(0xf,&local_c);
           return 0;
         }

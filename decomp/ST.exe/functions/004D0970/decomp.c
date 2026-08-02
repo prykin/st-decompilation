@@ -25,8 +25,7 @@ undefined4 __thiscall FUN_004d0970(void *this,int param_1,int param_2,int param_
   if (*(int *)((int)this + 0x249) <= *(int *)((int)this + 0x245) + 1) {
     iVar1 = *(int *)((int)this + 0x249) + 10;
     *(int *)((int)this + 0x249) = iVar1;
-    pvVar2 = Library::DKW::LIB::MemRealloc
-                       (*(AnonPointee_TLOBaseTy_0607 **)((int)this + 0x24d),iVar1 * 0xc);
+    pvVar2 = Library::DKW::LIB::MemRealloc(*(void **)((int)this + 0x24d),iVar1 * 0xc);
     *(void **)((int)this + 0x24d) = pvVar2;
   }
   *(int *)(*(int *)((int)this + 0x24d) + *(int *)((int)this + 0x245) * 0xc) = param_1;

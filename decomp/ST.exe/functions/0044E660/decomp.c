@@ -12,10 +12,10 @@ void * __cdecl FUN_0044e660(void)
   STAllPlayersC *pSVar1;
 
   pSVar1 = (STAllPlayersC *)FUN_006b04d0(0x20);
-  if (pSVar1 != (STAllPlayersC *)0x0) {
+  if (pSVar1 != nullptr) {
     pSVar1 = STAllPlayersC::STAllPlayersC(pSVar1);
     return pSVar1;
   }
-  return (void *)0x0;
+  return nullptr;
 }
 

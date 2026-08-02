@@ -26,9 +26,9 @@ int __thiscall AiTactClassTy::sub_0068E610(AiTactClassTy *this,int param_1)
         element_00a5 = DArrayAt<AiTactClassTy_field_00A5Element>(pAVar3, uVar5);
       }
       else {
-        element_00a5 = (AiTactClassTy_field_00A5Element *)0x0;
+        element_00a5 = nullptr;
       }
-      if ((AnonReceiver_0065DA50 *)element_00a5->field_0004 != (AnonReceiver_0065DA50 *)0x0) {
+      if ((AnonReceiver_0065DA50 *)element_00a5->field_0004 != nullptr) {
         uVar2 = SubmarineTitans::Recovered::HiddenThis::AnonReceiver_0065DA50::thunk_FUN_0065da50
                           ((AnonReceiver_0065DA50 *)element_00a5->field_0004,param_1,-1);
         iVar4 = iVar4 + uVar2;

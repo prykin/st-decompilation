@@ -74,14 +74,14 @@ SubmarineTitans::Recovered::HiddenThis::AnonReceiver_004167A0::FUN_00418030
     if (((param_1 < 0) || (g_worldGrid.sizeX <= param_1)) ||
        ((param_2 < 0 ||
         (((g_worldGrid.sizeY <= param_2 || (param_3 < 0)) || (g_worldGrid.sizeZ <= param_3)))))) {
-      pSVar6 = (STWorldObject *)0x0;
+      pSVar6 = nullptr;
     }
     else {
       pSVar6 = g_worldGrid.cells
                [(int)local_2c + g_worldGrid.sizeX * iVar4 + g_worldGrid.planeStride * iVar14].
                objects[(byte)local_58->field_008E];
     }
-    if (pSVar6 == (STWorldObject *)0x0) {
+    if (pSVar6 == nullptr) {
       *(undefined4 *)&local_58->field_0x9b = 2;
       puVar7 = (ushort *)Library::DKW::LIB::FUN_006aac10(0x10);
       this_00->field_0097 = puVar7;
@@ -133,7 +133,7 @@ SubmarineTitans::Recovered::HiddenThis::AnonReceiver_004167A0::FUN_00418030
   else {
     local_24 = (short *)(((int)g_pathingGrid.sizeZ - (int)sVar3) + -1);
   }
-  local_c = (short *)0x0;
+  local_c = nullptr;
   local_1c = local_4c;
   if (-(int)local_24 == iVar14 || (int)local_4c < (int)local_24) {
     local_20 = local_54 + (iVar14 * -7 + local_34) * 7;
@@ -155,7 +155,7 @@ SubmarineTitans::Recovered::HiddenThis::AnonReceiver_004167A0::FUN_00418030
             if (((sVar3 < 0) || (g_worldGrid.sizeX <= sVar3)) ||
                (((sVar13 < 0 || ((g_worldGrid.sizeY <= sVar13 || (sVar11 < 0)))) ||
                 (g_worldGrid.sizeZ <= sVar11)))) {
-              pSVar10 = (STBoatC *)0x0;
+              pSVar10 = nullptr;
             }
             else {
               pSVar10 = (STBoatC *)
@@ -164,12 +164,12 @@ SubmarineTitans::Recovered::HiddenThis::AnonReceiver_004167A0::FUN_00418030
                          (int)sVar13 * (int)g_worldGrid.sizeX + (int)sVar3].objects[0];
             }
             psVar15 = local_50;
-            if (pSVar10 == (STBoatC *)0x0) {
+            if (pSVar10 == nullptr) {
               if (this_00->field_008E != '\0') {
                 if (((((sVar3 < 0) || (g_worldGrid.sizeX <= sVar3)) || (sVar13 < 0)) ||
                     ((g_worldGrid.sizeY <= sVar13 || (sVar11 < 0)))) ||
                    (g_worldGrid.sizeZ <= sVar11)) {
-                  pSVar10 = (STBoatC *)0x0;
+                  pSVar10 = nullptr;
                 }
                 else {
                   pSVar10 = (STBoatC *)
@@ -179,7 +179,7 @@ SubmarineTitans::Recovered::HiddenThis::AnonReceiver_004167A0::FUN_00418030
                   psVar15 = (short *)(int)g_worldGrid.sizeX;
                 }
               }
-              if (pSVar10 != (STBoatC *)0x0) goto LAB_004183b8;
+              if (pSVar10 != nullptr) goto LAB_004183b8;
             }
             else {
 LAB_004183b8:
@@ -205,9 +205,9 @@ LAB_004183b8:
       psVar9 = local_20;
     } while ((int)local_1c <= (int)local_24);
   }
-  if (local_c == (short *)0x0) {
+  if (local_c == nullptr) {
     FreeAndNull(&local_14);
-    local_44 = (short *)0x0;
+    local_44 = nullptr;
   }
   local_50 = (short *)(int)param_2;
   psVar15 = local_44;
@@ -220,7 +220,7 @@ LAB_004183b8:
                       (short *)(int)this_00->field_004B,local_2c,local_50,(short *)(int)param_3,
                       (int *)&this_00->field_0x9b,(undefined4 *)local_14,psVar15);
   this_00->field_0097 = puVar7;
-  if (puVar7 == (ushort *)0x0) {
+  if (puVar7 == nullptr) {
     iVar4 = (int)g_pathingGrid.planeStride;
     iVar14 = (int)g_pathingGrid.sizeZ;
     psVar15 = g_pathingGrid.cells;
@@ -235,7 +235,7 @@ LAB_004183b8:
       psVar15 = (short *)((int)psVar15 + 1);
       psVar9 = (short *)((int)psVar9 + 1);
     }
-    if ((local_c != (short *)0x0) && (local_1c = local_4c, (int)local_4c <= (int)local_24)) {
+    if ((local_c != nullptr) && (local_1c = local_4c, (int)local_4c <= (int)local_24)) {
       local_c = local_54 + ((int)local_4c * 7 + local_34) * 7;
       do {
         local_10 = g_pathingScratchGrid.cells +
@@ -261,7 +261,7 @@ LAB_004183b8:
             iVar4 = iVar4 + -1;
             local_10 = local_10 + g_pathingGrid.sizeX;
           } while (iVar4 != 0);
-          local_20 = (short *)0x0;
+          local_20 = nullptr;
         }
         local_1c = (short *)((int)local_1c + 1);
         local_c = local_c + 0x31;
@@ -280,7 +280,7 @@ LAB_004183b8:
 LAB_0041862b:
   g_currentExceptionFrame = local_9c.previous;
   puVar7 = this_00->field_0097;
-  if (puVar7 == (ushort *)0x0) {
+  if (puVar7 == nullptr) {
     return 2;
   }
   this_00->field_00E3 = 1;
@@ -300,20 +300,20 @@ LAB_0041862b:
   uVar5 = (int)(short)local_c - (int)this_00->field_0045;
   uVar12 = (int)uVar5 >> 0x1f;
   local_10 = (short *)((uVar5 ^ uVar12) - uVar12);
-  if (local_10 == (short *)0x0) {
+  if (local_10 == nullptr) {
     /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
     local_14 = (short *)CONCAT31(local_14._1_3_,this_00->field_0061);
   }
   else {
     bVar1 = 2 < (int)local_10 / (int)local_54;
-    local_5 = local_54 == (short *)0x0 || bVar1;
-    if ((local_4c == (short *)0x0) || (2 < (int)local_10 / (int)local_4c)) {
+    local_5 = local_54 == nullptr || bVar1;
+    if ((local_4c == nullptr) || (2 < (int)local_10 / (int)local_4c)) {
       bVar2 = true;
     }
     else {
       bVar2 = false;
     }
-    if ((local_54 == (short *)0x0 || bVar1) && (bVar2)) {
+    if ((local_54 == nullptr || bVar1) && (bVar2)) {
       /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
       local_14 = (short *)CONCAT31(local_14._1_3_,this_00->field_0062);
     }

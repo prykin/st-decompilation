@@ -15,7 +15,7 @@ void __thiscall FUN_00584c50(void *this,undefined4 *param_1)
   undefined2 local_14;
   undefined2 local_12;
 
-  if (param_1 != (undefined4 *)0x0) {
+  if (param_1 != nullptr) {
     memset(local_20, 0, 0x1c); /* compiler bulk-zero initialization */
     iVar1 = 0;
     local_14 = *(undefined2 *)((int)this + 0x284);
@@ -25,7 +25,7 @@ void __thiscall FUN_00584c50(void *this,undefined4 *param_1)
     local_40[2] = (undefined4 *)param_1[2];
     ppuVar3 = local_40;
     for (iVar1 = 8; iVar1 != 0; iVar1 = iVar1 + -1) {
-      *ppuVar3 = (undefined4 *)0x0;
+      *ppuVar3 = nullptr;
       ppuVar3 = ppuVar3 + 1;
     }
     local_40[5] = local_20;

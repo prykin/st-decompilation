@@ -57,10 +57,10 @@ FUN_007543f0(AnonShape_007543F0_E9DD5DAA *param_1,undefined4 *param_2,undefined4
     iVar4 = param_1->field_000C;
     iVar3 = *(int *)(iVar4 + 0x44 + *(int *)(iVar4 + 0x1c) * 8) + 0x10 + iVar3;
   /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-  } while ((*(code **)(iVar4 + 0xc) != (code *)0x0) &&
+  } while ((*(code **)(iVar4 + 0xc) != nullptr) &&
           (iVar4 = (**(code **)(iVar4 + 0xc))(iVar3 + 8,*(undefined4 *)(iVar4 + 0x10)), iVar4 != 0));
   *param_3 = *(undefined4 *)(iVar3 + 4);
-  if (param_2 != (undefined4 *)0x0) {
+  if (param_2 != nullptr) {
     /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
     sVar1 = *(short *)(param_1->field_000C + 0x34);
     if (sVar1 == 0) {

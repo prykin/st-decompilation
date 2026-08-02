@@ -27,15 +27,15 @@ void __thiscall SettMapTy::DoneSettMap(SettMapTy *this)
   pSVar2 = local_8;
   if (iVar3 == 0) {
     MMObjTy::DoneMMObj((MMObjTy *)local_8);
-    if (pSVar2->field_1F3F != (cMf32 *)0x0) {
+    if (pSVar2->field_1F3F != nullptr) {
       cMf32::delete(pSVar2->field_1F3F);
     }
-    pSVar2->field_1F3F = (cMf32 *)0x0;
-    if (pSVar2->field_1F43 != (cMf32 *)0x0) {
+    pSVar2->field_1F3F = nullptr;
+    if (pSVar2->field_1F43 != nullptr) {
       cMf32::delete(pSVar2->field_1F43);
     }
-    pSVar2->field_1F43 = (cMf32 *)0x0;
-    if (g_cursorClass_00802A30 != (CursorClassTy *)0x0) {
+    pSVar2->field_1F43 = nullptr;
+    if (g_cursorClass_00802A30 != nullptr) {
       if (g_cursorClass_00802A30->field_00A9 == 0) {
         Library::DKW::DDX::FUN_006b8b10((int *)g_cursorClass_00802A30->field_00AD);
       }
@@ -47,10 +47,10 @@ void __thiscall SettMapTy::DoneSettMap(SettMapTy *this)
     if (((iVar3 != 0x611f) && (iVar3 != 0x6109)) && (iVar3 != 0x6105)) {
       DarkScreen(g_dDXContext_0080759C,10,2);
     }
-    if (pSVar2->field_21EC != (HoloTy *)0x0) {
+    if (pSVar2->field_21EC != nullptr) {
       HoloTy::Done(pSVar2->field_21EC);
       Library::MSVCRT::FUN_0072e2b0(pSVar2->field_21EC);
-      pSVar2->field_21EC = (HoloTy *)0x0;
+      pSVar2->field_21EC = nullptr;
     }
     if (pSVar2->field_0x21e2 != '\0') {
       if (g_startSystem_0081176C->field_0391 != 0xffffffff) {
@@ -66,42 +66,42 @@ void __thiscall SettMapTy::DoneSettMap(SettMapTy *this)
         FUN_006b3af0((int *)g_ddxContext_008075A8,g_startSystem_0081176C->field_0540);
       }
     }
-    if (pSVar2->field_21F4 != (HoloTy *)0x0) {
+    if (pSVar2->field_21F4 != nullptr) {
       HoloTy::Done(pSVar2->field_21F4);
       Library::MSVCRT::FUN_0072e2b0(pSVar2->field_21F4);
-      pSVar2->field_21F4 = (HoloTy *)0x0;
+      pSVar2->field_21F4 = nullptr;
     }
-    if (pSVar2->field_21E8 != (HoloTy *)0x0) {
+    if (pSVar2->field_21E8 != nullptr) {
       HoloTy::Done(pSVar2->field_21E8);
       Library::MSVCRT::FUN_0072e2b0(pSVar2->field_21E8);
-      pSVar2->field_21E8 = (HoloTy *)0x0;
+      pSVar2->field_21E8 = nullptr;
     }
-    if (pSVar2->field_21F0 != (HoloTy *)0x0) {
+    if (pSVar2->field_21F0 != nullptr) {
       HoloTy::Done(pSVar2->field_21F0);
       Library::MSVCRT::FUN_0072e2b0(pSVar2->field_21F0);
-      pSVar2->field_21F0 = (HoloTy *)0x0;
+      pSVar2->field_21F0 = nullptr;
     }
-    if (pSVar2->field_21F8 != (HoloTy *)0x0) {
+    if (pSVar2->field_21F8 != nullptr) {
       HoloTy::Done(pSVar2->field_21F8);
       Library::MSVCRT::FUN_0072e2b0(pSVar2->field_21F8);
-      pSVar2->field_21F8 = (HoloTy *)0x0;
+      pSVar2->field_21F8 = nullptr;
     }
-    if (g_startSystem_0081176C->field_002C != (ushort *)0x0) {
+    if (g_startSystem_0081176C->field_002C != nullptr) {
       cMf32::RecMemFree(g_cMf32_00806780,(uint *)&g_startSystem_0081176C->field_002C);
     }
-    if (pSVar2->field_1E2B != (AnonPointee_SettMapTy_1E2B *)0x0) {
+    if (pSVar2->field_1E2B != nullptr) {
       cMf32::RecMemFree(g_cMf32_00806780,(uint *)&pSVar2->field_1E2B);
     }
     if (pSVar2->field_1C67 != 0) {
       FreeAndNull((void **)&pSVar2->field_1C67);
     }
-    PTR_0081175c = (AnonShape_GLOBAL_0081175C_57F682DD *)0x0;
-    if (pSVar2->field_1F7C != (DArrayTy *)0x0) {
+    PTR_0081175c = nullptr;
+    if (pSVar2->field_1F7C != nullptr) {
       DArrayDestroy(pSVar2->field_1F7C);
     }
     pDVar6 = pSVar2->field_1F84;
-    pSVar2->field_1F7C = (DArrayTy *)0x0;
-    if (pDVar6 != (DArrayTy *)0x0) {
+    pSVar2->field_1F7C = nullptr;
+    if (pDVar6 != nullptr) {
       uVar7 = 0;
       if (0 < (int)pDVar6->count) {
         bVar8 = pDVar6->count != 0;
@@ -111,9 +111,9 @@ void __thiscall SettMapTy::DoneSettMap(SettMapTy *this)
             pvVar4 = (void *)(pDVar6->elementSize * uVar7 + (int)pDVar6->data);
           }
           else {
-            pvVar4 = (void *)0x0;
+            pvVar4 = nullptr;
           }
-          if ((pvVar4 != (void *)0x0) && (*(DArrayTy **)((int)pvVar4 + 0x50) != (DArrayTy *)0x0)) {
+          if ((pvVar4 != nullptr) && (*(DArrayTy **)((int)pvVar4 + 0x50) != nullptr)) {
             DArrayDestroy(*(DArrayTy **)((int)pvVar4 + 0x50));
           }
           pDVar6 = pSVar2->field_1F84;
@@ -122,12 +122,12 @@ void __thiscall SettMapTy::DoneSettMap(SettMapTy *this)
         } while ((int)uVar7 < (int)pDVar6->count);
       }
       DArrayDestroy(pSVar2->field_1F84);
-      pSVar2->field_1F84 = (DArrayTy *)0x0;
+      pSVar2->field_1F84 = nullptr;
     }
-    if (pSVar2->field_1E2F != (DArrayTy *)0x0) {
+    if (pSVar2->field_1E2F != nullptr) {
       DArrayDestroy(pSVar2->field_1E2F);
     }
-    pSVar2->field_1E2F = (DArrayTy *)0x0;
+    pSVar2->field_1E2F = nullptr;
     SpriteClassTy::CloseSprite((SpriteClassTy *)&pSVar2->field_0x1c6b);
     SpriteClassTy::CloseSprite((SpriteClassTy *)&pSVar2->field_0x1cfc);
     SpriteClassTy::CloseSprite((SpriteClassTy *)&pSVar2->field_0x1d8d);
@@ -135,7 +135,7 @@ void __thiscall SettMapTy::DoneSettMap(SettMapTy *this)
     iVar3 = 10;
     do {
       FUN_006b3bb0((int *)g_ddxContext_008075A8,(uint)value[-10]);
-      if ((void *)*value != (void *)0x0) {
+      if ((void *)*value != nullptr) {
         FreeAndNull((void **)value);
       }
       value = value + 1;
@@ -146,7 +146,7 @@ void __thiscall SettMapTy::DoneSettMap(SettMapTy *this)
     }
     FUN_006b3bb0((int *)g_ddxContext_008075A8,pSVar2->field_1E22);
     /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-    if ((pSVar2->field_21E7 != '\0') && (*(MMsgTy **)(pSVar2->field_1A5B + 0x2e6) != (MMsgTy *)0x0))
+    if ((pSVar2->field_21E7 != '\0') && (*(MMsgTy **)(pSVar2->field_1A5B + 0x2e6) != nullptr))
     {
       /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
       MMsgTy::HideSprites(*(MMsgTy **)(pSVar2->field_1A5B + 0x2e6));

@@ -239,14 +239,14 @@ switchD_0057988b_default:
           sVar4 = (short)iVar3;
           if ((int)uVar1 < 0) {
             puVar2 = thunk_FUN_004d85e0((int)sVar4,(int)(short)local_8,(int)local_10);
-            if ((puVar2 == (uint *)0x0) &&
+            if ((puVar2 == nullptr) &&
                (((((sVar4 < 0 || (g_worldGrid.sizeX <= sVar4)) || ((short)local_8 < 0)) ||
                  ((g_worldGrid.sizeY <= (short)local_8 || (local_10 < 0)))) ||
                 ((g_worldGrid.sizeZ <= local_10 ||
                  (g_worldGrid.cells
                   [(int)g_worldGrid.sizeX * (int)(short)local_8 +
                    (int)sVar4 + (int)g_worldGrid.planeStride * (int)local_10].objects[0] ==
-                  (STWorldObject *)0x0)))))) {
+                  nullptr)))))) {
               if ((*(short *)((int)this + 0x47) != iVar3) ||
                  (*(short *)((int)this + 0x49) != local_8)) {
                 *param_1 = (short)local_14;

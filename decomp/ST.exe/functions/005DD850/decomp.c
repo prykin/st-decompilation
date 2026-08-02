@@ -37,8 +37,8 @@ void __thiscall StartSystemTy::AddToChat(StartSystemTy *this,int param_1)
   iVar5 = Library::MSVCRT::__setjmp3(local_78.jumpBuffer,0);
   if (iVar5 == 0) {
     if ((param_1 != 0) &&
-       (pDVar2 = Library::DKW::TBL::SArrayCreate((DArrayTy *)0x0,2,1), this_00 = local_c,
-       pDVar2 != (DArrayTy *)0x0)) {
+       (pDVar2 = Library::DKW::TBL::SArrayCreate(nullptr,2,1), this_00 = local_c,
+       pDVar2 != nullptr)) {
       local_5 = '\0';
       local_24 = 0x26;
       local_10 = pDVar2;
@@ -54,14 +54,14 @@ void __thiscall StartSystemTy::AddToChat(StartSystemTy *this,int param_1)
       pDVar3 = (DArrayTy *)
                ccFntTy::FormSarr(this_00->field_0034,&pDVar2->flags," ,.;:!?/\\()[]{}",
                                  *(int *)(this_00->field_067E + 2),0,0xffffffff,1);
-      if (pDVar3 != (DArrayTy *)0x0) {
+      if (pDVar3 != nullptr) {
         if (pDVar3->elementSize != 0) {
           ccFntTy::SepColorStrInSarr(this_00->field_0034,(uint *)pDVar3,(uint *)pDVar3);
         }
         iVar5 = 0;
         if (0 < (int)pDVar3->elementSize) {
           if ((int)pDVar3->elementSize < 1) {
-            text = (char *)0x0;
+            text = nullptr;
             goto LAB_005dd982;
           }
           do {

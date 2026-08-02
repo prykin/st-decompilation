@@ -27,15 +27,13 @@ void __fastcall FUN_006dcd60(int param_1)
     if (*(int *)(iVar3 + 0x28) < iVar7) {
       /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
       pvVar8 = Library::DKW::LIB::MemRealloc
-                         (*(AnonPointee_TLOBaseTy_0607 **)(*(int *)(param_1 + 0x358) + 8),
-                          iVar7 * iVar7 + 0x18);
+                         (*(void **)(*(int *)(param_1 + 0x358) + 8),iVar7 * iVar7 + 0x18);
       *(void **)(*(int *)(param_1 + 0x358) + 8) = pvVar8;
       *(undefined4 *)(*(int *)(param_1 + 0x358) + 0xc) =
            *(undefined4 *)(*(int *)(param_1 + 0x358) + 8);
       /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
       pvVar8 = Library::DKW::LIB::MemRealloc
-                         (*(AnonPointee_TLOBaseTy_0607 **)(*(int *)(param_1 + 0x358) + 0x10),
-                          iVar7 * iVar7 + 0x10);
+                         (*(void **)(*(int *)(param_1 + 0x358) + 0x10),iVar7 * iVar7 + 0x10);
       *(void **)(*(int *)(param_1 + 0x358) + 0x10) = pvVar8;
       *(int *)(*(int *)(param_1 + 0x358) + 0x14) = *(int *)(*(int *)(param_1 + 0x358) + 0x10) + 8;
       /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */

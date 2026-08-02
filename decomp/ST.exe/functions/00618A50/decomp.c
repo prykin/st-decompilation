@@ -17,7 +17,7 @@ uint __thiscall FUN_00618a50(void *this,int param_1,int *param_2)
     uVar5 = 0;
     while (((!bVar6 ||
             (piVar4 = (int *)(*(int *)(iVar1 + 8) * uVar5 + *(int *)(iVar1 + 0x1c)),
-            piVar4 == (int *)0x0)) || (*piVar4 != param_1))) {
+            piVar4 == nullptr)) || (*piVar4 != param_1))) {
       uVar5 = uVar5 + 1;
       bVar6 = uVar5 < uVar2;
       if ((int)uVar2 <= (int)uVar5) {

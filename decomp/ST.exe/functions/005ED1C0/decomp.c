@@ -176,7 +176,7 @@ LAB_005ed68c:
                [(int)g_worldGrid.planeStride * (int)sVar9 + (int)g_worldGrid.sizeX * (int)sVar10 +
                 (int)sVar6].objects[0];
 joined_r0x005ed4b7:
-      if (pSVar2 != (STWorldObject *)0x0) goto LAB_005ed643;
+      if (pSVar2 != nullptr) goto LAB_005ed643;
     }
   }
   else {

@@ -17,36 +17,34 @@ void __thiscall SettMapSTy::PrepPlList(SettMapSTy *this,int *param_1)
   byte *pbVar7;
   int iVar8;
   uint uVar9;
-  char *pcVar10;
-  uint uVar11;
+  uint uVar10;
+  byte *pbVar11;
   char *pcVar12;
-  byte *pbVar13;
-  char *pcVar14;
+  char *pcVar13;
   SettMapTy *this_00;
-  bool bVar15;
+  bool bVar14;
   InternalExceptionFrame local_b8;
   undefined1 local_74;
   undefined1 local_73;
-  char local_72;
-  char cStack_71;
+  byte local_72;
+  byte bStack_71;
   undefined1 uStack_70;
   undefined1 uStack_6f;
   undefined4 local_6e;
   char local_6a [64];
-  char local_2a;
+  byte local_2a;
   undefined4 local_29;
   undefined1 local_25;
   uint *local_24;
-  undefined4 local_20;
-  undefined4 local_1c;
-  undefined4 local_18;
+  uint local_20;
+  uint local_1c;
+  uint local_18;
   byte *local_14;
   cMf32 *local_10;
-  char *local_c;
+  byte *local_c;
   SettMapTy *local_8;
 
-  /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-  this->field_211C = DAT_008087c4._2_1_;
+  this->field_211C = DAT_008087c6;
   local_b8.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_b8;
   local_8 = (SettMapTy *)this;
@@ -69,78 +67,78 @@ void __thiscall SettMapSTy::PrepPlList(SettMapSTy *this,int *param_1)
     local_10 = local_8->field_1F43;
   }
   pDVar6 = local_8->field_1F84;
-  if (pDVar6 != (DArrayTy *)0x0) {
-    uVar11 = 0;
+  if (pDVar6 != nullptr) {
+    uVar10 = 0;
     if (0 < (int)pDVar6->count) {
-      bVar15 = pDVar6->count != 0;
+      bVar14 = pDVar6->count != 0;
       do {
-        if (bVar15) {
-          /* ST_PSEUDO[dynamic_array_indexing]: expected DArrayAt<T>(pDVar6, uVar11) (runtime stride) */
-          pvVar5 = (void *)(pDVar6->elementSize * uVar11 + (int)pDVar6->data);
+        if (bVar14) {
+          /* ST_PSEUDO[dynamic_array_indexing]: expected DArrayAt<T>(pDVar6, uVar10) (runtime stride) */
+          pvVar5 = (void *)(pDVar6->elementSize * uVar10 + (int)pDVar6->data);
         }
         else {
-          pvVar5 = (void *)0x0;
+          pvVar5 = nullptr;
         }
-        if ((pvVar5 != (void *)0x0) && (*(DArrayTy **)((int)pvVar5 + 0x50) != (DArrayTy *)0x0)) {
+        if ((pvVar5 != nullptr) && (*(DArrayTy **)((int)pvVar5 + 0x50) != nullptr)) {
           DArrayDestroy(*(DArrayTy **)((int)pvVar5 + 0x50));
         }
         pDVar6 = this_00->field_1F84;
-        uVar11 = uVar11 + 1;
-        bVar15 = uVar11 < pDVar6->count;
-      } while ((int)uVar11 < (int)pDVar6->count);
+        uVar10 = uVar10 + 1;
+        bVar14 = uVar10 < pDVar6->count;
+      } while ((int)uVar10 < (int)pDVar6->count);
     }
     DArrayDestroy(this_00->field_1F84);
   }
-  pDVar6 = Library::DKW::TBL::DArrayCreate((DArrayTy *)0x0,8,0x60,8);
+  pDVar6 = Library::DKW::TBL::DArrayCreate(nullptr,8,0x60,8);
   this_00->field_1F84 = pDVar6;
-  local_c = &DAT_008087e8;
+  local_c = &g_bulkInitializedRecords_008087C7[0].field_0021;
   do {
-    pcVar10 = local_c;
-    cVar1 = local_c[1];
-    if (cVar1 != -1) {
+    pbVar11 = local_c;
+    bVar2 = local_c[1];
+    if (bVar2 != 0xff) {
       local_74 = 1;
       local_73 = 1;
-      if (((DAT_00807dd1 & 0xffff0000) == 0xd0dd0000) && (*local_c == '\x03')) {
-        cStack_71 = '\x01';
+      if (((DAT_00807dd1 & 0xffff0000) == 0xd0dd0000) && (*local_c == 3)) {
+        bStack_71 = 1;
       }
       else {
-        cStack_71 = *local_c;
+        bStack_71 = *local_c;
       }
-      local_72 = cVar1;
+      local_72 = bVar2;
       if (this_00->field_1E26 == CASE_2) {
         /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
         local_24 = CreateStrategList((int)local_10,
-                                     CONCAT12(uStack_70,CONCAT11(cStack_71,cVar1)) & 0xff,0xffffffff
+                                     CONCAT12(uStack_70,CONCAT11(bStack_71,bVar2)) & 0xff,0xffffffff
                                     );
       }
       else {
         /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-        local_24 = CreateOpponentList(local_10,CONCAT12(uStack_6f,CONCAT11(uStack_70,cStack_71)) &
+        local_24 = CreateOpponentList(local_10,CONCAT12(uStack_6f,CONCAT11(uStack_70,bStack_71)) &
                                                0xff,DAT_0080995c);
       }
-      uVar11 = 0xffffffff;
+      uVar10 = 0xffffffff;
       pcVar12 = (char *)&DAT_00807ddd;
       do {
-        pcVar14 = pcVar12;
-        if (uVar11 == 0) break;
-        uVar11 = uVar11 - 1;
-        pcVar14 = pcVar12 + 1;
+        pcVar13 = pcVar12;
+        if (uVar10 == 0) break;
+        uVar10 = uVar10 - 1;
+        pcVar13 = pcVar12 + 1;
         cVar1 = *pcVar12;
-        pcVar12 = pcVar14;
+        pcVar12 = pcVar13;
       } while (cVar1 != '\0');
-      uVar11 = ~uVar11;
-      pcVar12 = pcVar14 + -uVar11;
-      pcVar14 = local_6a;
-      for (uVar9 = uVar11 >> 2; uVar9 != 0; uVar9 = uVar9 - 1) {
-        *(undefined4 *)pcVar14 = *(undefined4 *)pcVar12;
+      uVar10 = ~uVar10;
+      pcVar12 = pcVar13 + -uVar10;
+      pcVar13 = local_6a;
+      for (uVar9 = uVar10 >> 2; uVar9 != 0; uVar9 = uVar9 - 1) {
+        *(undefined4 *)pcVar13 = *(undefined4 *)pcVar12;
         pcVar12 = pcVar12 + 4;
-        pcVar14 = pcVar14 + 4;
+        pcVar13 = pcVar13 + 4;
       }
-      cVar1 = pcVar10[-0x21];
-      for (uVar11 = uVar11 & 3; uVar11 != 0; uVar11 = uVar11 - 1) {
-        *pcVar14 = *pcVar12;
+      cVar1 = *(char *)(pbVar11 + -0x21);
+      for (uVar10 = uVar10 & 3; uVar10 != 0; uVar10 = uVar10 - 1) {
+        *pcVar13 = *pcVar12;
         pcVar12 = pcVar12 + 1;
-        pcVar14 = pcVar14 + 1;
+        pcVar13 = pcVar13 + 1;
       }
       if (cVar1 == '\0') {
         uStack_70 = 1;
@@ -150,105 +148,105 @@ void __thiscall SettMapSTy::PrepPlList(SettMapSTy *this,int *param_1)
         uStack_6f = 0;
         if (local_8->field_1E26 == CASE_2) {
           uVar9 = 0;
-          uVar11 = local_24[3];
-          if (0 < (int)uVar11) {
-            local_14 = (byte *)(pcVar10 + -0x20);
+          uVar10 = local_24[3];
+          if (0 < (int)uVar10) {
+            local_14 = pbVar11 + -0x20;
             do {
-              if (uVar9 < uVar11) {
+              if (uVar9 < uVar10) {
                 iVar4 = local_24[2] * uVar9 + local_24[7];
               }
               else {
                 iVar4 = 0;
               }
               pbVar7 = (byte *)(iVar4 + 0x4c);
-              pbVar13 = local_14;
+              pbVar11 = local_14;
               do {
                 bVar2 = *pbVar7;
-                bVar15 = bVar2 < *pbVar13;
-                if (bVar2 != *pbVar13) {
+                bVar14 = bVar2 < *pbVar11;
+                if (bVar2 != *pbVar11) {
 LAB_005d534b:
-                  iVar4 = (1 - (uint)bVar15) - (uint)(bVar15 != 0);
+                  iVar4 = (1 - (uint)bVar14) - (uint)(bVar14 != 0);
                   goto LAB_005d5350;
                 }
                 if (bVar2 == 0) break;
                 bVar2 = pbVar7[1];
-                bVar15 = bVar2 < pbVar13[1];
-                if (bVar2 != pbVar13[1]) goto LAB_005d534b;
+                bVar14 = bVar2 < pbVar11[1];
+                if (bVar2 != pbVar11[1]) goto LAB_005d534b;
                 pbVar7 = pbVar7 + 2;
-                pbVar13 = pbVar13 + 2;
+                pbVar11 = pbVar11 + 2;
               } while (bVar2 != 0);
               iVar4 = 0;
 LAB_005d5350:
-              pcVar10 = local_c;
+              pbVar11 = local_c;
               if (iVar4 == 0) {
                 uStack_6f = (undefined1)uVar9;
                 break;
               }
               uVar9 = uVar9 + 1;
-            } while ((int)uVar9 < (int)uVar11);
+            } while ((int)uVar9 < (int)uVar10);
           }
         }
       }
-      local_2a = pcVar10[2];
-      local_20 = *(undefined4 *)(pcVar10 + 3);
+      local_2a = pbVar11[2];
+      local_20 = *(uint *)(pbVar11 + 3);
       local_6e = DAT_0080877f;
-      local_1c = *(undefined4 *)(pcVar10 + 7);
-      local_18 = *(undefined4 *)(pcVar10 + 0xb);
+      local_1c = *(uint *)(pbVar11 + 7);
+      local_18 = *(uint *)(pbVar11 + 0xb);
       local_29 = 0;
       local_25 = 1;
       Library::DKW::TBL::DArrayAppend(local_8->field_1F84,&local_74);
       this_00 = local_8;
     }
-    local_c = pcVar10 + 0x51;
+    local_c = pbVar11 + 0x51;
   } while ((int)local_c < 0x808a70);
   pDVar6 = this_00->field_1F84;
   uVar9 = 0;
-  uVar11 = pDVar6->count;
-  if (0 < (int)uVar11) {
-    bVar15 = uVar11 != 0;
+  uVar10 = pDVar6->count;
+  if (0 < (int)uVar10) {
+    bVar14 = uVar10 != 0;
     do {
-      if (bVar15) {
+      if (bVar14) {
         /* ST_PSEUDO[dynamic_array_indexing]: expected DArrayAt<T>(pDVar6, uVar9) (runtime stride) */
         pvVar5 = (void *)(pDVar6->elementSize * uVar9 + (int)pDVar6->data);
       }
       else {
-        pvVar5 = (void *)0x0;
+        pvVar5 = nullptr;
       }
-      if ((pvVar5 != (void *)0x0) && (*(char *)((int)pvVar5 + 4) == '\x01')) {
+      if ((pvVar5 != nullptr) && (*(char *)((int)pvVar5 + 4) == '\x01')) {
         DAT_0080874d = *(undefined1 *)((int)pvVar5 + 2);
         *(undefined1 *)((int)pvVar5 + 4) = 2;
         DAT_0080874e = *(undefined1 *)((int)pvVar5 + 3);
-        uVar11 = 0xffffffff;
-        pcVar10 = (char *)&DAT_00807ddd;
+        uVar10 = 0xffffffff;
+        pcVar12 = (char *)&DAT_00807ddd;
         goto code_r0x005d540b;
       }
       uVar9 = uVar9 + 1;
-      bVar15 = uVar9 < uVar11;
-    } while ((int)uVar9 < (int)uVar11);
+      bVar14 = uVar9 < uVar10;
+    } while ((int)uVar9 < (int)uVar10);
   }
   goto LAB_005d5426;
   while( true ) {
-    uVar11 = uVar11 - 1;
-    pcVar12 = pcVar10 + 1;
-    cVar1 = *pcVar10;
-    pcVar10 = pcVar12;
+    uVar10 = uVar10 - 1;
+    pcVar13 = pcVar12 + 1;
+    cVar1 = *pcVar12;
+    pcVar12 = pcVar13;
     if (cVar1 == '\0') break;
 code_r0x005d540b:
-    pcVar12 = pcVar10;
-    if (uVar11 == 0) break;
+    pcVar13 = pcVar12;
+    if (uVar10 == 0) break;
   }
-  uVar11 = ~uVar11;
-  pcVar10 = pcVar12 + -uVar11;
-  pcVar12 = (char *)((int)pvVar5 + 10);
-  for (uVar9 = uVar11 >> 2; uVar9 != 0; uVar9 = uVar9 - 1) {
-    *(undefined4 *)pcVar12 = *(undefined4 *)pcVar10;
-    pcVar10 = pcVar10 + 4;
+  uVar10 = ~uVar10;
+  pcVar12 = pcVar13 + -uVar10;
+  pcVar13 = (char *)((int)pvVar5 + 10);
+  for (uVar9 = uVar10 >> 2; uVar9 != 0; uVar9 = uVar9 - 1) {
+    *(undefined4 *)pcVar13 = *(undefined4 *)pcVar12;
     pcVar12 = pcVar12 + 4;
+    pcVar13 = pcVar13 + 4;
   }
-  for (uVar11 = uVar11 & 3; this_00 = local_8, uVar11 != 0; uVar11 = uVar11 - 1) {
-    *pcVar12 = *pcVar10;
-    pcVar10 = pcVar10 + 1;
+  for (uVar10 = uVar10 & 3; this_00 = local_8, uVar10 != 0; uVar10 = uVar10 - 1) {
+    *pcVar13 = *pcVar12;
     pcVar12 = pcVar12 + 1;
+    pcVar13 = pcVar13 + 1;
   }
 LAB_005d5426:
   SettMapTy::PaintSC(this_00);

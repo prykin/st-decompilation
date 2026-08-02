@@ -12,10 +12,10 @@ TLOBaseTy * __cdecl CreateTLOBase(void)
   TLOBaseTy *pTVar1;
 
   pTVar1 = (TLOBaseTy *)FUN_006b04d0(0x623);
-  if (pTVar1 != (TLOBaseTy *)0x0) {
+  if (pTVar1 != nullptr) {
     pTVar1 = TLOBaseTy::TLOBaseTy(pTVar1);
     return pTVar1;
   }
-  return (TLOBaseTy *)0x0;
+  return nullptr;
 }
 

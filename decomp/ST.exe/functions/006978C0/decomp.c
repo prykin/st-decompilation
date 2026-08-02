@@ -26,7 +26,7 @@ uint __thiscall CGenerate::sub_006978C0(CGenerate *this)
   CGenerate_field_5853Element *element_5853_2;
 
   pCVar7 = this->field_5853;
-  if (pCVar7 != (CGenerate_field_5853DArray *)0x0) {
+  if (pCVar7 != nullptr) {
     dVar1 = pCVar7->count;
     local_18 = 0;
     if (0 < (int)dVar1) {
@@ -36,7 +36,7 @@ uint __thiscall CGenerate::sub_006978C0(CGenerate *this)
           element_5853_2 = DArrayAt<CGenerate_field_5853Element>(pCVar7, local_18);
         }
         else {
-          element_5853_2 = (CGenerate_field_5853Element *)0x0;
+          element_5853_2 = nullptr;
         }
         pCVar2 = (CGenerate_field_5853DArray *)element_5853_2->field_0000;
         pCVar7 = pCVar2;
@@ -54,7 +54,7 @@ uint __thiscall CGenerate::sub_006978C0(CGenerate *this)
                   pbVar5 = (byte *)(*(int *)(iVar3 + 8) * uVar10 + *(int *)(iVar3 + 0x1c));
                 }
                 else {
-                  pbVar5 = (byte *)0x0;
+                  pbVar5 = nullptr;
                 }
                 if ((pbVar5[1] == 0) && ((*pbVar5 & 1) != 0)) {
                   iVar11 = iVar11 + 1;
@@ -75,7 +75,7 @@ uint __thiscall CGenerate::sub_006978C0(CGenerate *this)
             pCVar8 = pCVar7;
           }
           pCVar7 = pCVar8;
-          if ((pCVar8 != (CGenerate_field_5853DArray *)0x0) && (0 < iVar11)) {
+          if ((pCVar8 != nullptr) && (0 < iVar11)) {
             uVar6 = Library::MSVCRT::FUN_0072e6c0();
             pCVar7 = (CGenerate_field_5853DArray *)((int)uVar6 / (iVar11 + 1));
             if (-1 < (int)uVar6 % (iVar11 + 1)) {
@@ -88,7 +88,7 @@ uint __thiscall CGenerate::sub_006978C0(CGenerate *this)
                     element_5853 = DArrayAt<CGenerate_field_5853Element>(pCVar7, local_10);
                   }
                   else {
-                    element_5853 = (CGenerate_field_5853Element *)0x0;
+                    element_5853 = nullptr;
                   }
                   if (*(byte *)((int)element_5853 + 1) == 0) {
                     iVar3 = *(int *)((int)element_5853 + 2);

@@ -84,7 +84,7 @@ AiEventClassTy::__CreateObjPl
     bVar2 = true;
   }
   uVar5 = param_7;
-  if ((bVar2) && (g_allPlayers_007FA174 != (STAllPlayersC *)0x0)) {
+  if ((bVar2) && (g_allPlayers_007FA174 != nullptr)) {
     if (((short)param_3 < 0) || (((short)param_4 < 0 || ((short)param_5 < 0)))) {
       uVar5 = param_1 & 0xffff;
       local_28[0] = 7;
@@ -93,10 +93,10 @@ AiEventClassTy::__CreateObjPl
       local_1c[1] = 0;
       /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
       local_20 = CONCAT22((short)((uint)param_3 >> 0x10),
-                          *(short *)((int)&DAT_008087eb + uVar5 * 0x51) + -3);
+                          (short)g_bulkInitializedRecords_008087C7[uVar5].field_0024 + -3);
       /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
       local_30 = CONCAT22((short)(uVar5 * 9 >> 0x10),
-                          *(short *)((int)&DAT_008087ef + uVar5 * 0x51) + -3);
+                          (short)g_bulkInitializedRecords_008087C7[uVar5].field_0028 + -3);
       thunk_FUN_006756d0((short *)&local_20,(short *)&local_30,local_28,local_1c);
       local_38->field_0088 = local_38->field_0088 * 0x41c64e6d + 0x3039;
       local_18 = local_38->field_0088 * 0x41c64e6d + 0x3039;
@@ -138,7 +138,7 @@ AiEventClassTy::__CreateObjPl
       local_84 = (short)param_5;
       local_82 = 0xffff;
       _Source = param_8;
-      if (param_8 == (char *)0x0) {
+      if (param_8 == nullptr) {
         _Source = &DAT_008016a0;
       }
       Library::MSVCRT::_strncpy(local_6e,_Source,0xe);
@@ -180,7 +180,7 @@ AiEventClassTy::__CreateObjPl
   else {
     bVar2 = true;
   }
-  if ((bVar2) && (g_allPlayers_007FA174 != (STAllPlayersC *)0x0)) {
+  if ((bVar2) && (g_allPlayers_007FA174 != nullptr)) {
     local_8 = (int)(short)param_3;
     local_c = (int)(short)param_4;
     local_10 = (int)(short)param_5;
@@ -188,8 +188,8 @@ AiEventClassTy::__CreateObjPl
       iVar4 = 1;
       GVar8 = (Global_sub_004B1120_param_2Enum)param_2;
       uVar5 = param_1 & 0xffff;
-      iVar3 = thunk_FUN_004ae0b0((short)param_3,local_c,local_10,GVar8,uVar5,(undefined4 *)0x0,
-                                 (int *)0x0,(int *)0x0,1,(int *)0x0);
+      iVar3 = thunk_FUN_004ae0b0((short)param_3,local_c,local_10,GVar8,uVar5,nullptr,
+                                 nullptr,nullptr,1,nullptr);
       if (iVar3 == 0) {
         iVar4 = thunk_FUN_004b1120(uVar5,GVar8,&local_8,&local_c,&local_10,0,0);
       }

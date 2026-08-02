@@ -19,7 +19,7 @@ FUN_0065e700(AnonReceiver_0065ED90 *param_1,undefined4 param_2,int *param_3,int 
   short local_6;
 
   array = (DArrayTy *)AiFltClassTy::sub_0065DA10((AiFltClassTy *)param_1,param_2);
-  if ((array == (DArrayTy *)0x0) || (array->count == 0)) {
+  if ((array == nullptr) || (array->count == 0)) {
     return 0xffffffff;
   }
   uVar2 = 0;
@@ -34,10 +34,10 @@ FUN_0065e700(AnonReceiver_0065ED90 *param_1,undefined4 param_2,int *param_3,int 
         puVar1 = (ushort *)(array->elementSize * uVar2 + (int)array->data);
       }
       else {
-        puVar1 = (ushort *)0x0;
+        puVar1 = nullptr;
       }
       this = STAllPlayersC::GetObjPtr(g_allPlayers_007FA174,param_1[1].field_0x4,*puVar1,CASE_1);
-      if (this != (STGameObjC *)0x0) {
+      if (this != nullptr) {
         STFishC::sub_004162B0((STFishC *)this,&local_6,&local_8,&local_a);
         *param_3 = *param_3 + (int)local_6;
         *param_4 = *param_4 + (int)local_8;

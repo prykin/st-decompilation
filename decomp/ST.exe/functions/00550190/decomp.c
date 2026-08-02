@@ -16,7 +16,7 @@ void __thiscall STPlaySystemC::sub_00550190(STPlaySystemC *this)
   uVar1 = this->field_00E4 + 1;
   this->field_0028 = 1;
   this->field_00E4 = uVar1;
-  if ((uVar1 - this->field_0034 == 6000) && (g_optPanel_008016DC != (OptPanelTy *)0x0)) {
+  if ((uVar1 - this->field_0034 == 6000) && (g_optPanel_008016DC != nullptr)) {
     thunk_FUN_00533b80((RecoveredRecord_STPlaySystemC_00533B80 *)g_optPanel_008016DC);
     return;
   }

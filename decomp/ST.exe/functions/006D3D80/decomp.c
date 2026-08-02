@@ -33,11 +33,11 @@ void FUN_006d3d80(int param_1,int param_2,int param_3,byte *param_4,int param_5,
 
   iVar2 = param_18 / param_14;
   iVar3 = (int)(param_5 + 7 + (param_5 + 7 >> 0x1f & 7U)) >> 3;
-  if (param_20 != (byte *)0x0) {
+  if (param_20 != nullptr) {
     /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
     param_20 = param_20 + iVar3 * param_7 + (param_6 >> 3);
   }
-  if (param_21 != (byte *)0x0) {
+  if (param_21 != nullptr) {
     /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
     param_21 = param_21 + iVar3 * param_7 + (param_6 >> 3);
   }
@@ -59,15 +59,15 @@ void FUN_006d3d80(int param_1,int param_2,int param_3,byte *param_4,int param_5,
           iVar4 = param_7;
           if (((param_3 == 0) || (param_10 == 0)) || (local_28 = (uint)*local_c, local_28 != 0)) {
             /* ST_PSEUDO[stack_slot_reuse,packed_or_unaligned_piece]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable; expected named packed member, bit extract/compose, or unaligned load */
-            if (((param_4 != (byte *)0x0) && (param_12 != 0)) &&
+            if (((param_4 != nullptr) && (param_12 != 0)) &&
                (((uint)*local_14 != param_13 - 1U &&
-                ((param_21 == (byte *)0x0 || ((*local_10 & param_18._3_1_) != 0)))))) {
+                ((param_21 == nullptr || ((*local_10 & param_18._3_1_) != 0)))))) {
               FUN_006dac70(pbVar14,param_2,*(byte **)(param_12 + (uint)*local_14 * 4),param_14,0,
                            param_14,param_15,0);
             }
             /* ST_PSEUDO[stack_slot_reuse,packed_or_unaligned_piece]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable; expected named packed member, bit extract/compose, or unaligned load */
             if ((((param_3 != 0) && (param_10 != 0)) && (local_28 != param_11 - 1U)) &&
-               ((param_20 == (byte *)0x0 || ((*local_8 & param_18._3_1_) != 0)))) {
+               ((param_20 == nullptr || ((*local_8 & param_18._3_1_) != 0)))) {
               /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
               param_9 = *(byte **)(param_10 + local_28 * 4);
               if (param_16 == 0) {
@@ -128,7 +128,7 @@ LAB_006d4180:
               local_28 = (uint)*local_c;
               /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
               if ((local_28 != 0) ||
-                 ((param_20 != (byte *)0x0 && ((*local_8 & param_18._3_1_) == 0)))) break;
+                 ((param_20 != nullptr && ((*local_8 & param_18._3_1_) == 0)))) break;
               /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
               bVar7 = param_18._3_1_ >> 1;
               param_18 = (uint)bVar7 << 0x18;
@@ -242,11 +242,11 @@ LAB_006d4180:
           }
         } while (param_7 < param_8);
       }
-      if (param_20 != (byte *)0x0) {
+      if (param_20 != nullptr) {
         /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
         param_20 = param_20 + iVar3;
       }
-      if (param_21 != (byte *)0x0) {
+      if (param_21 != nullptr) {
         /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
         param_21 = param_21 + iVar3;
       }
@@ -254,7 +254,7 @@ LAB_006d4180:
       pbVar11 = pbVar11 + param_5;
       local_20 = local_20 + 1;
       local_40 = local_40 + -1;
-    } while (local_40 != (byte *)0x0);
+    } while (local_40 != nullptr);
   }
   return;
 }

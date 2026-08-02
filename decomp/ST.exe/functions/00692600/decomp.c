@@ -26,7 +26,7 @@ void __fastcall FUN_00692600(int *param_1)
         iVar3 = 2;
         do {
           pvVar1 = *ppvVar2;
-          if (pvVar1 != (void *)0x0) {
+          if (pvVar1 != nullptr) {
             if (*(int *)((int)pvVar1 + 0x25) == 0) {
               iVar6 = 0;
               if (0 < *(short *)((int)pvVar1 + 0x23)) {
@@ -56,7 +56,7 @@ void __fastcall FUN_00692600(int *param_1)
       iVar3 = 6;
       do {
         pvVar1 = *ppvVar2;
-        if (pvVar1 != (void *)0x0) {
+        if (pvVar1 != nullptr) {
           if (*(int *)((int)pvVar1 + 0x25) == 0) {
             iVar6 = 0;
             if (0 < *(short *)((int)pvVar1 + 0x23)) {
@@ -115,7 +115,7 @@ void __fastcall FUN_00692600(int *param_1)
     do {
       iVar6 = 0x1e;
       do {
-        if (*ppvVar2 != (void *)0x0) {
+        if (*ppvVar2 != nullptr) {
           FreeAndNull(ppvVar2);
         }
         ppvVar2 = ppvVar2 + 1;
@@ -124,17 +124,17 @@ void __fastcall FUN_00692600(int *param_1)
       iVar6 = 10;
       ppvVar5 = (void **)(param_1 + ((int)local_c + -0xb4 + iVar3) * 10);
       do {
-        if (*ppvVar5 != (void *)0x0) {
+        if (*ppvVar5 != nullptr) {
           FreeAndNull(ppvVar5);
         }
         ppvVar5 = ppvVar5 + 1;
         iVar6 = iVar6 + -1;
       } while (iVar6 != 0);
       ppvVar5 = (void **)(param_1 + ((int)local_c + iVar3) * 5);
-      if (ppvVar5 != (void **)0x0) {
+      if (ppvVar5 != nullptr) {
         iVar6 = 5;
         do {
-          if (*ppvVar5 != (void *)0x0) {
+          if (*ppvVar5 != nullptr) {
             FreeAndNull(ppvVar5);
           }
           ppvVar5 = ppvVar5 + 1;

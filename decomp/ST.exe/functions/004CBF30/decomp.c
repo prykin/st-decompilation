@@ -7,10 +7,10 @@
 void __thiscall TLOBaseTy::sub_004CBF30(TLOBaseTy *this)
 
 {
-  if ((STT3DSprC *)this->field_05FF != (STT3DSprC *)0x0) {
+  if ((STT3DSprC *)this->field_05FF != nullptr) {
     thunk_FUN_004ad310((STT3DSprC *)this->field_05FF);
     Library::MSVCRT::FUN_0072e2b0(this->field_05FF);
-    this->field_05FF = (HoloTy *)0x0;
+    this->field_05FF = nullptr;
   }
   return;
 }

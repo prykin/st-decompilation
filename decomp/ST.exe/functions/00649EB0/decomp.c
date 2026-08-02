@@ -20,9 +20,9 @@ undefined4 * CreateDefaultBossData(void)
   byte *local_c;
   uint *local_8;
 
-  local_c = (byte *)0x0;
-  local_8 = (uint *)0x0;
-  local_10 = (byte *)0x0;
+  local_c = nullptr;
+  local_8 = nullptr;
+  local_10 = nullptr;
   local_5c.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_5c;
   errorCode = Library::MSVCRT::__setjmp3(local_5c.jumpBuffer,0);
@@ -46,6 +46,6 @@ undefined4 * CreateDefaultBossData(void)
     STDebugBreak(); /* noreturn in standalone pseudocode */
   }
   RaiseInternalException(errorCode,0,"E:\\__titans\\ai\\ai_creat.cpp",0x1c2);
-  return (undefined4 *)0x0;
+  return nullptr;
 }
 

@@ -9,7 +9,7 @@ uint FUN_00677220(void)
   DArrayTy *in_stack_00000010;
 
   /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
-  if (in_stack_00000010 != (DArrayTy *)0x0) {
+  if (in_stack_00000010 != nullptr) {
     /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
     Library::DKW::TBL::DArrayAppend(in_stack_00000010,&stack0x00000008);
   }

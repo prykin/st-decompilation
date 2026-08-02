@@ -17,11 +17,11 @@ uint FUN_00449a90(char param_1,short param_2)
   DArrayTy *local_8;
 
   array = (DArrayTy *)g_packedRecords_A62x8[param_1].field2377_0x9f6;
-  if (((array != (DArrayTy *)0x0) && (local_c = array->count, local_c != 0)) &&
+  if (((array != nullptr) && (local_c = array->count, local_c != 0)) &&
      (index = 0, local_8 = array, 0 < (int)local_c)) {
     do {
       DArrayGetElement(array,index,local_18);
-      if (((local_14 != (DArrayTy *)0x0) && (dVar1 = local_14->count, dVar1 != 0)) &&
+      if (((local_14 != nullptr) && (dVar1 = local_14->count, dVar1 != 0)) &&
          (index_00 = 0, array = local_8, 0 < (int)dVar1)) {
         do {
           DArrayGetElement(local_14,index_00,&stack0x00000006);

@@ -16,14 +16,14 @@ undefined4 __fastcall FUN_004ecea0(AnonShape_004D9C80_80F657D3 *param_1)
 
   if (param_1->field_05FF == 0) {
     pAVar1 = (AnonShape_004AB810_8E5693D5 *)Library::MSVCRT::FUN_0072e530(0x40);
-    if (pAVar1 == (AnonShape_004AB810_8E5693D5 *)0x0) {
-      this = (STT3DSprC *)0x0;
+    if (pAVar1 == nullptr) {
+      this = nullptr;
     }
     else {
       this = (STT3DSprC *)thunk_FUN_004ab810(pAVar1);
     }
     param_1->field_05FF = this;
-    iVar2 = STT3DSprC::Init(this,DAT_008073cc,0x5a,0x45,(STDcResourcC *)0x0,0xb4,0x8c,0x11);
+    iVar2 = STT3DSprC::Init(this,DAT_008073cc,0x5a,0x45,nullptr,0xb4,0x8c,0x11);
     if (iVar2 != 0) {
       RaiseInternalException
                 (iVar2,g_overwriteContext_007ED77C,"E:\\__titans\\Artem\\TLO_vqb.cpp",0x3f);

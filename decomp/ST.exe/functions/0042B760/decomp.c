@@ -70,6 +70,6 @@ STGroupBoatC * FUN_0042b760(char param_1,ushort param_2)
     DArrayGetElement((DArrayTy *)g_packedRecords_A62x8[param_1].field5_0x5,(uint)param_2,&param_1);
     return _param_1;
   }
-  return (STGroupBoatC *)0x0;
+  return nullptr;
 }
 

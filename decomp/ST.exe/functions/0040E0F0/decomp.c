@@ -56,7 +56,7 @@ int FUN_0040e0f0(int param_1,int param_2,int param_3,int param_4,int param_5)
   {
     local_34 = DAT_007f4d30 * DAT_007f4d2c;
     local_30 = (uint)(0 < DAT_007f4d24);
-    local_24 = (byte *)0x0;
+    local_24 = nullptr;
     if (0 < param_4) {
       /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
       param_1 = param_1 - (DAT_007f4d38 * param_4 >> 0x10);
@@ -99,7 +99,7 @@ int FUN_0040e0f0(int param_1,int param_2,int param_3,int param_4,int param_5)
     while( true ) {
       local_5c = 0;
       if ((local_28 < (int)uVar7) && (local_30 != 0)) {
-        if (local_24 == (byte *)0x0) {
+        if (local_24 == nullptr) {
           local_8 = 0;
           Library::MSVCRT::FUN_0072da40();
           local_8 = 0xffffffff;

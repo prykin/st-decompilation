@@ -1587,6 +1587,7 @@ public class STPointerShapeAnalyzer extends GhidraScript {
                 boolean semanticSuperset = anonymousTypePath(structure.getPathName()) &&
                     generatedAnonymousOwned(structure) &&
                     replaceable(target.expectedType) && automaticTarget(target) &&
+                    !autoThis(target) &&
                     seedSemanticAnonymousView(target, structure);
                 if (semanticSuperset) {
                     String path = anonymousPath(target);
@@ -1922,7 +1923,15 @@ public class STPointerShapeAnalyzer extends GhidraScript {
     }
 
     private boolean automaticTarget(TargetEvidence target) {
-        return target.databaseBacked && !unsettledLocal(target);
+        if (!target.databaseBacked || unsettledLocal(target)) return false;
+        // An analyzer proposal must not create its backing anonymous datatype when
+        // the corresponding target is guaranteed to be preserved by the applier.
+        // Otherwise every run creates an unreachable type which TypeLifecycle then
+        // removes in the same run.
+        boolean protectedTarget = target.expectedSource.equals(
+            SourceType.USER_DEFINED.toString()) || target.expectedSource.equals(
+                SourceType.IMPORTED.toString());
+        return !protectedTarget || target.scriptOwned;
     }
 
     private boolean autoThis(TargetEvidence target) {

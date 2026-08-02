@@ -91,7 +91,7 @@ void __thiscall FUN_00697cf0(void *this,int param_1,int param_2)
                     (*(int *)(iVar5 + 8) * local_88 + *(int *)(iVar5 + 0x1c));
         }
         else {
-          pAVar14 = (AnonShape_00697CF0_36737CA3 *)0x0;
+          pAVar14 = nullptr;
         }
         local_a4 = pAVar14;
         if ((*(int *)pAVar14 == 0) && (pAVar14->field_0005 < 1)) {
@@ -110,9 +110,9 @@ void __thiscall FUN_00697cf0(void *this,int param_1,int param_2)
                   pbVar13 = (byte *)(*(int *)(iVar5 + 8) * local_94 + *(int *)(iVar5 + 0x1c));
                 }
                 else {
-                  pbVar13 = (byte *)0x0;
+                  pbVar13 = nullptr;
                 }
-                if (pbVar13 != (byte *)0x0) {
+                if (pbVar13 != nullptr) {
                   local_90 = local_90 + 1;
                   iVar5 = *(int *)(pbVar13 + 2) / *(int *)((int)this + 0x5833);
                   uVar11 = *(int *)(pbVar13 + 2) % *(int *)((int)this + 0x5833);
@@ -196,7 +196,7 @@ LAB_00697e8c:
                        (*(int *)(iVar12 + 8) * (int)*psVar7 + *(int *)(iVar12 + 0x1c));
           }
           else {
-            local_a4 = (AnonShape_00697CF0_36737CA3 *)0x0;
+            local_a4 = nullptr;
           }
           local_38 = ((int)psVar7[5] - (int)psVar7[4]) + 1;
           local_44 = ((int)psVar7[7] - (int)psVar7[6]) + 1;
@@ -219,7 +219,7 @@ LAB_00697e8c:
                 pbVar13 = (byte *)(*(int *)(iVar12 + 8) * local_94 + *(int *)(iVar12 + 0x1c));
               }
               else {
-                pbVar13 = (byte *)0x0;
+                pbVar13 = nullptr;
               }
               if ((*pbVar13 & 1) != 0) {
                 *(undefined2 *)
@@ -341,7 +341,7 @@ LAB_00697e8c:
                    *(int *)(iVar5 + 0x1c));
       }
       else {
-        local_a4 = (AnonShape_00697CF0_36737CA3 *)0x0;
+        local_a4 = nullptr;
       }
       if ((((*(int *)local_a4 == 0) && (local_a4->field_0005 < 2)) && (3 < local_a4->field_0011)) &&
          (local_a4->field_0015 != 0)) {

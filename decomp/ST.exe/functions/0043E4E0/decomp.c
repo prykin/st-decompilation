@@ -33,14 +33,14 @@ uint * STAllPlayersC::GetObjsList(char param_1)
   iVar5 = Library::MSVCRT::__setjmp3(local_58.jumpBuffer,0);
   uVar3 = local_c;
   if (iVar5 == 0) {
-    array = Library::DKW::TBL::DArrayCreate((DArrayTy *)0x0,local_c,2,1);
+    array = Library::DKW::TBL::DArrayCreate(nullptr,local_c,2,1);
     iVar7 = local_10;
     iVar5 = local_14;
     if ((uVar3 != 0) && (local_8 = 0, 0 < local_10)) {
       do {
         piVar1 = *(int **)(*(int *)(iVar5 + 0x1c) + local_8 * 4);
         /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-        if ((piVar1 != (int *)0x0) && (iVar6 = (**(code **)(*piVar1 + 0xf8))(), iVar6 == 1)) {
+        if ((piVar1 != nullptr) && (iVar6 = (**(code **)(*piVar1 + 0xf8))(), iVar6 == 1)) {
           Library::DKW::TBL::DArrayAppend(array,&local_8);
         }
         local_8 = local_8 + 1;
@@ -54,7 +54,7 @@ uint * STAllPlayersC::GetObjsList(char param_1)
                              "STAllPlayersC::GetObjsList");
   if (iVar7 == 0) {
     RaiseInternalException(iVar5,0,"E:\\__titans\\wlad\\to_allpl.cpp",0x1f8d);
-    return (uint *)0x0;
+    return nullptr;
   }
   STDebugBreak(); /* noreturn in standalone pseudocode */
 }

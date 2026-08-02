@@ -1,0 +1,7 @@
+program=ST.exe
+machine_prefilter_candidates=1138
+field_candidates=258
+auto_apply=0
+decompile_failures=0
+note=Application requires both an exact stored target and an indirect call through the same structure field.
+note=Multiple stored targets must have one identical recovered ABI; manual structures and concrete fields are preserved.

@@ -769,6 +769,11 @@ public class STPrototypeAnalyzer extends GhidraScript {
             TargetKey key = entry.getKey(); Evidence ev = entry.getValue();
             Function function = currentProgram.getFunctionManager().getFunctionAt(key.address);
             if (function == null) continue;
+            // Utility recovery owns the complete semantic ABI of generic helpers. In
+            // particular, allocator/reallocator void * parameters must remain neutral
+            // across heterogeneous consumers; majority call-site evidence is a payload
+            // view, not permission to specialize the helper itself.
+            if (hasTag(function, "RECOVERED_UTILITY_SEMANTICS")) continue;
             Parameter target = "return".equals(key.kind) ? function.getReturn() :
                 explicitParameter(function, key.ordinal);
             if (target == null) continue;

@@ -23,7 +23,7 @@ void __thiscall MTestTy::InitMTest(MTestTy *this)
   local_8 = this;
   iVar2 = Library::MSVCRT::__setjmp3(local_4c.jumpBuffer,0);
   if (iVar2 == 0) {
-    if (g_cursorClass_00802A30 != (CursorClassTy *)0x0) {
+    if (g_cursorClass_00802A30 != nullptr) {
       if (g_cursorClass_00802A30->field_00A9 == 0) {
         Library::DKW::DDX::FUN_006b8b10((int *)g_cursorClass_00802A30->field_00AD);
       }
@@ -34,7 +34,7 @@ void __thiscall MTestTy::InitMTest(MTestTy *this)
     puVar3 = (ushort *)FUN_0070a9f0(g_cMf32_00806780,"LOADSINGLE",0,1);
     this_01 = local_8;
     local_8->field_005D = puVar3;
-    FUN_006bc360(puVar3,local_44c,(int *)0x0);
+    FUN_006bc360(puVar3,local_44c,nullptr);
     g_startSystem_0081176C->field_0140 = 0x1f;
     Library::Ourlib::PALETTE::FUN_00718780
               ((int)local_44c,0,0x100,0x8b,0x15,(undefined4 *)&g_startSystem_0081176C->field_0x144);
@@ -42,7 +42,7 @@ void __thiscall MTestTy::InitMTest(MTestTy *this)
     this_01->field_0071 = 0x13;
     this_01->field_0075 = this_01->field_0008;
     FUN_006e6000(this_01,3,1,(undefined4 *)&this_01->field_0x61);
-    if (g_startSystem_0081176C->field_02E6 != (MMsgTy *)0x0) {
+    if (g_startSystem_0081176C->field_02E6 != nullptr) {
       MMsgTy::HidePanel(g_startSystem_0081176C->field_02E6,0,0,1);
       MMsgTy::HideSprites(g_startSystem_0081176C->field_02E6);
     }
@@ -51,7 +51,7 @@ void __thiscall MTestTy::InitMTest(MTestTy *this)
     thunk_FUN_0055ddf0((undefined4 *)g_dDXContext_0080759C,(int *)g_ddxContext_008075A8,
                        (ushort *)this_01->field_005D,10,2);
     this_00 = g_cursorClass_00802A30;
-    if (g_cursorClass_00802A30 != (CursorClassTy *)0x0) {
+    if (g_cursorClass_00802A30 != nullptr) {
       iVar2 = g_cursorClass_00802A30->field_00C9;
       iVar4 = g_cursorClass_00802A30->field_00C5;
       g_cursorClass_00802A30->field_0493 = CASE_1;

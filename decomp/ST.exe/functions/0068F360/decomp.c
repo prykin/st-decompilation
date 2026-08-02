@@ -47,7 +47,7 @@ void __thiscall AiTactClassTy::GiveObjByFltType(AiTactClassTy *this,uint *param_
     RaiseInternalException(iVar6,0,"E:\\__titans\\ai\\ai_tact.cpp",0x277);
     return;
   }
-  if ((param_1 == (uint *)0x0) || (param_1[3] == 0)) {
+  if ((param_1 == nullptr) || (param_1[3] == 0)) {
     g_currentExceptionFrame = local_5c.previous;
     return;
   }
@@ -69,23 +69,23 @@ joined_r0x0068f3e2:
           puVar7 = (ushort *)(param_1[2] * index + param_1[7]);
         }
         else {
-          puVar7 = (ushort *)0x0;
+          puVar7 = nullptr;
         }
-        if (g_allPlayers_007FA174 == (STAllPlayersC *)0x0) {
-          objPtr = (STGameObjC *)0x0;
+        if (g_allPlayers_007FA174 == nullptr) {
+          objPtr = nullptr;
         }
         else {
           objPtr = STAllPlayersC::GetObjPtr
                              (g_allPlayers_007FA174,*(char *)&pAVar5->field_0024,*puVar7,CASE_1);
         }
         pAVar5 = local_8;
-      } while (objPtr == (STGameObjC *)0x0);
+      } while (objPtr == nullptr);
       iVar6 = (*objPtr->vtable->vfunc_2C)();
       if ((iVar6 != 0x78) || ((int)local_c < 0)) break;
       pAVar10 = local_8->field_00A5;
-      if ((pAVar10 == (AiTactClassTy_field_00A5DArray *)0x0) ||
+      if ((pAVar10 == nullptr) ||
          ((int)pAVar10->count <= (int)local_c)) {
-        pAVar8 = (AiFltClassTy *)0x0;
+        pAVar8 = nullptr;
       }
       else {
         pAVar8 = pARam00000004;
@@ -151,9 +151,9 @@ LAB_0068f509:
   if (-1 < (int)uVar11) {
     pAVar10 = local_8->field_00A5;
 LAB_0068f516:
-    if ((pAVar10 == (AiTactClassTy_field_00A5DArray *)0x0) || ((int)pAVar10->count <= (int)uVar11))
+    if ((pAVar10 == nullptr) || ((int)pAVar10->count <= (int)uVar11))
     {
-      pAVar8 = (AiFltClassTy *)0x0;
+      pAVar8 = nullptr;
     }
     else {
       pAVar8 = pARam00000004;

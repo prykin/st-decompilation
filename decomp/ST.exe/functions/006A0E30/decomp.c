@@ -29,7 +29,7 @@ CGenerate::sub_006A0E30(CGenerate *this,uint param_1,int param_2,int param_3,int
         param_4 = 0;
       }
     }
-    thunk_FUN_006a2920(piVar1,param_1,param_2,param_3,param_4,(undefined *)0x0,0);
+    thunk_FUN_006a2920(piVar1,param_1,param_2,param_3,param_4,nullptr,0);
   }
   return;
 }

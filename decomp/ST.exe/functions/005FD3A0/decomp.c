@@ -69,7 +69,7 @@ LAB_005fd4eb:
     }
   }
   else if ((uVar1 == 0x10f) &&
-          (local_10 = (byte *)thunk_FUN_006012d0(this,(int *)&local_c), local_10 != (byte *)0x0)) {
+          (local_10 = (byte *)thunk_FUN_006012d0(this,(int *)&local_c), local_10 != nullptr)) {
     STPlaySystemC::SaveObjData(g_playSystem_00802A38,*(int **)((int)this + 0x18),local_10,local_c);
     FreeAndNull(&local_10);
   }

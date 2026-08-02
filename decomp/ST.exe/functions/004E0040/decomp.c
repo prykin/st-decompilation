@@ -12,7 +12,7 @@ undefined4 __fastcall FUN_004e0040(AnonShape_004E0040_648F9827 *param_1)
   param_1->field_04E4 = 0;
   param_1->field_04E8 = 0;
   this = thunk_FUN_004d85e0(param_1->field_05B0,param_1->field_05B4,param_1->field_05B8);
-  if (this == (uint *)0x0) goto LAB_004e0119;
+  if (this == nullptr) goto LAB_004e0119;
   /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
   iVar1 = (**(code **)(*this + 0x2c))();
   param_1->field_04DC = iVar1;

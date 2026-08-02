@@ -19,7 +19,7 @@ int __thiscall FUN_0074d07d(void *this,int *param_1,int *param_2)
     *param_2 = *(int *)(iVar3 + 0x9c);
   }
   piVar1 = (int *)*param_2;
-  if (piVar1 == (int *)0x0) {
+  if (piVar1 == nullptr) {
     iVar4 = -0x7ffbfdf6;
     if (*(int *)((int)this + 0x18) != 0) {
       /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */

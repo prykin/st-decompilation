@@ -16,7 +16,7 @@ int FUN_006d9f30(int *param_1,int param_2,int param_3,int param_4,int param_5)
 
   if ((param_1[0x71] < param_4) || (param_1[0x72] < param_5)) {
     piVar1 = (int *)param_1[0x73];
-    if (piVar1 != (int *)0x0) {
+    if (piVar1 != nullptr) {
       /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
       (**(code **)(*piVar1 + 8))(piVar1);
     }

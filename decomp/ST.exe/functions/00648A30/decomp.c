@@ -10,11 +10,11 @@ undefined4 __cdecl FUN_00648a30(int param_1,char *param_2)
   char *pcVar5;
   char *pcVar6;
 
-  if ((((g_allPlayers_007FA174 == (STAllPlayersC *)0x0) || (param_1 < 0)) || (7 < param_1)) ||
-     (pAVar2 = thunk_FUN_004357f0((char)param_1), pAVar2 == (AiPlrClassTy *)0x0)) {
+  if ((((g_allPlayers_007FA174 == nullptr) || (param_1 < 0)) || (7 < param_1)) ||
+     (pAVar2 = thunk_FUN_004357f0((char)param_1), pAVar2 == nullptr)) {
     return 0;
   }
-  if (param_2 != (char *)0x0) {
+  if (param_2 != nullptr) {
     uVar3 = 0xffffffff;
     pcVar5 = &pAVar2->field_0x5ee;
     do {

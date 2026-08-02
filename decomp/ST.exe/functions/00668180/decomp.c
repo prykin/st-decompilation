@@ -37,7 +37,7 @@ FUN_00668180(char *text,ushort param_2,ushort param_3,ushort param_4,byte param_
   InternalExceptionFrame local_4c;
   AnonShape_00668180_E8377840 *local_8;
 
-  local_8 = (AnonShape_00668180_E8377840 *)0x0;
+  local_8 = nullptr;
   local_4c.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_4c;
   exceptionCode = Library::MSVCRT::__setjmp3(local_4c.jumpBuffer,0);
@@ -53,15 +53,15 @@ FUN_00668180(char *text,ushort param_2,ushort param_3,ushort param_4,byte param_
     local_8->field_0061 = param_5;
     local_8->field_023F = 0x3fffffff;
     if (local_8->field_01EB == 0) {
-      pDVar1 = Library::DKW::TBL::DArrayCreate((DArrayTy *)0x0,10,0x2c,10);
+      pDVar1 = Library::DKW::TBL::DArrayCreate(nullptr,10,0x2c,10);
       local_8->field_01EB = pDVar1;
     }
     if (local_8->field_0203 == 0) {
-      pDVar1 = Library::DKW::TBL::DArrayCreate((DArrayTy *)0x0,10,0x14,10);
+      pDVar1 = Library::DKW::TBL::DArrayCreate(nullptr,10,0x14,10);
       local_8->field_0203 = pDVar1;
     }
     if (local_8->field_020F == 0) {
-      pDVar1 = Library::DKW::TBL::DArrayCreate((DArrayTy *)0x0,10,0xc,10);
+      pDVar1 = Library::DKW::TBL::DArrayCreate(nullptr,10,0xc,10);
       local_8->field_020F = pDVar1;
     }
     g_currentExceptionFrame = local_4c.previous;
@@ -70,6 +70,6 @@ FUN_00668180(char *text,ushort param_2,ushort param_3,ushort param_4,byte param_
   g_currentExceptionFrame = local_4c.previous;
   thunk_FUN_006686c0((int *)&local_8);
   RaiseInternalException(exceptionCode,0,"E:\\__titans\\ai\\ai_flt_d.cpp",0x2a);
-  return (AnonShape_GLOBAL_008489C4_F7BABFAC *)0x0;
+  return nullptr;
 }
 

@@ -12,10 +12,10 @@ STOctopusC * __cdecl CreateSTOctopus(void)
   STOctopusC *pSVar1;
 
   pSVar1 = (STOctopusC *)FUN_006b04d0(0x2ad);
-  if (pSVar1 != (STOctopusC *)0x0) {
+  if (pSVar1 != nullptr) {
     pSVar1 = STOctopusC::STOctopusC(pSVar1);
     return pSVar1;
   }
-  return (STOctopusC *)0x0;
+  return nullptr;
 }
 

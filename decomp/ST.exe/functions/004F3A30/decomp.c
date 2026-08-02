@@ -32,7 +32,7 @@ CPanelTy::PaintTxtBut
 
   uVar2 = (uint)param_1;
   local_18 = (param_2->arg1).ptr;
-  local_8 = (ushort *)0x0;
+  local_8 = nullptr;
   iVar4 = local_18[1];
   local_c = *local_18 - (&this->field_003C)[uVar2];
   switch(uVar2) {
@@ -68,13 +68,13 @@ LAB_004f3aaa:
   }
   local_14 = iVar4 - DAT_00806734;
 cf_common_join_004F3AC3:
-  if (param_6 != (undefined *)0x0) {
+  if (param_6 != nullptr) {
     local_5c.previous = g_currentExceptionFrame;
     g_currentExceptionFrame = &local_5c;
     local_10 = this;
     iVar4 = Library::MSVCRT::__setjmp3(local_5c.jumpBuffer,0);
     if (iVar4 == 0) {
-      local_8 = cMf32::RecGet(g_cMf32_00806790,param_3,param_4,(int *)0x0,1);
+      local_8 = cMf32::RecGet(g_cMf32_00806790,param_3,param_4,nullptr,1);
       pCVar3 = local_10;
       uVar5 = local_14;
       uVar2 = (uint)param_1;

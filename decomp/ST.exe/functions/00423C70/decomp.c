@@ -33,7 +33,7 @@ undefined4 __thiscall FUN_00423c70(void *this,short param_1)
     local_8 = 0xffff;
     Library::DKW::TBL::DArrayPut(*(DArrayTy **)((int)this + 0x29),uVar3 & 0xffff,&local_8);
     *(short *)((int)this + 0x27) = *(short *)((int)this + 0x27) + -1;
-    if (*(undefined4 **)((int)this + 0x1c) != (undefined4 *)0x0) {
+    if (*(undefined4 **)((int)this + 0x1c) != nullptr) {
       local_18 = 0x5d96;
       local_14 = 1;
       local_12 = param_1;

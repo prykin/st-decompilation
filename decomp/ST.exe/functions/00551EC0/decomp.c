@@ -42,7 +42,7 @@ void __thiscall TradePanelTy::PaintIndicators(TradePanelTy *this)
       iVar4 = 0xb4;
       local_c = 2;
       do {
-        puVar10 = (undefined4 *)0x0;
+        puVar10 = nullptr;
         iVar9 = 0;
         iVar8 = 1;
         bVar7 = 0;

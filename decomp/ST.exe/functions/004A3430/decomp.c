@@ -53,11 +53,11 @@ STGroupBoatC::DistributeMD
   undefined1 local_8 [4];
 
   uVar10 = 0;
-  local_40 = (DArrayTy *)0x0;
-  local_2c = (DArrayTy *)0x0;
-  local_28 = (DArrayTy *)0x0;
-  local_1c = (DArrayTy *)0x0;
-  local_24 = (DArrayTy *)0x0;
+  local_40 = nullptr;
+  local_2c = nullptr;
+  local_28 = nullptr;
+  local_1c = nullptr;
+  local_24 = nullptr;
   local_b0.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_b0;
   local_6c = this;
@@ -65,19 +65,19 @@ STGroupBoatC::DistributeMD
   if (iVar3 != 0) {
     g_currentExceptionFrame = local_b0.previous;
     if (iVar3 == -0x5001fff7) {
-      if (local_2c != (DArrayTy *)0x0) {
+      if (local_2c != nullptr) {
         DArrayDestroy(local_2c);
       }
-      if (local_28 != (DArrayTy *)0x0) {
+      if (local_28 != nullptr) {
         DArrayDestroy(local_28);
       }
-      if (local_1c != (DArrayTy *)0x0) {
+      if (local_1c != nullptr) {
         DArrayDestroy(local_1c);
       }
-      if (local_40 != (DArrayTy *)0x0) {
+      if (local_40 != nullptr) {
         DArrayDestroy(local_40);
       }
-      if (local_24 != (DArrayTy *)0x0) {
+      if (local_24 != nullptr) {
         DArrayDestroy(local_24);
         return;
       }
@@ -92,13 +92,13 @@ STGroupBoatC::DistributeMD
     }
     return;
   }
-  if ((param_4 == (DArrayTy *)0x0) || (local_68 = param_4->count, local_68 == 0)) {
+  if ((param_4 == nullptr) || (local_68 = param_4->count, local_68 == 0)) {
     RaiseInternalException
               (-0x5001fff7,g_overwriteContext_007ED77C,"E:\\__titans\\wlad\\to_grpb.cpp",
                0x10f5);
   }
   dVar5 = local_68;
-  local_1c = Library::DKW::TBL::DArrayCreate((DArrayTy *)0x0,0,2,1);
+  local_1c = Library::DKW::TBL::DArrayCreate(nullptr,0,2,1);
   pSVar2 = local_6c;
   if (0 < (int)dVar5) {
     do {
@@ -109,7 +109,7 @@ STGroupBoatC::DistributeMD
         pSVar4 = (STBoatC *)
                  STAllPlayersC::GetObjPtr
                            (g_allPlayers_007FA174,pSVar2->field_0024,local_8._0_2_,CASE_1);
-        if (pSVar4 == (STBoatC *)0x0) {
+        if (pSVar4 == nullptr) {
           iVar3 = ReportDebugMessage("E:\\__titans\\wlad\\to_grpb.cpp",0x10fc,0,0,
                                      "%s","STGroupBoatC::DistributeMD ptr==NULL");
           if (iVar3 != 0) {
@@ -131,8 +131,8 @@ STGroupBoatC::DistributeMD
             goto LAB_004a35b6;
           }
           pDVar7 = local_24;
-          if (local_24 == (DArrayTy *)0x0) {
-            pDVar7 = Library::DKW::TBL::DArrayCreate((DArrayTy *)0x0,1,2,1);
+          if (local_24 == nullptr) {
+            pDVar7 = Library::DKW::TBL::DArrayCreate(nullptr,1,2,1);
             local_24 = pDVar7;
           }
         }
@@ -148,8 +148,8 @@ LAB_004a35b6:
               (-0x5001fff7,g_overwriteContext_007ED77C,"E:\\__titans\\wlad\\to_grpb.cpp",
                0x110f);
   }
-  if ((param_2 != (DArrayTy *)0x0) && (dVar5 = param_2->count, dVar5 != 0)) {
-    local_2c = Library::DKW::TBL::DArrayCreate((DArrayTy *)0x0,0,2,1);
+  if ((param_2 != nullptr) && (dVar5 = param_2->count, dVar5 != 0)) {
+    local_2c = Library::DKW::TBL::DArrayCreate(nullptr,0,2,1);
     uVar10 = 0;
     if (0 < (int)dVar5) {
       do {
@@ -158,7 +158,7 @@ LAB_004a35b6:
         if ((local_8._0_2_ != 0xffff) &&
            (pSVar6 = STAllPlayersC::GetObjPtr
                                (g_allPlayers_007FA174,pSVar2->field_0024,local_8._0_2_,CASE_1),
-           pSVar6 != (STGameObjC *)0x0)) {
+           pSVar6 != nullptr)) {
           Library::DKW::TBL::DArrayAppend(local_2c,local_8);
         }
         uVar10 = uVar10 + 1;
@@ -166,7 +166,7 @@ LAB_004a35b6:
     }
   }
   uVar10 = local_20;
-  if ((local_2c == (DArrayTy *)0x0) || (local_2c->count == 0)) {
+  if ((local_2c == nullptr) || (local_2c->count == 0)) {
     uVar9 = 0;
     if (0 < (int)local_20) {
       do {
@@ -191,8 +191,8 @@ LAB_004a35b6:
               (-0x5001fff7,g_overwriteContext_007ED77C,"E:\\__titans\\wlad\\to_grpb.cpp",
                0x1124);
   }
-  if ((param_3 != (DArrayTy *)0x0) && (dVar5 = param_3->count, dVar5 != 0)) {
-    local_28 = Library::DKW::TBL::DArrayCreate((DArrayTy *)0x0,0,2,1);
+  if ((param_3 != nullptr) && (dVar5 = param_3->count, dVar5 != 0)) {
+    local_28 = Library::DKW::TBL::DArrayCreate(nullptr,0,2,1);
     uVar10 = 0;
     if (0 < (int)dVar5) {
       do {
@@ -201,7 +201,7 @@ LAB_004a35b6:
         if ((local_8._0_2_ != 0xffff) &&
            (pSVar6 = STAllPlayersC::GetObjPtr
                                (g_allPlayers_007FA174,pSVar2->field_0024,local_8._0_2_,CASE_1),
-           pSVar6 != (STGameObjC *)0x0)) {
+           pSVar6 != nullptr)) {
           Library::DKW::TBL::DArrayAppend(local_28,local_8);
         }
         uVar10 = uVar10 + 1;
@@ -209,7 +209,7 @@ LAB_004a35b6:
     }
   }
   uVar10 = local_20;
-  if ((local_28 == (DArrayTy *)0x0) || (local_28->count == 0)) {
+  if ((local_28 == nullptr) || (local_28->count == 0)) {
     uVar9 = 0;
     if (0 < (int)local_20) {
       do {
@@ -239,7 +239,7 @@ LAB_004a35b6:
                      (g_allPlayers_007FA174,pSVar2->field_0024,pSVar2->field_025E,local_2c,local_28,
                       local_1c);
   local_40 = pDVar7;
-  if (pDVar7 == (DArrayTy *)0x0) {
+  if (pDVar7 == nullptr) {
     iVar3 = ReportDebugMessage("E:\\__titans\\wlad\\to_grpb.cpp",0x113f,0,0,"%s",
                                "STGroupBoatC::DistributeMD unknown error");
     if (iVar3 != 0) {

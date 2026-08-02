@@ -50,7 +50,7 @@ ProdPanelTy::InitProdPanel
   if (iVar2 == 0) {
     pcVar3 = (ccFntTy *)ccFntTy::operator_new(0x19d,g_interSystem_00802A28->field_0028);
     this_00 = local_14;
-    puVar12 = (undefined4 *)0x0;
+    puVar12 = nullptr;
     iVar11 = 0;
     iVar2 = 1;
     bVar10 = 0;
@@ -87,7 +87,7 @@ ProdPanelTy::InitProdPanel
     ccFntTy::WrStr(this_00->field_017C,resourceString,iVar2,iVar11,uVar9);
     pCVar4 = thunk_FUN_00571240("BUT_MEDIUM",0);
     uVar6 = PanelTy::CreateBut((PanelTy *)this_00,0,1,param_6,param_7,0,1,1,pCVar4,0xbfff,0xc000,0,0
-                               ,0,(char *)0x0,0);
+                               ,0,nullptr,0);
     this_00->field_0180 = uVar6;
     iVar2 = CreateSlider(this_00,param_8,param_10,param_9,param_10,0xc0a4,0,0,0);
     local_c = &this_00->field_01A1;
@@ -98,7 +98,7 @@ ProdPanelTy::InitProdPanel
     local_10 = 5;
     do {
       uVar6 = PanelTy::CreateBut((PanelTy *)this_00,1,0,local_8,param_12,0,1,1,text,iVar2,
-                                 iVar2 + 0x10,1,0,puVar8,(char *)0x0,0);
+                                 iVar2 + 0x10,1,0,puVar8,nullptr,0);
       puVar8 = puVar8 + 0x27;
       iVar2 = iVar2 + 1;
       *local_c = uVar6;

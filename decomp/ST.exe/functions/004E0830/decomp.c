@@ -166,13 +166,13 @@ LAB_004e0a4f:
                  || (g_worldGrid.cells
                      [(int)sVar12 * (int)g_worldGrid.sizeX +
                       (int)g_worldGrid.planeStride * (int)sVar13 + (int)sVar4].objects[0] ==
-                     (STWorldObject *)0x0)))))) {
+                     nullptr)))))) {
               param_1->field_04E0[4] = uVar7;
               iVar5 = param_1->field_05B8;
               param_1->field_04E0[3] = 1;
               param_1->field_04E0[5] = uVar11;
               param_1->field_04E0[6] = iVar5 + 1;
-              if (DAT_00800bcc == (void *)0x0) {
+              if (DAT_00800bcc == nullptr) {
                 thunk_FUN_004cf430();
               }
               thunk_FUN_004d0970(DAT_00800bcc,param_1->field_04E0[4],param_1->field_04E0[5],
@@ -227,7 +227,7 @@ LAB_004e0a4f:
     uVar19 = param_1->field_04E0[5];
     uVar23 = 0x5a;
     uVar7 = param_1->field_04E0[4];
-    pcVar20 = (char *)0x0;
+    pcVar20 = nullptr;
     uVar18 = (ushort)param_1->field_04E0[9];
     uVar17 = (ushort)param_1->field_04E0[8];
     uVar16 = (ushort)param_1->field_04E0[7];
@@ -321,7 +321,7 @@ switchD_004e0aad_default:
       }
       this = (STResourceC *)
              thunk_FUN_004d85e0(param_1->field_05B0,param_1->field_05B4,param_1->field_05B8);
-      if (this != (STResourceC *)0x0) {
+      if (this != nullptr) {
         STResourceC::SetResource(this,param_1->field_04E0[0],1);
       }
       if ((param_1->field_04E0[0] == 0) &&

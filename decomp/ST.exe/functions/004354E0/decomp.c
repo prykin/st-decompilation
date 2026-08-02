@@ -45,7 +45,7 @@ STAllPlayersC::ReplaceObject(STAllPlayersC *this,char param_1,undefined4 param_2
     }
     return;
   }
-  local_10 = (DArrayTy *)0x0;
+  local_10 = nullptr;
   do {
     uVar6 = (uint)DAT_0080874d;
     if ((*(int *)((int)&g_packedRecords_A62x8[uVar6].field449_0x207 + (int)local_10) == 0x19a) &&
@@ -69,11 +69,11 @@ STAllPlayersC::ReplaceObject(STAllPlayersC *this,char param_1,undefined4 param_2
     local_10 = (DArrayTy *)((int)local_10 + 0x10);
   } while ((int)local_10 < 0x91);
   local_10 = (DArrayTy *)g_packedRecords_A62x8[param_1].field2377_0x9f6;
-  if (((local_10 != (DArrayTy *)0x0) && (local_14 = local_10->count, local_14 != 0)) &&
+  if (((local_10 != nullptr) && (local_14 = local_10->count, local_14 != 0)) &&
      (uVar6 = 0, 0 < (int)local_14)) {
     do {
       DArrayGetElement(local_10,uVar6,local_20);
-      if (local_20[0] != (DArrayTy *)0x0) {
+      if (local_20[0] != nullptr) {
         dVar2 = local_20[0]->count;
         index = 0;
         if (0 < (int)dVar2) {
@@ -98,7 +98,7 @@ STAllPlayersC::ReplaceObject(STAllPlayersC *this,char param_1,undefined4 param_2
     if (0 < (int)dVar2) {
       do {
         DArrayGetElement(pDVar1,uVar6,&local_c);
-        if (local_c != (void *)0x0) {
+        if (local_c != nullptr) {
           thunk_FUN_004a8220(local_c,param_1,(short)param_2,(ushort)param_3);
         }
         uVar6 = uVar6 + 1;
@@ -113,7 +113,7 @@ STAllPlayersC::ReplaceObject(STAllPlayersC *this,char param_1,undefined4 param_2
     if (((iVar4 != 0) && (iVar8 = *(int *)(iVar4 + 0xc), iVar8 != 0)) &&
        (piVar7 = *(int **)(iVar4 + 0x1c), 0 < iVar8)) {
       do {
-        if ((int *)*piVar7 != (int *)0x0) {
+        if ((int *)*piVar7 != nullptr) {
           /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
           (**(code **)(*(int *)*piVar7 + 0x8c))(_param_1,param_2,param_3);
         }

@@ -23,13 +23,13 @@ undefined4 __thiscall STMineSetC::sub_00627400(STMineSetC *this,undefined4 param
        (this_00 = (STFishC *)
                   g_worldGrid.cells
                   [(int)g_worldGrid.planeStride * (int)sVar3 + (int)g_worldGrid.sizeX * (int)sVar2 +
-                   (int)sVar1].objects[(byte)this->field_008E], this_00 == (STFishC *)0x0)))))) {
+                   (int)sVar1].objects[(byte)this->field_008E], this_00 == nullptr)))))) {
     if ((((((sVar1 < 0) || (g_worldGrid.sizeX <= sVar1)) || (sVar2 < 0)) ||
          ((g_worldGrid.sizeY <= sVar2 || (sVar3 < 0)))) ||
         ((g_worldGrid.sizeZ <= sVar3 ||
          (g_worldGrid.cells
           [(int)g_worldGrid.planeStride * (int)sVar3 + (int)g_worldGrid.sizeX * (int)sVar2 +
-           (int)sVar1].objects[(byte)this->field_008E] == (STWorldObject *)0x0)))) &&
+           (int)sVar1].objects[(byte)this->field_008E] == nullptr)))) &&
        (iVar4 = DumpClassC::WritePtr
                           (sVar1,sVar2,sVar3,this->field_008E,
                            (RecoveredRecord_DumpClassC_00495EC0 *)this), iVar4 == 0)) {

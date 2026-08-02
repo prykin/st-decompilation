@@ -59,7 +59,7 @@ void FUN_006b84d0(AnonShape_006B5B10_E0D06CF1 *param_1,int param_2,int param_3,i
     }
     FUN_006d2820((byte *)((int)pAVar4 * iVar3 + local_14 + param_2),param_1,param_5,
                  local_14 - (param_3 + sVar1),local_10 - (param_4 + sVar2),local_c,local_8,0,
-                 (byte *)0x0,0,0,(byte *)0x0);
+                 nullptr,0,0,nullptr);
   }
   return;
 }

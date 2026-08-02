@@ -15,7 +15,7 @@ void __thiscall JumpManagC::sub_006179D0(JumpManagC *this)
   bool bVar4;
 
   pDVar2 = this->field_005E;
-  if (pDVar2 != (DArrayTy *)0x0) {
+  if (pDVar2 != nullptr) {
     uVar3 = 0;
     if (0 < (int)pDVar2->count) {
       bVar4 = pDVar2->count != 0;
@@ -23,7 +23,7 @@ void __thiscall JumpManagC::sub_006179D0(JumpManagC *this)
         /* ST_PSEUDO[dynamic_array_indexing]: expected DArrayAt<T>(pDVar2, uVar3) (runtime stride) */
         if ((bVar4) &&
            (pvVar1 = (void *)(pDVar2->elementSize * uVar3 + (int)pDVar2->data),
-           pvVar1 != (void *)0x0)) {
+           pvVar1 != nullptr)) {
           *(undefined4 *)((int)pvVar1 + 0x18) = 0;
         }
         pDVar2 = this->field_005E;

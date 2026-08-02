@@ -36,10 +36,10 @@ STAllPlayersC::SelectObjects
 
   objPtr = DAT_0080874d;
   uVar3 = (uint)DAT_0080874d;
-  local_8 = (DArrayTy *)0x0;
-  local_10 = (DArrayTy *)0x0;
-  local_c = (DArrayTy *)0x0;
-  local_8 = Library::DKW::TBL::DArrayCreate((DArrayTy *)0x0,0,2,1);
+  local_8 = nullptr;
+  local_10 = nullptr;
+  local_c = nullptr;
+  local_8 = Library::DKW::TBL::DArrayCreate(nullptr,0,2,1);
   switch(param_1) {
   /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
   case CASE_0:
@@ -50,7 +50,7 @@ STAllPlayersC::SelectObjects
       do {
         piVar5 = *(int **)(*(int *)(iVar8 + 0x1c) + param_3 * 4);
         /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-        if (((piVar5 != (int *)0x0) && (piVar5[8] == 0x14)) &&
+        if (((piVar5 != nullptr) && (piVar5[8] == 0x14)) &&
            ((iVar4 = (**(code **)(*piVar5 + 0xf8))(), iVar4 == 1 &&
             (iVar4 = (**(code **)(*piVar5 + 0xec))(), iVar4 == 1)))) {
           Library::DKW::TBL::DArrayAppend(local_8,(void *)((int)piVar5 + 0x32));
@@ -62,7 +62,7 @@ STAllPlayersC::SelectObjects
     break;
   case CASE_1:
     GetGObjFromZone(this,objPtr,DAT_00807410,DAT_00807414,DAT_00807418,DAT_0080741c,(int *)&local_8,
-                    (int *)0x0);
+                    nullptr);
     /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
     param_3 = 0;
     /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
@@ -70,7 +70,7 @@ STAllPlayersC::SelectObjects
     if (0 < (int)param_2) {
       do {
         pSVar7 = GetObjPtr(this,objPtr,*(ushort *)((int)local_8->data + param_3 * 2),CASE_1);
-        if ((((pSVar7 == (STGameObjC *)0x0) || (pSVar7->field_0020 != 0x14)) ||
+        if ((((pSVar7 == nullptr) || (pSVar7->field_0020 != 0x14)) ||
             (iVar8 = pSVar7->vfunc_F8(), iVar8 == 0)) ||
            (iVar8 = pSVar7->vfunc_EC(), iVar8 == 0)) {
           DArrayRemoveAt(local_8,param_3);
@@ -93,7 +93,7 @@ STAllPlayersC::SelectObjects
       do {
         piVar5 = *(int **)(*(int *)(iVar8 + 0x1c) + param_3 * 4);
         /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-        if (((piVar5 != (int *)0x0) && (piVar5[8] == 0x14)) &&
+        if (((piVar5 != nullptr) && (piVar5[8] == 0x14)) &&
            (((iVar4 = (**(code **)(*piVar5 + 0x2c))(),
              (*(uint *)(&DAT_00800f10 + (iVar4 + 0x41U >> 5) * 4) &
              1 << ((byte)(iVar4 + 0x41U) & 0x1f)) != 0 ||
@@ -117,7 +117,7 @@ STAllPlayersC::SelectObjects
       do {
         piVar5 = *(int **)(*(int *)(iVar8 + 0x1c) + param_3 * 4);
         /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-        if (((piVar5 != (int *)0x0) && (piVar5[8] == 0x14)) &&
+        if (((piVar5 != nullptr) && (piVar5[8] == 0x14)) &&
            ((iVar4 = (**(code **)(*piVar5 + 0x2c))(),
             ((&DAT_00801000)[iVar4 + 0x41U >> 5] & 1 << ((byte)(iVar4 + 0x41U) & 0x1f)) != 0 &&
             ((iVar4 = (**(code **)(*piVar5 + 0xf8))(), iVar4 == 1 &&
@@ -138,7 +138,7 @@ STAllPlayersC::SelectObjects
       do {
         piVar5 = *(int **)(*(int *)(iVar8 + 0x1c) + param_3 * 4);
         /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-        if ((((piVar5 != (int *)0x0) && (piVar5[8] == 0x14)) &&
+        if ((((piVar5 != nullptr) && (piVar5[8] == 0x14)) &&
             (iVar4 = (**(code **)(*piVar5 + 0x2c))(),
             ((&DAT_00800fa0)[iVar4 + 0x41U >> 5] & 1 << ((byte)(iVar4 + 0x41U) & 0x1f)) != 0)) &&
            ((iVar4 = (**(code **)(*piVar5 + 0xf8))(), iVar4 == 1 &&
@@ -159,7 +159,7 @@ STAllPlayersC::SelectObjects
       do {
         piVar5 = *(int **)(*(int *)(iVar8 + 0x1c) + param_3 * 4);
         /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-        if (((piVar5 != (int *)0x0) && (piVar5[8] == 0x14)) &&
+        if (((piVar5 != nullptr) && (piVar5[8] == 0x14)) &&
            ((iVar4 = (**(code **)(*piVar5 + 0x2c))(),
             ((&DAT_00801010)[iVar4 + 0x41U >> 5] & 1 << ((byte)(iVar4 + 0x41U) & 0x1f)) != 0 &&
             ((iVar4 = (**(code **)(*piVar5 + 0xf8))(), iVar4 == 1 &&
@@ -173,10 +173,10 @@ STAllPlayersC::SelectObjects
     break;
   case CASE_6:
     piVar5 = (int *)ST3DSMAPContext::sub_006EB350(g_sT3DSMAPContext_00807598,param_2,param_3,0xe,1);
-    if (((piVar5 != (int *)0x0) && (piVar5[9] == uVar3)) && (piVar5[8] == 0x14)) {
+    if (((piVar5 != nullptr) && (piVar5[9] == uVar3)) && (piVar5[8] == 0x14)) {
       DArrayDestroy(local_8);
       GetGObjFromZone(this,objPtr,DAT_00807410,DAT_00807414,DAT_00807418,DAT_0080741c,
-                      (int *)&local_c,(int *)0x0);
+                      (int *)&local_c,nullptr);
       cVar9 = -1;
       iVar8 = 0;
       /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
@@ -192,7 +192,7 @@ STAllPlayersC::SelectObjects
       if (0 < (int)param_2) {
         do {
           pSVar7 = GetObjPtr(this,objPtr,*(ushort *)((int)local_8->data + param_3 * 2),CASE_1);
-          if ((((pSVar7 == (STGameObjC *)0x0) || (pSVar7->field_0020 != 0x14)) ||
+          if ((((pSVar7 == nullptr) || (pSVar7->field_0020 != 0x14)) ||
               (iVar8 = pSVar7->vfunc_F8(), iVar8 == 0)) ||
              (iVar8 = pSVar7->vfunc_EC(), iVar8 == 0)) {
             DArrayRemoveAt(local_8,param_3);
@@ -212,7 +212,7 @@ STAllPlayersC::SelectObjects
     if ((((iVar8 != 0) && (*(uint *)(iVar8 + 0x24) == uVar3)) && (*(int *)(iVar8 + 0x20) == 0x14))
        && ((*(ushort *)(iVar8 + 0x30) != 0xffff &&
            (this_00 = thunk_FUN_0042b760(objPtr,*(ushort *)(iVar8 + 0x30)),
-           this_00 != (STGroupBoatC *)0x0)))) {
+           this_00 != nullptr)))) {
       DArrayDestroy(local_8);
       /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
       local_8 = (DArrayTy *)STGroupC::GetGroupContent((STGroupC *)this_00,unaff_EDI);
@@ -259,7 +259,7 @@ STAllPlayersC::SelectObjects
         if (-1 < iVar8) goto cf_common_exit_0044BD53;
         PushTV(objPtr,0);
         if (g_packedRecords_A62x8[uVar3].field338_0x177 == uVar3) {
-          CalibrateTmp(this,objPtr,0,1,&local_8->flags,(int *)&local_10,(int *)0x0,(int *)0x0);
+          CalibrateTmp(this,objPtr,0,1,&local_8->flags,(int *)&local_10,nullptr,nullptr);
           ResetActivityFromObjs(this,uVar3,0x3c,local_10,0,0);
           DArrayDestroy(local_10);
         }

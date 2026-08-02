@@ -26,7 +26,7 @@ int __thiscall FUN_00747ce5(void *this,int *param_1)
       (**(code **)(*(int *)this + 0x24))(unaff_EBX);
       /* ST_PSEUDO[unresolved_register_input,raw_indirect_call]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention; expected typed vtable/callback call with explicit __thiscall receiver */
       iVar2 = (**(code **)(*param_1 + 0x10))
-                        (param_1,-(uint)(this != (void *)0x0) & (int)this + 0xcU,unaff_ESI);
+                        (param_1,-(uint)(this != nullptr) & (int)this + 0xcU,unaff_ESI);
       if (-1 < iVar2) {
         /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
         iVar2 = (**(code **)(*(int *)this + 0x30))(param_1);
@@ -43,7 +43,7 @@ int __thiscall FUN_00747ce5(void *this,int *param_1)
     /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
     (**(code **)(*(int *)this + 0x2c))();
     piVar1 = *(int **)((int)this + 0x18);
-    if (piVar1 != (int *)0x0) {
+    if (piVar1 != nullptr) {
       /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
       (**(code **)(*piVar1 + 8))(piVar1);
       *(undefined4 *)((int)this + 0x18) = 0;

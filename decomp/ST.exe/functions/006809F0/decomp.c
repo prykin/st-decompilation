@@ -15,7 +15,7 @@ undefined4 __cdecl FUN_006809f0(uint *param_1)
   byte *local_8;
 
   local_c = 0;
-  local_8 = (byte *)0x0;
+  local_8 = nullptr;
   local_5c.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_5c;
   local_14 = Library::MSVCRT::__setjmp3(local_5c.jumpBuffer,0);
@@ -24,14 +24,14 @@ undefined4 __cdecl FUN_006809f0(uint *param_1)
     local_10 = local_14;
     local_8 = (byte *)FUN_006c8910(param_1,(int *)&local_c);
     thunk_FUN_00680890(0x17,local_8,local_c,&local_18);
-    if (local_8 != (byte *)0x0) {
+    if (local_8 != nullptr) {
       FreeAndNull(&local_8);
     }
     g_currentExceptionFrame = local_5c.previous;
     return 1;
   }
   g_currentExceptionFrame = local_5c.previous;
-  if (local_8 != (byte *)0x0) {
+  if (local_8 != nullptr) {
     FreeAndNull(&local_8);
   }
   RaiseInternalException(local_14,0,"E:\\__titans\\ai\\ai_script.cpp",0x124);

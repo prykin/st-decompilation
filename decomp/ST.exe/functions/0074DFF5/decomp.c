@@ -9,7 +9,7 @@ undefined4 __thiscall FUN_0074dff5(void *this,undefined4 *param_1)
   local_8 = this;
   local_8 = (void *)FUN_0074deb7(param_1);
   do {
-    if (local_8 == (void *)0x0) {
+    if (local_8 == nullptr) {
       return 1;
     }
     uVar1 = FUN_0074dec2((int *)&local_8);

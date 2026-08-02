@@ -11,7 +11,7 @@ void __fastcall FUN_004e0250(AnonShape_004E0250_5A3B9236 *param_1)
     return;
   }
   this = thunk_FUN_004d85e0(param_1->field_05B0,param_1->field_05B4,param_1->field_05B8);
-  if (this == (uint *)0x0) {
+  if (this == nullptr) {
     return;
   }
   /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */

@@ -23,7 +23,7 @@ int __thiscall STManBasisC::GetMessage(STManBasisC *this,STMessage *message)
   STManBasisC *local_c;
   ushort *local_8;
 
-  local_8 = (ushort *)0x0;
+  local_8 = nullptr;
   local_58.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_58;
   local_c = this;
@@ -53,11 +53,11 @@ int __thiscall STManBasisC::GetMessage(STManBasisC *this,STMessage *message)
     }
     if (SVar1 == MESS_ID_CREATE) {
       local_c->field_001C = local_c->field_0018 * DAT_00808754;
-      if (g_cMf32_00806754 != (cMf32 *)0x0) {
+      if (g_cMf32_00806754 != nullptr) {
         local_8 = Library::Ourlib::MFAOBJ::mfAObjLoad(g_cMf32_00806754,PTR_s_BASIS_MAN_0079c57c,0,0);
       }
-      if (local_8 == (ushort *)0x0) {
-        this_00->field_0020 = (ushort *)0x0;
+      if (local_8 == nullptr) {
+        this_00->field_0020 = nullptr;
         this_00->field_0024 = 0xff;
         this_00->field_0028 = 1;
         this_00->field_002C = 1;
@@ -70,7 +70,7 @@ int __thiscall STManBasisC::GetMessage(STManBasisC *this,STMessage *message)
       else {
         thunk_FUN_005f1380(this_00);
       }
-      if ((local_8 != (ushort *)0x0) && (g_cMf32_00806754 != (cMf32 *)0x0)) {
+      if ((local_8 != nullptr) && (g_cMf32_00806754 != nullptr)) {
         cMf32::RecMemFree(g_cMf32_00806754,(uint *)&local_8);
         g_currentExceptionFrame = local_58.previous;
         return 0;

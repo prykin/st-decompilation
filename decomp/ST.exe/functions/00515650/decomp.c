@@ -36,13 +36,13 @@ HelpPanelTy::DrawObj
   iVar3 = Library::MSVCRT::__setjmp3(local_58.jumpBuffer,0);
   pHVar2 = local_10;
   if (iVar3 == 0) {
-    if (g_allPlayers_007FA174 != (STAllPlayersC *)0x0) {
+    if (g_allPlayers_007FA174 != nullptr) {
       *param_1 = *param_1 + 2;
       local_8 = (AnonShape_00515650_BBDC7053 *)
                 STAllPlayersC::GetTOBJImage
                           (g_allPlayers_007FA174,(uint)param_3,
                            (STAllPlayersC_GetTOBJImage_param_2Enum)param_2);
-      if (local_8 != (AnonShape_00515650_BBDC7053 *)0x0) {
+      if (local_8 != nullptr) {
         local_14 = local_8->field_0004;
         local_c = local_8->field_0008;
         iVar3 = (0x19c - local_14) / 2;
@@ -61,7 +61,7 @@ HelpPanelTy::DrawObj
       uVar4 = thunk_FUN_00526ba0((Global_sub_00526BA0_param_1Enum)param_2,param_3);
       local_8 = (AnonShape_00515650_BBDC7053 *)
                 FUN_0070b3a0((AnonShape_GLOBAL_0081175C_57F682DD *)param_4,uVar4);
-      if (local_8 != (AnonShape_00515650_BBDC7053 *)0x0) {
+      if (local_8 != nullptr) {
         iVar3 = (0x19c - local_8->field_0004) / 2;
         DibPut((AnonShape_006B5B10_E0D06CF1 *)pHVar2->field_0218,iVar3,*param_1,'\x01',
                (byte *)local_8);

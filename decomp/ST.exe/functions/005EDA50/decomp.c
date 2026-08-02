@@ -28,7 +28,7 @@ undefined4 __fastcall FUN_005eda50(AnonShape_005EDA50_4BDBD797 *param_1)
          (this = (STBoatC *)
                  g_worldGrid.cells
                  [(int)g_worldGrid.planeStride * (int)sVar1 + (int)g_worldGrid.sizeX * (int)sVar2 +
-                  (int)sVar3].objects[0], uVar7 = local_18, this != (STBoatC *)0x0)))))) {
+                  (int)sVar3].objects[0], uVar7 = local_18, this != nullptr)))))) {
       /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
       if ((param_1->field_02E9 != '\0') &&
          (uVar4 = (**(code **)(*(int *)param_1 + 0x128))(), this->field_0018 == uVar4)) {
@@ -44,7 +44,7 @@ undefined4 __fastcall FUN_005eda50(AnonShape_005EDA50_4BDBD797 *param_1)
         iVar6 = thunk_FUN_005ecd70(param_1,local_14,local_10,local_c,local_8,'\x01',0x3c);
         if (iVar6 != 0) {
           uVar7 = 1;
-          if (param_1->field_0211 != (void *)0x0) {
+          if (param_1->field_0211 != nullptr) {
             Library::Ourlib::ST3DSMAP::SprSetLevBefore
                       (param_1->field_0211,param_1->field_01ED,this->field_01ED);
             return 1;

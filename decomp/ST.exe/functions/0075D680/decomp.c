@@ -11,7 +11,7 @@ void FUN_0075d680(int param_1,int param_2,int param_3,undefined4 *param_4)
 
   puVar6 = param_4;
   /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
-  param_4 = (undefined4 *)0x0;
+  param_4 = nullptr;
   puVar6 = (undefined4 *)*puVar6;
   /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
   if (0 < *(int *)(param_1 + 0x126)) {

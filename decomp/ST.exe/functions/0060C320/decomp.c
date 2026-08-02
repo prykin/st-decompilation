@@ -123,18 +123,19 @@ int __fastcall FUN_0060c320(void *param_1)
                    (sVar12 = (short)iVar16, sVar12 < 0)) ||
                   ((g_worldGrid.sizeY <= sVar12 || (sVar14 = (short)local_3c, sVar14 < 0)))) ||
                  (g_worldGrid.sizeZ <= sVar14)) {
-                pSVar17 = (STWorldObject *)0x0;
+                pSVar17 = nullptr;
               }
               else {
                 pSVar17 = g_worldGrid.cells
                           [(int)g_worldGrid.planeStride * (int)sVar14 +
                            (int)g_worldGrid.sizeX * (int)sVar12 + (int)sVar18].objects[0];
               }
-              if (((pSVar17 != (STWorldObject *)0x0) &&
+              if (((pSVar17 != nullptr) &&
                   (iVar10 = (*pSVar17->vtable[5].slots_00_28[0])(), iVar16 = local_40, iVar10 != 0))
                  && ((pSVar17[1].vtable < (STWorldObjectVTable *)0x8 &&
-                     ((g_playSystem_00802A38 == (STPlaySystemC *)0x0 ||
-                      ((byte)(&DAT_008087e9)[(int)pSVar17[1].vtable * 0x51] < 8)))))) {
+                     ((g_playSystem_00802A38 == nullptr ||
+                      (g_bulkInitializedRecords_008087C7[(int)pSVar17[1].vtable].field_0022 < 8)))))
+                 ) {
                 bVar3 = *(byte *)&pSVar17[1].vtable;
                 /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
                 bVar4 = *(byte *)((int)param_1 + 0x1d9);
@@ -163,8 +164,8 @@ LAB_0060c5f5:
                   bVar19 = iVar10 < 0;
                 }
                 else {
-                  bVar19 = (&DAT_008087ea)[(uint)bVar4 * 0x51] !=
-                           (&DAT_008087ea)[(uint)bVar3 * 0x51];
+                  bVar19 = g_bulkInitializedRecords_008087C7[bVar4].field_0023 !=
+                           g_bulkInitializedRecords_008087C7[bVar3].field_0023;
                 }
                 if ((bVar19) &&
                    (iVar11 = (*pSVar17->vtable[5].slots_00_28[2])(), iVar10 = local_74,

@@ -5,7 +5,7 @@ void FUN_006b6110(undefined4 *param_1)
   int iVar1;
   undefined4 *puVar2;
 
-  if (param_1 != (undefined4 *)0x0) {
+  if (param_1 != nullptr) {
     iVar1 = 0;
     if (0 < (int)param_1[1]) {
       puVar2 = param_1 + 2;

@@ -56,7 +56,7 @@ undefined4 __thiscall STGroupBoatC::ReMakePVecAndTgtList(STGroupBoatC *this,DArr
     }
     if (pSVar2->field_0212 == 0) {
       DArrayDestroy(pSVar2->field_020E);
-      pSVar2->field_020E = (DArrayTy *)0x0;
+      pSVar2->field_020E = nullptr;
       FreeAndNull(&pSVar2->field_021E);
       RaiseInternalException
                 (-0x5001fff7,g_overwriteContext_007ED77C,"E:\\__titans\\wlad\\to_grpb.cpp",

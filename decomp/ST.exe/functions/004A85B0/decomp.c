@@ -28,7 +28,7 @@ void __thiscall STGroupBoatC::StartReceiveOrderSound(STGroupBoatC *this,int para
         /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
         pSVar3 = STAllPlayersC::GetObjPtr
                            (g_allPlayers_007FA174,this->field_0024,local_8._0_2_,CASE_1);
-        if (pSVar3 == (STGameObjC *)0x0) {
+        if (pSVar3 == nullptr) {
           iVar4 = ReportDebugMessage("E:\\__titans\\wlad\\to_grpb.cpp",0x172d,0,0,
                                      "%s","STGroupBoatC::StartReceiveOrderSound NULL");
           if (iVar4 != 0) {

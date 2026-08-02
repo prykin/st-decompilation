@@ -50,7 +50,7 @@ FUN_00574920(AnonShape_00574920_7507981E *param_1,int param_2,int param_3,undefi
   puStack_10 = &LAB_0072d964;
   local_14 = ExceptionList;
   local_1c = &stack0xffffff54;
-  local_4c = (undefined4 *)0x0;
+  local_4c = nullptr;
   iVar3 = (int)*(short *)&param_1->field_0002 * (int)*(short *)param_1;
   local_24 = (int)(iVar3 + (iVar3 >> 0x1f & 3U)) >> 2;
   local_40 = 1;
@@ -80,19 +80,19 @@ FUN_00574920(AnonShape_00574920_7507981E *param_1,int param_2,int param_3,undefi
             pDVar2->iteratorIndex = uVar10 + 1;
           }
           else {
-            piVar12 = (int *)0x0;
+            piVar12 = nullptr;
           }
-        } while ((piVar12 != (int *)0x0) &&
+        } while ((piVar12 != nullptr) &&
                 ((*(int *)(iVar3 + 0x10) != *piVar12 || (*(int *)(iVar3 + 0x14) != piVar12[1]))));
         local_3c = 1;
-        if (piVar12 == (int *)0x0) {
+        if (piVar12 == nullptr) {
           FUN_006a5e90(*(short **)(iVar3 + 0xc));
           puVar4 = Library::DKW::LIB::MemAlloc
                              ((uint)(byte)param_1->field_0x4 * (uint)(byte)param_1->field_0x4 * 4);
           *(undefined4 **)(iVar3 + 0xc) = puVar4;
           local_28 = 1;
           local_20 = 1;
-          if (*(undefined4 **)(iVar3 + 0x10) != (undefined4 *)0x0) {
+          if (*(undefined4 **)(iVar3 + 0x10) != nullptr) {
             puVar6 = (byte *)(*(undefined4 **)(iVar3 + 0x10));
             for (iVar8 = (uint)(byte)param_1->field_0x4 * (uint)(byte)param_1->field_0x4; iVar8 != 0
                 ; iVar8 = iVar8 + -1) {
@@ -113,7 +113,7 @@ FUN_00574920(AnonShape_00574920_7507981E *param_1,int param_2,int param_3,undefi
           local_8 = 0xffffffff;
         }
         else {
-          if (*(short **)(iVar3 + 0xc) != (short *)0x0) {
+          if (*(short **)(iVar3 + 0xc) != nullptr) {
             param_1->field_0451->iteratorIndex = 0;
             do {
               pDVar2 = param_1->field_0451;
@@ -124,11 +124,11 @@ FUN_00574920(AnonShape_00574920_7507981E *param_1,int param_2,int param_3,undefi
                 pDVar2->iteratorIndex = uVar10 + 1;
               }
               else {
-                piVar12 = (int *)0x0;
+                piVar12 = nullptr;
               }
-              if (piVar12 == (int *)0x0) goto LAB_00574b14;
+              if (piVar12 == nullptr) goto LAB_00574b14;
             } while (*(int *)(iVar3 + 0xc) != piVar12[2]);
-            if (piVar12 == (int *)0x0) {
+            if (piVar12 == nullptr) {
 LAB_00574b14:
               FUN_006a5e90(*(short **)(iVar3 + 0xc));
             }
@@ -141,7 +141,7 @@ LAB_00574b14:
       }
       else {
         local_4c = *(undefined4 **)(iVar3 + 0x18);
-        if (local_4c != (undefined4 *)0x0) {
+        if (local_4c != nullptr) {
 LAB_00574b4a:
           if (local_40 == 0) {
             if (local_3c == 0) {
@@ -156,11 +156,11 @@ LAB_00574b4a:
                     pDVar2->iteratorIndex = uVar10 + 1;
                   }
                   else {
-                    pvVar5 = (void *)0x0;
+                    pvVar5 = nullptr;
                   }
-                  if (pvVar5 == (void *)0x0) goto LAB_00574bcc;
+                  if (pvVar5 == nullptr) goto LAB_00574bcc;
                 } while (*(int *)(iVar3 + 0xc) != *(int *)((int)pvVar5 + 8));
-                if (pvVar5 == (void *)0x0) {
+                if (pvVar5 == nullptr) {
 LAB_00574bcc:
                   FUN_006a5e90(*(short **)(iVar3 + 0xc));
                 }
@@ -170,8 +170,8 @@ LAB_00574bcc:
                                   4);
               *(undefined4 **)(iVar3 + 0xc) = puVar6;
               puVar4 = (byte *)(*(undefined4 **)(iVar3 + 0x10));
-              if ((puVar4 != (undefined4 *)0x0) ||
-                 (puVar4 = *(undefined4 **)(iVar3 + 0x14), puVar4 != (undefined4 *)0x0)) {
+              if ((puVar4 != nullptr) ||
+                 (puVar4 = *(undefined4 **)(iVar3 + 0x14), puVar4 != nullptr)) {
                 for (iVar8 = (uint)(byte)param_1->field_0x4 * (uint)(byte)param_1->field_0x4;
                     iVar8 != 0; iVar8 = iVar8 + -1) {
                   *puVar6 = *puVar4;

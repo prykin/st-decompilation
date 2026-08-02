@@ -33,7 +33,7 @@ int FUN_0054cdd0(undefined4 *param_1,int param_2,undefined4 *param_3,int *param_
                            (local_14,local_8,param_1,param_3,&local_c,param_5,param_6);
     }
     iVar2 = local_10;
-    if (param_4 != (int *)0x0) {
+    if (param_4 != nullptr) {
       *param_4 = local_c;
     }
     if (local_10 == 0) {

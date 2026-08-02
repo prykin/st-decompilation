@@ -12,7 +12,7 @@ undefined4 __thiscall FUN_006d7000(void *this,int *param_1)
 
   iVar1 = *(int *)(*(int *)((int)this + 0xe0) + 0x90);
   piVar2 = *(int **)(iVar1 + 0x18);
-  if (piVar2 == (int *)0x0) {
+  if (piVar2 == nullptr) {
     uVar3 = FUN_006d4cf0(*(AnonShape_006D4CF0_8A8947BE **)(*(int *)((int)this + 0xe0) + 0xa0),
                          param_1);
     return uVar3;

@@ -32,7 +32,7 @@ void __thiscall CPanelTy::DoneCPanel(CPanelTy *this)
     ppvVar8 = (void **)&this_00->field_0x217;
     local_8 = 4;
     do {
-      if (*ppvVar8 != (void *)0x0) {
+      if (*ppvVar8 != nullptr) {
         FreeAndNull(ppvVar8);
       }
       ppvVar8 = ppvVar8 + 1;
@@ -133,7 +133,7 @@ void __thiscall CPanelTy::DoneCPanel(CPanelTy *this)
     }
     ppuVar6 = this_00->field_0148;
     this_00->field_0970 = 0;
-    g_cPanel_00801688 = (CPanelTy *)0x0;
+    g_cPanel_00801688 = nullptr;
     iVar3 = 0xb;
     do {
       if (-1 < (int)*ppuVar6) {
@@ -164,13 +164,13 @@ void __thiscall CPanelTy::DoneCPanel(CPanelTy *this)
       puVar7 = puVar7 + 1;
       iVar3 = iVar3 + -1;
     } while (iVar3 != 0);
-    if ((g_sT3DSMAPContext_00807598 != (ST3DSMAPContext *)0x0) &&
-       (this_00->field_0DB3 != (int *)0x0)) {
+    if ((g_sT3DSMAPContext_00807598 != nullptr) &&
+       (this_00->field_0DB3 != nullptr)) {
       FUN_006e6580(g_sT3DSMAPContext_00807598,this_00->field_0DB3);
     }
-    this_00->field_0DB3 = (void *)0x0;
-    if (g_sT3DSMAPContext_00807598 != (ST3DSMAPContext *)0x0) {
-      ST3DSMAPContext::sub_006E6500(g_sT3DSMAPContext_00807598,(undefined4 *)0x0);
+    this_00->field_0DB3 = nullptr;
+    if (g_sT3DSMAPContext_00807598 != nullptr) {
+      ST3DSMAPContext::sub_006E6500(g_sT3DSMAPContext_00807598,nullptr);
     }
     puVar7 = this_00->field_0227;
     iVar3 = 4;
@@ -202,96 +202,96 @@ void __thiscall CPanelTy::DoneCPanel(CPanelTy *this)
     cMf32::RecMemFree(g_cMf32_00806790,(uint *)&this_00->field_0958);
     cMf32::RecMemFree(g_cMf32_00806790,(uint *)&this_00->field_0286);
     cMf32::RecMemFree(g_cMf32_00806790,(uint *)&this_00->field_028A);
-    this_00->field_077C = (ushort *)0x0;
-    this_00->field_02DE = (ushort *)0x0;
-    this_00->field_02DA = (ushort *)0x0;
-    this_00->field_0B1B = (ushort *)0x0;
-    this_00->field_09D5 = (ushort *)0x0;
-    this_00->field_0B17 = (ushort *)0x0;
-    this_00->field_02D6 = (ushort *)0x0;
-    this_00->field_02D2 = (ushort *)0x0;
-    this_00->field_02CE = (ushort *)0x0;
-    this_00->field_02CA = (ushort *)0x0;
-    this_00->field_02C6 = (ushort *)0x0;
-    this_00->field_02C2 = (ushort *)0x0;
-    this_00->field_02BE = (ushort *)0x0;
-    this_00->field_02BA = (ushort *)0x0;
-    this_00->field_02B2 = (ushort *)0x0;
-    this_00->field_02B6 = (ushort *)0x0;
-    this_00->field_02A2 = (ushort *)0x0;
-    this_00->field_029E = (ushort *)0x0;
-    this_00->field_029A = (ushort *)0x0;
-    this_00->field_0296 = (ushort *)0x0;
-    this_00->field_0292 = (ushort *)0x0;
-    this_00->field_028E = (ushort *)0x0;
-    if (this_00->field_024B != (DArrayTy *)0x0) {
+    this_00->field_077C = nullptr;
+    this_00->field_02DE = nullptr;
+    this_00->field_02DA = nullptr;
+    this_00->field_0B1B = nullptr;
+    this_00->field_09D5 = nullptr;
+    this_00->field_0B17 = nullptr;
+    this_00->field_02D6 = nullptr;
+    this_00->field_02D2 = nullptr;
+    this_00->field_02CE = nullptr;
+    this_00->field_02CA = nullptr;
+    this_00->field_02C6 = nullptr;
+    this_00->field_02C2 = nullptr;
+    this_00->field_02BE = nullptr;
+    this_00->field_02BA = nullptr;
+    this_00->field_02B2 = nullptr;
+    this_00->field_02B6 = nullptr;
+    this_00->field_02A2 = nullptr;
+    this_00->field_029E = nullptr;
+    this_00->field_029A = nullptr;
+    this_00->field_0296 = nullptr;
+    this_00->field_0292 = nullptr;
+    this_00->field_028E = nullptr;
+    if (this_00->field_024B != nullptr) {
       DArrayDestroy(this_00->field_024B);
     }
-    this_00->field_024B = (DArrayTy *)0x0;
-    if (this_00->field_0B4B != (DArrayTy *)0x0) {
+    this_00->field_024B = nullptr;
+    if (this_00->field_0B4B != nullptr) {
       DArrayDestroy(this_00->field_0B4B);
     }
-    this_00->field_0B4B = (DArrayTy *)0x0;
-    if (this_00->field_0B95 != (DArrayTy *)0x0) {
+    this_00->field_0B4B = nullptr;
+    if (this_00->field_0B95 != nullptr) {
       DArrayDestroy(this_00->field_0B95);
     }
-    this_00->field_0B95 = (DArrayTy *)0x0;
-    if (this_00->field_01CC != (ccFntTy *)0x0) {
+    this_00->field_0B95 = nullptr;
+    if (this_00->field_01CC != nullptr) {
       ccFntTy::operator_delete((uint *)this_00->field_01CC);
-      this_00->field_01CC = (ccFntTy *)0x0;
+      this_00->field_01CC = nullptr;
     }
-    if (this_00->field_01D0 != (ccFntTy *)0x0) {
+    if (this_00->field_01D0 != nullptr) {
       ccFntTy::operator_delete((uint *)this_00->field_01D0);
-      this_00->field_01D0 = (ccFntTy *)0x0;
+      this_00->field_01D0 = nullptr;
     }
-    if (this_00->field_01D4 != (ccFntTy *)0x0) {
+    if (this_00->field_01D4 != nullptr) {
       ccFntTy::operator_delete((uint *)this_00->field_01D4);
-      this_00->field_01D4 = (ccFntTy *)0x0;
+      this_00->field_01D4 = nullptr;
     }
-    if (this_00->field_01C8 != (ccFntTy *)0x0) {
+    if (this_00->field_01C8 != nullptr) {
       ccFntTy::operator_delete((uint *)this_00->field_01C8);
-      this_00->field_01C8 = (ccFntTy *)0x0;
+      this_00->field_01C8 = nullptr;
     }
-    if (this_00->field_01C4 != (ccFntTy *)0x0) {
+    if (this_00->field_01C4 != nullptr) {
       ccFntTy::operator_delete((uint *)this_00->field_01C4);
-      this_00->field_01C4 = (ccFntTy *)0x0;
+      this_00->field_01C4 = nullptr;
     }
-    if (this_00->field_01C0 != (uint *)0x0) {
+    if (this_00->field_01C0 != nullptr) {
       ccFntTy::operator_delete(this_00->field_01C0);
-      this_00->field_01C0 = (void *)0x0;
+      this_00->field_01C0 = nullptr;
     }
-    if (this_00->field_01BC != (ccFntTy *)0x0) {
+    if (this_00->field_01BC != nullptr) {
       ccFntTy::operator_delete((uint *)this_00->field_01BC);
-      this_00->field_01BC = (ccFntTy *)0x0;
+      this_00->field_01BC = nullptr;
     }
-    if (this_00->field_01B8 != (ccFntTy *)0x0) {
+    if (this_00->field_01B8 != nullptr) {
       ccFntTy::operator_delete((uint *)this_00->field_01B8);
-      this_00->field_01B8 = (ccFntTy *)0x0;
+      this_00->field_01B8 = nullptr;
     }
-    if (this_00->field_01AC != (ushort *)0x0) {
+    if (this_00->field_01AC != nullptr) {
       FreeAndNull(&this_00->field_01AC);
     }
-    if (this_00->field_01B0 != (ushort *)0x0) {
+    if (this_00->field_01B0 != nullptr) {
       FreeAndNull(&this_00->field_01B0);
     }
-    if (this_00->field_01B4 != (AnonPointee_CPanelTy_01B4 *)0x0) {
+    if (this_00->field_01B4 != nullptr) {
       FreeAndNull(&this_00->field_01B4);
     }
     ppvVar8 = &this_00->field_0180;
     local_8 = 0xb;
     do {
-      if (*ppvVar8 != (void *)0x0) {
+      if (*ppvVar8 != nullptr) {
         FreeAndNull(ppvVar8);
       }
       ppvVar8 = ppvVar8 + 1;
       local_8 = local_8 + -1;
     } while (local_8 != 0);
-    if (this_00->field_01D8 != (HoloTy *)0x0) {
+    if (this_00->field_01D8 != nullptr) {
       FUN_00714060((int *)this_00->field_01D8);
       Library::MSVCRT::FUN_0072e2b0(this_00->field_01D8);
-      this_00->field_01D8 = (HoloTy *)0x0;
+      this_00->field_01D8 = nullptr;
     }
-    if (this_00->field_025B != (short *)0x0) {
+    if (this_00->field_025B != nullptr) {
       FUN_0070b600((int *)&this_00->field_025B);
     }
     g_currentExceptionFrame = local_50.previous;

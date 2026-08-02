@@ -46,7 +46,7 @@ STAllPlayersC::sub_004DB160
       ((sVar7 < g_worldGrid.sizeZ &&
        ((this_00 = g_worldGrid.cells
                    [(int)g_worldGrid.planeStride * (int)sVar7 + (int)g_worldGrid.sizeX * (int)sVar9
-                    + (int)sVar2].objects[0], this_00 != (STWorldObject *)0x0 &&
+                    + (int)sVar2].objects[0], this_00 != nullptr &&
         (this_00[1].vtable != (STWorldObjectVTable *)param_1)))))) &&
      ((iVar3 = this_00->GetObjectTypeId(), iVar3 == 0x3c ||
       (iVar3 = this_00->GetObjectTypeId(), iVar3 == 0x53)))) {
@@ -170,7 +170,7 @@ LAB_004db257:
                    (this_00 = g_worldGrid.cells
                               [(int)sVar7 * (int)g_worldGrid.planeStride +
                                (int)sVar9 * (int)g_worldGrid.sizeX + (int)sVar2].objects[0],
-                   this_00 != (STWorldObject *)0x0)) &&
+                   this_00 != nullptr)) &&
                   ((this_00[1].vtable != (STWorldObjectVTable *)param_1 &&
                    ((iVar3 = this_00->GetObjectTypeId(), iVar3 == 0x3c ||
                     (iVar3 = this_00->GetObjectTypeId(), iVar3 == 0x53)))))))) {
@@ -201,7 +201,7 @@ LAB_004db3e4:
               if ((((-1 < iVar12) && (iVar12 < g_worldGrid.sizeY)) &&
                   (this_00 = (STWorldObject *)
                              thunk_FUN_004db980(sVar2,(short)iVar12,(short)local_8,0),
-                  this_00 != (STWorldObject *)0x0)) &&
+                  this_00 != nullptr)) &&
                  ((this_00[1].vtable != (STWorldObjectVTable *)param_1 &&
                   ((iVar3 = this_00->GetObjectTypeId(), iVar3 == 0x3c ||
                    (iVar3 = this_00->GetObjectTypeId(), iVar3 == 0x53)))))) {
@@ -241,7 +241,7 @@ LAB_004db497:
                  ((((iVar11 < g_worldGrid.sizeX &&
                     (this_00 = (STWorldObject *)
                                thunk_FUN_004db980((short)iVar11,(short)iVar12,(short)local_8,0),
-                    this_00 != (STWorldObject *)0x0)) &&
+                    this_00 != nullptr)) &&
                    (this_00[1].vtable != (STWorldObjectVTable *)param_1)) &&
                   ((iVar3 = this_00->GetObjectTypeId(), iVar3 == 0x3c ||
                    (iVar3 = this_00->GetObjectTypeId(), iVar3 == 0x53)))))) {
@@ -272,7 +272,7 @@ LAB_004db58d:
               if ((((-1 < iVar11) && (iVar11 < g_worldGrid.sizeX)) &&
                   ((this_00 = (STWorldObject *)
                               thunk_FUN_004db980((short)iVar11,(short)iVar12,(short)local_8,0),
-                   this_00 != (STWorldObject *)0x0 &&
+                   this_00 != nullptr &&
                    (this_00[1].vtable != (STWorldObjectVTable *)param_1)))) &&
                  ((iVar3 = this_00->GetObjectTypeId(), iVar3 == 0x3c ||
                   (iVar3 = this_00->GetObjectTypeId(), iVar3 == 0x53)))) {

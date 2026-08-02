@@ -7,7 +7,7 @@ undefined4 __thiscall FUN_0074d39e(void *this,undefined4 *param_1)
 
   DVar1 = WaitForSingleObject(*(HANDLE *)((int)this + 4),0);
   if (DVar1 == 0) {
-    if (param_1 != (undefined4 *)0x0) {
+    if (param_1 != nullptr) {
       *param_1 = *(undefined4 *)((int)this + 0xc);
     }
     uVar2 = 1;

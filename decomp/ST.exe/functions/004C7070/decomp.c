@@ -47,7 +47,7 @@ LAB_004c7175:
              (((sVar4 < 0 || (g_worldGrid.sizeZ <= sVar4)) ||
               (g_worldGrid.cells
                [(int)sVar4 * (int)g_worldGrid.planeStride + (int)g_worldGrid.sizeX * (int)sVar1 +
-                (int)sVar2].objects[0] == (STWorldObject *)0x0)))) {
+                (int)sVar2].objects[0] == nullptr)))) {
             if (((sVar2 < 0) || (g_worldGrid.sizeX <= sVar2)) ||
                ((sVar1 < 0 ||
                 (((g_worldGrid.sizeY <= sVar1 || (sVar4 < 0)) || (g_worldGrid.sizeZ <= sVar4))))))

@@ -21,7 +21,7 @@ undefined4 FUN_005da7a0(void)
       bVar2 = true;
       if (*piVar4 <= piVar4[1]) {
         piVar4 = (int *)FUN_006bfb50(piVar4,*piVar4 * 0x14 + 0x1c);
-        if (piVar4 == (int *)0x0) {
+        if (piVar4 == nullptr) {
           bVar2 = false;
         }
         else {
@@ -32,7 +32,7 @@ undefined4 FUN_005da7a0(void)
       if (bVar2) {
         pcVar5 = LoadResourceString(0x254b,g_module_00807618);
         pcVar5 = FUN_006c8170(pcVar5);
-        if (pcVar5 != (char *)0x0) {
+        if (pcVar5 != nullptr) {
           iVar3 = *puVar1;
           Library::MSVCRT::FUN_0072da70
                     ((undefined4 *)(iVar3 + 0x1c),(AnonPointee_TLOBaseTy_0607 *)(iVar3 + 8),

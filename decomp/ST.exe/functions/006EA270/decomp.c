@@ -14,8 +14,8 @@ ST3DSMAPContext::sub_006EA270(ST3DSMAPContext *this,uint param_1,uint param_2,ui
 {
   uint *puVar1;
 
-  if ((param_1 < *(uint *)&this->field_0x310) &&
-     (puVar1 = (uint *)(*(int *)&this->field_0x31c + param_1 * 0x114), (*puVar1 & 0x8000) != 0)) {
+  if ((param_1 < (uint)this->field_0310) &&
+     (puVar1 = (uint *)(this->field_031C + param_1 * 0x114), (*puVar1 & 0x8000) != 0)) {
     if (puVar1[0x28] != 0) {
       if (param_2 < puVar1[0x25]) {
         FUN_006e9a10(puVar1,param_2,param_3);

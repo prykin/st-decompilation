@@ -45,11 +45,11 @@ void __thiscall MTaskTy::NoneMTask(MTaskTy *this)
     PlayScript(local_c);
   }
   pDVar6 = this_00->field_0647;
-  if (pDVar6 != (DArrayTy *)0x0) {
+  if (pDVar6 != nullptr) {
     uVar9 = 0;
     if (pDVar6->count != 0) {
       if (pDVar6->count == 0) {
-        pAVar10 = (AnonShape_005E10A0_819783CC *)0x0;
+        pAVar10 = nullptr;
         goto LAB_005e0b38;
       }
       do {
@@ -99,11 +99,11 @@ LAB_005e0b38:
     }
   }
   pDVar6 = this_00->field_064F;
-  if (pDVar6 != (DArrayTy *)0x0) {
+  if (pDVar6 != nullptr) {
     uVar9 = 0;
     if (pDVar6->count != 0) {
       if (pDVar6->count == 0) {
-        pAVar10 = (AnonShape_005E10A0_819783CC *)0x0;
+        pAVar10 = nullptr;
         goto LAB_005e0ca3;
       }
       do {
@@ -129,11 +129,11 @@ LAB_005e0ca3:
     }
   }
   pDVar6 = this_00->field_064B;
-  if (pDVar6 != (DArrayTy *)0x0) {
+  if (pDVar6 != nullptr) {
     local_8 = 0;
     if (pDVar6->count != 0) {
       if (pDVar6->count == 0) {
-        this_01 = (SpriteClassTy *)0x0;
+        this_01 = nullptr;
         goto LAB_005e0d20;
       }
       do {

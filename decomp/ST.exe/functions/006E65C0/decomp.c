@@ -31,7 +31,7 @@ FUN_006e65c0(void *this,undefined4 param_1,char param_2,float param_3,float para
   undefined4 *puVar1;
 
   puVar1 = Library::DKW::LIB::FUN_006aac10(0x1c);
-  if (puVar1 == (undefined4 *)0x0) {
+  if (puVar1 == nullptr) {
     return 0xfffffffe;
   }
   puVar1[6] = param_1;

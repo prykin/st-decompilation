@@ -12,14 +12,14 @@ SndUnderAttMenegC * __cdecl CreateSndUnderAttMeneg(void)
   SndUnderAttMenegC *this;
 
   this = (SndUnderAttMenegC *)FUN_006b04d0(0x10e);
-  if (this != (SndUnderAttMenegC *)0x0) {
+  if (this != nullptr) {
     sub_006E60E0(this);
     *(undefined4 *)this = 0x79ced8;
     DAT_00811798 = this;
     thunk_FUN_0061fdb0();
     return DAT_00811798;
   }
-  DAT_00811798 = (SndUnderAttMenegC *)0x0;
-  return (SndUnderAttMenegC *)0x0;
+  DAT_00811798 = nullptr;
+  return nullptr;
 }
 

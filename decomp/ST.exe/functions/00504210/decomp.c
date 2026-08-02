@@ -87,7 +87,7 @@ void __thiscall CPanelTy::UpdateStackPanel(CPanelTy *this,uint param_1)
             pAVar11 = (AnonShape_0043BEB0_1C00EC12 *)&pAVar11->field_0001;
           } while (bVar12);
           if ((!bVar12) && (local_10[0xc] == '\x01')) {
-            puVar15 = (undefined4 *)0x0;
+            puVar15 = nullptr;
             iVar14 = 0;
             iVar6 = 1;
             bVar5 = 0;

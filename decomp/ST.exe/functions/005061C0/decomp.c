@@ -198,7 +198,7 @@ switchD_00506214_caseD_2:
         DibPut((AnonShape_006B5B10_E0D06CF1 *)this_00->field_0194,iVar4 + 3,0x53,'\x01',pbVar6);
         pbVar6 = (byte *)ccFntTy::CreateSurf(this_00->field_01B8,this_00->field_09D9[5],0,0x49,7,
                                              0x67,0xc,0);
-        if (pbVar6 != (byte *)0x0) {
+        if (pbVar6 != nullptr) {
           if (this_00->field_0BF5 == 0xfe) {
             local_8 = thunk_FUN_00529480(this_00->field_0C11);
           }
@@ -215,7 +215,7 @@ switchD_00506214_caseD_2:
         }
         local_1c = (byte *)ccFntTy::CreateSurf(this_00->field_01C4,this_00->field_09D9[5],0,100,0x14
                                                ,0x3c,0x14,0);
-        if (local_1c != (byte *)0x0) {
+        if (local_1c != nullptr) {
           uVar5 = 0;
           wsprintfA((LPSTR)&DAT_0080f33a,"%06d",*(undefined4 *)&this_00->field_0xc12);
           switch(this_00->field_0C11) {
@@ -254,7 +254,7 @@ switchD_00506214_caseD_2:
         DibPut((AnonShape_006B5B10_E0D06CF1 *)this_00->field_0194,iVar4 + 4,0x42,'\x06',pbVar6);
         pbVar6 = (byte *)ccFntTy::CreateSurf(this_00->field_01B8,this_00->field_09D9[0xe],0,0x38,4,
                                              0x7b,0x19,0);
-        if (pbVar6 != (byte *)0x0) {
+        if (pbVar6 != nullptr) {
           iVar21 = -1;
           iVar20 = -1;
           uVar5 = 0;
@@ -269,7 +269,7 @@ switchD_00506214_caseD_2:
         }
         pbVar6 = (byte *)ccFntTy::CreateSurf(this_00->field_01B8,this_00->field_09D9[0xe],0,2,0x1e,
                                              0xb2,0x22,0);
-        if (pbVar6 != (byte *)0x0) {
+        if (pbVar6 != nullptr) {
           ccFntTy::WrTxt(this_00->field_01B8,(uint *)this_00->field_0C16,-2,-1,1,-1,-1);
           DibPut((AnonShape_006B5B10_E0D06CF1 *)this_00->field_0194,iVar4 + 2,0x5d,'\x01',pbVar6);
           ccFntTy::EraseSufr(this_00->field_01B8);
@@ -334,7 +334,7 @@ switchD_00506214_caseD_2:
       memmove(pcVar16, pcVar8, uVar5); /* compiler REP MOVS byte copy */
       uVar12 = 0;
       for (puVar9 = Library::MSVCRT::FUN_0072e560((uint *)&this_00->field_01E1,'\n');
-          puVar9 != (uint *)0x0; puVar9 = Library::MSVCRT::FUN_0072e560(puVar9,'\n')) {
+          puVar9 != nullptr; puVar9 = Library::MSVCRT::FUN_0072e560(puVar9,'\n')) {
         *(undefined1 *)puVar9 = 0x20;
       }
       goto cf_common_exit_00507034;
@@ -410,7 +410,7 @@ LAB_005070be:
     memmove(pcVar16, pcVar8, uVar5); /* compiler REP MOVS byte copy */
     uVar12 = 0;
     for (puVar9 = Library::MSVCRT::FUN_0072e560((uint *)&this_00->field_01E1,'\n');
-        puVar9 != (uint *)0x0; puVar9 = Library::MSVCRT::FUN_0072e560(puVar9,'\n')) {
+        puVar9 != nullptr; puVar9 = Library::MSVCRT::FUN_0072e560(puVar9,'\n')) {
       *(undefined1 *)puVar9 = 0x20;
     }
     goto cf_common_exit_00507034;
@@ -457,7 +457,7 @@ LAB_005070be:
           local_1c = (byte *)((-(uint)(bVar3 < 0x14) & 5) + 5);
         }
         else {
-          local_1c = (byte *)0x0;
+          local_1c = nullptr;
         }
         uVar5 = local_18 & 0xff;
         Library::DKW::WGR::FUN_006b55f0
@@ -614,7 +614,7 @@ LAB_005070be:
         DibPut((AnonShape_006B5B10_E0D06CF1 *)this_00->field_0194,iVar4,0x54,'\x01',pbVar6);
         iVar4 = iVar4 + 4;
         local_1c = local_1c + -1;
-      } while (local_1c != (byte *)0x0);
+      } while (local_1c != nullptr);
     }
     local_8 = local_8 & 0xffffff00;
     if (this_00->field_0C3B != '\0') {
@@ -635,12 +635,12 @@ LAB_005070be:
         DibPut((AnonShape_006B5B10_E0D06CF1 *)this_00->field_0194,iVar4,0x5f,'\x01',pbVar6);
         iVar4 = iVar4 + 4;
         local_1c = (byte *)((int)local_1c + -1);
-      } while (local_1c != (byte *)0x0);
+      } while (local_1c != nullptr);
     }
     local_8 = local_8 & 0xffffff00;
     local_1c = (byte *)(((uint)(ushort)this_00->field_0C34 * 0x28) / 400);
-    if (local_1c != (byte *)0x0) {
-      pbVar6 = (byte *)0x0;
+    if (local_1c != nullptr) {
+      pbVar6 = nullptr;
       do {
         pbVar10 = (byte *)FUN_0070b3a0((AnonShape_GLOBAL_0081175C_57F682DD *)this_00->field_02B6,2);
         DibPut((AnonShape_006B5B10_E0D06CF1 *)this_00->field_0194,iVar11 + 0xb + (int)pbVar6 * 4,
@@ -698,8 +698,8 @@ LAB_005070be:
           DibPut((AnonShape_006B5B10_E0D06CF1 *)this_00->field_0194,iVar11,0x5c,'\x01',pbVar6);
           iVar11 = iVar11 + 4;
           local_1c = (byte *)((int)local_1c - 1);
-        } while (local_1c != (byte *)0x0);
-        local_1c = (byte *)0x0;
+        } while (local_1c != nullptr);
+        local_1c = nullptr;
       }
       if (local_18 < 0x28) {
         iVar4 = iVar4 + 0xb + local_18 * 4;
@@ -801,7 +801,7 @@ LAB_00507784:
     pcVar16 = &this_00->field_01E1;
     memmove(pcVar16, pcVar8, uVar5); /* compiler REP MOVS byte copy */
     for (puVar9 = Library::MSVCRT::FUN_0072e560((uint *)&this_00->field_01E1,'\n');
-        puVar9 != (uint *)0x0; puVar9 = Library::MSVCRT::FUN_0072e560(puVar9,'\n')) {
+        puVar9 != nullptr; puVar9 = Library::MSVCRT::FUN_0072e560(puVar9,'\n')) {
       *(undefined1 *)puVar9 = 0x20;
     }
 cf_common_exit_00507034:

@@ -11,11 +11,11 @@ int __cdecl FUN_0062ca20(undefined4 *param_1,uint *param_2)
   uint uVar3;
   byte *puVar4;
 
-  puVar1 = (undefined4 *)0x0;
+  puVar1 = nullptr;
   uVar3 = 0x6d;
-  if (param_1 != (undefined4 *)0x0) {
+  if (param_1 != nullptr) {
     puVar1 = Library::DKW::LIB::MemAlloc(0x6d);
-    if (puVar1 == (undefined4 *)0x0) {
+    if (puVar1 == nullptr) {
       uVar3 = 0;
     }
     puVar4 = (byte *)(puVar1);

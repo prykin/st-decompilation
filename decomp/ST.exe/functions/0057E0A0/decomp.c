@@ -94,11 +94,11 @@ int __thiscall STDcResourcC::GetMessage(STDcResourcC *this,STMessage *message)
       }
       local_10 = (byte *)STAllPlayersC::SaveGObjData((STAllPlayersC *)this_00,(int *)&local_8);
       local_c = Library::DKW::LIB::MemAlloc(local_8 + 0x46);
-      if (local_10 == (byte *)0x0) {
+      if (local_10 == nullptr) {
         g_currentExceptionFrame = local_68.previous;
         return 0;
       }
-      if (local_c == (STSprGameObjC_field_0231State *)0x0) {
+      if (local_c == nullptr) {
         g_currentExceptionFrame = local_68.previous;
         return 0;
       }
@@ -126,14 +126,14 @@ int __thiscall STDcResourcC::GetMessage(STDcResourcC *this,STMessage *message)
     sVar2 = *(short *)&this_00->field_0x249;
     if ((((sVar8 < 0) || (g_worldGrid.sizeX <= sVar8)) || (sVar2 < 0)) ||
        (((g_worldGrid.sizeY <= sVar2 || (sVar1 < 0)) || (g_worldGrid.sizeZ <= sVar1)))) {
-      pSVar16 = (STWorldObject *)0x0;
+      pSVar16 = nullptr;
     }
     else {
       pSVar16 = g_worldGrid.cells
                 [(int)sVar1 * (int)g_worldGrid.planeStride + (int)sVar2 * (int)g_worldGrid.sizeX +
                  (int)sVar8].objects[0];
     }
-    if (pSVar16 == (STWorldObject *)0x0) {
+    if (pSVar16 == nullptr) {
       g_currentExceptionFrame = local_68.previous;
       return 0;
     }
@@ -154,7 +154,7 @@ int __thiscall STDcResourcC::GetMessage(STDcResourcC *this,STMessage *message)
   }
   if (SVar3 == MESS_SHARED_0108) {
     iVar9 = thunk_FUN_004ab050();
-    local_18 = (STSprGameObjC_field_0231State *)0x0;
+    local_18 = nullptr;
     if (*(int *)&this_00->field_0x265 < 1) {
       g_currentExceptionFrame = local_68.previous;
       return 0;
@@ -222,7 +222,7 @@ int __thiscall STDcResourcC::GetMessage(STDcResourcC *this,STMessage *message)
                    (STResourceC *)this_00);
       }
       thunk_FUN_004ad310((STT3DSprC *)&this_00->field_01D5);
-      if (*(int **)&this_00->field_0x273 == (int *)0x0) {
+      if (*(int **)&this_00->field_0x273 == nullptr) {
         g_currentExceptionFrame = local_68.previous;
         return 0;
       }
@@ -262,7 +262,7 @@ int __thiscall STDcResourcC::GetMessage(STDcResourcC *this,STMessage *message)
       if (((sVar8 < 0) || (g_worldGrid.sizeX <= sVar8)) ||
          (((sVar1 < 0 || ((g_worldGrid.sizeY <= sVar1 || (sVar2 < 0)))) ||
           (g_worldGrid.sizeZ <= sVar2)))) {
-        pSVar16 = (STWorldObject *)0x0;
+        pSVar16 = nullptr;
       }
       else {
         pSVar16 = g_worldGrid.cells
@@ -279,7 +279,7 @@ int __thiscall STDcResourcC::GetMessage(STDcResourcC *this,STMessage *message)
                  + (int)sVar8];
       }
       if ((sVar8 != 0) &&
-         ((pSVar16 == (STWorldObject *)0x0 ||
+         ((pSVar16 == nullptr ||
           (((iVar9 = pSVar16->GetObjectTypeId(), iVar9 != 0x39 &&
             (iVar9 = pSVar16->GetObjectTypeId(), iVar9 != 0x4f)) &&
            ((iVar9 = pSVar16->GetObjectTypeId(), iVar9 != 0x5e &&
@@ -318,7 +318,7 @@ int __thiscall STDcResourcC::GetMessage(STDcResourcC *this,STMessage *message)
       sVar2 = *(short *)&this_00->field_0x24d;
       if (((((sVar8 < 0) || (g_worldGrid.sizeX <= sVar8)) || (sVar1 < 0)) ||
           ((g_worldGrid.sizeY <= sVar1 || (sVar2 < 0)))) || (g_worldGrid.sizeZ <= sVar2)) {
-        pSVar16 = (STWorldObject *)0x0;
+        pSVar16 = nullptr;
       }
       else {
         pSVar16 = g_worldGrid.cells
@@ -336,7 +336,7 @@ int __thiscall STDcResourcC::GetMessage(STDcResourcC *this,STMessage *message)
                  + (int)sVar8];
       }
       if ((sVar8 != 0) &&
-         ((pSVar16 == (STWorldObject *)0x0 ||
+         ((pSVar16 == nullptr ||
           (((iVar9 = pSVar16->GetObjectTypeId(), iVar9 != 0x39 &&
             (iVar9 = pSVar16->GetObjectTypeId(), iVar9 != 0x4f)) &&
            ((iVar9 = pSVar16->GetObjectTypeId(), iVar9 != 0x5e &&
@@ -398,7 +398,7 @@ LAB_0057e6f0:
   }
   pVVar6 = g_visibleClass_00802A88;
   if (*(int *)&this_00->field_0x273 == 0) {
-    if (g_visibleClass_00802A88 == (VisibleClassTy *)0x0) goto cf_common_join_0057E9C2;
+    if (g_visibleClass_00802A88 == nullptr) goto cf_common_join_0057E9C2;
     iVar9 = *(int *)&this_00->field_0x24d;
     if ((DAT_0080874d == -1) || (g_visibleClass_00802A88->field_00F8 == 0)) {
       uVar10 = 0;
@@ -438,7 +438,7 @@ LAB_0057e6f0:
             else {
               bVar5 = true;
             }
-            if ((bVar5) && (pVVar6->field_004C != (byte *)0x0)) {
+            if ((bVar5) && (pVVar6->field_004C != nullptr)) {
               uVar10 = (uint)pVVar6->field_004C
                              [(int)((int)local_18 +
                                    (g_centeredOffsets5[iVar9] + local_14) * pVVar6->field_0030)];
@@ -464,10 +464,10 @@ LAB_0057e6f0:
       goto cf_common_join_0057E9C2;
     }
     piVar22 = *(int **)&this_00->field_0x273;
-    if (piVar22 == (int *)0x0) goto cf_common_join_0057E9C2;
+    if (piVar22 == nullptr) goto cf_common_join_0057E9C2;
   }
   else {
-    if (g_visibleClass_00802A88 == (VisibleClassTy *)0x0) goto cf_common_join_0057E9C2;
+    if (g_visibleClass_00802A88 == nullptr) goto cf_common_join_0057E9C2;
     iVar9 = *(int *)&this_00->field_0x24d;
     if ((DAT_0080874d == -1) || (g_visibleClass_00802A88->field_00F8 == 0)) {
       uVar10 = 0;
@@ -506,7 +506,7 @@ LAB_0057e6f0:
             else {
               bVar5 = true;
             }
-            if ((bVar5) && (pVVar6->field_004C != (byte *)0x0)) {
+            if ((bVar5) && (pVVar6->field_004C != nullptr)) {
               uVar10 = (uint)pVVar6->field_004C
                              [local_1c + (g_centeredOffsets5[iVar9] + local_20) * pVVar6->field_0030
                              ];
@@ -539,7 +539,7 @@ cf_common_join_0057E9C2:
     } while (iVar9 < *(int *)&this_00->field_0x265);
   }
   if (*(int *)&this_00->field_0x25d == 2) {
-    if ((this_00->field_0211 != (ST3DSMAPContext *)0x0) &&
+    if ((this_00->field_0211 != nullptr) &&
        (g_playSystem_00802A38->field_00E4 % 0xf == 0)) {
       bVar7 = this_00->field_0x272 + 1;
       this_00->field_0x272 = bVar7;

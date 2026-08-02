@@ -16,7 +16,7 @@ void FUN_006cfbe0(uint *param_1)
   uint local_8;
 
   uVar4 = *param_1;
-  if (((uVar4 & 0x60004000) == 0) && (piVar2 = (int *)param_1[0x33], piVar2 != (int *)0x0)) {
+  if (((uVar4 & 0x60004000) == 0) && (piVar2 = (int *)param_1[0x33], piVar2 != nullptr)) {
     local_c = 0;
     local_8 = 0;
     if ((uVar4 & 0xc0000000) == 0) {

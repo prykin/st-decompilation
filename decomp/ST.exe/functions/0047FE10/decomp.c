@@ -83,7 +83,7 @@ int __thiscall STBoatC::Scout(STBoatC *this,int param_1)
       return 2;
     }
     pSVar7 = thunk_FUN_0042b760(*(char *)&this->field_0024,this->field_0030);
-    if (pSVar7 == (STGroupBoatC *)0x0) {
+    if (pSVar7 == nullptr) {
       iVar6 = ReportDebugMessage("E:\\__titans\\wlad\\To_boat.cpp",0x3b9b,0,0,"%s",
                                  "STBoatC::Scout ptr==NULL");
       if (iVar6 == 0) {
@@ -154,7 +154,7 @@ LAB_0047ff46:
     return 2;
   }
   pSVar7 = thunk_FUN_0042b760(*(char *)&this->field_0024,this->field_0030);
-  if (pSVar7 == (STGroupBoatC *)0x0) {
+  if (pSVar7 == nullptr) {
     iVar6 = ReportDebugMessage("E:\\__titans\\wlad\\To_boat.cpp",0x3b57,0,0,"%s",
                                "STBoatC::Scout ptr==NULL");
     if (iVar6 == 0) {

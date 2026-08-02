@@ -41,11 +41,11 @@ LAB_006b719c:
     /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
     param_1 = (int *)FUN_006b73e0(piVar1[0x14],local_10);
     /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
-    if (param_1 == (int *)0x0) {
+    if (param_1 == nullptr) {
       /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
       param_1 = Library::DKW::LIB::MemAlloc(0x18);
       /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
-      if (param_1 == (int *)0x0) {
+      if (param_1 == nullptr) {
         return -2;
       }
       FUN_006b9910(piVar1 + 0x14,(int)param_1);
@@ -78,7 +78,7 @@ LAB_006b719c:
 /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
 code_r0x006b72b1:
   param_1 = (int *)FUN_006b73e0(piVar1[0x14],local_10);
-  if (param_1 != (int *)0x0) {
+  if (param_1 != nullptr) {
     if (((char)param_1[2] == local_8->field_0001) &&
        ((int)(short)local_8->field_0002 == param_1[3] + -1)) {
       param_1[3] = param_1[3] + -1;
@@ -103,7 +103,7 @@ code_r0x006b72b1:
         FreeAndNull(&param_1);
 LAB_006b7373:
         puVar4 = Library::DKW::LIB::MemAlloc(0x14);
-        if (puVar4 == (undefined4 *)0x0) {
+        if (puVar4 == nullptr) {
           return -2;
         }
         puVar4[2] = local_10;

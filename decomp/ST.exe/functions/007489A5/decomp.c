@@ -14,7 +14,7 @@ undefined4 __fastcall FUN_007489a5(int param_1)
   /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
   piVar1 = *(int **)(param_1 + 0x9c);
   *(undefined4 *)(param_1 + 0x6c) = 0;
-  if (piVar1 == (int *)0x0) {
+  if (piVar1 == nullptr) {
     return 0x8004020a;
   }
   *(undefined1 *)(param_1 + 0xa1) = 0;

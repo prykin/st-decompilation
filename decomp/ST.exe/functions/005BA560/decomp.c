@@ -26,7 +26,7 @@ void __thiscall PrividerTy::DonePrivider(PrividerTy *this)
   if (iVar3 == 0) {
     MMObjTy::DoneMMObj((MMObjTy *)local_8);
     this_01 = g_cursorClass_00802A30;
-    if (g_cursorClass_00802A30 != (CursorClassTy *)0x0) {
+    if (g_cursorClass_00802A30 != nullptr) {
       iVar3 = g_cursorClass_00802A30->field_00C9;
       iVar4 = g_cursorClass_00802A30->field_00C5;
       g_cursorClass_00802A30->field_0493 = CASE_1;
@@ -45,7 +45,7 @@ void __thiscall PrividerTy::DonePrivider(PrividerTy *this)
     if (pPVar2->field_004D == 0x6102) {
       DarkScreen(g_dDXContext_0080759C,10,2);
     }
-    if (g_startSystem_0081176C->field_002C != (ushort *)0x0) {
+    if (g_startSystem_0081176C->field_002C != nullptr) {
       cMf32::RecMemFree(g_cMf32_00806780,(uint *)&g_startSystem_0081176C->field_002C);
     }
     SpriteClassTy::CloseSprite((SpriteClassTy *)&pPVar2->field_1A77);
@@ -65,24 +65,24 @@ void __thiscall PrividerTy::DonePrivider(PrividerTy *this)
       FUN_006b3bb0((int *)g_ddxContext_008075A8,pPVar2->field_1C8A);
     }
     pPVar2->field_1C8A = 0xffffffff;
-    if (pPVar2->field_1C82 != (ushort *)0x0) {
+    if (pPVar2->field_1C82 != nullptr) {
       FreeAndNull(&pPVar2->field_1C82);
     }
-    if (pPVar2->field_1C8E != (AnonPointee_PrividerTy_1C8E *)0x0) {
+    if (pPVar2->field_1C8E != nullptr) {
       FreeAndNull(&pPVar2->field_1C8E);
     }
-    if (pPVar2->field_1C96 != (HoloTy *)0x0) {
+    if (pPVar2->field_1C96 != nullptr) {
       HoloTy::Done(pPVar2->field_1C96);
       Library::MSVCRT::FUN_0072e2b0(pPVar2->field_1C96);
-      pPVar2->field_1C96 = (HoloTy *)0x0;
+      pPVar2->field_1C96 = nullptr;
     }
-    if (pPVar2->field_1C9A != (HoloTy *)0x0) {
+    if (pPVar2->field_1C9A != nullptr) {
       HoloTy::Done(pPVar2->field_1C9A);
       Library::MSVCRT::FUN_0072e2b0(pPVar2->field_1C9A);
-      pPVar2->field_1C9A = (HoloTy *)0x0;
+      pPVar2->field_1C9A = nullptr;
     }
     if ((pPVar2->field_004D == 0x6102) &&
-       (this_00 = pPVar2->field_1A5B->field_02E6, this_00 != (MMsgTy *)0x0)) {
+       (this_00 = pPVar2->field_1A5B->field_02E6, this_00 != nullptr)) {
       MMsgTy::HideSprites(this_00);
       pPVar2->field_1A5B->field_02E6->field_1CAB = 0;
     }
@@ -90,10 +90,10 @@ void __thiscall PrividerTy::DonePrivider(PrividerTy *this)
       AppClassTy::PostNextMessage((AppClassTy *)&DAT_00807620,(undefined4 *)&pPVar2->field_0x3d);
     }
     StartSystemTy::sub_005DAB30(g_startSystem_0081176C);
-    if (pPVar2->field_1C92 != (DArrayTy *)0x0) {
+    if (pPVar2->field_1C92 != nullptr) {
       FUN_006b5570(pPVar2->field_1C92);
     }
-    pPVar2->field_1C92 = (DArrayTy *)0x0;
+    pPVar2->field_1C92 = nullptr;
     g_currentExceptionFrame = local_4c.previous;
     return;
   }

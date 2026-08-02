@@ -928,12 +928,12 @@ cf_common_join_004881B5:
   *(undefined1 *)(puVar2 + 5) = 3;
 switchD_00486f27_default:
   pAVar4 = thunk_FUN_004357f0(*(char *)((int)this + 0x24));
-  if (pAVar4 == (AiPlrClassTy *)0x0) {
+  if (pAVar4 == nullptr) {
     *(undefined1 *)((int)puVar2 + 0x15) = 0;
   }
   else {
     pSVar5 = thunk_FUN_0042b760(*(char *)((int)this + 0x24),*(ushort *)((int)this + 0x30));
-    if (pSVar5 == (STGroupBoatC *)0x0) {
+    if (pSVar5 == nullptr) {
       *(undefined1 *)((int)puVar2 + 0x15) = 0;
     }
     else if (pSVar5->field_001C == 0) {

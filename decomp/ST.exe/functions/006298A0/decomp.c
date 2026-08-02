@@ -52,7 +52,7 @@ undefined4 __thiscall STParticleC::InitVisibelDeton(STParticleC *this,int param_
     text = PTR_s_expl_sb0_007d0c40;
   }
   puVar9 = Library::Ourlib::MFRLOAD::mfRLoad
-                     (DAT_00806764,CASE_1D,text,0xffffffff,0,1,0,(undefined4 *)0x0);
+                     (DAT_00806764,CASE_1D,text,0xffffffff,0,1,0,nullptr);
   pSVar7->field_00B6 = *(int *)puVar9;
   if (param_1 != 0) {
     puVar1 = &pSVar7->field_00C6;
@@ -81,7 +81,7 @@ undefined4 __thiscall STParticleC::InitVisibelDeton(STParticleC *this,int param_
     Library::Ourlib::ST3DSMAP::SprShow(g_sT3DSMAPContext_00807598,*puVar1,0);
     pSVar7->field_00C1 = 1;
     pVVar6 = g_visibleClass_00802A88;
-    if (g_visibleClass_00802A88 != (VisibleClassTy *)0x0) {
+    if (g_visibleClass_00802A88 != nullptr) {
       iVar8 = pSVar7->field_004E;
       sVar4 = (short)(iVar8 >> 0x1f);
       if (iVar8 < 0) {
@@ -127,7 +127,7 @@ undefined4 __thiscall STParticleC::InitVisibelDeton(STParticleC *this,int param_
         else {
           bVar12 = true;
         }
-        if ((bVar12) && (pVVar6->field_004C != (byte *)0x0)) {
+        if ((bVar12) && (pVVar6->field_004C != nullptr)) {
           bVar12 = pVVar6->field_004C
                    [local_14 + (g_centeredOffsets5[(int)local_c] + local_10) * pVVar6->field_0030]
                    != 0;
@@ -149,7 +149,7 @@ undefined4 __thiscall STParticleC::InitVisibelDeton(STParticleC *this,int param_
     }
     if (*(byte *)&pSVar7->field_0014 < 4) {
       puVar9 = Library::Ourlib::MFRLOAD::mfRLoad
-                         (DAT_00806764,CASE_1D,"expl_s1",0xffffffff,0,1,0,(undefined4 *)0x0
+                         (DAT_00806764,CASE_1D,"expl_s1",0xffffffff,0,1,0,nullptr
                          );
       if (0xe < (int)pSVar7->field_00B2) {
         local_8 = pSVar7->field_00B2 + 3;
@@ -161,7 +161,7 @@ undefined4 __thiscall STParticleC::InitVisibelDeton(STParticleC *this,int param_
     }
     else {
       puVar9 = Library::Ourlib::MFRLOAD::mfRLoad
-                         (DAT_00806764,CASE_1D,"expl_s0",0xffffffff,0,1,0,(undefined4 *)0x0
+                         (DAT_00806764,CASE_1D,"expl_s0",0xffffffff,0,1,0,nullptr
                          );
       if (0xe < (int)pSVar7->field_00B2) {
         local_8 = pSVar7->field_00B2 - 0xf;
@@ -173,7 +173,7 @@ undefined4 __thiscall STParticleC::InitVisibelDeton(STParticleC *this,int param_
     }
     ST3DSMAPContext::sub_006E9D40(g_sT3DSMAPContext_00807598,puVar13,1);
     pAVar2 = pSVar7->field_00EB;
-    if (pAVar2 != (AnonPointee_STParticleC_00EB *)0x0) {
+    if (pAVar2 != nullptr) {
       if (pSVar7->field_00F3 == 0) {
         Library::Ourlib::ST3DSMAP::SprSetLevBefore
                   (g_sT3DSMAPContext_00807598,*puVar1,pAVar2->field_01ED);

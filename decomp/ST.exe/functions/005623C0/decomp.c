@@ -106,7 +106,7 @@ int FUN_005623c0(int param_1,int param_2,int param_3,int *param_4,int param_5)
     iVar16 = iVar16 * 2;
   }
   else {
-    local_10 = (int *)0x0;
+    local_10 = nullptr;
     iVar5 = piVar15[3] + iVar5;
     iVar6 = DAT_00803380 + iVar5 * DAT_008033a4 * 2;
     iVar14 = 0;
@@ -142,10 +142,10 @@ int FUN_005623c0(int param_1,int param_2,int param_3,int *param_4,int param_5)
     iVar16 = iVar16 + ((int)local_10 * iVar5) / DAT_00803390;
   }
   local_30 = (DAT_00803354 * -iVar4 + param_2 * 0x10000 >> 0x10) + piVar15[3];
-  piVar12 = (int *)0x0;
+  piVar12 = nullptr;
   /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
   param_4 = (int *)(DAT_00803380 + local_30 * DAT_008033a4 * 2);
-  local_10 = (int *)0x0;
+  local_10 = nullptr;
   iVar4 = 0;
   iVar5 = DAT_00803354 * iVar8 + param_1 * 0x10000 >> 0x10;
   if (0 < piVar15[4]) {

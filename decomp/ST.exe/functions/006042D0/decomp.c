@@ -18,7 +18,7 @@ void __thiscall FUN_006042d0(void *this,STMessageId param_1)
   if (0 < *(int *)((int)this + 0x269)) {
     puVar4 = (undefined4 *)((int)this + 0x219);
     do {
-      if ((STParticleC *)*puVar4 != (STParticleC *)0x0) {
+      if ((STParticleC *)*puVar4 != nullptr) {
         STParticleC::GetMessage((STParticleC *)*puVar4,&local_24);
       }
       iVar2 = iVar2 + 1;

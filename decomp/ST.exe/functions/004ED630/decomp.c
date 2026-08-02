@@ -87,7 +87,7 @@ void __thiscall BehPanelTy::InitBehPanel(BehPanelTy *this)
   SpecPanelTy::InitPanel
             ((SpecPanelTy *)this_00,pCVar3,iVar7,uVar12,iVar13,iVar15,UVar17,uVar19,uVar22);
   puVar4 = Library::Ourlib::MFRLOAD::mfRLoad
-                     (DAT_00806794,CASE_B,"BUT_MSK_SI",0xffffffff,0,1,0,(undefined4 *)0x0);
+                     (DAT_00806794,CASE_B,"BUT_MSK_SI",0xffffffff,0,1,0,nullptr);
   this_00->field_02B8 = puVar4;
   this_00->field_0x1af = 0x2b;
   this_00->field_0x1b0 = 0x2c;
@@ -158,7 +158,7 @@ switchD_004ed72f_default:
     if (this_00->field_005C != 0) {
       iVar7 = this_00->field_0044;
     }
-    puVar23 = (undefined4 *)0x0;
+    puVar23 = nullptr;
     iVar20 = 0;
     local_994[uVar8 * 0x5f + 3] = iVar7 + local_8;
     iVar15 = 1;
@@ -247,7 +247,7 @@ LAB_004eda47:
       local_34 = 2;
       local_38 = local_58;
       (*this_00->field_000C->vtable->CreateObject)
-                ((SystemClassTy *)this_00->field_000C,9,&this_00->field_01BE,(int *)0x0,local_68,0);
+                ((SystemClassTy *)this_00->field_000C,9,&this_00->field_01BE,nullptr,local_68,0);
       uVar24 = 1;
       pAVar1 = this_00->field_0000;
       uVar21 = 0;

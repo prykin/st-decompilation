@@ -10,7 +10,7 @@ undefined4 __fastcall FUN_004e4990(TLOBaseTy *param_1)
   TLOBaseTy *local_8;
 
   array = *(DArrayTy **)&g_packedRecords_A62x8[(int)param_1->field_0024].field_0x9e6;
-  if (array != (DArrayTy *)0x0) {
+  if (array != nullptr) {
     index = 0;
     local_8 = param_1;
     if (0 < (int)array->count) {

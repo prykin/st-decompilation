@@ -21,7 +21,7 @@ undefined4 FUN_004d7e50(char param_1,int param_2,int param_3,int param_4)
       piVar5 = (int *)(*(int *)(&g_packedRecords_A62x8[iVar2].field_0x7f6 + iVar3) * uVar1 +
                       *(int *)(&g_packedRecords_A62x8[iVar2].field_0x80a + iVar3));
       *(uint *)(&g_packedRecords_A62x8[iVar2].field_0x7f2 + iVar3) = uVar1 + 1;
-      if (piVar5 == (int *)0x0) {
+      if (piVar5 == nullptr) {
         return 0;
       }
     } while (*piVar5 != param_3);

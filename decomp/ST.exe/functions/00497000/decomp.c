@@ -6,7 +6,7 @@ void FUN_00497000(void)
 
   value = (void **)&DAT_007fb24c;
   do {
-    if (*value != (void *)0x0) {
+    if (*value != nullptr) {
       FreeAndNull(value);
     }
     value = value + 1;

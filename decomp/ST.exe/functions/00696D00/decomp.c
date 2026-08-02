@@ -10,8 +10,8 @@ int __thiscall FUN_00696d00(void *this,AnonShape_00696D00_CB3CB395 *param_1,uint
   uint uVar4;
   bool bVar5;
 
-  if ((param_1 != (AnonShape_00696D00_CB3CB395 *)0x0) &&
-     (pDVar1 = param_1->field_0019, pDVar1 != (DArrayTy *)0x0)) {
+  if ((param_1 != nullptr) &&
+     (pDVar1 = param_1->field_0019, pDVar1 != nullptr)) {
     uVar4 = 0;
     if (0 < (int)pDVar1->count) {
       bVar5 = pDVar1->count != 0;
@@ -21,7 +21,7 @@ int __thiscall FUN_00696d00(void *this,AnonShape_00696D00_CB3CB395 *param_1,uint
           puVar3 = (uint *)(pDVar1->elementSize * uVar4 + (int)pDVar1->data);
         }
         else {
-          puVar3 = (uint *)0x0;
+          puVar3 = nullptr;
         }
         iVar2 = thunk_FUN_00696c40(this,*puVar3,*(int *)param_1,param_2);
         if (iVar2 == 0) break;

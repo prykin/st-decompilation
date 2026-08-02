@@ -53,7 +53,7 @@ void __thiscall HelpPanelTy::SubProc(HelpPanelTy *this,int param_1,char param_2)
 
   local_8 = 0;
   local_d = '\0';
-  if (g_allPlayers_007FA174 != (STAllPlayersC *)0x0) {
+  if (g_allPlayers_007FA174 != nullptr) {
     local_a4.previous = g_currentExceptionFrame;
     g_currentExceptionFrame = &local_a4;
     local_40 = this;
@@ -79,7 +79,7 @@ void __thiscall HelpPanelTy::SubProc(HelpPanelTy *this,int param_1,char param_2)
           *(undefined2 *)&local_40->field_0x2c = 0;
           local_40->field_002E = 2;
           *(undefined4 *)&local_40->field_0x30 = local_40->field_0178;
-          if (g_cursorClass_00802A30 != (CursorClassTy *)0x0) {
+          if (g_cursorClass_00802A30 != nullptr) {
             /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
             (**(code **)g_cursorClass_00802A30->field_0000)(&local_40->field_0x18);
           }
@@ -155,7 +155,7 @@ void __thiscall HelpPanelTy::SubProc(HelpPanelTy *this,int param_1,char param_2)
       puVar8 = (uint *)LoadResourceString(UVar7,g_module_00807618);
       ccFntTy::WrStr(this_00->field_01E0,puVar8,iVar6,iVar13,uVar15);
       local_8 = local_8 + 0xf;
-      local_14 = (AnonShape_00518C20_0B2995D2 *)0x0;
+      local_14 = nullptr;
       ccFntTy::SetSurf(this_00->field_01E0,(int)this_00->field_0218,0,0,local_8,0x91,0xf);
       uVar15 = 3;
       iVar13 = -1;
@@ -226,7 +226,7 @@ void __thiscall HelpPanelTy::SubProc(HelpPanelTy *this,int param_1,char param_2)
         local_14 = (AnonShape_00518C20_0B2995D2 *)0x1;
         local_8 = local_8 + 0x14;
       }
-      if (local_14 == (AnonShape_00518C20_0B2995D2 *)0x0) {
+      if (local_14 == nullptr) {
         local_8 = local_8 + 0xf;
       }
       local_c = 1;
@@ -305,7 +305,7 @@ void __thiscall HelpPanelTy::SubProc(HelpPanelTy *this,int param_1,char param_2)
         }
         piVar10 = piVar10 + 1;
         local_18 = (Global_sub_00528060_param_1Enum *)((int)local_18 + -1);
-      } while (local_18 != (Global_sub_00528060_param_1Enum *)0x0);
+      } while (local_18 != nullptr);
       iVar6 = (int)(iVar6 - local_c) / 3;
       if (*(int *)(&DAT_007dfc6c + param_1 * 4) < (int)(local_c + iVar6)) {
         local_c = 0x5615;
@@ -340,7 +340,7 @@ void __thiscall HelpPanelTy::SubProc(HelpPanelTy *this,int param_1,char param_2)
         }
         piVar10 = piVar10 + 1;
         local_18 = (Global_sub_00528060_param_1Enum *)((int)local_18 + -1);
-      } while (local_18 != (Global_sub_00528060_param_1Enum *)0x0);
+      } while (local_18 != nullptr);
       iVar6 = (int)((iVar6 - local_c) + ((int)(iVar6 - local_c) >> 0x1f & 3U)) >> 2;
       if (*(int *)(&DAT_007e049c + param_1 * 4) < (int)(local_c + iVar6)) {
         local_c = 0x5613;

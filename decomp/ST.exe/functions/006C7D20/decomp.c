@@ -22,7 +22,7 @@ int FUN_006c7d20(AnonShape_006C7D20_41F6C243 *param_1,int param_2,int *param_3)
   iVar5 = 1 << (cVar1 + 1U & 0x1f);
   if (param_2 == 0) {
     param_2 = (int)Library::DKW::LIB::MemAlloc(iVar5 * 4);
-    if ((void *)param_2 == (void *)0x0) {
+    if ((void *)param_2 == nullptr) {
       return 0;
     }
   }
@@ -40,7 +40,7 @@ int FUN_006c7d20(AnonShape_006C7D20_41F6C243 *param_1,int param_2,int *param_3)
       puVar4 = puVar4 + 3;
     } while (iVar6 != 0);
   }
-  if (param_3 != (int *)0x0) {
+  if (param_3 != nullptr) {
     *param_3 = iVar5;
   }
   return param_2;

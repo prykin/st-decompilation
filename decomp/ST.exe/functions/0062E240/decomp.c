@@ -20,7 +20,7 @@ FUN_0062e240(void *this,undefined4 param_1,int param_2,int param_3,int param_4,i
        ((sVar2 < g_worldGrid.sizeZ &&
         ((this_00 = g_worldGrid.cells
                     [(int)g_worldGrid.planeStride * (int)sVar2 + (int)g_worldGrid.sizeX * (int)sVar5
-                     + (int)sVar4].objects[0], this_00 != (STWorldObject *)0x0 &&
+                     + (int)sVar4].objects[0], this_00 != nullptr &&
          (*(int *)&this_00->field_0x18 == param_5)))))) &&
       ((this_00->value_20 == 1000 &&
        (iVar3 = this_00->GetObjectTypeId(), iVar3 == 0x6e)))) ||

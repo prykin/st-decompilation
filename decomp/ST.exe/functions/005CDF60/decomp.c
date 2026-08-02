@@ -37,8 +37,7 @@ void __thiscall SettMapMTy::SendPlList(SettMapMTy *this,int param_1)
     newSize = uVar9 + 9;
     local_c = newSize;
     if ((uint)local_8->field_222A < newSize) {
-      pcVar7 = Library::DKW::LIB::MemRealloc
-                         ((AnonPointee_TLOBaseTy_0607 *)local_8->field_2226,newSize);
+      pcVar7 = Library::DKW::LIB::MemRealloc(local_8->field_2226,newSize);
       pSVar5->field_2226 = pcVar7;
       pSVar5->field_222A = newSize;
     }

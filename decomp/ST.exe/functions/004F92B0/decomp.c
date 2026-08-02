@@ -29,12 +29,12 @@ void __thiscall CPanelTy::OutText(CPanelTy *this,int *param_1,undefined4 param_2
   if (errorCode == 0) {
     puVar4 = ccFntTy::FormIndentSarr
                        (local_c->field_01D0,(DArrayTy *)*param_1," ,.;:!?/\\()[]{}",
-                        (uint *)&DAT_007c21ec,local_c->field_0104,0,0xffffffff,(char *)0x0,1);
-    if ((DArrayTy *)*param_1 != (DArrayTy *)0x0) {
+                        (uint *)&DAT_007c21ec,local_c->field_0104,0,0xffffffff,nullptr,1);
+    if ((DArrayTy *)*param_1 != nullptr) {
       FUN_006b5570((DArrayTy *)*param_1);
     }
-    if (puVar4 == (uint *)0x0) {
-      pDVar5 = Library::DKW::TBL::SArrayCreate((DArrayTy *)0x0,1,1);
+    if (puVar4 == nullptr) {
+      pDVar5 = Library::DKW::TBL::SArrayCreate(nullptr,1,1);
       *param_1 = (int)pDVar5;
     }
     else {

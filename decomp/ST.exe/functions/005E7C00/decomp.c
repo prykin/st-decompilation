@@ -30,7 +30,7 @@ void __thiscall WaitTy::AddStr(WaitTy *this,uint *param_1,int param_2)
   WaitTy *local_c;
   uint *local_8;
 
-  if (param_1 != (uint *)0x0) {
+  if (param_1 != nullptr) {
     local_54.previous = g_currentExceptionFrame;
     g_currentExceptionFrame = &local_54;
     local_c = this;
@@ -53,7 +53,7 @@ void __thiscall WaitTy::AddStr(WaitTy *this,uint *param_1,int param_2)
       }
       pDVar7 = (DArrayTy *)ccFntTy::_TxtToSarr(g_startSystem_0081176C->field_0030,param_1);
       pDVar8 = local_10;
-      if (pDVar7 != (DArrayTy *)0x0) {
+      if (pDVar7 != nullptr) {
         pDVar8 = (DArrayTy *)
                  ccFntTy::FormSarr(g_startSystem_0081176C->field_0030,(uint *)pDVar7,
                                    " ,.;:!?/\\()[]{}",0x1e4,0,0xffffffff,1);
@@ -61,11 +61,11 @@ void __thiscall WaitTy::AddStr(WaitTy *this,uint *param_1,int param_2)
         FUN_006b5570(pDVar7);
       }
       pWVar5->field_1AF4 = pWVar5->field_1AF0->elementSize;
-      if (pDVar8 != (DArrayTy *)0x0) {
+      if (pDVar8 != nullptr) {
         iVar6 = 0;
         if (0 < (int)pDVar8->elementSize) {
           if ((int)pDVar8->elementSize < 1) {
-            text = (char *)0x0;
+            text = nullptr;
             goto LAB_005e7d14;
           }
           do {
@@ -92,7 +92,7 @@ LAB_005e7d14:
         puVar2 = pWVar5->field_1AEC;
         iVar6 = 0;
         local_8 = *(uint **)(puVar2 + 10);
-        if (local_8 == (uint *)0x0) {
+        if (local_8 == nullptr) {
           local_8 = (uint *)(((uint)puVar2[7] * *(int *)(puVar2 + 2) + 0x1f >> 3 & 0x1ffffffc) *
                             *(int *)(puVar2 + 4));
         }
@@ -125,7 +125,7 @@ LAB_005e7d14:
             resourceString = *(uint **)(pWVar5->field_1AF0->growCapacity + iVar6 * 4);
           }
           else {
-            resourceString = (uint *)0x0;
+            resourceString = nullptr;
           }
           ccFntTy::WrStr(g_startSystem_0081176C->field_0030,resourceString,0,-1,1);
           FUN_006b35d0((int *)g_ddxContext_008075A8,*local_8);

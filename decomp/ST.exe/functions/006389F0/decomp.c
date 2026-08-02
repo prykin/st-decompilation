@@ -18,7 +18,7 @@ undefined4 __cdecl FUN_006389f0(short param_1,short param_2,short param_3)
        (pSVar1 = g_worldGrid.cells
                  [(int)g_worldGrid.planeStride * (int)param_3 +
                   (int)g_worldGrid.sizeX * (int)param_2 + (int)param_1].objects[1],
-       pSVar1 != (STWorldObject *)0x0)))))) {
+       pSVar1 != nullptr)))))) {
     iVar2 = pSVar1->value_20;
     if ((iVar2 == 0xbe) || ((iVar2 == 0x1ae || (iVar2 == 0x8c)))) {
       local_8 = 0xffffffff;

@@ -349,7 +349,7 @@ LAB_0044d710:
       DArrayGetElement(local_14,param_1,&local_18);
       if (((ushort)local_18 != 0xffff) &&
          (objPtr = STAllPlayersC::GetObjPtr(local_c,DAT_0080874d,(ushort)local_18,CASE_1),
-         objPtr != (STGameObjC *)0x0)) {
+         objPtr != nullptr)) {
         if (GVar2 < 0x1001) {
           if (GVar2 == 0x1000) {
 switchD_0044d78f_caseD_28:

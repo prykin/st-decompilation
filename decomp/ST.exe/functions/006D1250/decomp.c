@@ -12,7 +12,7 @@ void FUN_006d1250(uint *param_1,int param_2,int param_3,uint *param_4)
   uint local_10;
 
   /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
-  if (param_4 == (uint *)0x0) {
+  if (param_4 == nullptr) {
     uVar6 = 0xff0000;
     local_10 = 0xff00;
     uVar5 = 0xff;

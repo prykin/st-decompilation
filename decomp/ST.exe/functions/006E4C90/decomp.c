@@ -19,7 +19,7 @@ void FUN_006e4c90(DebugSystemC *param_1,DArrayTy *param_2)
   if (-1 < (int)index) {
     while( true ) {
       if (local_c == param_1) break;
-      if (local_8 != (DArrayTy *)0x0) {
+      if (local_8 != nullptr) {
         FUN_006e4c90(param_1,local_8);
       }
       index = DArrayGetNext(param_2,local_10);
@@ -27,10 +27,10 @@ void FUN_006e4c90(DebugSystemC *param_1,DArrayTy *param_2)
         return;
       }
     }
-    if (local_8 != (DArrayTy *)0x0) {
+    if (local_8 != nullptr) {
       FUN_006e3680(local_8);
       DArrayDestroy(local_8);
-      local_8 = (DArrayTy *)0x0;
+      local_8 = nullptr;
     }
     DArrayRemoveAt(param_2,index);
   }

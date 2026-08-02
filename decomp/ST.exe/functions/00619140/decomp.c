@@ -12,10 +12,10 @@ STJumpMineC * __cdecl CreateSTJumpMine(void)
   STJumpMineC *pSVar1;
 
   pSVar1 = (STJumpMineC *)FUN_006b04d0(0x151);
-  if (pSVar1 != (STJumpMineC *)0x0) {
+  if (pSVar1 != nullptr) {
     pSVar1 = STJumpMineC::STJumpMineC(pSVar1);
     return pSVar1;
   }
-  return (STJumpMineC *)0x0;
+  return nullptr;
 }
 

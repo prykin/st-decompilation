@@ -62,12 +62,12 @@ void __thiscall CursorClassTy::DrawSprite(CursorClassTy *this,int param_1,int pa
         }
       }
       pSVar1 = pCVar4->field_04EB;
-      if ((pSVar1 != (SpriteClassTy *)0x0) && (g_sT3DSMAPContext_00807598 != (ST3DSMAPContext *)0x0)
+      if ((pSVar1 != nullptr) && (g_sT3DSMAPContext_00807598 != nullptr)
          ) {
         if (pSVar1->field_000C + -1 <= pSVar1->field_0008) {
           SpriteClassTy::CloseSprite(pSVar1);
           Library::MSVCRT::FUN_0072e2b0((HoloTy *)pCVar4->field_04EB);
-          pCVar4->field_04EB = (SpriteClassTy *)0x0;
+          pCVar4->field_04EB = nullptr;
           g_currentExceptionFrame = local_54.previous;
           return;
         }

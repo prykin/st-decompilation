@@ -78,7 +78,7 @@ int __thiscall HelpPanelTy::GetMessage(HelpPanelTy *this,STMessage *message)
   }
   if (message->id == MESS_ID_CREATE) {
     puVar10 = &local_20->field_004C;
-    FUN_006b1a50(g_ddxContext_008075A8,3,(undefined4 *)0x0,puVar10);
+    FUN_006b1a50(g_ddxContext_008075A8,3,nullptr,puVar10);
     this_00->field_003C = *puVar10;
     this_00->field_0044 = this_00->field_0050 - this_00->field_0048;
     this_00->field_0174 = this_00->field_0048 + this_00->field_0050;
@@ -119,7 +119,7 @@ int __thiscall HelpPanelTy::GetMessage(HelpPanelTy *this,STMessage *message)
           case CASE_5:
           case CASE_B:
           case CASE_C:
-            local_1c = (uint *)0x0;
+            local_1c = nullptr;
             /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
             local_14 = *(uint *)(this_00->field_01D7 + 0xc);
             if (local_14 == 0) {
@@ -135,7 +135,7 @@ int __thiscall HelpPanelTy::GetMessage(HelpPanelTy *this,STMessage *message)
                                 *(int *)(this_00->field_01D7 + 0x1c));
               }
               else {
-                piVar9 = (int *)0x0;
+                piVar9 = nullptr;
               }
               local_24 = piVar9[3];
               local_30 = this_00->field_003C + 0x21 + *piVar9;
@@ -235,7 +235,7 @@ int __thiscall HelpPanelTy::GetMessage(HelpPanelTy *this,STMessage *message)
           /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
           case CASE_8:
             if (*(int *)(this_00->field_01D7 + 0xc) == 0) {
-              piVar9 = (int *)0x0;
+              piVar9 = nullptr;
             }
             else {
               /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
@@ -291,11 +291,11 @@ int __thiscall HelpPanelTy::GetMessage(HelpPanelTy *this,STMessage *message)
           return 0;
         }
         local_10 = (undefined4 *)(message->arg2).u32;
-        if (local_10 == (undefined4 *)0x0) {
+        if (local_10 == nullptr) {
           g_currentExceptionFrame = local_84.previous;
           return 0;
         }
-        if (this_00->field_01D3 == (uint *)0x0) {
+        if (this_00->field_01D3 == nullptr) {
           g_currentExceptionFrame = local_84.previous;
           return 0;
         }
@@ -317,7 +317,7 @@ int __thiscall HelpPanelTy::GetMessage(HelpPanelTy *this,STMessage *message)
                    (byte *)this_00->field_01DC,0,0x21,0x16,0x19c,0x118);
         pAVar5 = this_00->field_0218;
         local_1c = (uint *)pAVar5->field_0014;
-        if (local_1c == (uint *)0x0) {
+        if (local_1c == nullptr) {
           local_1c = (uint *)(((uint)(ushort)pAVar5->field_000E * pAVar5->field_0004 + 0x1f >> 3 &
                               0x1ffffffc) * pAVar5->field_0008);
         }
@@ -339,9 +339,9 @@ int __thiscall HelpPanelTy::GetMessage(HelpPanelTy *this,STMessage *message)
               local_1c = *(uint **)(this_00->field_01D3[5] + uVar16 * 4);
             }
             else {
-              local_1c = (uint *)0x0;
+              local_1c = nullptr;
             }
-            if (local_1c != (uint *)0x0) {
+            if (local_1c != nullptr) {
               ccFntTy::SetSurf(this_00->field_01E4,(int)this_00->field_0218,0,0,
                                (uVar16 - uVar18) * local_18,this_00->field_0218->field_0004,local_18
                               );
@@ -408,7 +408,7 @@ int __thiscall HelpPanelTy::GetMessage(HelpPanelTy *this,STMessage *message)
         return 0;
       }
       local_18 = (uint)(message->arg1).words.low;
-      local_10 = (undefined4 *)0x0;
+      local_10 = nullptr;
       local_c = (uint)(message->arg1).words.high;
       this_00->field_01DB = 0;
       if (this_00->field_0172 == 1) {
@@ -420,10 +420,10 @@ int __thiscall HelpPanelTy::GetMessage(HelpPanelTy *this,STMessage *message)
         case CASE_5:
         case CASE_B:
         case CASE_C:
-          local_8 = (undefined4 *)0x0;
+          local_8 = nullptr;
           /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
           local_14 = *(undefined4 *)(this_00->field_01D7 + 0xc);
-          if ((undefined4 *)local_14 != (undefined4 *)0x0) {
+          if ((undefined4 *)local_14 != nullptr) {
             do {
               if (local_8 < local_14) {
                 /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
@@ -431,7 +431,7 @@ int __thiscall HelpPanelTy::GetMessage(HelpPanelTy *this,STMessage *message)
                                 *(int *)(this_00->field_01D7 + 0x1c));
               }
               else {
-                piVar9 = (int *)0x0;
+                piVar9 = nullptr;
               }
               local_40 = this_00->field_003C + 0x21 + *piVar9;
               local_3c = piVar9[1] +
@@ -491,7 +491,7 @@ int __thiscall HelpPanelTy::GetMessage(HelpPanelTy *this,STMessage *message)
                                                ((int)local_8 + (uint)uVar19 * 0xd),
                                               *(char *)((int)local_8 + (uint)uVar19 * 0xd + 4));
                 if (local_10 != (undefined4 *)0x2711) goto LAB_0051e1b2;
-                local_10 = (undefined4 *)0x0;
+                local_10 = nullptr;
                 break;
               }
               uVar19 = uVar19 + 1;
@@ -538,9 +538,9 @@ int __thiscall HelpPanelTy::GetMessage(HelpPanelTy *this,STMessage *message)
         }
       }
       else {
-        local_8 = (UINT *)0x0;
+        local_8 = nullptr;
       }
-      if (local_8 != (UINT *)0x0) {
+      if (local_8 != nullptr) {
         bVar22 = (message->arg0).words.high == 1;
         local_18 = *local_8;
         if (DAT_0080874e == '\x03') {
@@ -591,7 +591,7 @@ int __thiscall HelpPanelTy::GetMessage(HelpPanelTy *this,STMessage *message)
         memmove(pcVar21, pcVar12, uVar16); /* compiler REP MOVS byte copy */
         puVar13 = Library::MSVCRT::FUN_0072e560(&DAT_0080f33a,'\n');
         pUVar7 = local_8;
-        while (local_8 = pUVar7, puVar13 != (uint *)0x0) {
+        while (local_8 = pUVar7, puVar13 != nullptr) {
           *(undefined1 *)puVar13 = 0x20;
           puVar13 = Library::MSVCRT::FUN_0072e560(puVar13,'\n');
           pUVar7 = local_8;
@@ -702,9 +702,9 @@ LAB_0051ef61:
         }
       }
       else {
-        local_1c = (uint *)0x0;
+        local_1c = nullptr;
       }
-      if (local_1c == (uint *)0x0) {
+      if (local_1c == nullptr) {
         g_currentExceptionFrame = local_84.previous;
         return 0;
       }
@@ -919,13 +919,13 @@ switchD_0051dfcc_caseD_7:
     *(undefined2 *)&this_00->field_0x2c = 0;
     this_00->field_002E = 2;
     *(UINT *)&this_00->field_0x30 = UVar24;
-    if (g_cursorClass_00802A30 != (CursorClassTy *)0x0) {
+    if (g_cursorClass_00802A30 != nullptr) {
       /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
       (**(code **)g_cursorClass_00802A30->field_0000)(&this_00->field_0x18);
     }
   }
   this_00->field_0178 = local_10;
-  if (local_10 == (undefined4 *)0x0) {
+  if (local_10 == nullptr) {
     g_currentExceptionFrame = local_84.previous;
     return 0;
   }

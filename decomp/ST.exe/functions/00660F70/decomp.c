@@ -32,8 +32,8 @@ void __thiscall AiFltClassTy::sub_00660F70(AiFltClassTy *this,uint *param_1,unde
   int local_c;
   Global_sub_004E80F0_param_2Enum *local_8;
 
-  if (((this->field_0284 != (ushort *)0x0) && (this->field_020B != (DArrayTy *)0x0)) &&
-     (g_allPlayers_007FA174 != (STAllPlayersC *)0x0)) {
+  if (((this->field_0284 != nullptr) && (this->field_020B != nullptr)) &&
+     (g_allPlayers_007FA174 != nullptr)) {
     local_20 = thunk_FUN_004357f0(*(char *)&this->field_0024);
     sVar10 = this->field_007B;
     local_c = 0;
@@ -44,10 +44,10 @@ void __thiscall AiFltClassTy::sub_00660F70(AiFltClassTy *this,uint *param_1,unde
         GVar1 = *local_8;
         if ((GVar1 == 0) || (((GVar1 == 0 || (0x28 < GVar1)) && (sVar10 != 1))))
         goto cf_continue_loop_0066137E;
-        if ((((int)GVar1 < 1) || (0x28 < (int)GVar1)) || (pSVar7 == (STAllPlayersC *)0x0)) {
-          if ((((int)GVar1 < 0x32) || (0x73 < (int)GVar1)) || (pSVar7 == (STAllPlayersC *)0x0)) {
+        if ((((int)GVar1 < 1) || (0x28 < (int)GVar1)) || (pSVar7 == nullptr)) {
+          if ((((int)GVar1 < 0x32) || (0x73 < (int)GVar1)) || (pSVar7 == nullptr)) {
             if ((((GVar1 == CASE_A3) || (GVar1 == CASE_A8)) ||
-                ((GVar1 == CASE_B2 || (GVar1 == CASE_BE)))) && (pSVar7 != (STAllPlayersC *)0x0)) {
+                ((GVar1 == CASE_B2 || (GVar1 == CASE_BE)))) && (pSVar7 != nullptr)) {
               pSVar7 = (STAllPlayersC *)thunk_FUN_004e80f0(this->field_0024,GVar1);
               pSVar4 = g_allPlayers_007FA174;
             }
@@ -66,7 +66,7 @@ void __thiscall AiFltClassTy::sub_00660F70(AiFltClassTy *this,uint *param_1,unde
           pSVar7 = (STAllPlayersC *)thunk_FUN_004e6a80((byte *)this->field_0024,GVar1);
           pSVar4 = g_allPlayers_007FA174;
         }
-        bVar3 = pSVar7 == (STAllPlayersC *)0x0;
+        bVar3 = pSVar7 == nullptr;
         pSVar7 = pSVar4;
         if (bVar3) goto cf_continue_loop_0066137E;
         if (this->field_00FF == '\0') goto switchD_0066104e_caseD_9;
@@ -116,15 +116,15 @@ switchD_0066104e_caseD_9:
                ((((short)param_1[4] < 0 || (*(short *)((int)param_1 + 0x12) < 0)) ||
                 (iVar8 = thunk_FUN_004ae0b0(sVar10,(int)(short)param_1[4],
                                             (int)*(short *)((int)param_1 + 0x12),*local_8,
-                                            this->field_0024,(undefined4 *)0x0,(int *)0x0,(int *)0x0
-                                            ,0,(int *)0x0), uVar11 = extraout_EDX, iVar8 == 0)))) {
-              local_10 = (STGameObjC *)0x0;
+                                            this->field_0024,nullptr,nullptr,nullptr
+                                            ,0,nullptr), uVar11 = extraout_EDX, iVar8 == 0)))) {
+              local_10 = nullptr;
               if (((0x53 < *local_8) && (*local_8 < 0x5b)) &&
-                 (array = (DArrayTy *)sub_0065E360(this,uVar11,0x53), array != (DArrayTy *)0x0)) {
-                if (((array->count != 0) && (g_allPlayers_007FA174 != (STAllPlayersC *)0x0)) &&
+                 (array = (DArrayTy *)sub_0065E360(this,uVar11,0x53), array != nullptr)) {
+                if (((array->count != 0) && (g_allPlayers_007FA174 != nullptr)) &&
                    (pSVar9 = STAllPlayersC::GetObjPtr
                                        (g_allPlayers_007FA174,*(char *)&this->field_0024,
-                                        *(ushort *)array->data,CASE_1), pSVar9 != (STGameObjC *)0x0)
+                                        *(ushort *)array->data,CASE_1), pSVar9 != nullptr)
                    ) {
                   local_10 = pSVar9;
                 }
@@ -163,7 +163,7 @@ switchD_0066104e_caseD_9:
           local_6c._0_4_ = *pGVar6;
           /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
           local_6c._4_2_ = param_2;
-          if (local_20 == (AiPlrClassTy *)0x0) {
+          if (local_20 == nullptr) {
             /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
             local_6c._8_4_ = 0;
           }

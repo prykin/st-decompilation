@@ -14,9 +14,9 @@ byte * FUN_0055d590(char *text,uint param_2,byte *param_3)
   uint uVar6;
   bool bVar7;
 
-  if ((param_3 == (byte *)0x0) ||
+  if ((param_3 == nullptr) ||
      (uVar6 = 0, pbVar2 = (byte *)text, pbVar5 = param_3, pbVar4 = param_3, param_2 == 0)) {
-    return (byte *)0x0;
+    return nullptr;
   }
 LAB_0055d5ad:
   do {
@@ -45,7 +45,7 @@ LAB_0055d5d1:
     pbVar2 = (byte *)text;
     pbVar4 = pbVar5;
     if (param_2 <= uVar6) {
-      return (byte *)0x0;
+      return nullptr;
     }
   } while( true );
 }

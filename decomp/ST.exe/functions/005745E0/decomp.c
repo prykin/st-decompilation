@@ -2,7 +2,7 @@
 void __cdecl FUN_005745e0(AnonShape_005745E0_AF52CC75 *param_1,undefined4 *param_2)
 
 {
-  undefined1 *puVar1;
+  void **ppvVar1;
   ushort uVar2;
   ST3DSMAPContext *pSVar3;
   byte bVar4;
@@ -33,9 +33,9 @@ void __cdecl FUN_005745e0(AnonShape_005745E0_AF52CC75 *param_1,undefined4 *param
       if (*(uint *)(iVar6 + 0xc) <= uVar7) goto cf_break_loop_00574651;
       piVar5 = (int *)(*(int *)(iVar6 + 8) * uVar7 + *(int *)(iVar6 + 0x1c));
       *(uint *)(iVar6 + 4) = uVar7 + 1;
-      if (piVar5 == (int *)0x0) goto cf_break_loop_00574651;
+      if (piVar5 == nullptr) goto cf_break_loop_00574651;
     } while (param_2[10] != *piVar5);
-    if (piVar5 == (int *)0x0) {
+    if (piVar5 == nullptr) {
 cf_break_loop_00574651:
       local_14 = (int)*(short *)((int)param_2 + 6);
       local_18 = (undefined4 *)(int)*(short *)(param_2 + 1);
@@ -44,18 +44,18 @@ cf_break_loop_00574651:
       *(undefined2 *)((int)param_2 + 6) = 0;
       *(undefined2 *)(param_2 + 2) = 0;
       pSVar3 = g_sT3DSMAPContext_0080760C;
-      puVar1 = &g_sT3DSMAPContext_0080760C->field_0x140;
-      *param_2 = *(undefined4 *)&g_sT3DSMAPContext_0080760C->field_0x140;
-      *(undefined4 **)puVar1 = param_2;
-      *(int *)&pSVar3->field_0x13c = *(int *)&pSVar3->field_0x13c + 1;
+      ppvVar1 = &g_sT3DSMAPContext_0080760C->field_0140;
+      *param_2 = g_sT3DSMAPContext_0080760C->field_0140;
+      *ppvVar1 = param_2;
+      pSVar3->field_013C = pSVar3->field_013C + 1;
       ST3DSMAPContext::sub_006DDBE0(g_sT3DSMAPContext_0080760C);
-      *(undefined4 *)&g_sT3DSMAPContext_0080760C->field_0x124 = 3;
+      g_sT3DSMAPContext_0080760C->field_0124 = 3;
       ST3DSMAPContext::sub_006DDD50(g_sT3DSMAPContext_0080760C);
-      *(undefined4 *)&g_sT3DSMAPContext_0080760C->field_0x124 = 4;
+      g_sT3DSMAPContext_0080760C->field_0124 = 4;
       ST3DSMAPContext::sub_006DDD50(g_sT3DSMAPContext_0080760C);
       pSVar3 = g_sT3DSMAPContext_0080760C;
-      *(undefined4 *)&g_sT3DSMAPContext_0080760C->field_0x140 = 0;
-      *(undefined4 *)&pSVar3->field_0x13c = 0;
+      g_sT3DSMAPContext_0080760C->field_0140 = nullptr;
+      pSVar3->field_013C = 0;
       *(undefined2 *)(param_2 + 1) = local_18._0_2_;
       *(undefined2 *)((int)param_2 + 6) = (undefined2)local_14;
       *(undefined2 *)(param_2 + 2) = (undefined2)local_10;
@@ -76,7 +76,7 @@ cf_break_loop_00574651:
               uVar9 = 0;
               if (uVar7 != 0) {
                 pcVar10 = (char *)(g_sT3DSMAPContext_0080760C->field_0028 * iVar6 +
-                                   *(int *)&g_sT3DSMAPContext_0080760C->field_0xc + local_20);
+                                   g_sT3DSMAPContext_0080760C->field_000C + local_20);
                 do {
                   if (*pcVar10 != '\0') {
                     if (*pcVar10 == -1) {

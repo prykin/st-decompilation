@@ -91,7 +91,7 @@ switchD_0054bfbc_caseD_20:
     }
     else {
       uVar7 = 0;
-      pBVar6 = (BITMAPINFO *)0x0;
+      pBVar6 = nullptr;
       uVar4 = 0x32;
     }
     goto cf_common_exit_0054C01C;
@@ -130,7 +130,7 @@ switchD_0054bfbc_caseD_20:
     iVar3 = -1;
     iVar2 = -1;
     uVar7 = 0;
-    pBVar6 = (BITMAPINFO *)0x0;
+    pBVar6 = nullptr;
     pcVar5 = "CUR_ARROW";
     break;
   case 8:

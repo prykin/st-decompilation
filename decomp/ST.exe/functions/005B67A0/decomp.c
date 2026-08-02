@@ -36,7 +36,7 @@ MMMObjTy::OutRGlProc
   InternalExceptionFrame local_4c;
   undefined4 *local_8;
 
-  if (param_8 != (undefined4 *)0x0) {
+  if (param_8 != nullptr) {
     local_8 = param_8;
     local_4c.previous = g_currentExceptionFrame;
     g_currentExceptionFrame = &local_4c;

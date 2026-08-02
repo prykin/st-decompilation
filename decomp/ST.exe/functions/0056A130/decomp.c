@@ -15,15 +15,15 @@ void __thiscall FUN_0056a130(void *this,uint param_1,char param_2,int param_3,ui
   local_8 = this;
   iVar1 = Library::MSVCRT::__setjmp3(local_4c.jumpBuffer,0);
   if (iVar1 == 0) {
-    if (param_4 == (uint *)0x0) {
+    if (param_4 == nullptr) {
       /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
       param_4 = FUN_0071a990(*(AnonShape_0071A990_7656000F **)((int)local_8 + 0xdf3),
                              (param_1 ^ (int)param_1 >> 0x1f) - ((int)param_1 >> 0x1f),-1,
-                             (undefined1 *)0x0);
+                             nullptr);
     }
     iVar1 = param_3;
     if (param_2 == '\x01') {
-      if (param_4 == (uint *)0x0) {
+      if (param_4 == nullptr) {
         g_currentExceptionFrame = local_4c.previous;
         return;
       }
@@ -34,7 +34,7 @@ void __thiscall FUN_0056a130(void *this,uint param_1,char param_2,int param_3,ui
       uVar2 = 2;
     }
     else if (param_2 == '\x02') {
-      if (param_4 == (uint *)0x0) {
+      if (param_4 == nullptr) {
         g_currentExceptionFrame = local_4c.previous;
         return;
       }
@@ -48,7 +48,7 @@ void __thiscall FUN_0056a130(void *this,uint param_1,char param_2,int param_3,ui
       }
     }
     else {
-      if (param_4 == (uint *)0x0) {
+      if (param_4 == nullptr) {
         g_currentExceptionFrame = local_4c.previous;
         return;
       }

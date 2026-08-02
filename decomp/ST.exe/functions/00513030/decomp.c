@@ -172,7 +172,7 @@ LAB_00513233:
     uVar13 = array->count;
     /* ST_PSEUDO[dynamic_array_indexing]: expected DArrayAt<T>(array, uVar9) (runtime stride) */
     while (((uVar9 < uVar13 &&
-            (pvVar8 = (void *)(array->elementSize * uVar9 + (int)array->data), pvVar8 != (void *)0x0
+            (pvVar8 = (void *)(array->elementSize * uVar9 + (int)array->data), pvVar8 != nullptr
             )) && (*(byte *)((int)piVar12 + 0x11) < *(byte *)((int)pvVar8 + 0x11)))) {
       DArrayRemoveAt(array,uVar9);
       array = (DArrayTy *)this_00->field_01B3;

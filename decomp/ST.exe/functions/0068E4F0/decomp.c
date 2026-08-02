@@ -24,7 +24,7 @@ uint * __thiscall FUN_0068e4f0(void *this,int param_1)
   undefined4 local_c;
   uint local_8;
 
-  array = Library::DKW::TBL::DArrayCreate((DArrayTy *)0x0,0x14,2,0x14);
+  array = Library::DKW::TBL::DArrayCreate(nullptr,0x14,2,0x14);
   iVar2 = *(int *)((int)this + 0xa5);
   local_8 = 0;
   if (0 < *(int *)(iVar2 + 0xc)) {
@@ -41,10 +41,10 @@ uint * __thiscall FUN_0068e4f0(void *this,int param_1)
         iVar2 = 0;
       }
       /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
-      if ((*(AiFltClassTy **)(iVar2 + 4) != (AiFltClassTy *)0x0) &&
+      if ((*(AiFltClassTy **)(iVar2 + 4) != nullptr) &&
          (array_00 = (DArrayTy *)
                      AiFltClassTy::sub_0065E360(*(AiFltClassTy **)(iVar2 + 4),iVar4,param_1),
-         iVar4 = extraout_EDX_00, array_00 != (DArrayTy *)0x0)) {
+         iVar4 = extraout_EDX_00, array_00 != nullptr)) {
         dVar1 = array_00->count;
         if ((dVar1 != 0) && (uVar5 = 0, uVar6 = local_8, 0 < (int)dVar1)) {
           bVar7 = dVar1 != 0;
@@ -56,7 +56,7 @@ uint * __thiscall FUN_0068e4f0(void *this,int param_1)
               puVar3 = (undefined2 *)(array_00->elementSize * uVar5 + (int)array_00->data);
             }
             else {
-              puVar3 = (undefined2 *)0x0;
+              puVar3 = nullptr;
             }
             /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
             local_c = CONCAT22((short)((uint)iVar2 >> 0x10),*puVar3);
@@ -81,6 +81,6 @@ uint * __thiscall FUN_0068e4f0(void *this,int param_1)
     return &array->flags;
   }
   DArrayDestroy(array);
-  return (uint *)0x0;
+  return nullptr;
 }
 

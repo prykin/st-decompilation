@@ -44,7 +44,7 @@ FUN_005fd750(uint param_1,short param_2,short param_3,ushort param_4,uint param_
   local_30[1] = param_1;
   local_30[0] = 0x82;
   this = STAllPlayersC::GetObjPtr(g_allPlayers_007FA174,(char)param_1,local_12,CASE_1);
-  if (this != (STGameObjC *)0x0) {
+  if (this != nullptr) {
     iVar1 = this->vfunc_F8();
     if (iVar1 != 0) {
       local_16 = this->field_0018;

@@ -64,7 +64,7 @@ LAB_00596d58:
     }
     break;
   case CASE_3:
-    if (this_00->field_1F23 != (HoloTy *)0x0) {
+    if (this_00->field_1F23 != nullptr) {
       g_currentExceptionFrame = local_50.previous;
       return;
     }
@@ -73,8 +73,8 @@ LAB_00596d58:
       return;
     }
     MMMObjTy::OutBSlProc
-              ((MMMObjTy *)g_dDXContext_0080759C,(int)g_dDXContext_0080759C,(MMMObjTy *)0x0,
-               (MMMObjTy *)0x0,0x22,0x72,0x2e1,0x14c,&this_00->field_1A5B->field_0140);
+              ((MMMObjTy *)g_dDXContext_0080759C,(int)g_dDXContext_0080759C,nullptr,
+               nullptr,0x22,0x72,0x2e1,0x14c,&this_00->field_1A5B->field_0140);
     g_currentExceptionFrame = local_50.previous;
     return;
   case CASE_4:
@@ -92,11 +92,11 @@ LAB_00596d7a:
     }
     break;
   case CASE_6:
-    if ((this_00->field_1F27 == (HoloTy *)0x0) && (param_1 == '\0')) {
+    if ((this_00->field_1F27 == nullptr) && (param_1 == '\0')) {
       OutChSlProc(this_01,(AnonShape_GLOBAL_0080759C_9638EF10 *)g_dDXContext_0080759C,0,0,0x13,0x5e,
                   0x1bf,0x175,&this_00->field_1A5B->field_0140);
     }
-    if (this_00->field_1F2B != (HoloTy *)0x0) {
+    if (this_00->field_1F2B != nullptr) {
       g_currentExceptionFrame = local_50.previous;
       return;
     }
@@ -106,7 +106,7 @@ LAB_00596d7a:
     }
     this_02 = &this_00->field_1A5B->field_0140;
     OutTRGlProc((FSGSTy *)this_02,(AnonShape_GLOBAL_0080759C_9638EF10 *)g_dDXContext_0080759C,
-                (MMMObjTy *)0x0,(MMMObjTy *)0x0,(StartServTy *)0x1e9,0x5e,0x124,0x175,(int)this_02);
+                nullptr,nullptr,(StartServTy *)0x1e9,0x5e,0x124,0x175,(int)this_02);
     g_currentExceptionFrame = local_50.previous;
     return;
   case CASE_7:
@@ -118,14 +118,14 @@ LAB_00596d8b:
     break;
   case CASE_8:
     pFVar3 = this_01;
-    if ((this_00->field_1F2F == (HoloTy *)0x0) && (param_1 == '\0')) {
+    if ((this_00->field_1F2F == nullptr) && (param_1 == '\0')) {
       OutSGlProc((FSGSTy *)g_dDXContext_0080759C,
-                 (AnonShape_GLOBAL_0080759C_9638EF10 *)g_dDXContext_0080759C,(MMMObjTy *)0x0,
-                 (MMMObjTy *)0x0,0x199,0x5e,0x174,0x175,(int)&this_00->field_1A5B->field_0140);
+                 (AnonShape_GLOBAL_0080759C_9638EF10 *)g_dDXContext_0080759C,nullptr,
+                 nullptr,0x199,0x5e,0x174,0x175,(int)&this_00->field_1A5B->field_0140);
       /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
       pFVar3 = extraout_ECX;
     }
-    if (this_00->field_1F2B != (HoloTy *)0x0) {
+    if (this_00->field_1F2B != nullptr) {
       g_currentExceptionFrame = local_50.previous;
       return;
     }
@@ -134,12 +134,12 @@ LAB_00596d8b:
       return;
     }
     MMMObjTy::OutBSlProc
-              ((MMMObjTy *)pFVar3,(int)g_dDXContext_0080759C,(MMMObjTy *)0x0,(MMMObjTy *)0x0,0x13,
+              ((MMMObjTy *)pFVar3,(int)g_dDXContext_0080759C,nullptr,nullptr,0x13,
                0x5e,0x174,0x175,&this_00->field_1A5B->field_0140);
     g_currentExceptionFrame = local_50.previous;
     return;
   case CASE_9:
-    if (this_00->field_1F23 != (HoloTy *)0x0) {
+    if (this_00->field_1F23 != nullptr) {
       g_currentExceptionFrame = local_50.previous;
       return;
     }
@@ -147,8 +147,8 @@ LAB_00596d8b:
       g_currentExceptionFrame = local_50.previous;
       return;
     }
-    OutLadProc((FSGSTy *)g_dDXContext_0080759C,(int)g_dDXContext_0080759C,(MMMObjTy *)0x0,
-               (MMMObjTy *)0x0,0x22,0x5e,(FSGSTy *)0x2e1,0x175);
+    OutLadProc((FSGSTy *)g_dDXContext_0080759C,(int)g_dDXContext_0080759C,nullptr,
+               nullptr,0x22,0x5e,(FSGSTy *)0x2e1,0x175);
     /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
     PaintLadder(this_00,unaff_ESI);
     g_currentExceptionFrame = local_50.previous;
@@ -162,9 +162,9 @@ LAB_00596d9c:
   default:
     goto switchD_00596d3d_default;
   }
-  if ((this_00->field_1F23 == (HoloTy *)0x0) && (param_1 == '\0')) {
+  if ((this_00->field_1F23 == nullptr) && (param_1 == '\0')) {
     pFVar3 = (FSGSTy *)((-(uint)(this_00->field_1ABB != '\0') & 0x74) + 0x106);
-    OutTRGlProc(pFVar3,(int)g_dDXContext_0080759C,(MMMObjTy *)0x0,(MMMObjTy *)0x0,0xb4,
+    OutTRGlProc(pFVar3,(int)g_dDXContext_0080759C,nullptr,nullptr,0xb4,
                 (-(uint)(this_00->field_1ABB != '\0') & 0xffffffb4) + 0xaa,0x1b8,(int)pFVar3,local_8
                );
     g_currentExceptionFrame = local_50.previous;

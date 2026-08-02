@@ -16,7 +16,7 @@ void __thiscall FUN_0062e3a0(void *this,int *param_1,uint param_2,int param_3)
     puVar4 = (undefined4 *)(iVar2 + 0x10);
     iVar2 = 3;
     do {
-      if (((AnonShape_005EFAE0_B406B78B *)*puVar4 != (AnonShape_005EFAE0_B406B78B *)0x0) &&
+      if (((AnonShape_005EFAE0_B406B78B *)*puVar4 != nullptr) &&
          (iVar3 = STPlaySystemC::sub_006E62D0
                             (g_playSystem_00802A38,(AnonShape_005EFAE0_B406B78B *)*puVar4,
                              (int *)&param_1), iVar3 != -4)) {

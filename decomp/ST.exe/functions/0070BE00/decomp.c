@@ -18,6 +18,6 @@ FUN_0070be00(byte *param_1,int param_2,int param_3,int param_4,int param_5,uint 
     return piVar2;
   }
   g_currentExceptionFrame = local_48.previous;
-  return (int *)0x0;
+  return nullptr;
 }
 

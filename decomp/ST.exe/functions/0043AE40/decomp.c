@@ -30,7 +30,7 @@ STAllPlayersC::SetActivePanel(STAllPlayersC *this,uint *param_1,int param_2,int 
   local_10 = 0;
   local_c = 0;
   local_8 = 0;
-  if (param_1 == (uint *)0x0) {
+  if (param_1 == nullptr) {
     /* ST_PSEUDO[flattened_global_record_array]: expected typedRecordArray[index].field after inferred base/stride proof */
     iVar6 = (uint)DAT_0080874d * 0xa62;
     if (g_packedRecords_A62x8[DAT_0080874d].field448_0x203 == 0) {

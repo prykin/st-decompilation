@@ -42,7 +42,7 @@ AiEventClassTy::_CreateRCCont
     RaiseInternalException(iVar3,0,"E:\\__titans\\ai\\ai_event.cpp",0xef);
     return iVar3;
   }
-  if (g_allPlayers_007FA174 != (STAllPlayersC *)0x0) {
+  if (g_allPlayers_007FA174 != nullptr) {
     if ((((param_2 == 0xdd) || (param_2 == 0xde)) || (param_2 == 0xe2)) || (param_2 == 0xdc)) {
       bVar2 = true;
     }
@@ -52,7 +52,7 @@ AiEventClassTy::_CreateRCCont
     if (bVar2) {
       local_c = param_3;
       local_8 = param_4;
-      local_24 = (uint)(byte)(&DAT_008087e8)[(uint)param_1 * 0x51];
+      local_24 = (uint)g_bulkInitializedRecords_008087C7[param_1].field_0021;
       local_10 = param_5;
       iVar3 = thunk_FUN_004961b0((short)param_3,(short)param_4,(short)param_5);
       if (iVar3 == 0) {
@@ -69,7 +69,7 @@ AiEventClassTy::_CreateRCCont
       iVar3 = thunk_FUN_00675b10(local_c,local_8,(short)local_10,(short *)&local_c,(short *)&local_8
                                  ,(short *)&local_10,0xfe);
       if (iVar3 != 0) {
-        if (param_7 == (char *)0x0) {
+        if (param_7 == nullptr) {
           param_7 = &DAT_008016a0;
         }
         thunk_FUN_005fcff0((uint)param_1,local_24,(int)param_2,param_6,(int)(short)local_c,

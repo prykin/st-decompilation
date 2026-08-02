@@ -44,14 +44,14 @@ void __thiscall STDestC::sub_00602BE0(STDestC *this)
   else if (this->field_036E != 4) {
     puVar3 = sub_00602E90(this);
     this->field_03AB = puVar3;
-    if (puVar3 != (undefined4 *)0x0) {
+    if (puVar3 != nullptr) {
       thunk_FUN_004ad310((STT3DSprC *)&this->field_01D5);
       this->field_039B = -1;
       this->field_036E = 4;
     }
   }
   pVVar1 = g_visibleClass_00802A88;
-  if ((g_visibleClass_00802A88 != (VisibleClassTy *)0x0) && (-1 < this->field_039B)) {
+  if ((g_visibleClass_00802A88 != nullptr) && (-1 < this->field_039B)) {
     iVar2 = (int)this->field_0259;
     if (((DAT_0080874d != -1) &&
         ((((g_visibleClass_00802A88->field_00F8 != 0 &&
@@ -60,7 +60,7 @@ void __thiscall STDestC::sub_00602BE0(STDestC *this)
                        (int)this->field_0255,(int)this->field_0257,&local_8,&local_c), -1 < iVar2))
           && (iVar2 < 5)) && ((-1 < local_8 && (local_8 < pVVar1->field_0030)))))) &&
        ((local_c = g_centeredOffsets5[iVar2] + local_c, -1 < local_c &&
-        (((local_c < pVVar1->field_0034 && (pVVar1->field_004C != (byte *)0x0)) &&
+        (((local_c < pVVar1->field_0034 && (pVVar1->field_004C != nullptr)) &&
          (pVVar1->field_004C[local_8 + local_c * pVVar1->field_0030] == 0)))))) {
       if (this->field_037A == '\0') {
         return;

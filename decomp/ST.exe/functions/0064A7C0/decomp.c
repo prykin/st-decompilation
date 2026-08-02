@@ -6,7 +6,7 @@
 void __cdecl FUN_0064a7c0(undefined4 *param_1)
 
 {
-  if (param_1 != (undefined4 *)0x0) {
+  if (param_1 != nullptr) {
     if (param_1[2] != 0) {
       FreeAndNull((void **)(param_1 + 2));
     }

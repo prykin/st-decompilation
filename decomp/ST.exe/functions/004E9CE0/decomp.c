@@ -89,7 +89,7 @@ int __thiscall TLOBaseTy::teleNone(TLOBaseTy *this)
                    (*(short *)&this_00->field_047C + 1) * 200,this_00->field_0062);
       thunk_FUN_004e9650(local_8,&this_00->field_0480,&this_00->field_0484,&this_00->field_0488);
       thunk_FUN_004e96c0(local_8,this_00->field_0018);
-      if (DAT_00800bcc == (void *)0x0) {
+      if (DAT_00800bcc == nullptr) {
         thunk_FUN_004d0f00();
       }
       thunk_FUN_004d0970(DAT_00800bcc,this_00->field_0480,this_00->field_0484,this_00->field_0488);
@@ -135,12 +135,12 @@ int __thiscall TLOBaseTy::teleNone(TLOBaseTy *this)
       iVar3 = 0;
       uVar5 = thunk_FUN_004ad650((STT3DSprC *)&local_20->field_01D5);
       Library::Ourlib::ST3DSMAP::SprSetVisible((void *)this_00->field_0211,uVar5,iVar3);
-      if ((STT3DSprC *)this_00->field_05FF != (STT3DSprC *)0x0) {
+      if ((STT3DSprC *)this_00->field_05FF != nullptr) {
         iVar3 = 0;
         uVar5 = thunk_FUN_004ad650((STT3DSprC *)this_00->field_05FF);
         Library::Ourlib::ST3DSMAP::SprSetVisible((void *)this_00->field_0211,uVar5,iVar3);
       }
-      if (this_00->field_0603 != (STT3DSprC *)0x0) {
+      if (this_00->field_0603 != nullptr) {
         iVar3 = 0;
         uVar5 = thunk_FUN_004ad650(this_00->field_0603);
         Library::Ourlib::ST3DSMAP::SprSetVisible((void *)this_00->field_0211,uVar5,iVar3);
@@ -182,12 +182,12 @@ int __thiscall TLOBaseTy::teleNone(TLOBaseTy *this)
       iVar3 = 1;
       uVar5 = thunk_FUN_004ad650((STT3DSprC *)&this_00->field_01D5);
       Library::Ourlib::ST3DSMAP::SprSetVisible((void *)this_00->field_0211,uVar5,iVar3);
-      if ((STT3DSprC *)this_00->field_05FF != (STT3DSprC *)0x0) {
+      if ((STT3DSprC *)this_00->field_05FF != nullptr) {
         iVar3 = 1;
         uVar5 = thunk_FUN_004ad650((STT3DSprC *)this_00->field_05FF);
         Library::Ourlib::ST3DSMAP::SprSetVisible((void *)this_00->field_0211,uVar5,iVar3);
       }
-      if (this_00->field_0603 != (STT3DSprC *)0x0) {
+      if (this_00->field_0603 != nullptr) {
         iVar3 = 1;
         uVar5 = thunk_FUN_004ad650(this_00->field_0603);
         Library::Ourlib::ST3DSMAP::SprSetVisible((void *)this_00->field_0211,uVar5,iVar3);

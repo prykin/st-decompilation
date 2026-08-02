@@ -8,7 +8,7 @@ SliderClassTy * __cdecl CreateSlider(void)
   SliderClassTy *this;
 
   this = (SliderClassTy *)FUN_006b04d0(100);
-  if (this != (SliderClassTy *)0x0) {
+  if (this != nullptr) {
     sub_006E5FB0(this);
     this->field_0000 = &VTable_0079E2C8;
     this->field_001C = 0;
@@ -17,6 +17,6 @@ SliderClassTy * __cdecl CreateSlider(void)
     this->field_0050 = 0;
     return this;
   }
-  return (SliderClassTy *)0x0;
+  return nullptr;
 }
 

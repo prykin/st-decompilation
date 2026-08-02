@@ -37,11 +37,11 @@ uint * FUN_006c8840(uint *param_1,uint *param_2,int *param_3)
     puVar9 = (uint *)((int)puVar9 + 1);
   }
   /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
-  param_2 = (uint *)0x0;
+  param_2 = nullptr;
   if (0 < (int)param_1[2]) {
     do {
       pcVar8 = *(char **)(param_1[5] + (int)param_2 * 4);
-      if (pcVar8 != (char *)0x0) {
+      if (pcVar8 != nullptr) {
         uVar6 = 0xffffffff;
         pcVar10 = pcVar8;
         do {
@@ -62,7 +62,7 @@ uint * FUN_006c8840(uint *param_1,uint *param_2,int *param_3)
       param_2 = (uint *)((int)param_2 + 1);
     } while ((int)param_2 < (int)param_1[2]);
   }
-  if (param_3 != (int *)0x0) {
+  if (param_3 != nullptr) {
     *param_3 = local_c;
   }
   return puVar3;

@@ -39,23 +39,23 @@ void __thiscall WaitTy::PaintWait(WaitTy *this,char param_1)
     PutDDX(0,0,'\x01',(BITMAPINFO *)local_8->field_005D);
     /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
     this_01 = extraout_ECX;
-    if ((pWVar2->field_1AF8 == (HoloTy *)0x0) && (param_1 == '\0')) {
+    if ((pWVar2->field_1AF8 == nullptr) && (param_1 == '\0')) {
       this_00 = &pWVar2->field_1A5B->field_0140;
       MMMObjTy::OutRGlProc
-                ((MMMObjTy *)this_00,(int)g_dDXContext_0080759C,(MMMObjTy *)0x0,(MMMObjTy *)0x0,
+                ((MMMObjTy *)this_00,(int)g_dDXContext_0080759C,nullptr,nullptr,
                  0x112,0x38,0x204,0x19d,this_00);
       /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
       this_01 = extraout_ECX_00;
     }
-    if (((pWVar2->field_1B00 == (HoloTy *)0x0) && (param_1 == '\0')) ||
+    if (((pWVar2->field_1B00 == nullptr) && (param_1 == '\0')) ||
        ((param_1 != '\0' && ((pWVar2->field_1A64 != 0 && (pWVar2->field_1A68 == 0)))))) {
       MMMObjTy::OutBSlProc
-                ((MMMObjTy *)g_dDXContext_0080759C,(int)g_dDXContext_0080759C,(MMMObjTy *)0x0,
-                 (MMMObjTy *)0x0,10,0xb4,0xf9,0x121,&pWVar2->field_1A5B->field_0140);
+                ((MMMObjTy *)g_dDXContext_0080759C,(int)g_dDXContext_0080759C,nullptr,
+                 nullptr,10,0xb4,0xf9,0x121,&pWVar2->field_1A5B->field_0140);
       /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
       this_01 = extraout_ECX_01;
     }
-    if (((pWVar2->field_1AFC == (HoloTy *)0x0) && (param_1 == '\0')) ||
+    if (((pWVar2->field_1AFC == nullptr) && (param_1 == '\0')) ||
        ((param_1 != '\0' && (pWVar2->field_1A64 != 0)))) {
       ChatGlassTy::OutChGlProc
                 (this_01,(AnonShape_GLOBAL_0080759C_9638EF10 *)g_dDXContext_0080759C,0,0,200,0x1f1,

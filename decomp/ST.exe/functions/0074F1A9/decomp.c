@@ -20,7 +20,7 @@ undefined4 FUN_0074f1a9(int *param_1,char *param_2,undefined4 *param_3)
     pcVar4 = pcVar4 + 1;
   } while (bVar5);
   if (bVar5) {
-    if (param_3 == (undefined4 *)0x0) {
+    if (param_3 == nullptr) {
       uVar1 = 0x80004003;
     }
     else {

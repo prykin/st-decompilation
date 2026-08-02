@@ -61,8 +61,8 @@ uint __thiscall STGroupC::AddObj(STGroupC *this,uint param_1,int param_2)
     thunk_FUN_00419c30(this_00,pSVar2->field_0025);
     pSVar2->field_0027 = pSVar2->field_0027 + 1;
     if (param_2 == 1) {
-      if (pSVar2->field_002D == (uint *)0x0) {
-        pDVar3 = Library::DKW::TBL::DArrayCreate((DArrayTy *)0x0,5,2,5);
+      if (pSVar2->field_002D == nullptr) {
+        pDVar3 = Library::DKW::TBL::DArrayCreate(nullptr,5,2,5);
         pSVar2->field_002D = &pDVar3->flags;
       }
       Library::DKW::TBL::DArrayAppend((DArrayTy *)pSVar2->field_002D,&param_1);
@@ -121,7 +121,7 @@ uint __thiscall STGroupC::AddObj(STGroupC *this,uint param_1,int param_2)
     if (this_00->field_0020 == 0x14) {
       thunk_FUN_004956c0(this_00,pSVar2->field_0039);
     }
-    if ((undefined4 *)pSVar2->field_001C != (undefined4 *)0x0) {
+    if ((undefined4 *)pSVar2->field_001C != nullptr) {
       local_2c = 0x5d96;
       local_28 = 0;
       local_26 = (short)param_1;

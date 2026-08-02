@@ -49,7 +49,7 @@ int __fastcall FUN_00482db0(int *param_1,undefined4 param_2)
   uVar10 = (undefined2)((uint)param_2 >> 0x10);
   if (((((sVar1 < 0) || (g_worldGrid.sizeX <= sVar1)) || (sVar7 < 0)) ||
       ((g_worldGrid.sizeY <= sVar7 || (sVar3 < 0)))) || (g_worldGrid.sizeZ <= sVar3)) {
-    pSVar4 = (STWorldObject *)0x0;
+    pSVar4 = nullptr;
   }
   else {
     iVar12 = (int)g_worldGrid.planeStride * (int)sVar3 + (int)g_worldGrid.sizeX * (int)sVar7 +
@@ -77,7 +77,7 @@ int __fastcall FUN_00482db0(int *param_1,undefined4 param_2)
                 [(int)g_worldGrid.planeStride * (int)sVar1 + (int)g_worldGrid.sizeX * (int)sVar3 +
                  (int)sVar7].objects[1];
 LAB_00482f52:
-      if ((local_8 != (RecoveredRecord_STBoatC_00482DB0 *)0x0) &&
+      if ((local_8 != nullptr) &&
          (*(int *)&local_8->field_0x18 == param_1[0x1fd])) goto LAB_00482fa9;
     }
   }

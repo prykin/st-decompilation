@@ -4,7 +4,7 @@ void FUN_006b8bc0(int *param_1,int param_2,int param_3,int param_4)
 {
   int iVar1;
 
-  if (param_1 != (int *)0x0) {
+  if (param_1 != nullptr) {
     if (param_4 < 0) {
       iVar1 = param_1[10];
       if (param_4 == -1) {

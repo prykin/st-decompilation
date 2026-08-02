@@ -69,9 +69,9 @@ uint * AiMinesDistribTgts(uint param_1,int param_2,int param_3,int param_4,int p
   local_94[3] = 0;
   local_94[9] = 0;
   local_94[4] = 0;
-  local_24 = (DArrayTy *)0x0;
-  local_48 = (undefined4 *)0x0;
-  local_14 = (int *)0x0;
+  local_24 = nullptr;
+  local_48 = nullptr;
+  local_14 = nullptr;
   local_60 = 0;
   local_d8.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_d8;
@@ -85,8 +85,8 @@ uint * AiMinesDistribTgts(uint param_1,int param_2,int param_3,int param_4,int p
     local_28 = iVar5;
     local_c = iVar17;
     local_48 = Library::DKW::LIB::FUN_006aac10(iVar14 * 7);
-    local_20 = (DArrayTy *)0x0;
-    local_2c = (dword *)0x0;
+    local_20 = nullptr;
+    local_2c = nullptr;
     local_30 = local_14[1] + -1 + param_2;
     if (local_30 < 0) {
       local_20 = (DArrayTy *)-local_30;
@@ -182,7 +182,7 @@ uint * AiMinesDistribTgts(uint param_1,int param_2,int param_3,int param_4,int p
                 }
               }
               if (*local_5c != 0) {
-                if (((STWorldObject *)local_50->flags != (STWorldObject *)0x0) && (param_1 != 0xff))
+                if (((STWorldObject *)local_50->flags != nullptr) && (param_1 != 0xff))
                 {
                   bVar1 = *(byte *)&((STWorldObject *)local_50->flags)[1].vtable;
                   /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
@@ -213,8 +213,8 @@ LAB_00565c6c:
                     bVar18 = iVar5 < 0;
                   }
                   else {
-                    bVar18 = (&DAT_008087ea)[(param_1 & 0xff) * 0x51] !=
-                             (&DAT_008087ea)[(uint)bVar1 * 0x51];
+                    bVar18 = g_bulkInitializedRecords_008087C7[param_1 & 0xff].field_0023 !=
+                             g_bulkInitializedRecords_008087C7[bVar1].field_0023;
                   }
                   if (!bVar18) {
                     if (0 < local_10) {
@@ -283,7 +283,7 @@ LAB_00565c6c:
         pDVar7 = local_18;
       } while (local_10 < local_28);
     }
-    if (local_20 == (DArrayTy *)0x0) {
+    if (local_20 == nullptr) {
       local_c = local_c + -1;
       local_20 = (DArrayTy *)0x1;
       local_34 = (DArrayTy *)((int)&local_34->flags + 1);
@@ -292,7 +292,7 @@ LAB_00565c6c:
     if (local_14[2] + 1 < (int)local_20 + local_c) {
       local_c = (local_14[2] - (int)local_20) + 1;
     }
-    if (local_2c == (dword *)0x0) {
+    if (local_2c == nullptr) {
       iVar5 = iVar5 + -1;
       local_34 = (DArrayTy *)((int)&local_34->flags + iVar17);
       local_44 = local_44 + 1;
@@ -304,7 +304,7 @@ LAB_00565c6c:
     }
     local_38 = param_2 - local_30;
     pDVar7 = Library::DKW::TBL::DArrayCreate
-                       ((DArrayTy *)0x0,(int)(*local_14 + (*local_14 >> 0x1f & 3U)) >> 2,6,10);
+                       (nullptr,(int)(*local_14 + (*local_14 >> 0x1f & 3U)) >> 2,6,10);
     local_8 = 0;
     local_1c = local_34;
     local_24 = pDVar7;
@@ -387,12 +387,12 @@ LAB_00565c6c:
       local_1c = (DArrayTy *)((int)&local_1c->flags + iVar14);
     } while (local_8 < 5);
     if ((0 < (int)param_7) && ((int)param_7 < (int)pDVar7->count)) {
-      local_1c = Library::DKW::TBL::DArrayCreate((DArrayTy *)0x0,param_7,6,10);
+      local_1c = Library::DKW::TBL::DArrayCreate(nullptr,param_7,6,10);
       while( true ) {
         iVar11 = 0;
         local_2c = local_94;
         dVar16 = 0xffffffff;
-        local_18 = (DArrayTy *)0x0;
+        local_18 = nullptr;
         iVar5 = -(int)local_58;
         do {
           if (((int)dVar16 < (int)*local_2c) ||
@@ -462,6 +462,6 @@ cf_common_exit_0056623F:
   }
   FreeAndNull(&local_24);
   RaiseInternalException(iVar5,g_overwriteContext_007ED77C,"E:\\__titans\\scoreai.cpp",0xf0f);
-  return (uint *)0x0;
+  return nullptr;
 }
 

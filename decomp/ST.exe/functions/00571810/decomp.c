@@ -7,7 +7,7 @@ bool FUN_00571810(char *param_1)
   byte *pbVar3;
   bool bVar4;
 
-  if (param_1 == (char *)0x0) {
+  if (param_1 == nullptr) {
     return false;
   }
   Library::MSVCRT::_strncpy((char *)&param_1,param_1,4);

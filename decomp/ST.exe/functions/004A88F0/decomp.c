@@ -12,11 +12,11 @@ OpticClassC * __cdecl CreateOpticClass(void)
   OpticClassC *this;
 
   this = (OpticClassC *)FUN_006b04d0(0x20);
-  if (this != (OpticClassC *)0x0) {
+  if (this != nullptr) {
     g_opticClass_007FB2A0 = OpticClassC::OpticClassC(this);
     return g_opticClass_007FB2A0;
   }
-  g_opticClass_007FB2A0 = (OpticClassC *)0x0;
-  return (OpticClassC *)0x0;
+  g_opticClass_007FB2A0 = nullptr;
+  return nullptr;
 }
 

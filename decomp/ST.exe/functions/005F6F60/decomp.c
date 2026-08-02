@@ -131,8 +131,8 @@ void __thiscall STColl3C::sub_005F6F60(STColl3C *this)
         sVar1 = PTR_00806724->entryCount;
         goto LAB_005f7400;
       }
-      iVar5 = thunk_FUN_005f88d0(this,this->field_0289,0,(int *)0x0,(undefined4 *)0x0,
-                                 (undefined4 *)0x0);
+      iVar5 = thunk_FUN_005f88d0(this,this->field_0289,0,nullptr,nullptr,
+                                 nullptr);
       if (iVar5 == 0) {
         sub_005F9450(this);
         return;
@@ -317,7 +317,7 @@ LAB_005f79aa:
         if (iVar5 == 2) {
           *(undefined4 *)this->field_02E6 = local_2c;
         }
-        if (*(STT3DSprC **)this->field_02E6 != (STT3DSprC *)0x0) {
+        if (*(STT3DSprC **)this->field_02E6 != nullptr) {
           uVar11 = 30000;
           uVar9 = 0;
           iVar6 = 0;
@@ -527,8 +527,8 @@ LAB_005f7efc:
         }
       }
       else {
-        iVar5 = thunk_FUN_005f88d0(this,this->field_0289,0,(int *)0x0,(undefined4 *)0x0,
-                                   (undefined4 *)0x0);
+        iVar5 = thunk_FUN_005f88d0(this,this->field_0289,0,nullptr,nullptr,
+                                   nullptr);
         if ((iVar5 != 0) && (iVar5 = thunk_FUN_005f89f0(this,2), iVar5 != 0)) {
           STFishC::sub_004162B0((STFishC *)this,&local_8,&local_6,&local_a);
           iVar5 = thunk_FUN_005fa360(this,(undefined4 *)local_1c,(int)local_8,(int)local_6,

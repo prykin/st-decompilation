@@ -12,7 +12,7 @@ void FUN_006d0460(HDC param_1,int param_2,int param_3,BITMAPINFO *param_4,void *
   BITMAPINFO local_22c [12];
 
   /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
-  if (param_5 == (void *)0x0) {
+  if (param_5 == nullptr) {
     /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
     param_5 = (void *)FUN_006b4fa0((int *)param_4);
   }

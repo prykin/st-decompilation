@@ -19,7 +19,7 @@ void __cdecl FUN_00674ef0(char *resourceString)
   char *pcVar7;
   char local_108 [260];
 
-  if ((DAT_00811974 != 0) && (DAT_00811978 != (int *)0x0)) {
+  if ((DAT_00811974 != 0) && (DAT_00811978 != nullptr)) {
     uVar2 = 0xffffffff;
     do {
       pcVar5 = resourceString;

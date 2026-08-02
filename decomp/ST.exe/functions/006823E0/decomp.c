@@ -21,18 +21,18 @@ void __cdecl FUN_006823e0(int param_1,float *param_2)
   short *local_8;
 
   pfVar8 = param_2;
-  if (g_int_00848A14 != (int *)0x0) {
+  if (g_int_00848A14 != nullptr) {
     thunk_FUN_006823a0((short)param_1,(short)param_2);
     iVar7 = (g_int_00848A14[1] - (int)pfVar8) + -1;
     pcVar2 = thunk_FUN_0064a910(g_int_00848A14,iVar7);
-    if (pcVar2 == (char *)0x0) {
+    if (pcVar2 == nullptr) {
       RaiseInternalException
                 (-0x6b,g_overwriteContext_007ED77C,"E:\\__titans\\ai\\ai_script.cpp",0x19c);
     }
     else {
       cVar1 = *pcVar2;
       pcVar6 = pcVar2;
-      for (pfVar3 = (float *)0x0; (cVar1 != '\a' && ((int)pfVar3 < (int)pfVar8));
+      for (pfVar3 = nullptr; (cVar1 != '\a' && ((int)pfVar3 < (int)pfVar8));
           pfVar3 = (float *)((int)pfVar3 + 1)) {
         cVar1 = pcVar6[5];
         pcVar6 = pcVar6 + 5;
@@ -46,7 +46,7 @@ void __cdecl FUN_006823e0(int param_1,float *param_2)
           /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
           param_2 = thunk_FUN_0064a970(pcVar2,(int)pfVar8,&param_1);
           /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
-          if (param_2 == (float *)0x0) {
+          if (param_2 == nullptr) {
             thunk_FUN_006802a0(param_1,&DAT_00847824);
             return;
           }

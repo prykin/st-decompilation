@@ -17,7 +17,7 @@ void __thiscall FUN_006e4c30(void *this,int param_1)
       if (*(uint *)(iVar1 + 0xc) <= uVar2) break;
       piVar4 = (int *)(*(int *)(iVar1 + 8) * uVar2 + *(int *)(iVar1 + 0x1c));
       *(uint *)(iVar1 + 4) = uVar2 + 1;
-      if (piVar4 == (int *)0x0) {
+      if (piVar4 == nullptr) {
         return;
       }
       FUN_006e4bb0(piVar4);

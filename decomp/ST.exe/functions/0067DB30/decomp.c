@@ -18,7 +18,7 @@ int __cdecl DelPlrEdit(int param_1,char *param_2)
   g_currentExceptionFrame = &local_48;
   iVar2 = Library::MSVCRT::__setjmp3(local_48.jumpBuffer,0);
   if (iVar2 == 0) {
-    if ((param_1 == 0) || (param_2 == (char *)0x0)) {
+    if ((param_1 == 0) || (param_2 == nullptr)) {
       RaiseInternalException
                 (-0x34,g_overwriteContext_007ED77C,"E:\\__titans\\ai\\ai_plr_d.cpp",0x123);
     }

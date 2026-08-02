@@ -174,7 +174,7 @@ void __thiscall STBoatC::RestoreBoatData(STBoatC *this,int param_1)
       *puVar9 = 0;
     }
     else {
-      uVar4 = FUN_006b0060((uint *)0x0,(uint *)(&pAVar2->field_0x0 + *piVar13));
+      uVar4 = FUN_006b0060(nullptr,(uint *)(&pAVar2->field_0x0 + *piVar13));
       *puVar9 = uVar4;
       pSVar5 = local_8;
     }
@@ -184,12 +184,12 @@ void __thiscall STBoatC::RestoreBoatData(STBoatC *this,int param_1)
   } while (local_c != 0);
   if (*(int *)&pAVar2->field_0x37a != -1) {
     pDVar6 = (DArrayTy *)
-             FUN_006b0060((uint *)0x0,(uint *)(&pAVar2->field_0x0 + *(int *)&pAVar2->field_0x37a));
+             FUN_006b0060(nullptr,(uint *)(&pAVar2->field_0x0 + *(int *)&pAVar2->field_0x37a));
     local_8->field_047B = pDVar6;
     g_currentExceptionFrame = local_54.previous;
     return;
   }
-  pSVar5->field_047B = (DArrayTy *)0x0;
+  pSVar5->field_047B = nullptr;
   g_currentExceptionFrame = local_54.previous;
   return;
 }

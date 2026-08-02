@@ -55,7 +55,7 @@ int __thiscall FUN_006961b0(void *this,uint param_1,uint param_2,int param_3,int
               piVar3 = (int *)(*(int *)(iVar2 + 8) * uVar4 + *(int *)(iVar2 + 0x1c));
             }
             else {
-              piVar3 = (int *)0x0;
+              piVar3 = nullptr;
             }
             thunk_FUN_006960d0(this,param_1,*piVar3);
             iVar2 = *(int *)(iVar5 + 0x19);

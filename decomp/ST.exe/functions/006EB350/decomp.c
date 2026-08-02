@@ -30,12 +30,12 @@ ST3DSMAPContext::sub_006EB350(ST3DSMAPContext *this,int param_1,int param_2,int 
     return 0;
   }
   local_10 = 0;
-  pAVar7 = (AnonShape_006EB350_D4715C71 *)0x0;
+  pAVar7 = nullptr;
   if (0 < local_14) {
     local_18 = 0;
     do {
       local_8 = (AnonShape_006EB350_D4715C71 *)
-                (*(int *)&this->field_0x31c + *(int *)(local_18 + (int)local_c) * 0x114);
+                (this->field_031C + *(int *)(local_18 + (int)local_c) * 0x114);
       if (((local_8->field_00A0 != 0) && (param_3 < local_8->field_0094)) &&
          (iVar4 = *(int *)(local_8->field_00A0 + 4 + param_3 * 8), iVar4 != 0)) {
         pbVar1 = *(byte **)(iVar4 + *(short *)(local_8->field_00A4 + param_3 * 4) * 4);

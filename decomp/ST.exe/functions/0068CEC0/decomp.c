@@ -84,21 +84,21 @@ FUN_0068cec0(LPCSTR lpFileName,AnonShape_00683C70_22193481 *param_2,int *param_3
       thunk_FUN_00672970(this_03,1);
       thunk_FUN_006728f0((undefined4 *)&DAT_007d3f78);
       thunk_FUN_00680040();
-      if (param_2 == (AnonShape_00683C70_22193481 *)0x0) {
+      if (param_2 == nullptr) {
         RaiseInternalException
                   (-0x34,g_overwriteContext_007ED77C,"E:\\__titans\\ai\\ai_script.cpp",0xa55);
       }
-      iVar3 = thunk_FUN_0067f030("_main_path",(char *)param_2,(uint *)0x0);
+      iVar3 = thunk_FUN_0067f030("_main_path",(char *)param_2,nullptr);
       if (iVar3 == 0) {
         RaiseInternalException
                   (-2,g_overwriteContext_007ED77C,"E:\\__titans\\ai\\ai_script.cpp",0xa56);
       }
-      iVar3 = thunk_FUN_0067f030("_inc_path",&param_2->field_0x104,(uint *)0x0);
+      iVar3 = thunk_FUN_0067f030("_inc_path",&param_2->field_0x104,nullptr);
       if (iVar3 == 0) {
         RaiseInternalException
                   (-2,g_overwriteContext_007ED77C,"E:\\__titans\\ai\\ai_script.cpp",0xa57);
       }
-      iVar3 = thunk_FUN_0067f030("_maps_path",&param_2->field_0x208,(uint *)0x0);
+      iVar3 = thunk_FUN_0067f030("_maps_path",&param_2->field_0x208,nullptr);
       if (iVar3 == 0) {
         RaiseInternalException
                   (-2,g_overwriteContext_007ED77C,"E:\\__titans\\ai\\ai_script.cpp",0xa58);
@@ -118,17 +118,17 @@ FUN_0068cec0(LPCSTR lpFileName,AnonShape_00683C70_22193481 *param_2,int *param_3
         RaiseInternalException
                   (-2,g_overwriteContext_007ED77C,"E:\\__titans\\ai\\ai_script.cpp",0xa5b);
       }
-      GetFullPathNameA(lpFileName,0x104,&DAT_0084868c,(LPSTR *)0x0);
+      GetFullPathNameA(lpFileName,0x104,&DAT_0084868c,nullptr);
       Library::MSVCRT::FUN_0072e730
                 (&DAT_0084868c,&DAT_008478a8,&DAT_00848790,&DAT_0084858c,(byte *)&DAT_00811990);
-      Library::MSVCRT::__makepath(&DAT_0084868c,&DAT_008478a8,&DAT_00848790,(char *)0x0,(char *)0x0);
+      Library::MSVCRT::__makepath(&DAT_0084868c,&DAT_008478a8,&DAT_00848790,nullptr,nullptr);
       iStackY_48 = 0x68d160;
-      iVar3 = thunk_FUN_0067f030("_curr_path",&DAT_0084868c,(uint *)0x0);
+      iVar3 = thunk_FUN_0067f030("_curr_path",&DAT_0084868c,nullptr);
       if (iVar3 == 0) {
         RaiseInternalException
                   (-2,g_overwriteContext_007ED77C,"E:\\__titans\\ai\\ai_script.cpp",0xa5f);
       }
-      puVar14 = (uint *)0x0;
+      puVar14 = nullptr;
       pcVar13 = &DAT_0084868c;
       pbVar4 = thunk_FUN_0067ece0(DAT_00848a24);
       iVar3 = thunk_FUN_0067f030((char *)pbVar4,pcVar13,puVar14);
@@ -136,7 +136,7 @@ FUN_0068cec0(LPCSTR lpFileName,AnonShape_00683C70_22193481 *param_2,int *param_3
         RaiseInternalException
                   (-2,g_overwriteContext_007ED77C,"E:\\__titans\\ai\\ai_script.cpp",0xa60);
       }
-      pDVar5 = Library::DKW::TBL::SArrayCreate((DArrayTy *)0x0,0x32,0x32);
+      pDVar5 = Library::DKW::TBL::SArrayCreate(nullptr,0x32,0x32);
       Library::DKW::TBL::FUN_006b5aa0(&pDVar5->flags,s_include<[_inc_path]_AiScript_dfn_007d56b4);
       Library::DKW::TBL::FUN_006b5aa0(&pDVar5->flags,s_include<[_inc_path]_AiScript_mcr_007d5688);
       Library::DKW::TBL::FUN_006b5aa0(&pDVar5->flags,&DAT_008016a0);
@@ -149,16 +149,16 @@ cf_continue_loop_0068D1EB:
         RaiseInternalException
                   (iVar6,g_overwriteContext_007ED77C,"E:\\__titans\\ai\\ai_script.cpp",0xa68);
       }
-      if (param_4 != (undefined *)0x0) {
+      if (param_4 != nullptr) {
         pbVar16 = (byte *)&DAT_00811990;
-        pbVar4 = (byte *)0x0;
+        pbVar4 = nullptr;
         memset(&stack0xffffffd0, 0, 0x18); /* compiler bulk-zero initialization */
-        Library::MSVCRT::FUN_0072e730(DAT_0085753c,(byte *)0x0,(byte *)0x0,pbVar4,pbVar16);
+        Library::MSVCRT::FUN_0072e730(DAT_0085753c,nullptr,nullptr,pbVar4,pbVar16);
         pbVar4 = (byte *)lpFileName;
         if (DAT_00811990 != '\0') {
           pbVar4 = DAT_0085753c;
         }
-        if (pbVar4 != (byte *)0x0) {
+        if (pbVar4 != nullptr) {
           uVar7 = 0xffffffff;
           do {
             pbVar16 = pbVar4;
@@ -428,16 +428,16 @@ cf_continue_loop_0068D1EB:
       goto cf_continue_loop_0068D1EB;
     }
     g_currentExceptionFrame = local_74;
-    if (param_3 != (int *)0x0) {
+    if (param_3 != nullptr) {
       memset(param_3, 0, 0x18); /* compiler bulk-zero initialization */
       *param_3 = iVar3;
       param_3[2] = DAT_00857554;
       Library::MSVCRT::FUN_0072e730
-                (DAT_0085753c,(byte *)0x0,(byte *)0x0,(byte *)0x0,(byte *)&DAT_00811990);
+                (DAT_0085753c,nullptr,nullptr,nullptr,(byte *)&DAT_00811990);
       if (DAT_00811990 != '\0') {
         lpFileName = (LPCSTR)DAT_0085753c;
       }
-      if ((byte *)lpFileName != (byte *)0x0) {
+      if ((byte *)lpFileName != nullptr) {
         uVar7 = 0xffffffff;
         do {
           pbVar4 = (byte *)lpFileName;
@@ -464,12 +464,12 @@ cf_continue_loop_0068D1EB:
       do {
         iVar17 = thunk_FUN_00672f00();
       } while (iVar17 != 0);
-      return (uint *)0x0;
+      return nullptr;
     }
   }
   else {
     g_currentExceptionFrame = local_b8.previous;
-    if (param_3 != (int *)0x0) {
+    if (param_3 != nullptr) {
       memset(param_3, 0, 0x18); /* compiler bulk-zero initialization */
       *param_3 = iVar3;
       param_3[2] = 0;
@@ -507,6 +507,6 @@ cf_continue_loop_0068D1EB:
       param_3[4] = (int)&DAT_008488b4;
     }
   }
-  return (uint *)0x0;
+  return nullptr;
 }
 

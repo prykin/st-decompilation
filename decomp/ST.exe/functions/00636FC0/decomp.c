@@ -60,7 +60,7 @@ SubmarineTitans::Recovered::HiddenThis::AnonReceiver_00636260::sub_00636FC0
     if (local_8 == 0) {
       return 0;
     }
-    if (g_visibleClass_00802A88 == (VisibleClassTy *)0x0) {
+    if (g_visibleClass_00802A88 == nullptr) {
       return local_8;
     }
     if (DAT_0080874d == -1) {
@@ -91,7 +91,7 @@ SubmarineTitans::Recovered::HiddenThis::AnonReceiver_00636260::sub_00636FC0
     if (pVVar3->field_0034 <= local_14) {
       return local_8;
     }
-    if (pVVar3->field_004C == (byte *)0x0) {
+    if (pVVar3->field_004C == nullptr) {
       return local_8;
     }
     if (pVVar3->field_004C[local_10 + local_14 * pVVar3->field_0030] != 0) {

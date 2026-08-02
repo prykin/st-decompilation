@@ -10,12 +10,12 @@ undefined4 __fastcall FUN_004cbad0(AnonShape_004CBAD0_DCDD6BA9 *param_1)
     iVar1 = 0;
     uVar2 = thunk_FUN_004ad650((STT3DSprC *)&param_1->field_0x1d5);
     Library::Ourlib::ST3DSMAP::SprSetVisible(param_1->field_0211,uVar2,iVar1);
-    if ((STT3DSprC *)param_1->field_05FF != (STT3DSprC *)0x0) {
+    if ((STT3DSprC *)param_1->field_05FF != nullptr) {
       iVar1 = 0;
       uVar2 = thunk_FUN_004ad650((STT3DSprC *)param_1->field_05FF);
       Library::Ourlib::ST3DSMAP::SprSetVisible(param_1->field_0211,uVar2,iVar1);
     }
-    if ((STT3DSprC *)param_1->field_0603 != (STT3DSprC *)0x0) {
+    if ((STT3DSprC *)param_1->field_0603 != nullptr) {
       iVar1 = 0;
       uVar2 = thunk_FUN_004ad650((STT3DSprC *)param_1->field_0603);
       Library::Ourlib::ST3DSMAP::SprSetVisible(param_1->field_0211,uVar2,iVar1);
@@ -28,12 +28,12 @@ undefined4 __fastcall FUN_004cbad0(AnonShape_004CBAD0_DCDD6BA9 *param_1)
       iVar1 = 1;
       uVar2 = thunk_FUN_004ad650((STT3DSprC *)&param_1->field_0x1d5);
       Library::Ourlib::ST3DSMAP::SprSetVisible(param_1->field_0211,uVar2,iVar1);
-      if ((STT3DSprC *)param_1->field_05FF != (STT3DSprC *)0x0) {
+      if ((STT3DSprC *)param_1->field_05FF != nullptr) {
         iVar1 = 1;
         uVar2 = thunk_FUN_004ad650((STT3DSprC *)param_1->field_05FF);
         Library::Ourlib::ST3DSMAP::SprSetVisible(param_1->field_0211,uVar2,iVar1);
       }
-      if ((STT3DSprC *)param_1->field_0603 != (STT3DSprC *)0x0) {
+      if ((STT3DSprC *)param_1->field_0603 != nullptr) {
         iVar1 = 1;
         uVar2 = thunk_FUN_004ad650((STT3DSprC *)param_1->field_0603);
         Library::Ourlib::ST3DSMAP::SprSetVisible(param_1->field_0211,uVar2,iVar1);

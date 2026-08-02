@@ -55,7 +55,7 @@ void __thiscall AiTactClassTy::ExecClaim(AiTactClassTy *this,int param_1)
             element_00bd = DArrayAt<AiTactClassTy_field_00BDElement>(pAVar9, local_8);
           }
           else {
-            element_00bd = (AiTactClassTy_field_00BDElement *)0x0;
+            element_00bd = nullptr;
           }
           cStack_3b = (char)element_00bd;
           cVar3 = cStack_3b;
@@ -77,10 +77,10 @@ void __thiscall AiTactClassTy::ExecClaim(AiTactClassTy *this,int param_1)
                     element_00a5 = DArrayAt<AiTactClassTy_field_00A5Element>(pAVar12, local_c);
                   }
                   else {
-                    element_00a5 = (AiTactClassTy_field_00A5Element *)0x0;
+                    element_00a5 = nullptr;
                   }
                   this_00 = (AiFltClassTy *)element_00a5->field_0004;
-                  if (this_00 != (AiFltClassTy *)0x0) {
+                  if (this_00 != nullptr) {
                     memset(local_44, 0, 0x34); /* compiler bulk-zero initialization */
                     iVar8 = 0;
                     local_44[1] = pAVar6->field_012C;
@@ -118,9 +118,9 @@ void __thiscall AiTactClassTy::ExecClaim(AiTactClassTy *this,int param_1)
                 element_00a5_2 = DArrayAt<AiTactClassTy_field_00A5Element>(pAVar12, element_00bd->field_0034);
               }
               else {
-                element_00a5_2 = (AiTactClassTy_field_00A5Element *)0x0;
+                element_00a5_2 = nullptr;
               }
-              if ((element_00a5_2 != (AiTactClassTy_field_00A5Element *)0x0) && (element_00a5_2->field_0004 != 0)) {
+              if ((element_00a5_2 != nullptr) && (element_00a5_2->field_0004 != 0)) {
                 memset(local_44, 0, 0x34); /* compiler bulk-zero initialization */
                 iVar8 = 0;
                 local_44[1] = pAVar6->field_012C;
@@ -150,9 +150,9 @@ void __thiscall AiTactClassTy::ExecClaim(AiTactClassTy *this,int param_1)
                 element_00a5_2 = DArrayAt<AiTactClassTy_field_00A5Element>(pAVar12, uVar1);
               }
               else {
-                element_00a5_2 = (AiTactClassTy_field_00A5Element *)0x0;
+                element_00a5_2 = nullptr;
               }
-              if ((element_00a5_2 != (AiTactClassTy_field_00A5Element *)0x0) && (element_00a5_2->field_0004 != 0)) {
+              if ((element_00a5_2 != nullptr) && (element_00a5_2->field_0004 != 0)) {
                 memset(local_44, 0, 0x34); /* compiler bulk-zero initialization */
                 local_44[1] = pAVar6->field_012C;
                 local_44[0] = 0x6b;

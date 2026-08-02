@@ -1,0 +1,7 @@
+program=ST.exe
+functions_scanned=1452
+exact_copy_candidates=0
+nested_struct_apply=0
+zero_spans=90
+note=Zero spans are extent evidence, not proof that the entire range has one element type.
+note=Only an exact copy of one independently typed complete structure is auto-applied.

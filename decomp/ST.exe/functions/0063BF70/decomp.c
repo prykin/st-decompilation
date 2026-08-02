@@ -12,10 +12,10 @@ void * __cdecl FUN_0063bf70(void)
   AnonShape_0063BFA0_2C9DA96E *pAVar1;
 
   pAVar1 = (AnonShape_0063BFA0_2C9DA96E *)FUN_006b04d0(0x3b0);
-  if (pAVar1 != (AnonShape_0063BFA0_2C9DA96E *)0x0) {
+  if (pAVar1 != nullptr) {
     pAVar1 = thunk_FUN_0063bfa0(pAVar1);
     return pAVar1;
   }
-  return (void *)0x0;
+  return nullptr;
 }
 

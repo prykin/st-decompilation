@@ -18,13 +18,13 @@ int __cdecl SaveBossEdit(int param_1,char *param_2,undefined4 *param_3,char para
   byte *local_c;
   byte *local_8;
 
-  local_8 = (byte *)0x0;
-  local_c = (byte *)0x0;
+  local_8 = nullptr;
+  local_c = nullptr;
   local_58.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_58;
   iVar2 = Library::MSVCRT::__setjmp3(local_58.jumpBuffer,0);
   if (iVar2 == 0) {
-    if (((param_1 == 0) || (param_2 == (char *)0x0)) || (*(char *)((int)param_3 + 5) != '\x02')) {
+    if (((param_1 == 0) || (param_2 == nullptr)) || (*(char *)((int)param_3 + 5) != '\x02')) {
       RaiseInternalException
                 (-0x34,g_overwriteContext_007ED77C,"E:\\__titans\\ai\\ai_boss_d.cpp",0x9c);
     }

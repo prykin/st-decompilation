@@ -126,13 +126,13 @@ int __thiscall STMineSetC::GetMessage(STMineSetC *this,STMessage *message)
   }
   if (SVar5 == MESS_SHARED_0003) {
     sub_00622880(local_8);
-    if (this_00->field_0363 == (HoloTy *)0x0) {
+    if (this_00->field_0363 == nullptr) {
       g_currentExceptionFrame = local_60.previous;
       return 0;
     }
     thunk_FUN_006366d0((AnonShape_006366D0_80B1100F *)this_00->field_0363);
     Library::MSVCRT::FUN_0072e2b0(this_00->field_0363);
-    this_00->field_0363 = (HoloTy *)0x0;
+    this_00->field_0363 = nullptr;
     g_currentExceptionFrame = local_60.previous;
     return 0;
   }
@@ -202,11 +202,11 @@ int __thiscall STMineSetC::GetMessage(STMineSetC *this,STMessage *message)
          ((short)(this_00->field_0049 * 0xc9 + 100) == this_00->field_0043)))))) {
       this_00->field_0355 = 1;
     }
-    if ((this_00->field_0363 != (HoloTy *)0x0) &&
+    if ((this_00->field_0363 != nullptr) &&
        (iVar9 = thunk_FUN_006372e0((int *)this_00->field_0363), iVar9 != 0)) {
       thunk_FUN_006366d0((AnonShape_006366D0_80B1100F *)this_00->field_0363);
       Library::MSVCRT::FUN_0072e2b0(this_00->field_0363);
-      this_00->field_0363 = (HoloTy *)0x0;
+      this_00->field_0363 = nullptr;
     }
     if (this_00->field_0359 == '\0') {
       g_currentExceptionFrame = local_60.previous;
@@ -234,14 +234,14 @@ int __thiscall STMineSetC::GetMessage(STMineSetC *this,STMessage *message)
       local_18 = (int)sVar4;
       if ((((sVar2 < 0) || (g_worldGrid.sizeX <= sVar2)) || (sVar4 < 0)) ||
          (((g_worldGrid.sizeY <= sVar4 || (sVar3 < 0)) || (g_worldGrid.sizeZ <= sVar3)))) {
-        pSVar15 = (STWorldObject *)0x0;
+        pSVar15 = nullptr;
       }
       else {
         pSVar15 = g_worldGrid.cells
                   [(int)g_worldGrid.planeStride * (int)sVar3 + (int)g_worldGrid.sizeX * (int)sVar4 +
                    (int)sVar2].objects[local_14];
       }
-      if ((pSVar15 == (STWorldObject *)0x0) &&
+      if ((pSVar15 == nullptr) &&
          (iVar9 = DumpClassC::WritePtr
                             (sVar2,sVar4,sVar3,this_00->field_008E,
                              (RecoveredRecord_DumpClassC_00495EC0 *)this_00), iVar9 == 0)) {
@@ -260,7 +260,7 @@ int __thiscall STMineSetC::GetMessage(STMineSetC *this,STMessage *message)
       iVar9 = thunk_FUN_004ad650((STT3DSprC *)&this_00->field_01D5);
       this_00->field_02BA = iVar9;
     }
-    this_00->field_0363 = (HoloTy *)0x0;
+    this_00->field_0363 = nullptr;
     iVar9 = STAllPlayersC::RegisterMine(g_allPlayers_007FA174,this_00->field_0032,this_00);
     if (iVar9 == 0) {
       g_currentExceptionFrame = local_60.previous;

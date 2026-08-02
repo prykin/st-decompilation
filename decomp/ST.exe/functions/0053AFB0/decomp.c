@@ -59,7 +59,7 @@ int __thiscall PlayPanelTy::GetMessage(PlayPanelTy *this,STMessage *message)
   }
   if (message->id == MESS_ID_CREATE) {
     puVar1 = &local_14->field_004C;
-    FUN_006b1a50(g_ddxContext_008075A8,3,(undefined4 *)0x0,puVar1);
+    FUN_006b1a50(g_ddxContext_008075A8,3,nullptr,puVar1);
     this_00->field_003C = *puVar1;
     this_00->field_0044 = this_00->field_0050 - this_00->field_0048;
     this_00->field_0174 = this_00->field_0048 + this_00->field_0050;
@@ -79,7 +79,7 @@ int __thiscall PlayPanelTy::GetMessage(PlayPanelTy *this,STMessage *message)
         iVar12 = -this_00->field_0044;
       }
       iVar18 = 1;
-      piVar16 = (int *)0x0;
+      piVar16 = nullptr;
       uVar10 = thunk_FUN_0052a4d0((int)message);
       iVar15 = 1;
       pCVar9 = thunk_FUN_00571240("BUT_SWITCH",0);
@@ -165,8 +165,8 @@ LAB_0053b42f:
                     bVar14 = iVar12 < 0;
                   }
                   else {
-                    bVar14 = (&DAT_008087ea)[(uint)DAT_0080874d * 0x51] !=
-                             (&DAT_008087ea)[(uint)bVar3 * 0x51];
+                    bVar14 = g_bulkInitializedRecords_008087C7[DAT_0080874d].field_0023 !=
+                             g_bulkInitializedRecords_008087C7[bVar3].field_0023;
                   }
                   (&DAT_00808af7)[iVar7] = bVar14;
                   bVar13 = bVar13 + 1;
@@ -227,8 +227,8 @@ LAB_0053b2ea:
                   bVar14 = iVar12 < 0;
                 }
                 else {
-                  bVar14 = (&DAT_008087ea)[(uint)DAT_0080874d * 0x51] !=
-                           (&DAT_008087ea)[(uint)bVar3 * 0x51];
+                  bVar14 = g_bulkInitializedRecords_008087C7[DAT_0080874d].field_0023 !=
+                           g_bulkInitializedRecords_008087C7[bVar3].field_0023;
                 }
                 bVar13 = bVar13 + 1;
                 (&DAT_00808af7)[iVar7] = '\x01' - bVar14;
@@ -370,7 +370,8 @@ LAB_0053b2ea:
     case 0xb505:
     case 0xb506:
       uVar8 = (uint)DAT_0080874d;
-      if ((*(char *)((int)&DAT_008087c4 + uVar8 * 0x51 + 3) == '\0') && (DAT_0080874f == '\0')) {
+      if ((*(char *)(g_bulkInitializedRecords_008087C7 + uVar8) == '\0') && (DAT_0080874f == '\0'))
+      {
         bVar14 = true;
       }
       else {
@@ -387,7 +388,7 @@ LAB_0053b2ea:
           uVar6 = (uint)bVar13;
           local_1c = 0;
           local_18 = 0;
-          if (*(char *)((int)&DAT_008087c4 + uVar6 * 0x51 + 3) == '\x01') {
+          if (*(char *)(g_bulkInitializedRecords_008087C7 + uVar6) == '\x01') {
             bVar13 = g_playerRelationMatrix[uVar8][uVar6];
             local_20 = 6;
             if ((bVar13 == 0) && (g_playerRelationMatrix[uVar6][uVar8] == 0)) {
@@ -427,7 +428,7 @@ LAB_0053b2ea:
             local_1c = uVar8 << 0x10 | uVar6;
             local_20 = 7;
           }
-          if (g_playSystem_00802A38 != (STPlaySystemC *)0x0) {
+          if (g_playSystem_00802A38 != nullptr) {
             thunk_FUN_0054edf0((undefined4 *)0x5,&local_20,1,0xffffffff);
             g_currentExceptionFrame = local_64.previous;
             return 0;
@@ -516,7 +517,7 @@ LAB_0053b2ea:
          (iVar7 = (this_00->field_01C9 + (local_10 & 0xff)) * 0x9c, (&DAT_00808af5)[iVar7] != '\0'))
       {
         wsprintfA((LPSTR)&DAT_0080f33a,"%c",
-                  (byte)(&DAT_008087ea)[(uint)(byte)(&DAT_00808af4)[iVar7] * 0x51] + 0x41);
+                  g_bulkInitializedRecords_008087C7[(byte)(&DAT_00808af4)[iVar7]].field_0023 + 0x41);
         ccFntTy::SetSurf(this_00->field_01DD,(int)this_00->field_0068,0,(int)local_c,local_8,
                          piVar16[2],piVar16[3]);
         ccFntTy::WrStr(this_00->field_01DD,&DAT_0080f33a,-1,-1,(DAT_0080874e != '\x03') - 1 & 5);

@@ -11,7 +11,7 @@ void __fastcall FUN_0074d423(AnonShape_0074D423_CE3F4999 *param_1)
     CloseHandle(param_1->field_0008);
   }
   local_8 = (AnonShape_0074D423_CE3F4999 *)param_1->field_000C;
-  while (local_8 != (AnonShape_0074D423_CE3F4999 *)0x0) {
+  while (local_8 != nullptr) {
     pHVar1 = (HoloTy *)FUN_0074dec2((int *)&local_8);
     Library::MSVCRT::FUN_0072e2b0(pHVar1);
   }

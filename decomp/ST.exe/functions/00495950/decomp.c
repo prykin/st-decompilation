@@ -12,11 +12,11 @@ void * __cdecl FUN_00495950(void)
   DumpClassC *this;
 
   this = (DumpClassC *)FUN_006b04d0(0x18);
-  if (this != (DumpClassC *)0x0) {
+  if (this != nullptr) {
     g_dumpClass_007FB284 = DumpClassC::DumpClassC(this);
     return g_dumpClass_007FB284;
   }
-  g_dumpClass_007FB284 = (DumpClassC *)0x0;
-  return (void *)0x0;
+  g_dumpClass_007FB284 = nullptr;
+  return nullptr;
 }
 

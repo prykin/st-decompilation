@@ -58,7 +58,7 @@ undefined4 __fastcall FUN_005fc4a0(AnonShape_005FC4A0_70B17F95 *param_1)
        (g_worldGrid.sizeZ <= sVar3)) ||
       (g_worldGrid.cells
        [(int)g_worldGrid.planeStride * (int)sVar3 + (int)g_worldGrid.sizeX * (int)sVar2 + (int)sVar8
-       ].objects[0] == (STWorldObject *)0x0)) &&
+       ].objects[0] == nullptr)) &&
      (iVar6 = DumpClassC::WritePtr
                         (sVar8,sVar2,sVar3,0,(RecoveredRecord_DumpClassC_00495EC0 *)param_1),
      iVar6 == 0)) {
@@ -90,7 +90,7 @@ undefined4 __fastcall FUN_005fc4a0(AnonShape_005FC4A0_70B17F95 *param_1)
     this = g_worldGrid.cells
            [(int)g_worldGrid.planeStride * (int)sVar2 + (int)g_worldGrid.sizeX * (int)sVar3 +
             (int)sVar8].objects[0];
-    if (this == (STWorldObject *)0x0) {
+    if (this == nullptr) {
       return 0;
     }
     iVar6 = this->GetObjectTypeId();
@@ -108,7 +108,7 @@ undefined4 __fastcall FUN_005fc4a0(AnonShape_005FC4A0_70B17F95 *param_1)
     param_1->field_024E = 1;
     param_1->field_024F = 1;
     param_1->field_023A = 4;
-    if (param_1->field_0211 != (void *)0x0) {
+    if (param_1->field_0211 != nullptr) {
       Library::Ourlib::ST3DSMAP::SprSetLevBefore
                 (param_1->field_0211,param_1->field_01ED,*(int *)&this[0xd].field_0x19);
     }

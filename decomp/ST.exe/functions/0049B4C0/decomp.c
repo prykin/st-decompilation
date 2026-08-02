@@ -62,7 +62,7 @@ undefined4 __thiscall STGroupBoatC::GrpGoToDeep(STGroupBoatC *this,int param_1)
           this_00 = (STBoatC *)
                     STAllPlayersC::GetObjPtr
                               (g_allPlayers_007FA174,pSVar2->field_0024,local_14._0_2_,CASE_1);
-          if (this_00 == (STBoatC *)0x0) {
+          if (this_00 == nullptr) {
             RaiseInternalException
                       (-0x5001fffc,g_overwriteContext_007ED77C,
                        "E:\\__titans\\wlad\\to_grpb.cpp",0x720);
@@ -96,7 +96,7 @@ undefined4 __thiscall STGroupBoatC::GrpGoToDeep(STGroupBoatC *this,int param_1)
             /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
             objPtr = STAllPlayersC::GetObjPtr
                                (g_allPlayers_007FA174,pSVar2->field_0024,local_14._0_2_,CASE_1);
-            if (objPtr == (STGameObjC *)0x0) {
+            if (objPtr == nullptr) {
               RaiseInternalException
                         (-0x5001fffc,g_overwriteContext_007ED77C,
                          "E:\\__titans\\wlad\\to_grpb.cpp",0x732);

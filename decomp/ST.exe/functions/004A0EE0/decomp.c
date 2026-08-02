@@ -9,7 +9,7 @@ void __thiscall FUN_004a0ee0(void *this,ushort param_1)
 
   thunk_FUN_0040cdb0(this,(uint)param_1);
   if (((*(int *)((int)this + 0x1e6) == 6) &&
-      (array = *(DArrayTy **)((int)this + 0x22e), array != (DArrayTy *)0x0)) &&
+      (array = *(DArrayTy **)((int)this + 0x22e), array != nullptr)) &&
      (index = 0, 0 < (int)array->count)) {
     do {
       DArrayGetElement(array,index,&local_1c);

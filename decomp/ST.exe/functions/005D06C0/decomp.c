@@ -23,7 +23,7 @@ void __thiscall SettMapMTy::ChangePlayerCiv(SettMapMTy *this,uint param_1,char p
   InternalExceptionFrame local_4c;
   SettMapMTy *local_8;
 
-  if (this->field_1F84 != (SettMapMTy_field_1F84DArray *)0x0) {
+  if (this->field_1F84 != nullptr) {
     local_4c.previous = g_currentExceptionFrame;
     g_currentExceptionFrame = &local_4c;
     local_8 = this;
@@ -35,9 +35,9 @@ void __thiscall SettMapMTy::ChangePlayerCiv(SettMapMTy *this,uint param_1,char p
         element_1f84 = DArrayAt<SettMapMTy_field_1F84Element>(pSVar5, param_1);
       }
       else {
-        element_1f84 = (SettMapMTy_field_1F84Element *)0x0;
+        element_1f84 = nullptr;
       }
-      if ((element_1f84 != (SettMapMTy_field_1F84Element *)0x0) && (element_1f84->field_0000 != '\0')) {
+      if ((element_1f84 != nullptr) && (element_1f84->field_0000 != '\0')) {
         element_1f84->field_0003 = param_2;
         if ((element_1f84->field_0004 == '\x02') && (element_1f84->element == DAT_0080877f)) {
           DAT_0080874e = param_2;
@@ -51,9 +51,9 @@ void __thiscall SettMapMTy::ChangePlayerCiv(SettMapMTy *this,uint param_1,char p
               element_1f84 = DArrayAt<SettMapMTy_field_1F84Element>(pSVar5, uVar6);
             }
             else {
-              element_1f84 = (SettMapMTy_field_1F84Element *)0x0;
+              element_1f84 = nullptr;
             }
-            if ((element_1f84 == (SettMapMTy_field_1F84Element *)0x0) || (element_1f84->field_0000 != '\0')) break;
+            if ((element_1f84 == nullptr) || (element_1f84->field_0000 != '\0')) break;
             element_1f84->field_0003 = param_2;
             if (element_1f84->element == DAT_0080877f) {
               DAT_0080874e = param_2;

@@ -125,14 +125,14 @@ FUN_006383e0(int param_1,int param_2,int param_3,undefined4 param_4,ushort param
           if (((((sVar9 < 0) || (g_worldGrid.sizeX <= sVar9)) || (sVar2 = (short)iVar8, sVar2 < 0))
               || ((g_worldGrid.sizeY <= sVar2 || (sVar7 = (short)iVar6, sVar7 < 0)))) ||
              (g_worldGrid.sizeZ <= sVar7)) {
-            this = (STWorldObject *)0x0;
+            this = nullptr;
           }
           else {
             this = g_worldGrid.cells
                    [(int)sVar2 * (int)g_worldGrid.sizeX + (int)sVar7 * (int)g_worldGrid.planeStride
                     + (int)sVar9].objects[0];
           }
-          if ((this != (STWorldObject *)0x0) &&
+          if ((this != nullptr) &&
              (iVar3 = (*this->vtable[5].slots_00_28[0])(), iVar8 = local_50, iVar3 != 0)) {
             bVar1 = false;
             if ((this->value_20 == 1000) &&
@@ -158,7 +158,7 @@ FUN_006383e0(int param_1,int param_2,int param_3,undefined4 param_4,ushort param
             }
             ppuVar11 = local_74;
             for (iVar8 = 8; iVar8 != 0; iVar8 = iVar8 + -1) {
-              *ppuVar11 = (undefined4 *)0x0;
+              *ppuVar11 = nullptr;
               ppuVar11 = ppuVar11 + 1;
             }
             memset(local_48, 0, 0x1c); /* compiler bulk-zero initialization */

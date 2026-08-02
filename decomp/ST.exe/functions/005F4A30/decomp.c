@@ -32,7 +32,7 @@ undefined4 FUN_005f4a30(int param_1,byte param_2,int param_3)
     uVar2 = (uint)param_2;
     local_14 = (AnonShape_005F4A30_D28DC55A *)
                Library::Ourlib::MFRLOAD::mfRLoad
-                         (DAT_00806764,CASE_1D,local_10[uVar2],0xffffffff,0,1,0,(undefined4 *)0x0);
+                         (DAT_00806764,CASE_1D,local_10[uVar2],0xffffffff,0,1,0,nullptr);
     puVar1 = (uint *)(iVar3 + 0x1f);
     ST3DSMAPContext::sub_006E8660
               (g_sT3DSMAPContext_00807598,(int *)puVar1,1,0,local_14->field_0009,

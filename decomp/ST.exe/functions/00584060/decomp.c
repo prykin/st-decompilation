@@ -25,7 +25,7 @@ STJellyGunC::sub_00584060(STJellyGunC *this,int *param_1,int *param_2,int *param
     this_00 = STAllPlayersC::GetObjPtr
                         (g_allPlayers_007FA174,*(char *)&this->field_0241,
                          *(ushort *)&this->field_0x245,CASE_1);
-    if ((this_00 != (STGameObjC *)0x0) &&
+    if ((this_00 != nullptr) &&
        (iVar1 = this_00->vfunc_F8(), iVar1 != 0)) {
       STFishC::sub_004162F0((STFishC *)this_00,&local_6,&local_8,&local_a);
       *param_1 = (int)local_6;

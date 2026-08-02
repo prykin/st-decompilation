@@ -83,19 +83,19 @@ void __thiscall STAllPlayersC::_MakeMDPairs(STAllPlayersC *this,char param_1)
     local_c = local_24;
     puVar11 = &g_packedRecords_A62x8[iVar3].field9_0xf;
     do {
-      if ((DArrayTy *)*puVar11 != (DArrayTy *)0x0) {
+      if ((DArrayTy *)*puVar11 != nullptr) {
         DArrayDestroy((DArrayTy *)*puVar11);
         *puVar11 = 0;
       }
       puVar11 = puVar11 + 1;
       local_c = (DArrayTy *)((int)&local_c[-1].data + 3);
-    } while (local_c != (DArrayTy *)0x0);
+    } while (local_c != nullptr);
   }
   local_60[3] = 0;
   local_60[2] = 0;
   local_60[1] = 0;
   local_60[0] = 0;
-  local_10 = (DArrayTy *)0x0;
+  local_10 = nullptr;
   /* ST_PSEUDO[flattened_global_record_array]: expected typedRecordArray[index].field after inferred base/stride proof */
   local_20 = iVar3 * 0xa62;
   if (g_packedRecords_A62x8[iVar3].field0_0x0 != '\0') {
@@ -103,31 +103,31 @@ void __thiscall STAllPlayersC::_MakeMDPairs(STAllPlayersC *this,char param_1)
       puVar11 = &g_packedRecords_A62x8[iVar3].field9_0xf;
       pDVar15 = pDVar9;
       do {
-        pDVar4 = Library::DKW::TBL::DArrayCreate((DArrayTy *)0x0,0,0x24,1);
+        pDVar4 = Library::DKW::TBL::DArrayCreate(nullptr,0,0x24,1);
         *puVar11 = pDVar4;
         puVar11 = puVar11 + 1;
         pDVar15 = (DArrayTy *)((int)&pDVar15[-1].data + 3);
-      } while (pDVar15 != (DArrayTy *)0x0);
+      } while (pDVar15 != nullptr);
     }
     local_18 = *(DArrayTy **)((int)&g_packedRecords_A62x8[0].field6_0x9 + local_20);
-    if ((local_18 != (DArrayTy *)0x0) &&
-       (local_c = (DArrayTy *)local_18->count, local_c != (DArrayTy *)0x0)) {
-      local_10 = Library::DKW::TBL::DArrayCreate((DArrayTy *)0x0,0,4,1);
+    if ((local_18 != nullptr) &&
+       (local_c = (DArrayTy *)local_18->count, local_c != nullptr)) {
+      local_10 = Library::DKW::TBL::DArrayCreate(nullptr,0,4,1);
       if (0 < (int)pDVar9) {
         piVar12 = local_60;
         pDVar15 = pDVar9;
         do {
-          pDVar4 = Library::DKW::TBL::DArrayCreate((DArrayTy *)0x0,0,4,1);
+          pDVar4 = Library::DKW::TBL::DArrayCreate(nullptr,0,4,1);
           *piVar12 = (int)pDVar4;
           piVar12 = piVar12 + 1;
           pDVar15 = (DArrayTy *)((int)&pDVar15[-1].data + 3);
-        } while (pDVar15 != (DArrayTy *)0x0);
+        } while (pDVar15 != nullptr);
       }
       uVar13 = 0;
       if (0 < (int)local_c) {
         do {
           DArrayGetElement(local_18,uVar13,&local_8);
-          if (local_8 != (STFishC *)0x0) {
+          if (local_8 != nullptr) {
             dVar5 = local_8->slot_2C();
             pDVar15 = local_10;
             if ((dVar5 == 0x3b) || (dVar5 == 0x60)) {
@@ -157,7 +157,7 @@ LAB_00441e92:
         } while ((int)uVar13 < (int)local_c);
       }
     }
-    if ((local_10 == (DArrayTy *)0x0) || (local_64 = local_10->count, local_64 == 0)) {
+    if ((local_10 == nullptr) || (local_64 = local_10->count, local_64 == 0)) {
       local_3a = 0xffff;
       local_42 = 0xffff;
       if (0 < (int)pDVar9) {
@@ -167,11 +167,11 @@ LAB_00441e92:
           Library::DKW::TBL::DArrayAppend((DArrayTy *)*puVar11,&local_48);
           puVar11 = puVar11 + 1;
           pDVar15 = (DArrayTy *)((int)&pDVar15[-1].data + 3);
-        } while (pDVar15 != (DArrayTy *)0x0);
+        } while (pDVar15 != nullptr);
       }
     }
     else {
-      local_c = (DArrayTy *)0x0;
+      local_c = nullptr;
       if (0 < (int)local_64) {
         do {
           DArrayGetElement(local_10,(uint)local_c,&local_8);
@@ -200,7 +200,7 @@ LAB_00441e92:
             do {
               pDVar9 = (DArrayTy *)*local_1c;
               local_68 = pDVar9;
-              if ((pDVar9 == (DArrayTy *)0x0) || (local_80[4] = pDVar9->count, local_80[4] == 0)) {
+              if ((pDVar9 == nullptr) || (local_80[4] = pDVar9->count, local_80[4] == 0)) {
                 if (((DArrayTy *)*local_14)->count == 0) {
                   local_96 = 0xffff;
                   local_9e = 0xffff;
@@ -237,7 +237,7 @@ LAB_00441e92:
               local_1c = local_1c + 1;
               local_14 = local_14 + 1;
               local_18 = (DArrayTy *)((int)&local_18[-1].data + 3);
-            } while (local_18 != (DArrayTy *)0x0);
+            } while (local_18 != nullptr);
           }
           local_c = (DArrayTy *)((int)&local_c->flags + 1);
           pDVar9 = local_24;
@@ -251,7 +251,7 @@ LAB_00441e92:
         DArrayDestroy((DArrayTy *)*piVar12);
         piVar12 = piVar12 + 1;
         pDVar9 = (DArrayTy *)((int)&pDVar9[-1].data + 3);
-      } while (pDVar9 != (DArrayTy *)0x0);
+      } while (pDVar9 != nullptr);
     }
   }
   g_currentExceptionFrame = local_e8.previous;

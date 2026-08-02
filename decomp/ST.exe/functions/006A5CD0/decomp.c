@@ -20,7 +20,7 @@ undefined4 FUN_006a5cd0(void)
   if (iVar2 == 1) {
     STDebugBreak(); /* noreturn in standalone pseudocode */
   }
-  thunk_FUN_006a5990((undefined4 *)0x0);
+  thunk_FUN_006a5990(nullptr);
   return 1;
 }
 

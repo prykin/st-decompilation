@@ -58,7 +58,7 @@ FUN_0062b830(int param_1,int param_2,int param_3,undefined4 param_4,int *param_5
             ((STFishC *)this,(short *)((int)&param_3 + 2),(undefined2 *)((int)&param_2 + 2),
              (undefined2 *)((int)&param_1 + 2));
   iVar1 = param_8;
-  if ((param_9 == 0) && (g_manRuin_008117B0 != (STManRuinC *)0x0)) {
+  if ((param_9 == 0) && (g_manRuin_008117B0 != nullptr)) {
     if (this[0xb] == 0) {
       /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
       STManRuinC::sub_00631510

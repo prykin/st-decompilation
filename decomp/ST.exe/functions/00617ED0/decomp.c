@@ -13,7 +13,7 @@ void __thiscall FUN_00617ed0(void *this,int param_1,int *param_2)
   undefined2 local_6;
 
   if (*(int *)((int)this + 0x66) == 0) {
-    pDVar2 = Library::DKW::TBL::DArrayCreate((DArrayTy *)0x0,10,8,10);
+    pDVar2 = Library::DKW::TBL::DArrayCreate(nullptr,10,8,10);
     *(DArrayTy **)((int)this + 0x66) = pDVar2;
   }
   iVar3 = *(int *)((int)this + 0x66);

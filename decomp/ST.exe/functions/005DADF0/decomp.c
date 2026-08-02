@@ -27,12 +27,12 @@ void __thiscall StartSystemTy::InitChat(StartSystemTy *this)
   local_8 = this;
   errorCode = Library::MSVCRT::__setjmp3(local_4c.jumpBuffer,0);
   if (errorCode == 0) {
-    if (DAT_0080c4fa != (DArrayTy *)0x0) {
+    if (DAT_0080c4fa != nullptr) {
       FUN_006b5570(DAT_0080c4fa);
     }
-    DAT_0080c4fa = Library::DKW::TBL::SArrayCreate((DArrayTy *)0x0,100,0x14);
+    DAT_0080c4fa = Library::DKW::TBL::SArrayCreate(nullptr,100,0x14);
     puVar1 = local_8->field_067E;
-    if (puVar1 != (ushort *)0x0) {
+    if (puVar1 != nullptr) {
       uVar6 = *(uint *)(puVar1 + 10);
       if (uVar6 == 0) {
         uVar6 = ((uint)puVar1[7] * *(int *)(puVar1 + 2) + 0x1f >> 3 & 0x1ffffffc) *

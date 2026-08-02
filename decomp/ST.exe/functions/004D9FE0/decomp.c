@@ -54,7 +54,7 @@ undefined4 __fastcall FUN_004d9fe0(TLOBaseTy *param_1)
       return 0;
     }
     if (param_1->field_04D0 == CASE_4) {
-      TLOBaseTy::sub_004C4550(param_1,(int *)0x0);
+      TLOBaseTy::sub_004C4550(param_1,nullptr);
       TLOBaseTy::RotateSpr(param_1,0);
       return 0;
     }

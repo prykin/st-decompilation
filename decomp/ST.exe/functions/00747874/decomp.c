@@ -10,7 +10,7 @@ undefined4 * __thiscall FUN_00747874(void *this,AnonShape_00747874_535F3AAD *par
   *(VTable_007A1128 **)this = &VTable_007A1128;
   /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
   (**(code **)(param_1->field_000C + 4))(&param_1->field_000C);
-  if (param_1 == (AnonShape_00747874_535F3AAD *)0x0) {
+  if (param_1 == nullptr) {
     /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
     uVar1 = (**(code **)(**(int **)((int)this + 8) + 0x10))();
   }

@@ -12,10 +12,10 @@ STVolcanoC * __cdecl CreateSTVolcano(void)
   STVolcanoC *pSVar1;
 
   pSVar1 = (STVolcanoC *)FUN_006b04d0(0xb5);
-  if (pSVar1 != (STVolcanoC *)0x0) {
+  if (pSVar1 != nullptr) {
     pSVar1 = STVolcanoC::STVolcanoC(pSVar1);
     return pSVar1;
   }
-  return (STVolcanoC *)0x0;
+  return nullptr;
 }
 

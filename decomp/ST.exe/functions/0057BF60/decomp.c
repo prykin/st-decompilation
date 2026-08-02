@@ -115,11 +115,11 @@ int __thiscall STFishC::GetMessage(STFishC *this,STMessage *message)
     local_14 = (byte *)STT3DSprC::SaveSpr((STT3DSprC *)&this_00->field_01D5,&local_8);
     local_18 = (byte *)STAllPlayersC::SaveGObjData((STAllPlayersC *)this_00,(int *)&local_10);
     local_c = Library::DKW::LIB::MemAlloc(local_10 + 0x46 + local_8);
-    if (local_14 == (byte *)0x0) {
+    if (local_14 == nullptr) {
       g_currentExceptionFrame = local_80.previous;
       return 0;
     }
-    if (local_c == (AnonShape_0057BF60_C1393638 *)0x0) {
+    if (local_c == nullptr) {
       g_currentExceptionFrame = local_80.previous;
       return 0;
     }
@@ -198,7 +198,7 @@ int __thiscall STFishC::GetMessage(STFishC *this,STMessage *message)
       *(undefined2 *)&this_00->field_0x237 = *(undefined2 *)((int)local_20 + 0x32);
       *(undefined2 *)&this_00->field_0x239 = *(undefined2 *)(local_20 + 0xd);
       local_3c = Library::DKW::LIB::MemAlloc(0x44);
-      if (local_3c != (void *)0x0) {
+      if (local_3c != nullptr) {
         iVar4 = 0;
         do {
           if (iVar4 == 8) {

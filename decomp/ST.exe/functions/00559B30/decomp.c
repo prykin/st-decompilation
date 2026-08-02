@@ -37,10 +37,10 @@ VisibleClassTy::SetZoneAst
   byte *local_8;
 
   if ((((this->field_0114 != 0) && (-1 < param_5)) && (param_4 < 8)) &&
-     ((g_playSystem_00802A38 == (STPlaySystemC *)0x0 || ((byte)(&DAT_008087e9)[param_4 * 0x51] < 8))
-     )) {
+     ((g_playSystem_00802A38 == nullptr ||
+      (g_bulkInitializedRecords_008087C7[param_4].field_0022 < 8)))) {
     local_14 = this;
-    if (this->field_0074[param_4] == (byte *)0x0) {
+    if (this->field_0074[param_4] == nullptr) {
       local_60.previous = g_currentExceptionFrame;
       g_currentExceptionFrame = &local_60;
       iVar4 = Library::MSVCRT::__setjmp3(local_60.jumpBuffer,0);
@@ -76,7 +76,7 @@ VisibleClassTy::SetZoneAst
           iVar6 = 0;
           iVar8 = local_18;
           do {
-            if ((pbVar5 == (byte *)0x0) || (local_8[iVar6] != 0)) {
+            if ((pbVar5 == nullptr) || (local_8[iVar6] != 0)) {
               if ((iVar8 < 0) ||
                  (((this->field_0020 <= iVar8 || (iVar4 < 0)) || (this->field_0024 <= iVar4)))) {
                 bVar3 = false;

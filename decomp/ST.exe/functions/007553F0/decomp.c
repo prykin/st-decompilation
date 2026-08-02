@@ -84,7 +84,7 @@ LAB_00755464:
       return 0xfffffffe;
     }
   }
-  if ((undefined4 *)*param_2 != (undefined4 *)0x0) {
+  if ((undefined4 *)*param_2 != nullptr) {
     puVar7 = (byte *)(puVar7 + 2);
     puVar8 = (byte *)*param_2;
     memmove(puVar8, puVar7, uVar6); /* compiler REP MOVS byte copy */

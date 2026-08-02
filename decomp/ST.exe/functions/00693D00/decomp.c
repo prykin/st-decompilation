@@ -27,8 +27,8 @@ SubmarineTitans::Recovered::HiddenThis::AnonReceiver_00693D00::FUN_00693d00
   local_8 = this;
   iVar1 = Library::MSVCRT::__setjmp3(local_50.jumpBuffer,0);
   if (iVar1 == 0) {
-    cMf32::RecPut(param_1,0,PTR_s_DESCRIPTOR_0079d770,(byte *)local_8,0x1999,(undefined4 *)0x0,'\0',
-                  (uint *)0x0);
+    cMf32::RecPut(param_1,0,PTR_s_DESCRIPTOR_0079d770,(byte *)local_8,0x1999,nullptr,'\0',
+                  nullptr);
     g_currentExceptionFrame = local_50.previous;
     return local_c;
   }

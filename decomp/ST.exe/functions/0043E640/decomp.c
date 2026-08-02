@@ -26,7 +26,7 @@ short FUN_0043e640(char param_1,Global_sub_0043E640_param_2Enum param_2,int para
       sVar4 = sVar3;
       piVar2 = *(int **)(*(int *)(iVar1 + 0x1c) + iVar7 * 4);
       /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-      if (((piVar2 != (int *)0x0) && (GVar5 = (**(code **)(*piVar2 + 0x2c))(), GVar5 == param_2)) &&
+      if (((piVar2 != nullptr) && (GVar5 = (**(code **)(*piVar2 + 0x2c))(), GVar5 == param_2)) &&
          (iVar6 = (**(code **)(*piVar2 + 0xf8))(), iVar6 != 0)) {
         if (param_3 == 0) {
 /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */

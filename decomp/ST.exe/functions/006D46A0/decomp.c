@@ -5,7 +5,7 @@ void FUN_006d46a0(undefined4 *param_1,DWORD param_2)
   DWORD dwErrCode;
   DWORD DVar1;
 
-  if (param_1 != (undefined4 *)0x0) {
+  if (param_1 != nullptr) {
     dwErrCode = GetLastError();
     if ((param_1[2] & 0x100000) == 0) {
       if ((LPCVOID)param_1[0xd] != (LPCVOID)0x0) {

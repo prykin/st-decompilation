@@ -193,7 +193,7 @@ switchD_005c8bd0_caseD_611f:
           pvVar13 = (void *)(pDVar21->elementSize * uVar19 + (int)pDVar21->data);
         }
         else {
-          pvVar13 = (void *)0x0;
+          pvVar13 = nullptr;
         }
         cVar10 = *(char *)((int)pvVar13 + 0x104);
         /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
@@ -329,7 +329,7 @@ cf_common_join_005C8ECC:
           puVar18 = (uint *)(pDVar21->elementSize * uVar19 + (int)pDVar21->data);
         }
         else {
-          puVar18 = (uint *)0x0;
+          puVar18 = nullptr;
         }
         ccFntTy::WrStr(g_startSystem_0081176C->field_0034,puVar18,-1,-1,
                        3 - ((message->arg0).words.high != 1));
@@ -365,14 +365,14 @@ cf_common_join_005C8ECC:
             pvVar13 = (void *)(pDVar14->elementSize * uVar19 + (int)pDVar21->data);
           }
           else {
-            pvVar13 = (void *)0x0;
+            pvVar13 = nullptr;
           }
-          if (pvVar13 == (void *)0x0) {
+          if (pvVar13 == nullptr) {
             this_00->field_1C5F = 0;
             DAT_0080995c = 1;
             memset(&DAT_00809960, 0, 0x20); /* compiler bulk-zero initialization */
             StartSystemTy::SetObjectives
-                      (g_startSystem_0081176C,(int)this_00->field_1F43,(char *)0x0,
+                      (g_startSystem_0081176C,(int)this_00->field_1F43,nullptr,
                        this_00->field_1C63);
           }
           else {
@@ -400,11 +400,10 @@ cf_common_join_005C8ECC:
           }
           this_00->field_002D = 5;
           FUN_006e6080(this_00,2,this_00->field_2125[0],(undefined4 *)&this_00->field_0x1d);
-          if ((DAT_008067a0 != '\0') && (g_int_00811764 != (int *)0x0)) {
+          if ((DAT_008067a0 != '\0') && (g_int_00811764 != nullptr)) {
             FUN_006b6160(&this_00->field_0x1a5f,(int)(g_int_00811764 + 6));
             this_00->field_1A7F = 1;
-            /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-            this_00->field_1A80 = DAT_008087c4._2_1_;
+            this_00->field_1A80 = DAT_008087c6;
             this_00->field_1A81 = (char)(DAT_008087c2 >> 1);
             wsprintfA((LPSTR)&local_64,"%08x",DAT_0080995c);
             this_00->field_1A82 = local_64;
@@ -495,14 +494,14 @@ cf_common_join_005C8ECC:
         this_00->field_2179 = 0;
         this_00->field_2191 = 0x6500;
         this_00->field_21A1 = 0;
-        local_8 = (DArrayTy *)0x0;
+        local_8 = nullptr;
         this_00->field_1E2F->count = 0;
         local_c = pDVar21;
         if (pDVar21->count != 0) {
           do {
             /* ST_PSEUDO[dynamic_array_indexing]: expected DArrayAt<T>(pDVar21, (int)local_8) (runtime stride) */
             pcVar15 = (char *)(pDVar21->elementSize * (int)local_8 + (int)pDVar21->data);
-            if (pcVar15 != (char *)0x0) {
+            if (pcVar15 != nullptr) {
               this_00->field_1F37 = local_8;
               uVar19 = 0xffffffff;
               do {
@@ -637,7 +636,7 @@ joined_r0x005c964b:
       }
       this_00->field_21A5 = *(undefined4 *)&pcVar6->field_0x8a;
       (*this_00->field_000C->vtable->CreateObject)
-                ((SystemClassTy *)this_00->field_000C,0x100ef,(undefined4 *)0x0,(int *)0x0,
+                ((SystemClassTy *)this_00->field_000C,0x100ef,nullptr,nullptr,
                  &this_00->field_0x2161,0);
       break;
     case 0x6546:
@@ -693,7 +692,7 @@ joined_r0x005c964b:
         }
         this_00->field_21A5 = *(undefined4 *)&pcVar6->field_0x8a;
         (*this_00->field_000C->vtable->CreateObject)
-                  ((SystemClassTy *)this_00->field_000C,0x100ef,(undefined4 *)0x0,(int *)0x0,
+                  ((SystemClassTy *)this_00->field_000C,0x100ef,nullptr,nullptr,
                    &this_00->field_0x2161,0);
       }
       break;
@@ -865,7 +864,7 @@ joined_r0x005c964b:
         }
       }
       this_00->field_1E2F->count = 0;
-      if (local_8 != (DArrayTy *)0x0) {
+      if (local_8 != nullptr) {
         iVar12 = 2;
         do {
           pcVar15 = LoadResourceString(0x2354,g_module_00807618);
@@ -890,7 +889,7 @@ joined_r0x005c996c:
       }
       this_00->field_21A5 = *(undefined4 *)&pcVar6->field_0x8a;
       (*this_00->field_000C->vtable->CreateObject)
-                ((SystemClassTy *)this_00->field_000C,0x100ef,(undefined4 *)0x0,(int *)0x0,
+                ((SystemClassTy *)this_00->field_000C,0x100ef,nullptr,nullptr,
                  &this_00->field_0x2161,0);
     }
     break;
@@ -905,9 +904,9 @@ joined_r0x005c996c:
       this_00->field_2171 = 0x64ff;
       this_00->field_2179 = message->id - 0x68ff;
       this_00->field_2191 = 0x6500;
-      local_8 = (DArrayTy *)0x0;
+      local_8 = nullptr;
       this_00->field_1E2F->count = 0;
-      if (local_c != (DArrayTy *)0x0) {
+      if (local_c != nullptr) {
         do {
           pDVar21 = this_00->field_1F7C;
           if (local_8 < (DArrayTy *)pDVar21->count) {
@@ -915,7 +914,7 @@ joined_r0x005c996c:
             pvVar13 = (void *)(pDVar21->elementSize * (int)local_8 + (int)pDVar21->data);
           }
           else {
-            pvVar13 = (void *)0x0;
+            pvVar13 = nullptr;
           }
           uVar19 = 0xffffffff;
           pcVar15 = (char *)((int)pvVar13 + 0x104);
@@ -951,7 +950,7 @@ joined_r0x005c996c:
       }
       this_00->field_21A5 = *(undefined4 *)&pcVar6->field_0x8a;
       (*this_00->field_000C->vtable->CreateObject)
-                ((SystemClassTy *)this_00->field_000C,0x100ef,(undefined4 *)0x0,(int *)0x0,
+                ((SystemClassTy *)this_00->field_000C,0x100ef,nullptr,nullptr,
                  &this_00->field_0x2161,0);
     }
     break;
@@ -1266,7 +1265,7 @@ LAB_005c9e62:
     /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
     this_01 = *(MMsgTy **)(this_00->field_1A5B + 0x2e6);
 LAB_005c9e75:
-    if (this_01 != (MMsgTy *)0x0) {
+    if (this_01 != nullptr) {
       MMsgTy::HidePanel(this_01,1,0,1);
     }
     break;
@@ -1421,9 +1420,9 @@ cf_common_join_005CA971:
       pcVar15 = (char *)(pDVar14->elementSize * this_00->field_1C5F + (int)pDVar21->data);
     }
     else {
-      pcVar15 = (char *)0x0;
+      pcVar15 = nullptr;
     }
-    if (pcVar15 == (char *)0x0) {
+    if (pcVar15 == nullptr) {
       pcVar15 = &DAT_008016a0;
     }
     uVar19 = 0xffffffff;

@@ -132,7 +132,7 @@ cf_common_join_0063EACD:
                       ) && (g_worldGrid.cells
                             [(int)sVar3 * (int)g_worldGrid.planeStride +
                              (int)g_worldGrid.sizeX * (int)sVar8 + (int)(short)local_c].objects[0]
-                            != (STWorldObject *)0x0)) {
+                            != nullptr)) {
                     /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
                     thunk_FUN_00601d10(*(int *)((int)this + 0x259),local_1c,
                                        (int)g_worldGrid.cells
@@ -148,7 +148,7 @@ cf_common_join_0063EACD:
                        (g_worldGrid.cells
                         [(int)sVar3 * (int)g_worldGrid.planeStride +
                          (int)g_worldGrid.sizeX * (int)sVar8 + (int)(short)local_c].objects[1] !=
-                        (STWorldObject *)0x0)))))) {
+                        nullptr)))))) {
                     /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
                     thunk_FUN_00601d10(*(int *)((int)this + 0x259),local_1c,
                                        (int)g_worldGrid.cells
@@ -203,7 +203,7 @@ cf_common_join_0063EACD:
                       (g_worldGrid.cells
                        [(int)sVar3 * (int)g_worldGrid.planeStride +
                         (int)g_worldGrid.sizeX * (int)sVar8 + (int)(short)local_c].objects[0] !=
-                       (STWorldObject *)0x0)))))) {
+                       nullptr)))))) {
                 /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
                 thunk_FUN_00601d10(*(int *)((int)this + 0x259),local_1c,
                                    (int)g_worldGrid.cells

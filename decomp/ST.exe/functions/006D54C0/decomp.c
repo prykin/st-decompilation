@@ -66,10 +66,10 @@ LAB_006d5620:
       local_c = local_c + 1;
     } while (local_c < 2);
   }
-  if (local_8 != (int *)0x0) {
+  if (local_8 != nullptr) {
     /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
     (**(code **)(*local_8 + 8))(local_8);
-    local_8 = (int *)0x0;
+    local_8 = nullptr;
   }
   /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
   if ((((((local_10 != 0) || (iVar2 = param_1->field_0288, *(int *)(iVar2 + 0x90) != iVar3)) ||

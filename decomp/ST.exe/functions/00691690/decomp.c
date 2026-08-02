@@ -1,5 +1,3 @@
-#include "../../pseudocode_runtime.h"
-
 
 /* [STSourceProvenanceApplier begin]
    Recovered source file: E:\__titans\Maps\CntLib.cpp
@@ -29,12 +27,13 @@ FUN_00691690(void *this,cMf32 *param_1,cMf32 *param_2,int param_3,undefined *par
   ushort *puVar9;
   undefined4 *puVar10;
   int iVar11;
-  byte bVar12;
-  undefined4 uVar13;
-  int iVar14;
-  undefined4 uVar15;
+  void **ppvVar12;
+  byte bVar13;
+  undefined4 uVar14;
+  int iVar15;
+  undefined4 uVar16;
   CHAR local_190 [260];
-  undefined4 local_8c [2];
+  void *local_8c [2];
   ushort local_84;
   int local_70;
   ushort *local_6c;
@@ -58,7 +57,7 @@ FUN_00691690(void *this,cMf32 *param_1,cMf32 *param_2,int param_3,undefined *par
 
   local_14 = this;
   local_38 = Library::Ourlib::MFAOBJ::mfAObjLoad(param_1,"2D_CLT",0,0);
-  if (local_38 != (ushort *)0x0) {
+  if (local_38 != nullptr) {
     puVar9 = local_38;
     puVar4 = (undefined4 *)((int)this + 0x37ac);
     for (iVar11 = 0xf; iVar11 != 0; iVar11 = iVar11 + -1) {
@@ -69,13 +68,13 @@ FUN_00691690(void *this,cMf32 *param_1,cMf32 *param_2,int param_3,undefined *par
     cMf32::RecMemFree(param_1,(uint *)&local_38);
   }
   local_30 = Library::Ourlib::MFAOBJ::mfAObjLoad(param_1,"CLR_COVER",0,0);
-  if (local_30 != (ushort *)0x0) {
+  if (local_30 != nullptr) {
     puVar4 = &DAT_007d5934;
     puVar9 = local_30;
     do {
-      uVar13 = *(undefined4 *)puVar9;
+      uVar14 = *(undefined4 *)puVar9;
       puVar9 = puVar9 + 2;
-      *puVar4 = uVar13;
+      *puVar4 = uVar14;
       puVar4 = puVar4 + 2;
     } while ((int)puVar4 < 0x7d595c);
     cMf32::RecMemFree(param_1,(uint *)&local_30);
@@ -84,31 +83,30 @@ FUN_00691690(void *this,cMf32 *param_1,cMf32 *param_2,int param_3,undefined *par
   do {
     iVar11 = local_20;
     if (param_3 != 0) {
-      iVar14 = 1;
-      bVar12 = 2;
+      iVar15 = 1;
+      bVar13 = 2;
       pcVar5 = thunk_FUN_00691650(&DAT_007d59a4,local_20);
-      pcVar5 = Library::Ourlib::MFSPR::mfSSprLoad(param_2,pcVar5,bVar12,iVar14);
+      pcVar5 = Library::Ourlib::MFSPR::mfSSprLoad(param_2,pcVar5,bVar13,iVar15);
       *(char **)((int)this + iVar11 * 0x248 + 0x1950) = pcVar5;
       thunk_FUN_00692ba0(pcVar5);
     }
     pAVar6 = (AnonShape_006DBCA0_EF06575F *)FUN_006b04d0(0x4f2);
-    if (pAVar6 == (AnonShape_006DBCA0_EF06575F *)0x0) {
-      this_00 = (ST3DSMAPContext *)0x0;
+    if (pAVar6 == nullptr) {
+      this_00 = nullptr;
 LAB_0069177d:
       RaiseInternalException
                 (-2,g_overwriteContext_007ED77C,"E:\\__titans\\Maps\\CntLib.cpp",0x4e);
     }
     else {
       this_00 = (ST3DSMAPContext *)FUN_006dbca0(pAVar6);
-      if (this_00 == (ST3DSMAPContext *)0x0) goto LAB_0069177d;
+      if (this_00 == nullptr) goto LAB_0069177d;
     }
     iVar11 = local_20;
-    iVar14 = (int)(0x28 / (longlong)*(int *)(&DAT_007dfa90 + local_20 * 4));
+    iVar15 = (int)(0x28 / (longlong)*(int *)(&DAT_007dfa90 + local_20 * 4));
     ST3DSMAPContext::sub_006DC050
-              (this_00,0,0,0,iVar14,iVar14,-10.0,10.0,-10.0,10.0,0x4024000000000000,
-               0x4023ee97865e3540,0);
-    ST3DSMAPContext::sub_006DD610(this_00,4,0,0x40240000,0,0x40240000);
-    *(undefined4 *)&this_00->field_0x128 = 0;
+              (this_00,0,0,0,iVar15,iVar15,-10.0,10.0,-10.0,10.0,10.0,9.965999793052674,0);
+    ST3DSMAPContext::sub_006DD610(this_00,4,10.0,10.0);
+    this_00->field_0128 = 0;
     ST3DSMAPContext::sub_006DD790(this_00,149.97069);
     ST3DSMAPContext::sub_006DD800(this_00,200.19933);
     local_c = 0;
@@ -116,7 +114,7 @@ LAB_0069177d:
       local_8 = 0;
       do {
         if (((param_3 == 0) || (local_c != 0)) || (local_8 != 0)) {
-          if (param_4 != (undefined *)0x0) {
+          if (param_4 != nullptr) {
             /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
             (*(code *)param_4)(0);
           }
@@ -126,49 +124,53 @@ LAB_0069177d:
           }
           pcVar5 = thunk_FUN_006a2d00(1,local_c,uVar8,1,0);
           puVar9 = Library::Ourlib::MFSTMAP::FUN_006f0cd0(param_1,pcVar5,0);
-          if (puVar9 != (ushort *)0x0) {
+          if (puVar9 != nullptr) {
             puVar4 = Library::DKW::LIB::MemAlloc(0xa9);
             local_1c = (int *)(local_c * 6);
             local_28 = (int *)((int)local_14 +
                               ((int)local_1c + local_8 + iVar11 * 0x49) * 8 + 0x1954);
             *local_28 = (int)puVar4;
-            for (iVar14 = 0x2a; iVar14 != 0; iVar14 = iVar14 + -1) {
+            for (iVar15 = 0x2a; iVar15 != 0; iVar15 = iVar15 + -1) {
               *puVar4 = 0;
               puVar4 = puVar4 + 1;
             }
             *(undefined1 *)puVar4 = 0;
             *(undefined2 *)(*local_28 + 0x23) = 0;
             local_18 = 0;
-            local_24 = (char *)0x0;
+            local_24 = nullptr;
             *(short *)(*local_28 + 0x29) =
                  (short)(0x28 / (longlong)*(int *)(&DAT_007dfa90 + iVar11 * 4));
             *(short *)(*local_28 + 0x2b) =
                  (short)(0x28 / (longlong)*(int *)(&DAT_007dfa90 + iVar11 * 4));
             do {
-              local_10 = (int *)0x0;
+              local_10 = nullptr;
               do {
                 uVar8 = local_8;
                 if (local_c == 0) {
                   uVar8 = local_8 + 1;
                 }
                 pcVar5 = thunk_FUN_006a2d00(1,local_c,uVar8,local_18 + 1,(uint)local_10);
-                memset(local_8c, 0, 0x50); /* compiler bulk-zero initialization */
+                ppvVar12 = local_8c;
+                for (iVar15 = 0x14; iVar15 != 0; iVar15 = iVar15 + -1) {
+                  *ppvVar12 = nullptr;
+                  ppvVar12 = ppvVar12 + 1;
+                }
                 puVar9 = Library::Ourlib::MFSTMAP::FUN_006f0cd0(param_1,pcVar5,0);
-                if (puVar9 == (ushort *)0x0) {
+                if (puVar9 == nullptr) {
                   *(short *)(*local_28 + 0x23) = *(short *)(*local_28 + 0x23) + 1;
                 }
                 else {
                   if (local_c == 0) {
-                    iVar14 = (int)local_10 * 0x10 + (local_18 + local_8 * 2) * 0xf0 + 0x2028;
+                    iVar15 = (int)local_10 * 0x10 + (local_18 + local_8 * 2) * 0xf0 + 0x2028;
 LAB_00691a65:
-                    puVar4 = (undefined4 *)(iVar14 + (int)local_14);
+                    puVar4 = (undefined4 *)(iVar15 + (int)local_14);
                     *puVar4 = *(undefined4 *)(puVar9 + 2);
                     puVar4[1] = *(undefined4 *)(puVar9 + 4);
                     puVar4[2] = *(undefined4 *)(puVar9 + 6);
                     puVar4[3] = *(undefined4 *)(puVar9 + 8);
                   }
                   else if (local_c == 1) {
-                    iVar14 = (int)local_10 * 0x10 + (local_18 + local_8 * 2) * 0xf0 + 0x2b68;
+                    iVar15 = (int)local_10 * 0x10 + (local_18 + local_8 * 2) * 0xf0 + 0x2b68;
                     goto LAB_00691a65;
                   }
                   local_70 = (int)(short)*puVar9;
@@ -182,18 +184,18 @@ LAB_00691a65:
                   else {
                     local_84 = ((byte)local_8 - 1) + (short)local_c;
                   }
-                  local_8c[0] = *(undefined4 *)&this_00->field_0x140;
-                  *(int *)&this_00->field_0x13c = *(int *)&this_00->field_0x13c + 1;
-                  *(undefined4 **)&this_00->field_0x140 = local_8c;
+                  local_8c[0] = this_00->field_0140;
+                  this_00->field_013C = this_00->field_013C + 1;
+                  this_00->field_0140 = local_8c;
                   ST3DSMAPContext::sub_006DDBE0(this_00);
-                  *(undefined4 *)&this_00->field_0x124 = 5;
+                  this_00->field_0124 = 5;
                   ST3DSMAPContext::sub_006DDD50(this_00);
-                  *(undefined4 *)&this_00->field_0x140 = 0;
-                  *(undefined4 *)&this_00->field_0x13c = 0;
+                  this_00->field_0140 = nullptr;
+                  this_00->field_013C = 0;
                   if (param_3 != 0) {
                     puVar4 = (undefined4 *)(0x28 / (longlong)*(int *)(&DAT_007dfa90 + iVar11 * 4));
-                    local_3c = thunk_FUN_00692920(param_2,*(undefined4 **)&this_00->field_0xc,puVar4
-                                                  ,(int)puVar4,1);
+                    local_3c = thunk_FUN_00692920(param_2,(undefined4 *)this_00->field_000C,puVar4,
+                                                  (int)puVar4,1);
                     piVar2 = local_28;
                     FUN_006b4b20((int *)(*local_28 + 0x2d + (int)(local_24 + (int)local_10) * 4),
                                  local_3c,0,0);
@@ -208,8 +210,8 @@ LAB_00691a65:
                      ((int)local_14 +
                      (int)local_10 * 4 + (local_18 + ((int)local_1c + local_8) * 2) * 0x3c) =
                          puVar10;
-                    puVar4 = *(undefined4 **)&this_00->field_0xc;
-                    for (iVar14 = 400; iVar11 = local_20, iVar14 != 0; iVar14 = iVar14 + -1) {
+                    puVar4 = (undefined4 *)this_00->field_000C;
+                    for (iVar15 = 400; iVar11 = local_20, iVar15 != 0; iVar15 = iVar15 + -1) {
                       *puVar10 = *puVar4;
                       puVar4 = puVar4 + 1;
                       puVar10 = puVar10 + 1;
@@ -228,17 +230,17 @@ LAB_00691a65:
           }
           pcVar5 = thunk_FUN_006a2d00(0,local_c,uVar8,0,1);
           puVar9 = Library::Ourlib::MFSTMAP::FUN_006f0cd0(param_1,pcVar5,0);
-          if (puVar9 != (ushort *)0x0) {
+          if (puVar9 != nullptr) {
             puVar4 = Library::DKW::LIB::MemAlloc(0x59);
             local_18 = local_c * 6 + iVar11 * 0x92;
             piVar2 = (int *)((int)local_14 + (local_18 + local_8) * 4 + 0x1a74);
             *piVar2 = (int)puVar4;
-            for (iVar14 = 0x16; iVar14 != 0; iVar14 = iVar14 + -1) {
+            for (iVar15 = 0x16; iVar15 != 0; iVar15 = iVar15 + -1) {
               *puVar4 = 0;
               puVar4 = puVar4 + 1;
             }
             *(undefined1 *)puVar4 = 0;
-            local_10 = (int *)0x0;
+            local_10 = nullptr;
             *(undefined2 *)(*piVar2 + 0x23) = 0;
             *(short *)(*piVar2 + 0x29) =
                  (short)(0x28 / (longlong)*(int *)(&DAT_007dfa90 + iVar11 * 4));
@@ -252,9 +254,13 @@ LAB_00691a65:
               }
               local_1c = (int *)((int)local_10 + 1);
               pcVar5 = thunk_FUN_006a2d00(0,local_c,uVar8,0,(uint)local_1c);
-              memset(local_8c, 0, 0x50); /* compiler bulk-zero initialization */
+              ppvVar12 = local_8c;
+              for (iVar15 = 0x14; iVar15 != 0; iVar15 = iVar15 + -1) {
+                *ppvVar12 = nullptr;
+                ppvVar12 = ppvVar12 + 1;
+              }
               puVar9 = Library::Ourlib::MFSTMAP::FUN_006f0cd0(param_1,pcVar5,0);
-              if (puVar9 == (ushort *)0x0) {
+              if (puVar9 == nullptr) {
                 /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
                 psVar1 = (short *)(*(int *)((int)local_14 + (local_18 + local_8) * 4 + 0x1a74) +
                                   0x23);
@@ -272,24 +278,24 @@ LAB_00691a65:
                 else {
                   local_84 = ((byte)local_8 - 1) + (short)local_c;
                 }
-                local_8c[0] = *(undefined4 *)&this_00->field_0x140;
-                *(int *)&this_00->field_0x13c = *(int *)&this_00->field_0x13c + 1;
-                *(undefined4 **)&this_00->field_0x140 = local_8c;
+                local_8c[0] = this_00->field_0140;
+                this_00->field_013C = this_00->field_013C + 1;
+                this_00->field_0140 = local_8c;
                 ST3DSMAPContext::sub_006DDBE0(this_00);
-                *(undefined4 *)&this_00->field_0x124 = 5;
+                this_00->field_0124 = 5;
                 ST3DSMAPContext::sub_006DDD50(this_00);
                 pvVar3 = local_14;
-                *(undefined4 *)&this_00->field_0x140 = 0;
-                *(undefined4 *)&this_00->field_0x13c = 0;
+                this_00->field_0140 = nullptr;
+                this_00->field_013C = 0;
                 if (param_3 != 0) {
                   puVar4 = (undefined4 *)(0x28 / (longlong)*(int *)(&DAT_007dfa90 + iVar11 * 4));
-                  local_2c = thunk_FUN_00692920(param_2,*(undefined4 **)&this_00->field_0xc,puVar4,
+                  local_2c = thunk_FUN_00692920(param_2,(undefined4 *)this_00->field_000C,puVar4,
                                                 (int)puVar4,1);
-                  iVar14 = local_18 + local_8;
-                  FUN_006b4b20((int *)(*(int *)((int)pvVar3 + iVar14 * 4 + 0x1a74) + 0x2d +
+                  iVar15 = local_18 + local_8;
+                  FUN_006b4b20((int *)(*(int *)((int)pvVar3 + iVar15 * 4 + 0x1a74) + 0x2d +
                                       (int)local_10 * 4),local_2c,0,0);
                   FreeAndNull(&local_2c);
-                  psVar1 = (short *)(*(int *)((int)pvVar3 + iVar14 * 4 + 0x1a74) + 0x23);
+                  psVar1 = (short *)(*(int *)((int)pvVar3 + iVar15 * 4 + 0x1a74) + 0x23);
                   *psVar1 = *psVar1 + 1;
                 }
                 if (iVar11 == 0) {
@@ -297,8 +303,8 @@ LAB_00691a65:
                   *(undefined4 **)
                    ((int)local_14 + ((int)local_10 + (local_8 + (local_c * 3 + 0x36) * 2) * 10) * 4)
                        = puVar10;
-                  puVar4 = *(undefined4 **)&this_00->field_0xc;
-                  for (iVar14 = 400; iVar11 = local_20, iVar14 != 0; iVar14 = iVar14 + -1) {
+                  puVar4 = (undefined4 *)this_00->field_000C;
+                  for (iVar15 = 400; iVar11 = local_20, iVar15 != 0; iVar15 = iVar15 + -1) {
                     *puVar10 = *puVar4;
                     puVar4 = puVar4 + 1;
                     puVar10 = puVar10 + 1;
@@ -314,17 +320,17 @@ LAB_00691a65:
           }
           pcVar5 = thunk_FUN_006a2d00(3,local_c,uVar8,1,1);
           puVar9 = Library::Ourlib::MFSTMAP::FUN_006f0cd0(param_1,pcVar5,0);
-          if (puVar9 != (ushort *)0x0) {
+          if (puVar9 != nullptr) {
             puVar4 = Library::DKW::LIB::MemAlloc(0x45);
             local_18 = local_c * 6 + iVar11 * 0x92;
             local_1c = (int *)((int)local_14 + (local_18 + local_8) * 4 + 0x1b08);
             *local_1c = (int)puVar4;
-            for (iVar14 = 0x11; iVar14 != 0; iVar14 = iVar14 + -1) {
+            for (iVar15 = 0x11; iVar15 != 0; iVar15 = iVar15 + -1) {
               *puVar4 = 0;
               puVar4 = puVar4 + 1;
             }
             *(undefined1 *)puVar4 = 0;
-            local_10 = (int *)0x0;
+            local_10 = nullptr;
             *(undefined2 *)(*local_1c + 0x23) = 0;
             *(short *)(*local_1c + 0x29) =
                  (short)(0x28 / (longlong)*(int *)(&DAT_007dfa90 + iVar11 * 4));
@@ -338,8 +344,12 @@ LAB_00691a65:
               }
               pcVar5 = thunk_FUN_006a2d00(3,local_c,uVar8,1,(uint)local_10);
               puVar9 = Library::Ourlib::MFSTMAP::FUN_006f0cd0(param_1,pcVar5,0);
-              memset(local_8c, 0, 0x50); /* compiler bulk-zero initialization */
-              if (puVar9 == (ushort *)0x0) {
+              ppvVar12 = local_8c;
+              for (iVar15 = 0x14; iVar15 != 0; iVar15 = iVar15 + -1) {
+                *ppvVar12 = nullptr;
+                ppvVar12 = ppvVar12 + 1;
+              }
+              if (puVar9 == nullptr) {
                 /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
                 psVar1 = (short *)(*(int *)((int)local_14 + (local_18 + local_8) * 4 + 0x1b08) +
                                   0x23);
@@ -357,24 +367,24 @@ LAB_00691a65:
                 else {
                   local_84 = ((byte)local_8 - 1) + (short)local_c;
                 }
-                local_8c[0] = *(undefined4 *)&this_00->field_0x140;
-                *(int *)&this_00->field_0x13c = *(int *)&this_00->field_0x13c + 1;
-                *(undefined4 **)&this_00->field_0x140 = local_8c;
+                local_8c[0] = this_00->field_0140;
+                this_00->field_013C = this_00->field_013C + 1;
+                this_00->field_0140 = local_8c;
                 ST3DSMAPContext::sub_006DDBE0(this_00);
-                *(undefined4 *)&this_00->field_0x124 = 5;
+                this_00->field_0124 = 5;
                 ST3DSMAPContext::sub_006DDD50(this_00);
                 pvVar3 = local_14;
-                *(undefined4 *)&this_00->field_0x140 = 0;
-                *(undefined4 *)&this_00->field_0x13c = 0;
+                this_00->field_0140 = nullptr;
+                this_00->field_013C = 0;
                 if (param_3 != 0) {
                   puVar4 = (undefined4 *)(0x28 / (longlong)*(int *)(&DAT_007dfa90 + iVar11 * 4));
-                  local_34 = thunk_FUN_00692920(param_2,*(undefined4 **)&this_00->field_0xc,puVar4,
+                  local_34 = thunk_FUN_00692920(param_2,(undefined4 *)this_00->field_000C,puVar4,
                                                 (int)puVar4,1);
-                  iVar14 = local_18 + local_8;
-                  FUN_006b4b20((int *)(*(int *)((int)pvVar3 + iVar14 * 4 + 0x1b08) + 0x2d +
+                  iVar15 = local_18 + local_8;
+                  FUN_006b4b20((int *)(*(int *)((int)pvVar3 + iVar15 * 4 + 0x1b08) + 0x2d +
                                       (int)local_10 * 4),local_34,0,0);
                   FreeAndNull(&local_34);
-                  psVar1 = (short *)(*(int *)((int)pvVar3 + iVar14 * 4 + 0x1b08) + 0x23);
+                  psVar1 = (short *)(*(int *)((int)pvVar3 + iVar15 * 4 + 0x1b08) + 0x23);
                   *psVar1 = *psVar1 + 1;
                 }
                 if (iVar11 == 0) {
@@ -382,8 +392,8 @@ LAB_00691a65:
                   *(undefined4 **)
                    ((int)local_14 + ((int)local_10 + (local_8 + (local_c * 3 + 0x90) * 2) * 5) * 4)
                        = puVar10;
-                  puVar4 = *(undefined4 **)&this_00->field_0xc;
-                  for (iVar14 = 400; iVar11 = local_20, iVar14 != 0; iVar14 = iVar14 + -1) {
+                  puVar4 = (undefined4 *)this_00->field_000C;
+                  for (iVar15 = 400; iVar11 = local_20, iVar15 != 0; iVar15 = iVar15 + -1) {
                     *puVar10 = *puVar4;
                     puVar4 = puVar4 + 1;
                     puVar10 = puVar10 + 1;
@@ -395,23 +405,23 @@ LAB_00691a65:
           }
         }
         else {
-          iVar14 = 0;
+          iVar15 = 0;
           do {
-            local_24 = thunk_FUN_00692390(0,0,iVar14,iVar11);
+            local_24 = thunk_FUN_00692390(0,0,iVar15,iVar11);
             iVar7 = cMf32::RecChk(param_2,7,local_24);
             if (iVar7 != 0) break;
             pcVar5 = Library::Ourlib::MFSPR::mfSSprLoad(param_2,local_24,2,1);
-            *(char **)((int)local_14 + (iVar14 + iVar11 * 0x92) * 4 + 0x1954) = pcVar5;
+            *(char **)((int)local_14 + (iVar15 + iVar11 * 0x92) * 4 + 0x1954) = pcVar5;
             thunk_FUN_00692ba0(pcVar5);
-            iVar14 = iVar14 + 1;
-          } while (iVar14 < 2);
+            iVar15 = iVar15 + 1;
+          } while (iVar15 < 2);
           pvVar3 = local_14;
-          uVar15 = 0;
-          uVar13 = 0;
+          uVar16 = 0;
+          uVar14 = 0;
           pcVar5 = thunk_FUN_00691650("STONE",iVar11);
-          wsprintfA(local_190,"%s%u%u",pcVar5,uVar13,uVar15);
-          iVar14 = cMf32::RecChk(param_2,7,local_190);
-          if (iVar14 == 0) {
+          wsprintfA(local_190,"%s%u%u",pcVar5,uVar14,uVar16);
+          iVar15 = cMf32::RecChk(param_2,7,local_190);
+          if (iVar15 == 0) {
             pcVar5 = Library::Ourlib::MFSPR::mfSSprLoad(param_2,local_190,2,1);
             *(char **)((int)pvVar3 + iVar11 * 0x248 + 0x1a74) = pcVar5;
             thunk_FUN_00692ba0(pcVar5);
@@ -423,14 +433,14 @@ LAB_00691a65:
       local_c = local_c + 1;
     } while (local_c < 6);
     if (param_3 != 0) {
-      iVar14 = 1;
-      bVar12 = 2;
+      iVar15 = 1;
+      bVar13 = 2;
       pcVar5 = thunk_FUN_00691650("CRACK",iVar11);
-      pcVar5 = Library::Ourlib::MFSPR::mfSSprLoad(param_2,pcVar5,bVar12,iVar14);
+      pcVar5 = Library::Ourlib::MFSPR::mfSSprLoad(param_2,pcVar5,bVar13,iVar15);
       *(char **)((int)pvVar3 + iVar11 * 0x248 + 0x1b04) = pcVar5;
       thunk_FUN_00692ba0(pcVar5);
     }
-    if (this_00 != (ST3DSMAPContext *)0x0) {
+    if (this_00 != nullptr) {
       ST3DSMAPContext::sub_006DBCF0(this_00);
       Library::MSVCRT::FUN_0072e2b0((HoloTy *)this_00);
     }

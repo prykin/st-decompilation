@@ -47,7 +47,7 @@ int __thiscall STMBombC::GetMessage(STMBombC *this,STMessage *message)
   short local_8;
   short local_6;
 
-  local_24 = (void *)0x0;
+  local_24 = nullptr;
   if ((this->field_0231 == 3) && (message->id != MESS_SHARED_0003)) {
     return 0;
   }
@@ -85,15 +85,15 @@ int __thiscall STMBombC::GetMessage(STMBombC *this,STMessage *message)
     local_20 = (byte *)STT3DSprC::SaveSpr((STT3DSprC *)&this_00->field_01D5,&local_10);
     local_1c = (byte *)STAllPlayersC::SaveGObjData((STAllPlayersC *)this_00,(int *)&local_18);
     local_14 = Library::DKW::LIB::MemAlloc(local_18 + 0x87 + local_10);
-    if (local_20 == (byte *)0x0) {
+    if (local_20 == nullptr) {
       g_currentExceptionFrame = local_8c.previous;
       return 0;
     }
-    if (local_1c == (byte *)0x0) {
+    if (local_1c == nullptr) {
       g_currentExceptionFrame = local_8c.previous;
       return 0;
     }
-    if (local_14 == (AnonShape_00588BC0_84BDD66C *)0x0) {
+    if (local_14 == nullptr) {
       g_currentExceptionFrame = local_8c.previous;
       return 0;
     }
@@ -231,7 +231,7 @@ int __thiscall STMBombC::GetMessage(STMBombC *this,STMessage *message)
           STT3DSprC::StartShow
                     ((STT3DSprC *)&this_00->field_01D5,0xe,g_playSystem_00802A38->field_00E4);
           if ((*(AnonShape_005EFAE0_B406B78B **)&this_00->field_0x29c ==
-               (AnonShape_005EFAE0_B406B78B *)0x0) ||
+               nullptr) ||
              (iVar6 = STPlaySystemC::sub_006E62D0
                                 (g_playSystem_00802A38,
                                  *(AnonShape_005EFAE0_B406B78B **)&this_00->field_0x29c,
@@ -327,7 +327,7 @@ int __thiscall STMBombC::GetMessage(STMBombC *this,STMessage *message)
     this_00->field_0x277 = *(undefined1 *)((int)local_48 + 0x7a);
     *(undefined4 *)&this_00->field_0x278 = *(undefined4 *)((int)local_48 + 0x7b);
     local_40 = Library::DKW::LIB::MemAlloc(0x44);
-    if (local_40 == (void *)0x0) {
+    if (local_40 == nullptr) {
       g_currentExceptionFrame = local_8c.previous;
       return 0;
     }

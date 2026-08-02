@@ -33,7 +33,7 @@ void __thiscall FSGSTy::CreateGame(FSGSTy *this,int param_1)
     }
     STDebugBreak(); /* noreturn in standalone pseudocode */
   }
-  if (g_cursorClass_00802A30 != (CursorClassTy *)0x0) {
+  if (g_cursorClass_00802A30 != nullptr) {
     iVar5 = g_cursorClass_00802A30->field_00C9;
     iVar6 = g_cursorClass_00802A30->field_00C5;
     g_cursorClass_00802A30->field_0493 = CASE_1;
@@ -46,11 +46,11 @@ void __thiscall FSGSTy::CreateGame(FSGSTy *this,int param_1)
   pFVar4 = local_8;
   if (param_1 != 0) {
     pMVar2 = local_8->field_1A5B->field_02E6;
-    if (pMVar2 == (MMsgTy *)0x0) {
+    if (pMVar2 == nullptr) {
       g_currentExceptionFrame = local_4c.previous;
       return;
     }
-    MMsgTy::SetMessage(pMVar2,0x2594,'\0',(undefined4 *)0x0,(undefined4 *)0x0,(undefined4 *)0x0,0,0);
+    MMsgTy::SetMessage(pMVar2,0x2594,'\0',nullptr,nullptr,nullptr,0,0);
     g_currentExceptionFrame = local_4c.previous;
     return;
   }
@@ -83,7 +83,7 @@ cf_common_exit_005A33FB:
   /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
   (*(code *)pFVar4->field_0000->field_0008)();
   pMVar2 = pFVar4->field_1A5B->field_02E6;
-  if (pMVar2 == (MMsgTy *)0x0) {
+  if (pMVar2 == nullptr) {
     g_currentExceptionFrame = local_4c.previous;
     return;
   }

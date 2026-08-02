@@ -21,7 +21,7 @@ DWORD FUN_006d4930(AnonShape_006D4930_676532DD *param_1,LPDWORD lpNumberOfBytesR
       return 0xffffffaf;
     }
     if ((int)lpNumberOfBytesRead + nNumberOfBytesToRead <= param_1->field_0038) {
-      if (param_3 != (undefined4 *)0x0) {
+      if (param_3 != nullptr) {
         puVar4 = (byte *)(param_1->field_0034 + (int)lpNumberOfBytesRead);
         memmove(param_3, puVar4, nNumberOfBytesToRead); /* compiler REP MOVS byte copy */
       }
@@ -29,7 +29,7 @@ DWORD FUN_006d4930(AnonShape_006D4930_676532DD *param_1,LPDWORD lpNumberOfBytesR
     }
   }
   else {
-    if (param_3 == (undefined4 *)0x0) {
+    if (param_3 == nullptr) {
       return 0;
     }
     DVar1 = SetFilePointer(param_1->field_000C,(LONG)lpNumberOfBytesRead,(PLONG)0x0,0);

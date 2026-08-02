@@ -184,7 +184,7 @@ LAB_00701caf:
   if (((byte)local_18 & 0xc0) == 0x80) {
     pbVar13 = pbVar13 + (int)local_8;
   }
-  local_24 = (byte *)0x0;
+  local_24 = nullptr;
   local_1c = (byte *)(uVar5 - iVar9);
   iVar9 = param_11;
   puVar6 = param_3;
@@ -479,7 +479,7 @@ LAB_0070201e:
           param_6 = param_6 + -1;
           puVar11 = puVar10;
           local_c = puVar7;
-        } while (param_6 != (byte *)0x0);
+        } while (param_6 != nullptr);
       }
       goto LAB_0070238b;
     }
@@ -671,7 +671,7 @@ LAB_0070238b:
     }
     local_10 = (uint)*param_13;
     local_20 = local_20 - (int)local_1c;
-    local_1c = (byte *)0x0;
+    local_1c = nullptr;
     puVar6 = local_c;
     puVar10 = puVar11;
   }

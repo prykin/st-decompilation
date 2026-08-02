@@ -23,7 +23,7 @@ int __thiscall FUN_00678ef0(void *this,byte *param_1)
           piVar5 = (int *)(*(int *)(iVar2 + 8) * uVar8 + *(int *)(iVar2 + 0x1c));
         }
         else {
-          piVar5 = (int *)0x0;
+          piVar5 = nullptr;
         }
         if ((piVar5[1] != 0) && (iVar4 = *piVar5, iVar4 != 0)) {
           pbVar9 = (byte *)(iVar4 + 0x3b);

@@ -8,7 +8,7 @@ void __thiscall FUN_0062af40(void *this,undefined4 *param_1)
 
   puVar1 = Library::DKW::LIB::MemAlloc(0xd7);
   *param_1 = 0;
-  if (puVar1 != (undefined4 *)0x0) {
+  if (puVar1 != nullptr) {
     puVar3 = puVar1;
     for (iVar2 = 0x35; iVar2 != 0; iVar2 = iVar2 + -1) {
       *puVar3 = *(undefined4 *)this;

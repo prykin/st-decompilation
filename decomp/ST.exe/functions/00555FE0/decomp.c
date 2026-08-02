@@ -23,8 +23,8 @@ byte * __thiscall TraksClassTy::PrepareToSave(TraksClassTy *this,uint *param_1)
   byte *local_c;
   byte *local_8;
 
-  local_8 = (byte *)0x0;
-  local_c = (byte *)0x0;
+  local_8 = nullptr;
+  local_c = nullptr;
   local_10 = 0;
   local_58.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_58;
@@ -51,8 +51,8 @@ byte * __thiscall TraksClassTy::PrepareToSave(TraksClassTy *this,uint *param_1)
     local_8[0x16] = 0;
     local_8[0x17] = 0;
     *(undefined4 *)(local_8 + 0x18) = local_14->field_001C;
-    local_8[0x1c] = local_c != (byte *)0x0;
-    if (local_c != (byte *)0x0) {
+    local_8[0x1c] = local_c != nullptr;
+    if (local_c != nullptr) {
       pbVar3 = local_c;
       pbVar6 = local_8 + 0x5c;
       memmove(pbVar6, pbVar3, uVar5); /* compiler REP MOVS byte copy */
@@ -62,10 +62,10 @@ byte * __thiscall TraksClassTy::PrepareToSave(TraksClassTy *this,uint *param_1)
     return local_8;
   }
   g_currentExceptionFrame = local_58.previous;
-  if (local_8 != (byte *)0x0) {
+  if (local_8 != nullptr) {
     FreeAndNull(&local_8);
   }
-  if (local_c != (byte *)0x0) {
+  if (local_c != nullptr) {
     FreeAndNull(&local_c);
   }
   iVar2 = ReportDebugMessage("E:\\__titans\\grig\\traks.cpp",0xed,0,errorCode,"%s",
@@ -74,6 +74,6 @@ byte * __thiscall TraksClassTy::PrepareToSave(TraksClassTy *this,uint *param_1)
     STDebugBreak(); /* noreturn in standalone pseudocode */
   }
   RaiseInternalException(errorCode,0,"E:\\__titans\\grig\\traks.cpp",0xee);
-  return (byte *)0x0;
+  return nullptr;
 }
 

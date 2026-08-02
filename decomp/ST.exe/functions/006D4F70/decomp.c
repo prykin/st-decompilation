@@ -9,8 +9,8 @@ int FUN_006d4f70(undefined4 *param_1,undefined4 param_2,undefined4 param_3)
 
   local_8 = 0;
   this = (void *)Library::MSVCRT::FUN_0072e530(0xa8);
-  if (this == (void *)0x0) {
-    puVar1 = (undefined4 *)0x0;
+  if (this == nullptr) {
+    puVar1 = nullptr;
   }
   else {
     puVar1 = FUN_006d70b0(this,0,0,&local_8,param_3);

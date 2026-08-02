@@ -62,7 +62,7 @@ int __thiscall TLOEmbryoTy::Create(TLOEmbryoTy *this,RecoveredRecord_TLOEmbryoTy
   int local_c;
   TLOEmbryoTy *local_8;
 
-  puVar14 = (byte *)0x0;
+  puVar14 = nullptr;
   local_c = 0;
   local_cc.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_cc;
@@ -79,7 +79,7 @@ int __thiscall TLOEmbryoTy::Create(TLOEmbryoTy *this,RecoveredRecord_TLOEmbryoTy
     }
     STDebugBreak(); /* noreturn in standalone pseudocode */
   }
-  if (local_3c != (TLOEmbryoTy *)0x0) {
+  if (local_3c != nullptr) {
     puVar14 = (byte *)&local_3c->field_0x231;
   }
   pRVar11 = param_1;
@@ -138,14 +138,14 @@ int __thiscall TLOEmbryoTy::Create(TLOEmbryoTy *this,RecoveredRecord_TLOEmbryoTy
           sVar1 = this_00->field_0265;
           if (((((sVar16 < 0) || (g_worldGrid.sizeX <= sVar16)) || (sVar17 < 0)) ||
               ((g_worldGrid.sizeY <= sVar17 || (sVar1 < 0)))) || (g_worldGrid.sizeZ <= sVar1)) {
-            this_01 = (STWorldObject *)0x0;
+            this_01 = nullptr;
           }
           else {
             this_01 = g_worldGrid.cells
                       [(int)sVar17 * (int)g_worldGrid.sizeX +
                        (int)sVar1 * (int)g_worldGrid.planeStride + (int)sVar16].objects[1];
           }
-          if ((this_01 != (STWorldObject *)0x0) && (this_01->value_20 == 0xbe)) {
+          if ((this_01 != nullptr) && (this_01->value_20 == 0xbe)) {
             thunk_FUN_00630110(this_01,(char)this_00->field_0024);
           }
           iVar12 = iVar12 + 1;
@@ -154,7 +154,7 @@ int __thiscall TLOEmbryoTy::Create(TLOEmbryoTy *this,RecoveredRecord_TLOEmbryoTy
       iVar3 = iVar3 + 1;
     } while (iVar3 < this_00->field_0261 + local_c);
   }
-  puVar14 = (byte *)0x0;
+  puVar14 = nullptr;
   if (this_00->field_002C == 0) {
     this_00->field_02F8 = 0xb4;
     this_00->field_02FC = 0x8c;
@@ -170,15 +170,15 @@ int __thiscall TLOEmbryoTy::Create(TLOEmbryoTy *this,RecoveredRecord_TLOEmbryoTy
   if (this_00->field_0259 == 0x5c) {
     *(undefined4 *)&g_packedRecords_A62x8[this_00->field_0024].field_0x9ca = 1;
   }
-  if (g_array_007FA170 == (DArrayTy *)0x0) {
-    g_array_007FA170 = Library::DKW::TBL::DArrayCreate((DArrayTy *)0x0,10,4,10);
+  if (g_array_007FA170 == nullptr) {
+    g_array_007FA170 = Library::DKW::TBL::DArrayCreate(nullptr,10,4,10);
   }
   local_2c = this_00;
   Library::DKW::TBL::DArrayAppend(g_array_007FA170,&local_2c);
   iVar3 = this_00->field_0259;
   if (iVar3 == 100) {
     if (*(int *)&g_packedRecords_A62x8[this_00->field_0024].field_0x9d6 == 0) {
-      pDVar4 = Library::DKW::TBL::DArrayCreate((DArrayTy *)0x0,10,4,10);
+      pDVar4 = Library::DKW::TBL::DArrayCreate(nullptr,10,4,10);
       *(DArrayTy **)&g_packedRecords_A62x8[this_00->field_0024].field_0x9d6 = pDVar4;
     }
     element = &local_8;
@@ -190,7 +190,7 @@ cf_common_join_004D1763:
   else {
     if (iVar3 == 0x4d) {
       if (*(int *)&g_packedRecords_A62x8[this_00->field_0024].field_0x9e2 == 0) {
-        pDVar4 = Library::DKW::TBL::DArrayCreate((DArrayTy *)0x0,10,4,10);
+        pDVar4 = Library::DKW::TBL::DArrayCreate(nullptr,10,4,10);
         *(DArrayTy **)&g_packedRecords_A62x8[this_00->field_0024].field_0x9e2 = pDVar4;
       }
       element = &local_40;
@@ -200,7 +200,7 @@ cf_common_join_004D1763:
     }
     if (iVar3 == 0x43) {
       if (*(int *)&g_packedRecords_A62x8[this_00->field_0024].field_0x9ee == 0) {
-        pDVar4 = Library::DKW::TBL::DArrayCreate((DArrayTy *)0x0,10,4,10);
+        pDVar4 = Library::DKW::TBL::DArrayCreate(nullptr,10,4,10);
         *(DArrayTy **)&g_packedRecords_A62x8[this_00->field_0024].field_0x9ee = pDVar4;
       }
       element = &local_44;
@@ -210,7 +210,7 @@ cf_common_join_004D1763:
     }
     if (iVar3 == 0x73) {
       if (*(int *)&g_packedRecords_A62x8[this_00->field_0024].field_0x9f2 == 0) {
-        pDVar4 = Library::DKW::TBL::DArrayCreate((DArrayTy *)0x0,10,4,10);
+        pDVar4 = Library::DKW::TBL::DArrayCreate(nullptr,10,4,10);
         *(DArrayTy **)&g_packedRecords_A62x8[this_00->field_0024].field_0x9f2 = pDVar4;
       }
       element = &local_30;
@@ -219,8 +219,8 @@ cf_common_join_004D1763:
       goto cf_common_join_004D1763;
     }
     if (iVar3 == 0x3a) {
-      if (g_array_007FA16C == (DArrayTy *)0x0) {
-        g_array_007FA16C = Library::DKW::TBL::DArrayCreate((DArrayTy *)0x0,10,4,10);
+      if (g_array_007FA16C == nullptr) {
+        g_array_007FA16C = Library::DKW::TBL::DArrayCreate(nullptr,10,4,10);
       }
       element = &local_48;
       local_48 = this_00;
@@ -229,7 +229,7 @@ cf_common_join_004D1763:
     }
     if (iVar3 == 0x65) {
       if (*(int *)&g_packedRecords_A62x8[this_00->field_0024].field_0x9e6 == 0) {
-        pDVar4 = Library::DKW::TBL::DArrayCreate((DArrayTy *)0x0,10,4,10);
+        pDVar4 = Library::DKW::TBL::DArrayCreate(nullptr,10,4,10);
         *(DArrayTy **)&g_packedRecords_A62x8[this_00->field_0024].field_0x9e6 = pDVar4;
       }
       element = &local_34;
@@ -239,7 +239,7 @@ cf_common_join_004D1763:
     }
     if (iVar3 == 0x3b) {
       if (*(int *)&g_packedRecords_A62x8[this_00->field_0024].field_0x9ea == 0) {
-        pDVar4 = Library::DKW::TBL::DArrayCreate((DArrayTy *)0x0,10,4,10);
+        pDVar4 = Library::DKW::TBL::DArrayCreate(nullptr,10,4,10);
         *(DArrayTy **)&g_packedRecords_A62x8[this_00->field_0024].field_0x9ea = pDVar4;
       }
       element = &local_38;
@@ -250,7 +250,7 @@ cf_common_join_004D1763:
   }
   if (this_00->field_023D != 1) {
     if (this_00->field_023D == 2) {
-      if (this_00 != (TLOEmbryoTy *)0x0) {
+      if (this_00 != nullptr) {
         puVar14 = (byte *)(&this_00->field_02A0);
       }
       puVar13 = (byte *)&param_1->field_0x6f;
@@ -281,15 +281,15 @@ cf_common_join_004D1763:
                 ((STT3DSprC *)&this_00->field_01D5,(int *)&local_28,
                  (AnonShape_004AD790_77673787 *)(&param_1->field_0x0 + param_1->field_012B));
       pAVar5 = (AnonShape_004AB810_8E5693D5 *)Library::MSVCRT::FUN_0072e530(0x40);
-      if (pAVar5 == (AnonShape_004AB810_8E5693D5 *)0x0) {
-        pSVar6 = (STT3DSprC *)0x0;
+      if (pAVar5 == nullptr) {
+        pSVar6 = nullptr;
       }
       else {
         pSVar6 = (STT3DSprC *)thunk_FUN_004ab810(pAVar5);
       }
       this_00->field_035C = pSVar6;
       iVar3 = STT3DSprC::Init(pSVar6,DAT_008073cc,this_00->field_0300,this_00->field_0304,
-                              (STDcResourcC *)0x0,this_00->field_02F8,this_00->field_02FC,0x11);
+                              nullptr,this_00->field_02F8,this_00->field_02FC,0x11);
       if (iVar3 != 0) {
         RaiseInternalException
                   (iVar3,g_overwriteContext_007ED77C,"E:\\__titans\\Artem\\TLO_embryo.cpp",
@@ -322,15 +322,15 @@ cf_common_join_004D1763:
         ppSVar15 = &this_00->field_0350;
         do {
           pAVar5 = (AnonShape_004AB810_8E5693D5 *)Library::MSVCRT::FUN_0072e530(0x40);
-          if (pAVar5 == (AnonShape_004AB810_8E5693D5 *)0x0) {
-            pSVar6 = (STT3DSprC *)0x0;
+          if (pAVar5 == nullptr) {
+            pSVar6 = nullptr;
           }
           else {
             pSVar6 = (STT3DSprC *)thunk_FUN_004ab810(pAVar5);
           }
           *ppSVar15 = pSVar6;
           iVar3 = STT3DSprC::Init(pSVar6,DAT_008073cc,this_00->field_0300,this_00->field_0304,
-                                  (STDcResourcC *)0x0,this_00->field_02F8,this_00->field_02FC,0x11);
+                                  nullptr,this_00->field_02F8,this_00->field_02FC,0x11);
           if (iVar3 != 0) {
             RaiseInternalException
                       (iVar3,g_overwriteContext_007ED77C,"E:\\__titans\\Artem\\TLO_embryo.cpp"
@@ -370,15 +370,15 @@ cf_common_join_004D1763:
   this_00->field_02B0 = uVar7;
   this_00->field_02A4 = 0;
   pAVar5 = (AnonShape_004AB810_8E5693D5 *)Library::MSVCRT::FUN_0072e530(0x40);
-  if (pAVar5 == (AnonShape_004AB810_8E5693D5 *)0x0) {
-    pSVar6 = (STT3DSprC *)0x0;
+  if (pAVar5 == nullptr) {
+    pSVar6 = nullptr;
   }
   else {
     pSVar6 = (STT3DSprC *)thunk_FUN_004ab810(pAVar5);
   }
   this_00->field_035C = pSVar6;
   iVar3 = STT3DSprC::Init(pSVar6,DAT_008073cc,this_00->field_0300,this_00->field_0304,
-                          (STDcResourcC *)0x0,this_00->field_02F8,this_00->field_02FC,0x11);
+                          nullptr,this_00->field_02F8,this_00->field_02FC,0x11);
   if (iVar3 != 0) {
     RaiseInternalException
               (iVar3,g_overwriteContext_007ED77C,"E:\\__titans\\Artem\\TLO_embryo.cpp",200);
@@ -462,15 +462,15 @@ LAB_004d204d:
     ppSVar15 = &this_00->field_0350;
     do {
       pAVar5 = (AnonShape_004AB810_8E5693D5 *)Library::MSVCRT::FUN_0072e530(0x40);
-      if (pAVar5 == (AnonShape_004AB810_8E5693D5 *)0x0) {
-        pSVar6 = (STT3DSprC *)0x0;
+      if (pAVar5 == nullptr) {
+        pSVar6 = nullptr;
       }
       else {
         pSVar6 = (STT3DSprC *)thunk_FUN_004ab810(pAVar5);
       }
       *ppSVar15 = pSVar6;
       iVar3 = STT3DSprC::Init(pSVar6,DAT_008073cc,this_00->field_0300,this_00->field_0304,
-                              (STDcResourcC *)0x0,this_00->field_02F8,this_00->field_02FC,0x11);
+                              nullptr,this_00->field_02F8,this_00->field_02FC,0x11);
       if (iVar3 != 0) {
         RaiseInternalException
                   (iVar3,g_overwriteContext_007ED77C,"E:\\__titans\\Artem\\TLO_embryo.cpp",

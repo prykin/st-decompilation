@@ -171,7 +171,7 @@ void __thiscall HelpPanelTy::CreateList(HelpPanelTy *this)
     local_60 = 1;
     local_5c = 1;
     (*this_00->field_000C->vtable->CreateObject)
-              ((SystemClassTy *)this_00->field_000C,7,&this_00->field_019C,(int *)0x0,local_520,0);
+              ((SystemClassTy *)this_00->field_000C,7,&this_00->field_019C,nullptr,local_520,0);
     iVar3 = this_00->field_019C;
     if (iVar3 != 0) {
       this_00->field_0028 = 0x20;

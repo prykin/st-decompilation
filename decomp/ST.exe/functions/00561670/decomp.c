@@ -36,11 +36,11 @@ undefined4 * __cdecl FUN_00561670(int param_1,int param_2,int param_3,int *param
 
   local_2c = 0;
   if (param_5 < 1) {
-    return (undefined4 *)0x0;
+    return nullptr;
   }
   puVar5 = Library::DKW::LIB::FUN_006aac10(param_2 * param_3 * 2);
-  if (puVar5 == (undefined4 *)0x0) {
-    return (undefined4 *)0x0;
+  if (puVar5 == nullptr) {
+    return nullptr;
   }
   if (0 < param_3) {
     local_28 = param_3;
@@ -67,7 +67,7 @@ undefined4 * __cdecl FUN_00561670(int param_1,int param_2,int param_3,int *param
   }
   local_18 = iVar9;
   local_24 = (int *)FUN_006bfb70(iVar9 << 4);
-  if (local_24 == (int *)0x0) {
+  if (local_24 == nullptr) {
 LAB_00561bff:
     local_2c = -2;
   }
@@ -117,7 +117,7 @@ LAB_00561bff:
           local_18 = local_18 + 0x80;
           uVar7 = local_28 + 0x400;
           piVar8 = (int *)FUN_006bfb50(local_24,local_34);
-          if (piVar8 == (int *)0x0) goto LAB_00561bff;
+          if (piVar8 == nullptr) goto LAB_00561bff;
           local_1c = piVar8 + ((int)local_1c - (int)local_24 >> 3) * 2;
           local_14 = piVar8 + ((int)local_14 - (int)local_24 >> 3) * 2;
           if (local_1c == piVar8) {
@@ -265,6 +265,6 @@ LAB_00561bff:
   }
   RaiseInternalException
             (local_2c,g_overwriteContext_007ED77C,"E:\\__titans\\scoreai.cpp",600);
-  return (undefined4 *)0x0;
+  return nullptr;
 }
 

@@ -26,7 +26,7 @@ void __thiscall FSGSTy::Finished(FSGSTy *this,int param_1)
   undefined4 local_28 [8];
   FSGSTy *local_8;
 
-  if (((this->field_1A5F == CASE_1) && (this->field_1AC0 != (ushort *)0x0)) &&
+  if (((this->field_1A5F == CASE_1) && (this->field_1AC0 != nullptr)) &&
      (-1 < (int)this->field_1ABC)) {
     local_6c.previous = g_currentExceptionFrame;
     g_currentExceptionFrame = &local_6c;
@@ -34,7 +34,7 @@ void __thiscall FSGSTy::Finished(FSGSTy *this,int param_1)
     iVar5 = Library::MSVCRT::__setjmp3(local_6c.jumpBuffer,0);
     this_01 = g_cursorClass_00802A30;
     if (iVar5 == 0) {
-      if (g_cursorClass_00802A30 != (CursorClassTy *)0x0) {
+      if (g_cursorClass_00802A30 != nullptr) {
         iVar5 = g_cursorClass_00802A30->field_00C9;
         iVar9 = g_cursorClass_00802A30->field_00C5;
         g_cursorClass_00802A30->field_0493 = CASE_1;
@@ -83,8 +83,8 @@ void __thiscall FSGSTy::Finished(FSGSTy *this,int param_1)
       local_28[3] = 2;
       local_28[4] = 0x6956;
       this_00 = pSVar2->field_02E6;
-      if (this_00 != (MMsgTy *)0x0) {
-        MMsgTy::SetMessage(this_00,0x25bc,'\0',local_28,(undefined4 *)0x0,(undefined4 *)0x0,0,0);
+      if (this_00 != nullptr) {
+        MMsgTy::SetMessage(this_00,0x25bc,'\0',local_28,nullptr,nullptr,0,0);
         g_currentExceptionFrame = local_6c.previous;
         return;
       }

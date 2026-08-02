@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* [STSwitchEnumApplier] Switch target param_3 uses
    /SubmarineTitans/Recovered/Enums/Global_sub_0065E450_param_3Enum. Cases:
@@ -45,7 +47,7 @@ FUN_0065e450(AnonShape_0065E360_B94C37CB *param_1,undefined4 param_2,
     iVar3 = 0x72;
   }
   array = (DArrayTy *)AiFltClassTy::sub_0065E360((AiFltClassTy *)param_1,param_2,iVar3);
-  if (array == (DArrayTy *)0x0) {
+  if (array == nullptr) {
     return 0;
   }
   GVar4 = array->count;
@@ -58,7 +60,7 @@ FUN_0065e450(AnonShape_0065E360_B94C37CB *param_1,undefined4 param_2,
         puVar5 = (ushort *)(array->elementSize * param_3 + (int)array->data);
       }
       else {
-        puVar5 = (ushort *)0x0;
+        puVar5 = nullptr;
       }
       this = STAllPlayersC::GetObjPtr(g_allPlayers_007FA174,param_1->field_0024,*puVar5,CASE_1);
       switch(GVar2) {
@@ -66,7 +68,7 @@ FUN_0065e450(AnonShape_0065E360_B94C37CB *param_1,undefined4 param_2,
       case 5:
       case 0x1b:
                     /* WARNING: This code block may not be properly labeled as switch case */
-        uVar8 = thunk_FUN_004c5350(this,0,(int *)0x0,param_4,param_5,0,0,0);
+        uVar8 = thunk_FUN_004c5350(this,0,nullptr,param_4,param_5,0,0,0);
         local_8 = local_8 + (uint)(uVar8 != 0);
         break;
       case 0xf:

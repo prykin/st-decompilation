@@ -12,10 +12,10 @@ STBHEShellC * __cdecl CreateSTBHEShell(void)
   STBHEShellC *pSVar1;
 
   pSVar1 = (STBHEShellC *)FUN_006b04d0(0x175);
-  if (pSVar1 != (STBHEShellC *)0x0) {
+  if (pSVar1 != nullptr) {
     pSVar1 = STBHEShellC::STBHEShellC(pSVar1);
     return pSVar1;
   }
-  return (STBHEShellC *)0x0;
+  return nullptr;
 }
 

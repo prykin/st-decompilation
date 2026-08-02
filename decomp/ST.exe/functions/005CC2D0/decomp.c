@@ -33,24 +33,24 @@ void __thiscall SettMapMTy::DoneSettMap(SettMapMTy *this)
     RaiseInternalException(errorCode,0,"E:\\__titans\\Start\\settmobj.cpp",0x65);
     return;
   }
-  if (local_8->field_2204 != (AnonPointee_SettMapMTy_2204 *)0x0) {
+  if (local_8->field_2204 != nullptr) {
     FreeAndNull(&local_8->field_2204);
   }
   FUN_006b3bb0((int *)g_ddxContext_008075A8,this_00->field_2200);
   pSVar4 = this_00->field_2237;
   this_00->field_2200 = 0xffffffff;
-  if (pSVar4 != (SettMapMTy_field_2237DArray *)0x0) {
+  if (pSVar4 != nullptr) {
     uVar5 = 0;
     if (pSVar4->count != 0) {
       if (pSVar4->count == 0) {
-        piVar2 = (int *)0x0;
+        piVar2 = nullptr;
         goto LAB_005cc360;
       }
       do {
         /* ST_PSEUDO[dynamic_array_indexing]: expected DArrayAt<T>(array, index) (runtime elementSize cannot be a static C array) */
         piVar2 = (int *)((int)&pSVar4->data->field_0000 + pSVar4->elementSize * uVar5);
 LAB_005cc360:
-        if ((piVar2 != (int *)0x0) && (piVar2[2] != 0)) {
+        if ((piVar2 != nullptr) && (piVar2[2] != 0)) {
           FreeAndNull((void **)(piVar2 + 2));
         }
         pSVar4 = this_00->field_2237;
@@ -58,7 +58,7 @@ LAB_005cc360:
       } while (uVar5 < pSVar4->count);
     }
     DArrayDestroy((DArrayTy *)this_00->field_2237);
-    this_00->field_2237 = (SettMapMTy_field_2237DArray *)0x0;
+    this_00->field_2237 = nullptr;
   }
   SettMapTy::DoneSettMap((SettMapTy *)this_00);
   g_currentExceptionFrame = local_4c.previous;

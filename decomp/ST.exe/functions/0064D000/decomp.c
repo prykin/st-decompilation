@@ -24,8 +24,8 @@ undefined4 * __thiscall AiEventClassTy::PrepareToSave(AiEventClassTy *this,uint 
   errorCode = Library::MSVCRT::__setjmp3(local_4c.jumpBuffer,0);
   pAVar2 = local_8;
   if (errorCode == 0) {
-    if (local_8 == (AiEventClassTy *)0x0) {
-      pAVar3 = (AnonShape_0065CD10_BA40DE58 *)0x0;
+    if (local_8 == nullptr) {
+      pAVar3 = nullptr;
     }
     else {
       pAVar3 = (AnonShape_0065CD10_BA40DE58 *)&local_8->field_008C;
@@ -43,6 +43,6 @@ undefined4 * __thiscall AiEventClassTy::PrepareToSave(AiEventClassTy *this,uint 
     STDebugBreak(); /* noreturn in standalone pseudocode */
   }
   RaiseInternalException(errorCode,0,"E:\\__titans\\ai\\ai_event.cpp",0x67);
-  return (undefined4 *)0x0;
+  return nullptr;
 }
 

@@ -39,35 +39,35 @@ int __thiscall CPanelTy::sub_004FAB10(CPanelTy *this,CPanelTy_sub_004FAB10_param
   case CASE_F:
     return (uint)(this->field_023F == CASE_1);
   case CASE_6:
-    if (g_prodPanel_008016E8 != (ProdPanelTy *)0x0) {
+    if (g_prodPanel_008016E8 != nullptr) {
       return (uint)(g_prodPanel_008016E8->field_0172 != 2);
     }
   case CASE_7:
-    if (g_prodPanel_0080167C != (ProdPanelTy *)0x0) {
+    if (g_prodPanel_0080167C != nullptr) {
       return (uint)(g_prodPanel_0080167C->field_0172 != 2);
     }
   case CASE_8:
-    if (g_prodPanel_00801684 != (ProdPanelTy *)0x0) {
+    if (g_prodPanel_00801684 != nullptr) {
       return (uint)(g_prodPanel_00801684->field_0172 != 2);
     }
   case CASE_9:
-    if (g_infocPanel_00801698 != (InfocPanelTy *)0x0) {
+    if (g_infocPanel_00801698 != nullptr) {
       return (uint)(g_infocPanel_00801698->field_0172 != 2);
     }
   case CASE_A:
-    if (g_tradePanel_00802A44 != (TradePanelTy *)0x0) {
+    if (g_tradePanel_00802A44 != nullptr) {
       return (uint)(g_tradePanel_00802A44->field_0172 != 2);
     }
   case CASE_B:
-    if (g_behPanel_00801678 != (BehPanelTy *)0x0) {
+    if (g_behPanel_00801678 != nullptr) {
       return (uint)(g_behPanel_00801678->field_0172 != 2);
     }
   case CASE_C:
-    if (g_prodPanel_00801680 != (ProdPanelTy *)0x0) {
+    if (g_prodPanel_00801680 != nullptr) {
       return (uint)(g_prodPanel_00801680->field_0172 != 2);
     }
   case CASE_10:
-    if (g_upgPanel_00802A48 != (UpgPanelTy *)0x0) {
+    if (g_upgPanel_00802A48 != nullptr) {
       return (uint)(g_upgPanel_00802A48->field_0172 != 2);
     }
     break;
@@ -78,11 +78,11 @@ int __thiscall CPanelTy::sub_004FAB10(CPanelTy *this,CPanelTy_sub_004FAB10_param
   case CASE_12:
     goto switchD_004fab25_caseD_12;
   }
-  if (g_frmPanel_0080168C != (FrmPanelTy *)0x0) {
+  if (g_frmPanel_0080168C != nullptr) {
     return (uint)(g_frmPanel_0080168C->field_0172 != 2);
   }
 switchD_004fab25_caseD_12:
-  if (g_sAMPanel_008016EC == (SAMPanelTy *)0x0) {
+  if (g_sAMPanel_008016EC == nullptr) {
     return 0;
   }
   return (uint)(g_sAMPanel_008016EC->field_0172 != 2);

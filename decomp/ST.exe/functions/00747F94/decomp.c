@@ -11,7 +11,7 @@ int * FUN_00747f94(LPCRITICAL_SECTION lpCriticalSection,int *param_2,int param_3
   int *piVar2;
 
   /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
-  if ((param_2 == (int *)0x0) || (param_3 == 0)) {
+  if ((param_2 == nullptr) || (param_3 == 0)) {
     /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
     param_2 = (int *)0x80004003;
   }
@@ -32,7 +32,7 @@ int * FUN_00747f94(LPCRITICAL_SECTION lpCriticalSection,int *param_2,int param_3
         else {
           /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
           piVar2 = (int *)(**(code **)((int)*ppvVar1 + 0x20))(param_3);
-          if (piVar2 == (int *)0x0) {
+          if (piVar2 == nullptr) {
             lpCriticalSection->OwningThread = param_2;
             /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
             (**(code **)(*param_2 + 4))(param_2);
@@ -51,7 +51,7 @@ int * FUN_00747f94(LPCRITICAL_SECTION lpCriticalSection,int *param_2,int param_3
               return piVar2;
             }
             LeaveCriticalSection(lpCriticalSection_00);
-            return (int *)0x0;
+            return nullptr;
           }
           /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
           (**(code **)((int)*ppvVar1 + 0x2c))();

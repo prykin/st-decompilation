@@ -207,7 +207,7 @@ cLoadingTy::SetState
       g_currentExceptionFrame = local_50.previous;
       return;
     }
-    if ((code *)pcVar10->field_0058 != (code *)0x0) {
+    if ((code *)pcVar10->field_0058 != nullptr) {
       /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
       (*(code *)pcVar10->field_0058)(pcVar10->field_0054);
       g_currentExceptionFrame = local_50.previous;
@@ -296,7 +296,7 @@ cLoadingTy::SetState
     pcVar13 = (char *)((int)puVar12 + -1);
     memmove(pcVar13, pcVar5, uVar8); /* compiler REP MOVS byte copy */
 joined_r0x00555393:
-    if (param_3 != (char *)0x0) {
+    if (param_3 != nullptr) {
       uVar8 = 0xffffffff;
       do {
         pcVar5 = param_3;
@@ -325,7 +325,7 @@ joined_r0x00555393:
     g_currentExceptionFrame = local_50.previous;
     return;
   default:
-    if ((code *)local_8->field_0058 != (code *)0x0) {
+    if ((code *)local_8->field_0058 != nullptr) {
       /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
       (*(code *)local_8->field_0058)(local_8->field_0054);
     }

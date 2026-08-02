@@ -78,16 +78,16 @@ CGenerate::FUN_006952b0(CGenerate *this,AnonShape_006952B0_7A982E30 *param_1,byt
     local_8 = Library::DKW::LIB::MemAlloc(local_28 * 4);
     memset(&stack0xffffff70, 0, 0x20); /* compiler bulk-zero initialization */
     iVar2 = 0;
-    local_54 = Library::DKW::TBL::DArrayCreate((DArrayTy *)0x0,10,0x40,10);
-    local_78 = Library::DKW::TBL::DArrayCreate((DArrayTy *)0x0,10,0x40,10);
-    local_50 = Library::DKW::TBL::DArrayCreate((DArrayTy *)0x0,local_1c,0xf,10);
-    local_74 = Library::DKW::TBL::DArrayCreate((DArrayTy *)0x0,local_1c,0xf,10);
+    local_54 = Library::DKW::TBL::DArrayCreate(nullptr,10,0x40,10);
+    local_78 = Library::DKW::TBL::DArrayCreate(nullptr,10,0x40,10);
+    local_50 = Library::DKW::TBL::DArrayCreate(nullptr,local_1c,0xf,10);
+    local_74 = Library::DKW::TBL::DArrayCreate(nullptr,local_1c,0xf,10);
     local_14 = 0x32;
     while ((0 < local_10 || (local_3c < local_14 + local_48))) {
       local_54->count = 0;
       local_50->count = 0;
       memset(&local_6c, 0, 0x18); /* compiler bulk-zero initialization */
-      if ((this->field_0008 == (int *)0x0) && (this->field_000C == (byte *)0x0)) {
+      if ((this->field_0008 == nullptr) && (this->field_000C == nullptr)) {
         sub_006A0150(this);
       }
       CteateField(this,*this->field_0008 + -2,this->field_0008[1] + -2,local_34,local_30,local_38,0);
@@ -178,7 +178,7 @@ CGenerate::FUN_006952b0(CGenerate *this,AnonShape_006952B0_7A982E30 *param_1,byt
       thunk_FUN_0069f160(this,iVar2 * 2,iVar1 * 2,local_34,(iVar2 * iVar1 * 4) / 100);
       local_40 = SaveMap(this);
       sub_0069FF90(this);
-      if (DAT_00853dd4 != (undefined4 *)0x0) {
+      if (DAT_00853dd4 != nullptr) {
         FreeAndNull(&DAT_00853dd4);
       }
       local_d4.previous = g_currentExceptionFrame;
@@ -186,11 +186,11 @@ CGenerate::FUN_006952b0(CGenerate *this,AnonShape_006952B0_7A982E30 *param_1,byt
       iVar2 = Library::MSVCRT::__setjmp3(local_d4.jumpBuffer,0);
       this_00 = local_4c;
       if (iVar2 == 0) {
-        if (param_2 != (byte *)0x0) {
+        if (param_2 != nullptr) {
           cMf32::RecPut(local_4c->field_0018,0xc,PTR_s_GENERATE_RND_0079d774,(byte *)param_1,0x232,
-                        (undefined4 *)0x0,'\0',(uint *)0x0);
+                        nullptr,'\0',nullptr);
           cMf32::RecPut(this_00->field_0018,0xc,PTR_s_INTERFACE_RND_0079d778,param_2,0xd,
-                        (undefined4 *)0x0,'\0',(uint *)0x0);
+                        nullptr,'\0',nullptr);
           sub_0069FF90(this_00);
         }
         g_currentExceptionFrame = local_d4.previous;
@@ -202,7 +202,7 @@ CGenerate::FUN_006952b0(CGenerate *this,AnonShape_006952B0_7A982E30 *param_1,byt
     else {
       local_40 = 0;
     }
-    if (local_8 != (void *)0x0) {
+    if (local_8 != nullptr) {
       FreeAndNull(&local_8);
     }
     DArrayDestroy(local_54);

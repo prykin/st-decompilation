@@ -14,7 +14,7 @@ int FUN_00411cf0(char *param_1,int param_2)
   pcVar6 = param_1;
   iVar3 = 0;
   iVar5 = param_2 * -2 + 3;
-  pcVar1 = (char *)0x0;
+  pcVar1 = nullptr;
   pcVar7 = param_1;
   do {
     iVar2 = param_2;
@@ -51,7 +51,7 @@ int FUN_00411cf0(char *param_1,int param_2)
       pcVar7 = pcVar7 + -4;
       pcVar4 = pcVar4 + -1;
       pcVar8 = pcVar8 + 4;
-    } while (pcVar4 != (char *)0x0);
+    } while (pcVar4 != nullptr);
   }
   pcVar7 = pcVar1;
   if (0 < (int)pcVar1) {
@@ -67,7 +67,7 @@ int FUN_00411cf0(char *param_1,int param_2)
       /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
       param_1 = param_1 + -1;
       pcVar8 = pcVar8 + 4;
-    } while (param_1 != (char *)0x0);
+    } while (param_1 != nullptr);
   }
   if (0 < (int)pcVar1) {
     iVar5 = (int)pcVar7 * 4;
@@ -83,7 +83,7 @@ int FUN_00411cf0(char *param_1,int param_2)
       /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
       param_1 = param_1 + -1;
       pcVar4 = pcVar4 + 4;
-    } while (param_1 != (char *)0x0);
+    } while (param_1 != nullptr);
     if (0 < (int)pcVar1) {
       iVar5 = (int)pcVar7 * 4;
       pcVar7 = pcVar7 + (int)pcVar1;
@@ -94,7 +94,7 @@ int FUN_00411cf0(char *param_1,int param_2)
         pcVar6 = pcVar6 + 4;
         pcVar1 = pcVar1 + -1;
         pcVar4 = pcVar4 + 4;
-      } while (pcVar1 != (char *)0x0);
+      } while (pcVar1 != nullptr);
     }
   }
   return (int)pcVar7;

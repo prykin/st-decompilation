@@ -27,8 +27,8 @@ void __thiscall HoloTy::OutHoloProc(HoloTy *this,uint param_1)
   /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
   local_8 = in_stack_00000020;
   /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
-  if (((in_stack_00000020 != (AnonShape_005AA6A0_963F03BF *)0x0) &&
-      (in_stack_00000020->field_0007 != (BITMAPINFO *)0x0)) && (in_stack_00000020->field_000B != 0))
+  if (((in_stack_00000020 != nullptr) &&
+      (in_stack_00000020->field_0007 != nullptr)) && (in_stack_00000020->field_000B != 0))
   {
     local_50.previous = g_currentExceptionFrame;
     g_currentExceptionFrame = &local_50;
@@ -66,7 +66,7 @@ void __thiscall HoloTy::OutHoloProc(HoloTy *this,uint param_1)
               goto switchD_005aa738_default;
             }
             Library::DKW::DDX::FUN_006b42d0
-                      ((DDXContext *)param_1,iVar4,iVar3,pBVar7,(uint *)0x0,iVar8,iVar5,DVar9,DVar10
+                      ((DDXContext *)param_1,iVar4,iVar3,pBVar7,nullptr,iVar8,iVar5,DVar9,DVar10
                       );
           }
 switchD_005aa738_default:

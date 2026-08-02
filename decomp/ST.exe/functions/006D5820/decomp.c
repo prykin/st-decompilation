@@ -16,19 +16,19 @@ int FUN_006d5820(AnonShape_006D5820_330472AB *param_1,undefined4 *param_2)
     return iVar2;
   }
   if (iVar2 == -0x294) {
-    piVar3 = (int *)0x0;
+    piVar3 = nullptr;
   }
   else {
     piVar3 = (int *)(iVar2 + 0x2a0);
   }
   piVar1 = (int *)param_1->field_0004;
   if (piVar1 != piVar3) {
-    if (piVar1 != (int *)0x0) {
+    if (piVar1 != nullptr) {
       /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
       (**(code **)(*piVar1 + 8))(piVar1);
     }
     if (param_1->field_0048 == -0x294) {
-      piVar3 = (int *)0x0;
+      piVar3 = nullptr;
     }
     else {
       piVar3 = (int *)(param_1->field_0048 + 0x2a0);

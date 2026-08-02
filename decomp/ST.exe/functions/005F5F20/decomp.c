@@ -91,7 +91,7 @@ int __thiscall STColl3C::GetMessage(STColl3C *this,STMessage *message)
     return 0;
   }
   if (SVar1 == MESS_SHARED_0003) {
-    if (g_manRub3_008117A4 != (STManRub3C *)0x0) {
+    if (g_manRub3_008117A4 != nullptr) {
       sub_005F9450(local_8);
       thunk_FUN_0062e610(g_manRub3_008117A4,this_00->field_0235,this_00->field_0018);
     }
@@ -151,7 +151,7 @@ int __thiscall STColl3C::GetMessage(STColl3C *this,STMessage *message)
     this_00->field_0269 = 600;
     this_00->field_02DD = CASE_1;
     this_00->field_02E1 = g_playSystem_00802A38->field_00E4 + this_00->field_0259;
-    if (g_manRub3_008117A4 != (STManRub3C *)0x0) {
+    if (g_manRub3_008117A4 != nullptr) {
       thunk_FUN_0062e550(g_manRub3_008117A4,this_00->field_0235,(int)this_00->field_0018,
                          this_00->field_0255);
     }
@@ -171,14 +171,14 @@ int __thiscall STColl3C::GetMessage(STColl3C *this,STMessage *message)
     if (((((local_14[0] < 0) || (g_worldGrid.sizeX <= local_14[0])) || (local_10[0] < 0)) ||
         ((g_worldGrid.sizeY <= local_10[0] || (local_c[0] < 0)))) ||
        (g_worldGrid.sizeZ <= local_c[0])) {
-      pSVar9 = (STWorldObject *)0x0;
+      pSVar9 = nullptr;
     }
     else {
       pSVar9 = g_worldGrid.cells
                [(int)g_worldGrid.planeStride * (int)local_c[0] +
                 (int)g_worldGrid.sizeX * (int)local_10[0] + (int)local_14[0]].objects[0];
     }
-    if ((pSVar9 == (STWorldObject *)0x0) &&
+    if ((pSVar9 == nullptr) &&
        ((this_00->field_02DD == CASE_1 ||
         (iVar5 = DumpClassC::WritePtr
                            (local_14[0],local_10[0],local_c[0],0,

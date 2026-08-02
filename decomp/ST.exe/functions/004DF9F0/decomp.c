@@ -12,7 +12,7 @@ undefined4 __thiscall TLOBaseTy::sub_004DF9F0(TLOBaseTy *this)
   TLOBaseTy *local_8;
 
   array = *(DArrayTy **)&g_packedRecords_A62x8[(int)this->field_0024].field_0x9d2;
-  if (array != (DArrayTy *)0x0) {
+  if (array != nullptr) {
     index = 0;
     local_8 = this;
     if (0 < (int)array->count) {

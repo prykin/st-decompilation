@@ -179,7 +179,7 @@ void __thiscall CursorClassTy::TakeCmdToRun(CursorClassTy *this,int param_1)
     }
     STDebugBreak(); /* noreturn in standalone pseudocode */
   }
-  if (g_sT3DSMAPContext_00807598 != (ST3DSMAPContext *)0x0) {
+  if (g_sT3DSMAPContext_00807598 != nullptr) {
     local_148 = local_124->field_00EF;
     local_144 = local_124->field_00F3;
     local_140 = iVar5;
@@ -189,13 +189,13 @@ void __thiscall CursorClassTy::TakeCmdToRun(CursorClassTy *this,int param_1)
     this_00->field_00E3 = local_214 >> 0x10;
     this_00->field_00EB = (this_00->field_00C9 - this_00->field_04B6) - (local_214 >> 0x10);
   }
-  if (g_playSystem_00802A38 == (STPlaySystemC *)0x0) {
+  if (g_playSystem_00802A38 == nullptr) {
     g_currentExceptionFrame = local_2c8.previous;
     return;
   }
   if (this_00->field_04DE != '\0') {
-    if (((this_00->field_0494 == 0x48) && (pSVar2 = this_00->field_049A, pSVar2 != (STFishC *)0x0))
-       && (g_helpPanel_00801690 != (HelpPanelTy *)0x0)) {
+    if (((this_00->field_0494 == 0x48) && (pSVar2 = this_00->field_049A, pSVar2 != nullptr))
+       && (g_helpPanel_00801690 != nullptr)) {
       HVar6 = pSVar2->slot_2C();
       if (HVar6 == 0x78) {
         HVar6 = *(HelpPanelTy_sub_00514BC0_param_1Enum *)&this_00->field_049A->field_0x259;
@@ -214,17 +214,17 @@ void __thiscall CursorClassTy::TakeCmdToRun(CursorClassTy *this,int param_1)
     case CASE_A:
     case CASE_2B:
       if (param_1 != 0) {
-        local_4c = (ushort *)0x0;
-        if (g_allPlayers_007FA174 != (STAllPlayersC *)0x0) {
+        local_4c = nullptr;
+        if (g_allPlayers_007FA174 != nullptr) {
           local_4c = STAllPlayersC::GetScrObjList
                                (g_allPlayers_007FA174,(this_00->field_04A2 == CASE_A) + 1,
                                 this_00->field_00DF,this_00->field_00E3,this_00->field_00E7,
                                 this_00->field_00EB,(int *)&local_9c);
         }
-        if (local_4c != (ushort *)0x0) {
+        if (local_4c != nullptr) {
           local_18 = (uint *)(local_9c + 1);
           local_94 = Library::DKW::LIB::FUN_006aac10((uint)local_18);
-          if (local_94 != (uint *)0x0) {
+          if (local_94 != nullptr) {
             *(char *)local_94 = (this_00->field_04A2 == CASE_A) + '\x01';
             puVar9 = local_4c;
             puVar14 = (byte *)((int)local_94 + 1);
@@ -247,17 +247,17 @@ void __thiscall CursorClassTy::TakeCmdToRun(CursorClassTy *this,int param_1)
       break;
     case CASE_5:
       if (param_1 != 0) {
-        local_1c = (uint *)0x0;
-        if (g_allPlayers_007FA174 != (STAllPlayersC *)0x0) {
+        local_1c = nullptr;
+        if (g_allPlayers_007FA174 != nullptr) {
           local_1c = (uint *)STAllPlayersC::GetScrObjList
                                        (g_allPlayers_007FA174,3,this_00->field_00DF,
                                         this_00->field_00E3,this_00->field_00E7,this_00->field_00EB,
                                         (int *)&local_a8);
         }
-        if (local_1c != (uint *)0x0) {
+        if (local_1c != nullptr) {
           local_24 = (uint *)(local_a8 + 1);
           local_18 = Library::DKW::LIB::FUN_006aac10((uint)local_24);
-          if (local_18 != (uint *)0x0) {
+          if (local_18 != nullptr) {
             *(undefined1 *)local_18 = 3;
             puVar10 = local_1c;
             puVar12 = (uint *)((int)local_18 + 1);
@@ -271,7 +271,7 @@ void __thiscall CursorClassTy::TakeCmdToRun(CursorClassTy *this,int param_1)
         break;
       }
       pSVar2 = this_00->field_049A;
-      if (pSVar2 == (STFishC *)0x0) break;
+      if (pSVar2 == nullptr) break;
       memset((void *)local_1e4, 0, 0x21); /* compiler bulk-zero initialization */
       STFishC::sub_004162B0(pSVar2,&local_56,&local_68,&local_2e);
       /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
@@ -284,7 +284,7 @@ void __thiscall CursorClassTy::TakeCmdToRun(CursorClassTy *this,int param_1)
       puVar14 = (byte *)0x17;
       goto cf_common_join_0054A19A;
     case CASE_E:
-      if (g_tLOBldMark_007FB2AC != (TLOBldMark *)0x0) {
+      if (g_tLOBldMark_007FB2AC != nullptr) {
         local_b8 = this_00->field_04AA;
         local_b4 = 0;
         local_b0 = 0;
@@ -312,7 +312,7 @@ void __thiscall CursorClassTy::TakeCmdToRun(CursorClassTy *this,int param_1)
                           ((AnonReceiver_0054A9B0 *)this_00,local_10,local_c,(float)local_8);
               }
               else {
-                local_14 = (uint *)0x0;
+                local_14 = nullptr;
                 SubmarineTitans::Recovered::HiddenThis::AnonReceiver_0054A9B0::thunk_FUN_0054a9b0
                           ((AnonReceiver_0054A9B0 *)this_00,local_10,local_c,0.0);
               }
@@ -323,14 +323,14 @@ void __thiscall CursorClassTy::TakeCmdToRun(CursorClassTy *this,int param_1)
       break;
     case CASE_2C:
       if (param_1 != 0) {
-        local_54 = (undefined4 *)0x0;
-        if (g_allPlayers_007FA174 != (STAllPlayersC *)0x0) {
+        local_54 = nullptr;
+        if (g_allPlayers_007FA174 != nullptr) {
           local_54 = (undefined4 *)thunk_FUN_0044e220();
         }
-        if (local_54 != (undefined4 *)0x0) {
+        if (local_54 != nullptr) {
           local_18 = (uint *)(local_a4 + 1);
           local_24 = Library::DKW::LIB::FUN_006aac10((uint)local_18);
-          if (local_24 != (uint *)0x0) {
+          if (local_24 != nullptr) {
             *(undefined1 *)local_24 = 4;
             puVar14 = (byte *)(local_54);
             puVar11 = (byte *)((int)local_24 + 1);
@@ -377,17 +377,17 @@ void __thiscall CursorClassTy::TakeCmdToRun(CursorClassTy *this,int param_1)
   case 7:
   case 0xc:
     if (param_1 != 0) {
-      local_3c = (ushort *)0x0;
-      if (g_allPlayers_007FA174 != (STAllPlayersC *)0x0) {
+      local_3c = nullptr;
+      if (g_allPlayers_007FA174 != nullptr) {
         local_3c = STAllPlayersC::GetScrObjList
                              (g_allPlayers_007FA174,(sVar1 == 0xc) + 1,this_00->field_00DF,
                               this_00->field_00E3,this_00->field_00E7,this_00->field_00EB,
                               (int *)&local_98);
       }
-      if (local_3c != (ushort *)0x0) {
+      if (local_3c != nullptr) {
         local_18 = (uint *)(local_98 + 1);
         local_20 = Library::DKW::LIB::FUN_006aac10((uint)local_18);
-        if (local_20 != (uint *)0x0) {
+        if (local_20 != nullptr) {
           *(char *)local_20 = (this_00->field_0494 == 0xc) + '\x01';
           puVar9 = local_3c;
           puVar14 = (byte *)((int)local_20 + 1);
@@ -409,7 +409,7 @@ void __thiscall CursorClassTy::TakeCmdToRun(CursorClassTy *this,int param_1)
       break;
     }
     memset((void *)local_120, 0, 0x18); /* compiler bulk-zero initialization */
-    if (this_00->field_049A == (STFishC *)0x0) {
+    if (this_00->field_049A == nullptr) {
       iVar5 = FUN_006e1dd0(g_sT3DSMAPContext_00807598,this_00->field_00C5 - this_00->field_04B2,
                            this_00->field_00C9 - this_00->field_04B6,&local_10,&local_c,
                            (float *)&local_8);
@@ -466,7 +466,7 @@ void __thiscall CursorClassTy::TakeCmdToRun(CursorClassTy *this,int param_1)
                   ((AnonReceiver_0054A9B0 *)this_00,local_10,local_c,(float)local_8);
       }
       else {
-        local_1c = (uint *)0x0;
+        local_1c = nullptr;
         SubmarineTitans::Recovered::HiddenThis::AnonReceiver_0054A9B0::thunk_FUN_0054a9b0
                   ((AnonReceiver_0054A9B0 *)this_00,local_10,local_c,0.0);
       }
@@ -494,7 +494,7 @@ void __thiscall CursorClassTy::TakeCmdToRun(CursorClassTy *this,int param_1)
                   ((AnonReceiver_0054A9B0 *)this_00,local_10,local_c,(float)local_8);
       }
       else {
-        local_14 = (uint *)0x0;
+        local_14 = nullptr;
         SubmarineTitans::Recovered::HiddenThis::AnonReceiver_0054A9B0::thunk_FUN_0054a9b0
                   ((AnonReceiver_0054A9B0 *)this_00,local_10,local_c,0.0);
       }
@@ -504,7 +504,7 @@ void __thiscall CursorClassTy::TakeCmdToRun(CursorClassTy *this,int param_1)
   case 10:
   case 0xb:
     pSVar2 = this_00->field_049A;
-    if (pSVar2 == (STFishC *)0x0) break;
+    if (pSVar2 == nullptr) break;
     memset((void *)local_160, 0, 0x18); /* compiler bulk-zero initialization */
     STFishC::sub_004162B0(pSVar2,(short *)local_3e,(undefined2 *)local_6c,(undefined2 *)local_46);
     local_15b = local_3e[0];
@@ -522,23 +522,23 @@ void __thiscall CursorClassTy::TakeCmdToRun(CursorClassTy *this,int param_1)
       local_14 = local_8;
     }
     else {
-      local_14 = (uint *)0x0;
+      local_14 = nullptr;
     }
     goto LAB_00549b36;
   case 0xd:
   case 0xe:
     if (param_1 != 0) {
       if (sVar1 == 0xd) {
-        local_44 = (ushort *)0x0;
-        if (g_allPlayers_007FA174 != (STAllPlayersC *)0x0) {
+        local_44 = nullptr;
+        if (g_allPlayers_007FA174 != nullptr) {
           local_44 = STAllPlayersC::GetScrObjList
                                (g_allPlayers_007FA174,3,this_00->field_00DF,this_00->field_00E3,
                                 this_00->field_00E7,this_00->field_00EB,(int *)&local_a0);
         }
-        if (local_44 != (ushort *)0x0) {
+        if (local_44 != nullptr) {
           local_18 = (uint *)(local_a0 + 1);
           local_14 = Library::DKW::LIB::FUN_006aac10((uint)local_18);
-          if (local_14 != (uint *)0x0) {
+          if (local_14 != nullptr) {
             *(undefined1 *)local_14 = 3;
             puVar9 = local_44;
             puVar14 = (byte *)((int)local_14 + 1);
@@ -561,7 +561,7 @@ void __thiscall CursorClassTy::TakeCmdToRun(CursorClassTy *this,int param_1)
       break;
     }
     pSVar2 = this_00->field_049A;
-    if (pSVar2 == (STFishC *)0x0) break;
+    if (pSVar2 == nullptr) break;
     memset((void *)local_1c0, 0, 0x21); /* compiler bulk-zero initialization */
     STFishC::sub_004162B0(pSVar2,&local_36,&local_58,&local_62);
     /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
@@ -599,7 +599,7 @@ void __thiscall CursorClassTy::TakeCmdToRun(CursorClassTy *this,int param_1)
                   ((AnonReceiver_0054A9B0 *)this_00,local_10,local_c,(float)local_8);
       }
       else {
-        local_20 = (uint *)0x0;
+        local_20 = nullptr;
         SubmarineTitans::Recovered::HiddenThis::AnonReceiver_0054A9B0::thunk_FUN_0054a9b0
                   ((AnonReceiver_0054A9B0 *)this_00,local_10,local_c,0.0);
       }
@@ -629,7 +629,7 @@ void __thiscall CursorClassTy::TakeCmdToRun(CursorClassTy *this,int param_1)
                   ((AnonReceiver_0054A9B0 *)this_00,local_10,local_c,(float)local_8);
       }
       else {
-        local_14 = (uint *)0x0;
+        local_14 = nullptr;
         SubmarineTitans::Recovered::HiddenThis::AnonReceiver_0054A9B0::thunk_FUN_0054a9b0
                   ((AnonReceiver_0054A9B0 *)this_00,local_10,local_c,0.0);
       }
@@ -637,14 +637,14 @@ void __thiscall CursorClassTy::TakeCmdToRun(CursorClassTy *this,int param_1)
     break;
   case 0x12:
   case 0x13:
-    if (this_00->field_049A == (STFishC *)0x0) break;
+    if (this_00->field_049A == nullptr) break;
     local_d0 = (sVar1 != 0x12) + '\x01';
     STFishC::sub_004162B0(this_00->field_049A,&local_cf,&local_cd,&local_cb);
     puVar10 = (uint *)&local_d0;
     puVar14 = (byte *)0x1f;
     goto cf_common_join_0054A19A;
   case 0x14:
-    if (g_tLOBldMark_007FB2AC != (TLOBldMark *)0x0) {
+    if (g_tLOBldMark_007FB2AC != nullptr) {
       local_c8 = this_00->field_04AA;
       local_c4 = 0;
       local_c0 = 0;
@@ -671,7 +671,7 @@ void __thiscall CursorClassTy::TakeCmdToRun(CursorClassTy *this,int param_1)
                         ((AnonReceiver_0054A9B0 *)this_00,local_10,local_c,(float)local_8);
             }
             else {
-              local_14 = (uint *)0x0;
+              local_14 = nullptr;
               SubmarineTitans::Recovered::HiddenThis::AnonReceiver_0054A9B0::thunk_FUN_0054a9b0
                         ((AnonReceiver_0054A9B0 *)this_00,local_10,local_c,0.0);
             }
@@ -683,7 +683,7 @@ void __thiscall CursorClassTy::TakeCmdToRun(CursorClassTy *this,int param_1)
   case 0x16:
   case 0x18:
     pSVar2 = this_00->field_049A;
-    if (pSVar2 == (STFishC *)0x0) break;
+    if (pSVar2 == nullptr) break;
     memset((void *)local_260, 0, 0x21); /* compiler bulk-zero initialization */
     STFishC::sub_004162B0(pSVar2,&local_6e,&local_66,&local_6a);
     /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
@@ -695,7 +695,7 @@ void __thiscall CursorClassTy::TakeCmdToRun(CursorClassTy *this,int param_1)
     puVar14 = (byte *)0x17;
     goto cf_common_join_0054A19A;
   case 0x17:
-    if (this_00->field_049A == (STFishC *)0x0) break;
+    if (this_00->field_049A == nullptr) break;
     uVar3 = this_00->field_049A->field_0018;
     puVar10 = (uint *)&local_78;
     /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
@@ -728,14 +728,14 @@ void __thiscall CursorClassTy::TakeCmdToRun(CursorClassTy *this,int param_1)
                   ((AnonReceiver_0054A9B0 *)this_00,local_10,local_c,(float)local_8);
       }
       else {
-        local_14 = (uint *)0x0;
+        local_14 = nullptr;
         SubmarineTitans::Recovered::HiddenThis::AnonReceiver_0054A9B0::thunk_FUN_0054a9b0
                   ((AnonReceiver_0054A9B0 *)this_00,local_10,local_c,0.0);
       }
     }
     break;
   case 0x1a:
-    if (this_00->field_049A == (STFishC *)0x0) break;
+    if (this_00->field_049A == nullptr) break;
     uVar3 = this_00->field_049A->field_0018;
     puVar10 = (uint *)&local_80;
     /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
@@ -745,7 +745,7 @@ void __thiscall CursorClassTy::TakeCmdToRun(CursorClassTy *this,int param_1)
     goto cf_common_join_0054A19A;
   case 0x1b:
     pSVar2 = this_00->field_049A;
-    if (pSVar2 == (STFishC *)0x0) break;
+    if (pSVar2 == nullptr) break;
     memset((void *)local_23c, 0, 0x21); /* compiler bulk-zero initialization */
     STFishC::sub_004162B0(pSVar2,&local_70,&local_38,&local_60);
     /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
@@ -827,11 +827,11 @@ LAB_0054a196:
         local_14 = local_8;
       }
       else {
-        local_14 = (uint *)0x0;
+        local_14 = nullptr;
       }
       goto LAB_00549c33;
     }
-    if (this_00->field_049A == (STFishC *)0x0) break;
+    if (this_00->field_049A == nullptr) break;
     local_dc = 0;
     local_d8 = 0;
     local_e0 = 2;
@@ -857,14 +857,14 @@ LAB_0054a196:
       local_14 = local_8;
     }
     else {
-      local_14 = (uint *)0x0;
+      local_14 = nullptr;
     }
 LAB_00549b36:
     SubmarineTitans::Recovered::HiddenThis::AnonReceiver_0054A9B0::thunk_FUN_0054a9b0
               ((AnonReceiver_0054A9B0 *)this_00,local_10,local_c,(float)local_14);
     break;
   case 0x1e:
-    if (this_00->field_049A == (STFishC *)0x0) break;
+    if (this_00->field_049A == nullptr) break;
     local_2c = 0;
     sStack_2b = 0;
     uStack_29 = 0;
@@ -885,7 +885,7 @@ cf_common_join_0054A19A:
     break;
   case 0x1f:
     pSVar2 = this_00->field_049A;
-    if (pSVar2 == (STFishC *)0x0) break;
+    if (pSVar2 == nullptr) break;
     memset(local_284, 0, 0x21); /* compiler bulk-zero initialization */
     /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
     local_284[0]._0_1_ = 0x19;
@@ -899,7 +899,7 @@ cf_common_join_0054A19A:
       local_14 = local_8;
     }
     else {
-      local_14 = (uint *)0x0;
+      local_14 = nullptr;
     }
 LAB_00549c33:
     SubmarineTitans::Recovered::HiddenThis::AnonReceiver_0054A9B0::thunk_FUN_0054a9b0
@@ -907,7 +907,7 @@ LAB_00549c33:
   }
 switchD_00548db5_caseD_3:
   if (((this_00->field_04A2 != 0) && (this_00->field_0xd3 == '\0')) &&
-     (this_00->field_04A6 = 1, g_cPanel_00801688 != (CPanelTy *)0x0)) {
+     (this_00->field_04A6 = 1, g_cPanel_00801688 != nullptr)) {
     CPanelTy::sub_004FAD20(g_cPanel_00801688);
   }
   g_currentExceptionFrame = local_2c8.previous;

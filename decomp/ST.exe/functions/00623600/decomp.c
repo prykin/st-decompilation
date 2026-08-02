@@ -12,7 +12,7 @@ void __fastcall FUN_00623600(AnonShape_00623600_61226D23 *param_1)
   int local_8;
 
   pVVar5 = g_visibleClass_00802A88;
-  if (g_visibleClass_00802A88 == (VisibleClassTy *)0x0) {
+  if (g_visibleClass_00802A88 == nullptr) {
     cVar2 = param_1->field_02E9;
   }
   else {
@@ -24,7 +24,7 @@ void __fastcall FUN_00623600(AnonShape_00623600_61226D23 *param_1)
          )) || ((((4 < iVar6 || (local_8 < 0)) ||
                  ((pVVar5->field_0030 <= local_8 ||
                   ((local_c = g_centeredOffsets5[iVar6] + local_c, local_c < 0 ||
-                   (pVVar5->field_0034 <= local_c)))))) || (pVVar5->field_004C == (byte *)0x0)))) ||
+                   (pVVar5->field_0034 <= local_c)))))) || (pVVar5->field_004C == nullptr)))) ||
        (pVVar5->field_004C[local_8 + local_c * pVVar5->field_0030] != 0)) {
       bVar4 = false;
       if (param_1->field_02AE == 0) {

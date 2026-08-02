@@ -34,7 +34,7 @@ void __thiscall IntercomPanelTy::InitIntercomPanel(IntercomPanelTy *this)
     puVar4[0x16] = 0;
     puVar4[0x17] = 0;
     iVar3 = 1;
-    piVar10 = (int *)0x0;
+    piVar10 = nullptr;
     text = thunk_FUN_00571240("BKG_EDITCHAT",0);
     puVar5 = cMf32::RecGet(g_cMf32_00806790,1,text,piVar10,iVar3);
     puVar7 = puVar5 + 0x14;
@@ -46,7 +46,7 @@ void __thiscall IntercomPanelTy::InitIntercomPanel(IntercomPanelTy *this)
                           (uint)pIVar2->field_0184[7],uVar6,(undefined4 *)puVar7,iVar3);
     pIVar2->field_019C = puVar7;
     DibPut((AnonShape_006B5B10_E0D06CF1 *)pIVar2->field_0068,0,0,'\x01',(byte *)pIVar2->field_0184);
-    pDVar8 = Library::DKW::TBL::SArrayCreate((DArrayTy *)0x0,1,1);
+    pDVar8 = Library::DKW::TBL::SArrayCreate(nullptr,1,1);
     pIVar2->field_0198 = pDVar8;
     Library::DKW::TBL::FUN_006b6020(&pDVar8->flags,0,&DAT_008016a0);
     g_currentExceptionFrame = local_4c.previous;

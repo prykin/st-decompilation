@@ -32,20 +32,20 @@ void FUN_0044e260(uint param_1,uint param_2,uint param_3,int *param_4)
 
   piVar4 = param_4;
   local_14 = (STGameObjC *)thunk_FUN_0042b760((char)param_1,(ushort)param_2);
-  if (local_14 != (STGameObjC *)0x0) {
+  if (local_14 != nullptr) {
     /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
     pDVar5 = (DArrayTy *)STGroupC::GetGroupContent((STGroupC *)local_14,unaff_EDI);
     /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
     param_2 = pDVar5->count;
     if (param_2 != 0) {
-      local_18 = Library::DKW::TBL::DArrayCreate((DArrayTy *)0x0,param_2,4,1);
+      local_18 = Library::DKW::TBL::DArrayCreate(nullptr,param_2,4,1);
       uVar12 = 0;
       if (0 < (int)param_2) {
         do {
           DArrayGetElement(pDVar5,uVar12,local_2c);
           /* ST_PSEUDO[unresolved_register_input,packed_or_unaligned_piece]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention; expected named packed member, bit extract/compose, or unaligned load */
           local_14 = STAllPlayersC::GetObjPtr(in_ECX,(char)param_1,local_2c._0_2_,CASE_1);
-          if ((local_14 == (STGameObjC *)0x0) ||
+          if ((local_14 == nullptr) ||
              (iVar6 = local_14->vfunc_F8(), iVar6 == 0)) {
             DArrayRemoveAt(pDVar5,uVar12);
             /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
@@ -126,7 +126,7 @@ void FUN_0044e260(uint param_1,uint param_2,uint param_3,int *param_4)
                 do {
                   piVar2 = *(int **)((int)g_worldGrid.cells[1].objects + iVar6);
                   /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-                  if (((piVar2 != (int *)0x0) &&
+                  if (((piVar2 != nullptr) &&
                       (((iVar9 = piVar2[8], iVar9 == 0x14 || (iVar9 == 1000)) || (iVar9 == 0x3e9))))
                      && ((((param_3 & 1 << ((byte)piVar2[9] & 0x1f)) != 0 &&
                           (iVar9 = (**(code **)(*piVar2 + 0xf8))(), iVar9 != 0)) &&
@@ -143,7 +143,7 @@ LAB_0044e508:
                         iVar9 = piVar4[piVar2[9]];
 joined_r0x0044e51a:
                         if (iVar9 == 0) {
-                          pDVar5 = Library::DKW::TBL::DArrayCreate((DArrayTy *)0x0,1,2,1);
+                          pDVar5 = Library::DKW::TBL::DArrayCreate(nullptr,1,2,1);
                           piVar4[piVar2[9]] = (int)pDVar5;
                         }
                         Library::DKW::TBL::DArrayAppend

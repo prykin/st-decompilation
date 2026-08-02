@@ -17,13 +17,13 @@ ushort * __cdecl FUN_0067bd00(DArrayTy *param_1,uint param_2)
       /* ST_PSEUDO[dynamic_array_indexing]: expected DArrayAt<T>(param_1, uVar3) (runtime stride) */
       if (((bVar4) &&
           (puVar2 = (ushort *)(param_1->elementSize * uVar3 + (int)param_1->data),
-          puVar2 != (ushort *)0x0)) && (*puVar2 == param_2)) {
+          puVar2 != nullptr)) && (*puVar2 == param_2)) {
         return puVar2;
       }
       uVar3 = uVar3 + 1;
       bVar4 = uVar3 < uVar1;
     } while ((int)uVar3 < (int)uVar1);
   }
-  return (ushort *)0x0;
+  return nullptr;
 }
 

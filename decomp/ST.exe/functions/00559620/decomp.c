@@ -36,10 +36,10 @@ VisibleClassTy::sub_00559620
   int iVar7;
   int iVar8;
 
-  if ((((this->field_0114 != 0) && (this->field_0038 != (byte *)0x0)) && (-1 < param_5)) &&
+  if ((((this->field_0114 != 0) && (this->field_0038 != nullptr)) && (-1 < param_5)) &&
      ((param_4 < (undefined *)0x8 &&
-      ((g_playSystem_00802A38 == (STPlaySystemC *)0x0 ||
-       ((byte)(&DAT_008087e9)[(int)param_4 * 0x51] < 8)))))) {
+      ((g_playSystem_00802A38 == nullptr ||
+       (g_bulkInitializedRecords_008087C7[(int)param_4].field_0022 < 8)))))) {
     if ((param_7 & 0x1000) != 0) {
       sub_0055BBC0(this,1,(short)param_1,(short)param_2,param_3,(uint)param_4,(byte)param_5,param_6);
     }
@@ -57,7 +57,7 @@ VisibleClassTy::sub_00559620
           iVar4 = 0;
           iVar7 = iVar5;
           do {
-            if (((((pbVar3 == (byte *)0x0) || (param_4[iVar4] != '\0')) && (-1 < iVar7)) &&
+            if (((((pbVar3 == nullptr) || (param_4[iVar4] != '\0')) && (-1 < iVar7)) &&
                 ((iVar7 < this->field_0020 && (-1 < iVar8)))) && (iVar8 < this->field_0024)) {
               iVar6 = iVar8 * this->field_0020 + iVar7;
               bVar2 = this->field_0038[iVar6 * 2 + 1];

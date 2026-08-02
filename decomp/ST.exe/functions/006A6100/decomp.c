@@ -115,7 +115,7 @@ FUN_006a6100(int param_1,int param_2,int param_3,int param_4,int param_5,int par
     uVar5 = local_2c;
     local_2c = uVar6;
   }
-  if (param_7 != (int *)0x0) {
+  if (param_7 != nullptr) {
     *param_7 = iVar3;
   }
   /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */

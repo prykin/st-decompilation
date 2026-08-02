@@ -27,7 +27,7 @@ undefined4 * __cdecl FUN_006803b0(byte param_1)
     DAT_00848a00 = DAT_00848a00 + DAT_007d3fa0;
     return &DAT_008478ac;
   }
-  if (DAT_008489d0 != (cMf32 *)0x0) {
+  if (DAT_008489d0 != nullptr) {
     local_8 = DAT_008489d0;
     iVar7 = 0;
     do {

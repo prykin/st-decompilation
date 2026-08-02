@@ -15,8 +15,8 @@ void __thiscall STVolcanoC::sub_00646D40(STVolcanoC *this,undefined4 *param_1)
   puVar1 = (byte *)(Library::DKW::LIB::MemAlloc(0x95));
   this->field_0028 = 2;
   this->field_00AD = this->field_00B1;
-  if (this == (STVolcanoC *)0x0) {
-    puVar3 = (byte *)0x0;
+  if (this == nullptr) {
+    puVar3 = nullptr;
   }
   else {
     puVar3 = (byte *)&this->field_0x1c;

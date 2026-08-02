@@ -55,10 +55,10 @@ VisibleClassTy::sub_0055BB00
   byte bStack_9;
   undefined4 local_8;
 
-  if ((((this->field_0114 != 0) && (this->field_0110 != (VisibleClassTy_field_0110DArray *)0x0)) &&
+  if ((((this->field_0114 != 0) && (this->field_0110 != nullptr)) &&
       (param_5 < 8)) &&
-     ((g_playSystem_00802A38 == (STPlaySystemC *)0x0 || ((byte)(&DAT_008087e9)[param_5 * 0x51] < 8))
-     )) {
+     ((g_playSystem_00802A38 == nullptr ||
+      (g_bulkInitializedRecords_008087C7[param_5].field_0022 < 8)))) {
     /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
     local_10 = CONCAT22(param_2,(short)CONCAT31((int3)param_5,param_1));
     /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */

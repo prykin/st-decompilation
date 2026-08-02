@@ -12,10 +12,10 @@ STCrabC * __cdecl CreateSTCrab(void)
   STCrabC *pSVar1;
 
   pSVar1 = (STCrabC *)FUN_006b04d0(0x281);
-  if (pSVar1 != (STCrabC *)0x0) {
+  if (pSVar1 != nullptr) {
     pSVar1 = STCrabC::STCrabC(pSVar1);
     return pSVar1;
   }
-  return (STCrabC *)0x0;
+  return nullptr;
 }
 

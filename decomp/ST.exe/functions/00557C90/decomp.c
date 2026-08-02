@@ -31,7 +31,7 @@ void __thiscall VisibleClassTy::Init(VisibleClassTy *this)
   short *local_8;
 
   iVar11 = 0;
-  local_8 = (short *)0x0;
+  local_8 = nullptr;
   local_54.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_54;
   local_10 = this;
@@ -102,7 +102,7 @@ void __thiscall VisibleClassTy::Init(VisibleClassTy *this)
           element_0110 = DArrayAt<VisibleClassTy_field_0110Element>(pVVar9, uVar12);
         }
         else {
-          element_0110 = (VisibleClassTy_field_0110Element *)0x0;
+          element_0110 = nullptr;
         }
         switch(element_0110->field_0000) {
         case '\0':

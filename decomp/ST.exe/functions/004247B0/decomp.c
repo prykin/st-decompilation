@@ -25,7 +25,7 @@ void __thiscall STGroupC::SetAVPar(STGroupC *this,uint param_1)
       if ((ushort)param_1 != 0xffff) {
         this_00 = STAllPlayersC::GetObjPtr
                             (g_allPlayers_007FA174,this->field_0024,(ushort)param_1,CASE_1);
-        if (this_00 == (STGameObjC *)0x0) {
+        if (this_00 == nullptr) {
           iVar3 = ReportDebugMessage("E:\\__titans\\wlad\\tc_grp.cpp",0x256,0,0,"%s",
                                      "STGroupC::SetAVPar");
           if (iVar3 != 0) {

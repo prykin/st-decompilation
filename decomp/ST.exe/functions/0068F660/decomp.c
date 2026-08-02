@@ -24,23 +24,23 @@ void __thiscall AiTactClassTy::GiveObjByGrpNum(AiTactClassTy *this,DArrayTy *par
   local_8 = this;
   iVar3 = Library::MSVCRT::__setjmp3(local_4c.jumpBuffer,0);
   if (iVar3 == 0) {
-    if ((param_1 != (DArrayTy *)0x0) && (index = param_1->count, index != 0)) {
+    if ((param_1 != nullptr) && (index = param_1->count, index != 0)) {
       while (index = index - 1, -1 < (int)index) {
         if (index < param_1->count) {
           /* ST_PSEUDO[dynamic_array_indexing]: expected DArrayAt<T>(param_1, index) (runtime stride) */
           puVar4 = (ushort *)(param_1->elementSize * index + (int)param_1->data);
         }
         else {
-          puVar4 = (ushort *)0x0;
+          puVar4 = nullptr;
         }
-        if (g_allPlayers_007FA174 == (STAllPlayersC *)0x0) {
-          objPtr = (STGameObjC *)0x0;
+        if (g_allPlayers_007FA174 == nullptr) {
+          objPtr = nullptr;
         }
         else {
           objPtr = STAllPlayersC::GetObjPtr
                              (g_allPlayers_007FA174,*(char *)&local_8->field_0024,*puVar4,CASE_1);
         }
-        if (objPtr != (STGameObjC *)0x0) {
+        if (objPtr != nullptr) {
           iVar3 = (*objPtr->vtable->vfunc_2C)();
           if ((iVar3 < 1) || (0x28 < iVar3)) {
             bVar2 = false;
@@ -50,7 +50,7 @@ void __thiscall AiTactClassTy::GiveObjByGrpNum(AiTactClassTy *this,DArrayTy *par
           }
           if ((bVar2) &&
              (this_00 = (AiFltClassTy *)sub_0068E290(local_8,objPtr->field_081C),
-             this_00 != (AiFltClassTy *)0x0)) {
+             this_00 != nullptr)) {
             AiFltClassTy::_AddObjFlt(this_00,(uint)objPtr,0);
             DArrayRemoveAt(param_1,index);
           }

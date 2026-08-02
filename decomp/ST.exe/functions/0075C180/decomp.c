@@ -34,7 +34,7 @@ undefined4 FUN_0075c180(AnonShape_0075C180_8EED234B *param_1,undefined4 *param_2
   local_c = (AnonShape_0075C180_73A43719 *)param_1->field_01AA;
   if (((param_1->field_010C != 0) &&
       (((AnonShape_0075C180_73A43719 *)param_1->field_01AA)[2].field_0008 ==
-       (AnonShape_0075C180_8EED234B *)0x0)) &&
+       nullptr)) &&
      (iVar3 = FUN_0075c3b0((AnonShape_0075BE40_B9FD5FDF *)param_1), iVar3 == 0)) {
     return 0;
   }

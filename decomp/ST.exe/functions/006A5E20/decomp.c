@@ -5,7 +5,7 @@
 int FUN_006a5e20(int value)
 
 {
-  if (g_currentExceptionFrame != (InternalExceptionFrame *)0x0) {
+  if (g_currentExceptionFrame != nullptr) {
                     /* WARNING: Subroutine does not return */
     Library::MSVCRT::_longjmp(g_currentExceptionFrame->jumpBuffer,value);
   }

@@ -47,13 +47,13 @@ STManRuinC::sub_006308F0
     bVar1 = pbVar2[local_8 + 1];
   }
   if (bVar1 == 0) {
-    if (this->field_0038 == (STManRuinC_field_0038DArray *)0x0) {
+    if (this->field_0038 == nullptr) {
       pSVar3 = (STManRuinC_field_0038DArray *)
-               Library::DKW::TBL::DArrayCreate((DArrayTy *)0x0,10,0x75,10);
+               Library::DKW::TBL::DArrayCreate(nullptr,10,0x75,10);
       this->field_0038 = pSVar3;
     }
     pSVar3 = this->field_0038;
-    if ((pSVar3 != (STManRuinC_field_0038DArray *)0x0) && (pSVar3->count < 0xfe)) {
+    if ((pSVar3 != nullptr) && (pSVar3->count < 0xfe)) {
       psVar6 = &local_20;
       for (iVar4 = 6; iVar4 != 0; iVar4 = iVar4 + -1) {
         psVar6[0] = 0;

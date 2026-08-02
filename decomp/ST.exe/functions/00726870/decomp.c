@@ -6,7 +6,7 @@ void __cdecl FUN_00726870(int *param_1)
   int iVar2;
 
   piVar1 = (int *)*param_1;
-  if (piVar1 != (int *)0x0) {
+  if (piVar1 != nullptr) {
     if (*(int *)((int)piVar1 + 0x11) != 0) {
       iVar2 = 0;
       if (0 < *piVar1) {

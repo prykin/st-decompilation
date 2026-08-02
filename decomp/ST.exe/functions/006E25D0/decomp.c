@@ -8,21 +8,21 @@
 int __thiscall ST3DSMAPContext::sub_006E25D0(ST3DSMAPContext *this,int *param_1)
 
 {
-  uint uVar1;
+  ST3DSMAPContext_field_00A8State SVar1;
   int iVar2;
   int iVar3;
   longlong lVar4;
 
-  uVar1 = *(uint *)&this->field_0xa8;
-  if ((uVar1 & 8) == 0) {
-    switch(uVar1) {
-    case 0:
+  SVar1 = this->field_00A8;
+  if ((SVar1 & 8) == CASE_0) {
+    switch(SVar1) {
+    case CASE_0:
       break;
-    case 1:
+    case CASE_1:
       break;
-    case 2:
+    case CASE_2:
       break;
-    case 3:
+    case CASE_3:
       break;
     default:
       param_1[3] = 0;
@@ -30,29 +30,27 @@ int __thiscall ST3DSMAPContext::sub_006E25D0(ST3DSMAPContext *this,int *param_1)
     }
   }
   else {
-    switch(uVar1 & 0xfffffff7) {
-    case 0:
+    switch(SVar1 & 0xfffffff7) {
+    case CASE_0:
       break;
-    case 1:
+    case CASE_1:
       break;
-    case 2:
+    case CASE_2:
       break;
-    case 3:
+    case CASE_3:
     }
   }
   iVar3 = 1;
   lVar4 = Library::MSVCRT::__ftol();
-  iVar2 = (int)lVar4 + *(int *)&this->field_0x30 * 0x10000;
+  iVar2 = (int)lVar4 + this->field_0030 * 0x10000;
   *param_1 = iVar2;
-  if ((iVar2 < *(int *)&this->field_0x30 * 0x10000) ||
-     (*(int *)&this->field_0x38 * 0x10000 <= iVar2)) {
+  if ((iVar2 < this->field_0030 * 0x10000) || (this->field_0038 * 0x10000 <= iVar2)) {
     iVar3 = 0;
   }
   lVar4 = Library::MSVCRT::__ftol();
-  iVar2 = (int)lVar4 + *(int *)&this->field_0x34 * 0x10000;
+  iVar2 = (int)lVar4 + this->field_0034 * 0x10000;
   param_1[1] = iVar2;
-  if ((iVar2 < *(int *)&this->field_0x34 * 0x10000) ||
-     (*(int *)&this->field_0x3c * 0x10000 <= iVar2)) {
+  if ((iVar2 < this->field_0034 * 0x10000) || (this->field_003C * 0x10000 <= iVar2)) {
     iVar3 = 0;
   }
   lVar4 = Library::MSVCRT::__ftol();

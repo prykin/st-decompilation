@@ -63,7 +63,7 @@ int __thiscall STExplosion::GetMessage(STExplosion *this,STMessage *message)
             if (*(int *)&this_00->field_0x2bb == 0) {
               this_02 = (AnonReceiver_00636260 *)thunk_FUN_00636200();
               *(AnonReceiver_00636260 **)&this_00->field_0x2bb = this_02;
-              if (this_02 != (AnonReceiver_00636260 *)0x0) {
+              if (this_02 != nullptr) {
                 SubmarineTitans::Recovered::HiddenThis::AnonReceiver_00636260::thunk_FUN_00636260
                           (this_02,*(uint *)&this_00->field_0x1f1,*(int *)&this_00->field_0x1f5,
                            *(int *)&this_00->field_0x1f9 + -0x28,0x96,0x1e,5,0);
@@ -71,7 +71,7 @@ int __thiscall STExplosion::GetMessage(STExplosion *this,STMessage *message)
             }
           }
           else if ((0xf < iVar7) &&
-                  ((*(int **)&this_00->field_0x2bb != (int *)0x0 &&
+                  ((*(int **)&this_00->field_0x2bb != nullptr &&
                    (iVar7 = thunk_FUN_006372e0(*(int **)&this_00->field_0x2bb), iVar7 != 0)))) {
             thunk_FUN_006366d0(*(AnonShape_006366D0_80B1100F **)&this_00->field_0x2bb);
             Library::MSVCRT::FUN_0072e2b0(*(HoloTy **)&this_00->field_0x2bb);
@@ -282,7 +282,7 @@ int __thiscall STExplosion::GetMessage(STExplosion *this,STMessage *message)
         sub_00605780((STExplosion *)this_00);
       }
       if (*(AnonShape_006366D0_80B1100F **)&this_00->field_0x2bb !=
-          (AnonShape_006366D0_80B1100F *)0x0) {
+          nullptr) {
         thunk_FUN_006366d0(*(AnonShape_006366D0_80B1100F **)&this_00->field_0x2bb);
         Library::MSVCRT::FUN_0072e2b0(*(HoloTy **)&this_00->field_0x2bb);
         *(undefined4 *)&this_00->field_0x2bb = 0;
@@ -292,7 +292,7 @@ int __thiscall STExplosion::GetMessage(STExplosion *this,STMessage *message)
       return 0;
     }
     local_c = (byte *)STExplosionC::SaveObj((STExplosionC *)this_00,(uint *)&local_8);
-    if (local_c == (byte *)0x0) {
+    if (local_c == nullptr) {
       g_currentExceptionFrame = local_54.previous;
       return 0;
     }
@@ -315,7 +315,7 @@ int __thiscall STExplosion::GetMessage(STExplosion *this,STMessage *message)
       return 0;
     }
     value = (byte **)&this_00->field_0x2b3;
-    if (*(int **)&this_00->field_0x2b3 == (int *)0x0) {
+    if (*(int **)&this_00->field_0x2b3 == nullptr) {
       g_currentExceptionFrame = local_54.previous;
       return 0;
     }

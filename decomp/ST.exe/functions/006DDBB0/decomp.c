@@ -12,7 +12,7 @@ void __thiscall ST3DSMAPContext::sub_006DDBB0(ST3DSMAPContext *this)
 {
   this->field_0144 = 0;
   this->field_02D8 = 1;
-  FreeAndNull((void **)&this->field_001C);
+  FreeAndNull(&this->field_001C);
   return;
 }
 

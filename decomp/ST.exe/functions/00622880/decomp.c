@@ -12,14 +12,14 @@ void __thiscall STMineSetC::sub_00622880(STMineSetC *this)
   thunk_FUN_004ad310((STT3DSprC *)&this->field_01D5);
   SVar1 = this->field_02AD;
   if (SVar1 < CASE_3) {
-    if (g_visibleClass_00802A88 != (VisibleClassTy *)0x0) {
+    if (g_visibleClass_00802A88 != nullptr) {
       VisibleClassTy::sub_00559110
                 (g_visibleClass_00802A88,(int)this->field_0047,(undefined *)(int)this->field_0049,
                  (int)this->field_004B,this->field_0024,*(int *)(&DAT_007d02b4 + (uint)SVar1 * 4),
                  this->field_0018,0xffffffff);
     }
   }
-  else if ((SVar1 == CASE_3) && (g_visibleClass_00802A88 != (VisibleClassTy *)0x0)) {
+  else if ((SVar1 == CASE_3) && (g_visibleClass_00802A88 != nullptr)) {
     VisibleClassTy::sub_00559110
               (g_visibleClass_00802A88,(int)this->field_0047,(undefined *)(int)this->field_0049,
                (int)this->field_004B,this->field_0024,DAT_007d02c0,this->field_0018,0xffffffff);
@@ -27,9 +27,9 @@ void __thiscall STMineSetC::sub_00622880(STMineSetC *this)
       sub_0041D2B0(this);
     }
   }
-  if (this->field_034A != (DArrayTy *)0x0) {
+  if (this->field_034A != nullptr) {
     DArrayDestroy(this->field_034A);
-    this->field_034A = (DArrayTy *)0x0;
+    this->field_034A = nullptr;
   }
   return;
 }

@@ -20,7 +20,7 @@ void FUN_00496e40(int param_1,int param_2,undefined4 param_3,int param_4)
       pvVar3 = (void *)(g_array_007FB270->elementSize * index + (int)g_array_007FB270->data);
     }
     else {
-      pvVar3 = (void *)0x0;
+      pvVar3 = nullptr;
     }
     thunk_FUN_00496b30(index,*(int *)((int)pvVar3 + 8),0);
     iVar1 = *(int *)((int)pvVar3 + 8);

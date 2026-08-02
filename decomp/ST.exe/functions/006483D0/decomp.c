@@ -12,10 +12,10 @@ AiBossClassTy * __cdecl CreateAiBoss(void)
   AiBossClassTy *pAVar1;
 
   pAVar1 = (AiBossClassTy *)FUN_006b04d0(0x65c);
-  if (pAVar1 != (AiBossClassTy *)0x0) {
+  if (pAVar1 != nullptr) {
     pAVar1 = AiBossClassTy::AiBossClassTy(pAVar1);
     return pAVar1;
   }
-  return (AiBossClassTy *)0x0;
+  return nullptr;
 }
 

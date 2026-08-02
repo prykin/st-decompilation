@@ -16,7 +16,7 @@ TraksClassTy * __thiscall TraksClassTy::TraksClassTy(TraksClassTy *this)
   sub_006E60E0(this);
   this->vtable = &TraksClassTyVTable;
   g_traksClass_00802A7C = this;
-  this->field_0024 = (TraksClassTy_field_0024DArray *)0x0;
+  this->field_0024 = nullptr;
   this->field_0828 = -1;
   memset(&this->field_0x28, 0, 0x800); /* compiler bulk-zero initialization */
   return this;

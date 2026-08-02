@@ -19,7 +19,7 @@ int FUN_0075f3f0(int *param_1,int param_2,int param_3,int param_4)
       else {
         piVar1 = FUN_0075f520(param_2,param_3);
       }
-      if (piVar1 == (int *)0x0) {
+      if (piVar1 == nullptr) {
         return param_3;
       }
       piVar4[-2] = piVar1[1];

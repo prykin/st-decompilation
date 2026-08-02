@@ -54,7 +54,7 @@ void __thiscall STGroupBoatC::ReMakePatrolPoints(STGroupBoatC *this,int param_1)
     this->field_0242 = 10;
   }
   local_10 = this;
-  array = Library::DKW::TBL::DArrayCreate((DArrayTy *)0x0,this->field_0226->count,0xe,1);
+  array = Library::DKW::TBL::DArrayCreate(nullptr,this->field_0226->count,0xe,1);
   pDVar4 = this->field_0226;
   uVar7 = 0;
   if (0 < (int)pDVar4->count) {
@@ -83,8 +83,8 @@ void __thiscall STGroupBoatC::ReMakePatrolPoints(STGroupBoatC *this,int param_1)
                             (int)g_pathingGrid.sizeY,(int)g_pathingGrid.sizeZ,(short *)(int)local_2c
                             ,(short *)(int)local_2a,(short *)(int)local_28,(short *)(int)local_3c,
                             (short *)(int)local_3a,(short *)(int)local_38,0,&local_14,
-                            (undefined4 *)0x0,(short *)0x0,0);
-        if (psVar3 == (short *)0x0) {
+                            nullptr,nullptr,0);
+        if (psVar3 == nullptr) {
           uVar7 = (int)g_pathingGrid.sizeX * (int)g_pathingGrid.sizeY * (int)g_pathingGrid.sizeZ;
           psVar3 = g_pathingGrid.cells;
           psVar8 = g_pathingScratchGrid.cells;
@@ -206,11 +206,11 @@ LAB_004a77bb:
   }
   this->field_0232 = 0;
 LAB_004a792e:
-  if (this->field_022A != (DArrayTy *)0x0) {
+  if (this->field_022A != nullptr) {
     DArrayDestroy(this->field_022A);
-    this->field_022A = (DArrayTy *)0x0;
+    this->field_022A = nullptr;
   }
-  pDVar4 = Library::DKW::TBL::DArrayCreate((DArrayTy *)0x0,array->count,0xe,1);
+  pDVar4 = Library::DKW::TBL::DArrayCreate(nullptr,array->count,0xe,1);
   this->field_022A = pDVar4;
   uVar7 = 0;
   if (0 < (int)array->count) {

@@ -99,10 +99,10 @@ void __thiscall STAppC::ChangeResolution(STAppC *this,int param_1)
       FUN_006b1980((int *)g_ddxContext_008075A8,2,-1,(&DAT_00807568)[iVar3 * 4],
                    (&DAT_0080756c)[iVar3 * 4],(&DAT_00807570)[iVar3 * 4],(&DAT_00807574)[iVar3 * 4]);
       FUN_006b1cc0(g_ddxContext_008075A8,2,(&DAT_00807568)[iVar3 * 4],(&DAT_0080756c)[iVar3 * 4],
-                   (undefined4 *)0x0);
+                   nullptr);
       FUN_006b1980((int *)g_ddxContext_008075A8,3,-1,(&DAT_00807568)[iVar3 * 4],
                    (&DAT_0080756c)[iVar3 * 4],(&DAT_00807570)[iVar3 * 4],(&DAT_00807574)[iVar3 * 4]);
-      FUN_006b1cc0(g_ddxContext_008075A8,3,0,0,(undefined4 *)0x0);
+      FUN_006b1cc0(g_ddxContext_008075A8,3,0,0,nullptr);
       g_currentExceptionFrame = local_58.previous;
       return;
     }

@@ -43,7 +43,7 @@ void __thiscall STAllPlayersC::OptimizeGuardBoats(STAllPlayersC *this,char param
 
   local_1c = (DArrayTy *)g_packedRecords_A62x8[param_1].field2377_0x9f6;
   local_40 = (DArrayTy *)g_packedRecords_A62x8[param_1].field2378_0x9fa;
-  if (local_1c != (DArrayTy *)0x0) {
+  if (local_1c != nullptr) {
     local_90.previous = g_currentExceptionFrame;
     g_currentExceptionFrame = &local_90;
     iVar3 = Library::MSVCRT::__setjmp3(local_90.jumpBuffer,0);
@@ -92,7 +92,7 @@ void __thiscall STAllPlayersC::OptimizeGuardBoats(STAllPlayersC *this,char param
                     }
                     DArrayDestroy(local_4c);
                     DArrayDestroy(local_48);
-                    if (local_44 != (DArrayTy *)0x0) {
+                    if (local_44 != nullptr) {
                       DArrayDestroy(local_44);
                     }
                     DArrayRemoveAt(local_1c,local_10);
@@ -112,24 +112,24 @@ void __thiscall STAllPlayersC::OptimizeGuardBoats(STAllPlayersC *this,char param
         }
       }
       pDVar4 = local_40;
-      if (local_40 != (DArrayTy *)0x0) {
+      if (local_40 != nullptr) {
         dVar1 = local_40->count;
         local_c = 0;
         if (0 < (int)dVar1) {
           do {
             DArrayGetElement(pDVar4,local_c,&local_28);
-            if (local_26 != (DArrayTy *)0x0) {
+            if (local_26 != nullptr) {
               DArrayDestroy(local_26);
             }
             local_c = local_c + 1;
           } while ((int)local_c < (int)dVar1);
         }
         DArrayDestroy(pDVar4);
-        local_40 = (DArrayTy *)0x0;
+        local_40 = nullptr;
       }
       DArrayGetElement(array,0,&local_3c);
       uVar6 = local_3c->count;
-      pDVar4 = Library::DKW::TBL::DArrayCreate((DArrayTy *)0x0,uVar6,10,1);
+      pDVar4 = Library::DKW::TBL::DArrayCreate(nullptr,uVar6,10,1);
       g_packedRecords_A62x8[param_1].field2378_0x9fa = pDVar4;
       local_10 = 0;
       local_c = 0;
@@ -138,7 +138,7 @@ void __thiscall STAllPlayersC::OptimizeGuardBoats(STAllPlayersC *this,char param
         do {
           DArrayGetElement(local_3c,local_c,&local_6);
           local_28 = local_6;
-          local_26 = Library::DKW::TBL::DArrayCreate((DArrayTy *)0x0,1,4,1);
+          local_26 = Library::DKW::TBL::DArrayCreate(nullptr,1,4,1);
           local_22 = 0;
           Library::DKW::TBL::DArrayAppend(local_26,&local_10);
           Library::DKW::TBL::DArrayAppend(pDVar4,&local_28);
@@ -167,7 +167,7 @@ void __thiscall STAllPlayersC::OptimizeGuardBoats(STAllPlayersC *this,char param
               }
               if (index_01 == dVar1) {
                 local_28 = local_6;
-                local_26 = Library::DKW::TBL::DArrayCreate((DArrayTy *)0x0,1,4,1);
+                local_26 = Library::DKW::TBL::DArrayCreate(nullptr,1,4,1);
                 local_22 = 0;
                 Library::DKW::TBL::DArrayAppend(local_26,&local_c);
                 Library::DKW::TBL::DArrayAppend(pDVar4,&local_28);

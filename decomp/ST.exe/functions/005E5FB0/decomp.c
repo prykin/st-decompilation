@@ -53,25 +53,25 @@ int __thiscall MTestTy::GetMessage(MTestTy *this,STMessage *message)
       if (local_c->field_00B3 == '\0') {
         _DAT_00811774 = STAppC::sub_006E51B0(local_c->field_0010);
         this_00->field_00B3 = 1;
-        if (g_holo_00811778 != (HoloTy *)0x0) {
+        if (g_holo_00811778 != nullptr) {
           HoloTy::Done(g_holo_00811778);
           Library::MSVCRT::FUN_0072e2b0(g_holo_00811778);
-          g_holo_00811778 = (HoloTy *)0x0;
+          g_holo_00811778 = nullptr;
         }
         FUN_006b2330(g_ddxContext_008075A8,&local_8,0x32,0x403099,0xf9,0x123,
                      (ushort *)&g_startSystem_0081176C->field_0140);
         Library::DKW::DDX::FUN_006b3640((int *)g_ddxContext_008075A8,local_8,0xffffffff,10,0xb4);
         g_holo_00811778 = (HoloTy *)Library::MSVCRT::FUN_0072e530(0x33);
-        if (g_holo_00811778 == (HoloTy *)0x0) {
-          g_holo_00811778 = (HoloTy *)0x0;
+        if (g_holo_00811778 == nullptr) {
+          g_holo_00811778 = nullptr;
         }
         else {
           g_holo_00811778->field_0002 = 1;
           g_holo_00811778->field_0000 = 0;
           *(undefined4 *)&g_holo_00811778->field_0x3 = 0xffffffff;
           g_holo_00811778->field_0001 = CASE_2;
-          g_holo_00811778->field_0007 = (void *)0x0;
-          g_holo_00811778->field_000B = (void *)0x0;
+          g_holo_00811778->field_0007 = nullptr;
+          g_holo_00811778->field_000B = nullptr;
           g_holo_00811778->field_000F = 0;
           *(undefined4 *)&g_holo_00811778->field_0x1b = 1;
           g_holo_00811778->field_0013 = 1;
@@ -81,7 +81,7 @@ int __thiscall MTestTy::GetMessage(MTestTy *this,STMessage *message)
           g_holo_00811778->field_002F = 1;
           g_holo_00811778->field_002B = 1;
         }
-        if (g_holo_00811778 != (HoloTy *)0x0) {
+        if (g_holo_00811778 != nullptr) {
           uVar9 = 0;
           cVar8 = '\x01';
           bVar7 = 0x10;
@@ -105,22 +105,22 @@ int __thiscall MTestTy::GetMessage(MTestTy *this,STMessage *message)
       else if (local_c->field_00B3 == '\x04') {
         _DAT_00811774 = STAppC::sub_006E51B0(local_c->field_0010);
         this_00->field_00B3 = 5;
-        if (g_holo_00811778 != (HoloTy *)0x0) {
+        if (g_holo_00811778 != nullptr) {
           HoloTy::Done(g_holo_00811778);
           Library::MSVCRT::FUN_0072e2b0(g_holo_00811778);
-          g_holo_00811778 = (HoloTy *)0x0;
+          g_holo_00811778 = nullptr;
         }
         g_holo_00811778 = (HoloTy *)Library::MSVCRT::FUN_0072e530(0x33);
-        if (g_holo_00811778 == (HoloTy *)0x0) {
-          g_holo_00811778 = (HoloTy *)0x0;
+        if (g_holo_00811778 == nullptr) {
+          g_holo_00811778 = nullptr;
         }
         else {
           g_holo_00811778->field_0002 = 1;
           g_holo_00811778->field_0000 = 0;
           *(undefined4 *)&g_holo_00811778->field_0x3 = 0xffffffff;
           g_holo_00811778->field_0001 = CASE_2;
-          g_holo_00811778->field_0007 = (void *)0x0;
-          g_holo_00811778->field_000B = (void *)0x0;
+          g_holo_00811778->field_0007 = nullptr;
+          g_holo_00811778->field_000B = nullptr;
           g_holo_00811778->field_000F = 0;
           *(undefined4 *)&g_holo_00811778->field_0x1b = 1;
           g_holo_00811778->field_0013 = 1;
@@ -130,11 +130,11 @@ int __thiscall MTestTy::GetMessage(MTestTy *this,STMessage *message)
           g_holo_00811778->field_002F = 1;
           g_holo_00811778->field_002B = 1;
         }
-        if (g_holo_00811778 != (HoloTy *)0x0) {
+        if (g_holo_00811778 != nullptr) {
           FUN_006b5f80((int *)g_ddxContext_008075A8,10,0xb4,0xf9,0x121);
           MMMObjTy::OutRGlProc
                     ((MMMObjTy *)&g_startSystem_0081176C->field_0140,(int)g_dDXContext_0080759C,
-                     (MMMObjTy *)0x0,(MMMObjTy *)0x0,10,0xb4,0xf9,0x123,
+                     nullptr,nullptr,10,0xb4,0xf9,0x123,
                      &g_startSystem_0081176C->field_0140);
           uVar9 = 0;
           cVar8 = '\x01';

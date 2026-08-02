@@ -15,7 +15,7 @@ void __thiscall FUN_005686c0(void *this,undefined4 param_1)
       iVar1 = 0;
       iVar2 = 2;
       do {
-        FUN_006c1f00(iVar1,&local_8,(uint *)0x0);
+        FUN_006c1f00(iVar1,&local_8,nullptr);
         if (local_8 == 1) {
           Library::DKW::SND::FUN_006c1ce0(iVar1,param_1);
         }

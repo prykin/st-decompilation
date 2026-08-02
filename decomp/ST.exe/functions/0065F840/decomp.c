@@ -17,20 +17,20 @@ uint * FUN_0065f840(DArrayTy *param_1,uint param_2,int param_3)
   undefined2 local_c;
   DArrayTy *local_8;
 
-  local_8 = (DArrayTy *)0x0;
-  if ((((param_1 != (DArrayTy *)0x0) && (param_1->count != 0)) &&
+  local_8 = nullptr;
+  if ((((param_1 != nullptr) && (param_1->count != 0)) &&
       ((int)param_2 < (int)param_1->count)) && (0 < param_3)) {
     local_54.previous = g_currentExceptionFrame;
     g_currentExceptionFrame = &local_54;
     iVar1 = Library::MSVCRT::__setjmp3(local_54.jumpBuffer,0);
     if (iVar1 != 0) {
       g_currentExceptionFrame = local_54.previous;
-      if (local_8 != (DArrayTy *)0x0) {
+      if (local_8 != nullptr) {
         DArrayDestroy(local_8);
       }
-      return (uint *)0x0;
+      return nullptr;
     }
-    array = Library::DKW::TBL::DArrayCreate((DArrayTy *)0x0,5,6,5);
+    array = Library::DKW::TBL::DArrayCreate(nullptr,5,6,5);
     uVar2 = param_1->count;
     uVar4 = param_2;
     local_8 = array;
@@ -45,7 +45,7 @@ uint * FUN_0065f840(DArrayTy *param_1,uint param_2,int param_3)
           puVar3 = (undefined4 *)(param_1->elementSize * uVar4 + (int)param_1->data);
         }
         else {
-          puVar3 = (undefined4 *)0x0;
+          puVar3 = nullptr;
         }
         local_10 = *puVar3;
         local_c = *(undefined2 *)(puVar3 + 1);
@@ -57,6 +57,6 @@ uint * FUN_0065f840(DArrayTy *param_1,uint param_2,int param_3)
     g_currentExceptionFrame = local_54.previous;
     return &array->flags;
   }
-  return (uint *)0x0;
+  return nullptr;
 }
 

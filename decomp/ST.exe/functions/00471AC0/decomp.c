@@ -49,7 +49,7 @@ int __thiscall STBoatC::Guard(STBoatC *this,int param_1)
     memset(&this->field_02CC, 0, 0x5c); /* compiler bulk-zero initialization */
     this->field_02C4 = 0;
     sub_00490CD0(this,this->field_03A6,this->field_03AA,this->field_03AE,this->field_03B2);
-    this->field_047B = (DArrayTy *)0x0;
+    this->field_047B = nullptr;
     this->field_0487 = 0xffffffff;
     this->field_048B = 0xffff;
     this->field_082E = 0xffffffff;
@@ -446,7 +446,7 @@ cf_common_exit_00472CB0:
     if ((dVar1 != 0) && (uVar9 = 0, iVar7 = DAT_007fa134, dVar1 != 0)) {
       while (0 < iVar7) {
         DArrayGetElement(g_array_007FA130,uVar9,&local_20);
-        if (local_20 != (STTorpC *)0x0) {
+        if (local_20 != nullptr) {
           iVar7 = iVar7 + -1;
           STFishC::sub_004162B0((STFishC *)local_20,(short *)((int)&local_10 + 2),&local_c,&local_a);
           /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */

@@ -147,17 +147,17 @@ int FUN_004b33d0(uint param_1,int *param_2)
     STDebugBreak(); /* noreturn in standalone pseudocode */
   }
   local_1c = &stack0xfffffc94;
-  if (param_2 == (int *)0x0) {
+  if (param_2 == nullptr) {
     local_1c = &stack0xfffffc94;
     RaiseInternalException
               (-5,g_overwriteContext_007ED77C,"E:\\__titans\\Artem\\TLO_ai_fnd.cpp",0x5d);
   }
   if (param_2[3] == 0) {
-    pDVar10 = Library::DKW::TBL::DArrayCreate((DArrayTy *)0x0,10,0x14,10);
+    pDVar10 = Library::DKW::TBL::DArrayCreate(nullptr,10,0x14,10);
     param_2[3] = (int)pDVar10;
   }
   if (param_2[5] == 0) {
-    pDVar10 = Library::DKW::TBL::DArrayCreate((DArrayTy *)0x0,10,0x14,10);
+    pDVar10 = Library::DKW::TBL::DArrayCreate(nullptr,10,0x14,10);
     param_2[5] = (int)pDVar10;
   }
   memset(local_24c, 0, 0x108); /* compiler bulk-zero initialization */
@@ -184,12 +184,12 @@ int FUN_004b33d0(uint param_1,int *param_2)
     do {
       DArrayGetElement(pDVar10,uVar21,&local_a0);
       iVar9 = thunk_FUN_004ae0b0((short)local_9c,local_98,local_94,local_a0,param_1,
-                                 (undefined4 *)0x0,(int *)0x0,(int *)0x0,0,(int *)0x0);
+                                 nullptr,nullptr,nullptr,0,nullptr);
       if (iVar9 == 0) {
         local_304[0] = local_a0;
         local_2f4 = local_90;
         if (param_2[3] == 0) {
-          pDVar10 = Library::DKW::TBL::DArrayCreate((DArrayTy *)0x0,10,0x14,10);
+          pDVar10 = Library::DKW::TBL::DArrayCreate(nullptr,10,0x14,10);
           param_2[3] = (int)pDVar10;
         }
         Library::DKW::TBL::DArrayAppend((DArrayTy *)param_2[3],local_304);
@@ -210,7 +210,7 @@ int FUN_004b33d0(uint param_1,int *param_2)
         }
         else {
           if (param_2[3] == 0) {
-            pDVar10 = Library::DKW::TBL::DArrayCreate((DArrayTy *)0x0,10,0x14,10);
+            pDVar10 = Library::DKW::TBL::DArrayCreate(nullptr,10,0x14,10);
             param_2[3] = (int)pDVar10;
           }
           Library::DKW::TBL::DArrayAppend((DArrayTy *)param_2[3],local_320);
@@ -221,19 +221,19 @@ int FUN_004b33d0(uint param_1,int *param_2)
     } while ((int)uVar21 < (int)pDVar10->count);
   }
   recordIndex = (byte)param_1;
-  if (((local_4c[0] != 0) || (local_4c[1] != 0)) && (g_array_007FA150 != (DArrayTy *)0x0)) {
-    pDVar10 = Library::DKW::TBL::DArrayCreate((DArrayTy *)0x0,10,0x1d,10);
+  if (((local_4c[0] != 0) || (local_4c[1] != 0)) && (g_array_007FA150 != nullptr)) {
+    pDVar10 = Library::DKW::TBL::DArrayCreate(nullptr,10,0x1d,10);
     g_array_007FA150->iteratorIndex = 0;
     local_a4 = pDVar10;
     iVar9 = DArrayGetNext(g_array_007FA150,(byte *)&local_58);
     while (-1 < iVar9) {
-      if (local_58 != (STFishC *)0x0) {
+      if (local_58 != nullptr) {
         STFishC::sub_004162B0(local_58,local_7c,local_8c,local_a8);
         this = g_worldGrid.cells
                [(int)local_8c[0] * (int)g_worldGrid.sizeX +
                 (int)g_worldGrid.planeStride * (int)local_a8[0] + (int)local_7c[0]].objects[0];
         local_110 = this;
-        if (this == (STWorldObject *)0x0) {
+        if (this == nullptr) {
           pbVar24 = &local_2ec;
           for (iVar9 = 7; iVar9 != 0; iVar9 = iVar9 + -1) {
             pbVar24[0] = 0;
@@ -304,7 +304,7 @@ LAB_004b3895:
         case CASE_5E:
           iVar9 = 0xdd;
           pDVar10->iteratorIndex = 0;
-          pbVar24 = (byte *)0x0;
+          pbVar24 = nullptr;
           break;
         default:
           goto switchD_004b38f0_caseD_3a;
@@ -312,7 +312,7 @@ LAB_004b3895:
         case CASE_61:
           iVar9 = 0xde;
           pDVar10->iteratorIndex = 0;
-          pbVar24 = (byte *)0x0;
+          pbVar24 = nullptr;
         }
         while( true ) {
           pbVar23 = pbVar24;
@@ -323,21 +323,21 @@ LAB_004b3895:
             pDVar10->iteratorIndex = uVar21 + 1;
           }
           else {
-            pbVar11 = (byte *)0x0;
+            pbVar11 = nullptr;
           }
-          if (pbVar11 == (byte *)0x0) break;
+          if (pbVar11 == nullptr) break;
           bVar2 = *pbVar11;
           pbVar24 = pbVar23;
           /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
           if ((((((bVar2 & 1) != 0) && ((bVar2 & 4) == 0)) && (*(int *)(pbVar11 + 5) == iVar9)) &&
-              (pbVar24 = pbVar11, pbVar23 != (byte *)0x0)) &&
+              (pbVar24 = pbVar11, pbVar23 != nullptr)) &&
              ((pDVar10 = local_a4, (bVar2 & 0x20) < (*pbVar23 & 0x20) ||
               ((pbVar24 = pbVar23, ((*pbVar23 ^ *pbVar11) & 0x20) == 0 &&
                (*(int *)(pbVar11 + 0x15) < *(int *)(pbVar23 + 0x15))))))) {
             pbVar24 = pbVar11;
           }
         }
-        if (pbVar23 != (byte *)0x0) {
+        if (pbVar23 != nullptr) {
           *pbVar23 = *pbVar23 | 4;
           if (local_108[0] == CASE_61) {
             *pbVar23 = *pbVar23 | 8;
@@ -364,7 +364,7 @@ switchD_004b38f0_caseD_3a:
         STFishC::sub_004162B0(local_58,local_7c,local_8c,local_a8);
         local_88 = -1;
         pDVar10->iteratorIndex = 0;
-        pbVar24 = (byte *)0x0;
+        pbVar24 = nullptr;
         while( true ) {
           uVar21 = pDVar10->iteratorIndex;
           if (uVar21 < pDVar10->count) {
@@ -373,18 +373,18 @@ switchD_004b38f0_caseD_3a:
             pDVar10->iteratorIndex = uVar21 + 1;
           }
           else {
-            pbVar23 = (byte *)0x0;
+            pbVar23 = nullptr;
           }
-          if (pbVar23 == (byte *)0x0) break;
+          if (pbVar23 == nullptr) break;
           if ((((*pbVar23 & 6) != 0) && ((*pbVar23 & 0x18) == 0)) &&
              ((iVar9 = FUN_006aced8((int)local_7c[0],(int)local_8c[0],*(int *)(pbVar23 + 9),
-                                    *(int *)(pbVar23 + 0xd)), pbVar24 == (byte *)0x0 ||
+                                    *(int *)(pbVar23 + 0xd)), pbVar24 == nullptr ||
               (iVar9 < local_88)))) {
             pbVar24 = pbVar23;
             local_88 = iVar9;
           }
         }
-        if (pbVar24 != (byte *)0x0) {
+        if (pbVar24 != nullptr) {
           if (local_88 < 0xf) {
             *pbVar24 = *pbVar24 | 0x10;
           }
@@ -423,7 +423,7 @@ switchD_004b38f0_caseD_3a:
                 pbVar24 = (byte *)(pDVar22->elementSize * uVar18 + (int)pDVar22->data);
               }
               else {
-                pbVar24 = (byte *)0x0;
+                pbVar24 = nullptr;
               }
               uVar1 = uVar18 + 1;
               if (uVar1 < uVar21) {
@@ -431,7 +431,7 @@ switchD_004b38f0_caseD_3a:
                 pbVar23 = (byte *)(pDVar22->elementSize * uVar1 + (int)pDVar22->data);
               }
               else {
-                pbVar23 = (byte *)0x0;
+                pbVar23 = nullptr;
               }
               if (((*pbVar23 & 0x20) < (*pbVar24 & 0x20)) ||
                  ((((*pbVar24 ^ *pbVar23) & 0x20) == 0 &&
@@ -460,9 +460,9 @@ switchD_004b38f0_caseD_3a:
             pDVar10->iteratorIndex = uVar21 + 1;
           }
           else {
-            pbVar24 = (byte *)0x0;
+            pbVar24 = nullptr;
           }
-          if (pbVar24 == (byte *)0x0) break;
+          if (pbVar24 == nullptr) break;
           local_11c = *(int *)(pbVar24 + 9);
           local_138 = *(int *)(pbVar24 + 0xd);
           local_254[0] = *(int *)(pbVar24 + 0x11);
@@ -493,13 +493,13 @@ switchD_004b38f0_caseD_3a:
 LAB_004b3d9a:
   if (10 < iVar9) {
 cf_break_loop_004B60CD:
-    if (local_20 != (DArrayTy *)0x0) {
+    if (local_20 != nullptr) {
       DArrayDestroy(local_20);
     }
     puVar25 = local_24c;
     iVar9 = 0x42;
     do {
-      if ((DArrayTy *)*puVar25 != (DArrayTy *)0x0) {
+      if ((DArrayTy *)*puVar25 != nullptr) {
         DArrayDestroy((DArrayTy *)*puVar25);
       }
       puVar25 = puVar25 + 1;
@@ -535,9 +535,9 @@ cf_break_loop_004B60CD:
   if (local_4c[2] != 0) {
     local_27c = &stack0xfffffc94;
     local_1c = &stack0xfffffc94;
-    pDVar10 = Library::DKW::TBL::DArrayCreate((DArrayTy *)0x0,10,0xc,10);
+    pDVar10 = Library::DKW::TBL::DArrayCreate(nullptr,10,0xc,10);
     local_22c = pDVar10;
-    if ((g_array_007FA16C != (DArrayTy *)0x0) && (uVar21 = 0, 0 < (int)g_array_007FA16C->count)) {
+    if ((g_array_007FA16C != nullptr) && (uVar21 = 0, 0 < (int)g_array_007FA16C->count)) {
       do {
         DArrayGetElement(g_array_007FA16C,uVar21,&local_58);
         STFishC::sub_004162B0(local_58,local_7c,local_8c,local_a8);
@@ -588,9 +588,9 @@ cf_break_loop_004B60CD:
   iVar26 = local_140;
   iVar20 = local_13c;
   if (local_4c[3] != 0) {
-    local_184 = Library::DKW::TBL::DArrayCreate((DArrayTy *)0x0,10,0xc,10);
+    local_184 = Library::DKW::TBL::DArrayCreate(nullptr,10,0xc,10);
     pDVar10 = *(DArrayTy **)&g_packedRecords_A62x8[param_1].field_0x9d6;
-    if ((pDVar10 != (DArrayTy *)0x0) && (uVar21 = 0, 0 < (int)pDVar10->count)) {
+    if ((pDVar10 != nullptr) && (uVar21 = 0, 0 < (int)pDVar10->count)) {
       do {
         DArrayGetElement(pDVar10,uVar21,&local_58);
         STFishC::sub_004162B0(local_58,local_7c,local_8c,local_a8);
@@ -639,7 +639,7 @@ cf_break_loop_004B60CD:
   local_140 = iVar26;
   local_144 = iVar9;
   local_54 = local_4c[10] + local_4c[8] + local_4c[9] + local_4c[7] + local_4c[4] + 5 + local_4c[6];
-  local_20 = Library::DKW::TBL::DArrayCreate((DArrayTy *)0x0,10,0x30,10);
+  local_20 = Library::DKW::TBL::DArrayCreate(nullptr,10,0x30,10);
   local_64 = 0;
   local_114 = 0;
 LAB_004b40f9:
@@ -707,7 +707,7 @@ LAB_004b4689:
       iVar9 = DArrayGetNext(g_array_007FA150,(byte *)&local_58);
       puVar27 = local_27c;
       while (-1 < iVar9) {
-        if (local_58 != (STFishC *)0x0) {
+        if (local_58 != nullptr) {
           STFishC::sub_004162B0(local_58,local_7c,local_8c,local_a8);
           iVar9 = (int)local_8c[0] * (int)g_worldGrid.sizeX +
                   (int)g_worldGrid.planeStride * (int)local_a8[0] + (int)local_7c[0];
@@ -837,7 +837,7 @@ LAB_004b4bd1:
                       local_270 = 0;
                       if ((char)iVar26 == '\x03') {
                         if (local_4c[3] != 0) {
-                          if ((local_184 == (DArrayTy *)0x0) || (local_184->count == 0)) {
+                          if ((local_184 == nullptr) || (local_184->count == 0)) {
                             local_270 = 1;
                           }
                           else {
@@ -860,7 +860,7 @@ LAB_004b4bd1:
                         }
                       }
                       else if (local_4c[2] != 0) {
-                        if ((local_22c != (DArrayTy *)0x0) && (local_22c->count != 0)) {
+                        if ((local_22c != nullptr) && (local_22c->count != 0)) {
                           iVar26 = -1;
                           uVar21 = 0;
                           if (0 < (int)local_22c->count) {
@@ -942,7 +942,7 @@ LAB_004b4f35:
                                 }
                                 else if (*(short *)(local_27c + iVar14 * 2) == 0x205) {
                                   local_58 = (STFishC *)g_worldGrid.cells[iVar14].objects[0];
-                                  if (((local_58 != (STFishC *)0x0) &&
+                                  if (((local_58 != nullptr) &&
                                       (dVar13 = local_58->slot_2C(),
                                       0x53 < (int)dVar13)) &&
                                      ((dVar13 = local_58->slot_2C(),
@@ -1069,7 +1069,7 @@ LAB_004b5f7b:
                               if (*(int *)(&DAT_00791d68 + local_108[0] * 4) != iVar9)
                               goto cf_common_join_004B5648;
                               pDVar10 = (DArrayTy *)aiStack_314[local_108[0]];
-                              if ((pDVar10 == (DArrayTy *)0x0) || (pDVar10->count == 0)) {
+                              if ((pDVar10 == nullptr) || (pDVar10->count == 0)) {
 LAB_004b50f4:
                                 bVar28 = true;
                               }
@@ -1104,7 +1104,7 @@ LAB_004b50f4:
                               piVar16 = aiStack_314 + local_108[0];
                               if (*piVar16 == 0) {
                                 piVar16 = aiStack_314 + local_108[0];
-                                pDVar10 = Library::DKW::TBL::DArrayCreate((DArrayTy *)0x0,10,0xc,10);
+                                pDVar10 = Library::DKW::TBL::DArrayCreate(nullptr,10,0xc,10);
                                 *piVar16 = (int)pDVar10;
                               }
                               local_144 = local_11c;
@@ -1144,7 +1144,7 @@ LAB_004b5101:
                               if (*(int *)(&DAT_00791d68 + local_108[0] * 4) != local_ac)
                               goto cf_common_join_004B5648;
                               pDVar10 = (DArrayTy *)aiStack_314[local_108[0]];
-                              if ((pDVar10 == (DArrayTy *)0x0) || (pDVar10->count == 0)) {
+                              if ((pDVar10 == nullptr) || (pDVar10->count == 0)) {
 LAB_004b51da:
                                 bVar28 = true;
                               }
@@ -1180,7 +1180,7 @@ LAB_004b51da:
                                 if (*piVar16 == 0) {
                                   piVar16 = aiStack_314 + local_108[0];
                                   pDVar10 = Library::DKW::TBL::DArrayCreate
-                                                      ((DArrayTy *)0x0,10,0xc,10);
+                                                      (nullptr,10,0xc,10);
                                   *piVar16 = (int)pDVar10;
                                 }
                                 local_144 = local_11c;
@@ -1220,7 +1220,7 @@ LAB_004b51da:
                               if (*(int *)(&DAT_00791d68 + local_108[0] * 4) != local_ac)
                               goto cf_common_join_004B5648;
                               pDVar10 = (DArrayTy *)aiStack_314[local_108[0]];
-                              if ((pDVar10 == (DArrayTy *)0x0) || (pDVar10->count == 0)) {
+                              if ((pDVar10 == nullptr) || (pDVar10->count == 0)) {
 LAB_004b52b6:
                                 bVar28 = true;
                               }
@@ -1261,7 +1261,7 @@ LAB_004b52b6:
                                 if (*piVar16 == 0) {
                                   piVar16 = aiStack_314 + local_108[0];
                                   pDVar10 = Library::DKW::TBL::DArrayCreate
-                                                      ((DArrayTy *)0x0,10,0xc,10);
+                                                      (nullptr,10,0xc,10);
                                   *piVar16 = (int)pDVar10;
                                 }
                                 local_144 = local_11c;
@@ -1305,7 +1305,7 @@ LAB_004b52b6:
                               do {
                                 if (((*(int *)(&DAT_00790950 + local_354) == 10) &&
                                     (pDVar10 = *(DArrayTy **)((int)local_24c + local_354),
-                                    pDVar10 != (DArrayTy *)0x0)) &&
+                                    pDVar10 != nullptr)) &&
                                    (uVar21 = 0, 0 < (int)pDVar10->count)) {
                                   do {
                                     DArrayGetElement(pDVar10,uVar21,&local_144);
@@ -1403,7 +1403,7 @@ LAB_004b52b6:
                                 if (*piVar16 == 0) {
                                   piVar16 = aiStack_314 + local_108[0];
                                   pDVar10 = Library::DKW::TBL::DArrayCreate
-                                                      ((DArrayTy *)0x0,10,0xc,10);
+                                                      (nullptr,10,0xc,10);
                                   *piVar16 = (int)pDVar10;
                                 }
                                 local_144 = local_11c;
@@ -1492,7 +1492,7 @@ LAB_004b5fd6:
             iVar9 = g_worldGrid.sizeX * local_138 +
                     local_11c + g_worldGrid.planeStride * local_254[0];
             local_58 = (STFishC *)g_worldGrid.cells[iVar9].objects[0];
-            if (local_58 == (STFishC *)0x0) {
+            if (local_58 == nullptr) {
               sVar17 = (short)local_11c;
               if (((((sVar17 < 0) || (g_worldGrid.sizeX <= sVar17)) ||
                    (sVar8 = (short)local_138, sVar8 < 0)) ||
@@ -1507,7 +1507,7 @@ LAB_004b5fd6:
               }
               if (sVar17 == 0) {
                 local_58 = (STFishC *)g_worldGrid.cells[iVar9].objects[1];
-                if ((local_58 == (STFishC *)0x0) ||
+                if ((local_58 == nullptr) ||
                    (((dVar13 = local_58->slot_2C(), dVar13 != 0xa6 &&
                      (dVar13 = local_58->slot_2C(), dVar13 != 0xbd)) &&
                     ((dVar13 = local_58->slot_2C(), dVar13 != 0xa7 &&
@@ -1544,7 +1544,7 @@ LAB_004b432d:
                      (local_a8[0] == local_254[0])) {
                     piVar16 = aiStack_314 + local_34c;
                     if (*piVar16 == 0) {
-                      pDVar10 = Library::DKW::TBL::DArrayCreate((DArrayTy *)0x0,10,0xc,10);
+                      pDVar10 = Library::DKW::TBL::DArrayCreate(nullptr,10,0xc,10);
                       *piVar16 = (int)pDVar10;
                     }
                     local_144 = (int)local_7c[0];
@@ -1572,8 +1572,8 @@ LAB_004b432d:
               }
               else {
                 if ((uVar21 < 8) &&
-                   ((g_playSystem_00802A38 == (STPlaySystemC *)0x0 ||
-                    ((byte)(&DAT_008087e9)[uVar21 * 0x51] < 8)))) {
+                   ((g_playSystem_00802A38 == nullptr ||
+                    (g_bulkInitializedRecords_008087C7[uVar21].field_0022 < 8)))) {
                   bVar2 = *(byte *)&local_58->field_0024;
                   if (g_appClass_00806728->field_146F == '\0') {
                     if (bVar2 == recordIndex) {
@@ -1641,9 +1641,9 @@ LAB_004b56e4:
       pDVar10->iteratorIndex = uVar21 + 1;
     }
     else {
-      piVar16 = (int *)0x0;
+      piVar16 = nullptr;
     }
-    if (piVar16 == (int *)0x0) goto LAB_004b5727;
+    if (piVar16 == nullptr) goto LAB_004b5727;
   }
   *piVar16 = 1;
   piVar16[1] = local_11c;

@@ -16,7 +16,7 @@ undefined4 __thiscall FUN_0068f8f0(void *this,short param_1)
     if (*(short *)((int)this + 0x39) != 3) {
       return 1;
     }
-    if ((g_allPlayers_007FA174 != (STAllPlayersC *)0x0) &&
+    if ((g_allPlayers_007FA174 != nullptr) &&
        (sVar1 = thunk_FUN_0043e640(*(char *)((int)this + 0x24),0x62,0,-1), sVar1 != 0)) {
       return 1;
     }
@@ -34,7 +34,7 @@ undefined4 __thiscall FUN_0068f8f0(void *this,short param_1)
           iVar2 = 0;
         }
         this_00 = *(AiFltClassTy **)(iVar2 + 4);
-        if ((this_00 != (AiFltClassTy *)0x0) && (this_00->field_007B == -0x8000)) {
+        if ((this_00 != nullptr) && (this_00->field_007B == -0x8000)) {
           memset(local_38, 0, 0x34); /* compiler bulk-zero initialization */
           local_38[1] = *(undefined4 *)((int)this + 300);
           local_38[0] = 0x75;

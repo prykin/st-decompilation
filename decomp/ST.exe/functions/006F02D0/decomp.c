@@ -9,7 +9,7 @@ undefined4 __cdecl FUN_006f02d0(int *param_1,int param_2,int param_3,int param_4
   int iVar5;
 
   /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
-  if (param_1 == (int *)0x0) {
+  if (param_1 == nullptr) {
     return 0;
   }
   iVar4 = param_2 - param_5;

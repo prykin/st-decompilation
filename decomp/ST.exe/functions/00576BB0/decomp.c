@@ -20,13 +20,13 @@ void CreateBaseSystem(void)
   errorCode = Library::MSVCRT::__setjmp3(local_48.jumpBuffer,0);
   if (errorCode == 0) {
     this = (BaseSystemC *)Library::MSVCRT::FUN_0072e530(0x24);
-    if (this == (BaseSystemC *)0x0) {
-      g_baseSystem_00811638 = (BaseSystemC *)0x0;
+    if (this == nullptr) {
+      g_baseSystem_00811638 = nullptr;
     }
     else {
       g_baseSystem_00811638 = BaseSystemC::BaseSystemC(this,g_appClass_00806728);
     }
-    if (g_baseSystem_00811638 == (BaseSystemC *)0x0) {
+    if (g_baseSystem_00811638 == nullptr) {
       RaiseInternalException(-1,g_overwriteContext_007ED77C,"E:\\__titans\\tsystem.cpp",0x38);
     }
     g_baseSystem_00811638->field_0020 = 0;

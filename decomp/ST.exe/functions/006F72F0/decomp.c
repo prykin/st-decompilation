@@ -37,7 +37,7 @@ joined_r0x006f7307:
     if (uVar4 != 0) {
       iVar5 = param_13;
       /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
-      if (param_11 == (byte *)0x0) {
+      if (param_11 == nullptr) {
         iVar5 = param_12 - 1;
       }
       while( true ) {
@@ -65,7 +65,7 @@ LAB_006f736d:
       uVar3 = uVar3 - iVar5;
     }
     iVar5 = param_8;
-    if (param_11 != (byte *)0x0) {
+    if (param_11 != nullptr) {
       do {
         if (((uint)param_11 & 0x80) == 0) {
           local_10 = (uint)param_11 & 0x7f;

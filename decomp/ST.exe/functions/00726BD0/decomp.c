@@ -6,7 +6,7 @@ void __cdecl FUN_00726bd0(int *param_1)
 
   iVar1 = *param_1;
   if (iVar1 != 0) {
-    if (*(cMf32 **)(iVar1 + 2) != (cMf32 *)0x0) {
+    if (*(cMf32 **)(iVar1 + 2) != nullptr) {
       cMf32::RecMemFree(*(cMf32 **)(iVar1 + 2),(uint *)(iVar1 + 10));
     }
     FreeAndNull((void **)param_1);

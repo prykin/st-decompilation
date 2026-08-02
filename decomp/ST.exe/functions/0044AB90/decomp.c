@@ -41,9 +41,9 @@ int STAllPlayersC::CheckTmps
 
   iVar2 = objectType;
   uVar5 = 0;
-  local_c = (DArrayTy *)0x0;
-  local_10 = (DArrayTy *)0x0;
-  local_8 = (DArrayTy *)0x0;
+  local_c = nullptr;
+  local_10 = nullptr;
+  local_8 = nullptr;
   if (tempGroup == 0) {
     /* ST_PSEUDO[flattened_global_record_array]: expected typedRecordArray[index].field after inferred base/stride proof */
     iVar6 = playerId * 0xa62 + 0x7f4f83;
@@ -67,7 +67,7 @@ int STAllPlayersC::CheckTmps
   }
   if (objectType == 0x19a) {
 LAB_0044ac57:
-    if (objectIds == (DArrayTy *)0x0) {
+    if (objectIds == nullptr) {
       return -1;
     }
     dVar4 = objectIds->count;
@@ -89,7 +89,7 @@ LAB_0044ac57:
       } while ((int)uVar5 < (int)dVar4);
       tempGroup = dVar4;
       if (dVar4 != 0) {
-        objectIds = (DArrayTy *)0x0;
+        objectIds = nullptr;
         piVar3 = (int *)(iVar6 + 10);
         array = local_c;
         do {
@@ -131,9 +131,9 @@ LAB_0044ac57:
             }
 LAB_0044ada0:
             DArrayDestroy(local_10);
-            local_10 = (DArrayTy *)0x0;
+            local_10 = nullptr;
             DArrayDestroy(local_8);
-            local_8 = (DArrayTy *)0x0;
+            local_8 = nullptr;
             if ((tempGroup == 0) && (iVar6 == 0)) {
               DArrayDestroy(local_c);
               return (int)objectIds;

@@ -30,12 +30,12 @@ int __thiscall STGroupC::SaveGrpData(STGroupC *this,int *param_1)
   pSVar6 = local_10;
   if (iVar2 == 0) {
     *param_1 = 0x40;
-    if (local_10->field_0029 != (uint *)0x0) {
+    if (local_10->field_0029 != nullptr) {
       local_c = (undefined4 *)FUN_006b0020(local_10->field_0029,(int *)&local_8);
       FreeAndNull(&local_c);
       *param_1 = *param_1 + local_8;
     }
-    if (pSVar6->field_002D != (uint *)0x0) {
+    if (pSVar6->field_002D != nullptr) {
       local_c = (undefined4 *)FUN_006b0020(pSVar6->field_002D,(int *)&local_8);
       FreeAndNull(&local_c);
       *param_1 = *param_1 + local_8;
@@ -51,7 +51,7 @@ int __thiscall STGroupC::SaveGrpData(STGroupC *this,int *param_1)
     *(undefined4 *)((int)pvVar3 + 0x30) = pSVar6->field_0035;
     *(undefined4 *)((int)pvVar3 + 0x34) = pSVar6->field_0039;
     local_18 = pvVar3;
-    if (pSVar6->field_0029 == (uint *)0x0) {
+    if (pSVar6->field_0029 == nullptr) {
       local_8 = 0;
       *(undefined4 *)((int)pvVar3 + 0x1c) = 0xffffffff;
       *(undefined4 *)((int)pvVar3 + 0x20) = 0;
@@ -68,7 +68,7 @@ int __thiscall STGroupC::SaveGrpData(STGroupC *this,int *param_1)
       pSVar6 = local_10;
     }
     iVar2 = local_8 + 0x40;
-    if (pSVar6->field_002D == (uint *)0x0) {
+    if (pSVar6->field_002D == nullptr) {
       *(undefined4 *)((int)pvVar3 + 0x24) = 0xffffffff;
       *(uint *)((int)pvVar3 + 0x28) = local_8;
     }

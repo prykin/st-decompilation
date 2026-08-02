@@ -18,11 +18,11 @@ FUN_0065fd50(void *this,int param_1,int param_2,short param_3,undefined4 param_4
   *(undefined4 *)((int)this + 0xa7) = 0;
   iVar1 = thunk_FUN_00675950(param_1,param_2,param_3,local_10,local_10 + 1,local_10 + 2,0);
   if (iVar1 != 0) {
-    if ((*(ushort *)((int)this + 0x7d) != 0xfffe) && (g_allPlayers_007FA174 != (STAllPlayersC *)0x0)
+    if ((*(ushort *)((int)this + 0x7d) != 0xfffe) && (g_allPlayers_007FA174 != nullptr)
        ) {
       uStack_a = param_4;
       this_00 = thunk_FUN_0042b760(*(char *)((int)this + 0x24),*(ushort *)((int)this + 0x7d));
-      if (this_00 != (STGroupBoatC *)0x0) {
+      if (this_00 != nullptr) {
         this_00->sub_00498D20(1,local_10);
         return 0;
       }

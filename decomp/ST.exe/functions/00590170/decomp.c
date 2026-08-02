@@ -24,7 +24,7 @@ void __thiscall MAdvTy::InitMAdv(MAdvTy *this)
   local_8 = this;
   iVar2 = Library::MSVCRT::__setjmp3(local_4c.jumpBuffer,0);
   if (iVar2 == 0) {
-    if (g_cursorClass_00802A30 != (CursorClassTy *)0x0) {
+    if (g_cursorClass_00802A30 != nullptr) {
       if (g_cursorClass_00802A30->field_00A9 == 0) {
         Library::DKW::DDX::FUN_006b8b10((int *)g_cursorClass_00802A30->field_00AD);
       }
@@ -42,7 +42,7 @@ void __thiscall MAdvTy::InitMAdv(MAdvTy *this)
     this_01->field_002C = this_01->field_0008;
     this_01->field_0028 = 0x13;
     FUN_006e6000(this_01,3,1,(undefined4 *)&this_01->field_0x18);
-    if (g_startSystem_0081176C->field_02E6 != (MMsgTy *)0x0) {
+    if (g_startSystem_0081176C->field_02E6 != nullptr) {
       MMsgTy::HidePanel(g_startSystem_0081176C->field_02E6,0,0,1);
       MMsgTy::HideSprites(g_startSystem_0081176C->field_02E6);
     }
@@ -51,7 +51,7 @@ void __thiscall MAdvTy::InitMAdv(MAdvTy *this)
     thunk_FUN_0055ddf0((undefined4 *)g_dDXContext_0080759C,(int *)g_ddxContext_008075A8,
                        (ushort *)this_01->field_005E,10,2);
     this_00 = g_cursorClass_00802A30;
-    if (g_cursorClass_00802A30 != (CursorClassTy *)0x0) {
+    if (g_cursorClass_00802A30 != nullptr) {
       iVar2 = g_cursorClass_00802A30->field_00C9;
       iVar4 = g_cursorClass_00802A30->field_00C5;
       g_cursorClass_00802A30->field_0493 = CASE_1;

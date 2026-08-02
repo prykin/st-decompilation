@@ -20,14 +20,14 @@ PutDDXClip(int param_1,int param_2,int param_3,int param_4,uint param_5,byte *pa
   int iVar2;
   InternalExceptionFrame local_48;
 
-  if ((g_dDXContext_0080759C != (DDXContext *)0x0) && (param_8 != (BITMAPINFO *)0x0)) {
+  if ((g_dDXContext_0080759C != nullptr) && (param_8 != nullptr)) {
     local_48.previous = g_currentExceptionFrame;
     g_currentExceptionFrame = &local_48;
     errorCode = Library::MSVCRT::__setjmp3(local_48.jumpBuffer,0);
     if (errorCode == 0) {
       if (param_7 == '\x01') {
         Library::DKW::DDX::FUN_006b42d0
-                  (g_dDXContext_0080759C,param_1,param_2,param_8,(uint *)0x0,param_3,param_4,param_5
+                  (g_dDXContext_0080759C,param_1,param_2,param_8,nullptr,param_3,param_4,param_5
                    ,(DWORD)param_6);
       }
       else if (param_7 == '\x06') {

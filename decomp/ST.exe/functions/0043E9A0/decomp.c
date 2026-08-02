@@ -79,11 +79,11 @@ FUN_0043e9a0(char param_1,Global_sub_0043E9A0_param_2Enum param_2,short param_3,
               piVar1 = *(int **)((int)g_worldGrid.cells[1].objects + iVar2);
               pSVar3 = g_worldGrid.cells;
               /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-              if ((((piVar1 != (int *)0x0) && (piVar1[9] == (int)param_1)) && (piVar1 != (int *)0x0)
+              if ((((piVar1 != nullptr) && (piVar1[9] == (int)param_1)) && (piVar1 != nullptr)
                   ) && ((pSVar3 = (STWorldCell *)(**(code **)(*piVar1 + 0x2c))(),
                         pSVar3 == (STWorldCell *)param_2 &&
                         (pSVar3 = (STWorldCell *)(**(code **)(*piVar1 + 0xf8))(),
-                        pSVar3 != (STWorldCell *)0x0)))) {
+                        pSVar3 != nullptr)))) {
                 if (param_9 == 0) {
 /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
 LAB_0043eb0f:

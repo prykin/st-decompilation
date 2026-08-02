@@ -94,14 +94,14 @@ SetAccelerator(int param_1,undefined4 param_2,undefined4 param_3,undefined4 para
   local_70[3] = 3;
   FUN_006e3db0((int)local_70);
   if (param_1 != 0) {
-    if (g_array_008026F0 == (DArrayTy *)0x0) {
-      g_array_008026F0 = Library::DKW::TBL::DArrayCreate((DArrayTy *)0x0,10,0x4c,10);
+    if (g_array_008026F0 == nullptr) {
+      g_array_008026F0 = Library::DKW::TBL::DArrayCreate(nullptr,10,0x4c,10);
     }
     Library::DKW::TBL::DArrayAppend(g_array_008026F0,local_50);
     g_currentExceptionFrame = local_b4.previous;
     return;
   }
-  if (g_array_008026F0 != (DArrayTy *)0x0) {
+  if (g_array_008026F0 != nullptr) {
     g_array_008026F0->iteratorIndex = 0;
     index = DArrayGetNext(g_array_008026F0,(byte *)local_100);
     if (-1 < (int)index) {
@@ -124,7 +124,7 @@ SetAccelerator(int param_1,undefined4 param_2,undefined4 param_3,undefined4 para
             return;
           }
           DArrayDestroy(g_array_008026F0);
-          g_array_008026F0 = (DArrayTy *)0x0;
+          g_array_008026F0 = nullptr;
           g_currentExceptionFrame = local_b4.previous;
           return;
         }

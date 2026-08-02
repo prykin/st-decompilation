@@ -38,7 +38,7 @@ LAB_00749680:
       /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
       while (iVar3 < *(int *)(param_1 + 0x38)) {
         this = (void *)Library::MSVCRT::FUN_0072e530(0x48);
-        if (this == (void *)0x0) {
+        if (this == nullptr) {
           iVar3 = 0;
         }
         else {

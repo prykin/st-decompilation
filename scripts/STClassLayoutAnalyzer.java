@@ -56,6 +56,8 @@ public class STClassLayoutAnalyzer extends GhidraScript {
     private static final Pattern ACCESSOR = Pattern.compile(
         "^(Get|Set|Is|Has)([A-Z][A-Za-z0-9_]*)$");
     private static final String MARKER = "[STClassLayoutApplier]";
+    private static final Set<String> COOPERATING_LAYOUT_MARKERS = Set.of(
+        MARKER, "[STGlobalDataApplier]");
     private static final String HASH_MARKER = "generated_layout_sha256=";
     private static final String SWITCH_ENUM_MARKER = "[STSwitchEnumApplier]";
     private static final String DARRAY_PATH = "/SubmarineTitans/Recovered/DArrayTy";
@@ -90,6 +92,8 @@ public class STClassLayoutAnalyzer extends GhidraScript {
             directory.resolve("vtable_proposals.tsv"));
         Map<String, List<MemberArrayProposal>> memberArrays = readMemberArrays(
             directory.resolve("class_array_proposals.tsv"));
+        mergeMemberArrays(memberArrays, readInlineAggregates(
+            directory.resolve("inline_aggregate_proposals.tsv")));
         Map<String, ClassEvidence> classes = new TreeMap<>();
 
         FunctionIterator functions = currentProgram.getFunctionManager().getFunctions(true);
@@ -202,6 +206,7 @@ public class STClassLayoutAnalyzer extends GhidraScript {
     }
 
     private void analyzeFunction(Function function, ClassEvidence owner) {
+        inferSplitDoubleMemberCopies(function, owner);
         Map<String, RegisterValue> registers = new HashMap<>();
         registers.put("ECX", RegisterValue.thisAddress(0));
         Map<Long, RegisterValue> stackValues = new HashMap<>();
@@ -300,6 +305,119 @@ public class STClassLayoutAnalyzer extends GhidraScript {
         }
         recoverCfgThisFields(function, owner, stableThisSlots, functionFields);
         inferAccessorName(function, owner, functionFields);
+    }
+
+    /**
+     * MSVC copies a by-value double with two integer MOVs.  Once the ABI pass
+     * has proved the incoming eight-byte slot, an exact low/high copy into two
+     * adjacent this-relative dwords proves one double member as well.  Constants,
+     * function names, and image addresses are deliberately irrelevant here.
+     */
+    private void inferSplitDoubleMemberCopies(Function function, ClassEvidence owner) {
+        boolean recoveredAbi = hasFunctionTag(function, "RECOVERED_ABI_CONSISTENCY");
+        Map<Long, Integer> sourceHalves = new HashMap<>();
+        long frameBias = currentProgram.getDefaultPointerSize();
+        for (Parameter parameter : function.getParameters()) {
+            DataType type = untypedef(parameter.getFormalDataType());
+            if (parameter.isAutoParameter() || !parameter.isStackVariable() ||
+                    type == null || type.getLength() != 8 ||
+                    !"/double".equals(type.getPathName()) ||
+                    !recoveredAbi && !trusted(parameter.getSource())) continue;
+            long start = parameter.getStackOffset() + frameBias;
+            sourceHalves.put(start, 0);
+            sourceHalves.put(start + 4, 1);
+        }
+        if (sourceHalves.isEmpty()) return;
+
+        Set<String> thisAliases = new HashSet<>();
+        thisAliases.add("ECX");
+        Map<String, SplitDoubleHalf> registers = new HashMap<>();
+        Map<Long, SplitDoubleHalf[]> destinations = new TreeMap<>();
+        Map<Long, List<String>> sites = new TreeMap<>();
+        InstructionIterator instructions = currentProgram.getListing()
+            .getInstructions(function.getBody(), true);
+        while (instructions.hasNext()) {
+            Instruction instruction = instructions.next();
+            String mnemonic = instruction.getMnemonicString().toUpperCase(Locale.ROOT);
+            String[] operands = splitOperands(instruction.toString().toUpperCase(Locale.ROOT));
+            if ("MOV".equals(mnemonic) && operands.length >= 2) {
+                String destinationRegister = cleanRegister(operands[0]);
+                if (destinationRegister != null && isFullRegister(operands[0])) {
+                    String sourceRegister = cleanRegister(operands[1]);
+                    MemoryExpr sourceMemory = memoryExpr(operands[1]);
+                    SplitDoubleHalf half = sourceRegister == null ? null :
+                        registers.get(sourceRegister);
+                    if (half == null && sourceMemory != null &&
+                            "EBP".equals(sourceMemory.register)) {
+                        Integer piece = sourceHalves.get(sourceMemory.displacement);
+                        if (piece != null)
+                            half = new SplitDoubleHalf(sourceMemory.displacement - piece * 4L,
+                                piece);
+                    }
+                    if (half == null) registers.remove(destinationRegister);
+                    else registers.put(destinationRegister, half);
+                    thisAliases.remove(destinationRegister);
+                    if (sourceRegister != null && thisAliases.contains(sourceRegister))
+                        thisAliases.add(destinationRegister);
+                    continue;
+                }
+                MemoryExpr destination = memoryExpr(operands[0]);
+                String sourceRegister = cleanRegister(operands[1]);
+                SplitDoubleHalf half = sourceRegister == null ? null :
+                    registers.get(sourceRegister);
+                if (destination != null && thisAliases.contains(destination.register) &&
+                        half != null) {
+                    long member = destination.displacement - half.half * 4L;
+                    if (member >= 0 && member + 8 <= MAX_CLASS_SIZE &&
+                            destination.displacement == member + half.half * 4L) {
+                        SplitDoubleHalf[] pieces = destinations.computeIfAbsent(member,
+                            ignored -> new SplitDoubleHalf[2]);
+                        pieces[half.half] = half;
+                        sites.computeIfAbsent(member, ignored -> new ArrayList<>()).add(
+                            addr(instruction.getAddress()) + " copies incoming /double half " +
+                            half.half + " to [this+" + hex(destination.displacement) + "]");
+                    }
+                }
+            }
+            if ("CALL".equals(mnemonic)) {
+                for (String register : List.of("EAX", "ECX", "EDX")) {
+                    thisAliases.remove(register);
+                    registers.remove(register);
+                }
+            }
+            else if (instruction.getFlowType().isJump() ||
+                    instruction.getFlowType().isTerminal()) {
+                thisAliases.clear();
+                registers.clear();
+            }
+            else if (operands.length > 0) {
+                String destination = cleanRegister(operands[0]);
+                if (destination != null && isFullRegister(operands[0]) &&
+                        isWriteMnemonic(mnemonic)) {
+                    thisAliases.remove(destination);
+                    registers.remove(destination);
+                }
+            }
+        }
+        for (Map.Entry<Long, SplitDoubleHalf[]> entry : destinations.entrySet()) {
+            SplitDoubleHalf[] pieces = entry.getValue();
+            if (pieces[0] == null || pieces[1] == null ||
+                    pieces[0].sourceOffset != pieces[1].sourceOffset) continue;
+            FieldEvidence field = field(owner, entry.getKey());
+            field.sizes.merge(8, 1, Integer::sum);
+            field.writes++;
+            field.addType("/double", addr(function.getEntryPoint()) +
+                " exact adjacent copy of one ABI-proven /double parameter; sites=" +
+                String.join(" | ", sites.getOrDefault(entry.getKey(), List.of())));
+            field.functions.add(function.getEntryPoint().toString().toUpperCase(Locale.ROOT));
+            owner.functions.add(function.getEntryPoint().toString().toUpperCase(Locale.ROOT));
+        }
+    }
+
+    private boolean hasFunctionTag(Function function, String wanted) {
+        for (FunctionTag tag : function.getTags())
+            if (wanted.equals(tag.getName())) return true;
+        return false;
     }
 
     /**
@@ -1673,9 +1791,9 @@ public class STClassLayoutAnalyzer extends GhidraScript {
                 typeApply = false;
             }
             else if (existing != null && existing.getOffset() == field.offset &&
-                    existing.getLength() == size && existing.getComment() != null &&
-                    existing.getComment().contains(MARKER) &&
-                    !isUndefined(existing.getDataType())) {
+                    existing.getLength() == size &&
+                    !isUndefined(existing.getDataType()) &&
+                    isOwnedUnchangedCandidate(structure)) {
                 type = typeSpecification(existing.getDataType());
                 if (existing.getFieldName() != null) name = existing.getFieldName();
                 existingConcreteType = true;
@@ -1695,9 +1813,17 @@ public class STClassLayoutAnalyzer extends GhidraScript {
                     typeApply = typeLength(inferredType) == size;
                 }
                 else if (isOwnedUnchangedCandidate(structure) && inferredType.isBlank()) {
-                    retiredDeprecatedInference = deprecatedGeneratedInference(existing);
-                    if (retiredDeprecatedInference.isBlank() && scalarTypeConflict(field))
-                        retiredDeprecatedInference = "unresolved_scalar_domain";
+                    // Only STClassLayoutApplier owns retirement semantics for
+                    // one of its old inferred members.  A cooperating producer
+                    // may have stronger evidence which is not visible in this
+                    // analyzer, so retain its concrete component unless fresh
+                    // evidence proves a replacement above.
+                    if (existing.getComment() != null &&
+                            existing.getComment().contains(MARKER)) {
+                        retiredDeprecatedInference = deprecatedGeneratedInference(existing);
+                        if (retiredDeprecatedInference.isBlank() && scalarTypeConflict(field))
+                            retiredDeprecatedInference = "unresolved_scalar_domain";
+                    }
                     if (!retiredDeprecatedInference.isBlank()) {
                         inferredType = "/undefined" + size;
                         typeApply = true;
@@ -1757,14 +1883,16 @@ public class STClassLayoutAnalyzer extends GhidraScript {
             boolean exact = currentType.equals(array.proposedType) &&
                 existing != null && existing.getLength() == array.size;
             String evidenceText = array.proposedType + " <= " + array.evidenceSites;
+            boolean nestedAggregate = array.reason.startsWith("exact_nested_aggregate");
             result.add(new FieldProposal(evidence.owner, array.offset, array.size,
                 name, exact ? currentType : array.proposedType,
                 array.proposedType, !exact, "", false, evidenceText, "",
                 exact ? "existing" : "high", "none", array.boundedSites,
                 array.exactLoops, array.functions, true, "high",
-                "bounded_member_array; count=" + array.count +
-                "; element_size=" + array.elementSize +
-                "; [STClassArrayAnalyzer] " + array.reason));
+                (nestedAggregate ? "exact_nested_aggregate" : "bounded_member_array") +
+                "; count=" + array.count + "; element_size=" + array.elementSize +
+                "; " + (nestedAggregate ? "[STInlineAggregateAnalyzer] " :
+                    "[STClassArrayAnalyzer] ") + array.reason));
         }
         disableDuplicateSuggestedNames(result);
         // A high-confidence owner vtable is direct layout evidence even when none of the
@@ -1925,6 +2053,45 @@ public class STClassLayoutAnalyzer extends GhidraScript {
         return result;
     }
 
+    private Map<String, List<MemberArrayProposal>> readInlineAggregates(Path path)
+            throws Exception {
+        Map<String, List<MemberArrayProposal>> result = new TreeMap<>();
+        if (!Files.isRegularFile(path)) return result;
+        Tsv tsv = readTsv(path);
+        for (String required : List.of("apply", "kind", "owner", "offset", "size",
+                "proposed_type", "proposed_name", "evidence_function",
+                "evidence_sites", "reason"))
+            if (!tsv.header.contains(required))
+                throw new IllegalArgumentException(
+                    "inline_aggregate_proposals.tsv missing column " + required);
+        for (Map<String, String> row : tsv.rows) {
+            if (!enabled(row.get("apply")) ||
+                    !"nested_struct".equals(unt(row.get("kind")))) continue;
+            String owner = unt(row.get("owner"));
+            int size = Integer.parseInt(row.get("size"));
+            if (owner.isBlank() || size < 1) continue;
+            Set<String> functions = new TreeSet<>();
+            if (!unt(row.get("evidence_function")).isBlank())
+                functions.add(unt(row.get("evidence_function")));
+            result.computeIfAbsent(owner, ignored -> new ArrayList<>()).add(
+                new MemberArrayProposal(true, owner,
+                    Long.parseLong(row.get("offset")), 1, size, size,
+                    unt(row.get("proposed_type")), unt(row.get("proposed_name")),
+                    0, 1, "exact_nested_aggregate; " + unt(row.get("reason")),
+                    functions, unt(row.get("evidence_sites"))));
+        }
+        return result;
+    }
+
+    private void mergeMemberArrays(Map<String, List<MemberArrayProposal>> target,
+            Map<String, List<MemberArrayProposal>> additions) {
+        for (Map.Entry<String, List<MemberArrayProposal>> entry : additions.entrySet())
+            target.computeIfAbsent(entry.getKey(), ignored -> new ArrayList<>())
+                .addAll(entry.getValue());
+        for (List<MemberArrayProposal> values : target.values())
+            values.sort(Comparator.comparingLong(value -> value.offset));
+    }
+
     private Map<String, String> readVtableTypes(Path path) throws Exception {
         Map<String, String> result = new TreeMap<>();
         if (!Files.isRegularFile(path)) return result;
@@ -2001,7 +2168,8 @@ public class STClassLayoutAnalyzer extends GhidraScript {
 
     private boolean isOwnedUnchangedCandidate(Structure structure) {
         String description = structure.getDescription();
-        if (description == null || !description.contains(MARKER)) return false;
+        if (description == null || COOPERATING_LAYOUT_MARKERS.stream()
+                .noneMatch(description::contains)) return false;
         String stored = storedLayoutHash(description);
         return stored != null && stored.equals(layoutHash(structure));
     }
@@ -2456,6 +2624,7 @@ public class STClassLayoutAnalyzer extends GhidraScript {
             this.register = register; this.displacement = displacement;
         }
     }
+    private record SplitDoubleHalf(long sourceOffset, int half) { }
     private enum ValueKind { THIS_ADDRESS, FIELD_VALUE, TYPED_VALUE, UNKNOWN }
     private static class RegisterValue {
         final ValueKind kind;

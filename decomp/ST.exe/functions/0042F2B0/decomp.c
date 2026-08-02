@@ -144,7 +144,7 @@ LAB_0042f547:
     iVar9 = (int)param_1;
     *(short *)&g_packedRecords_A62x8[iVar9].field_0xd =
          *(short *)&g_packedRecords_A62x8[iVar9].field_0xd + -1;
-    if (pMVar2 != (MoneyTy *)0x0) {
+    if (pMVar2 != nullptr) {
       MoneyTy::sub_0052BDA0(pMVar2,param_1,(uint)*(ushort *)&g_packedRecords_A62x8[iVar9].field_0xd);
     }
     /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
@@ -281,7 +281,7 @@ LAB_0042f547:
     iVar9 = (int)param_1;
     *(short *)&g_packedRecords_A62x8[iVar9].field_0xd =
          *(short *)&g_packedRecords_A62x8[iVar9].field_0xd + -1;
-    if (pMVar2 != (MoneyTy *)0x0) {
+    if (pMVar2 != nullptr) {
       MoneyTy::sub_0052BDA0(pMVar2,param_1,(uint)*(ushort *)&g_packedRecords_A62x8[iVar9].field_0xd);
     }
     /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
@@ -443,7 +443,7 @@ LAB_0042f547:
   }
   if ((ushort)param_2 != 0xffff) {
     local_10 = thunk_FUN_0042b760(param_1,(ushort)param_2);
-    if (local_10 == (STGroupBoatC *)0x0) {
+    if (local_10 == nullptr) {
       RaiseInternalException
                 (-0x5001fffc,g_overwriteContext_007ED77C,"E:\\__titans\\wlad\\to_allpl.cpp",
                  0x7a5);
@@ -475,7 +475,7 @@ LAB_0042f547:
 LAB_00430018:
   iVar9 = (**(code **)(*param_4 + 0x2c))();
   pDVar8 = local_20;
-  if ((iVar9 == 0x1d) && (local_20 != (DArrayTy *)0x0)) {
+  if ((iVar9 == 0x1d) && (local_20 != nullptr)) {
     local_24 = local_20->count;
     uVar10 = 0;
     if (0 < (int)local_24) {

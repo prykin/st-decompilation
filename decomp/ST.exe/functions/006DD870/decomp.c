@@ -20,43 +20,43 @@ void __thiscall ST3DSMAPContext::sub_006DD870(ST3DSMAPContext *this)
   int iVar4;
   int iVar5;
   uint uVar6;
-  byte *puVar7;
+  byte *pbVar7;
   byte *puVar8;
   longlong lVar9;
   int local_14;
   int local_10;
   int local_c;
 
-  if (((*(int *)&this->field_0x148 < 1) || (*(int *)&this->field_0x154 == 0)) ||
-     (*(double *)&this->field_0x164 <= *(double *)&this->field_0x15c)) {
-    FreeAndNull((void **)&this->field_0x158);
+  if (((this->field_0148 < 1) || (this->field_0154 == nullptr)) ||
+     (this->field_0164 <= this->field_015C)) {
+    FreeAndNull(&this->field_0158);
   }
   else {
-    if (*(int *)&this->field_0x158 == 0) {
+    if (this->field_0158 == nullptr) {
       pvVar1 = Library::DKW::LIB::MemAlloc(0xc000);
-      *(void **)&this->field_0x158 = pvVar1;
+      this->field_0158 = pvVar1;
     }
     lVar9 = Library::MSVCRT::__ftol();
     uVar6 = (uint)lVar9 & 0x7f00;
-    *(uint *)&this->field_0x16c = uVar6;
+    this->field_016C = uVar6;
     lVar9 = Library::MSVCRT::__ftol();
-    *(uint *)&this->field_0x170 = (uint)lVar9 & 0x7f00;
+    this->field_0170 = (uint)lVar9 & 0x7f00;
     local_c = 0;
     iVar2 = (int)uVar6 >> 8;
     if (iVar2 != 0) {
       iVar5 = 0;
       iVar3 = iVar2;
       do {
-        puVar8 = (byte *)(*(int *)&this->field_0x158 + iVar5);
+        puVar8 = (byte *)((int)this->field_0158 + iVar5);
         iVar5 = iVar5 + 0x100;
         iVar3 = iVar3 + -1;
-        puVar7 = (byte *)(*(undefined4 **)&this->field_0x154);
-        memmove(puVar8, puVar7, 0x100); /* compiler REP MOVS byte copy */
+        pbVar7 = this->field_0154;
+        memmove(puVar8, pbVar7, 0x100); /* compiler REP MOVS byte copy */
         local_c = iVar2;
       } while (iVar3 != 0);
     }
-    iVar3 = *(int *)&this->field_0x170 - *(int *)&this->field_0x16c;
-    iVar2 = *(int *)&this->field_0x148;
+    iVar3 = this->field_0170 - this->field_016C;
+    iVar2 = this->field_0148;
     iVar5 = (int)(iVar3 + (iVar3 >> 0x1f & 0xffU)) >> 8;
     iVar3 = 0;
     if (0 < iVar5) {
@@ -64,10 +64,10 @@ void __thiscall ST3DSMAPContext::sub_006DD870(ST3DSMAPContext *this)
       iVar4 = iVar5 / 2;
       local_14 = iVar5;
       do {
-        puVar8 = (byte *)(*(int *)&this->field_0x158 + local_10);
+        puVar8 = (byte *)((int)this->field_0158 + local_10);
         local_10 = local_10 + 0x100;
-        puVar7 = (byte *)((iVar4 / iVar5 + 1) * 0x100 + *(int *)&this->field_0x154);
-        memmove(puVar8, puVar7, 0x100); /* compiler REP MOVS byte copy */
+        pbVar7 = this->field_0154 + (iVar4 / iVar5 + 1) * 0x100;
+        memmove(puVar8, pbVar7, 0x100); /* compiler REP MOVS byte copy */
         iVar4 = iVar4 + iVar2;
         local_14 = local_14 + -1;
         iVar3 = iVar5;
@@ -76,19 +76,18 @@ void __thiscall ST3DSMAPContext::sub_006DD870(ST3DSMAPContext *this)
     if (local_c + iVar3 < 0xc0) {
       iVar2 = (local_c + iVar3) * 0x100;
       do {
-        puVar8 = (byte *)(*(int *)&this->field_0x158 + iVar2);
+        puVar8 = (byte *)((int)this->field_0158 + iVar2);
         iVar2 = iVar2 + 0x100;
-        puVar7 = (byte *)(*(int *)&this->field_0x148 * 0x100 + *(int *)&this->field_0x154);
-        memmove(puVar8, puVar7, 0x100); /* compiler REP MOVS byte copy */
+        pbVar7 = this->field_0154 + this->field_0148 * 0x100;
+        memmove(puVar8, pbVar7, 0x100); /* compiler REP MOVS byte copy */
       } while (iVar2 < 0xc000);
     }
     lVar9 = Library::MSVCRT::__ftol();
     iVar2 = (int)lVar9;
     this->field_0174 = iVar2;
-    if (((this->field_0144 != 0) && (0 < iVar2)) && (iVar2 < *(int *)&this->field_0x2c)) {
-      pvVar1 = Library::DKW::LIB::MemRealloc
-                         ((AnonPointee_TLOBaseTy_0607 *)this->field_001C,this->field_0028 * iVar2);
-      this->field_001C = (int)pvVar1;
+    if (((this->field_0144 != 0) && (0 < iVar2)) && (iVar2 < this->field_002C)) {
+      pvVar1 = Library::DKW::LIB::MemRealloc(this->field_001C,this->field_0028 * iVar2);
+      this->field_001C = pvVar1;
       return;
     }
   }

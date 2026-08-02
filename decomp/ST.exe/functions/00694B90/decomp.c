@@ -11,14 +11,14 @@
 void __thiscall CGenerate::sub_00694B90(CGenerate *this)
 
 {
-  if (this->field_0008 != (int *)0x0) {
+  if (this->field_0008 != nullptr) {
     FUN_006f07e0((int *)&this->field_0008);
   }
-  if (this->field_000C != (byte *)0x0) {
+  if (this->field_000C != nullptr) {
     Library::Ourlib::MFSTMAP::mfTMapErase((int *)&this->field_000C);
   }
-  this->field_0008 = (int *)0x0;
-  this->field_000C = (byte *)0x0;
+  this->field_0008 = nullptr;
+  this->field_000C = nullptr;
   return;
 }
 

@@ -33,12 +33,12 @@ CPanelTy::PaintBBut(CPanelTy *this,byte param_1,STMessage *param_2,byte param_3,
   CPanelTy *local_8;
 
   local_10 = (param_2->arg1).ptr;
-  local_c = (ushort *)0x0;
+  local_c = nullptr;
   local_54.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_54;
   local_8 = this;
   errorCode = (int *)Library::MSVCRT::__setjmp3(local_54.jumpBuffer,0);
-  if (errorCode != (int *)0x0) {
+  if (errorCode != nullptr) {
     g_currentExceptionFrame = local_54.previous;
     iVar5 = ReportDebugMessage("E:\\__titans\\Andrey\\cp_sup.cpp",0x1de,0,(int)errorCode,
                                "%s","CPanelTy::PaintBBut");

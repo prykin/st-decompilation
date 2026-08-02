@@ -12,8 +12,8 @@ char * FUN_006c2980(char *param_1,char *param_2)
   char *pcVar4;
   uint uVar5;
 
-  if (param_2 == (char *)0x0) {
-    return (char *)0x0;
+  if (param_2 == nullptr) {
+    return nullptr;
   }
   uVar3 = 0xffffffff;
   pcVar4 = param_2;
@@ -29,7 +29,7 @@ char * FUN_006c2980(char *param_1,char *param_2)
     if (pcVar2 <= param_2) break;
     pcVar4 = pcVar2 + -1;
   } while ((*pcVar4 == ' ') || (*pcVar4 == '\t'));
-  if ((param_1 != (char *)0x0) && (param_1 != param_2)) {
+  if ((param_1 != nullptr) && (param_1 != param_2)) {
     uVar5 = (int)pcVar2 - (int)param_2;
     pcVar4 = param_1;
     memmove(pcVar4, param_2, uVar5); /* compiler REP MOVS byte copy */

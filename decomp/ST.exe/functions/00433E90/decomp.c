@@ -79,10 +79,10 @@ STAllPlayersC::PointPick(STAllPlayersC *this,uint *objectIds,int param_2,int par
   DArrayTy *local_8;
   int uVar4;
 
-  local_8 = (DArrayTy *)0x0;
+  local_8 = nullptr;
   piVar2 = (int *)ST3DSMAPContext::sub_006EB350(g_sT3DSMAPContext_00807598,param_2,param_3,0xe,1);
   playerId = (char)objectIds;
-  if (piVar2 == (int *)0x0) {
+  if (piVar2 == nullptr) {
     RemoveActiveTV(playerId);
     return;
   }
@@ -106,7 +106,7 @@ STAllPlayersC::PointPick(STAllPlayersC *this,uint *objectIds,int param_2,int par
         iVar3 = g_packedRecords_A62x8[playerId].field332_0x163;
         if (iVar3 != 0) {
           if (iVar3 == 0x3c) {
-            iVar3 = CheckTmps(playerId,0,0x1ae,(char)piVar2[9],(DArrayTy *)0x0,
+            iVar3 = CheckTmps(playerId,0,0x1ae,(char)piVar2[9],nullptr,
                               *(short *)((int)piVar2 + 0x32));
             if (0 < iVar3) {
               ActivateTV(this,playerId,0,iVar3);
@@ -130,7 +130,7 @@ STAllPlayersC::PointPick(STAllPlayersC *this,uint *objectIds,int param_2,int par
             }
             STDebugBreak(); /* noreturn in standalone pseudocode */
           }
-          iVar3 = CheckTmps(playerId,0,0x1ae,(char)piVar2[9],(DArrayTy *)0x0,
+          iVar3 = CheckTmps(playerId,0,0x1ae,(char)piVar2[9],nullptr,
                             *(short *)((int)piVar2 + 0x32));
           if (0 < iVar3) {
             ActivateTV(this,playerId,0,iVar3);
@@ -153,7 +153,7 @@ STAllPlayersC::PointPick(STAllPlayersC *this,uint *objectIds,int param_2,int par
         ownerPlayerId = (char)piVar2[9];
         iVar3 = 0x1ae;
 LAB_004345a2:
-        iVar3 = CheckTmps(playerId,0,iVar3,ownerPlayerId,(DArrayTy *)0x0,objectId);
+        iVar3 = CheckTmps(playerId,0,iVar3,ownerPlayerId,nullptr,objectId);
         /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
         uVar7 = extraout_EDX_00;
         /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
@@ -184,7 +184,7 @@ LAB_004345b4:
           goto LAB_004345a2;
         }
         if (iVar3 == 0x3c) {
-          iVar3 = CheckTmps(playerId,0,piVar2[8],(char)piVar2[9],(DArrayTy *)0x0,
+          iVar3 = CheckTmps(playerId,0,piVar2[8],(char)piVar2[9],nullptr,
                             *(short *)((int)piVar2 + 0x32));
           if (0 < iVar3) {
             ActivateTV(this,playerId,0,iVar3);
@@ -201,7 +201,7 @@ LAB_004345b4:
             }
             STDebugBreak(); /* noreturn in standalone pseudocode */
           }
-          iVar3 = CheckTmps(playerId,0,0x1ae,(char)piVar2[9],(DArrayTy *)0x0,
+          iVar3 = CheckTmps(playerId,0,0x1ae,(char)piVar2[9],nullptr,
                             *(short *)((int)piVar2 + 0x32));
           if (-1 < iVar3) goto LAB_004345b4;
         }
@@ -237,7 +237,7 @@ cf_common_exit_0043440E:
       iVar3 = g_packedRecords_A62x8[playerId].field390_0x1b3;
       if (iVar3 < 0x19b) {
         if (iVar3 == 0x19a) {
-          objectIds = &Library::DKW::TBL::DArrayCreate((DArrayTy *)0x0,0,2,1)->flags;
+          objectIds = &Library::DKW::TBL::DArrayCreate(nullptr,0,2,1)->flags;
           Library::DKW::TBL::DArrayAppend((DArrayTy *)objectIds,(void *)((int)piVar2 + 0x32));
           iVar3 = CheckTmps(playerId,1,0x19a,(char)piVar2[9],(DArrayTy *)objectIds,0);
           if (-1 < iVar3) {
@@ -251,7 +251,7 @@ cf_common_exit_0043440E:
           goto LAB_00434c44;
         }
 LAB_004349ac:
-        objectIds = &Library::DKW::TBL::DArrayCreate((DArrayTy *)0x0,0,2,1)->flags;
+        objectIds = &Library::DKW::TBL::DArrayCreate(nullptr,0,2,1)->flags;
         Library::DKW::TBL::DArrayAppend((DArrayTy *)objectIds,(void *)((int)piVar2 + 0x32));
         iVar3 = CheckTmps(playerId,1,0x19a,(char)piVar2[9],(DArrayTy *)objectIds,0);
         if (iVar3 < 1) goto LAB_00434c92;
@@ -268,7 +268,7 @@ LAB_00434c12:
           STDebugBreak(); /* noreturn in standalone pseudocode */
         }
 LAB_00434c44:
-        objectIds = &Library::DKW::TBL::DArrayCreate((DArrayTy *)0x0,0,2,1)->flags;
+        objectIds = &Library::DKW::TBL::DArrayCreate(nullptr,0,2,1)->flags;
         Library::DKW::TBL::DArrayAppend((DArrayTy *)objectIds,(void *)((int)piVar2 + 0x32));
         iVar3 = CheckTmps(playerId,1,0x19a,(char)piVar2[9],(DArrayTy *)objectIds,0);
         if (0 < iVar3) {
@@ -302,7 +302,7 @@ LAB_00434c92:
           if ((iVar3 != 0x5a) && (iVar3 != 0x172)) goto LAB_00434ab0;
           goto LAB_00434ae2;
         }
-        objectIds = &Library::DKW::TBL::DArrayCreate((DArrayTy *)0x0,0,2,1)->flags;
+        objectIds = &Library::DKW::TBL::DArrayCreate(nullptr,0,2,1)->flags;
         Library::DKW::TBL::DArrayAppend((DArrayTy *)objectIds,(void *)((int)piVar2 + 0x32));
         iVar3 = CheckTmps(playerId,1,0x19a,(char)piVar2[9],(DArrayTy *)objectIds,0);
         if (0 < iVar3) {
@@ -312,7 +312,7 @@ LAB_00434c92:
         if (-1 < iVar3) goto cf_common_exit_00434CB8;
         PushTV(playerId,1);
         if (g_packedRecords_A62x8[playerId].field396_0x1c7 != piVar2[9]) goto LAB_00434b39;
-        CalibrateTmp(this,playerId,1,1,objectIds,(int *)&local_8,(int *)0x0,(int *)0x0);
+        CalibrateTmp(this,playerId,1,1,objectIds,(int *)&local_8,nullptr,nullptr);
         /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
         ResetActivityFromObjs
                   (this,CONCAT31((int3)((uint)extraout_EDX_03 >> 8),(char)piVar2[9]),0x19a,local_8,0
@@ -332,7 +332,7 @@ LAB_00434ab0:
           STDebugBreak(); /* noreturn in standalone pseudocode */
         }
 LAB_00434ae2:
-        objectIds = &Library::DKW::TBL::DArrayCreate((DArrayTy *)0x0,0,2,1)->flags;
+        objectIds = &Library::DKW::TBL::DArrayCreate(nullptr,0,2,1)->flags;
         Library::DKW::TBL::DArrayAppend((DArrayTy *)objectIds,(void *)((int)piVar2 + 0x32));
         iVar3 = CheckTmps(playerId,1,0x19a,(char)piVar2[9],(DArrayTy *)objectIds,0);
         if (0 < iVar3) {
@@ -381,14 +381,14 @@ cf_common_exit_00434CB8:
               SelfCheckObjControl(this);
               return;
             }
-            objectIds = &Library::DKW::TBL::DArrayCreate((DArrayTy *)0x0,0,2,1)->flags;
+            objectIds = &Library::DKW::TBL::DArrayCreate(nullptr,0,2,1)->flags;
             Library::DKW::TBL::DArrayAppend((DArrayTy *)objectIds,(void *)((int)piVar2 + 0x32));
             iVar3 = CheckTmps(playerId,0,0x3c,(char)piVar2[9],(DArrayTy *)objectIds,0);
             if (iVar3 < 1) {
               if (iVar3 < 0) {
                 PushTV(playerId,0);
                 if (g_packedRecords_A62x8[playerId].field338_0x177 != piVar2[9]) goto LAB_0043414f;
-                CalibrateTmp(this,playerId,0,1,objectIds,(int *)&local_8,(int *)0x0,(int *)0x0);
+                CalibrateTmp(this,playerId,0,1,objectIds,(int *)&local_8,nullptr,nullptr);
                 /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
                 ResetActivityFromObjs
                           (this,CONCAT31((int3)((uint)extraout_EAX >> 8),(char)piVar2[9]),0x3c,
@@ -416,7 +416,7 @@ cf_common_exit_00434CB8:
             if (param_4 == 1) {
               return;
             }
-            objectIds = &Library::DKW::TBL::DArrayCreate((DArrayTy *)0x0,0,2,1)->flags;
+            objectIds = &Library::DKW::TBL::DArrayCreate(nullptr,0,2,1)->flags;
             Library::DKW::TBL::DArrayAppend((DArrayTy *)objectIds,(void *)((int)piVar2 + 0x32));
             iVar3 = CheckTmps(playerId,0,0x3c,(char)piVar2[9],(DArrayTy *)objectIds,0);
             if (iVar3 < 1) {
@@ -432,7 +432,7 @@ LAB_0043414f:
           goto cf_common_exit_00434CB8;
         }
 LAB_0043429d:
-        objectIds = &Library::DKW::TBL::DArrayCreate((DArrayTy *)0x0,0,2,1)->flags;
+        objectIds = &Library::DKW::TBL::DArrayCreate(nullptr,0,2,1)->flags;
         Library::DKW::TBL::DArrayAppend((DArrayTy *)objectIds,(void *)((int)piVar2 + 0x32));
         iVar3 = CheckTmps(playerId,0,0x3c,(char)piVar2[9],(DArrayTy *)objectIds,0);
         /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
@@ -458,7 +458,7 @@ LAB_0043429d:
         iVar3 = g_packedRecords_A62x8[playerId].field332_0x163;
         if (iVar3 == 0) goto LAB_0043429d;
         if (iVar3 == 0x3c) {
-          objectIds = &Library::DKW::TBL::DArrayCreate((DArrayTy *)0x0,0,2,1)->flags;
+          objectIds = &Library::DKW::TBL::DArrayCreate(nullptr,0,2,1)->flags;
           Library::DKW::TBL::DArrayAppend((DArrayTy *)objectIds,(void *)((int)piVar2 + 0x32));
           iVar3 = CheckTmps(playerId,0,0x3c,(char)piVar2[9],(DArrayTy *)objectIds,0);
           if (iVar3 < 0) goto LAB_0043404a;
@@ -473,7 +473,7 @@ LAB_0043429d:
           }
           STDebugBreak(); /* noreturn in standalone pseudocode */
         }
-        objectIds = &Library::DKW::TBL::DArrayCreate((DArrayTy *)0x0,0,2,1)->flags;
+        objectIds = &Library::DKW::TBL::DArrayCreate(nullptr,0,2,1)->flags;
         Library::DKW::TBL::DArrayAppend((DArrayTy *)objectIds,(void *)((int)piVar2 + 0x32));
         iVar3 = CheckTmps(playerId,0,0x3c,(char)piVar2[9],(DArrayTy *)objectIds,0);
         if (0 < iVar3) {
@@ -514,7 +514,7 @@ LAB_004345cf:
     if (iVar3 < 0x19b) {
       if (iVar3 != 0x19a) {
         if (iVar3 == 0) {
-          iVar3 = CheckTmps(playerId,1,uVar4,(char)piVar2[9],(DArrayTy *)0x0,
+          iVar3 = CheckTmps(playerId,1,uVar4,(char)piVar2[9],nullptr,
                             *(short *)((int)piVar2 + 0x32));
           /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
           uVar8 = extraout_var_12;
@@ -528,7 +528,7 @@ LAB_004345cf:
         if ((iVar3 != 0x5a) && (iVar3 != 0x172)) goto LAB_004346e3;
         goto LAB_00434715;
       }
-      iVar3 = CheckTmps(playerId,1,uVar4,(char)piVar2[9],(DArrayTy *)0x0,
+      iVar3 = CheckTmps(playerId,1,uVar4,(char)piVar2[9],nullptr,
                         *(short *)((int)piVar2 + 0x32));
       if (0 < iVar3) {
         ActivateTV(this,playerId,1,iVar3);
@@ -547,7 +547,7 @@ LAB_004346e3:
         STDebugBreak(); /* noreturn in standalone pseudocode */
       }
 LAB_00434715:
-      iVar3 = CheckTmps(playerId,1,uVar4,(char)piVar2[9],(DArrayTy *)0x0,
+      iVar3 = CheckTmps(playerId,1,uVar4,(char)piVar2[9],nullptr,
                         *(short *)((int)piVar2 + 0x32));
       if (0 < iVar3) {
         ActivateTV(this,playerId,1,iVar3);
@@ -579,7 +579,7 @@ LAB_00434768:
   if (iVar3 < 0x19b) {
     if (iVar3 != 0x19a) {
       if (iVar3 == 0) {
-        iVar3 = CheckTmps(playerId,1,piVar2[8],(char)piVar2[9],(DArrayTy *)0x0,
+        iVar3 = CheckTmps(playerId,1,piVar2[8],(char)piVar2[9],nullptr,
                           *(short *)((int)piVar2 + 0x32));
         /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
         uVar7 = extraout_EDX_01;
@@ -595,7 +595,7 @@ LAB_00434768:
       if ((iVar3 != 0x5a) && (iVar3 != 0x172)) goto LAB_00434863;
       goto LAB_00434895;
     }
-    iVar3 = CheckTmps(playerId,1,piVar2[8],(char)piVar2[9],(DArrayTy *)0x0,
+    iVar3 = CheckTmps(playerId,1,piVar2[8],(char)piVar2[9],nullptr,
                       *(short *)((int)piVar2 + 0x32));
     if (0 < iVar3) {
       ActivateTV(this,playerId,1,iVar3);
@@ -614,7 +614,7 @@ LAB_00434863:
       STDebugBreak(); /* noreturn in standalone pseudocode */
     }
 LAB_00434895:
-    iVar3 = CheckTmps(playerId,1,piVar2[8],(char)piVar2[9],(DArrayTy *)0x0,
+    iVar3 = CheckTmps(playerId,1,piVar2[8],(char)piVar2[9],nullptr,
                       *(short *)((int)piVar2 + 0x32));
     if (-1 < iVar3) {
       ActivateTV(this,playerId,1,iVar3);

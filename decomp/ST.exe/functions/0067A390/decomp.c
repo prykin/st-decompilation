@@ -48,7 +48,7 @@ void __fastcall FUN_0067a390(AnonShape_00679600_B8E418A8 *param_1)
   }
   *(undefined4 *)&param_1->field_0x654 = param_1->field_06FE;
   thunk_FUN_00679600(param_1);
-  if (g_allPlayers_007FA174 == (STAllPlayersC *)0x0) {
+  if (g_allPlayers_007FA174 == nullptr) {
     return;
   }
   if (*(short *)&param_1->field_0x5ec != 3) {
@@ -58,7 +58,7 @@ void __fastcall FUN_0067a390(AnonShape_00679600_B8E418A8 *param_1)
       uVar2 = param_1->field_06FE;
       ppAVar9 = &local_74;
       for (iVar3 = 0xd; iVar3 != 0; iVar3 = iVar3 + -1) {
-        *ppAVar9 = (AnonShape_0068FD00_A5257008 *)0x0;
+        *ppAVar9 = nullptr;
         ppAVar9 = ppAVar9 + 1;
       }
       local_74 = (AnonShape_0068FD00_A5257008 *)0x6f;
@@ -76,7 +76,7 @@ void __fastcall FUN_0067a390(AnonShape_00679600_B8E418A8 *param_1)
         local_32 = 0xffff;
         ppAVar9 = &local_74;
         for (iVar3 = 0xd; iVar3 != 0; iVar3 = iVar3 + -1) {
-          *ppAVar9 = (AnonShape_0068FD00_A5257008 *)0x0;
+          *ppAVar9 = nullptr;
           ppAVar9 = ppAVar9 + 1;
         }
         local_70 = param_1->field_06FE;
@@ -95,9 +95,9 @@ void __fastcall FUN_0067a390(AnonShape_00679600_B8E418A8 *param_1)
                 puVar7 = (undefined4 *)(*(int *)(iVar3 + 8) * uVar8 + *(int *)(iVar3 + 0x1c));
               }
               else {
-                puVar7 = (undefined4 *)0x0;
+                puVar7 = nullptr;
               }
-              if (((puVar7[1] != 0) && ((AiTactClassTy *)*puVar7 != (AiTactClassTy *)0x0)) &&
+              if (((puVar7[1] != 0) && ((AiTactClassTy *)*puVar7 != nullptr)) &&
                  (&stack0x00000000 != (undefined1 *)0x74)) {
                 AiTactClassTy::GetAiMess
                           ((AiTactClassTy *)*puVar7,(AnonShape_0068FD00_A5257008 *)&local_74);
@@ -119,7 +119,7 @@ void __fastcall FUN_0067a390(AnonShape_00679600_B8E418A8 *param_1)
       local_AX_518 = thunk_FUN_0043e640((char)param_1->field_05D7,0x34,0,-1);
       ppAVar9 = &local_74;
       for (iVar3 = 0xd; iVar3 != 0; iVar3 = iVar3 + -1) {
-        *ppAVar9 = (AnonShape_0068FD00_A5257008 *)0x0;
+        *ppAVar9 = nullptr;
         ppAVar9 = ppAVar9 + 1;
       }
       local_70 = param_1->field_06FE;
@@ -138,7 +138,7 @@ void __fastcall FUN_0067a390(AnonShape_00679600_B8E418A8 *param_1)
         local_32 = 0xffff;
         ppAVar9 = &local_74;
         for (iVar3 = 0xd; iVar3 != 0; iVar3 = iVar3 + -1) {
-          *ppAVar9 = (AnonShape_0068FD00_A5257008 *)0x0;
+          *ppAVar9 = nullptr;
           ppAVar9 = ppAVar9 + 1;
         }
         local_68 = local_40;
@@ -156,9 +156,9 @@ void __fastcall FUN_0067a390(AnonShape_00679600_B8E418A8 *param_1)
                 puVar7 = (undefined4 *)(*(int *)(iVar3 + 8) * uVar8 + *(int *)(iVar3 + 0x1c));
               }
               else {
-                puVar7 = (undefined4 *)0x0;
+                puVar7 = nullptr;
               }
-              if (((puVar7[1] != 0) && ((AiTactClassTy *)*puVar7 != (AiTactClassTy *)0x0)) &&
+              if (((puVar7[1] != 0) && ((AiTactClassTy *)*puVar7 != nullptr)) &&
                  (&stack0x00000000 != (undefined1 *)0x74)) {
                 AiTactClassTy::GetAiMess
                           ((AiTactClassTy *)*puVar7,(AnonShape_0068FD00_A5257008 *)&local_74);
@@ -180,7 +180,7 @@ void __fastcall FUN_0067a390(AnonShape_00679600_B8E418A8 *param_1)
       uVar3 = thunk_FUN_0043e640((char)param_1->field_05D7,0x48,0,-1);
       ppAVar9 = &local_74;
       for (iVar3 = 0xd; iVar3 != 0; iVar3 = iVar3 + -1) {
-        *ppAVar9 = (AnonShape_0068FD00_A5257008 *)0x0;
+        *ppAVar9 = nullptr;
         ppAVar9 = ppAVar9 + 1;
       }
       local_70 = param_1->field_06FE;
@@ -199,7 +199,7 @@ void __fastcall FUN_0067a390(AnonShape_00679600_B8E418A8 *param_1)
         local_32 = 0xffff;
         ppAVar9 = &local_74;
         for (iVar3 = 0xd; iVar3 != 0; iVar3 = iVar3 + -1) {
-          *ppAVar9 = (AnonShape_0068FD00_A5257008 *)0x0;
+          *ppAVar9 = nullptr;
           ppAVar9 = ppAVar9 + 1;
         }
         local_68 = local_40;
@@ -217,9 +217,9 @@ void __fastcall FUN_0067a390(AnonShape_00679600_B8E418A8 *param_1)
                 puVar7 = (undefined4 *)(*(int *)(iVar3 + 8) * uVar8 + *(int *)(iVar3 + 0x1c));
               }
               else {
-                puVar7 = (undefined4 *)0x0;
+                puVar7 = nullptr;
               }
-              if (((puVar7[1] != 0) && ((AiTactClassTy *)*puVar7 != (AiTactClassTy *)0x0)) &&
+              if (((puVar7[1] != 0) && ((AiTactClassTy *)*puVar7 != nullptr)) &&
                  (&stack0x00000000 != (undefined1 *)0x74)) {
                 AiTactClassTy::GetAiMess
                           ((AiTactClassTy *)*puVar7,(AnonShape_0068FD00_A5257008 *)&local_74);
@@ -234,7 +234,7 @@ void __fastcall FUN_0067a390(AnonShape_00679600_B8E418A8 *param_1)
       }
     }
   }
-  if (g_allPlayers_007FA174 == (STAllPlayersC *)0x0) {
+  if (g_allPlayers_007FA174 == nullptr) {
     return;
   }
   if (*(short *)&param_1->field_0x5ec != 3) {
@@ -413,7 +413,7 @@ LAB_0067abe0:
       }
     }
   }
-  if (g_allPlayers_007FA174 == (STAllPlayersC *)0x0) {
+  if (g_allPlayers_007FA174 == nullptr) {
     return;
   }
   if (*(short *)&param_1->field_0x5ec != 3) {

@@ -14,11 +14,11 @@ uint * FUN_004d85e0(int param_1,int param_2,int param_3)
   short local_8;
   short local_6;
 
-  if (g_array_007FA150 != (DArrayTy *)0x0) {
+  if (g_array_007FA150 != nullptr) {
     g_array_007FA150->iteratorIndex = 0;
     iVar1 = DArrayGetNext(g_array_007FA150,(byte *)&local_10);
     while (-1 < iVar1) {
-      if ((((local_10 != (STFishC *)0x0) &&
+      if ((((local_10 != nullptr) &&
            (STFishC::sub_004162B0(local_10,&local_6,&local_8,&local_a), local_6 == param_1)) &&
           (local_8 == param_2)) && (local_a == param_3)) {
         return (uint *)local_10;
@@ -26,6 +26,6 @@ uint * FUN_004d85e0(int param_1,int param_2,int param_3)
       iVar1 = DArrayGetNext(g_array_007FA150,(byte *)&local_10);
     }
   }
-  return (uint *)0x0;
+  return nullptr;
 }
 

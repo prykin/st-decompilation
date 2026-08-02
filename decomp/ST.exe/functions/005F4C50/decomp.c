@@ -55,14 +55,14 @@ STBHEShellC::sub_005F4C50
       puVar4 = puVar4 + 1;
     } while (param_4 != 0);
   }
-  if (this->field_0169 != (STBHEShellC_field_0169DArray *)0x0) {
+  if (this->field_0169 != nullptr) {
     DArrayDestroy((DArrayTy *)this->field_0169);
   }
   pSVar2 = (STBHEShellC_field_0169DArray *)
-           Library::DKW::TBL::DArrayCreate((DArrayTy *)0x0,iVar6 * param_5,0x23,10);
+           Library::DKW::TBL::DArrayCreate(nullptr,iVar6 * param_5,0x23,10);
   this->field_0169 = pSVar2;
   /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
-  if ((pSVar2 != (STBHEShellC_field_0169DArray *)0x0) && (param_4 = 0, 0 < this->field_010D)) {
+  if ((pSVar2 != nullptr) && (param_4 = 0, 0 < this->field_010D)) {
     do {
       /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
       param_1 = 0.0;
@@ -93,7 +93,7 @@ STBHEShellC::sub_005F4C50
               element_0169 = DArrayAt<STBHEShellC_field_0169Element>(pSVar2, iVar6 - param_5);
             }
             else {
-              element_0169 = (STBHEShellC_field_0169Element *)0x0;
+              element_0169 = nullptr;
             }
             iVar7 = element_0169->field_0012;
             local_16 = element_0169->field_0016;
@@ -122,7 +122,7 @@ STBHEShellC::sub_005F4C50
       param_4 = param_4 + 1;
     } while (param_4 < this->field_010D);
   }
-  if (this->field_0169 == (STBHEShellC_field_0169DArray *)0x0) {
+  if (this->field_0169 == nullptr) {
     return 0;
   }
   return 1;

@@ -10,7 +10,7 @@ void __fastcall FUN_00489950(int param_1)
   if (*(char *)(param_1 + 0x281) != '\0') {
     puVar1 = (undefined4 *)(param_1 + 0x282);
     do {
-      if ((DArrayTy *)*puVar1 != (DArrayTy *)0x0) {
+      if ((DArrayTy *)*puVar1 != nullptr) {
         DArrayDestroy((DArrayTy *)*puVar1);
         *puVar1 = 0;
       }

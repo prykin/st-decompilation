@@ -36,7 +36,7 @@ LAB_00465581:
       return iVar3;
     }
     pSVar5 = this;
-    if ((param_1 == (int *)0x0) || (param_1 == (int *)0x1)) {
+    if ((param_1 == nullptr) || (param_1 == (int *)0x1)) {
       /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
       if ((this->field_0041 == this->field_0034) &&
          ((this->field_0043 == this->field_0036 &&
@@ -98,7 +98,7 @@ LAB_00465581:
     }
     if (this->field_082E != 3) goto LAB_00465581;
     pSVar5 = this;
-    if ((param_1 == (int *)0x0) || (param_1 == (int *)0x1)) {
+    if ((param_1 == nullptr) || (param_1 == (int *)0x1)) {
       /* ST_PSEUDO[unresolved_register_input,packed_or_unaligned_piece]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention; expected named packed member, bit extract/compose, or unaligned load */
       in_EDX = CONCAT22(uVar7,this->field_0047 * 0xc9) + 100;
       /* ST_PSEUDO[unresolved_register_input,packed_or_unaligned_piece]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention; expected named packed member, bit extract/compose, or unaligned load */

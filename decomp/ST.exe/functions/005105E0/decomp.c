@@ -22,7 +22,7 @@ FrmPanelTy::PaintBut(FrmPanelTy *this,AnonShape_005105E0_BBFE3E3B *param_1,char 
   ushort *local_c;
   uint local_8;
 
-  local_c = (ushort *)0x0;
+  local_c = nullptr;
   piVar5 = param_1->field_0018;
   local_18 = *piVar5 - this->field_003C;
   if (this->field_005C == 0) {
@@ -60,7 +60,7 @@ FrmPanelTy::PaintBut(FrmPanelTy *this,AnonShape_005105E0_BBFE3E3B *param_1,char 
     local_8 = 1;
   }
   iVar3 = 1;
-  piVar5 = (int *)0x0;
+  piVar5 = nullptr;
   text = FUN_006f2c00(param_2,1,local_8);
   local_c = cMf32::RecGet(g_cMf32_00806790,1,text,piVar5,iVar3);
   DibPut((AnonShape_006B5B10_E0D06CF1 *)pFVar2->field_0068,local_18,local_10,'\x01',(byte *)local_c);

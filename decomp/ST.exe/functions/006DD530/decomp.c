@@ -15,22 +15,22 @@ ST3DSMAPContext::sub_006DD530(ST3DSMAPContext *this,float *param_1,float *param_
 {
   float fVar1;
 
-  *param_3 = (float)*(double *)&this->field_0x80;
-  fVar1 = (float)((float10)*(double *)&this->field_0x80 * (float10)_DAT_0079df60);
-  switch(*(uint *)&this->field_0xa8 & 0xfffffff7) {
-  case 0:
+  *param_3 = (float)this->field_0080;
+  fVar1 = (float)((float10)this->field_0080 * (float10)_DAT_0079df60);
+  switch(this->field_00A8 & 0xfffffff7) {
+  case CASE_0:
     *param_1 = fVar1 + (float)this->field_0098;
     *param_2 = fVar1 + (float)this->field_00A0;
     return;
-  case 1:
+  case CASE_1:
     *param_1 = (float)this->field_0098 - fVar1;
     *param_2 = fVar1 + (float)this->field_00A0;
     return;
-  case 2:
+  case CASE_2:
     *param_1 = (float)this->field_0098 - fVar1;
     *param_2 = (float)this->field_00A0 - fVar1;
     return;
-  case 3:
+  case CASE_3:
     *param_1 = fVar1 + (float)this->field_0098;
     *param_2 = (float)this->field_00A0 - fVar1;
     return;

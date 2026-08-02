@@ -8,7 +8,7 @@ undefined4 __thiscall FUN_0074fea4(void *this,uint param_1,int param_2,int param
   int local_8;
 
   piVar1 = *(int **)((int)this + 0x60);
-  if (piVar1 != (int *)0x0) {
+  if (piVar1 != nullptr) {
     if (param_3 != 0) {
       if (*(int *)((int)this + 100) == 0) {
         return 0;

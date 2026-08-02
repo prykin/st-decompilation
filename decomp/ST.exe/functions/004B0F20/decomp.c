@@ -71,7 +71,7 @@ FUN_004b0f20(int param_1,int param_2,int param_3,int param_4,int param_5,uint pa
     local_38 = param_7;
   }
   local_50 = local_64;
-  if (param_8 != (char *)0x0) {
+  if (param_8 != nullptr) {
     Library::MSVCRT::_strncpy(local_34,param_8,0xe);
   }
   local_25 = param_9;

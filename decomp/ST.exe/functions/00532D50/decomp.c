@@ -70,17 +70,17 @@ void __thiscall OptPanelTy::PrepFiles(OptPanelTy *this,uint param_1)
     }
     STDebugBreak(); /* noreturn in standalone pseudocode */
   }
-  if (local_10->field_01E9 != (DArrayTy *)0x0) {
+  if (local_10->field_01E9 != nullptr) {
     FUN_006b5570(local_10->field_01E9);
-    this_01->field_01E9 = (DArrayTy *)0x0;
+    this_01->field_01E9 = nullptr;
   }
-  if (this_01->field_01ED != (DArrayTy *)0x0) {
+  if (this_01->field_01ED != nullptr) {
     DArrayDestroy(this_01->field_01ED);
-    this_01->field_01ED = (DArrayTy *)0x0;
+    this_01->field_01ED = nullptr;
   }
-  pDVar6 = Library::DKW::TBL::SArrayCreate((DArrayTy *)0x0,0x32,10);
+  pDVar6 = Library::DKW::TBL::SArrayCreate(nullptr,0x32,10);
   this_01->field_01E9 = pDVar6;
-  pDVar6 = Library::DKW::TBL::DArrayCreate((DArrayTy *)0x0,0x32,8,10);
+  pDVar6 = Library::DKW::TBL::DArrayCreate(nullptr,0x32,8,10);
   this_01->field_01ED = pDVar6;
   this_01->field_0028 = 0x20;
   *(undefined4 *)&this_01->field_0x2c = 0;
@@ -250,7 +250,7 @@ void __thiscall OptPanelTy::PrepFiles(OptPanelTy *this,uint param_1)
         local_1c = &local_8;
         local_8 = 0;
         Library::MSVCRT::FUN_0072e730
-                  ((byte *)local_1f4.cFileName,(byte *)0x0,(byte *)0x0,local_2f8,(byte *)0x0);
+                  ((byte *)local_1f4.cFileName,nullptr,nullptr,local_2f8,nullptr);
         local_b4.previous = g_currentExceptionFrame;
         g_currentExceptionFrame = &local_b4;
         iVar5 = Library::MSVCRT::__setjmp3(local_b4.jumpBuffer,0);
@@ -300,7 +300,7 @@ void __thiscall OptPanelTy::PrepFiles(OptPanelTy *this,uint param_1)
           this_00 = (cMf32 *)Library::Ourlib::MF32INT::FUN_006f0ec0
                                        (0x345,&local_10->field_006C,0,0,0);
           puVar7 = cMf32::RecGet(this_00,0x80,PTR_s_SAVE_DESC_0079ad04,(int *)&local_1c,0);
-          if (puVar7 == (ushort *)0x0) {
+          if (puVar7 == nullptr) {
             local_8 = 0;
           }
           else {

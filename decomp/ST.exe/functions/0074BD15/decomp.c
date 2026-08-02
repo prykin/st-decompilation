@@ -31,7 +31,7 @@ undefined4 FUN_0074bd15(ushort *param_1,undefined4 *param_2,int param_3)
     }
     puVar1 = CoTaskMemAlloc(param_2[0x10]);
     param_2[0x11] = puVar1;
-    if (puVar1 == (undefined4 *)0x0) {
+    if (puVar1 == nullptr) {
       return 0x8007000e;
     }
     if (*param_1 == 1) {

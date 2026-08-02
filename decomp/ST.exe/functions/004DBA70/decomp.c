@@ -11,7 +11,7 @@ undefined4 __fastcall FUN_004dba70(int param_1)
   puVar3 = (undefined4 *)(param_1 + 0x4d0);
   local_8 = 2;
   do {
-    if (((AnonShape_005EFAE0_B406B78B *)*puVar3 != (AnonShape_005EFAE0_B406B78B *)0x0) &&
+    if (((AnonShape_005EFAE0_B406B78B *)*puVar3 != nullptr) &&
        (puVar3[6] != 0)) {
       iVar2 = STPlaySystemC::sub_006E62D0
                         (g_playSystem_00802A38,(AnonShape_005EFAE0_B406B78B *)*puVar3,
@@ -19,10 +19,10 @@ undefined4 __fastcall FUN_004dba70(int param_1)
       pAVar1 = local_c;
       if (iVar2 == 0) {
         local_c->field_04C0 = 0;
-        if (local_c->field_061F != (int *)0x0) {
+        if (local_c->field_061F != nullptr) {
           thunk_FUN_00635fd0(local_c->field_061F);
           Library::MSVCRT::FUN_0072e2b0((HoloTy *)pAVar1->field_061F);
-          pAVar1->field_061F = (int *)0x0;
+          pAVar1->field_061F = nullptr;
         }
       }
       *puVar3 = 0;

@@ -39,8 +39,8 @@ STAllPlayersC::GetScrObjList
   int local_8;
 
   iVar12 = 0;
-  local_14 = (ushort *)0x0;
-  local_20 = (DArrayTy *)0x0;
+  local_14 = nullptr;
+  local_20 = nullptr;
   local_68.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_68;
   iVar6 = Library::MSVCRT::__setjmp3(local_68.jumpBuffer,0);
@@ -74,7 +74,7 @@ LAB_0044cada:
                   (-0x5001fff7,g_overwriteContext_007ED77C,"E:\\__titans\\wlad\\to_allpl.cpp",
                    0x3268);
       }
-      pDVar7 = Library::DKW::TBL::DArrayCreate((DArrayTy *)0x0,0,4,1);
+      pDVar7 = Library::DKW::TBL::DArrayCreate(nullptr,0,4,1);
       bVar5 = false;
       local_18 = 0;
       local_20 = pDVar7;
@@ -90,8 +90,8 @@ LAB_0044cada:
                 local_f = 3;
 LAB_0044c950:
                 if (((uint)piVar3[9] < 8) &&
-                   ((g_playSystem_00802A38 == (STPlaySystemC *)0x0 ||
-                    ((byte)(&DAT_008087e9)[piVar3[9] * 0x51] < 8)))) {
+                   ((g_playSystem_00802A38 == nullptr ||
+                    (g_bulkInitializedRecords_008087C7[piVar3[9]].field_0022 < 8)))) {
                   bVar1 = *(byte *)(piVar3 + 9);
                   /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
                   _local_24 = CONCAT31(uStack_23,bVar1);
@@ -120,7 +120,8 @@ LAB_0044ca10:
                     bVar14 = iVar6 < 0;
                   }
                   else {
-                    bVar14 = (&DAT_008087ea)[uVar9 * 0x51] != (&DAT_008087ea)[(uint)bVar1 * 0x51];
+                    bVar14 = g_bulkInitializedRecords_008087C7[uVar9].field_0023 !=
+                             g_bulkInitializedRecords_008087C7[bVar1].field_0023;
                   }
                   /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
                   if (((bVar14) && (iVar6 = (**(code **)(*piVar3 + 0xf8))(), iVar6 != 0)) &&
@@ -167,7 +168,7 @@ LAB_0044c94c:
                   (-0x5001fff7,g_overwriteContext_007ED77C,"E:\\__titans\\wlad\\to_allpl.cpp",
                    0x3291);
       }
-      pDVar7 = Library::DKW::TBL::DArrayCreate((DArrayTy *)0x0,0,2,1);
+      pDVar7 = Library::DKW::TBL::DArrayCreate(nullptr,0,2,1);
       bVar5 = false;
       local_18 = 0;
       local_20 = pDVar7;
@@ -204,7 +205,7 @@ LAB_0044c94c:
   }
 LAB_0044cb54:
   puVar8 = local_14;
-  if (local_20 != (DArrayTy *)0x0) {
+  if (local_20 != nullptr) {
     DArrayDestroy(local_20);
   }
   return puVar8;

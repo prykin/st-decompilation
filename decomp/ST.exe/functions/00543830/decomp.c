@@ -25,22 +25,22 @@ void __thiscall CursorClassTy::DoneCursor(CursorClassTy *this)
       FUN_006b3bb0((int *)g_ddxContext_008075A8,local_8->field_04D6);
     }
     pCVar2->field_04D6 = 0xffffffff;
-    if (pCVar2->field_04D2 != (ushort *)0x0) {
+    if (pCVar2->field_04D2 != nullptr) {
       FreeAndNull(&pCVar2->field_04D2);
     }
-    pCVar2->field_04E3 = (ushort *)0x0;
-    pCVar2->field_04E7 = (ushort *)0x0;
-    if (pCVar2->field_04EB != (SpriteClassTy *)0x0) {
+    pCVar2->field_04E3 = nullptr;
+    pCVar2->field_04E7 = nullptr;
+    if (pCVar2->field_04EB != nullptr) {
       SpriteClassTy::CloseSprite(pCVar2->field_04EB);
       Library::MSVCRT::FUN_0072e2b0((HoloTy *)pCVar2->field_04EB);
-      pCVar2->field_04EB = (SpriteClassTy *)0x0;
+      pCVar2->field_04EB = nullptr;
     }
-    if ((int *)pCVar2->field_00AD != (int *)0x0) {
+    if ((int *)pCVar2->field_00AD != nullptr) {
       FUN_006b8a30((int *)pCVar2->field_00AD);
     }
     pCVar2->field_00AD = 0;
     SpriteClassTy::CloseSprite((SpriteClassTy *)&pCVar2->field_0018);
-    g_cursorClass_00802A30 = (CursorClassTy *)0x0;
+    g_cursorClass_00802A30 = nullptr;
     g_currentExceptionFrame = local_4c.previous;
     return;
   }

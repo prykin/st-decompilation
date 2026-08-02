@@ -6,7 +6,7 @@ char * __cdecl FUN_00526100(undefined1 *param_1,int param_2)
   char *pcVar2;
 
   pcVar2 = "TV_NONE";
-  if (param_1 == (undefined1 *)0x0) {
+  if (param_1 == nullptr) {
     return "TV_ONOFF";
   }
   if (param_2 != 0) {

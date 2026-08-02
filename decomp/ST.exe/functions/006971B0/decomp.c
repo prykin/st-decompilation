@@ -34,7 +34,7 @@ int __thiscall CGenerate::sub_006971B0(CGenerate *this)
   ExceptionList = &local_14;
   Library::MSVCRT::FUN_0072da40();
   local_8 = 0xffffffff;
-  if ((this->field_5853 != (CGenerate_field_5853DArray *)0x0) &&
+  if ((this->field_5853 != nullptr) &&
      (&stack0x00000000 != (undefined1 *)0x50)) {
     puVar9 = (undefined4 *)&stack0xffffffb0;
     for (uVar4 = uVar4 & 0x3fffffff; uVar4 != 0; uVar4 = uVar4 - 1) {
@@ -54,9 +54,9 @@ int __thiscall CGenerate::sub_006971B0(CGenerate *this)
           element_5853 = DArrayAt<CGenerate_field_5853Element>(pCVar2, uVar4);
         }
         else {
-          element_5853 = (CGenerate_field_5853Element *)0x0;
+          element_5853 = nullptr;
         }
-        if (element_5853 != (CGenerate_field_5853Element *)0x0) {
+        if (element_5853 != nullptr) {
           *(int *)(&stack0xffffffb0 + element_5853->field_0000 * 4) =
                *(int *)(&stack0xffffffb0 + element_5853->field_0000 * 4) + element_5853->field_0011;
         }

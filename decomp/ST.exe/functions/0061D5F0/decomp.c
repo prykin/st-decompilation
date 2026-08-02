@@ -12,10 +12,10 @@ void * __cdecl FUN_0061d5f0(void)
   STLightC *pSVar1;
 
   pSVar1 = (STLightC *)FUN_006b04d0(0xdd);
-  if (pSVar1 != (STLightC *)0x0) {
+  if (pSVar1 != nullptr) {
     pSVar1 = STLightC::STLightC(pSVar1);
     return pSVar1;
   }
-  return (void *)0x0;
+  return nullptr;
 }
 

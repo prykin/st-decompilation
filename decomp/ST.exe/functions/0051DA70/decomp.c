@@ -23,7 +23,7 @@ void __thiscall HelpPanelTy::sub_0051DA70(HelpPanelTy *this)
   uint local_8;
 
   if ((((DAT_0080734d != '\0') &&
-       (*(char *)((int)&DAT_008087c4 + (uint)DAT_0080874d * 0x51 + 3) == '\0')) &&
+       (*(char *)(g_bulkInitializedRecords_008087C7 + DAT_0080874d) == '\0')) &&
       (DAT_0080874f == '\0')) && (DAT_00808783 != '\x03')) {
     bVar3 = this->field_0250;
     bVar8 = 0;

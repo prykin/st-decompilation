@@ -20,7 +20,7 @@ void __cdecl FUN_006807d0(undefined4 *param_1)
   wsprintfA(local_404,pcVar1,uVar2,uVar3);
   thunk_FUN_00674ef0(local_404);
   thunk_FUN_00674eb0();
-  if ((cMf32 *)*param_1 != (cMf32 *)0x0) {
+  if ((cMf32 *)*param_1 != nullptr) {
     cMf32::delete((cMf32 *)*param_1);
   }
   *param_1 = 0;

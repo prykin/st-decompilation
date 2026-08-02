@@ -16,8 +16,8 @@ FUN_00637930(uint param_1,int param_2,int param_3,int param_4,int param_5,uint p
   if ((((char)uVar1 != '\0') &&
       (puVar2 = Library::Ourlib::MFRLOAD::mfRLoad
                           (DAT_0080678c,CASE_1D,"tlo_emb6",0xffffffff,0,1,0,
-                           (undefined4 *)0x0), puVar2 != (ushort *)0x0)) &&
-     (g_sT3DSMAPContext_00807598 != (ST3DSMAPContext *)0x0)) {
+                           nullptr), puVar2 != nullptr)) &&
+     (g_sT3DSMAPContext_00807598 != nullptr)) {
     ST3DSMAPContext::sub_006E8660
               (g_sT3DSMAPContext_00807598,(int *)&local_8,1,0,*(uint *)((int)puVar2 + 9),
                *(uint *)((int)puVar2 + 0xd),0x10,0x15,0);

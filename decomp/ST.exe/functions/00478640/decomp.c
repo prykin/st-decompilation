@@ -62,7 +62,7 @@ int __thiscall STBoatC::Recharge(STBoatC *this,int param_1)
       pSVar5 = g_worldGrid.cells
                [(int)g_worldGrid.planeStride * (int)sVar4 + (int)g_worldGrid.sizeX * (int)sVar3 +
                 (int)sVar2].objects[0];
-      if (pSVar5 == (STWorldObject *)0x0) {
+      if (pSVar5 == nullptr) {
         return 0;
       }
       iVar9 = pSVar5->GetObjectTypeId();
@@ -124,7 +124,7 @@ LAB_0047926a:
             ((pSVar5 = g_worldGrid.cells
                        [(int)g_worldGrid.planeStride * (int)sVar3 +
                         (int)g_worldGrid.sizeX * (int)sVar4 + (int)sVar2].objects[0],
-             pSVar5 != (STWorldObject *)0x0 &&
+             pSVar5 != nullptr &&
              ((*(int *)&pSVar5->field_0x18 == this->field_0623 &&
               (iVar9 = (*pSVar5->vtable[5].slots_00_28[2])(), iVar9 != 0)))))))) {
           this->field_00B7 = 0;
@@ -177,7 +177,7 @@ LAB_0047885b:
             ((pSVar5 = g_worldGrid.cells
                        [(int)g_worldGrid.planeStride * (int)sVar3 +
                         (int)g_worldGrid.sizeX * (int)sVar4 + (int)sVar2].objects[0],
-             pSVar5 != (STWorldObject *)0x0 &&
+             pSVar5 != nullptr &&
              ((*(int *)&pSVar5->field_0x18 == this->field_0623 &&
               (iVar9 = (*pSVar5->vtable[5].slots_00_28[2])(), iVar9 != 0)))))))) {
           return 2;
@@ -243,7 +243,7 @@ cf_common_exit_00478E51:
           ((-1 < sVar3 && (sVar3 < g_worldGrid.sizeZ)))) &&
          (pSVar5 = g_worldGrid.cells
                    [(int)g_worldGrid.planeStride * (int)sVar3 + (int)g_worldGrid.sizeX * (int)sVar4
-                    + (int)sVar2].objects[0], pSVar5 != (STWorldObject *)0x0)))) &&
+                    + (int)sVar2].objects[0], pSVar5 != nullptr)))) &&
        ((*(int *)&pSVar5->field_0x18 == this->field_0623 &&
         (iVar9 = (*pSVar5->vtable[5].slots_00_28[2])(), iVar9 != 0)))) {
       iVar9 = SubmarineTitans::Recovered::HiddenThis::AnonReceiver_00493610::thunk_FUN_00493610
@@ -308,7 +308,7 @@ LAB_00478b1a:
             ((pSVar5 = g_worldGrid.cells
                        [(int)g_worldGrid.planeStride * (int)sVar3 +
                         (int)g_worldGrid.sizeX * (int)sVar4 + (int)sVar2].objects[0],
-             pSVar5 == (STWorldObject *)0x0 || (*(int *)&pSVar5->field_0x18 != this->field_0623)))))
+             pSVar5 == nullptr || (*(int *)&pSVar5->field_0x18 != this->field_0623)))))
            ) || (iVar9 = (*pSVar5->vtable[5].slots_00_28[2])(), iVar9 == 0)))) {
         if (this->field_0619 == 0) {
           return 0;
@@ -336,13 +336,13 @@ LAB_00478f91:
                      (short *)&this->field_0x627,(short *)&this->field_0x629,(short *)puVar1);
       }
       else {
-        if (&this->field_0x627 != (undefined1 *)0x0) {
+        if (&this->field_0x627 != nullptr) {
           *(undefined4 *)&this->field_0x627 = *(undefined4 *)&pSVar5[0x1d].field_0x1c;
         }
-        if (&this->field_0x629 != (undefined1 *)0x0) {
+        if (&this->field_0x629 != nullptr) {
           *(int *)&this->field_0x629 = pSVar5[0x1d].value_20;
         }
-        if (puVar1 != (undefined1 *)0x0) {
+        if (puVar1 != nullptr) {
           *(STWorldObjectVTable **)puVar1 = pSVar5[0x1e].vtable;
         }
         if (*(int *)&pSVar5[0x1d].field_0x18 == 0) goto LAB_00478f91;
@@ -367,7 +367,7 @@ LAB_00478ff2:
            ((pSVar5 = g_worldGrid.cells
                       [(int)g_worldGrid.planeStride * (int)sVar3 +
                        (int)g_worldGrid.sizeX * (int)sVar4 + (int)sVar2].objects[0],
-            pSVar5 != (STWorldObject *)0x0 && (*(int *)&pSVar5->field_0x18 == this->field_0623))))))
+            pSVar5 != nullptr && (*(int *)&pSVar5->field_0x18 == this->field_0623))))))
          && (iVar9 = (*pSVar5->vtable[5].slots_00_28[2])(), iVar9 != 0)) {
         this->field_0631 = 4;
         return 2;
@@ -396,7 +396,7 @@ LAB_00478ff2:
            ((pSVar5 = g_worldGrid.cells
                       [(int)g_worldGrid.planeStride * (int)sVar3 +
                        (int)g_worldGrid.sizeX * (int)sVar4 + (int)sVar2].objects[0],
-            pSVar5 != (STWorldObject *)0x0 && (*(int *)&pSVar5->field_0x18 == this->field_0623))))
+            pSVar5 != nullptr && (*(int *)&pSVar5->field_0x18 == this->field_0623))))
           && (iVar9 = (*pSVar5->vtable[5].slots_00_28[2])(), iVar9 != 0)))) {
         return 2;
       }

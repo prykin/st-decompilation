@@ -15,7 +15,7 @@ undefined4 FUN_006c1f90(int param_1)
   }
   EnterCriticalSection((LPCRITICAL_SECTION)&DAT_00856898);
   piVar1 = DAT_00854ff4;
-  if (DAT_00854ff4 != (int *)0x0) {
+  if (DAT_00854ff4 != nullptr) {
     do {
       if (piVar1[0xe] < 0) {
         piVar2 = (int *)*piVar1;
@@ -30,7 +30,7 @@ undefined4 FUN_006c1f90(int param_1)
         piVar2 = (int *)*piVar1;
       }
       piVar1 = piVar2;
-      if (piVar2 == (int *)0x0) {
+      if (piVar2 == nullptr) {
         LeaveCriticalSection((LPCRITICAL_SECTION)&DAT_00856898);
         return 0;
       }

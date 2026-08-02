@@ -10,7 +10,7 @@ void __fastcall FUN_005f0620(AnonShape_005F0620_60AA17CE *param_1)
   undefined2 local_c;
   undefined2 local_a;
 
-  if (DAT_008117bc != (undefined4 *)0x0) {
+  if (DAT_008117bc != nullptr) {
     memset(local_24, 0, 0x20); /* compiler bulk-zero initialization */
     switch(param_1->field_02B1) {
     case 0:

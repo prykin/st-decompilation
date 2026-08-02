@@ -38,7 +38,7 @@ void __thiscall PopUpTy::OutStr(PopUpTy *this,byte param_1)
       puVar5 = *(uint **)(puVar5[5] + uVar2 * 4);
     }
     else {
-      puVar5 = (uint *)0x0;
+      puVar5 = nullptr;
     }
     ccFntTy::WrStr(pPVar3->field_0094,puVar5,0,0,0);
     g_currentExceptionFrame = local_4c.previous;

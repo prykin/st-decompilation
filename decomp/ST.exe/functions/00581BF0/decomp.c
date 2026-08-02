@@ -137,7 +137,7 @@ int __thiscall STJellyManC::GetMessage(STJellyManC *this,STMessage *message)
   }
   if (SVar1 == MESS_SHARED_010F) {
     local_8 = Library::DKW::LIB::MemAlloc(0x3a);
-    if (local_8 == (byte *)0x0) {
+    if (local_8 == nullptr) {
       g_currentExceptionFrame = local_54.previous;
       return 0;
     }
@@ -219,7 +219,7 @@ int __thiscall STJellyManC::GetMessage(STJellyManC *this,STMessage *message)
     *(void **)&pSVar7->field_0x207 = pvVar9;
     pvVar9 = Library::DKW::LIB::MemAlloc(*(int *)&pSVar7->field_0x1fd << 2);
     *(void **)&pSVar7->field_0x20b = pvVar9;
-    if ((*(int *)&pSVar7->field_0x207 != 0) && (pvVar9 != (void *)0x0))
+    if ((*(int *)&pSVar7->field_0x207 != 0) && (pvVar9 != nullptr))
     goto cf_common_exit_00581D62;
     iVar8 = ReportDebugMessage("E:\\__titans\\Igor\\to_jell_m.cpp",0x143,0,0,"%s",
                                "Not enough memory");
@@ -243,7 +243,7 @@ int __thiscall STJellyManC::GetMessage(STJellyManC *this,STMessage *message)
     *(void **)&pSVar7->field_0x207 = pvVar9;
     pvVar9 = Library::DKW::LIB::MemAlloc(*(int *)&pSVar7->field_0x1fd << 2);
     *(void **)&pSVar7->field_0x20b = pvVar9;
-    if ((*(int *)&pSVar7->field_0x207 != 0) && (pvVar9 != (void *)0x0))
+    if ((*(int *)&pSVar7->field_0x207 != 0) && (pvVar9 != nullptr))
     goto cf_common_exit_00581D62;
     iVar8 = ReportDebugMessage("E:\\__titans\\Igor\\to_jell_m.cpp",0x15a,0,0,"%s",
                                "Not enough memory");

@@ -28,7 +28,7 @@ int __fastcall FUN_005fd850(AnonShape_005FD850_1F07DA54 *param_1)
      (iVar8 = 0, 0 < param_1->field_0226)) {
     do {
       pAVar2 = (AnonShape_004AB810_8E5693D5 *)Library::MSVCRT::FUN_0072e530(0x40);
-      if (pAVar2 == (AnonShape_004AB810_8E5693D5 *)0x0) {
+      if (pAVar2 == nullptr) {
         uVar3 = 0;
       }
       else {

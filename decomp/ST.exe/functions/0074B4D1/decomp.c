@@ -6,7 +6,7 @@ undefined4 FUN_0074b4d1(AnonShape_0074B4D1_EE56C337 *param_1,int *param_2)
   DWORD DVar2;
   int iVar3;
 
-  if (param_2 == (int *)0x0) {
+  if (param_2 == nullptr) {
     uVar1 = 0x80004003;
   }
   else {

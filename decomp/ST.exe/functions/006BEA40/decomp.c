@@ -231,7 +231,7 @@ int FUN_006bea40(int *param_1,uint param_2)
   }
   if (iVar6 != 0) goto cf_common_join_006BF619;
   local_68 = 0;
-  local_6c = (int *)0x0;
+  local_6c = nullptr;
   iVar4 = 0;
   /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
   iVar6 = (**(code **)(**(int **)&pDVar1->field_0x38 + 0xc))();
@@ -255,7 +255,7 @@ int FUN_006bea40(int *param_1,uint param_2)
       local_6c = &local_a4;
       if ((((iVar4 == 1) && (local_3c.left == local_a4)) && (local_3c.right == local_9c)) &&
          ((local_3c.top == local_a0 && (local_3c.bottom == local_98)))) {
-        local_6c = (int *)0x0;
+        local_6c = nullptr;
         local_68 = 0;
       }
     }
@@ -283,7 +283,7 @@ int FUN_006bea40(int *param_1,uint param_2)
   if (iVar6 == 0) {
 LAB_006bed50:
     local_8 = 1;
-    if (local_6c != (int *)0x0) {
+    if (local_6c != nullptr) {
       if (param_2 == 0) {
         local_2c = (int *)(param_1[0x70] + 8);
         for (local_4c = 0; local_4c < local_20; local_4c = local_4c + 1) {

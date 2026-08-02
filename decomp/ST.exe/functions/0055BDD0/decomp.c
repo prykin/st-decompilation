@@ -16,7 +16,7 @@ void FUN_0055bdd0(char *param_1,char *source)
   char *pcVar6;
   char *pcVar7;
 
-  if (param_1 == (char *)0x0) {
+  if (param_1 == nullptr) {
     Library::MSVCRT::_strncpy((char *)&DAT_0080f33a,source,0x834);
   }
   else {
@@ -56,7 +56,7 @@ void FUN_0055bdd0(char *param_1,char *source)
     Library::MSVCRT::_strncat((char *)&DAT_0080f33a,source,0x814 - (~uVar2 - 1));
   }
   DAT_0080fb6d = 0;
-  if (g_popUp_008016D8 != (PopUpTy *)0x0) {
+  if (g_popUp_008016D8 != nullptr) {
     thunk_FUN_0052d320(g_popUp_008016D8,(char *)&DAT_0080f33a,8);
   }
   return;

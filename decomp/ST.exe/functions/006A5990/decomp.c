@@ -10,17 +10,17 @@ void __cdecl FUN_006a5990(undefined4 *param_1)
   uint uVar4;
   undefined4 *puVar5;
 
-  puVar5 = (undefined4 *)0x0;
+  puVar5 = nullptr;
   iVar3 = Library::MSVCRT::FUN_00730fa0(0,0,0,0,"%s");
   if (iVar3 == 1) {
     STDebugBreak(); /* noreturn in standalone pseudocode */
   }
   puVar2 = DAT_0085496c;
-  if (param_1 != (undefined4 *)0x0) {
+  if (param_1 != nullptr) {
     puVar5 = (undefined4 *)*param_1;
   }
   do {
-    if ((puVar2 == (undefined4 *)0x0) || (puVar2 == puVar5)) {
+    if ((puVar2 == nullptr) || (puVar2 == puVar5)) {
       iVar3 = Library::MSVCRT::FUN_00730fa0(0,0,0,0,"%s");
       if (iVar3 == 1) {
         STDebugBreak(); /* noreturn in standalone pseudocode */
@@ -29,7 +29,7 @@ void __cdecl FUN_006a5990(undefined4 *param_1)
     }
     uVar4 = puVar2[5] & 0xffff;
     if (((uVar4 != 3) && (uVar4 != 0)) && ((uVar4 != 2 || ((DAT_007ec178 & 0x10) != 0)))) {
-      if ((void *)puVar2[2] != (void *)0x0) {
+      if ((void *)puVar2[2] != nullptr) {
         iVar3 = thunk_FUN_006a55d0((void *)puVar2[2],1,0);
         if (iVar3 == 0) {
           iVar3 = Library::MSVCRT::FUN_00730fa0(0,0,0,0,(byte *)"#File Error#(%d) : ");
@@ -55,7 +55,7 @@ void __cdecl FUN_006a5990(undefined4 *param_1)
         if (iVar3 == 1) {
           STDebugBreak(); /* noreturn in standalone pseudocode */
         }
-        if (DAT_0085751c != (code *)0x0) {
+        if (DAT_0085751c != nullptr) {
           (*DAT_0085751c)(puVar2 + 8,puVar2[4]);
           goto cf_continue_loop_006A5B2E;
         }

@@ -43,9 +43,9 @@ void __thiscall FSGSTy::AddPlayer(FSGSTy *this,undefined4 *param_1)
                   (array->elementSize * (uint)*(ushort *)&this_00->field_0x31 + (int)array->data);
       }
       else {
-        local_8 = (undefined4 *)0x0;
+        local_8 = nullptr;
       }
-      if (local_8 != (undefined4 *)0x0) {
+      if (local_8 != nullptr) {
         puVar7 = (byte *)(local_8);
         pbVar8 = local_b0;
         memmove(pbVar8, puVar7, 0x2e); /* compiler REP MOVS byte copy */
@@ -70,12 +70,12 @@ void __thiscall FSGSTy::AddPlayer(FSGSTy *this,undefined4 *param_1)
       }
       *(undefined4 *)&this_00->field_0x31 = uVar4;
       FUN_006e6080(this_00,2,this_00->field_1B20,(undefined4 *)&this_00->field_0x1d);
-      if (local_8 != (undefined4 *)0x0) {
+      if (local_8 != nullptr) {
         uVar6 = 0;
         local_8 = (undefined4 *)this_00->field_1EA6->count;
-        if (local_8 != (undefined4 *)0x0) {
-          if (local_8 == (undefined4 *)0x0) {
-            pbVar8 = (byte *)0x0;
+        if (local_8 != nullptr) {
+          if (local_8 == nullptr) {
+            pbVar8 = nullptr;
             goto LAB_005a252f;
           }
           do {
@@ -83,7 +83,7 @@ void __thiscall FSGSTy::AddPlayer(FSGSTy *this,undefined4 *param_1)
             pbVar8 = (byte *)(this_00->field_1EA6->elementSize * uVar6 +
                              (int)this_00->field_1EA6->data);
 LAB_005a252f:
-            if (pbVar8 != (byte *)0x0) {
+            if (pbVar8 != nullptr) {
               pbVar9 = local_b0;
               do {
                 bVar1 = *pbVar8;

@@ -93,7 +93,7 @@ void __thiscall STAllPlayersC::ActivateTV(STAllPlayersC *this,char param_1,int p
       pAVar10[2].field_0010 = 0;
       pAVar10[2].field_0014 = 0xff;
       *(undefined4 *)((int)&pAVar10[3].field_0000 + 2) = 0;
-      pAVar9 = (AnonPointee_TLOBaseTy_0607 *)0x0;
+      pAVar9 = nullptr;
     }
     else {
       ResetActivityFromTmp(this,param_1,param_2,0,0);

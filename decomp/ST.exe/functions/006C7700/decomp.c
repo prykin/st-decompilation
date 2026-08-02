@@ -29,7 +29,7 @@ DWORD FUN_006c7700(AnonShape_006C7700_7DDC3CA1 *param_1,uint param_2)
   undefined4 *local_c;
   char local_5;
 
-  local_c = (undefined4 *)0x0;
+  local_c = nullptr;
   /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
   DVar2 = (*(code *)param_1->field_0036)(param_1,&local_94,0x80);
   if (DVar2 != 0x80) {
@@ -72,7 +72,7 @@ DWORD FUN_006c7700(AnonShape_006C7700_7DDC3CA1 *param_1,uint param_2)
   if (bVar1) {
     local_c = (undefined4 *)FUN_006bfb70(0x300);
     param_1->field_001E = local_c;
-    if (local_c == (undefined4 *)0x0) {
+    if (local_c == nullptr) {
       return 0xfffffffe;
     }
     if (0x380 < param_2) {
@@ -108,7 +108,7 @@ DWORD FUN_006c7700(AnonShape_006C7700_7DDC3CA1 *param_1,uint param_2)
   else if (local_93 != '\x03') {
     local_c = (undefined4 *)FUN_006bfb70(0x30);
     param_1->field_001E = local_c;
-    if (local_c == (undefined4 *)0x0) {
+    if (local_c == nullptr) {
       return 0xfffffffe;
     }
   }

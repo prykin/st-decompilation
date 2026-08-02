@@ -11,7 +11,7 @@ int FUN_0074ceb2(AnonShape_0074CEB2_D881A5E3 *param_1,int *lpCriticalSection,int
   void *this;
   int iVar2;
 
-  if (lpCriticalSection == (int *)0x0) {
+  if (lpCriticalSection == nullptr) {
     iVar2 = -0x7fffbffd;
   }
   else {
@@ -21,7 +21,7 @@ int FUN_0074ceb2(AnonShape_0074CEB2_D881A5E3 *param_1,int *lpCriticalSection,int
     /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
     (**(code **)(*lpCriticalSection + 4))(lpCriticalSection);
     piVar1 = param_1->field_0004;
-    if (piVar1 != (int *)0x0) {
+    if (piVar1 != nullptr) {
       /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
       (**(code **)(*piVar1 + 8))(piVar1);
     }

@@ -65,12 +65,12 @@ int __thiscall HelpStringTy::GetMessage(HelpStringTy *this,STMessage *message)
       DAT_00801694 = this_00;
       break;
     case MESS_SHARED_0003:
-      DAT_00801694 = (HelpStringTy *)0x0;
-      if (local_8->field_011E != (ccFntTy *)0x0) {
+      DAT_00801694 = nullptr;
+      if (local_8->field_011E != nullptr) {
         ccFntTy::operator_delete((uint *)local_8->field_011E);
-        this_00->field_011E = (ccFntTy *)0x0;
+        this_00->field_011E = nullptr;
       }
-      if (this_00->field_012A != (ushort *)0x0) {
+      if (this_00->field_012A != nullptr) {
         FreeAndNull(&this_00->field_012A);
       }
       break;

@@ -13,7 +13,7 @@
 void DArrayDestroy(DArrayTy *array)
 
 {
-  if (array != (DArrayTy *)0x0) {
+  if (array != nullptr) {
     FUN_006a5e90(array->data);
     if ((array->flags & 8) != 0) {
       FUN_006a5e90((short *)array);

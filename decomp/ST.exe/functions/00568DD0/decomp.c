@@ -59,8 +59,8 @@ SoundClassTy::PlaySound
   /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
   case SOUND_MODE_1:
     if (((DAT_00807300._1_1_ & 4) != 0) &&
-       (puVar12 = FUN_0071a990(local_8->field_0DF3,soundId,-1,(undefined1 *)0x0),
-       puVar12 != (uint *)0x0)) {
+       (puVar12 = FUN_0071a990(local_8->field_0DF3,soundId,-1,nullptr),
+       puVar12 != nullptr)) {
       FUN_006c1390(puVar12,0,1,DAT_0080730e,0,2,3);
       g_currentExceptionFrame = local_64.previous;
       return;
@@ -98,8 +98,8 @@ SoundClassTy::PlaySound
         return;
       }
     }
-    puVar12 = FUN_0071a990(local_8->field_0DF3,soundId,-1,(undefined1 *)0x0);
-    if (puVar12 == (uint *)0x0) {
+    puVar12 = FUN_0071a990(local_8->field_0DF3,soundId,-1,nullptr);
+    if (puVar12 == nullptr) {
       g_currentExceptionFrame = local_64.previous;
       return;
     }
@@ -237,8 +237,8 @@ LAB_0056959b:
         return;
       }
     }
-    puVar12 = FUN_0071a990(local_8->field_0DF3,soundId,-1,(undefined1 *)0x0);
-    if (puVar12 == (uint *)0x0) {
+    puVar12 = FUN_0071a990(local_8->field_0DF3,soundId,-1,nullptr);
+    if (puVar12 == nullptr) {
       g_currentExceptionFrame = local_64.previous;
       return;
     }
@@ -383,8 +383,8 @@ LAB_005695ae:
           return;
         }
       }
-      local_1c = FUN_0071a990(pSVar15->field_0DF3,soundId,-1,(undefined1 *)0x0);
-      if (local_1c != (uint *)0x0) {
+      local_1c = FUN_0071a990(pSVar15->field_0DF3,soundId,-1,nullptr);
+      if (local_1c != nullptr) {
         local_14 = position->x;
         if (((int)local_14 < 0) || (local_10 = position->y, local_10 < 0)) {
           iVar4 = FUN_006c1390(local_1c,0,2,DAT_0080730e,0,0x12,0x14);
@@ -481,8 +481,8 @@ LAB_005695ae:
   /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
   case SOUND_MODE_5:
     if (((DAT_00807300._1_1_ & 8) != 0) &&
-       (puVar12 = FUN_0071a990(local_8->field_0DF3,soundId,-1,(undefined1 *)0x0),
-       puVar12 != (uint *)0x0)) {
+       (puVar12 = FUN_0071a990(local_8->field_0DF3,soundId,-1,nullptr),
+       puVar12 != nullptr)) {
       FUN_006c1390(puVar12,0,(-(uint)(flags != 0) & 0xfffffffe) + 2,DAT_0080730e,0,0x15,0x19);
       g_currentExceptionFrame = local_64.previous;
       return;
@@ -491,8 +491,8 @@ LAB_005695ae:
   /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
   case SOUND_MODE_6:
     if (((DAT_00807300._1_1_ & 1) != 0) &&
-       (puVar12 = FUN_0071a990(local_8->field_0DF3,soundId,-1,(undefined1 *)0x0),
-       puVar12 != (uint *)0x0)) {
+       (puVar12 = FUN_0071a990(local_8->field_0DF3,soundId,-1,nullptr),
+       puVar12 != nullptr)) {
       FUN_006c1390(puVar12,0,2,DAT_0080730e,0,0x1b,0x1d);
       g_currentExceptionFrame = local_64.previous;
       return;
@@ -501,8 +501,8 @@ LAB_005695ae:
   /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
   case SOUND_MODE_7:
     if (((DAT_00807300._1_1_ & 4) != 0) &&
-       (puVar12 = FUN_0071a990(local_8->field_0DF3,soundId,-1,(undefined1 *)0x0),
-       puVar12 != (uint *)0x0)) {
+       (puVar12 = FUN_0071a990(local_8->field_0DF3,soundId,-1,nullptr),
+       puVar12 != nullptr)) {
       FUN_006c1390(puVar12,0,2,DAT_0080730e,0,0x1e,0x1f);
       g_currentExceptionFrame = local_64.previous;
       return;
@@ -517,8 +517,8 @@ LAB_005695ae:
       pAVar16 = local_8->field_0DF3;
       iVar4 = soundId;
     }
-    puVar12 = FUN_0071a990(pAVar16,iVar4,-1,(undefined1 *)0x0);
-    if (puVar12 != (uint *)0x0) {
+    puVar12 = FUN_0071a990(pAVar16,iVar4,-1,nullptr);
+    if (puVar12 != nullptr) {
       FUN_006c1390(puVar12,0,(-(uint)(soundId != 0) & 0xfffffff7) + 9,DAT_0080730e,0,0,0);
       g_currentExceptionFrame = local_64.previous;
       return;
@@ -533,8 +533,8 @@ LAB_005695ae:
       pAVar16 = local_8->field_0DF3;
       iVar4 = soundId;
     }
-    puVar12 = FUN_0071a990(pAVar16,iVar4,-1,(undefined1 *)0x0);
-    if (puVar12 != (uint *)0x0) {
+    puVar12 = FUN_0071a990(pAVar16,iVar4,-1,nullptr);
+    if (puVar12 != nullptr) {
       FUN_006c1390(puVar12,0,(-(uint)(soundId != 0) & 0xfffffff7) + 9,DAT_0080730e,0,0,0);
       g_currentExceptionFrame = local_64.previous;
       return;
@@ -549,8 +549,8 @@ LAB_005695ae:
       pAVar16 = local_8->field_0DF3;
       iVar4 = soundId;
     }
-    puVar12 = FUN_0071a990(pAVar16,iVar4,-1,(undefined1 *)0x0);
-    if (puVar12 != (uint *)0x0) {
+    puVar12 = FUN_0071a990(pAVar16,iVar4,-1,nullptr);
+    if (puVar12 != nullptr) {
       FUN_006c1390(puVar12,0,(-(uint)(soundId != 0) & 0xfffffff7) + 9,DAT_0080730e,0,0,0);
       g_currentExceptionFrame = local_64.previous;
       return;
@@ -558,8 +558,8 @@ LAB_005695ae:
     break;
   case SOUND_MODE_11:
     puVar12 = (uint *)Library::Ourlib::MFWAV::mfWavLoad
-                                (local_8->field_0DEF,soundName,0,(ushort *)0x0);
-    if (puVar12 != (uint *)0x0) {
+                                (local_8->field_0DEF,soundName,0,nullptr);
+    if (puVar12 != nullptr) {
       pSVar15->field_0E03 = pSVar15->field_0E07;
       uVar5 = FUN_006c1390(puVar12,0,1,DAT_0080730a,0,0,1);
       pSVar15->field_0E07 = uVar5;
@@ -575,30 +575,30 @@ LAB_005695ae:
       g_currentExceptionFrame = local_64.previous;
       return;
     }
-    puVar12 = (uint *)0x0;
-    if ((soundName == (char *)0x0) || (*soundName == '\0')) {
+    puVar12 = nullptr;
+    if ((soundName == nullptr) || (*soundName == '\0')) {
       if (0 < soundId) {
-        puVar12 = FUN_0071a990(local_8->field_0DF3,soundId,-1,(undefined1 *)0x0);
+        puVar12 = FUN_0071a990(local_8->field_0DF3,soundId,-1,nullptr);
       }
 LAB_00569cc6:
-      if (puVar12 == (uint *)0x0) {
+      if (puVar12 == nullptr) {
         g_currentExceptionFrame = local_64.previous;
         return;
       }
     }
     else {
-      if (g_cMf32_00806758 != (cMf32 *)0x0) {
+      if (g_cMf32_00806758 != nullptr) {
         puVar12 = (uint *)Library::Ourlib::MFWAV::mfWavLoad
-                                    (g_cMf32_00806758,soundName,0,(ushort *)0x0);
+                                    (g_cMf32_00806758,soundName,0,nullptr);
       }
-      if (puVar12 == (uint *)0x0) {
-        if (g_cMf32_00806798 != (cMf32 *)0x0) {
+      if (puVar12 == nullptr) {
+        if (g_cMf32_00806798 != nullptr) {
           puVar12 = (uint *)Library::Ourlib::MFWAV::mfWavLoad
-                                      (g_cMf32_00806798,soundName,0,(ushort *)0x0);
+                                      (g_cMf32_00806798,soundName,0,nullptr);
         }
-        if (puVar12 == (uint *)0x0) {
+        if (puVar12 == nullptr) {
           puVar12 = (uint *)Library::Ourlib::MFWAV::mfWavLoad
-                                      (local_8->field_0DEF,soundName,0,(ushort *)0x0);
+                                      (local_8->field_0DEF,soundName,0,nullptr);
           goto LAB_00569cc6;
         }
       }

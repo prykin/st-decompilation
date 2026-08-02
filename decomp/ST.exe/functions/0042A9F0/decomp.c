@@ -16,12 +16,12 @@ void FUN_0042a9f0(char param_1)
   _param_1 = 5;
   puVar2 = &g_packedRecords_A62x8[iVar1].field335_0x16d;
   do {
-    if ((DArrayTy *)*puVar2 != (DArrayTy *)0x0) {
+    if ((DArrayTy *)*puVar2 != nullptr) {
       DArrayDestroy((DArrayTy *)*puVar2);
       *puVar2 = 0;
     }
     *(undefined4 *)((int)puVar2 + -10) = 0;
-    if ((DArrayTy *)puVar2[0x14] != (DArrayTy *)0x0) {
+    if ((DArrayTy *)puVar2[0x14] != nullptr) {
       DArrayDestroy((DArrayTy *)puVar2[0x14]);
       puVar2[0x14] = 0;
     }
@@ -33,7 +33,7 @@ void FUN_0042a9f0(char param_1)
   puVar2 = &g_packedRecords_A62x8[iVar1].field452_0x211;
   iVar1 = 10;
   do {
-    if ((DArrayTy *)*puVar2 != (DArrayTy *)0x0) {
+    if ((DArrayTy *)*puVar2 != nullptr) {
       DArrayDestroy((DArrayTy *)*puVar2);
       *puVar2 = 0;
     }

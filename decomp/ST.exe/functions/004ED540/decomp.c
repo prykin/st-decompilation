@@ -14,7 +14,7 @@ BehPanelTy * __cdecl CreateBehPanel(void)
   BehPanelTy *this;
 
   this = (BehPanelTy *)FUN_006b04d0(700);
-  if (this != (BehPanelTy *)0x0) {
+  if (this != nullptr) {
     sub_006E5FB0(this);
     this->field_005C = 0;
     this->field_0060 = 0xffffffff;
@@ -37,9 +37,9 @@ BehPanelTy * __cdecl CreateBehPanel(void)
     this->field_01C2 = 0;
     this->field_01BE = 0;
     memset(&this->field_01CE, 0, 0xea); /* compiler bulk-zero initialization */
-    this->field_02B8 = (ushort *)0x0;
+    this->field_02B8 = nullptr;
     return this;
   }
-  return (BehPanelTy *)0x0;
+  return nullptr;
 }
 

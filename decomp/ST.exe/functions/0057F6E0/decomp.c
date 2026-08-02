@@ -63,15 +63,15 @@ int __thiscall STDcResourcC::CreateRes(STDcResourcC *this)
       if (((((iVar10 < g_worldGrid.sizeX) && (-1 < iVar10)) &&
            (iVar10 = this_00->field_0249 + local_10, iVar10 < g_worldGrid.sizeY)) &&
           ((-1 < iVar10 && (-1 < (int)this_00->field_024D)))) && ((int)this_00->field_024D < 5)) {
-        if (this_00 == (STDcResourcC *)0x0) {
-          pSVar6 = (STT3DSprC *)0x0;
+        if (this_00 == nullptr) {
+          pSVar6 = nullptr;
         }
         else {
           pSVar6 = (STT3DSprC *)&this_00->field_01D5;
         }
         /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
         if ((3 < local_14) &&
-           (pSVar6 = (STT3DSprC *)Init(this_00,unaff_EDI), pSVar6 == (STT3DSprC *)0x0))
+           (pSVar6 = (STT3DSprC *)Init(this_00,unaff_EDI), pSVar6 == nullptr))
         goto cf_break_loop_0057FAA5;
         bVar13 = 0x1d;
         pcVar7 = (char *)sub_0057F3A0(this_00,local_c,0);
@@ -107,15 +107,15 @@ int __thiscall STDcResourcC::CreateRes(STDcResourcC *this)
       if ((((iVar10 < g_worldGrid.sizeX) && (-1 < iVar10)) &&
           (iVar10 = this_00->field_0249 + local_10, iVar10 < g_worldGrid.sizeY)) &&
          (((-1 < iVar10 && (-1 < (int)this_00->field_024D)) && ((int)this_00->field_024D < 5)))) {
-        if (this_00 == (STDcResourcC *)0x0) {
-          pSVar6 = (STT3DSprC *)0x0;
+        if (this_00 == nullptr) {
+          pSVar6 = nullptr;
         }
         else {
           pSVar6 = (STT3DSprC *)&this_00->field_01D5;
         }
         /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
         if ((3 < local_14) &&
-           (pSVar6 = (STT3DSprC *)Init(this_00,unaff_EDI), pSVar6 == (STT3DSprC *)0x0))
+           (pSVar6 = (STT3DSprC *)Init(this_00,unaff_EDI), pSVar6 == nullptr))
         goto cf_break_loop_0057FAA5;
         bVar13 = 0x1d;
         pcVar7 = (char *)sub_0057F2E0(this_00,local_c,0);
@@ -154,15 +154,15 @@ int __thiscall STDcResourcC::CreateRes(STDcResourcC *this)
           ((iVar10 = this_00->field_0249 + local_10, iVar10 < g_worldGrid.sizeY &&
            ((-1 < iVar10 && (-1 < (int)this_00->field_024D)))))) && ((int)this_00->field_024D < 5))
       {
-        if (this_00 == (STDcResourcC *)0x0) {
-          pSVar6 = (STT3DSprC *)0x0;
+        if (this_00 == nullptr) {
+          pSVar6 = nullptr;
         }
         else {
           pSVar6 = (STT3DSprC *)&this_00->field_01D5;
         }
         /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
         if ((iVar5 < 0) ||
-           (pSVar6 = (STT3DSprC *)Init(this_00,unaff_EDI), pSVar6 != (STT3DSprC *)0x0)) {
+           (pSVar6 = (STT3DSprC *)Init(this_00,unaff_EDI), pSVar6 != nullptr)) {
           bVar13 = 0x1d;
           pcVar7 = (char *)sub_0057F470(this_00,iVar5,0);
           iVar10 = STT3DSprC::LoadSequence(pSVar6,0xe,DAT_00806774,pcVar7,bVar13);
@@ -211,14 +211,14 @@ LAB_0057fc59:
       sVar3 = (short)this_00->field_0249;
       if ((((sVar1 < 0) || (g_worldGrid.sizeX <= sVar1)) || (sVar3 < 0)) ||
          (((g_worldGrid.sizeY <= sVar3 || (sVar2 < 0)) || (g_worldGrid.sizeZ <= sVar2)))) {
-        pSVar8 = (STWorldObject *)0x0;
+        pSVar8 = nullptr;
       }
       else {
         pSVar8 = g_worldGrid.cells
                  [(int)g_worldGrid.planeStride * (int)sVar2 + (int)g_worldGrid.sizeX * (int)sVar3 +
                   (int)sVar1].objects[0];
       }
-      if (pSVar8 == (STWorldObject *)0x0) {
+      if (pSVar8 == nullptr) {
         sub_005805C0(this_00);
         goto LAB_0057fd72;
       }

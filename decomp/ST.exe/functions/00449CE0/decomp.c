@@ -20,7 +20,7 @@ STAllPlayersC::RegisterArtefact(STAllPlayersC *this,ushort param_1,void *param_2
   g_currentExceptionFrame = &local_4c;
   iVar2 = Library::MSVCRT::__setjmp3(local_4c.jumpBuffer,0);
   if (iVar2 == 0) {
-    if (param_2 == (void *)0x0) {
+    if (param_2 == nullptr) {
       RaiseInternalException
                 (-0x5001fffc,g_overwriteContext_007ED77C,"E:\\__titans\\wlad\\to_allpl.cpp",
                  0x2ecc);

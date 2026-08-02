@@ -53,7 +53,7 @@ void __thiscall MReportTy::SetCtrl(MReportTy *this,int param_1)
               (int)(char)((-(DAT_0080c522 != 0) & 0xfbU) + 0x46));
     puVar5 = (ushort *)FUN_0070a9f0(g_cMf32_00806780,(char *)&DAT_0080f33a,0,1);
     *puVar8 = puVar5;
-    FUN_006bc360(puVar5,local_470,(int *)0x0);
+    FUN_006bc360(puVar5,local_470,nullptr);
     Library::Ourlib::PALETTE::FUN_00718780
               ((int)local_470,0,0x100,0x1a,0x10,(undefined4 *)&g_startSystem_0081176C->field_0x144);
     Library::Ourlib::PALETTE::FUN_00718780
@@ -61,17 +61,17 @@ void __thiscall MReportTy::SetCtrl(MReportTy *this,int param_1)
     Library::Ourlib::PALETTE::FUN_00718780
               ((int)local_470,0,0x100,0x2e,0x10,(undefined4 *)&pMVar2->field_0x1a3);
     PutDDX(0,0,'\x01',(BITMAPINFO *)*puVar8);
-    if (pMVar2->field_0083 != (ccFntTy *)0x0) {
+    if (pMVar2->field_0083 != nullptr) {
       ccFntTy::operator_delete((uint *)pMVar2->field_0083);
     }
-    pcVar6 = (ccFntTy *)thunk_FUN_005defe0(*puVar8,(undefined *)0x0,DAT_00807dd9);
+    pcVar6 = (ccFntTy *)thunk_FUN_005defe0(*puVar8,nullptr,DAT_00807dd9);
     pMVar2->field_0083 = pcVar6;
     pcVar6->field_0058 = 1;
     pcVar6->field_005C = 0;
-    if (pMVar2->field_0087 != (ccFntTy *)0x0) {
+    if (pMVar2->field_0087 != nullptr) {
       ccFntTy::operator_delete((uint *)pMVar2->field_0087);
     }
-    pcVar6 = (ccFntTy *)thunk_FUN_005df290(*puVar8,(undefined *)0x0,DAT_00807dd9);
+    pcVar6 = (ccFntTy *)thunk_FUN_005df290(*puVar8,nullptr,DAT_00807dd9);
     pMVar2->field_0087 = pcVar6;
     g_startSystem_0081176C->field_0038 = pcVar6;
     if (param_1 != 0) {

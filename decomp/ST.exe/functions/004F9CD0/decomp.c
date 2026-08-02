@@ -30,20 +30,20 @@ void __thiscall CPanelTy::PlayBriefing(CPanelTy *this,char *param_1)
   local_8 = this;
   errorCode = Library::MSVCRT::__setjmp3(local_4c.jumpBuffer,0);
   if (errorCode == 0) {
-    if (g_cMf32_00806758 != (cMf32 *)0x0) {
+    if (g_cMf32_00806758 != nullptr) {
       pDVar4 = (DArrayTy *)Library::Ourlib::MFDARR::mfDarLoad(g_cMf32_00806758,param_1,0);
-      if (pDVar4 != (DArrayTy *)0x0) {
+      if (pDVar4 != nullptr) {
         Library::MSVCRT::_strncpy(&DAT_0080c4d7,param_1,0x1f);
         pCVar3 = local_8;
         DAT_0080c4f6 = 0;
-        if (local_8->field_024B != (DArrayTy *)0x0) {
+        if (local_8->field_024B != nullptr) {
           DArrayDestroy(local_8->field_024B);
         }
         pCVar3->field_024B = pDVar4;
         ppsVar1 = &pCVar3->field_025B;
         pCVar3->field_0257 = pCVar3->field_0253;
         pCVar3->field_024F = 0;
-        if (*ppsVar1 != (short *)0x0) {
+        if (*ppsVar1 != nullptr) {
           FUN_0070b600((int *)ppsVar1);
         }
         psVar9 = (short *)0x1;

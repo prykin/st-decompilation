@@ -27,10 +27,10 @@ int __thiscall FUN_007140e0(void *this,int param_1,char param_2)
   undefined1 local_5;
 
   iVar9 = 0;
-  local_c = (AnonShape_006B5B10_E0D06CF1 *)0x0;
+  local_c = nullptr;
   local_10 = 0;
   local_5 = 0;
-  if ((((*(char **)((int)this + 0x58) == (char *)0x0) || (*(ccFntTy **)this == (ccFntTy *)0x0)) ||
+  if ((((*(char **)((int)this + 0x58) == nullptr) || (*(ccFntTy **)this == nullptr)) ||
       (*(int *)((int)this + 8) <= *(int *)((int)this + 4))) ||
      (**(char **)((int)this + 0x58) == '\0')) {
     return 0;
@@ -181,13 +181,13 @@ int __thiscall FUN_007140e0(void *this,int param_1,char param_2)
     switch(*(undefined4 *)((int)this + 0x74)) {
     case 0xfffffffc:
       puVar5 = Library::MSVCRT::FUN_00730590(*(uint **)((int)this + 0x8c),&DAT_007c8ff4);
-      if (puVar5 != (uint *)0x0) {
+      if (puVar5 != nullptr) {
         local_5 = (undefined1)*puVar5;
         *(undefined1 *)puVar5 = 0;
       }
       iVar9 = FUN_00711110(*(void **)this,*(char **)((int)this + 0x8c));
       iVar9 = (*(int *)((int)this + 0x5c) + *(int *)((int)this + 100)) / 2 - iVar9;
-      if (puVar5 != (uint *)0x0) {
+      if (puVar5 != nullptr) {
         *(undefined1 *)puVar5 = local_5;
       }
     case 0xfffffff9:
@@ -195,25 +195,25 @@ int __thiscall FUN_007140e0(void *this,int param_1,char param_2)
       break;
     case 0xfffffffd:
       puVar5 = Library::MSVCRT::FUN_00730590(*(uint **)((int)this + 0x8c),&DAT_007c8ff4);
-      if (puVar5 != (uint *)0x0) {
+      if (puVar5 != nullptr) {
         local_5 = (undefined1)*puVar5;
         *(undefined1 *)puVar5 = 0;
       }
       iVar9 = FUN_00711110(*(void **)this,*(char **)((int)this + 0x8c));
       iVar9 = *(int *)((int)this + 0x5c) - iVar9;
-      if (puVar5 != (uint *)0x0) {
+      if (puVar5 != nullptr) {
         *(undefined1 *)puVar5 = local_5;
       }
       break;
     case 0xfffffffe:
       puVar5 = Library::MSVCRT::FUN_00730590(*(uint **)((int)this + 0x8c),&DAT_007c8ff4);
-      if (puVar5 != (uint *)0x0) {
+      if (puVar5 != nullptr) {
         local_5 = (undefined1)*puVar5;
         *(undefined1 *)puVar5 = 0;
       }
       iVar9 = FUN_00711110(*(void **)this,*(char **)((int)this + 0x8c));
       iVar9 = (*(int *)((int)this + 0x5c) - iVar9) / 2;
-      if (puVar5 != (uint *)0x0) {
+      if (puVar5 != nullptr) {
         *(undefined1 *)puVar5 = local_5;
       }
     }
@@ -419,38 +419,38 @@ int __thiscall FUN_007140e0(void *this,int param_1,char param_2)
       break;
     case 0xfffffffc:
       puVar5 = Library::MSVCRT::FUN_00730590(*(uint **)((int)this + 0x8c),&DAT_007c8ff4);
-      if (puVar5 != (uint *)0x0) {
+      if (puVar5 != nullptr) {
         local_5 = (undefined1)*puVar5;
         *(undefined1 *)puVar5 = 0;
       }
       iVar9 = FUN_00711110(*(void **)this,*(char **)((int)this + 0x8c));
       iVar9 = (*(int *)((int)this + 0x5c) + *(int *)((int)this + 100)) / 2 - iVar9;
-      if (puVar5 != (uint *)0x0) {
+      if (puVar5 != nullptr) {
         *(undefined1 *)puVar5 = local_5;
       }
       local_14 = *(int *)((int)this + 100);
       break;
     case 0xfffffffd:
       puVar5 = Library::MSVCRT::FUN_00730590(*(uint **)((int)this + 0x8c),&DAT_007c8ff4);
-      if (puVar5 != (uint *)0x0) {
+      if (puVar5 != nullptr) {
         local_5 = (undefined1)*puVar5;
         *(undefined1 *)puVar5 = 0;
       }
       iVar9 = FUN_00711110(*(void **)this,*(char **)((int)this + 0x8c));
       iVar9 = *(int *)((int)this + 0x5c) - iVar9;
-      if (puVar5 != (uint *)0x0) {
+      if (puVar5 != nullptr) {
         *(undefined1 *)puVar5 = local_5;
       }
       break;
     case 0xfffffffe:
       puVar5 = Library::MSVCRT::FUN_00730590(*(uint **)((int)this + 0x8c),&DAT_007c8ff4);
-      if (puVar5 != (uint *)0x0) {
+      if (puVar5 != nullptr) {
         local_5 = (undefined1)*puVar5;
         *(undefined1 *)puVar5 = 0;
       }
       iVar9 = FUN_00711110(*(void **)this,*(char **)((int)this + 0x8c));
       iVar9 = (*(int *)((int)this + 0x5c) - iVar9) / 2;
-      if (puVar5 != (uint *)0x0) {
+      if (puVar5 != nullptr) {
         *(undefined1 *)puVar5 = local_5;
       }
     }

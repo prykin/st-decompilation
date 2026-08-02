@@ -103,7 +103,7 @@ STSprGameObjC::CheckRay
               (-0x5001fff6,g_overwriteContext_007ED77C,"E:\\__titans\\wlad\\Tc_gobj.cpp",0xb69
               );
   }
-  if (param_8 != (int *)0x0) {
+  if (param_8 != nullptr) {
     *param_8 = 0;
   }
   iVar5 = FUN_006acf0d((int)param_1,(int)param_2,(int)param_3,(int)param_4,(int)param_5,(int)param_6
@@ -177,16 +177,16 @@ STSprGameObjC::CheckRay
           sVar11 = (short)iVar9;
           if (((((sVar7 < 0) || (g_worldGrid.sizeX <= sVar7)) || (sVar8 < 0)) ||
               ((g_worldGrid.sizeY <= sVar8 || (sVar11 < 0)))) || (g_worldGrid.sizeZ <= sVar11)) {
-            pSVar10 = (STWorldObject *)0x0;
+            pSVar10 = nullptr;
           }
           else {
             pSVar10 = g_worldGrid.cells
                       [(int)g_worldGrid.planeStride * (int)sVar11 +
                        (int)g_worldGrid.sizeX * (int)sVar8 + (int)sVar7].objects[0];
           }
-          if (((pSVar10 == (STWorldObject *)0x0) || ((STWorldObjectVTable *)0x7 < pSVar10[1].vtable)
-              ) || ((g_playSystem_00802A38 != (STPlaySystemC *)0x0 &&
-                    (7 < (byte)(&DAT_008087e9)[(int)pSVar10[1].vtable * 0x51])))) {
+          if (((pSVar10 == nullptr) || ((STWorldObjectVTable *)0x7 < pSVar10[1].vtable)
+              ) || ((g_playSystem_00802A38 != nullptr &&
+                    (7 < g_bulkInitializedRecords_008087C7[(int)pSVar10[1].vtable].field_0022)))) {
 LAB_0041fe0d:
             if (g_pathingGrid.cells
                 [g_pathingGrid.sizeX * iVar5 + local_c + g_pathingGrid.planeStride * iVar9] < 0) {
@@ -197,20 +197,20 @@ LAB_0041fe0d:
             sVar7 = (short)local_c;
             if ((((sVar7 < 0) || (g_worldGrid.sizeX <= sVar7)) || (sVar8 < 0)) ||
                (((g_worldGrid.sizeY <= sVar8 || (sVar11 < 0)) || (g_worldGrid.sizeZ <= sVar11)))) {
-              pSVar10 = (STWorldObject *)0x0;
+              pSVar10 = nullptr;
             }
             else {
               pSVar10 = g_worldGrid.cells
                         [(int)g_worldGrid.planeStride * (int)sVar11 +
                          (int)g_worldGrid.sizeX * (int)sVar8 + (int)sVar7].objects[1];
             }
-            if (((pSVar10 != (STWorldObject *)0x0) &&
+            if (((pSVar10 != nullptr) &&
                 (pSVar10[1].vtable < (STWorldObjectVTable *)0x8)) &&
-               (((g_playSystem_00802A38 == (STPlaySystemC *)0x0 ||
-                 ((byte)(&DAT_008087e9)[(int)pSVar10[1].vtable * 0x51] < 8)) &&
+               (((g_playSystem_00802A38 == nullptr ||
+                 (g_bulkInitializedRecords_008087C7[(int)pSVar10[1].vtable].field_0022 < 8)) &&
                 (local_1c->field_0018 != *(int *)&pSVar10->field_0x18)))) {
               if ((pSVar10[0xc].value_20 & 0x1000) != 0) {
-                if (param_8 != (int *)0x0) {
+                if (param_8 != nullptr) {
                   *param_8 = (int)pSVar10;
                 }
                 RaiseInternalException
@@ -219,8 +219,8 @@ LAB_0041fe0d:
               }
               if (param_9 == 0) {
                 if (((STWorldObjectVTable *)0x7 < pSVar10[1].vtable) ||
-                   ((g_playSystem_00802A38 != (STPlaySystemC *)0x0 &&
-                    (7 < (byte)(&DAT_008087e9)[(int)pSVar10[1].vtable * 0x51]))))
+                   ((g_playSystem_00802A38 != nullptr &&
+                    (7 < g_bulkInitializedRecords_008087C7[(int)pSVar10[1].vtable].field_0022))))
                 goto cf_continue_loop_0042004A;
                 bVar4 = *(byte *)&pSVar10[1].vtable;
                 bVar1 = (byte)local_1c->field_0024;
@@ -253,8 +253,8 @@ LAB_0041fffd:
                   bVar13 = iVar5 < 0;
                 }
                 else {
-                  bVar13 = (&DAT_008087ea)[(uint)bVar1 * 0x51] !=
-                           (&DAT_008087ea)[(uint)bVar4 * 0x51];
+                  bVar13 = g_bulkInitializedRecords_008087C7[bVar1].field_0023 !=
+                           g_bulkInitializedRecords_008087C7[bVar4].field_0023;
                 }
                 if ((!bVar13) && (pSVar10->value_20 == 0x1ae)) {
                   RaiseInternalException
@@ -268,7 +268,7 @@ LAB_0041fffd:
             }
           }
           else if (local_1c->field_0018 != *(int *)&pSVar10->field_0x18) {
-            if (param_8 != (int *)0x0) {
+            if (param_8 != nullptr) {
               *param_8 = (int)pSVar10;
             }
             if ((pSVar10[0xc].value_20 & 0x1000) != 0) {
@@ -278,8 +278,8 @@ LAB_0041fffd:
             }
             if (param_9 == 0) {
               if (((STWorldObjectVTable *)0x7 < pSVar10[1].vtable) ||
-                 ((g_playSystem_00802A38 != (STPlaySystemC *)0x0 &&
-                  (7 < (byte)(&DAT_008087e9)[(int)pSVar10[1].vtable * 0x51]))))
+                 ((g_playSystem_00802A38 != nullptr &&
+                  (7 < g_bulkInitializedRecords_008087C7[(int)pSVar10[1].vtable].field_0022))))
               goto cf_continue_loop_0042004A;
               bVar4 = *(byte *)&pSVar10[1].vtable;
               bVar1 = (byte)local_1c->field_0024;
@@ -312,7 +312,8 @@ LAB_0041fdc6:
                 bVar13 = iVar12 < 0;
               }
               else {
-                bVar13 = (&DAT_008087ea)[(uint)bVar1 * 0x51] != (&DAT_008087ea)[(uint)bVar4 * 0x51];
+                bVar13 = g_bulkInitializedRecords_008087C7[bVar1].field_0023 !=
+                         g_bulkInitializedRecords_008087C7[bVar4].field_0023;
               }
               if (!bVar13) {
                 RaiseInternalException

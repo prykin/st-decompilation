@@ -30,12 +30,12 @@ undefined4 __thiscall STGroupBoatC::MakePVec(STGroupBoatC *this)
   iVar4 = Library::MSVCRT::__setjmp3(local_58.jumpBuffer,0);
   pSVar3 = local_8;
   if (iVar4 == 0) {
-    if (local_8->field_020E == (DArrayTy *)0x0) {
+    if (local_8->field_020E == nullptr) {
       RaiseInternalException
                 (-0x5001fff7,g_overwriteContext_007ED77C,"E:\\__titans\\wlad\\to_grpb.cpp",
                  0x52e);
     }
-    if (pSVar3->field_021E != (ushort *)0x0) {
+    if (pSVar3->field_021E != nullptr) {
       FreeAndNull(&pSVar3->field_021E);
     }
     uVar9 = pSVar3->field_020E->count;
@@ -59,7 +59,7 @@ undefined4 __thiscall STGroupBoatC::MakePVec(STGroupBoatC *this)
       do {
         DArrayGetElement(pSVar3->field_020E,uVar9,&local_14);
         pSVar6 = STAllPlayersC::GetObjPtr(g_allPlayers_007FA174,local_14,uStack_12,(int)cStack_13);
-        if (pSVar6 == (STGameObjC *)0x0) {
+        if (pSVar6 == nullptr) {
           uStack_12 = 0xffff;
           Library::DKW::TBL::DArrayPut(pSVar3->field_020E,uVar9,&local_14);
           puVar5 = pSVar3->field_021E;

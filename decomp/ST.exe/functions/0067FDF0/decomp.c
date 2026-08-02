@@ -34,9 +34,9 @@ uint __cdecl FUN_0067fdf0(int *param_1,byte *param_2)
     puVar3 = (undefined4 *)(g_array_00848A38->elementSize * uVar1 + (int)g_array_00848A38->data);
   }
   else {
-    puVar3 = (undefined4 *)0x0;
+    puVar3 = nullptr;
   }
-  if (puVar3 == (undefined4 *)0x0) {
+  if (puVar3 == nullptr) {
     RaiseInternalException(-2,g_overwriteContext_007ED77C,".\\ai\\ai_script_v.inl",0x21a);
   }
   thunk_FUN_0064a800(puVar3);

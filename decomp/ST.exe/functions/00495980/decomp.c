@@ -50,7 +50,7 @@ LAB_00495c27:
     g_pathingGrid.planeStride = *DAT_00806750 * DAT_00806750[1];
     g_pathingGrid.cells =
          Library::DKW::LIB::MemAlloc((int)g_pathingGrid.sizeY * (int)g_pathingGrid.sizeX * 10);
-    if (g_pathingGrid.cells == (short *)0x0) {
+    if (g_pathingGrid.cells == nullptr) {
       RaiseInternalException
                 (-1,g_overwriteContext_007ED77C,"E:\\__titans\\wlad\\To_dump.cpp",0x2b);
     }
@@ -73,7 +73,7 @@ LAB_00495c27:
          Library::DKW::LIB::MemAlloc
                    ((int)g_pathingGrid.sizeZ * (int)g_pathingGrid.sizeY * (int)g_pathingGrid.sizeX *
                     2);
-    if (g_pathingScratchGrid.cells == (short *)0x0) {
+    if (g_pathingScratchGrid.cells == nullptr) {
       RaiseInternalException
                 (-1,g_overwriteContext_007ED77C,"E:\\__titans\\wlad\\To_dump.cpp",0x30);
     }
@@ -85,7 +85,7 @@ LAB_00495c27:
          Library::DKW::LIB::MemAlloc
                    ((int)g_pathingGrid.sizeZ * (int)g_pathingGrid.sizeY * (int)g_pathingGrid.sizeX *
                     8);
-    if (g_worldGrid.cells == (STWorldCell *)0x0) {
+    if (g_worldGrid.cells == nullptr) {
       RaiseInternalException
                 (-1,g_overwriteContext_007ED77C,"E:\\__titans\\wlad\\To_dump.cpp",0x34);
     }
@@ -93,7 +93,7 @@ LAB_00495c27:
             << 1;
     ppSVar8 = (g_worldGrid.cells)->objects;
     for (; iVar3 != 0; iVar3 = iVar3 + -1) {
-      *ppSVar8 = (STWorldObject *)0x0;
+      *ppSVar8 = nullptr;
       ppSVar8 = ppSVar8 + 1;
     }
     for (iVar3 = 0; iVar3 != 0; iVar3 = iVar3 + -1) {
@@ -113,7 +113,7 @@ LAB_00495c27:
       *(undefined1 *)puVar9 = 0;
       puVar9 = (undefined4 *)((int)puVar9 + 1);
     }
-    g_array_007FB270 = Library::DKW::TBL::DArrayCreate((DArrayTy *)0x0,10,0x18,10);
+    g_array_007FB270 = Library::DKW::TBL::DArrayCreate(nullptr,10,0x18,10);
     thunk_FUN_00495e50();
     g_currentExceptionFrame = local_4c.previous;
     FUN_006e4d40((void *)local_8->field_0010,local_8->field_000C);
@@ -133,18 +133,18 @@ LAB_00495c27:
       goto LAB_00495c27;
     }
     thunk_FUN_00495ea0();
-    if (g_pathingGrid.cells != (short *)0x0) {
+    if (g_pathingGrid.cells != nullptr) {
       FreeAndNull(&g_pathingGrid.cells);
     }
-    if (g_pathingScratchGrid.cells != (short *)0x0) {
+    if (g_pathingScratchGrid.cells != nullptr) {
       FreeAndNull(&g_pathingScratchGrid.cells);
     }
-    if (g_worldGrid.cells != (STWorldCell *)0x0) {
+    if (g_worldGrid.cells != nullptr) {
       FreeAndNull(&g_worldGrid.cells);
     }
     pDVar2 = local_8;
     thunk_FUN_00497000();
-    if (g_array_007FB270 != (DArrayTy *)0x0) {
+    if (g_array_007FB270 != nullptr) {
       DArrayDestroy(g_array_007FB270);
     }
     uVar4 = FUN_006e4d40((void *)pDVar2->field_0010,pDVar2->field_000C);

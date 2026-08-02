@@ -43,7 +43,7 @@ FUN_0061c910(void *this,int param_1,STJumpMineC_field_0093State param_2,undefine
     *(undefined4 *)((int)this + 0x34) = 0;
   }
   else if ((1 < param_1) && (param_1 < 4)) {
-    if (*(int **)((int)this + 0x34) != (int *)0x0) {
+    if (*(int **)((int)this + 0x34) != nullptr) {
       /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
       iVar2 = (**(code **)(**(int **)((int)this + 0x34) + 0xe0))
                         (*(undefined4 *)((int)this + 0x38),(byte *)((int)&param_2 + 2),

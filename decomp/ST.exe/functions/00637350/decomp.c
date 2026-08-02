@@ -119,11 +119,11 @@ FUN_00637350(int param_1,int param_2,int param_3,int param_4,uint param_5,ushort
                    ((sVar6 < g_worldGrid.sizeZ &&
                     ((this = g_worldGrid.cells
                              [(int)sVar3 * (int)sVar9 + (int)sVar6 * (int)g_worldGrid.planeStride +
-                              (int)sVar11].objects[0], this != (STWorldObject *)0x0 &&
+                              (int)sVar11].objects[0], this != nullptr &&
                      (iVar10 = (*this->vtable[5].slots_00_28[0])(), uVar7 = param_9, iVar10 != 0))))
                    )) && (this[1].vtable < (STWorldObjectVTable *)0x8)) &&
-                 ((g_playSystem_00802A38 == (STPlaySystemC *)0x0 ||
-                  ((byte)(&DAT_008087e9)[(int)this[1].vtable * 0x51] < 8)))) {
+                 ((g_playSystem_00802A38 == nullptr ||
+                  (g_bulkInitializedRecords_008087C7[(int)this[1].vtable].field_0022 < 8)))) {
                 bVar1 = *(byte *)&this[1].vtable;
                 /* ST_PSEUDO[stack_slot_reuse,packed_or_unaligned_piece]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable; expected named packed member, bit extract/compose, or unaligned load */
                 param_8 = CONCAT31(param_8._1_3_,bVar1);
@@ -153,8 +153,8 @@ LAB_006375fd:
                   bVar15 = iVar10 < 0;
                 }
                 else {
-                  bVar15 = (&DAT_008087ea)[(param_5 & 0xff) * 0x51] !=
-                           (&DAT_008087ea)[(uint)bVar1 * 0x51];
+                  bVar15 = g_bulkInitializedRecords_008087C7[param_5 & 0xff].field_0023 !=
+                           g_bulkInitializedRecords_008087C7[bVar1].field_0023;
                   iVar14 = _param_6;
                 }
                 if ((bVar15) &&

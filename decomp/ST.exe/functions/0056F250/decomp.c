@@ -44,7 +44,7 @@ void __thiscall FUN_0056f250(void *this,char param_1,byte param_2,char *param_3)
     if (param_1 == '\x03') goto LAB_0056f325;
     param_3 = (char *)((int)this + 0x7a02);
   }
-  else if (param_3 == (char *)0x0) {
+  else if (param_3 == nullptr) {
     wsprintfA((LPSTR)local_1a8,"%s%s%s\\%sDEBUG%u",(int)this + 0x60,PTR_s_SAVEGAME__0079b02c
               ,&DAT_00807ddd,PTR_DAT_0079b050,param_2);
     goto LAB_0056f325;
@@ -92,43 +92,43 @@ LAB_0056f325:
                    PTR_s_TEXTURE_0079b07c,'\x01');
         STPlaySystemC::Save(g_playSystem_00802A38,pcVar8);
         cMf32::RecPut(pcVar8,0xc,PTR_s_RND_INIT_0079b05c,(byte *)((int)pvVar2 + 0x1134),4,
-                      (undefined4 *)0x0,'\0',(uint *)0x0);
+                      nullptr,'\0',nullptr);
         cMf32::RecPut(pcVar8,0,PTR_s_DESCRIPTOR_0079b080,(byte *)((int)pvVar2 + 0x1196),0x1999,
-                      (undefined4 *)0x0,'\0',(uint *)0x0);
+                      nullptr,'\0',nullptr);
         cMf32::RecPut(pcVar8,0xc,PTR_s_TITLE_MISSION_0079b070,(byte *)((int)pvVar2 + 0x4da3),0x104,
-                      (undefined4 *)0x0,'\0',(uint *)0x0);
+                      nullptr,'\0',nullptr);
         local_60.previous = g_currentExceptionFrame;
         g_currentExceptionFrame = &local_60;
         iVar3 = Library::MSVCRT::__setjmp3(local_60.jumpBuffer,0);
         pvVar2 = local_10;
         pcVar8 = local_14;
         /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-        if ((iVar3 == 0) && (*(uint **)((int)local_10 + 0x4ea7) != (uint *)0x0)) {
+        if ((iVar3 == 0) && (*(uint **)((int)local_10 + 0x4ea7) != nullptr)) {
           /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
           Library::Ourlib::MFSARR::mfSarSave
                     (*(uint **)((int)local_10 + 0x4ea7),(int)local_14,PTR_s_DESCRIPTION_0079b074,
                      '\x01');
         }
         g_currentExceptionFrame = local_60.previous;
-        if (*(uint **)((int)pvVar2 + 0x4eab) != (uint *)0x0) {
+        if (*(uint **)((int)pvVar2 + 0x4eab) != nullptr) {
           Library::Ourlib::MFSARR::mfSarSave
                     (*(uint **)((int)pvVar2 + 0x4eab),(int)pcVar8,PTR_s_OBJECTIVES_0079b078,'\x01');
         }
-        if (g_sT3DSMAPContext_00807598 != (ST3DSMAPContext *)0x0) {
+        if (g_sT3DSMAPContext_00807598 != nullptr) {
           iVar3 = 1;
           puVar13 = (undefined4 *)(DAT_0080679c + 0x28);
           uVar4 = FUN_006b4fe0(DAT_0080679c);
           local_c = (AnonShape_006B5050_99986F91 *)
                     FUN_006b50c0(0x8b,0x8b,(uint)*(ushort *)(DAT_0080679c + 0xe),uVar4,puVar13,iVar3
                                 );
-          if (local_c != (AnonShape_006B5050_99986F91 *)0x0) {
+          if (local_c != nullptr) {
             FUN_006b4170((AnonShape_006B5B10_E0D06CF1 *)local_c,0,0,0,local_c->field_0004,
                          local_c->field_0008,0);
             ST3DSMAPContext::sub_006E6FB0
                       (g_sT3DSMAPContext_00807598,(AnonShape_006B5B10_E0D06CF1 *)local_c,0,0,1);
-            puVar15 = (uint *)0x0;
+            puVar15 = nullptr;
             cVar14 = '\0';
-            puVar13 = (undefined4 *)0x0;
+            puVar13 = nullptr;
             uVar5 = FUN_006b5050(local_c);
             cMf32::RecPut(pcVar8,0xc,PTR_s_SMALL_MAP_0079b084,(byte *)local_c,uVar5,puVar13,cVar14,
                           puVar15);
@@ -136,29 +136,29 @@ LAB_0056f325:
           }
         }
         cMf32::RecPut(pcVar8,0xc,PTR_s_TYPE_START_0079b08c,(byte *)((int)pvVar2 + 0x1180),1,
-                      (undefined4 *)0x0,'\0',(uint *)0x0);
+                      nullptr,'\0',nullptr);
         cMf32::RecPut(pcVar8,0,PTR_s_ORIG_DB_0079b088,(byte *)((int)pvVar2 + 0x78fe),0x104,
-                      (undefined4 *)0x0,'\0',(uint *)0x0);
+                      nullptr,'\0',nullptr);
         cMf32::RecPut(pcVar8,0,PTR_s_REPORT_0079b090,(byte *)((int)pvVar2 + 0x4f02),0x27f0,
-                      (undefined4 *)0x0,'\0',(uint *)0x0);
+                      nullptr,'\0',nullptr);
         local_1b = *(undefined1 *)((int)pvVar2 + 0x112e);
         local_1a = *(undefined1 *)((int)pvVar2 + 0x112f);
         local_1c = *(byte *)((int)pvVar2 + 0x112d);
         local_19 = *(undefined4 *)((int)pvVar2 + 0x1130);
-        cMf32::RecPut(pcVar8,0x80,PTR_s_SAVE_PLAYER_0079b058,&local_1c,7,(undefined4 *)0x0,'\0',
-                      (uint *)0x0);
+        cMf32::RecPut(pcVar8,0x80,PTR_s_SAVE_PLAYER_0079b058,&local_1c,7,nullptr,'\0',
+                      nullptr);
         cMf32::RecPut(pcVar8,0,PTR_s_RESTART_GAME_0079b060,(byte *)((int)pvVar2 + 0x2b2f),0x2274,
-                      (undefined4 *)0x0,'\0',(uint *)0x0);
+                      nullptr,'\0',nullptr);
         cMf32::RecPut(pcVar8,0xc,PTR_s_AUTOSAVETIME_GAME_0079b068,(byte *)((int)pvVar2 + 0x4eaf),4,
-                      (undefined4 *)0x0,'\0',(uint *)0x0);
+                      nullptr,'\0',nullptr);
         cMf32::RecPut(pcVar8,0xc,PTR_s_STATETIMER_GAME_0079b064,(byte *)((int)pvVar2 + 0x4eb3),4,
-                      (undefined4 *)0x0,'\0',(uint *)0x0);
+                      nullptr,'\0',nullptr);
         if (*(short *)((int)pvVar2 + 0x4ed7) == 1) {
           cMf32::RecPut(pcVar8,0xc,PTR_s_BRIEFING_GAME_0079b06c,(byte *)((int)pvVar2 + 0x4eb7),0x20,
-                        (undefined4 *)0x0,'\0',(uint *)0x0);
+                        nullptr,'\0',nullptr);
         }
-        cMf32::RecPut(pcVar8,0x80,PTR_s_SAVE_DESC_0079b054,(byte *)&local_8,4,(undefined4 *)0x0,'\0'
-                      ,(uint *)0x0);
+        cMf32::RecPut(pcVar8,0x80,PTR_s_SAVE_DESC_0079b054,(byte *)&local_8,4,nullptr,'\0'
+                      ,nullptr);
       }
       cMf32::delete(pcVar8);
       g_currentExceptionFrame = local_a4.previous;
@@ -246,7 +246,7 @@ LAB_0056f325:
     pbVar12 = pbVar12 + -1;
     memmove(pbVar12, pbVar9, uVar5); /* compiler REP MOVS byte copy */
     DeleteFileA((LPCSTR)pbVar7);
-    if (g_optPanel_008016DC != (OptPanelTy *)0x0) {
+    if (g_optPanel_008016DC != nullptr) {
       OptPanelTy::Notification(g_optPanel_008016DC,'\f',0);
     }
   }

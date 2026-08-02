@@ -38,7 +38,7 @@ FUN_0061bdb0(void *this,Global_sub_0061BDB0_param_1Enum param_1,int param_2,int 
     *(uint *)((int)this + 0x11b) = g_playSystem_00802A38->field_00E4;
     return 1;
   case CASE_1:
-    if ((*(char *)((int)this + 0x14b) != '\0') && (*(void **)((int)this + 0x7d) != (void *)0x0)) {
+    if ((*(char *)((int)this + 0x14b) != '\0') && (*(void **)((int)this + 0x7d) != nullptr)) {
       thunk_FUN_00618900(*(void **)((int)this + 0x7d),*(int *)((int)this + 0x145),0);
       *(undefined1 *)((int)this + 0x14b) = 0;
     }

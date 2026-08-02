@@ -34,7 +34,7 @@ void __thiscall CursorClassTy::ReInitCursorSpr(CursorClassTy *this,int param_1)
     else {
       iVar2 = 0;
       cVar4 = '\a';
-      puVar5 = (undefined4 *)0x0;
+      puVar5 = nullptr;
     }
     SpriteClassTy::InitSprite
               ((SpriteClassTy *)this_00,(int *)g_ddxContext_008075A8,0,cVar4,puVar5,iVar2,

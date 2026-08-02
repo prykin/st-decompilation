@@ -15,7 +15,7 @@ ResearchPanelTy * __cdecl CreateResearchPanel(void)
   undefined4 *puVar2;
 
   this = (ResearchPanelTy *)FUN_006b04d0(0x286);
-  if (this != (ResearchPanelTy *)0x0) {
+  if (this != nullptr) {
     sub_006E5FB0(this);
     this->field_005C = 0;
     this->field_0060 = 0xffffffff;
@@ -24,9 +24,9 @@ ResearchPanelTy * __cdecl CreateResearchPanel(void)
     *(undefined2 *)&this->field_0x172 = 2;
     *(undefined4 *)&this->field_0x178 = 0;
     *(undefined4 *)&this->field_0x17c = 0;
-    this->field_0184 = (ushort *)0x0;
+    this->field_0184 = nullptr;
     this->field_0190 = 0;
-    this->field_0188 = (ushort *)0x0;
+    this->field_0188 = nullptr;
     *(undefined4 *)&this->field_0x19d = 0;
     *(undefined4 *)&this->field_0x180 = 0;
     this->field_01A1 = 0;
@@ -53,6 +53,6 @@ ResearchPanelTy * __cdecl CreateResearchPanel(void)
     this->field_027A = 0;
     return this;
   }
-  return (ResearchPanelTy *)0x0;
+  return nullptr;
 }
 

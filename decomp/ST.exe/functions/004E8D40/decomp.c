@@ -11,7 +11,7 @@ void __fastcall FUN_004e8d40(AnonShape_004E8D40_DAF7916C *param_1)
       thunk_FUN_004e8dc0((AnonShape_004E8DC0_1D60A929 *)param_1);
     }
     if ((*(AnonShape_005EFAE0_B406B78B **)&param_1->field_0x4f8 !=
-         (AnonShape_005EFAE0_B406B78B *)0x0) && (param_1->field_061B == 0)) {
+         nullptr) && (param_1->field_061B == 0)) {
       iVar1 = STPlaySystemC::sub_006E62D0
                         (g_playSystem_00802A38,
                          *(AnonShape_005EFAE0_B406B78B **)&param_1->field_0x4f8,(int *)&local_8);

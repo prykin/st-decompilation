@@ -10,12 +10,11 @@ void __thiscall ST3DSMAPContext::sub_006DD800(ST3DSMAPContext *this,float param_
 {
   longlong lVar1;
 
-  *(double *)&this->field_0x11c = (double)param_1;
-  if ((float)*(double *)&this->field_0x114 < param_1) {
-    *(double *)&this->field_0x10c =
-         (double)((float)_DAT_0079df78 / (param_1 - (float)*(double *)&this->field_0x114));
+  this->field_011C = (double)param_1;
+  if ((float)this->field_0114 < param_1) {
+    this->field_010C = (double)((float)_DAT_0079df78 / (param_1 - (float)this->field_0114));
     lVar1 = Library::MSVCRT::__ftol();
-    *(int *)&this->field_0x2e4 = (int)lVar1;
+    this->field_02E4 = (int)lVar1;
     sub_006DD870(this);
     return;
   }

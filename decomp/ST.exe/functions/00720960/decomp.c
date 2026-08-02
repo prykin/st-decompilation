@@ -8,7 +8,7 @@ ListClassTy * __cdecl CreateList(void)
   ListClassTy *pLVar1;
 
   pLVar1 = (ListClassTy *)FUN_006b04d0(0x20c);
-  if (pLVar1 != (ListClassTy *)0x0) {
+  if (pLVar1 != nullptr) {
     FUN_0072b700((undefined4 *)pLVar1);
     pLVar1->field_01E8 = 0;
     pLVar1->field_01E4 = 0;
@@ -17,6 +17,6 @@ ListClassTy * __cdecl CreateList(void)
     pLVar1->field_0000 = 0x79e2a4;
     return pLVar1;
   }
-  return (ListClassTy *)0x0;
+  return nullptr;
 }
 

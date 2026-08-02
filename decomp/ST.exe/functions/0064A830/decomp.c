@@ -19,7 +19,7 @@ int __cdecl FUN_0064a830(int *param_1,undefined4 *param_2)
     if (*param_1 <= param_1[1]) {
       iVar1 = *param_1 + 10;
       *param_1 = iVar1;
-      pvVar2 = Library::DKW::LIB::MemRealloc((AnonPointee_TLOBaseTy_0607 *)param_1[2],iVar1 * 5);
+      pvVar2 = Library::DKW::LIB::MemRealloc((void *)param_1[2],iVar1 * 5);
       param_1[2] = (int)pvVar2;
     }
     puVar3 = (undefined4 *)(param_1[1] * 5 + param_1[2]);

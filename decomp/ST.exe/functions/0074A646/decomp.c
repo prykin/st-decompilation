@@ -22,7 +22,7 @@ LAB_0074a6c4:
     piVar1 = param_1->field_0018;
     local_c = param_1;
     local_8 = param_1;
-    if (piVar1 != (int *)0x0) {
+    if (piVar1 != nullptr) {
       uVar2 = param_1->field_0020;
       iVar3 = param_1->field_0024;
       uVar4 = param_1->field_00B8;

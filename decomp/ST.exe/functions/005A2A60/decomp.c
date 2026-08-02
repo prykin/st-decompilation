@@ -26,7 +26,7 @@ void __thiscall FSGSTy::ChangePlayer(FSGSTy *this,byte *param_1)
   FSGSTy *local_8;
 
   if (((this->field_1A5F == CASE_6) && (this->field_1A60 == '\0')) &&
-     (this->field_1EA6 != (DArrayTy *)0x0)) {
+     (this->field_1EA6 != nullptr)) {
     local_54.previous = g_currentExceptionFrame;
     g_currentExceptionFrame = &local_54;
     local_8 = this;
@@ -37,7 +37,7 @@ void __thiscall FSGSTy::ChangePlayer(FSGSTy *this,byte *param_1)
       local_10 = ((DArrayTy *)local_c)->count;
       if (local_10 != 0) {
         if (local_10 == 0) {
-          pbVar8 = (byte *)0x0;
+          pbVar8 = nullptr;
           goto LAB_005a2aea;
         }
         do {
@@ -47,7 +47,7 @@ void __thiscall FSGSTy::ChangePlayer(FSGSTy *this,byte *param_1)
 LAB_005a2aea:
           pbVar4 = pbVar8;
           pbVar7 = param_1;
-          if (pbVar8 != (byte *)0x0) {
+          if (pbVar8 != nullptr) {
             do {
               bVar1 = *pbVar4;
               bVar9 = bVar1 < *pbVar7;

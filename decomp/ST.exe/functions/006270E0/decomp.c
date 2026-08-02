@@ -6,7 +6,7 @@
 void __thiscall FUN_006270e0(void *this,int param_1,undefined1 *param_2)
 
 {
-  if (param_2 != (undefined1 *)0x0) {
+  if (param_2 != nullptr) {
     if (param_1 == 0x15) {
       *(undefined1 *)((int)this + 0x35e) = *param_2;
       *(undefined1 *)((int)this + 0x359) = 1;

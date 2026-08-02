@@ -12,10 +12,10 @@ STExplosion * __cdecl CreateSTExplosion(void)
   STExplosion *pSVar1;
 
   pSVar1 = (STExplosion *)FUN_006b04d0(0x2bf);
-  if (pSVar1 != (STExplosion *)0x0) {
+  if (pSVar1 != nullptr) {
     pSVar1 = STExplosion::STExplosion(pSVar1);
     return pSVar1;
   }
-  return (STExplosion *)0x0;
+  return nullptr;
 }
 

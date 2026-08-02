@@ -57,7 +57,7 @@ void __fastcall FUN_00581200(int param_1)
     iVar11 = g_worldGrid.sizeX + -1;
   }
   if ((int)local_40 < 0) {
-    local_40 = (int *)0x0;
+    local_40 = nullptr;
   }
   /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
   local_24 = *(int *)(param_1 + 0x1f9) + 3;
@@ -93,12 +93,12 @@ void __fastcall FUN_00581200(int param_1)
           ((pSVar4 = g_worldGrid.cells
                      [(int)sVar16 * (int)g_worldGrid.planeStride +
                       (int)g_worldGrid.sizeX * (int)(short)local_10 + (int)sVar13].objects[0],
-           pSVar4 != (STWorldObject *)0x0 &&
+           pSVar4 != nullptr &&
            (((((pSVar4->value_20 == 1000 || (pSVar4->value_20 == 0x14)) &&
               (iVar12 = (*pSVar4->vtable[5].slots_00_28[0])(), pAVar8 = local_c, iVar12 != 0)) &&
              (pSVar4[1].vtable < (STWorldObjectVTable *)0x8)) &&
-            ((g_playSystem_00802A38 == (STPlaySystemC *)0x0 ||
-             ((byte)(&DAT_008087e9)[(int)pSVar4[1].vtable * 0x51] < 8)))))))))) {
+            ((g_playSystem_00802A38 == nullptr ||
+             (g_bulkInitializedRecords_008087C7[(int)pSVar4[1].vtable].field_0022 < 8)))))))))) {
         this = (void *)local_c->field_0010;
         if (*(char *)((int)this + 0x146f) == '\0') {
           iVar10 = thunk_FUN_005822e0(this,*(byte *)&pSVar4[1].vtable,local_c->field_0024);
@@ -175,12 +175,12 @@ LAB_00581545:
             (pSVar4 = g_worldGrid.cells
                       [(int)sVar9 * (int)g_worldGrid.planeStride +
                        (int)g_worldGrid.sizeX * (int)sVar16 + (int)sVar13].objects[0],
-            pSVar4 == (STWorldObject *)0x0)))))) ||
+            pSVar4 == nullptr)))))) ||
          ((((pSVar4->value_20 != 1000 && (pSVar4->value_20 != 0x14)) ||
            ((iVar12 = (*pSVar4->vtable[5].slots_00_28[0])(), iVar12 == 0 ||
             ((STWorldObjectVTable *)0x7 < pSVar4[1].vtable)))) ||
-          ((g_playSystem_00802A38 != (STPlaySystemC *)0x0 &&
-           (7 < (byte)(&DAT_008087e9)[(int)pSVar4[1].vtable * 0x51]))))))
+          ((g_playSystem_00802A38 != nullptr &&
+           (7 < g_bulkInitializedRecords_008087C7[(int)pSVar4[1].vtable].field_0022))))))
       goto cf_continue_loop_005814A2;
       bVar1 = *(byte *)&pSVar4[1].vtable;
       bVar2 = local_c->field_0024;

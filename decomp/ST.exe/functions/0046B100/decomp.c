@@ -134,8 +134,8 @@ int __thiscall STBoatC::Build(STBoatC *this,uint param_1)
       if ((((this->field_0047 != this->field_04FC) || (this->field_0049 != this->field_04FE)) ||
           (this->field_004B != this->field_0500)) ||
          (iVar13 = thunk_FUN_004ae0b0(this->field_04DD,(int)this->field_04DF,(int)this->field_04E1,
-                                      this->field_04E3,this->field_0024,(undefined4 *)0x0,(int *)0x0
-                                      ,(int *)0x0,0,(int *)0x0), iVar13 == 0)) {
+                                      this->field_04E3,this->field_0024,nullptr,nullptr
+                                      ,nullptr,0,nullptr), iVar13 == 0)) {
         return 0;
       }
       /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
@@ -165,7 +165,7 @@ int __thiscall STBoatC::Build(STBoatC *this,uint param_1)
            || (pSVar5 = g_worldGrid.cells
                         [(int)(short)uVar3 * (int)g_worldGrid.sizeX +
                          (int)g_worldGrid.planeStride * (int)sVar19 + (int)sVar18].objects[0],
-              pSVar5 == (STWorldObject *)0x0)))))) {
+              pSVar5 == nullptr)))))) {
         iVar13 = ReportDebugMessage("E:\\__titans\\wlad\\To_boat.cpp",0x23c0,0,0,"%s"
                                     ,"STBoatC::Build NULL");
         if (iVar13 == 0) {
@@ -174,8 +174,8 @@ int __thiscall STBoatC::Build(STBoatC *this,uint param_1)
         STDebugBreak(); /* noreturn in standalone pseudocode */
       }
       if ((pSVar5[1].vtable < (STWorldObjectVTable *)0x8) &&
-         ((g_playSystem_00802A38 == (STPlaySystemC *)0x0 ||
-          ((byte)(&DAT_008087e9)[(int)pSVar5[1].vtable * 0x51] < 8)))) {
+         ((g_playSystem_00802A38 == nullptr ||
+          (g_bulkInitializedRecords_008087C7[(int)pSVar5[1].vtable].field_0022 < 8)))) {
         bVar26 = *(byte *)&pSVar5[1].vtable;
         bVar1 = *(byte *)&this->field_0024;
         /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
@@ -206,7 +206,8 @@ LAB_0046b5ac:
           bVar16 = iVar13 < 0;
         }
         else {
-          bVar16 = (&DAT_008087ea)[(uint)bVar1 * 0x51] != (&DAT_008087ea)[(uint)bVar26 * 0x51];
+          bVar16 = g_bulkInitializedRecords_008087C7[bVar1].field_0023 !=
+                   g_bulkInitializedRecords_008087C7[bVar26].field_0023;
         }
         if (bVar16) {
           param_1 = local_14;
@@ -520,8 +521,8 @@ LAB_0046b6e2:
       local_8a = 0;
       if (this->field_0502 == 0) {
         iVar13 = thunk_FUN_004ae0b0(this->field_04DD,(int)this->field_04DF,(int)this->field_04E1,
-                                    this->field_04E3,this->field_0024,(undefined4 *)0x0,(int *)0x0,
-                                    (int *)0x0,0,(int *)0x0);
+                                    this->field_04E3,this->field_0024,nullptr,nullptr,
+                                    nullptr,0,nullptr);
         /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
         uVar8 = extraout_EDX_00;
         /* ST_PSEUDO[return_width_artifact,raw_pointer_offset]: candidate call-output artifact: verify return width, clobbers, or x87 state; candidate structure field after proof; otherwise retain buffer arithmetic */
@@ -541,8 +542,8 @@ LAB_0046b6e2:
       }
       else {
         iVar13 = thunk_FUN_004ae0b0(this->field_04DD,(int)this->field_04DF,(int)this->field_04E1,
-                                    this->field_04E3,this->field_0024,(undefined4 *)0x0,(int *)0x0,
-                                    (int *)0x0,0,(int *)0x0);
+                                    this->field_04E3,this->field_0024,nullptr,nullptr,
+                                    nullptr,0,nullptr);
         /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
         uVar8 = extraout_EDX_02;
         /* ST_PSEUDO[return_width_artifact,raw_pointer_offset]: candidate call-output artifact: verify return width, clobbers, or x87 state; candidate structure field after proof; otherwise retain buffer arithmetic */

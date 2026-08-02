@@ -12,10 +12,10 @@ TraksClassTy * __cdecl CreateTraks(void)
   TraksClassTy *pTVar1;
 
   pTVar1 = (TraksClassTy *)FUN_006b04d0(0x82c);
-  if (pTVar1 != (TraksClassTy *)0x0) {
+  if (pTVar1 != nullptr) {
     pTVar1 = TraksClassTy::TraksClassTy(pTVar1);
     return pTVar1;
   }
-  return (TraksClassTy *)0x0;
+  return nullptr;
 }
 

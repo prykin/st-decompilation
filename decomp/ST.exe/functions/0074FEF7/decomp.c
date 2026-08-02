@@ -13,7 +13,7 @@ uint __fastcall FUN_0074fef7(AnonShape_0074FEF7_7E5655A4 *param_1)
     uVar1 = 0x80040234;
   }
   else {
-    uVar1 = FUN_0074e337((int *)&param_1->field_0x48,param_1->field_0020,(int *)0x0,0,
+    uVar1 = FUN_0074e337((int *)&param_1->field_0x48,param_1->field_0020,nullptr,0,
                          (int *)&local_8);
     if (-1 < (int)uVar1) {
       /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */

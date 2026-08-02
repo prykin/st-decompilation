@@ -7,13 +7,13 @@
 void __thiscall STLightC::sub_0061D650(STLightC *this)
 
 {
-  if (this->field_0057 != (void *)0x0) {
+  if (this->field_0057 != nullptr) {
     FreeAndNull(&this->field_0057);
   }
-  if (this->field_009B != (void *)0x0) {
+  if (this->field_009B != nullptr) {
     FreeAndNull(&this->field_009B);
   }
-  if (this->field_009F != (void *)0x0) {
+  if (this->field_009F != nullptr) {
     FreeAndNull(&this->field_009F);
   }
   this->field_0093 = 0;

@@ -67,7 +67,7 @@ void FUN_00746e65(int *param_1,char *param_2,undefined4 *param_3)
   }
   piVar1 = param_1 + 3;
 LAB_00746ec5:
-  FUN_0074b8a6((int *)(-(uint)(param_1 != (int *)0x0) & (uint)piVar1),param_3);
+  FUN_0074b8a6((int *)(-(uint)(param_1 != nullptr) & (uint)piVar1),param_3);
   return;
 }
 

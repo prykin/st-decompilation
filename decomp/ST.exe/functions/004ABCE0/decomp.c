@@ -15,7 +15,7 @@ undefined4 __thiscall FUN_004abce0(void *this,byte param_1,int param_2,int param
       iVar7 = (char)param_1 * 0x24;
       iVar6 = iVar7 + *(int *)((int)this + 0x20);
       piVar4 = *(int **)(iVar7 + *(int *)((int)this + 0x20));
-      if (piVar4 != (int *)0x0) {
+      if (piVar4 != nullptr) {
         if ((((-1 < param_2) && (iVar5 = *piVar4 + -1, param_2 <= iVar5)) && (-1 < param_3)) &&
            (param_3 <= iVar5)) {
           if (param_4 == '\0') {

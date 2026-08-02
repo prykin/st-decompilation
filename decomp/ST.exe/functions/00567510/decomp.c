@@ -63,7 +63,7 @@ void __thiscall FUN_00567510(void *this,int param_1,int param_2,int param_3,int 
     local_10 = (int *)((int)local_20 + 0xe23);
     do {
       iVar4 = local_8;
-      FUN_006c1f00(local_8,&local_18,(uint *)0x0);
+      FUN_006c1f00(local_8,&local_18,nullptr);
       iVar5 = local_8;
       if ((local_18 == 1) &&
          ((((3 < iVar4 && (iVar4 < 0xb)) || ((0x11 < iVar4 && (iVar4 < 0x15)))) ||
@@ -223,7 +223,7 @@ switchD_005675bc_default:
     iVar4 = 2;
     piVar12 = (int *)((int)pvVar3 + 0xe23);
     do {
-      FUN_006c1f00(iVar4,&local_18,(uint *)0x0);
+      FUN_006c1f00(iVar4,&local_18,nullptr);
       if (local_18 == 1) {
         if (((3 < iVar4) && (iVar4 < 0xb)) || ((0x11 < iVar4 && (iVar4 < 0x15)))) {
           iVar5 = *(int *)((int)pvVar3 + 0x10e1) * 0x10;

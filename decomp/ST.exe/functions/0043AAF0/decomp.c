@@ -39,13 +39,13 @@ STAllPlayersC::GetCamPoint
   iVar7 = 0;
   iVar8 = 0;
   local_14 = 10000;
-  if ((((param_5 == (int *)0x0) && (param_6 == (int *)0x0)) && (param_7 == (int *)0x0)) &&
-     (param_8 == (uint *)0x0)) {
+  if ((((param_5 == nullptr) && (param_6 == nullptr)) && (param_7 == nullptr)) &&
+     (param_8 == nullptr)) {
     return 0xffffffff;
   }
   if (_param_1 < 0x19b) {
     if ((_param_1 == 0x19a) || (_param_1 == 0x3c)) {
-      if (param_3 == (DArrayTy *)0x0) {
+      if (param_3 == nullptr) {
         return 0xffffffff;
       }
       dVar1 = param_3->count;
@@ -82,17 +82,17 @@ STAllPlayersC::GetCamPoint
                                    (int)(short)((int)(short)iVar8 / (int)(uint)uVar6));
               bVar9 = (ushort)iVar3 < (ushort)local_14;
               if (bVar9) {
-                if (param_5 != (int *)0x0) {
+                if (param_5 != nullptr) {
                   *param_5 = (int)param_1;
                 }
-                if (param_6 != (int *)0x0) {
+                if (param_6 != nullptr) {
                   *param_6 = (int)(short)local_8;
                 }
-                if (param_7 != (int *)0x0) {
+                if (param_7 != nullptr) {
                   *param_7 = (int)param_4._2_2_;
                 }
                 local_14 = iVar3;
-                if (param_8 != (uint *)0x0) {
+                if (param_8 != nullptr) {
                   *param_8 = pSVar5->field_01ED;
                 }
               }
@@ -133,16 +133,16 @@ LAB_0043acdb:
   pSVar5 = GetObjPtr(g_allPlayers_007FA174,(char)param_2,(ushort)param_4,SVar10);
   STFishC::sub_004162B0
             ((STFishC *)pSVar5,&param_1,(undefined2 *)&local_8,(undefined2 *)((int)&param_4 + 2));
-  if (param_5 != (int *)0x0) {
+  if (param_5 != nullptr) {
     *param_5 = (int)param_1;
   }
-  if (param_6 != (int *)0x0) {
+  if (param_6 != nullptr) {
     *param_6 = (int)(short)local_8;
   }
-  if (param_7 != (int *)0x0) {
+  if (param_7 != nullptr) {
     *param_7 = (int)param_4._2_2_;
   }
-  if (param_8 != (uint *)0x0) {
+  if (param_8 != nullptr) {
     *param_8 = pSVar5->field_01ED;
   }
   return 0;

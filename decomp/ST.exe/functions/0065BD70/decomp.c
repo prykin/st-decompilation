@@ -167,13 +167,13 @@ int __thiscall AiEventClassTy::sub_0065BD70(AiEventClassTy *this,STMessage *mess
   case MESS_SHARED_5DD5:
     wVar7 = (message->arg0).words.low;
     if (((-1 < (short)wVar7) && ((short)wVar7 < 8)) &&
-       (iVar6 = (int)(short)wVar7, (&DAT_008087e9)[iVar6 * 0x51] != -1)) {
+       (iVar6 = (int)(short)wVar7, g_bulkInitializedRecords_008087C7[iVar6].field_0022 != 0xff)) {
       this->field_052F = iVar6;
-      this->field_0533 = (uint)(byte)(&DAT_008087e8)[iVar6 * 0x51];
-      this->field_0537 = (uint)(byte)(&DAT_008087ea)[iVar6 * 0x51];
+      this->field_0533 = (uint)g_bulkInitializedRecords_008087C7[iVar6].field_0021;
+      this->field_0537 = (uint)g_bulkInitializedRecords_008087C7[iVar6].field_0023;
       pSVar4 = STAllPlayersC::GetObjPtr
                          (g_allPlayers_007FA174,(char)wVar7,(message->arg0).words.high,CASE_1);
-      if (pSVar4 != (STGameObjC *)0x0) {
+      if (pSVar4 != nullptr) {
         uVar5 = (*pSVar4->vtable->vfunc_2C)();
         this->field_053B = uVar5;
         uVar5 = pSVar4->vfunc_6C();
@@ -205,12 +205,12 @@ LAB_0065c021:
   case MESS_AIBOSSCLASSTY_5DD0|MESS_CURSORCLASSTY_0009:
   case MESS_AIBOSSCLASSTY_5DD0|MESS_SYSTEMCLASSTY_000A:
     pSVar4 = STAllPlayersC::GetObjPtr(g_allPlayers_007FA174,'\0',(message->arg0).words.high,CASE_5);
-    if (pSVar4 != (STGameObjC *)0x0) {
+    if (pSVar4 != nullptr) {
       uVar5 = (*pSVar4->vtable->vfunc_12C)();
       this->field_052F = uVar5;
       uVar5 = (*pSVar4->vtable->vfunc_0C)();
       this->field_0533 = uVar5;
-      this->field_0537 = (uint)(byte)(&DAT_008087ea)[this->field_052F * 0x51];
+      this->field_0537 = (uint)g_bulkInitializedRecords_008087C7[this->field_052F].field_0023;
       uVar5 = (*pSVar4->vtable->vfunc_130)();
       this->field_053B = uVar5;
       this->field_053F = 0;
@@ -229,10 +229,10 @@ LAB_0065c021:
     }
     wVar7 = (pSVar2->arg1).words.low;
     if (((-1 < (short)wVar7) && ((short)wVar7 < 8)) &&
-       (iVar6 = (int)(short)wVar7, (&DAT_008087e9)[iVar6 * 0x51] != -1)) {
+       (iVar6 = (int)(short)wVar7, g_bulkInitializedRecords_008087C7[iVar6].field_0022 != 0xff)) {
       this->field_0557 = iVar6;
-      this->field_055B = (uint)(byte)(&DAT_008087e8)[iVar6 * 0x51];
-      this->field_055F = (uint)(byte)(&DAT_008087ea)[iVar6 * 0x51];
+      this->field_055B = (uint)g_bulkInitializedRecords_008087C7[iVar6].field_0021;
+      this->field_055F = (uint)g_bulkInitializedRecords_008087C7[iVar6].field_0023;
       uVar8 = (pSVar2->arg1).words.high;
       goto LAB_0065c4bb;
     }
@@ -242,7 +242,7 @@ LAB_0065c021:
   case MESS_AIBOSSCLASSTY_5DD0|MESS_SHARED_0008|MESS_SHARED_0005:
   case 0x5dde:
     pSVar4 = STAllPlayersC::GetObjPtr(g_allPlayers_007FA174,'\0',(message->arg0).words.high,CASE_2);
-    if (pSVar4 != (STGameObjC *)0x0) {
+    if (pSVar4 != nullptr) {
       this->field_052F = 0;
       uVar5 = (*pSVar4->vtable->vfunc_0C)();
       this->field_0533 = uVar5;
@@ -263,11 +263,11 @@ LAB_0065c021:
     }
     wVar7 = (pSVar2->arg1).words.low;
     if ((((short)wVar7 < 0) || (7 < (short)wVar7)) ||
-       (iVar6 = (int)(short)wVar7, (&DAT_008087e9)[iVar6 * 0x51] == -1))
+       (iVar6 = (int)(short)wVar7, g_bulkInitializedRecords_008087C7[iVar6].field_0022 == 0xff))
     goto cf_common_exit_0065C570;
     this->field_0557 = iVar6;
-    this->field_055B = (uint)(byte)(&DAT_008087e8)[iVar6 * 0x51];
-    this->field_055F = (uint)(byte)(&DAT_008087ea)[iVar6 * 0x51];
+    this->field_055B = (uint)g_bulkInitializedRecords_008087C7[iVar6].field_0021;
+    this->field_055F = (uint)g_bulkInitializedRecords_008087C7[iVar6].field_0023;
     uVar8 = (pSVar2->arg1).words.high;
     goto LAB_0065c4bb;
   case 0x5ddf:
@@ -275,7 +275,7 @@ LAB_0065c021:
   case 0x5de1:
   case 0x5de2:
     this_00 = (message->arg0).ptr;
-    if (this_00 != (STFishC *)0x0) {
+    if (this_00 != nullptr) {
       this->field_052F = 0;
       this->field_0533 = 0;
       this->field_0537 = 0;
@@ -297,13 +297,13 @@ LAB_0065c021:
   case 0x5de4:
     wVar7 = (message->arg0).words.low;
     if (((-1 < (short)wVar7) && ((short)wVar7 < 8)) &&
-       (iVar6 = (int)(short)wVar7, (&DAT_008087e9)[iVar6 * 0x51] != -1)) {
+       (iVar6 = (int)(short)wVar7, g_bulkInitializedRecords_008087C7[iVar6].field_0022 != 0xff)) {
       this->field_052F = iVar6;
-      this->field_0533 = (uint)(byte)(&DAT_008087e8)[iVar6 * 0x51];
-      this->field_0537 = (uint)(byte)(&DAT_008087ea)[iVar6 * 0x51];
+      this->field_0533 = (uint)g_bulkInitializedRecords_008087C7[iVar6].field_0021;
+      this->field_0537 = (uint)g_bulkInitializedRecords_008087C7[iVar6].field_0023;
       pSVar4 = STAllPlayersC::GetObjPtr
                          (g_allPlayers_007FA174,'\0',(message->arg0).words.high,CASE_3);
-      if (pSVar4 != (STGameObjC *)0x0) {
+      if (pSVar4 != nullptr) {
         uVar5 = (*pSVar4->vtable->vfunc_2C)();
         this->field_053B = uVar5;
         uVar5 = pSVar4->vfunc_6C();
@@ -323,24 +323,24 @@ LAB_0065c03e:
     wVar7 = (pSVar2->arg1).words.low;
 LAB_0065c042:
     if ((((short)wVar7 < 0) || (7 < (short)wVar7)) ||
-       (iVar6 = (int)(short)wVar7, (&DAT_008087e9)[iVar6 * 0x51] == -1)) {
+       (iVar6 = (int)(short)wVar7, g_bulkInitializedRecords_008087C7[iVar6].field_0022 == 0xff)) {
 cf_common_exit_0065C570:
       this->field_0557 = 0xff;
       goto cf_common_exit_0065C65B;
     }
     this->field_0557 = iVar6;
-    this->field_055B = (uint)(byte)(&DAT_008087e8)[iVar6 * 0x51];
-    this->field_055F = (uint)(byte)(&DAT_008087ea)[iVar6 * 0x51];
+    this->field_055B = (uint)g_bulkInitializedRecords_008087C7[iVar6].field_0021;
+    this->field_055F = (uint)g_bulkInitializedRecords_008087C7[iVar6].field_0023;
     uVar8 = (pSVar2->arg1).words.high;
     goto LAB_0065c4bb;
   case 0x5de5:
     wVar7 = (message->arg0).words.low;
     if ((((short)wVar7 < 0) || (7 < (short)wVar7)) ||
-       (iVar6 = (int)(short)wVar7, (&DAT_008087e9)[iVar6 * 0x51] == -1))
+       (iVar6 = (int)(short)wVar7, g_bulkInitializedRecords_008087C7[iVar6].field_0022 == 0xff))
     goto cf_common_exit_0065C65B;
     this->field_052F = iVar6;
-    this->field_0533 = (uint)(byte)(&DAT_008087e8)[iVar6 * 0x51];
-    this->field_0537 = (uint)(byte)(&DAT_008087ea)[iVar6 * 0x51];
+    this->field_0533 = (uint)g_bulkInitializedRecords_008087C7[iVar6].field_0021;
+    this->field_0537 = (uint)g_bulkInitializedRecords_008087C7[iVar6].field_0023;
     this->field_053B = (uint)(message->arg0).words.high;
     this->field_053F = (uint)(message->arg2).words.low;
     if ((message->arg1).u32 == 0) goto cf_common_exit_0065C65B;
@@ -355,10 +355,10 @@ cf_common_exit_0065C570:
   case 0x5dea:
     wVar7 = (message->arg0).words.low;
     if (((-1 < (short)wVar7) && ((short)wVar7 < 8)) &&
-       (iVar6 = (int)(short)wVar7, (&DAT_008087e9)[iVar6 * 0x51] != -1)) {
+       (iVar6 = (int)(short)wVar7, g_bulkInitializedRecords_008087C7[iVar6].field_0022 != 0xff)) {
       this->field_052F = iVar6;
-      this->field_0533 = (uint)(byte)(&DAT_008087e8)[iVar6 * 0x51];
-      this->field_0537 = (uint)(byte)(&DAT_008087ea)[iVar6 * 0x51];
+      this->field_0533 = (uint)g_bulkInitializedRecords_008087C7[iVar6].field_0021;
+      this->field_0537 = (uint)g_bulkInitializedRecords_008087C7[iVar6].field_0023;
       this->field_053B = (uint)(message->arg1).words.low;
       this->field_053F = (uint)(message->arg1).words.high;
       this->field_0543 = (uint)(message->id == 0x5de7);
@@ -366,16 +366,17 @@ cf_common_exit_0065C570:
     if ((message->id < 0x5de6) || (0x5de8 < message->id)) goto cf_common_exit_0065C65B;
     wVar7 = (message->arg0).words.low;
     if (((short)wVar7 < 0) ||
-       ((7 < (short)wVar7 || (iVar6 = (int)(short)wVar7, (&DAT_008087e9)[iVar6 * 0x51] == -1))))
+       ((7 < (short)wVar7 ||
+        (iVar6 = (int)(short)wVar7, g_bulkInitializedRecords_008087C7[iVar6].field_0022 == 0xff))))
     goto cf_common_exit_0065C570;
     this->field_0557 = iVar6;
-    this->field_055B = (uint)(byte)(&DAT_008087e8)[iVar6 * 0x51];
-    this->field_055F = (uint)(byte)(&DAT_008087ea)[iVar6 * 0x51];
+    this->field_055B = (uint)g_bulkInitializedRecords_008087C7[iVar6].field_0021;
+    this->field_055F = (uint)g_bulkInitializedRecords_008087C7[iVar6].field_0023;
     uVar8 = (message->arg0).words.high;
 LAB_0065c4bb:
     if ((uVar8 == 0xffff) ||
        (pSVar4 = STAllPlayersC::GetObjPtr(g_allPlayers_007FA174,(char)wVar7,uVar8,CASE_1),
-       pSVar4 == (STGameObjC *)0x0)) {
+       pSVar4 == nullptr)) {
       this->field_0563 = 0;
       goto cf_common_exit_0065C65B;
     }
@@ -407,11 +408,11 @@ LAB_0065c4bb:
   case MESS_SHARED_5DEC:
     wVar7 = (message->arg0).words.low;
     if ((((short)wVar7 < 0) || (7 < (short)wVar7)) ||
-       (iVar6 = (int)(short)wVar7, (&DAT_008087e9)[iVar6 * 0x51] == -1))
+       (iVar6 = (int)(short)wVar7, g_bulkInitializedRecords_008087C7[iVar6].field_0022 == 0xff))
     goto cf_common_exit_0065C65B;
     this->field_052F = iVar6;
-    this->field_0533 = (uint)(byte)(&DAT_008087e8)[iVar6 * 0x51];
-    this->field_0537 = (uint)(byte)(&DAT_008087ea)[iVar6 * 0x51];
+    this->field_0533 = (uint)g_bulkInitializedRecords_008087C7[iVar6].field_0021;
+    this->field_0537 = (uint)g_bulkInitializedRecords_008087C7[iVar6].field_0023;
     if ((message->arg1).u32 == 0) goto cf_common_exit_0065C65B;
     pDVar10 = this->field_05B3;
     pcVar9 = (char *)((message->arg1).u32 + 0x92);

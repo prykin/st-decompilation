@@ -17,7 +17,7 @@ void __thiscall AiTactClassTy::InitDistrObj(AiTactClassTy *this)
   AiTactClassTy *local_c;
   DArrayTy *local_8;
 
-  local_8 = (DArrayTy *)0x0;
+  local_8 = nullptr;
   local_50.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_50;
   local_c = this;
@@ -28,16 +28,16 @@ void __thiscall AiTactClassTy::InitDistrObj(AiTactClassTy *this)
     local_8 = array;
     GiveObjByClaim(this_00,(uint *)array);
     GiveObjByFltType(this_00,(uint *)array);
-    if (array != (DArrayTy *)0x0) {
+    if (array != nullptr) {
       DArrayDestroy(array);
     }
     g_currentExceptionFrame = local_50.previous;
     return;
   }
   g_currentExceptionFrame = local_50.previous;
-  if (local_8 != (DArrayTy *)0x0) {
+  if (local_8 != nullptr) {
     DArrayDestroy(local_8);
-    local_8 = (DArrayTy *)0x0;
+    local_8 = nullptr;
   }
   iVar2 = ReportDebugMessage("E:\\__titans\\ai\\ai_tact.cpp",0x2a8,0,errorCode,"%s",
                              "AiTactClassTy::InitDistrObj");

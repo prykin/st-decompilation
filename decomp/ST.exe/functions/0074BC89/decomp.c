@@ -28,7 +28,7 @@ void FUN_0074bc89(AnonShape_0074BC89_92881050 *param_1,undefined4 *param_2)
   if (param_2[0x10] != 0) {
     puVar2 = (byte *)(CoTaskMemAlloc(param_2[0x10]));
     param_1->field_0044 = puVar2;
-    if (puVar2 == (undefined4 *)0x0) {
+    if (puVar2 == nullptr) {
       param_1->field_0040 = 0;
     }
     else {
@@ -38,7 +38,7 @@ void FUN_0074bc89(AnonShape_0074BC89_92881050 *param_1,undefined4 *param_2)
     }
   }
   piVar1 = param_1->field_003C;
-  if (piVar1 != (int *)0x0) {
+  if (piVar1 != nullptr) {
     /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
     (**(code **)(*piVar1 + 4))(piVar1);
   }

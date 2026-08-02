@@ -17,7 +17,7 @@ STManBasisC * __thiscall STManBasisC::STManBasisC(STManBasisC *this)
   this->vtable = &STManBasisCVTable;
   ppuVar2 = &this->field_0020;
   for (iVar1 = 10; iVar1 != 0; iVar1 = iVar1 + -1) {
-    *ppuVar2 = (ushort *)0x0;
+    *ppuVar2 = nullptr;
     ppuVar2 = ppuVar2 + 1;
   }
   return this;

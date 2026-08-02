@@ -55,7 +55,7 @@ FUN_004b1040(int param_1,int param_2,int param_3,int param_4,int param_5,uint pa
   if (param_7 != 0xff) {
     local_34 = param_7;
   }
-  if (param_8 != (char *)0x0) {
+  if (param_8 != nullptr) {
     Library::MSVCRT::_strncpy(local_30,param_8,0xe);
   }
   local_1d = param_9;

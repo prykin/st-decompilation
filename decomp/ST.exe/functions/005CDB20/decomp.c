@@ -50,14 +50,14 @@ void __thiscall SettMapMTy::AddPlList(SettMapMTy *this,int param_1)
       uVar5 = pSVar1->count;
       if (uVar5 != 0) {
         if (uVar5 == 0) {
-          pcVar7 = (char *)0x0;
+          pcVar7 = nullptr;
           goto LAB_005cdd03;
         }
         do {
           /* ST_PSEUDO[dynamic_array_indexing]: expected DArrayAt<T>(array, index) (runtime elementSize cannot be a static C array) */
           pcVar7 = &pSVar1->data->field_0000 + pSVar1->elementSize * uVar4;
 LAB_005cdd03:
-          if (pcVar7 != (char *)0x0) {
+          if (pcVar7 != nullptr) {
             if (*(int *)(pcVar7 + 6) == DAT_0080877f) {
               local_8 = 0;
               break;
@@ -71,14 +71,14 @@ LAB_005cdd03:
       }
       if (((local_8 != 0) && (cVar6 != '\0')) && (local_164[0] = 0, uVar5 != 0)) {
         if (uVar5 == 0) {
-          pcVar7 = (char *)0x0;
+          pcVar7 = nullptr;
           goto LAB_005cdd57;
         }
         while( true ) {
           /* ST_PSEUDO[dynamic_array_indexing]: expected DArrayAt<T>(array, index) (runtime elementSize cannot be a static C array) */
           pcVar7 = &pSVar1->data->field_0000 + pSVar1->elementSize * local_164[0];
 LAB_005cdd57:
-          if (((pcVar7 != (char *)0x0) && (*pcVar7 != '\0')) && (pcVar7[4] == '\x01')) break;
+          if (((pcVar7 != nullptr) && (*pcVar7 != '\0')) && (pcVar7[4] == '\x01')) break;
           local_164[0] = local_164[0] + 1;
           if (uVar5 <= local_164[0]) {
             g_currentExceptionFrame = local_50.previous;
@@ -117,14 +117,14 @@ LAB_005cdd57:
     uVar5 = pSVar1->count;
     if (uVar5 != 0) {
       if (uVar5 == 0) {
-        pcVar7 = (char *)0x0;
+        pcVar7 = nullptr;
         goto LAB_005cdb95;
       }
       do {
         /* ST_PSEUDO[dynamic_array_indexing]: expected DArrayAt<T>(array, index) (runtime elementSize cannot be a static C array) */
         pcVar7 = &pSVar1->data->field_0000 + pSVar1->elementSize * uVar4;
 LAB_005cdb95:
-        if (((pcVar7 != (char *)0x0) && (DAT_0080874d == pcVar7[2])) &&
+        if (((pcVar7 != nullptr) && (DAT_0080874d == pcVar7[2])) &&
            ((DAT_0080874e == pcVar7[3] && (*(int *)(pcVar7 + 6) == DAT_0080877f)))) {
           local_8 = 0;
           break;
@@ -134,14 +134,14 @@ LAB_005cdb95:
     }
     if ((local_8 != 0) && (local_164[0] = 0, uVar5 != 0)) {
       if (uVar5 == 0) {
-        pcVar7 = (char *)0x0;
+        pcVar7 = nullptr;
         goto LAB_005cdbf4;
       }
       while( true ) {
         /* ST_PSEUDO[dynamic_array_indexing]: expected DArrayAt<T>(array, index) (runtime elementSize cannot be a static C array) */
         pcVar7 = &pSVar1->data->field_0000 + pSVar1->elementSize * local_164[0];
 LAB_005cdbf4:
-        if (((pcVar7 != (char *)0x0) && (DAT_0080874d == pcVar7[2])) && (DAT_0080874e == pcVar7[3]))
+        if (((pcVar7 != nullptr) && (DAT_0080874d == pcVar7[2])) && (DAT_0080874e == pcVar7[3]))
         break;
         local_164[0] = local_164[0] + 1;
         if (uVar5 <= local_164[0]) {

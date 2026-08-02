@@ -21,7 +21,7 @@ void __fastcall FUN_00494ae0(AnonShape_00494AE0_7F188308 *param_1)
     if (((param_1->field_0792 == 1) &&
         (((param_1->field_0792 = 0, param_1->field_045D != 0x14 ||
           (*(int *)&param_1->field_0x5c0 != 3)) && ((param_1->field_01D1 & 1) == 0)))) &&
-       (param_1->field_078A = 0, g_visibleClass_00802A88 != (VisibleClassTy *)0x0)) {
+       (param_1->field_078A = 0, g_visibleClass_00802A88 != nullptr)) {
       VisibleClassTy::sub_0055A4C0
                 (g_visibleClass_00802A88,(int)param_1->field_005B,(int)param_1->field_005D,
                  (char)param_1->field_005F,*(uint *)&param_1->field_0x24,param_1->field_0101,
@@ -31,7 +31,7 @@ void __fastcall FUN_00494ae0(AnonShape_00494AE0_7F188308 *param_1)
   else if ((((param_1->field_0792 == 0) &&
             ((param_1->field_0792 = 1, param_1->field_045D != 0x14 ||
              (*(int *)&param_1->field_0x5c0 != 3)))) && ((param_1->field_01D1 & 1) == 0)) &&
-          (param_1->field_078A = 1, g_visibleClass_00802A88 != (VisibleClassTy *)0x0)) {
+          (param_1->field_078A = 1, g_visibleClass_00802A88 != nullptr)) {
     VisibleClassTy::SetZoneMin1
               (g_visibleClass_00802A88,(int)param_1->field_005B,(int)param_1->field_005D,
                (char)param_1->field_005F,*(uint *)&param_1->field_0x24,param_1->field_0101,
@@ -43,7 +43,7 @@ void __fastcall FUN_00494ae0(AnonShape_00494AE0_7F188308 *param_1)
     if ((param_1->field_0796 == 0) &&
        ((((param_1->field_0796 = 1, param_1->field_045D != 0x14 ||
           (*(int *)&param_1->field_0x5c0 != 3)) && ((param_1->field_01D1 & 1) == 0)) &&
-        (param_1->field_078E = 1, g_visibleClass_00802A88 != (VisibleClassTy *)0x0)))) {
+        (param_1->field_078E = 1, g_visibleClass_00802A88 != nullptr)))) {
       VisibleClassTy::SetZoneMin2
                 (g_visibleClass_00802A88,(int)param_1->field_005B,(int)param_1->field_005D,
                  (char)param_1->field_005F,*(uint *)&param_1->field_0x24,param_1->field_0101,
@@ -62,7 +62,7 @@ void __fastcall FUN_00494ae0(AnonShape_00494AE0_7F188308 *param_1)
     return;
   }
   param_1->field_078E = 0;
-  if (g_visibleClass_00802A88 == (VisibleClassTy *)0x0) {
+  if (g_visibleClass_00802A88 == nullptr) {
     return;
   }
   VisibleClassTy::sub_0055A870

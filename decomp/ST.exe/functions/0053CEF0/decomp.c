@@ -44,7 +44,7 @@ void __thiscall SAMPanelTy::InitSAMPanel(SAMPanelTy *this)
     g_sAMPanel_008016EC = local_14;
     SpecPanelTy::InitPanel
               ((SpecPanelTy *)local_14,"BKG_SETANYW",0x2f,2,0xc6,0xc,0x2735,0xc9,0x77);
-    puVar18 = (undefined4 *)0x0;
+    puVar18 = nullptr;
     iVar16 = 0;
     iVar4 = 1;
     bVar13 = 0;
@@ -78,7 +78,7 @@ void __thiscall SAMPanelTy::InitSAMPanel(SAMPanelTy *this)
       *local_c = uVar11;
       pbVar7 = (byte *)ccFntTy::CreateSurf(pSVar3->field_0189,pSVar3->field_0185,0,0x37,iVar8,0xd2,
                                            0xc,0);
-      if (pbVar7 != (byte *)0x0) {
+      if (pbVar7 != nullptr) {
         uVar11 = 0;
         iVar8 = -1;
         iVar16 = 0;

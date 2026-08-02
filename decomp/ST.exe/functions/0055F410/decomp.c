@@ -91,7 +91,7 @@ void AiCalcDispositionAreas
   puStack_10 = &LAB_0072d964;
   local_14 = ExceptionList;
   local_1c = &stack0xfffffe14;
-  local_6c[0] = (int *)0x0;
+  local_6c[0] = nullptr;
   local_70 = 0;
   if ((param_4 != 0) && (0 < param_5)) {
     _DAT_00803318 = 0;
@@ -117,9 +117,9 @@ void AiCalcDispositionAreas
     _DAT_0080336c = 0x14;
     _DAT_00803370 = 10;
     DAT_00803354 = 5;
-    DAT_008033b4 = (undefined4 *)0x0;
-    local_60[0] = (undefined4 *)0x0;
-    DAT_00803300 = (int *)0x0;
+    DAT_008033b4 = nullptr;
+    local_60[0] = nullptr;
+    DAT_00803300 = nullptr;
     DAT_00803314 = 0;
     DAT_0080337c = 0;
     puVar6 = (undefined4 *)(param_4 + 8);
@@ -369,12 +369,12 @@ LAB_0055f7ef:
           do {
             if (*local_24 == 0) {
               iVar15 = iVar15 + 1;
-              if ((pSVar18->objects[1] != (STWorldObject *)0x0) &&
+              if ((pSVar18->objects[1] != nullptr) &&
                  (pSVar18->objects[1]->value_20 == 0x1ae)) {
                 iVar20 = iVar20 + 3;
               }
             }
-            else if (pSVar18->objects[0] != (STWorldObject *)0x0) {
+            else if (pSVar18->objects[0] != nullptr) {
               iVar15 = iVar15 + 1;
               local_dc = iVar15;
               if (param_1 != 0xff) {
@@ -405,8 +405,8 @@ LAB_0055fc5b:
                   bVar22 = iVar17 < 0;
                 }
                 else {
-                  bVar22 = (&DAT_008087ea)[(param_1 & 0xff) * 0x51] !=
-                           (&DAT_008087ea)[(uint)bVar2 * 0x51];
+                  bVar22 = g_bulkInitializedRecords_008087C7[param_1 & 0xff].field_0023 !=
+                           g_bulkInitializedRecords_008087C7[bVar2].field_0023;
                 }
                 if (bVar22) goto LAB_0055fc71;
               }
@@ -834,7 +834,7 @@ LAB_0056016e:
         local_6c[0] = thunk_FUN_0055f0c0(piVar10,DAT_00803398,uVar19,10,param_10,FUN_00562170,
                                          FUN_00562e10);
         local_40 = local_6c[0];
-        if (local_6c[0] == (int *)0x0) {
+        if (local_6c[0] == nullptr) {
           local_8 = 1;
           Library::MSVCRT::FUN_0072da40();
           local_8 = 0xffffffff;

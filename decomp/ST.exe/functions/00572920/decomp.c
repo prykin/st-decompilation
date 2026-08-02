@@ -40,14 +40,14 @@ undefined4 __thiscall FUN_00572920(void *this,byte param_1)
     iVar5 = Library::MSVCRT::__setjmp3(local_54.jumpBuffer,0);
     if (iVar5 == 0) {
       this_00 = (cMf32 *)Library::Ourlib::MF32INT::FUN_006f0ec0(0x345,local_158,2,0,0);
-      if (this_00 != (cMf32 *)0x0) {
-        cMf32::RecPut(this_00,0xc,PTR_s_OPTIONS_PLAYER_0079b0d4,&DAT_008072f8,0x82,(undefined4 *)0x0
-                      ,'\0',(uint *)0x0);
+      if (this_00 != nullptr) {
+        cMf32::RecPut(this_00,0xc,PTR_s_OPTIONS_PLAYER_0079b0d4,&DAT_008072f8,0x82,nullptr
+                      ,'\0',nullptr);
         pvVar1 = local_10;
         cMf32::RecPut(this_00,0xc,PTR_s_LASTLOG_0079b0e8,(byte *)((int)local_10 + 0x7c5),0x40,
-                      (undefined4 *)0x0,'\0',(uint *)0x0);
+                      nullptr,'\0',nullptr);
         cMf32::RecPut(this_00,0xc,PTR_s_LASTPSW_0079b0ec,(byte *)((int)pvVar1 + 0x805),9,
-                      (undefined4 *)0x0,'\0',(uint *)0x0);
+                      nullptr,'\0',nullptr);
         cMf32::delete(this_00);
       }
       g_currentExceptionFrame = local_54.previous;

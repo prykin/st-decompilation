@@ -8,7 +8,7 @@ undefined4 FUN_0074dca1(short *param_1,undefined4 *param_2)
   uint uVar4;
   uint uVar5;
 
-  if (param_2 == (undefined4 *)0x0) {
+  if (param_2 == nullptr) {
     uVar1 = 0x80004003;
   }
   else {
@@ -16,7 +16,7 @@ undefined4 FUN_0074dca1(short *param_1,undefined4 *param_2)
     uVar5 = iVar2 * 2 + 2;
     puVar3 = CoTaskMemAlloc(uVar5);
     *param_2 = puVar3;
-    if (puVar3 == (undefined4 *)0x0) {
+    if (puVar3 == nullptr) {
       uVar1 = 0x8007000e;
     }
     else {

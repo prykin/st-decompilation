@@ -36,10 +36,10 @@ VisibleClassTy::SetZoneDes
   byte *local_8;
 
   if ((((this->field_0114 != 0) && (-1 < param_5)) && (param_4 < 8)) &&
-     ((g_playSystem_00802A38 == (STPlaySystemC *)0x0 || ((byte)(&DAT_008087e9)[param_4 * 0x51] < 8))
-     )) {
+     ((g_playSystem_00802A38 == nullptr ||
+      (g_bulkInitializedRecords_008087C7[param_4].field_0022 < 8)))) {
     local_14 = this;
-    if (this->field_003C[param_4 + 6] == (void *)0x0) {
+    if (this->field_003C[param_4 + 6] == 0) {
       local_60.previous = g_currentExceptionFrame;
       g_currentExceptionFrame = &local_60;
       iVar4 = Library::MSVCRT::__setjmp3(local_60.jumpBuffer,0);
@@ -54,7 +54,7 @@ VisibleClassTy::SetZoneDes
         STDebugBreak(); /* noreturn in standalone pseudocode */
       }
       puVar5 = Library::DKW::LIB::FUN_006aac10(local_14->field_0024 * local_14->field_0020);
-      this->field_003C[param_4 + 6] = puVar5;
+      this->field_003C[param_4 + 6] = (uint)puVar5;
       g_currentExceptionFrame = local_60.previous;
     }
     if ((param_7 & 0x1000) != 0) {
@@ -75,7 +75,7 @@ VisibleClassTy::SetZoneDes
           iVar7 = 0;
           iVar9 = local_18;
           do {
-            if ((pbVar6 == (byte *)0x0) || (local_8[iVar7] != 0)) {
+            if ((pbVar6 == nullptr) || (local_8[iVar7] != 0)) {
               if ((iVar9 < 0) ||
                  (((this->field_0020 <= iVar9 || (iVar4 < 0)) || (this->field_0024 <= iVar4)))) {
                 bVar3 = false;
@@ -85,9 +85,9 @@ VisibleClassTy::SetZoneDes
               }
               if (bVar3) {
                 iVar8 = this->field_0020 * iVar4;
-                cVar1 = *(char *)((int)this->field_003C[param_4 + 6] + iVar9 + iVar8);
+                cVar1 = *(char *)(this->field_003C[param_4 + 6] + iVar9 + iVar8);
                 if (cVar1 != -1) {
-                  *(char *)((int)this->field_003C[param_4 + 6] + iVar9 + iVar8) = cVar1 + '\x01';
+                  *(char *)(this->field_003C[param_4 + 6] + iVar9 + iVar8) = cVar1 + '\x01';
                 }
               }
             }

@@ -44,11 +44,11 @@ void __thiscall PrividerTy::InitPrivider(PrividerTy *this,char param_1,char para
       DAT_00802a99 = 0;
       DAT_008067a0 = '\0';
     }
-    pDVar3 = Library::DKW::TBL::SArrayCreate((DArrayTy *)0x0,1,10);
+    pDVar3 = Library::DKW::TBL::SArrayCreate(nullptr,1,10);
     this_02 = local_10;
     local_10->field_1C92 = pDVar3;
     Library::DKW::TBL::FUN_006b5aa0(&pDVar3->flags,(char *)&DAT_00807ddd);
-    if (g_cursorClass_00802A30 != (CursorClassTy *)0x0) {
+    if (g_cursorClass_00802A30 != nullptr) {
       if (g_cursorClass_00802A30->field_00A9 == 0) {
         Library::DKW::DDX::FUN_006b8b10((int *)g_cursorClass_00802A30->field_00AD);
       }
@@ -60,7 +60,7 @@ void __thiscall PrividerTy::InitPrivider(PrividerTy *this,char param_1,char para
     g_startSystem_0081176C->field_002C = puVar4;
     puVar4 = g_startSystem_0081176C->field_002C;
     this_02->field_005D = puVar4;
-    FUN_006bc360(puVar4,local_454,(int *)0x0);
+    FUN_006bc360(puVar4,local_454,nullptr);
     this_02->field_1A5B->field_0140 = 0x1f;
     Library::Ourlib::PALETTE::FUN_00718780
               ((int)local_454,0,0x100,0x8b,0x15,(undefined4 *)&this_02->field_1A5B->field_0x144);
@@ -75,13 +75,13 @@ void __thiscall PrividerTy::InitPrivider(PrividerTy *this,char param_1,char para
     SetMode(this_02,param_1,'\x01');
     this_02->field_1A60 = this_02->field_1A5F;
     this_00 = this_02->field_1A5B->field_02E6;
-    if (this_00 != (MMsgTy *)0x0) {
+    if (this_00 != nullptr) {
       MMsgTy::ShowSprites(this_00);
       this_02->field_1A5B->field_02E6->field_1CAB = this_02->field_0008;
     }
     SpriteClassTy::InitSprite
               ((SpriteClassTy *)&this_02->field_1A77,(int *)g_ddxContext_008075A8,0x31,'\a',
-               (undefined4 *)0x0,0,0);
+               nullptr,0,0);
     /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
     (**(code **)(this_02->field_1A77 + 4))(DAT_00806784,7,0,"MM_SLDUP",0xffffffff);
     this_02->field_1A93 = 0x289;
@@ -89,7 +89,7 @@ void __thiscall PrividerTy::InitPrivider(PrividerTy *this,char param_1,char para
     this_02->field_1A7F = 0;
     SpriteClassTy::InitSprite
               ((SpriteClassTy *)&this_02->field_1B08,(int *)g_ddxContext_008075A8,0x31,'\a',
-               (undefined4 *)0x0,0,0);
+               nullptr,0,0);
     /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
     (**(code **)(this_02->field_1B08 + 4))(DAT_00806784,7,0,"MM_SLDDN",0xffffffff);
     this_02->field_1B24 = 0x289;
@@ -97,7 +97,7 @@ void __thiscall PrividerTy::InitPrivider(PrividerTy *this,char param_1,char para
     this_02->field_1B10 = 0;
     SpriteClassTy::InitSprite
               ((SpriteClassTy *)&this_02->field_1B99,(int *)g_ddxContext_008075A8,0x31,'\a',
-               (undefined4 *)0x0,0,0);
+               nullptr,0,0);
     /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
     (**(code **)(this_02->field_1B99 + 4))(DAT_00806784,7,0,"MM_SLDT",0xffffffff);
     iVar2 = 1;
@@ -168,16 +168,16 @@ void __thiscall PrividerTy::InitPrivider(PrividerTy *this,char param_1,char para
     FUN_006b2330(g_ddxContext_008075A8,&local_8,0x32,0x403c74,0x22e,0x145,(ushort *)this_02);
     Library::DKW::DDX::FUN_006b3640((int *)g_ddxContext_008075A8,local_8,0xffffffff,0x79,0x51);
     pHVar8 = (HoloTy *)Library::MSVCRT::FUN_0072e530(0x33);
-    if (pHVar8 == (HoloTy *)0x0) {
-      pHVar8 = (HoloTy *)0x0;
+    if (pHVar8 == nullptr) {
+      pHVar8 = nullptr;
     }
     else {
       pHVar8->field_0002 = 1;
       pHVar8->field_0000 = 0;
       *(undefined4 *)&pHVar8->field_0x3 = 0xffffffff;
       pHVar8->field_0001 = CASE_2;
-      pHVar8->field_0007 = (void *)0x0;
-      pHVar8->field_000B = (void *)0x0;
+      pHVar8->field_0007 = nullptr;
+      pHVar8->field_000B = nullptr;
       pHVar8->field_000F = 0;
       *(undefined4 *)&pHVar8->field_0x1b = 1;
       pHVar8->field_0013 = 1;
@@ -188,7 +188,7 @@ void __thiscall PrividerTy::InitPrivider(PrividerTy *this,char param_1,char para
       pHVar8->field_002B = 1;
     }
     this_02->field_1C96 = pHVar8;
-    if (pHVar8 != (HoloTy *)0x0) {
+    if (pHVar8 != nullptr) {
       uVar10 = 0;
       cVar13 = '\x01';
       bVar12 = 0x10;
@@ -231,16 +231,16 @@ void __thiscall PrividerTy::InitPrivider(PrividerTy *this,char param_1,char para
                    (ushort *)&this_02->field_1A5B->field_0140);
       Library::DKW::DDX::FUN_006b3640((int *)g_ddxContext_008075A8,local_8,0xffffffff,0x79,0x197);
       pHVar8 = (HoloTy *)Library::MSVCRT::FUN_0072e530(0x33);
-      if (pHVar8 == (HoloTy *)0x0) {
-        pHVar8 = (HoloTy *)0x0;
+      if (pHVar8 == nullptr) {
+        pHVar8 = nullptr;
       }
       else {
         pHVar8->field_0002 = 1;
         pHVar8->field_0000 = 0;
         *(undefined4 *)&pHVar8->field_0x3 = 0xffffffff;
         pHVar8->field_0001 = CASE_2;
-        pHVar8->field_0007 = (void *)0x0;
-        pHVar8->field_000B = (void *)0x0;
+        pHVar8->field_0007 = nullptr;
+        pHVar8->field_000B = nullptr;
         pHVar8->field_000F = 0;
         *(undefined4 *)&pHVar8->field_0x1b = 1;
         pHVar8->field_0013 = 1;
@@ -251,7 +251,7 @@ void __thiscall PrividerTy::InitPrivider(PrividerTy *this,char param_1,char para
         pHVar8->field_002B = 1;
       }
       this_02->field_1C9A = pHVar8;
-      if (pHVar8 != (HoloTy *)0x0) {
+      if (pHVar8 != nullptr) {
         uVar10 = 0;
         cVar13 = '\x01';
         bVar12 = 0x10;
@@ -279,7 +279,7 @@ void __thiscall PrividerTy::InitPrivider(PrividerTy *this,char param_1,char para
       FUN_006b3af0((int *)g_ddxContext_008075A8,*puVar7);
     }
     this_01 = g_cursorClass_00802A30;
-    if (g_cursorClass_00802A30 != (CursorClassTy *)0x0) {
+    if (g_cursorClass_00802A30 != nullptr) {
       iVar2 = g_cursorClass_00802A30->field_00C9;
       iVar14 = g_cursorClass_00802A30->field_00C5;
       g_cursorClass_00802A30->field_0493 = CASE_1;
@@ -294,12 +294,12 @@ void __thiscall PrividerTy::InitPrivider(PrividerTy *this,char param_1,char para
                          this_02->field_005D,10,2);
     }
     pHVar8 = this_02->field_1C96;
-    if (((pHVar8 != (HoloTy *)0x0) && (pHVar8->field_0000 != '\0')) &&
+    if (((pHVar8 != nullptr) && (pHVar8->field_0000 != '\0')) &&
        (-1 < (int)*(uint *)&pHVar8->field_0x3)) {
       Library::DKW::DDX::FUN_006b3430((int *)g_ddxContext_008075A8,*(uint *)&pHVar8->field_0x3);
     }
     pHVar8 = this_02->field_1C9A;
-    if (((pHVar8 != (HoloTy *)0x0) && (pHVar8->field_0000 != '\0')) &&
+    if (((pHVar8 != nullptr) && (pHVar8->field_0000 != '\0')) &&
        (-1 < (int)*(uint *)&pHVar8->field_0x3)) {
       Library::DKW::DDX::FUN_006b3430((int *)g_ddxContext_008075A8,*(uint *)&pHVar8->field_0x3);
     }

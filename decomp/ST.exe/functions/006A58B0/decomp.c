@@ -12,8 +12,8 @@ FUN_006a58b0(undefined4 *param_1,AnonShape_006A58B0_8049417A *param_2,
   int iVar4;
 
   uVar2 = 0;
-  if (((param_1 != (undefined4 *)0x0) && (param_2 != (AnonShape_006A58B0_8049417A *)0x0)) &&
-     (param_3 != (AnonShape_006A58B0_CDE73679 *)0x0)) {
+  if (((param_1 != nullptr) && (param_2 != nullptr)) &&
+     (param_3 != nullptr)) {
     iVar3 = 0;
     do {
       param_1[iVar3 + 6] = param_3->entries[iVar3] - param_2->entries[iVar3];

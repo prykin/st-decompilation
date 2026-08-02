@@ -9,7 +9,7 @@ void __thiscall FUN_0060d810(void *this,undefined4 param_1,undefined4 param_2)
   byte *puVar3;
   byte *puVar4;
 
-  if (*(undefined4 **)((int)this + 0x244) != (undefined4 *)0x0) {
+  if (*(undefined4 **)((int)this + 0x244) != nullptr) {
     memset(*(undefined4 **)((int)this + 0x244), 0, 0x2c); /* compiler bulk-zero initialization */
     iVar2 = 0;
     **(undefined4 **)((int)this + 0x244) = 0;

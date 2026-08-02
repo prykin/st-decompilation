@@ -14,7 +14,7 @@ void __thiscall FUN_005801c0(void *this,int param_1)
     sVar3 = *(short *)((int)this + 0x249);
     if ((((sVar1 < 0) || (g_worldGrid.sizeX <= sVar1)) || (sVar3 < 0)) ||
        (((g_worldGrid.sizeY <= sVar3 || (sVar2 < 0)) || (g_worldGrid.sizeZ <= sVar2)))) {
-      pAVar4 = (AnonShape_004E0250_5A3B9236 *)0x0;
+      pAVar4 = nullptr;
     }
     else {
       pAVar4 = (AnonShape_004E0250_5A3B9236 *)

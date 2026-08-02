@@ -22,7 +22,7 @@ void __thiscall CPanelTy::OutText(CPanelTy *this,int param_1,int param_2,undefin
   local_c = this;
   errorCode = Library::MSVCRT::__setjmp3(local_50.jumpBuffer,0);
   if (errorCode == 0) {
-    local_8 = Library::DKW::TBL::SArrayCreate((DArrayTy *)0x0,10,10);
+    local_8 = Library::DKW::TBL::SArrayCreate(nullptr,10,10);
     dVar4 = param_1 + param_2;
     if (param_2 < 1) {
       dVar4 = g_dArray_0080C4C7->elementSize;
@@ -32,7 +32,7 @@ void __thiscall CPanelTy::OutText(CPanelTy *this,int param_1,int param_2,undefin
         pcVar2 = *(char **)(g_dArray_0080C4C7->growCapacity + param_1 * 4);
       }
       else {
-        pcVar2 = (char *)0x0;
+        pcVar2 = nullptr;
       }
       thunk_FUN_005411a0(local_8,pcVar2,"@ %s@ ");
     }

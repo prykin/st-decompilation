@@ -15,7 +15,7 @@ undefined4 __thiscall FUN_00750104(void *this,AnonShape_00750104_599B328B *param
     this_00 = (int *)((int)this + 0x20);
   }
   local_8 = (int *)*this_00;
-  while (local_8 != (int *)0x0) {
+  while (local_8 != nullptr) {
     iVar1 = FUN_0074ded7((int)local_8);
     /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
     if ((param_1->field_001C < *(int *)(iVar1 + 0x1c)) ||
@@ -23,7 +23,7 @@ undefined4 __thiscall FUN_00750104(void *this,AnonShape_00750104_599B328B *param
         (param_1->field_0018 < *(uint *)(iVar1 + 0x18))))) break;
     FUN_0074dec2((int *)&local_8);
   }
-  if (local_8 == (int *)0x0) {
+  if (local_8 == nullptr) {
     FUN_0074df72(this_00,param_1);
   }
   else {

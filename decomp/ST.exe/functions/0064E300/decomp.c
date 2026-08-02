@@ -28,11 +28,11 @@ uint FUN_0064e300(int param_1,char *param_2,ushort param_3,char param_4,ushort p
   AnonShape_GLOBAL_008489C4_F7BABFAC *local_8;
 
   local_10 = param_7;
-  local_8 = (AnonShape_GLOBAL_008489C4_F7BABFAC *)0x0;
-  local_c = (byte *)0x0;
+  local_8 = nullptr;
+  local_c = nullptr;
   local_20[2] = 0xffffffff;
   local_20[1] = 0;
-  local_14 = (void *)0x0;
+  local_14 = nullptr;
   local_64.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_64;
   uVar1 = Library::MSVCRT::__setjmp3(local_64.jumpBuffer,0);
@@ -61,7 +61,7 @@ uint FUN_0064e300(int param_1,char *param_2,ushort param_3,char param_4,ushort p
   thunk_FUN_006686c0((int *)&local_8);
   STPlaySystemC::CreateGameObject(g_playSystem_00802A38,900,local_20 + 1,&local_14,local_c,0);
   thunk_FUN_006686c0((int *)&local_c);
-  if (local_14 == (void *)0x0) {
+  if (local_14 == nullptr) {
     RaiseInternalException
               (-0xab,g_overwriteContext_007ED77C,"E:\\__titans\\ai\\ai_event.cpp",0x1b4);
     uVar2 = local_20[2];
@@ -71,7 +71,7 @@ uint FUN_0064e300(int param_1,char *param_2,ushort param_3,char param_4,ushort p
     uVar2 = (uint)*(ushort *)((int)local_14 + 0x7d);
     local_20[2] = uVar2;
     array = (DArrayTy *)_GetStaffGrpExch(param_1);
-    if (array != (DArrayTy *)0x0) {
+    if (array != nullptr) {
       thunk_FUN_0065d940(local_14,array,0);
       DArrayDestroy(array);
       g_currentExceptionFrame = local_64.previous;

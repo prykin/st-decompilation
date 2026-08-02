@@ -23,7 +23,7 @@ undefined4 __thiscall STBoatC::CheckForReplenisher(STBoatC *this,int param_1)
 
   array = (DArrayTy *)g_packedRecords_A62x8[this->field_0024].field603_0x2e7;
   array_00 = (DArrayTy *)g_packedRecords_A62x8[this->field_0024].field6_0x9;
-  if (array != (DArrayTy *)0x0) {
+  if (array != nullptr) {
     dVar1 = array->count;
     index = 0;
     if (0 < (int)dVar1) {
@@ -31,7 +31,7 @@ undefined4 __thiscall STBoatC::CheckForReplenisher(STBoatC *this,int param_1)
         DArrayGetElement(array,index,&local_14);
         if ((short)local_14 != -1) {
           DArrayGetElement(array_00,local_14 & 0xffff,&local_10);
-          if (local_10 == (STFishC *)0x0) {
+          if (local_10 == nullptr) {
             iVar3 = ReportDebugMessage("E:\\__titans\\wlad\\To_boat.cpp",0x5221,0,0,
                                        "%s","STBoatC::CheckForReplenisher NULL");
             if (iVar3 != 0) {

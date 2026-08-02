@@ -30,7 +30,7 @@ void FUN_006d0150(int *param_1,uint param_2,char *source)
       sVar5 = ~uVar4 - 1;
       if ((int)puVar6[5] < (int)sVar5) {
         puVar3 = (uint *)FUN_006bfb50(puVar6,~uVar4 + 0x18);
-        if (puVar3 != (uint *)0x0) {
+        if (puVar3 != nullptr) {
           psVar8 = puVar3 + 5;
           puVar2[0x30] = (uint)puVar3;
           *psVar8 = sVar5;

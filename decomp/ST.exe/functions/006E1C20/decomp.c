@@ -3,7 +3,11 @@
 /* [STMethodOwnerApplier] Structural method owner recovered as ST3DSMAPContext.
    Evidence: this_call_owners=[ST3DSMAPContext]; agreed_this_calls=5; incoming_this_accesses=13;
    incoming_edx_uses=0; incoming_stack_parameter_uses=20; direct_non_thunk_callers=7;
-   incoming_ecx_receiver_callers=3; attributed_named_callers=3; owner_evidence_coverage=adequate */
+   incoming_ecx_receiver_callers=3; attributed_named_callers=3; owner_evidence_coverage=adequate
+
+   [STSwitchEnumApplier] Switch target field_00A8 uses
+   /SubmarineTitans/Recovered/Enums/ST3DSMAPContext_field_00A8State. Cases:
+   CASE_0=0;CASE_1=1;CASE_2=2;CASE_3=3 */
 
 undefined4 __thiscall
 ST3DSMAPContext::sub_006E1C20
@@ -29,31 +33,31 @@ ST3DSMAPContext::sub_006E1C20
   fVar3 = param_3 * (float)_DAT_0079df60;
   /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
   param_1 = fVar3;
-  switch(*(undefined4 *)&this->field_0xa8) {
-  case 0:
-    fVar2 = fVar2 * (float)*(double *)&this->field_0xf0;
-    fVar1 = fVar1 * (float)*(double *)&this->field_0xe8;
+  switch(this->field_00A8) {
+  case CASE_0:
+    fVar2 = fVar2 * (float)this->field_00F0;
+    fVar1 = fVar1 * (float)this->field_00E8;
     /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
     param_1 = fVar3 + (fVar1 + fVar2) * (float)_DAT_0079df60;
     fVar3 = fVar3 + (fVar2 * (float)_DAT_0079df60 - fVar1 * (float)_DAT_0079df60);
     break;
-  case 1:
-    fVar1 = fVar1 * (float)*(double *)&this->field_0xe8;
-    fVar2 = fVar2 * (float)*(double *)&this->field_0xf0;
+  case CASE_1:
+    fVar1 = fVar1 * (float)this->field_00E8;
+    fVar2 = fVar2 * (float)this->field_00F0;
     /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
     param_1 = -fVar3 + (fVar1 - fVar2) * (float)_DAT_0079df60;
     fVar3 = fVar3 + (fVar1 + fVar2) * (float)_DAT_0079df60;
     break;
-  case 2:
-    fVar2 = fVar2 * (float)*(double *)&this->field_0xf0;
-    fVar1 = fVar1 * (float)*(double *)&this->field_0xe8;
+  case CASE_2:
+    fVar2 = fVar2 * (float)this->field_00F0;
+    fVar1 = fVar1 * (float)this->field_00E8;
     /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
     param_1 = -fVar3 - (fVar1 + fVar2) * (float)_DAT_0079df60;
     fVar3 = -fVar3 + (fVar1 - fVar2) * (float)_DAT_0079df60;
     break;
-  case 3:
-    fVar2 = fVar2 * (float)*(double *)&this->field_0xf0;
-    fVar1 = fVar1 * (float)*(double *)&this->field_0xe8;
+  case CASE_3:
+    fVar2 = fVar2 * (float)this->field_00F0;
+    fVar1 = fVar1 * (float)this->field_00E8;
     /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
     param_1 = fVar3 + (fVar2 * (float)_DAT_0079df60 - fVar1 * (float)_DAT_0079df60);
     fVar3 = -fVar3 - (fVar1 + fVar2) * (float)_DAT_0079df60;

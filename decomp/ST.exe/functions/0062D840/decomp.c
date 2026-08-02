@@ -18,8 +18,8 @@ int __thiscall STManRub3C::sub_0062D840(STManRub3C *this,undefined4 *param_1)
   DArrayTy **ppDVar7;
 
   puVar1 = param_1;
-  if (this == (STManRub3C *)0x0) {
-    puVar6 = (byte *)0x0;
+  if (this == nullptr) {
+    puVar6 = nullptr;
   }
   else {
     puVar6 = (byte *)(&this->field_001C);

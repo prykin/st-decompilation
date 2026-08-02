@@ -12,7 +12,7 @@ undefined4 __fastcall FUN_004e27e0(TLOBaseTy *param_1)
     pTVar3 = &param_1->field_04D0;
     iVar2 = 2;
     do {
-      if (((AnonShape_005EFAE0_B406B78B *)*pTVar3 != (AnonShape_005EFAE0_B406B78B *)0x0) &&
+      if (((AnonShape_005EFAE0_B406B78B *)*pTVar3 != nullptr) &&
          ((iVar1 = STPlaySystemC::sub_006E62D0
                              (g_playSystem_00802A38,(AnonShape_005EFAE0_B406B78B *)*pTVar3,
                               (int *)&local_8), iVar1 != 0 ||

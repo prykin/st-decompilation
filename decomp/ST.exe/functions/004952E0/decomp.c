@@ -25,7 +25,7 @@ bool __thiscall STBoatC::sub_004952E0(STBoatC *this)
      ((sVar2 < g_worldGrid.sizeZ &&
       ((pSVar5 = g_worldGrid.cells
                  [(int)g_worldGrid.planeStride * (int)sVar2 + (int)g_worldGrid.sizeX * (int)sVar3 +
-                  (int)sVar1].objects[0], pSVar5 != (STWorldObject *)0x0 &&
+                  (int)sVar1].objects[0], pSVar5 != nullptr &&
        (pSVar5->value_20 == 1000)))))) {
     thunk_FUN_004b7d50(pSVar5,this);
   }
@@ -39,7 +39,7 @@ bool __thiscall STBoatC::sub_004952E0(STBoatC *this)
     pSVar5 = g_worldGrid.cells
              [(int)g_worldGrid.planeStride * (int)sVar1 + (int)g_worldGrid.sizeX * (int)sVar2 +
               uVar7].objects[0];
-    if ((pSVar5 != (STWorldObject *)0x0) && (pSVar5->value_20 == 1000)) {
+    if ((pSVar5 != nullptr) && (pSVar5->value_20 == 1000)) {
       bVar6 = thunk_FUN_004b7d50(pSVar5,this);
       uVar7 = (uint)bVar6;
     }

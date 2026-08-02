@@ -17,10 +17,10 @@ FUN_0071a990(AnonShape_0071A990_7656000F *param_1,int soundId,int param_3,undefi
   uint uVar2;
   int *piVar3;
 
-  if (((((param_1 != (AnonShape_0071A990_7656000F *)0x0) && (param_1->field_000C != 0)) &&
+  if (((((param_1 != nullptr) && (param_1->field_000C != 0)) &&
        (-1 < soundId)) &&
       ((soundId < param_1->field_0008 &&
-       (piVar3 = *(int **)(param_1->field_000C + soundId * 4), piVar3 != (int *)0x0)))) &&
+       (piVar3 = *(int **)(param_1->field_000C + soundId * 4), piVar3 != nullptr)))) &&
      (iVar1 = *piVar3, 0 < iVar1)) {
     if ((param_3 < 0) || (iVar1 <= param_3)) {
       if (iVar1 < 2) {
@@ -34,12 +34,12 @@ FUN_0071a990(AnonShape_0071A990_7656000F *param_1,int soundId,int param_3,undefi
     }
     iVar1 = param_3 * 5 + 5;
     if (*(int *)(iVar1 + (int)piVar3) != 0) {
-      if (param_4 != (undefined1 *)0x0) {
+      if (param_4 != nullptr) {
         *param_4 = *(undefined1 *)(param_3 * 5 + 4 + (int)piVar3);
       }
       return *(uint **)(*(int *)(param_1->field_000C + soundId * 4) + iVar1);
     }
   }
-  return (uint *)0x0;
+  return nullptr;
 }
 

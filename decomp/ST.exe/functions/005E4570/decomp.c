@@ -223,11 +223,11 @@ LAB_005e470e:
         this_00->field_0061 = this_00->field_0069;
         DarkScreen(g_dDXContext_0080759C,1,0);
         pDVar10 = this_00->field_064F;
-        if (pDVar10 != (DArrayTy *)0x0) {
+        if (pDVar10 != nullptr) {
           uVar18 = 0;
           if (pDVar10->count != 0) {
             if (pDVar10->count == 0) {
-              pAVar16 = (AnonShape_005E10A0_819783CC *)0x0;
+              pAVar16 = nullptr;
               goto LAB_005e48f3;
             }
             do {
@@ -242,11 +242,11 @@ LAB_005e48f3:
           }
         }
         pDVar10 = this_00->field_0647;
-        if (pDVar10 != (DArrayTy *)0x0) {
+        if (pDVar10 != nullptr) {
           uVar18 = 0;
           if (pDVar10->count != 0) {
             if (pDVar10->count == 0) {
-              pAVar16 = (AnonShape_005E10A0_819783CC *)0x0;
+              pAVar16 = nullptr;
               goto LAB_005e492f;
             }
             do {
@@ -261,11 +261,11 @@ LAB_005e492f:
           }
         }
         pDVar10 = this_00->field_064B;
-        if (pDVar10 != (DArrayTy *)0x0) {
+        if (pDVar10 != nullptr) {
           uVar18 = 0;
           if (pDVar10->count != 0) {
             if (pDVar10->count == 0) {
-              this_01 = (SpriteClassTy *)0x0;
+              this_01 = nullptr;
               goto LAB_005e496b;
             }
             do {
@@ -437,19 +437,19 @@ LAB_005e496b:
       }
     }
     else if (SVar2 == MESS_SHARED_6332) {
-      if (((-1 < (int)local_18->field_0484) && (message != (STMessage *)0x0)) &&
-         (local_8 = (message->arg2).ptr, local_8 != (AnonShape_005E4570_F1672769 *)0x0)) {
+      if (((-1 < (int)local_18->field_0484) && (message != nullptr)) &&
+         (local_8 = (message->arg2).ptr, local_8 != nullptr)) {
         pcVar4 = local_18->field_008D;
         if (pcVar4->field_00A0 != 0) {
           FUN_00710790((AnonShape_00710790_4CBB90D4 *)pcVar4);
         }
         local_20 = *(int *)&pcVar4->field_0x8a;
         pAVar5 = this_00->field_06BF;
-        if (pAVar5 != (AnonPointee_MTaskTy_06BF *)0x0) {
+        if (pAVar5 != nullptr) {
           local_14 = (uint *)pAVar5->field_0014;
           local_24 = (undefined4 *)pAVar5->field_0004;
           local_10 = pAVar5->field_0008;
-          if (local_14 == (uint *)0x0) {
+          if (local_14 == nullptr) {
             local_14 = (uint *)(((uint)(ushort)pAVar5->field_000E * (int)local_24 + 0x1f >> 3 &
                                 0x1ffffffc) * local_10);
           }
@@ -474,9 +474,9 @@ LAB_005e496b:
                 local_14 = *(uint **)(g_startSystem_0081176C->field_0548[5] + uVar18 * 4);
               }
               else {
-                local_14 = (uint *)0x0;
+                local_14 = nullptr;
               }
-              if (local_14 != (uint *)0x0) {
+              if (local_14 != nullptr) {
                 ccFntTy::SetSurf(this_00->field_008D,(int)pAVar5,0,0xf,
                                  (uVar18 - uVar15) * local_20 + 0xf,local_8->field_002C,local_20);
                 ccFntTy::WrStr(this_00->field_008D,local_14,0,-1,
@@ -508,10 +508,10 @@ LAB_005e496b:
     puVar13 = (uint *)local_18->field_043B;
     goto LAB_005e5255;
   case MESS_SHARED_6334|MESS_ID_CREATE:
-    if (((-1 < (int)local_18->field_0484) && (message != (STMessage *)0x0)) &&
-       ((local_8 = (message->arg2).ptr, local_8 != (AnonShape_005E4570_F1672769 *)0x0 &&
+    if (((-1 < (int)local_18->field_0484) && (message != nullptr)) &&
+       ((local_8 = (message->arg2).ptr, local_8 != nullptr &&
         (pAVar3 = (AnonShape_006B5B10_E0D06CF1 *)local_18->field_06CB,
-        pAVar3 != (AnonShape_006B5B10_E0D06CF1 *)0x0)))) {
+        pAVar3 != nullptr)))) {
       local_24 = (undefined4 *)pAVar3->field_0004;
       pcVar4 = local_18->field_008D;
       local_10 = pAVar3->field_0008;
@@ -520,7 +520,7 @@ LAB_005e496b:
       }
       local_14 = (uint *)pAVar3[1].field_0004;
       local_20 = *(int *)&pcVar4->field_0x8a;
-      if (local_14 == (uint *)0x0) {
+      if (local_14 == nullptr) {
         local_14 = (uint *)(((uint)pAVar3->field_000E * pAVar3->field_0004 + 0x1f >> 3 & 0x1ffffffc)
                            * pAVar3->field_0008);
       }
@@ -545,9 +545,9 @@ LAB_005e496b:
             local_14 = *(uint **)(this_00->field_0643->growCapacity + uVar18 * 4);
           }
           else {
-            local_14 = (uint *)0x0;
+            local_14 = nullptr;
           }
-          if (local_14 != (uint *)0x0) {
+          if (local_14 != nullptr) {
             ccFntTy::SetSurf(this_00->field_0089,(int)pAVar3,0,0xf,
                              (uVar18 - uVar15) * local_20 + 0xf,local_8->field_002C,local_20);
             ccFntTy::WrStr(this_00->field_0089,local_14,0,-1,

@@ -160,7 +160,7 @@ LAB_0054532f:
         g_currentExceptionFrame = local_e0.previous;
         return 0;
       }
-      if (g_tLOBldMark_007FB2AC == (TLOBldMark *)0x0) {
+      if (g_tLOBldMark_007FB2AC == nullptr) {
         g_currentExceptionFrame = local_e0.previous;
         return 0;
       }
@@ -170,7 +170,7 @@ LAB_0054532f:
         }
         TLOBldMark::sub_004C6440
                   (g_tLOBldMark_007FB2AC,(float)(this_00->field_00C5 - this_00->field_04B2),
-                   this_00->field_00C9 - this_00->field_04B6,(int *)0x0,(int *)0x0,(int *)0x0);
+                   this_00->field_00C9 - this_00->field_04B6,nullptr,nullptr,nullptr);
         g_currentExceptionFrame = local_e0.previous;
         return 0;
       }
@@ -216,7 +216,7 @@ LAB_005450ca:
         }
         break;
       case CASE_1:
-        if (g_sT3DSMAPContext_00807598 != (ST3DSMAPContext *)0x0) {
+        if (g_sT3DSMAPContext_00807598 != nullptr) {
           local_7c = this_00->field_00EF;
           local_78 = this_00->field_00F3;
           local_74 = 0;
@@ -368,7 +368,7 @@ LAB_0054506b:
         this_00->field_00DE = CASE_0;
         break;
       case CASE_5:
-        if (g_sT3DSMAPContext_00807598 != (ST3DSMAPContext *)0x0) {
+        if (g_sT3DSMAPContext_00807598 != nullptr) {
           ST3DSMAPContext::sub_006E1C20
                     (g_sT3DSMAPContext_00807598,(float)(this_00->field_00C5 - this_00->field_04B2),
                      this_00->field_00C9 - this_00->field_04B6,this_00->field_0107,(float *)&local_8
@@ -427,7 +427,7 @@ LAB_0054506b:
   }
   if (SVar6 < MESS_CURSORCLASSTY_A31D) {
     if (0xa312 < SVar6) {
-      if (g_allPlayers_007FA174 == (STAllPlayersC *)0x0) {
+      if (g_allPlayers_007FA174 == nullptr) {
         g_currentExceptionFrame = local_e0.previous;
         return 0;
       }
@@ -438,7 +438,7 @@ LAB_0054506b:
     if (MESS_CURSORCLASSTY_A124 < SVar6) {
       if (SVar6 < 0xa204) {
         if (0xa1fe < SVar6) {
-          if (g_playSystem_00802A38 == (STPlaySystemC *)0x0) {
+          if (g_playSystem_00802A38 == nullptr) {
             g_currentExceptionFrame = local_e0.previous;
             return 0;
           }
@@ -456,7 +456,7 @@ LAB_0054506b:
             return 0;
           }
           sub_0054B540(this_00);
-          if (g_intercomPanel_0080169C == (IntercomPanelTy *)0x0) {
+          if (g_intercomPanel_0080169C == nullptr) {
             g_currentExceptionFrame = local_e0.previous;
             return 0;
           }
@@ -469,7 +469,7 @@ LAB_0054506b:
             return 0;
           }
           sub_0054B540(this_00);
-          if (g_intercomPanel_0080169C == (IntercomPanelTy *)0x0) {
+          if (g_intercomPanel_0080169C == nullptr) {
             g_currentExceptionFrame = local_e0.previous;
             return 0;
           }
@@ -477,7 +477,7 @@ LAB_0054506b:
           g_currentExceptionFrame = local_e0.previous;
           return 0;
         case MESS_CURSORCLASSTY_A100|MESS_TRACKBARCLASSTY_0028:
-          if (g_cPanel_00801688 == (CPanelTy *)0x0) {
+          if (g_cPanel_00801688 == nullptr) {
             g_currentExceptionFrame = local_e0.previous;
             return 0;
           }
@@ -532,7 +532,7 @@ LAB_0054506b:
         case 0xa310:
         case 0xa311:
         case 0xa312:
-          if (g_opticClass_007FB2A0 == (OpticClassC *)0x0) {
+          if (g_opticClass_007FB2A0 == nullptr) {
             g_currentExceptionFrame = local_e0.previous;
             return 0;
           }
@@ -563,7 +563,7 @@ LAB_0054506b:
           g_currentExceptionFrame = local_e0.previous;
           return 0;
         }
-        if (g_opticClass_007FB2A0 == (OpticClassC *)0x0) {
+        if (g_opticClass_007FB2A0 == nullptr) {
           g_currentExceptionFrame = local_e0.previous;
           return 0;
         }
@@ -593,7 +593,7 @@ switchD_0054679d_default:
         g_currentExceptionFrame = local_e0.previous;
         return 0;
       }
-      if (g_opticClass_007FB2A0 == (OpticClassC *)0x0) {
+      if (g_opticClass_007FB2A0 == nullptr) {
         g_currentExceptionFrame = local_e0.previous;
         return 0;
       }
@@ -614,7 +614,7 @@ switchD_0054679d_default:
     }
     if (SVar6 == MESS_CURSORCLASSTY_A124) {
       sub_0054B540(this_00);
-      if (g_intercomPanel_0080169C == (IntercomPanelTy *)0x0) {
+      if (g_intercomPanel_0080169C == nullptr) {
         g_currentExceptionFrame = local_e0.previous;
         return 0;
       }
@@ -625,7 +625,7 @@ switchD_0054679d_default:
     if (MESS_CURSORCLASSTY_A102 < SVar6) {
       switch(SVar6) {
       case 0xa103:
-        if (g_optPanel_008016DC == (OptPanelTy *)0x0) {
+        if (g_optPanel_008016DC == nullptr) {
           g_currentExceptionFrame = local_e0.previous;
           return 0;
         }
@@ -633,7 +633,7 @@ switchD_0054679d_default:
         g_currentExceptionFrame = local_e0.previous;
         return 0;
       case 0xa104:
-        if (g_optPanel_008016DC == (OptPanelTy *)0x0) {
+        if (g_optPanel_008016DC == nullptr) {
           g_currentExceptionFrame = local_e0.previous;
           return 0;
         }
@@ -646,7 +646,7 @@ switchD_0054679d_default:
         return 0;
       case MESS_OPTPANELTY_A105:
       case MESS_OPTPANELTY_A106:
-        if (g_optPanel_008016DC == (OptPanelTy *)0x0) {
+        if (g_optPanel_008016DC == nullptr) {
           g_currentExceptionFrame = local_e0.previous;
           return 0;
         }
@@ -676,7 +676,7 @@ switchD_0054679d_default:
         break;
       case 0xa122:
         sub_0054B540(this_00);
-        if (g_cPanel_00801688 == (CPanelTy *)0x0) {
+        if (g_cPanel_00801688 == nullptr) {
           g_currentExceptionFrame = local_e0.previous;
           return 0;
         }
@@ -684,7 +684,7 @@ switchD_0054679d_default:
         g_currentExceptionFrame = local_e0.previous;
         return 0;
       case MESS_CURSORCLASSTY_A123:
-        if (g_cPanel_00801688 == (CPanelTy *)0x0) {
+        if (g_cPanel_00801688 == nullptr) {
           g_currentExceptionFrame = local_e0.previous;
           return 0;
         }
@@ -735,7 +735,7 @@ switchD_0054679d_default:
         pcVar12 = pcVar12 + 4;
         pcVar13 = pcVar13 + 4;
       }
-      local_14 = (cMf32 *)0x0;
+      local_14 = nullptr;
       for (uVar21 = uVar21 & 3; uVar21 != 0; uVar21 = uVar21 - 1) {
         *pcVar13 = *pcVar12;
         pcVar12 = pcVar12 + 1;
@@ -808,7 +808,7 @@ switchD_0054679d_default:
         this_01 = (cMf32 *)Library::Ourlib::MF32INT::FUN_006f0ec0(0x345,(byte *)&DAT_0080ee1a,0,0,0);
         local_14 = this_01;
         puVar17 = cMf32::RecGet(this_01,0x80,PTR_s_SAVE_DESC_0079adec,(int *)&local_58,0);
-        if (puVar17 != (ushort *)0x0) {
+        if (puVar17 != nullptr) {
           iVar9 = -0x77ffffea;
           if (DAT_00808783 == '\x01') {
             iVar9 = -0x77fffeea;
@@ -832,7 +832,7 @@ switchD_0054679d_default:
           }
         }
       }
-      if (this_01 == (cMf32 *)0x0) {
+      if (this_01 == nullptr) {
         g_currentExceptionFrame = local_e0.previous;
         return 0;
       }
@@ -843,7 +843,7 @@ switchD_0054679d_default:
     }
     if (SVar6 == MESS_CURSORCLASSTY_A102) {
       sub_0054B540(this_00);
-      if (g_optPanel_008016DC == (OptPanelTy *)0x0) {
+      if (g_optPanel_008016DC == nullptr) {
         g_currentExceptionFrame = local_e0.previous;
         return 0;
       }
@@ -864,7 +864,7 @@ switchD_0054679d_default:
           return 0;
         }
         sub_0054B540(this_00);
-        if (g_optPanel_008016DC == (OptPanelTy *)0x0) {
+        if (g_optPanel_008016DC == nullptr) {
           g_currentExceptionFrame = local_e0.previous;
           return 0;
         }
@@ -878,7 +878,7 @@ switchD_0054679d_default:
         return 0;
       }
       local_54 = 1;
-      if (g_parentSystem_0081163C == (GameSystemC *)0x0) {
+      if (g_parentSystem_0081163C == nullptr) {
         local_4c = 1;
         puVar14 = &local_54;
         local_50 = (uint)(DAT_00808784 == 0);
@@ -939,53 +939,53 @@ switchD_0054679d_default:
           g_currentExceptionFrame = local_e0.previous;
           return 0;
         }
-        if ((g_prodPanel_008016E8 != (ProdPanelTy *)0x0) && (g_prodPanel_008016E8->field_0172 == 1))
+        if ((g_prodPanel_008016E8 != nullptr) && (g_prodPanel_008016E8->field_0172 == 1))
         {
           g_currentExceptionFrame = local_e0.previous;
           return 0;
         }
-        if ((g_prodPanel_0080167C != (ProdPanelTy *)0x0) && (g_prodPanel_0080167C->field_0172 == 1))
+        if ((g_prodPanel_0080167C != nullptr) && (g_prodPanel_0080167C->field_0172 == 1))
         {
           g_currentExceptionFrame = local_e0.previous;
           return 0;
         }
-        if ((g_prodPanel_00801684 != (ProdPanelTy *)0x0) && (g_prodPanel_00801684->field_0172 == 1))
+        if ((g_prodPanel_00801684 != nullptr) && (g_prodPanel_00801684->field_0172 == 1))
         {
           g_currentExceptionFrame = local_e0.previous;
           return 0;
         }
-        if ((g_upgPanel_00802A48 != (UpgPanelTy *)0x0) && (g_upgPanel_00802A48->field_0172 == 1)) {
+        if ((g_upgPanel_00802A48 != nullptr) && (g_upgPanel_00802A48->field_0172 == 1)) {
           g_currentExceptionFrame = local_e0.previous;
           return 0;
         }
-        if ((g_infocPanel_00801698 != (InfocPanelTy *)0x0) &&
+        if ((g_infocPanel_00801698 != nullptr) &&
            (g_infocPanel_00801698->field_0172 == 1)) {
           g_currentExceptionFrame = local_e0.previous;
           return 0;
         }
-        if ((g_tradePanel_00802A44 != (TradePanelTy *)0x0) &&
+        if ((g_tradePanel_00802A44 != nullptr) &&
            (g_tradePanel_00802A44->field_0172 == 1)) {
           g_currentExceptionFrame = local_e0.previous;
           return 0;
         }
-        if ((g_frmPanel_0080168C != (FrmPanelTy *)0x0) && (g_frmPanel_0080168C->field_0172 == 1)) {
+        if ((g_frmPanel_0080168C != nullptr) && (g_frmPanel_0080168C->field_0172 == 1)) {
           g_currentExceptionFrame = local_e0.previous;
           return 0;
         }
-        if ((g_behPanel_00801678 != (BehPanelTy *)0x0) && (g_behPanel_00801678->field_0172 == 1)) {
+        if ((g_behPanel_00801678 != nullptr) && (g_behPanel_00801678->field_0172 == 1)) {
           g_currentExceptionFrame = local_e0.previous;
           return 0;
         }
-        if ((g_sAMPanel_008016EC != (SAMPanelTy *)0x0) && (g_sAMPanel_008016EC->field_0172 == 1)) {
+        if ((g_sAMPanel_008016EC != nullptr) && (g_sAMPanel_008016EC->field_0172 == 1)) {
           g_currentExceptionFrame = local_e0.previous;
           return 0;
         }
-        if ((g_prodPanel_00801680 != (ProdPanelTy *)0x0) && (g_prodPanel_00801680->field_0172 == 1))
+        if ((g_prodPanel_00801680 != nullptr) && (g_prodPanel_00801680->field_0172 == 1))
         {
           g_currentExceptionFrame = local_e0.previous;
           return 0;
         }
-        if (g_opticClass_007FB2A0 == (OpticClassC *)0x0) {
+        if (g_opticClass_007FB2A0 == nullptr) {
           g_currentExceptionFrame = local_e0.previous;
           return 0;
         }
@@ -1025,49 +1025,49 @@ switchD_0054679d_default:
         g_currentExceptionFrame = local_e0.previous;
         return 0;
       }
-      if ((g_prodPanel_008016E8 != (ProdPanelTy *)0x0) && (g_prodPanel_008016E8->field_0172 == 1)) {
+      if ((g_prodPanel_008016E8 != nullptr) && (g_prodPanel_008016E8->field_0172 == 1)) {
         g_currentExceptionFrame = local_e0.previous;
         return 0;
       }
-      if ((g_prodPanel_0080167C != (ProdPanelTy *)0x0) && (g_prodPanel_0080167C->field_0172 == 1)) {
+      if ((g_prodPanel_0080167C != nullptr) && (g_prodPanel_0080167C->field_0172 == 1)) {
         g_currentExceptionFrame = local_e0.previous;
         return 0;
       }
-      if ((g_prodPanel_00801684 != (ProdPanelTy *)0x0) && (g_prodPanel_00801684->field_0172 == 1)) {
+      if ((g_prodPanel_00801684 != nullptr) && (g_prodPanel_00801684->field_0172 == 1)) {
         g_currentExceptionFrame = local_e0.previous;
         return 0;
       }
-      if ((g_upgPanel_00802A48 != (UpgPanelTy *)0x0) && (g_upgPanel_00802A48->field_0172 == 1)) {
+      if ((g_upgPanel_00802A48 != nullptr) && (g_upgPanel_00802A48->field_0172 == 1)) {
         g_currentExceptionFrame = local_e0.previous;
         return 0;
       }
-      if ((g_infocPanel_00801698 != (InfocPanelTy *)0x0) && (g_infocPanel_00801698->field_0172 == 1)
+      if ((g_infocPanel_00801698 != nullptr) && (g_infocPanel_00801698->field_0172 == 1)
          ) {
         g_currentExceptionFrame = local_e0.previous;
         return 0;
       }
-      if ((g_tradePanel_00802A44 != (TradePanelTy *)0x0) && (g_tradePanel_00802A44->field_0172 == 1)
+      if ((g_tradePanel_00802A44 != nullptr) && (g_tradePanel_00802A44->field_0172 == 1)
          ) {
         g_currentExceptionFrame = local_e0.previous;
         return 0;
       }
-      if ((g_frmPanel_0080168C != (FrmPanelTy *)0x0) && (g_frmPanel_0080168C->field_0172 == 1)) {
+      if ((g_frmPanel_0080168C != nullptr) && (g_frmPanel_0080168C->field_0172 == 1)) {
         g_currentExceptionFrame = local_e0.previous;
         return 0;
       }
-      if ((g_behPanel_00801678 != (BehPanelTy *)0x0) && (g_behPanel_00801678->field_0172 == 1)) {
+      if ((g_behPanel_00801678 != nullptr) && (g_behPanel_00801678->field_0172 == 1)) {
         g_currentExceptionFrame = local_e0.previous;
         return 0;
       }
-      if ((g_sAMPanel_008016EC != (SAMPanelTy *)0x0) && (g_sAMPanel_008016EC->field_0172 == 1)) {
+      if ((g_sAMPanel_008016EC != nullptr) && (g_sAMPanel_008016EC->field_0172 == 1)) {
         g_currentExceptionFrame = local_e0.previous;
         return 0;
       }
-      if ((g_prodPanel_00801680 != (ProdPanelTy *)0x0) && (g_prodPanel_00801680->field_0172 == 1)) {
+      if ((g_prodPanel_00801680 != nullptr) && (g_prodPanel_00801680->field_0172 == 1)) {
         g_currentExceptionFrame = local_e0.previous;
         return 0;
       }
-      if (g_opticClass_007FB2A0 == (OpticClassC *)0x0) {
+      if (g_opticClass_007FB2A0 == nullptr) {
         g_currentExceptionFrame = local_e0.previous;
         return 0;
       }
@@ -1112,7 +1112,7 @@ switchD_0054679d_default:
         if (pAVar7->field_0009 < 0) {
           if ((&stack0x00000000 != (undefined1 *)0x524) &&
              (pcVar12 = LoadResourceString(pAVar7->field_0001,g_module_00807618),
-             pcVar12 != (char *)0x0)) {
+             pcVar12 != nullptr)) {
             UVar15 = local_8->field_0001;
 LAB_005458df:
             pcVar12 = LoadResourceString(UVar15,g_module_00807618);
@@ -1143,7 +1143,7 @@ LAB_005458df:
         if (pAVar7->field_0001 == 0) goto switchD_00545816_default;
         if ((&stack0x00000000 != (undefined1 *)0x524) &&
            (pcVar12 = LoadResourceString(pAVar7->field_0001,g_module_00807618),
-           pcVar12 != (char *)0x0)) {
+           pcVar12 != nullptr)) {
           UVar15 = local_8->field_0001;
           goto LAB_005458df;
         }
@@ -1198,7 +1198,7 @@ LAB_005458df:
         pcVar13 = (char *)&DAT_0080f33a;
         memmove(pcVar13, pcVar12, uVar21); /* compiler REP MOVS byte copy */
         uVar22 = 0;
-        for (puVar14 = Library::MSVCRT::FUN_0072e560(&DAT_0080f33a,'\n'); puVar14 != (uint *)0x0;
+        for (puVar14 = Library::MSVCRT::FUN_0072e560(&DAT_0080f33a,'\n'); puVar14 != nullptr;
             puVar14 = Library::MSVCRT::FUN_0072e560(puVar14,'\n')) {
           *(undefined1 *)puVar14 = 0x20;
         }
@@ -1218,7 +1218,7 @@ LAB_005458df:
           pcVar12 = pcVar13 + -uVar21;
           pcVar13 = (char *)&DAT_0080f33a;
           memmove(pcVar13, pcVar12, uVar21); /* compiler REP MOVS byte copy */
-          for (puVar14 = Library::MSVCRT::FUN_0072e560(&DAT_0080f33a,'\n'); puVar14 != (uint *)0x0;
+          for (puVar14 = Library::MSVCRT::FUN_0072e560(&DAT_0080f33a,'\n'); puVar14 != nullptr;
               puVar14 = Library::MSVCRT::FUN_0072e560(puVar14,'\n')) {
             *(undefined1 *)puVar14 = 0x20;
           }
@@ -1253,7 +1253,7 @@ switchD_00545816_default:
       local_c = 0.0;
     }
     else if ((&stack0x00000000 != (undefined1 *)0x524) &&
-            (pcVar12 = LoadResourceString(UVar15,g_module_00807618), pcVar12 != (char *)0x0)) {
+            (pcVar12 = LoadResourceString(UVar15,g_module_00807618), pcVar12 != nullptr)) {
       UVar15 = this_00->field_04DA;
       goto LAB_005458df;
     }
@@ -1262,8 +1262,8 @@ switchD_00545816_default:
       return 0;
     }
     if ((message->arg0).words.high == 3) {
-      if ((g_startSystem_0081176C == (StartSystemTy *)0x0) ||
-         (g_startSystem_0081176C->field_0038 == (ccFntTy *)0x0)) goto cf_common_exit_00545FF6;
+      if ((g_startSystem_0081176C == nullptr) ||
+         (g_startSystem_0081176C->field_0038 == nullptr)) goto cf_common_exit_00545FF6;
       iVar9 = FUN_00711370(g_startSystem_0081176C->field_0038,local_524);
       this_00->field_04CA = iVar9 + 0xc;
       iVar9 = FUN_007113e0(g_startSystem_0081176C->field_0038,local_524);
@@ -1313,8 +1313,8 @@ switchD_00545816_default:
       bVar32 = 0x18;
     }
     else {
-      if ((g_interSystem_00802A28 == (InterSystemC *)0x0) ||
-         (g_interSystem_00802A28->field_0028 == (ccFntTy *)0x0)) goto cf_common_exit_00545FF6;
+      if ((g_interSystem_00802A28 == nullptr) ||
+         (g_interSystem_00802A28->field_0028 == nullptr)) goto cf_common_exit_00545FF6;
       iVar9 = FUN_00711370(g_interSystem_00802A28->field_0028,local_524);
       this_00->field_04CA = iVar9 + 0xc;
       iVar9 = FUN_007113e0(g_interSystem_00802A28->field_0028,local_524);
@@ -1416,7 +1416,7 @@ LAB_00547c2d:
         g_currentExceptionFrame = local_e0.previous;
         return 0;
       }
-      if ((g_helpPanel_00801690 != (HelpPanelTy *)0x0) && (g_helpPanel_00801690->field_0172 != 2)) {
+      if ((g_helpPanel_00801690 != nullptr) && (g_helpPanel_00801690->field_0172 != 2)) {
         g_currentExceptionFrame = local_e0.previous;
         return 0;
       }
@@ -1444,7 +1444,7 @@ LAB_00547c2d:
         g_currentExceptionFrame = local_e0.previous;
         return 0;
       }
-      if (this_00->field_049A != (STFishC *)0x0) {
+      if (this_00->field_049A != nullptr) {
         g_currentExceptionFrame = local_e0.previous;
         return 0;
       }
@@ -1466,7 +1466,7 @@ LAB_00547c2d:
         g_currentExceptionFrame = local_e0.previous;
         return 0;
       }
-      if ((g_helpPanel_00801690 != (HelpPanelTy *)0x0) && (g_helpPanel_00801690->field_0172 != 2)) {
+      if ((g_helpPanel_00801690 != nullptr) && (g_helpPanel_00801690->field_0172 != 2)) {
         g_currentExceptionFrame = local_e0.previous;
         return 0;
       }
@@ -1498,11 +1498,11 @@ LAB_00547c2d:
         g_currentExceptionFrame = local_e0.previous;
         return 0;
       }
-      if (this_00->field_049A != (STFishC *)0x0) {
+      if (this_00->field_049A != nullptr) {
         g_currentExceptionFrame = local_e0.previous;
         return 0;
       }
-      if (g_allPlayers_007FA174 == (STAllPlayersC *)0x0) {
+      if (g_allPlayers_007FA174 == nullptr) {
         g_currentExceptionFrame = local_e0.previous;
         return 0;
       }
@@ -1528,7 +1528,7 @@ LAB_00547c2d:
         g_currentExceptionFrame = local_e0.previous;
         return 0;
       }
-      if ((g_helpPanel_00801690 != (HelpPanelTy *)0x0) && (g_helpPanel_00801690->field_0172 != 2)) {
+      if ((g_helpPanel_00801690 != nullptr) && (g_helpPanel_00801690->field_0172 != 2)) {
         g_currentExceptionFrame = local_e0.previous;
         return 0;
       }
@@ -1556,7 +1556,7 @@ LAB_00547c2d:
         g_currentExceptionFrame = local_e0.previous;
         return 0;
       }
-      if (this_00->field_049A == (STFishC *)0x0) {
+      if (this_00->field_049A == nullptr) {
         g_currentExceptionFrame = local_e0.previous;
         return 0;
       }
@@ -1582,7 +1582,7 @@ LAB_00547c2d:
         g_currentExceptionFrame = local_e0.previous;
         return 0;
       }
-      if ((g_helpPanel_00801690 != (HelpPanelTy *)0x0) && (g_helpPanel_00801690->field_0172 != 2)) {
+      if ((g_helpPanel_00801690 != nullptr) && (g_helpPanel_00801690->field_0172 != 2)) {
         g_currentExceptionFrame = local_e0.previous;
         return 0;
       }
@@ -1614,7 +1614,7 @@ LAB_00547c2d:
         g_currentExceptionFrame = local_e0.previous;
         return 0;
       }
-      if (this_00->field_049A == (STFishC *)0x0) {
+      if (this_00->field_049A == nullptr) {
         g_currentExceptionFrame = local_e0.previous;
         return 0;
       }
@@ -1622,7 +1622,7 @@ LAB_00547c2d:
         g_currentExceptionFrame = local_e0.previous;
         return 0;
       }
-      if (g_allPlayers_007FA174 == (STAllPlayersC *)0x0) {
+      if (g_allPlayers_007FA174 == nullptr) {
         g_currentExceptionFrame = local_e0.previous;
         return 0;
       }
@@ -1648,7 +1648,7 @@ LAB_00547c2d:
         g_currentExceptionFrame = local_e0.previous;
         return 0;
       }
-      if ((g_helpPanel_00801690 != (HelpPanelTy *)0x0) && (g_helpPanel_00801690->field_0172 != 2)) {
+      if ((g_helpPanel_00801690 != nullptr) && (g_helpPanel_00801690->field_0172 != 2)) {
         g_currentExceptionFrame = local_e0.previous;
         return 0;
       }
@@ -1680,7 +1680,7 @@ LAB_00547c2d:
         g_currentExceptionFrame = local_e0.previous;
         return 0;
       }
-      if (this_00->field_049A == (STFishC *)0x0) {
+      if (this_00->field_049A == nullptr) {
         g_currentExceptionFrame = local_e0.previous;
         return 0;
       }
@@ -1688,7 +1688,7 @@ LAB_00547c2d:
         g_currentExceptionFrame = local_e0.previous;
         return 0;
       }
-      if (g_allPlayers_007FA174 == (STAllPlayersC *)0x0) {
+      if (g_allPlayers_007FA174 == nullptr) {
         g_currentExceptionFrame = local_e0.previous;
         return 0;
       }
@@ -1714,7 +1714,7 @@ LAB_00547c2d:
         g_currentExceptionFrame = local_e0.previous;
         return 0;
       }
-      if ((g_helpPanel_00801690 != (HelpPanelTy *)0x0) && (g_helpPanel_00801690->field_0172 != 2)) {
+      if ((g_helpPanel_00801690 != nullptr) && (g_helpPanel_00801690->field_0172 != 2)) {
         g_currentExceptionFrame = local_e0.previous;
         return 0;
       }
@@ -1746,7 +1746,7 @@ LAB_00547c2d:
         g_currentExceptionFrame = local_e0.previous;
         return 0;
       }
-      if (this_00->field_049A == (STFishC *)0x0) {
+      if (this_00->field_049A == nullptr) {
         g_currentExceptionFrame = local_e0.previous;
         return 0;
       }
@@ -1754,7 +1754,7 @@ LAB_00547c2d:
         g_currentExceptionFrame = local_e0.previous;
         return 0;
       }
-      if (g_allPlayers_007FA174 == (STAllPlayersC *)0x0) {
+      if (g_allPlayers_007FA174 == nullptr) {
         g_currentExceptionFrame = local_e0.previous;
         return 0;
       }
@@ -1777,7 +1777,7 @@ LAB_00547c2d:
         g_currentExceptionFrame = local_e0.previous;
         return 0;
       }
-      if ((g_helpPanel_00801690 != (HelpPanelTy *)0x0) && (g_helpPanel_00801690->field_0172 != 2)) {
+      if ((g_helpPanel_00801690 != nullptr) && (g_helpPanel_00801690->field_0172 != 2)) {
         g_currentExceptionFrame = local_e0.previous;
         return 0;
       }
@@ -1809,7 +1809,7 @@ LAB_00547c2d:
         g_currentExceptionFrame = local_e0.previous;
         return 0;
       }
-      if (this_00->field_049A == (STFishC *)0x0) {
+      if (this_00->field_049A == nullptr) {
         g_currentExceptionFrame = local_e0.previous;
         return 0;
       }
@@ -1817,7 +1817,7 @@ LAB_00547c2d:
         g_currentExceptionFrame = local_e0.previous;
         return 0;
       }
-      if (g_allPlayers_007FA174 == (STAllPlayersC *)0x0) {
+      if (g_allPlayers_007FA174 == nullptr) {
         g_currentExceptionFrame = local_e0.previous;
         return 0;
       }
@@ -1840,7 +1840,7 @@ LAB_00547c2d:
         g_currentExceptionFrame = local_e0.previous;
         return 0;
       }
-      if ((g_helpPanel_00801690 != (HelpPanelTy *)0x0) && (g_helpPanel_00801690->field_0172 != 2)) {
+      if ((g_helpPanel_00801690 != nullptr) && (g_helpPanel_00801690->field_0172 != 2)) {
         g_currentExceptionFrame = local_e0.previous;
         return 0;
       }
@@ -1868,7 +1868,7 @@ LAB_00547c2d:
         g_currentExceptionFrame = local_e0.previous;
         return 0;
       }
-      if (this_00->field_049A == (STFishC *)0x0) {
+      if (this_00->field_049A == nullptr) {
         g_currentExceptionFrame = local_e0.previous;
         return 0;
       }
@@ -1894,7 +1894,7 @@ LAB_00547c2d:
         g_currentExceptionFrame = local_e0.previous;
         return 0;
       }
-      if ((g_helpPanel_00801690 != (HelpPanelTy *)0x0) && (g_helpPanel_00801690->field_0172 != 2)) {
+      if ((g_helpPanel_00801690 != nullptr) && (g_helpPanel_00801690->field_0172 != 2)) {
         g_currentExceptionFrame = local_e0.previous;
         return 0;
       }
@@ -1926,7 +1926,7 @@ LAB_00547c2d:
         g_currentExceptionFrame = local_e0.previous;
         return 0;
       }
-      if (this_00->field_049A == (STFishC *)0x0) {
+      if (this_00->field_049A == nullptr) {
         g_currentExceptionFrame = local_e0.previous;
         return 0;
       }
@@ -1948,7 +1948,7 @@ LAB_00547c2d:
       g_currentExceptionFrame = local_e0.previous;
       return 0;
     case MESS_SYSTEMCLASSTY_000A:
-      if (g_cPanel_00801688 == (CPanelTy *)0x0) {
+      if (g_cPanel_00801688 == nullptr) {
         g_currentExceptionFrame = local_e0.previous;
         return 0;
       }
@@ -1959,7 +1959,7 @@ LAB_00547c2d:
       g_currentExceptionFrame = local_e0.previous;
       return 0;
     case 0xb:
-      if (g_cPanel_00801688 == (CPanelTy *)0x0) {
+      if (g_cPanel_00801688 == nullptr) {
         g_currentExceptionFrame = local_e0.previous;
         return 0;
       }
@@ -1967,7 +1967,7 @@ LAB_00547c2d:
       g_currentExceptionFrame = local_e0.previous;
       return 0;
     case 0xc:
-      if (g_cPanel_00801688 == (CPanelTy *)0x0) {
+      if (g_cPanel_00801688 == nullptr) {
         g_currentExceptionFrame = local_e0.previous;
         return 0;
       }
@@ -1978,7 +1978,7 @@ LAB_00547c2d:
       g_currentExceptionFrame = local_e0.previous;
       return 0;
     case MESS_SHARED_0008|MESS_SHARED_0005:
-      if (g_allPlayers_007FA174 == (STAllPlayersC *)0x0) {
+      if (g_allPlayers_007FA174 == nullptr) {
         g_currentExceptionFrame = local_e0.previous;
         return 0;
       }
@@ -1992,7 +1992,7 @@ LAB_00547c2d:
     goto LAB_005470b2;
   }
   if (SVar6 == MESS_CURSORCLASSTY_A50C) {
-    if (g_allPlayers_007FA174 == (STAllPlayersC *)0x0) {
+    if (g_allPlayers_007FA174 == nullptr) {
       g_currentExceptionFrame = local_e0.previous;
       return 0;
     }
@@ -2008,7 +2008,7 @@ LAB_00547c2d:
     case MESS_CURSORCLASSTY_A504|MESS_ID_CREATE:
       goto switchD_00546ac9_caseD_a506;
     case MESS_CURSORCLASSTY_A500|MESS_SHARED_0008:
-      if (g_allPlayers_007FA174 == (STAllPlayersC *)0x0) {
+      if (g_allPlayers_007FA174 == nullptr) {
         g_currentExceptionFrame = local_e0.previous;
         return 0;
       }
@@ -2016,7 +2016,7 @@ LAB_00547c2d:
       g_currentExceptionFrame = local_e0.previous;
       return 0;
     case MESS_CURSORCLASSTY_A500|MESS_CURSORCLASSTY_0009:
-      if (g_allPlayers_007FA174 == (STAllPlayersC *)0x0) {
+      if (g_allPlayers_007FA174 == nullptr) {
         g_currentExceptionFrame = local_e0.previous;
         return 0;
       }
@@ -2024,7 +2024,7 @@ LAB_00547c2d:
       g_currentExceptionFrame = local_e0.previous;
       return 0;
     case MESS_CURSORCLASSTY_A500|MESS_SYSTEMCLASSTY_000A:
-      if (g_allPlayers_007FA174 == (STAllPlayersC *)0x0) {
+      if (g_allPlayers_007FA174 == nullptr) {
         g_currentExceptionFrame = local_e0.previous;
         return 0;
       }
@@ -2032,7 +2032,7 @@ LAB_00547c2d:
       g_currentExceptionFrame = local_e0.previous;
       return 0;
     case 0xa50b:
-      if (g_allPlayers_007FA174 == (STAllPlayersC *)0x0) {
+      if (g_allPlayers_007FA174 == nullptr) {
         g_currentExceptionFrame = local_e0.previous;
         return 0;
       }
@@ -2061,7 +2061,7 @@ switchD_00546ac9_caseD_a506:
       g_currentExceptionFrame = local_e0.previous;
       return 0;
     }
-    if ((g_helpPanel_00801690 != (HelpPanelTy *)0x0) && (g_helpPanel_00801690->field_0172 != 2)) {
+    if ((g_helpPanel_00801690 != nullptr) && (g_helpPanel_00801690->field_0172 != 2)) {
       g_currentExceptionFrame = local_e0.previous;
       return 0;
     }
@@ -2086,7 +2086,7 @@ switchD_00546ac9_caseD_a506:
         g_currentExceptionFrame = local_e0.previous;
         return 0;
       }
-      if (this_00->field_049A != (STFishC *)0x0) {
+      if (this_00->field_049A != nullptr) {
         g_currentExceptionFrame = local_e0.previous;
         return 0;
       }
@@ -2118,7 +2118,7 @@ switchD_00546ac9_caseD_a506:
       g_currentExceptionFrame = local_e0.previous;
       return 0;
     }
-    if (g_sT3DSMAPContext_00807598 == (ST3DSMAPContext *)0x0) {
+    if (g_sT3DSMAPContext_00807598 == nullptr) {
       g_currentExceptionFrame = local_e0.previous;
       return 0;
     }
@@ -2131,7 +2131,7 @@ switchD_00546ac9_caseD_a506:
     }
     piVar25 = &this_00->field_010B;
     this_00->field_00DE = CASE_5;
-    if ((-1 < this_00->field_010B) && (g_sT3DSMAPContext_00807598 != (ST3DSMAPContext *)0x0)) {
+    if ((-1 < this_00->field_010B) && (g_sT3DSMAPContext_00807598 != nullptr)) {
       Library::Ourlib::ST3DSMAP::SprClose(g_sT3DSMAPContext_00807598,this_00->field_010B);
     }
     FUN_006e89b0(g_sT3DSMAPContext_00807598,piVar25,&DAT_007c7cd8,8,2,0x45,this_00->field_00FF,
@@ -2167,7 +2167,7 @@ switchD_00546ac9_caseD_a506:
       return 0;
     }
     if (SVar6 == MESS_CURSORCLASSTY_A330) {
-      if (g_playSystem_00802A38 == (STPlaySystemC *)0x0) {
+      if (g_playSystem_00802A38 == nullptr) {
         g_currentExceptionFrame = local_e0.previous;
         return 0;
       }
@@ -2180,7 +2180,7 @@ switchD_00546ac9_caseD_a506:
       return 0;
     }
     if (SVar6 < 0xa327) {
-      if (g_allPlayers_007FA174 == (STAllPlayersC *)0x0) {
+      if (g_allPlayers_007FA174 == nullptr) {
         g_currentExceptionFrame = local_e0.previous;
         return 0;
       }
@@ -2192,7 +2192,7 @@ switchD_00546ac9_caseD_a506:
       g_currentExceptionFrame = local_e0.previous;
       return 0;
     }
-    if (g_popUp_008016D8 == (PopUpTy *)0x0) {
+    if (g_popUp_008016D8 == nullptr) {
       g_currentExceptionFrame = local_e0.previous;
       return 0;
     }
@@ -2208,7 +2208,7 @@ switchD_00546ac9_caseD_a506:
     }
     this_00->field_04A6 = 1;
     this_00->field_04DE = 0;
-    if (g_cPanel_00801688 == (CPanelTy *)0x0) {
+    if (g_cPanel_00801688 == nullptr) {
       g_currentExceptionFrame = local_e0.previous;
       return 0;
     }
@@ -2243,7 +2243,7 @@ switchD_00546ac9_caseD_a505:
           g_currentExceptionFrame = local_e0.previous;
           return 0;
         }
-        if ((g_helpPanel_00801690 != (HelpPanelTy *)0x0) && (g_helpPanel_00801690->field_0172 != 2))
+        if ((g_helpPanel_00801690 != nullptr) && (g_helpPanel_00801690->field_0172 != 2))
         {
           g_currentExceptionFrame = local_e0.previous;
           return 0;
@@ -2270,7 +2270,7 @@ switchD_00546ac9_caseD_a505:
           g_currentExceptionFrame = local_e0.previous;
           return 0;
         }
-        if ((g_helpPanel_00801690 != (HelpPanelTy *)0x0) && (g_helpPanel_00801690->field_0172 != 2))
+        if ((g_helpPanel_00801690 != nullptr) && (g_helpPanel_00801690->field_0172 != 2))
         {
           g_currentExceptionFrame = local_e0.previous;
           return 0;
@@ -2331,7 +2331,7 @@ LAB_00546f1c:
                this_00->field_0038);
   }
   DrawSprite(this_00,this_00->field_00C5,this_00->field_00C9);
-  if (g_sT3DSMAPContext_00807598 != (ST3DSMAPContext *)0x0) {
+  if (g_sT3DSMAPContext_00807598 != nullptr) {
     uVar21 = this_00->field_010B;
 LAB_0054708b:
     Library::Ourlib::ST3DSMAP::SprClose(g_sT3DSMAPContext_00807598,uVar21);
@@ -2362,13 +2362,13 @@ switchD_00546e07_caseD_5:
                this_00->field_0038);
   }
   DrawSprite(this_00,this_00->field_00C5,this_00->field_00C9);
-  if (g_sT3DSMAPContext_00807598 != (ST3DSMAPContext *)0x0) {
+  if (g_sT3DSMAPContext_00807598 != nullptr) {
     uVar21 = this_00->field_010B;
     goto LAB_0054708b;
   }
   goto LAB_00547090;
 switchD_005468af_caseD_a2ff:
-  if (g_opticClass_007FB2A0 == (OpticClassC *)0x0) {
+  if (g_opticClass_007FB2A0 == nullptr) {
     g_currentExceptionFrame = local_e0.previous;
     return 0;
   }
@@ -2381,7 +2381,7 @@ switchD_00546590_caseD_a125:
     return 0;
   }
   sub_0054B540(this_00);
-  if (g_intercomPanel_0080169C == (IntercomPanelTy *)0x0) {
+  if (g_intercomPanel_0080169C == nullptr) {
     g_currentExceptionFrame = local_e0.previous;
     return 0;
   }

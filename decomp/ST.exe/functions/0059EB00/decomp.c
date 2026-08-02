@@ -83,7 +83,7 @@ void __thiscall FSGSTy::JoinGameCtrls(FSGSTy *this)
   ppcVar12 = local_dac;
   local_8 = this;
   for (iVar8 = 0x223; iVar8 != 0; iVar8 = iVar8 + -1) {
-    *ppcVar12 = (ccFntTy *)0x0;
+    *ppcVar12 = nullptr;
     ppcVar12 = ppcVar12 + 1;
   }
   memset(local_520, 0, 0x4d4); /* compiler bulk-zero initialization */
@@ -95,7 +95,7 @@ void __thiscall FSGSTy::JoinGameCtrls(FSGSTy *this)
     if (local_8->field_1E8E != 0) {
       FreeAndNull((void **)&local_8->field_1E8E);
     }
-    if (this_00->field_1E92 != (tagBITMAPINFO *)0x0) {
+    if (this_00->field_1E92 != nullptr) {
       FreeAndNull(&this_00->field_1E92);
     }
     iVar8 = 1;
@@ -107,14 +107,14 @@ void __thiscall FSGSTy::JoinGameCtrls(FSGSTy *this)
     this_00->field_1E92 = ptVar4;
     ptVar4 = Library::DKW::DDX::FUN_006c4880(g_dDXContext_0080759C,0x13,0x5e,0x174,0x175,8);
     this_00->field_1E9A = ptVar4;
-    pDVar5 = Library::DKW::TBL::SArrayCreate((DArrayTy *)0x0,1,1);
+    pDVar5 = Library::DKW::TBL::SArrayCreate(nullptr,1,1);
     this_00->field_1AE8 = pDVar5;
     Library::DKW::TBL::FUN_006b5aa0(&pDVar5->flags,&DAT_008016a0);
-    pDVar5 = Library::DKW::TBL::SArrayCreate((DArrayTy *)0x0,1,1);
+    pDVar5 = Library::DKW::TBL::SArrayCreate(nullptr,1,1);
     this_00->field_1AEC = pDVar5;
     Library::DKW::TBL::FUN_006b5aa0(&pDVar5->flags,&DAT_008016a0);
     pFVar6 = (FSGSTy_field_1EBEDArray *)
-             Library::DKW::TBL::DArrayCreate((DArrayTy *)0x0,0x14,0x25c,10);
+             Library::DKW::TBL::DArrayCreate(nullptr,0x14,0x25c,10);
     this_00->field_1EBE = pFVar6;
     local_520[4] = 0x15b - this_00->field_1CFF;
     local_4f8 = this_00->field_0008;
@@ -172,7 +172,7 @@ void __thiscall FSGSTy::JoinGameCtrls(FSGSTy *this)
     local_498 = local_4f8;
     local_a0 = local_4f8;
     (*this_00->field_000C->vtable->CreateObject)
-              ((SystemClassTy *)this_00->field_000C,7,&this_00->field_1B20,(int *)0x0,local_520,0);
+              ((SystemClassTy *)this_00->field_000C,7,&this_00->field_1B20,nullptr,local_520,0);
     if (this_00->field_1CDF != 0xffffffff) {
       Library::DKW::DDX::FUN_006b34d0
                 ((uint *)this_00->field_1D23,this_00->field_1CDF,0xfffffffe,this_00->field_1CF7,
@@ -191,7 +191,7 @@ void __thiscall FSGSTy::JoinGameCtrls(FSGSTy *this)
     local_d8c = this_00->field_1AE8;
     ppcVar12 = local_dac;
     for (iVar8 = 0x223; iVar8 != 0; iVar8 = iVar8 + -1) {
-      *ppcVar12 = (ccFntTy *)0x0;
+      *ppcVar12 = nullptr;
       ppcVar12 = ppcVar12 + 1;
     }
     local_dac[2] = this_00->field_1A73;
@@ -215,13 +215,13 @@ void __thiscall FSGSTy::JoinGameCtrls(FSGSTy *this)
     local_d20 = local_d80;
     local_53c = local_d80;
     (*this_00->field_000C->vtable->CreateObject)
-              ((SystemClassTy *)this_00->field_000C,6,&this_00->field_1AC4,(int *)0x0,local_dac,0);
+              ((SystemClassTy *)this_00->field_000C,6,&this_00->field_1AC4,nullptr,local_dac,0);
     local_d8c = this_00->field_1AEC;
     local_dac[1] = (ccFntTy *)0x89;
     local_dac[4] = (ccFntTy *)0x154;
     local_dac[7] = (ccFntTy *)0x10;
     (*this_00->field_000C->vtable->CreateObject)
-              ((SystemClassTy *)this_00->field_000C,6,&this_00->field_1AC8,(int *)0x0,local_dac,0);
+              ((SystemClassTy *)this_00->field_000C,6,&this_00->field_1AC8,nullptr,local_dac,0);
     this_00->field_1EC2 = 0;
     this_00->field_1EC6 = 0xffffffff;
     this_00->field_1ECA = 0;

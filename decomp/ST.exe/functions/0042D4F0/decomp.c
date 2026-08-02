@@ -67,7 +67,7 @@ cf_common_exit_0042D5BC:
 /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
 LAB_0042d5e8:
     uVar5 = CONCAT22((short)((uint)param_4 >> 0x10),(short)piVar3[2]);
-    pDVar4 = (DArrayTy *)0x0;
+    pDVar4 = nullptr;
   }
   /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
   ResetActivityFromObjs

@@ -27,13 +27,13 @@ undefined4 __thiscall STBoatC::Bring(STBoatC *this,STBoatC *param_1)
   STBoatC *local_8;
 
   /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
-  if ((param_1 == (STBoatC *)0x0) || (param_1 == (STBoatC *)0x1)) {
+  if ((param_1 == nullptr) || (param_1 == (STBoatC *)0x1)) {
     memset(&this->field_02CC, 0, 0x5c); /* compiler bulk-zero initialization */
     /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
     iVar7 = *(int *)((int)this->field_06CB + 0x2c);
     this->field_02C4 = 0;
     if ((((iVar7 != 7) && (iVar7 != 0x13)) && (iVar7 != 0x1b)) ||
-       (this->field_07CA == (AnonShape_005EFAE0_B406B78B *)0x0)) {
+       (this->field_07CA == nullptr)) {
       return 0;
     }
     iVar7 = STPlaySystemC::sub_006E62D0(g_playSystem_00802A38,this->field_07CA,(int *)&param_1);
@@ -56,7 +56,7 @@ undefined4 __thiscall STBoatC::Bring(STBoatC *this,STBoatC *param_1)
         ((sVar1 < 0 || ((g_worldGrid.sizeY <= sVar1 || (sVar2 < 0)))))) ||
        (g_worldGrid.sizeZ <= sVar2)) {
       /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
-      param_1 = (STBoatC *)0x0;
+      param_1 = nullptr;
     }
     else {
       /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
@@ -66,7 +66,7 @@ undefined4 __thiscall STBoatC::Bring(STBoatC *this,STBoatC *param_1)
                  (int)sVar3].objects[0];
     }
     /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
-    if (param_1 == (STBoatC *)0x0) {
+    if (param_1 == nullptr) {
       return 0;
     }
     dVar9 = param_1->slot_2C();
@@ -96,7 +96,7 @@ undefined4 __thiscall STBoatC::Bring(STBoatC *this,STBoatC *param_1)
          (((sVar3 < 0 || ((g_worldGrid.sizeY <= sVar3 || (sVar2 < 0)))) ||
           (g_worldGrid.sizeZ <= sVar2)))) {
         /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
-        param_1 = (STBoatC *)0x0;
+        param_1 = nullptr;
       }
       else {
         /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
@@ -105,7 +105,7 @@ undefined4 __thiscall STBoatC::Bring(STBoatC *this,STBoatC *param_1)
                   [(int)g_worldGrid.planeStride * (int)sVar2 + (int)g_worldGrid.sizeX * (int)sVar3 +
                    (int)sVar1].objects[0];
       }
-      if (((param_1 != (STBoatC *)0x0) && (param_1->field_0018 == this->field_0679)) &&
+      if (((param_1 != nullptr) && (param_1->field_0018 == this->field_0679)) &&
          (iVar7 = param_1->vfunc_F8(), iVar7 != 0)) {
         return 2;
       }
@@ -142,7 +142,7 @@ undefined4 __thiscall STBoatC::Bring(STBoatC *this,STBoatC *param_1)
            ((sVar3 < 0 ||
             (((g_worldGrid.sizeY <= sVar3 || (sVar2 < 0)) || (g_worldGrid.sizeZ <= sVar2)))))) {
           /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
-          param_1 = (STBoatC *)0x0;
+          param_1 = nullptr;
         }
         else {
           /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
@@ -151,7 +151,7 @@ undefined4 __thiscall STBoatC::Bring(STBoatC *this,STBoatC *param_1)
                     [(int)sVar2 * (int)g_worldGrid.planeStride + (int)sVar3 * (int)g_worldGrid.sizeX
                      + (int)sVar1].objects[0];
         }
-        if (((param_1 != (STBoatC *)0x0) && (param_1->field_0018 == this->field_0679)) &&
+        if (((param_1 != nullptr) && (param_1->field_0018 == this->field_0679)) &&
            ((iVar7 = param_1->vfunc_F8(), iVar7 != 0 &&
             ((param_1->field_0020 != 1000 ||
              ((*(int *)((int)&param_1->field_04B3 + 1) == 0 && (*(int *)&param_1->field_0x245 != 6))
@@ -169,7 +169,7 @@ undefined4 __thiscall STBoatC::Bring(STBoatC *this,STBoatC *param_1)
            ((sVar3 < 0 ||
             (((g_worldGrid.sizeY <= sVar3 || (sVar2 < 0)) || (g_worldGrid.sizeZ <= sVar2)))))) {
           /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
-          param_1 = (STBoatC *)0x0;
+          param_1 = nullptr;
         }
         else {
           /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
@@ -178,7 +178,7 @@ undefined4 __thiscall STBoatC::Bring(STBoatC *this,STBoatC *param_1)
                     [(int)sVar2 * (int)g_worldGrid.planeStride + (int)sVar3 * (int)g_worldGrid.sizeX
                      + (int)sVar1].objects[0];
         }
-        if (((param_1 != (STBoatC *)0x0) && (param_1->field_0018 == this->field_0679)) &&
+        if (((param_1 != nullptr) && (param_1->field_0018 == this->field_0679)) &&
            (iVar7 = param_1->vfunc_F8(), iVar7 != 0)) {
           return 2;
         }
@@ -200,7 +200,7 @@ undefined4 __thiscall STBoatC::Bring(STBoatC *this,STBoatC *param_1)
            ((sVar3 < 0 ||
             (((g_worldGrid.sizeY <= sVar3 || (sVar2 < 0)) || (g_worldGrid.sizeZ <= sVar2)))))) {
           /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
-          param_1 = (STBoatC *)0x0;
+          param_1 = nullptr;
         }
         else {
           /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
@@ -209,7 +209,7 @@ undefined4 __thiscall STBoatC::Bring(STBoatC *this,STBoatC *param_1)
                     [(int)sVar2 * (int)g_worldGrid.planeStride + (int)sVar3 * (int)g_worldGrid.sizeX
                      + (int)sVar1].objects[0];
         }
-        if (((param_1 != (STBoatC *)0x0) && (param_1->field_0018 == this->field_0679)) &&
+        if (((param_1 != nullptr) && (param_1->field_0018 == this->field_0679)) &&
            (iVar7 = param_1->vfunc_F8(), iVar7 != 0)) {
           if (this->field_0675 == 99) {
             thunk_FUN_004b7d50(param_1,this);
@@ -232,7 +232,7 @@ undefined4 __thiscall STBoatC::Bring(STBoatC *this,STBoatC *param_1)
     }
     if (SVar4 == CASE_3) {
       iVar7 = UnLoadObj(this,2);
-      if (((this->field_07CA != (AnonShape_005EFAE0_B406B78B *)0x0) && (this->field_07C6 != 0)) &&
+      if (((this->field_07CA != nullptr) && (this->field_07C6 != 0)) &&
          (iVar7 == 0)) {
         this->field_05D6 = 0;
         return 2;
@@ -245,7 +245,7 @@ undefined4 __thiscall STBoatC::Bring(STBoatC *this,STBoatC *param_1)
             ((sVar3 < 0 || ((g_worldGrid.sizeY <= sVar3 || (sVar2 < 0)))))) ||
            (g_worldGrid.sizeZ <= sVar2)) {
           /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
-          param_1 = (STBoatC *)0x0;
+          param_1 = nullptr;
         }
         else {
           /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
@@ -254,7 +254,7 @@ undefined4 __thiscall STBoatC::Bring(STBoatC *this,STBoatC *param_1)
                     [(int)sVar2 * (int)g_worldGrid.planeStride + (int)sVar3 * (int)g_worldGrid.sizeX
                      + (int)sVar1].objects[0];
         }
-        if (((param_1 != (STBoatC *)0x0) && (param_1->field_0018 == this->field_0679)) &&
+        if (((param_1 != nullptr) && (param_1->field_0018 == this->field_0679)) &&
            (iVar7 = param_1->vfunc_F8(), iVar7 != 0)) {
           if (this->field_0675 == 99) {
             thunk_FUN_004b7d50(param_1,this);
@@ -266,7 +266,7 @@ undefined4 __thiscall STBoatC::Bring(STBoatC *this,STBoatC *param_1)
               ((sVar3 < 0 || ((g_worldGrid.sizeY <= sVar3 || (sVar2 < 0)))))) ||
              (g_worldGrid.sizeZ <= sVar2)) {
             /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
-            param_1 = (STBoatC *)0x0;
+            param_1 = nullptr;
           }
           else {
             /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
@@ -275,7 +275,7 @@ undefined4 __thiscall STBoatC::Bring(STBoatC *this,STBoatC *param_1)
                       [(int)sVar2 * (int)g_worldGrid.planeStride +
                        (int)sVar3 * (int)g_worldGrid.sizeX + (int)sVar1].objects[0];
           }
-          if (param_1 != (STBoatC *)0x0) {
+          if (param_1 != nullptr) {
             if (this->field_066B == 0x14) {
               if (this->field_0675 == 99) {
                 local_c = this->field_0673;
@@ -284,7 +284,7 @@ undefined4 __thiscall STBoatC::Bring(STBoatC *this,STBoatC *param_1)
                 if (((((local_10 < 0) || (g_worldGrid.sizeX <= local_10)) || (local_e < 0)) ||
                     ((g_worldGrid.sizeY <= local_e || (local_c < 0)))) ||
                    (g_worldGrid.sizeZ <= local_c)) {
-                  this_00 = (STWorldObject *)0x0;
+                  this_00 = nullptr;
                 }
                 else {
                   this_00 = g_worldGrid.cells
@@ -306,7 +306,7 @@ undefined4 __thiscall STBoatC::Bring(STBoatC *this,STBoatC *param_1)
         }
         goto cf_common_exit_0047C74D;
       }
-      if (this->field_07CA != (AnonShape_005EFAE0_B406B78B *)0x0) {
+      if (this->field_07CA != nullptr) {
         return 2;
       }
       if (this->field_07C6 != 0) {
@@ -366,7 +366,7 @@ undefined4 __thiscall STBoatC::Bring(STBoatC *this,STBoatC *param_1)
      ((sVar3 < 0 || (((g_worldGrid.sizeY <= sVar3 || (sVar2 < 0)) || (g_worldGrid.sizeZ <= sVar2))))
      )) {
     /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
-    param_1 = (STBoatC *)0x0;
+    param_1 = nullptr;
   }
   else {
     /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
@@ -376,7 +376,7 @@ undefined4 __thiscall STBoatC::Bring(STBoatC *this,STBoatC *param_1)
                (int)sVar1].objects[0];
   }
   /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
-  if (((param_1 == (STBoatC *)0x0) || (param_1->field_0018 != this->field_0679)) ||
+  if (((param_1 == nullptr) || (param_1->field_0018 != this->field_0679)) ||
      (iVar7 = param_1->vfunc_F8(), iVar7 == 0)) {
 cf_common_exit_0047C74D:
     sub_004602B0(this);
@@ -411,7 +411,7 @@ switchD_0047c090_caseD_0:
       ((sVar3 < 0 || ((g_worldGrid.sizeY <= sVar3 || (sVar2 < 0)))))) ||
      (g_worldGrid.sizeZ <= sVar2)) {
     /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
-    param_1 = (STBoatC *)0x0;
+    param_1 = nullptr;
   }
   else {
     /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
@@ -421,7 +421,7 @@ switchD_0047c090_caseD_0:
                (int)sVar1].objects[0];
   }
   /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
-  if (((param_1 == (STBoatC *)0x0) || (param_1->field_0018 != this->field_0679)) ||
+  if (((param_1 == nullptr) || (param_1->field_0018 != this->field_0679)) ||
      (iVar7 = param_1->vfunc_F8(), iVar7 == 0)) goto cf_common_exit_0047C74D;
   iVar7 = thunk_FUN_004950b0(this,&this->field_067D,&this->field_067F,&this->field_0681);
   if (iVar7 != 1) goto cf_common_exit_0047C68C;

@@ -90,7 +90,7 @@ int __thiscall STJumpMineC::sub_00619C70(STJumpMineC *this)
       this->field_00D7 = local_c;
       this->field_00E3 = this->field_00A7;
       this->field_00A7 = local_c;
-      if (((void *)this->field_007D != (void *)0x0) &&
+      if (((void *)this->field_007D != nullptr) &&
          (iVar12 = thunk_FUN_00618240((void *)this->field_007D,this->field_009F,this->field_00A3,
                                       local_c,(undefined4 *)&this->field_0x11f), iVar12 != 0)) {
         if (this->field_014B != '\0') {
@@ -497,7 +497,7 @@ cf_common_exit_0061A55D:
     }
     break;
   case CASE_5:
-    if ((this->field_014B != '\0') && ((void *)this->field_007D != (void *)0x0)) {
+    if ((this->field_014B != '\0') && ((void *)this->field_007D != nullptr)) {
       thunk_FUN_00618900((void *)this->field_007D,this->field_0145,0);
       this->field_014B = 0;
     }
@@ -549,7 +549,7 @@ LAB_0061acc2:
       this->field_0093 = CASE_6;
     }
     pVVar1 = g_visibleClass_00802A88;
-    if (g_visibleClass_00802A88 != (VisibleClassTy *)0x0) {
+    if (g_visibleClass_00802A88 != nullptr) {
       iVar12 = (int)this->field_00CD;
       if ((((((DAT_0080874d == -1) || (g_visibleClass_00802A88->field_00F8 == 0)) ||
             (VisibleClassTy::sub_00558C00
@@ -558,7 +558,7 @@ LAB_0061acc2:
             )) || ((4 < iVar12 || (local_28 < 0)))) || (pVVar1->field_0030 <= local_28)) ||
          (((local_24 = g_centeredOffsets5[iVar12] + local_24, local_24 < 0 ||
            (pVVar1->field_0034 <= local_24)) ||
-          ((pVVar1->field_004C == (byte *)0x0 ||
+          ((pVVar1->field_004C == nullptr ||
            (pVVar1->field_004C[local_24 * pVVar1->field_0030 + local_28] != 0)))))) {
         if (this->field_00C4 == '\0') {
           Library::Ourlib::ST3DSMAP::SprShow(g_sT3DSMAPContext_00807598,this->field_0097,0);

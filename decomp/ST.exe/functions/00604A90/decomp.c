@@ -40,7 +40,7 @@ undefined4 * __thiscall STExplosionC::SaveObj(STExplosionC *this,uint *param_1)
   puStack_10 = &LAB_0072d964;
   local_14 = ExceptionList;
   local_1c = &stack0xffffff40;
-  local_48 = (AnonShape_00604A90_035626E6 *)0x0;
+  local_48 = nullptr;
   local_8c.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_8c;
   ExceptionList = &local_14;
@@ -71,12 +71,12 @@ undefined4 * __thiscall STExplosionC::SaveObj(STExplosionC *this,uint *param_1)
     local_48->field_00A1 = this->field_0276;
     local_48->field_00A5 = this->field_027A;
     local_48->field_00A9 = this->field_027E;
-    if ((uint *)this->field_0215 != (uint *)0x0) {
-      local_3c[0] = (uint *)0x0;
+    if ((uint *)this->field_0215 != nullptr) {
+      local_3c[0] = nullptr;
       local_3c[0] = (uint *)FUN_006b0020((uint *)this->field_0215,(int *)&local_20);
       uVar9 = *param_1 + local_20 + 4;
       *param_1 = uVar9;
-      local_48 = Library::DKW::LIB::MemRealloc((AnonPointee_TLOBaseTy_0607 *)local_48,uVar9);
+      local_48 = Library::DKW::LIB::MemRealloc(local_48,uVar9);
       *(uint *)((*param_1 - local_20) + -4 + (int)local_48) = local_20;
       puVar5 = local_3c[0];
       puVar11 = (uint *)((*param_1 - local_20) + (int)local_48);
@@ -98,7 +98,7 @@ undefined4 * __thiscall STExplosionC::SaveObj(STExplosionC *this,uint *param_1)
         local_24 = &stack0xffffff40;
         local_1c = &stack0xffffff40;
         do {
-          if (*ppHVar4 != (HoloTy *)0x0) {
+          if (*ppHVar4 != nullptr) {
             local_3c[0] = (uint *)thunk_FUN_0062af40(*ppHVar4,local_2c);
             iVar3 = iVar3 + 4 + local_2c[0];
             puVar7[1] = local_2c[0];
@@ -111,14 +111,14 @@ undefined4 * __thiscall STExplosionC::SaveObj(STExplosionC *this,uint *param_1)
       }
       uVar9 = *param_1;
       *param_1 = uVar9 + iVar3;
-      local_48 = Library::DKW::LIB::MemRealloc((AnonPointee_TLOBaseTy_0607 *)local_48,uVar9 + iVar3);
+      local_48 = Library::DKW::LIB::MemRealloc(local_48,uVar9 + iVar3);
       local_44 = (uint *)((*param_1 - iVar3) + (int)local_48);
       local_30 = 0;
       if (0 < this->field_0269) {
         puVar5 = (uint *)(local_24 + 4);
         local_b4 = &this->field_0219;
         do {
-          if (*local_b4 != (HoloTy *)0x0) {
+          if (*local_b4 != nullptr) {
             *local_44 = *puVar5;
             puVar10 = local_44 + 1;
             local_3c[0] = (uint *)puVar5[-1];
@@ -140,7 +140,7 @@ undefined4 * __thiscall STExplosionC::SaveObj(STExplosionC *this,uint *param_1)
   else {
     g_currentExceptionFrame = local_8c.previous;
     puVar2 = &stack0xffffff40;
-    if (local_48 != (AnonShape_00604A90_035626E6 *)0x0) {
+    if (local_48 != nullptr) {
       FreeAndNull(&local_48);
       puVar2 = local_1c;
     }

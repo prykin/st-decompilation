@@ -55,9 +55,9 @@ undefined4 __thiscall STGroupBoatC::DistributeTargets(STGroupBoatC *this,uint *p
   undefined1 local_5;
 
   uVar11 = 0;
-  local_10 = (DArrayTy *)0x0;
-  local_34 = (DArrayTy *)0x0;
-  local_30 = (DArrayTy *)0x0;
+  local_10 = nullptr;
+  local_34 = nullptr;
+  local_30 = nullptr;
   local_a4.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_a4;
   local_60 = this;
@@ -66,7 +66,7 @@ undefined4 __thiscall STGroupBoatC::DistributeTargets(STGroupBoatC *this,uint *p
   if (iVar3 != 0) {
     g_currentExceptionFrame = local_a4.previous;
     if (iVar3 == -0x5001fff7) {
-      if (local_10 != (DArrayTy *)0x0) {
+      if (local_10 != nullptr) {
         DArrayDestroy(local_10);
       }
       return 0;
@@ -79,7 +79,7 @@ undefined4 __thiscall STGroupBoatC::DistributeTargets(STGroupBoatC *this,uint *p
     RaiseInternalException(iVar3,0,"E:\\__titans\\wlad\\to_grpb.cpp",0x5ec);
     return 0xffffffff;
   }
-  if (local_60->field_020E == (DArrayTy *)0x0) {
+  if (local_60->field_020E == nullptr) {
     RaiseInternalException
               (-0x5001fff7,g_overwriteContext_007ED77C,"E:\\__titans\\wlad\\to_grpb.cpp",0x55a
               );
@@ -100,7 +100,7 @@ undefined4 __thiscall STGroupBoatC::DistributeTargets(STGroupBoatC *this,uint *p
         pSVar4 = (STBoatC *)
                  STAllPlayersC::GetObjPtr
                            (g_allPlayers_007FA174,this_00->field_0024,(ushort)local_c,CASE_1);
-        if (pSVar4 == (STBoatC *)0x0) {
+        if (pSVar4 == nullptr) {
           RaiseInternalException
                     (-0x5001fffc,g_overwriteContext_007ED77C,"E:\\__titans\\wlad\\to_grpb.cpp"
                      ,0x564);
@@ -249,7 +249,7 @@ undefined4 __thiscall STGroupBoatC::DistributeTargets(STGroupBoatC *this,uint *p
           if ((ushort)local_c != 0xffff) {
             objPtr = STAllPlayersC::GetObjPtr
                                (g_allPlayers_007FA174,this_00->field_0024,(ushort)local_c,CASE_1);
-            if (objPtr == (STGameObjC *)0x0) {
+            if (objPtr == nullptr) {
               RaiseInternalException
                         (-0x5001fffc,g_overwriteContext_007ED77C,
                          "E:\\__titans\\wlad\\to_grpb.cpp",0x5c4);
@@ -272,8 +272,8 @@ undefined4 __thiscall STGroupBoatC::DistributeTargets(STGroupBoatC *this,uint *p
               iVar3 = (*objPtr->vtable->vfunc_2C)();
               if (iVar3 == 0x17) {
                 pDVar15 = pDVar7;
-                if (pDVar7 == (DArrayTy *)0x0) {
-                  pDVar7 = Library::DKW::TBL::DArrayCreate((DArrayTy *)0x0,1,2,1);
+                if (pDVar7 == nullptr) {
+                  pDVar7 = Library::DKW::TBL::DArrayCreate(nullptr,1,2,1);
                   pDVar15 = pDVar7;
                   local_34 = pDVar7;
                 }
@@ -282,8 +282,8 @@ undefined4 __thiscall STGroupBoatC::DistributeTargets(STGroupBoatC *this,uint *p
                 iVar3 = thunk_FUN_00490d90(objPtr);
                 if (iVar3 == 0) break;
                 pDVar15 = local_30;
-                if (local_30 == (DArrayTy *)0x0) {
-                  local_30 = Library::DKW::TBL::DArrayCreate((DArrayTy *)0x0,1,2,1);
+                if (local_30 == nullptr) {
+                  local_30 = Library::DKW::TBL::DArrayCreate(nullptr,1,2,1);
                   pDVar15 = local_30;
                 }
               }
@@ -299,15 +299,15 @@ undefined4 __thiscall STGroupBoatC::DistributeTargets(STGroupBoatC *this,uint *p
       STAllPlayersC::RegisterPGPair
                 (g_allPlayers_007FA174,CONCAT31((int3)(local_14 >> 8),this_00->field_0024),
                  &pDVar7->flags,&local_30->flags);
-      if (pDVar7 != (DArrayTy *)0x0) {
+      if (pDVar7 != nullptr) {
         DArrayDestroy(pDVar7);
       }
-      if (pDVar15 != (DArrayTy *)0x0) {
+      if (pDVar15 != nullptr) {
         DArrayDestroy(pDVar15);
       }
     }
   }
-  if (local_10 != (DArrayTy *)0x0) {
+  if (local_10 != nullptr) {
     DArrayDestroy(local_10);
   }
   g_currentExceptionFrame = local_a4.previous;

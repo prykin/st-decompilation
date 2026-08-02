@@ -22,7 +22,7 @@ void __thiscall FUN_0056a960(void *this,byte param_1,byte param_2)
   /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
   cVar2 = '\x01' - *(char *)((int)this + (int)puVar1 * 8 + param_2 + 0x142f);
   *(char *)((int)this + (int)puVar1 * 8 + param_2 + 0x142f) = cVar2;
-  if ((g_visibleClass_00802A88 != (VisibleClassTy *)0x0) &&
+  if ((g_visibleClass_00802A88 != nullptr) &&
      (param_2 == *(byte *)((int)this + 0x112d))) {
     if (cVar2 == '\0') {
       VisibleClassTy::sub_0055B7F0(g_visibleClass_00802A88,0,puVar1);

@@ -27,7 +27,7 @@ void __thiscall FSGSTy::DoLogon(FSGSTy *this)
   iVar4 = Library::MSVCRT::__setjmp3(local_5c.jumpBuffer,0);
   this_00 = g_cursorClass_00802A30;
   if (iVar4 == 0) {
-    if (g_cursorClass_00802A30 != (CursorClassTy *)0x0) {
+    if (g_cursorClass_00802A30 != nullptr) {
       iVar4 = g_cursorClass_00802A30->field_00C9;
       iVar5 = g_cursorClass_00802A30->field_00C5;
       g_cursorClass_00802A30->field_0493 = CASE_1;
@@ -42,7 +42,7 @@ void __thiscall FSGSTy::DoLogon(FSGSTy *this)
     (*(code *)local_8->field_0000->field_0008)();
     pFVar3->field_1A61 = 2;
     pSVar1 = pFVar3->field_1A5B;
-    if (pSVar1->field_02E6 != (MMsgTy *)0x0) {
+    if (pSVar1->field_02E6 != nullptr) {
       local_18 = 0;
       local_14 = 0;
       local_10 = 0;

@@ -46,7 +46,7 @@ void __fastcall FUN_00521cf0(AnonShape_00521CF0_154649D2 *param_1)
       if (DAT_00808783 == '\x03') {
         local_10 = 1;
         if (local_14->field_0198->field_0008 < 1) {
-          pcVar7 = (char *)0x0;
+          pcVar7 = nullptr;
         }
         else {
           pcVar7 = (char *)*local_14->field_0198->field_0014;
@@ -69,13 +69,13 @@ void __fastcall FUN_00521cf0(AnonShape_00521CF0_154649D2 *param_1)
         FUN_006b7780(_Str1,_Str1);
         iVar6 = Library::MSVCRT::_strncmp(_Str1,"/WAITING",8);
         uVar10 = local_10;
-        if ((iVar6 == 0) && (uVar10 = 0, g_playSystem_00802A38 != (STPlaySystemC *)0x0)) {
+        if ((iVar6 == 0) && (uVar10 = 0, g_playSystem_00802A38 != nullptr)) {
           g_playSystem_00802A38->field_00F0 = (uint)(g_playSystem_00802A38->field_00F0 == 0);
           pcVar7 = LoadResourceString(0x2747 - (g_playSystem_00802A38->field_00F0 != 0),
                                       g_module_00807618);
           pcVar8 = LoadResourceString(0x42c3,g_module_00807618);
           wsprintfA((LPSTR)&DAT_0080f33a,"%s %s",pcVar8,pcVar7);
-          if (g_popUp_008016D8 != (PopUpTy *)0x0) {
+          if (g_popUp_008016D8 != nullptr) {
             if (DAT_0080874d == 0xff) {
               thunk_FUN_0052d320(g_popUp_008016D8,(char *)&DAT_0080f33a,8);
             }
@@ -91,7 +91,7 @@ void __fastcall FUN_00521cf0(AnonShape_00521CF0_154649D2 *param_1)
           pcVar7 = LoadResourceString(0x2747 - (byte)DAT_0080735e,g_module_00807618);
           pcVar8 = LoadResourceString(0x42c5,g_module_00807618);
           wsprintfA((LPSTR)&DAT_0080f33a,"%s %s",pcVar8,pcVar7);
-          if (g_popUp_008016D8 != (PopUpTy *)0x0) {
+          if (g_popUp_008016D8 != nullptr) {
             if (DAT_0080874d == 0xff) {
               uVar11 = 8;
             }
@@ -105,13 +105,13 @@ void __fastcall FUN_00521cf0(AnonShape_00521CF0_154649D2 *param_1)
         if (iVar6 == 0) {
           DAT_0080733c = (uint)(DAT_0080733c == 0);
           uVar10 = 0;
-          if (g_int_00811764 != (int *)0x0) {
+          if (g_int_00811764 != nullptr) {
             FUN_006b6500(g_int_00811764,DAT_0080733c);
           }
           pcVar7 = LoadResourceString(0x2747 - (DAT_0080733c != 0),g_module_00807618);
           pcVar8 = LoadResourceString(0x42c4,g_module_00807618);
           wsprintfA((LPSTR)&DAT_0080f33a,"%s %s",pcVar8,pcVar7);
-          if (g_popUp_008016D8 != (PopUpTy *)0x0) {
+          if (g_popUp_008016D8 != nullptr) {
             if (DAT_0080874d == 0xff) {
               uVar11 = 8;
             }
@@ -146,7 +146,7 @@ void __fastcall FUN_00521cf0(AnonShape_00521CF0_154649D2 *param_1)
           }
           if ((DAT_008067a0 != '\0') && (bVar12 == 0)) {
             if (local_14->field_0198->field_0008 < 1) {
-              pcVar7 = (char *)0x0;
+              pcVar7 = nullptr;
             }
             else {
               pcVar7 = (char *)*local_14->field_0198->field_0014;
@@ -160,7 +160,7 @@ void __fastcall FUN_00521cf0(AnonShape_00521CF0_154649D2 *param_1)
                 g_currentExceptionFrame = local_60.previous;
                 return;
               }
-              CFsgsConnection::SendChatMessage((CFsgsConnection *)&DAT_00802a90,(char *)0x0);
+              CFsgsConnection::SendChatMessage((CFsgsConnection *)&DAT_00802a90,nullptr);
               g_currentExceptionFrame = local_60.previous;
               return;
             }
@@ -202,7 +202,7 @@ void __fastcall FUN_00521cf0(AnonShape_00521CF0_154649D2 *param_1)
           }
           if ((bVar12 == 0) || (3 < bVar12)) {
             if (pAVar4->field_0198->field_0008 < 1) {
-              pcVar7 = (char *)0x0;
+              pcVar7 = nullptr;
             }
             else {
               pcVar7 = (char *)*pAVar4->field_0198->field_0014;
@@ -259,7 +259,7 @@ void __fastcall FUN_00521cf0(AnonShape_00521CF0_154649D2 *param_1)
             else {
               iVar13 = *pAVar4->field_0198->field_0014;
             }
-            if ((char *)(iVar13 + iVar6) == (char *)0x0) {
+            if ((char *)(iVar13 + iVar6) == nullptr) {
               uVar10 = 0xffffffff;
               pcVar7 = &DAT_008016a0;
               do {
@@ -274,6 +274,7 @@ void __fastcall FUN_00521cf0(AnonShape_00521CF0_154649D2 *param_1)
               pcVar7 = pcVar8 + -uVar10;
               pcVar8 = local_474;
               memmove(pcVar8, pcVar7, uVar10); /* compiler REP MOVS byte copy */
+              uVar11 = 0;
             }
             else {
               uVar10 = 0xffffffff;
@@ -341,8 +342,8 @@ LAB_005223b6:
                         bVar5 = iVar9 < 0;
                       }
                       else {
-                        bVar5 = (&DAT_008087ea)[(uint)DAT_0080874d * 0x51] !=
-                                (&DAT_008087ea)[(uint)bVar2 * 0x51];
+                        bVar5 = g_bulkInitializedRecords_008087C7[DAT_0080874d].field_0023 !=
+                                g_bulkInitializedRecords_008087C7[bVar2].field_0023;
                       }
                       if (bVar5) {
                         cVar1 = (&DAT_00808af6)[iVar13];
@@ -384,8 +385,8 @@ LAB_00522294:
                       bVar5 = iVar9 < 0;
                     }
                     else {
-                      bVar5 = (&DAT_008087ea)[(uint)DAT_0080874d * 0x51] !=
-                              (&DAT_008087ea)[(uint)bVar2 * 0x51];
+                      bVar5 = g_bulkInitializedRecords_008087C7[DAT_0080874d].field_0023 !=
+                              g_bulkInitializedRecords_008087C7[bVar2].field_0023;
                     }
                     if (!bVar5) {
                       cVar1 = (&DAT_00808af6)[iVar13];
@@ -400,7 +401,7 @@ LAB_00522294:
             }
           }
           wsprintfA((LPSTR)&DAT_0080f33a,s__s>__s_007c40dc,local_4b4,local_474);
-          if (g_popUp_008016D8 != (PopUpTy *)0x0) {
+          if (g_popUp_008016D8 != nullptr) {
             if (DAT_0080874d != 0xff) {
               thunk_FUN_0052d320(g_popUp_008016D8,(char *)&DAT_0080f33a,(uint)DAT_0080874d);
               g_currentExceptionFrame = local_60.previous;
@@ -418,7 +419,7 @@ LAB_00522294:
           g_currentExceptionFrame = local_60.previous;
           return;
         }
-        thunk_FUN_00522810((char *)0x0);
+        thunk_FUN_00522810(nullptr);
       }
       g_currentExceptionFrame = local_60.previous;
       return;

@@ -1,7 +1,7 @@
 schema_version	1
 program	ST.exe
-semantic_sha256	bd43eb9700faec73b3d6df85523e96843104c90a57350ad5582b6a0d6c4e486a
-packed_sha256	1a6737919aacda37c18a742d123dbf1e9e3f110823eeccd6f7ebab0e81606a75
-packed_size	27055187
+semantic_sha256	28da1cff33c1e5e2d36ced5343d23cf69cb7970c7a8c7f3bb13cdc50671e3321
+packed_sha256	4565dc08aa8866cb5e3a2ab91022eaa6868595e8895d9af55895bdd284c8921b
+packed_size	27072074
 packed_normalization	zip-dos-time-1980-01-01+private-metadata-v5
 packed_file	ST.exe.gzf

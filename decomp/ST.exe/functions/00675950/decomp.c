@@ -46,7 +46,7 @@ FUN_00675950(int param_1,int param_2,short param_3,short *param_4,short *param_5
           if ((iVar2 != 0) &&
              (g_worldGrid.cells
               [(int)g_worldGrid.planeStride * (int)sVar5 + (int)g_worldGrid.sizeX * (int)sVar8 +
-               (int)sVar7].objects[param_7] == (STWorldObject *)0x0)) {
+               (int)sVar7].objects[param_7] == nullptr)) {
             *param_4 = sVar7;
             *param_5 = sVar8;
             *param_6 = sVar5;

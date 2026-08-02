@@ -14,14 +14,14 @@ int __thiscall STMineSetC::sub_0041D6C0(STMineSetC *this,uint param_1)
   int iVar1;
   int iVar2;
 
-  if ((g_visibleClass_00802A88 == (VisibleClassTy *)0x0) || (DAT_0080874d == -1)) {
+  if ((g_visibleClass_00802A88 == nullptr) || (DAT_0080874d == -1)) {
     return 0;
   }
   iVar1 = (int)this->field_005B;
   iVar2 = (int)this->field_005D;
   if ((((-1 < iVar1) && (iVar1 < g_visibleClass_00802A88->field_0020)) && (-1 < iVar2)) &&
      (((iVar2 < g_visibleClass_00802A88->field_0024 && (param_1 < 8)) &&
-      (g_visibleClass_00802A88->field_00D4[param_1] != (byte *)0x0)))) {
+      (g_visibleClass_00802A88->field_00D4[param_1] != nullptr)))) {
     return (uint)(g_visibleClass_00802A88->field_00D4[param_1]
                   [iVar1 + g_visibleClass_00802A88->field_0020 * iVar2] != 0);
   }

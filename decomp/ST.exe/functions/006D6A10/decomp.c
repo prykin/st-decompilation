@@ -97,7 +97,7 @@ int __thiscall FUN_006d6a10(void *this,int *param_1)
         if (BVar7 != 0) {
           iVar3 = *(int *)(*(int *)((int)this + 0x288) + 0x28);
           pcVar5 = *(code **)(iVar3 + 0x4e4);
-          if (pcVar5 != (code *)0x0) {
+          if (pcVar5 != nullptr) {
             (*pcVar5)(*(undefined4 *)(iVar3 + 0x4ec),local_54.left,local_54.top,
                       local_54.right - local_54.left,local_54.bottom - local_54.top);
           }

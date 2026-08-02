@@ -12,10 +12,10 @@ AiFltClassTy * __cdecl CreateAiFlt(void)
   AiFltClassTy *pAVar1;
 
   pAVar1 = (AiFltClassTy *)FUN_006b04d0(0x288);
-  if (pAVar1 != (AiFltClassTy *)0x0) {
+  if (pAVar1 != nullptr) {
     pAVar1 = AiFltClassTy::AiFltClassTy(pAVar1);
     return pAVar1;
   }
-  return (AiFltClassTy *)0x0;
+  return nullptr;
 }
 

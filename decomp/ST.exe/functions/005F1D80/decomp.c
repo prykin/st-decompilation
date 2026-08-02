@@ -14,7 +14,7 @@ VisibleClassTy::sub_005F1D80(VisibleClassTy *this,int param_1,int param_2,int pa
     sub_00558C00(this,this->field_010C,param_1,param_2,&param_2,&param_1);
     if ((((-1 < param_3) && (((param_3 < 5 && (-1 < param_2)) && (param_2 < this->field_0030)))) &&
         (((iVar1 = g_centeredOffsets5[param_3] + param_1, -1 < iVar1 && (iVar1 < this->field_0034))
-         && (this->field_004C != (byte *)0x0)))) &&
+         && (this->field_004C != nullptr)))) &&
        (this->field_004C[param_2 + iVar1 * this->field_0030] == 0)) {
       return 0;
     }

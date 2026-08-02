@@ -10,26 +10,26 @@ undefined4 __thiscall FUN_0074c96c(void *this,int param_1)
   local_8 = 0;
   if (*(int *)((int)this + 0x8c) == 0) {
     pvVar1 = (void *)Library::MSVCRT::FUN_0072e530(0xe8);
-    if (pvVar1 == (void *)0x0) {
-      puVar2 = (undefined4 *)0x0;
+    if (pvVar1 == nullptr) {
+      puVar2 = nullptr;
     }
     else {
       puVar2 = FUN_0074cdc5(pvVar1,0,(int)this,&local_8,(char *)"Input");
     }
     *(undefined4 **)((int)this + 0x8c) = puVar2;
-    if (puVar2 == (undefined4 *)0x0) goto LAB_0074c9fe;
+    if (puVar2 == nullptr) goto LAB_0074c9fe;
   }
   if (*(int *)((int)this + 0x90) == 0) {
     pvVar1 = (void *)Library::MSVCRT::FUN_0072e530(0xb0);
-    if (pvVar1 == (void *)0x0) {
-      puVar2 = (undefined4 *)0x0;
+    if (pvVar1 == nullptr) {
+      puVar2 = nullptr;
     }
     else {
       puVar2 = FUN_0074cfc0(pvVar1,0,(int)this,&local_8,(char *)"Output");
     }
     *(undefined4 **)((int)this + 0x90) = puVar2;
-    if (puVar2 == (undefined4 *)0x0) {
-      if (*(int **)((int)this + 0x8c) != (int *)0x0) {
+    if (puVar2 == nullptr) {
+      if (*(int **)((int)this + 0x8c) != nullptr) {
         /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
         (**(code **)(**(int **)((int)this + 0x8c) + 0xc))(1);
       }

@@ -36,7 +36,7 @@ void __thiscall FUN_00567c10(void *this,int *param_1)
       do {
         iVar3 = local_8;
         local_18 = piVar11;
-        FUN_006c1f00(local_8,&local_20,(uint *)0x0);
+        FUN_006c1f00(local_8,&local_20,nullptr);
         if (((local_20 == 1) &&
             ((((3 < iVar3 && (iVar3 < 0xb)) || ((0x11 < iVar3 && (iVar3 < 0x15)))) ||
              ((10 < iVar3 && (iVar3 < 0x12)))))) && (piVar11[2] == param_1[2])) {

@@ -15,7 +15,7 @@ BldLabPanelTy * __cdecl CreateBldLabPanel(void)
   undefined4 *puVar2;
 
   this = (BldLabPanelTy *)FUN_006b04d0(0x27e);
-  if (this != (BldLabPanelTy *)0x0) {
+  if (this != nullptr) {
     sub_006E5FB0(this);
     this->field_005C = 0;
     this->field_0060 = 0xffffffff;
@@ -24,9 +24,9 @@ BldLabPanelTy * __cdecl CreateBldLabPanel(void)
     *(undefined2 *)&this->field_0x172 = 2;
     *(undefined4 *)&this->field_0x178 = 0;
     *(undefined4 *)&this->field_0x17c = 0;
-    this->field_0184 = (ushort *)0x0;
+    this->field_0184 = nullptr;
     this->field_0190 = 0;
-    this->field_0188 = (ushort *)0x0;
+    this->field_0188 = nullptr;
     *(undefined4 *)&this->field_0x19d = 0;
     *(undefined4 *)&this->field_0x180 = 0;
     this->field_01A1 = 0;
@@ -48,9 +48,9 @@ BldLabPanelTy * __cdecl CreateBldLabPanel(void)
     *(undefined4 *)&this->field_0x48 = 0x78;
     this->field_0x194 = 0;
     *(undefined4 *)&this->field_0x195 = 0;
-    this->field_027A = (DArrayTy *)0x0;
+    this->field_027A = nullptr;
     return this;
   }
-  return (BldLabPanelTy *)0x0;
+  return nullptr;
 }
 

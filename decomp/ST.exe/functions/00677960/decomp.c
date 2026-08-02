@@ -40,7 +40,7 @@ _EnumRCField(short param_1,short param_2,short param_3,short param_4,short param
     RaiseInternalException(iVar2,0,"E:\\__titans\\ai\\ai_mdef.cpp",0x380);
     return iVar2;
   }
-  if (g_array_007FA15C == (DArrayTy *)0x0) {
+  if (g_array_007FA15C == nullptr) {
     RaiseInternalException
               (-0x34,g_overwriteContext_007ED77C,"E:\\__titans\\ai\\ai_mdef.cpp",0x36b);
   }
@@ -52,10 +52,10 @@ _EnumRCField(short param_1,short param_2,short param_3,short param_4,short param
         puVar3 = (undefined4 *)(g_array_007FA15C->elementSize * uVar6 + (int)g_array_007FA15C->data);
       }
       else {
-        puVar3 = (undefined4 *)0x0;
+        puVar3 = nullptr;
       }
       this = (STFishC *)*puVar3;
-      if ((this != (STFishC *)0x0) &&
+      if ((this != nullptr) &&
          ((local_10 = uVar6, param_1 == 0 ||
           (dVar4 = this->slot_2C(), (int)param_1 == dVar4)))) {
         iVar2 = 1;
@@ -71,7 +71,7 @@ _EnumRCField(short param_1,short param_2,short param_3,short param_4,short param
         }
         uVar6 = local_10;
         /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-        if (((iVar2 != 0) && (param_8 != (undefined *)0x0)) &&
+        if (((iVar2 != 0) && (param_8 != nullptr)) &&
            (iVar2 = (*(code *)param_8)(0,local_10,this,param_9), iVar2 != 0)) {
           g_currentExceptionFrame = local_5c.previous;
           return -1;

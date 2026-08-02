@@ -28,7 +28,7 @@ uint __cdecl FUN_0067f950(byte *param_1)
   iVar4 = PTR_00848a34->field_0008;
   if (0 < iVar4) {
     if (iVar4 < 1) {
-      pAVar5 = (AnonNested_AnonShape_GLOBAL_00848A34_1A834A18_0014_B03F56A9 *)0x0;
+      pAVar5 = nullptr;
       pbVar2 = param_1;
       goto LAB_0067f9ac;
     }

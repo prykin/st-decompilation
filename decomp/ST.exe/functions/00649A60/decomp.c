@@ -16,7 +16,7 @@ undefined4 * __cdecl CreatePlrData(int param_1)
   InternalExceptionFrame local_4c;
   undefined4 *local_8;
 
-  local_8 = (undefined4 *)0x0;
+  local_8 = nullptr;
   local_4c.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_4c;
   errorCode = Library::MSVCRT::__setjmp3(local_4c.jumpBuffer,0);
@@ -28,10 +28,10 @@ undefined4 * __cdecl CreatePlrData(int param_1)
       STDebugBreak(); /* noreturn in standalone pseudocode */
     }
     RaiseInternalException(errorCode,0,"E:\\__titans\\ai\\ai_creat.cpp",0x179);
-    return (undefined4 *)0x0;
+    return nullptr;
   }
-  if ((&DAT_008087e8)[param_1 * 0x51] != '\x01') {
-    if ((&DAT_008087e8)[param_1 * 0x51] != '\x02') {
+  if (g_bulkInitializedRecords_008087C7[param_1].field_0021 != 1) {
+    if (g_bulkInitializedRecords_008087C7[param_1].field_0021 != 2) {
       RaiseInternalException
                 (-5,g_overwriteContext_007ED77C,"E:\\__titans\\ai\\ai_creat.cpp",0x175);
       g_currentExceptionFrame = local_4c.previous;

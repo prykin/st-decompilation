@@ -92,7 +92,7 @@ void __thiscall PrividerTy::CreateCtrls(PrividerTy *this,char param_1)
   }
   ppcVar6 = local_dd0;
   for (iVar4 = 0x223; iVar4 != 0; iVar4 = iVar4 + -1) {
-    *ppcVar6 = (ccFntTy *)0x0;
+    *ppcVar6 = nullptr;
     ppcVar6 = ppcVar6 + 1;
   }
   local_70.previous = g_currentExceptionFrame;
@@ -126,7 +126,7 @@ LAB_005bbb22:
   if (param_1 == '\0') {
     if (local_5 == '\0') {
       local_d84 = local_10->field_0008;
-      local_dd0[0] = (ccFntTy *)0x0;
+      local_dd0[0] = nullptr;
       local_dd0[1] = (ccFntTy *)0x9;
       local_dd0[2] = g_startSystem_0081176C->field_0030;
       local_db0 = local_10->field_1C92;
@@ -138,13 +138,13 @@ LAB_005bbb22:
       local_d80 = 2;
       local_d7c = 0x631f;
       (*local_10->field_000C->vtable->CreateObject)
-                ((SystemClassTy *)local_10->field_000C,6,&local_10->field_1C86,(int *)0x0,local_dd0,
+                ((SystemClassTy *)local_10->field_000C,6,&local_10->field_1C86,nullptr,local_dd0,
                  0);
       this_00->field_002D = 0x20;
       this_00->field_0031 = 1;
       FUN_006e6080(this_00,2,this_00->field_1A73,(undefined4 *)&this_00->field_0x1d);
     }
-    if (this_00->field_1A5B->field_02E6 != (MMsgTy *)0x0) {
+    if (this_00->field_1A5B->field_02E6 != nullptr) {
       memset(&local_2c, 0, 0x1a); /* compiler bulk-zero initialization */
       /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
       local_2c._2_2_ = (-(ushort)(local_544[6] != 0) & 2) - 1;
@@ -215,7 +215,7 @@ LAB_005bbb22:
     local_234 = local_51c;
     local_c4 = local_51c;
     (*local_10->field_000C->vtable->CreateObject)
-              ((SystemClassTy *)local_10->field_000C,7,&local_10->field_1A73,(int *)0x0,local_544,0);
+              ((SystemClassTy *)local_10->field_000C,7,&local_10->field_1A73,nullptr,local_544,0);
   }
   this_00->field_0031 = 0;
   puVar1 = &this_00->field_0x1d;

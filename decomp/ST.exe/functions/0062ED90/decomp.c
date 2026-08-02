@@ -42,7 +42,7 @@ int __thiscall STRubbishC::RubbishCreatePart(STRubbishC *this)
       local_8 = iVar7;
       puVar4 = Library::DKW::LIB::MemAlloc(0x3e);
       (&local_c->field_01E5)[iVar2] = puVar4;
-      if (puVar4 != (undefined4 *)0x0) {
+      if (puVar4 != nullptr) {
         for (iVar7 = 0xf; iVar7 != 0; iVar7 = iVar7 + -1) {
           *puVar4 = 0;
           puVar4 = puVar4 + 1;
@@ -51,7 +51,7 @@ int __thiscall STRubbishC::RubbishCreatePart(STRubbishC *this)
         iVar7 = iVar2;
         if (local_c->field_01F9 != '\0') {
           pAVar5 = (AnonShape_004AB810_8E5693D5 *)Library::MSVCRT::FUN_0072e530(0x40);
-          if (pAVar5 == (AnonShape_004AB810_8E5693D5 *)0x0) {
+          if (pAVar5 == nullptr) {
             uVar6 = 0;
           }
           else {

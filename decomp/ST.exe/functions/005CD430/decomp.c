@@ -16,16 +16,14 @@
 void __thiscall SettMapMTy::PrepPlList(SettMapMTy *this,int *param_1)
 
 {
-  SettMapMTy_field_1E26State SVar1;
-  char cVar2;
+  char cVar1;
+  SettMapMTy_field_1E26State SVar2;
   byte bVar3;
   code *pcVar4;
   int iVar5;
   SettMapMTy_field_1F84DArray *pSVar6;
   char *pcVar7;
   SettMapMTy_field_1F84Element *element_1f84;
-  SettMapMTy_field_1F84Element *element_1f84_2;
-  SettMapMTy_field_1F84Element *element_1f84_3;
   int iVar8;
   byte *pbVar9;
   uint uVar10;
@@ -40,20 +38,19 @@ void __thiscall SettMapMTy::PrepPlList(SettMapMTy *this,int *param_1)
   undefined1 uStack_70;
   undefined1 uStack_6f;
   int local_6e;
-  char local_2a;
+  byte local_2a;
   undefined4 local_29;
   undefined1 local_25;
   uint *local_24;
-  undefined4 local_20;
-  undefined4 local_1c;
-  undefined4 local_18;
+  uint local_20;
+  uint local_1c;
+  uint local_18;
   byte *local_14;
   SettMapMTy *local_10;
-  char *local_c;
+  byte *local_c;
   cMf32 *local_8;
 
-  /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-  this->field_211C = DAT_008087c4._2_1_;
+  this->field_211C = DAT_008087c6;
   local_b8.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_b8;
   local_10 = this;
@@ -69,27 +66,28 @@ void __thiscall SettMapMTy::PrepPlList(SettMapMTy *this,int *param_1)
     RaiseInternalException(iVar5,0,"E:\\__titans\\Start\\settmobj.cpp",0x1cb);
     return;
   }
-  SVar1 = local_10->field_1E26;
-  if ((((SVar1 == CASE_5) || (SVar1 == CASE_F)) || (SVar1 == CASE_C)) || (SVar1 == CASE_10)) {
+  SVar2 = local_10->field_1E26;
+  if ((((SVar2 == CASE_5) || (SVar2 == CASE_F)) || (SVar2 == CASE_C)) || (SVar2 == CASE_10)) {
     local_8 = local_10->field_1F3F;
   }
   else {
     local_8 = local_10->field_1F43;
   }
   pSVar6 = local_10->field_1F84;
-  if (pSVar6 != (SettMapMTy_field_1F84DArray *)0x0) {
+  if (pSVar6 != nullptr) {
     uVar12 = 0;
     if (0 < (int)pSVar6->count) {
       bVar17 = pSVar6->count != 0;
       do {
         if (bVar17) {
-          element_1f84 = DArrayAt<SettMapMTy_field_1F84Element>(pSVar6, uVar12);
+          /* ST_PSEUDO[dynamic_array_indexing]: expected DArrayAt<T>(array, index) (runtime elementSize cannot be a static C array) */
+          pcVar7 = &pSVar6->data->field_0000 + pSVar6->elementSize * uVar12;
         }
         else {
-          element_1f84 = (SettMapMTy_field_1F84Element *)0x0;
+          pcVar7 = nullptr;
         }
-        if ((element_1f84 != (SettMapMTy_field_1F84Element *)0x0) && (element_1f84->handle != (DArrayTy *)0x0)) {
-          DArrayDestroy(element_1f84->handle);
+        if ((pcVar7 != nullptr) && (*(DArrayTy **)(pcVar7 + 0x50) != nullptr)) {
+          DArrayDestroy(*(DArrayTy **)(pcVar7 + 0x50));
         }
         pSVar6 = pSVar11->field_1F84;
         uVar12 = uVar12 + 1;
@@ -98,39 +96,39 @@ void __thiscall SettMapMTy::PrepPlList(SettMapMTy *this,int *param_1)
     }
     DArrayDestroy((DArrayTy *)pSVar11->field_1F84);
   }
-  pSVar6 = (SettMapMTy_field_1F84DArray *)Library::DKW::TBL::DArrayCreate((DArrayTy *)0x0,8,0x60,8);
+  pSVar6 = (SettMapMTy_field_1F84DArray *)Library::DKW::TBL::DArrayCreate(nullptr,8,0x60,8);
   pSVar11->field_1F84 = pSVar6;
   if ((pSVar11->field_1E26 != CASE_C) && (pSVar11->field_1E26 != CASE_10)) {
     DAT_0080874d = -1;
     DAT_0080874e = '\0';
   }
   if (DAT_0080877e != '\0') {
-    local_c = &DAT_008087e8;
+    local_c = &g_bulkInitializedRecords_008087C7[0].field_0021;
     do {
-      pcVar7 = local_c;
-      cVar2 = local_c[1];
-      if (cVar2 != -1) {
+      pbVar13 = local_c;
+      bVar3 = local_c[1];
+      if (bVar3 != 0xff) {
         memset(&local_74, 0, 0x60); /* compiler bulk-zero initialization */
         /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
         local_74._0_1_ = 1;
         /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
         local_74._1_1_ = 1;
-        if (((DAT_00807dd1 & 0xffff0000) == 0xd0dd0000) && (*pcVar7 == '\x03')) {
+        if (((DAT_00807dd1 & 0xffff0000) == 0xd0dd0000) && (*pbVar13 == 3)) {
           /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-          local_74._3_1_ = '\x01';
+          local_74._3_1_ = 1;
         }
         else {
           /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-          local_74._3_1_ = *pcVar7;
+          local_74._3_1_ = *pbVar13;
         }
         /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-        local_74._2_1_ = cVar2;
+        local_74._2_1_ = bVar3;
         switch(pSVar11->field_1E26) {
         /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
         case CASE_5:
         case CASE_F:
           local_24 = CreateStrategList((int)local_8,
-                                       CONCAT12(uStack_70,CONCAT11(local_74._3_1_,cVar2)) & 0xff,
+                                       CONCAT12(uStack_70,CONCAT11(local_74._3_1_,bVar3)) & 0xff,
                                        0xffffffff);
           break;
         /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
@@ -144,16 +142,16 @@ void __thiscall SettMapMTy::PrepPlList(SettMapMTy *this,int *param_1)
         case CASE_10:
           local_24 = CreateSaveStrategList
                                ((int)local_8,
-                                CONCAT12(uStack_70,CONCAT11(local_74._3_1_,cVar2)) & 0xff,0xffffffff
+                                CONCAT12(uStack_70,CONCAT11(local_74._3_1_,bVar3)) & 0xff,0xffffffff
                                );
         }
-        if (pcVar7[-0x21] == '\x01') {
-          SVar1 = pSVar11->field_1E26;
-          if (((SVar1 == CASE_5) || (SVar1 == CASE_C)) || (SVar1 == CASE_10)) {
+        if (*(char *)(pbVar13 + -0x21) == '\x01') {
+          SVar2 = pSVar11->field_1E26;
+          if (((SVar2 == CASE_5) || (SVar2 == CASE_C)) || (SVar2 == CASE_10)) {
             uStack_70 = 4;
             uVar12 = 0;
             if (0 < (int)local_24[3]) {
-              local_14 = (byte *)(pcVar7 + -0x20);
+              local_14 = pbVar13 + -0x20;
               bVar17 = local_24[3] != 0;
               do {
                 if (bVar17) {
@@ -182,7 +180,7 @@ LAB_005cd670:
                 iVar5 = 0;
 LAB_005cd675:
                 pSVar11 = local_10;
-                pcVar7 = local_c;
+                pbVar13 = local_c;
                 if (iVar5 == 0) {
                   uStack_6f = (undefined1)uVar12;
                   break;
@@ -199,16 +197,16 @@ LAB_005cd675:
         else {
           uStack_70 = 1;
         }
-        local_20 = *(undefined4 *)(pcVar7 + 3);
-        local_2a = pcVar7[2];
+        local_20 = *(uint *)(pbVar13 + 3);
+        local_2a = pbVar13[2];
         local_6e = DAT_0080877f;
-        local_1c = *(undefined4 *)(pcVar7 + 7);
-        local_18 = *(undefined4 *)(pcVar7 + 0xb);
+        local_1c = *(uint *)(pbVar13 + 7);
+        local_18 = *(uint *)(pbVar13 + 0xb);
         local_29 = 0;
         local_25 = 1;
         Library::DKW::TBL::DArrayAppend((DArrayTy *)pSVar11->field_1F84,&local_74);
       }
-      local_c = pcVar7 + 0x51;
+      local_c = pbVar13 + 0x51;
     } while ((int)local_c < 0x808a70);
     if (pSVar11->field_1E26 == CASE_C) {
       pSVar6 = pSVar11->field_1F84;
@@ -218,13 +216,14 @@ LAB_005cd675:
         bVar17 = uVar12 != 0;
         do {
           if (bVar17) {
-            element_1f84_2 = DArrayAt<SettMapMTy_field_1F84Element>(pSVar6, uVar10);
+            /* ST_PSEUDO[dynamic_array_indexing]: expected DArrayAt<T>(array, index) (runtime elementSize cannot be a static C array) */
+            pcVar7 = &pSVar6->data->field_0000 + pSVar6->elementSize * uVar10;
           }
           else {
-            element_1f84_2 = (SettMapMTy_field_1F84Element *)0x0;
+            pcVar7 = nullptr;
           }
-          if (((element_1f84_2 != (SettMapMTy_field_1F84Element *)0x0) && (element_1f84_2->field_0004 == '\x01')) &&
-             ((DAT_0080874d == element_1f84_2->state && (DAT_0080874e == element_1f84_2->field_0003)))) {
+          if (((pcVar7 != nullptr) && (pcVar7[4] == '\x01')) &&
+             ((DAT_0080874d == pcVar7[2] && (DAT_0080874e == pcVar7[3])))) {
             pcVar7 = &DAT_00807e1d;
             if (DAT_008067a0 == '\0') {
               pcVar7 = (char *)&DAT_00807ddd;
@@ -245,15 +244,15 @@ LAB_005cd675:
         bVar17 = uVar12 != 0;
         do {
           if (bVar17) {
-            element_1f84_3 = DArrayAt<SettMapMTy_field_1F84Element>(pSVar6, uVar10);
+            element_1f84 = DArrayAt<SettMapMTy_field_1F84Element>(pSVar6, uVar10);
           }
           else {
-            element_1f84_3 = (SettMapMTy_field_1F84Element *)0x0;
+            element_1f84 = nullptr;
           }
-          if (((element_1f84_3 != (SettMapMTy_field_1F84Element *)0x0) && (element_1f84_3->field_0004 == '\x01')) && (element_1f84_3->state != -1)) {
-            DAT_0080874d = element_1f84_3->state;
-            element_1f84_3->field_0004 = '\x02';
-            DAT_0080874e = element_1f84_3->field_0003;
+          if (((element_1f84 != nullptr) && (element_1f84->field_0004 == '\x01')) && (element_1f84->state != -1)) {
+            DAT_0080874d = element_1f84->state;
+            element_1f84->field_0004 = '\x02';
+            DAT_0080874e = element_1f84->field_0003;
             pcVar15 = &DAT_00807e1d;
             if (DAT_008067a0 == '\0') {
               pcVar15 = (char *)&DAT_00807ddd;
@@ -276,9 +275,9 @@ LAB_005cd7f2:
   while( true ) {
     uVar12 = uVar12 - 1;
     pcVar16 = pcVar15 + 1;
-    cVar2 = *pcVar15;
+    cVar1 = *pcVar15;
     pcVar15 = pcVar16;
-    if (cVar2 == '\0') break;
+    if (cVar1 == '\0') break;
 code_r0x005cd7da:
     pcVar16 = pcVar15;
     if (uVar12 == 0) break;

@@ -12,11 +12,11 @@ STManRub3C * __thiscall STManRub3C::STManRub3C(STManRub3C *this)
 
   sub_006E60E0(this);
   this->vtable = &STManRub3CVTable;
-  if (this != (STManRub3C *)0x0) {
+  if (this != nullptr) {
     memset(&this->field_001C, 0, 0x98); /* compiler bulk-zero initialization */
     return this;
   }
-  memset((void *)0x0, 0, 0x98); /* compiler bulk-zero initialization */
-  return (STManRub3C *)0x0;
+  memset(nullptr, 0, 0x98); /* compiler bulk-zero initialization */
+  return nullptr;
 }
 

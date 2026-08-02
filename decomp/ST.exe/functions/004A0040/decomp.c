@@ -43,8 +43,8 @@ undefined4 __thiscall STGroupBoatC::GrpDismant(STGroupBoatC *this,int param_1)
 
   /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
   local_10 = *(uint *)(this->field_0029 + 0xc);
-  local_c = (DArrayTy *)0x0;
-  local_14 = (DArrayTy *)0x0;
+  local_c = nullptr;
+  local_14 = nullptr;
   local_78.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_78;
   local_24 = this;
@@ -80,7 +80,7 @@ undefined4 __thiscall STGroupBoatC::GrpDismant(STGroupBoatC *this,int param_1)
     sVar3 = *(short *)&pSVar6->field_0x2f0;
     if ((((sVar1 < 0) || (g_worldGrid.sizeX <= sVar1)) || (sVar3 < 0)) ||
        (((g_worldGrid.sizeY <= sVar3 || (sVar2 < 0)) || (g_worldGrid.sizeZ <= sVar2)))) {
-      pAVar15 = (AnonShape_004B9D90_4F3151F9 *)0x0;
+      pAVar15 = nullptr;
     }
     else {
       pAVar15 = (AnonShape_004B9D90_4F3151F9 *)
@@ -88,7 +88,7 @@ undefined4 __thiscall STGroupBoatC::GrpDismant(STGroupBoatC *this,int param_1)
                 [(int)g_worldGrid.planeStride * (int)sVar2 + (int)g_worldGrid.sizeX * (int)sVar3 +
                  (int)sVar1].objects[0];
     }
-    if (((pAVar15 == (AnonShape_004B9D90_4F3151F9 *)0x0) || (*(int *)&pAVar15->field_0x20 != 1000))
+    if (((pAVar15 == nullptr) || (*(int *)&pAVar15->field_0x20 != 1000))
        || ((*(int *)&pAVar15->field_0x24 != (int)pSVar6->field_0024 ||
            (iVar7 = thunk_FUN_004b9d90(pAVar15), iVar7 == 0)))) {
       RaiseInternalException
@@ -118,7 +118,7 @@ undefined4 __thiscall STGroupBoatC::GrpDismant(STGroupBoatC *this,int param_1)
           pSVar8 = (STBoatC *)
                    STAllPlayersC::GetObjPtr
                              (g_allPlayers_007FA174,pSVar6->field_0024,local_8._0_2_,CASE_1);
-          if (pSVar8 == (STBoatC *)0x0) {
+          if (pSVar8 == nullptr) {
             RaiseInternalException
                       (-0x5001fffc,g_overwriteContext_007ED77C,
                        "E:\\__titans\\wlad\\to_grpb.cpp",0xcd4);
@@ -126,8 +126,8 @@ undefined4 __thiscall STGroupBoatC::GrpDismant(STGroupBoatC *this,int param_1)
           dVar9 = pSVar8->slot_2C();
           if (((dVar9 == 0xc) || (dVar9 = pSVar8->slot_2C(), dVar9 == 0x18)) ||
              (dVar9 = pSVar8->slot_2C(), dVar9 == 0x1d)) {
-            if (array_00 == (DArrayTy *)0x0) {
-              array_00 = Library::DKW::TBL::DArrayCreate((DArrayTy *)0x0,1,2,1);
+            if (array_00 == nullptr) {
+              array_00 = Library::DKW::TBL::DArrayCreate(nullptr,1,2,1);
               local_14 = array_00;
             }
             Library::DKW::TBL::DArrayAppend(array_00,local_8);
@@ -137,8 +137,8 @@ undefined4 __thiscall STGroupBoatC::GrpDismant(STGroupBoatC *this,int param_1)
           else {
             iVar7 = thunk_FUN_00490d90((STGameObjC *)pSVar8);
             if (iVar7 != 0) {
-              if (local_c == (DArrayTy *)0x0) {
-                local_c = Library::DKW::TBL::DArrayCreate((DArrayTy *)0x0,1,2,1);
+              if (local_c == nullptr) {
+                local_c = Library::DKW::TBL::DArrayCreate(nullptr,1,2,1);
               }
               Library::DKW::TBL::DArrayAppend(local_c,local_8);
               goto LAB_004a02d6;
@@ -158,10 +158,10 @@ LAB_004a02d6:
     STAllPlayersC::RegisterPGPair
               (g_allPlayers_007FA174,CONCAT31((int3)(uVar12 >> 8),pSVar6->field_0024),
                &array_00->flags,&local_c->flags);
-    if (array_00 != (DArrayTy *)0x0) {
+    if (array_00 != nullptr) {
       DArrayDestroy(array_00);
     }
-    if (array != (DArrayTy *)0x0) {
+    if (array != nullptr) {
       DArrayDestroy(array);
     }
   }
@@ -179,7 +179,7 @@ LAB_004a02d6:
           pSVar8 = (STBoatC *)
                    STAllPlayersC::GetObjPtr
                              (g_allPlayers_007FA174,pSVar6->field_0024,local_8._0_2_,CASE_1);
-          if (pSVar8 == (STBoatC *)0x0) {
+          if (pSVar8 == nullptr) {
             RaiseInternalException
                       (-0x5001fffc,g_overwriteContext_007ED77C,
                        "E:\\__titans\\wlad\\to_grpb.cpp",0xcf6);

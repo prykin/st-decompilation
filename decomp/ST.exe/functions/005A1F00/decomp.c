@@ -40,8 +40,8 @@ FSGSTy::AddMessage(FSGSTy *this,byte param_1,byte *param_2,char *param_3,byte pa
   uint *local_c;
   char local_5;
 
-  local_c = (uint *)0x0;
-  if ((param_3 == (char *)0x0) || (param_2 == (byte *)0x0)) {
+  local_c = nullptr;
+  if ((param_3 == nullptr) || (param_2 == nullptr)) {
     return;
   }
   local_5c.previous = g_currentExceptionFrame;
@@ -76,7 +76,7 @@ FSGSTy::AddMessage(FSGSTy *this,byte param_1,byte *param_2,char *param_3,byte pa
       pcVar10 = pcVar10 + 1;
     } while (cVar2 != '\0');
     local_c = Library::DKW::LIB::FUN_006aac10(~uVar12 + 4);
-    if (local_c == (uint *)0x0) {
+    if (local_c == nullptr) {
       g_currentExceptionFrame = local_5c.previous;
       return;
     }
@@ -100,7 +100,7 @@ FSGSTy::AddMessage(FSGSTy *this,byte param_1,byte *param_2,char *param_3,byte pa
       pcVar10 = pcVar10 + 1;
     } while (cVar2 != '\0');
     local_c = Library::DKW::LIB::FUN_006aac10(~uVar12 + ~uVar13 + 0xc);
-    if (local_c == (uint *)0x0) {
+    if (local_c == nullptr) {
       g_currentExceptionFrame = local_5c.previous;
       return;
     }
@@ -132,14 +132,14 @@ LAB_005a1fc3:
                 &DAT_007c6ff0,param_1,param_3);
     }
   }
-  if (local_c != (uint *)0x0) {
-    for (puVar7 = Library::MSVCRT::FUN_0072e560(local_c,'\n'); puVar7 != (uint *)0x0;
+  if (local_c != nullptr) {
+    for (puVar7 = Library::MSVCRT::FUN_0072e560(local_c,'\n'); puVar7 != nullptr;
         puVar7 = Library::MSVCRT::FUN_0072e560(puVar7,'\n')) {
       *(undefined1 *)puVar7 = 0x20;
     }
-    pDVar8 = Library::DKW::TBL::SArrayCreate((DArrayTy *)0x0,1,10);
+    pDVar8 = Library::DKW::TBL::SArrayCreate(nullptr,1,10);
     local_18 = pDVar8;
-    if (pDVar8 != (DArrayTy *)0x0) {
+    if (pDVar8 != nullptr) {
       local_10 = 0;
       local_5 = '\0';
       Library::DKW::TBL::FUN_006b5aa0(&pDVar8->flags,(char *)local_c);
@@ -155,7 +155,7 @@ LAB_005a1fc3:
           local_5 = '\x01';
         }
       }
-      if (pDVar9 != (DArrayTy *)0x0) {
+      if (pDVar9 != nullptr) {
         ccFntTy::SepColorStrInSarr(this_00->field_1A77,(uint *)pDVar9,(uint *)pDVar9);
         pAVar3 = (AnonShape_006B7830_769CA2DF *)this_00->field_1E9E;
         iVar6 = pAVar3->field_0008 + pDVar9->elementSize;
@@ -167,7 +167,7 @@ LAB_005a1fc3:
         iVar6 = 0;
         if (0 < (int)pDVar9->elementSize) {
           if ((int)pDVar9->elementSize < 1) {
-            pcVar10 = (char *)0x0;
+            pcVar10 = nullptr;
             goto LAB_005a2188;
           }
           do {

@@ -25,9 +25,9 @@ FUN_00692920(cMf32 *param_1,undefined4 *param_2,undefined4 *param_3,int param_4,
   int local_8;
 
   puVar1 = param_3;
-  pAVar2 = (AnonShape_006B4B20_3D4F4412 *)0x0;
-  if (param_2 != (undefined4 *)0x0) {
-    local_10 = cMf32::RecGet(param_1,1,"PAL_APP",(int *)0x0,1);
+  pAVar2 = nullptr;
+  if (param_2 != nullptr) {
+    local_10 = cMf32::RecGet(param_1,1,"PAL_APP",nullptr,1);
     pAVar2 = (AnonShape_006B4B20_3D4F4412 *)
              FUN_006b50c0((int)param_3,param_4,8,0x100,(undefined4 *)(local_10 + 0x14),1);
     local_8 = FUN_006b4fa0((int *)pAVar2);
@@ -59,7 +59,7 @@ FUN_00692920(cMf32 *param_1,undefined4 *param_2,undefined4 *param_3,int param_4,
           puVar8 = (undefined4 *)((int)puVar8 + (int)puVar1);
           /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
           param_4 = (int)param_2;
-        } while (param_3 != (undefined4 *)0x0);
+        } while (param_3 != nullptr);
       }
     }
     else if (0 < param_4) {
@@ -82,7 +82,7 @@ FUN_00692920(cMf32 *param_1,undefined4 *param_2,undefined4 *param_3,int param_4,
                        (local_c + 0x37ac +
                        ((int)((uint)(byte)puVar5[(int)param_3 - (int)puVar3] * 0xf) >> 8) * 4);
             puVar5 = puVar5 + 1;
-          } while (puVar8 != (undefined4 *)0x0);
+          } while (puVar8 != nullptr);
         }
         /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
         param_3 = (undefined4 *)((int)param_3 + (int)puVar1);

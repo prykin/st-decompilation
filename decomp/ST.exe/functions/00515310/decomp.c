@@ -101,7 +101,7 @@ void __thiscall HelpPanelTy::DrawTitle(HelpPanelTy *this,UINT param_1,int param_
     pcVar11 = (char *)&DAT_0080f33a;
     memmove(pcVar11, pcVar8, uVar10); /* compiler REP MOVS byte copy */
     uVar6 = 0;
-    for (puVar7 = Library::MSVCRT::FUN_0072e560(&DAT_0080f33a,'\n'); puVar7 != (uint *)0x0;
+    for (puVar7 = Library::MSVCRT::FUN_0072e560(&DAT_0080f33a,'\n'); puVar7 != nullptr;
         puVar7 = Library::MSVCRT::FUN_0072e560(puVar7,'\n')) {
       *(undefined1 *)puVar7 = 0x20;
     }

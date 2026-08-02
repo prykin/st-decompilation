@@ -8,7 +8,7 @@ int FUN_006767d0(void)
   InternalExceptionFrame local_4c;
   cMf32 *local_8;
 
-  local_8 = (cMf32 *)0x0;
+  local_8 = nullptr;
   local_4c.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_4c;
   iVar1 = Library::MSVCRT::__setjmp3(local_4c.jumpBuffer,0);
@@ -18,8 +18,8 @@ int FUN_006767d0(void)
     this = (cMf32 *)Library::Ourlib::MF32INT::FUN_006f0ec0(0x345,local_150,2,0,0);
     local_8 = this;
     wsprintfA((LPSTR)local_150,"%s%d%02d",PTR_DAT_0079d6c8,(uint)DAT_0080874e,DAT_0080c52a);
-    cMf32::RecPut(this,0xc,(char *)local_150,(byte *)&DAT_0080c522,0x27f0,(undefined4 *)0x0,'\0',
-                  (uint *)0x0);
+    cMf32::RecPut(this,0xc,(char *)local_150,(byte *)&DAT_0080c522,0x27f0,nullptr,'\0',
+                  nullptr);
     cMf32::delete(this);
     g_currentExceptionFrame = local_4c.previous;
     return 0;

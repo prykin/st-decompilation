@@ -7,7 +7,7 @@
 void __thiscall cLoadingTy::sub_00555680(cLoadingTy *this,char *param_1)
 
 {
-  if (((int *)this->field_004C != (int *)0x0) && (param_1 != (char *)0x0)) {
+  if (((int *)this->field_004C != nullptr) && (param_1 != nullptr)) {
     Library::MSVCRT::FUN_0072eb70(param_1,(int *)this->field_004C);
     Library::MSVCRT::FUN_0072eb70(&DAT_007c8ff4,(int *)this->field_004C);
   }

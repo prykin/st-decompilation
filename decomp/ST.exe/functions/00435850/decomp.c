@@ -41,7 +41,7 @@ uint FUN_00435850(char param_1,int param_2,int *param_3)
   if (param_2 == 1) {
     thunk_FUN_00423360(_param_1);
   }
-  if (param_3 != (int *)0x0) {
+  if (param_3 != nullptr) {
     *param_3 = _param_1;
   }
   /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */

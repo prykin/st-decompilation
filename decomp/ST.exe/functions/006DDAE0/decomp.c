@@ -9,33 +9,31 @@ ST3DSMAPContext::sub_006DDAE0
           (ST3DSMAPContext *this,int param_1,int param_2,int param_3,undefined4 *param_4)
 
 {
-  void *pvVar1;
+  byte *pbVar1;
   int iVar2;
   uint uVar3;
-  undefined4 *puVar4;
 
-  *(int *)&this->field_0x14c = param_2;
-  *(int *)&this->field_0x148 = param_1;
+  this->field_014C = param_2;
+  this->field_0148 = param_1;
   uVar3 = param_1 + param_2 + param_3;
-  *(int *)&this->field_0x150 = param_3;
-  pvVar1 = Library::DKW::LIB::MemRealloc
-                     (*(AnonPointee_TLOBaseTy_0607 **)&this->field_0x154,(uVar3 + 1) * 0x100);
-  *(void **)&this->field_0x154 = pvVar1;
+  this->field_0150 = param_3;
+  pbVar1 = Library::DKW::LIB::MemRealloc(this->field_0154,(uVar3 + 1) * 0x100);
+  this->field_0154 = pbVar1;
   iVar2 = 0;
   do {
-    *(char *)(*(int *)&this->field_0x154 + iVar2) = (char)iVar2;
+    this->field_0154[iVar2] = (byte)iVar2;
     iVar2 = iVar2 + 1;
   } while (iVar2 < 0x100);
-  puVar4 = (undefined4 *)(*(int *)&this->field_0x154 + 0x100);
+  pbVar1 = this->field_0154 + 0x100;
   for (iVar2 = (uVar3 & 0xffffff) << 6; iVar2 != 0; iVar2 = iVar2 + -1) {
-    *puVar4 = *param_4;
-    param_4 = param_4 + 1;
-    puVar4 = puVar4 + 1;
+    *(undefined4 *)pbVar1 = *param_4;
+    param_4 = (undefined4 *)((int)param_4 + 4);
+    pbVar1 = pbVar1 + 4;
   }
   for (iVar2 = 0; iVar2 != 0; iVar2 = iVar2 + -1) {
-    *(undefined1 *)puVar4 = *(undefined1 *)param_4;
+    *pbVar1 = *(byte *)param_4;
     param_4 = (undefined4 *)((int)param_4 + 1);
-    puVar4 = (undefined4 *)((int)puVar4 + 1);
+    pbVar1 = pbVar1 + 1;
   }
   sub_006DD870(this);
   sub_006DDB70(this);

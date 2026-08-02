@@ -26,8 +26,8 @@ byte * __thiscall AiTactClassTy::PrepareToSave(AiTactClassTy *this,uint *param_1
   errorCode = Library::MSVCRT::__setjmp3(local_4c.jumpBuffer,0);
   pAVar2 = local_8;
   if (errorCode == 0) {
-    if (local_8 == (AiTactClassTy *)0x0) {
-      puVar3 = (undefined4 *)0x0;
+    if (local_8 == nullptr) {
+      puVar3 = nullptr;
     }
     else {
       puVar3 = &local_8->field_0020;
@@ -54,6 +54,6 @@ byte * __thiscall AiTactClassTy::PrepareToSave(AiTactClassTy *this,uint *param_1
     STDebugBreak(); /* noreturn in standalone pseudocode */
   }
   RaiseInternalException(errorCode,0,"E:\\__titans\\ai\\ai_tact.cpp",0x82);
-  return (byte *)0x0;
+  return nullptr;
 }
 

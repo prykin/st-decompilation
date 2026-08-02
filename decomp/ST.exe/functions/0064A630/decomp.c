@@ -11,7 +11,7 @@ int * __cdecl FUN_0064a630(int param_1)
   InternalExceptionFrame local_4c;
   int *local_8;
 
-  local_8 = (int *)0x0;
+  local_8 = nullptr;
   local_4c.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_4c;
   exceptionCode = Library::MSVCRT::__setjmp3(local_4c.jumpBuffer,0);
@@ -24,6 +24,6 @@ int * __cdecl FUN_0064a630(int param_1)
   g_currentExceptionFrame = local_4c.previous;
   thunk_FUN_0064a800(&local_8);
   RaiseInternalException(exceptionCode,0,"E:\\__titans\\ai\\ai_erc.cpp",0x17);
-  return (int *)0x0;
+  return nullptr;
 }
 

@@ -1,8 +1,8 @@
 program=ST.exe
 functions_scanned=5712
 direct_calls_seen=37298
-globals_with_evidence=259
-proposals=110
+globals_with_evidence=258
+proposals=111
 type_auto_apply=0
 name_auto_apply=0
 conflicts=0

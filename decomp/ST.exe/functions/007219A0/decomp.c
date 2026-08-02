@@ -13,12 +13,12 @@ int __fastcall FUN_007219a0(AnonShape_007219A0_88F70163 *param_1)
   bool bVar9;
 
   pAVar2 = param_1->field_0138;
-  if ((pAVar2 == (AnonNested_007219A0_0138_7CAF6BF8 *)0x0) ||
+  if ((pAVar2 == nullptr) ||
      (uVar3 = pAVar2->field_0008, uVar3 == 0)) {
     return 0;
   }
   if ((int)uVar3 < 1) {
-    pcVar8 = (char *)0x0;
+    pcVar8 = nullptr;
   }
   else {
     pcVar8 = *(char **)pAVar2->field_0014;
@@ -37,7 +37,7 @@ int __fastcall FUN_007219a0(AnonShape_007219A0_88F70163 *param_1)
     iVar4 = 1 - uVar3;
     do {
       if (bVar9 == iVar4 < 0) {
-        pcVar8 = (char *)0x0;
+        pcVar8 = nullptr;
       }
       else {
         pcVar8 = *(char **)(pAVar2->field_0014 + uVar7 * 4);

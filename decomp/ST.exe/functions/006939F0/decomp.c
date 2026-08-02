@@ -13,7 +13,7 @@ undefined4 FUN_006939f0(void)
   undefined4 local_c;
   undefined4 *local_8;
 
-  local_8 = (undefined4 *)0x0;
+  local_8 = nullptr;
   local_c = 1;
   local_54.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_54;
@@ -31,7 +31,7 @@ undefined4 FUN_006939f0(void)
     /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
     cMf32::RecMemFree(in_stack_00000004,(uint *)&local_8);
   }
-  if (local_8 != (undefined4 *)0x0) {
+  if (local_8 != nullptr) {
     puVar2 = (byte *)(local_8);
     memmove(local_10, puVar2, 0x1999); /* compiler REP MOVS byte copy */
     /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */

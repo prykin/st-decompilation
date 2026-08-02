@@ -67,7 +67,7 @@ int __thiscall STDestC::GetMessage(STDestC *this,STMessage *message)
                 g_currentExceptionFrame = local_54.previous;
                 return 0;
               }
-              if (g_allPlayers_007FA174 == (STAllPlayersC *)0x0) {
+              if (g_allPlayers_007FA174 == nullptr) {
                 g_currentExceptionFrame = local_54.previous;
                 return 0;
               }
@@ -87,14 +87,14 @@ int __thiscall STDestC::GetMessage(STDestC *this,STMessage *message)
             if (this_00->field_036E == 4) {
               puVar4 = (byte *)(sub_00602E90((STDestC *)this_00));
               this_00->field_03AB = puVar4;
-              if (puVar4 == (undefined4 *)0x0) {
+              if (puVar4 == nullptr) {
                 sub_00602440((STDestC *)this_00);
               }
             }
             else if ((*(int *)&this_00->field_0x3a7 != 0) && (this_00->field_036E != 0)) {
               sub_00602BE0((STDestC *)this_00);
             }
-            if (((g_allPlayers_007FA174 != (STAllPlayersC *)0x0) && (this_00->field_0x3a5 != '\0'))
+            if (((g_allPlayers_007FA174 != nullptr) && (this_00->field_0x3a5 != '\0'))
                && (iVar3 = STAllPlayersC::RegisterBlot
                                      (g_allPlayers_007FA174,*(ushort *)&this_00->field_0x32,this_00)
                   , iVar3 != 0)) {
@@ -106,7 +106,7 @@ int __thiscall STDestC::GetMessage(STDestC *this,STMessage *message)
         }
         else if (((SVar1 == MESS_SHARED_0003) &&
                  (thunk_FUN_004ad310((STT3DSprC *)&local_8->field_0x1d5),
-                 this_00->field_0x3a5 != '\0')) && (g_allPlayers_007FA174 != (STAllPlayersC *)0x0))
+                 this_00->field_0x3a5 != '\0')) && (g_allPlayers_007FA174 != nullptr))
         {
           /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
           STAllPlayersC::UnRegisterBlot

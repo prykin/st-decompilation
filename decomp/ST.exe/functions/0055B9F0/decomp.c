@@ -18,7 +18,7 @@ uint __thiscall FUN_0055b9f0(void *this,RecoveredRecord_VisibleClassTy_0055B9F0 
         pcVar3 = (char *)(*(int *)(iVar1 + 8) * uVar4 + *(int *)(iVar1 + 0x1c));
       }
       else {
-        pcVar3 = (char *)0x0;
+        pcVar3 = nullptr;
       }
       if ((((*(int *)(pcVar3 + 8) == param_1->field_0008) && (*pcVar3 == *(char *)param_1)) &&
           (pcVar3[1] == param_1->field_0x1)) &&

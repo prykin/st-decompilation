@@ -50,10 +50,10 @@ void __thiscall WaitTy::ShowDescription(WaitTy *this)
         );
   pAVar2 = (AnonShape_006B5B10_E0D06CF1 *)g_startSystem_0081176C->field_0544;
   FUN_006b4170(pAVar2,0,0,0,pAVar2->field_0004,pAVar2->field_0008,0xff);
-  if ((DArrayTy *)g_startSystem_0081176C->field_0548 != (DArrayTy *)0x0) {
+  if ((DArrayTy *)g_startSystem_0081176C->field_0548 != nullptr) {
     FUN_006b5570((DArrayTy *)g_startSystem_0081176C->field_0548);
   }
-  pDVar7 = Library::DKW::TBL::SArrayCreate((DArrayTy *)0x0,10,10);
+  pDVar7 = Library::DKW::TBL::SArrayCreate(nullptr,10,10);
   this_00 = local_8;
   g_startSystem_0081176C->field_0548 = &pDVar7->flags;
   if (local_8->field_1A8F == -1) {
@@ -79,11 +79,11 @@ void __thiscall WaitTy::ShowDescription(WaitTy *this)
       this_00 = local_8;
       pcVar4 = local_10;
       g_currentExceptionFrame = local_a4.previous;
-      if (local_10 != (cMf32 *)0x0) {
+      if (local_10 != nullptr) {
         StartSystemTy::LoadMapData
                   (g_startSystem_0081176C,local_10,(local_8->field_1A93 != '\x02') + '\x04');
         local_c = 1;
-        Library::MSVCRT::FUN_0072e730(&DAT_0080ed16,(byte *)0x0,(byte *)0x0,local_1a8,(byte *)0x0);
+        Library::MSVCRT::FUN_0072e730(&DAT_0080ed16,nullptr,nullptr,local_1a8,nullptr);
         pbVar12 = local_1a8;
         pcVar8 = LoadResourceString(0x252a,g_module_00807618);
         wsprintfA((LPSTR)&DAT_0080f33a,"%s (%s)",pcVar8,pbVar12);

@@ -29,7 +29,7 @@ PanelTy::PaintTxtBut
   ushort *local_8;
 
   local_18 = param_1->field_0018;
-  local_8 = (ushort *)0x0;
+  local_8 = nullptr;
   if (param_7 == 0) {
     local_10 = local_18->field_0000;
   }
@@ -50,13 +50,13 @@ LAB_00538bd9:
   else {
     local_c = local_18->field_0004 - this->field_0044;
   }
-  if (param_6 != (undefined *)0x0) {
+  if (param_6 != nullptr) {
     local_5c.previous = g_currentExceptionFrame;
     g_currentExceptionFrame = &local_5c;
     local_14 = this;
     iVar3 = Library::MSVCRT::__setjmp3(local_5c.jumpBuffer,0);
     if (iVar3 == 0) {
-      local_8 = cMf32::RecGet(g_cMf32_00806790,param_2,param_3,(int *)0x0,1);
+      local_8 = cMf32::RecGet(g_cMf32_00806790,param_2,param_3,nullptr,1);
       uVar4 = local_c;
       iVar3 = local_10;
       pPVar2 = local_14;

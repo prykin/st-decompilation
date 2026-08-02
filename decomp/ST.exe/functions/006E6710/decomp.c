@@ -11,35 +11,35 @@
 
 void __thiscall
 ST3DSMAPContext::sub_006E6710
-          (ST3DSMAPContext *this,undefined4 param_1,undefined4 param_2,uint param_3,
-          undefined4 param_4,int param_5)
+          (ST3DSMAPContext *this,float param_1,float param_2,uint param_3,undefined4 param_4,
+          int param_5)
 
 {
-  undefined4 *puVar1;
+  AnonPointee_ST3DSMAPContext_044E *pAVar1;
   longlong lVar2;
 
-  puVar1 = *(undefined4 **)&this->field_0x44e;
+  pAVar1 = this->field_044E;
   do {
-    if (puVar1 == (undefined4 *)0x0) {
+    if (pAVar1 == nullptr) {
 LAB_006e673a:
-      puVar1 = Library::DKW::LIB::FUN_006aac10(0x18);
-      if (puVar1 != (undefined4 *)0x0) {
-        FUN_006b9910((undefined4 *)&this->field_0x44e,(int)puVar1);
+      pAVar1 = (AnonPointee_ST3DSMAPContext_044E *)Library::DKW::LIB::FUN_006aac10(0x18);
+      if (pAVar1 != nullptr) {
+        FUN_006b9910(&this->field_044E,(int)pAVar1);
 LAB_006e674e:
-        puVar1[1] = param_5;
+        pAVar1->field_0004 = param_5;
         lVar2 = Library::MSVCRT::__ftol();
-        puVar1[2] = (int)lVar2;
-        puVar1[3] = param_1;
-        puVar1[4] = param_2;
-        puVar1[5] = param_4;
+        pAVar1->field_0008 = (int)lVar2;
+        pAVar1->field_000C = param_1;
+        pAVar1->field_0010 = param_2;
+        *(undefined4 *)&pAVar1->field_0014 = param_4;
       }
       return;
     }
-    if (puVar1[1] == param_5) {
-      if (puVar1 != (undefined4 *)0x0) goto LAB_006e674e;
+    if (pAVar1->field_0004 == param_5) {
+      if (pAVar1 != nullptr) goto LAB_006e674e;
       goto LAB_006e673a;
     }
-    puVar1 = (undefined4 *)*puVar1;
+    pAVar1 = (AnonPointee_ST3DSMAPContext_044E *)pAVar1->field_0000;
   } while( true );
 }
 

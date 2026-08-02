@@ -2,7 +2,7 @@ ST recovery launcher
 Ghidra version: 12.1.2
 Repository: <local-home>/st
 Pipeline source: <local-home>/st/scripts/STRecoveryPipeline.java
-Pipeline source SHA-256: 348b1d997508297fd1879f915e1779e5d58cf70ec205c2dfbd4fa8134c906408
+Pipeline source SHA-256: 66340eb45a42df5499002a3f60f50969afe5ad89570f5dc44fb420152bc2142e
 Bootstrap log: <local-home>/st/recovery/ST.exe/pipeline_bootstrap.log
 ST recovery pipeline: mode=full-export, repository=<local-home>/st
 No proposal flags are changed by the pipeline. Review-only rows remain disabled.
@@ -12,8 +12,8 @@ No proposal flags are changed by the pipeline. Review-only rows remain disabled.
 == semantic analyzer cache ==
 [01] STEvidenceLedger.java <- fingerprint | <repo>/recovery
 Computing semantic Program fingerprint...
-Semantic Program fingerprint: f29d030b7c131ecbcbcf47cab433c2586ecba520e3620acb8234383496194ebc
-Loaded reusable analyzer cache entries: 0
+Semantic Program fingerprint: 27b2e1eb234982f047ed62f60bc77e1a7bde68397a9bbe5e0b2e1686a4b2fed8
+Loaded reusable analyzer cache entries: 10
 
 == core baseline ==
 [02] STTypeBootstrapAnalyzer.java <- <repo>/recovery
@@ -70,12 +70,11 @@ Apply report: <local-home>/st/recovery/ST.exe/message_handler_apply_report.tsv
 STMessageHandlerApplier.java state: proposals_enabled=0, proposals_review=106, changed=0, unchanged=0, review=106, conflict=0, error=0
 [16] STObjectFactoryAnalyzer.java <- <repo>/recovery
 Object-factory analysis complete: <local-home>/st/recovery/ST.exe
-Registry=007CA720, entries=96, allocator=006B04D0, concrete owners=68, name_apply=1, missing factories=0, ABI dispatch=006E386C, enum consumers=0
+Registry=007CA720, entries=96, allocator=006B04D0, concrete owners=68, name_apply=0, missing factories=0, ABI dispatch=006E386C, enum consumers=0
 [17] STObjectFactoryApplier.java <- <repo>/recovery/ST.exe/object_factory_proposals.tsv
-Object factories: applied=2, created=0, partial=0, unchanged=94, preserved=0, conflicts=0, disabled=2
+Object factories: applied=0, created=0, partial=0, unchanged=96, preserved=0, conflicts=0, disabled=2
 Apply report: <local-home>/st/recovery/ST.exe/object_factory_apply_report.tsv
-Waiting for Ghidra auto-analysis after STObjectFactoryApplier.java...
-STObjectFactoryApplier.java state: proposals_enabled=94, proposals_review=2, changed=2, unchanged=94, review=2, conflict=0, error=0
+STObjectFactoryApplier.java state: proposals_enabled=94, proposals_review=2, changed=0, unchanged=96, review=2, conflict=0, error=0
 [18] STVTableAnalyzer.java <- <repo>/recovery
 VTable analysis complete: <local-home>/st/recovery/ST.exe
 Tables: 180, high-confidence: 56, owner conflicts: 28
@@ -99,558 +98,371 @@ Apply report: <local-home>/st/recovery/ST.exe/constructor_apply_report.tsv
 STConstructorApplier.java state: proposals_enabled=0, proposals_review=57, changed=0, unchanged=0, review=57, conflict=0, error=0
 [24] STClassArrayAnalyzer.java <- <repo>/recovery
 Class-array analysis complete: <local-home>/st/recovery/ST.exe
-Functions=1425, candidates=53, auto_apply=46, bounded_sites=29, exact_loops=72
-[25] STClassLayoutAnalyzer.java <- <repo>/recovery
-Class-layout analysis complete: <local-home>/st/recovery/ST.exe
-Classes: 123, class_apply: 111, fields: 5657, field_apply: 5354, semantic_type_apply: 0, generated_type_revisions: 0, deprecated_type_repairs: 0, cross_typed_accesses: 41217, cross_type_links: 540, nested_pointees: 148, nested_apply: 0, member_arrays: 46, review_name_suggestions: 156
-[26] STClassLayoutApplier.java <- <repo>/recovery/ST.exe/class_layout_proposals.tsv
-Class layouts: applied=0, updated=0, unchanged=111, preserved=0, conflicts=0, disabled=160, typed_fields=0, named_fields=0
+Functions=1452, candidates=54, auto_apply=46, bounded_sites=29, exact_loops=73
+[25] STInlineAggregateAnalyzer.java <- <repo>/recovery
+Inline-aggregate analysis complete: <local-home>/st/recovery/ST.exe
+Functions=1452, exact_copies=0, nested_apply=0, zero_spans=90
+[26] STClassLayoutAnalyzer.java skipped: semantic/source/dependency cache hit; reusing verified analyzer artifacts
+[27] STClassLayoutApplier.java <- <repo>/recovery/ST.exe/class_layout_proposals.tsv
+Class layouts: applied=0, updated=0, unchanged=112, preserved=0, conflicts=0, disabled=185, typed_fields=0, named_fields=0
 Apply report: <local-home>/st/recovery/ST.exe/class_layout_apply_report.tsv
-STClassLayoutApplier.java state: proposals_enabled=111, proposals_review=12, changed=0, unchanged=111, review=160, conflict=0, error=0
-[27] STDArrayElementAnalyzer.java <- <repo>/recovery
-DArray-element analysis complete: <local-home>/st/recovery/ST.exe
-Functions=638, creation_sites=64, containers=50, apply=22, element_aliases=100, field_accesses=891, inline_source_records=1, semantic_fields=22, local_type_apply=78, local_assignment_sites=79, local_type_splits=37, failures=0
-[28] STDArrayElementApplier.java <- <repo>/recovery/ST.exe/darray_element_proposals.tsv | types-only-cleanup
-DArray elements: applied=0, updated=0, unchanged=22, preserved=0, conflicts=1, disabled=28
+STClassLayoutApplier.java state: proposals_enabled=112, proposals_review=33, changed=0, unchanged=112, review=185, conflict=0, error=0
+Class-layout local pass 1: mutating rows=0
+[28] STDArrayElementAnalyzer.java skipped: semantic/source/dependency cache hit; reusing verified analyzer artifacts
+[29] STDArrayElementApplier.java <- <repo>/recovery/ST.exe/darray_element_proposals.tsv | types-only-cleanup
+DArray elements: applied=0, updated=0, unchanged=21, preserved=0, conflicts=2, disabled=28
 DArray element locals: applied=0, unchanged=0, preserved=0, conflicts=0, disabled=0, stale_removed=0
 Apply report: <local-home>/st/recovery/ST.exe/darray_element_apply_report.tsv
 Local apply report: <local-home>/st/recovery/ST.exe/darray_element_local_apply_report.tsv
-STDArrayElementApplier.java state: proposals_enabled=22, proposals_review=28, changed=0, unchanged=22, review=28, conflict=1, error=0
-Structural pass 1: mutating report rows=2
-[29] STMessageHandlerAnalyzer.java <- <repo>/recovery
-Message-handler analysis complete: <local-home>/st/recovery/ST.exe
-Handlers: 106, automatic: 0, already typed: 106, conflicts/manual: 0
-[30] STMessageHandlerApplier.java <- <repo>/recovery/ST.exe/message_handler_proposals.tsv
-Message handlers: applied=0, unchanged=0, disabled=106, manual/stale preserved=0, conflicts=0
-Apply report: <local-home>/st/recovery/ST.exe/message_handler_apply_report.tsv
-STMessageHandlerApplier.java state: proposals_enabled=0, proposals_review=106, changed=0, unchanged=0, review=106, conflict=0, error=0
-[31] STObjectFactoryAnalyzer.java <- <repo>/recovery
-Object-factory analysis complete: <local-home>/st/recovery/ST.exe
-Registry=007CA720, entries=96, allocator=006B04D0, concrete owners=68, name_apply=0, missing factories=0, ABI dispatch=006E386C, enum consumers=0
-[32] STObjectFactoryApplier.java <- <repo>/recovery/ST.exe/object_factory_proposals.tsv
-Object factories: applied=0, created=0, partial=0, unchanged=96, preserved=0, conflicts=0, disabled=2
-Apply report: <local-home>/st/recovery/ST.exe/object_factory_apply_report.tsv
-STObjectFactoryApplier.java state: proposals_enabled=94, proposals_review=2, changed=0, unchanged=96, review=2, conflict=0, error=0
-[33] STVTableAnalyzer.java <- <repo>/recovery
-VTable analysis complete: <local-home>/st/recovery/ST.exe
-Tables: 180, high-confidence: 56, owner conflicts: 28
-[34] STVTableApplier.java <- <repo>/recovery/ST.exe/vtable_proposals.tsv
-VTables applied: 0, updated types: 0, functions created/renamed: 0, already present: 206, skipped: 30, conflicts/failed: 0
-Apply report: <local-home>/st/recovery/ST.exe/vtable_apply_report.tsv
-STVTableApplier.java state: proposals_enabled=158, proposals_review=22, changed=0, unchanged=206, review=30, conflict=0, error=0
-[35] STVirtualMethodAnalyzer.java <- <repo>/recovery/ST.exe/vtable_proposals.tsv
-Virtual-method analysis complete: <local-home>/st/recovery/ST.exe
-Active tables: 56, target functions: 365, name_apply: 0, convention_apply: 0, signature_apply: 0
-[36] STVirtualMethodApplier.java <- <repo>/recovery/ST.exe/virtual_method_proposals.tsv
-Virtual methods: applied=0, partial=0, unchanged=0, manual/stale preserved=0, conflicts=0, disabled=365
-Apply report: <local-home>/st/recovery/ST.exe/virtual_method_apply_report.tsv
-STVirtualMethodApplier.java state: proposals_enabled=0, proposals_review=365, changed=0, unchanged=0, review=365, conflict=0, error=0
-[37] STConstructorAnalyzer.java <- <repo>/recovery/ST.exe/vtable_proposals.tsv
-Constructor analysis complete: <local-home>/st/recovery/ST.exe
-Vptr writers: 106, constructor candidates: 57, name_apply: 0, convention_apply: 0, parameter_apply: 0, hierarchy: 5, class sizes: 4
-[38] STConstructorApplier.java <- <repo>/recovery/ST.exe/constructor_proposals.tsv
-Constructors: applied=0, partial=0, unchanged=0, preserved=0, conflicts=0, disabled=57
-Apply report: <local-home>/st/recovery/ST.exe/constructor_apply_report.tsv
-STConstructorApplier.java state: proposals_enabled=0, proposals_review=57, changed=0, unchanged=0, review=57, conflict=0, error=0
-[39] STClassArrayAnalyzer.java <- <repo>/recovery
-Class-array analysis complete: <local-home>/st/recovery/ST.exe
-Functions=1425, candidates=53, auto_apply=46, bounded_sites=29, exact_loops=72
-[40] STClassLayoutAnalyzer.java <- <repo>/recovery
-Class-layout analysis complete: <local-home>/st/recovery/ST.exe
-Classes: 123, class_apply: 111, fields: 5657, field_apply: 5354, semantic_type_apply: 0, generated_type_revisions: 0, deprecated_type_repairs: 0, cross_typed_accesses: 41217, cross_type_links: 540, nested_pointees: 148, nested_apply: 0, member_arrays: 46, review_name_suggestions: 156
-[41] STClassLayoutApplier.java <- <repo>/recovery/ST.exe/class_layout_proposals.tsv
-Class layouts: applied=0, updated=0, unchanged=111, preserved=0, conflicts=0, disabled=160, typed_fields=0, named_fields=0
-Apply report: <local-home>/st/recovery/ST.exe/class_layout_apply_report.tsv
-STClassLayoutApplier.java state: proposals_enabled=111, proposals_review=12, changed=0, unchanged=111, review=160, conflict=0, error=0
-[42] STDArrayElementAnalyzer.java skipped: clean analyzer node at the current Program epoch; reusing verified artifacts
-[43] STDArrayElementApplier.java <- <repo>/recovery/ST.exe/darray_element_proposals.tsv | types-only
-DArray elements: applied=0, updated=0, unchanged=21, preserved=0, conflicts=1, disabled=28
-DArray element locals: applied=0, unchanged=0, preserved=0, conflicts=0, disabled=0, stale_removed=0
-Apply report: <local-home>/st/recovery/ST.exe/darray_element_apply_report.tsv
-Local apply report: <local-home>/st/recovery/ST.exe/darray_element_local_apply_report.tsv
-STDArrayElementApplier.java state: proposals_enabled=22, proposals_review=28, changed=0, unchanged=21, review=28, conflict=1, error=0
-Structural pass 2: mutating report rows=0
+STDArrayElementApplier.java state: proposals_enabled=22, proposals_review=28, changed=0, unchanged=21, review=28, conflict=2, error=0
+Structural pass 1: mutating report rows=0
 
 == deep ownership and ABI ==
-[44] STHiddenThisAnalyzer.java <- <repo>/recovery
+[30] STHiddenThisAnalyzer.java <- <repo>/recovery
 Hidden-this analysis complete: <local-home>/st/recovery/ST.exe
-Candidates=582, convention_apply=0, receiver_type_apply=24
-[45] STHiddenThisApplier.java <- <repo>/recovery/ST.exe/hidden_this_proposals.tsv
-Hidden this: applied=24, partial=0, unchanged=0, preserved=0, conflicts=0, disabled=558
+Candidates=582, convention_apply=0, receiver_type_apply=0
+[31] STHiddenThisApplier.java <- <repo>/recovery/ST.exe/hidden_this_proposals.tsv
+Hidden this: applied=0, partial=0, unchanged=0, preserved=0, conflicts=0, disabled=582
 Apply report: <local-home>/st/recovery/ST.exe/hidden_this_apply_report.tsv
-STHiddenThisApplier.java state: proposals_enabled=24, proposals_review=558, changed=24, unchanged=0, review=558, conflict=0, error=0
-[46] STMethodOwnerAnalyzer.java <- <repo>/recovery
+STHiddenThisApplier.java state: proposals_enabled=0, proposals_review=582, changed=0, unchanged=0, review=582, conflict=0, error=0
+[32] STMethodOwnerAnalyzer.java <- <repo>/recovery
 Method-owner analysis complete: <local-home>/st/recovery/ST.exe
 Named caller methods: 1418, candidates: 884, owner_apply: 0, owner_repair: 0, convention_apply: 0, typed_singleton_calls: 2089
-[47] STMethodOwnerApplier.java <- <repo>/recovery/ST.exe/method_owner_proposals.tsv
+[33] STMethodOwnerApplier.java <- <repo>/recovery/ST.exe/method_owner_proposals.tsv
 Method owners: applied=0, partial=0, repaired=0, unchanged=0, preserved=0, conflicts=0, disabled=884
 Apply report: <local-home>/st/recovery/ST.exe/method_owner_apply_report.tsv
 STMethodOwnerApplier.java state: proposals_enabled=0, proposals_review=884, changed=0, unchanged=0, review=884, conflict=0, error=0
-[48] STDestructorAnalyzer.java <- <repo>/recovery
+[34] STDestructorAnalyzer.java <- <repo>/recovery
 Destructor analysis complete: <local-home>/st/recovery/ST.exe
 Deallocator functions: 11, delete-this functions: 1, proposals: 0, name_apply: 0
-[49] STDestructorApplier.java <- <repo>/recovery/ST.exe/destructor_proposals.tsv
+[35] STDestructorApplier.java <- <repo>/recovery/ST.exe/destructor_proposals.tsv
 Destructors: applied=0, partial=0, unchanged=0, preserved=0, conflicts=0, disabled=0
 Apply report: <local-home>/st/recovery/ST.exe/destructor_apply_report.tsv
 STDestructorApplier.java state: proposals_enabled=0, proposals_review=0, changed=0, unchanged=0, review=0, conflict=0, error=0
-[50] STSwitchEnumAnalyzer.java <- <repo>/recovery
-Switch-enum analysis complete: <local-home>/st/recovery/ST.exe
-Candidate functions: 1315, switches: 1080, proposals: 991, auto_apply: 568, decompile retries: 3, failures: 0
-[51] STSwitchEnumApplier.java <- <repo>/recovery/ST.exe/switch_enum_proposals.tsv
-Switch enums: applied=0, unchanged=567, preserved=1, conflicts=0, disabled=423
+[36] STSwitchEnumAnalyzer.java skipped: semantic/source/dependency cache hit; reusing verified analyzer artifacts
+[37] STSwitchEnumApplier.java <- <repo>/recovery/ST.exe/switch_enum_proposals.tsv
+Switch enums: applied=0, unchanged=560, preserved=1, conflicts=0, disabled=415
 Apply report: <local-home>/st/recovery/ST.exe/switch_enum_apply_report.tsv
-STSwitchEnumApplier.java state: proposals_enabled=568, proposals_review=423, changed=0, unchanged=567, review=424, conflict=0, error=0
-[52] STUtilityFunctionAnalyzer.java <- <repo>/recovery
+STSwitchEnumApplier.java state: proposals_enabled=561, proposals_review=415, changed=0, unchanged=560, review=416, conflict=0, error=0
+[38] STUtilityFunctionAnalyzer.java <- <repo>/recovery
 Utility-function analysis complete: <local-home>/st/recovery/ST.exe
 Rules=14, verified/apply=14
-[53] STUtilityFunctionApplier.java <- <repo>/recovery/ST.exe/utility_function_proposals.tsv
-Utility functions: applied=1, unchanged=12, preserved=1, conflicts=0, disabled=0
+[39] STUtilityFunctionApplier.java <- <repo>/recovery/ST.exe/utility_function_proposals.tsv
+Utility functions: applied=0, unchanged=13, preserved=1, conflicts=0, disabled=0
 Apply report: <local-home>/st/recovery/ST.exe/utility_function_apply_report.tsv
-Waiting for Ghidra auto-analysis transaction after STUtilityFunctionApplier.java...
-STUtilityFunctionApplier.java state: proposals_enabled=14, proposals_review=0, changed=1, unchanged=12, review=1, conflict=0, error=0
+STUtilityFunctionApplier.java state: proposals_enabled=14, proposals_review=0, changed=0, unchanged=13, review=1, conflict=0, error=0
+STUtilityFunctionApplier.java: Program modification counter advanced without a mutating report row; treating report state as settled (rolled-back row transactions can advance Ghidra's diagnostic counter)
 
 == deep propagation pass 1/12 ==
-[54] STAbiConsistencyAnalyzer.java <- <repo>/recovery
+[40] STAbiConsistencyAnalyzer.java <- <repo>/recovery
 ABI consistency analysis complete: <local-home>/st/recovery/ST.exe
 Proposals=0, automatic=0
-[55] STAbiConsistencyApplier.java <- <repo>/recovery/ST.exe/abi_consistency_proposals.tsv
+[41] STAbiConsistencyApplier.java <- <repo>/recovery/ST.exe/abi_consistency_proposals.tsv
 ABI repairs: applied=0, unchanged=0, preserved=0, conflicts=0, disabled=0
 Apply report: <local-home>/st/recovery/ST.exe/abi_consistency_apply_report.tsv
 STAbiConsistencyApplier.java state: proposals_enabled=0, proposals_review=0, changed=0, unchanged=0, review=0, conflict=0, error=0
-[56] STReturnSemanticsAnalyzer.java <- <repo>/recovery
+[42] STReturnSemanticsAnalyzer.java <- <repo>/recovery
 Return-semantics analysis complete: <local-home>/st/recovery/ST.exe
 Mode=full, functions=5712, proposals=114, apply=0, failures=0
-[57] STReturnSemanticsApplier.java <- <repo>/recovery/ST.exe/return_semantics_proposals.tsv
+[43] STReturnSemanticsApplier.java <- <repo>/recovery/ST.exe/return_semantics_proposals.tsv
 Return semantics: applied=0, unchanged=0, preserved=0, conflicts=0, disabled=114
 Apply report: <local-home>/st/recovery/ST.exe/return_semantics_apply_report.tsv
 STReturnSemanticsApplier.java state: proposals_enabled=0, proposals_review=114, changed=0, unchanged=0, review=114, conflict=0, error=0
-[58] STPrototypeAnalyzer.java <- <repo>/recovery
-Prototype analysis complete: <local-home>/st/recovery/ST.exe
-Functions: 5712, direct calls: 37298, proposals: 132, type_apply: 1, name_apply: 0, repair: 4, propagation_passes: 8
-[59] STPrototypeRepairAnalyzer.java <- <repo>/recovery/ST.exe/prototype_proposals.tsv
-Prototype repair analysis complete: <local-home>/st/recovery/ST.exe/prototype_repair_proposals.tsv
-Repair rows: 4
-[60] STPrototypeRepairApplier.java <- <repo>/recovery/ST.exe/prototype_repair_proposals.tsv
-Prototype repairs: applied=1, partial=0, unchanged=0, preserved=0, conflicts=0, disabled=3
-Apply report: <local-home>/st/recovery/ST.exe/prototype_repair_apply_report.tsv
-Waiting for Ghidra auto-analysis transaction after STPrototypeRepairApplier.java...
-STPrototypeRepairApplier.java state: proposals_enabled=1, proposals_review=3, changed=1, unchanged=0, review=3, conflict=0, error=0
-[61] STPrototypeAnalyzer.java <- <repo>/recovery
-Prototype analysis complete: <local-home>/st/recovery/ST.exe
-Functions: 5712, direct calls: 37298, proposals: 131, type_apply: 0, name_apply: 0, repair: 3, propagation_passes: 8
-[62] STPrototypeApplier.java <- <repo>/recovery/ST.exe/prototype_proposals.tsv
-Prototypes: applied=0, partial=0, unchanged=0, preserved=0, conflicts=0, disabled=131
-Apply report: <local-home>/st/recovery/ST.exe/prototype_apply_report.tsv
-STPrototypeApplier.java state: proposals_enabled=0, proposals_review=131, changed=0, unchanged=0, review=131, conflict=0, error=0
-[63] STGlobalRecordAnalyzer.java <- <repo>/recovery
-Global-record analysis complete: <local-home>/st/recovery/ST.exe
-Records: 1, apply=1, stride functions=9, fields=82, typed=0, named=0
-[64] STGlobalRecordApplier.java <- <repo>/recovery/ST.exe/global_record_proposals.tsv
-Global records: applied=0, updated=0, unchanged=1, partial=0, preserved=0, conflicts=0, disabled=0
-Apply report: <local-home>/st/recovery/ST.exe/global_record_apply_report.tsv
-STGlobalRecordApplier.java state: proposals_enabled=1, proposals_review=0, changed=0, unchanged=1, review=0, conflict=0, error=0
-[65] STDiscriminatedPayloadAnalyzer.java <- <repo>/recovery
-Discriminated payloads: families=7, case layouts=29, stack targets=0, family source=fresh decompilation, output=<local-home>/st/recovery/ST.exe
-[66] STDiscriminatedPayloadApplier.java <- <repo>/recovery/ST.exe/discriminated_payload_proposals.tsv
-Discriminated payloads: applied=0, unchanged=35, preserved=0, conflicts=0, disabled=1
-Apply report: <local-home>/st/recovery/ST.exe/discriminated_payload_apply_report.tsv
-STDiscriminatedPayloadApplier.java state: proposals_enabled=28, proposals_review=1, changed=0, unchanged=35, review=1, conflict=0, error=0
-[67] STGlobalAggregateAnalyzer.java <- <repo>/recovery
-Global-aggregate analysis complete: <local-home>/st/recovery/ST.exe
-Indexed candidates=588, proposals=74, apply=2
-[68] STGlobalAggregateApplier.java <- <repo>/recovery/ST.exe/global_aggregate_proposals.tsv
-Global aggregates: applied=0, unchanged=1, preserved=0, conflicts=1, disabled=72
-Apply report: <local-home>/st/recovery/ST.exe/global_aggregate_apply_report.tsv
-STGlobalAggregateApplier.java state: proposals_enabled=2, proposals_review=72, changed=0, unchanged=1, review=72, conflict=1, error=0
-[69] STGlobalDataAnalyzer.java <- <repo>/recovery
-Global-data analysis complete: <local-home>/st/recovery/ST.exe
-Functions: 5712, calls: 37298, proposals: 110, type_apply: 0, name_apply: 0, PTR audit: 695, zero globals: 18
-[70] STGlobalDataApplier.java <- <repo>/recovery/ST.exe/global_data_proposals.tsv
-Global data: applied=0, partial=0, unchanged=0, preserved=0, conflicts=0, disabled=110
-Apply report: <local-home>/st/recovery/ST.exe/global_data_apply_report.tsv
-STGlobalDataApplier.java state: proposals_enabled=0, proposals_review=110, changed=0, unchanged=0, review=110, conflict=0, error=0
-[71] STMethodOwnerAnalyzer.java <- <repo>/recovery
-Method-owner analysis complete: <local-home>/st/recovery/ST.exe
-Named caller methods: 1418, candidates: 884, owner_apply: 0, owner_repair: 0, convention_apply: 0, typed_singleton_calls: 2089
-[72] STMethodOwnerApplier.java <- <repo>/recovery/ST.exe/method_owner_proposals.tsv
-Method owners: applied=0, partial=0, repaired=0, unchanged=0, preserved=0, conflicts=0, disabled=884
-Apply report: <local-home>/st/recovery/ST.exe/method_owner_apply_report.tsv
-STMethodOwnerApplier.java state: proposals_enabled=0, proposals_review=884, changed=0, unchanged=0, review=884, conflict=0, error=0
-[73] STIndirectCallAnalyzer.java <- <repo>/recovery
-Indirect-call analysis complete: <local-home>/st/recovery/ST.exe
-Sites=4221, proposals=2636, apply=2147
-[74] STIndirectCallApplier.java <- <repo>/recovery/ST.exe/indirect_call_proposals.tsv
-Indirect calls: applied=0, unchanged=2147, preserved=0, conflicts=0, disabled=489
-Apply report: <local-home>/st/recovery/ST.exe/indirect_call_apply_report.tsv
-STIndirectCallApplier.java state: proposals_enabled=2147, proposals_review=489, changed=0, unchanged=2147, review=489, conflict=0, error=0
-[75] STPointerRoleRepairAnalyzer.java <- <repo>/recovery
-Pointer-role repair analysis complete: <local-home>/st/recovery/ST.exe
-Candidate functions=283, unsettled=3, proposals=1, auto_apply=0, failures=1
-[76] STPointerRoleRepairApplier.java <- <repo>/recovery/ST.exe/pointer_role_repair_proposals.tsv
-Pointer-role repairs: applied=0, unchanged=0, preserved=0, conflicts=0, disabled=1
-Apply report: <local-home>/st/recovery/ST.exe/pointer_role_repair_apply_report.tsv
-STPointerRoleRepairApplier.java state: proposals_enabled=0, proposals_review=1, changed=0, unchanged=0, review=1, conflict=0, error=0
-[77] STPointerShapeAnalyzer.java <- <repo>/recovery
-Pointer-shape analysis complete: <local-home>/st/recovery/ST.exe
-Functions=5707, raw functions=777, raw accesses=3807, nested=345, pointer aliases=355, alias accesses=1269, owner-this spill repairs=0, typed-field consumers=30, targets=2006, target_apply=2, anonymous_types=2, failures=0
-[78] STPointerShapeApplier.java <- <repo>/recovery/ST.exe/pointer_shape_target_proposals.tsv
-Pointer shapes: applied=2, updated=0, unchanged=0, preserved=1, conflicts=1, disabled=2829
-Apply report: <local-home>/st/recovery/ST.exe/pointer_shape_apply_report.tsv
-STPointerShapeApplier.java state: proposals_enabled=2, proposals_review=2004, changed=2, unchanged=0, review=2830, conflict=1, error=0
-[79] STTypeFamilyAnalyzer.java <- <repo>/recovery
-Type-family analysis complete: <local-home>/st/recovery/ST.exe
-Exact groups=137, target proposals=2, apply=0
-[80] STTypeFamilyApplier.java <- <repo>/recovery/ST.exe/type_family_proposals.tsv
-Type families: applied=0, unchanged=0, preserved=0, conflicts=0, disabled=2
-Apply report: <local-home>/st/recovery/ST.exe/type_family_apply_report.tsv
-STTypeFamilyApplier.java state: proposals_enabled=0, proposals_review=2, changed=0, unchanged=0, review=2, conflict=0, error=0
-[81] STClassArrayAnalyzer.java <- <repo>/recovery
-Class-array analysis complete: <local-home>/st/recovery/ST.exe
-Functions=1452, candidates=54, auto_apply=46, bounded_sites=29, exact_loops=73
-[82] STClassLayoutAnalyzer.java <- <repo>/recovery
-Class-layout analysis complete: <local-home>/st/recovery/ST.exe
-Classes: 145, class_apply: 111, fields: 5832, field_apply: 5529, semantic_type_apply: 0, generated_type_revisions: 0, deprecated_type_repairs: 0, cross_typed_accesses: 42037, cross_type_links: 541, nested_pointees: 153, nested_apply: 0, member_arrays: 46, review_name_suggestions: 156
-[83] STClassLayoutApplier.java <- <repo>/recovery/ST.exe/class_layout_proposals.tsv
-Class layouts: applied=0, updated=0, unchanged=111, preserved=0, conflicts=0, disabled=187, typed_fields=0, named_fields=0
-Apply report: <local-home>/st/recovery/ST.exe/class_layout_apply_report.tsv
-STClassLayoutApplier.java state: proposals_enabled=111, proposals_review=34, changed=0, unchanged=111, review=187, conflict=0, error=0
-[84] STDArrayElementAnalyzer.java <- <repo>/recovery
-DArray-element analysis complete: <local-home>/st/recovery/ST.exe
-Functions=640, creation_sites=64, containers=50, apply=22, element_aliases=100, field_accesses=891, inline_source_records=1, semantic_fields=22, local_type_apply=78, local_assignment_sites=79, local_type_splits=37, failures=0
-[85] STDArrayElementApplier.java <- <repo>/recovery/ST.exe/darray_element_proposals.tsv | types-only
-DArray elements: applied=0, updated=0, unchanged=21, preserved=0, conflicts=1, disabled=28
-DArray element locals: applied=0, unchanged=0, preserved=0, conflicts=0, disabled=0, stale_removed=0
-Apply report: <local-home>/st/recovery/ST.exe/darray_element_apply_report.tsv
-Local apply report: <local-home>/st/recovery/ST.exe/darray_element_local_apply_report.tsv
-STDArrayElementApplier.java state: proposals_enabled=22, proposals_review=28, changed=0, unchanged=21, review=28, conflict=1, error=0
-[86] STSwitchEnumAnalyzer.java <- <repo>/recovery
-Switch-enum analysis complete: <local-home>/st/recovery/ST.exe
-Candidate functions: 1315, switches: 1080, proposals: 991, auto_apply: 568, decompile retries: 3, failures: 0
-[87] STSwitchEnumApplier.java <- <repo>/recovery/ST.exe/switch_enum_proposals.tsv
-Switch enums: applied=0, unchanged=567, preserved=1, conflicts=0, disabled=423
-Apply report: <local-home>/st/recovery/ST.exe/switch_enum_apply_report.tsv
-STSwitchEnumApplier.java state: proposals_enabled=568, proposals_review=423, changed=0, unchanged=567, review=424, conflict=0, error=0
-[88] STObjectFactoryAnalyzer.java <- <repo>/recovery
-Object-factory analysis complete: <local-home>/st/recovery/ST.exe
-Registry=007CA720, entries=96, allocator=006B04D0, concrete owners=68, name_apply=0, missing factories=0, ABI dispatch=006E386C, enum consumers=0
-[89] STObjectFactoryApplier.java <- <repo>/recovery/ST.exe/object_factory_proposals.tsv
-Object factories: applied=0, created=0, partial=0, unchanged=96, preserved=0, conflicts=0, disabled=2
-Apply report: <local-home>/st/recovery/ST.exe/object_factory_apply_report.tsv
-STObjectFactoryApplier.java state: proposals_enabled=94, proposals_review=2, changed=0, unchanged=96, review=2, conflict=0, error=0
-Deep propagation pass 1: mutating report rows=3
-
-== deep propagation pass 2/12 ==
-[90] STAbiConsistencyAnalyzer.java <- <repo>/recovery
-ABI consistency analysis complete: <local-home>/st/recovery/ST.exe
-Proposals=0, automatic=0
-[91] STAbiConsistencyApplier.java <- <repo>/recovery/ST.exe/abi_consistency_proposals.tsv
-ABI repairs: applied=0, unchanged=0, preserved=0, conflicts=0, disabled=0
-Apply report: <local-home>/st/recovery/ST.exe/abi_consistency_apply_report.tsv
-STAbiConsistencyApplier.java state: proposals_enabled=0, proposals_review=0, changed=0, unchanged=0, review=0, conflict=0, error=0
-[92] STReturnSemanticsAnalyzer.java <- <repo>/recovery
-Return-semantics analysis complete: <local-home>/st/recovery/ST.exe
-Mode=full, functions=5712, proposals=114, apply=0, failures=0
-[93] STReturnSemanticsApplier.java <- <repo>/recovery/ST.exe/return_semantics_proposals.tsv
-Return semantics: applied=0, unchanged=0, preserved=0, conflicts=0, disabled=114
-Apply report: <local-home>/st/recovery/ST.exe/return_semantics_apply_report.tsv
-STReturnSemanticsApplier.java state: proposals_enabled=0, proposals_review=114, changed=0, unchanged=0, review=114, conflict=0, error=0
-[94] STPrototypeAnalyzer.java <- <repo>/recovery
-Prototype analysis complete: <local-home>/st/recovery/ST.exe
-Functions: 5712, direct calls: 37298, proposals: 131, type_apply: 0, name_apply: 0, repair: 3, propagation_passes: 8
-[95] STPrototypeRepairAnalyzer.java <- <repo>/recovery/ST.exe/prototype_proposals.tsv
+[44] STEvidenceLedger.java <- fingerprint | <repo>/recovery
+Computing semantic Program fingerprint...
+Semantic Program fingerprint: 27b2e1eb234982f047ed62f60bc77e1a7bde68397a9bbe5e0b2e1686a4b2fed8
+[45] STPrototypeAnalyzer.java skipped: semantic/source/dependency cache hit; reusing verified analyzer artifacts
+[46] STPrototypeRepairAnalyzer.java <- <repo>/recovery/ST.exe/prototype_proposals.tsv
 Prototype repair analysis complete: <local-home>/st/recovery/ST.exe/prototype_repair_proposals.tsv
 Repair rows: 3
-[96] STPrototypeRepairApplier.java <- <repo>/recovery/ST.exe/prototype_repair_proposals.tsv
+[47] STPrototypeRepairApplier.java <- <repo>/recovery/ST.exe/prototype_repair_proposals.tsv
 Prototype repairs: applied=0, partial=0, unchanged=0, preserved=0, conflicts=0, disabled=3
 Apply report: <local-home>/st/recovery/ST.exe/prototype_repair_apply_report.tsv
 STPrototypeRepairApplier.java state: proposals_enabled=0, proposals_review=3, changed=0, unchanged=0, review=3, conflict=0, error=0
-[97] STPrototypeApplier.java <- <repo>/recovery/ST.exe/prototype_proposals.tsv
-Prototypes: applied=0, partial=0, unchanged=0, preserved=0, conflicts=0, disabled=131
+[48] STPrototypeApplier.java <- <repo>/recovery/ST.exe/prototype_proposals.tsv
+Prototypes: applied=0, partial=0, unchanged=0, preserved=0, conflicts=0, disabled=129
 Apply report: <local-home>/st/recovery/ST.exe/prototype_apply_report.tsv
-STPrototypeApplier.java state: proposals_enabled=0, proposals_review=131, changed=0, unchanged=0, review=131, conflict=0, error=0
-[98] STGlobalRecordAnalyzer.java <- <repo>/recovery
+STPrototypeApplier.java state: proposals_enabled=0, proposals_review=129, changed=0, unchanged=0, review=129, conflict=0, error=0
+[49] STGlobalRecordAnalyzer.java <- <repo>/recovery
 Global-record analysis complete: <local-home>/st/recovery/ST.exe
 Records: 1, apply=1, stride functions=9, fields=82, typed=0, named=0
-[99] STGlobalRecordApplier.java <- <repo>/recovery/ST.exe/global_record_proposals.tsv
+[50] STGlobalRecordApplier.java <- <repo>/recovery/ST.exe/global_record_proposals.tsv
 Global records: applied=0, updated=0, unchanged=1, partial=0, preserved=0, conflicts=0, disabled=0
 Apply report: <local-home>/st/recovery/ST.exe/global_record_apply_report.tsv
 STGlobalRecordApplier.java state: proposals_enabled=1, proposals_review=0, changed=0, unchanged=1, review=0, conflict=0, error=0
-[100] STDiscriminatedPayloadAnalyzer.java <- <repo>/recovery
-Discriminated payloads: families=7, case layouts=29, stack targets=0, family source=fresh decompilation, output=<local-home>/st/recovery/ST.exe
-[101] STDiscriminatedPayloadApplier.java <- <repo>/recovery/ST.exe/discriminated_payload_proposals.tsv
+[51] STDiscriminatedPayloadAnalyzer.java skipped: semantic/source/dependency cache hit; reusing verified analyzer artifacts
+[52] STDiscriminatedPayloadApplier.java <- <repo>/recovery/ST.exe/discriminated_payload_proposals.tsv
 Discriminated payloads: applied=0, unchanged=35, preserved=0, conflicts=0, disabled=1
 Apply report: <local-home>/st/recovery/ST.exe/discriminated_payload_apply_report.tsv
 STDiscriminatedPayloadApplier.java state: proposals_enabled=28, proposals_review=1, changed=0, unchanged=35, review=1, conflict=0, error=0
-[102] STGlobalAggregateAnalyzer.java <- <repo>/recovery
+[53] STGlobalAggregateAnalyzer.java <- <repo>/recovery
 Global-aggregate analysis complete: <local-home>/st/recovery/ST.exe
-Indexed candidates=588, proposals=74, apply=2
-[103] STGlobalAggregateApplier.java <- <repo>/recovery/ST.exe/global_aggregate_proposals.tsv
-Global aggregates: applied=0, unchanged=1, preserved=0, conflicts=1, disabled=72
+Indexed candidates=617, proposals=69, apply=3
+[54] STGlobalAggregateApplier.java <- <repo>/recovery/ST.exe/global_aggregate_proposals.tsv
+Global aggregates: applied=0, unchanged=2, preserved=0, conflicts=1, disabled=66
 Apply report: <local-home>/st/recovery/ST.exe/global_aggregate_apply_report.tsv
-STGlobalAggregateApplier.java state: proposals_enabled=2, proposals_review=72, changed=0, unchanged=1, review=72, conflict=1, error=0
-[104] STGlobalDataAnalyzer.java <- <repo>/recovery
+STGlobalAggregateApplier.java state: proposals_enabled=3, proposals_review=66, changed=0, unchanged=2, review=66, conflict=1, error=0
+[55] STGlobalDataAnalyzer.java <- <repo>/recovery
 Global-data analysis complete: <local-home>/st/recovery/ST.exe
-Functions: 5712, calls: 37298, proposals: 110, type_apply: 0, name_apply: 0, PTR audit: 695, zero globals: 18
-[105] STGlobalDataApplier.java <- <repo>/recovery/ST.exe/global_data_proposals.tsv
-Global data: applied=0, partial=0, unchanged=0, preserved=0, conflicts=0, disabled=110
+Functions: 5712, calls: 37298, proposals: 111, type_apply: 0, name_apply: 0, PTR audit: 695, zero globals: 18
+[56] STGlobalDataApplier.java <- <repo>/recovery/ST.exe/global_data_proposals.tsv
+Global data: applied=0, partial=0, unchanged=0, preserved=0, conflicts=0, disabled=111
 Apply report: <local-home>/st/recovery/ST.exe/global_data_apply_report.tsv
-STGlobalDataApplier.java state: proposals_enabled=0, proposals_review=110, changed=0, unchanged=0, review=110, conflict=0, error=0
-[106] STMethodOwnerAnalyzer.java <- <repo>/recovery
+STGlobalDataApplier.java state: proposals_enabled=0, proposals_review=111, changed=0, unchanged=0, review=111, conflict=0, error=0
+[57] STMethodOwnerAnalyzer.java <- <repo>/recovery
 Method-owner analysis complete: <local-home>/st/recovery/ST.exe
 Named caller methods: 1418, candidates: 884, owner_apply: 0, owner_repair: 0, convention_apply: 0, typed_singleton_calls: 2089
-[107] STMethodOwnerApplier.java <- <repo>/recovery/ST.exe/method_owner_proposals.tsv
+[58] STMethodOwnerApplier.java <- <repo>/recovery/ST.exe/method_owner_proposals.tsv
 Method owners: applied=0, partial=0, repaired=0, unchanged=0, preserved=0, conflicts=0, disabled=884
 Apply report: <local-home>/st/recovery/ST.exe/method_owner_apply_report.tsv
 STMethodOwnerApplier.java state: proposals_enabled=0, proposals_review=884, changed=0, unchanged=0, review=884, conflict=0, error=0
-[108] STIndirectCallAnalyzer.java <- <repo>/recovery
+[59] STIndirectCallAnalyzer.java <- <repo>/recovery
 Indirect-call analysis complete: <local-home>/st/recovery/ST.exe
 Sites=4221, proposals=2636, apply=2147
-[109] STIndirectCallApplier.java <- <repo>/recovery/ST.exe/indirect_call_proposals.tsv
+[60] STIndirectCallApplier.java <- <repo>/recovery/ST.exe/indirect_call_proposals.tsv
 Indirect calls: applied=0, unchanged=2147, preserved=0, conflicts=0, disabled=489
 Apply report: <local-home>/st/recovery/ST.exe/indirect_call_apply_report.tsv
 STIndirectCallApplier.java state: proposals_enabled=2147, proposals_review=489, changed=0, unchanged=2147, review=489, conflict=0, error=0
-[110] STPointerRoleRepairAnalyzer.java <- <repo>/recovery
-Pointer-role repair analysis complete: <local-home>/st/recovery/ST.exe
-Candidate functions=283, unsettled=3, proposals=1, auto_apply=0, failures=1
-[111] STPointerRoleRepairApplier.java <- <repo>/recovery/ST.exe/pointer_role_repair_proposals.tsv
+[61] STPointerRoleRepairAnalyzer.java skipped: semantic/source/dependency cache hit; reusing verified analyzer artifacts
+[62] STPointerRoleRepairApplier.java <- <repo>/recovery/ST.exe/pointer_role_repair_proposals.tsv
 Pointer-role repairs: applied=0, unchanged=0, preserved=0, conflicts=0, disabled=1
 Apply report: <local-home>/st/recovery/ST.exe/pointer_role_repair_apply_report.tsv
 STPointerRoleRepairApplier.java state: proposals_enabled=0, proposals_review=1, changed=0, unchanged=0, review=1, conflict=0, error=0
-[112] STPointerShapeAnalyzer.java <- <repo>/recovery
-Pointer-shape analysis complete: <local-home>/st/recovery/ST.exe
-Functions=5707, raw functions=777, raw accesses=3807, nested=345, pointer aliases=355, alias accesses=1269, owner-this spill repairs=0, typed-field consumers=30, targets=2006, target_apply=2, anonymous_types=2, failures=0
-[113] STPointerShapeApplier.java <- <repo>/recovery/ST.exe/pointer_shape_target_proposals.tsv
-Pointer shapes: applied=0, updated=0, unchanged=2, preserved=1, conflicts=1, disabled=2829
+[63] STPointerShapeAnalyzer.java skipped: semantic/source/dependency cache hit; reusing verified analyzer artifacts
+[64] STPointerShapeApplier.java <- <repo>/recovery/ST.exe/pointer_shape_target_proposals.tsv
+Pointer shapes: applied=0, updated=0, unchanged=0, preserved=0, conflicts=0, disabled=2833
 Apply report: <local-home>/st/recovery/ST.exe/pointer_shape_apply_report.tsv
-STPointerShapeApplier.java state: proposals_enabled=2, proposals_review=2004, changed=0, unchanged=2, review=2830, conflict=1, error=0
-[114] STTypeFamilyAnalyzer.java <- <repo>/recovery
+STPointerShapeApplier.java state: proposals_enabled=0, proposals_review=2007, changed=0, unchanged=0, review=2833, conflict=0, error=0
+[65] STTypeFamilyAnalyzer.java <- <repo>/recovery
 Type-family analysis complete: <local-home>/st/recovery/ST.exe
 Exact groups=137, target proposals=2, apply=0
-[115] STTypeFamilyApplier.java <- <repo>/recovery/ST.exe/type_family_proposals.tsv
+[66] STTypeFamilyApplier.java <- <repo>/recovery/ST.exe/type_family_proposals.tsv
 Type families: applied=0, unchanged=0, preserved=0, conflicts=0, disabled=2
 Apply report: <local-home>/st/recovery/ST.exe/type_family_apply_report.tsv
 STTypeFamilyApplier.java state: proposals_enabled=0, proposals_review=2, changed=0, unchanged=0, review=2, conflict=0, error=0
-[116] STClassArrayAnalyzer.java <- <repo>/recovery
+[67] STClassArrayAnalyzer.java <- <repo>/recovery
 Class-array analysis complete: <local-home>/st/recovery/ST.exe
 Functions=1452, candidates=54, auto_apply=46, bounded_sites=29, exact_loops=73
-[117] STClassLayoutAnalyzer.java <- <repo>/recovery
-Class-layout analysis complete: <local-home>/st/recovery/ST.exe
-Classes: 145, class_apply: 111, fields: 5832, field_apply: 5529, semantic_type_apply: 0, generated_type_revisions: 0, deprecated_type_repairs: 0, cross_typed_accesses: 42037, cross_type_links: 541, nested_pointees: 153, nested_apply: 0, member_arrays: 46, review_name_suggestions: 156
-[118] STClassLayoutApplier.java <- <repo>/recovery/ST.exe/class_layout_proposals.tsv
-Class layouts: applied=0, updated=0, unchanged=111, preserved=0, conflicts=0, disabled=187, typed_fields=0, named_fields=0
+[68] STInlineAggregateAnalyzer.java <- <repo>/recovery
+Inline-aggregate analysis complete: <local-home>/st/recovery/ST.exe
+Functions=1452, exact_copies=0, nested_apply=0, zero_spans=90
+[69] STClassLayoutAnalyzer.java skipped: semantic/source/dependency cache hit; reusing verified analyzer artifacts
+[70] STClassLayoutApplier.java <- <repo>/recovery/ST.exe/class_layout_proposals.tsv
+Class layouts: applied=0, updated=0, unchanged=112, preserved=0, conflicts=0, disabled=185, typed_fields=0, named_fields=0
 Apply report: <local-home>/st/recovery/ST.exe/class_layout_apply_report.tsv
-STClassLayoutApplier.java state: proposals_enabled=111, proposals_review=34, changed=0, unchanged=111, review=187, conflict=0, error=0
-[119] STDArrayElementAnalyzer.java skipped: clean analyzer node at the current Program epoch; reusing verified artifacts
-[120] STDArrayElementApplier.java <- <repo>/recovery/ST.exe/darray_element_proposals.tsv | types-only
-DArray elements: applied=0, updated=0, unchanged=21, preserved=0, conflicts=1, disabled=28
+STClassLayoutApplier.java state: proposals_enabled=112, proposals_review=33, changed=0, unchanged=112, review=185, conflict=0, error=0
+Class-layout local pass 1: mutating rows=0
+[71] STDArrayElementAnalyzer.java skipped: semantic/source/dependency cache hit; reusing verified analyzer artifacts
+[72] STDArrayElementApplier.java <- <repo>/recovery/ST.exe/darray_element_proposals.tsv | types-only
+DArray elements: applied=0, updated=0, unchanged=20, preserved=0, conflicts=2, disabled=28
 DArray element locals: applied=0, unchanged=0, preserved=0, conflicts=0, disabled=0, stale_removed=0
 Apply report: <local-home>/st/recovery/ST.exe/darray_element_apply_report.tsv
 Local apply report: <local-home>/st/recovery/ST.exe/darray_element_local_apply_report.tsv
-STDArrayElementApplier.java state: proposals_enabled=22, proposals_review=28, changed=0, unchanged=21, review=28, conflict=1, error=0
-[121] STSwitchEnumAnalyzer.java skipped: clean analyzer node at the current Program epoch; reusing verified artifacts
-[122] STSwitchEnumApplier.java <- <repo>/recovery/ST.exe/switch_enum_proposals.tsv
-Switch enums: applied=0, unchanged=567, preserved=1, conflicts=0, disabled=423
+STDArrayElementApplier.java state: proposals_enabled=22, proposals_review=28, changed=0, unchanged=20, review=28, conflict=2, error=0
+[73] STSwitchEnumAnalyzer.java skipped: semantic/source/dependency cache hit; reusing verified analyzer artifacts
+[74] STSwitchEnumApplier.java <- <repo>/recovery/ST.exe/switch_enum_proposals.tsv
+Switch enums: applied=0, unchanged=560, preserved=1, conflicts=0, disabled=415
 Apply report: <local-home>/st/recovery/ST.exe/switch_enum_apply_report.tsv
-STSwitchEnumApplier.java state: proposals_enabled=568, proposals_review=423, changed=0, unchanged=567, review=424, conflict=0, error=0
-[123] STObjectFactoryAnalyzer.java <- <repo>/recovery
+STSwitchEnumApplier.java state: proposals_enabled=561, proposals_review=415, changed=0, unchanged=560, review=416, conflict=0, error=0
+[75] STObjectFactoryAnalyzer.java <- <repo>/recovery
 Object-factory analysis complete: <local-home>/st/recovery/ST.exe
 Registry=007CA720, entries=96, allocator=006B04D0, concrete owners=68, name_apply=0, missing factories=0, ABI dispatch=006E386C, enum consumers=0
-[124] STObjectFactoryApplier.java <- <repo>/recovery/ST.exe/object_factory_proposals.tsv
+[76] STObjectFactoryApplier.java <- <repo>/recovery/ST.exe/object_factory_proposals.tsv
 Object factories: applied=0, created=0, partial=0, unchanged=96, preserved=0, conflicts=0, disabled=2
 Apply report: <local-home>/st/recovery/ST.exe/object_factory_apply_report.tsv
 STObjectFactoryApplier.java state: proposals_enabled=94, proposals_review=2, changed=0, unchanged=96, review=2, conflict=0, error=0
-Deep propagation pass 2: mutating report rows=0
+Deep propagation pass 1: mutating report rows=0
 
 == factory/vtable/constructor/class fixpoint ==
-[125] STMessageHandlerAnalyzer.java <- <repo>/recovery
+[77] STMessageHandlerAnalyzer.java <- <repo>/recovery
 Message-handler analysis complete: <local-home>/st/recovery/ST.exe
 Handlers: 106, automatic: 0, already typed: 106, conflicts/manual: 0
-[126] STMessageHandlerApplier.java <- <repo>/recovery/ST.exe/message_handler_proposals.tsv
+[78] STMessageHandlerApplier.java <- <repo>/recovery/ST.exe/message_handler_proposals.tsv
 Message handlers: applied=0, unchanged=0, disabled=106, manual/stale preserved=0, conflicts=0
 Apply report: <local-home>/st/recovery/ST.exe/message_handler_apply_report.tsv
 STMessageHandlerApplier.java state: proposals_enabled=0, proposals_review=106, changed=0, unchanged=0, review=106, conflict=0, error=0
-[127] STObjectFactoryAnalyzer.java <- <repo>/recovery
+[79] STObjectFactoryAnalyzer.java <- <repo>/recovery
 Object-factory analysis complete: <local-home>/st/recovery/ST.exe
 Registry=007CA720, entries=96, allocator=006B04D0, concrete owners=68, name_apply=0, missing factories=0, ABI dispatch=006E386C, enum consumers=0
-[128] STObjectFactoryApplier.java <- <repo>/recovery/ST.exe/object_factory_proposals.tsv
+[80] STObjectFactoryApplier.java <- <repo>/recovery/ST.exe/object_factory_proposals.tsv
 Object factories: applied=0, created=0, partial=0, unchanged=96, preserved=0, conflicts=0, disabled=2
 Apply report: <local-home>/st/recovery/ST.exe/object_factory_apply_report.tsv
 STObjectFactoryApplier.java state: proposals_enabled=94, proposals_review=2, changed=0, unchanged=96, review=2, conflict=0, error=0
-[129] STVTableAnalyzer.java <- <repo>/recovery
+[81] STVTableAnalyzer.java <- <repo>/recovery
 VTable analysis complete: <local-home>/st/recovery/ST.exe
 Tables: 180, high-confidence: 56, owner conflicts: 28
-[130] STVTableApplier.java <- <repo>/recovery/ST.exe/vtable_proposals.tsv
+[82] STVTableApplier.java <- <repo>/recovery/ST.exe/vtable_proposals.tsv
 VTables applied: 0, updated types: 0, functions created/renamed: 0, already present: 206, skipped: 30, conflicts/failed: 0
 Apply report: <local-home>/st/recovery/ST.exe/vtable_apply_report.tsv
 STVTableApplier.java state: proposals_enabled=158, proposals_review=22, changed=0, unchanged=206, review=30, conflict=0, error=0
-[131] STVirtualMethodAnalyzer.java <- <repo>/recovery/ST.exe/vtable_proposals.tsv
+[83] STVirtualMethodAnalyzer.java <- <repo>/recovery/ST.exe/vtable_proposals.tsv
 Virtual-method analysis complete: <local-home>/st/recovery/ST.exe
 Active tables: 56, target functions: 365, name_apply: 0, convention_apply: 0, signature_apply: 0
-[132] STVirtualMethodApplier.java <- <repo>/recovery/ST.exe/virtual_method_proposals.tsv
+[84] STVirtualMethodApplier.java <- <repo>/recovery/ST.exe/virtual_method_proposals.tsv
 Virtual methods: applied=0, partial=0, unchanged=0, manual/stale preserved=0, conflicts=0, disabled=365
 Apply report: <local-home>/st/recovery/ST.exe/virtual_method_apply_report.tsv
 STVirtualMethodApplier.java state: proposals_enabled=0, proposals_review=365, changed=0, unchanged=0, review=365, conflict=0, error=0
-[133] STConstructorAnalyzer.java <- <repo>/recovery/ST.exe/vtable_proposals.tsv
+[85] STConstructorAnalyzer.java <- <repo>/recovery/ST.exe/vtable_proposals.tsv
 Constructor analysis complete: <local-home>/st/recovery/ST.exe
 Vptr writers: 106, constructor candidates: 57, name_apply: 0, convention_apply: 0, parameter_apply: 0, hierarchy: 5, class sizes: 4
-[134] STConstructorApplier.java <- <repo>/recovery/ST.exe/constructor_proposals.tsv
+[86] STConstructorApplier.java <- <repo>/recovery/ST.exe/constructor_proposals.tsv
 Constructors: applied=0, partial=0, unchanged=0, preserved=0, conflicts=0, disabled=57
 Apply report: <local-home>/st/recovery/ST.exe/constructor_apply_report.tsv
 STConstructorApplier.java state: proposals_enabled=0, proposals_review=57, changed=0, unchanged=0, review=57, conflict=0, error=0
-[135] STClassArrayAnalyzer.java <- <repo>/recovery
+[87] STClassArrayAnalyzer.java <- <repo>/recovery
 Class-array analysis complete: <local-home>/st/recovery/ST.exe
 Functions=1452, candidates=54, auto_apply=46, bounded_sites=29, exact_loops=73
-[136] STClassLayoutAnalyzer.java <- <repo>/recovery
-Class-layout analysis complete: <local-home>/st/recovery/ST.exe
-Classes: 145, class_apply: 111, fields: 5832, field_apply: 5529, semantic_type_apply: 0, generated_type_revisions: 0, deprecated_type_repairs: 0, cross_typed_accesses: 42037, cross_type_links: 541, nested_pointees: 153, nested_apply: 0, member_arrays: 46, review_name_suggestions: 156
-[137] STClassLayoutApplier.java <- <repo>/recovery/ST.exe/class_layout_proposals.tsv
-Class layouts: applied=0, updated=0, unchanged=111, preserved=0, conflicts=0, disabled=187, typed_fields=0, named_fields=0
+[88] STInlineAggregateAnalyzer.java <- <repo>/recovery
+Inline-aggregate analysis complete: <local-home>/st/recovery/ST.exe
+Functions=1452, exact_copies=0, nested_apply=0, zero_spans=90
+[89] STClassLayoutAnalyzer.java skipped: clean analyzer node at the current Program epoch; reusing verified artifacts
+[90] STClassLayoutApplier.java <- <repo>/recovery/ST.exe/class_layout_proposals.tsv
+Class layouts: applied=0, updated=0, unchanged=112, preserved=0, conflicts=0, disabled=185, typed_fields=0, named_fields=0
 Apply report: <local-home>/st/recovery/ST.exe/class_layout_apply_report.tsv
-STClassLayoutApplier.java state: proposals_enabled=111, proposals_review=34, changed=0, unchanged=111, review=187, conflict=0, error=0
-[138] STDArrayElementAnalyzer.java skipped: clean analyzer node at the current Program epoch; reusing verified artifacts
-[139] STDArrayElementApplier.java <- <repo>/recovery/ST.exe/darray_element_proposals.tsv | types-only
-DArray elements: applied=0, updated=0, unchanged=21, preserved=0, conflicts=1, disabled=28
+STClassLayoutApplier.java state: proposals_enabled=112, proposals_review=33, changed=0, unchanged=112, review=185, conflict=0, error=0
+Class-layout local pass 1: mutating rows=0
+[91] STDArrayElementAnalyzer.java skipped: clean analyzer node at the current Program epoch; reusing verified artifacts
+[92] STDArrayElementApplier.java <- <repo>/recovery/ST.exe/darray_element_proposals.tsv | types-only
+DArray elements: applied=0, updated=0, unchanged=20, preserved=0, conflicts=2, disabled=28
 DArray element locals: applied=0, unchanged=0, preserved=0, conflicts=0, disabled=0, stale_removed=0
 Apply report: <local-home>/st/recovery/ST.exe/darray_element_apply_report.tsv
 Local apply report: <local-home>/st/recovery/ST.exe/darray_element_local_apply_report.tsv
-STDArrayElementApplier.java state: proposals_enabled=22, proposals_review=28, changed=0, unchanged=21, review=28, conflict=1, error=0
+STDArrayElementApplier.java state: proposals_enabled=22, proposals_review=28, changed=0, unchanged=20, review=28, conflict=2, error=0
 Structural pass 1: mutating report rows=0
 
 == post-structural indirect propagation ==
-[140] STIndirectCallAnalyzer.java <- <repo>/recovery
+[93] STFunctionPointerFieldAnalyzer.java skipped: semantic/source/dependency cache hit; reusing verified analyzer artifacts
+[94] STFunctionPointerFieldApplier.java <- <repo>/recovery/ST.exe/function_pointer_field_proposals.tsv
+Function-pointer fields: applied=0, unchanged=0, preserved=0, conflicts=0, disabled=258
+Apply report: <local-home>/st/recovery/ST.exe/function_pointer_field_apply_report.tsv
+STFunctionPointerFieldApplier.java state: proposals_enabled=0, proposals_review=258, changed=0, unchanged=0, review=258, conflict=0, error=0
+[95] STIndirectCallAnalyzer.java <- <repo>/recovery
 Indirect-call analysis complete: <local-home>/st/recovery/ST.exe
 Sites=4221, proposals=2636, apply=2147
-[141] STIndirectCallApplier.java <- <repo>/recovery/ST.exe/indirect_call_proposals.tsv
+[96] STIndirectCallApplier.java <- <repo>/recovery/ST.exe/indirect_call_proposals.tsv
 Indirect calls: applied=0, unchanged=2147, preserved=0, conflicts=0, disabled=489
 Apply report: <local-home>/st/recovery/ST.exe/indirect_call_apply_report.tsv
 STIndirectCallApplier.java state: proposals_enabled=2147, proposals_review=489, changed=0, unchanged=2147, review=489, conflict=0, error=0
 
 == deep finalization ==
-[142] STSourceProvenanceAnalyzer.java <- <repo>/recovery
+[97] STSourceProvenanceAnalyzer.java <- <repo>/recovery
 Source-provenance analysis complete: <local-home>/st/recovery/ST.exe
 Functions: 1149, source_apply: 271, free_name_apply: 168
-[143] STSourceProvenanceApplier.java <- <repo>/recovery/ST.exe/source_provenance_proposals.tsv
+[98] STSourceProvenanceApplier.java <- <repo>/recovery/ST.exe/source_provenance_proposals.tsv
 Source provenance: comments=271, names=168, conflicts=0, rows=1149
 Apply report: <local-home>/st/recovery/ST.exe/source_provenance_apply_report.tsv
 STSourceProvenanceApplier.java state: proposals_enabled=271, proposals_review=878, changed=0, unchanged=439, review=1859, conflict=0, error=0
-[144] STThunkPropagationAnalyzer.java <- <repo>/recovery
+[99] STThunkPropagationAnalyzer.java <- <repo>/recovery
 Thunk propagation: thunks=3826, apply=0
 Proposals: <local-home>/st/recovery/ST.exe/thunk_proposals.tsv
-[145] STThunkPropagationApplier.java <- <repo>/recovery/ST.exe/thunk_proposals.tsv
+[100] STThunkPropagationApplier.java <- <repo>/recovery/ST.exe/thunk_proposals.tsv
 Thunk propagation: applied=0, unchanged=0, preserved=0, conflicts=0, disabled=3826
 Apply report: <local-home>/st/recovery/ST.exe/thunk_apply_report.tsv
 STThunkPropagationApplier.java state: proposals_enabled=0, proposals_review=3826, changed=0, unchanged=0, review=3826, conflict=0, error=0
-[146] STControlFlowLabelAnalyzer.java <- <repo>/recovery
-Control-flow label analysis complete: <local-home>/st/recovery/ST.exe
-Functions with gotos: 876, targets: 3438, auto_apply: 431, unresolved: 4, decompile failures: 1
-[147] STControlFlowLabelApplier.java <- <repo>/recovery/ST.exe/control_flow_label_proposals.tsv
+[101] STControlFlowLabelAnalyzer.java skipped: semantic/source/dependency cache hit; reusing verified analyzer artifacts
+[102] STControlFlowLabelApplier.java <- <repo>/recovery/ST.exe/control_flow_label_proposals.tsv
 Control-flow labels: applied=0, unchanged=431, preserved=0, conflicts=0, disabled=3007
 Apply report: <local-home>/st/recovery/ST.exe/control_flow_label_apply_report.tsv
 STControlFlowLabelApplier.java state: proposals_enabled=431, proposals_review=3007, changed=0, unchanged=431, review=3007, conflict=0, error=0
-[148] STLibraryAnalyzer.java <- <repo>/recovery
+[103] STLibraryAnalyzer.java <- <repo>/recovery
 Library analysis complete: <local-home>/st/recovery/ST.exe
 Proposals: 873, conflicts: 0
-[149] STLibraryApplier.java <- <repo>/recovery/ST.exe/library_proposals.tsv
+[104] STLibraryApplier.java <- <repo>/recovery/ST.exe/library_proposals.tsv
 Library classifications applied: 851, namespaced: 752, class/owner namespaces preserved: 99, skipped: 22, failed: 0
-[150] STGlobalDataAnalyzer.java <- <repo>/recovery
+[105] STGlobalDataAnalyzer.java <- <repo>/recovery
 Global-data analysis complete: <local-home>/st/recovery/ST.exe
-Functions: 5712, calls: 37298, proposals: 110, type_apply: 0, name_apply: 0, PTR audit: 695, zero globals: 18
-[151] STGlobalDataApplier.java <- <repo>/recovery/ST.exe/global_data_proposals.tsv
-Global data: applied=0, partial=0, unchanged=0, preserved=0, conflicts=0, disabled=110
+Functions: 5712, calls: 37298, proposals: 111, type_apply: 0, name_apply: 0, PTR audit: 695, zero globals: 18
+[106] STGlobalDataApplier.java <- <repo>/recovery/ST.exe/global_data_proposals.tsv
+Global data: applied=0, partial=0, unchanged=0, preserved=0, conflicts=0, disabled=111
 Apply report: <local-home>/st/recovery/ST.exe/global_data_apply_report.tsv
-STGlobalDataApplier.java state: proposals_enabled=0, proposals_review=110, changed=0, unchanged=0, review=110, conflict=0, error=0
-[152] STPointerShapeAnalyzer.java skipped: clean analyzer node at the current Program epoch; reusing verified artifacts
-[153] STPointerShapeApplier.java <- <repo>/recovery/ST.exe/pointer_shape_target_proposals.tsv
-Pointer shapes: applied=0, updated=0, unchanged=2, preserved=1, conflicts=1, disabled=2829
+STGlobalDataApplier.java state: proposals_enabled=0, proposals_review=111, changed=0, unchanged=0, review=111, conflict=0, error=0
+[107] STPointerShapeAnalyzer.java skipped: clean analyzer node at the current Program epoch; reusing verified artifacts
+[108] STPointerShapeApplier.java <- <repo>/recovery/ST.exe/pointer_shape_target_proposals.tsv
+Pointer shapes: applied=0, updated=0, unchanged=0, preserved=0, conflicts=0, disabled=2833
 Apply report: <local-home>/st/recovery/ST.exe/pointer_shape_apply_report.tsv
-STPointerShapeApplier.java state: proposals_enabled=2, proposals_review=2004, changed=0, unchanged=2, review=2830, conflict=1, error=0
+STPointerShapeApplier.java state: proposals_enabled=0, proposals_review=2007, changed=0, unchanged=0, review=2833, conflict=0, error=0
 
 == final discriminated stack aggregates ==
-[154] STDiscriminatedPayloadAnalyzer.java skipped: clean analyzer node at the current Program epoch; reusing verified artifacts
-[155] STDiscriminatedPayloadAnalyzer.java <- <repo>/recovery | final-stacks
+[109] STDiscriminatedPayloadAnalyzer.java skipped: clean analyzer node at the current Program epoch; reusing verified artifacts
+[110] STDiscriminatedPayloadAnalyzer.java <- <repo>/recovery | final-stacks
 Discriminated payloads: families=7, case layouts=29, stack targets=0, family source=verified current-epoch proposals, output=<local-home>/st/recovery/ST.exe
-[156] STDiscriminatedPayloadApplier.java <- <repo>/recovery/ST.exe/discriminated_payload_proposals.tsv
+[111] STDiscriminatedPayloadApplier.java <- <repo>/recovery/ST.exe/discriminated_payload_proposals.tsv
 Discriminated payloads: applied=0, unchanged=35, preserved=0, conflicts=0, disabled=1
 Apply report: <local-home>/st/recovery/ST.exe/discriminated_payload_apply_report.tsv
 STDiscriminatedPayloadApplier.java state: proposals_enabled=28, proposals_review=1, changed=0, unchanged=35, review=1, conflict=0, error=0
 Final discriminated stack aggregates: mutating rows=0
-[157] STLocalLifetimeAnalyzer.java <- <repo>/recovery
-Local-lifetime analysis complete: <local-home>/st/recovery/ST.exe
-Functions=5712, merged_locals=9781, merge_groups=48317, groups_with_evidence=24109, single_group_unknowns=7722, single_group_proposals=29, proposals=618, apply=40, conflicts=329, failures=0
-[158] STLocalLifetimeApplier.java <- <repo>/recovery/ST.exe/local_lifetime_proposals.tsv
-Local lifetimes: applied=0, unchanged=16, preserved=0, conflicts=24, disabled=578
+[112] STLocalLifetimeAnalyzer.java skipped: semantic/source/dependency cache hit; reusing verified analyzer artifacts
+[113] STLocalLifetimeApplier.java <- <repo>/recovery/ST.exe/local_lifetime_proposals.tsv
+Local lifetimes: applied=0, unchanged=16, preserved=2, conflicts=22, disabled=570
 Apply report: <local-home>/st/recovery/ST.exe/local_lifetime_apply_report.tsv
-STLocalLifetimeApplier.java state: proposals_enabled=40, proposals_review=578, changed=0, unchanged=16, review=578, conflict=24, error=0
-STLocalLifetimeApplier.java: Program modification counter advanced without a mutating report row; treating report state as settled (rolled-back row transactions can advance Ghidra's diagnostic counter)
+STLocalLifetimeApplier.java state: proposals_enabled=40, proposals_review=570, changed=0, unchanged=16, review=572, conflict=22, error=0
 
 == generated type lifecycle ==
-[159] STTypeLifecycleAnalyzer.java <- <repo>/recovery
-Type lifecycle: candidates=1411, automatic=19, output=<local-home>/st/recovery/ST.exe
-[160] STTypeLifecycleApplier.java <- <repo>/recovery/ST.exe/type_lifecycle_proposals.tsv
-Type lifecycle: replaced=15, removed=4, preserved=0, disabled=1392, conflicts=0
+[114] STTypeLifecycleAnalyzer.java <- <repo>/recovery
+Type lifecycle: candidates=1400, automatic=0, output=<local-home>/st/recovery/ST.exe
+[115] STTypeLifecycleApplier.java <- <repo>/recovery/ST.exe/type_lifecycle_proposals.tsv
+Type lifecycle: replaced=0, removed=0, preserved=0, disabled=1400, conflicts=0
 Apply report: <local-home>/st/recovery/ST.exe/type_lifecycle_apply_report.tsv
-STTypeLifecycleApplier.java state: proposals_enabled=19, proposals_review=1392, changed=19, unchanged=0, review=1392, conflict=0, error=0
-Type-lifecycle pass 1: replaced/removed=19
-[161] STTypeLifecycleAnalyzer.java <- <repo>/recovery
-Type lifecycle: candidates=1392, automatic=0, output=<local-home>/st/recovery/ST.exe
-[162] STTypeLifecycleApplier.java <- <repo>/recovery/ST.exe/type_lifecycle_proposals.tsv
-Type lifecycle: replaced=0, removed=0, preserved=0, disabled=1392, conflicts=0
-Apply report: <local-home>/st/recovery/ST.exe/type_lifecycle_apply_report.tsv
-STTypeLifecycleApplier.java state: proposals_enabled=0, proposals_review=1392, changed=0, unchanged=0, review=1392, conflict=0, error=0
-Type-lifecycle pass 2: replaced/removed=0
+STTypeLifecycleApplier.java state: proposals_enabled=0, proposals_review=1400, changed=0, unchanged=0, review=1400, conflict=0, error=0
+Type-lifecycle pass 1: replaced/removed=0
 
 == critical export ABI stabilization ==
-[163] STAbiConsistencyAnalyzer.java <- <repo>/recovery
+[116] STAbiConsistencyAnalyzer.java <- <repo>/recovery
 ABI consistency analysis complete: <local-home>/st/recovery/ST.exe
 Proposals=0, automatic=0
-[164] STAbiConsistencyApplier.java <- <repo>/recovery/ST.exe/abi_consistency_proposals.tsv
+[117] STAbiConsistencyApplier.java <- <repo>/recovery/ST.exe/abi_consistency_proposals.tsv
 ABI repairs: applied=0, unchanged=0, preserved=0, conflicts=0, disabled=0
 Apply report: <local-home>/st/recovery/ST.exe/abi_consistency_apply_report.tsv
 STAbiConsistencyApplier.java state: proposals_enabled=0, proposals_review=0, changed=0, unchanged=0, review=0, conflict=0, error=0
 Export ABI consistency pass 1: mutating rows=0
-[165] STReturnSemanticsAnalyzer.java <- <repo>/recovery | repair-only
+[118] STReturnSemanticsAnalyzer.java <- <repo>/recovery | repair-only
 Return-semantics analysis complete: <local-home>/st/recovery/ST.exe
 Mode=repair-only, functions=5712, proposals=0, apply=0, failures=0
-[166] STReturnSemanticsApplier.java <- <repo>/recovery/ST.exe/return_semantics_proposals.tsv
+[119] STReturnSemanticsApplier.java <- <repo>/recovery/ST.exe/return_semantics_proposals.tsv
 Return semantics: applied=0, unchanged=0, preserved=0, conflicts=0, disabled=0
 Apply report: <local-home>/st/recovery/ST.exe/return_semantics_apply_report.tsv
 STReturnSemanticsApplier.java state: proposals_enabled=0, proposals_review=0, changed=0, unchanged=0, review=0, conflict=0, error=0
 Export return rollback repairs: mutating rows=0
-[167] STIndirectCallAnalyzer.java <- <repo>/recovery
+[120] STFunctionPointerFieldAnalyzer.java skipped: clean analyzer node at the current Program epoch; reusing verified artifacts
+[121] STFunctionPointerFieldApplier.java <- <repo>/recovery/ST.exe/function_pointer_field_proposals.tsv
+Function-pointer fields: applied=0, unchanged=0, preserved=0, conflicts=0, disabled=258
+Apply report: <local-home>/st/recovery/ST.exe/function_pointer_field_apply_report.tsv
+STFunctionPointerFieldApplier.java state: proposals_enabled=0, proposals_review=258, changed=0, unchanged=0, review=258, conflict=0, error=0
+[122] STIndirectCallAnalyzer.java <- <repo>/recovery
 Indirect-call analysis complete: <local-home>/st/recovery/ST.exe
 Sites=4221, proposals=2636, apply=2147
-[168] STIndirectCallApplier.java <- <repo>/recovery/ST.exe/indirect_call_proposals.tsv
+[123] STIndirectCallApplier.java <- <repo>/recovery/ST.exe/indirect_call_proposals.tsv
 Indirect calls: applied=0, unchanged=2147, preserved=0, conflicts=0, disabled=489
 Apply report: <local-home>/st/recovery/ST.exe/indirect_call_apply_report.tsv
 STIndirectCallApplier.java state: proposals_enabled=2147, proposals_review=489, changed=0, unchanged=2147, review=489, conflict=0, error=0
 Export indirect ABI stabilization pass 1: mutating rows=0
 
 == final read-only audits ==
-[169] STManualTypeAuditAnalyzer.java <- <repo>/recovery
+[124] STManualTypeAuditAnalyzer.java <- <repo>/recovery
 Manual-type audit complete: <local-home>/st/recovery/ST.exe
 Candidates=1, likely stale=1, already approved overrides=0, review=0
 
 == evidence checkpoint ==
-[170] STEvidenceLedger.java <- record | <repo>/recovery
+[125] STEvidenceLedger.java <- record | <repo>/recovery
 Computing semantic Program fingerprint...
-Evidence ledger recorded: program modification=1176, semantic_sha256=092a55e1aa7e5136813b1bd4600a741d22895c40f4281c890b03470a02d089b3, artifacts=83
-Persisted analyzer cache entries: 0
+Evidence ledger recorded: program modification=29, semantic_sha256=27b2e1eb234982f047ed62f60bc77e1a7bde68397a9bbe5e0b2e1686a4b2fed8, artifacts=86
+Persisted analyzer cache entries: 10
 
 == LLM corpus export ==
-[171] STEvidenceLedger.java <- verify | <repo>/recovery
+[126] STEvidenceLedger.java <- verify | <repo>/recovery
 Computing semantic Program fingerprint...
-Evidence ledger verified: program modification=1176, semantic_sha256=092a55e1aa7e5136813b1bd4600a741d22895c40f4281c890b03470a02d089b3, artifacts=83
-Preserving the last accepted export baseline after an unaccepted export: <local-home>/st/recovery/ST.exe/runs/78663d1d21cdaa47f59d080693cda0480b89fc2bebab5872054b72c9367a9eb5/pre_export
-[172] STDecompExport.java <- <repo>/decomp
+Evidence ledger verified: program modification=29, semantic_sha256=27b2e1eb234982f047ed62f60bc77e1a7bde68397a9bbe5e0b2e1686a4b2fed8, artifacts=86
+[127] STDecompExport.java <- <repo>/decomp
 Exporting ST.exe to <local-home>/st/decomp/ST.exe via transactional staging
-Functions reused without decompilation: 10354/10392
-Function quality/idiom analyses reused: 5680/5712
+Functions reused without decompilation: 10392/10392
+Function quality/idiom analyses reused: 5712/5712
 STDecompExport complete: <local-home>/st/decomp/ST.exe
-[173] STExportRegressionGate.java <- <repo>/decomp/ST.exe | <repo>/recovery/ST.exe/runs/.current/pre_export | <repo>/recovery/ST.exe
+[128] STExportRegressionGate.java <- <repo>/decomp/ST.exe | <repo>/recovery/ST.exe/runs/.current/pre_export | <repo>/recovery/ST.exe
 Export regression gate: status=passed, errors=0, warnings=0, report=<local-home>/st/recovery/ST.exe/export_regression_report.tsv
-ST recovery pipeline complete in 2314 s.
+ST recovery pipeline complete.
+Total pipeline time: 00:04:06
 Pipeline report: <local-home>/st/recovery/ST.exe/pipeline_report.tsv
 Program changed after pipeline: true
 Applier transactions are committed in the open Program, but the pipeline does not call DomainObject.save(). If Save Program is enabled after this script returns, save normally. If it is disabled, Ghidra reports that the Program has no unsaved changes; close the project normally and verify a recovered symbol after reopening before committing its project files.
-Latest archived run: 32fdd23154133857c39966429e56ee51c0f828b65a8388f57b1bb0e69f47e88f
+Latest archived run: 823782f20b2d984ae231eadf917dd40223e23d68b1421c3ed2cb9f4a70a0f8d8
 ST recovery launcher completed.

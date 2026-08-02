@@ -40,7 +40,7 @@ FUN_004b2520(uint param_1,int param_2,int param_3,int param_4,int param_5,undefi
   puStack_c = &DAT_00790940;
   puStack_10 = &LAB_0072d964;
   local_14 = ExceptionList;
-  local_30 = (STWorldObject *)0x0;
+  local_30 = nullptr;
   ExceptionList = &local_14;
   *param_8 = 0xffffffff;
   *param_7 = 0xffffffff;
@@ -83,7 +83,7 @@ LAB_004b266b:
                   ((sVar5 = (short)iVar8, sVar5 < 0 ||
                    ((g_worldGrid.sizeY <= sVar5 || (sVar12 = (short)iVar13, sVar12 < 0)))))) ||
                  (g_worldGrid.sizeZ <= sVar12)) {
-                this = (STWorldObject *)0x0;
+                this = nullptr;
               }
               else {
                 this = g_worldGrid.cells
@@ -91,9 +91,9 @@ LAB_004b266b:
                         + (int)sVar4].objects[0];
               }
               /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-              if (((this != (STWorldObject *)0x0) && (this[1].vtable < (STWorldObjectVTable *)0x8))
-                 && (((g_playSystem_00802A38 == (STPlaySystemC *)0x0 ||
-                      ((byte)(&DAT_008087e9)[(int)this[1].vtable * 0x51] < 8)) &&
+              if (((this != nullptr) && (this[1].vtable < (STWorldObjectVTable *)0x8))
+                 && (((g_playSystem_00802A38 == nullptr ||
+                      (g_bulkInitializedRecords_008087C7[(int)this[1].vtable].field_0022 < 8)) &&
                      (iVar7 = this->GetObjectTypeId(), uVar11 = g_worldGrid._0_4_,
                      iVar7 == 0x6f)))) {
                 bVar2 = *(byte *)&this[1].vtable;
@@ -123,8 +123,8 @@ LAB_004b281d:
                   bVar15 = iVar7 < 0;
                 }
                 else {
-                  bVar15 = (&DAT_008087ea)[(param_1 & 0xff) * 0x51] !=
-                           (&DAT_008087ea)[(uint)bVar2 * 0x51];
+                  bVar15 = g_bulkInitializedRecords_008087C7[param_1 & 0xff].field_0023 !=
+                           g_bulkInitializedRecords_008087C7[bVar2].field_0023;
                 }
                 if ((bVar15) && (local_2c < *(int *)&this[0x22].field_0x8)) goto LAB_004b288e;
               }
@@ -137,7 +137,7 @@ LAB_004b281d:
   }
 LAB_004b288e:
   local_30 = this;
-  if (local_30 == (STWorldObject *)0x0) {
+  if (local_30 == nullptr) {
     if (*param_10 != 0) {
       *param_10 = 0;
       local_34 = 1;

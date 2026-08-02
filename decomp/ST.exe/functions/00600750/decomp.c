@@ -41,7 +41,7 @@ undefined4 __fastcall FUN_00600750(AnonShape_00600750_A7773F7A *param_1)
           if (param_1->field_0232 != '\0') {
             local_c = *(STT3DSprC **)(iVar7 + 0x42 + param_1->field_0233);
             iVar4 = iVar7 + param_1->field_0233;
-            if (g_visibleClass_00802A88 != (VisibleClassTy *)0x0) {
+            if (g_visibleClass_00802A88 != nullptr) {
               sVar1 = *(short *)(iVar4 + 10);
               if (sVar1 < 0) {
                 local_10 = (int)(short)((sVar1 / 200 + (sVar1 >> 0xf)) -
@@ -75,7 +75,7 @@ undefined4 __fastcall FUN_00600750(AnonShape_00600750_A7773F7A *param_1)
                                 iVar5,&local_1c,&local_24), (int)local_10 < 0 ||
                     ((4 < (int)local_10 || (local_1c < 0)))) || (pVVar3->field_0030 <= local_1c))))
                  || ((((iVar4 = local_24 + g_centeredOffsets5[local_10], iVar4 < 0 ||
-                       (pVVar3->field_0034 <= iVar4)) || (pVVar3->field_004C == (byte *)0x0)) ||
+                       (pVVar3->field_0034 <= iVar4)) || (pVVar3->field_004C == nullptr)) ||
                      (pVVar3->field_004C[iVar4 * pVVar3->field_0030 + local_1c] != 0)))) {
                 if (*(char *)(iVar7 + 0x41 + param_1->field_0233) == '\0') {
                   thunk_FUN_004ad460(local_c,0);
@@ -215,7 +215,7 @@ LAB_00600928:
                      (float)(int)*(short *)((int)local_c + 10 + param_1->field_0233) * _DAT_007904f8
                      * _DAT_007904f0 + _DAT_007904fc);
           pVVar3 = g_visibleClass_00802A88;
-          if (g_visibleClass_00802A88 != (VisibleClassTy *)0x0) {
+          if (g_visibleClass_00802A88 != nullptr) {
             sVar1 = *(short *)((int)local_c + 10 + param_1->field_0233);
             iVar4 = (int)local_c + param_1->field_0233;
             if (sVar1 < 0) {
@@ -252,7 +252,7 @@ LAB_00600928:
                  ((pVVar3->field_0030 <= local_20 ||
                   ((iVar4 = g_centeredOffsets5[local_10] + local_2c, iVar4 < 0 ||
                    (pVVar3->field_0034 <= iVar4)))))))) ||
-               ((pVVar3->field_004C == (byte *)0x0 ||
+               ((pVVar3->field_004C == nullptr ||
                 (pVVar3->field_004C[local_20 + iVar4 * pVVar3->field_0030] != 0)))) {
               /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
               if (*(char *)((int)local_c + 0x41 + param_1->field_0233) == '\0') {

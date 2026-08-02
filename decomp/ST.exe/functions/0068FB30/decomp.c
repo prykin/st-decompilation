@@ -36,17 +36,17 @@ void __thiscall AiTactClassTy::BackFromRepair(AiTactClassTy *this,short param_1)
     local_3c[0] = 0x76;
     local_33 = param_1;
     local_31 = 0;
-    local_2b = Library::DKW::TBL::DArrayCreate((DArrayTy *)0x0,10,2,10);
+    local_2b = Library::DKW::TBL::DArrayCreate(nullptr,10,2,10);
     sub_006902B0(this_00,-0x8000,local_3c);
     this_01 = (void *)sub_0068E290(this_00,param_1);
-    if (this_01 != (void *)0x0) {
+    if (this_01 != nullptr) {
       thunk_FUN_0065d940(this_01,local_2b,0);
     }
     g_currentExceptionFrame = local_80.previous;
     return;
   }
   g_currentExceptionFrame = local_80.previous;
-  if (local_2b != (DArrayTy *)0x0) {
+  if (local_2b != nullptr) {
     DArrayDestroy(local_2b);
   }
   iVar2 = ReportDebugMessage("E:\\__titans\\ai\\ai_tact.cpp",0x2fb,0,iVar3,"%s",

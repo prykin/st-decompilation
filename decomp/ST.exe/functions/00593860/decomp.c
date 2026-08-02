@@ -19,7 +19,7 @@ CampaignTy * __cdecl CreateCampaign(void)
   undefined4 *puVar4;
 
   this = (CampaignTy *)FUN_006b04d0(0x2000);
-  if (this != (CampaignTy *)0x0) {
+  if (this != nullptr) {
     sub_006E5FB0(this);
     this->field_0000 = &VTable_0079C018;
     *(undefined4 *)&this->field_0x18 = 0;
@@ -68,6 +68,6 @@ CampaignTy * __cdecl CreateCampaign(void)
     this->field_1FFC = 0;
     return this;
   }
-  return (CampaignTy *)0x0;
+  return nullptr;
 }
 

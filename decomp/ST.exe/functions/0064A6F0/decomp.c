@@ -15,7 +15,7 @@ int __cdecl FUN_0064a6f0(int *param_1,int param_2)
   g_currentExceptionFrame = &local_48;
   exceptionCode = Library::MSVCRT::__setjmp3(local_48.jumpBuffer,0);
   if (exceptionCode == 0) {
-    if (param_1 == (int *)0x0) {
+    if (param_1 == nullptr) {
       RaiseInternalException
                 (-0x34,g_overwriteContext_007ED77C,"E:\\__titans\\ai\\ai_erc.cpp",0x25);
     }

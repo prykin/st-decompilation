@@ -43,7 +43,7 @@ void __thiscall SettMapMTy::CreateCtrls(SettMapMTy *this,char param_1)
   ppcVar6 = local_a80;
   local_8 = this;
   for (iVar3 = 0x223; iVar3 != 0; iVar3 = iVar3 + -1) {
-    *ppcVar6 = (ccFntTy *)0x0;
+    *ppcVar6 = nullptr;
     ppcVar6 = ppcVar6 + 1;
   }
   memset(local_60, 0, 0x58); /* compiler bulk-zero initialization */
@@ -82,7 +82,7 @@ void __thiscall SettMapMTy::CreateCtrls(SettMapMTy *this,char param_1)
       local_28 = 0x6327;
       local_30 = local_50;
       (*local_8->field_000C->vtable->CreateObject)
-                ((SystemClassTy *)local_8->field_000C,5,&local_8->field_21FC,(int *)0x0,local_60,0);
+                ((SystemClassTy *)local_8->field_000C,5,&local_8->field_21FC,nullptr,local_60,0);
       Library::DKW::DDX::FUN_006b3430((int *)g_ddxContext_008075A8,this_01->field_2200);
     }
     else {
@@ -90,7 +90,7 @@ void __thiscall SettMapMTy::CreateCtrls(SettMapMTy *this,char param_1)
         StartSystemTy::CreateChatView(g_startSystem_0081176C);
         ppcVar6 = local_a80;
         for (iVar3 = 0x223; iVar3 != 0; iVar3 = iVar3 + -1) {
-          *ppcVar6 = (ccFntTy *)0x0;
+          *ppcVar6 = nullptr;
           ppcVar6 = ppcVar6 + 1;
         }
         local_a80[0] = (ccFntTy *)0x1;
@@ -111,7 +111,7 @@ void __thiscall SettMapMTy::CreateCtrls(SettMapMTy *this,char param_1)
         local_9f0 = 0;
         local_9ec = 0xc0a2;
         (*this_00->vtable->CreateObject)
-                  ((SystemClassTy *)this_00,6,&g_startSystem_0081176C->field_054C,(int *)0x0,
+                  ((SystemClassTy *)this_00,6,&g_startSystem_0081176C->field_054C,nullptr,
                    local_a80,0);
       }
       Library::DKW::DDX::FUN_006b3430

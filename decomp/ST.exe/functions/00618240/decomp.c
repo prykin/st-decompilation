@@ -50,7 +50,7 @@ FUN_00618240(void *this,int param_1,int param_2,int param_3,undefined4 *param_4)
   local_1c = &stack0xffffff58;
   piVar15 = (int *)&stack0xffffff58;
   local_4c = 0;
-  if (param_4 == (undefined4 *)0x0) {
+  if (param_4 == nullptr) {
     local_4c = 0;
   }
   else {
@@ -128,7 +128,7 @@ FUN_00618240(void *this,int param_1,int param_2,int param_3,undefined4 *param_4)
                    ((sVar7 = (short)iVar4, sVar7 < 0 ||
                     (((g_worldGrid.sizeY <= sVar7 || (sVar9 = (short)iVar8, sVar9 < 0)) ||
                      (g_worldGrid.sizeZ <= sVar9)))))) {
-                  this_00 = (STWorldObject *)0x0;
+                  this_00 = nullptr;
                 }
                 else {
                   this_00 = g_worldGrid.cells
@@ -136,12 +136,13 @@ FUN_00618240(void *this,int param_1,int param_2,int param_3,undefined4 *param_4)
                              (int)g_worldGrid.sizeX * (int)sVar7 + (int)sVar12].objects[0];
                   iVar8 = local_34;
                 }
-                if (((this_00 != (STWorldObject *)0x0) &&
+                if (((this_00 != nullptr) &&
                     (local_80 = iVar11, iVar10 = (*this_00->vtable[5].slots_00_28[0])(),
                     iVar4 = local_38, iVar8 = local_34, iVar10 != 0)) &&
                    ((this_00[1].vtable < (STWorldObjectVTable *)0x8 &&
-                    ((g_playSystem_00802A38 == (STPlaySystemC *)0x0 ||
-                     ((byte)(&DAT_008087e9)[(int)this_00[1].vtable * 0x51] < 8)))))) {
+                    ((g_playSystem_00802A38 == nullptr ||
+                     (g_bulkInitializedRecords_008087C7[(int)this_00[1].vtable].field_0022 < 8))))))
+                {
                   bVar1 = *(byte *)&this_00[1].vtable;
                   bVar2 = *(byte *)((int)this + 0x20);
                   if (DAT_00808a8f == '\0') {
@@ -169,8 +170,8 @@ LAB_0061856a:
                     bVar16 = iVar10 < 0;
                   }
                   else {
-                    bVar16 = (&DAT_008087ea)[(uint)bVar2 * 0x51] !=
-                             (&DAT_008087ea)[(uint)bVar1 * 0x51];
+                    bVar16 = g_bulkInitializedRecords_008087C7[bVar2].field_0023 !=
+                             g_bulkInitializedRecords_008087C7[bVar1].field_0023;
                     iVar11 = local_80;
                   }
                   if ((bVar16) &&
@@ -234,7 +235,7 @@ LAB_0061856a:
               /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
               local_44 = (uint)*(ushort *)(local_60 + piVar15[iVar8] * 0x2c + 0x2a);
               if (*(int *)((int)this + 0x62) == 0) {
-                pDVar6 = Library::DKW::TBL::DArrayCreate((DArrayTy *)0x0,7,8,10);
+                pDVar6 = Library::DKW::TBL::DArrayCreate(nullptr,7,8,10);
                 *(DArrayTy **)((int)this + 0x62) = pDVar6;
               }
               iVar4 = Library::DKW::TBL::DArrayAppend(*(DArrayTy **)((int)this + 0x62),&local_48);

@@ -91,13 +91,13 @@ int __thiscall STBoatC::LoadObj(STBoatC *this,AnonShape_005EFAE0_B406B78B *param
   short local_6;
 
   uVar4 = 0;
-  local_c = (STFishC *)0x0;
+  local_c = nullptr;
   /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
-  if ((param_1 == (AnonShape_005EFAE0_B406B78B *)0x0) ||
+  if ((param_1 == nullptr) ||
      (pSVar11 = this, param_1 == (AnonShape_005EFAE0_B406B78B *)0x1)) {
     memset(&this->field_02CC, 0, 0x5c); /* compiler bulk-zero initialization */
     this->field_02C4 = 0;
-    if (this->field_07CA != (AnonShape_005EFAE0_B406B78B *)0x0) {
+    if (this->field_07CA != nullptr) {
       return 0;
     }
     sVar15 = *(short *)&this->field_0x3ba;
@@ -112,7 +112,7 @@ int __thiscall STBoatC::LoadObj(STBoatC *this,AnonShape_005EFAE0_B406B78B *param
     this->field_058E = param_1;
     if (((((sVar15 < 0) || (g_worldGrid.sizeX <= sVar15)) || (sVar16 < 0)) ||
         ((g_worldGrid.sizeY <= sVar16 || (sVar17 < 0)))) || (g_worldGrid.sizeZ <= sVar17)) {
-      local_c = (STFishC *)0x0;
+      local_c = nullptr;
     }
     else {
       local_c = (STFishC *)
@@ -120,7 +120,7 @@ int __thiscall STBoatC::LoadObj(STBoatC *this,AnonShape_005EFAE0_B406B78B *param
                 [(int)sVar16 * (int)g_worldGrid.sizeX + (int)g_worldGrid.planeStride * (int)sVar17 +
                  (int)sVar15].objects[0];
     }
-    if ((local_c == (STFishC *)0x0) ||
+    if ((local_c == nullptr) ||
        ((AnonShape_005EFAE0_B406B78B *)local_c->field_0018 != param_1)) {
       iVar10 = STPlaySystemC::sub_006E62D0(g_playSystem_00802A38,param_1,(int *)&local_c);
       if (iVar10 == -4) {
@@ -183,7 +183,7 @@ int __thiscall STBoatC::LoadObj(STBoatC *this,AnonShape_005EFAE0_B406B78B *param
       if ((((sVar15 < 0) || (g_worldGrid.sizeX <= sVar15)) ||
           ((sVar17 < 0 || ((g_worldGrid.sizeY <= sVar17 || (sVar16 < 0)))))) ||
          (g_worldGrid.sizeZ <= sVar16)) {
-        local_c = (STFishC *)0x0;
+        local_c = nullptr;
       }
       else {
         local_c = (STFishC *)
@@ -191,7 +191,7 @@ int __thiscall STBoatC::LoadObj(STBoatC *this,AnonShape_005EFAE0_B406B78B *param
                   [(int)sVar16 * (int)g_worldGrid.planeStride + (int)sVar17 * (int)g_worldGrid.sizeX
                    + (int)sVar15].objects[0];
       }
-      if ((((local_c == (STFishC *)0x0) ||
+      if ((((local_c == nullptr) ||
            ((AnonShape_005EFAE0_B406B78B *)local_c->field_0018 != this->field_058E)) &&
           (iVar10 = STPlaySystemC::sub_006E62D0
                               (g_playSystem_00802A38,this->field_058E,(int *)&local_c), iVar10 == -4
@@ -254,7 +254,7 @@ int __thiscall STBoatC::LoadObj(STBoatC *this,AnonShape_005EFAE0_B406B78B *param
       sVar17 = this->field_058A;
       if (((((sVar15 < 0) || (g_worldGrid.sizeX <= sVar15)) || (sVar17 < 0)) ||
           ((g_worldGrid.sizeY <= sVar17 || (sVar16 < 0)))) || (g_worldGrid.sizeZ <= sVar16)) {
-        local_c = (STFishC *)0x0;
+        local_c = nullptr;
       }
       else {
         local_c = (STFishC *)
@@ -262,7 +262,7 @@ int __thiscall STBoatC::LoadObj(STBoatC *this,AnonShape_005EFAE0_B406B78B *param
                   [(int)sVar16 * (int)g_worldGrid.planeStride + (int)sVar17 * (int)g_worldGrid.sizeX
                    + (int)sVar15].objects[0];
       }
-      if (((local_c == (STFishC *)0x0) ||
+      if (((local_c == nullptr) ||
           ((AnonShape_005EFAE0_B406B78B *)local_c->field_0018 != this->field_058E)) &&
          (iVar10 = STPlaySystemC::sub_006E62D0
                              (g_playSystem_00802A38,this->field_058E,(int *)&local_c), iVar10 == -4)
@@ -334,7 +334,7 @@ LAB_004736e2:
     sVar17 = this->field_058A;
     if (((((sVar15 < 0) || (g_worldGrid.sizeX <= sVar15)) || (sVar17 < 0)) ||
         ((g_worldGrid.sizeY <= sVar17 || (sVar16 < 0)))) || (g_worldGrid.sizeZ <= sVar16)) {
-      local_c = (STFishC *)0x0;
+      local_c = nullptr;
     }
     else {
       local_c = (STFishC *)
@@ -342,7 +342,7 @@ LAB_004736e2:
                 [(int)sVar16 * (int)g_worldGrid.planeStride + (int)sVar17 * (int)g_worldGrid.sizeX +
                  (int)sVar15].objects[0];
     }
-    if (((local_c == (STFishC *)0x0) ||
+    if (((local_c == nullptr) ||
         ((AnonShape_005EFAE0_B406B78B *)local_c->field_0018 != this->field_058E)) &&
        (iVar10 = STPlaySystemC::sub_006E62D0(g_playSystem_00802A38,this->field_058E,(int *)&local_c)
        , iVar10 == -4)) {
@@ -366,7 +366,7 @@ cf_common_exit_0047405D:
       if ((((sVar15 < 0) || (g_worldGrid.sizeX <= sVar15)) ||
           ((sVar17 < 0 || ((g_worldGrid.sizeY <= sVar17 || (sVar16 < 0)))))) ||
          (g_worldGrid.sizeZ <= sVar16)) {
-        pSVar6 = (STWorldObject *)0x0;
+        pSVar6 = nullptr;
       }
       else {
         pSVar6 = g_worldGrid.cells
@@ -512,7 +512,7 @@ cf_common_exit_0047405D:
       if (((sVar15 < 0) ||
           (((g_worldGrid.sizeX <= sVar15 || (sVar17 < 0)) || (g_worldGrid.sizeY <= sVar17)))) ||
          ((sVar16 < 0 || (g_worldGrid.sizeZ <= sVar16)))) {
-        local_c = (STFishC *)0x0;
+        local_c = nullptr;
       }
       else {
         local_c = (STFishC *)
@@ -520,7 +520,7 @@ cf_common_exit_0047405D:
                   [(int)sVar16 * (int)g_worldGrid.planeStride + (int)sVar17 * (int)g_worldGrid.sizeX
                    + (int)sVar15].objects[0];
       }
-      if (((local_c != (STFishC *)0x0) &&
+      if (((local_c != nullptr) &&
           ((AnonShape_005EFAE0_B406B78B *)local_c->field_0018 == this->field_058E)) &&
          ((iVar10 = (*local_c->vtable->vfunc_A4)(), iVar10 != 1 &&
           (iVar10 = (*local_c->vtable->vfunc_C0)(), iVar10 != 1)))) {

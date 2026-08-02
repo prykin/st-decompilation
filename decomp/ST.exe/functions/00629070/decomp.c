@@ -36,8 +36,8 @@ undefined4 __thiscall STParticleC::InitVisibelFlight(STParticleC *this,int param
   undefined **local_8;
 
   local_24 = (uint)this->field_0014 >> 8 & 0xff;
-  ppuVar13 = (undefined **)0x0;
-  local_8 = (undefined **)0x0;
+  ppuVar13 = nullptr;
+  local_8 = nullptr;
   switch(local_24) {
   case 0:
   case 1:
@@ -126,7 +126,7 @@ LAB_00629242:
     local_10 = iVar9 / 2;
     local_c = local_10 - 0xe;
   }
-  if (ppuVar13 == (undefined **)0x0) {
+  if (ppuVar13 == nullptr) {
     return 0xffffffff;
   }
   /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
@@ -147,7 +147,7 @@ LAB_00629242:
   }
   puVar10 = Library::Ourlib::MFRLOAD::mfRLoad
                       (DAT_00806774,CASE_1D,local_8[local_18 & 0xff],0xffffffff,0,1,0,
-                       (undefined4 *)0x0);
+                       nullptr);
   pSVar8 = local_1c;
   local_1c->field_00B6 = *(int *)puVar10;
   if (param_1 == 0) {
@@ -185,7 +185,7 @@ LAB_00629242:
     }
   }
   pVVar7 = g_visibleClass_00802A88;
-  if (g_visibleClass_00802A88 != (VisibleClassTy *)0x0) {
+  if (g_visibleClass_00802A88 != nullptr) {
     iVar9 = pSVar8->field_004E;
     sVar5 = (short)(iVar9 >> 0x1f);
     if (iVar9 < 0) {
@@ -231,7 +231,7 @@ LAB_00629242:
       else {
         bVar14 = true;
       }
-      if ((bVar14) && (pVVar7->field_004C != (byte *)0x0)) {
+      if ((bVar14) && (pVVar7->field_004C != nullptr)) {
         bVar14 = pVVar7->field_004C
                  [local_28 + (g_centeredOffsets5[(int)local_14] + local_2c) * pVVar7->field_0030] !=
                  0;

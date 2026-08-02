@@ -186,7 +186,7 @@ int __thiscall FSGSTy::GetMessage(FSGSTy *this,STMessage *message)
 
   local_20 = this;
   DVar20 = STAppC::sub_006E51B0(this->field_0010);
-  pcVar39 = (char *)0x0;
+  pcVar39 = nullptr;
   this->field_0061 = DVar20;
   local_21c.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_21c;
@@ -220,7 +220,7 @@ int __thiscall FSGSTy::GetMessage(FSGSTy *this,STMessage *message)
                      *(int *)(dVar11 + 0x24) + -0xb5,uVar35,local_58 + 2,local_54,0xff);
         ccFntTy::SetSurf(this_00->field_1A73,(int)this_00->field_1AC0,0,local_60,uVar35,local_58,
                          local_54);
-        if ((message->arg0).ptr != (undefined4 *)0x0) {
+        if ((message->arg0).ptr != nullptr) {
           ccFntTy::WrStr(this_00->field_1A73,*(uint **)(message->arg0).ptr,0,-1,0);
         }
         uVar4 = (message->arg1).words.low;
@@ -239,7 +239,7 @@ int __thiscall FSGSTy::GetMessage(FSGSTy *this,STMessage *message)
         (*(code *)this_00->field_0000->field_0008)();
         this_00->field_1A61 = (message->id != MESS_FSGSTY_694A) + '\a';
         pSVar13 = this_00->field_1A5B;
-        if (pSVar13->field_02E6 == (MMsgTy *)0x0) break;
+        if (pSVar13->field_02E6 == nullptr) break;
         puVar23 = local_31c;
         for (iVar21 = 6; iVar21 != 0; iVar21 = iVar21 + -1) {
           *puVar23 = 0xffffffff;
@@ -258,7 +258,7 @@ int __thiscall FSGSTy::GetMessage(FSGSTy *this,STMessage *message)
           /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
           (*(code *)this_00->field_0000->field_0008)();
           this_00->field_1A61 = 5;
-          if (this_00->field_1A5B->field_02E6 != (MMsgTy *)0x0) {
+          if (this_00->field_1A5B->field_02E6 != nullptr) {
             local_8c = 0;
             local_88 = 0;
             local_84 = 0;
@@ -279,9 +279,9 @@ int __thiscall FSGSTy::GetMessage(FSGSTy *this,STMessage *message)
           } while (cVar2 != '\0');
           if (iVar21 == -2) {
             pMVar33 = this_00->field_1A5B->field_02E6;
-            if (pMVar33 != (MMsgTy *)0x0) {
-              MMsgTy::SetMessage(pMVar33,0x2592,'\0',(undefined4 *)0x0,(undefined4 *)0x0,
-                                 (undefined4 *)0x0,0,0);
+            if (pMVar33 != nullptr) {
+              MMsgTy::SetMessage(pMVar33,0x2592,'\0',nullptr,nullptr,
+                                 nullptr,0,0);
             }
           }
           else {
@@ -294,11 +294,11 @@ int __thiscall FSGSTy::GetMessage(FSGSTy *this,STMessage *message)
             local_1cc = 1;
             local_1ce = 1;
             pMVar33 = this_00->field_1A5B->field_02E6;
-            if (pMVar33 != (MMsgTy *)0x0) {
+            if (pMVar33 != nullptr) {
               MMsgTy::StatePanel(pMVar33,(int)local_1d8);
             }
             pCVar37 = g_cursorClass_00802A30;
-            if (g_cursorClass_00802A30 != (CursorClassTy *)0x0) {
+            if (g_cursorClass_00802A30 != nullptr) {
               iVar21 = g_cursorClass_00802A30->field_00C9;
               iVar45 = g_cursorClass_00802A30->field_00C5;
               g_cursorClass_00802A30->field_0493 = CASE_5;
@@ -309,20 +309,20 @@ int __thiscall FSGSTy::GetMessage(FSGSTy *this,STMessage *message)
               pCVar37->field_04DF = -1;
             }
             if ((int)this_00->field_1AF4->elementSize < 1) {
-              pcVar39 = (char *)0x0;
+              pcVar39 = nullptr;
             }
             else {
               pcVar39 = *(char **)this_00->field_1AF4->growCapacity;
             }
             if ((int)this_00->field_1AEC->elementSize < 1) {
-              pcVar27 = (char *)0x0;
+              pcVar27 = nullptr;
             }
             else {
               pcVar27 = *(char **)this_00->field_1AEC->growCapacity;
             }
             if ((int)this_00->field_1AE8->elementSize < 1) {
               CFsgsConnection::ChangePassword
-                        ((CFsgsConnection *)&DAT_00802a90,(char *)0x0,pcVar27,pcVar39);
+                        ((CFsgsConnection *)&DAT_00802a90,nullptr,pcVar27,pcVar39);
             }
             else {
               CFsgsConnection::ChangePassword
@@ -365,7 +365,7 @@ int __thiscall FSGSTy::GetMessage(FSGSTy *this,STMessage *message)
           break;
         case CASE_A:
           pbVar40 = this_00->field_1B0C;
-          if (pbVar40 != (byte *)0x0) {
+          if (pbVar40 != nullptr) {
             pbVar36 = &DAT_00807e1d;
             do {
               bVar34 = *pbVar40;
@@ -386,19 +386,19 @@ LAB_005a63e7:
 LAB_005a63ec:
             if (iVar21 == 0) {
               if ((int)this_00->field_1B00->elementSize < 1) {
-                pcVar39 = (char *)0x0;
+                pcVar39 = nullptr;
               }
               else {
                 pcVar39 = *(char **)this_00->field_1B00->growCapacity;
               }
               if ((int)this_00->field_1AFC->elementSize < 1) {
-                pcVar27 = (char *)0x0;
+                pcVar27 = nullptr;
               }
               else {
                 pcVar27 = *(char **)this_00->field_1AFC->growCapacity;
               }
               if ((int)this_00->field_1AF8->elementSize < 1) {
-                pbVar40 = (byte *)0x0;
+                pbVar40 = nullptr;
               }
               else {
                 pbVar40 = *(byte **)this_00->field_1AF8->growCapacity;
@@ -421,7 +421,7 @@ LAB_005a63ec:
         /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
         (*(code *)this_00->field_0000->field_0008)();
         pSVar13 = this_00->field_1A5B;
-        if (pSVar13->field_02E6 != (MMsgTy *)0x0) {
+        if (pSVar13->field_02E6 != nullptr) {
           puVar23 = local_2e4;
           for (iVar21 = 6; iVar21 != 0; iVar21 = iVar21 + -1) {
             *puVar23 = 0xffffffff;
@@ -442,7 +442,7 @@ LAB_005a63ec:
         local_170 = 1;
         local_172 = 1;
         if ((int)this_00->field_1AE8->elementSize < 1) {
-          pcVar39 = (char *)0x0;
+          pcVar39 = nullptr;
         }
         else {
           pcVar39 = *(char **)this_00->field_1AE8->growCapacity;
@@ -450,7 +450,7 @@ LAB_005a63ec:
         Library::MSVCRT::_strncpy(&DAT_00807e1d,pcVar39,0x40);
         DAT_00807e5c = 0;
         if ((int)this_00->field_1AEC->elementSize < 1) {
-          pcVar39 = (char *)0x0;
+          pcVar39 = nullptr;
         }
         else {
           pcVar39 = *(char **)this_00->field_1AEC->growCapacity;
@@ -479,16 +479,16 @@ LAB_005a63ec:
         } while (cVar2 != '\0');
         if (iVar21 == -2) {
           pMVar33 = this_00->field_1A5B->field_02E6;
-          if (pMVar33 != (MMsgTy *)0x0) {
-            MMsgTy::SetMessage(pMVar33,0x2592,'\0',(undefined4 *)0x0,(undefined4 *)0x0,
-                               (undefined4 *)0x0,0,0);
+          if (pMVar33 != nullptr) {
+            MMsgTy::SetMessage(pMVar33,0x2592,'\0',nullptr,nullptr,
+                               nullptr,0,0);
           }
           break;
         }
         if (this_00->field_1A5F != CASE_2) {
           if (this_00->field_1A5F == CASE_4) {
             if ((int)this_00->field_1AF0->elementSize < 1) {
-              pbVar40 = (byte *)0x0;
+              pbVar40 = nullptr;
             }
             else {
               pbVar40 = *(byte **)this_00->field_1AF0->growCapacity;
@@ -513,11 +513,11 @@ LAB_005a6653:
 LAB_005a6658:
             if (iVar21 == 0) {
               pMVar33 = this_00->field_1A5B->field_02E6;
-              if (pMVar33 != (MMsgTy *)0x0) {
+              if (pMVar33 != nullptr) {
                 MMsgTy::StatePanel(pMVar33,(int)local_17c);
               }
               pCVar37 = g_cursorClass_00802A30;
-              if (g_cursorClass_00802A30 != (CursorClassTy *)0x0) {
+              if (g_cursorClass_00802A30 != nullptr) {
                 iVar21 = g_cursorClass_00802A30->field_00C9;
                 iVar45 = g_cursorClass_00802A30->field_00C5;
                 g_cursorClass_00802A30->field_0493 = CASE_5;
@@ -528,19 +528,19 @@ LAB_005a6658:
                 pCVar37->field_04DF = -1;
               }
               if ((int)this_00->field_1B00->elementSize < 1) {
-                pcVar39 = (char *)0x0;
+                pcVar39 = nullptr;
               }
               else {
                 pcVar39 = *(char **)this_00->field_1B00->growCapacity;
               }
               if ((int)this_00->field_1AFC->elementSize < 1) {
-                pcVar27 = (char *)0x0;
+                pcVar27 = nullptr;
               }
               else {
                 pcVar27 = *(char **)this_00->field_1AFC->growCapacity;
               }
               if ((int)this_00->field_1AF8->elementSize < 1) {
-                pbVar40 = (byte *)0x0;
+                pbVar40 = nullptr;
               }
               else {
                 pbVar40 = *(byte **)this_00->field_1AF8->growCapacity;
@@ -552,20 +552,20 @@ LAB_005a6658:
             }
             else {
               pMVar33 = this_00->field_1A5B->field_02E6;
-              if (pMVar33 != (MMsgTy *)0x0) {
-                MMsgTy::SetMessage(pMVar33,0x258a,'\0',(undefined4 *)0x0,(undefined4 *)0x0,
-                                   (undefined4 *)0x0,0,0);
+              if (pMVar33 != nullptr) {
+                MMsgTy::SetMessage(pMVar33,0x258a,'\0',nullptr,nullptr,
+                                   nullptr,0,0);
               }
             }
           }
           break;
         }
         pMVar33 = this_00->field_1A5B->field_02E6;
-        if (pMVar33 != (MMsgTy *)0x0) {
+        if (pMVar33 != nullptr) {
           MMsgTy::StatePanel(pMVar33,(int)local_17c);
         }
         pCVar37 = g_cursorClass_00802A30;
-        if (g_cursorClass_00802A30 != (CursorClassTy *)0x0) {
+        if (g_cursorClass_00802A30 != nullptr) {
           iVar21 = g_cursorClass_00802A30->field_00C9;
           iVar45 = g_cursorClass_00802A30->field_00C5;
           g_cursorClass_00802A30->field_0493 = CASE_5;
@@ -588,7 +588,7 @@ LAB_005a67e1:
       case 0x6954:
         (*(code *)this_00->field_0000->field_0008)();
         this_00->field_1A61 = 4;
-        if (this_00->field_1A5B->field_02E6 != (MMsgTy *)0x0) {
+        if (this_00->field_1A5B->field_02E6 != nullptr) {
           local_bc = 0;
           local_b8 = 0;
           local_b4 = 0;
@@ -792,7 +792,7 @@ LAB_005a6d57:
                   ((CFsgsConnection *)&DAT_00802a90,(char *)&DAT_0080f33a,local_4b8);
 LAB_005a6e50:
         pCVar37 = g_cursorClass_00802A30;
-        if (g_cursorClass_00802A30 != (CursorClassTy *)0x0) {
+        if (g_cursorClass_00802A30 != nullptr) {
           g_cursorClass_00802A30->field_0493 = CASE_5;
           pCVar37->field_0494 = 0xffff;
           CursorClassTy::SetGCType(pCVar37,CASE_0,pCVar37->field_00C5,pCVar37->field_00C9);
@@ -815,7 +815,7 @@ LAB_005a6e50:
         }
         switch(SVar6) {
         case MESS_SIDTY_8161:
-          if ((this_00->field_1E8E == 0) || (this_00->field_1E9A == (tagBITMAPINFO *)0x0)) break;
+          if ((this_00->field_1E8E == 0) || (this_00->field_1E9A == nullptr)) break;
           pAVar42 = (AnonShape_005A4350_59BACD18 *)(message->arg2).u32;
           local_1c = pAVar42;
           FUN_006b5f80((int *)g_ddxContext_008075A8,*(int *)&pAVar42->field_0x24,
@@ -829,16 +829,16 @@ LAB_005a6e50:
                          pAVar42->field_002C,0x11,0xff);
             if (this_00->field_1A60 == '\0') {
               pDVar25 = this_00->field_1EA6;
-              if (pDVar25 != (DArrayTy *)0x0) {
+              if (pDVar25 != nullptr) {
                 uVar35 = (uint)(message->arg0).words.low;
                 if (uVar35 < pDVar25->count) {
                   /* ST_PSEUDO[dynamic_array_indexing]: expected DArrayAt<T>(pDVar25, uVar35) (runtime stride) */
                   local_8 = (uint *)(pDVar25->elementSize * uVar35 + (int)pDVar25->data);
                 }
                 else {
-                  local_8 = (uint *)0x0;
+                  local_8 = nullptr;
                 }
-                if (local_8 != (uint *)0x0) {
+                if (local_8 != nullptr) {
                   ccFntTy::SetSurf(this_00->field_1A73,this_00->field_1E8E,0,0x23,0,
                                    pAVar42->field_002C + -0x46,0x11);
                   /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
@@ -847,7 +847,7 @@ LAB_005a6e50:
                               thunk_FUN_0055c050(&DAT_00802a90,(int)local_8);
                     DibPut((AnonShape_006B5B10_E0D06CF1 *)this_00->field_1E8E,3,1,'\x01',
                            (byte *)local_c);
-                    if (local_c != (AnonShape_005A4350_59BACD18 *)0x0) {
+                    if (local_c != nullptr) {
                       FreeAndNull(&local_c);
                     }
                     ccFntTy::WrStr(this_00->field_1A73,local_8,0,-1,
@@ -876,7 +876,7 @@ LAB_005a6e50:
             }
             else {
               pDVar25 = this_00->field_1EAA;
-              if (pDVar25 != (DArrayTy *)0x0) {
+              if (pDVar25 != nullptr) {
                 uVar35 = (uint)(message->arg0).words.low;
                 if (uVar35 < pDVar25->count) {
                   /* ST_PSEUDO[dynamic_array_indexing]: expected DArrayAt<T>(pDVar25, uVar35) (runtime stride) */
@@ -884,9 +884,9 @@ LAB_005a6e50:
                             (pDVar25->elementSize * uVar35 + (int)pDVar25->data);
                 }
                 else {
-                  local_c = (AnonShape_005A4350_59BACD18 *)0x0;
+                  local_c = nullptr;
                 }
-                if (local_c != (AnonShape_005A4350_59BACD18 *)0x0) {
+                if (local_c != nullptr) {
                   uVar35 = *(uint *)(local_c + 2);
                   if ((uVar35 & 0x40) == 0) {
                     if ((uVar35 & 0x18) == 0) {
@@ -924,15 +924,15 @@ LAB_005a6e50:
             FUN_006b4170((AnonShape_006B5B10_E0D06CF1 *)this_00->field_1E8E,0,0,0,
                          pAVar42->field_002C,0x11,0xff);
             pFVar8 = this_00->field_1EBE;
-            if (pFVar8 != (FSGSTy_field_1EBEDArray *)0x0) {
+            if (pFVar8 != nullptr) {
               uVar35 = (uint)(message->arg0).words.low;
               if (uVar35 < pFVar8->count) {
                 element_1ebe = DArrayAt<FSGSTy_field_1EBEElement>(pFVar8, uVar35);
               }
               else {
-                element_1ebe = (FSGSTy_field_1EBEElement *)0x0;
+                element_1ebe = nullptr;
               }
-              if (element_1ebe != (FSGSTy_field_1EBEElement *)0x0) {
+              if (element_1ebe != nullptr) {
                 iVar21 = -1;
                 pcVar39 = (char *)(element_1ebe + 0x13);
                 do {
@@ -959,20 +959,20 @@ LAB_005a6e50:
           iVar21 = (uint)(message->arg1).words.high + *(int *)&pAVar42->field_0x28;
           goto LAB_005a89f6;
         case MESS_OPTPANELTY_8162:
-          if ((g_cursorClass_00802A30 != (CursorClassTy *)0x0) &&
+          if ((g_cursorClass_00802A30 != nullptr) &&
              (g_cursorClass_00802A30->field_0493 == CASE_5)) break;
           if (this_00->field_1A60 != '\0') {
             pDVar25 = this_00->field_1EAA;
-            if (pDVar25 != (DArrayTy *)0x0) {
+            if (pDVar25 != nullptr) {
               if ((message->arg0).u32 < pDVar25->count) {
                 /* ST_PSEUDO[dynamic_array_indexing]: expected DArrayAt<T>(pDVar25, (message->arg0).u32) (runtime stride) */
                 pcVar39 = (char *)(pDVar25->elementSize * (message->arg0).u32 + (int)pDVar25->data);
               }
               else {
-                pcVar39 = (char *)0x0;
+                pcVar39 = nullptr;
               }
-              if (pcVar39 != (char *)0x0) {
-                if (g_cursorClass_00802A30 != (CursorClassTy *)0x0) {
+              if (pcVar39 != nullptr) {
+                if (g_cursorClass_00802A30 != nullptr) {
                   iVar21 = g_cursorClass_00802A30->field_00C9;
                   iVar45 = g_cursorClass_00802A30->field_00C5;
                   g_cursorClass_00802A30->field_0493 = CASE_5;
@@ -994,7 +994,7 @@ LAB_005a6e50:
                   thunk_FUN_0055d390(&DAT_00802a90,pcVar39,pcVar39 + 0x40,1);
                 }
                 else if ((int)this_00->field_1AEC->elementSize < 1) {
-                  thunk_FUN_0055d390(&DAT_00802a90,pcVar39,(char *)0x0,1);
+                  thunk_FUN_0055d390(&DAT_00802a90,pcVar39,nullptr,1);
                 }
                 else {
                   thunk_FUN_0055d390(&DAT_00802a90,pcVar39,
@@ -1006,7 +1006,7 @@ LAB_005a6e50:
           }
           uVar35 = (message->arg0).u32;
           if (uVar35 == 0) {
-            if (g_cursorClass_00802A30 != (CursorClassTy *)0x0) {
+            if (g_cursorClass_00802A30 != nullptr) {
               iVar21 = g_cursorClass_00802A30->field_00C9;
               iVar45 = g_cursorClass_00802A30->field_00C5;
               g_cursorClass_00802A30->field_0493 = CASE_5;
@@ -1035,10 +1035,10 @@ LAB_005a6e50:
             pcVar39 = (char *)(pDVar25->elementSize * uVar35 + (int)pDVar25->data);
           }
           else {
-            pcVar39 = (char *)0x0;
+            pcVar39 = nullptr;
           }
-          if (pcVar39 == (char *)0x0) break;
-          if (this_00->field_1B0C != (byte *)0x0) {
+          if (pcVar39 == nullptr) break;
+          if (this_00->field_1B0C != nullptr) {
             FreeAndNull(&this_00->field_1B0C);
           }
           uVar35 = 0xffffffff;
@@ -1069,7 +1069,7 @@ LAB_005a6e50:
           this_00->field_1A61 = 10;
           this_00->field_1ED2 = 6;
           pSVar13 = this_00->field_1A5B;
-          if (pSVar13->field_02E6 == (MMsgTy *)0x0) break;
+          if (pSVar13->field_02E6 == nullptr) break;
           puVar23 = local_370;
           for (iVar21 = 6; iVar21 != 0; iVar21 = iVar21 + -1) {
             *puVar23 = 0xffffffff;
@@ -1105,10 +1105,10 @@ LAB_005a6e50:
             pFVar8 = this_00->field_1EBE;
             bVar43 = true;
             /* ST_PSEUDO[dynamic_array_indexing]: expected DArrayAt<T>(array, index) (runtime elementSize cannot be a static C array) */
-            if (((pFVar8 != (FSGSTy_field_1EBEDArray *)0x0) && ((message->arg0).u32 < pFVar8->count)
+            if (((pFVar8 != nullptr) && ((message->arg0).u32 < pFVar8->count)
                 ) && (puVar24 = (uint *)((int)&pFVar8->data->field_0000 +
                                         pFVar8->elementSize * (message->arg0).u32),
-                     puVar24 != (uint *)0x0)) {
+                     puVar24 != nullptr)) {
               bVar43 = false;
               Library::DKW::TBL::FUN_006b6020(&this_00->field_1AE8->flags,0,(char *)(puVar24 + 0xb));
               this_00->field_002D = 0x33;
@@ -1169,7 +1169,7 @@ LAB_005a6e50:
               }
               Library::DKW::DDX::FUN_006b4680
                         ((int *)g_dDXContext_0080759C,0x1a4,0x7d,(BITMAPINFO *)this_00->field_1E8E,
-                         (uint *)0x0,0,0,0x15e,0x8c,0x10000ff);
+                         nullptr,0,0,0x15e,0x8c,0x10000ff);
             }
             if (bVar43) {
               Library::DKW::TBL::FUN_006b6020(&this_00->field_1AE8->flags,0,&DAT_008016a0);
@@ -1205,7 +1205,7 @@ LAB_005a6e50:
               ccFntTy::WrStr(this_00->field_1A73,puVar24,iVar21,iVar45,uVar35);
               Library::DKW::DDX::FUN_006b4680
                         ((int *)g_dDXContext_0080759C,0x1a4,0x7d,(BITMAPINFO *)this_00->field_1E8E,
-                         (uint *)0x0,0,0,0x15e,0x8c,0x10000ff);
+                         nullptr,0,0,0x15e,0x8c,0x10000ff);
             }
           }
           break;
@@ -1233,7 +1233,7 @@ LAB_005a6e50:
       switch(SVar6) {
       case MESS_SHARED_C0A2:
         if ((int)this_00->field_1EA2->field_0008 < 1) {
-          pcVar39 = (char *)0x0;
+          pcVar39 = nullptr;
         }
         else {
           pcVar39 = *(char **)this_00->field_1EA2->field_0014;
@@ -1242,7 +1242,7 @@ LAB_005a6e50:
         /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
         if (CONCAT31(extraout_var,bVar43) == 0) {
           if ((int)this_00->field_1EA2->field_0008 < 1) {
-            pcVar39 = (char *)0x0;
+            pcVar39 = nullptr;
           }
           else {
             pcVar39 = *(char **)this_00->field_1EA2->field_0014;
@@ -1254,7 +1254,7 @@ LAB_005a6e50:
           pDVar25 = this_00->field_1A5B->field_0696;
           if (0 < (int)pDVar25->elementSize) {
             if ((int)pDVar25->elementSize < 1) {
-              pcVar39 = (char *)0x0;
+              pcVar39 = nullptr;
               goto LAB_005a8b12;
             }
             do {
@@ -1286,13 +1286,13 @@ joined_r0x005a8b8f:
         } while (cVar2 != '\0');
         if (iVar21 != -2) {
           if ((int)this_00->field_1AEC->elementSize < 1) {
-            pcVar39 = (char *)0x0;
+            pcVar39 = nullptr;
           }
           else {
             pcVar39 = *(char **)this_00->field_1AEC->growCapacity;
           }
           if ((int)dVar11 < 1) {
-            thunk_FUN_0055d390(&DAT_00802a90,(char *)0x0,pcVar39,1);
+            thunk_FUN_0055d390(&DAT_00802a90,nullptr,pcVar39,1);
           }
           else {
             thunk_FUN_0055d390(&DAT_00802a90,*(char **)pDVar25->growCapacity,pcVar39,1);
@@ -1311,7 +1311,7 @@ joined_r0x005a8b8f:
           pvVar38 = (void *)(pDVar25->elementSize * uVar35 + (int)pDVar25->data);
         }
         else {
-          pvVar38 = (void *)0x0;
+          pvVar38 = nullptr;
         }
         if ((int)this_00->field_1EA2->field_0008 < 1) {
           uVar26 = 0;
@@ -1354,7 +1354,7 @@ LAB_005a8c85:
       break;
     case MESS_SIDTY_6981:
       pcVar12 = this_00->field_1A73;
-      local_14 = (tagBITMAPINFO *)0x0;
+      local_14 = nullptr;
       if (pcVar12->field_00A0 != 0) {
         FUN_00710790((AnonShape_00710790_4CBB90D4 *)pcVar12);
       }
@@ -1369,10 +1369,10 @@ LAB_005a8c85:
       FUN_006b4170((AnonShape_006B5B10_E0D06CF1 *)this_00->field_1AC0,0,
                    *(int *)(dVar11 + 0x24) + -0xb5,local_4c,local_48 + 2,local_44,0xff);
       pvVar38 = (message->arg0).ptr;
-      if (pvVar38 != (void *)0x0) {
-        local_8 = (uint *)0x0;
+      if (pvVar38 != nullptr) {
+        local_8 = nullptr;
         do {
-          if (*(char **)((int)pvVar38 + (int)local_8) == (char *)0x0) break;
+          if (*(char **)((int)pvVar38 + (int)local_8) == nullptr) break;
           iVar21 = FUN_007111c0(this_00->field_1A73,*(char **)((int)pvVar38 + (int)local_8));
           ccFntTy::SetSurf(this_00->field_1A73,(int)this_00->field_1AC0,0,local_50,
                            (int)&(((tagBITMAPINFO *)(local_14->bmiColors + -10))->bmiHeader).biSize
@@ -1384,7 +1384,7 @@ LAB_005a8c85:
                      this_00->field_1A73->field_005C + iVar21);
           pvVar38 = (message->arg0).ptr;
           local_8 = local_8 + 1;
-        } while (pvVar38 != (void *)0x0);
+        } while (pvVar38 != nullptr);
       }
       uVar4 = (message->arg1).words.low;
       if ((uVar4 != 0xffff) || ((message->arg1).words.high != 0xffff)) {
@@ -1395,8 +1395,8 @@ LAB_005a8c85:
       }
       goto LAB_005a7c92;
     case MESS_SHARED_6980|MESS_ID_CREATE:
-      if (((this_00->field_1E8E != 0) && (this_00->field_1E92 != (tagBITMAPINFO *)0x0)) &&
-         (local_8 = (uint *)(message->arg2).u32, local_8 != (uint *)0x0)) {
+      if (((this_00->field_1E8E != 0) && (this_00->field_1E92 != nullptr)) &&
+         (local_8 = (uint *)(message->arg2).u32, local_8 != nullptr)) {
         if (this_00->field_1A5F == CASE_3) {
           pcVar12 = this_00->field_1A73;
           local_1c = (AnonShape_005A4350_59BACD18 *)this_00->field_1B08;
@@ -1419,9 +1419,9 @@ LAB_005a8c85:
               local_10 = *(uint **)(local_1c->field_0014 + (int)local_14 * 4);
             }
             else {
-              local_10 = (uint *)0x0;
+              local_10 = nullptr;
             }
-            if (local_10 != (uint *)0x0) {
+            if (local_10 != nullptr) {
               if (pcVar12->field_00A0 != 0) {
                 FUN_00710790((AnonShape_00710790_4CBB90D4 *)pcVar12);
               }
@@ -1440,12 +1440,12 @@ LAB_005a8c85:
         }
         Library::DKW::DDX::FUN_006b4680
                   ((int *)g_dDXContext_0080759C,local_8[9],local_8[10],
-                   (BITMAPINFO *)this_00->field_1E8E,(uint *)0x0,0,0,local_8[0xb],local_8[0xc],
+                   (BITMAPINFO *)this_00->field_1E8E,nullptr,0,0,local_8[0xb],local_8[0xc],
                    0x10000ff);
       }
       break;
     case MESS_MAINMENUTY_6983:
-      if ((this_00->field_1E8E != 0) && (this_00->field_1E92 != (tagBITMAPINFO *)0x0)) {
+      if ((this_00->field_1E8E != 0) && (this_00->field_1E92 != nullptr)) {
         dVar11 = (message->arg2).u32;
         FUN_006b5f80((int *)g_ddxContext_008075A8,*(int *)(dVar11 + 0x24),*(int *)(dVar11 + 0x28),
                      *(int *)(dVar11 + 0x2c),*(int *)(dVar11 + 0x30));
@@ -1466,12 +1466,12 @@ LAB_005a8c85:
         /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
         Library::DKW::DDX::FUN_006b4680
                   ((int *)g_dDXContext_0080759C,*(int *)(dVar11 + 0x24),*(int *)(dVar11 + 0x28),
-                   (BITMAPINFO *)this_00->field_1E8E,(uint *)0x0,0,0,*(DWORD *)(dVar11 + 0x2c),
+                   (BITMAPINFO *)this_00->field_1E8E,nullptr,0,0,*(DWORD *)(dVar11 + 0x2c),
                    *(DWORD *)(dVar11 + 0x30),0x10000ff);
       }
       break;
     case 0x6984:
-      if ((this_00->field_1E8E == 0) || (this_00->field_1E92 == (tagBITMAPINFO *)0x0)) break;
+      if ((this_00->field_1E8E == 0) || (this_00->field_1E92 == nullptr)) break;
       pAVar42 = (AnonShape_005A4350_59BACD18 *)(message->arg2).u32;
       FUN_006b5f80((int *)g_ddxContext_008075A8,*(int *)&pAVar42->field_0x24,
                    *(int *)&pAVar42->field_0x28,pAVar42->field_002C,*(int *)(pAVar42 + 1));
@@ -1505,7 +1505,7 @@ LAB_005a8c85:
     case 0x6991:
     case MESS_FSGSTY_6992:
       if (this_00->field_1E8E == 0) break;
-      local_14 = (tagBITMAPINFO *)0x0;
+      local_14 = nullptr;
       switch(SVar6) {
       case MESS_SHARED_6980|MESS_SHARED_0005:
       case MESS_MMSGTY_6986:
@@ -1530,7 +1530,7 @@ LAB_005a8c85:
       }
       local_1c = (AnonShape_005A4350_59BACD18 *)0x5e;
 switchD_005a7593_caseD_6987:
-      if (local_14 == (tagBITMAPINFO *)0x0) break;
+      if (local_14 == nullptr) break;
       local_c = (AnonShape_005A4350_59BACD18 *)(message->arg2).u32;
       switch(SVar6 - (MESS_SHARED_6980|MESS_SHARED_0005)) {
       case MESS_ID_NONE:
@@ -1590,9 +1590,9 @@ LAB_005a7656:
                               (int)PTR_0080c502->data);
           }
           else {
-            pcVar39 = (char *)0x0;
+            pcVar39 = nullptr;
           }
-          if (pcVar39 == (char *)0x0) {
+          if (pcVar39 == nullptr) {
             pcVar39 = &DAT_008016a0;
           }
           uVar35 = 0xffffffff;
@@ -1690,10 +1690,10 @@ LAB_005a754e:
 LAB_005a89f6:
       Library::DKW::DDX::FUN_006b4680
                 ((int *)g_dDXContext_0080759C,*(int *)&pAVar42->field_0x24,iVar21,pBVar44,
-                 (uint *)0x0,0,0,DVar46,DVar20,0x10000ff);
+                 nullptr,0,0,DVar46,DVar20,0x10000ff);
       break;
     case 0x6987:
-      if ((this_00->field_1E8E != 0) && (this_00->field_1E9A != (tagBITMAPINFO *)0x0)) {
+      if ((this_00->field_1E8E != 0) && (this_00->field_1E9A != nullptr)) {
         dVar11 = (message->arg2).u32;
         FUN_006b5f80((int *)g_ddxContext_008075A8,*(int *)(dVar11 + 0x24),*(int *)(dVar11 + 0x28),
                      *(int *)(dVar11 + 0x2c),*(int *)(dVar11 + 0x30));
@@ -1716,12 +1716,12 @@ LAB_005a89f6:
         /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
         Library::DKW::DDX::FUN_006b4680
                   ((int *)g_dDXContext_0080759C,*(int *)(dVar11 + 0x24),*(int *)(dVar11 + 0x28),
-                   (BITMAPINFO *)this_00->field_1E8E,(uint *)0x0,0,0,*(DWORD *)(dVar11 + 0x2c),
+                   (BITMAPINFO *)this_00->field_1E8E,nullptr,0,0,*(DWORD *)(dVar11 + 0x2c),
                    *(DWORD *)(dVar11 + 0x30),0x10000ff);
       }
       break;
     case MESS_SHARED_6980|MESS_SHARED_0008:
-      if ((this_00->field_1E8E != 0) && (this_00->field_1E92 != (tagBITMAPINFO *)0x0)) {
+      if ((this_00->field_1E8E != 0) && (this_00->field_1E92 != nullptr)) {
         dVar11 = (message->arg2).u32;
         FUN_006b5f80((int *)g_ddxContext_008075A8,*(int *)(dVar11 + 0x24),*(int *)(dVar11 + 0x28),
                      *(int *)(dVar11 + 0x2c),*(int *)(dVar11 + 0x30));
@@ -1747,7 +1747,7 @@ LAB_005a89f6:
         /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
         Library::DKW::DDX::FUN_006b4680
                   ((int *)g_dDXContext_0080759C,*(int *)(dVar11 + 0x24),*(int *)(dVar11 + 0x28),
-                   (BITMAPINFO *)this_00->field_1E8E,(uint *)0x0,0,0,*(DWORD *)(dVar11 + 0x2c),
+                   (BITMAPINFO *)this_00->field_1E8E,nullptr,0,0,*(DWORD *)(dVar11 + 0x2c),
                    *(DWORD *)(dVar11 + 0x30),0x10000ff);
       }
       break;
@@ -1823,7 +1823,7 @@ LAB_005a7c92:
         element_1fb3 = DArrayAt<FSGSTy_field_1FB3Element>(pFVar9, uVar35);
       }
       else {
-        element_1fb3 = (FSGSTy_field_1FB3Element *)0x0;
+        element_1fb3 = nullptr;
       }
       ccFntTy::WrStr(this_00->field_1A73,element_1fb3,-1,-1,3 - ((message->arg0).words.high != 1));
       if ((message->arg0).words.high == 1) {
@@ -1838,7 +1838,7 @@ LAB_005a7c92:
     (*(code *)this_00->field_0000->field_0008)();
     this_00->field_1A61 = 9;
     pSVar13 = this_00->field_1A5B;
-    if (pSVar13->field_02E6 == (MMsgTy *)0x0) goto cf_common_exit_005A8CA7;
+    if (pSVar13->field_02E6 == nullptr) goto cf_common_exit_005A8CA7;
     puVar23 = local_2ac;
     for (iVar21 = 6; iVar21 != 0; iVar21 = iVar21 + -1) {
       *puVar23 = 0xffffffff;
@@ -1934,9 +1934,9 @@ cf_common_exit_005A7F3B:
                                   (int)pDVar25->data);
               }
               else {
-                pvVar38 = (void *)0x0;
+                pvVar38 = nullptr;
               }
-              if (pvVar38 != (void *)0x0) {
+              if (pvVar38 != nullptr) {
                 this_00->field_002D = 0x32;
                 FUN_006e6080(this_00,2,this_00->field_1B10,(undefined4 *)puVar1);
                 iVar21 = *(int *)&this_00->field_0x31;
@@ -1991,7 +1991,7 @@ cf_common_exit_005A7F3B:
               pCVar37 = g_cursorClass_00802A30;
 joined_r0x005a55e5:
               g_cursorClass_00802A30 = pCVar37;
-              if (pCVar37 == (CursorClassTy *)0x0) goto cf_common_exit_005A5634;
+              if (pCVar37 == nullptr) goto cf_common_exit_005A5634;
               pCVar37->field_0493 = CASE_5;
               pCVar37->field_0494 = 0xffff;
               CursorClassTy::SetGCType(pCVar37,CASE_0,pCVar37->field_00C5,pCVar37->field_00C9);
@@ -2004,7 +2004,7 @@ joined_r0x005a55e5:
               CFsgsConnection::RequestLadderList
                         ((CFsgsConnection *)&DAT_00802a90,DAT_00803140,0,DAT_00803148,0xf);
               pCVar37 = g_cursorClass_00802A30;
-              if (g_cursorClass_00802A30 == (CursorClassTy *)0x0) goto cf_common_exit_005A5634;
+              if (g_cursorClass_00802A30 == nullptr) goto cf_common_exit_005A5634;
               iVar21 = g_cursorClass_00802A30->field_00C9;
               iVar45 = g_cursorClass_00802A30->field_00C5;
               g_cursorClass_00802A30->field_0493 = CASE_5;
@@ -2025,7 +2025,7 @@ LAB_005a561c:
               this_00->field_1EC6 = *(undefined4 *)(&pFVar10->field_0x104 + iVar21);
               this_00->field_1ECA = *(uint *)(&pFVar10->field_0x108 + iVar21);
               CFsgsConnection::RequestGameList
-                        ((CFsgsConnection *)&DAT_00802a90,this_00->field_1EC2,(char *)0x0);
+                        ((CFsgsConnection *)&DAT_00802a90,this_00->field_1EC2,nullptr);
               DVar20 = timeGetTime();
               this_00->field_1A63 = DVar20;
               pCVar37 = g_cursorClass_00802A30;
@@ -2045,11 +2045,11 @@ LAB_005a561c:
                 FUN_006e6080(this_00,2,this_00->field_1EBA,local_24c);
               }
               CFsgsConnection::RequestGameList
-                        ((CFsgsConnection *)&DAT_00802a90,this_00->field_1EC2,(char *)0x0);
+                        ((CFsgsConnection *)&DAT_00802a90,this_00->field_1EC2,nullptr);
               DVar20 = timeGetTime();
               this_00->field_1A63 = DVar20;
               pCVar37 = g_cursorClass_00802A30;
-              if (g_cursorClass_00802A30 != (CursorClassTy *)0x0) {
+              if (g_cursorClass_00802A30 != nullptr) {
                 iVar21 = g_cursorClass_00802A30->field_00C9;
                 iVar45 = g_cursorClass_00802A30->field_00C5;
                 g_cursorClass_00802A30->field_0493 = CASE_5;
@@ -2067,7 +2067,7 @@ cf_common_exit_005A5634:
           goto cf_common_exit_005A8CA7;
         }
         if (SVar6 == MESS_FSGSTY_6903) {
-          if (g_cursorClass_00802A30 != (CursorClassTy *)0x0) {
+          if (g_cursorClass_00802A30 != nullptr) {
             iVar21 = g_cursorClass_00802A30->field_00C9;
             iVar45 = g_cursorClass_00802A30->field_00C5;
             g_cursorClass_00802A30->field_0493 = CASE_5;
@@ -2083,7 +2083,7 @@ cf_common_exit_005A5634:
           }
           if (this_00->field_1A5F == CASE_8) {
             CFsgsConnection::RequestGameList
-                      ((CFsgsConnection *)&DAT_00802a90,this_00->field_1EC2,(char *)0x0);
+                      ((CFsgsConnection *)&DAT_00802a90,this_00->field_1EC2,nullptr);
             DVar20 = timeGetTime();
             this_00->field_1A63 = DVar20;
           }
@@ -2242,18 +2242,18 @@ cf_common_exit_005A5634:
           uVar32 = 0;
           this_00->field_20BF = 0;
           Library::DKW::TBL::DArrayAppend((DArrayTy *)this_00->field_1FB3,&this_00->field_0x1fb7);
-          local_8 = (uint *)0x0;
+          local_8 = nullptr;
           if (PTR_0080c502->count != 0) {
             pDVar25 = PTR_0080c502;
             if (PTR_0080c502->count == 0) {
-              pcVar39 = (char *)0x0;
+              pcVar39 = nullptr;
               goto LAB_005a5859;
             }
             do {
               /* ST_PSEUDO[dynamic_array_indexing]: expected DArrayAt<T>(pDVar25, (int)local_8) (runtime stride) */
               pcVar39 = (char *)(pDVar25->elementSize * (int)local_8 + (int)pDVar25->data);
 LAB_005a5859:
-              if (pcVar39 != (char *)0x0) {
+              if (pcVar39 != nullptr) {
                 this_00->field_20BB = *(undefined4 *)(pcVar39 + 0x90);
                 uVar35 = 0xffffffff;
                 do {
@@ -2306,7 +2306,7 @@ joined_r0x005a5b89:
       }
       this_00->field_1F77 = *(undefined4 *)&pcVar12->field_0x8a;
       (*this_00->field_000C->vtable->CreateObject)
-                ((SystemClassTy *)this_00->field_000C,0x100ef,(undefined4 *)0x0,(int *)0x0,
+                ((SystemClassTy *)this_00->field_000C,0x100ef,nullptr,nullptr,
                  &this_00->field_0x1f33,0);
       goto cf_common_exit_005A8CA7;
     }
@@ -2405,7 +2405,7 @@ joined_r0x005a5b89:
       if ((!bVar43) ||
          (CFsgsConnection::RequestLadderList
                     ((CFsgsConnection *)&DAT_00802a90,DAT_00803140,0,DAT_00803148,0xf),
-         pCVar37 = g_cursorClass_00802A30, g_cursorClass_00802A30 == (CursorClassTy *)0x0)) break;
+         pCVar37 = g_cursorClass_00802A30, g_cursorClass_00802A30 == nullptr)) break;
       iVar21 = g_cursorClass_00802A30->field_00C9;
       iVar45 = g_cursorClass_00802A30->field_00C5;
       g_cursorClass_00802A30->field_0493 = CASE_5;
@@ -2420,7 +2420,7 @@ joined_r0x005a5b89:
       CFsgsConnection::RequestLadderList
                 ((CFsgsConnection *)&DAT_00802a90,DAT_00803140,0,DAT_00803148,0xf);
       pCVar37 = g_cursorClass_00802A30;
-      if (g_cursorClass_00802A30 == (CursorClassTy *)0x0) break;
+      if (g_cursorClass_00802A30 == nullptr) break;
       iVar21 = g_cursorClass_00802A30->field_00C9;
       iVar45 = g_cursorClass_00802A30->field_00C5;
       g_cursorClass_00802A30->field_0493 = CASE_5;
@@ -2435,7 +2435,7 @@ cf_common_exit_005A52AA:
       break;
     case MESS_SHARED_6900|MESS_SYSTEMCLASSTY_000A:
       if ((g_cursorClass_00802A30->field_0493 == CASE_5) ||
-         (pDVar25 = this_00->field_1AE8, pDVar25 == (DArrayTy *)0x0)) break;
+         (pDVar25 = this_00->field_1AE8, pDVar25 == nullptr)) break;
       if (0 < (int)pDVar25->elementSize) {
         pcVar39 = *(char **)pDVar25->growCapacity;
       }
@@ -2448,7 +2448,7 @@ cf_common_exit_005A52AA:
       } while (cVar2 != '\0');
       if (iVar21 == -2) break;
       if ((int)pDVar25->elementSize < 1) {
-        pcVar39 = (char *)0x0;
+        pcVar39 = nullptr;
       }
       else {
         pcVar39 = *(char **)pDVar25->growCapacity;
@@ -2474,7 +2474,7 @@ cf_common_exit_005A52AA:
       bVar34 = (char)message->id - 0x13;
       /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
       local_c = (AnonShape_005A4350_59BACD18 *)CONCAT31(local_c._1_3_,bVar34);
-      if ((this_00->field_1EE3 <= (uint)bVar34) || (this_00->field_1EDB == (void *)0x0)) break;
+      if ((this_00->field_1EE3 <= (uint)bVar34) || (this_00->field_1EDB == nullptr)) break;
       iVar45 = (uint)bVar34 * 0x24;
       iVar21 = -1;
       pcVar39 = (char *)(iVar45 + 0x14 + (int)this_00->field_1EDB);
@@ -2485,7 +2485,7 @@ cf_common_exit_005A52AA:
         pcVar39 = pcVar39 + 1;
       } while (cVar2 != '\0');
       if (iVar21 == -2) break;
-      if (this_00->field_1B0C != (byte *)0x0) {
+      if (this_00->field_1B0C != nullptr) {
         FreeAndNull(&this_00->field_1B0C);
       }
       uVar35 = 0xffffffff;
@@ -2517,7 +2517,7 @@ cf_common_exit_005A52AA:
       this_00->field_1A61 = 10;
       this_00->field_1ED2 = 9;
       pSVar13 = this_00->field_1A5B;
-      if (pSVar13->field_02E6 == (MMsgTy *)0x0) break;
+      if (pSVar13->field_02E6 == nullptr) break;
       puVar23 = local_338;
       for (iVar21 = 6; iVar21 != 0; iVar21 = iVar21 + -1) {
         *puVar23 = 0xffffffff;
@@ -2544,7 +2544,7 @@ cf_common_exit_005A52AA:
       /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
       (*(code *)this_00->field_0000->field_0008)();
       pMVar33 = this_00->field_1A5B->field_02E6;
-      if (pMVar33 != (MMsgTy *)0x0) {
+      if (pMVar33 != nullptr) {
         MMsgTy::HidePanel(pMVar33,1,0,1);
       }
     }
@@ -2556,7 +2556,7 @@ cf_common_exit_005A52AA:
       /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
       (*(code *)this_00->field_0000->field_0008)();
       this_00->field_1A61 = 4;
-      if (this_00->field_1A5B->field_02E6 != (MMsgTy *)0x0) {
+      if (this_00->field_1A5B->field_02E6 != nullptr) {
         local_dc = 0;
         local_d8 = 0;
         local_e0 = 0x101;
@@ -2566,7 +2566,7 @@ cf_common_exit_005A52AA:
       goto cf_common_exit_005A8CA7;
     }
     if (FVar3 == CASE_7) {
-      if ((g_cursorClass_00802A30 != (CursorClassTy *)0x0) &&
+      if ((g_cursorClass_00802A30 != nullptr) &&
          (g_cursorClass_00802A30->field_0493 == CASE_5)) goto cf_common_exit_005A8CA7;
       thunk_FUN_005daa60();
       local_290.previous = g_currentExceptionFrame;
@@ -2592,24 +2592,24 @@ cf_common_exit_005A52AA:
           STDebugBreak(); /* noreturn in standalone pseudocode */
         }
       }
-      if (g_int_00811764 == (int *)0x0) {
+      if (g_int_00811764 == nullptr) {
         pMVar33 = this_00->field_1A5B->field_02E6;
-        if (pMVar33 != (MMsgTy *)0x0) {
-          MMsgTy::SetMessage(pMVar33,0x2594,'\0',(undefined4 *)0x0,(undefined4 *)0x0,
-                             (undefined4 *)0x0,0,0);
+        if (pMVar33 != nullptr) {
+          MMsgTy::SetMessage(pMVar33,0x2594,'\0',nullptr,nullptr,
+                             nullptr,0,0);
         }
         goto cf_common_exit_005A8CA7;
       }
       FUN_006b6160(local_6b8,(int)(g_int_00811764 + 6));
       local_698 = 0;
       if ((int)this_00->field_1AEC->elementSize < 1) {
-        pcVar39 = (char *)0x0;
+        pcVar39 = nullptr;
       }
       else {
         pcVar39 = *(char **)this_00->field_1AEC->growCapacity;
       }
       if ((int)this_00->field_1AE8->elementSize < 1) {
-        pcVar27 = (char *)0x0;
+        pcVar27 = nullptr;
       }
       else {
         pcVar27 = *(char **)this_00->field_1AE8->growCapacity;
@@ -2618,7 +2618,7 @@ cf_common_exit_005A52AA:
                 ((CFsgsConnection *)&DAT_00802a90,this_00->field_1EC2,0x17e0,pcVar27,pcVar39,
                  local_6b8);
       pCVar37 = g_cursorClass_00802A30;
-      if (g_cursorClass_00802A30 == (CursorClassTy *)0x0) goto cf_common_exit_005A8CA7;
+      if (g_cursorClass_00802A30 == nullptr) goto cf_common_exit_005A8CA7;
       iVar21 = g_cursorClass_00802A30->field_00C9;
       iVar45 = g_cursorClass_00802A30->field_00C5;
       g_cursorClass_00802A30->field_0493 = CASE_5;
@@ -2629,10 +2629,10 @@ cf_common_exit_005A52AA:
       goto cf_common_exit_005A52AA;
     }
     if ((FVar3 != CASE_8) ||
-       (((g_cursorClass_00802A30 != (CursorClassTy *)0x0 &&
+       (((g_cursorClass_00802A30 != nullptr &&
          (g_cursorClass_00802A30->field_0493 == CASE_5)) ||
-        (this_00->field_1EBE == (FSGSTy_field_1EBEDArray *)0x0)))) goto cf_common_exit_005A8CA7;
-    if (g_cursorClass_00802A30 != (CursorClassTy *)0x0) {
+        (this_00->field_1EBE == nullptr)))) goto cf_common_exit_005A8CA7;
+    if (g_cursorClass_00802A30 != nullptr) {
       g_cursorClass_00802A30->field_0493 = CASE_5;
       pCVar37->field_0494 = 0xffff;
       CursorClassTy::SetGCType(pCVar37,CASE_0,pCVar37->field_00C5,pCVar37->field_00C9);
@@ -2649,7 +2649,7 @@ cf_common_exit_005A52AA:
     /* ST_PSEUDO[dynamic_array_indexing]: expected DArrayAt<T>(array, index) (runtime elementSize cannot be a static C array) */
     local_8 = (uint *)((int)&pFVar8->data->field_0000 +
                       pFVar8->elementSize * *(uint *)&this_00->field_0x31);
-    if (local_8 == (uint *)0x0) goto cf_common_exit_005A8CA7;
+    if (local_8 == nullptr) goto cf_common_exit_005A8CA7;
     pbVar40 = (byte *)(local_8 + 0x13);
     iVar21 = -1;
     pcVar39 = (char *)pbVar40;
@@ -2661,7 +2661,7 @@ cf_common_exit_005A52AA:
     } while (cVar2 != '\0');
     if (iVar21 != -2) {
       if ((int)this_00->field_1AEC->elementSize < 1) {
-        pbVar36 = (byte *)0x0;
+        pbVar36 = nullptr;
       }
       else {
         pbVar36 = *(byte **)this_00->field_1AEC->growCapacity;
@@ -2692,9 +2692,9 @@ LAB_005a4ecf:
         pCVar37->field_00D2 = 0;
         pCVar37->field_04DF = -1;
         pMVar33 = this_00->field_1A5B->field_02E6;
-        if (pMVar33 != (MMsgTy *)0x0) {
-          MMsgTy::SetMessage(pMVar33,0x258b,'\0',(undefined4 *)0x0,(undefined4 *)0x0,
-                             (undefined4 *)0x0,0,0);
+        if (pMVar33 != nullptr) {
+          MMsgTy::SetMessage(pMVar33,0x258b,'\0',nullptr,nullptr,
+                             nullptr,0,0);
         }
       }
     }
@@ -2714,7 +2714,7 @@ LAB_005a4ecf:
     }
     pCVar37 = g_cursorClass_00802A30;
     g_currentExceptionFrame = local_3b4.previous;
-    if (g_cursorClass_00802A30 != (CursorClassTy *)0x0) {
+    if (g_cursorClass_00802A30 != nullptr) {
       iVar21 = g_cursorClass_00802A30->field_00C9;
       iVar45 = g_cursorClass_00802A30->field_00C5;
       g_cursorClass_00802A30->field_0493 = CASE_1;
@@ -2725,10 +2725,10 @@ LAB_005a4ecf:
       pCVar37->field_04DF = -1;
     }
     this_00 = local_20;
-    if (g_int_00811764 == (int *)0x0) {
+    if (g_int_00811764 == nullptr) {
       pMVar33 = local_20->field_1A5B->field_02E6;
-      if (pMVar33 != (MMsgTy *)0x0) {
-        MMsgTy::SetMessage(pMVar33,0x2595,'\0',(undefined4 *)0x0,(undefined4 *)0x0,(undefined4 *)0x0
+      if (pMVar33 != nullptr) {
+        MMsgTy::SetMessage(pMVar33,0x2595,'\0',nullptr,nullptr,nullptr
                            ,0,0);
       }
       goto cf_common_exit_005A8CA7;
@@ -2764,7 +2764,7 @@ LAB_005a50be:
     /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
     (*(code *)this_00->field_0000->field_0008)((MMObjTy *)this_00);
     pMVar33 = this_00->field_1A5B->field_02E6;
-    if (pMVar33 != (MMsgTy *)0x0) {
+    if (pMVar33 != nullptr) {
       MMsgTy::HidePanel(pMVar33,1,0,1);
     }
     goto cf_common_exit_005A8CA7;
@@ -2811,7 +2811,7 @@ LAB_005a50be:
           thunk_FUN_005b66e0((MTaskTy *)this_00);
           break;
         case 0x614f:
-          if (g_cursorClass_00802A30 != (CursorClassTy *)0x0) {
+          if (g_cursorClass_00802A30 != nullptr) {
             g_cursorClass_00802A30->field_0493 = CASE_1;
             pCVar37->field_0494 = 0xffff;
             CursorClassTy::SetGCType(pCVar37,CASE_0,pCVar37->field_00C5,pCVar37->field_00C9);
@@ -2825,18 +2825,18 @@ LAB_005a50be:
           local_19c[3] = 2;
           local_19c[4] = 0x6941;
           pMVar33 = pSVar13->field_02E6;
-          if (pMVar33 == (MMsgTy *)0x0) {
+          if (pMVar33 == nullptr) {
             /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
             (*(code *)this_00->field_0000->field_0000)(local_19c);
           }
           else {
-            MMsgTy::SetMessage(pMVar33,0x2593,'\0',local_19c,(undefined4 *)0x0,(undefined4 *)0x0,
+            MMsgTy::SetMessage(pMVar33,0x2593,'\0',local_19c,nullptr,nullptr,
                                (message->arg0).i32,0x2599);
           }
           break;
         case MESS_FSGSTY_6150:
           if (this_00->field_1A5F == CASE_1) {
-            if (g_cursorClass_00802A30 != (CursorClassTy *)0x0) {
+            if (g_cursorClass_00802A30 != nullptr) {
               g_cursorClass_00802A30->field_0493 = CASE_1;
               pCVar37->field_0494 = 0xffff;
               CursorClassTy::SetGCType(pCVar37,CASE_0,pCVar37->field_00C5,pCVar37->field_00C9);
@@ -2866,16 +2866,16 @@ LAB_005a50be:
               UVar22 = 0x2584;
             }
             if ((UVar22 == 0) ||
-               (pMVar33 = this_00->field_1A5B->field_02E6, pMVar33 == (MMsgTy *)0x0)) {
+               (pMVar33 = this_00->field_1A5B->field_02E6, pMVar33 == nullptr)) {
               /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
               (*(code *)this_00->field_0000->field_0000)(local_160);
             }
             else if (UVar22 == 0x2584) {
-              MMsgTy::SetMessage(pMVar33,0x2584,'\0',local_160,(undefined4 *)0x0,(undefined4 *)0x0,
+              MMsgTy::SetMessage(pMVar33,0x2584,'\0',local_160,nullptr,nullptr,
                                  iVar21,0x2599);
             }
             else {
-              MMsgTy::SetMessage(pMVar33,UVar22,'\0',local_160,(undefined4 *)0x0,(undefined4 *)0x0,0
+              MMsgTy::SetMessage(pMVar33,UVar22,'\0',local_160,nullptr,nullptr,0
                                  ,0);
             }
           }
@@ -2940,7 +2940,7 @@ LAB_005a50be:
   switch(SVar6) {
   case MESS_FSGSTY_6150|MESS_ID_CREATE:
     if (this_00->field_1A5F != CASE_2) goto cf_common_exit_005A8CA7;
-    if (g_cursorClass_00802A30 != (CursorClassTy *)0x0) {
+    if (g_cursorClass_00802A30 != nullptr) {
       g_cursorClass_00802A30->field_0493 = CASE_1;
       pCVar37->field_0494 = 0xffff;
       CursorClassTy::SetGCType(pCVar37,CASE_0,pCVar37->field_00C5,pCVar37->field_00C9);
@@ -2956,7 +2956,7 @@ LAB_005a50be:
     }
     *(undefined2 *)puVar23 = 1;
     pMVar33 = pSVar13->field_02E6;
-    if (pMVar33 != (MMsgTy *)0x0) {
+    if (pMVar33 != nullptr) {
       MMsgTy::StatePanel(pMVar33,(int)local_2c8);
     }
     switch((message->arg0).i32) {
@@ -2975,17 +2975,17 @@ LAB_005a50be:
     case 7:
       UVar22 = 0x25c2;
     }
-    if ((UVar22 == 0) || (pMVar33 = this_00->field_1A5B->field_02E6, pMVar33 == (MMsgTy *)0x0))
+    if ((UVar22 == 0) || (pMVar33 = this_00->field_1A5B->field_02E6, pMVar33 == nullptr))
     goto cf_common_exit_005A8CA7;
     if (UVar22 == 0x2589) {
-      MMsgTy::SetMessage(pMVar33,0x2589,'\0',(undefined4 *)0x0,(undefined4 *)0x0,(undefined4 *)0x0,
+      MMsgTy::SetMessage(pMVar33,0x2589,'\0',nullptr,nullptr,nullptr,
                          (message->arg0).i32,0x2599);
       goto cf_common_exit_005A8CA7;
     }
     break;
   case MESS_FSGSTY_6150|MESS_SHARED_0003:
     if ((this_00->field_1A5F == CASE_2) || (this_00->field_1A5F == CASE_4)) {
-      if (g_cursorClass_00802A30 != (CursorClassTy *)0x0) {
+      if (g_cursorClass_00802A30 != nullptr) {
         g_cursorClass_00802A30->field_0493 = CASE_1;
         pCVar37->field_0494 = 0xffff;
         CursorClassTy::SetGCType(pCVar37,CASE_0,pCVar37->field_00C5,pCVar37->field_00C9);
@@ -3012,15 +3012,15 @@ LAB_005a50be:
         CFsgsConnection::UpdateInfo((CFsgsConnection *)&DAT_00802a90,4,&local_120,&local_130);
       }
       thunk_FUN_0055bf20(&DAT_00802a90,this_00->field_1A67);
-      if ((DArrayTy *)this_00->field_1E9E != (DArrayTy *)0x0) {
+      if ((DArrayTy *)this_00->field_1E9E != nullptr) {
         FUN_006b5570((DArrayTy *)this_00->field_1E9E);
       }
-      pDVar25 = Library::DKW::TBL::SArrayCreate((DArrayTy *)0x0,100,100);
+      pDVar25 = Library::DKW::TBL::SArrayCreate(nullptr,100,100);
       this_00->field_1E9E = &pDVar25->flags;
       /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
       (*(code *)this_00->field_0000->field_0008)();
       this_00->field_1A61 = 6;
-      if (this_00->field_1A5B->field_02E6 != (MMsgTy *)0x0) {
+      if (this_00->field_1A5B->field_02E6 != nullptr) {
         local_ac = 0;
         local_a8 = 0;
         local_b0 = 0x10101;
@@ -3031,7 +3031,7 @@ LAB_005a50be:
     goto cf_common_exit_005A8CA7;
   case 0x6154:
     if (this_00->field_1A5F == CASE_5) {
-      if (g_cursorClass_00802A30 != (CursorClassTy *)0x0) {
+      if (g_cursorClass_00802A30 != nullptr) {
         g_cursorClass_00802A30->field_0493 = CASE_1;
         pCVar37->field_0494 = 0xffff;
         CursorClassTy::SetGCType(pCVar37,CASE_0,pCVar37->field_00C5,pCVar37->field_00C9);
@@ -3054,20 +3054,20 @@ LAB_005a50be:
         pSVar13 = this_00->field_1A5B;
         *(undefined2 *)puVar23 = 1;
         pMVar33 = pSVar13->field_02E6;
-        if (pMVar33 != (MMsgTy *)0x0) {
+        if (pMVar33 != nullptr) {
           MMsgTy::StatePanel(pMVar33,(int)local_300);
         }
         pMVar33 = this_00->field_1A5B->field_02E6;
-        if (pMVar33 != (MMsgTy *)0x0) {
+        if (pMVar33 != nullptr) {
           MMsgTy::SetMessage(pMVar33,(-(uint)((message->arg0).u32 != 1) & 10) + 0x258e,'\0',
-                             (undefined4 *)0x0,(undefined4 *)0x0,(undefined4 *)0x0,0,0);
+                             nullptr,nullptr,nullptr,0,0);
         }
       }
     }
     goto cf_common_exit_005A8CA7;
   case MESS_FSGSTY_6150|MESS_SHARED_0005:
     if (this_00->field_1A5F != CASE_4) goto cf_common_exit_005A8CA7;
-    if (g_cursorClass_00802A30 != (CursorClassTy *)0x0) {
+    if (g_cursorClass_00802A30 != nullptr) {
       g_cursorClass_00802A30->field_0493 = CASE_1;
       pCVar37->field_0494 = 0xffff;
       CursorClassTy::SetGCType(pCVar37,CASE_0,pCVar37->field_00C5,pCVar37->field_00C9);
@@ -3084,11 +3084,11 @@ LAB_005a50be:
     }
     *(undefined2 *)puVar23 = 1;
     pMVar33 = this_00->field_1A5B->field_02E6;
-    if (pMVar33 != (MMsgTy *)0x0) {
+    if (pMVar33 != nullptr) {
       MMsgTy::StatePanel(pMVar33,(int)local_354);
     }
     pMVar33 = this_00->field_1A5B->field_02E6;
-    if (pMVar33 == (MMsgTy *)0x0) goto cf_common_exit_005A8CA7;
+    if (pMVar33 == nullptr) goto cf_common_exit_005A8CA7;
     switch((message->arg0).u32) {
     case 2:
       UVar22 = 0x2597;
@@ -3111,7 +3111,7 @@ LAB_005a50be:
     break;
   case MESS_FSGSTY_6156:
     if (this_00->field_1A5F != CASE_6) goto cf_common_exit_005A8CA7;
-    if (g_cursorClass_00802A30 != (CursorClassTy *)0x0) {
+    if (g_cursorClass_00802A30 != nullptr) {
       g_cursorClass_00802A30->field_0493 = CASE_1;
       pCVar37->field_0494 = 0xffff;
       CursorClassTy::SetGCType(pCVar37,CASE_0,pCVar37->field_00C5,pCVar37->field_00C9);
@@ -3126,13 +3126,13 @@ LAB_005a50be:
     else if ((message->arg0).u32 == 0xf) {
       UVar22 = 0x2591;
     }
-    if ((UVar22 == 0) || (pMVar33 = this_00->field_1A5B->field_02E6, pMVar33 == (MMsgTy *)0x0))
+    if ((UVar22 == 0) || (pMVar33 = this_00->field_1A5B->field_02E6, pMVar33 == nullptr))
     goto cf_common_exit_005A8CA7;
     break;
   default:
     goto cf_common_exit_005A8CA7;
   }
-  MMsgTy::SetMessage(pMVar33,UVar22,'\0',(undefined4 *)0x0,(undefined4 *)0x0,(undefined4 *)0x0,0,0);
+  MMsgTy::SetMessage(pMVar33,UVar22,'\0',nullptr,nullptr,nullptr,0,0);
 cf_common_exit_005A8CA7:
   g_currentExceptionFrame = local_21c.previous;
   iVar21 = MMObjTy::GetMessage((MMObjTy *)this_00,message);

@@ -12,11 +12,11 @@
 void __fastcall ST3DSMAPContext::sub_006E1050(ST3DSMAPContext *param_1)
 
 {
+  uint uVar1;
   ST3DSMAPContext *this;
-  double dVar1;
   double dVar2;
   int iVar3;
-  void *pvVar4;
+  ushort *puVar4;
   int iVar5;
   int iVar6;
   longlong lVar7;
@@ -28,87 +28,80 @@ void __fastcall ST3DSMAPContext::sub_006E1050(ST3DSMAPContext *param_1)
   int local_c;
   int local_8;
 
-  dVar1 = *(double *)&param_1->field_0xd8 * *(double *)&param_1->field_0xc8 * _DAT_0079df60 +
-          _DAT_007901c0;
-  Library::MSVCRT::FUN_0072e150(SUB84(dVar1,0),(uint)((ulonglong)dVar1 >> 0x20));
+  dVar2 = param_1->field_00D8 * param_1->field_00C8 * _DAT_0079df60 + _DAT_007901c0;
+  Library::MSVCRT::FUN_0072e150(SUB84(dVar2,0),(uint)((ulonglong)dVar2 >> 0x20));
   lVar7 = Library::MSVCRT::__ftol();
-  *(int *)&param_1->field_0x2c0 = (int)lVar7;
-  dVar1 = (*(double *)&param_1->field_0xe0 * *(double *)&param_1->field_0xc8 + _DAT_0079cd88) *
-          _DAT_007901c0;
-  Library::MSVCRT::FUN_0072e150(SUB84(dVar1,0),(uint)((ulonglong)dVar1 >> 0x20));
+  param_1->field_02C0 = (int)lVar7;
+  dVar2 = (param_1->field_00E0 * param_1->field_00C8 + _DAT_0079cd88) * _DAT_007901c0;
+  Library::MSVCRT::FUN_0072e150(SUB84(dVar2,0),(uint)((ulonglong)dVar2 >> 0x20));
   lVar7 = Library::MSVCRT::__ftol();
   iVar3 = (int)lVar7;
-  *(int *)&param_1->field_0x2c4 = iVar3;
-  iVar6 = (param_1->field_0028 + -1 + *(int *)&param_1->field_0x2c0) / *(int *)&param_1->field_0x2c0
-          + 1;
-  *(int *)&param_1->field_0x2b8 = iVar6;
-  iVar3 = (*(int *)&param_1->field_0x2c + -1 + iVar3) / iVar3 + 1;
-  *(int *)&param_1->field_0x2bc = iVar3;
-  iVar3 = iVar3 * iVar6;
-  if (iVar3 - *(int *)&param_1->field_0x2b4 != 0 && *(int *)&param_1->field_0x2b4 <= iVar3) {
-    *(int *)&param_1->field_0x2b4 = iVar3;
-    pvVar4 = Library::DKW::LIB::MemRealloc
-                       (*(AnonPointee_TLOBaseTy_0607 **)&param_1->field_0x2b0,iVar3 * 2);
-    *(void **)&param_1->field_0x2b0 = pvVar4;
+  param_1->field_02C4 = iVar3;
+  uVar1 = (param_1->field_0028 + -1 + param_1->field_02C0) / param_1->field_02C0 + 1;
+  param_1->field_02B8 = uVar1;
+  iVar3 = (param_1->field_002C + -1 + iVar3) / iVar3 + 1;
+  param_1->field_02BC = iVar3;
+  iVar3 = iVar3 * uVar1;
+  if (iVar3 - param_1->field_02B4 != 0 && param_1->field_02B4 <= iVar3) {
+    param_1->field_02B4 = iVar3;
+    puVar4 = Library::DKW::LIB::MemRealloc(param_1->field_02B0,iVar3 * 2);
+    param_1->field_02B0 = puVar4;
   }
-  dVar1 = param_1->field_0098 / *(double *)&param_1->field_0xc8;
-  Library::MSVCRT::FUN_0072e150(SUB84(dVar1,0),(uint)((ulonglong)dVar1 >> 0x20));
+  dVar2 = param_1->field_0098 / param_1->field_00C8;
+  Library::MSVCRT::FUN_0072e150(SUB84(dVar2,0),(uint)((ulonglong)dVar2 >> 0x20));
   lVar7 = Library::MSVCRT::__ftol();
   local_8 = (int)lVar7;
-  dVar1 = param_1->field_00A0 / *(double *)&param_1->field_0xc8;
-  Library::MSVCRT::FUN_0072e150(SUB84(dVar1,0),(uint)((ulonglong)dVar1 >> 0x20));
+  dVar2 = param_1->field_00A0 / param_1->field_00C8;
+  Library::MSVCRT::FUN_0072e150(SUB84(dVar2,0),(uint)((ulonglong)dVar2 >> 0x20));
   lVar7 = Library::MSVCRT::__ftol();
   local_c = (int)lVar7;
-  local_18 = ((float)local_8 + (float)_DAT_007901c0) * (float)*(double *)&param_1->field_0xc8;
+  local_18 = ((float)local_8 + (float)_DAT_007901c0) * (float)param_1->field_00C8;
   local_10 = 0;
-  local_14 = ((float)local_c + (float)_DAT_007901c0) * (float)*(double *)&param_1->field_0xc8;
+  local_14 = ((float)local_c + (float)_DAT_007901c0) * (float)param_1->field_00C8;
   sub_006E25D0(param_1,&local_28);
-  iVar6 = (local_28 >> 0x10) % *(int *)&param_1->field_0x2c0;
-  *(int *)&param_1->field_0x2c8 = iVar6;
-  if (iVar6 != 0) {
-    *(int *)&param_1->field_0x2c8 = iVar6 - *(int *)&param_1->field_0x2c0;
+  iVar3 = (local_28 >> 0x10) % param_1->field_02C0;
+  param_1->field_02C8 = iVar3;
+  if (iVar3 != 0) {
+    param_1->field_02C8 = iVar3 - param_1->field_02C0;
   }
-  iVar6 = (local_24 >> 0x10) % *(int *)&param_1->field_0x2c4;
-  *(int *)&param_1->field_0x2cc = iVar6;
-  if (iVar6 != 0) {
-    *(int *)&param_1->field_0x2cc = iVar6 - *(int *)&param_1->field_0x2c4;
+  iVar3 = (local_24 >> 0x10) % param_1->field_02C4;
+  param_1->field_02CC = iVar3;
+  if (iVar3 != 0) {
+    param_1->field_02CC = iVar3 - param_1->field_02C4;
   }
-  FUN_006ce6c0(*(ushort **)&param_1->field_0x2b0,*(uint *)&param_1->field_0x2b4,30000);
+  FUN_006ce6c0(param_1->field_02B0,param_1->field_02B4,30000);
   sub_006DE9C0(param_1);
-  if (*(int *)&param_1->field_0x358 != 0) {
-    *(undefined4 *)(*(int *)&param_1->field_0x358 + 0x280) = *(undefined4 *)&param_1->field_0x280;
-    iVar6 = *(int *)&param_1->field_0x358;
-    lVar7 = Library::MSVCRT::__ftol();
-    iVar3 = (int)lVar7;
+  if (param_1->field_0358 != 0) {
+    *(AnonPointee_ST3DSMAPContext_0280 **)(param_1->field_0358 + 0x280) = param_1->field_0280;
+    iVar3 = param_1->field_0358;
     lVar7 = Library::MSVCRT::__ftol();
     iVar5 = (int)lVar7;
-    if (((*(int *)&param_1->field_0x374 == iVar3) && (*(int *)&param_1->field_0x378 == iVar5)) &&
-       (*(int *)(iVar6 + 0x134) == 0)) {
-      *(undefined4 *)&param_1->field_0x140 = 0;
-      *(undefined4 *)&param_1->field_0x13c = 0;
+    lVar7 = Library::MSVCRT::__ftol();
+    iVar6 = (int)lVar7;
+    if (((param_1->field_0374 == iVar5) && (param_1->field_0378 == iVar6)) &&
+       (*(int *)(iVar3 + 0x134) == 0)) {
+      param_1->field_0140 = nullptr;
+      param_1->field_013C = 0;
       return;
     }
-    *(int *)&param_1->field_0x374 = iVar3;
-    *(int *)&param_1->field_0x378 = iVar5;
-    *(int *)(iVar6 + 0x374) = iVar3;
-    *(int *)(*(int *)&param_1->field_0x358 + 0x378) = iVar5;
-    this = *(ST3DSMAPContext **)&param_1->field_0x358;
-    dVar1 = ((double)*(int *)&param_1->field_0x378 + _DAT_0079b168) *
-            *(double *)&param_1->field_0x368 + *(double *)&this->field_0x78;
-    dVar2 = *(double *)&param_1->field_0x368 * _DAT_0079b168 +
-            ((double)*(int *)&param_1->field_0x374 * *(double *)&param_1->field_0x368 -
-            *(double *)&this->field_0x60);
-    sub_006DD610(this,4,SUB84(dVar2,0),(int)((ulonglong)dVar2 >> 0x20),SUB84(dVar1,0),
-                 (int)((ulonglong)dVar1 >> 0x20));
-    sub_006DDBE0(*(ST3DSMAPContext **)&param_1->field_0x358);
-    sub_006DE9C0(*(ST3DSMAPContext **)&param_1->field_0x358);
-    *(undefined4 *)(*(int *)&param_1->field_0x358 + 0x134) = 0;
-    *(undefined4 *)&param_1->field_0x140 = 0;
-    *(undefined4 *)&param_1->field_0x13c = 0;
+    param_1->field_0374 = iVar5;
+    param_1->field_0378 = iVar6;
+    *(int *)(iVar3 + 0x374) = iVar5;
+    *(int *)(param_1->field_0358 + 0x378) = iVar6;
+    this = (ST3DSMAPContext *)param_1->field_0358;
+    sub_006DD610(this,4,param_1->field_0368 * _DAT_0079b168 +
+                        ((double)param_1->field_0374 * param_1->field_0368 - this->field_0060),
+                 ((double)param_1->field_0378 + _DAT_0079b168) * param_1->field_0368 +
+                 this->field_0078);
+    sub_006DDBE0((ST3DSMAPContext *)param_1->field_0358);
+    sub_006DE9C0((ST3DSMAPContext *)param_1->field_0358);
+    *(undefined4 *)(param_1->field_0358 + 0x134) = 0;
+    param_1->field_0140 = nullptr;
+    param_1->field_013C = 0;
     return;
   }
-  *(undefined4 *)&param_1->field_0x140 = 0;
-  *(undefined4 *)&param_1->field_0x13c = 0;
+  param_1->field_0140 = nullptr;
+  param_1->field_013C = 0;
   return;
 }
 

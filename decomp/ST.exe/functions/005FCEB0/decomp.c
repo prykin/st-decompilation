@@ -12,7 +12,7 @@ void __fastcall FUN_005fceb0(AnonShape_005FCEB0_FA1F7938 *param_1)
   undefined2 local_e;
   int local_8;
 
-  if (DAT_008117bc != (undefined4 *)0x0) {
+  if (DAT_008117bc != nullptr) {
     memset(local_28, 0, 0x20); /* compiler bulk-zero initialization */
     local_12 = param_1->field_0032;
     local_10 = param_1->field_032A;

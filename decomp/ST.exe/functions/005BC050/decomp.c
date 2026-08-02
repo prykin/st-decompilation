@@ -37,7 +37,7 @@ void __thiscall PrividerTy::DeleteCtrls(PrividerTy *this,char param_1)
     RaiseInternalException(iVar4,0,"E:\\__titans\\Start\\prov_obj.cpp",0x279);
     return;
   }
-  if (g_cursorClass_00802A30 != (CursorClassTy *)0x0) {
+  if (g_cursorClass_00802A30 != nullptr) {
     if (g_cursorClass_00802A30->field_00A9 == 0) {
       Library::DKW::DDX::FUN_006b8b10((int *)g_cursorClass_00802A30->field_00AD);
     }
@@ -53,22 +53,22 @@ void __thiscall PrividerTy::DeleteCtrls(PrividerTy *this,char param_1)
     pPVar3->field_1A73 = 0;
     pPVar3->field_1A61 = 0;
     FUN_006b5f80((int *)g_ddxContext_008075A8,0x79,0x51,0x22e,0x145);
-    if (pPVar3->field_1C96 != (HoloTy *)0x0) {
+    if (pPVar3->field_1C96 != nullptr) {
       HoloTy::Done(pPVar3->field_1C96);
       Library::MSVCRT::FUN_0072e2b0(pPVar3->field_1C96);
-      pPVar3->field_1C96 = (HoloTy *)0x0;
+      pPVar3->field_1C96 = nullptr;
     }
     pHVar5 = (HoloTy *)Library::MSVCRT::FUN_0072e530(0x33);
-    if (pHVar5 == (HoloTy *)0x0) {
-      pHVar5 = (HoloTy *)0x0;
+    if (pHVar5 == nullptr) {
+      pHVar5 = nullptr;
     }
     else {
       pHVar5->field_0002 = 1;
       pHVar5->field_0000 = 0;
       *(undefined4 *)&pHVar5->field_0x3 = 0xffffffff;
       pHVar5->field_0001 = CASE_2;
-      pHVar5->field_0007 = (void *)0x0;
-      pHVar5->field_000B = (void *)0x0;
+      pHVar5->field_0007 = nullptr;
+      pHVar5->field_000B = nullptr;
       pHVar5->field_000F = 0;
       *(undefined4 *)&pHVar5->field_0x1b = 1;
       pHVar5->field_0013 = 1;
@@ -79,7 +79,7 @@ void __thiscall PrividerTy::DeleteCtrls(PrividerTy *this,char param_1)
       pHVar5->field_002B = 1;
     }
     pPVar3->field_1C96 = pHVar5;
-    if (pHVar5 != (HoloTy *)0x0) {
+    if (pHVar5 != nullptr) {
       uVar11 = 0;
       cVar10 = '\x01';
       bVar9 = 0x10;
@@ -128,22 +128,22 @@ void __thiscall PrividerTy::DeleteCtrls(PrividerTy *this,char param_1)
     StartSystemTy::sub_006E56B0(pPVar3->field_000C,pPVar3->field_1C86);
     pPVar3->field_1C86 = 0;
     FUN_006b5f80((int *)g_ddxContext_008075A8,0x79,0x197,0x22e,0x2e);
-    if (pPVar3->field_1C9A != (HoloTy *)0x0) {
+    if (pPVar3->field_1C9A != nullptr) {
       HoloTy::Done(pPVar3->field_1C9A);
       Library::MSVCRT::FUN_0072e2b0(pPVar3->field_1C9A);
-      pPVar3->field_1C9A = (HoloTy *)0x0;
+      pPVar3->field_1C9A = nullptr;
     }
     pHVar5 = (HoloTy *)Library::MSVCRT::FUN_0072e530(0x33);
-    if (pHVar5 == (HoloTy *)0x0) {
-      pHVar5 = (HoloTy *)0x0;
+    if (pHVar5 == nullptr) {
+      pHVar5 = nullptr;
     }
     else {
       pHVar5->field_0002 = 1;
       pHVar5->field_0000 = 0;
       *(undefined4 *)&pHVar5->field_0x3 = 0xffffffff;
       pHVar5->field_0001 = CASE_2;
-      pHVar5->field_0007 = (void *)0x0;
-      pHVar5->field_000B = (void *)0x0;
+      pHVar5->field_0007 = nullptr;
+      pHVar5->field_000B = nullptr;
       pHVar5->field_000F = 0;
       *(undefined4 *)&pHVar5->field_0x1b = 1;
       pHVar5->field_0013 = 1;
@@ -154,7 +154,7 @@ void __thiscall PrividerTy::DeleteCtrls(PrividerTy *this,char param_1)
       pHVar5->field_002B = 1;
     }
     pPVar3->field_1C9A = pHVar5;
-    if (pHVar5 != (HoloTy *)0x0) {
+    if (pHVar5 != nullptr) {
       uVar11 = 0;
       cVar10 = '\x01';
       bVar9 = 0x10;
@@ -176,7 +176,7 @@ void __thiscall PrividerTy::DeleteCtrls(PrividerTy *this,char param_1)
                (BITMAPINFO *)g_startSystem_0081176C->field_002C);
     FUN_006b3af0((int *)g_ddxContext_008075A8,pPVar3->field_1C8A);
   }
-  if (g_cursorClass_00802A30 != (CursorClassTy *)0x0) {
+  if (g_cursorClass_00802A30 != nullptr) {
     if (g_cursorClass_00802A30->field_00A9 == 0) {
       Library::DKW::DDX::FUN_006b8a60((byte *)g_cursorClass_00802A30->field_00AD);
     }

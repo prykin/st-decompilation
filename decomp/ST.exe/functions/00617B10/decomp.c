@@ -21,9 +21,9 @@ FUN_00617b10(void *this,undefined4 param_1,undefined4 param_2,undefined4 param_3
   int local_8;
 
   if (*(int *)((int)this + 0x5e) == 0) {
-    pDVar1 = Library::DKW::TBL::DArrayCreate((DArrayTy *)0x0,7,0x24,10);
+    pDVar1 = Library::DKW::TBL::DArrayCreate(nullptr,7,0x24,10);
     *(DArrayTy **)((int)this + 0x5e) = pDVar1;
-    if (pDVar1 == (DArrayTy *)0x0) {
+    if (pDVar1 == nullptr) {
       return 0xffffffff;
     }
   }

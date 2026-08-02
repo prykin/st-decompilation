@@ -10,7 +10,7 @@ int __thiscall FUN_005cbbe0(void *this,AnonShape_005CBBE0_2D1CAA09 *param_1)
   void *pvVar3;
 
   pcVar2 = LoadResourceString(8000,g_module_00807618);
-  if (param_1 != (AnonShape_005CBBE0_2D1CAA09 *)0x0) {
+  if (param_1 != nullptr) {
     switch(param_1->field_0x4) {
     case 1:
       if (((*(char *)((int)this + 0x1e26) != '\f') && (*(char *)((int)this + 0x1e26) != '\x10')) ||
@@ -30,7 +30,7 @@ int __thiscall FUN_005cbbe0(void *this,AnonShape_005CBBE0_2D1CAA09 *param_1)
       /* ST_PSEUDO[dynamic_array_indexing]: expected DArrayAt<T>(pDVar1, (uint)(byte)param_1->field_0x5) (runtime stride) */
       if (((uint)(byte)param_1->field_0x5 < pDVar1->count) &&
          (pvVar3 = (void *)(pDVar1->elementSize * (uint)(byte)param_1->field_0x5 + (int)pDVar1->data
-                           ), pvVar3 != (void *)0x0)) {
+                           ), pvVar3 != nullptr)) {
         return (int)pvVar3 + 0x40;
       }
       pcVar2 = LoadResourceString(10000,g_module_00807618);

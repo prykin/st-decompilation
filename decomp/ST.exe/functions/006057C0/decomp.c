@@ -15,8 +15,8 @@ void __fastcall FUN_006057c0(STExplosionC *param_1)
   int local_8;
 
   pVVar4 = g_visibleClass_00802A88;
-  if (param_1->field_02AF != (STT3DSprC *)0x0) {
-    if (g_visibleClass_00802A88 != (VisibleClassTy *)0x0) {
+  if (param_1->field_02AF != nullptr) {
+    if (g_visibleClass_00802A88 != nullptr) {
       iVar6 = param_1->field_0292;
       sVar3 = (short)(iVar6 >> 0x1f);
       if (iVar6 < 0) {
@@ -54,7 +54,7 @@ void __fastcall FUN_006057c0(STExplosionC *param_1)
           ((pVVar4->field_0030 <= local_c ||
            ((local_10 = g_centeredOffsets5[local_8] + local_10, local_10 < 0 ||
             (pVVar4->field_0034 <= local_10)))))) ||
-         ((pVVar4->field_004C == (byte *)0x0 ||
+         ((pVVar4->field_004C == nullptr ||
           (pVVar4->field_004C[local_c + local_10 * pVVar4->field_0030] != 0)))) {
         if (param_1->field_0286 == 0) {
           thunk_FUN_004ad460(param_1->field_02AF,0);

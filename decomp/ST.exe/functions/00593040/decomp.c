@@ -107,7 +107,7 @@ int __thiscall CampaignTy::GetMessage(CampaignTy *this,STMessage *message)
     (**(code **)(this_00->field_0000 + 8))();
     /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
     pMVar4 = *(MMsgTy **)(this_00->field_1A5B + 0x2e6);
-    if (pMVar4 != (MMsgTy *)0x0) {
+    if (pMVar4 != nullptr) {
       MMsgTy::HidePanel(pMVar4,1,0,1);
     }
     break;
@@ -122,8 +122,8 @@ int __thiscall CampaignTy::GetMessage(CampaignTy *this,STMessage *message)
   /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
   case MESS_FSGSTY_694A:
     if ((((DAT_00807dd1 & 0xffff0000) == 0xd0dd0000) && (DAT_0080874e == 3)) &&
-       (pMVar4 = *(MMsgTy **)(this_00->field_1A5B + 0x2e6), pMVar4 != (MMsgTy *)0x0)) {
-      MMsgTy::SetMessage(pMVar4,0x2530,'\0',(undefined4 *)0x0,(undefined4 *)0x0,(undefined4 *)0x0,0,
+       (pMVar4 = *(MMsgTy **)(this_00->field_1A5B + 0x2e6), pMVar4 != nullptr)) {
+      MMsgTy::SetMessage(pMVar4,0x2530,'\0',nullptr,nullptr,nullptr,0,
                          0);
     }
     else {
@@ -162,7 +162,7 @@ int __thiscall CampaignTy::GetMessage(CampaignTy *this,STMessage *message)
         (**(code **)(this_00->field_0000 + 8))();
         /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
         pMVar4 = *(MMsgTy **)(this_00->field_1A5B + 0x2e6);
-        if (pMVar4 != (MMsgTy *)0x0) {
+        if (pMVar4 != nullptr) {
           MMsgTy::HidePanel(pMVar4,1,0,1);
         }
       }

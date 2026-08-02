@@ -10,8 +10,8 @@ void FUN_006b9910(undefined4 *param_1,int param_2)
 
   *(undefined4 *)param_2 = 0;
   piVar1 = (int *)*param_1;
-  if (piVar1 != (int *)0x0) {
-    for (piVar2 = (int *)*piVar1; piVar2 != (int *)0x0; piVar2 = (int *)*piVar2) {
+  if (piVar1 != nullptr) {
+    for (piVar2 = (int *)*piVar1; piVar2 != nullptr; piVar2 = (int *)*piVar2) {
       piVar1 = piVar2;
     }
     *piVar1 = param_2;

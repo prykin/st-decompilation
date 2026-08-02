@@ -16,7 +16,7 @@ int __thiscall STManBasisC::sub_005F21D0(STManBasisC *this)
   short *psVar5;
   uint uVar6;
 
-  if (this->field_0038 != (STManBasisC_field_0038DArray *)0x0) {
+  if (this->field_0038 != nullptr) {
     dVar1 = this->field_0038->count;
     uVar6 = 0;
     if (0 < (int)dVar1) {
@@ -25,7 +25,7 @@ int __thiscall STManBasisC::sub_005F21D0(STManBasisC *this)
         /* ST_PSEUDO[dynamic_array_indexing]: expected DArrayAt<T>(array, index) (runtime elementSize cannot be a static C array) */
         if ((uVar6 < pSVar2->count) &&
            (psVar5 = (short *)((int)&pSVar2->data->field_0000 + pSVar2->elementSize * uVar6),
-           psVar5 != (short *)0x0)) {
+           psVar5 != nullptr)) {
           puVar4 = thunk_FUN_005f1e40((uint)*(byte *)(psVar5 + 3),(int)*(short *)((int)psVar5 + 7),
                                       (int)(short)(*psVar5 * 0xc9 + 100),
                                       (int)(short)(psVar5[1] * 0xc9 + 100),
@@ -36,7 +36,7 @@ int __thiscall STManBasisC::sub_005F21D0(STManBasisC *this)
       } while ((int)uVar6 < (int)dVar1);
     }
   }
-  if (this->field_003C != (DArrayTy *)0x0) {
+  if (this->field_003C != nullptr) {
     dVar1 = this->field_003C->count;
     uVar6 = 0;
     if (0 < (int)dVar1) {
@@ -45,7 +45,7 @@ int __thiscall STManBasisC::sub_005F21D0(STManBasisC *this)
         /* ST_PSEUDO[dynamic_array_indexing]: expected DArrayAt<T>(pDVar3, uVar6) (runtime stride) */
         if (((uVar6 < pDVar3->count) &&
             (psVar5 = (short *)(pDVar3->elementSize * uVar6 + (int)pDVar3->data),
-            psVar5 != (short *)0x0)) && (*(int *)(psVar5 + 0xc) != -1)) {
+            psVar5 != nullptr)) && (*(int *)(psVar5 + 0xc) != -1)) {
           thunk_FUN_005f1700((uint)*(byte *)(psVar5 + 3),(int)*(short *)((int)psVar5 + 7),0,
                              (int)(short)(*psVar5 * 0xc9 + 100),(int)(short)(psVar5[1] * 0xc9 + 100)
                              ,(int)(short)(psVar5[2] * 200 + 100),uVar6);

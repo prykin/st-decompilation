@@ -89,7 +89,7 @@ LAB_004ccd43:
         goto LAB_004ccd43;
       }
     }
-    if (DAT_008117bc != (undefined4 *)0x0) {
+    if (DAT_008117bc != nullptr) {
       memset(local_28, 0, 0x20); /* compiler bulk-zero initialization */
       /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
       param_1 = local_294;
@@ -180,7 +180,7 @@ LAB_004ccedc:
   }
   if (*(int *)((int)this + 0x408) != 0) {
     /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
-    param_2 = (int *)0x0;
+    param_2 = nullptr;
     if (*(int *)((int)this + 0x24) != *(int *)((int)this + 0x23d)) {
       local_EAX_948 = LookupRecordByte((char)*(int *)((int)this + 0x23d));
       iVar2 = *(int *)((int)this + 0x235);
@@ -193,7 +193,7 @@ LAB_004ccedc:
     iVar2 = STPlaySystemC::sub_006E62D0
                       (g_playSystem_00802A38,*(AnonShape_005EFAE0_B406B78B **)((int)this + 0x40c),
                        (int *)&param_2);
-    if ((iVar2 == 0) && (param_2 != (int *)0x0)) {
+    if ((iVar2 == 0) && (param_2 != nullptr)) {
       thunk_FUN_0060bc80(param_2,*(undefined4 *)((int)this + 0x24),*(ushort *)((int)this + 0x32));
     }
   }
@@ -209,7 +209,7 @@ LAB_004cd038:
   if ((*(int *)((int)this + 0x5ac) == 0x41) && (0 < *(int *)((int)this + 0x4e4))) {
     puVar7 = (undefined4 *)((int)this + 0x4d0);
     do {
-      if (((AnonShape_005EFAE0_B406B78B *)*puVar7 != (AnonShape_005EFAE0_B406B78B *)0x0) &&
+      if (((AnonShape_005EFAE0_B406B78B *)*puVar7 != nullptr) &&
          (iVar2 = STPlaySystemC::sub_006E62D0
                             (g_playSystem_00802A38,(AnonShape_005EFAE0_B406B78B *)*puVar7,
                              (int *)&param_2), iVar2 == 0)) {
@@ -226,7 +226,7 @@ LAB_004cd038:
     thunk_FUN_00618b40(param_2,*(undefined4 *)((int)this + 0x24),*(undefined2 *)((int)this + 0x32));
   }
   if (((*(int *)((int)this + 0x5ac) == 0x70) &&
-      (*(AnonShape_005EFAE0_B406B78B **)((int)this + 0x4f0) != (AnonShape_005EFAE0_B406B78B *)0x0))
+      (*(AnonShape_005EFAE0_B406B78B **)((int)this + 0x4f0) != nullptr))
      && (iVar5 = STPlaySystemC::sub_006E62D0
                            (g_playSystem_00802A38,
                             *(AnonShape_005EFAE0_B406B78B **)((int)this + 0x4f0),(int *)&param_2),

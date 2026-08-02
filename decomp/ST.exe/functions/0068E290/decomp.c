@@ -26,7 +26,7 @@ int __thiscall AiTactClassTy::sub_0068E290(AiTactClassTy *this,short param_1)
         element_00a5 = DArrayAt<AiTactClassTy_field_00A5Element>(pAVar1, uVar5);
       }
       else {
-        element_00a5 = (AiTactClassTy_field_00A5Element *)0x0;
+        element_00a5 = nullptr;
       }
       iVar3 = element_00a5->field_0004;
       if ((iVar3 != 0) && (*(short *)(iVar3 + 0x7d) == param_1)) {

@@ -22,10 +22,10 @@ void __thiscall AiTactClassTy::ClaimRestore(AiTactClassTy *this)
   errorCode = Library::MSVCRT::__setjmp3(local_4c.jumpBuffer,0);
   pAVar2 = local_8;
   if (errorCode == 0) {
-    if ((local_8->field_0130 != (void *)0x0) &&
-       (local_8->field_00BD != (AiTactClassTy_field_00BDDArray *)0x0)) {
+    if ((local_8->field_0130 != nullptr) &&
+       (local_8->field_00BD != nullptr)) {
       DArrayDestroy((DArrayTy *)local_8->field_00BD);
-      pAVar3 = (AiTactClassTy_field_00BDDArray *)FUN_006b0060((uint *)0x0,pAVar2->field_0130);
+      pAVar3 = (AiTactClassTy_field_00BDDArray *)FUN_006b0060(nullptr,pAVar2->field_0130);
       pAVar2->field_00BD = pAVar3;
     }
     g_currentExceptionFrame = local_4c.previous;

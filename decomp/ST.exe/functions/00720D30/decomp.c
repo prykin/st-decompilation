@@ -25,7 +25,7 @@ int __fastcall FUN_00720d30(AnonShape_00720D30_DF382E7D *param_1)
     iVar3 = *(int *)(iVar4 + 4) + 1;
     pcVar2 = *(char **)(*(int *)(iVar4 + 0x14) + -4 + iVar3 * 4);
     *(int *)(iVar4 + 4) = iVar3;
-    if (pcVar2 == (char *)0x0) {
+    if (pcVar2 == nullptr) {
       return local_8;
     }
     iVar4 = -1;

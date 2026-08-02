@@ -193,7 +193,7 @@ void __thiscall MTaskTy::PlayScript(MTaskTy *this)
                          this_01->field_0074->elementSize * uVar21);
       }
       else {
-        piVar22 = (int *)0x0;
+        piVar22 = nullptr;
       }
       if (((uint)(this_01->field_0069 - this_01->field_0061) < *(uint *)((int)piVar22 + 1)) &&
          (this_01->field_006D != '\x05')) break;
@@ -205,7 +205,7 @@ void __thiscall MTaskTy::PlayScript(MTaskTy *this)
           switch(*(undefined1 *)((int)piVar22 + 0xd)) {
           /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
           case 0:
-            in_stack_ffffffdc = (DDXContext_008075A8 *)0x0;
+            in_stack_ffffffdc = nullptr;
             break;
           /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
           case 1:
@@ -403,7 +403,7 @@ LAB_005e200a:
             local_1fc = 0x6217;
             local_204 = local_224;
             (*this_01->field_000C->vtable->CreateObject)
-                      ((SystemClassTy *)this_01->field_000C,5,&this_01->field_02B9,(int *)0x0,
+                      ((SystemClassTy *)this_01->field_000C,5,&this_01->field_02B9,nullptr,
                        local_234,0);
             puVar12 = (uint *)(local_e68 + 3);
             puVar30 = this_01->field_02BD;
@@ -443,17 +443,17 @@ LAB_005e200a:
           FreeAndNull(&this_01->field_06BF);
           if (*(undefined1 *)((int)piVar22 + 0xd) == '\x01') {
             memset(local_b34, 0, 0x878); /* compiler bulk-zero initialization */
-            if ((DArrayTy *)g_startSystem_0081176C->field_0548 != (DArrayTy *)0x0) {
+            if ((DArrayTy *)g_startSystem_0081176C->field_0548 != nullptr) {
               FUN_006b5570((DArrayTy *)g_startSystem_0081176C->field_0548);
             }
-            pDVar17 = Library::DKW::TBL::SArrayCreate((DArrayTy *)0x0,10,10);
+            pDVar17 = Library::DKW::TBL::SArrayCreate(nullptr,10,10);
             g_startSystem_0081176C->field_0548 = &pDVar17->flags;
             dVar5 = g_dArray_0080C4CB->elementSize;
             if (dVar5 != 0) {
               iVar9 = 0;
               if (0 < (int)dVar5) {
                 if ((int)dVar5 < 1) {
-                  pcVar16 = (char *)0x0;
+                  pcVar16 = nullptr;
                   goto LAB_005e22f4;
                 }
                 do {
@@ -469,11 +469,11 @@ LAB_005e22f4:
                          " ,.;:!?/\\()[]{}",(uint *)&DAT_007c21ec,
                          /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
                          (*(int *)((int)piVar22 + 0x16) - *(int *)&this_01->field_0x2f5) + -0x2d,0,
-                         0xffffffff,(char *)0x0,1);
-              if ((DArrayTy *)g_startSystem_0081176C->field_0548 != (DArrayTy *)0x0) {
+                         0xffffffff,nullptr,1);
+              if ((DArrayTy *)g_startSystem_0081176C->field_0548 != nullptr) {
                 FUN_006b5570((DArrayTy *)g_startSystem_0081176C->field_0548);
               }
-              pDVar17 = Library::DKW::TBL::SArrayCreate((DArrayTy *)0x0,10,10);
+              pDVar17 = Library::DKW::TBL::SArrayCreate(nullptr,10,10);
               g_startSystem_0081176C->field_0548 = &pDVar17->flags;
               /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
               local_ec = CONCAT31(local_ec._1_3_,(this_01->field_06C7 != '\x01') + -1) & 0xffffff02;
@@ -488,14 +488,14 @@ LAB_005e22f4:
               wsprintfA((LPSTR)pDVar17,"&%1d %s:");
               Library::DKW::TBL::FUN_006b5aa0(g_startSystem_0081176C->field_0548,(char *)local_c38);
               Library::DKW::TBL::FUN_006b5aa0(g_startSystem_0081176C->field_0548,&DAT_007c3b5c);
-              if (pDVar17 != (DArrayTy *)0x0) {
+              if (pDVar17 != nullptr) {
                 if (pDVar17->elementSize != 0) {
                   ccFntTy::SepColorStrInSarr(this_01->field_008D,&pDVar17->flags,&pDVar17->flags);
                 }
                 iVar9 = 0;
                 if (0 < (int)pDVar17->elementSize) {
                   if ((int)pDVar17->elementSize < 1) {
-                    pcVar16 = (char *)0x0;
+                    pcVar16 = nullptr;
                     goto LAB_005e24c5;
                   }
                   do {
@@ -587,7 +587,7 @@ LAB_005e24c5:
               local_724 = 2;
               local_720 = 0x6335;
               (*this_01->field_000C->vtable->CreateObject)
-                        ((SystemClassTy *)this_01->field_000C,8,&this_01->field_02CD,(int *)0x0,
+                        ((SystemClassTy *)this_01->field_000C,8,&this_01->field_02CD,nullptr,
                          local_b34,0);
               this_01->field_002D = 0x20;
               this_01->field_0031 = 1;
@@ -694,19 +694,19 @@ LAB_005e24c5:
           }
         }
         else {
-          pAVar15 = (AnonShape_005E10A0_819783CC *)0x0;
+          pAVar15 = nullptr;
         }
         if (*(undefined1 *)((int)piVar22 + 0xd) == '\x01') {
-          if (((pAVar15 == (AnonShape_005E10A0_819783CC *)0x0) || ((int)*(uint *)pAVar15 < 0)) ||
+          if (((pAVar15 == nullptr) || ((int)*(uint *)pAVar15 < 0)) ||
              (*(int *)&pAVar15->field_0x20 != piVar22[5])) {
             TTaskItemClose(this_01,pAVar15);
             if (piVar22[5] < (int)g_dArray_0080C4C7->elementSize) {
               pcVar16 = *(char **)(g_dArray_0080C4C7->growCapacity + piVar22[5] * 4);
             }
             else {
-              pcVar16 = (char *)0x0;
+              pcVar16 = nullptr;
             }
-            if (pcVar16 != (char *)0x0) {
+            if (pcVar16 != nullptr) {
               memset(&local_13c, 0, 0x3e); /* compiler bulk-zero initialization */
               if (*(undefined1 *)((int)piVar22 + 0xe) == '\0') {
                 local_7c = local_7c & 0xffffff00;
@@ -744,18 +744,18 @@ LAB_005e24c5:
                                 (uint)(*(undefined1 *)((int)piVar22 + 10) == '\x01') * 0x100;
                   }
                   ccFntTy::SetSurf(this_01->field_0089,*piVar19,0,0,0,0,0);
-                  pDVar17 = Library::DKW::TBL::SArrayCreate((DArrayTy *)0x0,1,1);
+                  pDVar17 = Library::DKW::TBL::SArrayCreate(nullptr,1,1);
                   Library::DKW::TBL::FUN_006b5aa0(&pDVar17->flags,pcVar16);
                   local_80 = (DArrayTy *)
                              ccFntTy::FormIndentSarr
                                        (this_01->field_0089,pDVar17," ,.;:!?/\\()[]{}",
                                         (uint *)&DAT_007c21ec,
                                         *(int *)((int)piVar22 + 0x22) +
-                                        *(int *)((int)piVar22 + 0x2a) * -2,0,0xffffffff,(char *)0x0,
+                                        *(int *)((int)piVar22 + 0x2a) * -2,0,0xffffffff,nullptr,
                                         1);
                   FUN_006b5570(pDVar17);
                   pDVar17 = local_80;
-                  if (local_80 != (DArrayTy *)0x0) {
+                  if (local_80 != nullptr) {
                     piVar19 = local_88;
                     if ((char)local_7c != '\0') {
                       if ((char)local_7c == '\x01') {
@@ -807,22 +807,22 @@ LAB_005e24c5:
                   local_110 = &this_01->field_0x91 + (uint)(local_106._1_1_ == '\x01') * 0x100;
                 }
                 ccFntTy::SetSurf(this_01->field_0089,(int)local_138[0],0,0,0,0,0);
-                pDVar17 = Library::DKW::TBL::SArrayCreate((DArrayTy *)0x0,1,1);
+                pDVar17 = Library::DKW::TBL::SArrayCreate(nullptr,1,1);
                 Library::DKW::TBL::FUN_006b5aa0(&pDVar17->flags,pcVar16);
                 pDVar18 = (DArrayTy *)
                           ccFntTy::FormIndentSarr
                                     (this_01->field_0089,pDVar17," ,.;:!?/\\()[]{}",
                                      (uint *)&DAT_007c21ec,
                                      *(int *)((int)piVar22 + 0x22) +
-                                     *(int *)((int)piVar22 + 0x2a) * -2,0,0xffffffff,(char *)0x0,1);
+                                     *(int *)((int)piVar22 + 0x2a) * -2,0,0xffffffff,nullptr,1);
                 FUN_006b5570(pDVar17);
-                if (pDVar18 != (DArrayTy *)0x0) {
-                  local_102 = (uint *)ccFntTy::_SarrToTxt(this_01->field_0089,(char *)0x0,
+                if (pDVar18 != nullptr) {
+                  local_102 = (uint *)ccFntTy::_SarrToTxt(this_01->field_0089,nullptr,
                                                           (int)pDVar18);
-                  if (local_102 != (uint *)0x0) {
+                  if (local_102 != nullptr) {
                     local_10b = (cTypingTy *)Library::MSVCRT::FUN_0072e530(0xb4);
-                    if (local_10b == (cTypingTy *)0x0) {
-                      local_10b = (cTypingTy *)0x0;
+                    if (local_10b == nullptr) {
+                      local_10b = nullptr;
                     }
                     else {
                       local_10b->field_0058 = 0;
@@ -871,7 +871,7 @@ LAB_005e24c5:
                        *(uint *)((int)piVar22 + 0x1a),*(uint *)((int)piVar22 + 0x1e));
           }
         }
-        else if ((pAVar15 != (AnonShape_005E10A0_819783CC *)0x0) && (-1 < *(int *)pAVar15)) {
+        else if ((pAVar15 != nullptr) && (-1 < *(int *)pAVar15)) {
           if (this_01->field_006D == '\x05') {
             TTaskItemClose(this_01,pAVar15);
           }
@@ -893,14 +893,14 @@ LAB_005e24c5:
         if (this_01->field_006D != '\x05') {
           puVar12 = (uint *)Library::Ourlib::MFWAV::mfWavLoad
                                       (this_01->field_0070,(char *)((int)piVar22 + 0xd),0,
-                                       (ushort *)0x0);
-          if (puVar12 == (uint *)0x0) {
+                                       nullptr);
+          if (puVar12 == nullptr) {
             /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
             in_stack_ffffffdc = (DDXContext_008075A8 *)0x5e2f3a;
             puVar12 = (uint *)Library::Ourlib::MFWAV::mfWavLoad
                                         (g_cMf32_00806798,(char *)((int)piVar22 + 0xd),0,
-                                         (ushort *)0x0);
-            if (puVar12 == (uint *)0x0) break;
+                                         nullptr);
+            if (puVar12 == nullptr) break;
           }
           /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
           in_stack_ffffffdc = (DDXContext_008075A8 *)0x5e2f24;
@@ -915,21 +915,21 @@ LAB_005e24c5:
                     (pDVar17->elementSize * *(uint *)((int)piVar22 + 0xe) + (int)pDVar17->data);
         }
         else {
-          pSVar27 = (SpriteClassTy *)0x0;
+          pSVar27 = nullptr;
         }
         if (*(undefined1 *)((int)piVar22 + 0xd) == '\x01') {
           SpriteClassTy::SpriteClassTy(&local_1dc);
-          ppvVar36 = (void **)0x0;
-          local_142 = (int *)0x0;
+          ppvVar36 = nullptr;
+          local_142 = nullptr;
           local_94 = 1;
           local_2bc.previous = g_currentExceptionFrame;
           g_currentExceptionFrame = &local_2bc;
           iVar9 = Library::MSVCRT::__setjmp3(local_2bc.jumpBuffer,0);
           if (iVar9 == 0) {
             ppvVar37 = ppvVar36;
-            if (pSVar27 != (SpriteClassTy *)0x0) {
+            if (pSVar27 != nullptr) {
               pbVar24 = &pSVar27->field_0065;
-              if (pbVar24 != (undefined1 *)0x0) {
+              if (pbVar24 != nullptr) {
                 pbVar23 = (byte *)((int)ppvVar36 + 0x12);
                 do {
                   bVar8 = *pbVar24;
@@ -964,8 +964,8 @@ LAB_005e3000:
 LAB_005e3030:
             this_01 = local_8c;
             if (local_94 == 0) {
-              if (pSVar27 == (SpriteClassTy *)0x0) {
-                puVar25 = (byte *)0x0;
+              if (pSVar27 == nullptr) {
+                puVar25 = nullptr;
               }
               else {
                 puVar25 = (byte *)(&pSVar27->field_0004);
@@ -995,7 +995,7 @@ LAB_005e3030:
             else {
               SpriteClassTy::InitSprite
                         (&local_1dc,(int *)g_ddxContext_008075A8,*(uint *)((int)ppvVar36 + 5),'\x1e'
-                         ,(undefined4 *)0x0,0,0);
+                         ,nullptr,0,0);
               /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
               in_stack_ffffffdc = (DDXContext_008075A8 *)0x1e;
               iVar9 = SpriteClassTy::SetImages
@@ -1035,7 +1035,7 @@ LAB_005e3030:
               local_142 = FUN_006c81c0((int)in_stack_ffffffdc,*(int *)((int)ppvVar36 + 0x36),
                                        *(int *)((int)ppvVar36 + 0x3a),*(int *)((int)ppvVar36 + 0x3e)
                                        ,local_146);
-              if (local_142 == (int *)0x0) {
+              if (local_142 == nullptr) {
                 local_14b = (*(char *)((int)ppvVar36 + 0x4e) != '\0') + '\x01';
               }
             }
@@ -1054,13 +1054,13 @@ LAB_005e3030:
             g_currentExceptionFrame = local_2bc.previous;
             SpriteClassTy::CloseSprite(&local_1dc);
             this_01 = local_8c;
-            if (local_142 != (int *)0x0) {
+            if (local_142 != nullptr) {
               FreeAndNull(&local_142);
               this_01 = local_8c;
             }
           }
         }
-        else if (pSVar27 != (SpriteClassTy *)0x0) {
+        else if (pSVar27 != nullptr) {
           SpriteClassTy::CloseSprite(pSVar27);
           if (*(int *)((int)&pSVar27[1].field_0008 + 1) != 0) {
             FreeAndNull((void **)((int)&pSVar27[1].field_0008 + 1));
@@ -1132,7 +1132,7 @@ LAB_005e3030:
         break;
       case '\t':
         ppuVar1 = &this_01->field_005D;
-        if (this_01->field_005D != (ushort *)0x0) {
+        if (this_01->field_005D != nullptr) {
           this_00 = g_cMf32_00806780;
           if ((this_01->field_0080 != '\x01') &&
              (this_00 = g_cMf32_00806798, this_01->field_0080 != '\x02')) {
@@ -1144,10 +1144,10 @@ LAB_005e3030:
         this_01->field_0080 = 0;
         puVar10 = (ushort *)FUN_0070a9f0(this_01->field_0070,(char *)pbVar24,0,0);
         *ppuVar1 = puVar10;
-        if (puVar10 == (ushort *)0x0) {
+        if (puVar10 == nullptr) {
           puVar10 = (ushort *)FUN_0070a9f0(g_cMf32_00806798,(char *)pbVar24,0,0);
           *ppuVar1 = puVar10;
-          if (puVar10 == (ushort *)0x0) {
+          if (puVar10 == nullptr) {
             iVar9 = 1;
             bVar8 = 0;
             text = FUN_006f2c00("TASK_BKG",1,(uint)DAT_0080874e);
@@ -1769,11 +1769,11 @@ LAB_005e195d:
           element_0074 = DArrayAt<MTaskTy_field_0074Element>(pMVar3, this_01->field_007C);
         }
         else {
-          element_0074 = (MTaskTy_field_0074Element *)0x0;
+          element_0074 = nullptr;
         }
         FUN_006bc360(this_01->field_005D,local_1268,element_0074);
         /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
-        in_stack_ffffffdc = (DDXContext_008075A8 *)0x0;
+        in_stack_ffffffdc = nullptr;
         Library::Ourlib::PALETTE::FUN_00718780
                   ((int)local_1268,0,0x100,0x1a,0x10,(undefined4 *)&this_01->field_0x91);
         Library::Ourlib::PALETTE::FUN_00718780
@@ -1786,36 +1786,36 @@ LAB_005e195d:
           thunk_FUN_0055ddf0((undefined4 *)g_dDXContext_0080759C,(int *)g_ddxContext_008075A8,
                              this_01->field_005D,10,2);
         }
-        if (this_01->field_0089 != (ccFntTy *)0x0) {
+        if (this_01->field_0089 != nullptr) {
           ccFntTy::operator_delete((uint *)this_01->field_0089);
         }
         pcVar11 = (ccFntTy *)
-                  thunk_FUN_005defe0((int)this_01->field_005D,(undefined *)0x0,DAT_00807dd9);
+                  thunk_FUN_005defe0((int)this_01->field_005D,nullptr,DAT_00807dd9);
         this_01->field_0089 = pcVar11;
         pcVar11->field_0058 = 1;
         pcVar11->field_005C = 0;
-        if (this_01->field_008D != (ccFntTy *)0x0) {
+        if (this_01->field_008D != nullptr) {
           ccFntTy::operator_delete((uint *)this_01->field_008D);
         }
         pcVar11 = (ccFntTy *)
-                  thunk_FUN_005df290((int)this_01->field_005D,(undefined *)0x0,DAT_00807dd9);
+                  thunk_FUN_005df290((int)this_01->field_005D,nullptr,DAT_00807dd9);
         this_01->field_008D = pcVar11;
         thunk_FUN_00568bc0(&g_sound,0);
         /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
         if ((DAT_00807300._1_1_ & 8) != 0) {
           puVar12 = (uint *)Library::Ourlib::MFWAV::mfWavLoad
                                       (this_01->field_0070,(char *)((int)element_0074 + 0x2d),0,
-                                       (ushort *)0x0);
+                                       nullptr);
           *(uint **)&this_01->field_0x85 = puVar12;
-          if (puVar12 == (uint *)0x0) {
+          if (puVar12 == nullptr) {
             puVar12 = (uint *)Library::Ourlib::MFWAV::mfWavLoad
                                         (g_cMf32_00806798,(char *)((int)element_0074 + 0x2d),0,
-                                         (ushort *)0x0);
+                                         nullptr);
             *(uint **)&this_01->field_0x85 = puVar12;
-            if (puVar12 == (uint *)0x0) {
+            if (puVar12 == nullptr) {
               /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
               in_stack_ffffffdc = (DDXContext_008075A8 *)0x5e1cab;
-              thunk_FUN_0056a130(&g_sound,0x14,'\x02',0,(uint *)0x0);
+              thunk_FUN_0056a130(&g_sound,0x14,'\x02',0,nullptr);
               break;
             }
           }
@@ -1831,11 +1831,11 @@ LAB_005e195d:
   }
   if (this_01->field_007C == this_01->field_0074->count) {
     if ((this_01->field_006D == '\x05') &&
-       (pDVar17 = this_01->field_064B, pDVar17 != (DArrayTy *)0x0)) {
+       (pDVar17 = this_01->field_064B, pDVar17 != nullptr)) {
       uVar31 = 0;
       if (pDVar17->count != 0) {
         if (pDVar17->count == 0) {
-          pSVar27 = (SpriteClassTy *)0x0;
+          pSVar27 = nullptr;
           goto LAB_005e34e0;
         }
         do {

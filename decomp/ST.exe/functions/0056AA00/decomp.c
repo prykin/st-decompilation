@@ -13,10 +13,10 @@ void __thiscall FUN_0056aa00(void *this,byte param_1,char param_2)
     puVar4 = (undefined *)(uint)param_1;
     pcVar1 = (char *)((int)puVar4 * 0x51 + 0x11ca + (int)this);
     if (*pcVar1 != param_2) {
-      if (g_visibleClass_00802A88 != (VisibleClassTy *)0x0) {
+      if (g_visibleClass_00802A88 != nullptr) {
         if (param_1 == *(byte *)((int)this + 0x112d)) {
           bVar2 = 0;
-          local_8 = (undefined *)0x0;
+          local_8 = nullptr;
           pcVar3 = (char *)((int)this + 0x11ca);
           do {
             if (((pcVar3[-1] != -1) && (bVar2 != param_1)) && (*pcVar1 == *pcVar3)) {
@@ -33,11 +33,11 @@ void __thiscall FUN_0056aa00(void *this,byte param_1,char param_2)
         }
       }
       *pcVar1 = param_2;
-      if ((g_visibleClass_00802A88 != (VisibleClassTy *)0x0) &&
+      if ((g_visibleClass_00802A88 != nullptr) &&
          (*(char *)((int)this + 0x1474) != '\0')) {
         if (param_1 == *(byte *)((int)this + 0x112d)) {
           bVar2 = 0;
-          puVar4 = (undefined *)0x0;
+          puVar4 = nullptr;
           pcVar3 = (char *)((int)this + 0x11ca);
           this_00 = g_visibleClass_00802A88;
           do {

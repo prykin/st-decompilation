@@ -26,7 +26,7 @@ undefined4 __thiscall STFieldC::InitSprSistem(STFieldC *this,int param_1)
   errorCode = Library::MSVCRT::__setjmp3(local_4c.jumpBuffer,0);
   this_00 = local_8;
   if (errorCode == 0) {
-    if ((local_8->field_0234 != (STFieldC_field_0234DArray *)0x0) &&
+    if ((local_8->field_0234 != nullptr) &&
        (dVar1 = local_8->field_0234->count, uVar7 = 0, 0 < (int)dVar1)) {
       do {
         pSVar2 = this_00->field_0234;
@@ -34,9 +34,9 @@ undefined4 __thiscall STFieldC::InitSprSistem(STFieldC *this,int param_1)
           element_0234 = DArrayAt<STFieldC_field_0234Element>(pSVar2, uVar7);
         }
         else {
-          element_0234 = (STFieldC_field_0234Element *)0x0;
+          element_0234 = nullptr;
         }
-        if (element_0234 != (STFieldC_field_0234Element *)0x0) {
+        if (element_0234 != nullptr) {
           if ((this_00->field_01F5 == 0x4d) && (param_1 != 0)) {
             element_0234->field_0004 = 0;
           }

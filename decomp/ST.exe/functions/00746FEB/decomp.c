@@ -16,13 +16,13 @@ undefined4 FUN_00746feb(int param_1,int *param_2)
   /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
   lpCriticalSection = *(LPCRITICAL_SECTION *)(param_1 + 0x2c);
   EnterCriticalSection(lpCriticalSection);
-  if (param_2 != (int *)0x0) {
+  if (param_2 != nullptr) {
     /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
     (**(code **)(*param_2 + 4))(param_2);
   }
   /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
   piVar1 = *(int **)(param_1 + 0xc);
-  if (piVar1 != (int *)0x0) {
+  if (piVar1 != nullptr) {
     /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
     (**(code **)(*piVar1 + 8))(piVar1);
   }

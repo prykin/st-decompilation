@@ -81,7 +81,7 @@ void __thiscall ST3DSMAPContext::sub_006DBAB0(ST3DSMAPContext *this)
     *(undefined4 *)&this->field_0x13c = 0;
     *(undefined4 *)&this->field_0x124 = 0;
     this = *(ST3DSMAPContext **)&this->field_0x358;
-  } while (this != (ST3DSMAPContext *)0x0);
+  } while (this != nullptr);
   return;
 }
 

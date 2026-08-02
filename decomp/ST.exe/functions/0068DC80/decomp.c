@@ -27,17 +27,17 @@ int __thiscall AiTactClassTy::InitData(AiTactClassTy *this,undefined4 *param_1)
   AnonShape_0068DC80_4419198B *local_c;
   byte *local_8;
 
-  puVar10 = (byte *)0x0;
-  local_c = (AnonShape_0068DC80_4419198B *)0x0;
-  local_10 = (AnonShape_GLOBAL_008489C4_F7BABFAC *)0x0;
-  local_8 = (byte *)0x0;
+  puVar10 = nullptr;
+  local_c = nullptr;
+  local_10 = nullptr;
+  local_8 = nullptr;
   local_64.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_64;
   local_18 = this;
   iVar3 = Library::MSVCRT::__setjmp3(local_64.jumpBuffer,0);
   pAVar2 = local_18;
   if (iVar3 == 0) {
-    if (local_18 != (AiTactClassTy *)0x0) {
+    if (local_18 != nullptr) {
       puVar10 = (byte *)(&local_18->field_0020);
     }
     puVar7 = (byte *)(param_1);
@@ -47,30 +47,30 @@ int __thiscall AiTactClassTy::InitData(AiTactClassTy *this,undefined4 *param_1)
     ppAVar8 = &local_18->field_00A5;
     iVar3 = 8;
     do {
-      if (*ppAVar8 != (AiTactClassTy_field_00A5DArray *)0x0) {
+      if (*ppAVar8 != nullptr) {
         pAVar4 = (AiTactClassTy_field_00A5DArray *)
-                 FUN_006b0060((uint *)0x0,(uint *)((int)ppAVar8[1] + 0x10b + (int)param_1));
+                 FUN_006b0060(nullptr,(uint *)((int)ppAVar8[1] + 0x10b + (int)param_1));
         *ppAVar8 = pAVar4;
       }
       ppAVar8 = ppAVar8 + 3;
       iVar3 = iVar3 + -1;
     } while (iVar3 != 0);
-    if (pAVar2->field_00A5 == (AiTactClassTy_field_00A5DArray *)0x0) {
+    if (pAVar2->field_00A5 == nullptr) {
       pAVar4 = (AiTactClassTy_field_00A5DArray *)
-               Library::DKW::TBL::DArrayCreate((DArrayTy *)0x0,10,8,10);
+               Library::DKW::TBL::DArrayCreate(nullptr,10,8,10);
       pAVar2->field_00A5 = pAVar4;
     }
-    if (pAVar2->field_00B1 == (DArrayTy *)0x0) {
-      pDVar5 = Library::DKW::TBL::DArrayCreate((DArrayTy *)0x0,10,0x34,10);
+    if (pAVar2->field_00B1 == nullptr) {
+      pDVar5 = Library::DKW::TBL::DArrayCreate(nullptr,10,0x34,10);
       pAVar2->field_00B1 = pDVar5;
     }
-    if (pAVar2->field_00BD == (AiTactClassTy_field_00BDDArray *)0x0) {
+    if (pAVar2->field_00BD == nullptr) {
       pAVar6 = (AiTactClassTy_field_00BDDArray *)
-               Library::DKW::TBL::DArrayCreate((DArrayTy *)0x0,10,0x4a,10);
+               Library::DKW::TBL::DArrayCreate(nullptr,10,0x4a,10);
       pAVar2->field_00BD = pAVar6;
     }
-    if (pAVar2->field_00C9 == (DArrayTy *)0x0) {
-      pDVar5 = Library::DKW::TBL::DArrayCreate((DArrayTy *)0x0,10,8,10);
+    if (pAVar2->field_00C9 == nullptr) {
+      pDVar5 = Library::DKW::TBL::DArrayCreate(nullptr,10,8,10);
       pAVar2->field_00C9 = pDVar5;
     }
     iVar3 = 0;

@@ -25,14 +25,14 @@ void __thiscall InfocPanelTy::DoneInfocPanel(InfocPanelTy *this)
       StartSystemTy::sub_006E56B0(local_8->field_000C,local_8->field_03D0);
     }
     pIVar2->field_03D0 = 0;
-    if (pIVar2->field_03D5 != (ccFntTy *)0x0) {
+    if (pIVar2->field_03D5 != nullptr) {
       ccFntTy::operator_delete((uint *)pIVar2->field_03D5);
-      pIVar2->field_03D5 = (ccFntTy *)0x0;
+      pIVar2->field_03D5 = nullptr;
     }
-    pIVar2->field_03CC = (ushort *)0x0;
-    pIVar2->field_03C8 = (ushort *)0x0;
-    pIVar2->field_03C4 = (ushort *)0x0;
-    g_infocPanel_00801698 = (InfocPanelTy *)0x0;
+    pIVar2->field_03CC = nullptr;
+    pIVar2->field_03C8 = nullptr;
+    pIVar2->field_03C4 = nullptr;
+    g_infocPanel_00801698 = nullptr;
     g_currentExceptionFrame = local_4c.previous;
     return;
   }

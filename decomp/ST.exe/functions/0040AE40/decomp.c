@@ -46,7 +46,7 @@ int __thiscall FUN_0040ae40(void *this,uint param_1,char param_2)
 
   local_14 = this;
   pAVar6 = (AnonShape_00497920_894F87D6 *)thunk_FUN_00423e70(this,param_1);
-  if (pAVar6 == (AnonShape_00497920_894F87D6 *)0x0) {
+  if (pAVar6 == nullptr) {
     return -4;
   }
   local_48 = pAVar6;
@@ -108,7 +108,7 @@ int __thiscall FUN_0040ae40(void *this,uint param_1,char param_2)
   if (local_3c <= *(int *)&pAVar6[1].field_0x53) {
     return 0;
   }
-  local_2c = (short *)0x0;
+  local_2c = nullptr;
   local_90.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_90;
   iVar7 = Library::MSVCRT::__setjmp3(local_90.jumpBuffer,0);
@@ -143,8 +143,8 @@ int __thiscall FUN_0040ae40(void *this,uint param_1,char param_2)
   }
   else {
     iVar13 = (int)local_48->field_0047;
-    psVar10 = (short *)0x0;
-    local_10 = (short *)0x0;
+    psVar10 = nullptr;
+    local_10 = nullptr;
     if (iVar13 == *(int *)&local_48[1].field_0x57) {
       if (local_48->field_0049 == local_c) {
         psVar10 = (short *)0x1;
@@ -244,7 +244,7 @@ joined_r0x0040b258:
       psVar10 = local_10;
     }
 LAB_0040b481:
-    if (psVar10 == (short *)0x0) goto LAB_0040b56a;
+    if (psVar10 == nullptr) goto LAB_0040b56a;
     puVar8 = Library::DKW::LIB::MemAlloc(0x90);
     *(undefined4 **)&pAVar6[1].field_0x3b = puVar8;
     for (iVar7 = 0x24; iVar7 != 0; iVar7 = iVar7 + -1) {
@@ -318,7 +318,7 @@ LAB_0040b56a:
     else {
       iVar13 = ((int)g_pathingGrid.sizeZ - (int)sVar1) + -1;
     }
-    local_18 = (short *)0x0;
+    local_18 = nullptr;
     local_44 = uVar9;
     local_34 = iVar13;
     local_1c = local_4c;
@@ -356,9 +356,9 @@ LAB_0040b56a:
       } while (local_1c <= iVar13);
     }
     psVar10 = local_40;
-    if (local_18 == (short *)0x0) {
+    if (local_18 == nullptr) {
       FreeAndNull(&local_28);
-      psVar10 = (short *)0x0;
+      psVar10 = nullptr;
     }
     local_24 = 0;
     if (param_2 != '\0') {
@@ -373,7 +373,7 @@ LAB_0040b56a:
                          *(short **)&pAVar6[1].field_005F,*(int *)&pAVar6[1].field_0x53,
                          (int *)&pAVar6[1].field_0x3f,local_28,psVar10,local_24);
     *(short **)&pAVar6[1].field_0x3b = psVar10;
-    if (psVar10 == (short *)0x0) {
+    if (psVar10 == nullptr) {
       psVar15 = (short *)((int)g_pathingGrid.sizeY * (int)g_pathingGrid.sizeX);
       local_40 = psVar15;
       local_2c = Library::DKW::LIB::MemAlloc((int)g_pathingGrid.sizeZ * (int)psVar15 * 2);
@@ -390,7 +390,7 @@ LAB_0040b56a:
         psVar10 = (short *)((int)psVar10 + 1);
         psVar11 = (short *)((int)psVar11 + 1);
       }
-      if ((local_18 != (short *)0x0) && (local_1c = local_4c, local_4c <= local_34)) {
+      if ((local_18 != nullptr) && (local_1c = local_4c, local_4c <= local_34)) {
         local_18 = local_10 + (local_4c * 7 + local_44) * 7;
         do {
           local_10 = local_2c +
@@ -415,7 +415,7 @@ LAB_0040b56a:
               iVar7 = iVar7 + -1;
               local_10 = local_10 + g_pathingGrid.sizeX;
             } while (iVar7 != 0);
-            local_20 = (short *)0x0;
+            local_20 = nullptr;
           }
           local_18 = local_18 + 0x31;
           local_1c = local_1c + 1;

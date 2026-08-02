@@ -9,8 +9,8 @@ char * FUN_006b60b0(char *param_1,char *param_2)
   char *pcVar4;
   char *pcVar5;
 
-  if (param_2 == (char *)0x0) {
-    return (char *)0x0;
+  if (param_2 == nullptr) {
+    return nullptr;
   }
   cVar1 = *param_2;
   while ((cVar1 != '\0' && ((cVar1 == ' ' || (cVar1 == '\t'))))) {
@@ -18,7 +18,7 @@ char * FUN_006b60b0(char *param_1,char *param_2)
     param_2 = param_2 + 1;
     cVar1 = *pcVar4;
   }
-  if (param_1 == (char *)0x0) {
+  if (param_1 == nullptr) {
     return param_2;
   }
   uVar2 = 0xffffffff;

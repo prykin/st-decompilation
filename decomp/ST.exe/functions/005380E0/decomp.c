@@ -24,7 +24,7 @@ void __thiscall OptPanelTy::UpdateObjectives(OptPanelTy *this)
   errorCode = Library::MSVCRT::__setjmp3(local_4c.jumpBuffer,0);
   if (errorCode == 0) {
     PrepMissObj(local_8);
-    if (g_helpPanel_00801690 != (HelpPanelTy *)0x0) {
+    if (g_helpPanel_00801690 != nullptr) {
       HelpPanelTy::sub_00515180(g_helpPanel_00801690,'\a');
     }
     g_currentExceptionFrame = local_4c.previous;

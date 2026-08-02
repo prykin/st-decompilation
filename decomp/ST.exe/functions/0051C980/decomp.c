@@ -41,7 +41,7 @@ void __thiscall HelpPanelTy::SpecProc(HelpPanelTy *this,int param_1,int param_2,
   local_8 = 0;
   local_14 = this;
   local_10 = (byte *)FUN_0070b3a0((AnonShape_GLOBAL_0081175C_57F682DD *)this->field_0248,4);
-  if (g_allPlayers_007FA174 != (STAllPlayersC *)0x0) {
+  if (g_allPlayers_007FA174 != nullptr) {
     local_74.previous = g_currentExceptionFrame;
     g_currentExceptionFrame = &local_74;
     iVar5 = Library::MSVCRT::__setjmp3(local_74.jumpBuffer,0);
@@ -67,7 +67,7 @@ void __thiscall HelpPanelTy::SpecProc(HelpPanelTy *this,int param_1,int param_2,
           *(undefined2 *)&local_14->field_0x2c = 0;
           local_14->field_002E = 2;
           *(undefined4 *)&local_14->field_0x30 = local_14->field_0178;
-          if (g_cursorClass_00802A30 != (CursorClassTy *)0x0) {
+          if (g_cursorClass_00802A30 != nullptr) {
             /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
             (**(code **)g_cursorClass_00802A30->field_0000)(&local_14->field_0x18);
           }
@@ -111,7 +111,7 @@ void __thiscall HelpPanelTy::SpecProc(HelpPanelTy *this,int param_1,int param_2,
         pcVar11 = (char *)&DAT_0080f33a;
         memmove(pcVar11, pcVar8, uVar15); /* compiler REP MOVS byte copy */
         uVar10 = 0;
-        for (puVar7 = Library::MSVCRT::FUN_0072e560(&DAT_0080f33a,'\n'); puVar7 != (uint *)0x0;
+        for (puVar7 = Library::MSVCRT::FUN_0072e560(&DAT_0080f33a,'\n'); puVar7 != nullptr;
             puVar7 = Library::MSVCRT::FUN_0072e560(puVar7,'\n')) {
           *(undefined1 *)puVar7 = 0x20;
         }
@@ -200,7 +200,7 @@ void __thiscall HelpPanelTy::SpecProc(HelpPanelTy *this,int param_1,int param_2,
       pcVar8 = pcVar11 + -uVar15;
       pcVar11 = (char *)&DAT_0080f33a;
       memmove(pcVar11, pcVar8, uVar15); /* compiler REP MOVS byte copy */
-      for (puVar7 = Library::MSVCRT::FUN_0072e560(&DAT_0080f33a,'\n'); puVar7 != (uint *)0x0;
+      for (puVar7 = Library::MSVCRT::FUN_0072e560(&DAT_0080f33a,'\n'); puVar7 != nullptr;
           puVar7 = Library::MSVCRT::FUN_0072e560(puVar7,'\n')) {
         *(undefined1 *)puVar7 = 0x20;
       }

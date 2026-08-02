@@ -20,7 +20,7 @@ void FUN_006b1cc0(DDXContext_008075A8 *param_1,int param_2,undefined4 param_3,un
   *(undefined4 *)(&param_1->field_0x11c + param_2 * 8) = param_3;
   *(undefined4 *)(&param_1->field_0x120 + param_2 * 8) = param_4;
   *(undefined4 *)(&param_1->field_0x174 + param_2 * 4) = 1;
-  if (param_5 != (undefined4 *)0x0) {
+  if (param_5 != nullptr) {
     *param_5 = uVar1;
     param_5[1] = uVar2;
   }

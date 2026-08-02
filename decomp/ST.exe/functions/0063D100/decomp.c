@@ -17,8 +17,8 @@ void __thiscall FUN_0063d100(void *this,undefined4 *param_1)
   undefined4 local_c;
   undefined4 local_8;
 
-  if (this == (void *)0x0) {
-    puVar5 = (byte *)0x0;
+  if (this == nullptr) {
+    puVar5 = nullptr;
   }
   else {
     puVar5 = (byte *)((int)this + 0x231);
@@ -28,7 +28,7 @@ void __thiscall FUN_0063d100(void *this,undefined4 *param_1)
   *(undefined4 *)((int)this + 0x347) = 0;
   pAVar4 = (AnonShape_004AD790_77673787 *)((int)param_1 + 0x152);
   if (*(int *)((int)this + 0x336) != 0) {
-    uVar1 = FUN_006b0060((uint *)0x0,(uint *)((int)param_1 + 0x156));
+    uVar1 = FUN_006b0060(nullptr,(uint *)((int)param_1 + 0x156));
     *(undefined4 *)((int)this + 0x336) = uVar1;
     pAVar4 = (AnonShape_004AD790_77673787 *)((int)param_1 + 0x156 + *(int *)pAVar4);
   }

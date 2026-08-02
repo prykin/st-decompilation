@@ -23,12 +23,12 @@ MTaskTy::OutGlassATxtProc
   InternalExceptionFrame local_4c;
   int *local_8;
 
-  if (param_8 != (DArrayTy *)0x0) {
+  if (param_8 != nullptr) {
     uVar1 = param_8->count;
     uVar5 = 0;
     if (uVar1 != 0) {
       if (uVar1 == 0) {
-        local_8 = (int *)0x0;
+        local_8 = nullptr;
         goto LAB_005df7f3;
       }
       do {
@@ -49,7 +49,7 @@ LAB_005df7f3:
         g_currentExceptionFrame = local_4c.previous;
         return;
       }
-      FUN_006b48a0(param_1,param_4,param_5,(BITMAPINFO *)local_8[1],(uint *)0x0,0x10000ff);
+      FUN_006b48a0(param_1,param_4,param_5,(BITMAPINFO *)local_8[1],nullptr,0x10000ff);
       g_currentExceptionFrame = local_4c.previous;
       return;
     }

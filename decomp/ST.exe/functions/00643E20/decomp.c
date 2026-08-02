@@ -21,12 +21,12 @@ undefined4 __fastcall FUN_00643e20(AnonShape_00643E20_B7FEAA75 *param_1,undefine
   int *local_8;
 
   pVVar3 = g_visibleClass_00802A88;
-  local_8 = (int *)0x0;
-  local_c = (STGameObjC *)0x0;
+  local_8 = nullptr;
+  local_c = nullptr;
   local_10 = 0;
   local_14 = 0;
   local_18 = 0;
-  if (g_visibleClass_00802A88 != (VisibleClassTy *)0x0) {
+  if (g_visibleClass_00802A88 != nullptr) {
     sVar2 = param_1->field_0045;
     if (sVar2 < 0) {
       iVar9 = (short)((sVar2 / 200 + (sVar2 >> 0xf)) -
@@ -59,7 +59,7 @@ undefined4 __fastcall FUN_00643e20(AnonShape_00643E20_B7FEAA75 *param_1,undefine
          (((4 < iVar9 || (local_1c < 0)) ||
           ((pVVar3->field_0030 <= local_1c ||
            ((local_20 = g_centeredOffsets5[iVar9] + local_20, local_20 < 0 ||
-            (pVVar3->field_0034 <= local_20)))))))) || (pVVar3->field_004C == (byte *)0x0)) ||
+            (pVVar3->field_0034 <= local_20)))))))) || (pVVar3->field_004C == nullptr)) ||
        (pVVar3->field_004C[local_1c + local_20 * pVVar3->field_0030] != 0)) {
       if (param_1->field_01E7 == '\x01') {
         thunk_FUN_004ad460(&param_1->field_0x1d5,0);
@@ -76,14 +76,14 @@ undefined4 __fastcall FUN_00643e20(AnonShape_00643E20_B7FEAA75 *param_1,undefine
     }
     pSVar4 = local_c;
     if ((((param_1->field_027D == '\0') && (param_1->field_0259 != 10)) &&
-        (local_c != (STGameObjC *)0x0)) && (local_c->field_0018 == param_1->field_025E)) {
+        (local_c != nullptr)) && (local_c->field_0018 == param_1->field_025E)) {
       Library::Ourlib::ST3DSMAP::SprSetLevAfter
                 (param_1->field_0211,param_1->field_01ED,local_c->field_01ED);
     }
     bVar7 = param_1->field_027D + 1;
     param_1->field_027D = bVar7;
     if (bVar7 < 8) {
-      if ((pSVar4 == (STGameObjC *)0x0) || (pSVar4->field_0018 != param_1->field_025E)) {
+      if ((pSVar4 == nullptr) || (pSVar4->field_0018 != param_1->field_025E)) {
         Library::Ourlib::ST3DSMAP::SprRstLev(param_1->field_0211,param_1->field_01ED);
       }
       bVar7 = param_1->field_027D;

@@ -77,7 +77,7 @@ int __thiscall STBoatC::UnLoadRC(STBoatC *this,int param_1)
     pSVar3 = g_worldGrid.cells
              [(int)g_worldGrid.planeStride * (int)sVar17 + (int)g_worldGrid.sizeX * (int)sVar21 +
               (int)sVar18].objects[0];
-    if (pSVar3 == (STWorldObject *)0x0) {
+    if (pSVar3 == nullptr) {
       return 0;
     }
     if (pSVar3[1].vtable != (STWorldObjectVTable *)this->field_0024) {
@@ -114,7 +114,7 @@ int __thiscall STBoatC::UnLoadRC(STBoatC *this,int param_1)
               ((pSVar3 = g_worldGrid.cells
                          [(int)sVar21 * (int)g_worldGrid.sizeX +
                           (int)g_worldGrid.planeStride * (int)sVar17 + (int)sVar18].objects[0],
-               pSVar3 != (STWorldObject *)0x0 &&
+               pSVar3 != nullptr &&
                (pSVar3[1].vtable == (STWorldObjectVTable *)this->field_0024)))))))) &&
            ((iVar6 = pSVar3->GetObjectTypeId(), iVar6 == 0x3b ||
             (iVar6 = pSVar3->GetObjectTypeId(), iVar6 == 0x60))))
@@ -178,7 +178,7 @@ LAB_0046e7ea:
                         g_worldGrid.cells
                         [(int)sVar17 * (int)g_worldGrid.planeStride +
                          (int)sVar21 * (int)g_worldGrid.sizeX + (int)sVar18].objects[0],
-             pSVar15 == (STBoatC *)0x0 || (pSVar15->field_0024 != this->field_0024)) ||
+             pSVar15 == nullptr || (pSVar15->field_0024 != this->field_0024)) ||
             ((dVar7 = pSVar15->slot_2C(), dVar7 != 0x3b &&
              (dVar7 = pSVar15->slot_2C(), dVar7 != 0x60)))))) {
           sub_004602B0(this);
@@ -251,7 +251,7 @@ cf_common_exit_0046E811:
                         g_worldGrid.cells
                         [(int)sVar17 * (int)g_worldGrid.planeStride +
                          (int)sVar21 * (int)g_worldGrid.sizeX + (int)sVar18].objects[0],
-             pSVar15 != (STBoatC *)0x0 && (pSVar15->field_0024 == this->field_0024)))))) &&
+             pSVar15 != nullptr && (pSVar15->field_0024 == this->field_0024)))))) &&
           ((dVar7 = pSVar15->slot_2C(), dVar7 == 0x3b ||
            (dVar7 = pSVar15->slot_2C(), dVar7 == 0x60)))))) {
         iVar6 = thunk_FUN_004e1490(pSVar15);
@@ -577,7 +577,7 @@ cf_common_exit_0046E811:
              ((pSVar3 = g_worldGrid.cells
                         [(int)sVar17 * (int)g_worldGrid.planeStride +
                          (int)sVar21 * (int)g_worldGrid.sizeX + (int)sVar18].objects[0],
-              pSVar3 != (STWorldObject *)0x0 && (*(int *)&pSVar3->field_0x18 == this->field_0532))))
+              pSVar3 != nullptr && (*(int *)&pSVar3->field_0x18 == this->field_0532))))
             && (*(int *)&pSVar3[0x21].field_0x10 == 0)))))) &&
          (*(int *)&pSVar3[0x10].field_0x5 != 6)) {
         if (*(int *)&this->field_0x4cd % 0x78 == 1) {
@@ -650,7 +650,7 @@ LAB_0046e2c8:
            (((pSVar3 = g_worldGrid.cells
                        [(int)sVar17 * (int)g_worldGrid.planeStride +
                         (int)sVar21 * (int)g_worldGrid.sizeX + (int)sVar18].objects[0],
-             pSVar3 != (STWorldObject *)0x0 &&
+             pSVar3 != nullptr &&
              (pSVar3[1].vtable == (STWorldObjectVTable *)this->field_0024)) &&
             ((iVar6 = pSVar3->GetObjectTypeId(), iVar6 == 0x3b ||
              (iVar6 = pSVar3->GetObjectTypeId(), iVar6 == 0x60)))))))))) {
@@ -678,7 +678,7 @@ LAB_0046e2c8:
                  [(int)sVar17 * (int)g_worldGrid.planeStride + (int)sVar21 * (int)g_worldGrid.sizeX
                   + (int)sVar18].objects[0];
 joined_r0x0046dd46:
-        if (pSVar2 != (STFishC *)0x0) {
+        if (pSVar2 != nullptr) {
           thunk_FUN_0048d7c0(this,pSVar2);
         }
       }
@@ -722,7 +722,7 @@ switchD_0046d492_caseD_0:
   sVar21 = this->field_052E;
   if (((((sVar18 < 0) || (g_worldGrid.sizeX <= sVar18)) || (sVar21 < 0)) ||
       ((g_worldGrid.sizeY <= sVar21 || (sVar17 < 0)))) || (g_worldGrid.sizeZ <= sVar17)) {
-    pSVar15 = (STBoatC *)0x0;
+    pSVar15 = nullptr;
   }
   else {
     pSVar15 = (STBoatC *)
@@ -732,7 +732,7 @@ switchD_0046d492_caseD_0:
   }
   iVar6 = sub_00490570(this);
   if (iVar6 == 1) {
-    if (pSVar15 != (STBoatC *)0x0) {
+    if (pSVar15 != nullptr) {
       if (((pSVar15->field_0024 == this->field_0024) &&
           ((dVar7 = pSVar15->slot_2C(), dVar7 == 0x3b ||
            (dVar7 = pSVar15->slot_2C(), dVar7 == 0x60)))) &&
@@ -754,7 +754,7 @@ switchD_0046d492_caseD_0:
   }
   else {
 LAB_0046d60c:
-    if (((pSVar15 != (STBoatC *)0x0) && (pSVar15->field_0024 == this->field_0024)) &&
+    if (((pSVar15 != nullptr) && (pSVar15->field_0024 == this->field_0024)) &&
        ((dVar7 = pSVar15->slot_2C(), dVar7 == 0x3b ||
         (dVar7 = pSVar15->slot_2C(), dVar7 == 0x60)))) {
       this->field_054C = CASE_2;

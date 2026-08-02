@@ -15,8 +15,8 @@ undefined4 __thiscall FUN_0054eb20(void *this,uint *param_1)
   if (iVar1 != 0) {
     *(int *)((int)this + 0x69) = *(int *)((int)this + 0x69) + -1;
   }
-  if (local_8 != (int *)0x0) {
-    if (param_1 != (uint *)0x0) {
+  if (local_8 != nullptr) {
+    if (param_1 != nullptr) {
       *param_1 = local_8[1];
     }
     uVar3 = *param_1;

@@ -136,7 +136,7 @@ void __cdecl FUN_00553e20(int param_1,undefined *param_2,byte param_3)
   local_5c[0x55] = 0x7c;
   local_5c[0x56] = 0x7e;
   ccFntTy::operator_new
-            (0x19d,&local_98,(uint *)0x0,local_5c,param_1,&param_3,1,3,1,1,0x40021c,param_2);
+            (0x19d,&local_98,nullptr,local_5c,param_1,&param_3,1,3,1,1,0x40021c,param_2);
   return;
 }
 

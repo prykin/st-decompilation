@@ -8,9 +8,8 @@ undefined4 FUN_006b5480(AnonShape_006B5480_2C1D4FBF *param_1)
   undefined4 *puVar4;
 
   pvVar1 = Library::DKW::LIB::MemRealloc
-                     ((AnonPointee_TLOBaseTy_0607 *)param_1->field_0014,
-                      (param_1->field_000C + param_1->field_0010) * 4);
-  if (pvVar1 == (void *)0x0) {
+                     ((void *)param_1->field_0014,(param_1->field_000C + param_1->field_0010) * 4);
+  if (pvVar1 == nullptr) {
     return 0xfffffffe;
   }
   puVar4 = (undefined4 *)((int)pvVar1 + param_1->field_000C * 4);

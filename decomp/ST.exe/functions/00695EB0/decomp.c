@@ -11,14 +11,14 @@
 void __thiscall CGenerate::sub_00695EB0(CGenerate *this)
 
 {
-  if (this->field_584B != (byte *)0x0) {
+  if (this->field_584B != nullptr) {
     FreeAndNull(&this->field_584B);
   }
-  this->field_584B = (byte *)0x0;
-  if (this->field_584F != (ushort *)0x0) {
+  this->field_584B = nullptr;
+  if (this->field_584F != nullptr) {
     FreeAndNull(&this->field_584F);
   }
-  this->field_584F = (ushort *)0x0;
+  this->field_584F = nullptr;
   sub_00695F20(this);
   return;
 }

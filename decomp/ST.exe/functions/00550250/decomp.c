@@ -21,7 +21,7 @@ void __thiscall STPlaySystemC::SendMail(STPlaySystemC *this,void *param_1)
   STPlaySystemC *local_c;
   uint local_8;
 
-  if ((this->field_003D != (AnonPointee_STPlaySystemC_003D *)0x0) &&
+  if ((this->field_003D != nullptr) &&
      (this->field_003D->field_0005 != 0)) {
     local_50.previous = g_currentExceptionFrame;
     g_currentExceptionFrame = &local_50;

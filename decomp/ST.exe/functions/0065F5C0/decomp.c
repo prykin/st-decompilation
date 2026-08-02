@@ -22,7 +22,7 @@ undefined4 __thiscall AiFltClassTy::sub_0065F5C0(AiFltClassTy *this,short *param
         psVar1 = (short *)(pAVar3->field_0008 * uVar4 + pAVar3->field_001C);
       }
       else {
-        psVar1 = (short *)0x0;
+        psVar1 = nullptr;
       }
       iVar2 = FUN_006acf90((int)*psVar1,(int)psVar1[1],(int)*param_1,(int)param_1[1]);
       if (iVar2 < 8) {

@@ -45,9 +45,19 @@ public class STGlobalAggregateAnalyzer extends GhidraScript {
     private static final Pattern REGISTER_MOVE = Pattern.compile(
         "(?i)^MOV\\s+(EAX|EBX|ECX|EDX|ESI|EDI)\\s*,\\s*" +
         "(EAX|EBX|ECX|EDX|ESI|EDI)$");
+    private static final Pattern REGISTER_LEA = Pattern.compile(
+        "(?i)^LEA\\s+(EAX|EBX|ECX|EDX|ESI|EDI)\\s*,\\s*(\\[.*\\])$");
+    private static final Pattern SAME_REGISTER_ADD = Pattern.compile(
+        "(?i)^ADD\\s+(EAX|EBX|ECX|EDX|ESI|EDI)\\s*,\\s*\\1$");
+    private static final Pattern REGISTER_TERM = Pattern.compile(
+        "(?i)\\b(EAX|EBX|ECX|EDX|ESI|EDI)\\b(?:\\s*\\*\\s*" +
+        "(0x[0-9a-f]+|[0-9]+))?");
+    private static final Pattern IMMEDIATE_REGISTER_MOVE = Pattern.compile(
+        "(?i)^MOV\\s+(EAX|ECX|EDI)\\s*,\\s*(0x[0-9a-f]+|[0-9]+)$");
     private static final Pattern DESTINATION_REGISTER = Pattern.compile(
         "(?i)^[A-Z]+\\s+(EAX|EBX|ECX|EDX|ESI|EDI)(?:\\s*,|$)");
     private final Map<Address, Evidence> indexed = new TreeMap<>();
+    private final Map<String, InitRange> zeroInitializedRanges = new TreeMap<>();
 
     @Override
     protected void run() throws Exception {
@@ -57,9 +67,11 @@ public class STGlobalAggregateAnalyzer extends GhidraScript {
         File selected = outputDirectory(); if (selected == null) return;
         Path directory = programDirectory(selected); Files.createDirectories(directory);
         scanIndexedGlobals();
+        scanBulkZeroInitialization();
         List<Row> rows = new ArrayList<>();
         rows.addAll(resourceStringBuffers());
         Set<Address> claimedRecordFields = new HashSet<>();
+        rows.addAll(bulkInitializedRecordArrays(claimedRecordFields));
         rows.addAll(squareByteMatrices(claimedRecordFields));
         rows.addAll(constantRecordTables(claimedRecordFields));
         Map<Integer, Integer> centeredNames = new HashMap<>();
@@ -245,10 +257,13 @@ public class STGlobalAggregateAnalyzer extends GhidraScript {
                     int scale = integer(matcher.group(1));
                     if (powerOfTwoScale(scale)) scales.add(scale);
                 }
-                if (upper.indexOf('[') >= 0)
+                if (upper.indexOf('[') >= 0) {
                     for (Map.Entry<String, Integer> derived : derivedScales.entrySet())
                         if (memoryUsesRegister(upper, derived.getKey()))
                             scales.add(derived.getValue());
+                    int effective = affineMemoryScale(upper, derivedScales);
+                    if (effective >= 2) scales.add(effective);
+                }
                 for (int scale : scales)
                     recordIndexedReferences(function, instruction, scale);
                 updateDerivedScales(instruction, upper, derivedScales);
@@ -266,14 +281,18 @@ public class STGlobalAggregateAnalyzer extends GhidraScript {
         Matcher shift = SHIFT.matcher(text);
         if (shift.matches()) {
             int amount = integer(shift.group(2));
-            if (amount >= 0 && amount <= 8) scales.put(shift.group(1), 1 << amount);
+            int prior = scales.getOrDefault(shift.group(1), 1);
+            if (amount >= 0 && amount <= 8 && prior <= (0x1000 >> amount))
+                scales.put(shift.group(1), prior << amount);
             else scales.remove(shift.group(1));
             return;
         }
         Matcher multiply = IMMEDIATE_MULTIPLY.matcher(text);
         if (multiply.matches()) {
             int scale = integer(multiply.group(2));
-            if (powerOfTwoScale(scale)) scales.put(multiply.group(1), scale);
+            int prior = scales.getOrDefault(multiply.group(1), 1);
+            if (scale >= 2 && scale <= 0x1000 && prior <= 0x1000 / scale)
+                scales.put(multiply.group(1), prior * scale);
             else scales.remove(multiply.group(1));
             return;
         }
@@ -284,6 +303,20 @@ public class STGlobalAggregateAnalyzer extends GhidraScript {
             else scales.put(move.group(1), scale);
             return;
         }
+        Matcher lea = REGISTER_LEA.matcher(text);
+        if (lea.matches()) {
+            int scale = affineExpressionScale(lea.group(2), scales);
+            if (scale >= 2) scales.put(lea.group(1), scale);
+            else scales.remove(lea.group(1));
+            return;
+        }
+        Matcher add = SAME_REGISTER_ADD.matcher(text);
+        if (add.matches()) {
+            int prior = scales.getOrDefault(add.group(1), 1);
+            if (prior <= 0x800) scales.put(add.group(1), prior * 2);
+            else scales.remove(add.group(1));
+            return;
+        }
         Matcher destination = DESTINATION_REGISTER.matcher(text);
         if (destination.find() && !Set.of("CMP", "TEST", "PUSH")
                 .contains(instruction.getMnemonicString().toUpperCase(Locale.ROOT)))
@@ -292,6 +325,42 @@ public class STGlobalAggregateAnalyzer extends GhidraScript {
                 instruction.getFlowType().isTerminal() ||
                 instruction.getFlowType().isJump())
             scales.clear();
+    }
+
+    /**
+     * Recover the composed coefficient of one logical index.  MSVC commonly
+     * emits `lea r,[i+i*8]` followed by `[r+r*8+global]`; the visible SIB scale
+     * is eight, but the actual record stride is 9*9=81.  Only expressions whose
+     * register terms all derive from one register identity are accepted.
+     */
+    private int affineMemoryScale(String instruction, Map<String, Integer> scales) {
+        int open = instruction.indexOf('['), close = instruction.lastIndexOf(']');
+        if (open < 0 || close <= open) return -1;
+        return affineExpressionScale(instruction.substring(open, close + 1), scales);
+    }
+
+    private int affineExpressionScale(String expression, Map<String, Integer> scales) {
+        Matcher matcher = REGISTER_TERM.matcher(expression);
+        String identity = null;
+        int coefficient = 0;
+        while (matcher.find()) {
+            String register = matcher.group(1).toUpperCase(Locale.ROOT);
+            int baseScale = scales.getOrDefault(register, 1);
+            String termText = matcher.group(2);
+            int termScale = termText == null ? 1 : integer(termText);
+            if (termScale < 1 || baseScale < 1 || baseScale > 0x1000 / termScale)
+                return -1;
+            // A derived register is its own affine identity for this bounded
+            // local analysis. Distinct machine registers in one expression are
+            // deliberately rejected; those remain ordinary SIB/matrix evidence.
+            String currentIdentity = scales.containsKey(register) ?
+                "derived:" + register : register;
+            if (identity == null) identity = currentIdentity;
+            else if (!identity.equals(currentIdentity)) return -1;
+            coefficient += baseScale * termScale;
+            if (coefficient > 0x1000) return -1;
+        }
+        return coefficient >= 2 ? coefficient : -1;
     }
 
     private boolean memoryUsesRegister(String instruction, String register) {
@@ -319,11 +388,19 @@ public class STGlobalAggregateAnalyzer extends GhidraScript {
             Address target = reference.getToAddress();
             if (target == null || !currentProgram.getMemory().contains(target)) continue;
             Symbol symbol = currentProgram.getSymbolTable().getPrimarySymbol(target);
-            if (symbol == null || (!synthetic(symbol.getName()) && !owned(target))) continue;
+            boolean generatedAggregate = ownedContaining(target);
+            if (!generatedAggregate && (symbol == null || !synthetic(symbol.getName()))) continue;
             Evidence evidence = indexed.computeIfAbsent(target, ignored -> new Evidence());
+            evidence.functions.add(function.getEntryPoint());
             evidence.scales.merge(scale, 1, Integer::sum);
+            ScaleEvidence scaled = evidence.byScale.computeIfAbsent(scale,
+                ignored -> new ScaleEvidence());
+            scaled.functions.add(function.getEntryPoint());
             int width = memoryWidth(rendered);
-            if (width > 0) evidence.widths.merge(width, 1, Integer::sum);
+            if (width > 0) {
+                evidence.widths.merge(width, 1, Integer::sum);
+                scaled.widths.merge(width, 1, Integer::sum);
+            }
             String pair = indexPair(rendered, scale);
             if (!pair.isBlank())
                 evidence.indexPairs.computeIfAbsent(function.getEntryPoint(),
@@ -333,12 +410,98 @@ public class STGlobalAggregateAnalyzer extends GhidraScript {
             boolean write = reference.getOperandIndex() == 0 &&
                 !Set.of("CMP", "TEST", "PUSH", "CALL", "JMP", "LEA")
                     .contains(mnemonic);
-            if (write) evidence.writes++; else evidence.reads++;
+            if (write) { evidence.writes++; scaled.writes++; }
+            else { evidence.reads++; scaled.reads++; }
             String site = addr(function.getEntryPoint()) + "@" +
                 addr(instruction.getAddress()) + " " + instruction;
             if (evidence.sites.size() < 40 && !evidence.sites.contains(site))
                 evidence.sites.add(site);
+            if (scaled.sites.size() < 40 && !scaled.sites.contains(site))
+                scaled.sites.add(site);
         }
+    }
+
+    private boolean ownedContaining(Address address) {
+        Data data = currentProgram.getListing().getDefinedDataContaining(address);
+        return data != null && owned(data.getMinAddress());
+    }
+
+    /** Find exact absolute zero-filled ranges emitted through REP STOSD. */
+    private void scanBulkZeroInitialization() throws Exception {
+        FunctionIterator functions = currentProgram.getFunctionManager().getFunctions(true);
+        while (functions.hasNext()) {
+            monitor.checkCancelled();
+            Function function = functions.next();
+            if (function.isExternal() || function.isThunk()) continue;
+            InstructionIterator instructions = currentProgram.getListing()
+                .getInstructions(function.getBody(), true);
+            while (instructions.hasNext()) {
+                Instruction instruction = instructions.next();
+                String text = instruction.toString().toUpperCase(Locale.ROOT);
+                if (!text.contains("STOSD.REP") && !text.contains("REP STOSD")) continue;
+                InitRange found = precedingAbsoluteZeroFill(function, instruction);
+                if (found == null) continue;
+                String key = addr(found.base) + ":" + found.length;
+                InitRange accumulated = zeroInitializedRanges.get(key);
+                if (accumulated == null) zeroInitializedRanges.put(key, found);
+                else accumulated.sites.addAll(found.sites);
+            }
+        }
+    }
+
+    private InitRange precedingAbsoluteZeroFill(Function function, Instruction stos) {
+        Long count = null, destination = null;
+        boolean zero = false;
+        Set<String> resolved = new HashSet<>();
+        Instruction prior = currentProgram.getListing().getInstructionBefore(stos.getAddress());
+        for (int scanned = 0; scanned < 12 && prior != null &&
+                function.getBody().contains(prior.getAddress()); scanned++) {
+            String text = prior.toString().toUpperCase(Locale.ROOT);
+            String mnemonic = prior.getMnemonicString().toUpperCase(Locale.ROOT);
+            if ("CALL".equals(mnemonic) || mnemonic.startsWith("J") ||
+                    prior.getFlowType().isTerminal()) break;
+            Matcher destinationRegister = DESTINATION_REGISTER.matcher(text);
+            String written = destinationRegister.find() ? destinationRegister.group(1) : "";
+            if (!written.isBlank() && !resolved.add(written)) {
+                prior = currentProgram.getListing().getInstructionBefore(prior.getAddress());
+                continue;
+            }
+            if ("EAX".equals(written))
+                zero = text.matches("(?:XOR|SUB)\\s+EAX\\s*,\\s*EAX") ||
+                    text.matches("MOV\\s+EAX\\s*,\\s*(?:0X)?0+");
+            else if ("ECX".equals(written)) {
+                Matcher immediate = IMMEDIATE_REGISTER_MOVE.matcher(text);
+                if (immediate.matches() && "ECX".equals(immediate.group(1)))
+                    count = longInteger(immediate.group(2));
+            }
+            else if ("EDI".equals(written)) {
+                Matcher immediate = IMMEDIATE_REGISTER_MOVE.matcher(text);
+                if (immediate.matches() && "EDI".equals(immediate.group(1)))
+                    destination = longInteger(immediate.group(2));
+            }
+            if (resolved.containsAll(Set.of("EAX", "ECX", "EDI"))) break;
+            prior = currentProgram.getListing().getInstructionBefore(prior.getAddress());
+        }
+        if (!zero || count == null || destination == null || count < 2 ||
+                count > 0x400000L) return null;
+        long length = count * 4;
+        if (length < 8 || length > 0x1000000L) return null;
+        Address base;
+        try { base = toAddr(destination); }
+        catch (Exception ignored) { return null; }
+        if (!currentProgram.getMemory().contains(base) ||
+                !currentProgram.getMemory().contains(base.add(length - 1))) return null;
+        ghidra.program.model.mem.MemoryBlock block = currentProgram.getMemory().getBlock(base);
+        if (block == null || block.isExecute()) return null;
+        List<String> sites = new ArrayList<>();
+        sites.add(addr(function.getEntryPoint()) + "@" + addr(stos.getAddress()) +
+            " zeroes " + hex(length) + " bytes at " + addr(base));
+        return new InitRange(base, (int)length, sites);
+    }
+
+    private Long longInteger(String text) {
+        try { return Long.decode(text); }
+        catch (NumberFormatException ignored) { return null; }
     }
 
     /**
@@ -437,6 +600,117 @@ public class STGlobalAggregateAnalyzer extends GhidraScript {
         if (instruction.contains("WORD PTR")) return 2;
         if (instruction.contains("BYTE PTR")) return 1;
         return -1;
+    }
+
+    /**
+     * Recover arrays of packed global records from two independent facts: one
+     * REP-STOS zero-fill proves the exact base/extent, while composed affine
+     * indexing proves the element stride and fixed member offsets.  This avoids
+     * address lists and remains valid when the first referenced member is well
+     * inside each record rather than at offset zero.
+     */
+    private List<Row> bulkInitializedRecordArrays(Set<Address> claimed) {
+        List<Row> result = new ArrayList<>();
+        for (InitRange range : zeroInitializedRanges.values()) {
+            RecordArrayCandidate best = null;
+            Set<Integer> strides = new TreeSet<>();
+            Address end = range.base.add(range.length);
+            for (Map.Entry<Address, Evidence> entry : indexed.entrySet()) {
+                if (entry.getKey().compareTo(range.base) < 0 ||
+                        entry.getKey().compareTo(end) >= 0) continue;
+                for (int stride : entry.getValue().scales.keySet())
+                    if (stride >= 8 && stride <= 0x1000 &&
+                            range.length % stride == 0) strides.add(stride);
+            }
+            for (int stride : strides) {
+                int count = range.length / stride;
+                if (count < 2 || count > 64) continue;
+                Map<Integer, RecordFieldGroup> grouped = new TreeMap<>();
+                Set<Address> functions = new TreeSet<>();
+                int sites = 0, reads = 0, writes = 0;
+                for (Map.Entry<Address, Evidence> entry : indexed.entrySet()) {
+                    long delta = entry.getKey().subtract(range.base);
+                    if (delta < 0 || delta >= range.length) continue;
+                    ScaleEvidence scaled = entry.getValue().byScale.get(stride);
+                    if (scaled == null) continue;
+                    int offset = (int)(delta % stride);
+                    RecordFieldGroup field = grouped.computeIfAbsent(offset,
+                        RecordFieldGroup::new);
+                    field.absorb(entry.getKey(), scaled);
+                    functions.addAll(scaled.functions);
+                    sites += scaled.sites.size();
+                    reads += scaled.reads;
+                    writes += scaled.writes;
+                }
+                List<RecordFieldGroup> fields = grouped.values().stream()
+                    .filter(field -> field.width() > 0 && field.sites >= 2)
+                    .sorted(Comparator.comparingInt(field -> field.offset)).toList();
+                if (fields.size() < 3 || functions.size() < 2 || sites < 8 ||
+                        reads == 0 || writes == 0 || overlapping(fields, stride)) continue;
+                RecordArrayCandidate candidate = new RecordArrayCandidate(range,
+                    stride, count, fields, functions, sites, reads, writes);
+                if (best == null || candidate.fields.size() > best.fields.size() ||
+                        candidate.fields.size() == best.fields.size() &&
+                        candidate.sites > best.sites) best = candidate;
+            }
+            if (best == null) continue;
+            Data baseline = currentProgram.getListing().getDefinedDataAt(range.base);
+            if (baseline == null)
+                baseline = currentProgram.getListing().getDefinedDataContaining(range.base);
+            Symbol symbol = currentProgram.getSymbolTable().getPrimarySymbol(range.base);
+            Symbol baselineSymbol = baseline == null ? null : currentProgram.getSymbolTable()
+                .getPrimarySymbol(baseline.getMinAddress());
+            if (baseline == null ||
+                    (symbol != null && (symbol.getSource() ==
+                        ghidra.program.model.symbol.SourceType.USER_DEFINED ||
+                        symbol.getSource() ==
+                        ghidra.program.model.symbol.SourceType.IMPORTED)) ||
+                    (baselineSymbol != null && (baselineSymbol.getSource() ==
+                        ghidra.program.model.symbol.SourceType.USER_DEFINED ||
+                        baselineSymbol.getSource() ==
+                        ghidra.program.model.symbol.SourceType.IMPORTED)))
+                continue;
+            String suffix = addr(range.base);
+            String typePath = "/SubmarineTitans/Recovered/GlobalAggregates/" +
+                "BulkInitializedRecord_" + suffix;
+            String record = "record:" + typePath + "@" + best.stride + "{" +
+                best.fields.stream().map(this::recordFieldSpec)
+                    .reduce((left, right) -> left + "|" + right).orElse("") + "}";
+            String evidence = "exact REP-STOS zero range=" + hex(range.length) +
+                "; composed affine stride=" + hex(best.stride) +
+                "; records=" + best.count + "; fixed fields=" + best.fields.size() +
+                "; independent functions=" + best.functions.size() +
+                "; indexed sites=" + best.sites + "; reads=" + best.reads +
+                "; writes=" + best.writes + "; init sites=" +
+                String.join(" | ", range.sites);
+            result.add(new Row(true, addr(range.base),
+                symbol == null ? "" : symbol.getName(),
+                symbol == null ? "" : symbol.getSource().toString(),
+                baseline.getDataType().getPathName(),
+                baseline.getLength(), "g_bulkInitializedRecords_" + suffix,
+                "array:" + best.count + ":" + record, range.length,
+                "bulk_initialized_record_array", "high", evidence));
+            for (RecordFieldGroup field : best.fields) claimed.addAll(field.addresses);
+        }
+        return result;
+    }
+
+    private boolean overlapping(List<RecordFieldGroup> fields, int stride) {
+        int end = 0;
+        for (RecordFieldGroup field : fields) {
+            int width = field.width();
+            if (field.offset < end || field.offset + width > stride) return true;
+            end = field.offset + width;
+        }
+        return false;
+    }
+
+    private String recordFieldSpec(RecordFieldGroup field) {
+        int width = field.width();
+        String type = width == 1 ? "/byte" : width == 2 ? "/ushort" :
+            width == 4 ? "/uint" : "/ulonglong";
+        return field.offset + "," + String.format("field_%04X", field.offset) +
+            "," + type;
     }
 
     private boolean owned(Address address) {
@@ -645,9 +919,45 @@ public class STGlobalAggregateAnalyzer extends GhidraScript {
         final Map<Integer, Integer> scales = new HashMap<>();
         final Map<Integer, Integer> widths = new HashMap<>();
         final Map<Address, Set<String>> indexPairs = new HashMap<>();
+        final Set<Address> functions = new TreeSet<>();
+        final Map<Integer, ScaleEvidence> byScale = new TreeMap<>();
         final List<String> sites = new ArrayList<>();
         int reads, writes, binaryTests;
     }
+    private static class ScaleEvidence {
+        final Map<Integer, Integer> widths = new TreeMap<>();
+        final Set<Address> functions = new TreeSet<>();
+        final List<String> sites = new ArrayList<>();
+        int reads, writes;
+    }
+    private static class InitRange {
+        final Address base;
+        final int length;
+        final List<String> sites;
+        InitRange(Address base, int length, List<String> sites) {
+            this.base = base; this.length = length; this.sites = sites;
+        }
+    }
+    private static class RecordFieldGroup {
+        final int offset;
+        final Map<Integer, Integer> widths = new TreeMap<>();
+        final Set<Address> addresses = new TreeSet<>();
+        int sites;
+        RecordFieldGroup(int offset) { this.offset = offset; }
+        void absorb(Address address, ScaleEvidence evidence) {
+            addresses.add(address);
+            evidence.widths.forEach((width, count) -> widths.merge(width, count, Integer::sum));
+            sites += evidence.sites.size();
+        }
+        int width() {
+            return widths.keySet().stream().filter(value ->
+                value == 1 || value == 2 || value == 4 || value == 8)
+                .mapToInt(Integer::intValue).max().orElse(-1);
+        }
+    }
+    private record RecordArrayCandidate(InitRange range, int stride, int count,
+        List<RecordFieldGroup> fields, Set<Address> functions, int sites,
+        int reads, int writes) { }
     private record MatrixCandidate(Address base, Evidence evidence, int dimension,
         int length, Data data, Symbol symbol, String boundaryEvidence) { }
     private static class Usage { int reads, writes; }

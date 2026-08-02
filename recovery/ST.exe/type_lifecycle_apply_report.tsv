@@ -63,6 +63,14 @@ retain	/SubmarineTitans/Recovered/ClassPointees/AnonPointee_SIDTy_1CC0	disabled	
 retain	/SubmarineTitans/Recovered/ClassPointees/AnonPointee_SIDTy_1CC8	disabled	apply=0
 retain	/SubmarineTitans/Recovered/ClassPointees/AnonPointee_SIDTy_1CCC	disabled	apply=0
 retain	/SubmarineTitans/Recovered/ClassPointees/AnonPointee_SIDTy_1CD0	disabled	apply=0
+retain	/SubmarineTitans/Recovered/ClassPointees/AnonPointee_ST3DSMAPContext_0004	disabled	apply=0
+retain	/SubmarineTitans/Recovered/ClassPointees/AnonPointee_ST3DSMAPContext_0280	disabled	apply=0
+retain	/SubmarineTitans/Recovered/ClassPointees/AnonPointee_ST3DSMAPContext_031C	disabled	apply=0
+retain	/SubmarineTitans/Recovered/ClassPointees/AnonPointee_ST3DSMAPContext_0420	disabled	apply=0
+retain	/SubmarineTitans/Recovered/ClassPointees/AnonPointee_ST3DSMAPContext_0446	disabled	apply=0
+retain	/SubmarineTitans/Recovered/ClassPointees/AnonPointee_ST3DSMAPContext_044A	disabled	apply=0
+retain	/SubmarineTitans/Recovered/ClassPointees/AnonPointee_ST3DSMAPContext_044E	disabled	apply=0
+retain	/SubmarineTitans/Recovered/ClassPointees/AnonPointee_ST3DSMAPContext_0452	disabled	apply=0
 retain	/SubmarineTitans/Recovered/ClassPointees/AnonPointee_STAllPlayersC_018D	disabled	apply=0
 retain	/SubmarineTitans/Recovered/ClassPointees/AnonPointee_STAllPlayersC_0191	disabled	apply=0
 retain	/SubmarineTitans/Recovered/ClassPointees/AnonPointee_STAllPlayersC_0195	disabled	apply=0

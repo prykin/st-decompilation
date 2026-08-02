@@ -49,7 +49,7 @@ uint * FUN_0043f580(char param_1,byte *param_2,short param_3,short param_4,short
   if (g_worldGrid.sizeZ + -1 < iVar3) {
     iVar3 = g_worldGrid.sizeZ + -1;
   }
-  local_c = Library::DKW::TBL::DArrayCreate((DArrayTy *)0x0,0,2,1);
+  local_c = Library::DKW::TBL::DArrayCreate(nullptr,0,2,1);
   iVar6 = g_worldGrid.sizeX * _param_6 + iVar5 + (iVar7 + -1) * (int)g_worldGrid.planeStride;
   if (iVar7 <= iVar3) {
     /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
@@ -68,7 +68,7 @@ uint * FUN_0043f580(char param_1,byte *param_2,short param_3,short param_4,short
             iVar7 = local_10 * 8 + -8;
             do {
               piVar2 = *(int **)((int)g_worldGrid.cells[1].objects + iVar7);
-              if ((piVar2 != (int *)0x0) && (piVar2[9] == (int)param_1)) {
+              if ((piVar2 != nullptr) && (piVar2[9] == (int)param_1)) {
                 /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
                 (**(code **)(*piVar2 + 0x74))(local_24);
                 pbVar8 = local_24;
@@ -110,7 +110,7 @@ LAB_0043f6e8:
   }
   if (local_c->count == 0) {
     DArrayDestroy(local_c);
-    local_c = (DArrayTy *)0x0;
+    local_c = nullptr;
   }
   return &local_c->flags;
 }

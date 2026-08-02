@@ -75,7 +75,7 @@ undefined4 __thiscall FUN_006264d0(void *this,int *param_1,int param_2)
   sVar10 = *(short *)(&DAT_007d0470 + iVar5) + *(short *)((int)this + 0x2ca);
   /* ST_PSEUDO[unresolved_register_input,packed_or_unaligned_piece]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention; expected named packed member, bit extract/compose, or unaligned load */
   local_40 = CONCAT22((short)((uint)unaff_ESI >> 0x10),sVar10);
-  if (param_1 == (int *)0x0) {
+  if (param_1 == nullptr) {
     return 0;
   }
   thunk_FUN_00416270(param_1,(undefined2 *)&local_28,&local_24,&local_38);
@@ -158,7 +158,7 @@ undefined4 __thiscall FUN_006264d0(void *this,int *param_1,int param_2)
               (pSVar3 = g_worldGrid.cells
                         [(int)g_worldGrid.planeStride * (int)sVar12 +
                          (int)g_worldGrid.sizeX * (int)sVar10 + (int)sVar7].objects[0],
-              piVar9 = local_18, iVar11 = local_c, pSVar3 == (STWorldObject *)0x0)))) {
+              piVar9 = local_18, iVar11 = local_c, pSVar3 == nullptr)))) {
             piVar8 = piVar9;
             if (g_pathingGrid.cells
                 [g_pathingGrid.sizeX * iVar14 + iVar5 + g_pathingGrid.planeStride * iVar6] < 0) {
@@ -172,8 +172,8 @@ undefined4 __thiscall FUN_006264d0(void *this,int *param_1,int param_2)
               return 0;
             }
             if (((uint)param_1[9] < 8) &&
-               ((g_playSystem_00802A38 == (STPlaySystemC *)0x0 ||
-                ((byte)(&DAT_008087e9)[param_1[9] * 0x51] < 8)))) {
+               ((g_playSystem_00802A38 == nullptr ||
+                (g_bulkInitializedRecords_008087C7[param_1[9]].field_0022 < 8)))) {
               bVar4 = *(byte *)&pSVar3[1].vtable;
               bVar1 = *(byte *)(piVar8 + 9);
               /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
@@ -205,7 +205,8 @@ LAB_0062687f:
                 bVar15 = iVar5 < 0;
               }
               else {
-                bVar15 = (&DAT_008087ea)[(uint)bVar1 * 0x51] != (&DAT_008087ea)[(uint)bVar4 * 0x51];
+                bVar15 = g_bulkInitializedRecords_008087C7[bVar1].field_0023 !=
+                         g_bulkInitializedRecords_008087C7[bVar4].field_0023;
               }
               if (!bVar15) {
                 return 0;

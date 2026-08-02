@@ -17,7 +17,7 @@ CursorClassTy * __cdecl CreateCursor(void)
   CursorClassTy_field_00DEState *pCVar5;
 
   this = (CursorClassTy *)FUN_006b04d0(0x4fb);
-  if (this != (CursorClassTy *)0x0) {
+  if (this != nullptr) {
     sub_006E5FB0(this);
     SpriteClassTy::SpriteClassTy((SpriteClassTy *)&this->field_0018);
     this->field_0000 = &UNK_0079ae04;
@@ -39,7 +39,7 @@ CursorClassTy * __cdecl CreateCursor(void)
     this->field_00C1 = 0;
     this->field_0493 = 0;
     this->field_0494 = 0;
-    this->field_049A = (STFishC *)0x0;
+    this->field_049A = nullptr;
     this->field_049E = 0;
     this->field_04A2 = 0;
     this->field_04A6 = 0;
@@ -64,18 +64,18 @@ CursorClassTy * __cdecl CreateCursor(void)
     this->field_04CA = 0;
     this->field_04C6 = 0;
     this->field_04C2 = 0;
-    this->field_04D2 = (ushort *)0x0;
+    this->field_04D2 = nullptr;
     this->field_04DA = 0;
     this->field_04DE = 0;
-    this->field_04E7 = (ushort *)0x0;
-    this->field_04EB = (SpriteClassTy *)0x0;
+    this->field_04E7 = nullptr;
+    this->field_04EB = nullptr;
     this->field_04F7 = 0;
     this->field_04F3 = 0;
     this->field_04EF = 0;
     g_cursorClass_00802A30 = this;
     return this;
   }
-  g_cursorClass_00802A30 = (CursorClassTy *)0x0;
-  return (CursorClassTy *)0x0;
+  g_cursorClass_00802A30 = nullptr;
+  return nullptr;
 }
 

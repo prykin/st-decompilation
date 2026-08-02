@@ -165,7 +165,7 @@ STMineSetC::sub_00624920
            ((g_worldGrid.sizeZ <= sVar13 ||
             (g_worldGrid.cells
              [(int)g_worldGrid.sizeX * (int)sVar4 + (int)g_worldGrid.planeStride * (int)sVar13 +
-              (int)sVar3].objects[(byte)this->field_008E] == (STWorldObject *)0x0)))) {
+              (int)sVar3].objects[(byte)this->field_008E] == nullptr)))) {
           iVar6 = thunk_FUN_00495ff0(sVar3,sVar4,this->field_004B,this->field_008E,
                                      (AnonShape_00495FF0_59081BDD *)this);
           if (iVar6 == 0) {
@@ -178,14 +178,14 @@ STMineSetC::sub_00624920
                 (((g_worldGrid.sizeY <= sVar4 || (sVar13 < 0)) || (g_worldGrid.sizeZ <= sVar13))))))
               || (g_worldGrid.cells
                   [(int)sVar4 * (int)g_worldGrid.sizeX + (int)g_worldGrid.planeStride * (int)sVar13
-                   + (int)sVar3].objects[(byte)this->field_008E] == (STWorldObject *)0x0)) &&
+                   + (int)sVar3].objects[(byte)this->field_008E] == nullptr)) &&
              (iVar6 = DumpClassC::WritePtr
                                 (sVar3,sVar4,sVar13,this->field_008E,
                                  (RecoveredRecord_DumpClassC_00495EC0 *)this), iVar6 == 0)) {
             SVar1 = this->field_02AD;
             this->field_0314 = this->field_0314 + '\x01';
             if (SVar1 < 3) {
-              if (g_visibleClass_00802A88 != (VisibleClassTy *)0x0) {
+              if (g_visibleClass_00802A88 != nullptr) {
                 VisibleClassTy::sub_00559110
                           (g_visibleClass_00802A88,(int)this->field_0047,
                            (undefined *)(int)this->field_0049,(int)this->field_004B,this->field_0024
@@ -197,7 +197,7 @@ STMineSetC::sub_00624920
                            (int *)this->field_0018,0xffffffff);
               }
             }
-            else if ((SVar1 == 3) && (g_visibleClass_00802A88 != (VisibleClassTy *)0x0)) {
+            else if ((SVar1 == 3) && (g_visibleClass_00802A88 != nullptr)) {
               VisibleClassTy::sub_00559110
                         (g_visibleClass_00802A88,(int)this->field_0047,
                          (undefined *)(int)this->field_0049,(int)this->field_004B,this->field_0024,

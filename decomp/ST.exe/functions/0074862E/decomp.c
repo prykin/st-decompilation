@@ -6,7 +6,7 @@ int FUN_0074862e(int param_1,undefined4 *param_2)
   int iVar1;
   LPVOID *ppvVar2;
 
-  if (param_2 == (undefined4 *)0x0) {
+  if (param_2 == nullptr) {
     iVar1 = -0x7fffbffd;
   }
   else {

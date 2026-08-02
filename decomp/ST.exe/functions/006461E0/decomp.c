@@ -89,7 +89,7 @@ int __thiscall STVolcanoC::GetMessage(STVolcanoC *this,STMessage *message)
           local_8->field_00A4 = (uVar1 >> 0x10) % 0x2711 + 20000 + g_playSystem_00802A38->field_00E4
           ;
           if (local_8->field_005C == '\0') {
-            if (local_8->field_0061 != (ushort *)0x0) {
+            if (local_8->field_0061 != nullptr) {
               /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
               ST3DSMAPContext::sub_006E9000
                         (g_sT3DSMAPContext_00807598,
@@ -105,9 +105,9 @@ int __thiscall STVolcanoC::GetMessage(STVolcanoC *this,STMessage *message)
             }
             puVar6 = Library::Ourlib::MFRLOAD::mfRLoad
                                (DAT_00806764,CASE_1D,"expl_vol",0xffffffff,0,1,0,
-                                (undefined4 *)0x0);
+                                nullptr);
             this_00->field_0061 = puVar6;
-            if (puVar6 != (ushort *)0x0) {
+            if (puVar6 != nullptr) {
               ST3DSMAPContext::sub_006E9000
                         (g_sT3DSMAPContext_00807598,
                          *(undefined4 *)(*(int *)((int)puVar6 + 0x21) + 0xa0),0x5a,0x2f,
@@ -116,7 +116,7 @@ int __thiscall STVolcanoC::GetMessage(STVolcanoC *this,STMessage *message)
                          (float)this_00->field_006D * _DAT_007904f8 * _DAT_007904f0 + _DAT_007904fc,
                          0);
               this_00->field_005C = 1;
-              this_00->field_0061 = (ushort *)0x0;
+              this_00->field_0061 = nullptr;
             }
           }
           sub_006479E0(this_00);

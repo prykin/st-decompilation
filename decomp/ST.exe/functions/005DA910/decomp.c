@@ -10,7 +10,7 @@
 void __thiscall StartSystemTy::sub_005DA910(StartSystemTy *this)
 
 {
-  if ((undefined4 *)this->field_068A != (undefined4 *)0x0) {
+  if ((undefined4 *)this->field_068A != nullptr) {
     FUN_006b6110((undefined4 *)this->field_068A);
   }
   this->field_068A = 0;

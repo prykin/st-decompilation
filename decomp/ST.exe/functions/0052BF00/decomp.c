@@ -281,7 +281,7 @@ int __thiscall MoneyTy::GetMessage(MoneyTy *this,STMessage *message)
       this_00->field_006E = pcVar8;
       pcVar8->field_0058 = 1;
       pcVar8->field_005C = 0;
-      puVar15 = (undefined4 *)0x0;
+      puVar15 = nullptr;
       iVar10 = 0;
       iVar7 = 1;
       bVar14 = 0;
@@ -387,46 +387,46 @@ int __thiscall MoneyTy::GetMessage(MoneyTy *this,STMessage *message)
       this_00->field_008E = 1;
       this_00->field_0096 = 1;
       this_00->field_00A3 = 0;
-      if (((g_allPlayers_007FA174 != (STAllPlayersC *)0x0) && (DAT_0080874d < 8)) &&
-         ((g_playSystem_00802A38 == (STPlaySystemC *)0x0 ||
-          ((byte)(&DAT_008087e9)[(uint)DAT_0080874d * 0x51] < 8)))) {
+      if (((g_allPlayers_007FA174 != nullptr) && (DAT_0080874d < 8)) &&
+         ((g_playSystem_00802A38 == nullptr ||
+          (g_bulkInitializedRecords_008087C7[DAT_0080874d].field_0022 < 8)))) {
         uVar6 = thunk_FUN_0044e1f0((uint)DAT_0080874d);
         sub_0052BDA0(this_00,DAT_0080874d,(uint)uVar6);
       }
       g_money_008016D4 = this_00;
-      if (g_allPlayers_007FA174 != (STAllPlayersC *)0x0) {
+      if (g_allPlayers_007FA174 != nullptr) {
         thunk_FUN_004d8b70(DAT_0080874d);
       }
       break;
     case MESS_SHARED_0003:
-      g_money_008016D4 = (MoneyTy *)0x0;
+      g_money_008016D4 = nullptr;
       uVar2 = local_10->field_0008;
       memset(local_38, 0, 0x20); /* compiler bulk-zero initialization */
       local_28 = 0x14;
       local_24 = uVar2;
       FUN_006e6000(this_00,3,1,local_38);
-      if (this_00->field_0072 != (ushort *)0x0) {
+      if (this_00->field_0072 != nullptr) {
         FreeAndNull(&this_00->field_0072);
       }
-      if (this_00->field_0076 != (ushort *)0x0) {
+      if (this_00->field_0076 != nullptr) {
         FreeAndNull(&this_00->field_0076);
       }
-      if (this_00->field_007A != (ushort *)0x0) {
+      if (this_00->field_007A != nullptr) {
         FreeAndNull(&this_00->field_007A);
       }
-      if (this_00->field_007E != (ushort *)0x0) {
+      if (this_00->field_007E != nullptr) {
         FreeAndNull(&this_00->field_007E);
       }
-      if (this_00->field_0082 != (ushort *)0x0) {
-        this_00->field_0082 = (ushort *)0x0;
+      if (this_00->field_0082 != nullptr) {
+        this_00->field_0082 = nullptr;
       }
-      if (this_00->field_006A != (ccFntTy *)0x0) {
+      if (this_00->field_006A != nullptr) {
         ccFntTy::operator_delete((uint *)this_00->field_006A);
-        this_00->field_006A = (ccFntTy *)0x0;
+        this_00->field_006A = nullptr;
       }
-      if (this_00->field_006E != (ccFntTy *)0x0) {
+      if (this_00->field_006E != nullptr) {
         ccFntTy::operator_delete((uint *)this_00->field_006E);
-        this_00->field_006E = (ccFntTy *)0x0;
+        this_00->field_006E = nullptr;
       }
       break;
     case MESS_SHARED_0005:

@@ -47,7 +47,7 @@ LAB_0062030e:
   local_10.unknown = 0;
   local_10.x = -1;
   local_10.y = -1;
-  SoundClassTy::PlaySound((SoundClassTy *)&g_sound,SOUND_MODE_6,(char *)0x0,iVar3,&local_10,0);
+  SoundClassTy::PlaySound((SoundClassTy *)&g_sound,SOUND_MODE_6,nullptr,iVar3,&local_10,0);
   thunk_FUN_00620da0(this,param_1,param_2,0x28);
   *(uint *)((int)this + 0xc1) = uVar1 + 0xfa;
   return;

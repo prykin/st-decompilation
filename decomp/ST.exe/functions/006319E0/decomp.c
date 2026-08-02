@@ -16,7 +16,7 @@ undefined4 __thiscall FUN_006319e0(void *this,uint param_1,int param_2)
     /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
     if (((param_1 < uVar1) &&
         (puVar5 = (undefined4 *)(*(int *)(iVar3 + 8) * param_1 + *(int *)(iVar3 + 0x1c)),
-        puVar5 != (undefined4 *)0x0)) && (puVar5[2] == param_2)) {
+        puVar5 != nullptr)) && (puVar5[2] == param_2)) {
       for (iVar3 = 9; iVar3 != 0; iVar3 = iVar3 + -1) {
         *puVar5 = 0;
         puVar5 = puVar5 + 1;
@@ -29,7 +29,7 @@ undefined4 __thiscall FUN_006319e0(void *this,uint param_1,int param_2)
       do {
         if (((bVar6) &&
             (puVar5 = (undefined4 *)(*(int *)(iVar3 + 8) * uVar4 + *(int *)(iVar3 + 0x1c)),
-            puVar5 != (undefined4 *)0x0)) && (puVar5[2] == param_2)) {
+            puVar5 != nullptr)) && (puVar5[2] == param_2)) {
           for (iVar3 = 9; iVar3 != 0; iVar3 = iVar3 + -1) {
             *puVar5 = 0;
             puVar5 = puVar5 + 1;

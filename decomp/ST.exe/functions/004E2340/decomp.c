@@ -23,7 +23,7 @@ int __thiscall FUN_004e2340(void *this,uint param_1,int param_2,undefined4 *para
     iVar5 = thunk_FUN_004b72e0(*(char *)((int)this + 0x24),iVar5);
     if ((iVar5 != 0) &&
        ((iVar5 = thunk_FUN_004b79c0(*(char *)((int)this + 0x24),*(int *)((int)this + 0x18)),
-        iVar5 == 0 && (iVar4 = iVar4 * 4, DAT_00811798 != (void *)0x0)))) {
+        iVar5 == 0 && (iVar4 = iVar4 * 4, DAT_00811798 != nullptr)))) {
       thunk_FUN_00621580(DAT_00811798,*(byte **)((int)this + 0x24),5);
     }
     /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
@@ -46,7 +46,7 @@ int __thiscall FUN_004e2340(void *this,uint param_1,int param_2,undefined4 *para
           /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
           param_1 = 1;
         }
-        if (DAT_00811798 != (void *)0x0) {
+        if (DAT_00811798 != nullptr) {
           thunk_FUN_00621580(DAT_00811798,*(byte **)((int)this + 0x24),5);
         }
       }
@@ -101,7 +101,7 @@ int __thiscall FUN_004e2340(void *this,uint param_1,int param_2,undefined4 *para
           }
           *(uint *)((int)this + uVar3 * 0x28 + 0x4e0) =
                *(int *)((int)this + uVar3 * 0x28 + 0x4e0) + param_1;
-          if ((param_3 != (undefined4 *)0x0) &&
+          if ((param_3 != nullptr) &&
              (*param_3 = 0,
              *(int *)((int)this + uVar3 * 0x28 + 0x4e4) <=
              *(int *)((int)this + uVar3 * 0x28 + 0x4e0))) {

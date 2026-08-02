@@ -42,7 +42,7 @@ void __thiscall FUN_0061f8b0(void *this,int param_1,int param_2,uint param_3)
     local_14.unknown = 0;
     local_14.x = -1;
     local_14.y = -1;
-    SoundClassTy::PlaySound((SoundClassTy *)&g_sound,SOUND_MODE_6,(char *)0x0,iVar1,&local_14,0);
+    SoundClassTy::PlaySound((SoundClassTy *)&g_sound,SOUND_MODE_6,nullptr,iVar1,&local_14,0);
     thunk_FUN_0052af50(1,(float)param_1 * _DAT_007904f8 + _DAT_007904f4,
                        (float)param_2 * _DAT_007904f8 + _DAT_007904f4);
     *(uint *)((int)this + 0xb5) = local_8 + 0xfa;

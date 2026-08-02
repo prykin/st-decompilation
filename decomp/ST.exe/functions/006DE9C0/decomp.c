@@ -841,7 +841,7 @@ LAB_006defd4:
     puVar10 = (undefined4 *)(param_1->field_0290 + 8);
     do {
       pbVar4 = (byte *)puVar10[7];
-      if (pbVar4 != (byte *)0x0) {
+      if (pbVar4 != nullptr) {
         local_94 = *puVar10;
         local_90 = puVar10[1];
         local_8c = puVar10[2];
@@ -886,10 +886,10 @@ LAB_006defd4:
       puVar10 = puVar10 + 0xb;
     } while (local_24 < *(int *)&param_1->field_0x28c);
   }
-  for (puVar10 = *(undefined4 **)&param_1->field_0x294; puVar10 != (undefined4 *)0x0;
+  for (puVar10 = *(undefined4 **)&param_1->field_0x294; puVar10 != nullptr;
       puVar10 = (undefined4 *)*puVar10) {
     pbVar4 = (byte *)puVar10[9];
-    if (pbVar4 != (byte *)0x0) {
+    if (pbVar4 != nullptr) {
       local_94 = puVar10[2];
       local_90 = puVar10[3];
       local_8c = puVar10[4];
@@ -979,7 +979,7 @@ LAB_006defd4:
       puVar10 = puVar10 + 0xb;
     } while (local_24 < *(int *)&param_1->field_0x28c);
   }
-  for (puVar10 = *(undefined4 **)&param_1->field_0x294; puVar10 != (undefined4 *)0x0;
+  for (puVar10 = *(undefined4 **)&param_1->field_0x294; puVar10 != nullptr;
       puVar10 = (undefined4 *)*puVar10) {
     pbVar4 = (byte *)puVar10[8];
     local_94 = puVar10[2];

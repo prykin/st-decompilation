@@ -26,7 +26,7 @@ int __thiscall STExplosion::sub_00604970(STExplosion *this)
   if (0 < this->field_0269) {
     ppSVar4 = &this->field_0219;
     do {
-      if (*ppSVar4 != (STParticleC *)0x0) {
+      if (*ppSVar4 != nullptr) {
         STParticleC::GetMessage(*ppSVar4,&local_28);
         iVar1 = thunk_FUN_00604a00(this,iVar2);
         if (iVar1 != 0) {

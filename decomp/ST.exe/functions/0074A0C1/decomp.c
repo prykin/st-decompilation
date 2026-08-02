@@ -6,7 +6,7 @@ undefined4 FUN_0074a0c1(int param_1,ushort *param_2,undefined4 *param_3)
   int iVar2;
   int *piVar3;
 
-  if (param_3 == (undefined4 *)0x0) {
+  if (param_3 == nullptr) {
     uVar1 = 0x80004003;
   }
   else {

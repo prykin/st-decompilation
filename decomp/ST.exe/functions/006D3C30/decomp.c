@@ -19,7 +19,7 @@ void FUN_006d3c30(AnonShape_006D3C30_0FAA5DE6 *param_1,int param_2,int param_3,i
   RECT local_24;
   RECT local_14;
 
-  if (param_6 != (AnonShape_006D3C30_B7073A5B *)0x0) {
+  if (param_6 != nullptr) {
     *(undefined4 *)param_6 = param_1->field_0484;
     param_6->field_0004 = param_1->field_0488;
     param_6->field_0008 = param_1->field_048C - param_1->field_0484;

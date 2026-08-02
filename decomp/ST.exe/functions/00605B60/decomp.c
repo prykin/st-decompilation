@@ -77,7 +77,7 @@ int __thiscall FUN_00605b60(void *this,uint param_1,uint param_2,int *param_3,in
         param_3 = (int *)((int)param_3 + -1);
         *piVar2 = (uVar4 >> 0x10) % 6 + 10;
         piVar2 = piVar2 + 1;
-      } while (param_3 != (int *)0x0);
+      } while (param_3 != nullptr);
     }
     pSVar9 = &local_9c;
     for (iVar6 = 8; iVar6 != 0; iVar6 = iVar6 + -1) {
@@ -128,7 +128,7 @@ int __thiscall FUN_00605b60(void *this,uint param_1,uint param_2,int *param_3,in
           local_4c = FUN_006c82a3(local_64,(int)((uVar5 - local_c) * 10000) / local_2c);
           iVar6 = FUN_006aff5b(local_4c);
           this_00 = (void *)((iVar6 * iVar7) / 10000);
-          if (this_00 == (void *)0x0) {
+          if (this_00 == nullptr) {
             local_48 = 0;
           }
           else {
@@ -144,7 +144,7 @@ int __thiscall FUN_00605b60(void *this,uint param_1,uint param_2,int *param_3,in
         local_48 = local_48 + (0x14 - (uVar4 >> 0x10) % 0x29);
         local_58 = local_20;
         switch(local_64) {
-        case (undefined1 *)0x0:
+        case nullptr:
         case (undefined1 *)0x1:
         case (undefined1 *)0x2:
           local_40 = 1000;

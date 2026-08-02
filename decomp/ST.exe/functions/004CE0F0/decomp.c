@@ -18,7 +18,7 @@ void __thiscall FUN_004ce0f0(void *this,int *param_1)
   int local_8;
 
   if (*param_1 == 0) {
-    pDVar1 = Library::DKW::TBL::DArrayCreate((DArrayTy *)0x0,5,0x30,5);
+    pDVar1 = Library::DKW::TBL::DArrayCreate(nullptr,5,0x30,5);
     *param_1 = (int)pDVar1;
   }
   *(undefined4 *)(*param_1 + 0xc) = 0;

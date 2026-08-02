@@ -86,7 +86,7 @@ void __thiscall WaitTy::NoneWait(WaitTy *this,int *param_1)
   cVar2 = this_01->field_0065;
   if (cVar2 == '\x01') {
     if (this_01->field_1A75 == '\0') {
-      local_14 = (AnonShape_005E84D0_1273B60D *)0x0;
+      local_14 = nullptr;
       memset(local_4c, 0, 0x20); /* compiler bulk-zero initialization */
       iVar8 = 0;
       if (this_01->field_1A70 == 0) {
@@ -123,7 +123,7 @@ LAB_005e9233:
             this_01->field_1A74 = 0;
             this_01->field_1A75 = 1;
             local_4c[4] = (-(uint)(DAT_008067a0 != '\0') & 4) + 0x694d;
-            if (this_01->field_1A5B->field_02E6 == (MMsgTy *)0x0) {
+            if (this_01->field_1A5B->field_02E6 == nullptr) {
               /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
               (*(code *)this_01->field_0000->field_0000)(local_4c);
             }
@@ -131,7 +131,7 @@ LAB_005e9233:
               local_4c[2] = this_01->field_0008;
               local_4c[3] = 2;
               MMsgTy::SetMessage(this_01->field_1A5B->field_02E6,0x2525,'\0',local_4c,
-                                 (undefined4 *)0x0,(undefined4 *)0x0,0,0);
+                                 nullptr,nullptr,0,0);
             }
           }
           else if (iVar8 == 0) {
@@ -142,11 +142,11 @@ LAB_005e9233:
             case 0x10:
               if (this_01->field_0065 == '\x01') {
                 local_4c[4] = (-(uint)(DAT_008067a0 != '\0') & 4) + 0x694d;
-                if (this_01->field_1A5B->field_02E6 == (MMsgTy *)0x0) goto LAB_005e91f7;
+                if (this_01->field_1A5B->field_02E6 == nullptr) goto LAB_005e91f7;
                 local_4c[2] = this_01->field_0008;
                 local_4c[3] = 2;
                 MMsgTy::SetMessage(this_01->field_1A5B->field_02E6,0x2524,'\0',local_4c,
-                                   (undefined4 *)0x0,(undefined4 *)0x0,0,0);
+                                   nullptr,nullptr,0,0);
               }
               break;
             case 0x1a:
@@ -159,7 +159,7 @@ LAB_005e9233:
                   case 1:
                     if (this_01->field_1A76 != '\0') {
                       ppvVar9 = &this_01->field_1A5B->field_069A;
-                      if (*ppvVar9 != (void *)0x0) {
+                      if (*ppvVar9 != nullptr) {
                         FreeAndNull(ppvVar9);
                       }
                       this_01->field_1A76 = 0;
@@ -173,7 +173,7 @@ LAB_005e9233:
                     if (this_01->field_1A76 != '\0') {
                       if (this_01->field_1A77 != local_14->field_0003) {
                         ppvVar9 = &this_01->field_1A5B->field_069A;
-                        if (*ppvVar9 != (void *)0x0) {
+                        if (*ppvVar9 != nullptr) {
                           FreeAndNull(ppvVar9);
                         }
                         this_01->field_1A76 = 0;
@@ -211,7 +211,7 @@ LAB_005e9233:
                          ((*(char *)local_10 == '\x01' && (*puVar1 == '\x05')))) {
                         this_01->field_1A74 = 0;
                         thunk_FUN_005dac60();
-                        piVar22 = (int *)0x0;
+                        piVar22 = nullptr;
                         this_01->field_1A75 = 1;
                         UVar21 = 0x2523;
                         goto LAB_005e8ee0;
@@ -221,7 +221,7 @@ LAB_005e9233:
                       this_01->field_1A7B = this_01->field_0061;
                       this_01->field_1A77 = iVar8;
                       ppvVar9 = &this_01->field_1A5B->field_069A;
-                      if (*ppvVar9 != (void *)0x0) {
+                      if (*ppvVar9 != nullptr) {
                         FreeAndNull(ppvVar9);
                       }
                       local_18 = (byte *)0xffffffff;
@@ -240,7 +240,7 @@ LAB_005e9233:
                     /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
                     (*(code *)this_01->field_0000->field_0008)();
                     this_00 = this_01->field_1A5B->field_02E6;
-                    if (this_00 != (MMsgTy *)0x0) {
+                    if (this_00 != nullptr) {
                       MMsgTy::HidePanel(this_00,1,0,1);
                     }
                   }
@@ -271,7 +271,7 @@ LAB_005e9233:
                 UVar21 = 0x2526;
 LAB_005e8ee0:
                 MMsgTy::SetMessage(this_01->field_1A5B->field_02E6,UVar21,'\0',piVar22,
-                                   (undefined4 *)0x0,(undefined4 *)0x0,0,0);
+                                   nullptr,nullptr,0,0);
               }
               break;
             case 0x1b:
@@ -280,11 +280,11 @@ LAB_005e8ee0:
             /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
             case 0x26:
               if ((((this_01->field_1A76 != '\0') &&
-                   (local_14 != (AnonShape_005E84D0_1273B60D *)0x0)) &&
+                   (local_14 != nullptr)) &&
                   (*(int *)local_14 == this_01->field_1A77)) &&
                  ((local_10 = local_14 + 2, (int)local_28 <= *(int *)(local_14 + 2) + 0x1c &&
                   (0x1c < (int)local_28)))) {
-                if (this_01->field_1A5B->field_069A == (void *)0x0) {
+                if (this_01->field_1A5B->field_069A == nullptr) {
                   pAVar18 = local_14 + 1;
                   pvVar10 = Library::DKW::LIB::MemAlloc(*(uint *)(local_14 + 1));
                   this_01->field_1A5B->field_069A = pvVar10;
@@ -294,7 +294,7 @@ LAB_005e8ee0:
                   this_01->field_1A5B->field_06B2 = *(undefined4 *)&pAVar6[1].field_0x8;
                   this_01->field_1A5B->field_06A2 = *(uint *)local_10;
                   this_01->field_1A5B->field_06A6 = *(uint *)&pAVar6->field_0x8;
-                  if (*value != (byte *)0x0) {
+                  if (*value != nullptr) {
                     FreeAndNull(value);
                   }
                   uVar15 = this_01->field_1A5B->field_06A6;
@@ -341,7 +341,7 @@ LAB_005e8ee0:
                       thunk_FUN_005dac60();
                       this_01->field_1A75 = 1;
                       MMsgTy::SetMessage(this_01->field_1A5B->field_02E6,0x252e,'\0',
-                                         (undefined4 *)0x0,(undefined4 *)0x0,(undefined4 *)0x0,0,0);
+                                         nullptr,nullptr,nullptr,0,0);
                     }
                     this_01->field_1A76 = 0;
                   }
@@ -353,7 +353,7 @@ LAB_005e8ee0:
             case 0x35:
               this_01->field_1A75 = 1;
               local_4c[4] = (-(uint)(DAT_008067a0 != '\0') & 4) + 0x694d;
-              if (this_01->field_1A5B->field_02E6 == (MMsgTy *)0x0) {
+              if (this_01->field_1A5B->field_02E6 == nullptr) {
 /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
 LAB_005e91f7:
                 (*(code *)this_01->field_0000->field_0000)(local_4c);
@@ -362,11 +362,11 @@ LAB_005e91f7:
                 local_4c[2] = this_01->field_0008;
                 local_4c[3] = 2;
                 MMsgTy::SetMessage(this_01->field_1A5B->field_02E6,0x2522,'\0',local_4c,
-                                   (undefined4 *)0x0,(undefined4 *)0x0,0,0);
+                                   nullptr,nullptr,0,0);
               }
             }
             this_01->field_1A6C = this_01->field_0061;
-            if (local_14 != (AnonShape_005E84D0_1273B60D *)0x0) {
+            if (local_14 != nullptr) {
               FreeAndNull(&local_14);
             }
           }
@@ -374,7 +374,7 @@ LAB_005e91f7:
         } while (local_1c < local_24);
       }
       if ((((this_01->field_1A76 != '\0') && (3000 < this_01->field_0061 - this_01->field_1A7B)) &&
-          (this_01->field_1A7F != 0)) && (this_01->field_1A83 != (byte *)0x0)) {
+          (this_01->field_1A7F != 0)) && (this_01->field_1A83 != nullptr)) {
         uVar15 = this_01->field_1A7F * 4 + 4;
         local_20 = Library::DKW::LIB::MemAlloc(uVar15);
         local_18 = this_01->field_1A83;
@@ -413,38 +413,38 @@ LAB_005e91f7:
       }
       local_c = 0;
     }
-    if ((this_01->field_1AF8 != (HoloTy *)0x0) &&
+    if ((this_01->field_1AF8 != nullptr) &&
        (iVar8 = HoloTy::NextFas(this_01->field_1AF8), iVar8 != 0)) {
       local_c = 0;
     }
     if ((((this_01->field_1A64 == 0) || (this_01->field_1A68 != 0)) &&
-        (this_01->field_1B00 != (HoloTy *)0x0)) &&
+        (this_01->field_1B00 != nullptr)) &&
        (iVar8 = HoloTy::NextFas(this_01->field_1B00), iVar8 != 0)) {
       local_c = 0;
     }
-    if (((this_01->field_1A64 == 0) && (this_01->field_1AFC != (HoloTy *)0x0)) &&
+    if (((this_01->field_1A64 == 0) && (this_01->field_1AFC != nullptr)) &&
        (iVar8 = HoloTy::NextFas(this_01->field_1AFC), iVar8 != 0)) {
       local_c = 0;
     }
-    if ((g_startSystem_0081176C->field_02E6 != (MMsgTy *)0x0) &&
+    if ((g_startSystem_0081176C->field_02E6 != nullptr) &&
        (g_startSystem_0081176C->field_02E6->field_0065 != '\x01')) {
       local_c = 0;
     }
     if (local_c != 0) {
-      if (this_01->field_1AF8 != (HoloTy *)0x0) {
+      if (this_01->field_1AF8 != nullptr) {
         HoloTy::Done(this_01->field_1AF8);
         Library::MSVCRT::FUN_0072e2b0(this_01->field_1AF8);
-        this_01->field_1AF8 = (HoloTy *)0x0;
+        this_01->field_1AF8 = nullptr;
       }
-      if (this_01->field_1B00 != (HoloTy *)0x0) {
+      if (this_01->field_1B00 != nullptr) {
         HoloTy::Done(this_01->field_1B00);
         Library::MSVCRT::FUN_0072e2b0(this_01->field_1B00);
-        this_01->field_1B00 = (HoloTy *)0x0;
+        this_01->field_1B00 = nullptr;
       }
-      if (this_01->field_1AFC != (HoloTy *)0x0) {
+      if (this_01->field_1AFC != nullptr) {
         HoloTy::Done(this_01->field_1AFC);
         Library::MSVCRT::FUN_0072e2b0(this_01->field_1AFC);
-        this_01->field_1AFC = (HoloTy *)0x0;
+        this_01->field_1AFC = nullptr;
       }
       this_01->field_0065 = 1;
       this_01->field_1A6C = this_01->field_0061;
@@ -457,7 +457,7 @@ LAB_005e91f7:
       }
       SetAccelerator(1,this_01->field_0008,2,0xc0a1,2,0x1c,0,0,0,0,0,0);
       pSVar4 = this_01->field_1A5B;
-      if (pSVar4->field_02E6 != (MMsgTy *)0x0) {
+      if (pSVar4->field_02E6 != nullptr) {
         memset(local_a8, 0, 0x1a); /* compiler bulk-zero initialization */
         local_9c = 1;
         local_9e = 1;
@@ -518,7 +518,7 @@ LAB_005e91f7:
       }
       local_c = 0;
     }
-    if (this_01->field_1AF8 != (HoloTy *)0x0) {
+    if (this_01->field_1AF8 != nullptr) {
       iVar8 = HoloTy::NextFas(this_01->field_1AF8);
       if (iVar8 == 0) {
         uVar15 = *(uint *)&this_01->field_1AF8->field_0x3;
@@ -531,7 +531,7 @@ LAB_005e91f7:
       }
     }
     if (((this_01->field_1A64 == 0) || (this_01->field_1A5F == '\x0e')) &&
-       (this_01->field_1B00 != (HoloTy *)0x0)) {
+       (this_01->field_1B00 != nullptr)) {
       iVar8 = HoloTy::NextFas(this_01->field_1B00);
       if (iVar8 == 0) {
         uVar15 = *(uint *)&this_01->field_1B00->field_0x3;
@@ -543,7 +543,7 @@ LAB_005e91f7:
         local_c = 0;
       }
     }
-    if ((this_01->field_1A64 == 0) && (this_01->field_1AFC != (HoloTy *)0x0)) {
+    if ((this_01->field_1A64 == 0) && (this_01->field_1AFC != nullptr)) {
       iVar8 = HoloTy::NextFas(this_01->field_1AFC);
       if (iVar8 == 0) {
         uVar15 = *(uint *)&this_01->field_1AFC->field_0x3;
@@ -555,7 +555,7 @@ LAB_005e91f7:
         local_c = 0;
       }
     }
-    if ((g_startSystem_0081176C->field_02E6 != (MMsgTy *)0x0) &&
+    if ((g_startSystem_0081176C->field_02E6 != nullptr) &&
        (g_startSystem_0081176C->field_02E6->field_0065 != '\x02')) {
       local_c = 0;
     }

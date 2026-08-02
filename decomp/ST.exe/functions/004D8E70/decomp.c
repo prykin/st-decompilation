@@ -5,9 +5,9 @@ undefined4 __thiscall FUN_004d8e70(void *this,int param_1,int param_2,undefined4
   int iVar1;
   void *local_8;
 
-  local_8 = (void *)0x0;
+  local_8 = nullptr;
   if (99 < *(int *)((int)this + 0x4ec)) {
-    if (*(AnonShape_005EFAE0_B406B78B **)((int)this + 0x4f0) == (AnonShape_005EFAE0_B406B78B *)0x0)
+    if (*(AnonShape_005EFAE0_B406B78B **)((int)this + 0x4f0) == nullptr)
     {
       *(undefined4 *)((int)this + 0x4d0) = 1;
       *(undefined4 *)((int)this + 0x261) = 1;

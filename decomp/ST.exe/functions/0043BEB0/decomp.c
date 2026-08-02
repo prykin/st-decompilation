@@ -222,7 +222,7 @@ LAB_0043c293:
               /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
               pSVar9 = GetObjPtr(this,DAT_0080874d,local_c._0_2_,CASE_1);
               pSVar5 = thunk_FUN_0042b760(DAT_0080874d,pSVar9->field_0030);
-              if ((pSVar5 != (STGroupBoatC *)0x0) &&
+              if ((pSVar5 != nullptr) &&
                  (pAVar16[1].field_0001 = 1, pSVar5->field_001C == 0)) break;
             }
             uVar15 = uVar15 + 1;
@@ -1165,7 +1165,7 @@ LAB_0043d5c4:
             /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
             param_2 = (AnonShape_0043BEB0_1C00EC12 *)&param_2[-1].field_0x13;
             /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
-            if (param_2 == (AnonShape_0043BEB0_1C00EC12 *)0x0) {
+            if (param_2 == nullptr) {
               return;
             }
           } while( true );

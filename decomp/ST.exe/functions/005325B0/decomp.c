@@ -49,17 +49,17 @@ void __thiscall OptPanelTy::PrepAsses(OptPanelTy *this,void *param_1)
     RaiseInternalException(iVar5,0,"E:\\__titans\\Andrey\\optpanel.cpp",0x3ad);
     return;
   }
-  if (local_8->field_02FD != (OptPanelTy_field_02FDDArray *)0x0) {
+  if (local_8->field_02FD != nullptr) {
     DArrayDestroy((DArrayTy *)local_8->field_02FD);
   }
-  pOVar12->field_02FD = (OptPanelTy_field_02FDDArray *)0x0;
+  pOVar12->field_02FD = nullptr;
   local_94.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_94;
   iVar5 = Library::MSVCRT::__setjmp3(local_94.jumpBuffer,0);
   if (iVar5 != 0) {
     g_currentExceptionFrame = local_94.previous;
     pOVar7 = (OptPanelTy_field_02FDDArray *)
-             Library::DKW::TBL::DArrayCreate((DArrayTy *)0x0,1,0x98,1);
+             Library::DKW::TBL::DArrayCreate(nullptr,1,0x98,1);
     local_8->field_02FD = pOVar7;
     pOVar12 = local_8;
     goto LAB_00532758;
@@ -112,7 +112,7 @@ switchD_005326e6_caseD_9:
   g_currentExceptionFrame = local_94.previous;
 LAB_00532758:
   if ((&stack0x00000000 != (undefined1 *)0x12c) &&
-     (pcVar8 = LoadResourceString(0x2711,g_module_00807618), pcVar8 != (char *)0x0)) {
+     (pcVar8 = LoadResourceString(0x2711,g_module_00807618), pcVar8 != nullptr)) {
     pcVar8 = LoadResourceString(0x2711,g_module_00807618);
     uVar10 = 0xffffffff;
     do {
@@ -148,7 +148,7 @@ LAB_00532758:
     local_c = 0;
     if (pOVar7->count != 0) {
       if (pOVar7->count == 0) {
-        puVar13 = (uint *)0x0;
+        puVar13 = nullptr;
         goto LAB_00532855;
       }
       do {

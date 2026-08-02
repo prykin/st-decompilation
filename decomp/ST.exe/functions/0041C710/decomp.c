@@ -11,7 +11,7 @@ undefined4 __fastcall FUN_0041c710(AnonShape_0041C710_C4D46939 *param_1)
 
   pVVar2 = g_visibleClass_00802A88;
   if (param_1->field_002C == 0) {
-    if (g_visibleClass_00802A88 == (VisibleClassTy *)0x0) {
+    if (g_visibleClass_00802A88 == nullptr) {
       return 1;
     }
     iVar4 = (int)param_1->field_005F;
@@ -43,13 +43,13 @@ undefined4 __fastcall FUN_0041c710(AnonShape_0041C710_C4D46939 *param_1)
     if (pVVar2->field_0034 <= local_c) {
       return 1;
     }
-    if (pVVar2->field_004C == (byte *)0x0) {
+    if (pVVar2->field_004C == nullptr) {
       return 1;
     }
     bVar1 = pVVar2->field_004C[local_8 + local_c * pVVar2->field_0030];
   }
   else {
-    if (g_visibleClass_00802A88 == (VisibleClassTy *)0x0) {
+    if (g_visibleClass_00802A88 == nullptr) {
       return 0;
     }
     iVar4 = (int)param_1->field_005F;
@@ -60,7 +60,7 @@ undefined4 __fastcall FUN_0041c710(AnonShape_0041C710_C4D46939 *param_1)
           pVVar3 = g_visibleClass_00802A88, iVar4 < 0)) || ((4 < iVar4 || (local_c < 0)))) ||
         (pVVar2->field_0030 <= local_c)) ||
        (((iVar4 = g_centeredOffsets5[iVar4] + local_8, iVar4 < 0 || (pVVar2->field_0034 <= iVar4))
-        || ((pVVar2->field_004C == (byte *)0x0 ||
+        || ((pVVar2->field_004C == nullptr ||
             (pVVar2->field_004C[local_c + iVar4 * pVVar2->field_0030] != 0)))))) {
       return 1;
     }
@@ -73,7 +73,7 @@ undefined4 __fastcall FUN_0041c710(AnonShape_0041C710_C4D46939 *param_1)
        (((4 < iVar4 || (local_c < 0)) ||
         ((((pVVar3->field_0030 <= local_c ||
            ((iVar4 = g_centeredOffsets5[iVar4] + local_8, iVar4 < 0 || (pVVar3->field_0034 <= iVar4)
-            ))) || (pVVar3->field_004C == (byte *)0x0)) ||
+            ))) || (pVVar3->field_004C == nullptr)) ||
          (pVVar3->field_004C[local_c + iVar4 * pVVar3->field_0030] != 0)))))) {
       return 1;
     }
@@ -87,7 +87,7 @@ undefined4 __fastcall FUN_0041c710(AnonShape_0041C710_C4D46939 *param_1)
          ((pVVar2->field_0030 <= local_c ||
           ((iVar4 = g_centeredOffsets5[iVar4] + local_8, iVar4 < 0 || (pVVar2->field_0034 <= iVar4))
           )))))) ||
-       ((pVVar2->field_004C == (byte *)0x0 ||
+       ((pVVar2->field_004C == nullptr ||
         (pVVar2->field_004C[local_c + iVar4 * pVVar2->field_0030] != 0)))) {
       return 1;
     }
@@ -120,7 +120,7 @@ undefined4 __fastcall FUN_0041c710(AnonShape_0041C710_C4D46939 *param_1)
     if (pVVar3->field_0034 <= local_8) {
       return 1;
     }
-    if (pVVar3->field_004C == (byte *)0x0) {
+    if (pVVar3->field_004C == nullptr) {
       return 1;
     }
     bVar1 = pVVar3->field_004C[local_c + local_8 * pVVar3->field_0030];

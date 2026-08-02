@@ -64,7 +64,7 @@ int FUN_00698de0(undefined1 *param_1,uint param_2,int param_3,undefined4 param_4
             puVar7 = (uint *)((int)puVar7 + 10);
             /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
             param_1 = param_1 + -1;
-          } while (param_1 != (undefined1 *)0x0);
+          } while (param_1 != nullptr);
         }
       }
       /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */

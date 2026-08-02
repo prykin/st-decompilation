@@ -18,7 +18,7 @@ void __thiscall STResourceC::sub_005802A0(STResourceC *this,int param_1,int para
     sVar3 = this->field_0249;
     if ((((sVar1 < 0) || (g_worldGrid.sizeX <= sVar1)) || (sVar3 < 0)) ||
        (((g_worldGrid.sizeY <= sVar3 || (sVar2 < 0)) || (g_worldGrid.sizeZ <= sVar2)))) {
-      pAVar4 = (AnonShape_004E0250_5A3B9236 *)0x0;
+      pAVar4 = nullptr;
     }
     else {
       pAVar4 = (AnonShape_004E0250_5A3B9236 *)

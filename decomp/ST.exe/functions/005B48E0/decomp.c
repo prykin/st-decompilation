@@ -33,7 +33,7 @@ void __thiscall MainMenuTy::AnimationMainMenu(MainMenuTy *this)
       iVar4 = 10;
       do {
         piVar1 = (int *)*puVar9;
-        if (piVar1 != (int *)0x0) {
+        if (piVar1 != nullptr) {
           FUN_006b5f80((int *)g_ddxContext_008075A8,*piVar1,piVar1[1],piVar1[2],piVar1[3]);
           Library::DKW::FLC::FUN_006c4ac0((int *)*puVar9);
         }
@@ -47,7 +47,7 @@ void __thiscall MainMenuTy::AnimationMainMenu(MainMenuTy *this)
     do {
       pAVar2 = *(AnonShape_GLOBAL_0081175C_57F682DD **)
                 ((int)&g_startSystem_0081176C->vtable + local_c);
-      if (pAVar2 != (AnonShape_GLOBAL_0081175C_57F682DD *)0x0) {
+      if (pAVar2 != nullptr) {
         piVar1 = (int *)((int)g_startSystem_0081176C->array_0244 + local_10 + 0x18);
         /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
         if (*(char *)((int)g_startSystem_0081176C->array_0244 + local_10 + 0x2c) == '\0') {

@@ -16,12 +16,12 @@ void __fastcall FUN_00627790(STMineSetC *param_1)
   undefined2 local_e;
   int local_8;
 
-  if (DAT_008117bc != (undefined4 *)0x0) {
+  if (DAT_008117bc != nullptr) {
     memset(local_28, 0, 0x20); /* compiler bulk-zero initialization */
     iVar1 = 0;
     local_14 = *(undefined2 *)&param_1->field_0024;
     local_12 = param_1->field_0032;
-    if ((((AnonShape_005EFAE0_B406B78B *)param_1->field_0241 == (AnonShape_005EFAE0_B406B78B *)0x0)
+    if ((((AnonShape_005EFAE0_B406B78B *)param_1->field_0241 == nullptr)
         || (iVar1 = STPlaySystemC::sub_006E62D0
                               (g_playSystem_00802A38,
                                (AnonShape_005EFAE0_B406B78B *)param_1->field_0241,&local_8),

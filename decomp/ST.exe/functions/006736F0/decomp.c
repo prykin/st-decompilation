@@ -20,7 +20,7 @@ int FUN_006736f0(void)
   byte *local_c;
   int *local_8;
 
-  local_8 = (int *)0x0;
+  local_8 = nullptr;
   local_10 = DAT_007d2d24;
   iVar3 = FUN_00673d20();
   if (-1 < iVar3) {
@@ -55,7 +55,7 @@ cf_common_exit_00673BA7:
         else {
           local_c = DAT_00857528;
         }
-        for (; local_8 != (int *)0x0; local_8 = (int *)*local_8) {
+        for (; local_8 != nullptr; local_8 = (int *)*local_8) {
           pbVar4 = (byte *)local_8[1];
           pbVar9 = local_c;
           do {
@@ -77,13 +77,13 @@ LAB_006737e2:
 LAB_006737e7:
           if (iVar3 == 0) break;
         }
-        if (local_8 != (int *)0x0) goto LAB_0067383b;
+        if (local_8 != nullptr) goto LAB_0067383b;
         piVar5 = Library::DKW::LIB::MemAlloc(0xc);
-        if (piVar5 != (int *)0x0) {
+        if (piVar5 != nullptr) {
           local_8 = piVar5;
           pcVar6 = FUN_006c49b0((char *)local_c);
           piVar5[1] = (int)pcVar6;
-          if (pcVar6 != (char *)0x0) {
+          if (pcVar6 != nullptr) {
             piVar5[2] = 0;
             FUN_006b9910(&DAT_00811908,(int)piVar5);
             goto LAB_0067383b;
@@ -113,7 +113,7 @@ joined_r0x00673849:
         pbVar4 = (byte *)FUN_006c49b0((char *)pbVar4);
         piVar5 = local_8;
         local_8[2] = (int)pbVar4;
-        if (pbVar4 == (byte *)0x0) goto LAB_00673bae;
+        if (pbVar4 == nullptr) goto LAB_00673bae;
         pbVar9 = (byte *)local_8[1];
         do {
           bVar1 = *pbVar9;
@@ -171,7 +171,7 @@ LAB_006739cd:
       DAT_00811914 = DAT_00811914 + 1;
       /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
       pcVar6 = (char *)(**(code **)&PTR_0081194c->field_0x10)(DAT_00857528);
-      if (pcVar6 == (char *)0x0) {
+      if (pcVar6 == nullptr) {
         *DAT_00811948 = 0;
       }
       else {
@@ -238,7 +238,7 @@ LAB_006739cd:
         return iVar3;
       }
       thunk_FUN_00672b60((char *)DAT_00811948,PTR_0081194c);
-      if ((code *)PTR_0081194c->field_0014 != (code *)0x0) {
+      if ((code *)PTR_0081194c->field_0014 != nullptr) {
         /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
         (*(code *)PTR_0081194c->field_0014)(DAT_00811948,1);
       }

@@ -24,7 +24,7 @@ STGroupBoatC::GetPatrolTask(STGroupBoatC *this,int param_1,uint param_2,uint par
   int local_e;
   int local_a;
 
-  if (this->field_022A == (DArrayTy *)0x0) {
+  if (this->field_022A == nullptr) {
     return 1;
   }
   DArrayGetElement(this->field_022A,this->field_0232,&local_14);

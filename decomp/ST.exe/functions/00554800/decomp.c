@@ -79,7 +79,7 @@ cLoadingTy::InitParam
     pcVar5->field_0058 = param_8;
     pcVar5->field_0054 = param_9;
     FUN_006b5f80((int *)g_ddxContext_008075A8,0,0,g_nWidth_00806730,DAT_00806734);
-    FUN_006b4640(g_dDXContext_0080759C,0,0,pcVar5->field_0000,(uint *)0x0);
+    FUN_006b4640(g_dDXContext_0080759C,0,0,pcVar5->field_0000,nullptr);
     Library::DKW::DDX::FUN_006bb370(g_dDXContext_0080759C,0,0);
     g_currentExceptionFrame = local_4c.previous;
     return;

@@ -129,7 +129,7 @@ void __thiscall CPanelTy::PaintArsenal(CPanelTy *this)
       }
       pbVar5 = (byte *)FUN_0070b3a0(pAVar6,(-(uint)(*(char *)local_18 != '\0') & 0x14) + 0xb +
                                            local_14 + local_2c);
-      if (pbVar5 != (byte *)0x0) {
+      if (pbVar5 != nullptr) {
         DibPut((AnonShape_006B5B10_E0D06CF1 *)pCVar2->field_0194,local_c,local_8,'\x06',pbVar5);
       }
       local_14 = local_14 + 1;

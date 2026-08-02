@@ -52,7 +52,7 @@ undefined4 __fastcall FUN_004ed210(TLOBaseTy *param_1)
     if (param_1->field_04D4 < *(int *)(&DAT_0079aaa8 + param_1->field_04D0 * 4)) {
       return 0;
     }
-    TLOBaseTy::sub_004C4550(param_1,(int *)0x0);
+    TLOBaseTy::sub_004C4550(param_1,nullptr);
   }
   thunk_FUN_004ecea0((AnonShape_004D9C80_80F657D3 *)param_1);
   TLOBaseTy::RotateSpr(param_1,0);

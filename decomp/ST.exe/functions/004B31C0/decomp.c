@@ -18,12 +18,12 @@ undefined4 __cdecl FUN_004b31c0(int *param_1,int param_2)
   if (iVar2 == 0) {
     return 0;
   }
-  if (g_array_007FA170 != (DArrayTy *)0x0) {
+  if (g_array_007FA170 != nullptr) {
     g_array_007FA170->iteratorIndex = 0;
     iVar3 = DArrayGetNext(g_array_007FA170,(byte *)&local_c);
     iVar2 = param_2;
     while (-1 < iVar3) {
-      if ((((local_c != (AnonShape_004B31C0_DBC5A6CD *)0x0) && (local_c->field_0024 == piVar1)) &&
+      if ((((local_c != nullptr) && (local_c->field_0024 == piVar1)) &&
           ((iVar2 == 0 || (local_c->field_0018 != iVar2)))) &&
          ((((local_c->field_02EC == 3 || (local_c->field_02A0 != 0)) || (local_c->field_02E0 != 0))
           || (local_c->field_02DC != 0)))) {
@@ -37,13 +37,13 @@ undefined4 __cdecl FUN_004b31c0(int *param_1,int param_2)
     }
   }
   array = (DArrayTy *)g_packedRecords_A62x8[(int)piVar1].field6_0x9;
-  if (array != (DArrayTy *)0x0) {
+  if (array != nullptr) {
     index = 0;
     if (array->count != 0) {
       do {
         DArrayGetElement(array,index,&param_1);
         /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-        if (((param_1 != (int *)0x0) &&
+        if (((param_1 != nullptr) &&
             ((((iVar2 = (**(code **)(*param_1 + 0x2c))(), iVar2 == 0x32 ||
                (iVar2 = (**(code **)(*param_1 + 0x2c))(), iVar2 == 0x40)) ||
               ((iVar2 = (**(code **)(*param_1 + 0x2c))(), iVar2 == 0x49 ||

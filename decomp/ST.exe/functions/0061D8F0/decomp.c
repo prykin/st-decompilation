@@ -20,8 +20,8 @@ int __thiscall STLightC::sub_0061D8F0(STLightC *this,undefined4 *param_1)
   int local_c;
   int *local_8;
 
-  if (this == (STLightC *)0x0) {
-    puVar7 = (byte *)0x0;
+  if (this == nullptr) {
+    puVar7 = nullptr;
   }
   else {
     puVar7 = (byte *)&this->field_0x1c;
@@ -46,7 +46,7 @@ int __thiscall STLightC::sub_0061D8F0(STLightC *this,undefined4 *param_1)
     piVar2 = (int *)((int)piVar2 + 1);
   }
   pSVar3 = (STLightC_field_00A3DArray *)
-           FUN_006b0060((uint *)0x0,(uint *)((int)local_8 + *piVar1 + 4));
+           FUN_006b0060(nullptr,(uint *)((int)local_8 + *piVar1 + 4));
   this->field_00A3 = pSVar3;
   return local_c;
 }

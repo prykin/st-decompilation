@@ -26,7 +26,7 @@ uint __thiscall STManRub3C::AddNewRub3(STManRub3C *this,int *param_1)
   int *local_8;
 
   local_10 = 0xffffffff;
-  if (param_1 == (int *)0x0) {
+  if (param_1 == nullptr) {
     return 0xffffffff;
   }
   local_8 = param_1;
@@ -38,7 +38,7 @@ uint __thiscall STManRub3C::AddNewRub3(STManRub3C *this,int *param_1)
   pSVar2 = local_c;
   if (iVar4 == 0) {
     if (local_c->field_0030[*local_8] == 0) {
-      pDVar5 = Library::DKW::TBL::DArrayCreate((DArrayTy *)0x0,10,0x20,10);
+      pDVar5 = Library::DKW::TBL::DArrayCreate(nullptr,10,0x20,10);
       pSVar2->field_0030[*piVar3] = (uint)pDVar5;
     }
     if (pSVar2->field_0030[*piVar3] != 0) {

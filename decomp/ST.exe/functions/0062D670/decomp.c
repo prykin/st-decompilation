@@ -14,14 +14,13 @@ byte * __thiscall STManRub3C::sub_0062D670(STManRub3C *this,uint *param_1)
 {
   uint *puVar1;
   DArrayTy **ppDVar2;
-  int iVar3;
   uint uVar4;
-  undefined4 *puVar5;
+  byte *puVar5;
   uint *puVar6;
-  AnonPointee_TLOBaseTy_0607 *pAVar7;
+  byte *pbVar7;
   uint *puVar8;
   uint *local_14;
-  AnonPointee_TLOBaseTy_0607 *local_10;
+  byte *local_10;
   uint local_c;
   STManRub3C *local_8;
 
@@ -31,24 +30,20 @@ byte * __thiscall STManRub3C::sub_0062D670(STManRub3C *this,uint *param_1)
   local_8 = this;
   local_10 = Library::DKW::LIB::MemAlloc(0x98);
   this->field_0028 = 2;
-  if (this == (STManRub3C *)0x0) {
-    puVar5 = (undefined4 *)0x0;
+  if (this == nullptr) {
+    puVar5 = nullptr;
   }
   else {
-    puVar5 = &this->field_001C;
+    puVar5 = (byte *)(&this->field_001C);
   }
-  pAVar7 = local_10;
-  for (iVar3 = 0x26; iVar3 != 0; iVar3 = iVar3 + -1) {
-    pAVar7->field_0000 = *puVar5;
-    puVar5 = puVar5 + 1;
-    pAVar7 = (AnonPointee_TLOBaseTy_0607 *)&pAVar7->field_0004;
-  }
+  pbVar7 = local_10;
+  memmove(pbVar7, puVar5, 0x98); /* compiler REP MOVS byte copy */
   *param_1 = 0x98;
   /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
-  param_1 = (uint *)0x0;
+  param_1 = nullptr;
   do {
     switch(param_1) {
-    case (uint *)0x0:
+    case nullptr:
       ppDVar2 = (DArrayTy **)local_8->field_0030;
       break;
     case (uint *)0x1:
@@ -63,13 +58,13 @@ byte * __thiscall STManRub3C::sub_0062D670(STManRub3C *this,uint *param_1)
     default:
       goto switchD_0062d6cc_default;
     }
-    if ((ppDVar2 != (DArrayTy **)0x0) &&
+    if ((ppDVar2 != nullptr) &&
        (local_14 = thunk_FUN_0062d550((int *)ppDVar2,(int *)&local_c), local_c != 0)) {
       uVar4 = *puVar1;
       *puVar1 = uVar4 + local_c;
       local_10 = Library::DKW::LIB::MemRealloc(local_10,uVar4 + local_c);
       puVar6 = local_14;
-      puVar8 = (uint *)((*puVar1 - local_c) + (int)local_10);
+      puVar8 = (uint *)(local_10 + (*puVar1 - local_c));
       memmove(puVar8, puVar6, local_c); /* compiler REP MOVS byte copy */
       FreeAndNull(&local_14);
     }
@@ -77,7 +72,7 @@ byte * __thiscall STManRub3C::sub_0062D670(STManRub3C *this,uint *param_1)
 switchD_0062d6cc_default:
     param_1 = (uint *)((int)param_1 + 1);
     if (3 < (int)param_1) {
-      return (byte *)local_10;
+      return local_10;
     }
   } while( true );
 }

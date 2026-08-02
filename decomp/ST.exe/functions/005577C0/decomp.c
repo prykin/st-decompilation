@@ -23,30 +23,30 @@ VisibleClassTy * __thiscall VisibleClassTy::VisibleClassTy(VisibleClassTy *this)
   this->field_0034 = 0;
   this->field_0030 = 0;
   this->field_0104 = 1;
-  this->field_0038 = (byte *)0x0;
-  this->field_004C = (byte *)0x0;
-  this->field_0050 = (ushort *)0x0;
+  this->field_0038 = nullptr;
+  this->field_004C = nullptr;
+  this->field_0050 = nullptr;
   ppvVar2 = &this->field_0054;
   for (iVar1 = 8; iVar1 != 0; iVar1 = iVar1 + -1) {
-    *ppvVar2 = (void *)0x0;
+    *ppvVar2 = nullptr;
     ppvVar2 = ppvVar2 + 1;
   }
   ppbVar3 = this->field_0074;
   for (iVar1 = 8; iVar1 != 0; iVar1 = iVar1 + -1) {
-    *ppbVar3 = (byte *)0x0;
+    *ppbVar3 = nullptr;
     ppbVar3 = ppbVar3 + 1;
   }
   ppbVar3 = this->field_0094;
   for (iVar1 = 8; iVar1 != 0; iVar1 = iVar1 + -1) {
-    *ppbVar3 = (byte *)0x0;
+    *ppbVar3 = nullptr;
     ppbVar3 = ppbVar3 + 1;
   }
   this->field_003C[0] = 0;
   this->field_003C[1] = 0;
   this->field_003C[2] = 0;
   this->field_003C[3] = 0;
-  this->field_00F4 = (VisibleClassTy_field_00F4DArray *)0x0;
-  this->field_0110 = (VisibleClassTy_field_0110DArray *)0x0;
+  this->field_00F4 = nullptr;
+  this->field_0110 = nullptr;
   this->field_0114 = 0;
   this->field_00F8 = 1;
   memset(&this->field_0118, 0, 0xc0); /* compiler bulk-zero initialization */

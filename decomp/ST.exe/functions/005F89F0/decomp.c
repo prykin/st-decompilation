@@ -42,7 +42,7 @@ undefined4 __thiscall FUN_005f89f0(void *this,int param_1)
         ((g_worldGrid.sizeZ <= sVar8 ||
          (g_worldGrid.cells
           [(int)sVar8 * (int)g_worldGrid.planeStride + (int)g_worldGrid.sizeX * (int)sVar7 +
-           (int)sVar6].objects[0] == (STWorldObject *)0x0)))))) break;
+           (int)sVar6].objects[0] == nullptr)))))) break;
     /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
     param_1 = param_1 + 1;
     if ((4 < param_1) || (*(int *)((int)this + 0x285) + 2 < param_1)) break;

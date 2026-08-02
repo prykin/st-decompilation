@@ -15,8 +15,8 @@ void __fastcall FUN_0041f630(AnonShape_0041F630_B1BEE81C *param_1)
   if (7 < *(uint *)&param_1->field_0x24) {
     return;
   }
-  if ((g_playSystem_00802A38 != (STPlaySystemC *)0x0) &&
-     (7 < (byte)(&DAT_008087e9)[*(uint *)&param_1->field_0x24 * 0x51])) {
+  if ((g_playSystem_00802A38 != nullptr) &&
+     (7 < g_bulkInitializedRecords_008087C7[*(uint *)&param_1->field_0x24].field_0022)) {
     return;
   }
   if (param_1->field_0229 != 0) {
@@ -52,7 +52,8 @@ LAB_0041f738:
     bVar6 = iVar7 < 0;
   }
   else {
-    bVar6 = (&DAT_008087ea)[(uint)DAT_0080874d * 0x51] != (&DAT_008087ea)[(uint)bVar1 * 0x51];
+    bVar6 = g_bulkInitializedRecords_008087C7[DAT_0080874d].field_0023 !=
+            g_bulkInitializedRecords_008087C7[bVar1].field_0023;
   }
   if (!bVar6) {
     local_c = 1;

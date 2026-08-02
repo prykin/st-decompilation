@@ -24,14 +24,14 @@ FUN_004b1fb0(Global_sub_004B1FB0_param_1Enum param_1,int *param_2,int *param_3,i
   local_1c = 0;
   local_14 = 0;
   local_10 = 0;
-  if (param_2 != (int *)0x0) {
+  if (param_2 != nullptr) {
     *param_2 = 0;
   }
-  if (param_3 != (int *)0x0) {
+  if (param_3 != nullptr) {
     *param_3 = 0;
   }
   if (param_1 == 0xe2) {
-    if (param_2 != (int *)0x0) {
+    if (param_2 != nullptr) {
       *param_2 = 1;
     }
     iVar1 = param_7 + param_5;
@@ -45,16 +45,16 @@ FUN_004b1fb0(Global_sub_004B1FB0_param_1Enum param_1,int *param_2,int *param_3,i
         }
       }
     }
-    if (param_3 != (int *)0x0) {
+    if (param_3 != nullptr) {
       *param_3 = iVar4;
       return 0;
     }
   }
-  else if (g_array_007FA150 != (DArrayTy *)0x0) {
+  else if (g_array_007FA150 != nullptr) {
     g_array_007FA150->iteratorIndex = 0;
     iVar4 = DArrayGetNext(g_array_007FA150,(byte *)&local_18);
     while (-1 < iVar4) {
-      if (((local_18 != (STFishC *)0x0) &&
+      if (((local_18 != nullptr) &&
           (GVar2 = local_18->slot_2C(), GVar2 == param_1)) &&
          (((STFishC::sub_004162B0(local_18,&local_8,&local_6,&local_a), param_4 < 0 ||
            (((param_5 < 0 || (param_6 < 0)) || (param_7 < 0)))) ||
@@ -65,7 +65,7 @@ FUN_004b1fb0(Global_sub_004B1FB0_param_1Enum param_1,int *param_2,int *param_3,i
            ((local_6 < 0 ||
             (((g_worldGrid.sizeY <= local_6 || (local_a < 0)) || (g_worldGrid.sizeZ <= local_a))))))
         {
-          this = (STWorldObject *)0x0;
+          this = nullptr;
         }
         else {
           this = g_worldGrid.cells
@@ -86,7 +86,7 @@ FUN_004b1fb0(Global_sub_004B1FB0_param_1Enum param_1,int *param_2,int *param_3,i
         case CASE_DE:
           local_10 = 0x4f;
         }
-        if (((this == (STWorldObject *)0x0) || (this->value_20 != 1000)) ||
+        if (((this == nullptr) || (this->value_20 != 1000)) ||
            (iVar4 = this->GetObjectTypeId(), iVar4 != local_10)) {
           local_14 = local_14 + *(int *)&local_18->field_0x259;
         }
@@ -97,10 +97,10 @@ FUN_004b1fb0(Global_sub_004B1FB0_param_1Enum param_1,int *param_2,int *param_3,i
       }
       iVar4 = DArrayGetNext(g_array_007FA150,(byte *)&local_18);
     }
-    if (param_2 != (int *)0x0) {
+    if (param_2 != nullptr) {
       *param_2 = local_1c;
     }
-    if (param_3 != (int *)0x0) {
+    if (param_3 != nullptr) {
       *param_3 = local_14;
     }
   }

@@ -68,7 +68,7 @@ int __thiscall VisibleClassTy::GetMessage(VisibleClassTy *this,STMessage *messag
                 element_0110 = DArrayAt<VisibleClassTy_field_0110Element>(pVVar8, uVar6);
               }
               else {
-                element_0110 = (VisibleClassTy_field_0110Element *)0x0;
+                element_0110 = nullptr;
               }
               if (element_0110->field_0000 == '\0') {
                 sub_00558DC0(this_00,(int)element_0110->field_0002,(int)element_0110->field_0004,
@@ -89,19 +89,19 @@ int __thiscall VisibleClassTy::GetMessage(VisibleClassTy *this,STMessage *messag
         }
       }
       else if (SVar1 == MESS_ID_CREATE) {
-        local_8 = (ushort *)0x0;
-        if (g_cMf32_00806754 != (cMf32 *)0x0) {
+        local_8 = nullptr;
+        if (g_cMf32_00806754 != nullptr) {
           local_8 = Library::Ourlib::MFAOBJ::mfAObjLoad
                               (g_cMf32_00806754,PTR_s_VISIBILITY_0079aec4,0,0);
         }
-        if ((local_8 == (ushort *)0x0) || (*(int *)(local_8 + 10) == 0)) {
+        if ((local_8 == nullptr) || (*(int *)(local_8 + 10) == 0)) {
           InitData(this_00);
         }
         else {
           Visible::PrepareAfterSave((Visible *)this_00,local_8);
         }
         Init(this_00);
-        if ((g_cMf32_00806754 != (cMf32 *)0x0) && (local_8 != (ushort *)0x0)) {
+        if ((g_cMf32_00806754 != nullptr) && (local_8 != nullptr)) {
           cMf32::RecMemFree(g_cMf32_00806754,(uint *)&local_8);
         }
       }
@@ -111,7 +111,7 @@ int __thiscall VisibleClassTy::GetMessage(VisibleClassTy *this,STMessage *messag
           ST3DSMAPContext::sub_00717870(g_sT3DSMAPContext_00807598);
         }
         thunk_FUN_00553270();
-        g_visibleClass_00802A88 = (VisibleClassTy *)0x0;
+        g_visibleClass_00802A88 = nullptr;
       }
     }
     else if (SVar1 == MESS_SHARED_010F) {
@@ -119,7 +119,7 @@ int __thiscall VisibleClassTy::GetMessage(VisibleClassTy *this,STMessage *messag
       local_10 = PrepareToSave(local_14,&local_c);
       STPlaySystemC::SaveObjData
                 (g_playSystem_00802A38,PTR_s_VISIBILITY_0079aec4,local_10,local_c,0xc);
-      if (local_10 != (byte *)0x0) {
+      if (local_10 != nullptr) {
         FreeAndNull(&local_10);
       }
     }

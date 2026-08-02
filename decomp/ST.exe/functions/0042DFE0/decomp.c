@@ -24,11 +24,11 @@ uint __thiscall STAllPlayersC::PrepareToCmd(STAllPlayersC *this,undefined4 *para
   puVar3 = param_2;
   local_c = 0xffff;
   local_10 = (uint *)0xffff;
-  local_8 = (DArrayTy *)0x0;
-  if (param_1 != (undefined4 *)0x0) {
+  local_8 = nullptr;
+  if (param_1 != nullptr) {
     *param_1 = 0;
   }
-  if (param_2 != (uint *)0x0) {
+  if (param_2 != nullptr) {
     *param_2 = 0;
   }
   uVar5 = (uint)DAT_0080874d;
@@ -39,10 +39,10 @@ uint __thiscall STAllPlayersC::PrepareToCmd(STAllPlayersC *this,undefined4 *para
         local_c = 0;
         if ((short)local_10 == 0x7fff) {
           uVar5 = local_8->count * local_8->elementSize;
-          if (puVar3 != (uint *)0x0) {
+          if (puVar3 != nullptr) {
             *puVar3 = uVar5;
           }
-          if (param_1 != (undefined4 *)0x0) {
+          if (param_1 != nullptr) {
             puVar7 = (byte *)(Library::DKW::LIB::MemAlloc(uVar5));
             *param_1 = puVar7;
             puVar9 = (byte *)(local_8->data);

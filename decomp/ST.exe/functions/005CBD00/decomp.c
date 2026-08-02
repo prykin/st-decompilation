@@ -47,11 +47,11 @@ void __thiscall SettMapMTy::InitSettMap(SettMapMTy *this,char param_1)
     }
     value = &local_c->field_1A5B->field_069A;
     DAT_00808aab = DAT_00809958;
-    if (*value != (void *)0x0) {
+    if (*value != nullptr) {
       FreeAndNull(value);
     }
     pSVar4 = (SettMapMTy_field_2237DArray *)
-             Library::DKW::TBL::DArrayCreate((DArrayTy *)0x0,0x20,0xc,10);
+             Library::DKW::TBL::DArrayCreate(nullptr,0x20,0xc,10);
     this_00->field_2237 = pSVar4;
     iVar3 = 1;
     puVar1 = g_startSystem_0081176C->field_02F0;
@@ -100,16 +100,16 @@ void __thiscall SettMapMTy::InitSettMap(SettMapMTy *this,char param_1)
                    0xfffffffe,g_startSystem_0081176C->field_0609,g_startSystem_0081176C->field_060D);
       }
       pHVar7 = (HoloTy *)Library::MSVCRT::FUN_0072e530(0x33);
-      if (pHVar7 == (HoloTy *)0x0) {
-        pHVar7 = (HoloTy *)0x0;
+      if (pHVar7 == nullptr) {
+        pHVar7 = nullptr;
       }
       else {
         pHVar7->field_0002 = 1;
         pHVar7->field_0000 = 0;
         *(undefined4 *)&pHVar7->field_0x3 = 0xffffffff;
         pHVar7->field_0001 = CASE_2;
-        pHVar7->field_0007 = (void *)0x0;
-        pHVar7->field_000B = (void *)0x0;
+        pHVar7->field_0007 = nullptr;
+        pHVar7->field_000B = nullptr;
         pHVar7->field_000F = 0;
         *(undefined4 *)&pHVar7->field_0x1b = 1;
         pHVar7->field_0013 = 1;
@@ -120,7 +120,7 @@ void __thiscall SettMapMTy::InitSettMap(SettMapMTy *this,char param_1)
         pHVar7->field_002B = 1;
       }
       this_00->field_21F8 = pHVar7;
-      if (pHVar7 != (HoloTy *)0x0) {
+      if (pHVar7 != nullptr) {
         uVar9 = 0;
         cVar12 = '\x01';
         bVar11 = 0x10;

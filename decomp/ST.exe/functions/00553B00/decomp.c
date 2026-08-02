@@ -13,7 +13,7 @@ FUN_00553b00(int param_1,int param_2,byte *param_3,uint param_4,int param_5,unde
   int iVar5;
   int iVar6;
 
-  if (param_3 != (byte *)0x0) {
+  if (param_3 != nullptr) {
     pbVar3 = thunk_FUN_005532f0((Global_sub_005532F0_param_1Enum)param_6);
     iVar2 = (int)param_6 * 2 + 1;
     iVar5 = param_1 - (int)param_6;
@@ -31,7 +31,7 @@ FUN_00553b00(int param_1,int param_2,byte *param_3,uint param_4,int param_5,unde
           iVar1 = iVar6 + iVar5;
           if (((((iVar1 < 0) || ((int)param_4 <= iVar1)) || (iVar4 < 0)) ||
               ((param_5 <= iVar4 || (*(char *)(param_1 + iVar6) != '\x0f')))) &&
-             ((pbVar3 == (byte *)0x0 || (param_6[iVar6] != '\0')))) {
+             ((pbVar3 == nullptr || (param_6[iVar6] != '\0')))) {
             thunk_FUN_00553990(iVar1,iVar4,(int)param_3,param_4,param_5);
           }
           iVar6 = iVar6 + 1;

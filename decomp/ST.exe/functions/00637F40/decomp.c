@@ -17,8 +17,8 @@ void __cdecl FUN_00637f40(uint param_1,uint param_2,int param_3)
     text = "mstarGb";
   }
   puVar1 = Library::Ourlib::MFRLOAD::mfRLoad
-                     (DAT_00806774,CASE_1D,text,0xffffffff,0,1,0,(undefined4 *)0x0);
-  if ((puVar1 != (ushort *)0x0) && (g_sT3DSMAPContext_00807598 != (ST3DSMAPContext *)0x0)) {
+                     (DAT_00806774,CASE_1D,text,0xffffffff,0,1,0,nullptr);
+  if ((puVar1 != nullptr) && (g_sT3DSMAPContext_00807598 != nullptr)) {
     if (uVar3 == 0) {
       uVar3 = *(uint *)((int)puVar1 + 0xd);
       uVar2 = *(uint *)((int)puVar1 + 9);

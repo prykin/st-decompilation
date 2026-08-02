@@ -23,7 +23,7 @@ undefined4 __thiscall FUN_0061c5f0(void *this,undefined4 *param_1)
     this_00 = STAllPlayersC::GetObjPtr
                         (g_allPlayers_007FA174,*(char *)((int)this + 0x11f),
                          *(ushort *)((int)this + 0x149),SVar2);
-    if (this_00 != (STGameObjC *)0x0) {
+    if (this_00 != nullptr) {
       *(STGameObjC **)((int)this + 0x139) = this_00;
       STFishC::sub_004162B0((STFishC *)this_00,&local_a,&local_e,&local_10);
       iVar5 = *(int *)((int)this + 0x127);

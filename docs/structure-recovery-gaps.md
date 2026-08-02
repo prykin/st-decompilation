@@ -94,6 +94,8 @@ historical; use the regenerated `decomp_quality_summary.json` and
 | Fixed member array flattened into adjacent class fields | review current export | review current export | `STClassArrayAnalyzer` proves count/stride from an unsigned bound or an exact decrementing pointer walk, then `STClassLayoutAnalyzer/Applier` installs one native array while preserving manual layouts. |
 | Absolute indexed global record | 49 | 32 | `STGlobalRecordAnalyzer` derives a candidate base, stride, and count from machine flow and accepts them only when independent total-size and boundary evidence agree. Other bases/strides remain separate candidates; an address plus a multiplication alone never proves record boundaries or count. |
 | Raw indirect/vtable call | 2,658 | 856 | `STVTable*` and `STVirtualMethod*` recover physical table ownership and slots. `STIndirectCall*` refines trusted slots and may install neutral thiscall/stdcall ABIs from non-contradictory machine evidence; `STHiddenThis*` handles ownerless ECX receivers. When at least two longer related tables prove that a base pointer dispatches beyond its physical table, a separate `<Owner>DispatchVTable` is inferred without extending the physical data object. Tail signatures still require a cross-table quorum. A raw call by itself is not enough to invent a semantic class or callback signature. |
+| Stored non-vtable callback | current proposals | current proposals | `STFunctionPointerFieldAnalyzer/Applier` requires an exact function address stored into a generated structure field and a `CALLIND` loaded from the identical field. Every stored target must share one trusted ABI. A store without a call, a call without a store, or a manual/concrete field remains review-only. |
+| Exact nested copy / zero span | current proposals | current proposals | `STInlineAggregateAnalyzer` installs a nested by-value member only when `REP MOVS` copies one complete independently typed structure into an automation-owned class range. `REP STOS` contributes an exact extent, but becomes a fixed array only when `STClassArrayAnalyzer` independently proves a stride and indexed use. |
 | Already typed `->vtable->slot` call | 822 | 225 | This is successful recovery, not residue. Ghidra intentionally prints the receiver as the first argument of an indirect `__thiscall` function pointer. |
 | Decompiled partial-field syntax (`._offset_size_`) | 1,815 | 282 | This mixes real subfield operations with missing stack aggregates. Confirmed `CmdToPlsObj` copy ranges are installed as discriminator-specific structures; giant compiler temporaries and reused SSA storage still require function-specific proof. |
 | Flat packed-command field access | 75 | 1 | All matches are in `STAllPlayersC::CmdToPlsObj`. `STPackedValue32` now exposes whole-dword, two-word, and four-byte views without choosing one layout for every command variant. |
@@ -126,6 +128,24 @@ historical; use the regenerated `decomp_quality_summary.json` and
   make both instances correct. If both roles remain in one inseparable merge group,
   the database cannot safely express the source-level split and exporter-side
   normalization remains necessary.
+- A declaration such as `undefined4 ******ppppppuVar6` is usually not six
+  source-level pointer layers. In the current late-renderer example, Ghidra has
+  one singly linked node (`next` at `+0`, scalar/coordinate members at fixed
+  offsets) but propagates each raw `undefined4 *` load as another pointer to the
+  current type. The result compounds through list traversal and pointer-to-link
+  locals. The safe database fix is to recover the node record and distinguish
+  `Node *` from `Node **`; blindly collapsing stars in exported text would hide a
+  real link-to-link variable. Function-pointer field recovery may improve nearby
+  calls, but node recovery still needs a stable allocation/owner or complete
+  pointer-shape identity.
+- Unaligned stores such as `*(uint *)(buffer + 1)`, `*(byte *)(buffer + 5)`, and
+  `*(int *)(buffer + 0x4a)` are often genuine packed serialization. In
+  `BossDataPack`, the machine first copies a fixed `0x85`-byte header, overwrites
+  packed metadata, and appends a runtime-sized payload at `+0x84`. The allocator
+  must keep its neutral byte-buffer ABI, and a runtime payload length prevents a
+  single fixed structure from describing the whole result. Recover a packed
+  header view at consumers; do not align the fields or propagate that view back
+  into the heterogeneous allocator.
 - Raw virtual calls require both receiver type and vtable slot knowledge. A field-shape
   match alone cannot choose a class hierarchy or virtual signature.
 

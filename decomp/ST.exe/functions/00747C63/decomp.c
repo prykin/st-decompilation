@@ -5,7 +5,7 @@ int FUN_00747c63(AnonShape_00747C63_5B932397 *param_1,int *param_2,char *param_3
   LPCRITICAL_SECTION lpCriticalSection;
   int iVar1;
 
-  if (param_2 == (int *)0x0) {
+  if (param_2 == nullptr) {
     iVar1 = -0x7fffbffd;
   }
   else {

@@ -46,7 +46,7 @@ SubmarineTitans::Recovered::HiddenThis::AnonReceiver_00644410::sub_00645F10
   undefined2 local_6;
 
   pvVar2 = param_1;
-  if (param_1 != (void *)0x0) {
+  if (param_1 != nullptr) {
     memset(local_60, 0, 0x58); /* compiler bulk-zero initialization */
     local_60[3] = 1;
     local_60[2] = 1;

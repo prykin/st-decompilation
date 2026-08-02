@@ -70,7 +70,7 @@ FUN_006c8ec0(int param_1,int param_2,Global_sub_006C8EC0_param_3Enum param_3,und
     return uVar16;
   }
   iVar18 = param_2 * param_3;
-  local_4c = (short *)0x0;
+  local_4c = nullptr;
   /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
   param_8 = &SHORT_007ed572;
   while ((((iVar19 = (int)param_8[-1] + (int)psVar12, iVar19 < 0 || (param_2 <= iVar19)) ||
@@ -96,7 +96,7 @@ LAB_006c8f65:
     iVar21 = param_6 - param_9;
     psVar1 = (short *)(param_1 + ((int)psVar12 + param_2 * param_9 + iVar18 * param_10) * 2);
     local_38 = 0;
-    local_4c = (short *)0x0;
+    local_4c = nullptr;
     psVar1[iVar21 * param_2 + (param_5 - (int)psVar12) + uVar41 * iVar18] = 1;
     /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
     if ((((short *)param_5 == psVar12) && (param_6 == param_9)) && (param_7 == param_10)) {
@@ -125,8 +125,8 @@ LAB_006c8f65:
     param_4 = FUN_006b04d0(local_34 * 4);
     psVar37 = local_4c;
     /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
-    if ((param_4 == (undefined4 *)0x0) ||
-       (local_4c = (short *)FUN_006bfb70(0x3e84), local_4c == (short *)0x0))
+    if ((param_4 == nullptr) ||
+       (local_4c = (short *)FUN_006bfb70(0x3e84), local_4c == nullptr))
     goto cf_break_loop_006CE63A;
     local_4c[0] = 0;
     local_4c[1] = 0;
@@ -148,14 +148,14 @@ LAB_006c8f65:
     local_4c[6] = (short)param_8;
     local_4c[8] = 1;
     bVar15 = false;
-    psVar38 = (short *)0x0;
+    psVar38 = nullptr;
     goto cf_continue_loop_006C9187;
   }
   goto LAB_006c8f65;
 cf_continue_loop_006C9187:
   if (local_34 <= local_48) goto cf_break_loop_006CE641;
   puVar17 = param_4 + local_48;
-  while (psVar11 = (short *)*puVar17, psVar11 == (short *)0x0) {
+  while (psVar11 = (short *)*puVar17, psVar11 == nullptr) {
     local_48 = local_48 + 1;
     puVar17 = puVar17 + 1;
     if (local_34 <= local_48) goto cf_break_loop_006CE641;
@@ -166,7 +166,7 @@ cf_continue_loop_006C9187:
     param_4 = (undefined4 *)FUN_006bfb50(param_4,local_34 * 4 + 400);
     psVar37 = local_4c;
     /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
-    if (param_4 == (undefined4 *)0x0) goto cf_break_loop_006CE63A;
+    if (param_4 == nullptr) goto cf_break_loop_006CE63A;
     memset(param_4 + local_34, 0, 0x190); /* compiler bulk-zero initialization */
     local_34 = local_34 + 100;
   }
@@ -196,7 +196,7 @@ cf_continue_loop_006C9187:
       for (; local_4c = psVar37, param_9 < 0x1a; param_9 = param_9 + 1) {
         if (local_40 < 1) {
           local_4c = (short *)FUN_006bfb70(0x3e84);
-          if (local_4c == (short *)0x0) goto cf_break_loop_006CE63A;
+          if (local_4c == nullptr) goto cf_break_loop_006CE63A;
           *(short **)local_4c = psVar37;
           local_3c = local_4c + 2;
           local_40 = 1000;
@@ -3067,7 +3067,7 @@ LAB_006ce57c:
     }
     local_54 = local_54 + 1;
     psVar37 = *(short **)psVar22;
-  } while (*(short **)psVar22 != (short *)0x0);
+  } while (*(short **)psVar22 != nullptr);
   *(short **)psVar22 = psVar38;
   /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
   param_9 = param_9 + local_54;
@@ -3082,7 +3082,7 @@ cf_break_loop_006CE641:
     *psVar1 = sVar3;
   }
   FUN_006a5e90((short *)param_4);
-  while (local_4c != (short *)0x0) {
+  while (local_4c != nullptr) {
     psVar12 = *(short **)local_4c;
     FUN_006a5e90(local_4c);
     local_4c = psVar12;

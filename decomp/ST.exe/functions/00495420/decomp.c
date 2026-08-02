@@ -27,7 +27,7 @@ int __thiscall FUN_00495420(void *this,short *param_1,short *param_2,short *para
         ((sVar3 < g_worldGrid.sizeZ &&
          ((g_worldGrid.cells
            [(int)g_worldGrid.planeStride * (int)sVar3 + (int)g_worldGrid.sizeX * (int)sVar1 +
-            (int)sVar5].objects[0] != (STWorldObject *)0x0 &&
+            (int)sVar5].objects[0] != nullptr &&
           (g_worldGrid.cells
            [(int)g_worldGrid.planeStride * (int)sVar3 + (int)g_worldGrid.sizeX * (int)sVar1 +
             (int)sVar5].objects[0] != this)))))))) {
@@ -54,7 +54,7 @@ LAB_00495607:
          ((g_worldGrid.sizeZ <= sVar1 ||
           (g_worldGrid.cells
            [(int)g_worldGrid.planeStride * (int)sVar1 + (int)g_worldGrid.sizeX * (int)sVar6 +
-            (int)sVar2].objects[0] == (STWorldObject *)0x0)))) {
+            (int)sVar2].objects[0] == nullptr)))) {
         /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
         iVar4 = FUN_006aadd0((int)*(short *)((int)this + 0x47),(int)*(short *)((int)this + 0x49),
                              (int)*(short *)((int)this + 0x4b),

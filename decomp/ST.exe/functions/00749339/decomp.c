@@ -6,7 +6,7 @@ int FUN_00749339(int *param_1)
   LPCRITICAL_SECTION lpCriticalSection;
 
   lpCriticalSection =
-       (LPCRITICAL_SECTION)(-(uint)(param_1 + -3 != (int *)0x0) & (uint)(param_1 + 1));
+       (LPCRITICAL_SECTION)(-(uint)(param_1 + -3 != nullptr) & (uint)(param_1 + 1));
   EnterCriticalSection(lpCriticalSection);
   if (param_1[0x11] == 0) {
     param_1[0x11] = 1;

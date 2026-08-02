@@ -27,7 +27,7 @@ void FUN_0072ae80(void)
         }
         if ((DAT_00857118[0x30] != 0) &&
            ((iVar2 = Library::Ourlib::SINPUT::FUN_0071b630
-                               (DAT_00857128,&local_c,&local_8,(int *)0x0), iVar2 != 0 &&
+                               (DAT_00857128,&local_c,&local_8,nullptr), iVar2 != 0 &&
             (Library::DKW::DDX::FUN_006b3730
                        (DAT_00857134,DAT_007f1080,0xfffffffe,local_c - DAT_00857120,
                         local_8 - DAT_00857124), (*DAT_00857118 & 4) != 0)))) {

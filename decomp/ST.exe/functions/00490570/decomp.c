@@ -20,7 +20,7 @@ undefined4 __thiscall STBoatC::sub_00490570(STBoatC *this)
        ((g_worldGrid.sizeZ <= sVar1 ||
         (g_worldGrid.cells
          [(int)g_worldGrid.planeStride * (int)sVar1 + (int)g_worldGrid.sizeX * (int)sVar2 +
-          (int)sVar3].objects[1] == (STWorldObject *)0x0)))) {
+          (int)sVar3].objects[1] == nullptr)))) {
       return 0;
     }
   }
@@ -32,14 +32,14 @@ undefined4 __thiscall STBoatC::sub_00490570(STBoatC *this)
          ((g_worldGrid.sizeZ <= sVar1 ||
           (g_worldGrid.cells
            [(int)g_worldGrid.planeStride * (int)sVar1 + (int)g_worldGrid.sizeX * (int)sVar3 +
-            (int)sVar2].objects[1] == (STWorldObject *)0x0)))))) &&
+            (int)sVar2].objects[1] == nullptr)))))) &&
        ((sVar4 = sVar1 + -1, sVar2 < 0 ||
         ((((g_worldGrid.sizeX <= sVar2 || (sVar3 < 0)) ||
           ((g_worldGrid.sizeY <= sVar3 ||
            ((((sVar4 < 0 || (g_worldGrid.sizeZ <= sVar4)) ||
              (g_worldGrid.cells
               [(int)g_worldGrid.planeStride * (int)sVar4 + (int)g_worldGrid.sizeX * (int)sVar3 +
-               (int)sVar2].objects[0] == (STWorldObject *)0x0)) ||
+               (int)sVar2].objects[0] == nullptr)) ||
             (g_pathingGrid.cells
              [(sVar1 + -1) * (int)g_pathingGrid.planeStride + (int)sVar3 * (int)g_pathingGrid.sizeX
               + (int)sVar2] == 0)))))) &&
@@ -48,7 +48,7 @@ undefined4 __thiscall STBoatC::sub_00490570(STBoatC *this)
           ((g_worldGrid.sizeZ <= sVar4 ||
            (g_worldGrid.cells
             [(int)g_worldGrid.planeStride * (int)sVar4 + (int)g_worldGrid.sizeX * (int)sVar3 +
-             (int)sVar2].objects[1] == (STWorldObject *)0x0)))))))))) {
+             (int)sVar2].objects[1] == nullptr)))))))))) {
       return 0;
     }
   }

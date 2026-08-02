@@ -51,7 +51,7 @@ STJumpMineC::sub_0061B340
             (pSVar4 = g_worldGrid.cells
                       [(int)g_worldGrid.planeStride * (int)sVar12 +
                        (int)g_worldGrid.sizeX * (int)param_2 + (int)param_1].objects[0],
-            pSVar4 == (STWorldObject *)0x0)))) {
+            pSVar4 == nullptr)))) {
           ST3DSMAPContext::sub_006E3310
                     (g_sT3DSMAPContext_00807598,
                      (g_sT3DSMAPContext_00807598->field_0380 * param_4) / 0xc9,
@@ -135,8 +135,8 @@ STJumpMineC::sub_0061B340
           return 2;
         }
         if ((((pSVar4[1].vtable < (STWorldObjectVTable *)0x8) &&
-             ((g_playSystem_00802A38 == (STPlaySystemC *)0x0 ||
-              ((byte)(&DAT_008087e9)[(int)pSVar4[1].vtable * 0x51] < 8)))) &&
+             ((g_playSystem_00802A38 == nullptr ||
+              (g_bulkInitializedRecords_008087C7[(int)pSVar4[1].vtable].field_0022 < 8)))) &&
             (pSVar4->value_20 == 1000)) &&
            ((iVar6 = (*pSVar4->vtable[5].slots_00_28[0])(), iVar6 != 0 &&
             (iVar6 = (*pSVar4->vtable[5].slots_00_28[2])(), iVar6 != 0)))) {
@@ -170,7 +170,8 @@ LAB_0061b627:
             bVar10 = iVar6 < 0;
           }
           else {
-            bVar10 = (&DAT_008087ea)[(uint)bVar2 * 0x51] != (&DAT_008087ea)[(uint)bVar1 * 0x51];
+            bVar10 = g_bulkInitializedRecords_008087C7[bVar2].field_0023 !=
+                     g_bulkInitializedRecords_008087C7[bVar1].field_0023;
           }
           if (bVar10) {
             uVar7 = SubmarineTitans::Recovered::HiddenThis::AnonReceiver_00601500::
@@ -209,14 +210,14 @@ LAB_0061b627:
       pSVar4 = g_worldGrid.cells
                [(int)g_worldGrid.planeStride * (int)sVar12 + (int)g_worldGrid.sizeX * (int)param_2 +
                 (int)param_1].objects[0];
-      if (pSVar4 == (STWorldObject *)0x0) {
+      if (pSVar4 == nullptr) {
         return local_8;
       }
       if ((STWorldObjectVTable *)0x7 < pSVar4[1].vtable) {
         return local_8;
       }
-      if ((g_playSystem_00802A38 != (STPlaySystemC *)0x0) &&
-         (7 < (byte)(&DAT_008087e9)[(int)pSVar4[1].vtable * 0x51])) {
+      if ((g_playSystem_00802A38 != nullptr) &&
+         (7 < g_bulkInitializedRecords_008087C7[(int)pSVar4[1].vtable].field_0022)) {
         return local_8;
       }
       if (pSVar4->value_20 != 1000) {
@@ -252,7 +253,8 @@ LAB_0061b993:
         bVar10 = iVar6 < 0;
       }
       else {
-        bVar10 = (&DAT_008087ea)[(uint)bVar2 * 0x51] != (&DAT_008087ea)[(uint)bVar1 * 0x51];
+        bVar10 = g_bulkInitializedRecords_008087C7[bVar2].field_0023 !=
+                 g_bulkInitializedRecords_008087C7[bVar1].field_0023;
       }
       if (bVar10) {
         iVar6 = (*pSVar4->vtable[5].slots_00_28[0])();

@@ -30,9 +30,9 @@ void __thiscall CGenerate::sub_006964F0(CGenerate *this,uint param_1,int param_2
   local_8 = 0;
   pCVar1 = this->field_5853;
   /* ST_PSEUDO[dynamic_array_indexing]: expected DArrayAt<T>(array, index) (runtime elementSize cannot be a static C array) */
-  if (((pCVar1 != (CGenerate_field_5853DArray *)0x0) && (param_1 < pCVar1->count)) &&
+  if (((pCVar1 != nullptr) && (param_1 < pCVar1->count)) &&
      (piVar5 = (int *)((int)&pCVar1->data->field_0000 + pCVar1->elementSize * param_1),
-     piVar5 != (int *)0x0)) {
+     piVar5 != nullptr)) {
     if (param_2 != 0) {
       local_8 = *piVar5;
     }
@@ -55,7 +55,7 @@ void __thiscall CGenerate::sub_006964F0(CGenerate *this,uint param_1,int param_2
             puVar4 = (undefined1 *)(*(int *)(iVar2 + 8) * local_18 + *(int *)(iVar2 + 0x1c));
           }
           else {
-            puVar4 = (undefined1 *)0x0;
+            puVar4 = nullptr;
           }
           local_28 = sub_00696400(this,*(int *)(puVar4 + 2),(int)local_54);
           local_14 = 0;

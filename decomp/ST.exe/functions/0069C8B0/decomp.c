@@ -29,8 +29,8 @@ uint * FUN_0069c8b0(int param_1,int param_2,int param_3)
   void *local_8;
 
   iVar1 = param_1;
-  array = Library::DKW::TBL::DArrayCreate((DArrayTy *)0x0,10,0x10,10);
-  if (((array != (DArrayTy *)0x0) && (param_1 != 0)) && (0 < param_3)) {
+  array = Library::DKW::TBL::DArrayCreate(nullptr,10,0x10,10);
+  if (((array != nullptr) && (param_1 != 0)) && (0 < param_3)) {
     local_18 = 0;
     local_1c = 0;
     local_20 = (int *)(param_1 + 2);
@@ -48,15 +48,15 @@ uint * FUN_0069c8b0(int param_1,int param_2,int param_3)
         do {
           uVar5 = 0xffffffff;
           local_24 = *local_14;
-          local_30 = thunk_FUN_00696310(local_8,param_1,param_2,local_68,(int *)0x0);
+          local_30 = thunk_FUN_00696310(local_8,param_1,param_2,local_68,nullptr);
           local_10 = 0;
           if (local_30 < 1) {
 LAB_0069ca03:
             local_44[0] = 0;
             local_44[1] = 0;
             local_44[2] = 0;
-            local_38 = (DArrayTy *)0x0;
-            local_38 = Library::DKW::TBL::DArrayCreate((DArrayTy *)0x0,10,4,10);
+            local_38 = nullptr;
+            local_38 = Library::DKW::TBL::DArrayCreate(nullptr,10,4,10);
             local_44[0] = local_24;
             uVar6 = Library::DKW::TBL::DArrayAppend(array,local_44);
             if ((uint)uVar6 < array->count) {
@@ -64,7 +64,7 @@ LAB_0069ca03:
               pvVar2 = (void *)(array->elementSize * uVar6 + (int)array->data);
             }
             else {
-              pvVar2 = (void *)0x0;
+              pvVar2 = nullptr;
             }
             uVar5 = thunk_FUN_0069c710(iVar1,param_1,(int)pvVar2);
             if (-1 < (int)uVar5) {
@@ -82,7 +82,7 @@ LAB_0069ca03:
                   /* ST_PSEUDO[dynamic_array_indexing]: expected DArrayAt<T>(array, uVar7) (runtime stride) */
                   if (((uVar7 < array->count) &&
                       (pvVar2 = (void *)(array->elementSize * uVar7 + (int)array->data),
-                      pvVar2 != (void *)0x0)) &&
+                      pvVar2 != nullptr)) &&
                      (uVar3 = thunk_FUN_0069c710(iVar1,param_1,(int)pvVar2), -1 < (int)uVar3)) {
                     *(uint *)(param_3 + 10 + iVar1) = uVar7;
                   }

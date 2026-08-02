@@ -65,7 +65,7 @@ void __thiscall CampaignTy::PaintCampaign(CampaignTy *this)
     do {
       iVar7 = 0xf;
       do {
-        if ((AnonShape_006C4AA0_6E9A3AA4 *)*puVar6 != (AnonShape_006C4AA0_6E9A3AA4 *)0x0) {
+        if ((AnonShape_006C4AA0_6E9A3AA4 *)*puVar6 != nullptr) {
           FUN_006c4aa0((AnonShape_006C4AA0_6E9A3AA4 *)*puVar6);
         }
         pCVar2 = local_8;
@@ -77,7 +77,7 @@ void __thiscall CampaignTy::PaintCampaign(CampaignTy *this)
     iVar5 = 4;
     puVar3 = local_8->field_1BD7;
     do {
-      if ((AnonShape_006C4AA0_6E9A3AA4 *)*puVar3 != (AnonShape_006C4AA0_6E9A3AA4 *)0x0) {
+      if ((AnonShape_006C4AA0_6E9A3AA4 *)*puVar3 != nullptr) {
         FUN_006c4aa0((AnonShape_006C4AA0_6E9A3AA4 *)*puVar3);
       }
       puVar3 = puVar3 + 1;

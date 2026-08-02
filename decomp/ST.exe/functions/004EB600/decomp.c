@@ -42,7 +42,7 @@ void __thiscall FUN_004eb600(void *this,short *param_1)
         param_1 = (short *)((int)param_1 + -1);
         iVar2 = iVar1;
         psVar4 = psVar3;
-      } while (param_1 != (short *)0x0);
+      } while (param_1 != nullptr);
     } while (iVar1 < 0x20);
   }
   return;

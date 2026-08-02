@@ -21,10 +21,10 @@ FUN_0065fe10(AiFltClassTy *param_1,undefined4 param_2,int param_3,short *param_4
 
   ppDVar5 = local_38;
   for (iVar4 = 0xb; iVar4 != 0; iVar4 = iVar4 + -1) {
-    *ppDVar5 = (DArrayTy *)0x0;
+    *ppDVar5 = nullptr;
     ppDVar5 = ppDVar5 + 1;
   }
-  local_c = (DArrayTy *)0x0;
+  local_c = nullptr;
   local_8 = 0;
   param_1->field_00A7 = 0;
   uVar2 = AiFltClassTy::sub_0065D9C0(param_1);
@@ -46,7 +46,7 @@ FUN_0065fe10(AiFltClassTy *param_1,undefined4 param_2,int param_3,short *param_4
     uVar3 = 0;
   }
   array = (DArrayTy *)AiFltClassTy::sub_0065FA60(param_1,uVar3,1,param_4);
-  if (array != (DArrayTy *)0x0) {
+  if (array != nullptr) {
     sVar1 = param_1->field_0039;
     if (sVar1 < 1) {
 LAB_0065fec9:
@@ -59,10 +59,10 @@ LAB_0065fec9:
       if (sVar1 != 3) goto LAB_0065fec9;
       iVar4 = 0x60;
     }
-    local_c = (DArrayTy *)AiFltClassTy::sub_0065FA60(param_1,iVar4,1,(short *)0x0);
-    if (local_c != (DArrayTy *)0x0) {
+    local_c = (DArrayTy *)AiFltClassTy::sub_0065FA60(param_1,iVar4,1,nullptr);
+    if (local_c != nullptr) {
       sVar1 = param_1->field_0039;
-      local_38[0] = (DArrayTy *)0x0;
+      local_38[0] = nullptr;
       if (param_3 == 0xdd) {
         local_24 = (-(uint)(sVar1 != 3) & 0xffffffdb) + 0x5e;
       }
@@ -78,9 +78,9 @@ LAB_0065fec9:
       local_20 = 0;
       local_38[1] = array;
       local_1c = local_c;
-      if (((param_1->field_007D != 0xfffe) && (g_allPlayers_007FA174 != (STAllPlayersC *)0x0)) &&
+      if (((param_1->field_007D != 0xfffe) && (g_allPlayers_007FA174 != nullptr)) &&
          (this = thunk_FUN_0042b760(*(char *)&param_1->field_0024,param_1->field_007D),
-         this != (STGroupBoatC *)0x0)) {
+         this != nullptr)) {
         this->sub_00498D20(8,local_38);
         goto LAB_0065ff72;
       }
@@ -88,10 +88,10 @@ LAB_0065fec9:
   }
   local_8 = 0xffffffff;
 LAB_0065ff72:
-  if (array != (DArrayTy *)0x0) {
+  if (array != nullptr) {
     DArrayDestroy(array);
   }
-  if (local_c != (DArrayTy *)0x0) {
+  if (local_c != nullptr) {
     DArrayDestroy(local_c);
   }
   return local_8;

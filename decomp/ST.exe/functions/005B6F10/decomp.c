@@ -22,7 +22,7 @@ void __thiscall MMsgTy::DoneMMsg(MMsgTy *this)
   pMVar2 = local_8;
   if (errorCode == 0) {
     MMObjTy::DoneMMObj((MMObjTy *)local_8);
-    g_startSystem_0081176C->field_02E6 = (MMsgTy *)0x0;
+    g_startSystem_0081176C->field_02E6 = nullptr;
     SpriteClassTy::CloseSprite((SpriteClassTy *)&pMVar2->field_0x1cf7);
     SpriteClassTy::CloseSprite((SpriteClassTy *)&pMVar2->field_1D88);
     g_currentExceptionFrame = local_4c.previous;

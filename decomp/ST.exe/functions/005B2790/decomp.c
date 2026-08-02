@@ -17,11 +17,11 @@ ChooseMapTy * __cdecl CreateChooseMap(void)
   int local_8;
 
   this = (ChooseMapTy *)FUN_006b04d0(0x20c4);
-  if (this != (ChooseMapTy *)0x0) {
+  if (this != nullptr) {
     sub_006E5FB0(this);
     this->field_0000 = (AnonPointee_ChooseMapTy_0000 *)&VTable_0079C018;
     *(undefined4 *)&this->field_0x18 = 0;
-    this->field_005D = (ushort *)0x0;
+    this->field_005D = nullptr;
     memset(&this->field_0x1d, 0, 0x20); /* compiler bulk-zero initialization */
     iVar1 = 0;
     memset(&this->field_0x3d, 0, 0x20); /* compiler bulk-zero initialization */
@@ -64,22 +64,22 @@ ChooseMapTy * __cdecl CreateChooseMap(void)
       puVar2 = puVar2 + 1;
     }
     this->field_1C87 = 0xffffffff;
-    this->field_1C7B = (AnonPointee_ChooseMapTy_1C7B *)0x0;
-    this->field_1C7F = (ushort *)0x0;
-    this->field_1C97 = (DArrayTy *)0x0;
-    this->field_1C9B = (DArrayTy *)0x0;
-    this->field_1C9F = (DArrayTy *)0x0;
+    this->field_1C7B = nullptr;
+    this->field_1C7F = nullptr;
+    this->field_1C97 = nullptr;
+    this->field_1C9B = nullptr;
+    this->field_1C9F = nullptr;
     this->field_1C8F = (HANDLE)0x0;
     this->field_1C93 = 0;
-    this->field_20C0 = (HoloTy *)0x0;
-    this->field_20BC = (HoloTy *)0x0;
-    this->field_20B8 = (HoloTy *)0x0;
+    this->field_20C0 = nullptr;
+    this->field_20BC = nullptr;
+    this->field_20B8 = nullptr;
     this->field_1A64 = 0;
     this->field_1A68 = 0;
     this->field_1C83 = 0;
-    this->field_1C8B = (AnonPointee_ChooseMapTy_1C8B *)0x0;
+    this->field_1C8B = nullptr;
     return this;
   }
-  return (ChooseMapTy *)0x0;
+  return nullptr;
 }
 

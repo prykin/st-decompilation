@@ -69,8 +69,8 @@ int __thiscall STLBombC::GetMessage(STLBombC *this,STMessage *message)
       local_18 = (byte *)STT3DSprC::SaveSpr((STT3DSprC *)&this_00->field_01D5,&local_8);
       local_14 = (byte *)STAllPlayersC::SaveGObjData((STAllPlayersC *)this_00,(int *)&local_10);
       local_c = Library::DKW::LIB::MemAlloc(local_10 + 0x67 + local_8);
-      if (((local_18 != (byte *)0x0) && (local_14 != (byte *)0x0)) &&
-         (local_c != (AnonShape_005859A0_2F00015D *)0x0)) {
+      if (((local_18 != nullptr) && (local_14 != nullptr)) &&
+         (local_c != nullptr)) {
         puVar11 = (byte *)&this_00->field_0x258;
         pAVar14 = local_c;
         for (iVar6 = 0xc; iVar6 != 0; iVar6 = iVar6 + -1) {
@@ -182,7 +182,7 @@ int __thiscall STLBombC::GetMessage(STLBombC *this,STMessage *message)
           *(undefined2 *)&this_00->field_0x43 = *(undefined2 *)&local_20->field_0x54;
           *(undefined2 *)&this_00->field_0x45 = local_20->field_0056;
           local_3c = Library::DKW::LIB::MemAlloc(0x44);
-          if (local_3c != (void *)0x0) {
+          if (local_3c != nullptr) {
             iVar6 = 0;
             do {
               *(int **)(iVar6 + (int)local_3c) = DAT_00806774;
@@ -190,9 +190,9 @@ int __thiscall STLBombC::GetMessage(STLBombC *this,STMessage *message)
             } while (iVar6 < 0x44);
             *(undefined4 *)((int)local_3c + 0x24) = DAT_00806764;
             iVar6 = *(int *)((int)&this_00->field_023E + 3);
-            if (((iVar6 < 1) || (PTR_00806724 == (AnonShape_GLOBAL_00806724_3210464F *)0x0)) ||
+            if (((iVar6 < 1) || (PTR_00806724 == nullptr)) ||
                (PTR_00806724 == (AnonShape_GLOBAL_00806724_3210464F *)0xffffffd0)) {
-              local_38 = (AnonShape_GLOBAL_00806724_3210464F *)0x0;
+              local_38 = nullptr;
             }
             else {
               local_38 = PTR_00806724 + iVar6;

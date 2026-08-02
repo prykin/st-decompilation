@@ -21,7 +21,7 @@ undefined4 __thiscall FUN_00616280(void *this,int *param_1,int *param_2,int *par
        ((g_worldGrid.sizeZ <= sVar2 ||
         ((this_00 = g_worldGrid.cells
                     [(int)g_worldGrid.planeStride * (int)sVar2 + (int)g_worldGrid.sizeX * (int)sVar3
-                     + (int)sVar1].objects[0], this_00 == (STWorldObject *)0x0 ||
+                     + (int)sVar1].objects[0], this_00 == nullptr ||
          (*(int *)&this_00->field_0x18 != *(int *)((int)this + 0x2d1))))))))) &&
      (iVar4 = STPlaySystemC::sub_006E62D0
                         (g_playSystem_00802A38,*(AnonShape_005EFAE0_B406B78B **)((int)this + 0x2d1),

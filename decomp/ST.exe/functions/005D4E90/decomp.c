@@ -53,11 +53,11 @@ void __thiscall SettMapSTy::SetListCtrls(SettMapSTy *this)
     iVar9 = 0;
     iVar6 = local_10;
     do {
-      if ((&pSVar5->field_0000)[iVar6 + iVar9] != (AnonPointee_SettMapSTy_0000 *)0x0) {
+      if ((&pSVar5->field_0000)[iVar6 + iVar9] != nullptr) {
         pDVar1 = pSVar5->field_1F84;
-        if ((pDVar1 == (DArrayTy *)0x0) ||
+        if ((pDVar1 == nullptr) ||
            (uVar8 = pSVar5->field_1F88 + local_c, pDVar1->count <= uVar8)) {
-          pcVar10 = (char *)0x0;
+          pcVar10 = nullptr;
         }
         else {
           /* ST_PSEUDO[dynamic_array_indexing]: expected DArrayAt<T>(pDVar1, uVar8) (runtime stride) */
@@ -66,10 +66,10 @@ void __thiscall SettMapSTy::SetListCtrls(SettMapSTy *this)
         pAVar2 = (&pSVar5->field_0000)[iVar6 + iVar9];
         pSVar5->field_0031 = 0;
         pSVar5->field_0025 = pAVar2;
-        if (pcVar10 != (char *)0x0) {
+        if (pcVar10 != nullptr) {
           switch(iVar9) {
           case 0:
-            if (*(DArrayTy **)(pcVar10 + 0x50) != (DArrayTy *)0x0) {
+            if (*(DArrayTy **)(pcVar10 + 0x50) != nullptr) {
               DArrayDestroy(*(DArrayTy **)(pcVar10 + 0x50));
             }
             if (pSVar5->field_1E26 == '\x02') {

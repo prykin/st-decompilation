@@ -31,7 +31,7 @@ void __thiscall cLoadingTy::SetProcess(cLoadingTy *this,int param_1,char *text,i
   this_00 = local_8;
   if (errorCode == 0) {
     if (-1 < local_8->field_003C) {
-      SetState(local_8,CASE_2,0,(char *)0x0);
+      SetState(local_8,CASE_2,0,nullptr);
     }
     this_00->field_003C = param_1;
     DVar2 = timeGetTime();

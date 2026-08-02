@@ -12,7 +12,7 @@ void __thiscall OpticClassC::InitOptic(OpticClassC *this)
   double dVar1;
   code *pcVar2;
   int iVar3;
-  char *pcVar4;
+  byte *pbVar4;
   int iVar5;
   ushort *puVar6;
   ushort *puVar7;
@@ -39,10 +39,10 @@ void __thiscall OpticClassC::InitOptic(OpticClassC *this)
     }
     STDebugBreak(); /* noreturn in standalone pseudocode */
   }
-  if (g_cMf32_00806754 != (cMf32 *)0x0) {
+  if (g_cMf32_00806754 != nullptr) {
     local_c = Library::Ourlib::MFAOBJ::mfAObjLoad(g_cMf32_00806754,"opticsave",0,0);
   }
-  if (local_c == (ushort *)0x0) {
+  if (local_c == nullptr) {
     DAT_00807400 = DAT_00807568;
     DAT_00807404 = DAT_0080756c;
     DAT_00807408 = DAT_00807570;
@@ -82,8 +82,7 @@ void __thiscall OpticClassC::InitOptic(OpticClassC *this)
               (g_sT3DSMAPContext_00807598,g_dDXContext_0080759C,DAT_00807568,DAT_0080756c,
                DAT_00807570,DAT_00807574,(double)(_DAT_00807428 * _DAT_00790780),
                (double)(_DAT_00807428 * _DAT_00790784),(double)(_DAT_0080742c * _DAT_00790780),
-               (double)(_DAT_0080742c * _DAT_00790784),0x4024000000000000,0x4023ee97865e3540,
-               (int)lVar9);
+               (double)(_DAT_0080742c * _DAT_00790784),10.0,9.965999793052674,(int)lVar9);
     ST3DSMAPContext::sub_006DD530(g_sT3DSMAPContext_00807598,&local_18,&local_14,&local_8);
     ST3DSMAPContext::sub_006DD790
               (g_sT3DSMAPContext_00807598,
@@ -94,17 +93,17 @@ void __thiscall OpticClassC::InitOptic(OpticClassC *this)
                _DAT_0080742c * _DAT_00790784 + local_8 * (float)_DAT_00790770 + (float)_DAT_00790760
               );
     iVar3 = 0;
-    pcVar4 = &DAT_008087e9;
+    pbVar4 = &g_bulkInitializedRecords_008087C7[0].field_0022;
     do {
-      if (*pcVar4 == DAT_0080874d) {
-        thunk_FUN_004ab470(*(uint **)((int)&DAT_008087eb + iVar3 * 0x51),
-                           *(int *)((int)&DAT_008087ef + iVar3 * 0x51));
+      if (*pbVar4 == DAT_0080874d) {
+        thunk_FUN_004ab470((uint *)g_bulkInitializedRecords_008087C7[iVar3].field_0024,
+                           g_bulkInitializedRecords_008087C7[iVar3].field_0028);
         g_currentExceptionFrame = local_5c.previous;
         return;
       }
-      pcVar4 = pcVar4 + 0x51;
+      pbVar4 = pbVar4 + 0x51;
       iVar3 = iVar3 + 1;
-    } while ((int)pcVar4 < 0x808a71);
+    } while ((int)pbVar4 < 0x808a71);
     g_currentExceptionFrame = local_5c.previous;
     return;
   }
@@ -123,8 +122,7 @@ void __thiscall OpticClassC::InitOptic(OpticClassC *this)
             (g_sT3DSMAPContext_00807598,g_dDXContext_0080759C,DAT_00807568,DAT_0080756c,DAT_00807570
              ,DAT_00807574,(double)(DAT_00807420 * _DAT_00790780),
              (double)(DAT_00807420 * _DAT_00790784),(double)(DAT_00807424 * _DAT_00790780),
-             (double)(DAT_00807424 * _DAT_00790784),0x4024000000000000,0x4023ee97865e3540,(int)lVar9
-            );
+             (double)(DAT_00807424 * _DAT_00790784),10.0,9.965999793052674,(int)lVar9);
   thunk_FUN_004a9b60(DAT_00807410,DAT_00807414,DAT_00807418,DAT_0080741c);
   thunk_FUN_004a8f20(1);
   DAT_0080674c = 2;

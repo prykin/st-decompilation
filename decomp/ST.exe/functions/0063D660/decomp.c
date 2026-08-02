@@ -57,7 +57,7 @@ undefined4 __thiscall FUN_0063d660(void *this,char param_1)
         /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
         if ((local_8 < *(uint *)(iVar2 + 0xc)) &&
            (puVar6 = (undefined4 *)(*(int *)(iVar2 + 8) * local_8 + *(int *)(iVar2 + 0x1c)),
-           puVar6 != (undefined4 *)0x0)) {
+           puVar6 != nullptr)) {
           fVar7 = (float10)(int)_param_1 * (float10)(fVar3 / (float)iVar1);
           puVar6[10] = (float)fVar7;
           fcos(fVar7);
@@ -103,7 +103,7 @@ undefined4 __thiscall FUN_0063d660(void *this,char param_1)
         iVar5 = *(int *)((int)this + 0x336);
         if ((uVar4 < *(uint *)(iVar5 + 0xc)) &&
            (puVar6 = (undefined4 *)(*(int *)(iVar5 + 8) * uVar4 + *(int *)(iVar5 + 0x1c)),
-           puVar6 != (undefined4 *)0x0)) {
+           puVar6 != nullptr)) {
           puVar6[10] = (float)((float10)(int)_param_1 * fVar7);
           fcos((float10)(int)_param_1 * fVar7);
           lVar9 = Library::MSVCRT::__ftol();
@@ -139,7 +139,7 @@ undefined4 __thiscall FUN_0063d660(void *this,char param_1)
         iVar5 = *(int *)((int)this + 0x336);
         if ((uVar4 < *(uint *)(iVar5 + 0xc)) &&
            (puVar6 = (undefined4 *)(*(int *)(iVar5 + 8) * uVar4 + *(int *)(iVar5 + 0x1c)),
-           puVar6 != (undefined4 *)0x0)) {
+           puVar6 != nullptr)) {
           fVar8 = (float10)(int)_param_1 * fVar7 + fVar8;
           puVar6[10] = (float)fVar8;
           fcos(fVar8);
@@ -179,7 +179,7 @@ undefined4 __thiscall FUN_0063d660(void *this,char param_1)
         /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
         if ((local_8 < *(uint *)(iVar1 + 0xc)) &&
            (puVar6 = (undefined4 *)(*(int *)(iVar1 + 8) * local_8 + *(int *)(iVar1 + 0x1c)),
-           puVar6 != (undefined4 *)0x0)) {
+           puVar6 != nullptr)) {
           fVar8 = (float10)(int)_param_1 * fVar7 + fVar8;
           puVar6[10] = (float)fVar8;
           fcos(fVar8);
@@ -217,7 +217,7 @@ undefined4 __thiscall FUN_0063d660(void *this,char param_1)
       } while (iVar1 < 300);
       puVar6 = Library::DKW::LIB::MemAlloc(0x1b);
       *(undefined4 **)((int)this + 0x37f) = puVar6;
-      if (puVar6 != (undefined4 *)0x0) {
+      if (puVar6 != nullptr) {
         *puVar6 = 0xffffffff;
         iVar5 = thunk_FUN_00640170(this,*(int *)((int)this + 0x2a4),*(int *)((int)this + 0x2a8),
                                    *(undefined4 *)((int)this + 0x2b4));
@@ -247,7 +247,7 @@ undefined4 __thiscall FUN_0063d660(void *this,char param_1)
           /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
           if ((local_8 < *(uint *)(iVar2 + 0xc)) &&
              (puVar6 = (undefined4 *)(*(int *)(iVar2 + 8) * local_8 + *(int *)(iVar2 + 0x1c)),
-             puVar6 != (undefined4 *)0x0)) {
+             puVar6 != nullptr)) {
             fVar7 = (float10)(int)_param_1 * (float10)(fVar3 / (float)iVar1);
             puVar6[10] = (float)fVar7;
             fcos(fVar7);

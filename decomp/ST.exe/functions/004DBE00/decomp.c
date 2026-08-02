@@ -21,7 +21,7 @@ undefined4 __thiscall FUN_004dbe00(void *this,int *param_1)
       if (iVar2 == 0) {
         param_1[0x130] = 0;
         /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-        if (*(int **)((int)param_1 + 0x61f) != (int *)0x0) {
+        if (*(int **)((int)param_1 + 0x61f) != nullptr) {
           /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
           thunk_FUN_00635fd0(*(int **)((int)param_1 + 0x61f));
           Library::MSVCRT::FUN_0072e2b0(*(HoloTy **)((int)piVar1 + 0x61f));

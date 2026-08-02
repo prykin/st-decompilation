@@ -23,8 +23,8 @@ byte * __thiscall AiPlrClassTy::PrepareToSave(AiPlrClassTy *this,uint *param_1)
   byte *local_c;
   undefined4 *local_8;
 
-  local_c = (byte *)0x0;
-  local_8 = (undefined4 *)0x0;
+  local_c = nullptr;
+  local_8 = nullptr;
   local_58.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_58;
   local_14 = this;
@@ -32,8 +32,8 @@ byte * __thiscall AiPlrClassTy::PrepareToSave(AiPlrClassTy *this,uint *param_1)
   pAVar2 = local_14;
   if (errorCode == 0) {
     local_8 = AiEventClassTy::PrepareToSave((AiEventClassTy *)&local_14->vtable_at_1c,&local_10);
-    if (pAVar2 == (AiPlrClassTy *)0x0) {
-      pAVar5 = (AnonShape_0067D3B0_B421D52F *)0x0;
+    if (pAVar2 == nullptr) {
+      pAVar5 = nullptr;
     }
     else {
       pAVar5 = (AnonShape_0067D3B0_B421D52F *)&pAVar2->field_05D3;
@@ -43,17 +43,17 @@ byte * __thiscall AiPlrClassTy::PrepareToSave(AiPlrClassTy *this,uint *param_1)
     local_c[0xd] = 0;
     local_c[0xe] = 0;
     local_c[0xf] = 0;
-    if (local_8 != (undefined4 *)0x0) {
+    if (local_8 != nullptr) {
       FreeAndNull(&local_8);
     }
     g_currentExceptionFrame = local_58.previous;
     return local_c;
   }
   g_currentExceptionFrame = local_58.previous;
-  if (local_8 != (undefined4 *)0x0) {
+  if (local_8 != nullptr) {
     FreeAndNull(&local_8);
   }
-  if (local_c != (byte *)0x0) {
+  if (local_c != nullptr) {
     FreeAndNull(&local_c);
   }
   iVar3 = ReportDebugMessage("E:\\__titans\\ai\\ai_plr.cpp",0x61,0,errorCode,"%s",
@@ -62,6 +62,6 @@ byte * __thiscall AiPlrClassTy::PrepareToSave(AiPlrClassTy *this,uint *param_1)
     STDebugBreak(); /* noreturn in standalone pseudocode */
   }
   RaiseInternalException(errorCode,0,"E:\\__titans\\ai\\ai_plr.cpp",0x62);
-  return (byte *)0x0;
+  return nullptr;
 }
 

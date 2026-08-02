@@ -46,7 +46,7 @@ undefined4 STAllPlayersC::_SubMDObject(undefined4 *param_1,uint param_2)
   uVar4 = (*this->vtable->vfunc_2C)();
   local_c = 0;
   local_18 = uVar4;
-  if (this == (STGameObjC *)0x0) {
+  if (this == nullptr) {
     iVar5 = ReportDebugMessage("E:\\__titans\\wlad\\to_allpl.cpp",0x246d,0,0,"%s",
                                "STAllPlayersC::_SubMDObject invalid input data");
     if (iVar5 != 0) {
@@ -97,7 +97,7 @@ undefined4 STAllPlayersC::_SubMDObject(undefined4 *param_1,uint param_2)
   param_1 = &g_packedRecords_A62x8[objPtr].field9_0xf;
   do {
     pDVar2 = (DArrayTy *)*param_1;
-    if ((pDVar2 != (DArrayTy *)0x0) && (uVar1 = (ushort)pDVar2->count, uVar1 != 0)) {
+    if ((pDVar2 != nullptr) && (uVar1 = (ushort)pDVar2->count, uVar1 != 0)) {
       uVar4 = 0;
       local_18 = (uint)uVar1;
       if (uVar1 != 0) {
@@ -118,7 +118,7 @@ undefined4 STAllPlayersC::_SubMDObject(undefined4 *param_1,uint param_2)
     /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
     param_1 = param_1 + 1;
     local_14 = (STGameObjC *)((int)local_14 + -1);
-  } while (local_14 != (STGameObjC *)0x0);
+  } while (local_14 != nullptr);
   return local_c;
 }
 

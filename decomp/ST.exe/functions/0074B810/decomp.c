@@ -7,7 +7,7 @@ undefined4 FUN_0074b810(int *param_1,char *param_2,undefined4 *param_3)
   char *pcVar3;
   bool bVar4;
 
-  if (param_3 == (undefined4 *)0x0) {
+  if (param_3 == nullptr) {
     uVar1 = 0x80004003;
   }
   else {

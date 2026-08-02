@@ -2,7 +2,7 @@
 void FUN_006d2530(int *param_1,undefined4 *param_2)
 
 {
-  if ((undefined4 *)param_1[1] != (undefined4 *)0x0) {
+  if ((undefined4 *)param_1[1] != nullptr) {
     *(undefined4 *)param_1[1] = param_2;
   }
   if (*param_1 == 0) {

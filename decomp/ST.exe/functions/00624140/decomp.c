@@ -37,7 +37,7 @@ FUN_00624140(void *this,int param_1,int param_2,Global_sub_0061BDB0_param_1Enum 
           (sVar9 < g_worldGrid.sizeZ)) &&
          (g_worldGrid.cells
           [(int)g_worldGrid.planeStride * (int)sVar9 + (int)g_worldGrid.sizeX * (int)sVar8 +
-           (int)sVar7].objects[0] != (STWorldObject *)0x0)) {
+           (int)sVar7].objects[0] != nullptr)) {
         if (param_8 < 1) {
           iVar4 = (int)pGVar3 * 0xc9 + 0x32;
           if (iVar4 < param_6) {

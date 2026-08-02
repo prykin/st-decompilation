@@ -14,7 +14,7 @@ void __thiscall STFieldC::sub_00609CD0(STFieldC *this)
   uint *puVar3;
   uint uVar4;
 
-  if (this->field_0234 != (STFieldC_field_0234DArray *)0x0) {
+  if (this->field_0234 != nullptr) {
     dVar1 = this->field_0234->count;
     uVar4 = 0;
     if (0 < (int)dVar1) {
@@ -23,7 +23,7 @@ void __thiscall STFieldC::sub_00609CD0(STFieldC *this)
         /* ST_PSEUDO[dynamic_array_indexing]: expected DArrayAt<T>(array, index) (runtime elementSize cannot be a static C array) */
         if (((uVar4 < pSVar2->count) &&
             (puVar3 = (uint *)((int)&pSVar2->data->field_0000 + pSVar2->elementSize * uVar4),
-            puVar3 != (uint *)0x0)) && (LoadImagSpr(this,uVar4), this->field_020D == 6)) {
+            puVar3 != nullptr)) && (LoadImagSpr(this,uVar4), this->field_020D == 6)) {
           Library::Ourlib::ST3DSMAP::SprHide(g_sT3DSMAPContext_00807598,puVar3[0xf]);
         }
         uVar4 = uVar4 + 1;

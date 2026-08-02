@@ -53,7 +53,7 @@ int __thiscall TLOBaseTy::LoadImages(TLOBaseTy *this,void *param_1)
     this_00->field_05F3 = *(undefined4 *)(PTR_DAT_007bb1a8 + iVar2 + 4);
     this_00->field_05F7 = *(char **)(PTR_DAT_007bb1a8 + iVar2 + 8);
   }
-  if (this_00->field_05EF != (char *)0x0) {
+  if (this_00->field_05EF != nullptr) {
     iVar2 = STT3DSprC::LoadSequence
                       ((STT3DSprC *)&this_00->field_01D5,0xe,DAT_0080678c,this_00->field_05EF,0x1d);
     if (iVar2 != 0) {
@@ -76,7 +76,7 @@ int __thiscall TLOBaseTy::LoadImages(TLOBaseTy *this,void *param_1)
     }
   }
   this_01 = &this_00->field_01D5;
-  if (this_00->field_05F7 == (char *)0x0) {
+  if (this_00->field_05F7 == nullptr) {
     STT3DSprC::StopShow((STT3DSprC *)this_01,0xc);
     this_00->field_01F5->field_01C4 = 0;
     this_00->field_01F5->field_01C0 = 0;

@@ -17,11 +17,11 @@ WaitTy * __cdecl CreateWait(void)
   int local_8;
 
   this = (WaitTy *)FUN_006b04d0(0x1b04);
-  if (this != (WaitTy *)0x0) {
+  if (this != nullptr) {
     sub_006E5FB0(this);
     this->field_0000 = (AnonPointee_WaitTy_0000 *)&VTable_0079C018;
     *(undefined4 *)&this->field_0x18 = 0;
-    this->field_005D = (ushort *)0x0;
+    this->field_005D = nullptr;
     memset(&this->field_0x1d, 0, 0x20); /* compiler bulk-zero initialization */
     iVar1 = 0;
     memset(&this->field_0x3d, 0, 0x20); /* compiler bulk-zero initialization */
@@ -67,20 +67,20 @@ WaitTy * __cdecl CreateWait(void)
     this->field_1A76 = 0;
     this->field_1A77 = 0;
     this->field_1A7B = 0;
-    this->field_1A83 = (byte *)0x0;
+    this->field_1A83 = nullptr;
     puVar2 = &this->field_1A94;
     for (iVar1 = 0x16; iVar1 != 0; iVar1 = iVar1 + -1) {
       *puVar2 = 0xffffffff;
       puVar2 = puVar2 + 1;
     }
-    this->field_1AF0 = (DArrayTy *)0x0;
+    this->field_1AF0 = nullptr;
     this->field_1AF4 = 0;
-    this->field_1AEC = (ushort *)0x0;
-    this->field_1B00 = (HoloTy *)0x0;
-    this->field_1AFC = (HoloTy *)0x0;
-    this->field_1AF8 = (HoloTy *)0x0;
+    this->field_1AEC = nullptr;
+    this->field_1B00 = nullptr;
+    this->field_1AFC = nullptr;
+    this->field_1AF8 = nullptr;
     return this;
   }
-  return (WaitTy *)0x0;
+  return nullptr;
 }
 

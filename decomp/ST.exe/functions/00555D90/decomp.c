@@ -36,7 +36,7 @@ uint __thiscall TraksClassTy::sub_00555D90(TraksClassTy *this,undefined4 *param_
         return 0;
       }
 LAB_00555e34:
-      puVar7 = (byte *)0x0;
+      puVar7 = nullptr;
       memmove(puVar7, param_1, 0x3c); /* compiler REP MOVS byte copy */
       return 0;
     }
@@ -51,7 +51,7 @@ LAB_00555e34:
         element_0024_2 = DArrayAt<TraksClassTy_field_0024Element>(pTVar1, uVar6);
       }
       else {
-        element_0024_2 = (TraksClassTy_field_0024Element *)0x0;
+        element_0024_2 = nullptr;
       }
       if ((int)element_0024_2->spriteHandle < 0) {
         if (-1 < (int)uVar6) {

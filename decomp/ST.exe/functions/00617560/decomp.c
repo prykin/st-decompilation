@@ -31,7 +31,7 @@ void __thiscall FUN_00617560(void *this,int soundId)
                              (short)((longlong)(int)sVar1 * 0x28c1979 >> 0x3f));
   }
   local_10.unknown = *(int *)((int)this + 0x18);
-  SoundClassTy::PlaySound((SoundClassTy *)&g_sound,SOUND_MODE_3,(char *)0x0,soundId,&local_10,0);
+  SoundClassTy::PlaySound((SoundClassTy *)&g_sound,SOUND_MODE_3,nullptr,soundId,&local_10,0);
   return;
 }
 

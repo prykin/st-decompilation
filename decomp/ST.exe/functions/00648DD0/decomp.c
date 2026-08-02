@@ -17,11 +17,11 @@ void __cdecl FUN_00648dd0(uint param_1)
   undefined4 local_24 [4];
   undefined4 local_14;
 
-  if ((((g_allPlayers_007FA174 != (STAllPlayersC *)0x0) &&
-       (g_playSystem_00802A38 != (STPlaySystemC *)0x0)) && (param_1 < 8)) &&
-     ((byte)(&DAT_008087e9)[param_1 * 0x51] < 8)) {
+  if ((((g_allPlayers_007FA174 != nullptr) &&
+       (g_playSystem_00802A38 != nullptr)) && (param_1 < 8)) &&
+     (g_bulkInitializedRecords_008087C7[param_1].field_0022 < 8)) {
     pAVar1 = thunk_FUN_004357f0((char)param_1);
-    if (pAVar1 != (AiPlrClassTy *)0x0) {
+    if (pAVar1 != nullptr) {
       memset(local_24, 0, 0x20); /* compiler bulk-zero initialization */
       local_14 = 0x5d97;
       (*pAVar1->vtable->vfunc_00)(local_24);

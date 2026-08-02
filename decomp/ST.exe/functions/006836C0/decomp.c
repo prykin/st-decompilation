@@ -15,7 +15,7 @@ int __cdecl FUN_006836c0(int param_1,byte *param_2)
   int iVar6;
   bool bVar7;
 
-  if ((param_1 == 0) || (param_2 == (byte *)0x0)) {
+  if ((param_1 == 0) || (param_2 == nullptr)) {
     RaiseInternalException
               (-0x34,g_overwriteContext_007ED77C,"E:\\__titans\\ai\\ai_script.cpp",0x38a);
   }
@@ -29,7 +29,7 @@ int __cdecl FUN_006836c0(int param_1,byte *param_2)
         pbVar3 = *(byte **)(*(int *)(param_1 + 0x14) + iVar6 * 4);
       }
       else {
-        pbVar3 = (byte *)0x0;
+        pbVar3 = nullptr;
       }
       do {
         bVar1 = *pbVar3;

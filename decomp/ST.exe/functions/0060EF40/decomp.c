@@ -72,7 +72,7 @@ SubmarineTitans::Recovered::HiddenThis::AnonReceiver_0060EF40::FUN_0060ef40
   ExceptionList = &local_14;
   local_2c = (int)sVar8;
   local_20 = (int)sVar10;
-  thunk_FUN_00615bb0((int)*(short *)&this->field_0x1f5,local_b8,&local_74,0,(undefined2 *)0x0);
+  thunk_FUN_00615bb0((int)*(short *)&this->field_0x1f5,local_b8,&local_74,0,nullptr);
   local_54 = &stack0xffffff38;
   local_3c = sVar10 + local_b8[0];
   local_48 = sVar8 + local_74;
@@ -146,18 +146,18 @@ SubmarineTitans::Recovered::HiddenThis::AnonReceiver_0060EF40::FUN_0060ef40
                 (sVar8 = (short)local_50, sVar8 < 0)) ||
                (((g_worldGrid.sizeY <= sVar8 || (sVar5 = (short)local_4c, sVar5 < 0)) ||
                 (g_worldGrid.sizeZ <= sVar5)))) {
-              pSVar9 = (STWorldObject *)0x0;
+              pSVar9 = nullptr;
             }
             else {
               pSVar9 = g_worldGrid.cells
                        [(int)sVar5 * (int)g_worldGrid.planeStride +
                         (int)sVar8 * (int)g_worldGrid.sizeX + (int)sVar10].objects[0];
             }
-            if (((pSVar9 == (STWorldObject *)0x0) ||
+            if (((pSVar9 == nullptr) ||
                 (iVar1 = (*pSVar9->vtable[5].slots_00_28[2])(), iVar1 == 0)) ||
                (((STWorldObjectVTable *)0x7 < pSVar9[1].vtable ||
-                ((g_playSystem_00802A38 != (STPlaySystemC *)0x0 &&
-                 (7 < (byte)(&DAT_008087e9)[(int)pSVar9[1].vtable * 0x51])))))) {
+                ((g_playSystem_00802A38 != nullptr &&
+                 (7 < g_bulkInitializedRecords_008087C7[(int)pSVar9[1].vtable].field_0022)))))) {
               iVar1 = thunk_FUN_004961b0(sVar10,(short)local_50,(short)local_4c);
               if (iVar1 == 0) goto LAB_0060f230;
             }
@@ -175,7 +175,7 @@ LAB_0060f230:
     }
     local_4c = local_4c + 1;
   } while (local_4c < 5);
-  thunk_FUN_00615bb0((int)*(short *)&this->field_0x1f5,(undefined4 *)0x0,(undefined4 *)0x0,1,
+  thunk_FUN_00615bb0((int)*(short *)&this->field_0x1f5,nullptr,nullptr,1,
                      local_60);
   iVar7 = 0;
   do {
@@ -202,7 +202,7 @@ LAB_0060f230:
                         (short *)(local_3c - iVar1),(short *)(local_48 - local_38),local_40,
                         (short *)(local_80 - iVar1),(short *)(local_b0 - local_38),local_34,local_68
                         ,2);
-  if (local_6c == (short *)0x0) {
+  if (local_6c == nullptr) {
     local_68[0] = 0;
   }
   else {
@@ -248,7 +248,7 @@ LAB_0060f230:
         pAVar3 = (AnonShape_0060F940_1CCED7C8 *)(*(int *)value + iVar1);
         uVar4 = thunk_FUN_0060f940((int)*(short *)&pAVar3->field_0x6,
                                    (int)*(short *)((int)&pAVar3[1].field_0008 + 2),pAVar3,1,0,0,0,0,
-                                   0,0,0,0,0,(int *)0x0,(int *)0x0);
+                                   0,0,0,0,0,nullptr,nullptr);
         *(undefined4 *)(*(int *)value + iVar1 + 0x18) = uVar4;
         if (*(int *)(*(int *)value + iVar1 + 0x18) < 0) {
           local_68[0] = -1;
@@ -269,7 +269,7 @@ LAB_0060f230:
       pAVar3 = *(AnonShape_0060F940_1CCED7C8 **)value;
       uVar4 = thunk_FUN_0060f940((int)*(short *)&pAVar3->field_0x6,
                                  (int)*(short *)((int)&pAVar3[1].field_0008 + 2),pAVar3,1,0,0,0,0,0,
-                                 0,0,0,0,(int *)0x0,(int *)0x0);
+                                 0,0,0,0,nullptr,nullptr);
       *(undefined4 *)(*(int *)value + 0x18) = uVar4;
       **(undefined2 **)value = *(undefined2 *)&this->field_0x1e9;
       *(undefined2 *)(*(int *)value + 2) = *(undefined2 *)&this->field_0x1eb;
@@ -284,7 +284,7 @@ LAB_0060f230:
                          (int)*(short *)&this->field_0x1f3 % 200 + *(short *)(iVar1 + 0x20) * 200);
     }
   }
-  if (local_6c != (short *)0x0) {
+  if (local_6c != nullptr) {
     FreeAndNull(&local_6c);
   }
   ExceptionList = local_14;

@@ -38,7 +38,7 @@ FUN_0055c830(void *this,Global_sub_0055C830_param_1Enum param_1,byte *param_2,un
     switch(param_1) {
     case CASE_1:
     case CASE_2:
-      if ((*(char *)((int)this + 9) == '\0') && (g_fSGS_0081174C != (FSGSTy *)0x0)) {
+      if ((*(char *)((int)this + 9) == '\0') && (g_fSGS_0081174C != nullptr)) {
         Library::MSVCRT::_strncpy((char *)local_34,(char *)param_4,0x10);
         local_25 = 0;
         Library::MSVCRT::FUN_0072ee80(param_5,(byte *)"%4s%d%d%d%d");
@@ -63,7 +63,7 @@ LAB_0055cf74:
       }
       break;
     case CASE_3:
-      if ((*(char *)((int)this + 9) == '\0') && (g_fSGS_0081174C != (FSGSTy *)0x0)) {
+      if ((*(char *)((int)this + 9) == '\0') && (g_fSGS_0081174C != nullptr)) {
         Library::MSVCRT::_strncpy((char *)local_34,(char *)param_4,0x10);
         local_25 = 0;
         FSGSTy::DelPlayer(g_fSGS_0081174C,local_34);
@@ -103,19 +103,19 @@ LAB_0055cf74:
       } while (bVar1 != 0);
       /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
       param_2 = Library::DKW::LIB::MemAlloc(~uVar6 + ~uVar7 + 4);
-      if (param_2 != (byte *)0x0) {
+      if (param_2 != nullptr) {
         wsprintfA((LPSTR)param_2,"%s %s",pcVar3,param_4);
         if (*(char *)((int)this + 9) != '\0') {
           thunk_FUN_0055bdd0((char *)param_2,param_5);
           FreeAndNull(&param_2);
           return;
         }
-        if (g_fSGS_0081174C != (FSGSTy *)0x0) {
+        if (g_fSGS_0081174C != nullptr) {
           FSGSTy::AddMessage(g_fSGS_0081174C,9,param_2,param_5,0);
           FreeAndNull(&param_2);
           return;
         }
-        if (g_startSystem_0081176C != (StartSystemTy *)0x0) {
+        if (g_startSystem_0081176C != nullptr) {
           pcVar4 = local_488;
           for (iVar5 = 0x114; iVar5 != 0; iVar5 = iVar5 + -1) {
             pcVar4[0] = '\0';
@@ -160,7 +160,7 @@ LAB_0055c9c5:
         *(undefined1 *)((int)this + 0x3b) = 0;
         *(char *)((int)this + 0x2b) = (*(char *)((int)this + 0x2b) == '\a') + '\a';
       }
-      if ((*(char *)((int)this + 9) == '\0') && (g_fSGS_0081174C != (FSGSTy *)0x0)) {
+      if ((*(char *)((int)this + 9) == '\0') && (g_fSGS_0081174C != nullptr)) {
         FSGSTy::AddMessage(g_fSGS_0081174C,*(byte *)((int)this + 0x2b),param_4,param_5,5);
         return;
       }
@@ -185,7 +185,7 @@ LAB_0055c9c5:
       } while (bVar1 != 0);
       /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
       param_2 = Library::DKW::LIB::MemAlloc(~uVar6 + ~uVar7 + 4);
-      if (param_2 != (byte *)0x0) {
+      if (param_2 != nullptr) {
         pcVar4 = LoadResourceString(0x2576,g_module_00807618);
         wsprintfA((LPSTR)param_2,"%s %s",pcVar4,pbVar8);
         if (*(char *)((int)this + 9) != '\0') {
@@ -193,12 +193,12 @@ LAB_0055c9c5:
           FreeAndNull(&param_2);
           return;
         }
-        if (g_fSGS_0081174C != (FSGSTy *)0x0) {
+        if (g_fSGS_0081174C != nullptr) {
           FSGSTy::AddMessage(g_fSGS_0081174C,4,param_2,param_5,5);
           FreeAndNull(&param_2);
           return;
         }
-        if (g_startSystem_0081176C != (StartSystemTy *)0x0) {
+        if (g_startSystem_0081176C != nullptr) {
           pcVar4 = local_488;
           for (iVar5 = 0x114; iVar5 != 0; iVar5 = iVar5 + -1) {
             pcVar4[0] = '\0';
@@ -219,7 +219,7 @@ LAB_0055c9c5:
       }
       break;
     case CASE_7:
-      if ((*(char *)((int)this + 9) == '\0') && (g_fSGS_0081174C != (FSGSTy *)0x0)) {
+      if ((*(char *)((int)this + 9) == '\0') && (g_fSGS_0081174C != nullptr)) {
         FSGSTy::AddMessage(g_fSGS_0081174C,1,&DAT_008016a0,param_5,5);
         /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
         FSGSTy::JoinChannel(g_fSGS_0081174C,unaff_EDI);
@@ -227,7 +227,7 @@ LAB_0055c9c5:
       }
       break;
     case CASE_9:
-      if ((*(char *)((int)this + 9) == '\0') && (g_fSGS_0081174C != (FSGSTy *)0x0)) {
+      if ((*(char *)((int)this + 9) == '\0') && (g_fSGS_0081174C != nullptr)) {
         Library::MSVCRT::_strncpy((char *)local_34,(char *)param_4,0x10);
         local_25 = 0;
         local_f = param_2;
@@ -238,7 +238,7 @@ LAB_0055c9c5:
       break;
     case CASE_D:
     case CASE_F:
-      if (g_fSGS_0081174C != (FSGSTy *)0x0) {
+      if (g_fSGS_0081174C != nullptr) {
         *(undefined4 *)((int)this + 0x1b) = 0x6156;
         *(Global_sub_0055C830_param_1Enum *)((int)this + 0x1f) = param_1;
         /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
@@ -250,11 +250,11 @@ LAB_0055c9c5:
         thunk_FUN_0055bdd0((char *)param_4,param_5);
         return;
       }
-      if (g_fSGS_0081174C != (FSGSTy *)0x0) {
+      if (g_fSGS_0081174C != nullptr) {
         FSGSTy::AddMessage(g_fSGS_0081174C,6,param_4,param_5,5);
         return;
       }
-      if (g_startSystem_0081176C != (StartSystemTy *)0x0) {
+      if (g_startSystem_0081176C != nullptr) {
         pcVar4 = local_488;
         for (iVar5 = 0x114; iVar5 != 0; iVar5 = iVar5 + -1) {
           pcVar4[0] = '\0';
@@ -277,11 +277,11 @@ LAB_0055c9c5:
         thunk_FUN_0055bdd0((char *)param_4,param_5);
         return;
       }
-      if (g_fSGS_0081174C != (FSGSTy *)0x0) {
+      if (g_fSGS_0081174C != nullptr) {
         FSGSTy::AddMessage(g_fSGS_0081174C,2,param_4,param_5,5);
         return;
       }
-      if (g_startSystem_0081176C != (StartSystemTy *)0x0) {
+      if (g_startSystem_0081176C != nullptr) {
         pcVar4 = local_488;
         for (iVar5 = 0x114; iVar5 != 0; iVar5 = iVar5 + -1) {
           pcVar4[0] = '\0';
@@ -301,14 +301,14 @@ LAB_0055c9c5:
       break;
     case CASE_13:
       if (*(char *)((int)this + 9) != '\0') {
-        thunk_FUN_0055bdd0((char *)0x0,param_5);
+        thunk_FUN_0055bdd0(nullptr,param_5);
         return;
       }
-      if (g_fSGS_0081174C != (FSGSTy *)0x0) {
+      if (g_fSGS_0081174C != nullptr) {
         FSGSTy::AddMessage(g_fSGS_0081174C,3,&DAT_008016a0,param_5,5);
         return;
       }
-      if (g_startSystem_0081176C != (StartSystemTy *)0x0) {
+      if (g_startSystem_0081176C != nullptr) {
         pcVar4 = local_488;
         for (iVar5 = 0x114; iVar5 != 0; iVar5 = iVar5 + -1) {
           pcVar4[0] = '\0';
@@ -339,13 +339,13 @@ LAB_0055c9c5:
       }
       break;
     case CASE_17:
-      if ((*(char *)((int)this + 9) == '\0') && (g_fSGS_0081174C != (FSGSTy *)0x0)) {
+      if ((*(char *)((int)this + 9) == '\0') && (g_fSGS_0081174C != nullptr)) {
         FSGSTy::AddMessage(g_fSGS_0081174C,7,param_4,param_5,5);
         return;
       }
       break;
     case CASE_FF:
-      if ((*(char *)((int)this + 9) == '\0') && (g_fSGS_0081174C != (FSGSTy *)0x0)) {
+      if ((*(char *)((int)this + 9) == '\0') && (g_fSGS_0081174C != nullptr)) {
         FSGSTy::AddMessage(g_fSGS_0081174C,4,param_4,param_5,5);
         return;
       }

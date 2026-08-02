@@ -30,7 +30,7 @@ uint FUN_00757530(AnonShape_00757530_EEED7D69 *param_1,int param_2,undefined4 *p
   if ((int)*(uint *)pAVar6 < (int)uVar1) {
     pAVar4 = (AnonNested_00757530_000C_743CE253 *)FUN_006bfb50((undefined4 *)*ppAVar7,uVar1);
     *ppAVar7 = pAVar4;
-    if (pAVar4 == (AnonNested_00757530_000C_743CE253 *)0x0) {
+    if (pAVar4 == nullptr) {
       return 0;
     }
     *(uint *)pAVar6 = uVar1;

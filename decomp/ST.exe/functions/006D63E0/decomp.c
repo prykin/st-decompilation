@@ -73,7 +73,7 @@ SubmarineTitans::Recovered::HiddenThis::AnonReceiver_006CEC40::FUN_006d63e0
       iVar1 = *(int *)(iVar4 + 0x1c);
       local_a0 = *(int *)(iVar4 + 0x20);
       pcVar2 = *(code **)(*(int *)(iVar4 + 0x28) + 0x4e4);
-      if (pcVar2 != (code *)0x0) {
+      if (pcVar2 != nullptr) {
         /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
         (*pcVar2)(*(undefined4 *)(*(int *)(iVar4 + 0x28) + 0x4ec),iVar7,iVar1,local_a0,
                   *(undefined4 *)(iVar4 + 0x24));
@@ -102,7 +102,7 @@ SubmarineTitans::Recovered::HiddenThis::AnonReceiver_006CEC40::FUN_006d63e0
       piVar3 = *(int **)(iVar4 + 0x40);
       local_a8 = iVar7;
       /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-      if (*(code **)(iVar4 + 0x4e4) != (code *)0x0) {
+      if (*(code **)(iVar4 + 0x4e4) != nullptr) {
         /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
         (**(code **)(iVar4 + 0x4e4))
                   (*(undefined4 *)(iVar4 + 0x4ec),iVar7,local_a4,local_a0,local_9c);

@@ -122,7 +122,7 @@ void FUN_0075ec80(AnonShape_0075EC80_53406127 *param_1,int param_2,int *param_3,
       psVar10[2] = (short)local_1c;
       local_20 = local_20 + 1;
       local_40 = local_40 + -1;
-    } while (local_40 != (byte *)0x0);
+    } while (local_40 != nullptr);
   }
   return;
 }

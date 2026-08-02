@@ -17,10 +17,10 @@ uint __thiscall FUN_006216e0(void *this,undefined4 param_1)
   /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
   local_c = CONCAT31((int3)param_1,(undefined1)local_c);
   if (*(int *)((int)this + 0x10a) == 0) {
-    pDVar1 = Library::DKW::TBL::DArrayCreate((DArrayTy *)0x0,10,0xd,10);
+    pDVar1 = Library::DKW::TBL::DArrayCreate(nullptr,10,0xd,10);
     *(DArrayTy **)((int)this + 0x10a) = pDVar1;
   }
-  if (*(DArrayTy **)((int)this + 0x10a) != (DArrayTy *)0x0) {
+  if (*(DArrayTy **)((int)this + 0x10a) != nullptr) {
     uVar2 = Library::DKW::TBL::DArrayAppend(*(DArrayTy **)((int)this + 0x10a),&local_14);
     return uVar2;
   }

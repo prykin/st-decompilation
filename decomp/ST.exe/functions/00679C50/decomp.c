@@ -12,7 +12,7 @@ uint __thiscall FUN_00679c50(void *this,byte *param_1,byte *param_2)
   byte *pbVar7;
   bool bVar8;
 
-  if ((param_1 == (byte *)0x0) || (param_2 == (byte *)0x0)) {
+  if ((param_1 == nullptr) || (param_2 == nullptr)) {
 LAB_00679d08:
     uVar6 = 0xffffffff;
   }
@@ -30,9 +30,9 @@ joined_r0x00679c7c:
           puVar3 = (undefined4 *)(*(int *)(iVar5 + 8) * uVar2 + *(int *)(iVar5 + 0x1c));
         }
         else {
-          puVar3 = (undefined4 *)0x0;
+          puVar3 = nullptr;
         }
-      } while ((puVar3[1] == 0) || (this_00 = (void *)*puVar3, this_00 == (void *)0x0));
+      } while ((puVar3[1] == 0) || (this_00 = (void *)*puVar3, this_00 == nullptr));
       if (*param_2 != 0) {
         pbVar7 = (byte *)((int)this_00 + 0x3b);
         pbVar4 = param_2;

@@ -37,7 +37,7 @@ void __fastcall FUN_00577440(int param_1)
       bVar1 = false;
       uVar2 = 0xffffffff;
       local_8 = 0x101;
-      if (piVar5 != (int *)0x0) {
+      if (piVar5 != nullptr) {
         do {
           if (*(uint *)((int)piVar5 + 7) <= DVar3 - *(int *)((int)piVar5 + 0xb)) {
             sVar6 = 0;
@@ -80,7 +80,7 @@ void __fastcall FUN_00577440(int param_1)
             bVar1 = true;
           }
           piVar5 = (int *)*piVar5;
-        } while (piVar5 != (int *)0x0);
+        } while (piVar5 != nullptr);
         if (bVar1) {
           FUN_006b0a20((AnonShape_GLOBAL_0080759C_9638EF10 *)g_dDXContext_0080759C,
                        param_1 + 0x28 + local_8 * 4,local_8,(uVar2 - local_8) + 1,0);

@@ -13,13 +13,13 @@ uint * __fastcall AiFltClassTy::sub_0065E360(AiFltClassTy *param_1,undefined4 pa
   STGroupBoatC *this;
   uint *puVar1;
 
-  if ((param_1->field_007D != 0xfffe) && (g_allPlayers_007FA174 != (STAllPlayersC *)0x0)) {
+  if ((param_1->field_007D != 0xfffe) && (g_allPlayers_007FA174 != nullptr)) {
     this = thunk_FUN_0042b760(*(char *)&param_1->field_0024,param_1->field_007D);
-    if (this != (STGroupBoatC *)0x0) {
+    if (this != nullptr) {
       puVar1 = STGroupC::GetTOBJList((STGroupC *)this,param_3);
       return puVar1;
     }
   }
-  return (uint *)0x0;
+  return nullptr;
 }
 

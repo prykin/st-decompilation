@@ -41,7 +41,7 @@ UPanelTy::PaintIBut(UPanelTy *this,AnonShape_0053DAF0_3BDC2979 *param_1,char *pa
   local_10 = this;
   errorCode = (undefined4 *)Library::MSVCRT::__setjmp3(local_58.jumpBuffer,0);
   pUVar2 = local_10;
-  if (errorCode == (undefined4 *)0x0) {
+  if (errorCode == nullptr) {
     iVar7 = 1;
     uVar5 = 0xffffffff;
     puVar8 = errorCode;

@@ -25,11 +25,11 @@ void __thiscall SpecPanelTy::DonePanel(SpecPanelTy *this)
       StartSystemTy::sub_006E56B0(local_8->field_000C,local_8->field_017C);
     }
     pSVar2->field_017C = 0;
-    if (pSVar2->field_0189 != (ccFntTy *)0x0) {
+    if (pSVar2->field_0189 != nullptr) {
       ccFntTy::operator_delete((uint *)pSVar2->field_0189);
-      pSVar2->field_0189 = (ccFntTy *)0x0;
+      pSVar2->field_0189 = nullptr;
     }
-    if (pSVar2->field_0185 != (ushort *)0x0) {
+    if (pSVar2->field_0185 != nullptr) {
       cMf32::RecMemFree(g_cMf32_00806790,(uint *)&pSVar2->field_0185);
     }
     g_currentExceptionFrame = local_4c.previous;

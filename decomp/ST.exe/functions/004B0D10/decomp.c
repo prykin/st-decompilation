@@ -47,15 +47,15 @@ FUN_004b0d10(uint param_1,int param_2,int *param_3,int *param_4,int *param_5,int
       /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
       iVar3 = *(int *)(param_9 + 0x18);
     }
-    iVar3 = thunk_FUN_004ae0b0((short)*param_3,local_8,*param_5,param_2,param_1,(undefined4 *)0x0,
-                               (int *)0x0,(int *)0x0,iVar3,(int *)0x0);
+    iVar3 = thunk_FUN_004ae0b0((short)*param_3,local_8,*param_5,param_2,param_1,nullptr,
+                               nullptr,nullptr,iVar3,nullptr);
     if (iVar3 != 0) {
       g_currentExceptionFrame = local_50.previous;
       return 1;
     }
   }
   piVar1 = (&STGroupBoatCVTable.vfunc_04)[param_2];
-  if (piVar1 == (icall_004A0EE0_FUN_004a0ee0_for_STGroupBoatC *)0x0) {
+  if (piVar1 == nullptr) {
     uVar4 = thunk_FUN_004af080(param_1,param_2,param_3,param_4,param_5,param_6,param_7,param_8,
                                param_9);
     g_currentExceptionFrame = local_50.previous;

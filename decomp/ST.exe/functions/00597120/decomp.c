@@ -87,12 +87,12 @@ void __thiscall FSGSTy::NoneFSGS(FSGSTy *this,int param_1)
     if (this_02->field_1A5F == CASE_6) {
       if (15000 < this_02->field_0061 - this_02->field_1EB2) {
         if ((this_02->field_1A60 == '\0') &&
-           (pDVar14 = this_02->field_1EA6, pDVar14 != (DArrayTy *)0x0)) {
+           (pDVar14 = this_02->field_1EA6, pDVar14 != nullptr)) {
           if (1 < pDVar14->count) {
             do {
               /* ST_PSEUDO[dynamic_array_indexing]: expected DArrayAt<T>(pDVar14, uVar15) (runtime stride) */
               pvVar11 = (void *)(pDVar14->elementSize * uVar15 + (int)pDVar14->data);
-              if (pvVar11 != (void *)0x0) {
+              if (pvVar11 != nullptr) {
                 CFsgsConnection::PingPlayer
                           ((CFsgsConnection *)&DAT_00802a90,this_02->field_1EAE,
                            *(ulong *)((int)pvVar11 + 0x21));
@@ -109,10 +109,10 @@ void __thiscall FSGSTy::NoneFSGS(FSGSTy *this,int param_1)
     else if ((this_02->field_1A5F == CASE_8) && (60000 < this_02->field_0061 - this_02->field_1A63))
     {
       CFsgsConnection::RequestGameList
-                ((CFsgsConnection *)&DAT_00802a90,this_02->field_1EC2,(char *)0x0);
+                ((CFsgsConnection *)&DAT_00802a90,this_02->field_1EC2,nullptr);
       this_02->field_1A63 = this_02->field_0061;
       pCVar4 = g_cursorClass_00802A30;
-      if (g_cursorClass_00802A30 != (CursorClassTy *)0x0) {
+      if (g_cursorClass_00802A30 != nullptr) {
         iVar6 = g_cursorClass_00802A30->field_00C9;
         iVar12 = g_cursorClass_00802A30->field_00C5;
         g_cursorClass_00802A30->field_0493 = CASE_5;
@@ -123,8 +123,8 @@ void __thiscall FSGSTy::NoneFSGS(FSGSTy *this,int param_1)
         pCVar4->field_04DF = -1;
       }
     }
-    if (((this_02->field_1A97 != (AnonPointee_FSGSTy_1A97 *)0x0) &&
-        (this_02->field_1A9F != (int *)0x0)) &&
+    if (((this_02->field_1A97 != nullptr) &&
+        (this_02->field_1A9F != nullptr)) &&
        (this_02->field_1AA3 < (int)(this_02->field_0061 - this_02->field_1AA7))) {
       Library::DKW::GPC::FUN_006c7070(this_02->field_1A9F,(undefined4 *)this_02->field_1A97,0);
       iVar6 = FUN_006c7000(this_02->field_1A9F);
@@ -135,7 +135,7 @@ void __thiscall FSGSTy::NoneFSGS(FSGSTy *this,int param_1)
         }
         else {
           FUN_006c6fc0(this_02->field_1A9F);
-          this_02->field_1A9F = (void *)0x0;
+          this_02->field_1A9F = nullptr;
           FreeAndNull(&this_02->field_1A9B);
         }
       }
@@ -179,23 +179,23 @@ void __thiscall FSGSTy::NoneFSGS(FSGSTy *this,int param_1)
       FUN_006b35d0((int *)g_ddxContext_008075A8,this_02->field_1A8F);
       local_8 = 0;
     }
-    if ((this_02->field_1F23 != (HoloTy *)0x0) &&
+    if ((this_02->field_1F23 != nullptr) &&
        (iVar6 = HoloTy::NextFas(this_02->field_1F23), iVar6 != 0)) {
       local_8 = 0;
     }
-    if ((this_02->field_1F27 != (HoloTy *)0x0) &&
+    if ((this_02->field_1F27 != nullptr) &&
        (iVar6 = HoloTy::NextFas(this_02->field_1F27), iVar6 != 0)) {
       local_8 = 0;
     }
-    if ((this_02->field_1F2B != (HoloTy *)0x0) &&
+    if ((this_02->field_1F2B != nullptr) &&
        (iVar6 = HoloTy::NextFas(this_02->field_1F2B), iVar6 != 0)) {
       local_8 = 0;
     }
-    if ((this_02->field_1F2F != (HoloTy *)0x0) &&
+    if ((this_02->field_1F2F != nullptr) &&
        (iVar6 = HoloTy::NextFas(this_02->field_1F2F), iVar6 != 0)) {
       local_8 = 0;
     }
-    if ((g_startSystem_0081176C->field_02E6 != (MMsgTy *)0x0) &&
+    if ((g_startSystem_0081176C->field_02E6 != nullptr) &&
        (g_startSystem_0081176C->field_02E6->field_0065 != '\x01')) {
       local_8 = 0;
     }
@@ -208,25 +208,25 @@ void __thiscall FSGSTy::NoneFSGS(FSGSTy *this,int param_1)
     puVar8 = (undefined4 *)((byte *)puVar8 + 0x18);
     this_00 = this_02->field_1F2B;
     *(undefined2 *)puVar8 = 0;
-    if (this_00 != (HoloTy *)0x0) {
+    if (this_00 != nullptr) {
       HoloTy::Done(this_00);
       Library::MSVCRT::FUN_0072e2b0(this_02->field_1F2B);
-      this_02->field_1F2B = (HoloTy *)0x0;
+      this_02->field_1F2B = nullptr;
     }
-    if (this_02->field_1F23 != (HoloTy *)0x0) {
+    if (this_02->field_1F23 != nullptr) {
       HoloTy::Done(this_02->field_1F23);
       Library::MSVCRT::FUN_0072e2b0(this_02->field_1F23);
-      this_02->field_1F23 = (HoloTy *)0x0;
+      this_02->field_1F23 = nullptr;
     }
-    if (this_02->field_1F27 != (HoloTy *)0x0) {
+    if (this_02->field_1F27 != nullptr) {
       HoloTy::Done(this_02->field_1F27);
       Library::MSVCRT::FUN_0072e2b0(this_02->field_1F27);
-      this_02->field_1F27 = (HoloTy *)0x0;
+      this_02->field_1F27 = nullptr;
     }
-    if (this_02->field_1F2F != (HoloTy *)0x0) {
+    if (this_02->field_1F2F != nullptr) {
       HoloTy::Done(this_02->field_1F2F);
       Library::MSVCRT::FUN_0072e2b0(this_02->field_1F2F);
-      this_02->field_1F2F = (HoloTy *)0x0;
+      this_02->field_1F2F = nullptr;
     }
     switch(this_02->field_0065) {
     case CASE_6:
@@ -268,7 +268,7 @@ void __thiscall FSGSTy::NoneFSGS(FSGSTy *this,int param_1)
       break;
     case CASE_8:
       CFsgsConnection::RequestGameList
-                ((CFsgsConnection *)&DAT_00802a90,this_02->field_1EC2,(char *)0x0);
+                ((CFsgsConnection *)&DAT_00802a90,this_02->field_1EC2,nullptr);
       DVar5 = timeGetTime();
       this_02->field_1A63 = DVar5;
       pCVar4 = g_cursorClass_00802A30;
@@ -279,7 +279,7 @@ void __thiscall FSGSTy::NoneFSGS(FSGSTy *this,int param_1)
       pCVar4 = g_cursorClass_00802A30;
 joined_r0x00597872:
       g_cursorClass_00802A30 = pCVar4;
-      if (pCVar4 != (CursorClassTy *)0x0) {
+      if (pCVar4 != nullptr) {
         pCVar4->field_0493 = CASE_5;
         pCVar4->field_0494 = 0xffff;
         CursorClassTy::SetGCType(pCVar4,CASE_0,pCVar4->field_00C5,pCVar4->field_00C9);
@@ -289,7 +289,7 @@ joined_r0x00597872:
       }
       break;
     case CASE_A:
-      if (this_02->field_1B0C != (byte *)0x0) {
+      if (this_02->field_1B0C != nullptr) {
         local_64 = "Profile\\Age";
         local_60 = "Profile\\Sex";
         local_5c = "Profile\\Location";
@@ -312,14 +312,14 @@ joined_r0x00597872:
       }
     }
     this_01 = this_02->field_1A5B->field_02E6;
-    if (this_01 != (MMsgTy *)0x0) {
+    if (this_01 != nullptr) {
       MMsgTy::StatePanel(this_01,(int)&local_24);
       g_currentExceptionFrame = local_a8.previous;
       return;
     }
     break;
   case CASE_4:
-    if (local_28->field_1F23 != (HoloTy *)0x0) {
+    if (local_28->field_1F23 != nullptr) {
       iVar6 = HoloTy::NextFas(local_28->field_1F23);
       if (iVar6 == 0) {
         uVar15 = *(uint *)&this_02->field_1F23->field_0x3;
@@ -331,7 +331,7 @@ joined_r0x00597872:
         local_8 = 0;
       }
     }
-    if (this_02->field_1F27 != (HoloTy *)0x0) {
+    if (this_02->field_1F27 != nullptr) {
       iVar6 = HoloTy::NextFas(this_02->field_1F27);
       if (iVar6 == 0) {
         uVar15 = *(uint *)&this_02->field_1F27->field_0x3;
@@ -343,7 +343,7 @@ joined_r0x00597872:
         local_8 = 0;
       }
     }
-    if (this_02->field_1F2B != (HoloTy *)0x0) {
+    if (this_02->field_1F2B != nullptr) {
       iVar6 = HoloTy::NextFas(this_02->field_1F2B);
       if (iVar6 == 0) {
         uVar15 = *(uint *)&this_02->field_1F2B->field_0x3;
@@ -355,7 +355,7 @@ joined_r0x00597872:
         local_8 = 0;
       }
     }
-    if (this_02->field_1F2F != (HoloTy *)0x0) {
+    if (this_02->field_1F2F != nullptr) {
       iVar6 = HoloTy::NextFas(this_02->field_1F2F);
       if (iVar6 == 0) {
         uVar15 = *(uint *)&this_02->field_1F2F->field_0x3;
@@ -398,12 +398,12 @@ joined_r0x00597872:
       local_8 = 0;
     }
     pCVar4 = g_cursorClass_00802A30;
-    if ((g_startSystem_0081176C->field_02E6 != (MMsgTy *)0x0) &&
+    if ((g_startSystem_0081176C->field_02E6 != nullptr) &&
        (g_startSystem_0081176C->field_02E6->field_0065 != '\x02')) {
       local_8 = 0;
     }
     if (local_8 != 0) {
-      if (g_cursorClass_00802A30 != (CursorClassTy *)0x0) {
+      if (g_cursorClass_00802A30 != nullptr) {
         iVar6 = g_cursorClass_00802A30->field_00C9;
         iVar12 = g_cursorClass_00802A30->field_00C5;
         g_cursorClass_00802A30->field_0493 = CASE_1;

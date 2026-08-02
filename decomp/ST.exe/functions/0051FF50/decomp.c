@@ -68,12 +68,12 @@ void __thiscall InfocPanelTy::InitInfocPanel(InfocPanelTy *this)
               ((SpecPanelTy *)this_00,pCVar3,iVar6,uVar8,iVar9,iVar12,UVar13,uVar14,uVar15);
     puVar4 = Library::Ourlib::MFRLOAD::mfRLoad
                        (DAT_00806794,CASE_B,"BUT_CHPLAYER",0xffffffff,0,1,0,
-                        (undefined4 *)0x0);
+                        nullptr);
     this_00->field_03C4 = puVar4;
     puVar4 = Library::Ourlib::MFRLOAD::mfRLoad
-                       (DAT_00806794,CASE_B,"GAME_ALLY",0xffffffff,0,1,0,(undefined4 *)0x0);
+                       (DAT_00806794,CASE_B,"GAME_ALLY",0xffffffff,0,1,0,nullptr);
     this_00->field_03C8 = puVar4;
-    puVar16 = (undefined4 *)0x0;
+    puVar16 = nullptr;
     iVar9 = 0;
     iVar6 = 1;
     bVar11 = 0;
@@ -122,7 +122,7 @@ void __thiscall InfocPanelTy::InitInfocPanel(InfocPanelTy *this)
     local_18 = 1;
     local_3c = local_5c;
     (*this_00->field_000C->vtable->CreateObject)
-              ((SystemClassTy *)this_00->field_000C,5,&this_00->field_03D0,(int *)0x0,local_6c,0);
+              ((SystemClassTy *)this_00->field_000C,5,&this_00->field_03D0,nullptr,local_6c,0);
     this_00->field_02D4 = 0x56;
     this_00->field_02D8 = 0x17;
     this_00->field_02DC = 0x31;

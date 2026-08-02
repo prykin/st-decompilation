@@ -52,7 +52,7 @@ undefined4 FUN_006a5210(void)
     return 0;
   }
   do {
-    if (puVar3 == (undefined4 *)0x0) {
+    if (puVar3 == nullptr) {
       return local_c;
     }
     bVar2 = true;

@@ -56,8 +56,8 @@ AiTactClassTy::HelpOrganize(AiTactClassTy *this,AnonShape_00690650_F810CDF4 *par
   if (7 < bVar1) {
     return;
   }
-  if ((g_playSystem_00802A38 != (STPlaySystemC *)0x0) &&
-     (7 < (byte)(&DAT_008087e9)[(char)bVar1 * 0x51])) {
+  if ((g_playSystem_00802A38 != nullptr) &&
+     (7 < g_bulkInitializedRecords_008087C7[(char)bVar1].field_0022)) {
     return;
   }
   if ((int)(char)bVar1 == this->field_0024) {
@@ -67,7 +67,8 @@ AiTactClassTy::HelpOrganize(AiTactClassTy *this,AnonShape_00690650_F810CDF4 *par
   /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
   local_8 = CONCAT31(local_8._1_3_,bVar2);
   if (DAT_00808a8f != '\0') {
-    bVar13 = (&DAT_008087ea)[(uint)bVar2 * 0x51] != (&DAT_008087ea)[(uint)bVar1 * 0x51];
+    bVar13 = g_bulkInitializedRecords_008087C7[bVar2].field_0023 !=
+             g_bulkInitializedRecords_008087C7[bVar1].field_0023;
     goto LAB_00690763;
   }
   if (bVar1 == bVar2) {
@@ -99,15 +100,15 @@ LAB_00690763:
     iVar6 = Library::MSVCRT::__setjmp3(local_98.jumpBuffer,0);
     this_01 = local_c;
     if (iVar6 == 0) {
-      if (g_allPlayers_007FA174 == (STAllPlayersC *)0x0) {
-        pSVar7 = (STGameObjC *)0x0;
+      if (g_allPlayers_007FA174 == nullptr) {
+        pSVar7 = nullptr;
       }
       else {
         pSVar7 = STAllPlayersC::GetObjPtr
                            (g_allPlayers_007FA174,*(char *)&local_c->field_0024,(ushort)local_10,
                             CASE_1);
       }
-      if ((pSVar7 != (STGameObjC *)0x0) &&
+      if ((pSVar7 != nullptr) &&
          (iVar6 = sub_0068E290(this_01,pSVar7->field_0030), iVar6 != 0)) {
         if (*(short *)(iVar6 + 0x7b) == 1) {
           sVar5 = (short)local_10;
@@ -126,10 +127,10 @@ LAB_00690763:
                 element_00a5 = DArrayAt<AiTactClassTy_field_00A5Element>(pAVar9, local_8);
               }
               else {
-                element_00a5 = (AiTactClassTy_field_00A5Element *)0x0;
+                element_00a5 = nullptr;
               }
-              if (((undefined4 *)element_00a5 != (undefined4 *)0x0) &&
-                 (this_00 = element_00a5->field_0004, this_00 != (AiFltClassTy *)0x0)) {
+              if (((undefined4 *)element_00a5 != nullptr) &&
+                 (this_00 = element_00a5->field_0004, this_00 != nullptr)) {
                 memset(local_54, 0, 0x34); /* compiler bulk-zero initialization */
                 local_54[0] = 100;
                 local_4b = 1;

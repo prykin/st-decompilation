@@ -25,10 +25,10 @@ void __thiscall AiTactClassTy::ClaimSave(AiTactClassTy *this)
   pAVar2 = local_8;
   if (errorCode == 0) {
     value = &local_8->field_0130;
-    if (local_8->field_0130 != (void *)0x0) {
+    if (local_8->field_0130 != nullptr) {
       FreeAndNull(value);
     }
-    if (pAVar2->field_00BD != (AiTactClassTy_field_00BDDArray *)0x0) {
+    if (pAVar2->field_00BD != nullptr) {
       pvVar3 = (void *)FUN_006b0020(&pAVar2->field_00BD->flags,&local_c);
       *value = pvVar3;
     }

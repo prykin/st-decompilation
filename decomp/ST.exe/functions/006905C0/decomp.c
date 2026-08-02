@@ -16,7 +16,7 @@ uint __thiscall FUN_006905c0(void *this,short param_1)
     do {
       if (((bVar5) &&
           (psVar4 = (short *)(*(int *)(iVar1 + 8) * uVar3 + *(int *)(iVar1 + 0x1c)),
-          psVar4 != (short *)0x0)) && (param_1 == *psVar4)) {
+          psVar4 != nullptr)) && (param_1 == *psVar4)) {
         return uVar3;
       }
       uVar3 = uVar3 + 1;

@@ -61,7 +61,7 @@ PanelTy::CreateBut(PanelTy *this,undefined4 param_1,int param_2,int param_3,int 
   ushort *local_c;
   undefined4 local_8;
 
-  local_c = (ushort *)0x0;
+  local_c = nullptr;
   local_8 = 0;
   local_1d0.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_1d0;
@@ -73,7 +73,7 @@ PanelTy::CreateBut(PanelTy *this,undefined4 param_1,int param_2,int param_3,int 
     local_18c[1] = param_1;
     local_18c[0] = param_2;
     wsprintfA(&pPVar2->field_006C,"%s0",param_8);
-    local_c = cMf32::RecGet(g_cMf32_00806790,param_7,&pPVar2->field_006C,(int *)0x0,1);
+    local_c = cMf32::RecGet(g_cMf32_00806790,param_7,&pPVar2->field_006C,nullptr,1);
     local_17c = *(undefined4 *)(local_c + 2);
     local_178 = *(undefined4 *)(local_c + 4);
     if ((param_5 == 0) || (local_18c[2] = g_nWidth_00806730, pPVar2->field_005C != 0)) {
@@ -114,7 +114,7 @@ PanelTy::CreateBut(PanelTy *this,undefined4 param_1,int param_2,int param_3,int 
     }
     local_14c = local_16c;
     local_12c = local_16c;
-    if (param_14 != (char *)0x0) {
+    if (param_14 != nullptr) {
       local_68 = FUN_0070aa70(g_cMf32_00806790,param_14,0,1);
       local_64 = Library::Ourlib::MFIMG::mfImgGetWidth(g_cMf32_00806790,0x12,param_14,1);
     }

@@ -53,7 +53,7 @@ FUN_00660700(void *this,short param_1,short param_2,short param_3,int param_4,in
     this_00 = g_worldGrid.cells
               [(int)g_worldGrid.planeStride * (int)local_c + (int)g_worldGrid.sizeX * (int)sVar3 +
                (int)sVar1].objects[0];
-    if (this_00 == (STWorldObject *)0x0) {
+    if (this_00 == nullptr) {
       return 0xffffffff;
     }
     iVar2 = this_00->GetObjectTypeId();
@@ -77,9 +77,9 @@ FUN_00660700(void *this,short param_1,short param_2,short param_3,int param_4,in
       sStack_6 = param_3;
     }
   }
-  if (((*(ushort *)((int)this + 0x7d) != 0xfffe) && (g_allPlayers_007FA174 != (STAllPlayersC *)0x0))
+  if (((*(ushort *)((int)this + 0x7d) != 0xfffe) && (g_allPlayers_007FA174 != nullptr))
      && (this_01 = thunk_FUN_0042b760(*(char *)((int)this + 0x24),*(ushort *)((int)this + 0x7d)),
-        this_01 != (STGroupBoatC *)0x0)) {
+        this_01 != nullptr)) {
     this_01->sub_00498D20(0x10,&local_14);
     return 0;
   }

@@ -8,9 +8,7 @@ void FUN_004a8f20(int param_1)
 
   if (param_1 == 1) {
     ST3DSMAPContext::sub_006DD610
-              (g_sT3DSMAPContext_00807598,DAT_008073fc,SUB84((double)DAT_008073d0,0),
-               (int)((ulonglong)(double)DAT_008073d0 >> 0x20),SUB84((double)_DAT_008073d4,0),
-               (int)((ulonglong)(double)_DAT_008073d4 >> 0x20));
+              (g_sT3DSMAPContext_00807598,DAT_008073fc,(double)DAT_008073d0,(double)_DAT_008073d4);
     DAT_008073d0 = (float)g_sT3DSMAPContext_00807598->field_0098;
     _DAT_008073d4 = (float)g_sT3DSMAPContext_00807598->field_00A0;
     lVar1 = Library::MSVCRT::__ftol();

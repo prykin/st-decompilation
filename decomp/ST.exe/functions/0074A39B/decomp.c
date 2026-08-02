@@ -21,7 +21,7 @@ undefined4 __thiscall FUN_0074a39b(void *this,int *param_1)
     EnterCriticalSection(lpCriticalSection_00);
     if (((*(int *)((int)this + 0x6c) == 0) && (*(int *)((int)this + 0x70) == 0)) &&
        (*(int *)((int)this + 0x60) == 0)) {
-      if (*(void **)((int)this + 0x50) != (void *)0x0) {
+      if (*(void **)((int)this + 0x50) != nullptr) {
         FUN_0074ef87(*(void **)((int)this + 0x50),param_1);
       }
       /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */

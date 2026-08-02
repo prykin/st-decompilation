@@ -51,7 +51,7 @@ int __thiscall STBoatC::Defence(STBoatC *this,int param_1)
     this->field_0475 = this->field_0047;
     this->field_0477 = this->field_0049;
     this->field_0479 = this->field_004B;
-    this->field_047B = (DArrayTy *)0x0;
+    this->field_047B = nullptr;
     this->field_0487 = 0xffffffff;
     this->field_048B = 0xffff;
     this->field_082E = 0xffffffff;
@@ -452,7 +452,7 @@ switchD_0046166b_caseD_2:
       do {
         if (iVar9 < 1) break;
         DArrayGetElement(g_array_007FA130,uVar10,&local_20);
-        if (local_20 != (STTorpC *)0x0) {
+        if (local_20 != nullptr) {
           iVar9 = iVar9 + -1;
           STFishC::sub_004162B0((STFishC *)local_20,(short *)((int)&local_10 + 2),&local_c,&local_a);
           /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */

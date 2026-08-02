@@ -20,7 +20,7 @@ undefined4 __fastcall FUN_0060a4b0(AnonShape_0060A4B0_7BF9A20C *param_1)
   int local_8;
 
   local_18 = 0;
-  if (param_1->field_0234 != (AnonNested_0060A4B0_0234_BD227FFA *)0x0) {
+  if (param_1->field_0234 != nullptr) {
     iVar1 = param_1->field_0234->field_000C;
     local_14 = 0;
     local_10 = param_1;
@@ -32,7 +32,7 @@ undefined4 __fastcall FUN_0060a4b0(AnonShape_0060A4B0_7BF9A20C *param_1)
              (iVar7 = pAVar2->field_0008 * local_14 + pAVar2->field_001C, iVar7 != 0)) &&
             (-1 < *(int *)(iVar7 + 0x3c))) && (*(int *)(iVar7 + 4) != -1)) {
           local_c = 1;
-          if (g_visibleClass_00802A88 != (VisibleClassTy *)0x0) {
+          if (g_visibleClass_00802A88 != nullptr) {
             iVar6 = *(int *)(iVar7 + 0x14);
             sVar3 = (short)(iVar6 >> 0x1f);
             if (iVar6 < 0) {
@@ -69,7 +69,7 @@ undefined4 __fastcall FUN_0060a4b0(AnonShape_0060A4B0_7BF9A20C *param_1)
                              ,&local_1c,&local_20), local_8 < 0 || ((4 < local_8 || (local_1c < 0)))
                  ))) || ((pVVar4->field_0030 <= local_1c ||
                          ((((iVar6 = g_centeredOffsets5[local_8] + local_20, iVar6 < 0 ||
-                            (pVVar4->field_0034 <= iVar6)) || (pVVar4->field_004C == (byte *)0x0))
+                            (pVVar4->field_0034 <= iVar6)) || (pVVar4->field_004C == nullptr))
                           || (pVVar4->field_004C[local_1c + iVar6 * pVVar4->field_0030] != 0)))))) {
               if (*(int *)(iVar7 + 4) == 0) {
                 Library::Ourlib::ST3DSMAP::SprShow

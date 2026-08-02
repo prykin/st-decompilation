@@ -13,7 +13,7 @@ uint __fastcall FUN_006b5a50(DArrayTy *param_1,AnonShape_006B5A50_BD82F60D *para
   char *pcVar3;
   bool bVar4;
 
-  if ((param_1 == (DArrayTy *)0x0) || (param_2 == (AnonShape_006B5A50_BD82F60D *)0x0)) {
+  if ((param_1 == nullptr) || (param_2 == nullptr)) {
     return 0xffffffcc;
   }
   if (param_1->elementSize != param_2->field_0008) {

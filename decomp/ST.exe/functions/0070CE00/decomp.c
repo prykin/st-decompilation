@@ -12,6 +12,6 @@ uint * __cdecl FUN_0070ce00(uint *param_1,char *param_2)
     param_2[1] = cVar1;
     return puVar2;
   }
-  return (uint *)0x0;
+  return nullptr;
 }
 

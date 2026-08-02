@@ -28,8 +28,8 @@ int __thiscall STColl3C::sub_005F68B0(STColl3C *this,undefined4 *param_1)
   uint local_c;
   undefined4 *local_8;
 
-  if (this == (STColl3C *)0x0) {
-    puVar8 = (byte *)0x0;
+  if (this == nullptr) {
+    puVar8 = nullptr;
   }
   else {
     puVar8 = (byte *)&this->field_0x231;
@@ -61,7 +61,7 @@ int __thiscall STColl3C::sub_005F68B0(STColl3C *this,undefined4 *param_1)
   STAllPlayersC::RestoreGObjData((STAllPlayersC *)this,piVar7 + 1);
   puVar8 = (byte *)((int)(piVar7 + 1) + *piVar7);
   iVar3 = iVar3 + 0xca + *piVar7;
-  if (this->field_02E6 == (ushort *)0x0) {
+  if (this->field_02E6 == nullptr) {
     return iVar3;
   }
   local_8 = puVar8;

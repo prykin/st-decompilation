@@ -146,7 +146,7 @@ int __thiscall STRubbishC::GetMessage(STRubbishC *this,STMessage *message)
       if ((((sVar1 < 0) || (g_worldGrid.sizeX <= sVar1)) ||
           ((sVar3 < 0 || ((g_worldGrid.sizeY <= sVar3 || (sVar2 < 0)))))) ||
          (g_worldGrid.sizeZ <= sVar2)) {
-        pSVar7 = (STWorldObject *)0x0;
+        pSVar7 = nullptr;
       }
       else {
         pSVar7 = g_worldGrid.cells
@@ -154,7 +154,7 @@ int __thiscall STRubbishC::GetMessage(STRubbishC *this,STMessage *message)
                   (int)sVar1].objects[1];
         pAVar10 = (AnonShape_0062FA80_0B91B2B9 *)local_8;
       }
-      if ((pSVar7 == (STWorldObject *)0x0) &&
+      if ((pSVar7 == nullptr) &&
          (iVar6 = DumpClassC::WritePtr
                             ((short)*(undefined4 *)&this_00->field_0x1d5,
                              (short)*(undefined4 *)&this_00->field_0x1d9,

@@ -12,7 +12,7 @@ void __fastcall FUN_004ad310(STT3DSprC *param_1)
     } while (iVar1 < param_1->field_0014);
   }
   Library::Ourlib::ST3DSMAP::SprClose(param_1->field_003C,param_1->field_0018);
-  if (param_1->field_0020 != (AnonPointee_STT3DSprC_0020 *)0x0) {
+  if (param_1->field_0020 != nullptr) {
     FreeAndNull(&param_1->field_0020);
   }
   return;

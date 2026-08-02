@@ -34,7 +34,7 @@ STBoatC::SetNewMD(STBoatC *this,int param_1,short param_2,short param_3,short pa
         ((in_EAX = g_worldGrid.cells
                    [(int)g_worldGrid.planeStride * (int)param_4 +
                     (int)g_worldGrid.sizeX * (int)param_3 + (int)param_2].objects[0],
-         in_EAX == (STWorldObject *)0x0 || (*(int *)&in_EAX->field_0x18 != param_5)))))))))) {
+         in_EAX == nullptr || (*(int *)&in_EAX->field_0x18 != param_5)))))))))) {
     iVar7 = ReportDebugMessage("E:\\__titans\\wlad\\To_boat.cpp",0x4bcc,0,0,"%s",
                                "STBoatC::SetNewMD");
     if (iVar7 != 0) {
@@ -61,7 +61,7 @@ STBoatC::SetNewMD(STBoatC *this,int param_1,short param_2,short param_3,short pa
         pSVar4 = g_worldGrid.cells
                  [(int)g_worldGrid.planeStride * (int)sVar2 + (int)g_worldGrid.sizeX * (int)sVar3 +
                   iVar7].objects[0];
-        if (pSVar4 != (STWorldObject *)0x0) {
+        if (pSVar4 != nullptr) {
           thunk_FUN_004e18e0(pSVar4,this->field_0018);
           iVar7 = thunk_FUN_004e1690(pSVar4,this->field_0018);
         }
@@ -89,7 +89,7 @@ STBoatC::SetNewMD(STBoatC *this,int param_1,short param_2,short param_3,short pa
       pSVar4 = g_worldGrid.cells
                [(int)g_worldGrid.planeStride * (int)sVar2 + (int)g_worldGrid.sizeX * (int)sVar3 +
                 iVar7].objects[0];
-      if (pSVar4 != (STWorldObject *)0x0) {
+      if (pSVar4 != nullptr) {
         thunk_FUN_004e18e0(pSVar4,this->field_0018);
         iVar7 = thunk_FUN_004e1690(pSVar4,this->field_0018);
       }

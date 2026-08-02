@@ -26,7 +26,7 @@ void __cdecl FUN_005252c0(Global_sub_005252C0_param_1Enum param_1)
         local_8 = 1;
       }
       SoundClassTy::PlaySound
-                ((SoundClassTy *)&g_sound,SOUND_MODE_5,(char *)0x0,param_1,(SoundPosition *)0x0,
+                ((SoundClassTy *)&g_sound,SOUND_MODE_5,nullptr,param_1,nullptr,
                  local_8);
       g_currentExceptionFrame = local_4c.previous;
       return;

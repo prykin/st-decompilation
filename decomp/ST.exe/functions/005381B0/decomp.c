@@ -46,7 +46,7 @@ void __thiscall PanelTy::InitPanel(PanelTy *this)
       *(undefined1 *)puVar4 = 0xff;
       puVar4 = (undefined4 *)((int)puVar4 + 1);
     }
-    FUN_006b1a50(g_ddxContext_008075A8,3,(undefined4 *)0x0,(undefined4 *)&this_00->field_0x4c);
+    FUN_006b1a50(g_ddxContext_008075A8,3,nullptr,(undefined4 *)&this_00->field_0x4c);
     puVar4 = &this_00->field_0060;
     FUN_006b2330(g_ddxContext_008075A8,puVar4,this_00->field_0064,0x4057ea,this_00->field_0040,
                  this_00->field_0048,(ushort *)this_00->field_0068);

@@ -92,11 +92,11 @@ int __thiscall STCrabC::GetMessage(STCrabC *this,STMessage *message)
     local_14 = STT3DSprC::SaveSpr((STT3DSprC *)&this_00->field_01D5,&local_8);
     local_18 = (byte *)STAllPlayersC::SaveGObjData((STAllPlayersC *)this_00,(int *)&local_10);
     local_c = Library::DKW::LIB::MemAlloc(local_10 + 0x68 + local_8);
-    if (local_14 == (STSprGameObjC_field_0259State *)0x0) {
+    if (local_14 == nullptr) {
       g_currentExceptionFrame = local_80.previous;
       return 0;
     }
-    if (local_c == (STSprGameObjC_field_0259State *)0x0) {
+    if (local_c == nullptr) {
       g_currentExceptionFrame = local_80.previous;
       return 0;
     }
@@ -345,7 +345,7 @@ cf_error_exit_00578B5D:
     this_00->field_0x6d = bVar4;
     *(STSprGameObjC_field_0259State *)&this_00->field_0x23d = local_20[0xc];
     local_3c = Library::DKW::LIB::MemAlloc(0x44);
-    if (local_3c != (void *)0x0) {
+    if (local_3c != nullptr) {
       iVar7 = 0;
       do {
         *(int **)(iVar7 + (int)local_3c) = DAT_0080676c;

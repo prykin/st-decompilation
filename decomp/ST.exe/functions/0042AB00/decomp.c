@@ -26,9 +26,9 @@ STAllPlayersC::GetGObjFromZone
   local_8 = this;
   errorCode = Library::MSVCRT::__setjmp3(local_4c.jumpBuffer,0);
   if (errorCode == 0) {
-    GetGObjFromZone2(local_8,param_1,param_2,param_3,param_4,param_5,param_6,(int *)0x0,(int *)0x0,
-                     param_7,(int *)0x0,(int *)0x0,(int *)0x0,(int *)0x0,(int *)0x0,(int *)0x0,
-                     (int *)0x0,(int *)0x0);
+    GetGObjFromZone2(local_8,param_1,param_2,param_3,param_4,param_5,param_6,nullptr,nullptr,
+                     param_7,nullptr,nullptr,nullptr,nullptr,nullptr,nullptr,
+                     nullptr,nullptr);
     g_currentExceptionFrame = local_4c.previous;
     return;
   }

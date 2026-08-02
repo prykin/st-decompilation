@@ -16,7 +16,7 @@ void FUN_006d14c0(ushort *param_1,int param_2,int param_3,uint *param_4)
   int local_8;
 
   /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
-  if (param_4 == (uint *)0x0) {
+  if (param_4 == nullptr) {
     local_10 = 0x1f;
     local_18 = 0x7c00;
     local_14 = 0x3e0;

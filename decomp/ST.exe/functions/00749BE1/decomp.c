@@ -14,10 +14,10 @@ undefined4 __thiscall FUN_00749be1(void *this,undefined4 param_1,undefined4 para
   EnterCriticalSection(lpCriticalSection);
   iVar2 = *(int *)((int)this + 0x50);
   if (iVar2 == 0) {
-    local_8 = (void *)0x0;
+    local_8 = nullptr;
     this_00 = (void *)Library::MSVCRT::FUN_0072e530(0x50);
-    if (this_00 == (void *)0x0) {
-      puVar3 = (undefined4 *)0x0;
+    if (this_00 == nullptr) {
+      puVar3 = nullptr;
     }
     else {
       /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
@@ -27,12 +27,12 @@ undefined4 __thiscall FUN_00749be1(void *this,undefined4 param_1,undefined4 para
                             -(uint)(iVar2 != 0) & iVar2 + 0xcU);
     }
     *(undefined4 **)((int)this + 0x50) = puVar3;
-    if (puVar3 == (undefined4 *)0x0) {
+    if (puVar3 == nullptr) {
       LeaveCriticalSection(lpCriticalSection);
       return 0x8007000e;
     }
     if ((int)local_8 < 0) {
-      if (puVar3 != (undefined4 *)0x0) {
+      if (puVar3 != nullptr) {
         /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
         (**(code **)(puVar3[2] + 0xc))(1);
       }

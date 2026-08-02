@@ -37,7 +37,7 @@ void __thiscall ChooseMapTy::DeleteCtrls(ChooseMapTy *this)
     RaiseInternalException(iVar3,0,"E:\\__titans\\Start\\load_obj.cpp",0x3ea);
     return;
   }
-  if (g_cursorClass_00802A30 != (CursorClassTy *)0x0) {
+  if (g_cursorClass_00802A30 != nullptr) {
     if (g_cursorClass_00802A30->field_00A9 == 0) {
       Library::DKW::DDX::FUN_006b8b10((int *)g_cursorClass_00802A30->field_00AD);
     }
@@ -54,28 +54,28 @@ void __thiscall ChooseMapTy::DeleteCtrls(ChooseMapTy *this)
   FUN_006b3af0((int *)g_ddxContext_008075A8,this_00->field_1C87);
   FUN_006b5f80((int *)g_ddxContext_008075A8,0x112,0x38,0x204,0x19d);
   MMMObjTy::OutBSlProc
-            ((MMMObjTy *)g_dDXContext_0080759C,(int)g_dDXContext_0080759C,(MMMObjTy *)0x0,
-             (MMMObjTy *)0x0,0x112,0x38,0x204,0x19d,&this_00->field_1A5B->field_0140);
+            ((MMMObjTy *)g_dDXContext_0080759C,(int)g_dDXContext_0080759C,nullptr,
+             nullptr,0x112,0x38,0x204,0x19d,&this_00->field_1A5B->field_0140);
   if (this_00->field_1A6C != 0) {
     StartSystemTy::sub_006E56B0(this_00->field_000C,this_00->field_1A6C);
   }
   this_00->field_1A6C = 0;
-  if (this_00->field_20B8 != (HoloTy *)0x0) {
+  if (this_00->field_20B8 != nullptr) {
     HoloTy::Done(this_00->field_20B8);
     Library::MSVCRT::FUN_0072e2b0(this_00->field_20B8);
-    this_00->field_20B8 = (HoloTy *)0x0;
+    this_00->field_20B8 = nullptr;
   }
   pHVar4 = (HoloTy *)Library::MSVCRT::FUN_0072e530(0x33);
-  if (pHVar4 == (HoloTy *)0x0) {
-    pHVar4 = (HoloTy *)0x0;
+  if (pHVar4 == nullptr) {
+    pHVar4 = nullptr;
   }
   else {
     pHVar4->field_0002 = 1;
     pHVar4->field_0000 = 0;
     *(undefined4 *)&pHVar4->field_0x3 = 0xffffffff;
     pHVar4->field_0001 = CASE_2;
-    pHVar4->field_0007 = (void *)0x0;
-    pHVar4->field_000B = (void *)0x0;
+    pHVar4->field_0007 = nullptr;
+    pHVar4->field_000B = nullptr;
     pHVar4->field_000F = 0;
     *(undefined4 *)&pHVar4->field_0x1b = 1;
     pHVar4->field_0013 = 1;
@@ -86,7 +86,7 @@ void __thiscall ChooseMapTy::DeleteCtrls(ChooseMapTy *this)
     pHVar4->field_002B = 1;
   }
   this_00->field_20B8 = pHVar4;
-  if (pHVar4 != (HoloTy *)0x0) {
+  if (pHVar4 != nullptr) {
     uVar10 = 0;
     cVar9 = '\x01';
     bVar8 = 0x10;
@@ -134,27 +134,27 @@ void __thiscall ChooseMapTy::DeleteCtrls(ChooseMapTy *this)
     g_startSystem_0081176C->field_0389 = 0;
     pAVar1 = (AnonShape_006B5B10_E0D06CF1 *)g_startSystem_0081176C->field_0544;
     FUN_006b4170(pAVar1,0,0,0,pAVar1->field_0004,pAVar1->field_0008,0xff);
-    if ((DArrayTy *)g_startSystem_0081176C->field_0548 != (DArrayTy *)0x0) {
+    if ((DArrayTy *)g_startSystem_0081176C->field_0548 != nullptr) {
       FUN_006b5570((DArrayTy *)g_startSystem_0081176C->field_0548);
     }
-    pDVar5 = Library::DKW::TBL::SArrayCreate((DArrayTy *)0x0,10,10);
+    pDVar5 = Library::DKW::TBL::SArrayCreate(nullptr,10,10);
     g_startSystem_0081176C->field_0548 = &pDVar5->flags;
-    if (this_00->field_20BC != (HoloTy *)0x0) {
+    if (this_00->field_20BC != nullptr) {
       HoloTy::Done(this_00->field_20BC);
       Library::MSVCRT::FUN_0072e2b0(this_00->field_20BC);
-      this_00->field_20BC = (HoloTy *)0x0;
+      this_00->field_20BC = nullptr;
     }
     pHVar4 = (HoloTy *)Library::MSVCRT::FUN_0072e530(0x33);
-    if (pHVar4 == (HoloTy *)0x0) {
-      pHVar4 = (HoloTy *)0x0;
+    if (pHVar4 == nullptr) {
+      pHVar4 = nullptr;
     }
     else {
       pHVar4->field_0002 = 1;
       pHVar4->field_0000 = 0;
       *(undefined4 *)&pHVar4->field_0x3 = 0xffffffff;
       pHVar4->field_0001 = CASE_2;
-      pHVar4->field_0007 = (void *)0x0;
-      pHVar4->field_000B = (void *)0x0;
+      pHVar4->field_0007 = nullptr;
+      pHVar4->field_000B = nullptr;
       pHVar4->field_000F = 0;
       *(undefined4 *)&pHVar4->field_0x1b = 1;
       pHVar4->field_0013 = 1;
@@ -165,7 +165,7 @@ void __thiscall ChooseMapTy::DeleteCtrls(ChooseMapTy *this)
       pHVar4->field_002B = 1;
     }
     this_00->field_20BC = pHVar4;
-    if (pHVar4 != (HoloTy *)0x0) {
+    if (pHVar4 != nullptr) {
       uVar10 = 0;
       cVar9 = '\x01';
       bVar8 = 0x10;
@@ -217,22 +217,22 @@ void __thiscall ChooseMapTy::DeleteCtrls(ChooseMapTy *this)
       StartSystemTy::sub_006E56B0(this_00->field_000C,g_startSystem_0081176C->field_0550);
       g_startSystem_0081176C->field_0550 = 0;
     }
-    if (this_00->field_20C0 != (HoloTy *)0x0) {
+    if (this_00->field_20C0 != nullptr) {
       HoloTy::Done(this_00->field_20C0);
       Library::MSVCRT::FUN_0072e2b0(this_00->field_20C0);
-      this_00->field_20C0 = (HoloTy *)0x0;
+      this_00->field_20C0 = nullptr;
     }
     pHVar4 = (HoloTy *)Library::MSVCRT::FUN_0072e530(0x33);
-    if (pHVar4 == (HoloTy *)0x0) {
-      pHVar4 = (HoloTy *)0x0;
+    if (pHVar4 == nullptr) {
+      pHVar4 = nullptr;
     }
     else {
       pHVar4->field_0002 = 1;
       pHVar4->field_0000 = 0;
       *(undefined4 *)&pHVar4->field_0x3 = 0xffffffff;
       pHVar4->field_0001 = CASE_2;
-      pHVar4->field_0007 = (void *)0x0;
-      pHVar4->field_000B = (void *)0x0;
+      pHVar4->field_0007 = nullptr;
+      pHVar4->field_000B = nullptr;
       pHVar4->field_000F = 0;
       *(undefined4 *)&pHVar4->field_0x1b = 1;
       pHVar4->field_0013 = 1;
@@ -243,7 +243,7 @@ void __thiscall ChooseMapTy::DeleteCtrls(ChooseMapTy *this)
       pHVar4->field_002B = 1;
     }
     this_00->field_20C0 = pHVar4;
-    if (pHVar4 != (HoloTy *)0x0) {
+    if (pHVar4 != nullptr) {
       uVar10 = 0;
       cVar9 = '\x01';
       bVar8 = 0x10;
@@ -273,7 +273,7 @@ void __thiscall ChooseMapTy::DeleteCtrls(ChooseMapTy *this)
       FUN_006b3af0((int *)g_startSystem_0081176C->field_0635,g_startSystem_0081176C->field_05F1);
     }
   }
-  if (g_cursorClass_00802A30 != (CursorClassTy *)0x0) {
+  if (g_cursorClass_00802A30 != nullptr) {
     if (g_cursorClass_00802A30->field_00A9 == 0) {
       Library::DKW::DDX::FUN_006b8a60((byte *)g_cursorClass_00802A30->field_00AD);
     }

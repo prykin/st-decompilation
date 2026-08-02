@@ -69,7 +69,7 @@ void __thiscall PrividerTy::NonePrivider(PrividerTy *this,undefined4 *param_1)
       g_currentExceptionFrame = local_a0.previous;
       return;
     }
-    local_10 = (short *)0x0;
+    local_10 = nullptr;
     if (local_20->field_1A6D == 0) {
       pcVar11 = local_c8;
       for (iVar8 = 9; iVar8 != 0; iVar8 = iVar8 + -1) {
@@ -90,7 +90,7 @@ void __thiscall PrividerTy::NonePrivider(PrividerTy *this,undefined4 *param_1)
       this_01->field_1A6D = 0;
     }
     iVar8 = Library::Ourlib::CONNECT::FUN_00715630
-                      (g_int_00811764,-1,&local_1c,&local_3c,&local_10,(uint *)0x0,-1,0);
+                      (g_int_00811764,-1,&local_1c,&local_3c,&local_10,nullptr,-1,0);
     psVar6 = local_10;
     pCVar5 = g_cursorClass_00802A30;
     if (iVar8 != -0x4d) {
@@ -155,7 +155,7 @@ void __thiscall PrividerTy::NonePrivider(PrividerTy *this,undefined4 *param_1)
               /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
               if ((*(char *)((int)psVar6 + 0xd) == '\0') ||
                  (((char)*local_18 == '\x01' && (*(char *)((int)psVar6 + 0xb) == '\x05')))) {
-                if (g_cursorClass_00802A30 != (CursorClassTy *)0x0) {
+                if (g_cursorClass_00802A30 != nullptr) {
                   iVar8 = g_cursorClass_00802A30->field_00C9;
                   iVar9 = g_cursorClass_00802A30->field_00C5;
                   g_cursorClass_00802A30->field_0493 = CASE_1;
@@ -181,12 +181,12 @@ void __thiscall PrividerTy::NonePrivider(PrividerTy *this,undefined4 *param_1)
             CloseButtons(this_01,'\x01');
             this_00 = this_01->field_1A5B->field_02E6;
 joined_r0x005bb4e0:
-            if (this_00 != (MMsgTy *)0x0) {
+            if (this_00 != nullptr) {
               MMsgTy::HidePanel(this_00,1,0,1);
             }
           }
           else {
-            if (g_cursorClass_00802A30 != (CursorClassTy *)0x0) {
+            if (g_cursorClass_00802A30 != nullptr) {
               iVar8 = g_cursorClass_00802A30->field_00C9;
               iVar9 = g_cursorClass_00802A30->field_00C5;
               g_cursorClass_00802A30->field_0493 = CASE_1;
@@ -200,13 +200,13 @@ joined_r0x005bb4e0:
             thunk_FUN_005dac60();
             UVar13 = 0x2526;
 LAB_005bb2c6:
-            MMsgTy::SetMessage(this_01->field_1A5B->field_02E6,UVar13,'\0',(undefined4 *)0x0,
-                               (undefined4 *)0x0,(undefined4 *)0x0,0,0);
+            MMsgTy::SetMessage(this_01->field_1A5B->field_02E6,UVar13,'\0',nullptr,
+                               nullptr,nullptr,0,0);
           }
         }
 LAB_005bb532:
         this_01->field_1A69 = this_01->field_0061;
-        if (local_10 != (short *)0x0) {
+        if (local_10 != nullptr) {
           FreeAndNull(&local_10);
           g_currentExceptionFrame = local_a0.previous;
           return;
@@ -225,8 +225,8 @@ LAB_005bb532:
     this_01->field_1A72 = 1;
     pCVar5 = g_cursorClass_00802A30;
     local_5c[4] = 0x6952;
-    if (pSVar3->field_02E6 != (MMsgTy *)0x0) {
-      if (g_cursorClass_00802A30 != (CursorClassTy *)0x0) {
+    if (pSVar3->field_02E6 != nullptr) {
+      if (g_cursorClass_00802A30 != nullptr) {
         iVar8 = g_cursorClass_00802A30->field_00C9;
         iVar9 = g_cursorClass_00802A30->field_00C5;
         g_cursorClass_00802A30->field_0493 = CASE_1;
@@ -238,36 +238,36 @@ LAB_005bb532:
       }
       local_5c[2] = this_01->field_0008;
       local_5c[3] = 2;
-      MMsgTy::SetMessage(this_01->field_1A5B->field_02E6,0x2525,'\0',local_5c,(undefined4 *)0x0,
-                         (undefined4 *)0x0,0,0);
+      MMsgTy::SetMessage(this_01->field_1A5B->field_02E6,0x2525,'\0',local_5c,nullptr,
+                         nullptr,0,0);
       g_currentExceptionFrame = local_a0.previous;
       return;
     }
     this_01->GetMessage((int)local_5c);
     break;
   case CASE_3:
-    if ((local_20->field_1C96 != (HoloTy *)0x0) &&
+    if ((local_20->field_1C96 != nullptr) &&
        (iVar8 = HoloTy::NextFas(local_20->field_1C96), iVar8 != 0)) {
       local_8 = 0;
     }
-    if ((this_01->field_1C9A != (HoloTy *)0x0) &&
+    if ((this_01->field_1C9A != nullptr) &&
        (iVar8 = HoloTy::NextFas(this_01->field_1C9A), iVar8 != 0)) {
       local_8 = 0;
     }
-    if ((g_startSystem_0081176C->field_02E6 != (MMsgTy *)0x0) &&
+    if ((g_startSystem_0081176C->field_02E6 != nullptr) &&
        (g_startSystem_0081176C->field_02E6->field_0065 != '\x01')) {
       local_8 = 0;
     }
     if (local_8 != 0) {
-      if (this_01->field_1C96 != (HoloTy *)0x0) {
+      if (this_01->field_1C96 != nullptr) {
         HoloTy::Done(this_01->field_1C96);
         Library::MSVCRT::FUN_0072e2b0(this_01->field_1C96);
-        this_01->field_1C96 = (HoloTy *)0x0;
+        this_01->field_1C96 = nullptr;
       }
-      if (this_01->field_1C9A != (HoloTy *)0x0) {
+      if (this_01->field_1C9A != nullptr) {
         HoloTy::Done(this_01->field_1C9A);
         Library::MSVCRT::FUN_0072e2b0(this_01->field_1C9A);
-        this_01->field_1C9A = (HoloTy *)0x0;
+        this_01->field_1C9A = nullptr;
       }
       if (this_01->field_1A7B != 0xffffffff) {
         Library::DKW::DDX::FUN_006b34d0
@@ -302,7 +302,7 @@ LAB_005bb532:
     }
     break;
   case CASE_4:
-    if (local_20->field_1C96 != (HoloTy *)0x0) {
+    if (local_20->field_1C96 != nullptr) {
       iVar8 = HoloTy::NextFas(local_20->field_1C96);
       if (iVar8 == 0) {
         uVar2 = *(uint *)&this_01->field_1C96->field_0x3;
@@ -314,7 +314,7 @@ LAB_005bb532:
         local_8 = 0;
       }
     }
-    if (this_01->field_1C9A != (HoloTy *)0x0) {
+    if (this_01->field_1C9A != nullptr) {
       iVar8 = HoloTy::NextFas(this_01->field_1C9A);
       if (iVar8 == 0) {
         uVar2 = *(uint *)&this_01->field_1C9A->field_0x3;
@@ -326,7 +326,7 @@ LAB_005bb532:
         local_8 = 0;
       }
     }
-    if ((g_startSystem_0081176C->field_02E6 != (MMsgTy *)0x0) &&
+    if ((g_startSystem_0081176C->field_02E6 != nullptr) &&
        (g_startSystem_0081176C->field_02E6->field_0065 != '\x02')) {
       local_8 = 0;
     }
@@ -343,7 +343,7 @@ LAB_005bb532:
     }
     break;
   case CASE_5:
-    if (local_20->field_1C9A != (HoloTy *)0x0) {
+    if (local_20->field_1C9A != nullptr) {
       iVar8 = HoloTy::NextFas(local_20->field_1C9A);
       if (iVar8 == 0) {
         if ((this_01->field_1A60 == '\x01') &&
@@ -355,15 +355,15 @@ LAB_005bb532:
         local_8 = 0;
       }
     }
-    if ((g_startSystem_0081176C->field_02E6 != (MMsgTy *)0x0) &&
+    if ((g_startSystem_0081176C->field_02E6 != nullptr) &&
        (g_startSystem_0081176C->field_02E6->field_0065 != '\x02')) {
       local_8 = 0;
     }
     if (local_8 != 0) {
-      if (this_01->field_1C9A != (HoloTy *)0x0) {
+      if (this_01->field_1C9A != nullptr) {
         HoloTy::Done(this_01->field_1C9A);
         Library::MSVCRT::FUN_0072e2b0(this_01->field_1C9A);
-        this_01->field_1C9A = (HoloTy *)0x0;
+        this_01->field_1C9A = nullptr;
       }
       if (this_01->field_1A60 == '\0') {
         Library::DKW::DDX::FUN_006b3430((int *)g_ddxContext_008075A8,this_01->field_1C8A);

@@ -44,7 +44,7 @@ int __thiscall MReportTy::GetMessage(MReportTy *this,STMessage *message)
 
   local_10 = this;
   DVar11 = STAppC::sub_006E51B0(this->field_0010);
-  piVar20 = (int *)0x0;
+  piVar20 = nullptr;
   this->field_0061 = DVar11;
   local_5c.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_5c;
@@ -91,7 +91,7 @@ int __thiscall MReportTy::GetMessage(MReportTy *this,STMessage *message)
           pcVar21 = (char *)&DAT_0080f33a;
           memmove(pcVar21, pcVar13, uVar17); /* compiler REP MOVS byte copy */
           uVar18 = 0;
-          for (puVar14 = Library::MSVCRT::FUN_0072e560(&DAT_0080f33a,'\n'); puVar14 != (uint *)0x0;
+          for (puVar14 = Library::MSVCRT::FUN_0072e560(&DAT_0080f33a,'\n'); puVar14 != nullptr;
               puVar14 = Library::MSVCRT::FUN_0072e560(puVar14,'\n')) {
             *(undefined1 *)puVar14 = 0x20;
           }
@@ -114,22 +114,22 @@ int __thiscall MReportTy::GetMessage(MReportTy *this,STMessage *message)
         }
         else if (SVar5 == MESS_MREPORTTY_6215) {
           pDVar7 = (&local_10->field_0347)[(byte)local_10->field_006A];
-          if (pDVar7 != (DArrayTy *)0x0) {
+          if (pDVar7 != nullptr) {
             uVar17 = local_10->field_006B;
             if (uVar17 < pDVar7->count) {
               /* ST_PSEUDO[dynamic_array_indexing]: expected DArrayAt<T>(pDVar7, uVar17) (runtime stride) */
               pvVar15 = (void *)(pDVar7->elementSize * uVar17 + (int)pDVar7->data);
             }
             else {
-              pvVar15 = (void *)0x0;
+              pvVar15 = nullptr;
             }
-            if (pvVar15 != (void *)0x0) {
+            if (pvVar15 != nullptr) {
               if (uVar17 < pDVar7->count) {
                 /* ST_PSEUDO[dynamic_array_indexing]: expected DArrayAt<T>(pDVar7, uVar17) (runtime stride) */
                 piVar20 = (int *)(pDVar7->elementSize * uVar17 + (int)pDVar7->data);
               }
               else {
-                piVar20 = (int *)0x0;
+                piVar20 = nullptr;
               }
               iVar12 = *piVar20 + 1;
               pcVar13 = LoadResourceString(0x2445,g_module_00807618);
@@ -172,12 +172,12 @@ int __thiscall MReportTy::GetMessage(MReportTy *this,STMessage *message)
     }
     if (SVar5 == MESS_SHARED_6980) {
       pDVar7 = (&local_10->field_0347)[(byte)local_10->field_006A];
-      if ((pDVar7 != (DArrayTy *)0x0) &&
+      if ((pDVar7 != nullptr) &&
          (uVar17 = (uint)(message->arg0).words.low, uVar17 < pDVar7->count)) {
         /* ST_PSEUDO[dynamic_array_indexing]: expected DArrayAt<T>(pDVar7, uVar17) (runtime stride) */
         piVar20 = (int *)(pDVar7->elementSize * uVar17 + (int)pDVar7->data);
       }
-      if (piVar20 != (int *)0x0) {
+      if (piVar20 != nullptr) {
         ccFntTy::SetSurf(local_10->field_0087,(message->arg1).i32,0,0,0,0,0);
         iVar12 = *piVar20 + 1;
         pcVar13 = LoadResourceString(0x2445,g_module_00807618);
@@ -223,7 +223,7 @@ switchD_005c1b14_caseD_5:
     pcVar21 = (char *)&DAT_0080f33a;
     memmove(pcVar21, pcVar13, uVar17); /* compiler REP MOVS byte copy */
     uVar18 = 0;
-    for (puVar14 = Library::MSVCRT::FUN_0072e560(&DAT_0080f33a,'\n'); puVar14 != (uint *)0x0;
+    for (puVar14 = Library::MSVCRT::FUN_0072e560(&DAT_0080f33a,'\n'); puVar14 != nullptr;
         puVar14 = Library::MSVCRT::FUN_0072e560(puVar14,'\n')) {
       *(undefined1 *)puVar14 = 0x20;
     }
@@ -248,7 +248,7 @@ switchD_005c1b14_caseD_5:
       case MESS_SHARED_0060:
         uVar2 = (message->arg1).words.low;
         uVar3 = (message->arg1).words.high;
-        local_8 = (int *)0x0;
+        local_8 = nullptr;
         /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
         local_18 = CONCAT22(local_18._2_2_,uVar2);
         /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
@@ -278,7 +278,7 @@ switchD_005c1b14_caseD_5:
         }
         piVar19 = (int *)local_10->field_044F;
         if (piVar19 != piVar20) {
-          if (piVar19 != (int *)0x0) {
+          if (piVar19 != nullptr) {
             local_10->field_002D = 0x4202;
             *(undefined2 *)&local_10->field_0x31 = 0;
             *(undefined2 *)&local_10->field_0x33 = 3;
@@ -287,7 +287,7 @@ switchD_005c1b14_caseD_5:
             (**(code **)g_cursorClass_00802A30->field_0000)(&local_10->field_0x1d);
           }
           this_00->field_044F = piVar20;
-          if (piVar20 != (int *)0x0) {
+          if (piVar20 != nullptr) {
             this_00->field_002D = 0x4201;
             *(undefined2 *)&this_00->field_0x31 = 0;
             *(undefined2 *)&this_00->field_0x33 = 3;
@@ -362,11 +362,11 @@ LAB_005c1d24:
       local_10->field_0333 = 200;
       local_10->field_032F = 0x1b3;
       (*local_10->field_000C->vtable->CreateObject)
-                ((SystemClassTy *)local_10->field_000C,0x100ef,(undefined4 *)0x0,(int *)0x0,
+                ((SystemClassTy *)local_10->field_000C,0x100ef,nullptr,nullptr,
                  &local_10->field_0x2c7,0);
       break;
     case MESS_SETTMAPTY_6203:
-      if ((&local_10->field_0347)[(byte)local_10->field_006A] != (DArrayTy *)0x0) {
+      if ((&local_10->field_0347)[(byte)local_10->field_006A] != nullptr) {
         local_10->field_02D7 = 0x6900;
         local_10->field_02F7 = 0x6980;
         dVar6 = (&local_10->field_0347)[(byte)local_10->field_006A]->count;
@@ -382,21 +382,21 @@ LAB_005c1d24:
           local_10->field_032F = 600 - iVar16;
         }
         (*local_10->field_000C->vtable->CreateObject)
-                  ((SystemClassTy *)local_10->field_000C,0x100ef,(undefined4 *)0x0,(int *)0x0,
+                  ((SystemClassTy *)local_10->field_000C,0x100ef,nullptr,nullptr,
                    &local_10->field_0x2c7,0);
       }
       break;
     case MESS_MTASKTY_6212:
       if (local_10->field_0066 == '\0') {
-        PaintBut(local_10,message,(-(uint)(DAT_0080c632 != '\0') & 0x2b) + 0x232c,4,'\0',(uint *)0x0
+        PaintBut(local_10,message,(-(uint)(DAT_0080c632 != '\0') & 0x2b) + 0x232c,4,'\0',nullptr
                 );
       }
       else {
-        PaintBut(local_10,message,0x2358,4,'\0',(uint *)0x0);
+        PaintBut(local_10,message,0x2358,4,'\0',nullptr);
       }
       break;
     case MESS_MTASKTY_6213:
-      PaintBut(local_10,message,0x24bc,4,'\0',(uint *)0x0);
+      PaintBut(local_10,message,0x24bc,4,'\0',nullptr);
     }
   }
 cf_common_exit_005C22B1:

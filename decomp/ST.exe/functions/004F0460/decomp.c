@@ -15,7 +15,7 @@ void * __cdecl FUN_004f0460(void)
   undefined4 *puVar2;
 
   this = FUN_006b04d0(0x296);
-  if (this != (undefined4 *)0x0) {
+  if (this != nullptr) {
     sub_006E5FB0(this);
     this[0x17] = 0;
     this[0x18] = 0xffffffff;
@@ -57,6 +57,6 @@ void * __cdecl FUN_004f0460(void)
     *(undefined4 *)((int)this + 0x28e) = 0;
     return this;
   }
-  return (void *)0x0;
+  return nullptr;
 }
 

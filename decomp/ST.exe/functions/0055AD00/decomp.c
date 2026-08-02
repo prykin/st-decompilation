@@ -20,18 +20,18 @@ VisibleClassTy::sub_0055AD00
   bool bVar9;
   uint local_1c;
   int local_18;
-  char *local_10;
+  byte *local_10;
   byte *local_c;
-  int *local_8;
+  void **local_8;
 
   if (((this->field_0114 != 0) && (param_4 < 8)) &&
-     ((g_playSystem_00802A38 == (STPlaySystemC *)0x0 || ((byte)(&DAT_008087e9)[param_4 * 0x51] < 8))
-     )) {
+     ((g_playSystem_00802A38 == nullptr ||
+      (g_bulkInitializedRecords_008087C7[param_4].field_0022 < 8)))) {
     local_8 = &this->field_0054;
     local_1c = 0;
-    local_10 = &DAT_008087e9;
+    local_10 = &g_bulkInitializedRecords_008087C7[0].field_0022;
     do {
-      if ((local_1c != param_4) && (*local_10 != -1)) {
+      if ((local_1c != param_4) && (*local_10 != 0xff)) {
         if (DAT_00808a8f == '\0') {
           if ((char)param_4 == (char)local_1c) {
 LAB_0055ae0a:
@@ -58,10 +58,10 @@ LAB_0055ae0a:
           bVar9 = iVar4 < 0;
         }
         else {
-          bVar9 = (&DAT_008087ea)[(local_1c & 0xff) * 0x51] !=
-                  (&DAT_008087ea)[(param_4 & 0xff) * 0x51];
+          bVar9 = g_bulkInitializedRecords_008087C7[local_1c & 0xff].field_0023 !=
+                  g_bulkInitializedRecords_008087C7[param_4 & 0xff].field_0023;
         }
-        if ((bVar9) && (*local_8 != 0)) {
+        if ((bVar9) && (*local_8 != nullptr)) {
           if (param_5 < 0) {
             /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
             param_5 = 0;
@@ -75,11 +75,12 @@ LAB_0055ae0a:
             do {
               iVar7 = 0;
               do {
-                if ((((((pbVar5 == (byte *)0x0) || (local_c[iVar7] != 0)) &&
+                if ((((((pbVar5 == nullptr) || (local_c[iVar7] != 0)) &&
                       (iVar1 = iVar7 + iVar4, -1 < iVar1)) &&
                      ((iVar1 < this->field_0020 && (-1 < iVar8)))) &&
-                    ((iVar8 < this->field_0024 && (((int)local_10 < 0x808a71 && (*local_8 != 0))))))
-                   && (*(char *)(iVar8 * this->field_0020 + *local_8 + iVar7 + iVar4) != '\0')) {
+                    ((iVar8 < this->field_0024 &&
+                     (((int)local_10 < 0x808a71 && (*local_8 != nullptr)))))) &&
+                   (*(char *)((int)*local_8 + iVar4 + iVar7 + iVar8 * this->field_0020) != '\0')) {
                   return 1;
                 }
                 iVar7 = iVar7 + 1;

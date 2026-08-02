@@ -7,7 +7,7 @@
 void __thiscall ST3DSMAPContext::sub_006E8630(ST3DSMAPContext *this,undefined4 param_1)
 
 {
-  *(undefined4 *)&this->field_0x2d0 = param_1;
+  this->field_02D0 = param_1;
   return;
 }
 

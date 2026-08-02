@@ -15,7 +15,7 @@ void __thiscall FUN_005f91e0(void *this,int param_1,int param_2)
     this_00 = g_worldGrid.cells
               [(int)g_worldGrid.planeStride * (int)local_c[0] +
                (int)g_worldGrid.sizeX * (int)local_8 + (int)local_6].objects[0];
-    if ((this_00 != (STWorldObject *)0x0) && (this_00->value_20 == 1000)) {
+    if ((this_00 != nullptr) && (this_00->value_20 == 1000)) {
       iVar1 = this_00->GetObjectTypeId();
       if ((iVar1 == 0x6e) && (*(int *)&this_00->field_0x18 == *(int *)((int)this + 0x255))) {
         thunk_FUN_004dd7c0(this_00,*(int *)((int)this + 0x18),param_1);

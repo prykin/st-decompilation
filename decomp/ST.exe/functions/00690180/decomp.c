@@ -13,7 +13,7 @@ int __thiscall FUN_00690180(void *this,uint param_1,uint *param_2)
     else {
       iVar1 = 0;
     }
-    if (*(AiFltClassTy **)(iVar1 + 4) != (AiFltClassTy *)0x0) {
+    if (*(AiFltClassTy **)(iVar1 + 4) != nullptr) {
       iVar1 = AiFltClassTy::GetAiMess(*(AiFltClassTy **)(iVar1 + 4),param_2);
       return iVar1;
     }

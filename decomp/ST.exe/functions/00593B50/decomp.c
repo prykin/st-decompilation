@@ -202,7 +202,7 @@ void __thiscall ComboTy::InitCombo(ComboTy *this,undefined4 *param_1)
     local_4c0 = local_500;
     local_4a0 = local_500;
     (*this_00->field_000C->vtable->CreateObject)
-              ((SystemClassTy *)this_00->field_000C,7,&this_00->field_010C,(int *)0x0,local_528,0);
+              ((SystemClassTy *)this_00->field_000C,7,&this_00->field_010C,nullptr,local_528,0);
     this_00->field_0028 = 0x22;
     this_00->field_002C = (ComboTy *)this_00->field_00C8;
     FUN_006e6080(this_00,2,this_00->field_010C,(undefined4 *)puVar1);

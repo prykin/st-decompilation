@@ -16,13 +16,13 @@ void __cdecl FUN_00575460(AnonShape_00575460_06C413C6 *param_1)
 
   pAVar4 = param_1;
   pSVar3 = g_sT3DSMAPContext_0080760C;
-  if (g_sT3DSMAPContext_0080760C != (ST3DSMAPContext *)0x0) {
+  if (g_sT3DSMAPContext_0080760C != nullptr) {
     ST3DSMAPContext::sub_006DBCF0(g_sT3DSMAPContext_0080760C);
     Library::MSVCRT::FUN_0072e2b0((HoloTy *)pSVar3);
-    g_sT3DSMAPContext_0080760C = (ST3DSMAPContext *)0x0;
+    g_sT3DSMAPContext_0080760C = nullptr;
   }
-  if (param_1 != (AnonShape_00575460_06C413C6 *)0x0) {
-    array = Library::DKW::TBL::DArrayCreate((DArrayTy *)0x0,0x14,4,0x14);
+  if (param_1 != nullptr) {
+    array = Library::DKW::TBL::DArrayCreate(nullptr,0x14,4,0x14);
     *(undefined4 *)(param_1->field_0451 + 4) = 0;
     while( true ) {
       iVar1 = param_1->field_0451;
@@ -51,14 +51,14 @@ void __cdecl FUN_00575460(AnonShape_00575460_06C413C6 *param_1)
             /* ST_PSEUDO[dynamic_array_indexing]: expected DArrayAt<T>(array, uVar2) (runtime stride) */
             puVar6 = (undefined4 *)(array->elementSize * uVar2 + (int)array->data);
             array->iteratorIndex = uVar2 + 1;
-            if (puVar6 == (undefined4 *)0x0) goto LAB_0057554f;
+            if (puVar6 == nullptr) goto LAB_0057554f;
           } while (*value != (void *)*puVar6);
-          if (puVar6 == (undefined4 *)0x0) {
+          if (puVar6 == nullptr) {
 LAB_0057554f:
             Library::DKW::TBL::DArrayAppend(array,value);
             FreeAndNull(value);
           }
-          *value = (void *)0x0;
+          *value = nullptr;
         }
         local_8 = local_8 + 1;
         /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */

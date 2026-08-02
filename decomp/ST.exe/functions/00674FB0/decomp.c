@@ -10,7 +10,7 @@ IMAGE_DOS_HEADER * __cdecl FUN_00674fb0(int param_1)
 
   if ((param_1 < 0x32) || (0x73 < param_1)) {
     if ((param_1 < 1) || (0x28 < param_1)) {
-      return (IMAGE_DOS_HEADER *)0x0;
+      return nullptr;
     }
     uVar1 = param_1 + 0x41;
     bVar2 = (byte)uVar1;

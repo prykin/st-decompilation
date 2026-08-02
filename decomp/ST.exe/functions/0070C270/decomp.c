@@ -17,14 +17,14 @@ undefined4 * __cdecl FUN_0070c270(int param_1)
   iVar5 = *(int *)(param_1 + 0x20);
   /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
   if (*(short *)(param_1 + 0xe) != 8) {
-    return (undefined4 *)0x0;
+    return nullptr;
   }
   if (iVar5 == 0) {
     iVar5 = 0x100;
   }
   puVar2 = Library::DKW::LIB::FUN_006aac10(iVar5 * 4);
-  if (puVar2 == (undefined4 *)0x0) {
-    return (undefined4 *)0x0;
+  if (puVar2 == nullptr) {
+    return nullptr;
   }
   if (iVar5 != 0) {
     pbVar4 = (byte *)((int)puVar2 + 2);

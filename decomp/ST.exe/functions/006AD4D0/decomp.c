@@ -35,12 +35,12 @@ ReportDebugMessage(char *sourceFile,int sourceLine,int isFatal,int errorCode,cha
   char debugMessage [64];
 
   if (DAT_007ed798 == 0) {
-    g_exceptionSourceFile = (char *)0x0;
+    g_exceptionSourceFile = nullptr;
     return 0;
   }
   local_34c[0] = '\0';
   local_74c = local_74c & 0xffffff00;
-  if ((format != (char *)0x0) &&
+  if ((format != nullptr) &&
      (iVar2 = Library::MSVCRT::FUN_007300e0
                         (local_34c,0x200,(byte *)format,(undefined4 *)&stack0x00000018), iVar2 < 0))
   {
@@ -70,7 +70,7 @@ ReportDebugMessage(char *sourceFile,int sourceLine,int isFatal,int errorCode,cha
     memmove(pcVar9, pcVar8, uVar5); /* compiler REP MOVS byte copy */
     uVar6 = 0;
   }
-  if ((DAT_007ed79c != 0) && (g_int_00854EB4 != (int *)0x0)) {
+  if ((DAT_007ed79c != 0) && (g_int_00854EB4 != nullptr)) {
     Library::MSVCRT::FUN_00733f70(g_int_00854EB4,"\n%d ========================================  %02d.%02d.%d  %d:%02d:%02d.%03d\n");
     DAT_007ed79c = 0;
   }
@@ -144,7 +144,7 @@ ReportDebugMessage(char *sourceFile,int sourceLine,int isFatal,int errorCode,cha
   }
   *(undefined1 *)puVar7 = 10;
   pcVar8 = (char *)((int)puVar7 + 1);
-  if (sourceFile != (char *)0x0) {
+  if (sourceFile != nullptr) {
     pcVar9 = (char *)((int)puVar7 + 7);
     *(undefined4 *)pcVar8 = "File: "._0_4_;
     *(undefined2 *)((int)puVar7 + 5) = "File: "._4_2_;
@@ -194,7 +194,7 @@ ReportDebugMessage(char *sourceFile,int sourceLine,int isFatal,int errorCode,cha
       iVar2 = 0x40;
     }
     pcVar9 = pcVar9 + iVar2;
-    if (g_int_00854EB4 == (int *)0x0) {
+    if (g_int_00854EB4 == nullptr) {
       *pcVar9 = '\n';
     }
     else {
@@ -208,7 +208,7 @@ ReportDebugMessage(char *sourceFile,int sourceLine,int isFatal,int errorCode,cha
       pcVar9 = pcVar9 + iVar2;
     }
     /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
-    if (((g_int_00854EB4 != (int *)0x0) && (BVar4 = IsBadReadPtr(&stack0xfffffffc,4), BVar4 == 0))
+    if (((g_int_00854EB4 != nullptr) && (BVar4 = IsBadReadPtr(&stack0xfffffffc,4), BVar4 == 0))
        && (BVar4 = IsBadReadPtr(unaff_EBP,8), BVar4 == 0)) {
       iVar2 = Library::MSVCRT::FUN_00730c40(pcVar9,0x7ed87c);
       pcVar9 = pcVar9 + iVar2;
@@ -222,7 +222,7 @@ ReportDebugMessage(char *sourceFile,int sourceLine,int isFatal,int errorCode,cha
     *pcVar9 = '\n';
     pcVar8 = pcVar9 + 1;
   }
-  if ((g_exceptionSourceFile != (char *)0x0) && (g_exceptionCode == errorCode)) {
+  if ((g_exceptionSourceFile != nullptr) && (g_exceptionCode == errorCode)) {
     pcVar9 = pcVar8 + 10;
     *(undefined4 *)pcVar8 = "ExcRaise: "._0_4_;
     *(undefined4 *)(pcVar8 + 4) = "ExcRaise: "._4_4_;
@@ -278,7 +278,7 @@ ReportDebugMessage(char *sourceFile,int sourceLine,int isFatal,int errorCode,cha
     pcVar9[iVar2] = '\n';
     pcVar8 = pcVar9 + iVar2 + 1;
   }
-  g_exceptionSourceFile = (char *)0x0;
+  g_exceptionSourceFile = nullptr;
   if (errorCode != 0) {
     iVar2 = Library::MSVCRT::FUN_00730c40(pcVar8,0x7ed848);
     pcVar8 = pcVar8 + iVar2;
@@ -286,7 +286,7 @@ ReportDebugMessage(char *sourceFile,int sourceLine,int isFatal,int errorCode,cha
   *pcVar8 = '\n';
   pcVar9 = pcVar8 + 1;
   if (local_34c[0] != '\0') {
-    if (g_int_00854EB4 == (int *)0x0) {
+    if (g_int_00854EB4 == nullptr) {
       *pcVar9 = '\n';
       pcVar9 = pcVar8 + 2;
     }
@@ -316,7 +316,7 @@ ReportDebugMessage(char *sourceFile,int sourceLine,int isFatal,int errorCode,cha
     pcVar9[~uVar5 - 1] = '\n';
     pcVar9 = pcVar9 + (~uVar5 - 1) + 1;
   }
-  if (g_int_00854EB4 == (int *)0x0) {
+  if (g_int_00854EB4 == nullptr) {
     if (DAT_00854ebc != 0) {
       *pcVar9 = '\n';
       pcVar8 = "(Press Retry to debug the application)";
@@ -344,10 +344,10 @@ ReportDebugMessage(char *sourceFile,int sourceLine,int isFatal,int errorCode,cha
         memmove(pcVar9, pcVar8, 0x14); /* compiler REP MOVS byte copy */
       }
       if ((g_anonShape_GLOBAL_0080759C_9638EF10_00854EB8 ==
-           (AnonShape_GLOBAL_0080759C_9638EF10 *)0x0) ||
+           nullptr) ||
          (puVar10 = *(undefined4 **)&g_anonShape_GLOBAL_0080759C_9638EF10_00854EB8->field_0x47c,
-         puVar10 == (undefined4 *)0x0)) {
-        puVar10 = (undefined4 *)0x0;
+         puVar10 == nullptr)) {
+        puVar10 = nullptr;
       }
       else {
         Library::DKW::DDX::FUN_006ce8c0
@@ -379,7 +379,7 @@ ReportDebugMessage(char *sourceFile,int sourceLine,int isFatal,int errorCode,cha
         pcVar9 = (char *)((byte *)pcVar9 + uVar5);
       }
       if ((g_anonShape_GLOBAL_0080759C_9638EF10_00854EB8 !=
-           (AnonShape_GLOBAL_0080759C_9638EF10 *)0x0) &&
+           nullptr) &&
          ((*(uint *)&g_anonShape_GLOBAL_0080759C_9638EF10_00854EB8->field_0x8 & 0x2000000) != 0)) {
         *(uint *)&g_anonShape_GLOBAL_0080759C_9638EF10_00854EB8->field_0x8 =
              *(uint *)&g_anonShape_GLOBAL_0080759C_9638EF10_00854EB8->field_0x8 & 0xfdfffffe;
@@ -395,7 +395,7 @@ ReportDebugMessage(char *sourceFile,int sourceLine,int isFatal,int errorCode,cha
       if (iVar2 == 4) {
         iVar2 = 1;
         if ((g_anonShape_GLOBAL_0080759C_9638EF10_00854EB8 !=
-             (AnonShape_GLOBAL_0080759C_9638EF10 *)0x0) &&
+             nullptr) &&
            ((*(uint *)&g_anonShape_GLOBAL_0080759C_9638EF10_00854EB8->field_0x8 & 1) != 0)) {
           *(uint *)&g_anonShape_GLOBAL_0080759C_9638EF10_00854EB8->field_0x8 =
                *(uint *)&g_anonShape_GLOBAL_0080759C_9638EF10_00854EB8->field_0x8 & 0xfdfffffe;
@@ -412,7 +412,7 @@ ReportDebugMessage(char *sourceFile,int sourceLine,int isFatal,int errorCode,cha
       else {
         iVar2 = 0;
         if ((g_anonShape_GLOBAL_0080759C_9638EF10_00854EB8 !=
-             (AnonShape_GLOBAL_0080759C_9638EF10 *)0x0) && (puVar10 != (undefined4 *)0x0)) {
+             nullptr) && (puVar10 != nullptr)) {
           Library::DKW::DDX::FUN_006ce770
                     ((uint)g_anonShape_GLOBAL_0080759C_9638EF10_00854EB8,puVar10);
         }

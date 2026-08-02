@@ -37,8 +37,8 @@ void FUN_0055dee0(byte *param_1)
   int local_c;
   ushort *local_8;
 
-  local_8 = (ushort *)0x0;
-  local_18 = (byte *)0x0;
+  local_8 = nullptr;
+  local_18 = nullptr;
   local_24 = 0;
   local_20 = 0;
   local_14 = (short *)Library::DKW::LIB::FUN_006aac10(DAT_008033a8 * DAT_008033a4 * 2);
@@ -163,7 +163,7 @@ LAB_0055e048:
 cf_continue_loop_0055E2E9:
       pbVar13 = pbVar13 + 4;
       local_44 = (undefined1 *)((int)local_44 - 1);
-    } while (local_44 != (undefined1 *)0x0);
+    } while (local_44 != nullptr);
   }
   iVar4 = 0;
   if (0 < DAT_008033a8) {
@@ -209,9 +209,9 @@ cf_continue_loop_0055E2E9:
             iVar5 = 2;
             do {
               iVar4 = local_38 + -4;
-              local_3c = (ushort *)0x0;
+              local_3c = nullptr;
               /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
-              param_1 = (byte *)0x0;
+              param_1 = nullptr;
               if (local_38 < iVar4) {
 LAB_0055eb08:
                 uVar3 = 0;
@@ -250,7 +250,7 @@ LAB_0055eb08:
     }
   }
   else {
-    local_1c = (ushort *)0x0;
+    local_1c = nullptr;
     local_8 = (ushort *)local_14;
     if (0 < iVar5) {
       pbVar13 = (byte *)(DAT_00803380 + 1);
@@ -336,7 +336,7 @@ LAB_0055eb08:
       } while (iVar4 < DAT_008033a8);
     }
     /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
-    param_1 = (byte *)0x0;
+    param_1 = nullptr;
     local_30 = 0xf;
     local_34 = &DAT_0000000c;
     local_38 = 9;
@@ -372,7 +372,7 @@ LAB_0055eb08:
         local_40 = (ushort *)((int)local_40 + (int)(param_1 + 3));
         local_3c = local_3c + 1;
         local_44 = (undefined1 *)((int)local_44 + -1);
-      } while (local_44 != (undefined1 *)0x0);
+      } while (local_44 != nullptr);
       if (3 < iVar5 + -2) {
         puVar15 = local_8 + 5;
         pbVar13 = (byte *)((int)local_10 + 7);
@@ -512,7 +512,7 @@ LAB_0055eb08:
           local_40 = (ushort *)((int)local_40 + iVar9);
           pbVar13 = pbVar13 + 2;
           local_44 = (undefined1 *)((int)local_44 + -1);
-        } while (local_44 != (undefined1 *)0x0);
+        } while (local_44 != nullptr);
         if (3 < iVar5 + -2) {
           local_40 = (ushort *)((int)local_10 + 7);
           puVar15 = local_8 + 5;

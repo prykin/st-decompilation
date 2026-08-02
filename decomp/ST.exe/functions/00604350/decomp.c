@@ -69,7 +69,7 @@ int __thiscall STExplosion::sub_00604350(STExplosion *this)
     iVar1 = local_c;
     iVar5 = local_10;
     pVVar3 = g_visibleClass_00802A88;
-    if ((iVar6 != 0) && (g_visibleClass_00802A88 != (VisibleClassTy *)0x0)) {
+    if ((iVar6 != 0) && (g_visibleClass_00802A88 != nullptr)) {
       iVar7 = local_10 + -3;
       if (iVar7 < 0) {
         iVar7 = 0;
@@ -92,7 +92,7 @@ int __thiscall STExplosion::sub_00604350(STExplosion *this)
                          &local_18,&local_1c), pVVar4 = g_visibleClass_00802A88, local_8 < 0 ||
              ((((4 < local_8 || (local_18 < 0)) || (pVVar3->field_0030 <= local_18)) ||
               ((iVar5 = g_centeredOffsets5[local_8] + local_1c, iVar5 < 0 ||
-               (pVVar3->field_0034 <= iVar5)))))))) || (pVVar3->field_004C == (byte *)0x0)) ||
+               (pVVar3->field_0034 <= iVar5)))))))) || (pVVar3->field_004C == nullptr)) ||
           ((pVVar3->field_004C[local_18 + iVar5 * pVVar3->field_0030] != 0 || (DAT_0080874d == -1)))
           ) || (((((g_visibleClass_00802A88->field_00F8 == 0 ||
                    (((VisibleClassTy::sub_00558C00
@@ -100,7 +100,7 @@ int __thiscall STExplosion::sub_00604350(STExplosion *this)
                                  ,iVar7,&local_1c,&local_18), pVVar3 = g_visibleClass_00802A88,
                      local_1c < 0 || (pVVar4->field_0030 <= local_1c)) ||
                     (iVar5 = g_centeredOffsets5[local_8] + local_18, iVar5 < 0)))) ||
-                  (((pVVar4->field_0034 <= iVar5 || (pVVar4->field_004C == (byte *)0x0)) ||
+                  (((pVVar4->field_0034 <= iVar5 || (pVVar4->field_004C == nullptr)) ||
                    (pVVar4->field_004C[local_1c + iVar5 * pVVar4->field_0030] != 0)))) ||
                  ((((DAT_0080874d == -1 || (g_visibleClass_00802A88->field_00F8 == 0)) ||
                    ((VisibleClassTy::sub_00558C00
@@ -110,7 +110,7 @@ int __thiscall STExplosion::sub_00604350(STExplosion *this)
                     (((pVVar3->field_0030 <= local_1c ||
                       (iVar7 = g_centeredOffsets5[local_8] + local_18, iVar7 < 0)) ||
                      (pVVar3->field_0034 <= iVar7)))))) ||
-                  ((pVVar3->field_004C == (byte *)0x0 ||
+                  ((pVVar3->field_004C == nullptr ||
                    (pVVar3->field_004C[local_1c + iVar7 * pVVar3->field_0030] != 0)))))) ||
                 ((DAT_0080874d == -1 ||
                  (((g_visibleClass_00802A88->field_00F8 == 0 ||
@@ -119,7 +119,7 @@ int __thiscall STExplosion::sub_00604350(STExplosion *this)
                                local_14,&local_1c,&local_18), local_1c < 0)) ||
                   ((pVVar4->field_0030 <= local_1c ||
                    ((((local_18 = g_centeredOffsets5[iVar1] + local_18, local_18 < 0 ||
-                      (pVVar4->field_0034 <= local_18)) || (pVVar4->field_004C == (byte *)0x0)) ||
+                      (pVVar4->field_0034 <= local_18)) || (pVVar4->field_004C == nullptr)) ||
                     ((pVVar4->field_004C[local_1c + local_18 * pVVar4->field_0030] != 0 ||
                      (iVar5 = VisibleClassTy::sub_005F1D80
                                         (g_visibleClass_00802A88,local_10,iVar5,local_8), iVar5 == 1

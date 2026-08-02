@@ -37,7 +37,7 @@ FSGSTy::SetBanner(FSGSTy *this,char *param_1,undefined4 param_2,int param_3,uint
   FSGSTy *local_c;
   int *local_8;
 
-  if (((param_5 != (undefined4 *)0x0) && (this->field_1A97 != (AnonPointee_FSGSTy_1A97 *)0x0)) &&
+  if (((param_5 != nullptr) && (this->field_1A97 != nullptr)) &&
      (this->field_0065 == CASE_1)) {
     local_58.previous = g_currentExceptionFrame;
     g_currentExceptionFrame = &local_58;
@@ -46,16 +46,16 @@ FSGSTy::SetBanner(FSGSTy *this,char *param_1,undefined4 param_2,int param_3,uint
     pFVar13 = local_c;
     if (iVar4 == 0) {
       if ((param_3 == 1) || (param_3 == 8)) {
-        if (local_c->field_1A9F != (AnonShape_006C6FC0_B2C34C14 *)0x0) {
+        if (local_c->field_1A9F != nullptr) {
           FUN_006c6fc0(local_c->field_1A9F);
         }
-        pFVar13->field_1A9F = (void *)0x0;
-        if (pFVar13->field_1A9B != (void *)0x0) {
+        pFVar13->field_1A9F = nullptr;
+        if (pFVar13->field_1A9B != nullptr) {
           FreeAndNull(&pFVar13->field_1A9B);
         }
       }
       if (param_3 == 1) {
-        local_8 = (int *)0x0;
+        local_8 = nullptr;
         local_9c.previous = g_currentExceptionFrame;
         g_currentExceptionFrame = &local_9c;
         iVar4 = Library::MSVCRT::__setjmp3(local_9c.jumpBuffer,0);
@@ -63,7 +63,7 @@ FSGSTy::SetBanner(FSGSTy *this,char *param_1,undefined4 param_2,int param_3,uint
           piVar8 = Library::DKW::GPC::FUN_006c7c50(param_5,param_4);
           pFVar13 = local_c;
           local_8 = piVar8;
-          if (piVar8 != (int *)0x0) {
+          if (piVar8 != nullptr) {
             memset(&local_8e0, 0, 0x400); /* compiler bulk-zero initialization */
             FUN_006c7bb0(piVar8,(undefined1 *)&local_8e0,&local_14);
             iVar4 = 0x80;
@@ -90,7 +90,7 @@ FSGSTy::SetBanner(FSGSTy *this,char *param_1,undefined4 param_2,int param_3,uint
         else {
           g_currentExceptionFrame = local_9c.previous;
           pFVar13 = local_c;
-          if (local_8 != (int *)0x0) {
+          if (local_8 != nullptr) {
             FUN_006c7980(local_8);
             pFVar13 = local_c;
           }
@@ -106,12 +106,12 @@ FSGSTy::SetBanner(FSGSTy *this,char *param_1,undefined4 param_2,int param_3,uint
           puVar5 = (byte *)(Library::DKW::LIB::MemAlloc(param_4));
           pFVar13 = local_c;
           local_c->field_1A9B = puVar5;
-          if (puVar5 != (undefined4 *)0x0) {
+          if (puVar5 != nullptr) {
             memmove(puVar5, param_5, param_4); /* compiler REP MOVS byte copy */
             pAVar6 = (AnonShape_006C7D20_41F6C243 *)
                      Library::DKW::GPC::FUN_006c7dc0(local_c->field_1A9B);
             pFVar13->field_1A9F = pAVar6;
-            if (pAVar6 != (AnonShape_006C7D20_41F6C243 *)0x0) {
+            if (pAVar6 != nullptr) {
               memset(&local_4e0, 0, 0x400); /* compiler bulk-zero initialization */
               FUN_006c7d20(pAVar6,(int)&local_4e0,&local_10);
               iVar4 = 0x80;
@@ -126,7 +126,7 @@ FSGSTy::SetBanner(FSGSTy *this,char *param_1,undefined4 param_2,int param_3,uint
                 (puVar1 + (0xa8 - (int)(local_460 + 1)))[(int)pFVar13->field_1A97] =
                      *(undefined1 *)((int)&local_4e0 + iVar10);
                 local_8 = (int *)((int)local_8 + -1);
-              } while (local_8 != (int *)0x0);
+              } while (local_8 != nullptr);
               FUN_006b0a20((AnonShape_GLOBAL_0080759C_9638EF10 *)g_dDXContext_0080759C,
                            (int)local_460,0x20,0x40,0);
               FUN_006c7d00(pFVar13->field_1A9F,0x4e,9);
@@ -136,7 +136,7 @@ FSGSTy::SetBanner(FSGSTy *this,char *param_1,undefined4 param_2,int param_3,uint
               pFVar13->field_1AA3 = iVar4;
               if (iVar4 < 1) {
                 FUN_006c6fc0(pFVar13->field_1A9F);
-                pFVar13->field_1A9F = (void *)0x0;
+                pFVar13->field_1A9F = nullptr;
                 FreeAndNull(&pFVar13->field_1A9B);
                 pFVar13->field_1AA3 = 0;
                 g_currentExceptionFrame = local_e0.previous;
@@ -154,11 +154,11 @@ FSGSTy::SetBanner(FSGSTy *this,char *param_1,undefined4 param_2,int param_3,uint
         }
         else {
           g_currentExceptionFrame = local_e0.previous;
-          if (local_c->field_1A9F != (AnonShape_006C6FC0_B2C34C14 *)0x0) {
+          if (local_c->field_1A9F != nullptr) {
             FUN_006c6fc0(local_c->field_1A9F);
           }
-          pFVar13->field_1A9F = (void *)0x0;
-          if (pFVar13->field_1A9B != (void *)0x0) {
+          pFVar13->field_1A9F = nullptr;
+          if (pFVar13->field_1A9B != nullptr) {
             FreeAndNull(&pFVar13->field_1A9B);
           }
           pFVar13->field_1AA3 = 0;
@@ -180,7 +180,7 @@ LAB_005a1cfd:
         } while (cVar2 != '\0');
         pcVar9 = Library::DKW::LIB::MemAlloc(~uVar11);
         pFVar13->field_1AAB = pcVar9;
-        if (pcVar9 != (char *)0x0) {
+        if (pcVar9 != nullptr) {
           uVar11 = 0xffffffff;
           do {
             pcVar14 = param_1;

@@ -58,7 +58,7 @@ undefined4 __thiscall CGenerate::CreateMap(CGenerate *this)
   pcVar10 = pcVar11 + -uVar8;
   pcVar11 = &local_10->field_0x53f3;
   memmove(pcVar11, pcVar10, uVar8); /* compiler REP MOVS byte copy */
-  local_8 = (Global_sub_00693710_param_1Enum *)0x0;
+  local_8 = nullptr;
   cMf32::RecGet(local_10->field_0234,0xc,"TEXTURE_DSCR",(int *)&local_8,1);
   thunk_FUN_00693710(*local_8);
   cMf32::RecMemFree(this_00->field_0234,(uint *)&local_8);
@@ -92,7 +92,7 @@ undefined4 __thiscall CGenerate::CreateMap(CGenerate *this)
   sub_0069FF90(this_00);
   thunk_FUN_006945c0(&this_00->field_0x1bef,&local_20);
   sub_0069FF90(this_00);
-  thunk_FUN_00691690(&this_00->field_0x1c03,(cMf32 *)this_00->field_0239,(cMf32 *)0x0,0,
+  thunk_FUN_00691690(&this_00->field_0x1c03,(cMf32 *)this_00->field_0239,nullptr,0,
                      this_00->field_024A);
   sub_0069FF90(this_00);
   g_currentExceptionFrame = local_64.previous;

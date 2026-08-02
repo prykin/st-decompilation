@@ -64,7 +64,7 @@ void __thiscall CPanelTy::PaintMunition(CPanelTy *this,int param_1)
   local_6 = 0;
   local_28 = -1;
   do {
-    pbVar5 = (byte *)0x0;
+    pbVar5 = nullptr;
     if (local_5 != '\x05') {
       switch(local_28) {
       case 0:
@@ -117,7 +117,7 @@ switchD_005052d8_default:
     }
 LAB_0050530c:
     local_24 = pCVar9;
-    if (g_allPlayers_007FA174 != (STAllPlayersC *)0x0) {
+    if (g_allPlayers_007FA174 != nullptr) {
       switch(local_28) {
       case 0:
         local_10 = 0xf;
@@ -265,7 +265,7 @@ LAB_00505581:
       pbVar5 = (byte *)FUN_0070b3a0(pAVar11,iVar4);
     }
 switchD_00505324_default:
-    if (pbVar5 != (byte *)0x0) {
+    if (pbVar5 != nullptr) {
       DibPut((AnonShape_006B5B10_E0D06CF1 *)pCVar2->field_0194,local_10 + 0xf + param_1,
              local_c + 0x36,'\x06',pbVar5);
     }

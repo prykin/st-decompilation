@@ -101,7 +101,7 @@ LAB_0047848a:
   case CASE_3:
     pSVar3 = STAllPlayersC::GetObjPtr
                        (g_allPlayers_007FA174,this->field_05FC,this->field_05FD,CASE_1);
-    if (((pSVar3 != (STGameObjC *)0x0) && (pSVar3->field_0018 == this->field_05FF)) &&
+    if (((pSVar3 != nullptr) && (pSVar3->field_0018 == this->field_05FF)) &&
        (iVar5 = (*pSVar3->vtable->vfunc_108)(this->field_0024), iVar5 != 0)) {
       thunk_FUN_004cd450((AnonShape_004CC900_31EE9CAA *)pSVar3);
     }

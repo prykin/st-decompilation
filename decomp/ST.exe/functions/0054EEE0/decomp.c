@@ -100,7 +100,7 @@ STPlaySystemC::SetCtrlCmd
     *(uint *)((int)puVar4 + 0xf) = uVar7;
     *(uint *)((int)puVar4 + 0x13) = param_7;
     local_c = iVar3;
-    if (param_4 != (uint *)0x0) {
+    if (param_4 != nullptr) {
       uVar6 = uVar7 >> 2;
       *(uint **)((int)puVar4 + 0x17) = (uint *)((int)puVar4 + 0x1b);
       puVar8 = (uint *)((int)puVar4 + 0x1b);
@@ -115,7 +115,7 @@ STPlaySystemC::SetCtrlCmd
         puVar8 = (uint *)((int)puVar8 + 1);
       }
     }
-    if ((param_6 != (undefined4 *)0x0) && (param_7 != 0)) {
+    if ((param_6 != nullptr) && (param_7 != 0)) {
       puVar9 = (byte *)(*(int *)((int)puVar4 + 0x17) + *(int *)((int)puVar4 + 0xf));
       memmove(puVar9, param_6, param_7); /* compiler REP MOVS byte copy */
     }

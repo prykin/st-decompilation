@@ -6,14 +6,14 @@ undefined4 FUN_00747029(AnonShape_00747029_F1EF8B79 *param_1,undefined4 *param_2
   int *piVar1;
   undefined4 uVar2;
 
-  if (param_2 == (undefined4 *)0x0) {
+  if (param_2 == nullptr) {
     uVar2 = 0x80004003;
   }
   else {
     lpCriticalSection = param_1->field_002C;
     EnterCriticalSection(lpCriticalSection);
     piVar1 = (int *)param_1->field_000C;
-    if (piVar1 != (int *)0x0) {
+    if (piVar1 != nullptr) {
       /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
       (**(code **)(*piVar1 + 4))(piVar1);
     }

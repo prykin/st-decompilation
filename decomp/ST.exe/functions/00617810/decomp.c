@@ -12,10 +12,10 @@ void * __cdecl FUN_00617810(void)
   JumpManagC *pJVar1;
 
   pJVar1 = (JumpManagC *)FUN_006b04d0(0x6e);
-  if (pJVar1 != (JumpManagC *)0x0) {
+  if (pJVar1 != nullptr) {
     pJVar1 = JumpManagC::JumpManagC(pJVar1);
     return pJVar1;
   }
-  return (void *)0x0;
+  return nullptr;
 }
 

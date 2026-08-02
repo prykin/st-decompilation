@@ -123,7 +123,7 @@ void __thiscall StartSystemTy::CreateBinDesc(StartSystemTy *this)
     local_688[3] = uVar2;
     local_4b8 = local_88c;
     (*this_00->vtable->CreateObject)
-              ((SystemClassTy *)this_00,8,&this_00->field_0389,(int *)0x0,local_8c4,0);
+              ((SystemClassTy *)this_00,8,&this_00->field_0389,nullptr,local_8c4,0);
     Library::DKW::DDX::FUN_006b3430((int *)g_ddxContext_008075A8,this_00->field_0540);
     if (this_00->field_0391 != 0xffffffff) {
       Library::DKW::DDX::FUN_006b34d0

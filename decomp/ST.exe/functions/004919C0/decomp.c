@@ -142,7 +142,7 @@ LAB_00491b42:
               *(undefined4 *)((int)local_48 + iVar9) = 2;
               break;
             }
-            if ((STBoatC *)g_worldGrid.cells[iVar4].objects[0] == (STBoatC *)0x0) {
+            if ((STBoatC *)g_worldGrid.cells[iVar4].objects[0] == nullptr) {
               if (*(int *)((int)local_48 + iVar9) == 0) {
                 *(int *)((int)local_48 + iVar9 + 0x14) = iVar11;
                 *(undefined4 *)((int)local_48 + iVar9) = 1;

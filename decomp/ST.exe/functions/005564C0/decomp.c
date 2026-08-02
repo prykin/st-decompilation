@@ -45,7 +45,7 @@ int __thiscall TraksClassTy::GetMessage(TraksClassTy *this,STMessage *message)
   if (SVar1 < 4) {
     if (SVar1 == MESS_SHARED_0003) {
       thunk_FUN_005557b0((AnonShape_005557B0_28260162 *)this_00);
-      g_traksClass_00802A7C = (TraksClassTy *)0x0;
+      g_traksClass_00802A7C = nullptr;
       g_currentExceptionFrame = local_58.previous;
       return 0;
     }
@@ -55,13 +55,13 @@ int __thiscall TraksClassTy::GetMessage(TraksClassTy *this,STMessage *message)
       return 0;
     }
     if (SVar1 == MESS_ID_CREATE) {
-      local_8 = (ushort *)0x0;
-      if (g_cMf32_00806754 != (cMf32 *)0x0) {
+      local_8 = nullptr;
+      if (g_cMf32_00806754 != nullptr) {
         local_8 = Library::Ourlib::MFAOBJ::mfAObjLoad(g_cMf32_00806754,PTR_s_TRACKS_0079aebc,0,0);
       }
-      if ((local_8 == (ushort *)0x0) || (*(int *)(local_8 + 10) == 0)) {
+      if ((local_8 == nullptr) || (*(int *)(local_8 + 10) == 0)) {
         pTVar4 = (TraksClassTy_field_0024DArray *)
-                 Library::DKW::TBL::DArrayCreate((DArrayTy *)0x0,0x32,0x3c,0x32);
+                 Library::DKW::TBL::DArrayCreate(nullptr,0x32,0x3c,0x32);
         this_00->field_0024 = pTVar4;
         this_00->field_001C = DAT_00808754 * 0x7d;
       }
@@ -69,7 +69,7 @@ int __thiscall TraksClassTy::GetMessage(TraksClassTy *this,STMessage *message)
         PrepareAfterSave(this_00,local_8);
       }
       CreateDate(this_00);
-      if ((g_cMf32_00806754 != (cMf32 *)0x0) && (local_8 != (ushort *)0x0)) {
+      if ((g_cMf32_00806754 != nullptr) && (local_8 != nullptr)) {
         cMf32::RecMemFree(g_cMf32_00806754,(uint *)&local_8);
         g_currentExceptionFrame = local_58.previous;
         return 0;
@@ -80,7 +80,7 @@ int __thiscall TraksClassTy::GetMessage(TraksClassTy *this,STMessage *message)
     local_c = 0;
     local_10 = PrepareToSave(this_00,&local_c);
     STPlaySystemC::SaveObjData(g_playSystem_00802A38,PTR_s_TRACKS_0079aebc,local_10,local_c,0xc);
-    if (local_10 != (byte *)0x0) {
+    if (local_10 != nullptr) {
       FreeAndNull(&local_10);
     }
   }

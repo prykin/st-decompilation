@@ -95,11 +95,11 @@ void __thiscall FUN_00614400(void *this,AnonShape_00614400_1B90EA7E *param_1)
         ((pSVar6 = g_worldGrid.cells
                    [(int)g_worldGrid.planeStride * (int)sVar9 +
                     (int)g_worldGrid.sizeX * (int)(short)local_8 + (int)sVar8].objects[0],
-         pSVar6 != (STWorldObject *)0x0 && (*(int *)&pSVar6->field_0x18 == iVar7)))))) &&
+         pSVar6 != nullptr && (*(int *)&pSVar6->field_0x18 == iVar7)))))) &&
       (iVar7 = (*pSVar6->vtable[5].slots_00_28[0])(), iVar7 != 0)) &&
      ((pSVar6[1].vtable < (STWorldObjectVTable *)0x8 &&
-      ((g_playSystem_00802A38 == (STPlaySystemC *)0x0 ||
-       ((byte)(&DAT_008087e9)[(int)pSVar6[1].vtable * 0x51] < 8)))))) {
+      ((g_playSystem_00802A38 == nullptr ||
+       (g_bulkInitializedRecords_008087C7[(int)pSVar6[1].vtable].field_0022 < 8)))))) {
     bVar1 = *(byte *)&pSVar6[1].vtable;
     bVar2 = *(byte *)((int)this + 0x1d9);
     /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
@@ -130,7 +130,8 @@ LAB_0061478b:
       bVar10 = iVar7 < 0;
     }
     else {
-      bVar10 = (&DAT_008087ea)[(uint)bVar2 * 0x51] != (&DAT_008087ea)[(uint)bVar1 * 0x51];
+      bVar10 = g_bulkInitializedRecords_008087C7[bVar2].field_0023 !=
+               g_bulkInitializedRecords_008087C7[bVar1].field_0023;
     }
     if ((bVar10) && (iVar7 = (*pSVar6->vtable[5].slots_00_28[2])(), iVar7 != 0)) {
       *(undefined4 *)((int)this + 0x2d1) = *(undefined4 *)&pSVar6->field_0x18;

@@ -4,7 +4,7 @@ int FUN_0074fdeb(int param_1)
 {
   int iVar1;
 
-  if (*(int **)(param_1 + 4) == (int *)0x0) {
+  if (*(int **)(param_1 + 4) == nullptr) {
     iVar1 = -0x7ffbfdcc;
   }
   else {

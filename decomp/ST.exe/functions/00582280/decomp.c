@@ -12,10 +12,10 @@ STJellyManC * __cdecl CreateSTJellyMan(void)
   STJellyManC *pSVar1;
 
   pSVar1 = (STJellyManC *)FUN_006b04d0(0x213);
-  if (pSVar1 != (STJellyManC *)0x0) {
+  if (pSVar1 != nullptr) {
     pSVar1 = STJellyManC::STJellyManC(pSVar1);
     return pSVar1;
   }
-  return (STJellyManC *)0x0;
+  return nullptr;
 }
 

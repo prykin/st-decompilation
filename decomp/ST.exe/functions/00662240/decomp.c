@@ -194,8 +194,8 @@ int __thiscall AiFltClassTy::GetAiMess(AiFltClassTy *this,uint *param_1)
           (uVar11 = sub_0065D9C0(local_c),
           (int)this_00->field_0157 <= CONCAT22(extraout_var_02,uVar11))) &&
          (*(undefined1 *)(param_1 + 2) = 1, *(char *)((int)param_1 + 9) != '\0')) {
-        if (g_allPlayers_007FA174 == (STAllPlayersC *)0x0) {
-          pSVar18 = (STGameObjC *)0x0;
+        if (g_allPlayers_007FA174 == nullptr) {
+          pSVar18 = nullptr;
         }
         else {
           /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
@@ -203,7 +203,7 @@ int __thiscall AiFltClassTy::GetAiMess(AiFltClassTy *this,uint *param_1)
                               (g_allPlayers_007FA174,*(char *)((int)param_1 + 0x12),
                                (ushort)param_1[4],CASE_1);
         }
-        if (pSVar18 != (STGameObjC *)0x0) {
+        if (pSVar18 != nullptr) {
           STFishC::sub_004162B0
                     ((STFishC *)pSVar18,local_2c,local_30,(undefined2 *)((int)&local_8 + 2));
           *(short *)&this_00->field_0x195 = local_2c[0] + -2;
@@ -260,14 +260,14 @@ LAB_00663af0:
         this_00->field_009F = 0;
         this_00->field_00A3 = 0;
         this_00->field_00A7 = 0;
-        if (this_01 != (AiPlrClassTy *)0x0) {
+        if (this_01 != nullptr) {
           thunk_FUN_0067bf60(this_01,'\0',this_00->field_00F7);
           g_currentExceptionFrame = local_74.previous;
           return 0;
         }
       }
       else if ((0x81 < this_00->field_009B) && (this_00->field_009B < 0x8c)) {
-        if (this_01 != (AiPlrClassTy *)0x0) {
+        if (this_01 != nullptr) {
           thunk_FUN_0067bf60(this_01,'\x01',this_00->field_00F7);
         }
         this_00->field_009B = 0;
@@ -294,7 +294,7 @@ LAB_00663af0:
       else {
         bVar24 = true;
       }
-      if ((bVar24) && (g_allPlayers_007FA174 != (STAllPlayersC *)0x0)) {
+      if ((bVar24) && (g_allPlayers_007FA174 != nullptr)) {
         iVar19 = thunk_FUN_004e6a80((byte *)this_00->field_0024,GVar6);
         /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
         iVar12 = extraout_EDX_00;
@@ -306,7 +306,7 @@ LAB_00663af0:
         else {
           bVar24 = true;
         }
-        if ((bVar24) && (g_allPlayers_007FA174 != (STAllPlayersC *)0x0)) {
+        if ((bVar24) && (g_allPlayers_007FA174 != nullptr)) {
           iVar19 = thunk_FUN_004e6c20(this_00->field_0024,GVar6);
           /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
           iVar12 = extraout_EDX_01;
@@ -319,14 +319,14 @@ LAB_00663af0:
           else {
             iVar12 = 0;
           }
-          if ((iVar12 == 0) || (g_allPlayers_007FA174 == (STAllPlayersC *)0x0)) {
+          if ((iVar12 == 0) || (g_allPlayers_007FA174 == nullptr)) {
             if (((GVar6 == 0xdd) || ((GVar6 == 0xde || (GVar6 == 0xe2)))) || (GVar6 == 0xdc)) {
               bVar24 = true;
             }
             else {
               bVar24 = false;
             }
-            if ((bVar24) && (g_allPlayers_007FA174 != (STAllPlayersC *)0x0)) {
+            if ((bVar24) && (g_allPlayers_007FA174 != nullptr)) {
               iVar19 = 1;
             }
             else {
@@ -345,18 +345,18 @@ LAB_00663af0:
         return 0;
       }
       local_8 = (DArrayTy *)sub_0065E360(this_00,iVar12,0x53);
-      if ((local_8 != (DArrayTy *)0x0) && (local_8->count != 0)) {
+      if ((local_8 != nullptr) && (local_8->count != 0)) {
         iVar12 = *(int *)((int)param_1 + 10);
         if (*(char *)(iVar12 + 0x3e) == '\0') {
           if ((this_00->field_009B == 0xc) || (this_00->field_00B3 != 0)) goto LAB_0066263e;
         }
         else if ((((*(short *)(iVar12 + 0x16) < 0) || (*(short *)(iVar12 + 0x18) < 0)) ||
-                 (*(short *)(iVar12 + 0x1a) < 0)) && (this_00->field_0284 != (ushort *)0x0)) {
+                 (*(short *)(iVar12 + 0x1a) < 0)) && (this_00->field_0284 != nullptr)) {
           *(ushort *)(iVar12 + 0x16) = this_00->field_0284[0x41];
           *(ushort *)(*(int *)((int)param_1 + 10) + 0x18) = this_00->field_0284[0x42];
           *(ushort *)(*(int *)((int)param_1 + 10) + 0x1a) = this_00->field_0284[0x43];
         }
-        local_10 = (DArrayTy *)0x0;
+        local_10 = nullptr;
         if (0 < (int)local_8->count) {
           bVar24 = local_8->count != 0;
           do {
@@ -366,18 +366,18 @@ LAB_00663af0:
               puVar17 = (ushort *)(local_8->elementSize * (int)local_10 + (int)local_8->data);
             }
             else {
-              puVar17 = (ushort *)0x0;
+              puVar17 = nullptr;
             }
             uVar3 = *puVar17;
-            if (g_allPlayers_007FA174 == (STAllPlayersC *)0x0) {
-              local_14 = (STGameObjC *)0x0;
+            if (g_allPlayers_007FA174 == nullptr) {
+              local_14 = nullptr;
             }
             else {
               local_14 = STAllPlayersC::GetObjPtr
                                    (g_allPlayers_007FA174,*(char *)&this_00->field_0024,uVar3,CASE_1
                                    );
             }
-            if (local_14 != (STGameObjC *)0x0) {
+            if (local_14 != nullptr) {
               *(undefined1 *)(param_1 + 2) = 1;
               *(ushort *)((int)param_1 + 0xe) = uVar3;
               if (*(char *)((int)param_1 + 9) != '\0') {
@@ -388,8 +388,8 @@ LAB_00663af0:
                 if ((this_00->field_01EB != '\0') &&
                    (iVar12 = thunk_FUN_004ae0b0(this_00->field_01C3,(int)this_00->field_01C5,
                                                 (int)this_00->field_01C7,this_00->field_01AD,
-                                                this_00->field_0024,(undefined4 *)0x0,(int *)0x0,
-                                                (int *)0x0,0,(int *)0x0), iVar12 == 0)) {
+                                                this_00->field_0024,nullptr,nullptr,
+                                                nullptr,0,nullptr), iVar12 == 0)) {
                   local_18 = (int)this_00->field_01C3;
                   local_1c = (int)this_00->field_01C5;
                   local_20 = (int)this_00->field_01C7;
@@ -430,7 +430,7 @@ LAB_006625c2:
         }
       }
 LAB_0066263e:
-      if (local_8 == (DArrayTy *)0x0) {
+      if (local_8 == nullptr) {
         g_currentExceptionFrame = local_74.previous;
         return 0;
       }
@@ -457,7 +457,7 @@ LAB_0066263e:
       else {
         bVar24 = true;
       }
-      if ((bVar24) && (g_allPlayers_007FA174 != (STAllPlayersC *)0x0)) {
+      if ((bVar24) && (g_allPlayers_007FA174 != nullptr)) {
         iVar12 = thunk_FUN_004e6a80((byte *)this_00->field_0024,GVar6);
       }
       else {
@@ -467,7 +467,7 @@ LAB_0066263e:
         else {
           bVar24 = true;
         }
-        if ((bVar24) && (g_allPlayers_007FA174 != (STAllPlayersC *)0x0)) {
+        if ((bVar24) && (g_allPlayers_007FA174 != nullptr)) {
           iVar12 = thunk_FUN_004e6c20(this_00->field_0024,GVar6);
         }
         else {
@@ -478,7 +478,7 @@ LAB_0066263e:
           else {
             bVar24 = false;
           }
-          if ((bVar24) && (g_allPlayers_007FA174 != (STAllPlayersC *)0x0)) {
+          if ((bVar24) && (g_allPlayers_007FA174 != nullptr)) {
             iVar12 = thunk_FUN_004e80f0(this_00->field_0024,GVar6);
           }
           else {
@@ -488,7 +488,7 @@ LAB_0066263e:
             else {
               bVar24 = false;
             }
-            if ((bVar24) && (g_allPlayers_007FA174 != (STAllPlayersC *)0x0)) {
+            if ((bVar24) && (g_allPlayers_007FA174 != nullptr)) {
               iVar12 = 1;
             }
             else {
@@ -543,7 +543,7 @@ LAB_0066263e:
       }
       if (((*(char *)(iVar12 + 0x3e) != '\0') &&
           (((*(short *)(iVar12 + 0x16) < 0 || (*(short *)(iVar12 + 0x18) < 0)) ||
-           (*(short *)(iVar12 + 0x1a) < 0)))) && (this_00->field_0284 != (ushort *)0x0)) {
+           (*(short *)(iVar12 + 0x1a) < 0)))) && (this_00->field_0284 != nullptr)) {
         *(ushort *)(iVar12 + 0x16) = this_00->field_0284[0x41];
         *(ushort *)(*(int *)((int)param_1 + 10) + 0x18) = this_00->field_0284[0x42];
         *(ushort *)(*(int *)((int)param_1 + 10) + 0x1a) = this_00->field_0284[0x43];
@@ -555,8 +555,8 @@ LAB_0066263e:
       if ((this_00->field_01EB != '\0') &&
          (iVar12 = thunk_FUN_004ae0b0(this_00->field_01C3,(int)this_00->field_01C5,
                                       (int)this_00->field_01C7,this_00->field_01AD,
-                                      this_00->field_0024,(undefined4 *)0x0,(int *)0x0,(int *)0x0,0,
-                                      (int *)0x0), iVar12 == 0)) {
+                                      this_00->field_0024,nullptr,nullptr,nullptr,0,
+                                      nullptr), iVar12 == 0)) {
         local_14 = (STGameObjC *)(int)this_00->field_01C3;
         local_10 = (DArrayTy *)(int)this_00->field_01C5;
         local_24 = (TLOBaseTy *)(int)this_00->field_01C7;
@@ -608,7 +608,7 @@ LAB_0066263e:
       else {
         bVar24 = true;
       }
-      if ((bVar24) && (g_allPlayers_007FA174 != (STAllPlayersC *)0x0)) {
+      if ((bVar24) && (g_allPlayers_007FA174 != nullptr)) {
         iVar19 = thunk_FUN_004e6a80((byte *)this_00->field_0024,GVar6);
         /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
         iVar12 = extraout_EDX_03;
@@ -620,7 +620,7 @@ LAB_0066263e:
         else {
           bVar24 = true;
         }
-        if ((bVar24) && (g_allPlayers_007FA174 != (STAllPlayersC *)0x0)) {
+        if ((bVar24) && (g_allPlayers_007FA174 != nullptr)) {
           iVar19 = thunk_FUN_004e6c20(this_00->field_0024,GVar6);
           /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
           iVar12 = extraout_EDX_04;
@@ -633,14 +633,14 @@ LAB_0066263e:
           else {
             iVar12 = 0;
           }
-          if ((iVar12 == 0) || (g_allPlayers_007FA174 == (STAllPlayersC *)0x0)) {
+          if ((iVar12 == 0) || (g_allPlayers_007FA174 == nullptr)) {
             if (((GVar6 == 0xdd) || ((GVar6 == 0xde || (GVar6 == 0xe2)))) || (GVar6 == 0xdc)) {
               bVar24 = true;
             }
             else {
               bVar24 = false;
             }
-            if ((bVar24) && (g_allPlayers_007FA174 != (STAllPlayersC *)0x0)) {
+            if ((bVar24) && (g_allPlayers_007FA174 != nullptr)) {
               iVar19 = 1;
             }
             else {
@@ -675,7 +675,7 @@ LAB_0066263e:
       }
       local_8 = (DArrayTy *)sub_0065E360(this_00,iVar12,iVar19);
       /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-      if ((((local_8 != (DArrayTy *)0x0) && (uVar23 = local_8->count, uVar23 != 0)) &&
+      if ((((local_8 != nullptr) && (uVar23 = local_8->count, uVar23 != 0)) &&
           ((*(char *)(*(int *)((int)param_1 + 10) + 0x3e) != '\0' ||
            ((this_00->field_009B != 0xe && (this_00->field_00B3 == 0)))))) &&
          (uVar20 = 0, 0 < (int)uVar23)) {
@@ -685,18 +685,18 @@ LAB_0066263e:
             puVar17 = (ushort *)(local_8->elementSize * uVar20 + (int)local_8->data);
           }
           else {
-            puVar17 = (ushort *)0x0;
+            puVar17 = nullptr;
           }
           uVar3 = *puVar17;
-          if (g_allPlayers_007FA174 == (STAllPlayersC *)0x0) {
-            local_24 = (TLOBaseTy *)0x0;
+          if (g_allPlayers_007FA174 == nullptr) {
+            local_24 = nullptr;
           }
           else {
             local_24 = (TLOBaseTy *)
                        STAllPlayersC::GetObjPtr
                                  (g_allPlayers_007FA174,*(char *)&this_00->field_0024,uVar3,CASE_1);
           }
-          if (((STGameObjC *)local_24 != (STGameObjC *)0x0) &&
+          if (((STGameObjC *)local_24 != nullptr) &&
              (iVar12 = thunk_FUN_004c93e0(local_24,1), iVar12 == 0)) {
             *(undefined1 *)(param_1 + 2) = 1;
             *(ushort *)((int)param_1 + 0xe) = uVar3;
@@ -726,7 +726,7 @@ LAB_0066263e:
           uVar23 = local_8->count;
         } while ((int)uVar20 < (int)uVar23);
       }
-      if (local_8 == (DArrayTy *)0x0) {
+      if (local_8 == nullptr) {
         g_currentExceptionFrame = local_74.previous;
         return 0;
       }
@@ -757,7 +757,7 @@ LAB_0066263e:
       else {
         bVar24 = true;
       }
-      if ((bVar24) && (g_allPlayers_007FA174 != (STAllPlayersC *)0x0)) {
+      if ((bVar24) && (g_allPlayers_007FA174 != nullptr)) {
         iVar19 = thunk_FUN_004e6a80((byte *)local_c->field_0024,GVar5);
         /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
         iVar12 = extraout_EDX_09;
@@ -769,7 +769,7 @@ LAB_0066263e:
         else {
           bVar24 = true;
         }
-        if ((bVar24) && (g_allPlayers_007FA174 != (STAllPlayersC *)0x0)) {
+        if ((bVar24) && (g_allPlayers_007FA174 != nullptr)) {
           iVar19 = thunk_FUN_004e6c20(local_c->field_0024,GVar5);
           /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
           iVar12 = extraout_EDX_10;
@@ -781,14 +781,14 @@ LAB_0066263e:
           else {
             iVar12 = 0;
           }
-          if ((iVar12 == 0) || (g_allPlayers_007FA174 == (STAllPlayersC *)0x0)) {
+          if ((iVar12 == 0) || (g_allPlayers_007FA174 == nullptr)) {
             if (((GVar5 == 0xdd) || ((GVar5 == 0xde || (GVar5 == 0xe2)))) || (GVar5 == 0xdc)) {
               bVar24 = true;
             }
             else {
               bVar24 = false;
             }
-            if ((bVar24) && (g_allPlayers_007FA174 != (STAllPlayersC *)0x0)) {
+            if ((bVar24) && (g_allPlayers_007FA174 != nullptr)) {
               iVar19 = 1;
             }
             else {
@@ -821,22 +821,22 @@ LAB_0066263e:
 LAB_00663076:
       local_8 = (DArrayTy *)sub_0065E360(this_00,iVar12,iVar19);
       /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-      if ((((local_8 != (DArrayTy *)0x0) &&
-           (pSVar18 = (STGameObjC *)local_8->count, pSVar18 != (STGameObjC *)0x0)) &&
+      if ((((local_8 != nullptr) &&
+           (pSVar18 = (STGameObjC *)local_8->count, pSVar18 != nullptr)) &&
           ((*(char *)(*(int *)((int)param_1 + 10) + 0x3e) != '\0' ||
            ((this_00->field_009B != 0x10 && (this_00->field_00B3 == 0)))))) &&
-         (local_14 = (STGameObjC *)0x0, 0 < (int)pSVar18)) {
+         (local_14 = nullptr, 0 < (int)pSVar18)) {
         do {
           if (local_14 < pSVar18) {
             /* ST_PSEUDO[dynamic_array_indexing]: expected DArrayAt<T>(local_8, (int)local_14) (runtime stride) */
             puVar17 = (ushort *)(local_8->elementSize * (int)local_14 + (int)local_8->data);
           }
           else {
-            puVar17 = (ushort *)0x0;
+            puVar17 = nullptr;
           }
           uVar3 = *puVar17;
-          if (g_allPlayers_007FA174 == (STAllPlayersC *)0x0) {
-            pSVar14 = (STBoatC *)0x0;
+          if (g_allPlayers_007FA174 == nullptr) {
+            pSVar14 = nullptr;
           }
           else {
             pSVar14 = (STBoatC *)
@@ -844,7 +844,7 @@ LAB_00663076:
                                 (g_allPlayers_007FA174,*(char *)&this_00->field_0024,uVar3,CASE_1);
           }
           local_24 = (TLOBaseTy *)pSVar14;
-          if (pSVar14 != (STBoatC *)0x0) {
+          if (pSVar14 != nullptr) {
             iVar12 = thunk_FUN_004e1490(pSVar14);
             /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
             if ((iVar12 == 0) ||
@@ -883,7 +883,7 @@ LAB_00663076:
           pSVar18 = (STGameObjC *)local_8->count;
         } while ((int)local_14 < (int)pSVar18);
       }
-      if (local_8 == (DArrayTy *)0x0) {
+      if (local_8 == nullptr) {
         g_currentExceptionFrame = local_74.previous;
         return 0;
       }
@@ -897,7 +897,7 @@ LAB_00663076:
     else {
       bVar24 = true;
     }
-    if ((bVar24) && (g_allPlayers_007FA174 != (STAllPlayersC *)0x0)) {
+    if ((bVar24) && (g_allPlayers_007FA174 != nullptr)) {
       iVar12 = thunk_FUN_004e6a80((byte *)local_c->field_0024,GVar5);
       /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
       uVar23 = extraout_EDX_06;
@@ -909,7 +909,7 @@ LAB_00663076:
       else {
         bVar24 = true;
       }
-      if ((bVar24) && (g_allPlayers_007FA174 != (STAllPlayersC *)0x0)) {
+      if ((bVar24) && (g_allPlayers_007FA174 != nullptr)) {
         iVar12 = thunk_FUN_004e6c20(local_c->field_0024,GVar5);
         /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
         uVar23 = extraout_EDX_07;
@@ -921,14 +921,14 @@ LAB_00663076:
         else {
           uVar23 = 0;
         }
-        if ((uVar23 == 0) || (g_allPlayers_007FA174 == (STAllPlayersC *)0x0)) {
+        if ((uVar23 == 0) || (g_allPlayers_007FA174 == nullptr)) {
           if (((GVar5 == 0xdd) || ((GVar5 == 0xde || (GVar5 == 0xe2)))) || (GVar5 == 0xdc)) {
             bVar24 = true;
           }
           else {
             bVar24 = false;
           }
-          if ((bVar24) && (g_allPlayers_007FA174 != (STAllPlayersC *)0x0)) {
+          if ((bVar24) && (g_allPlayers_007FA174 != nullptr)) {
             iVar12 = 1;
           }
           else {
@@ -971,10 +971,10 @@ switchD_00662d3e_caseD_a4:
     }
     local_8 = (DArrayTy *)sub_0065E360(this_00,uVar23,iVar12);
     /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-    if ((((local_8 != (DArrayTy *)0x0) && (dVar8 = local_8->count, dVar8 != 0)) &&
+    if ((((local_8 != nullptr) && (dVar8 = local_8->count, dVar8 != 0)) &&
         ((*(char *)(*(int *)((int)param_1 + 10) + 0x3e) != '\0' ||
          ((this_00->field_009B != 0x12 && (this_00->field_00B3 == 0)))))) &&
-       (local_24 = (TLOBaseTy *)0x0, 0 < (int)dVar8)) {
+       (local_24 = nullptr, 0 < (int)dVar8)) {
       bVar24 = dVar8 != 0;
 LAB_00662dbb:
       if (bVar24) {
@@ -982,18 +982,18 @@ LAB_00662dbb:
         puVar17 = (ushort *)(local_8->elementSize * (int)local_24 + (int)local_8->data);
       }
       else {
-        puVar17 = (ushort *)0x0;
+        puVar17 = nullptr;
       }
       uVar3 = *puVar17;
-      if (g_allPlayers_007FA174 == (STAllPlayersC *)0x0) {
-        local_10 = (DArrayTy *)0x0;
+      if (g_allPlayers_007FA174 == nullptr) {
+        local_10 = nullptr;
       }
       else {
         local_10 = (DArrayTy *)
                    STAllPlayersC::GetObjPtr
                              (g_allPlayers_007FA174,*(char *)&this_00->field_0024,uVar3,CASE_1);
       }
-      if ((STGameObjC *)local_10 == (STGameObjC *)0x0) goto cf_continue_loop_00662E52;
+      if ((STGameObjC *)local_10 == nullptr) goto cf_continue_loop_00662E52;
       switch(**(undefined4 **)((int)param_1 + 10)) {
       case 0xa3:
         iVar12 = TLOBaseTy::sub_004C7860((TLOBaseTy *)local_10,4,0,1,1,1);
@@ -1023,7 +1023,7 @@ LAB_00662dbb:
 LAB_00662ee7:
           TLOBaseTy::thunk_FUN_004c7cc0
                     ((TLOBaseTy *)local_10,iVar12,0,1,1,0xffffffff,(*(int **)((int)param_1 + 10))[2]
-                     ,0xff,(char *)0x0);
+                     ,0xff,nullptr);
         }
         else {
           if (iVar12 == 0xa8) {
@@ -1049,7 +1049,7 @@ LAB_00662ee7:
       }
     }
 LAB_00662f34:
-    if (local_8 != (DArrayTy *)0x0) {
+    if (local_8 != nullptr) {
       DArrayDestroy(local_8);
       g_currentExceptionFrame = local_74.previous;
       return 0;
@@ -1071,14 +1071,14 @@ LAB_00662f34:
         sVar2 = *(short *)((int)puVar7 + 0x16);
         if ((((sVar2 < 0) || (g_worldGrid.sizeX <= sVar2)) || (sVar1 < 0)) ||
            (((g_worldGrid.sizeY <= sVar1 || (sVar4 < 0)) || (g_worldGrid.sizeZ <= sVar4)))) {
-          this_02 = (STWorldObject *)0x0;
+          this_02 = nullptr;
         }
         else {
           this_02 = g_worldGrid.cells
                     [(int)g_worldGrid.planeStride * (int)sVar4 + (int)g_worldGrid.sizeX * (int)sVar1
                      + (int)sVar2].objects[0];
         }
-        if ((this_02 != (STWorldObject *)0x0) &&
+        if ((this_02 != nullptr) &&
            (this_02[1].vtable == (STWorldObjectVTable *)local_c->field_0024)) {
           iVar12 = this_02->GetObjectTypeId();
           if (iVar12 == **(int **)((int)param_1 + 9)) {
@@ -1128,15 +1128,15 @@ LAB_00663325:
         bVar24 = true;
       }
       if (bVar24) {
-        if (g_allPlayers_007FA174 == (STAllPlayersC *)0x0) {
-          pSVar18 = (STGameObjC *)0x0;
+        if (g_allPlayers_007FA174 == nullptr) {
+          pSVar18 = nullptr;
         }
         else {
           pSVar18 = STAllPlayersC::GetObjPtr
                               (g_allPlayers_007FA174,*(char *)&local_c->field_0024,
                                (ushort)puVar7[0xe],CASE_1);
         }
-        if (pSVar18 == (STGameObjC *)0x0) goto LAB_00663325;
+        if (pSVar18 == nullptr) goto LAB_00663325;
         iVar12 = thunk_FUN_004c9430(pSVar18,1,*(int *)(*(int *)((int)param_1 + 9) + 8));
         if (iVar12 == 0) {
           *(undefined1 *)(param_1 + 2) = 1;
@@ -1162,7 +1162,7 @@ LAB_00663325:
           pvVar15 = (void *)(pDVar16->elementSize * uVar20 + (int)pDVar16->data);
         }
         else {
-          pvVar15 = (void *)0x0;
+          pvVar15 = nullptr;
         }
         /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
         if (*(int *)(param_1[2] + 8) == *(int *)((int)pvVar15 + 0x24)) break;
@@ -1318,7 +1318,7 @@ LAB_006636da:
       iVar12 = extraout_EDX_12;
     }
     local_10 = (DArrayTy *)sub_0065E360(this_00,iVar12,iVar19);
-    if (((local_10 != (DArrayTy *)0x0) && (dVar8 = local_10->count, dVar8 != 0)) &&
+    if (((local_10 != nullptr) && (dVar8 = local_10->count, dVar8 != 0)) &&
        (uVar23 = 0, 0 < (int)dVar8)) {
       bVar24 = dVar8 != 0;
       do {
@@ -1327,17 +1327,17 @@ LAB_006636da:
           puVar17 = (ushort *)(local_10->elementSize * uVar23 + (int)local_10->data);
         }
         else {
-          puVar17 = (ushort *)0x0;
+          puVar17 = nullptr;
         }
         uVar3 = *puVar17;
-        if (g_allPlayers_007FA174 == (STAllPlayersC *)0x0) {
-          pSVar18 = (STGameObjC *)0x0;
+        if (g_allPlayers_007FA174 == nullptr) {
+          pSVar18 = nullptr;
         }
         else {
           pSVar18 = STAllPlayersC::GetObjPtr
                               (g_allPlayers_007FA174,*(char *)&local_c->field_0024,uVar3,CASE_1);
         }
-        if ((pSVar18 != (STGameObjC *)0x0) &&
+        if ((pSVar18 != nullptr) &&
            (iVar12 = thunk_FUN_004e3790(pSVar18,(int)*(short *)(*(int *)((int)param_1 + 10) + 1),
                                         (int)*(short *)(*(int *)((int)param_1 + 10) + 3),1),
            iVar12 != 0)) {
@@ -1346,7 +1346,7 @@ LAB_006636da:
           if (*(char *)((int)param_1 + 9) != '\0') {
             TLOBaseTy::thunk_FUN_004c7cc0
                       ((TLOBaseTy *)pSVar18,2,(int)*(short *)(*(int *)((int)param_1 + 10) + 1),1,1,
-                       0xffffffff,0,0xff,(char *)0x0);
+                       0xffffffff,0,0xff,nullptr);
           }
           break;
         }
@@ -1354,7 +1354,7 @@ LAB_006636da:
         bVar24 = uVar23 < local_10->count;
       } while ((int)uVar23 < (int)local_10->count);
     }
-    if (local_10 != (DArrayTy *)0x0) {
+    if (local_10 != nullptr) {
       DArrayDestroy(local_10);
       g_currentExceptionFrame = local_74.previous;
       return 0;
@@ -1392,15 +1392,15 @@ LAB_0066380d:
         if (sVar4 != 3) goto LAB_0066380d;
         iVar12 = 0x62;
       }
-      pDVar16 = (DArrayTy *)sub_0065FA60(local_c,iVar12,(sVar4 != 3) - 1 & 2,(short *)0x0);
-      if (pDVar16 != (DArrayTy *)0x0) {
+      pDVar16 = (DArrayTy *)sub_0065FA60(local_c,iVar12,(sVar4 != 3) - 1 & 2,nullptr);
+      if (pDVar16 != nullptr) {
         *(undefined1 *)(param_1 + 2) = 1;
         DArrayDestroy(pDVar16);
       }
     }
     if ((char)param_1[2] == '\x01') {
       if (('\0' < *(char *)((int)param_1 + 9)) &&
-         (*(DArrayTy **)((int)param_1 + 10) != (DArrayTy *)0x0)) {
+         (*(DArrayTy **)((int)param_1 + 10) != nullptr)) {
         thunk_FUN_0065d940(this_00,*(DArrayTy **)((int)param_1 + 10),1);
       }
       uVar11 = sub_0065D9C0(this_00);
@@ -1414,7 +1414,7 @@ LAB_0066380d:
       *(undefined2 *)((int)param_1 + 0xf) = 0;
       /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
       pDVar16 = (DArrayTy *)sub_0065DA10(local_c,extraout_EDX);
-      if (pDVar16 != (DArrayTy *)0x0) {
+      if (pDVar16 != nullptr) {
         uVar23 = 0;
         if (0 < (int)pDVar16->count) {
           bVar24 = pDVar16->count != 0;
@@ -1424,14 +1424,14 @@ LAB_0066380d:
               puVar17 = (ushort *)(pDVar16->elementSize * uVar23 + (int)pDVar16->data);
             }
             else {
-              puVar17 = (ushort *)0x0;
+              puVar17 = nullptr;
             }
             /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
             local_28 = CONCAT22((short)((uint)puVar17 >> 0x10),*puVar17);
             pSVar18 = STAllPlayersC::GetObjPtr
                                 (g_allPlayers_007FA174,*(char *)&local_c->field_0024,*puVar17,CASE_1
                                 );
-            if (pSVar18 != (STGameObjC *)0x0) {
+            if (pSVar18 != nullptr) {
               iVar12 = (*pSVar18->vtable->vfunc_2C)();
               if ((iVar12 < 1) || (0x28 < iVar12)) {
                 bVar24 = false;
@@ -1448,7 +1448,7 @@ LAB_0066380d:
                  )) {
                 *(short *)((int)param_1 + 0xf) = *(short *)((int)param_1 + 0xf) + 1;
                 /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-                if (*(DArrayTy **)((int)param_1 + 0x11) != (DArrayTy *)0x0) {
+                if (*(DArrayTy **)((int)param_1 + 0x11) != nullptr) {
                   /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
                   Library::DKW::TBL::DArrayAppend(*(DArrayTy **)((int)param_1 + 0x11),&local_28);
                 }

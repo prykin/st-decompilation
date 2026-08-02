@@ -14,14 +14,14 @@ void FUN_006cec40(AnonShape_006CEC40_BB23E716 *param_1)
   int *piVar1;
   int iVar2;
 
-  if (param_1 != (AnonShape_006CEC40_BB23E716 *)0x0) {
+  if (param_1 != nullptr) {
     piVar1 = param_1->field_0034;
-    if (piVar1 != (int *)0x0) {
+    if (piVar1 != nullptr) {
       /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
       (**(code **)(*piVar1 + 0x6c))(piVar1);
     }
     piVar1 = param_1->field_0040;
-    if (piVar1 != (int *)0x0) {
+    if (piVar1 != nullptr) {
       /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
       iVar2 = (**(code **)(*piVar1 + 0x6c))(piVar1);
       if (iVar2 == -0x7789fdb5) {
@@ -29,7 +29,7 @@ void FUN_006cec40(AnonShape_006CEC40_BB23E716 *param_1)
       }
     }
     piVar1 = param_1->field_0044;
-    if (piVar1 != (int *)0x0) {
+    if (piVar1 != nullptr) {
       /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
       iVar2 = (**(code **)(*piVar1 + 0x6c))(piVar1);
       if (iVar2 == -0x7789fdb5) {
@@ -37,7 +37,7 @@ void FUN_006cec40(AnonShape_006CEC40_BB23E716 *param_1)
       }
     }
     piVar1 = param_1->field_0048;
-    if (piVar1 != (int *)0x0) {
+    if (piVar1 != nullptr) {
       /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
       (**(code **)(*piVar1 + 0x6c))(piVar1);
     }

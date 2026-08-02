@@ -31,11 +31,11 @@ undefined4 __fastcall FUN_004d2fd0(int param_1)
   AnonShape_0060EA30_DCEB68AD *local_c;
   byte *local_8;
 
-  local_20 = (byte *)0x0;
-  local_10 = (byte *)0x0;
-  local_14 = (byte *)0x0;
+  local_20 = nullptr;
+  local_10 = nullptr;
+  local_14 = nullptr;
   if (param_1 == 0) {
-    puVar1 = (byte *)0x0;
+    puVar1 = nullptr;
   }
   else {
     puVar1 = (byte *)(param_1 + 0x231);
@@ -45,7 +45,7 @@ undefined4 __fastcall FUN_004d2fd0(int param_1)
   iVar2 = 0;
   local_170 = 2;
   if (param_1 == 0) {
-    puVar1 = (byte *)0x0;
+    puVar1 = nullptr;
   }
   else {
     puVar1 = (byte *)(param_1 + 0x2a0);

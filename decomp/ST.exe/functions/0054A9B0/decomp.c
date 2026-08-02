@@ -30,8 +30,8 @@ SubmarineTitans::Recovered::HiddenThis::AnonReceiver_0054A9B0::FUN_0054a9b0
   AnonShape_0054A9B0_643B0813 *local_c;
   uint local_8;
 
-  if ((g_sT3DSMAPContext_00807598 == (ST3DSMAPContext *)0x0) ||
-     (g_visibleClass_00802A88 == (VisibleClassTy *)0x0)) {
+  if ((g_sT3DSMAPContext_00807598 == nullptr) ||
+     (g_visibleClass_00802A88 == nullptr)) {
     return;
   }
   local_58.previous = g_currentExceptionFrame;
@@ -103,7 +103,7 @@ SubmarineTitans::Recovered::HiddenThis::AnonReceiver_0054A9B0::FUN_0054a9b0
         else {
           bVar2 = true;
         }
-        if ((bVar2) && (pVVar3->field_004C != (byte *)0x0)) {
+        if ((bVar2) && (pVVar3->field_004C != nullptr)) {
           uVar6 = (uint)pVVar3->field_004C
                         [local_10 + (g_centeredOffsets5[iVar8] + local_14) * pVVar3->field_0030];
         }
@@ -120,24 +120,24 @@ SubmarineTitans::Recovered::HiddenThis::AnonReceiver_0054A9B0::FUN_0054a9b0
   }
   pAVar4 = local_c;
   if (0 < (int)uVar6) {
-    if ((SpriteClassTy *)local_c->field_04EB != (SpriteClassTy *)0x0) {
+    if ((SpriteClassTy *)local_c->field_04EB != nullptr) {
       SpriteClassTy::CloseSprite((SpriteClassTy *)local_c->field_04EB);
       Library::MSVCRT::FUN_0072e2b0((HoloTy *)pAVar4->field_04EB);
       pAVar4->field_04EB = 0;
     }
     pSVar7 = (SpriteClassTy *)Library::MSVCRT::FUN_0072e530(0x91);
-    if (pSVar7 == (SpriteClassTy *)0x0) {
-      pSVar7 = (SpriteClassTy *)0x0;
+    if (pSVar7 == nullptr) {
+      pSVar7 = nullptr;
     }
     else {
       pSVar7 = SpriteClassTy::SpriteClassTy(pSVar7);
     }
     pAVar4->field_04EB = pSVar7;
-    if (pSVar7 == (SpriteClassTy *)0x0) {
+    if (pSVar7 == nullptr) {
       g_currentExceptionFrame = local_58.previous;
       return;
     }
-    SpriteClassTy::InitSprite(pSVar7,(int *)g_ddxContext_008075A8,1,'\a',(undefined4 *)0x0,0,0);
+    SpriteClassTy::InitSprite(pSVar7,(int *)g_ddxContext_008075A8,1,'\a',nullptr,0,0);
     /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
     (**(code **)(*(int *)pAVar4->field_04EB + 4))
               (DAT_00806784,7,0,"CUR_CONFIRM2D",0xffffffff);

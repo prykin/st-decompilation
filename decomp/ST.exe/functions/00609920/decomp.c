@@ -13,10 +13,10 @@ void * __cdecl FUN_00609920(void)
   undefined4 *puVar2;
 
   pSVar1 = (STGroupBoatC *)FUN_006b04d0(600);
-  if (pSVar1 != (STGroupBoatC *)0x0) {
+  if (pSVar1 != nullptr) {
     puVar2 = thunk_FUN_00609950(pSVar1);
     return puVar2;
   }
-  return (void *)0x0;
+  return nullptr;
 }
 

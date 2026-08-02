@@ -65,7 +65,7 @@ int __thiscall SndUnderAttMenegC::GetMessage(SndUnderAttMenegC *this,STMessage *
     } while (iVar4 < 0xffffff0);
   }
   else if (SVar1 == MESS_ID_CREATE) {
-    if (g_dumpClass_007FB284 != (DumpClassC *)0x0) {
+    if (g_dumpClass_007FB284 != nullptr) {
       *(int *)&local_8->field_0x1c = (int)g_worldGrid.sizeX / 2;
       g_currentExceptionFrame = local_50.previous;
       return 0;

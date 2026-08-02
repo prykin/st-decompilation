@@ -28,13 +28,13 @@ FUN_0070c900(AnonShape_006B5B10_E0D06CF1 *param_1,uint *param_2,char param_3,int
       iVar1 = FUN_006b4fa0((int *)param_1);
       puVar2 = FUN_007527a0(param_1,iVar1,param_4,param_3,puVar4);
     }
-    if (param_2 != (uint *)0x0) {
+    if (param_2 != nullptr) {
       *param_2 = local_8;
     }
     g_currentExceptionFrame = local_4c.previous;
     return puVar2;
   }
   g_currentExceptionFrame = local_4c.previous;
-  return (undefined4 *)0x0;
+  return nullptr;
 }
 

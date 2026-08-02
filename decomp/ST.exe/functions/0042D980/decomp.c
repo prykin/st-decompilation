@@ -31,13 +31,13 @@ STAllPlayersC::GetActiveCenter
   if (g_packedRecords_A62x8[uVar7].field448_0x203 == 0) {
     iVar4 = g_packedRecords_A62x8[uVar7].field332_0x163;
     if (iVar4 == 0) {
-      if (param_1 != (undefined2 *)0x0) {
+      if (param_1 != nullptr) {
         *param_1 = 0xffff;
       }
-      if (param_2 != (undefined2 *)0x0) {
+      if (param_2 != nullptr) {
         *param_2 = 0xffff;
       }
-      if (param_3 == (undefined2 *)0x0) {
+      if (param_3 == nullptr) {
         return 0xffffffff;
       }
       *param_3 = 0xffff;
@@ -71,27 +71,27 @@ STAllPlayersC::GetActiveCenter
           local_18 = local_18 + 1;
         } while ((int)local_18 < (int)dVar2);
         if (0 < local_1c) {
-          if (param_1 != (undefined2 *)0x0) {
+          if (param_1 != nullptr) {
             *param_1 = (short)((int)(short)iVar8 / local_1c);
           }
-          if (param_2 != (undefined2 *)0x0) {
+          if (param_2 != nullptr) {
             *param_2 = (short)((int)(short)iVar9 / local_1c);
           }
-          if (param_3 == (undefined2 *)0x0) {
+          if (param_3 == nullptr) {
             return 0;
           }
           *param_3 = (short)((int)(short)iVar4 / local_1c);
           return 0;
         }
       }
-      if (param_1 != (undefined2 *)0x0) {
+      if (param_1 != nullptr) {
         *param_1 = 0xffff;
       }
 joined_r0x0042de37:
-      if (param_2 != (undefined2 *)0x0) {
+      if (param_2 != nullptr) {
         *param_2 = 0xffff;
       }
-      if (param_3 == (undefined2 *)0x0) {
+      if (param_3 == nullptr) {
         return 0;
       }
       *param_3 = 0xffff;
@@ -102,13 +102,13 @@ joined_r0x0042de37:
                          ,g_packedRecords_A62x8[uVar7].field334_0x16b,CASE_3);
       STFishC::sub_004162B0
                 ((STFishC *)pSVar6,(short *)&local_8,(undefined2 *)&local_c,(undefined2 *)&local_10);
-      if (param_1 != (undefined2 *)0x0) {
+      if (param_1 != nullptr) {
         *param_1 = (undefined2)local_8;
       }
-      if (param_2 != (undefined2 *)0x0) {
+      if (param_2 != nullptr) {
         *param_2 = (undefined2)local_c;
       }
-      if (param_3 != (undefined2 *)0x0) {
+      if (param_3 != nullptr) {
         *param_3 = (undefined2)local_10;
       }
       return 0;
@@ -118,7 +118,7 @@ joined_r0x0042de37:
     if (iVar4 != 0) {
       STDebugBreak(); /* noreturn in standalone pseudocode */
     }
-    if (param_1 != (undefined2 *)0x0) {
+    if (param_1 != nullptr) {
       *param_1 = 0xffff;
     }
     goto joined_r0x0042dcbd;
@@ -153,14 +153,14 @@ LAB_0042dbdf:
                   ((STFishC *)pSVar6,(short *)&local_8,(undefined2 *)&local_c,
                    (undefined2 *)&local_10);
       }
-      if (param_1 != (undefined2 *)0x0) {
+      if (param_1 != nullptr) {
         *param_1 = (undefined2)local_8;
       }
 joined_r0x0042dc56:
-      if (param_2 != (undefined2 *)0x0) {
+      if (param_2 != nullptr) {
         *param_2 = (undefined2)local_c;
       }
-      if (param_3 == (undefined2 *)0x0) {
+      if (param_3 == nullptr) {
         return 0;
       }
       *param_3 = (undefined2)local_10;
@@ -194,20 +194,20 @@ joined_r0x0042dc56:
           local_18 = local_18 + 1;
         } while ((int)local_18 < (int)dVar2);
         if (0 < local_1c) {
-          if (param_1 != (undefined2 *)0x0) {
+          if (param_1 != nullptr) {
             *param_1 = (short)((int)(short)iVar8 / local_1c);
           }
-          if (param_2 != (undefined2 *)0x0) {
+          if (param_2 != nullptr) {
             *param_2 = (short)((int)(short)iVar9 / local_1c);
           }
-          if (param_3 == (undefined2 *)0x0) {
+          if (param_3 == nullptr) {
             return 0;
           }
           *param_3 = (short)((int)(short)iVar4 / local_1c);
           return 0;
         }
       }
-      if (param_1 != (undefined2 *)0x0) {
+      if (param_1 != nullptr) {
         *param_1 = 0xffff;
       }
       goto joined_r0x0042de37;
@@ -220,7 +220,7 @@ joined_r0x0042dc56:
         STFishC::sub_004162B0
                   ((STFishC *)pSVar6,(short *)&local_8,(undefined2 *)&local_c,
                    (undefined2 *)&local_10);
-        if (param_1 != (undefined2 *)0x0) {
+        if (param_1 != nullptr) {
           *param_1 = (undefined2)local_8;
         }
         goto joined_r0x0042dc56;
@@ -238,14 +238,14 @@ joined_r0x0042dc56:
     }
   }
 joined_r0x0042dc09:
-  if (param_1 != (undefined2 *)0x0) {
+  if (param_1 != nullptr) {
     *param_1 = 0xffff;
   }
 joined_r0x0042dcbd:
-  if (param_2 != (undefined2 *)0x0) {
+  if (param_2 != nullptr) {
     *param_2 = 0xffff;
   }
-  if (param_3 == (undefined2 *)0x0) {
+  if (param_3 == nullptr) {
     return 0xffffffff;
   }
   *param_3 = 0xffff;

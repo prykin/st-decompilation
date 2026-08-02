@@ -49,7 +49,7 @@ void __thiscall MReportTy::SetCtrl(MReportTy *this)
     PutDDXClip(0x174,0x1a9,0x174,0x1a9,400,(byte *)0x32,'\x01',(BITMAPINFO *)this_00->field_005D);
     if ((this_00->field_0066 == '\x01') &&
        (this_00->field_0067 = 0, (&this_00->field_0347)[(byte)this_00->field_006A]->count != 0)) {
-      local_8 = (cMf32 *)0x0;
+      local_8 = nullptr;
       wsprintfA((LPSTR)&DAT_0080f33a,"%s%s%s\\%s",&DAT_00807680,PTR_s_SAVEGAME__0079c0d4,
                 &DAT_00807ddd,PTR_s_PL_LOG_0079c0d8);
       local_98.previous = g_currentExceptionFrame;
@@ -61,7 +61,7 @@ void __thiscall MReportTy::SetCtrl(MReportTy *this)
       this_01 = local_8;
       this_00 = local_c;
       g_currentExceptionFrame = local_98.previous;
-      if (local_8 != (cMf32 *)0x0) {
+      if (local_8 != nullptr) {
         local_10 = &DAT_0080c522;
         pDVar2 = (&local_c->field_0347)[(byte)local_c->field_006A];
         if (local_c->field_006B < pDVar2->count) {
@@ -69,12 +69,12 @@ void __thiscall MReportTy::SetCtrl(MReportTy *this)
           puVar6 = (byte *)(pDVar2->elementSize * local_c->field_006B + (int)pDVar2->data);
         }
         else {
-          puVar6 = (byte *)0x0;
+          puVar6 = nullptr;
         }
         wsprintfA((LPSTR)&DAT_0080f33a,"%s%01d%02d",PTR_DAT_0079c0dc,
                   (byte)local_c->field_006A + 1,*puVar6);
         puVar7 = cMf32::RecGet(this_01,0xc,(char *)&DAT_0080f33a,(int *)&local_10,0);
-        if (puVar7 != (ushort *)0x0) {
+        if (puVar7 != nullptr) {
           this_00->field_0067 = 1;
           puVar6 = (byte *)(&DAT_0080c967);
           puVar11 = (byte *)(&DAT_008087b6);

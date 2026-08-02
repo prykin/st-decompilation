@@ -10,8 +10,8 @@ undefined4 __thiscall FUN_004ce250(void *this,int param_1)
   short sVar6;
   void *local_8;
 
-  local_8 = (void *)0x0;
-  if ((*(AnonShape_005EFAE0_B406B78B **)((int)this + 0x5d3) != (AnonShape_005EFAE0_B406B78B *)0x0)
+  local_8 = nullptr;
+  if ((*(AnonShape_005EFAE0_B406B78B **)((int)this + 0x5d3) != nullptr)
      && (*(int *)((int)this + 0x4d4) == 0)) {
     iVar4 = STPlaySystemC::sub_006E62D0
                       (g_playSystem_00802A38,*(AnonShape_005EFAE0_B406B78B **)((int)this + 0x5d3),
@@ -31,7 +31,7 @@ undefined4 __thiscall FUN_004ce250(void *this,int param_1)
              (pSVar2 = g_worldGrid.cells
                        [(int)g_worldGrid.planeStride * (int)sVar1 +
                         (int)g_worldGrid.sizeX * (int)sVar3 + (int)sVar6].objects[0],
-             pSVar2 != (STWorldObject *)0x0)))))) {
+             pSVar2 != nullptr)))))) {
           iVar4 = pSVar2->GetObjectTypeId();
           if (0x53 < iVar4) {
             iVar4 = pSVar2->GetObjectTypeId();
@@ -50,7 +50,7 @@ undefined4 __thiscall FUN_004ce250(void *this,int param_1)
               (pSVar2 = g_worldGrid.cells
                         [(int)g_worldGrid.planeStride * (int)sVar1 +
                          (int)g_worldGrid.sizeX * (int)sVar3 + (int)sVar6].objects[0],
-              pSVar2 != (STWorldObject *)0x0)))))))) {
+              pSVar2 != nullptr)))))))) {
           iVar4 = pSVar2->GetObjectTypeId();
           if (0x53 < iVar4) {
             iVar4 = pSVar2->GetObjectTypeId();
@@ -71,7 +71,7 @@ undefined4 __thiscall FUN_004ce250(void *this,int param_1)
                (pSVar2 = g_worldGrid.cells
                          [(int)g_worldGrid.planeStride * (int)sVar1 +
                           (int)g_worldGrid.sizeX * (int)sVar6 + (int)sVar3].objects[0],
-               pSVar2 != (STWorldObject *)0x0)))))) {
+               pSVar2 != nullptr)))))) {
             iVar4 = pSVar2->GetObjectTypeId();
             if (0x53 < iVar4) {
               iVar4 = pSVar2->GetObjectTypeId();
@@ -92,7 +92,7 @@ undefined4 __thiscall FUN_004ce250(void *this,int param_1)
               (pSVar2 = g_worldGrid.cells
                         [(int)g_worldGrid.planeStride * (int)sVar1 +
                          (int)sVar6 * (int)g_worldGrid.sizeX + (int)sVar3].objects[0],
-              pSVar2 != (STWorldObject *)0x0)))) {
+              pSVar2 != nullptr)))) {
             iVar4 = pSVar2->GetObjectTypeId();
             if (0x53 < iVar4) {
               iVar4 = pSVar2->GetObjectTypeId();

@@ -33,7 +33,7 @@ FUN_006a0ae0(void *this,int param_1,int param_2,undefined4 param_3,int param_4,u
   local_98 = (undefined2)uVar2;
   iVar4 = *(int *)((int)this + 4) + 1;
   *(int *)((int)this + 4) = iVar4;
-  pvVar3 = Library::DKW::LIB::MemRealloc(*(AnonPointee_TLOBaseTy_0607 **)this,iVar4 * 0x92 + 0xaa);
+  pvVar3 = Library::DKW::LIB::MemRealloc(*(void **)this,iVar4 * 0x92 + 0xaa);
   *(void **)this = pvVar3;
   puVar5 = (byte *)(&local_9c);
   puVar7 = (byte *)((int)pvVar3 + *(int *)((int)this + 4) * 0x92 + -0x7a);

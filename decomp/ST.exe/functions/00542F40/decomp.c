@@ -49,10 +49,10 @@ int __thiscall InterSystemC::GetMessage(InterSystemC *this,STMessage *message)
   SVar1 = message->id;
   if (SVar1 < MESS_INTERSYSTEMC_B904) {
     if (SVar1 == MESS_INTERSYSTEMC_B903) {
-      if (g_cursorClass_00802A30 != (CursorClassTy *)0x0) {
+      if (g_cursorClass_00802A30 != nullptr) {
         CursorClassTy::sub_0054B540(g_cursorClass_00802A30);
       }
-      if (g_helpPanel_00801690 == (HelpPanelTy *)0x0) {
+      if (g_helpPanel_00801690 == nullptr) {
         g_currentExceptionFrame = local_50.previous;
         return 0;
       }
@@ -64,13 +64,13 @@ int __thiscall InterSystemC::GetMessage(InterSystemC *this,STMessage *message)
     if (SVar1 < MESS_INTERSYSTEMC_B901) {
       if (SVar1 != MESS_INTERSYSTEMC_B900) {
         if (SVar1 == MESS_SHARED_0005) {
-          if (g_cLoading_00802A58 != (cLoadingTy *)0x0) {
+          if (g_cLoading_00802A58 != nullptr) {
             g_currentExceptionFrame = local_50.previous;
             return 0;
           }
           iVar12 = 1;
           uVar4 = _DAT_00807348 & 0xff;
-          piVar10 = (int *)0x0;
+          piVar10 = nullptr;
           iVar3 = 1;
           pCVar5 = thunk_FUN_00571240("PANEL_BKGND",0);
           pCVar5 = FUN_006f2c00(pCVar5,iVar3,uVar4);
@@ -84,10 +84,10 @@ int __thiscall InterSystemC::GetMessage(InterSystemC *this,STMessage *message)
           g_currentExceptionFrame = local_50.previous;
           return 0;
         }
-        if (g_cursorClass_00802A30 != (CursorClassTy *)0x0) {
+        if (g_cursorClass_00802A30 != nullptr) {
           CursorClassTy::sub_0054B540(g_cursorClass_00802A30);
         }
-        if (g_optPanel_008016DC == (OptPanelTy *)0x0) {
+        if (g_optPanel_008016DC == nullptr) {
           g_currentExceptionFrame = local_50.previous;
           return 0;
         }
@@ -98,10 +98,10 @@ int __thiscall InterSystemC::GetMessage(InterSystemC *this,STMessage *message)
     }
     else {
       if (SVar1 == MESS_INTERSYSTEMC_B901) {
-        if (g_cursorClass_00802A30 != (CursorClassTy *)0x0) {
+        if (g_cursorClass_00802A30 != nullptr) {
           CursorClassTy::sub_0054B540(g_cursorClass_00802A30);
         }
-        if (g_playPanel_008016E4 == (PlayPanelTy *)0x0) {
+        if (g_playPanel_008016E4 == nullptr) {
           g_currentExceptionFrame = local_50.previous;
           return 0;
         }
@@ -115,7 +115,7 @@ int __thiscall InterSystemC::GetMessage(InterSystemC *this,STMessage *message)
       }
     }
 switchD_00543107_caseD_b904:
-    if (g_cLoading_00802A58 != (cLoadingTy *)0x0) {
+    if (g_cLoading_00802A58 != nullptr) {
       g_currentExceptionFrame = local_50.previous;
       return 0;
     }
@@ -134,7 +134,7 @@ switchD_00543107_caseD_b904:
     else {
       text = "BUT_AIOPT";
     }
-    puVar13 = (undefined4 *)0x0;
+    puVar13 = nullptr;
     iVar11 = 0;
     iVar12 = 1;
     bVar9 = 0;
@@ -158,17 +158,17 @@ LAB_00543291:
     case MESS_INTERSYSTEMC_B904|MESS_ID_CREATE:
       goto switchD_00543107_caseD_b904;
     case 0xb905:
-      if (g_cursorClass_00802A30 != (CursorClassTy *)0x0) {
+      if (g_cursorClass_00802A30 != nullptr) {
         CursorClassTy::sub_0054B540(g_cursorClass_00802A30);
       }
-      if (g_optPanel_008016DC != (OptPanelTy *)0x0) {
+      if (g_optPanel_008016DC != nullptr) {
         OptPanelTy::SwitchOptPanel(g_optPanel_008016DC,'\x0e');
         g_currentExceptionFrame = local_50.previous;
         return 0;
       }
       break;
     case MESS_INTERSYSTEMC_B904|MESS_SHARED_0003:
-      if (g_cursorClass_00802A30 != (CursorClassTy *)0x0) {
+      if (g_cursorClass_00802A30 != nullptr) {
         CursorClassTy::sub_0054B540(g_cursorClass_00802A30);
         g_cursorClass_00802A30->field_04DE = 1;
         thunk_FUN_005252c0(0xae);
@@ -177,13 +177,13 @@ LAB_00543291:
       }
       break;
     case MESS_INTERSYSTEMC_B908:
-      if (g_cLoading_00802A58 != (cLoadingTy *)0x0) {
+      if (g_cLoading_00802A58 != nullptr) {
         g_currentExceptionFrame = local_50.previous;
         return 0;
       }
       piVar10 = (message->arg1).ptr;
       FUN_006b5f80((int *)g_ddxContext_008075A8,*piVar10,piVar10[1],piVar10[2],piVar10[3]);
-      puVar13 = (undefined4 *)0x0;
+      puVar13 = nullptr;
       iVar11 = 0;
       iVar12 = 1;
       bVar9 = 0;

@@ -64,10 +64,10 @@ undefined4 __thiscall STMineSetC::sub_006239A0(STMineSetC *this)
       if (iVar2 == 0) {
         sub_00622670(this);
       }
-      if (this->field_0363 == (HoloTy *)0x0) {
+      if (this->field_0363 == nullptr) {
         this_01 = (AnonReceiver_00636260 *)thunk_FUN_00636200();
         this->field_0363 = (HoloTy *)this_01;
-        if (this_01 != (AnonReceiver_00636260 *)0x0) {
+        if (this_01 != nullptr) {
           SubmarineTitans::Recovered::HiddenThis::AnonReceiver_00636260::thunk_FUN_00636260
                     (this_01,this->field_02C2,this->field_02C6,this->field_02CA + -0x28,0x82,0x14,5,
                      1);
@@ -157,7 +157,7 @@ LAB_00623d08:
     sub_00622670(this);
     return local_8;
   }
-  if (g_visibleClass_00802A88 != (VisibleClassTy *)0x0) {
+  if (g_visibleClass_00802A88 != nullptr) {
     lVar5 = Library::MSVCRT::__ftol();
     iVar2 = (int)lVar5;
     if ((DAT_0080874d != -1) && (this_00->field_00F8 != 0)) {
@@ -169,7 +169,7 @@ LAB_00623d08:
       VisibleClassTy::sub_00558C00(this_00,this_00->field_010C,(int)lVar5,iVar4,piVar6,piVar7);
       if ((((-1 < iVar2) && (((iVar2 < 5 && (-1 < local_18)) && (local_18 < this_00->field_0030))))
           && (((local_1c = g_centeredOffsets5[iVar2] + local_1c, -1 < local_1c &&
-               (local_1c < this_00->field_0034)) && (this_00->field_004C != (byte *)0x0)))) &&
+               (local_1c < this_00->field_0034)) && (this_00->field_004C != nullptr)))) &&
          (this_00->field_004C[local_18 + local_1c * this_00->field_0030] == 0)) {
         if (this->field_02E9 == '\0') {
           return local_8;

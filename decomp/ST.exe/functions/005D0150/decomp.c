@@ -39,7 +39,7 @@ void __thiscall SettMapMTy::CheckPlList(SettMapMTy *this,void *param_1)
   char local_6;
   char local_5;
 
-  if (this->field_1F84 != (SettMapMTy_field_1F84DArray *)0x0) {
+  if (this->field_1F84 != nullptr) {
     local_5c.previous = g_currentExceptionFrame;
     g_currentExceptionFrame = &local_5c;
     local_c = this;
@@ -56,15 +56,15 @@ void __thiscall SettMapMTy::CheckPlList(SettMapMTy *this,void *param_1)
           uVar12 = 0;
           local_6 = cVar5;
           if (pSVar11->count == 0) {
-            pcVar9 = (char *)0x0;
+            pcVar9 = nullptr;
             goto LAB_005d01c2;
           }
           do {
             /* ST_PSEUDO[dynamic_array_indexing]: expected DArrayAt<T>(array, index) (runtime elementSize cannot be a static C array) */
             pcVar9 = &pSVar11->data->field_0000 + pSVar11->elementSize * uVar12;
 LAB_005d01c2:
-            if ((pcVar9 != (char *)0x0) && (pcVar9[4] == '\x03')) {
-              if (*(DArrayTy **)(pcVar9 + 0x50) != (DArrayTy *)0x0) {
+            if ((pcVar9 != nullptr) && (pcVar9[4] == '\x03')) {
+              if (*(DArrayTy **)(pcVar9 + 0x50) != nullptr) {
                 DArrayDestroy(*(DArrayTy **)(pcVar9 + 0x50));
               }
               DArrayRemoveAt((DArrayTy *)pSVar3->field_1F84,uVar12);
@@ -85,18 +85,18 @@ LAB_005d01c2:
         uVar12 = pSVar11->count;
         if (uVar12 != 0) {
           if (uVar12 == 0) {
-            pcVar9 = (char *)0x0;
+            pcVar9 = nullptr;
             goto LAB_005d021c;
           }
           do {
             /* ST_PSEUDO[dynamic_array_indexing]: expected DArrayAt<T>(array, index) (runtime elementSize cannot be a static C array) */
             pcVar9 = &pSVar11->data->field_0000 + pSVar11->elementSize * uVar13;
 LAB_005d021c:
-            if (pcVar9 != (char *)0x0) {
+            if (pcVar9 != nullptr) {
               if (*pcVar9 == '\0') {
                 if (pcVar9[4] == '\x01') {
                   if (local_6 == '\0') goto LAB_005d024d;
-                  if (*(DArrayTy **)(pcVar9 + 0x50) != (DArrayTy *)0x0) {
+                  if (*(DArrayTy **)(pcVar9 + 0x50) != nullptr) {
                     DArrayDestroy(*(DArrayTy **)(pcVar9 + 0x50));
                   }
                   DArrayRemoveAt((DArrayTy *)pSVar3->field_1F84,uVar13);
@@ -134,7 +134,7 @@ LAB_005d0277:
           uVar12 = pSVar11->count;
           if (1 < uVar12) {
             if (uVar12 < 2) {
-              pcVar9 = (char *)0x0;
+              pcVar9 = nullptr;
               goto LAB_005d02c3;
             }
             do {
@@ -145,9 +145,9 @@ LAB_005d02c3:
                 element_1f84 = DArrayAt<SettMapMTy_field_1F84Element>(pSVar11, uVar13 - 1);
               }
               else {
-                element_1f84 = (SettMapMTy_field_1F84Element *)0x0;
+                element_1f84 = nullptr;
               }
-              if (((pcVar9 != (char *)0x0) && (element_1f84 != (SettMapMTy_field_1F84Element *)0x0)) &&
+              if (((pcVar9 != nullptr) && (element_1f84 != nullptr)) &&
                  ((*pcVar9 != '\0' &&
                   (((element_1f84->field_0x0 == '\0' && (element_1f84->field_0x4 != '\x01')) && (uVar12 < 0x18))
                   )))) {
@@ -168,9 +168,9 @@ LAB_005d02c3:
             element_1f84 = DArrayAt<SettMapMTy_field_1F84Element>(pSVar11, uVar12 - 1);
           }
           else {
-            element_1f84 = (SettMapMTy_field_1F84Element *)0x0;
+            element_1f84 = nullptr;
           }
-          if (((element_1f84 != (SettMapMTy_field_1F84Element *)0x0) && (element_1f84->field_0x0 == '\0')) &&
+          if (((element_1f84 != nullptr) && (element_1f84->field_0x0 == '\0')) &&
              ((element_1f84->field_0x4 != '\x01' && (uVar12 < 0x18)))) {
             sub_005D00B0(local_c,element_1f84,uVar12);
           }
@@ -183,7 +183,7 @@ LAB_005d02c3:
         uVar12 = pSVar11->count;
         if (1 < uVar12) {
           if (uVar12 < 2) {
-            pcVar9 = (char *)0x0;
+            pcVar9 = nullptr;
             goto LAB_005d0391;
           }
           do {
@@ -194,11 +194,11 @@ LAB_005d0391:
               element_1f84_2 = DArrayAt<SettMapMTy_field_1F84Element>(pSVar11, uVar13 - 1);
             }
             else {
-              element_1f84_2 = (SettMapMTy_field_1F84Element *)0x0;
+              element_1f84_2 = nullptr;
             }
-            if (((((pcVar9 != (char *)0x0) && (element_1f84_2 != (SettMapMTy_field_1F84Element *)0x0)) && (*pcVar9 == '\0')) &&
+            if (((((pcVar9 != nullptr) && (element_1f84_2 != nullptr)) && (*pcVar9 == '\0')) &&
                 ((pcVar9[4] != '\x01' && (element_1f84_2->field_0000 == '\0')))) && (element_1f84_2->field_0004 == '\x01')) {
-              if (element_1f84_2->handle != (DArrayTy *)0x0) {
+              if (element_1f84_2->handle != nullptr) {
                 DArrayDestroy(element_1f84_2->handle);
               }
               DArrayRemoveAt((DArrayTy *)local_c->field_1F84,uVar13 - 1);
@@ -221,9 +221,9 @@ LAB_005d0391:
                      ((SettMapMTy_field_1F84DArray *)local_18)->elementSize * local_10;
           }
           else {
-            pcVar9 = (char *)0x0;
+            pcVar9 = nullptr;
           }
-          if (((pcVar9 != (char *)0x0) && (*pcVar9 != '\0')) && (pcVar9[4] == '\x01')) {
+          if (((pcVar9 != nullptr) && (*pcVar9 != '\0')) && (pcVar9[4] == '\x01')) {
             local_6 = '\0';
             local_14 = local_10 + 1;
             if (local_14 < uVar12) {
@@ -231,13 +231,13 @@ LAB_005d0391:
 LAB_005d045a:
               pcVar8 = &((SettMapMTy_field_1F84DArray *)local_18)->data->field_0000 +
                        ((SettMapMTy_field_1F84DArray *)local_18)->elementSize * local_14;
-              if (pcVar8 == (char *)0x0) goto cf_continue_loop_005D0486;
+              if (pcVar8 == nullptr) goto cf_continue_loop_005D0486;
               if (*pcVar8 == '\0') {
                 if (pcVar8[4] == '\x03') {
                   local_6 = local_6 + '\x01';
                 }
                 if (pcVar8[4] != '\x02') goto cf_continue_loop_005D0486;
-                if (*(DArrayTy **)(pcVar9 + 0x50) != (DArrayTy *)0x0) {
+                if (*(DArrayTy **)(pcVar9 + 0x50) != nullptr) {
                   DArrayDestroy(*(DArrayTy **)(pcVar9 + 0x50));
                 }
                 pcVar14 = pcVar9;
@@ -257,10 +257,10 @@ LAB_005d048e:
                   element_1f84_3 = DArrayAt<SettMapMTy_field_1F84Element>(pSVar11, uVar12);
                 }
                 else {
-                  element_1f84_3 = (SettMapMTy_field_1F84Element *)0x0;
+                  element_1f84_3 = nullptr;
                 }
-                if ((element_1f84_3 == (SettMapMTy_field_1F84Element *)0x0) || (element_1f84_3->field_0000 != '\0')) break;
-                if (element_1f84_3->handle != (DArrayTy *)0x0) {
+                if ((element_1f84_3 == nullptr) || (element_1f84_3->field_0000 != '\0')) break;
+                if (element_1f84_3->handle != nullptr) {
                   DArrayDestroy(element_1f84_3->handle);
                 }
                 DArrayRemoveAt((DArrayTy *)local_c->field_1F84,uVar12);

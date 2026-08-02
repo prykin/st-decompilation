@@ -87,7 +87,7 @@ void __thiscall STAllPlayersC::RestoreGObjData(STAllPlayersC *this,undefined4 *p
   local_8->field_0225 = local_10->field_0109;
   local_8->field_0229 = local_10->field_010D;
   if (local_10->field_0275 < 1) {
-    local_8->field_0097 = (void *)0x0;
+    local_8->field_0097 = nullptr;
   }
   else {
     puVar4 = (byte *)(Library::DKW::LIB::MemAlloc(local_10->field_0275));
@@ -98,7 +98,7 @@ void __thiscall STAllPlayersC::RestoreGObjData(STAllPlayersC *this,undefined4 *p
     uVar18 = 0;
   }
   if ((int)*(uint *)&pAVar2[1].field_0001 < 1) {
-    local_8->field_009F = (void *)0x0;
+    local_8->field_009F = nullptr;
   }
   else {
     puVar4 = (byte *)(Library::DKW::LIB::MemAlloc(*(uint *)&pAVar2[1].field_0001));
@@ -109,7 +109,7 @@ void __thiscall STAllPlayersC::RestoreGObjData(STAllPlayersC *this,undefined4 *p
     uVar18 = 0;
   }
   if (*(int *)&pAVar2->field_0x111 == -1) {
-    local_8->field_011D = (void *)0x0;
+    local_8->field_011D = nullptr;
   }
   else {
     puVar4 = (byte *)(Library::DKW::LIB::MemAlloc(*(uint *)&pAVar2->field_0x115));
@@ -120,7 +120,7 @@ void __thiscall STAllPlayersC::RestoreGObjData(STAllPlayersC *this,undefined4 *p
     uVar18 = 0;
   }
   if (*(int *)&pAVar2->field_0x119 == -1) {
-    local_8->field_0121 = (void *)0x0;
+    local_8->field_0121 = nullptr;
   }
   else {
     puVar4 = (byte *)(Library::DKW::LIB::MemAlloc(*(uint *)&pAVar2->field_0x11d));
@@ -131,7 +131,7 @@ void __thiscall STAllPlayersC::RestoreGObjData(STAllPlayersC *this,undefined4 *p
     uVar18 = 0;
   }
   if (*(int *)&pAVar2->field_0x121 == -1) {
-    local_8->field_0125 = (void *)0x0;
+    local_8->field_0125 = nullptr;
   }
   else {
     puVar4 = (byte *)(Library::DKW::LIB::MemAlloc(*(uint *)&pAVar2->field_0x125));
@@ -142,7 +142,7 @@ void __thiscall STAllPlayersC::RestoreGObjData(STAllPlayersC *this,undefined4 *p
     uVar18 = 0;
   }
   if (*(int *)&pAVar2->field_0x129 == -1) {
-    local_8->field_0129 = (void *)0x0;
+    local_8->field_0129 = nullptr;
   }
   else {
     puVar4 = (byte *)(Library::DKW::LIB::MemAlloc(*(uint *)&pAVar2->field_0x12d));
@@ -160,14 +160,14 @@ void __thiscall STAllPlayersC::RestoreGObjData(STAllPlayersC *this,undefined4 *p
       puVar21[-2] = 0;
     }
     else {
-      uVar5 = FUN_006b0060((uint *)0x0,(uint *)(piVar22[-4] + (int)param_1));
+      uVar5 = FUN_006b0060(nullptr,(uint *)(piVar22[-4] + (int)param_1));
       puVar21[-2] = uVar5;
     }
     if (*piVar22 == -1) {
       *puVar21 = 0;
     }
     else {
-      uVar5 = FUN_006b0060((uint *)0x0,(uint *)(*piVar22 + (int)param_1));
+      uVar5 = FUN_006b0060(nullptr,(uint *)(*piVar22 + (int)param_1));
       *puVar21 = uVar5;
     }
     piVar22 = piVar22 + 2;
@@ -182,14 +182,14 @@ void __thiscall STAllPlayersC::RestoreGObjData(STAllPlayersC *this,undefined4 *p
       puVar21[-4] = 0;
     }
     else {
-      uVar5 = FUN_006b0060((uint *)0x0,(uint *)(piVar22[-8] + (int)param_1));
+      uVar5 = FUN_006b0060(nullptr,(uint *)(piVar22[-8] + (int)param_1));
       puVar21[-4] = uVar5;
     }
     if (*piVar22 == -1) {
       *puVar21 = 0;
     }
     else {
-      uVar5 = FUN_006b0060((uint *)0x0,(uint *)(*piVar22 + (int)param_1));
+      uVar5 = FUN_006b0060(nullptr,(uint *)(*piVar22 + (int)param_1));
       *puVar21 = uVar5;
     }
     piVar22 = piVar22 + 2;
@@ -204,14 +204,14 @@ void __thiscall STAllPlayersC::RestoreGObjData(STAllPlayersC *this,undefined4 *p
       puVar21[-5] = 0;
     }
     else {
-      uVar5 = FUN_006b0060((uint *)0x0,(uint *)(piVar22[-10] + (int)param_1));
+      uVar5 = FUN_006b0060(nullptr,(uint *)(piVar22[-10] + (int)param_1));
       puVar21[-5] = uVar5;
     }
     if (*piVar22 == -1) {
       *puVar21 = 0;
     }
     else {
-      uVar5 = FUN_006b0060((uint *)0x0,(uint *)(*piVar22 + (int)param_1));
+      uVar5 = FUN_006b0060(nullptr,(uint *)(*piVar22 + (int)param_1));
       *puVar21 = uVar5;
     }
     piVar22 = piVar22 + 2;
@@ -219,7 +219,7 @@ void __thiscall STAllPlayersC::RestoreGObjData(STAllPlayersC *this,undefined4 *p
     local_c = local_c + -1;
   } while (local_c != 0);
   if (*(int *)&pAVar2->field_0x1e1 == -1) {
-    local_8->field_0185 = (void *)0x0;
+    local_8->field_0185 = nullptr;
   }
   else {
     puVar4 = (byte *)(Library::DKW::LIB::MemAlloc(*(uint *)&pAVar2->field_0x1e5));
@@ -230,7 +230,7 @@ void __thiscall STAllPlayersC::RestoreGObjData(STAllPlayersC *this,undefined4 *p
     uVar18 = 0;
   }
   if (*(int *)&pAVar2->field_0x1e9 == -1) {
-    local_8->field_0189 = (void *)0x0;
+    local_8->field_0189 = nullptr;
   }
   else {
     puVar4 = (byte *)(Library::DKW::LIB::MemAlloc(*(uint *)&pAVar2->field_0x1ed));
@@ -241,7 +241,7 @@ void __thiscall STAllPlayersC::RestoreGObjData(STAllPlayersC *this,undefined4 *p
     uVar18 = 0;
   }
   if (*(int *)&pAVar2->field_0x1f1 == -1) {
-    local_8->field_018D = (AnonPointee_STAllPlayersC_018D *)0x0;
+    local_8->field_018D = nullptr;
   }
   else {
     pAVar6 = Library::DKW::LIB::MemAlloc(*(uint *)&pAVar2->field_0x1f5);
@@ -260,7 +260,7 @@ void __thiscall STAllPlayersC::RestoreGObjData(STAllPlayersC *this,undefined4 *p
     }
   }
   if (*(int *)&pAVar2->field_0x1f9 == -1) {
-    local_8->field_0191 = (AnonPointee_STAllPlayersC_0191 *)0x0;
+    local_8->field_0191 = nullptr;
   }
   else {
     pAVar7 = Library::DKW::LIB::MemAlloc(*(uint *)&pAVar2->field_0x1fd);
@@ -279,7 +279,7 @@ void __thiscall STAllPlayersC::RestoreGObjData(STAllPlayersC *this,undefined4 *p
     }
   }
   if (*(int *)&pAVar2->field_0x201 == -1) {
-    local_8->field_0195 = (AnonPointee_STAllPlayersC_0195 *)0x0;
+    local_8->field_0195 = nullptr;
   }
   else {
     pAVar8 = Library::DKW::LIB::MemAlloc(*(uint *)&pAVar2->field_0x205);
@@ -298,7 +298,7 @@ void __thiscall STAllPlayersC::RestoreGObjData(STAllPlayersC *this,undefined4 *p
     }
   }
   if (*(int *)&pAVar2->field_0x209 == -1) {
-    local_8->field_0199 = (AnonPointee_STAllPlayersC_0199 *)0x0;
+    local_8->field_0199 = nullptr;
   }
   else {
     pAVar9 = Library::DKW::LIB::MemAlloc(*(uint *)&pAVar2->field_0x20d);
@@ -321,18 +321,18 @@ void __thiscall STAllPlayersC::RestoreGObjData(STAllPlayersC *this,undefined4 *p
     local_8->field_019D = 0;
   }
   else {
-    uVar5 = FUN_006b0060((uint *)0x0,(uint *)(*(int *)&pAVar2->field_0x211 + (int)param_1));
+    uVar5 = FUN_006b0060(nullptr,(uint *)(*(int *)&pAVar2->field_0x211 + (int)param_1));
     pSVar20->field_019D = uVar5;
   }
   if (*(int *)&pAVar2->field_0x219 == -1) {
     pSVar20->field_01A1 = 0;
   }
   else {
-    uVar5 = FUN_006b0060((uint *)0x0,(uint *)(*(int *)&pAVar2->field_0x219 + (int)param_1));
+    uVar5 = FUN_006b0060(nullptr,(uint *)(*(int *)&pAVar2->field_0x219 + (int)param_1));
     pSVar20->field_01A1 = uVar5;
   }
   if (*(int *)&pAVar2->field_0x221 == -1) {
-    pSVar20->field_01A5 = (AnonPointee_STAllPlayersC_01A5 *)0x0;
+    pSVar20->field_01A5 = nullptr;
   }
   else {
     pAVar10 = Library::DKW::LIB::MemAlloc(*(uint *)&pAVar2->field_0x225);
@@ -351,7 +351,7 @@ void __thiscall STAllPlayersC::RestoreGObjData(STAllPlayersC *this,undefined4 *p
     }
   }
   if (*(int *)&pAVar2->field_0x229 == -1) {
-    pSVar20->field_01A9 = (AnonPointee_STAllPlayersC_01A9 *)0x0;
+    pSVar20->field_01A9 = nullptr;
   }
   else {
     pAVar11 = Library::DKW::LIB::MemAlloc(*(uint *)&pAVar2->field_0x22d);
@@ -370,7 +370,7 @@ void __thiscall STAllPlayersC::RestoreGObjData(STAllPlayersC *this,undefined4 *p
     }
   }
   if (*(int *)&pAVar2->field_0x231 == -1) {
-    pSVar20->field_01AD = (AnonPointee_STAllPlayersC_01AD *)0x0;
+    pSVar20->field_01AD = nullptr;
   }
   else {
     pAVar12 = Library::DKW::LIB::MemAlloc(*(uint *)&pAVar2->field_0x235);
@@ -389,7 +389,7 @@ void __thiscall STAllPlayersC::RestoreGObjData(STAllPlayersC *this,undefined4 *p
     }
   }
   if (*(int *)&pAVar2->field_0x239 == -1) {
-    pSVar20->field_01B1 = (AnonPointee_STAllPlayersC_01B1 *)0x0;
+    pSVar20->field_01B1 = nullptr;
   }
   else {
     pAVar13 = Library::DKW::LIB::MemAlloc(*(uint *)&pAVar2->field_0x23d);
@@ -408,7 +408,7 @@ void __thiscall STAllPlayersC::RestoreGObjData(STAllPlayersC *this,undefined4 *p
     }
   }
   if (*(int *)&pAVar2->field_0x241 == -1) {
-    pSVar20->field_01B5 = (AnonPointee_STAllPlayersC_01B5 *)0x0;
+    pSVar20->field_01B5 = nullptr;
   }
   else {
     pAVar14 = Library::DKW::LIB::MemAlloc(*(uint *)&pAVar2->field_0x245);
@@ -427,7 +427,7 @@ void __thiscall STAllPlayersC::RestoreGObjData(STAllPlayersC *this,undefined4 *p
     }
   }
   if (*(int *)&pAVar2->field_0x249 == -1) {
-    pSVar20->field_01B9 = (AnonPointee_STAllPlayersC_01B9 *)0x0;
+    pSVar20->field_01B9 = nullptr;
   }
   else {
     pAVar15 = Library::DKW::LIB::MemAlloc(*(uint *)&pAVar2->field_0x24d);
@@ -446,7 +446,7 @@ void __thiscall STAllPlayersC::RestoreGObjData(STAllPlayersC *this,undefined4 *p
     }
   }
   if (*(int *)&pAVar2->field_0x251 == -1) {
-    pSVar20->field_01BD = (void *)0x0;
+    pSVar20->field_01BD = nullptr;
   }
   else {
     puVar4 = (byte *)(Library::DKW::LIB::MemAlloc(*(uint *)&pAVar2->field_0x255));
@@ -465,7 +465,7 @@ void __thiscall STAllPlayersC::RestoreGObjData(STAllPlayersC *this,undefined4 *p
     }
   }
   if (*(int *)&pAVar2->field_0x259 == -1) {
-    pSVar20->field_01C1 = (void *)0x0;
+    pSVar20->field_01C1 = nullptr;
   }
   else {
     puVar4 = (byte *)(Library::DKW::LIB::MemAlloc(*(uint *)&pAVar2->field_0x25d));
@@ -484,7 +484,7 @@ void __thiscall STAllPlayersC::RestoreGObjData(STAllPlayersC *this,undefined4 *p
     }
   }
   if (*(int *)&pAVar2->field_0x261 == -1) {
-    pSVar20->field_01C5 = (ushort *)0x0;
+    pSVar20->field_01C5 = nullptr;
   }
   else {
     puVar16 = Library::DKW::LIB::MemAlloc(*(uint *)&pAVar2->field_0x265);
@@ -503,7 +503,7 @@ void __thiscall STAllPlayersC::RestoreGObjData(STAllPlayersC *this,undefined4 *p
     }
   }
   if (*(int *)&pAVar2->field_0x269 == -1) {
-    pSVar20->field_01C9 = (ushort *)0x0;
+    pSVar20->field_01C9 = nullptr;
     g_currentExceptionFrame = local_54.previous;
     return;
   }

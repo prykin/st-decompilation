@@ -8,7 +8,7 @@ undefined4 FUN_0074bf23(int param_1,ushort *param_2,undefined4 *param_3)
   undefined4 uVar4;
 
   uVar3 = 0;
-  if (param_3 == (undefined4 *)0x0) {
+  if (param_3 == nullptr) {
     uVar3 = 0x80004003;
   }
   else {
@@ -32,7 +32,7 @@ undefined4 FUN_0074bf23(int param_1,ushort *param_2,undefined4 *param_3)
     iVar1 = (**(code **)(iVar1 + 0x1c))(uVar4);
     piVar2 = (int *)(-(uint)(iVar1 != 0) & iVar1 + 0xcU);
     *param_3 = piVar2;
-    if (piVar2 == (int *)0x0) {
+    if (piVar2 == nullptr) {
       uVar3 = 0x8007000e;
     }
     else {

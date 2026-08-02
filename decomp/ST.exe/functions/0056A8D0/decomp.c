@@ -10,7 +10,7 @@ void __thiscall FUN_0056a8d0(void *this,byte param_1,byte param_2,char param_3)
 
   puVar1 = (undefined *)(uint)param_1;
   *(char *)((int)this + (int)puVar1 * 8 + param_2 + 0x142f) = param_3;
-  if ((g_visibleClass_00802A88 != (VisibleClassTy *)0x0) &&
+  if ((g_visibleClass_00802A88 != nullptr) &&
      (param_2 == *(byte *)((int)this + 0x112d))) {
     if (param_3 == '\0') {
       VisibleClassTy::sub_0055B7F0(g_visibleClass_00802A88,0,puVar1);

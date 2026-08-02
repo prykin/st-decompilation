@@ -12,10 +12,10 @@ STColl3C * __cdecl CreateSTColl3(void)
   STColl3C *pSVar1;
 
   pSVar1 = (STColl3C *)FUN_006b04d0(0x2f3);
-  if (pSVar1 != (STColl3C *)0x0) {
+  if (pSVar1 != nullptr) {
     pSVar1 = STColl3C::STColl3C(pSVar1);
     return pSVar1;
   }
-  return (STColl3C *)0x0;
+  return nullptr;
 }
 

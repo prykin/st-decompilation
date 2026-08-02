@@ -55,7 +55,7 @@ LAB_00538de2:
   local_10 = this;
   errorCode = (undefined4 *)Library::MSVCRT::__setjmp3(local_58.jumpBuffer,0);
   pPVar2 = local_10;
-  if (errorCode != (undefined4 *)0x0) {
+  if (errorCode != nullptr) {
     g_currentExceptionFrame = local_58.previous;
     iVar7 = ReportDebugMessage("E:\\__titans\\Andrey\\panel.cpp",0xdf,0,(int)errorCode,
                                "%s","PanelTy::PaintIBut");

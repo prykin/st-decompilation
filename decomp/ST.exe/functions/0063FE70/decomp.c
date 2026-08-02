@@ -79,7 +79,7 @@ void __thiscall FUN_0063fe70(void *this,char param_1)
         local_8 = local_8 + 1;
       } while ((int)local_8 < iVar1);
     }
-    if ((*(uint **)((int)this + 0x37f) != (uint *)0x0) &&
+    if ((*(uint **)((int)this + 0x37f) != nullptr) &&
        (uVar2 = **(uint **)((int)this + 0x37f), -1 < (int)uVar2)) {
       Library::Ourlib::ST3DSMAP::FUN_006e96d0(*(void **)((int)this + 0x211),uVar2);
     }

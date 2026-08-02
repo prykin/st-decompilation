@@ -78,12 +78,12 @@ int __thiscall BldObjPanelTy::GetMessage(BldObjPanelTy *this,STMessage *message)
       iVar3 = (&this_00->field_027E)[(byte)this_00->field_0278];
       if ((iVar3 == 0) ||
          (iVar5 = SVar1 + this_00->field_0199, *(uint *)(iVar3 + 0xc) <= iVar5 - 0xc09fU)) {
-        puVar4 = (undefined4 *)0x0;
+        puVar4 = nullptr;
       }
       else {
         puVar4 = (undefined4 *)((iVar5 + -0xc09f) * *(int *)(iVar3 + 8) + *(int *)(iVar3 + 0x1c));
       }
-      if ((puVar4 != (undefined4 *)0x0) && (*(char *)(puVar4 + 2) != '\0')) {
+      if ((puVar4 != nullptr) && (*(char *)(puVar4 + 2) != '\0')) {
         CursorClassTy::sub_0054B630(g_cursorClass_00802A30,0xe,*puVar4);
         ProdPanelTy::SetPanel((ProdPanelTy *)this_00,'\0');
         thunk_FUN_005252c0(0xae);

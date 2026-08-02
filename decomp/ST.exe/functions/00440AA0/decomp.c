@@ -72,7 +72,7 @@ STAllPlayersC::_AssignDocks(STAllPlayersC *this,char param_1,DArrayTy *param_2,D
   DArrayTy *local_c;
   DArrayTy *local_8;
 
-  local_70 = (DArrayTy *)0x0;
+  local_70 = nullptr;
   local_c8.previous = g_currentExceptionFrame;
   local_80 = (DArrayTy *)g_packedRecords_A62x8[param_1].field5_0x5;
   g_currentExceptionFrame = &local_c8;
@@ -90,7 +90,7 @@ STAllPlayersC::_AssignDocks(STAllPlayersC *this,char param_1,DArrayTy *param_2,D
     }
     return &local_70->flags;
   }
-  if ((((param_2 == (DArrayTy *)0x0) || (param_3 == (DArrayTy *)0x0)) ||
+  if ((((param_2 == nullptr) || (param_3 == nullptr)) ||
       (uVar15 = param_2->count, local_20 = uVar15, uVar15 == 0)) ||
      (local_48 = param_3->count, local_48 == 0)) {
     uVar15 = local_20;
@@ -98,7 +98,7 @@ STAllPlayersC::_AssignDocks(STAllPlayersC *this,char param_1,DArrayTy *param_2,D
               (-0x5001fff7,g_overwriteContext_007ED77C,"E:\\__titans\\wlad\\to_allpl.cpp",
                0x2215);
   }
-  if ((local_80 == (DArrayTy *)0x0) || (local_84 = local_80->count, local_84 == 0)) {
+  if ((local_80 == nullptr) || (local_84 = local_80->count, local_84 == 0)) {
     RaiseInternalException
               (-0x5001fff8,g_overwriteContext_007ED77C,"E:\\__titans\\wlad\\to_allpl.cpp",
                0x2216);
@@ -154,14 +154,14 @@ LAB_00440c19:
               (-0x5001fff7,g_overwriteContext_007ED77C,"E:\\__titans\\wlad\\to_allpl.cpp",
                0x2225);
   }
-  pDVar6 = Library::DKW::TBL::DArrayCreate((DArrayTy *)0x0,uVar15,0xc,1);
+  pDVar6 = Library::DKW::TBL::DArrayCreate(nullptr,uVar15,0xc,1);
   uVar13 = 0;
   local_44 = pDVar6;
   if (0 < (int)uVar15) {
     do {
-      local_10 = (DArrayTy *)0x0;
-      local_8 = (DArrayTy *)0x0;
-      local_c = (DArrayTy *)0x0;
+      local_10 = nullptr;
+      local_8 = nullptr;
+      local_c = nullptr;
       Library::DKW::TBL::DArrayPut(pDVar6,uVar13,&local_10);
       uVar13 = uVar13 + 1;
     } while ((int)uVar13 < (int)uVar15);
@@ -172,7 +172,7 @@ LAB_00440c19:
       uVar15 = local_1c;
       DArrayGetElement(local_80,local_1c,&local_7c);
       /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-      if (((local_7c != (AnonShape_00440AA0_D2D43F84 *)0x0) &&
+      if (((local_7c != nullptr) &&
           (iVar4 = (**(code **)(*(int *)local_7c + 0xc))(), iVar4 == 4)) &&
          (local_7c->field_0027 != 0)) {
         local_6c = local_7c->field_0029;
@@ -185,7 +185,7 @@ LAB_00440c19:
             if ((ushort)local_28._0_4_ != 0xffff) {
               /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
               pSVar5 = GetObjPtr(local_40,param_1,(ushort)local_28._0_4_,CASE_1);
-              if (pSVar5 == (STGameObjC *)0x0) {
+              if (pSVar5 == nullptr) {
                 iVar4 = ReportDebugMessage("E:\\__titans\\wlad\\to_allpl.cpp",0x2239,0,0,
                                            "%s","STAllPlayersC::_AssignDocks invalid pointer"
                                           );
@@ -218,14 +218,14 @@ LAB_00440c19:
                     if ((((local_fc < 0) || (g_worldGrid.sizeX <= local_fc)) || (local_fa < 0)) ||
                        (((g_worldGrid.sizeY <= local_fa || (local_f8 < 0)) ||
                         (g_worldGrid.sizeZ <= local_f8)))) {
-                      this_00 = (STWorldObject *)0x0;
+                      this_00 = nullptr;
                     }
                     else {
                       this_00 = g_worldGrid.cells
                                 [(int)local_f8 * (int)g_worldGrid.planeStride +
                                  (int)local_fa * (int)g_worldGrid.sizeX + (int)local_fc].objects[0];
                     }
-                    if (((this_00 != (STWorldObject *)0x0) &&
+                    if (((this_00 != nullptr) &&
                         (this_00[1].vtable == (STWorldObjectVTable *)(int)param_1)) &&
                        ((iVar4 = this_00->GetObjectTypeId(), iVar4 == 0x33 &&
                         (iVar4 = (*this_00->vtable[5].slots_00_28[2])(), uVar15 = local_20,
@@ -241,8 +241,8 @@ LAB_00440c19:
                       pDVar6 = local_44;
                       if (uVar13 != uVar15) {
                         DArrayGetElement(local_44,uVar13,&local_10);
-                        if (local_10 == (DArrayTy *)0x0) {
-                          local_10 = Library::DKW::TBL::DArrayCreate((DArrayTy *)0x0,1,6,1);
+                        if (local_10 == nullptr) {
+                          local_10 = Library::DKW::TBL::DArrayCreate(nullptr,1,6,1);
                           Library::DKW::TBL::DArrayPut(pDVar6,uVar13,&local_10);
                         }
                         local_3c = local_28[0];
@@ -262,12 +262,12 @@ LAB_00440c19:
     } while ((int)local_1c < (int)local_84);
   }
   dVar1 = local_48;
-  pDVar6 = Library::DKW::TBL::DArrayCreate((DArrayTy *)0x0,local_48,4,1);
+  pDVar6 = Library::DKW::TBL::DArrayCreate(nullptr,local_48,4,1);
   uVar15 = 0;
   local_78 = pDVar6;
   if (0 < (int)dVar1) {
     do {
-      local_54 = Library::DKW::TBL::DArrayCreate((DArrayTy *)0x0,local_20,4,1);
+      local_54 = Library::DKW::TBL::DArrayCreate(nullptr,local_20,4,1);
       Library::DKW::TBL::DArrayPut(pDVar6,uVar15,&local_54);
       uVar15 = uVar15 + 1;
     } while ((int)uVar15 < (int)dVar1);
@@ -296,7 +296,7 @@ LAB_00440c19:
       FUN_006ab090((int)g_pathingScratchGrid.cells,(int)g_pathingGrid.sizeX,(int)g_pathingGrid.sizeY
                    ,(int)g_pathingGrid.sizeZ,(int)local_12,(int)local_14,(int)local_16,-1,-1,-1);
       DArrayGetElement(local_44,uVar15,&local_10);
-      if (((local_10 != (DArrayTy *)0x0) && (local_64 = local_10->count, local_64 != 0)) &&
+      if (((local_10 != nullptr) && (local_64 = local_10->count, local_64 != 0)) &&
          (uVar15 = 0, 0 < (int)local_64)) {
         do {
           DArrayGetElement(local_10,uVar15,&local_3c);
@@ -344,7 +344,7 @@ LAB_00440c19:
   if (0 < (int)local_20) {
     do {
       DArrayGetElement(pDVar6,local_1c,&local_10);
-      if ((local_10 != (DArrayTy *)0x0) && (local_64 = local_10->count, local_64 != 0)) {
+      if ((local_10 != nullptr) && (local_64 = local_10->count, local_64 != 0)) {
         array = local_10;
         dVar1 = local_64;
         if (local_64 == 1) {
@@ -440,11 +440,11 @@ LAB_00440c19:
             local_8 = (DArrayTy *)0x3b9aca00;
           }
           else {
-            if (local_10 == (DArrayTy *)0x0) {
-              local_10 = Library::DKW::TBL::DArrayCreate((DArrayTy *)0x0,1,6,1);
+            if (local_10 == nullptr) {
+              local_10 = Library::DKW::TBL::DArrayCreate(nullptr,1,6,1);
             }
             Library::DKW::TBL::DArrayAppend(local_10,&local_3c);
-            local_8 = (DArrayTy *)0x0;
+            local_8 = nullptr;
           }
           Library::DKW::TBL::DArrayPut(pDVar6,uVar13,&local_10);
           uVar13 = uVar13 + 1;
@@ -533,8 +533,8 @@ LAB_00440c19:
           local_2c = local_2c + 1;
         } while ((int)local_2c < (int)uVar15);
       }
-      if (local_70 == (DArrayTy *)0x0) {
-        local_70 = Library::DKW::TBL::DArrayCreate((DArrayTy *)0x0,0,4,1);
+      if (local_70 == nullptr) {
+        local_70 = Library::DKW::TBL::DArrayCreate(nullptr,0,4,1);
       }
       DArrayGetElement(param_3,local_1c,&local_4c);
       uVar13 = 0;
@@ -610,7 +610,7 @@ LAB_00440c19:
   if (0 < (int)uVar15) {
     do {
       DArrayGetElement(pDVar6,uVar13,&local_10);
-      if (local_10 != (DArrayTy *)0x0) {
+      if (local_10 != nullptr) {
         DArrayDestroy(local_10);
       }
       uVar13 = uVar13 + 1;
@@ -623,7 +623,7 @@ LAB_00440c19:
   if (0 < (int)local_48) {
     do {
       DArrayGetElement(pDVar6,uVar15,&local_54);
-      if (local_54 != (DArrayTy *)0x0) {
+      if (local_54 != nullptr) {
         DArrayDestroy(local_54);
       }
       uVar15 = uVar15 + 1;

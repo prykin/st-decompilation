@@ -21,7 +21,7 @@ void __fastcall FUN_005f5440(AnonShape_005F5440_D27C3BDE *param_1)
   uint local_c;
   int local_8;
 
-  if (param_1->field_0169 != (DArrayTy *)0x0) {
+  if (param_1->field_0169 != nullptr) {
     dVar1 = param_1->field_0169->count;
     local_c = 0;
     if (0 < (int)dVar1) {
@@ -30,12 +30,12 @@ void __fastcall FUN_005f5440(AnonShape_005F5440_D27C3BDE *param_1)
         /* ST_PSEUDO[dynamic_array_indexing]: expected DArrayAt<T>(pDVar2, local_c) (runtime stride) */
         if (((local_c < pDVar2->count) &&
             (pcVar7 = (char *)(pDVar2->elementSize * local_c + (int)pDVar2->data),
-            pcVar7 != (char *)0x0)) && (*pcVar7 == '\x01')) {
+            pcVar7 != nullptr)) && (*pcVar7 == '\x01')) {
           if (*(int *)(pcVar7 + 0x1f) == -1) {
             thunk_FUN_005f4a30((int)pcVar7,pcVar7[1],0);
           }
           pVVar4 = g_visibleClass_00802A88;
-          if (g_visibleClass_00802A88 != (VisibleClassTy *)0x0) {
+          if (g_visibleClass_00802A88 != nullptr) {
             iVar6 = *(int *)(pcVar7 + 10);
             sVar3 = (short)(iVar6 >> 0x1f);
             if (iVar6 < 0) {
@@ -72,7 +72,7 @@ void __fastcall FUN_005f5440(AnonShape_005F5440_D27C3BDE *param_1)
                              ,&local_10,&local_14), local_8 < 0 || ((4 < local_8 || (local_10 < 0)))
                  ))) || ((pVVar4->field_0030 <= local_10 ||
                          ((((iVar6 = g_centeredOffsets5[local_8] + local_14, iVar6 < 0 ||
-                            (pVVar4->field_0034 <= iVar6)) || (pVVar4->field_004C == (byte *)0x0))
+                            (pVVar4->field_0034 <= iVar6)) || (pVVar4->field_004C == nullptr))
                           || (pVVar4->field_004C[local_10 + iVar6 * pVVar4->field_0030] != 0)))))) {
               if (pcVar7[0x1e] == '\0') {
                 Library::Ourlib::ST3DSMAP::SprShow

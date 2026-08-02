@@ -55,22 +55,22 @@ FUN_00632650(void *this,uint param_1,int param_2,undefined4 param_3,
   case CASE_0:
   case CASE_2:
   case CASE_4:
-    pDVar1 = Library::DKW::TBL::DArrayCreate((DArrayTy *)0x0,param_1 * param_2,0x39,10);
+    pDVar1 = Library::DKW::TBL::DArrayCreate(nullptr,param_1 * param_2,0x39,10);
     *(DArrayTy **)this = pDVar1;
     uVar5 = param_1 * param_2;
     break;
   case CASE_1:
-    pDVar1 = Library::DKW::TBL::DArrayCreate((DArrayTy *)0x0,param_1 + param_2,0x39,10);
+    pDVar1 = Library::DKW::TBL::DArrayCreate(nullptr,param_1 + param_2,0x39,10);
     *(DArrayTy **)this = pDVar1;
     uVar5 = param_1;
     break;
   case CASE_3:
-    pDVar1 = Library::DKW::TBL::DArrayCreate((DArrayTy *)0x0,(param_1 + 4) * param_2 + 1,0x39,10);
+    pDVar1 = Library::DKW::TBL::DArrayCreate(nullptr,(param_1 + 4) * param_2 + 1,0x39,10);
     *(DArrayTy **)this = pDVar1;
     uVar5 = param_1 * param_2;
   }
   pDVar1 = *(DArrayTy **)this;
-  if (pDVar1 == (DArrayTy *)0x0) {
+  if (pDVar1 == nullptr) {
     uVar2 = 0;
   }
   else {

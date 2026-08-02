@@ -68,8 +68,8 @@ uint * __thiscall STGroupBoatC::Scout(STGroupBoatC *this,int param_1)
                             (int)*(short *)&pSVar4->field_0x2fe,(int)*(short *)puVar1,
                             (int)*(short *)puVar2,(int)*(short *)&pSVar4->field_0x2f8,
                             (int)*(short *)&pSVar4->field_0x2fa,(int)*(short *)&pSVar4->field_0x2fc);
-      if (local_10 == (DArrayTy *)0x0) {
-        return (uint *)0x0;
+      if (local_10 == nullptr) {
+        return nullptr;
       }
       array = (DArrayTy *)
               Way3DGrpGetDistrPoint
@@ -78,9 +78,9 @@ uint * __thiscall STGroupBoatC::Scout(STGroupBoatC *this,int param_1)
                          (int)*(short *)&pSVar4->field_0x2fe,(int)*(short *)puVar1,
                          (int)*(short *)puVar2);
       local_1c = array;
-      if (array == (DArrayTy *)0x0) {
+      if (array == nullptr) {
         DArrayDestroy(local_10);
-        return (uint *)0x0;
+        return nullptr;
       }
       uVar11 = 0;
       local_3c = g_playSystem_00802A38->field_00E4;
@@ -95,7 +95,7 @@ uint * __thiscall STGroupBoatC::Scout(STGroupBoatC *this,int param_1)
             pSVar6 = (STBoatC *)
                      STAllPlayersC::GetObjPtr
                                (g_allPlayers_007FA174,pSVar4->field_0024,local_c._0_2_,CASE_1);
-            if (pSVar6 == (STBoatC *)0x0) {
+            if (pSVar6 == nullptr) {
               RaiseInternalException
                         (-0x5001fffc,g_overwriteContext_007ED77C,
                          "E:\\__titans\\wlad\\to_grpb.cpp",0xd2a);
@@ -126,7 +126,7 @@ uint * __thiscall STGroupBoatC::Scout(STGroupBoatC *this,int param_1)
             pSVar6 = (STBoatC *)
                      STAllPlayersC::GetObjPtr
                                (g_allPlayers_007FA174,pSVar4->field_0024,local_c._0_2_,CASE_1);
-            if (pSVar6 == (STBoatC *)0x0) {
+            if (pSVar6 == nullptr) {
               RaiseInternalException
                         (-0x5001fffc,g_overwriteContext_007ED77C,
                          "E:\\__titans\\wlad\\to_grpb.cpp",0xd3d);
@@ -140,7 +140,7 @@ uint * __thiscall STGroupBoatC::Scout(STGroupBoatC *this,int param_1)
         } while ((int)uVar11 < (int)local_8);
       }
       if (uVar11 == local_8) {
-        local_14 = (uint *)0x0;
+        local_14 = nullptr;
       }
     }
     g_currentExceptionFrame = local_80.previous;

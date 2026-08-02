@@ -14,7 +14,7 @@ FUN_00753f10(undefined4 param_1,undefined4 param_2,int param_3,undefined4 param_
   puVar3 = &stack0xfffffffc;
   uVar2 = thunk_FUN_006a3be0(0xc1d2);
   puVar1 = (undefined4 *)uVar2;
-  if (puVar1 == (undefined4 *)0x0) {
+  if (puVar1 == nullptr) {
     _Value = -2;
   }
   else {
@@ -34,7 +34,7 @@ FUN_00753f10(undefined4 param_1,undefined4 param_2,int param_3,undefined4 param_
     _Value = puVar1[0xf];
     Library::MSVCRT::thunk_FUN_006a4950(*(undefined4 **)(puVar3 + -4));
   }
-  if ((_Value < 0) && (g_currentExceptionFrame != (InternalExceptionFrame *)0x0)) {
+  if ((_Value < 0) && (g_currentExceptionFrame != nullptr)) {
                     /* WARNING: Subroutine does not return */
     Library::MSVCRT::_longjmp(g_currentExceptionFrame->jumpBuffer,_Value);
   }

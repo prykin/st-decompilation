@@ -45,8 +45,8 @@ uint * __cdecl CreateArbList(cMf32 *param_1,int param_2)
   DArrayTy *local_8;
 
   memset((void *)local_33c, 0, 0x201); /* compiler bulk-zero initialization */
-  local_8 = (DArrayTy *)0x0;
-  local_10 = (DArrayTy *)0x0;
+  local_8 = nullptr;
+  local_10 = nullptr;
   local_a0.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_a0;
   iVar8 = Library::MSVCRT::__setjmp3(local_a0.jumpBuffer,0);
@@ -55,22 +55,22 @@ uint * __cdecl CreateArbList(cMf32 *param_1,int param_2)
     iVar11 = ReportDebugMessage("E:\\__titans\\ai\\ai_plr_d.cpp",0x245,0,iVar8,"%s",
                                 "CreateArbList");
     if (iVar11 == 0) {
-      if (local_8 != (DArrayTy *)0x0) {
+      if (local_8 != nullptr) {
         DArrayDestroy(local_8);
       }
-      if (local_10 != (DArrayTy *)0x0) {
+      if (local_10 != nullptr) {
         DArrayDestroy(local_10);
       }
       RaiseInternalException(iVar8,0,"E:\\__titans\\ai\\ai_plr_d.cpp",0x248);
-      return (uint *)0x0;
+      return nullptr;
     }
     STDebugBreak(); /* noreturn in standalone pseudocode */
   }
-  if (param_1 == (cMf32 *)0x0) {
+  if (param_1 == nullptr) {
     RaiseInternalException
               (-0x34,g_overwriteContext_007ED77C,"E:\\__titans\\ai\\ai_plr_d.cpp",0x216);
   }
-  local_8 = Library::DKW::TBL::DArrayCreate((DArrayTy *)0x0,5,0x98,5);
+  local_8 = Library::DKW::TBL::DArrayCreate(nullptr,5,0x98,5);
   if (param_2 != 0) {
     local_10 = (DArrayTy *)CreateOpponentList(param_1,0,0xffffffff);
   }
@@ -93,15 +93,15 @@ uint * __cdecl CreateArbList(cMf32 *param_1,int param_2)
   cMf32::ToBeg(param_1,FUN_006f2d10,local_33c);
   pcVar5 = (char *)cMf32::RecNameGetNext(param_1);
   do {
-    if (pcVar5 == (char *)0x0) {
-      if (local_10 != (DArrayTy *)0x0) {
+    if (pcVar5 == nullptr) {
+      if (local_10 != nullptr) {
         DArrayDestroy(local_10);
       }
       g_currentExceptionFrame = local_a0.previous;
       return &local_8->flags;
     }
     local_c = Library::Ourlib::MFAOBJ::mfAObjLoad(param_1,pcVar5,0,1);
-    if (local_c != (ushort *)0x0) {
+    if (local_c != nullptr) {
       _Source = local_c + 3;
       pcVar15 = local_138;
       for (iVar8 = 0x26; iVar8 != 0; iVar8 = iVar8 + -1) {
@@ -222,9 +222,9 @@ uint * __cdecl CreateArbList(cMf32 *param_1,int param_2)
               pvVar6 = (void *)(local_10->elementSize * uVar9 + (int)local_10->data);
             }
             else {
-              pvVar6 = (void *)0x0;
+              pvVar6 = nullptr;
             }
-            if ((pvVar6 != (void *)0x0) && ((*(uint *)((int)pvVar6 + 0x90) & local_a8) != 0)) {
+            if ((pvVar6 != nullptr) && ((*(uint *)((int)pvVar6 + 0x90) & local_a8) != 0)) {
               iVar8 = *(int *)((int)pvVar6 + 0x94);
               if (iVar8 == 1) {
                 bVar4 = true;

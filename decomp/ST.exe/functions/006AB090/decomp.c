@@ -62,7 +62,7 @@ FUN_006ab090(int param_1,int param_2,Global_sub_006C8EC0_param_3Enum param_3,int
   sVar4 = 0;
   bVar8 = false;
   if (((param_8 < 0) || (param_9 < 0)) || (param_10 < 0)) {
-    local_48 = (short *)0x0;
+    local_48 = nullptr;
   }
   else {
     local_48 = (short *)(param_1 + (param_2 * param_9 + param_8 + local_c * param_10) * 2);
@@ -85,7 +85,7 @@ FUN_006ab090(int param_1,int param_2,Global_sub_006C8EC0_param_3Enum param_3,int
   iVar22 = (param_2 + param_3) * param_4;
   local_34 = iVar22 * 2;
   local_38 = (byte *)FUN_006bfb70(iVar22 * 0x10);
-  if (local_38 == (byte *)0x0) {
+  if (local_38 == nullptr) {
 LAB_006acc40:
     local_4c = 0xfffffffe;
   }
@@ -117,7 +117,7 @@ LAB_006acc40:
         if (local_34 < param_5 + 0x1a) {
           local_34 = local_34 + 0x80;
           pbVar11 = (byte *)FUN_006bfb50((undefined4 *)local_38,local_34 * 8);
-          if (pbVar11 == (byte *)0x0) goto LAB_006acc40;
+          if (pbVar11 == nullptr) goto LAB_006acc40;
           local_20 = pbVar11 + ((int)local_20 - (int)local_38 >> 2) * 4;
           local_24 = pbVar11 + ((int)local_24 - (int)local_38 >> 2) * 4;
           if (local_20 == pbVar11) {
@@ -692,7 +692,7 @@ LAB_006acb91:
           }
           puVar15 = (ushort *)(local_14 & 0x12);
           pbVar24 = pbVar23;
-          if (((puVar15 == (ushort *)0x0) &&
+          if (((puVar15 == nullptr) &&
               ((local_28[param_2 + -1] == 0 || (iVar27 + 4 < (int)(short)local_28[param_2 + -1]))))
              && (((local_28[param_2] & 0xc000) != 0xc000 && ((local_28[-1] & 0xc000) != 0xc000)))) {
             pbVar24 = pbVar23 + 4;
@@ -705,7 +705,7 @@ LAB_006acb91:
           }
           local_18 = (ushort *)(local_14 & 3);
           pbVar23 = pbVar24;
-          if (((local_18 == (ushort *)0x0) &&
+          if (((local_18 == nullptr) &&
               (((local_28[param_2 + 1] == 0 || (iVar27 + 4 < (int)(short)local_28[param_2 + 1])) &&
                ((local_28[param_2] & 0xc000) != 0xc000)))) && ((local_28[1] & 0xc000) != 0xc000)) {
             pbVar23 = pbVar24 + 4;
@@ -757,7 +757,7 @@ LAB_006acb91:
               }
             }
             pbVar24 = pbVar23;
-            if (puVar15 == (ushort *)0x0) {
+            if (puVar15 == nullptr) {
               if ((((((local_28[local_c + param_2 + -1] == 0) ||
                      (iVar27 < (short)local_28[local_c + param_2 + -1])) &&
                     ((local_28[local_c + param_2] & 0xc000) != 0xc000)) &&
@@ -775,7 +775,7 @@ LAB_006acb91:
               }
             }
             pbVar23 = pbVar24;
-            if (local_18 == (ushort *)0x0) {
+            if (local_18 == nullptr) {
               if ((((local_28[local_c + param_2 + 1] == 0) ||
                    (iVar27 < (short)local_28[local_c + param_2 + 1])) &&
                   (((local_28[local_c + param_2] & 0xc000) != 0xc000 &&
@@ -829,7 +829,7 @@ LAB_006acb91:
               }
             }
             pbVar23 = pbVar25;
-            if ((((puVar15 == (ushort *)0x0) &&
+            if ((((puVar15 == nullptr) &&
                  ((((local_8[param_2 + -1] == 0 || (iVar27 < (short)local_8[param_2 + -1])) &&
                    ((local_8[param_2] & 0xc000) != 0xc000)) &&
                   (((local_8[-1] & 0xc000) != 0xc000 && ((local_28[param_2] & 0xc000) != 0xc000)))))
@@ -843,7 +843,7 @@ LAB_006acb91:
               /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
               param_5 = param_5 + 1;
             }
-            if (((local_18 == (ushort *)0x0) &&
+            if (((local_18 == nullptr) &&
                 ((local_8[param_2 + 1] == 0 || (iVar27 < (short)local_8[param_2 + 1])))) &&
                (((local_8[param_2] & 0xc000) != 0xc000 &&
                 (((((local_8[1] & 0xc000) != 0xc000 && ((local_28[param_2] & 0xc000) != 0xc000)) &&
@@ -859,7 +859,7 @@ LAB_006acb91:
         local_28 = puVar15;
         local_2c = local_30 & 4;
         local_30 = local_30 & 0x40;
-        if (local_48 != (short *)0x0) {
+        if (local_48 != nullptr) {
           if (0 < *local_48) goto LAB_006acc47;
           if ((((bVar8) && ((int)(uVar21 - 1) <= param_8)) &&
               ((param_8 <= (int)(uVar21 + 1) &&

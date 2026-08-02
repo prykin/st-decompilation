@@ -22,7 +22,7 @@ undefined4 __thiscall FUN_00664650(void *this,int param_1)
           piVar2 = (int *)(array->elementSize * index + (int)array->data);
         }
         else {
-          piVar2 = (int *)0x0;
+          piVar2 = nullptr;
         }
         if (*piVar2 == param_1) {
           DArrayRemoveAt(array,index);

@@ -34,7 +34,7 @@ undefined4 __fastcall FUN_004d9820(int *param_1)
                         (sVar1 < sVar4)) &&
                        ((this = g_worldGrid.cells
                                 [(int)sVar5 * (int)sVar3 + (int)sVar1 * (int)g_worldGrid.planeStride
-                                 + (int)sVar7].objects[0], this != (STWorldObject *)0x0 &&
+                                 + (int)sVar7].objects[0], this != nullptr &&
                         (this != (STWorldObject *)param_1)))))) &&
                      (iVar2 = this->GetObjectTypeId(), iVar2 == 0x3a)))) &&
                    (iVar2 = FUN_006aced8(iVar8,iVar6,param_1[0x16c],param_1[0x16d]), iVar2 < 0xe)) {

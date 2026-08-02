@@ -12,7 +12,7 @@ int __cdecl FUN_00677700(int param_1,Global_sub_00677700_param_2Enum param_2)
   char cVar4;
 
   uVar1 = 0;
-  if (g_allPlayers_007FA174 == (STAllPlayersC *)0x0) {
+  if (g_allPlayers_007FA174 == nullptr) {
     return uVar1;
   }
   cVar4 = (char)param_1;

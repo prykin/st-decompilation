@@ -35,14 +35,14 @@ void __thiscall BldLabPanelTy::PaintUpdBut(BldLabPanelTy *this,AnonShape_004EF32
   }
   uVar1 = this->field_0199 + -0xc0af + param_1->field_0010;
   pBVar3 = this->field_027A;
-  if ((pBVar3 == (BldLabPanelTy_field_027ADArray *)0x0) || (pBVar3->count <= uVar1)) {
-    pGStack_8 = (Global_sub_00526BA0_param_1Enum *)0x0;
+  if ((pBVar3 == nullptr) || (pBVar3->count <= uVar1)) {
+    pGStack_8 = nullptr;
   }
   else {
     element_027a = DArrayAt<BldLabPanelTy_field_027AElement>(pBVar3, uVar1);
   }
   local_10 = this;
-  if ((param_1->field_0014 == 0) || (element_027a == (BldLabPanelTy_field_027AElement *)0x0)) {
+  if ((param_1->field_0014 == 0) || (element_027a == nullptr)) {
     /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
     local_c = (int)*(short *)((int)this->field_0188 + 0x23) - 1;
   }
@@ -54,7 +54,7 @@ void __thiscall BldLabPanelTy::PaintUpdBut(BldLabPanelTy *this,AnonShape_004EF32
   iVar6 = Library::MSVCRT::__setjmp3(local_5c.jumpBuffer,0);
   pBVar5 = local_10;
   if (iVar6 == 0) {
-    if ((element_027a == (BldLabPanelTy_field_027AElement *)0x0) || ((char)element_027a->field_0008 == 0)) {
+    if ((element_027a == nullptr) || ((char)element_027a->field_0008 == 0)) {
       pAVar9 = (AnonShape_GLOBAL_0081175C_57F682DD *)local_10->field_018C;
     }
     else {
@@ -64,7 +64,7 @@ void __thiscall BldLabPanelTy::PaintUpdBut(BldLabPanelTy *this,AnonShape_004EF32
     iVar8 = local_14;
     iVar6 = local_18;
     DibPut((AnonShape_006B5B10_E0D06CF1 *)pBVar5->field_0068,local_18,local_14,'\x01',pbVar7);
-    if ((param_1->field_0014 == 3) && (element_027a != (BldLabPanelTy_field_027AElement *)0x0)) {
+    if ((param_1->field_0014 == 3) && (element_027a != nullptr)) {
       pbVar7 = (byte *)FUN_0070b3a0(pBVar5->field_0190,9 - (uint)((char)element_027a->field_0008 != 0));
       DibPut((AnonShape_006B5B10_E0D06CF1 *)pBVar5->field_0068,iVar6,iVar8,'\x06',pbVar7);
     }

@@ -15,6 +15,6 @@ char * __cdecl FUN_0064a910(int *param_1,int param_2)
   if ((-1 < param_2) && (param_2 < param_1[1])) {
     return (char *)(param_1[2] + param_2 * 5);
   }
-  return (char *)0x0;
+  return nullptr;
 }
 

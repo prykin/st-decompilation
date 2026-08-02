@@ -9,7 +9,7 @@ int __thiscall FUN_00711260(void *this,uint *param_1)
 
   bVar2 = false;
   local_8 = 0;
-  if (param_1 == (uint *)0x0) {
+  if (param_1 == nullptr) {
     return 0;
   }
   cVar1 = (char)*param_1;

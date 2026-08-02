@@ -11,7 +11,7 @@ int __thiscall FUN_0074cf58(void *this,undefined4 param_1)
   iVar2 = (**(code **)(**(int **)((int)this + 0xe0) + 0x28))(param_1);
   if (iVar2 == 0) {
     piVar1 = *(int **)(*(int *)(*(int *)((int)this + 0xe0) + 0x90) + 0x18);
-    if (piVar1 == (int *)0x0) {
+    if (piVar1 == nullptr) {
       iVar2 = 0;
     }
     else {

@@ -79,10 +79,10 @@ void __thiscall Visible::PrepareAfterSave(Visible *this,ushort *param_1)
       pVVar2->field_004C = puVar5;
       puVar5 = Library::DKW::LIB::FUN_006aac10(pVVar2->field_0030 * pVVar2->field_0034 * 2);
       pVVar2->field_0050 = puVar5;
-      uVar6 = FUN_006b0060((uint *)0x0,puVar8);
+      uVar6 = FUN_006b0060(nullptr,puVar8);
       pVVar2->field_00F4 = uVar6;
       /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-      uVar6 = FUN_006b0060((uint *)0x0,(uint *)((int)puVar8 + *(int *)(param_1 + 0x1c)));
+      uVar6 = FUN_006b0060(nullptr,(uint *)((int)puVar8 + *(int *)(param_1 + 0x1c)));
       pVVar2->field_0110 = uVar6;
     }
     g_currentExceptionFrame = local_58.previous;
@@ -92,7 +92,7 @@ void __thiscall Visible::PrepareAfterSave(Visible *this,ushort *param_1)
   iVar9 = 4;
   value = &local_14->field_003C;
   do {
-    if (*value != (void *)0x0) {
+    if (*value != nullptr) {
       FreeAndNull(value);
     }
     value = value + 1;

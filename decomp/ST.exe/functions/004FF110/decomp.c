@@ -52,7 +52,7 @@ void __thiscall CPanelTy::SwitchTV(CPanelTy *this,int param_1)
     /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
     cVar1 = *(char *)((int)local_10->field_0308 + (uVar9 - 0x1c));
     if (cVar1 == '\x01') {
-      puVar12 = (undefined4 *)0x0;
+      puVar12 = nullptr;
       iVar11 = 0;
       iVar6 = 1;
       bVar5 = 0;

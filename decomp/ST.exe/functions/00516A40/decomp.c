@@ -92,7 +92,7 @@ void __thiscall HelpPanelTy::TechProc(HelpPanelTy *this,uint param_1,byte param_
       *(undefined2 *)&local_44->field_0x2c = 0;
       local_44->field_002E = 2;
       *(undefined4 *)&local_44->field_0x30 = local_44->field_0178;
-      if (g_cursorClass_00802A30 != (CursorClassTy *)0x0) {
+      if (g_cursorClass_00802A30 != nullptr) {
         /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
         (**(code **)g_cursorClass_00802A30->field_0000)(&local_44->field_0x18);
       }
@@ -302,7 +302,7 @@ LAB_00516f6b:
   puVar9 = (uint *)LoadResourceString(UVar7,g_module_00807618);
   ccFntTy::WrStr(this_00->field_01E0,puVar9,iVar6,iVar17,uVar12);
   local_8 = local_8 + 0xf;
-  if ((g_allPlayers_007FA174 != (STAllPlayersC *)0x0) &&
+  if ((g_allPlayers_007FA174 != nullptr) &&
      ((thunk_FUN_004e6e10(local_18,param_1,&local_10,&local_14), local_10 != 0 || (local_14 != 0))))
   {
     ccFntTy::SetSurf(this_00->field_01E0,(int)this_00->field_0218,0,0,local_8,0x91,0xf);
@@ -330,7 +330,7 @@ LAB_00516f6b:
       pcVar13 = (char *)&DAT_0080f33a;
       memmove(pcVar13, pcVar10, uVar12); /* compiler REP MOVS byte copy */
       uVar11 = 0;
-      for (puVar9 = Library::MSVCRT::FUN_0072e560(&DAT_0080f33a,'\n'); puVar9 != (uint *)0x0;
+      for (puVar9 = Library::MSVCRT::FUN_0072e560(&DAT_0080f33a,'\n'); puVar9 != nullptr;
           puVar9 = Library::MSVCRT::FUN_0072e560(puVar9,'\n')) {
         *(undefined1 *)puVar9 = 0x20;
       }
@@ -370,7 +370,7 @@ LAB_00516f6b:
       pcVar10 = pcVar13 + -uVar12;
       pcVar13 = (char *)&DAT_0080f33a;
       memmove(pcVar13, pcVar10, uVar12); /* compiler REP MOVS byte copy */
-      for (puVar9 = Library::MSVCRT::FUN_0072e560(&DAT_0080f33a,'\n'); puVar9 != (uint *)0x0;
+      for (puVar9 = Library::MSVCRT::FUN_0072e560(&DAT_0080f33a,'\n'); puVar9 != nullptr;
           puVar9 = Library::MSVCRT::FUN_0072e560(puVar9,'\n')) {
         *(undefined1 *)puVar9 = 0x20;
       }

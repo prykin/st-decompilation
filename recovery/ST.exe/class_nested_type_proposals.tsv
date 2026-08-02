@@ -74,12 +74,11 @@ apply	owner	parent_offset	type_path	length	field_count	access_count	confidence	r
 0	SIDTy	7368	/SubmarineTitans/Recovered/ClassPointees/AnonPointee_SIDTy_1CC8	24	4	6	review	multiple non-overlapping fixed offsets through one class pointer field
 0	SIDTy	7372	/SubmarineTitans/Recovered/ClassPointees/AnonPointee_SIDTy_1CCC	24	2	16	review	multiple non-overlapping fixed offsets through one class pointer field
 0	SIDTy	7376	/SubmarineTitans/Recovered/ClassPointees/AnonPointee_SIDTy_1CD0	24	2	6	review	multiple non-overlapping fixed offsets through one class pointer field
-0	ST3DSMAPContext	0	/SubmarineTitans/Recovered/ClassPointees/AnonPointee_ST3DSMAPContext_0000	568	3	7	review	multiple non-overlapping fixed offsets through one class pointer field
-0	ST3DSMAPContext	4	/SubmarineTitans/Recovered/ClassPointees/AnonPointee_ST3DSMAPContext_0004	32	3	12	review	multiple non-overlapping fixed offsets through one class pointer field
-0	ST3DSMAPContext	640	/SubmarineTitans/Recovered/ClassPointees/AnonPointee_ST3DSMAPContext_0280	1101	16	70	review	multiple non-overlapping fixed offsets through one class pointer field
-0	ST3DSMAPContext	796	/SubmarineTitans/Recovered/ClassPointees/AnonPointee_ST3DSMAPContext_031C	275	9	104	review	multiple non-overlapping fixed offsets through one class pointer field
+0	ST3DSMAPContext	0	/SubmarineTitans/Recovered/ClassPointees/AnonPointee_ST3DSMAPContext_0000	568	3	4	review	multiple non-overlapping fixed offsets through one class pointer field
+0	ST3DSMAPContext	4	/SubmarineTitans/Recovered/ClassPointees/AnonPointee_ST3DSMAPContext_0004	32	3	5	review	multiple non-overlapping fixed offsets through one class pointer field
+0	ST3DSMAPContext	796	/SubmarineTitans/Recovered/ClassPointees/AnonPointee_ST3DSMAPContext_031C	275	9	52	review	multiple non-overlapping fixed offsets through one class pointer field
 0	ST3DSMAPContext	856	/SubmarineTitans/Recovered/ClassPointees/AnonPointee_ST3DSMAPContext_0358	1056	17	43	review	multiple non-overlapping fixed offsets through one class pointer field
-0	ST3DSMAPContext	1056	/SubmarineTitans/Recovered/ClassPointees/AnonPointee_ST3DSMAPContext_0420	4	3	12	review	multiple non-overlapping fixed offsets through one class pointer field
+0	ST3DSMAPContext	1056	/SubmarineTitans/Recovered/ClassPointees/AnonPointee_ST3DSMAPContext_0420	4	3	6	review	multiple non-overlapping fixed offsets through one class pointer field
 0	ST3DSMAPContext	1090	/SubmarineTitans/Recovered/ClassPointees/AnonPointee_ST3DSMAPContext_0442	24	5	9	review	multiple non-overlapping fixed offsets through one class pointer field
 0	ST3DSMAPContext	1094	/SubmarineTitans/Recovered/ClassPointees/AnonPointee_ST3DSMAPContext_0446	13	2	4	review	multiple non-overlapping fixed offsets through one class pointer field
 0	ST3DSMAPContext	1098	/SubmarineTitans/Recovered/ClassPointees/AnonPointee_ST3DSMAPContext_044A	13	2	4	review	multiple non-overlapping fixed offsets through one class pointer field

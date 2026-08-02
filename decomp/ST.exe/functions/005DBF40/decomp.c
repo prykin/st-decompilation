@@ -19,7 +19,7 @@ StartSystemTy::OutBmpProc
   int iVar2;
   InternalExceptionFrame local_48;
 
-  if (param_8 != (AnonPointee_MReportTy_0073 *)0x0) {
+  if (param_8 != nullptr) {
     local_48.previous = g_currentExceptionFrame;
     g_currentExceptionFrame = &local_48;
     errorCode = Library::MSVCRT::__setjmp3(local_48.jumpBuffer,0);

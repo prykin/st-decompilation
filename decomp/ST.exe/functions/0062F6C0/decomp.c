@@ -18,7 +18,7 @@ undefined4 __thiscall FUN_0062f6c0(void *this,int param_1)
         STRubbishC::sub_00630260(this,param_1,0);
       }
       pSVar2 = *(STT3DSprC **)((int)*value + 0x10);
-      if (pSVar2 != (STT3DSprC *)0x0) {
+      if (pSVar2 != nullptr) {
         thunk_FUN_004ad310(pSVar2);
         Library::MSVCRT::FUN_0072e2b0((HoloTy *)pSVar2);
         *(undefined4 *)((int)*value + 0x10) = 0;
@@ -26,7 +26,7 @@ undefined4 __thiscall FUN_0062f6c0(void *this,int param_1)
       uVar3 = 1;
       *(int *)((int)this + 0x1e1) = *(int *)((int)this + 0x1e1) + -1;
       FreeAndNull(value);
-      *value = (void *)0x0;
+      *value = nullptr;
     }
     if (*(int *)((int)this + 0x1e1) == 0) {
       *(undefined4 *)((int)this + 0x1fa) = 2;

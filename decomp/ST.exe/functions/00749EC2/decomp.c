@@ -30,7 +30,7 @@ int FUN_00749ec2(AnonShape_00749EC2_C411FB81 *param_1)
       FUN_0074a760((int)this);
       /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
       piVar1 = *(int **)(param_1->field_006C + 0x9c);
-      if (piVar1 != (int *)0x0) {
+      if (piVar1 != nullptr) {
         /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
         (**(code **)(*piVar1 + 0x14))(piVar1);
       }

@@ -18,7 +18,7 @@ undefined4 __thiscall STBoatC::StopMove(STBoatC *this,void *param_1)
   STBoatC *pSVar7;
 
   this_00 = thunk_FUN_0042b760(*(char *)&this->field_0024,this->field_0030);
-  if (this_00 == (STGroupBoatC *)0x0) {
+  if (this_00 == nullptr) {
     return 0xffffffff;
   }
   if (this->field_00E8 == 1) {
@@ -42,7 +42,7 @@ undefined4 __thiscall STBoatC::StopMove(STBoatC *this,void *param_1)
     if (((sVar1 < 0) ||
         (((g_worldGrid.sizeX <= sVar1 || (sVar3 < 0)) || (g_worldGrid.sizeY <= sVar3)))) ||
        ((sVar2 < 0 || (g_worldGrid.sizeZ <= sVar2)))) {
-      pSVar7 = (STBoatC *)0x0;
+      pSVar7 = nullptr;
     }
     else {
       pSVar7 = (STBoatC *)

@@ -45,7 +45,7 @@ int __thiscall STBoatC::Annih(STBoatC *this,undefined4 *param_1)
   int local_8;
 
   /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
-  if ((param_1 == (undefined4 *)0x0) || (param_1 == (undefined4 *)0x1)) {
+  if ((param_1 == nullptr) || (param_1 == (undefined4 *)0x1)) {
     memset(&this->field_02CC, 0, 0x5c); /* compiler bulk-zero initialization */
     sVar14 = this->field_0423;
     sVar15 = this->field_0425;
@@ -59,7 +59,7 @@ int __thiscall STBoatC::Annih(STBoatC *this,undefined4 *param_1)
        ((g_worldGrid.sizeZ <= sVar16 ||
         (pSVar2 = g_worldGrid.cells
                   [(int)sVar16 * (int)g_worldGrid.planeStride + (int)sVar15 * (int)g_worldGrid.sizeX
-                   + (int)sVar14].objects[0], pSVar2 == (STWorldObject *)0x0)))) {
+                   + (int)sVar14].objects[0], pSVar2 == nullptr)))) {
 LAB_0047d831:
       sub_004952E0(this);
       return 0;
@@ -193,7 +193,7 @@ LAB_0047d831:
               ((pSVar2 = g_worldGrid.cells
                          [(int)sVar15 * (int)g_worldGrid.planeStride +
                           (int)sVar16 * (int)g_worldGrid.sizeX + (int)sVar14].objects[0],
-               pSVar2 != (STWorldObject *)0x0 && (*(int *)&pSVar2->field_0x18 == this->field_0697)))
+               pSVar2 != nullptr && (*(int *)&pSVar2->field_0x18 == this->field_0697)))
               ))) {
             iVar9 = (*pSVar2->vtable[5].slots_00_28[2])();
             if (iVar9 == 1) {
@@ -226,7 +226,7 @@ LAB_0047d241:
          ((pSVar2 = g_worldGrid.cells
                     [(int)sVar15 * (int)g_worldGrid.planeStride +
                      (int)sVar16 * (int)g_worldGrid.sizeX + (int)sVar14].objects[0],
-          pSVar2 != (STWorldObject *)0x0 && (*(int *)&pSVar2->field_0x18 == this->field_0697)))) {
+          pSVar2 != nullptr && (*(int *)&pSVar2->field_0x18 == this->field_0697)))) {
         iVar9 = (*pSVar2->vtable[5].slots_00_28[2])();
         if (iVar9 == 1) {
           if (*(int *)&pSVar2[0x22].field_0x8 == 2) {
@@ -264,7 +264,7 @@ LAB_0047d241:
          ((pSVar2 = g_worldGrid.cells
                     [(int)sVar15 * (int)g_worldGrid.planeStride +
                      (int)sVar16 * (int)g_worldGrid.sizeX + (int)sVar14].objects[0],
-          pSVar2 != (STWorldObject *)0x0 && (*(int *)&pSVar2->field_0x18 == this->field_0697)))) {
+          pSVar2 != nullptr && (*(int *)&pSVar2->field_0x18 == this->field_0697)))) {
         iVar9 = (*pSVar2->vtable[5].slots_00_28[2])();
         if (iVar9 == 1) {
           /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */

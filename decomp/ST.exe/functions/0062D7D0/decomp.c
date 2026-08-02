@@ -12,7 +12,7 @@ int FUN_0062d7d0(int *param_1,int *param_2)
   param_2 = (int *)0x8;
   do {
     if (*param_1 != 0) {
-      iVar1 = FUN_006b0060((uint *)0x0,(uint *)(piVar3 + 1));
+      iVar1 = FUN_006b0060(nullptr,(uint *)(piVar3 + 1));
       *param_1 = iVar1;
       iVar1 = *piVar3;
       piVar3 = (int *)((int)(piVar3 + 1) + iVar1);
@@ -22,7 +22,7 @@ int FUN_0062d7d0(int *param_1,int *param_2)
     param_1 = param_1 + 1;
     /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
     param_2 = (int *)((int)param_2 + -1);
-  } while (param_2 != (int *)0x0);
+  } while (param_2 != nullptr);
   return iVar2;
 }
 

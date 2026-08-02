@@ -45,7 +45,7 @@ address	status	detail
 00462180	disabled	all apply flags are 0
 004658D0	disabled	all apply flags are 0
 004805B0	disabled	all apply flags are 0
-004838E0	applied	receiver_type=applied(/SubmarineTitans/Recovered/HiddenThis/AnonReceiver_004603B0)
+004838E0	disabled	all apply flags are 0
 00483E30	disabled	all apply flags are 0
 00484020	disabled	all apply flags are 0
 0048D650	disabled	all apply flags are 0
@@ -55,7 +55,7 @@ address	status	detail
 00492510	disabled	all apply flags are 0
 00492550	disabled	all apply flags are 0
 004934B0	disabled	all apply flags are 0
-00493610	applied	receiver_type=applied(/SubmarineTitans/Recovered/HiddenThis/AnonReceiver_00493610)
+00493610	disabled	all apply flags are 0
 00494160	disabled	all apply flags are 0
 00495010	disabled	all apply flags are 0
 004950B0	disabled	all apply flags are 0
@@ -196,7 +196,7 @@ address	status	detail
 0052D320	disabled	all apply flags are 0
 005335E0	disabled	all apply flags are 0
 0053F510	disabled	all apply flags are 0
-0054A9B0	applied	receiver_type=applied(/SubmarineTitans/Recovered/HiddenThis/AnonReceiver_0054A9B0)
+0054A9B0	disabled	all apply flags are 0
 0054B9A0	disabled	all apply flags are 0
 0054CDD0	disabled	all apply flags are 0
 0054EAB0	disabled	all apply flags are 0
@@ -212,7 +212,7 @@ address	status	detail
 00568940	disabled	all apply flags are 0
 00568BC0	disabled	all apply flags are 0
 00572920	disabled	all apply flags are 0
-00573260	applied	receiver_type=applied(/SubmarineTitans/Recovered/HiddenThis/AnonReceiver_00573260)
+00573260	disabled	all apply flags are 0
 005734C0	disabled	all apply flags are 0
 005797B0	disabled	all apply flags are 0
 005800E0	disabled	all apply flags are 0
@@ -235,7 +235,7 @@ address	status	detail
 005B6350	disabled	all apply flags are 0
 005B6450	disabled	all apply flags are 0
 005B6730	disabled	all apply flags are 0
-005C8200	applied	receiver_type=applied(/SubmarineTitans/Recovered/HiddenThis/AnonReceiver_004EEFB0)
+005C8200	disabled	all apply flags are 0
 005CBBE0	disabled	all apply flags are 0
 005DA7A0	disabled	all apply flags are 0
 005DA980	disabled	all apply flags are 0
@@ -264,13 +264,13 @@ address	status	detail
 005F9310	disabled	all apply flags are 0
 005F9CB0	disabled	all apply flags are 0
 005FA360	disabled	all apply flags are 0
-005FAA10	applied	receiver_type=applied(/SubmarineTitans/Recovered/HiddenThis/AnonReceiver_00416270)
+005FAA10	disabled	all apply flags are 0
 005FAC40	disabled	all apply flags are 0
 005FADA0	disabled	all apply flags are 0
 005FAF70	disabled	all apply flags are 0
 005FAFF0	disabled	all apply flags are 0
 005FD940	disabled	all apply flags are 0
-005FDB50	applied	receiver_type=applied(/SubmarineTitans/Recovered/HiddenThis/AnonReceiver_005FDB50)
+005FDB50	disabled	all apply flags are 0
 005FE5D0	disabled	all apply flags are 0
 005FEB60	disabled	all apply flags are 0
 005FF1F0	disabled	all apply flags are 0
@@ -281,7 +281,7 @@ address	status	detail
 006001E0	disabled	all apply flags are 0
 006010A0	disabled	all apply flags are 0
 006012D0	disabled	all apply flags are 0
-00601500	applied	receiver_type=applied(/SubmarineTitans/Recovered/HiddenThis/AnonReceiver_00601500)
+00601500	disabled	all apply flags are 0
 006029C0	disabled	all apply flags are 0
 006042D0	disabled	all apply flags are 0
 00604870	disabled	all apply flags are 0
@@ -374,7 +374,7 @@ address	status	detail
 00632650	disabled	all apply flags are 0
 00633770	disabled	all apply flags are 0
 00635A40	disabled	all apply flags are 0
-00636260	applied	receiver_type=applied(/SubmarineTitans/Recovered/HiddenThis/AnonReceiver_00636260)
+00636260	disabled	all apply flags are 0
 00639500	disabled	all apply flags are 0
 00639670	disabled	all apply flags are 0
 00639BF0	disabled	all apply flags are 0
@@ -396,19 +396,19 @@ address	status	detail
 00640390	disabled	all apply flags are 0
 006404B0	disabled	all apply flags are 0
 006443C0	disabled	all apply flags are 0
-00644410	applied	receiver_type=applied(/SubmarineTitans/Recovered/HiddenThis/AnonReceiver_00644410)
+00644410	disabled	all apply flags are 0
 006473E0	disabled	all apply flags are 0
 00647A60	disabled	all apply flags are 0
 0064A970	disabled	all apply flags are 0
 0064E510	disabled	all apply flags are 0
 0065BD20	disabled	all apply flags are 0
 0065D940	disabled	all apply flags are 0
-0065DA50	applied	receiver_type=applied(/SubmarineTitans/Recovered/HiddenThis/AnonReceiver_0065DA50)
+0065DA50	disabled	all apply flags are 0
 0065E9A0	disabled	all apply flags are 0
 0065EB70	disabled	all apply flags are 0
 0065ED90	disabled	all apply flags are 0
 0065FD50	disabled	all apply flags are 0
-00660180	applied	receiver_type=applied(/SubmarineTitans/Recovered/HiddenThis/AnonReceiver_00660180)
+00660180	disabled	all apply flags are 0
 00660420	disabled	all apply flags are 0
 00660540	disabled	all apply flags are 0
 00660700	disabled	all apply flags are 0
@@ -416,14 +416,14 @@ address	status	detail
 00660A40	disabled	all apply flags are 0
 006616B0	disabled	all apply flags are 0
 00661790	disabled	all apply flags are 0
-00664540	applied	receiver_type=applied(/SubmarineTitans/Recovered/HiddenThis/AnonReceiver_00664540)
+00664540	disabled	all apply flags are 0
 00664650	disabled	all apply flags are 0
-0066ACC0	applied	receiver_type=applied(/SubmarineTitans/Recovered/HiddenThis/AnonReceiver_0064A970)
+0066ACC0	disabled	all apply flags are 0
 00671F10	disabled	all apply flags are 0
-00672440	applied	receiver_type=applied(/SubmarineTitans/Recovered/HiddenThis/AnonReceiver_0064A970)
+00672440	disabled	all apply flags are 0
 00678E00	disabled	all apply flags are 0
 00678EF0	disabled	all apply flags are 0
-00679120	applied	receiver_type=applied(/SubmarineTitans/Recovered/HiddenThis/AnonReceiver_00678E00)
+00679120	disabled	all apply flags are 0
 006799B0	disabled	all apply flags are 0
 00679D60	disabled	all apply flags are 0
 00679E70	disabled	all apply flags are 0
@@ -447,7 +447,7 @@ address	status	detail
 00692920	disabled	all apply flags are 0
 00693AD0	disabled	all apply flags are 0
 00693B20	disabled	all apply flags are 0
-00693D00	applied	receiver_type=applied(/SubmarineTitans/Recovered/HiddenThis/AnonReceiver_00693D00)
+00693D00	disabled	all apply flags are 0
 00693E60	disabled	all apply flags are 0
 006940B0	disabled	all apply flags are 0
 00694200	disabled	all apply flags are 0
@@ -481,7 +481,7 @@ address	status	detail
 006D63E0	disabled	all apply flags are 0
 006D70B0	disabled	all apply flags are 0
 006DE570	disabled	all apply flags are 0
-006E1EE0	applied	receiver_type=applied(/SubmarineTitans/Recovered/HiddenThis/AnonReceiver_006E1EE0)
+006E1EE0	disabled	all apply flags are 0
 006E2C30	disabled	all apply flags are 0
 006E3A70	disabled	all apply flags are 0
 006E3A90	disabled	all apply flags are 0
@@ -506,8 +506,8 @@ address	status	detail
 006EA340	disabled	all apply flags are 0
 006EAD40	disabled	all apply flags are 0
 006F1CB0	disabled	all apply flags are 0
-006F31D0	applied	receiver_type=applied(/SubmarineTitans/Recovered/HiddenThis/AnonReceiver_006F31D0)
-00708D10	applied	receiver_type=applied(/SubmarineTitans/Recovered/HiddenThis/AnonReceiver_00702510)
+006F31D0	disabled	all apply flags are 0
+00708D10	disabled	all apply flags are 0
 00709670	disabled	all apply flags are 0
 007109F0	disabled	all apply flags are 0
 00710FB0	disabled	all apply flags are 0
@@ -520,7 +520,7 @@ address	status	detail
 00711670	disabled	all apply flags are 0
 007140E0	disabled	all apply flags are 0
 00714B30	disabled	all apply flags are 0
-00714CE0	applied	receiver_type=applied(/SubmarineTitans/Recovered/HiddenThis/AnonReceiver_00714CE0)
+00714CE0	disabled	all apply flags are 0
 00714FB0	disabled	all apply flags are 0
 0071C7C0	disabled	all apply flags are 0
 0071C9F0	disabled	all apply flags are 0
@@ -536,9 +536,9 @@ address	status	detail
 00724FA0	disabled	all apply flags are 0
 00726CE0	disabled	all apply flags are 0
 007279B0	disabled	all apply flags are 0
-00727DA0	applied	receiver_type=applied(/SubmarineTitans/Recovered/HiddenThis/AnonReceiver_00727C80)
-007282B0	applied	receiver_type=applied(/SubmarineTitans/Recovered/HiddenThis/AnonReceiver_00727C80)
-00728A80	applied	receiver_type=applied(/SubmarineTitans/Recovered/HiddenThis/AnonReceiver_00728640)
+00727DA0	disabled	all apply flags are 0
+007282B0	disabled	all apply flags are 0
+00728A80	disabled	all apply flags are 0
 00728DA0	disabled	all apply flags are 0
 007297E0	disabled	all apply flags are 0
 0072AC20	disabled	all apply flags are 0

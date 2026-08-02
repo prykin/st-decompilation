@@ -10,7 +10,7 @@ int __fastcall FUN_006300e0(int param_1)
   piVar2 = (int *)(param_1 + 0x1e5);
   iVar3 = 5;
   do {
-    if ((int *)*piVar2 != (int *)0x0) {
+    if ((int *)*piVar2 != nullptr) {
       iVar1 = iVar1 + *(int *)*piVar2;
     }
     piVar2 = piVar2 + 1;

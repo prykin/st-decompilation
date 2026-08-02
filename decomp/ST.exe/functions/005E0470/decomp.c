@@ -51,10 +51,10 @@ void __thiscall MTaskTy::DoneMTask(MTaskTy *this)
   SpriteClassTy::CloseSprite((SpriteClassTy *)&this_00->field_048C);
   SpriteClassTy::CloseSprite((SpriteClassTy *)&this_00->field_051D);
   SpriteClassTy::CloseSprite((SpriteClassTy *)&this_00->field_05AE);
-  if (this_00->field_0643 != (DArrayTy *)0x0) {
+  if (this_00->field_0643 != nullptr) {
     FUN_006b5570(this_00->field_0643);
   }
-  this_00->field_0643 = (DArrayTy *)0x0;
+  this_00->field_0643 = nullptr;
   if (this_00->field_02CD != 0) {
     StartSystemTy::sub_006E56B0(this_00->field_000C,this_00->field_02CD);
     this_00->field_02CD = 0;
@@ -101,11 +101,11 @@ void __thiscall MTaskTy::DoneMTask(MTaskTy *this)
     iVar2 = iVar2 + -1;
   } while (iVar2 != 0);
   pDVar3 = this_00->field_064B;
-  if (pDVar3 != (DArrayTy *)0x0) {
+  if (pDVar3 != nullptr) {
     uVar7 = 0;
     if (pDVar3->count != 0) {
       if (pDVar3->count == 0) {
-        this_02 = (SpriteClassTy *)0x0;
+        this_02 = nullptr;
         goto LAB_005e0672;
       }
       do {
@@ -121,14 +121,14 @@ LAB_005e0672:
       } while (uVar7 < pDVar3->count);
     }
     DArrayDestroy(this_00->field_064B);
-    this_00->field_064B = (DArrayTy *)0x0;
+    this_00->field_064B = nullptr;
   }
   pDVar3 = this_00->field_0647;
-  if (pDVar3 != (DArrayTy *)0x0) {
+  if (pDVar3 != nullptr) {
     uVar7 = 0;
     if (pDVar3->count != 0) {
       if (pDVar3->count == 0) {
-        pAVar4 = (AnonShape_005E10A0_819783CC *)0x0;
+        pAVar4 = nullptr;
         goto LAB_005e06d9;
       }
       do {
@@ -141,14 +141,14 @@ LAB_005e06d9:
       } while (uVar7 < pDVar3->count);
     }
     DArrayDestroy(this_00->field_0647);
-    this_00->field_0647 = (DArrayTy *)0x0;
+    this_00->field_0647 = nullptr;
   }
   pDVar3 = this_00->field_064F;
-  if (pDVar3 != (DArrayTy *)0x0) {
+  if (pDVar3 != nullptr) {
     uVar7 = 0;
     if (pDVar3->count != 0) {
       if (pDVar3->count == 0) {
-        pAVar4 = (AnonShape_005E10A0_819783CC *)0x0;
+        pAVar4 = nullptr;
         goto LAB_005e072b;
       }
       do {
@@ -161,27 +161,27 @@ LAB_005e072b:
       } while (uVar7 < pDVar3->count);
     }
     DArrayDestroy(this_00->field_064F);
-    this_00->field_064F = (DArrayTy *)0x0;
+    this_00->field_064F = nullptr;
   }
   value = (void **)&this_00->field_0653;
   iVar2 = 0xb;
   do {
-    if (*value != (void *)0x0) {
+    if (*value != nullptr) {
       FreeAndNull(value);
     }
     value = value + 3;
     iVar2 = iVar2 + -1;
   } while (iVar2 != 0);
-  if (this_00->field_0089 != (ccFntTy *)0x0) {
+  if (this_00->field_0089 != nullptr) {
     ccFntTy::operator_delete((uint *)this_00->field_0089);
-    this_00->field_0089 = (ccFntTy *)0x0;
+    this_00->field_0089 = nullptr;
   }
-  if (this_00->field_008D != (ccFntTy *)0x0) {
+  if (this_00->field_008D != nullptr) {
     ccFntTy::operator_delete((uint *)this_00->field_008D);
-    this_00->field_008D = (ccFntTy *)0x0;
+    this_00->field_008D = nullptr;
   }
-  this_00->field_0081 = (ushort *)0x0;
-  if (this_00->field_005D != (ushort *)0x0) {
+  this_00->field_0081 = nullptr;
+  if (this_00->field_005D != nullptr) {
     this_01 = g_cMf32_00806780;
     if ((this_00->field_0080 != '\x01') &&
        (this_01 = g_cMf32_00806798, this_00->field_0080 != '\x02')) {
@@ -193,18 +193,18 @@ LAB_005e072b:
     FUN_006c1e20();
     memset(&DAT_00808463, 0, 0x180); /* compiler bulk-zero initialization */
   }
-  if (this_00->field_0074 != (MTaskTy_field_0074DArray *)0x0) {
+  if (this_00->field_0074 != nullptr) {
     DArrayDestroy((DArrayTy *)this_00->field_0074);
   }
-  this_00->field_0074 = (MTaskTy_field_0074DArray *)0x0;
-  if (this_00->field_0078 != (DArrayTy *)0x0) {
+  this_00->field_0074 = nullptr;
+  if (this_00->field_0078 != nullptr) {
     DArrayDestroy(this_00->field_0078);
   }
-  this_00->field_0078 = (DArrayTy *)0x0;
-  if (this_00->field_0070 != (cMf32 *)0x0) {
+  this_00->field_0078 = nullptr;
+  if (this_00->field_0070 != nullptr) {
     cMf32::delete(this_00->field_0070);
   }
-  this_00->field_0070 = (cMf32 *)0x0;
+  this_00->field_0070 = nullptr;
   if (this_00->field_004D != 0) {
     AppClassTy::PostNextMessage((AppClassTy *)&DAT_00807620,(undefined4 *)&this_00->field_0x3d);
   }

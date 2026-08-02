@@ -5,7 +5,7 @@
 uint FUN_004b7030(char param_1)
 
 {
-  if (*(DArrayTy **)&g_packedRecords_A62x8[param_1].field_0x992 != (DArrayTy *)0x0) {
+  if (*(DArrayTy **)&g_packedRecords_A62x8[param_1].field_0x992 != nullptr) {
     DArrayDestroy(*(DArrayTy **)&g_packedRecords_A62x8[param_1].field_0x992);
     *(undefined4 *)&g_packedRecords_A62x8[param_1].field_0x992 = 0;
   }

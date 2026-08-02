@@ -69,11 +69,11 @@ undefined4 __thiscall TLOBaseTy::sub_004C4550(TLOBaseTy *this,int *param_1)
   iVar11 = *(int *)(&DAT_00792a90 + iVar3 * 4);
   if (iVar11 == 1) {
     iVar11 = (int)param_1 * 0x80;
-    if ((&this->field_0291)[(int)param_1 * 0x20] != (AnonPointee_TLOBaseTy_0291 *)0x0) {
+    if ((&this->field_0291)[(int)param_1 * 0x20] != nullptr) {
       if ((&DAT_00792ca0)[iVar3 * 3] == 0xb1) {
         ppbVar12 = local_b0;
         for (iVar3 = 10; iVar3 != 0; iVar3 = iVar3 + -1) {
-          *ppbVar12 = (byte *)0x0;
+          *ppbVar12 = nullptr;
           ppbVar12 = ppbVar12 + 1;
         }
         *(undefined4 *)(&this->field_0x29d + iVar11) = 1;
@@ -106,7 +106,7 @@ undefined4 __thiscall TLOBaseTy::sub_004C4550(TLOBaseTy *this,int *param_1)
       *(undefined4 *)(&this->field_0x29d + iVar11) = 1;
       ppbVar12 = local_84;
       for (iVar3 = 0x16; iVar3 != 0; iVar3 = iVar3 + -1) {
-        *ppbVar12 = (byte *)0x0;
+        *ppbVar12 = nullptr;
         ppbVar12 = ppbVar12 + 1;
       }
       local_18 = *(int *)(&DAT_007932d0 + ((int)param_1 + this->field_0235 * 2) * 0x16);
@@ -343,7 +343,7 @@ undefined4 __thiscall TLOBaseTy::sub_004C4550(TLOBaseTy *this,int *param_1)
       if (&stack0x00000000 != (undefined1 *)0x10) {
         sVar7 = this->field_0045;
       }
-      if ((AnonShape_005EFAE0_B406B78B *)this->field_04D0 != (AnonShape_005EFAE0_B406B78B *)0x0) {
+      if ((AnonShape_005EFAE0_B406B78B *)this->field_04D0 != nullptr) {
         iVar3 = STPlaySystemC::sub_006E62D0
                           (g_playSystem_00802A38,(AnonShape_005EFAE0_B406B78B *)this->field_04D0,
                            (int *)&local_24);
@@ -389,7 +389,7 @@ undefined4 __thiscall TLOBaseTy::sub_004C4550(TLOBaseTy *this,int *param_1)
             ((g_worldGrid.sizeZ <= sVar9 ||
              (g_worldGrid.cells
               [(int)sVar7 * (int)g_worldGrid.sizeX + (int)sVar9 * (int)g_worldGrid.planeStride +
-               (int)sVar8].objects[1] == (STWorldObject *)0x0)))))) {
+               (int)sVar8].objects[1] == nullptr)))))) {
           STJellyManC::Error(local_24,local_18,param_1,local_10);
           *(undefined4 *)(&this->field_0x29d + (int)piVar2 * 0x80) = 1;
           *(int *)(&this->field_0x2c5 + (int)piVar2 * 0x80) =
@@ -400,8 +400,8 @@ undefined4 __thiscall TLOBaseTy::sub_004C4550(TLOBaseTy *this,int *param_1)
     }
     else if ((&DAT_00792ca0)[iVar3 * 3] == 0xb3) {
       /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
-      param_1 = (int *)0x0;
-      if (((AnonShape_005EFAE0_B406B78B *)this->field_04E0[3] != (AnonShape_005EFAE0_B406B78B *)0x0)
+      param_1 = nullptr;
+      if (((AnonShape_005EFAE0_B406B78B *)this->field_04E0[3] != nullptr)
          && (iVar3 = STPlaySystemC::sub_006E62D0
                                (g_playSystem_00802A38,
                                 (AnonShape_005EFAE0_B406B78B *)this->field_04E0[3],(int *)&param_1),

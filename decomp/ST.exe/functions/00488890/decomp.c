@@ -41,7 +41,7 @@ void __thiscall FUN_00488890(void *this,int param_1)
   local_14 = this;
   do {
     iVar7 = local_18;
-    local_8 = (undefined4 *)0x0;
+    local_8 = nullptr;
     local_EAX_38 = LookupRecordByte(*(char *)((int)this + 0x24));
     local_1c = &DAT_00800fa0 + (local_EAX_38 & 0xffU) * 4;
     switch(iVar7) {
@@ -58,19 +58,19 @@ void __thiscall FUN_00488890(void *this,int param_1)
       local_8 = (undefined4 *)&DAT_00801360;
       break;
     case 4:
-      local_1c = (undefined4 *)0x0;
+      local_1c = nullptr;
       uVar4 = LookupRecordByte(*(char *)((int)this + 0x24));
       local_8 = &DAT_00801370 + (uVar4 & 0xffU) * 4;
     }
     if (*(int *)(param_1 + iVar7 * 4) == 0) {
-      pDVar4 = Library::DKW::TBL::DArrayCreate((DArrayTy *)0x0,5,0x30,5);
+      pDVar4 = Library::DKW::TBL::DArrayCreate(nullptr,5,0x30,5);
       *(DArrayTy **)(param_1 + iVar7 * 4) = pDVar4;
     }
     local_10 = 0;
     local_c = 0x32;
     do {
       iVar6 = local_c;
-      if (((((local_1c == (undefined4 *)0x0) || (iVar5 = FUN_006b0fd0((int)local_1c), iVar5 != 0))
+      if (((((local_1c == nullptr) || (iVar5 = FUN_006b0fd0((int)local_1c), iVar5 != 0))
            && (iVar5 = FUN_006b0fd0((int)local_8), iVar5 != 0)) &&
           (iVar5 = thunk_FUN_004e6010(*(int *)((int)this + 0x24),iVar6 + -0x32), iVar5 != 0)) &&
          ((iVar6 < 0x54 || (0x5a < iVar6)))) {
@@ -118,8 +118,8 @@ void __thiscall FUN_00488890(void *this,int param_1)
     pDVar4 = *(DArrayTy **)(param_1 + iVar7 * 4);
     puVar1 = (undefined4 *)pDVar4->count;
     puVar2 = puVar1;
-    while (puVar2 != (undefined4 *)0x0) {
-      local_1c = (undefined4 *)0x0;
+    while (puVar2 != nullptr) {
+      local_1c = nullptr;
       index_00 = 0;
       if ((int)puVar1 + -2 < 0) break;
       do {

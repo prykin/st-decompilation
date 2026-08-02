@@ -27,54 +27,54 @@ void __thiscall MReportTy::DoneMReport(MReportTy *this)
     *(undefined4 *)&local_8->field_0x31 = local_8->field_0008;
     FUN_006e6000(local_8,3,1,(undefined4 *)&local_8->field_0x1d);
     DarkScreen(g_dDXContext_0080759C,10,2);
-    if (g_cursorClass_00802A30 != (CursorClassTy *)0x0) {
+    if (g_cursorClass_00802A30 != nullptr) {
       CursorClassTy::sub_00544940(g_cursorClass_00802A30);
     }
     ppDVar6 = &pMVar2->field_0347;
     iVar3 = 3;
     do {
-      if (*ppDVar6 != (DArrayTy *)0x0) {
+      if (*ppDVar6 != nullptr) {
         DArrayDestroy(*ppDVar6);
-        *ppDVar6 = (DArrayTy *)0x0;
+        *ppDVar6 = nullptr;
       }
       ppDVar6 = ppDVar6 + 1;
       iVar3 = iVar3 + -1;
     } while (iVar3 != 0);
-    if (pMVar2->field_0453 != (HoloTy *)0x0) {
+    if (pMVar2->field_0453 != nullptr) {
       HoloTy::Done(pMVar2->field_0453);
       Library::MSVCRT::FUN_0072e2b0(pMVar2->field_0453);
-      pMVar2->field_0453 = (HoloTy *)0x0;
+      pMVar2->field_0453 = nullptr;
     }
-    if (pMVar2->field_0457 != (HoloTy *)0x0) {
+    if (pMVar2->field_0457 != nullptr) {
       HoloTy::Done(pMVar2->field_0457);
       Library::MSVCRT::FUN_0072e2b0(pMVar2->field_0457);
-      pMVar2->field_0457 = (HoloTy *)0x0;
+      pMVar2->field_0457 = nullptr;
     }
     cMf32::RecMemFree(g_cMf32_00806780,&pMVar2->field_005D);
     cMf32::RecMemFree(g_cMf32_00806780,&pMVar2->field_006F);
-    if (pMVar2->field_0077 != (AnonPointee_MReportTy_0077 *)0x0) {
+    if (pMVar2->field_0077 != nullptr) {
       FreeAndNull(&pMVar2->field_0077);
     }
-    if (pMVar2->field_007B != (void *)0x0) {
+    if (pMVar2->field_007B != nullptr) {
       FreeAndNull(&pMVar2->field_007B);
     }
-    if (pMVar2->field_0073 != (AnonPointee_MReportTy_0073 *)0x0) {
+    if (pMVar2->field_0073 != nullptr) {
       FreeAndNull(&pMVar2->field_0073);
     }
-    if (pMVar2->field_0083 != (ccFntTy *)0x0) {
+    if (pMVar2->field_0083 != nullptr) {
       ccFntTy::operator_delete((uint *)pMVar2->field_0083);
-      pMVar2->field_0083 = (ccFntTy *)0x0;
+      pMVar2->field_0083 = nullptr;
     }
-    if (pMVar2->field_0087 != (ccFntTy *)0x0) {
+    if (pMVar2->field_0087 != nullptr) {
       ccFntTy::operator_delete((uint *)pMVar2->field_0087);
-      pMVar2->field_0087 = (ccFntTy *)0x0;
-      g_startSystem_0081176C->field_0038 = (ccFntTy *)0x0;
+      pMVar2->field_0087 = nullptr;
+      g_startSystem_0081176C->field_0038 = nullptr;
     }
-    if (pMVar2->field_008B != (ccFntTy *)0x0) {
+    if (pMVar2->field_008B != nullptr) {
       ccFntTy::operator_delete((uint *)pMVar2->field_008B);
-      pMVar2->field_008B = (ccFntTy *)0x0;
+      pMVar2->field_008B = nullptr;
     }
-    pMVar2->field_007F = (ushort *)0x0;
+    pMVar2->field_007F = nullptr;
     if (pMVar2->field_004D != 0) {
       AppClassTy::PostNextMessage((AppClassTy *)&DAT_00807620,(undefined4 *)&pMVar2->field_0x3d);
     }

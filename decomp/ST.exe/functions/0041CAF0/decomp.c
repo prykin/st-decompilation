@@ -17,21 +17,21 @@ int __fastcall FUN_0041caf0(AnonShape_0041CAF0_1630B9E0 *param_1)
   int iVar5;
 
   if (param_1->field_002C == 0) {
-    if (g_visibleClass_00802A88 != (VisibleClassTy *)0x0) {
+    if (g_visibleClass_00802A88 != nullptr) {
       iVar5 = (int)param_1->field_005D;
       iVar4 = (int)param_1->field_005B;
       if ((DAT_0080874d != -1) && (g_visibleClass_00802A88->field_00F8 != 0)) {
         if (((-1 < iVar4) &&
             (((iVar4 < g_visibleClass_00802A88->field_0020 && (-1 < iVar5)) &&
              (iVar5 < g_visibleClass_00802A88->field_0024)))) &&
-           (g_visibleClass_00802A88->field_0038 != (byte *)0x0)) {
+           (g_visibleClass_00802A88->field_0038 != nullptr)) {
           iVar5 = g_visibleClass_00802A88->field_0020 * iVar5;
           pbVar1 = g_visibleClass_00802A88->field_0038 + (iVar5 + iVar4) * 2;
-          if ((pbVar1 != (byte *)0x0) && (pbVar1[1] != 0)) {
+          if ((pbVar1 != nullptr) && (pbVar1[1] != 0)) {
             if (7 < param_1->field_0024) {
               return 1;
             }
-            if (g_visibleClass_00802A88->field_003C[param_1->field_0024 + 6] == (void *)0x0) {
+            if (g_visibleClass_00802A88->field_003C[param_1->field_0024 + 6] == nullptr) {
               return 1;
             }
             if (*(char *)((int)g_visibleClass_00802A88->field_003C[param_1->field_0024 + 6] +
@@ -44,21 +44,21 @@ int __fastcall FUN_0041caf0(AnonShape_0041CAF0_1630B9E0 *param_1)
       }
     }
   }
-  else if (g_visibleClass_00802A88 != (VisibleClassTy *)0x0) {
+  else if (g_visibleClass_00802A88 != nullptr) {
     iVar5 = (int)param_1->field_005D;
     iVar4 = (int)param_1->field_005B;
     if ((DAT_0080874d != -1) && (g_visibleClass_00802A88->field_00F8 != 0)) {
       if (((-1 < iVar4) &&
           (((iVar4 < g_visibleClass_00802A88->field_0020 && (-1 < iVar5)) &&
            (iVar5 < g_visibleClass_00802A88->field_0024)))) &&
-         (g_visibleClass_00802A88->field_0038 != (byte *)0x0)) {
+         (g_visibleClass_00802A88->field_0038 != nullptr)) {
         iVar2 = g_visibleClass_00802A88->field_0020 * iVar5;
         pbVar1 = g_visibleClass_00802A88->field_0038 + (iVar2 + iVar4) * 2;
-        if ((pbVar1 != (byte *)0x0) && (pbVar1[1] != 0)) {
+        if ((pbVar1 != nullptr) && (pbVar1[1] != 0)) {
           if (7 < param_1->field_0024) {
             return 1;
           }
-          if (g_visibleClass_00802A88->field_003C[param_1->field_0024 + 6] == (void *)0x0) {
+          if (g_visibleClass_00802A88->field_003C[param_1->field_0024 + 6] == nullptr) {
             return 1;
           }
           if (*(char *)((int)g_visibleClass_00802A88->field_003C[param_1->field_0024 + 6] +
@@ -71,14 +71,14 @@ int __fastcall FUN_0041caf0(AnonShape_0041CAF0_1630B9E0 *param_1)
       if (((-1 < iVar2) && (iVar2 < g_visibleClass_00802A88->field_0020)) &&
          ((-1 < iVar5 &&
           ((iVar5 < g_visibleClass_00802A88->field_0024 &&
-           (g_visibleClass_00802A88->field_0038 != (byte *)0x0)))))) {
+           (g_visibleClass_00802A88->field_0038 != nullptr)))))) {
         iVar5 = g_visibleClass_00802A88->field_0020 * iVar5;
         pbVar1 = g_visibleClass_00802A88->field_0038 + (iVar5 + iVar2) * 2;
-        if ((pbVar1 != (byte *)0x0) && (pbVar1[1] != 0)) {
+        if ((pbVar1 != nullptr) && (pbVar1[1] != 0)) {
           if (7 < param_1->field_0024) {
             return 1;
           }
-          if (g_visibleClass_00802A88->field_003C[param_1->field_0024 + 6] == (void *)0x0) {
+          if (g_visibleClass_00802A88->field_003C[param_1->field_0024 + 6] == nullptr) {
             return 1;
           }
           if (*(char *)((int)g_visibleClass_00802A88->field_003C[param_1->field_0024 + 6] +
@@ -90,14 +90,14 @@ int __fastcall FUN_0041caf0(AnonShape_0041CAF0_1630B9E0 *param_1)
       iVar5 = param_1->field_005D + 1;
       if ((((-1 < iVar4) && (iVar4 < g_visibleClass_00802A88->field_0020)) && (-1 < iVar5)) &&
          ((iVar5 < g_visibleClass_00802A88->field_0024 &&
-          (g_visibleClass_00802A88->field_0038 != (byte *)0x0)))) {
+          (g_visibleClass_00802A88->field_0038 != nullptr)))) {
         iVar3 = g_visibleClass_00802A88->field_0020 * iVar5;
         pbVar1 = g_visibleClass_00802A88->field_0038 + (iVar3 + iVar4) * 2;
-        if ((pbVar1 != (byte *)0x0) && (pbVar1[1] != 0)) {
+        if ((pbVar1 != nullptr) && (pbVar1[1] != 0)) {
           if (7 < param_1->field_0024) {
             return 1;
           }
-          if (g_visibleClass_00802A88->field_003C[param_1->field_0024 + 6] == (void *)0x0) {
+          if (g_visibleClass_00802A88->field_003C[param_1->field_0024 + 6] == nullptr) {
             return 1;
           }
           if (*(char *)((int)g_visibleClass_00802A88->field_003C[param_1->field_0024 + 6] +

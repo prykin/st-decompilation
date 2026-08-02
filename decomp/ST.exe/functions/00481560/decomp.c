@@ -452,8 +452,8 @@ FUN_00481560(void *this,short param_1,short param_2,short param_3,short param_4,
           local_8 = *(ushort *)(puVar5 + 1);
           /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
           pDVar8 = *(DArrayTy **)((int)pvVar1 + local_44 * 4 + 0x282);
-          if (pDVar8 == (DArrayTy *)0x0) {
-            pDVar8 = Library::DKW::TBL::DArrayCreate((DArrayTy *)0x0,1,6,1);
+          if (pDVar8 == nullptr) {
+            pDVar8 = Library::DKW::TBL::DArrayCreate(nullptr,1,6,1);
             *(DArrayTy **)((int)pvVar1 + uVar4 * 4 + 0x282) = pDVar8;
             iVar10 = Library::DKW::TBL::DArrayAppend(pDVar8,&local_c);
             return iVar10 << 0x10 | uVar4 & 0xffff;

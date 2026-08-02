@@ -70,7 +70,7 @@ FUN_004af080(uint param_1,int param_2,int *param_3,int *param_4,int *param_5,int
             local_10 = (STFishC *)
                        g_worldGrid.cells
                        [iVar10 * local_1c + iVar22 + g_worldGrid.planeStride * local_14].objects[0];
-            if (local_10 == (STFishC *)0x0) {
+            if (local_10 == nullptr) {
               sVar21 = (short)iVar22;
               if ((((sVar21 < 0) || (g_worldGrid.sizeX <= sVar21)) ||
                   (sVar7 = (short)local_1c, sVar7 < 0)) ||
@@ -93,8 +93,8 @@ LAB_004af1d5:
             }
             else {
               if (((uint)local_10->field_0024 < 8) &&
-                 ((g_playSystem_00802A38 == (STPlaySystemC *)0x0 ||
-                  ((byte)(&DAT_008087e9)[local_10->field_0024 * 0x51] < 8)))) {
+                 ((g_playSystem_00802A38 == nullptr ||
+                  (g_bulkInitializedRecords_008087C7[local_10->field_0024].field_0022 < 8)))) {
                 bVar2 = *(byte *)&local_10->field_0024;
                 if (g_appClass_00806728->field_146F == '\0') {
                   if (bVar2 == (byte)param_1) {
@@ -147,11 +147,11 @@ LAB_004af325:
     }
     local_14 = local_14 + 1;
   } while (local_14 < 4);
-  if (g_array_007FA150 != (DArrayTy *)0x0) {
+  if (g_array_007FA150 != nullptr) {
     g_array_007FA150->iteratorIndex = 0;
     iVar9 = DArrayGetNext(g_array_007FA150,(byte *)&local_10);
     while (-1 < iVar9) {
-      if (local_10 != (STFishC *)0x0) {
+      if (local_10 != nullptr) {
         STFishC::sub_004162B0(local_10,&local_6,&local_8,&local_a);
         *(undefined1 *)
          ((int)psVar8 +
@@ -235,7 +235,7 @@ LAB_004af325:
             if (param_2 != 100) {
               if (param_2 == 0x4d) {
                 pDVar14 = *(DArrayTy **)&g_packedRecords_A62x8[param_1].field_0x9e2;
-                if (pDVar14 != (DArrayTy *)0x0) {
+                if (pDVar14 != nullptr) {
                   iVar9 = DAT_00795118 / 0xc9;
                   uVar20 = 0;
                   if (0 < (int)pDVar14->count) {
@@ -256,7 +256,7 @@ LAB_004af325:
               }
               if (param_2 == 0x43) {
                 pDVar14 = *(DArrayTy **)&g_packedRecords_A62x8[param_1].field_0x9ee;
-                if (pDVar14 != (DArrayTy *)0x0) {
+                if (pDVar14 != nullptr) {
                   iVar9 = DAT_007950f0 / 0xc9;
                   uVar20 = 0;
                   if (0 < (int)pDVar14->count) {
@@ -277,7 +277,7 @@ LAB_004af325:
               }
               if (param_2 == 0x73) {
                 pDVar14 = *(DArrayTy **)&g_packedRecords_A62x8[param_1].field_0x9f2;
-                if (pDVar14 != (DArrayTy *)0x0) {
+                if (pDVar14 != nullptr) {
                   iVar9 = DAT_007951b0 / 0xc9;
                   uVar20 = 0;
                   if (0 < (int)pDVar14->count) {
@@ -298,7 +298,7 @@ LAB_004af325:
               }
               if (param_2 == 0x65) {
                 pDVar14 = *(DArrayTy **)&g_packedRecords_A62x8[param_1].field_0x9e6;
-                if (pDVar14 != (DArrayTy *)0x0) {
+                if (pDVar14 != nullptr) {
                   iVar9 = DAT_00795178 / 0xc9;
                   uVar20 = 0;
                   if (0 < (int)pDVar14->count) {
@@ -318,7 +318,7 @@ LAB_004af325:
                 goto cf_common_join_004AFA95;
               }
               if (((param_2 < 0x54) || (0x5a < param_2)) || (param_9 == 0)) {
-                if (((param_2 == 0x3a) && (g_array_007FA16C != (DArrayTy *)0x0)) &&
+                if (((param_2 == 0x3a) && (g_array_007FA16C != nullptr)) &&
                    (uVar20 = 0, 0 < (int)g_array_007FA16C->count)) {
                   do {
                     DArrayGetElement(g_array_007FA16C,uVar20,&local_10);
@@ -357,7 +357,7 @@ LAB_004af325:
                              ((iVar11 != iVar15 && ((iVar10 != iVar22 || (iVar11 != iVar1)))))))) &&
                            (((*local_3c == '\x05' &&
                              (local_10 = *(STFishC **)((int)(g_worldGrid.cells)->objects + iVar18),
-                             local_10 != (STFishC *)0x0)) &&
+                             local_10 != nullptr)) &&
                             (((dVar12 = local_10->slot_2C(), dVar12 == 0x53 &&
                               (local_10->field_0018 == *(int *)(param_9 + 0x18))) ||
                              ((dVar12 = local_10->slot_2C(), 0x53 < (int)dVar12
@@ -386,7 +386,7 @@ LAB_004af325:
               goto cf_common_join_004AFC34;
             }
             pDVar14 = *(DArrayTy **)&g_packedRecords_A62x8[param_1].field_0x9d6;
-            if ((pDVar14 != (DArrayTy *)0x0) && (uVar20 = 0, 0 < (int)pDVar14->count)) {
+            if ((pDVar14 != nullptr) && (uVar20 = 0, 0 < (int)pDVar14->count)) {
               do {
                 DArrayGetElement(pDVar14,uVar20,&local_10);
                 STFishC::sub_004162B0(local_10,&local_6,&local_8,&local_a);

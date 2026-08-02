@@ -13,11 +13,11 @@ void * __cdecl FUN_00495720(void)
   undefined4 *puVar1;
 
   puVar1 = FUN_006b04d0(0x2c);
-  if (puVar1 != (undefined4 *)0x0) {
+  if (puVar1 != nullptr) {
     _DAT_007fb224 = thunk_FUN_004956f0(puVar1);
     return _DAT_007fb224;
   }
-  _DAT_007fb224 = (undefined4 *)0x0;
-  return (void *)0x0;
+  _DAT_007fb224 = nullptr;
+  return nullptr;
 }
 

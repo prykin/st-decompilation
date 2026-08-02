@@ -220,7 +220,7 @@ LAB_006f6f50:
               }
               /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
               param_1 = param_1 + -1;
-            } while (param_1 != (undefined1 *)0x0);
+            } while (param_1 != nullptr);
           }
         }
         else if (0 < param_10) {

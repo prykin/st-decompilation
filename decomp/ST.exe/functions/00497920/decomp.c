@@ -101,7 +101,7 @@ int FUN_00497920(AnonShape_00497920_894F87D6 *param_1,int param_2,int param_3,un
       ((sVar3 < g_worldGrid.sizeZ &&
        (this = g_worldGrid.cells
                [(int)g_worldGrid.planeStride * (int)sVar3 + (int)g_worldGrid.sizeX * (int)sVar4 +
-                (int)sVar5].objects[0], this != (STWorldObject *)0x0)))))) {
+                (int)sVar5].objects[0], this != nullptr)))))) {
     if (((this[1].vtable != (STWorldObjectVTable *)param_1->field_0024) ||
         (*(short *)&this[1].field_0xc != param_1->field_0030)) ||
        (*(int *)((int)&this[7].vtable + 1) == 1)) {

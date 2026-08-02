@@ -13,7 +13,7 @@ void __thiscall STManRub3C::sub_0062CF50(STManRub3C *this)
   puVar1 = this->field_0030;
   iVar2 = 8;
   do {
-    if ((DArrayTy *)*puVar1 != (DArrayTy *)0x0) {
+    if ((DArrayTy *)*puVar1 != nullptr) {
       DArrayDestroy((DArrayTy *)*puVar1);
       *puVar1 = 0;
     }

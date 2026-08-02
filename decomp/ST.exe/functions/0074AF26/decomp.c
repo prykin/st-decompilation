@@ -64,7 +64,7 @@ FUN_0074af26(void *this,uint param_1,uint param_2,undefined4 param_3,undefined4 
     }
   }
   piVar1 = *(int **)((int)this + 0xac);
-  if (piVar1 == (int *)0x0) {
+  if (piVar1 == nullptr) {
     uVar4 = 1;
   }
   else {
@@ -73,7 +73,7 @@ FUN_0074af26(void *this,uint param_1,uint param_2,undefined4 param_3,undefined4 
     puVar7 = auStack_40;
     memmove(puVar7, puVar6, 0x18); /* compiler REP MOVS byte copy */
     /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-    uVar4 = (**(code **)(iVar3 + 0xc))(piVar1,-(uint)(this != (void *)0x0) & (int)this + 0xcU);
+    uVar4 = (**(code **)(iVar3 + 0xc))(piVar1,-(uint)(this != nullptr) & (int)this + 0xcU);
   }
   return uVar4;
 }

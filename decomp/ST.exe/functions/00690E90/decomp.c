@@ -15,7 +15,7 @@ undefined4 * __cdecl FUN_00690e90(char *source,undefined2 param_2,undefined2 par
   InternalExceptionFrame local_4c;
   AnonShape_00690E90_9F986EB9 *local_8;
 
-  local_8 = (AnonShape_00690E90_9F986EB9 *)0x0;
+  local_8 = nullptr;
   local_4c.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_4c;
   exceptionCode = Library::MSVCRT::__setjmp3(local_4c.jumpBuffer,0);
@@ -28,7 +28,7 @@ undefined4 * __cdecl FUN_00690e90(char *source,undefined2 param_2,undefined2 par
     local_8->field_0019 = param_2;
     *(undefined2 *)&local_8->field_0x5c = param_3;
     if (local_8->field_0085 == 0) {
-      pDVar1 = Library::DKW::TBL::DArrayCreate((DArrayTy *)0x0,10,8,10);
+      pDVar1 = Library::DKW::TBL::DArrayCreate(nullptr,10,8,10);
       local_8->field_0085 = pDVar1;
     }
     g_currentExceptionFrame = local_4c.previous;
@@ -37,6 +37,6 @@ undefined4 * __cdecl FUN_00690e90(char *source,undefined2 param_2,undefined2 par
   g_currentExceptionFrame = local_4c.previous;
   thunk_FUN_00691540((int *)&local_8);
   RaiseInternalException(exceptionCode,0,"E:\\__titans\\ai\\ai_tact_d.cpp",0x21);
-  return (undefined4 *)0x0;
+  return nullptr;
 }
 

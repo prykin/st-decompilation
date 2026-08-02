@@ -103,7 +103,7 @@ uint FUN_00755560(AnonShape_00755560_6DE97093 *param_1,ushort *param_2,int param
                 FUN_00757530((AnonShape_00757530_EEED7D69 *)pAVar4,0,
                              (undefined4 *)pAVar4->field_001C);
       /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
-      if (param_1 == (AnonShape_00755560_6DE97093 *)0x0) {
+      if (param_1 == nullptr) {
         return 0xfffffffe;
       }
     }
@@ -113,7 +113,7 @@ uint FUN_00755560(AnonShape_00755560_6DE97093 *param_1,ushort *param_2,int param
                 FUN_00757530((AnonShape_00757530_EEED7D69 *)pAVar4,0,
                              (undefined4 *)(iVar6 + 0x10 + iVar14));
       /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
-      if (param_1 == (AnonShape_00755560_6DE97093 *)0x0) {
+      if (param_1 == nullptr) {
         return 0xfffffffe;
       }
       Library::MSVCRT::FUN_0072da70
@@ -161,7 +161,7 @@ uint FUN_00755560(AnonShape_00755560_6DE97093 *param_1,ushort *param_2,int param
               FUN_00757530((AnonShape_00757530_EEED7D69 *)pAVar4,1,
                            *(undefined4 **)&pAVar4->field_0x18);
     /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
-    if (param_1 == (AnonShape_00755560_6DE97093 *)0x0) {
+    if (param_1 == nullptr) {
       return 0xfffffffe;
     }
     *(int *)(pAVar4->field_000C + 0x1c) = *(int *)(pAVar4->field_000C + 0x1c) + -1;

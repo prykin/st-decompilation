@@ -15,8 +15,8 @@ AiPlrClassTy * __thiscall AiPlrClassTy::AiPlrClassTy(AiPlrClassTy *this)
   thunk_FUN_0064cc90(&this->vtable_at_1c);
   this->vtable = (AiPlrClassTyVTable_at_1C *)&AiPlrClassTyVTable;
   this->vtable_at_1c = &AiPlrClassTyVTable_at_1C;
-  if (this == (AiPlrClassTy *)0x0) {
-    puVar2 = (undefined4 *)0x0;
+  if (this == nullptr) {
+    puVar2 = nullptr;
   }
   else {
     puVar2 = &this->field_05D3;

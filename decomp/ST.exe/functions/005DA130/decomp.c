@@ -112,7 +112,7 @@ void __cdecl FUN_005da130(ushort *param_1,undefined *param_2,BYTE param_3)
   local_3c[0x1e] = 0x59;
   local_3c[0x1f] = 0x5a;
   ccFntTy::operator_new
-            (0x19d,&local_78,(uint *)0x0,local_3c,(int)param_1,local_3c + 0x20,7,3,1,1,0x100011c,
+            (0x19d,&local_78,nullptr,local_3c,(int)param_1,local_3c + 0x20,7,3,1,1,0x100011c,
              param_2);
   return;
 }

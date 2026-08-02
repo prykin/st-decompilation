@@ -74,7 +74,7 @@ undefined4 __fastcall FUN_0061e7f0(STLightC *param_1)
   local_28 = 0;
   local_2c = (uVar17 >> 0x10) % 3 + 3;
   local_30 = param_1->field_0093 * 3;
-  if (param_1->field_00A3 != (STLightC_field_00A3DArray *)0x0) {
+  if (param_1->field_00A3 != nullptr) {
     local_1c = param_1->field_00A3->count;
   }
   local_c = 0;
@@ -201,7 +201,7 @@ LAB_0061eefe:
           }
           else {
             local_51 = 1;
-            if (g_visibleClass_00802A88 != (VisibleClassTy *)0x0) {
+            if (g_visibleClass_00802A88 != nullptr) {
               if (local_74 < _DAT_0079034c) {
                 lVar19 = Library::MSVCRT::__ftol();
                 local_20 = (int *)((short)lVar19 + -1);
@@ -232,7 +232,7 @@ LAB_0061eefe:
                     -1 < (int)local_20 &&
                     (((((int)local_20 < 5 && (-1 < local_38)) && (local_38 < this->field_0030)) &&
                      ((iVar15 = local_48 + g_centeredOffsets5[(int)local_20], -1 < iVar15 &&
-                      (iVar15 < this->field_0034)))))))) && (this->field_004C != (byte *)0x0)) &&
+                      (iVar15 < this->field_0034)))))))) && (this->field_004C != nullptr)) &&
                  (this->field_004C[local_38 + iVar15 * this->field_0030] == 0)) goto LAB_0061eefe;
             }
           }
@@ -267,7 +267,7 @@ LAB_0061eefe:
             dVar4 = pSVar3->elementSize;
             local_44 = pSVar3->data;
             local_20 = (int *)((int)&local_44->field_0000 + dVar4 * local_8);
-            if (local_20 != (int *)0x0) {
+            if (local_20 != nullptr) {
               /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
               if ((byte)*(undefined1 *)((int)local_20 + 0x2e) != uVar17) {
                 local_24 = 1;
@@ -275,7 +275,7 @@ LAB_0061eefe:
                 for (uVar8 = local_8; (int)uVar8 < (int)local_1c; uVar8 = uVar8 + 1) {
                   if (uVar8 < local_34) {
                     local_20 = piVar18;
-                    if ((piVar18 != (int *)0x0) &&
+                    if ((piVar18 != nullptr) &&
                        ((byte)*(undefined1 *)((int)piVar18 + 0x2e) == uVar17)) {
                       local_24 = 0;
                       local_8 = uVar8;
@@ -283,7 +283,7 @@ LAB_0061eefe:
                     }
                   }
                   else {
-                    local_20 = (int *)0x0;
+                    local_20 = nullptr;
                   }
                   piVar18 = (int *)((int)piVar18 + dVar4);
                 }
@@ -294,7 +294,7 @@ LAB_0061eefe:
                 piVar18 = (int *)((int)&local_44->field_0000 + dVar4 * local_8);
               }
               else {
-                piVar18 = (int *)0x0;
+                piVar18 = nullptr;
               }
               iVar15 = *(int *)((int)param_1->field_009F + uVar17 * 4);
               fVar5 = *(float *)(iVar15 + 8 + local_18) * param_1->field_0047;

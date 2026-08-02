@@ -87,7 +87,7 @@ undefined4 __thiscall SettMapMTy::NoneSettMap(SettMapMTy *this,int *param_1)
   char local_5;
 
   local_1d = this->field_0065;
-  local_c = (AnonShape_005CE0E0_C50CCD71 *)0x0;
+  local_c = nullptr;
   local_24 = 0xffffffff;
   local_148.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_148;
@@ -141,15 +141,15 @@ undefined4 __thiscall SettMapMTy::NoneSettMap(SettMapMTy *this,int *param_1)
       this_00->field_2225 = 1;
       memset(local_dc, 0, 0x20); /* compiler bulk-zero initialization */
       local_dc[4] = (-(uint)(DAT_008067a0 != '\0') & 4) + 0x694d;
-      if (this_00->field_1A5B->field_02E6 == (MMsgTy *)0x0) {
+      if (this_00->field_1A5B->field_02E6 == nullptr) {
         /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
         (*(code *)this_00->field_0000->field_0000)(local_dc);
       }
       else {
         local_dc[2] = this_00->field_0008;
         local_dc[3] = 2;
-        MMsgTy::SetMessage(this_00->field_1A5B->field_02E6,0x2522,'\0',local_dc,(undefined4 *)0x0,
-                           (undefined4 *)0x0,0,0);
+        MMsgTy::SetMessage(this_00->field_1A5B->field_02E6,0x2522,'\0',local_dc,nullptr,
+                           nullptr,0,0);
       }
     }
   }
@@ -177,7 +177,7 @@ undefined4 __thiscall SettMapMTy::NoneSettMap(SettMapMTy *this,int *param_1)
           this_00->field_2225 = 1;
           local_58[4] = (-(uint)(DAT_008067a0 != '\0') & 4) + 0x694d;
           pSVar10 = this_00->field_1A5B;
-          if (pSVar10->field_02E6 == (MMsgTy *)0x0) {
+          if (pSVar10->field_02E6 == nullptr) {
             pAVar14 = this_00->field_0000;
             piVar24 = local_58;
             goto LAB_005cf387;
@@ -186,8 +186,8 @@ undefined4 __thiscall SettMapMTy::NoneSettMap(SettMapMTy *this,int *param_1)
           local_58[3] = 2;
           piVar24 = local_58;
 LAB_005ce9b2:
-          MMsgTy::SetMessage(pSVar10->field_02E6,0x2522,'\0',piVar24,(undefined4 *)0x0,
-                             (undefined4 *)0x0,0,0);
+          MMsgTy::SetMessage(pSVar10->field_02E6,0x2522,'\0',piVar24,nullptr,
+                             nullptr,0,0);
         }
         else {
           if (iVar6 != 1) goto cf_continue_loop_005CF38C;
@@ -197,11 +197,11 @@ LAB_005ce9b2:
           case 0x10:
             if (this_00->field_0065 == '\x01') {
               local_58[4] = (-(uint)(DAT_008067a0 != '\0') & 4) + 0x694d;
-              if (this_00->field_1A5B->field_02E6 == (MMsgTy *)0x0) goto LAB_005cee1a;
+              if (this_00->field_1A5B->field_02E6 == nullptr) goto LAB_005cee1a;
               local_58[2] = this_00->field_0008;
               local_58[3] = 2;
               MMsgTy::SetMessage(this_00->field_1A5B->field_02E6,0x2524,'\0',local_58,
-                                 (undefined4 *)0x0,(undefined4 *)0x0,0,0);
+                                 nullptr,nullptr,0,0);
             }
             break;
           case 0x12:
@@ -230,24 +230,24 @@ LAB_005cee1a:
                       if ((local_c->field_0016 != DAT_00808aab) &&
                          (2999 < (uint)(iVar6 - this_00->field_2219))) {
                         FUN_006b6500(g_int_00811764,1);
-                        FUN_00715360(g_int_00811764,1,'\x1d',(char *)0x0,0,0,0xffffffff);
+                        FUN_00715360(g_int_00811764,1,'\x1d',nullptr,0,0,0xffffffff);
                         FUN_006b6500(g_int_00811764,DAT_0080733c);
                         iVar6 = this_00->field_0061;
                         this_00->field_2219 = iVar6;
                       }
-                      if (((this_00->field_1F84 != (SettMapMTy_field_1F84DArray *)0x0) &&
+                      if (((this_00->field_1F84 != nullptr) &&
                           (*(int *)&pAVar21->field_0x1a != this_00->field_2121)) &&
                          (1999 < (uint)(iVar6 - this_00->field_221D))) {
                         FUN_006b6500(g_int_00811764,1);
-                        FUN_00715360(g_int_00811764,1,'#',(char *)0x0,0,0,0xffffffff);
+                        FUN_00715360(g_int_00811764,1,'#',nullptr,0,0,0xffffffff);
                         FUN_006b6500(g_int_00811764,DAT_0080733c);
                         this_00->field_221D = this_00->field_0061;
                       }
                     }
                     else {
                       FUN_006b6500(g_int_00811764,1);
-                      FUN_00715360(g_int_00811764,1,'!',(char *)0x0,0,0,0xffffffff);
-                      FUN_00715360(g_int_00811764,1,'\x1f',(char *)0x0,0,0,0xffffffff);
+                      FUN_00715360(g_int_00811764,1,'!',nullptr,0,0,0xffffffff);
+                      FUN_00715360(g_int_00811764,1,'\x1f',nullptr,0,0,0xffffffff);
                       FUN_006b6500(g_int_00811764,DAT_0080733c);
                       this_00->field_2215 = this_00->field_0061;
                     }
@@ -257,21 +257,21 @@ LAB_005cee1a:
                   if ((local_c->field_0016 != DAT_00808aab) &&
                      (2999 < (uint)(iVar6 - this_00->field_2219))) {
                     FUN_006b6500(g_int_00811764,1);
-                    FUN_00715360(g_int_00811764,1,'\x1d',(char *)0x0,0,0,0xffffffff);
+                    FUN_00715360(g_int_00811764,1,'\x1d',nullptr,0,0,0xffffffff);
                     FUN_006b6500(g_int_00811764,DAT_0080733c);
                     iVar6 = this_00->field_0061;
                     this_00->field_2219 = iVar6;
                   }
-                  if (this_00->field_1F84 != (SettMapMTy_field_1F84DArray *)0x0) {
+                  if (this_00->field_1F84 != nullptr) {
                     if ((*(int *)&pAVar21->field_0x1a != this_00->field_2121) &&
                        (1999 < (uint)(iVar6 - this_00->field_221D))) {
                       FUN_006b6500(g_int_00811764,1);
-                      FUN_00715360(g_int_00811764,1,'#',(char *)0x0,0,0,0xffffffff);
+                      FUN_00715360(g_int_00811764,1,'#',nullptr,0,0,0xffffffff);
                       FUN_006b6500(g_int_00811764,DAT_0080733c);
                       iVar6 = this_00->field_0061;
                       this_00->field_221D = iVar6;
                     }
-                    if ((this_00->field_1F84 != (SettMapMTy_field_1F84DArray *)0x0) &&
+                    if ((this_00->field_1F84 != nullptr) &&
                        (1999 < (uint)(iVar6 - this_00->field_221D))) {
                       AddPlList(this_00,(uint)(this_00->field_1E26 == CASE_10));
                     }
@@ -302,9 +302,9 @@ LAB_005cee1a:
                       element_1f84 = DArrayAt<SettMapMTy_field_1F84Element>(pSVar12, uVar18);
                     }
                     else {
-                      element_1f84 = (SettMapMTy_field_1F84Element *)0x0;
+                      element_1f84 = nullptr;
                     }
-                    if (((element_1f84 != (SettMapMTy_field_1F84Element *)0x0) && ((element_1f84->field_0004 == '\x02' || (element_1f84->field_0004 == '\x03')))
+                    if (((element_1f84 != nullptr) && ((element_1f84->field_0004 == '\x02' || (element_1f84->field_0004 == '\x03')))
                         ) && (element_1f84->element == DAT_0080877f)) {
                       local_5 = '\x01';
                       local_1c = uVar18;
@@ -348,9 +348,9 @@ LAB_005cee1a:
                                  (AnonShape_00571A30_67EE4B56 *)local_c,'\x01');
               DAT_0080734b = DAT_00808aa8;
               local_34 = (int *)PTR_0080c502->count;
-              local_10 = (int *)0x0;
+              local_10 = nullptr;
               if (0 < (int)local_34) {
-                bVar26 = local_34 != (int *)0x0;
+                bVar26 = local_34 != nullptr;
                 do {
                   if (bVar26) {
                     /* ST_PSEUDO[dynamic_array_indexing]: expected DArrayAt<T>(PTR_0080c502, (int)local_10) (runtime stride) */
@@ -358,9 +358,9 @@ LAB_005cee1a:
                                       (int)PTR_0080c502->data);
                   }
                   else {
-                    pvVar17 = (void *)0x0;
+                    pvVar17 = nullptr;
                   }
-                  if ((pvVar17 != (void *)0x0) && (*(uint *)((int)pvVar17 + 0x90) == DAT_0080995c))
+                  if ((pvVar17 != nullptr) && (*(uint *)((int)pvVar17 + 0x90) == DAT_0080995c))
                   {
                     pbVar22 = (byte *)&DAT_00809960;
                     pbVar20 = (byte *)((int)pvVar17 + 0x4c);
@@ -420,7 +420,7 @@ LAB_005cef5d:
                     iVar6 = iVar6 + -1;
                   } while (iVar6 != 0);
                   local_10 = (int *)((int)local_10 + -1);
-                } while (local_10 != (int *)0x0);
+                } while (local_10 != nullptr);
               }
               SettMapTy::PaintSC((SettMapTy *)this_00);
             }
@@ -467,7 +467,7 @@ LAB_005cef5d:
             }
             break;
           case 0x22:
-            if (((this_00->field_1F84 != (SettMapMTy_field_1F84DArray *)0x0) &&
+            if (((this_00->field_1F84 != nullptr) &&
                 (this_00->field_2121 != *(int *)local_c)) &&
                (DAT_00808aab == *(uint *)((int)&local_c->field_0003 + 1))) {
               local_10 = (int *)(local_2c - 9);
@@ -485,10 +485,10 @@ LAB_005cef5d:
                       element_1f84_2 = DArrayAt<SettMapMTy_field_1F84Element>(pSVar12, uVar19);
                     }
                     else {
-                      element_1f84_2 = (SettMapMTy_field_1F84Element *)0x0;
+                      element_1f84_2 = nullptr;
                     }
-                    if ((element_1f84_2 != (SettMapMTy_field_1F84Element *)0x0) &&
-                       (element_1f84_2->handle != (DArrayTy *)0x0)) {
+                    if ((element_1f84_2 != nullptr) &&
+                       (element_1f84_2->handle != nullptr)) {
                       DArrayDestroy(element_1f84_2->handle);
                     }
                     pSVar12 = this_00->field_1F84;
@@ -500,8 +500,7 @@ LAB_005cef5d:
                 piVar24 = (int *)(local_2c / 0x60);
                 local_34 = piVar24;
                 if ((int)(pSVar12->count * pSVar12->elementSize) < (int)local_10) {
-                  pSVar11 = Library::DKW::LIB::MemRealloc
-                                      ((AnonPointee_TLOBaseTy_0607 *)pSVar12->data,(uint)local_10);
+                  pSVar11 = Library::DKW::LIB::MemRealloc(pSVar12->data,(uint)local_10);
                   this_00->field_1F84->data = pSVar11;
                   this_00->field_1F84->capacity = (dword)piVar24;
                 }
@@ -533,9 +532,9 @@ LAB_005cef5d:
                       element_1f84_3 = DArrayAt<SettMapMTy_field_1F84Element>(pSVar12, uVar19);
                     }
                     else {
-                      element_1f84_3 = (SettMapMTy_field_1F84Element *)0x0;
+                      element_1f84_3 = nullptr;
                     }
-                    if (element_1f84_3 != (SettMapMTy_field_1F84Element *)0x0) {
+                    if (element_1f84_3 != nullptr) {
                       if ((local_11 == '\x05') || (this_00->field_1E26 == CASE_F)) {
                         pDVar13 = (DArrayTy *)
                                   CreateStrategList((int)this_00->field_1F3F,(uint)(byte)element_1f84_3->state,
@@ -575,14 +574,14 @@ LAB_005cef5d:
             if (this_00->field_2225 == '\0') {
               this_00->field_2225 = 1;
               local_58[4] = (-(uint)(DAT_008067a0 != '\0') & 4) + 0x694d;
-              if (this_00->field_1A5B->field_02E6 == (MMsgTy *)0x0) goto LAB_005cee1a;
+              if (this_00->field_1A5B->field_02E6 == nullptr) goto LAB_005cee1a;
               local_58[2] = this_00->field_0008;
               local_58[3] = 2;
               MMsgTy::SetMessage(this_00->field_1A5B->field_02E6,0x2522,'\0',local_58,
-                                 (undefined4 *)0x0,(undefined4 *)0x0,0,0);
+                                 nullptr,nullptr,0,0);
             }
           }
-          if (local_c != (AnonShape_005CE0E0_C50CCD71 *)0x0) {
+          if (local_c != nullptr) {
             FreeAndNull(&local_c);
           }
         }
@@ -593,7 +592,7 @@ LAB_005cef5d:
         memset(local_bc, 0, 0x20); /* compiler bulk-zero initialization */
         iVar6 = 0;
         pSVar10 = this_00->field_1A5B;
-        if (pSVar10->field_02E6 != (MMsgTy *)0x0) {
+        if (pSVar10->field_02E6 != nullptr) {
           local_bc[2] = this_00->field_0008;
           local_bc[3] = 2;
           local_bc[4] = 0x6947;
@@ -678,17 +677,17 @@ LAB_005ce59f:
         local_24 = (local_24 != 0xffffffff) - 1 & local_18;
         break;
       case 0x24:
-        if (local_c != (AnonShape_005CE0E0_C50CCD71 *)0x0) {
+        if (local_c != nullptr) {
           pSVar12 = this_00->field_1F84;
-          if ((pSVar12 == (SettMapMTy_field_1F84DArray *)0x0) ||
+          if ((pSVar12 == nullptr) ||
              (pSVar12->count <= *(uint *)local_c)) {
-            pcVar7 = (char *)0x0;
+            pcVar7 = nullptr;
           }
           else {
             /* ST_PSEUDO[dynamic_array_indexing]: expected DArrayAt<T>(array, index) (runtime elementSize cannot be a static C array) */
             pcVar7 = &pSVar12->data->field_0000 + pSVar12->elementSize * *(uint *)local_c;
           }
-          if (pcVar7 != (char *)0x0) {
+          if (pcVar7 != nullptr) {
             local_10 = (int *)((int)&local_c->field_0003 + 1);
             iVar6 = *local_10;
             if ((-1 < iVar6) && ((iVar6 < 4 || (iVar6 == 7)))) {
@@ -731,29 +730,29 @@ LAB_005ce59f:
                   iVar6 = iVar6 + -1;
                 } while (iVar6 != 0);
                 local_10 = (int *)((int)local_10 + -1);
-              } while (local_10 != (int *)0x0);
-              local_10 = (int *)0x0;
+              } while (local_10 != nullptr);
+              local_10 = nullptr;
             }
           }
         }
         break;
       case 0x25:
-        if (local_c == (AnonShape_005CE0E0_C50CCD71 *)0x0) goto cf_continue_loop_005CF38C;
+        if (local_c == nullptr) goto cf_continue_loop_005CF38C;
         if (((3 < local_2c) && (DAT_00807361 != '\0')) && (this_00->field_2243 != '\0')) {
           if ((((AnonShape_005DE670_0D4D7A8C *)this_00->field_1A5B)->field_069A == (LPVOID)0x0) &&
              (thunk_FUN_005de670((AnonShape_005DE670_0D4D7A8C *)this_00->field_1A5B),
-             this_00->field_1A5B->field_069A == (void *)0x0)) {
+             this_00->field_1A5B->field_069A == nullptr)) {
             this_00->field_2243 = 0;
           }
           else {
             pSVar2 = this_00->field_2237;
             bVar26 = false;
             uVar18 = 0;
-            local_10 = (int *)0x0;
+            local_10 = nullptr;
             uVar19 = pSVar2->count;
             if (uVar19 != 0) {
               if (uVar19 == 0) {
-                pAVar9 = (AnonShape_005D4990_5F0525CF *)0x0;
+                pAVar9 = nullptr;
                 goto LAB_005ce8db;
               }
               do {
@@ -761,7 +760,7 @@ LAB_005ce59f:
                 pAVar9 = (AnonShape_005D4990_5F0525CF *)
                          ((int)&pSVar2->data->field_0000 + pSVar2->elementSize * uVar18);
 LAB_005ce8db:
-                if ((pAVar9 != (AnonShape_005D4990_5F0525CF *)0x0) &&
+                if ((pAVar9 != nullptr) &&
                    (*(uint *)&pAVar9->field_0x0 == local_18)) {
                   PrepareAFT(this_00,pAVar9,(uint *)local_c);
                   bVar26 = true;
@@ -783,17 +782,17 @@ LAB_005ce8fe:
         }
         break;
       case 0x28:
-        if (local_c != (AnonShape_005CE0E0_C50CCD71 *)0x0) {
+        if (local_c != nullptr) {
           pSVar12 = this_00->field_1F84;
-          if ((pSVar12 == (SettMapMTy_field_1F84DArray *)0x0) ||
+          if ((pSVar12 == nullptr) ||
              (pSVar12->count <= *(uint *)local_c)) {
-            pcVar7 = (char *)0x0;
+            pcVar7 = nullptr;
           }
           else {
             /* ST_PSEUDO[dynamic_array_indexing]: expected DArrayAt<T>(array, index) (runtime elementSize cannot be a static C array) */
             pcVar7 = &pSVar12->data->field_0000 + pSVar12->elementSize * *(uint *)local_c;
           }
-          if ((pcVar7 != (char *)0x0) && (*(int *)((int)&local_c->field_0003 + 1) == 3)) {
+          if ((pcVar7 != nullptr) && (*(int *)((int)&local_c->field_0003 + 1) == 3)) {
             local_24 = 0;
             this_00->field_002D = 0x10003;
             FUN_006e6080(this_00,3,0x100ef,(undefined4 *)&this_00->field_0x1d);
@@ -804,7 +803,7 @@ LAB_005ce8fe:
         break;
       case 0x2e:
         if ((this_00->field_222E != '\0') &&
-           (pDVar13 = this_00->field_222F, pDVar13 != (DArrayTy *)0x0)) {
+           (pDVar13 = this_00->field_222F, pDVar13 != nullptr)) {
           uVar19 = pDVar13->count;
           uVar18 = 0;
           local_1c = 0;
@@ -816,9 +815,9 @@ LAB_005ce8fe:
                 puVar8 = (uint *)(pDVar13->elementSize * uVar18 + (int)pDVar13->data);
               }
               else {
-                puVar8 = (uint *)0x0;
+                puVar8 = nullptr;
               }
-              if ((puVar8 != (uint *)0x0) && (*puVar8 == local_18)) {
+              if ((puVar8 != nullptr) && (*puVar8 == local_18)) {
                 local_1c = uVar18;
                 DArrayRemoveAt(pDVar13,uVar18);
                 break;
@@ -838,7 +837,7 @@ LAB_005ce8fe:
           }
         }
       }
-      if (local_c != (AnonShape_005CE0E0_C50CCD71 *)0x0) {
+      if (local_c != nullptr) {
         FreeAndNull(&local_c);
       }
 cf_continue_loop_005CF38C:
@@ -850,7 +849,7 @@ cf_continue_loop_005CF38C:
       SendPlList(this_00,local_24);
     }
     if ((this_00->field_223B < this_00->field_2237->count) &&
-       (this_00->field_1A5B->field_069A != (void *)0x0)) {
+       (this_00->field_1A5B->field_069A != nullptr)) {
       if (this_00->field_223F == 0) {
         this_00->field_223F = this_00->field_1A5B->field_06AA;
       }
@@ -868,9 +867,9 @@ cf_continue_loop_005CF38C:
                             pSVar2->elementSize * this_00->field_223B);
         }
         else {
-          local_10 = (int *)0x0;
+          local_10 = nullptr;
         }
-        if (local_10 != (int *)0x0) {
+        if (local_10 != nullptr) {
           pSVar10 = this_00->field_1A5B;
           local_68 = local_10[2];
           local_60 = local_10 + 2;

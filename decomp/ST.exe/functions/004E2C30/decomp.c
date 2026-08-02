@@ -57,7 +57,7 @@ undefined4 __thiscall TLOBaseTy::FUN_004e2c30(TLOBaseTy *this,uint param_1)
   memmove(pbVar10, puVar8, 0x14); /* compiler REP MOVS byte copy */
   thunk_FUN_004e6310(pbVar1,param_1,local_10 + 1);
   thunk_FUN_004e5f20(this->field_0024,param_1);
-  if (DAT_008117bc != (undefined4 *)0x0) {
+  if (DAT_008117bc != nullptr) {
     pbVar1 = this->field_0024;
     memset(local_60, 0, 0x20); /* compiler bulk-zero initialization */
     iVar3 = 0;

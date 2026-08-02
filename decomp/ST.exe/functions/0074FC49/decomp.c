@@ -38,7 +38,7 @@ FUN_0074fc49(void *this,int *param_1,int *param_2,uint *param_3,int param_4,doub
   if (-1 < (int)uVar1) {
     /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
     (**(code **)(*param_2 + 8))(param_2);
-    uVar1 = FUN_0074e337((int *)((int)this + 0x48),param_6,(int *)0x0,0,(int *)&local_8);
+    uVar1 = FUN_0074e337((int *)((int)this + 0x48),param_6,nullptr,0,(int *)&local_8);
     if (-1 < (int)uVar1) {
       /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
       (**(code **)(*local_8 + 8))(local_8);

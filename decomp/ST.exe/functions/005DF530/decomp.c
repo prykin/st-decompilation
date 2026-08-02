@@ -18,7 +18,7 @@ MTaskTy::OutGlassBmpProc
   InternalExceptionFrame local_4c;
   int *local_8;
 
-  if (((param_8 != (int *)0x0) && (local_8 = param_8, *param_8 != 0)) && (param_8[1] != 0)) {
+  if (((param_8 != nullptr) && (local_8 = param_8, *param_8 != 0)) && (param_8[1] != 0)) {
     local_4c.previous = g_currentExceptionFrame;
     g_currentExceptionFrame = &local_4c;
     errorCode = Library::MSVCRT::__setjmp3(local_4c.jumpBuffer,0);

@@ -49,17 +49,17 @@ void __thiscall PlayPanelTy::DonePlayPanel(PlayPanelTy *this)
       } while (iVar3 != 0);
       local_8 = local_8 + -1;
     } while (local_8 != 0);
-    if (pPVar2->field_01DD != (ccFntTy *)0x0) {
+    if (pPVar2->field_01DD != nullptr) {
       ccFntTy::operator_delete((uint *)pPVar2->field_01DD);
-      pPVar2->field_01DD = (ccFntTy *)0x0;
+      pPVar2->field_01DD = nullptr;
     }
-    if (pPVar2->field_01CD != (ushort *)0x0) {
+    if (pPVar2->field_01CD != nullptr) {
       cMf32::RecMemFree(g_cMf32_00806790,(uint *)&pPVar2->field_01CD);
     }
-    pPVar2->field_01D9 = (ushort *)0x0;
-    pPVar2->field_01D5 = (ushort *)0x0;
-    pPVar2->field_01D1 = (ushort *)0x0;
-    g_playPanel_008016E4 = (PlayPanelTy *)0x0;
+    pPVar2->field_01D9 = nullptr;
+    pPVar2->field_01D5 = nullptr;
+    pPVar2->field_01D1 = nullptr;
+    g_playPanel_008016E4 = nullptr;
     g_currentExceptionFrame = local_50.previous;
     return;
   }

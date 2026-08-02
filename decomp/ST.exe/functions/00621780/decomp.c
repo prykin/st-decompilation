@@ -12,7 +12,7 @@ void __thiscall FUN_00621780(void *this,uint param_1)
   /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
   if ((param_1 < *(uint *)(iVar1 + 0xc)) &&
      (puVar2 = (undefined1 *)(*(int *)(iVar1 + 8) * param_1 + *(int *)(iVar1 + 0x1c)),
-     puVar2 != (undefined1 *)0x0)) {
+     puVar2 != nullptr)) {
     switch(*(undefined4 *)(puVar2 + 9)) {
     case 1:
       if (DAT_0080874e == '\x01') {
@@ -135,7 +135,7 @@ void __thiscall FUN_00621780(void *this,uint param_1)
     local_10.unknown = 0;
     local_10.x = -1;
     local_10.y = -1;
-    SoundClassTy::PlaySound((SoundClassTy *)&g_sound,SOUND_MODE_6,(char *)0x0,iVar1,&local_10,0);
+    SoundClassTy::PlaySound((SoundClassTy *)&g_sound,SOUND_MODE_6,nullptr,iVar1,&local_10,0);
     *puVar2 = 1;
     *(uint *)(puVar2 + 1) = g_playSystem_00802A38->field_00E4;
     *(uint *)((int)this + 0x106) = g_playSystem_00802A38->field_00E4;

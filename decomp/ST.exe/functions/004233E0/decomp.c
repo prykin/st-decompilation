@@ -25,7 +25,7 @@ uint * __thiscall STGroupC::GetGroupContent(STGroupC *this,int param_1)
 
   local_18 = this->field_0029[3];
   uVar5 = 0;
-  local_c = (DArrayTy *)0x0;
+  local_c = nullptr;
   local_14 = 0;
   local_5c.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_5c;
@@ -33,7 +33,7 @@ uint * __thiscall STGroupC::GetGroupContent(STGroupC *this,int param_1)
   errorCode = Library::MSVCRT::__setjmp3(local_5c.jumpBuffer,0);
   if (errorCode == 0) {
     local_c = Library::DKW::TBL::DArrayCreate
-                        ((DArrayTy *)0x0,(uint)(ushort)local_10->field_0027,2,1);
+                        (nullptr,(uint)(ushort)local_10->field_0027,2,1);
     uVar2 = local_18;
     if (local_18 != 0) {
       index = 0;

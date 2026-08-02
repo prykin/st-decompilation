@@ -52,7 +52,7 @@ FUN_005f0ec0(int param_1,int param_2,undefined4 param_3,undefined4 param_4,undef
   local_132 = (short)param_4 * 0xc9 + 100;
   local_b = param_5;
   local_130 = (short)param_5 * 200 + 100;
-  if (param_6 != (char *)0x0) {
+  if (param_6 != nullptr) {
     uVar3 = 0xffffffff;
     pcVar5 = param_6;
     do {
@@ -81,7 +81,7 @@ FUN_005f0ec0(int param_1,int param_2,undefined4 param_3,undefined4 param_4,undef
       local_118 = 0;
     }
   }
-  if (param_7 != (char *)0x0) {
+  if (param_7 != nullptr) {
     uVar3 = 0xffffffff;
     pcVar5 = param_7;
     do {

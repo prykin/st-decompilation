@@ -16,7 +16,7 @@ undefined4 __fastcall FUN_004e04a0(AnonShape_004E04A0_3A5B2D2E *param_1)
   uVar3 = 0;
   iVar2 = 0;
   iVar1 = param_1->field_05AC;
-  local_8 = (char *)0x0;
+  local_8 = nullptr;
   switch(iVar1) {
   case 0x38:
   case 0x39:

@@ -175,7 +175,14 @@ as `runs/<overall-sha256>/`; directory names contain no timestamp and only a
 small bounded recent history is retained. Expensive whole-program analyzers
 reuse artifacts only when the Program semantic fingerprint, analyzer source,
 declared inputs, and outputs all match; within one run, clean analyzer nodes are
-not recomputed after an unrelated fixed-point check. `build_manifest.tsv`,
+not recomputed after an unrelated fixed-point check. This includes class-layout
+recovery and the callback-field pass, whose proposal inputs are hashed explicitly.
+The callback-field pass runs after the broad deep structural fixed point rather
+than once per intermediate epoch; final export ABI stabilization still reruns it
+after any later Program mutation.
+Class-layout refinements have their own bounded local fixed point, so a nested
+layout staircase converges before restarting unrelated whole-program analyzers.
+`build_manifest.tsv`,
 per-script provider load logs,
 per-step stdout/stderr and exceptions, `pipeline.log`, `events.tsv`, per-pass TSV
 snapshots, and the export receipt make failures inspectable, while
@@ -187,6 +194,9 @@ been written. A decompiler, normalizer, cancellation, or I/O exception therefore
 leaves the preceding `decomp/ST.exe` tree intact instead of mixing two Program
 states. The pipeline marks the root export receipt `incomplete` before starting;
 only the regression gate may replace it with `passed` or `failed`.
+Neither committed corpus manifests nor retained pipeline metadata record a
+wall-clock start/end time. Logs retain elapsed durations only. At completion,
+the launcher prints the total elapsed time as `HH:MM:SS` (including `00` hours).
 
 Detailed installation instructions, script dependencies, review flags, and the
 canonical run order are documented in
@@ -235,6 +245,10 @@ The current work focuses on recovering what the binary can prove:
 - trusted indirect-call/vtable prototypes, neutral machine-proven thiscall/stdcall slot ABIs,
   separately inferred polymorphic dispatch interfaces, and automatic unanimous-callsite
   `__cdecl` correction, with ambiguous callsites retained for review;
+- non-vtable callback fields proven by an exact function-address store and a later
+  indirect call through the same generated structure member;
+- by-value nested records and fixed member-array bounds proven by exact typed
+  `REP MOVS` copies and independently corroborated zero-initialization spans;
 - statically linked CRT, DKW, and internal `Ourlib` modules;
 - structured control-flow labels where the decompiler emits unavoidable gotos.
 - strict free-function names passed to repeated diagnostic sinks, with bounded

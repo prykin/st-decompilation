@@ -29,9 +29,9 @@ float * FUN_00671f10(int param_1,int *param_2,int *param_3)
   int *local_c;
   float *local_8;
 
-  local_18 = (float *)0x0;
-  local_8 = (float *)0x0;
-  local_c = (int *)0x0;
+  local_18 = nullptr;
+  local_8 = nullptr;
+  local_c = nullptr;
   local_10 = 0;
   local_14 = 0;
   local_70.previous = g_currentExceptionFrame;
@@ -39,20 +39,20 @@ float * FUN_00671f10(int param_1,int *param_2,int *param_3)
   iVar3 = Library::MSVCRT::__setjmp3(local_70.jumpBuffer,0);
   if (iVar3 != 0) {
     g_currentExceptionFrame = local_70.previous;
-    if (local_8 != (float *)0x0) {
+    if (local_8 != nullptr) {
       FreeAndNull(&local_8);
     }
-    if (local_18 != (float *)0x0) {
+    if (local_18 != nullptr) {
       FreeAndNull(&local_18);
     }
     thunk_FUN_0064a800(&local_c);
     if (0 < iVar3) {
       iVar3 = -0x6b;
     }
-    if (param_2 != (int *)0x0) {
+    if (param_2 != nullptr) {
       *param_2 = iVar3;
     }
-    return (float *)0x0;
+    return nullptr;
   }
   Library::MSVCRT::_strncpy(&local_24->field_0x4,&DAT_008016a0,0x7f);
   *(undefined4 *)&local_24->field_0x84 = 0xffffffff;
@@ -67,7 +67,7 @@ float * FUN_00671f10(int param_1,int *param_2,int *param_3)
                     (-0x6b,g_overwriteContext_007ED77C,"E:\\__titans\\ai\\ai_interp.cpp",0x570
                     );
         }
-        if (param_3 != (int *)0x0) {
+        if (param_3 != nullptr) {
           *param_3 = (int)local_20 + 1;
         }
         puVar2 = (undefined1 *)local_c[2];
@@ -77,7 +77,7 @@ float * FUN_00671f10(int param_1,int *param_2,int *param_3)
           fVar6 = (float)(*local_24->vtable->slot_00)(puVar2);
           local_18 = (float *)Library::DKW::LIB::FUN_006aac10(4);
           *local_18 = fVar6;
-          if (param_2 != (int *)0x0) {
+          if (param_2 != nullptr) {
             *param_2 = 1;
           }
           break;
@@ -87,7 +87,7 @@ float * FUN_00671f10(int param_1,int *param_2,int *param_3)
           local_20 = (float)fVar8;
           local_18 = (float *)Library::DKW::LIB::FUN_006aac10(4);
           *local_18 = local_20;
-          if (param_2 != (int *)0x0) {
+          if (param_2 != nullptr) {
             *param_2 = 2;
           }
           break;
@@ -101,7 +101,7 @@ float * FUN_00671f10(int param_1,int *param_2,int *param_3)
           }
           local_18 = (float *)Library::DKW::LIB::FUN_006aac10(4);
           *local_18 = fVar6;
-          if (param_2 != (int *)0x0) {
+          if (param_2 != nullptr) {
             *param_2 = 3;
           }
           break;
@@ -146,7 +146,7 @@ cf_continue_loop_006721A4:
       local_8 = (float *)Library::DKW::LIB::FUN_006aac10(4);
       *local_8 = (float)(uint)(local_10 == 0);
     }
-    if (local_8 == (float *)0x0) {
+    if (local_8 == nullptr) {
       RaiseInternalException
                 (local_1c,g_overwriteContext_007ED77C,"E:\\__titans\\ai\\ai_interp.cpp",0x56c);
       goto cf_continue_loop_006721A4;

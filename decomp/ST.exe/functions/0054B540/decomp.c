@@ -17,7 +17,7 @@ void __thiscall CursorClassTy::sub_0054B540(CursorClassTy *this)
   uVar1 = this->field_010B;
   if (-1 < (int)uVar1) {
     if (this->field_00DE == CASE_5) {
-      if (g_sT3DSMAPContext_00807598 != (ST3DSMAPContext *)0x0) {
+      if (g_sT3DSMAPContext_00807598 != nullptr) {
         Library::Ourlib::ST3DSMAP::SprClose(g_sT3DSMAPContext_00807598,uVar1);
       }
       if (this->field_00A9 == 0) {
@@ -37,7 +37,7 @@ void __thiscall CursorClassTy::sub_0054B540(CursorClassTy *this)
   }
   this->field_00DE = CASE_0;
   this->field_0496 = 0;
-  this->field_049A = (STFishC *)0x0;
+  this->field_049A = nullptr;
   this->field_04AE = 0;
   return;
 }

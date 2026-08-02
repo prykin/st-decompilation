@@ -64,7 +64,7 @@ _EnumPlObj(undefined4 param_1,uint param_2,uint param_3,byte *param_4,char param
     return iVar3;
   }
   local_1c = (DArrayTy *)thunk_FUN_0042a990((char)param_1);
-  if (local_1c == (DArrayTy *)0x0) {
+  if (local_1c == nullptr) {
     RaiseInternalException
               (-0x34,g_overwriteContext_007ED77C,"E:\\__titans\\ai\\ai_mdef.cpp",0x293);
   }
@@ -73,7 +73,7 @@ _EnumPlObj(undefined4 param_1,uint param_2,uint param_3,byte *param_4,char param
     if (local_1c->count != 0) {
       uVar10 = 0;
       if (local_1c->count == 0) {
-        puVar4 = (undefined4 *)0x0;
+        puVar4 = nullptr;
         goto LAB_00676e12;
       }
       do {
@@ -81,7 +81,7 @@ _EnumPlObj(undefined4 param_1,uint param_2,uint param_3,byte *param_4,char param
         puVar4 = (undefined4 *)(local_1c->elementSize * uVar10 + (int)local_1c->data);
 LAB_00676e12:
         this = (STFishC *)*puVar4;
-        if ((this != (STFishC *)0x0) && (iVar3 = (*this->vtable->vfunc_F8)(), iVar3 != 0)) {
+        if ((this != nullptr) && (iVar3 = (*this->vtable->vfunc_F8)(), iVar3 != 0)) {
           local_10 = 1;
           dVar5 = this->slot_2C();
           if (param_2 != 0) {
@@ -109,7 +109,7 @@ LAB_00676e88:
           }
           if (local_10 == 0) {
 LAB_00677024:
-            if (param_14 == (undefined *)0x0) goto LAB_00677041;
+            if (param_14 == nullptr) goto LAB_00677041;
             /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
             iVar3 = (*(code *)param_14)(param_1,local_14,this,param_13);
           }
@@ -137,7 +137,7 @@ joined_r0x00676ef3:
             }
 LAB_00676efc:
             if (local_10 == 0) goto LAB_00677024;
-            if ((param_4 != (byte *)0x0) && (*param_4 != 0)) {
+            if ((param_4 != nullptr) && (*param_4 != 0)) {
               (*this->vtable->vfunc_74)(local_2c);
               pbVar11 = local_2c;
               pbVar8 = param_4;
@@ -174,7 +174,7 @@ LAB_00676f4c:
                    ((int)param_8 + (int)param_11 <= (int)local_c)))))))))) {
               local_10 = 0;
             }
-            if ((local_10 == 0) || (param_12 == (undefined *)0x0)) goto LAB_00677024;
+            if ((local_10 == 0) || (param_12 == nullptr)) goto LAB_00677024;
             /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
             iVar3 = (*(code *)param_12)(param_1,local_14,this,param_13);
           }

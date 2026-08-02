@@ -12,11 +12,11 @@ STManRuinC * __cdecl CreateSTManRuin(void)
   STManRuinC *this;
 
   this = (STManRuinC *)FUN_006b04d0(0x75);
-  if (this != (STManRuinC *)0x0) {
+  if (this != nullptr) {
     g_manRuin_008117B0 = STManRuinC::STManRuinC(this);
     return g_manRuin_008117B0;
   }
-  g_manRuin_008117B0 = (STManRuinC *)0x0;
-  return (STManRuinC *)0x0;
+  g_manRuin_008117B0 = nullptr;
+  return nullptr;
 }
 

@@ -12,7 +12,7 @@ undefined4 FUN_0074736a(AnonShape_0074736A_AA1936BB *param_1,undefined4 *param_2
   lpCriticalSection = param_1->field_002C;
   EnterCriticalSection(lpCriticalSection);
   param_1->field_0034 = param_2;
-  if (param_2 == (undefined4 *)0x0) {
+  if (param_2 == nullptr) {
     param_1->field_0038 = 0;
   }
   else {
@@ -24,16 +24,16 @@ undefined4 FUN_0074736a(AnonShape_0074736A_AA1936BB *param_1,undefined4 *param_2
       (**(code **)(*piVar1 + 8))(piVar1);
     }
   }
-  if ((HoloTy *)param_1->field_0030 != (HoloTy *)0x0) {
+  if ((HoloTy *)param_1->field_0030 != nullptr) {
     Library::MSVCRT::FUN_0072e2b0((HoloTy *)param_1->field_0030);
     param_1->field_0030 = 0;
   }
-  if (param_3 != (short *)0x0) {
+  if (param_3 != nullptr) {
     iVar2 = FUN_0074d664(param_3);
     uVar5 = (iVar2 + 1U) * 2;
     puVar3 = (undefined4 *)Library::MSVCRT::FUN_0072e530(uVar5);
     param_1->field_0030 = puVar3;
-    if (puVar3 != (undefined4 *)0x0) {
+    if (puVar3 != nullptr) {
       for (uVar4 = (iVar2 + 1U & 0x7fffffff) >> 1; uVar4 != 0; uVar4 = uVar4 - 1) {
         *puVar3 = *(undefined4 *)param_3;
         param_3 = param_3 + 2;

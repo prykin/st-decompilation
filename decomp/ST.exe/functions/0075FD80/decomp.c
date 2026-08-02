@@ -37,7 +37,7 @@ void FUN_0075fd80(AnonShape_0075FD80_7EE67BE7 *param_1,int param_2,int *param_3,
             piVar5 = piVar5 + 1;
             /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
             param_1 = (AnonShape_0075FD80_7EE67BE7 *)&pAVar4->field_0x1bf;
-          } while (&pAVar4->field_0x1bf != (undefined1 *)0x0);
+          } while (&pAVar4->field_0x1bf != nullptr);
         }
         *pcVar6 = cVar8;
         pcVar6 = pcVar6 + 1;

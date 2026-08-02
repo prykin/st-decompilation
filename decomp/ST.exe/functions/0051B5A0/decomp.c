@@ -56,7 +56,7 @@ void __thiscall HelpPanelTy::ArmProc(HelpPanelTy *this,int param_1,int param_2,c
   local_8 = 0;
   local_44 = this;
   local_38 = (byte *)FUN_0070b3a0((AnonShape_GLOBAL_0081175C_57F682DD *)this->field_0248,4);
-  if (g_allPlayers_007FA174 != (STAllPlayersC *)0x0) {
+  if (g_allPlayers_007FA174 != nullptr) {
     local_a4.previous = g_currentExceptionFrame;
     g_currentExceptionFrame = &local_a4;
     iVar4 = Library::MSVCRT::__setjmp3(local_a4.jumpBuffer,0);
@@ -82,7 +82,7 @@ void __thiscall HelpPanelTy::ArmProc(HelpPanelTy *this,int param_1,int param_2,c
           *(undefined2 *)&local_44->field_0x2c = 0;
           local_44->field_002E = 2;
           *(undefined4 *)&local_44->field_0x30 = local_44->field_0178;
-          if (g_cursorClass_00802A30 != (CursorClassTy *)0x0) {
+          if (g_cursorClass_00802A30 != nullptr) {
             /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
             (**(code **)g_cursorClass_00802A30->field_0000)(&local_44->field_0x18);
           }
@@ -93,7 +93,7 @@ void __thiscall HelpPanelTy::ArmProc(HelpPanelTy *this,int param_1,int param_2,c
       DrawTitle(this_00,0x55fd,param_2,UVar5);
       uVar6 = thunk_FUN_005259b0(GVar19,0,'\x01');
       pbVar7 = (byte *)FUN_0070b3a0((AnonShape_GLOBAL_0081175C_57F682DD *)this_00->field_0244,uVar6);
-      if (pbVar7 != (byte *)0x0) {
+      if (pbVar7 != nullptr) {
         DibPut((AnonShape_006B5B10_E0D06CF1 *)this_00->field_0068,0x35,
                (0x1e - *(int *)(pbVar7 + 8)) / 2 + 0x2a,'\x06',pbVar7);
       }
@@ -110,7 +110,7 @@ void __thiscall HelpPanelTy::ArmProc(HelpPanelTy *this,int param_1,int param_2,c
           iVar4 = thunk_FUN_00646110(param_1,iVar17,&local_c,&local_14,&local_18);
           if (iVar4 != 0) {
             ccFntTy::SetSurf(this_00->field_01E0,(int)this_00->field_0218,0,0x96,local_8,0x106,0xf);
-            if ((local_14 == (int *)0x0) || (local_18 == 0)) {
+            if ((local_14 == nullptr) || (local_18 == 0)) {
               if (iVar17 == 0) {
                 pcVar9 = LoadResourceString(0x565c,g_module_00807618);
                 uVar16 = 2;
@@ -311,7 +311,7 @@ void __thiscall HelpPanelTy::ArmProc(HelpPanelTy *this,int param_1,int param_2,c
         pcVar10 = (char *)&DAT_0080f33a;
         memmove(pcVar10, pcVar9, uVar6); /* compiler REP MOVS byte copy */
         uVar11 = 0;
-        for (puVar8 = Library::MSVCRT::FUN_0072e560(&DAT_0080f33a,'\n'); puVar8 != (uint *)0x0;
+        for (puVar8 = Library::MSVCRT::FUN_0072e560(&DAT_0080f33a,'\n'); puVar8 != nullptr;
             puVar8 = Library::MSVCRT::FUN_0072e560(puVar8,'\n')) {
           *(undefined1 *)puVar8 = 0x20;
         }
@@ -364,7 +364,7 @@ void __thiscall HelpPanelTy::ArmProc(HelpPanelTy *this,int param_1,int param_2,c
           pcVar10 = (char *)&DAT_0080f33a;
           memmove(pcVar10, pcVar9, uVar6); /* compiler REP MOVS byte copy */
           uVar11 = 0;
-          for (puVar8 = Library::MSVCRT::FUN_0072e560(&DAT_0080f33a,'\n'); puVar8 != (uint *)0x0;
+          for (puVar8 = Library::MSVCRT::FUN_0072e560(&DAT_0080f33a,'\n'); puVar8 != nullptr;
               puVar8 = Library::MSVCRT::FUN_0072e560(puVar8,'\n')) {
             *(undefined1 *)puVar8 = 0x20;
           }
@@ -415,7 +415,7 @@ void __thiscall HelpPanelTy::ArmProc(HelpPanelTy *this,int param_1,int param_2,c
           pcVar10 = (char *)&DAT_0080f33a;
           memmove(pcVar10, pcVar9, uVar6); /* compiler REP MOVS byte copy */
           uVar11 = 0;
-          for (puVar8 = Library::MSVCRT::FUN_0072e560(&DAT_0080f33a,'\n'); puVar8 != (uint *)0x0;
+          for (puVar8 = Library::MSVCRT::FUN_0072e560(&DAT_0080f33a,'\n'); puVar8 != nullptr;
               puVar8 = Library::MSVCRT::FUN_0072e560(puVar8,'\n')) {
             *(undefined1 *)puVar8 = 0x20;
           }
@@ -470,7 +470,7 @@ void __thiscall HelpPanelTy::ArmProc(HelpPanelTy *this,int param_1,int param_2,c
                 pcVar10 = (char *)&DAT_0080f33a;
                 memmove(pcVar10, pcVar9, uVar6); /* compiler REP MOVS byte copy */
                 for (puVar8 = Library::MSVCRT::FUN_0072e560(&DAT_0080f33a,'\n');
-                    puVar8 != (uint *)0x0; puVar8 = Library::MSVCRT::FUN_0072e560(puVar8,'\n')) {
+                    puVar8 != nullptr; puVar8 = Library::MSVCRT::FUN_0072e560(puVar8,'\n')) {
                   *(undefined1 *)puVar8 = 0x20;
                 }
                 ccFntTy::WrStr(this_00->field_01E0,&DAT_0080f33a,1,-1,

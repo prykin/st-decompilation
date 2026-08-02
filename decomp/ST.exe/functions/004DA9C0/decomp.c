@@ -80,17 +80,17 @@ undefined4 __fastcall FUN_004da9c0(undefined4 param_1)
             uVar4 = local_EAX_206 & 0xff;
             if (uVar4 == 1) {
               SoundClassTy::PlaySound
-                        ((SoundClassTy *)&g_sound,SOUND_MODE_6,(char *)0x0,0x71,(SoundPosition *)0x0
+                        ((SoundClassTy *)&g_sound,SOUND_MODE_6,nullptr,0x71,nullptr
                          ,0);
             }
             else if (uVar4 == 2) {
               SoundClassTy::PlaySound
-                        ((SoundClassTy *)&g_sound,SOUND_MODE_6,(char *)0x0,0x72,(SoundPosition *)0x0
+                        ((SoundClassTy *)&g_sound,SOUND_MODE_6,nullptr,0x72,nullptr
                          ,0);
             }
             else if (uVar4 == 3) {
               SoundClassTy::PlaySound
-                        ((SoundClassTy *)&g_sound,SOUND_MODE_6,(char *)0x0,0x73,(SoundPosition *)0x0
+                        ((SoundClassTy *)&g_sound,SOUND_MODE_6,nullptr,0x73,nullptr
                          ,0);
             }
           }
@@ -98,9 +98,9 @@ undefined4 __fastcall FUN_004da9c0(undefined4 param_1)
       }
     }
     else if (*local_1c == 3) {
-      local_c = &DAT_008087e9;
-      local_10 = (int *)0x0;
-      local_8 = (int *)0x0;
+      local_c = &g_bulkInitializedRecords_008087C7[0].field_0022;
+      local_10 = nullptr;
+      local_8 = nullptr;
       do {
         uVar3 = LookupRecordByte(recordIndex);
         uVar4 = uVar3 & 0xff;
@@ -145,7 +145,8 @@ LAB_004dabff:
             bVar12 = iVar6 < 0;
           }
           else {
-            bVar12 = (&DAT_008087ea)[(uVar7 & 0xff) * 0x51] != (&DAT_008087ea)[(uint)bVar1 * 0x51];
+            bVar12 = g_bulkInitializedRecords_008087C7[uVar7 & 0xff].field_0023 !=
+                     g_bulkInitializedRecords_008087C7[bVar1].field_0023;
           }
           if (bVar12) {
             iVar5 = thunk_FUN_004e60d0((int)local_8,iVar5);
@@ -159,7 +160,7 @@ LAB_004dabff:
         local_c = local_c + 0x51;
         local_8 = (int *)((int)local_8 + 1);
       } while ((int)local_c < 0x808a71);
-      if (local_10 == (int *)0x0) {
+      if (local_10 == nullptr) {
         *piVar11 = 0;
       }
       else {
@@ -167,7 +168,7 @@ LAB_004dabff:
       }
     }
     local_8 = piVar11 + 0xd;
-    local_c = (byte *)0x0;
+    local_c = nullptr;
     do {
       if (((local_c != (byte *)uVar7) && (g_playSystem_00802A38->field_00E4 == local_8[-8])) &&
          (*local_8 == 0)) {
@@ -186,7 +187,7 @@ LAB_004dabff:
             iVar5 = 0x79;
           }
           SoundClassTy::PlaySound
-                    ((SoundClassTy *)&g_sound,SOUND_MODE_6,(char *)0x0,iVar5,(SoundPosition *)0x0,0);
+                    ((SoundClassTy *)&g_sound,SOUND_MODE_6,nullptr,iVar5,nullptr,0);
         }
 LAB_004dad15:
         iVar5 = 0;
@@ -202,11 +203,11 @@ LAB_004dad15:
              ((&DAT_007e53bc)[iVar5] != '\0')) {
             uVar7 = 0;
             local_20 = (uint *)(local_1c + 5);
-            pbVar9 = &DAT_008087e9;
+            pbVar9 = &g_bulkInitializedRecords_008087C7[0].field_0022;
             do {
               if (((local_c != (byte *)uVar7) && (local_14 != uVar7)) &&
                  (((int)pbVar9 < 0x808a71 &&
-                  (((g_playSystem_00802A38 == (STPlaySystemC *)0x0 || (*pbVar9 < 8)) &&
+                  (((g_playSystem_00802A38 == nullptr || (*pbVar9 < 8)) &&
                    (g_playSystem_00802A38->field_00E4 <= *local_20)))))) {
                 local_30 = thunk_FUN_004e60d0(local_14,iVar5);
                 local_30 = local_30 + 1;
@@ -228,7 +229,7 @@ LAB_004dad15:
           local_24 = iVar5;
         } while (iVar5 < 0x9b);
         uVar7 = local_14;
-        if (DAT_008117bc != (undefined4 *)0x0) {
+        if (DAT_008117bc != nullptr) {
           memset(local_50, 0, 0x20); /* compiler bulk-zero initialization */
           local_40 = 0x5dea;
           local_3c = (undefined2)uVar4;

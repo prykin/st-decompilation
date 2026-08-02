@@ -19,7 +19,7 @@ FUN_0074f3c0(int *param_1,uint *param_2,uint param_3,uint *param_4,
   p_Var7 = (LPCRITICAL_SECTION)((uint)lpCriticalSection & 3);
   uVar6 = param_3 & 3;
   if (lpCriticalSection != (LPCRITICAL_SECTION)0x0) {
-    if (param_4 == (uint *)0x0) {
+    if (param_4 == nullptr) {
       return 0x80004003;
     }
     if (p_Var7 != lpCriticalSection) {
@@ -27,7 +27,7 @@ FUN_0074f3c0(int *param_1,uint *param_2,uint param_3,uint *param_4,
     }
   }
   if (param_3 != 0) {
-    if (param_2 == (uint *)0x0) {
+    if (param_2 == nullptr) {
       return 0x80004003;
     }
     if ((uVar6 != 1) && (uVar6 != 2)) {

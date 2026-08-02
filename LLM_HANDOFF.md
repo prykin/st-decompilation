@@ -9,15 +9,13 @@ script.
 
 ## Environment
 
-- Inspection/editing workstation: use the authoritative SMB volume directly at
-  `<local-volume>/st`. Do not create a local checkout or symbolic link.
-- Ghidra host repository path: `<local-home>/st`. Paths recorded in build/run
-  manifests are host paths, not evidence of a second repository.
+- Authoritative repository path: `<local-home>/st` on the local disk. Do not use
+  or inspect an SMB mirror.
 - Ghidra host: Ghidra 12.1.2 with Homebrew OpenJDK 21.
 - Project on the Ghidra host: `<local-home>/st/proj/st.gpr`.
 - Scripts on the Ghidra host: `<local-home>/st/scripts`.
-- Recovery output on this workstation: `<local-volume>/st/recovery/ST.exe`.
-- LLM corpus on this workstation: `<local-volume>/st/decomp/ST.exe`.
+- Recovery output: `<local-home>/st/recovery/ST.exe`.
+- LLM corpus: `<local-home>/st/decomp/ST.exe`.
 - Original executable: `bin/ST.exe` (ignored; never commit).
 
 The scripts are ordinary Ghidra Java scripts compiled on demand, not a Gradle
@@ -40,49 +38,75 @@ have been checked.
 ## Latest accepted run
 
 The authoritative latest `full-export` is run
-`32fdd23154133857c39966429e56ee51c0f828b65a8388f57b1bb0e69f47e88f`
-under `recovery/ST.exe/runs/`. It completed on 2026-08-02 in 2,314.892 seconds
-(38m34.892s), with Program modification `379 -> 1176` and semantic hash
-`092a55e1aa7e5136813b1bd4600a741d22895c40f4281c890b03470a02d089b3`.
+`7b7fef4db04628ca20247b53557ca9fc15ec76a913faab42e349be3abe265ea8`
+under `recovery/ST.exe/runs/`. It completed in 267.494 seconds (`00:04:27`),
+with Program modification `154 -> 193` and
+semantic hash
+`27b2e1eb234982f047ed62f60bc77e1a7bde68397a9bbe5e0b2e1686a4b2fed8`.
 
-Ghidra's load preflight accepted all 77 Java scripts: 76 were freshly loaded
-and the already-running `STRecoveryPipeline` was recorded as
-`already_loaded`; `build_failure_count=0`. The export receipt is `passed` and
-the regression gate reports zero hard regressions and zero warnings. It
-exported 10,392 internal functions and 5,712 bodies with zero decompilation
-failures. Every physical vtable slot retained its type. Against the accepted
-baseline, `raw_indirect_call` improved `2102 -> 2100` and `undefined_type`
-improved `17791 -> 17777`; all other guarded quality counters were stable.
+Ghidra's load preflight accepted all 80 Java scripts with zero build failures.
+The export receipt is `passed`; the gate reports zero hard regressions, 10,392
+internal functions, 5,712 exported bodies, and zero decompilation failures.
+Every physical vtable slot retained its type. Against the recovered failed-run
+baseline, both manifest hashes are `0a9c405f...`; the gate reports zero hard
+regressions and zero warnings. All appliers reported zero semantic mutations.
+The local class-layout fixed point therefore passed its runtime steady-state
+test rather than merely compiling.
 
-The repaired lifecycle behavior was exercised, not merely compiled:
+The complete 128-step pipeline was not truncated: 13 expensive analyzers reused
+the persistent semantic/source/dependency cache, five reused current-epoch
+artifacts, final ABI stabilization ran, evidence was recorded and verified,
+`STDecompExport` completed in 53.429 seconds, and the regression gate passed.
 
-- `STHiddenThisApplier` restored 24 receiver signatures, including two live
-  consumers of `AnonReceiver_0064A970`;
-- the final lifecycle proposal retains `AnonReceiver_0064A970` with six
-  signature uses, and also retains its referenced vtable;
-- the first lifecycle apply replaced 15 stale discriminator-case views only
-  with views carrying the same discriminator address/case identity, and removed
-  four unreferenced script-owned views (two stale case views and two anonymous
-  pointer shapes);
-- the immediately repeated lifecycle pass made zero changes, proving that the
-  resulting lifecycle state is stable within the run.
-
-The final discriminator stack phase now costs 6.034 seconds instead of
-re-decompiling all families for roughly two minutes. Local-lifetime analysis
-cost 180.125 seconds and emitted only 618 actionable/review proposals rather
-than the 22,917-row queue from the rejected run. The whole run was 21m41.643s
-faster than the preceding 60m16.535s rejected run (about 36% wall-clock
-reduction).
-
-The run recorded six same-epoch analyzer cache hits. The persistent analyzer
-cache remains empty after this Program-changing repair run, so
-a second unchanged full run has not yet measured persistent-cache savings.
-That is an optimization/measurement follow-up, not a correctness blocker for
-committing this accepted snapshot. Exactly three archived runs are retained.
+One non-semantic idempotence issue remained: `STUtilityFunctionApplier` reported
+`changed=0` but raised Ghidra's volatile modification counter by repeatedly
+setting identical owned comments/tags. It now compares the complete replacement
+comment and checks tag membership before writing. This source-only fix compiles
+with the pipeline and analyzer changes against Ghidra 12.1.2/JDK 21; it does not
+require another corpus export. Exactly three archived runs are retained.
 
 The following sections are a chronological implementation/failure log. Any
 future-tense rerun checklist in that history has been superseded by the latest
 accepted run above unless a later section explicitly reopens it.
+
+## Latest attempted run and pending source changes
+
+The latest attempted `full-export` is archived as
+`4c895a48ac0d63b17166c492578bad6adf808bb0f7cf8efe50e3303e05e9f549`.
+It ran for 3,164.747 seconds (`00:52:44` rounded for console display), changed
+the Program modification counter from `3` to `415`, exported all 5,712 bodies
+without a decompilation failure, and was correctly rejected by one hard quality
+regression: `return_width_artifact 1078 -> 1079`, isolated to function
+`006DC050`. Other guarded quality counters improved overall, including
+`undefined_type -65` and `raw_pointer_offset -47`.
+
+The regression is an x87 stack-survivor presentation artifact, not a widened
+return ABI. The exact machine sequence saves a lower x87 value with non-popping
+`FST`, calls `__ftol` on the top value, then multiplies a newly loaded integer by
+`ST1` and stores it to another member. A generic exporter proof now substitutes
+the exact saved member for the single `extraout_ST0` occurrence only when this
+entire sequence and both receiver offsets agree.
+
+The same source set adds:
+
+- stable function-body analysis-cache identity, so unrelated exporter I/O or
+  manifest edits no longer invalidate every body audit;
+- a previous-verification rejection identity in `STLocalLifetimeApplier`, which
+  prevents apply/rollback churn from advancing Ghidra's modification counter on
+  every unchanged run;
+- `STFunctionPointerFieldAnalyzer/Applier` for exact stored-address → generated
+  field → indirect-call chains with one trusted target ABI;
+- `STInlineAggregateAnalyzer`, consumed by the class-layout pair, for complete
+  typed `REP MOVS` nested members and exact `REP STOS` span evidence;
+- fixed-array extent inference from a zero span only when independent indexed
+  stride evidence agrees;
+- C++ `nullptr` presentation for typed `(T *)0x0` spellings;
+- wall-clock timestamp removal from committed manifests and run metadata, while
+  the pipeline prints total elapsed time as `HH:MM:SS` in a `finally` block.
+
+These pending scripts compile against Ghidra 12.1.2/JDK 21, but their runtime
+proposal yield and the repaired export gate still require the next local
+`full-export` run.
 
 ## Source fixes made after the failed run
 
@@ -376,7 +400,7 @@ per-consumer and HighFunction-lifetime anchored.
 
 ## Suggested commit title
 
-`fix(recovery): stabilize type lifecycle and accelerate final passes`
+`feat(recovery): infer callback fields and exact inline aggregates`
 
 ## Lifecycle regression and final-pass speed fix
 

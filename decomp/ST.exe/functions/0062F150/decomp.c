@@ -12,7 +12,7 @@ void __fastcall FUN_0062f150(RecoveredRecord_STRubbishC_0062F150 *param_1)
 
   pVVar2 = g_visibleClass_00802A88;
   local_c = 0;
-  if ((param_1->field_01F9 != '\0') && (g_visibleClass_00802A88 != (VisibleClassTy *)0x0)) {
+  if ((param_1->field_01F9 != '\0') && (g_visibleClass_00802A88 != nullptr)) {
     iVar1 = param_1->field_01DD;
     if ((DAT_0080874d != -1) && (g_visibleClass_00802A88->field_00F8 != 0)) {
       VisibleClassTy::sub_00558C00
@@ -22,7 +22,7 @@ void __fastcall FUN_0062f150(RecoveredRecord_STRubbishC_0062F150 *param_1)
           (((local_8 < pVVar2->field_0030 &&
             (local_10 = g_centeredOffsets5[iVar1] + local_10, -1 < local_10)) &&
            (local_10 < pVVar2->field_0034)))) &&
-         ((pVVar2->field_004C != (byte *)0x0 &&
+         ((pVVar2->field_004C != nullptr &&
           (pVVar2->field_004C[local_8 + local_10 * pVVar2->field_0030] == 0)))) goto LAB_0062f208;
     }
     local_c = 1;
@@ -36,7 +36,7 @@ LAB_0062f208:
       this = *(STT3DSprC **)(iVar1 + 0x10);
       if (*(int *)(iVar1 + 0x18) == 2) {
         if (g_playSystem_00802A38->field_00E4 % 5 == 0) {
-          if (this != (STT3DSprC *)0x0) {
+          if (this != nullptr) {
             STT3DSprC::sub_004ACE30
                       (this,PTR_00806724->entries[*(byte *)(iVar1 + 0x34)],
                        (int)PTR_00806724->field_002C);
@@ -57,12 +57,12 @@ LAB_0062f208:
       }
       iVar1 = *piVar3;
       if (local_c == 0) {
-        if (((iVar1 != 0) && (*(char *)(iVar1 + 0x3d) != '\0')) && (this != (STT3DSprC *)0x0)) {
+        if (((iVar1 != 0) && (*(char *)(iVar1 + 0x3d) != '\0')) && (this != nullptr)) {
           thunk_FUN_004ad430(this);
           *(undefined1 *)(*piVar3 + 0x3d) = 0;
         }
       }
-      else if (((iVar1 != 0) && (*(char *)(iVar1 + 0x3d) == '\0')) && (this != (STT3DSprC *)0x0)) {
+      else if (((iVar1 != 0) && (*(char *)(iVar1 + 0x3d) == '\0')) && (this != nullptr)) {
         thunk_FUN_004ad460(this,0);
         *(undefined1 *)(*piVar3 + 0x3d) = 1;
       }

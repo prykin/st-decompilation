@@ -9,8 +9,8 @@ undefined4 __thiscall FUN_004e8b10(void *this,uint param_1)
 
   uVar3 = param_1;
   if ((7 < param_1) ||
-     ((g_playSystem_00802A38 != (STPlaySystemC *)0x0 && (7 < (byte)(&DAT_008087e9)[param_1 * 0x51]))
-     )) {
+     ((g_playSystem_00802A38 != nullptr &&
+      (7 < g_bulkInitializedRecords_008087C7[param_1].field_0022)))) {
     return 0;
   }
   /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
@@ -38,7 +38,8 @@ undefined4 __thiscall FUN_004e8b10(void *this,uint param_1)
   /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
   param_1 = (uint)*(byte *)((int)this + 0x24);
   if (DAT_00808a8f != '\0') {
-    bVar4 = (&DAT_008087ea)[param_1 * 0x51] != (&DAT_008087ea)[(uVar3 & 0xff) * 0x51];
+    bVar4 = g_bulkInitializedRecords_008087C7[param_1].field_0023 !=
+            g_bulkInitializedRecords_008087C7[uVar3 & 0xff].field_0023;
     goto LAB_004e8c3b;
   }
   if ((byte)uVar3 == *(byte *)((int)this + 0x24)) {

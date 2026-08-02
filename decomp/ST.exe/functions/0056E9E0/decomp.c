@@ -45,30 +45,30 @@ undefined4 __thiscall STAppC::sub_0056E9E0(STAppC *this,int param_1)
   local_c = &local_18->field_76F6;
   pcVar4 = (cMf32 *)Library::Ourlib::MF32INT::FUN_006f0ec0(0x345,local_c,0,0,0);
   local_8 = pcVar4;
-  if ((DArrayTy *)pSVar2->field_4EA7 != (DArrayTy *)0x0) {
+  if ((DArrayTy *)pSVar2->field_4EA7 != nullptr) {
     FUN_006b5570((DArrayTy *)pSVar2->field_4EA7);
   }
   puVar5 = Library::Ourlib::MFSARR::mfSarLoad(pcVar4,PTR_s_DESCRIPTION_0079b074,0);
   pSVar2->field_4EA7 = puVar5;
-  if (puVar5 == (uint *)0x0) {
-    pDVar6 = Library::DKW::TBL::SArrayCreate((DArrayTy *)0x0,10,10);
+  if (puVar5 == nullptr) {
+    pDVar6 = Library::DKW::TBL::SArrayCreate(nullptr,10,10);
     pSVar2->field_4EA7 = &pDVar6->flags;
   }
-  if ((DArrayTy *)pSVar2->field_4EAB != (DArrayTy *)0x0) {
+  if ((DArrayTy *)pSVar2->field_4EAB != nullptr) {
     FUN_006b5570((DArrayTy *)pSVar2->field_4EAB);
   }
   puVar5 = Library::Ourlib::MFSARR::mfSarLoad(pcVar4,PTR_s_OBJECTIVES_0079b078,0);
   pSVar2->field_4EAB = puVar5;
-  if (puVar5 == (uint *)0x0) {
-    pDVar6 = Library::DKW::TBL::SArrayCreate((DArrayTy *)0x0,10,10);
+  if (puVar5 == nullptr) {
+    pDVar6 = Library::DKW::TBL::SArrayCreate(nullptr,10,10);
     pSVar2->field_4EAB = &pDVar6->flags;
   }
   pbVar13 = &pSVar2->field_4DA3;
   memset((void *)pbVar13, 0, 0x104); /* compiler bulk-zero initialization */
   local_14 = (char *)pbVar13;
   puVar7 = cMf32::RecGet(local_8,0xc,PTR_s_TITLE_MISSION_0079b070,(int *)&local_14,0);
-  if ((puVar7 == (ushort *)0x0) || (*pbVar13 == '\0')) {
-    Library::MSVCRT::FUN_0072e730(local_c,(byte *)0x0,(byte *)0x0,local_160,(byte *)0x0);
+  if ((puVar7 == nullptr) || (*pbVar13 == '\0')) {
+    Library::MSVCRT::FUN_0072e730(local_c,nullptr,nullptr,local_160,nullptr);
     uVar8 = 0xffffffff;
     pbVar10 = local_160;
     do {

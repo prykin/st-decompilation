@@ -47,7 +47,7 @@ void __thiscall PlayPanelTy::SwitchOptPanel(PlayPanelTy *this,int param_1)
       }
       local_8->field_0172 = 3;
       thunk_FUN_005252c0(CASE_AF);
-      if (g_cPanel_00801688 == (CPanelTy *)0x0) {
+      if (g_cPanel_00801688 == nullptr) {
         g_currentExceptionFrame = local_4c.previous;
         return;
       }

@@ -21,13 +21,13 @@ void CreateGameSystem(void)
   iVar2 = Library::MSVCRT::__setjmp3(local_48.jumpBuffer,0);
   if (iVar2 == 0) {
     this_00 = (GameSystemC *)Library::MSVCRT::FUN_0072e530(0x435);
-    if (this_00 == (GameSystemC *)0x0) {
-      g_parentSystem_0081163C = (GameSystemC *)0x0;
+    if (this_00 == nullptr) {
+      g_parentSystem_0081163C = nullptr;
     }
     else {
       g_parentSystem_0081163C = GameSystemC::GameSystemC(this_00,g_appClass_00806728);
     }
-    if (g_parentSystem_0081163C == (GameSystemC *)0x0) {
+    if (g_parentSystem_0081163C == nullptr) {
       RaiseInternalException(-1,g_overwriteContext_007ED77C,"E:\\__titans\\tsystem.cpp",0xb1);
     }
     g_parentSystem_0081163C->field_0428 = 0;

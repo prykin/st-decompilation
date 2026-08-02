@@ -41,7 +41,7 @@ int __thiscall STBoatC::BackDismant(STBoatC *this,int *param_1,undefined4 param_
     if (((((sVar1 < 0) || (g_worldGrid.sizeX <= sVar1)) || (sVar3 < 0)) ||
         ((g_worldGrid.sizeY <= sVar3 || (sVar2 < 0)))) || (g_worldGrid.sizeZ <= sVar2)) {
       /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
-      param_1 = (int *)0x0;
+      param_1 = nullptr;
     }
     else {
       /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
@@ -50,14 +50,14 @@ int __thiscall STBoatC::BackDismant(STBoatC *this,int *param_1,undefined4 param_
                         (int)g_worldGrid.sizeX * (int)sVar3 + (int)sVar1].objects[0];
     }
     /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
-    if ((((AnonShape_004B9D90_4F3151F9 *)param_1 == (AnonShape_004B9D90_4F3151F9 *)0x0) ||
+    if ((((AnonShape_004B9D90_4F3151F9 *)param_1 == nullptr) ||
         (*(AnonShape_005EFAE0_B406B78B **)&((AnonShape_004B9D90_4F3151F9 *)param_1)->field_0x18 !=
          this->field_06AF)) ||
        ((*(int *)&((AnonShape_004B9D90_4F3151F9 *)param_1)->field_0x24 != this->field_0024 ||
         (iVar5 = thunk_FUN_004b9d90((AnonShape_004B9D90_4F3151F9 *)param_1), iVar5 == 0)))) {
       STPlaySystemC::sub_006E62D0(g_playSystem_00802A38,this->field_06AF,(int *)&param_1);
     }
-    if (param_1 != (int *)0x0) {
+    if (param_1 != nullptr) {
       thunk_FUN_004b9d20(param_1,this);
     }
     if (this->field_06B9 == 1) {
@@ -89,7 +89,7 @@ int __thiscall STBoatC::BackDismant(STBoatC *this,int *param_1,undefined4 param_
     if (((((sVar1 < 0) || (g_worldGrid.sizeX <= sVar1)) || (sVar3 < 0)) ||
         ((g_worldGrid.sizeY <= sVar3 || (sVar2 < 0)))) || (g_worldGrid.sizeZ <= sVar2)) {
       /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
-      param_1 = (int *)0x0;
+      param_1 = nullptr;
     }
     else {
       /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
@@ -98,14 +98,14 @@ int __thiscall STBoatC::BackDismant(STBoatC *this,int *param_1,undefined4 param_
                         (int)g_worldGrid.sizeX * (int)sVar3 + (int)sVar1].objects[0];
     }
     /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
-    if ((((AnonShape_004B9D90_4F3151F9 *)param_1 == (AnonShape_004B9D90_4F3151F9 *)0x0) ||
+    if ((((AnonShape_004B9D90_4F3151F9 *)param_1 == nullptr) ||
         (*(AnonShape_005EFAE0_B406B78B **)&((AnonShape_004B9D90_4F3151F9 *)param_1)->field_0x18 !=
          this->field_06AF)) ||
        ((*(int *)&((AnonShape_004B9D90_4F3151F9 *)param_1)->field_0x24 != this->field_0024 ||
         (iVar5 = thunk_FUN_004b9d90((AnonShape_004B9D90_4F3151F9 *)param_1), iVar5 == 0)))) {
       STPlaySystemC::sub_006E62D0(g_playSystem_00802A38,this->field_06AF,(int *)&param_1);
     }
-    if ((param_1 != (int *)0x0) && (param_1[300] == this->field_0018)) {
+    if ((param_1 != nullptr) && (param_1[300] == this->field_0018)) {
       param_1[300] = 0;
     }
     return 0;

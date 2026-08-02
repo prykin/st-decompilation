@@ -56,7 +56,7 @@ LAB_0053c75b:
           (uVar3 = this->field_0199 + local_c, uVar3 < *(uint *)(iVar4 + 0xc))) &&
          (pGVar5 = (Global_sub_00528060_param_1Enum *)
                    (*(int *)(iVar4 + 8) * uVar3 + *(int *)(iVar4 + 0x1c)),
-         pGVar5 != (Global_sub_00528060_param_1Enum *)0x0)) {
+         pGVar5 != nullptr)) {
         *(char *)((int)local_8 + -1) = (pGVar5[8] == CASE_0) + '\x03';
         uVar1 = thunk_FUN_005293c0(*pGVar5);
         *local_8 = uVar1;

@@ -42,11 +42,11 @@ AiFltClassTy::sub_00661CA0(AnonShape_00661CA0_93A030EF *param_1,undefined4 param
   undefined2 local_6;
 
   /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-  if ((g_allPlayers_007FA174 != (STAllPlayersC *)0x0) &&
+  if ((g_allPlayers_007FA174 != nullptr) &&
      (local_14 = param_1,
      this = STAllPlayersC::GetObjPtr
                       (g_allPlayers_007FA174,param_1->field_0024,*(ushort *)(param_3 + 0x16),CASE_1)
-     , this != (STGameObjC *)0x0)) {
+     , this != nullptr)) {
     local_10 = this;
     local_20 = thunk_FUN_004357f0(param_1->field_0024);
     uVar4 = (*this->vtable->vfunc_2C)();
@@ -68,7 +68,7 @@ AiFltClassTy::sub_00661CA0(AnonShape_00661CA0_93A030EF *param_1,undefined4 param
                                *(int *)(param_1->field_020B + 0x1c));
             }
             else {
-              puVar5 = (uint *)0x0;
+              puVar5 = nullptr;
             }
             if (puVar5[10] == 0) {
               iVar10 = 0;
@@ -128,7 +128,7 @@ AiFltClassTy::sub_00661CA0(AnonShape_00661CA0_93A030EF *param_1,undefined4 param
               puVar5 = (uint *)(*(int *)(iVar10 + 8) * uVar4 + *(int *)(iVar10 + 0x1c));
             }
             else {
-              puVar5 = (uint *)0x0;
+              puVar5 = nullptr;
             }
             if (puVar5[10] == 0) {
               iVar6 = 0;
@@ -162,7 +162,7 @@ LAB_00661e5f:
         thunk_FUN_006756d0(&local_30,local_2e,local_2e + 2,local_2e + 3);
         ppAVar14 = &local_64;
         for (iVar10 = 0xd; iVar10 != 0; iVar10 = iVar10 + -1) {
-          *ppAVar14 = (AnonShape_0068FD00_A5257008 *)0x0;
+          *ppAVar14 = nullptr;
           ppAVar14 = ppAVar14 + 1;
         }
         local_60 = param_1->field_0280;
@@ -183,14 +183,14 @@ LAB_00661e5f:
           param_1->field_00A7 = 0;
         }
         uVar4 = 0;
-        if ((AiTactClassTy *)param_1->field_0284 != (AiTactClassTy *)0x0) {
+        if ((AiTactClassTy *)param_1->field_0284 != nullptr) {
           pvVar8 = (void *)AiTactClassTy::sub_0068E290
                                      ((AiTactClassTy *)param_1->field_0284,local_10->field_081C);
-          if (local_20 != (AiPlrClassTy *)0x0) {
+          if (local_20 != nullptr) {
             uVar4 = local_20->field_065C;
             local_20->field_065C = uVar4 + 1;
           }
-          if (pvVar8 != (void *)0x0) {
+          if (pvVar8 != nullptr) {
             thunk_FUN_006616b0(pvVar8,local_c,uVar4);
           }
           local_10->field_081E = uVar4;
@@ -220,19 +220,19 @@ LAB_00661e5f:
         } while ((int)uVar12 < (int)uVar11);
       }
       if ((((0 < (int)uVar4) && ((int)uVar4 < 0x29)) && (param_1->field_007B == -0x8000)) &&
-         (((AiTactClassTy *)param_1->field_0284 != (AiTactClassTy *)0x0 &&
+         (((AiTactClassTy *)param_1->field_0284 != nullptr &&
           (pvVar8 = (void *)AiTactClassTy::sub_0068E290
                                       ((AiTactClassTy *)param_1->field_0284,local_10->field_081C),
-          pvVar8 != (void *)0x0)))) {
+          pvVar8 != nullptr)))) {
         thunk_FUN_00661790(pvVar8,uVar4,pSVar3->field_081E);
       }
     }
     pIVar9 = thunk_FUN_00674fb0(local_c);
     if ((((uint)pIVar9 & 0x60) != 0) &&
-       (pAVar2 = (AiTactClassTy *)param_1->field_0284, pAVar2 != (AiTactClassTy *)0x0)) {
+       (pAVar2 = (AiTactClassTy *)param_1->field_0284, pAVar2 != nullptr)) {
       ppAVar14 = &local_64;
       for (iVar10 = 0xd; iVar10 != 0; iVar10 = iVar10 + -1) {
-        *ppAVar14 = (AnonShape_0068FD00_A5257008 *)0x0;
+        *ppAVar14 = nullptr;
         ppAVar14 = ppAVar14 + 1;
       }
       local_60 = param_1->field_0280;
@@ -250,10 +250,10 @@ LAB_00661e5f:
     }
     pIVar9 = thunk_FUN_00674fb0(local_c);
     if ((((uint)pIVar9 & 0x10) != 0) &&
-       (pAVar2 = (AiTactClassTy *)param_1->field_0284, pAVar2 != (AiTactClassTy *)0x0)) {
+       (pAVar2 = (AiTactClassTy *)param_1->field_0284, pAVar2 != nullptr)) {
       ppAVar14 = &local_64;
       for (iVar10 = 0xd; iVar10 != 0; iVar10 = iVar10 + -1) {
-        *ppAVar14 = (AnonShape_0068FD00_A5257008 *)0x0;
+        *ppAVar14 = nullptr;
         ppAVar14 = ppAVar14 + 1;
       }
       local_60 = param_1->field_0280;

@@ -24,7 +24,7 @@ ProdPanelTy::PaintTab(ProdPanelTy *this,AnonShape_0053FCD0_D10A885A *param_1,und
   ushort *local_8;
 
   pAVar1 = param_1->field_0014;
-  local_8 = (ushort *)0x0;
+  local_8 = nullptr;
   local_10 = pAVar1->field_000C - this->field_003C;
   if (this->field_005C == 0) {
     local_c = pAVar1->field_0010 - DAT_00806734;
@@ -32,12 +32,12 @@ ProdPanelTy::PaintTab(ProdPanelTy *this,AnonShape_0053FCD0_D10A885A *param_1,und
   else {
     local_c = pAVar1->field_0010 - this->field_0044;
   }
-  if (param_2 != (undefined *)0x0) {
+  if (param_2 != nullptr) {
     local_58.previous = g_currentExceptionFrame;
     g_currentExceptionFrame = &local_58;
     local_14 = this;
     piVar4 = (int *)Library::MSVCRT::__setjmp3(local_58.jumpBuffer,0);
-    if (piVar4 == (int *)0x0) {
+    if (piVar4 == nullptr) {
       iVar8 = 1;
       /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
       uVar5 = (*(code *)param_2)(param_1);
@@ -52,7 +52,7 @@ ProdPanelTy::PaintTab(ProdPanelTy *this,AnonShape_0053FCD0_D10A885A *param_1,und
       cMf32::RecMemFree(g_cMf32_00806790,(uint *)&local_8);
       if (param_1->field_0014->field_0004 == 3) {
         iVar8 = 1;
-        piVar4 = (int *)0x0;
+        piVar4 = nullptr;
         pCVar6 = thunk_FUN_00571240("BUT_BLDFRAME",0);
         local_8 = cMf32::RecGet(g_cMf32_00806790,6,pCVar6,piVar4,iVar8);
         DibPut((AnonShape_006B5B10_E0D06CF1 *)pPVar3->field_0068,local_10,iVar7,'\x06',

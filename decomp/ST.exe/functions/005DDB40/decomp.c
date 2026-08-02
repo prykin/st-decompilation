@@ -22,7 +22,7 @@ undefined4 __fastcall FUN_005ddb40(int param_1)
 
   /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
   if (*(int *)(*(int *)(param_1 + 0x686) + 8) < 1) {
-    pcVar8 = (char *)0x0;
+    pcVar8 = nullptr;
   }
   else {
     /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
@@ -68,7 +68,7 @@ undefined4 __fastcall FUN_005ddb40(int param_1)
         pcVar8 = *(char **)(*(int *)(iVar7 + 0x14) + iVar4 * 4);
       }
       else {
-        pcVar8 = (char *)0x0;
+        pcVar8 = nullptr;
       }
       uVar5 = 0xffffffff;
       do {

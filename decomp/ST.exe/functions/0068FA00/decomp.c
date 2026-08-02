@@ -28,7 +28,7 @@ void __thiscall FUN_0068fa00(void *this,uint *param_1)
         iVar1 = 0;
       }
       this_00 = *(AiFltClassTy **)(iVar1 + 4);
-      if ((this_00 != (AiFltClassTy *)0x0) && (this_00->field_007B == -0x8000)) {
+      if ((this_00 != nullptr) && (this_00->field_007B == -0x8000)) {
         memset(local_38, 0, 0x34); /* compiler bulk-zero initialization */
         local_38[1] = *(undefined4 *)((int)this + 300);
         local_2e = param_1;

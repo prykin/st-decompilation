@@ -26,16 +26,16 @@ undefined4 __thiscall STFieldC::LoadImagSpr(STFieldC *this,uint param_1)
 
   pSVar1 = this->field_0234;
   local_10 = 0;
-  if (pSVar1 == (STFieldC_field_0234DArray *)0x0) {
+  if (pSVar1 == nullptr) {
     return 0;
   }
   if (param_1 < pSVar1->count) {
     element_0234 = DArrayAt<STFieldC_field_0234Element>(pSVar1, param_1);
   }
   else {
-    element_0234 = (STFieldC_field_0234Element *)0x0;
+    element_0234 = nullptr;
   }
-  if ((element_0234 != (STFieldC_field_0234Element *)0x0) && (element_0234->field_0004 != 0xffffffff)) {
+  if ((element_0234 != nullptr) && (element_0234->field_0004 != 0xffffffff)) {
     local_54.previous = g_currentExceptionFrame;
     g_currentExceptionFrame = &local_54;
     errorCode = Library::MSVCRT::__setjmp3(local_54.jumpBuffer,0);
@@ -60,7 +60,7 @@ undefined4 __thiscall STFieldC::LoadImagSpr(STFieldC *this,uint param_1)
       piVar8 = DAT_00806774;
     }
     puVar5 = Library::Ourlib::MFRLOAD::mfRLoad
-                       (piVar8,CASE_1D,text,0xffffffff,0,1,0,(undefined4 *)0x0);
+                       (piVar8,CASE_1D,text,0xffffffff,0,1,0,nullptr);
     ST3DSMAPContext::sub_006E8660
               (g_sT3DSMAPContext_00807598,(int *)&local_8,1,0,*(uint *)((int)puVar5 + 9),
                *(uint *)((int)puVar5 + 0xd),*(int *)(&DAT_007cf6f0 + *puVar4 * 8) / 2,

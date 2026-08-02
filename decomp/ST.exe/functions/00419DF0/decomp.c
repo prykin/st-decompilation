@@ -55,16 +55,16 @@ void __thiscall STGameObjC::SetSelfCheckFlag(STGameObjC *this,int *param_1)
       else if (uVar1 < 0x173) {
         if (uVar1 != 0x172) {
           if (uVar1 == 0x14) {
-            this->field_015D = (DArrayTy *)0x0;
-            this->field_0161 = (DArrayTy *)0x0;
-            this->field_0165 = (DArrayTy *)0x0;
-            this->field_0169 = (DArrayTy *)0x0;
-            this->field_016D = (DArrayTy *)0x0;
-            this->field_0171 = (DArrayTy *)0x0;
-            this->field_0175 = (DArrayTy *)0x0;
-            this->field_0179 = (DArrayTy *)0x0;
-            this->field_017D = (DArrayTy *)0x0;
-            this->field_0181 = (DArrayTy *)0x0;
+            this->field_015D = nullptr;
+            this->field_0161 = nullptr;
+            this->field_0165 = nullptr;
+            this->field_0169 = nullptr;
+            this->field_016D = nullptr;
+            this->field_0171 = nullptr;
+            this->field_0175 = nullptr;
+            this->field_0179 = nullptr;
+            this->field_017D = nullptr;
+            this->field_0181 = nullptr;
             pAVar7 = Library::DKW::LIB::MemAlloc(0x13);
             this->field_0195 = pAVar7;
             pAVar8 = Library::DKW::LIB::MemAlloc(0x13);
@@ -160,26 +160,26 @@ cf_common_exit_00419F6C:
       }
       if (uVar1 == 0x14) {
         arg_1 = &this->field_0171;
-        if (this->field_0171 != (DArrayTy *)0x0) {
+        if (this->field_0171 != nullptr) {
           DArrayDestroy(this->field_0171);
         }
-        if (this->field_0175 != (DArrayTy *)0x0) {
+        if (this->field_0175 != nullptr) {
           DArrayDestroy(this->field_0175);
         }
-        if (this->field_0179 != (DArrayTy *)0x0) {
+        if (this->field_0179 != nullptr) {
           DArrayDestroy(this->field_0179);
         }
-        if (this->field_017D != (DArrayTy *)0x0) {
+        if (this->field_017D != nullptr) {
           DArrayDestroy(this->field_017D);
         }
-        if (this->field_0181 != (DArrayTy *)0x0) {
+        if (this->field_0181 != nullptr) {
           DArrayDestroy(this->field_0181);
         }
-        *arg_1 = (DArrayTy *)0x0;
-        this->field_0175 = (DArrayTy *)0x0;
-        this->field_0179 = (DArrayTy *)0x0;
-        this->field_017D = (DArrayTy *)0x0;
-        this->field_0181 = (DArrayTy *)0x0;
+        *arg_1 = nullptr;
+        this->field_0175 = nullptr;
+        this->field_0179 = nullptr;
+        this->field_017D = nullptr;
+        this->field_0181 = nullptr;
         (*this->vtable->vfunc_40)(arg_1);
         Library::DKW::TBL::FUN_006afe40((int *)&this->field_015D,&(*arg_1)->flags);
         Library::DKW::TBL::FUN_006afe40((int *)&this->field_0161,&this->field_0175->flags);
@@ -222,10 +222,10 @@ cf_common_exit_00419F6C:
     }
     if (uVar1 == 1000) {
       puVar15 = (byte *)(&this->field_0135);
-      if ((DArrayTy *)this->field_0135 != (DArrayTy *)0x0) {
+      if ((DArrayTy *)this->field_0135 != nullptr) {
         DArrayDestroy((DArrayTy *)this->field_0135);
       }
-      if ((DArrayTy *)this->field_0139 != (DArrayTy *)0x0) {
+      if ((DArrayTy *)this->field_0139 != nullptr) {
         DArrayDestroy((DArrayTy *)this->field_0139);
       }
       *puVar15 = 0;
@@ -234,16 +234,16 @@ cf_common_exit_00419F6C:
       Library::DKW::TBL::FUN_006afe40(&this->field_012D,(uint *)*puVar15);
       Library::DKW::TBL::FUN_006afe40(&this->field_0131,(uint *)this->field_0139);
       puVar15 = (byte *)(&this->field_014D);
-      if ((DArrayTy *)this->field_014D != (DArrayTy *)0x0) {
+      if ((DArrayTy *)this->field_014D != nullptr) {
         DArrayDestroy((DArrayTy *)this->field_014D);
       }
-      if ((DArrayTy *)this->field_0151 != (DArrayTy *)0x0) {
+      if ((DArrayTy *)this->field_0151 != nullptr) {
         DArrayDestroy((DArrayTy *)this->field_0151);
       }
-      if ((DArrayTy *)this->field_0155 != (DArrayTy *)0x0) {
+      if ((DArrayTy *)this->field_0155 != nullptr) {
         DArrayDestroy((DArrayTy *)this->field_0155);
       }
-      if ((DArrayTy *)this->field_0159 != (DArrayTy *)0x0) {
+      if ((DArrayTy *)this->field_0159 != nullptr) {
         DArrayDestroy((DArrayTy *)this->field_0159);
       }
       *puVar15 = 0;
@@ -267,11 +267,11 @@ cf_common_exit_00419F6C:
       puVar3[1] = puVar17[1];
       puVar3[2] = puVar17[2];
       puVar3[3] = puVar17[3];
-      if ((DArrayTy *)*puVar15 != (DArrayTy *)0x0) {
+      if ((DArrayTy *)*puVar15 != nullptr) {
         DArrayDestroy((DArrayTy *)*puVar15);
         *puVar15 = 0;
       }
-      if ((DArrayTy *)this->field_019D != (DArrayTy *)0x0) {
+      if ((DArrayTy *)this->field_019D != nullptr) {
         DArrayDestroy((DArrayTy *)this->field_019D);
         this->field_019D = 0;
       }

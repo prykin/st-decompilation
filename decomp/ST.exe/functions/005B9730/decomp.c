@@ -34,7 +34,7 @@ PrividerTy::OutListProc
     }
     STDebugBreak(); /* noreturn in standalone pseudocode */
   }
-  if ((local_c != (AnonShape_005B9730_A5560D7D *)0x0) && (local_c->field_1C82 != (BITMAPINFO *)0x0))
+  if ((local_c != nullptr) && (local_c->field_1C82 != nullptr))
   {
     bVar2 = 0;
     local_8 = local_8 & 0xffffff00;
@@ -48,7 +48,7 @@ PrividerTy::OutListProc
     } while (bVar2 < 0x16);
     if (bVar4 != 0xff) {
       Library::DKW::DDX::FUN_006b4680
-                (param_1,param_4,param_5,local_c->field_1C82,(uint *)0x0,0,param_5 + -0x67,param_6,
+                (param_1,param_4,param_5,local_c->field_1C82,nullptr,0,param_5 + -0x67,param_6,
                  param_7,0);
     }
   }

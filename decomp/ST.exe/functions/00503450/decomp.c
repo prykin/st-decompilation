@@ -140,13 +140,13 @@ LAB_005035b5:
       }
       sub_004F17D0(this_00,1,(byte)local_c);
       if (this_00->field_0BA0 == '\0') {
-        local_14 = (uint *)0x0;
+        local_14 = nullptr;
       }
       else {
         /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
         local_14 = (uint *)(uint)*(byte *)((int)this_00->field_0B1F + uVar13 + 0x89);
       }
-      pcVar21 = (char *)0x0;
+      pcVar21 = nullptr;
       puVar18 = &this_00->field_0x780 + uVar13 * 0x27;
       uVar17 = 0;
       uVar16 = 1;
@@ -188,7 +188,7 @@ LAB_005036ae:
     local_3c = 0xb20e;
     local_44 = local_64;
     (*this_00->field_000C->vtable->CreateObject)
-              ((SystemClassTy *)this_00->field_000C,9,&this_00->field_02FE,(int *)0x0,local_74,0);
+              ((SystemClassTy *)this_00->field_000C,9,&this_00->field_02FE,nullptr,local_74,0);
     sub_004F1610(this_00,'\x01');
     uVar13 = this_00->field_09C0[0];
     if (uVar13 == 0) goto LAB_00503776;

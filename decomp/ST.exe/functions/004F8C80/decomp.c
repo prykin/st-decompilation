@@ -45,8 +45,8 @@ uint __thiscall CPanelTy::PaintSMap(CPanelTy *this)
     return extraout_EAX;
   }
   if ((uint)(local_8->field_0038 - local_8->field_0998) < 100) {
-    if ((g_sT3DSMAPContext_00807598->field_0442 == 0) &&
-       (g_sT3DSMAPContext_00807598->field_0446 == 0)) {
+    if ((g_sT3DSMAPContext_00807598->field_0442 == nullptr) &&
+       (g_sT3DSMAPContext_00807598->field_0446 == nullptr)) {
       uVar4 = 0;
     }
     else {
@@ -78,8 +78,8 @@ uint __thiscall CPanelTy::PaintSMap(CPanelTy *this)
     ccFntTy::SetSurf(pCVar3->field_01BC,pCVar3->field_0190,0,(DAT_0080874e == '\x03') + 7,0x10,0x28,
                      0xb);
     uVar4 = (uint)DAT_0080874d;
-    if ((&DAT_008087f7)[uVar4 * 0x51] == '\0') {
-      uVar7 = *(int *)(&DAT_008087f8 + uVar4 * 0x51) + pCVar3->field_09A0;
+    if (g_bulkInitializedRecords_008087C7[uVar4].field_0030 == 0) {
+      uVar7 = *(int *)&g_bulkInitializedRecords_008087C7[uVar4].field_0x31 + pCVar3->field_09A0;
       uVar4 = uVar7 / 0xe10;
       cVar9 = (char)uVar4;
       /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
@@ -102,9 +102,9 @@ uint __thiscall CPanelTy::PaintSMap(CPanelTy *this)
                               (uint)(DAT_0080874e == '\x03'),-1,-1);
     }
     else {
-      uVar7 = pCVar3->field_09A0 - *(int *)(&DAT_008087fc + uVar4 * 0x51);
-      if (uVar7 < *(uint *)(&DAT_008087f8 + uVar4 * 0x51)) {
-        uVar7 = *(uint *)(&DAT_008087f8 + uVar4 * 0x51) - uVar7;
+      uVar7 = pCVar3->field_09A0 - *(int *)&g_bulkInitializedRecords_008087C7[uVar4].field_0x35;
+      if (uVar7 < *(uint *)&g_bulkInitializedRecords_008087C7[uVar4].field_0x31) {
+        uVar7 = *(uint *)&g_bulkInitializedRecords_008087C7[uVar4].field_0x31 - uVar7;
         uVar4 = uVar7 / 0xe10;
         cVar9 = (char)uVar4;
         /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */

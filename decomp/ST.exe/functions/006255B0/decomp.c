@@ -27,7 +27,7 @@ FUN_006255b0(void *this,int param_1,undefined4 param_2,int param_3,int param_4,
     *(int *)((int)this + 0x2c6) = iVar1;
     *(int *)((int)this + 0x2ca) = param_6;
   }
-  else if (((1 < param_1) && (param_1 < 4)) && (*(int **)((int)this + 0x245) != (int *)0x0)) {
+  else if (((1 < param_1) && (param_1 < 4)) && (*(int **)((int)this + 0x245) != nullptr)) {
     /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
     iVar2 = (**(code **)(**(int **)((int)this + 0x245) + 0xe0))
                       (*(undefined4 *)((int)this + 0x249),(int)&param_1 + 2,(int)&param_8 + 2,

@@ -20,7 +20,7 @@ FSGSTy::ChangePlayerPing(FSGSTy *this,undefined4 param_1,int param_2,undefined4 
   FSGSTy *local_8;
 
   if (((this->field_1A5F == CASE_6) && (this->field_1A60 == '\0')) &&
-     (this->field_1EA6 != (DArrayTy *)0x0)) {
+     (this->field_1EA6 != nullptr)) {
     local_4c.previous = g_currentExceptionFrame;
     g_currentExceptionFrame = &local_4c;
     local_8 = this;
@@ -31,14 +31,14 @@ FSGSTy::ChangePlayerPing(FSGSTy *this,undefined4 param_1,int param_2,undefined4 
       uVar2 = pDVar1->count;
       if (uVar2 != 0) {
         if (uVar2 == 0) {
-          pvVar4 = (void *)0x0;
+          pvVar4 = nullptr;
           goto LAB_005a2c91;
         }
         do {
           /* ST_PSEUDO[dynamic_array_indexing]: expected DArrayAt<T>(pDVar1, uVar6) (runtime stride) */
           pvVar4 = (void *)(pDVar1->elementSize * uVar6 + (int)pDVar1->data);
 LAB_005a2c91:
-          if ((pvVar4 != (void *)0x0) && (*(int *)((int)pvVar4 + 0x21) == param_2)) {
+          if ((pvVar4 != nullptr) && (*(int *)((int)pvVar4 + 0x21) == param_2)) {
             *(undefined4 *)((int)pvVar4 + 0x29) = param_3;
             break;
           }

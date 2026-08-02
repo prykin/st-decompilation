@@ -15,7 +15,7 @@ undefined4 * __cdecl FUN_0065c9e0(char *source)
   InternalExceptionFrame local_4c;
   AnonShape_0065C9E0_147DDF60 *local_8;
 
-  local_8 = (AnonShape_0065C9E0_147DDF60 *)0x0;
+  local_8 = nullptr;
   local_4c.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_4c;
   exceptionCode = Library::MSVCRT::__setjmp3(local_4c.jumpBuffer,0);
@@ -24,9 +24,9 @@ undefined4 * __cdecl FUN_0065c9e0(char *source)
     local_8->field_0001 = 0x49f;
     local_8->field_0005 = 2;
     Library::MSVCRT::_strncpy(&local_8->field_0x6,source,0x3f);
-    pDVar1 = Library::DKW::TBL::SArrayCreate((DArrayTy *)0x0,5,5);
+    pDVar1 = Library::DKW::TBL::SArrayCreate(nullptr,5,5);
     local_8->field_0456 = &pDVar1->flags;
-    pDVar1 = Library::DKW::TBL::DArrayCreate((DArrayTy *)0x0,5,0x1b,5);
+    pDVar1 = Library::DKW::TBL::DArrayCreate(nullptr,5,0x1b,5);
     local_8->field_0462 = &pDVar1->flags;
     thunk_FUN_0064a6f0((int *)&local_8[1].field_0x6,10);
     g_currentExceptionFrame = local_4c.previous;
@@ -35,6 +35,6 @@ undefined4 * __cdecl FUN_0065c9e0(char *source)
   g_currentExceptionFrame = local_4c.previous;
   thunk_FUN_0065d0f0((int *)&local_8);
   RaiseInternalException(exceptionCode,0,"E:\\__titans\\ai\\ai_event_d.cpp",0x21);
-  return (undefined4 *)0x0;
+  return nullptr;
 }
 

@@ -32,12 +32,12 @@ CGenerate::sub_00695C10
   local_20 = (undefined1)param_3;
   local_1b = param_4;
   local_17 = param_5;
-  if (this->field_5853 == (CGenerate_field_5853DArray *)0x0) {
+  if (this->field_5853 == nullptr) {
     pCVar1 = (CGenerate_field_5853DArray *)
-             Library::DKW::TBL::DArrayCreate((DArrayTy *)0x0,10,0x1d,10);
+             Library::DKW::TBL::DArrayCreate(nullptr,10,0x1d,10);
     this->field_5853 = pCVar1;
   }
-  if (this->field_5853 != (CGenerate_field_5853DArray *)0x0) {
+  if (this->field_5853 != nullptr) {
     uVar2 = Library::DKW::TBL::DArrayAppend((DArrayTy *)this->field_5853,&local_24);
     return uVar2;
   }

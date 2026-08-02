@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* [STSwitchEnumApplier] Switch target param_1 uses
    /SubmarineTitans/Recovered/Enums/Global_sub_00498D20_param_1Enum. Cases:
@@ -221,7 +223,7 @@ STGroupBoatC::sub_00498D20
     if (this->field_00E7 == 0) {
       data = this->field_00EF;
       uVar7 = data->count;
-      pDVar3 = Library::DKW::TBL::DArrayCreate((DArrayTy *)0x0,uVar7,4,1);
+      pDVar3 = Library::DKW::TBL::DArrayCreate(nullptr,uVar7,4,1);
       uVar8 = 0;
       this->field_00EF = pDVar3;
       if (0 < (int)uVar7) {
@@ -246,7 +248,7 @@ STGroupBoatC::sub_00498D20
     if (this->field_015C == 0) {
       data = this->field_0160;
       uVar7 = data->count;
-      pDVar3 = Library::DKW::TBL::DArrayCreate((DArrayTy *)0x0,uVar7,2,1);
+      pDVar3 = Library::DKW::TBL::DArrayCreate(nullptr,uVar7,2,1);
       uVar8 = 0;
       this->field_0160 = pDVar3;
       if (0 < (int)uVar7) {
@@ -271,7 +273,7 @@ STGroupBoatC::sub_00498D20
     if (this->field_0164 == 0) {
       data = this->field_0168;
       uVar7 = data->count;
-      pDVar3 = Library::DKW::TBL::DArrayCreate((DArrayTy *)0x0,uVar7,2,1);
+      pDVar3 = Library::DKW::TBL::DArrayCreate(nullptr,uVar7,2,1);
       uVar8 = 0;
       this->field_0168 = pDVar3;
       if (0 < (int)uVar7) {
@@ -292,7 +294,7 @@ STGroupBoatC::sub_00498D20
     this->field_0107 = data->iteratorIndex;
     pDVar3 = *ppDVar5;
     data = (DArrayTy *)pDVar3->count;
-    pDVar1 = Library::DKW::TBL::DArrayCreate((DArrayTy *)0x0,1,6,1);
+    pDVar1 = Library::DKW::TBL::DArrayCreate(nullptr,1,6,1);
     *ppDVar5 = pDVar1;
     uVar7 = 0;
     if (0 < (int)data) {
@@ -302,7 +304,7 @@ STGroupBoatC::sub_00498D20
           puVar2 = (undefined4 *)(pDVar3->elementSize * uVar7 + (int)pDVar3->data);
         }
         else {
-          puVar2 = (undefined4 *)0x0;
+          puVar2 = nullptr;
         }
         local_10 = *puVar2;
         local_c = *(undefined2 *)(puVar2 + 1);
@@ -329,7 +331,7 @@ STGroupBoatC::sub_00498D20
     if (this->field_010B == 0) {
       data = this->field_010F;
       uVar7 = data->count;
-      pDVar3 = Library::DKW::TBL::DArrayCreate((DArrayTy *)0x0,uVar7,2,1);
+      pDVar3 = Library::DKW::TBL::DArrayCreate(nullptr,uVar7,2,1);
       uVar8 = 0;
       this->field_010F = pDVar3;
       if (0 < (int)uVar7) {
@@ -343,7 +345,7 @@ STGroupBoatC::sub_00498D20
     if (this->field_0123 == 0) {
       data = this->field_0127;
       uVar7 = data->count;
-      pDVar3 = Library::DKW::TBL::DArrayCreate((DArrayTy *)0x0,uVar7,2,1);
+      pDVar3 = Library::DKW::TBL::DArrayCreate(nullptr,uVar7,2,1);
       uVar8 = 0;
       this->field_0127 = pDVar3;
       if (0 < (int)uVar7) {
@@ -453,8 +455,8 @@ LAB_00499129:
   case CASE_66:
     this->field_0061 = 1;
     this->field_0071 = 1;
-    if (this->field_01CA == (DArrayTy *)0x0) {
-      pDVar3 = Library::DKW::TBL::DArrayCreate((DArrayTy *)0x0,1,2,1);
+    if (this->field_01CA == nullptr) {
+      pDVar3 = Library::DKW::TBL::DArrayCreate(nullptr,1,2,1);
       this->field_01CA = pDVar3;
     }
     Library::DKW::TBL::DArrayAppend(this->field_01CA,data);
@@ -462,8 +464,8 @@ LAB_00499129:
   case CASE_67:
     this->field_0061 = 1;
     this->field_0075 = 1;
-    if (this->field_01CE == (DArrayTy *)0x0) {
-      pDVar3 = Library::DKW::TBL::DArrayCreate((DArrayTy *)0x0,1,4,1);
+    if (this->field_01CE == nullptr) {
+      pDVar3 = Library::DKW::TBL::DArrayCreate(nullptr,1,4,1);
       this->field_01CE = pDVar3;
     }
     Library::DKW::TBL::DArrayAppend(this->field_01CE,data);
@@ -472,7 +474,7 @@ LAB_00499129:
     this->field_0061 = 1;
     this->field_0079 = 1;
     if (*(int *)&this->field_0x1d2 == 0) {
-      pDVar3 = Library::DKW::TBL::DArrayCreate((DArrayTy *)0x0,1,2,1);
+      pDVar3 = Library::DKW::TBL::DArrayCreate(nullptr,1,2,1);
       *(DArrayTy **)&this->field_0x1d2 = pDVar3;
     }
     Library::DKW::TBL::DArrayAppend(*(DArrayTy **)&this->field_0x1d2,data);
@@ -480,8 +482,8 @@ LAB_00499129:
   case CASE_69:
     this->field_0061 = 1;
     this->field_007D = 1;
-    if (this->field_01D6 == (DArrayTy *)0x0) {
-      pDVar3 = Library::DKW::TBL::DArrayCreate((DArrayTy *)0x0,1,2,1);
+    if (this->field_01D6 == nullptr) {
+      pDVar3 = Library::DKW::TBL::DArrayCreate(nullptr,1,2,1);
       this->field_01D6 = pDVar3;
     }
     Library::DKW::TBL::DArrayAppend(this->field_01D6,data);
@@ -489,8 +491,8 @@ LAB_00499129:
   case CASE_6A:
     this->field_0061 = 1;
     this->field_0081 = 1;
-    if (this->field_01DA == (DArrayTy *)0x0) {
-      pDVar3 = Library::DKW::TBL::DArrayCreate((DArrayTy *)0x0,1,2,1);
+    if (this->field_01DA == nullptr) {
+      pDVar3 = Library::DKW::TBL::DArrayCreate(nullptr,1,2,1);
       this->field_01DA = pDVar3;
     }
     Library::DKW::TBL::DArrayAppend(this->field_01DA,data);

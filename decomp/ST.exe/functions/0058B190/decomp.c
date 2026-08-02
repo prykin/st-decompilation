@@ -262,7 +262,7 @@ LAB_0058b5ac:
                ((g_worldGrid.sizeZ <= sVar2 ||
                 (g_worldGrid.cells
                  [(int)sVar10 * (int)g_worldGrid.sizeX + (int)g_worldGrid.planeStride * (int)sVar2 +
-                  (int)sVar9].objects[0] == (STWorldObject *)0x0)))))))) {
+                  (int)sVar9].objects[0] == nullptr)))))))) {
             if (iVar3 != local_8) {
               local_c = (int)(short)((short)iVar3 * 200 + 100);
             }

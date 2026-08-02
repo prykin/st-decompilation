@@ -33,7 +33,7 @@ int __thiscall STParticleC::sub_00629E60(STParticleC *this,int param_1)
       break;
     case CASE_3:
     case CASE_4:
-      if (this->field_00EB != (AnonPointee_STParticleC_00EB *)0x0) {
+      if (this->field_00EB != nullptr) {
         sub_00629F20(this);
       }
       iVar2 = InitVisibelDeton(this,1);

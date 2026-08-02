@@ -14,13 +14,13 @@ void __cdecl PutDDX(int param_1,int param_2,char param_3,BITMAPINFO *param_4)
   int iVar2;
   InternalExceptionFrame local_48;
 
-  if ((g_dDXContext_0080759C != (DDXContext *)0x0) && (param_4 != (BITMAPINFO *)0x0)) {
+  if ((g_dDXContext_0080759C != nullptr) && (param_4 != nullptr)) {
     local_48.previous = g_currentExceptionFrame;
     g_currentExceptionFrame = &local_48;
     errorCode = Library::MSVCRT::__setjmp3(local_48.jumpBuffer,0);
     if (errorCode == 0) {
       if (param_3 == '\x01') {
-        FUN_006b4640(g_dDXContext_0080759C,param_1,param_2,param_4,(uint *)0x0);
+        FUN_006b4640(g_dDXContext_0080759C,param_1,param_2,param_4,nullptr);
       }
       else if (param_3 == '\x06') {
         Library::DKW::DDX::FUN_006b82e0

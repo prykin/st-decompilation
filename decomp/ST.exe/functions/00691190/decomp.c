@@ -34,9 +34,9 @@ byte * __cdecl TactDataPack(undefined4 *param_1,uint *param_2)
   int local_c;
   AnonShape_00691190_783A1B6D *local_8;
 
-  local_8 = (AnonShape_00691190_783A1B6D *)0x0;
+  local_8 = nullptr;
   local_c = 0;
-  local_14 = (void *)0x0;
+  local_14 = nullptr;
   local_18 = 0;
   local_68.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_68;
@@ -71,7 +71,7 @@ byte * __cdecl TactDataPack(undefined4 *param_1,uint *param_2)
     iVar2 = local_18;
     local_8 = pAVar3;
     do {
-      if (*(uint **)(&pAVar3->field_0x85 + iVar9) != (uint *)0x0) {
+      if (*(uint **)(&pAVar3->field_0x85 + iVar9) != nullptr) {
         FUN_006affc0(*(uint **)(&pAVar3->field_0x85 + iVar9),puVar11,&local_c);
         *(int *)(&local_8->field_0x89 + iVar9) = (int)puVar11 + (-0x10b - (int)local_8);
         puVar11 = (uint *)((int)puVar11 + *(int *)(&local_8->field_0x8d + iVar9));
@@ -98,16 +98,14 @@ byte * __cdecl TactDataPack(undefined4 *param_1,uint *param_2)
             iVar9 = 0;
           }
           if (*(int *)(iVar9 + 4) == 0) {
-            pAVar4 = (AnonShape_GLOBAL_008489C4_F7BABFAC *)0x0;
+            pAVar4 = nullptr;
           }
           else {
             pAVar4 = (AnonShape_GLOBAL_008489C4_F7BABFAC *)(*(int *)(iVar9 + 4) + 0x20);
           }
-          if (pAVar4 != (AnonShape_GLOBAL_008489C4_F7BABFAC *)0x0) {
+          if (pAVar4 != nullptr) {
             local_1c = FltDataPack(pAVar4,&local_10);
-            local_8 = Library::DKW::LIB::MemRealloc
-                                ((AnonPointee_TLOBaseTy_0607 *)local_8,
-                                 local_8->field_0014 + local_10);
+            local_8 = Library::DKW::LIB::MemRealloc(local_8,local_8->field_0014 + local_10);
             pbVar5 = local_1c;
             pbVar12 = &local_8[1].field_0x3 + iVar2;
             memmove(pbVar12, pbVar5, local_10); /* compiler REP MOVS byte copy */
@@ -115,7 +113,7 @@ byte * __cdecl TactDataPack(undefined4 *param_1,uint *param_2)
             local_8->field_0014 = local_8->field_0014 + local_10;
             local_8->field_0105 = local_8->field_0105 + 1;
             local_18 = iVar2;
-            if (local_1c != (byte *)0x0) {
+            if (local_1c != nullptr) {
               FreeAndNull(&local_1c);
             }
           }
@@ -131,17 +129,17 @@ byte * __cdecl TactDataPack(undefined4 *param_1,uint *param_2)
     return (byte *)pAVar3;
   }
   g_currentExceptionFrame = local_68.previous;
-  if (local_8 != (AnonShape_00691190_783A1B6D *)0x0) {
+  if (local_8 != nullptr) {
     FreeAndNull(&local_8);
   }
-  if (local_14 != (void *)0x0) {
+  if (local_14 != nullptr) {
     FreeAndNull(&local_14);
   }
   iVar9 = ReportDebugMessage("E:\\__titans\\ai\\ai_tact_d.cpp",0x8c,0,iVar2,"%s",
                              "TactDataPack");
   if (iVar9 == 0) {
     RaiseInternalException(iVar2,0,"E:\\__titans\\ai\\ai_tact_d.cpp",0x8d);
-    return (byte *)0x0;
+    return nullptr;
   }
   STDebugBreak(); /* noreturn in standalone pseudocode */
 }

@@ -28,7 +28,7 @@ int __thiscall STBoatC::BackBring(STBoatC *this,int *param_1)
       ((sVar2 < g_worldGrid.sizeZ &&
        ((this_00 = g_worldGrid.cells
                    [(int)g_worldGrid.planeStride * (int)sVar2 + (int)g_worldGrid.sizeX * (int)sVar3
-                    + (int)sVar1].objects[0], this_00 != (STWorldObject *)0x0 &&
+                    + (int)sVar1].objects[0], this_00 != nullptr &&
         (*(int *)&this_00->field_0x18 == this->field_0679)))))) && (this->field_0675 == 99)) {
     thunk_FUN_004b7d50(this_00,this);
   }

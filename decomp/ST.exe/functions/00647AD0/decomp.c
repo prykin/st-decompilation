@@ -14,11 +14,11 @@ AiBossClassTy * __thiscall AiBossClassTy::AiBossClassTy(AiBossClassTy *this)
   thunk_FUN_0064cc90(&this->vtable_at_1c);
   this->vtable = (AiBossClassTyVTable_at_1C *)&AiBossClassTyVTable;
   this->vtable_at_1c = &AiBossClassTyVTable_at_1C;
-  if (this != (AiBossClassTy *)0x0) {
+  if (this != nullptr) {
     memset(&this->field_0x5d3, 0, 0x85); /* compiler bulk-zero initialization */
     return this;
   }
-  memset((void *)0x0, 0, 0x85); /* compiler bulk-zero initialization */
-  return (AiBossClassTy *)0x0;
+  memset(nullptr, 0, 0x85); /* compiler bulk-zero initialization */
+  return nullptr;
 }
 

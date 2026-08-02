@@ -23,7 +23,7 @@ int __thiscall STAllPlayersC::_ChangeMD(STAllPlayersC *this,int param_1,int *par
   /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
   param_2 = (int *)GetObjPtr(this,objPtr,(ushort)param_3,CASE_1);
   /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
-  if ((STGameObjC *)param_2 == (STGameObjC *)0x0) {
+  if ((STGameObjC *)param_2 == nullptr) {
     iVar4 = ReportDebugMessage("E:\\__titans\\wlad\\to_allpl.cpp",0x21d0,0,0,"%s",
                                "STAllPlayersC::_ChangeMD");
     if (iVar4 != 0) {
@@ -40,12 +40,12 @@ int __thiscall STAllPlayersC::_ChangeMD(STAllPlayersC *this,int param_1,int *par
     iVar4 = _SubMDObject(piVar3,uVar6);
   }
   if ((((iVar4 == 1) &&
-       (array = (DArrayTy *)g_packedRecords_A62x8[(int)piVar3].field5_0x5, array != (DArrayTy *)0x0)
+       (array = (DArrayTy *)g_packedRecords_A62x8[(int)piVar3].field5_0x5, array != nullptr)
        ) && (dVar1 = array->count, dVar1 != 0)) && (uVar6 = 0, 0 < (int)dVar1)) {
     do {
       DArrayGetElement(array,uVar6,&param_2);
       /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-      if ((param_2 != (int *)0x0) && (iVar5 = (**(code **)(*param_2 + 0xc))(), iVar5 == 8)) {
+      if ((param_2 != nullptr) && (iVar5 = (**(code **)(*param_2 + 0xc))(), iVar5 == 8)) {
         /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
         (**(code **)(*param_2 + 0x10))(param_1,param_3);
       }

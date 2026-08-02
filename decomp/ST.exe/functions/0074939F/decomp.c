@@ -10,7 +10,7 @@ undefined4 FUN_0074939f(int *param_1)
   pAVar1 = (AnonShape_0074931D_CA8B6F7D *)(param_1 + -3);
   lpCriticalSection =
        (LPCRITICAL_SECTION)
-       (-(uint)(pAVar1 != (AnonShape_0074931D_CA8B6F7D *)0x0) & (uint)(param_1 + 1));
+       (-(uint)(pAVar1 != nullptr) & (uint)(param_1 + 1));
   EnterCriticalSection(lpCriticalSection);
   if ((param_1[0x11] == 0) && (param_1[0x12] == 0)) {
     LeaveCriticalSection(lpCriticalSection);

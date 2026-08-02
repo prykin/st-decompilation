@@ -36,7 +36,7 @@ int __thiscall AiPlrClassTy::CloseAllTact(AiPlrClassTy *this)
     RaiseInternalException(iVar4,0,"E:\\__titans\\ai\\ai_plr.cpp",0x10f);
     return iVar4;
   }
-  if (local_8->field_0695 == (DArrayTy *)0x0) {
+  if (local_8->field_0695 == nullptr) {
     RaiseInternalException
               (-0x34,g_overwriteContext_007ED77C,"E:\\__titans\\ai\\ai_plr.cpp",0xfd);
   }
@@ -55,9 +55,9 @@ int __thiscall AiPlrClassTy::CloseAllTact(AiPlrClassTy *this)
       return 0;
     }
     pDVar1 = pAVar3->field_0695;
-    if (((pDVar1 == (DArrayTy *)0x0) || ((int)index < 0)) || ((int)pDVar1->count <= (int)index)) {
+    if (((pDVar1 == nullptr) || ((int)index < 0)) || ((int)pDVar1->count <= (int)index)) {
 LAB_00679519:
-      this_00 = (AiTactClassTy *)0x0;
+      this_00 = nullptr;
     }
     else {
       if (index < pDVar1->count) {
@@ -65,12 +65,12 @@ LAB_00679519:
         puVar5 = (undefined4 *)(pDVar1->elementSize * index + (int)pDVar1->data);
       }
       else {
-        puVar5 = (undefined4 *)0x0;
+        puVar5 = nullptr;
       }
       if (puVar5[1] == 0) goto LAB_00679519;
       this_00 = (AiTactClassTy *)*puVar5;
     }
-    if (this_00 != (AiTactClassTy *)0x0) {
+    if (this_00 != nullptr) {
       if (&stack0x00000000 != (undefined1 *)0x3c) {
         AiTactClassTy::GetAiMess(this_00,local_3c);
       }

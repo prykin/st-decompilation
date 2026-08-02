@@ -61,7 +61,7 @@ void FUN_00760100(AnonShape_00760100_BE153D7B *param_1,int param_2,int *param_3,
           /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
           local_c._0_2_ = 0;
           local_18 = 0;
-          for (pAVar14 = pAVar4; pAVar14 != (AnonShape_0075FEE0_E0ABA202 *)0x0;
+          for (pAVar14 = pAVar4; pAVar14 != nullptr;
               pAVar14 = (AnonShape_0075FEE0_E0ABA202 *)&pAVar14[-1].field_0x1bf) {
             uVar9 = (uint)*(byte *)((uint)*pbVar12 + iVar5 + (psVar15[iVar17] + 8 + iVar8 >> 4));
             bVar1 = *(byte *)(uVar9 + iVar6);

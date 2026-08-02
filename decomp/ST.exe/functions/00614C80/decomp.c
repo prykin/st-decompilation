@@ -65,7 +65,7 @@ FUN_00614c80(void *this,int param_1,int param_2,int param_3,int param_4,int para
     param_1 = (int)Library::DKW::LIB::MemAlloc(uVar4 * 4);
     iVar5 = thunk_FUN_0060e210(&local_24,&local_14,4,param_1,uVar4);
     if (iVar5 == 0) {
-      if (*(undefined4 **)((int)this + 0x2e5) == (undefined4 *)0x0) {
+      if (*(undefined4 **)((int)this + 0x2e5) == nullptr) {
         *(uint *)((int)this + 0x2e1) = uVar4;
         *(void **)((int)this + 0x2e5) = (void *)param_1;
         return param_8;

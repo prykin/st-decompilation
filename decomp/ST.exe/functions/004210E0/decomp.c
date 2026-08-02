@@ -78,9 +78,9 @@ undefined4 * __thiscall STAllPlayersC::SaveGObjData(STAllPlayersC *this,int *par
         puVar17 = (byte *)(puVar17 + 1);
         local_20 = (uint *)((int)local_20 + -1);
         *param_1 = iVar16 + local_8;
-      } while (local_20 != (uint *)0x0);
+      } while (local_20 != nullptr);
       iVar16 = iVar16 + local_8 + 0x4bc;
-      local_20 = (uint *)0x0;
+      local_20 = nullptr;
     }
     else if (iVar18 == 0x1ae) {
       iVar16 = iVar16 + 0x146;
@@ -98,7 +98,7 @@ undefined4 * __thiscall STAllPlayersC::SaveGObjData(STAllPlayersC *this,int *par
         puVar17 = (byte *)(puVar17 + 1);
         local_20 = (uint *)((int)local_20 + -1);
         *param_1 = *param_1 + local_8;
-      } while (local_20 != (uint *)0x0);
+      } while (local_20 != nullptr);
       puVar17 = (byte *)(&pSVar15->field_014D);
       local_20 = (uint *)0x4;
       do {
@@ -111,7 +111,7 @@ undefined4 * __thiscall STAllPlayersC::SaveGObjData(STAllPlayersC *this,int *par
         puVar17 = (byte *)(puVar17 + 1);
         *param_1 = iVar16 + local_8;
         local_20 = (uint *)((int)local_20 + -1);
-      } while (local_20 != (uint *)0x0);
+      } while (local_20 != nullptr);
       *param_1 = iVar16 + local_8 + 0x272;
       local_c = (AnonShape_004210E0_306A4C8B *)
                 FUN_006b0020((uint *)pSVar15->field_019D,(int *)&local_8);

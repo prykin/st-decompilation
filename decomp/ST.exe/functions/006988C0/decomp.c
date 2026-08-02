@@ -33,7 +33,7 @@ void __thiscall CGenerate::sub_006988C0(CGenerate *this)
   int local_c;
   AnonShape_00697AF0_A94F4D28 *pAStack_8;
 
-  if (this->field_5853 != (CGenerate_field_5853DArray *)0x0) {
+  if (this->field_5853 != nullptr) {
     dVar7 = this->field_5853->count;
     local_30 = 0;
     local_34 = dVar7;
@@ -46,7 +46,7 @@ void __thiscall CGenerate::sub_006988C0(CGenerate *this)
                       ((int)&pCVar1->data->field_0000 + pCVar1->elementSize * local_30);
         }
         else {
-          pAStack_8 = (AnonShape_00697AF0_A94F4D28 *)0x0;
+          pAStack_8 = nullptr;
         }
         pAVar8 = pAStack_8;
         if (((0 < *(int *)&pAStack_8->field_0x0) && (*(int *)&pAStack_8->field_0x9 == 4)) &&
@@ -99,7 +99,7 @@ LAB_00698a36:
             pDVar5 = pAVar8->field_0015;
             uVar3 = 0;
             local_c = 0;
-            if ((pDVar5 != (DArrayTy *)0x0) && (uVar6 = pDVar5->count, 0 < (int)uVar6)) {
+            if ((pDVar5 != nullptr) && (uVar6 = pDVar5->count, 0 < (int)uVar6)) {
               bVar10 = uVar6 != 0;
               do {
                 if (bVar10) {
@@ -107,7 +107,7 @@ LAB_00698a36:
                   pbVar4 = (byte *)(pDVar5->elementSize * uVar3 + (int)pDVar5->data);
                 }
                 else {
-                  pbVar4 = (byte *)0x0;
+                  pbVar4 = nullptr;
                 }
                 if ((pbVar4[1] == 0) && ((*pbVar4 & 2) != 0)) {
                   local_c = local_c + 1;
@@ -137,7 +137,7 @@ LAB_00698a36:
                     pbVar4 = (byte *)(pDVar5->elementSize * local_2c + (int)pDVar5->data);
                   }
                   else {
-                    pbVar4 = (byte *)0x0;
+                    pbVar4 = nullptr;
                   }
                   if (pbVar4[1] == 0) {
                     local_24 = *(int *)(pbVar4 + 2) / this->field_5833;

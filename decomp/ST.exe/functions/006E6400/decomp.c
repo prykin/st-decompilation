@@ -6,21 +6,21 @@
 
 void __thiscall
 ST3DSMAPContext::sub_006E6400
-          (ST3DSMAPContext *this,undefined4 *param_1,undefined4 param_2,undefined4 param_3,
+          (ST3DSMAPContext *this,undefined4 *param_1,undefined4 param_2,int param_3,
           undefined4 param_4)
 
 {
-  *(undefined4 *)&this->field_0x3dc = param_3;
-  *(undefined4 *)&this->field_0x424 = param_3;
-  *(undefined4 *)&this->field_0x43e = param_2;
+  this->field_03DC = param_3;
+  this->field_0424 = param_3;
+  this->field_043E = param_2;
   this->field_0418 = 0xffffffff;
-  *(undefined4 *)&this->field_0x3e4 = param_4;
-  *(undefined4 *)&this->field_0x3e0 = 1;
-  if (param_1 != (undefined4 *)0x0) {
-    *(undefined4 *)&this->field_0x428 = *param_1;
-    *(undefined4 *)&this->field_0x42c = param_1[1];
-    *(undefined4 *)&this->field_0x430 = param_1[2];
-    *(undefined4 *)&this->field_0x434 = param_1[3];
+  this->field_03E4 = param_4;
+  this->field_03E0 = 1;
+  if (param_1 != nullptr) {
+    this->field_0428 = *param_1;
+    this->field_042C = param_1[1];
+    this->field_0430 = param_1[2];
+    this->field_0434 = param_1[3];
   }
   return;
 }

@@ -19,7 +19,7 @@ void __thiscall STArtiafactC::sub_005F0D00(STArtiafactC *this)
   ushort local_c;
   undefined2 local_a;
 
-  if (DAT_008117bc != (undefined4 *)0x0) {
+  if (DAT_008117bc != nullptr) {
     memset(local_24, 0, 0x20); /* compiler bulk-zero initialization */
     local_e = this->field_0032;
     if ((this->field_030D == '\0') || (this->field_030E == 0xff)) {

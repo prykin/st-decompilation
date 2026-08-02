@@ -131,7 +131,7 @@ LAB_004ca835:
     }
   }
   thunk_FUN_004abce0(this_00,bVar6,0,0,'\0');
-  puVar8 = (uint *)0x0;
+  puVar8 = nullptr;
 cf_common_exit_004CAAA4:
   STT3DSprC::SetCurFase((STT3DSprC *)this_00,bVar6,(uint)puVar8);
   STT3DSprC::StartShow((STT3DSprC *)this_00,bVar6,g_playSystem_00802A38->field_00E4);

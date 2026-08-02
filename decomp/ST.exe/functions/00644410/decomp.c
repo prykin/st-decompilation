@@ -49,7 +49,7 @@ SubmarineTitans::Recovered::HiddenThis::AnonReceiver_00644410::FUN_00644410
   local_40 = (int)*(short *)&this->field_0x43;
   local_44 = (int)*(short *)&this->field_0x45;
   local_14 = 0;
-  local_18 = (undefined4 *)0x0;
+  local_18 = nullptr;
   if ((byte)this->field_0x27d < 2) {
     *param_2 = local_3c;
     *param_3 = local_40;
@@ -143,24 +143,24 @@ SubmarineTitans::Recovered::HiddenThis::AnonReceiver_00644410::FUN_00644410
                       if (((((sVar9 < 0) || (g_worldGrid.sizeX <= sVar9)) || (sVar2 < 0)) ||
                           ((g_worldGrid.sizeY <= sVar2 || (sVar11 < 0)))) ||
                          (g_worldGrid.sizeZ <= sVar11)) {
-                        this_00 = (STWorldObject *)0x0;
+                        this_00 = nullptr;
                       }
                       else {
                         this_00 = g_worldGrid.cells
                                   [(int)sVar11 * (int)g_worldGrid.planeStride + sVar2 * iVar6 +
                                    (int)sVar9].objects[0];
                       }
-                      if (((local_10->field_0287 != '\0') && (this_00 == (STWorldObject *)0x0)) &&
+                      if (((local_10->field_0287 != '\0') && (this_00 == nullptr)) &&
                          ((((sVar9 < 0 ||
                             (((g_worldGrid.sizeX <= sVar9 || (sVar2 < 0)) ||
                              (g_worldGrid.sizeY <= sVar2)))) ||
                            ((sVar11 < 0 || (g_worldGrid.sizeZ <= sVar11)))) ||
                           ((this_00 = g_worldGrid.cells
                                       [(int)sVar11 * (int)g_worldGrid.planeStride + sVar2 * iVar6 +
-                                       (int)sVar9].objects[1], this_00 != (STWorldObject *)0x0 &&
+                                       (int)sVar9].objects[1], this_00 != nullptr &&
                            (((iVar6 = this_00->GetObjectTypeId(), iVar6 != 0xa6 &&
                              (iVar6 != 0xa7)) && ((iVar6 != 0xbd && (iVar6 != 0xaf)))))))))) {
-                        this_00 = (STWorldObject *)0x0;
+                        this_00 = nullptr;
                       }
                       iVar6 = local_20;
                       if (((((undefined4 *)iVar12 == local_30) && (local_1c == local_28)) &&
@@ -168,7 +168,7 @@ SubmarineTitans::Recovered::HiddenThis::AnonReceiver_00644410::FUN_00644410
                          ((g_pathingGrid.cells
                            [g_pathingGrid.planeStride * iVar12 +
                             iVar5 + g_pathingGrid.sizeX * local_1c] < 0 &&
-                          (this_00 == (STWorldObject *)0x0)))) {
+                          (this_00 == nullptr)))) {
                         *param_1 = 1;
                         local_10->field_0270 = 0;
                         *param_2 = local_20;
@@ -357,7 +357,7 @@ SubmarineTitans::Recovered::HiddenThis::AnonReceiver_00644410::FUN_00644410
                         *param_1 = 2;
                         return;
                       }
-                      if (((this_00 != (STWorldObject *)0x0) &&
+                      if (((this_00 != nullptr) &&
                           (*(int *)&this_00->field_0x18 != local_10->field_025E)) &&
                          (iVar12 = (*this_00->vtable[4].slots_00_28[7])
                                              (local_20,local_14,local_18,local_10->field_024B,

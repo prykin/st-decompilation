@@ -33,7 +33,7 @@ void FUN_0075e750(AnonShape_0075E750_D250320C *param_1,undefined4 *param_2,undef
       param_2 = param_2 + 1;
       /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
       param_1 = (AnonShape_0075E750_D250320C *)&param_1[-1].field_0x1bf;
-    } while (param_1 != (AnonShape_0075E750_D250320C *)0x0);
+    } while (param_1 != nullptr);
   }
   return;
 }

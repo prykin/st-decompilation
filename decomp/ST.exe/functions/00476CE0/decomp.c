@@ -98,7 +98,7 @@ cf_common_exit_00476DBA:
     case 1:
       pSVar7 = STAllPlayersC::GetObjPtr
                          (g_allPlayers_007FA174,this->field_05FC,this->field_05FD,CASE_1);
-      if (((pSVar7 != (STGameObjC *)0x0) && (pSVar7->field_0018 == this->field_05FF)) &&
+      if (((pSVar7 != nullptr) && (pSVar7->field_0018 == this->field_05FF)) &&
          (iVar6 = (*pSVar7->vtable->vfunc_108)(this->field_0024), iVar6 != 0)) {
         return 2;
       }
@@ -132,7 +132,7 @@ cf_common_exit_00476DBA:
     }
     pSVar7 = STAllPlayersC::GetObjPtr
                        (g_allPlayers_007FA174,this->field_05FC,this->field_05FD,CASE_1);
-    if (pSVar7 == (STGameObjC *)0x0) {
+    if (pSVar7 == nullptr) {
       return 0;
     }
     if (pSVar7->field_0018 != this->field_05FF) {
@@ -177,7 +177,7 @@ cf_common_exit_00476DBA:
                    ((pSVar2 = g_worldGrid.cells
                               [(int)g_worldGrid.sizeX * (int)sVar19 +
                                iVar15 + (int)sVar4 * (int)g_worldGrid.planeStride].objects[0],
-                    pSVar2 != (STWorldObject *)0x0 &&
+                    pSVar2 != nullptr &&
                     ((pSVar2->value_20 == 0x14 && (*(int *)((int)&pSVar2[0x1f].vtable + 1) == 9)))))
                    ))) {
               iVar13 = *(int *)&pSVar2[0x2b].field_0x5;
@@ -315,7 +315,7 @@ cf_common_exit_00476DBA:
       if (local_8 == 0) {
         pSVar7 = STAllPlayersC::GetObjPtr
                            (g_allPlayers_007FA174,this->field_05FC,this->field_05FD,CASE_1);
-        if (((pSVar7 == (STGameObjC *)0x0) || (pSVar7->field_0018 != this->field_05FF)) ||
+        if (((pSVar7 == nullptr) || (pSVar7->field_0018 != this->field_05FF)) ||
            (iVar6 = (*pSVar7->vtable->vfunc_108)(this->field_0024), iVar6 == 0)) {
           this->field_0611 = CASE_4;
           this->field_0615 = 0;
@@ -505,7 +505,7 @@ cf_common_exit_00477B2E:
     }
     pSVar7 = STAllPlayersC::GetObjPtr
                        (g_allPlayers_007FA174,this->field_05FC,this->field_05FD,CASE_1);
-    if (((pSVar7 == (STGameObjC *)0x0) || (pSVar7->field_0018 != this->field_05FF)) ||
+    if (((pSVar7 == nullptr) || (pSVar7->field_0018 != this->field_05FF)) ||
        (iVar6 = (*pSVar7->vtable->vfunc_108)(this->field_0024), iVar6 == 0)) {
       if (((int)this->field_0041 == (this->field_0609 + 1) * 0xc9) &&
          ((int)this->field_0043 == (this->field_060B + 1) * 0xc9)) {
@@ -519,7 +519,7 @@ cf_common_exit_00477B2E:
     }
     iVar6 = thunk_FUN_004cd480((AnonShape_004CC900_31EE9CAA *)pSVar7);
     if (iVar6 == 1) {
-      if (DAT_008117bc != (undefined4 *)0x0) {
+      if (DAT_008117bc != nullptr) {
         local_2e = pSVar7->field_0032;
         local_30 = *(undefined2 *)&pSVar7->field_0024;
         local_34 = 0x5dd4;

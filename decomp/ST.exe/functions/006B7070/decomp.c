@@ -38,7 +38,7 @@ void FUN_006b7070(int *param_1)
       local_20 = (undefined1 *)&piStack_40;
       local_1c = (undefined1 *)&piStack_40;
       for (uVar2 = local_28[0] >> 2; uVar2 != 0; uVar2 = uVar2 - 1) {
-        *ppiVar3 = (int *)0x0;
+        *ppiVar3 = nullptr;
         ppiVar3 = ppiVar3 + 1;
       }
       for (uVar2 = local_28[0] & 3; uVar2 != 0; uVar2 = uVar2 - 1) {

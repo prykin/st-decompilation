@@ -21,7 +21,7 @@ undefined4 FUN_004d7570(char param_1,int param_2,int *param_3)
     piVar3 = (int *)(*(int *)(&g_packedRecords_A62x8[iVar2].field_0x7f6 + iVar4) * uVar1 +
                     *(int *)(&g_packedRecords_A62x8[iVar2].field_0x80a + iVar4));
     *(uint *)(&g_packedRecords_A62x8[iVar2].field_0x7f2 + iVar4) = uVar1 + 1;
-    if (piVar3 == (int *)0x0) goto cf_common_exit_004D766D;
+    if (piVar3 == nullptr) goto cf_common_exit_004D766D;
   } while ((int *)*piVar3 != param_3);
   *(int *)(&g_packedRecords_A62x8[iVar2].field_0x80e + iVar4) =
        *(int *)(&g_packedRecords_A62x8[iVar2].field_0x80e + iVar4) - piVar3[1];

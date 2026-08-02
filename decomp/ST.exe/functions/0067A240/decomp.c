@@ -23,20 +23,20 @@ void __thiscall AiPlrClassTy::sub_0067A240(AiPlrClassTy *this,undefined *param_1
   uint uVar5;
 
   pDVar4 = this->field_0695;
-  if (pDVar4 != (DArrayTy *)0x0) {
+  if (pDVar4 != nullptr) {
     uVar1 = pDVar4->count;
     uVar5 = 0;
     if (0 < (int)uVar1) {
       do {
-        if (((pDVar4 != (DArrayTy *)0x0) && (-1 < (int)uVar5)) && ((int)uVar5 < (int)uVar1)) {
+        if (((pDVar4 != nullptr) && (-1 < (int)uVar5)) && ((int)uVar5 < (int)uVar1)) {
           if (uVar5 < uVar1) {
             /* ST_PSEUDO[dynamic_array_indexing]: expected DArrayAt<T>(pDVar4, uVar5) (runtime stride) */
             puVar2 = (undefined4 *)(pDVar4->elementSize * uVar5 + (int)pDVar4->data);
           }
           else {
-            puVar2 = (undefined4 *)0x0;
+            puVar2 = nullptr;
           }
-          if (((puVar2[1] != 0) && ((void *)*puVar2 != (void *)0x0)) &&
+          if (((puVar2[1] != 0) && ((void *)*puVar2 != nullptr)) &&
              (iVar3 = thunk_FUN_006904d0((void *)*puVar2,param_1,param_2), iVar3 != 0)) {
             return;
           }

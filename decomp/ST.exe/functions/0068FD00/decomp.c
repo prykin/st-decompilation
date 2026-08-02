@@ -84,9 +84,9 @@ int __thiscall AiTactClassTy::GetAiMess(AiTactClassTy *this,AnonShape_0068FD00_A
             element_00a5 = DArrayAt<AiTactClassTy_field_00A5Element>(pAVar4, uVar7);
           }
           else {
-            element_00a5 = (AiTactClassTy_field_00A5Element *)0x0;
+            element_00a5 = nullptr;
           }
-          if (((undefined4 *)element_00a5 != (undefined4 *)0x0) && (element_00a5->field_0004 != 0)) {
+          if (((undefined4 *)element_00a5 != nullptr) && (element_00a5->field_0004 != 0)) {
             memset(local_3c, 0, 0x34); /* compiler bulk-zero initialization */
             local_3c[1] = this_00->field_012C;
             local_3c[0] = 0x70;
@@ -120,10 +120,10 @@ int __thiscall AiTactClassTy::GetAiMess(AiTactClassTy *this,AnonShape_0068FD00_A
             element_00a5 = DArrayAt<AiTactClassTy_field_00A5Element>(pAVar4, uVar7);
           }
           else {
-            element_00a5 = (AiTactClassTy_field_00A5Element *)0x0;
+            element_00a5 = nullptr;
           }
-          if (((undefined4 *)element_00a5 != (undefined4 *)0x0) &&
-             (element_00a5->field_0004 != (AiFltClassTy *)0x0)) {
+          if (((undefined4 *)element_00a5 != nullptr) &&
+             (element_00a5->field_0004 != nullptr)) {
             AiFltClassTy::GetAiMess(element_00a5->field_0004,(uint *)param_1);
             thunk_FUN_0054cf70(g_playSystem_00802A38,*(uint *)(element_00a5->field_0004 + 8));
             DArrayRemoveAt((DArrayTy *)this_00->field_00A5,uVar7);
@@ -162,10 +162,10 @@ int __thiscall AiTactClassTy::GetAiMess(AiTactClassTy *this,AnonShape_0068FD00_A
             element_00a5 = DArrayAt<AiTactClassTy_field_00A5Element>(pAVar4, uVar7);
           }
           else {
-            element_00a5 = (AiTactClassTy_field_00A5Element *)0x0;
+            element_00a5 = nullptr;
           }
-          if ((((undefined4 *)element_00a5 != (undefined4 *)0x0) &&
-              (element_00a5->field_0004 != (AiFltClassTy *)0x0)) &&
+          if ((((undefined4 *)element_00a5 != nullptr) &&
+              (element_00a5->field_0004 != nullptr)) &&
              (AiFltClassTy::GetAiMess(element_00a5->field_0004,(uint *)param_1),
              '\0' < (char)param_1->field_0x8)) {
             g_currentExceptionFrame = local_80.previous;

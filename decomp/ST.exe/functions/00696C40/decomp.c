@@ -26,11 +26,11 @@ int __thiscall FUN_00696c40(void *this,uint param_1,int param_2,uint param_3)
             puVar4 = (uint *)(*(int *)(iVar3 + 8) * uVar6 + *(int *)(iVar3 + 0x1c));
           }
           else {
-            puVar4 = (uint *)0x0;
+            puVar4 = nullptr;
           }
           if ((((*puVar4 < *(uint *)(iVar1 + 0xc)) &&
                (piVar5 = (int *)(*puVar4 * *(int *)(iVar1 + 8) + *(int *)(iVar1 + 0x1c)),
-               piVar5 != (int *)0x0)) && (*piVar5 == param_2)) && (uVar6 != param_3)) {
+               piVar5 != nullptr)) && (*piVar5 == param_2)) && (uVar6 != param_3)) {
             local_8 = local_8 + 1;
           }
           uVar6 = uVar6 + 1;

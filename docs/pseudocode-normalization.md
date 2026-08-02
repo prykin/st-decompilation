@@ -320,6 +320,30 @@ Run `STAbiConsistencyAnalyzer`/`STAbiConsistencyApplier` before export. Residue
 is catalogued as `unresolved_register_input` or `return_width_artifact` rather
 than rewritten without a database-level proof.
 
+One exact VC6 x87 artifact is safe to normalize after machine verification. When
+`FST [owner+saved]` keeps a lower x87 value live across `__ftol`, and the code then
+executes `FILD`, `FMUL ST1`, and `FSTP [owner+destination]`, Ghidra may call the
+surviving value `extraout_ST0`. If both offsets are exact named members of the same
+receiver, the exporter substitutes `receiver->saved` in that one destination
+assignment. It does not generalize an x87 register name without this instruction
+sequence.
+
+The exported corpus is a C++ projection, so a decompiler spelling such as
+`(SomeType *)0x0` is rendered as `nullptr`. This changes no ABI fact: the typed
+casts are multiple spellings of the single null pointer value. Integer zeroes and
+nonzero pointer constants are not rewritten.
+
+A nonzero scientific literal below the normal IEEE-754 `double` range is also
+catalogued as `suspicious_subnormal_literal`. The in-place annotation records
+its raw 64-bit representation and, when meaningful, the interpretation obtained
+by swapping its two 32-bit halves. For example, the raw bits behind
+`5.31664594843289e-315` are `0x0000000040240000`; swapping the dwords yields
+`0x4024000000000000`, or `10.0`. This is evidence of a split/mis-typed qword in
+the observed wrapper family, not evidence for a character string merely because
+some bytes are printable. The exporter does not rewrite the value speculatively:
+the ABI pass must merge the adjacent incoming dwords, after which Ghidra renders
+ordinary `double` literals itself.
+
 ### Exact affine cancellation and partial-register returns
 
 Ghidra can preserve pointer arithmetic after all terms cancel:

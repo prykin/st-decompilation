@@ -8,7 +8,7 @@ undefined4 __thiscall FUN_00747429(void *this,undefined4 param_1,undefined4 para
   int *local_8;
 
   puVar1 = *(undefined4 **)((int)this + 0x40);
-  if (puVar1 == (undefined4 *)0x0) {
+  if (puVar1 == nullptr) {
     uVar3 = 0x80004002;
   }
   else {

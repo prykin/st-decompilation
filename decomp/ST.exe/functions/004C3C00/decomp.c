@@ -61,8 +61,8 @@ int __thiscall TLOBaseTy::fireFindCheckTarget(TLOBaseTy *this,int param_1,int pa
   short local_a;
   STFishC *local_8;
 
-  local_8 = (STFishC *)0x0;
-  local_20 = (STFishC *)0x0;
+  local_8 = nullptr;
+  local_20 = nullptr;
   local_b8.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_b8;
   local_60 = this;
@@ -79,8 +79,8 @@ int __thiscall TLOBaseTy::fireFindCheckTarget(TLOBaseTy *this,int param_1,int pa
     STDebugBreak(); /* noreturn in standalone pseudocode */
   }
   ppTVar15 = &local_60->vtable + param_1 * 0x20;
-  *(AnonShape_005EFAE0_B406B78B **)((int)ppTVar15 + 0x28d) = (AnonShape_005EFAE0_B406B78B *)0x0;
-  *(AnonPointee_TLOBaseTy_0291 **)((int)ppTVar15 + 0x291) = (AnonPointee_TLOBaseTy_0291 *)0x0;
+  *(AnonShape_005EFAE0_B406B78B **)((int)ppTVar15 + 0x28d) = nullptr;
+  *(AnonPointee_TLOBaseTy_0291 **)((int)ppTVar15 + 0x291) = nullptr;
   if (&stack0x00000000 != (undefined1 *)0x2c) {
     /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
     _local_2c = CONCAT22(uStack_2a,local_60->field_0041);
@@ -125,7 +125,7 @@ int __thiscall TLOBaseTy::fireFindCheckTarget(TLOBaseTy *this,int param_1,int pa
                          ((g_worldGrid.sizeY <= sVar14 ||
                           ((sVar5 = (short)local_3c, sVar5 < 0 || (g_worldGrid.sizeZ <= sVar5))))))
                       {
-                        local_8 = (STFishC *)0x0;
+                        local_8 = nullptr;
                       }
                       else {
                         local_8 = (STFishC *)
@@ -135,7 +135,7 @@ int __thiscall TLOBaseTy::fireFindCheckTarget(TLOBaseTy *this,int param_1,int pa
                                   [0];
                         iVar7 = local_18;
                       }
-                      if (((((TLOBaseTy *)local_8 != (TLOBaseTy *)0x0) &&
+                      if (((((TLOBaseTy *)local_8 != nullptr) &&
                            ((TLOBaseTy *)local_8 != this_00)) &&
                           (dVar9 = (*((TLOBaseTy *)local_8)->vtable->slot_F8)((TLOBaseTy *)local_8),
                           iVar7 = local_18, iVar16 = local_28, dVar9 != 0)) &&
@@ -193,8 +193,9 @@ LAB_004c4080:
                                 if ((*(uint *)((int)local_10 + 0x265) & 1) != 0) {
                                   if (this_00->field_0420 == 0) {
                                     if (((uint)local_8->field_0024 < 8) &&
-                                       ((g_playSystem_00802A38 == (STPlaySystemC *)0x0 ||
-                                        ((byte)(&DAT_008087e9)[local_8->field_0024 * 0x51] < 8)))) {
+                                       ((g_playSystem_00802A38 == nullptr ||
+                                        (g_bulkInitializedRecords_008087C7[local_8->field_0024].
+                                         field_0022 < 8)))) {
                                       bVar1 = *(byte *)&local_8->field_0024;
                                       bVar2 = *(byte *)&this_00->field_0024;
                                       /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
@@ -230,8 +231,9 @@ LAB_004c4192:
                                         bVar17 = iVar8 < 0;
                                       }
                                       else {
-                                        bVar17 = (&DAT_008087ea)[(uint)bVar2 * 0x51] !=
-                                                 (&DAT_008087ea)[(uint)bVar1 * 0x51];
+                                        bVar17 = g_bulkInitializedRecords_008087C7[bVar2].field_0023
+                                                 != g_bulkInitializedRecords_008087C7[bVar1].
+                                                    field_0023;
                                       }
                                       if (bVar17) goto LAB_004c41a5;
                                     }
@@ -255,7 +257,7 @@ LAB_004c41a5:
                                       }
                                       iVar7 = local_18;
                                       iVar16 = local_28;
-                                      if (((local_20 == (STFishC *)0x0) || (local_6c < iVar12)) ||
+                                      if (((local_20 == nullptr) || (local_6c < iVar12)) ||
                                          ((iVar12 == local_6c &&
                                           (ppTVar15 = local_10, iVar8 < local_5c)))) {
                                         local_20 = local_8;
@@ -335,7 +337,7 @@ LAB_004c41a5:
     }
   }
 LAB_004c42b5:
-  if (local_20 != (STFishC *)0x0) {
+  if (local_20 != nullptr) {
     *(AnonShape_005EFAE0_B406B78B **)((int)ppTVar15 + 0x28d) =
          (AnonShape_005EFAE0_B406B78B *)local_20->field_0018;
     *(STFishC **)((int)ppTVar15 + 0x291) = local_20;

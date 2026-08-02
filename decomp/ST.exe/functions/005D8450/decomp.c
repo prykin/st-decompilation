@@ -214,13 +214,13 @@ void __thiscall SIDTy::CreateCtrls(SIDTy *this)
   local_214 = local_4fc;
   local_a4 = local_4fc;
   (*this_00->field_000C->vtable->CreateObject)
-            ((SystemClassTy *)this_00->field_000C,7,this_00->field_1AF1,(int *)0x0,local_524,0);
+            ((SystemClassTy *)this_00->field_000C,7,this_00->field_1AF1,nullptr,local_524,0);
   ppcVar12 = local_db0;
   for (iVar3 = 0x223; iVar3 != 0; iVar3 = iVar3 + -1) {
-    *ppcVar12 = (ccFntTy *)0x0;
+    *ppcVar12 = nullptr;
     ppcVar12 = ppcVar12 + 1;
   }
-  local_db0[0] = (ccFntTy *)0x0;
+  local_db0[0] = nullptr;
   local_db0[1] = (ccFntTy *)0x9;
   local_db0[2] = g_startSystem_0081176C->field_0034;
   local_d90 = this_00->field_1CD0;
@@ -238,7 +238,7 @@ void __thiscall SIDTy::CreateCtrls(SIDTy *this)
   local_d1c = 0x68ff;
   local_d24 = local_d64;
   (*this_00->field_000C->vtable->CreateObject)
-            ((SystemClassTy *)this_00->field_000C,6,this_00->field_1AF1 + 1,(int *)0x0,local_db0,1);
+            ((SystemClassTy *)this_00->field_000C,6,this_00->field_1AF1 + 1,nullptr,local_db0,1);
   uVar6 = MMObjTy::CreateSprBut((MMObjTy *)this_00,1,1,0x1e8,0x228,0x55,0x12,0x6900,0x6980);
   this_00->field_1AF9[0] = uVar6;
   uVar6 = MMObjTy::CreateSprBut((MMObjTy *)this_00,1,1,0x1e8,0x23b,0x55,0x12,0x6901,0x6981);

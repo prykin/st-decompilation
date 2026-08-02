@@ -23,7 +23,7 @@ void FUN_0069f660(undefined4 param_1,int param_2,int param_3,int param_4,int par
   iVar8 = ((param_4 <= param_2) - 1 & 2) - 1;
   iVar4 = ((param_5 <= param_3) - 1 & 2) - 1;
   puVar2 = Library::DKW::LIB::MemAlloc((iVar1 + iVar11) * 4 + 8);
-  if (puVar2 == (undefined2 *)0x0) {
+  if (puVar2 == nullptr) {
     return;
   }
   iVar10 = 0;

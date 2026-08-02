@@ -23,29 +23,29 @@ void __thiscall OptPanelTy::DoneOptPanel(OptPanelTy *this)
   iVar3 = Library::MSVCRT::__setjmp3(local_4c.jumpBuffer,0);
   pOVar2 = local_8;
   if (iVar3 == 0) {
-    if (local_8->field_01E9 != (DArrayTy *)0x0) {
+    if (local_8->field_01E9 != nullptr) {
       FUN_006b5570(local_8->field_01E9);
-      pOVar2->field_01E9 = (DArrayTy *)0x0;
+      pOVar2->field_01E9 = nullptr;
     }
-    if (pOVar2->field_01ED != (DArrayTy *)0x0) {
+    if (pOVar2->field_01ED != nullptr) {
       DArrayDestroy(pOVar2->field_01ED);
-      pOVar2->field_01ED = (DArrayTy *)0x0;
+      pOVar2->field_01ED = nullptr;
     }
-    if (pOVar2->field_01F1 != (DArrayTy *)0x0) {
+    if (pOVar2->field_01F1 != nullptr) {
       FUN_006b5570(pOVar2->field_01F1);
-      pOVar2->field_01F1 = (DArrayTy *)0x0;
+      pOVar2->field_01F1 = nullptr;
     }
-    if (pOVar2->field_01E5 != (ushort *)0x0) {
+    if (pOVar2->field_01E5 != nullptr) {
       FreeAndNull(&pOVar2->field_01E5);
     }
-    if ((DArrayTy *)pOVar2->field_02F9 != (DArrayTy *)0x0) {
+    if ((DArrayTy *)pOVar2->field_02F9 != nullptr) {
       FUN_006b5570((DArrayTy *)pOVar2->field_02F9);
     }
-    pOVar2->field_02F9 = (uint *)0x0;
-    if (pOVar2->field_02FD != (OptPanelTy_field_02FDDArray *)0x0) {
+    pOVar2->field_02F9 = nullptr;
+    if (pOVar2->field_02FD != nullptr) {
       DArrayDestroy((DArrayTy *)pOVar2->field_02FD);
     }
-    pOVar2->field_02FD = (OptPanelTy_field_02FDDArray *)0x0;
+    pOVar2->field_02FD = nullptr;
     if (pOVar2->field_01DD != (HANDLE)0x0) {
       FindCloseChangeNotification(pOVar2->field_01DD);
       pOVar2->field_01DD = (HANDLE)0x0;
@@ -70,20 +70,20 @@ void __thiscall OptPanelTy::DoneOptPanel(OptPanelTy *this)
       puVar6 = puVar6 + 1;
       iVar3 = iVar3 + -1;
     } while (iVar3 != 0);
-    g_optPanel_008016DC = (OptPanelTy *)0x0;
-    if (pOVar2->field_017C != (ccFntTy *)0x0) {
+    g_optPanel_008016DC = nullptr;
+    if (pOVar2->field_017C != nullptr) {
       ccFntTy::operator_delete((uint *)pOVar2->field_017C);
-      pOVar2->field_017C = (ccFntTy *)0x0;
+      pOVar2->field_017C = nullptr;
     }
-    if (pOVar2->field_0180 != (ccFntTy *)0x0) {
+    if (pOVar2->field_0180 != nullptr) {
       ccFntTy::operator_delete((uint *)pOVar2->field_0180);
-      pOVar2->field_0180 = (ccFntTy *)0x0;
+      pOVar2->field_0180 = nullptr;
     }
-    pOVar2->field_0198 = (ushort *)0x0;
+    pOVar2->field_0198 = nullptr;
     ppuVar5 = &pOVar2->field_0184;
     iVar3 = 5;
     do {
-      if (*ppuVar5 != (ushort *)0x0) {
+      if (*ppuVar5 != nullptr) {
         cMf32::RecMemFree(g_cMf32_00806790,(uint *)ppuVar5);
       }
       ppuVar5 = ppuVar5 + 1;

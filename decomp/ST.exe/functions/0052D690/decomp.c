@@ -84,7 +84,7 @@ LAB_0052d7d4:
         resourceString = *(char **)(puVar2[5] + local_10 + (int)puVar11);
       }
       else {
-        resourceString = (char *)0x0;
+        resourceString = nullptr;
       }
       uVar9 = FUN_00711110(this_00->field_0094,resourceString);
       if ((int)*(uint *)(this_00->field_0090 + 2) <= uVar9) {

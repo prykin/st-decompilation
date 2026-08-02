@@ -40,7 +40,7 @@ FSGSTy::sub_005A39A0
   uint local_10 [3];
 
   pbVar3 = thunk_FUN_0055d590(text,param_3,param_4);
-  if (pbVar3 != (byte *)0x0) {
+  if (pbVar3 != nullptr) {
     iVar5 = -1;
     pbVar9 = pbVar3;
     do {

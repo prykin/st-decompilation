@@ -56,7 +56,7 @@ FUN_005fcff0(undefined4 param_1,uint param_2,int param_3,undefined4 param_4,unde
   local_b = param_7;
   local_12a = param_9;
   local_130 = (short)param_7 * 200 + 100;
-  if (param_8 != (char *)0x0) {
+  if (param_8 != nullptr) {
     uVar3 = 0xffffffff;
     pcVar5 = param_8;
     do {

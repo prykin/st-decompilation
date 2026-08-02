@@ -31,7 +31,7 @@ FUN_0065dd30(AiFltClassTy *param_1,undefined4 param_2,uint param_3,uint param_4,
   local_10 = 0;
   local_18 = param_1;
   local_1c = (DArrayTy *)AiFltClassTy::sub_0065DA10(param_1,param_2);
-  if (local_1c != (DArrayTy *)0x0) {
+  if (local_1c != nullptr) {
     cVar2 = param_1->field_0081;
     if ((cVar2 < '\0') || ('\a' < cVar2)) {
       cVar2 = (char)param_1->field_0024;
@@ -52,11 +52,11 @@ FUN_0065dd30(AiFltClassTy *param_1,undefined4 param_2,uint param_3,uint param_4,
           puVar3 = (ushort *)(local_1c->elementSize * local_14 + (int)local_1c->data);
         }
         else {
-          puVar3 = (ushort *)0x0;
+          puVar3 = nullptr;
         }
         this = STAllPlayersC::GetObjPtr
                          (g_allPlayers_007FA174,*(char *)&param_1->field_0024,*puVar3,CASE_1);
-        if ((this == (STGameObjC *)0x0) || (iVar9 = this->vfunc_F8(), iVar9 == 0))
+        if ((this == nullptr) || (iVar9 = this->vfunc_F8(), iVar9 == 0))
         goto cf_common_join_0065DF91;
         uVar4 = (*this->vtable->vfunc_2C)();
         if (param_4 != 0) {
@@ -83,7 +83,7 @@ FUN_0065dd30(AiFltClassTy *param_1,undefined4 param_2,uint param_3,uint param_4,
 LAB_0065de3c:
         if (param_3 == 0x3fffffff) {
 LAB_0065dea6:
-          if ((param_6 != (byte *)0x0) && (*param_6 != 0)) {
+          if ((param_6 != nullptr) && (*param_6 != 0)) {
             (*this->vtable->vfunc_74)(local_2c);
             pbVar8 = local_2c;
             pbVar7 = param_6;

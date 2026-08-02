@@ -236,7 +236,7 @@ LAB_0075f317:
           }
           psVar2 = psVar2 + 0x20;
           local_28 = (int *)((int)local_28 + -1);
-        } while (local_28 != (int *)0x0);
+        } while (local_28 != nullptr);
       }
       /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
       param_1 = param_1 + 1;

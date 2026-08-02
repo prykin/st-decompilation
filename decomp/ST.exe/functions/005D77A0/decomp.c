@@ -17,7 +17,7 @@ SettMapTy * __cdecl CreateSettMap(void)
   int local_8;
 
   this = (SettMapTy *)FUN_006b04d0(0x21fc);
-  if (this != (SettMapTy *)0x0) {
+  if (this != nullptr) {
     sub_006E5FB0(this);
     this->field_0000 = (AnonPointee_SettMapTy_0000 *)&VTable_0079C018;
     *(undefined4 *)&this->field_0x18 = 0;
@@ -58,18 +58,18 @@ SettMapTy * __cdecl CreateSettMap(void)
     this->field_1C5F = 0;
     this->field_1C63 = 0;
     this->field_1E27 = 0;
-    this->field_1E2B = (AnonPointee_SettMapTy_1E2B *)0x0;
+    this->field_1E2B = nullptr;
     *(undefined4 *)&this->field_0x21e1 = 0;
     *(undefined2 *)&this->field_0x21e5 = 0;
     this->field_21E7 = 0;
     memset(&this->field_0x2161, 0, 0x80); /* compiler bulk-zero initialization */
     iVar1 = 0;
-    this->field_1E2F = (DArrayTy *)0x0;
+    this->field_1E2F = nullptr;
     this->field_1F43 = 0;
-    this->field_1F3F = (void *)0x0;
+    this->field_1F3F = nullptr;
     this->field_1F4F = 0;
     *(undefined4 *)&this->field_0x1f4b = 0;
-    this->field_1F84 = (DArrayTy *)0x0;
+    this->field_1F84 = nullptr;
     memset(&this->field_1F8C, 0, 0x140); /* compiler bulk-zero initialization */
     iVar1 = 0;
     this->field_211D = 0;
@@ -86,15 +86,15 @@ SettMapTy * __cdecl CreateSettMap(void)
     memset(&this->field_2125, 0, 0x38); /* compiler bulk-zero initialization */
     iVar1 = 0;
     this->field_215D = 0;
-    this->field_21F8 = (HoloTy *)0x0;
-    this->field_21F4 = (HoloTy *)0x0;
-    this->field_21F0 = (HoloTy *)0x0;
-    this->field_21EC = (HoloTy *)0x0;
-    this->field_21E8 = (HoloTy *)0x0;
+    this->field_21F8 = nullptr;
+    this->field_21F4 = nullptr;
+    this->field_21F0 = nullptr;
+    this->field_21EC = nullptr;
+    this->field_21E8 = nullptr;
     this->field_1F80 = 0xffffffff;
     this->field_1C67 = 0;
     this->field_1F47 = 0;
-    this->field_1F7C = (DArrayTy *)0x0;
+    this->field_1F7C = nullptr;
     memset(&this->field_1F60, 0, 0x1c); /* compiler bulk-zero initialization */
     this->field_1F58 = 0;
     this->field_1F57 = 1;
@@ -105,6 +105,6 @@ SettMapTy * __cdecl CreateSettMap(void)
     this->field_0000 = (AnonPointee_SettMapTy_0000 *)&VTable_0079C160;
     return this;
   }
-  return (SettMapTy *)0x0;
+  return nullptr;
 }
 

@@ -58,7 +58,7 @@ StartServTy::WrTextDDX
     else {
       local_c = (BITMAPINFO *)
                 Library::DKW::WGR::FUN_006b55f0
-                          ((AnonShape_006B5B10_E0D06CF1 *)0x0,0,0,0,(byte *)param_1,0,param_2,
+                          (nullptr,0,0,0,(byte *)param_1,0,param_2,
                            param_3,local_8,param_5);
       ccFntTy::SetSurf(param_9,(int)local_c,0,0,0,0,0);
     }

@@ -47,7 +47,7 @@ undefined4 __cdecl FUN_00635da0(int param_1,int param_2,int param_3)
     uVar3 = FUN_006ddbd0();
   }
   pVVar2 = g_visibleClass_00802A88;
-  if (((char)uVar3 != '\0') && (g_visibleClass_00802A88 != (VisibleClassTy *)0x0)) {
+  if (((char)uVar3 != '\0') && (g_visibleClass_00802A88 != nullptr)) {
     if ((((DAT_0080874d != -1) &&
          ((uVar3 = 0, g_visibleClass_00802A88->field_00F8 != 0 &&
           (VisibleClassTy::sub_00558C00
@@ -56,7 +56,7 @@ undefined4 __cdecl FUN_00635da0(int param_1,int param_2,int param_3)
         ((param_1 < 5 &&
          ((((-1 < param_2 && (param_2 < pVVar2->field_0030)) &&
            (uVar3 = g_centeredOffsets5[param_1] + param_3, -1 < (int)uVar3)) &&
-          (((int)uVar3 < pVVar2->field_0034 && (pVVar2->field_004C != (byte *)0x0)))))))) &&
+          (((int)uVar3 < pVVar2->field_0034 && (pVVar2->field_004C != nullptr)))))))) &&
        (uVar3 = (uint)pVVar2->field_004C[param_2 + uVar3 * pVVar2->field_0030], uVar3 == 0)) {
       return 0;
     }

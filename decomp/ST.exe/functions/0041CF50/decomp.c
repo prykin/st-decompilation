@@ -8,7 +8,7 @@ void __fastcall FUN_0041cf50(AnonShape_0041CF50_01071190 *param_1)
 {
   int iVar1;
 
-  if (g_visibleClass_00802A88 != (VisibleClassTy *)0x0) {
+  if (g_visibleClass_00802A88 != nullptr) {
     VisibleClassTy::sub_00559620
               (g_visibleClass_00802A88,(int)param_1->field_005B,(int)param_1->field_005D,
                (char)param_1->field_005F,*(undefined **)&param_1->field_0x24,param_1->field_0105,

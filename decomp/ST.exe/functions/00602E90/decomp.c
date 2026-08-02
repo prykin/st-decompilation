@@ -22,7 +22,7 @@ undefined4 * __thiscall STDestC::sub_00602E90(STDestC *this)
   STDestC *local_c;
   ushort *local_8;
 
-  local_8 = (ushort *)0x0;
+  local_8 = nullptr;
   local_50.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_50;
   local_c = this;
@@ -36,8 +36,8 @@ undefined4 * __thiscall STDestC::sub_00602E90(STDestC *this)
       text = (&PTR_s_Dest1_0_007cebec)[local_c->field_0372];
     }
     puVar3 = Library::Ourlib::MFRLOAD::mfRLoad
-                       (DAT_00806774,CASE_1D,text,0xffffffff,0,1,0,(undefined4 *)0x0);
-    if (puVar3 != (ushort *)0x0) {
+                       (DAT_00806774,CASE_1D,text,0xffffffff,0,1,0,nullptr);
+    if (puVar3 != nullptr) {
       if (pSVar1->field_0241 == 0) {
         local_8 = ST3DSMAPContext::sub_006E9000
                             (pSVar1->field_0211,**(undefined4 **)((int)puVar3 + 0x21),0x5a,0x45,

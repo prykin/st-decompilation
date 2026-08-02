@@ -48,7 +48,7 @@ int __thiscall STPlaySystemC::GetMessage(STPlaySystemC *this,STMessage *message)
         iVar5 = Library::MSVCRT::__setjmp3(local_b4.jumpBuffer,0);
         this_00 = g_cMf32_00806754;
         if (iVar5 == 0) {
-          if (g_cLoading_00802A58 != (cLoadingTy *)0x0) {
+          if (g_cLoading_00802A58 != nullptr) {
             uVar9 = 0xffffffff;
             pcVar11 = PTR_DAT_007c83b0;
             do {
@@ -77,7 +77,7 @@ int __thiscall STPlaySystemC::GetMessage(STPlaySystemC *this,STMessage *message)
             cMf32::ToBeg(g_cMf32_00806754,FUN_006f2d10,&local_2b8);
             puVar6 = cMf32::RecNameGetNext(this_00);
             iVar5 = local_8;
-            while (puVar6 != (undefined4 *)0x0) {
+            while (puVar6 != nullptr) {
               local_8 = iVar5 + 1;
               puVar6 = cMf32::RecNameGetNext(this_00);
               iVar5 = local_8;
@@ -92,7 +92,7 @@ int __thiscall STPlaySystemC::GetMessage(STPlaySystemC *this,STMessage *message)
                     (g_cMf32_00806754,PTR_DAT_007c83b0,thunk_FUN_0054ca10,local_c,0);
           pcVar11 = LoadResourceString(0x4a39,g_module_00807618);
           wsprintfA((LPSTR)&DAT_0080f33a,"%d %s",DAT_00802a3c,pcVar11);
-          if (g_cLoading_00802A58 != (cLoadingTy *)0x0) {
+          if (g_cLoading_00802A58 != nullptr) {
             cLoadingTy::SetState(g_cLoading_00802A58,CASE_2,0,(char *)&DAT_0080f33a);
           }
           g_currentExceptionFrame = local_b4.previous;
@@ -110,11 +110,11 @@ int __thiscall STPlaySystemC::GetMessage(STPlaySystemC *this,STMessage *message)
         (*pSVar2->SendMessage)((SystemWithNamedObjClassTy *)pSVar10,(int)local_2c);
         if (DAT_00808783 == '\x03') {
           pSVar10->field_0038 = 1;
-          if (g_int_00811764 != (int *)0x0) {
+          if (g_int_00811764 != nullptr) {
             FUN_006b6500(g_int_00811764,DAT_0080733c);
           }
           if (DAT_0080877e == '\0') {
-            FUN_00715360(g_int_00811764,1,'.',(char *)0x0,0,0,0xffffffff);
+            FUN_00715360(g_int_00811764,1,'.',nullptr,0,0,0xffffffff);
           }
           else if (DAT_00808aaf != 0) {
             pDVar13 = &DAT_00808af8;
@@ -141,7 +141,7 @@ int __thiscall STPlaySystemC::GetMessage(STPlaySystemC *this,STMessage *message)
             if ((*(int *)(pcVar11 + -6) == pSVar10->field_00F4) && (*pcVar11 != '\0')) {
               *pcVar11 = '\0';
               FUN_006b6500(piVar4,1);
-              FUN_00715360(g_int_00811764,pSVar10->field_00F4,'7',(char *)0x0,0,0,0xffffffff);
+              FUN_00715360(g_int_00811764,pSVar10->field_00F4,'7',nullptr,0,0,0xffffffff);
               FUN_006b6500(g_int_00811764,DAT_0080733c);
               thunk_FUN_005508f0(pSVar10,pSVar10->field_00F4);
               pSVar10->field_00F4 = 0;

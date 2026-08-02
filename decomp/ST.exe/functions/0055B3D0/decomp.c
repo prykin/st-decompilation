@@ -9,17 +9,17 @@ FUN_0055b3d0(void *this,int param_1,int param_2,undefined4 param_3,uint param_4)
   int iVar4;
   uint uVar5;
   bool bVar6;
-  char *local_c;
+  byte *local_c;
   int *local_8;
 
   if (((*(int *)((int)this + 0x114) != 0) && (param_4 < 8)) &&
-     ((g_playSystem_00802A38 == (STPlaySystemC *)0x0 || ((byte)(&DAT_008087e9)[param_4 * 0x51] < 8))
-     )) {
+     ((g_playSystem_00802A38 == nullptr ||
+      (g_bulkInitializedRecords_008087C7[param_4].field_0022 < 8)))) {
     uVar2 = 0;
     local_8 = (int *)((int)this + 0xb4);
-    local_c = &DAT_008087e9;
+    local_c = &g_bulkInitializedRecords_008087C7[0].field_0022;
     do {
-      if ((uVar2 != param_4) && (*local_c != -1)) {
+      if ((uVar2 != param_4) && (*local_c != 0xff)) {
         if (DAT_00808a8f == '\0') {
           if ((char)param_4 == (char)uVar2) {
 LAB_0055b4de:
@@ -46,8 +46,8 @@ LAB_0055b4de:
           bVar6 = iVar4 < 0;
         }
         else {
-          bVar6 = (&DAT_008087ea)[(uVar2 & 0xff) * 0x51] != (&DAT_008087ea)[(param_4 & 0xff) * 0x51]
-          ;
+          bVar6 = g_bulkInitializedRecords_008087C7[uVar2 & 0xff].field_0023 !=
+                  g_bulkInitializedRecords_008087C7[param_4 & 0xff].field_0023;
         }
         if (bVar6) {
           /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */

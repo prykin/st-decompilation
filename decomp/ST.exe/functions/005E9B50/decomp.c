@@ -31,7 +31,7 @@ void __thiscall WaitTy::CreateCtrls(WaitTy *this)
   ppcVar5 = local_8d8;
   local_8 = this;
   for (iVar4 = 0x223; iVar4 != 0; iVar4 = iVar4 + -1) {
-    *ppcVar5 = (ccFntTy *)0x0;
+    *ppcVar5 = nullptr;
     ppcVar5 = ppcVar5 + 1;
   }
   local_4c.previous = g_currentExceptionFrame;
@@ -44,7 +44,7 @@ void __thiscall WaitTy::CreateCtrls(WaitTy *this)
       StartSystemTy::CreateChatView(g_startSystem_0081176C);
       ppcVar5 = local_8d8;
       for (iVar4 = 0x223; iVar4 != 0; iVar4 = iVar4 + -1) {
-        *ppcVar5 = (ccFntTy *)0x0;
+        *ppcVar5 = nullptr;
         ppcVar5 = ppcVar5 + 1;
       }
       local_8d8[0] = (ccFntTy *)0x1;
@@ -65,7 +65,7 @@ void __thiscall WaitTy::CreateCtrls(WaitTy *this)
       local_848 = 0;
       local_844 = 0xc0a2;
       (*this_00->vtable->CreateObject)
-                ((SystemClassTy *)this_00,6,&g_startSystem_0081176C->field_054C,(int *)0x0,local_8d8
+                ((SystemClassTy *)this_00,6,&g_startSystem_0081176C->field_054C,nullptr,local_8d8
                  ,0);
       Library::DKW::DDX::FUN_006b3430
                 ((int *)g_ddxContext_008075A8,g_startSystem_0081176C->field_0554);

@@ -10,7 +10,7 @@ void __cdecl FUN_006a57a0(undefined4 *param_1)
   int iVar4;
   uint uVar5;
 
-  if (param_1 == (undefined4 *)0x0) {
+  if (param_1 == nullptr) {
     iVar4 = Library::MSVCRT::FUN_00730fa0(0,0,0,0,"%s");
     if (iVar4 == 1) {
       STDebugBreak(); /* noreturn in standalone pseudocode */
@@ -27,7 +27,7 @@ void __cdecl FUN_006a57a0(undefined4 *param_1)
       puVar2 = puVar2 + 1;
       puVar3 = DAT_0085496c;
     } while (iVar4 != 0);
-    for (; puVar3 != (undefined4 *)0x0; puVar3 = (undefined4 *)*puVar3) {
+    for (; puVar3 != nullptr; puVar3 = (undefined4 *)*puVar3) {
       uVar5 = puVar3[5] & 0xffff;
       if (uVar5 < 5) {
         param_1[uVar5 + 1] = param_1[uVar5 + 1] + 1;

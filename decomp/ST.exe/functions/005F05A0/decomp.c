@@ -14,7 +14,7 @@ void __thiscall FUN_005f05a0(void *this,ushort param_1,undefined2 param_2)
   ushort local_c;
   undefined2 local_a;
 
-  if (DAT_008117bc != (undefined4 *)0x0) {
+  if (DAT_008117bc != nullptr) {
     memset(local_24, 0, 0x20); /* compiler bulk-zero initialization */
     /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
     local_e = (**(code **)(*(int *)this + 0x144))();

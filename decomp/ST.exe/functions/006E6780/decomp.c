@@ -7,19 +7,19 @@
 void __thiscall ST3DSMAPContext::sub_006E6780(ST3DSMAPContext *this,int param_1)
 
 {
-  int *piVar1;
+  AnonPointee_ST3DSMAPContext_044E *pAVar1;
 
-  piVar1 = *(int **)&this->field_0x44e;
-  if (piVar1 != (int *)0x0) {
-    while (piVar1[1] != param_1) {
-      piVar1 = (int *)*piVar1;
-      if (piVar1 == (int *)0x0) {
+  pAVar1 = this->field_044E;
+  if (pAVar1 != nullptr) {
+    while (pAVar1->field_0004 != param_1) {
+      pAVar1 = (AnonPointee_ST3DSMAPContext_044E *)pAVar1->field_0000;
+      if (pAVar1 == nullptr) {
         return;
       }
     }
-    if (piVar1 != (int *)0x0) {
-      FUN_006b98c0((int *)&this->field_0x44e,piVar1);
-      FUN_006a5e90((short *)piVar1);
+    if (pAVar1 != nullptr) {
+      FUN_006b98c0((int *)&this->field_044E,(int *)pAVar1);
+      FUN_006a5e90((short *)pAVar1);
     }
   }
   return;

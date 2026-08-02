@@ -26,7 +26,7 @@ byte * __cdecl BossDataPack(uint *param_1,undefined4 *param_2,int param_3,uint *
   InternalExceptionFrame local_4c;
   void *local_8;
 
-  local_8 = (void *)0x0;
+  local_8 = nullptr;
   local_4c.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_4c;
   iVar2 = Library::MSVCRT::__setjmp3(local_4c.jumpBuffer,0);
@@ -41,12 +41,12 @@ byte * __cdecl BossDataPack(uint *param_1,undefined4 *param_2,int param_3,uint *
     uVar7 = *(uint *)((int)puVar3 + 0x4a);
     puVar8 = puVar3 + 0x21;
     memmove(puVar8, param_2, uVar7); /* compiler REP MOVS byte copy */
-    *(byte **)((int)puVar3 + 0x46) = (byte *)0x0;
+    *(byte **)((int)puVar3 + 0x46) = nullptr;
     g_currentExceptionFrame = local_4c.previous;
     return (byte *)puVar3;
   }
   g_currentExceptionFrame = local_4c.previous;
-  if (local_8 != (void *)0x0) {
+  if (local_8 != nullptr) {
     FreeAndNull(&local_8);
   }
   iVar4 = ReportDebugMessage("E:\\__titans\\ai\\ai_boss_d.cpp",0x6b,0,iVar2,"%s",
@@ -55,6 +55,6 @@ byte * __cdecl BossDataPack(uint *param_1,undefined4 *param_2,int param_3,uint *
     STDebugBreak(); /* noreturn in standalone pseudocode */
   }
   RaiseInternalException(iVar2,0,"E:\\__titans\\ai\\ai_boss_d.cpp",0x6c);
-  return (byte *)0x0;
+  return nullptr;
 }
 

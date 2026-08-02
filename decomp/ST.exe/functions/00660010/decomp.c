@@ -30,8 +30,8 @@ undefined4 __fastcall FUN_00660010(AiFltClassTy *param_1)
   }
   iVar4 = 0;
 LAB_00660050:
-  array = (DArrayTy *)AiFltClassTy::sub_0065FA60(param_1,iVar4,(sVar1 != 3) - 1 & 2,(short *)0x0);
-  if (array == (DArrayTy *)0x0) {
+  array = (DArrayTy *)AiFltClassTy::sub_0065FA60(param_1,iVar4,(sVar1 != 3) - 1 & 2,nullptr);
+  if (array == nullptr) {
     return 0xfffffffe;
   }
   uVar3 = AiFltClassTy::sub_0065D9C0(param_1);
@@ -40,12 +40,12 @@ LAB_00660050:
     DArrayDestroy(array);
     return 0xffffffff;
   }
-  if ((param_1->field_007D != 0xfffe) && (g_allPlayers_007FA174 != (STAllPlayersC *)0x0)) {
+  if ((param_1->field_007D != 0xfffe) && (g_allPlayers_007FA174 != nullptr)) {
     this = thunk_FUN_0042b760(*(char *)&param_1->field_0024,param_1->field_007D);
-    if (this != (STGroupBoatC *)0x0) {
+    if (this != nullptr) {
       if (param_1->field_0039 == 3) {
         local_14 = 1;
-        local_10 = (DArrayTy *)0x0;
+        local_10 = nullptr;
         local_c = 0;
         this->sub_00498D20(0x11,&local_14);
         uVar2 = local_8;

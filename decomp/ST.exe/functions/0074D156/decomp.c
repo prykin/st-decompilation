@@ -15,7 +15,7 @@ int __thiscall FUN_0074d156(void *this,int *param_1,int param_2)
     /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
     (**(code **)(*param_1 + 4))(param_1);
     piVar1 = *(int **)((int)this + 0x98);
-    if (piVar1 != (int *)0x0) {
+    if (piVar1 != nullptr) {
       /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
       (**(code **)(*piVar1 + 8))(piVar1);
     }

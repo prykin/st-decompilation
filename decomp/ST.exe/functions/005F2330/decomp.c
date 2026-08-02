@@ -15,11 +15,11 @@ void __thiscall STManBasisC::sub_005F2330(STManBasisC *this)
   uint uVar4;
 
   uVar4 = 0;
-  if (this->field_0038 != (STManBasisC_field_0038DArray *)0x0) {
+  if (this->field_0038 != nullptr) {
     DArrayDestroy((DArrayTy *)this->field_0038);
-    this->field_0038 = (STManBasisC_field_0038DArray *)0x0;
+    this->field_0038 = nullptr;
   }
-  if (this->field_003C != (DArrayTy *)0x0) {
+  if (this->field_003C != nullptr) {
     dVar1 = this->field_003C->count;
     if (0 < (int)dVar1) {
       do {
@@ -29,7 +29,7 @@ void __thiscall STManBasisC::sub_005F2330(STManBasisC *this)
           pvVar3 = (void *)(pDVar2->elementSize * uVar4 + (int)pDVar2->data);
         }
         else {
-          pvVar3 = (void *)0x0;
+          pvVar3 = nullptr;
         }
         if (-1 < (int)*(uint *)((int)pvVar3 + 0x18)) {
           Library::Ourlib::ST3DSMAP::SprClose
@@ -40,7 +40,7 @@ void __thiscall STManBasisC::sub_005F2330(STManBasisC *this)
       } while ((int)uVar4 < (int)dVar1);
     }
     DArrayDestroy(this->field_003C);
-    this->field_003C = (DArrayTy *)0x0;
+    this->field_003C = nullptr;
   }
   return;
 }

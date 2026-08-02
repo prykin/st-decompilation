@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* [STHiddenThisApplier] Anonymous hidden receiver recovered as
    /SubmarineTitans/Recovered/HiddenThis/AnonReceiver_0065DA50.
@@ -25,9 +27,9 @@ SubmarineTitans::Recovered::HiddenThis::AnonReceiver_0065DA50::FUN_0065da50
   uint local_8;
 
   local_8 = 0;
-  if ((((*(ushort *)&this->field_0x7d != 0xfffe) && (g_allPlayers_007FA174 != (STAllPlayersC *)0x0))
+  if ((((*(ushort *)&this->field_0x7d != 0xfffe) && (g_allPlayers_007FA174 != nullptr))
       && (this_00 = thunk_FUN_0042b760(this->field_0x24,*(ushort *)&this->field_0x7d),
-         this_00 != (STGroupBoatC *)0x0)) && (g_allPlayers_007FA174 != (STAllPlayersC *)0x0)) {
+         this_00 != nullptr)) && (g_allPlayers_007FA174 != nullptr)) {
     cVar7 = this->field_0x81;
     if ((cVar7 < '\0') || ('\a' < cVar7)) {
       cVar7 = (char)*(undefined4 *)&this->field_0x24;
@@ -49,7 +51,7 @@ SubmarineTitans::Recovered::HiddenThis::AnonReceiver_0065DA50::FUN_0065da50
     else {
       array = (DArrayTy *)AiFltClassTy::sub_0065E360((AiFltClassTy *)this,uVar6,param_1);
     }
-    if (array != (DArrayTy *)0x0) {
+    if (array != nullptr) {
       dVar3 = array->count;
       uVar2 = 0;
       if (0 < (int)dVar3) {
@@ -59,11 +61,11 @@ SubmarineTitans::Recovered::HiddenThis::AnonReceiver_0065DA50::FUN_0065da50
             puVar4 = (ushort *)(array->elementSize * uVar2 + (int)array->data);
           }
           else {
-            puVar4 = (ushort *)0x0;
+            puVar4 = nullptr;
           }
           this_01 = STAllPlayersC::GetObjPtr(g_allPlayers_007FA174,this->field_0x24,*puVar4,CASE_1);
           /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
-          if (((this_01 != (STGameObjC *)0x0) &&
+          if (((this_01 != nullptr) &&
               (iVar5 = this_01->vfunc_F8(), iVar5 != 0)) &&
              (iVar5 = this_01->vfunc_6C(), param_2 == iVar5)) {
             local_8 = local_8 + 1;

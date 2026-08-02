@@ -19,9 +19,9 @@ bool __thiscall FUN_005ef7a0(void *this,short param_1,short param_2,short param_
          ((param_3 < g_worldGrid.sizeZ &&
           (g_worldGrid.cells
            [(int)g_worldGrid.planeStride * (int)param_3 + (int)g_worldGrid.sizeX * (int)param_2 +
-            (int)sVar1].objects[0] != (STWorldObject *)0x0)))))) ||
+            (int)sVar1].objects[0] != nullptr)))))) ||
        (_param_1 = (STWorldObject *)DumpClassC::WritePtr(sVar1,param_2,param_3,0,this),
-       _param_1 != (STWorldObject *)0x0)) goto cf_common_exit_005EF8D0;
+       _param_1 != nullptr)) goto cf_common_exit_005EF8D0;
     *(char *)((int)this + 0x252) = *(char *)((int)this + 0x252) + '\x01';
   }
   else {
@@ -31,7 +31,7 @@ bool __thiscall FUN_005ef7a0(void *this,short param_1,short param_2,short param_
     if (((sVar1 < 0) || (g_worldGrid.sizeX <= sVar1)) ||
        ((sVar3 < 0 ||
         (((g_worldGrid.sizeY <= sVar3 || (sVar2 < 0)) || (g_worldGrid.sizeZ <= sVar2)))))) {
-      _param_1 = (STWorldObject *)0x0;
+      _param_1 = nullptr;
     }
     else {
       _param_1 = g_worldGrid.cells
@@ -41,7 +41,7 @@ bool __thiscall FUN_005ef7a0(void *this,short param_1,short param_2,short param_
     if (_param_1 != this) goto cf_common_exit_005EF8D0;
   }
   iVar4 = thunk_FUN_005ef4b0(this,*(int *)((int)this + 0x273));
-  _param_1 = (STWorldObject *)0x0;
+  _param_1 = nullptr;
   if (iVar4 != 0) {
     *(undefined4 *)((int)this + 0x23a) = 2;
     return SUB41(iVar4,0);

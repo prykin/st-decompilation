@@ -23,7 +23,7 @@ undefined4 __thiscall FUN_005f8ba0(void *this,undefined4 *param_1,undefined4 *pa
           ((g_worldGrid.sizeZ <= sVar5 ||
            (g_worldGrid.cells
             [(int)sVar5 * (int)g_worldGrid.planeStride + (int)g_worldGrid.sizeX * (int)sVar2 +
-             (int)sVar1].objects[0] == (STWorldObject *)0x0)))))) {
+             (int)sVar1].objects[0] == nullptr)))))) {
         *param_1 = *(undefined4 *)((int)this + 0x27d);
         *param_2 = *(undefined4 *)((int)this + 0x281);
         *param_3 = iVar4;

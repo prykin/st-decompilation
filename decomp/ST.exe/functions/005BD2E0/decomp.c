@@ -17,11 +17,11 @@ PrividerTy * __cdecl CreatePrivider(void)
   int local_8;
 
   this = (PrividerTy *)FUN_006b04d0(0x1c9e);
-  if (this != (PrividerTy *)0x0) {
+  if (this != nullptr) {
     sub_006E5FB0(this);
     this->vtable = (PrividerTyVTable *)&VTable_0079C018;
     *(undefined4 *)&this->field_0x18 = 0;
-    this->field_005D = (ushort *)0x0;
+    this->field_005D = nullptr;
     memset(&this->field_0x1d, 0, 0x20); /* compiler bulk-zero initialization */
     iVar1 = 0;
     memset(&this->field_0x3d, 0, 0x20); /* compiler bulk-zero initialization */
@@ -69,14 +69,14 @@ PrividerTy * __cdecl CreatePrivider(void)
       puVar2 = puVar2 + 1;
     }
     this->field_1C8A = 0xffffffff;
-    this->field_1C82 = (ushort *)0x0;
+    this->field_1C82 = nullptr;
     this->field_1C86 = 0;
-    this->field_1C8E = (AnonPointee_PrividerTy_1C8E *)0x0;
-    this->field_1C92 = (uint *)0x0;
-    this->field_1C9A = (HoloTy *)0x0;
-    this->field_1C96 = (HoloTy *)0x0;
+    this->field_1C8E = nullptr;
+    this->field_1C92 = nullptr;
+    this->field_1C9A = nullptr;
+    this->field_1C96 = nullptr;
     return this;
   }
-  return (PrividerTy *)0x0;
+  return nullptr;
 }
 

@@ -18,7 +18,7 @@ char * __thiscall FUN_0055ba90(void *this,char param_1,int param_2)
         pcVar3 = (char *)(*(int *)(iVar1 + 8) * uVar4 + *(int *)(iVar1 + 0x1c));
       }
       else {
-        pcVar3 = (char *)0x0;
+        pcVar3 = nullptr;
       }
       if ((*(int *)(pcVar3 + 8) == param_2) && (*pcVar3 == param_1)) {
         return pcVar3;
@@ -27,6 +27,6 @@ char * __thiscall FUN_0055ba90(void *this,char param_1,int param_2)
       bVar5 = uVar4 < uVar2;
     } while ((int)uVar4 < (int)uVar2);
   }
-  return (char *)0x0;
+  return nullptr;
 }
 

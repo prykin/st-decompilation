@@ -15,7 +15,7 @@ int __thiscall FUN_00711110(void *this,char *resourceString)
   iVar5 = 0;
   local_8 = 0;
   bVar2 = false;
-  if (resourceString == (char *)0x0) {
+  if (resourceString == nullptr) {
     return 0;
   }
   if (*resourceString != '\0') {

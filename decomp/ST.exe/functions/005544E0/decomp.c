@@ -21,9 +21,9 @@ void __cdecl cLoadingTy::delete(uint *param_1)
   g_currentExceptionFrame = &local_48;
   errorCode = Library::MSVCRT::__setjmp3(local_48.jumpBuffer,0);
   if (errorCode == 0) {
-    if (param_1 != (uint *)0x0) {
+    if (param_1 != nullptr) {
       cMf32::RecMemFree(g_cMf32_00806780,param_1);
-      if ((uint *)param_1[2] != (uint *)0x0) {
+      if ((uint *)param_1[2] != nullptr) {
         ccFntTy::operator_delete((uint *)param_1[2]);
       }
       thunk_FUN_00555650((int)param_1);

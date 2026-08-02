@@ -255,8 +255,8 @@ int __thiscall STBoatC::GetMessage(STBoatC *this,STMessage *message)
       }
       pSVar19 = (message->arg0).ptr;
       local_1c = pSVar19;
-      if (DAT_008117bc != (undefined4 *)0x0) {
-        if (pSVar19 != (STGroupBoatC *)0x0) {
+      if (DAT_008117bc != nullptr) {
+        if (pSVar19 != nullptr) {
           local_9c.id = MESS_SHARED_5DD5;
           local_9c.arg0.words.high = this_00->field_0032;
           local_9c.arg0.words.low = *(undefined2 *)&this_00->field_0024;
@@ -265,7 +265,7 @@ int __thiscall STBoatC::GetMessage(STBoatC *this,STMessage *message)
           /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
           (**(code **)*DAT_008117bc)(&local_9c);
         }
-        if (((DAT_008117bc != (undefined4 *)0x0) && (pSVar19 != (STGroupBoatC *)0x0)) &&
+        if (((DAT_008117bc != nullptr) && (pSVar19 != nullptr)) &&
            (pSVar19->vtable != (STGroupBoatCVTable *)0x2710)) {
           local_9c.id = 0x5dd1;
           local_9c.arg0.words.high = this_00->field_0032;
@@ -276,7 +276,7 @@ int __thiscall STBoatC::GetMessage(STBoatC *this,STMessage *message)
           (**(code **)*DAT_008117bc)(&local_9c);
         }
       }
-      if (this_00->field_07CA != (AnonShape_005EFAE0_B406B78B *)0x0) {
+      if (this_00->field_07CA != nullptr) {
         iVar12 = STPlaySystemC::sub_006E62D0
                            (g_playSystem_00802A38,this_00->field_07CA,(int *)&local_4c);
         if (iVar12 == -4) {
@@ -317,14 +317,14 @@ int __thiscall STBoatC::GetMessage(STBoatC *this,STMessage *message)
       if (((sVar38 < 0) || (pSVar19 = local_1c, g_worldGrid.sizeX <= sVar38)) ||
          ((sVar5 < 0 ||
           (((g_worldGrid.sizeY <= sVar5 || (sVar4 < 0)) || (g_worldGrid.sizeZ <= sVar4)))))) {
-        pSVar23 = (STWorldObject *)0x0;
+        pSVar23 = nullptr;
       }
       else {
         pSVar23 = g_worldGrid.cells
                   [(int)g_worldGrid.planeStride * (int)sVar4 + (int)g_worldGrid.sizeX * (int)sVar5 +
                    (int)sVar38].objects[0];
       }
-      if (((pSVar23 != (STWorldObject *)0x0) &&
+      if (((pSVar23 != nullptr) &&
           (*(int *)&pSVar23->field_0x18 == this_00->field_0679)) &&
          ((this_00->field_0675 == 99 && (pSVar23->value_20 == 1000)))) {
         thunk_FUN_004b7d50(pSVar23,this_00);
@@ -344,7 +344,7 @@ int __thiscall STBoatC::GetMessage(STBoatC *this,STMessage *message)
       if (((sVar38 < 0) || (pSVar19 = local_1c, g_worldGrid.sizeX <= sVar38)) ||
          ((sVar5 < 0 ||
           (((g_worldGrid.sizeY <= sVar5 || (sVar4 < 0)) || (g_worldGrid.sizeZ <= sVar4)))))) {
-        local_24 = (AnonShape_004B9D90_4F3151F9 *)0x0;
+        local_24 = nullptr;
       }
       else {
         local_24 = (AnonShape_004B9D90_4F3151F9 *)
@@ -352,19 +352,19 @@ int __thiscall STBoatC::GetMessage(STBoatC *this,STMessage *message)
                    [(int)g_worldGrid.planeStride * (int)sVar4 + (int)g_worldGrid.sizeX * (int)sVar5
                     + (int)sVar38].objects[0];
       }
-      if (((local_24 == (AnonShape_004B9D90_4F3151F9 *)0x0) ||
+      if (((local_24 == nullptr) ||
           (*(AnonShape_005EFAE0_B406B78B **)&local_24->field_0x18 != this_00->field_06AF)) ||
          (iVar12 = thunk_FUN_004b9d90(local_24), iVar12 == 0)) {
         STPlaySystemC::sub_006E62D0(g_playSystem_00802A38,this_00->field_06AF,(int *)&local_24);
       }
-      if (((local_24 != (AnonShape_004B9D90_4F3151F9 *)0x0) &&
+      if (((local_24 != nullptr) &&
           (*(int *)&local_24->field_0x20 == 1000)) &&
          (thunk_FUN_004b9d20(local_24,this_00),
          *(int *)&local_24->field_0x4b0 == this_00->field_0018)) {
         *(undefined4 *)&local_24->field_0x4b0 = 0;
       }
       if (((this_00->field_045D == CASE_13) &&
-          ((AnonShape_005EFAE0_B406B78B *)this_00->field_0524 != (AnonShape_005EFAE0_B406B78B *)0x0)
+          ((AnonShape_005EFAE0_B406B78B *)this_00->field_0524 != nullptr)
           ) && (iVar12 = STPlaySystemC::sub_006E62D0
                                    (g_playSystem_00802A38,
                                     (AnonShape_005EFAE0_B406B78B *)this_00->field_0524,
@@ -397,15 +397,15 @@ int __thiscall STBoatC::GetMessage(STBoatC *this,STMessage *message)
         STT3DSprC::StopShow((STT3DSprC *)puVar20,0xb);
         this_01 = thunk_FUN_0042b760(*(char *)&this_00->field_0024,this_00->field_0030);
         pSVar19 = local_1c;
-        if (this_01 != (STGroupBoatC *)0x0) {
+        if (this_01 != nullptr) {
           this_01->sub_00498D20(0x6a,&this_00->field_0032);
           pSVar19 = local_1c;
         }
       }
-      if (this_00->field_0465 != (int *)0x0) {
+      if (this_00->field_0465 != nullptr) {
         thunk_FUN_00635fd0(this_00->field_0465);
         Library::MSVCRT::FUN_0072e2b0(this_00->field_0465);
-        this_00->field_0465 = (void *)0x0;
+        this_00->field_0465 = nullptr;
       }
       if (((*(int *)&pSVar19->field_0x4 == 0xa8) || (pSVar19->field_0018 == 0)) ||
          (pSVar19->field_0018 == 4)) {
@@ -450,7 +450,7 @@ int __thiscall STBoatC::GetMessage(STBoatC *this,STMessage *message)
       g_currentExceptionFrame = local_184.previous;
       return 0;
     }
-    if ((this_00->field_05A6 == (ushort *)0x0) &&
+    if ((this_00->field_05A6 == nullptr) &&
        (iVar12 = STPlaySystemC::sub_006E62D0
                            (g_playSystem_00802A38,this_00->field_05A2,(int *)&this_00->field_05A6),
        iVar12 == -4)) {
@@ -704,16 +704,16 @@ LAB_00459f59:
     }
     this_00->field_0716 = this_00->field_0716 - *(int *)pSVar19;
     pvVar22 = DAT_00811798;
-    if ((((DAT_00811798 != (void *)0x0) && (*(int *)((int)pSVar19 + 8) != 0xff)) &&
+    if ((((DAT_00811798 != nullptr) && (*(int *)((int)pSVar19 + 8) != 0xff)) &&
         (pvVar22 = (void *)thunk_FUN_0041c710((AnonShape_0041C710_C4D46939 *)this_00),
-        pvVar22 != (void *)0x0)) && (*(int *)((int)pSVar19 + 0x14) == 0)) {
+        pvVar22 != nullptr)) && (*(int *)((int)pSVar19 + 0x14) == 0)) {
       thunk_FUN_0061f8b0(DAT_00811798,(int)this_00->field_005B,(int)this_00->field_005D,
                          this_00->field_0024);
       /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
       pvVar22 = extraout_EAX;
     }
     uVar24 = (undefined2)((uint)pvVar22 >> 0x10);
-    if ((DAT_008117bc != (undefined4 *)0x0) && (pSVar19 != (STGroupBoatC *)0x0)) {
+    if ((DAT_008117bc != nullptr) && (pSVar19 != nullptr)) {
       local_9c.id = MESS_SHARED_5DD5;
       local_9c.arg0.words.high = this_00->field_0032;
       local_9c.arg0.words.low = *(undefined2 *)&this_00->field_0024;
@@ -725,7 +725,7 @@ LAB_00459f59:
       uVar24 = extraout_var_00;
     }
     if (this_00->field_0716 < 1) {
-      if (((DAT_008117bc != (undefined4 *)0x0) && (pSVar19 != (STGroupBoatC *)0x0)) &&
+      if (((DAT_008117bc != nullptr) && (pSVar19 != nullptr)) &&
          (*(int *)pSVar19 != 10000)) {
         local_9c.id = 0x5dd1;
         local_9c.arg0.words.high = this_00->field_0032;
@@ -871,7 +871,7 @@ LAB_00459f59:
       sVar5 = this_00->field_066F;
       if (((((sVar5 < 0) || (g_worldGrid.sizeX <= sVar5)) || (sVar38 < 0)) ||
           ((g_worldGrid.sizeY <= sVar38 || (sVar4 < 0)))) || (g_worldGrid.sizeZ <= sVar4)) {
-        pSVar23 = (STWorldObject *)0x0;
+        pSVar23 = nullptr;
       }
       else {
         pSVar23 = g_worldGrid.cells
@@ -879,7 +879,7 @@ LAB_00459f59:
                    + (int)sVar5].objects[0];
         pSVar19 = local_1c;
       }
-      if (((pSVar23 != (STWorldObject *)0x0) &&
+      if (((pSVar23 != nullptr) &&
           (*(int *)&pSVar23->field_0x18 == this_00->field_0679)) &&
          ((this_00->field_0675 == 99 && (pSVar23->value_20 == 1000)))) {
         thunk_FUN_004b7d50(pSVar23,this_00);
@@ -890,7 +890,7 @@ LAB_00459f59:
       STAllPlayersC::DeleteGuardBoat
                 (g_allPlayers_007FA174,*(char *)&this_00->field_0024,this_00->field_0032,0);
       sub_00492420(this_00);
-      if (this_00->field_07CA != (AnonShape_005EFAE0_B406B78B *)0x0) {
+      if (this_00->field_07CA != nullptr) {
         iVar12 = STPlaySystemC::sub_006E62D0
                            (g_playSystem_00802A38,this_00->field_07CA,(int *)&local_58);
         if (iVar12 == -4) {
@@ -927,7 +927,7 @@ LAB_00459f59:
       sVar5 = this_00->field_06AB;
       if ((((sVar38 < 0) || (g_worldGrid.sizeX <= sVar38)) || (sVar5 < 0)) ||
          (((g_worldGrid.sizeY <= sVar5 || (sVar4 < 0)) || (g_worldGrid.sizeZ <= sVar4)))) {
-        local_28 = (AnonShape_004B9D90_4F3151F9 *)0x0;
+        local_28 = nullptr;
       }
       else {
         local_28 = (AnonShape_004B9D90_4F3151F9 *)
@@ -935,19 +935,19 @@ LAB_00459f59:
                    [(int)g_worldGrid.planeStride * (int)sVar4 + (int)g_worldGrid.sizeX * (int)sVar5
                     + (int)sVar38].objects[0];
       }
-      if (((local_28 == (AnonShape_004B9D90_4F3151F9 *)0x0) ||
+      if (((local_28 == nullptr) ||
           (*(AnonShape_005EFAE0_B406B78B **)&local_28->field_0x18 != this_00->field_06AF)) ||
          (iVar12 = thunk_FUN_004b9d90(local_28), iVar12 == 0)) {
         STPlaySystemC::sub_006E62D0(g_playSystem_00802A38,this_00->field_06AF,(int *)&local_28);
       }
-      if (((local_28 != (AnonShape_004B9D90_4F3151F9 *)0x0) &&
+      if (((local_28 != nullptr) &&
           (*(int *)&local_28->field_0x20 == 1000)) &&
          (thunk_FUN_004b9d20(local_28,this_00),
          *(int *)&local_28->field_0x4b0 == this_00->field_0018)) {
         *(undefined4 *)&local_28->field_0x4b0 = 0;
       }
       if (((this_00->field_045D == CASE_13) &&
-          ((AnonShape_005EFAE0_B406B78B *)this_00->field_0524 != (AnonShape_005EFAE0_B406B78B *)0x0)
+          ((AnonShape_005EFAE0_B406B78B *)this_00->field_0524 != nullptr)
           ) && (iVar12 = STPlaySystemC::sub_006E62D0
                                    (g_playSystem_00802A38,
                                     (AnonShape_005EFAE0_B406B78B *)this_00->field_0524,
@@ -972,7 +972,7 @@ LAB_00459f59:
       if ((sVar38 < 0) ||
          ((((g_worldGrid.sizeX <= sVar38 || (sVar5 < 0)) || (g_worldGrid.sizeY <= sVar5)) ||
           ((sVar4 < 0 || (g_worldGrid.sizeZ <= sVar4)))))) {
-        local_10 = (STFishC *)0x0;
+        local_10 = nullptr;
       }
       else {
         local_10 = (STFishC *)
@@ -980,7 +980,7 @@ LAB_00459f59:
                    [(int)g_worldGrid.planeStride * (int)sVar4 + (int)g_worldGrid.sizeX * (int)sVar5
                     + (int)sVar38].objects[0];
       }
-      if ((local_10 != (STFishC *)0x0) && (local_10->field_0018 == this_00->field_055A)) {
+      if ((local_10 != nullptr) && (local_10->field_0018 == this_00->field_055A)) {
         thunk_FUN_004e2200(local_10,this_00->field_0568,this_00->field_0018,this_00->field_0716);
         g_currentExceptionFrame = local_184.previous;
         return 0;
@@ -994,7 +994,7 @@ LAB_00459f59:
                STAllPlayersC::GetObjPtr
                          (g_allPlayers_007FA174,(char)*(int *)((int)pSVar19 + 8),
                           *(ushort *)((int)pSVar19 + 0xc),CASE_1);
-    if ((STGameObjC *)local_10 == (STGameObjC *)0x0) {
+    if ((STGameObjC *)local_10 == nullptr) {
       g_currentExceptionFrame = local_184.previous;
       return 0;
     }
@@ -1031,7 +1031,7 @@ LAB_00459f59:
     TLOBaseTy::sub_0041D590((TLOBaseTy *)this_00);
     sub_004167A0(this_00);
     pSVar19 = thunk_FUN_0042b760(*(char *)&this_00->field_0024,this_00->field_0030);
-    if (pSVar19 != (STGroupBoatC *)0x0) {
+    if (pSVar19 != nullptr) {
       thunk_FUN_0040cdb0(pSVar19,(uint)(ushort)this_00->field_0032);
     }
     thunk_FUN_004ad310((STT3DSprC *)&this_00->field_01D5);
@@ -1043,14 +1043,14 @@ LAB_00459f59:
                CONCAT22((short)((uint)uVar16 >> 0x10),this_00->field_0030),
                CONCAT22(extraout_var_07,this_00->field_0032),(int *)this_00,this_00->field_0826);
     thunk_FUN_00489950((int)this_00);
-    if (this_00->field_047B != (DArrayTy *)0x0) {
+    if (this_00->field_047B != nullptr) {
       DArrayDestroy(this_00->field_047B);
-      this_00->field_047B = (DArrayTy *)0x0;
+      this_00->field_047B = nullptr;
     }
-    if (this_00->field_0465 != (int *)0x0) {
+    if (this_00->field_0465 != nullptr) {
       thunk_FUN_00635fd0(this_00->field_0465);
       Library::MSVCRT::FUN_0072e2b0(this_00->field_0465);
-      this_00->field_0465 = (void *)0x0;
+      this_00->field_0465 = nullptr;
     }
     RaiseInternalException
               (-0x5001fff7,g_overwriteContext_007ED77C,"E:\\__titans\\wlad\\To_boat.cpp",0x37a
@@ -1080,7 +1080,7 @@ LAB_0045048a:
         if (((this_00->field_045D != CASE_16) &&
             (uVar14 = CheckPBoxCmd(this_00,CASE_16), uVar14 == 0)) &&
            (g_packedRecords_A62x8[*(char *)&this_00->field_0024].field329_0x15f != 0)) {
-          pDVar18 = Library::DKW::TBL::DArrayCreate((DArrayTy *)0x0,1,2,1);
+          pDVar18 = Library::DKW::TBL::DArrayCreate(nullptr,1,2,1);
           Library::DKW::TBL::DArrayAppend(pDVar18,&this_00->field_0032);
           STAllPlayersC::AddObjsToGroup
                     (g_allPlayers_007FA174,*(char *)&this_00->field_0024,0xfffe,&pDVar18->flags,
@@ -1097,7 +1097,7 @@ LAB_0045048a:
       else if (((this_00->field_045D != CASE_4) &&
                (uVar14 = CheckPBoxCmd(this_00,CASE_4), uVar14 == 0)) &&
               (g_packedRecords_A62x8[*(char *)&this_00->field_0024].field326_0x15b != 0)) {
-        pDVar18 = Library::DKW::TBL::DArrayCreate((DArrayTy *)0x0,1,2,1);
+        pDVar18 = Library::DKW::TBL::DArrayCreate(nullptr,1,2,1);
         Library::DKW::TBL::DArrayAppend(pDVar18,&this_00->field_0032);
         STAllPlayersC::AddObjsToGroup
                   (g_allPlayers_007FA174,*(char *)&this_00->field_0024,0xfffe,&pDVar18->flags,
@@ -1285,12 +1285,12 @@ joined_r0x00450a10:
       this_00->field_0786 = 0;
     }
     if (0 < this_00->field_073A) {
-      if (this_00->field_0465 == (void *)0x0) {
+      if (this_00->field_0465 == nullptr) {
         puVar20 = thunk_FUN_00631fd0();
         this_00->field_0465 = puVar20;
         /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
         uVar14 = extraout_EDX_07;
-        if (puVar20 != (undefined4 *)0x0) {
+        if (puVar20 != nullptr) {
           /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
           thunk_FUN_006324c0(puVar20,CASE_0,*(undefined4 *)((int)this_00->field_06CB + 0x2c));
           /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
@@ -1308,7 +1308,7 @@ joined_r0x00450a10:
       }
       if (this_00->field_045D == CASE_14) {
         if (this_00->field_05C0 == 3) {
-          if ((this_00->field_05A6 == (ushort *)0x0) &&
+          if ((this_00->field_05A6 == nullptr) &&
              (iVar12 = STPlaySystemC::sub_006E62D0
                                  (g_playSystem_00802A38,this_00->field_05A2,
                                   (int *)&this_00->field_05A6), iVar12 == -4)) {
@@ -1323,10 +1323,10 @@ joined_r0x00450a10:
       }
 LAB_00450c1e:
       if (this_00->field_073A == 0) {
-        if (this_00->field_0465 != (int *)0x0) {
+        if (this_00->field_0465 != nullptr) {
           thunk_FUN_00635fd0(this_00->field_0465);
           Library::MSVCRT::FUN_0072e2b0(this_00->field_0465);
-          this_00->field_0465 = (void *)0x0;
+          this_00->field_0465 = nullptr;
           /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
           uVar14 = extraout_EDX_09;
         }
@@ -1446,10 +1446,10 @@ LAB_00450e28:
         }
         thunk_FUN_0062b770((int)sVar38,(int)sVar4,(int)sVar5,uVar16,(int)this_00,(int)sVar6,iVar12,
                            uVar14);
-        if (this_00->field_0465 != (int *)0x0) {
+        if (this_00->field_0465 != nullptr) {
           thunk_FUN_00635fd0(this_00->field_0465);
           Library::MSVCRT::FUN_0072e2b0(this_00->field_0465);
-          this_00->field_0465 = (void *)0x0;
+          this_00->field_0465 = nullptr;
         }
       }
       /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
@@ -1475,7 +1475,7 @@ LAB_00450e28:
         STT3DSprC::StopShow((STT3DSprC *)puVar20,8);
       }
       if ((local_c == *(uint *)(&DAT_007a8f21 + this_00->field_082A * 0x45)) &&
-         (local_1c != (STGroupBoatC *)0x0)) {
+         (local_1c != nullptr)) {
         local_1c->sub_00498D20(0x6a,&this_00->field_0032);
       }
       /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
@@ -1803,7 +1803,7 @@ LAB_0045ad7b:
           this_00->field_045D = 0;
           this_00->field_0459 = CASE_66;
           /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
-          local_EAX_10888 = BackAttack(this_00,(int *)0x0,(int)unaff_EDI,(int)unaff_ESI);
+          local_EAX_10888 = BackAttack(this_00,nullptr,(int)unaff_EDI,(int)unaff_ESI);
           if (local_EAX_10888 != -1) goto cf_common_exit_00458C5B;
           iVar12 = 0x549;
           local_8 = local_EAX_10888;
@@ -1820,7 +1820,7 @@ LAB_0045ad7b:
           this_00->field_045D = 0;
           this_00->field_0459 = CASE_68;
           /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
-          local_EAX_10888 = BackToDok(this_00,(int *)0x0,unaff_EDI,unaff_ESI);
+          local_EAX_10888 = BackToDok(this_00,nullptr,unaff_EDI,unaff_ESI);
           if (local_EAX_10888 != -1) goto cf_common_exit_00458C5B;
           iVar12 = 0x567;
           local_8 = local_EAX_10888;
@@ -1836,7 +1836,7 @@ LAB_0045ad7b:
         case CASE_6:
           this_00->field_045D = 0;
           this_00->field_0459 = CASE_6A;
-          local_EAX_10888 = BackPatrol(this_00,(int *)0x0);
+          local_EAX_10888 = BackPatrol(this_00,nullptr);
           if (local_EAX_10888 != -1) goto cf_common_exit_00458C5B;
           iVar12 = 0x54e;
           local_8 = local_EAX_10888;
@@ -1860,7 +1860,7 @@ LAB_0045ad7b:
         case CASE_9:
           this_00->field_045D = 0;
           this_00->field_0459 = CASE_6D;
-          local_EAX_10888 = BackCapture(this_00,(int *)0x0);
+          local_EAX_10888 = BackCapture(this_00,nullptr);
           if (local_EAX_10888 != -1) goto cf_common_exit_00458C5B;
           iVar12 = 0x58a;
           local_8 = local_EAX_10888;
@@ -1876,7 +1876,7 @@ LAB_0045ad7b:
         case CASE_B:
           this_00->field_045D = 0;
           this_00->field_0459 = CASE_6F;
-          local_EAX_10888 = BackAnnih(this_00,(int *)0x0);
+          local_EAX_10888 = BackAnnih(this_00,nullptr);
           if (local_EAX_10888 != -1) goto cf_common_exit_00458C5B;
           iVar12 = 0x59e;
           local_8 = local_EAX_10888;
@@ -1884,7 +1884,7 @@ LAB_0045ad7b:
         case CASE_C:
           this_00->field_045D = 0;
           this_00->field_0459 = CASE_70;
-          local_EAX_10888 = BackLoadRC(this_00,(STBoatC *)0x0);
+          local_EAX_10888 = BackLoadRC(this_00,nullptr);
           if (local_EAX_10888 != -1) goto cf_common_exit_00458C5B;
           iVar12 = 0x553;
           local_8 = local_EAX_10888;
@@ -1892,7 +1892,7 @@ LAB_0045ad7b:
         case CASE_D:
           this_00->field_045D = 0;
           this_00->field_0459 = CASE_71;
-          local_EAX_10888 = BackUnLoadRC(this_00,(STBoatC *)0x0);
+          local_EAX_10888 = BackUnLoadRC(this_00,nullptr);
           if (local_EAX_10888 != -1) goto cf_common_exit_00458C5B;
           iVar12 = 0x562;
           local_8 = local_EAX_10888;
@@ -1900,7 +1900,7 @@ LAB_0045ad7b:
         case CASE_E:
           this_00->field_045D = 0;
           this_00->field_0459 = CASE_72;
-          local_EAX_10888 = thunk_FUN_004805b0(this_00,(int *)0x0);
+          local_EAX_10888 = thunk_FUN_004805b0(this_00,nullptr);
           if (local_EAX_10888 != -1) goto cf_common_exit_00458C5B;
           iVar12 = 0x5ad;
           local_8 = local_EAX_10888;
@@ -1908,7 +1908,7 @@ LAB_0045ad7b:
         case CASE_F:
           this_00->field_045D = 0;
           this_00->field_0459 = CASE_73;
-          local_EAX_10888 = BackLoadObj(this_00,(int *)0x0);
+          local_EAX_10888 = BackLoadObj(this_00,nullptr);
           if (local_EAX_10888 != -1) goto cf_common_exit_00458C5B;
           iVar12 = 0x571;
           local_8 = local_EAX_10888;
@@ -1916,7 +1916,7 @@ LAB_0045ad7b:
         case CASE_10:
           this_00->field_045D = 0;
           this_00->field_0459 = CASE_74;
-          local_EAX_10888 = BackUnLoadObj(this_00,(int *)0x0);
+          local_EAX_10888 = BackUnLoadObj(this_00,nullptr);
           if (local_EAX_10888 != -1) goto cf_common_exit_00458C5B;
           iVar12 = 0x57b;
           local_8 = local_EAX_10888;
@@ -1925,7 +1925,7 @@ LAB_0045ad7b:
           this_00->field_045D = 0;
           this_00->field_0459 = CASE_75;
           /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
-          local_EAX_10888 = BackBuild(this_00,(int *)0x0,unaff_EDI,unaff_ESI);
+          local_EAX_10888 = BackBuild(this_00,nullptr,unaff_EDI,unaff_ESI);
           if (local_EAX_10888 != -1) goto cf_common_exit_00458C5B;
           iVar12 = 0x558;
           local_8 = local_EAX_10888;
@@ -1934,7 +1934,7 @@ LAB_0045ad7b:
           this_00->field_045D = 0;
           this_00->field_0459 = CASE_76;
           /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
-          local_EAX_10888 = BackDismant(this_00,(int *)0x0,unaff_EDI,unaff_ESI);
+          local_EAX_10888 = BackDismant(this_00,nullptr,unaff_EDI,unaff_ESI);
           if (local_EAX_10888 != -1) goto cf_common_exit_00458C5B;
           iVar12 = 0x5a3;
           local_8 = local_EAX_10888;
@@ -1950,7 +1950,7 @@ LAB_0045ad7b:
         case CASE_14:
           this_00->field_045D = 0;
           this_00->field_0459 = CASE_78;
-          local_EAX_10888 = BackWaitLoad(this_00,(int *)0x0);
+          local_EAX_10888 = BackWaitLoad(this_00,nullptr);
           if (local_EAX_10888 != -1) goto cf_common_exit_00458C5B;
           iVar12 = 0x576;
           local_8 = local_EAX_10888;
@@ -1958,7 +1958,7 @@ LAB_0045ad7b:
         case CASE_15:
           this_00->field_045D = 0;
           this_00->field_0459 = CASE_79;
-          local_EAX_10888 = BackTeleport(this_00,(int *)0x0);
+          local_EAX_10888 = BackTeleport(this_00,nullptr);
           if (local_EAX_10888 != -1) goto cf_common_exit_00458C5B;
           iVar12 = 0x594;
           local_8 = local_EAX_10888;
@@ -1974,7 +1974,7 @@ LAB_0045ad7b:
         case CASE_17:
           this_00->field_045D = 0;
           this_00->field_0459 = CASE_7B;
-          local_EAX_10888 = BackBring(this_00,(int *)0x0);
+          local_EAX_10888 = BackBring(this_00,nullptr);
           if (local_EAX_10888 != -1) goto cf_common_exit_00458C5B;
           iVar12 = 0x599;
           local_8 = local_EAX_10888;
@@ -1988,7 +1988,7 @@ LAB_0045ad7b:
         if (this_00->field_045D == 0) {
           this_00->field_045D = CASE_C;
           /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
-          iVar12 = LoadRC(this_00,(int *)0x0,unaff_EDI,(int)unaff_ESI);
+          iVar12 = LoadRC(this_00,nullptr,unaff_EDI,(int)unaff_ESI);
           if (iVar12 != -1) {
             g_currentExceptionFrame = local_184.previous;
             return 0;
@@ -2010,7 +2010,7 @@ LAB_0045ad7b:
           this_00->field_045D = 0;
           this_00->field_0459 = CASE_66;
           /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
-          local_EAX_10888 = BackAttack(this_00,(int *)0x0,(int)unaff_EDI,(int)unaff_ESI);
+          local_EAX_10888 = BackAttack(this_00,nullptr,(int)unaff_EDI,(int)unaff_ESI);
           if (local_EAX_10888 != -1) goto cf_common_exit_00458C5B;
           iVar12 = 0x5cb;
           local_8 = local_EAX_10888;
@@ -2027,7 +2027,7 @@ LAB_0045ad7b:
           this_00->field_045D = 0;
           this_00->field_0459 = CASE_68;
           /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
-          local_EAX_10888 = BackToDok(this_00,(int *)0x0,unaff_EDI,unaff_ESI);
+          local_EAX_10888 = BackToDok(this_00,nullptr,unaff_EDI,unaff_ESI);
           if (local_EAX_10888 != -1) goto cf_common_exit_00458C5B;
           iVar12 = 0x5e9;
           local_8 = local_EAX_10888;
@@ -2043,7 +2043,7 @@ LAB_0045ad7b:
         case CASE_6:
           this_00->field_045D = 0;
           this_00->field_0459 = CASE_6A;
-          local_EAX_10888 = BackPatrol(this_00,(int *)0x0);
+          local_EAX_10888 = BackPatrol(this_00,nullptr);
           if (local_EAX_10888 != -1) goto cf_common_exit_00458C5B;
           iVar12 = 0x5d0;
           local_8 = local_EAX_10888;
@@ -2067,7 +2067,7 @@ LAB_0045ad7b:
         case CASE_9:
           this_00->field_045D = 0;
           this_00->field_0459 = CASE_6D;
-          local_EAX_10888 = BackCapture(this_00,(int *)0x0);
+          local_EAX_10888 = BackCapture(this_00,nullptr);
           if (local_EAX_10888 != -1) goto cf_common_exit_00458C5B;
           iVar12 = 0x60c;
           local_8 = local_EAX_10888;
@@ -2083,7 +2083,7 @@ LAB_0045ad7b:
         case CASE_B:
           this_00->field_045D = 0;
           this_00->field_0459 = CASE_6F;
-          local_EAX_10888 = BackAnnih(this_00,(int *)0x0);
+          local_EAX_10888 = BackAnnih(this_00,nullptr);
           if (local_EAX_10888 != -1) goto cf_common_exit_00458C5B;
           iVar12 = 0x620;
           local_8 = local_EAX_10888;
@@ -2091,7 +2091,7 @@ LAB_0045ad7b:
         case CASE_C:
           this_00->field_045D = 0;
           this_00->field_0459 = CASE_70;
-          local_EAX_10888 = BackLoadRC(this_00,(STBoatC *)0x0);
+          local_EAX_10888 = BackLoadRC(this_00,nullptr);
           if (local_EAX_10888 != -1) goto cf_common_exit_00458C5B;
           iVar12 = 0x5d5;
           local_8 = local_EAX_10888;
@@ -2099,7 +2099,7 @@ LAB_0045ad7b:
         case CASE_D:
           this_00->field_045D = 0;
           this_00->field_0459 = CASE_71;
-          local_EAX_10888 = BackUnLoadRC(this_00,(STBoatC *)0x0);
+          local_EAX_10888 = BackUnLoadRC(this_00,nullptr);
           if (local_EAX_10888 != -1) goto cf_common_exit_00458C5B;
           iVar12 = 0x5e4;
           local_8 = local_EAX_10888;
@@ -2107,7 +2107,7 @@ LAB_0045ad7b:
         case CASE_E:
           this_00->field_045D = 0;
           this_00->field_0459 = CASE_72;
-          local_EAX_10888 = thunk_FUN_004805b0(this_00,(int *)0x0);
+          local_EAX_10888 = thunk_FUN_004805b0(this_00,nullptr);
           if (local_EAX_10888 != -1) goto cf_common_exit_00458C5B;
           iVar12 = 0x62f;
           local_8 = local_EAX_10888;
@@ -2115,7 +2115,7 @@ LAB_0045ad7b:
         case CASE_F:
           this_00->field_045D = 0;
           this_00->field_0459 = CASE_73;
-          local_EAX_10888 = BackLoadObj(this_00,(int *)0x0);
+          local_EAX_10888 = BackLoadObj(this_00,nullptr);
           if (local_EAX_10888 != -1) goto cf_common_exit_00458C5B;
           iVar12 = 0x5f3;
           local_8 = local_EAX_10888;
@@ -2123,7 +2123,7 @@ LAB_0045ad7b:
         case CASE_10:
           this_00->field_045D = 0;
           this_00->field_0459 = CASE_74;
-          local_EAX_10888 = BackUnLoadObj(this_00,(int *)0x0);
+          local_EAX_10888 = BackUnLoadObj(this_00,nullptr);
           if (local_EAX_10888 != -1) goto cf_common_exit_00458C5B;
           iVar12 = 0x5fd;
           local_8 = local_EAX_10888;
@@ -2132,7 +2132,7 @@ LAB_0045ad7b:
           this_00->field_045D = 0;
           this_00->field_0459 = CASE_75;
           /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
-          local_EAX_10888 = BackBuild(this_00,(int *)0x0,unaff_EDI,unaff_ESI);
+          local_EAX_10888 = BackBuild(this_00,nullptr,unaff_EDI,unaff_ESI);
           if (local_EAX_10888 != -1) goto cf_common_exit_00458C5B;
           iVar12 = 0x5da;
           local_8 = local_EAX_10888;
@@ -2141,7 +2141,7 @@ LAB_0045ad7b:
           this_00->field_045D = 0;
           this_00->field_0459 = CASE_76;
           /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
-          local_EAX_10888 = BackDismant(this_00,(int *)0x0,unaff_EDI,unaff_ESI);
+          local_EAX_10888 = BackDismant(this_00,nullptr,unaff_EDI,unaff_ESI);
           if (local_EAX_10888 != -1) goto cf_common_exit_00458C5B;
           iVar12 = 0x625;
           local_8 = local_EAX_10888;
@@ -2157,7 +2157,7 @@ LAB_0045ad7b:
         case CASE_14:
           this_00->field_045D = 0;
           this_00->field_0459 = CASE_78;
-          local_EAX_10888 = BackWaitLoad(this_00,(int *)0x0);
+          local_EAX_10888 = BackWaitLoad(this_00,nullptr);
           if (local_EAX_10888 != -1) goto cf_common_exit_00458C5B;
           iVar12 = 0x5f8;
           local_8 = local_EAX_10888;
@@ -2165,7 +2165,7 @@ LAB_0045ad7b:
         case CASE_15:
           this_00->field_045D = 0;
           this_00->field_0459 = CASE_79;
-          local_EAX_10888 = BackTeleport(this_00,(int *)0x0);
+          local_EAX_10888 = BackTeleport(this_00,nullptr);
           if (local_EAX_10888 != -1) goto cf_common_exit_00458C5B;
           iVar12 = 0x616;
           local_8 = local_EAX_10888;
@@ -2181,7 +2181,7 @@ LAB_0045ad7b:
         case CASE_17:
           this_00->field_045D = 0;
           this_00->field_0459 = CASE_7B;
-          local_EAX_10888 = BackBring(this_00,(int *)0x0);
+          local_EAX_10888 = BackBring(this_00,nullptr);
           if (local_EAX_10888 != -1) goto cf_common_exit_00458C5B;
           iVar12 = 0x61b;
           local_8 = local_EAX_10888;
@@ -2228,7 +2228,7 @@ LAB_0045ad7b:
           this_00->field_045D = 0;
           this_00->field_0459 = CASE_66;
           /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
-          local_EAX_10888 = BackAttack(this_00,(int *)0x0,(int)unaff_EDI,(int)unaff_ESI);
+          local_EAX_10888 = BackAttack(this_00,nullptr,(int)unaff_EDI,(int)unaff_ESI);
           if (local_EAX_10888 != -1) goto cf_common_exit_00458C5B;
           iVar12 = 0x652;
           local_8 = local_EAX_10888;
@@ -2245,7 +2245,7 @@ LAB_0045ad7b:
           this_00->field_045D = 0;
           this_00->field_0459 = CASE_68;
           /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
-          local_EAX_10888 = BackToDok(this_00,(int *)0x0,unaff_EDI,unaff_ESI);
+          local_EAX_10888 = BackToDok(this_00,nullptr,unaff_EDI,unaff_ESI);
           if (local_EAX_10888 != -1) goto cf_common_exit_00458C5B;
           iVar12 = 0x670;
           local_8 = local_EAX_10888;
@@ -2261,7 +2261,7 @@ LAB_0045ad7b:
         case CASE_6:
           this_00->field_045D = 0;
           this_00->field_0459 = CASE_6A;
-          local_EAX_10888 = BackPatrol(this_00,(int *)0x0);
+          local_EAX_10888 = BackPatrol(this_00,nullptr);
           if (local_EAX_10888 != -1) goto cf_common_exit_00458C5B;
           iVar12 = 0x657;
           local_8 = local_EAX_10888;
@@ -2285,7 +2285,7 @@ LAB_0045ad7b:
         case CASE_9:
           this_00->field_045D = 0;
           this_00->field_0459 = CASE_6D;
-          local_EAX_10888 = BackCapture(this_00,(int *)0x0);
+          local_EAX_10888 = BackCapture(this_00,nullptr);
           if (local_EAX_10888 != -1) goto cf_common_exit_00458C5B;
           iVar12 = 0x693;
           local_8 = local_EAX_10888;
@@ -2301,7 +2301,7 @@ LAB_0045ad7b:
         case CASE_B:
           this_00->field_045D = 0;
           this_00->field_0459 = CASE_6F;
-          local_EAX_10888 = BackAnnih(this_00,(int *)0x0);
+          local_EAX_10888 = BackAnnih(this_00,nullptr);
           if (local_EAX_10888 != -1) goto cf_common_exit_00458C5B;
           iVar12 = 0x6a7;
           local_8 = local_EAX_10888;
@@ -2309,7 +2309,7 @@ LAB_0045ad7b:
         case CASE_C:
           this_00->field_045D = 0;
           this_00->field_0459 = CASE_70;
-          local_EAX_10888 = BackLoadRC(this_00,(STBoatC *)0x0);
+          local_EAX_10888 = BackLoadRC(this_00,nullptr);
           if (local_EAX_10888 != -1) goto cf_common_exit_00458C5B;
           iVar12 = 0x65c;
           local_8 = local_EAX_10888;
@@ -2317,7 +2317,7 @@ LAB_0045ad7b:
         case CASE_D:
           this_00->field_045D = 0;
           this_00->field_0459 = CASE_71;
-          local_EAX_10888 = BackUnLoadRC(this_00,(STBoatC *)0x0);
+          local_EAX_10888 = BackUnLoadRC(this_00,nullptr);
           if (local_EAX_10888 != -1) goto cf_common_exit_00458C5B;
           iVar12 = 0x66b;
           local_8 = local_EAX_10888;
@@ -2325,7 +2325,7 @@ LAB_0045ad7b:
         case CASE_E:
           this_00->field_045D = 0;
           this_00->field_0459 = CASE_72;
-          local_EAX_10888 = thunk_FUN_004805b0(this_00,(int *)0x0);
+          local_EAX_10888 = thunk_FUN_004805b0(this_00,nullptr);
           if (local_EAX_10888 != -1) goto cf_common_exit_00458C5B;
           iVar12 = 0x6b6;
           local_8 = local_EAX_10888;
@@ -2333,7 +2333,7 @@ LAB_0045ad7b:
         case CASE_F:
           this_00->field_045D = 0;
           this_00->field_0459 = CASE_73;
-          local_EAX_10888 = BackLoadObj(this_00,(int *)0x0);
+          local_EAX_10888 = BackLoadObj(this_00,nullptr);
           if (local_EAX_10888 != -1) goto cf_common_exit_00458C5B;
           iVar12 = 0x67a;
           local_8 = local_EAX_10888;
@@ -2341,7 +2341,7 @@ LAB_0045ad7b:
         case CASE_10:
           this_00->field_045D = 0;
           this_00->field_0459 = CASE_74;
-          local_EAX_10888 = BackUnLoadObj(this_00,(int *)0x0);
+          local_EAX_10888 = BackUnLoadObj(this_00,nullptr);
           if (local_EAX_10888 != -1) goto cf_common_exit_00458C5B;
           iVar12 = 0x684;
           local_8 = local_EAX_10888;
@@ -2350,7 +2350,7 @@ LAB_0045ad7b:
           this_00->field_045D = 0;
           this_00->field_0459 = CASE_75;
           /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
-          local_EAX_10888 = BackBuild(this_00,(int *)0x0,unaff_EDI,unaff_ESI);
+          local_EAX_10888 = BackBuild(this_00,nullptr,unaff_EDI,unaff_ESI);
           if (local_EAX_10888 != -1) goto cf_common_exit_00458C5B;
           iVar12 = 0x661;
           local_8 = local_EAX_10888;
@@ -2359,7 +2359,7 @@ LAB_0045ad7b:
           this_00->field_045D = 0;
           this_00->field_0459 = CASE_76;
           /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
-          local_EAX_10888 = BackDismant(this_00,(int *)0x0,unaff_EDI,unaff_ESI);
+          local_EAX_10888 = BackDismant(this_00,nullptr,unaff_EDI,unaff_ESI);
           if (local_EAX_10888 != -1) goto cf_common_exit_00458C5B;
           iVar12 = 0x6ac;
           local_8 = local_EAX_10888;
@@ -2375,7 +2375,7 @@ LAB_0045ad7b:
         case CASE_14:
           this_00->field_045D = 0;
           this_00->field_0459 = CASE_78;
-          local_EAX_10888 = BackWaitLoad(this_00,(int *)0x0);
+          local_EAX_10888 = BackWaitLoad(this_00,nullptr);
           if (local_EAX_10888 != -1) goto cf_common_exit_00458C5B;
           iVar12 = 0x67f;
           local_8 = local_EAX_10888;
@@ -2383,7 +2383,7 @@ LAB_0045ad7b:
         case CASE_15:
           this_00->field_045D = 0;
           this_00->field_0459 = CASE_79;
-          local_EAX_10888 = BackTeleport(this_00,(int *)0x0);
+          local_EAX_10888 = BackTeleport(this_00,nullptr);
           if (local_EAX_10888 != -1) goto cf_common_exit_00458C5B;
           iVar12 = 0x69d;
           local_8 = local_EAX_10888;
@@ -2399,7 +2399,7 @@ LAB_0045ad7b:
         case CASE_17:
           this_00->field_045D = 0;
           this_00->field_0459 = CASE_7B;
-          local_EAX_10888 = BackBring(this_00,(int *)0x0);
+          local_EAX_10888 = BackBring(this_00,nullptr);
           if (local_EAX_10888 != -1) goto cf_common_exit_00458C5B;
           iVar12 = 0x6a2;
           local_8 = local_EAX_10888;
@@ -2434,7 +2434,7 @@ LAB_0045ad7b:
           this_00->field_045D = 0;
           this_00->field_0459 = CASE_66;
           /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
-          local_EAX_10888 = BackAttack(this_00,(int *)0x0,(int)unaff_EDI,(int)unaff_ESI);
+          local_EAX_10888 = BackAttack(this_00,nullptr,(int)unaff_EDI,(int)unaff_ESI);
           if (local_EAX_10888 != -1) goto cf_common_exit_00458C5B;
           iVar12 = 0x6d4;
           local_8 = local_EAX_10888;
@@ -2451,7 +2451,7 @@ LAB_0045ad7b:
           this_00->field_045D = 0;
           this_00->field_0459 = CASE_68;
           /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
-          local_EAX_10888 = BackToDok(this_00,(int *)0x0,unaff_EDI,unaff_ESI);
+          local_EAX_10888 = BackToDok(this_00,nullptr,unaff_EDI,unaff_ESI);
           if (local_EAX_10888 != -1) goto cf_common_exit_00458C5B;
           iVar12 = 0x6f2;
           local_8 = local_EAX_10888;
@@ -2467,7 +2467,7 @@ LAB_0045ad7b:
         case CASE_6:
           this_00->field_045D = 0;
           this_00->field_0459 = CASE_6A;
-          local_EAX_10888 = BackPatrol(this_00,(int *)0x0);
+          local_EAX_10888 = BackPatrol(this_00,nullptr);
           if (local_EAX_10888 != -1) goto cf_common_exit_00458C5B;
           iVar12 = 0x6d9;
           local_8 = local_EAX_10888;
@@ -2491,7 +2491,7 @@ LAB_0045ad7b:
         case CASE_9:
           this_00->field_045D = 0;
           this_00->field_0459 = CASE_6D;
-          local_EAX_10888 = BackCapture(this_00,(int *)0x0);
+          local_EAX_10888 = BackCapture(this_00,nullptr);
           if (local_EAX_10888 != -1) goto cf_common_exit_00458C5B;
           iVar12 = 0x715;
           local_8 = local_EAX_10888;
@@ -2507,7 +2507,7 @@ LAB_0045ad7b:
         case CASE_B:
           this_00->field_045D = 0;
           this_00->field_0459 = CASE_6F;
-          local_EAX_10888 = BackAnnih(this_00,(int *)0x0);
+          local_EAX_10888 = BackAnnih(this_00,nullptr);
           if (local_EAX_10888 != -1) goto cf_common_exit_00458C5B;
           iVar12 = 0x729;
           local_8 = local_EAX_10888;
@@ -2515,7 +2515,7 @@ LAB_0045ad7b:
         case CASE_C:
           this_00->field_045D = 0;
           this_00->field_0459 = CASE_70;
-          local_EAX_10888 = BackLoadRC(this_00,(STBoatC *)0x0);
+          local_EAX_10888 = BackLoadRC(this_00,nullptr);
           if (local_EAX_10888 != -1) goto cf_common_exit_00458C5B;
           iVar12 = 0x6de;
           local_8 = local_EAX_10888;
@@ -2523,7 +2523,7 @@ LAB_0045ad7b:
         case CASE_D:
           this_00->field_045D = 0;
           this_00->field_0459 = CASE_71;
-          local_EAX_10888 = BackUnLoadRC(this_00,(STBoatC *)0x0);
+          local_EAX_10888 = BackUnLoadRC(this_00,nullptr);
           if (local_EAX_10888 != -1) goto cf_common_exit_00458C5B;
           iVar12 = 0x6ed;
           local_8 = local_EAX_10888;
@@ -2531,7 +2531,7 @@ LAB_0045ad7b:
         case CASE_E:
           this_00->field_045D = 0;
           this_00->field_0459 = CASE_72;
-          local_EAX_10888 = thunk_FUN_004805b0(this_00,(int *)0x0);
+          local_EAX_10888 = thunk_FUN_004805b0(this_00,nullptr);
           if (local_EAX_10888 != -1) goto cf_common_exit_00458C5B;
           iVar12 = 0x738;
           local_8 = local_EAX_10888;
@@ -2539,7 +2539,7 @@ LAB_0045ad7b:
         case CASE_F:
           this_00->field_045D = 0;
           this_00->field_0459 = CASE_73;
-          local_EAX_10888 = BackLoadObj(this_00,(int *)0x0);
+          local_EAX_10888 = BackLoadObj(this_00,nullptr);
           if (local_EAX_10888 != -1) goto cf_common_exit_00458C5B;
           iVar12 = 0x6fc;
           local_8 = local_EAX_10888;
@@ -2547,7 +2547,7 @@ LAB_0045ad7b:
         case CASE_10:
           this_00->field_045D = 0;
           this_00->field_0459 = CASE_74;
-          local_EAX_10888 = BackUnLoadObj(this_00,(int *)0x0);
+          local_EAX_10888 = BackUnLoadObj(this_00,nullptr);
           if (local_EAX_10888 != -1) goto cf_common_exit_00458C5B;
           iVar12 = 0x706;
           local_8 = local_EAX_10888;
@@ -2556,7 +2556,7 @@ LAB_0045ad7b:
           this_00->field_045D = 0;
           this_00->field_0459 = CASE_75;
           /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
-          local_EAX_10888 = BackBuild(this_00,(int *)0x0,unaff_EDI,unaff_ESI);
+          local_EAX_10888 = BackBuild(this_00,nullptr,unaff_EDI,unaff_ESI);
           if (local_EAX_10888 != -1) goto cf_common_exit_00458C5B;
           iVar12 = 0x6e3;
           local_8 = local_EAX_10888;
@@ -2565,7 +2565,7 @@ LAB_0045ad7b:
           this_00->field_045D = 0;
           this_00->field_0459 = CASE_76;
           /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
-          local_EAX_10888 = BackDismant(this_00,(int *)0x0,unaff_EDI,unaff_ESI);
+          local_EAX_10888 = BackDismant(this_00,nullptr,unaff_EDI,unaff_ESI);
           if (local_EAX_10888 != -1) goto cf_common_exit_00458C5B;
           iVar12 = 0x72e;
           local_8 = local_EAX_10888;
@@ -2581,7 +2581,7 @@ LAB_0045ad7b:
         case CASE_14:
           this_00->field_045D = 0;
           this_00->field_0459 = CASE_78;
-          local_EAX_10888 = BackWaitLoad(this_00,(int *)0x0);
+          local_EAX_10888 = BackWaitLoad(this_00,nullptr);
           if (local_EAX_10888 != -1) goto cf_common_exit_00458C5B;
           iVar12 = 0x701;
           local_8 = local_EAX_10888;
@@ -2589,7 +2589,7 @@ LAB_0045ad7b:
         case CASE_15:
           this_00->field_045D = 0;
           this_00->field_0459 = CASE_79;
-          local_EAX_10888 = BackTeleport(this_00,(int *)0x0);
+          local_EAX_10888 = BackTeleport(this_00,nullptr);
           if (local_EAX_10888 != -1) goto cf_common_exit_00458C5B;
           iVar12 = 0x71f;
           local_8 = local_EAX_10888;
@@ -2605,7 +2605,7 @@ LAB_0045ad7b:
         case CASE_17:
           this_00->field_045D = 0;
           this_00->field_0459 = CASE_7B;
-          local_EAX_10888 = BackBring(this_00,(int *)0x0);
+          local_EAX_10888 = BackBring(this_00,nullptr);
           if (local_EAX_10888 != -1) goto cf_common_exit_00458C5B;
           iVar12 = 0x724;
           local_8 = local_EAX_10888;
@@ -2652,7 +2652,7 @@ LAB_0045ad7b:
           this_00->field_045D = 0;
           this_00->field_0459 = CASE_66;
           /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
-          local_EAX_10888 = BackAttack(this_00,(int *)0x0,(int)unaff_EDI,(int)unaff_ESI);
+          local_EAX_10888 = BackAttack(this_00,nullptr,(int)unaff_EDI,(int)unaff_ESI);
           if (local_EAX_10888 != -1) goto cf_common_exit_00458C5B;
           iVar12 = 0x75b;
           local_8 = local_EAX_10888;
@@ -2669,7 +2669,7 @@ LAB_0045ad7b:
           this_00->field_045D = 0;
           this_00->field_0459 = CASE_68;
           /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
-          local_EAX_10888 = BackToDok(this_00,(int *)0x0,unaff_EDI,unaff_ESI);
+          local_EAX_10888 = BackToDok(this_00,nullptr,unaff_EDI,unaff_ESI);
           if (local_EAX_10888 != -1) goto cf_common_exit_00458C5B;
           iVar12 = 0x779;
           local_8 = local_EAX_10888;
@@ -2685,7 +2685,7 @@ LAB_0045ad7b:
         case CASE_6:
           this_00->field_045D = 0;
           this_00->field_0459 = CASE_6A;
-          local_EAX_10888 = BackPatrol(this_00,(int *)0x0);
+          local_EAX_10888 = BackPatrol(this_00,nullptr);
           if (local_EAX_10888 != -1) goto cf_common_exit_00458C5B;
           iVar12 = 0x760;
           local_8 = local_EAX_10888;
@@ -2709,7 +2709,7 @@ LAB_0045ad7b:
         case CASE_9:
           this_00->field_045D = 0;
           this_00->field_0459 = CASE_6D;
-          local_EAX_10888 = BackCapture(this_00,(int *)0x0);
+          local_EAX_10888 = BackCapture(this_00,nullptr);
           if (local_EAX_10888 != -1) goto cf_common_exit_00458C5B;
           iVar12 = 0x79c;
           local_8 = local_EAX_10888;
@@ -2725,7 +2725,7 @@ LAB_0045ad7b:
         case CASE_B:
           this_00->field_045D = 0;
           this_00->field_0459 = CASE_6F;
-          local_EAX_10888 = BackAnnih(this_00,(int *)0x0);
+          local_EAX_10888 = BackAnnih(this_00,nullptr);
           if (local_EAX_10888 != -1) goto cf_common_exit_00458C5B;
           iVar12 = 0x7b0;
           local_8 = local_EAX_10888;
@@ -2733,7 +2733,7 @@ LAB_0045ad7b:
         case CASE_C:
           this_00->field_045D = 0;
           this_00->field_0459 = CASE_70;
-          local_EAX_10888 = BackLoadRC(this_00,(STBoatC *)0x0);
+          local_EAX_10888 = BackLoadRC(this_00,nullptr);
           if (local_EAX_10888 != -1) goto cf_common_exit_00458C5B;
           iVar12 = 0x765;
           local_8 = local_EAX_10888;
@@ -2741,7 +2741,7 @@ LAB_0045ad7b:
         case CASE_D:
           this_00->field_045D = 0;
           this_00->field_0459 = CASE_71;
-          local_EAX_10888 = BackUnLoadRC(this_00,(STBoatC *)0x0);
+          local_EAX_10888 = BackUnLoadRC(this_00,nullptr);
           if (local_EAX_10888 != -1) goto cf_common_exit_00458C5B;
           iVar12 = 0x774;
           local_8 = local_EAX_10888;
@@ -2749,7 +2749,7 @@ LAB_0045ad7b:
         case CASE_E:
           this_00->field_045D = 0;
           this_00->field_0459 = CASE_72;
-          local_EAX_10888 = thunk_FUN_004805b0(this_00,(int *)0x0);
+          local_EAX_10888 = thunk_FUN_004805b0(this_00,nullptr);
           if (local_EAX_10888 != -1) goto cf_common_exit_00458C5B;
           iVar12 = 0x7bf;
           local_8 = local_EAX_10888;
@@ -2757,7 +2757,7 @@ LAB_0045ad7b:
         case CASE_F:
           this_00->field_045D = 0;
           this_00->field_0459 = CASE_73;
-          local_EAX_10888 = BackLoadObj(this_00,(int *)0x0);
+          local_EAX_10888 = BackLoadObj(this_00,nullptr);
           if (local_EAX_10888 != -1) goto cf_common_exit_00458C5B;
           iVar12 = 0x783;
           local_8 = local_EAX_10888;
@@ -2765,7 +2765,7 @@ LAB_0045ad7b:
         case CASE_10:
           this_00->field_045D = 0;
           this_00->field_0459 = CASE_74;
-          local_EAX_10888 = BackUnLoadObj(this_00,(int *)0x0);
+          local_EAX_10888 = BackUnLoadObj(this_00,nullptr);
           if (local_EAX_10888 != -1) goto cf_common_exit_00458C5B;
           iVar12 = 0x78d;
           local_8 = local_EAX_10888;
@@ -2774,7 +2774,7 @@ LAB_0045ad7b:
           this_00->field_045D = 0;
           this_00->field_0459 = CASE_75;
           /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
-          local_EAX_10888 = BackBuild(this_00,(int *)0x0,unaff_EDI,unaff_ESI);
+          local_EAX_10888 = BackBuild(this_00,nullptr,unaff_EDI,unaff_ESI);
           if (local_EAX_10888 != -1) goto cf_common_exit_00458C5B;
           iVar12 = 0x76a;
           local_8 = local_EAX_10888;
@@ -2783,7 +2783,7 @@ LAB_0045ad7b:
           this_00->field_045D = 0;
           this_00->field_0459 = CASE_76;
           /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
-          local_EAX_10888 = BackDismant(this_00,(int *)0x0,unaff_EDI,unaff_ESI);
+          local_EAX_10888 = BackDismant(this_00,nullptr,unaff_EDI,unaff_ESI);
           if (local_EAX_10888 != -1) goto cf_common_exit_00458C5B;
           iVar12 = 0x7b5;
           local_8 = local_EAX_10888;
@@ -2799,7 +2799,7 @@ LAB_0045ad7b:
         case CASE_14:
           this_00->field_045D = 0;
           this_00->field_0459 = CASE_78;
-          local_EAX_10888 = BackWaitLoad(this_00,(int *)0x0);
+          local_EAX_10888 = BackWaitLoad(this_00,nullptr);
           if (local_EAX_10888 != -1) goto cf_common_exit_00458C5B;
           iVar12 = 0x788;
           local_8 = local_EAX_10888;
@@ -2807,7 +2807,7 @@ LAB_0045ad7b:
         case CASE_15:
           this_00->field_045D = 0;
           this_00->field_0459 = CASE_79;
-          local_EAX_10888 = BackTeleport(this_00,(int *)0x0);
+          local_EAX_10888 = BackTeleport(this_00,nullptr);
           if (local_EAX_10888 != -1) goto cf_common_exit_00458C5B;
           iVar12 = 0x7a6;
           local_8 = local_EAX_10888;
@@ -2823,7 +2823,7 @@ LAB_0045ad7b:
         case CASE_17:
           this_00->field_045D = 0;
           this_00->field_0459 = CASE_7B;
-          local_EAX_10888 = BackBring(this_00,(int *)0x0);
+          local_EAX_10888 = BackBring(this_00,nullptr);
           if (local_EAX_10888 != -1) goto cf_common_exit_00458C5B;
           iVar12 = 0x7ab;
           local_8 = local_EAX_10888;
@@ -2858,7 +2858,7 @@ LAB_0045ad7b:
           this_00->field_045D = 0;
           this_00->field_0459 = CASE_66;
           /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
-          local_EAX_10888 = BackAttack(this_00,(int *)0x0,(int)unaff_EDI,(int)unaff_ESI);
+          local_EAX_10888 = BackAttack(this_00,nullptr,(int)unaff_EDI,(int)unaff_ESI);
           if (local_EAX_10888 != -1) goto cf_common_exit_00458C5B;
           iVar12 = 0x7dc;
           local_8 = local_EAX_10888;
@@ -2875,7 +2875,7 @@ LAB_0045ad7b:
           this_00->field_045D = 0;
           this_00->field_0459 = CASE_68;
           /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
-          local_EAX_10888 = BackToDok(this_00,(int *)0x0,unaff_EDI,unaff_ESI);
+          local_EAX_10888 = BackToDok(this_00,nullptr,unaff_EDI,unaff_ESI);
           if (local_EAX_10888 != -1) goto cf_common_exit_00458C5B;
           iVar12 = 0x7fa;
           local_8 = local_EAX_10888;
@@ -2891,7 +2891,7 @@ LAB_0045ad7b:
         case CASE_6:
           this_00->field_045D = 0;
           this_00->field_0459 = CASE_6A;
-          local_EAX_10888 = BackPatrol(this_00,(int *)0x0);
+          local_EAX_10888 = BackPatrol(this_00,nullptr);
           if (local_EAX_10888 != -1) goto cf_common_exit_00458C5B;
           iVar12 = 0x7e1;
           local_8 = local_EAX_10888;
@@ -2915,7 +2915,7 @@ LAB_0045ad7b:
         case CASE_9:
           this_00->field_045D = 0;
           this_00->field_0459 = CASE_6D;
-          local_EAX_10888 = BackCapture(this_00,(int *)0x0);
+          local_EAX_10888 = BackCapture(this_00,nullptr);
           if (local_EAX_10888 != -1) goto cf_common_exit_00458C5B;
           iVar12 = 0x81d;
           local_8 = local_EAX_10888;
@@ -2931,7 +2931,7 @@ LAB_0045ad7b:
         case CASE_B:
           this_00->field_045D = 0;
           this_00->field_0459 = CASE_6F;
-          local_EAX_10888 = BackAnnih(this_00,(int *)0x0);
+          local_EAX_10888 = BackAnnih(this_00,nullptr);
           if (local_EAX_10888 != -1) goto cf_common_exit_00458C5B;
           iVar12 = 0x831;
           local_8 = local_EAX_10888;
@@ -2939,7 +2939,7 @@ LAB_0045ad7b:
         case CASE_C:
           this_00->field_045D = 0;
           this_00->field_0459 = CASE_70;
-          local_EAX_10888 = BackLoadRC(this_00,(STBoatC *)0x0);
+          local_EAX_10888 = BackLoadRC(this_00,nullptr);
           if (local_EAX_10888 != -1) goto cf_common_exit_00458C5B;
           iVar12 = 0x7e6;
           local_8 = local_EAX_10888;
@@ -2947,7 +2947,7 @@ LAB_0045ad7b:
         case CASE_D:
           this_00->field_045D = 0;
           this_00->field_0459 = CASE_71;
-          local_EAX_10888 = BackUnLoadRC(this_00,(STBoatC *)0x0);
+          local_EAX_10888 = BackUnLoadRC(this_00,nullptr);
           if (local_EAX_10888 != -1) goto cf_common_exit_00458C5B;
           iVar12 = 0x7f5;
           local_8 = local_EAX_10888;
@@ -2955,7 +2955,7 @@ LAB_0045ad7b:
         case CASE_E:
           this_00->field_045D = 0;
           this_00->field_0459 = CASE_72;
-          local_EAX_10888 = thunk_FUN_004805b0(this_00,(int *)0x0);
+          local_EAX_10888 = thunk_FUN_004805b0(this_00,nullptr);
           if (local_EAX_10888 != -1) goto cf_common_exit_00458C5B;
           iVar12 = 0x840;
           local_8 = local_EAX_10888;
@@ -2963,7 +2963,7 @@ LAB_0045ad7b:
         case CASE_F:
           this_00->field_045D = 0;
           this_00->field_0459 = CASE_73;
-          local_EAX_10888 = BackLoadObj(this_00,(int *)0x0);
+          local_EAX_10888 = BackLoadObj(this_00,nullptr);
           if (local_EAX_10888 != -1) goto cf_common_exit_00458C5B;
           iVar12 = 0x804;
           local_8 = local_EAX_10888;
@@ -2971,7 +2971,7 @@ LAB_0045ad7b:
         case CASE_10:
           this_00->field_045D = 0;
           this_00->field_0459 = CASE_74;
-          local_EAX_10888 = BackUnLoadObj(this_00,(int *)0x0);
+          local_EAX_10888 = BackUnLoadObj(this_00,nullptr);
           if (local_EAX_10888 != -1) goto cf_common_exit_00458C5B;
           iVar12 = 0x80e;
           local_8 = local_EAX_10888;
@@ -2980,7 +2980,7 @@ LAB_0045ad7b:
           this_00->field_045D = 0;
           this_00->field_0459 = CASE_75;
           /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
-          local_EAX_10888 = BackBuild(this_00,(int *)0x0,unaff_EDI,unaff_ESI);
+          local_EAX_10888 = BackBuild(this_00,nullptr,unaff_EDI,unaff_ESI);
           if (local_EAX_10888 != -1) goto cf_common_exit_00458C5B;
           iVar12 = 0x7eb;
           local_8 = local_EAX_10888;
@@ -2989,7 +2989,7 @@ LAB_0045ad7b:
           this_00->field_045D = 0;
           this_00->field_0459 = CASE_76;
           /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
-          local_EAX_10888 = BackDismant(this_00,(int *)0x0,unaff_EDI,unaff_ESI);
+          local_EAX_10888 = BackDismant(this_00,nullptr,unaff_EDI,unaff_ESI);
           if (local_EAX_10888 != -1) goto cf_common_exit_00458C5B;
           iVar12 = 0x836;
           local_8 = local_EAX_10888;
@@ -3005,7 +3005,7 @@ LAB_0045ad7b:
         case CASE_14:
           this_00->field_045D = 0;
           this_00->field_0459 = CASE_78;
-          local_EAX_10888 = BackWaitLoad(this_00,(int *)0x0);
+          local_EAX_10888 = BackWaitLoad(this_00,nullptr);
           if (local_EAX_10888 != -1) goto cf_common_exit_00458C5B;
           iVar12 = 0x809;
           local_8 = local_EAX_10888;
@@ -3013,7 +3013,7 @@ LAB_0045ad7b:
         case CASE_15:
           this_00->field_045D = 0;
           this_00->field_0459 = CASE_79;
-          local_EAX_10888 = BackTeleport(this_00,(int *)0x0);
+          local_EAX_10888 = BackTeleport(this_00,nullptr);
           if (local_EAX_10888 != -1) goto cf_common_exit_00458C5B;
           iVar12 = 0x827;
           local_8 = local_EAX_10888;
@@ -3029,7 +3029,7 @@ LAB_0045ad7b:
         case CASE_17:
           this_00->field_045D = 0;
           this_00->field_0459 = CASE_7B;
-          local_EAX_10888 = BackBring(this_00,(int *)0x0);
+          local_EAX_10888 = BackBring(this_00,nullptr);
           if (local_EAX_10888 != -1) goto cf_common_exit_00458C5B;
           iVar12 = 0x82c;
           local_8 = local_EAX_10888;
@@ -3064,7 +3064,7 @@ LAB_0045ad7b:
           this_00->field_045D = 0;
           this_00->field_0459 = CASE_66;
           /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
-          local_EAX_10888 = BackAttack(this_00,(int *)0x0,(int)unaff_EDI,(int)unaff_ESI);
+          local_EAX_10888 = BackAttack(this_00,nullptr,(int)unaff_EDI,(int)unaff_ESI);
           if (local_EAX_10888 != -1) goto cf_common_exit_00458C5B;
           iVar12 = 0x85d;
           local_8 = local_EAX_10888;
@@ -3081,7 +3081,7 @@ LAB_0045ad7b:
           this_00->field_045D = 0;
           this_00->field_0459 = CASE_68;
           /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
-          local_EAX_10888 = BackToDok(this_00,(int *)0x0,unaff_EDI,unaff_ESI);
+          local_EAX_10888 = BackToDok(this_00,nullptr,unaff_EDI,unaff_ESI);
           if (local_EAX_10888 != -1) goto cf_common_exit_00458C5B;
           iVar12 = 0x87b;
           local_8 = local_EAX_10888;
@@ -3097,7 +3097,7 @@ LAB_0045ad7b:
         case CASE_6:
           this_00->field_045D = 0;
           this_00->field_0459 = CASE_6A;
-          local_EAX_10888 = BackPatrol(this_00,(int *)0x0);
+          local_EAX_10888 = BackPatrol(this_00,nullptr);
           if (local_EAX_10888 != -1) goto cf_common_exit_00458C5B;
           iVar12 = 0x862;
           local_8 = local_EAX_10888;
@@ -3121,7 +3121,7 @@ LAB_0045ad7b:
         case CASE_9:
           this_00->field_045D = 0;
           this_00->field_0459 = CASE_6D;
-          local_EAX_10888 = BackCapture(this_00,(int *)0x0);
+          local_EAX_10888 = BackCapture(this_00,nullptr);
           if (local_EAX_10888 != -1) goto cf_common_exit_00458C5B;
           iVar12 = 0x89e;
           local_8 = local_EAX_10888;
@@ -3137,7 +3137,7 @@ LAB_0045ad7b:
         case CASE_B:
           this_00->field_045D = 0;
           this_00->field_0459 = CASE_6F;
-          local_EAX_10888 = BackAnnih(this_00,(int *)0x0);
+          local_EAX_10888 = BackAnnih(this_00,nullptr);
           if (local_EAX_10888 != -1) goto cf_common_exit_00458C5B;
           iVar12 = 0x8b2;
           local_8 = local_EAX_10888;
@@ -3145,7 +3145,7 @@ LAB_0045ad7b:
         case CASE_C:
           this_00->field_045D = 0;
           this_00->field_0459 = CASE_70;
-          local_EAX_10888 = BackLoadRC(this_00,(STBoatC *)0x0);
+          local_EAX_10888 = BackLoadRC(this_00,nullptr);
           if (local_EAX_10888 != -1) goto cf_common_exit_00458C5B;
           iVar12 = 0x867;
           local_8 = local_EAX_10888;
@@ -3153,7 +3153,7 @@ LAB_0045ad7b:
         case CASE_D:
           this_00->field_045D = 0;
           this_00->field_0459 = CASE_71;
-          local_EAX_10888 = BackUnLoadRC(this_00,(STBoatC *)0x0);
+          local_EAX_10888 = BackUnLoadRC(this_00,nullptr);
           if (local_EAX_10888 != -1) goto cf_common_exit_00458C5B;
           iVar12 = 0x876;
           local_8 = local_EAX_10888;
@@ -3161,7 +3161,7 @@ LAB_0045ad7b:
         case CASE_E:
           this_00->field_045D = 0;
           this_00->field_0459 = CASE_72;
-          local_EAX_10888 = thunk_FUN_004805b0(this_00,(int *)0x0);
+          local_EAX_10888 = thunk_FUN_004805b0(this_00,nullptr);
           if (local_EAX_10888 != -1) goto cf_common_exit_00458C5B;
           iVar12 = 0x8c1;
           local_8 = local_EAX_10888;
@@ -3169,7 +3169,7 @@ LAB_0045ad7b:
         case CASE_F:
           this_00->field_045D = 0;
           this_00->field_0459 = CASE_73;
-          local_EAX_10888 = BackLoadObj(this_00,(int *)0x0);
+          local_EAX_10888 = BackLoadObj(this_00,nullptr);
           if (local_EAX_10888 != -1) goto cf_common_exit_00458C5B;
           iVar12 = 0x885;
           local_8 = local_EAX_10888;
@@ -3177,7 +3177,7 @@ LAB_0045ad7b:
         case CASE_10:
           this_00->field_045D = 0;
           this_00->field_0459 = CASE_74;
-          local_EAX_10888 = BackUnLoadObj(this_00,(int *)0x0);
+          local_EAX_10888 = BackUnLoadObj(this_00,nullptr);
           if (local_EAX_10888 != -1) goto cf_common_exit_00458C5B;
           iVar12 = 0x88f;
           local_8 = local_EAX_10888;
@@ -3186,7 +3186,7 @@ LAB_0045ad7b:
           this_00->field_045D = 0;
           this_00->field_0459 = CASE_75;
           /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
-          local_EAX_10888 = BackBuild(this_00,(int *)0x0,unaff_EDI,unaff_ESI);
+          local_EAX_10888 = BackBuild(this_00,nullptr,unaff_EDI,unaff_ESI);
           if (local_EAX_10888 != -1) goto cf_common_exit_00458C5B;
           iVar12 = 0x86c;
           local_8 = local_EAX_10888;
@@ -3195,7 +3195,7 @@ LAB_0045ad7b:
           this_00->field_045D = 0;
           this_00->field_0459 = CASE_76;
           /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
-          local_EAX_10888 = BackDismant(this_00,(int *)0x0,unaff_EDI,unaff_ESI);
+          local_EAX_10888 = BackDismant(this_00,nullptr,unaff_EDI,unaff_ESI);
           if (local_EAX_10888 != -1) goto cf_common_exit_00458C5B;
           iVar12 = 0x8b7;
           local_8 = local_EAX_10888;
@@ -3211,7 +3211,7 @@ LAB_0045ad7b:
         case CASE_14:
           this_00->field_045D = 0;
           this_00->field_0459 = CASE_78;
-          local_EAX_10888 = BackWaitLoad(this_00,(int *)0x0);
+          local_EAX_10888 = BackWaitLoad(this_00,nullptr);
           if (local_EAX_10888 != -1) goto cf_common_exit_00458C5B;
           iVar12 = 0x88a;
           local_8 = local_EAX_10888;
@@ -3219,7 +3219,7 @@ LAB_0045ad7b:
         case CASE_15:
           this_00->field_045D = 0;
           this_00->field_0459 = CASE_79;
-          local_EAX_10888 = BackTeleport(this_00,(int *)0x0);
+          local_EAX_10888 = BackTeleport(this_00,nullptr);
           if (local_EAX_10888 != -1) goto cf_common_exit_00458C5B;
           iVar12 = 0x8a8;
           local_8 = local_EAX_10888;
@@ -3235,7 +3235,7 @@ LAB_0045ad7b:
         case CASE_17:
           this_00->field_045D = 0;
           this_00->field_0459 = CASE_7B;
-          local_EAX_10888 = BackBring(this_00,(int *)0x0);
+          local_EAX_10888 = BackBring(this_00,nullptr);
           if (local_EAX_10888 != -1) goto cf_common_exit_00458C5B;
           iVar12 = 0x8ad;
           local_8 = local_EAX_10888;
@@ -3270,7 +3270,7 @@ LAB_0045ad7b:
           this_00->field_045D = 0;
           this_00->field_0459 = CASE_66;
           /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
-          local_EAX_10888 = BackAttack(this_00,(int *)0x0,(int)unaff_EDI,(int)unaff_ESI);
+          local_EAX_10888 = BackAttack(this_00,nullptr,(int)unaff_EDI,(int)unaff_ESI);
           if (local_EAX_10888 != -1) goto cf_common_exit_00458C5B;
           iVar12 = 0x8de;
           local_8 = local_EAX_10888;
@@ -3287,7 +3287,7 @@ LAB_0045ad7b:
           this_00->field_045D = 0;
           this_00->field_0459 = CASE_68;
           /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
-          local_EAX_10888 = BackToDok(this_00,(int *)0x0,unaff_EDI,unaff_ESI);
+          local_EAX_10888 = BackToDok(this_00,nullptr,unaff_EDI,unaff_ESI);
           if (local_EAX_10888 != -1) goto cf_common_exit_00458C5B;
           iVar12 = 0x8fc;
           local_8 = local_EAX_10888;
@@ -3303,7 +3303,7 @@ LAB_0045ad7b:
         case CASE_6:
           this_00->field_045D = 0;
           this_00->field_0459 = CASE_6A;
-          local_EAX_10888 = BackPatrol(this_00,(int *)0x0);
+          local_EAX_10888 = BackPatrol(this_00,nullptr);
           if (local_EAX_10888 != -1) goto cf_common_exit_00458C5B;
           iVar12 = 0x8e3;
           local_8 = local_EAX_10888;
@@ -3327,7 +3327,7 @@ LAB_0045ad7b:
         case CASE_9:
           this_00->field_045D = 0;
           this_00->field_0459 = CASE_6D;
-          local_EAX_10888 = BackCapture(this_00,(int *)0x0);
+          local_EAX_10888 = BackCapture(this_00,nullptr);
           if (local_EAX_10888 != -1) goto cf_common_exit_00458C5B;
           iVar12 = 0x91f;
           local_8 = local_EAX_10888;
@@ -3343,7 +3343,7 @@ LAB_0045ad7b:
         case CASE_B:
           this_00->field_045D = 0;
           this_00->field_0459 = CASE_6F;
-          local_EAX_10888 = BackAnnih(this_00,(int *)0x0);
+          local_EAX_10888 = BackAnnih(this_00,nullptr);
           if (local_EAX_10888 != -1) goto cf_common_exit_00458C5B;
           iVar12 = 0x933;
           local_8 = local_EAX_10888;
@@ -3351,7 +3351,7 @@ LAB_0045ad7b:
         case CASE_C:
           this_00->field_045D = 0;
           this_00->field_0459 = CASE_70;
-          local_EAX_10888 = BackLoadRC(this_00,(STBoatC *)0x0);
+          local_EAX_10888 = BackLoadRC(this_00,nullptr);
           if (local_EAX_10888 != -1) goto cf_common_exit_00458C5B;
           iVar12 = 0x8e8;
           local_8 = local_EAX_10888;
@@ -3359,7 +3359,7 @@ LAB_0045ad7b:
         case CASE_D:
           this_00->field_045D = 0;
           this_00->field_0459 = CASE_71;
-          local_EAX_10888 = BackUnLoadRC(this_00,(STBoatC *)0x0);
+          local_EAX_10888 = BackUnLoadRC(this_00,nullptr);
           if (local_EAX_10888 != -1) goto cf_common_exit_00458C5B;
           iVar12 = 0x8f7;
           local_8 = local_EAX_10888;
@@ -3367,7 +3367,7 @@ LAB_0045ad7b:
         case CASE_E:
           this_00->field_045D = 0;
           this_00->field_0459 = CASE_72;
-          local_EAX_10888 = thunk_FUN_004805b0(this_00,(int *)0x0);
+          local_EAX_10888 = thunk_FUN_004805b0(this_00,nullptr);
           if (local_EAX_10888 != -1) goto cf_common_exit_00458C5B;
           iVar12 = 0x942;
           local_8 = local_EAX_10888;
@@ -3375,7 +3375,7 @@ LAB_0045ad7b:
         case CASE_F:
           this_00->field_045D = 0;
           this_00->field_0459 = CASE_73;
-          local_EAX_10888 = BackLoadObj(this_00,(int *)0x0);
+          local_EAX_10888 = BackLoadObj(this_00,nullptr);
           if (local_EAX_10888 != -1) goto cf_common_exit_00458C5B;
           iVar12 = 0x906;
           local_8 = local_EAX_10888;
@@ -3383,7 +3383,7 @@ LAB_0045ad7b:
         case CASE_10:
           this_00->field_045D = 0;
           this_00->field_0459 = CASE_74;
-          local_EAX_10888 = BackUnLoadObj(this_00,(int *)0x0);
+          local_EAX_10888 = BackUnLoadObj(this_00,nullptr);
           if (local_EAX_10888 != -1) goto cf_common_exit_00458C5B;
           iVar12 = 0x910;
           local_8 = local_EAX_10888;
@@ -3392,7 +3392,7 @@ LAB_0045ad7b:
           this_00->field_045D = 0;
           this_00->field_0459 = CASE_75;
           /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
-          local_EAX_10888 = BackBuild(this_00,(int *)0x0,unaff_EDI,unaff_ESI);
+          local_EAX_10888 = BackBuild(this_00,nullptr,unaff_EDI,unaff_ESI);
           if (local_EAX_10888 != -1) goto cf_common_exit_00458C5B;
           iVar12 = 0x8ed;
           local_8 = local_EAX_10888;
@@ -3401,7 +3401,7 @@ LAB_0045ad7b:
           this_00->field_045D = 0;
           this_00->field_0459 = CASE_76;
           /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
-          local_EAX_10888 = BackDismant(this_00,(int *)0x0,unaff_EDI,unaff_ESI);
+          local_EAX_10888 = BackDismant(this_00,nullptr,unaff_EDI,unaff_ESI);
           if (local_EAX_10888 != -1) goto cf_common_exit_00458C5B;
           iVar12 = 0x938;
           local_8 = local_EAX_10888;
@@ -3417,7 +3417,7 @@ LAB_0045ad7b:
         case CASE_14:
           this_00->field_045D = 0;
           this_00->field_0459 = CASE_78;
-          local_EAX_10888 = BackWaitLoad(this_00,(int *)0x0);
+          local_EAX_10888 = BackWaitLoad(this_00,nullptr);
           if (local_EAX_10888 != -1) goto cf_common_exit_00458C5B;
           iVar12 = 0x90b;
           local_8 = local_EAX_10888;
@@ -3425,7 +3425,7 @@ LAB_0045ad7b:
         case CASE_15:
           this_00->field_045D = 0;
           this_00->field_0459 = CASE_79;
-          local_EAX_10888 = BackTeleport(this_00,(int *)0x0);
+          local_EAX_10888 = BackTeleport(this_00,nullptr);
           if (local_EAX_10888 != -1) goto cf_common_exit_00458C5B;
           iVar12 = 0x929;
           local_8 = local_EAX_10888;
@@ -3441,7 +3441,7 @@ LAB_0045ad7b:
         case CASE_17:
           this_00->field_045D = 0;
           this_00->field_0459 = CASE_7B;
-          local_EAX_10888 = BackBring(this_00,(int *)0x0);
+          local_EAX_10888 = BackBring(this_00,nullptr);
           if (local_EAX_10888 != -1) goto cf_common_exit_00458C5B;
           iVar12 = 0x92e;
           local_8 = local_EAX_10888;
@@ -3454,7 +3454,7 @@ LAB_0045ad7b:
       else if (this_00->field_0304 == 1) {
         if (this_00->field_045D == 0) {
           this_00->field_045D = CASE_F;
-          iVar12 = LoadObj(this_00,(AnonShape_005EFAE0_B406B78B *)0x0);
+          iVar12 = LoadObj(this_00,nullptr);
           if (iVar12 != -1) {
             g_currentExceptionFrame = local_184.previous;
             return 0;
@@ -3476,7 +3476,7 @@ LAB_0045ad7b:
           this_00->field_045D = 0;
           this_00->field_0459 = CASE_66;
           /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
-          local_EAX_10888 = BackAttack(this_00,(int *)0x0,(int)unaff_EDI,(int)unaff_ESI);
+          local_EAX_10888 = BackAttack(this_00,nullptr,(int)unaff_EDI,(int)unaff_ESI);
           if (local_EAX_10888 != -1) goto cf_common_exit_00458C5B;
           iVar12 = 0x95f;
           local_8 = local_EAX_10888;
@@ -3493,7 +3493,7 @@ LAB_0045ad7b:
           this_00->field_045D = 0;
           this_00->field_0459 = CASE_68;
           /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
-          local_EAX_10888 = BackToDok(this_00,(int *)0x0,unaff_EDI,unaff_ESI);
+          local_EAX_10888 = BackToDok(this_00,nullptr,unaff_EDI,unaff_ESI);
           if (local_EAX_10888 != -1) goto cf_common_exit_00458C5B;
           iVar12 = 0x97d;
           local_8 = local_EAX_10888;
@@ -3509,7 +3509,7 @@ LAB_0045ad7b:
         case CASE_6:
           this_00->field_045D = 0;
           this_00->field_0459 = CASE_6A;
-          local_EAX_10888 = BackPatrol(this_00,(int *)0x0);
+          local_EAX_10888 = BackPatrol(this_00,nullptr);
           if (local_EAX_10888 != -1) goto cf_common_exit_00458C5B;
           iVar12 = 0x964;
           local_8 = local_EAX_10888;
@@ -3533,7 +3533,7 @@ LAB_0045ad7b:
         case CASE_9:
           this_00->field_045D = 0;
           this_00->field_0459 = CASE_6D;
-          local_EAX_10888 = BackCapture(this_00,(int *)0x0);
+          local_EAX_10888 = BackCapture(this_00,nullptr);
           if (local_EAX_10888 != -1) goto cf_common_exit_00458C5B;
           iVar12 = 0x9a0;
           local_8 = local_EAX_10888;
@@ -3549,7 +3549,7 @@ LAB_0045ad7b:
         case CASE_B:
           this_00->field_045D = 0;
           this_00->field_0459 = CASE_6F;
-          local_EAX_10888 = BackAnnih(this_00,(int *)0x0);
+          local_EAX_10888 = BackAnnih(this_00,nullptr);
           if (local_EAX_10888 != -1) goto cf_common_exit_00458C5B;
           iVar12 = 0x9b4;
           local_8 = local_EAX_10888;
@@ -3557,7 +3557,7 @@ LAB_0045ad7b:
         case CASE_C:
           this_00->field_045D = 0;
           this_00->field_0459 = CASE_70;
-          local_EAX_10888 = BackLoadRC(this_00,(STBoatC *)0x0);
+          local_EAX_10888 = BackLoadRC(this_00,nullptr);
           if (local_EAX_10888 != -1) goto cf_common_exit_00458C5B;
           iVar12 = 0x969;
           local_8 = local_EAX_10888;
@@ -3565,7 +3565,7 @@ LAB_0045ad7b:
         case CASE_D:
           this_00->field_045D = 0;
           this_00->field_0459 = CASE_71;
-          local_EAX_10888 = BackUnLoadRC(this_00,(STBoatC *)0x0);
+          local_EAX_10888 = BackUnLoadRC(this_00,nullptr);
           if (local_EAX_10888 != -1) goto cf_common_exit_00458C5B;
           iVar12 = 0x978;
           local_8 = local_EAX_10888;
@@ -3573,7 +3573,7 @@ LAB_0045ad7b:
         case CASE_E:
           this_00->field_045D = 0;
           this_00->field_0459 = CASE_72;
-          local_EAX_10888 = thunk_FUN_004805b0(this_00,(int *)0x0);
+          local_EAX_10888 = thunk_FUN_004805b0(this_00,nullptr);
           if (local_EAX_10888 != -1) goto cf_common_exit_00458C5B;
           iVar12 = 0x9c3;
           local_8 = local_EAX_10888;
@@ -3581,7 +3581,7 @@ LAB_0045ad7b:
         case CASE_F:
           this_00->field_045D = 0;
           this_00->field_0459 = CASE_73;
-          local_EAX_10888 = BackLoadObj(this_00,(int *)0x0);
+          local_EAX_10888 = BackLoadObj(this_00,nullptr);
           if (local_EAX_10888 != -1) goto cf_common_exit_00458C5B;
           iVar12 = 0x987;
           local_8 = local_EAX_10888;
@@ -3589,7 +3589,7 @@ LAB_0045ad7b:
         case CASE_10:
           this_00->field_045D = 0;
           this_00->field_0459 = CASE_74;
-          local_EAX_10888 = BackUnLoadObj(this_00,(int *)0x0);
+          local_EAX_10888 = BackUnLoadObj(this_00,nullptr);
           if (local_EAX_10888 != -1) goto cf_common_exit_00458C5B;
           iVar12 = 0x991;
           local_8 = local_EAX_10888;
@@ -3598,7 +3598,7 @@ LAB_0045ad7b:
           this_00->field_045D = 0;
           this_00->field_0459 = CASE_75;
           /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
-          local_EAX_10888 = BackBuild(this_00,(int *)0x0,unaff_EDI,unaff_ESI);
+          local_EAX_10888 = BackBuild(this_00,nullptr,unaff_EDI,unaff_ESI);
           if (local_EAX_10888 != -1) goto cf_common_exit_00458C5B;
           iVar12 = 0x96e;
           local_8 = local_EAX_10888;
@@ -3607,7 +3607,7 @@ LAB_0045ad7b:
           this_00->field_045D = 0;
           this_00->field_0459 = CASE_76;
           /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
-          local_EAX_10888 = BackDismant(this_00,(int *)0x0,unaff_EDI,unaff_ESI);
+          local_EAX_10888 = BackDismant(this_00,nullptr,unaff_EDI,unaff_ESI);
           if (local_EAX_10888 != -1) goto cf_common_exit_00458C5B;
           iVar12 = 0x9b9;
           local_8 = local_EAX_10888;
@@ -3623,7 +3623,7 @@ LAB_0045ad7b:
         case CASE_14:
           this_00->field_045D = 0;
           this_00->field_0459 = CASE_78;
-          local_EAX_10888 = BackWaitLoad(this_00,(int *)0x0);
+          local_EAX_10888 = BackWaitLoad(this_00,nullptr);
           if (local_EAX_10888 != -1) goto cf_common_exit_00458C5B;
           iVar12 = 0x98c;
           local_8 = local_EAX_10888;
@@ -3631,7 +3631,7 @@ LAB_0045ad7b:
         case CASE_15:
           this_00->field_045D = 0;
           this_00->field_0459 = CASE_79;
-          local_EAX_10888 = BackTeleport(this_00,(int *)0x0);
+          local_EAX_10888 = BackTeleport(this_00,nullptr);
           if (local_EAX_10888 != -1) goto cf_common_exit_00458C5B;
           iVar12 = 0x9aa;
           local_8 = local_EAX_10888;
@@ -3647,7 +3647,7 @@ LAB_0045ad7b:
         case CASE_17:
           this_00->field_045D = 0;
           this_00->field_0459 = CASE_7B;
-          local_EAX_10888 = BackBring(this_00,(int *)0x0);
+          local_EAX_10888 = BackBring(this_00,nullptr);
           if (local_EAX_10888 != -1) goto cf_common_exit_00458C5B;
           iVar12 = 0x9af;
           local_8 = local_EAX_10888;
@@ -3660,7 +3660,7 @@ LAB_0045ad7b:
       else if (this_00->field_0314 == 1) {
         if (this_00->field_045D == 0) {
           this_00->field_045D = CASE_14;
-          iVar12 = WaitLoad(this_00,(STBoatC *)0x0);
+          iVar12 = WaitLoad(this_00,nullptr);
           if (iVar12 != -1) {
             g_currentExceptionFrame = local_184.previous;
             return 0;
@@ -3682,7 +3682,7 @@ LAB_0045ad7b:
           this_00->field_045D = 0;
           this_00->field_0459 = CASE_66;
           /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
-          local_EAX_10888 = BackAttack(this_00,(int *)0x0,(int)unaff_EDI,(int)unaff_ESI);
+          local_EAX_10888 = BackAttack(this_00,nullptr,(int)unaff_EDI,(int)unaff_ESI);
           if (local_EAX_10888 != -1) goto cf_common_exit_00458C5B;
           iVar12 = 0x9e0;
           local_8 = local_EAX_10888;
@@ -3699,7 +3699,7 @@ LAB_0045ad7b:
           this_00->field_045D = 0;
           this_00->field_0459 = CASE_68;
           /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
-          local_EAX_10888 = BackToDok(this_00,(int *)0x0,unaff_EDI,unaff_ESI);
+          local_EAX_10888 = BackToDok(this_00,nullptr,unaff_EDI,unaff_ESI);
           if (local_EAX_10888 != -1) goto cf_common_exit_00458C5B;
           iVar12 = 0x9fe;
           local_8 = local_EAX_10888;
@@ -3715,7 +3715,7 @@ LAB_0045ad7b:
         case CASE_6:
           this_00->field_045D = 0;
           this_00->field_0459 = CASE_6A;
-          local_EAX_10888 = BackPatrol(this_00,(int *)0x0);
+          local_EAX_10888 = BackPatrol(this_00,nullptr);
           if (local_EAX_10888 != -1) goto cf_common_exit_00458C5B;
           iVar12 = 0x9e5;
           local_8 = local_EAX_10888;
@@ -3739,7 +3739,7 @@ LAB_0045ad7b:
         case CASE_9:
           this_00->field_045D = 0;
           this_00->field_0459 = CASE_6D;
-          local_EAX_10888 = BackCapture(this_00,(int *)0x0);
+          local_EAX_10888 = BackCapture(this_00,nullptr);
           if (local_EAX_10888 != -1) goto cf_common_exit_00458C5B;
           iVar12 = 0xa21;
           local_8 = local_EAX_10888;
@@ -3755,7 +3755,7 @@ LAB_0045ad7b:
         case CASE_B:
           this_00->field_045D = 0;
           this_00->field_0459 = CASE_6F;
-          local_EAX_10888 = BackAnnih(this_00,(int *)0x0);
+          local_EAX_10888 = BackAnnih(this_00,nullptr);
           if (local_EAX_10888 != -1) goto cf_common_exit_00458C5B;
           iVar12 = 0xa35;
           local_8 = local_EAX_10888;
@@ -3763,7 +3763,7 @@ LAB_0045ad7b:
         case CASE_C:
           this_00->field_045D = 0;
           this_00->field_0459 = CASE_70;
-          local_EAX_10888 = BackLoadRC(this_00,(STBoatC *)0x0);
+          local_EAX_10888 = BackLoadRC(this_00,nullptr);
           if (local_EAX_10888 != -1) goto cf_common_exit_00458C5B;
           iVar12 = 0x9ea;
           local_8 = local_EAX_10888;
@@ -3771,7 +3771,7 @@ LAB_0045ad7b:
         case CASE_D:
           this_00->field_045D = 0;
           this_00->field_0459 = CASE_71;
-          local_EAX_10888 = BackUnLoadRC(this_00,(STBoatC *)0x0);
+          local_EAX_10888 = BackUnLoadRC(this_00,nullptr);
           if (local_EAX_10888 != -1) goto cf_common_exit_00458C5B;
           iVar12 = 0x9f9;
           local_8 = local_EAX_10888;
@@ -3779,7 +3779,7 @@ LAB_0045ad7b:
         case CASE_E:
           this_00->field_045D = 0;
           this_00->field_0459 = CASE_72;
-          local_EAX_10888 = thunk_FUN_004805b0(this_00,(int *)0x0);
+          local_EAX_10888 = thunk_FUN_004805b0(this_00,nullptr);
           if (local_EAX_10888 != -1) goto cf_common_exit_00458C5B;
           iVar12 = 0xa44;
           local_8 = local_EAX_10888;
@@ -3787,7 +3787,7 @@ LAB_0045ad7b:
         case CASE_F:
           this_00->field_045D = 0;
           this_00->field_0459 = CASE_73;
-          local_EAX_10888 = BackLoadObj(this_00,(int *)0x0);
+          local_EAX_10888 = BackLoadObj(this_00,nullptr);
           if (local_EAX_10888 != -1) goto cf_common_exit_00458C5B;
           iVar12 = 0xa08;
           local_8 = local_EAX_10888;
@@ -3795,7 +3795,7 @@ LAB_0045ad7b:
         case CASE_10:
           this_00->field_045D = 0;
           this_00->field_0459 = CASE_74;
-          local_EAX_10888 = BackUnLoadObj(this_00,(int *)0x0);
+          local_EAX_10888 = BackUnLoadObj(this_00,nullptr);
           if (local_EAX_10888 != -1) goto cf_common_exit_00458C5B;
           iVar12 = 0xa12;
           local_8 = local_EAX_10888;
@@ -3804,7 +3804,7 @@ LAB_0045ad7b:
           this_00->field_045D = 0;
           this_00->field_0459 = CASE_75;
           /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
-          local_EAX_10888 = BackBuild(this_00,(int *)0x0,unaff_EDI,unaff_ESI);
+          local_EAX_10888 = BackBuild(this_00,nullptr,unaff_EDI,unaff_ESI);
           if (local_EAX_10888 != -1) goto cf_common_exit_00458C5B;
           iVar12 = 0x9ef;
           local_8 = local_EAX_10888;
@@ -3813,7 +3813,7 @@ LAB_0045ad7b:
           this_00->field_045D = 0;
           this_00->field_0459 = CASE_76;
           /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
-          local_EAX_10888 = BackDismant(this_00,(int *)0x0,unaff_EDI,unaff_ESI);
+          local_EAX_10888 = BackDismant(this_00,nullptr,unaff_EDI,unaff_ESI);
           if (local_EAX_10888 != -1) goto cf_common_exit_00458C5B;
           iVar12 = 0xa3a;
           local_8 = local_EAX_10888;
@@ -3829,7 +3829,7 @@ LAB_0045ad7b:
         case CASE_14:
           this_00->field_045D = 0;
           this_00->field_0459 = CASE_78;
-          local_EAX_10888 = BackWaitLoad(this_00,(int *)0x0);
+          local_EAX_10888 = BackWaitLoad(this_00,nullptr);
           if (local_EAX_10888 != -1) goto cf_common_exit_00458C5B;
           iVar12 = 0xa0d;
           local_8 = local_EAX_10888;
@@ -3837,7 +3837,7 @@ LAB_0045ad7b:
         case CASE_15:
           this_00->field_045D = 0;
           this_00->field_0459 = CASE_79;
-          local_EAX_10888 = BackTeleport(this_00,(int *)0x0);
+          local_EAX_10888 = BackTeleport(this_00,nullptr);
           if (local_EAX_10888 != -1) goto cf_common_exit_00458C5B;
           iVar12 = 0xa2b;
           local_8 = local_EAX_10888;
@@ -3853,7 +3853,7 @@ LAB_0045ad7b:
         case CASE_17:
           this_00->field_045D = 0;
           this_00->field_0459 = CASE_7B;
-          local_EAX_10888 = BackBring(this_00,(int *)0x0);
+          local_EAX_10888 = BackBring(this_00,nullptr);
           if (local_EAX_10888 != -1) goto cf_common_exit_00458C5B;
           iVar12 = 0xa30;
           local_8 = local_EAX_10888;
@@ -3888,7 +3888,7 @@ LAB_0045ad7b:
           this_00->field_045D = 0;
           this_00->field_0459 = CASE_66;
           /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
-          local_EAX_10888 = BackAttack(this_00,(int *)0x0,(int)unaff_EDI,(int)unaff_ESI);
+          local_EAX_10888 = BackAttack(this_00,nullptr,(int)unaff_EDI,(int)unaff_ESI);
           if (local_EAX_10888 != -1) goto cf_common_exit_00458C5B;
           iVar12 = 0xa61;
           local_8 = local_EAX_10888;
@@ -3905,7 +3905,7 @@ LAB_0045ad7b:
           this_00->field_045D = 0;
           this_00->field_0459 = CASE_68;
           /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
-          local_EAX_10888 = BackToDok(this_00,(int *)0x0,unaff_EDI,unaff_ESI);
+          local_EAX_10888 = BackToDok(this_00,nullptr,unaff_EDI,unaff_ESI);
           if (local_EAX_10888 != -1) goto cf_common_exit_00458C5B;
           iVar12 = 0xa7f;
           local_8 = local_EAX_10888;
@@ -3921,7 +3921,7 @@ LAB_0045ad7b:
         case CASE_6:
           this_00->field_045D = 0;
           this_00->field_0459 = CASE_6A;
-          local_EAX_10888 = BackPatrol(this_00,(int *)0x0);
+          local_EAX_10888 = BackPatrol(this_00,nullptr);
           if (local_EAX_10888 != -1) goto cf_common_exit_00458C5B;
           iVar12 = 0xa66;
           local_8 = local_EAX_10888;
@@ -3945,7 +3945,7 @@ LAB_0045ad7b:
         case CASE_9:
           this_00->field_045D = 0;
           this_00->field_0459 = CASE_6D;
-          local_EAX_10888 = BackCapture(this_00,(int *)0x0);
+          local_EAX_10888 = BackCapture(this_00,nullptr);
           if (local_EAX_10888 != -1) goto cf_common_exit_00458C5B;
           iVar12 = 0xaa2;
           local_8 = local_EAX_10888;
@@ -3961,7 +3961,7 @@ LAB_0045ad7b:
         case CASE_B:
           this_00->field_045D = 0;
           this_00->field_0459 = CASE_6F;
-          local_EAX_10888 = BackAnnih(this_00,(int *)0x0);
+          local_EAX_10888 = BackAnnih(this_00,nullptr);
           if (local_EAX_10888 != -1) goto cf_common_exit_00458C5B;
           iVar12 = 0xab6;
           local_8 = local_EAX_10888;
@@ -3969,7 +3969,7 @@ LAB_0045ad7b:
         case CASE_C:
           this_00->field_045D = 0;
           this_00->field_0459 = CASE_70;
-          local_EAX_10888 = BackLoadRC(this_00,(STBoatC *)0x0);
+          local_EAX_10888 = BackLoadRC(this_00,nullptr);
           if (local_EAX_10888 != -1) goto cf_common_exit_00458C5B;
           iVar12 = 0xa6b;
           local_8 = local_EAX_10888;
@@ -3977,7 +3977,7 @@ LAB_0045ad7b:
         case CASE_D:
           this_00->field_045D = 0;
           this_00->field_0459 = CASE_71;
-          local_EAX_10888 = BackUnLoadRC(this_00,(STBoatC *)0x0);
+          local_EAX_10888 = BackUnLoadRC(this_00,nullptr);
           if (local_EAX_10888 != -1) goto cf_common_exit_00458C5B;
           iVar12 = 0xa7a;
           local_8 = local_EAX_10888;
@@ -3985,7 +3985,7 @@ LAB_0045ad7b:
         case CASE_E:
           this_00->field_045D = 0;
           this_00->field_0459 = CASE_72;
-          local_EAX_10888 = thunk_FUN_004805b0(this_00,(int *)0x0);
+          local_EAX_10888 = thunk_FUN_004805b0(this_00,nullptr);
           if (local_EAX_10888 != -1) goto cf_common_exit_00458C5B;
           iVar12 = 0xac5;
           local_8 = local_EAX_10888;
@@ -3993,7 +3993,7 @@ LAB_0045ad7b:
         case CASE_F:
           this_00->field_045D = 0;
           this_00->field_0459 = CASE_73;
-          local_EAX_10888 = BackLoadObj(this_00,(int *)0x0);
+          local_EAX_10888 = BackLoadObj(this_00,nullptr);
           if (local_EAX_10888 != -1) goto cf_common_exit_00458C5B;
           iVar12 = 0xa89;
           local_8 = local_EAX_10888;
@@ -4001,7 +4001,7 @@ LAB_0045ad7b:
         case CASE_10:
           this_00->field_045D = 0;
           this_00->field_0459 = CASE_74;
-          local_EAX_10888 = BackUnLoadObj(this_00,(int *)0x0);
+          local_EAX_10888 = BackUnLoadObj(this_00,nullptr);
           if (local_EAX_10888 != -1) goto cf_common_exit_00458C5B;
           iVar12 = 0xa93;
           local_8 = local_EAX_10888;
@@ -4010,7 +4010,7 @@ LAB_0045ad7b:
           this_00->field_045D = 0;
           this_00->field_0459 = CASE_75;
           /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
-          local_EAX_10888 = BackBuild(this_00,(int *)0x0,unaff_EDI,unaff_ESI);
+          local_EAX_10888 = BackBuild(this_00,nullptr,unaff_EDI,unaff_ESI);
           if (local_EAX_10888 != -1) goto cf_common_exit_00458C5B;
           iVar12 = 0xa70;
           local_8 = local_EAX_10888;
@@ -4019,7 +4019,7 @@ LAB_0045ad7b:
           this_00->field_045D = 0;
           this_00->field_0459 = CASE_76;
           /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
-          local_EAX_10888 = BackDismant(this_00,(int *)0x0,unaff_EDI,unaff_ESI);
+          local_EAX_10888 = BackDismant(this_00,nullptr,unaff_EDI,unaff_ESI);
           if (local_EAX_10888 != -1) goto cf_common_exit_00458C5B;
           iVar12 = 0xabb;
           local_8 = local_EAX_10888;
@@ -4035,7 +4035,7 @@ LAB_0045ad7b:
         case CASE_14:
           this_00->field_045D = 0;
           this_00->field_0459 = CASE_78;
-          local_EAX_10888 = BackWaitLoad(this_00,(int *)0x0);
+          local_EAX_10888 = BackWaitLoad(this_00,nullptr);
           if (local_EAX_10888 != -1) goto cf_common_exit_00458C5B;
           iVar12 = 0xa8e;
           local_8 = local_EAX_10888;
@@ -4043,7 +4043,7 @@ LAB_0045ad7b:
         case CASE_15:
           this_00->field_045D = 0;
           this_00->field_0459 = CASE_79;
-          local_EAX_10888 = BackTeleport(this_00,(int *)0x0);
+          local_EAX_10888 = BackTeleport(this_00,nullptr);
           if (local_EAX_10888 != -1) goto cf_common_exit_00458C5B;
           iVar12 = 0xaac;
           local_8 = local_EAX_10888;
@@ -4059,7 +4059,7 @@ LAB_0045ad7b:
         case CASE_17:
           this_00->field_045D = 0;
           this_00->field_0459 = CASE_7B;
-          local_EAX_10888 = BackBring(this_00,(int *)0x0);
+          local_EAX_10888 = BackBring(this_00,nullptr);
           if (local_EAX_10888 != -1) goto cf_common_exit_00458C5B;
           iVar12 = 0xab1;
           local_8 = local_EAX_10888;
@@ -4073,7 +4073,7 @@ LAB_0045ad7b:
         if (this_00->field_045D == 0) {
           this_00->field_045D = CASE_7;
           /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
-          iVar12 = SetMine(this_00,(int *)0x0,unaff_EDI,(int)unaff_ESI);
+          iVar12 = SetMine(this_00,nullptr,unaff_EDI,(int)unaff_ESI);
           local_8 = iVar12;
           if (iVar12 == -1) {
             RaiseInternalException
@@ -4107,7 +4107,7 @@ LAB_0045ad7b:
           this_00->field_045D = 0;
           this_00->field_0459 = CASE_66;
           /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
-          local_EAX_10888 = BackAttack(this_00,(int *)0x0,(int)unaff_EDI,(int)unaff_ESI);
+          local_EAX_10888 = BackAttack(this_00,nullptr,(int)unaff_EDI,(int)unaff_ESI);
           if (local_EAX_10888 != -1) goto cf_common_exit_00458C5B;
           iVar12 = 0xae8;
           local_8 = local_EAX_10888;
@@ -4124,7 +4124,7 @@ LAB_0045ad7b:
           this_00->field_045D = 0;
           this_00->field_0459 = CASE_68;
           /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
-          local_EAX_10888 = BackToDok(this_00,(int *)0x0,unaff_EDI,unaff_ESI);
+          local_EAX_10888 = BackToDok(this_00,nullptr,unaff_EDI,unaff_ESI);
           if (local_EAX_10888 != -1) goto cf_common_exit_00458C5B;
           iVar12 = 0xb06;
           local_8 = local_EAX_10888;
@@ -4140,7 +4140,7 @@ LAB_0045ad7b:
         case CASE_6:
           this_00->field_045D = 0;
           this_00->field_0459 = CASE_6A;
-          local_EAX_10888 = BackPatrol(this_00,(int *)0x0);
+          local_EAX_10888 = BackPatrol(this_00,nullptr);
           if (local_EAX_10888 != -1) goto cf_common_exit_00458C5B;
           iVar12 = 0xaed;
           local_8 = local_EAX_10888;
@@ -4164,7 +4164,7 @@ LAB_0045ad7b:
         case CASE_9:
           this_00->field_045D = 0;
           this_00->field_0459 = CASE_6D;
-          local_EAX_10888 = BackCapture(this_00,(int *)0x0);
+          local_EAX_10888 = BackCapture(this_00,nullptr);
           if (local_EAX_10888 != -1) goto cf_common_exit_00458C5B;
           iVar12 = 0xb29;
           local_8 = local_EAX_10888;
@@ -4180,7 +4180,7 @@ LAB_0045ad7b:
         case CASE_B:
           this_00->field_045D = 0;
           this_00->field_0459 = CASE_6F;
-          local_EAX_10888 = BackAnnih(this_00,(int *)0x0);
+          local_EAX_10888 = BackAnnih(this_00,nullptr);
           if (local_EAX_10888 != -1) goto cf_common_exit_00458C5B;
           iVar12 = 0xb3d;
           local_8 = local_EAX_10888;
@@ -4188,7 +4188,7 @@ LAB_0045ad7b:
         case CASE_C:
           this_00->field_045D = 0;
           this_00->field_0459 = CASE_70;
-          local_EAX_10888 = BackLoadRC(this_00,(STBoatC *)0x0);
+          local_EAX_10888 = BackLoadRC(this_00,nullptr);
           if (local_EAX_10888 != -1) goto cf_common_exit_00458C5B;
           iVar12 = 0xaf2;
           local_8 = local_EAX_10888;
@@ -4196,7 +4196,7 @@ LAB_0045ad7b:
         case CASE_D:
           this_00->field_045D = 0;
           this_00->field_0459 = CASE_71;
-          local_EAX_10888 = BackUnLoadRC(this_00,(STBoatC *)0x0);
+          local_EAX_10888 = BackUnLoadRC(this_00,nullptr);
           if (local_EAX_10888 != -1) goto cf_common_exit_00458C5B;
           iVar12 = 0xb01;
           local_8 = local_EAX_10888;
@@ -4204,7 +4204,7 @@ LAB_0045ad7b:
         case CASE_E:
           this_00->field_045D = 0;
           this_00->field_0459 = CASE_72;
-          local_EAX_10888 = thunk_FUN_004805b0(this_00,(int *)0x0);
+          local_EAX_10888 = thunk_FUN_004805b0(this_00,nullptr);
           if (local_EAX_10888 != -1) goto cf_common_exit_00458C5B;
           iVar12 = 0xb4c;
           local_8 = local_EAX_10888;
@@ -4212,7 +4212,7 @@ LAB_0045ad7b:
         case CASE_F:
           this_00->field_045D = 0;
           this_00->field_0459 = CASE_73;
-          local_EAX_10888 = BackLoadObj(this_00,(int *)0x0);
+          local_EAX_10888 = BackLoadObj(this_00,nullptr);
           if (local_EAX_10888 != -1) goto cf_common_exit_00458C5B;
           iVar12 = 0xb10;
           local_8 = local_EAX_10888;
@@ -4220,7 +4220,7 @@ LAB_0045ad7b:
         case CASE_10:
           this_00->field_045D = 0;
           this_00->field_0459 = CASE_74;
-          local_EAX_10888 = BackUnLoadObj(this_00,(int *)0x0);
+          local_EAX_10888 = BackUnLoadObj(this_00,nullptr);
           if (local_EAX_10888 != -1) goto cf_common_exit_00458C5B;
           iVar12 = 0xb1a;
           local_8 = local_EAX_10888;
@@ -4229,7 +4229,7 @@ LAB_0045ad7b:
           this_00->field_045D = 0;
           this_00->field_0459 = CASE_75;
           /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
-          local_EAX_10888 = BackBuild(this_00,(int *)0x0,unaff_EDI,unaff_ESI);
+          local_EAX_10888 = BackBuild(this_00,nullptr,unaff_EDI,unaff_ESI);
           if (local_EAX_10888 != -1) goto cf_common_exit_00458C5B;
           iVar12 = 0xaf7;
           local_8 = local_EAX_10888;
@@ -4238,7 +4238,7 @@ LAB_0045ad7b:
           this_00->field_045D = 0;
           this_00->field_0459 = CASE_76;
           /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
-          local_EAX_10888 = BackDismant(this_00,(int *)0x0,unaff_EDI,unaff_ESI);
+          local_EAX_10888 = BackDismant(this_00,nullptr,unaff_EDI,unaff_ESI);
           if (local_EAX_10888 != -1) goto cf_common_exit_00458C5B;
           iVar12 = 0xb42;
           local_8 = local_EAX_10888;
@@ -4254,7 +4254,7 @@ LAB_0045ad7b:
         case CASE_14:
           this_00->field_045D = 0;
           this_00->field_0459 = CASE_78;
-          local_EAX_10888 = BackWaitLoad(this_00,(int *)0x0);
+          local_EAX_10888 = BackWaitLoad(this_00,nullptr);
           if (local_EAX_10888 != -1) goto cf_common_exit_00458C5B;
           iVar12 = 0xb15;
           local_8 = local_EAX_10888;
@@ -4262,7 +4262,7 @@ LAB_0045ad7b:
         case CASE_15:
           this_00->field_045D = 0;
           this_00->field_0459 = CASE_79;
-          local_EAX_10888 = BackTeleport(this_00,(int *)0x0);
+          local_EAX_10888 = BackTeleport(this_00,nullptr);
           if (local_EAX_10888 != -1) goto cf_common_exit_00458C5B;
           iVar12 = 0xb33;
           local_8 = local_EAX_10888;
@@ -4278,7 +4278,7 @@ LAB_0045ad7b:
         case CASE_17:
           this_00->field_045D = 0;
           this_00->field_0459 = CASE_7B;
-          local_EAX_10888 = BackBring(this_00,(int *)0x0);
+          local_EAX_10888 = BackBring(this_00,nullptr);
           if (local_EAX_10888 != -1) goto cf_common_exit_00458C5B;
           iVar12 = 0xb38;
           local_8 = local_EAX_10888;
@@ -4325,7 +4325,7 @@ LAB_0045ad7b:
           this_00->field_045D = 0;
           this_00->field_0459 = CASE_66;
           /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
-          local_EAX_10888 = BackAttack(this_00,(int *)0x0,(int)unaff_EDI,(int)unaff_ESI);
+          local_EAX_10888 = BackAttack(this_00,nullptr,(int)unaff_EDI,(int)unaff_ESI);
           if (local_EAX_10888 != -1) goto cf_common_exit_00458C5B;
           iVar12 = 0xb6f;
           local_8 = local_EAX_10888;
@@ -4342,7 +4342,7 @@ LAB_0045ad7b:
           this_00->field_045D = 0;
           this_00->field_0459 = CASE_68;
           /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
-          local_EAX_10888 = BackToDok(this_00,(int *)0x0,unaff_EDI,unaff_ESI);
+          local_EAX_10888 = BackToDok(this_00,nullptr,unaff_EDI,unaff_ESI);
           if (local_EAX_10888 != -1) goto cf_common_exit_00458C5B;
           iVar12 = 0xb8d;
           local_8 = local_EAX_10888;
@@ -4358,7 +4358,7 @@ LAB_0045ad7b:
         case CASE_6:
           this_00->field_045D = 0;
           this_00->field_0459 = CASE_6A;
-          local_EAX_10888 = BackPatrol(this_00,(int *)0x0);
+          local_EAX_10888 = BackPatrol(this_00,nullptr);
           if (local_EAX_10888 != -1) goto cf_common_exit_00458C5B;
           iVar12 = 0xb74;
           local_8 = local_EAX_10888;
@@ -4382,7 +4382,7 @@ LAB_0045ad7b:
         case CASE_9:
           this_00->field_045D = 0;
           this_00->field_0459 = CASE_6D;
-          local_EAX_10888 = BackCapture(this_00,(int *)0x0);
+          local_EAX_10888 = BackCapture(this_00,nullptr);
           if (local_EAX_10888 != -1) goto cf_common_exit_00458C5B;
           iVar12 = 0xbb0;
           local_8 = local_EAX_10888;
@@ -4398,7 +4398,7 @@ LAB_0045ad7b:
         case CASE_B:
           this_00->field_045D = 0;
           this_00->field_0459 = CASE_6F;
-          local_EAX_10888 = BackAnnih(this_00,(int *)0x0);
+          local_EAX_10888 = BackAnnih(this_00,nullptr);
           if (local_EAX_10888 != -1) goto cf_common_exit_00458C5B;
           iVar12 = 0xbc4;
           local_8 = local_EAX_10888;
@@ -4406,7 +4406,7 @@ LAB_0045ad7b:
         case CASE_C:
           this_00->field_045D = 0;
           this_00->field_0459 = CASE_70;
-          local_EAX_10888 = BackLoadRC(this_00,(STBoatC *)0x0);
+          local_EAX_10888 = BackLoadRC(this_00,nullptr);
           if (local_EAX_10888 != -1) goto cf_common_exit_00458C5B;
           iVar12 = 0xb79;
           local_8 = local_EAX_10888;
@@ -4414,7 +4414,7 @@ LAB_0045ad7b:
         case CASE_D:
           this_00->field_045D = 0;
           this_00->field_0459 = CASE_71;
-          local_EAX_10888 = BackUnLoadRC(this_00,(STBoatC *)0x0);
+          local_EAX_10888 = BackUnLoadRC(this_00,nullptr);
           if (local_EAX_10888 != -1) goto cf_common_exit_00458C5B;
           iVar12 = 0xb88;
           local_8 = local_EAX_10888;
@@ -4422,7 +4422,7 @@ LAB_0045ad7b:
         case CASE_E:
           this_00->field_045D = 0;
           this_00->field_0459 = CASE_72;
-          local_EAX_10888 = thunk_FUN_004805b0(this_00,(int *)0x0);
+          local_EAX_10888 = thunk_FUN_004805b0(this_00,nullptr);
           if (local_EAX_10888 != -1) goto cf_common_exit_00458C5B;
           iVar12 = 0xbd3;
           local_8 = local_EAX_10888;
@@ -4430,7 +4430,7 @@ LAB_0045ad7b:
         case CASE_F:
           this_00->field_045D = 0;
           this_00->field_0459 = CASE_73;
-          local_EAX_10888 = BackLoadObj(this_00,(int *)0x0);
+          local_EAX_10888 = BackLoadObj(this_00,nullptr);
           if (local_EAX_10888 != -1) goto cf_common_exit_00458C5B;
           iVar12 = 0xb97;
           local_8 = local_EAX_10888;
@@ -4438,7 +4438,7 @@ LAB_0045ad7b:
         case CASE_10:
           this_00->field_045D = 0;
           this_00->field_0459 = CASE_74;
-          local_EAX_10888 = BackUnLoadObj(this_00,(int *)0x0);
+          local_EAX_10888 = BackUnLoadObj(this_00,nullptr);
           if (local_EAX_10888 != -1) goto cf_common_exit_00458C5B;
           iVar12 = 0xba1;
           local_8 = local_EAX_10888;
@@ -4447,7 +4447,7 @@ LAB_0045ad7b:
           this_00->field_045D = 0;
           this_00->field_0459 = CASE_75;
           /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
-          local_EAX_10888 = BackBuild(this_00,(int *)0x0,unaff_EDI,unaff_ESI);
+          local_EAX_10888 = BackBuild(this_00,nullptr,unaff_EDI,unaff_ESI);
           if (local_EAX_10888 != -1) goto cf_common_exit_00458C5B;
           iVar12 = 0xb7e;
           local_8 = local_EAX_10888;
@@ -4456,7 +4456,7 @@ LAB_0045ad7b:
           this_00->field_045D = 0;
           this_00->field_0459 = CASE_76;
           /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
-          local_EAX_10888 = BackDismant(this_00,(int *)0x0,unaff_EDI,unaff_ESI);
+          local_EAX_10888 = BackDismant(this_00,nullptr,unaff_EDI,unaff_ESI);
           if (local_EAX_10888 != -1) goto cf_common_exit_00458C5B;
           iVar12 = 0xbc9;
           local_8 = local_EAX_10888;
@@ -4472,7 +4472,7 @@ LAB_0045ad7b:
         case CASE_14:
           this_00->field_045D = 0;
           this_00->field_0459 = CASE_78;
-          local_EAX_10888 = BackWaitLoad(this_00,(int *)0x0);
+          local_EAX_10888 = BackWaitLoad(this_00,nullptr);
           if (local_EAX_10888 != -1) goto cf_common_exit_00458C5B;
           iVar12 = 0xb9c;
           local_8 = local_EAX_10888;
@@ -4480,7 +4480,7 @@ LAB_0045ad7b:
         case CASE_15:
           this_00->field_045D = 0;
           this_00->field_0459 = CASE_79;
-          local_EAX_10888 = BackTeleport(this_00,(int *)0x0);
+          local_EAX_10888 = BackTeleport(this_00,nullptr);
           if (local_EAX_10888 != -1) goto cf_common_exit_00458C5B;
           iVar12 = 0xbba;
           local_8 = local_EAX_10888;
@@ -4496,7 +4496,7 @@ LAB_0045ad7b:
         case CASE_17:
           this_00->field_045D = 0;
           this_00->field_0459 = CASE_7B;
-          local_EAX_10888 = BackBring(this_00,(int *)0x0);
+          local_EAX_10888 = BackBring(this_00,nullptr);
           if (local_EAX_10888 != -1) goto cf_common_exit_00458C5B;
           iVar12 = 0xbbf;
           local_8 = local_EAX_10888;
@@ -4543,7 +4543,7 @@ LAB_0045ad7b:
           this_00->field_045D = 0;
           this_00->field_0459 = CASE_66;
           /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
-          local_EAX_10888 = BackAttack(this_00,(int *)0x0,(int)unaff_EDI,(int)unaff_ESI);
+          local_EAX_10888 = BackAttack(this_00,nullptr,(int)unaff_EDI,(int)unaff_ESI);
           if (local_EAX_10888 != -1) goto cf_common_exit_00458C5B;
           iVar12 = 0xbf6;
           local_8 = local_EAX_10888;
@@ -4560,7 +4560,7 @@ LAB_0045ad7b:
           this_00->field_045D = 0;
           this_00->field_0459 = CASE_68;
           /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
-          local_EAX_10888 = BackToDok(this_00,(int *)0x0,unaff_EDI,unaff_ESI);
+          local_EAX_10888 = BackToDok(this_00,nullptr,unaff_EDI,unaff_ESI);
           if (local_EAX_10888 != -1) goto cf_common_exit_00458C5B;
           iVar12 = 0xc14;
           local_8 = local_EAX_10888;
@@ -4576,7 +4576,7 @@ LAB_0045ad7b:
         case CASE_6:
           this_00->field_045D = 0;
           this_00->field_0459 = CASE_6A;
-          local_EAX_10888 = BackPatrol(this_00,(int *)0x0);
+          local_EAX_10888 = BackPatrol(this_00,nullptr);
           if (local_EAX_10888 != -1) goto cf_common_exit_00458C5B;
           iVar12 = 0xbfb;
           local_8 = local_EAX_10888;
@@ -4600,7 +4600,7 @@ LAB_0045ad7b:
         case CASE_9:
           this_00->field_045D = 0;
           this_00->field_0459 = CASE_6D;
-          local_EAX_10888 = BackCapture(this_00,(int *)0x0);
+          local_EAX_10888 = BackCapture(this_00,nullptr);
           if (local_EAX_10888 != -1) goto cf_common_exit_00458C5B;
           iVar12 = 0xc37;
           local_8 = local_EAX_10888;
@@ -4616,7 +4616,7 @@ LAB_0045ad7b:
         case CASE_B:
           this_00->field_045D = 0;
           this_00->field_0459 = CASE_6F;
-          local_EAX_10888 = BackAnnih(this_00,(int *)0x0);
+          local_EAX_10888 = BackAnnih(this_00,nullptr);
           if (local_EAX_10888 != -1) goto cf_common_exit_00458C5B;
           iVar12 = 0xc4b;
           local_8 = local_EAX_10888;
@@ -4624,7 +4624,7 @@ LAB_0045ad7b:
         case CASE_C:
           this_00->field_045D = 0;
           this_00->field_0459 = CASE_70;
-          local_EAX_10888 = BackLoadRC(this_00,(STBoatC *)0x0);
+          local_EAX_10888 = BackLoadRC(this_00,nullptr);
           if (local_EAX_10888 != -1) goto cf_common_exit_00458C5B;
           iVar12 = 0xc00;
           local_8 = local_EAX_10888;
@@ -4632,7 +4632,7 @@ LAB_0045ad7b:
         case CASE_D:
           this_00->field_045D = 0;
           this_00->field_0459 = CASE_71;
-          local_EAX_10888 = BackUnLoadRC(this_00,(STBoatC *)0x0);
+          local_EAX_10888 = BackUnLoadRC(this_00,nullptr);
           if (local_EAX_10888 != -1) goto cf_common_exit_00458C5B;
           iVar12 = 0xc0f;
           local_8 = local_EAX_10888;
@@ -4640,7 +4640,7 @@ LAB_0045ad7b:
         case CASE_E:
           this_00->field_045D = 0;
           this_00->field_0459 = CASE_72;
-          local_EAX_10888 = thunk_FUN_004805b0(this_00,(int *)0x0);
+          local_EAX_10888 = thunk_FUN_004805b0(this_00,nullptr);
           if (local_EAX_10888 != -1) goto cf_common_exit_00458C5B;
           iVar12 = 0xc5a;
           local_8 = local_EAX_10888;
@@ -4648,7 +4648,7 @@ LAB_0045ad7b:
         case CASE_F:
           this_00->field_045D = 0;
           this_00->field_0459 = CASE_73;
-          local_EAX_10888 = BackLoadObj(this_00,(int *)0x0);
+          local_EAX_10888 = BackLoadObj(this_00,nullptr);
           if (local_EAX_10888 != -1) goto cf_common_exit_00458C5B;
           iVar12 = 0xc1e;
           local_8 = local_EAX_10888;
@@ -4656,7 +4656,7 @@ LAB_0045ad7b:
         case CASE_10:
           this_00->field_045D = 0;
           this_00->field_0459 = CASE_74;
-          local_EAX_10888 = BackUnLoadObj(this_00,(int *)0x0);
+          local_EAX_10888 = BackUnLoadObj(this_00,nullptr);
           if (local_EAX_10888 != -1) goto cf_common_exit_00458C5B;
           iVar12 = 0xc28;
           local_8 = local_EAX_10888;
@@ -4665,7 +4665,7 @@ LAB_0045ad7b:
           this_00->field_045D = 0;
           this_00->field_0459 = CASE_75;
           /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
-          local_EAX_10888 = BackBuild(this_00,(int *)0x0,unaff_EDI,unaff_ESI);
+          local_EAX_10888 = BackBuild(this_00,nullptr,unaff_EDI,unaff_ESI);
           if (local_EAX_10888 != -1) goto cf_common_exit_00458C5B;
           iVar12 = 0xc05;
           local_8 = local_EAX_10888;
@@ -4674,7 +4674,7 @@ LAB_0045ad7b:
           this_00->field_045D = 0;
           this_00->field_0459 = CASE_76;
           /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
-          local_EAX_10888 = BackDismant(this_00,(int *)0x0,unaff_EDI,unaff_ESI);
+          local_EAX_10888 = BackDismant(this_00,nullptr,unaff_EDI,unaff_ESI);
           if (local_EAX_10888 != -1) goto cf_common_exit_00458C5B;
           iVar12 = 0xc50;
           local_8 = local_EAX_10888;
@@ -4690,7 +4690,7 @@ LAB_0045ad7b:
         case CASE_14:
           this_00->field_045D = 0;
           this_00->field_0459 = CASE_78;
-          local_EAX_10888 = BackWaitLoad(this_00,(int *)0x0);
+          local_EAX_10888 = BackWaitLoad(this_00,nullptr);
           if (local_EAX_10888 != -1) goto cf_common_exit_00458C5B;
           iVar12 = 0xc23;
           local_8 = local_EAX_10888;
@@ -4698,7 +4698,7 @@ LAB_0045ad7b:
         case CASE_15:
           this_00->field_045D = 0;
           this_00->field_0459 = CASE_79;
-          local_EAX_10888 = BackTeleport(this_00,(int *)0x0);
+          local_EAX_10888 = BackTeleport(this_00,nullptr);
           if (local_EAX_10888 != -1) goto cf_common_exit_00458C5B;
           iVar12 = 0xc41;
           local_8 = local_EAX_10888;
@@ -4714,7 +4714,7 @@ LAB_0045ad7b:
         case CASE_17:
           this_00->field_045D = 0;
           this_00->field_0459 = CASE_7B;
-          local_EAX_10888 = BackBring(this_00,(int *)0x0);
+          local_EAX_10888 = BackBring(this_00,nullptr);
           if (local_EAX_10888 != -1) goto cf_common_exit_00458C5B;
           iVar12 = 0xc46;
           local_8 = local_EAX_10888;
@@ -4761,7 +4761,7 @@ LAB_0045ad7b:
           this_00->field_045D = 0;
           this_00->field_0459 = CASE_66;
           /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
-          local_EAX_10888 = BackAttack(this_00,(int *)0x0,(int)unaff_EDI,(int)unaff_ESI);
+          local_EAX_10888 = BackAttack(this_00,nullptr,(int)unaff_EDI,(int)unaff_ESI);
           if (local_EAX_10888 != -1) goto cf_common_exit_00458C5B;
           iVar12 = 0xc7d;
           local_8 = local_EAX_10888;
@@ -4778,7 +4778,7 @@ LAB_0045ad7b:
           this_00->field_045D = 0;
           this_00->field_0459 = CASE_68;
           /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
-          local_EAX_10888 = BackToDok(this_00,(int *)0x0,unaff_EDI,unaff_ESI);
+          local_EAX_10888 = BackToDok(this_00,nullptr,unaff_EDI,unaff_ESI);
           if (local_EAX_10888 != -1) goto cf_common_exit_00458C5B;
           iVar12 = 0xc9b;
           local_8 = local_EAX_10888;
@@ -4794,7 +4794,7 @@ LAB_0045ad7b:
         case CASE_6:
           this_00->field_045D = 0;
           this_00->field_0459 = CASE_6A;
-          local_EAX_10888 = BackPatrol(this_00,(int *)0x0);
+          local_EAX_10888 = BackPatrol(this_00,nullptr);
           if (local_EAX_10888 != -1) goto cf_common_exit_00458C5B;
           iVar12 = 0xc82;
           local_8 = local_EAX_10888;
@@ -4818,7 +4818,7 @@ LAB_0045ad7b:
         case CASE_9:
           this_00->field_045D = 0;
           this_00->field_0459 = CASE_6D;
-          local_EAX_10888 = BackCapture(this_00,(int *)0x0);
+          local_EAX_10888 = BackCapture(this_00,nullptr);
           if (local_EAX_10888 != -1) goto cf_common_exit_00458C5B;
           iVar12 = 0xcbe;
           local_8 = local_EAX_10888;
@@ -4834,7 +4834,7 @@ LAB_0045ad7b:
         case CASE_B:
           this_00->field_045D = 0;
           this_00->field_0459 = CASE_6F;
-          local_EAX_10888 = BackAnnih(this_00,(int *)0x0);
+          local_EAX_10888 = BackAnnih(this_00,nullptr);
           if (local_EAX_10888 != -1) goto cf_common_exit_00458C5B;
           iVar12 = 0xcd2;
           local_8 = local_EAX_10888;
@@ -4842,7 +4842,7 @@ LAB_0045ad7b:
         case CASE_C:
           this_00->field_045D = 0;
           this_00->field_0459 = CASE_70;
-          local_EAX_10888 = BackLoadRC(this_00,(STBoatC *)0x0);
+          local_EAX_10888 = BackLoadRC(this_00,nullptr);
           if (local_EAX_10888 != -1) goto cf_common_exit_00458C5B;
           iVar12 = 0xc87;
           local_8 = local_EAX_10888;
@@ -4850,7 +4850,7 @@ LAB_0045ad7b:
         case CASE_D:
           this_00->field_045D = 0;
           this_00->field_0459 = CASE_71;
-          local_EAX_10888 = BackUnLoadRC(this_00,(STBoatC *)0x0);
+          local_EAX_10888 = BackUnLoadRC(this_00,nullptr);
           if (local_EAX_10888 != -1) goto cf_common_exit_00458C5B;
           iVar12 = 0xc96;
           local_8 = local_EAX_10888;
@@ -4858,7 +4858,7 @@ LAB_0045ad7b:
         case CASE_E:
           this_00->field_045D = 0;
           this_00->field_0459 = CASE_72;
-          local_EAX_10888 = thunk_FUN_004805b0(this_00,(int *)0x0);
+          local_EAX_10888 = thunk_FUN_004805b0(this_00,nullptr);
           if (local_EAX_10888 != -1) goto cf_common_exit_00458C5B;
           iVar12 = 0xce1;
           local_8 = local_EAX_10888;
@@ -4866,7 +4866,7 @@ LAB_0045ad7b:
         case CASE_F:
           this_00->field_045D = 0;
           this_00->field_0459 = CASE_73;
-          local_EAX_10888 = BackLoadObj(this_00,(int *)0x0);
+          local_EAX_10888 = BackLoadObj(this_00,nullptr);
           if (local_EAX_10888 != -1) goto cf_common_exit_00458C5B;
           iVar12 = 0xca5;
           local_8 = local_EAX_10888;
@@ -4874,7 +4874,7 @@ LAB_0045ad7b:
         case CASE_10:
           this_00->field_045D = 0;
           this_00->field_0459 = CASE_74;
-          local_EAX_10888 = BackUnLoadObj(this_00,(int *)0x0);
+          local_EAX_10888 = BackUnLoadObj(this_00,nullptr);
           if (local_EAX_10888 != -1) goto cf_common_exit_00458C5B;
           iVar12 = 0xcaf;
           local_8 = local_EAX_10888;
@@ -4883,7 +4883,7 @@ LAB_0045ad7b:
           this_00->field_045D = 0;
           this_00->field_0459 = CASE_75;
           /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
-          local_EAX_10888 = BackBuild(this_00,(int *)0x0,unaff_EDI,unaff_ESI);
+          local_EAX_10888 = BackBuild(this_00,nullptr,unaff_EDI,unaff_ESI);
           if (local_EAX_10888 != -1) goto cf_common_exit_00458C5B;
           iVar12 = 0xc8c;
           local_8 = local_EAX_10888;
@@ -4892,7 +4892,7 @@ LAB_0045ad7b:
           this_00->field_045D = 0;
           this_00->field_0459 = CASE_76;
           /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
-          local_EAX_10888 = BackDismant(this_00,(int *)0x0,unaff_EDI,unaff_ESI);
+          local_EAX_10888 = BackDismant(this_00,nullptr,unaff_EDI,unaff_ESI);
           if (local_EAX_10888 != -1) goto cf_common_exit_00458C5B;
           iVar12 = 0xcd7;
           local_8 = local_EAX_10888;
@@ -4908,7 +4908,7 @@ LAB_0045ad7b:
         case CASE_14:
           this_00->field_045D = 0;
           this_00->field_0459 = CASE_78;
-          local_EAX_10888 = BackWaitLoad(this_00,(int *)0x0);
+          local_EAX_10888 = BackWaitLoad(this_00,nullptr);
           if (local_EAX_10888 != -1) goto cf_common_exit_00458C5B;
           iVar12 = 0xcaa;
           local_8 = local_EAX_10888;
@@ -4916,7 +4916,7 @@ LAB_0045ad7b:
         case CASE_15:
           this_00->field_045D = 0;
           this_00->field_0459 = CASE_79;
-          local_EAX_10888 = BackTeleport(this_00,(int *)0x0);
+          local_EAX_10888 = BackTeleport(this_00,nullptr);
           if (local_EAX_10888 != -1) goto cf_common_exit_00458C5B;
           iVar12 = 0xcc8;
           local_8 = local_EAX_10888;
@@ -4932,7 +4932,7 @@ LAB_0045ad7b:
         case CASE_17:
           this_00->field_045D = 0;
           this_00->field_0459 = CASE_7B;
-          local_EAX_10888 = BackBring(this_00,(int *)0x0);
+          local_EAX_10888 = BackBring(this_00,nullptr);
           if (local_EAX_10888 != -1) goto cf_common_exit_00458C5B;
           iVar12 = 0xccd;
           local_8 = local_EAX_10888;
@@ -4979,7 +4979,7 @@ LAB_0045ad7b:
           this_00->field_045D = 0;
           this_00->field_0459 = CASE_66;
           /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
-          local_EAX_10888 = BackAttack(this_00,(int *)0x0,(int)unaff_EDI,(int)unaff_ESI);
+          local_EAX_10888 = BackAttack(this_00,nullptr,(int)unaff_EDI,(int)unaff_ESI);
           if (local_EAX_10888 != -1) goto cf_common_exit_00458C5B;
           iVar12 = 0xd04;
           local_8 = local_EAX_10888;
@@ -4996,7 +4996,7 @@ LAB_0045ad7b:
           this_00->field_045D = 0;
           this_00->field_0459 = CASE_68;
           /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
-          local_EAX_10888 = BackToDok(this_00,(int *)0x0,unaff_EDI,unaff_ESI);
+          local_EAX_10888 = BackToDok(this_00,nullptr,unaff_EDI,unaff_ESI);
           if (local_EAX_10888 != -1) goto cf_common_exit_00458C5B;
           iVar12 = 0xd22;
           local_8 = local_EAX_10888;
@@ -5012,7 +5012,7 @@ LAB_0045ad7b:
         case CASE_6:
           this_00->field_045D = 0;
           this_00->field_0459 = CASE_6A;
-          local_EAX_10888 = BackPatrol(this_00,(int *)0x0);
+          local_EAX_10888 = BackPatrol(this_00,nullptr);
           if (local_EAX_10888 != -1) goto cf_common_exit_00458C5B;
           iVar12 = 0xd09;
           local_8 = local_EAX_10888;
@@ -5036,7 +5036,7 @@ LAB_0045ad7b:
         case CASE_9:
           this_00->field_045D = 0;
           this_00->field_0459 = CASE_6D;
-          local_EAX_10888 = BackCapture(this_00,(int *)0x0);
+          local_EAX_10888 = BackCapture(this_00,nullptr);
           if (local_EAX_10888 != -1) goto cf_common_exit_00458C5B;
           iVar12 = 0xd45;
           local_8 = local_EAX_10888;
@@ -5052,7 +5052,7 @@ LAB_0045ad7b:
         case CASE_B:
           this_00->field_045D = 0;
           this_00->field_0459 = CASE_6F;
-          local_EAX_10888 = BackAnnih(this_00,(int *)0x0);
+          local_EAX_10888 = BackAnnih(this_00,nullptr);
           if (local_EAX_10888 != -1) goto cf_common_exit_00458C5B;
           iVar12 = 0xd59;
           local_8 = local_EAX_10888;
@@ -5060,7 +5060,7 @@ LAB_0045ad7b:
         case CASE_C:
           this_00->field_045D = 0;
           this_00->field_0459 = CASE_70;
-          local_EAX_10888 = BackLoadRC(this_00,(STBoatC *)0x0);
+          local_EAX_10888 = BackLoadRC(this_00,nullptr);
           if (local_EAX_10888 != -1) goto cf_common_exit_00458C5B;
           iVar12 = 0xd0e;
           local_8 = local_EAX_10888;
@@ -5068,7 +5068,7 @@ LAB_0045ad7b:
         case CASE_D:
           this_00->field_045D = 0;
           this_00->field_0459 = CASE_71;
-          local_EAX_10888 = BackUnLoadRC(this_00,(STBoatC *)0x0);
+          local_EAX_10888 = BackUnLoadRC(this_00,nullptr);
           if (local_EAX_10888 != -1) goto cf_common_exit_00458C5B;
           iVar12 = 0xd1d;
           local_8 = local_EAX_10888;
@@ -5076,7 +5076,7 @@ LAB_0045ad7b:
         case CASE_E:
           this_00->field_045D = 0;
           this_00->field_0459 = CASE_72;
-          local_EAX_10888 = thunk_FUN_004805b0(this_00,(int *)0x0);
+          local_EAX_10888 = thunk_FUN_004805b0(this_00,nullptr);
           if (local_EAX_10888 != -1) goto cf_common_exit_00458C5B;
           iVar12 = 0xd68;
           local_8 = local_EAX_10888;
@@ -5084,7 +5084,7 @@ LAB_0045ad7b:
         case CASE_F:
           this_00->field_045D = 0;
           this_00->field_0459 = CASE_73;
-          local_EAX_10888 = BackLoadObj(this_00,(int *)0x0);
+          local_EAX_10888 = BackLoadObj(this_00,nullptr);
           if (local_EAX_10888 != -1) goto cf_common_exit_00458C5B;
           iVar12 = 0xd2c;
           local_8 = local_EAX_10888;
@@ -5092,7 +5092,7 @@ LAB_0045ad7b:
         case CASE_10:
           this_00->field_045D = 0;
           this_00->field_0459 = CASE_74;
-          local_EAX_10888 = BackUnLoadObj(this_00,(int *)0x0);
+          local_EAX_10888 = BackUnLoadObj(this_00,nullptr);
           if (local_EAX_10888 != -1) goto cf_common_exit_00458C5B;
           iVar12 = 0xd36;
           local_8 = local_EAX_10888;
@@ -5101,7 +5101,7 @@ LAB_0045ad7b:
           this_00->field_045D = 0;
           this_00->field_0459 = CASE_75;
           /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
-          local_EAX_10888 = BackBuild(this_00,(int *)0x0,unaff_EDI,unaff_ESI);
+          local_EAX_10888 = BackBuild(this_00,nullptr,unaff_EDI,unaff_ESI);
           if (local_EAX_10888 != -1) goto cf_common_exit_00458C5B;
           iVar12 = 0xd13;
           local_8 = local_EAX_10888;
@@ -5110,7 +5110,7 @@ LAB_0045ad7b:
           this_00->field_045D = 0;
           this_00->field_0459 = CASE_76;
           /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
-          local_EAX_10888 = BackDismant(this_00,(int *)0x0,unaff_EDI,unaff_ESI);
+          local_EAX_10888 = BackDismant(this_00,nullptr,unaff_EDI,unaff_ESI);
           if (local_EAX_10888 != -1) goto cf_common_exit_00458C5B;
           iVar12 = 0xd5e;
           local_8 = local_EAX_10888;
@@ -5126,7 +5126,7 @@ LAB_0045ad7b:
         case CASE_14:
           this_00->field_045D = 0;
           this_00->field_0459 = CASE_78;
-          local_EAX_10888 = BackWaitLoad(this_00,(int *)0x0);
+          local_EAX_10888 = BackWaitLoad(this_00,nullptr);
           if (local_EAX_10888 != -1) goto cf_common_exit_00458C5B;
           iVar12 = 0xd31;
           local_8 = local_EAX_10888;
@@ -5134,7 +5134,7 @@ LAB_0045ad7b:
         case CASE_15:
           this_00->field_045D = 0;
           this_00->field_0459 = CASE_79;
-          local_EAX_10888 = BackTeleport(this_00,(int *)0x0);
+          local_EAX_10888 = BackTeleport(this_00,nullptr);
           if (local_EAX_10888 != -1) goto cf_common_exit_00458C5B;
           iVar12 = 0xd4f;
           local_8 = local_EAX_10888;
@@ -5150,7 +5150,7 @@ LAB_0045ad7b:
         case CASE_17:
           this_00->field_045D = 0;
           this_00->field_0459 = CASE_7B;
-          local_EAX_10888 = BackBring(this_00,(int *)0x0);
+          local_EAX_10888 = BackBring(this_00,nullptr);
           if (local_EAX_10888 != -1) goto cf_common_exit_00458C5B;
           iVar12 = 0xd54;
           local_8 = local_EAX_10888;
@@ -5163,7 +5163,7 @@ LAB_0045ad7b:
       else if (this_00->field_0320 == 1) {
         if (this_00->field_045D == 0) {
           this_00->field_045D = CASE_17;
-          iVar12 = Bring(this_00,(STBoatC *)0x0);
+          iVar12 = Bring(this_00,nullptr);
           local_8 = iVar12;
           if (iVar12 == -1) {
             RaiseInternalException
@@ -5197,7 +5197,7 @@ LAB_0045ad7b:
           this_00->field_045D = 0;
           this_00->field_0459 = CASE_66;
           /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
-          local_EAX_10888 = BackAttack(this_00,(int *)0x0,(int)unaff_EDI,(int)unaff_ESI);
+          local_EAX_10888 = BackAttack(this_00,nullptr,(int)unaff_EDI,(int)unaff_ESI);
           if (local_EAX_10888 != -1) goto cf_common_exit_00458C5B;
           iVar12 = 0xd8b;
           local_8 = local_EAX_10888;
@@ -5214,7 +5214,7 @@ LAB_0045ad7b:
           this_00->field_045D = 0;
           this_00->field_0459 = CASE_68;
           /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
-          local_EAX_10888 = BackToDok(this_00,(int *)0x0,unaff_EDI,unaff_ESI);
+          local_EAX_10888 = BackToDok(this_00,nullptr,unaff_EDI,unaff_ESI);
           if (local_EAX_10888 != -1) goto cf_common_exit_00458C5B;
           iVar12 = 0xda9;
           local_8 = local_EAX_10888;
@@ -5230,7 +5230,7 @@ LAB_0045ad7b:
         case CASE_6:
           this_00->field_045D = 0;
           this_00->field_0459 = CASE_6A;
-          local_EAX_10888 = BackPatrol(this_00,(int *)0x0);
+          local_EAX_10888 = BackPatrol(this_00,nullptr);
           if (local_EAX_10888 != -1) goto cf_common_exit_00458C5B;
           iVar12 = 0xd90;
           local_8 = local_EAX_10888;
@@ -5254,7 +5254,7 @@ LAB_0045ad7b:
         case CASE_9:
           this_00->field_045D = 0;
           this_00->field_0459 = CASE_6D;
-          local_EAX_10888 = BackCapture(this_00,(int *)0x0);
+          local_EAX_10888 = BackCapture(this_00,nullptr);
           if (local_EAX_10888 != -1) goto cf_common_exit_00458C5B;
           iVar12 = 0xdcc;
           local_8 = local_EAX_10888;
@@ -5270,7 +5270,7 @@ LAB_0045ad7b:
         case CASE_B:
           this_00->field_045D = 0;
           this_00->field_0459 = CASE_6F;
-          local_EAX_10888 = BackAnnih(this_00,(int *)0x0);
+          local_EAX_10888 = BackAnnih(this_00,nullptr);
           if (local_EAX_10888 != -1) goto cf_common_exit_00458C5B;
           iVar12 = 0xde0;
           local_8 = local_EAX_10888;
@@ -5278,7 +5278,7 @@ LAB_0045ad7b:
         case CASE_C:
           this_00->field_045D = 0;
           this_00->field_0459 = CASE_70;
-          local_EAX_10888 = BackLoadRC(this_00,(STBoatC *)0x0);
+          local_EAX_10888 = BackLoadRC(this_00,nullptr);
           if (local_EAX_10888 != -1) goto cf_common_exit_00458C5B;
           iVar12 = 0xd95;
           local_8 = local_EAX_10888;
@@ -5286,7 +5286,7 @@ LAB_0045ad7b:
         case CASE_D:
           this_00->field_045D = 0;
           this_00->field_0459 = CASE_71;
-          local_EAX_10888 = BackUnLoadRC(this_00,(STBoatC *)0x0);
+          local_EAX_10888 = BackUnLoadRC(this_00,nullptr);
           if (local_EAX_10888 != -1) goto cf_common_exit_00458C5B;
           iVar12 = 0xda4;
           local_8 = local_EAX_10888;
@@ -5294,7 +5294,7 @@ LAB_0045ad7b:
         case CASE_E:
           this_00->field_045D = 0;
           this_00->field_0459 = CASE_72;
-          local_EAX_10888 = thunk_FUN_004805b0(this_00,(int *)0x0);
+          local_EAX_10888 = thunk_FUN_004805b0(this_00,nullptr);
           if (local_EAX_10888 != -1) goto cf_common_exit_00458C5B;
           iVar12 = 0xdef;
           local_8 = local_EAX_10888;
@@ -5302,7 +5302,7 @@ LAB_0045ad7b:
         case CASE_F:
           this_00->field_045D = 0;
           this_00->field_0459 = CASE_73;
-          local_EAX_10888 = BackLoadObj(this_00,(int *)0x0);
+          local_EAX_10888 = BackLoadObj(this_00,nullptr);
           if (local_EAX_10888 != -1) goto cf_common_exit_00458C5B;
           iVar12 = 0xdb3;
           local_8 = local_EAX_10888;
@@ -5310,7 +5310,7 @@ LAB_0045ad7b:
         case CASE_10:
           this_00->field_045D = 0;
           this_00->field_0459 = CASE_74;
-          local_EAX_10888 = BackUnLoadObj(this_00,(int *)0x0);
+          local_EAX_10888 = BackUnLoadObj(this_00,nullptr);
           if (local_EAX_10888 != -1) goto cf_common_exit_00458C5B;
           iVar12 = 0xdbd;
           local_8 = local_EAX_10888;
@@ -5319,7 +5319,7 @@ LAB_0045ad7b:
           this_00->field_045D = 0;
           this_00->field_0459 = CASE_75;
           /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
-          local_EAX_10888 = BackBuild(this_00,(int *)0x0,unaff_EDI,unaff_ESI);
+          local_EAX_10888 = BackBuild(this_00,nullptr,unaff_EDI,unaff_ESI);
           if (local_EAX_10888 != -1) goto cf_common_exit_00458C5B;
           iVar12 = 0xd9a;
           local_8 = local_EAX_10888;
@@ -5328,7 +5328,7 @@ LAB_0045ad7b:
           this_00->field_045D = 0;
           this_00->field_0459 = CASE_76;
           /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
-          local_EAX_10888 = BackDismant(this_00,(int *)0x0,unaff_EDI,unaff_ESI);
+          local_EAX_10888 = BackDismant(this_00,nullptr,unaff_EDI,unaff_ESI);
           if (local_EAX_10888 != -1) goto cf_common_exit_00458C5B;
           iVar12 = 0xde5;
           local_8 = local_EAX_10888;
@@ -5344,7 +5344,7 @@ LAB_0045ad7b:
         case CASE_14:
           this_00->field_045D = 0;
           this_00->field_0459 = CASE_78;
-          local_EAX_10888 = BackWaitLoad(this_00,(int *)0x0);
+          local_EAX_10888 = BackWaitLoad(this_00,nullptr);
           if (local_EAX_10888 != -1) goto cf_common_exit_00458C5B;
           iVar12 = 0xdb8;
           local_8 = local_EAX_10888;
@@ -5352,7 +5352,7 @@ LAB_0045ad7b:
         case CASE_15:
           this_00->field_045D = 0;
           this_00->field_0459 = CASE_79;
-          local_EAX_10888 = BackTeleport(this_00,(int *)0x0);
+          local_EAX_10888 = BackTeleport(this_00,nullptr);
           if (local_EAX_10888 != -1) goto cf_common_exit_00458C5B;
           iVar12 = 0xdd6;
           local_8 = local_EAX_10888;
@@ -5368,7 +5368,7 @@ LAB_0045ad7b:
         case CASE_17:
           this_00->field_045D = 0;
           this_00->field_0459 = CASE_7B;
-          local_EAX_10888 = BackBring(this_00,(int *)0x0);
+          local_EAX_10888 = BackBring(this_00,nullptr);
           if (local_EAX_10888 != -1) goto cf_common_exit_00458C5B;
           iVar12 = 0xddb;
           local_8 = local_EAX_10888;
@@ -5381,7 +5381,7 @@ LAB_0045ad7b:
       else if (this_00->field_02F4 == 1) {
         if (this_00->field_045D == 0) {
           this_00->field_045D = CASE_B;
-          iVar12 = Annih(this_00,(undefined4 *)0x0);
+          iVar12 = Annih(this_00,nullptr);
           local_8 = iVar12;
           if (iVar12 == -1) {
             RaiseInternalException
@@ -5415,7 +5415,7 @@ LAB_0045ad7b:
           this_00->field_045D = 0;
           this_00->field_0459 = CASE_66;
           /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
-          local_EAX_10888 = BackAttack(this_00,(int *)0x0,(int)unaff_EDI,(int)unaff_ESI);
+          local_EAX_10888 = BackAttack(this_00,nullptr,(int)unaff_EDI,(int)unaff_ESI);
           if (local_EAX_10888 != -1) goto cf_common_exit_00458C5B;
           iVar12 = 0xe12;
           local_8 = local_EAX_10888;
@@ -5432,7 +5432,7 @@ LAB_0045ad7b:
           this_00->field_045D = 0;
           this_00->field_0459 = CASE_68;
           /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
-          local_EAX_10888 = BackToDok(this_00,(int *)0x0,unaff_EDI,unaff_ESI);
+          local_EAX_10888 = BackToDok(this_00,nullptr,unaff_EDI,unaff_ESI);
           if (local_EAX_10888 != -1) goto cf_common_exit_00458C5B;
           iVar12 = 0xe30;
           local_8 = local_EAX_10888;
@@ -5448,7 +5448,7 @@ LAB_0045ad7b:
         case CASE_6:
           this_00->field_045D = 0;
           this_00->field_0459 = CASE_6A;
-          local_EAX_10888 = BackPatrol(this_00,(int *)0x0);
+          local_EAX_10888 = BackPatrol(this_00,nullptr);
           if (local_EAX_10888 != -1) goto cf_common_exit_00458C5B;
           iVar12 = 0xe17;
           local_8 = local_EAX_10888;
@@ -5472,7 +5472,7 @@ LAB_0045ad7b:
         case CASE_9:
           this_00->field_045D = 0;
           this_00->field_0459 = CASE_6D;
-          local_EAX_10888 = BackCapture(this_00,(int *)0x0);
+          local_EAX_10888 = BackCapture(this_00,nullptr);
           if (local_EAX_10888 != -1) goto cf_common_exit_00458C5B;
           iVar12 = 0xe53;
           local_8 = local_EAX_10888;
@@ -5488,7 +5488,7 @@ LAB_0045ad7b:
         case CASE_B:
           this_00->field_045D = 0;
           this_00->field_0459 = CASE_6F;
-          local_EAX_10888 = BackAnnih(this_00,(int *)0x0);
+          local_EAX_10888 = BackAnnih(this_00,nullptr);
           if (local_EAX_10888 != -1) goto cf_common_exit_00458C5B;
           iVar12 = 0xe67;
           local_8 = local_EAX_10888;
@@ -5496,7 +5496,7 @@ LAB_0045ad7b:
         case CASE_C:
           this_00->field_045D = 0;
           this_00->field_0459 = CASE_70;
-          local_EAX_10888 = BackLoadRC(this_00,(STBoatC *)0x0);
+          local_EAX_10888 = BackLoadRC(this_00,nullptr);
           if (local_EAX_10888 != -1) goto cf_common_exit_00458C5B;
           iVar12 = 0xe1c;
           local_8 = local_EAX_10888;
@@ -5504,7 +5504,7 @@ LAB_0045ad7b:
         case CASE_D:
           this_00->field_045D = 0;
           this_00->field_0459 = CASE_71;
-          local_EAX_10888 = BackUnLoadRC(this_00,(STBoatC *)0x0);
+          local_EAX_10888 = BackUnLoadRC(this_00,nullptr);
           if (local_EAX_10888 != -1) goto cf_common_exit_00458C5B;
           iVar12 = 0xe2b;
           local_8 = local_EAX_10888;
@@ -5512,7 +5512,7 @@ LAB_0045ad7b:
         case CASE_E:
           this_00->field_045D = 0;
           this_00->field_0459 = CASE_72;
-          local_EAX_10888 = thunk_FUN_004805b0(this_00,(int *)0x0);
+          local_EAX_10888 = thunk_FUN_004805b0(this_00,nullptr);
           if (local_EAX_10888 != -1) goto cf_common_exit_00458C5B;
           iVar12 = 0xe76;
           local_8 = local_EAX_10888;
@@ -5520,7 +5520,7 @@ LAB_0045ad7b:
         case CASE_F:
           this_00->field_045D = 0;
           this_00->field_0459 = CASE_73;
-          local_EAX_10888 = BackLoadObj(this_00,(int *)0x0);
+          local_EAX_10888 = BackLoadObj(this_00,nullptr);
           if (local_EAX_10888 != -1) goto cf_common_exit_00458C5B;
           iVar12 = 0xe3a;
           local_8 = local_EAX_10888;
@@ -5528,7 +5528,7 @@ LAB_0045ad7b:
         case CASE_10:
           this_00->field_045D = 0;
           this_00->field_0459 = CASE_74;
-          local_EAX_10888 = BackUnLoadObj(this_00,(int *)0x0);
+          local_EAX_10888 = BackUnLoadObj(this_00,nullptr);
           if (local_EAX_10888 != -1) goto cf_common_exit_00458C5B;
           iVar12 = 0xe44;
           local_8 = local_EAX_10888;
@@ -5537,7 +5537,7 @@ LAB_0045ad7b:
           this_00->field_045D = 0;
           this_00->field_0459 = CASE_75;
           /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
-          local_EAX_10888 = BackBuild(this_00,(int *)0x0,unaff_EDI,unaff_ESI);
+          local_EAX_10888 = BackBuild(this_00,nullptr,unaff_EDI,unaff_ESI);
           if (local_EAX_10888 != -1) goto cf_common_exit_00458C5B;
           iVar12 = 0xe21;
           local_8 = local_EAX_10888;
@@ -5546,7 +5546,7 @@ LAB_0045ad7b:
           this_00->field_045D = 0;
           this_00->field_0459 = CASE_76;
           /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
-          local_EAX_10888 = BackDismant(this_00,(int *)0x0,unaff_EDI,unaff_ESI);
+          local_EAX_10888 = BackDismant(this_00,nullptr,unaff_EDI,unaff_ESI);
           if (local_EAX_10888 != -1) goto cf_common_exit_00458C5B;
           iVar12 = 0xe6c;
           local_8 = local_EAX_10888;
@@ -5562,7 +5562,7 @@ LAB_0045ad7b:
         case CASE_14:
           this_00->field_045D = 0;
           this_00->field_0459 = CASE_78;
-          local_EAX_10888 = BackWaitLoad(this_00,(int *)0x0);
+          local_EAX_10888 = BackWaitLoad(this_00,nullptr);
           if (local_EAX_10888 != -1) goto cf_common_exit_00458C5B;
           iVar12 = 0xe3f;
           local_8 = local_EAX_10888;
@@ -5570,7 +5570,7 @@ LAB_0045ad7b:
         case CASE_15:
           this_00->field_045D = 0;
           this_00->field_0459 = CASE_79;
-          local_EAX_10888 = BackTeleport(this_00,(int *)0x0);
+          local_EAX_10888 = BackTeleport(this_00,nullptr);
           if (local_EAX_10888 != -1) goto cf_common_exit_00458C5B;
           iVar12 = 0xe5d;
           local_8 = local_EAX_10888;
@@ -5586,7 +5586,7 @@ LAB_0045ad7b:
         case CASE_17:
           this_00->field_045D = 0;
           this_00->field_0459 = CASE_7B;
-          local_EAX_10888 = BackBring(this_00,(int *)0x0);
+          local_EAX_10888 = BackBring(this_00,nullptr);
           if (local_EAX_10888 != -1) goto cf_common_exit_00458C5B;
           iVar12 = 0xe62;
           local_8 = local_EAX_10888;
@@ -5600,7 +5600,7 @@ LAB_0045ad7b:
         if (this_00->field_045D == 0) {
           this_00->field_045D = CASE_12;
           /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
-          iVar12 = Dismant(this_00,(int *)0x0,unaff_EDI,unaff_ESI);
+          iVar12 = Dismant(this_00,nullptr,unaff_EDI,unaff_ESI);
           local_8 = iVar12;
           if (iVar12 == -1) {
             RaiseInternalException
@@ -5634,7 +5634,7 @@ LAB_0045ad7b:
           this_00->field_045D = 0;
           this_00->field_0459 = CASE_66;
           /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
-          local_EAX_10888 = BackAttack(this_00,(int *)0x0,(int)unaff_EDI,(int)unaff_ESI);
+          local_EAX_10888 = BackAttack(this_00,nullptr,(int)unaff_EDI,(int)unaff_ESI);
           if (local_EAX_10888 != -1) goto cf_common_exit_00458C5B;
           iVar12 = 0xe99;
           local_8 = local_EAX_10888;
@@ -5651,7 +5651,7 @@ LAB_0045ad7b:
           this_00->field_045D = 0;
           this_00->field_0459 = CASE_68;
           /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
-          local_EAX_10888 = BackToDok(this_00,(int *)0x0,unaff_EDI,unaff_ESI);
+          local_EAX_10888 = BackToDok(this_00,nullptr,unaff_EDI,unaff_ESI);
           if (local_EAX_10888 != -1) goto cf_common_exit_00458C5B;
           iVar12 = 0xeb7;
           local_8 = local_EAX_10888;
@@ -5667,7 +5667,7 @@ LAB_0045ad7b:
         case CASE_6:
           this_00->field_045D = 0;
           this_00->field_0459 = CASE_6A;
-          local_EAX_10888 = BackPatrol(this_00,(int *)0x0);
+          local_EAX_10888 = BackPatrol(this_00,nullptr);
           if (local_EAX_10888 != -1) goto cf_common_exit_00458C5B;
           iVar12 = 0xe9e;
           local_8 = local_EAX_10888;
@@ -5691,7 +5691,7 @@ LAB_0045ad7b:
         case CASE_9:
           this_00->field_045D = 0;
           this_00->field_0459 = CASE_6D;
-          local_EAX_10888 = BackCapture(this_00,(int *)0x0);
+          local_EAX_10888 = BackCapture(this_00,nullptr);
           if (local_EAX_10888 != -1) goto cf_common_exit_00458C5B;
           iVar12 = 0xeda;
           local_8 = local_EAX_10888;
@@ -5707,7 +5707,7 @@ LAB_0045ad7b:
         case CASE_B:
           this_00->field_045D = 0;
           this_00->field_0459 = CASE_6F;
-          local_EAX_10888 = BackAnnih(this_00,(int *)0x0);
+          local_EAX_10888 = BackAnnih(this_00,nullptr);
           if (local_EAX_10888 != -1) goto cf_common_exit_00458C5B;
           iVar12 = 0xeee;
           local_8 = local_EAX_10888;
@@ -5715,7 +5715,7 @@ LAB_0045ad7b:
         case CASE_C:
           this_00->field_045D = 0;
           this_00->field_0459 = CASE_70;
-          local_EAX_10888 = BackLoadRC(this_00,(STBoatC *)0x0);
+          local_EAX_10888 = BackLoadRC(this_00,nullptr);
           if (local_EAX_10888 != -1) goto cf_common_exit_00458C5B;
           iVar12 = 0xea3;
           local_8 = local_EAX_10888;
@@ -5723,7 +5723,7 @@ LAB_0045ad7b:
         case CASE_D:
           this_00->field_045D = 0;
           this_00->field_0459 = CASE_71;
-          local_EAX_10888 = BackUnLoadRC(this_00,(STBoatC *)0x0);
+          local_EAX_10888 = BackUnLoadRC(this_00,nullptr);
           if (local_EAX_10888 != -1) goto cf_common_exit_00458C5B;
           iVar12 = 0xeb2;
           local_8 = local_EAX_10888;
@@ -5731,7 +5731,7 @@ LAB_0045ad7b:
         case CASE_E:
           this_00->field_045D = 0;
           this_00->field_0459 = CASE_72;
-          local_EAX_10888 = thunk_FUN_004805b0(this_00,(int *)0x0);
+          local_EAX_10888 = thunk_FUN_004805b0(this_00,nullptr);
           if (local_EAX_10888 != -1) goto cf_common_exit_00458C5B;
           iVar12 = 0xefd;
           local_8 = local_EAX_10888;
@@ -5739,7 +5739,7 @@ LAB_0045ad7b:
         case CASE_F:
           this_00->field_045D = 0;
           this_00->field_0459 = CASE_73;
-          local_EAX_10888 = BackLoadObj(this_00,(int *)0x0);
+          local_EAX_10888 = BackLoadObj(this_00,nullptr);
           if (local_EAX_10888 != -1) goto cf_common_exit_00458C5B;
           iVar12 = 0xec1;
           local_8 = local_EAX_10888;
@@ -5747,7 +5747,7 @@ LAB_0045ad7b:
         case CASE_10:
           this_00->field_045D = 0;
           this_00->field_0459 = CASE_74;
-          local_EAX_10888 = BackUnLoadObj(this_00,(int *)0x0);
+          local_EAX_10888 = BackUnLoadObj(this_00,nullptr);
           if (local_EAX_10888 != -1) goto cf_common_exit_00458C5B;
           iVar12 = 0xecb;
           local_8 = local_EAX_10888;
@@ -5756,7 +5756,7 @@ LAB_0045ad7b:
           this_00->field_045D = 0;
           this_00->field_0459 = CASE_75;
           /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
-          local_EAX_10888 = BackBuild(this_00,(int *)0x0,unaff_EDI,unaff_ESI);
+          local_EAX_10888 = BackBuild(this_00,nullptr,unaff_EDI,unaff_ESI);
           if (local_EAX_10888 != -1) goto cf_common_exit_00458C5B;
           iVar12 = 0xea8;
           local_8 = local_EAX_10888;
@@ -5765,7 +5765,7 @@ LAB_0045ad7b:
           this_00->field_045D = 0;
           this_00->field_0459 = CASE_76;
           /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
-          local_EAX_10888 = BackDismant(this_00,(int *)0x0,unaff_EDI,unaff_ESI);
+          local_EAX_10888 = BackDismant(this_00,nullptr,unaff_EDI,unaff_ESI);
           if (local_EAX_10888 != -1) goto cf_common_exit_00458C5B;
           iVar12 = 0xef3;
           local_8 = local_EAX_10888;
@@ -5781,7 +5781,7 @@ LAB_0045ad7b:
         case CASE_14:
           this_00->field_045D = 0;
           this_00->field_0459 = CASE_78;
-          local_EAX_10888 = BackWaitLoad(this_00,(int *)0x0);
+          local_EAX_10888 = BackWaitLoad(this_00,nullptr);
           if (local_EAX_10888 != -1) goto cf_common_exit_00458C5B;
           iVar12 = 0xec6;
           local_8 = local_EAX_10888;
@@ -5789,7 +5789,7 @@ LAB_0045ad7b:
         case CASE_15:
           this_00->field_045D = 0;
           this_00->field_0459 = CASE_79;
-          local_EAX_10888 = BackTeleport(this_00,(int *)0x0);
+          local_EAX_10888 = BackTeleport(this_00,nullptr);
           if (local_EAX_10888 != -1) goto cf_common_exit_00458C5B;
           iVar12 = 0xee4;
           local_8 = local_EAX_10888;
@@ -5805,7 +5805,7 @@ LAB_0045ad7b:
         case CASE_17:
           this_00->field_045D = 0;
           this_00->field_0459 = CASE_7B;
-          local_EAX_10888 = BackBring(this_00,(int *)0x0);
+          local_EAX_10888 = BackBring(this_00,nullptr);
           if (local_EAX_10888 != -1) goto cf_common_exit_00458C5B;
           iVar12 = 0xee9;
           local_8 = local_EAX_10888;
@@ -5852,7 +5852,7 @@ LAB_0045ad7b:
           this_00->field_045D = 0;
           this_00->field_0459 = CASE_66;
           /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
-          local_EAX_10888 = BackAttack(this_00,(int *)0x0,(int)unaff_EDI,(int)unaff_ESI);
+          local_EAX_10888 = BackAttack(this_00,nullptr,(int)unaff_EDI,(int)unaff_ESI);
           if (local_EAX_10888 != -1) goto cf_common_exit_00458C5B;
           iVar12 = 0xf20;
           local_8 = local_EAX_10888;
@@ -5869,7 +5869,7 @@ LAB_0045ad7b:
           this_00->field_045D = 0;
           this_00->field_0459 = CASE_68;
           /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
-          local_EAX_10888 = BackToDok(this_00,(int *)0x0,unaff_EDI,unaff_ESI);
+          local_EAX_10888 = BackToDok(this_00,nullptr,unaff_EDI,unaff_ESI);
           if (local_EAX_10888 != -1) goto cf_common_exit_00458C5B;
           iVar12 = 0xf3e;
           local_8 = local_EAX_10888;
@@ -5885,7 +5885,7 @@ LAB_0045ad7b:
         case CASE_6:
           this_00->field_045D = 0;
           this_00->field_0459 = CASE_6A;
-          local_EAX_10888 = BackPatrol(this_00,(int *)0x0);
+          local_EAX_10888 = BackPatrol(this_00,nullptr);
           if (local_EAX_10888 != -1) goto cf_common_exit_00458C5B;
           iVar12 = 0xf25;
           local_8 = local_EAX_10888;
@@ -5909,7 +5909,7 @@ LAB_0045ad7b:
         case CASE_9:
           this_00->field_045D = 0;
           this_00->field_0459 = CASE_6D;
-          local_EAX_10888 = BackCapture(this_00,(int *)0x0);
+          local_EAX_10888 = BackCapture(this_00,nullptr);
           if (local_EAX_10888 != -1) goto cf_common_exit_00458C5B;
           iVar12 = 0xf61;
           local_8 = local_EAX_10888;
@@ -5925,7 +5925,7 @@ LAB_0045ad7b:
         case CASE_B:
           this_00->field_045D = 0;
           this_00->field_0459 = CASE_6F;
-          local_EAX_10888 = BackAnnih(this_00,(int *)0x0);
+          local_EAX_10888 = BackAnnih(this_00,nullptr);
           if (local_EAX_10888 != -1) goto cf_common_exit_00458C5B;
           iVar12 = 0xf75;
           local_8 = local_EAX_10888;
@@ -5933,7 +5933,7 @@ LAB_0045ad7b:
         case CASE_C:
           this_00->field_045D = 0;
           this_00->field_0459 = CASE_70;
-          local_EAX_10888 = BackLoadRC(this_00,(STBoatC *)0x0);
+          local_EAX_10888 = BackLoadRC(this_00,nullptr);
           if (local_EAX_10888 != -1) goto cf_common_exit_00458C5B;
           iVar12 = 0xf2a;
           local_8 = local_EAX_10888;
@@ -5941,7 +5941,7 @@ LAB_0045ad7b:
         case CASE_D:
           this_00->field_045D = 0;
           this_00->field_0459 = CASE_71;
-          local_EAX_10888 = BackUnLoadRC(this_00,(STBoatC *)0x0);
+          local_EAX_10888 = BackUnLoadRC(this_00,nullptr);
           if (local_EAX_10888 != -1) goto cf_common_exit_00458C5B;
           iVar12 = 0xf39;
           local_8 = local_EAX_10888;
@@ -5949,7 +5949,7 @@ LAB_0045ad7b:
         case CASE_E:
           this_00->field_045D = 0;
           this_00->field_0459 = CASE_72;
-          local_EAX_10888 = thunk_FUN_004805b0(this_00,(int *)0x0);
+          local_EAX_10888 = thunk_FUN_004805b0(this_00,nullptr);
           if (local_EAX_10888 != -1) goto cf_common_exit_00458C5B;
           iVar12 = 0xf84;
           local_8 = local_EAX_10888;
@@ -5957,7 +5957,7 @@ LAB_0045ad7b:
         case CASE_F:
           this_00->field_045D = 0;
           this_00->field_0459 = CASE_73;
-          local_EAX_10888 = BackLoadObj(this_00,(int *)0x0);
+          local_EAX_10888 = BackLoadObj(this_00,nullptr);
           if (local_EAX_10888 != -1) goto cf_common_exit_00458C5B;
           iVar12 = 0xf48;
           local_8 = local_EAX_10888;
@@ -5965,7 +5965,7 @@ LAB_0045ad7b:
         case CASE_10:
           this_00->field_045D = 0;
           this_00->field_0459 = CASE_74;
-          local_EAX_10888 = BackUnLoadObj(this_00,(int *)0x0);
+          local_EAX_10888 = BackUnLoadObj(this_00,nullptr);
           if (local_EAX_10888 != -1) goto cf_common_exit_00458C5B;
           iVar12 = 0xf52;
           local_8 = local_EAX_10888;
@@ -5974,7 +5974,7 @@ LAB_0045ad7b:
           this_00->field_045D = 0;
           this_00->field_0459 = CASE_75;
           /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
-          local_EAX_10888 = BackBuild(this_00,(int *)0x0,unaff_EDI,unaff_ESI);
+          local_EAX_10888 = BackBuild(this_00,nullptr,unaff_EDI,unaff_ESI);
           if (local_EAX_10888 != -1) goto cf_common_exit_00458C5B;
           iVar12 = 0xf2f;
           local_8 = local_EAX_10888;
@@ -5983,7 +5983,7 @@ LAB_0045ad7b:
           this_00->field_045D = 0;
           this_00->field_0459 = CASE_76;
           /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
-          local_EAX_10888 = BackDismant(this_00,(int *)0x0,unaff_EDI,unaff_ESI);
+          local_EAX_10888 = BackDismant(this_00,nullptr,unaff_EDI,unaff_ESI);
           if (local_EAX_10888 != -1) goto cf_common_exit_00458C5B;
           iVar12 = 0xf7a;
           local_8 = local_EAX_10888;
@@ -5999,7 +5999,7 @@ LAB_0045ad7b:
         case CASE_14:
           this_00->field_045D = 0;
           this_00->field_0459 = CASE_78;
-          local_EAX_10888 = BackWaitLoad(this_00,(int *)0x0);
+          local_EAX_10888 = BackWaitLoad(this_00,nullptr);
           if (local_EAX_10888 != -1) goto cf_common_exit_00458C5B;
           iVar12 = 0xf4d;
           local_8 = local_EAX_10888;
@@ -6007,7 +6007,7 @@ LAB_0045ad7b:
         case CASE_15:
           this_00->field_045D = 0;
           this_00->field_0459 = CASE_79;
-          local_EAX_10888 = BackTeleport(this_00,(int *)0x0);
+          local_EAX_10888 = BackTeleport(this_00,nullptr);
           if (local_EAX_10888 != -1) goto cf_common_exit_00458C5B;
           iVar12 = 0xf6b;
           local_8 = local_EAX_10888;
@@ -6023,7 +6023,7 @@ LAB_0045ad7b:
         case CASE_17:
           this_00->field_045D = 0;
           this_00->field_0459 = CASE_7B;
-          local_EAX_10888 = BackBring(this_00,(int *)0x0);
+          local_EAX_10888 = BackBring(this_00,nullptr);
           if (local_EAX_10888 != -1) goto cf_common_exit_00458C5B;
           iVar12 = 0xf70;
           local_8 = local_EAX_10888;
@@ -6036,7 +6036,7 @@ LAB_0045ad7b:
       else if (this_00->field_0300 == 1) {
         if (this_00->field_045D == 0) {
           this_00->field_045D = CASE_E;
-          iVar12 = thunk_FUN_004803d0(this_00,(AnonShape_004803D0_350EB461 *)0x0);
+          iVar12 = thunk_FUN_004803d0(this_00,nullptr);
           local_8 = iVar12;
           if (iVar12 == -1) {
             RaiseInternalException
@@ -6070,7 +6070,7 @@ LAB_0045ad7b:
           this_00->field_045D = 0;
           this_00->field_0459 = CASE_66;
           /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
-          local_EAX_10888 = BackAttack(this_00,(int *)0x0,(int)unaff_EDI,(int)unaff_ESI);
+          local_EAX_10888 = BackAttack(this_00,nullptr,(int)unaff_EDI,(int)unaff_ESI);
           if (local_EAX_10888 != -1) goto cf_common_exit_00458C5B;
           iVar12 = 0xfa7;
           local_8 = local_EAX_10888;
@@ -6087,7 +6087,7 @@ LAB_0045ad7b:
           this_00->field_045D = 0;
           this_00->field_0459 = CASE_68;
           /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
-          local_EAX_10888 = BackToDok(this_00,(int *)0x0,unaff_EDI,unaff_ESI);
+          local_EAX_10888 = BackToDok(this_00,nullptr,unaff_EDI,unaff_ESI);
           if (local_EAX_10888 != -1) goto cf_common_exit_00458C5B;
           iVar12 = 0xfc5;
           local_8 = local_EAX_10888;
@@ -6103,7 +6103,7 @@ LAB_0045ad7b:
         case CASE_6:
           this_00->field_045D = 0;
           this_00->field_0459 = CASE_6A;
-          local_EAX_10888 = BackPatrol(this_00,(int *)0x0);
+          local_EAX_10888 = BackPatrol(this_00,nullptr);
           if (local_EAX_10888 != -1) goto cf_common_exit_00458C5B;
           iVar12 = 0xfac;
           local_8 = local_EAX_10888;
@@ -6127,7 +6127,7 @@ LAB_0045ad7b:
         case CASE_9:
           this_00->field_045D = 0;
           this_00->field_0459 = CASE_6D;
-          local_EAX_10888 = BackCapture(this_00,(int *)0x0);
+          local_EAX_10888 = BackCapture(this_00,nullptr);
           if (local_EAX_10888 != -1) goto cf_common_exit_00458C5B;
           iVar12 = 0xfe8;
           local_8 = local_EAX_10888;
@@ -6143,7 +6143,7 @@ LAB_0045ad7b:
         case CASE_B:
           this_00->field_045D = 0;
           this_00->field_0459 = CASE_6F;
-          local_EAX_10888 = BackAnnih(this_00,(int *)0x0);
+          local_EAX_10888 = BackAnnih(this_00,nullptr);
           if (local_EAX_10888 != -1) goto cf_common_exit_00458C5B;
           iVar12 = 0xffc;
           local_8 = local_EAX_10888;
@@ -6151,7 +6151,7 @@ LAB_0045ad7b:
         case CASE_C:
           this_00->field_045D = 0;
           this_00->field_0459 = CASE_70;
-          local_EAX_10888 = BackLoadRC(this_00,(STBoatC *)0x0);
+          local_EAX_10888 = BackLoadRC(this_00,nullptr);
           if (local_EAX_10888 != -1) goto cf_common_exit_00458C5B;
           iVar12 = 0xfb1;
           local_8 = local_EAX_10888;
@@ -6159,7 +6159,7 @@ LAB_0045ad7b:
         case CASE_D:
           this_00->field_045D = 0;
           this_00->field_0459 = CASE_71;
-          local_EAX_10888 = BackUnLoadRC(this_00,(STBoatC *)0x0);
+          local_EAX_10888 = BackUnLoadRC(this_00,nullptr);
           if (local_EAX_10888 != -1) goto cf_common_exit_00458C5B;
           iVar12 = 0xfc0;
           local_8 = local_EAX_10888;
@@ -6167,7 +6167,7 @@ LAB_0045ad7b:
         case CASE_E:
           this_00->field_045D = 0;
           this_00->field_0459 = CASE_72;
-          local_EAX_10888 = thunk_FUN_004805b0(this_00,(int *)0x0);
+          local_EAX_10888 = thunk_FUN_004805b0(this_00,nullptr);
           if (local_EAX_10888 != -1) goto cf_common_exit_00458C5B;
           iVar12 = 0x100b;
           local_8 = local_EAX_10888;
@@ -6175,7 +6175,7 @@ LAB_0045ad7b:
         case CASE_F:
           this_00->field_045D = 0;
           this_00->field_0459 = CASE_73;
-          local_EAX_10888 = BackLoadObj(this_00,(int *)0x0);
+          local_EAX_10888 = BackLoadObj(this_00,nullptr);
           if (local_EAX_10888 != -1) goto cf_common_exit_00458C5B;
           iVar12 = 0xfcf;
           local_8 = local_EAX_10888;
@@ -6183,7 +6183,7 @@ LAB_0045ad7b:
         case CASE_10:
           this_00->field_045D = 0;
           this_00->field_0459 = CASE_74;
-          local_EAX_10888 = BackUnLoadObj(this_00,(int *)0x0);
+          local_EAX_10888 = BackUnLoadObj(this_00,nullptr);
           if (local_EAX_10888 != -1) goto cf_common_exit_00458C5B;
           iVar12 = 0xfd9;
           local_8 = local_EAX_10888;
@@ -6192,7 +6192,7 @@ LAB_0045ad7b:
           this_00->field_045D = 0;
           this_00->field_0459 = CASE_75;
           /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
-          local_EAX_10888 = BackBuild(this_00,(int *)0x0,unaff_EDI,unaff_ESI);
+          local_EAX_10888 = BackBuild(this_00,nullptr,unaff_EDI,unaff_ESI);
           if (local_EAX_10888 != -1) goto cf_common_exit_00458C5B;
           iVar12 = 0xfb6;
           local_8 = local_EAX_10888;
@@ -6201,7 +6201,7 @@ LAB_0045ad7b:
           this_00->field_045D = 0;
           this_00->field_0459 = CASE_76;
           /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
-          local_EAX_10888 = BackDismant(this_00,(int *)0x0,unaff_EDI,unaff_ESI);
+          local_EAX_10888 = BackDismant(this_00,nullptr,unaff_EDI,unaff_ESI);
           if (local_EAX_10888 != -1) goto cf_common_exit_00458C5B;
           iVar12 = 0x1001;
           local_8 = local_EAX_10888;
@@ -6217,7 +6217,7 @@ LAB_0045ad7b:
         case CASE_14:
           this_00->field_045D = 0;
           this_00->field_0459 = CASE_78;
-          local_EAX_10888 = BackWaitLoad(this_00,(int *)0x0);
+          local_EAX_10888 = BackWaitLoad(this_00,nullptr);
           if (local_EAX_10888 != -1) goto cf_common_exit_00458C5B;
           iVar12 = 0xfd4;
           local_8 = local_EAX_10888;
@@ -6225,7 +6225,7 @@ LAB_0045ad7b:
         case CASE_15:
           this_00->field_045D = 0;
           this_00->field_0459 = CASE_79;
-          local_EAX_10888 = BackTeleport(this_00,(int *)0x0);
+          local_EAX_10888 = BackTeleport(this_00,nullptr);
           if (local_EAX_10888 != -1) goto cf_common_exit_00458C5B;
           iVar12 = 0xff2;
           local_8 = local_EAX_10888;
@@ -6241,7 +6241,7 @@ LAB_0045ad7b:
         case CASE_17:
           this_00->field_045D = 0;
           this_00->field_0459 = CASE_7B;
-          local_EAX_10888 = BackBring(this_00,(int *)0x0);
+          local_EAX_10888 = BackBring(this_00,nullptr);
           if (local_EAX_10888 != -1) goto cf_common_exit_00458C5B;
           iVar12 = 0xff7;
           local_8 = local_EAX_10888;
@@ -6277,7 +6277,7 @@ LAB_0045ad7b:
           this_00->field_045D = 0;
           this_00->field_0459 = CASE_66;
           /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
-          local_EAX_10888 = BackAttack(this_00,(int *)0x0,(int)unaff_EDI,(int)unaff_ESI);
+          local_EAX_10888 = BackAttack(this_00,nullptr,(int)unaff_EDI,(int)unaff_ESI);
           if (local_EAX_10888 != -1) goto cf_common_exit_00458C5B;
           iVar12 = 0x1028;
           local_8 = local_EAX_10888;
@@ -6294,7 +6294,7 @@ LAB_0045ad7b:
           this_00->field_045D = 0;
           this_00->field_0459 = CASE_68;
           /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
-          local_EAX_10888 = BackToDok(this_00,(int *)0x0,unaff_EDI,unaff_ESI);
+          local_EAX_10888 = BackToDok(this_00,nullptr,unaff_EDI,unaff_ESI);
           if (local_EAX_10888 != -1) goto cf_common_exit_00458C5B;
           iVar12 = 0x1046;
           local_8 = local_EAX_10888;
@@ -6310,7 +6310,7 @@ LAB_0045ad7b:
         case CASE_6:
           this_00->field_045D = 0;
           this_00->field_0459 = CASE_6A;
-          local_EAX_10888 = BackPatrol(this_00,(int *)0x0);
+          local_EAX_10888 = BackPatrol(this_00,nullptr);
           if (local_EAX_10888 != -1) goto cf_common_exit_00458C5B;
           iVar12 = 0x102d;
           local_8 = local_EAX_10888;
@@ -6334,7 +6334,7 @@ LAB_0045ad7b:
         case CASE_9:
           this_00->field_045D = 0;
           this_00->field_0459 = CASE_6D;
-          local_EAX_10888 = BackCapture(this_00,(int *)0x0);
+          local_EAX_10888 = BackCapture(this_00,nullptr);
           if (local_EAX_10888 != -1) goto cf_common_exit_00458C5B;
           iVar12 = 0x1069;
           local_8 = local_EAX_10888;
@@ -6350,7 +6350,7 @@ LAB_0045ad7b:
         case CASE_B:
           this_00->field_045D = 0;
           this_00->field_0459 = CASE_6F;
-          local_EAX_10888 = BackAnnih(this_00,(int *)0x0);
+          local_EAX_10888 = BackAnnih(this_00,nullptr);
           if (local_EAX_10888 != -1) goto cf_common_exit_00458C5B;
           iVar12 = 0x107d;
           local_8 = local_EAX_10888;
@@ -6358,7 +6358,7 @@ LAB_0045ad7b:
         case CASE_C:
           this_00->field_045D = 0;
           this_00->field_0459 = CASE_70;
-          local_EAX_10888 = BackLoadRC(this_00,(STBoatC *)0x0);
+          local_EAX_10888 = BackLoadRC(this_00,nullptr);
           if (local_EAX_10888 != -1) goto cf_common_exit_00458C5B;
           iVar12 = 0x1032;
           local_8 = local_EAX_10888;
@@ -6366,7 +6366,7 @@ LAB_0045ad7b:
         case CASE_D:
           this_00->field_045D = 0;
           this_00->field_0459 = CASE_71;
-          local_EAX_10888 = BackUnLoadRC(this_00,(STBoatC *)0x0);
+          local_EAX_10888 = BackUnLoadRC(this_00,nullptr);
           if (local_EAX_10888 != -1) goto cf_common_exit_00458C5B;
           iVar12 = 0x1041;
           local_8 = local_EAX_10888;
@@ -6374,7 +6374,7 @@ LAB_0045ad7b:
         case CASE_E:
           this_00->field_045D = 0;
           this_00->field_0459 = CASE_72;
-          local_EAX_10888 = thunk_FUN_004805b0(this_00,(int *)0x0);
+          local_EAX_10888 = thunk_FUN_004805b0(this_00,nullptr);
           if (local_EAX_10888 != -1) goto cf_common_exit_00458C5B;
           iVar12 = 0x1087;
           local_8 = local_EAX_10888;
@@ -6382,7 +6382,7 @@ LAB_0045ad7b:
         case CASE_F:
           this_00->field_045D = 0;
           this_00->field_0459 = CASE_73;
-          local_EAX_10888 = BackLoadObj(this_00,(int *)0x0);
+          local_EAX_10888 = BackLoadObj(this_00,nullptr);
           if (local_EAX_10888 != -1) goto cf_common_exit_00458C5B;
           iVar12 = 0x1050;
           local_8 = local_EAX_10888;
@@ -6390,7 +6390,7 @@ LAB_0045ad7b:
         case CASE_10:
           this_00->field_045D = 0;
           this_00->field_0459 = CASE_74;
-          local_EAX_10888 = BackUnLoadObj(this_00,(int *)0x0);
+          local_EAX_10888 = BackUnLoadObj(this_00,nullptr);
           if (local_EAX_10888 != -1) goto cf_common_exit_00458C5B;
           iVar12 = 0x105a;
           local_8 = local_EAX_10888;
@@ -6399,7 +6399,7 @@ LAB_0045ad7b:
           this_00->field_045D = 0;
           this_00->field_0459 = CASE_75;
           /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
-          local_EAX_10888 = BackBuild(this_00,(int *)0x0,unaff_EDI,unaff_ESI);
+          local_EAX_10888 = BackBuild(this_00,nullptr,unaff_EDI,unaff_ESI);
           if (local_EAX_10888 != -1) goto cf_common_exit_00458C5B;
           iVar12 = 0x1037;
           local_8 = local_EAX_10888;
@@ -6418,7 +6418,7 @@ LAB_0045ad7b:
         case CASE_14:
           this_00->field_045D = 0;
           this_00->field_0459 = CASE_78;
-          local_EAX_10888 = BackWaitLoad(this_00,(int *)0x0);
+          local_EAX_10888 = BackWaitLoad(this_00,nullptr);
           if (local_EAX_10888 != -1) goto cf_common_exit_00458C5B;
           iVar12 = 0x1055;
           local_8 = local_EAX_10888;
@@ -6426,7 +6426,7 @@ LAB_0045ad7b:
         case CASE_15:
           this_00->field_045D = 0;
           this_00->field_0459 = CASE_79;
-          local_EAX_10888 = BackTeleport(this_00,(int *)0x0);
+          local_EAX_10888 = BackTeleport(this_00,nullptr);
           if (local_EAX_10888 != -1) goto cf_common_exit_00458C5B;
           iVar12 = 0x1073;
           local_8 = local_EAX_10888;
@@ -6442,7 +6442,7 @@ LAB_0045ad7b:
         case CASE_17:
           this_00->field_045D = 0;
           this_00->field_0459 = CASE_7B;
-          local_EAX_10888 = BackBring(this_00,(int *)0x0);
+          local_EAX_10888 = BackBring(this_00,nullptr);
           if (local_EAX_10888 != -1) goto cf_common_exit_00458C5B;
           iVar12 = 0x1078;
           local_8 = local_EAX_10888;
@@ -6595,7 +6595,7 @@ LAB_0045910d:
         return 0;
       }
       pAVar21 = thunk_FUN_004357f0(*(char *)&this_00->field_0024);
-      if (pAVar21 != (AiPlrClassTy *)0x0) {
+      if (pAVar21 != nullptr) {
         local_9c.id = MESS_AIPLRCLASSTY_5D94;
         local_9c.arg0.words.high = this_00->field_0032;
         local_9c.arg0.words.low = *(undefined2 *)&this_00->field_0024;
@@ -6985,7 +6985,7 @@ LAB_0045910d:
         return 0;
       }
       pAVar21 = thunk_FUN_004357f0(*(char *)&this_00->field_0024);
-      if (pAVar21 != (AiPlrClassTy *)0x0) {
+      if (pAVar21 != nullptr) {
         local_9c.id = MESS_AIPLRCLASSTY_5D94;
         local_9c.arg0.words.high = this_00->field_0032;
         local_9c.arg0.words.low = *(undefined2 *)&this_00->field_0024;
@@ -7095,7 +7095,7 @@ cf_error_exit_0045AEE3:
     if (((sVar38 < 0) || (g_worldGrid.sizeX <= sVar38)) ||
        ((sVar5 < 0 ||
         (((g_worldGrid.sizeY <= sVar5 || (sVar4 < 0)) || (g_worldGrid.sizeZ <= sVar4)))))) {
-      local_10 = (STFishC *)0x0;
+      local_10 = nullptr;
     }
     else {
       local_10 = (STFishC *)
@@ -7103,7 +7103,7 @@ cf_error_exit_0045AEE3:
                  [(int)sVar4 * (int)g_worldGrid.planeStride + (int)sVar5 * (int)g_worldGrid.sizeX +
                   (int)sVar38].objects[(byte)this_00->field_008E];
     }
-    if (local_10 != (STFishC *)0x0) {
+    if (local_10 != nullptr) {
       /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
       iVar12 = (*local_10->vtable->vfunc_114)(*(undefined4 *)((int)this_00->field_06CB + 0x2c));
       if (iVar12 == 0) {
@@ -7130,7 +7130,7 @@ cf_error_exit_0045AEE3:
     *(undefined2 *)((int)this_00->field_06CB + 0x3c) = *(undefined2 *)(dVar13 + 0x42);
     *(undefined1 *)((int)this_00->field_06CB + 0x3e) = *(undefined1 *)(dVar13 + 0x44);
     this_00->field_073E = *(undefined4 *)(dVar13 + 0x32);
-    if (local_10 == (STFishC *)0x0) {
+    if (local_10 == nullptr) {
       this_00->field_0076 = 1;
       uVar14 = this_00->field_001C * 0x41c64e6d + 0x3039;
       this_00->field_001C = uVar14;
@@ -7167,7 +7167,7 @@ cf_error_exit_0045AEE3:
     thunk_FUN_0048a910((AnonShape_0048A910_6D6DD7B1 *)this_00);
     thunk_FUN_0048a840((AnonShape_0048A840_34A87A21 *)this_00);
     /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-    if ((((local_10 == (STFishC *)0x0) ||
+    if ((((local_10 == nullptr) ||
          (iVar12 = *(int *)((int)this_00->field_06CB + 0x2c), iVar12 == 7)) || (iVar12 == 0x13)) ||
        (iVar12 == 0x1b)) {
       thunk_FUN_00417a20(this_00,*(short *)(dVar13 + 0x1c),*(short *)(dVar13 + 0x1e),
@@ -7190,7 +7190,7 @@ cf_error_exit_0045AEE3:
       sVar38 = 0x18;
     }
     thunk_FUN_00417e70(this_00,sVar38);
-    if (local_10 == (STFishC *)0x0) {
+    if (local_10 == nullptr) {
       iVar12 = this_00->field_001C * 0x41c64e6d + 0x3039;
       this_00->field_001C = iVar12;
       thunk_FUN_00417ee0(this_00,((ushort)((uint)iVar12 >> 0x10) & 7) * 0x2d);
@@ -7216,7 +7216,7 @@ cf_error_exit_0045AEE3:
     this_00->field_048B = 0xffff;
     this_00->field_0814 = this_00->field_0816 * 0xc9;
     /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-    if (((local_10 == (STFishC *)0x0) ||
+    if (((local_10 == nullptr) ||
         (iVar12 = *(int *)((int)this_00->field_06CB + 0x2c), iVar12 == 7)) ||
        ((iVar12 == 0x13 || (iVar12 == 0x1b)))) {
       this_00->field_082E = 0xffffffff;
@@ -7232,7 +7232,7 @@ cf_error_exit_0045AEE3:
       this_00->field_05C0 = 3;
       this_00->field_05A0 = this_00->field_0030;
       this_00->field_05A2 = (AnonShape_005EFAE0_B406B78B *)local_10->field_0018;
-      this_00->field_05A6 = (ushort *)0x0;
+      this_00->field_05A6 = nullptr;
       this_00->field_05C4 = 7;
     }
     uVar14 = this_00->field_001C * 0x41c64e6d + 0x3039;
@@ -7347,7 +7347,7 @@ cf_error_exit_0045AEE3:
                STAllPlayersC::GetObjPtr
                          (g_allPlayers_007FA174,*(char *)&this_00->field_0024,
                           *(ushort *)(dVar13 + 0x28),CASE_1);
-    if ((STGameObjC *)local_10 == (STGameObjC *)0x0) {
+    if ((STGameObjC *)local_10 == nullptr) {
       this_00->field_0524 = 0;
     }
     else {
@@ -7391,7 +7391,7 @@ cf_error_exit_0045AEE3:
     uVar14 = this_00->field_001C * 0x41c64e6d + 0x3039;
     this_00->field_001C = uVar14;
     this_00->field_077A = (uVar14 >> 0x10) % (iVar12 - 0xeU);
-    if (DAT_008117bc != (undefined4 *)0x0) {
+    if (DAT_008117bc != nullptr) {
       local_9c.id = MESS_AIBOSSCLASSTY_5DD0;
       local_9c.arg0.words.high = this_00->field_0032;
       local_9c.arg0.words.low = *(undefined2 *)&this_00->field_0024;
@@ -7555,7 +7555,7 @@ cf_error_exit_0045AEE3:
     STAllPlayersC::RestoreGObjData
               ((STAllPlayersC *)this_00,(undefined4 *)(*(int *)(iVar12 + 0x5fe) + iVar12));
     RestoreBoatData(this_00,iVar12);
-    this_00->field_05A6 = (ushort *)0x0;
+    this_00->field_05A6 = nullptr;
     /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
     STAllPlayersC::RegisterObject
               (g_allPlayers_007FA174,*(char *)&this_00->field_0024,
@@ -8020,9 +8020,9 @@ LAB_00450050:
   RaiseInternalException
             (-0x5001fff7,g_overwriteContext_007ED77C,"E:\\__titans\\wlad\\To_boat.cpp",0x329);
 LAB_00450268:
-  this_00->field_046B = (ushort *)0x0;
+  this_00->field_046B = nullptr;
   STPlaySystemC::sub_006E62D0(g_playSystem_00802A38,this_00->field_0471,(int *)&this_00->field_046B);
-  if (this_00->field_07CA != (AnonShape_005EFAE0_B406B78B *)0x0) {
+  if (this_00->field_07CA != nullptr) {
     iVar12 = STPlaySystemC::sub_006E62D0(g_playSystem_00802A38,this_00->field_07CA,&local_30);
     if (iVar12 == -4) {
       iVar12 = ReportDebugMessage("E:\\__titans\\wlad\\To_boat.cpp",0x335,0,0,"%s",

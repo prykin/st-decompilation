@@ -23,7 +23,7 @@ undefined4 __thiscall FUN_00608e90(void *this,AnonShape_00608E90_523B07BC *param
   if (3 < uVar3) {
     if (uVar3 == 0x10f) {
       local_c = (byte *)thunk_FUN_0060c020(this,(uint *)&local_8);
-      if (local_c == (byte *)0x0) {
+      if (local_c == nullptr) {
         return 0;
       }
       STPlaySystemC::SaveObjData(g_playSystem_00802A38,*(int **)((int)this + 0x18),local_c,local_8);

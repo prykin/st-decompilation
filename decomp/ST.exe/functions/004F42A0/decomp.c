@@ -34,7 +34,7 @@ CPanelTy::PaintTab(CPanelTy *this,byte param_1,STMessage *param_2,byte param_3,c
   ushort *local_8;
 
   uVar2 = (uint)param_1;
-  local_8 = (ushort *)0x0;
+  local_8 = nullptr;
   /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
   local_c = *(int *)((param_2->arg0).u32 + 0x10);
   /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
@@ -72,7 +72,7 @@ LAB_004f4318:
   }
   local_c = local_c - DAT_00806734;
 cf_common_join_004F4331:
-  if (param_6 != (undefined *)0x0) {
+  if (param_6 != nullptr) {
     local_58.previous = g_currentExceptionFrame;
     g_currentExceptionFrame = &local_58;
     local_14 = this;
@@ -81,14 +81,14 @@ cf_common_join_004F4331:
       /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
       uVar5 = (*(code *)param_6)(param_2);
       text_00 = FUN_006f2c00(text,2,uVar5);
-      local_8 = cMf32::RecGet(g_cMf32_00806790,param_3,text_00,(int *)0x0,1);
+      local_8 = cMf32::RecGet(g_cMf32_00806790,param_3,text_00,nullptr,1);
       pCVar3 = local_14;
       uVar2 = (uint)param_1;
       DibPut((AnonShape_006B5B10_E0D06CF1 *)local_14->field_0148[uVar2 + 0xe],local_10,local_c,
              param_3,(byte *)local_8);
       cMf32::RecMemFree(g_cMf32_00806790,(uint *)&local_8);
-      if ((*(int *)((param_2->arg0).u32 + 4) == 3) && (param_5 != (char *)0x0)) {
-        local_8 = cMf32::RecGet(g_cMf32_00806790,6,param_5,(int *)0x0,1);
+      if ((*(int *)((param_2->arg0).u32 + 4) == 3) && (param_5 != nullptr)) {
+        local_8 = cMf32::RecGet(g_cMf32_00806790,6,param_5,nullptr,1);
         DibPut((AnonShape_006B5B10_E0D06CF1 *)pCVar3->field_0148[uVar2 + 0xe],local_10,local_c,
                '\x06',(byte *)local_8);
         cMf32::RecMemFree(g_cMf32_00806790,(uint *)&local_8);

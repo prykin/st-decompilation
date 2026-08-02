@@ -11,8 +11,8 @@ uint * FUN_006b00c0(uint *param_1,uint *param_2,undefined *param_3)
   uint *puVar6;
 
   pDVar1 = Library::DKW::TBL::DArrayCreate((DArrayTy *)param_1,param_2[4],param_2[2],param_2[5]);
-  if (pDVar1 == (DArrayTy *)0x0) {
-    return (uint *)0x0;
+  if (pDVar1 == nullptr) {
+    return nullptr;
   }
   pDVar1->flags = pDVar1->flags | *param_2 | 0x100;
   pDVar1->count = param_2[3];

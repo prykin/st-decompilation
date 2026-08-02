@@ -81,7 +81,7 @@ undefined4 __thiscall FUN_004e91e0(void *this,STBoatC *param_1)
                  ((g_worldGrid.sizeZ <= sVar11 ||
                   (g_worldGrid.cells
                    [(int)sVar9 * (int)g_worldGrid.sizeX + (int)g_worldGrid.planeStride * (int)sVar11
-                    + (int)sVar3].objects[0] == (STWorldObject *)0x0)))) {
+                    + (int)sVar3].objects[0] == nullptr)))) {
                 *(int *)((int)this + 0x4e4) = iVar5;
                 *(int *)((int)this + 0x4e8) = iVar10;
                 *(int *)((int)this + 0x4ec) = *(int *)(iVar12 + 0x5b8) + 1;
@@ -115,7 +115,7 @@ LAB_004e946f:
       *(int *)((int)this + 0x4d8) = param_1->field_0018;
       dVar8 = param_1->slot_2C();
       *(dword *)((int)this + 0x4dc) = dVar8;
-      if (DAT_00800bcc == (void *)0x0) {
+      if (DAT_00800bcc == nullptr) {
         thunk_FUN_004d0f00();
       }
       thunk_FUN_004d0970(DAT_00800bcc,*(int *)((int)this + 0x4e4),*(int *)((int)this + 0x4e8),

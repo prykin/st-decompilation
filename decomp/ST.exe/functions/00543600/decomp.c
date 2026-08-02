@@ -26,19 +26,19 @@ void __thiscall CursorClassTy::InitCursor(CursorClassTy *this,undefined4 param_1
   if (iVar3 == 0) {
     SpriteClassTy::InitSprite
               ((SpriteClassTy *)&local_c->field_0018,(int *)g_ddxContext_008075A8,0,'\a',
-               (undefined4 *)0x0,0,0);
+               nullptr,0,0);
     Library::DKW::DDX::FUN_006b88d0
-              (&this_00->field_00AD,g_dDXContext_0080759C,0,(BITMAPINFO *)0x0,0x8000000,0,
-               (BITMAPINFO *)0x0,0);
-    SetImages(this_00,param_1,"CUR_MENU",0x32,(BITMAPINFO *)0x0,0,-1,-1);
+              (&this_00->field_00AD,g_dDXContext_0080759C,0,nullptr,0x8000000,0,
+               nullptr,0);
+    SetImages(this_00,param_1,"CUR_MENU",0x32,nullptr,0,-1,-1);
     puVar4 = Library::Ourlib::MFRLOAD::mfRLoad
-                       (DAT_00806784,CASE_B,"INF_DEEPS",0xffffffff,0,1,0,(undefined4 *)0x0);
+                       (DAT_00806784,CASE_B,"INF_DEEPS",0xffffffff,0,1,0,nullptr);
     this_00->field_04E3 = puVar4;
     puVar4 = Library::Ourlib::MFRLOAD::mfRLoad
                        (DAT_00806784,CASE_13,"CUR_CONFIRM",0xffffffff,0,1,0,
-                        (undefined4 *)0x0);
+                        nullptr);
     this_00->field_04E7 = puVar4;
-    local_8 = cMf32::RecGet(g_cMf32_00806780,1,"CURSOR_PAL",(int *)0x0,1);
+    local_8 = cMf32::RecGet(g_cMf32_00806780,1,"CURSOR_PAL",nullptr,1);
     puVar4 = local_8 + 0x14;
     iVar3 = 1;
     uVar5 = FUN_006b4fe0((int)local_8);

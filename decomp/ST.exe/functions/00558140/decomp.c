@@ -16,19 +16,19 @@ void __thiscall VisibleClassTy::sub_00558140(VisibleClassTy *this)
   byte **ppbVar2;
   uint *value_00;
 
-  if (this->field_0038 != (byte *)0x0) {
+  if (this->field_0038 != nullptr) {
     FreeAndNull(&this->field_0038);
   }
-  if (this->field_004C != (byte *)0x0) {
+  if (this->field_004C != nullptr) {
     FreeAndNull(&this->field_004C);
   }
-  if (this->field_0050 != (ushort *)0x0) {
+  if (this->field_0050 != nullptr) {
     FreeAndNull(&this->field_0050);
   }
   value = &this->field_0054;
   iVar1 = 8;
   do {
-    if (*value != (void *)0x0) {
+    if (*value != nullptr) {
       FreeAndNull(value);
     }
     value = value + 1;
@@ -37,7 +37,7 @@ void __thiscall VisibleClassTy::sub_00558140(VisibleClassTy *this)
   ppbVar2 = this->field_0074;
   iVar1 = 8;
   do {
-    if (*ppbVar2 != (byte *)0x0) {
+    if (*ppbVar2 != nullptr) {
       FreeAndNull(ppbVar2);
     }
     ppbVar2 = ppbVar2 + 1;
@@ -46,7 +46,7 @@ void __thiscall VisibleClassTy::sub_00558140(VisibleClassTy *this)
   ppbVar2 = this->field_0094;
   iVar1 = 8;
   do {
-    if (*ppbVar2 != (byte *)0x0) {
+    if (*ppbVar2 != nullptr) {
       FreeAndNull(ppbVar2);
     }
     ppbVar2 = ppbVar2 + 1;
@@ -55,7 +55,7 @@ void __thiscall VisibleClassTy::sub_00558140(VisibleClassTy *this)
   ppbVar2 = this->field_00B4;
   iVar1 = 8;
   do {
-    if (*ppbVar2 != (byte *)0x0) {
+    if (*ppbVar2 != nullptr) {
       FreeAndNull(ppbVar2);
     }
     ppbVar2 = ppbVar2 + 1;
@@ -64,7 +64,7 @@ void __thiscall VisibleClassTy::sub_00558140(VisibleClassTy *this)
   ppbVar2 = this->field_00D4;
   iVar1 = 8;
   do {
-    if (*ppbVar2 != (byte *)0x0) {
+    if (*ppbVar2 != nullptr) {
       FreeAndNull(ppbVar2);
     }
     ppbVar2 = ppbVar2 + 1;
@@ -79,13 +79,13 @@ void __thiscall VisibleClassTy::sub_00558140(VisibleClassTy *this)
     value_00 = value_00 + 1;
     iVar1 = iVar1 + -1;
   } while (iVar1 != 0);
-  if (this->field_00F4 != (VisibleClassTy_field_00F4DArray *)0x0) {
+  if (this->field_00F4 != nullptr) {
     DArrayDestroy((DArrayTy *)this->field_00F4);
-    this->field_00F4 = (VisibleClassTy_field_00F4DArray *)0x0;
+    this->field_00F4 = nullptr;
   }
-  if (this->field_0110 != (VisibleClassTy_field_0110DArray *)0x0) {
+  if (this->field_0110 != nullptr) {
     DArrayDestroy((DArrayTy *)this->field_0110);
-    this->field_0110 = (VisibleClassTy_field_0110DArray *)0x0;
+    this->field_0110 = nullptr;
   }
   return;
 }

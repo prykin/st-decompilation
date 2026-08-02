@@ -20,13 +20,13 @@ FUN_00631e00(void *this,uint param_1,int param_2,undefined4 *param_3,undefined4 
     /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
     if ((((param_1 < uVar1) &&
          (piVar3 = (int *)(*(int *)(iVar5 + 8) * param_1 + *(int *)(iVar5 + 0x1c)),
-         piVar3 != (int *)0x0)) && (piVar3[2] == param_2)) &&
+         piVar3 != nullptr)) && (piVar3[2] == param_2)) &&
        ((*piVar3 == 0xbe || (*piVar3 == 0xa8)))) {
       *param_3 = *(undefined4 *)(piVar3[7] + 0x266);
       *param_4 = *(undefined4 *)(piVar3[7] + 0x26a);
       *param_5 = *(undefined4 *)(piVar3[7] + 0x26e);
       *param_6 = *(undefined4 *)(piVar3[7] + 0x292);
-      if (param_7 != (int *)0x0) {
+      if (param_7 != nullptr) {
         *param_7 = piVar3[7];
       }
       return 1;
@@ -37,13 +37,13 @@ FUN_00631e00(void *this,uint param_1,int param_2,undefined4 *param_3,undefined4 
       do {
         if (((bVar6) &&
             (piVar3 = (int *)(*(int *)(iVar5 + 8) * uVar4 + *(int *)(iVar5 + 0x1c)),
-            piVar3 != (int *)0x0)) &&
+            piVar3 != nullptr)) &&
            ((piVar3[2] == param_2 && ((*piVar3 == 0xbe || (*piVar3 == 0xa8)))))) {
           *param_3 = *(undefined4 *)(piVar3[7] + 0x266);
           *param_4 = *(undefined4 *)(piVar3[7] + 0x26a);
           *param_5 = *(undefined4 *)(piVar3[7] + 0x26e);
           *param_6 = *(undefined4 *)(piVar3[7] + 0x292);
-          if (param_7 != (int *)0x0) {
+          if (param_7 != nullptr) {
             *param_7 = piVar3[7];
           }
           local_8 = 1;

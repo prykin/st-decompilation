@@ -14,7 +14,7 @@ UpgPanelTy * __cdecl CreateUpgPanel(void)
   UpgPanelTy *this;
 
   this = (UpgPanelTy *)FUN_006b04d0(0x3f7);
-  if (this != (UpgPanelTy *)0x0) {
+  if (this != nullptr) {
     sub_006E5FB0(this);
     this->field_005C = 0;
     *(undefined4 *)&this->field_0x60 = 0xffffffff;
@@ -33,11 +33,11 @@ UpgPanelTy * __cdecl CreateUpgPanel(void)
     *(undefined4 *)&this->field_0x180 = 1;
     this->field_0x184 = 0;
     memset(&this->field_01AB, 0, 0x240); /* compiler bulk-zero initialization */
-    this->field_03F3 = (ushort *)0x0;
-    this->field_03EF = (ushort *)0x0;
-    this->field_03EB = (ushort *)0x0;
+    this->field_03F3 = nullptr;
+    this->field_03EF = nullptr;
+    this->field_03EB = nullptr;
     return this;
   }
-  return (UpgPanelTy *)0x0;
+  return nullptr;
 }
 

@@ -4,7 +4,7 @@ void __fastcall FUN_00640240(AnonShape_00640240_D1DBDD81 *param_1)
 {
   uint *puVar1;
 
-  if ((int *)param_1->field_037F != (int *)0x0) {
+  if ((int *)param_1->field_037F != nullptr) {
     ST3DSMAPContext::sub_006E8660(param_1->field_0211,(int *)param_1->field_037F,0,0,0,0,0,0,0);
     Library::Ourlib::ST3DSMAP::SprSetShadow
               (param_1->field_0211,*(uint *)param_1->field_037F,0,0x640320,(uint)param_1->field_037F

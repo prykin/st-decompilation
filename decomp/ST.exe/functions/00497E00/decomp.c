@@ -95,51 +95,51 @@ int __thiscall STGroupBoatC::GetMessage(STGroupBoatC *this,STMessage *message)
     return 0;
   }
   if (SVar1 == MESS_SHARED_0003) {
-    if (this_00->field_00EF != (DArrayTy *)0x0) {
+    if (this_00->field_00EF != nullptr) {
       DArrayDestroy(this_00->field_00EF);
-      this_00->field_00EF = (DArrayTy *)0x0;
+      this_00->field_00EF = nullptr;
     }
-    if (this_00->field_0103 != (DArrayTy *)0x0) {
+    if (this_00->field_0103 != nullptr) {
       DArrayDestroy(this_00->field_0103);
-      this_00->field_0103 = (DArrayTy *)0x0;
+      this_00->field_0103 = nullptr;
     }
-    if (this_00->field_010F != (DArrayTy *)0x0) {
+    if (this_00->field_010F != nullptr) {
       DArrayDestroy(this_00->field_010F);
-      this_00->field_010F = (DArrayTy *)0x0;
+      this_00->field_010F = nullptr;
     }
-    if (this_00->field_0127 != (DArrayTy *)0x0) {
+    if (this_00->field_0127 != nullptr) {
       DArrayDestroy(this_00->field_0127);
-      this_00->field_0127 = (DArrayTy *)0x0;
+      this_00->field_0127 = nullptr;
     }
-    if (this_00->field_0160 != (DArrayTy *)0x0) {
+    if (this_00->field_0160 != nullptr) {
       DArrayDestroy(this_00->field_0160);
-      this_00->field_0160 = (DArrayTy *)0x0;
+      this_00->field_0160 = nullptr;
     }
-    if (this_00->field_0168 != (DArrayTy *)0x0) {
+    if (this_00->field_0168 != nullptr) {
       DArrayDestroy(this_00->field_0168);
-      this_00->field_0168 = (DArrayTy *)0x0;
+      this_00->field_0168 = nullptr;
     }
-    if (this_00->field_01CA != (DArrayTy *)0x0) {
+    if (this_00->field_01CA != nullptr) {
       DArrayDestroy(this_00->field_01CA);
-      this_00->field_01CA = (DArrayTy *)0x0;
+      this_00->field_01CA = nullptr;
     }
-    if (this_00->field_01CE != (DArrayTy *)0x0) {
+    if (this_00->field_01CE != nullptr) {
       DArrayDestroy(this_00->field_01CE);
-      this_00->field_01CE = (DArrayTy *)0x0;
+      this_00->field_01CE = nullptr;
     }
-    if (*(DArrayTy **)&this_00->field_0x1d2 != (DArrayTy *)0x0) {
+    if (*(DArrayTy **)&this_00->field_0x1d2 != nullptr) {
       DArrayDestroy(*(DArrayTy **)&this_00->field_0x1d2);
       *(undefined4 *)&this_00->field_0x1d2 = 0;
     }
-    if (this_00->field_01D6 != (DArrayTy *)0x0) {
+    if (this_00->field_01D6 != nullptr) {
       DArrayDestroy(this_00->field_01D6);
-      this_00->field_01D6 = (DArrayTy *)0x0;
+      this_00->field_01D6 = nullptr;
     }
-    if (this_00->field_01DA != (DArrayTy *)0x0) {
+    if (this_00->field_01DA != nullptr) {
       DArrayDestroy(this_00->field_01DA);
-      this_00->field_01DA = (DArrayTy *)0x0;
+      this_00->field_01DA = nullptr;
     }
-    if ((DArrayTy *)this_00->field_01DE != (DArrayTy *)0x0) {
+    if ((DArrayTy *)this_00->field_01DE != nullptr) {
       DArrayDestroy((DArrayTy *)this_00->field_01DE);
       this_00->field_01DE = 0;
     }
@@ -154,34 +154,34 @@ int __thiscall STGroupBoatC::GetMessage(STGroupBoatC *this,STMessage *message)
         index = index + 1;
       } while ((index & 0xffff) < uVar7);
     }
-    if (this_00->field_021E != (ushort *)0x0) {
+    if (this_00->field_021E != nullptr) {
       FreeAndNull(&this_00->field_021E);
     }
-    if (this_00->field_020E != (DArrayTy *)0x0) {
+    if (this_00->field_020E != nullptr) {
       DArrayDestroy(this_00->field_020E);
-      this_00->field_020E = (DArrayTy *)0x0;
+      this_00->field_020E = nullptr;
     }
-    if (this_00->field_0226 != (DArrayTy *)0x0) {
+    if (this_00->field_0226 != nullptr) {
       DArrayDestroy(this_00->field_0226);
-      this_00->field_0226 = (DArrayTy *)0x0;
+      this_00->field_0226 = nullptr;
     }
-    if (this_00->field_022A != (DArrayTy *)0x0) {
+    if (this_00->field_022A != nullptr) {
       DArrayDestroy(this_00->field_022A);
-      this_00->field_022A = (DArrayTy *)0x0;
+      this_00->field_022A = nullptr;
     }
-    if (this_00->field_022E != (DArrayTy *)0x0) {
+    if (this_00->field_022E != nullptr) {
       DArrayDestroy(this_00->field_022E);
-      this_00->field_022E = (DArrayTy *)0x0;
+      this_00->field_022E = nullptr;
     }
-    if (this_00->field_024E != (DArrayTy *)0x0) {
+    if (this_00->field_024E != nullptr) {
       DArrayDestroy(this_00->field_024E);
-      this_00->field_024E = (DArrayTy *)0x0;
+      this_00->field_024E = nullptr;
     }
-    if (this_00->field_0266 != (DArrayTy *)0x0) {
+    if (this_00->field_0266 != nullptr) {
       DArrayDestroy(this_00->field_0266);
-      this_00->field_0266 = (DArrayTy *)0x0;
+      this_00->field_0266 = nullptr;
     }
-    if (*(DArrayTy **)&this_00->field_0x29f != (DArrayTy *)0x0) {
+    if (*(DArrayTy **)&this_00->field_0x29f != nullptr) {
       DArrayDestroy(*(DArrayTy **)&this_00->field_0x29f);
       *(undefined4 *)&this_00->field_0x29f = 0;
     }
@@ -241,26 +241,26 @@ int __thiscall STGroupBoatC::GetMessage(STGroupBoatC *this,STMessage *message)
         this_00->field_005D = 1;
       }
       DArrayDestroy(this_00->field_01DA);
-      this_00->field_01DA = (DArrayTy *)0x0;
+      this_00->field_01DA = nullptr;
     }
     if ((this_00->field_006D == 1) &&
-       (this_00->field_006D = 0, this_00->field_002D != (DArrayTy *)0x0)) {
+       (this_00->field_006D = 0, this_00->field_002D != nullptr)) {
       /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
       RechargeNewCmd(this_00,unaff_EDI);
       DArrayDestroy(this_00->field_002D);
-      this_00->field_002D = (DArrayTy *)0x0;
+      this_00->field_002D = nullptr;
     }
     if (this_00->field_0071 == 1) {
       this_00->field_0071 = 0;
       DArrayDestroy(this_00->field_01CA);
-      this_00->field_01CA = (DArrayTy *)0x0;
+      this_00->field_01CA = nullptr;
     }
     if (this_00->field_0075 == 1) {
       this_00->field_0075 = 0;
       ReMakePVecAndTgtList(this_00,this_00->field_01CE);
       DistributeTargets(this_00,&this_00->field_01CE->flags);
       DArrayDestroy(this_00->field_01CE);
-      this_00->field_01CE = (DArrayTy *)0x0;
+      this_00->field_01CE = nullptr;
     }
     if (this_00->field_0079 == 1) {
       this_00->field_0079 = 0;
@@ -270,7 +270,7 @@ int __thiscall STGroupBoatC::GetMessage(STGroupBoatC *this,STMessage *message)
     if (this_00->field_007D == 1) {
       this_00->field_007D = 0;
       DArrayDestroy(this_00->field_01D6);
-      this_00->field_01D6 = (DArrayTy *)0x0;
+      this_00->field_01D6 = nullptr;
     }
   }
   if (this_00->field_0065 != 1) {
@@ -383,7 +383,7 @@ LAB_004984e9:
       puVar5 = (uint *)GrpAttack(this_00,0);
     }
 cf_common_exit_004984F2:
-    if (puVar5 != (uint *)0x0) {
+    if (puVar5 != nullptr) {
 switchD_004984e0_default:
       g_currentExceptionFrame = local_84.previous;
       return 0;
@@ -566,7 +566,7 @@ LAB_0049818d:
     if (puVar5 == (uint *)0xffffffff) {
       return 0xffff;
     }
-    if (puVar5 != (uint *)0x0) {
+    if (puVar5 != nullptr) {
       g_currentExceptionFrame = local_84.previous;
       return 0;
     }

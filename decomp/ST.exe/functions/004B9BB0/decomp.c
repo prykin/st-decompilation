@@ -28,7 +28,7 @@ undefined4 __thiscall FUN_004b9bb0(void *this,int param_1,ushort param_2,undefin
     if (((iVar2 == 0) || (iVar2 == 4)) || (iVar2 == 5)) {
       *(undefined4 *)((int)this + 0x5df) = 0;
       TLOBaseTy::SetState(this,1,1);
-      if (DAT_008117bc != (undefined4 *)0x0) {
+      if (DAT_008117bc != nullptr) {
         local_e = *(undefined2 *)((int)this + 0x32);
         local_10 = *(undefined2 *)((int)this + 0x24);
         local_a = param_3;

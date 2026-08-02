@@ -13,12 +13,12 @@ STContainerC * __cdecl CreateSTContainer(void)
   STContainerC *this;
 
   this = (STContainerC *)FUN_006b04d0(0x47b);
-  if (this != (STContainerC *)0x0) {
+  if (this != nullptr) {
     STSprGameObjC::STSprGameObjC((STSprGameObjC *)this);
     this->field_0000 = (AnonPointee_STContainerC_0000 *)&PTR_GetMessage_0079c714;
     this->field_01D5 = &PTR_thunk_FUN_004210a0_0079c710;
     return this;
   }
-  return (STContainerC *)0x0;
+  return nullptr;
 }
 

@@ -29,6 +29,6 @@ byte * __thiscall STDestC::sub_006025D0(STDestC *this,undefined4 *param_1)
     return pbVar1;
   }
   *param_1 = 0;
-  return (byte *)0x0;
+  return nullptr;
 }
 

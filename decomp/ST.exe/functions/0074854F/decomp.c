@@ -14,7 +14,7 @@ FUN_0074854f(void *this,undefined4 param_1,undefined4 param_2,undefined4 param_3
   undefined4 uVar2;
 
   piVar1 = *(int **)((int)this + 0x18);
-  if (piVar1 == (int *)0x0) {
+  if (piVar1 == nullptr) {
     uVar2 = 0x80040209;
   }
   else {

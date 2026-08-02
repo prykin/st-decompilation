@@ -49,7 +49,7 @@ void __thiscall CampaignTy::AnimationCampaign(CampaignTy *this)
   puVar7 = local_8->field_1BD7;
   iVar3 = 4;
   do {
-    if ((int *)*puVar7 != (int *)0x0) {
+    if ((int *)*puVar7 != nullptr) {
       thunk_FUN_005926a0((int *)*puVar7);
     }
     puVar7 = puVar7 + 1;
@@ -216,7 +216,7 @@ switchD_00592962_caseD_1:
     do {
       iVar3 = 0xf;
       do {
-        if ((AnonShape_006C4AA0_6E9A3AA4 *)*puVar8 != (AnonShape_006C4AA0_6E9A3AA4 *)0x0) {
+        if ((AnonShape_006C4AA0_6E9A3AA4 *)*puVar8 != nullptr) {
           FUN_006c4aa0((AnonShape_006C4AA0_6E9A3AA4 *)*puVar8);
         }
         puVar8 = puVar8 + 1;
@@ -316,7 +316,7 @@ LAB_00592b82:
   do {
     pAVar1 = *(AnonShape_GLOBAL_0081175C_57F682DD **)
               ((int)&g_startSystem_0081176C->vtable + local_24[6]);
-    if (pAVar1 != (AnonShape_GLOBAL_0081175C_57F682DD *)0x0) {
+    if (pAVar1 != nullptr) {
       piVar9 = (int *)((int)g_startSystem_0081176C->array_0244 + local_24[5] + 0x18);
       /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
       if (*(char *)((int)g_startSystem_0081176C->array_0244 + local_24[5] + 0x2c) == '\0') {

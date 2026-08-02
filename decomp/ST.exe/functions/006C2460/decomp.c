@@ -35,7 +35,7 @@ void FUN_006c2460(int param_1,DWORD param_2,byte param_3,uint param_4,undefined4
     }
   }
   piVar1 = (int *)(&DAT_00855004)[param_7 * 0x31];
-  if (piVar1 != (int *)0x0) {
+  if (piVar1 != nullptr) {
     /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
     (**(code **)(*piVar1 + 0x48))(piVar1);
     /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */

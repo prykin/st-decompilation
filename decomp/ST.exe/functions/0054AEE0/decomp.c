@@ -68,7 +68,7 @@ void __thiscall CursorClassTy::GCGameState(CursorClassTy *this,int param_1)
      ((((this_00->field_00DE == CASE_2 || (this_00->field_00DE == CASE_4)) &&
        (iVar5 = FUN_00405687((int)this_00), iVar5 == 0)) || (this_00->field_0496 == 0)))) {
     sub_0054B700(this_00,-1);
-    if ((g_helpPanel_00801690 == (HelpPanelTy *)0x0) || (g_helpPanel_00801690->field_0172 == 2))
+    if ((g_helpPanel_00801690 == nullptr) || (g_helpPanel_00801690->field_0172 == 2))
     goto LAB_0054b372;
 LAB_0054b019:
     iVar5 = this_00->field_0038;
@@ -77,9 +77,9 @@ LAB_0054b019:
     goto cf_common_exit_0054B368;
   }
   memset(local_f8, 0, 0x20); /* compiler bulk-zero initialization */
-  if ((g_allPlayers_007FA174 == (STAllPlayersC *)0x0) || (DAT_00808784 != 0)) {
+  if ((g_allPlayers_007FA174 == nullptr) || (DAT_00808784 != 0)) {
 LAB_0054b335:
-    if ((g_helpPanel_00801690 == (HelpPanelTy *)0x0) || (g_helpPanel_00801690->field_0172 == 2)) {
+    if ((g_helpPanel_00801690 == nullptr) || (g_helpPanel_00801690->field_0172 == 2)) {
       iVar5 = this_00->field_0038;
       iVar10 = this_00->field_0034;
 LAB_0054b366:
@@ -99,11 +99,11 @@ LAB_0054b366:
       bVar3 = true;
     }
     if (bVar3) goto LAB_0054b335;
-    if ((((g_playPanel_008016E4 != (PlayPanelTy *)0x0) && (g_playPanel_008016E4->field_0172 != 2))
-        || ((g_helpPanel_00801690 != (HelpPanelTy *)0x0 && (g_helpPanel_00801690->field_0172 != 2)))
-        ) || ((g_optPanel_008016DC != (OptPanelTy *)0x0 &&
+    if ((((g_playPanel_008016E4 != nullptr) && (g_playPanel_008016E4->field_0172 != 2))
+        || ((g_helpPanel_00801690 != nullptr && (g_helpPanel_00801690->field_0172 != 2)))
+        ) || ((g_optPanel_008016DC != nullptr &&
               (g_optPanel_008016DC->field_0172 != CASE_2)))) {
-      if ((g_helpPanel_00801690 != (HelpPanelTy *)0x0) && (g_helpPanel_00801690->field_0172 != 2))
+      if ((g_helpPanel_00801690 != nullptr) && (g_helpPanel_00801690->field_0172 != 2))
       goto LAB_0054b019;
       iVar5 = this_00->field_0038;
       iVar10 = this_00->field_0034;
@@ -113,9 +113,9 @@ LAB_0054b366:
              thunk_FUN_00435820(this_00->field_00C5 - this_00->field_04B2,
                                 this_00->field_00C9 - this_00->field_04B6);
     this_00->field_049A = pSVar6;
-    if (pSVar6 == (STFishC *)0x0) {
+    if (pSVar6 == nullptr) {
       FUN_006e1dd0(g_sT3DSMAPContext_00807598,this_00->field_00C5 - this_00->field_04B2,
-                   this_00->field_00C9 - this_00->field_04B6,(float *)0x0,(float *)0x0,&local_10);
+                   this_00->field_00C9 - this_00->field_04B6,nullptr,nullptr,&local_10);
       lVar16 = Library::MSVCRT::__ftol();
       local_c = (undefined4)lVar16;
     }
@@ -127,9 +127,9 @@ LAB_0054b366:
     }
     sub_0054B700(this_00,(int)(short)local_c);
     pSVar6 = this_00->field_049A;
-    if (pSVar6 == (STFishC *)0x0) {
-      if ((this_00->field_049E != 0) && (this_00->field_049E = 0, DAT_00801694 != (void *)0x0)) {
-        thunk_FUN_0051fac0(DAT_00801694,(char *)0x0,0,'\x01',0xfffffc18);
+    if (pSVar6 == nullptr) {
+      if ((this_00->field_049E != 0) && (this_00->field_049E = 0, DAT_00801694 != nullptr)) {
+        thunk_FUN_0051fac0(DAT_00801694,nullptr,0,'\x01',0xfffffc18);
       }
       if (this_00->field_04DE == '\0') goto LAB_0054b2a9;
       iVar5 = this_00->field_0038;
@@ -157,7 +157,7 @@ LAB_0054b366:
         puVar15 = local_d8;
         memmove(puVar15, puVar8, uVar11); /* compiler REP MOVS byte copy */
         puVar8 = Library::MSVCRT::FUN_0072e560(local_d8,'\n');
-        while (puVar8 != (uint *)0x0) {
+        while (puVar8 != nullptr) {
           *(undefined1 *)puVar8 = 0x20;
           puVar8 = Library::MSVCRT::FUN_0072e560(puVar8,'\n');
         }
@@ -168,7 +168,7 @@ LAB_0054b366:
         else {
           wsprintfA((LPSTR)local_d8,"%s - \"%s\"",local_d8,(int)&local_28 + 1);
         }
-        if (DAT_00801694 != (void *)0x0) {
+        if (DAT_00801694 != nullptr) {
           thunk_FUN_0051fac0(DAT_00801694,(char *)local_d8,0,'\x01',0xfffffc18);
         }
       }
@@ -198,7 +198,7 @@ LAB_0054b2a9:
         if (GVar9 == 0x78) {
           GVar9 = *(Global_sub_005121F0_param_1Enum *)&this_00->field_049A->field_0x259;
         }
-        if (g_helpPanel_00801690 != (HelpPanelTy *)0x0) {
+        if (g_helpPanel_00801690 != nullptr) {
           iVar5 = (*pSVar6->vtable->vfunc_0C)();
           iVar5 = thunk_FUN_005121f0(g_helpPanel_00801690,GVar9,iVar5);
           if (iVar5 != 0) {

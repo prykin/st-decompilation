@@ -78,7 +78,7 @@ ProdPanelTy::CreateSlider
       local_64 = 1;
     }
     iVar8 = 1;
-    piVar7 = (int *)0x0;
+    piVar7 = nullptr;
     uVar6 = 0;
     iVar2 = 1;
     local_42c[2] = (int)(param_6 == 1);
@@ -133,7 +133,7 @@ ProdPanelTy::CreateSlider
     local_1f0 = 0x272f;
     local_214 = 0x272f;
     (*this_00->field_000C->vtable->CreateObject)
-              ((SystemClassTy *)this_00->field_000C,4,&local_8,(int *)0x0,local_42c,0);
+              ((SystemClassTy *)this_00->field_000C,4,&local_8,nullptr,local_42c,0);
     if ((this_00->field_005C == 0) || (uVar6 = 0x55, DAT_0080734c == '\0')) {
       uVar6 = 0x56;
     }

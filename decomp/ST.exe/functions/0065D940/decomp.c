@@ -16,7 +16,7 @@ void __thiscall FUN_0065d940(void *this,DArrayTy *param_1,int param_2)
   uint uVar2;
   bool bVar3;
 
-  if (param_1 != (DArrayTy *)0x0) {
+  if (param_1 != nullptr) {
     uVar2 = 0;
     if (0 < (int)param_1->count) {
       bVar3 = param_1->count != 0;
@@ -26,11 +26,11 @@ void __thiscall FUN_0065d940(void *this,DArrayTy *param_1,int param_2)
           puVar1 = (ushort *)(param_1->elementSize * uVar2 + (int)param_1->data);
         }
         else {
-          puVar1 = (ushort *)0x0;
+          puVar1 = nullptr;
         }
         objPtr = STAllPlayersC::GetObjPtr
                            (g_allPlayers_007FA174,*(char *)((int)this + 0x24),*puVar1,CASE_1);
-        if (objPtr != (STGameObjC *)0x0) {
+        if (objPtr != nullptr) {
           AiFltClassTy::_AddObjFlt(this,(uint)objPtr,param_2);
         }
         uVar2 = uVar2 + 1;

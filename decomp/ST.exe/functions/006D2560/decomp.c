@@ -8,7 +8,7 @@ void FUN_006d2560(int *param_1,int *param_2)
   else {
     *(int *)(*param_2 + 4) = param_2[1];
   }
-  if ((int *)param_2[1] != (int *)0x0) {
+  if ((int *)param_2[1] != nullptr) {
     *(int *)param_2[1] = *param_2;
     return;
   }

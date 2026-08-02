@@ -7,6 +7,7 @@
 import java.io.BufferedWriter;
 import java.io.File;
 import java.lang.reflect.InvocationTargetException;
+import java.security.MessageDigest;
 import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.Path;
@@ -46,6 +47,8 @@ public class STLocalLifetimeApplier extends GhidraScript {
     private final List<ReportRow> report = new ArrayList<>();
     private final List<Applied> applied = new ArrayList<>();
     private final List<Applied> rejected = new ArrayList<>();
+    private final Set<String> previouslyRejected = new HashSet<>();
+    private final Map<String, String> legacyRejected = new LinkedHashMap<>();
     private DataTypeManager dataTypes;
 
     @Override
@@ -70,6 +73,8 @@ public class STLocalLifetimeApplier extends GhidraScript {
             "direct_target_address", "resolved_target_address", "anchor_source",
             "evidence_count", "confidence", "reason");
         dataTypes = currentProgram.getDataTypeManager();
+        loadPreviousRejections(file.toPath().toAbsolutePath().normalize()
+            .resolveSibling("local_lifetime_apply_report.tsv"));
 
         List<Prepared> prepared = prepare(input.rows);
         prepared.sort(Comparator.comparing((Prepared value) ->
@@ -111,6 +116,12 @@ public class STLocalLifetimeApplier extends GhidraScript {
         for (Map<String, String> row : rows) {
             if (!enabled(row.get("apply"))) {
                 report.add(report(row, "disabled", "apply=0"));
+                continue;
+            }
+            if (wasPreviouslyRejected(row)) {
+                report.add(report(row, "preserved",
+                    "unchanged proposal was rejected by fresh-decompile " +
+                        "verification on the previous run"));
                 continue;
             }
             byFunction.computeIfAbsent(unt(row.get("function_address")),
@@ -915,12 +926,13 @@ public class STLocalLifetimeApplier extends GhidraScript {
         try (BufferedWriter out = Files.newBufferedWriter(path,
                 StandardCharsets.UTF_8)) {
             out.write("function_address\toriginal_name\tmerge_group\t" +
-                "anchor_address\tanchor_kind\tstatus\tdetail\n");
+                "anchor_address\tanchor_kind\tproposal_identity\tstatus\tdetail\n");
             for (ReportRow row : report)
                 out.write(row.functionAddress + "\t" +
                     tsv(row.originalName) + "\t" + row.mergeGroup + "\t" +
                     row.anchorAddress + "\t" + row.anchorKind + "\t" +
-                    row.status + "\t" + tsv(row.detail) + "\n");
+                    row.proposalIdentity + "\t" + row.status + "\t" +
+                    tsv(row.detail) + "\n");
         }
     }
 
@@ -929,7 +941,7 @@ public class STLocalLifetimeApplier extends GhidraScript {
         return new ReportRow(unt(row.get("function_address")),
             unt(row.get("original_name")), integer(row.get("merge_group")),
             unt(row.get("anchor_address")), unt(row.get("anchor_kind")),
-            status, detail);
+            proposalIdentity(row), status, detail);
     }
 
     private void replaceReport(Map<String, String> row,
@@ -941,7 +953,9 @@ public class STLocalLifetimeApplier extends GhidraScript {
                     current.originalName.equals(replacement.originalName) &&
                     current.mergeGroup == replacement.mergeGroup &&
                     current.anchorAddress.equals(replacement.anchorAddress) &&
-                    current.anchorKind.equals(replacement.anchorKind)) {
+                    current.anchorKind.equals(replacement.anchorKind) &&
+                    current.proposalIdentity.equals(
+                        replacement.proposalIdentity)) {
                 report.set(index, replacement);
                 return;
             }
@@ -951,6 +965,77 @@ public class STLocalLifetimeApplier extends GhidraScript {
 
     private long count(String status) {
         return report.stream().filter(row -> row.status.equals(status)).count();
+    }
+
+    private void loadPreviousRejections(Path path) throws Exception {
+        if (!Files.isRegularFile(path)) return;
+        Tsv previous = readTsv(path);
+        if (!previous.header.contains("status") ||
+                !previous.header.contains("detail")) return;
+        for (Map<String, String> row : previous.rows) {
+            String status = unt(row.get("status"));
+            String detail = unt(row.get("detail"));
+            boolean freshFailure = "conflict".equals(status) &&
+                detail.contains("verification failed");
+            boolean retainedFailure = "preserved".equals(status) &&
+                detail.contains("was rejected by fresh-decompile verification");
+            if (!freshFailure && !retainedFailure) continue;
+            String identity = unt(row.get("proposal_identity"));
+            if (!identity.isBlank()) {
+                previouslyRejected.add(identity);
+                continue;
+            }
+            legacyRejected.put(legacyIdentity(row), detail);
+        }
+    }
+
+    private boolean wasPreviouslyRejected(Map<String, String> row) {
+        String identity = proposalIdentity(row);
+        if (previouslyRejected.contains(identity)) return true;
+        String detail = legacyRejected.get(legacyIdentity(row));
+        if (detail == null) return false;
+        String transition = typeText(row.get("expected_current_type")) +
+            " -> " + typeText(row.get("proposed_type"));
+        return detail.startsWith(transition + ";") ||
+            detail.startsWith(transition + " ") || detail.equals(transition);
+    }
+
+    private static String legacyIdentity(Map<String, String> row) {
+        return unt(row.get("function_address")) + "|" +
+            unt(row.get("original_name")) + "|" +
+            unt(row.get("merge_group")) + "|" +
+            unt(row.get("anchor_address")) + "|" +
+            unt(row.get("anchor_kind"));
+    }
+
+    private static String proposalIdentity(Map<String, String> row) {
+        String raw = legacyIdentity(row) + "|" +
+            unt(row.get("anchor_time")) + "|" +
+            unt(row.get("anchor_operand")) + "|" +
+            unt(row.get("expected_current_type")) + "|" +
+            unt(row.get("proposed_type")) + "|" +
+            unt(row.get("direct_target_address")) + "|" +
+            unt(row.get("resolved_target_address")) + "|" +
+            unt(row.get("anchor_source")) + "|" +
+            unt(row.get("evidence_count")) + "|" +
+            unt(row.get("confidence")) + "|" + unt(row.get("reason"));
+        try {
+            byte[] digest = MessageDigest.getInstance("SHA-256")
+                .digest(raw.getBytes(StandardCharsets.UTF_8));
+            StringBuilder result = new StringBuilder(digest.length * 2);
+            for (byte value : digest)
+                result.append(String.format(Locale.ROOT, "%02x", value & 0xff));
+            return result.toString();
+        }
+        catch (Exception exception) {
+            throw new IllegalStateException("SHA-256 is unavailable", exception);
+        }
+    }
+
+    private static String typeText(String value) {
+        String type = unt(value);
+        if (type.startsWith("pointer:")) return type;
+        return type.isBlank() || type.startsWith("/") ? type : "/" + type;
     }
     private static boolean enabled(String value) {
         return "1".equals(value) || "true".equalsIgnoreCase(value);
@@ -1002,5 +1087,5 @@ public class STLocalLifetimeApplier extends GhidraScript {
         Baseline baseline, String detail) {}
     private record ReportRow(String functionAddress, String originalName,
         int mergeGroup, String anchorAddress, String anchorKind,
-        String status, String detail) {}
+        String proposalIdentity, String status, String detail) {}
 }

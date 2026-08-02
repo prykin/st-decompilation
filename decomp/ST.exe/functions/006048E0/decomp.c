@@ -11,7 +11,7 @@ int __fastcall FUN_006048e0(AnonShape_006048E0_C1705B76 *param_1)
   int iVar4;
 
   iVar4 = 0;
-  if ((param_1->field_0215 != (DArrayTy *)0x0) &&
+  if ((param_1->field_0215 != nullptr) &&
      (index = param_1->field_0215->count, 0 < (int)index)) {
     while (index = index - 1, -1 < (int)index) {
       pDVar1 = param_1->field_0215;
@@ -20,7 +20,7 @@ int __fastcall FUN_006048e0(AnonShape_006048E0_C1705B76 *param_1)
         pvVar2 = (void *)(pDVar1->elementSize * index + (int)pDVar1->data);
       }
       else {
-        pvVar2 = (void *)0x0;
+        pvVar2 = nullptr;
       }
       /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
       if ((*(int *)((int)pvVar2 + 0x10) == 10) &&

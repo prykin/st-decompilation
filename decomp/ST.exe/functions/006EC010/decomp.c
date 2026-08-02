@@ -366,7 +366,7 @@ LAB_006ec68d:
         local_cc = iVar12 + 1;
         iVar9 = iVar12 * 0x10;
         iVar12 = local_cc;
-        if ((int *)*param_1 != (int *)0x0) {
+        if ((int *)*param_1 != nullptr) {
           iVar11 = param_1[0xd4];
           /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
           FUN_006b5f80((int *)*param_1,*(int *)(iVar9 + 8 + iVar11) + param_1[8],
@@ -429,7 +429,7 @@ LAB_006ec68d:
     /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
     (**(code **)(**(int **)(param_1[1] + 0x40) + 0x80))(*(int **)(param_1[1] + 0x40),0);
   }
-  if ((int *)*param_1 != (int *)0x0) {
+  if ((int *)*param_1 != nullptr) {
     FUN_006b5f80((int *)*param_1,param_1[8] + param_1[0xc],param_1[9] + param_1[0xd],
                  param_1[0xe] - param_1[0xc],param_1[0xf] - param_1[0xd]);
   }

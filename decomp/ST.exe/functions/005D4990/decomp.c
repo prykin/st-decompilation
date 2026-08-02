@@ -22,7 +22,7 @@ SettMapMTy::PrepareAFT(SettMapMTy *this,AnonShape_005D4990_5F0525CF *param_1,uin
   InternalExceptionFrame local_4c;
   SettMapMTy *local_8;
 
-  if ((param_1 != (AnonShape_005D4990_5F0525CF *)0x0) && (param_2 != (uint *)0x0)) {
+  if ((param_1 != nullptr) && (param_2 != nullptr)) {
     local_4c.previous = g_currentExceptionFrame;
     g_currentExceptionFrame = &local_4c;
     local_8 = this;

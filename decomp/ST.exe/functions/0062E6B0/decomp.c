@@ -14,7 +14,7 @@ undefined4 __thiscall FUN_0062e6b0(void *this,int param_1,int param_2)
       piVar3 = (int *)(*(int *)(iVar1 + 8) * uVar2 + *(int *)(iVar1 + 0x1c));
     }
     else {
-      piVar3 = (int *)0x0;
+      piVar3 = nullptr;
     }
     thunk_FUN_0062e240(this,param_1,(int)*(short *)((int)piVar3 + 6),(int)(short)piVar3[2],
                        (int)*(short *)((int)piVar3 + 10),*piVar3,1);

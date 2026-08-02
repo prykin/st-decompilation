@@ -19,7 +19,7 @@ int FUN_006c87f0(uint *param_1)
   }
   puVar5 = (undefined4 *)param_1[5];
   do {
-    if ((char *)*puVar5 != (char *)0x0) {
+    if ((char *)*puVar5 != nullptr) {
       uVar2 = 0xffffffff;
       pcVar6 = (char *)*puVar5;
       do {

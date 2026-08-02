@@ -28,10 +28,10 @@ void __thiscall PopUpTy::Clear(PopUpTy *this)
   pPVar3 = local_8;
   if (iVar4 == 0) {
     if (local_8->field_009C != '\0') {
-      if ((DArrayTy *)local_8->field_0098 != (DArrayTy *)0x0) {
+      if ((DArrayTy *)local_8->field_0098 != nullptr) {
         FUN_006b5570((DArrayTy *)local_8->field_0098);
       }
-      pDVar5 = Library::DKW::TBL::SArrayCreate((DArrayTy *)0x0,10,10);
+      pDVar5 = Library::DKW::TBL::SArrayCreate(nullptr,10,10);
       pPVar3->field_0098 = &pDVar5->flags;
       puVar1 = pPVar3->field_0090;
       uVar9 = *(uint *)(puVar1 + 10);

@@ -33,7 +33,7 @@ uint __thiscall STFieldC::CreateField(STFieldC *this,uint param_1)
       do {
         DArrayDestroy((DArrayTy *)pSVar2->field_0234);
         uVar7 = uVar7 - 1;
-        pSVar2->field_0234 = (STFieldC_field_0234DArray *)0x0;
+        pSVar2->field_0234 = nullptr;
       } while (uVar7 != 0);
     }
     iVar5 = ReportDebugMessage("E:\\__titans\\nick\\to_field.cpp",0x1e5,0,iVar3,"%s",
@@ -44,12 +44,12 @@ uint __thiscall STFieldC::CreateField(STFieldC *this,uint param_1)
     }
     STDebugBreak(); /* noreturn in standalone pseudocode */
   }
-  if (local_c->field_0234 == (STFieldC_field_0234DArray *)0x0) {
+  if (local_c->field_0234 == nullptr) {
     pSVar4 = (STFieldC_field_0234DArray *)
-             Library::DKW::TBL::DArrayCreate((DArrayTy *)0x0,param_1,0x40,10);
+             Library::DKW::TBL::DArrayCreate(nullptr,param_1,0x40,10);
     pSVar2->field_0234 = pSVar4;
   }
-  if ((pSVar2->field_0234 != (STFieldC_field_0234DArray *)0x0) && (param_1 != 0)) {
+  if ((pSVar2->field_0234 != nullptr) && (param_1 != 0)) {
     memset(local_90, 0, 0x40); /* compiler bulk-zero initialization */
     local_54 = 0xffffffff;
     if (0 < (int)param_1) {

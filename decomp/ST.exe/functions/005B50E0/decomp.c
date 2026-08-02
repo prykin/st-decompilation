@@ -20,7 +20,7 @@ MainMenuTy * __cdecl CreateMainMenu(void)
   AnonPointee_MainMenuTy_1AA7 **ppAVar5;
 
   this = (MainMenuTy *)FUN_006b04d0(0x1ee4);
-  if (this != (MainMenuTy *)0x0) {
+  if (this != nullptr) {
     sub_006E5FB0(this);
     this->field_0000 = &VTable_0079C018;
     *(undefined4 *)&this->field_0x18 = 0;
@@ -57,7 +57,7 @@ MainMenuTy * __cdecl CreateMainMenu(void)
     iVar1 = 0;
     ppAVar5 = &this->field_1AA7;
     for (iVar1 = 10; iVar1 != 0; iVar1 = iVar1 + -1) {
-      *ppAVar5 = (AnonPointee_MainMenuTy_1AA7 *)0x0;
+      *ppAVar5 = nullptr;
       ppAVar5 = ppAVar5 + 1;
     }
     this->field_1ACF = 0;
@@ -66,6 +66,6 @@ MainMenuTy * __cdecl CreateMainMenu(void)
     memset(&this->field_0x1a5f, 0, 0x20); /* compiler bulk-zero initialization */
     return this;
   }
-  return (MainMenuTy *)0x0;
+  return nullptr;
 }
 

@@ -24,7 +24,7 @@ int FUN_006d10f0(int param_1,int param_2,int param_3,uint param_4,int param_5)
     size = uVar2 + iVar4;
   }
   puVar1 = Library::DKW::LIB::MemAlloc(size);
-  if (puVar1 != (undefined4 *)0x0) {
+  if (puVar1 != nullptr) {
     puVar5 = puVar1;
     for (uVar2 = uVar2 >> 2; uVar2 != 0; uVar2 = uVar2 - 1) {
       *puVar5 = 0;

@@ -34,17 +34,17 @@ void __cdecl _AddAllGrpExch(uint param_1)
     RaiseInternalException(iVar3,0,"E:\\__titans\\ai\\ai_mdef.cpp",0x119);
     return;
   }
-  if (g_allPlayers_007FA174 != (STAllPlayersC *)0x0) {
+  if (g_allPlayers_007FA174 != nullptr) {
     objPtr = (char)param_1;
     array = (DArrayTy *)STAllPlayersC::GetObjsList(objPtr);
-    if (array != (DArrayTy *)0x0) {
+    if (array != nullptr) {
       dVar1 = array->count;
       if (dVar1 != 0) {
         uVar8 = 0;
         if (dVar1 != 0) {
           uVar7 = 0;
           if (dVar1 == 0) {
-            puVar4 = (ushort *)0x0;
+            puVar4 = nullptr;
             goto LAB_00676053;
           }
           do {
@@ -52,7 +52,7 @@ void __cdecl _AddAllGrpExch(uint param_1)
             puVar4 = (ushort *)(array->elementSize * uVar7 + (int)array->data);
 LAB_00676053:
             pSVar5 = STAllPlayersC::GetObjPtr(g_allPlayers_007FA174,objPtr,*puVar4,CASE_1);
-            if (pSVar5 != (STGameObjC *)0x0) {
+            if (pSVar5 != nullptr) {
               iVar3 = (*pSVar5->vtable->vfunc_2C)();
               if (iVar3 == 0x78) {
                 iVar3 = (*pSVar5->vtable->vfunc_2C)();
@@ -66,9 +66,9 @@ LAB_00676053:
           } while (uVar7 < array->count);
         }
         STAllPlayersC::AddObjsToGroup
-                  (g_allPlayers_007FA174,objPtr,0,(uint *)array,(undefined2 *)0x0);
+                  (g_allPlayers_007FA174,objPtr,0,(uint *)array,nullptr);
       }
-      if (array != (DArrayTy *)0x0) {
+      if (array != nullptr) {
         DArrayDestroy(array);
       }
     }

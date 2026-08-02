@@ -6,7 +6,7 @@ undefined4 FUN_005daa90(void)
   InternalExceptionFrame local_4c;
   StartSystemTy *local_8;
 
-  if (g_int_00811764 != (int *)0x0) {
+  if (g_int_00811764 != nullptr) {
     local_4c.previous = g_currentExceptionFrame;
     g_currentExceptionFrame = &local_4c;
     iVar1 = Library::MSVCRT::__setjmp3(local_4c.jumpBuffer,0);

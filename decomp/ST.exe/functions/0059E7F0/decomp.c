@@ -35,23 +35,23 @@ void __thiscall FSGSTy::NewGameCtrls(FSGSTy *this)
   ppcVar6 = local_8d8;
   local_8 = this;
   for (iVar5 = 0x223; iVar5 != 0; iVar5 = iVar5 + -1) {
-    *ppcVar6 = (ccFntTy *)0x0;
+    *ppcVar6 = nullptr;
     ppcVar6 = ppcVar6 + 1;
   }
   local_4c.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_4c;
   iVar5 = Library::MSVCRT::__setjmp3(local_4c.jumpBuffer,0);
   if (iVar5 == 0) {
-    pDVar2 = Library::DKW::TBL::SArrayCreate((DArrayTy *)0x0,1,1);
+    pDVar2 = Library::DKW::TBL::SArrayCreate(nullptr,1,1);
     this_00 = local_8;
     local_8->field_1AE8 = pDVar2;
     Library::DKW::TBL::FUN_006b5aa0(&pDVar2->flags,&DAT_00807e1d);
-    pDVar2 = Library::DKW::TBL::SArrayCreate((DArrayTy *)0x0,1,1);
+    pDVar2 = Library::DKW::TBL::SArrayCreate(nullptr,1,1);
     this_00->field_1AEC = pDVar2;
     Library::DKW::TBL::FUN_006b5aa0(&pDVar2->flags,&DAT_008016a0);
     ppcVar6 = local_8d8;
     for (iVar5 = 0x223; iVar5 != 0; iVar5 = iVar5 + -1) {
-      *ppcVar6 = (ccFntTy *)0x0;
+      *ppcVar6 = nullptr;
       ppcVar6 = ppcVar6 + 1;
     }
     local_8d8[2] = this_00->field_1A73;
@@ -76,14 +76,14 @@ void __thiscall FSGSTy::NewGameCtrls(FSGSTy *this)
     local_84c = local_8ac;
     local_68 = local_8ac;
     (*this_00->field_000C->vtable->CreateObject)
-              ((SystemClassTy *)this_00->field_000C,6,&this_00->field_1AC4,(int *)0x0,local_8d8,0);
+              ((SystemClassTy *)this_00->field_000C,6,&this_00->field_1AC4,nullptr,local_8d8,0);
     local_8b8 = this_00->field_1AEC;
     local_8d8[4] = (ccFntTy *)0x13d;
     local_8d8[5] = (ccFntTy *)0xaa;
     local_8d8[6] = (ccFntTy *)0x14;
     local_8d8[7] = (ccFntTy *)0x10;
     (*this_00->field_000C->vtable->CreateObject)
-              ((SystemClassTy *)this_00->field_000C,6,&this_00->field_1AC8,(int *)0x0,local_8d8,0);
+              ((SystemClassTy *)this_00->field_000C,6,&this_00->field_1AC8,nullptr,local_8d8,0);
     this_00->field_1EC2 = 0x100;
     this_00->field_1EC6 = 0xffffffff;
     this_00->field_1ECA = 0;

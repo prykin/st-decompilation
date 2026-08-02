@@ -105,18 +105,18 @@ int __thiscall FUN_005feb60(void *this,int param_1,int param_2,int param_3)
                  (sVar5 = (short)iVar11, sVar5 < 0)) ||
                 ((g_worldGrid.sizeY <= sVar5 || (sVar10 = (short)local_44, sVar10 < 0)))) ||
                (g_worldGrid.sizeZ <= sVar10)) {
-              this_00 = (STWorldObject *)0x0;
+              this_00 = nullptr;
             }
             else {
               this_00 = g_worldGrid.cells
                         [(int)g_worldGrid.planeStride * (int)sVar10 +
                          (int)g_worldGrid.sizeX * (int)sVar5 + (int)sVar13].objects[0];
             }
-            if (((this_00 != (STWorldObject *)0x0) &&
+            if (((this_00 != nullptr) &&
                 (iVar7 = (*this_00->vtable[5].slots_00_28[0])(), iVar7 != 0)) &&
                ((this_00[1].vtable < (STWorldObjectVTable *)0x8 &&
-                ((g_playSystem_00802A38 == (STPlaySystemC *)0x0 ||
-                 ((byte)(&DAT_008087e9)[(int)this_00[1].vtable * 0x51] < 8)))))) {
+                ((g_playSystem_00802A38 == nullptr ||
+                 (g_bulkInitializedRecords_008087C7[(int)this_00[1].vtable].field_0022 < 8)))))) {
               bVar1 = *(byte *)&this_00[1].vtable;
               bVar2 = *(byte *)((int)this + 0x24);
               if (DAT_00808a8f == '\0') {
@@ -144,7 +144,8 @@ LAB_005fee45:
                 bVar17 = iVar7 < 0;
               }
               else {
-                bVar17 = (&DAT_008087ea)[(uint)bVar2 * 0x51] != (&DAT_008087ea)[(uint)bVar1 * 0x51];
+                bVar17 = g_bulkInitializedRecords_008087C7[bVar2].field_0023 !=
+                         g_bulkInitializedRecords_008087C7[bVar1].field_0023;
               }
               if ((bVar17) && (iVar7 = (*this_00->vtable[5].slots_00_28[2])(), iVar7 != 0)) {
                 thunk_FUN_00416270(this_00,local_20,(int *)local_30,(int *)local_2c);

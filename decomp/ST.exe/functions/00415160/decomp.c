@@ -33,7 +33,7 @@ int STGroupBoatC::Way3DGrpDistribTgt
   DAT_007f4d4c = (uint)uVar3;
   if ((DAT_007f4d4c < 2) && (param_1->field_0027 == 1)) {
     if (param_2->count == 0) {
-      puVar4 = (undefined2 *)0x0;
+      puVar4 = nullptr;
     }
     else {
       puVar4 = param_2->data;
@@ -68,7 +68,7 @@ int STGroupBoatC::Way3DGrpDistribTgt
             puVar4 = (undefined2 *)(param_2->elementSize * uVar1 + (int)param_2->data);
           }
           else {
-            puVar4 = (undefined2 *)0x0;
+            puVar4 = nullptr;
           }
           /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
           iVar7 = thunk_FUN_00423e70(param_1,CONCAT22((short)((uint)puVar4 >> 0x10),*puVar4));
@@ -96,7 +96,7 @@ int STGroupBoatC::Way3DGrpDistribTgt
             puVar4 = (undefined2 *)(param_2->elementSize * uVar8 + (int)param_2->data);
           }
           else {
-            puVar4 = (undefined2 *)0x0;
+            puVar4 = nullptr;
           }
           /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
           iVar5 = thunk_FUN_00423e70(param_1,CONCAT22((short)(uVar8 >> 0x10),*puVar4));
@@ -125,7 +125,7 @@ int STGroupBoatC::Way3DGrpDistribTgt
           puVar4 = (undefined2 *)(param_2->elementSize * uVar8 + (int)param_2->data);
         }
         else {
-          puVar4 = (undefined2 *)0x0;
+          puVar4 = nullptr;
         }
         /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
         uVar9 = thunk_FUN_00423e70(param_1,CONCAT22((short)((uint)uVar6 >> 0x10),*puVar4));

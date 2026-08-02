@@ -23,7 +23,7 @@ undefined4 * __cdecl FUN_0067d1d0(ushort *param_1)
   InternalExceptionFrame local_4c;
   AnonShape_0067D1D0_21940C5B *local_8;
 
-  local_8 = (AnonShape_0067D1D0_21940C5B *)0x0;
+  local_8 = nullptr;
   local_4c.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_4c;
   iVar2 = Library::MSVCRT::__setjmp3(local_4c.jumpBuffer,0);
@@ -49,7 +49,7 @@ undefined4 * __cdecl FUN_0067d1d0(ushort *param_1)
     pAVar7 = local_8;
     do {
       if (*(int *)(&pAVar7[1].field_0x3a + iVar2) != 0) {
-        uVar4 = FUN_006b0060((uint *)0x0,
+        uVar4 = FUN_006b0060(nullptr,
                              (uint *)(*(int *)(&pAVar7[1].field_0x3e + iVar2) + 0x12a + (int)param_1
                                      ));
         *(undefined4 *)(&local_8[1].field_0x3a + iVar2) = uVar4;
@@ -58,7 +58,7 @@ undefined4 * __cdecl FUN_0067d1d0(ushort *param_1)
       iVar2 = iVar2 + 0xc;
     } while (iVar2 < 0x3c);
     if (*(int *)&pAVar7[1].field_0x3a == 0) {
-      pDVar5 = Library::DKW::TBL::DArrayCreate((DArrayTy *)0x0,10,0x10,5);
+      pDVar5 = Library::DKW::TBL::DArrayCreate(nullptr,10,0x10,5);
       *(DArrayTy **)&local_8[1].field_0x3a = pDVar5;
       pAVar7 = local_8;
     }
@@ -71,7 +71,7 @@ undefined4 * __cdecl FUN_0067d1d0(ushort *param_1)
           puVar3 = (undefined4 *)(*(int *)(iVar2 + 8) * uVar9 + *(int *)(iVar2 + 0x1c));
         }
         else {
-          puVar3 = (undefined4 *)0x0;
+          puVar3 = nullptr;
         }
         if (puVar3[1] == 0) {
           puVar6 = thunk_FUN_00690fc0((undefined4 *)(puVar3[2] + 0x12a + (int)param_1));
@@ -89,6 +89,6 @@ undefined4 * __cdecl FUN_0067d1d0(ushort *param_1)
   g_currentExceptionFrame = local_4c.previous;
   thunk_FUN_0067d160((int *)&local_8);
   RaiseInternalException(iVar2,0,"E:\\__titans\\ai\\ai_plr_d.cpp",0x77);
-  return (undefined4 *)0x0;
+  return nullptr;
 }
 

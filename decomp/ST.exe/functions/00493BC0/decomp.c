@@ -25,7 +25,7 @@ void __fastcall FUN_00493bc0(STBoatC *param_1)
       this = g_worldGrid.cells
              [(int)g_worldGrid.planeStride * (int)sVar2 + (int)g_worldGrid.sizeX * (int)sVar3 +
               (int)sVar1].objects[0];
-      if ((this != (STWorldObject *)0x0) && (*(int *)&this->field_0x18 == param_1->field_063F)) {
+      if ((this != nullptr) && (*(int *)&this->field_0x18 == param_1->field_063F)) {
         iVar4 = (*this->vtable[5].slots_00_28[2])();
         if (iVar4 != 0) {
           thunk_FUN_004e95c0(this,param_1);

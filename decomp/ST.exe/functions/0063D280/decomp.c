@@ -36,11 +36,11 @@ uint __thiscall STTmMineC::CreatePart(STTmMineC *this,uint param_1)
     RaiseInternalException(iVar3,0,"E:\\__titans\\nick\\to_TmMin.cpp",0x4a8);
     return 0xffff;
   }
-  if (local_c->field_0336 == (STTmMineC_field_0336DArray *)0x0) {
+  if (local_c->field_0336 == nullptr) {
     pSVar4 = (STTmMineC_field_0336DArray *)
-             Library::DKW::TBL::DArrayCreate((DArrayTy *)0x0,param_1,0x3c,10);
+             Library::DKW::TBL::DArrayCreate(nullptr,param_1,0x3c,10);
     pSVar2->field_0336 = pSVar4;
-    if (pSVar4 == (STTmMineC_field_0336DArray *)0x0) {
+    if (pSVar4 == nullptr) {
       g_currentExceptionFrame = local_50.previous;
       return local_8;
     }
@@ -56,9 +56,9 @@ uint __thiscall STTmMineC::CreatePart(STTmMineC *this,uint param_1)
           element_0336 = DArrayAt<STTmMineC_field_0336Element>(pSVar4, uVar7);
         }
         else {
-          element_0336 = (STTmMineC_field_0336Element *)0x0;
+          element_0336 = nullptr;
         }
-        if (element_0336 != (STTmMineC_field_0336Element *)0x0) {
+        if (element_0336 != nullptr) {
           element_0336->field_0038 = -1;
         }
         uVar7 = uVar7 + 1;

@@ -40,8 +40,8 @@ VisibleClassTy::sub_00558DC0
   uVar10 = param_5;
   piVar4 = param_4;
   if ((((this->field_0114 != 0) && (-1 < (int)param_5)) && (param_4 < (int *)0x8)) &&
-     ((g_playSystem_00802A38 == (STPlaySystemC *)0x0 ||
-      ((byte)(&DAT_008087e9)[(int)param_4 * 0x51] < 8)))) {
+     ((g_playSystem_00802A38 == nullptr ||
+      (g_bulkInitializedRecords_008087C7[(int)param_4].field_0022 < 8)))) {
     if ((param_7 & 0x1000) != 0) {
       sub_0055BB00(this,0,(short)param_1,(short)param_2,(char)param_3,(uint)param_4,(byte)param_5,
                    param_6);
@@ -53,7 +53,7 @@ VisibleClassTy::sub_00558DC0
       /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
       param_4 = (int *)(param_2 - uVar10);
       pbVar5 = thunk_FUN_005532f0(uVar10);
-      if (((pbVar5 != (byte *)0x0) && (this->field_0038 != (byte *)0x0)) &&
+      if (((pbVar5 != nullptr) && (this->field_0038 != nullptr)) &&
          (((param_7 & 1) != 0 && (iVar8 = 0, uVar10 = param_5, local_c = pbVar5, 0 < iVar2)))) {
         do {
           iVar6 = 0;
@@ -92,8 +92,8 @@ VisibleClassTy::sub_00558DC0
             uVar10 = param_5;
           } while ((int)VVar7 < 4);
         }
-        if (((pbVar5 != (byte *)0x0) && (this->field_004C != (byte *)0x0)) &&
-           ((this->field_0050 != (ushort *)0x0 && ((param_7 & 0x4000) != 0)))) {
+        if (((pbVar5 != nullptr) && (this->field_004C != nullptr)) &&
+           ((this->field_0050 != nullptr && ((param_7 & 0x4000) != 0)))) {
           sub_00558C00(this,this->field_010C,param_1,param_2,(int *)&param_6,(int *)&param_4);
           /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
           param_6 = (int *)((int)param_6 - uVar10);

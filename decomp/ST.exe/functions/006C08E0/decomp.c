@@ -178,7 +178,7 @@ LAB_006c0b45:
                        &((AnonShape_006BFBF0_13F73F95 *)local_ESI_1151)->field_0x0 + local_24;
                   if ((uVar5 & 1) == 0) {
                     if ((local_ESI_1151 < local_ECX_632) &&
-                       (piVar12 = DAT_00854ff4, DAT_00854ff4 != (int *)0x0)) {
+                       (piVar12 = DAT_00854ff4, DAT_00854ff4 != nullptr)) {
 LAB_006c0c93:
                       if (((int)local_c < piVar12[0xd]) || (piVar12[0xe] < (int)local_c))
                       goto LAB_006c0c9d;
@@ -299,11 +299,11 @@ cf_common_join_006C0F07:
           if (iVar3 == 0) goto cf_continue_loop_006C0F40;
           piVar12 = (int *)(&DAT_00855004)[uVar1 * 0x31];
           bVar2 = 1;
-          if (piVar12 != (int *)0x0) {
+          if (piVar12 != nullptr) {
             /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
             (**(code **)(*piVar12 + 0x48))(piVar12);
             piVar12 = (int *)(&DAT_00855008)[uVar1 * 0x31];
-            if (piVar12 != (int *)0x0) {
+            if (piVar12 != nullptr) {
               /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
               (**(code **)(*piVar12 + 8))(piVar12);
               (&DAT_00855008)[uVar1 * 0x31] = 0;
@@ -316,13 +316,13 @@ cf_common_join_006C0F07:
 cf_common_join_006C0E05:
           local_18 = *(uint *)pAVar14 & 8;
           piVar12 = (int *)(&DAT_00855008)[uVar1 * 0x31];
-          if (piVar12 != (int *)0x0) {
+          if (piVar12 != nullptr) {
             /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
             (**(code **)(*piVar12 + 8))(piVar12);
             (&DAT_00855008)[uVar1 * 0x31] = 0;
           }
           piVar12 = (int *)(&DAT_00855004)[uVar1 * 0x31];
-          if (piVar12 != (int *)0x0) {
+          if (piVar12 != nullptr) {
             /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
             (**(code **)(*piVar12 + 8))(piVar12);
           }
@@ -333,7 +333,7 @@ cf_common_join_006C0E05:
             *(undefined4 *)pAVar14 = 0;
             pAVar14 = (AnonShape_006BFE70_9EDC24A5 *)&pAVar14->field_0004;
           }
-          for (; piVar12 != (int *)0x0; piVar12 = (int *)*piVar12) {
+          for (; piVar12 != nullptr; piVar12 = (int *)*piVar12) {
             if ((piVar12[0xd] <= (int)local_c) && ((int)local_c <= piVar12[0xe])) {
               uVar1 = piVar12[5];
               pAVar11 = local_28;
@@ -383,7 +383,7 @@ cf_continue_loop_006C0F40:
   } while( true );
 LAB_006c0c9d:
   piVar12 = (int *)*piVar12;
-  if (piVar12 == (int *)0x0) goto LAB_006c0d93;
+  if (piVar12 == nullptr) goto LAB_006c0d93;
   goto LAB_006c0c93;
 }
 

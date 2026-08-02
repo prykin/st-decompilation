@@ -29,10 +29,10 @@ void __thiscall MTestTy::DoneMTest(MTestTy *this)
     FUN_006e6000(this_00,3,1,(undefined4 *)&this_00->field_0x61);
     cMf32::RecMemFree(g_cMf32_00806780,&this_00->field_005D);
     DarkScreen(g_dDXContext_0080759C,10,2);
-    if (g_holo_00811778 != (HoloTy *)0x0) {
+    if (g_holo_00811778 != nullptr) {
       HoloTy::Done(g_holo_00811778);
       Library::MSVCRT::FUN_0072e2b0(g_holo_00811778);
-      g_holo_00811778 = (HoloTy *)0x0;
+      g_holo_00811778 = nullptr;
     }
     if (this_00->field_0091 != 0) {
       AppClassTy::PostNextMessage((AppClassTy *)&DAT_00807620,(undefined4 *)&this_00->field_0x81);

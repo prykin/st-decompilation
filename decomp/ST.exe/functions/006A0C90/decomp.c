@@ -38,7 +38,7 @@ void FUN_006a0c90(uint param_1,int param_2,int param_3,uint param_4,int param_5,
       local_10[0] = (short)uVar1;
     }
     thunk_FUN_006a2700(*(int **)(local_8 + 8),param_1,param_2,param_3 + -1 + param_4,param_1,param_2
-                       ,local_10,(undefined *)0x0,0);
+                       ,local_10,nullptr,0);
   }
   return;
 }

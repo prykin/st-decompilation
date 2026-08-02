@@ -15,7 +15,7 @@ void * __cdecl FUN_005e6570(void)
   int iVar1;
 
   this = FUN_006b04d0(0xb4);
-  if (this != (undefined4 *)0x0) {
+  if (this != nullptr) {
     sub_006E5FB0(this);
     this[6] = 0;
     *(undefined4 *)((int)this + 0x5d) = 0;
@@ -36,6 +36,6 @@ void * __cdecl FUN_005e6570(void)
     *(undefined1 *)((int)this + 0xb3) = 0;
     return this;
   }
-  return (void *)0x0;
+  return nullptr;
 }
 

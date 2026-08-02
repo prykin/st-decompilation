@@ -99,7 +99,7 @@ STT3DSprC::LoadSequence(STT3DSprC *this,byte param_1,int *param_2,char *text,byt
     }
   }
   puVar6 = Library::Ourlib::MFRLOAD::mfRLoad
-                     (param_2,param_4,text,0xffffffff,0,1,0,(undefined4 *)0x0);
+                     (param_2,param_4,text,0xffffffff,0,1,0,nullptr);
   *(ushort **)(&this_00->field_0020->field_0x0 + iVar4) = puVar6;
   iVar5 = **(int **)(&this_00->field_0020->field_0x0 + iVar4);
   pvVar7 = Library::DKW::LIB::MemAlloc(iVar5 * 4);

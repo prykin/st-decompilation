@@ -28,7 +28,7 @@ void __thiscall FSGSTy::PrepBkgMess(FSGSTy *this,char param_1)
   pFVar2 = local_10;
   if (iVar3 == 0) {
     value = &local_10->field_1AC0;
-    if (local_10->field_1AC0 != (ushort *)0x0) {
+    if (local_10->field_1AC0 != nullptr) {
       FreeAndNull(value);
     }
     if (param_1 == '\0') {

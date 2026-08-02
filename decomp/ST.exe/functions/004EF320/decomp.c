@@ -35,14 +35,14 @@ BldBoatPanelTy::PaintBldBut(BldBoatPanelTy *this,AnonShape_004EF320_444F9AB1 *pa
   uVar3 = this->field_0199 + -0xc0af + param_1->field_0010;
   iVar6 = (&this->field_027A)[(byte)this->field_0278];
   if ((iVar6 == 0) || (*(uint *)(iVar6 + 0xc) <= uVar3)) {
-    local_8 = (Global_sub_00526BA0_param_1Enum *)0x0;
+    local_8 = nullptr;
   }
   else {
     local_8 = (Global_sub_00526BA0_param_1Enum *)
               (*(int *)(iVar6 + 8) * uVar3 + *(int *)(iVar6 + 0x1c));
   }
   local_18 = this;
-  if ((param_1->field_0014 == 0) || (local_8 == (Global_sub_00526BA0_param_1Enum *)0x0)) {
+  if ((param_1->field_0014 == 0) || (local_8 == nullptr)) {
     local_10 = this->field_028E;
   }
   else {
@@ -76,7 +76,7 @@ BldBoatPanelTy::PaintBldBut(BldBoatPanelTy *this,AnonShape_004EF320_444F9AB1 *pa
   DibPut((AnonShape_006B5B10_E0D06CF1 *)pBVar2->field_0068,iVar6 + 1,uVar3 + 1,'\x01',
          (byte *)local_10);
   if (param_1->field_0014 == 3) {
-    if (local_8 == (Global_sub_00526BA0_param_1Enum *)0x0) goto LAB_004ef4e9;
+    if (local_8 == nullptr) goto LAB_004ef4e9;
     iVar4 = (-(uint)((char)local_8[2] != 0) & 2) + 3;
   }
   else {
@@ -84,7 +84,7 @@ BldBoatPanelTy::PaintBldBut(BldBoatPanelTy *this,AnonShape_004EF320_444F9AB1 *pa
   }
   pbVar5 = (byte *)FUN_0070b3a0(pBVar2->field_0190,iVar4);
   DibPut((AnonShape_006B5B10_E0D06CF1 *)pBVar2->field_0068,iVar6,uVar3,'\x06',pbVar5);
-  if ((((local_8 != (Global_sub_00526BA0_param_1Enum *)0x0) && (local_8[1] != 0)) &&
+  if ((((local_8 != nullptr) && (local_8[1] != 0)) &&
       ((char)local_8[2] != 0)) && (param_1->field_0014 != 0)) {
     wsprintfA(&pBVar2->field_006C,"%d",local_8[1]);
     ccFntTy::SetSurf(pBVar2->field_028A,pBVar2->field_0068,0,iVar6,uVar3,local_14[2],local_14[3]);

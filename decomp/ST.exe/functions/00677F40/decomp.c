@@ -43,7 +43,7 @@ _EnumArt(short param_1,byte *param_2,short param_3,short param_4,short param_5,s
     RaiseInternalException(iVar3,0,"E:\\__titans\\ai\\ai_mdef.cpp",0x3fd);
     return iVar3;
   }
-  if (g_array_007FA154 == (DArrayTy *)0x0) {
+  if (g_array_007FA154 == nullptr) {
     RaiseInternalException
               (-0x34,g_overwriteContext_007ED77C,"E:\\__titans\\ai\\ai_mdef.cpp",0x3e1);
   }
@@ -59,14 +59,14 @@ _EnumArt(short param_1,byte *param_2,short param_3,short param_4,short param_5,s
                (g_array_007FA154->elementSize * local_10 + (int)g_array_007FA154->data);
     }
     else {
-      puVar4 = (undefined4 *)0x0;
+      puVar4 = nullptr;
     }
     this = (STFishC *)*puVar4;
-    if ((this != (STFishC *)0x0) &&
+    if ((this != nullptr) &&
        ((param_1 == 0 || (*(int *)&this[1].field_0xd7 == (int)param_1)))) {
       iVar3 = 1;
       local_14 = 1;
-      if ((param_2 != (byte *)0x0) && (*param_2 != 0)) {
+      if ((param_2 != nullptr) && (*param_2 != 0)) {
         (*this->vtable->vfunc_74)(local_28);
         pbVar7 = local_28;
         pbVar5 = param_2;
@@ -103,7 +103,7 @@ LAB_00678036:
           iVar3 = 0;
         }
         /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-        if (((iVar3 != 0) && (param_9 != (undefined *)0x0)) &&
+        if (((iVar3 != 0) && (param_9 != nullptr)) &&
            (iVar3 = (*(code *)param_9)(0,local_10,this,param_10), iVar3 != 0)) {
           g_currentExceptionFrame = local_6c.previous;
           return -1;

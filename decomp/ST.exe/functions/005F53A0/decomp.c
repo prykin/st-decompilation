@@ -14,7 +14,7 @@ void __thiscall STBHEShellC::sub_005F53A0(STBHEShellC *this)
   char *pcVar3;
   uint uVar4;
 
-  if (this->field_0169 != (STBHEShellC_field_0169DArray *)0x0) {
+  if (this->field_0169 != nullptr) {
     dVar1 = this->field_0169->count;
     uVar4 = 0;
     if (0 < (int)dVar1) {
@@ -22,7 +22,7 @@ void __thiscall STBHEShellC::sub_005F53A0(STBHEShellC *this)
         pSVar2 = this->field_0169;
         /* ST_PSEUDO[dynamic_array_indexing]: expected DArrayAt<T>(array, index) (runtime elementSize cannot be a static C array) */
         if (((uVar4 < pSVar2->count) &&
-            (pcVar3 = &pSVar2->data->field_0000 + pSVar2->elementSize * uVar4, pcVar3 != (char *)0x0
+            (pcVar3 = &pSVar2->data->field_0000 + pSVar2->elementSize * uVar4, pcVar3 != nullptr
             )) && (-1 < (int)*(uint *)(pcVar3 + 0x1f))) {
           Library::Ourlib::ST3DSMAP::SprClose(g_sT3DSMAPContext_00807598,*(uint *)(pcVar3 + 0x1f));
           *(uint *)(pcVar3 + 0x1f) = 0xffffffff;
@@ -31,7 +31,7 @@ void __thiscall STBHEShellC::sub_005F53A0(STBHEShellC *this)
       } while ((int)uVar4 < (int)dVar1);
     }
     DArrayDestroy((DArrayTy *)this->field_0169);
-    this->field_0169 = (STBHEShellC_field_0169DArray *)0x0;
+    this->field_0169 = nullptr;
   }
   return;
 }

@@ -14,7 +14,7 @@ void __thiscall SoundManagerTy::sub_00566AA0(SoundManagerTy *this)
   uint uVar1;
   uint uVar2;
 
-  if ((this->field_0018 != (cMf32 *)0x0) && (this->field_0028 != 0)) {
+  if ((this->field_0018 != nullptr) && (this->field_0028 != 0)) {
     switch(this->field_0038) {
     case CASE_0:
     case CASE_1:

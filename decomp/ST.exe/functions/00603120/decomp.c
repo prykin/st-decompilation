@@ -20,7 +20,7 @@ undefined4 __thiscall STDestC::sub_00603120(STDestC *this)
        ((g_worldGrid.sizeZ <= sVar1 ||
         ((g_worldGrid.cells
           [(int)g_worldGrid.planeStride * (int)sVar1 + (int)g_worldGrid.sizeX * (int)sVar4 +
-           (int)sVar3].objects[0] == (STWorldObject *)0x0 ||
+           (int)sVar3].objects[0] == nullptr ||
          (g_worldGrid.cells
           [(int)g_worldGrid.planeStride * (int)sVar1 + (int)g_worldGrid.sizeX * (int)sVar4 +
            (int)sVar3].objects[0]->value_20 != 1000)))))))) &&
@@ -29,7 +29,7 @@ undefined4 __thiscall STDestC::sub_00603120(STDestC *this)
           ((g_worldGrid.sizeY <= sVar4 || (sVar1 < 0)))) || (g_worldGrid.sizeZ <= sVar1)) ||
         ((g_worldGrid.cells
           [(int)g_worldGrid.planeStride * (int)sVar1 + (int)g_worldGrid.sizeX * (int)sVar4 +
-           (int)(short)(sVar3 + 1)].objects[0] == (STWorldObject *)0x0 ||
+           (int)(short)(sVar3 + 1)].objects[0] == nullptr ||
          (g_worldGrid.cells
           [(int)g_worldGrid.planeStride * (int)sVar1 + (int)g_worldGrid.sizeX * (int)sVar4 +
            (int)(short)(sVar3 + 1)].objects[0]->value_20 != 1000)))) &&
@@ -38,7 +38,7 @@ undefined4 __thiscall STDestC::sub_00603120(STDestC *this)
           (((sVar1 < 0 || (g_worldGrid.sizeZ <= sVar1)) ||
            (g_worldGrid.cells
             [(int)g_worldGrid.planeStride * (int)sVar1 + (int)g_worldGrid.sizeX * (int)sVar4 +
-             (int)sVar3].objects[0] == (STWorldObject *)0x0)))) ||
+             (int)sVar3].objects[0] == nullptr)))) ||
          (g_worldGrid.cells
           [(int)g_worldGrid.planeStride * (int)sVar1 + (int)g_worldGrid.sizeX * (int)sVar4 +
            (int)sVar3].objects[0]->value_20 != 1000)) &&
@@ -47,7 +47,7 @@ undefined4 __thiscall STDestC::sub_00603120(STDestC *this)
            (((g_worldGrid.sizeY <= sVar4 || (sVar1 < 0)) || (g_worldGrid.sizeZ <= sVar1)))))) ||
          ((g_worldGrid.cells
            [(int)g_worldGrid.planeStride * (int)sVar1 + (int)g_worldGrid.sizeX * (int)sVar4 +
-            (int)sVar3].objects[0] == (STWorldObject *)0x0 ||
+            (int)sVar3].objects[0] == nullptr ||
           (g_worldGrid.cells
            [(int)g_worldGrid.planeStride * (int)sVar1 + (int)g_worldGrid.sizeX * (int)sVar4 +
             (int)sVar3].objects[0]->value_20 != 1000)))))))))))) {

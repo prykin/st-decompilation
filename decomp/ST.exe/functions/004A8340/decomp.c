@@ -39,7 +39,7 @@ STGroupBoatC::GetDepotForAttack
   pSVar5 = local_14;
   if (iVar2 == 0) {
     *param_3 = -1;
-    if ((local_14->field_01E6 != CASE_2) || (local_14->field_020E == (DArrayTy *)0x0)) {
+    if ((local_14->field_01E6 != CASE_2) || (local_14->field_020E == nullptr)) {
       RaiseInternalException
                 (-0x5001fff7,g_overwriteContext_007ED77C,"E:\\__titans\\wlad\\to_grpb.cpp",
                  0x1708);

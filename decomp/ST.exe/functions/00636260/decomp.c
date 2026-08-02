@@ -47,9 +47,9 @@ SubmarineTitans::Recovered::HiddenThis::AnonReceiver_00636260::FUN_00636260
   }
   *(undefined4 *)&this->field_0x20 = 0x16;
 LAB_006362c5:
-  array = Library::DKW::TBL::DArrayCreate((DArrayTy *)0x0,param_5 * param_6,0x32,10);
+  array = Library::DKW::TBL::DArrayCreate(nullptr,param_5 * param_6,0x32,10);
   *(DArrayTy **)&this->field_0x2c = array;
-  if ((array != (DArrayTy *)0x0) && (0 < param_4)) {
+  if ((array != nullptr) && (0 < param_4)) {
     *(int *)this = param_5;
     *(int *)&this->field_0x8 = param_6;
     memset(local_50, 0, 0x32); /* compiler bulk-zero initialization */
@@ -79,7 +79,7 @@ LAB_006362c5:
               piVar3 = (int *)(*(int *)(iVar1 + 8) * uVar5 + *(int *)(iVar1 + 0x1c));
             }
             else {
-              piVar3 = (int *)0x0;
+              piVar3 = nullptr;
             }
             *piVar3 = param_7;
             if (*(int *)&local_8->field_0x28 == 0) {

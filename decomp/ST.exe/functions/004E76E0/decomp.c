@@ -34,7 +34,7 @@ undefined4 FUN_004e76e0(int param_1,uint *param_2,byte param_3)
     /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
     _param_3 = 0;
     memset(&DAT_00800bd0, 0, 0x30c); /* compiler bulk-zero initialization */
-    if (DAT_00801020 == (uint *)0x0) {
+    if (DAT_00801020 == nullptr) {
       return 0;
     }
     /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */

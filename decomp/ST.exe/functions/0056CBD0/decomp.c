@@ -66,15 +66,15 @@ STAppC::MainWindowProc
       return local_8;
     case CASE_F:
       BeginPaint(hWnd,&local_ac);
-      if (g_ddxContext_008075A8 != (DDXContext_008075A8 *)0x0) {
+      if (g_ddxContext_008075A8 != nullptr) {
         FUN_006b5f80((int *)g_ddxContext_008075A8,0,0,g_nWidth_00806730,DAT_00806734);
       }
-      if ((g_parentSystem_0081163C != (GameSystemC *)0x0) &&
-         (g_sT3DSMAPContext_00807598 != (ST3DSMAPContext *)0x0)) {
+      if ((g_parentSystem_0081163C != nullptr) &&
+         (g_sT3DSMAPContext_00807598 != nullptr)) {
         DAT_0080674c = 2;
         DAT_0080745d = 0;
       }
-      if (g_cLoading_00802A58 != (cLoadingTy *)0x0) {
+      if (g_cLoading_00802A58 != nullptr) {
         cLoadingTy::sub_00554A50(g_cLoading_00802A58);
       }
       EndPaint(hWnd,&local_ac);
@@ -85,17 +85,17 @@ STAppC::MainWindowProc
       return 0;
     case CASE_1C:
       if (param_3 == 0) {
-        if (g_dDXContext_0080759C != (DDXContext *)0x0) {
+        if (g_dDXContext_0080759C != nullptr) {
           FUN_006ba760((int)g_dDXContext_0080759C);
         }
-        if (g_sT3DSMAPContext_00807598 != (ST3DSMAPContext *)0x0) {
+        if (g_sT3DSMAPContext_00807598 != nullptr) {
           FUN_006dc310();
         }
         uVar4 = thunk_FUN_00567060(0x807658);
         if (uVar4 != 0) {
           thunk_FUN_005713b0(0x807620);
         }
-        if (g_cursorClass_00802A30 != (CursorClassTy *)0x0) {
+        if (g_cursorClass_00802A30 != nullptr) {
           CursorClassTy::sub_0054B540(g_cursorClass_00802A30);
         }
         pHVar5 = LoadCursorA(g_hInstance_00856D70,(LPCSTR)0x7f00);
@@ -103,10 +103,10 @@ STAppC::MainWindowProc
         g_currentExceptionFrame = local_4c.previous;
         return local_8;
       }
-      if (g_dDXContext_0080759C != (DDXContext *)0x0) {
+      if (g_dDXContext_0080759C != nullptr) {
         FUN_006ba740((int)g_dDXContext_0080759C);
       }
-      if (g_sT3DSMAPContext_00807598 != (ST3DSMAPContext *)0x0) {
+      if (g_sT3DSMAPContext_00807598 != nullptr) {
         FUN_006dc300((int)g_sT3DSMAPContext_00807598);
       }
       thunk_FUN_00573240();
@@ -134,7 +134,7 @@ STAppC::MainWindowProc
     }
     if (param_2 == 0x100) {
       if (param_3 == 0x13) {
-        if (g_cursorClass_00802A30 == (CursorClassTy *)0x0) {
+        if (g_cursorClass_00802A30 == nullptr) {
           g_currentExceptionFrame = local_4c.previous;
           return local_8;
         }

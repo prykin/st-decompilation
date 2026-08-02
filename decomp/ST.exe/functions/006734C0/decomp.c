@@ -20,12 +20,12 @@ int FUN_006734c0(void)
   if ((-1 < iVar2) || (iVar2 == -1)) {
     DAT_00857558 = iVar2;
   }
-  if ((((-1 < iVar2) && (iVar2 = 0, DAT_00811908 != (int *)0x0)) && ((DAT_007d2d24 & 0x400) != 0))
+  if ((((-1 < iVar2) && (iVar2 = 0, DAT_00811908 != nullptr)) && ((DAT_007d2d24 & 0x400) != 0))
      && (0 < DAT_00857558)) {
     local_8 = DAT_00811908;
     do {
-      puVar3 = Library::MSVCRT::FUN_00730590((uint *)DAT_0085755c,(char *)local_8[1]);
-      if (puVar3 != (uint *)0x0) {
+      puVar3 = Library::MSVCRT::FUN_00730590(DAT_0085755c,(char *)local_8[1]);
+      if (puVar3 != nullptr) {
         uVar5 = 0xffffffff;
         pcVar8 = (char *)local_8[1];
         do {
@@ -60,10 +60,10 @@ int FUN_006734c0(void)
           memmove(puVar9, puVar7, uVar5); /* compiler REP MOVS byte copy */
           DAT_00857558 = DAT_00857558 + (uVar5 - iVar2);
           puVar3 = Library::MSVCRT::FUN_00730590((uint *)((int)puVar3 + 1),(char *)local_8[1]);
-        } while (puVar3 != (uint *)0x0);
+        } while (puVar3 != nullptr);
       }
       local_8 = (int *)*local_8;
-    } while (local_8 != (int *)0x0);
+    } while (local_8 != nullptr);
     iVar2 = 0;
   }
   return iVar2;

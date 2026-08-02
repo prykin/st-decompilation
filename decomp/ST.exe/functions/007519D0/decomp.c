@@ -22,7 +22,7 @@ int __cdecl FUN_007519d0(ushort *param_1,byte *param_2)
       uVar6 = uVar4 & 1;
       uVar4 = (int)uVar4 >> 1;
       puVar7 = (ushort *)((int)puVar7 + -1);
-      if (puVar7 == (ushort *)0x0) {
+      if (puVar7 == nullptr) {
         puVar7 = (ushort *)0x10;
         uVar4 = (uint)*puVar3;
         puVar3 = puVar3 + 1;
@@ -35,7 +35,7 @@ int __cdecl FUN_007519d0(ushort *param_1,byte *param_2)
     uVar6 = uVar4 & 1;
     uVar4 = (int)uVar4 >> 1;
     puVar7 = (ushort *)((int)puVar7 + -1);
-    if (puVar7 == (ushort *)0x0) {
+    if (puVar7 == nullptr) {
       puVar7 = (ushort *)0x10;
       uVar4 = (uint)*puVar3;
       puVar3 = puVar3 + 1;
@@ -76,7 +76,7 @@ joined_r0x00751ad0:
   param_1 = (ushort *)(iVar8 + -1);
   uVar6 = uVar9 * 2 + 2 + (uVar6 & 1);
   /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
-  if (param_1 == (ushort *)0x0) {
+  if (param_1 == nullptr) {
     /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
     param_1 = (ushort *)0x10;
     uVar4 = (uint)*puVar3;

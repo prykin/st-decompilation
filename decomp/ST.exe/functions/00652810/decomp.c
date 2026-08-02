@@ -156,9 +156,9 @@ void __thiscall AiEventClassTy::GetMessage(AiEventClassTy *this,STMessage *messa
   DArrayTy *local_c;
   DArrayTy *local_8;
 
-  local_180 = (DArrayTy *)0x0;
+  local_180 = nullptr;
   local_198 = 0;
-  if ((g_allPlayers_007FA174 != (STAllPlayersC *)0x0) &&
+  if ((g_allPlayers_007FA174 != nullptr) &&
      (local_188 = this, iVar7 = sub_0065BD70(this,message,0), -1 < iVar7)) {
     local_194 = iVar7;
     /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
@@ -185,7 +185,7 @@ void __thiscall AiEventClassTy::GetMessage(AiEventClassTy *this,STMessage *messa
                         (pDVar12->elementSize * local_14 + (int)pDVar12->data);
             }
             else {
-              pAVar28 = (AnonShape_00652810_4F58F813 *)0x0;
+              pAVar28 = nullptr;
             }
             local_178 = pAVar28;
             if (*(char *)pAVar28 == '\0') {
@@ -204,11 +204,11 @@ void __thiscall AiEventClassTy::GetMessage(AiEventClassTy *this,STMessage *messa
                 }
                 else {
                   if (local_9c == '\b') {
-                    if (pDStack_164 != (DArrayTy *)0x0) {
+                    if (pDStack_164 != nullptr) {
                       *(char *)pAVar28 = '\x01';
                       pAVar28->field_000B = 0;
                       pAVar29 = pAVar28->field_000F;
-                      local_170 = (DArrayTy *)0x0;
+                      local_170 = nullptr;
                       local_174 = 0;
                       pDVar12 = pAVar29->field_000C;
                       if (0 < (int)pDVar12) {
@@ -218,7 +218,7 @@ void __thiscall AiEventClassTy::GetMessage(AiEventClassTy *this,STMessage *messa
                                                pAVar29->field_001C);
                           }
                           else {
-                            psVar10 = (short *)0x0;
+                            psVar10 = nullptr;
                           }
                           iVar7 = SubmarineTitans::Recovered::HiddenThis::AnonReceiver_0064A970::
                                   thunk_FUN_00672440((AnonReceiver_0064A970 *)this_00,
@@ -258,7 +258,7 @@ void __thiscall AiEventClassTy::GetMessage(AiEventClassTy *this,STMessage *messa
                                                                (uint)local_148);
                                             pDVar25 = (DArrayTy *)&pDVar25->iteratorIndex;
                                             local_c = (DArrayTy *)((int)&local_c[-1].data + 3);
-                                          } while (local_c != (DArrayTy *)0x0);
+                                          } while (local_c != nullptr);
                                         }
                                         goto cf_common_join_00659A73;
                                       }
@@ -282,14 +282,14 @@ void __thiscall AiEventClassTy::GetMessage(AiEventClassTy *this,STMessage *messa
                                           do {
                                             pSVar16 = thunk_FUN_0042b760(*(char *)&local_10->vtable,
                                                                          (ushort)local_15c);
-                                            if (pSVar16 == (STGroupBoatC *)0x0) {
+                                            if (pSVar16 == nullptr) {
                                               thunk_FUN_0064d0e0(this_00,-0xaa,&DAT_008016a0,uVar32,
                                                                  (int)local_10->vtable);
                                             }
                                             else {
                                               pAVar21 = (AnonShape_0065DA10_8B0AA883 *)
                                                         thunk_FUN_00423300((int)pSVar16);
-                                              if (pAVar21 == (AnonShape_0065DA10_8B0AA883 *)0x0) {
+                                              if (pAVar21 == nullptr) {
                                                 pAVar37 = local_10->vtable;
                                                 uVar17 = uVar32;
                                                 pcVar9 = thunk_FUN_00674af0(iVar7);
@@ -303,8 +303,8 @@ void __thiscall AiEventClassTy::GetMessage(AiEventClassTy *this,STMessage *messa
                                             }
                                             local_10 = (AiFltClassTy *)&local_10->field_0x4;
                                             local_c = (DArrayTy *)((int)&local_c[-1].data + 3);
-                                          } while (local_c != (DArrayTy *)0x0);
-                                          local_c = (DArrayTy *)0x0;
+                                          } while (local_c != nullptr);
+                                          local_c = nullptr;
                                         }
                                         goto cf_common_join_00659A73;
                                       }
@@ -328,14 +328,14 @@ void __thiscall AiEventClassTy::GetMessage(AiEventClassTy *this,STMessage *messa
                                           do {
                                             pSVar16 = thunk_FUN_0042b760(*(char *)&local_10->vtable,
                                                                          (ushort)local_15c);
-                                            if (pSVar16 == (STGroupBoatC *)0x0) {
+                                            if (pSVar16 == nullptr) {
                                               thunk_FUN_0064d0e0(this_00,-0xaa,&DAT_008016a0,uVar32,
                                                                  (int)local_10->vtable);
                                             }
                                             else {
                                               pAVar21 = (AnonShape_0065DA10_8B0AA883 *)
                                                         thunk_FUN_00423300((int)pSVar16);
-                                              if (pAVar21 == (AnonShape_0065DA10_8B0AA883 *)0x0) {
+                                              if (pAVar21 == nullptr) {
                                                 pAVar37 = local_10->vtable;
                                                 uVar17 = uVar32;
                                                 pcVar9 = thunk_FUN_00674af0(iVar7);
@@ -349,8 +349,8 @@ void __thiscall AiEventClassTy::GetMessage(AiEventClassTy *this,STMessage *messa
                                             }
                                             local_10 = (AiFltClassTy *)&local_10->field_0x4;
                                             local_c = (DArrayTy *)((int)&local_c[-1].data + 3);
-                                          } while (local_c != (DArrayTy *)0x0);
-                                          local_c = (DArrayTy *)0x0;
+                                          } while (local_c != nullptr);
+                                          local_c = nullptr;
                                         }
                                         goto cf_common_join_00659A73;
                                       }
@@ -374,13 +374,13 @@ void __thiscall AiEventClassTy::GetMessage(AiEventClassTy *this,STMessage *messa
                                           do {
                                             pSVar16 = thunk_FUN_0042b760(*(char *)&local_10->vtable,
                                                                          (ushort)local_15c);
-                                            if (pSVar16 == (STGroupBoatC *)0x0) {
+                                            if (pSVar16 == nullptr) {
                                               thunk_FUN_0064d0e0(this_00,-0xaa,&DAT_008016a0,uVar32,
                                                                  (int)local_10->vtable);
                                             }
                                             else {
                                               local_17c = (void *)thunk_FUN_00423300((int)pSVar16);
-                                              if (local_17c == (void *)0x0) {
+                                              if (local_17c == nullptr) {
                                                 pAVar37 = local_10->vtable;
                                                 uVar17 = uVar32;
                                                 pcVar9 = thunk_FUN_00674af0(iVar7);
@@ -390,7 +390,7 @@ void __thiscall AiEventClassTy::GetMessage(AiEventClassTy *this,STMessage *messa
                                               else {
                                                 local_c = (DArrayTy *)
                                                           _GetStaffGrpExch(local_10->vtable);
-                                                if (local_c != (DArrayTy *)0x0) {
+                                                if (local_c != nullptr) {
                                                   thunk_FUN_0065d940(local_17c,local_c,0);
                                                   DArrayDestroy(local_c);
                                                 }
@@ -398,8 +398,8 @@ void __thiscall AiEventClassTy::GetMessage(AiEventClassTy *this,STMessage *messa
                                             }
                                             local_10 = (AiFltClassTy *)&local_10->field_0x4;
                                             local_8 = (DArrayTy *)((int)&local_8[-1].data + 3);
-                                          } while (local_8 != (DArrayTy *)0x0);
-                                          local_8 = (DArrayTy *)0x0;
+                                          } while (local_8 != nullptr);
+                                          local_8 = nullptr;
                                         }
                                         goto cf_common_join_00659A73;
                                       }
@@ -423,7 +423,7 @@ void __thiscall AiEventClassTy::GetMessage(AiEventClassTy *this,STMessage *messa
                                           do {
                                             pSVar16 = thunk_FUN_0042b760((char)pDVar25->flags,
                                                                          (ushort)local_15c);
-                                            if (pSVar16 == (STGroupBoatC *)0x0) {
+                                            if (pSVar16 == nullptr) {
                                               thunk_FUN_0064d0e0(this_00,-0xaa,&DAT_008016a0,uVar32,
                                                                  pDVar25->flags);
                                             }
@@ -432,7 +432,7 @@ void __thiscall AiEventClassTy::GetMessage(AiEventClassTy *this,STMessage *messa
                                             }
                                             pDVar25 = (DArrayTy *)&pDVar25->iteratorIndex;
                                             local_c = (DArrayTy *)((int)&local_c[-1].data + 3);
-                                          } while (local_c != (DArrayTy *)0x0);
+                                          } while (local_c != nullptr);
                                         }
                                         goto cf_common_join_00659A73;
                                       }
@@ -456,7 +456,7 @@ void __thiscall AiEventClassTy::GetMessage(AiEventClassTy *this,STMessage *messa
                                           do {
                                             pSVar16 = thunk_FUN_0042b760((char)pDVar25->flags,
                                                                          (ushort)local_15c);
-                                            if (pSVar16 == (STGroupBoatC *)0x0) {
+                                            if (pSVar16 == nullptr) {
                                               thunk_FUN_0064d0e0(this_00,-0xaa,&DAT_008016a0,uVar32,
                                                                  pDVar25->flags);
                                             }
@@ -465,7 +465,7 @@ void __thiscall AiEventClassTy::GetMessage(AiEventClassTy *this,STMessage *messa
                                             }
                                             pDVar25 = (DArrayTy *)&pDVar25->iteratorIndex;
                                             local_c = (DArrayTy *)((int)&local_c[-1].data + 3);
-                                          } while (local_c != (DArrayTy *)0x0);
+                                          } while (local_c != nullptr);
                                         }
                                         goto cf_common_join_00659A73;
                                       }
@@ -489,13 +489,13 @@ void __thiscall AiEventClassTy::GetMessage(AiEventClassTy *this,STMessage *messa
                                           do {
                                             pSVar16 = thunk_FUN_0042b760(*(char *)&local_10->vtable,
                                                                          (ushort)local_15c);
-                                            if (pSVar16 == (STGroupBoatC *)0x0) {
+                                            if (pSVar16 == nullptr) {
                                               thunk_FUN_0064d0e0(this_00,-0xaa,&DAT_008016a0,uVar32,
                                                                  (int)local_10->vtable);
                                             }
                                             else {
                                               local_17c = (void *)thunk_FUN_00423300((int)pSVar16);
-                                              if (local_17c == (void *)0x0) {
+                                              if (local_17c == nullptr) {
                                                 pAVar37 = local_10->vtable;
                                                 uVar17 = uVar32;
                                                 pcVar9 = thunk_FUN_00674af0(iVar7);
@@ -503,18 +503,18 @@ void __thiscall AiEventClassTy::GetMessage(AiEventClassTy *this,STMessage *messa
                                                                    (int)pAVar37);
                                               }
                                               else {
-                                                pAVar13 = (AiPlrClassTy *)0x0;
-                                                local_8 = (DArrayTy *)0x0;
-                                                if (g_allPlayers_007FA174 != (STAllPlayersC *)0x0) {
+                                                pAVar13 = nullptr;
+                                                local_8 = nullptr;
+                                                if (g_allPlayers_007FA174 != nullptr) {
                                                   pAVar13 = thunk_FUN_004357f0(*(char *)&local_10->
                                                                                          vtable);
                                                 }
-                                                if (pAVar13 != (AiPlrClassTy *)0x0) {
+                                                if (pAVar13 != nullptr) {
                                                   local_8 = (DArrayTy *)
                                                             thunk_FUN_00678ef0(pAVar13,(byte *)
                                                   local_158);
                                                 }
-                                                if (local_8 == (DArrayTy *)0x0) {
+                                                if (local_8 == nullptr) {
                                                   thunk_FUN_0064d0e0(this_00,-4,(char *)local_158,
                                                                      uVar32,(int)local_10->vtable);
                                                 }
@@ -525,8 +525,8 @@ void __thiscall AiEventClassTy::GetMessage(AiEventClassTy *this,STMessage *messa
                                             }
                                             local_10 = (AiFltClassTy *)&local_10->field_0x4;
                                             local_c = (DArrayTy *)((int)&local_c[-1].data + 3);
-                                          } while (local_c != (DArrayTy *)0x0);
-                                          local_c = (DArrayTy *)0x0;
+                                          } while (local_c != nullptr);
+                                          local_c = nullptr;
                                         }
                                         goto cf_common_join_00659A73;
                                       }
@@ -550,7 +550,7 @@ void __thiscall AiEventClassTy::GetMessage(AiEventClassTy *this,STMessage *messa
                                           do {
                                             pSVar16 = thunk_FUN_0042b760(*(char *)&local_10->vtable,
                                                                          (ushort)local_15c);
-                                            if (pSVar16 == (STGroupBoatC *)0x0) {
+                                            if (pSVar16 == nullptr) {
                                               thunk_FUN_0064d0e0(this_00,-0xaa,&DAT_008016a0,uVar32,
                                                                  (int)local_10->vtable);
                                             }
@@ -569,8 +569,8 @@ void __thiscall AiEventClassTy::GetMessage(AiEventClassTy *this,STMessage *messa
                                             }
                                             local_10 = (AiFltClassTy *)&local_10->field_0x4;
                                             local_c = (DArrayTy *)((int)&local_c[-1].data + 3);
-                                          } while (local_c != (DArrayTy *)0x0);
-                                          local_c = (DArrayTy *)0x0;
+                                          } while (local_c != nullptr);
+                                          local_c = nullptr;
                                         }
                                         goto cf_common_join_00659A73;
                                       }
@@ -595,7 +595,7 @@ void __thiscall AiEventClassTy::GetMessage(AiEventClassTy *this,STMessage *messa
                                             pSVar16 = thunk_FUN_0042b760(*(char *)&local_10->vtable,
                                                                          (ushort)local_15c);
                                             uVar17 = uVar32;
-                                            if (pSVar16 == (STGroupBoatC *)0x0) {
+                                            if (pSVar16 == nullptr) {
                                               pAVar37 = local_10->vtable;
                                               pcVar9 = &DAT_008016a0;
                                               iVar36 = -0xaa;
@@ -606,7 +606,7 @@ LAB_006577ae:
                                             else {
                                               pAVar14 = (AiFltClassTy *)
                                                         thunk_FUN_00423300((int)pSVar16);
-                                              if (((pAVar14 == (AiFltClassTy *)0x0) ||
+                                              if (((pAVar14 == nullptr) ||
                                                   (pAVar14->field_007B == 1)) ||
                                                  (pAVar14->field_007B == -0x8000)) {
                                                 pAVar37 = local_10->vtable;
@@ -650,8 +650,8 @@ LAB_006577ae:
                                             }
                                             local_10 = (AiFltClassTy *)&local_10->field_0x4;
                                             local_c = (DArrayTy *)((int)&local_c[-1].data + 3);
-                                          } while (local_c != (DArrayTy *)0x0);
-                                          local_c = (DArrayTy *)0x0;
+                                          } while (local_c != nullptr);
+                                          local_c = nullptr;
                                         }
                                         goto cf_common_join_00659A73;
                                       }
@@ -676,7 +676,7 @@ LAB_006577ae:
                                             pSVar16 = thunk_FUN_0042b760(*(char *)&local_10->vtable,
                                                                          (ushort)local_15c);
                                             uVar17 = uVar32;
-                                            if (pSVar16 == (STGroupBoatC *)0x0) {
+                                            if (pSVar16 == nullptr) {
                                               pAVar37 = local_10->vtable;
                                               pcVar9 = &DAT_008016a0;
                                               iVar36 = -0xaa;
@@ -687,7 +687,7 @@ LAB_00657a41:
                                             else {
                                               pAVar14 = (AiFltClassTy *)
                                                         thunk_FUN_00423300((int)pSVar16);
-                                              if (((pAVar14 == (AiFltClassTy *)0x0) ||
+                                              if (((pAVar14 == nullptr) ||
                                                   (pAVar14->field_007B == 1)) ||
                                                  (pAVar14->field_007B == -0x8000)) {
                                                 pAVar37 = local_10->vtable;
@@ -723,8 +723,8 @@ LAB_00657a41:
                                             }
                                             local_10 = (AiFltClassTy *)&local_10->field_0x4;
                                             local_c = (DArrayTy *)((int)&local_c[-1].data + 3);
-                                          } while (local_c != (DArrayTy *)0x0);
-                                          local_c = (DArrayTy *)0x0;
+                                          } while (local_c != nullptr);
+                                          local_c = nullptr;
                                         }
                                         goto cf_common_join_00659A73;
                                       }
@@ -749,7 +749,7 @@ LAB_00657a41:
                                             pSVar16 = thunk_FUN_0042b760(*(char *)&local_10->vtable,
                                                                          (ushort)local_15c);
                                             uVar17 = uVar32;
-                                            if (pSVar16 == (STGroupBoatC *)0x0) {
+                                            if (pSVar16 == nullptr) {
                                               pAVar37 = local_10->vtable;
                                               pcVar9 = &DAT_008016a0;
                                               iVar36 = -0xaa;
@@ -760,7 +760,7 @@ LAB_006578fe:
                                             else {
                                               pAVar14 = (AiFltClassTy *)
                                                         thunk_FUN_00423300((int)pSVar16);
-                                              if (((pAVar14 == (AiFltClassTy *)0x0) ||
+                                              if (((pAVar14 == nullptr) ||
                                                   (pAVar14->field_007B == 1)) ||
                                                  (pAVar14->field_007B == -0x8000)) {
                                                 pAVar37 = local_10->vtable;
@@ -800,8 +800,8 @@ LAB_006578fe:
                                             }
                                             local_10 = (AiFltClassTy *)&local_10->field_0x4;
                                             local_c = (DArrayTy *)((int)&local_c[-1].data + 3);
-                                          } while (local_c != (DArrayTy *)0x0);
-                                          local_c = (DArrayTy *)0x0;
+                                          } while (local_c != nullptr);
+                                          local_c = nullptr;
                                         }
                                         goto cf_common_join_00659A73;
                                       }
@@ -828,7 +828,7 @@ LAB_006578fe:
                                             pSVar16 = thunk_FUN_0042b760((char)local_8->flags,
                                                                          (ushort)local_15c);
                                             uVar17 = uVar32;
-                                            if (pSVar16 == (STGroupBoatC *)0x0) {
+                                            if (pSVar16 == nullptr) {
                                               dVar38 = local_8->flags;
                                               pcVar9 = &DAT_008016a0;
                                               iVar36 = -0xaa;
@@ -839,7 +839,7 @@ LAB_00657bce:
                                             else {
                                               local_10 = (AiFltClassTy *)
                                                          thunk_FUN_00423300((int)pSVar16);
-                                              if ((local_10 == (AiFltClassTy *)0x0) ||
+                                              if ((local_10 == nullptr) ||
                                                  (local_10->field_007B == -0x8000)) {
                                                 dVar38 = local_8->flags;
                                                 pcVar9 = thunk_FUN_00674af0(iVar7);
@@ -878,7 +878,7 @@ LAB_00657bce:
                                               uStack_4f = (undefined1)((uint)local_144 >> 8);
                                               uStack_4c = (undefined1)local_13c;
                                               pcVar9 = local_138;
-                                              if (local_138 == (char *)0x0) {
+                                              if (local_138 == nullptr) {
                                                 pcVar9 = &DAT_008016a0;
                                               }
                                               Library::MSVCRT::_strncpy(&cStack_4b,pcVar9,0xe);
@@ -887,8 +887,8 @@ LAB_00657bce:
                                             }
                                             local_8 = (DArrayTy *)&local_8->iteratorIndex;
                                             local_c = (DArrayTy *)((int)&local_c[-1].data + 3);
-                                          } while (local_c != (DArrayTy *)0x0);
-                                          local_c = (DArrayTy *)0x0;
+                                          } while (local_c != nullptr);
+                                          local_c = nullptr;
                                         }
                                         goto cf_common_join_00659A73;
                                       }
@@ -913,7 +913,7 @@ LAB_00657bce:
                                             pSVar16 = thunk_FUN_0042b760((char)local_8->flags,
                                                                          (ushort)local_15c);
                                             uVar17 = uVar32;
-                                            if (pSVar16 == (STGroupBoatC *)0x0) {
+                                            if (pSVar16 == nullptr) {
                                               dVar38 = local_8->flags;
                                               pcVar9 = &DAT_008016a0;
                                               iVar36 = -0xaa;
@@ -924,7 +924,7 @@ LAB_00657ccf:
                                             else {
                                               pAVar14 = (AiFltClassTy *)
                                                         thunk_FUN_00423300((int)pSVar16);
-                                              if ((pAVar14 == (AiFltClassTy *)0x0) ||
+                                              if ((pAVar14 == nullptr) ||
                                                  (pAVar14->field_007B == -0x8000)) {
                                                 dVar38 = local_8->flags;
                                                 pcVar9 = thunk_FUN_00674af0(iVar7);
@@ -944,8 +944,8 @@ LAB_00657ccf:
                                             }
                                             local_8 = (DArrayTy *)&local_8->iteratorIndex;
                                             local_c = (DArrayTy *)((int)&local_c[-1].data + 3);
-                                          } while (local_c != (DArrayTy *)0x0);
-                                          local_c = (DArrayTy *)0x0;
+                                          } while (local_c != nullptr);
+                                          local_c = nullptr;
                                         }
                                         goto cf_common_join_00659A73;
                                       }
@@ -971,7 +971,7 @@ LAB_00657ccf:
                                             pSVar16 = thunk_FUN_0042b760((char)local_8->flags,
                                                                          (ushort)local_15c);
                                             uVar17 = uVar32;
-                                            if (pSVar16 == (STGroupBoatC *)0x0) {
+                                            if (pSVar16 == nullptr) {
                                               dVar38 = local_8->flags;
                                               pcVar9 = &DAT_008016a0;
                                               iVar36 = -0xaa;
@@ -982,7 +982,7 @@ LAB_00657dd9:
                                             else {
                                               pAVar14 = (AiFltClassTy *)
                                                         thunk_FUN_00423300((int)pSVar16);
-                                              if ((pAVar14 == (AiFltClassTy *)0x0) ||
+                                              if ((pAVar14 == nullptr) ||
                                                  (pAVar14->field_007B == -0x8000)) {
                                                 dVar38 = local_8->flags;
                                                 pcVar9 = thunk_FUN_00674af0(iVar7);
@@ -1004,8 +1004,8 @@ LAB_00657dd9:
                                             }
                                             local_8 = (DArrayTy *)&local_8->iteratorIndex;
                                             local_c = (DArrayTy *)((int)&local_c[-1].data + 3);
-                                          } while (local_c != (DArrayTy *)0x0);
-                                          local_c = (DArrayTy *)0x0;
+                                          } while (local_c != nullptr);
+                                          local_c = nullptr;
                                         }
                                         goto cf_common_join_00659A73;
                                       }
@@ -1030,7 +1030,7 @@ LAB_00657dd9:
                                             pSVar16 = thunk_FUN_0042b760((char)local_8->flags,
                                                                          (ushort)local_15c);
                                             uVar17 = uVar32;
-                                            if (pSVar16 == (STGroupBoatC *)0x0) {
+                                            if (pSVar16 == nullptr) {
                                               dVar38 = local_8->flags;
                                               pcVar9 = &DAT_008016a0;
                                               iVar36 = -0xaa;
@@ -1041,7 +1041,7 @@ LAB_00657f1c:
                                             else {
                                               pAVar14 = (AiFltClassTy *)
                                                         thunk_FUN_00423300((int)pSVar16);
-                                              if (((pAVar14 == (AiFltClassTy *)0x0) ||
+                                              if (((pAVar14 == nullptr) ||
                                                   (pAVar14->field_007B == 1)) ||
                                                  (pAVar14->field_007B == -0x8000)) {
                                                 dVar38 = local_8->flags;
@@ -1077,8 +1077,8 @@ LAB_00657f1c:
                                             }
                                             local_8 = (DArrayTy *)&local_8->iteratorIndex;
                                             local_c = (DArrayTy *)((int)&local_c[-1].data + 3);
-                                          } while (local_c != (DArrayTy *)0x0);
-                                          local_c = (DArrayTy *)0x0;
+                                          } while (local_c != nullptr);
+                                          local_c = nullptr;
                                         }
                                         goto cf_common_join_00659A73;
                                       }
@@ -1103,7 +1103,7 @@ LAB_00657f1c:
                                             pSVar16 = thunk_FUN_0042b760((char)local_8->flags,
                                                                          (ushort)local_15c);
                                             uVar17 = uVar32;
-                                            if (pSVar16 == (STGroupBoatC *)0x0) {
+                                            if (pSVar16 == nullptr) {
                                               dVar38 = local_8->flags;
                                               pcVar9 = &DAT_008016a0;
                                               iVar36 = -0xaa;
@@ -1114,7 +1114,7 @@ LAB_0065806e:
                                             else {
                                               pAVar14 = (AiFltClassTy *)
                                                         thunk_FUN_00423300((int)pSVar16);
-                                              if (((pAVar14 == (AiFltClassTy *)0x0) ||
+                                              if (((pAVar14 == nullptr) ||
                                                   (pAVar14->field_007B == 1)) ||
                                                  (pAVar14->field_007B == -0x8000)) {
                                                 dVar38 = local_8->flags;
@@ -1147,8 +1147,8 @@ LAB_0065806e:
                                             }
                                             local_8 = (DArrayTy *)&local_8->iteratorIndex;
                                             local_c = (DArrayTy *)((int)&local_c[-1].data + 3);
-                                          } while (local_c != (DArrayTy *)0x0);
-                                          local_c = (DArrayTy *)0x0;
+                                          } while (local_c != nullptr);
+                                          local_c = nullptr;
                                         }
                                         goto cf_common_join_00659A73;
                                       }
@@ -1173,7 +1173,7 @@ LAB_0065806e:
                                             pSVar16 = thunk_FUN_0042b760((char)local_8->flags,
                                                                          (ushort)local_15c);
                                             uVar17 = uVar32;
-                                            if (pSVar16 == (STGroupBoatC *)0x0) {
+                                            if (pSVar16 == nullptr) {
                                               dVar38 = local_8->flags;
                                               pcVar9 = &DAT_008016a0;
                                               iVar36 = -0xaa;
@@ -1184,7 +1184,7 @@ LAB_00658177:
                                             else {
                                               pAVar14 = (AiFltClassTy *)
                                                         thunk_FUN_00423300((int)pSVar16);
-                                              if (((pAVar14 == (AiFltClassTy *)0x0) ||
+                                              if (((pAVar14 == nullptr) ||
                                                   (pAVar14->field_007B == 1)) ||
                                                  (pAVar14->field_007B == -0x8000)) {
                                                 dVar38 = local_8->flags;
@@ -1205,8 +1205,8 @@ LAB_00658177:
                                             }
                                             local_8 = (DArrayTy *)&local_8->iteratorIndex;
                                             local_c = (DArrayTy *)((int)&local_c[-1].data + 3);
-                                          } while (local_c != (DArrayTy *)0x0);
-                                          local_c = (DArrayTy *)0x0;
+                                          } while (local_c != nullptr);
+                                          local_c = nullptr;
                                         }
                                         goto cf_common_join_00659A73;
                                       }
@@ -1231,7 +1231,7 @@ LAB_00658177:
                                             pSVar16 = thunk_FUN_0042b760((char)local_8->flags,
                                                                          (ushort)local_15c);
                                             uVar17 = uVar32;
-                                            if (pSVar16 == (STGroupBoatC *)0x0) {
+                                            if (pSVar16 == nullptr) {
                                               dVar38 = local_8->flags;
                                               pcVar9 = &DAT_008016a0;
                                               iVar36 = -0xaa;
@@ -1242,7 +1242,7 @@ LAB_00658b70:
                                             else {
                                               pAVar14 = (AiFltClassTy *)
                                                         thunk_FUN_00423300((int)pSVar16);
-                                              if (((pAVar14 == (AiFltClassTy *)0x0) ||
+                                              if (((pAVar14 == nullptr) ||
                                                   (pAVar14->field_007B == 1)) ||
                                                  (pAVar14->field_007B == -0x8000)) {
                                                 dVar38 = local_8->flags;
@@ -1283,8 +1283,8 @@ LAB_00658b70:
                                             }
                                             local_8 = (DArrayTy *)&local_8->iteratorIndex;
                                             local_c = (DArrayTy *)((int)&local_c[-1].data + 3);
-                                          } while (local_c != (DArrayTy *)0x0);
-                                          local_c = (DArrayTy *)0x0;
+                                          } while (local_c != nullptr);
+                                          local_c = nullptr;
                                         }
                                         goto cf_common_join_00659A73;
                                       }
@@ -1311,7 +1311,7 @@ LAB_00658b70:
                                             pSVar16 = thunk_FUN_0042b760((char)local_8->flags,
                                                                          (ushort)local_15c);
                                             uVar17 = uVar32;
-                                            if (pSVar16 == (STGroupBoatC *)0x0) {
+                                            if (pSVar16 == nullptr) {
                                               dVar38 = local_8->flags;
                                               pcVar9 = &DAT_008016a0;
                                               iVar36 = -0xaa;
@@ -1322,7 +1322,7 @@ LAB_00658d01:
                                             else {
                                               local_10 = (AiFltClassTy *)
                                                          thunk_FUN_00423300((int)pSVar16);
-                                              if (((local_10 == (AiFltClassTy *)0x0) ||
+                                              if (((local_10 == nullptr) ||
                                                   (local_10->field_007B == 1)) ||
                                                  (local_10->field_007B == -0x8000)) {
                                                 dVar38 = local_8->flags;
@@ -1352,7 +1352,7 @@ LAB_00658d01:
                                               uStack_52 = (undefined1)((uint)local_150 >> 0x10);
                                               uStack_51 = (undefined1)((uint)local_150 >> 0x18);
                                               pcVar9 = local_148;
-                                              if (local_148 == (char *)0x0) {
+                                              if (local_148 == nullptr) {
                                                 pcVar9 = &DAT_008016a0;
                                               }
                                               Library::MSVCRT::_strncpy
@@ -1373,8 +1373,8 @@ LAB_00658d01:
                                             }
                                             local_8 = (DArrayTy *)&local_8->iteratorIndex;
                                             local_c = (DArrayTy *)((int)&local_c[-1].data + 3);
-                                          } while (local_c != (DArrayTy *)0x0);
-                                          local_c = (DArrayTy *)0x0;
+                                          } while (local_c != nullptr);
+                                          local_c = nullptr;
                                         }
                                         goto cf_common_join_00659A73;
                                       }
@@ -1399,7 +1399,7 @@ LAB_00658d01:
                                             pSVar16 = thunk_FUN_0042b760((char)local_8->flags,
                                                                          (ushort)local_15c);
                                             uVar17 = uVar32;
-                                            if (pSVar16 == (STGroupBoatC *)0x0) {
+                                            if (pSVar16 == nullptr) {
                                               dVar38 = local_8->flags;
                                               pcVar9 = &DAT_008016a0;
                                               iVar36 = -0xaa;
@@ -1410,7 +1410,7 @@ LAB_00658e8e:
                                             else {
                                               pAVar14 = (AiFltClassTy *)
                                                         thunk_FUN_00423300((int)pSVar16);
-                                              if (((pAVar14 == (AiFltClassTy *)0x0) ||
+                                              if (((pAVar14 == nullptr) ||
                                                   (pAVar14->field_007B == 1)) ||
                                                  (pAVar14->field_007B == -0x8000)) {
                                                 dVar38 = local_8->flags;
@@ -1454,8 +1454,8 @@ LAB_00658e8e:
                                             }
                                             local_8 = (DArrayTy *)&local_8->iteratorIndex;
                                             local_c = (DArrayTy *)((int)&local_c[-1].data + 3);
-                                          } while (local_c != (DArrayTy *)0x0);
-                                          local_c = (DArrayTy *)0x0;
+                                          } while (local_c != nullptr);
+                                          local_c = nullptr;
                                         }
                                         goto cf_common_join_00659A73;
                                       }
@@ -1480,7 +1480,7 @@ LAB_00658e8e:
                                             pSVar16 = thunk_FUN_0042b760((char)local_8->flags,
                                                                          (ushort)local_15c);
                                             uVar17 = uVar32;
-                                            if (pSVar16 == (STGroupBoatC *)0x0) {
+                                            if (pSVar16 == nullptr) {
                                               dVar38 = local_8->flags;
                                               pcVar9 = &DAT_008016a0;
                                               iVar36 = -0xaa;
@@ -1491,7 +1491,7 @@ LAB_00658fc8:
                                             else {
                                               pAVar14 = (AiFltClassTy *)
                                                         thunk_FUN_00423300((int)pSVar16);
-                                              if (((pAVar14 == (AiFltClassTy *)0x0) ||
+                                              if (((pAVar14 == nullptr) ||
                                                   (pAVar14->field_007B == 1)) ||
                                                  (pAVar14->field_007B == -0x8000)) {
                                                 dVar38 = local_8->flags;
@@ -1525,8 +1525,8 @@ LAB_00658fc8:
                                             }
                                             local_8 = (DArrayTy *)&local_8->iteratorIndex;
                                             local_c = (DArrayTy *)((int)&local_c[-1].data + 3);
-                                          } while (local_c != (DArrayTy *)0x0);
-                                          local_c = (DArrayTy *)0x0;
+                                          } while (local_c != nullptr);
+                                          local_c = nullptr;
                                         }
                                         goto cf_common_join_00659A73;
                                       }
@@ -1551,7 +1551,7 @@ LAB_00658fc8:
                                             pSVar16 = thunk_FUN_0042b760((char)local_8->flags,
                                                                          (ushort)local_15c);
                                             uVar17 = uVar32;
-                                            if (pSVar16 == (STGroupBoatC *)0x0) {
+                                            if (pSVar16 == nullptr) {
                                               dVar38 = local_8->flags;
                                               pcVar9 = &DAT_008016a0;
                                               iVar36 = -0xaa;
@@ -1562,7 +1562,7 @@ LAB_006582b3:
                                             else {
                                               pAVar14 = (AiFltClassTy *)
                                                         thunk_FUN_00423300((int)pSVar16);
-                                              if ((pAVar14 == (AiFltClassTy *)0x0) ||
+                                              if ((pAVar14 == nullptr) ||
                                                  (pAVar14->field_007B == -0x8000)) {
                                                 dVar38 = local_8->flags;
                                                 pcVar9 = thunk_FUN_00674af0(iVar7);
@@ -1600,8 +1600,8 @@ LAB_006582b3:
                                             }
                                             local_8 = (DArrayTy *)&local_8->iteratorIndex;
                                             local_c = (DArrayTy *)((int)&local_c[-1].data + 3);
-                                          } while (local_c != (DArrayTy *)0x0);
-                                          local_c = (DArrayTy *)0x0;
+                                          } while (local_c != nullptr);
+                                          local_c = nullptr;
                                         }
                                         goto cf_common_join_00659A73;
                                       }
@@ -1626,7 +1626,7 @@ LAB_006582b3:
                                             pSVar16 = thunk_FUN_0042b760((char)local_8->flags,
                                                                          (ushort)local_15c);
                                             uVar17 = uVar32;
-                                            if (pSVar16 == (STGroupBoatC *)0x0) {
+                                            if (pSVar16 == nullptr) {
                                               dVar38 = local_8->flags;
                                               pcVar9 = &DAT_008016a0;
                                               iVar36 = -0xaa;
@@ -1637,7 +1637,7 @@ LAB_00658416:
                                             else {
                                               pAVar14 = (AiFltClassTy *)
                                                         thunk_FUN_00423300((int)pSVar16);
-                                              if (pAVar14 == (AiFltClassTy *)0x0) {
+                                              if (pAVar14 == nullptr) {
                                                 dVar38 = local_8->flags;
                                                 pcVar9 = thunk_FUN_00674af0(iVar7);
                                                 iVar36 = -0xab;
@@ -1678,8 +1678,8 @@ LAB_00658416:
                                             }
                                             local_8 = (DArrayTy *)&local_8->iteratorIndex;
                                             local_c = (DArrayTy *)((int)&local_c[-1].data + 3);
-                                          } while (local_c != (DArrayTy *)0x0);
-                                          local_c = (DArrayTy *)0x0;
+                                          } while (local_c != nullptr);
+                                          local_c = nullptr;
                                         }
                                         goto cf_common_join_00659A73;
                                       }
@@ -1704,7 +1704,7 @@ LAB_00658416:
                                             pSVar16 = thunk_FUN_0042b760((char)local_8->flags,
                                                                          (ushort)local_15c);
                                             uVar17 = uVar32;
-                                            if (pSVar16 == (STGroupBoatC *)0x0) {
+                                            if (pSVar16 == nullptr) {
                                               dVar38 = local_8->flags;
                                               pcVar9 = &DAT_008016a0;
                                               iVar36 = -0xaa;
@@ -1715,7 +1715,7 @@ LAB_00658543:
                                             else {
                                               pAVar14 = (AiFltClassTy *)
                                                         thunk_FUN_00423300((int)pSVar16);
-                                              if (((pAVar14 == (AiFltClassTy *)0x0) ||
+                                              if (((pAVar14 == nullptr) ||
                                                   (pAVar14->field_007B == 1)) ||
                                                  (pAVar14->field_007B == -0x8000)) {
                                                 dVar38 = local_8->flags;
@@ -1747,8 +1747,8 @@ LAB_00658543:
                                             }
                                             local_8 = (DArrayTy *)&local_8->iteratorIndex;
                                             local_c = (DArrayTy *)((int)&local_c[-1].data + 3);
-                                          } while (local_c != (DArrayTy *)0x0);
-                                          local_c = (DArrayTy *)0x0;
+                                          } while (local_c != nullptr);
+                                          local_c = nullptr;
                                         }
                                         goto cf_common_join_00659A73;
                                       }
@@ -1773,7 +1773,7 @@ LAB_00658543:
                                             pSVar16 = thunk_FUN_0042b760((char)local_8->flags,
                                                                          (ushort)local_15c);
                                             uVar17 = uVar32;
-                                            if (pSVar16 == (STGroupBoatC *)0x0) {
+                                            if (pSVar16 == nullptr) {
                                               dVar38 = local_8->flags;
                                               pcVar9 = &DAT_008016a0;
                                               iVar36 = -0xaa;
@@ -1784,7 +1784,7 @@ LAB_00658670:
                                             else {
                                               pAVar14 = (AiFltClassTy *)
                                                         thunk_FUN_00423300((int)pSVar16);
-                                              if (((pAVar14 == (AiFltClassTy *)0x0) ||
+                                              if (((pAVar14 == nullptr) ||
                                                   (pAVar14->field_007B == 1)) ||
                                                  (pAVar14->field_007B == -0x8000)) {
                                                 dVar38 = local_8->flags;
@@ -1816,8 +1816,8 @@ LAB_00658670:
                                             }
                                             local_8 = (DArrayTy *)&local_8->iteratorIndex;
                                             local_c = (DArrayTy *)((int)&local_c[-1].data + 3);
-                                          } while (local_c != (DArrayTy *)0x0);
-                                          local_c = (DArrayTy *)0x0;
+                                          } while (local_c != nullptr);
+                                          local_c = nullptr;
                                         }
                                         goto cf_common_join_00659A73;
                                       }
@@ -1842,7 +1842,7 @@ LAB_00658670:
                                             pSVar16 = thunk_FUN_0042b760((char)local_8->flags,
                                                                          (ushort)local_15c);
                                             uVar17 = uVar32;
-                                            if (pSVar16 == (STGroupBoatC *)0x0) {
+                                            if (pSVar16 == nullptr) {
                                               dVar38 = local_8->flags;
                                               pcVar9 = &DAT_008016a0;
                                               iVar36 = -0xaa;
@@ -1853,7 +1853,7 @@ LAB_006587e2:
                                             else {
                                               pAVar14 = (AiFltClassTy *)
                                                         thunk_FUN_00423300((int)pSVar16);
-                                              if (((pAVar14 == (AiFltClassTy *)0x0) ||
+                                              if (((pAVar14 == nullptr) ||
                                                   (pAVar14->field_007B == 1)) ||
                                                  (pAVar14->field_007B == -0x8000)) {
                                                 dVar38 = local_8->flags;
@@ -1894,8 +1894,8 @@ LAB_006587e2:
                                             }
                                             local_8 = (DArrayTy *)&local_8->iteratorIndex;
                                             local_c = (DArrayTy *)((int)&local_c[-1].data + 3);
-                                          } while (local_c != (DArrayTy *)0x0);
-                                          local_c = (DArrayTy *)0x0;
+                                          } while (local_c != nullptr);
+                                          local_c = nullptr;
                                         }
                                         goto cf_common_join_00659A73;
                                       }
@@ -1920,7 +1920,7 @@ LAB_006587e2:
                                             pSVar16 = thunk_FUN_0042b760((char)local_8->flags,
                                                                          (ushort)local_15c);
                                             uVar17 = uVar32;
-                                            if (pSVar16 == (STGroupBoatC *)0x0) {
+                                            if (pSVar16 == nullptr) {
                                               dVar38 = local_8->flags;
                                               pcVar9 = &DAT_008016a0;
                                               iVar36 = -0xaa;
@@ -1931,7 +1931,7 @@ LAB_006588eb:
                                             else {
                                               pAVar14 = (AiFltClassTy *)
                                                         thunk_FUN_00423300((int)pSVar16);
-                                              if (((pAVar14 == (AiFltClassTy *)0x0) ||
+                                              if (((pAVar14 == nullptr) ||
                                                   (pAVar14->field_007B == 1)) ||
                                                  (pAVar14->field_007B == -0x8000)) {
                                                 dVar38 = local_8->flags;
@@ -1952,8 +1952,8 @@ LAB_006588eb:
                                             }
                                             local_8 = (DArrayTy *)&local_8->iteratorIndex;
                                             local_c = (DArrayTy *)((int)&local_c[-1].data + 3);
-                                          } while (local_c != (DArrayTy *)0x0);
-                                          local_c = (DArrayTy *)0x0;
+                                          } while (local_c != nullptr);
+                                          local_c = nullptr;
                                         }
                                         goto cf_common_join_00659A73;
                                       }
@@ -1978,7 +1978,7 @@ LAB_006588eb:
                                             pSVar16 = thunk_FUN_0042b760((char)local_8->flags,
                                                                          (ushort)local_15c);
                                             uVar17 = uVar32;
-                                            if (pSVar16 == (STGroupBoatC *)0x0) {
+                                            if (pSVar16 == nullptr) {
                                               dVar38 = local_8->flags;
                                               pcVar9 = &DAT_008016a0;
                                               iVar36 = -0xaa;
@@ -1989,7 +1989,7 @@ LAB_006589fe:
                                             else {
                                               pAVar14 = (AiFltClassTy *)
                                                         thunk_FUN_00423300((int)pSVar16);
-                                              if ((pAVar14 == (AiFltClassTy *)0x0) ||
+                                              if ((pAVar14 == nullptr) ||
                                                  (pAVar14->field_007B == -0x8000)) {
                                                 dVar38 = local_8->flags;
                                                 pcVar9 = thunk_FUN_00674af0(iVar7);
@@ -2015,8 +2015,8 @@ LAB_006589fe:
                                             }
                                             local_8 = (DArrayTy *)&local_8->iteratorIndex;
                                             local_c = (DArrayTy *)((int)&local_c[-1].data + 3);
-                                          } while (local_c != (DArrayTy *)0x0);
-                                          local_c = (DArrayTy *)0x0;
+                                          } while (local_c != nullptr);
+                                          local_c = nullptr;
                                         }
                                         goto cf_common_join_00659A73;
                                       }
@@ -2041,7 +2041,7 @@ LAB_006589fe:
                                             pSVar16 = thunk_FUN_0042b760((char)local_8->flags,
                                                                          (ushort)local_15c);
                                             uVar17 = uVar32;
-                                            if (pSVar16 == (STGroupBoatC *)0x0) {
+                                            if (pSVar16 == nullptr) {
                                               dVar38 = local_8->flags;
                                               pcVar9 = &DAT_008016a0;
                                               iVar36 = -0xaa;
@@ -2052,7 +2052,7 @@ LAB_00659143:
                                             else {
                                               pAVar14 = (AiFltClassTy *)
                                                         thunk_FUN_00423300((int)pSVar16);
-                                              if (((pAVar14 == (AiFltClassTy *)0x0) ||
+                                              if (((pAVar14 == nullptr) ||
                                                   (pAVar14->field_007B == 1)) ||
                                                  (pAVar14->field_007B == -0x8000)) {
                                                 dVar38 = local_8->flags;
@@ -2097,8 +2097,8 @@ LAB_00659143:
                                             }
                                             local_8 = (DArrayTy *)&local_8->iteratorIndex;
                                             local_c = (DArrayTy *)((int)&local_c[-1].data + 3);
-                                          } while (local_c != (DArrayTy *)0x0);
-                                          local_c = (DArrayTy *)0x0;
+                                          } while (local_c != nullptr);
+                                          local_c = nullptr;
                                         }
                                         goto cf_common_join_00659A73;
                                       }
@@ -2125,7 +2125,7 @@ LAB_00659143:
                                             pSVar16 = thunk_FUN_0042b760((char)local_8->flags,
                                                                          (ushort)local_15c);
                                             uVar17 = uVar32;
-                                            if (pSVar16 == (STGroupBoatC *)0x0) {
+                                            if (pSVar16 == nullptr) {
                                               dVar38 = local_8->flags;
                                               pcVar9 = &DAT_008016a0;
                                               iVar36 = -0xaa;
@@ -2136,7 +2136,7 @@ LAB_006594ec:
                                             else {
                                               pAVar14 = (AiFltClassTy *)
                                                         thunk_FUN_00423300((int)pSVar16);
-                                              if (((pAVar14 == (AiFltClassTy *)0x0) ||
+                                              if (((pAVar14 == nullptr) ||
                                                   (pAVar14->field_007B == 1)) ||
                                                  (pAVar14->field_007B == -0x8000)) {
                                                 dVar38 = local_8->flags;
@@ -2177,8 +2177,8 @@ LAB_006594ec:
                                             }
                                             local_8 = (DArrayTy *)&local_8->iteratorIndex;
                                             local_c = (DArrayTy *)((int)&local_c[-1].data + 3);
-                                          } while (local_c != (DArrayTy *)0x0);
-                                          local_c = (DArrayTy *)0x0;
+                                          } while (local_c != nullptr);
+                                          local_c = nullptr;
                                         }
                                         goto cf_common_join_00659A73;
                                       }
@@ -2203,7 +2203,7 @@ LAB_006594ec:
                                             pSVar16 = thunk_FUN_0042b760((char)local_8->flags,
                                                                          (ushort)local_15c);
                                             uVar17 = uVar32;
-                                            if (pSVar16 == (STGroupBoatC *)0x0) {
+                                            if (pSVar16 == nullptr) {
                                               dVar38 = local_8->flags;
                                               pcVar9 = &DAT_008016a0;
                                               iVar36 = -0xaa;
@@ -2214,7 +2214,7 @@ LAB_00659640:
                                             else {
                                               pAVar14 = (AiFltClassTy *)
                                                         thunk_FUN_00423300((int)pSVar16);
-                                              if (((pAVar14 == (AiFltClassTy *)0x0) ||
+                                              if (((pAVar14 == nullptr) ||
                                                   (pAVar14->field_007B == 1)) ||
                                                  (pAVar14->field_007B == -0x8000)) {
                                                 dVar38 = local_8->flags;
@@ -2252,8 +2252,8 @@ LAB_00659640:
                                             }
                                             local_8 = (DArrayTy *)&local_8->iteratorIndex;
                                             local_c = (DArrayTy *)((int)&local_c[-1].data + 3);
-                                          } while (local_c != (DArrayTy *)0x0);
-                                          local_c = (DArrayTy *)0x0;
+                                          } while (local_c != nullptr);
+                                          local_c = nullptr;
                                         }
                                         goto cf_common_join_00659A73;
                                       }
@@ -2279,7 +2279,7 @@ LAB_00659640:
                                             pSVar16 = thunk_FUN_0042b760((char)local_8->flags,
                                                                          (ushort)local_15c);
                                             uVar17 = uVar32;
-                                            if (pSVar16 == (STGroupBoatC *)0x0) {
+                                            if (pSVar16 == nullptr) {
                                               dVar38 = local_8->flags;
                                               pcVar9 = &DAT_008016a0;
                                               iVar36 = -0xaa;
@@ -2290,7 +2290,7 @@ LAB_00659785:
                                             else {
                                               pAVar14 = (AiFltClassTy *)
                                                         thunk_FUN_00423300((int)pSVar16);
-                                              if (((pAVar14 == (AiFltClassTy *)0x0) ||
+                                              if (((pAVar14 == nullptr) ||
                                                   (pAVar14->field_007B == 1)) ||
                                                  (pAVar14->field_007B == -0x8000)) {
                                                 dVar38 = local_8->flags;
@@ -2326,8 +2326,8 @@ LAB_00659785:
                                             }
                                             local_8 = (DArrayTy *)&local_8->iteratorIndex;
                                             local_c = (DArrayTy *)((int)&local_c[-1].data + 3);
-                                          } while (local_c != (DArrayTy *)0x0);
-                                          local_c = (DArrayTy *)0x0;
+                                          } while (local_c != nullptr);
+                                          local_c = nullptr;
                                         }
                                         goto cf_common_join_00659A73;
                                       }
@@ -2353,7 +2353,7 @@ LAB_00659785:
                                             pSVar16 = thunk_FUN_0042b760((char)local_8->flags,
                                                                          (ushort)local_15c);
                                             uVar17 = uVar32;
-                                            if (pSVar16 == (STGroupBoatC *)0x0) {
+                                            if (pSVar16 == nullptr) {
                                               dVar38 = local_8->flags;
                                               pcVar9 = &DAT_008016a0;
                                               iVar36 = -0xaa;
@@ -2364,7 +2364,7 @@ LAB_006598ca:
                                             else {
                                               pAVar14 = (AiFltClassTy *)
                                                         thunk_FUN_00423300((int)pSVar16);
-                                              if (((pAVar14 == (AiFltClassTy *)0x0) ||
+                                              if (((pAVar14 == nullptr) ||
                                                   (pAVar14->field_007B == 1)) ||
                                                  (pAVar14->field_007B == -0x8000)) {
                                                 dVar38 = local_8->flags;
@@ -2400,8 +2400,8 @@ LAB_006598ca:
                                             }
                                             local_8 = (DArrayTy *)&local_8->iteratorIndex;
                                             local_c = (DArrayTy *)((int)&local_c[-1].data + 3);
-                                          } while (local_c != (DArrayTy *)0x0);
-                                          local_c = (DArrayTy *)0x0;
+                                          } while (local_c != nullptr);
+                                          local_c = nullptr;
                                         }
                                         goto cf_common_join_00659A73;
                                       }
@@ -2428,7 +2428,7 @@ LAB_006598ca:
                                             pSVar16 = thunk_FUN_0042b760((char)local_8->flags,
                                                                          (ushort)local_15c);
                                             uVar17 = uVar32;
-                                            if (pSVar16 == (STGroupBoatC *)0x0) {
+                                            if (pSVar16 == nullptr) {
                                               dVar38 = local_8->flags;
                                               pcVar9 = &DAT_008016a0;
                                               iVar36 = -0xaa;
@@ -2440,7 +2440,7 @@ LAB_0065937a:
                                               local_10 = (AiFltClassTy *)
                                                          thunk_FUN_00423300((int)pSVar16);
                                               uVar31 = local_140;
-                                              if ((local_10 == (AiFltClassTy *)0x0) ||
+                                              if ((local_10 == nullptr) ||
                                                  (local_10->field_007B == -0x8000)) {
                                                 dVar38 = local_8->flags;
                                                 pcVar9 = thunk_FUN_00674af0(iVar7);
@@ -2450,7 +2450,7 @@ LAB_0065937a:
                                               ppuVar34 = &local_20c;
                                               for (iVar36 = 0x12; puVar15 = local_158, iVar36 != 0;
                                                   iVar36 = iVar36 + -1) {
-                                                *ppuVar34 = (uint *)0x0;
+                                                *ppuVar34 = nullptr;
                                                 ppuVar34 = ppuVar34 + 1;
                                               }
                                               *(undefined2 *)ppuVar34 = 0;
@@ -2479,7 +2479,7 @@ LAB_0065937a:
                                                 }
                                               }
                                               local_1f0 = SUB41(pcVar9,0);
-                                              if (local_144 != (DArrayTy *)0x0) {
+                                              if (local_144 != nullptr) {
                                                 Library::MSVCRT::_strncpy
                                                           (local_1ef,(char *)local_144,0xe);
                                                 uVar31 = local_140;
@@ -2509,8 +2509,8 @@ LAB_0065937a:
                                             }
                                             local_8 = (DArrayTy *)&local_8->iteratorIndex;
                                             local_c = (DArrayTy *)((int)&local_c[-1].data + 3);
-                                          } while (local_c != (DArrayTy *)0x0);
-                                          local_c = (DArrayTy *)0x0;
+                                          } while (local_c != nullptr);
+                                          local_c = nullptr;
                                         }
                                         goto cf_common_join_00659A73;
                                       }
@@ -2537,7 +2537,7 @@ LAB_0065937a:
                                             pSVar16 = thunk_FUN_0042b760((char)local_8->flags,
                                                                          (ushort)local_15c);
                                             uVar17 = uVar32;
-                                            if (pSVar16 == (STGroupBoatC *)0x0) {
+                                            if (pSVar16 == nullptr) {
                                               dVar38 = local_8->flags;
                                               pcVar9 = &DAT_008016a0;
                                               iVar36 = -0xaa;
@@ -2548,7 +2548,7 @@ LAB_00659a1c:
                                             else {
                                               pAVar14 = (AiFltClassTy *)
                                                         thunk_FUN_00423300((int)pSVar16);
-                                              if ((pAVar14 == (AiFltClassTy *)0x0) ||
+                                              if ((pAVar14 == nullptr) ||
                                                  (pAVar14->field_007B != 1)) {
                                                 dVar38 = local_8->flags;
                                                 pcVar9 = thunk_FUN_00674af0(iVar7);
@@ -2590,8 +2590,8 @@ LAB_00659a1c:
                                             }
                                             local_8 = (DArrayTy *)&local_8->iteratorIndex;
                                             local_c = (DArrayTy *)((int)&local_c[-1].data + 3);
-                                          } while (local_c != (DArrayTy *)0x0);
-                                          local_c = (DArrayTy *)0x0;
+                                          } while (local_c != nullptr);
+                                          local_c = nullptr;
                                         }
                                         goto cf_common_join_00659A73;
                                       }
@@ -2669,7 +2669,7 @@ LAB_00659a1c:
                                       }
                                       pDVar25 = (DArrayTy *)&pDVar25->iteratorIndex;
                                       local_c = (DArrayTy *)((int)&local_c[-1].data + 3);
-                                    } while (local_c != (DArrayTy *)0x0);
+                                    } while (local_c != nullptr);
                                   }
                                 }
                               }
@@ -2679,7 +2679,7 @@ LAB_00659a1c:
                             case 0x594:
                               iVar36 = thunk_FUN_0064feb0((int)&local_16c);
                               if (iVar36 == 0) break;
-                              if (local_160 != (DArrayTy *)0x0) {
+                              if (local_160 != nullptr) {
                                 _EnumArt(0,(byte *)pDStack_164,0,0,0,-1,-1,-1,thunk_FUN_0064dd70,
                                          local_160);
                               }
@@ -2748,7 +2748,7 @@ LAB_00659a1c:
                             case 0x59a:
                               iVar36 = thunk_FUN_00650370((int)&local_16c);
                               if (iVar36 == 0) break;
-                              if (local_160 != (DArrayTy *)0x0) {
+                              if (local_160 != nullptr) {
                                 _EnumDest((byte *)pDStack_164,-1,0,0,0,-1,-1,-1,thunk_FUN_0064df70,
                                           local_160);
                               }
@@ -2782,8 +2782,8 @@ LAB_00659a1c:
                                       }
                                       local_8 = (DArrayTy *)&local_8->iteratorIndex;
                                       local_c = (DArrayTy *)((int)&local_c[-1].data + 3);
-                                    } while (local_c != (DArrayTy *)0x0);
-                                    local_c = (DArrayTy *)0x0;
+                                    } while (local_c != nullptr);
+                                    local_c = nullptr;
                                   }
                                   goto cf_common_join_00659A73;
                                 }
@@ -2813,7 +2813,7 @@ LAB_00659a1c:
                                                  (short)local_13c,thunk_FUN_0064e1f0,&local_138);
                                       pDVar25 = (DArrayTy *)&pDVar25->iteratorIndex;
                                       local_c = (DArrayTy *)((int)&local_c[-1].data + 3);
-                                    } while (local_c != (DArrayTy *)0x0);
+                                    } while (local_c != nullptr);
                                   }
                                   goto cf_common_join_00659A73;
                                 }
@@ -2843,7 +2843,7 @@ LAB_00659a1c:
                                                  (short)local_138,thunk_FUN_0064e230,local_15c);
                                       pDVar25 = (DArrayTy *)&pDVar25->iteratorIndex;
                                       local_c = (DArrayTy *)((int)&local_c[-1].data + 3);
-                                    } while (local_c != (DArrayTy *)0x0);
+                                    } while (local_c != nullptr);
                                   }
                                   goto cf_common_join_00659A73;
                                 }
@@ -2871,7 +2871,7 @@ LAB_00659a1c:
                                                          (byte)local_158);
                                       pDVar25 = (DArrayTy *)&pDVar25->iteratorIndex;
                                       local_c = (DArrayTy *)((int)&local_c[-1].data + 3);
-                                    } while (local_c != (DArrayTy *)0x0);
+                                    } while (local_c != nullptr);
                                   }
                                   goto cf_common_join_00659A73;
                                 }
@@ -2897,7 +2897,7 @@ LAB_00659a1c:
                                                          (byte)local_158);
                                       pDVar25 = (DArrayTy *)&pDVar25->iteratorIndex;
                                       local_c = (DArrayTy *)((int)&local_c[-1].data + 3);
-                                    } while (local_c != (DArrayTy *)0x0);
+                                    } while (local_c != nullptr);
                                   }
                                   goto cf_common_join_00659A73;
                                 }
@@ -2920,7 +2920,7 @@ LAB_00659a1c:
                                     do {
                                       local_c = pDVar12;
                                       pAVar13 = thunk_FUN_004357f0((char)local_8->flags);
-                                      if (pAVar13 == (AiPlrClassTy *)0x0) {
+                                      if (pAVar13 == nullptr) {
                                         dVar38 = local_8->flags;
                                         uVar17 = uVar32;
                                         pcVar9 = thunk_FUN_00674af0(iVar7);
@@ -2933,8 +2933,8 @@ LAB_00659a1c:
                                       }
                                       local_8 = (DArrayTy *)&local_8->iteratorIndex;
                                       pDVar12 = (DArrayTy *)((int)&local_c[-1].data + 3);
-                                    } while (pDVar12 != (DArrayTy *)0x0);
-                                    local_c = (DArrayTy *)0x0;
+                                    } while (pDVar12 != nullptr);
+                                    local_c = nullptr;
                                   }
                                   goto cf_common_join_00659A73;
                                 }
@@ -2960,7 +2960,7 @@ LAB_00659a1c:
                                                          (uint)local_158);
                                       pDVar25 = (DArrayTy *)&pDVar25->iteratorIndex;
                                       local_c = (DArrayTy *)((int)&local_c[-1].data + 3);
-                                    } while (local_c != (DArrayTy *)0x0);
+                                    } while (local_c != nullptr);
                                   }
                                   goto cf_common_join_00659A73;
                                 }
@@ -2985,7 +2985,7 @@ LAB_00659a1c:
                                       thunk_FUN_004e75f0(pDVar25->flags);
                                       pDVar25 = (DArrayTy *)&pDVar25->iteratorIndex;
                                       local_c = (DArrayTy *)((int)&local_c[-1].data + 3);
-                                    } while (local_c != (DArrayTy *)0x0);
+                                    } while (local_c != nullptr);
                                   }
                                   goto cf_common_join_00659A73;
                                 }
@@ -3008,7 +3008,7 @@ LAB_00659a1c:
                                     do {
                                       local_c = pDVar12;
                                       pAVar13 = thunk_FUN_004357f0((char)local_8->flags);
-                                      if (pAVar13 == (AiPlrClassTy *)0x0) {
+                                      if (pAVar13 == nullptr) {
                                         dVar38 = local_8->flags;
                                         uVar17 = uVar32;
                                         pcVar9 = thunk_FUN_00674af0(iVar7);
@@ -3019,8 +3019,8 @@ LAB_00659a1c:
                                       }
                                       local_8 = (DArrayTy *)&local_8->iteratorIndex;
                                       pDVar12 = (DArrayTy *)((int)&local_c[-1].data + 3);
-                                    } while (pDVar12 != (DArrayTy *)0x0);
-                                    local_c = (DArrayTy *)0x0;
+                                    } while (pDVar12 != nullptr);
+                                    local_c = nullptr;
                                   }
                                   goto cf_common_join_00659A73;
                                 }
@@ -3043,7 +3043,7 @@ LAB_00659a1c:
                                     do {
                                       local_c = pDVar12;
                                       pAVar13 = thunk_FUN_004357f0((char)local_8->flags);
-                                      if (pAVar13 == (AiPlrClassTy *)0x0) {
+                                      if (pAVar13 == nullptr) {
                                         dVar38 = local_8->flags;
                                         uVar17 = uVar32;
                                         pcVar9 = thunk_FUN_00674af0(iVar7);
@@ -3054,8 +3054,8 @@ LAB_00659a1c:
                                       }
                                       local_8 = (DArrayTy *)&local_8->iteratorIndex;
                                       pDVar12 = (DArrayTy *)((int)&local_c[-1].data + 3);
-                                    } while (pDVar12 != (DArrayTy *)0x0);
-                                    local_c = (DArrayTy *)0x0;
+                                    } while (pDVar12 != nullptr);
+                                    local_c = nullptr;
                                   }
                                   goto cf_common_join_00659A73;
                                 }
@@ -3080,7 +3080,7 @@ LAB_00659a1c:
                                       thunk_FUN_004e7d70(pDVar25->flags);
                                       pDVar25 = (DArrayTy *)&pDVar25->iteratorIndex;
                                       local_c = (DArrayTy *)((int)&local_c[-1].data + 3);
-                                    } while (local_c != (DArrayTy *)0x0);
+                                    } while (local_c != nullptr);
                                   }
                                   goto cf_common_join_00659A73;
                                 }
@@ -3105,7 +3105,7 @@ LAB_00659a1c:
                                       thunk_FUN_004e7e10((uint *)pDVar25->flags);
                                       pDVar25 = (DArrayTy *)&pDVar25->iteratorIndex;
                                       local_c = (DArrayTy *)((int)&local_c[-1].data + 3);
-                                    } while (local_c != (DArrayTy *)0x0);
+                                    } while (local_c != nullptr);
                                   }
                                   goto cf_common_join_00659A73;
                                 }
@@ -3131,7 +3131,7 @@ LAB_00659a1c:
                                                          (uint)local_158,(int)local_154);
                                       pDVar25 = (DArrayTy *)&pDVar25->iteratorIndex;
                                       local_c = (DArrayTy *)((int)&local_c[-1].data + 3);
-                                    } while (local_c != (DArrayTy *)0x0);
+                                    } while (local_c != nullptr);
                                   }
                                   goto cf_common_join_00659A73;
                                 }
@@ -3156,13 +3156,13 @@ LAB_00659a1c:
                                     do {
                                       local_c = (DArrayTy *)0xffffffff;
                                       local_8 = pDVar12;
-                                      if (g_allPlayers_007FA174 == (STAllPlayersC *)0x0) {
-                                        pAVar13 = (AiPlrClassTy *)0x0;
+                                      if (g_allPlayers_007FA174 == nullptr) {
+                                        pAVar13 = nullptr;
                                       }
                                       else {
                                         pAVar13 = thunk_FUN_004357f0((char)pDVar25->flags);
                                       }
-                                      if (pAVar13 != (AiPlrClassTy *)0x0) {
+                                      if (pAVar13 != nullptr) {
                                         local_c = (DArrayTy *)
                                                   SubmarineTitans::Recovered::HiddenThis::
                                                   AnonReceiver_00678E00::thunk_FUN_00679120
@@ -3177,7 +3177,7 @@ LAB_00659a1c:
                                       pDVar25 = (DArrayTy *)&pDVar25->iteratorIndex;
                                       pDVar12 = (DArrayTy *)((int)&local_8[-1].data + 3);
                                       local_8 = pDVar12;
-                                    } while (pDVar12 != (DArrayTy *)0x0);
+                                    } while (pDVar12 != nullptr);
                                   }
                                   goto cf_common_join_00659A73;
                                 }
@@ -3199,14 +3199,14 @@ LAB_00659a1c:
                                     local_8 = &local_34;
                                     do {
                                       local_c = pDVar12;
-                                      if (g_allPlayers_007FA174 == (STAllPlayersC *)0x0) {
-                                        pAVar20 = (AnonShape_00679600_B8E418A8 *)0x0;
+                                      if (g_allPlayers_007FA174 == nullptr) {
+                                        pAVar20 = nullptr;
                                       }
                                       else {
                                         pAVar20 = (AnonShape_00679600_B8E418A8 *)
                                                   thunk_FUN_004357f0((char)local_8->flags);
                                       }
-                                      if (pAVar20 == (AnonShape_00679600_B8E418A8 *)0x0) {
+                                      if (pAVar20 == nullptr) {
                                         dVar38 = local_8->flags;
                                         uVar17 = uVar32;
                                         pcVar9 = thunk_FUN_00674af0(iVar7);
@@ -3219,8 +3219,8 @@ LAB_00659a1c:
                                       }
                                       local_8 = (DArrayTy *)&local_8->iteratorIndex;
                                       pDVar12 = (DArrayTy *)((int)&local_c[-1].data + 3);
-                                    } while (pDVar12 != (DArrayTy *)0x0);
-                                    local_c = (DArrayTy *)0x0;
+                                    } while (pDVar12 != nullptr);
+                                    local_c = nullptr;
                                   }
                                   goto cf_common_join_00659A73;
                                 }
@@ -3242,13 +3242,13 @@ LAB_00659a1c:
                                     local_8 = &local_34;
                                     do {
                                       local_c = pDVar12;
-                                      if (g_allPlayers_007FA174 == (STAllPlayersC *)0x0) {
-                                        pAVar13 = (AiPlrClassTy *)0x0;
+                                      if (g_allPlayers_007FA174 == nullptr) {
+                                        pAVar13 = nullptr;
                                       }
                                       else {
                                         pAVar13 = thunk_FUN_004357f0((char)local_8->flags);
                                       }
-                                      if (pAVar13 == (AiPlrClassTy *)0x0) {
+                                      if (pAVar13 == nullptr) {
                                         dVar38 = local_8->flags;
                                         uVar17 = uVar32;
                                         pcVar9 = thunk_FUN_00674af0(iVar7);
@@ -3261,8 +3261,8 @@ LAB_00659a1c:
                                       }
                                       local_8 = (DArrayTy *)&local_8->iteratorIndex;
                                       pDVar12 = (DArrayTy *)((int)&local_c[-1].data + 3);
-                                    } while (pDVar12 != (DArrayTy *)0x0);
-                                    local_c = (DArrayTy *)0x0;
+                                    } while (pDVar12 != nullptr);
+                                    local_c = nullptr;
                                   }
                                   goto cf_common_join_00659A73;
                                 }
@@ -3292,7 +3292,7 @@ LAB_00659a1c:
                                                                    ,(short)local_148,
                                                                    (short)local_144,(short)local_140
                                                                    ,1);
-                                      if (local_c == (DArrayTy *)0x0) {
+                                      if (local_c == nullptr) {
                                         pAVar37 = local_10->vtable;
                                         uVar17 = uVar32;
                                         pcVar9 = thunk_FUN_00674af0(iVar7);
@@ -3304,8 +3304,8 @@ LAB_00659a1c:
                                       }
                                       local_10 = (AiFltClassTy *)&local_10->field_0x4;
                                       local_8 = (DArrayTy *)((int)&local_8[-1].data + 3);
-                                    } while (local_8 != (DArrayTy *)0x0);
-                                    local_8 = (DArrayTy *)0x0;
+                                    } while (local_8 != nullptr);
+                                    local_8 = nullptr;
                                   }
                                   goto cf_common_join_00659A73;
                                 }
@@ -3335,7 +3335,7 @@ LAB_00659a1c:
                                                                    ,(short)local_148,
                                                                    (short)local_144,(short)local_140
                                                                    ,1);
-                                      if (local_c == (DArrayTy *)0x0) {
+                                      if (local_c == nullptr) {
                                         pAVar37 = local_10->vtable;
                                         uVar17 = uVar32;
                                         pcVar9 = thunk_FUN_00674af0(iVar7);
@@ -3347,8 +3347,8 @@ LAB_00659a1c:
                                       }
                                       local_10 = (AiFltClassTy *)&local_10->field_0x4;
                                       local_8 = (DArrayTy *)((int)&local_8[-1].data + 3);
-                                    } while (local_8 != (DArrayTy *)0x0);
-                                    local_8 = (DArrayTy *)0x0;
+                                    } while (local_8 != nullptr);
+                                    local_8 = nullptr;
                                   }
                                   goto cf_common_join_00659A73;
                                 }
@@ -3379,7 +3379,7 @@ LAB_00659a1c:
                                                                    ,(short)local_148,
                                                                    (short)local_144,(short)local_140
                                                                    ,1);
-                                      if (local_c == (DArrayTy *)0x0) {
+                                      if (local_c == nullptr) {
                                         pAVar37 = local_10->vtable;
                                         uVar17 = uVar32;
                                         pcVar9 = thunk_FUN_00674af0(iVar7);
@@ -3391,8 +3391,8 @@ LAB_00659a1c:
                                       }
                                       local_10 = (AiFltClassTy *)&local_10->field_0x4;
                                       local_8 = (DArrayTy *)((int)&local_8[-1].data + 3);
-                                    } while (local_8 != (DArrayTy *)0x0);
-                                    local_8 = (DArrayTy *)0x0;
+                                    } while (local_8 != nullptr);
+                                    local_8 = nullptr;
                                   }
                                   goto cf_common_join_00659A73;
                                 }
@@ -3447,7 +3447,7 @@ LAB_00659a1c:
                                     pDVar12 = &local_34;
                                     do {
                                       if (pDVar12->flags == (uint)DAT_0080874d) {
-                                        if (g_opticClass_007FB2A0 != (OpticClassC *)0x0) {
+                                        if (g_opticClass_007FB2A0 != nullptr) {
                                           thunk_FUN_004aaf60((int)local_15c);
                                         }
                                         break;
@@ -3494,7 +3494,7 @@ LAB_00659a1c:
                                             do {
                                               puVar11 = (undefined1 *)
                                                         thunk_FUN_0064e510(this_00,(int)pDVar12);
-                                              if (puVar11 != (undefined1 *)0x0) {
+                                              if (puVar11 != nullptr) {
                                                 *puVar11 = 0;
                                               }
                                               pDVar12 = (DArrayTy *)((int)&pDVar12->flags + 1);
@@ -3513,8 +3513,8 @@ LAB_00659a1c:
                                         local_8 = &local_34;
                                         do {
                                           local_c = pDVar12;
-                                          if (g_allPlayers_007FA174 == (STAllPlayersC *)0x0) {
-                                            local_10 = (AiFltClassTy *)0x0;
+                                          if (g_allPlayers_007FA174 == nullptr) {
+                                            local_10 = nullptr;
                                           }
                                           else {
                                             local_10 = (AiFltClassTy *)
@@ -3523,11 +3523,11 @@ LAB_00659a1c:
                                           pDVar12 = local_15c;
                                           if ((int)local_15c <= (int)local_158) {
                                             do {
-                                              if (local_10 != (AiFltClassTy *)0x0) {
+                                              if (local_10 != nullptr) {
                                                 puVar11 = (undefined1 *)
                                                           thunk_FUN_0064e510(&local_10->field_001C,
                                                                              (int)pDVar12);
-                                                if (puVar11 != (undefined1 *)0x0) {
+                                                if (puVar11 != nullptr) {
                                                   *puVar11 = 0;
                                                 }
                                               }
@@ -3536,8 +3536,8 @@ LAB_00659a1c:
                                           }
                                           local_8 = (DArrayTy *)&local_8->iteratorIndex;
                                           pDVar12 = (DArrayTy *)((int)&local_c[-1].data + 3);
-                                        } while (pDVar12 != (DArrayTy *)0x0);
-                                        local_c = (DArrayTy *)0x0;
+                                        } while (pDVar12 != nullptr);
+                                        local_c = nullptr;
                                       }
                                     }
                                   }
@@ -3551,7 +3551,7 @@ LAB_00659a1c:
                                     }
                                     else {
                                       pDVar12 = local_160;
-                                      if (pDStack_164 == (DArrayTy *)0x0)
+                                      if (pDStack_164 == nullptr)
                                       goto cf_continue_loop_00659A80;
                                     }
                                   }
@@ -3566,7 +3566,7 @@ LAB_00659a1c:
                                       pcVar9 = thunk_FUN_00674af0(0x515);
                                       thunk_FUN_0064d0e0(this_00,-0x7d,pcVar9,uVar17,iVar7);
                                     }
-                                    else if (pDStack_164 == (DArrayTy *)0x0) {
+                                    else if (pDStack_164 == nullptr) {
                                       *(undefined1 *)local_178 = 0;
                                       local_178->field_000B = 0;
                                     }
@@ -3594,7 +3594,7 @@ LAB_00659a1c:
                                           do {
                                             puVar11 = (undefined1 *)
                                                       thunk_FUN_0064e510(this_00,(int)pDVar12);
-                                            if (puVar11 != (undefined1 *)0x0) {
+                                            if (puVar11 != nullptr) {
                                               *puVar11 = 1;
                                               *(byte **)(puVar11 + 0xb) = local_154;
                                             }
@@ -3614,8 +3614,8 @@ LAB_00659a1c:
                                       local_8 = &local_34;
                                       local_c = pDVar12;
                                       do {
-                                        if (g_allPlayers_007FA174 == (STAllPlayersC *)0x0) {
-                                          local_10 = (AiFltClassTy *)0x0;
+                                        if (g_allPlayers_007FA174 == nullptr) {
+                                          local_10 = nullptr;
                                         }
                                         else {
                                           local_10 = (AiFltClassTy *)
@@ -3624,11 +3624,11 @@ LAB_00659a1c:
                                         pDVar12 = local_15c;
                                         if ((int)local_15c <= (int)local_158) {
                                           do {
-                                            if (local_10 != (AiFltClassTy *)0x0) {
+                                            if (local_10 != nullptr) {
                                               puVar11 = (undefined1 *)
                                                         thunk_FUN_0064e510(&local_10->field_001C,
                                                                            (int)pDVar12);
-                                              if (puVar11 != (undefined1 *)0x0) {
+                                              if (puVar11 != nullptr) {
                                                 *puVar11 = 1;
                                                 *(byte **)(puVar11 + 0xb) = local_154;
                                               }
@@ -3638,8 +3638,8 @@ LAB_00659a1c:
                                         }
                                         local_8 = (DArrayTy *)&local_8->iteratorIndex;
                                         local_c = (DArrayTy *)((int)&local_c[-1].data + 3);
-                                      } while (local_c != (DArrayTy *)0x0);
-                                      local_c = (DArrayTy *)0x0;
+                                      } while (local_c != nullptr);
+                                      local_c = nullptr;
                                     }
                                   }
                                 }
@@ -3672,13 +3672,13 @@ LAB_00659a1c:
                                       local_c = pDVar12;
                                       do {
                                         local_c = pDVar12;
-                                        if (g_allPlayers_007FA174 == (STAllPlayersC *)0x0) {
-                                          pAVar13 = (AiPlrClassTy *)0x0;
+                                        if (g_allPlayers_007FA174 == nullptr) {
+                                          pAVar13 = nullptr;
                                         }
                                         else {
                                           pAVar13 = thunk_FUN_004357f0((char)pDVar25->flags);
                                         }
-                                        if (pAVar13 == (AiPlrClassTy *)0x0) {
+                                        if (pAVar13 == nullptr) {
                                           dVar38 = pDVar25->flags;
                                           uVar17 = uVar32;
                                           pcVar9 = thunk_FUN_00674af0(0x518);
@@ -3691,7 +3691,7 @@ LAB_00659a1c:
                                         pDVar25 = (DArrayTy *)&pDVar25->iteratorIndex;
                                         pDVar12 = (DArrayTy *)((int)&local_c[-1].data + 3);
                                         local_c = pDVar12;
-                                      } while (pDVar12 != (DArrayTy *)0x0);
+                                      } while (pDVar12 != nullptr);
                                     }
                                   }
                                 }
@@ -3712,7 +3712,7 @@ LAB_00659a1c:
                               if (iVar7 == 0x3e) {
 switchD_00652b42_switchD:
                                 switch(local_15c) {
-                                case (DArrayTy *)0x0:
+                                case nullptr:
                                   iVar36 = thunk_FUN_0064ea10((int)&local_16c);
                                   if (iVar36 == 0) goto cf_common_join_00652A99;
                                   switch(iVar7) {
@@ -3726,7 +3726,7 @@ switchD_00652b42_switchD:
                                          local_160;
                                     break;
                                   case 0x17:
-                                    if (local_160 == (DArrayTy *)0x0) {
+                                    if (local_160 == nullptr) {
                                       thunk_FUN_0064d0e0(this_00,-0x67,&DAT_008016a0,uVar32,-1);
                                     }
                                     else {
@@ -3736,7 +3736,7 @@ switchD_00652b42_switchD:
                                     }
                                     break;
                                   case 0x2d:
-                                    if (local_160 == (DArrayTy *)0x0) {
+                                    if (local_160 == nullptr) {
                                       thunk_FUN_0064d0e0(this_00,-0x67,&DAT_008016a0,uVar32,-1);
                                     }
                                     else {
@@ -3768,7 +3768,7 @@ switchD_00652b42_switchD:
                                     (&DAT_0080e43b)[(int)pDStack_164] = local_160;
                                     break;
                                   case 0x17:
-                                    if (local_160 == (DArrayTy *)0x0) {
+                                    if (local_160 == nullptr) {
                                       thunk_FUN_0064d0e0(this_00,-0x67,&DAT_008016a0,uVar32,-1);
                                     }
                                     else {
@@ -3777,7 +3777,7 @@ switchD_00652b42_switchD:
                                     }
                                     break;
                                   case 0x2d:
-                                    if (local_160 == (DArrayTy *)0x0) {
+                                    if (local_160 == nullptr) {
                                       thunk_FUN_0064d0e0(this_00,-0x67,&DAT_008016a0,uVar32,-1);
                                     }
                                     else {
@@ -3807,7 +3807,7 @@ switchD_00652b42_switchD:
                                     (&this_00->field_052F)[(int)pDStack_164] = local_160;
                                     break;
                                   case 0x17:
-                                    if (local_160 == (DArrayTy *)0x0) {
+                                    if (local_160 == nullptr) {
                                       thunk_FUN_0064d0e0(this_00,-0x67,&DAT_008016a0,uVar32,-1);
                                     }
                                     else {
@@ -3817,7 +3817,7 @@ switchD_00652b42_switchD:
                                     }
                                     break;
                                   case 0x2d:
-                                    if (local_160 == (DArrayTy *)0x0) {
+                                    if (local_160 == nullptr) {
                                       thunk_FUN_0064d0e0(this_00,-0x67,&DAT_008016a0,uVar32,-1);
                                     }
                                     else {
@@ -3872,7 +3872,7 @@ switchD_00652b42_switchD:
                               case 0x23:
                                 iVar36 = thunk_FUN_0064e680((int)&local_16c);
                                 if (iVar36 == 0) goto cf_common_join_00652A99;
-                                if (pDStack_164 == (DArrayTy *)0x0) {
+                                if (pDStack_164 == nullptr) {
                                   local_170 = local_160;
                                   pDVar12 = local_170;
                                   goto cf_continue_loop_00659A80;
@@ -3905,14 +3905,14 @@ switchD_00652b42_switchD:
                                     local_c = pDVar12;
                                     pCVar23 = g_cPanel_00801688;
                                     do {
-                                      if (pCVar23 != (CPanelTy *)0x0) {
+                                      if (pCVar23 != nullptr) {
                                         CPanelTy::sub_004F9120
                                                   (pCVar23,(byte)pDVar25->flags,'\x01',local_15c);
                                         pCVar23 = g_cPanel_00801688;
                                       }
                                       pDVar25 = (DArrayTy *)&pDVar25->iteratorIndex;
                                       local_c = (DArrayTy *)((int)&local_c[-1].data + 3);
-                                    } while (local_c != (DArrayTy *)0x0);
+                                    } while (local_c != nullptr);
                                   }
                                   break;
                                 }
@@ -3936,14 +3936,14 @@ switchD_00652b42_switchD:
                                     pCVar23 = g_cPanel_00801688;
                                     do {
                                       local_c = pDVar12;
-                                      if (pCVar23 != (CPanelTy *)0x0) {
+                                      if (pCVar23 != nullptr) {
                                         CPanelTy::sub_004F9120(pCVar23,(byte)pDVar25->flags,'\0',0);
                                         pCVar23 = g_cPanel_00801688;
                                       }
                                       pDVar25 = (DArrayTy *)&pDVar25->iteratorIndex;
                                       pDVar12 = (DArrayTy *)((int)&local_c[-1].data + 3);
                                       local_c = pDVar12;
-                                    } while (pDVar12 != (DArrayTy *)0x0);
+                                    } while (pDVar12 != nullptr);
                                   }
                                   break;
                                 }
@@ -3965,7 +3965,7 @@ switchD_00652b42_switchD:
                                     pDVar12 = &local_34;
                                     do {
                                       if (pDVar12->flags == (uint)DAT_0080874d) {
-                                        if (g_cPanel_00801688 != (CPanelTy *)0x0) {
+                                        if (g_cPanel_00801688 != nullptr) {
                                           thunk_FUN_004f9260((char)local_15c);
                                         }
                                         break;
@@ -3981,7 +3981,7 @@ switchD_00652b42_switchD:
                             case 0x532:
                               iVar36 = thunk_FUN_0064ebe0((int)&local_16c);
                               if (iVar36 == 0) goto cf_common_join_00652A99;
-                              if (g_popUp_008016D8 != (PopUpTy *)0x0) {
+                              if (g_popUp_008016D8 != nullptr) {
                                 if (pDStack_164 == (DArrayTy *)0x9) {
                                   /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
                                   iVar7 = (*(code *)this_00->field_0000->field_0018)();
@@ -4016,7 +4016,7 @@ switchD_00652b42_switchD:
                                 /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
                                 iVar7 = (*(code *)this_00->field_0000->field_0018)();
                                 if (iVar7 == 8) {
-                                  if (DAT_00801694 != (void *)0x0) {
+                                  if (DAT_00801694 != nullptr) {
                                     thunk_FUN_0051fac0(DAT_00801694,(char *)local_154,2,
                                                        (char)local_158,(int)local_15c * 1000);
                                   }
@@ -4032,7 +4032,7 @@ switchD_00652b42_switchD:
                                 pDVar12 = &local_34;
                                 do {
                                   if (pDVar12->flags == (uint)DAT_0080874d) {
-                                    if (DAT_00801694 != (void *)0x0) {
+                                    if (DAT_00801694 != nullptr) {
                                       thunk_FUN_0051fac0(DAT_00801694,(char *)local_154,2,
                                                          (char)local_158,(int)local_15c * 1000);
                                     }
@@ -4051,7 +4051,7 @@ switchD_00652b42_switchD:
                                 iVar7 = (*(code *)this_00->field_0000->field_0018)();
                                 if (iVar7 == 8) {
 LAB_006536dd:
-                                  if (g_cPanel_00801688 != (CPanelTy *)0x0) {
+                                  if (g_cPanel_00801688 != nullptr) {
                                     CPanelTy::OutText(g_cPanel_00801688,(int)local_158,
                                                       (int)(local_154 + (1 - (int)local_158)),
                                                       local_15c);
@@ -4081,7 +4081,7 @@ LAB_006536dd:
                                 iVar7 = (*(code *)this_00->field_0000->field_0018)();
                                 if (iVar7 == 8) {
 LAB_00653778:
-                                  if (g_cPanel_00801688 != (CPanelTy *)0x0) {
+                                  if (g_cPanel_00801688 != nullptr) {
                                     CPanelTy::OutText(g_cPanel_00801688,(char *)local_158,local_15c);
                                   }
                                   break;
@@ -4110,7 +4110,7 @@ LAB_00653778:
                                 if (iVar7 == 8) {
                                   SoundClassTy::PlaySound
                                             ((SoundClassTy *)&g_sound,SOUND_MODE_12,
-                                             (char *)local_15c,0,(SoundPosition *)0x0,0);
+                                             (char *)local_15c,0,nullptr,0);
                                   break;
                                 }
                               }
@@ -4125,7 +4125,7 @@ LAB_00653778:
                                   if (pDVar12->flags == (uint)DAT_0080874d) {
                                     SoundClassTy::PlaySound
                                               ((SoundClassTy *)&g_sound,SOUND_MODE_12,
-                                               (char *)local_15c,0,(SoundPosition *)0x0,0);
+                                               (char *)local_15c,0,nullptr,0);
                                     break;
                                   }
                                   iVar36 = iVar36 + 1;
@@ -4140,7 +4140,7 @@ LAB_00653778:
                                 /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
                                 iVar7 = (*(code *)this_00->field_0000->field_0018)();
                                 if (iVar7 == 8) {
-                                  if (g_cPanel_00801688 != (CPanelTy *)0x0) {
+                                  if (g_cPanel_00801688 != nullptr) {
                                     CPanelTy::PlayBriefing(g_cPanel_00801688,(char *)local_15c);
                                   }
                                   break;
@@ -4155,7 +4155,7 @@ LAB_00653778:
                                 pDVar12 = &local_34;
                                 do {
                                   if (pDVar12->flags == (uint)DAT_0080874d) {
-                                    if (g_cPanel_00801688 != (CPanelTy *)0x0) {
+                                    if (g_cPanel_00801688 != nullptr) {
                                       CPanelTy::PlayBriefing(g_cPanel_00801688,(char *)local_15c);
                                     }
                                     break;
@@ -4181,7 +4181,7 @@ LAB_00653778:
                                     pDVar12 = &local_34;
                                     do {
                                       if (pDVar12->flags == (uint)DAT_0080874d) {
-                                        if (g_visibleClass_00802A88 != (VisibleClassTy *)0x0) {
+                                        if (g_visibleClass_00802A88 != nullptr) {
                                           if ((int)local_14c < 0) {
                                             iVar7 = -0x10;
                                           }
@@ -4221,7 +4221,7 @@ LAB_00653778:
                                     pDVar12 = &local_34;
                                     do {
                                       if (pDVar12->flags == (uint)DAT_0080874d) {
-                                        if (g_visibleClass_00802A88 == (VisibleClassTy *)0x0) break;
+                                        if (g_visibleClass_00802A88 == nullptr) break;
                                         if (g_visibleClass_00802A88->field_0114 == 0) {
                                           g_visibleClass_00802A88->field_00F8 = 0;
                                         }
@@ -4264,7 +4264,7 @@ LAB_00653778:
                                     pDVar12 = &local_34;
                                     do {
                                       if (pDVar12->flags == (uint)DAT_0080874d) {
-                                        if (g_opticClass_007FB2A0 != (OpticClassC *)0x0) {
+                                        if (g_opticClass_007FB2A0 != nullptr) {
                                           thunk_FUN_004ab530((int)local_154,&local_15c->flags,
                                                              (int)local_158);
                                         }
@@ -4295,10 +4295,10 @@ LAB_00653778:
                                     pDVar12 = &local_34;
 LAB_00653bb7:
                                     if (pDVar12->flags != (uint)DAT_0080874d) goto code_r0x00653bbb;
-                                    if (g_opticClass_007FB2A0 != (OpticClassC *)0x0) {
+                                    if (g_opticClass_007FB2A0 != nullptr) {
                                       memset(local_1c0, 0, 0x20); /* compiler bulk-zero initialization */
                                       switch(local_15c) {
-                                      case (DArrayTy *)0x0:
+                                      case nullptr:
                                         local_1b0 = 0x104;
                                         break;
                                       case (DArrayTy *)0x1:
@@ -4345,7 +4345,7 @@ LAB_00653bb7:
                                     pDVar12 = &local_34;
                                     do {
                                       if (pDVar12->flags == (uint)DAT_0080874d) {
-                                        if (g_opticClass_007FB2A0 != (OpticClassC *)0x0) {
+                                        if (g_opticClass_007FB2A0 != nullptr) {
                                           memset(local_1c0, 0, 0x20); /* compiler bulk-zero initialization */
                                           iVar36 = 0;
                                           local_1b0 = (iVar7 != 0x54b) + 0x100;
@@ -4422,7 +4422,7 @@ LAB_00653bb7:
                                     }
                                     pDVar25 = (DArrayTy *)&pDVar25->iteratorIndex;
                                     local_c = (DArrayTy *)((int)&local_c[-1].data + 3);
-                                  } while (local_c != (DArrayTy *)0x0);
+                                  } while (local_c != nullptr);
                                 }
                                 goto cf_common_join_00659A73;
                               }
@@ -4447,11 +4447,11 @@ LAB_00653bb7:
                                       if (((char)local_15c->flags != '\0') &&
                                          ((DAT_008087a0 == '\x03' || (DAT_008087a0 == '\b')))) {
                                         Library::MSVCRT::FUN_0072e730
-                                                  (&DAT_0080ef1e,(byte *)0x0,local_384,(byte *)0x0,
-                                                   (byte *)0x0);
+                                                  (&DAT_0080ef1e,nullptr,local_384,nullptr,
+                                                   nullptr);
                                         Library::MSVCRT::__makepath
-                                                  (&DAT_0080c632,(char *)0x0,(char *)local_384,
-                                                   (char *)local_15c,(char *)0x0);
+                                                  (&DAT_0080c632,nullptr,(char *)local_384,
+                                                   (char *)local_15c,nullptr);
                                       }
                                       break;
                                     }
@@ -4545,11 +4545,11 @@ LAB_006540b9:
                                       DAT_0080e43a = local_138._0_1_;
                                       if (DAT_008087a0 == '\x03') {
                                         Library::MSVCRT::FUN_0072e730
-                                                  (&DAT_0080ef1e,(byte *)0x0,local_484,(byte *)0x0,
-                                                   (byte *)0x0);
+                                                  (&DAT_0080ef1e,nullptr,local_484,nullptr,
+                                                   nullptr);
                                         Library::MSVCRT::__makepath
-                                                  ((char *)&DAT_0080f33a,(char *)0x0,
-                                                   (char *)local_484,(char *)local_158,(char *)0x0);
+                                                  ((char *)&DAT_0080f33a,nullptr,
+                                                   (char *)local_484,(char *)local_158,nullptr);
                                         wsprintfA(&DAT_0080e323,"%s%s",&DAT_00807784,
                                                   &DAT_0080f33a);
                                       }
@@ -4586,7 +4586,7 @@ LAB_006540b9:
                                       iVar7 = Library::DKW::TBL::FUN_006b5aa0
                                                         (&g_dArray_0080C4CB->flags,(char *)local_158
                                                         );
-                                      if (g_optPanel_008016DC != (OptPanelTy *)0x0) {
+                                      if (g_optPanel_008016DC != nullptr) {
                                         OptPanelTy::UpdateObjectives(g_optPanel_008016DC);
                                       }
                                       if (-1 < iVar7) {
@@ -4620,7 +4620,7 @@ LAB_00654362:
                                   if (pDVar12->flags != (uint)DAT_0080874d) goto code_r0x00654366;
                                   FUN_006c87c0(g_dArray_0080C4CB,(uint)local_15c);
 LAB_00654386:
-                                  if (g_optPanel_008016DC != (OptPanelTy *)0x0) {
+                                  if (g_optPanel_008016DC != nullptr) {
                                     OptPanelTy::UpdateObjectives(g_optPanel_008016DC);
                                   }
                                 }
@@ -4644,11 +4644,11 @@ LAB_00654386:
                                   pDVar12 = &local_34;
                                   do {
                                     if (pDVar12->flags == (uint)DAT_0080874d) {
-                                      if (g_dArray_0080C4CB != (DArrayTy *)0x0) {
+                                      if (g_dArray_0080C4CB != nullptr) {
                                         FUN_006b5570(g_dArray_0080C4CB);
                                       }
                                       g_dArray_0080C4CB =
-                                           Library::DKW::TBL::SArrayCreate((DArrayTy *)0x0,10,10);
+                                           Library::DKW::TBL::SArrayCreate(nullptr,10,10);
                                       goto LAB_00654386;
                                     }
                                     iVar36 = iVar36 + 1;
@@ -4675,9 +4675,9 @@ LAB_00654386:
                                   pDVar12 = &local_34;
                                   do {
                                     if (pDVar12->flags == (uint)DAT_0080874d) {
-                                      if (g_dArray_0080C4C7 == (DArrayTy *)0x0) {
+                                      if (g_dArray_0080C4C7 == nullptr) {
                                         g_dArray_0080C4C7 =
-                                             Library::DKW::TBL::SArrayCreate((DArrayTy *)0x0,10,10);
+                                             Library::DKW::TBL::SArrayCreate(nullptr,10,10);
                                       }
                                       iVar7 = Library::DKW::TBL::FUN_006b5aa0
                                                         (&g_dArray_0080C4C7->flags,(char *)local_158
@@ -4711,7 +4711,7 @@ LAB_00654386:
                                   pDVar12 = &local_34;
                                   do {
                                     if (pDVar12->flags == (uint)DAT_0080874d) {
-                                      if (g_dArray_0080C4C7 != (DArrayTy *)0x0) {
+                                      if (g_dArray_0080C4C7 != nullptr) {
                                         FUN_006c87c0(g_dArray_0080C4C7,(uint)local_15c);
                                       }
                                       break;
@@ -4740,11 +4740,11 @@ LAB_00654386:
                                   pDVar12 = &local_34;
                                   do {
                                     if (pDVar12->flags == (uint)DAT_0080874d) {
-                                      if (g_dArray_0080C4C7 != (DArrayTy *)0x0) {
+                                      if (g_dArray_0080C4C7 != nullptr) {
                                         FUN_006b5570(g_dArray_0080C4C7);
                                       }
                                       g_dArray_0080C4C7 =
-                                           Library::DKW::TBL::SArrayCreate((DArrayTy *)0x0,10,10);
+                                           Library::DKW::TBL::SArrayCreate(nullptr,10,10);
                                       break;
                                     }
                                     iVar36 = iVar36 + 1;
@@ -4789,11 +4789,11 @@ LAB_00654386:
                                       pDVar12 = (DArrayTy *)&pDVar12->iteratorIndex;
                                       pAVar14 = (AiFltClassTy *)((int)&local_c[-1].data + 3);
                                       local_c = (DArrayTy *)pAVar14;
-                                    } while (pAVar14 != (AiFltClassTy *)0x0);
+                                    } while (pAVar14 != nullptr);
                                   }
                                   pPVar3 = g_playPanel_008016E4;
-                                  if ((g_playPanel_008016E4 != (PlayPanelTy *)0x0) &&
-                                     (local_10 != (AiFltClassTy *)0x0)) {
+                                  if ((g_playPanel_008016E4 != nullptr) &&
+                                     (local_10 != nullptr)) {
                                     local_8 = (DArrayTy *)&g_playPanel_008016E4->field_0181;
                                     g_playPanel_008016E4->field_0028 = 5;
                                     local_c = (DArrayTy *)0x8;
@@ -4804,8 +4804,8 @@ LAB_00654386:
                                       }
                                       local_8 = (DArrayTy *)&local_8->iteratorIndex;
                                       local_c = (DArrayTy *)((int)&local_c[-1].data + 3);
-                                    } while (local_c != (DArrayTy *)0x0);
-                                    local_c = (DArrayTy *)0x0;
+                                    } while (local_c != nullptr);
+                                    local_c = nullptr;
                                   }
                                   goto cf_common_join_00659A73;
                                 }
@@ -4832,11 +4832,11 @@ LAB_00654386:
                                                        (char)local_15c);
                                     pDVar12 = (DArrayTy *)&pDVar12->iteratorIndex;
                                     local_c = (DArrayTy *)((int)&local_c[-1].data + 3);
-                                  } while (local_c != (DArrayTy *)0x0);
+                                  } while (local_c != nullptr);
                                 }
                                 pPVar3 = g_playPanel_008016E4;
-                                if ((g_playPanel_008016E4 != (PlayPanelTy *)0x0) &&
-                                   (local_10 != (AiFltClassTy *)0x0)) {
+                                if ((g_playPanel_008016E4 != nullptr) &&
+                                   (local_10 != nullptr)) {
                                   local_8 = (DArrayTy *)&g_playPanel_008016E4->field_0181;
                                   g_playPanel_008016E4->field_0028 = 5;
                                   local_c = (DArrayTy *)0x8;
@@ -4847,8 +4847,8 @@ LAB_00654386:
                                     }
                                     local_8 = (DArrayTy *)&local_8->iteratorIndex;
                                     local_c = (DArrayTy *)((int)&local_c[-1].data + 3);
-                                  } while (local_c != (DArrayTy *)0x0);
-                                  local_c = (DArrayTy *)0x0;
+                                  } while (local_c != nullptr);
+                                  local_c = nullptr;
                                 }
                                 goto cf_common_join_00659A73;
                               }
@@ -4909,7 +4909,7 @@ LAB_00654386:
                                     thunk_FUN_004d86a0(pDVar25->flags,(int)pDVar12);
                                     pDVar25 = (DArrayTy *)&pDVar25->iteratorIndex;
                                     local_c = (DArrayTy *)((int)&local_c[-1].data + 3);
-                                  } while (local_c != (DArrayTy *)0x0);
+                                  } while (local_c != nullptr);
                                 }
                                 goto cf_common_join_00659A73;
                               }
@@ -4943,7 +4943,7 @@ LAB_00654386:
                                                       );
                                     pDVar25 = (DArrayTy *)&pDVar25->iteratorIndex;
                                     local_c = (DArrayTy *)((int)&local_c[-1].data + 3);
-                                  } while (local_c != (DArrayTy *)0x0);
+                                  } while (local_c != nullptr);
                                 }
                                 goto cf_common_join_00659A73;
                               }
@@ -4980,15 +4980,15 @@ LAB_00654386:
                                   local_c = pDVar12;
                                   do {
                                     dVar38 = pDVar25->flags;
-                                    cVar5 = (&DAT_008087e8)[dVar38 * 0x51];
+                                    bVar1 = g_bulkInitializedRecords_008087C7[dVar38].field_0021;
                                     uVar27 = (undefined2)((uint)local_150 >> 0x10);
-                                    if (cVar5 == '\x01') {
+                                    if (bVar1 == 1) {
                                       if ((int)local_8 < 3) {
                                         if (local_8 == (DArrayTy *)0x2) {
                                           /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
                                           __CreateObjPl(this_00,CONCAT22(uVar27,(short)pDVar25->
                                                   flags),0xc,(short *)local_158,(short *)local_154,
-                                                  (short *)local_150,0xfffe,0xffffffff,(char *)0x0,
+                                                  (short *)local_150,0xfffe,0xffffffff,nullptr,
                                                   100,1,0,0);
                                           /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
                                           __CreateObjPl(this_00,CONCAT22((short)((uint)local_150 >>
@@ -4996,41 +4996,41 @@ LAB_00654386:
                                                                          (short)pDVar25->flags),1,
                                                         (short *)local_158,(short *)local_154,
                                                         (short *)local_150,0xfffe,0xffffffff,
-                                                        (char *)0x0,100,1,0,0);
+                                                        nullptr,100,1,0,0);
                                           /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
                                           __CreateObjPl(this_00,CONCAT22((short)((uint)local_150 >>
                                                                                 0x10),
                                                                          (short)pDVar25->flags),1,
                                                         (short *)local_158,(short *)local_154,
                                                         (short *)local_150,0xfffe,0xffffffff,
-                                                        (char *)0x0,100,1,0,0);
+                                                        nullptr,100,1,0,0);
                                           /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
                                           __CreateObjPl(this_00,CONCAT22((short)((uint)local_150 >>
                                                                                 0x10),
                                                                          (short)pDVar25->flags),2,
                                                         (short *)local_158,(short *)local_154,
                                                         (short *)local_150,0xfffe,0xffffffff,
-                                                        (char *)0x0,100,1,0,0);
+                                                        nullptr,100,1,0,0);
                                           /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
                                           __CreateObjPl(this_00,CONCAT22((short)((uint)local_150 >>
                                                                                 0x10),
                                                                          (short)pDVar25->flags),3,
                                                         (short *)local_158,(short *)local_154,
                                                         (short *)local_150,0xfffe,0xffffffff,
-                                                        (char *)0x0,100,1,0,0);
+                                                        nullptr,100,1,0,0);
                                           /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
                                           __CreateObjPl(this_00,CONCAT22((short)((uint)local_150 >>
                                                                                 0x10),
                                                                          (short)pDVar25->flags),6,
                                                         (short *)local_158,(short *)local_154,
                                                         (short *)local_150,0xfffe,0xffffffff,
-                                                        (char *)0x0,100,1,0,0);
+                                                        nullptr,100,1,0,0);
                                         }
-                                        else if (local_8 == (DArrayTy *)0x0) {
+                                        else if (local_8 == nullptr) {
                                           /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
                                           __CreateObjPl(this_00,CONCAT22(uVar27,(short)pDVar25->
                                                   flags),0xc,(short *)local_158,(short *)local_154,
-                                                  (short *)local_150,0xfffe,0xffffffff,(char *)0x0,
+                                                  (short *)local_150,0xfffe,0xffffffff,nullptr,
                                                   100,1,0,0);
                                         }
                                         else {
@@ -5038,7 +5038,7 @@ LAB_00654386:
                                           /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
                                           __CreateObjPl(this_00,CONCAT22(uVar27,(short)pDVar25->
                                                   flags),0xc,(short *)local_158,(short *)local_154,
-                                                  (short *)local_150,0xfffe,0xffffffff,(char *)0x0,
+                                                  (short *)local_150,0xfffe,0xffffffff,nullptr,
                                                   100,1,0,0);
                                           /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
                                           __CreateObjPl(this_00,CONCAT22((short)((uint)local_150 >>
@@ -5046,21 +5046,21 @@ LAB_00654386:
                                                                          (short)pDVar25->flags),1,
                                                         (short *)local_158,(short *)local_154,
                                                         (short *)local_150,0xfffe,0xffffffff,
-                                                        (char *)0x0,100,1,0,0);
+                                                        nullptr,100,1,0,0);
                                           /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
                                           __CreateObjPl(this_00,CONCAT22((short)((uint)local_150 >>
                                                                                 0x10),
                                                                          (short)pDVar25->flags),1,
                                                         (short *)local_158,(short *)local_154,
                                                         (short *)local_150,0xfffe,0xffffffff,
-                                                        (char *)0x0,100,1,0,0);
+                                                        nullptr,100,1,0,0);
                                           /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
                                           __CreateObjPl(this_00,CONCAT22((short)((uint)local_150 >>
                                                                                 0x10),
                                                                          (short)pDVar25->flags),2,
                                                         (short *)local_158,(short *)local_154,
                                                         (short *)local_150,0xfffe,0xffffffff,
-                                                        (char *)0x0,100,1,0,0);
+                                                        nullptr,100,1,0,0);
                                         }
                                       }
                                       else {
@@ -5073,56 +5073,56 @@ LAB_00655324:
                                         }
                                       }
                                     }
-                                    else if (cVar5 == '\x02') {
+                                    else if (bVar1 == 2) {
                                       if (2 < (int)local_8) goto joined_r0x00655322;
                                       if (local_8 == (DArrayTy *)0x2) {
                                         /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
                                         __CreateObjPl(this_00,CONCAT22(uVar27,(short)pDVar25->flags)
                                                       ,0x18,(short *)local_158,(short *)local_154,
                                                       (short *)local_150,0xfffe,0xffffffff,
-                                                      (char *)0x0,100,1,0,0);
+                                                      nullptr,100,1,0,0);
                                         /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
                                         __CreateObjPl(this_00,CONCAT22((short)((uint)local_150 >>
                                                                               0x10),
                                                                        (short)pDVar25->flags),0xd,
                                                       (short *)local_158,(short *)local_154,
                                                       (short *)local_150,0xfffe,0xffffffff,
-                                                      (char *)0x0,100,1,0,0);
+                                                      nullptr,100,1,0,0);
                                         /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
                                         __CreateObjPl(this_00,CONCAT22((short)((uint)local_150 >>
                                                                               0x10),
                                                                        (short)pDVar25->flags),0xd,
                                                       (short *)local_158,(short *)local_154,
                                                       (short *)local_150,0xfffe,0xffffffff,
-                                                      (char *)0x0,100,1,0,0);
+                                                      nullptr,100,1,0,0);
                                         /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
                                         __CreateObjPl(this_00,CONCAT22((short)((uint)local_150 >>
                                                                               0x10),
                                                                        (short)pDVar25->flags),0xe,
                                                       (short *)local_158,(short *)local_154,
                                                       (short *)local_150,0xfffe,0xffffffff,
-                                                      (char *)0x0,100,1,0,0);
+                                                      nullptr,100,1,0,0);
                                         /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
                                         __CreateObjPl(this_00,CONCAT22((short)((uint)local_150 >>
                                                                               0x10),
                                                                        (short)pDVar25->flags),0xf,
                                                       (short *)local_158,(short *)local_154,
                                                       (short *)local_150,0xfffe,0xffffffff,
-                                                      (char *)0x0,100,1,0,0);
+                                                      nullptr,100,1,0,0);
                                         /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
                                         __CreateObjPl(this_00,CONCAT22((short)((uint)local_150 >>
                                                                               0x10),
                                                                        (short)pDVar25->flags),0x12,
                                                       (short *)local_158,(short *)local_154,
                                                       (short *)local_150,0xfffe,0xffffffff,
-                                                      (char *)0x0,100,1,0,0);
+                                                      nullptr,100,1,0,0);
                                       }
-                                      else if (local_8 == (DArrayTy *)0x0) {
+                                      else if (local_8 == nullptr) {
                                         /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
                                         __CreateObjPl(this_00,CONCAT22(uVar27,(short)pDVar25->flags)
                                                       ,0x18,(short *)local_158,(short *)local_154,
                                                       (short *)local_150,0xfffe,0xffffffff,
-                                                      (char *)0x0,100,1,0,0);
+                                                      nullptr,100,1,0,0);
                                       }
                                       else {
                                         if (local_8 != (DArrayTy *)0x1) goto LAB_00655324;
@@ -5130,108 +5130,108 @@ LAB_00655324:
                                         __CreateObjPl(this_00,CONCAT22(uVar27,(short)pDVar25->flags)
                                                       ,0x18,(short *)local_158,(short *)local_154,
                                                       (short *)local_150,0xfffe,0xffffffff,
-                                                      (char *)0x0,100,1,0,0);
+                                                      nullptr,100,1,0,0);
                                         /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
                                         __CreateObjPl(this_00,CONCAT22((short)((uint)local_150 >>
                                                                               0x10),
                                                                        (short)pDVar25->flags),0xd,
                                                       (short *)local_158,(short *)local_154,
                                                       (short *)local_150,0xfffe,0xffffffff,
-                                                      (char *)0x0,100,1,0,0);
+                                                      nullptr,100,1,0,0);
                                         /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
                                         __CreateObjPl(this_00,CONCAT22((short)((uint)local_150 >>
                                                                               0x10),
                                                                        (short)pDVar25->flags),0xd,
                                                       (short *)local_158,(short *)local_154,
                                                       (short *)local_150,0xfffe,0xffffffff,
-                                                      (char *)0x0,100,1,0,0);
+                                                      nullptr,100,1,0,0);
                                         /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
                                         __CreateObjPl(this_00,CONCAT22((short)((uint)local_150 >>
                                                                               0x10),
                                                                        (short)pDVar25->flags),0xe,
                                                       (short *)local_158,(short *)local_154,
                                                       (short *)local_150,0xfffe,0xffffffff,
-                                                      (char *)0x0,100,1,0,0);
+                                                      nullptr,100,1,0,0);
                                       }
                                     }
-                                    else if (cVar5 == '\x03') {
+                                    else if (bVar1 == 3) {
                                       if (2 < (int)local_8) goto joined_r0x00655322;
                                       if (local_8 == (DArrayTy *)0x2) {
                                         /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
                                         __CreateObjPl(this_00,CONCAT22(uVar27,(short)pDVar25->flags)
                                                       ,0x19,(short *)local_158,(short *)local_154,
                                                       (short *)local_150,0xfffe,0xffffffff,
-                                                      (char *)0x0,100,1,0,0);
+                                                      nullptr,100,1,0,0);
                                         /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
                                         __CreateObjPl(this_00,CONCAT22((short)((uint)local_150 >>
                                                                               0x10),
                                                                        (short)pDVar25->flags),0x19,
                                                       (short *)local_158,(short *)local_154,
                                                       (short *)local_150,0xfffe,0xffffffff,
-                                                      (char *)0x0,100,1,0,0);
+                                                      nullptr,100,1,0,0);
                                         /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
                                         __CreateObjPl(this_00,CONCAT22((short)((uint)local_150 >>
                                                                               0x10),
                                                                        (short)pDVar25->flags),0x19,
                                                       (short *)local_158,(short *)local_154,
                                                       (short *)local_150,0xfffe,0xffffffff,
-                                                      (char *)0x0,100,1,0,0);
+                                                      nullptr,100,1,0,0);
                                         /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
                                         __CreateObjPl(this_00,CONCAT22((short)((uint)local_150 >>
                                                                               0x10),
                                                                        (short)pDVar25->flags),0x1e,
                                                       (short *)local_158,(short *)local_154,
                                                       (short *)local_150,0xfffe,0xffffffff,
-                                                      (char *)0x0,100,1,0,0);
+                                                      nullptr,100,1,0,0);
                                         /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
                                         __CreateObjPl(this_00,CONCAT22((short)((uint)local_150 >>
                                                                               0x10),
                                                                        (short)pDVar25->flags),0x1e,
                                                       (short *)local_158,(short *)local_154,
                                                       (short *)local_150,0xfffe,0xffffffff,
-                                                      (char *)0x0,100,1,0,0);
+                                                      nullptr,100,1,0,0);
                                         /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
                                         __CreateObjPl(this_00,CONCAT22((short)((uint)local_150 >>
                                                                               0x10),
                                                                        (short)pDVar25->flags),0x1e,
                                                       (short *)local_158,(short *)local_154,
                                                       (short *)local_150,0xfffe,0xffffffff,
-                                                      (char *)0x0,100,1,0,0);
+                                                      nullptr,100,1,0,0);
                                         /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
                                         __CreateObjPl(this_00,CONCAT22((short)((uint)local_150 >>
                                                                               0x10),
                                                                        (short)pDVar25->flags),0x20,
                                                       (short *)local_158,(short *)local_154,
                                                       (short *)local_150,0xfffe,0xffffffff,
-                                                      (char *)0x0,100,1,0,0);
+                                                      nullptr,100,1,0,0);
                                         /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
                                         __CreateObjPl(this_00,CONCAT22((short)((uint)local_150 >>
                                                                               0x10),
                                                                        (short)pDVar25->flags),0x22,
                                                       (short *)local_158,(short *)local_154,
                                                       (short *)local_150,0xfffe,0xffffffff,
-                                                      (char *)0x0,100,1,0,0);
+                                                      nullptr,100,1,0,0);
                                       }
-                                      else if (local_8 == (DArrayTy *)0x0) {
+                                      else if (local_8 == nullptr) {
                                         /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
                                         __CreateObjPl(this_00,CONCAT22(uVar27,(short)pDVar25->flags)
                                                       ,0x19,(short *)local_158,(short *)local_154,
                                                       (short *)local_150,0xfffe,0xffffffff,
-                                                      (char *)0x0,100,1,0,0);
+                                                      nullptr,100,1,0,0);
                                         /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
                                         __CreateObjPl(this_00,CONCAT22((short)((uint)local_150 >>
                                                                               0x10),
                                                                        (short)pDVar25->flags),0x19,
                                                       (short *)local_158,(short *)local_154,
                                                       (short *)local_150,0xfffe,0xffffffff,
-                                                      (char *)0x0,100,1,0,0);
+                                                      nullptr,100,1,0,0);
                                         /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
                                         __CreateObjPl(this_00,CONCAT22((short)((uint)local_150 >>
                                                                               0x10),
                                                                        (short)pDVar25->flags),0x19,
                                                       (short *)local_158,(short *)local_154,
                                                       (short *)local_150,0xfffe,0xffffffff,
-                                                      (char *)0x0,100,1,0,0);
+                                                      nullptr,100,1,0,0);
                                       }
                                       else {
                                         if (local_8 != (DArrayTy *)0x1) goto LAB_00655324;
@@ -5239,48 +5239,48 @@ LAB_00655324:
                                         __CreateObjPl(this_00,CONCAT22(uVar27,(short)pDVar25->flags)
                                                       ,0x19,(short *)local_158,(short *)local_154,
                                                       (short *)local_150,0xfffe,0xffffffff,
-                                                      (char *)0x0,100,1,0,0);
+                                                      nullptr,100,1,0,0);
                                         /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
                                         __CreateObjPl(this_00,CONCAT22((short)((uint)local_150 >>
                                                                               0x10),
                                                                        (short)pDVar25->flags),0x19,
                                                       (short *)local_158,(short *)local_154,
                                                       (short *)local_150,0xfffe,0xffffffff,
-                                                      (char *)0x0,100,1,0,0);
+                                                      nullptr,100,1,0,0);
                                         /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
                                         __CreateObjPl(this_00,CONCAT22((short)((uint)local_150 >>
                                                                               0x10),
                                                                        (short)pDVar25->flags),0x19,
                                                       (short *)local_158,(short *)local_154,
                                                       (short *)local_150,0xfffe,0xffffffff,
-                                                      (char *)0x0,100,1,0,0);
+                                                      nullptr,100,1,0,0);
                                         /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
                                         __CreateObjPl(this_00,CONCAT22((short)((uint)local_150 >>
                                                                               0x10),
                                                                        (short)pDVar25->flags),0x1e,
                                                       (short *)local_158,(short *)local_154,
                                                       (short *)local_150,0xfffe,0xffffffff,
-                                                      (char *)0x0,100,1,0,0);
+                                                      nullptr,100,1,0,0);
                                         /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
                                         __CreateObjPl(this_00,CONCAT22((short)((uint)local_150 >>
                                                                               0x10),
                                                                        (short)pDVar25->flags),0x1e,
                                                       (short *)local_158,(short *)local_154,
                                                       (short *)local_150,0xfffe,0xffffffff,
-                                                      (char *)0x0,100,1,0,0);
+                                                      nullptr,100,1,0,0);
                                         /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
                                         __CreateObjPl(this_00,CONCAT22((short)((uint)local_150 >>
                                                                               0x10),
                                                                        (short)pDVar25->flags),0x1e,
                                                       (short *)local_158,(short *)local_154,
                                                       (short *)local_150,0xfffe,0xffffffff,
-                                                      (char *)0x0,100,1,0,0);
+                                                      nullptr,100,1,0,0);
                                       }
                                     }
                                     pDVar25 = (DArrayTy *)&pDVar25->iteratorIndex;
                                     local_c = (DArrayTy *)((int)&local_c[-1].data + 3);
                                     uVar32 = local_14;
-                                  } while (local_c != (DArrayTy *)0x0);
+                                  } while (local_c != nullptr);
                                 }
                                 goto cf_common_join_00659A73;
                               }
@@ -5308,7 +5308,7 @@ LAB_00655324:
                                   do {
                                     switch(local_15c) {
                                     case (DArrayTy *)0xdc:
-                                      if (local_158 == (uint *)0x0) {
+                                      if (local_158 == nullptr) {
                                         thunk_FUN_004d88b0((char)pDVar25->flags,local_154);
                                       }
                                       else if ((int)local_158 < 1) {
@@ -5319,7 +5319,7 @@ LAB_00655324:
                                       }
                                       break;
                                     case (DArrayTy *)0xdd:
-                                      if (local_158 == (uint *)0x0) {
+                                      if (local_158 == nullptr) {
                                         thunk_FUN_004d89f0((char)pDVar25->flags,local_154);
                                       }
                                       else if ((int)local_158 < 1) {
@@ -5330,7 +5330,7 @@ LAB_00655324:
                                       }
                                       break;
                                     case (DArrayTy *)0xde:
-                                      if (local_158 == (uint *)0x0) {
+                                      if (local_158 == nullptr) {
                                         thunk_FUN_004d8b30((char)pDVar25->flags,local_154);
                                       }
                                       else if ((int)local_158 < 1) {
@@ -5341,7 +5341,7 @@ LAB_00655324:
                                       }
                                       break;
                                     case (DArrayTy *)0xdf:
-                                      if (local_158 == (uint *)0x0) {
+                                      if (local_158 == nullptr) {
                                         /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
                                         thunk_FUN_004b7140(CONCAT31((int3)((uint)uVar26 >> 8),
                                                                     (char)pDVar25->flags),
@@ -5361,7 +5361,7 @@ LAB_00655324:
                                       }
                                       break;
                                     case (DArrayTy *)0xe2:
-                                      if (local_158 == (uint *)0x0) {
+                                      if (local_158 == nullptr) {
                                         thunk_FUN_004e4440(pDVar25->flags,local_154);
                                       }
                                       else if ((int)local_158 < 1) {
@@ -5372,7 +5372,7 @@ LAB_00655324:
                                       }
                                       break;
                                     case (DArrayTy *)0xe3:
-                                      if (local_158 == (uint *)0x0) {
+                                      if (local_158 == nullptr) {
                                         thunk_FUN_004e41f0(pDVar25->flags,local_154);
                                       }
                                       else if ((int)local_158 < 1) {
@@ -5392,7 +5392,7 @@ LAB_00655324:
                                     uVar8 = extraout_ECX_00;
                                     /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
                                     uVar26 = extraout_EDX_00;
-                                  } while (local_c != (DArrayTy *)0x0);
+                                  } while (local_c != nullptr);
                                 }
                                 goto cf_common_join_00659A73;
                               }
@@ -5401,7 +5401,7 @@ LAB_00655324:
                           case 0x583:
                             iVar36 = thunk_FUN_0064f5e0((int)&local_16c);
                             if (iVar36 == 0) break;
-                            if (pDStack_164 == (DArrayTy *)0x0) {
+                            if (pDStack_164 == nullptr) {
                               thunk_FUN_004d8320(local_160);
                               goto cf_common_join_00659A73;
                             }
@@ -5438,16 +5438,16 @@ LAB_0065565b:
                           case 0x58c:
                             iVar36 = thunk_FUN_0064f700((short *)&local_16c);
                             if (iVar36 == 0) break;
-                            pSVar30 = (STFishC *)0x0;
+                            pSVar30 = nullptr;
                             sVar24 = (short)local_160;
                             sVar22 = (short)local_15c;
                             sVar6 = (short)local_158;
-                            if (local_154 == (byte *)0x0) {
+                            if (local_154 == nullptr) {
                               if ((((sVar24 < 0) || (g_worldGrid.sizeX <= sVar24)) ||
                                   ((sVar22 < 0 || ((g_worldGrid.sizeY <= sVar22 || (sVar6 < 0))))))
                                  || (g_worldGrid.sizeZ <= sVar6)) {
 LAB_00655871:
-                                pSVar30 = (STFishC *)0x0;
+                                pSVar30 = nullptr;
                               }
                               else {
                                 pSVar30 = (STFishC *)
@@ -5468,13 +5468,13 @@ LAB_00655871:
                                         [1];
                             }
                             else if (local_154 == (byte *)0x2) {
-                              iVar7 = _EnumDest((byte *)0x0,-1,sVar24,sVar22,sVar6,1,1,1,
+                              iVar7 = _EnumDest(nullptr,-1,sVar24,sVar22,sVar6,1,1,1,
                                                 thunk_FUN_00678890,0);
-                              if ((iVar7 == -1) && (g_fish_00811984 != (STFishC *)0x0)) {
+                              if ((iVar7 == -1) && (g_fish_00811984 != nullptr)) {
                                 pSVar30 = g_fish_00811984;
                               }
                             }
-                            if ((pSVar30 != (STFishC *)0x0) && (pDStack_164 != (DArrayTy *)0x0)) {
+                            if ((pSVar30 != nullptr) && (pDStack_164 != nullptr)) {
                               (*pSVar30->vtable->vfunc_70)(pDStack_164);
                             }
                             goto cf_common_join_00659A73;
@@ -5521,7 +5521,7 @@ LAB_006559d6:
                                       if ((int)local_144 < 1) goto LAB_00655972;
                                       pSVar16 = thunk_FUN_0042b760(*(char *)&local_10->vtable,
                                                                    (ushort)local_144);
-                                      if (pSVar16 != (STGroupBoatC *)0x0) {
+                                      if (pSVar16 != nullptr) {
                                         iVar36 = thunk_FUN_00423300((int)pSVar16);
                                         if (iVar36 != 0) {
                                           if (((int)local_15c < 0x32) || (0x73 < (int)local_15c)) {
@@ -5546,8 +5546,8 @@ LAB_006559e3:
                                     }
                                     local_10 = (AiFltClassTy *)&local_10->field_0x4;
                                     local_8 = (DArrayTy *)((int)&local_8[-1].data + 3);
-                                  } while (local_8 != (DArrayTy *)0x0);
-                                  local_8 = (DArrayTy *)0x0;
+                                  } while (local_8 != nullptr);
+                                  local_8 = nullptr;
                                 }
                                 goto cf_common_join_00659A73;
                               }
@@ -5570,7 +5570,7 @@ LAB_006559e3:
                                   local_c = pDVar12;
                                   do {
                                     local_8 = (DArrayTy *)_GetStaffGrpExch(local_10->vtable);
-                                    if (local_8 != (DArrayTy *)0x0) {
+                                    if (local_8 != nullptr) {
                                       uVar31 = 0;
                                       uVar17 = local_8->count;
                                       /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
@@ -5583,7 +5583,7 @@ LAB_006559e3:
                                                                local_8->elementSize * uVar31);
                                           }
                                           else {
-                                            pdVar18 = (dword *)0x0;
+                                            pdVar18 = nullptr;
                                           }
                                           /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
                                           STAllPlayersC::DestroyObjectMsg
@@ -5600,8 +5600,8 @@ LAB_006559e3:
                                     }
                                     local_10 = (AiFltClassTy *)&local_10->field_0x4;
                                     local_c = (DArrayTy *)((int)&local_c[-1].data + 3);
-                                  } while (local_c != (DArrayTy *)0x0);
-                                  local_c = (DArrayTy *)0x0;
+                                  } while (local_c != nullptr);
+                                  local_c = nullptr;
                                 }
                                 goto cf_common_join_00659A73;
                               }
@@ -5638,7 +5638,7 @@ LAB_006559e3:
                                                                  (short)local_144,(short)local_140,
                                                                  (short)local_13c,(short)local_138,1
                                                                 );
-                                    if (pDVar12 != (DArrayTy *)0x0) {
+                                    if (pDVar12 != nullptr) {
                                       uVar32 = 0;
                                       if (0 < (int)pDVar12->count) {
                                         bVar35 = pDVar12->count != 0;
@@ -5652,7 +5652,7 @@ LAB_006559e3:
                                                       (int)pDVar12->data);
                                           }
                                           else {
-                                            puVar19 = (undefined2 *)0x0;
+                                            puVar19 = nullptr;
                                           }
                                           /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
                                           STAllPlayersC::DestroyObjectMsg
@@ -5670,8 +5670,8 @@ LAB_006559e3:
                                     }
                                     local_10 = (AiFltClassTy *)&local_10->field_0x4;
                                     local_c = (DArrayTy *)((int)&local_c[-1].data + 3);
-                                  } while (local_c != (DArrayTy *)0x0);
-                                  local_c = (DArrayTy *)0x0;
+                                  } while (local_c != nullptr);
+                                  local_c = nullptr;
                                   uVar32 = local_14;
                                 }
                                 goto cf_common_join_00659A73;
@@ -5706,8 +5706,8 @@ LAB_006559e3:
                                     }
                                     local_8 = (DArrayTy *)&local_8->iteratorIndex;
                                     local_c = (DArrayTy *)((int)&local_c[-1].data + 3);
-                                  } while (local_c != (DArrayTy *)0x0);
-                                  local_c = (DArrayTy *)0x0;
+                                  } while (local_c != nullptr);
+                                  local_c = nullptr;
                                 }
                                 goto cf_common_join_00659A73;
                               }
@@ -5737,7 +5737,7 @@ LAB_006559e3:
                                                 (short)local_140,thunk_FUN_0064dac0,&local_13c);
                                     pDVar25 = (DArrayTy *)&pDVar25->iteratorIndex;
                                     local_c = (DArrayTy *)((int)&local_c[-1].data + 3);
-                                  } while (local_c != (DArrayTy *)0x0);
+                                  } while (local_c != nullptr);
                                 }
                                 goto cf_common_join_00659A73;
                               }
@@ -5811,10 +5811,10 @@ LAB_00659aae:
         return;
       }
       g_currentExceptionFrame = local_284.previous;
-      if (local_180 != (DArrayTy *)0x0) {
+      if (local_180 != nullptr) {
         DArrayDestroy(local_180);
       }
-      local_180 = (DArrayTy *)0x0;
+      local_180 = nullptr;
       thunk_FUN_0064d0e0(local_188,iVar7,&DAT_008016a0,local_14,-1);
     }
   }

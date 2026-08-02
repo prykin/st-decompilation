@@ -8,7 +8,7 @@ void __fastcall FUN_005557b0(AnonShape_005557B0_28260162 *param_1)
   uint uVar2;
   void *pvVar3;
 
-  if (param_1->field_0024 != (DArrayTy *)0x0) {
+  if (param_1->field_0024 != nullptr) {
     param_1->field_0024->iteratorIndex = 0;
     while( true ) {
       pDVar1 = param_1->field_0024;
@@ -17,7 +17,7 @@ void __fastcall FUN_005557b0(AnonShape_005557B0_28260162 *param_1)
       /* ST_PSEUDO[dynamic_array_indexing]: expected DArrayAt<T>(pDVar1, uVar2) (runtime stride) */
       pvVar3 = (void *)(pDVar1->elementSize * uVar2 + (int)pDVar1->data);
       pDVar1->iteratorIndex = uVar2 + 1;
-      if (pvVar3 == (void *)0x0) break;
+      if (pvVar3 == nullptr) break;
       if (-1 < (int)*(uint *)((int)pvVar3 + 0x32)) {
         Library::Ourlib::ST3DSMAP::SprClose
                   (g_sT3DSMAPContext_00807598,*(uint *)((int)pvVar3 + 0x32));
@@ -25,7 +25,7 @@ void __fastcall FUN_005557b0(AnonShape_005557B0_28260162 *param_1)
       }
     }
     DArrayDestroy(param_1->field_0024);
-    param_1->field_0024 = (DArrayTy *)0x0;
+    param_1->field_0024 = nullptr;
   }
   return;
 }

@@ -36,7 +36,7 @@ void __cdecl FUN_005411a0(DArrayTy *param_1,char *param_2,char *text)
     g_currentExceptionFrame = local_4c.previous;
     return;
   }
-  if (((param_1 != (DArrayTy *)0x0) && (param_2 != (char *)0x0)) && (text != (char *)0x0)) {
+  if (((param_1 != nullptr) && (param_2 != nullptr)) && (text != nullptr)) {
     uVar4 = 0xffffffff;
     pcVar6 = param_2;
     do {
@@ -54,9 +54,9 @@ void __cdecl FUN_005411a0(DArrayTy *param_1,char *param_2,char *text)
       pcVar6 = pcVar6 + 1;
     } while (cVar1 != '\0');
     local_8 = Library::DKW::LIB::MemAlloc(~uVar4 + ~uVar5 + 2);
-    if (local_8 != (uint *)0x0) {
+    if (local_8 != nullptr) {
       wsprintfA((LPSTR)local_8,text,param_2);
-      for (puVar3 = Library::MSVCRT::FUN_0072e560(local_8,'\n'); puVar3 != (uint *)0x0;
+      for (puVar3 = Library::MSVCRT::FUN_0072e560(local_8,'\n'); puVar3 != nullptr;
           puVar3 = Library::MSVCRT::FUN_0072e560(puVar3,'\n')) {
         *(undefined1 *)puVar3 = 0x20;
       }

@@ -44,7 +44,7 @@ void FUN_00496cc0(int param_1,int param_2,uint param_3,undefined4 param_4,uint p
       pvVar3 = (void *)(g_array_007FB270->elementSize * uVar2 + (int)g_array_007FB270->data);
     }
     else {
-      pvVar3 = (void *)0x0;
+      pvVar3 = nullptr;
     }
     thunk_FUN_00496b30(uVar2,*(int *)((int)pvVar3 + 8),0);
     thunk_FUN_004969f0(param_1,param_2,uVar1,param_4,param_5,param_6,uVar2);

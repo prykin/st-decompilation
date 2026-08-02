@@ -25,7 +25,7 @@ int FUN_006b0a20(AnonShape_GLOBAL_0080759C_9638EF10 *param_1,int param_2,UINT iS
   undefined4 *puVar8;
   PALETTEENTRY local_404 [256];
 
-  if (param_1 != (AnonShape_GLOBAL_0080759C_9638EF10 *)0x0) {
+  if (param_1 != nullptr) {
     iVar2 = 0;
     if (((*(uint *)&param_1->field_0x8 & 0x20000001) == 0) && (*(int *)&param_1->field_0x24 < 9)) {
       if ((int)iStart < 10) {
@@ -57,14 +57,14 @@ int FUN_006b0a20(AnonShape_GLOBAL_0080759C_9638EF10 *param_1,int param_2,UINT iS
         (**(code **)(*param_1->field_0030 + 0x58))(param_1->field_0030,1,0);
       }
       piVar1 = (int *)param_1->field_003C;
-      if (piVar1 != (int *)0x0) {
+      if (piVar1 != nullptr) {
         /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
         (**(code **)(*piVar1 + 0x18))(piVar1,0,iStart,param_4,local_404);
       }
       SetPaletteEntries(*(HPALETTE *)param_1,iStart,param_4,local_404);
       SetPaletteEntries(param_1->field_04B4,iStart,param_4,local_404);
       iVar2 = FUN_006b0520(param_1,(int)local_404,iStart,param_4);
-      if (*(undefined4 **)&param_1[1].field_0x24 != (undefined4 *)0x0) {
+      if (*(undefined4 **)&param_1[1].field_0x24 != nullptr) {
         puVar8 = *(undefined4 **)&param_1[1].field_0x24;
         for (iVar5 = 0x2000; iVar5 != 0; iVar5 = iVar5 + -1) {
           *puVar8 = 0xffffffff;

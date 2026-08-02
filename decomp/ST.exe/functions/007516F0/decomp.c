@@ -30,7 +30,7 @@ int FUN_007516f0(int param_1,byte *param_2)
   ExceptionList = &local_14;
   Library::MSVCRT::FUN_0072da40();
   memset(&stack0xffffffa8, 0, 0x10000); /* compiler bulk-zero initialization */
-  if ((undefined4 *)&stack0xffffffa8 == (undefined4 *)0x0) {
+  if ((undefined4 *)&stack0xffffffa8 == nullptr) {
     iVar4 = -2;
   }
   else {

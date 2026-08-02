@@ -56,11 +56,10 @@ FUN_004b0250(uint param_1,int param_2,int *param_3,int *param_4,int *param_5,int
   if (g_worldGrid.sizeY <= g_worldGrid.sizeX) {
     sVar14 = g_worldGrid.sizeX;
   }
-  /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-  local_88[9] = (int)sVar14 / (int)(uint)DAT_008087c4._2_1_;
+  local_88[9] = (int)sVar14 / (int)(uint)DAT_008087c6;
   local_40 = thunk_FUN_004e81b0(param_1,param_2 + -0x32,0);
   local_10 = Library::DKW::LIB::MemAlloc(g_worldGrid.planeStride * 5);
-  local_2c = Library::DKW::TBL::DArrayCreate((DArrayTy *)0x0,10,4,10);
+  local_2c = Library::DKW::TBL::DArrayCreate(nullptr,10,4,10);
   local_18 = 0;
   do {
     local_34 = (short *)(g_worldGrid.planeStride * local_18);
@@ -76,7 +75,7 @@ FUN_004b0250(uint param_1,int param_2,int *param_3,int *param_4,int *param_5,int
           local_8 = psVar11;
           do {
             local_c = *(STFishC **)((int)local_1c + (int)g_worldGrid.cells);
-            if (local_c == (STFishC *)0x0) {
+            if (local_c == nullptr) {
               sVar14 = (short)iVar15;
               if (((((sVar14 < 0) || ((short)uVar10 <= sVar14)) ||
                    (sVar8 = (short)local_14, sVar8 < 0)) ||
@@ -99,8 +98,8 @@ LAB_004b03a2:
             }
             else {
               if (((uint)local_c->field_0024 < 8) &&
-                 ((g_playSystem_00802A38 == (STPlaySystemC *)0x0 ||
-                  ((byte)(&DAT_008087e9)[local_c->field_0024 * 0x51] < 8)))) {
+                 ((g_playSystem_00802A38 == nullptr ||
+                  (g_bulkInitializedRecords_008087C7[local_c->field_0024].field_0022 < 8)))) {
                 bVar1 = *(byte *)&local_c->field_0024;
                 /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
                 local_28 = (char *)CONCAT31(local_28._1_3_,bVar1);
@@ -179,11 +178,11 @@ LAB_004b057d:
     }
     local_18 = local_18 + 1;
   } while (local_18 < 4);
-  if (g_array_007FA150 != (DArrayTy *)0x0) {
+  if (g_array_007FA150 != nullptr) {
     g_array_007FA150->iteratorIndex = 0;
     iVar15 = DArrayGetNext(g_array_007FA150,(byte *)&local_c);
     while (-1 < iVar15) {
-      if (local_c != (STFishC *)0x0) {
+      if (local_c != nullptr) {
         STFishC::sub_004162B0(local_c,&local_22,(undefined2 *)((int)&param_2 + 2),&local_2e);
         *(undefined1 *)
          /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */

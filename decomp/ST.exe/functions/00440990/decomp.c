@@ -25,7 +25,7 @@ void STAllPlayersC::_ChangeDock(undefined4 param_1,int *param_2,uint param_3)
   /* ST_PSEUDO[unresolved_register_input,stack_slot_reuse]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention; compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
   param_2 = (int *)GetObjPtr(in_ECX,(char)param_2,(ushort)param_3,CASE_1);
   /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
-  if ((STGameObjC *)param_2 == (STGameObjC *)0x0) {
+  if ((STGameObjC *)param_2 == nullptr) {
     iVar4 = ReportDebugMessage("E:\\__titans\\wlad\\to_allpl.cpp",0x21ed,0,0,"%s",
                                "STAllPlayersC::_ChangeDock");
     if (iVar4 != 0) {
@@ -38,11 +38,11 @@ void STAllPlayersC::_ChangeDock(undefined4 param_1,int *param_2,uint param_3)
   /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
   iVar4 = (**(code **)(*param_2 + 0x2c))();
   if ((((iVar4 == 0x33) &&
-       (array = (DArrayTy *)g_packedRecords_A62x8[(int)piVar3].field5_0x5, array != (DArrayTy *)0x0)
+       (array = (DArrayTy *)g_packedRecords_A62x8[(int)piVar3].field5_0x5, array != nullptr)
        ) && (dVar1 = array->count, dVar1 != 0)) && (index = 0, 0 < (int)dVar1)) {
     do {
       DArrayGetElement(array,index,&param_2);
-      if (param_2 != (int *)0x0) {
+      if (param_2 != nullptr) {
         /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
         iVar4 = (**(code **)(*param_2 + 0xc))();
         if (iVar4 == 4) {

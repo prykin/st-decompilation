@@ -28,21 +28,21 @@ byte * __thiscall JumpManagC::sub_00617FB0(JumpManagC *this,int *param_1)
   uint local_8;
 
   pDVar1 = this->field_005E;
-  if (pDVar1 == (DArrayTy *)0x0) {
+  if (pDVar1 == nullptr) {
     iVar6 = 0;
   }
   else {
     iVar6 = pDVar1->count * pDVar1->elementSize + 0x1c;
   }
   pDVar1 = this->field_0062;
-  if (pDVar1 == (DArrayTy *)0x0) {
+  if (pDVar1 == nullptr) {
     iVar4 = 0;
   }
   else {
     iVar4 = pDVar1->count * pDVar1->elementSize + 0x1c;
   }
   pDVar1 = this->field_0066;
-  if (pDVar1 == (DArrayTy *)0x0) {
+  if (pDVar1 == nullptr) {
     iVar2 = 0;
   }
   else {
@@ -61,7 +61,7 @@ byte * __thiscall JumpManagC::sub_00617FB0(JumpManagC *this,int *param_1)
   pbVar3[0xd] = 0;
   pbVar3[0xe] = 0;
   pbVar3[0xf] = 0;
-  if (this->field_005E != (DArrayTy *)0x0) {
+  if (this->field_005E != nullptr) {
     local_c = (uint *)FUN_006b0020(&this->field_005E->flags,(int *)&local_8);
     *puVar7 = local_8;
     puVar7 = local_c;
@@ -71,7 +71,7 @@ byte * __thiscall JumpManagC::sub_00617FB0(JumpManagC *this,int *param_1)
     puVar7 = (uint *)((int)(pbVar3 + 0x56) + local_8);
     FreeAndNull(&local_c);
   }
-  if (this->field_0062 != (DArrayTy *)0x0) {
+  if (this->field_0062 != nullptr) {
     local_c = (uint *)FUN_006b0020(&this->field_0062->flags,(int *)&local_8);
     *puVar7 = local_8;
     puVar9 = local_c;
@@ -81,7 +81,7 @@ byte * __thiscall JumpManagC::sub_00617FB0(JumpManagC *this,int *param_1)
     puVar7 = (uint *)((int)(puVar7 + 1) + local_8);
     FreeAndNull(&local_c);
   }
-  if (this->field_0066 != (DArrayTy *)0x0) {
+  if (this->field_0066 != nullptr) {
     local_c = (uint *)FUN_006b0020(&this->field_0066->flags,(int *)&local_8);
     *puVar7 = local_8;
     puVar9 = local_c;

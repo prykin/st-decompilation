@@ -10,8 +10,8 @@ int __thiscall FUN_00614a90(void *this,undefined4 *param_1)
   byte *puVar4;
   int local_8;
 
-  if (this == (void *)0x0) {
-    puVar4 = (byte *)0x0;
+  if (this == nullptr) {
+    puVar4 = nullptr;
   }
   else {
     puVar4 = (byte *)((int)this + 0x1d5);

@@ -18,7 +18,7 @@ void FUN_0069c670(DArrayTy *param_1,int param_2,uint param_3)
     /* ST_PSEUDO[dynamic_array_indexing]: expected DArrayAt<T>(param_1, param_3) (runtime stride) */
     if ((param_3 < param_1->count) &&
        (pvVar6 = (void *)(param_1->elementSize * param_3 + (int)param_1->data),
-       pvVar6 != (void *)0x0)) {
+       pvVar6 != nullptr)) {
       iVar2 = *(int *)(*(int *)((int)pvVar6 + 0xc) + 0xc);
       uVar5 = 0;
       if (0 < iVar2) {
@@ -28,7 +28,7 @@ void FUN_0069c670(DArrayTy *param_1,int param_2,uint param_3)
             piVar4 = (int *)(*(int *)(iVar3 + 8) * uVar5 + *(int *)(iVar3 + 0x1c));
           }
           else {
-            piVar4 = (int *)0x0;
+            piVar4 = nullptr;
           }
           uVar5 = uVar5 + 1;
           *(uint *)(param_2 + 10 + *piVar4 * 0xe) = param_3;

@@ -48,7 +48,7 @@ FUN_006a64e0(int param_1,int param_2,int param_3,int param_4,int param_5,int par
   iVar17 = (param_2 + param_3) * param_4;
   local_20 = iVar17 * 2;
   local_24 = (byte *)FUN_006bfb70(iVar17 * 0x10);
-  if (local_24 == (byte *)0x0) {
+  if (local_24 == nullptr) {
 LAB_006a6ed7:
     local_34 = 0xfffffffe;
   }
@@ -80,7 +80,7 @@ LAB_006a6ed7:
         if (local_20 < param_6 + 0x1a) {
           local_20 = local_20 + 0x80;
           pbVar6 = (byte *)FUN_006bfb50((undefined4 *)local_24,local_20 * 8);
-          if (pbVar6 == (byte *)0x0) goto LAB_006a6ed7;
+          if (pbVar6 == nullptr) goto LAB_006a6ed7;
           local_18 = pbVar6 + ((int)local_18 - (int)local_24 >> 2) * 4;
           local_1c = pbVar6 + ((int)local_1c - (int)local_24 >> 2) * 4;
           if (local_18 == pbVar6) {

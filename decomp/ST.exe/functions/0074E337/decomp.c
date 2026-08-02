@@ -8,11 +8,11 @@ uint FUN_0074e337(int *param_1,undefined4 param_2,int *param_3,undefined4 param_
   DWORD DVar3;
   uint uVar4;
 
-  if (param_5 == (int *)0x0) {
+  if (param_5 == nullptr) {
     return 0x80004003;
   }
   *param_5 = 0;
-  if (param_3 != (int *)0x0) {
+  if (param_3 != nullptr) {
     return 0x8002802b;
   }
   if (*param_1 == 0) {

@@ -34,14 +34,14 @@ LAB_00715017:
       if (iVar4 < 0) {
 LAB_00714fdf:
         puVar5 = FUN_0070ce00(param_2,(char *)puVar6);
-        if (puVar5 != (uint *)0x0) {
+        if (puVar5 != nullptr) {
           puVar6 = (uint *)((int)puVar6 + 1);
           goto LAB_00715017;
         }
       }
     }
     else {
-      if ((param_3 == (char *)0x0) || (iVar4 = FUN_0070cd90(param_3,puVar6), iVar4 != 0))
+      if ((param_3 == nullptr) || (iVar4 = FUN_0070cd90(param_3,puVar6), iVar4 != 0))
       goto LAB_00714fdf;
       bVar2 = true;
     }

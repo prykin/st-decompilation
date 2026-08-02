@@ -23,7 +23,7 @@ void __thiscall MainMenuTy::DoneMainMenu(MainMenuTy *this)
   pMVar2 = local_8;
   if (iVar3 == 0) {
     MMObjTy::DoneMMObj((MMObjTy *)local_8);
-    if (g_cursorClass_00802A30 != (CursorClassTy *)0x0) {
+    if (g_cursorClass_00802A30 != nullptr) {
       if (g_cursorClass_00802A30->field_00A9 == 0) {
         Library::DKW::DDX::FUN_006b8b10((int *)g_cursorClass_00802A30->field_00AD);
       }
@@ -32,11 +32,11 @@ void __thiscall MainMenuTy::DoneMainMenu(MainMenuTy *this)
       }
     }
     DarkScreen(g_dDXContext_0080759C,10,2);
-    if (g_startSystem_0081176C->field_002C != (ushort *)0x0) {
+    if (g_startSystem_0081176C->field_002C != nullptr) {
       cMf32::RecMemFree(g_cMf32_00806780,(uint *)&g_startSystem_0081176C->field_002C);
     }
     /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-    if (*(MMsgTy **)(pMVar2->field_1A5B + 0x2e6) != (MMsgTy *)0x0) {
+    if (*(MMsgTy **)(pMVar2->field_1A5B + 0x2e6) != nullptr) {
       /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
       MMsgTy::HideSprites(*(MMsgTy **)(pMVar2->field_1A5B + 0x2e6));
       *(undefined4 *)(*(int *)(pMVar2->field_1A5B + 0x2e6) + 0x1cab) = 0;
@@ -44,7 +44,7 @@ void __thiscall MainMenuTy::DoneMainMenu(MainMenuTy *this)
     puVar5 = pMVar2->field_1AA7;
     iVar3 = 10;
     do {
-      if ((undefined4 *)*puVar5 != (undefined4 *)0x0) {
+      if ((undefined4 *)*puVar5 != nullptr) {
         FUN_006c4a70((undefined4 *)*puVar5);
         *puVar5 = 0;
       }

@@ -23,7 +23,7 @@ int __thiscall STManRub3C::GetMessage(STManRub3C *this,STMessage *message)
   STManRub3C *local_c;
   ushort *local_8;
 
-  local_8 = (ushort *)0x0;
+  local_8 = nullptr;
   local_58.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_58;
   local_c = this;
@@ -41,10 +41,10 @@ int __thiscall STManRub3C::GetMessage(STManRub3C *this,STMessage *message)
   }
   SVar1 = message->id;
   if (SVar1 == MESS_ID_CREATE) {
-    if (g_cMf32_00806754 != (cMf32 *)0x0) {
+    if (g_cMf32_00806754 != nullptr) {
       local_8 = Library::Ourlib::MFAOBJ::mfAObjLoad(g_cMf32_00806754,PTR_s_RUBBISH_3_0079d080,0,0);
     }
-    if ((local_8 == (ushort *)0x0) || (*(int *)(local_8 + 6) != 2)) {
+    if ((local_8 == nullptr) || (*(int *)(local_8 + 6) != 2)) {
       local_c->field_001C = 0;
       local_c->field_0028 = 1;
       local_c->field_0024 = 1;
@@ -54,7 +54,7 @@ int __thiscall STManRub3C::GetMessage(STManRub3C *this,STMessage *message)
     else {
       sub_0062D840(local_c,(undefined4 *)local_8);
     }
-    if ((local_8 != (ushort *)0x0) && (g_cMf32_00806754 != (cMf32 *)0x0)) {
+    if ((local_8 != nullptr) && (g_cMf32_00806754 != nullptr)) {
       cMf32::RecMemFree(g_cMf32_00806754,(uint *)&local_8);
     }
   }
@@ -63,7 +63,7 @@ int __thiscall STManRub3C::GetMessage(STManRub3C *this,STMessage *message)
       sub_0062CF50(local_c);
       sub_0062DD40(this_00);
       sub_0062E130(this_00);
-      g_manRub3_008117A4 = (STManRub3C *)0x0;
+      g_manRub3_008117A4 = nullptr;
       g_currentExceptionFrame = local_58.previous;
       return 0;
     }

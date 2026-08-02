@@ -15,9 +15,9 @@ void __thiscall CPanelTy::sub_004F9120(CPanelTy *this,byte param_1,char param_2,
 
   if (param_1 < 8) {
     uVar1 = (uint)param_1;
-    (&DAT_008087f7)[uVar1 * 0x51] = param_2;
-    *(undefined4 *)(&DAT_008087f8 + uVar1 * 0x51) = param_3;
-    *(uint *)(&DAT_008087fc + uVar1 * 0x51) = this->field_09A0;
+    g_bulkInitializedRecords_008087C7[uVar1].field_0030 = param_2;
+    *(undefined4 *)&g_bulkInitializedRecords_008087C7[uVar1].field_0x31 = param_3;
+    *(uint *)&g_bulkInitializedRecords_008087C7[uVar1].field_0x35 = this->field_09A0;
     if ((param_1 == DAT_0080874d) && (param_2 == '\0')) {
       DAT_0080c4d3 = 4;
     }

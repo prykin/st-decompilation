@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 /* [STSourceProvenanceApplier begin]
@@ -89,13 +91,13 @@ void __cdecl FUN_00428e50(short *param_1)
   int *local_8;
 
   pAVar4 = (AnonShape_006DBCA0_EF06575F *)FUN_006b04d0(0x4f2);
-  if (pAVar4 == (AnonShape_006DBCA0_EF06575F *)0x0) {
-    local_30 = (ST3DSMAPContext *)0x0;
+  if (pAVar4 == nullptr) {
+    local_30 = nullptr;
   }
   else {
     pSVar5 = (ST3DSMAPContext *)FUN_006dbca0(pAVar4);
     local_30 = pSVar5;
-    if (pSVar5 != (ST3DSMAPContext *)0x0) goto LAB_00428e95;
+    if (pSVar5 != nullptr) goto LAB_00428e95;
   }
   pSVar5 = local_30;
   RaiseInternalException(-2,g_overwriteContext_007ED77C,"E:\\__titans\\tload.cpp",0x24d);
@@ -119,10 +121,10 @@ LAB_00428e95:
   ST3DSMAPContext::sub_006DC050
             (pSVar5,0,0,0,uVar10,local_c4,-14.14213562373,
              ((double)(int)(uVar10 - iVar11) * (_DAT_00790590 / dVar1) + _DAT_00790590) -
-             _DAT_00790560,-10.0,(double)(int)local_c4 * local_b4 - _DAT_00790580,0x4024000000000000
-             ,0x4023ee97865e3540,0);
-  *(undefined4 *)&pSVar5->field_0x128 = 0xff;
-  *(undefined4 *)&pSVar5->field_0x124 = 6;
+             _DAT_00790560,-10.0,(double)(int)local_c4 * local_b4 - _DAT_00790580,10.0,
+             9.965999793052674,0);
+  pSVar5->field_0128 = 0xff;
+  pSVar5->field_0124 = 6;
   iVar11 = 0;
   /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
   if (0 < *(int *)((int)param_1 + 0x455)) {
@@ -138,7 +140,7 @@ LAB_00428e95:
     /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
     } while (iVar11 < *(int *)((int)param_1 + 0x455));
   }
-  ST3DSMAPContext::sub_006DD610(pSVar5,0,0,0x40240000,0,0x40240000);
+  ST3DSMAPContext::sub_006DD610(pSVar5,0,10.0,10.0);
   local_d4 = 0x41200000;
   local_d0 = 0x41200000;
   local_cc = 0;
@@ -174,12 +176,12 @@ LAB_00428e95:
   local_2c = CONCAT31(local_2c._1_3_,2);
   local_a4 = 0;
   local_9 = 1;
-  local_40 = (int *)0x0;
+  local_40 = nullptr;
   do {
     /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
     _local_50 = CONCAT31(uStack_4f,(byte)local_2c >> 1);
-    ST3DSMAPContext::sub_006DD610(pSVar5,(uint)local_40,0,0x40240000,0,0x40240000);
-    local_44 = Library::DKW::TBL::DArrayCreate((DArrayTy *)0x0,10,0x1c,10);
+    ST3DSMAPContext::sub_006DD610(pSVar5,(uint)local_40,10.0,10.0);
+    local_44 = Library::DKW::TBL::DArrayCreate(nullptr,10,0x1c,10);
     DAT_007f4dd0 = 0;
     local_90 = 0;
     /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
@@ -187,8 +189,8 @@ LAB_00428e95:
       local_28 = (int *)((int)param_1 + 0x459);
       do {
         puVar6 = (undefined4 *)*local_28;
-        if (puVar6 != (undefined4 *)0x0) {
-          if (g_cLoading_00802A58 != (cLoadingTy *)0x0) {
+        if (puVar6 != nullptr) {
+          if (g_cLoading_00802A58 != nullptr) {
             local_a4 = local_a4 + 1;
             uVar10 = local_a4 & 0x8000000f;
             bVar16 = uVar10 == 0;
@@ -198,7 +200,7 @@ LAB_00428e95:
             if (bVar16) {
               cLoadingTy::SetState
                         (g_cLoading_00802A58,CASE_1,
-                         (int)(local_a4 + ((int)local_a4 >> 0x1f & 0xfU)) >> 4,(char *)0x0);
+                         (int)(local_a4 + ((int)local_a4 >> 0x1f & 0xfU)) >> 4,nullptr);
             }
           }
           uVar10 = 0;
@@ -206,11 +208,11 @@ LAB_00428e95:
             /* ST_PSEUDO[dynamic_array_indexing]: expected DArrayAt<T>(local_44, uVar10) (runtime stride) */
             if ((local_44->count <= uVar10) ||
                (piVar12 = (int *)(local_44->elementSize * uVar10 + (int)local_44->data),
-               piVar12 == (int *)0x0)) goto LAB_004292e2;
+               piVar12 == nullptr)) goto LAB_004292e2;
             if (puVar6[10] == *piVar12) break;
             uVar10 = uVar10 + 1;
           }
-          if (piVar12 != (int *)0x0) {
+          if (piVar12 != nullptr) {
             puVar6[6] = uVar10;
             iVar11 = 0;
             if (0 < (int)puVar6[9]) {
@@ -230,17 +232,17 @@ LAB_004292e2:
           *(undefined2 *)(puVar6 + 1) = 0;
           *(undefined2 *)((int)puVar6 + 6) = 0;
           *(ushort *)(puVar6 + 2) = (ushort)*(byte *)(puVar6 + 0x12);
-          *puVar6 = *(undefined4 *)&pSVar5->field_0x140;
-          *(undefined4 **)&pSVar5->field_0x140 = puVar6;
-          *(int *)&pSVar5->field_0x13c = *(int *)&pSVar5->field_0x13c + 1;
+          *puVar6 = pSVar5->field_0140;
+          pSVar5->field_0140 = puVar6;
+          pSVar5->field_013C = pSVar5->field_013C + 1;
           ST3DSMAPContext::sub_006DDBE0(pSVar5);
           ST3DSMAPContext::sub_006DDD50(pSVar5);
-          *(undefined4 *)&pSVar5->field_0x140 = 0;
-          *(undefined4 *)&pSVar5->field_0x13c = 0;
+          pSVar5->field_0140 = nullptr;
+          pSVar5->field_013C = 0;
           *(undefined2 *)((int)puVar6 + 6) = (undefined2)local_14;
           *(undefined2 *)(puVar6 + 2) = local_48._0_2_;
           *(undefined2 *)(puVar6 + 1) = uVar2;
-          local_110 = thunk_FUN_00428b20(*(int **)&pSVar5->field_0xc,local_e8,local_c4,local_108);
+          local_110 = thunk_FUN_00428b20((int *)pSVar5->field_000C,local_e8,local_c4,local_108);
           local_114 = puVar6[10];
           local_10c = puVar6[0xf];
           iVar11 = Library::DKW::TBL::DArrayAppend(local_44,&local_114);
@@ -253,7 +255,7 @@ LAB_004293c6:
       } while (local_90 < *(int *)((int)param_1 + 0x455));
     }
     local_38 = (int)*param_1 / 2;
-    if (local_40 == (int *)0x0) {
+    if (local_40 == nullptr) {
       local_7c = 1;
       local_a8 = 1;
       local_6c = 1;
@@ -293,8 +295,8 @@ LAB_00429475:
       do {
         pAVar3 = (AnonShape_00428E50_DFCBD4F2 *)*local_48;
         local_10 = pAVar3;
-        if (pAVar3 != (AnonShape_00428E50_DFCBD4F2 *)0x0) {
-          if (g_cLoading_00802A58 != (cLoadingTy *)0x0) {
+        if (pAVar3 != nullptr) {
+          if (g_cLoading_00802A58 != nullptr) {
             local_a4 = local_a4 + 1;
             uVar10 = local_a4 & 0x8000000f;
             bVar16 = uVar10 == 0;
@@ -304,7 +306,7 @@ LAB_00429475:
             if (bVar16) {
               cLoadingTy::SetState
                         (g_cLoading_00802A58,CASE_1,
-                         (int)(local_a4 + ((int)local_a4 >> 0x1f & 0xfU)) >> 4,(char *)0x0);
+                         (int)(local_a4 + ((int)local_a4 >> 0x1f & 0xfU)) >> 4,nullptr);
             }
           }
           if (*(uint *)&pAVar3->field_0x18 < local_44->count) {
@@ -313,7 +315,7 @@ LAB_00429475:
                              (int)local_44->data);
           }
           else {
-            pvVar9 = (void *)0x0;
+            pvVar9 = nullptr;
           }
           local_64 = (int)*(short *)&pAVar3->field_0x4 / 2;
           uVar10 = (uint)(byte)pAVar3[1].field_0008;
@@ -343,7 +345,7 @@ LAB_0042958f:
                                 (int)local_44->data);
             }
             else {
-              pvVar13 = (void *)0x0;
+              pvVar13 = nullptr;
             }
             local_60 = *(int *)((int)pvVar13 + 0xc);
             local_5c = *(int *)((int)pvVar13 + 0x10) +
@@ -355,7 +357,7 @@ LAB_0042958f:
             if (iVar11 == 0) goto cf_continue_loop_004296CF;
             if (2 < (int)local_10->field_0024) {
               iVar11 = *(int *)((int)pvVar9 + 0x14);
-              local_20 = *(undefined4 **)&local_30->field_0xc;
+              local_20 = (undefined4 *)local_30->field_000C;
               iVar7 = *(int *)((int)pvVar9 + 0x10);
               iVar14 = *(int *)((int)pvVar9 + 0xc);
               local_4c = (((local_9c - local_5c) * local_58 + *(int *)((int)pvVar13 + 4)) - local_60
@@ -423,7 +425,7 @@ LAB_00429715:
                                       (int)local_44->data);
                   }
                   else {
-                    pvVar13 = (void *)0x0;
+                    pvVar13 = nullptr;
                   }
                   local_60 = *(int *)((int)pvVar13 + 0xc) - local_c8;
                   local_5c = *(int *)((int)pvVar13 + 0x10) +
@@ -437,7 +439,7 @@ LAB_00429715:
                   if (iVar11 != 0) {
                     iVar11 = *(int *)((int)pvVar9 + 0x10);
                     iVar7 = *(int *)((int)pvVar9 + 0x14);
-                    local_20 = *(undefined4 **)&local_30->field_0xc;
+                    local_20 = (undefined4 *)local_30->field_000C;
                     iVar14 = *(int *)((int)pvVar9 + 0xc);
                     local_4c = (((local_9c - local_5c) * local_58 + *(int *)((int)pvVar13 + 4)) -
                                local_60) + local_a0;
@@ -495,7 +497,7 @@ LAB_00429715:
                                         (int)local_44->data);
                     }
                     else {
-                      pvVar13 = (void *)0x0;
+                      pvVar13 = nullptr;
                     }
                     local_60 = *(int *)((int)pvVar13 + 0xc);
                     local_5c = *(int *)((int)pvVar13 + 0x10) +
@@ -518,7 +520,7 @@ LAB_00429715:
                       else {
                         iVar11 = *(int *)((int)pvVar9 + 0x10);
                         iVar7 = *(int *)((int)pvVar9 + 0x14);
-                        local_20 = *(undefined4 **)&local_30->field_0xc;
+                        local_20 = (undefined4 *)local_30->field_000C;
                         iVar14 = *(int *)((int)pvVar9 + 0xc);
                         local_4c = (((local_9c - local_5c) * local_58 + *(int *)((int)pvVar13 + 4))
                                    - local_60) + local_a0;
@@ -574,7 +576,7 @@ LAB_00429715:
                                         (int)local_44->data);
                     }
                     else {
-                      pvVar13 = (void *)0x0;
+                      pvVar13 = nullptr;
                     }
                     local_60 = *(int *)((int)pvVar13 + 0xc) + local_c8;
                     local_5c = *(int *)((int)pvVar13 + 0x10) +
@@ -589,7 +591,7 @@ LAB_00429715:
                     if (iVar11 != 0) {
                       iVar11 = *(int *)((int)pvVar9 + 0x10);
                       iVar7 = *(int *)((int)pvVar9 + 0x14);
-                      local_20 = *(undefined4 **)&local_30->field_0xc;
+                      local_20 = (undefined4 *)local_30->field_000C;
                       iVar14 = *(int *)((int)pvVar9 + 0xc);
                       local_4c = (((local_9c - local_5c) * local_58 + *(int *)((int)pvVar13 + 4)) -
                                  local_60) + local_a0;
@@ -653,7 +655,7 @@ LAB_00429d7d:
             }
           }
           else {
-            thunk_FUN_00428dc0(*(uint **)&local_30->field_0xc,*(int *)((int)pvVar9 + 0x14),
+            thunk_FUN_00428dc0((uint *)local_30->field_000C,*(int *)((int)pvVar9 + 0x14),
                                *(int *)((int)pvVar9 + 0x18),local_10->field_003C,
                                local_10->field_0024,(byte)local_2c);
           }
@@ -669,7 +671,7 @@ LAB_00429d7d:
       /* ST_PSEUDO[dynamic_array_indexing]: expected DArrayAt<T>(array, uVar10) (runtime stride) */
       pvVar9 = (void *)(array->elementSize * uVar10 + (int)array->data);
       array->iteratorIndex = uVar10 + 1;
-      if (pvVar9 == (void *)0x0) break;
+      if (pvVar9 == nullptr) break;
       FUN_006a5e90(*(short **)((int)pvVar9 + 4));
     }
     DArrayDestroy(array);
@@ -678,7 +680,7 @@ LAB_00429d7d:
     /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
     local_2c = CONCAT31(local_2c._1_3_,(byte)local_2c << 2);
     if (3 < (int)local_40) {
-      if (pSVar5 != (ST3DSMAPContext *)0x0) {
+      if (pSVar5 != nullptr) {
         ST3DSMAPContext::sub_006DBCF0(pSVar5);
         Library::MSVCRT::FUN_0072e2b0((HoloTy *)pSVar5);
       }

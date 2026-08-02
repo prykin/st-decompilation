@@ -12,10 +12,10 @@ void * __cdecl FUN_005861a0(void)
   STLBombC *pSVar1;
 
   pSVar1 = (STLBombC *)FUN_006b04d0(0x28a);
-  if (pSVar1 != (STLBombC *)0x0) {
+  if (pSVar1 != nullptr) {
     pSVar1 = STLBombC::STLBombC(pSVar1);
     return pSVar1;
   }
-  return (void *)0x0;
+  return nullptr;
 }
 

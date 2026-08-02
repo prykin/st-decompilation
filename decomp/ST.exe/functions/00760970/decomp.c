@@ -95,7 +95,7 @@ void FUN_00760970(int param_1,AnonShape_00760970_DF0E462C *param_2,int *param_3,
     pAVar4 = (AnonNested_00760970_0050_3C80E9C1 *)&pAVar4->field_0x4;
     piVar2 = piVar2 + 1;
     local_10 = (int *)((int)local_10 + -1);
-  } while (local_10 != (int *)0x0);
+  } while (local_10 != nullptr);
   local_18 = local_128;
   local_10 = param_4;
   local_20 = 8;

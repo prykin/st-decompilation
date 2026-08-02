@@ -32,7 +32,7 @@ TLOBaseTy::FUN_004cf4e0
   pAVar2[1].field_0008 = 0;
   *(undefined2 *)&pAVar2[1].field_000C = 0;
   *(undefined1 *)((int)&pAVar2[1].field_000C + 2) = 0;
-  if (param_6 != (char *)0x0) {
+  if (param_6 != nullptr) {
     Library::MSVCRT::_strncpy((char *)(this->field_0607 + 1),param_6,0xf);
   }
   this->field_03D4 = this->field_03D4 + 1;

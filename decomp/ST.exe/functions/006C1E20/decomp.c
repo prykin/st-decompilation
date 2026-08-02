@@ -17,11 +17,11 @@ void FUN_006c1e20(void)
         if ((piVar3[-3] & 1U) != 0) {
           piVar3[-3] = piVar3[-3] & 8;
           piVar1 = (int *)*piVar3;
-          if (piVar1 != (int *)0x0) {
+          if (piVar1 != nullptr) {
             /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
             (**(code **)(*piVar1 + 0x48))(piVar1);
             piVar1 = (int *)piVar3[1];
-            if (piVar1 != (int *)0x0) {
+            if (piVar1 != nullptr) {
               /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
               (**(code **)(*piVar1 + 8))(piVar1);
               piVar3[1] = 0;

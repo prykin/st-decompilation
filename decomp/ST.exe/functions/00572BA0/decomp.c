@@ -19,15 +19,15 @@ undefined4 __fastcall FUN_00572ba0(int param_1)
   if (iVar1 == 0) {
     this = (cMf32 *)Library::Ourlib::MF32INT::FUN_006f0ec0(0x345,local_154,2,0,0);
     iVar1 = local_c;
-    if (this != (cMf32 *)0x0) {
+    if (this != nullptr) {
       cMf32::RecPut(this,0xc,PTR_s_AIKEYS_PLAYER_0079b0dc,(byte *)(local_c + 0xd86),0x28,
-                    (undefined4 *)0x0,'\0',(uint *)0x0);
+                    nullptr,'\0',nullptr);
       cMf32::RecPut(this,0xc,PTR_s_ACCKEYS_PLAYER_0079b0d8,(byte *)(iVar1 + 0x80e),400,
-                    (undefined4 *)0x0,'\0',(uint *)0x0);
+                    nullptr,'\0',nullptr);
       cMf32::RecPut(this,0xc,PTR_s_SYSKEYS_PLAYER_0079b0e0,(byte *)(iVar1 + 0x99e),0x140,
-                    (undefined4 *)0x0,'\0',(uint *)0x0);
+                    nullptr,'\0',nullptr);
       cMf32::RecPut(this,0xc,PTR_s_MOUKEYS_PLAYER_0079b0e4,(byte *)(iVar1 + 0xc1e),0x78,
-                    (undefined4 *)0x0,'\0',(uint *)0x0);
+                    nullptr,'\0',nullptr);
       cMf32::delete(this);
     }
     g_currentExceptionFrame = local_50.previous;

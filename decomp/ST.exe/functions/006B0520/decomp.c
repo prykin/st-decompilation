@@ -17,7 +17,7 @@ FUN_006b0520(AnonShape_GLOBAL_0080759C_9638EF10 *param_1,int param_2,UINT param_
     if (*(int *)&param_1[1].field_0x8 == 0) {
       puVar1 = FUN_006b04d0(0x200);
       *(undefined4 **)&param_1[1].field_0x8 = puVar1;
-      if (puVar1 == (undefined4 *)0x0) {
+      if (puVar1 == nullptr) {
         return 0xfffffffe;
       }
     }
@@ -44,7 +44,7 @@ FUN_006b0520(AnonShape_GLOBAL_0080759C_9638EF10 *param_1,int param_2,UINT param_
     if (*(int *)&param_1[1].field_0x8 == 0) {
       puVar1 = FUN_006b04d0(0x400);
       *(undefined4 **)&param_1[1].field_0x8 = puVar1;
-      if (puVar1 == (undefined4 *)0x0) {
+      if (puVar1 == nullptr) {
         return 0xfffffffe;
       }
     }

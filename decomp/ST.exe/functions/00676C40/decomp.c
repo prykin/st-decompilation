@@ -26,7 +26,7 @@ void __cdecl FUN_00676c40(DArrayTy *param_1,undefined *param_2)
           pvVar6 = (void *)(param_1->elementSize * uVar7 + (int)param_1->data);
         }
         else {
-          pvVar6 = (void *)0x0;
+          pvVar6 = nullptr;
         }
         uVar1 = uVar7 + 1;
         if (uVar1 < uVar3) {
@@ -34,7 +34,7 @@ void __cdecl FUN_00676c40(DArrayTy *param_1,undefined *param_2)
           pvVar4 = (void *)(param_1->elementSize * uVar1 + (int)param_1->data);
         }
         else {
-          pvVar4 = (void *)0x0;
+          pvVar4 = nullptr;
         }
         /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
         iVar5 = (*(code *)param_2)(pvVar4,pvVar6);

@@ -73,7 +73,7 @@ void __thiscall BldBoatPanelTy::InitBldBoatPanel(BldBoatPanelTy *this)
   g_prodPanel_0080167C = (ProdPanelTy *)local_1c;
   puVar11 = &local_1c->field_027A;
   do {
-    pDVar3 = Library::DKW::TBL::DArrayCreate((DArrayTy *)0x0,10,0x30,5);
+    pDVar3 = Library::DKW::TBL::DArrayCreate(nullptr,10,0x30,5);
     *puVar11 = pDVar3;
     puVar11 = puVar11 + 1;
     iVar8 = iVar8 + -1;
@@ -84,14 +84,14 @@ void __thiscall BldBoatPanelTy::InitBldBoatPanel(BldBoatPanelTy *this)
   pcVar4->field_0058 = 1;
   pcVar4->field_005C = 0;
   iVar8 = 1;
-  piVar13 = (int *)0x0;
+  piVar13 = nullptr;
   pCVar5 = thunk_FUN_00571240("BKG_BLDBOATW",0);
   puVar6 = cMf32::RecGet(g_cMf32_00806790,1,pCVar5,piVar13,iVar8);
   this_00->field_0184 = puVar6;
   text = &this_00->field_006C;
   pCVar5 = thunk_FUN_00571240("BKG_BLDBOATBUT",0);
   wsprintfA(text,"%s0",pCVar5);
-  puVar6 = cMf32::RecGet(g_cMf32_00806790,1,text,(int *)0x0,1);
+  puVar6 = cMf32::RecGet(g_cMf32_00806790,1,text,nullptr,1);
   this_00->field_028E = puVar6;
   if (DAT_0080874d == 0xff) {
     iVar8 = 1;
@@ -101,10 +101,10 @@ void __thiscall BldBoatPanelTy::InitBldBoatPanel(BldBoatPanelTy *this)
   }
   wsprintfA(text,"BOATS_%d",iVar8);
   puVar6 = Library::Ourlib::MFRLOAD::mfRLoad
-                     (DAT_00806794,CASE_B,text,0xffffffff,0,1,0,(undefined4 *)0x0);
+                     (DAT_00806794,CASE_B,text,0xffffffff,0,1,0,nullptr);
   this_00->field_0188 = puVar6;
   puVar6 = Library::Ourlib::MFRLOAD::mfRLoad
-                     (DAT_00806794,CASE_B,"BOATS_D",0xffffffff,0,1,0,(undefined4 *)0x0);
+                     (DAT_00806794,CASE_B,"BOATS_D",0xffffffff,0,1,0,nullptr);
   this_00->field_018C = puVar6;
   pCVar5 = thunk_FUN_00571240("BKG_BLDBOATBUT",0);
   ProdPanelTy::InitProdPanel

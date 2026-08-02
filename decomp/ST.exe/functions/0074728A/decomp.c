@@ -9,7 +9,7 @@ undefined4 FUN_0074728a(int param_1,ushort *param_2,uint *param_3)
   int iVar4;
   int iVar5;
 
-  if (param_3 == (uint *)0x0) {
+  if (param_3 == nullptr) {
     uVar2 = 0x80004003;
   }
   else {

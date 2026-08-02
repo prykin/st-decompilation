@@ -72,18 +72,18 @@ void __thiscall VisibleClassTy::InitData(VisibleClassTy *this)
       iVar4 = iVar4 + -1;
     } while (iVar4 != 0);
     pVVar9 = (VisibleClassTy_field_00F4DArray *)
-             Library::DKW::TBL::DArrayCreate((DArrayTy *)0x0,10,0x1c,10);
+             Library::DKW::TBL::DArrayCreate(nullptr,10,0x1c,10);
     pVVar3->field_00F4 = pVVar9;
     pVVar10 = (VisibleClassTy_field_0110DArray *)
-              Library::DKW::TBL::DArrayCreate((DArrayTy *)0x0,10,0xc,10);
+              Library::DKW::TBL::DArrayCreate(nullptr,10,0xc,10);
     pVVar3->field_0110 = pVVar10;
     pVVar3->field_00F8 = (uint)DAT_00808a95;
     pVVar3->field_00FC[DAT_0080874d] = 1;
     if (DAT_00808a94 != '\0') {
       uVar13 = 0;
-      local_8 = &DAT_008087e9;
+      local_8 = &g_bulkInitializedRecords_008087C7[0].field_0022;
       do {
-        if ((g_playSystem_00802A38 == (STPlaySystemC *)0x0) || (*local_8 < 8)) {
+        if ((g_playSystem_00802A38 == nullptr) || (*local_8 < 8)) {
           uVar11 = (uint)DAT_0080874d;
           if (uVar13 != uVar11) {
             if (DAT_00808a8f == '\0') {
@@ -112,7 +112,8 @@ LAB_00557b2d:
               bVar15 = iVar4 < 0;
             }
             else {
-              bVar15 = (&DAT_008087ea)[(uVar13 & 0xff) * 0x51] != (&DAT_008087ea)[uVar11 * 0x51];
+              bVar15 = g_bulkInitializedRecords_008087C7[uVar13 & 0xff].field_0023 !=
+                       g_bulkInitializedRecords_008087C7[uVar11].field_0023;
             }
             if (bVar15) goto LAB_00557b44;
           }

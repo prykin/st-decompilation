@@ -78,11 +78,11 @@ void __thiscall SettMapMTy::SetListCtrls(SettMapMTy *this)
     local_18 = 0;
     uVar10 = local_8;
     do {
-      if ((&pSVar5->field_0000)[uVar10 + local_18] != (AnonPointee_SettMapMTy_0000 *)0x0) {
+      if ((&pSVar5->field_0000)[uVar10 + local_18] != nullptr) {
         pSVar3 = pSVar5->field_1F84;
-        if ((pSVar3 == (SettMapMTy_field_1F84DArray *)0x0) ||
+        if ((pSVar3 == nullptr) ||
            (uVar9 = pSVar5->field_1F88 + local_10, pSVar3->count <= uVar9)) {
-          pcVar11 = (char *)0x0;
+          pcVar11 = nullptr;
         }
         else {
           /* ST_PSEUDO[dynamic_array_indexing]: expected DArrayAt<T>(array, index) (runtime elementSize cannot be a static C array) */
@@ -91,13 +91,13 @@ void __thiscall SettMapMTy::SetListCtrls(SettMapMTy *this)
         SVar1 = pSVar5->field_1E26;
         pSVar5->field_0025 = (&pSVar5->field_0000)[uVar10 + local_18];
         pSVar5->field_0031 = 0;
-        if (((SVar1 != CASE_C) && (SVar1 != CASE_10)) && (pcVar11 != (char *)0x0)) {
+        if (((SVar1 != CASE_C) && (SVar1 != CASE_10)) && (pcVar11 != nullptr)) {
           switch(local_18) {
           case 0:
-            if (*(DArrayTy **)(pcVar11 + 0x50) != (DArrayTy *)0x0) {
+            if (*(DArrayTy **)(pcVar11 + 0x50) != nullptr) {
               DArrayDestroy(*(DArrayTy **)(pcVar11 + 0x50));
             }
-            *(DArrayTy **)(pcVar11 + 0x50) = (DArrayTy *)0x0;
+            *(DArrayTy **)(pcVar11 + 0x50) = nullptr;
             switch(pSVar5->field_1E26) {
             case CASE_5:
             case CASE_F:
@@ -190,7 +190,7 @@ joined_r0x005cd0bb:
     if (0x832 < (int)local_8) {
       local_8 = pSVar5->field_1F84->count;
       local_2c = 0x28;
-      if ((pSVar5->field_1F84 == (SettMapMTy_field_1F84DArray *)0x0) || (local_8 < 0xb)) {
+      if ((pSVar5->field_1F84 == nullptr) || (local_8 < 0xb)) {
         local_28 = 1;
       }
       else {

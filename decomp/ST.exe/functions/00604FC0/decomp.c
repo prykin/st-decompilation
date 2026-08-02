@@ -37,7 +37,7 @@ undefined4 __thiscall FUN_00604fc0(void *this,AnonShape_00604A90_035626E6 *param
   *(undefined4 *)((int)this + 0x27e) = param_1->field_00A9;
   if (*(int *)((int)this + 0x215) != 0) {
     iVar3 = *piVar9;
-    uVar1 = FUN_006b0060((uint *)0x0,(uint *)&param_1[1].field_0x2);
+    uVar1 = FUN_006b0060(nullptr,(uint *)&param_1[1].field_0x2);
     *(undefined4 *)((int)this + 0x215) = uVar1;
     piVar9 = (int *)(&param_1[1].field_0x2 + iVar3);
   }

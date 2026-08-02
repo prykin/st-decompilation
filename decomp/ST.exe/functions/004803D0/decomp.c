@@ -6,11 +6,11 @@ int __thiscall STBoatC::FUN_004803d0(STBoatC *this,AnonShape_004803D0_350EB461 *
 {
   int iVar1;
 
-  if ((param_1 == (AnonShape_004803D0_350EB461 *)0x0) ||
+  if ((param_1 == nullptr) ||
      (param_1 == (AnonShape_004803D0_350EB461 *)0x1)) {
     memset(&this->field_02CC, 0, 0x5c); /* compiler bulk-zero initialization */
     this->field_02C4 = 0;
-    if (this->field_07CA != (AnonShape_005EFAE0_B406B78B *)0x0) {
+    if (this->field_07CA != nullptr) {
       return 0;
     }
     *(undefined2 *)&this->field_0x3ba = *(undefined2 *)&this->field_0x44b;
@@ -30,7 +30,7 @@ int __thiscall STBoatC::FUN_004803d0(STBoatC *this,AnonShape_004803D0_350EB461 *
     if (iVar1 != 0) {
       return iVar1;
     }
-    if (this->field_07CA == (AnonShape_005EFAE0_B406B78B *)0x0) {
+    if (this->field_07CA == nullptr) {
       return 0;
     }
     *(undefined4 *)((int)this->field_06CB + 0x24) = 1;

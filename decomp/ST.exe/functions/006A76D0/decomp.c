@@ -42,7 +42,7 @@ FUN_006a76d0(int param_1,int param_2,int param_3,int param_4,int param_5,int par
     }
     local_30 = (short *)(param_7 - local_1c);
     if ((int)local_30 < 0) {
-      local_30 = (short *)0x0;
+      local_30 = nullptr;
     }
     local_14 = local_1c + param_5;
     if (param_2 <= local_14) {

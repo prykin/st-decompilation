@@ -78,10 +78,10 @@ int __thiscall STArtiafactC::GetMessage(STArtiafactC *this,STMessage *message)
           dVar5 = (message->arg0).u32;
           local_8->field_0315 = *(undefined1 *)(dVar5 + 0x18);
           if (((local_8->field_024E != '\0') && (local_8->field_02AB != 0xffff)) &&
-             ((pSVar11 = (STGameObjC *)local_8->field_02AD, pSVar11 != (STGameObjC *)0x0 ||
+             ((pSVar11 = (STGameObjC *)local_8->field_02AD, pSVar11 != nullptr ||
               (pSVar11 = STAllPlayersC::GetObjPtr
                                    (g_allPlayers_007FA174,local_8->field_02A3,local_8->field_02AB,
-                                    CASE_1), pSVar11 != (STGameObjC *)0x0)))) {
+                                    CASE_1), pSVar11 != nullptr)))) {
             thunk_FUN_00492510(pSVar11,(int)this_00->field_0018);
             /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
             (*(code *)this_00->field_0000->field_00AC)(pSVar11->field_0018);
@@ -178,7 +178,7 @@ int __thiscall STArtiafactC::GetMessage(STArtiafactC *this,STMessage *message)
           g_currentExceptionFrame = local_60.previous;
           return 0;
         }
-        if (g_allPlayers_007FA174 == (STAllPlayersC *)0x0) {
+        if (g_allPlayers_007FA174 == nullptr) {
           g_currentExceptionFrame = local_60.previous;
           return 0;
         }
@@ -210,7 +210,7 @@ int __thiscall STArtiafactC::GetMessage(STArtiafactC *this,STMessage *message)
             local_1c = 1;
             if (((((sVar1 < 0) || (g_worldGrid.sizeX <= sVar1)) || (sVar2 < 0)) ||
                 ((g_worldGrid.sizeY <= sVar2 || (sVar3 < 0)))) || (g_worldGrid.sizeZ <= sVar3)) {
-              pSVar17 = (STWorldObject *)0x0;
+              pSVar17 = nullptr;
             }
             else {
               pSVar17 = g_worldGrid.cells
@@ -218,7 +218,7 @@ int __thiscall STArtiafactC::GetMessage(STArtiafactC *this,STMessage *message)
                          (int)g_worldGrid.sizeX * (int)sVar2 + (int)sVar1].objects[0];
             }
             bVar7 = true;
-            if ((pSVar17 == (STWorldObject *)0x0) &&
+            if ((pSVar17 == nullptr) &&
                (iVar8 = DumpClassC::WritePtr
                                   (sVar1,sVar2,sVar3,0,
                                    (RecoveredRecord_DumpClassC_00495EC0 *)this_00), iVar8 == 0)) {
@@ -242,7 +242,7 @@ int __thiscall STArtiafactC::GetMessage(STArtiafactC *this,STMessage *message)
               local_1c = 1;
               if ((((sVar1 < 0) || (g_worldGrid.sizeX <= sVar1)) || (sVar2 < 0)) ||
                  (((g_worldGrid.sizeY <= sVar2 || (sVar3 < 0)) || (g_worldGrid.sizeZ <= sVar3)))) {
-                pSVar17 = (STWorldObject *)0x0;
+                pSVar17 = nullptr;
               }
               else {
                 pSVar17 = g_worldGrid.cells
@@ -250,7 +250,7 @@ int __thiscall STArtiafactC::GetMessage(STArtiafactC *this,STMessage *message)
                            (int)g_worldGrid.sizeX * (int)sVar2 + (int)sVar1].objects[0];
               }
               bVar7 = true;
-              if ((pSVar17 == (STWorldObject *)0x0) &&
+              if ((pSVar17 == nullptr) &&
                  (iVar8 = DumpClassC::WritePtr
                                     (sVar1,sVar2,sVar3,0,
                                      (RecoveredRecord_DumpClassC_00495EC0 *)this_00), iVar8 == 0)) {
@@ -267,7 +267,7 @@ int __thiscall STArtiafactC::GetMessage(STArtiafactC *this,STMessage *message)
               this_00->field_0252 = this_00->field_0252 + -1;
             }
           }
-          if ((g_allPlayers_007FA174 != (STAllPlayersC *)0x0) &&
+          if ((g_allPlayers_007FA174 != nullptr) &&
              (iVar8 = STAllPlayersC::RegisterArtefact
                                 (g_allPlayers_007FA174,this_00->field_0032,this_00), iVar8 != 0)) {
             sub_005EBCB0(this_00);
@@ -302,7 +302,7 @@ int __thiscall STArtiafactC::GetMessage(STArtiafactC *this,STMessage *message)
           return 0;
         }
         thunk_FUN_005ec9f0(0);
-        if (g_allPlayers_007FA174 != (STAllPlayersC *)0x0) {
+        if (g_allPlayers_007FA174 != nullptr) {
           iVar8 = STAllPlayersC::RegisterArtefact(g_allPlayers_007FA174,0xffff,this_00);
           if (iVar8 != 0) {
             sub_005EBCB0(this_00);
@@ -391,7 +391,7 @@ switchD_005eb5ad_caseD_129:
     g_currentExceptionFrame = local_60.previous;
     return 0;
   }
-  if (local_8->field_02A7 == (AnonShape_005EFAE0_B406B78B *)0x0) {
+  if (local_8->field_02A7 == nullptr) {
     g_currentExceptionFrame = local_60.previous;
     return 0;
   }
@@ -410,10 +410,10 @@ switchD_005eb5ad_caseD_129:
     return 0;
   }
   pSVar11 = (STGameObjC *)this_00->field_02AD;
-  if ((pSVar11 != (STGameObjC *)0x0) ||
+  if ((pSVar11 != nullptr) ||
      (pSVar11 = STAllPlayersC::GetObjPtr
                           (g_allPlayers_007FA174,this_00->field_02A3,this_00->field_02AB,CASE_1),
-     pSVar11 != (STGameObjC *)0x0)) {
+     pSVar11 != nullptr)) {
     this_00->field_0277 = (int)*(short *)&pSVar11->field_0x41;
     this_00->field_027B = (int)*(short *)&pSVar11->field_0x43;
     this_00->field_027F = (int)*(short *)&pSVar11->field_0x45;

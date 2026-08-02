@@ -21,7 +21,7 @@ int __thiscall FUN_0062fa80(void *this,AnonShape_0062FA80_0B91B2B9 *param_1)
   pAVar6 = param_1;
   local_c = 0;
   /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
-  if (param_1 == (AnonShape_0062FA80_0B91B2B9 *)0x0) {
+  if (param_1 == nullptr) {
     return 0;
   }
   *(undefined4 *)((int)this + 0x1d5) = param_1->field_0014;
@@ -39,7 +39,7 @@ int __thiscall FUN_0062fa80(void *this,AnonShape_0062FA80_0B91B2B9 *param_1)
         ((g_worldGrid.sizeZ <= sVar2 ||
          (g_worldGrid.cells
           [(int)g_worldGrid.planeStride * (int)sVar2 + (int)g_worldGrid.sizeX * (int)sVar3 +
-           (int)sVar1].objects[1] == (STWorldObject *)0x0)))) &&
+           (int)sVar1].objects[1] == nullptr)))) &&
        (iVar7 = DumpClassC::WritePtr
                           ((short)*(undefined4 *)((int)this + 0x1d5),
                            (short)*(undefined4 *)((int)this + 0x1d9),
@@ -56,7 +56,7 @@ int __thiscall FUN_0062fa80(void *this,AnonShape_0062FA80_0B91B2B9 *param_1)
         piVar8 = piVar8 + 1;
         /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
         param_1 = (AnonShape_0062FA80_0B91B2B9 *)&param_1[-1].field_0x3b;
-      } while (param_1 != (AnonShape_0062FA80_0B91B2B9 *)0x0);
+      } while (param_1 != nullptr);
       *(undefined4 *)((int)this + 0x1fa) = *(undefined4 *)&pAVar6->field_0x39;
       if (local_c == 0) {
         return 0;
@@ -68,7 +68,7 @@ int __thiscall FUN_0062fa80(void *this,AnonShape_0062FA80_0B91B2B9 *param_1)
       param_1 = (AnonShape_0062FA80_0B91B2B9 *)0x5;
       do {
         puVar11 = (byte *)*piVar8;
-        if (puVar11 != (undefined4 *)0x0) {
+        if (puVar11 != nullptr) {
           local_8 = local_8 + 0x3e;
           uVar4 = puVar11[4];
           puVar10 = (byte *)(puVar9);
@@ -79,7 +79,7 @@ int __thiscall FUN_0062fa80(void *this,AnonShape_0062FA80_0B91B2B9 *param_1)
         piVar8 = piVar8 + 1;
         /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
         param_1 = (AnonShape_0062FA80_0B91B2B9 *)&param_1[-1].field_0x3b;
-      } while (param_1 != (AnonShape_0062FA80_0B91B2B9 *)0x0);
+      } while (param_1 != nullptr);
       return local_8;
     }
   }

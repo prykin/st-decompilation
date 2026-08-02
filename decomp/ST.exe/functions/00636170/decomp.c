@@ -8,7 +8,7 @@ undefined4 FUN_00636170(void)
   int iVar2;
 
   piVar1 = (int *)Library::MSVCRT::FUN_0072ea70("NumbM.dat",&DAT_007d1d98);
-  if (piVar1 != (int *)0x0) {
+  if (piVar1 != nullptr) {
     iVar2 = Library::MSVCRT::FUN_00730050(piVar1,&DAT_007d1d88);
     if (iVar2 < 1) {
       Library::MSVCRT::FUN_0072ea90(piVar1);

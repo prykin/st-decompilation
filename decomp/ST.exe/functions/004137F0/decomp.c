@@ -39,7 +39,7 @@ undefined4 FUN_004137f0(AnonShape_004137F0_350C8AE0 *param_1,int param_2,uint pa
     iVar5 = *(int *)(param_1->field_0029 + 0xc);
     param_1->field_0049 = param_1->field_0049 & 0xfffffffe;
     /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
-    param_1 = (AnonShape_004137F0_350C8AE0 *)0x0;
+    param_1 = nullptr;
     /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
     param_4 = 0;
     /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
@@ -58,7 +58,7 @@ undefined4 FUN_004137f0(AnonShape_004137F0_350C8AE0 *param_1,int param_2,uint pa
         /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
         if ((*(uint *)(iVar2 + 0xc) <= param_3) ||
            (psVar4 = (short *)(*(int *)(iVar2 + 8) * param_3 + *(int *)(iVar2 + 0x1c)),
-           psVar4 == (short *)0x0)) break;
+           psVar4 == nullptr)) break;
         if (*psVar4 != -1) {
           /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
           iVar2 = thunk_FUN_00423e70(this,CONCAT22((short)((uint)psVar4 >> 0x10),*psVar4));

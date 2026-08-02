@@ -13,6 +13,7 @@ import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Locale;
 import java.util.Map;
+import java.util.Objects;
 
 import ghidra.app.script.GhidraScript;
 import ghidra.program.model.address.Address;
@@ -148,7 +149,9 @@ public class STUtilityFunctionApplier extends GhidraScript {
         List<String> kept = new ArrayList<>();
         if (old != null) for (String item : old.split("\\n\\s*\\n"))
             if (!item.trim().startsWith(MARKER) && !item.isBlank()) kept.add(item.trim());
-        kept.add(block); function.setComment(String.join("\n\n", kept));
+        kept.add(block);
+        String replacement = String.join("\n\n", kept);
+        if (!Objects.equals(old, replacement)) function.setComment(replacement);
     }
 
     private void refreshSemanticTags(Function function, Map<String, String> row) {
@@ -158,8 +161,14 @@ public class STUtilityFunctionApplier extends GhidraScript {
             if (tag.getName().startsWith(TAG_PREFIX) && !tag.getName().equals(desired))
                 obsolete.add(tag.getName());
         for (String name : obsolete) function.removeTag(name);
-        function.addTag(TAG);
-        function.addTag(desired);
+        if (!hasTag(function, TAG)) function.addTag(TAG);
+        if (!hasTag(function, desired)) function.addTag(desired);
+    }
+
+    private boolean hasTag(Function function, String name) {
+        for (var tag : function.getTags())
+            if (tag.getName().equals(name)) return true;
+        return false;
     }
 
     private String semanticTag(Map<String, String> row) {

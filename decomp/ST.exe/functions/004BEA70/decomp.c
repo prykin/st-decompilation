@@ -218,12 +218,12 @@ LAB_004beb63:
     *(bool *)((int)param_1 + 0xf) = this->field_0245 == CASE_0;
   }
   pAVar10 = thunk_FUN_004357f0(*(char *)&this->field_0024);
-  if (pAVar10 == (AiPlrClassTy *)0x0) {
+  if (pAVar10 == nullptr) {
     *(undefined1 *)((int)param_1 + 0x15) = 0;
   }
   else {
     pSVar11 = thunk_FUN_0042b760(*(char *)&this->field_0024,this->field_0030);
-    if ((pSVar11 == (STGroupBoatC *)0x0) || (pSVar11->field_001C == 0)) {
+    if ((pSVar11 == nullptr) || (pSVar11->field_001C == 0)) {
       *(undefined1 *)((int)param_1 + 0x15) = 1;
     }
     else {
@@ -818,7 +818,7 @@ LAB_004c0181:
     }
     pAVar17 = (AnonPointee_TLOBaseTy_061B *)this->field_0245;
 joined_r0x004bfcb7:
-    if (pAVar17 != (AnonPointee_TLOBaseTy_061B *)0x0) goto cf_common_join_004C0278;
+    if (pAVar17 != nullptr) goto cf_common_join_004C0278;
 cf_common_join_004BEF5A:
     uVar6 = 1;
     goto LAB_004bef5f;
@@ -1034,7 +1034,7 @@ cf_common_join_004C01F3:
     puVar19 = (undefined2 *)((int)param_1 + 0x2b);
     local_8 = (int *)((int)param_1 + 0x1d);
     /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
-    param_1 = (int *)0x0;
+    param_1 = nullptr;
     piVar22 = &this->field_04D8;
     do {
       if ((piVar22[-2] == 0) || (piVar22[-1] == 0)) {
@@ -1175,7 +1175,7 @@ cf_common_join_004C01F3:
       *(undefined2 *)((int)param_1 + 0x3a) = 0;
       TVar3 = this->field_05AC;
       /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
-      param_1 = (int *)0x0;
+      param_1 = nullptr;
       if (TVar3 == CASE_35) {
         do {
           if ((&PTR_DAT_007bfc04)[this->field_0239][(int)param_1] == '\0') {
@@ -1587,7 +1587,7 @@ LAB_004c0fcc:
     pAVar17 = (AnonPointee_TLOBaseTy_061B *)(iVar8 - CASE_1);
     bVar23 = SUB41(pAVar17,0);
     switch(pAVar17) {
-    case (AnonPointee_TLOBaseTy_061B *)0x0:
+    case nullptr:
       iVar8 = thunk_FUN_0044e1b0((int)this->field_0024);
       if (iVar8 == 0) {
         piVar4[0x16] = 0xbdf;
@@ -1628,7 +1628,7 @@ LAB_004c0fcc:
     return false;
   }
   pAVar17 = (AnonPointee_TLOBaseTy_061B *)this->field_0245;
-  if (pAVar17 != (AnonPointee_TLOBaseTy_061B *)0x0) {
+  if (pAVar17 != nullptr) {
     if (pAVar17 == (AnonPointee_TLOBaseTy_061B *)0x4) {
       piVar4[0x16] = 0xbcc;
     }
@@ -1641,7 +1641,7 @@ LAB_004c0fcc:
     uVar12 = thunk_FUN_004e22f0(this,0);
     if (uVar12 == 0) {
       uVar12 = thunk_FUN_004e22f0(this,1);
-      pAVar17 = (AnonPointee_TLOBaseTy_061B *)0x0;
+      pAVar17 = nullptr;
       if (uVar12 == 0) break;
     }
     piVar4[0x16] = 0xbc5;
@@ -1720,18 +1720,18 @@ LAB_004c0fcc:
   case CASE_6C:
     pAVar17 = (AnonPointee_TLOBaseTy_061B *)this->field_04D8;
     if ((pAVar17 == (AnonPointee_TLOBaseTy_061B *)0xffff) &&
-       (((pAVar17 = this->field_061B, pAVar17 == (AnonPointee_TLOBaseTy_061B *)0x0 ||
+       (((pAVar17 = this->field_061B, pAVar17 == nullptr ||
          (pAVar17->field_0020 != 1000)) || (pAVar17->field_04D8 == 0xffff)))) {
       iVar8 = thunk_FUN_004e9930((int)this);
-      pAVar17 = (AnonPointee_TLOBaseTy_061B *)0x0;
+      pAVar17 = nullptr;
       if ((((iVar8 != 0) &&
-           (pAVar17 = this->field_061B, pAVar17 != (AnonPointee_TLOBaseTy_061B *)0x0)) &&
+           (pAVar17 = this->field_061B, pAVar17 != nullptr)) &&
           (pAVar17->field_0020 == 1000)) &&
          ((pAVar17->field_04D8 == 0xffff && ((int)pAVar17->field_05B8 < g_worldGrid.sizeZ + -1)))) {
         piVar4[0x16] = 0xbe0;
         return SUB41(pAVar17,0);
       }
-      piVar4[0x16] = (this->field_061B != (AnonPointee_TLOBaseTy_061B *)0x0) + 0xbd9;
+      piVar4[0x16] = (this->field_061B != nullptr) + 0xbd9;
       return SUB41(pAVar17,0);
     }
 LAB_004c12d3:

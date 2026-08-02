@@ -25,7 +25,7 @@ STAllPlayersC::AddObjsToTmp
   local_c = this;
   errorCode = Library::MSVCRT::__setjmp3(local_54.jumpBuffer,0);
   if (errorCode == 0) {
-    if (param_4 == (DArrayTy *)0x0) {
+    if (param_4 == nullptr) {
       RaiseInternalException
                 (-0x5001fff7,g_overwriteContext_007ED77C,"E:\\__titans\\wlad\\to_allpl.cpp",
                  0x266);

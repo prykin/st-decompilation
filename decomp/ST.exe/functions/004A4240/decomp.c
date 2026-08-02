@@ -62,7 +62,7 @@ void __thiscall STGroupBoatC::ChangeMDNotify(STGroupBoatC *this,int param_1,uint
     iVar3 = (*this_01->vtable->vfunc_2C)();
     if ((iVar3 == 0x3b) || (iVar3 = (*this_01->vtable->vfunc_2C)(), iVar3 == 0x60)) {
       if ((this_00->field_0262 == 1) || (this_00->field_0262 == 0)) {
-        if (this_00->field_0266 == (DArrayTy *)0x0) {
+        if (this_00->field_0266 == nullptr) {
           RaiseInternalException
                     (-0x5001fff7,g_overwriteContext_007ED77C,"E:\\__titans\\wlad\\to_grpb.cpp"
                      ,0x11f2);
@@ -110,7 +110,7 @@ void __thiscall STGroupBoatC::ChangeMDNotify(STGroupBoatC *this,int param_1,uint
         g_currentExceptionFrame = local_78.previous;
         return;
       }
-      if (this_00->field_0266 == (DArrayTy *)0x0) {
+      if (this_00->field_0266 == nullptr) {
         RaiseInternalException
                   (-0x5001fff7,g_overwriteContext_007ED77C,"E:\\__titans\\wlad\\to_grpb.cpp",
                    0x11fe);
@@ -187,7 +187,7 @@ void __thiscall STGroupBoatC::ChangeMDNotify(STGroupBoatC *this,int param_1,uint
         g_currentExceptionFrame = local_78.previous;
         return;
       }
-      if (this_00->field_024E == (DArrayTy *)0x0) {
+      if (this_00->field_024E == nullptr) {
         RaiseInternalException
                   (-0x5001fff7,g_overwriteContext_007ED77C,"E:\\__titans\\wlad\\to_grpb.cpp",
                    0x1215);
@@ -213,7 +213,7 @@ void __thiscall STGroupBoatC::ChangeMDNotify(STGroupBoatC *this,int param_1,uint
   if ((iVar3 == 0x3b) || (iVar4 = (*this_01->vtable->vfunc_2C)(), iVar3 = local_1c, iVar4 == 0x60))
   {
     if ((this_00->field_0262 == 1) || (this_00->field_0262 == 0)) {
-      if (this_00->field_0266 == (DArrayTy *)0x0) {
+      if (this_00->field_0266 == nullptr) {
         RaiseInternalException
                   (-0x5001fff7,g_overwriteContext_007ED77C,"E:\\__titans\\wlad\\to_grpb.cpp",
                    0x1226);
@@ -264,7 +264,7 @@ void __thiscall STGroupBoatC::ChangeMDNotify(STGroupBoatC *this,int param_1,uint
       g_currentExceptionFrame = local_78.previous;
       return;
     }
-    if (this_00->field_0266 == (DArrayTy *)0x0) {
+    if (this_00->field_0266 == nullptr) {
       RaiseInternalException
                 (-0x5001fff7,g_overwriteContext_007ED77C,"E:\\__titans\\wlad\\to_grpb.cpp",
                  0x1234);
@@ -314,7 +314,7 @@ void __thiscall STGroupBoatC::ChangeMDNotify(STGroupBoatC *this,int param_1,uint
                  0x1247);
     }
     if (this_00->field_024A == 0) {
-      if (this_00->field_024E == (DArrayTy *)0x0) {
+      if (this_00->field_024E == nullptr) {
         RaiseInternalException
                   (-0x5001fff7,g_overwriteContext_007ED77C,"E:\\__titans\\wlad\\to_grpb.cpp",
                    0x124b);
@@ -364,7 +364,7 @@ void __thiscall STGroupBoatC::ChangeMDNotify(STGroupBoatC *this,int param_1,uint
       g_currentExceptionFrame = local_78.previous;
       return;
     }
-    if (this_00->field_024E == (DArrayTy *)0x0) {
+    if (this_00->field_024E == nullptr) {
       RaiseInternalException
                 (-0x5001fff7,g_overwriteContext_007ED77C,"E:\\__titans\\wlad\\to_grpb.cpp",
                  0x1259);

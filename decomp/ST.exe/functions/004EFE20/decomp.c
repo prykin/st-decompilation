@@ -22,7 +22,7 @@ void __thiscall BldLabPanelTy::sub_004EFE20(BldLabPanelTy *this)
   undefined4 *local_c;
   int local_8;
 
-  if (this->field_027A != (BldLabPanelTy_field_027ADArray *)0x0) {
+  if (this->field_027A != nullptr) {
     local_c = &this->field_01BE;
     puVar7 = &this->field_01A1;
     local_8 = 0;
@@ -48,11 +48,11 @@ LAB_004eff2c:
       FUN_006e6080(this,2,uVar9,(undefined4 *)&this->field_0x18);
       /* ST_PSEUDO[dynamic_array_indexing]: expected DArrayAt<T>(array, index) (runtime elementSize cannot be a static C array) */
       if ((((this->field_002C != 0) &&
-           (pBVar1 = this->field_027A, pBVar1 != (BldLabPanelTy_field_027ADArray *)0x0)) &&
+           (pBVar1 = this->field_027A, pBVar1 != nullptr)) &&
           (uVar3 = this->field_0199 + local_8, uVar3 < pBVar1->count)) &&
          (pGVar5 = (Global_sub_00526BA0_param_1Enum *)
                    ((int)&pBVar1->data->field_0000 + pBVar1->elementSize * uVar3),
-         pGVar5 != (Global_sub_00526BA0_param_1Enum *)0x0)) {
+         pGVar5 != nullptr)) {
         *(char *)((int)local_c + -9) = ((char)pGVar5[2] == 0) + '\x03';
         UVar2 = thunk_FUN_00523410(*pGVar5,'\x03',0);
         local_c[-2] = UVar2;

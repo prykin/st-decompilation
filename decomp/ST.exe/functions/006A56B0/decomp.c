@@ -16,13 +16,13 @@ FUN_006a56b0(void *param_1,UINT_PTR param_2,int *param_3,undefined4 *param_4,und
       /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
       if (((iVar3 != 0) && (*(UINT_PTR *)((int)param_1 + -0x10) == param_2)) &&
          (*(int *)((int)param_1 + -8) <= DAT_007ec17c)) {
-        if (param_3 != (int *)0x0) {
+        if (param_3 != nullptr) {
           *param_3 = *(int *)((int)param_1 + -8);
         }
-        if (param_4 != (undefined4 *)0x0) {
+        if (param_4 != nullptr) {
           *param_4 = *(undefined4 *)((int)param_1 + -0x18);
         }
-        if (param_5 != (undefined4 *)0x0) {
+        if (param_5 != nullptr) {
           *param_5 = *(undefined4 *)((int)param_1 + -0x14);
         }
         return 1;

@@ -22,12 +22,12 @@ FUN_004affa0(undefined4 param_1,Global_sub_004AFFA0_param_2Enum param_2,int *par
   uVar4 = 0;
   local_14 = -1;
   local_18 = 0;
-  if (g_array_007FA150 != (DArrayTy *)0x0) {
+  if (g_array_007FA150 != nullptr) {
     g_array_007FA150->iteratorIndex = 0;
     iVar1 = DArrayGetNext(g_array_007FA150,(byte *)&local_10);
     if (-1 < iVar1) {
       do {
-        if (local_10 == (STFishC *)0x0) goto switchD_004afffd_caseD_3a;
+        if (local_10 == nullptr) goto switchD_004afffd_caseD_3a;
         switch(param_2) {
         case CASE_38:
           dVar2 = local_10->slot_2C();
@@ -53,7 +53,7 @@ LAB_004b004a:
             if ((((((g_worldGrid.cells
                      [g_worldGrid.sizeX * iVar1 +
                       iVar3 + (int)g_worldGrid.planeStride * (int)local_a].objects[0] ==
-                     (STWorldObject *)0x0) && (-1 < local_6)) && (local_6 < g_worldGrid.sizeX)) &&
+                     nullptr) && (-1 < local_6)) && (local_6 < g_worldGrid.sizeX)) &&
                  ((-1 < local_8 && (local_8 < g_worldGrid.sizeY)))) &&
                 ((-1 < local_a &&
                  ((local_a < g_worldGrid.sizeZ &&

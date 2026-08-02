@@ -14,7 +14,7 @@ void FUN_006da4f0(ushort *param_1,int param_2,byte *param_3,int param_4,int para
   int local_8;
 
   /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
-  if (param_7 == (uint *)0x0) {
+  if (param_7 == nullptr) {
     local_10 = 0xf800;
     local_14 = 0x7e0;
     uVar1 = 0x1f;
@@ -31,7 +31,7 @@ void FUN_006da4f0(ushort *param_1,int param_2,byte *param_3,int param_4,int para
   bVar2 = 0xff;
   if (local_10 == 0xf800) {
     /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
-    param_7 = (uint *)0x0;
+    param_7 = nullptr;
   }
   else if (local_10 == 0x7c00) {
     /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */

@@ -175,7 +175,7 @@ void __fastcall AiFltClassTy::sub_00664960(AiFltClassTy *param_1)
       thunk_FUN_00676c40(param_1->field_020B,thunk_FUN_00660d10);
       goto cf_common_join_00665024;
     case 5:
-      if (param_1->field_020B != (DArrayTy *)0x0) {
+      if (param_1->field_020B != nullptr) {
         param_1->field_020B->count = 0;
         goto cf_common_join_00665024;
       }
@@ -209,7 +209,7 @@ void __fastcall AiFltClassTy::sub_00664960(AiFltClassTy *param_1)
                                param_1->field_022F->field_001C);
           }
           else {
-            psVar10 = (short *)0x0;
+            psVar10 = nullptr;
           }
           iVar16 = (int)psVar10[1];
           /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
@@ -250,13 +250,13 @@ void __fastcall AiFltClassTy::sub_00664960(AiFltClassTy *param_1)
           local_c = local_c + 1;
         } while ((int)local_c < (int)local_4c);
       }
-      if (param_1->field_022F != (AnonPointee_AiFltClassTy_022F *)0x0) {
+      if (param_1->field_022F != nullptr) {
         Library::DKW::TBL::FUN_006b11d0((uint *)param_1->field_022F,0,&local_3c);
       }
       param_1->field_0170 = param_1->field_0170 + 1;
       goto cf_common_join_00665024;
     case 9:
-      if (param_1->field_022F != (AnonPointee_AiFltClassTy_022F *)0x0) {
+      if (param_1->field_022F != nullptr) {
         *(undefined4 *)&param_1->field_022F->field_0xc = 0;
         goto cf_common_join_00665024;
       }
@@ -327,7 +327,7 @@ void __fastcall AiFltClassTy::sub_00664960(AiFltClassTy *param_1)
             psVar10 = (short *)(pAVar5->field_0008 * uVar13 + pAVar5->field_001C);
           }
           else {
-            psVar10 = (short *)0x0;
+            psVar10 = nullptr;
           }
           /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
           if ((((CONCAT11(local_3c._1_1_,(undefined1)local_3c) == *psVar10) &&
@@ -340,13 +340,13 @@ void __fastcall AiFltClassTy::sub_00664960(AiFltClassTy *param_1)
           bVar22 = uVar13 < local_4c;
         } while ((int)uVar13 < (int)local_4c);
       }
-      if (pAVar5 != (AnonPointee_AiFltClassTy_0223 *)0x0) {
+      if (pAVar5 != nullptr) {
         Library::DKW::TBL::FUN_006b11d0((uint *)pAVar5,0,&local_3c);
       }
       param_1->field_0127 = param_1->field_0127 + 1;
       goto cf_common_join_00665024;
     case 0xf:
-      if (param_1->field_0223 != (AnonPointee_AiFltClassTy_0223 *)0x0) {
+      if (param_1->field_0223 != nullptr) {
         *(undefined4 *)&param_1->field_0223->field_0xc = 0;
         goto cf_common_join_00665024;
       }
@@ -540,13 +540,13 @@ LAB_00666901:
                                             (short *)&param_1->field_0x195,(char)param_1->field_00FB
                                            );
                 if (iVar11 == 0) goto cf_common_exit_00667066;
-                if (local_8 != (AiPlrClassTy *)0x0) {
+                if (local_8 != nullptr) {
                   thunk_FUN_0067bf60(local_8,-1,param_1->field_00F7);
                 }
               }
               else {
                 if (param_1->field_00A7 != 0) {
-                  if (local_8 != (AiPlrClassTy *)0x0) {
+                  if (local_8 != nullptr) {
                     thunk_FUN_0067bf60(local_8,'\x01',param_1->field_00F7);
                   }
                   param_1->field_009B = 0;
@@ -560,7 +560,7 @@ LAB_00666901:
                    ((param_1->field_00AB == 0 ||
                     (param_1->field_0280 <= param_1->field_00AF + param_1->field_00AB))))
                 goto cf_common_exit_00667066;
-                if (this != (AiPlrClassTy *)0x0) {
+                if (this != nullptr) {
                   thunk_FUN_0067bf60(this,-1,param_1->field_00F7);
                 }
               }
@@ -589,7 +589,7 @@ LAB_00665eba:
                  ((param_1->field_00AB == 0 ||
                   (param_1->field_0280 <= param_1->field_00AF + param_1->field_00AB))))
               goto cf_common_exit_00667066;
-              if (local_8 != (AiPlrClassTy *)0x0) {
+              if (local_8 != nullptr) {
                 thunk_FUN_0067bf60(local_8,-1,param_1->field_00F7);
               }
             }
@@ -631,7 +631,7 @@ LAB_00665eba:
                  ((param_1->field_00AB == 0 ||
                   (param_1->field_0280 <= param_1->field_00AF + param_1->field_00AB))))
               goto cf_common_exit_00667066;
-              if (local_8 != (AiPlrClassTy *)0x0) {
+              if (local_8 != nullptr) {
                 thunk_FUN_0067bf60(local_8,-1,param_1->field_00F7);
               }
             }
@@ -707,7 +707,7 @@ LAB_00665eba:
                        thunk_FUN_00660180((AnonReceiver_00660180 *)param_1,
                                           (short *)&param_1->field_0x195,(char)param_1->field_015F);
               if (iVar11 == 0) goto cf_common_exit_00667066;
-              if (param_1->field_0284 != (ushort *)0x0) {
+              if (param_1->field_0284 != nullptr) {
                 thunk_FUN_00690610(param_1->field_0284,param_1->field_007D);
               }
             }
@@ -719,7 +719,7 @@ LAB_00665eba:
                  ((param_1->field_00AB == 0 ||
                   (param_1->field_0280 <= param_1->field_00AF + param_1->field_00AB))))
               goto cf_common_exit_00667066;
-              if (param_1->field_0284 != (ushort *)0x0) {
+              if (param_1->field_0284 != nullptr) {
                 thunk_FUN_00690610(param_1->field_0284,param_1->field_007D);
               }
             }
@@ -1099,7 +1099,7 @@ joined_r0x00666ceb:
         }
       }
       else {
-        local_8 = (AiPlrClassTy *)0x0;
+        local_8 = nullptr;
         switch(*(undefined4 *)&param_1->field_0xc3) {
         case 0xa3:
           iVar11 = 0x4e;
@@ -1117,7 +1117,7 @@ joined_r0x00666ceb:
           iVar11 = 0x72;
         }
         local_10 = (DArrayTy *)sub_0065E360(param_1,(uint)bVar2,iVar11);
-        if (local_10 != (DArrayTy *)0x0) {
+        if (local_10 != nullptr) {
           uVar13 = local_10->count;
           local_c = 0;
           if (0 < (int)uVar13) {
@@ -1127,7 +1127,7 @@ joined_r0x00666ceb:
                 puVar15 = (ushort *)(local_10->elementSize * local_c + (int)local_10->data);
               }
               else {
-                puVar15 = (ushort *)0x0;
+                puVar15 = nullptr;
               }
               this_00 = STAllPlayersC::GetObjPtr
                                   (g_allPlayers_007FA174,*(char *)&param_1->field_0024,*puVar15,
@@ -1137,7 +1137,7 @@ joined_r0x00666ceb:
               case 0xa3:
               case 0xa8:
               case 0xbe:
-                uVar13 = thunk_FUN_004c5350(this_00,0,(int *)0x0,(int)*(short *)&param_1->field_0xc7
+                uVar13 = thunk_FUN_004c5350(this_00,0,nullptr,(int)*(short *)&param_1->field_0xc7
                                             ,(int)*(short *)&param_1->field_0xc9,0,0,0);
                 if (uVar13 != 0) {
                   sVar7 = *(short *)&param_1->field_0xc7;
@@ -1296,7 +1296,7 @@ LAB_00665315:
     param_1->field_00A3 = 1;
     param_1->field_00AB = param_1->field_011A;
     param_1->field_00AF = param_1->field_0280;
-    iVar11 = thunk_FUN_0065fe10(param_1,param_1->field_011A,param_1->field_011E,(short *)0x0);
+    iVar11 = thunk_FUN_0065fe10(param_1,param_1->field_011A,param_1->field_011E,nullptr);
     if (-1 < iVar11) goto cf_common_exit_00667066;
     param_1->field_009B = 0x28;
     break;
@@ -1393,7 +1393,7 @@ LAB_006655ba:
     pAVar5 = param_1->field_0223;
     if ((param_1->field_012D < *(uint *)&pAVar5->field_0xc) &&
        (psVar10 = (short *)(pAVar5->field_0008 * param_1->field_012D + pAVar5->field_001C),
-       psVar10 != (short *)0x0)) {
+       psVar10 != nullptr)) {
       param_1->field_0131 = param_1->field_0280;
       param_1->field_0135 = *(undefined4 *)(psVar10 + 3);
       thunk_FUN_0065fa10((AnonShape_0065FA10_37C5A4D3 *)param_1,(int)psVar10[6],(int)psVar10[5],
@@ -1437,7 +1437,7 @@ LAB_006655ba:
         local_94 = 2;
         local_98 = uVar13;
         local_90 = (DArrayTy *)sub_0065DA10(param_1,uVar13);
-        if ((AiTactClassTy *)param_1->field_0284 != (AiTactClassTy *)0x0) {
+        if ((AiTactClassTy *)param_1->field_0284 != nullptr) {
           AiTactClassTy::GetAiMess
                     ((AiTactClassTy *)param_1->field_0284,
                      (AnonShape_0068FD00_A5257008 *)&stack0xffffff64);
@@ -1518,7 +1518,7 @@ LAB_006655ba:
     thunk_FUN_0065fa10((AnonShape_0065FA10_37C5A4D3 *)param_1,iVar11,0,0,0);
     if ((short *)param_1->field_0097 != (short *)0xff) {
       iVar11 = thunk_FUN_0065e9a0(param_1,(short *)param_1->field_0097,
-                                  (short *)&param_1->field_0x195,0,param_1->field_013A,(byte *)0x0,
+                                  (short *)&param_1->field_0x195,0,param_1->field_013A,nullptr,
                                   0xffffffff,0);
       if (iVar11 == 0) {
         uVar13 = param_1->field_001C * 0x41c64e6d + 0x3039;
@@ -1636,7 +1636,7 @@ LAB_0066705a:
   param_1->field_00A3 = 0;
   param_1->field_00A7 = 0;
 cf_common_exit_00667066:
-  if (((param_1->field_0284 != (ushort *)0x0) && (param_1->field_0176 != '\0')) &&
+  if (((param_1->field_0284 != nullptr) && (param_1->field_0176 != '\0')) &&
      ((param_1->field_00EB & param_1->field_017B) != 0)) {
     /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
     GoToRepair(param_1,unaff_ESI);

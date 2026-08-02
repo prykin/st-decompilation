@@ -11,7 +11,7 @@ uint __cdecl FUN_0062ca70(undefined4 *param_1,undefined4 *param_2)
 
   puVar1 = (byte *)(Library::DKW::LIB::MemAlloc(0x6d));
   *param_1 = puVar1;
-  if (puVar1 != (undefined4 *)0x0) {
+  if (puVar1 != nullptr) {
     memmove(puVar1, param_2, 0x6d); /* compiler REP MOVS byte copy */
     return 1;
   }

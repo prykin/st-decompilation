@@ -31,7 +31,7 @@ STAllPlayersC::GetCursorType
   uint index;
   undefined1 local_8 [4];
 
-  if ((param_2 != (AnonShape_00435930_AC276C8C *)0x0) &&
+  if ((param_2 != nullptr) &&
      ((((iVar5 = param_2->field_0020, iVar5 == 0x14 || (iVar5 == 1000)) || (iVar5 == 0x3e9)) ||
       ((iVar5 == 0x172 || (iVar5 == 0x1a4)))))) {
     thunk_FUN_0041f390((int)param_2);
@@ -93,7 +93,7 @@ STAllPlayersC::GetCursorType
       STDebugBreak(); /* noreturn in standalone pseudocode */
     }
   }
-  if ((param_2 != (AnonShape_00435930_AC276C8C *)0x0) && (param_2->field_0024 == (uint)DAT_0080874d)
+  if ((param_2 != nullptr) && (param_2->field_0024 == (uint)DAT_0080874d)
      ) {
     /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
     if ((param_2->field_0020 == 0x14) &&

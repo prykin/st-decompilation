@@ -20,11 +20,12 @@ int __thiscall AiBossClassTy::GetMessage(AiBossClassTy *this,STMessage *message)
   int iVar5;
   uint uVar6;
   uint uVar7;
-  char *pcVar8;
+  byte *pbVar8;
   byte *puVar9;
-  char cVar10;
-  byte *puVar11;
-  char *pcVar12;
+  char *pcVar10;
+  char cVar11;
+  byte *puVar12;
+  char *pcVar13;
   InternalExceptionFrame local_54;
   AiBossClassTy *local_10;
   byte *local_c;
@@ -54,7 +55,7 @@ int __thiscall AiBossClassTy::GetMessage(AiBossClassTy *this,STMessage *message)
       local_8 = 0;
       local_c = PrepareToSave(local_10,&local_8);
       STPlaySystemC::SaveObjData(g_playSystem_00802A38,PTR_s_AIBOSS_0079d614,local_c,local_8,0xc);
-      if (local_c != (byte *)0x0) {
+      if (local_c != nullptr) {
         FreeAndNull(&local_c);
       }
     }
@@ -63,7 +64,7 @@ int __thiscall AiBossClassTy::GetMessage(AiBossClassTy *this,STMessage *message)
     }
     else if (SVar1 == MESS_ID_CREATE) {
       puVar9 = (byte *)((message->arg0).ptr);
-      if (puVar9 == (undefined4 *)0x0) {
+      if (puVar9 == nullptr) {
         RaiseInternalException
                   (-6,g_overwriteContext_007ED77C,"E:\\__titans\\ai\\ai_boss.cpp",0x61);
       }
@@ -74,7 +75,7 @@ int __thiscall AiBossClassTy::GetMessage(AiBossClassTy *this,STMessage *message)
     else if (SVar1 == MESS_SHARED_0003) {
       thunk_FUN_0064a580();
       thunk_FUN_00647ed0(this_00);
-      DAT_008117bc = (AiBossClassTy *)0x0;
+      DAT_008117bc = nullptr;
     }
   }
   else if (SVar1 < 0x5ded) {
@@ -84,61 +85,61 @@ int __thiscall AiBossClassTy::GetMessage(AiBossClassTy *this,STMessage *message)
         local_10->field_0629 = uVar6;
       }
       AiEventClassTy::GetMessage((AiEventClassTy *)&local_10->vtable_at_1c,message);
-      if (g_allPlayers_007FA174 != (STAllPlayersC *)0x0) {
-        cVar10 = '\0';
-        pcVar8 = &DAT_008087e9;
+      if (g_allPlayers_007FA174 != nullptr) {
+        cVar11 = '\0';
+        pbVar8 = &g_bulkInitializedRecords_008087C7[0].field_0022;
         do {
-          if ((*pcVar8 != -1) &&
-             (pAVar4 = thunk_FUN_004357f0(cVar10), pAVar4 != (AiPlrClassTy *)0x0)) {
+          if ((*pbVar8 != 0xff) &&
+             (pAVar4 = thunk_FUN_004357f0(cVar11), pAVar4 != nullptr)) {
             (*pAVar4->vtable->vfunc_00)(message);
           }
-          pcVar8 = pcVar8 + 0x51;
-          cVar10 = cVar10 + '\x01';
-        } while ((int)pcVar8 < 0x808a71);
+          pbVar8 = pbVar8 + 0x51;
+          cVar11 = cVar11 + '\x01';
+        } while ((int)pbVar8 < 0x808a71);
       }
     }
   }
   else if (SVar1 == MESS_AIBOSSCLASSTY_7106) {
     thunk_FUN_00676930((uint)DAT_0080874d);
-    if (g_playSystem_00802A38 == (STPlaySystemC *)0x0) {
+    if (g_playSystem_00802A38 == nullptr) {
       DAT_0080c83a = 0;
     }
     else {
       DAT_0080c83a = g_playSystem_00802A38->field_00E4 / 0x19;
     }
     puVar9 = (byte *)(&DAT_008087b6);
-    puVar11 = (byte *)(&DAT_0080c967);
-    memmove(puVar11, puVar9, 0x1999); /* compiler REP MOVS byte copy */
+    puVar12 = (byte *)(&DAT_0080c967);
+    memmove(puVar12, puVar9, 0x1999); /* compiler REP MOVS byte copy */
     thunk_FUN_006765b0();
     uVar6 = 0xffffffff;
-    pcVar8 = &DAT_0080ef1e;
+    pcVar10 = &DAT_0080ef1e;
     do {
-      pcVar12 = pcVar8;
+      pcVar13 = pcVar10;
       if (uVar6 == 0) break;
       uVar6 = uVar6 - 1;
-      pcVar12 = pcVar8 + 1;
-      cVar10 = *pcVar8;
-      pcVar8 = pcVar12;
-    } while (cVar10 != '\0');
+      pcVar13 = pcVar10 + 1;
+      cVar11 = *pcVar10;
+      pcVar10 = pcVar13;
+    } while (cVar11 != '\0');
     uVar6 = ~uVar6;
-    pcVar8 = pcVar12 + -uVar6;
-    pcVar12 = (char *)&DAT_0080c52e;
-    memmove(pcVar12, pcVar8, uVar6); /* compiler REP MOVS byte copy */
+    pcVar10 = pcVar13 + -uVar6;
+    pcVar13 = (char *)&DAT_0080c52e;
+    memmove(pcVar13, pcVar10, uVar6); /* compiler REP MOVS byte copy */
     uVar7 = 0;
     uVar6 = 0xffffffff;
-    pcVar8 = (char *)&DAT_0080c3c3;
+    pcVar10 = (char *)&DAT_0080c3c3;
     do {
-      pcVar12 = pcVar8;
+      pcVar13 = pcVar10;
       if (uVar6 == 0) break;
       uVar6 = uVar6 - 1;
-      pcVar12 = pcVar8 + 1;
-      cVar10 = *pcVar8;
-      pcVar8 = pcVar12;
-    } while (cVar10 != '\0');
+      pcVar13 = pcVar10 + 1;
+      cVar11 = *pcVar10;
+      pcVar10 = pcVar13;
+    } while (cVar11 != '\0');
     uVar6 = ~uVar6;
-    pcVar8 = pcVar12 + -uVar6;
-    pcVar12 = (char *)&DAT_0080c736;
-    memmove(pcVar12, pcVar8, uVar6); /* compiler REP MOVS byte copy */
+    pcVar10 = pcVar13 + -uVar6;
+    pcVar13 = (char *)&DAT_0080c736;
+    memmove(pcVar13, pcVar10, uVar6); /* compiler REP MOVS byte copy */
     if (DAT_008087a0 == '\b') {
       thunk_FUN_006767d0();
     }

@@ -12,7 +12,7 @@ FUN_0056a2a0(void *this,cMf32 *param_1,char *param_2,int param_3,undefined4 *par
   InternalExceptionFrame local_4c;
   void *local_8;
 
-  if (((*(int *)((int)this + 0xf8b) != 0) && (param_2 != (char *)0x0)) && (param_1 != (cMf32 *)0x0))
+  if (((*(int *)((int)this + 0xf8b) != 0) && (param_2 != nullptr)) && (param_1 != nullptr))
   {
     local_4c.previous = g_currentExceptionFrame;
     g_currentExceptionFrame = &local_4c;
@@ -20,13 +20,13 @@ FUN_0056a2a0(void *this,cMf32 *param_1,char *param_2,int param_3,undefined4 *par
     iVar3 = Library::MSVCRT::__setjmp3(local_4c.jumpBuffer,0);
     if (iVar3 == 0) {
       if ((*(uint *)(*(int *)(param_1->field_0000 + 4) + 8) & 0x100000) == 0) {
-        puVar4 = (uint *)Library::Ourlib::MFWAV::mfWavLoad(param_1,param_2,0,(ushort *)0x0);
+        puVar4 = (uint *)Library::Ourlib::MFWAV::mfWavLoad(param_1,param_2,0,nullptr);
       }
       else {
         puVar4 = (uint *)cMf32::vmAddrRecGet(param_1,2,param_2,0);
       }
       pvVar2 = local_8;
-      if (puVar4 != (uint *)0x0) {
+      if (puVar4 != nullptr) {
         if (param_3 < 1) {
           /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
           iVar3 = *(int *)((int)local_8 + 0xe07);
@@ -62,7 +62,7 @@ FUN_0056a2a0(void *this,cMf32 *param_1,char *param_2,int param_3,undefined4 *par
           DVar5 = timeGetTime();
           *(DWORD *)((int)pvVar2 + 0xdff) = DVar5;
         }
-        if (param_4 != (undefined4 *)0x0) {
+        if (param_4 != nullptr) {
           uVar6 = FUN_006c23f0((short *)puVar4);
           *param_4 = uVar6;
         }

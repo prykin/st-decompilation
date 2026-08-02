@@ -71,7 +71,7 @@ UPanelTy::CreateBut(UPanelTy *this,undefined4 param_1,int param_2,int param_3,in
   undefined4 local_c;
   ushort *local_8;
 
-  local_8 = (ushort *)0x0;
+  local_8 = nullptr;
   local_c = 0;
   local_54.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_54;
@@ -88,7 +88,7 @@ UPanelTy::CreateBut(UPanelTy *this,undefined4 param_1,int param_2,int param_3,in
     if (param_6 != (LPSTR)0x0) {
       text = &local_10->field_006C;
       wsprintfA(text,"%s0",param_6);
-      local_8 = cMf32::RecGet(g_cMf32_00806790,param_5,text,(int *)0x0,1);
+      local_8 = cMf32::RecGet(g_cMf32_00806790,param_5,text,nullptr,1);
     }
     if ((param_5 == 1) || (param_5 == 6)) {
       local_1c0 = *(undefined4 *)(local_8 + 2);
@@ -106,7 +106,7 @@ UPanelTy::CreateBut(UPanelTy *this,undefined4 param_1,int param_2,int param_3,in
     }
     local_1d0[3] = local_1d0[3] + param_4;
     local_1bc = param_14;
-    if (local_8 != (ushort *)0x0) {
+    if (local_8 != nullptr) {
       cMf32::RecMemFree(g_cMf32_00806790,(uint *)&local_8);
     }
     local_1b0 = pUVar2->field_0008;
@@ -133,7 +133,7 @@ UPanelTy::CreateBut(UPanelTy *this,undefined4 param_1,int param_2,int param_3,in
       local_11c = param_11;
     }
     local_170 = local_1b0;
-    if (param_12 != (char *)0x0) {
+    if (param_12 != nullptr) {
       local_ac = FUN_0070aa70(g_cMf32_00806790,param_12,0,1);
       local_a8 = Library::Ourlib::MFIMG::mfImgGetWidth(g_cMf32_00806790,0x12,param_12,1);
     }

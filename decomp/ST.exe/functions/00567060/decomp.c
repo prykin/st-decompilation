@@ -33,7 +33,7 @@ uint __fastcall FUN_00567060(int param_1)
       g_currentExceptionFrame = &local_54;
       iVar4 = Library::MSVCRT::__setjmp3(local_54.jumpBuffer,0);
       if (iVar4 == 0) {
-        FUN_006c1f00(local_8 & 0xff,&local_c,(uint *)0x0);
+        FUN_006c1f00(local_8 & 0xff,&local_c,nullptr);
       }
       g_currentExceptionFrame = local_54.previous;
       if (local_c == 1) {

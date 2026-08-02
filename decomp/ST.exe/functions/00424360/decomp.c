@@ -43,21 +43,21 @@ void __thiscall STGroupC::RestoreGrpData(STGroupC *this,int param_1)
   local_c->field_0035 = local_8->field_0030;
   local_c->field_0039 = local_8->field_0034;
   if (local_8->field_001C == -1) {
-    local_c->field_0029 = (uint *)0x0;
+    local_c->field_0029 = nullptr;
   }
   else {
-    puVar5 = FUN_006b00c0((uint *)0x0,(uint *)(&local_8->field_0x0 + local_8->field_001C),
+    puVar5 = FUN_006b00c0(nullptr,(uint *)(&local_8->field_0x0 + local_8->field_001C),
                           thunk_FUN_00423e30);
     pSVar2->field_0029 = puVar5;
   }
   iVar4 = *(int *)&pAVar3->field_0x24;
   if (iVar4 != -1) {
-    puVar5 = FUN_006b00c0((uint *)0x0,(uint *)(&pAVar3->field_0x0 + iVar4),thunk_FUN_00423e30);
+    puVar5 = FUN_006b00c0(nullptr,(uint *)(&pAVar3->field_0x0 + iVar4),thunk_FUN_00423e30);
     pSVar2->field_002D = puVar5;
     g_currentExceptionFrame = local_50.previous;
     return;
   }
-  pSVar2->field_002D = (uint *)0x0;
+  pSVar2->field_002D = nullptr;
   g_currentExceptionFrame = local_50.previous;
   return;
 }

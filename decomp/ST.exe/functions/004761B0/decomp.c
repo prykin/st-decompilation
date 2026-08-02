@@ -17,7 +17,7 @@ int __thiscall STBoatC::SetMine(STBoatC *this,int *param_1,undefined4 param_2,in
   undefined4 arg_2;
 
   /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
-  if ((param_1 == (int *)0x0) || (param_1 == (int *)0x1)) {
+  if ((param_1 == nullptr) || (param_1 == (int *)0x1)) {
     memset(&this->field_02CC, 0, 0x5c); /* compiler bulk-zero initialization */
     iVar5 = 0;
     this->field_02C4 = 0;
@@ -45,7 +45,7 @@ int __thiscall STBoatC::SetMine(STBoatC *this,int *param_1,undefined4 param_2,in
           (((((sVar2 < g_worldGrid.sizeY && (-1 < sVar3)) && (sVar3 < g_worldGrid.sizeZ)) &&
             (g_worldGrid.cells
              [(int)g_worldGrid.planeStride * (int)sVar3 + (int)g_worldGrid.sizeX * (int)sVar2 +
-              (int)sVar1].objects[1] != (STWorldObject *)0x0)) &&
+              (int)sVar1].objects[1] != nullptr)) &&
            ((iVar5 = g_worldGrid.cells
                      [(int)g_worldGrid.planeStride * (int)sVar3 +
                       (int)g_worldGrid.sizeX * (int)sVar2 + (int)sVar1].objects[1]->value_20,
@@ -87,7 +87,7 @@ int __thiscall STBoatC::SetMine(STBoatC *this,int *param_1,undefined4 param_2,in
              (((sVar2 < g_worldGrid.sizeY && (-1 < sVar3)) && (sVar3 < g_worldGrid.sizeZ)))))) &&
            ((g_worldGrid.cells
              [(int)g_worldGrid.planeStride * (int)sVar3 + (int)g_worldGrid.sizeX * (int)sVar2 +
-              (int)sVar1].objects[1] != (STWorldObject *)0x0 &&
+              (int)sVar1].objects[1] != nullptr &&
             ((iVar5 = g_worldGrid.cells
                       [(int)g_worldGrid.planeStride * (int)sVar3 +
                        (int)g_worldGrid.sizeX * (int)sVar2 + (int)sVar1].objects[1]->value_20,
@@ -115,7 +115,7 @@ int __thiscall STBoatC::SetMine(STBoatC *this,int *param_1,undefined4 param_2,in
               (((sVar2 < g_worldGrid.sizeY && (-1 < sVar3)) && (sVar3 < g_worldGrid.sizeZ)))))) &&
             (g_worldGrid.cells
              [(int)g_worldGrid.planeStride * (int)sVar3 + (int)g_worldGrid.sizeX * (int)sVar2 +
-              (int)sVar1].objects[0] != (STWorldObject *)0x0)) ||
+              (int)sVar1].objects[0] != nullptr)) ||
            ((sVar1 < 0 || (g_worldGrid.sizeX <= sVar1)))) ||
           ((((sVar2 < 0 || ((g_worldGrid.sizeY <= sVar2 || (sVar3 < 0)))) ||
             ((g_worldGrid.sizeZ <= sVar3 ||
@@ -128,7 +128,7 @@ int __thiscall STBoatC::SetMine(STBoatC *this,int *param_1,undefined4 param_2,in
               ((sVar3 < g_worldGrid.sizeZ &&
                (g_worldGrid.cells
                 [(int)g_worldGrid.planeStride * (int)sVar3 + (int)g_worldGrid.sizeX * (int)sVar2 +
-                 (int)sVar1].objects[1] != (STWorldObject *)0x0)))))) &&
+                 (int)sVar1].objects[1] != nullptr)))))) &&
             ((iVar5 = g_worldGrid.cells
                       [(int)g_worldGrid.planeStride * (int)sVar3 +
                        (int)g_worldGrid.sizeX * (int)sVar2 + (int)sVar1].objects[1]->value_20,
@@ -174,7 +174,7 @@ LAB_004765df:
   }
   thunk_FUN_00627850(this->field_07B6,this->field_0024,this->field_0018,
                      (uint)(ushort)this->field_0032,(int)this->field_0041,(int)this->field_0043,
-                     this->field_0045 + -10,(int)this->field_06CB[5],(char *)0x0,0xffffffff);
+                     this->field_0045 + -10,(int)this->field_06CB[5],nullptr,0xffffffff);
   this->field_07BE = this->field_07BE + -1;
 LAB_00476633:
   iVar5 = this->vfunc_D8();

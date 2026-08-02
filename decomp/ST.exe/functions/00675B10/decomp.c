@@ -52,7 +52,7 @@ FUN_00675b10(int param_1,int param_2,short param_3,short *param_4,short *param_5
               ((g_worldGrid.sizeZ <= sVar5 ||
                ((g_worldGrid.cells
                  [(int)g_worldGrid.planeStride * (int)sVar5 + (int)g_worldGrid.sizeX * (int)sVar8 +
-                  (int)sVar7].objects[0] == (STWorldObject *)0x0 ||
+                  (int)sVar7].objects[0] == nullptr ||
                 (iVar2 = (*g_worldGrid.cells
                            [(int)g_worldGrid.planeStride * (int)sVar5 +
                             (int)g_worldGrid.sizeX * (int)sVar8 + (int)sVar7].objects[0]->vtable[5].

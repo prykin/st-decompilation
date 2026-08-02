@@ -27,7 +27,7 @@ void FUN_00754b80(AnonShape_00754B80_75BFDB7A *param_1,ushort *param_2,int param
 
   pAVar6 = param_1;
   /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
-  if (param_7 == (uint *)0x0) {
+  if (param_7 == nullptr) {
     local_14 = 0x1f;
     local_20 = 0x7c00;
     local_1c = 0x3e0;
@@ -64,7 +64,7 @@ void FUN_00754b80(AnonShape_00754B80_75BFDB7A *param_1,ushort *param_2,int param
     }
   }
   if (local_8 == (ushort *)0xffffffff) {
-    local_8 = (ushort *)0x0;
+    local_8 = nullptr;
     for (uVar7 = local_1c; (uVar7 & 0x8000) == 0; uVar7 = uVar7 << 1) {
       local_8 = (ushort *)((int)local_8 + 1);
     }
@@ -73,7 +73,7 @@ void FUN_00754b80(AnonShape_00754B80_75BFDB7A *param_1,ushort *param_2,int param
   /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
   if (param_7 == (uint *)0xffffffff) {
     /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
-    param_7 = (uint *)0x0;
+    param_7 = nullptr;
     for (uVar7 = local_14; (uVar7 & 0x8000) == 0; uVar7 = uVar7 << 1) {
       /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
       param_7 = (uint *)((int)param_7 + 1);
@@ -155,7 +155,7 @@ void FUN_00754b80(AnonShape_00754B80_75BFDB7A *param_1,ushort *param_2,int param
         Library::DKW::JPG::FUN_007568d0((int)pAVar6,param_4,1);
         piVar12 = (int *)*param_4;
         /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
-        param_1 = (AnonShape_00754B80_75BFDB7A *)0x0;
+        param_1 = nullptr;
         if (0 < pAVar6->field_0068) {
           local_10 = param_2;
           do {

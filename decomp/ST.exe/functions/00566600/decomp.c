@@ -120,7 +120,7 @@ int FUN_00566600(int param_1)
   pcVar3 = local_14;
   puVar4 = cMf32::RecNameGetNext(local_14);
   uVar6 = local_c;
-  while (puVar4 != (undefined4 *)0x0) {
+  while (puVar4 != nullptr) {
     local_c = uVar6 + 1;
     puVar4 = cMf32::RecNameGetNext(pcVar3);
     uVar6 = local_c;
@@ -140,7 +140,7 @@ int FUN_00566600(int param_1)
   bVar12 = 0;
   pCVar5 = FUN_006f2c00(PTR_s_GM_SET_0079b010,1,local_10->field_0028);
   local_8 = Library::Ourlib::MFAOBJ::mfAObjLoad((cMf32 *)local_10->field_0018,pCVar5,bVar12,iVar2);
-  if (local_8 == (ushort *)0x0) {
+  if (local_8 == nullptr) {
     uVar7 = Library::MSVCRT::FUN_0072e6c0();
     iVar13 = 0;
     bVar12 = 0;
@@ -149,7 +149,7 @@ int FUN_00566600(int param_1)
     pCVar5 = FUN_006f2c00(PTR_s_GM_SET_0079b010,1,iVar2);
     local_8 = Library::Ourlib::MFAOBJ::mfAObjLoad
                         ((cMf32 *)local_10->field_0018,pCVar5,bVar12,iVar13);
-    if (local_8 == (ushort *)0x0) {
+    if (local_8 == nullptr) {
       RaiseInternalException
                 (-4,g_overwriteContext_007ED77C,"E:\\__titans\\snd_mngr.cpp",0x32);
       goto LAB_0056681c;
@@ -159,7 +159,7 @@ int FUN_00566600(int param_1)
   local_10->field_0030 = *(int *)(local_8 + 2);
   local_10->field_0034 = *(int *)(local_8 + 4);
 LAB_0056681c:
-  if (local_8 != (ushort *)0x0) {
+  if (local_8 != nullptr) {
     cMf32::RecMemFree((cMf32 *)local_10->field_0018,(uint *)&local_8);
   }
   g_currentExceptionFrame = local_60.previous;

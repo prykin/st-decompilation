@@ -54,7 +54,7 @@ FUN_004c2950(int param_1,int param_2,Global_sub_004C2950_param_3Enum param_3,und
     break;
   case CASE_C:
     iVar1 = param_1 + -0x97 + param_2 * 3;
-    if (*(char **)(PTR_PTR_007bb198 + iVar1 * 0xc + 8) != (char *)0x0) {
+    if (*(char **)(PTR_PTR_007bb198 + iVar1 * 0xc + 8) != nullptr) {
       uVar3 = 0xffffffff;
       pcVar5 = *(char **)(PTR_PTR_007bb198 + iVar1 * 0xc + 8);
       do {
@@ -91,7 +91,7 @@ LAB_004c2b44:
     break;
   case CASE_E:
     iVar1 = param_1 + -0x97 + param_2 * 3;
-    if (*(char **)(PTR_PTR_007bb198 + iVar1 * 0xc) != (char *)0x0) {
+    if (*(char **)(PTR_PTR_007bb198 + iVar1 * 0xc) != nullptr) {
       uVar3 = 0xffffffff;
       pcVar5 = *(char **)(PTR_PTR_007bb198 + iVar1 * 0xc);
       do {

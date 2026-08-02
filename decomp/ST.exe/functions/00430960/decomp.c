@@ -20,7 +20,7 @@ STAllPlayersC::UnRegisterTorpedo(STAllPlayersC *this,short param_1,int param_2)
   g_currentExceptionFrame = &local_4c;
   errorCode = Library::MSVCRT::__setjmp3(local_4c.jumpBuffer,0);
   if (errorCode == 0) {
-    if (g_array_007FA130 != (DArrayTy *)0x0) {
+    if (g_array_007FA130 != nullptr) {
       DArrayGetElement(g_array_007FA130,(int)param_1,&local_8);
       if (local_8 != param_2) {
         RaiseInternalException

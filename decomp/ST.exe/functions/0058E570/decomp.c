@@ -125,7 +125,7 @@ LAB_0058ea68:
                         g_worldGrid.cells
                         [(int)g_worldGrid.planeStride * (int)sVar2 +
                          (int)g_worldGrid.sizeX * (int)sVar3 + (int)sVar1].objects[0],
-              local_8 = pSVar8, pSVar8 != (STGameObjC *)0x0 &&
+              local_8 = pSVar8, pSVar8 != nullptr &&
               (STFishC::sub_004162B0
                          ((STFishC *)pSVar8,&this->field_0231,&this->field_0233,&this->field_0235),
               this->field_0047 == this->field_0231)) && (this->field_0049 == this->field_0233)) &&
@@ -166,7 +166,7 @@ LAB_0058ea68:
       if (((sVar3 < 0) || (g_worldGrid.sizeX <= sVar3)) ||
          ((sVar2 < 0 ||
           (((g_worldGrid.sizeY <= sVar2 || (sVar1 < 0)) || (g_worldGrid.sizeZ <= sVar1)))))) {
-        local_8 = (STGameObjC *)0x0;
+        local_8 = nullptr;
       }
       else {
         local_8 = (STGameObjC *)

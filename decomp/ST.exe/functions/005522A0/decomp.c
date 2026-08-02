@@ -151,7 +151,7 @@ LAB_00552481:
       if (this_00->field_005C != 0) {
         iVar3 = this_00->field_0044;
       }
-      puVar15 = (undefined4 *)0x0;
+      puVar15 = nullptr;
       iVar13 = 0;
       iVar11 = 1;
       bVar10 = 0;
@@ -166,7 +166,7 @@ LAB_00552481:
                          (DAT_00806794,CASE_1,pCVar4,uVar9,bVar10,iVar11,iVar13,puVar15);
       DibPut((AnonShape_006B5B10_E0D06CF1 *)this_00->field_0068,local_8,iVar3,'\x01',(byte *)puVar6);
       if (*(int *)((message->arg0).u32 + 4) == 3) {
-        puVar15 = (undefined4 *)0x0;
+        puVar15 = nullptr;
         iVar8 = 0;
         iVar5 = 1;
         bVar10 = 0;

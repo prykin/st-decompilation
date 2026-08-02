@@ -46,33 +46,33 @@ void __thiscall FSGSTy::sub_005A07F0(FSGSTy *this)
     StartSystemTy::sub_006E56B0(this->field_000C,this->field_1AC8);
   }
   this->field_1AC8 = 0;
-  if ((DArrayTy *)this->field_1EA2 != (DArrayTy *)0x0) {
+  if ((DArrayTy *)this->field_1EA2 != nullptr) {
     FUN_006b5570((DArrayTy *)this->field_1EA2);
   }
-  this->field_1EA2 = (AnonPointee_FSGSTy_1EA2 *)0x0;
-  if (this->field_1AE8 != (DArrayTy *)0x0) {
+  this->field_1EA2 = nullptr;
+  if (this->field_1AE8 != nullptr) {
     FUN_006b5570(this->field_1AE8);
   }
-  this->field_1AE8 = (DArrayTy *)0x0;
-  if (this->field_1AEC != (DArrayTy *)0x0) {
+  this->field_1AE8 = nullptr;
+  if (this->field_1AEC != nullptr) {
     FUN_006b5570(this->field_1AEC);
   }
-  this->field_1AEC = (DArrayTy *)0x0;
-  if (this->field_1EA6 != (DArrayTy *)0x0) {
+  this->field_1AEC = nullptr;
+  if (this->field_1EA6 != nullptr) {
     DArrayDestroy(this->field_1EA6);
   }
-  this->field_1EA6 = (DArrayTy *)0x0;
-  if (this->field_1EAA != (DArrayTy *)0x0) {
+  this->field_1EA6 = nullptr;
+  if (this->field_1EAA != nullptr) {
     DArrayDestroy(this->field_1EAA);
   }
-  this->field_1EAA = (DArrayTy *)0x0;
+  this->field_1EAA = nullptr;
   if (this->field_1E8E != 0) {
     FreeAndNull((void **)&this->field_1E8E);
   }
-  if (this->field_1E92 != (tagBITMAPINFO *)0x0) {
+  if (this->field_1E92 != nullptr) {
     FreeAndNull(&this->field_1E92);
   }
-  if (this->field_1E9A != (tagBITMAPINFO *)0x0) {
+  if (this->field_1E9A != nullptr) {
     FreeAndNull(&this->field_1E9A);
   }
   return;

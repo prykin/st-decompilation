@@ -18,7 +18,7 @@ int __thiscall FUN_0067b150(void *this,int param_1)
     do {
       if (((bVar6) &&
           (pcVar4 = (char *)(*(int *)(iVar1 + 8) * uVar5 + *(int *)(iVar1 + 0x1c)),
-          pcVar4 != (char *)0x0)) && (*pcVar4 == param_1)) {
+          pcVar4 != nullptr)) && (*pcVar4 == param_1)) {
         iVar3 = iVar3 + 1;
       }
       uVar5 = uVar5 + 1;

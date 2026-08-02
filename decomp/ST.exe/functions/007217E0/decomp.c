@@ -19,7 +19,7 @@ int __fastcall FUN_007217e0(AnonShape_007217E0_1A4AB243 *param_1)
     iVar3 = pAVar2->field_0004 + 1;
     pcVar6 = *(char **)(pAVar2->field_0014 + -4 + iVar3 * 4);
     pAVar2->field_0004 = iVar3;
-    if (pcVar6 == (char *)0x0) {
+    if (pcVar6 == nullptr) {
       return iVar5;
     }
     uVar4 = 0xffffffff;

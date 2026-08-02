@@ -178,7 +178,7 @@ int __thiscall STParticleC::GetMessage(STParticleC *this,STMessage *message)
     Library::Ourlib::ST3DSMAP::SprMove
               (g_sT3DSMAPContext_00807598,this_00->field_00C6,local_c,local_8,fVar5 + _DAT_007904fc);
     pVVar11 = g_visibleClass_00802A88;
-    if (g_visibleClass_00802A88 == (VisibleClassTy *)0x0) {
+    if (g_visibleClass_00802A88 == nullptr) {
       g_currentExceptionFrame = local_7c.previous;
       return 0;
     }
@@ -226,7 +226,7 @@ LAB_00628286:
     else {
       bVar12 = true;
     }
-    if ((bVar12) && (pVVar11->field_004C != (byte *)0x0)) {
+    if ((bVar12) && (pVVar11->field_004C != nullptr)) {
       bVar12 = pVVar11->field_004C
                [local_24 + (g_centeredOffsets5[(int)local_c] + local_28) * pVVar11->field_0030] != 0
       ;
@@ -300,7 +300,7 @@ LAB_006283bd:
     Library::Ourlib::ST3DSMAP::SprMove
               (g_sT3DSMAPContext_00807598,this_00->field_00C6,local_c,local_8,fVar5 + _DAT_007904fc);
     pVVar11 = g_visibleClass_00802A88;
-    if (g_visibleClass_00802A88 == (VisibleClassTy *)0x0) {
+    if (g_visibleClass_00802A88 == nullptr) {
       g_currentExceptionFrame = local_7c.previous;
       return 0;
     }
@@ -380,7 +380,7 @@ LAB_006282e0:
                 (g_sT3DSMAPContext_00807598,this_00->field_00C6,local_c,local_8,
                  fVar5 + _DAT_007904fc);
       pVVar11 = g_visibleClass_00802A88;
-      if (g_visibleClass_00802A88 != (VisibleClassTy *)0x0) {
+      if (g_visibleClass_00802A88 != nullptr) {
         iVar6 = this_00->field_004E;
         sVar4 = (short)(iVar6 >> 0x1f);
         if (iVar6 < 0) {
@@ -423,7 +423,7 @@ LAB_006282e0:
           else {
             bVar12 = true;
           }
-          if ((bVar12) && (pVVar11->field_004C != (byte *)0x0)) {
+          if ((bVar12) && (pVVar11->field_004C != nullptr)) {
             bVar12 = pVVar11->field_004C
                      [local_2c + (g_centeredOffsets5[(int)local_c] + local_30) * pVVar11->field_0030
                      ] != 0;
@@ -478,7 +478,7 @@ LAB_006282e0:
     Library::Ourlib::ST3DSMAP::SprMove
               (g_sT3DSMAPContext_00807598,this_00->field_00C6,local_c,local_8,fVar5 + _DAT_007904fc);
     pVVar11 = g_visibleClass_00802A88;
-    if (g_visibleClass_00802A88 == (VisibleClassTy *)0x0) {
+    if (g_visibleClass_00802A88 == nullptr) {
       g_currentExceptionFrame = local_7c.previous;
       return 0;
     }
@@ -527,7 +527,7 @@ LAB_006282e0:
       else {
         bVar12 = true;
       }
-      if ((bVar12) && (pVVar11->field_004C != (byte *)0x0)) {
+      if ((bVar12) && (pVVar11->field_004C != nullptr)) {
         bVar12 = pVVar11->field_004C
                  [(g_centeredOffsets5[(int)local_c] + local_38) * pVVar11->field_0030 + local_34] !=
                  0;

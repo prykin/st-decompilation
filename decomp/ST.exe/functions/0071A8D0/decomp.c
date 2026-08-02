@@ -11,13 +11,13 @@ void __cdecl FUN_0071a8d0(int *param_1)
 
   iVar4 = 0;
   puVar1 = (undefined4 *)*param_1;
-  if (puVar1 != (undefined4 *)0x0) {
+  if (puVar1 != nullptr) {
     if (puVar1[3] != 0) {
       local_c = 0;
       if (0 < (int)puVar1[2]) {
         do {
           iVar2 = puVar1[3];
-          if (*(int **)(iVar4 + iVar2) != (int *)0x0) {
+          if (*(int **)(iVar4 + iVar2) != nullptr) {
             iVar3 = 0;
             if (0 < **(int **)(iVar4 + iVar2)) {
               iVar5 = 5;
@@ -38,7 +38,7 @@ void __cdecl FUN_0071a8d0(int *param_1)
       }
       FreeAndNull((void **)(puVar1 + 3));
     }
-    if ((DArrayTy *)puVar1[1] != (DArrayTy *)0x0) {
+    if ((DArrayTy *)puVar1[1] != nullptr) {
       FUN_006b5570((DArrayTy *)puVar1[1]);
     }
     FreeAndNull((void **)param_1);

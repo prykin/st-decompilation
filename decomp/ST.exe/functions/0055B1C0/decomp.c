@@ -15,17 +15,17 @@ VisibleClassTy::sub_0055B1C0
   int iVar4;
   uint uVar5;
   bool bVar6;
-  char *local_c;
-  int *local_8;
+  byte *local_c;
+  byte **local_8;
 
   if (((this->field_0114 != 0) && (param_4 < 8)) &&
-     ((g_playSystem_00802A38 == (STPlaySystemC *)0x0 || ((byte)(&DAT_008087e9)[param_4 * 0x51] < 8))
-     )) {
+     ((g_playSystem_00802A38 == nullptr ||
+      (g_bulkInitializedRecords_008087C7[param_4].field_0022 < 8)))) {
     uVar2 = 0;
-    local_8 = &this->field_0094;
-    local_c = &DAT_008087e9;
+    local_8 = this->field_0094;
+    local_c = &g_bulkInitializedRecords_008087C7[0].field_0022;
     do {
-      if ((uVar2 != param_4) && (*local_c != -1)) {
+      if ((uVar2 != param_4) && (*local_c != 0xff)) {
         if (DAT_00808a8f == '\0') {
           if ((char)param_4 == (char)uVar2) {
 LAB_0055b2ce:
@@ -52,14 +52,14 @@ LAB_0055b2ce:
           bVar6 = iVar4 < 0;
         }
         else {
-          bVar6 = (&DAT_008087ea)[(uVar2 & 0xff) * 0x51] != (&DAT_008087ea)[(param_4 & 0xff) * 0x51]
-          ;
+          bVar6 = g_bulkInitializedRecords_008087C7[uVar2 & 0xff].field_0023 !=
+                  g_bulkInitializedRecords_008087C7[param_4 & 0xff].field_0023;
         }
         if (bVar6) {
-          if ((((*local_8 != 0) && (-1 < param_1)) && (param_1 < this->field_0020)) &&
+          if ((((*local_8 != nullptr) && (-1 < param_1)) && (param_1 < this->field_0020)) &&
              (((-1 < param_2 && (param_2 < this->field_0024)) &&
-              (((int)local_c < 0x808a71 &&
-               (*(char *)(this->field_0020 * param_2 + *local_8 + param_1) != '\0')))))) {
+              (((int)local_c < 0x808a71 && ((*local_8)[param_1 + this->field_0020 * param_2] != 0)))
+              ))) {
             return 1;
           }
         }

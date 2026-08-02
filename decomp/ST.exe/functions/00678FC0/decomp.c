@@ -34,7 +34,7 @@ void __thiscall AiPlrClassTy::sub_00678FC0(AiPlrClassTy *this)
           piVar5 = (int *)(pDVar7->elementSize * uVar9 + (int)pDVar7->data);
         }
         else {
-          piVar5 = (int *)0x0;
+          piVar5 = nullptr;
         }
         uVar1 = uVar9 + 1;
         if (uVar1 < dVar8) {
@@ -42,10 +42,10 @@ void __thiscall AiPlrClassTy::sub_00678FC0(AiPlrClassTy *this)
           piVar3 = (int *)(pDVar7->elementSize * uVar1 + (int)pDVar7->data);
         }
         else {
-          piVar3 = (int *)0x0;
+          piVar3 = nullptr;
         }
         if ((*piVar5 != 0) && (*piVar3 != 0)) {
-          if ((pDVar7 == (DArrayTy *)0x0) || (((int)uVar1 < 0 || ((int)dVar8 <= (int)uVar1)))) {
+          if ((pDVar7 == nullptr) || (((int)uVar1 < 0 || ((int)dVar8 <= (int)uVar1)))) {
 LAB_00679056:
             iVar6 = 0;
           }
@@ -55,7 +55,7 @@ LAB_00679056:
               piVar5 = (int *)(pDVar7->elementSize * uVar1 + (int)pDVar7->data);
             }
             else {
-              piVar5 = (int *)0x0;
+              piVar5 = nullptr;
             }
             if (piVar5[1] == 0) {
               iVar6 = *piVar5;
@@ -65,7 +65,7 @@ LAB_00679056:
               iVar6 = *piVar5 + 0x20;
             }
           }
-          if (((pDVar7 == (DArrayTy *)0x0) || ((int)uVar9 < 0)) || ((int)dVar8 <= (int)uVar9)) {
+          if (((pDVar7 == nullptr) || ((int)uVar9 < 0)) || ((int)dVar8 <= (int)uVar9)) {
 LAB_00679087:
             iVar4 = 0;
           }
@@ -75,7 +75,7 @@ LAB_00679087:
               piVar5 = (int *)(pDVar7->elementSize * uVar9 + (int)pDVar7->data);
             }
             else {
-              piVar5 = (int *)0x0;
+              piVar5 = nullptr;
             }
             iVar4 = *piVar5;
             if (piVar5[1] != 0) {

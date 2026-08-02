@@ -16,16 +16,16 @@ uint __thiscall STManRuinC::sub_00631880(STManRuinC *this,undefined4 *param_1,un
   undefined4 local_b;
 
   uVar1 = 0xffffffff;
-  if (param_1 != (undefined4 *)0x0) {
+  if (param_1 != nullptr) {
     puVar4 = (byte *)(local_2c);
     memmove(puVar4, param_1, 0x21); /* compiler REP MOVS byte copy */
     local_b = param_2;
-    if (this->field_003C == (STManRuinC_field_003CDArray *)0x0) {
+    if (this->field_003C == nullptr) {
       pSVar2 = (STManRuinC_field_003CDArray *)
-               Library::DKW::TBL::DArrayCreate((DArrayTy *)0x0,10,0x25,10);
+               Library::DKW::TBL::DArrayCreate(nullptr,10,0x25,10);
       this->field_003C = pSVar2;
     }
-    if (this->field_003C == (STManRuinC_field_003CDArray *)0x0) {
+    if (this->field_003C == nullptr) {
       uVar1 = 0xffffffff;
     }
     else {

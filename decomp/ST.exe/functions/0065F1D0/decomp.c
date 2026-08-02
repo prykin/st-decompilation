@@ -60,7 +60,7 @@ int __thiscall AiFltClassTy::AppendZone(AiFltClassTy *this,short *param_1)
         psVar9 = (short *)(local_28->elementSize * local_c + (int)local_28->data);
       }
       else {
-        psVar9 = (short *)0x0;
+        psVar9 = nullptr;
       }
       iVar7 = (int)*psVar9;
       local_30 = local_14 + -1 + local_8;

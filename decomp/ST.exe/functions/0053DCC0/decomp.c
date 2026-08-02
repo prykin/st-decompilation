@@ -24,7 +24,7 @@ UPanelTy::PaintLBut(UPanelTy *this,AnonShape_0053DCC0_5B8C160B *param_1,byte par
   ushort *local_8;
 
   pAVar1 = param_1->field_0018;
-  local_8 = (ushort *)0x0;
+  local_8 = nullptr;
   local_10 = pAVar1->field_0000 - this->field_003C;
   if (this->field_005C == 0) {
     local_c = pAVar1->field_0004 + this->field_0048;
@@ -32,7 +32,7 @@ UPanelTy::PaintLBut(UPanelTy *this,AnonShape_0053DCC0_5B8C160B *param_1,byte par
   else {
     local_c = pAVar1->field_0004 - this->field_0044;
   }
-  if (param_5 != (undefined *)0x0) {
+  if (param_5 != nullptr) {
     local_58.previous = g_currentExceptionFrame;
     g_currentExceptionFrame = &local_58;
     local_14 = this;
@@ -41,14 +41,14 @@ UPanelTy::PaintLBut(UPanelTy *this,AnonShape_0053DCC0_5B8C160B *param_1,byte par
       /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
       uVar5 = (*(code *)param_5)(param_1);
       text = FUN_006f2c00(param_3,1,uVar5);
-      local_8 = cMf32::RecGet(g_cMf32_00806790,param_2,text,(int *)0x0,1);
+      local_8 = cMf32::RecGet(g_cMf32_00806790,param_2,text,nullptr,1);
       iVar4 = local_c;
       pUVar3 = local_14;
       DibPut((AnonShape_006B5B10_E0D06CF1 *)local_14->field_0068,local_10,local_c,param_2,
              (byte *)local_8);
       cMf32::RecMemFree(g_cMf32_00806790,(uint *)&local_8);
       if (param_1->field_0014 == 3) {
-        local_8 = cMf32::RecGet(g_cMf32_00806790,6,param_4,(int *)0x0,1);
+        local_8 = cMf32::RecGet(g_cMf32_00806790,6,param_4,nullptr,1);
         DibPut((AnonShape_006B5B10_E0D06CF1 *)pUVar3->field_0068,local_10,iVar4,'\x06',
                (byte *)local_8);
         cMf32::RecMemFree(g_cMf32_00806790,(uint *)&local_8);

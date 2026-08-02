@@ -25,7 +25,7 @@ void __thiscall FUN_005eeff0(void *this,int param_1)
     if (*(char *)((int)this + 0x2de) == '\0') {
       return;
     }
-    if (g_visibleClass_00802A88 == (VisibleClassTy *)0x0) {
+    if (g_visibleClass_00802A88 == nullptr) {
       return;
     }
     iVar5 = *(int *)((int)this + 0x27f);
@@ -68,7 +68,7 @@ void __thiscall FUN_005eeff0(void *this,int param_1)
          ((pVVar3->field_0030 <= local_8 ||
           ((local_c = g_centeredOffsets5[param_1] + local_c, local_c < 0 ||
            (pVVar3->field_0034 <= local_c)))))))) ||
-       ((pVVar3->field_004C == (byte *)0x0 ||
+       ((pVVar3->field_004C == nullptr ||
         (pVVar3->field_004C[local_8 + local_c * pVVar3->field_0030] != 0)))) {
       /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
       (**(code **)(*(int *)this + 0xd8))();
@@ -90,7 +90,7 @@ joined_r0x005ef316:
     cVar1 = *(char *)((int)this + 0x2b9);
   }
   else {
-    if (g_visibleClass_00802A88 == (VisibleClassTy *)0x0) {
+    if (g_visibleClass_00802A88 == nullptr) {
       return;
     }
     if (*(int *)((int)this + 0x2d6) < 0) {
@@ -134,7 +134,7 @@ joined_r0x005ef316:
                        &local_c,&local_8), param_1 < 0)) || ((4 < param_1 || (local_c < 0)))) ||
          ((pVVar3->field_0030 <= local_c ||
           ((local_8 = g_centeredOffsets5[param_1] + local_8, local_8 < 0 ||
-           (pVVar3->field_0034 <= local_8)))))) || (pVVar3->field_004C == (byte *)0x0)) ||
+           (pVVar3->field_0034 <= local_8)))))) || (pVVar3->field_004C == nullptr)) ||
        (pVVar3->field_004C[local_c + local_8 * pVVar3->field_0030] != 0)) {
       /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
       (**(code **)(*(int *)this + 0xd8))();

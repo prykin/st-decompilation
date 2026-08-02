@@ -18,8 +18,8 @@ FUN_0065e9a0(void *this,short *param_1,short *param_2,uint param_3,uint param_4,
 
   psVar1 = param_2;
   local_c = 0;
-  local_8 = (uint *)0x0;
-  if ((g_allPlayers_007FA174 == (STAllPlayersC *)0x0) || (param_2 == (short *)0x0)) {
+  local_8 = nullptr;
+  if ((g_allPlayers_007FA174 == nullptr) || (param_2 == nullptr)) {
     return 0xffffffff;
   }
   if (((int)param_1 < 0) || (psVar4 = param_1, 8 < (int)param_1)) {
@@ -49,7 +49,7 @@ FUN_0065e9a0(void *this,short *param_1,short *param_2,uint param_3,uint param_4,
                local_8,(undefined *)(~-(uint)(param_7 != 0) & 0x404935));
     if (DAT_00811900 != 0) {
       iVar3 = thunk_FUN_00423220((void *)((int)local_10 + 0x1c),(int *)local_8,DAT_00811900);
-      if ((STFishC *)local_8[iVar3 * 0xb + 3] != (STFishC *)0x0) {
+      if ((STFishC *)local_8[iVar3 * 0xb + 3] != nullptr) {
         STFishC::sub_004162B0
                   ((STFishC *)local_8[iVar3 * 0xb + 3],(short *)&param_1,local_14,
                    (undefined2 *)((int)&param_2 + 2));
@@ -66,7 +66,7 @@ FUN_0065e9a0(void *this,short *param_1,short *param_2,uint param_3,uint param_4,
   }
   local_c = 0xffffffff;
 LAB_0065eaf3:
-  if (local_8 != (uint *)0x0) {
+  if (local_8 != nullptr) {
     FreeAndNull(&local_8);
   }
   return local_c;

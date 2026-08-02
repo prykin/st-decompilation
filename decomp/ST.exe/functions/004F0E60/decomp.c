@@ -35,14 +35,14 @@ void __thiscall BldObjPanelTy::PaintBldBut(BldObjPanelTy *this,AnonShape_004EF32
   uVar5 = this->field_0199 + -0xc0af + param_1->field_0010;
   iVar7 = (&this->field_027E)[(byte)this->field_0278];
   if ((iVar7 == 0) || (*(uint *)(iVar7 + 0xc) <= uVar5)) {
-    local_8 = (Global_sub_00526BA0_param_1Enum *)0x0;
+    local_8 = nullptr;
   }
   else {
     local_8 = (Global_sub_00526BA0_param_1Enum *)
               (*(int *)(iVar7 + 8) * uVar5 + *(int *)(iVar7 + 0x1c));
   }
   local_14 = this;
-  if ((param_1->field_0014 == 0) || (local_8 == (Global_sub_00526BA0_param_1Enum *)0x0)) {
+  if ((param_1->field_0014 == 0) || (local_8 == nullptr)) {
     local_c = this->field_027A;
   }
   else {
@@ -64,7 +64,7 @@ void __thiscall BldObjPanelTy::PaintBldBut(BldObjPanelTy *this,AnonShape_004EF32
   if (errorCode == 0) {
     DibPut((AnonShape_006B5B10_E0D06CF1 *)local_14->field_0068,local_18,local_10,'\x01',
            (byte *)local_c);
-    if ((param_1->field_0014 == 3) && (local_8 != (Global_sub_00526BA0_param_1Enum *)0x0)) {
+    if ((param_1->field_0014 == 3) && (local_8 != nullptr)) {
       pbVar6 = (byte *)FUN_0070b3a0(pBVar3->field_0190,9 - (uint)((char)local_8[2] != 0));
       DibPut((AnonShape_006B5B10_E0D06CF1 *)pBVar3->field_0068,iVar7,iVar4,'\x06',pbVar6);
     }

@@ -40,7 +40,7 @@ void __cdecl FUN_00676930(uint param_1)
   int local_14;
   uint *local_8;
 
-  if (g_allPlayers_007FA174 != (STAllPlayersC *)0x0) {
+  if (g_allPlayers_007FA174 != nullptr) {
     puVar5 = &DAT_0080c947;
     puVar6 = local_160;
     memmove(puVar6, puVar5, 0x20); /* compiler REP MOVS byte copy */

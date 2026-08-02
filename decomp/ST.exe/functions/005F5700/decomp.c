@@ -76,7 +76,7 @@ int __thiscall STBHEShellC::sub_005F5700(STBHEShellC *this,int param_1,int param
           ((sVar8 < g_worldGrid.sizeZ &&
            (this_00 = g_worldGrid.cells
                       [(int)sVar7 * (int)sVar2 + (int)g_worldGrid.planeStride * (int)sVar8 +
-                       (int)sVar4].objects[0], this_00 != (STWorldObject *)0x0)))))) {
+                       (int)sVar4].objects[0], this_00 != nullptr)))))) {
         thunk_FUN_00416270(this_00,(undefined2 *)((int)&local_8 + 2),(int *)((int)&param_1 + 2),
                            &local_8);
         if (*(int *)&this_00[1].field_0x8 == 1) {

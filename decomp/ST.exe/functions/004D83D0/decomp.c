@@ -6,7 +6,7 @@ undefined4 FUN_004d83d0(undefined1 param_1,int param_2,int param_3,uint param_4,
   uint uVar2;
   undefined4 *puVar3;
 
-  if (DAT_007fa168 == (void *)0x0) {
+  if (DAT_007fa168 == nullptr) {
     DAT_007fa168 = Library::DKW::LIB::MemAlloc((int)g_worldGrid.planeStride);
   }
   if (param_2 < 0) {

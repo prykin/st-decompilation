@@ -349,10 +349,10 @@ STBoatC::sub_0048DFD0
     if (param_3 < 1) {
       if ((g_worldGrid.cells
            [(int)g_worldGrid.planeStride * (int)param_3 + (int)g_worldGrid.sizeX * (int)param_2 +
-            (int)param_1].objects[0] == (STWorldObject *)0x0) &&
+            (int)param_1].objects[0] == nullptr) &&
          (g_worldGrid.cells
           [(int)g_worldGrid.planeStride * (int)param_3 + (int)g_worldGrid.sizeX * (int)param_2 +
-           (int)param_1].objects[1] == (STWorldObject *)0x0)) {
+           (int)param_1].objects[1] == nullptr)) {
         *param_8 = param_1;
         *param_9 = param_2;
         *param_10 = param_3;
@@ -364,19 +364,19 @@ STBoatC::sub_0048DFD0
       iVar5 = (int)g_worldGrid.sizeX * (int)param_2;
       iVar8 = (int)param_1;
       if ((((g_worldGrid.cells[local_1c * g_worldGrid.planeStride + iVar8 + iVar5].objects[0] ==
-             (STWorldObject *)0x0) &&
+             nullptr) &&
            (g_worldGrid.cells[local_1c * g_worldGrid.planeStride + iVar8 + iVar5].objects[1] ==
-            (STWorldObject *)0x0)) &&
+            nullptr)) &&
           ((sVar11 = param_3 + -1, sVar11 < 0 ||
            (((g_worldGrid.sizeZ <= sVar11 ||
              (g_worldGrid.cells[(int)sVar11 * (int)g_worldGrid.planeStride + iVar8 + iVar5].objects
-              [0] == (STWorldObject *)0x0)) ||
+              [0] == nullptr)) ||
             (g_pathingGrid.cells
              [(int)g_pathingGrid.sizeX * (int)param_2 +
               iVar8 + (local_1c + -1) * (int)g_pathingGrid.planeStride] == 0)))))) &&
          (((sVar11 = param_3 + -1, sVar11 < 0 || (g_worldGrid.sizeZ <= sVar11)) ||
           (g_worldGrid.cells[(int)sVar11 * (int)g_worldGrid.planeStride + iVar8 + iVar5].objects[1]
-           == (STWorldObject *)0x0)))) {
+           == nullptr)))) {
         *param_8 = param_1;
         *param_9 = param_2;
         *param_10 = param_3;
@@ -418,7 +418,7 @@ STBoatC::sub_0048DFD0
   local_10 = ((short)local_ec - (short)local_20) + 1;
   sStack_e = ((short)local_e8 - (short)local_28) + 1;
   local_a = sStack_e * local_10;
-  local_30 = (undefined4 *)0x0;
+  local_30 = nullptr;
   local_2c = this;
   local_8 = Library::DKW::LIB::MemAlloc(local_a * 10);
   iVar14 = local_20;
@@ -684,7 +684,7 @@ STBoatC::sub_0048DFD0
       }
       local_14 = 0;
       do {
-        local_2c = (STBoatC *)0x0;
+        local_2c = nullptr;
         /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
         param_6 = local_3fc + _param_3 * 0x15;
         do {
@@ -760,7 +760,7 @@ LAB_0048f3f7:
                               (g_worldGrid.cells
                                [(int)sVar3 * (int)g_worldGrid.planeStride +
                                 (int)sVar12 * (int)g_worldGrid.sizeX + (int)sVar11].objects[0] ==
-                               (STWorldObject *)0x0)) {
+                               nullptr)) {
 joined_r0x0048f3a9:
                         if ((((sVar11 < 0) || (g_worldGrid.sizeX <= sVar11)) || (sVar12 < 0)) ||
                            ((((g_worldGrid.sizeY <= sVar12 || (sVar3 < 0)) ||
@@ -768,7 +768,7 @@ joined_r0x0048f3a9:
                             (g_worldGrid.cells
                              [(int)sVar3 * (int)g_worldGrid.planeStride +
                               (int)sVar12 * (int)g_worldGrid.sizeX + (int)sVar11].objects[1] ==
-                             (STWorldObject *)0x0)))) goto LAB_0048f3f7;
+                             nullptr)))) goto LAB_0048f3f7;
                       }
                     }
                     else if ((sVar11 < 0) ||
@@ -778,7 +778,7 @@ joined_r0x0048f3a9:
                                 (g_worldGrid.cells
                                  [(int)sVar3 * (int)g_worldGrid.planeStride +
                                   (int)sVar12 * (int)g_worldGrid.sizeX + (int)sVar11].objects[0] ==
-                                 (STWorldObject *)0x0)))))) &&
+                                 nullptr)))))) &&
                              (((sVar11 < 0 || (g_worldGrid.sizeX <= sVar11)) ||
                               ((sVar12 < 0 ||
                                (((g_worldGrid.sizeY <= sVar12 || (sVar3 < 0)) ||
@@ -786,7 +786,7 @@ joined_r0x0048f3a9:
                                  (g_worldGrid.cells
                                   [(int)sVar3 * (int)g_worldGrid.planeStride +
                                    (int)sVar12 * (int)g_worldGrid.sizeX + (int)sVar11].objects[1] ==
-                                  (STWorldObject *)0x0)))))))))))) {
+                                  nullptr)))))))))))) {
                       sVar3 = sVar3 + -1;
                       if (sVar11 < 0) goto LAB_0048f3f7;
                       if (((((g_worldGrid.sizeX <= sVar11) || (sVar12 < 0)) ||
@@ -795,7 +795,7 @@ joined_r0x0048f3a9:
                          ((g_worldGrid.cells
                            [(int)sVar3 * (int)g_worldGrid.planeStride +
                             (int)sVar12 * (int)g_worldGrid.sizeX + (int)sVar11].objects[0] ==
-                           (STWorldObject *)0x0 ||
+                           nullptr ||
                           (g_pathingGrid.cells
                            [g_pathingGrid.sizeX * iVar14 +
                             iVar8 + (iVar4 + -1) * (int)g_pathingGrid.planeStride] == 0))))
@@ -818,10 +818,10 @@ joined_r0x0048f3a9:
     } while (local_18 / iVar5 < 5);
   }
 LAB_0048f4e0:
-  if (local_30 != (undefined4 *)0x0) {
+  if (local_30 != nullptr) {
     FreeAndNull(&local_30);
   }
-  if (local_8 != (undefined4 *)0x0) {
+  if (local_8 != nullptr) {
     FreeAndNull(&local_8);
   }
   return local_e4;

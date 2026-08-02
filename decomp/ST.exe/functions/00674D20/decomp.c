@@ -16,7 +16,7 @@ void __cdecl FUN_00674d20(char *param_1)
   char *pcVar7;
   char local_108 [260];
 
-  if ((DAT_0081196c != 0) && (DAT_00811970 != (int *)0x0)) {
+  if ((DAT_0081196c != 0) && (DAT_00811970 != nullptr)) {
     uVar2 = 0xffffffff;
     do {
       pcVar5 = param_1;

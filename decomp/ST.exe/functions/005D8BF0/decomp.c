@@ -58,11 +58,11 @@ void __thiscall SIDTy::PrepFiles(SIDTy *this)
     }
     STDebugBreak(); /* noreturn in standalone pseudocode */
   }
-  if (local_c->field_1CCC != (DArrayTy *)0x0) {
+  if (local_c->field_1CCC != nullptr) {
     FUN_006b5570(local_c->field_1CCC);
-    this_01->field_1CCC = (DArrayTy *)0x0;
+    this_01->field_1CCC = nullptr;
   }
-  pDVar5 = Library::DKW::TBL::SArrayCreate((DArrayTy *)0x0,10,10);
+  pDVar5 = Library::DKW::TBL::SArrayCreate(nullptr,10,10);
   this_01->field_1CCC = pDVar5;
   this_01->field_002D = 0x20;
   this_01->field_0031 = 0;
@@ -162,7 +162,7 @@ LAB_005d8dbf:
               if (iVar4 == 0) {
                 this_00 = (cMf32 *)Library::Ourlib::MF32INT::FUN_006f0ec0
                                              (0x345,&local_c->field_1CD4,0,0,0);
-                if (this_00 != (cMf32 *)0x0) {
+                if (this_00 != nullptr) {
                   iVar4 = cMf32::RecChk(this_00,0xc,PTR_s_OPTIONS_PLAYER_0079c1a4);
                   if (iVar4 == 0) {
                     Library::DKW::TBL::FUN_006b5aa0(&this_01->field_1CCC->flags,local_21c.cFileName);
@@ -233,13 +233,13 @@ LAB_005d8dbf:
               pcVar13 = *(char **)(pDVar5->growCapacity + 4 + uVar10 * 4);
             }
             else {
-              pcVar13 = (char *)0x0;
+              pcVar13 = nullptr;
             }
             if ((int)uVar10 < (int)dVar7) {
               pcVar8 = *(char **)(pDVar5->growCapacity + uVar10 * 4);
             }
             else {
-              pcVar8 = (char *)0x0;
+              pcVar8 = nullptr;
             }
             iVar4 = Library::MSVCRT::__strcmpi(pcVar8,pcVar13);
             if (0 < iVar4) {
@@ -261,7 +261,7 @@ LAB_005d8dbf:
     iVar4 = local_10;
     if (0 < (int)local_8) {
       if ((int)local_8 < 1) {
-        pbVar16 = (byte *)0x0;
+        pbVar16 = nullptr;
         goto LAB_005d8fe2;
       }
       do {

@@ -127,7 +127,7 @@ MMsgTy::SetMessage(MMsgTy *this,UINT param_1,char param_2,undefined4 *param_3,un
         this_00->field_04B2 = 0x24b8;
         this_00->field_04D7 = 1;
         iVar3 = 8;
-        if (param_3 == (undefined4 *)0x0) {
+        if (param_3 == nullptr) {
           puVar6 = (undefined4 *)&this_00->field_0x4b7;
           for (; iVar3 != 0; iVar3 = iVar3 + -1) {
             *puVar6 = 0;
@@ -165,7 +165,7 @@ MMsgTy::SetMessage(MMsgTy *this,UINT param_1,char param_2,undefined4 *param_3,un
           this_00->field_04B2 = 0x24b9;
           this_00->field_04D7 = 1;
           iVar3 = 8;
-          if (param_3 == (undefined4 *)0x0) {
+          if (param_3 == nullptr) {
             puVar6 = (undefined4 *)&this_00->field_0x4b7;
             for (; iVar3 != 0; iVar3 = iVar3 + -1) {
               *puVar6 = 0;
@@ -206,7 +206,7 @@ MMsgTy::SetMessage(MMsgTy *this,UINT param_1,char param_2,undefined4 *param_3,un
           this_00->field_06AD = 0x24b9;
           this_00->field_06D2 = 1;
           iVar3 = 8;
-          if (param_3 == (undefined4 *)0x0) {
+          if (param_3 == nullptr) {
             puVar6 = (undefined4 *)&this_00->field_0x6b2;
             for (; iVar3 != 0; iVar3 = iVar3 + -1) {
               *puVar6 = 0;
@@ -241,7 +241,7 @@ MMsgTy::SetMessage(MMsgTy *this,UINT param_1,char param_2,undefined4 *param_3,un
           this_00->field_04B2 = 0x24ba;
           this_00->field_04D7 = 1;
           iVar3 = 8;
-          if (param_4 == (undefined4 *)0x0) {
+          if (param_4 == nullptr) {
             puVar6 = (undefined4 *)&this_00->field_0x4b7;
             for (; iVar3 != 0; iVar3 = iVar3 + -1) {
               *puVar6 = 0;
@@ -277,7 +277,7 @@ MMsgTy::SetMessage(MMsgTy *this,UINT param_1,char param_2,undefined4 *param_3,un
           this_00->field_02DC = 1;
         }
         iVar3 = 8;
-        if (param_5 == (undefined4 *)0x0) {
+        if (param_5 == nullptr) {
           puVar6 = (undefined4 *)&this_00->field_0x2bc;
           for (; iVar3 != 0; iVar3 = iVar3 + -1) {
             *puVar6 = 0;

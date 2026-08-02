@@ -15,7 +15,7 @@
 void __thiscall CursorClassTy::sub_0054B6D0(CursorClassTy *this)
 
 {
-  if (g_cPanel_00801688 != (CPanelTy *)0x0) {
+  if (g_cPanel_00801688 != nullptr) {
     this->field_04BE = (g_cPanel_00801688->field_0094 - this->field_04B6) + 1;
   }
   return;

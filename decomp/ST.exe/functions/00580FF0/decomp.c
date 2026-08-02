@@ -12,7 +12,7 @@ void FUN_00580ff0(ushort param_1,undefined2 param_2)
   ushort local_c;
   undefined2 local_a;
 
-  if (DAT_008117bc != (undefined4 *)0x0) {
+  if (DAT_008117bc != nullptr) {
     memset(local_24, 0, 0x20); /* compiler bulk-zero initialization */
     local_a = param_2;
     local_c = param_1;

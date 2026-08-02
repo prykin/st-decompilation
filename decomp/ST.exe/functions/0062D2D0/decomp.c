@@ -57,7 +57,7 @@ FUN_0062d2d0(void *this,int param_1,int param_2,int param_3,undefined4 param_4,i
           piVar4 = (int *)(*(int *)(iVar1 + 8) * uVar3 + *(int *)(iVar1 + 0x1c));
         }
         else {
-          piVar4 = (int *)0x0;
+          piVar4 = nullptr;
         }
         iVar1 = FUN_006acf90(param_2,param_3,piVar4[1],piVar4[2]);
         if (iVar1 < aiStack_44[3]) {

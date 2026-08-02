@@ -32,7 +32,7 @@ undefined4 __thiscall STVolcanoC::LoadImagVolcano(STVolcanoC *this,int param_1)
     if ((param_1 == 0) || (param_1 == 2)) {
       puVar3 = Library::Ourlib::MFRLOAD::mfRLoad
                          (DAT_00806764,CASE_1D,"expl_vol",0xffffffff,0,1,0,
-                          (undefined4 *)0x0);
+                          nullptr);
       ST3DSMAPContext::sub_006E8660
                 (g_sT3DSMAPContext_00807598,(int *)&local_8,1,0,*(uint *)((int)puVar3 + 9),
                  *(uint *)((int)puVar3 + 0xd),0x5a,0x2f,0);
@@ -50,7 +50,7 @@ undefined4 __thiscall STVolcanoC::LoadImagVolcano(STVolcanoC *this,int param_1)
       pSVar2->field_005D = local_8;
       puVar3 = Library::Ourlib::MFRLOAD::mfRLoad
                          (DAT_00806764,CASE_1D,"expl_vob",0xffffffff,0,1,0,
-                          (undefined4 *)0x0);
+                          nullptr);
       ST3DSMAPContext::sub_006E8660
                 (g_sT3DSMAPContext_00807598,(int *)&local_c,1,0,*(uint *)((int)puVar3 + 9),
                  *(uint *)((int)puVar3 + 0xd),0x40,0x6a,0);
@@ -69,7 +69,7 @@ undefined4 __thiscall STVolcanoC::LoadImagVolcano(STVolcanoC *this,int param_1)
     if ((param_1 != 0) && (pSVar2->field_007A < 0)) {
       puVar3 = Library::Ourlib::MFRLOAD::mfRLoad
                          (DAT_00806764,CASE_1D,"expl_vop",0xffffffff,0,1,0,
-                          (undefined4 *)0x0);
+                          nullptr);
       ST3DSMAPContext::sub_006E8660
                 (g_sT3DSMAPContext_00807598,(int *)&local_10,1,0,*(uint *)((int)puVar3 + 9),
                  *(uint *)((int)puVar3 + 0xd),0x4b,0x7e,0);

@@ -30,7 +30,7 @@ void __cdecl FUN_006a2d80(ushort param_1,int *param_2)
           else {
             local_c[1] = param_1;
           }
-          thunk_FUN_006a1620(param_2,iVar2,iVar3,(int)(short)iVar1,0xff,local_c,(undefined *)0x0,0);
+          thunk_FUN_006a1620(param_2,iVar2,iVar3,(int)(short)iVar1,0xff,local_c,nullptr,0);
           iVar3 = iVar3 + 1;
         } while (iVar3 < param_2[1]);
       }

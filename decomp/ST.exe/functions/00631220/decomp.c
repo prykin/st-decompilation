@@ -22,27 +22,27 @@ void __thiscall STManRuinC::sub_00631220(STManRuinC *this,int *param_1)
   uint local_8;
 
   pSVar1 = this->field_0038;
-  local_c = (byte *)0x0;
+  local_c = nullptr;
   local_8 = 0;
   local_10 = 0x55;
-  if (pSVar1 != (STManRuinC_field_0038DArray *)0x0) {
+  if (pSVar1 != nullptr) {
     iVar2 = pSVar1->count * pSVar1->elementSize;
     local_8 = iVar2 + 0x20;
     local_10 = iVar2 + 0x75;
   }
-  if (this->field_0034 != (byte *)0x0) {
+  if (this->field_0034 != nullptr) {
     local_10 = local_10 + this->field_0030;
   }
   uVar4 = local_10;
   puVar3 = Library::DKW::LIB::MemAlloc(local_10);
   this->field_0065 = this->field_0071;
-  if (puVar3 == (undefined4 *)0x0) {
+  if (puVar3 == nullptr) {
     *param_1 = uVar4;
     return;
   }
   this->field_0028 = 2;
-  if (this == (STManRuinC *)0x0) {
-    puVar6 = (byte *)0x0;
+  if (this == nullptr) {
+    puVar6 = nullptr;
   }
   else {
     puVar6 = (byte *)(&this->field_001C);
@@ -55,18 +55,18 @@ void __thiscall STManRuinC::sub_00631220(STManRuinC *this,int *param_1)
   }
   *(undefined1 *)puVar8 = *(undefined1 *)puVar6;
   this->field_0061 = 0xffffffff;
-  if (this->field_0038 != (STManRuinC_field_0038DArray *)0x0) {
+  if (this->field_0038 != nullptr) {
     local_14 = (undefined4 *)FUN_006b0020(&this->field_0038->flags,(int *)&local_8);
     *(uint *)((int)puVar3 + 0x55) = local_8;
     local_c = (byte *)((int)puVar3 + 0x59);
     puVar6 = (byte *)(local_14);
     puVar8 = (byte *)local_c;
     memmove(puVar8, puVar6, local_8); /* compiler REP MOVS byte copy */
-    if (local_14 != (undefined4 *)0x0) {
+    if (local_14 != nullptr) {
       FreeAndNull(&local_14);
     }
   }
-  if (this->field_0034 != (byte *)0x0) {
+  if (this->field_0034 != nullptr) {
     if (local_8 == 0) {
       local_c = (byte *)((int)puVar3 + 0x55);
     }

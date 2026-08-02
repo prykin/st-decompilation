@@ -14,7 +14,7 @@ int __cdecl FUN_0067ed20(byte *param_1)
   iVar6 = 0;
   if (0 < iVar2) {
     if (iVar2 < 1) {
-      pAVar5 = (AnonNested_AnonShape_GLOBAL_00848A1C_B6E50991_0014_BB282182 *)0x0;
+      pAVar5 = nullptr;
       pbVar3 = param_1;
       goto LAB_0067ed4b;
     }

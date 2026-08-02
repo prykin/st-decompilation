@@ -15,14 +15,14 @@ void __thiscall STPlaySystemC::sub_006E57B0(STPlaySystemC *this,int param_1)
   undefined4 local_14;
 
   pDVar1 = this->field_0010;
-  if (pDVar1 != (DArrayTy *)0x0) {
+  if (pDVar1 != nullptr) {
     local_14 = 3;
     uVar3 = pDVar1->count;
     index = 0;
     if (uVar3 != 0) {
       do {
         if (uVar3 == 0) {
-          pvVar2 = (void *)0x0;
+          pvVar2 = nullptr;
         }
         else {
           pvVar2 = pDVar1->data;

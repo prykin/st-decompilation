@@ -34,8 +34,8 @@ uint * __cdecl _CreateStgListByRoot(cMf32 *param_1,int param_2,char *param_3,uin
   AnonShape_0067DC20_B265FC02 *local_8;
 
   memset((void *)local_2ec, 0, 0x201); /* compiler bulk-zero initialization */
-  local_c = (DArrayTy *)0x0;
-  local_8 = (AnonShape_0067DC20_B265FC02 *)0x0;
+  local_c = nullptr;
+  local_8 = nullptr;
   local_50.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_50;
   iVar6 = Library::MSVCRT::__setjmp3(local_50.jumpBuffer,0);
@@ -46,17 +46,17 @@ uint * __cdecl _CreateStgListByRoot(cMf32 *param_1,int param_2,char *param_3,uin
     if (iVar4 != 0) {
       STDebugBreak(); /* noreturn in standalone pseudocode */
     }
-    if (local_c != (DArrayTy *)0x0) {
+    if (local_c != nullptr) {
       DArrayDestroy(local_c);
     }
     RaiseInternalException(iVar6,0,"E:\\__titans\\ai\\ai_plr_d.cpp",0x158);
-    return (uint *)0x0;
+    return nullptr;
   }
-  if (param_1 == (cMf32 *)0x0) {
+  if (param_1 == nullptr) {
     RaiseInternalException
               (-0x34,g_overwriteContext_007ED77C,"E:\\__titans\\ai\\ai_plr_d.cpp",0x13f);
   }
-  local_c = Library::DKW::TBL::DArrayCreate((DArrayTy *)0x0,5,0x98,5);
+  local_c = Library::DKW::TBL::DArrayCreate(nullptr,5,0x98,5);
   uVar7 = 0xffffffff;
   do {
     pcVar3 = param_3;
@@ -73,13 +73,13 @@ uint * __cdecl _CreateStgListByRoot(cMf32 *param_1,int param_2,char *param_3,uin
   memmove(pcVar10, pcVar3, uVar7); /* compiler REP MOVS byte copy */
   cMf32::ToBeg(param_1,FUN_006f2d10,local_2ec);
   pcVar3 = (char *)cMf32::RecNameGetNext(param_1);
-  while (pcVar3 != (char *)0x0) {
+  while (pcVar3 != nullptr) {
     local_8 = (AnonShape_0067DC20_B265FC02 *)Library::Ourlib::MFAOBJ::mfAObjLoad(param_1,pcVar3,0,1);
     uVar7 = *(uint *)&local_8[1].field_0x7e;
     if (uVar7 == 0) {
       uVar7 = 1;
     }
-    if (local_8 != (AnonShape_0067DC20_B265FC02 *)0x0) {
+    if (local_8 != nullptr) {
       if (((param_2 == 0) || (param_2 == local_8->field_0019)) && ((param_4 & uVar7) != 0)) {
         _Source = &local_8->field_0x1b;
         pcVar10 = local_e8;

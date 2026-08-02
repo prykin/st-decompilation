@@ -28,8 +28,8 @@ undefined4 __thiscall GameSystemC::InitSystem(GameSystemC *this)
   if (iVar4 == 0) {
     DAT_00806750 = LoadLand(g_cMf32_00806754,"3D_MAP");
     pAVar5 = (AnonShape_006DBCA0_EF06575F *)FUN_006b04d0(0x4f2);
-    if (pAVar5 == (AnonShape_006DBCA0_EF06575F *)0x0) {
-      pSVar6 = (ST3DSMAPContext *)0x0;
+    if (pAVar5 == nullptr) {
+      pSVar6 = nullptr;
     }
     else {
       pSVar6 = (ST3DSMAPContext *)FUN_006dbca0(pAVar5);
@@ -44,7 +44,7 @@ undefined4 __thiscall GameSystemC::InitSystem(GameSystemC *this)
     ST3DSMAPContext::sub_006E8580(g_sT3DSMAPContext_00807598,(int *)g_ddxContext_008075A8);
     PTR_00806724 = (AnonShape_GLOBAL_00806724_3210464F *)
                    Library::Ourlib::MFIMG::mfImtLoad
-                             (PTR_00806770,"scmask",0,0,(undefined4 *)0x0,1);
+                             (PTR_00806770,"scmask",0,0,nullptr,1);
     local_90.previous = g_currentExceptionFrame;
     g_currentExceptionFrame = &local_90;
     iVar4 = Library::MSVCRT::__setjmp3(local_90.jumpBuffer,0);

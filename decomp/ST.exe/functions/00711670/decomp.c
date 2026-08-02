@@ -8,7 +8,7 @@ int __thiscall FUN_00711670(void *this,AnonShape_00711670_5F8DCCF2 *param_1,int 
   int local_8;
 
   local_8 = 0;
-  if (param_1 != (AnonShape_00711670_5F8DCCF2 *)0x0) {
+  if (param_1 != nullptr) {
     iVar1 = param_1->field_0008;
     if (param_3 == -1) {
       param_3 = iVar1;
@@ -23,7 +23,7 @@ int __thiscall FUN_00711670(void *this,AnonShape_00711670_5F8DCCF2 *param_1,int 
           resourceString = *(char **)(param_1->field_0014 + param_2 * 4);
         }
         else {
-          resourceString = (char *)0x0;
+          resourceString = nullptr;
         }
         iVar2 = FUN_00711110(this,resourceString);
         if (local_8 < iVar2) {

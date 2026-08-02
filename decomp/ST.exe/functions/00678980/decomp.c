@@ -30,8 +30,8 @@ int __thiscall AiPlrClassTy::InitData(AiPlrClassTy *this,undefined4 *param_1)
   iVar3 = Library::MSVCRT::__setjmp3(local_50.jumpBuffer,0);
   pAVar2 = local_c;
   if (iVar3 == 0) {
-    if (local_c == (AiPlrClassTy *)0x0) {
-      puVar12 = (byte *)0x0;
+    if (local_c == nullptr) {
+      puVar12 = nullptr;
     }
     else {
       puVar12 = (byte *)(&local_c->field_05D3);
@@ -53,21 +53,21 @@ int __thiscall AiPlrClassTy::InitData(AiPlrClassTy *this,undefined4 *param_1)
     iVar3 = 5;
     local_8 = (DArrayTy **)ppAVar11;
     do {
-      if ((DArrayTy *)*ppAVar11 != (DArrayTy *)0x0) {
+      if ((DArrayTy *)*ppAVar11 != nullptr) {
         pDVar4 = (DArrayTy *)
-                 FUN_006b0060((uint *)0x0,(uint *)((int)ppAVar11[1] + 0x12a + (int)param_1));
+                 FUN_006b0060(nullptr,(uint *)((int)ppAVar11[1] + 0x12a + (int)param_1));
         *ppAVar11 = (AiPlrClassTy_field_06A1DArray *)pDVar4;
       }
       ppAVar11 = ppAVar11 + 3;
       iVar3 = iVar3 + -1;
     } while (iVar3 != 0);
-    if (pAVar2->field_06A1 == (AiPlrClassTy_field_06A1DArray *)0x0) {
+    if (pAVar2->field_06A1 == nullptr) {
       pAVar5 = (AiPlrClassTy_field_06A1DArray *)
-               Library::DKW::TBL::DArrayCreate((DArrayTy *)0x0,10,0x12,5);
+               Library::DKW::TBL::DArrayCreate(nullptr,10,0x12,5);
       pAVar2->field_06A1 = pAVar5;
     }
-    if (pAVar2->field_06AD == (DArrayTy *)0x0) {
-      pDVar4 = Library::DKW::TBL::DArrayCreate((DArrayTy *)0x0,10,0x1c,5);
+    if (pAVar2->field_06AD == nullptr) {
+      pDVar4 = Library::DKW::TBL::DArrayCreate(nullptr,10,0x1c,5);
       pAVar2->field_06AD = pDVar4;
     }
     uVar10 = 0;
@@ -80,7 +80,7 @@ int __thiscall AiPlrClassTy::InitData(AiPlrClassTy *this,undefined4 *param_1)
           puVar12 = (byte *)((int)pDVar4->data + pDVar4->elementSize * uVar10);
         }
         else {
-          puVar12 = (byte *)0x0;
+          puVar12 = nullptr;
         }
         if (puVar12[1] == 0) {
           iVar3 = puVar12[2];

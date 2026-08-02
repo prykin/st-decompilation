@@ -20,7 +20,7 @@ int __cdecl FUN_00683780(int *param_1,AnonShape_00683780_11EA4E23 *param_2,int p
   undefined1 uStack_8;
 
   /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
-  if (((param_3 == 0) || (param_1 == (int *)0x0)) || (param_2 == (AnonShape_00683780_11EA4E23 *)0x0)
+  if (((param_3 == 0) || (param_1 == nullptr)) || (param_2 == nullptr)
      ) {
     RaiseInternalException
               (-0x34,g_overwriteContext_007ED77C,"E:\\__titans\\ai\\ai_script.cpp",0x39e);
@@ -38,7 +38,7 @@ int __cdecl FUN_00683780(int *param_1,AnonShape_00683780_11EA4E23 *param_2,int p
       uStack_8 = *(undefined1 *)(puVar3 + 1);
       if ((local_c == '\x06') || (local_c == '\x03')) {
         pbVar4 = (byte *)thunk_FUN_0067ee40((int)sStack_b);
-        if (pbVar4 == (byte *)0x0) {
+        if (pbVar4 == nullptr) {
           RaiseInternalException
                     (-0x6b,g_overwriteContext_007ED77C,"E:\\__titans\\ai\\ai_script.cpp",0x3a5
                     );

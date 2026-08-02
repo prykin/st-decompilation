@@ -50,7 +50,7 @@ uint __thiscall FUN_00639670(void *this,int param_1)
       return uVar2;
     }
     /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-    if ((*(int **)((int)this + 0x2bf) != (int *)0x0) &&
+    if ((*(int **)((int)this + 0x2bf) != nullptr) &&
        (iVar4 = (**(code **)(**(int **)((int)this + 0x2bf) + 0xe0))
                           (*(undefined4 *)((int)this + 0x2c3),(int)&param_1 + 2,&local_6,
                            (int)&local_c + 2,&local_10), iVar4 != 0)) {

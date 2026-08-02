@@ -59,7 +59,7 @@ uint __thiscall STBoatC::CreateGame(STBoatC *this,int *param_1,undefined4 param_
       }
       if (iVar6 == 0) {
         uVar8 = 0;
-        if (((AnonShape_005EFAE0_B406B78B *)this->field_0524 != (AnonShape_005EFAE0_B406B78B *)0x0)
+        if (((AnonShape_005EFAE0_B406B78B *)this->field_0524 != nullptr)
            && (iVar6 = STPlaySystemC::sub_006E62D0
                                  (g_playSystem_00802A38,
                                   (AnonShape_005EFAE0_B406B78B *)this->field_0524,(int *)&local_8),

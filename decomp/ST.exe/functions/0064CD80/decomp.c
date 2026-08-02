@@ -31,8 +31,8 @@ int __thiscall AiEventClassTy::InitData(AiEventClassTy *this,int *param_1)
   iVar3 = Library::MSVCRT::__setjmp3(local_4c.jumpBuffer,0);
   pAVar2 = local_8;
   if (iVar3 == 0) {
-    if (local_8 == (AiEventClassTy *)0x0) {
-      piVar14 = (int *)0x0;
+    if (local_8 == nullptr) {
+      piVar14 = nullptr;
     }
     else {
       piVar14 = (int *)&local_8->field_008C;
@@ -40,7 +40,7 @@ int __thiscall AiEventClassTy::InitData(AiEventClassTy *this,int *param_1)
     piVar10 = param_1;
     memmove(piVar14, piVar10, 0x49f); /* compiler REP MOVS byte copy */
     local_8->field_0091 = 1;
-    pDVar4 = Library::DKW::TBL::SArrayCreate((DArrayTy *)0x0,5,5);
+    pDVar4 = Library::DKW::TBL::SArrayCreate(nullptr,5,5);
     pAVar2->field_05B3 = pDVar4;
     uVar11 = 0;
     do {
@@ -62,7 +62,7 @@ int __thiscall AiEventClassTy::InitData(AiEventClassTy *this,int *param_1)
     }
     iVar3 = pAVar2->field_0506;
     piVar14 = &pAVar2->field_04FA;
-    if (piVar14 == (int *)0x0) {
+    if (piVar14 == nullptr) {
       uVar11 = 0;
     }
     else {
@@ -70,7 +70,7 @@ int __thiscall AiEventClassTy::InitData(AiEventClassTy *this,int *param_1)
     }
     puVar5 = (byte *)(Library::DKW::LIB::FUN_006aac10(uVar11));
     pAVar2->field_0502 = puVar5;
-    if (piVar14 == (int *)0x0) {
+    if (piVar14 == nullptr) {
       uVar11 = 0;
     }
     else {
@@ -79,10 +79,10 @@ int __thiscall AiEventClassTy::InitData(AiEventClassTy *this,int *param_1)
     puVar12 = (byte *)(iVar3 + 0x49e + (int)param_1);
     memmove(puVar5, puVar12, uVar11); /* compiler REP MOVS byte copy */
     pDVar4 = (DArrayTy *)
-             FUN_006b0060((uint *)0x0,(uint *)(pAVar2->field_04F2 + 0x49e + (int)param_1));
+             FUN_006b0060(nullptr,(uint *)(pAVar2->field_04F2 + 0x49e + (int)param_1));
     pAVar2->field_04EE = pDVar4;
     puVar6 = Library::DKW::TBL::FUN_006c8680
-                       ((uint *)0x0,(uint *)(pAVar2->field_04E6 + 0x49e + (int)param_1));
+                       (nullptr,(uint *)(pAVar2->field_04E6 + 0x49e + (int)param_1));
     pAVar2->field_04E2 = puVar6;
     pDVar4 = pAVar2->field_04EE;
     uVar11 = 0;
@@ -94,10 +94,10 @@ int __thiscall AiEventClassTy::InitData(AiEventClassTy *this,int *param_1)
           pvVar13 = (void *)(pDVar4->elementSize * uVar11 + (int)pDVar4->data);
         }
         else {
-          pvVar13 = (void *)0x0;
+          pvVar13 = nullptr;
         }
         if (*(int *)((int)pvVar13 + 0xf) != 0) {
-          uVar7 = FUN_006b0060((uint *)0x0,
+          uVar7 = FUN_006b0060(nullptr,
                                (uint *)(*(int *)((int)pvVar13 + 0x13) + 0x49e + (int)param_1));
           *(undefined4 *)((int)pvVar13 + 0xf) = uVar7;
         }

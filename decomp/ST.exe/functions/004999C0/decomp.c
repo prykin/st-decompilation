@@ -35,7 +35,7 @@ STGroupBoatC::ReMakePVecAndTgtListExt(STGroupBoatC *this,char param_1,short para
                 (-0x5001fff7,g_overwriteContext_007ED77C,"E:\\__titans\\wlad\\to_grpb.cpp",
                  0x509);
     }
-    if (this_00->field_020E == (DArrayTy *)0x0) {
+    if (this_00->field_020E == nullptr) {
       RaiseInternalException
                 (-0x5001fffc,g_overwriteContext_007ED77C,"E:\\__titans\\wlad\\to_grpb.cpp",
                  0x50b);
@@ -46,7 +46,7 @@ STGroupBoatC::ReMakePVecAndTgtListExt(STGroupBoatC *this,char param_1,short para
       do {
         DArrayGetElement(this_00->field_020E,index,local_8);
         if (((local_6 != -1) && (local_8[0] == param_1)) && (local_6 == param_2)) {
-          array = Library::DKW::TBL::DArrayCreate((DArrayTy *)0x0,1,4,1);
+          array = Library::DKW::TBL::DArrayCreate(nullptr,1,4,1);
           local_c = 0xffff;
           local_a = (undefined2)index;
           Library::DKW::TBL::DArrayAppend(array,&local_c);

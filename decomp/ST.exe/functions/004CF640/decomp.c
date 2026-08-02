@@ -40,7 +40,7 @@ void __thiscall FUN_004cf640(void *this,int *param_1)
   piVar3 = param_1;
   do {
     if (*piVar3 == 0) {
-      pDVar2 = Library::DKW::TBL::DArrayCreate((DArrayTy *)0x0,5,0x30,5);
+      pDVar2 = Library::DKW::TBL::DArrayCreate(nullptr,5,0x30,5);
       *piVar3 = (int)pDVar2;
     }
     iVar5 = *piVar3;
@@ -54,7 +54,7 @@ void __thiscall FUN_004cf640(void *this,int *param_1)
     memset(local_fc, 0, 0xa0); /* compiler bulk-zero initialization */
     if (((*(int *)((int)this + 0x5ac) == 0x5c) &&
         (pDVar2 = *(DArrayTy **)&g_packedRecords_A62x8[*(int *)((int)this + 0x24)].field_0x9de,
-        pDVar2 != (DArrayTy *)0x0)) && (index = 0, 0 < (int)pDVar2->count)) {
+        pDVar2 != nullptr)) && (index = 0, 0 < (int)pDVar2->count)) {
       do {
         DArrayGetElement(pDVar2,index,&local_28);
         piVar3 = local_fc;
@@ -75,7 +75,7 @@ void __thiscall FUN_004cf640(void *this,int *param_1)
     local_8 = 0;
     do {
       local_10 = &DAT_00801330 + local_2c;
-      local_c = (undefined *)0x0;
+      local_c = nullptr;
       switch(local_8) {
       case 0:
         local_c = &DAT_00801450;
@@ -93,7 +93,7 @@ void __thiscall FUN_004cf640(void *this,int *param_1)
       local_14 = local_fc;
       iVar5 = 1;
       do {
-        if ((local_10 == (undefined *)0x0) || (iVar4 = FUN_006b0fd0((int)local_10), iVar4 != 0)) {
+        if ((local_10 == nullptr) || (iVar4 = FUN_006b0fd0((int)local_10), iVar4 != 0)) {
           iVar4 = FUN_006b0fd0((int)local_c);
           if ((iVar4 != 0) &&
              (iVar4 = thunk_FUN_004e6010(*(int *)((int)this + 0x24),iVar5 + 0x41), iVar4 != 0)) {

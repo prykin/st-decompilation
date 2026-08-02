@@ -30,8 +30,8 @@ undefined4 __thiscall STColl3C::sub_005FA8B0(STColl3C *this,int *param_1,int *pa
       (this_00 = (STFishC *)
                  g_worldGrid.cells
                  [(int)g_worldGrid.planeStride * (int)sVar2 + (int)g_worldGrid.sizeX * (int)sVar3 +
-                  (int)sVar1].objects[0], this_00 == (STFishC *)0x0)))) {
-    if (((AnonShape_005EFAE0_B406B78B *)this->field_0255 == (AnonShape_005EFAE0_B406B78B *)0x0) ||
+                  (int)sVar1].objects[0], this_00 == nullptr)))) {
+    if (((AnonShape_005EFAE0_B406B78B *)this->field_0255 == nullptr) ||
        (iVar5 = STPlaySystemC::sub_006E62D0
                           (g_playSystem_00802A38,(AnonShape_005EFAE0_B406B78B *)this->field_0255,
                            (int *)&local_14), iVar5 == -4)) {
@@ -47,7 +47,7 @@ undefined4 __thiscall STColl3C::sub_005FA8B0(STColl3C *this,int *param_1,int *pa
       uVar6 = 1;
     }
   }
-  if (this_00 != (STFishC *)0x0) {
+  if (this_00 != nullptr) {
     STFishC::sub_004162B0(this_00,&local_6,&local_8,&local_a);
     *param_1 = (int)local_6;
     *param_2 = (int)local_8;

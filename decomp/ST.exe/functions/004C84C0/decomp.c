@@ -56,7 +56,7 @@ undefined4 __fastcall FUN_004c84c0(TLOBaseTy *param_1)
       return 0;
     }
     pAVar13 = param_1->field_0607;
-    if (pAVar13 == (AnonPointee_TLOBaseTy_0607 *)0x0) {
+    if (pAVar13 == nullptr) {
       return 0;
     }
     iVar5 = TLOBaseTy::sub_004C7860
@@ -199,7 +199,7 @@ LAB_004c8806:
     iVar5 = 1;
   }
   param_1->field_03B8 = iVar5;
-  if ((iVar5 != 0) && (uVar11 = uVar11 << 2, DAT_00811798 != (void *)0x0)) {
+  if ((iVar5 != 0) && (uVar11 = uVar11 << 2, DAT_00811798 != nullptr)) {
     thunk_FUN_00621580(DAT_00811798,param_1->field_0024,5);
   }
   if (g_playSystem_00802A38->field_00E4 < param_1->field_038C + uVar11) {
@@ -339,7 +339,7 @@ LAB_004c8bf2:
     else {
       param_1->field_03C0 = 1;
     }
-    if (DAT_00811798 != (void *)0x0) {
+    if (DAT_00811798 != nullptr) {
       if (param_1->field_03BC != 0) {
         thunk_FUN_00621580(DAT_00811798,param_1->field_0024,4);
       }

@@ -108,7 +108,7 @@ int __thiscall FUN_005fe5d0(void *this,int param_1,undefined2 *param_2,int param
                ((sVar11 < g_worldGrid.sizeZ &&
                 (g_worldGrid.cells
                  [(int)g_worldGrid.planeStride * (int)sVar11 + (int)g_worldGrid.sizeX * (int)sVar10
-                  + (int)sVar9].objects[0] != (STWorldObject *)0x0)))) ||
+                  + (int)sVar9].objects[0] != nullptr)))) ||
               (uVar5 = thunk_FUN_00496250(local_10,local_14,local_18), -1 < (int)uVar5)))) {
             local_c = 0;
           }

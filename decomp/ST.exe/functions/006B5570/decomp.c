@@ -7,7 +7,7 @@ void FUN_006b5570(DArrayTy *param_1)
 {
   uint uVar1;
 
-  if (param_1 != (DArrayTy *)0x0) {
+  if (param_1 != nullptr) {
     uVar1 = 0;
     if (param_1->elementSize != 0) {
       do {

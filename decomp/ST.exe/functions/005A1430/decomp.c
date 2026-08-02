@@ -21,7 +21,7 @@ void __thiscall FSGSTy::Download(FSGSTy *this,undefined4 param_1,undefined4 para
   InternalExceptionFrame local_4c;
   FSGSTy *local_8;
 
-  if (((this->field_1A5F == CASE_1) && (this->field_1AC0 != (ushort *)0x0)) &&
+  if (((this->field_1A5F == CASE_1) && (this->field_1AC0 != nullptr)) &&
      (-1 < (int)this->field_1ABC)) {
     local_4c.previous = g_currentExceptionFrame;
     g_currentExceptionFrame = &local_4c;

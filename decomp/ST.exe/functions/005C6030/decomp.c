@@ -121,7 +121,7 @@ void __thiscall SettMapTy::CreateCtrls(SettMapTy *this,char param_1)
     local_5bc = local_5d0[4];
     local_4a8 = local_5d0[4];
     (*local_1c->field_000C->vtable->CreateObject)
-              ((SystemClassTy *)local_1c->field_000C,2,&local_1c->field_215D,(int *)0x0,local_5d0,0);
+              ((SystemClassTy *)local_1c->field_000C,2,&local_1c->field_215D,nullptr,local_5d0,0);
     goto LAB_005c69ed;
   }
   if (local_1c->field_1C6F != 0xffffffff) {
@@ -267,7 +267,7 @@ void __thiscall SettMapTy::CreateCtrls(SettMapTy *this,char param_1)
   local_fc = local_3ec;
   local_ac = local_3ec;
   (*this_00->field_000C->vtable->CreateObject)
-            ((SystemClassTy *)this_00->field_000C,4,&this_00->field_211D,(int *)0x0,local_454,0);
+            ((SystemClassTy *)this_00->field_000C,4,&this_00->field_211D,nullptr,local_454,0);
   SVar2 = this_00->field_1E26;
   if (((SVar2 == CASE_6) || (SVar2 == CASE_7)) || (SVar2 == CASE_E)) {
     local_10 = 0xcb;
@@ -300,16 +300,16 @@ void __thiscall SettMapTy::CreateCtrls(SettMapTy *this,char param_1)
     } while (iVar11 != 0);
   }
   else {
-    if (this_00->field_1F3F != (cMf32 *)0x0) {
+    if (this_00->field_1F3F != nullptr) {
       cMf32::delete(this_00->field_1F3F);
     }
     pcVar7 = (cMf32 *)Library::Ourlib::MF32INT::FUN_006f0ec0(0x345,&DAT_0080ed16,0,0,0);
     this_00->field_1F3F = pcVar7;
     if (DAT_0080877e == '\0') {
-      if ((DArrayTy *)g_startSystem_0081176C->field_0548 != (DArrayTy *)0x0) {
+      if ((DArrayTy *)g_startSystem_0081176C->field_0548 != nullptr) {
         FUN_006b5570((DArrayTy *)g_startSystem_0081176C->field_0548);
       }
-      pDVar8 = Library::DKW::TBL::SArrayCreate((DArrayTy *)0x0,10,10);
+      pDVar8 = Library::DKW::TBL::SArrayCreate(nullptr,10,10);
       g_startSystem_0081176C->field_0548 = &pDVar8->flags;
       SVar2 = this_00->field_1E26;
       local_5d8 = DAT_0080995c;

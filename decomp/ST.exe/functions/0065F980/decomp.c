@@ -16,7 +16,7 @@ void __thiscall AiFltClassTy::sub_0065F980(AiFltClassTy *this)
   AiFltClassTy *local_c;
   undefined2 local_8;
 
-  if (DAT_008117bc != (undefined4 *)0x0) {
+  if (DAT_008117bc != nullptr) {
     memset(local_24, 0, 0x20); /* compiler bulk-zero initialization */
     local_10 = *(undefined2 *)&this->field_0024;
     local_e = this->field_007D;

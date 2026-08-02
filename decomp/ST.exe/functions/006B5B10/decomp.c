@@ -94,21 +94,21 @@ void FUN_006b5b10(AnonShape_006E6FB0_BC494FEA *param_1,int param_2,int param_3,i
         pbVar9 = (byte *)(((int)pAVar1 + (-1 - iVar12)) * uVar5 + iVar8 + param_2);
         puVar3 = puVar3 + (1 - iVar12);
         if (param_8 == 7) {
-          if (puVar3 != (undefined1 *)0x0) {
+          if (puVar3 != nullptr) {
             do {
               *pbVar9 = *pbVar9 ^ param_7;
               pbVar9 = pbVar9 + -uVar5;
               puVar3 = puVar3 + -1;
-            } while (puVar3 != (undefined1 *)0x0);
+            } while (puVar3 != nullptr);
             return;
           }
         }
-        else if (puVar3 != (undefined1 *)0x0) {
+        else if (puVar3 != nullptr) {
           do {
             *pbVar9 = param_7;
             pbVar9 = pbVar9 + -uVar5;
             puVar3 = puVar3 + -1;
-          } while (puVar3 != (undefined1 *)0x0);
+          } while (puVar3 != nullptr);
           return;
         }
       }

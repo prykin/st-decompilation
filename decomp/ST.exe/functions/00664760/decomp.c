@@ -30,7 +30,7 @@ void __thiscall AiFltClassTy::sub_00664760(AiFltClassTy *this)
         psVar3 = (short *)(pAVar5->field_0008 * uVar6 + pAVar5->field_001C);
       }
       else {
-        psVar3 = (short *)0x0;
+        psVar3 = nullptr;
       }
       thunk_FUN_006756d0(psVar3,psVar3 + 1,psVar3 + 3,psVar3 + 4);
       pAVar5 = this->field_022F;
@@ -47,7 +47,7 @@ void __thiscall AiFltClassTy::sub_00664760(AiFltClassTy *this)
         psVar3 = (short *)(pAVar4->field_0008 * uVar6 + pAVar4->field_001C);
       }
       else {
-        psVar3 = (short *)0x0;
+        psVar3 = nullptr;
       }
       psVar1 = psVar3 + 1;
       /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
@@ -60,7 +60,7 @@ void __thiscall AiFltClassTy::sub_00664760(AiFltClassTy *this)
     } while ((int)uVar6 < (int)*(uint *)&pAVar4->field_0xc);
   }
   if (((this->field_0163 == '\x01') && (*(int *)&this->field_022F->field_0xc == 0)) &&
-     (puVar2 = this->field_0284, puVar2 != (ushort *)0x0)) {
+     (puVar2 = this->field_0284, puVar2 != nullptr)) {
     local_10 = puVar2[0x41] - 4;
     local_e[0] = puVar2[0x42] - 4;
     local_e[2] = 9;
@@ -80,7 +80,7 @@ void __thiscall AiFltClassTy::sub_00664760(AiFltClassTy *this)
           psVar3 = (short *)(pAVar5->field_0008 * uVar6 + pAVar5->field_001C);
         }
         else {
-          psVar3 = (short *)0x0;
+          psVar3 = nullptr;
         }
         AppendPoint(this,psVar3,5);
         pAVar5 = this->field_022F;

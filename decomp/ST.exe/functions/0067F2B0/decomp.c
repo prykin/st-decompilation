@@ -13,7 +13,7 @@ void FUN_0067f2b0(LPCSTR lpFileName,int param_2)
   if (param_2 == 0) {
     if (0 < DAT_00848a24) {
       DAT_00848a24 = DAT_00848a24 + -1;
-      puVar4 = (uint *)0x0;
+      puVar4 = nullptr;
       pbVar2 = thunk_FUN_0067ece0(DAT_00848a24);
       pcVar3 = thunk_FUN_0067eea0(pbVar2);
       iVar1 = thunk_FUN_0067f030("_curr_path",pcVar3,puVar4);
@@ -23,15 +23,15 @@ void FUN_0067f2b0(LPCSTR lpFileName,int param_2)
     }
   }
   else {
-    GetFullPathNameA(lpFileName,0x104,&DAT_0084868c,(LPSTR *)0x0);
+    GetFullPathNameA(lpFileName,0x104,&DAT_0084868c,nullptr);
     Library::MSVCRT::FUN_0072e730
               (&DAT_0084868c,&DAT_008478a8,&DAT_00848790,&DAT_0084858c,&DAT_00811990);
-    Library::MSVCRT::__makepath(&DAT_0084868c,&DAT_008478a8,&DAT_00848790,(char *)0x0,(char *)0x0);
-    iVar1 = thunk_FUN_0067f030("_curr_path",&DAT_0084868c,(uint *)0x0);
+    Library::MSVCRT::__makepath(&DAT_0084868c,&DAT_008478a8,&DAT_00848790,nullptr,nullptr);
+    iVar1 = thunk_FUN_0067f030("_curr_path",&DAT_0084868c,nullptr);
     if (iVar1 == 0) {
       RaiseInternalException(-2,g_overwriteContext_007ED77C,".\\ai\\ai_script_v.inl",0xb5);
     }
-    puVar4 = (uint *)0x0;
+    puVar4 = nullptr;
     DAT_00848a24 = DAT_00848a24 + 1;
     pcVar3 = &DAT_0084868c;
     pbVar2 = thunk_FUN_0067ece0(DAT_00848a24);

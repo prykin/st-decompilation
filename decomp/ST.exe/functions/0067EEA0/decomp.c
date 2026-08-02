@@ -13,6 +13,6 @@ char * FUN_0067eea0(byte *param_1)
     pcVar2 = (char *)thunk_FUN_0067ee40(iVar1);
     return pcVar2;
   }
-  return (char *)0x0;
+  return nullptr;
 }
 

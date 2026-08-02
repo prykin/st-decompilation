@@ -30,7 +30,7 @@ void __thiscall CPanelTy::PlayBrief(CPanelTy *this,int param_1)
   char *local_c;
   DArrayTy *local_8;
 
-  if ((DAT_0080c4f7 == 1) && (this->field_024B != (DArrayTy *)0x0)) {
+  if ((DAT_0080c4f7 == 1) && (this->field_024B != nullptr)) {
     local_54.previous = g_currentExceptionFrame;
     g_currentExceptionFrame = &local_54;
     local_10 = this;
@@ -46,7 +46,7 @@ void __thiscall CPanelTy::PlayBrief(CPanelTy *this,int param_1)
             puVar11 = (undefined1 *)(pDVar4->elementSize * this_00->field_024F + (int)pDVar4->data);
           }
           else {
-            puVar11 = (undefined1 *)0x0;
+            puVar11 = nullptr;
           }
           if ((uint)(this_00->field_0253 - this_00->field_0257) < *(uint *)(puVar11 + 1)) {
             g_currentExceptionFrame = local_54.previous;
@@ -56,16 +56,16 @@ void __thiscall CPanelTy::PlayBrief(CPanelTy *this,int param_1)
           case 1:
             SoundClassTy::PlaySound
                       ((SoundClassTy *)&g_sound,SOUND_MODE_12,puVar11 + 9,*(int *)(puVar11 + 5),
-                       (SoundPosition *)0x0,0);
+                       nullptr,0);
             break;
           case 2:
-            if (this_00->field_01D8 != (HoloTy *)0x0) {
+            if (this_00->field_01D8 != nullptr) {
               FUN_00714060((int *)this_00->field_01D8);
               Library::MSVCRT::FUN_0072e2b0(this_00->field_01D8);
-              this_00->field_01D8 = (HoloTy *)0x0;
+              this_00->field_01D8 = nullptr;
             }
             FUN_006b4170((AnonShape_006B5B10_E0D06CF1 *)this_00->field_01B4,0,100,5,0x226,0x55,0);
-            local_8 = Library::DKW::TBL::SArrayCreate((DArrayTy *)0x0,10,10);
+            local_8 = Library::DKW::TBL::SArrayCreate(nullptr,10,10);
             if (*(int *)(puVar11 + 10) < 1) {
               local_c = (char *)g_dArray_0080C4C7->elementSize;
             }
@@ -79,7 +79,7 @@ void __thiscall CPanelTy::PlayBrief(CPanelTy *this,int param_1)
                   pcVar6 = *(char **)(g_dArray_0080C4C7->growCapacity + iVar3 * 4);
                 }
                 else {
-                  pcVar6 = (char *)0x0;
+                  pcVar6 = nullptr;
                 }
                 thunk_FUN_005411a0(local_8,pcVar6,"@ %s");
                 iVar3 = iVar3 + 1;
@@ -88,18 +88,18 @@ void __thiscall CPanelTy::PlayBrief(CPanelTy *this,int param_1)
             pDVar4 = (DArrayTy *)
                      ccFntTy::FormIndentSarr
                                (this_00->field_01D4,local_8," ,.;:!?/\\()[]{}",
-                                (uint *)&DAT_007c21ec,0x226,0,0xffffffff,(char *)0x0,1);
-            if (local_8 != (DArrayTy *)0x0) {
+                                (uint *)&DAT_007c21ec,0x226,0,0xffffffff,nullptr,1);
+            if (local_8 != nullptr) {
               FUN_006b5570(local_8);
             }
-            if (pDVar4 == (DArrayTy *)0x0) {
-              pDVar4 = Library::DKW::TBL::SArrayCreate((DArrayTy *)0x0,1,1);
+            if (pDVar4 == nullptr) {
+              pDVar4 = Library::DKW::TBL::SArrayCreate(nullptr,1,1);
             }
             local_8 = pDVar4;
             if (puVar11[5] == '\0') {
               pbVar5 = (byte *)ccFntTy::CreateSurf(this_00->field_01D4,(int)this_00->field_01B4,0,
                                                    100,5,0x226,0x55,0);
-              if (pbVar5 != (byte *)0x0) {
+              if (pbVar5 != nullptr) {
                 ccFntTy::WrSarr(this_00->field_01D4,(int)local_8,0,-1,0,0,0);
                 DibPut((AnonShape_006B5B10_E0D06CF1 *)this_00->field_01B4,100,5,'\x01',pbVar5);
                 ccFntTy::EraseSufr(this_00->field_01D4);
@@ -112,8 +112,8 @@ void __thiscall CPanelTy::PlayBrief(CPanelTy *this,int param_1)
             else {
               ccFntTy::SetSurf(this_00->field_01D4,(int)this_00->field_01B4,0,100,5,0x226,0x55);
               this_01 = (cTypingTy *)Library::MSVCRT::FUN_0072e530(0xb4);
-              if (this_01 == (cTypingTy *)0x0) {
-                this_01 = (cTypingTy *)0x0;
+              if (this_01 == nullptr) {
+                this_01 = nullptr;
               }
               else {
                 this_01->field_0058 = 0;
@@ -130,7 +130,7 @@ void __thiscall CPanelTy::PlayBrief(CPanelTy *this,int param_1)
             break;
           case 3:
             ppsVar1 = &this_00->field_025B;
-            if (this_00->field_025B != (short *)0x0) {
+            if (this_00->field_025B != nullptr) {
               FUN_0070b600((int *)ppsVar1);
             }
             if (DAT_0080731a == 0) {
@@ -147,18 +147,18 @@ LAB_004f9a8a:
               }
               else {
                 psVar14 = Library::Ourlib::MFIMG::mfQmtLoad
-                                    (g_cMf32_00806758,local_c,6,0,(short *)0x0);
+                                    (g_cMf32_00806758,local_c,6,0,nullptr);
                 *ppsVar1 = psVar14;
-                if (psVar14 == (short *)0x0) {
+                if (psVar14 == nullptr) {
                   bVar13 = 6;
                   bVar12 = 0;
-                  psVar14 = (short *)0x0;
+                  psVar14 = nullptr;
                   pcVar7 = g_cMf32_00806798;
                   pcVar6 = local_c;
                   goto LAB_004f9a8a;
                 }
               }
-              if (*ppsVar1 == (short *)0x0) {
+              if (*ppsVar1 == nullptr) {
                 psVar14 = (short *)0x1;
                 bVar13 = 0;
                 bVar12 = 6;
@@ -197,7 +197,7 @@ LAB_004f9a8a:
           case 4:
             this_00->field_0028 = 0x5dc6;
             *(undefined **)&this_00->field_0x2c = &DAT_0080c4d7;
-            if (DAT_008117bc != (undefined4 *)0x0) {
+            if (DAT_008117bc != nullptr) {
               /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
               (**(code **)*DAT_008117bc)(&this_00->field_0x18);
             }

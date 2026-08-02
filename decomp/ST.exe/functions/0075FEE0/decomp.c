@@ -35,7 +35,7 @@ void FUN_0075fee0(AnonShape_0075FEE0_E0ABA202 *param_1,int param_2,undefined4 *p
           pbVar7 = (byte *)(*(int *)(iVar8 + (int)param_3) + param_2);
           iVar6 = *param_4;
           uVar11 = 0;
-          for (pAVar10 = pAVar3; pAVar10 != (AnonShape_0075FEE0_E0ABA202 *)0x0;
+          for (pAVar10 = pAVar3; pAVar10 != nullptr;
               pAVar10 = (AnonShape_0075FEE0_E0ABA202 *)&pAVar10[-1].field_0x1bf) {
             *pcVar9 = *pcVar9 + *(char *)(*(int *)(iVar6 + iVar4 * 0x40 + uVar11 * 4) +
                                           (uint)*pbVar7 + iVar5);
@@ -53,7 +53,7 @@ void FUN_0075fee0(AnonShape_0075FEE0_E0ABA202 *param_1,int param_2,undefined4 *p
       param_3 = param_3 + 1;
       local_14 = (int *)((int)local_14 + -1);
       *(uint *)(iVar1 + 0x30) = iVar4 + 1U & 0xf;
-    } while (local_14 != (int *)0x0);
+    } while (local_14 != nullptr);
   }
   return;
 }

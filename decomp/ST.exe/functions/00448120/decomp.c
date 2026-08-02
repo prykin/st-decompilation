@@ -178,7 +178,7 @@ STAllPlayersC::PutOnPlaceGuardBoats
   local_e4[5] = 0xe1;
   local_e4[6] = 0x87;
   local_c8 = 0x13b;
-  if ((param_8 != (DArrayTy *)0x0) && (dVar11 = param_8->count, dVar11 != 0)) {
+  if ((param_8 != nullptr) && (dVar11 = param_8->count, dVar11 != 0)) {
     sVar3 = (short)param_2;
     sVar2 = (short)param_3;
     local_28 = this;
@@ -242,7 +242,7 @@ STAllPlayersC::PutOnPlaceGuardBoats
                 psVar13 = psVar13 + 3;
                 DArrayGetElement(param_8,local_8,&param_5);
                 pSVar7 = (STBoatC *)GetObjPtr(local_28,objPtr,(ushort)param_5,CASE_1);
-                if (pSVar7 == (STBoatC *)0x0) {
+                if (pSVar7 == nullptr) {
                   iVar5 = ReportDebugMessage("E:\\__titans\\wlad\\to_allpl.cpp",0x2d64,0,0,
                                              "%s",
                                              "STAllPlayersC::PutOnPlaceGuardBoats NULL DIR_135");
@@ -287,7 +287,7 @@ STAllPlayersC::PutOnPlaceGuardBoats
         switch(iVar5) {
         case 0:
           local_20 = (int)(dVar11 - 1) / 0xf;
-          local_24 = (STBoatC *)0x0;
+          local_24 = nullptr;
           if (-1 < (int)local_20) {
             local_8 = 0;
             do {
@@ -305,7 +305,7 @@ STAllPlayersC::PutOnPlaceGuardBoats
                 do {
                   DArrayGetElement(param_8,uVar14,&param_5);
                   pSVar7 = (STBoatC *)GetObjPtr(local_28,objPtr,(ushort)param_5,CASE_1);
-                  if (pSVar7 == (STBoatC *)0x0) {
+                  if (pSVar7 == nullptr) {
                     iVar5 = ReportDebugMessage("E:\\__titans\\wlad\\to_allpl.cpp",0x2d83,0,0,
                                                "%s",
                                                "STAllPlayersC::PutOnPlaceGuardBoats NULL DIR_0");
@@ -359,7 +359,7 @@ STAllPlayersC::PutOnPlaceGuardBoats
                   psVar13 = psVar13 + 3;
                   DArrayGetElement(param_8,local_8,&param_5);
                   pSVar7 = (STBoatC *)GetObjPtr(local_28,objPtr,(ushort)param_5,CASE_1);
-                  if (pSVar7 == (STBoatC *)0x0) {
+                  if (pSVar7 == nullptr) {
                     iVar5 = ReportDebugMessage("E:\\__titans\\wlad\\to_allpl.cpp",0x2d45,0,0,
                                                "%s",
                                                "STAllPlayersC::PutOnPlaceGuardBoats NULL DIR_45");
@@ -402,7 +402,7 @@ STAllPlayersC::PutOnPlaceGuardBoats
           break;
         case 0x5a:
           local_20 = (int)(dVar11 - 1) / 0xf;
-          local_24 = (STBoatC *)0x0;
+          local_24 = nullptr;
           if (-1 < (int)local_20) {
             local_1c = 0;
             local_8 = dVar11;
@@ -421,7 +421,7 @@ STAllPlayersC::PutOnPlaceGuardBoats
                 do {
                   DArrayGetElement(param_8,uVar14,&param_5);
                   pSVar7 = (STBoatC *)GetObjPtr(local_28,objPtr,(ushort)param_5,CASE_1);
-                  if (pSVar7 == (STBoatC *)0x0) {
+                  if (pSVar7 == nullptr) {
                     iVar5 = ReportDebugMessage("E:\\__titans\\wlad\\to_allpl.cpp",0x2d2c,0,0,
                                                "%s",
                                                "STAllPlayersC::PutOnPlaceGuardBoats NULL DIR_90");
@@ -480,7 +480,7 @@ STAllPlayersC::PutOnPlaceGuardBoats
                 do {
                   DArrayGetElement(param_8,uVar14,&param_5);
                   local_24 = (STBoatC *)GetObjPtr(local_28,objPtr,(ushort)param_5,CASE_1);
-                  if (local_24 == (STBoatC *)0x0) {
+                  if (local_24 == nullptr) {
                     iVar5 = ReportDebugMessage("E:\\__titans\\wlad\\to_allpl.cpp",0x2e0b,0,0,
                                                "%s",
                                                "STAllPlayersC::PutOnPlaceGuardBoats NULL dir==-1");
@@ -633,7 +633,7 @@ LAB_00448bc0:
       switch(iVar5) {
       case 0xb4:
         local_20 = (int)(dVar11 - 1) / 0xf;
-        local_24 = (STBoatC *)0x0;
+        local_24 = nullptr;
         if (-1 < (int)local_20) {
           local_8 = 0;
           do {
@@ -651,7 +651,7 @@ LAB_00448bc0:
               do {
                 DArrayGetElement(param_8,uVar14,&param_5);
                 pSVar7 = (STBoatC *)GetObjPtr(local_28,objPtr,(ushort)param_5,CASE_1);
-                if (pSVar7 == (STBoatC *)0x0) {
+                if (pSVar7 == nullptr) {
                   iVar5 = ReportDebugMessage("E:\\__titans\\wlad\\to_allpl.cpp",0x2d9b,0,0,
                                              "%s",
                                              "STAllPlayersC::PutOnPlaceGuardBoats NULL DIR_180");
@@ -705,7 +705,7 @@ LAB_00448bc0:
                 psVar13 = psVar13 + 3;
                 DArrayGetElement(param_8,local_8,&param_5);
                 pSVar7 = (STBoatC *)GetObjPtr(local_28,objPtr,(ushort)param_5,CASE_1);
-                if (pSVar7 == (STBoatC *)0x0) {
+                if (pSVar7 == nullptr) {
                   iVar5 = ReportDebugMessage("E:\\__titans\\wlad\\to_allpl.cpp",0x2dd2,0,0,
                                              "%s",
                                              "STAllPlayersC::PutOnPlaceGuardBoats NULL DIR_225");
@@ -751,7 +751,7 @@ LAB_00448bc0:
         break;
       case 0x10e:
         local_20 = (int)(dVar11 - 1) / 0xf;
-        local_24 = (STBoatC *)0x0;
+        local_24 = nullptr;
         if (-1 < (int)local_20) {
           local_8 = 0;
           do {
@@ -769,7 +769,7 @@ LAB_00448bc0:
               do {
                 DArrayGetElement(param_8,uVar14,&param_5);
                 pSVar7 = (STBoatC *)GetObjPtr(local_28,objPtr,(ushort)param_5,CASE_1);
-                if (pSVar7 == (STBoatC *)0x0) {
+                if (pSVar7 == nullptr) {
                   iVar5 = ReportDebugMessage("E:\\__titans\\wlad\\to_allpl.cpp",0x2df1,0,0,
                                              "%s",
                                              "STAllPlayersC::PutOnPlaceGuardBoats NULL DIR_270");
@@ -823,7 +823,7 @@ LAB_00448bc0:
                 psVar13 = psVar13 + 3;
                 DArrayGetElement(param_8,local_8,&param_5);
                 pSVar7 = (STBoatC *)GetObjPtr(local_28,objPtr,(ushort)param_5,CASE_1);
-                if (pSVar7 == (STBoatC *)0x0) {
+                if (pSVar7 == nullptr) {
                   iVar5 = ReportDebugMessage("E:\\__titans\\wlad\\to_allpl.cpp",0x2db3,0,0,
                                              "%s",
                                              "STAllPlayersC::PutOnPlaceGuardBoats NULL DIR_315");

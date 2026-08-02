@@ -29,7 +29,7 @@ AiFltClassTy::sub_0065FA60(AiFltClassTy *this,int param_1,int param_2,short *par
   short local_8;
   short local_6;
 
-  local_10 = (DArrayTy *)0x0;
+  local_10 = nullptr;
   local_5c.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_5c;
   local_14 = this;
@@ -37,21 +37,21 @@ AiFltClassTy::sub_0065FA60(AiFltClassTy *this,int param_1,int param_2,short *par
   pAVar1 = local_14;
   if (iVar2 == 0) {
     if (param_2 == 0) {
-      if (local_14->field_0284 != (ushort *)0x0) {
+      if (local_14->field_0284 != nullptr) {
         local_10 = (DArrayTy *)thunk_FUN_0068e4f0(local_14->field_0284,param_1);
       }
     }
     else if (param_2 == 1) {
-      if (local_14->field_0284 != (ushort *)0x0) {
+      if (local_14->field_0284 != nullptr) {
         local_10 = (DArrayTy *)thunk_FUN_0068e4f0(local_14->field_0284,param_1);
       }
-      if ((local_10 == (DArrayTy *)0x0) && (g_allPlayers_007FA174 != (STAllPlayersC *)0x0)) {
+      if ((local_10 == nullptr) && (g_allPlayers_007FA174 != nullptr)) {
         local_10 = (DArrayTy *)
                    STAllPlayersC::GetTOBJList
                              (g_allPlayers_007FA174,*(char *)&pAVar1->field_0024,param_1,0,-1);
       }
     }
-    else if ((param_2 == 2) && (g_allPlayers_007FA174 != (STAllPlayersC *)0x0)) {
+    else if ((param_2 == 2) && (g_allPlayers_007FA174 != nullptr)) {
       local_10 = (DArrayTy *)
                  STAllPlayersC::GetTOBJList
                            (g_allPlayers_007FA174,*(char *)&local_14->field_0024,param_1,0,-1);
@@ -59,13 +59,13 @@ AiFltClassTy::sub_0065FA60(AiFltClassTy *this,int param_1,int param_2,short *par
   }
   array = local_10;
   g_currentExceptionFrame = local_5c.previous;
-  if (local_10 != (DArrayTy *)0x0) {
+  if (local_10 != nullptr) {
     if (local_10->count == 0) {
       DArrayDestroy(local_10);
-      local_10 = (DArrayTy *)0x0;
+      local_10 = nullptr;
     }
     array = local_10;
-    if ((((local_10 != (DArrayTy *)0x0) && (param_3 != (short *)0x0)) && (0 < param_3[3])) &&
+    if ((((local_10 != nullptr) && (param_3 != nullptr)) && (0 < param_3[3])) &&
        ((0 < param_3[4] && (0 < param_3[5])))) {
       local_18 = local_10->count;
       while (index = local_18 - 1, -1 < (int)index) {
@@ -74,10 +74,10 @@ AiFltClassTy::sub_0065FA60(AiFltClassTy *this,int param_1,int param_2,short *par
           puVar3 = (undefined4 *)(array->elementSize * index + (int)array->data);
         }
         else {
-          puVar3 = (undefined4 *)0x0;
+          puVar3 = nullptr;
         }
         local_18 = index;
-        if ((STFishC *)*puVar3 != (STFishC *)0x0) {
+        if ((STFishC *)*puVar3 != nullptr) {
           STFishC::sub_004162B0((STFishC *)*puVar3,&local_6,&local_8,&local_a);
           if (((local_6 < *param_3) || (local_8 < param_3[1])) ||
              ((index = local_18, local_a < param_3[2] ||

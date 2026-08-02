@@ -18,9 +18,9 @@ void __thiscall FUN_0067a1b0(void *this,int param_1)
             piVar2 = (int *)(*(int *)(iVar3 + 8) * uVar4 + *(int *)(iVar3 + 0x1c));
           }
           else {
-            piVar2 = (int *)0x0;
+            piVar2 = nullptr;
           }
-          if (((piVar2[1] != 0) && ((undefined4 *)*piVar2 != (undefined4 *)0x0)) && (param_1 != 0))
+          if (((piVar2[1] != 0) && ((undefined4 *)*piVar2 != nullptr)) && (param_1 != 0))
           {
             /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
             (*(code *)**(undefined4 **)*piVar2)(param_1);

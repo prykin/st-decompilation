@@ -18,7 +18,7 @@ void * __cdecl FUN_005b95b0(void)
   undefined4 *puVar4;
 
   this = FUN_006b04d0(0x1eaa);
-  if (this != (undefined4 *)0x0) {
+  if (this != nullptr) {
     sub_006E5FB0(this);
     *this = &VTable_0079C018;
     this[6] = 0;
@@ -65,6 +65,6 @@ void * __cdecl FUN_005b95b0(void)
     *(undefined1 *)(this + 0x72a) = 1;
     return this;
   }
-  return (void *)0x0;
+  return nullptr;
 }
 

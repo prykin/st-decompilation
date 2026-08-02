@@ -38,7 +38,7 @@ AiEventClassTy::_CreateArt
     RaiseInternalException(iVar3,0,"E:\\__titans\\ai\\ai_event.cpp",0x118);
     return iVar3;
   }
-  if (g_allPlayers_007FA174 != (STAllPlayersC *)0x0) {
+  if (g_allPlayers_007FA174 != nullptr) {
     if ((param_1 < 1) && (0x15 < param_1)) {
       bVar2 = false;
     }
@@ -64,10 +64,10 @@ AiEventClassTy::_CreateArt
       iVar3 = thunk_FUN_00675b10(local_c,local_8,(short)local_10,(short *)&local_c,(short *)&local_8
                                  ,(short *)&local_10,0xfd);
       if (iVar3 != 0) {
-        if (param_7 == (char *)0x0) {
+        if (param_7 == nullptr) {
           param_7 = &DAT_008016a0;
         }
-        if (param_6 == (char *)0x0) {
+        if (param_6 == nullptr) {
           param_6 = &DAT_008016a0;
         }
         thunk_FUN_005f0ec0((int)param_1,(int)param_2,(int)(short)local_c,(int)(short)local_8,

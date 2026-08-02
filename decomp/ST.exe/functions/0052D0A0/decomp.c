@@ -26,8 +26,8 @@ PopUpTy::OutProc(PopUpTy *this,int *param_1,int param_2,undefined4 param_3,int p
     g_currentExceptionFrame = &local_54;
     errorCode = Library::MSVCRT::__setjmp3(local_54.jumpBuffer,0);
     if (errorCode == 0) {
-      if ((local_10 != (AnonShape_0052D0A0_90C708AF *)0x0) &&
-         (local_10->field_0090 != (BITMAPINFO *)0x0)) {
+      if ((local_10 != nullptr) &&
+         (local_10->field_0090 != nullptr)) {
         bVar4 = 0xff;
         bVar2 = 0;
         /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
@@ -46,7 +46,7 @@ PopUpTy::OutProc(PopUpTy *this,int *param_1,int param_2,undefined4 param_3,int p
         } while (bVar2 < 0xf);
         if (bVar4 != 0xff) {
           Library::DKW::DDX::FUN_006b4680
-                    (param_1,param_4,param_5,local_10->field_0090,(uint *)0x0,0,
+                    (param_1,param_4,param_5,local_10->field_0090,nullptr,0,
                      (local_c & 0xff) * 0x13,local_10->entries[local_c & 0xff],0x13,0x1000089);
         }
       }

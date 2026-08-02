@@ -35,14 +35,14 @@ void FUN_004e68a0(byte *param_1,undefined1 *param_2,uint param_3,undefined4 *par
   if (CONCAT31(extraout_var,bVar4) == 0) {
     piVar2 = (int *)(&PTR_DAT_007c0dc8)[iVar9];
     puVar10 = (undefined1 *)*piVar2;
-    if (puVar10 != (undefined1 *)0x0) {
+    if (puVar10 != nullptr) {
       iVar7 = 0;
       piVar11 = piVar2;
       while ((puVar10 != param_2 || (*(byte *)(piVar11 + 1) != param_3))) {
         puVar10 = *(undefined1 **)((int)piVar11 + 0x19);
         piVar11 = (int *)((int)piVar11 + 0x19);
         iVar7 = iVar7 + 1;
-        if (puVar10 == (undefined1 *)0x0) {
+        if (puVar10 == nullptr) {
           return;
         }
       }

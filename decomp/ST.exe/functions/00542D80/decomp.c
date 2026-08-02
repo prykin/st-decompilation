@@ -22,8 +22,8 @@ void CreateInterSystem(void)
   errorCode = Library::MSVCRT::__setjmp3(local_68.jumpBuffer,0);
   if (errorCode == 0) {
     this = (InterSystemC *)Library::MSVCRT::FUN_0072e530(0x34);
-    if (this == (InterSystemC *)0x0) {
-      g_interSystem_00802A28 = (InterSystemC *)0x0;
+    if (this == nullptr) {
+      g_interSystem_00802A28 = nullptr;
     }
     else {
       g_interSystem_00802A28 = InterSystemC::InterSystemC(this,g_appClass_00806728);

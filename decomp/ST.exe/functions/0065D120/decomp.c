@@ -15,7 +15,7 @@ AnonShape_GLOBAL_008489CC_CDF8C3F4 * FUN_0065d120(void)
   InternalExceptionFrame local_4c;
   AnonShape_GLOBAL_008489CC_CDF8C3F4 *local_8;
 
-  local_8 = (AnonShape_GLOBAL_008489CC_CDF8C3F4 *)0x0;
+  local_8 = nullptr;
   local_4c.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_4c;
   exceptionCode = Library::MSVCRT::__setjmp3(local_4c.jumpBuffer,0);
@@ -23,7 +23,7 @@ AnonShape_GLOBAL_008489CC_CDF8C3F4 * FUN_0065d120(void)
     local_8 = (AnonShape_GLOBAL_008489CC_CDF8C3F4 *)Library::DKW::LIB::FUN_006aac10(0x1b);
     *(undefined1 *)local_8 = 0;
     local_8->field_0009 = 0xffff;
-    pDVar1 = Library::DKW::TBL::DArrayCreate((DArrayTy *)0x0,5,2,5);
+    pDVar1 = Library::DKW::TBL::DArrayCreate(nullptr,5,2,5);
     local_8->field_000F = pDVar1;
     g_currentExceptionFrame = local_4c.previous;
     return local_8;
@@ -31,6 +31,6 @@ AnonShape_GLOBAL_008489CC_CDF8C3F4 * FUN_0065d120(void)
   g_currentExceptionFrame = local_4c.previous;
   thunk_FUN_0065d1f0((int *)&local_8);
   RaiseInternalException(exceptionCode,0,"E:\\__titans\\ai\\ai_event_d.cpp",0xb7);
-  return (AnonShape_GLOBAL_008489CC_CDF8C3F4 *)0x0;
+  return nullptr;
 }
 

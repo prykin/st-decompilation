@@ -130,7 +130,7 @@ void __thiscall HelpPanelTy::CreateSlider(HelpPanelTy *this,int param_1)
     local_8c = 1;
     local_88 = 1;
     (*this_00->field_000C->vtable->CreateObject)
-              ((SystemClassTy *)this_00->field_000C,4,&this_00->field_019C,(int *)0x0,local_424,0);
+              ((SystemClassTy *)this_00->field_000C,4,&this_00->field_019C,nullptr,local_424,0);
     iVar2 = this_00->field_019C;
     if ((iVar2 != 0) && (param_1 != 0)) {
       this_00->field_0028 = 0x20;

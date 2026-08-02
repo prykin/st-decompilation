@@ -13,10 +13,10 @@ TLOEmbryoTy * __cdecl CreateTLOEmbryo(void)
   TLOEmbryoTy *pTVar2;
 
   pSVar1 = (STGroupBoatC *)FUN_006b04d0(0x374);
-  if (pSVar1 != (STGroupBoatC *)0x0) {
+  if (pSVar1 != nullptr) {
     pTVar2 = (TLOEmbryoTy *)thunk_FUN_004d0fc0(pSVar1);
     return pTVar2;
   }
-  return (TLOEmbryoTy *)0x0;
+  return nullptr;
 }
 

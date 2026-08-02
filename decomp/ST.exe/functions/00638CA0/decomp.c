@@ -109,7 +109,7 @@ undefined4 __thiscall FUN_00638ca0(void *this,STMessage *param_1)
     /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
     (**(code **)(*(int *)this + 0xd8))();
     pVVar4 = g_visibleClass_00802A88;
-    if (g_visibleClass_00802A88 == (VisibleClassTy *)0x0) {
+    if (g_visibleClass_00802A88 == nullptr) {
       return 0;
     }
     iVar5 = *(int *)((int)this + 0x282);
@@ -153,7 +153,7 @@ undefined4 __thiscall FUN_00638ca0(void *this,STMessage *param_1)
         ((((int)param_1 < 5 && (-1 < local_c)) &&
          ((local_c < pVVar4->field_0030 &&
           ((local_10 = local_10 + g_centeredOffsets5[(int)param_1], -1 < local_10 &&
-           (local_10 < pVVar4->field_0034)))))))) && (pVVar4->field_004C != (byte *)0x0)) {
+           (local_10 < pVVar4->field_0034)))))))) && (pVVar4->field_004C != nullptr)) {
       bVar1 = pVVar4->field_004C[local_c + local_10 * pVVar4->field_0030];
 joined_r0x00639236:
       if (bVar1 == 0) {
@@ -210,7 +210,7 @@ joined_r0x00639236:
     /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
     (**(code **)(*(int *)this + 0xd8))();
     pVVar4 = g_visibleClass_00802A88;
-    if (g_visibleClass_00802A88 == (VisibleClassTy *)0x0) {
+    if (g_visibleClass_00802A88 == nullptr) {
       return 0;
     }
     iVar5 = *(int *)((int)this + 0x282);
@@ -254,7 +254,7 @@ joined_r0x00639236:
          (((int)param_1 < 5 && (-1 < local_10)))) &&
         ((local_10 < pVVar4->field_0030 &&
          ((local_c = local_c + g_centeredOffsets5[(int)param_1], -1 < local_c &&
-          (local_c < pVVar4->field_0034)))))) && (pVVar4->field_004C != (byte *)0x0)) {
+          (local_c < pVVar4->field_0034)))))) && (pVVar4->field_004C != nullptr)) {
       bVar1 = pVVar4->field_004C[local_10 + local_c * pVVar4->field_0030];
       goto joined_r0x00639236;
     }

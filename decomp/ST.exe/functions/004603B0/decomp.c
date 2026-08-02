@@ -29,7 +29,7 @@ int __thiscall FUN_004603b0(void *this,STTorpC *param_1)
   undefined4 uVar10;
   uint local_8;
 
-  if ((param_1 == (STTorpC *)0x0) || (param_1 == (STTorpC *)0x1)) {
+  if ((param_1 == nullptr) || (param_1 == (STTorpC *)0x1)) {
     memset((void *)((int)this + 0x2cc), 0, 0x5c); /* compiler bulk-zero initialization */
     iVar6 = 0;
     *(undefined4 *)((int)this + 0x2c4) = 0;
@@ -50,7 +50,7 @@ int __thiscall FUN_004603b0(void *this,STTorpC *param_1)
        (index = 0, iVar6 = DAT_007fa134, uVar2 != 0)) {
       do {
         DArrayGetElement(g_array_007FA130,index,&param_1);
-        if (param_1 != (STTorpC *)0x0) {
+        if (param_1 != nullptr) {
           iVar6 = iVar6 + -1;
           iVar3 = STTorpC::IsDangerous(param_1,*(int *)((int)this + 0x18),&local_8);
           if (iVar3 != 2) {

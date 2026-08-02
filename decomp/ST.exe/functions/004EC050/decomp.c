@@ -14,14 +14,14 @@ undefined4 __fastcall FUN_004ec050(int param_1)
   /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
   if (*(int *)(param_1 + 0x5ff) == 0) {
     pAVar1 = (AnonShape_004AB810_8E5693D5 *)Library::MSVCRT::FUN_0072e530(0x40);
-    if (pAVar1 == (AnonShape_004AB810_8E5693D5 *)0x0) {
-      this = (STT3DSprC *)0x0;
+    if (pAVar1 == nullptr) {
+      this = nullptr;
     }
     else {
       this = (STT3DSprC *)thunk_FUN_004ab810(pAVar1);
     }
     *(STT3DSprC **)(param_1 + 0x5ff) = this;
-    exceptionCode = STT3DSprC::Init(this,DAT_008073cc,0x5a,0x45,(STDcResourcC *)0x0,0xb4,0x8c,0x11);
+    exceptionCode = STT3DSprC::Init(this,DAT_008073cc,0x5a,0x45,nullptr,0xb4,0x8c,0x11);
     if (exceptionCode != 0) {
       RaiseInternalException
                 (exceptionCode,g_overwriteContext_007ED77C,

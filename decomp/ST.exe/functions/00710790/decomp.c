@@ -12,7 +12,7 @@ void __cdecl FUN_00710790(AnonShape_00710790_4CBB90D4 *param_1)
   int iVar5;
   int iVar6;
 
-  if (((param_1 != (AnonShape_00710790_4CBB90D4 *)0x0) && (*(int *)(param_1 + 1) != 0)) &&
+  if (((param_1 != nullptr) && (*(int *)(param_1 + 1) != 0)) &&
      (iVar3 = *(int *)&param_1[1].field_0x8, iVar3 != 0)) {
     iVar6 = 0;
     param_1->field_009A = *(undefined4 *)(iVar3 + 0x9a);

@@ -15,14 +15,14 @@ uint * __fastcall AiFltClassTy::sub_0065DA10(AiFltClassTy *param_1,undefined4 pa
   /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
   int in_stack_00000004;
 
-  if ((param_1->field_007D != 0xfffe) && (g_allPlayers_007FA174 != (STAllPlayersC *)0x0)) {
+  if ((param_1->field_007D != 0xfffe) && (g_allPlayers_007FA174 != nullptr)) {
     this = thunk_FUN_0042b760(*(char *)&param_1->field_0024,param_1->field_007D);
-    if (this != (STGroupBoatC *)0x0) {
+    if (this != nullptr) {
       /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
       puVar1 = STGroupC::GetGroupContent((STGroupC *)this,in_stack_00000004);
       return puVar1;
     }
   }
-  return (uint *)0x0;
+  return nullptr;
 }
 

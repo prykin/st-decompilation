@@ -21,11 +21,11 @@ STManBasisC::sub_005F14B0
   undefined4 *local_13;
   int local_f;
 
-  if (this->field_0038 == (STManBasisC_field_0038DArray *)0x0) {
+  if (this->field_0038 == nullptr) {
     pSVar1 = (STManBasisC_field_0038DArray *)
-             Library::DKW::TBL::DArrayCreate((DArrayTy *)0x0,10,0x19,10);
+             Library::DKW::TBL::DArrayCreate(nullptr,10,0x19,10);
     this->field_0038 = pSVar1;
-    if (pSVar1 == (STManBasisC_field_0038DArray *)0x0) {
+    if (pSVar1 == nullptr) {
       return -1;
     }
   }
@@ -46,7 +46,7 @@ STManBasisC::sub_005F14B0
   local_13 = thunk_FUN_005f1e40((uint)param_4,(int)param_5,(int)(short)(param_1 * 0xc9 + 100),
                                 (int)(short)(param_2 * 0xc9 + 100),(int)(short)(param_3 * 200 + 100)
                                );
-  if (local_13 == (undefined4 *)0x0) {
+  if (local_13 == nullptr) {
     iVar2 = -1;
   }
   else {

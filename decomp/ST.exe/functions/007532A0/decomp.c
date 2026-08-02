@@ -6,7 +6,7 @@
 void FUN_007532a0(undefined4 *param_1)
 
 {
-  if (param_1 != (undefined4 *)0x0) {
+  if (param_1 != nullptr) {
     Library::DKW::DB::FUN_00754ec0((int)param_1);
     if (param_1[2] != 0) {
       FUN_006b9890((int *)(param_1[2] + 0x4c));

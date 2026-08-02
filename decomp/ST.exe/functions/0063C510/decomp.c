@@ -46,7 +46,7 @@ int __thiscall FUN_0063c510(void *this,int param_1)
       /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
       (**(code **)(*(int *)this + 0xd8))();
       pVVar2 = g_visibleClass_00802A88;
-      if (g_visibleClass_00802A88 != (VisibleClassTy *)0x0) {
+      if (g_visibleClass_00802A88 != nullptr) {
         iVar4 = *(int *)((int)this + 0x26e);
         sVar1 = (short)(iVar4 >> 0x1f);
         if (iVar4 < 0) {
@@ -84,7 +84,7 @@ int __thiscall FUN_0063c510(void *this,int param_1)
             ((pVVar2->field_0030 <= local_c ||
              ((local_10 = g_centeredOffsets5[local_8] + local_10, local_10 < 0 ||
               (pVVar2->field_0034 <= local_10)))))) ||
-           ((pVVar2->field_004C == (byte *)0x0 ||
+           ((pVVar2->field_004C == nullptr ||
             (pVVar2->field_004C[local_c + local_10 * pVVar2->field_0030] != 0)))) {
           if (*(char *)((int)this + 0x29f) == '\0') {
             thunk_FUN_004ad460((void *)((int)this + 0x1d5),0);

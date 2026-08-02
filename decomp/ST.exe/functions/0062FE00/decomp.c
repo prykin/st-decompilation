@@ -14,7 +14,7 @@ void __fastcall FUN_0062fe00(STJellyGunC *param_1)
     if (*piVar5 != 0) {
       if (*(int *)(*piVar5 + 0x10) == 0) {
         pAVar1 = (AnonShape_004AB810_8E5693D5 *)Library::MSVCRT::FUN_0072e530(0x40);
-        if (pAVar1 == (AnonShape_004AB810_8E5693D5 *)0x0) {
+        if (pAVar1 == nullptr) {
           uVar2 = 0;
         }
         else {

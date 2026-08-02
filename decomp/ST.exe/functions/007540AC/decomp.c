@@ -44,7 +44,7 @@ LAB_0075410d:
     uVar3 = 0xfc;
     /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
     pcVar7 = (char *)(unaff_EDI + 0xd1 + unaff_EBP);
-    bVar9 = pcVar7 == (char *)0x0;
+    bVar9 = pcVar7 == nullptr;
     /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
     pcVar6 = (char *)((uVar1 >> 1) + 0xd1 + unaff_EBP);
     do {

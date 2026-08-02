@@ -39,7 +39,7 @@ CPanelTy::PaintTxtBut
 
   uVar2 = (uint)param_1;
   local_18 = (param_2->arg1).ptr;
-  local_8 = (ushort *)0x0;
+  local_8 = nullptr;
   iVar8 = local_18[1];
   local_10 = *local_18 - (&this->field_003C)[uVar2];
   switch(uVar2) {
@@ -75,12 +75,12 @@ LAB_004f3d6a:
   }
   local_c = iVar8 - DAT_00806734;
 cf_common_join_004F3D83:
-  if (param_6 != (undefined *)0x0) {
+  if (param_6 != nullptr) {
     local_5c.previous = g_currentExceptionFrame;
     g_currentExceptionFrame = &local_5c;
     local_14 = this;
     errorCode = (int *)Library::MSVCRT::__setjmp3(local_5c.jumpBuffer,0);
-    if (errorCode == (int *)0x0) {
+    if (errorCode == nullptr) {
       iVar8 = 1;
       /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
       uVar4 = (*(code *)param_6)(param_2);

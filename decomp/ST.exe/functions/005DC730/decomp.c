@@ -1,6 +1,7 @@
 #include "../../pseudocode_runtime.h"
 
 
+/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 /* Recovered from embedded debug metadata:
    E:\__titans\Start\startsys.cpp
    StartSystemTy::SetObjectives
@@ -46,34 +47,34 @@ StartSystemTy::SetObjectives(StartSystemTy *this,int param_1,char *param_2,int p
     return;
   }
   if (param_1 != 0) {
-    if (g_dArray_0080C4C7 != (DArrayTy *)0x0) {
+    if (g_dArray_0080C4C7 != nullptr) {
       FUN_006b5570(g_dArray_0080C4C7);
     }
     g_dArray_0080C4C7 =
          (DArrayTy *)
          Library::Ourlib::MFSARR::mfSarLoad((cMf32 *)param_1,PTR_s_DESCRIPTION_0079c1d0,0);
-    if (g_dArray_0080C4C7 == (DArrayTy *)0x0) {
-      g_dArray_0080C4C7 = Library::DKW::TBL::SArrayCreate((DArrayTy *)0x0,10,10);
+    if (g_dArray_0080C4C7 == nullptr) {
+      g_dArray_0080C4C7 = Library::DKW::TBL::SArrayCreate(nullptr,10,10);
     }
-    if (g_dArray_0080C4CB != (DArrayTy *)0x0) {
+    if (g_dArray_0080C4CB != nullptr) {
       FUN_006b5570(g_dArray_0080C4CB);
     }
-    if (param_2 != (char *)0x0) {
+    if (param_2 != nullptr) {
       g_dArray_0080C4CB = (DArrayTy *)Library::Ourlib::MFSARR::mfSarLoad((cMf32 *)param_1,param_2,0);
     }
-    if (g_dArray_0080C4CB == (DArrayTy *)0x0) {
-      g_dArray_0080C4CB = Library::DKW::TBL::SArrayCreate((DArrayTy *)0x0,10,10);
+    if (g_dArray_0080C4CB == nullptr) {
+      g_dArray_0080C4CB = Library::DKW::TBL::SArrayCreate(nullptr,10,10);
     }
     this_00 = local_8;
-    if ((DArrayTy *)local_8->field_0548 != (DArrayTy *)0x0) {
+    if ((DArrayTy *)local_8->field_0548 != nullptr) {
       FUN_006b5570((DArrayTy *)local_8->field_0548);
     }
-    pDVar4 = Library::DKW::TBL::SArrayCreate((DArrayTy *)0x0,10,10);
+    pDVar4 = Library::DKW::TBL::SArrayCreate(nullptr,10,10);
     this_00->field_0548 = &pDVar4->flags;
     iVar3 = 0;
     if (0 < (int)g_dArray_0080C4CB->elementSize) {
       if ((int)g_dArray_0080C4CB->elementSize < 1) {
-        pcVar7 = (char *)0x0;
+        pcVar7 = nullptr;
         goto LAB_005dc828;
       }
       do {
@@ -92,11 +93,11 @@ LAB_005dc828:
               ccFntTy::FormIndentSarr
                         (this_00->field_0034,(DArrayTy *)this_00->field_0548,
                          " ,.;:!?/\\()[]{}",(uint *)&DAT_007c21ec,
-                         this_00->field_0544->field_0004 + -0x14,0,0xffffffff,(char *)0x0,1);
-    if ((DArrayTy *)this_00->field_0548 != (DArrayTy *)0x0) {
+                         this_00->field_0544->field_0004 + -0x14,0,0xffffffff,nullptr,1);
+    if ((DArrayTy *)this_00->field_0548 != nullptr) {
       FUN_006b5570((DArrayTy *)this_00->field_0548);
     }
-    pDVar4 = Library::DKW::TBL::SArrayCreate((DArrayTy *)0x0,10,10);
+    pDVar4 = Library::DKW::TBL::SArrayCreate(nullptr,10,10);
     this_00->field_0548 = &pDVar4->flags;
     puVar5 = &this_00->field_003C;
     pcVar7 = LoadResourceString(0x2347,g_module_00807618);
@@ -105,12 +106,12 @@ LAB_005dc828:
     wsprintfA(puVar5,"&0 %s",&DAT_0080c3c3);
     Library::DKW::TBL::FUN_006b5aa0(this_00->field_0548,puVar5);
     Library::DKW::TBL::FUN_006b5aa0(this_00->field_0548,&DAT_007c3b5c);
-    uVar8 = DAT_008087c4 & 0xffff;
+    uVar8 = _DAT_008087c4 & 0xffff;
     uVar10 = (uint)DAT_008087c2;
     pcVar7 = LoadResourceString(0x2344,g_module_00807618);
     wsprintfA(puVar5,"&2 %s: &0%d&2x&0%d",pcVar7,uVar10,uVar8);
     Library::DKW::TBL::FUN_006b5aa0(this_00->field_0548,puVar5);
-    uVar8 = DAT_008087c4 >> 0x10 & 0xff;
+    uVar8 = _DAT_008087c4 >> 0x10 & 0xff;
     pcVar7 = LoadResourceString(0x2345,g_module_00807618);
     wsprintfA(puVar5,"&2 %s: &0%d",pcVar7,uVar8);
     Library::DKW::TBL::FUN_006b5aa0(this_00->field_0548,puVar5);
@@ -120,14 +121,14 @@ LAB_005dc828:
     Library::DKW::TBL::FUN_006b5aa0(this_00->field_0548,puVar5);
     Library::DKW::TBL::FUN_006b5aa0(this_00->field_0548,&DAT_007c3b5c);
     pDVar4 = local_c;
-    if (local_c != (DArrayTy *)0x0) {
+    if (local_c != nullptr) {
       if (local_c->elementSize != 0) {
         ccFntTy::SepColorStrInSarr(this_00->field_0034,&local_c->flags,&local_c->flags);
       }
       iVar3 = 0;
       if (0 < (int)pDVar4->elementSize) {
         if ((int)pDVar4->elementSize < 1) {
-          pcVar7 = (char *)0x0;
+          pcVar7 = nullptr;
           goto LAB_005dca07;
         }
         do {

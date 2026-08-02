@@ -41,7 +41,7 @@ SubmarineTitans::Recovered::HiddenThis::AnonReceiver_00664540::FUN_00664540
         bVar6 = uVar4 < uVar2;
       } while ((int)uVar4 < (int)uVar2);
     }
-    if (param_2 != (uint *)0x0) {
+    if (param_2 != nullptr) {
       *param_2 = index;
     }
     DArrayGetElement(*(DArrayTy **)&this->field_0x217,index,param_1);

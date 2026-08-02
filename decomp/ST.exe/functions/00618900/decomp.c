@@ -14,7 +14,7 @@ undefined4 __thiscall FUN_00618900(void *this,int param_1,int param_2)
     bVar4 = uVar2 != 0;
     while (((!bVar4 ||
             (piVar3 = (int *)(*(int *)(iVar1 + 8) * index + *(int *)(iVar1 + 0x1c)),
-            piVar3 == (int *)0x0)) || (*piVar3 != param_1))) {
+            piVar3 == nullptr)) || (*piVar3 != param_1))) {
       index = index + 1;
       bVar4 = index < uVar2;
       if ((int)uVar2 <= (int)index) {

@@ -14,7 +14,7 @@ FUN_0062cac0(AnonShape_0062CAC0_4BF74422 *param_1,int param_2,int param_3,int pa
   longlong lVar6;
   longlong lVar7;
 
-  if (param_1 != (AnonShape_0062CAC0_4BF74422 *)0x0) {
+  if (param_1 != nullptr) {
     iVar2 = param_3 - *(int *)&param_1->field_0x4;
     iVar3 = param_4 - *(int *)&param_1->field_0x8;
     param_1->field_003D = (int)*(short *)(param_6 + 2 + param_7 * 4);

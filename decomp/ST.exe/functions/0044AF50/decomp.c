@@ -36,7 +36,7 @@ void STAllPlayersC::PushTV(char param_1,int param_2)
   }
   thunk_FUN_0043fc50(GVar4,0);
   array = *(DArrayTy **)((int)&pAVar3[3].field_0000 + 2);
-  if (array != (DArrayTy *)0x0) {
+  if (array != nullptr) {
     DArrayDestroy(array);
     *(undefined4 *)((int)&pAVar3[3].field_0000 + 2) = 0;
     *(undefined2 *)((int)&pAVar3[3].field_0004 + 2) = 0;

@@ -16,7 +16,7 @@ void __fastcall FUN_005fda60(AnonShape_005FDA60_3863B978 *param_1)
           FreeAndNull((void **)(iVar2 + 0x4e + *value));
         }
         pSVar1 = *(STT3DSprC **)(iVar2 + 0x42 + *value);
-        if (pSVar1 != (STT3DSprC *)0x0) {
+        if (pSVar1 != nullptr) {
           thunk_FUN_004ad310(pSVar1);
           Library::MSVCRT::FUN_0072e2b0(*(HoloTy **)(iVar2 + 0x42 + *value));
           *(undefined4 *)(iVar2 + 0x42 + *value) = 0;

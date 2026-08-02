@@ -21,7 +21,7 @@ STAllPlayersC::SetActivityToObjs
   if (0x19a < param_2) {
     if (param_2 == 0x1a4) {
       pSVar2 = GetObjPtr(this,objPtr,(ushort)param_4,CASE_5);
-      if (pSVar2 == (STGameObjC *)0x0) {
+      if (pSVar2 == nullptr) {
         return;
       }
       pSVar2->vfunc_E8(1);
@@ -46,7 +46,7 @@ LAB_0042d3b2:
     do {
       DArrayGetElement(param_3,index,&param_1);
       if (((ushort)param_1 != 0xffff) &&
-         (pSVar2 = GetObjPtr(this,objPtr,(ushort)param_1,CASE_1), pSVar2 != (STGameObjC *)0x0)) {
+         (pSVar2 = GetObjPtr(this,objPtr,(ushort)param_1,CASE_1), pSVar2 != nullptr)) {
         pSVar2->vfunc_E8(1);
       }
       index = index + 1;
@@ -58,7 +58,7 @@ LAB_0042d3b2:
       SVar4 = CASE_4;
 cf_common_exit_0042D44C:
       pSVar2 = GetObjPtr(this,objPtr,(ushort)param_4,SVar4);
-      if (pSVar2 == (STGameObjC *)0x0) {
+      if (pSVar2 == nullptr) {
         return;
       }
       pSVar2->vfunc_E8(1);

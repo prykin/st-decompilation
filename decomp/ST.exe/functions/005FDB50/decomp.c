@@ -51,10 +51,10 @@ SubmarineTitans::Recovered::HiddenThis::AnonReceiver_005FDB50::FUN_005fdb50
       /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
       if ((((iVar5 != 4) && (iVar5 != 5)) &&
           (this_00 = *(STT3DSprC **)(iVar8 + *(int *)&this->field_0x233 + 0x42),
-          this_00 != (STT3DSprC *)0x0)) && (-1 < param_2 || iVar5 != 2)) {
+          this_00 != nullptr)) && (-1 < param_2 || iVar5 != 2)) {
         local_8 = iVar8;
         if ((iVar5 == 1) || (iVar5 == 2)) {
-          iVar5 = STT3DSprC::Init(this_00,DAT_008073cc,0x5a,0x45,(STDcResourcC *)0x0,0xb4,0x8c,0x11);
+          iVar5 = STT3DSprC::Init(this_00,DAT_008073cc,0x5a,0x45,nullptr,0xb4,0x8c,0x11);
           if (iVar5 != 0) {
             RaiseInternalException
                       (-1,g_overwriteContext_007ED77C,"E:\\__titans\\nick\\to_DcBom.cpp",0x13d
@@ -76,7 +76,7 @@ SubmarineTitans::Recovered::HiddenThis::AnonReceiver_005FDB50::FUN_005fdb50
           STT3DSprC::StartShow(this_00,0xd,g_playSystem_00802A38->field_00E4);
           *(undefined1 *)(iVar8 + 0x41 + *(int *)&this->field_0x233) = 1;
           pVVar3 = g_visibleClass_00802A88;
-          if (g_visibleClass_00802A88 != (VisibleClassTy *)0x0) {
+          if (g_visibleClass_00802A88 != nullptr) {
             iVar5 = iVar8 + *(int *)&this->field_0x233;
             sVar2 = *(short *)(iVar8 + 10 + *(int *)&this->field_0x233);
             if (sVar2 < 0) {
@@ -113,7 +113,7 @@ SubmarineTitans::Recovered::HiddenThis::AnonReceiver_005FDB50::FUN_005fdb50
                              ,&local_24,&local_28), iVar8 = local_8, this = local_c, -1 < iVar7 &&
                  ((((iVar7 < 5 && (-1 < local_24)) && (local_24 < pVVar3->field_0030)) &&
                   ((iVar5 = g_centeredOffsets5[iVar7] + local_28, -1 < iVar5 &&
-                   (iVar5 < pVVar3->field_0034)))))))) && (pVVar3->field_004C != (byte *)0x0)) {
+                   (iVar5 < pVVar3->field_0034)))))))) && (pVVar3->field_004C != nullptr)) {
               bVar1 = pVVar3->field_004C[local_24 + iVar5 * pVVar3->field_0030];
 joined_r0x005fe09b:
               iVar8 = local_8;
@@ -128,7 +128,7 @@ joined_r0x005fe09b:
           }
         }
         else if (iVar5 == 3) {
-          if (this_00 == (STT3DSprC *)0x0) {
+          if (this_00 == nullptr) {
             return 0;
           }
           STT3DSprC::StopShow(this_00,0xd);
@@ -168,7 +168,7 @@ joined_r0x005fe09b:
                        _DAT_007904f8 * _DAT_007904f0 + _DAT_007904fc);
             *(undefined1 *)(iVar8 + 0x41 + *(int *)&this->field_0x233) = 1;
             pVVar3 = g_visibleClass_00802A88;
-            if (g_visibleClass_00802A88 != (VisibleClassTy *)0x0) {
+            if (g_visibleClass_00802A88 != nullptr) {
               sVar2 = *(short *)(iVar8 + 10 + *(int *)&this->field_0x233);
               iVar8 = iVar8 + *(int *)&this->field_0x233;
               if (sVar2 < 0) {
@@ -206,7 +206,7 @@ joined_r0x005fe09b:
                    -1 < iVar5 &&
                    (((iVar5 < 5 && (-1 < local_1c)) && (local_1c < pVVar3->field_0030)))))) &&
                  (((iVar5 = g_centeredOffsets5[iVar5] + local_20, -1 < iVar5 &&
-                   (iVar5 < pVVar3->field_0034)) && (pVVar3->field_004C != (byte *)0x0)))) {
+                   (iVar5 < pVVar3->field_0034)) && (pVVar3->field_004C != nullptr)))) {
                 bVar1 = pVVar3->field_004C[local_1c + iVar5 * pVVar3->field_0030];
                 goto joined_r0x005fe09b;
               }

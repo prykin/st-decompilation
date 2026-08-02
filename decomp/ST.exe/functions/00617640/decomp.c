@@ -53,17 +53,17 @@ int __thiscall JumpManagC::GetMessage(JumpManagC *this,STMessage *message)
   }
   else if (SVar1 == MESS_SHARED_0003) {
     sub_00618AD0(local_8);
-    if (this_00->field_005E != (DArrayTy *)0x0) {
+    if (this_00->field_005E != nullptr) {
       DArrayDestroy(this_00->field_005E);
-      this_00->field_005E = (DArrayTy *)0x0;
+      this_00->field_005E = nullptr;
     }
-    if (this_00->field_0062 != (DArrayTy *)0x0) {
+    if (this_00->field_0062 != nullptr) {
       DArrayDestroy(this_00->field_0062);
-      this_00->field_0062 = (DArrayTy *)0x0;
+      this_00->field_0062 = nullptr;
     }
-    if (this_00->field_0066 != (DArrayTy *)0x0) {
+    if (this_00->field_0066 != nullptr) {
       DArrayDestroy(this_00->field_0066);
-      this_00->field_0066 = (DArrayTy *)0x0;
+      this_00->field_0066 = nullptr;
       g_currentExceptionFrame = local_54.previous;
       return 0;
     }

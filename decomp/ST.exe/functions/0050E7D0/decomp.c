@@ -182,7 +182,7 @@ void __thiscall CPanelTy::SetControlObjSI(CPanelTy *this,char param_1)
       else {
         local_c = (uint)local_8[6];
       }
-      pcVar25 = (char *)0x0;
+      pcVar25 = nullptr;
       uVar23 = 0;
       uVar22 = 1;
       iVar21 = 0;
@@ -217,7 +217,7 @@ void __thiscall CPanelTy::SetControlObjSI(CPanelTy *this,char param_1)
   local_38 = 0xb210;
   local_40 = local_60;
   (*this_00->field_000C->vtable->CreateObject)
-            ((SystemClassTy *)this_00->field_000C,9,&this_00->field_0302,(int *)0x0,local_70,0);
+            ((SystemClassTy *)this_00->field_000C,9,&this_00->field_0302,nullptr,local_70,0);
   sub_004F1610(this_00,'\0');
   uVar10 = this_00->field_09C0[1];
   if (uVar10 != 0) {
@@ -236,7 +236,7 @@ LAB_0050eb47:
     uVar26 = 0;
     uVar24 = 0;
     iVar17 = 0;
-    pcVar7 = (char *)0x0;
+    pcVar7 = nullptr;
     iVar6 = 0;
     uVar22 = 0;
     sVar20 = 0;
@@ -255,7 +255,7 @@ LAB_0050eb47:
       uVar26 = 0;
       uVar24 = 0;
       iVar17 = 0;
-      pcVar7 = (char *)0x0;
+      pcVar7 = nullptr;
       iVar6 = 0;
       uVar22 = 0;
       sVar20 = 0;
@@ -291,7 +291,7 @@ LAB_0050eb47:
         puVar11[-1] = iVar6 + 1;
         *puVar11 = 0;
         puVar11[2] = puVar13;
-        bVar18 = local_14 != (Global_sub_00529590_param_1Enum *)0x0;
+        bVar18 = local_14 != nullptr;
         puVar11[4] = 0x1d;
         iVar21 = DAT_00806734;
         if (bVar18) {
@@ -338,7 +338,7 @@ LAB_0050edc5:
           local_90 = 0xb206;
           local_98 = local_b8;
           (*this_00->field_000C->vtable->CreateObject)
-                    ((SystemClassTy *)this_00->field_000C,5,&this_00->field_09D0,(int *)0x0,local_c8
+                    ((SystemClassTy *)this_00->field_000C,5,&this_00->field_09D0,nullptr,local_c8
                      ,0);
           local_8 = (Global_sub_00529590_param_1Enum *)((uint)local_8 & 0xffffff00);
           memset(&this_00->field_0xa2d, 0, 0xea); /* compiler bulk-zero initialization */
@@ -364,8 +364,8 @@ LAB_0050edc5:
             else {
               uVar14 = (uint)(this_00->field_0BFC != '\0');
             }
-            uVar14 = CreateBut(this_00,5,0,uVar14,0xba,uVar10 * 0xb + 0x55,0,(char *)0x0,
-                               uVar10 + 0xb18f,uVar10 + 0xb19f,1,0,(int)puVar13,(char *)0x0,0x11,10,
+            uVar14 = CreateBut(this_00,5,0,uVar14,0xba,uVar10 * 0xb + 0x55,0,nullptr,
+                               uVar10 + 0xb18f,uVar10 + 0xb19f,1,0,(int)puVar13,nullptr,0x11,10,
                                0);
             this_00->field_0A15[uVar10] = uVar14;
             bVar15 = (Global_sub_00525EF0_param_2Enum)local_8 + 1;
@@ -384,7 +384,7 @@ LAB_0050edc5:
       uVar26 = 0;
       uVar24 = 0;
       iVar17 = 0;
-      pcVar7 = (char *)0x0;
+      pcVar7 = nullptr;
       iVar6 = 0;
       uVar22 = 0;
       sVar20 = 0;
@@ -405,7 +405,7 @@ LAB_0050edc5:
         uVar10 = (uint)(byte)this_00->field_0C0B;
       }
       uVar10 = CreateBut(this_00,5,0,uVar10,0x1a,0x5d,1,"BUT_MINUSSI",0xb211,0xb212,0,0,0,
-                         (char *)0x0,0,0,0);
+                         nullptr,0,0,0);
       this_00->field_0B1F[0] = uVar10;
       if (this_00->field_0BFC == '\0') {
         uVar10 = 0;
@@ -414,31 +414,31 @@ LAB_0050edc5:
         uVar10 = (uint)(byte)this_00->field_0C0C;
       }
       uVar10 = CreateBut(this_00,5,0,uVar10,0xba,0x5d,1,"BUT_PLUSSI",0xb213,0xb214,0,0,0,
-                         (char *)0x0,0,0,0);
+                         nullptr,0,0,0);
       this_00->field_0B1F[1] = uVar10;
       g_currentExceptionFrame = local_10c.previous;
       return;
     case CASE_6D:
       uVar10 = CreateBut(this_00,5,0,(uint)(this_00->field_0BFC != '\0'),0x2a,0x7b,1,
-                         "BUT_MINUSSI",0xb211,0xb212,0,0,0,(char *)0x0,0,0,0);
+                         "BUT_MINUSSI",0xb211,0xb212,0,0,0,nullptr,0,0,0);
       this_00->field_0B1F[0] = uVar10;
       uVar10 = CreateBut(this_00,5,0,(uint)(this_00->field_0BFC != '\0'),0x45,0x7b,1,
-                         "BUT_PLUSSI",0xb213,0xb214,0,0,0,(char *)0x0,0,0,0);
+                         "BUT_PLUSSI",0xb213,0xb214,0,0,0,nullptr,0,0,0);
       cVar2 = this_00->field_0BFC;
       this_00->field_0B1F[1] = uVar10;
       uVar10 = CreateBut(this_00,5,0,(uint)(cVar2 != '\0'),0x8f,0x7b,1,"BUT_MINUSSI",0xb215
-                         ,0xb216,0,0,0,(char *)0x0,0,0,0);
+                         ,0xb216,0,0,0,nullptr,0,0,0);
       this_00->field_0B1F[2] = uVar10;
       uVar10 = CreateBut(this_00,5,0,(uint)(this_00->field_0BFC != '\0'),0xaa,0x7b,1,
-                         "BUT_PLUSSI",0xb217,0xb218,0,0,0,(char *)0x0,0,0,0);
+                         "BUT_PLUSSI",0xb217,0xb218,0,0,0,nullptr,0,0,0);
       cVar2 = this_00->field_0BFC;
       this_00->field_0B1F[3] = uVar10;
-      uVar10 = CreateBut(this_00,5,0,(uint)(cVar2 != '\0'),0x17,100,0,(char *)0x0,0xb219,0xb21a,0,0,
-                         0,(char *)0x0,0x11,10,0);
+      uVar10 = CreateBut(this_00,5,0,(uint)(cVar2 != '\0'),0x17,100,0,nullptr,0xb219,0xb21a,0,0,
+                         0,nullptr,0x11,10,0);
       cVar2 = this_00->field_0BFC;
       this_00->field_0B1F[4] = uVar10;
-      uVar10 = CreateBut(this_00,5,0,(uint)(cVar2 != '\0'),0xc5,100,0,(char *)0x0,0xb21b,0xb21c,0,0,
-                         0,(char *)0x0,0x11,10,0);
+      uVar10 = CreateBut(this_00,5,0,(uint)(cVar2 != '\0'),0xc5,100,0,nullptr,0xb21b,0xb21c,0,0,
+                         0,nullptr,0x11,10,0);
       this_00->field_0B1F[5] = uVar10;
       g_currentExceptionFrame = local_10c.previous;
       return;

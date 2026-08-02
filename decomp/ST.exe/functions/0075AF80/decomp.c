@@ -91,7 +91,7 @@ int FUN_0075af80(AnonShape_0075AF80_4192DD78 *param_1,int *param_2)
         }
         else {
           piVar5 = (int *)(*(uint *)(iVar4 + 0x20) % (uint)piVar1);
-          if (piVar5 == (int *)0x0) {
+          if (piVar5 == nullptr) {
             piVar5 = piVar1;
           }
           local_70 = 1;

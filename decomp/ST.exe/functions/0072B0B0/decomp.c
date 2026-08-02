@@ -89,7 +89,7 @@ void FUN_0072b0b0(void)
         local_88 = local_38 - DAT_00857118[10];
         FUN_006d2820(source,local_20,*(byte **)(DAT_00857118[0x33] + DAT_00857118[0x31] * 4),
                      local_88,local_34 - DAT_00857118[0xb],local_30,local_2c,DAT_00857118[0x2c],
-                     (byte *)0x0,0,0,(byte *)0x0);
+                     nullptr,0,0,nullptr);
         local_8 = 0xffffffff;
       }
     }

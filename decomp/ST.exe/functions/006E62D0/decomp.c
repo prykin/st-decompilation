@@ -31,10 +31,10 @@ STPlaySystemC::sub_006E62D0(STPlaySystemC *this,AnonShape_005EFAE0_B406B78B *par
     /* ST_PSEUDO[dynamic_array_indexing]: expected DArrayAt<T>(pDVar1, uVar2) (runtime stride) */
     pvVar4 = (void *)(pDVar1->elementSize * uVar2 + (int)pDVar1->data);
     pDVar1->iteratorIndex = uVar2 + 1;
-    if (pvVar4 == (void *)0x0) break;
+    if (pvVar4 == nullptr) break;
     iVar3 = *(int *)((int)pvVar4 + 4);
     if (*(AnonShape_005EFAE0_B406B78B **)(iVar3 + 0x18) == param_1) {
-      if (param_2 != (int *)0x0) {
+      if (param_2 != nullptr) {
         *param_2 = iVar3;
       }
       return 0;

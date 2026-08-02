@@ -40,7 +40,7 @@ undefined4 __thiscall FUN_00572d30(void *this,BYTE *param_1,BYTE *param_2)
         LVar3 == 0 &&
         (LVar3 = RegSetValueExA(local_8,"LastPlayer",0,1,(BYTE *)((int)this + 0x785),0x40),
         LVar3 == 0)))) {
-      if (param_1 != (BYTE *)0x0) {
+      if (param_1 != nullptr) {
         local_1c[0] = DAT_007ca690;
         local_1c[1] = 0;
         local_14 = 0;

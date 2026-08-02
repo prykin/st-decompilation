@@ -21,13 +21,13 @@ undefined4 * __thiscall STDcResourcC::Init(STDcResourcC *this,uint param_1)
   HoloTy *pHVar10;
 
   pAVar5 = (AnonShape_004AB810_8E5693D5 *)Library::MSVCRT::FUN_0072e530(0x40);
-  if (pAVar5 != (AnonShape_004AB810_8E5693D5 *)0x0) {
+  if (pAVar5 != nullptr) {
     this_00 = (STT3DSprC *)thunk_FUN_004ab810(pAVar5);
-    if (this_00 != (STT3DSprC *)0x0) {
+    if (this_00 != nullptr) {
       pHVar6 = (HoloTy *)Library::MSVCRT::FUN_0072e530(this->field_0265 * 4 + 4);
-      if (pHVar6 == (HoloTy *)0x0) {
+      if (pHVar6 == nullptr) {
         Library::MSVCRT::FUN_0072e2b0((HoloTy *)this_00);
-        return (undefined4 *)0x0;
+        return nullptr;
       }
       iVar8 = this->field_0265;
       if (iVar8 != 0) {
@@ -56,11 +56,11 @@ undefined4 * __thiscall STDcResourcC::Init(STDcResourcC *this,uint param_1)
         if (iVar8 != 0) {
           STDebugBreak(); /* noreturn in standalone pseudocode */
         }
-        return (undefined4 *)0x0;
+        return nullptr;
       }
       return (undefined4 *)this_00;
     }
   }
-  return (undefined4 *)0x0;
+  return nullptr;
 }
 

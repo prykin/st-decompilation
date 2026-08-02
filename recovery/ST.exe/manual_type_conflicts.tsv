@@ -1,2 +1,2 @@
 apply	domain	locator	symbol	current_type	candidate_type	current_source	status	confidence	evidence	reason	source_report
-0	pointer_shape	parameter:005501D0:Stack[0x4]:4	command	pointer:/void	pointer:/SubmarineTitans/Recovered/PointerShapes/AnonShape_005501D0_5C2AA8CA	USER_DEFINED	likely_stale	layout	005501D0 command+0xE | 005501D0 command+0x17	multiple consistent fixed offsets in one persistent target	pointer_shape_target_proposals.tsv
+0	pointer_shape	parameter:005501D0:Stack[0x4]:4	command	pointer:/void	pointer:/SubmarineTitans/Recovered/PointerShapes/AnonShape_005501D0_5C2AA8CA	USER_DEFINED	likely_stale	review	005501D0 command+0xE | 005501D0 command+0x17	multiple consistent fixed offsets in one persistent target	pointer_shape_target_proposals.tsv

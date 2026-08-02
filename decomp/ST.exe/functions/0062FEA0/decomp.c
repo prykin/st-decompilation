@@ -22,7 +22,7 @@ int __thiscall STRubbishC::sub_0062FEA0(STRubbishC *this,int param_1,int param_2
     if (iVar2 == 0) {
       return 0;
     }
-    if (g_visibleClass_00802A88 == (VisibleClassTy *)0x0) {
+    if (g_visibleClass_00802A88 == nullptr) {
       return iVar2;
     }
     iVar3 = this->field_01DD;
@@ -54,7 +54,7 @@ int __thiscall STRubbishC::sub_0062FEA0(STRubbishC *this,int param_1,int param_2
     if (pVVar1->field_0034 <= iVar3) {
       return iVar2;
     }
-    if (pVVar1->field_004C == (byte *)0x0) {
+    if (pVVar1->field_004C == nullptr) {
       return iVar2;
     }
     if (pVVar1->field_004C[param_2 + iVar3 * pVVar1->field_0030] != 0) {

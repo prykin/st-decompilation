@@ -21,7 +21,7 @@ int __thiscall FUN_00604ee0(void *this,int *param_1)
   local_8 = 0;
   local_2c.id = MESS_ID_CREATE;
   /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
-  param_1 = (int *)0x0;
+  param_1 = nullptr;
   if (0 < *(int *)((int)this + 0x269)) {
     piVar3 = (int *)((int)this + 0x219);
     local_c = this;

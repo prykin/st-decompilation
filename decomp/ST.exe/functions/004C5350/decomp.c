@@ -40,7 +40,7 @@ FUN_004c5350(void *this,int param_1,int *param_2,int param_3,int param_4,undefin
   if ((*(int *)((int)this + param_1 * 0x80 + 0x261) == 0) && (*(int *)((int)this + 0x245) != 5)) {
     return 0;
   }
-  if (param_2 == (int *)0x0) {
+  if (param_2 == nullptr) {
     local_18 = param_3;
     local_14 = param_4;
     local_1c = param_5;
@@ -52,7 +52,7 @@ FUN_004c5350(void *this,int param_1,int *param_2,int param_3,int param_4,undefin
   }
   /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
   if (*(int *)(&DAT_00792a90 + (param_1 + *(int *)((int)this + 0x235) * 2) * 4) == 1) {
-    if (this_00 == (int *)0x0) {
+    if (this_00 == nullptr) {
       return local_c;
     }
   }
@@ -61,7 +61,7 @@ FUN_004c5350(void *this,int param_1,int *param_2,int param_3,int param_4,undefin
     if (*(int *)(&DAT_00792a90 + (param_1 + *(int *)((int)this + 0x235) * 2) * 4) != 2) {
       return local_c;
     }
-    if (this_00 == (int *)0x0) goto LAB_004c5515;
+    if (this_00 == nullptr) goto LAB_004c5515;
   }
   if (this_00[10] != 1) {
     return local_c;
@@ -69,8 +69,8 @@ FUN_004c5350(void *this,int param_1,int *param_2,int param_3,int param_4,undefin
   if (7 < (uint)this_00[9]) {
     return local_c;
   }
-  if ((g_playSystem_00802A38 != (STPlaySystemC *)0x0) &&
-     (7 < (byte)(&DAT_008087e9)[this_00[9] * 0x51])) {
+  if ((g_playSystem_00802A38 != nullptr) &&
+     (7 < g_bulkInitializedRecords_008087C7[this_00[9]].field_0022)) {
     return local_c;
   }
   /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
@@ -110,7 +110,8 @@ LAB_004c5502:
     bVar7 = iVar4 < 0;
   }
   else {
-    bVar7 = (&DAT_008087ea)[(uint)bVar2 * 0x51] != (&DAT_008087ea)[(uint)bVar1 * 0x51];
+    bVar7 = g_bulkInitializedRecords_008087C7[bVar2].field_0023 !=
+            g_bulkInitializedRecords_008087C7[bVar1].field_0023;
   }
   if (!bVar7) {
     return local_c;

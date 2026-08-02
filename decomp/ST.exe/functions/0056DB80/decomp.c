@@ -67,7 +67,7 @@ void __thiscall STAppC::StartGame(STAppC *this)
     if (DAT_00811768 == '\x01') {
       DAT_00811768 = '\x02';
     }
-    if (g_int_00811764 != (int *)0x0) {
+    if (g_int_00811764 != nullptr) {
       FUN_006b6500(g_int_00811764,DAT_0080733c);
     }
     pSVar12->field_4ED7 = 2;
@@ -97,14 +97,14 @@ void __thiscall STAppC::StartGame(STAppC *this)
       }
     }
     puVar6 = cLoadingTy::new(this_00,0x5c,"MisLoad.log",1);
-    if (puVar6 == (uint *)0x0) {
-      g_cLoading_00802A58 = (cLoadingTy *)0x0;
+    if (puVar6 == nullptr) {
+      g_cLoading_00802A58 = nullptr;
     }
     else {
       g_cLoading_00802A58 = (cLoadingTy *)thunk_FUN_005545c0((int *)puVar6);
     }
-    if ((g_cLoading_00802A58 != (cLoadingTy *)0x0) &&
-       (cLoadingTy::ShowScr(g_cLoading_00802A58,10,1), g_cLoading_00802A58 != (cLoadingTy *)0x0)) {
+    if ((g_cLoading_00802A58 != nullptr) &&
+       (cLoadingTy::ShowScr(g_cLoading_00802A58,10,1), g_cLoading_00802A58 != nullptr)) {
       cLoadingTy::InitParam(g_cLoading_00802A58,0x14,10,0x316,0x244,0,1,2,0x4021c6,0);
     }
     DAT_00806720 = timeGetTime();
@@ -117,20 +117,20 @@ void __thiscall STAppC::StartGame(STAppC *this)
     local_8 = &pSVar12->field_0x4eb7;
     puVar7 = cMf32::RecGet(g_cMf32_00806754,0xc,PTR_s_BRIEFING_GAME_0079b06c,(int *)&local_8,0);
     local_8 = &pSVar12->field_1180;
-    pSVar12->field_4ED9 = puVar7 != (ushort *)0x0;
+    pSVar12->field_4ED9 = puVar7 != nullptr;
     if ((*local_8 != 0xc) && (*local_8 != 0x10)) {
       cMf32::RecGet(g_cMf32_00806754,0xc,PTR_s_TYPE_START_0079b08c,(int *)&local_8,0);
     }
     local_8 = &pSVar12->field_0x2b2f;
     cMf32::RecGet(g_cMf32_00806754,0,PTR_s_RESTART_GAME_0079b060,(int *)&local_8,0);
-    if (g_cMf32_00806758 != (cMf32 *)0x0) {
+    if (g_cMf32_00806758 != nullptr) {
       cMf32::delete(g_cMf32_00806758);
     }
     local_8 = &pSVar12->field_7D1A;
-    g_cMf32_00806758 = (cMf32 *)0x0;
+    g_cMf32_00806758 = nullptr;
     memset((void *)local_8, 0, 0x834); /* compiler bulk-zero initialization */
     puVar7 = cMf32::RecGet(g_cMf32_00806754,0,PTR_s_ORIG_DB_0079b088,(int *)&local_8,0);
-    if ((puVar7 == (ushort *)0x0) || (local_14 = &pSVar12->field_7D1A, pSVar12->field_7D1A == '\0'))
+    if ((puVar7 == nullptr) || (local_14 = &pSVar12->field_7D1A, pSVar12->field_7D1A == '\0'))
     {
       local_dc.previous = g_currentExceptionFrame;
       g_currentExceptionFrame = &local_dc;
@@ -162,23 +162,23 @@ void __thiscall STAppC::StartGame(STAppC *this)
     }
     g_currentExceptionFrame = pIVar5;
     value = &pSVar12->field_7D12;
-    if (pSVar12->field_7D12 != (ushort *)0x0) {
+    if (pSVar12->field_7D12 != nullptr) {
       FreeAndNull(value);
     }
     puVar7 = Library::Ourlib::MFANY::mfAnyLoad(g_cMf32_00806754,PTR_s_TEXTURE_0079b07c,4,1);
     *value = puVar7;
-    iVar11 = cMf32::RecGetOrigLen(g_cMf32_00806754,0,PTR_s_TEXTURE_0079b07c,(undefined1 *)0x0,1);
+    iVar11 = cMf32::RecGetOrigLen(g_cMf32_00806754,0,PTR_s_TEXTURE_0079b07c,nullptr,1);
     pSVar12->field_7D16 = iVar11;
     wsprintfA((LPSTR)&local_224,"%s%s%s",&pSVar12->field_0x60,PTR_s_SYSTEM__0079b030,*value
              );
-    if (g_cMf32_00806760 != (cMf32 *)0x0) {
+    if (g_cMf32_00806760 != nullptr) {
       thunk_FUN_0055d910();
       cMf32::RecMemFree(g_cMf32_00806760,&DAT_0080679c);
-      if (DAT_00806764 != (int *)0x0) {
+      if (DAT_00806764 != nullptr) {
         FUN_0070a300((int *)&DAT_00806764);
       }
       cMf32::delete(g_cMf32_00806760);
-      g_cMf32_00806760 = (cMf32 *)0x0;
+      g_cMf32_00806760 = nullptr;
     }
     g_cMf32_00806760 = (cMf32 *)Library::Ourlib::MF32INT::FUN_006f0ec0(0x345,&local_224,0,0,0);
     DAT_00806764 = Library::Ourlib::MFRLOAD::mfRLoadCreate((int)g_cMf32_00806760);
@@ -188,7 +188,7 @@ void __thiscall STAppC::StartGame(STAppC *this)
       puVar15 = &pSVar12->field_4DA3;
       pcVar8 = LoadResourceString(0x267f,g_module_00807618);
       wsprintfA(&pSVar12->field_7D1A,"%s %s",pcVar8,puVar15);
-      if (g_cLoading_00802A58 != (cLoadingTy *)0x0) {
+      if (g_cLoading_00802A58 != nullptr) {
         cLoadingTy::DrawLineCR(g_cLoading_00802A58,&pSVar12->field_7D1A);
       }
       if ((pSVar12->field_1180 == CASE_3) || (pSVar12->field_1180 == CASE_8)) {
@@ -219,15 +219,15 @@ void __thiscall STAppC::StartGame(STAppC *this)
       memset((void *)local_8, 0, 0x104); /* compiler bulk-zero initialization */
       iVar11 = 0;
       puVar7 = cMf32::RecGet(g_cMf32_00806754,0xc,PTR_s_TITLE_MISSION_0079b070,(int *)&local_8,0);
-      if ((puVar7 == (ushort *)0x0) || (pbVar14 = &pSVar12->field_4DA3, pSVar12->field_4DA3 == '\0')
+      if ((puVar7 == nullptr) || (pbVar14 = &pSVar12->field_4DA3, pSVar12->field_4DA3 == '\0')
          ) {
         Library::MSVCRT::FUN_0072e730
-                  (&pSVar12->field_76F6,(byte *)0x0,(byte *)0x0,local_328,(byte *)0x0);
+                  (&pSVar12->field_76F6,nullptr,nullptr,local_328,nullptr);
         pbVar14 = local_328;
       }
       pcVar8 = LoadResourceString(0x267f,g_module_00807618);
       wsprintfA(&pSVar12->field_7D1A,"%s %s",pcVar8,pbVar14);
-      if (g_cLoading_00802A58 != (cLoadingTy *)0x0) {
+      if (g_cLoading_00802A58 != nullptr) {
         cLoadingTy::DrawLineCR(g_cLoading_00802A58,&pSVar12->field_7D1A);
       }
       if ((pSVar12->field_1180 == 0xc) || (pSVar12->field_1180 == 0x10)) {
@@ -240,22 +240,22 @@ void __thiscall STAppC::StartGame(STAppC *this)
         sub_0056EF50(pSVar12);
         sub_0056F040(pSVar12);
       }
-      if ((DArrayTy *)pSVar12->field_4EA7 != (DArrayTy *)0x0) {
+      if ((DArrayTy *)pSVar12->field_4EA7 != nullptr) {
         FUN_006b5570((DArrayTy *)pSVar12->field_4EA7);
       }
       puVar6 = Library::Ourlib::MFSARR::mfSarLoad(g_cMf32_00806754,PTR_s_DESCRIPTION_0079b074,0);
       pSVar12->field_4EA7 = puVar6;
-      if (puVar6 == (uint *)0x0) {
-        pDVar9 = Library::DKW::TBL::SArrayCreate((DArrayTy *)0x0,10,10);
+      if (puVar6 == nullptr) {
+        pDVar9 = Library::DKW::TBL::SArrayCreate(nullptr,10,10);
         pSVar12->field_4EA7 = &pDVar9->flags;
       }
-      if ((DArrayTy *)pSVar12->field_4EAB != (DArrayTy *)0x0) {
+      if ((DArrayTy *)pSVar12->field_4EAB != nullptr) {
         FUN_006b5570((DArrayTy *)pSVar12->field_4EAB);
       }
       puVar6 = Library::Ourlib::MFSARR::mfSarLoad(g_cMf32_00806754,PTR_s_OBJECTIVES_0079b078,0);
       pSVar12->field_4EAB = puVar6;
-      if (puVar6 == (uint *)0x0) {
-        pDVar9 = Library::DKW::TBL::SArrayCreate((DArrayTy *)0x0,10,10);
+      if (puVar6 == nullptr) {
+        pDVar9 = Library::DKW::TBL::SArrayCreate(nullptr,10,10);
         pSVar12->field_4EAB = &pDVar9->flags;
       }
       if ((pSVar12->field_117C == 0) &&
@@ -281,7 +281,7 @@ void __thiscall STAppC::StartGame(STAppC *this)
       else {
         local_10 = &pSVar12->field_4F02;
         puVar7 = cMf32::RecGet(g_cMf32_00806754,0,PTR_s_REPORT_0079b090,(int *)&local_10,0);
-        if (puVar7 == (ushort *)0x0) {
+        if (puVar7 == nullptr) {
           memset(&pSVar12->field_4F02, 0, 0x27f0); /* compiler bulk-zero initialization */
           iVar11 = 0;
         }
@@ -309,13 +309,13 @@ void __thiscall STAppC::StartGame(STAppC *this)
     pSVar4 = g_sT3DSMAPContext_00807598;
     uVar2 = DAT_008032c0;
     g_sT3DSMAPContext_00807598->field_0278 = 0x10;
-    *(undefined4 *)&pSVar4->field_0x27c = uVar2;
+    pSVar4->field_027C = uVar2;
     ST3DSMAPContext::sub_006E8630(g_sT3DSMAPContext_00807598,DAT_0080732c);
     thunk_FUN_005782d0();
     CreatePlaySystem();
     cMf32::delete(g_cMf32_00806754);
-    g_cMf32_00806754 = (cMf32 *)0x0;
-    if (g_cLoading_00802A58 != (cLoadingTy *)0x0) {
+    g_cMf32_00806754 = nullptr;
+    if (g_cLoading_00802A58 != nullptr) {
       pcVar8 = LoadResourceString(0x2680,g_module_00807618);
       cLoadingTy::DrawLineCR(g_cLoading_00802A58,pcVar8);
       if ((pSVar12->field_115E != '\0') && (pSVar12->field_1163 == '\x03')) {
@@ -323,7 +323,7 @@ void __thiscall STAppC::StartGame(STAppC *this)
       }
       thunk_FUN_005547d0(10,1);
       cLoadingTy::delete((uint *)g_cLoading_00802A58);
-      g_cLoading_00802A58 = (cLoadingTy *)0x0;
+      g_cLoading_00802A58 = nullptr;
     }
     thunk_FUN_0056a500();
     memset(local_34, 0, 0x20); /* compiler bulk-zero initialization */
@@ -362,8 +362,8 @@ void __thiscall STAppC::StartGame(STAppC *this)
     thunk_FUN_0056a500();
     GameSystemC::sub_00577690(g_parentSystem_0081163C);
     SoundClassTy::PlaySound
-              ((SoundClassTy *)&pSVar12->field_0038,SOUND_MODE_1,(char *)0x0,0x4b7,
-               (SoundPosition *)0x0,0);
+              ((SoundClassTy *)&pSVar12->field_0038,SOUND_MODE_1,nullptr,0x4b7,
+               nullptr,0);
     DAT_0080674c = 2;
     ShowCursor(0);
     DAT_00856d7c = 0;
@@ -377,16 +377,16 @@ void __thiscall STAppC::StartGame(STAppC *this)
   iVar11 = ReportDebugMessage("E:\\__titans\\tapp.cpp",0x54d,0,iVar11,"%s",
                               "STAppC::StartGame");
   if (iVar11 == 0) {
-    if (g_cMf32_00806754 != (cMf32 *)0x0) {
+    if (g_cMf32_00806754 != nullptr) {
       cMf32::delete(g_cMf32_00806754);
     }
-    g_cMf32_00806754 = (cMf32 *)0x0;
-    if (g_cLoading_00802A58 != (cLoadingTy *)0x0) {
+    g_cMf32_00806754 = nullptr;
+    if (g_cLoading_00802A58 != nullptr) {
       cLoadingTy::delete((uint *)g_cLoading_00802A58);
     }
     pSVar12 = local_c;
     memset(local_54, 0, 0x20); /* compiler bulk-zero initialization */
-    g_cLoading_00802A58 = (cLoadingTy *)0x0;
+    g_cLoading_00802A58 = nullptr;
     local_44 = 0x6102;
     pSVar12->GetMessage((int)local_54);
     pSVar12->field_1195 = 0;

@@ -11,10 +11,10 @@ uint * FUN_00629010(void)
   uint *puVar2;
 
   puVar1 = (undefined4 *)Library::MSVCRT::FUN_0072e530(0x108);
-  if (puVar1 != (undefined4 *)0x0) {
+  if (puVar1 != nullptr) {
     puVar2 = thunk_FUN_00629040(puVar1);
     return puVar2;
   }
-  return (uint *)0x0;
+  return nullptr;
 }
 

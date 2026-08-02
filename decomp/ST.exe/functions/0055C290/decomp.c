@@ -5,7 +5,7 @@ void __thiscall FUN_0055c290(void *this,char *param_1)
   ulong uVar1;
   DWORD lastError;
 
-  if (param_1 != (char *)0x0) {
+  if (param_1 != nullptr) {
     uVar1 = CFsgsConnection::InitConnection(this,param_1);
     if (uVar1 == 1) {
       *(undefined1 *)((int)this + 8) = 1;

@@ -14,7 +14,7 @@ undefined4 * __thiscall FUN_0074756b(void *this,AnonShape_0074756B_58F08DE7 *par
   piVar1 = (int *)(*(int *)((int)this + 0xc) + 0xc);
   /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
   (**(code **)(*piVar1 + 4))(piVar1);
-  if (param_1 == (AnonShape_0074756B_58F08DE7 *)0x0) {
+  if (param_1 == nullptr) {
     /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
     uVar2 = (**(code **)(**(int **)((int)this + 0xc) + 0x14))();
     *(undefined4 *)((int)this + 0x10) = uVar2;

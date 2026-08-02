@@ -24,7 +24,7 @@ undefined4 FUN_0060e210(void *param_1,undefined4 param_2,int param_3,int param_4
 
   iVar1 = param_3;
   pdVar2 = Library::DKW::LIB::MemAlloc(param_3 * 8);
-  if (pdVar2 != (double *)0x0) {
+  if (pdVar2 != nullptr) {
     iVar6 = param_3 + -1;
     *(undefined4 *)pdVar2 = 0;
     *(undefined4 *)((int)pdVar2 + 4) = 0x3ff00000;

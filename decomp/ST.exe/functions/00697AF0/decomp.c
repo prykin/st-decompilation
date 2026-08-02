@@ -21,17 +21,17 @@ FUN_00697af0(void *this,AnonShape_00697AF0_A94F4D28 *param_1,int *param_2,int *p
 
   pDVar1 = param_1->field_0015;
   local_14 = 0;
-  if (pDVar1 != (DArrayTy *)0x0) {
+  if (pDVar1 != nullptr) {
     uVar2 = pDVar1->count;
     uVar7 = 0;
     /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
-    param_1 = (AnonShape_00697AF0_A94F4D28 *)0x0;
+    param_1 = nullptr;
     local_c = 0;
-    local_10 = (AnonShape_00697AF0_A94F4D28 *)0x0;
+    local_10 = nullptr;
     local_8 = 0;
     if (0 < (int)uVar2) {
       do {
-        pvVar5 = (void *)0x0;
+        pvVar5 = nullptr;
         if (uVar7 < uVar2) {
           /* ST_PSEUDO[dynamic_array_indexing]: expected DArrayAt<T>(pDVar1, uVar7) (runtime stride) */
           pvVar5 = (void *)(pDVar1->elementSize * uVar7 + (int)pDVar1->data);

@@ -28,7 +28,7 @@ void FUN_004969f0(int param_1,int param_2,int param_3,int param_4,uint param_5,u
       piVar1 = (int *)(g_array_007FB270->elementSize * param_7 + (int)g_array_007FB270->data);
     }
     else {
-      piVar1 = (int *)0x0;
+      piVar1 = nullptr;
     }
     piVar1[3] = param_4;
     piVar1[2] = param_3;

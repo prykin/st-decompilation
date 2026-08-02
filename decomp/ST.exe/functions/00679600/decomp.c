@@ -64,14 +64,15 @@ LAB_0067971a:
       bVar10 = iVar6 < 0;
     }
     else {
-      bVar10 = (&DAT_008087ea)[(uVar7 & 0xff) * 0x51] != (&DAT_008087ea)[(uVar4 & 0xff) * 0x51];
+      bVar10 = g_bulkInitializedRecords_008087C7[uVar7 & 0xff].field_0023 !=
+               g_bulkInitializedRecords_008087C7[uVar4 & 0xff].field_0023;
     }
     if ((bVar10) && (sVar3 = thunk_FUN_0043e460(cVar2), param_1 = local_8, sVar3 != 0))
     goto cf_common_exit_0067989B;
   }
   iVar6 = 0;
   piVar8 = &local_1a8;
-  local_10 = &DAT_008087e9;
+  local_10 = &g_bulkInitializedRecords_008087C7[0].field_0022;
   param_1 = local_8;
   do {
     uVar4 = (uint)*local_10;
@@ -109,14 +110,15 @@ LAB_0067971a:
         bVar10 = iVar5 < 0;
       }
       else {
-        bVar10 = (&DAT_008087ea)[(uVar7 & 0xff) * 0x51] != (&DAT_008087ea)[uVar4 * 0x51];
+        bVar10 = g_bulkInitializedRecords_008087C7[uVar7 & 0xff].field_0023 !=
+                 g_bulkInitializedRecords_008087C7[uVar4].field_0023;
         param_1 = local_8;
       }
       if (bVar10) {
         piVar8[1] = uVar4;
         iVar6 = iVar6 + 1;
-        *piVar8 = (-(uint)(*(char *)((int)&DAT_008087c4 + uVar4 * 0x51 + 3) != '\0') & 0xffffffa6) +
-                  100;
+        *piVar8 = (-(uint)(*(char *)(g_bulkInitializedRecords_008087C7 + uVar4) != '\0') &
+                  0xffffffa6) + 100;
         piVar8 = piVar8 + 0xb;
       }
     }

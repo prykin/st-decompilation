@@ -8,7 +8,7 @@ undefined4 FUN_00748de3(AnonShape_00748DE3_6873BEB9 *param_1,undefined4 *param_2
     FUN_0074bc50((LPVOID)param_1->field_003C);
     param_1->field_003C = 0;
   }
-  if (param_2 == (undefined4 *)0x0) {
+  if (param_2 == nullptr) {
     param_1->field_0004 = param_1->field_0004 & 0xfffffff7;
   }
   else {

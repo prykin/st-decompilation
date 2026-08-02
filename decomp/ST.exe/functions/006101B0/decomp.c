@@ -159,7 +159,7 @@ cf_common_join_00610347:
     if (*(int *)&param_1->field_0x20c == 9) {
       return local_1c;
     }
-    if ((param_1->field_0x250 == '\0') && (*(void **)&param_1->field_0x252 != (void *)0x0)) {
+    if ((param_1->field_0x250 == '\0') && (*(void **)&param_1->field_0x252 != nullptr)) {
       thunk_FUN_004ad460(*(void **)&param_1->field_0x252,0);
       param_1->field_0x250 = 1;
     }
@@ -306,7 +306,7 @@ LAB_00610969:
                  (float)*(int *)&param_1->field_0x233 * _DAT_007904f8 * _DAT_007904f0 +
                  _DAT_007904fc);
       pVVar13 = g_visibleClass_00802A88;
-      if (g_visibleClass_00802A88 != (VisibleClassTy *)0x0) {
+      if (g_visibleClass_00802A88 != nullptr) {
         iVar14 = *(int *)&param_1->field_0x233;
         sVar8 = (short)(iVar14 >> 0x1f);
         if (iVar14 < 0) {
@@ -347,7 +347,7 @@ LAB_00610969:
 LAB_00611039:
           iVar9 = iVar9 + local_20;
           if (((iVar9 < 0) || (pVVar13->field_0034 <= iVar9)) ||
-             (pVVar13->field_004C == (byte *)0x0)) goto cf_common_exit_00611C0F;
+             (pVVar13->field_004C == nullptr)) goto cf_common_exit_00611C0F;
           bVar3 = pVVar13->field_004C[iVar9 * iVar14 + local_24];
           goto joined_r0x00611c0d;
         }
@@ -449,7 +449,7 @@ LAB_00610d9f:
                  (float)*(int *)&param_1->field_0x233 * _DAT_007904f8 * _DAT_007904f0 +
                  _DAT_007904fc);
       pVVar13 = g_visibleClass_00802A88;
-      if (g_visibleClass_00802A88 != (VisibleClassTy *)0x0) {
+      if (g_visibleClass_00802A88 != nullptr) {
         iVar14 = *(int *)&param_1->field_0x233;
         sVar8 = (short)(iVar14 >> 0x1f);
         if (iVar14 < 0) {
@@ -634,7 +634,7 @@ LAB_00611304:
                (float)*(int *)&param_1->field_0x22f * _DAT_007904f8 * _DAT_007904f0,
                (float)*(int *)&param_1->field_0x233 * _DAT_007904f8 * _DAT_007904f0 + _DAT_007904fc);
     pVVar13 = g_visibleClass_00802A88;
-    if (g_visibleClass_00802A88 != (VisibleClassTy *)0x0) {
+    if (g_visibleClass_00802A88 != nullptr) {
       iVar14 = *(int *)&param_1->field_0x233;
       sVar8 = (short)(iVar14 >> 0x1f);
       if (iVar14 < 0) {
@@ -673,7 +673,7 @@ LAB_00611304:
            ((pVVar13->field_0030 <= (int)local_24 ||
             ((iVar14 = g_centeredOffsets5[local_c] + local_20, iVar14 < 0 ||
              (pVVar13->field_0034 <= iVar14)))))))) ||
-         ((pVVar13->field_004C == (byte *)0x0 ||
+         ((pVVar13->field_004C == nullptr ||
           (pVVar13->field_004C[local_24 + iVar14 * pVVar13->field_0030] != 0))))
       goto cf_common_exit_00611C0F;
       if (param_1->field_0x250 == '\0') break;
@@ -813,7 +813,7 @@ LAB_0061196b:
                (float)*(int *)&param_1->field_0x22f * _DAT_007904f8 * _DAT_007904f0,
                (float)*(int *)&param_1->field_0x233 * _DAT_007904f8 * _DAT_007904f0 + _DAT_007904fc);
     pVVar13 = g_visibleClass_00802A88;
-    if (g_visibleClass_00802A88 != (VisibleClassTy *)0x0) {
+    if (g_visibleClass_00802A88 != nullptr) {
       iVar14 = *(int *)&param_1->field_0x233;
       sVar8 = (short)(iVar14 >> 0x1f);
       if (iVar14 < 0) {
@@ -850,7 +850,7 @@ LAB_0061196b:
                        (int *)&local_24,&local_20), (int)local_c < 0 ||
            ((((4 < (int)local_c || ((int)local_24 < 0)) || (pVVar13->field_0030 <= (int)local_24))
             || ((iVar14 = g_centeredOffsets5[local_c] + local_20, iVar14 < 0 ||
-                (pVVar13->field_0034 <= iVar14)))))))) || (pVVar13->field_004C == (byte *)0x0))
+                (pVVar13->field_0034 <= iVar14)))))))) || (pVVar13->field_004C == nullptr))
       goto cf_common_exit_00611C0F;
       bVar3 = pVVar13->field_004C[local_24 + iVar14 * pVVar13->field_0030];
 joined_r0x00611c0d:
@@ -884,7 +884,7 @@ cf_common_exit_00611C0F:
                        (int)*(short *)&param_1->field_0x1eb,(int)*(short *)&param_1->field_0x1ed,
                        uVar7);
     STGenBombC::LoadImagSpr((STGenBombC *)param_1,1,0);
-    if ((param_1->field_0x250 != '\0') && (*(STT3DSprC **)&param_1->field_0x252 != (STT3DSprC *)0x0)
+    if ((param_1->field_0x250 != '\0') && (*(STT3DSprC **)&param_1->field_0x252 != nullptr)
        ) {
       thunk_FUN_004ad430(*(STT3DSprC **)&param_1->field_0x252);
       param_1->field_0x250 = 0;
@@ -892,7 +892,7 @@ cf_common_exit_00611C0F:
     *(undefined4 *)&param_1->field_0x20c = 1;
     return local_1c;
   case 7:
-    if ((param_1->field_0x2e9 != '\0') && (*(void **)&param_1->field_0x252 != (void *)0x0)) {
+    if ((param_1->field_0x2e9 != '\0') && (*(void **)&param_1->field_0x252 != nullptr)) {
       uVar6 = thunk_FUN_004ac910(*(void **)&param_1->field_0x252,'\r');
       local_24 = thunk_FUN_004ac910(*(void **)&param_1->field_0x252,'\x0e');
       if (0xe < (int)uVar6) {
@@ -946,7 +946,7 @@ cf_common_exit_00611C0F:
                  (float)*(int *)&param_1->field_0x233 * _DAT_007904f8 * _DAT_007904f0 +
                  _DAT_007904fc);
       pVVar13 = g_visibleClass_00802A88;
-      if (g_visibleClass_00802A88 == (VisibleClassTy *)0x0) {
+      if (g_visibleClass_00802A88 == nullptr) {
         return local_1c;
       }
       iVar14 = *(int *)&param_1->field_0x233;
@@ -986,7 +986,7 @@ cf_common_exit_00611C0F:
            (((int)local_24 < 5 && (-1 < local_20)))) &&
           (((local_20 < pVVar13->field_0030 &&
             ((iVar14 = g_centeredOffsets5[local_24] + local_c, -1 < iVar14 &&
-             (iVar14 < pVVar13->field_0034)))) && (pVVar13->field_004C != (byte *)0x0)))) &&
+             (iVar14 < pVVar13->field_0034)))) && (pVVar13->field_004C != nullptr)))) &&
          (pVVar13->field_004C[local_20 + iVar14 * pVVar13->field_0030] == 0)) {
         if (param_1->field_0x250 == '\0') {
           return local_1c;
@@ -1159,7 +1159,7 @@ LAB_00612459:
                (float)*(int *)&param_1->field_0x22f * _DAT_007904f8 * _DAT_007904f0,
                (float)*(int *)&param_1->field_0x233 * _DAT_007904f8 * _DAT_007904f0 + _DAT_007904fc);
     pVVar13 = g_visibleClass_00802A88;
-    if (g_visibleClass_00802A88 != (VisibleClassTy *)0x0) {
+    if (g_visibleClass_00802A88 != nullptr) {
       iVar14 = *(int *)&param_1->field_0x233;
       sVar8 = (short)(iVar14 >> 0x1f);
       if (iVar14 < 0) {
@@ -1196,7 +1196,7 @@ LAB_00612459:
                         &local_20,(int *)&local_c), (int)local_24 < 0)) ||
            ((4 < (int)local_24 || (local_20 < 0)))) || (pVVar13->field_0030 <= local_20)) ||
          (((iVar14 = g_centeredOffsets5[local_24] + local_c, iVar14 < 0 ||
-           (pVVar13->field_0034 <= iVar14)) || (pVVar13->field_004C == (byte *)0x0))))
+           (pVVar13->field_0034 <= iVar14)) || (pVVar13->field_004C == nullptr))))
       goto cf_common_exit_00611C0F;
       bVar3 = pVVar13->field_004C[local_20 + iVar14 * pVVar13->field_0030];
       goto joined_r0x00611c0d;

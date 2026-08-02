@@ -35,14 +35,14 @@ ResearchPanelTy::PaintUpdBut(ResearchPanelTy *this,AnonShape_004EF320_444F9AB1 *
   uVar1 = this->field_0199 + -0xc0af + param_1->field_0010;
   iVar5 = (&this->field_027A)[(byte)this->field_0278];
   if ((iVar5 == 0) || (*(uint *)(iVar5 + 0xc) <= uVar1)) {
-    local_8 = (Global_sub_005276E0_param_1Enum *)0x0;
+    local_8 = nullptr;
   }
   else {
     local_8 = (Global_sub_005276E0_param_1Enum *)
               (*(int *)(iVar5 + 8) * uVar1 + *(int *)(iVar5 + 0x1c));
   }
   local_10 = this;
-  if ((param_1->field_0014 == 0) || (local_8 == (Global_sub_005276E0_param_1Enum *)0x0)) {
+  if ((param_1->field_0014 == 0) || (local_8 == nullptr)) {
     /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
     local_c = (int)*(short *)((int)this->field_0188 + 0x23) - ((DAT_0080874e != '\x03') + 1);
   }
@@ -54,7 +54,7 @@ ResearchPanelTy::PaintUpdBut(ResearchPanelTy *this,AnonShape_004EF320_444F9AB1 *
   iVar5 = Library::MSVCRT::__setjmp3(local_5c.jumpBuffer,0);
   pRVar4 = local_10;
   if (iVar5 == 0) {
-    if ((local_8 == (Global_sub_005276E0_param_1Enum *)0x0) || (local_8[8] == CASE_0)) {
+    if ((local_8 == nullptr) || (local_8[8] == CASE_0)) {
       pAVar8 = (AnonShape_GLOBAL_0081175C_57F682DD *)local_10->field_018C;
     }
     else {
@@ -64,7 +64,7 @@ ResearchPanelTy::PaintUpdBut(ResearchPanelTy *this,AnonShape_004EF320_444F9AB1 *
     iVar7 = local_14;
     iVar5 = local_18;
     DibPut((AnonShape_006B5B10_E0D06CF1 *)pRVar4->field_0068,local_18,local_14,'\x01',pbVar6);
-    if ((param_1->field_0014 == 3) && (local_8 != (Global_sub_005276E0_param_1Enum *)0x0)) {
+    if ((param_1->field_0014 == 3) && (local_8 != nullptr)) {
       pbVar6 = (byte *)FUN_0070b3a0(pRVar4->field_0190,7 - (uint)(local_8[8] != CASE_0));
       DibPut((AnonShape_006B5B10_E0D06CF1 *)pRVar4->field_0068,iVar5,iVar7,'\x06',pbVar6);
     }

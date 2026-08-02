@@ -7,7 +7,7 @@ void FUN_0055c590(undefined4 param_1,LPCVOID param_2,LPCVOID param_3)
   HANDLE hFile;
   BOOL BVar3;
 
-  if (g_fSGS_0081174C == (FSGSTy *)0x0) {
+  if (g_fSGS_0081174C == nullptr) {
     return;
   }
   if (param_2 != (LPCVOID)0x0) {

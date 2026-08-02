@@ -7,8 +7,8 @@ undefined4 * FUN_005f1e40(int param_1,int param_2,int param_3,int param_4,int pa
   ushort *puVar1;
 
   puVar1 = thunk_FUN_005f1700(param_1,param_2,1,param_3,param_4,param_5,0xffffffff);
-  if (puVar1 == (ushort *)0x0) {
-    return (undefined4 *)0x0;
+  if (puVar1 == nullptr) {
+    return nullptr;
   }
   if (param_1 == 0) {
     puVar1 = ST3DSMAPContext::sub_006E9000

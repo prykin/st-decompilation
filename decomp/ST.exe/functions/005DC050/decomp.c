@@ -1,6 +1,7 @@
 #include "../../pseudocode_runtime.h"
 
 
+/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 /* Recovered from embedded debug metadata:
    E:\__titans\Start\startsys.cpp
    StartSystemTy::LoadMapData
@@ -55,41 +56,41 @@ void __thiscall StartSystemTy::LoadMapData(StartSystemTy *this,cMf32 *param_1,ch
     RaiseInternalException(iVar3,0,"E:\\__titans\\Start\\startsys.cpp",0x231);
     return;
   }
-  if (param_1 != (cMf32 *)0x0) {
+  if (param_1 != nullptr) {
     value = &local_1c->field_02F4;
-    if (local_1c->field_02F4 != (ushort *)0x0) {
+    if (local_1c->field_02F4 != nullptr) {
       FreeAndNull(value);
     }
     puVar4 = Library::Ourlib::MFIMG::mfImgLoad(param_1,0xc,PTR_s_SMALL_MAP_0079c1dc,2,0);
     *value = puVar4;
-    if (puVar4 != (ushort *)0x0) {
-      FUN_006c7f90(puVar4,(byte *)0x0,g_dDXContext_0080759C->field_04B4,0);
+    if (puVar4 != nullptr) {
+      FUN_006c7f90(puVar4,nullptr,g_dDXContext_0080759C->field_04B4,0);
       FUN_006b5440(this_01->field_02F0,0,0x14,0x14,(uint)*value,0,0);
     }
-    if (g_dArray_0080C4C7 != (DArrayTy *)0x0) {
+    if (g_dArray_0080C4C7 != nullptr) {
       FUN_006b5570(g_dArray_0080C4C7);
     }
     g_dArray_0080C4C7 =
          (DArrayTy *)Library::Ourlib::MFSARR::mfSarLoad(param_1,PTR_s_DESCRIPTION_0079c1d0,0);
-    if (g_dArray_0080C4C7 == (DArrayTy *)0x0) {
-      g_dArray_0080C4C7 = Library::DKW::TBL::SArrayCreate((DArrayTy *)0x0,10,10);
+    if (g_dArray_0080C4C7 == nullptr) {
+      g_dArray_0080C4C7 = Library::DKW::TBL::SArrayCreate(nullptr,10,10);
     }
-    if (g_dArray_0080C4CB != (DArrayTy *)0x0) {
+    if (g_dArray_0080C4CB != nullptr) {
       FUN_006b5570(g_dArray_0080C4CB);
     }
     g_dArray_0080C4CB =
          (DArrayTy *)Library::Ourlib::MFSARR::mfSarLoad(param_1,PTR_s_OBJECTIVES_0079c1d4,0);
-    if (g_dArray_0080C4CB == (DArrayTy *)0x0) {
-      g_dArray_0080C4CB = Library::DKW::TBL::SArrayCreate((DArrayTy *)0x0,10,10);
+    if (g_dArray_0080C4CB == nullptr) {
+      g_dArray_0080C4CB = Library::DKW::TBL::SArrayCreate(nullptr,10,10);
     }
     local_18 = &local_10;
     local_8 = &DAT_008087b6;
     puVar4 = cMf32::RecGet(param_1,0,PTR_s_DESCRIPTOR_0079c1d8,(int *)&local_8,0);
-    if ((puVar4 == (ushort *)0x0) ||
+    if ((puVar4 == nullptr) ||
        ((((param_2 == '\f' || (param_2 == '\x10')) ||
          ((param_2 == '\x13' && (DAT_00803400 == '\f')))) &&
         (puVar4 = cMf32::RecGet(param_1,0x80,PTR_s_SAVE_PLAYER_0079c1c8,(int *)&local_18,0),
-        puVar4 == (ushort *)0x0)))) {
+        puVar4 == nullptr)))) {
       memset(&DAT_008087b6, 0, 0x1999); /* compiler bulk-zero initialization */
       iVar3 = 0;
     }
@@ -102,7 +103,7 @@ void __thiscall StartSystemTy::LoadMapData(StartSystemTy *this,cMf32 *param_1,ch
       iVar3 = 0;
       if (0 < (int)g_dArray_0080C4CB->elementSize) {
         if ((int)g_dArray_0080C4CB->elementSize < 1) {
-          pcVar8 = (char *)0x0;
+          pcVar8 = nullptr;
           goto LAB_005dc22d;
         }
         do {
@@ -121,11 +122,11 @@ LAB_005dc22d:
                  ccFntTy::FormIndentSarr
                            (this_01->field_0034,(DArrayTy *)this_01->field_0548,
                             " ,.;:!?/\\()[]{}",(uint *)&DAT_007c21ec,
-                            this_01->field_0544->field_0004 + -0x14,0,0xffffffff,(char *)0x0,1);
-      if ((DArrayTy *)this_01->field_0548 != (DArrayTy *)0x0) {
+                            this_01->field_0544->field_0004 + -0x14,0,0xffffffff,nullptr,1);
+      if ((DArrayTy *)this_01->field_0548 != nullptr) {
         FUN_006b5570((DArrayTy *)this_01->field_0548);
       }
-      pDVar7 = Library::DKW::TBL::SArrayCreate((DArrayTy *)0x0,10,10);
+      pDVar7 = Library::DKW::TBL::SArrayCreate(nullptr,10,10);
       this_01->field_0548 = &pDVar7->flags;
       puVar5 = &this_01->field_003C;
       pcVar8 = LoadResourceString(0x2347,g_module_00807618);
@@ -134,12 +135,12 @@ LAB_005dc22d:
       wsprintfA(puVar5,"&0 %s",&DAT_0080c3c3);
       Library::DKW::TBL::FUN_006b5aa0(this_01->field_0548,puVar5);
       Library::DKW::TBL::FUN_006b5aa0(this_01->field_0548,&DAT_007c3b5c);
-      uVar9 = DAT_008087c4 & 0xffff;
+      uVar9 = _DAT_008087c4 & 0xffff;
       uVar11 = (uint)DAT_008087c2;
       pcVar8 = LoadResourceString(0x2344,g_module_00807618);
       wsprintfA(puVar5,"&2 %s: &0%d&2x&0%d",pcVar8,uVar11,uVar9);
       Library::DKW::TBL::FUN_006b5aa0(this_01->field_0548,puVar5);
-      uVar9 = DAT_008087c4 >> 0x10 & 0xff;
+      uVar9 = _DAT_008087c4 >> 0x10 & 0xff;
       pcVar8 = LoadResourceString(0x2345,g_module_00807618);
       wsprintfA(puVar5,"&2 %s: &0%d",pcVar8,uVar9);
       Library::DKW::TBL::FUN_006b5aa0(this_01->field_0548,puVar5);
@@ -164,14 +165,14 @@ LAB_005dc22d:
         Library::DKW::TBL::FUN_006b5aa0(this_01->field_0548,&DAT_007c3b5c);
       }
       pDVar7 = local_14;
-      if (local_14 != (DArrayTy *)0x0) {
+      if (local_14 != nullptr) {
         if (local_14->elementSize != 0) {
           ccFntTy::SepColorStrInSarr(this_01->field_0034,&local_14->flags,&local_14->flags);
         }
         iVar3 = 0;
         if (0 < (int)pDVar7->elementSize) {
           if ((int)pDVar7->elementSize < 1) {
-            pcVar8 = (char *)0x0;
+            pcVar8 = nullptr;
             goto LAB_005dc430;
           }
           do {
@@ -208,7 +209,7 @@ LAB_005dc430:
       }
     }
     this_00 = this_01->field_02E6;
-    if (this_00 != (MMsgTy *)0x0) {
+    if (this_00 != nullptr) {
       memset(&local_58, 0, 0x1a); /* compiler bulk-zero initialization */
       /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
       local_58._0_2_ = 1;

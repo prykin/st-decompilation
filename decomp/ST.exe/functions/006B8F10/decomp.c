@@ -82,7 +82,7 @@ int FUN_006b8f10(AnonShape_006B8F10_41B61BA9 *param_1,int *param_2)
     pAVar2->field_0014 = local_10;
     pAVar2->field_0018 = local_c;
     pAVar2->field_001C = (int)local_8;
-    if ((local_c != 0) && (local_8 != (byte *)0x0)) {
+    if ((local_c != 0) && (local_8 != nullptr)) {
       local_28 = local_14 - iVar3;
       local_24 = local_10 - local_18;
       if ((pAVar2->field_0004 & 0x8000000) != 0) {
@@ -104,7 +104,7 @@ int FUN_006b8f10(AnonShape_006B8F10_41B61BA9 *param_1,int *param_2)
       local_2c = local_8 + local_10;
       local_34 = local_10;
       /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
-      param_2 = (int *)0x0;
+      param_2 = nullptr;
       /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
       while (iVar3 = (**(code **)(**(int **)(*(int *)pAVar2 + 0x40) + 0x14))
                                (*(int **)(*(int *)pAVar2 + 0x40),&local_38,param_1,&local_28,
@@ -115,7 +115,7 @@ int FUN_006b8f10(AnonShape_006B8F10_41B61BA9 *param_1,int *param_2)
           FUN_006cec40(*(AnonShape_006CEC40_BB23E716 **)pAVar2);
         }
         else {
-          if (((iVar3 != -0x7789ff60) && (iVar3 != -0x7789fe52)) || (param_2 != (int *)0x0)) break;
+          if (((iVar3 != -0x7789ff60) && (iVar3 != -0x7789fe52)) || (param_2 != nullptr)) break;
           Sleep(2);
         }
         /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */

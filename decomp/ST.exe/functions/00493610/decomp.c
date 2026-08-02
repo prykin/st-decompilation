@@ -50,19 +50,19 @@ SubmarineTitans::Recovered::HiddenThis::AnonReceiver_00493610::FUN_00493610
                       || ((sVar4 < 0 || (g_worldGrid.sizeZ <= sVar4)))) ||
                      (g_worldGrid.cells
                       [(int)sVar4 * (int)g_worldGrid.planeStride + sVar8 * iVar3 + (int)sVar6].
-                      objects[0] == (STWorldObject *)0x0)) &&
+                      objects[0] == nullptr)) &&
                     (((sVar6 < 0 || (g_worldGrid.sizeX <= sVar6)) ||
                      (((sVar8 < 0 ||
                        (((g_worldGrid.sizeY <= sVar8 || (sVar4 < 0)) || (g_worldGrid.sizeZ <= sVar4)
                         ))) || (g_worldGrid.cells
                                 [(int)sVar4 * (int)g_worldGrid.planeStride + sVar8 * iVar3 +
-                                 (int)sVar6].objects[1] == (STWorldObject *)0x0)))))))) &&
+                                 (int)sVar6].objects[1] == nullptr)))))))) &&
                   ((sVar1 = sVar4 + -1, sVar6 < 0 ||
                    ((((((g_worldGrid.sizeX <= sVar6 || (sVar8 < 0)) ||
                        ((g_worldGrid.sizeY <= sVar8 || ((sVar1 < 0 || (g_worldGrid.sizeZ <= sVar1)))
                         ))) || (g_worldGrid.cells
                                 [(int)g_worldGrid.planeStride * (int)sVar1 + sVar8 * iVar3 +
-                                 (int)sVar6].objects[0] == (STWorldObject *)0x0)) ||
+                                 (int)sVar6].objects[0] == nullptr)) ||
                      (g_pathingGrid.cells
                       [local_8 * g_pathingGrid.planeStride + g_pathingGrid.sizeX * iVar9 + iVar7] ==
                       0)) && (((((sVar6 < 0 || (g_worldGrid.sizeX <= sVar6)) || (sVar8 < 0)) ||
@@ -70,7 +70,7 @@ SubmarineTitans::Recovered::HiddenThis::AnonReceiver_00493610::FUN_00493610
                               ((g_worldGrid.sizeZ <= sVar1 ||
                                (g_worldGrid.cells
                                 [(int)g_worldGrid.planeStride * (int)sVar1 + sVar8 * iVar3 +
-                                 (int)sVar6].objects[1] == (STWorldObject *)0x0)))))))))) &&
+                                 (int)sVar6].objects[1] == nullptr)))))))))) &&
                  (iVar3 = FUN_006aadd0((int)*(short *)&this->field_0x47,
                                        (int)*(short *)&this->field_0x49,
                                        (int)*(short *)&this->field_0x4b,iVar7,iVar9,iVar5),

@@ -57,32 +57,32 @@ undefined4 __thiscall InterSystemC::CreateInterfObjects(InterSystemC *this)
   this_00 = local_8;
   if (iVar3 == 0) {
     if (DAT_0080874e == '\x01') {
-      pcVar4 = (ccFntTy *)thunk_FUN_00541cf0(DAT_0080679c,(undefined *)0x0,DAT_00807dd9);
+      pcVar4 = (ccFntTy *)thunk_FUN_00541cf0(DAT_0080679c,nullptr,DAT_00807dd9);
     }
     else if (DAT_0080874e == '\x02') {
-      pcVar4 = (ccFntTy *)thunk_FUN_00541f60(DAT_0080679c,(undefined *)0x0,DAT_00807dd9);
+      pcVar4 = (ccFntTy *)thunk_FUN_00541f60(DAT_0080679c,nullptr,DAT_00807dd9);
     }
     else {
-      pcVar4 = (ccFntTy *)thunk_FUN_005421d0(DAT_0080679c,(undefined *)0x0,DAT_00807dd9);
+      pcVar4 = (ccFntTy *)thunk_FUN_005421d0(DAT_0080679c,nullptr,DAT_00807dd9);
     }
     this_00->field_0024 = pcVar4;
     pcVar4->field_0058 = 1;
     pcVar4->field_005C = 0;
-    pcVar4 = (ccFntTy *)thunk_FUN_005412b0(DAT_0080679c,(undefined *)0x0,DAT_00807dd9);
+    pcVar4 = (ccFntTy *)thunk_FUN_005412b0(DAT_0080679c,nullptr,DAT_00807dd9);
     this_00->field_0028 = pcVar4;
     pcVar4->field_0058 = 0;
     pcVar4->field_005C = 0;
-    iVar3 = thunk_FUN_005416a0(DAT_0080679c,(undefined *)0x0,DAT_00807dd9);
+    iVar3 = thunk_FUN_005416a0(DAT_0080679c,nullptr,DAT_00807dd9);
     this_00->field_002C = iVar3;
     *(undefined4 *)(iVar3 + 0x58) = 1;
     *(undefined4 *)(iVar3 + 0x5c) = 0;
-    iVar3 = thunk_FUN_005419e0(DAT_0080679c,(undefined *)0x0,DAT_00807dd9);
+    iVar3 = thunk_FUN_005419e0(DAT_0080679c,nullptr,DAT_00807dd9);
     this_00->field_0030 = iVar3;
     *(undefined4 *)(iVar3 + 0x58) = 1;
     *(undefined4 *)(iVar3 + 0x5c) = 0;
     thunk_FUN_0056a500();
     memset(local_184, 0, 0x17c); /* compiler bulk-zero initialization */
-    puVar13 = (undefined4 *)0x0;
+    puVar13 = nullptr;
     iVar12 = 0;
     iVar11 = 1;
     bVar10 = 0;
@@ -120,8 +120,8 @@ undefined4 __thiscall InterSystemC::CreateInterfObjects(InterSystemC *this)
     local_c8 = 1;
     local_124 = local_164;
     (*this_00->vtable->CreateObject)
-              ((SystemClassTy *)this_00,2,(undefined4 *)0x0,(int *)0x0,local_184,1);
-    if ((*(char *)((int)&DAT_008087c4 + (uint)DAT_0080874d * 0x51 + 3) == '\0') &&
+              ((SystemClassTy *)this_00,2,nullptr,nullptr,local_184,1);
+    if ((*(char *)(g_bulkInitializedRecords_008087C7 + DAT_0080874d) == '\0') &&
        (DAT_0080874f == '\0')) {
       bVar2 = true;
     }
@@ -137,7 +137,7 @@ undefined4 __thiscall InterSystemC::CreateInterfObjects(InterSystemC *this)
     local_d0 = 0x271a;
     local_f4 = 0x271a;
     (*this_00->vtable->CreateObject)
-              ((SystemClassTy *)this_00,2,(undefined4 *)0x0,(int *)0x0,local_184,1);
+              ((SystemClassTy *)this_00,2,nullptr,nullptr,local_184,1);
     local_d0 = 0x2718;
     local_f4 = 0x2718;
     local_184[2] = (-(uint)(DAT_0080874e != '\x03') & 3) + 0xd2;
@@ -145,8 +145,8 @@ undefined4 __thiscall InterSystemC::CreateInterfObjects(InterSystemC *this)
     local_15c = 0xb901;
     local_11c = 0xb902;
     (*this_00->vtable->CreateObject)
-              ((SystemClassTy *)this_00,2,(undefined4 *)0x0,(int *)0x0,local_184,1);
-    if ((*(char *)((int)&DAT_008087c4 + (uint)DAT_0080874d * 0x51 + 3) == '\0') &&
+              ((SystemClassTy *)this_00,2,nullptr,nullptr,local_184,1);
+    if ((*(char *)(g_bulkInitializedRecords_008087C7 + DAT_0080874d) == '\0') &&
        (DAT_0080874f == '\0')) {
       bVar10 = 1;
     }
@@ -160,7 +160,7 @@ undefined4 __thiscall InterSystemC::CreateInterfObjects(InterSystemC *this)
     local_15c = 0xb903;
     local_11c = 0xb904;
     (*this_00->vtable->CreateObject)
-              ((SystemClassTy *)this_00,2,(undefined4 *)0x0,(int *)0x0,local_184,1);
+              ((SystemClassTy *)this_00,2,nullptr,nullptr,local_184,1);
     local_184[3] = DAT_00806734 + -0x1a;
     local_184[2] = g_nWidth_00806730 + -0x32;
     local_184[0] = 1;
@@ -176,74 +176,74 @@ undefined4 __thiscall InterSystemC::CreateInterfObjects(InterSystemC *this)
     local_15c = 0xb907;
     local_11c = 0xb908;
     (*this_00->vtable->CreateObject)
-              ((SystemClassTy *)this_00,2,(undefined4 *)0x0,(int *)0x0,local_184,1);
+              ((SystemClassTy *)this_00,2,nullptr,nullptr,local_184,1);
     thunk_FUN_0056a500();
     (*this_00->vtable->CreateObject)
-              ((SystemClassTy *)this_00,0x11f,(undefined4 *)0x0,(int *)0x0,0,1);
+              ((SystemClassTy *)this_00,0x11f,nullptr,nullptr,0,1);
     thunk_FUN_0056a500();
     (*this_00->vtable->CreateObject)
-              ((SystemClassTy *)this_00,0x120,(undefined4 *)0x0,(int *)0x0,0,1);
+              ((SystemClassTy *)this_00,0x120,nullptr,nullptr,0,1);
     thunk_FUN_0056a500();
     (*this_00->vtable->CreateObject)
-              ((SystemClassTy *)this_00,0x122,(undefined4 *)0x0,(int *)0x0,0,1);
+              ((SystemClassTy *)this_00,0x122,nullptr,nullptr,0,1);
     thunk_FUN_0056a500();
     (*this_00->vtable->CreateObject)
-              ((SystemClassTy *)this_00,0x123,(undefined4 *)0x0,(int *)0x0,0,1);
+              ((SystemClassTy *)this_00,0x123,nullptr,nullptr,0,1);
     thunk_FUN_0056a500();
     (*this_00->vtable->CreateObject)
-              ((SystemClassTy *)this_00,0x125,(undefined4 *)0x0,(int *)0x0,0,1);
+              ((SystemClassTy *)this_00,0x125,nullptr,nullptr,0,1);
     thunk_FUN_0056a500();
     (*this_00->vtable->CreateObject)
-              ((SystemClassTy *)this_00,0x127,(undefined4 *)0x0,(int *)0x0,0,1);
+              ((SystemClassTy *)this_00,0x127,nullptr,nullptr,0,1);
     thunk_FUN_0056a500();
     (*this_00->vtable->CreateObject)
-              ((SystemClassTy *)this_00,0x128,(undefined4 *)0x0,(int *)0x0,0,1);
+              ((SystemClassTy *)this_00,0x128,nullptr,nullptr,0,1);
     thunk_FUN_0056a500();
     (*this_00->vtable->CreateObject)
-              ((SystemClassTy *)this_00,0x12a,(undefined4 *)0x0,(int *)0x0,0,1);
+              ((SystemClassTy *)this_00,0x12a,nullptr,nullptr,0,1);
     thunk_FUN_0056a500();
     if (DAT_0080874e == '\x03') {
       (*this_00->vtable->CreateObject)
-                ((SystemClassTy *)this_00,0x151,(undefined4 *)0x0,(int *)0x0,0,1);
+                ((SystemClassTy *)this_00,0x151,nullptr,nullptr,0,1);
       (*this_00->vtable->CreateObject)
-                ((SystemClassTy *)this_00,0x159,(undefined4 *)0x0,(int *)0x0,0,1);
+                ((SystemClassTy *)this_00,0x159,nullptr,nullptr,0,1);
     }
     (*this_00->vtable->CreateObject)
-              ((SystemClassTy *)this_00,0x149,(undefined4 *)0x0,(int *)0x0,0,1);
+              ((SystemClassTy *)this_00,0x149,nullptr,nullptr,0,1);
     thunk_FUN_0056a500();
     (*this_00->vtable->CreateObject)
-              ((SystemClassTy *)this_00,0x148,(undefined4 *)0x0,(int *)0x0,0,1);
+              ((SystemClassTy *)this_00,0x148,nullptr,nullptr,0,1);
     thunk_FUN_0056a500();
     (*this_00->vtable->CreateObject)
-              ((SystemClassTy *)this_00,0x14a,(undefined4 *)0x0,(int *)0x0,0,1);
+              ((SystemClassTy *)this_00,0x14a,nullptr,nullptr,0,1);
     thunk_FUN_0056a500();
     (*this_00->vtable->CreateObject)
-              ((SystemClassTy *)this_00,0x153,(undefined4 *)0x0,(int *)0x0,0,1);
+              ((SystemClassTy *)this_00,0x153,nullptr,nullptr,0,1);
     thunk_FUN_0056a500();
     (*this_00->vtable->CreateObject)
-              ((SystemClassTy *)this_00,0x155,(undefined4 *)0x0,(int *)0x0,0,1);
+              ((SystemClassTy *)this_00,0x155,nullptr,nullptr,0,1);
     thunk_FUN_0056a500();
     (*this_00->vtable->CreateObject)
-              ((SystemClassTy *)this_00,0x154,(undefined4 *)0x0,(int *)0x0,0,1);
+              ((SystemClassTy *)this_00,0x154,nullptr,nullptr,0,1);
     thunk_FUN_0056a500();
     (*this_00->vtable->CreateObject)
-              ((SystemClassTy *)this_00,0x156,(undefined4 *)0x0,(int *)0x0,0,1);
+              ((SystemClassTy *)this_00,0x156,nullptr,nullptr,0,1);
     thunk_FUN_0056a500();
-    (*this_00->vtable->CreateObject)((SystemClassTy *)this_00,299,(undefined4 *)0x0,(int *)0x0,0,1);
-    thunk_FUN_0056a500();
-    (*this_00->vtable->CreateObject)
-              ((SystemClassTy *)this_00,0x12e,(undefined4 *)0x0,(int *)0x0,0,1);
+    (*this_00->vtable->CreateObject)((SystemClassTy *)this_00,299,nullptr,nullptr,0,1);
     thunk_FUN_0056a500();
     (*this_00->vtable->CreateObject)
-              ((SystemClassTy *)this_00,0x14b,(undefined4 *)0x0,(int *)0x0,0,1);
+              ((SystemClassTy *)this_00,0x12e,nullptr,nullptr,0,1);
+    thunk_FUN_0056a500();
+    (*this_00->vtable->CreateObject)
+              ((SystemClassTy *)this_00,0x14b,nullptr,nullptr,0,1);
     thunk_FUN_0056a500();
     this_00->vfunc_10(0x201,0);
     thunk_FUN_0056a500();
-    if (g_helpPanel_00801690 != (HelpPanelTy *)0x0) {
+    if (g_helpPanel_00801690 != nullptr) {
       HelpPanelTy::sub_0051DA70(g_helpPanel_00801690);
     }
     thunk_FUN_0056a500();
-    if ((DAT_0080877e == '\0') && (g_popUp_008016D8 != (PopUpTy *)0x0)) {
+    if ((DAT_0080877e == '\0') && (g_popUp_008016D8 != nullptr)) {
       uVar9 = 8;
       text = LoadResourceString(0x4275,g_module_00807618);
       thunk_FUN_0052d320(g_popUp_008016D8,text,uVar9);

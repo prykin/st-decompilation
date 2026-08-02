@@ -177,7 +177,7 @@ cf_common_exit_00601B38:
            (((g_worldGrid.sizeY <= sVar9 || (sVar13 < 0)) || (g_worldGrid.sizeZ <= sVar13)))))) ||
          (pSVar8 = g_worldGrid.cells
                    [(int)g_worldGrid.planeStride * (int)sVar13 + (int)g_worldGrid.sizeX * (int)sVar9
-                    + (int)sVar5].objects[0], pSVar8 == (STWorldObject *)0x0)) {
+                    + (int)sVar5].objects[0], pSVar8 == nullptr)) {
         local_c = 1;
         this = local_10;
         goto cf_common_exit_00601B38;
@@ -296,7 +296,7 @@ LAB_006018c7:
             ((pSVar8 = g_worldGrid.cells
                        [(int)sVar5 * (int)g_worldGrid.sizeX +
                         (int)sVar9 * (int)g_worldGrid.planeStride + (int)(short)local_8].objects[0],
-             pSVar8 != (STWorldObject *)0x0 && (param_9 != *(int *)&pSVar8->field_0x18)))) &&
+             pSVar8 != nullptr && (param_9 != *(int *)&pSVar8->field_0x18)))) &&
            (iVar3 = (*pSVar8->vtable[4].slots_00_28[7])
                               (param_1,param_2,param_3,param_4,param_5,param_6), iVar7 = local_1c,
            0 < iVar3)))) &&

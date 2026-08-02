@@ -12,7 +12,7 @@ MoneyTy * __cdecl CreateMoney(void)
   MoneyTy *this;
 
   this = (MoneyTy *)FUN_006b04d0(0xa6);
-  if (this != (MoneyTy *)0x0) {
+  if (this != nullptr) {
     sub_006E5FB0(this);
     *(undefined **)this = &UNK_0079ace4;
     this->field_0048 = 0x24;
@@ -25,13 +25,13 @@ MoneyTy * __cdecl CreateMoney(void)
     this->field_0060 = 0x1e;
     this->field_0064 = 0xc;
     this->field_0068 = 0;
-    this->field_007E = (ushort *)0x0;
-    this->field_007A = (ushort *)0x0;
-    this->field_0076 = (ushort *)0x0;
-    this->field_0072 = (ushort *)0x0;
-    this->field_0082 = (ushort *)0x0;
-    this->field_006E = (ccFntTy *)0x0;
-    this->field_006A = (ccFntTy *)0x0;
+    this->field_007E = nullptr;
+    this->field_007A = nullptr;
+    this->field_0076 = nullptr;
+    this->field_0072 = nullptr;
+    this->field_0082 = nullptr;
+    this->field_006E = nullptr;
+    this->field_006A = nullptr;
     this->field_009E = 0;
     this->field_00A3 = 0;
     this->field_009A = 0;
@@ -43,6 +43,6 @@ MoneyTy * __cdecl CreateMoney(void)
     this->field_00A2 = 1;
     return this;
   }
-  return (MoneyTy *)0x0;
+  return nullptr;
 }
 

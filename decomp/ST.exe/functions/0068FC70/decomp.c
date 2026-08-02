@@ -19,7 +19,7 @@ int __thiscall FUN_0068fc70(void *this,int aiMess,short param_2)
     bVar3 = *(int *)(iVar1 + 0xc) != 0;
     do {
       if ((((bVar3) && (iVar1 = *(int *)(iVar1 + 8) * uVar2 + *(int *)(iVar1 + 0x1c), iVar1 != 0))
-          && (this_00 = *(AiFltClassTy **)(iVar1 + 4), this_00 != (AiFltClassTy *)0x0)) &&
+          && (this_00 = *(AiFltClassTy **)(iVar1 + 4), this_00 != nullptr)) &&
          ((uint)(ushort)this_00->field_007D == (int)param_2)) {
         AiFltClassTy::GetAiMess(this_00,(uint *)aiMess);
       }

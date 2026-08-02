@@ -86,12 +86,12 @@ int __thiscall BldBoatPanelTy::GetMessage(BldBoatPanelTy *this,STMessage *messag
       iVar4 = (&this_00->field_027A)[(byte)this_00->field_0278];
       if ((iVar4 == 0) ||
          (iVar6 = SVar1 + this_00->field_0199, *(uint *)(iVar4 + 0xc) <= iVar6 - 0xc09fU)) {
-        puVar5 = (undefined4 *)0x0;
+        puVar5 = nullptr;
       }
       else {
         puVar5 = (undefined4 *)((iVar6 + -0xc09f) * *(int *)(iVar4 + 8) + *(int *)(iVar4 + 0x1c));
       }
-      if ((puVar5 != (undefined4 *)0x0) && (*(char *)(puVar5 + 2) != '\0')) {
+      if ((puVar5 != nullptr) && (*(char *)(puVar5 + 2) != '\0')) {
         sStack_f = 0;
         uStack_d = 0;
         /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */

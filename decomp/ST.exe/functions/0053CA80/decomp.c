@@ -59,7 +59,7 @@ int __thiscall ResearchPanelTy::GetMessage(ResearchPanelTy *this,STMessage *mess
       if (SVar1 == MESS_SHARED_0003) {
         puVar6 = &this_00->field_027A;
         do {
-          if ((DArrayTy *)*puVar6 != (DArrayTy *)0x0) {
+          if ((DArrayTy *)*puVar6 != nullptr) {
             DArrayDestroy((DArrayTy *)*puVar6);
             *puVar6 = 0;
           }
@@ -70,7 +70,7 @@ int __thiscall ResearchPanelTy::GetMessage(ResearchPanelTy *this,STMessage *mess
           StartSystemTy::sub_006E56B0(this_00->field_000C,this_00->field_0282);
         }
         this_00->field_0282 = 0;
-        g_prodPanel_008016E8 = (ProdPanelTy *)0x0;
+        g_prodPanel_008016E8 = nullptr;
         g_currentExceptionFrame = local_58.previous;
         return 0;
       }
@@ -88,12 +88,12 @@ int __thiscall ResearchPanelTy::GetMessage(ResearchPanelTy *this,STMessage *mess
       iVar3 = (&this_00->field_027A)[(byte)this_00->field_0278];
       if ((iVar3 == 0) ||
          (iVar4 = SVar1 + this_00->field_0199, *(uint *)(iVar3 + 0xc) <= iVar4 - 0xc09fU)) {
-        puVar5 = (undefined1 *)0x0;
+        puVar5 = nullptr;
       }
       else {
         puVar5 = (undefined1 *)((iVar4 + -0xc09f) * *(int *)(iVar3 + 8) + *(int *)(iVar3 + 0x1c));
       }
-      if ((puVar5 != (undefined1 *)0x0) && (puVar5[8] != '\0')) {
+      if ((puVar5 != nullptr) && (puVar5[8] != '\0')) {
         uStack_d = 0;
         local_c = 0;
         local_a = 0;

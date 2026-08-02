@@ -50,7 +50,7 @@ undefined4 __thiscall FUN_004e96c0(void *this,int *param_1)
     }
   }
   if (*(int *)((int)this + 0x4f0) != 0) {
-    if (DAT_00811798 == (void *)0x0) {
+    if (DAT_00811798 == nullptr) {
       if (*(uint *)((int)this + 0x24) == (uint)*(byte *)(*(int *)((int)this + 0x10) + 0x112d)) {
         local_EAX_378 = LookupRecordByte(*(char *)((int)this + 0x23d));
         uVar3 = local_EAX_378 & 0xff;

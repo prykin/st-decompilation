@@ -45,7 +45,7 @@ SubmarineTitans::Recovered::HiddenThis::AnonReceiver_0064A970::FUN_00672440
   }
   Library::MSVCRT::_strncpy(&local_1c->field_0x4,&DAT_008016a0,0x7f);
   *(undefined4 *)&pAVar1->field_0x84 = 0xffffffff;
-  if (param_3 != (short *)0x0) {
+  if (param_3 != nullptr) {
     psVar5 = param_3;
     for (iVar2 = 0x40; iVar2 != 0; iVar2 = iVar2 + -1) {
       psVar5[0] = 0;
@@ -61,13 +61,13 @@ SubmarineTitans::Recovered::HiddenThis::AnonReceiver_0064A970::FUN_00672440
         return local_18;
       }
       pcVar3 = thunk_FUN_0064a910(param_1,local_8);
-      if (pcVar3 != (char *)0x0) break;
+      if (pcVar3 != nullptr) break;
       *(undefined4 *)&pAVar1->field_0x84 = 0xffffffff;
       RaiseInternalException(-4,g_overwriteContext_007ED77C,".\\ai\\ai_erc.h",0x79);
     }
     switch(*pcVar3) {
     case '\b':
-      if (param_3 != (short *)0x0) {
+      if (param_3 != nullptr) {
         if (0x31 < *param_3) {
           *(undefined4 *)&pAVar1->field_0x84 = 0xffffffff;
           RaiseInternalException(-0x66,g_overwriteContext_007ED77C,".\\ai\\ai_erc.h",0x79);
@@ -81,7 +81,7 @@ SubmarineTitans::Recovered::HiddenThis::AnonReceiver_0064A970::FUN_00672440
       local_8 = local_8 + 1;
       break;
     case '\t':
-      if (param_3 != (short *)0x0) {
+      if (param_3 != nullptr) {
         if (0x31 < *param_3) {
           *(undefined4 *)&pAVar1->field_0x84 = 0xffffffff;
           RaiseInternalException(-0x66,g_overwriteContext_007ED77C,".\\ai\\ai_erc.h",0x79);
@@ -95,7 +95,7 @@ SubmarineTitans::Recovered::HiddenThis::AnonReceiver_0064A970::FUN_00672440
       local_8 = local_8 + 1;
       break;
     case '\n':
-      if (param_3 != (short *)0x0) {
+      if (param_3 != nullptr) {
         if (0x31 < *param_3) {
           *(undefined4 *)&pAVar1->field_0x84 = 0xffffffff;
           RaiseInternalException(-0x66,g_overwriteContext_007ED77C,".\\ai\\ai_erc.h",0x79);
@@ -118,13 +118,13 @@ SubmarineTitans::Recovered::HiddenThis::AnonReceiver_0064A970::FUN_00672440
       break;
     default:
       local_c = thunk_FUN_00671f10((int)pcVar3,&local_14,&local_20);
-      if (local_c == (float *)0x0) {
+      if (local_c == nullptr) {
         *(undefined4 *)&pAVar1->field_0x84 = 0xffffffff;
 LAB_0067276f:
         RaiseInternalException(local_14,g_overwriteContext_007ED77C,".\\ai\\ai_erc.h",0x79);
       }
       else if (local_14 == 1) {
-        if (param_3 != (short *)0x0) {
+        if (param_3 != nullptr) {
           if (0x31 < *param_3) {
             *(undefined4 *)&pAVar1->field_0x84 = 0xffffffff;
             RaiseInternalException(-0x66,g_overwriteContext_007ED77C,".\\ai\\ai_erc.h",0x79);
@@ -136,7 +136,7 @@ LAB_0067276f:
         }
       }
       else if (local_14 == 2) {
-        if (param_3 != (short *)0x0) {
+        if (param_3 != nullptr) {
           if (0x31 < *param_3) {
             *(undefined4 *)&pAVar1->field_0x84 = 0xffffffff;
             RaiseInternalException(-0x66,g_overwriteContext_007ED77C,".\\ai\\ai_erc.h",0x79);
@@ -152,7 +152,7 @@ LAB_0067276f:
           *(undefined4 *)&pAVar1->field_0x84 = 0xffffffff;
           goto LAB_0067276f;
         }
-        if (param_3 != (short *)0x0) {
+        if (param_3 != nullptr) {
           if (0x31 < *param_3) {
             *(undefined4 *)&pAVar1->field_0x84 = 0xffffffff;
             RaiseInternalException(-0x66,g_overwriteContext_007ED77C,".\\ai\\ai_erc.h",0x79);
@@ -163,7 +163,7 @@ LAB_0067276f:
           param_3[1] = param_3[1] + 1;
         }
       }
-      if (local_c != (float *)0x0) {
+      if (local_c != nullptr) {
         FreeAndNull(&local_c);
       }
       local_8 = local_8 + local_20;

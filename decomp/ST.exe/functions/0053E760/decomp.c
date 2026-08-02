@@ -42,7 +42,7 @@ void __thiscall SpecPanelTy::SwitchPanel(SpecPanelTy *this,int param_1)
       local_8->field_002C = 0;
       local_8->field_002E = 2;
       local_8->field_0030 = local_8->field_0178;
-      if (g_cursorClass_00802A30 != (CursorClassTy *)0x0) {
+      if (g_cursorClass_00802A30 != nullptr) {
         /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
         (**(code **)g_cursorClass_00802A30->field_0000)(&local_8->field_0x18);
       }
@@ -58,7 +58,7 @@ void __thiscall SpecPanelTy::SwitchPanel(SpecPanelTy *this,int param_1)
       }
       local_8->field_0172 = 3;
       thunk_FUN_005252c0(CASE_AF);
-      if (g_cPanel_00801688 == (CPanelTy *)0x0) {
+      if (g_cPanel_00801688 == nullptr) {
         g_currentExceptionFrame = local_4c.previous;
         return;
       }

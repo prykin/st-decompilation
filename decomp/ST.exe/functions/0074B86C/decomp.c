@@ -10,7 +10,7 @@ uint FUN_0074b86c(int *param_1)
   LVar1 = InterlockedDecrement((LONG *)lpAddend);
   if (LVar1 == 0) {
     *lpAddend = *lpAddend + 1;
-    if (param_1 != (int *)0x0) {
+    if (param_1 != nullptr) {
       /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
       (**(code **)(*param_1 + 0xc))(1);
     }

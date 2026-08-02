@@ -10,7 +10,7 @@ int __cdecl FUN_00552f50(int param_1)
   int local_c;
   void *local_8;
 
-  local_8 = (void *)0x0;
+  local_8 = nullptr;
   if (param_1 < 0) {
     return 0;
   }
@@ -38,7 +38,7 @@ int __cdecl FUN_00552f50(int param_1)
     return (int)local_8;
   }
   g_currentExceptionFrame = local_54.previous;
-  if (local_8 == (void *)0x0) {
+  if (local_8 == nullptr) {
     FreeAndNull(&local_8);
   }
   return (int)local_8;

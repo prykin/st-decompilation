@@ -37,7 +37,7 @@ undefined4 __thiscall FUN_004da390(void *this,uint param_1,byte *param_2,int par
   param_2[2] = 0xff;
   param_2[3] = 0xff;
   param_2[4] = 0xff;
-  local_8 = &DAT_008087e9;
+  local_8 = &g_bulkInitializedRecords_008087C7[0].field_0022;
   param_2[5] = 0xff;
   param_2[6] = 0xff;
   param_2[7] = 0xff;
@@ -64,7 +64,7 @@ undefined4 __thiscall FUN_004da390(void *this,uint param_1,byte *param_2,int par
       }
       else {
         /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
-        param_2 = (byte *)0x0;
+        param_2 = nullptr;
       }
       bVar2 = *pbVar8;
       if (((bVar2 != 0xff) && (bVar2 != param_1)) && (pbVar8[-1] != 0)) {
@@ -96,8 +96,8 @@ LAB_004da4d3:
             bVar14 = iVar7 < 0;
           }
           else {
-            bVar14 = (&DAT_008087ea)[(param_1 & 0xff) * 0x51] != (&DAT_008087ea)[(uint)bVar2 * 0x51]
-            ;
+            bVar14 = g_bulkInitializedRecords_008087C7[param_1 & 0xff].field_0023 !=
+                     g_bulkInitializedRecords_008087C7[bVar2].field_0023;
           }
           if ((bVar14) &&
              ((g_packedRecords_A62x8[param_1].field2383_0xa0e != 3 ||

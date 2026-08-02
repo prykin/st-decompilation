@@ -18,24 +18,24 @@ uint __thiscall CGenerate::sub_00695F70(CGenerate *this,uint param_1,int param_2
 
   pCVar1 = this->field_5853;
   /* ST_PSEUDO[dynamic_array_indexing]: expected DArrayAt<T>(array, index) (runtime elementSize cannot be a static C array) */
-  if (((pCVar1 == (CGenerate_field_5853DArray *)0x0) || (pCVar1->count <= param_1)) ||
+  if (((pCVar1 == nullptr) || (pCVar1->count <= param_1)) ||
      (piVar4 = (int *)((int)&pCVar1->data->field_0000 + pCVar1->elementSize * param_1),
-     piVar4 == (int *)0x0)) {
+     piVar4 == nullptr)) {
 LAB_00696007:
     uVar3 = 0xffffffff;
   }
   else {
     if (*(int *)((int)piVar4 + 0x15) == 0) {
-      pDVar2 = Library::DKW::TBL::DArrayCreate((DArrayTy *)0x0,10,6,10);
+      pDVar2 = Library::DKW::TBL::DArrayCreate(nullptr,10,6,10);
       *(DArrayTy **)((int)piVar4 + 0x15) = pDVar2;
-      if (pDVar2 == (DArrayTy *)0x0) goto LAB_00696007;
+      if (pDVar2 == nullptr) goto LAB_00696007;
     }
     local_c = 0;
     iStack_a = param_2;
     uVar3 = Library::DKW::TBL::DArrayAppend(*(DArrayTy **)((int)piVar4 + 0x15),&local_c);
     if (-1 < (int)uVar3) {
       *(uint *)((int)piVar4 + 0x11) = uVar3 + 1;
-      if (this->field_584F != (ushort *)0x0) {
+      if (this->field_584F != nullptr) {
         this->field_584F[this->field_582F * param_3 + param_2] = (ushort)param_1;
         return uVar3;
       }

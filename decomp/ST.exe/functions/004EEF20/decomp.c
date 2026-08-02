@@ -5,7 +5,7 @@ void __fastcall FUN_004eef20(AnonShape_004EEF20_59DE1DA2 *param_1)
   undefined4 *puVar1;
   int iVar2;
 
-  if ((uint *)param_1->field_028A != (uint *)0x0) {
+  if ((uint *)param_1->field_028A != nullptr) {
     ccFntTy::operator_delete((uint *)param_1->field_028A);
     param_1->field_028A = 0;
   }
@@ -16,14 +16,14 @@ void __fastcall FUN_004eef20(AnonShape_004EEF20_59DE1DA2 *param_1)
   puVar1 = (undefined4 *)&param_1->field_0x27a;
   iVar2 = 4;
   do {
-    if ((DArrayTy *)*puVar1 != (DArrayTy *)0x0) {
+    if ((DArrayTy *)*puVar1 != nullptr) {
       DArrayDestroy((DArrayTy *)*puVar1);
       *puVar1 = 0;
     }
     puVar1 = puVar1 + 1;
     iVar2 = iVar2 + -1;
   } while (iVar2 != 0);
-  g_prodPanel_0080167C = (ProdPanelTy *)0x0;
+  g_prodPanel_0080167C = nullptr;
   return;
 }
 

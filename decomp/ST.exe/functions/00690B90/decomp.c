@@ -41,10 +41,10 @@ int __thiscall AiTactClassTy::GetMessage(AiTactClassTy *this,STMessage *message)
     SVar1 = message->id;
     if (SVar1 < MESS_TORPHIT) {
       if (SVar1 == MESS_SHARED_010F) {
-        local_c = (AnonShape_0060EA30_DCEB68AD *)0x0;
+        local_c = nullptr;
         local_10 = PrepareToSave(local_14,(uint *)&local_c);
         STPlaySystemC::SaveObjData(g_playSystem_00802A38,this_00->field_0018,local_10,local_c);
-        if (local_10 != (byte *)0x0) {
+        if (local_10 != nullptr) {
           FreeAndNull(&local_10);
         }
       }
@@ -61,7 +61,7 @@ int __thiscall AiTactClassTy::GetMessage(AiTactClassTy *this,STMessage *message)
       }
       else if (SVar1 == MESS_ID_CREATE) {
         puVar7 = (message->arg0).ptr;
-        if (puVar7 == (undefined4 *)0x0) {
+        if (puVar7 == nullptr) {
           RaiseInternalException
                     (-6,g_overwriteContext_007ED77C,"E:\\__titans\\ai\\ai_tact.cpp",0x45e);
         }
@@ -89,15 +89,15 @@ int __thiscall AiTactClassTy::GetMessage(AiTactClassTy *this,STMessage *message)
             element_00a5 = DArrayAt<AiTactClassTy_field_00A5Element>(pAVar4, uVar6);
           }
           else {
-            element_00a5 = (AiTactClassTy_field_00A5Element *)0x0;
+            element_00a5 = nullptr;
           }
           local_8 = 0;
-          if ((((AnonShape_005EFAE0_B406B78B *)element_00a5->field_0000 == (AnonShape_005EFAE0_B406B78B *)0x0) ||
+          if ((((AnonShape_005EFAE0_B406B78B *)element_00a5->field_0000 == nullptr) ||
               (iVar3 = STPlaySystemC::sub_006E62D0
                                  (g_playSystem_00802A38,(AnonShape_005EFAE0_B406B78B *)element_00a5->field_0000,
                                   &local_8), iVar3 != 0)) || (local_8 == 0)) {
             element_00a5->field_0004 = 0;
-            element_00a5->field_0000 = (AiTactClassTy_field_00A5Element *)0x0;
+            element_00a5->field_0000 = nullptr;
           }
           else {
             element_00a5->field_0004 = local_8;

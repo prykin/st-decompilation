@@ -11,11 +11,11 @@ FUN_006e6460(void *this,undefined4 param_1,int param_2,undefined2 param_3,undefi
   undefined4 *puVar1;
 
   if (param_2 < 1) {
-    return (undefined4 *)0x0;
+    return nullptr;
   }
   puVar1 = Library::DKW::LIB::FUN_006aac10(0x1c);
-  if (puVar1 == (undefined4 *)0x0) {
-    return (undefined4 *)0x0;
+  if (puVar1 == nullptr) {
+    return nullptr;
   }
   puVar1[6] = param_1;
   *(byte *)(puVar1 + 3) = param_5;

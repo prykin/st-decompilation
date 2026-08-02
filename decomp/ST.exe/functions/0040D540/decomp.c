@@ -116,13 +116,13 @@ LAB_0040dc04:
                     pAVar4 = param_1->field_0029;
                     if ((*(uint *)&pAVar4->field_0xc <= local_34) ||
                        (psVar10 = (short *)(*(int *)&pAVar4->field_0x8 * local_34 +
-                                           pAVar4->field_001C), psVar10 == (short *)0x0)) break;
+                                           pAVar4->field_001C), psVar10 == nullptr)) break;
                     /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
                     if (((*psVar10 != -1) &&
                         ((((pAVar11 = (AnonShape_0040CE20_D3328A6B *)
                                       thunk_FUN_00423e70(param_1,CONCAT22((short)((uint)psVar10 >>
                                                                                  0x10),*psVar10)),
-                           pAVar11 != (AnonShape_0040CE20_D3328A6B *)0x0 && (pAVar11 != pAVar6)) &&
+                           pAVar11 != nullptr && (pAVar11 != pAVar6)) &&
                           (iVar8 = *(int *)&pAVar11->field_0x97, iVar8 != 0)) &&
                          (pAVar11->field_009F != 0)))) &&
                        ((((*(short *)(iVar8 + 8) == *psVar13 &&
@@ -269,7 +269,7 @@ LAB_0040dde1:
   *(int *)&pAVar6->field_0xab = local_40;
   puVar12 = Library::DKW::LIB::FUN_006aac10(0x10);
   *(undefined4 **)&pAVar6->field_0x97 = puVar12;
-  if (puVar12 != (undefined4 *)0x0) {
+  if (puVar12 != nullptr) {
     *(undefined4 *)&pAVar6->field_0x9b = 2;
     *(undefined2 *)(puVar12 + 2) = (undefined2)local_28;
     *(undefined2 *)(*(int *)&pAVar6->field_0x97 + 10) = (undefined2)local_2c;

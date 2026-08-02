@@ -42,7 +42,7 @@ cf_break_loop_004B1816:
                        (g_worldGrid.cells
                         [(int)sVar2 * (int)g_worldGrid.planeStride +
                          (int)sVar6 * (int)g_worldGrid.sizeX + (int)sVar7].objects[0] !=
-                        (STWorldObject *)0x0)))))) || ((sVar7 < 0 || (g_worldGrid.sizeX <= sVar7))))
+                        nullptr)))))) || ((sVar7 < 0 || (g_worldGrid.sizeX <= sVar7))))
                    || ((sVar6 < 0 ||
                        (((g_worldGrid.sizeY <= sVar6 || (sVar2 < 0)) ||
                         ((g_worldGrid.sizeZ <= sVar2 ||
@@ -61,7 +61,7 @@ cf_break_loop_004B1816:
       } while (iVar8 < param_1 + 1);
     }
   }
-  local_8 = (undefined *)0x0;
+  local_8 = nullptr;
   /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
   if (param_4 == 0xdd) {
     local_8 = &DAT_007907ac;
@@ -91,7 +91,7 @@ cf_break_loop_004B1816:
                    && (g_worldGrid.cells
                        [(int)sVar4 * (int)g_worldGrid.sizeX +
                         (int)g_worldGrid.planeStride * (int)sVar2 + (int)sVar6].objects[0] !=
-                       (STWorldObject *)0x0)) ||
+                       nullptr)) ||
                   ((((-1 < sVar6 && (sVar6 < g_worldGrid.sizeX)) &&
                     ((-1 < sVar4 &&
                      (((sVar4 < g_worldGrid.sizeY && (-1 < sVar2)) && (sVar2 < g_worldGrid.sizeZ))))
@@ -147,7 +147,7 @@ LAB_004b1a39:
                 if ((((sVar7 < 0) || (sVar2 <= sVar7)) || (sVar6 = (short)iVar5, sVar6 < 0)) ||
                    (((g_worldGrid.sizeY <= sVar6 || (sVar4 = (short)iVar3, sVar4 < 0)) ||
                     (g_worldGrid.sizeZ <= sVar4)))) {
-                  local_10 = (STFishC *)0x0;
+                  local_10 = nullptr;
                 }
                 else {
                   local_10 = (STFishC *)
@@ -156,7 +156,7 @@ LAB_004b1a39:
                               (int)sVar7].objects[1];
                   sVar2 = g_worldGrid.sizeX;
                 }
-                if ((local_10 != (STFishC *)0x0) && (*(int *)&local_10->field_0x20 != 0xbe)) {
+                if ((local_10 != nullptr) && (*(int *)&local_10->field_0x20 != 0xbe)) {
                   bVar1 = false;
                   goto LAB_004b1b6e;
                 }
@@ -169,11 +169,11 @@ LAB_004b1a39:
         iVar8 = iVar8 + 1;
       } while (iVar8 < param_1 + 3);
     }
-    if (g_array_007FA150 != (DArrayTy *)0x0) {
+    if (g_array_007FA150 != nullptr) {
       g_array_007FA150->iteratorIndex = 0;
       iVar8 = DArrayGetNext(g_array_007FA150,(byte *)&local_10);
       while (-1 < iVar8) {
-        if (local_10 != (STFishC *)0x0) {
+        if (local_10 != nullptr) {
           STFishC::sub_004162B0
                     (local_10,(short *)((int)&param_4 + 2),(undefined2 *)((int)&param_5 + 2),
                      (undefined2 *)((int)&local_8 + 2));

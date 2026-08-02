@@ -31,10 +31,10 @@ byte * __thiscall VisibleClassTy::PrepareToSave(VisibleClassTy *this,uint *param
   undefined4 *local_c;
   AnonShape_005582A0_F54946B9 *local_8;
 
-  local_8 = (AnonShape_005582A0_F54946B9 *)0x0;
-  local_c = (undefined4 *)0x0;
+  local_8 = nullptr;
+  local_c = nullptr;
   local_10 = 0;
-  local_14 = (undefined4 *)0x0;
+  local_14 = nullptr;
   local_18 = 0;
   local_68.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_68;
@@ -43,13 +43,13 @@ byte * __thiscall VisibleClassTy::PrepareToSave(VisibleClassTy *this,uint *param
   pVVar2 = local_24;
   if (iVar3 != 0) {
     g_currentExceptionFrame = local_68.previous;
-    if (local_c != (undefined4 *)0x0) {
+    if (local_c != nullptr) {
       FreeAndNull(&local_c);
     }
-    if (local_14 != (undefined4 *)0x0) {
+    if (local_14 != nullptr) {
       FreeAndNull(&local_14);
     }
-    if (local_8 != (AnonShape_005582A0_F54946B9 *)0x0) {
+    if (local_8 != nullptr) {
       FreeAndNull(&local_8);
     }
     iVar5 = ReportDebugMessage("E:\\__titans\\grig\\visible.cpp",0x105,0,iVar3,"%s",
@@ -58,7 +58,7 @@ byte * __thiscall VisibleClassTy::PrepareToSave(VisibleClassTy *this,uint *param
       STDebugBreak(); /* noreturn in standalone pseudocode */
     }
     RaiseInternalException(iVar3,0,"E:\\__titans\\grig\\visible.cpp",0x106);
-    return (byte *)0x0;
+    return nullptr;
   }
   if (local_24->field_0114 != 0) {
     local_c = (undefined4 *)FUN_006b0020(&local_24->field_00F4->flags,(int *)&local_10);
@@ -96,7 +96,7 @@ LAB_0055832e:
     puVar4 = (byte *)(&local_8[1].field_0030);
     local_20 = (undefined4 *)0x4;
     do {
-      if ((undefined4 *)*local_1c != (undefined4 *)0x0) {
+      if ((undefined4 *)*local_1c != nullptr) {
         uVar7 = pVVar2->field_0028 * pVVar2->field_002C;
         puVar9 = (byte *)*local_1c;
         puVar10 = (byte *)(puVar4);
@@ -106,9 +106,9 @@ LAB_0055832e:
       }
       local_1c = local_1c + 1;
       local_20 = (undefined4 *)((int)local_20 + -1);
-    } while (local_20 != (undefined4 *)0x0);
-    local_20 = (undefined4 *)0x0;
-    if (local_c != (undefined4 *)0x0) {
+    } while (local_20 != nullptr);
+    local_20 = nullptr;
+    if (local_c != nullptr) {
       puVar9 = (byte *)(local_c);
       puVar10 = (byte *)(puVar4);
       memmove(puVar10, puVar9, local_10); /* compiler REP MOVS byte copy */
@@ -117,7 +117,7 @@ LAB_0055832e:
       FreeAndNull(&local_c);
       puVar4 = (byte *)(local_20);
     }
-    if (local_14 != (undefined4 *)0x0) {
+    if (local_14 != nullptr) {
       puVar9 = (byte *)(local_14);
       memmove(puVar4, puVar9, local_18); /* compiler REP MOVS byte copy */
       FreeAndNull(&local_14);

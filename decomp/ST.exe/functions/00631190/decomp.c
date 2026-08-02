@@ -16,12 +16,12 @@ STManRuinC::FUN_00631190
     element_0038 = DArrayAt<STManRuinC_field_0038Element>(pSVar1, param_1);
   }
   else {
-    element_0038 = (STManRuinC_field_0038Element *)0x0;
+    element_0038 = nullptr;
   }
   sub_00630BB0(this,param_2,param_3,param_4,param_6,param_5,param_7);
   puVar2 = sub_00630C50(this,param_6,param_5,0,1,param_7);
   element_0038->field_0010 = puVar2;
-  if (puVar2 != (ushort *)0x0) {
+  if (puVar2 != nullptr) {
     return 1;
   }
   return 0;

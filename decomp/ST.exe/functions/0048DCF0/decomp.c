@@ -34,7 +34,7 @@ bool __fastcall FUN_0048dcf0(STBoatC *param_1)
              (((g_worldGrid.sizeY <= sVar2 || (sVar1 < 0)) || (g_worldGrid.sizeZ <= sVar1)))))) ||
            (g_worldGrid.cells
             [(int)g_worldGrid.planeStride * (int)sVar1 + (int)g_worldGrid.sizeX * (int)sVar2 +
-             (int)sVar3].objects[0] == (STWorldObject *)0x0)) {
+             (int)sVar3].objects[0] == nullptr)) {
           iVar4 = FUN_006aadd0((int)param_1->field_0047,(int)param_1->field_0049,
                                (int)param_1->field_004B,param_1->field_04DD + local_8,
                                param_1->field_04DF + iVar5,param_1->field_04E1 + 1);
@@ -56,7 +56,7 @@ bool __fastcall FUN_0048dcf0(STBoatC *param_1)
       ((sVar2 < g_worldGrid.sizeZ &&
        (g_worldGrid.cells
         [(int)g_worldGrid.planeStride * (int)sVar2 + (int)g_worldGrid.sizeX * (int)sVar3 +
-         (int)sVar1].objects[0] != (STWorldObject *)0x0)))))) {
+         (int)sVar1].objects[0] != nullptr)))))) {
     return false;
   }
   return true;

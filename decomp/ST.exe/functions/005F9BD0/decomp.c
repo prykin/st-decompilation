@@ -16,7 +16,7 @@ void FUN_005f9bd0(short param_1,short param_2,int param_3,int param_4,int *param
         ((sVar1 < g_worldGrid.sizeZ &&
          (g_worldGrid.cells
           [(int)sVar1 * (int)g_worldGrid.planeStride + (int)sVar2 * (int)param_2 + (int)param_1].
-          objects[0] != (STWorldObject *)0x0)))))) {
+          objects[0] != nullptr)))))) {
       if (local_8 == 0) {
         *param_5 = param_4;
       }

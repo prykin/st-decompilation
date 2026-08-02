@@ -18,7 +18,7 @@ int __thiscall FUN_006028a0(void *this,int param_1,int param_2,int param_3)
     if (iVar2 == 0) {
       return 0;
     }
-    if (g_visibleClass_00802A88 == (VisibleClassTy *)0x0) {
+    if (g_visibleClass_00802A88 == nullptr) {
       return iVar2;
     }
     if (DAT_0080874d == -1) {
@@ -49,7 +49,7 @@ int __thiscall FUN_006028a0(void *this,int param_1,int param_2,int param_3)
     if (pVVar1->field_0034 <= iVar3) {
       return iVar2;
     }
-    if (pVVar1->field_004C == (byte *)0x0) {
+    if (pVVar1->field_004C == nullptr) {
       return iVar2;
     }
     if (pVVar1->field_004C[param_2 + iVar3 * pVVar1->field_0030] != 0) {

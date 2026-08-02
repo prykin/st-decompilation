@@ -62,7 +62,7 @@ LAB_0052b416:
     this->field_0DCD = 1;
     if (this->field_0DD6 != this->field_0DCE) {
 cf_common_exit_0052B581:
-      if (this->field_0DB3 == (void *)0x0) {
+      if (this->field_0DB3 == nullptr) {
         return false;
       }
       FUN_006e6540((int)this->field_0DB3,this->field_0DD6,this->field_0DDA,-1);
@@ -71,10 +71,10 @@ cf_common_exit_0052B581:
   }
   else if (!bVar1) goto cf_common_exit_0052B581;
   this->field_0DC7 = 2;
-  if (this->field_0DB3 != (int *)0x0) {
+  if (this->field_0DB3 != nullptr) {
     FUN_006e6580(g_sT3DSMAPContext_00807598,this->field_0DB3);
   }
-  this->field_0DB3 = (void *)0x0;
+  this->field_0DB3 = nullptr;
   this->field_0DC8 = 0;
   /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
   FUN_006e65c0(g_sT3DSMAPContext_00807598,this->field_0DBF[(byte)this->field_0DCC],

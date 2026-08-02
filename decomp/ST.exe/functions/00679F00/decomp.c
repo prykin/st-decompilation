@@ -17,10 +17,10 @@ FUN_00679f00(void *this,uint param_1,AnonShape_0068FD00_A5257008 *param_2,int pa
       puVar1 = (undefined4 *)(*(int *)(iVar2 + 8) * param_1 + *(int *)(iVar2 + 0x1c));
     }
     else {
-      puVar1 = (undefined4 *)0x0;
+      puVar1 = nullptr;
     }
-    if (((puVar1[1] != 0) && (this_00 = (AiTactClassTy *)*puVar1, this_00 != (AiTactClassTy *)0x0))
-       && (param_2 != (AnonShape_0068FD00_A5257008 *)0x0)) {
+    if (((puVar1[1] != 0) && (this_00 = (AiTactClassTy *)*puVar1, this_00 != nullptr))
+       && (param_2 != nullptr)) {
       if (param_3 < 0) {
         iVar2 = AiTactClassTy::GetAiMess(this_00,param_2);
         return iVar2;

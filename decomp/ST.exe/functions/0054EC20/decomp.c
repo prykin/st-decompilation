@@ -42,25 +42,24 @@ void __thiscall PlaySystemTy::SendClientMail(PlaySystemTy *this,int param_1)
     pcVar6[1] = '\0';
     pcVar6[2] = '\0';
     pcVar6[3] = '\0';
-    if (local_c != (AnonPointee_PlaySystemTy_0039 *)0x0) {
+    if (local_c != nullptr) {
       do {
         puVar1 = &local_c->field_0013;
         puVar2 = &local_c->field_000F;
         local_c = (AnonPointee_PlaySystemTy_0039 *)local_c->field_0000;
         local_8 = local_8 + 0x1b + *puVar1 + *puVar2;
-      } while (local_c != (AnonPointee_PlaySystemTy_0039 *)0x0);
-      local_c = (AnonPointee_PlaySystemTy_0039 *)0x0;
+      } while (local_c != nullptr);
+      local_c = nullptr;
     }
     uVar4 = local_8;
     if (local_10->field_0053 < local_8) {
-      pcVar6 = Library::DKW::LIB::MemRealloc
-                         ((AnonPointee_TLOBaseTy_0607 *)local_10->field_004F,local_8);
+      pcVar6 = Library::DKW::LIB::MemRealloc(local_10->field_004F,local_8);
       pPVar10->field_004F = pcVar6;
       pPVar10->field_0053 = uVar4;
     }
     local_c = pPVar10->field_0039;
     pcVar6 = pPVar10->field_004F + 4;
-    if (local_c != (AnonPointee_PlaySystemTy_0039 *)0x0) {
+    if (local_c != nullptr) {
       do {
         local_8 = local_c->field_0013 + 0x1b + local_c->field_000F;
         pAVar9 = local_c;
@@ -78,12 +77,12 @@ void __thiscall PlaySystemTy::SendClientMail(PlaySystemTy *this,int param_1)
         pcVar6 = pcVar6 + local_8;
         *(int *)local_10->field_004F = *(int *)local_10->field_004F + 1;
         local_c = (AnonPointee_PlaySystemTy_0039 *)local_c->field_0000;
-      } while (local_c != (AnonPointee_PlaySystemTy_0039 *)0x0);
-      local_c = (AnonPointee_PlaySystemTy_0039 *)0x0;
+      } while (local_c != nullptr);
+      local_c = nullptr;
       pPVar10 = local_10;
     }
     local_14 = uVar4;
-    if (pPVar10->field_0039 != (AnonPointee_PlaySystemTy_0039 *)0x0) {
+    if (pPVar10->field_0039 != nullptr) {
       FUN_006b9890((int *)&pPVar10->field_0039);
     }
     if ((*(int *)pPVar10->field_004F != 0) && (DAT_0080c512 == 0)) {

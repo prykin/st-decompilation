@@ -14,7 +14,7 @@ void __cdecl FUN_00668670(int param_1)
     puVar1 = (undefined4 *)(param_1 + 0x1eb);
     iVar2 = 7;
     do {
-      if ((DArrayTy *)*puVar1 != (DArrayTy *)0x0) {
+      if ((DArrayTy *)*puVar1 != nullptr) {
         DArrayDestroy((DArrayTy *)*puVar1);
         *puVar1 = 0;
       }

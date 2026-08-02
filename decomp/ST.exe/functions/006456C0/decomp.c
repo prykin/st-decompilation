@@ -34,7 +34,7 @@ void __thiscall STTorpC::RestoreTorpData(STTorpC *this,int param_1)
     *(undefined4 *)&local_c->field_0x239 = local_8->field_0060;
     local_c->field_023D = local_8->field_0064;
     pDVar4 = (DArrayTy *)
-             FUN_006b0060((uint *)0x0,(uint *)(&local_8->field_0x0 + local_8->field_0068));
+             FUN_006b0060(nullptr,(uint *)(&local_8->field_0x0 + local_8->field_0068));
     pSVar2->field_0241 = pDVar4;
     g_currentExceptionFrame = local_50.previous;
     return;

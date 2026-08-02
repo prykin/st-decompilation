@@ -50,7 +50,7 @@ HoloTy::CalcHologram
     iVar2 = ReportDebugMessage("E:\\__titans\\Start\\hologram.cpp",99,0,iVar2,"%s",
                                "HoloTy::CalcHologram");
     if (iVar2 == 0) {
-      return (undefined4 *)0x0;
+      return nullptr;
     }
     STDebugBreak(); /* noreturn in standalone pseudocode */
   }
@@ -59,13 +59,13 @@ HoloTy::CalcHologram
   *param_1 = uVar3;
   uVar7 = uVar3 + 1 >> 1;
   if (uVar7 < uVar6) {
-    return (undefined4 *)0x0;
+    return nullptr;
   }
   local_34 = uVar7;
   local_2c = uVar6;
   local_1c = Library::DKW::LIB::FUN_006aac10(uVar6 * uVar3 * 4);
   local_c = local_1c;
-  if ((local_1c != (undefined4 *)0x0) && (local_14 = 0, uVar7 != 0)) {
+  if ((local_1c != nullptr) && (local_14 = 0, uVar7 != 0)) {
     local_30 = (uint)param_6;
     local_20 = 0;
     local_10 = 0;

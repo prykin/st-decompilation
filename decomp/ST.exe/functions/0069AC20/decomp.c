@@ -12,7 +12,7 @@ int FUN_0069ac20(int param_1,int param_2,int param_3,DArrayTy *param_4)
 
   iVar2 = 0xff;
   local_8 = 0xff;
-  if (param_4 != (DArrayTy *)0x0) {
+  if (param_4 != nullptr) {
     dVar1 = param_4->count;
     uVar4 = 0;
     if (0 < (int)dVar1) {
@@ -22,7 +22,7 @@ int FUN_0069ac20(int param_1,int param_2,int param_3,DArrayTy *param_4)
           psVar3 = (short *)(param_4->elementSize * uVar4 + (int)param_4->data);
         }
         else {
-          psVar3 = (short *)0x0;
+          psVar3 = nullptr;
         }
         iVar2 = FUN_006acf90((int)*psVar3,(int)psVar3[1],param_1,param_2);
         if (iVar2 < param_3) break;

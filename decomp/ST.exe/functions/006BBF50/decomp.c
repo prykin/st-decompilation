@@ -8,10 +8,10 @@ void FUN_006bbf50(int *param_1,undefined4 param_2)
     /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
     iVar1 = (*(code *)**(undefined4 **)param_1[0xd])
                       ((undefined4 *)param_1[0xd],&DAT_0079fc78,&param_1);
-    if ((iVar1 == 0) && (param_1 != (int *)0x0)) {
+    if ((iVar1 == 0) && (param_1 != nullptr)) {
       /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
       (**(code **)(*param_1 + 0x10))(param_1,1,param_2);
-      if (param_1 != (int *)0x0) {
+      if (param_1 != nullptr) {
         /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
         (**(code **)(*param_1 + 8))(param_1);
       }

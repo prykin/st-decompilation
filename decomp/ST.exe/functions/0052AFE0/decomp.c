@@ -50,7 +50,7 @@ void __thiscall CPanelTy::sub_0052AFE0(CPanelTy *this,byte param_1,float param_2
     iVar5 = (int)(short)lVar9;
   }
   this->field_023B = iVar5;
-  if (this->field_0DB3 == (void *)0x0) {
+  if (this->field_0DB3 == nullptr) {
     iVar5 = 0;
     piVar7 = local_30;
     local_c = (float)(int)*DAT_00806750 * _DAT_007904f8;

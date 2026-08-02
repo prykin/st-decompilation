@@ -46,9 +46,9 @@ void __thiscall HelpPanelTy::NextBut(HelpPanelTy *this)
       piVar5 = (int *)(pAVar1->field_0008 * uVar7 + pAVar1->field_001C);
     }
     else {
-      piVar5 = (int *)0x0;
+      piVar5 = nullptr;
     }
-    if (piVar5 == (int *)0x0) {
+    if (piVar5 == nullptr) {
       g_currentExceptionFrame = local_4c.previous;
       return;
     }
@@ -136,7 +136,7 @@ void __thiscall HelpPanelTy::NextBut(HelpPanelTy *this)
       piVar5 = (int *)(pAVar1->field_0008 * uVar7 + pAVar1->field_001C);
     }
     else {
-      piVar5 = (int *)0x0;
+      piVar5 = nullptr;
     }
     if ((char)piVar5[2] != '\0') {
       g_currentExceptionFrame = local_4c.previous;

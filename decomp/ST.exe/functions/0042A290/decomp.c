@@ -54,16 +54,16 @@ short * __cdecl LoadLand(cMf32 *param_1,char *text)
              Library::Ourlib::MFSTMAP::mfTMapLoad
                        ((int)param_1,text,g_cMf32_00806760,g_cMf32_00806760,thunk_FUN_00428a10);
     local_1c = pAVar4;
-    if (g_cLoading_00802A58 != (cLoadingTy *)0x0) {
+    if (g_cLoading_00802A58 != nullptr) {
       iVar3 = DAT_007f4e00;
       pcVar5 = LoadResourceString(0x2685,g_module_00807618);
       wsprintfA(local_f4,pcVar5,iVar3);
       cLoadingTy::SetState(g_cLoading_00802A58,CASE_2,0,local_f4);
-      if (g_cLoading_00802A58 != (cLoadingTy *)0x0) {
+      if (g_cLoading_00802A58 != nullptr) {
         iVar3 = DAT_007f4e00 / 2;
         pcVar5 = LoadResourceString(0x268c,g_module_00807618);
         cLoadingTy::SetProcess(g_cLoading_00802A58,0,pcVar5,iVar3);
-        cLoadingTy::SetState(g_cLoading_00802A58,CASE_0,0,(char *)0x0);
+        cLoadingTy::SetState(g_cLoading_00802A58,CASE_0,0,nullptr);
       }
     }
     puVar11 = &pAVar4->field_0xe;
@@ -81,14 +81,14 @@ short * __cdecl LoadLand(cMf32 *param_1,char *text)
     pAVar4->field_0x40a = 0xff;
     pAVar4->field_0x40b = 0xff;
     pAVar7 = (AnonShape_006DBCA0_EF06575F *)FUN_006b04d0(0x4f2);
-    if (pAVar7 == (AnonShape_006DBCA0_EF06575F *)0x0) {
-      local_10 = (ST3DSMAPContext *)0x0;
+    if (pAVar7 == nullptr) {
+      local_10 = nullptr;
     }
     else {
       local_10 = (ST3DSMAPContext *)FUN_006dbca0(pAVar7);
     }
     this = local_10;
-    if (local_10 == (ST3DSMAPContext *)0x0) {
+    if (local_10 == nullptr) {
       RaiseInternalException(-2,g_overwriteContext_007ED77C,"E:\\__titans\\tload.cpp",0x48e);
     }
     Library::MSVCRT::FUN_0072e150(0xc0000000,0x403ccccc);
@@ -96,19 +96,19 @@ short * __cdecl LoadLand(cMf32 *param_1,char *text)
     iVar3 = (int)lVar16;
     local_30 = iVar3;
     ST3DSMAPContext::sub_006DC050
-              (this,0,0,0,iVar3,iVar3,-10.0,10.0,-10.0,10.0,0x4024000000000000,0x4023ee97865e3540,0);
-    *(undefined4 *)&this->field_0x128 = 0;
+              (this,0,0,0,iVar3,iVar3,-10.0,10.0,-10.0,10.0,10.0,9.965999793052674,0);
+    this->field_0128 = 0;
     ST3DSMAPContext::sub_006DD790(this,140.204);
     ST3DSMAPContext::sub_006DD800(this,219.932);
-    *(undefined4 *)&this->field_0x124 = 5;
-    ST3DSMAPContext::sub_006DD610(this,4,0,0x40240000,0,0x40240000);
-    local_c = Library::DKW::TBL::DArrayCreate((DArrayTy *)0x0,100,8,100);
+    this->field_0124 = 5;
+    ST3DSMAPContext::sub_006DD610(this,4,10.0,10.0);
+    local_c = Library::DKW::TBL::DArrayCreate(nullptr,100,8,100);
     local_18 = 0;
     if (0 < pAVar4->field_0455) {
       local_14 = pAVar4 + 1;
       do {
         puVar1 = *(undefined4 **)local_14;
-        if (puVar1 != (undefined4 *)0x0) {
+        if (puVar1 != nullptr) {
           local_8 = local_c->count;
           local_c->iteratorIndex = 0;
           do {
@@ -119,30 +119,30 @@ short * __cdecl LoadLand(cMf32 *param_1,char *text)
               local_c->iteratorIndex = uVar12 + 1;
             }
             else {
-              piVar8 = (int *)0x0;
+              piVar8 = nullptr;
             }
-          } while ((piVar8 != (int *)0x0) && (puVar1[10] != *piVar8));
-          if (piVar8 == (int *)0x0) {
+          } while ((piVar8 != nullptr) && (puVar1[10] != *piVar8));
+          if (piVar8 == nullptr) {
             local_8 = (uint)*(short *)(puVar1 + 1);
             local_28 = (int)*(short *)((int)puVar1 + 6);
             *(undefined2 *)(puVar1 + 1) = 0;
             *(undefined2 *)((int)puVar1 + 6) = 0;
             local_2c = (int)*(short *)(puVar1 + 2);
             *(ushort *)(puVar1 + 2) = (ushort)*(byte *)(puVar1 + 0x12);
-            *puVar1 = *(undefined4 *)&this->field_0x140;
-            *(undefined4 **)&this->field_0x140 = puVar1;
-            *(int *)&this->field_0x13c = *(int *)&this->field_0x13c + 1;
+            *puVar1 = this->field_0140;
+            this->field_0140 = puVar1;
+            this->field_013C = this->field_013C + 1;
             ST3DSMAPContext::sub_006DDBE0(this);
             ST3DSMAPContext::sub_006DDD50(this);
             uVar14 = iVar3 * iVar3;
-            *(undefined4 *)&this->field_0x140 = 0;
-            *(undefined4 *)&this->field_0x13c = 0;
+            this->field_0140 = nullptr;
+            this->field_013C = 0;
             *(undefined2 *)((int)puVar1 + 6) = (undefined2)local_28;
             *(undefined2 *)(puVar1 + 1) = (undefined2)local_8;
             local_24 = puVar1[10];
             *(undefined2 *)(puVar1 + 2) = (undefined2)local_2c;
             local_20 = Library::DKW::LIB::MemAlloc(uVar14);
-            puVar13 = (byte *)(*(undefined4 **)&this->field_0xc);
+            puVar13 = (byte *)this->field_000C;
             puVar15 = (byte *)(local_20);
             memmove(puVar15, puVar13, uVar14); /* compiler REP MOVS byte copy */
             puVar1[0x10] = local_20;
@@ -159,15 +159,15 @@ short * __cdecl LoadLand(cMf32 *param_1,char *text)
         pAVar4 = local_1c;
       } while (local_18 < local_1c->field_0455);
     }
-    if (this != (ST3DSMAPContext *)0x0) {
+    if (this != nullptr) {
       ST3DSMAPContext::sub_006DBCF0(this);
       Library::MSVCRT::FUN_0072e2b0((HoloTy *)this);
     }
     DArrayDestroy(local_c);
     thunk_FUN_00428e50((short *)pAVar4);
     LandInit(pAVar4);
-    if (g_cLoading_00802A58 != (cLoadingTy *)0x0) {
-      cLoadingTy::SetState(g_cLoading_00802A58,CASE_2,0,(char *)0x0);
+    if (g_cLoading_00802A58 != nullptr) {
+      cLoadingTy::SetState(g_cLoading_00802A58,CASE_2,0,nullptr);
     }
     g_currentExceptionFrame = local_74.previous;
     return (short *)pAVar4;
@@ -177,7 +177,7 @@ short * __cdecl LoadLand(cMf32 *param_1,char *text)
                              "LoadLand");
   if (iVar9 == 0) {
     RaiseInternalException(iVar3,0,"E:\\__titans\\tload.cpp",0x503);
-    return (short *)0x0;
+    return nullptr;
   }
   STDebugBreak(); /* noreturn in standalone pseudocode */
 }

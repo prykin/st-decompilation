@@ -38,20 +38,20 @@ undefined4 * __thiscall STT3DSprC::SaveSpr(STT3DSprC *this,uint *param_1)
     iVar3 = ReportDebugMessage("E:\\__titans\\wlad\\Tspr3d.cpp",0x3da,0,iVar3,"%s",
                                "STT3DSprC::SaveSpr");
     if (iVar3 == 0) {
-      return (undefined4 *)0x0;
+      return nullptr;
     }
     STDebugBreak(); /* noreturn in standalone pseudocode */
   }
   iVar3 = 0;
   *param_1 = (local_18->field_0014 + 1) * 0x24;
   if (0 < local_18->field_0014) {
-    local_c = (char *)0x0;
+    local_c = nullptr;
     do {
       iVar4 = sub_004ACD30(this_00,(char)iVar3);
       uVar9 = *param_1 + iVar4 * 4;
       *param_1 = uVar9;
       pcVar10 = *(char **)(&this_00->field_0020->field_0x8 + (int)local_c);
-      if (pcVar10 == (char *)0x0) {
+      if (pcVar10 == nullptr) {
         *param_1 = uVar9 + 1;
       }
       else {
@@ -130,7 +130,7 @@ undefined4 * __thiscall STT3DSprC::SaveSpr(STT3DSprC *this,uint *param_1)
     local_10 = 0;
     do {
       local_1c = *(char **)(&this_00->field_0020->field_0x8 + local_10);
-      if (local_1c == (char *)0x0) {
+      if (local_1c == nullptr) {
         uVar9 = 1;
       }
       else {

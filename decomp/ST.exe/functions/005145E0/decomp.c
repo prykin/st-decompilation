@@ -32,9 +32,9 @@ void __thiscall HelpPanelTy::FwdBut(HelpPanelTy *this)
         puVar6 = (undefined1 *)(pDVar1->elementSize * uVar5 + (int)pDVar1->data);
       }
       else {
-        puVar6 = (undefined1 *)0x0;
+        puVar6 = nullptr;
       }
-      if (puVar6 != (undefined1 *)0x0) {
+      if (puVar6 != nullptr) {
         local_8->field_01A1 = 0;
         local_8->field_01A7 = 0;
         local_8->field_01A3 = 0;

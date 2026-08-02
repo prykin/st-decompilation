@@ -15,7 +15,7 @@ void __thiscall sub_004167A0(void *this)
   puStack_10 = &LAB_0072d964;
   local_14 = ExceptionList;
   local_8 = 0;
-  if (*(void **)((int)this + 0x97) != (void *)0x0) {
+  if (*(void **)((int)this + 0x97) != nullptr) {
     ExceptionList = &local_14;
     FreeAndNull((void **)((int)this + 0x97));
     *(undefined4 *)((int)this + 0x9b) = 0;

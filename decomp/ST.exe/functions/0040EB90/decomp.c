@@ -63,7 +63,7 @@ undefined4 FUN_0040eb90(void)
       local_74 = local_74 + 2 + *piVar3 * 4;
       piVar3 = piVar3 + 5;
       local_80 = (undefined4 *)((int)local_80 + -1);
-    } while (local_80 != (undefined4 *)0x0);
+    } while (local_80 != nullptr);
   }
   iVar2 = (int)puVar11 / 2;
   iVar7 = (iVar2 + iVar7) / (int)puVar11;

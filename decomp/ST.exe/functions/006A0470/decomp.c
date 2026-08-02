@@ -61,7 +61,7 @@ void __thiscall CGenerate::sub_006A0470(CGenerate *this)
                                                     (uint)(local_14 >> 4) * 0xf + -0xe +
                                                     (uint)(local_14 & 0xf),(iVar6 - uVar8) + 1,uVar8
                                                    );
-                if (pcVar5 != (char *)0x0) {
+                if (pcVar5 != nullptr) {
                   uVar11 = this->field_5707;
                   iVar9 = this->field_5703;
                   pvVar10 = this->field_56FF;
@@ -73,7 +73,7 @@ LAB_006a05f8:
                 uVar8 = uVar1 >> 8 & 0xf;
                 pcVar5 = (char *)thunk_FUN_00692570(&this->field_0x1c03,(uVar1 & 0xff) - 1,
                                                     (iVar6 - uVar8) + 1,uVar8);
-                if (pcVar5 != (char *)0x0) {
+                if (pcVar5 != nullptr) {
                   iVar9 = this->field_5703;
                   uVar11 = this->field_5707;
                   pvVar10 = this->field_56FF;

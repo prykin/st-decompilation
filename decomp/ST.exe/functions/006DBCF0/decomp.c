@@ -14,8 +14,8 @@ void __thiscall ST3DSMAPContext::sub_006DBCF0(ST3DSMAPContext *this)
   ST3DSMAPContext *this_00;
 
   sub_006DBAB0(this);
-  this_00 = *(ST3DSMAPContext **)&this->field_0x358;
-  if (this_00 != (ST3DSMAPContext *)0x0) {
+  this_00 = (ST3DSMAPContext *)this->field_0358;
+  if (this_00 != nullptr) {
     sub_006DBCF0(this_00);
     Library::MSVCRT::FUN_0072e2b0((HoloTy *)this_00);
   }

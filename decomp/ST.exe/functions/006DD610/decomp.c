@@ -14,21 +14,22 @@
    [STMethodOwnerApplier] Structural method owner recovered as ST3DSMAPContext.
    Evidence: this_call_owners=[ST3DSMAPContext]; agreed_this_calls=1; incoming_this_accesses=4;
    incoming_edx_uses=0; incoming_stack_parameter_uses=8; direct_non_thunk_callers=10;
-   incoming_ecx_receiver_callers=2; attributed_named_callers=1; owner_evidence_coverage=adequate */
+   incoming_ecx_receiver_callers=2; attributed_named_callers=1; owner_evidence_coverage=adequate
+   [STAbiConsistencyApplier] x87_double_parameter_slots target=function:-1: prototype=void
+   __thiscall sub_006DD610(ST3DSMAPContext * this, uint param_2, double param_3, double param_4)
+   Evidence: x87 double-width accesses or exact split stores into an owner field independently typed
+   or consumed as double prove physical EBP slot boundaries; merged_slots={1=2, 3=2}; sites=006DD64A
+   forwards adjacent incoming dwords to Library::Ourlib::STREND::FUN_006dd050 parameter stack slot
+   +0x4 typed /double | 006DD64A forwards adjacent incoming dwords to
+   Library::Ourlib::STREND::FUN_006dd050 parameter stack slot +0xc typed /double */
 
 void __thiscall
-ST3DSMAPContext::sub_006DD610
-          (ST3DSMAPContext *this,uint param_1,uint param_2,undefined4 param_3,uint param_4,
-          undefined4 param_5)
+ST3DSMAPContext::sub_006DD610(ST3DSMAPContext *this,uint param_2,double param_3,double param_4)
 
 {
-  *(uint *)&this->field_0x88 = param_2;
-  *(undefined4 *)&this->field_0x8c = param_3;
-  *(uint *)&this->field_0x90 = param_4;
-  *(undefined4 *)&this->field_0x94 = param_5;
-  /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-  Library::Ourlib::STREND::FUN_006dd050
-            (this,param_1,(double)CONCAT44(param_3,param_2),(double)CONCAT44(param_5,param_4));
+  this->field_0088 = param_3;
+  this->field_0090 = param_4;
+  Library::Ourlib::STREND::FUN_006dd050(this,param_2,param_3,param_4);
   return;
 }
 

@@ -58,7 +58,7 @@ FUN_00484020(void *this,short param_1,short *param_2,short *param_3,short *param
   }
   else {
     local_8 = -1;
-    local_c = (undefined *)0x0;
+    local_c = nullptr;
   }
   sVar3 = *(short *)((int)this + 0x800);
   sVar4 = *(short *)((int)this + 0x802);
@@ -69,13 +69,13 @@ FUN_00484020(void *this,short param_1,short *param_2,short *param_3,short *param
         ((g_worldGrid.sizeY <= sVar4 || (sVar1 < 0)))) || (g_worldGrid.sizeZ <= sVar1)) ||
       (local_10 = g_worldGrid.cells
                   [(int)sVar1 * (int)g_worldGrid.planeStride + (int)sVar4 * (int)g_worldGrid.sizeX +
-                   (int)sVar3].objects[0], local_10 == (STWorldObject *)0x0)) &&
+                   (int)sVar3].objects[0], local_10 == nullptr)) &&
      ((((sVar3 < 0 || (g_worldGrid.sizeX <= sVar3)) ||
        ((sVar4 < 0 ||
         (((g_worldGrid.sizeY <= sVar4 || (sVar1 < 0)) || (g_worldGrid.sizeZ <= sVar1)))))) ||
       (local_10 = g_worldGrid.cells
                   [(int)sVar1 * (int)g_worldGrid.planeStride + (int)sVar4 * (int)g_worldGrid.sizeX +
-                   (int)sVar3].objects[1], local_10 == (STWorldObject *)0x0)))) {
+                   (int)sVar3].objects[1], local_10 == nullptr)))) {
     return 0;
   }
   thunk_FUN_00416270(local_10,(undefined2 *)&local_14,&local_18,(int *)&param_1);
@@ -105,7 +105,7 @@ FUN_00484020(void *this,short param_1,short *param_2,short *param_3,short *param
                     (((g_worldGrid.sizeY <= sVar1 || (sVar2 < 0)) || (g_worldGrid.sizeZ <= sVar2))))
                    )) || (g_worldGrid.cells
                           [(int)sVar2 * (int)g_worldGrid.planeStride + sVar1 * local_28 + (int)sVar4
-                          ].objects[0] == (STWorldObject *)0x0)))) {
+                          ].objects[0] == nullptr)))) {
                 /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
                 iVar9 = CONCAT22(sVar3 >> 0xf,sVar4) * 0xc9 + 100;
                 /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */

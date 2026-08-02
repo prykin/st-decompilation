@@ -21,11 +21,11 @@ FUN_00631c20(void *this,int param_1,int param_2,byte param_3,undefined4 param_4,
         iVar5 = *(int *)((int)this + 0x6d);
         if (((((uVar7 < *(uint *)(iVar5 + 0xc)) &&
               (puVar6 = (uint *)(*(int *)(iVar5 + 8) * uVar7 + *(int *)(iVar5 + 0x1c)),
-              puVar6 != (uint *)0x0)) &&
+              puVar6 != nullptr)) &&
              (iVar5 = FUN_006aced8(param_1,param_2,puVar6[3],puVar6[4]), iVar5 < (int)puVar6[6])) &&
             (*puVar6 < 8)) &&
-           ((g_playSystem_00802A38 == (STPlaySystemC *)0x0 ||
-            ((byte)(&DAT_008087e9)[*puVar6 * 0x51] < 8)))) {
+           ((g_playSystem_00802A38 == nullptr ||
+            (g_bulkInitializedRecords_008087C7[*puVar6].field_0022 < 8)))) {
           bVar1 = (byte)*puVar6;
           if (DAT_00808a8f == '\0') {
             /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
@@ -53,7 +53,8 @@ LAB_00631d60:
             bVar8 = iVar5 < 0;
           }
           else {
-            bVar8 = (&DAT_008087ea)[(uint)bVar1 * 0x51] != (&DAT_008087ea)[(uint)param_3 * 0x51];
+            bVar8 = g_bulkInitializedRecords_008087C7[bVar1].field_0023 !=
+                    g_bulkInitializedRecords_008087C7[param_3].field_0023;
           }
           if (bVar8) {
             *(undefined4 *)((int)puVar6 + 0x25) = param_5;

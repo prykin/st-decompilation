@@ -62,7 +62,7 @@ void FUN_00705180(byte *param_1,int param_2,byte *param_3,int param_4,int param_
     param_3 = (byte *)(uint)*pbVar8;
     pbVar8 = pbVar8 + 1;
     iVar6 = param_5;
-    if (param_3 != (byte *)0x0) {
+    if (param_3 != nullptr) {
       while( true ) {
         while (((uint)param_3 & 0x80) == 0) {
           uVar3 = (uint)param_3 & 0x7f;

@@ -15,7 +15,7 @@ DibPut(AnonShape_006B5B10_E0D06CF1 *param_1,int param_2,int param_3,char param_4
   int iVar2;
   InternalExceptionFrame local_48;
 
-  if ((param_1 != (AnonShape_006B5B10_E0D06CF1 *)0x0) && (param_5 != (byte *)0x0)) {
+  if ((param_1 != nullptr) && (param_5 != nullptr)) {
     local_48.previous = g_currentExceptionFrame;
     g_currentExceptionFrame = &local_48;
     errorCode = Library::MSVCRT::__setjmp3(local_48.jumpBuffer,0);

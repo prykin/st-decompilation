@@ -23,8 +23,8 @@ byte * __thiscall AiBossClassTy::PrepareToSave(AiBossClassTy *this,uint *param_1
   byte *local_c;
   undefined4 *local_8;
 
-  local_c = (byte *)0x0;
-  local_8 = (undefined4 *)0x0;
+  local_c = nullptr;
+  local_8 = nullptr;
   local_58.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_58;
   local_14 = this;
@@ -32,25 +32,25 @@ byte * __thiscall AiBossClassTy::PrepareToSave(AiBossClassTy *this,uint *param_1
   pAVar2 = local_14;
   if (errorCode == 0) {
     local_8 = AiEventClassTy::PrepareToSave((AiEventClassTy *)&local_14->vtable_at_1c,&local_10);
-    if (pAVar2 == (AiBossClassTy *)0x0) {
-      puVar5 = (uint *)0x0;
+    if (pAVar2 == nullptr) {
+      puVar5 = nullptr;
     }
     else {
       puVar5 = (uint *)&pAVar2->field_0x5d3;
     }
     local_c = BossDataPack(puVar5,local_8,local_10,param_1);
     *local_c = 1;
-    if (local_8 != (undefined4 *)0x0) {
+    if (local_8 != nullptr) {
       FreeAndNull(&local_8);
     }
     g_currentExceptionFrame = local_58.previous;
     return local_c;
   }
   g_currentExceptionFrame = local_58.previous;
-  if (local_8 != (undefined4 *)0x0) {
+  if (local_8 != nullptr) {
     FreeAndNull(&local_8);
   }
-  if (local_c != (byte *)0x0) {
+  if (local_c != nullptr) {
     FreeAndNull(&local_c);
   }
   iVar3 = ReportDebugMessage("E:\\__titans\\ai\\ai_boss.cpp",0x4c,0,errorCode,"%s",
@@ -59,6 +59,6 @@ byte * __thiscall AiBossClassTy::PrepareToSave(AiBossClassTy *this,uint *param_1
     STDebugBreak(); /* noreturn in standalone pseudocode */
   }
   RaiseInternalException(errorCode,0,"E:\\__titans\\ai\\ai_boss.cpp",0x4d);
-  return (byte *)0x0;
+  return nullptr;
 }
 

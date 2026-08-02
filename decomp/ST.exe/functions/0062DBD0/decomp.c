@@ -24,11 +24,11 @@ uint __thiscall FUN_0062dbd0(void *this,int param_1,int param_2)
       iVar1 = *(int *)((int)this + param_1 * 4 + 0x50);
       if (((uVar4 < *(uint *)(iVar1 + 0xc)) &&
           (piVar2 = (int *)(*(int *)(iVar1 + 8) * uVar4 + *(int *)(iVar1 + 0x1c)),
-          piVar2 != (int *)0x0)) && (*piVar2 == param_2)) {
+          piVar2 != nullptr)) && (*piVar2 == param_2)) {
         piVar2 = piVar2 + 4;
         local_c = 3;
         do {
-          if ((int *)*piVar2 != (int *)0x0) {
+          if ((int *)*piVar2 != nullptr) {
             thunk_FUN_0062db10((int *)*piVar2);
             *piVar2 = 0;
           }

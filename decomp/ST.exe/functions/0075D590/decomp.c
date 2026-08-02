@@ -12,7 +12,7 @@ void FUN_0075d590(AnonShape_0075D590_939A8180 *param_1,undefined4 param_2,int pa
 
   puVar6 = (undefined4 *)*param_4;
   /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
-  param_4 = (undefined4 *)0x0;
+  param_4 = nullptr;
   if (0 < param_1->field_0126) {
     iVar4 = param_3 - (int)puVar6;
     do {

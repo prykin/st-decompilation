@@ -28,7 +28,7 @@ void __thiscall TraksClassTy::TraksExec(TraksClassTy *this)
   if (iVar4 == 0) {
     dVar1 = local_8->field_0024->count;
     if (dVar1 == 0) {
-      pRVar7 = (RecoveredRecord_TraksClassTy_00555910 *)0x0;
+      pRVar7 = nullptr;
     }
     else {
       pRVar7 = (RecoveredRecord_TraksClassTy_00555910 *)local_8->field_0024->data;
@@ -48,7 +48,7 @@ void __thiscall TraksClassTy::TraksExec(TraksClassTy *this)
               element_0024 = DArrayAt<TraksClassTy_field_0024Element>(pTVar2, uVar8);
             }
             else {
-              element_0024 = (TraksClassTy_field_0024Element *)0x0;
+              element_0024 = nullptr;
             }
             element_0024->spriteHandle = 0xffffffff;
             iVar4 = this_00->field_0828;

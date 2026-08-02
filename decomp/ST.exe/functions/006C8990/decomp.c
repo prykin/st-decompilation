@@ -29,7 +29,7 @@ float10 FUN_006c8990(byte *param_1,int *param_2,undefined4 *param_3)
   iVar11 = 0;
   local_14 = 0;
   local_c = param_1;
-  if (param_2 != (int *)0x0) {
+  if (param_2 != nullptr) {
     local_c = param_1 + *param_2;
   }
   bVar3 = false;
@@ -206,11 +206,11 @@ LAB_006c8c04:
     }
   }
 LAB_006c8bc4:
-  if (param_3 != (undefined4 *)0x0) {
+  if (param_3 != nullptr) {
     *param_3 = local_24;
   }
   if (bVar3) {
-    if (param_2 != (int *)0x0) {
+    if (param_2 != nullptr) {
       *param_2 = (int)local_c - (int)param_1;
     }
   }

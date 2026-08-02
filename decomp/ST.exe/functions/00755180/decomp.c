@@ -12,7 +12,7 @@ int FUN_00755180(AnonShape_00755180_CB9F7747 *param_1,LPCSTR param_2,undefined4 
   local_8 = 0;
   puVar1 = FUN_006b04d0(0x54);
   param_1->field_0008 = puVar1;
-  if (puVar1 == (undefined4 *)0x0) {
+  if (puVar1 == nullptr) {
     return -2;
   }
   local_4c.previous = g_currentExceptionFrame;

@@ -69,7 +69,7 @@ void __fastcall FUN_0058bb90(AnonShape_0058BB90_CF74AF20 *param_1)
   }
   local_3c = (short)((int)puVar5 / 200);
 LAB_0058bcd7:
-  if (g_visibleClass_00802A88 != (VisibleClassTy *)0x0) {
+  if (g_visibleClass_00802A88 != nullptr) {
     VisibleClassTy::VisHoleCreate
               (g_visibleClass_00802A88,local_8,iVar3,puVar5,param_1->field_0024,(undefined *)0x2,
                0x19);

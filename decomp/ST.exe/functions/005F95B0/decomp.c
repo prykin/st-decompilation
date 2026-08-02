@@ -212,7 +212,7 @@ undefined4 __fastcall FUN_005f95b0(AnonShape_005F95B0_F363C582 *param_1)
   local_40 = 0;
   local_44 = 0;
   local_14 = *(void **)(iVar7 + 0x58);
-  if (local_14 == (void *)0x0) {
+  if (local_14 == nullptr) {
     local_14 = Library::DKW::LIB::MemAlloc(200);
   }
   iVar7 = local_10;

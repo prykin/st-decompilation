@@ -36,7 +36,7 @@ VisibleClassTy::VisHoleCreate
     this_00 = local_c;
     if (iVar2 == 0) {
       array = local_c->field_00F4;
-      if (array != (VisibleClassTy_field_00F4DArray *)0x0) {
+      if (array != nullptr) {
         memset(local_28, 0, 0x1c); /* compiler bulk-zero initialization */
         local_28[1] = param_2;
         local_28[0] = param_1;

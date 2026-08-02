@@ -69,7 +69,7 @@ void __thiscall HelpPanelTy::TipProc(HelpPanelTy *this,void *param_1,int param_2
     *(undefined2 *)&local_10->field_0x2c = 0;
     local_10->field_002E = 2;
     *(undefined4 *)&local_10->field_0x30 = local_10->field_0178;
-    if (g_cursorClass_00802A30 != (CursorClassTy *)0x0) {
+    if (g_cursorClass_00802A30 != nullptr) {
       /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
       (**(code **)g_cursorClass_00802A30->field_0000)(&local_10->field_0x18);
     }
@@ -116,7 +116,7 @@ LAB_0051d689:
   }
   CheckBkView(this_00,uVar10,0x1e);
   iVar14 = 1;
-  piVar13 = (int *)0x0;
+  piVar13 = nullptr;
   uVar9 = (uint)(DAT_0080734d != '\0');
   iVar8 = 1;
   pCVar5 = thunk_FUN_00571240("BUT_HLPTDAY",0);

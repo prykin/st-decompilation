@@ -14,7 +14,7 @@ FrmPanelTy * __cdecl CreateFrmPanel(void)
   FrmPanelTy *this;
 
   this = (FrmPanelTy *)FUN_006b04d0(0x1e3);
-  if (this != (FrmPanelTy *)0x0) {
+  if (this != nullptr) {
     sub_006E5FB0(this);
     this->field_005C = 0;
     this->field_0060 = 0xffffffff;
@@ -41,6 +41,6 @@ FrmPanelTy * __cdecl CreateFrmPanel(void)
     this->field_01AF = 0;
     return this;
   }
-  return (FrmPanelTy *)0x0;
+  return nullptr;
 }
 

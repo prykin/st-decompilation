@@ -105,7 +105,7 @@ LAB_00483342:
                             ((STSprGameObjC *)param_1,sVar7,sVar1,(short)local_1c,sVar8,sVar9,
                              (short)local_8,
                              *(STSprGameObjC_CheckRay_param_7Enum *)((int)param_1 + 0x79a),
-                             (int *)0x0,0);
+                             nullptr,0);
         }
         else {
           /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
@@ -113,7 +113,7 @@ LAB_00483342:
                             ((STSprGameObjC *)param_1,sVar7,sVar1,(short)local_1c,sVar8,sVar9,
                              (short)local_8,
                              *(STSprGameObjC_CheckRay_param_7Enum *)((int)param_1 + 0x79a),
-                             (int *)0x0,1);
+                             nullptr,1);
         }
         if (iVar2 == 0) {
           return 8;

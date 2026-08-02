@@ -8,7 +8,7 @@ ViewerClassTy * __cdecl CreateViewer(void)
   ViewerClassTy *pVVar1;
 
   pVVar1 = (ViewerClassTy *)FUN_006b04d0(0x1f8);
-  if (pVVar1 != (ViewerClassTy *)0x0) {
+  if (pVVar1 != nullptr) {
     FUN_0072b700((undefined4 *)pVVar1);
     pVVar1->field_0000 = &VTable_0079E298;
     *(undefined4 *)&pVVar1->field_0x1f0 = 0;
@@ -18,6 +18,6 @@ ViewerClassTy * __cdecl CreateViewer(void)
     pVVar1->field_01C4 = 0;
     return pVVar1;
   }
-  return (ViewerClassTy *)0x0;
+  return nullptr;
 }
 

@@ -12,10 +12,8 @@ void __thiscall ST3DSMAPContext::sub_006DDB70(ST3DSMAPContext *this)
   if (0 < this->field_0174) {
     this->field_0144 = 1;
     this->field_02D8 = 1;
-    pvVar1 = Library::DKW::LIB::MemRealloc
-                       ((AnonPointee_TLOBaseTy_0607 *)this->field_001C,
-                        this->field_0028 * this->field_0174);
-    this->field_001C = (int)pvVar1;
+    pvVar1 = Library::DKW::LIB::MemRealloc(this->field_001C,this->field_0028 * this->field_0174);
+    this->field_001C = pvVar1;
   }
   return;
 }

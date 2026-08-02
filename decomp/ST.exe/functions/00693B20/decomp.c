@@ -17,7 +17,7 @@ FUN_00693b20(void *param_1,int param_2,undefined1 param_3,undefined4 param_4,und
 
   iVar3 = thunk_FUN_00693e60(param_1,param_2);
   if (iVar3 != 0) {
-    return (undefined4 *)0x0;
+    return nullptr;
   }
   uVar4 = thunk_FUN_006941c0(param_1);
   puVar1 = (undefined4 *)((int)param_1 + param_2 * 0x51 + 0x11);
@@ -33,7 +33,7 @@ FUN_00693b20(void *param_1,int param_2,undefined1 param_3,undefined4 param_4,und
   if (-1 < (int)uVar4) {
     *(char *)((int)param_1 + param_2 * 0x51 + 0x34) = (char)uVar4;
   }
-  if (param_8 != (char *)0x0) {
+  if (param_8 != nullptr) {
     uVar4 = 0xffffffff;
     do {
       pcVar7 = param_8;

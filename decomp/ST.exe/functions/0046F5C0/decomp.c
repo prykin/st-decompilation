@@ -84,7 +84,7 @@ int __thiscall STBoatC::ToDok(STBoatC *this,int param_1)
     pSVar16 = g_worldGrid.cells
               [(int)sVar19 * (int)g_worldGrid.planeStride + (int)sVar21 * (int)g_worldGrid.sizeX +
                (int)sVar14].objects[0];
-    if (pSVar16 == (STWorldObject *)0x0) {
+    if (pSVar16 == nullptr) {
       return 0;
     }
     iVar6 = pSVar16->GetObjectTypeId();
@@ -130,7 +130,7 @@ cf_common_exit_00470E32:
       sVar21 = this->field_0556;
       if ((((sVar14 < 0) || (g_worldGrid.sizeX <= sVar14)) || (sVar21 < 0)) ||
          (((g_worldGrid.sizeY <= sVar21 || (sVar19 < 0)) || (g_worldGrid.sizeZ <= sVar19)))) {
-        pSVar16 = (STWorldObject *)0x0;
+        pSVar16 = nullptr;
       }
       else {
         pSVar16 = g_worldGrid.cells
@@ -140,7 +140,7 @@ cf_common_exit_00470E32:
       iVar6 = sub_00490570(this);
       if (iVar6 != 1) {
 LAB_0046f794:
-        if (((pSVar16 != (STWorldObject *)0x0) &&
+        if (((pSVar16 != nullptr) &&
             (iVar6 = pSVar16->GetObjectTypeId(), iVar6 == 0x33)) &&
            (pSVar16[1].vtable == (STWorldObjectVTable *)this->field_0024)) {
           this->field_0580 = CASE_2;
@@ -157,7 +157,7 @@ LAB_0046f888:
       /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
       uVar5 = extraout_var_00;
       /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
-      if (((pSVar16 != (STWorldObject *)0x0) &&
+      if (((pSVar16 != nullptr) &&
           (iVar6 = pSVar16->GetObjectTypeId(), uVar5 = extraout_var_01,
           iVar6 == 0x33)) && (pSVar16[1].vtable == (STWorldObjectVTable *)this->field_0024)) {
         iVar6 = thunk_FUN_004e1eb0(pSVar16,(int)this->field_0041,(int)this->field_0043,
@@ -189,7 +189,7 @@ LAB_0046f888:
              ((pSVar16 = g_worldGrid.cells
                          [(int)sVar19 * (int)g_worldGrid.planeStride +
                           (int)sVar21 * (int)g_worldGrid.sizeX + (int)sVar14].objects[0],
-              pSVar16 != (STWorldObject *)0x0 &&
+              pSVar16 != nullptr &&
               (iVar6 = pSVar16->GetObjectTypeId(), iVar6 == 0x33)))))) &&
            (pSVar16[1].vtable == (STWorldObjectVTable *)this->field_0024))
         goto cf_common_exit_004707B7;
@@ -244,7 +244,7 @@ cf_error_exit_00470C46:
                        g_worldGrid.cells
                        [(int)sVar19 * (int)g_worldGrid.planeStride +
                         (int)sVar21 * (int)g_worldGrid.sizeX + (int)sVar14].objects[0],
-            pSVar17 != (STFishC *)0x0 &&
+            pSVar17 != nullptr &&
             (dVar7 = pSVar17->slot_2C(), dVar7 == 0x33)) &&
            (pSVar17->field_0024 == this->field_0024)))))) {
         iVar6 = thunk_FUN_004e1eb0(pSVar17,(int)this->field_0041,(int)this->field_0043,
@@ -289,7 +289,7 @@ LAB_0046fd3e:
               ((((pSVar16 = g_worldGrid.cells
                             [(int)sVar19 * (int)g_worldGrid.planeStride +
                              (int)sVar21 * (int)g_worldGrid.sizeX + (int)sVar14].objects[0],
-                 pSVar16 != (STWorldObject *)0x0 &&
+                 pSVar16 != nullptr &&
                  (iVar6 = pSVar16->GetObjectTypeId(), iVar6 == 0x33)) &&
                 (*(int *)&pSVar16[0x21].field_0x10 == 0)) &&
                ((*(int *)&pSVar16[0x10].field_0x5 != 6 &&
@@ -320,7 +320,7 @@ LAB_0046fd3e:
                             g_worldGrid.cells
                             [(int)sVar19 * (int)g_worldGrid.planeStride +
                              (int)sVar21 * (int)g_worldGrid.sizeX + (int)sVar14].objects[0],
-                 pSVar17 == (STFishC *)0x0 ||
+                 pSVar17 == nullptr ||
                  (dVar7 = pSVar17->slot_2C(), dVar7 != 0x33)) ||
                 (pSVar17->field_0024 != this->field_0024)))))))) goto LAB_004700a6;
           goto LAB_00470071;
@@ -340,7 +340,7 @@ LAB_0046fd3e:
                         g_worldGrid.cells
                         [(int)sVar19 * (int)g_worldGrid.planeStride +
                          (int)sVar21 * (int)g_worldGrid.sizeX + (int)sVar14].objects[0],
-             pSVar17 == (STFishC *)0x0 ||
+             pSVar17 == nullptr ||
              (dVar7 = pSVar17->slot_2C(), dVar7 != 0x33)) ||
             (pSVar17->field_0024 != this->field_0024)))) {
 LAB_004700a6:
@@ -504,7 +504,7 @@ LAB_004707ad:
            ((pSVar16 = g_worldGrid.cells
                        [(int)sVar19 * (int)g_worldGrid.planeStride +
                         (int)sVar21 * (int)g_worldGrid.sizeX + (int)sVar14].objects[0],
-            pSVar16 != (STWorldObject *)0x0 && (*(int *)&pSVar16->field_0x18 == this->field_055A))))
+            pSVar16 != nullptr && (*(int *)&pSVar16->field_0x18 == this->field_055A))))
           )))) {
         if (g_playSystem_00802A38->field_00E4 == this->field_0574 + this->field_0578) {
           this->vfunc_90(3,0x363);
@@ -541,7 +541,7 @@ LAB_004707ad:
         /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
         thunk_FUN_004e20d0(pSVar16,this->field_0568,this->field_0018,
                            *(int *)((int)this->field_06CB + 0x2c),this->field_0716);
-        iVar6 = thunk_FUN_004e2340(pSVar16,this->field_0568,this->field_0018,(undefined4 *)0x0);
+        iVar6 = thunk_FUN_004e2340(pSVar16,this->field_0568,this->field_0018,nullptr);
         this->field_0716 = iVar6;
         if (iVar6 != this->field_0712) goto cf_common_exit_00470E32;
       }
@@ -723,7 +723,7 @@ LAB_004707ad:
     }
     if (local_c != 0) goto cf_common_exit_00470E32;
     sVar14 = this->field_0554;
-    pSVar16 = (STWorldObject *)0x0;
+    pSVar16 = nullptr;
     sVar19 = this->field_0558;
     sVar21 = this->field_0556;
     if ((((sVar14 < 0) || (g_worldGrid.sizeX <= sVar14)) || (sVar21 < 0)) ||
@@ -732,7 +732,7 @@ LAB_004707ad:
          ((pSVar16 = g_worldGrid.cells
                      [(int)sVar19 * (int)g_worldGrid.planeStride +
                       (int)sVar21 * (int)g_worldGrid.sizeX + (int)sVar14].objects[0],
-          pSVar16 == (STWorldObject *)0x0 || (*(int *)&pSVar16->field_0x18 != this->field_055A))))))
+          pSVar16 == nullptr || (*(int *)&pSVar16->field_0x18 != this->field_055A))))))
        )) {
 cf_common_exit_00470B14:
       this->field_0580 = CASE_7;
@@ -744,13 +744,13 @@ cf_common_exit_00470B14:
     }
     else {
       if (*(int *)&pSVar16[0x1d].field_0x18 != 0) {
-        if (&this->field_0x55e != (undefined1 *)0x0) {
+        if (&this->field_0x55e != nullptr) {
           *(undefined4 *)&this->field_0x55e = *(undefined4 *)&pSVar16[0x1d].field_0x1c;
         }
-        if (&this->field_0x560 != (undefined1 *)0x0) {
+        if (&this->field_0x560 != nullptr) {
           *(int *)&this->field_0x560 = pSVar16[0x1d].value_20;
         }
-        if (&this->field_0x562 != (undefined1 *)0x0) {
+        if (&this->field_0x562 != nullptr) {
           *(STWorldObjectVTable **)&this->field_0x562 = pSVar16[0x1e].vtable;
         }
       }
@@ -797,7 +797,7 @@ cf_common_exit_00470B14:
                     g_worldGrid.cells
                     [(int)sVar19 * (int)g_worldGrid.planeStride +
                      (int)sVar21 * (int)g_worldGrid.sizeX + (int)sVar14].objects[0],
-         pSVar17 == (STFishC *)0x0 || (dVar7 = pSVar17->slot_2C(), dVar7 != 0x33))
+         pSVar17 == nullptr || (dVar7 = pSVar17->slot_2C(), dVar7 != 0x33))
         )) || (pSVar17->field_0024 != this->field_0024)) goto LAB_0046fd37;
     iVar6 = thunk_FUN_004e1eb0(pSVar17,(int)this->field_0041,(int)this->field_0043,
                                (int)this->field_0045);

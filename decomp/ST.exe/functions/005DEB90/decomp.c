@@ -62,7 +62,7 @@ undefined4 __fastcall FUN_005deb90(AnonShape_005DEB90_CA287120 *param_1)
       local_14 = (uint)(pvVar4 != (HANDLE)0xffffffff);
       uVar1 = local_14;
     }
-    Library::MSVCRT::FUN_0072e730(&DAT_0080ed16,local_36c,local_470,abStack_165 + 1,(byte *)0x0);
+    Library::MSVCRT::FUN_0072e730(&DAT_0080ed16,local_36c,local_470,abStack_165 + 1,nullptr);
     Library::MSVCRT::__makepath
               (local_268,(char *)local_36c,(char *)local_470,(char *)(abStack_165 + 1),
                PTR_DAT_0079c1c0);

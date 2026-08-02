@@ -59,7 +59,7 @@ STBoatC::GetDefenceTarget(STBoatC *this,STBoatC_GetDefenceTarget_param_1Enum par
   STGameObjC *local_8;
 
   local_34 = 0;
-  local_20 = (undefined4 *)0x0;
+  local_20 = nullptr;
   if ((this->field_079A == 0) || (0 < this->field_073A)) {
     this->field_0483 = 0;
     this->field_0487 = 0xffffffff;
@@ -78,7 +78,7 @@ LAB_0048a37f:
       local_8 = STAllPlayersC::GetObjPtr
                           (g_allPlayers_007FA174,*(char *)&this->field_0487,(ushort)this->field_048B
                            ,this->field_0483);
-      if ((((local_8 != (STGameObjC *)0x0) &&
+      if ((((local_8 != nullptr) &&
            (iVar11 = local_8->vfunc_F8(), iVar11 == 1)) &&
           (iVar11 = local_8->vfunc_F0(), iVar11 == 1)) &&
          ((iVar11 = (*local_8->vtable->vfunc_F4)(this->field_0024), iVar11 == 1 &&
@@ -98,7 +98,7 @@ LAB_0048a37f:
                thunk_FUN_0043f7b0(*(byte *)&this->field_0024,(int *)this,
                                   (uint *)(int)this->field_0475,(int)this->field_0477,2,(int *)0x6,6
                                   ,2,(uint)(this->field_0736 != 0));
-      if (pDVar4 != (DArrayTy *)0x0) {
+      if (pDVar4 != nullptr) {
         this_00 = thunk_FUN_0042b760(*(char *)&this->field_0024,this->field_0030);
         local_20 = thunk_FUN_0040c080(this_00,(uint)(ushort)this->field_0032,(uint *)pDVar4);
         local_18 = 0;
@@ -168,14 +168,14 @@ LAB_0048a37f:
                       if (this->field_0736 == 0) {
                         iVar7 = STSprGameObjC::CheckRay
                                           ((STSprGameObjC *)this,sVar14,sVar13,(short)local_28,
-                                           sVar15,sVar16,(short)local_c,this->field_079A,(int *)0x0,
+                                           sVar15,sVar16,(short)local_c,this->field_079A,nullptr,
                                            0);
                         iVar11 = local_38;
                       }
                       else {
                         iVar7 = STSprGameObjC::CheckRay
                                           ((STSprGameObjC *)this,sVar14,sVar13,(short)local_28,
-                                           sVar15,sVar16,(short)local_c,this->field_079A,(int *)0x0,
+                                           sVar15,sVar16,(short)local_c,this->field_079A,nullptr,
                                            1);
                         iVar11 = local_38;
                       }
@@ -192,7 +192,7 @@ LAB_0048a37f:
                 }
 LAB_00489dfc:
                 if (((local_8->field_0020 != 0x1ae) &&
-                    (pDVar10 = this->field_047B, pDVar10 != (DArrayTy *)0x0)) &&
+                    (pDVar10 = this->field_047B, pDVar10 != nullptr)) &&
                    (uVar5 = 0, 0 < (int)pDVar10->count)) {
                   do {
                     DArrayGetElement(pDVar10,uVar5,&local_70);
@@ -226,7 +226,7 @@ LAB_00489eb0:
           local_1c = 0;
         }
       }
-      if (local_20 != (undefined4 *)0x0) {
+      if (local_20 != nullptr) {
         FreeAndNull(&local_20);
         return local_1c;
       }
@@ -247,7 +247,7 @@ LAB_00489eb0:
                                     (uint *)(int)this->field_0475,(int)this->field_0477,2,(int *)0x6
                                     ,6,2,1);
       }
-      if (pDVar4 != (DArrayTy *)0x0) {
+      if (pDVar4 != nullptr) {
         local_18 = 0;
         if (0 < (int)pDVar4->count) {
           do {
@@ -295,13 +295,13 @@ LAB_00489eb0:
                     if (this->field_0736 == 0) {
                       iVar7 = STSprGameObjC::CheckRay
                                         ((STSprGameObjC *)this,sVar14,sVar13,(short)local_28,sVar15,
-                                         sVar16,(short)local_c,this->field_079A,(int *)0x0,0);
+                                         sVar16,(short)local_c,this->field_079A,nullptr,0);
                       iVar11 = local_38;
                     }
                     else {
                       iVar7 = STSprGameObjC::CheckRay
                                         ((STSprGameObjC *)this,sVar14,sVar13,(short)local_28,sVar15,
-                                         sVar16,(short)local_c,this->field_079A,(int *)0x0,1);
+                                         sVar16,(short)local_c,this->field_079A,nullptr,1);
                       iVar11 = local_38;
                     }
                     local_38 = iVar11;
@@ -332,7 +332,7 @@ LAB_0048a226:
                   if (local_8->field_0020 == 0x1ae) goto LAB_0048a226;
 LAB_0048a235:
                   pDVar10 = this->field_047B;
-                  if ((pDVar10 != (DArrayTy *)0x0) && (uVar5 = 0, 0 < (int)pDVar10->count)) {
+                  if ((pDVar10 != nullptr) && (uVar5 = 0, 0 < (int)pDVar10->count)) {
                     do {
                       DArrayGetElement(pDVar10,uVar5,&local_70);
                       if ((local_6c == local_8->field_0032) && (local_70 == local_8->field_0024)) {

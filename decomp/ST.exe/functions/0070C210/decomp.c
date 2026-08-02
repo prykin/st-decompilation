@@ -16,6 +16,6 @@ FUN_0070c210(byte *param_1,undefined2 *param_2,undefined2 *param_3,DWORD *param_
     return puVar2;
   }
   g_currentExceptionFrame = local_48.previous;
-  return (undefined4 *)0x0;
+  return nullptr;
 }
 

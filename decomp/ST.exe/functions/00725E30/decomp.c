@@ -10,7 +10,7 @@ void __cdecl FUN_00725e30(int *param_1)
     iVar2 = 0;
     if (0 < *(short *)(iVar1 + 0x23)) {
       do {
-        if (*(cMf32 **)(iVar1 + 0x25) == (cMf32 *)0x0) {
+        if (*(cMf32 **)(iVar1 + 0x25) == nullptr) {
           FreeAndNull((void **)(iVar1 + 0x2d + iVar2 * 4));
         }
         else {

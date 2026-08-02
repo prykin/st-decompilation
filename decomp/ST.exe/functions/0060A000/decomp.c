@@ -64,7 +64,7 @@ undefined4 __fastcall FUN_0060a000(AnonShape_0060A000_715F6478 *param_1)
               iVar1 = param_1->field_0234;
               if ((uVar3 < *(uint *)(iVar1 + 0xc)) &&
                  (puVar5 = (undefined4 *)(*(int *)(iVar1 + 8) * uVar3 + *(int *)(iVar1 + 0x1c)),
-                 puVar5 != (undefined4 *)0x0)) {
+                 puVar5 != nullptr)) {
                 puVar5[0xb] = (float)((float10)(int)local_c * fVar6);
                 fcos((float10)(int)local_c * fVar6);
                 lVar7 = Library::MSVCRT::__ftol();
@@ -114,7 +114,7 @@ undefined4 __fastcall FUN_0060a000(AnonShape_0060A000_715F6478 *param_1)
           /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
           if ((local_c < *(uint *)(iVar4 + 0xc)) &&
              (puVar5 = (undefined4 *)(*(int *)(iVar4 + 8) * local_c + *(int *)(iVar4 + 0x1c)),
-             puVar5 != (undefined4 *)0x0)) {
+             puVar5 != nullptr)) {
             puVar5[0xb] = (float)((float10)(int)local_c * fVar6);
             fcos((float10)(int)local_c * fVar6);
             lVar7 = Library::MSVCRT::__ftol();

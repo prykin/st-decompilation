@@ -4,7 +4,7 @@ void __thiscall sub_0041C5A0(void *this)
 {
   undefined4 uVar1;
 
-  if ((g_visibleClass_00802A88 != (VisibleClassTy *)0x0) &&
+  if ((g_visibleClass_00802A88 != nullptr) &&
      ((*(byte *)((int)this + 0x1d1) & 1) == 0)) {
     VisibleClassTy::sub_00559110
               (g_visibleClass_00802A88,(int)*(short *)((int)this + 0x5b),

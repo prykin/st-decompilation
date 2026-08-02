@@ -50,7 +50,7 @@ uint __thiscall STMineSetC::sub_006226C0(STMineSetC *this,uint param_1,int param
     pVVar2 = g_visibleClass_00802A88;
     SVar3 = param_1;
     /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
-    if ((param_1 == CASE_0) || (g_visibleClass_00802A88 == (VisibleClassTy *)0x0))
+    if ((param_1 == CASE_0) || (g_visibleClass_00802A88 == nullptr))
     goto cf_common_exit_006227F9;
     /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
     SVar3 = CONCAT31((int3)(param_1 >> 8),DAT_0080874d);
@@ -64,7 +64,7 @@ uint __thiscall STMineSetC::sub_006226C0(STMineSetC *this,uint param_1,int param
             SVar3 = extraout_EAX, iVar4 < 0)) || (4 < iVar4)) ||
           ((param_2 < 0 || (pVVar2->field_0030 <= param_2)))) ||
          ((SVar3 = (int)&local_8->vtable + g_centeredOffsets5[iVar4], (int)SVar3 < 0 ||
-          ((pVVar2->field_0034 <= (int)SVar3 || (pVVar2->field_004C == (byte *)0x0)))))) ||
+          ((pVVar2->field_0034 <= (int)SVar3 || (pVVar2->field_004C == nullptr)))))) ||
         (SVar3 = (STMineSetC_field_02AEState)
                  pVVar2->field_004C[param_2 + SVar3 * pVVar2->field_0030], SVar3 != CASE_0))))
     goto cf_common_exit_006227F9;

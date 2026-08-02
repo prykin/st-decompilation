@@ -6,8 +6,8 @@ void FUN_005782d0(void)
   int iVar1;
 
   this = (DebugSystemC *)Library::MSVCRT::FUN_0072e530(0x24);
-  if (this == (DebugSystemC *)0x0) {
-    g_debugSystem_00811644 = (DebugSystemC *)0x0;
+  if (this == nullptr) {
+    g_debugSystem_00811644 = nullptr;
   }
   else {
     g_debugSystem_00811644 = DebugSystemC::DebugSystemC(this,g_appClass_00806728);

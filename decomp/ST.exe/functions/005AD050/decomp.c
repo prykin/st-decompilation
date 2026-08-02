@@ -51,21 +51,21 @@ void __thiscall ChooseMapTy::PaintChooseMap(ChooseMapTy *this,char param_1)
   FUN_006b5f80((int *)g_ddxContext_008075A8,0,0,g_nWidth_00806730,DAT_00806734);
   PutDDX(0,0,'\x01',(BITMAPINFO *)g_startSystem_0081176C->field_002C);
   pCVar3 = local_8;
-  if ((local_8->field_20B8 == (HoloTy *)0x0) && (param_1 == '\0')) {
+  if ((local_8->field_20B8 == nullptr) && (param_1 == '\0')) {
     MMMObjTy::OutBSlProc
-              (this_00,(int)g_dDXContext_0080759C,(MMMObjTy *)0x0,(MMMObjTy *)0x0,0x112,0x38,0x204,
+              (this_00,(int)g_dDXContext_0080759C,nullptr,nullptr,0x112,0x38,0x204,
                0x19d,&local_8->field_1A5B->field_0140);
   }
-  if (((pCVar3->field_20BC == (HoloTy *)0x0) && (param_1 == '\0')) ||
+  if (((pCVar3->field_20BC == nullptr) && (param_1 == '\0')) ||
      ((param_1 != '\0' && (pCVar3->field_0x20b4 == '\0')))) {
     this_01 = &pCVar3->field_1A5B->field_0140;
     MMMObjTy::OutBSlProc
-              ((MMMObjTy *)this_01,(int)g_dDXContext_0080759C,(MMMObjTy *)0x0,(MMMObjTy *)0x0,10,
+              ((MMMObjTy *)this_01,(int)g_dDXContext_0080759C,nullptr,nullptr,10,
                0xb4,0xf9,0x121,this_01);
   }
   CVar1 = pCVar3->field_1A5F;
   if (((((CVar1 == CASE_C) || (CVar1 == CASE_4)) || (CVar1 == CASE_5)) || (CVar1 == CASE_13)) &&
-     (((pCVar3->field_20C0 == (HoloTy *)0x0 && (param_1 == '\0')) ||
+     (((pCVar3->field_20C0 == nullptr && (param_1 == '\0')) ||
       ((param_1 != '\0' && (pCVar3->field_20B7 == '\0')))))) {
     ChatGlassTy::OutChGlProc
               ((ChatGlassTy *)g_dDXContext_0080759C,

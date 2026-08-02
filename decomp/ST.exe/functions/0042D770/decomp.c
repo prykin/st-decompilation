@@ -31,14 +31,14 @@ uint FUN_0042d770(char param_1,int *param_2)
   array = (DArrayTy *)g_packedRecords_A62x8[param_1].field335_0x16d;
   local_1c = 1;
   local_20 = 1;
-  pDVar4 = Library::DKW::TBL::DArrayCreate((DArrayTy *)0x0,0,2,1);
+  pDVar4 = Library::DKW::TBL::DArrayCreate(nullptr,0,2,1);
   *param_2 = (int)pDVar4;
   dVar1 = array->count;
   if (dVar1 == 0) {
     /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
     return CONCAT22((short)((uint)pDVar4 >> 0x10),0xffff);
   }
-  pDVar4 = Library::DKW::TBL::DArrayCreate((DArrayTy *)0x0,0,2,1);
+  pDVar4 = Library::DKW::TBL::DArrayCreate(nullptr,0,2,1);
   local_14 = 0;
   local_10 = pDVar4;
   if (0 < (int)dVar1) {

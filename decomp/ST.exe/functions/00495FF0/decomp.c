@@ -17,7 +17,7 @@ FUN_00495ff0(short param_1,short param_2,short param_3,byte param_4,
     if ((AnonShape_00495FF0_59081BDD *)g_worldGrid.cells[iVar1].objects[param_4] != param_5) {
       return 0xffffffff;
     }
-    g_worldGrid.cells[iVar1].objects[param_4] = (STWorldObject *)0x0;
+    g_worldGrid.cells[iVar1].objects[param_4] = nullptr;
     param_5->field_005B = 0xffff;
     param_5->field_005D = 0xffff;
     param_5->field_005F = 0xffff;

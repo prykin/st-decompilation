@@ -122,7 +122,7 @@ void __thiscall STAppC::ReadCmdPlay(STAppC *this,int param_1)
       goto cf_common_exit_00571620;
     }
     pSVar2->field_1185 = 0;
-    if (g_popUp_008016D8 != (PopUpTy *)0x0) {
+    if (g_popUp_008016D8 != nullptr) {
       thunk_FUN_0052d320(g_popUp_008016D8,"Playing of commands has finished!",8);
       CloseHandle(hFile);
       goto cf_common_exit_00571620;
@@ -133,7 +133,7 @@ void __thiscall STAppC::ReadCmdPlay(STAppC *this,int param_1)
   }
   CloseHandle(hFile);
 cf_common_exit_00571620:
-  if ((local_8 != 0) && (pSVar2->field_1185 = 0, g_popUp_008016D8 != (PopUpTy *)0x0)) {
+  if ((local_8 != 0) && (pSVar2->field_1185 = 0, g_popUp_008016D8 != nullptr)) {
     thunk_FUN_0052d320(g_popUp_008016D8,"Error playing command!",9);
     thunk_FUN_0052d320(g_popUp_008016D8,"Playing of command has turned off.",8);
   }

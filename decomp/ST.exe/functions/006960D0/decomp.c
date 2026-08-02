@@ -23,11 +23,11 @@ uint __thiscall FUN_006960d0(void *this,uint param_1,int param_2)
       iVar6 = 0;
     }
     if (*(int *)(iVar6 + 0x19) == 0) {
-      pDVar2 = Library::DKW::TBL::DArrayCreate((DArrayTy *)0x0,10,4,10);
+      pDVar2 = Library::DKW::TBL::DArrayCreate(nullptr,10,4,10);
       *(DArrayTy **)(iVar6 + 0x19) = pDVar2;
     }
     pDVar2 = *(DArrayTy **)(iVar6 + 0x19);
-    if (pDVar2 != (DArrayTy *)0x0) {
+    if (pDVar2 != nullptr) {
       uVar1 = pDVar2->count;
       uVar4 = 0;
       if (0 < (int)uVar1) {
@@ -35,7 +35,7 @@ uint __thiscall FUN_006960d0(void *this,uint param_1,int param_2)
         /* ST_PSEUDO[dynamic_array_indexing]: expected DArrayAt<T>(pDVar2, uVar4) (runtime stride) */
         while (((!bVar7 ||
                 (piVar5 = (int *)(pDVar2->elementSize * uVar4 + (int)pDVar2->data),
-                piVar5 == (int *)0x0)) || (*piVar5 != param_2))) {
+                piVar5 == nullptr)) || (*piVar5 != param_2))) {
           uVar4 = uVar4 + 1;
           bVar7 = uVar4 < uVar1;
           if ((int)uVar1 <= (int)uVar4) {

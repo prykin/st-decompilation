@@ -118,7 +118,7 @@ void __fastcall ST3DSMAPContext::sub_006DDD50(ST3DSMAPContext *param_1)
     else {
       local_44 = (undefined4 *****)&param_1->field_0x140;
       for (ppppppuVar1 = *(undefined4 *******)&param_1->field_0x140;
-          ((ppppppuVar1 != (undefined4 ******)0x0 && (*(short *)(ppppppuVar1 + 2) == 0)) &&
+          ((ppppppuVar1 != nullptr && (*(short *)(ppppppuVar1 + 2) == 0)) &&
           ((int)ppppppuVar1[9] < 3)); ppppppuVar1 = (undefined4 ******)*ppppppuVar1) {
         local_44 = ppppppuVar1;
       }
@@ -129,30 +129,30 @@ void __fastcall ST3DSMAPContext::sub_006DDD50(ST3DSMAPContext *param_1)
       local_68[0] = ppppppuVar1;
       local_1c = &stack0xfffffed4;
       local_cc = &stack0xfffffed4;
-      for (ppppppuVar2 = ppppppuVar1; ppppppuVar2 != (undefined4 ******)0x0;
+      for (ppppppuVar2 = ppppppuVar1; ppppppuVar2 != nullptr;
           ppppppuVar2 = (undefined4 ******)*ppppppuVar2) {
         sub_006E25D0(param_1,local_7c);
         ppppppuVar2[0x11] = (undefined4 *****)local_74;
       }
       sub_006DD530(param_1,local_ec,&local_40,local_58);
-      while (ppppppuVar1 != (undefined4 ******)0x0) {
+      while (ppppppuVar1 != nullptr) {
         ppppppuVar2 = local_68;
-        for (ppppppuVar6 = ppppppuVar1; ppppppuVar6 != (undefined4 ******)0x0;
+        for (ppppppuVar6 = ppppppuVar1; ppppppuVar6 != nullptr;
             ppppppuVar6 = (undefined4 ******)*ppppppuVar6) {
           ppppppuVar15 = ppppppuVar1;
           do {
             if ((int)ppppppuVar6[0x11] < (int)ppppppuVar15[0x11]) break;
             ppppppuVar15 = (undefined4 ******)*ppppppuVar15;
-          } while (ppppppuVar15 != (undefined4 ******)0x0);
-          if (ppppppuVar15 == (undefined4 ******)0x0) break;
+          } while (ppppppuVar15 != nullptr);
+          if (ppppppuVar15 == nullptr) break;
           ppppppuVar2 = ppppppuVar6;
         }
-        if (ppppppuVar6 == (undefined4 ******)0x0) {
+        if (ppppppuVar6 == nullptr) {
           *local_44 = ppppppuVar1;
         }
         else {
           *ppppppuVar2 = *ppppppuVar6;
-          *ppppppuVar6 = (undefined4 *****)0x0;
+          *ppppppuVar6 = nullptr;
           *local_44 = ppppppuVar6;
           ppppppuVar1 = (undefined4 ******)local_68[0];
           local_44 = ppppppuVar6;
@@ -161,7 +161,7 @@ void __fastcall ST3DSMAPContext::sub_006DDD50(ST3DSMAPContext *param_1)
     }
     if (*(int *)&param_1->field_0x124 == 0) {
       for (pAVar4 = *(AnonShape_006E1EE0_698AE49A **)&param_1->field_0x140;
-          pAVar4 != (AnonShape_006E1EE0_698AE49A *)0x0;
+          pAVar4 != nullptr;
           pAVar4 = *(AnonShape_006E1EE0_698AE49A **)pAVar4) {
         SubmarineTitans::Recovered::HiddenThis::AnonReceiver_006E1EE0::FUN_006e1ee0
                   ((AnonReceiver_006E1EE0 *)param_1,pAVar4,local_3c,(int)local_cc,local_a0);
@@ -181,7 +181,7 @@ void __fastcall ST3DSMAPContext::sub_006DDD50(ST3DSMAPContext *param_1)
       local_30 = *(undefined4 *)&param_1->field_0x370;
       local_2c = local_30;
       for (pAVar5 = *(AnonShape_007282B0_AFD740A9 **)&param_1->field_0x140;
-          pAVar5 != (AnonShape_007282B0_AFD740A9 *)0x0;
+          pAVar5 != nullptr;
           pAVar5 = *(AnonShape_007282B0_AFD740A9 **)pAVar5) {
         SubmarineTitans::Recovered::HiddenThis::AnonReceiver_006E1EE0::FUN_006e1ee0
                   ((AnonReceiver_006E1EE0 *)param_1,(AnonShape_006E1EE0_698AE49A *)pAVar5,local_3c,
@@ -240,7 +240,7 @@ void __fastcall ST3DSMAPContext::sub_006DDD50(ST3DSMAPContext *param_1)
     }
     else {
       for (pAVar4 = *(AnonShape_006E1EE0_698AE49A **)&param_1->field_0x140;
-          pAVar4 != (AnonShape_006E1EE0_698AE49A *)0x0;
+          pAVar4 != nullptr;
           pAVar4 = *(AnonShape_006E1EE0_698AE49A **)pAVar4) {
         if (*(int *)&param_1->field_0x124 == 3) {
           FUN_006e2b60(param_1,(AnonShape_006E2B60_E36B924C *)pAVar4,(int)local_3c,(int)local_cc,

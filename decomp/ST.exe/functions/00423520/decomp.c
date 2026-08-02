@@ -39,7 +39,7 @@ uint __thiscall STGroupC::GetTOBJQty(STGroupC *this,int param_1)
           /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
           pSVar4 = STAllPlayersC::GetObjPtr
                              (g_allPlayers_007FA174,pSVar2->field_0024,local_c._0_2_,CASE_1);
-          if (pSVar4 == (STGameObjC *)0x0) {
+          if (pSVar4 == nullptr) {
             RaiseInternalException
                       (-0x5001fffc,g_overwriteContext_007ED77C,
                        "E:\\__titans\\wlad\\tc_grp.cpp",0x66);

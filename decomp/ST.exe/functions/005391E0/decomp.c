@@ -12,14 +12,14 @@ PausePanelTy * __cdecl CreatePausePanel(void)
   PausePanelTy *this;
 
   this = (PausePanelTy *)FUN_006b04d0(0x188);
-  if (this != (PausePanelTy *)0x0) {
+  if (this != nullptr) {
     sub_006E5FB0(this);
     this->field_005C = 0;
     this->field_003C = 0;
     this->field_0068 = 0;
     *(undefined4 *)&this->field_0x178 = 0;
-    this->field_017C = (ccFntTy *)0x0;
-    this->field_0180 = (ushort *)0x0;
+    this->field_017C = nullptr;
+    this->field_0180 = nullptr;
     this->field_0184 = 0;
     this->field_0060 = 0xffffffff;
     *(undefined4 *)&this->field_0x64 = 4;
@@ -30,6 +30,6 @@ PausePanelTy * __cdecl CreatePausePanel(void)
     *(undefined4 *)&this->field_0x48 = 0xa0;
     return this;
   }
-  return (PausePanelTy *)0x0;
+  return nullptr;
 }
 

@@ -189,7 +189,7 @@ switchD_0058bec9_caseD_0:
         (g_worldGrid.sizeZ <= sVar7)) ||
        ((g_worldGrid.cells
          [(int)g_worldGrid.planeStride * (int)sVar7 + (int)g_worldGrid.sizeX * (int)sVar6 +
-          (int)sVar5].objects[0] == (STWorldObject *)0x0 ||
+          (int)sVar5].objects[0] == nullptr ||
         (g_worldGrid.cells
          [(int)g_worldGrid.planeStride * (int)sVar7 + (int)g_worldGrid.sizeX * (int)sVar6 +
           (int)sVar5].objects[0]->value_20 == 400)))))))) {

@@ -80,10 +80,10 @@ uint __thiscall STAllPlayersC::CreateBoat(STAllPlayersC *this,undefined4 *param_
     param_1[5] = param_1[1];
   }
   local_8 = (STGroupC *)thunk_FUN_0042b760(*(char *)(param_1 + 1),*(ushort *)(param_1 + 9));
-  if ((STGroupBoatC *)local_8 == (STGroupBoatC *)0x0) {
+  if ((STGroupBoatC *)local_8 == nullptr) {
     uVar3 = thunk_FUN_00435850(*(char *)(param_1 + 1),0,(int *)&local_8);
     *(short *)(param_1 + 9) = (short)uVar3;
-    if (local_8 == (STGroupC *)0x0) {
+    if (local_8 == nullptr) {
       RaiseInternalException
                 (-0x5001fffc,g_overwriteContext_007ED77C,"E:\\__titans\\wlad\\to_allpl.cpp",
                  0x27d8);

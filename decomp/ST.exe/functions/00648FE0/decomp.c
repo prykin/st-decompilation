@@ -22,19 +22,20 @@ void CreateAi(void)
   int *piVar9;
   char *pcVar10;
   int *piVar11;
-  char *pcVar12;
+  BulkInitializedRecord_008087C7 *pBVar12;
+  char *pcVar13;
   InternalExceptionFrame local_64;
   char *local_20;
   uint local_1c;
-  char *local_18;
+  BulkInitializedRecord_008087C7 *local_18;
   int local_14;
   char *local_10;
   cMf32 *local_c;
   AnonShape_00648C10_30A1BBFD *local_8;
 
-  local_c = (cMf32 *)0x0;
-  local_8 = (AnonShape_00648C10_30A1BBFD *)0x0;
-  local_10 = (char *)0x0;
+  local_c = nullptr;
+  local_8 = nullptr;
+  local_10 = nullptr;
   local_64.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_64;
   iVar3 = Library::MSVCRT::__setjmp3(local_64.jumpBuffer,0);
@@ -45,13 +46,13 @@ void CreateAi(void)
     if (iVar4 != 0) {
       STDebugBreak(); /* noreturn in standalone pseudocode */
     }
-    if (local_8 != (AnonShape_00648C10_30A1BBFD *)0x0) {
+    if (local_8 != nullptr) {
       FreeAndNull(&local_8);
     }
     RaiseInternalException(iVar3,0,"E:\\__titans\\ai\\ai_creat.cpp",0x10c);
     return;
   }
-  if (g_playSystem_00802A38 == (STPlaySystemC *)0x0) {
+  if (g_playSystem_00802A38 == nullptr) {
     RaiseInternalException
               (-0x34,g_overwriteContext_007ED77C,"E:\\__titans\\ai\\ai_creat.cpp",0x9d);
   }
@@ -68,7 +69,7 @@ void CreateAi(void)
       break;
     case 3:
     case 8:
-      if (DAT_0080ed12 == (int *)0x0) {
+      if (DAT_0080ed12 == nullptr) {
         if (DAT_0080c52a != 0) {
           thunk_FUN_006766c0();
         }
@@ -94,7 +95,7 @@ void CreateAi(void)
         piVar9 = DAT_0080ed12 + 0x210;
         piVar11 = (int *)&g_packedRecords_A62x8[DAT_0080874d].field_0x73b;
         memmove(piVar11, piVar9, 0x9b); /* compiler REP MOVS byte copy */
-        if (DAT_0080ed12 != (int *)0x0) {
+        if (DAT_0080ed12 != nullptr) {
           FreeAndNull(&DAT_0080ed12);
           local_c = g_cMf32_00806754;
           break;
@@ -110,15 +111,15 @@ void CreateAi(void)
     local_c = g_cMf32_00806754;
   }
   pcVar8 = local_c;
-  if (local_c != (cMf32 *)0x0) {
+  if (local_c != nullptr) {
     CreateArbiter((int)local_c,(char *)&DAT_00809960);
     local_1c = 0;
-    local_18 = (char *)((int)&DAT_008087c4 + 3);
+    local_18 = g_bulkInitializedRecords_008087C7;
     do {
-      pcVar10 = local_18;
+      pBVar12 = local_18;
       uVar5 = local_1c;
-      if (((local_18[0x22] != -1) && (local_18[0x21] != '\0')) &&
-         ((*local_18 == '\x01' || (DAT_0080879c != 0)))) {
+      if (((local_18->field_0022 != 0xff) && (local_18->field_0021 != 0)) &&
+         ((*(char *)local_18 == '\x01' || (DAT_0080879c != 0)))) {
         if (DAT_0080879c == 0) {
           switch(_DAT_008087a0 & 0xff) {
           case 1:
@@ -131,7 +132,7 @@ void CreateAi(void)
           case 0xe:
           case 0xf:
           case 0x13:
-            local_10 = local_18 + 1;
+            local_10 = &local_18->field_0x1;
             break;
           case 3:
           case 8:
@@ -148,42 +149,42 @@ void CreateAi(void)
 LAB_00649255:
           local_10 = FUN_006f2c00(text,iVar3,uVar6);
         }
-        if ((local_10 != (char *)0x0) &&
+        if ((local_10 != nullptr) &&
            (local_8 = (AnonShape_00648C10_30A1BBFD *)
-                      LoadStrategData((int)pcVar8,local_10,(int *)0x0),
-           local_8 != (AnonShape_00648C10_30A1BBFD *)0x0)) {
+                      LoadStrategData((int)pcVar8,local_10,nullptr),
+           local_8 != nullptr)) {
           local_14 = 0;
           if (DAT_00808aaf != 0) {
             pcVar7 = &DAT_00808af6;
             do {
-              if ((pcVar7[-2] == pcVar10[0x22]) && (*pcVar7 == '\0')) {
+              if ((pcVar7[-2] == pBVar12->field_0022) && (*pcVar7 == '\0')) {
                 uVar5 = 0xffffffff;
                 local_20 = pcVar7 + -0x46;
                 pcVar10 = &local_8->field_0x1b;
                 do {
-                  pcVar12 = pcVar10;
+                  pcVar13 = pcVar10;
                   if (uVar5 == 0) break;
                   uVar5 = uVar5 - 1;
-                  pcVar12 = pcVar10 + 1;
+                  pcVar13 = pcVar10 + 1;
                   cVar1 = *pcVar10;
-                  pcVar10 = pcVar12;
+                  pcVar10 = pcVar13;
                 } while (cVar1 != '\0');
                 uVar5 = ~uVar5;
-                pcVar10 = pcVar12 + -uVar5;
-                pcVar12 = local_20;
-                memmove(pcVar12, pcVar10, uVar5); /* compiler REP MOVS byte copy */
+                pcVar10 = pcVar13 + -uVar5;
+                pcVar13 = local_20;
+                memmove(pcVar13, pcVar10, uVar5); /* compiler REP MOVS byte copy */
               }
               local_14 = local_14 + 1;
               pcVar7 = pcVar7 + 0x9c;
               uVar5 = local_1c;
-              pcVar10 = local_18;
+              pBVar12 = local_18;
             } while (local_14 < (int)(uint)DAT_00808aaf);
           }
           StartStrateg(local_8,uVar5);
           FreeAndNull(&local_8);
         }
       }
-      local_18 = pcVar10 + 0x51;
+      local_18 = pBVar12 + 1;
       local_1c = uVar5 + 1;
       pcVar8 = local_c;
     } while ((int)local_18 < 0x808a4f);

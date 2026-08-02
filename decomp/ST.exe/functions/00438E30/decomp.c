@@ -60,7 +60,7 @@ void __thiscall STAllPlayersC::SaveTmp(STAllPlayersC *this,int param_1)
   piVar3 = local_8;
   if (*local_8 != 0) {
     local_c = (undefined4 *)(param_1 * 0x10 + 0x7f5027 + iVar4);
-    if (*(DArrayTy **)((int)local_c + 10) != (DArrayTy *)0x0) {
+    if (*(DArrayTy **)((int)local_c + 10) != nullptr) {
       DArrayDestroy(*(DArrayTy **)((int)local_c + 10));
       *(undefined4 *)((int)local_c + 10) = 0;
       *local_c = 0;

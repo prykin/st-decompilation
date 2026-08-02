@@ -4,7 +4,7 @@ undefined4 __fastcall FUN_004c91a0(TLOBaseTy *param_1)
 {
   int iVar1;
 
-  if ((param_1->field_03D4 != 0) && (param_1->field_0607 != (AnonPointee_TLOBaseTy_0607 *)0x0)) {
+  if ((param_1->field_03D4 != 0) && (param_1->field_0607 != nullptr)) {
     param_1->field_03D4 = 0;
   }
   if (*(int *)&param_1->field_0x361 != 0) {

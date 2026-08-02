@@ -9,7 +9,7 @@ void FUN_00553270(void)
   uint uVar2;
   bool bVar3;
 
-  if (g_array_00802A4C != (DArrayTy *)0x0) {
+  if (g_array_00802A4C != nullptr) {
     uVar2 = 0;
     array = g_array_00802A4C;
     if (0 < (int)g_array_00802A4C->count) {
@@ -17,7 +17,7 @@ void FUN_00553270(void)
       do {
         /* ST_PSEUDO[dynamic_array_indexing]: expected DArrayAt<T>(array, uVar2) (runtime stride) */
         if (((bVar3) &&
-            (pvVar1 = (void *)(array->elementSize * uVar2 + (int)array->data), pvVar1 != (void *)0x0
+            (pvVar1 = (void *)(array->elementSize * uVar2 + (int)array->data), pvVar1 != nullptr
             )) && (*(int *)((int)pvVar1 + 2) != 0)) {
           FreeAndNull((void **)((int)pvVar1 + 2));
           array = g_array_00802A4C;
@@ -27,7 +27,7 @@ void FUN_00553270(void)
       } while ((int)uVar2 < (int)array->count);
     }
     DArrayDestroy(array);
-    g_array_00802A4C = (DArrayTy *)0x0;
+    g_array_00802A4C = nullptr;
   }
   return;
 }

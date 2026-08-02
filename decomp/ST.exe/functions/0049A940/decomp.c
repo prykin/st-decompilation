@@ -45,7 +45,7 @@ undefined4 __thiscall STGroupBoatC::GrpMove(STGroupBoatC *this,int param_1)
             this_00 = (STBoatC *)
                       STAllPlayersC::GetObjPtr
                                 (g_allPlayers_007FA174,pSVar2->field_0024,local_c._0_2_,CASE_1);
-            if (this_00 == (STBoatC *)0x0) {
+            if (this_00 == nullptr) {
               RaiseInternalException
                         (-0x5001fffc,g_overwriteContext_007ED77C,
                          "E:\\__titans\\wlad\\to_grpb.cpp",0x65e);

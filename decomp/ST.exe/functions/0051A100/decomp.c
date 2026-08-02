@@ -50,7 +50,7 @@ void __thiscall HelpPanelTy::ObjProc(HelpPanelTy *this,int param_1,uint param_2,
 
   local_8 = 0;
   local_9 = '\0';
-  if (g_allPlayers_007FA174 != (STAllPlayersC *)0x0) {
+  if (g_allPlayers_007FA174 != nullptr) {
     local_a0.previous = g_currentExceptionFrame;
     g_currentExceptionFrame = &local_a0;
     local_40 = this;
@@ -77,7 +77,7 @@ void __thiscall HelpPanelTy::ObjProc(HelpPanelTy *this,int param_1,uint param_2,
           *(undefined2 *)&local_40->field_0x2c = 0;
           local_40->field_002E = 2;
           *(undefined4 *)&local_40->field_0x30 = local_40->field_0178;
-          if (g_cursorClass_00802A30 != (CursorClassTy *)0x0) {
+          if (g_cursorClass_00802A30 != nullptr) {
             /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
             (**(code **)g_cursorClass_00802A30->field_0000)(&local_40->field_0x18);
           }
@@ -232,14 +232,14 @@ void __thiscall HelpPanelTy::ObjProc(HelpPanelTy *this,int param_1,uint param_2,
         pGVar1 = &DAT_007c0e4c + local_18 + (local_10 & 0xffff);
         local_3c = pGVar1;
         if (*pGVar1 == CASE_0) break;
-        if (local_1c != (int *)0x0) {
+        if (local_1c != nullptr) {
           ccFntTy::SetSurf(this_00->field_01E0,(int)this_00->field_0218,0,0,local_8,0x91,0xf);
           uVar14 = 3;
           iVar12 = -1;
           iVar6 = -3;
           puVar8 = (uint *)LoadResourceString(0x5657,g_module_00807618);
           ccFntTy::WrStr(this_00->field_01E0,puVar8,iVar6,iVar12,uVar14);
-          local_1c = (int *)0x0;
+          local_1c = nullptr;
         }
         ccFntTy::SetSurf(this_00->field_01E0,(int)this_00->field_0218,0,0x96,local_8,0x106,0xf);
         uVar14 = (DAT_0080874e != '\x03') - 1 & 5;

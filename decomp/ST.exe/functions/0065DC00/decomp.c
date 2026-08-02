@@ -16,7 +16,7 @@ int __fastcall FUN_0065dc00(AiFltClassTy *param_1,undefined4 param_2,uint param_
 
   local_8 = 0;
   array = (DArrayTy *)AiFltClassTy::sub_0065DA10(param_1,param_2);
-  if (array != (DArrayTy *)0x0) {
+  if (array != nullptr) {
     cVar1 = param_1->field_0081;
     if ((cVar1 < '\0') || ('\a' < cVar1)) {
       cVar1 = (char)param_1->field_0024;
@@ -37,12 +37,12 @@ int __fastcall FUN_0065dc00(AiFltClassTy *param_1,undefined4 param_2,uint param_
           puVar3 = (ushort *)(array->elementSize * uVar6 + (int)array->data);
         }
         else {
-          puVar3 = (ushort *)0x0;
+          puVar3 = nullptr;
         }
         this = STAllPlayersC::GetObjPtr
                          (g_allPlayers_007FA174,*(char *)&param_1->field_0024,*puVar3,CASE_1);
         /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
-        if (((this != (STGameObjC *)0x0) && (iVar4 = this->vfunc_F8(), iVar4 != 0))
+        if (((this != nullptr) && (iVar4 = this->vfunc_F8(), iVar4 != 0))
            && ((param_4 < '\0' || (iVar4 = this->vfunc_6C(), param_4 == iVar4)))) {
           iVar4 = (*this->vtable->vfunc_2C)();
           pIVar5 = thunk_FUN_00674fb0(iVar4);

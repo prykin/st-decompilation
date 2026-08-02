@@ -6,8 +6,8 @@ int __thiscall FUN_00747e65(void *this,int *param_1,char *param_2)
   int local_c;
   int *local_8;
 
-  local_8 = (int *)0x0;
-  if ((param_2 != (char *)0x0) && (iVar1 = FUN_0074bb9a(param_2), iVar1 == 0)) {
+  local_8 = nullptr;
+  if ((param_2 != nullptr) && (iVar1 = FUN_0074bb9a(param_2), iVar1 == 0)) {
     iVar1 = FUN_00747ce5(this,param_1);
     return iVar1;
   }

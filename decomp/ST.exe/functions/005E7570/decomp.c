@@ -24,7 +24,7 @@ void __thiscall WaitTy::DoneWait(WaitTy *this)
   pWVar2 = local_8;
   if (iVar3 == 0) {
     MMObjTy::DoneMMObj((MMObjTy *)local_8);
-    if (g_cursorClass_00802A30 != (CursorClassTy *)0x0) {
+    if (g_cursorClass_00802A30 != nullptr) {
       if (g_cursorClass_00802A30->field_00A9 == 0) {
         Library::DKW::DDX::FUN_006b8b10((int *)g_cursorClass_00802A30->field_00AD);
       }
@@ -43,13 +43,13 @@ void __thiscall WaitTy::DoneWait(WaitTy *this)
       DarkScreen(g_dDXContext_0080759C,10,2);
       thunk_FUN_005dac60();
     }
-    if (g_startSystem_0081176C->field_002C != (ushort *)0x0) {
+    if (g_startSystem_0081176C->field_002C != nullptr) {
       cMf32::RecMemFree(g_cMf32_00806780,(uint *)&g_startSystem_0081176C->field_002C);
     }
-    if (pWVar2->field_1AF8 != (HoloTy *)0x0) {
+    if (pWVar2->field_1AF8 != nullptr) {
       HoloTy::Done(pWVar2->field_1AF8);
       Library::MSVCRT::FUN_0072e2b0(pWVar2->field_1AF8);
-      pWVar2->field_1AF8 = (HoloTy *)0x0;
+      pWVar2->field_1AF8 = nullptr;
     }
     puVar5 = pWVar2->field_1A94;
     iVar3 = 0x16;
@@ -61,10 +61,10 @@ void __thiscall WaitTy::DoneWait(WaitTy *this)
       puVar5 = puVar5 + 1;
       iVar3 = iVar3 + -1;
     } while (iVar3 != 0);
-    if (pWVar2->field_1B00 != (HoloTy *)0x0) {
+    if (pWVar2->field_1B00 != nullptr) {
       HoloTy::Done(pWVar2->field_1B00);
       Library::MSVCRT::FUN_0072e2b0(pWVar2->field_1B00);
-      pWVar2->field_1B00 = (HoloTy *)0x0;
+      pWVar2->field_1B00 = nullptr;
     }
     if (pWVar2->field_1A64 == 0) {
       if (g_startSystem_0081176C->field_0391 != 0xffffffff) {
@@ -80,10 +80,10 @@ void __thiscall WaitTy::DoneWait(WaitTy *this)
         FUN_006b3af0((int *)g_ddxContext_008075A8,g_startSystem_0081176C->field_0540);
       }
     }
-    if (pWVar2->field_1AFC != (HoloTy *)0x0) {
+    if (pWVar2->field_1AFC != nullptr) {
       HoloTy::Done(pWVar2->field_1AFC);
       Library::MSVCRT::FUN_0072e2b0(pWVar2->field_1AFC);
-      pWVar2->field_1AFC = (HoloTy *)0x0;
+      pWVar2->field_1AFC = nullptr;
     }
     if (pWVar2->field_1A64 == 0) {
       if (g_startSystem_0081176C->field_0560 != 0xffffffff) {
@@ -99,18 +99,18 @@ void __thiscall WaitTy::DoneWait(WaitTy *this)
         FUN_006b3af0((int *)g_ddxContext_008075A8,g_startSystem_0081176C->field_0554);
       }
     }
-    if (pWVar2->field_1AF0 != (DArrayTy *)0x0) {
+    if (pWVar2->field_1AF0 != nullptr) {
       FUN_006b5570(pWVar2->field_1AF0);
     }
-    pWVar2->field_1AF0 = (DArrayTy *)0x0;
-    if (pWVar2->field_1AEC != (ushort *)0x0) {
+    pWVar2->field_1AF0 = nullptr;
+    if (pWVar2->field_1AEC != nullptr) {
       FreeAndNull(&pWVar2->field_1AEC);
     }
-    if (pWVar2->field_1A83 != (byte *)0x0) {
+    if (pWVar2->field_1A83 != nullptr) {
       FreeAndNull(&pWVar2->field_1A83);
     }
     if ((pWVar2->field_004D == 0x6102) &&
-       (this_00 = pWVar2->field_1A5B->field_02E6, this_00 != (MMsgTy *)0x0)) {
+       (this_00 = pWVar2->field_1A5B->field_02E6, this_00 != nullptr)) {
       MMsgTy::HideSprites(this_00);
       pWVar2->field_1A5B->field_02E6->field_1CAB = 0;
     }

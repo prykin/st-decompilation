@@ -9,7 +9,7 @@ void __cdecl FUN_0068cda0(int *param_1,Global_sub_0068CDA0_param_2Enum param_2)
   DArrayTy *array;
 
   array = (DArrayTy *)*param_1;
-  if (array != (DArrayTy *)0x0) {
+  if (array != nullptr) {
     switch(param_2) {
     case CASE_1:
       thunk_FUN_006686c0(param_1);

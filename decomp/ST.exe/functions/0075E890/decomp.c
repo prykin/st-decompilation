@@ -44,7 +44,7 @@ void FUN_0075e890(AnonShape_0075E890_C23EB446 *param_1,int param_2,int param_3,i
     piVar6 = piVar6 + 1;
     /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
     param_1 = (AnonShape_0075E890_C23EB446 *)((int)&param_1[-1].field_01BA + 3);
-  } while (param_1 != (AnonShape_0075E890_C23EB446 *)0x0);
+  } while (param_1 != nullptr);
   return;
 }
 

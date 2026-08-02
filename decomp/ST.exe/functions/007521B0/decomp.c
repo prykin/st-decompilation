@@ -49,21 +49,21 @@ FUN_007521b0(int *param_1,AnonShape_006B4B20_3D4F4412 *param_2,uint param_3,int 
   uVar3 = param_2->field_0008;
   uVar12 = (uint)param_2->field_000E * (int)pAVar2 + 0x1f >> 3 & 0x1ffffffc;
   puVar5 = Library::DKW::LIB::MemAlloc((int)((int)&pAVar2->field_0x1 * uVar3 * 3) / 2 + 0x16);
-  if (puVar5 == (uint *)0x0) {
+  if (puVar5 == nullptr) {
     return 0xfffffffe;
   }
   pbVar11 = (byte *)((int)puVar5 + 0x16);
   local_1c = -1;
   pbVar6 = (byte *)((uVar3 - 1) * uVar12 + param_3);
   /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
-  param_2 = (AnonShape_006B4B20_3D4F4412 *)0x0;
+  param_2 = nullptr;
   local_30 = 0;
   local_14 = 0;
-  pAVar13 = (AnonShape_006B4B20_3D4F4412 *)0x0;
+  pAVar13 = nullptr;
   local_28 = pAVar2;
   if (0 < (int)uVar3) {
     do {
-      pAVar13 = (AnonShape_006B4B20_3D4F4412 *)0x0;
+      pAVar13 = nullptr;
       while( true ) {
         bVar1 = *pbVar6;
         while (bVar1 == param_6) {

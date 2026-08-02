@@ -50,7 +50,7 @@ void __fastcall FUN_00586af0(int *param_1)
   int local_c;
   char local_5;
 
-  local_20 = (STWorldObject *)0x0;
+  local_20 = nullptr;
   /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
   sVar14 = *(short *)((int)param_1 + 0x41);
   if (sVar14 < 0) {
@@ -132,12 +132,12 @@ void __fastcall FUN_00586af0(int *param_1)
     local_44 = STAllPlayersC::GetObjPtr
                          (g_allPlayers_007FA174,*(char *)((int)param_1 + 0x26f),
                           *(ushort *)((int)param_1 + 0x273),CASE_1);
-    if (local_44 == (STGameObjC *)0x0) {
+    if (local_44 == nullptr) {
 LAB_00587844:
       local_44 = (STGameObjC *)thunk_FUN_00586320((AnonShape_00586320_9792A2C7 *)param_1);
       *(uint *)((int)param_1 + 0x253) = g_playSystem_00802A38->field_00E4;
       /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-      if ((local_44 == (STGameObjC *)0x0) || (*(int *)((int)param_1 + 0x231) != 0)) {
+      if ((local_44 == nullptr) || (*(int *)((int)param_1 + 0x231) != 0)) {
         *(undefined4 *)((int)param_1 + 0x26b) = 0;
         *(undefined4 *)((int)param_1 + 0x267) = 0;
         *(undefined4 *)((int)param_1 + 0x263) = 0;
@@ -348,7 +348,7 @@ LAB_00587dde:
             (pSVar17 = g_worldGrid.cells
                        [(int)g_worldGrid.planeStride * (int)sVar16 +
                         (int)g_worldGrid.sizeX * (int)sVar15 + (int)sVar14].objects[0],
-            local_20 = pSVar17, pSVar17 == (STWorldObject *)0x0)))) {
+            local_20 = pSVar17, pSVar17 == nullptr)))) {
           uVar8 = thunk_FUN_00496250(iVar9,local_14,iVar7);
           local_20 = (STWorldObject *)(uint)(-1 < (int)uVar8);
           goto LAB_00587fb9;
@@ -357,8 +357,8 @@ LAB_00587dde:
            (iVar7 = (*pSVar17->vtable[5].slots_00_28[2])(), iVar7 != 0)) {
           if (((pSVar17->value_20 == 1000) || (pSVar17->value_20 == 0x14)) &&
              ((pSVar17[1].vtable < (STWorldObjectVTable *)0x8 &&
-              ((g_playSystem_00802A38 == (STPlaySystemC *)0x0 ||
-               ((byte)(&DAT_008087e9)[(int)pSVar17[1].vtable * 0x51] < 8)))))) {
+              ((g_playSystem_00802A38 == nullptr ||
+               (g_bulkInitializedRecords_008087C7[(int)pSVar17[1].vtable].field_0022 < 8)))))) {
             iVar7 = param_1[4];
             bVar1 = *(byte *)&pSVar17[1].vtable;
             bVar2 = *(byte *)(param_1 + 9);
@@ -404,10 +404,10 @@ LAB_00587f89:
         }
 LAB_00587f98:
         iVar7 = 0;
-        pSVar17 = (STWorldObject *)0x0;
+        pSVar17 = nullptr;
       }
       do {
-        if (pSVar17 == (STWorldObject *)0x0) {
+        if (pSVar17 == nullptr) {
           if (iVar7 < 7) {
             iVar7 = local_18;
             if (local_18 < 0) {
@@ -492,19 +492,19 @@ LAB_00588002:
              (pSVar17 = g_worldGrid.cells
                         [(int)g_worldGrid.planeStride * (int)sVar15 +
                          (int)g_worldGrid.sizeX * (int)sVar14 + (int)sVar16].objects[0],
-             pSVar17 == (STWorldObject *)0x0)))))) {
+             pSVar17 == nullptr)))))) {
           uVar8 = thunk_FUN_00496250(local_c,local_1c,local_18);
           pSVar17 = (STWorldObject *)(uint)(-1 < (int)uVar8);
         }
         else if ((pSVar17->value_20 == 0xb4) ||
                 (iVar7 = (*pSVar17->vtable[5].slots_00_28[2])(), iVar7 == 0)) {
 LAB_005882af:
-          pSVar17 = (STWorldObject *)0x0;
+          pSVar17 = nullptr;
         }
         else if ((((pSVar17->value_20 == 1000) || (pSVar17->value_20 == 0x14)) &&
                  (pSVar17[1].vtable < (STWorldObjectVTable *)0x8)) &&
-                ((g_playSystem_00802A38 == (STPlaySystemC *)0x0 ||
-                 ((byte)(&DAT_008087e9)[(int)pSVar17[1].vtable * 0x51] < 8)))) {
+                ((g_playSystem_00802A38 == nullptr ||
+                 (g_bulkInitializedRecords_008087C7[(int)pSVar17[1].vtable].field_0022 < 8)))) {
           iVar7 = param_1[4];
           bVar1 = *(byte *)&pSVar17[1].vtable;
           bVar2 = *(byte *)(param_1 + 9);
@@ -747,7 +747,7 @@ LAB_00587161:
         (g_worldGrid.sizeZ <= sVar16)) ||
        (pSVar17 = g_worldGrid.cells
                   [(int)g_worldGrid.planeStride * (int)sVar16 + (int)sVar15 * (int)g_worldGrid.sizeX
-                   + (int)sVar14].objects[0], local_20 = pSVar17, pSVar17 == (STWorldObject *)0x0))
+                   + (int)sVar14].objects[0], local_20 = pSVar17, pSVar17 == nullptr))
     {
       uVar8 = thunk_FUN_00496250(local_10,local_14,local_18);
       local_38 = 0;
@@ -759,13 +759,13 @@ LAB_00587161:
 LAB_00587323:
       local_38 = 0;
       iVar7 = local_18;
-      pSVar17 = (STWorldObject *)0x0;
+      pSVar17 = nullptr;
     }
     else {
       if (((pSVar17->value_20 == 1000) || (pSVar17->value_20 == 0x14)) &&
          ((pSVar17[1].vtable < (STWorldObjectVTable *)0x8 &&
-          ((g_playSystem_00802A38 == (STPlaySystemC *)0x0 ||
-           ((byte)(&DAT_008087e9)[(int)pSVar17[1].vtable * 0x51] < 8)))))) {
+          ((g_playSystem_00802A38 == nullptr ||
+           (g_bulkInitializedRecords_008087C7[(int)pSVar17[1].vtable].field_0022 < 8)))))) {
         iVar7 = param_1[4];
         bVar1 = *(byte *)&pSVar17[1].vtable;
         bVar2 = *(byte *)(param_1 + 9);
@@ -812,7 +812,7 @@ LAB_00587359:
       iVar7 = local_18;
     }
     do {
-      if (pSVar17 == (STWorldObject *)0x0) {
+      if (pSVar17 == nullptr) {
         if (local_38 < 7) {
           if (iVar7 < 0) {
             iVar7 = 0;
@@ -894,19 +894,19 @@ LAB_005873a4:
          (pSVar17 = g_worldGrid.cells
                     [(int)g_worldGrid.planeStride * (int)sVar16 +
                      (int)g_worldGrid.sizeX * (int)sVar15 + (int)sVar14].objects[0],
-         local_20 = pSVar17, pSVar17 == (STWorldObject *)0x0)) {
+         local_20 = pSVar17, pSVar17 == nullptr)) {
         uVar8 = thunk_FUN_00496250(local_c,local_1c,iVar7);
         local_20 = (STWorldObject *)(uint)(-1 < (int)uVar8);
       }
       else if ((pSVar17->value_20 == 0xb4) ||
               (iVar9 = (*pSVar17->vtable[5].slots_00_28[2])(), iVar9 == 0)) {
 LAB_00587648:
-        local_20 = (STWorldObject *)0x0;
+        local_20 = nullptr;
       }
       else if ((((pSVar17->value_20 == 1000) || (pSVar17->value_20 == 0x14)) &&
                (pSVar17[1].vtable < (STWorldObjectVTable *)0x8)) &&
-              ((g_playSystem_00802A38 == (STPlaySystemC *)0x0 ||
-               ((byte)(&DAT_008087e9)[(int)pSVar17[1].vtable * 0x51] < 8)))) {
+              ((g_playSystem_00802A38 == nullptr ||
+               (g_bulkInitializedRecords_008087C7[(int)pSVar17[1].vtable].field_0022 < 8)))) {
         iVar9 = param_1[4];
         bVar1 = *(byte *)&pSVar17[1].vtable;
         bVar2 = *(byte *)(param_1 + 9);
@@ -944,7 +944,7 @@ LAB_00587648:
         }
         else {
           local_5 = *(char *)((uint)bVar2 * 0x51 + 0x11ca + iVar9);
-          local_44 = (STGameObjC *)0x0;
+          local_44 = nullptr;
           bVar20 = local_5 != *(char *)((uint)bVar1 * 0x51 + 0x11ca + iVar9);
         }
         if (bVar20) goto LAB_00587648;
@@ -987,7 +987,7 @@ LAB_00587761:
       this_00 = STAllPlayersC::GetObjPtr
                           (g_allPlayers_007FA174,(char)*(int *)((int)param_1 + 0x26f),
                            *(ushort *)((int)param_1 + 0x273),CASE_1);
-      if (this_00 != (STGameObjC *)0x0) {
+      if (this_00 != nullptr) {
         memset(&DAT_008116f0, 0, 0x1c); /* compiler bulk-zero initialization */
         DAT_008116f0 = DAT_007e660c;
         _DAT_008116fc = (undefined2)param_1[0xa9];
@@ -1047,7 +1047,7 @@ LAB_00587761:
     if ((((int)pSVar10 < 10) && (*(int *)((int)param_1 + 0x26f) != 0xff)) &&
        (pSVar10 = STAllPlayersC::GetObjPtr
                             (g_allPlayers_007FA174,(char)*(int *)((int)param_1 + 0x26f),
-                             *(ushort *)((int)param_1 + 0x273),CASE_1), pSVar10 != (STGameObjC *)0x0
+                             *(ushort *)((int)param_1 + 0x273),CASE_1), pSVar10 != nullptr
        )) {
       (*pSVar10->vtable->vfunc_E0)(param_1[0x9e],local_28,local_2c,local_30,&local_24);
       sub_00416240(param_1,local_28[0],local_2c[0],local_30[0]);

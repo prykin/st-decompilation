@@ -13,7 +13,7 @@ int FUN_004de410(void *param_1,int param_2,int param_3)
   local_8 = 0;
   pPVar1 = g_packedRecords_A62x8 + (int)param_1;
   array = *(DArrayTy **)&pPVar1->field_0x9ce;
-  if ((array != (DArrayTy *)0x0) && (index = 0, 0 < (int)array->count)) {
+  if ((array != nullptr) && (index = 0, 0 < (int)array->count)) {
     do {
       DArrayGetElement(array,index,&param_1);
       iVar3 = thunk_FUN_004ddb30(param_1,iVar2);

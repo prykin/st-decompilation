@@ -37,7 +37,7 @@ undefined4 __fastcall FUN_004ead90(AnonShape_004EAD90_30D2E515 *param_1)
                (float)iVar1 * _DAT_007904f8 * _DAT_007904f0 + _DAT_007904fc);
     if ((*(int *)(&DAT_0079aa08 + param_1->field_04D0 * 4) <= param_1->field_04D4) &&
        (param_1->field_04D0 == 3)) {
-      TLOBaseTy::sub_004C4550((TLOBaseTy *)param_1,(int *)0x0);
+      TLOBaseTy::sub_004C4550((TLOBaseTy *)param_1,nullptr);
     }
   }
   return 0;

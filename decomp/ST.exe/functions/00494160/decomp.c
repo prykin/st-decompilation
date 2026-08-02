@@ -79,7 +79,8 @@ LAB_004942e7:
     bVar7 = iVar5 < 0;
   }
   else {
-    bVar7 = (&DAT_008087ea)[(uint)bVar2 * 0x51] != (&DAT_008087ea)[(uint)DAT_0080874d * 0x51];
+    bVar7 = g_bulkInitializedRecords_008087C7[bVar2].field_0023 !=
+            g_bulkInitializedRecords_008087C7[DAT_0080874d].field_0023;
   }
   if (!bVar7) {
     if (DAT_00808a8f == '\0') {
@@ -107,7 +108,8 @@ LAB_004943a0:
       bVar7 = iVar5 < 0;
     }
     else {
-      bVar7 = (&DAT_008087ea)[(uint)DAT_0080874d * 0x51] != (&DAT_008087ea)[(uint)bVar2 * 0x51];
+      bVar7 = g_bulkInitializedRecords_008087C7[DAT_0080874d].field_0023 !=
+              g_bulkInitializedRecords_008087C7[bVar2].field_0023;
     }
     if (!bVar7) {
       pSVar1 = (STT3DSprC *)((int)this + 0x1d5);

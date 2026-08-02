@@ -1,5 +1,3 @@
-#include "../../pseudocode_runtime.h"
-
 
 void __thiscall FUN_005508f0(void *this,int param_1)
 
@@ -68,7 +66,7 @@ void __thiscall FUN_005508f0(void *this,int param_1)
           *pcVar5 = '\0';
           pcVar2 = LoadResourceString(0x4273,module);
           wsprintfA((LPSTR)&DAT_0080f33a,"%s %s",pcVar2,pcVar11);
-          if (g_popUp_008016D8 != (PopUpTy *)0x0) {
+          if (g_popUp_008016D8 != nullptr) {
             thunk_FUN_0052d320(g_popUp_008016D8,(char *)&DAT_0080f33a,8);
           }
         }
@@ -76,7 +74,7 @@ void __thiscall FUN_005508f0(void *this,int param_1)
         pcVar5 = pcVar5 + 0x9c;
       } while (uVar8 < DAT_00808aaf);
     }
-    local_18 = (uint)(byte)(&DAT_008087e8)[uVar1 * 0x51];
+    local_18 = (uint)g_bulkInitializedRecords_008087C7[uVar1].field_0021;
     local_1c = 8;
     local_14 = uVar1;
     thunk_FUN_0054edf0((undefined4 *)0x5,&local_1c,1,0xffffffff);
@@ -107,9 +105,14 @@ void __thiscall FUN_005508f0(void *this,int param_1)
           puVar10 = (undefined4 *)((int)puVar10 + 1);
         }
       }
-      memset((void *)(&DAT_00808a14 + (uint)DAT_00808aaf * 0x9c), 0, 0x9c); /* compiler bulk-zero initialization */
+      puVar9 = (undefined4 *)
+               ((int)g_bulkInitializedRecords_008087C7 + (uint)DAT_00808aaf * 0x9c + 0x24d);
+      for (iVar4 = 0x27; iVar4 != 0; iVar4 = iVar4 + -1) {
+        *puVar9 = 0;
+        puVar9 = puVar9 + 1;
+      }
       DAT_00808aaf = DAT_00808aaf - 1;
-      if (g_playPanel_008016E4 != (PlayPanelTy *)0x0) {
+      if (g_playPanel_008016E4 != nullptr) {
         PlayPanelTy::sub_0053A540(g_playPanel_008016E4);
       }
     }

@@ -67,9 +67,7 @@ int __thiscall OpticClassC::GetMessage(OpticClassC *this,STMessage *message)
           }
           else {
             ST3DSMAPContext::sub_006E1460
-                      (g_sT3DSMAPContext_00807598,SUB84((double)DAT_008073d0,0),
-                       (int)((ulonglong)(double)DAT_008073d0 >> 0x20),SUB84((double)_DAT_008073d4,0)
-                       ,(int)((ulonglong)(double)_DAT_008073d4 >> 0x20));
+                      (g_sT3DSMAPContext_00807598,(double)DAT_008073d0,(double)_DAT_008073d4);
             DAT_008073d0 = (float)g_sT3DSMAPContext_00807598->field_0098;
             _DAT_008073d4 = (float)g_sT3DSMAPContext_00807598->field_00A0;
             lVar6 = Library::MSVCRT::__ftol();

@@ -47,7 +47,7 @@ FUN_00427f20(void *this,float param_1,float param_2,float param_3,int param_4,in
   local_30 = 0;
   DAT_007f4d84 = 0;
   DAT_007f4d78 = 0;
-  DAT_007f4d6c = (short *)0x0;
+  DAT_007f4d6c = nullptr;
   ExceptionList = &local_14;
   puVar2 = &stack0xffffff3c;
   if (param_4 < 1) goto cf_common_join_004286D0;

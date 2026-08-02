@@ -56,7 +56,7 @@ int __thiscall STBoatC::LoadRC(STBoatC *this,int *param_1,undefined4 param_2,int
 
   local_8 = 0;
   /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
-  if ((param_1 == (int *)0x0) || (param_1 == (int *)0x1)) {
+  if ((param_1 == nullptr) || (param_1 == (int *)0x1)) {
     memset(&this->field_02CC, 0, 0x5c); /* compiler bulk-zero initialization */
     this->field_02C4 = 0;
     this->field_049B = this->field_0353;
@@ -116,7 +116,7 @@ LAB_00465cda:
           sVar17 = this->field_049D;
           if (((((sVar11 < 0) || (g_worldGrid.sizeX <= sVar11)) || (sVar17 < 0)) ||
               ((g_worldGrid.sizeY <= sVar17 || (sVar16 < 0)))) || (g_worldGrid.sizeZ <= sVar16)) {
-            pSVar6 = (STWorldObject *)0x0;
+            pSVar6 = nullptr;
           }
           else {
             pSVar6 = g_worldGrid.cells
@@ -144,7 +144,7 @@ LAB_00465cda:
              ((sVar17 < 0 ||
               (((g_worldGrid.sizeY <= sVar17 || (sVar16 < 0)) || (g_worldGrid.sizeZ <= sVar16))))))
           {
-            pSVar6 = (STWorldObject *)0x0;
+            pSVar6 = nullptr;
           }
           else {
             pSVar6 = g_worldGrid.cells
@@ -201,7 +201,7 @@ cf_common_exit_00465E7B:
                             g_worldGrid.cells
                             [(int)sVar16 * (int)g_worldGrid.planeStride +
                              (int)sVar17 * (int)g_worldGrid.sizeX + (int)sVar11].objects[0],
-                  pSVar1 != (STBoatC *)0x0 && (pSVar1->field_0018 == this->field_04A1)))))) &&
+                  pSVar1 != nullptr && (pSVar1->field_0018 == this->field_04A1)))))) &&
                (iVar5 = thunk_FUN_004e1490(pSVar1), iVar5 != 1)) {
               /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
               sub_0048DFD0(this,this->field_0047,this->field_0049,this->field_004B,this->field_049B,
@@ -217,7 +217,7 @@ cf_common_exit_00465E7B:
           goto cf_common_exit_00469979;
         case 1:
           if ((this->field_04BD != 1) && (this->field_04C1 != 1)) goto cf_common_exit_00468C50;
-          local_c = (undefined4 *)0x0;
+          local_c = nullptr;
           if (this->field_04BD == 1) {
             this->field_04BD = 0;
             if (this->field_04A1 != -1) {
@@ -228,7 +228,7 @@ cf_common_exit_00465E7B:
                  ((sVar17 < 0 ||
                   (((g_worldGrid.sizeY <= sVar17 || (sVar16 < 0)) || (g_worldGrid.sizeZ <= sVar16)))
                   ))) {
-                pSVar6 = (STWorldObject *)0x0;
+                pSVar6 = nullptr;
               }
               else {
                 pSVar6 = g_worldGrid.cells
@@ -252,7 +252,7 @@ cf_common_exit_00465E7B:
               if ((((sVar11 < 0) || (g_worldGrid.sizeX <= sVar11)) ||
                   ((sVar17 < 0 || ((g_worldGrid.sizeY <= sVar17 || (sVar16 < 0)))))) ||
                  (g_worldGrid.sizeZ <= sVar16)) {
-                pSVar6 = (STWorldObject *)0x0;
+                pSVar6 = nullptr;
               }
               else {
                 pSVar6 = g_worldGrid.cells
@@ -267,7 +267,7 @@ cf_common_exit_00465E7B:
           iVar5 = thunk_FUN_0048d440(this);
           if (iVar5 == 0) goto cf_common_exit_00467FE4;
           if (iVar5 == 1) {
-            if ((this->field_04A1 != -1) && (local_c == (undefined4 *)0x0))
+            if ((this->field_04A1 != -1) && (local_c == nullptr))
             goto cf_common_exit_00468C50;
             sub_004602B0(this);
             if (this->field_04A1 == -1) {
@@ -330,7 +330,7 @@ LAB_00465f11:
           sVar17 = this->field_049D;
           if ((((sVar11 < 0) || (g_worldGrid.sizeX <= sVar11)) || (sVar17 < 0)) ||
              (((g_worldGrid.sizeY <= sVar17 || (sVar16 < 0)) || (g_worldGrid.sizeZ <= sVar16)))) {
-            pSVar6 = (STWorldObject *)0x0;
+            pSVar6 = nullptr;
           }
           else {
             pSVar6 = g_worldGrid.cells
@@ -358,7 +358,7 @@ LAB_00465f11:
              ((sVar17 < 0 ||
               (((g_worldGrid.sizeY <= sVar17 || (sVar16 < 0)) || (g_worldGrid.sizeZ <= sVar16))))))
           {
-            pSVar6 = (STWorldObject *)0x0;
+            pSVar6 = nullptr;
           }
           else {
             pSVar6 = g_worldGrid.cells
@@ -428,7 +428,7 @@ cf_common_exit_00465E5A:
                    g_worldGrid.cells
                    [(int)sVar16 * (int)g_worldGrid.planeStride +
                     (int)sVar17 * (int)g_worldGrid.sizeX + (int)sVar11].objects[0];
-          if (pSVar1 == (STBoatC *)0x0) {
+          if (pSVar1 == nullptr) {
             return 2;
           }
           if (pSVar1->field_0018 != this->field_04A1) {
@@ -450,7 +450,7 @@ LAB_00468322:
           sub_00460260(this,0);
           return 2;
         }
-        local_c = (undefined4 *)0x0;
+        local_c = nullptr;
         if (this->field_04BD == 1) {
           this->field_04BD = 0;
           if (this->field_04A1 != -1) {
@@ -461,7 +461,7 @@ LAB_00468322:
                ((sVar17 < 0 ||
                 (((g_worldGrid.sizeY <= sVar17 || (sVar16 < 0)) || (g_worldGrid.sizeZ <= sVar16)))))
                ) {
-              pSVar6 = (STWorldObject *)0x0;
+              pSVar6 = nullptr;
             }
             else {
               pSVar6 = g_worldGrid.cells
@@ -485,7 +485,7 @@ LAB_00468322:
             if (((sVar11 < 0) || (g_worldGrid.sizeX <= sVar11)) ||
                (((sVar17 < 0 || ((g_worldGrid.sizeY <= sVar17 || (sVar16 < 0)))) ||
                 (g_worldGrid.sizeZ <= sVar16)))) {
-              pSVar6 = (STWorldObject *)0x0;
+              pSVar6 = nullptr;
             }
             else {
               pSVar6 = g_worldGrid.cells
@@ -507,7 +507,7 @@ LAB_00468322:
           if (this->field_04A1 == -1) {
             return 2;
           }
-          if (local_c == (undefined4 *)0x0) {
+          if (local_c == nullptr) {
             return 2;
           }
           if (this->field_04A1 == -1) {
@@ -536,7 +536,7 @@ LAB_00466087:
             return (-(uint)(iVar5 != 0) & 0xfffffffd) + 2;
           case 1:
             if ((this->field_04BD != 1) && (this->field_04C1 != 1)) goto cf_common_exit_00468C50;
-            local_c = (undefined4 *)0x0;
+            local_c = nullptr;
             if (this->field_04BD == 1) {
               this->field_04BD = 0;
               if (this->field_04A1 != -1) {
@@ -546,7 +546,7 @@ LAB_00466087:
                 if (((((sVar11 < 0) || (g_worldGrid.sizeX <= sVar11)) || (sVar17 < 0)) ||
                     ((g_worldGrid.sizeY <= sVar17 || (sVar16 < 0)))) ||
                    (g_worldGrid.sizeZ <= sVar16)) {
-                  pSVar6 = (STWorldObject *)0x0;
+                  pSVar6 = nullptr;
                 }
                 else {
                   pSVar6 = g_worldGrid.cells
@@ -571,7 +571,7 @@ LAB_00466087:
                    ((sVar17 < 0 ||
                     (((g_worldGrid.sizeY <= sVar17 || (sVar16 < 0)) || (g_worldGrid.sizeZ <= sVar16)
                      ))))) {
-                  pSVar6 = (STWorldObject *)0x0;
+                  pSVar6 = nullptr;
                 }
                 else {
                   pSVar6 = g_worldGrid.cells
@@ -590,7 +590,7 @@ LAB_00466087:
               goto cf_common_exit_00469979;
             }
             if (iVar5 == 1) {
-              if ((this->field_04A1 != -1) && (local_c == (undefined4 *)0x0))
+              if ((this->field_04A1 != -1) && (local_c == nullptr))
               goto cf_common_exit_00468C50;
               sub_004602B0(this);
               if (this->field_04A1 == -1) {
@@ -657,7 +657,7 @@ LAB_00466bff:
                ((sVar17 < 0 ||
                 (((g_worldGrid.sizeY <= sVar17 || (sVar16 < 0)) || (g_worldGrid.sizeZ <= sVar16)))))
                ) {
-              pSVar6 = (STWorldObject *)0x0;
+              pSVar6 = nullptr;
             }
             else {
               pSVar6 = g_worldGrid.cells
@@ -684,7 +684,7 @@ LAB_00466bff:
             if ((((sVar11 < 0) || (g_worldGrid.sizeX <= sVar11)) ||
                 ((sVar17 < 0 || ((g_worldGrid.sizeY <= sVar17 || (sVar16 < 0)))))) ||
                (g_worldGrid.sizeZ <= sVar16)) {
-              pSVar6 = (STWorldObject *)0x0;
+              pSVar6 = nullptr;
             }
             else {
               pSVar6 = g_worldGrid.cells
@@ -711,7 +711,7 @@ LAB_00466bff:
       if (iVar5 == 5) {
         *(int *)&this->field_0x4cd = *(int *)&this->field_0x4cd + 1;
         if ((this->field_04BD == 1) || (this->field_04C1 == 1)) {
-          local_c = (undefined4 *)0x0;
+          local_c = nullptr;
           if (this->field_04BD == 1) {
             this->field_04BD = 0;
             if (this->field_04A1 != -1) {
@@ -721,7 +721,7 @@ LAB_00466bff:
               if (((((sVar11 < 0) || (g_worldGrid.sizeX <= sVar11)) || (sVar17 < 0)) ||
                   ((g_worldGrid.sizeY <= sVar17 || (sVar16 < 0)))) || (g_worldGrid.sizeZ <= sVar16))
               {
-                pSVar6 = (STWorldObject *)0x0;
+                pSVar6 = nullptr;
               }
               else {
                 pSVar6 = g_worldGrid.cells
@@ -746,7 +746,7 @@ LAB_00466bff:
                  ((sVar17 < 0 ||
                   (((g_worldGrid.sizeY <= sVar17 || (sVar16 < 0)) || (g_worldGrid.sizeZ <= sVar16)))
                   ))) {
-                pSVar6 = (STWorldObject *)0x0;
+                pSVar6 = nullptr;
               }
               else {
                 pSVar6 = g_worldGrid.cells
@@ -771,7 +771,7 @@ LAB_00466bff:
             this->field_00B7 = 3;
             goto LAB_00467068;
           }
-          if ((this->field_04A1 == -1) || (local_c != (undefined4 *)0x0)) {
+          if ((this->field_04A1 == -1) || (local_c != nullptr)) {
             *(undefined4 *)&this->field_0x4cd = 0;
             this->field_00B7 = 3;
             if (this->field_04A1 == -1) {
@@ -802,7 +802,7 @@ LAB_00466bff:
            || ((pSVar6 = g_worldGrid.cells
                          [(int)sVar16 * (int)g_worldGrid.planeStride +
                           (int)sVar17 * (int)g_worldGrid.sizeX + (int)sVar11].objects[0],
-               pSVar6 == (STWorldObject *)0x0 || (*(int *)&pSVar6->field_0x18 != this->field_04A1)))
+               pSVar6 == nullptr || (*(int *)&pSVar6->field_0x18 != this->field_04A1)))
            ) {
           sub_0048D930(this);
           *(undefined4 *)&this->field_0x4cd = 0;
@@ -909,7 +909,7 @@ cf_common_exit_00468C50:
               break;
             case 1:
               if ((this->field_04BD == 1) || (this->field_04C1 == 1)) {
-                local_c = (undefined4 *)0x0;
+                local_c = nullptr;
                 if (this->field_04BD == 1) {
                   this->field_04BD = 0;
                   if (this->field_04A1 != -1) {
@@ -920,7 +920,7 @@ cf_common_exit_00468C50:
                        ((sVar17 < 0 ||
                         (((g_worldGrid.sizeY <= sVar17 || (sVar16 < 0)) ||
                          (g_worldGrid.sizeZ <= sVar16)))))) {
-                      pSVar6 = (STWorldObject *)0x0;
+                      pSVar6 = nullptr;
                     }
                     else {
                       pSVar6 = g_worldGrid.cells
@@ -944,7 +944,7 @@ cf_common_exit_00468C50:
                     if (((sVar11 < 0) || (g_worldGrid.sizeX <= sVar11)) ||
                        (((sVar17 < 0 || ((g_worldGrid.sizeY <= sVar17 || (sVar16 < 0)))) ||
                         (g_worldGrid.sizeZ <= sVar16)))) {
-                      pSVar6 = (STWorldObject *)0x0;
+                      pSVar6 = nullptr;
                     }
                     else {
                       pSVar6 = g_worldGrid.cells
@@ -959,7 +959,7 @@ cf_common_exit_00468C50:
                 iVar5 = thunk_FUN_0048d440(this);
                 if (iVar5 == 0) goto cf_common_exit_00467FE4;
                 if (iVar5 != 1) goto LAB_0046817e;
-                if ((this->field_04A1 != -1) && (local_c == (undefined4 *)0x0))
+                if ((this->field_04A1 != -1) && (local_c == nullptr))
                 goto cf_common_exit_004699E9;
                 sub_004602B0(this);
                 if (this->field_04A1 == -1) {
@@ -984,7 +984,7 @@ cf_common_exit_00468C50:
                              g_worldGrid.cells
                              [(int)sVar16 * (int)g_worldGrid.planeStride +
                               (int)sVar17 * (int)g_worldGrid.sizeX + (int)sVar11].objects[0],
-                   pSVar1 == (STBoatC *)0x0 || (pSVar1->field_0018 != this->field_04AB)))) ||
+                   pSVar1 == nullptr || (pSVar1->field_0018 != this->field_04AB)))) ||
                  ((iVar5 = thunk_FUN_004e1490(pSVar1), iVar5 != 1 ||
                   (iVar5 = thunk_FUN_0048d650(this,(STFishC *)pSVar1), iVar5 != 1))))
               goto cf_common_exit_004699E9;
@@ -1059,7 +1059,7 @@ cf_error_exit_004660E9:
                        g_worldGrid.cells
                        [(int)sVar16 * (int)g_worldGrid.planeStride +
                         (int)sVar17 * (int)g_worldGrid.sizeX + (int)sVar11].objects[0];
-              if (pSVar1 == (STBoatC *)0x0) {
+              if (pSVar1 == nullptr) {
                 return 2;
               }
               if (pSVar1->field_0018 != this->field_04AB) {
@@ -1082,7 +1082,7 @@ cf_error_exit_004660E9:
               this->field_00B7 = 0;
               goto LAB_00468322;
             }
-            local_c = (undefined4 *)0x0;
+            local_c = nullptr;
             if (this->field_04BD == 1) {
               this->field_04BD = 0;
               if (this->field_04A1 != -1) {
@@ -1092,7 +1092,7 @@ cf_error_exit_004660E9:
                 if (((((sVar11 < 0) || (g_worldGrid.sizeX <= sVar11)) || (sVar17 < 0)) ||
                     ((g_worldGrid.sizeY <= sVar17 || (sVar16 < 0)))) ||
                    (g_worldGrid.sizeZ <= sVar16)) {
-                  pSVar6 = (STWorldObject *)0x0;
+                  pSVar6 = nullptr;
                 }
                 else {
                   pSVar6 = g_worldGrid.cells
@@ -1114,7 +1114,7 @@ cf_error_exit_004660E9:
                    ((sVar17 < 0 ||
                     (((g_worldGrid.sizeY <= sVar17 || (sVar16 < 0)) || (g_worldGrid.sizeZ <= sVar16)
                      ))))) {
-                  pSVar6 = (STWorldObject *)0x0;
+                  pSVar6 = nullptr;
                 }
                 else {
                   pSVar6 = g_worldGrid.cells
@@ -1205,7 +1205,7 @@ LAB_00468493:
               if (this->field_04D9 == 3) {
                 local_10 = STJellyGunC::sub_00415ED0((STJellyGunC *)this,&local_18,&local_14);
                 /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
-                param_1 = (int *)0x0;
+                param_1 = nullptr;
                 if (this->field_02BF != '\0') {
                   local_c = (undefined4 *)&this->field_0x2b3;
                   do {
@@ -1333,7 +1333,7 @@ LAB_00468493:
                   if (this->field_04D9 == 3) {
                     local_10 = STJellyGunC::sub_00415ED0((STJellyGunC *)this,&local_14,&local_18);
                     /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
-                    param_1 = (int *)0x0;
+                    param_1 = nullptr;
                     if (this->field_02BF != '\0') {
                       local_c = (undefined4 *)&this->field_0x2b3;
                       do {
@@ -1480,7 +1480,7 @@ LAB_00468493:
             iVar5 = *(int *)&this->field_0x4cd + 1;
             *(int *)&this->field_0x4cd = iVar5;
             if ((this->field_04BD == 1) || (this->field_04C1 == 1)) {
-              local_c = (undefined4 *)0x0;
+              local_c = nullptr;
               if (this->field_04BD == 1) {
                 this->field_04BD = 0;
                 if (this->field_04A1 != -1) {
@@ -1490,7 +1490,7 @@ LAB_00468493:
                   if (((((sVar11 < 0) || (g_worldGrid.sizeX <= sVar11)) || (sVar17 < 0)) ||
                       ((g_worldGrid.sizeY <= sVar17 || (sVar16 < 0)))) ||
                      (g_worldGrid.sizeZ <= sVar16)) {
-                    pSVar6 = (STWorldObject *)0x0;
+                    pSVar6 = nullptr;
                   }
                   else {
                     pSVar6 = g_worldGrid.cells
@@ -1512,7 +1512,7 @@ LAB_00468493:
                      ((sVar17 < 0 ||
                       (((g_worldGrid.sizeY <= sVar17 || (sVar16 < 0)) ||
                        (g_worldGrid.sizeZ <= sVar16)))))) {
-                    pSVar6 = (STWorldObject *)0x0;
+                    pSVar6 = nullptr;
                   }
                   else {
                     pSVar6 = g_worldGrid.cells
@@ -1530,7 +1530,7 @@ LAB_00468493:
               }
               else {
 LAB_00469198:
-                if ((this->field_04AB != -1) && (local_c == (undefined4 *)0x0)) goto LAB_004691ae;
+                if ((this->field_04AB != -1) && (local_c == nullptr)) goto LAB_004691ae;
               }
               *(undefined4 *)&this->field_0x4cd = 0;
               *(undefined4 *)&this->field_0x4d5 = 0xd;
@@ -1550,7 +1550,7 @@ LAB_004691ae:
                    ))) && ((pSVar6 = g_worldGrid.cells
                                      [(int)sVar16 * (int)g_worldGrid.planeStride +
                                       (int)sVar17 * (int)g_worldGrid.sizeX + (int)sVar11].objects[0]
-                           , pSVar6 != (STWorldObject *)0x0 &&
+                           , pSVar6 != nullptr &&
                            (*(int *)&pSVar6->field_0x18 == this->field_04AB)))) &&
                 (*(int *)&pSVar6[0x21].field_0x10 == 0)) && (*(int *)&pSVar6[0x10].field_0x5 != 6))
             {
@@ -1633,7 +1633,7 @@ LAB_004692be:
                    ))) && ((pSVar6 = g_worldGrid.cells
                                      [(int)sVar16 * (int)g_worldGrid.planeStride +
                                       (int)sVar17 * (int)g_worldGrid.sizeX + (int)sVar11].objects[0]
-                           , pSVar6 != (STWorldObject *)0x0 &&
+                           , pSVar6 != nullptr &&
                            (*(int *)&pSVar6->field_0x18 == this->field_04AB)))) {
                 thunk_FUN_004e1690(pSVar6,this->field_0018);
               }
@@ -1653,7 +1653,7 @@ LAB_004692be:
                     g_worldGrid.cells
                     [(int)sVar16 * (int)g_worldGrid.planeStride +
                      (int)sVar17 * (int)g_worldGrid.sizeX + (int)sVar11].objects[0] !=
-                    (STFishC *)0x0)))))) {
+                    nullptr)))))) {
                 thunk_FUN_0048d650(this,(STFishC *)
                                         g_worldGrid.cells
                                         [(int)sVar16 * (int)g_worldGrid.planeStride +
@@ -1699,7 +1699,7 @@ LAB_004685d3:
                  ((sVar17 < 0 ||
                   (((g_worldGrid.sizeY <= sVar17 || (sVar16 < 0)) || (g_worldGrid.sizeZ <= sVar16)))
                   ))) {
-                pSVar6 = (STWorldObject *)0x0;
+                pSVar6 = nullptr;
               }
               else {
                 pSVar6 = g_worldGrid.cells
@@ -1726,7 +1726,7 @@ LAB_004685d3:
               if (((sVar11 < 0) || (g_worldGrid.sizeX <= sVar11)) ||
                  (((sVar17 < 0 || ((g_worldGrid.sizeY <= sVar17 || (sVar16 < 0)))) ||
                   (g_worldGrid.sizeZ <= sVar16)))) {
-                pSVar6 = (STWorldObject *)0x0;
+                pSVar6 = nullptr;
               }
               else {
                 pSVar6 = g_worldGrid.cells
@@ -1768,7 +1768,7 @@ LAB_004685d3:
                               g_worldGrid.cells
                               [(int)sVar16 * (int)g_worldGrid.planeStride +
                                (int)sVar17 * (int)g_worldGrid.sizeX + (int)sVar11].objects[0],
-                    pSVar1 != (STBoatC *)0x0 && (pSVar1->field_0018 == this->field_04AB)))))) &&
+                    pSVar1 != nullptr && (pSVar1->field_0018 == this->field_04AB)))))) &&
                  (iVar5 = thunk_FUN_004e1490(pSVar1), iVar5 != 1)) {
                 /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
                 sub_0048DFD0(this,this->field_0047,this->field_0049,this->field_004B,
@@ -1785,7 +1785,7 @@ LAB_004685d3:
             goto cf_common_exit_00469979;
           case 1:
             if ((this->field_04BD != 1) && (this->field_04C1 != 1)) goto cf_common_exit_00468C50;
-            local_c = (undefined4 *)0x0;
+            local_c = nullptr;
             if (this->field_04BD == 1) {
               this->field_04BD = 0;
               if (this->field_04A1 != -1) {
@@ -1796,7 +1796,7 @@ LAB_004685d3:
                    ((sVar17 < 0 ||
                     (((g_worldGrid.sizeY <= sVar17 || (sVar16 < 0)) || (g_worldGrid.sizeZ <= sVar16)
                      ))))) {
-                  pSVar6 = (STWorldObject *)0x0;
+                  pSVar6 = nullptr;
                 }
                 else {
                   pSVar6 = g_worldGrid.cells
@@ -1817,7 +1817,7 @@ LAB_004685d3:
                 if ((((sVar11 < 0) || (g_worldGrid.sizeX <= sVar11)) ||
                     ((sVar17 < 0 || ((g_worldGrid.sizeY <= sVar17 || (sVar16 < 0)))))) ||
                    (g_worldGrid.sizeZ <= sVar16)) {
-                  pSVar6 = (STWorldObject *)0x0;
+                  pSVar6 = nullptr;
                 }
                 else {
                   pSVar6 = g_worldGrid.cells
@@ -1835,7 +1835,7 @@ LAB_004685d3:
             iVar5 = thunk_FUN_0048d440(this);
             if (iVar5 == 0) goto cf_common_exit_00467FE4;
             if (iVar5 == 7) {
-              if ((this->field_04AB != -1) && (local_c == (undefined4 *)0x0))
+              if ((this->field_04AB != -1) && (local_c == nullptr))
               goto cf_common_exit_00468C50;
               sub_004602B0(this);
               if (this->field_04AB == -1) {
@@ -1893,7 +1893,7 @@ LAB_0046779f:
             sVar17 = this->field_049D;
             if ((((sVar11 < 0) || (g_worldGrid.sizeX <= sVar11)) || (sVar17 < 0)) ||
                (((g_worldGrid.sizeY <= sVar17 || (sVar16 < 0)) || (g_worldGrid.sizeZ <= sVar16)))) {
-              pSVar6 = (STWorldObject *)0x0;
+              pSVar6 = nullptr;
             }
             else {
               pSVar6 = g_worldGrid.cells
@@ -1921,7 +1921,7 @@ LAB_0046779f:
                ((sVar17 < 0 ||
                 (((g_worldGrid.sizeY <= sVar17 || (sVar16 < 0)) || (g_worldGrid.sizeZ <= sVar16)))))
                ) {
-              pSVar6 = (STWorldObject *)0x0;
+              pSVar6 = nullptr;
             }
             else {
               pSVar6 = g_worldGrid.cells
@@ -2003,7 +2003,7 @@ LAB_00467da5:
       break;
     case 1:
       if ((this->field_04BD == 1) || (this->field_04C1 == 1)) {
-        local_c = (undefined4 *)0x0;
+        local_c = nullptr;
         if (this->field_04BD == 1) {
           this->field_04BD = 0;
           if (this->field_04A1 != -1) {
@@ -2014,7 +2014,7 @@ LAB_00467da5:
                ((sVar17 < 0 ||
                 (((g_worldGrid.sizeY <= sVar17 || (sVar16 < 0)) || (g_worldGrid.sizeZ <= sVar16)))))
                ) {
-              pSVar6 = (STWorldObject *)0x0;
+              pSVar6 = nullptr;
             }
             else {
               pSVar6 = g_worldGrid.cells
@@ -2038,7 +2038,7 @@ LAB_00467da5:
             if (((sVar11 < 0) || (g_worldGrid.sizeX <= sVar11)) ||
                (((sVar17 < 0 || ((g_worldGrid.sizeY <= sVar17 || (sVar16 < 0)))) ||
                 (g_worldGrid.sizeZ <= sVar16)))) {
-              pSVar6 = (STWorldObject *)0x0;
+              pSVar6 = nullptr;
             }
             else {
               pSVar6 = g_worldGrid.cells
@@ -2058,7 +2058,7 @@ cf_common_exit_00467FE4:
           goto cf_common_exit_00469979;
         }
         if (iVar5 == 1) {
-          if ((this->field_04A1 != -1) && (local_c == (undefined4 *)0x0))
+          if ((this->field_04A1 != -1) && (local_c == nullptr))
           goto cf_common_exit_004699E9;
           sub_004602B0(this);
           if (this->field_04A1 == -1) {
@@ -2090,7 +2090,7 @@ LAB_00466744:
                         g_worldGrid.cells
                         [(int)sVar16 * (int)g_worldGrid.planeStride +
                          (int)sVar17 * (int)g_worldGrid.sizeX + (int)sVar11].objects[0],
-              pSVar1 == (STBoatC *)0x0 || (pSVar1->field_0018 != this->field_04A1)))))) ||
+              pSVar1 == nullptr || (pSVar1->field_0018 != this->field_04A1)))))) ||
            (iVar5 = thunk_FUN_004e1490(pSVar1), iVar5 != 1)) goto cf_common_exit_004699E9;
         sub_004602B0(this);
         thunk_FUN_004e15f0(pSVar1,this->field_0018);
@@ -2133,7 +2133,7 @@ cf_common_exit_004699E9:
   return (-(uint)(iVar5 != 0) & 0xfffffffd) + 2;
 switchD_0046878c_caseD_1:
   if ((this->field_04BD == 1) || (this->field_04C1 == 1)) {
-    local_c = (undefined4 *)0x0;
+    local_c = nullptr;
     if (this->field_04BD == 1) {
       this->field_04BD = 0;
       if (this->field_04A1 != -1) {
@@ -2142,7 +2142,7 @@ switchD_0046878c_caseD_1:
         sVar17 = this->field_049D;
         if ((((sVar11 < 0) || (g_worldGrid.sizeX <= sVar11)) || (sVar17 < 0)) ||
            (((g_worldGrid.sizeY <= sVar17 || (sVar16 < 0)) || (g_worldGrid.sizeZ <= sVar16)))) {
-          pSVar6 = (STWorldObject *)0x0;
+          pSVar6 = nullptr;
         }
         else {
           pSVar6 = g_worldGrid.cells
@@ -2163,7 +2163,7 @@ switchD_0046878c_caseD_1:
         if (((sVar11 < 0) || (g_worldGrid.sizeX <= sVar11)) ||
            ((sVar17 < 0 ||
             (((g_worldGrid.sizeY <= sVar17 || (sVar16 < 0)) || (g_worldGrid.sizeZ <= sVar16)))))) {
-          pSVar6 = (STWorldObject *)0x0;
+          pSVar6 = nullptr;
         }
         else {
           pSVar6 = g_worldGrid.cells
@@ -2194,7 +2194,7 @@ switchD_0046878c_caseD_1:
       *(undefined4 *)&this->field_0x4d5 = 1;
       goto LAB_00468c40;
     }
-    if ((this->field_04AB != -1) && (local_c == (undefined4 *)0x0)) goto cf_common_exit_00468C50;
+    if ((this->field_04AB != -1) && (local_c == nullptr)) goto cf_common_exit_00468C50;
     sub_004602B0(this);
     if (this->field_04AB == -1) {
       *(int *)&this->field_0x4cd = *(int *)&this->field_0x4cd + 1;
@@ -2217,7 +2217,7 @@ switchD_0046878c_caseD_1:
        ((STFishC *)
         g_worldGrid.cells
         [(int)sVar16 * (int)g_worldGrid.planeStride + (int)sVar17 * (int)g_worldGrid.sizeX +
-         (int)sVar11].objects[0] != (STFishC *)0x0)))))) {
+         (int)sVar11].objects[0] != nullptr)))))) {
     thunk_FUN_0048d650(this,(STFishC *)
                             g_worldGrid.cells
                             [(int)sVar16 * (int)g_worldGrid.planeStride +

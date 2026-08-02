@@ -21,7 +21,7 @@ void __thiscall STBHEShellC::sub_005F4680(STBHEShellC *this)
     sub_005F35F0(this,this->field_0087);
   }
   pVVar2 = g_visibleClass_00802A88;
-  if (g_visibleClass_00802A88 != (VisibleClassTy *)0x0) {
+  if (g_visibleClass_00802A88 != nullptr) {
     iVar5 = this->field_009B;
     sVar1 = (short)(iVar5 >> 0x1f);
     if (iVar5 < 0) {
@@ -59,7 +59,7 @@ void __thiscall STBHEShellC::sub_005F4680(STBHEShellC *this)
         ((local_c < pVVar2->field_0030 &&
          ((local_10 = g_centeredOffsets5[local_8] + local_10, -1 < local_10 &&
           (local_10 < pVVar2->field_0034)))))) &&
-       ((pVVar2->field_004C != (byte *)0x0 &&
+       ((pVVar2->field_004C != nullptr &&
         (pVVar2->field_004C[local_c + local_10 * pVVar2->field_0030] == 0)))) {
       if (this->field_00C4 == '\0') {
         return;

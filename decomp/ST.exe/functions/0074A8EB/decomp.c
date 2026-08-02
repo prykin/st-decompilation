@@ -16,7 +16,7 @@ undefined4 __fastcall FUN_0074a8eb(int *param_1)
   }
   else {
     if (iVar1 == 0) {
-      piVar3 = (int *)0x0;
+      piVar3 = nullptr;
     }
     else {
       piVar3 = (int *)(iVar1 + 0xc);

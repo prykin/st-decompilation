@@ -56,7 +56,7 @@ OptPanelTy::CreateSlider
   if (iVar3 == 0) {
     memset(local_42c, 0, 0x3d8); /* compiler bulk-zero initialization */
     iVar10 = 1;
-    piVar9 = (int *)0x0;
+    piVar9 = nullptr;
     uVar8 = 0;
     local_6c = param_6;
     local_84 = pOVar2->field_0008;
@@ -105,7 +105,7 @@ OptPanelTy::CreateSlider
     local_2a4[3] = iVar3 + param_2;
     local_23c = 0xc006;
     (*pOVar2->field_000C->vtable->CreateObject)
-              ((SystemClassTy *)pOVar2->field_000C,4,&local_8,(int *)0x0,local_42c,0);
+              ((SystemClassTy *)pOVar2->field_000C,4,&local_8,nullptr,local_42c,0);
     g_currentExceptionFrame = local_54.previous;
     return local_8;
   }

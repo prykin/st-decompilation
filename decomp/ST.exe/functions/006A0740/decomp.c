@@ -59,9 +59,9 @@ int __thiscall CGenerate::SaveMap(CGenerate *this)
   pcVar6 = &this_00->field_0x55fb;
   memmove(pcVar6, pcVar3, uVar4); /* compiler REP MOVS byte copy */
   cMf32::RecPut(this_00->field_0018,0,PTR_s_TITLE_MISSION_0079d838,&this_00->field_0x55fb,0x104,
-                (undefined4 *)0x0,'\0',(uint *)0x0);
+                nullptr,'\0',nullptr);
   cMf32::RecPut(this_00->field_0018,0,PTR_s_TEXTURE_0079d83c,&this_00->field_0x53f3,0x104,
-                (undefined4 *)0x0,'\0',(uint *)0x0);
+                nullptr,'\0',nullptr);
   iVar2 = Library::Ourlib::MFSTMAP::AuxTMapRefreshAll
                     ((short *)this_00->field_000C,this_00->field_0008);
   if (iVar2 != 0) {
@@ -81,13 +81,13 @@ int __thiscall CGenerate::SaveMap(CGenerate *this)
     }
   }
   local_c = (AnonShape_006B5050_99986F91 *)thunk_FUN_006a2ed0((short *)this_00->field_000C);
-  puVar9 = (uint *)0x0;
+  puVar9 = nullptr;
   cVar8 = '\0';
-  puVar7 = (undefined4 *)0x0;
+  puVar7 = nullptr;
   uVar4 = FUN_006b5050(local_c);
   cMf32::RecPut(this_00->field_0018,0xc,PTR_s_SMALL_MAP_0079d840,(byte *)local_c,uVar4,puVar7,cVar8,
                 puVar9);
-  if (local_c != (AnonShape_006B5050_99986F91 *)0x0) {
+  if (local_c != nullptr) {
     FreeAndNull(&local_c);
   }
   g_currentExceptionFrame = local_54.previous;

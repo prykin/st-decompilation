@@ -21,10 +21,10 @@ void __fastcall FUN_004945c0(AnonShape_004945C0_2B3B394D *param_1)
   uint local_c;
 
   local_c = 0;
-  local_18 = &DAT_008087e9;
+  local_18 = &g_bulkInitializedRecords_008087C7[0].field_0022;
   piVar6 = (int *)&param_1[0x23].field_0032;
   do {
-    if ((g_playSystem_00802A38 == (STPlaySystemC *)0x0) || (*local_18 < 8)) {
+    if ((g_playSystem_00802A38 == nullptr) || (*local_18 < 8)) {
       bVar1 = param_1->field_0024;
       bVar5 = (byte)local_c;
       if (DAT_00808a8f == '\0') {
@@ -52,7 +52,8 @@ LAB_004946a9:
         bVar7 = iVar3 < 0;
       }
       else {
-        bVar7 = (&DAT_008087ea)[(uint)bVar1 * 0x51] != (&DAT_008087ea)[(local_c & 0xff) * 0x51];
+        bVar7 = g_bulkInitializedRecords_008087C7[bVar1].field_0023 !=
+                g_bulkInitializedRecords_008087C7[local_c & 0xff].field_0023;
       }
       if (!bVar7) {
         if (DAT_00808a8f == '\0') {
@@ -80,7 +81,8 @@ LAB_00494766:
           bVar7 = iVar3 < 0;
         }
         else {
-          bVar7 = (&DAT_008087ea)[(local_c & 0xff) * 0x51] != (&DAT_008087ea)[(uint)bVar1 * 0x51];
+          bVar7 = g_bulkInitializedRecords_008087C7[local_c & 0xff].field_0023 !=
+                  g_bulkInitializedRecords_008087C7[bVar1].field_0023;
         }
         if (!bVar7) {
           *piVar6 = 0;

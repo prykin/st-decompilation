@@ -7,7 +7,7 @@ int __thiscall FUN_00711530(void *this,int *param_1)
   int iVar3;
 
   iVar3 = 0;
-  if (param_1 == (int *)0x0) {
+  if (param_1 == nullptr) {
     return 0;
   }
   iVar2 = *param_1;

@@ -11,7 +11,7 @@ void __thiscall FUN_00568bc0(void *this,int param_1)
     g_currentExceptionFrame = &local_4c;
     iVar1 = Library::MSVCRT::__setjmp3(local_4c.jumpBuffer,0);
     if (iVar1 == 0) {
-      FUN_006c1f00(param_1,&local_8,(uint *)0x0);
+      FUN_006c1f00(param_1,&local_8,nullptr);
       if (local_8 == 1) {
         FUN_006c1ba0(param_1);
       }

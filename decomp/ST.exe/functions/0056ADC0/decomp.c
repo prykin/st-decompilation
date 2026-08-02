@@ -215,10 +215,10 @@ STAppC::InitApp(STAppC *this,HINSTANCE param_1,undefined4 param_2,undefined4 par
   g_currentExceptionFrame = local_1c0.previous;
   FUN_006b1980((int *)g_ddxContext_008075A8,2,-1,DAT_00807568,DAT_0080756c,DAT_00807570,DAT_00807574
               );
-  FUN_006b1cc0(g_ddxContext_008075A8,2,DAT_00807568,DAT_0080756c,(undefined4 *)0x0);
+  FUN_006b1cc0(g_ddxContext_008075A8,2,DAT_00807568,DAT_0080756c,nullptr);
   FUN_006b1980((int *)g_ddxContext_008075A8,3,-1,DAT_00807568,DAT_0080756c,DAT_00807570,DAT_00807574
               );
-  FUN_006b1cc0(g_ddxContext_008075A8,3,0,0,(undefined4 *)0x0);
+  FUN_006b1cc0(g_ddxContext_008075A8,3,0,0,nullptr);
   FUN_006ad270(g_dDXContext_0080759C);
   DVar9 = timeGetTime();
   Library::MSVCRT::FUN_0072e6b0(DVar9);
@@ -276,7 +276,7 @@ STAppC::InitApp(STAppC *this,HINSTANCE param_1,undefined4 param_2,undefined4 par
   }
   FUN_006c18b0((uint)DAT_00807363);
   CreateBaseSystem();
-  pDVar10 = Library::DKW::TBL::SArrayCreate((DArrayTy *)0x0,1,1);
+  pDVar10 = Library::DKW::TBL::SArrayCreate(nullptr,1,1);
   pSVar19->field_4EDA = pDVar10;
   memset(local_2c, 0, 0x20); /* compiler bulk-zero initialization */
   iVar7 = 0;
@@ -287,18 +287,18 @@ STAppC::InitApp(STAppC *this,HINSTANCE param_1,undefined4 param_2,undefined4 par
   local_1c = 0x6123;
   bVar4 = false;
   pcVar12 = (char *)PTR_00857168->field_0004;
-  if (pcVar12 == (char *)0x0) {
+  if (pcVar12 == nullptr) {
     if ((DAT_00807330 & 1) != 0) {
       ppAVar25 = &local_560;
       for (iVar7 = 0xc6; iVar7 != 0; iVar7 = iVar7 + -1) {
-        *ppAVar25 = (AnonShape_00683C70_22193481 *)0x0;
+        *ppAVar25 = nullptr;
         ppAVar25 = ppAVar25 + 1;
       }
       wsprintfA(&pSVar19->field_7D1A,"%s%s",&pSVar19->field_0x164,PTR_s_STARTUP_VPS_0079b040);
       pDVar10 = (DArrayTy *)
                 thunk_FUN_00683c70(&pSVar19->field_7D1A,(AnonShape_00683C70_22193481 *)&local_560,
-                                   &local_38,(int *)0x0,(undefined *)0x0);
-      if ((local_38 == 0x40) && (pDVar10 != (DArrayTy *)0x0)) {
+                                   &local_38,nullptr,nullptr);
+      if ((local_38 == 0x40) && (pDVar10 != nullptr)) {
         local_1c = 0x7101;
         local_18 = 1;
         PTR_00806740 = pDVar10;
@@ -324,7 +324,7 @@ STAppC::InitApp(STAppC *this,HINSTANCE param_1,undefined4 param_2,undefined4 par
     break;
   case 'D':
   case 'd':
-    if ((char *)PTR_00857168->field_0008 != (char *)0x0) {
+    if ((char *)PTR_00857168->field_0008 != nullptr) {
       uVar17 = 0xffffffff;
       pcVar12 = (char *)PTR_00857168->field_0008;
       do {
@@ -608,7 +608,7 @@ STAppC::InitApp(STAppC *this,HINSTANCE param_1,undefined4 param_2,undefined4 par
           pcVar12 = (char *)((byte *)pcVar12 + uVar17);
           uVar18 = 0;
           pSVar13 = (StartSystemTy *)Library::MSVCRT::FUN_0072e530(0x6b6);
-          if (pSVar13 != (StartSystemTy *)0x0) {
+          if (pSVar13 != nullptr) {
             StartSystemTy::StartSystemTy(pSVar13,pSVar19);
           }
           g_startSystem_0081176C->InitSystem();
@@ -617,7 +617,7 @@ STAppC::InitApp(STAppC *this,HINSTANCE param_1,undefined4 param_2,undefined4 par
           pSVar19->field_7D0E = 1;
           pSVar19->field_117C = 1;
           pSVar19->field_1163 = 1;
-          if ((undefined1 *)PTR_00857168->field_000C != (undefined1 *)0x0) {
+          if ((undefined1 *)PTR_00857168->field_000C != nullptr) {
             switch(*(undefined1 *)PTR_00857168->field_000C) {
             case 0x4d:
             case 0x6d:
@@ -759,7 +759,7 @@ switchD_0056b4ce_caseD_47:
         cVar2 = *(char *)(PTR_00857168->field_0004 + 1);
         if (((cVar2 == 'G') || (cVar2 == 'D')) || (cVar2 == 'W')) {
           pSVar13 = (StartSystemTy *)Library::MSVCRT::FUN_0072e530(0x6b6);
-          if (pSVar13 != (StartSystemTy *)0x0) {
+          if (pSVar13 != nullptr) {
             StartSystemTy::StartSystemTy(pSVar13,pSVar19);
           }
           g_startSystem_0081176C->InitSystem();
@@ -827,7 +827,7 @@ switchD_0056b4ce_caseD_47:
   case 'w':
 switchD_0056b4ce_caseD_57:
     if (bVar4) goto switchD_0056b4ce_caseD_47;
-    if ((char *)PTR_00857168->field_0008 != (char *)0x0) {
+    if ((char *)PTR_00857168->field_0008 != nullptr) {
       uVar17 = 0xffffffff;
       pcVar12 = (char *)PTR_00857168->field_0008;
       do {
@@ -1036,7 +1036,7 @@ switchD_0056b4ce_caseD_57:
         cMf32::RecGet(pcVar11,0,PTR_s_DESCRIPTOR_0079b080,(int *)&local_8,0);
         pSVar19->field_119A = 0x8f000805;
         cMf32::RecPut(pcVar11,0,PTR_s_DESCRIPTOR_0079b080,&pSVar19->field_0x1196,0x1999,
-                      (undefined4 *)0x0,'\0',(uint *)0x0);
+                      nullptr,'\0',nullptr);
         cMf32::delete(pcVar11);
       }
       g_currentExceptionFrame = local_17c.previous;

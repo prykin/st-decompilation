@@ -27,7 +27,7 @@ void FUN_00682850(void)
   }
   Library::MSVCRT::_strncpy(local_8c,DAT_00857528,0x7f);
   pfVar3 = (float *)thunk_FUN_006686f0(GVar2);
-  pfVar5 = (float *)0x0;
+  pfVar5 = nullptr;
   thunk_FUN_006827a0();
   thunk_FUN_00682810(0x29);
   while (DAT_007d2d18 != 0x39) {

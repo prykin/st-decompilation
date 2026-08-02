@@ -10,7 +10,7 @@ uint FUN_007474f4(LPVOID *ppv)
 
   /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
   puVar1 = (undefined4 *)(**(code **)((int)ppv[-4] + 0x20))();
-  if (puVar1 == (undefined4 *)0x0) {
+  if (puVar1 == nullptr) {
     uVar2 = 1;
   }
   else {

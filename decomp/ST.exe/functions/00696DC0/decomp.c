@@ -19,7 +19,7 @@ void __thiscall CGenerate::sub_00696DC0(CGenerate *this,int param_1,int param_2)
   bool bVar8;
 
   pCVar3 = this->field_5853;
-  if (pCVar3 == (CGenerate_field_5853DArray *)0x0) {
+  if (pCVar3 == nullptr) {
     return;
   }
   uVar2 = pCVar3->count;
@@ -31,7 +31,7 @@ void __thiscall CGenerate::sub_00696DC0(CGenerate *this,int param_1,int param_2)
       /* ST_PSEUDO[dynamic_array_indexing]: expected DArrayAt<T>(array, index) (runtime elementSize cannot be a static C array) */
       if ((((bVar8) &&
            (piVar1 = (int *)((int)&pCVar3->data->field_0000 + pCVar3->elementSize * uVar5),
-           piVar1 != (int *)0x0)) && (*(int *)((int)piVar1 + 0x11) <= param_2)) &&
+           piVar1 != nullptr)) && (*(int *)((int)piVar1 + 0x11) <= param_2)) &&
          (*piVar1 == param_1)) {
         iVar7 = iVar7 + 1;
       }
@@ -51,7 +51,7 @@ LAB_00696e1a:
       if (((bVar8) &&
           (pAVar6 = (AnonShape_00696D00_CB3CB395 *)
                     ((int)&pCVar3->data->field_0000 + pCVar3->elementSize * uVar5),
-          pAVar6 != (AnonShape_00696D00_CB3CB395 *)0x0)) &&
+          pAVar6 != nullptr)) &&
          ((*(int *)&pAVar6->field_0x11 <= param_2 &&
           ((*(int *)pAVar6 == param_1 &&
            (uVar2 = Library::MSVCRT::FUN_0072e6c0(), (int)uVar2 % (iVar4 + 1) != 0)))))) {

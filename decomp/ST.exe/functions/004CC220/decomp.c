@@ -19,15 +19,15 @@ undefined4 __fastcall FUN_004cc220(AnonShape_004CC220_7DEF08C7 *param_1)
   param_1->field_001C = uVar1;
   param_1->field_0450 = (uVar1 >> 0x10) % 0x33 + g_playSystem_00802A38->field_00E4;
   pAVar2 = (AnonShape_004AB810_8E5693D5 *)Library::MSVCRT::FUN_0072e530(0x40);
-  if (pAVar2 == (AnonShape_004AB810_8E5693D5 *)0x0) {
-    this = (STT3DSprC *)0x0;
+  if (pAVar2 == nullptr) {
+    this = nullptr;
   }
   else {
     this = (STT3DSprC *)thunk_FUN_004ab810(pAVar2);
   }
   param_1->field_0603 = this;
   exceptionCode =
-       STT3DSprC::Init(this,DAT_008073cc,param_1->field_0613,param_1->field_0617,(STDcResourcC *)0x0
+       STT3DSprC::Init(this,DAT_008073cc,param_1->field_0613,param_1->field_0617,nullptr
                        ,param_1->field_060B,param_1->field_060F,0x11);
   if (exceptionCode != 0) {
     RaiseInternalException

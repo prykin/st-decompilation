@@ -37,7 +37,7 @@ void FUN_00413af0(void *param_1,DArrayTy *param_2,int param_3,int param_4,int pa
   puStack_c = &DAT_00790090;
   puStack_10 = &LAB_0072d964;
   local_14 = ExceptionList;
-  DAT_007f4d04 = (int *)0x0;
+  DAT_007f4d04 = nullptr;
   DAT_007f4cf0 = g_pathingGrid.cells;
   DAT_007f4d2c = (int)g_pathingGrid.sizeX;
   DAT_007f4d30 = (int)g_pathingGrid.sizeY;
@@ -75,9 +75,9 @@ void FUN_00413af0(void *param_1,DArrayTy *param_2,int param_3,int param_4,int pa
           psVar7 = (short *)(*(int *)(iVar8 + 8) * local_28 + *(int *)(iVar8 + 0x1c));
         }
         else {
-          psVar7 = (short *)0x0;
+          psVar7 = nullptr;
         }
-        if (psVar7 == (short *)0x0) break;
+        if (psVar7 == nullptr) break;
         /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
         if ((*psVar7 != -1) &&
            (iVar8 = thunk_FUN_00423e70(param_1,CONCAT22((short)((uint)psVar7 >> 0x10),*psVar7)),
@@ -131,7 +131,7 @@ void FUN_00413af0(void *param_1,DArrayTy *param_2,int param_3,int param_4,int pa
           puVar9 = (undefined2 *)(param_2->elementSize * local_28 + (int)param_2->data);
         }
         else {
-          puVar9 = (undefined2 *)0x0;
+          puVar9 = nullptr;
         }
         /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
         uVar16 = thunk_FUN_00423e70(param_1,CONCAT22((short)((uint)piVar13 >> 0x10),*puVar9));
@@ -246,7 +246,7 @@ void FUN_00413af0(void *param_1,DArrayTy *param_2,int param_3,int param_4,int pa
           puVar9 = (undefined2 *)(param_2->elementSize * local_28 + (int)param_2->data);
         }
         else {
-          puVar9 = (undefined2 *)0x0;
+          puVar9 = nullptr;
         }
         /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
         uVar16 = thunk_FUN_00423e70(param_1,CONCAT22((short)((uint)piVar13 >> 0x10),*puVar9));

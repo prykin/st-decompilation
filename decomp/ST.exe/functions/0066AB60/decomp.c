@@ -16,14 +16,14 @@ int FUN_0066ab60(char playerId,byte *param_2,byte *param_3)
   byte *pbVar8;
   bool bVar9;
 
-  if (((param_2 != (byte *)0x0) && (param_3 != (byte *)0x0)) &&
-     (g_allPlayers_007FA174 != (STAllPlayersC *)0x0)) {
+  if (((param_2 != nullptr) && (param_3 != nullptr)) &&
+     (g_allPlayers_007FA174 != nullptr)) {
     this = thunk_FUN_004357f0(playerId);
-    if ((this != (AiPlrClassTy *)0x0) &&
+    if ((this != nullptr) &&
        (iVar3 = thunk_FUN_00679d60(this,param_2,param_3), iVar3 != 0)) {
       return iVar3;
     }
-    if ((g_allPlayers_007FA174 != (STAllPlayersC *)0x0) &&
+    if ((g_allPlayers_007FA174 != nullptr) &&
        (iVar3 = thunk_FUN_0042a9c0(playerId), iVar3 != 0)) {
       uVar2 = *(uint *)(iVar3 + 0xc);
       while (uVar2 = uVar2 - 1, -1 < (int)uVar2) {
@@ -31,7 +31,7 @@ int FUN_0066ab60(char playerId,byte *param_2,byte *param_3)
           piVar4 = (int *)(*(int *)(iVar3 + 8) * uVar2 + *(int *)(iVar3 + 0x1c));
         }
         else {
-          piVar4 = (int *)0x0;
+          piVar4 = nullptr;
         }
         if ((*piVar4 != 0) && (iVar5 = thunk_FUN_00423300(*piVar4), iVar5 != 0)) {
           pbVar8 = (byte *)(iVar5 + 0x3b);

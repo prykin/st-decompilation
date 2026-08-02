@@ -17,11 +17,11 @@ FSGSTy * __cdecl CreateFSGS(void)
   int local_8;
 
   this = (FSGSTy *)FUN_006b04d0(0x20c3);
-  if (this != (FSGSTy *)0x0) {
+  if (this != nullptr) {
     sub_006E5FB0(this);
     this->field_0000 = (AnonPointee_FSGSTy_0000 *)&VTable_0079C018;
     *(undefined4 *)&this->field_0x18 = 0;
-    this->field_005D = (ushort *)0x0;
+    this->field_005D = nullptr;
     memset(&this->field_0x1d, 0, 0x20); /* compiler bulk-zero initialization */
     iVar1 = 0;
     memset(&this->field_0x3d, 0, 0x20); /* compiler bulk-zero initialization */
@@ -65,30 +65,30 @@ FSGSTy * __cdecl CreateFSGS(void)
     this->field_1A5F = 0;
     this->field_1A60 = 0;
     this->field_1A62 = 1;
-    this->field_1F2F = (HoloTy *)0x0;
-    this->field_1F23 = (HoloTy *)0x0;
-    this->field_1F27 = (HoloTy *)0x0;
-    this->field_1F2B = (HoloTy *)0x0;
+    this->field_1F2F = nullptr;
+    this->field_1F23 = nullptr;
+    this->field_1F27 = nullptr;
+    this->field_1F2B = nullptr;
     this->field_1A67 = (HGDIOBJ)0x0;
-    this->field_1A7F = (StartServTy *)0x0;
-    this->field_1A7B = (void *)0x0;
-    this->field_1A77 = (ccFntTy *)0x0;
-    this->field_1A73 = (ccFntTy *)0x0;
+    this->field_1A7F = nullptr;
+    this->field_1A7B = nullptr;
+    this->field_1A77 = nullptr;
+    this->field_1A73 = nullptr;
     this->field_1A6F = 0;
-    this->field_1A8B = (ushort *)0x0;
-    this->field_1A87 = (ushort *)0x0;
-    this->field_1A83 = (ushort *)0x0;
+    this->field_1A8B = nullptr;
+    this->field_1A87 = nullptr;
+    this->field_1A83 = nullptr;
     this->field_1A8F = -1;
     this->field_1A93 = 9;
-    this->field_1A97 = (AnonPointee_FSGSTy_1A97 *)0x0;
+    this->field_1A97 = nullptr;
     this->field_1AAB = (LPCSTR)0x0;
     this->field_1AB3 = 0;
     this->field_1A9B = 0;
-    this->field_1A9F = (void *)0x0;
+    this->field_1A9F = nullptr;
     this->field_1AA3 = 0;
     this->field_1AB7 = 0;
     this->field_1ABC = -1;
-    this->field_1AC0 = (ushort *)0x0;
+    this->field_1AC0 = nullptr;
     this->field_1ABB = 0;
     this->field_1AE4 = (LPCSTR)0x0;
     this->field_1AE0 = 0;
@@ -99,19 +99,19 @@ FSGSTy * __cdecl CreateFSGS(void)
     this->field_1ACC = 0;
     this->field_1AC8 = 0;
     this->field_1AC4 = 0;
-    this->field_1B04 = (uint *)0x0;
-    this->field_1B00 = (DArrayTy *)0x0;
-    this->field_1AFC = (DArrayTy *)0x0;
-    this->field_1AF8 = (DArrayTy *)0x0;
-    this->field_1AF4 = (DArrayTy *)0x0;
-    this->field_1AF0 = (DArrayTy *)0x0;
-    this->field_1AEC = (DArrayTy *)0x0;
-    this->field_1AE8 = (DArrayTy *)0x0;
-    this->field_1B08 = (DArrayTy *)0x0;
-    this->field_1B0C = (byte *)0x0;
-    this->field_1E9A = (tagBITMAPINFO *)0x0;
+    this->field_1B04 = nullptr;
+    this->field_1B00 = nullptr;
+    this->field_1AFC = nullptr;
+    this->field_1AF8 = nullptr;
+    this->field_1AF4 = nullptr;
+    this->field_1AF0 = nullptr;
+    this->field_1AEC = nullptr;
+    this->field_1AE8 = nullptr;
+    this->field_1B08 = nullptr;
+    this->field_1B0C = nullptr;
+    this->field_1E9A = nullptr;
     this->field_1E96 = 0;
-    this->field_1E92 = (tagBITMAPINFO *)0x0;
+    this->field_1E92 = nullptr;
     this->field_1E8E = 0;
     this->field_1B24 = 0;
     this->field_1B20 = 0;
@@ -119,25 +119,25 @@ FSGSTy * __cdecl CreateFSGS(void)
     this->field_1B18 = 0;
     this->field_1B14 = 0;
     this->field_1B10 = 0;
-    this->field_1EA2 = (AnonPointee_FSGSTy_1EA2 *)0x0;
-    this->field_1E9E = (uint *)0x0;
-    this->field_1EAA = (DArrayTy *)0x0;
-    this->field_1EA6 = (DArrayTy *)0x0;
+    this->field_1EA2 = nullptr;
+    this->field_1E9E = nullptr;
+    this->field_1EAA = nullptr;
+    this->field_1EA6 = nullptr;
     this->field_1EAE = 0;
     this->field_1ED7 = 0;
     this->field_1ED3 = 0;
     this->field_1EBA = 0;
     this->field_1EB6 = 0;
-    this->field_1EBE = (DArrayTy *)0x0;
+    this->field_1EBE = nullptr;
     this->field_1EC2 = 0x100;
     *(undefined4 *)&this->field_0x1ece = 0;
     this->field_1EDB = 0;
     this->field_1EE3 = 0;
     this->field_1EDF = 0;
     memset(&this->field_1EE7, 0, 0x3c); /* compiler bulk-zero initialization */
-    this->field_1FB3 = (DArrayTy *)0x0;
+    this->field_1FB3 = nullptr;
     return this;
   }
-  return (FSGSTy *)0x0;
+  return nullptr;
 }
 

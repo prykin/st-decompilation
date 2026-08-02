@@ -18,7 +18,7 @@ void __thiscall FUN_00618b40(void *this,undefined4 param_1,ushort param_2)
     bVar3 = *(int *)(iVar1 + 0xc) != 0;
     do {
       if (((bVar3) && (iVar1 = *(int *)(iVar1 + 8) * uVar2 + *(int *)(iVar1 + 0x1c), iVar1 != 0)) &&
-         (this_00 = *(void **)(iVar1 + 0x18), this_00 != (void *)0x0)) {
+         (this_00 = *(void **)(iVar1 + 0x18), this_00 != nullptr)) {
         thunk_FUN_0061d080(this_00,param_1,param_2);
       }
       iVar1 = *(int *)((int)this + 0x5e);

@@ -17,7 +17,7 @@ undefined4 __thiscall FUN_005f13c0(void *this,int param_1,int param_2,int param_
       do {
         if ((((bVar5) &&
              (psVar3 = (short *)(*(int *)(iVar1 + 8) * uVar4 + *(int *)(iVar1 + 0x1c)),
-             psVar3 != (short *)0x0)) && ((char)psVar3[3] == param_4)) &&
+             psVar3 != nullptr)) && ((char)psVar3[3] == param_4)) &&
            (((*psVar3 == param_1 && (psVar3[1] == param_2)) && (psVar3[2] == param_3)))) {
           return 0;
         }
@@ -35,7 +35,7 @@ undefined4 __thiscall FUN_005f13c0(void *this,int param_1,int param_2,int param_
       do {
         if (((bVar5) &&
             (psVar3 = (short *)(*(int *)(iVar1 + 8) * uVar4 + *(int *)(iVar1 + 0x1c)),
-            psVar3 != (short *)0x0)) &&
+            psVar3 != nullptr)) &&
            (((char)psVar3[3] == param_4 &&
             (((*psVar3 == param_1 && (psVar3[1] == param_2)) && (psVar3[2] == param_3)))))) {
           return 0;

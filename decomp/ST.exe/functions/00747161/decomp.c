@@ -24,7 +24,7 @@ int FUN_00747161(int *param_1,int param_2,int param_3)
     /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
     iVar3 = (**(code **)(param_1[-3] + 0x18))();
     /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
-    param_1 = (int *)0x0;
+    param_1 = nullptr;
     if (0 < iVar3) {
       do {
         /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */

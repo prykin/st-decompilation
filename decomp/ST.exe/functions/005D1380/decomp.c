@@ -21,14 +21,14 @@ void __thiscall SettMapMTy::sub_005D1380(SettMapMTy *this)
 
   DAT_0080874d = -1;
   pSVar1 = this->field_1F84;
-  if (pSVar1 != (SettMapMTy_field_1F84DArray *)0x0) {
+  if (pSVar1 != nullptr) {
     uVar2 = pSVar1->count;
     uVar4 = 0;
     if (0 < (int)uVar2) {
       bVar5 = uVar2 != 0;
       while ((((!bVar5 ||
                (element_1f84 = DArrayAt<SettMapMTy_field_1F84Element>(pSVar1, uVar4,
-               element_1f84 == (SettMapMTy_field_1F84Element *)0x0)) || (element_1f84->field_0004 != '\x02')) ||
+               element_1f84 == nullptr)) || (element_1f84->field_0004 != '\x02')) ||
              (element_1f84->element != DAT_0080877f))) {
         uVar4 = uVar4 + 1);
         bVar5 = uVar4 < uVar2;

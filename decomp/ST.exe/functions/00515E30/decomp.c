@@ -139,7 +139,7 @@ code_r0x00516013:
   pcVar6 = pcVar8 + -uVar7;
   pcVar8 = (char *)&DAT_0080f33a;
   memmove(pcVar8, pcVar6, uVar7); /* compiler REP MOVS byte copy */
-  for (puVar4 = Library::MSVCRT::FUN_0072e560(&DAT_0080f33a,'\n'); puVar4 != (uint *)0x0;
+  for (puVar4 = Library::MSVCRT::FUN_0072e560(&DAT_0080f33a,'\n'); puVar4 != nullptr;
       puVar4 = Library::MSVCRT::FUN_0072e560(puVar4,'\n')) {
     *(undefined1 *)puVar4 = 0x20;
   }

@@ -148,19 +148,19 @@ void __thiscall FSGSTy::ChatCtrls(FSGSTy *this)
     *(LPBITMAPINFO *)&this_00[0x22].field_0x6c = ptVar7;
     ptVar7 = Library::DKW::DDX::FUN_006c4880(g_dDXContext_0080759C,0x1e9,0x5e,0x124,0x175,8);
     *(LPBITMAPINFO *)&this_00[0x22].field_0x74 = ptVar7;
-    pDVar8 = Library::DKW::TBL::DArrayCreate((DArrayTy *)0x0,0x14,0x2e,10);
+    pDVar8 = Library::DKW::TBL::DArrayCreate(nullptr,0x14,0x2e,10);
     *(DArrayTy **)&this_00[0x22].field_0x80 = pDVar8;
     local_523 = 1;
     Library::DKW::TBL::DArrayAppend(pDVar8,local_550);
-    pDVar8 = Library::DKW::TBL::DArrayCreate((DArrayTy *)0x0,0x14,0x68,10);
+    pDVar8 = Library::DKW::TBL::DArrayCreate(nullptr,0x14,0x68,10);
     *(DArrayTy **)&this_00[0x22].field_0x84 = pDVar8;
-    pDVar8 = Library::DKW::TBL::SArrayCreate((DArrayTy *)0x0,1,1);
+    pDVar8 = Library::DKW::TBL::SArrayCreate(nullptr,1,1);
     *(DArrayTy **)&this_00[0x1e].field_0x4e = pDVar8;
     Library::DKW::TBL::FUN_006b5aa0(&pDVar8->flags,&DAT_008016a0);
-    pDVar8 = Library::DKW::TBL::SArrayCreate((DArrayTy *)0x0,1,1);
+    pDVar8 = Library::DKW::TBL::SArrayCreate(nullptr,1,1);
     *(DArrayTy **)&this_00[0x1e].field_0x52 = pDVar8;
     Library::DKW::TBL::FUN_006b5aa0(&pDVar8->flags,&DAT_008016a0);
-    pDVar8 = Library::DKW::TBL::SArrayCreate((DArrayTy *)0x0,1,1);
+    pDVar8 = Library::DKW::TBL::SArrayCreate(nullptr,1,1);
     *(DArrayTy **)&this_00[0x22].field_0x7c = pDVar8;
     Library::DKW::TBL::FUN_006b5aa0(&pDVar8->flags,&DAT_008016a0);
     local_dc8[0] = 0;
@@ -218,7 +218,7 @@ void __thiscall FSGSTy::ChatCtrls(FSGSTy *this)
     local_b8c[3] = uVar6;
     local_9bc = local_d90;
     (*this_00->field_000C->vtable->CreateObject)
-              ((SystemClassTy *)this_00->field_000C,8,(undefined4 *)puVar1,(int *)0x0,local_dc8,
+              ((SystemClassTy *)this_00->field_000C,8,(undefined4 *)puVar1,nullptr,local_dc8,
                iVar14);
     uVar6 = *(undefined4 *)puVar1;
     *(undefined4 *)&this_00->field_0x2d = 5;
@@ -277,9 +277,9 @@ void __thiscall FSGSTy::ChatCtrls(FSGSTy *this)
     local_15c8 = local_1608;
     (*this_00->field_000C->vtable->CreateObject)
               ((SystemClassTy *)this_00->field_000C,6,(undefined4 *)&this_00[0x1e].field_0x76,
-               (int *)0x0,local_1654,0);
+               nullptr,local_1654,0);
     SetAccelerator(1,this_00->field_0008,2,0xc0a1,2,0x1c,0,0,0,0,0,0);
-    pIVar13 = (InternalExceptionFrame *)0x0;
+    pIVar13 = nullptr;
     uStackY_74 = 0x59e0ab;
     SetAccelerator(1,this_00->field_0008,2,0xc0a4,2,0x8000031,0,0,0,0,0,0);
     SetAccelerator(1,this_00->field_0008,2,0xc0a5,2,0x4000002f,0,0,0,0,0,0);
@@ -342,7 +342,7 @@ void __thiscall FSGSTy::ChatCtrls(FSGSTy *this)
     local_98 = 0x8166;
     (*this_00->field_000C->vtable->CreateObject)
               ((SystemClassTy *)this_00->field_000C,7,(undefined4 *)&this_00[0x1e].field_0x86,
-               (int *)0x0,local_520,0);
+               nullptr,local_520,0);
     if (*(uint *)&this_00[0x20].field_0x7f != 0xffffffff) {
       Library::DKW::DDX::FUN_006b34d0
                 (*(uint **)&this_00[0x20].field_0xc3,*(uint *)&this_00[0x20].field_0x7f,0xfffffffe,
@@ -383,14 +383,14 @@ void __thiscall FSGSTy::ChatCtrls(FSGSTy *this)
     local_de4 = local_1628;
     (*this_00->field_000C->vtable->CreateObject)
               ((SystemClassTy *)this_00->field_000C,6,(undefined4 *)&this_00[0x1e].field_0x2a,
-               (int *)0x0,local_1654,0);
+               nullptr,local_1654,0);
     local_1654[8] = *(undefined4 *)&this_00[0x1e].field_0x52;
     local_1654[4] = 0x1b5;
     local_1654[5] = 0x5f;
     local_1654[7] = 0x20;
     (*this_00->field_000C->vtable->CreateObject)
               ((SystemClassTy *)this_00->field_000C,6,(undefined4 *)&this_00[0x1e].field_0x2e,
-               (int *)0x0,local_1654,0);
+               nullptr,local_1654,0);
     *(undefined4 *)&this_00->field_0x2d = 0x61;
     *(undefined4 *)&this_00->field_0x35 = 0;
     FUN_006e6080(this_00,0xf,0,(undefined4 *)&this_00->field_0x1d);

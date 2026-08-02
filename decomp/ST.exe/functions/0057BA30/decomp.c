@@ -20,7 +20,7 @@ int __cdecl FUN_0057ba30(void *param_1,int param_2)
   pvVar3 = param_1;
   local_24 = 0;
   local_1c = (param_2 + -1) / 0xc9 + 1;
-  if (param_1 == (void *)0x0) {
+  if (param_1 == nullptr) {
     return 0;
   }
   thunk_FUN_00416270(param_1,(undefined2 *)((int)&param_1 + 2),(int *)((int)&param_2 + 2),
@@ -62,7 +62,7 @@ int __cdecl FUN_0057ba30(void *param_1,int param_2)
             ((sVar5 < g_worldGrid.sizeZ &&
              (g_worldGrid.cells
               [(int)sVar5 * (int)g_worldGrid.planeStride + (int)sVar6 * (int)g_worldGrid.sizeX +
-               (int)sVar7].objects[0] != (STWorldObject *)0x0)))))) {
+               (int)sVar7].objects[0] != nullptr)))))) {
           local_24 = local_24 + 1;
           thunk_FUN_0057b990(*(undefined4 *)((int)pvVar3 + 0x24),DAT_007e6620,
                              (int)g_worldGrid.cells

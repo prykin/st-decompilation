@@ -67,7 +67,7 @@ SubmarineTitans::Recovered::HiddenThis::AnonReceiver_006F31D0::sub_006F31D0
 
   local_40 = 0;
   local_20 = 0;
-  local_30 = (byte *)0x0;
+  local_30 = nullptr;
   local_3c = 0;
   local_5c = param_1 * 0x68;
   puVar18 = *(uint **)(local_5c + 100 + *(int *)&this->field_0x330);
@@ -109,8 +109,8 @@ LAB_006f32f9:
         }
         iVar12 = iVar12 + *(int *)&this->field_0x2b8 * 2;
         local_44 = (AnonShape_006F31D0_0BFF23DC *)((int)local_44 + -1);
-      } while (local_44 != (AnonShape_006F31D0_0BFF23DC *)0x0);
-      local_44 = (AnonShape_006F31D0_0BFF23DC *)0x0;
+      } while (local_44 != nullptr);
+      local_44 = nullptr;
       if (local_38 == 0) {
         if (param_2 < 1) {
           local_38 = (-(uint)(param_4 != 0) & 0x180000) + 0x80000 & *puVar18;
@@ -139,7 +139,7 @@ LAB_006f32f9:
     local_28 = puVar18[0x2e];
   }
   uVar15 = puVar18[0xe];
-  local_48 = (AnonShape_006F31D0_0BFF23DC *)0x0;
+  local_48 = nullptr;
   /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
   param_1 = uVar7;
   if ((int)param_3 < 0) {
@@ -320,7 +320,7 @@ LAB_006f397a:
                   local_60 = 1;
                 }
                 else {
-                  local_58 = (AnonShape_006F31D0_0BFF23DC *)0x0;
+                  local_58 = nullptr;
                   puVar11 = (uint *)(local_54 + 0x10);
                 }
               }
@@ -337,13 +337,13 @@ LAB_006f397a:
               }
               if (((*(byte *)(puVar18[0x29] + 3 + local_4c * 4) & 0x20) == 0) ||
                  (local_54 = (ushort *)0x1, (int)puVar18[0x23] <= (int)local_4c)) {
-                local_54 = (ushort *)0x0;
+                local_54 = nullptr;
               }
               _DAT_00857000 = local_30;
               do {
                 iVar12 = FUN_006b0460(&DAT_00856fd0,&local_70,(int *)puVar11);
                 if (iVar12 == 1) {
-                  if (local_54 != (ushort *)0x0) {
+                  if (local_54 != nullptr) {
                     iVar12 = FUN_006b0460(&DAT_00856fd0,&DAT_00856fd0,&DAT_00856fe8);
                     goto LAB_006f3a58;
                   }
@@ -360,7 +360,7 @@ LAB_006f3a60:
                     local_18 = (ushort *)
                                ((DAT_00856fd4 - *(short *)(local_34 + 0x10)) - puVar18[0x14]);
                     local_44 = (AnonShape_006F31D0_0BFF23DC *)puVar18[0x30];
-                    if (local_44 != (AnonShape_006F31D0_0BFF23DC *)0x0) {
+                    if (local_44 != nullptr) {
                       local_3c = (DAT_00856fd4 - puVar18[0x14]) * puVar18[0x2f] + (int)local_44;
                     }
                     if ((int)local_18 < 1) {
@@ -376,7 +376,7 @@ LAB_006f3a60:
                     if ((uVar2 & 0x100) == 0) {
                       if ((uVar2 & 0x10) == 0) {
                         if ((local_3c == 0) || ((uVar2 & 8) != 0)) {
-                          if (local_54 == (ushort *)0x0) {
+                          if (local_54 == nullptr) {
                             if ((uVar2 & 4) == 0) {
                               if (DAT_00856fd8 == pbVar14) {
                                 if (local_38 == 0) {
@@ -496,10 +496,10 @@ LAB_006f3a60:
                               param_1 = 0;
                             }
                             if (DAT_00856fd8 == pbVar14) {
-                              local_1c = (byte *)0x0;
+                              local_1c = nullptr;
                             }
                             if (DAT_00856fd8 == DAT_0085700c) {
-                              local_44 = (AnonShape_006F31D0_0BFF23DC *)0x0;
+                              local_44 = nullptr;
                             }
                             if (local_20 == 0) {
                               FUN_006f72f0(pbVar19,DAT_00857028,(ushort *)local_8,
@@ -521,7 +521,7 @@ LAB_006f3a60:
                             param_1 = 0;
                           }
                           if (DAT_00856fd8 == pbVar14) {
-                            local_1c = (byte *)0x0;
+                            local_1c = nullptr;
                           }
                           if ((uVar2 & 4) == 0) {
                             if (local_20 == 0) {
@@ -573,13 +573,13 @@ LAB_006f3a60:
                       }
                       else {
                         local_44 = (AnonShape_006F31D0_0BFF23DC *)local_2c[0x2c];
-                        if (local_44 != (AnonShape_006F31D0_0BFF23DC *)0x0) {
+                        if (local_44 != nullptr) {
                           if (local_38 != 0) {
                             /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
                             param_1 = 0;
                           }
                           if (DAT_00856fd8 == pbVar14) {
-                            local_1c = (byte *)0x0;
+                            local_1c = nullptr;
                           }
                           FUN_006f7fc0(pbVar19,DAT_00857028,(ushort *)local_8,
                                        *(int *)&this->field_0x28 << 1,param_1,pbVar17,(int)pbVar14,
@@ -593,7 +593,7 @@ LAB_006f3a60:
                         param_1 = 0;
                       }
                       if (DAT_00856fd8 == pbVar14) {
-                        local_1c = (byte *)0x0;
+                        local_1c = nullptr;
                       }
                       FUN_007068d0(pbVar19,DAT_00857028,(ushort *)local_8,
                                    *(int *)&this->field_0x28 << 1,param_1,pbVar17,(int)pbVar14,
@@ -656,7 +656,7 @@ LAB_006f3a60:
                     if ((uVar2 & 0x100) == 0) {
                       if ((uVar2 & 0x10) == 0) {
                         if ((local_3c == 0) || ((uVar2 & 8) != 0)) {
-                          if (local_54 == (ushort *)0x0) {
+                          if (local_54 == nullptr) {
                             if ((uVar2 & 4) == 0) {
                               if (local_38 == 0) {
                                 if (local_20 == 0) {
@@ -1047,7 +1047,7 @@ LAB_006f4df8:
   if ((int)local_4c < 0) goto code_r0x006f4e05;
   goto LAB_006f3562;
 code_r0x006f4e05:
-  if (local_30 != (byte *)0x0) {
+  if (local_30 != nullptr) {
     return;
   }
   goto LAB_006f4e0c;

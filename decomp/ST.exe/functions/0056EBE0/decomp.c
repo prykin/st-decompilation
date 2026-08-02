@@ -23,10 +23,10 @@ void __thiscall STAppC::sub_0056EBE0(STAppC *this)
   char *pcVar12;
   int local_8;
 
-  if ((DArrayTy *)this->field_4EAB != (DArrayTy *)0x0) {
+  if ((DArrayTy *)this->field_4EAB != nullptr) {
     FUN_006b5570((DArrayTy *)this->field_4EAB);
   }
-  if ((DArrayTy *)this->field_4EA7 != (DArrayTy *)0x0) {
+  if ((DArrayTy *)this->field_4EA7 != nullptr) {
     FUN_006b5570((DArrayTy *)this->field_4EA7);
   }
   if ((this->field_4EE6[3] == 0) || (uVar8 = this->field_4EE6[7], uVar8 == 0)) {
@@ -55,12 +55,12 @@ void __thiscall STAppC::sub_0056EBE0(STAppC *this)
   }
   puVar2 = Library::Ourlib::MFSARR::mfSarLoad(g_cMf32_0080675C,PTR_s_DESCRIPTION_0079b074,0);
   this->field_4EA7 = puVar2;
-  if (puVar2 == (uint *)0x0) {
-    pDVar3 = Library::DKW::TBL::SArrayCreate((DArrayTy *)0x0,10,10);
+  if (puVar2 == nullptr) {
+    pDVar3 = Library::DKW::TBL::SArrayCreate(nullptr,10,10);
     this->field_4EA7 = &pDVar3->flags;
   }
-  if (this->field_4EAB == (uint *)0x0) {
-    pDVar3 = Library::DKW::TBL::SArrayCreate((DArrayTy *)0x0,10,10);
+  if (this->field_4EAB == nullptr) {
+    pDVar3 = Library::DKW::TBL::SArrayCreate(nullptr,10,10);
     this->field_4EAB = &pDVar3->flags;
   }
   pDVar3 = (DArrayTy *)CreateOpponentList(g_cMf32_0080675C,1,this->field_233C);
@@ -88,7 +88,7 @@ void __thiscall STAppC::sub_0056EBE0(STAppC *this)
       if ((pcVar9[0x21] != '\x01') && (pDVar4 = array, pcVar9[0x21] != '\x02')) {
         pDVar4 = array_00;
       }
-      if ((pDVar4 == (DArrayTy *)0x0) || (pDVar4->count == 0)) {
+      if ((pDVar4 == nullptr) || (pDVar4->count == 0)) {
         pcVar11 = &DAT_008016a0;
       }
       else {
@@ -111,13 +111,13 @@ void __thiscall STAppC::sub_0056EBE0(STAppC *this)
     pcVar9 = pcVar9 + 0x51;
     local_8 = local_8 + -1;
     if (local_8 == 0) {
-      if (pDVar3 != (DArrayTy *)0x0) {
+      if (pDVar3 != nullptr) {
         DArrayDestroy(pDVar3);
       }
-      if (array != (DArrayTy *)0x0) {
+      if (array != nullptr) {
         DArrayDestroy(array);
       }
-      if (array_00 != (DArrayTy *)0x0) {
+      if (array_00 != nullptr) {
         DArrayDestroy(array_00);
       }
       return;

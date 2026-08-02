@@ -74,7 +74,7 @@ void __thiscall FSGSTy::LicCtrls(FSGSTy *this)
     if (local_8->field_1E8E != 0) {
       FreeAndNull((void **)puVar8);
     }
-    if (this_00->field_1E92 != (tagBITMAPINFO *)0x0) {
+    if (this_00->field_1E92 != nullptr) {
       FreeAndNull(&this_00->field_1E92);
     }
     iVar7 = 1;
@@ -140,7 +140,7 @@ void __thiscall FSGSTy::LicCtrls(FSGSTy *this)
       local_688[3] = uVar4;
       local_4b8 = local_88c;
       (*this_00->field_000C->vtable->CreateObject)
-                ((SystemClassTy *)this_00->field_000C,8,&this_00->field_1B14,(int *)0x0,local_8c4,0);
+                ((SystemClassTy *)this_00->field_000C,8,&this_00->field_1B14,nullptr,local_8c4,0);
       this_00->field_002D = 5;
       FUN_006e6080(this_00,2,this_00->field_1B14,(undefined4 *)&this_00->field_0x1d);
       if (this_00->field_1B2C != 0xffffffff) {

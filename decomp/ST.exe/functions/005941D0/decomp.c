@@ -48,13 +48,13 @@ void __thiscall ComboTy::DoneCombo(ComboTy *this)
       FUN_006b3bb0((int *)g_ddxContext_008075A8,this_00->field_0108);
     }
     this_00->field_0108 = 0xffffffff;
-    if (this_00->field_00FC != (AnonShape_006B5B10_E0D06CF1 *)0x0) {
+    if (this_00->field_00FC != nullptr) {
       FreeAndNull(&this_00->field_00FC);
     }
-    if (this_00->field_0100 != (void *)0x0) {
+    if (this_00->field_0100 != nullptr) {
       FreeAndNull(&this_00->field_0100);
     }
-    if (this_00->field_0104 != (ushort *)0x0) {
+    if (this_00->field_0104 != nullptr) {
       FreeAndNull(&this_00->field_0104);
     }
     if (this_00->field_0098 != 0) {

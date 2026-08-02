@@ -87,7 +87,7 @@ void AiAiCalcMinesFields(uint param_1,int param_2,int param_3,int param_4,int pa
   puStack_10 = &LAB_0072d964;
   local_14 = ExceptionList;
   local_1c = &stack0xfffffe18;
-  local_6c[0] = (int *)0x0;
+  local_6c[0] = nullptr;
   local_70 = 0;
   if ((param_4 != 0) && (0 < param_5)) {
     _DAT_00803318 = 0;
@@ -113,9 +113,9 @@ void AiAiCalcMinesFields(uint param_1,int param_2,int param_3,int param_4,int pa
     _DAT_0080336c = 0x1e;
     _DAT_00803370 = 0xf;
     DAT_00803354 = 5;
-    DAT_008033b4 = (undefined4 *)0x0;
-    local_60[0] = (undefined4 *)0x0;
-    DAT_00803300 = (int *)0x0;
+    DAT_008033b4 = nullptr;
+    local_60[0] = nullptr;
+    DAT_00803300 = nullptr;
     DAT_00803314 = 0;
     DAT_0080337c = 0;
     piVar9 = (int *)(param_4 + 0xc);
@@ -367,13 +367,13 @@ LAB_00563368:
           do {
             if (*psVar7 == 0) {
               local_d4 = local_d4 + 1;
-              if ((pSVar16->objects[1] != (STWorldObject *)0x0) &&
+              if ((pSVar16->objects[1] != nullptr) &&
                  (pSVar16->objects[1]->value_20 == 0x1ae)) {
                 local_64 = local_64 + 3;
 LAB_005637b9:
               }
             }
-            else if (pSVar16->objects[0] != (STWorldObject *)0x0) {
+            else if (pSVar16->objects[0] != nullptr) {
               if (param_1 != 0xff) {
                 bVar2 = *(byte *)&pSVar16->objects[0][1].vtable;
                 if (DAT_00808a8f == '\0') {
@@ -402,8 +402,8 @@ LAB_005637a4:
                   bVar21 = iVar14 < 0;
                 }
                 else {
-                  bVar21 = (&DAT_008087ea)[(param_1 & 0xff) * 0x51] !=
-                           (&DAT_008087ea)[(uint)bVar2 * 0x51];
+                  bVar21 = g_bulkInitializedRecords_008087C7[param_1 & 0xff].field_0023 !=
+                           g_bulkInitializedRecords_008087C7[bVar2].field_0023;
                 }
                 if (bVar21) goto LAB_005637bc;
               }
@@ -826,7 +826,7 @@ LAB_005637bc:
         local_6c[0] = thunk_FUN_0055f0c0(piVar9,DAT_00803398,uVar18,10,param_10,FUN_00562170,
                                          FUN_00564dd0);
         local_40 = local_6c[0];
-        if (local_6c[0] == (int *)0x0) {
+        if (local_6c[0] == nullptr) {
           local_8 = 1;
           Library::MSVCRT::FUN_0072da40();
           local_8 = 0xffffffff;

@@ -7,7 +7,7 @@ int FUN_0074ce2d(int param_1,undefined4 *param_2)
   int iVar2;
 
   /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
-  if (param_2 == (undefined4 *)0x0) {
+  if (param_2 == nullptr) {
     iVar2 = -0x7fffbffd;
   }
   else {

@@ -62,7 +62,7 @@ FUN_0062bbc0(int param_1,int param_2,int param_3,int param_4,int param_5,int par
     fVar3 = fVar1 * local_28 + fVar4 * local_2c;
     if (fVar3 == _DAT_0079034c) {
       FreeAndNull(&local_8);
-      return (int *)0x0;
+      return nullptr;
     }
     local_14 = (float)*(int *)local_8;
     fVar5 = (float)*(int *)&local_8->field_0x34;
@@ -84,7 +84,7 @@ FUN_0062bbc0(int param_1,int param_2,int param_3,int param_4,int param_5,int par
   local_18 = local_14 * local_28 - local_10 * local_2c;
   iVar6 = thunk_FUN_0062ba50(&local_2c,(float *)&local_8->field_0x49);
   if (iVar6 == 0) {
-    return (int *)0x0;
+    return nullptr;
   }
   return (int *)local_8;
 }

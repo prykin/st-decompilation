@@ -52,8 +52,8 @@ undefined4 __fastcall FUN_004e46f0(int *param_1)
         param_1[0x137] = 1;
         /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
         pSVar4 = thunk_FUN_0042b760((char)param_1[9],*(ushort *)(param_1 + 0xc));
-        if ((pSVar4 != (STGroupBoatC *)0x0) &&
-           ((undefined4 *)pSVar4->field_001C != (undefined4 *)0x0)) {
+        if ((pSVar4 != nullptr) &&
+           ((undefined4 *)pSVar4->field_001C != nullptr)) {
           local_10 = param_1[6];
           /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
           local_12 = *(undefined2 *)((int)param_1 + 0x32);

@@ -162,7 +162,7 @@ switchD_004806bc_caseD_a:
       if (iVar4 == 1) {
         if (iVar2 == -1) {
           *(undefined4 *)((int)param_1 + 0x74a) = 0;
-          if (DAT_00811798 != (void *)0x0) {
+          if (DAT_00811798 != nullptr) {
             /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
             thunk_FUN_00620e40(DAT_00811798,(int)*(short *)((int)param_1 + 0x47),
                                (int)*(short *)((int)param_1 + 0x49),(uint)DAT_0080874d);
@@ -223,8 +223,8 @@ LAB_00480a79:
               bVar11 = iVar4 < 0;
             }
             else {
-              bVar11 = (&DAT_008087ea)[(uint)bVar20 * 0x51] !=
-                       (&DAT_008087ea)[(uint)DAT_0080874d * 0x51];
+              bVar11 = g_bulkInitializedRecords_008087C7[bVar20].field_0023 !=
+                       g_bulkInitializedRecords_008087C7[DAT_0080874d].field_0023;
             }
             if (bVar11) {
 /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
@@ -276,8 +276,8 @@ LAB_00480b30:
                 bVar11 = iVar4 < 0;
               }
               else {
-                bVar11 = (&DAT_008087ea)[(uint)DAT_0080874d * 0x51] !=
-                         (&DAT_008087ea)[(uint)bVar20 * 0x51];
+                bVar11 = g_bulkInitializedRecords_008087C7[DAT_0080874d].field_0023 !=
+                         g_bulkInitializedRecords_008087C7[bVar20].field_0023;
               }
               if (bVar11) goto LAB_00480b80;
               if ((int)PTR_00806724->entryCount / 2 < iVar2) {
@@ -354,7 +354,8 @@ LAB_00480d55:
         bVar11 = iVar2 < 0;
       }
       else {
-        bVar11 = (&DAT_008087ea)[(uint)bVar20 * 0x51] != (&DAT_008087ea)[(uint)DAT_0080874d * 0x51];
+        bVar11 = g_bulkInitializedRecords_008087C7[bVar20].field_0023 !=
+                 g_bulkInitializedRecords_008087C7[DAT_0080874d].field_0023;
       }
       if (!bVar11) {
         /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
@@ -384,8 +385,8 @@ LAB_00480e0f:
           bVar11 = iVar2 < 0;
         }
         else {
-          bVar11 = (&DAT_008087ea)[(uint)DAT_0080874d * 0x51] !=
-                   (&DAT_008087ea)[(uint)bVar20 * 0x51];
+          bVar11 = g_bulkInitializedRecords_008087C7[DAT_0080874d].field_0023 !=
+                   g_bulkInitializedRecords_008087C7[bVar20].field_0023;
         }
         if (!bVar11) {
           /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */

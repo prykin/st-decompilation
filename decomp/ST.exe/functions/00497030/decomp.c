@@ -21,7 +21,7 @@ uint FUN_00497030(int param_1,int param_2,int param_3,int param_4,int param_5)
       piVar4 = (int *)(g_array_007FB270->elementSize * uVar5 + (int)g_array_007FB270->data);
     }
     else {
-      piVar4 = (int *)0x0;
+      piVar4 = nullptr;
     }
     if ((param_4 == 0) || (piVar4[2] != param_3)) {
       iVar2 = (param_1 - *piVar4) + 7;

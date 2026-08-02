@@ -30,13 +30,13 @@ void DelAllAccelerators(void)
   g_currentExceptionFrame = &local_68;
   iVar3 = Library::MSVCRT::__setjmp3(local_68.jumpBuffer,0);
   if (iVar3 == 0) {
-    if (g_array_008026F0 != (DArrayTy *)0x0) {
+    if (g_array_008026F0 != nullptr) {
       g_array_008026F0->iteratorIndex = 0;
       iVar3 = DArrayGetNext(g_array_008026F0,local_b4);
       while (-1 < iVar3) {
         ppbVar5 = local_24;
         for (iVar3 = 8; iVar3 != 0; iVar3 = iVar3 + -1) {
-          *ppbVar5 = (byte *)0x0;
+          *ppbVar5 = nullptr;
           ppbVar5 = ppbVar5 + 1;
         }
         local_24[5] = local_b4;
@@ -47,7 +47,7 @@ void DelAllAccelerators(void)
         iVar3 = DArrayGetNext(g_array_008026F0,local_b4);
       }
       DArrayDestroy(g_array_008026F0);
-      g_array_008026F0 = (DArrayTy *)0x0;
+      g_array_008026F0 = nullptr;
     }
     g_currentExceptionFrame = local_68.previous;
     return;

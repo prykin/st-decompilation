@@ -25,7 +25,7 @@ BehPanelTy::PaintBBut
   int local_c;
   ushort *local_8;
 
-  local_8 = (ushort *)0x0;
+  local_8 = nullptr;
   pAVar1 = param_1->field_0018;
   local_10 = pAVar1->field_0000 - this->field_003C;
   if (this->field_005C == 0) {
@@ -38,7 +38,7 @@ BehPanelTy::PaintBBut
   g_currentExceptionFrame = &local_58;
   local_14 = this;
   errorCode = (int *)Library::MSVCRT::__setjmp3(local_58.jumpBuffer,0);
-  if (errorCode == (int *)0x0) {
+  if (errorCode == nullptr) {
     iVar4 = 1;
     text = FUN_006f2c00(param_2,1,(uint)param_3);
     local_8 = cMf32::RecGet(g_cMf32_00806790,1,text,errorCode,iVar4);

@@ -12,8 +12,8 @@ void __thiscall CGenerate::sub_00694C30(CGenerate *this)
   }
   this->field_0014 = this->field_000C;
   this->field_0010 = this->field_0008;
-  this->field_0008 = (int *)0x0;
-  this->field_000C = (byte *)0x0;
+  this->field_0008 = nullptr;
+  this->field_000C = nullptr;
   sub_006A0150(this);
   return;
 }

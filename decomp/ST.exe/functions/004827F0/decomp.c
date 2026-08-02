@@ -44,7 +44,7 @@ void __thiscall STBoatC::ExpIsOver(STBoatC *this,uint param_1)
                0x3d71);
   }
   array = (DArrayTy *)(&local_8->field_0282)[uVar5];
-  if (array == (DArrayTy *)0x0) {
+  if (array == nullptr) {
     RaiseInternalException
               (-0x5001fffc,g_overwriteContext_007ED77C,"E:\\__titans\\wlad\\To_boat.cpp",
                0x3d72);

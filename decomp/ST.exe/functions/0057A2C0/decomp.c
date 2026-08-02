@@ -95,12 +95,12 @@ FUN_0057a2c0(AnonShape_0057A2C0_A829D396 *param_1,uint param_2,int *param_3,shor
   puStack_10 = &LAB_0072d964;
   local_14 = ExceptionList;
   local_1c = &stack0xfffffec8;
-  local_f0 = (undefined1 *)0x0;
+  local_f0 = nullptr;
   ExceptionList = &local_14;
   pvVar9 = Library::DKW::LIB::MemAlloc(param_2 * 8);
   *param_3 = (int)pvVar9;
   /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
-  if (((pvVar9 == (void *)0x0) || (param_2 == 0)) || ((param_2 != 5 && (param_2 != 7)))) {
+  if (((pvVar9 == nullptr) || (param_2 == 0)) || ((param_2 != 5 && (param_2 != 7)))) {
     iVar18 = ReportDebugMessage("E:\\__titans\\Igor\\to_etorp.cpp",0x4c,0,0,"%s",
                                 "ConusExplosion:Bad parameters or memory error");
     if (iVar18 != 0) {
@@ -116,7 +116,7 @@ FUN_0057a2c0(AnonShape_0057A2C0_A829D396 *param_1,uint param_2,int *param_3,shor
     sVar17 = *(short *)&param_1->field_0x3c;
     sVar5 = param_1->field_0036;
     local_40 = (int)param_1->field_003E - (int)*(short *)&param_1->field_0x38;
-    if ((param_4 == (short *)0x0) || (param_5 == 0)) {
+    if ((param_4 == nullptr) || (param_5 == 0)) {
 LAB_0057ac02:
       iVar18 = FUN_006acf0d((int)*(short *)&param_1->field_0x34,(int)param_1->field_0036,
                             (int)*(short *)&param_1->field_0x38,(int)param_1->field_003A,
@@ -135,7 +135,7 @@ LAB_0057ac02:
         local_120 = (int *)(local_f0 + iVar18 * 4);
         iVar22 = iVar18 * 0xc;
         do {
-          if ((local_f0 == (undefined1 *)0x0) || (*local_120 == 0)) {
+          if ((local_f0 == nullptr) || (*local_120 == 0)) {
             uVar13 = *(int *)&param_1->field_0x1c * 0x41c64e6d + 0x3039;
             *(uint *)&param_1->field_0x1c = uVar13;
             local_78 = local_78 +
@@ -352,7 +352,7 @@ LAB_0057ac02:
                      ((sVar7 = (short)local_80, sVar7 < 0 ||
                       (((g_worldGrid.sizeY <= sVar7 || (sVar17 = (short)local_74, sVar17 < 0)) ||
                        (g_worldGrid.sizeZ <= sVar17)))))) {
-                    this = (STWorldObject *)0x0;
+                    this = nullptr;
                   }
                   else {
                     this = g_worldGrid.cells
@@ -360,11 +360,12 @@ LAB_0057ac02:
                             (int)sVar7 * (int)g_worldGrid.sizeX + (int)sVar12].objects[0];
                   }
                   local_74 = iVar20;
-                  if (((this != (STWorldObject *)0x0) &&
+                  if (((this != nullptr) &&
                       (iVar14 = (*this->vtable[5].slots_00_28[0])(), iVar14 != 0)) &&
                      ((this[1].vtable < (STWorldObjectVTable *)0x8 &&
-                      ((g_playSystem_00802A38 == (STPlaySystemC *)0x0 ||
-                       ((byte)(&DAT_008087e9)[(int)this[1].vtable * 0x51] < 8)))))) {
+                      ((g_playSystem_00802A38 == nullptr ||
+                       (g_bulkInitializedRecords_008087C7[(int)this[1].vtable].field_0022 < 8))))))
+                  {
                     bVar2 = *(byte *)&this[1].vtable;
                     bVar3 = param_1->field_0x24;
                     if (DAT_00808a8f == '\0') {
@@ -392,8 +393,8 @@ LAB_0057a96b:
                       bVar24 = iVar14 < 0;
                     }
                     else {
-                      bVar24 = (&DAT_008087ea)[(uint)bVar3 * 0x51] !=
-                               (&DAT_008087ea)[(uint)bVar2 * 0x51];
+                      bVar24 = g_bulkInitializedRecords_008087C7[bVar3].field_0023 !=
+                               g_bulkInitializedRecords_008087C7[bVar2].field_0023;
                     }
                     if ((bVar24) && (iVar14 = (*this->vtable[5].slots_00_28[2])(), iVar14 != 0)) {
                       thunk_FUN_00416270(this,local_b4,(int *)local_e8,(int *)local_20);

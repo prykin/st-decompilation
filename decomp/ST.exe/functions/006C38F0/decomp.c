@@ -9,16 +9,16 @@ undefined4 FUN_006c38f0(int param_1,int param_2,int param_3,undefined4 param_4)
   code *pcVar5;
   undefined4 local_8;
 
-  pcVar5 = (code *)0x0;
+  pcVar5 = nullptr;
   local_8 = 0;
   pAVar2 = (AnonShape_006C3FC0_72DDFA27 *)FUN_006c38d0(DAT_008568d0,param_1);
-  if (pAVar2 != (AnonShape_006C3FC0_72DDFA27 *)0x0) {
+  if (pAVar2 != nullptr) {
     pcVar5 = *(code **)&pAVar2[3].field_0x10;
   }
   if (param_2 == 0x1c) {
     puVar1 = DAT_008568d0;
     if (param_3 == 0) {
-      if (pcVar5 == (code *)0x0) {
+      if (pcVar5 == nullptr) {
         local_8 = 0;
       }
       else {
@@ -26,8 +26,8 @@ undefined4 FUN_006c38f0(int param_1,int param_2,int param_3,undefined4 param_4)
         puVar1 = DAT_008568d0;
       }
     }
-    for (; puVar1 != (undefined4 *)0x0; puVar1 = (undefined4 *)*puVar1) {
-      if (((puVar1[0x1e] == param_1) && ((void *)puVar1[0x10] != (void *)0x0)) &&
+    for (; puVar1 != nullptr; puVar1 = (undefined4 *)*puVar1) {
+      if (((puVar1[0x1e] == param_1) && ((void *)puVar1[0x10] != nullptr)) &&
          (FUN_00747406((void *)puVar1[0x10],0x13,(int *)param_3,puVar1[0x12]),
          (*(byte *)(puVar1[10] + 8) & 1) != 0)) {
         if (param_3 == 0) {
@@ -50,7 +50,7 @@ LAB_006c3a62:
     if (param_3 == 0) {
       return local_8;
     }
-    if (pcVar5 != (code *)0x0) {
+    if (pcVar5 != nullptr) {
       uVar3 = (*pcVar5)(param_1,0x1c,param_3,param_4);
       return uVar3;
     }
@@ -60,17 +60,17 @@ LAB_006c3a62:
       if (param_2 == 0x101) {
         if ((param_3 == 0x1b) && ((pAVar2->field_0004 & 0x20000000) != 0)) {
           Library::DKW::DV::FUN_006c4110(pAVar2);
-          if (pcVar5 != (code *)0x0) {
+          if (pcVar5 != nullptr) {
             uVar3 = (*pcVar5)(param_1,*(undefined4 *)&pAVar2[3].field_0x8,2,0);
             return uVar3;
           }
         }
-        else if (pcVar5 != (code *)0x0) {
+        else if (pcVar5 != nullptr) {
           uVar3 = (*pcVar5)(param_1,0x101,param_3,param_4);
           return uVar3;
         }
       }
-      else if (pcVar5 != (code *)0x0) {
+      else if (pcVar5 != nullptr) {
         uVar3 = (*pcVar5)(param_1,param_2,param_3,param_4);
         return uVar3;
       }
@@ -79,7 +79,7 @@ LAB_006c3a62:
     if ((param_3 == 0x1b) && ((pAVar2->field_0004 & 0x20000000) != 0)) {
       return 0;
     }
-    if (pcVar5 != (code *)0x0) {
+    if (pcVar5 != nullptr) {
       uVar3 = (*pcVar5)(param_1,0x100,param_3,param_4);
       return uVar3;
     }

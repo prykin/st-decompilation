@@ -89,64 +89,64 @@ void __thiscall OptPanelTy::SwitchOptPanel(OptPanelTy *this,char param_1)
       }
       this_00->field_0172 = CASE_4;
       DAT_00808788 = 0;
-      if ((g_cPanel_00801688 != (CPanelTy *)0x0) && (g_cPanel_00801688->field_023F == CASE_1)) {
+      if ((g_cPanel_00801688 != nullptr) && (g_cPanel_00801688->field_023F == CASE_1)) {
         CPanelTy::ShiftControls(g_cPanel_00801688,1);
       }
       GVar14 = CASE_B0;
     }
     goto LAB_0052f60b;
   case CASE_2:
-    if (g_prodPanel_008016E8 != (ProdPanelTy *)0x0) {
+    if (g_prodPanel_008016E8 != nullptr) {
       local_8 = ProdPanelTy::SetPanel(g_prodPanel_008016E8,'\0');
     }
     bVar3 = local_8 != 0;
-    if (g_prodPanel_0080167C != (ProdPanelTy *)0x0) {
+    if (g_prodPanel_0080167C != nullptr) {
       local_8 = ProdPanelTy::SetPanel(g_prodPanel_0080167C,'\0');
     }
     bVar4 = local_8 != 0;
-    if (g_prodPanel_00801684 != (ProdPanelTy *)0x0) {
+    if (g_prodPanel_00801684 != nullptr) {
       local_8 = ProdPanelTy::SetPanel(g_prodPanel_00801684,'\0');
     }
     bVar5 = local_8 != 0;
-    if (g_infocPanel_00801698 != (InfocPanelTy *)0x0) {
+    if (g_infocPanel_00801698 != nullptr) {
       /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
       local_8 = (*(code *)g_infocPanel_00801698->field_0000->field_001C)(0);
     }
     bVar6 = local_8 != 0;
-    if (g_tradePanel_00802A44 != (TradePanelTy *)0x0) {
+    if (g_tradePanel_00802A44 != nullptr) {
       local_8 = TradePanelTy::sub_00552160(g_tradePanel_00802A44,'\0','\0');
     }
     bVar7 = local_8 != 0;
-    if (g_behPanel_00801678 != (BehPanelTy *)0x0) {
+    if (g_behPanel_00801678 != nullptr) {
       /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
       local_8 = (*(code *)g_behPanel_00801678->field_0000[2].field_0004)(0);
     }
     bVar8 = local_8 != 0;
-    if (g_sAMPanel_008016EC != (SAMPanelTy *)0x0) {
+    if (g_sAMPanel_008016EC != nullptr) {
       /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
       local_8 = (**(code **)&g_sAMPanel_008016EC->field_0000[1].field_0x8)(0);
     }
     bVar9 = local_8 != 0;
-    if (g_upgPanel_00802A48 != (UpgPanelTy *)0x0) {
+    if (g_upgPanel_00802A48 != nullptr) {
       /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
       local_8 = (*(code *)g_upgPanel_00802A48->field_0000->field_001C)(0);
     }
     bVar10 = local_8 != 0;
-    if (g_frmPanel_0080168C != (FrmPanelTy *)0x0) {
+    if (g_frmPanel_0080168C != nullptr) {
       /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
       local_8 = (*(code *)g_frmPanel_0080168C->field_0000->field_001C)(0);
     }
     bVar11 = local_8 != 0;
-    if (g_prodPanel_00801680 != (ProdPanelTy *)0x0) {
+    if (g_prodPanel_00801680 != nullptr) {
       local_8 = ProdPanelTy::SetPanel(g_prodPanel_00801680,'\0');
     }
     bVar12 = local_8 != 0;
-    if (g_helpPanel_00801690 != (HelpPanelTy *)0x0) {
+    if (g_helpPanel_00801690 != nullptr) {
       /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
       local_8 = (**(code **)(g_helpPanel_00801690->vtable + 0x18))(0);
     }
     bVar13 = local_8 != 0;
-    if (g_playPanel_008016E4 != (PlayPanelTy *)0x0) {
+    if (g_playPanel_008016E4 != nullptr) {
       local_8 = PlayPanelTy::SetPanel(g_playPanel_008016E4,'\0');
     }
     if ((local_8 != 0 ||
@@ -163,7 +163,7 @@ void __thiscall OptPanelTy::SwitchOptPanel(OptPanelTy *this,char param_1)
     local_18 = 1;
     thunk_FUN_0054edf0((undefined4 *)0x5,&local_18,1,0xffffffff);
     DAT_0080878c = 1;
-    if (g_cPanel_00801688 != (CPanelTy *)0x0) {
+    if (g_cPanel_00801688 != nullptr) {
       CPanelTy::ShiftControls(g_cPanel_00801688,0);
     }
     switch(param_1) {

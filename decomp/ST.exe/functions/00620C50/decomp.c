@@ -20,10 +20,10 @@ FUN_00620c50(void *this,undefined4 param_1,int param_2,undefined4 param_3,undefi
   local_c = param_3;
   local_8 = param_4;
   if (*(int *)((int)this + 0xe9) == 0) {
-    pDVar1 = Library::DKW::TBL::DArrayCreate((DArrayTy *)0x0,10,0x14,10);
+    pDVar1 = Library::DKW::TBL::DArrayCreate(nullptr,10,0x14,10);
     *(DArrayTy **)((int)this + 0xe9) = pDVar1;
   }
-  if (*(DArrayTy **)((int)this + 0xe9) != (DArrayTy *)0x0) {
+  if (*(DArrayTy **)((int)this + 0xe9) != nullptr) {
     uVar2 = Library::DKW::TBL::DArrayAppend(*(DArrayTy **)((int)this + 0xe9),&local_18);
     return uVar2;
   }

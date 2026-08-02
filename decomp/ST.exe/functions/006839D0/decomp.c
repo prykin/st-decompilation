@@ -29,7 +29,7 @@ int __cdecl FUN_006839d0(int param_1,int *param_2,ushort param_3,int param_4)
   local_8 = 0;
   local_c = 0;
   /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
-  if (((param_4 == 0) || (param_2 == (int *)0x0)) || (param_1 == 0)) {
+  if (((param_4 == 0) || (param_2 == nullptr)) || (param_1 == 0)) {
     RaiseInternalException
               (-0x34,g_overwriteContext_007ED77C,"E:\\__titans\\ai\\ai_script.cpp",0x3e5);
   }

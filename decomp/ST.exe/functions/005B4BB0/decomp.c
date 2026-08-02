@@ -129,7 +129,7 @@ switchD_005b4c27_default:
       }
       else if (SVar1 == 0x6900) {
         if ((this_00->field_1EE3 == '\0') &&
-           ((g_startSystem_0081176C == (StartSystemTy *)0x0 ||
+           ((g_startSystem_0081176C == nullptr ||
             (g_startSystem_0081176C->field_068A == 0)))) goto cf_common_exit_005B4EEC;
         this_00->field_1A5A = 1;
       }
@@ -150,7 +150,7 @@ LAB_005b4de5:
     /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
     this_01 = *(MMsgTy **)(this_00->field_1A5B + 0x2e6);
 LAB_005b4df8:
-    if (this_01 != (MMsgTy *)0x0) {
+    if (this_01 != nullptr) {
       MMsgTy::HidePanel(this_01,1,0,1);
     }
     goto cf_common_exit_005B4EEC;
@@ -175,7 +175,7 @@ LAB_005b4df8:
     local_28[4] = 0x693f;
     local_28[2] = local_48[2];
     iVar4 = MMsgTy::SetMessage(*(MMsgTy **)(pSVar1 + 0x2e6),0x251d,'\x01',local_48,local_28,
-                               (undefined4 *)0x0,0,0);
+                               nullptr,0,0);
     if (iVar4 == 0) break;
   case 0x6940:
     sub_005B4860(this_00);

@@ -29,30 +29,30 @@ void __cdecl StartStrateg(AnonShape_00648C10_30A1BBFD *strategData,uint param_2)
   int local_c;
   AnonShape_00648C10_30A1BBFD *local_8;
 
-  local_8 = (AnonShape_00648C10_30A1BBFD *)0x0;
+  local_8 = nullptr;
   local_c = 0;
   local_50.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_50;
   errorCode = Library::MSVCRT::__setjmp3(local_50.jumpBuffer,0);
   if (errorCode == 0) {
-    if ((((g_playSystem_00802A38 == (STPlaySystemC *)0x0) ||
-         (strategData == (AnonShape_00648C10_30A1BBFD *)0x0)) || (7 < param_2)) ||
-       (7 < (byte)(&DAT_008087e9)[param_2 * 0x51])) {
+    if ((((g_playSystem_00802A38 == nullptr) ||
+         (strategData == nullptr)) || (7 < param_2)) ||
+       (7 < g_bulkInitializedRecords_008087C7[param_2].field_0022)) {
       RaiseInternalException
                 (-0x34,g_overwriteContext_007ED77C,"E:\\__titans\\ai\\ai_creat.cpp",0x49);
     }
     pAVar2 = thunk_FUN_004357f0((char)param_2);
-    if (pAVar2 != (AiPlrClassTy *)0x0) {
+    if (pAVar2 != nullptr) {
       thunk_FUN_00648dd0(param_2);
     }
     local_8 = strategData;
     *(uint *)((int)&strategData->field_0002 + 2) = param_2;
-    strategData->field_0067 = *(undefined2 *)((int)&DAT_008087eb + param_2 * 0x51);
-    strategData->field_0069 = *(undefined2 *)((int)&DAT_008087ef + param_2 * 0x51);
-    strategData->field_006B = *(undefined2 *)((int)&DAT_008087f3 + param_2 * 0x51);
+    strategData->field_0067 = (short)g_bulkInitializedRecords_008087C7[param_2].field_0024;
+    strategData->field_0069 = (short)g_bulkInitializedRecords_008087C7[param_2].field_0028;
+    strategData->field_006B = (short)g_bulkInitializedRecords_008087C7[param_2].field_002C;
     Library::Ourlib::SAPP::FUN_006e6200
-              (g_playSystem_00802A38,0x402,(undefined4 *)(param_2 + 0x29),(undefined4 *)0x0,
-               (int *)0x0,strategData,0);
+              (g_playSystem_00802A38,0x402,(undefined4 *)(param_2 + 0x29),nullptr,
+               nullptr,strategData,0);
     if (local_c != 0) {
       thunk_FUN_0067d160((int *)&local_8);
     }

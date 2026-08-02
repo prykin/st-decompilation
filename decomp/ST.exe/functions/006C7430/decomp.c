@@ -42,7 +42,7 @@ void FUN_006c7430(AnonShape_006C7430_D1D36538 *param_1)
                       (local_70.jumpBuffer,2,Library::MSVCRT::FUN_0072da21,0xffffffff);
   local_1c = &stack0xffffff7c;
   if (local_8 == 0) {
-    if (param_1->field_0072 == (byte *)0x0) {
+    if (param_1->field_0072 == nullptr) {
       FUN_006b4170((AnonShape_006B5B10_E0D06CF1 *)param_1->field_003A,param_1->field_003E,local_20,
                    local_24,local_28,local_2c,param_1->field_0011);
     }

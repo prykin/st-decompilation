@@ -25,7 +25,7 @@ int FUN_00755970(AnonShape_00755970_4FB144E0 *param_1,ushort *param_2,int param_
     /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
     param_1 = (AnonShape_00755970_4FB144E0 *)0xffffffff;
     pAVar6 = (AnonShape_00755970_4FB144E0 *)0xffffffff;
-    pAVar3 = (AnonShape_00755970_4FB144E0 *)0x0;
+    pAVar3 = nullptr;
     if (0 < *(short *)(iVar7 + 8)) {
       do {
         pAVar8 = pAVar3;

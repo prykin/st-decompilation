@@ -42,7 +42,7 @@ void __thiscall HelpPanelTy::PrevBut(HelpPanelTy *this)
   if (iVar4 == 0) {
     iVar4 = *(int *)&pAVar1->field_0xc;
     if (iVar4 == 0) {
-      piVar5 = (int *)0x0;
+      piVar5 = nullptr;
     }
     else {
       piVar5 = (int *)pAVar1->field_001C;
@@ -63,9 +63,9 @@ void __thiscall HelpPanelTy::PrevBut(HelpPanelTy *this)
       piVar5 = (int *)(pAVar1->field_0008 * (iVar4 + -1) + pAVar1->field_001C);
     }
     else {
-      piVar5 = (int *)0x0;
+      piVar5 = nullptr;
     }
-    if (piVar5 == (int *)0x0) {
+    if (piVar5 == nullptr) {
       g_currentExceptionFrame = local_50.previous;
       return;
     }

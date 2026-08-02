@@ -13,9 +13,9 @@ undefined4 __thiscall FUN_0067a0c0(void *this,uint param_1,int param_2)
       piVar2 = (int *)(*(int *)(iVar1 + 8) * param_1 + *(int *)(iVar1 + 0x1c));
     }
     else {
-      piVar2 = (int *)0x0;
+      piVar2 = nullptr;
     }
-    if (((piVar2[1] != 0) && ((undefined4 *)*piVar2 != (undefined4 *)0x0)) && (param_2 != 0)) {
+    if (((piVar2[1] != 0) && ((undefined4 *)*piVar2 != nullptr)) && (param_2 != 0)) {
       /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
       uVar3 = (*(code *)**(undefined4 **)*piVar2)(param_2);
       return uVar3;

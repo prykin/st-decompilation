@@ -33,7 +33,7 @@ void __thiscall SIDTy::InitSID(SIDTy *this)
   if (iVar3 == 0) {
     puVar5 = &local_8->field_1A60;
     SpriteClassTy::InitSprite
-              ((SpriteClassTy *)puVar5,(int *)g_ddxContext_008075A8,0x2f,'\a',(undefined4 *)0x0,0,0);
+              ((SpriteClassTy *)puVar5,(int *)g_ddxContext_008075A8,0x2f,'\a',nullptr,0,0);
     /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
     (**(code **)(*puVar5 + 4))(DAT_00806784,7,0,"MM_SID",0xffffffff);
     this_00->field_1A7C = 0x2e;
@@ -116,7 +116,7 @@ void __thiscall SIDTy::InitSID(SIDTy *this)
     FUN_006b3af0((int *)g_ddxContext_008075A8,*puVar1);
     SpriteClassTy::InitSprite
               ((SpriteClassTy *)&this_00->field_1B01,(int *)g_ddxContext_008075A8,0x2d,'\a',
-               (undefined4 *)0x0,0,0);
+               nullptr,0,0);
     /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
     (**(code **)(this_00->field_1B01 + 4))(DAT_00806784,7,0,"SID_SLDUP",0xffffffff);
     this_00->field_1B1D = 0x22b;
@@ -127,7 +127,7 @@ void __thiscall SIDTy::InitSID(SIDTy *this)
     }
     SpriteClassTy::InitSprite
               ((SpriteClassTy *)&this_00->field_1B92,(int *)g_ddxContext_008075A8,0x2d,'\a',
-               (undefined4 *)0x0,0,0);
+               nullptr,0,0);
     /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
     (**(code **)(this_00->field_1B92 + 4))(DAT_00806784,7,0,"SID_SLDDN",0xffffffff);
     this_00->field_1BAE = 0x22b;
@@ -138,7 +138,7 @@ void __thiscall SIDTy::InitSID(SIDTy *this)
     }
     SpriteClassTy::InitSprite
               ((SpriteClassTy *)&this_00->field_1C23,(int *)g_ddxContext_008075A8,0x2d,'\a',
-               (undefined4 *)0x0,0,0);
+               nullptr,0,0);
     /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
     (**(code **)(this_00->field_1C23 + 4))(DAT_00806784,7,0,"SID_SLDT",0xffffffff);
     this_00->field_1C3F = 0x22f;
@@ -147,7 +147,7 @@ void __thiscall SIDTy::InitSID(SIDTy *this)
     if (this_00->field_1C27 != 0xffffffff) {
       FUN_006b3af0((int *)this_00->field_1C6B,this_00->field_1C27);
     }
-    pDVar6 = Library::DKW::TBL::SArrayCreate((DArrayTy *)0x0,1,1);
+    pDVar6 = Library::DKW::TBL::SArrayCreate(nullptr,1,1);
     this_00->field_1CD0 = pDVar6;
     Library::DKW::TBL::FUN_006b6020(&pDVar6->flags,0,&DAT_008016a0);
     iVar3 = 1;

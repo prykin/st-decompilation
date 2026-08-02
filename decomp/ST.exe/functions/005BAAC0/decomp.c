@@ -98,7 +98,7 @@ void __thiscall PrividerTy::SetMode(PrividerTy *this,char param_1,char param_2)
     pSVar1 = this_00->field_1A5B;
     local_209 = local_230;
     local_16d = local_230;
-    if (pSVar1->field_02E6 != (MMsgTy *)0x0) {
+    if (pSVar1->field_02E6 != nullptr) {
       puVar5 = local_68;
       for (iVar3 = 6; iVar3 != 0; iVar3 = iVar3 + -1) {
         *puVar5 = 0xffffffff;
@@ -113,7 +113,7 @@ void __thiscall PrividerTy::SetMode(PrividerTy *this,char param_1,char param_2)
     thunk_FUN_00568bc0(&g_sound,0);
     /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
     if ((DAT_00807300._1_1_ & 8) != 0) {
-      thunk_FUN_0056a130(&g_sound,0x14,'\x02',0,(uint *)0x0);
+      thunk_FUN_0056a130(&g_sound,0x14,'\x02',0,nullptr);
     }
     thunk_FUN_005b6730(this_00,0xb,'\0',-1);
     g_currentExceptionFrame = local_4c.previous;

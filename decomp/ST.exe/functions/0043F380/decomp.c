@@ -78,7 +78,7 @@ FUN_0043f380(char param_1,byte *param_2,short param_3,short param_4,short param_
             do {
               piVar2 = *(int **)((int)g_worldGrid.cells[1].objects + iVar3);
               pSVar5 = g_worldGrid.cells;
-              if ((piVar2 != (int *)0x0) && (piVar2[9] == (int)param_1)) {
+              if ((piVar2 != nullptr) && (piVar2[9] == (int)param_1)) {
                 /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
                 (**(code **)(*piVar2 + 0x74))(local_20);
                 pbVar9 = local_20;
@@ -98,9 +98,9 @@ LAB_0043f4c8:
                   pbVar4 = pbVar4 + 2;
                   pbVar9 = pbVar9 + 2;
                 } while (bVar1 != 0);
-                pSVar5 = (STWorldCell *)0x0;
+                pSVar5 = nullptr;
 LAB_0043f4cd:
-                if (pSVar5 == (STWorldCell *)0x0) {
+                if (pSVar5 == nullptr) {
                   /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
                   param_6 = param_6 + 1;
                 }

@@ -19,7 +19,7 @@ undefined4 __fastcall FUN_0065ef70(AnonShape_0065EF70_E78A8204 *param_1)
   undefined3 uStack_b;
   AnonShape_0065EF70_EB9B857D *local_8;
 
-  if (g_allPlayers_007FA174 != (STAllPlayersC *)0x0) {
+  if (g_allPlayers_007FA174 != nullptr) {
     pDVar3 = param_1->field_022F;
     local_1c = 0;
     if (0 < (int)pDVar3->count) {
@@ -30,16 +30,16 @@ undefined4 __fastcall FUN_0065ef70(AnonShape_0065EF70_E78A8204 *param_1)
           /* ST_PSEUDO[dynamic_array_indexing]: expected DArrayAt<T>(pDVar3, local_1c) (runtime stride) */
           psVar6 = (short *)(pDVar3->elementSize * local_1c + (int)pDVar3->data);
           bVar5 = 0;
-          pbVar7 = &DAT_008087e9;
+          pbVar7 = &g_bulkInitializedRecords_008087C7[0].field_0022;
         }
         else {
-          psVar6 = (short *)0x0;
+          psVar6 = nullptr;
           bVar5 = 0;
-          pbVar7 = &DAT_008087e9;
+          pbVar7 = &g_bulkInitializedRecords_008087C7[0].field_0022;
         }
         do {
           if (((int)pbVar7 < 0x808a71) &&
-             ((g_playSystem_00802A38 == (STPlaySystemC *)0x0 || (*pbVar7 < 8)))) {
+             ((g_playSystem_00802A38 == nullptr || (*pbVar7 < 8)))) {
             bVar1 = local_8->field_0024;
             /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
             _local_c = CONCAT31(uStack_b,bVar1);
@@ -68,14 +68,15 @@ LAB_0065f095:
               bVar8 = iVar4 < 0;
             }
             else {
-              bVar8 = (&DAT_008087ea)[(uint)bVar1 * 0x51] != (&DAT_008087ea)[(uint)bVar5 * 0x51];
+              bVar8 = g_bulkInitializedRecords_008087C7[bVar1].field_0023 !=
+                      g_bulkInitializedRecords_008087C7[bVar5].field_0023;
             }
             if (bVar8) {
               local_10 = 0;
               local_14 = 0;
               STAllPlayersC::GetGObjFromBox
                         (g_allPlayers_007FA174,bVar5,*psVar6,psVar6[1],psVar6[2],psVar6[3],psVar6[4]
-                         ,psVar6[5],(int *)0x0,(int *)0x0,&local_10,&local_14);
+                         ,psVar6[5],nullptr,nullptr,&local_10,&local_14);
               if ((0 < local_10) || (0 < local_14)) {
                 local_8->field_0195 = *(undefined4 *)psVar6;
                 local_8->field_0199 = *(undefined4 *)(psVar6 + 2);

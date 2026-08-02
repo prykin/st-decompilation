@@ -16,6 +16,7 @@ import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Iterator;
 import java.util.LinkedHashMap;
+import java.util.LinkedHashSet;
 import java.util.List;
 import java.util.Locale;
 import java.util.Map;
@@ -73,7 +74,11 @@ public class STTypeFamilyAnalyzer extends GhidraScript {
                 .filter(this::namedCandidate)
                 .sorted(Comparator.comparing(DataType::getPathName)).toList();
             if (anonymous.isEmpty() || anonymous.size() + named.size() < 2) continue;
-            List<Structure> anchors = named.stream().filter(this::semanticAnchor).toList();
+            Set<Structure> anchorSet = new LinkedHashSet<>(
+                named.stream().filter(this::semanticAnchor).toList());
+            named.stream().filter(candidate ->
+                producerDerivedAnchor(candidate, anonymous)).forEach(anchorSet::add);
+            List<Structure> anchors = new ArrayList<>(anchorSet);
             boolean uniqueNamed = named.size() == 1;
             boolean uniqueAnchor = anchors.size() == 1;
             List<Structure> receiverAnchors = anonymous.stream()
@@ -93,9 +98,16 @@ public class STTypeFamilyAnalyzer extends GhidraScript {
             // where one exact member uniquely owns a multi-function receiver namespace.
             boolean apply = uniqueAnchor && concrete >= 2 && fields >= 2 ||
                 uniqueReceiverAnchor;
-            String id = (uniqueReceiverAnchor ? "EXACT_HIDDEN_THIS_" : "EXACT_") +
+            boolean producerAnchor = uniqueAnchor &&
+                producerDerivedAnchor(anchors.get(0), anonymous);
+            String id = (uniqueReceiverAnchor ? "EXACT_HIDDEN_THIS_" :
+                producerAnchor ? "EXACT_PRODUCER_" : "EXACT_") +
                 entry.getKey().substring(0, 12).toUpperCase(Locale.ROOT);
-            String evidence = uniqueAnchor ?
+            String evidence = producerAnchor ?
+                "exact full producer snapshot matches the generated semantic view which " +
+                    "records this sole anonymous source in its provenance; a stored layout " +
+                    "hash is verified when present" :
+                uniqueAnchor ?
                 "exact full layout matches one evidence-qualified semantic anchor; " +
                     "concrete_fields=" + concrete :
                 uniqueReceiverAnchor ?
@@ -121,7 +133,9 @@ public class STTypeFamilyAnalyzer extends GhidraScript {
                         member.getPathName(), candidate.getPathName(), "exact", member.getLength(),
                         member.getNumDefinedComponents(), concreteFields(member),
                         meaningfulFields(candidate),
-                        apply && semanticAnchor(candidate) ? "high" : "review", evidence));
+                        apply && (semanticAnchor(candidate) ||
+                            producerDerivedAnchor(candidate, anonymous)) ?
+                            "high" : "review", evidence));
             }
         }
         addCompatibleNamedMatches(namedMatches);
@@ -258,6 +272,75 @@ public class STTypeFamilyAnalyzer extends GhidraScript {
             if (functions.next().getName(true).startsWith(prefix) && ++methods >= 2) return true;
         }
         return false;
+    }
+
+    /**
+     * Some semantic views are themselves generated from one anonymous layout.
+     * That producer edge is stronger than coincidental geometry when the view
+     * still has the exact stored layout hash.  It lets the type-family pass
+     * redirect the obsolete source view without a curated anchor marker.
+     */
+    private boolean producerDerivedAnchor(Structure target,
+            List<Structure> anonymousSources) {
+        String description = target.getDescription();
+        if (description == null ||
+                !description.contains("[STGlobalDataApplier]") ||
+                anonymousSources.size() != 1) return false;
+        Structure source = anonymousSources.get(0);
+        if (!description.contains(" from " + source.getPathName() + ";")) return false;
+        return storedLayoutHashMatches(target, description) ||
+            exactProducerSnapshot(target, source);
+    }
+
+    private boolean exactProducerSnapshot(Structure target, Structure source) {
+        if (target.getLength() != source.getLength()) return false;
+        DataTypeComponent[] left = target.getDefinedComponents();
+        DataTypeComponent[] right = source.getDefinedComponents();
+        if (left.length != right.length) return false;
+        for (int index = 0; index < left.length; index++) {
+            if (left[index].getOffset() != right[index].getOffset() ||
+                    left[index].getLength() != right[index].getLength() ||
+                    !left[index].getDataType().isEquivalent(right[index].getDataType()) ||
+                    !java.util.Objects.equals(left[index].getFieldName(),
+                        right[index].getFieldName()) ||
+                    !java.util.Objects.equals(left[index].getComment(),
+                        right[index].getComment())) return false;
+        }
+        return true;
+    }
+
+    private boolean storedLayoutHashMatches(Structure structure, String description) {
+        String marker = "generated_layout_sha256=";
+        int start = description.lastIndexOf(marker);
+        if (start < 0) return false;
+        start += marker.length();
+        int end = start;
+        while (end < description.length() &&
+                Character.digit(description.charAt(end), 16) >= 0) end++;
+        if (end - start != 64) return false;
+        return description.substring(start, end).equals(layoutHash(structure));
+    }
+
+    private String layoutHash(Structure structure) {
+        StringBuilder value = new StringBuilder();
+        value.append("length=").append(structure.getLength()).append('\n');
+        for (DataTypeComponent component : structure.getDefinedComponents()) {
+            value.append(component.getOffset()).append('|').append(component.getLength())
+                .append('|').append(component.getDataType().getPathName()).append('|')
+                .append(component.getFieldName() == null ? "" : component.getFieldName())
+                .append('|').append(component.getComment() == null ? "" :
+                    component.getComment()).append('\n');
+        }
+        try {
+            byte[] digest = MessageDigest.getInstance("SHA-256")
+                .digest(value.toString().getBytes(StandardCharsets.UTF_8));
+            StringBuilder result = new StringBuilder();
+            for (byte item : digest) result.append(String.format("%02x", item & 0xff));
+            return result.toString();
+        }
+        catch (Exception exception) {
+            throw new IllegalStateException(exception);
+        }
     }
 
     private void addCompatibleNamedMatches(List<NamedMatchRow> rows) {

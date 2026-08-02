@@ -21,11 +21,11 @@ void __fastcall FUN_0067be20(int param_1,undefined4 param_2,DArrayTy *param_3)
     /* ST_PSEUDO[dynamic_array_indexing]: expected DArrayAt<T>(param_3, index) (runtime stride) */
     if ((index < param_3->count) &&
        (puVar1 = (ushort *)(param_3->elementSize * index + (int)param_3->data),
-       puVar1 != (ushort *)0x0)) {
+       puVar1 != nullptr)) {
       /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
       objPtr = STAllPlayersC::GetObjPtr
                          (g_allPlayers_007FA174,*(char *)(local_8 + 0x640),*puVar1,CASE_1);
-      if (objPtr == (STGameObjC *)0x0) {
+      if (objPtr == nullptr) {
         DArrayRemoveAt(param_3,index);
       }
       else {

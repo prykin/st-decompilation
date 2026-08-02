@@ -7,13 +7,13 @@ FUN_0069f8d0(int param_1,int param_2,int param_3,int param_4,int param_5,int par
   short sVar1;
   undefined2 *puVar2;
   int iVar3;
-  AnonPointee_TLOBaseTy_0607 *pAVar4;
-  short *psVar5;
-  int iVar6;
+  short *psVar4;
+  uint uVar5;
+  short *psVar6;
   int iVar7;
-  AnonPointee_TLOBaseTy_0607 *pAVar8;
-  AnonPointee_TLOBaseTy_0607 *pAVar9;
-  AnonPointee_TLOBaseTy_0607 *pAVar10;
+  int iVar8;
+  short *psVar9;
+  short *psVar10;
   short sVar11;
   int iVar12;
   bool bVar13;
@@ -26,53 +26,53 @@ FUN_0069f8d0(int param_1,int param_2,int param_3,int param_4,int param_5,int par
   undefined2 *local_28;
   int local_24;
   int local_20;
-  AnonPointee_TLOBaseTy_0607 *local_1c;
-  AnonPointee_TLOBaseTy_0607 *local_18;
+  short *local_1c;
+  short *local_18;
   int local_14;
-  AnonPointee_TLOBaseTy_0607 *local_10;
+  short *local_10;
   int local_c;
   int local_8;
 
-  iVar6 = param_5;
+  iVar7 = param_5;
   local_3c = 0;
   local_40 = 0;
-  local_28 = (undefined2 *)0x0;
-  local_18 = (AnonPointee_TLOBaseTy_0607 *)0x0;
+  local_28 = nullptr;
+  local_18 = nullptr;
   local_20 = 0;
   /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
   if ((param_4 == param_6) && (iVar3 = 1, param_5 == param_7)) {
 LAB_0069fb6f:
     FreeAndNull(&local_18);
     local_28 = Library::DKW::LIB::MemAlloc(iVar3 * 4);
-    if (local_28 != (undefined2 *)0x0) {
+    if (local_28 != nullptr) {
       local_20 = 1;
       bVar13 = param_4 != param_6;
       /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
       param_5 = param_4;
       *local_28 = (short)param_4;
       /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
-      param_4 = iVar6;
-      local_28[1] = (short)iVar6;
+      param_4 = iVar7;
+      local_28[1] = (short)iVar7;
       puVar2 = local_28;
-      if ((bVar13) || (iVar6 != param_7)) {
+      if ((bVar13) || (iVar7 != param_7)) {
         do {
           local_38 = puVar2 + 2;
           sVar11 = 30000;
-          psVar5 = &DAT_007d8012;
+          psVar6 = &DAT_007d8012;
           do {
-            iVar6 = psVar5[-1] + param_5;
-            if ((((-1 < iVar6) && (iVar6 < param_2)) && (iVar3 = *psVar5 + param_4, -1 < iVar3)) &&
+            iVar7 = psVar6[-1] + param_5;
+            if ((((-1 < iVar7) && (iVar7 < param_2)) && (iVar3 = *psVar6 + param_4, -1 < iVar3)) &&
                (iVar3 < param_3)) {
-              if ((iVar6 == param_6) && (iVar3 == param_7)) goto LAB_0069fc43;
-              sVar1 = *(short *)(param_1 + (iVar3 * param_2 + iVar6) * 2);
+              if ((iVar7 == param_6) && (iVar3 == param_7)) goto LAB_0069fc43;
+              sVar1 = *(short *)(param_1 + (iVar3 * param_2 + iVar7) * 2);
               if ((0 < sVar1) && (sVar1 < sVar11)) {
                 sVar11 = sVar1;
                 local_40 = iVar3;
-                local_3c = iVar6;
+                local_3c = iVar7;
               }
             }
-            psVar5 = psVar5 + 2;
-          } while ((int)psVar5 < 0x7d8022);
+            psVar6 = psVar6 + 2;
+          } while ((int)psVar6 < 0x7d8022);
           /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
           param_5 = local_3c;
           /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
@@ -93,15 +93,15 @@ LAB_0069fc43:
     local_24 = 0x80;
     local_1c = Library::DKW::LIB::MemAlloc(0x400);
     local_18 = local_1c;
-    if (local_1c != (AnonPointee_TLOBaseTy_0607 *)0x0) {
-      local_10 = (AnonPointee_TLOBaseTy_0607 *)&local_1c[0x15].field_0008;
+    if (local_1c != nullptr) {
+      local_10 = local_1c + 0x100;
       iVar3 = param_2 * param_7 + param_6;
       if (*(short *)(param_1 + iVar3 * 2) == 0) {
         *(undefined2 *)(param_1 + iVar3 * 2) = 1;
       }
-      *(short *)((int)&local_1c[0x15].field_0008 + 2) = (short)param_7;
+      local_1c[0x101] = (short)param_7;
       local_34 = 1;
-      *(short *)local_10 = (short)param_6;
+      *local_10 = (short)param_6;
       local_14 = 2;
       while( true ) {
         local_8 = 0;
@@ -110,70 +110,68 @@ LAB_0069fc43:
         local_38 = (undefined2 *)(local_24 * 8);
         local_2c = local_24 * 4 - 0x200;
         local_c = 4;
-        pAVar10 = local_1c;
+        psVar6 = local_1c;
         do {
-          sVar11 = *(short *)((int)&local_10->field_0000 + local_30 * 4 + 2);
+          sVar11 = local_10[local_30 * 2 + 1];
           iVar12 = (int)sVar11;
-          sVar1 = *(short *)((int)&local_10->field_0000 + local_30 * 4);
-          iVar7 = (int)sVar1;
-          if ((iVar12 == param_5) && (iVar3 = local_14, iVar7 == param_4)) goto LAB_0069fb6f;
-          iVar3 = param_1 + (iVar12 * param_2 + iVar7) * 2;
+          sVar1 = local_10[local_30 * 2];
+          iVar8 = (int)sVar1;
+          if ((iVar12 == param_5) && (iVar3 = local_14, iVar8 == param_4)) goto LAB_0069fb6f;
+          iVar3 = param_1 + (iVar12 * param_2 + iVar8) * 2;
           if (local_24 < local_c) {
             local_38 = (undefined2 *)((int)local_38 + 0x400);
             local_24 = local_24 + 0x80;
-            pAVar4 = Library::DKW::LIB::MemRealloc(local_18,(uint)local_38);
-            if (pAVar4 == (AnonPointee_TLOBaseTy_0607 *)0x0) goto LAB_0069fc5a;
-            local_1c = (AnonPointee_TLOBaseTy_0607 *)
-                       ((int)&pAVar4->field_0000 + ((int)local_1c - (int)local_18 >> 2) * 4);
-            local_10 = (AnonPointee_TLOBaseTy_0607 *)
-                       ((int)&pAVar4->field_0000 + ((int)local_10 - (int)local_18 >> 2) * 4);
-            if (local_1c == pAVar4) {
-              local_10 = (AnonPointee_TLOBaseTy_0607 *)&local_10[0x15].field_0008;
+            uVar5 = local_2c + 0x200;
+            psVar4 = Library::DKW::LIB::MemRealloc(local_18,(uint)local_38);
+            if (psVar4 == nullptr) goto LAB_0069fc5a;
+            local_1c = psVar4 + ((int)local_1c - (int)local_18 >> 2) * 2;
+            local_10 = psVar4 + ((int)local_10 - (int)local_18 >> 2) * 2;
+            if (local_1c == psVar4) {
+              local_10 = local_10 + 0x100;
             }
             else {
-              local_1c = (AnonPointee_TLOBaseTy_0607 *)&local_1c[0x15].field_0008;
+              local_1c = local_1c + 0x100;
             }
-            pAVar10 = (AnonPointee_TLOBaseTy_0607 *)((int)&local_1c->field_0000 + local_8 * 4);
-            local_18 = pAVar4;
+            psVar6 = local_1c + local_8 * 2;
+            local_18 = psVar4;
             Library::MSVCRT::FUN_0072da70
-                      ((undefined4 *)((int)&pAVar4[0x2a].field_0010 + local_2c),
-                       (AnonPointee_TLOBaseTy_0607 *)((int)&pAVar4[0x15].field_0008 + local_2c),
-                       local_2c + 0x200);
-            local_2c = local_2c + 0x200;
+                      ((undefined4 *)(local_2c + 0x400 + (int)psVar4),
+                       (AnonPointee_TLOBaseTy_0607 *)(uVar5 + (int)psVar4),uVar5);
+            local_2c = uVar5;
           }
-          pAVar4 = local_10;
-          pAVar8 = pAVar10;
-          if ((iVar7 < param_2 + -1) && (*(short *)(iVar3 + 2) == 0)) {
-            pAVar8 = (AnonPointee_TLOBaseTy_0607 *)&pAVar10->field_0004;
+          psVar4 = local_10;
+          psVar9 = psVar6;
+          if ((iVar8 < param_2 + -1) && (*(short *)(iVar3 + 2) == 0)) {
+            psVar9 = psVar6 + 2;
             *(short *)(iVar3 + 2) = (short)local_14;
-            *(short *)&pAVar10->field_0000 = sVar1 + 1;
-            *(short *)((int)&pAVar10->field_0000 + 2) = sVar11;
+            *psVar6 = sVar1 + 1;
+            psVar6[1] = sVar11;
             local_8 = local_8 + 1;
             local_c = local_c + 1;
           }
-          pAVar9 = pAVar8;
-          if ((0 < iVar12) && (psVar5 = (short *)(iVar3 + param_2 * -2), *psVar5 == 0)) {
-            pAVar9 = (AnonPointee_TLOBaseTy_0607 *)&pAVar8->field_0004;
-            *psVar5 = (short)local_14;
-            *(short *)&pAVar8->field_0000 = sVar1;
-            *(short *)((int)&pAVar8->field_0000 + 2) = sVar11 + -1;
+          psVar10 = psVar9;
+          if ((0 < iVar12) && (psVar6 = (short *)(iVar3 + param_2 * -2), *psVar6 == 0)) {
+            psVar10 = psVar9 + 2;
+            *psVar6 = (short)local_14;
+            *psVar9 = sVar1;
+            psVar9[1] = sVar11 + -1;
             local_8 = local_8 + 1;
             local_c = local_c + 1;
           }
-          pAVar10 = pAVar9;
-          if ((0 < iVar7) && (*(short *)(iVar3 + -2) == 0)) {
-            pAVar10 = (AnonPointee_TLOBaseTy_0607 *)&pAVar9->field_0004;
+          psVar6 = psVar10;
+          if ((0 < iVar8) && (*(short *)(iVar3 + -2) == 0)) {
+            psVar6 = psVar10 + 2;
             *(short *)(iVar3 + -2) = (short)local_14;
-            *(short *)&pAVar9->field_0000 = sVar1 + -1;
-            *(short *)((int)&pAVar9->field_0000 + 2) = sVar11;
+            *psVar10 = sVar1 + -1;
+            psVar10[1] = sVar11;
             local_8 = local_8 + 1;
             local_c = local_c + 1;
           }
           if ((iVar12 < param_3 + -1) && (*(short *)(iVar3 + param_2 * 2) == 0)) {
             *(short *)(iVar3 + param_2 * 2) = (short)local_14;
-            *(short *)&pAVar10->field_0000 = sVar1;
-            *(short *)((int)&pAVar10->field_0000 + 2) = sVar11 + 1;
-            pAVar10 = (AnonPointee_TLOBaseTy_0607 *)&pAVar10->field_0004;
+            *psVar6 = sVar1;
+            psVar6[1] = sVar11 + 1;
+            psVar6 = psVar6 + 2;
             local_8 = local_8 + 1;
             local_c = local_c + 1;
           }
@@ -183,12 +181,12 @@ LAB_0069fc43:
         if (local_8 == 0) break;
         local_10 = local_1c;
         local_14 = local_14 + 1;
-        local_1c = pAVar4;
+        local_1c = psVar4;
       }
     }
   }
 LAB_0069fc5a:
-  FUN_006a5e90((short *)local_18);
+  FUN_006a5e90(local_18);
   *param_8 = local_20;
   return local_28;
 }

@@ -4,7 +4,7 @@ undefined4 __fastcall FUN_004df2b0(AnonShape_004DC660_217FA9F0 *param_1)
 {
   uint uVar1;
 
-  if (*(char *)((int)&DAT_008087c4 + param_1->field_0024 * 0x51 + 3) == '\x01') {
+  if (*(char *)(g_bulkInitializedRecords_008087C7 + param_1->field_0024) == '\x01') {
     param_1->field_04D8 = 10000;
     param_1->field_04D0 = 2;
     param_1->field_04D4 = 0;

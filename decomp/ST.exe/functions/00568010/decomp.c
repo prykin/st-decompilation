@@ -26,7 +26,7 @@ void __thiscall FUN_00568010(void *this,Global_sub_00568010_param_1Enum param_1)
         puVar2 = (undefined4 *)&local_c->field_0xe23;
         do {
           if ((((0x1a < iVar1) && (iVar1 < 0x1e)) || ((0x11 < iVar1 && (iVar1 < 0x15)))) &&
-             (FUN_006c1f00(iVar1,&local_8,(uint *)0x0), local_8 == 1)) {
+             (FUN_006c1f00(iVar1,&local_8,nullptr), local_8 == 1)) {
             *puVar2 = 0;
             puVar2[1] = 0;
             puVar2[2] = 0;
@@ -41,7 +41,7 @@ void __thiscall FUN_00568010(void *this,Global_sub_00568010_param_1Enum param_1)
         iVar1 = 4;
         puVar2 = (undefined4 *)&local_c->field_0xe3b;
         do {
-          FUN_006c1f00(iVar1,&local_8,(uint *)0x0);
+          FUN_006c1f00(iVar1,&local_8,nullptr);
           if (local_8 == 1) {
             *puVar2 = 0;
             puVar2[1] = 0;
@@ -58,13 +58,13 @@ void __thiscall FUN_00568010(void *this,Global_sub_00568010_param_1Enum param_1)
         do {
           if (((((1 < iVar1) && (iVar1 < 4)) || ((0x1d < iVar1 && (iVar1 < 0x20)))) ||
               ((10 < iVar1 && (iVar1 < 0x12)))) &&
-             (FUN_006c1f00(iVar1,&local_8,(uint *)0x0), local_8 == 1)) {
+             (FUN_006c1f00(iVar1,&local_8,nullptr), local_8 == 1)) {
             *(undefined4 *)(&this_00->field_0xe0b + iVar1 * 0xc) = 0;
             *(undefined4 *)(&this_00->field_0xe0f + iVar1 * 0xc) = 0;
             *(undefined4 *)(&this_00->field_0xe13 + iVar1 * 0xc) = 0;
             FUN_006c1ba0(iVar1);
             if (iVar1 == 2) {
-              SoundClassTy::PlaySound(this_00,SOUND_MODE_1,(char *)0x0,0x4b7,(SoundPosition *)0x0,0);
+              SoundClassTy::PlaySound(this_00,SOUND_MODE_1,nullptr,0x4b7,nullptr,0);
             }
           }
           iVar1 = iVar1 + 1;
@@ -75,7 +75,7 @@ void __thiscall FUN_00568010(void *this,Global_sub_00568010_param_1Enum param_1)
         iVar1 = 0x15;
         puVar2 = (undefined4 *)&local_c->field_0xf07;
         do {
-          FUN_006c1f00(iVar1,&local_8,(uint *)0x0);
+          FUN_006c1f00(iVar1,&local_8,nullptr);
           if (local_8 == 1) {
             *puVar2 = 0;
             puVar2[1] = 0;

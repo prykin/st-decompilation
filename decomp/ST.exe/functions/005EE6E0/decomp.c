@@ -71,7 +71,7 @@ undefined4 __fastcall FUN_005ee6e0(AnonShape_005EE6E0_AB6798ED *param_1)
   case 2:
     if (g_playSystem_00802A38->field_00E4 < (uint)param_1->field_028F) {
       if (((g_playSystem_00802A38->field_00E4 == param_1->field_028F + 1) &&
-          (param_1->field_0211 != (void *)0x0)) && (-1 < (int)param_1->field_01ED)) {
+          (param_1->field_0211 != nullptr)) && (-1 < (int)param_1->field_01ED)) {
         Library::Ourlib::ST3DSMAP::SprRstLev(param_1->field_0211,param_1->field_01ED);
         return local_8;
       }
@@ -185,7 +185,7 @@ cf_common_exit_005EEDDF:
                              (int)*(short *)&param_1->field_0x6c,iVar3,uVar4);
         }
         if (param_1->field_0231 == 0xfd) {
-          if (g_allPlayers_007FA174 != (STAllPlayersC *)0x0) {
+          if (g_allPlayers_007FA174 != nullptr) {
             STArtiafactC::sub_005F0D00((STArtiafactC *)param_1);
             /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
             iVar3 = STAllPlayersC::UnRegisterArtefact
@@ -194,7 +194,7 @@ cf_common_exit_005EEDDF:
             goto joined_r0x005eed0b;
           }
         }
-        else if ((param_1->field_0231 == 0xfe) && (g_allPlayers_007FA174 != (STAllPlayersC *)0x0)) {
+        else if ((param_1->field_0231 == 0xfe) && (g_allPlayers_007FA174 != nullptr)) {
           STContainerC::sub_005F0D90((STContainerC *)param_1);
           /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
           iVar3 = STAllPlayersC::UnRegisterContainer

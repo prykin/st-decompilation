@@ -31,16 +31,16 @@ int __thiscall STPlaySystemC::Save(STPlaySystemC *this,cMf32 *param_1)
   local_10 = this;
   iVar3 = Library::MSVCRT::__setjmp3(local_74.jumpBuffer,0);
   if (iVar3 == 0) {
-    cMf32::RecPut(param_1,0xc,PTR_DAT_0079ae30,(byte *)&local_c,4,(undefined4 *)0x0,'\0',(uint *)0x0
+    cMf32::RecPut(param_1,0xc,PTR_DAT_0079ae30,(byte *)&local_c,4,nullptr,'\0',nullptr
                  );
-    cMf32::RecPut(param_1,0xc,PTR_s_LAST_NAME_0079ae2c,(byte *)&local_8,4,(undefined4 *)0x0,'\0',
-                  (uint *)0x0);
+    cMf32::RecPut(param_1,0xc,PTR_s_LAST_NAME_0079ae2c,(byte *)&local_8,4,nullptr,'\0',
+                  nullptr);
     pSVar2 = local_10;
     local_10->field_0024 = param_1;
     local_24 = 0xf;
     local_20 = 0x10f;
     FUN_006e3db0((int)local_30);
-    pSVar2->field_0024 = (cMf32 *)0x0;
+    pSVar2->field_0024 = nullptr;
     g_currentExceptionFrame = local_74.previous;
     return 0;
   }

@@ -22,7 +22,7 @@ void __thiscall MTaskTy::TTaskItemClose(MTaskTy *this,AnonShape_005E10A0_819783C
   g_currentExceptionFrame = &local_48;
   iVar2 = Library::MSVCRT::__setjmp3(local_48.jumpBuffer,0);
   if (iVar2 == 0) {
-    if (param_1 != (AnonShape_005E10A0_819783CC *)0x0) {
+    if (param_1 != nullptr) {
       if (-1 < (int)*(uint *)param_1) {
         FUN_006b3bb0((int *)g_ddxContext_008075A8,*(uint *)param_1);
       }
@@ -36,7 +36,7 @@ void __thiscall MTaskTy::TTaskItemClose(MTaskTy *this,AnonShape_005E10A0_819783C
         }
         iVar2 = iVar2 + -1;
       } while (iVar2 != 0);
-      if ((int *)param_1->field_0031 != (int *)0x0) {
+      if ((int *)param_1->field_0031 != nullptr) {
         FUN_00714060((int *)param_1->field_0031);
         Library::MSVCRT::FUN_0072e2b0((HoloTy *)param_1->field_0031);
         param_1->field_0031 = 0;

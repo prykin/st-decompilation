@@ -2,7 +2,7 @@
 void __thiscall FUN_007109f0(void *this,AnonShape_007109F0_BD33A2FF *param_1)
 
 {
-  if (param_1 != (AnonShape_007109F0_BD33A2FF *)0x0) {
+  if (param_1 != nullptr) {
     *(undefined4 *)((int)this + 0x44) = *(undefined4 *)param_1;
     *(undefined4 *)((int)this + 0x48) = *(undefined4 *)((int)&param_1->field_0001 + 3);
     *(undefined4 *)((int)this + 0x4c) = *(undefined4 *)&param_1->field_0x8;

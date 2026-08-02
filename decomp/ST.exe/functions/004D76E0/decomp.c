@@ -19,7 +19,7 @@ FUN_004d76e0(char param_1,int param_2,int *param_3,int param_4,int param_5,int p
     piVar4 = (int *)(*(int *)(&g_packedRecords_A62x8[iVar2].field_0x7f6 + iVar3) * uVar1 +
                     *(int *)(&g_packedRecords_A62x8[iVar2].field_0x80a + iVar3));
     *(uint *)(&g_packedRecords_A62x8[iVar2].field_0x7f2 + iVar3) = uVar1 + 1;
-    if (piVar4 == (int *)0x0) break;
+    if (piVar4 == nullptr) break;
     if ((int *)*piVar4 == param_3) {
       *(int *)(&g_packedRecords_A62x8[iVar2].field_0x80e + iVar3) =
            *(int *)(&g_packedRecords_A62x8[iVar2].field_0x80e + iVar3) - piVar4[1];

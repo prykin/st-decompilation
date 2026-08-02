@@ -17,7 +17,7 @@ void __fastcall FUN_00660d40(AnonShape_00660D40_E58DF1E6 *param_1)
   AnonShape_00660D40_F4300C26 *local_8;
 
   if (((param_1->field_0284 != 0) && (param_1->field_020B != 0)) &&
-     (g_allPlayers_007FA174 != (STAllPlayersC *)0x0)) {
+     (g_allPlayers_007FA174 != nullptr)) {
     local_8 = (AnonShape_00660D40_F4300C26 *)param_1;
     local_10 = thunk_FUN_004357f0(param_1->field_0024);
     iVar7 = param_1->field_020B;
@@ -59,7 +59,7 @@ void __fastcall FUN_00660d40(AnonShape_00660D40_E58DF1E6 *param_1)
               }
               /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
               local_5c._4_2_ = SUB42(uVar5,0);
-              if (local_10 != (AiPlrClassTy *)0x0) {
+              if (local_10 != nullptr) {
                 /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
                 local_5c._8_4_ = local_10->field_065C;
                 /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */

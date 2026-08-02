@@ -22,7 +22,7 @@ int FUN_006cecb0(AnonShape_006CECB0_97249119 *param_1,int param_2)
   memset(local_94, 0, 0x7c); /* compiler bulk-zero initialization */
   local_94[3] = param_1->field_0018;
   local_94[2] = param_1->field_001C;
-  local_8 = (int *)0x0;
+  local_8 = nullptr;
   local_94[0] = 0x7c;
   local_94[1] = 7;
   local_2c = 0x40;
@@ -41,7 +41,7 @@ int FUN_006cecb0(AnonShape_006CECB0_97249119 *param_1,int param_2)
   if (iVar3 == 0) {
     if (param_2 == 0) {
       piVar1 = (int *)param_1->field_0044;
-      if (piVar1 != (int *)0x0) {
+      if (piVar1 != nullptr) {
         /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
         (**(code **)(*piVar1 + 8))(piVar1);
         param_1->field_0044 = 0;
@@ -50,7 +50,7 @@ int FUN_006cecb0(AnonShape_006CECB0_97249119 *param_1,int param_2)
     }
     else {
       piVar1 = (int *)param_1->field_0040;
-      if (piVar1 != (int *)0x0) {
+      if (piVar1 != nullptr) {
         /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
         (**(code **)(*piVar1 + 8))(piVar1);
         param_1->field_0040 = 0;

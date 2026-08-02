@@ -19,8 +19,8 @@ int FUN_006b3120(uint *param_1,uint *param_2)
   puVar4 = param_2;
   puVar3 = param_1;
   iVar7 = 0;
-  local_c = (uint *)0x0;
-  local_10 = (AnonShape_006B5B10_E0D06CF1 *)0x0;
+  local_c = nullptr;
+  local_10 = nullptr;
   local_8 = 0;
   if (param_2[0x33] != 0) {
     param_1[0x6d] = 1;
@@ -76,7 +76,7 @@ int FUN_006b3120(uint *param_1,uint *param_2)
         local_24[1] = 0;
         local_24[0] = 0;
         /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
-        param_2 = (uint *)0x0;
+        param_2 = nullptr;
         local_18 = puVar4[0xd];
         if ((*puVar4 & 0x60000000) == 0) {
           /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
@@ -98,7 +98,7 @@ int FUN_006b3120(uint *param_1,uint *param_2)
         local_14 = *(undefined4 *)(uVar1 + 0x40);
         *(undefined4 *)(uVar1 + 0x40) = *(undefined4 *)(uVar1 + 0x44);
         *(undefined4 *)(*puVar3 + 0x44) = local_14;
-        local_c = (uint *)0x0;
+        local_c = nullptr;
         if ((*puVar4 & 0xa0001000) == 0) {
           do {
             local_8 = FUN_006bbe40(*(int **)(*puVar3 + 0x44),(uint *)&local_c,(int *)&local_10,0);
@@ -116,8 +116,8 @@ LAB_006b3351:
             iVar7 = FUN_006cee10((int)puVar3,(int)puVar4);
             local_8 = FUN_006cef60((int *)puVar3,local_c,local_10,(int)puVar4,param_1,
                                    (char *)param_2,puVar4[10],puVar4[0xb],local_24,0,iVar7,
-                                   *puVar4 & 0xff000000,(undefined1 *)0x0);
-            if (local_c != (uint *)0x0) {
+                                   *puVar4 & 0xff000000,nullptr);
+            if (local_c != nullptr) {
               /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
               (**(code **)(**(int **)(*puVar3 + 0x44) + 0x80))(*(int **)(*puVar3 + 0x44),0);
             }

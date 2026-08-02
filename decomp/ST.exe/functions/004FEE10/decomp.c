@@ -35,7 +35,7 @@ void __thiscall CPanelTy::PaintInfoObj(CPanelTy *this)
   }
   DibPut((AnonShape_006B5B10_E0D06CF1 *)local_8->field_01A0,0,0,'\x01',(byte *)local_8->field_0B43);
   DibPut((AnonShape_006B5B10_E0D06CF1 *)this_00->field_019C,0,0,'\x01',(byte *)this_00->field_0B47);
-  if (this_00->field_02E6 != (ushort *)0x0) {
+  if (this_00->field_02E6 != nullptr) {
     thunk_FUN_004f1890(this_00,1);
   }
   if (this_00->field_0C51 == '\0') {

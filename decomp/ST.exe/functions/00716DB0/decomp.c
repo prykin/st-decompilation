@@ -10,8 +10,8 @@ void __cdecl FUN_00716db0(int *param_1)
   int iVar2;
 
   piVar1 = (int *)*param_1;
-  if (piVar1 != (int *)0x0) {
-    if (*(uint **)((int)piVar1 + 0x21) != (uint *)0x0) {
+  if (piVar1 != nullptr) {
+    if (*(uint **)((int)piVar1 + 0x21) != nullptr) {
       if ((char)piVar1[2] == '\x1d') {
         cMf32::RecMemFree((cMf32 *)piVar1[1],*(uint **)((int)piVar1 + 0x21));
       }

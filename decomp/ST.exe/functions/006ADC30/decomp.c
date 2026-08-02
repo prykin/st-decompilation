@@ -14,7 +14,7 @@ undefined4 __cdecl FUN_006adc30(int *param_1)
     return 0;
   }
   g_int_00854A9C = g_int_00854EB4;
-  if (g_int_00854EB4 != (int *)0x0) {
+  if (g_int_00854EB4 != nullptr) {
     puVar2 = ExceptionList;
     if (DAT_007ed79c != 0) {
       Library::MSVCRT::FUN_00733f70(g_int_00854EB4,"\n%d ===========================================  %02d.%02d.%d  %d:%02d:%02d.%03d\n");
@@ -24,7 +24,7 @@ undefined4 __cdecl FUN_006adc30(int *param_1)
     do {
       DAT_00854eb0 = puVar2;
       /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-      if ((DAT_00854eb0 == (uint *)0x0) || (*(uint **)(param_1[1] + 0xc4) <= DAT_00854eb0)) break;
+      if ((DAT_00854eb0 == nullptr) || (*(uint **)(param_1[1] + 0xc4) <= DAT_00854eb0)) break;
       puVar2 = (uint *)*DAT_00854eb0;
     } while (DAT_00854eb0 < (uint *)*DAT_00854eb0);
     Library::MSVCRT::FUN_00733f70(g_int_00854A9C,"\n=============================== Exception %X\n");
@@ -141,7 +141,7 @@ undefined4 __cdecl FUN_006adc30(int *param_1)
     }
     DAT_00858ddc = 0;
     Library::MSVCRT::FUN_00733d60(g_int_00854A9C);
-    if (g_int_00854EB4 == (int *)0x0) {
+    if (g_int_00854EB4 == nullptr) {
       Library::MSVCRT::FUN_0072ea90(g_int_00854A9C);
     }
   }

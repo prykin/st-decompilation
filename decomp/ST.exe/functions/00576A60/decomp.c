@@ -12,11 +12,11 @@ STAlgaC * __cdecl CreateSTAlga(void)
   STAlgaC *this;
 
   this = (STAlgaC *)FUN_006b04d0(0x4c);
-  if (this != (STAlgaC *)0x0) {
+  if (this != nullptr) {
     sub_006E60E0(this);
     *(undefined **)this = &UNK_0079b188;
     return this;
   }
-  return (STAlgaC *)0x0;
+  return nullptr;
 }
 

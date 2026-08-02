@@ -17,7 +17,7 @@ void FUN_006b8280(char *param_1,char *param_2)
     pcVar5 = pcVar5 + 1;
   } while (cVar1 != '\0');
   uVar2 = ~uVar2;
-  if ((param_1 != (char *)0x0) && (param_1 != param_2)) {
+  if ((param_1 != nullptr) && (param_1 != param_2)) {
     pcVar5 = param_1;
     for (uVar3 = uVar2 >> 2; uVar3 != 0; uVar3 = uVar3 - 1) {
       *(undefined4 *)pcVar5 = *(undefined4 *)param_2;

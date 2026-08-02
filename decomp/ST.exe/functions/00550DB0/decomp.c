@@ -83,7 +83,7 @@ void __thiscall TradePanelTy::InitTradePanel(TradePanelTy *this)
   g_currentExceptionFrame = &local_b8;
   puVar3 = (undefined4 *)Library::MSVCRT::__setjmp3(local_b8.jumpBuffer,0);
   this_00 = local_14;
-  if (puVar3 == (undefined4 *)0x0) {
+  if (puVar3 == nullptr) {
     uVar21 = 0x77;
     g_tradePanel_00802A44 = local_14;
     iVar8 = (-(uint)(DAT_0080874e != '\x03') & 0xfffffffa) + 0xde;
@@ -101,10 +101,10 @@ void __thiscall TradePanelTy::InitTradePanel(TradePanelTy *this)
     pcVar5->field_0058 = 1;
     pcVar5->field_005C = 0;
     puVar6 = Library::Ourlib::MFRLOAD::mfRLoad
-                       (DAT_00806794,CASE_B,&DAT_007c204c,0xffffffff,0,1,0,(undefined4 *)0x0);
+                       (DAT_00806794,CASE_B,&DAT_007c204c,0xffffffff,0,1,0,nullptr);
     this_00->field_01D1 = puVar6;
     puVar6 = Library::Ourlib::MFRLOAD::mfRLoad
-                       (DAT_00806794,CASE_B,&DAT_007c2048,0xffffffff,0,1,0,(undefined4 *)0x0);
+                       (DAT_00806794,CASE_B,&DAT_007c2048,0xffffffff,0,1,0,nullptr);
     this_00->field_01D5 = puVar6;
     iVar8 = 1;
     uVar16 = 0xffffffff;
@@ -152,10 +152,10 @@ void __thiscall TradePanelTy::InitTradePanel(TradePanelTy *this)
     local_20 = 1;
     local_44 = local_64;
     (*this_00->field_000C->vtable->CreateObject)
-              ((SystemClassTy *)this_00->field_000C,5,&this_00->field_01C4,(int *)0x0,local_74,0);
+              ((SystemClassTy *)this_00->field_000C,5,&this_00->field_01C4,nullptr,local_74,0);
     local_e8 = this_00->field_0008;
     iVar13 = 1;
-    piVar20 = (int *)0x0;
+    piVar20 = nullptr;
     uVar14 = 0;
     iVar8 = 1;
     local_490[0] = 0;
@@ -199,7 +199,7 @@ void __thiscall TradePanelTy::InitTradePanel(TradePanelTy *this)
     local_c0 = 0x14;
     local_bc = 10;
     (*this_00->field_000C->vtable->CreateObject)
-              ((SystemClassTy *)this_00->field_000C,4,puVar3,(int *)0x0,local_490,0);
+              ((SystemClassTy *)this_00->field_000C,4,puVar3,nullptr,local_490,0);
     puVar1 = &this_00->field_0x18;
     this_00->field_0028 = 0x28;
     *(undefined4 *)&this_00->field_0x2c = 0x186a1;

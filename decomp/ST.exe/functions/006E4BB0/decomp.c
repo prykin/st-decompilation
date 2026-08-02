@@ -25,7 +25,7 @@ void FUN_006e4bb0(int *param_1)
       if (*(uint *)(iVar1 + 0xc) <= uVar2) break;
       piVar3 = (int *)(*(int *)(iVar1 + 8) * uVar2 + *(int *)(iVar1 + 0x1c));
       *(uint *)(iVar1 + 4) = uVar2 + 1;
-      if (piVar3 == (int *)0x0) {
+      if (piVar3 == nullptr) {
         return;
       }
       FUN_006e4bb0(piVar3);

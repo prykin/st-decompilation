@@ -44,7 +44,7 @@ int __thiscall TLOBaseTy::fireProc(TLOBaseTy *this)
   }
   if (0 < local_18->field_025D) {
     puVar8 = &local_18->field_0285;
-    local_8 = (int *)0x0;
+    local_8 = nullptr;
     do {
       if (puVar8[-8] != 0) {
         if (this_00->field_0255 != 0) {
@@ -58,18 +58,18 @@ int __thiscall TLOBaseTy::fireProc(TLOBaseTy *this)
               puVar8[1] = uVar5;
               fireFindCheckTarget(this_00,(int)local_8,0);
             }
-            if ((AnonShape_005EFAE0_B406B78B *)puVar8[2] != (AnonShape_005EFAE0_B406B78B *)0x0) {
+            if ((AnonShape_005EFAE0_B406B78B *)puVar8[2] != nullptr) {
               puVar8[0xc] = g_playSystem_00802A38->field_00E4;
               puVar8[0xd] = 100;
               if ((bVar9) ||
-                 ((AnonPointee_TLOBaseTy_0291 *)puVar8[3] == (AnonPointee_TLOBaseTy_0291 *)0x0)) {
+                 ((AnonPointee_TLOBaseTy_0291 *)puVar8[3] == nullptr)) {
                 puVar8[3] = 0;
                 STPlaySystemC::sub_006E62D0
                           (g_playSystem_00802A38,(AnonShape_005EFAE0_B406B78B *)puVar8[2],
                            (int *)(puVar8 + 3));
               }
               pAVar1 = (AnonPointee_TLOBaseTy_0291 *)puVar8[3];
-              if (pAVar1 != (AnonPointee_TLOBaseTy_0291 *)0x0) {
+              if (pAVar1 != nullptr) {
                 if (&stack0x00000000 != (undefined1 *)0x14) {
                   /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
                   _local_14 = CONCAT22(uStack_12,this_00->field_0041);
@@ -96,7 +96,7 @@ int __thiscall TLOBaseTy::fireProc(TLOBaseTy *this)
             }
           }
           if (((this_00->field_0255 != 0) && (puVar8[-4] != 0)) &&
-             ((AnonShape_005EFAE0_B406B78B *)puVar8[2] == (AnonShape_005EFAE0_B406B78B *)0x0)) {
+             ((AnonShape_005EFAE0_B406B78B *)puVar8[2] == nullptr)) {
             if (puVar8[0xb] == 0) {
               if (puVar8[0xd] + puVar8[0xc] <= g_playSystem_00802A38->field_00E4) {
                 puVar8[0xc] = g_playSystem_00802A38->field_00E4;
@@ -137,11 +137,11 @@ int __thiscall TLOBaseTy::fireProc(TLOBaseTy *this)
             if (((*(int *)(&DAT_00792a90 + ((int)piVar7 + this_00->field_0235 * 2) * 4) == 2) ||
                 ((*(int *)(&DAT_00792a90 + ((int)piVar7 + this_00->field_0235 * 2) * 4) == 3 &&
                  (iVar4 = sub_004C56B0(this_00,piVar7), iVar4 != 0)))) ||
-               ((AnonShape_005EFAE0_B406B78B *)puVar8[2] != (AnonShape_005EFAE0_B406B78B *)0x0)) {
+               ((AnonShape_005EFAE0_B406B78B *)puVar8[2] != nullptr)) {
               puVar8[0xc] = g_playSystem_00802A38->field_00E4;
               puVar8[0xd] = 100;
-              if ((AnonShape_005EFAE0_B406B78B *)puVar8[2] != (AnonShape_005EFAE0_B406B78B *)0x0) {
-                if ((AnonPointee_TLOBaseTy_0291 *)puVar8[3] == (AnonPointee_TLOBaseTy_0291 *)0x0) {
+              if ((AnonShape_005EFAE0_B406B78B *)puVar8[2] != nullptr) {
+                if ((AnonPointee_TLOBaseTy_0291 *)puVar8[3] == nullptr) {
                   STPlaySystemC::sub_006E62D0
                             (g_playSystem_00802A38,(AnonShape_005EFAE0_B406B78B *)puVar8[2],
                              (int *)(puVar8 + 3));

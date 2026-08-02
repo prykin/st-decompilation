@@ -6,7 +6,7 @@
 void FUN_006c2c80(int *param_1)
 
 {
-  if (param_1 != (int *)0x0) {
+  if (param_1 != nullptr) {
     if (*param_1 != 0) {
       _BinkClose_4(*param_1);
     }

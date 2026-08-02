@@ -13,7 +13,7 @@ int __thiscall FUN_007111c0(void *this,char *resourceString)
 
   iVar5 = 0;
   bVar2 = false;
-  if (resourceString == (char *)0x0) {
+  if (resourceString == nullptr) {
     return 0;
   }
   cVar1 = *resourceString;

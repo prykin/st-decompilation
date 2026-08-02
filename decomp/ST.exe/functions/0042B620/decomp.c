@@ -82,45 +82,45 @@ STAllPlayersC::GetObjPtr
   switch(param_3) {
   case CASE_1:
     array = (DArrayTy *)g_packedRecords_A62x8[objPtr].field6_0x9;
-    if (array == (DArrayTy *)0x0) {
-      return (STGameObjC *)0x0;
+    if (array == nullptr) {
+      return nullptr;
     }
     break;
   case CASE_2:
     array = g_array_007FA154;
-    if (g_array_007FA154 == (DArrayTy *)0x0) {
-      return (STGameObjC *)0x0;
+    if (g_array_007FA154 == nullptr) {
+      return nullptr;
     }
     break;
   case CASE_3:
     array = g_array_007FA158;
-    if (g_array_007FA158 == (DArrayTy *)0x0) {
-      return (STGameObjC *)0x0;
+    if (g_array_007FA158 == nullptr) {
+      return nullptr;
     }
     break;
   case CASE_4:
     array = g_array_007FA15C;
-    if (g_array_007FA15C == (DArrayTy *)0x0) {
-      return (STGameObjC *)0x0;
+    if (g_array_007FA15C == nullptr) {
+      return nullptr;
     }
     break;
   case CASE_5:
     array = g_array_007FA160;
-    if (g_array_007FA160 == (DArrayTy *)0x0) {
-      return (STGameObjC *)0x0;
+    if (g_array_007FA160 == nullptr) {
+      return nullptr;
     }
     break;
   case CASE_6:
     array = g_array_007FA164;
-    if (g_array_007FA164 == (DArrayTy *)0x0) {
-      return (STGameObjC *)0x0;
+    if (g_array_007FA164 == nullptr) {
+      return nullptr;
     }
     break;
   default:
     iVar2 = ReportDebugMessage("E:\\__titans\\wlad\\to_allpl.cpp",0x17a,0,0,
                                "STAllPlayersC::GetObjPtr player=%d num=%d",(int)objPtr,param_2);
     if (iVar2 == 0) {
-      return (STGameObjC *)0x0;
+      return nullptr;
     }
     STDebugBreak(); /* noreturn in standalone pseudocode */
   }

@@ -63,7 +63,7 @@ void __fastcall FUN_00572510(AnonShape_00572510_F06DC155 *param_1)
       if (iVar4 == 0) {
         this_00 = (cMf32 *)Library::Ourlib::MF32INT::FUN_006f0ec0(0x345,local_15c,0,0,0);
         this = local_10;
-        if (this_00 != (cMf32 *)0x0) {
+        if (this_00 != nullptr) {
           local_8 = &DAT_008072f8;
           local_14 = this_00;
           cMf32::RecGet(this_00,0xc,PTR_s_OPTIONS_PLAYER_0079b0d4,(int *)&local_8,1);
@@ -83,8 +83,8 @@ void __fastcall FUN_00572510(AnonShape_00572510_F06DC155 *param_1)
           *(undefined4 *)&this->field_0x809 = 0;
           this->field_0x80d = 0;
           puVar5 = cMf32::RecGet(this_00,0xc,PTR_s_LASTLOG_0079b0e8,(int *)&local_8,0);
-          if (((puVar5 == (ushort *)0x0) && (this != (AnonShape_00572510_F06DC155 *)0xfffff83b)) &&
-             (&this->field_0785 != (char *)0x0)) {
+          if (((puVar5 == nullptr) && (this != (AnonShape_00572510_F06DC155 *)0xfffff83b)) &&
+             (&this->field_0785 != nullptr)) {
             uVar7 = 0xffffffff;
             pcVar9 = &this->field_0785;
             do {

@@ -15,24 +15,24 @@ int __cdecl CreateArbiter(int param_1,char *param_2)
   InternalExceptionFrame local_4c;
   ushort *local_8;
 
-  local_8 = (ushort *)0x0;
+  local_8 = nullptr;
   local_4c.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_4c;
   iVar2 = Library::MSVCRT::__setjmp3(local_4c.jumpBuffer,0);
   if (iVar2 == 0) {
-    if ((g_playSystem_00802A38 == (STPlaySystemC *)0x0) || (param_1 == 0)) {
+    if ((g_playSystem_00802A38 == nullptr) || (param_1 == 0)) {
       RaiseInternalException
                 (-0x34,g_overwriteContext_007ED77C,"E:\\__titans\\ai\\ai_creat.cpp",0x82);
     }
-    if ((param_2 == (char *)0x0) || (*param_2 == '\0')) {
+    if ((param_2 == nullptr) || (*param_2 == '\0')) {
       param_2 = PTR_s_AIBOSS_0079d664;
     }
     local_8 = Library::Ourlib::MFAOBJ::mfAObjLoad((cMf32 *)param_1,param_2,1,0);
-    if (local_8 == (ushort *)0x0) {
+    if (local_8 == nullptr) {
       local_8 = (ushort *)CreateDefaultBossData();
     }
     Library::Ourlib::SAPP::FUN_006e6200
-              (g_playSystem_00802A38,0x403,(undefined4 *)0x28,(undefined4 *)0x0,(int *)0x0,local_8,0
+              (g_playSystem_00802A38,0x403,(undefined4 *)0x28,nullptr,nullptr,local_8,0
               );
     thunk_FUN_006484f0((int *)&local_8);
     g_currentExceptionFrame = local_4c.previous;

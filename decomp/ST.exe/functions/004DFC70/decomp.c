@@ -23,14 +23,14 @@ int __thiscall FUN_004dfc70(void *this,int *param_1)
   uVar5 = 0;
   local_8 = 0;
   pDVar4 = (DArrayTy *)g_packedRecords_A62x8[(int)param_1].field6_0x9;
-  if (pDVar4 != (DArrayTy *)0x0) {
+  if (pDVar4 != nullptr) {
     local_c = 0;
     local_10 = 0;
     local_14 = this;
     if (pDVar4->count != 0) {
       do {
         DArrayGetElement(pDVar4,uVar5,&param_1);
-        if (param_1 != (int *)0x0) {
+        if (param_1 != nullptr) {
           if (param_1[8] == 0x14) {
             puVar8 = &local_18;
             puVar7 = &local_8;
@@ -67,7 +67,7 @@ LAB_004dfd49:
     uVar5 = 0;
     pDVar4 = *(DArrayTy **)&g_packedRecords_A62x8[(int)piVar1].field_0x9d2;
     iVar3 = 0;
-    if (pDVar4 == (DArrayTy *)0x0) {
+    if (pDVar4 == nullptr) {
       if (local_10 != 0) {
         return 1;
       }

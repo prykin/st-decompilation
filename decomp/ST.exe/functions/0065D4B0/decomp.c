@@ -26,8 +26,8 @@ byte * __thiscall AiFltClassTy::PrepareToSave(AiFltClassTy *this,uint *param_1)
   errorCode = Library::MSVCRT::__setjmp3(local_4c.jumpBuffer,0);
   pAVar2 = local_8;
   if (errorCode == 0) {
-    if (local_8 == (AiFltClassTy *)0x0) {
-      pAVar3 = (AnonShape_GLOBAL_008489C4_F7BABFAC *)0x0;
+    if (local_8 == nullptr) {
+      pAVar3 = nullptr;
     }
     else {
       pAVar3 = (AnonShape_GLOBAL_008489C4_F7BABFAC *)&local_8->field_0020;
@@ -52,6 +52,6 @@ byte * __thiscall AiFltClassTy::PrepareToSave(AiFltClassTy *this,uint *param_1)
     STDebugBreak(); /* noreturn in standalone pseudocode */
   }
   RaiseInternalException(errorCode,0,"E:\\__titans\\ai\\ai_flt.cpp",0x50);
-  return (byte *)0x0;
+  return nullptr;
 }
 

@@ -10,7 +10,7 @@ undefined4 FUN_005dab70(int param_1,undefined4 param_2)
   g_currentExceptionFrame = &local_4c;
   iVar1 = Library::MSVCRT::__setjmp3(local_4c.jumpBuffer,0);
   if (iVar1 == 0) {
-    if (g_int_00811764 != (int *)0x0) {
+    if (g_int_00811764 != nullptr) {
       FUN_006b76d0(g_int_00811764);
       if (DAT_0080877e == '\0') {
         if (local_8->field_068E != 0) {

@@ -15,8 +15,8 @@ void __thiscall ST3DSMAPContext::sub_006DDA90(ST3DSMAPContext *this,float param_
   if (_DAT_0079dfd0 < param_2) {
     param_2 = _DAT_0079dfd0;
   }
-  *(double *)&this->field_0x15c = (double)param_1;
-  *(double *)&this->field_0x164 = (double)param_2;
+  this->field_015C = (double)param_1;
+  this->field_0164 = (double)param_2;
   sub_006DD870(this);
   return;
 }

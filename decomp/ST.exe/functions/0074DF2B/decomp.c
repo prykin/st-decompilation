@@ -5,14 +5,14 @@ int __thiscall FUN_0074df2b(void *this,int *param_1)
   int iVar1;
 
   iVar1 = 0;
-  if (param_1 != (int *)0x0) {
+  if (param_1 != nullptr) {
     if (*param_1 == 0) {
       *(int *)this = param_1[1];
     }
     else {
       *(int *)(*param_1 + 4) = param_1[1];
     }
-    if ((int *)param_1[1] == (int *)0x0) {
+    if ((int *)param_1[1] == nullptr) {
       *(int *)((int)this + 4) = *param_1;
     }
     else {

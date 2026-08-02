@@ -147,7 +147,7 @@ void __thiscall CPanelTy::SetControlObj(CPanelTy *this,char param_1)
       iVar13 = 0xe;
       iVar12 = 0xf;
       switch(local_1c + iVar5) {
-      case (Global_sub_00529590_param_1Enum *)0x0:
+      case nullptr:
         iVar13 = 0x4b;
         break;
       case (Global_sub_00529590_param_1Enum *)0x1:
@@ -165,12 +165,12 @@ switchD_00509942_caseD_2:
       }
       sub_004F17D0(this_00,0,(byte)local_10);
       if (this_00->field_0BFC == '\0') {
-        local_8 = (uint *)0x0;
+        local_8 = nullptr;
       }
       else {
         local_8 = (uint *)(uint)local_1c[6];
       }
-      pcVar23 = (char *)0x0;
+      pcVar23 = nullptr;
       uVar20 = 0;
       uVar19 = 1;
       iVar5 = 0;
@@ -200,7 +200,7 @@ LAB_00509a02:
     local_38 = 0xb204;
     local_40 = local_60;
     (*this_00->field_000C->vtable->CreateObject)
-              ((SystemClassTy *)this_00->field_000C,9,&this_00->field_0302,(int *)0x0,local_70,0);
+              ((SystemClassTy *)this_00->field_000C,9,&this_00->field_0302,nullptr,local_70,0);
     sub_004F1610(this_00,'\0');
     uVar8 = this_00->field_09C0[1];
     if (uVar8 != 0) {
@@ -219,7 +219,7 @@ LAB_00509b60:
       uVar24 = 0;
       uVar22 = 0;
       iVar12 = 0;
-      pcVar6 = (char *)0x0;
+      pcVar6 = nullptr;
       iVar5 = 0;
       uVar19 = 0;
       sVar18 = 0;
@@ -249,7 +249,7 @@ LAB_00509b60:
           uVar22 = 0;
           uVar17 = 0;
           iVar21 = 0;
-          pcVar6 = (char *)0x0;
+          pcVar6 = nullptr;
           iVar13 = 0;
           uVar19 = 0;
           sVar18 = 0;
@@ -264,7 +264,7 @@ LAB_00509b60:
         iVar5 = iVar5 + 1;
         local_c = (undefined1 *)((int)local_c + 0x22);
         local_8 = (uint *)((int)local_8 + -1);
-      } while (local_8 != (uint *)0x0);
+      } while (local_8 != nullptr);
       g_currentExceptionFrame = local_10c.previous;
       return;
     case CASE_34:
@@ -313,7 +313,7 @@ LAB_00509ddd:
         puVar9 = puVar9 + 0x1c;
         local_8 = (uint *)((int)local_8 + -1);
         iVar5 = iVar5 + 1;
-        if (local_8 == (uint *)0x0) {
+        if (local_8 == nullptr) {
           local_80 = local_25c;
           local_7c = (uint)(byte)this_00->field_09D4;
           local_b8 = this_00->field_0008;
@@ -327,7 +327,7 @@ LAB_00509ddd:
           local_90 = 0xb206;
           local_98 = local_b8;
           (*this_00->field_000C->vtable->CreateObject)
-                    ((SystemClassTy *)this_00->field_000C,5,&this_00->field_09D0,(int *)0x0,local_c8
+                    ((SystemClassTy *)this_00->field_000C,5,&this_00->field_09D0,nullptr,local_c8
                      ,0);
           local_c = (undefined1 *)((uint)local_c & 0xffffff00);
           local_10 = 0x3b;
@@ -349,7 +349,7 @@ LAB_00509ddd:
             uVar16 = thunk_FUN_00525ef0(GVar4,(Global_sub_00525EF0_param_2Enum)local_c);
             *(undefined4 *)(puVar15 + 1) = uVar16;
             uVar8 = CreateBut(this_00,5,0,(uint)(this_00->field_0BFC != '\0'),local_14,local_10,0,
-                              (char *)0x0,iVar5,iVar5 + 0x10,1,0,(int)puVar15,(char *)0x0,0x11,10,0);
+                              nullptr,iVar5,iVar5 + 0x10,1,0,(int)puVar15,nullptr,0x11,10,0);
             puVar15 = puVar15 + 0x27;
             local_10 = local_10 + 0xb;
             *local_8 = uVar8;
@@ -368,7 +368,7 @@ LAB_00509ddd:
         uVar24 = 0;
         uVar22 = 0;
         iVar12 = 0;
-        pcVar6 = (char *)0x0;
+        pcVar6 = nullptr;
         iVar5 = 0;
         uVar19 = 0;
         sVar18 = 0;
@@ -389,7 +389,7 @@ LAB_00509c11:
         uVar24 = 0;
         uVar22 = 0;
         iVar12 = 0;
-        pcVar6 = (char *)0x0;
+        pcVar6 = nullptr;
         iVar5 = 0;
         uVar19 = 0;
         sVar18 = 0;
@@ -411,7 +411,7 @@ LAB_00509c11:
       uVar24 = 0;
       uVar22 = 0;
       iVar13 = 0;
-      pcVar6 = (char *)0x0;
+      pcVar6 = nullptr;
       iVar12 = 0;
       uVar19 = 0;
       sVar18 = 0;
@@ -431,14 +431,14 @@ LAB_00509c11:
       local_8 = this_00->field_0A15;
       do {
         uVar8 = CreateBut(this_00,5,0,(uint)(this_00->field_0BFC != '\0'),local_14,iVar5,0,
-                          (char *)0x0,iVar12 + -0x20,iVar12,2,0,0x4f20,(char *)0x0,0xaa,10,
+                          nullptr,iVar12 + -0x20,iVar12,2,0,0x4f20,nullptr,0xaa,10,
                           iVar12 + -0x10);
         iVar12 = iVar12 + 1;
         iVar5 = iVar5 + 0xb;
         *local_8 = uVar8;
         local_8 = local_8 + 1;
         local_c = (undefined1 *)((int)local_c + -1);
-      } while (local_c != (undefined1 *)0x0);
+      } while (local_c != nullptr);
       g_currentExceptionFrame = local_10c.previous;
       return;
     }

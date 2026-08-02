@@ -34,27 +34,27 @@ int FUN_006bbb20(DDXContext *param_1,int param_2)
 
   local_8 = 0;
   local_10 = 0;
-  local_14 = (int *)0x0;
-  local_c = (int *)0x0;
+  local_14 = nullptr;
+  local_c = nullptr;
   local_18 = 0;
   if (((param_1->field_000C & 0x800) != 0) ||
-     (piVar1 = (int *)param_1->field_0040, piVar1 == (int *)0x0)) {
+     (piVar1 = (int *)param_1->field_0040, piVar1 == nullptr)) {
     return 0;
   }
   /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
   (**(code **)(*piVar1 + 0x38))(piVar1,local_28);
   piVar1 = param_1->field_0044;
   local_38[0] = 0;
-  if (piVar1 != (int *)0x0) {
+  if (piVar1 != nullptr) {
     /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
     (**(code **)(*piVar1 + 0x38))(piVar1,local_38);
   }
   if (param_2 == 0) {
-    if (((param_1->field_0044 == (int *)0x0) || ((param_1->field_000B & 0x10) == 0)) &&
+    if (((param_1->field_0044 == nullptr) || ((param_1->field_000B & 0x10) == 0)) &&
        ((local_28[0] & 0x4000) == 0)) {
       local_8 = 1;
     }
-    if ((param_1->field_0044 != (int *)0x0) && ((local_38[0] & 0x4000) == 0)) goto LAB_006bbbce;
+    if ((param_1->field_0044 != nullptr) && ((local_38[0] & 0x4000) == 0)) goto LAB_006bbbce;
 LAB_006bbc85:
     if (local_8 != 0) {
       memset(local_b4, 0, 0x7c); /* compiler bulk-zero initialization */
@@ -81,10 +81,10 @@ LAB_006bbc85:
     }
     if (local_10 != 0) {
       piVar1 = param_1->field_0044;
-      if (piVar1 != (int *)0x0) {
+      if (piVar1 != nullptr) {
         /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
         (**(code **)(*piVar1 + 8))(piVar1);
-        param_1->field_0044 = (int *)0x0;
+        param_1->field_0044 = nullptr;
       }
       param_1->field_0044 = local_c;
       if (param_1->field_0020 == 8) {
@@ -94,7 +94,7 @@ LAB_006bbc85:
     }
     if (local_8 != 0) {
       piVar1 = (int *)param_1->field_0040;
-      if (piVar1 != (int *)0x0) {
+      if (piVar1 != nullptr) {
         /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
         (**(code **)(*piVar1 + 8))(piVar1);
         param_1->field_0040 = 0;
@@ -126,7 +126,7 @@ LAB_006bbc85:
     if ((local_28[0] & 0x4000) != 0) {
       local_8 = 1;
     }
-    if ((param_1->field_0044 == (int *)0x0) || ((local_38[0] & 0x4000) == 0)) goto LAB_006bbc85;
+    if ((param_1->field_0044 == nullptr) || ((local_38[0] & 0x4000) == 0)) goto LAB_006bbc85;
 LAB_006bbbce:
     local_10 = 1;
     memset(local_130, 0, 0x7c); /* compiler bulk-zero initialization */
@@ -152,12 +152,12 @@ LAB_006bbbce:
       goto LAB_006bbc85;
     }
 LAB_006bbdfd:
-    if (local_c != (int *)0x0) {
+    if (local_c != nullptr) {
       /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
       (**(code **)(*local_c + 8))(local_c);
-      local_c = (int *)0x0;
+      local_c = nullptr;
     }
-    if (local_14 != (int *)0x0) {
+    if (local_14 != nullptr) {
       /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
       (**(code **)(*local_14 + 8))(local_14);
     }

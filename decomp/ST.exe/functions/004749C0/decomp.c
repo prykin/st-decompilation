@@ -48,14 +48,14 @@ int __thiscall STBoatC::WaitLoad(STBoatC *this,STBoatC *param_1)
   undefined4 *local_8;
 
   /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
-  if ((param_1 == (STBoatC *)0x0) || (pSVar11 = this, param_1 == (STBoatC *)0x1)) {
+  if ((param_1 == nullptr) || (pSVar11 = this, param_1 == (STBoatC *)0x1)) {
     memset(&this->field_02CC, 0, 0x5c); /* compiler bulk-zero initialization */
     iVar10 = 0;
     this->field_02C4 = 0;
     memset(&this->field_05A0, 0, 0x2a); /* compiler bulk-zero initialization */
     this->field_05A0 = this->field_03C8;
     this->field_05C0 = 0;
-    pSVar11 = (STBoatC *)0x0;
+    pSVar11 = nullptr;
   }
   if (this->field_05C0 != 0) {
     if (this->field_05C0 != 1) {
@@ -75,7 +75,7 @@ LAB_00475068:
         }
         STDebugBreak(); /* noreturn in standalone pseudocode */
       }
-      if ((this->field_05A6 == (ushort *)0x0) &&
+      if ((this->field_05A6 == nullptr) &&
          (iVar10 = STPlaySystemC::sub_006E62D0
                              (g_playSystem_00802A38,this->field_05A2,(int *)&this->field_05A6),
          iVar10 == -4)) {

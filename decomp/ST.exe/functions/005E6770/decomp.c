@@ -50,12 +50,12 @@ void __thiscall WaitTy::InitWait(WaitTy *this,undefined4 param_1,undefined4 para
     _DAT_0080f32e = 0;
     local_c->field_1A64 = param_1;
     local_c->field_1A68 = param_2;
-    pDVar5 = Library::DKW::TBL::SArrayCreate((DArrayTy *)0x0,10,10);
+    pDVar5 = Library::DKW::TBL::SArrayCreate(nullptr,10,10);
     this_01->field_1AF0 = pDVar5;
     if ((DAT_00811768 == '\x01') || (DAT_008067a0 != '\0')) {
       DarkScreen(g_dDXContext_0080759C,1,0);
     }
-    if (g_cursorClass_00802A30 != (CursorClassTy *)0x0) {
+    if (g_cursorClass_00802A30 != nullptr) {
       if (g_cursorClass_00802A30->field_00A9 == 0) {
         Library::DKW::DDX::FUN_006b8b10((int *)g_cursorClass_00802A30->field_00AD);
       }
@@ -67,7 +67,7 @@ void __thiscall WaitTy::InitWait(WaitTy *this,undefined4 param_1,undefined4 para
     g_startSystem_0081176C->field_002C = puVar6;
     puVar6 = g_startSystem_0081176C->field_002C;
     this_01->field_005D = puVar6;
-    FUN_006bc360(puVar6,local_668,(int *)0x0);
+    FUN_006bc360(puVar6,local_668,nullptr);
     this_01->field_1A5B->field_0140 = 0x1f;
     Library::Ourlib::PALETTE::FUN_00718780
               ((int)local_668,0,0x100,0x8b,0x15,(undefined4 *)&this_01->field_1A5B->field_0x144);
@@ -76,10 +76,10 @@ void __thiscall WaitTy::InitWait(WaitTy *this,undefined4 param_1,undefined4 para
            (byte *)puVar6);
     pAVar1 = (AnonShape_006B5B10_E0D06CF1 *)g_startSystem_0081176C->field_0544;
     FUN_006b4170(pAVar1,0,0,0,pAVar1->field_0004,pAVar1->field_0008,0xff);
-    if ((DArrayTy *)g_startSystem_0081176C->field_0548 != (DArrayTy *)0x0) {
+    if ((DArrayTy *)g_startSystem_0081176C->field_0548 != nullptr) {
       FUN_006b5570((DArrayTy *)g_startSystem_0081176C->field_0548);
     }
-    pDVar5 = Library::DKW::TBL::SArrayCreate((DArrayTy *)0x0,10,10);
+    pDVar5 = Library::DKW::TBL::SArrayCreate(nullptr,10,10);
     g_startSystem_0081176C->field_0548 = &pDVar5->flags;
     if (g_startSystem_0081176C->field_0389 != 0) {
       this_01->field_002D = 0x28;
@@ -127,16 +127,16 @@ void __thiscall WaitTy::InitWait(WaitTy *this,undefined4 param_1,undefined4 para
                  (ushort *)&this_01->field_1A5B->field_0140);
     Library::DKW::DDX::FUN_006b3640((int *)g_ddxContext_008075A8,local_8,0xffffffff,0x112,0x38);
     pHVar8 = (HoloTy *)Library::MSVCRT::FUN_0072e530(0x33);
-    if (pHVar8 == (HoloTy *)0x0) {
-      pHVar8 = (HoloTy *)0x0;
+    if (pHVar8 == nullptr) {
+      pHVar8 = nullptr;
     }
     else {
       pHVar8->field_0002 = 1;
       pHVar8->field_0000 = 0;
       *(undefined4 *)&pHVar8->field_0x3 = 0xffffffff;
       pHVar8->field_0001 = CASE_2;
-      pHVar8->field_0007 = (void *)0x0;
-      pHVar8->field_000B = (void *)0x0;
+      pHVar8->field_0007 = nullptr;
+      pHVar8->field_000B = nullptr;
       pHVar8->field_000F = 0;
       *(undefined4 *)&pHVar8->field_0x1b = 1;
       pHVar8->field_0013 = 1;
@@ -147,7 +147,7 @@ void __thiscall WaitTy::InitWait(WaitTy *this,undefined4 param_1,undefined4 para
       pHVar8->field_002B = 1;
     }
     this_01->field_1AF8 = pHVar8;
-    if (pHVar8 != (HoloTy *)0x0) {
+    if (pHVar8 != nullptr) {
       uVar10 = 0;
       cVar14 = '\x01';
       bVar13 = 0x10;
@@ -173,16 +173,16 @@ void __thiscall WaitTy::InitWait(WaitTy *this,undefined4 param_1,undefined4 para
                    (ushort *)&this_01->field_1A5B->field_0140);
       Library::DKW::DDX::FUN_006b3640((int *)g_ddxContext_008075A8,local_8,0xffffffff,10,0xb4);
       pHVar8 = (HoloTy *)Library::MSVCRT::FUN_0072e530(0x33);
-      if (pHVar8 == (HoloTy *)0x0) {
-        pHVar8 = (HoloTy *)0x0;
+      if (pHVar8 == nullptr) {
+        pHVar8 = nullptr;
       }
       else {
         pHVar8->field_0002 = 1;
         pHVar8->field_0000 = 0;
         *(undefined4 *)&pHVar8->field_0x3 = 0xffffffff;
         pHVar8->field_0001 = CASE_2;
-        pHVar8->field_0007 = (void *)0x0;
-        pHVar8->field_000B = (void *)0x0;
+        pHVar8->field_0007 = nullptr;
+        pHVar8->field_000B = nullptr;
         pHVar8->field_000F = 0;
         *(undefined4 *)&pHVar8->field_0x1b = 1;
         pHVar8->field_0013 = 1;
@@ -193,7 +193,7 @@ void __thiscall WaitTy::InitWait(WaitTy *this,undefined4 param_1,undefined4 para
         pHVar8->field_002B = 1;
       }
       this_01->field_1B00 = pHVar8;
-      if (pHVar8 != (HoloTy *)0x0) {
+      if (pHVar8 != nullptr) {
         uVar10 = 0;
         cVar14 = '\x01';
         bVar13 = 0x10;
@@ -262,16 +262,16 @@ void __thiscall WaitTy::InitWait(WaitTy *this,undefined4 param_1,undefined4 para
                    0xfffffffe,g_startSystem_0081176C->field_0609,g_startSystem_0081176C->field_060D);
       }
       pHVar8 = (HoloTy *)Library::MSVCRT::FUN_0072e530(0x33);
-      if (pHVar8 == (HoloTy *)0x0) {
-        pHVar8 = (HoloTy *)0x0;
+      if (pHVar8 == nullptr) {
+        pHVar8 = nullptr;
       }
       else {
         pHVar8->field_0002 = 1;
         pHVar8->field_0000 = 0;
         *(undefined4 *)&pHVar8->field_0x3 = 0xffffffff;
         pHVar8->field_0001 = CASE_2;
-        pHVar8->field_0007 = (void *)0x0;
-        pHVar8->field_000B = (void *)0x0;
+        pHVar8->field_0007 = nullptr;
+        pHVar8->field_000B = nullptr;
         pHVar8->field_000F = 0;
         *(undefined4 *)&pHVar8->field_0x1b = 1;
         pHVar8->field_0013 = 1;
@@ -282,7 +282,7 @@ void __thiscall WaitTy::InitWait(WaitTy *this,undefined4 param_1,undefined4 para
         pHVar8->field_002B = 1;
       }
       this_01->field_1AFC = pHVar8;
-      if (pHVar8 != (HoloTy *)0x0) {
+      if (pHVar8 != nullptr) {
         uVar10 = 0;
         cVar14 = '\x01';
         bVar13 = 0x10;
@@ -336,23 +336,23 @@ void __thiscall WaitTy::InitWait(WaitTy *this,undefined4 param_1,undefined4 para
                          this_01->field_005D,10,2);
     }
     pHVar8 = this_01->field_1AF8;
-    if (((pHVar8 != (HoloTy *)0x0) && (pHVar8->field_0000 != '\0')) &&
+    if (((pHVar8 != nullptr) && (pHVar8->field_0000 != '\0')) &&
        (-1 < (int)*(uint *)&pHVar8->field_0x3)) {
       Library::DKW::DDX::FUN_006b3430((int *)g_ddxContext_008075A8,*(uint *)&pHVar8->field_0x3);
     }
     pHVar8 = this_01->field_1B00;
-    if (((pHVar8 != (HoloTy *)0x0) && (pHVar8->field_0000 != '\0')) &&
+    if (((pHVar8 != nullptr) && (pHVar8->field_0000 != '\0')) &&
        (-1 < (int)*(uint *)&pHVar8->field_0x3)) {
       Library::DKW::DDX::FUN_006b3430((int *)g_ddxContext_008075A8,*(uint *)&pHVar8->field_0x3);
     }
     pHVar8 = this_01->field_1AFC;
-    if (((pHVar8 != (HoloTy *)0x0) && (pHVar8->field_0000 != '\0')) &&
+    if (((pHVar8 != nullptr) && (pHVar8->field_0000 != '\0')) &&
        (-1 < (int)*(uint *)&pHVar8->field_0x3)) {
       Library::DKW::DDX::FUN_006b3430((int *)g_ddxContext_008075A8,*(uint *)&pHVar8->field_0x3);
     }
     sub_005E9A40(this_01);
     this_00 = g_cursorClass_00802A30;
-    if (g_cursorClass_00802A30 != (CursorClassTy *)0x0) {
+    if (g_cursorClass_00802A30 != nullptr) {
       iVar4 = g_cursorClass_00802A30->field_00C9;
       iVar12 = g_cursorClass_00802A30->field_00C5;
       g_cursorClass_00802A30->field_0493 = CASE_1;
@@ -377,7 +377,7 @@ void __thiscall WaitTy::InitWait(WaitTy *this,undefined4 param_1,undefined4 para
     local_190 = 0x6943;
     local_17e = 0x24bc;
     local_171 = local_198;
-    if (pSVar2->field_02E6 != (MMsgTy *)0x0) {
+    if (pSVar2->field_02E6 != nullptr) {
       puVar7 = local_6c;
       for (iVar4 = 6; iVar4 != 0; iVar4 = iVar4 + -1) {
         *puVar7 = 0xffffffff;
@@ -392,7 +392,7 @@ void __thiscall WaitTy::InitWait(WaitTy *this,undefined4 param_1,undefined4 para
     thunk_FUN_00568bc0(&g_sound,0);
     /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
     if ((DAT_00807300._1_1_ & 8) != 0) {
-      thunk_FUN_0056a130(&g_sound,0x14,'\x02',0,(uint *)0x0);
+      thunk_FUN_0056a130(&g_sound,0x14,'\x02',0,nullptr);
     }
     thunk_FUN_005b6730(this_01,0xb,'\0',-1);
     g_currentExceptionFrame = local_50.previous;

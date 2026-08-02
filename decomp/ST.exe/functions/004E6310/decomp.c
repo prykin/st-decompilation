@@ -67,11 +67,11 @@ LAB_004e645f:
       if (((((param_2 == 0x1d) || (param_2 == 0x89)) || (param_2 == 0x46)) ||
           ((param_2 == 0x4a || (param_2 == 0x12)))) &&
          ((pDVar7 = (DArrayTy *)g_packedRecords_A62x8[(int)param_1].field6_0x9,
-          pDVar7 != (DArrayTy *)0x0 && (uVar10 = 0, pDVar7->count != 0)))) {
+          pDVar7 != nullptr && (uVar10 = 0, pDVar7->count != 0)))) {
         do {
           DArrayGetElement(pDVar7,uVar10,&local_8);
           /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-          if ((local_8 != (AnonShape_00494AE0_7F188308 *)0x0) &&
+          if ((local_8 != nullptr) &&
              (((iVar11 = (**(code **)(*(int *)local_8 + 0x2c))(), iVar11 == 0x36 ||
                (iVar11 = (**(code **)(*(int *)local_8 + 0x2c))(), iVar11 == 0x5d)) ||
               (iVar11 = (**(code **)(*(int *)local_8 + 0x2c))(), iVar11 == 0x3d)))) {
@@ -85,11 +85,11 @@ LAB_004e645f:
       if ((((((param_2 == 0x3c) || (param_2 == 0x91)) || (param_2 == 0x9a)) ||
            ((param_2 == 0x4b || (param_2 == 0x4c)))) || (param_2 == 0x41)) &&
          ((pDVar7 = (DArrayTy *)g_packedRecords_A62x8[(int)param_1].field6_0x9,
-          pDVar7 != (DArrayTy *)0x0 && (uVar10 = 0, pDVar7->count != 0)))) {
+          pDVar7 != nullptr && (uVar10 = 0, pDVar7->count != 0)))) {
         do {
           DArrayGetElement(pDVar7,uVar10,&local_8);
           /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-          if ((local_8 != (AnonShape_00494AE0_7F188308 *)0x0) &&
+          if ((local_8 != nullptr) &&
              (((iVar11 = (**(code **)(*(int *)local_8 + 0x2c))(), iVar11 == 5 ||
                (iVar11 = (**(code **)(*(int *)local_8 + 0x2c))(), iVar11 == 0x21)) ||
               (iVar11 = (**(code **)(*(int *)local_8 + 0x2c))(), iVar11 == 0x11)))) {

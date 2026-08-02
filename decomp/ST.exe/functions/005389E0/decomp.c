@@ -24,7 +24,7 @@ PanelTy::PaintBut(PanelTy *this,AnonShape_005389E0_C98BD548 *param_1,byte param_
   ushort *local_8;
 
   pAVar1 = param_1->field_0018;
-  local_8 = (ushort *)0x0;
+  local_8 = nullptr;
   if (param_5 == 0) {
     local_10 = pAVar1->field_0000;
   }
@@ -45,12 +45,12 @@ LAB_00538a14:
   else {
     local_c = pAVar1->field_0004 - this->field_0044;
   }
-  if (param_4 != (undefined *)0x0) {
+  if (param_4 != nullptr) {
     local_58.previous = g_currentExceptionFrame;
     g_currentExceptionFrame = &local_58;
     local_14 = this;
     errorCode = (int *)Library::MSVCRT::__setjmp3(local_58.jumpBuffer,0);
-    if (errorCode == (int *)0x0) {
+    if (errorCode == nullptr) {
       iVar5 = 1;
       /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
       uVar4 = (*(code *)param_4)(param_1);

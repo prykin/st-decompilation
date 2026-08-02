@@ -9,7 +9,7 @@ undefined4 FUN_00748cca(int param_1,int *param_2,int *param_3)
   int iVar1;
   int iVar2;
 
-  if (param_2 == (int *)0x0) {
+  if (param_2 == nullptr) {
     *(uint *)(param_1 + 4) = *(uint *)(param_1 + 4) & 0xffffffdf;
   }
   else {

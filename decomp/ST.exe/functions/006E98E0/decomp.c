@@ -17,17 +17,17 @@ ST3DSMAPContext::sub_006E98E0
   byte *pbVar2;
   int *piVar3;
 
-  if ((param_1 < *(uint *)&this->field_0x310) &&
-     (pAVar1 = (AnonShape_006E8840_CF3FA5BA *)(*(int *)&this->field_0x31c + param_1 * 0x114),
-     (*(uint *)(*(int *)&this->field_0x31c + param_1 * 0x114) & 0x8000) != 0)) {
+  if ((param_1 < (uint)this->field_0310) &&
+     (pAVar1 = (AnonShape_006E8840_CF3FA5BA *)(this->field_031C + param_1 * 0x114),
+     (*(uint *)(this->field_031C + param_1 * 0x114) & 0x8000) != 0)) {
     if ((uint)pAVar1->field_0094 <= param_2) {
       FUN_006e91a0();
       return 0;
     }
-    if (pAVar1->field_00A0 == (int *)0x0) {
+    if (pAVar1->field_00A0 == nullptr) {
       piVar3 = Library::DKW::LIB::FUN_006aac10(pAVar1->field_0094 * 8);
       pAVar1->field_00A0 = piVar3;
-      if (piVar3 == (int *)0x0) {
+      if (piVar3 == nullptr) {
         return 0xfffffffe;
       }
       *(uint *)&pAVar1->field_0x4 = *(uint *)&pAVar1->field_0x4 | 1;

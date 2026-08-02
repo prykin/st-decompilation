@@ -15,14 +15,14 @@ void __fastcall FUN_004f0a60(AnonShape_004F0A60_A5DE070F *param_1)
   puVar1 = (undefined4 *)&param_1->field_0x27e;
   iVar2 = 5;
   do {
-    if ((DArrayTy *)*puVar1 != (DArrayTy *)0x0) {
+    if ((DArrayTy *)*puVar1 != nullptr) {
       DArrayDestroy((DArrayTy *)*puVar1);
       *puVar1 = 0;
     }
     puVar1 = puVar1 + 1;
     iVar2 = iVar2 + -1;
   } while (iVar2 != 0);
-  g_prodPanel_00801684 = (ProdPanelTy *)0x0;
+  g_prodPanel_00801684 = nullptr;
   return;
 }
 

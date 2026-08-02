@@ -18,17 +18,17 @@ undefined4 __thiscall FUN_007489f8(void *this,undefined4 *param_1)
 
   apiStack_38[1] = *(int **)((int)this + 0x74);
   local_8 = this;
-  if (apiStack_38[1] == (int *)0x0) {
+  if (apiStack_38[1] == nullptr) {
     apuStack_2c[3] = *(undefined4 **)((int)this + 0x18);
     uVar2 = 0x80040216;
-    if (apuStack_2c[3] != (undefined4 *)0x0) {
+    if (apuStack_2c[3] != nullptr) {
       ppiStack_18 = &local_8;
       puStack_1c = &DAT_007a1b40;
       apuStack_2c[2] = (undefined4 *)0x748a46;
       /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
       (**(code **)*apuStack_2c[3])();
       piVar1 = local_8;
-      if (local_8 != (int *)0x0) {
+      if (local_8 != nullptr) {
         if (*(int *)((int)this + 0x70) == 0) {
           iVar3 = 0;
         }

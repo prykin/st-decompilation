@@ -5,7 +5,7 @@ void FUN_006c2050(void)
   int *piVar1;
   int *piVar2;
 
-  if (DAT_008568b4 != (int *)0x0) {
+  if (DAT_008568b4 != nullptr) {
     EnterCriticalSection((LPCRITICAL_SECTION)&DAT_00856880);
     EnterCriticalSection((LPCRITICAL_SECTION)&DAT_00856898);
     FUN_006b9890(&DAT_00854ff4);
@@ -20,11 +20,11 @@ void FUN_006c2050(void)
       if ((piVar2[-4] & 1U) != 0) {
         piVar2[-4] = piVar2[-4] & 0xfffffff7;
         piVar1 = (int *)piVar2[-1];
-        if (piVar1 != (int *)0x0) {
+        if (piVar1 != nullptr) {
           /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
           (**(code **)(*piVar1 + 0x48))(piVar1);
           piVar1 = (int *)*piVar2;
-          if (piVar1 != (int *)0x0) {
+          if (piVar1 != nullptr) {
             /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
             (**(code **)(*piVar1 + 8))(piVar1);
             *piVar2 = 0;
@@ -35,16 +35,16 @@ void FUN_006c2050(void)
       }
       piVar2 = piVar2 + 0x31;
     } while ((int)piVar2 < 0x856888);
-    if (DAT_008568b8 != (int *)0x0) {
+    if (DAT_008568b8 != nullptr) {
       /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
       (**(code **)(*DAT_008568b8 + 0x48))(DAT_008568b8);
       /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
       (**(code **)(*DAT_008568b8 + 8))(DAT_008568b8);
-      DAT_008568b8 = (int *)0x0;
+      DAT_008568b8 = nullptr;
     }
     /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
     (**(code **)(*DAT_008568b4 + 8))(DAT_008568b4);
-    DAT_008568b4 = (int *)0x0;
+    DAT_008568b4 = nullptr;
     DAT_00856878 = 0;
     FreeAndNull(&LPVOID_008568b0);
   }

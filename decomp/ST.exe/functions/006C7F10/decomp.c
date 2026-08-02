@@ -20,7 +20,7 @@ void FUN_006c7f10(AnonShape_006B5B10_E0D06CF1 *param_1,int param_2,int *param_3,
       piVar2 = piVar2 + 2;
       /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
       param_3 = (int *)((int)param_3 + -1);
-    } while (param_3 != (int *)0x0);
+    } while (param_3 != nullptr);
   }
   FUN_006b5b10((AnonShape_006E6FB0_BC494FEA *)param_1,param_2,piVar1[param_4 * 2 + -2],
                piVar1[param_4 * 2 + -1],*piVar1,piVar1[1],param_5,0xd);

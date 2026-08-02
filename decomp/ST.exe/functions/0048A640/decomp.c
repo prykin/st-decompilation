@@ -12,10 +12,10 @@ void * __cdecl FUN_0048a640(void)
   STBoatC *pSVar1;
 
   pSVar1 = (STBoatC *)FUN_006b04d0(0x85e);
-  if (pSVar1 != (STBoatC *)0x0) {
+  if (pSVar1 != nullptr) {
     pSVar1 = STBoatC::STBoatC(pSVar1);
     return pSVar1;
   }
-  return (void *)0x0;
+  return nullptr;
 }
 

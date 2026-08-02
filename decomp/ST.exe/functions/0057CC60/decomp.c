@@ -12,10 +12,10 @@ STFishC * __cdecl CreateSTFish(void)
   STFishC *pSVar1;
 
   pSVar1 = (STFishC *)FUN_006b04d0(0x26b);
-  if (pSVar1 != (STFishC *)0x0) {
+  if (pSVar1 != nullptr) {
     pSVar1 = STFishC::STFishC(pSVar1);
     return pSVar1;
   }
-  return (STFishC *)0x0;
+  return nullptr;
 }
 

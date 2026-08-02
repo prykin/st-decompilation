@@ -48,6 +48,7 @@ public class STClassArrayAnalyzer extends GhidraScript {
         "^\\[EBP(?:([+-])(0X[0-9A-F]+|[0-9]+))?\\]$");
 
     private final Map<ArrayKey, ArrayEvidence> arrays = new TreeMap<>();
+    private final Map<SpanKey, SpanEvidence> zeroSpans = new TreeMap<>();
     private DataTypeManager dataTypes;
 
     @Override
@@ -98,6 +99,7 @@ public class STClassArrayAnalyzer extends GhidraScript {
         if (instructions.isEmpty()) return;
 
         Map<String, Value> registers = new HashMap<>();
+        Map<String, Long> constants = new HashMap<>();
         Map<Long, Value> stack = new HashMap<>();
         Map<String, ArrayEvidence> pointerOrigins = new HashMap<>();
         registers.put("ECX", Value.thisAddress(0));
@@ -106,6 +108,9 @@ public class STClassArrayAnalyzer extends GhidraScript {
             Instruction instruction = instructions.get(index);
             String mnemonic = instruction.getMnemonicString().toUpperCase(Locale.ROOT);
             List<String> operands = operands(instruction);
+
+            observeExactZeroSpan(function, owner, instruction, mnemonic, registers,
+                constants);
 
             if (Set.of("CMP", "TEST").contains(mnemonic) && !operands.isEmpty())
                 observeBound(instructions, index, mnemonic, operands, registers, stack);
@@ -147,7 +152,62 @@ public class STClassArrayAnalyzer extends GhidraScript {
             }
 
             updateState(instruction, mnemonic, operands, registers, stack, pointerOrigins);
+            updateConstants(mnemonic, operands, constants);
         }
+    }
+
+    private void observeExactZeroSpan(Function function, String owner,
+            Instruction instruction, String mnemonic, Map<String, Value> registers,
+            Map<String, Long> constants) {
+        int width = mnemonic.equals("STOSD.REP") ? 4 :
+            mnemonic.equals("STOSB.REP") ? 1 : mnemonic.equals("STOSB") ? 1 : 0;
+        if (width == 0 || constants.getOrDefault("EAX", Long.MIN_VALUE) != 0) return;
+        Value destination = registers.get("EDI");
+        if (destination == null || destination.thisOffset == null) return;
+        long count = mnemonic.endsWith(".REP") ?
+            constants.getOrDefault("ECX", -1L) : 1L;
+        if (count < 1 || count > MAX_ARRAY_COUNT * 16L ||
+                count > Long.MAX_VALUE / width) return;
+        long bytes = count * width;
+        SpanKey key = new SpanKey(owner, destination.thisOffset);
+        SpanEvidence evidence = zeroSpans.computeIfAbsent(key, SpanEvidence::new);
+        evidence.lengths.add((int)bytes);
+        evidence.functions.add(addr(function.getEntryPoint()));
+        evidence.sites.add(addr(instruction.getAddress()) + " exact zero span bytes=" + bytes);
+        registers.put("EDI", Value.thisAddress(destination.thisOffset + bytes));
+        if (mnemonic.endsWith(".REP")) constants.put("ECX", 0L);
+    }
+
+    private void updateConstants(String mnemonic, List<String> operands,
+            Map<String, Long> constants) {
+        if ("CALL".equals(mnemonic)) {
+            constants.remove("EAX"); constants.remove("ECX"); constants.remove("EDX");
+            return;
+        }
+        if (operands.isEmpty()) return;
+        String destination = fullRegister(operands.get(0));
+        if (destination.isBlank()) return;
+        if ("XOR".equals(mnemonic) && operands.size() >= 2 &&
+                destination.equals(fullRegister(operands.get(1)))) {
+            constants.put(destination, 0L);
+            return;
+        }
+        if ("MOV".equals(mnemonic) && operands.size() >= 2) {
+            Long value = immediate(operands.get(1));
+            if (value == null) value = constants.get(fullRegister(operands.get(1)));
+            if (value == null) constants.remove(destination);
+            else constants.put(destination, value);
+            return;
+        }
+        if (("ADD".equals(mnemonic) || "SUB".equals(mnemonic)) && operands.size() >= 2) {
+            Long current = constants.get(destination), value = immediate(operands.get(1));
+            if (current == null || value == null) constants.remove(destination);
+            else constants.put(destination,
+                "SUB".equals(mnemonic) ? current - value : current + value);
+            return;
+        }
+        if (writesFirstOperand(mnemonic) && !mnemonic.startsWith("STOS"))
+            constants.remove(destination);
     }
 
     /**
@@ -393,6 +453,7 @@ public class STClassArrayAnalyzer extends GhidraScript {
     private List<Proposal> makeProposals() {
         List<Proposal> result = new ArrayList<>();
         for (ArrayEvidence evidence : arrays.values()) {
+            applyExactZeroExtent(evidence);
             if (evidence.counts.size() != 1) continue;
             int count = evidence.counts.iterator().next();
             String elementType = selectElementType(evidence.elementTypes);
@@ -423,6 +484,45 @@ public class STClassArrayAnalyzer extends GhidraScript {
             .thenComparingLong(row -> row.key.offset));
         disableOverlaps(result);
         return result;
+    }
+
+    private void applyExactZeroExtent(ArrayEvidence evidence) {
+        if (!evidence.counts.isEmpty() || evidence.sites.size() < 3) return;
+        SpanEvidence span = zeroSpans.get(new SpanKey(evidence.key.owner,
+            evidence.key.offset));
+        if (span == null || span.lengths.size() != 1) return;
+        int bytes = span.lengths.iterator().next();
+        if (bytes < evidence.key.elementSize * 2 || bytes % evidence.key.elementSize != 0)
+            return;
+        int count = bytes / evidence.key.elementSize;
+        if (count > MAX_ARRAY_COUNT) return;
+        Structure structure = findOwnerType(evidence.key.owner);
+        if (!genericStrideRange(structure, evidence.key.offset, bytes,
+                evidence.key.elementSize)) return;
+        evidence.counts.add(count);
+        evidence.exactLoops++;
+        evidence.functions.addAll(span.functions);
+        evidence.sites.addAll(span.sites);
+        evidence.sites.add("exact zero-init extent supplies count=" + count +
+            " for independently indexed stride=" + evidence.key.elementSize);
+    }
+
+    private boolean genericStrideRange(Structure structure, long offset, int bytes,
+            int stride) {
+        if (structure == null || offset < 0 || offset + bytes > structure.getLength())
+            return false;
+        for (ghidra.program.model.data.DataTypeComponent component :
+                structure.getDefinedComponents()) {
+            if (component.getOffset() >= offset + bytes ||
+                    component.getEndOffset() < offset) continue;
+            if ((component.getOffset() - offset) % stride != 0 ||
+                    component.getLength() > stride) return false;
+            DataType type = component.getDataType();
+            if (!(type instanceof ghidra.program.model.data.Undefined) &&
+                    !(type instanceof ghidra.program.model.data.AbstractIntegerDataType))
+                return false;
+        }
+        return true;
     }
 
     private String selectElementType(Set<String> candidates) {
@@ -824,6 +924,19 @@ public class STClassArrayAnalyzer extends GhidraScript {
             return offsetOrder != 0 ? offsetOrder :
                 Integer.compare(elementSize, other.elementSize);
         }
+    }
+    private record SpanKey(String owner, long offset) implements Comparable<SpanKey> {
+        @Override public int compareTo(SpanKey other) {
+            int order = owner.compareTo(other.owner);
+            return order != 0 ? order : Long.compare(offset, other.offset);
+        }
+    }
+    private static class SpanEvidence {
+        final SpanKey key;
+        final Set<Integer> lengths = new TreeSet<>();
+        final Set<String> functions = new TreeSet<>();
+        final Set<String> sites = new TreeSet<>();
+        SpanEvidence(SpanKey key) { this.key = key; }
     }
     private static class ArrayEvidence {
         final ArrayKey key;

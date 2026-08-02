@@ -58,13 +58,13 @@ STGroupBoatC::sub_0049A500
         index = local_c & 0xffff;
       } while (index < uVar1);
     }
-    if (param_1 != (undefined2 *)0x0) {
+    if (param_1 != nullptr) {
       *param_1 = (short)((int)sVar4 / (int)(uint)this->field_0027);
     }
-    if (param_2 != (undefined2 *)0x0) {
+    if (param_2 != nullptr) {
       *param_2 = (short)((int)sVar2 / (int)(uint)this->field_0027);
     }
-    if (param_3 != (undefined2 *)0x0) {
+    if (param_3 != nullptr) {
       *param_3 = (short)((int)(short)local_8 / (int)(uint)this->field_0027);
     }
   }

@@ -30,7 +30,7 @@ FUN_0040bc90(void *this,uint param_1,short *param_2,short *param_3,short *param_
 
   local_28 = this;
   pAVar1 = (AnonShape_00497920_894F87D6 *)thunk_FUN_00423e70(this,param_1);
-  if (pAVar1 != (AnonShape_00497920_894F87D6 *)0x0) {
+  if (pAVar1 != nullptr) {
     local_8 = Library::DKW::LIB::MemAlloc
                         ((int)g_pathingGrid.sizeZ * (int)g_pathingGrid.sizeY *
                          (int)g_pathingGrid.sizeX * 2);
@@ -120,9 +120,9 @@ FUN_0040bc90(void *this,uint param_1,short *param_2,short *param_3,short *param_
                        ((int)local_8,(int)g_pathingGrid.sizeX,(int)g_pathingGrid.sizeY,
                         (int)g_pathingGrid.sizeZ,(short *)(int)pAVar1->field_0047,
                         (short *)(int)pAVar1->field_0049,(short *)(int)pAVar1->field_004B,param_2,
-                        param_3,param_4,0,&local_2c,(undefined4 *)0x0,(short *)0x0,uVar4);
+                        param_3,param_4,0,&local_2c,nullptr,nullptr,uVar4);
     psVar7 = local_8;
-    if (psVar3 == (short *)0x0) {
+    if (psVar3 == nullptr) {
       iVar2 = FUN_006ab090((int)local_8,(int)g_pathingGrid.sizeX,(int)g_pathingGrid.sizeY,
                            (int)g_pathingGrid.sizeZ,(int)param_2,(int)param_3,(int)param_4,
                            (int)pAVar1->field_0047,(int)pAVar1->field_0049,(int)pAVar1->field_004B);

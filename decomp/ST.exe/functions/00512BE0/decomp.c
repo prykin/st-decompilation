@@ -168,7 +168,7 @@ void __thiscall HelpPanelTy::sub_00512BE0(HelpPanelTy *this,int param_1)
     local_58 = 1;
     local_5c = 1;
     (*this_00->field_000C->vtable->CreateObject)
-              ((SystemClassTy *)this_00->field_000C,8,&this_00->field_019C,(int *)0x0,local_8c4,0);
+              ((SystemClassTy *)this_00->field_000C,8,&this_00->field_019C,nullptr,local_8c4,0);
     iVar3 = this_00->field_019C;
     if (iVar3 != 0) {
       this_00->field_0028 = 0x20;

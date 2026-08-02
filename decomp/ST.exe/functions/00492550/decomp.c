@@ -27,7 +27,7 @@ FUN_00492550(void *this,short param_1,short param_2,short param_3,undefined2 *pa
                [g_pathingGrid.sizeX * iVar3 + iVar4 + (int)g_pathingGrid.planeStride * (int)param_3]
                == 0)) &&
              (g_worldGrid.cells[(int)g_worldGrid.planeStride * (int)param_3 + _param_1 + iVar4].
-              objects[*(byte *)((int)this + 0x8e)] == (STWorldObject *)0x0)) {
+              objects[*(byte *)((int)this + 0x8e)] == nullptr)) {
             *param_4 = (short)iVar4;
             *param_5 = (short)iVar3;
             *param_6 = param_3;

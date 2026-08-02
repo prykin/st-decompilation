@@ -24,7 +24,7 @@ STPlaySystemC::SaveObjData
   CHAR local_28 [32];
   STPlaySystemC *local_8;
 
-  if (this->field_0024 == (cMf32 *)0x0) {
+  if (this->field_0024 == nullptr) {
     return -4;
   }
   local_6c.previous = g_currentExceptionFrame;
@@ -33,8 +33,8 @@ STPlaySystemC::SaveObjData
   iVar2 = Library::MSVCRT::__setjmp3(local_6c.jumpBuffer,0);
   if (iVar2 == 0) {
     wsprintfA(local_28,"%s%08ld",PTR_DAT_007c83b0,param_1);
-    cMf32::RecPut(local_8->field_0024,0xc,local_28,param_2,(uint)param_3,(undefined4 *)0x0,'\x02',
-                  (uint *)0x0);
+    cMf32::RecPut(local_8->field_0024,0xc,local_28,param_2,(uint)param_3,nullptr,'\x02',
+                  nullptr);
     g_currentExceptionFrame = local_6c.previous;
     return 0;
   }

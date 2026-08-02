@@ -6,7 +6,7 @@ undefined4 __cdecl FUN_00677250(undefined4 param_1,undefined4 param_2,int param_
   uint uVar1;
 
   array = param_4;
-  if (param_4 != (uint *)0x0) {
+  if (param_4 != nullptr) {
     uVar1 = thunk_FUN_00423120(param_3);
     if ((uVar1 & 8) == 0) {
       Library::DKW::TBL::DArrayAppend((DArrayTy *)array,&param_2);

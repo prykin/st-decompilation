@@ -9,7 +9,7 @@ int FUN_00711470(uint *param_1)
   int iVar5;
 
   iVar4 = 0;
-  if (param_1 == (uint *)0x0) {
+  if (param_1 == nullptr) {
     return 0;
   }
   cVar1 = (char)*param_1;
@@ -20,7 +20,7 @@ int FUN_00711470(uint *param_1)
     puVar3 = Library::MSVCRT::FUN_00730590(param_1,&DAT_007c8ff4);
     iVar5 = iVar4 + 1;
     iVar4 = iVar4 + 1;
-    if (puVar3 == (uint *)0x0) break;
+    if (puVar3 == nullptr) break;
     uVar2 = *puVar3;
     *(undefined1 *)puVar3 = 0;
     *(char *)puVar3 = (char)uVar2;

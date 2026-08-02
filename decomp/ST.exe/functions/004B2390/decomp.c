@@ -29,13 +29,13 @@ FUN_004b2390(uint param_1,int param_2,int param_3,int param_4,int *param_5,int p
            ((g_worldGrid.sizeY <= sVar1 || ((sVar4 < 0 || (g_worldGrid.sizeZ <= sVar4)))))) ||
           (g_worldGrid.cells
            [(int)g_worldGrid.planeStride * (int)sVar4 + (int)sVar1 * (int)g_worldGrid.sizeX +
-            (int)sVar3].objects[0] == (STWorldObject *)0x0)) &&
+            (int)sVar3].objects[0] == nullptr)) &&
          (((((sVar3 < g_worldGrid.sizeX && (-1 < sVar1)) && (sVar1 < g_worldGrid.sizeY)) &&
            ((-1 < sVar4 && (sVar4 < g_worldGrid.sizeZ)))) &&
           (((g_pathingGrid.cells
              [(int)g_pathingGrid.sizeX * (int)sVar1 + (int)g_pathingGrid.planeStride * (int)sVar4 +
               (int)sVar3] == 0 &&
-            ((local_8 = 1, param_6 != 0 && (g_visibleClass_00802A88 != (VisibleClassTy *)0x0)))) &&
+            ((local_8 = 1, param_6 != 0 && (g_visibleClass_00802A88 != nullptr)))) &&
            (iVar2 = VisibleClassTy::sub_0055B1C0
                               (g_visibleClass_00802A88,param_2,param_3,param_4,param_1), iVar2 != 0)
            ))))) {

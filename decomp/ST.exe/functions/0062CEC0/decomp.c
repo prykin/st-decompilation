@@ -12,11 +12,11 @@ STManRub3C * __cdecl CreateSTManRub3(void)
   STManRub3C *this;
 
   this = (STManRub3C *)FUN_006b04d0(0xb8);
-  if (this != (STManRub3C *)0x0) {
+  if (this != nullptr) {
     g_manRub3_008117A4 = STManRub3C::STManRub3C(this);
     return g_manRub3_008117A4;
   }
-  g_manRub3_008117A4 = (STManRub3C *)0x0;
-  return (STManRub3C *)0x0;
+  g_manRub3_008117A4 = nullptr;
+  return nullptr;
 }
 

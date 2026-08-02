@@ -35,12 +35,12 @@ SubmarineTitans::Recovered::HiddenThis::AnonReceiver_00714CE0::FUN_00714ce0
     }
     return iVar2;
   }
-  if (*(AnonPointee_TLOBaseTy_0607 **)local_8 == (AnonPointee_TLOBaseTy_0607 *)0x0) {
+  if (*(void **)local_8 == nullptr) {
     puVar3 = Library::DKW::LIB::FUN_006aac10(param_1);
     local_8 = pAVar1;
   }
   else {
-    puVar3 = Library::DKW::LIB::MemRealloc(*(AnonPointee_TLOBaseTy_0607 **)local_8,param_1);
+    puVar3 = Library::DKW::LIB::MemRealloc(*(void **)local_8,param_1);
     iVar2 = *(int *)&pAVar1->field_0x4;
     uVar4 = param_1 - iVar2;
     puVar6 = (byte *)(iVar2 + (int)puVar3);

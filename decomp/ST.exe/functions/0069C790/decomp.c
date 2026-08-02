@@ -37,7 +37,7 @@ int FUN_0069c790(uint *param_1,int param_2,uint param_3,uint param_4)
           piVar1 = (int *)(*(int *)(iVar3 + 8) * uVar4 + *(int *)(iVar3 + 0x1c));
         }
         else {
-          piVar1 = (int *)0x0;
+          piVar1 = nullptr;
         }
         iVar3 = *piVar1;
         uVar2 = thunk_FUN_0069c710(param_2,iVar3,local_8);

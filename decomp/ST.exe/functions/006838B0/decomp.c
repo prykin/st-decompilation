@@ -19,7 +19,7 @@ int __cdecl FUN_006838b0(int *param_1,char param_2,byte *param_3,int param_4)
   uStack_b = 0;
   uStack_9 = 0;
   local_8 = 0;
-  if (((param_4 == 0) || (param_1 == (int *)0x0)) || (param_3 == (byte *)0x0)) {
+  if (((param_4 == 0) || (param_1 == nullptr)) || (param_3 == nullptr)) {
     RaiseInternalException
               (-0x34,g_overwriteContext_007ED77C,"E:\\__titans\\ai\\ai_script.cpp",0x3be);
   }

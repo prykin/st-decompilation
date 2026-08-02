@@ -33,7 +33,7 @@ undefined4 __thiscall FUN_00721830(void *this,char *param_1)
       pcVar6 = *(char **)(*(int *)(*(int *)((int)this + 0x138) + 0x14) + iVar2 * 4);
     }
     else {
-      pcVar6 = (char *)0x0;
+      pcVar6 = nullptr;
     }
     if ((*(uint *)((int)this + 0x20) & 1) != 0) {
       if ((*(uint *)((int)this + 0x20) & 0x80) != 0) {

@@ -41,26 +41,26 @@ void __thiscall HelpPanelTy::DoneHelpPanel(HelpPanelTy *this)
       StartSystemTy::sub_006E56B0(pHVar2->field_000C,pHVar2->field_019C);
     }
     pHVar2->field_019C = 0;
-    if ((DArrayTy *)pHVar2->field_01B3 != (DArrayTy *)0x0) {
+    if ((DArrayTy *)pHVar2->field_01B3 != nullptr) {
       DArrayDestroy((DArrayTy *)pHVar2->field_01B3);
     }
-    pHVar2->field_01B3 = (AnonPointee_HelpPanelTy_01B3 *)0x0;
-    if (pHVar2->field_01BB != (DArrayTy *)0x0) {
+    pHVar2->field_01B3 = nullptr;
+    if (pHVar2->field_01BB != nullptr) {
       DArrayDestroy(pHVar2->field_01BB);
     }
-    pHVar2->field_01BB = (DArrayTy *)0x0;
-    if (pHVar2->field_01CB != (DArrayTy *)0x0) {
+    pHVar2->field_01BB = nullptr;
+    if (pHVar2->field_01CB != nullptr) {
       DArrayDestroy(pHVar2->field_01CB);
     }
-    pHVar2->field_01CB = (DArrayTy *)0x0;
-    if ((DArrayTy *)pHVar2->field_01D7 != (DArrayTy *)0x0) {
+    pHVar2->field_01CB = nullptr;
+    if ((DArrayTy *)pHVar2->field_01D7 != nullptr) {
       DArrayDestroy((DArrayTy *)pHVar2->field_01D7);
     }
     pHVar2->field_01D7 = 0;
-    if ((DArrayTy *)pHVar2->field_01D3 != (DArrayTy *)0x0) {
+    if ((DArrayTy *)pHVar2->field_01D3 != nullptr) {
       FUN_006b5570((DArrayTy *)pHVar2->field_01D3);
     }
-    pHVar2->field_01D3 = (uint *)0x0;
+    pHVar2->field_01D3 = nullptr;
     puVar4 = &pHVar2->field_01F0;
     local_8 = 10;
     do {
@@ -81,34 +81,34 @@ void __thiscall HelpPanelTy::DoneHelpPanel(HelpPanelTy *this)
     pHVar2->field_0244 = 0;
     pHVar2->field_0240 = 0;
     pHVar2->field_023C = 0;
-    if (pHVar2->field_01E0 != (ccFntTy *)0x0) {
+    if (pHVar2->field_01E0 != nullptr) {
       ccFntTy::operator_delete((uint *)pHVar2->field_01E0);
-      pHVar2->field_01E0 = (ccFntTy *)0x0;
+      pHVar2->field_01E0 = nullptr;
     }
-    if (pHVar2->field_01E4 != (ccFntTy *)0x0) {
+    if (pHVar2->field_01E4 != nullptr) {
       ccFntTy::operator_delete((uint *)pHVar2->field_01E4);
-      pHVar2->field_01E4 = (ccFntTy *)0x0;
+      pHVar2->field_01E4 = nullptr;
     }
-    if (pHVar2->field_01E8 != (ccFntTy *)0x0) {
+    if (pHVar2->field_01E8 != nullptr) {
       ccFntTy::operator_delete((uint *)pHVar2->field_01E8);
-      pHVar2->field_01E8 = (ccFntTy *)0x0;
+      pHVar2->field_01E8 = nullptr;
     }
-    if (pHVar2->field_0218 != (AnonPointee_HelpPanelTy_0218 *)0x0) {
+    if (pHVar2->field_0218 != nullptr) {
       FreeAndNull(&pHVar2->field_0218);
     }
     if (pHVar2->field_01EC != 0) {
       FreeAndNull((void **)&pHVar2->field_01EC);
     }
-    if (pHVar2->field_024C != (ushort *)0x0) {
+    if (pHVar2->field_024C != nullptr) {
       cMf32::RecMemFree(g_cMf32_00806790,(uint *)&pHVar2->field_024C);
     }
-    if (pHVar2->field_01DC != (ushort *)0x0) {
+    if (pHVar2->field_01DC != nullptr) {
       cMf32::RecMemFree(g_cMf32_00806790,(uint *)&pHVar2->field_01DC);
     }
-    if (pHVar2->field_021C != (ushort *)0x0) {
+    if (pHVar2->field_021C != nullptr) {
       cMf32::RecMemFree(g_cMf32_00806790,(uint *)&pHVar2->field_021C);
     }
-    g_helpPanel_00801690 = (HelpPanelTy *)0x0;
+    g_helpPanel_00801690 = nullptr;
     g_currentExceptionFrame = local_50.previous;
     return;
   }

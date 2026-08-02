@@ -245,7 +245,7 @@ LAB_0058fb0d:
                          (g_worldGrid.cells
                           [(int)sVar12 * (int)g_worldGrid.planeStride +
                            (int)sVar11 * (int)g_worldGrid.sizeX + (int)sVar4].objects[0] ==
-                          (STWorldObject *)0x0)))))))) &&
+                          nullptr)))))))) &&
                      (((sVar4 < 0 || (g_worldGrid.sizeX <= sVar4)) ||
                       ((sVar11 < 0 ||
                        (((g_worldGrid.sizeY <= sVar11 || (sVar12 < 0)) ||
@@ -253,7 +253,7 @@ LAB_0058fb0d:
                          (g_worldGrid.cells
                           [(int)sVar12 * (int)g_worldGrid.planeStride +
                            (int)sVar11 * (int)g_worldGrid.sizeX + (int)sVar4].objects[1] ==
-                          (STWorldObject *)0x0)))))))))) goto LAB_0058fd1a;
+                          nullptr)))))))))) goto LAB_0058fd1a;
                   bVar10 = (int)(uVar9 - (int)*(short *)((int)this + 0x47)) < 0;
                   if (uVar9 == (int)*(short *)((int)this + 0x47) || bVar10) break;
                   uVar9 = uVar9 - 1;

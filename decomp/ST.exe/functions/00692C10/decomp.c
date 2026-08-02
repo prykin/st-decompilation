@@ -295,6 +295,6 @@ switchD_00693197_caseD_bc0:
       return (uint *)&DAT_007d5bc8;
     }
   }
-  return (uint *)0x0;
+  return nullptr;
 }
 

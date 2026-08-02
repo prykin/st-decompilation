@@ -49,7 +49,7 @@ STExplosionC::LoadImagSpr(STExplosionC *this,undefined4 param_1,undefined4 param
     }
     STDebugBreak(); /* noreturn in standalone pseudocode */
   }
-  if ((param_3 != '\0') && (local_18->field_02AF != (STT3DSprC *)0x0)) {
+  if ((param_3 != '\0') && (local_18->field_02AF != nullptr)) {
     local_8 = (&PTR_s_expl_bbt0_007cedc0)[local_c];
     iVar5 = STT3DSprC::LoadSequence(local_18->field_02AF,0xf,DAT_00806774,local_8,0x1d);
     if (iVar5 != 0) {
@@ -63,10 +63,10 @@ STExplosionC::LoadImagSpr(STExplosionC *this,undefined4 param_1,undefined4 param
     g_currentExceptionFrame = local_68.previous;
     return local_24;
   }
-  if (local_18->field_02AF == (STT3DSprC *)0x0) {
+  if (local_18->field_02AF == nullptr) {
     pAVar6 = (AnonShape_004AB810_8E5693D5 *)Library::MSVCRT::FUN_0072e530(0x40);
-    if (pAVar6 == (AnonShape_004AB810_8E5693D5 *)0x0) {
-      pSVar7 = (STT3DSprC *)0x0;
+    if (pAVar6 == nullptr) {
+      pSVar7 = nullptr;
     }
     else {
       pSVar7 = (STT3DSprC *)thunk_FUN_004ab810(pAVar6);
@@ -74,7 +74,7 @@ STExplosionC::LoadImagSpr(STExplosionC *this,undefined4 param_1,undefined4 param
     pSVar4->field_02AF = pSVar7;
   }
   if ((&DAT_007cede8)[local_c] == '\0') {
-    iVar5 = STT3DSprC::Init(pSVar4->field_02AF,DAT_008073cc,0x5a,0x45,(STDcResourcC *)0x0,0xb4,0x8c,
+    iVar5 = STT3DSprC::Init(pSVar4->field_02AF,DAT_008073cc,0x5a,0x45,nullptr,0xb4,0x8c,
                             0x11);
     if (iVar5 != 0) {
       RaiseInternalException
@@ -83,7 +83,7 @@ STExplosionC::LoadImagSpr(STExplosionC *this,undefined4 param_1,undefined4 param
     }
   }
   else {
-    iVar5 = STT3DSprC::Init(pSVar4->field_02AF,DAT_008073cc,0x78,0x56,(STDcResourcC *)0x0,0xf0,0xbe,
+    iVar5 = STT3DSprC::Init(pSVar4->field_02AF,DAT_008073cc,0x78,0x56,nullptr,0xf0,0xbe,
                             0x11);
     if (iVar5 != 0) {
       RaiseInternalException
@@ -108,7 +108,7 @@ STExplosionC::LoadImagSpr(STExplosionC *this,undefined4 param_1,undefined4 param
     STT3DSprC::StartShow(pSVar4->field_02AF,0xd,g_playSystem_00802A38->field_00E4);
     pSVar4->field_0286 = 1;
     pVVar3 = g_visibleClass_00802A88;
-    if (g_visibleClass_00802A88 != (VisibleClassTy *)0x0) {
+    if (g_visibleClass_00802A88 != nullptr) {
       iVar5 = pSVar4->field_0292;
       sVar2 = (short)(iVar5 >> 0x1f);
       if (iVar5 < 0) {
@@ -154,7 +154,7 @@ STExplosionC::LoadImagSpr(STExplosionC *this,undefined4 param_1,undefined4 param
         else {
           bVar10 = true;
         }
-        if ((bVar10) && (pVVar3->field_004C != (byte *)0x0)) {
+        if ((bVar10) && (pVVar3->field_004C != nullptr)) {
           bVar10 = pVVar3->field_004C
                    [local_1c + (g_centeredOffsets5[local_14] + local_20) * pVVar3->field_0030] != 0;
         }

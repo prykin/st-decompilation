@@ -58,33 +58,33 @@ float * FUN_0064a970(char *param_1,int param_2,int *param_3)
   char *local_28;
   float local_24;
   float local_20;
-  AnonPointee_TLOBaseTy_0607 *local_1c;
+  undefined4 *local_1c;
   byte *local_18;
   float local_14;
   char *local_10;
   int *local_c;
   float *local_8;
 
-  local_8 = (float *)0x0;
-  local_1c = (AnonPointee_TLOBaseTy_0607 *)0x0;
+  local_8 = nullptr;
+  local_1c = nullptr;
   local_c0.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_c0;
   iVar5 = Library::MSVCRT::__setjmp3(local_c0.jumpBuffer,0);
   if (iVar5 != 0) {
     g_currentExceptionFrame = local_c0.previous;
-    if (local_1c != (AnonPointee_TLOBaseTy_0607 *)0x0) {
+    if (local_1c != nullptr) {
       FreeAndNull(&local_1c);
     }
-    if (local_8 != (float *)0x0) {
+    if (local_8 != nullptr) {
       FreeAndNull(&local_8);
     }
     if (0 < iVar5) {
       iVar5 = -0x6b;
     }
-    if (param_3 != (int *)0x0) {
+    if (param_3 != nullptr) {
       *param_3 = iVar5;
     }
-    return (float *)0x0;
+    return nullptr;
   }
   Library::MSVCRT::_strncpy((char *)(local_38 + 1),&DAT_008016a0,0x7f);
   local_38[0x21] = -1;
@@ -119,7 +119,7 @@ switchD_0064aa67_caseD_1:
           /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
           pbVar7 = (byte *)(**(code **)(*local_38 + 8))(param_1 + 5);
           local_18 = pbVar7;
-          if ((pcVar12 == (char *)0x0) || (pbVar7 == (byte *)0x0)) {
+          if ((pcVar12 == nullptr) || (pbVar7 == nullptr)) {
             RaiseInternalException
                       (-0x6b,g_overwriteContext_007ED77C,"E:\\__titans\\ai\\ai_erc.cpp",0x8e);
           }
@@ -140,7 +140,7 @@ switchD_0064aa67_caseD_1:
             pcVar10 = pcVar10 + 1;
           } while (cVar3 != '\0');
           local_8 = (float *)Library::DKW::LIB::FUN_006aac10(~uVar13 + ~uVar14 + 2);
-          if ((local_8 != (float *)0x0) && (pcVar12 != (char *)0x0)) {
+          if ((local_8 != nullptr) && (pcVar12 != nullptr)) {
             uVar13 = 0xffffffff;
             do {
               pcVar10 = pcVar12;
@@ -188,7 +188,7 @@ switchD_0064aa67_caseD_1:
           pbVar6 = (byte *)((int)pfVar16 + -1);
           memmove(pbVar6, pbVar7, uVar13); /* compiler REP MOVS byte copy */
 cf_common_exit_0064BBB1:
-          if (param_3 == (int *)0x0) {
+          if (param_3 == nullptr) {
             g_currentExceptionFrame = local_c0.previous;
             return local_8;
           }
@@ -240,7 +240,7 @@ cf_common_exit_0064BBB1:
         }
         if ((cVar3 != '\x05') && (cVar3 != '\x02')) {
           pcVar12 = thunk_FUN_00674af0((int)sVar4);
-          if (pcVar12 != (char *)0x0) {
+          if (pcVar12 != nullptr) {
             Library::MSVCRT::_strncpy((char *)(local_38 + 1),pcVar12,0x7f);
             local_38[0x21] = -1;
             iVar5 = -0x76;
@@ -282,7 +282,7 @@ cf_common_exit_0064BBB1:
         if ((cVar3 != '\x04') && (cVar3 != '\x01')) {
           if ((cVar3 != '\x05') && (cVar3 != '\x02')) {
             pcVar12 = thunk_FUN_00674af0((int)sVar4);
-            if (pcVar12 != (char *)0x0) {
+            if (pcVar12 != nullptr) {
               Library::MSVCRT::_strncpy((char *)(local_38 + 1),pcVar12,0x7f);
               local_38[0x21] = -1;
               iVar5 = -0x76;
@@ -336,7 +336,7 @@ cf_common_exit_0064BBB1:
 switchD_0064b42d_caseD_2:
           pcVar12 = thunk_FUN_00674af0(iVar5);
 joined_r0x0064b49a:
-          if (pcVar12 != (char *)0x0) {
+          if (pcVar12 != nullptr) {
             Library::MSVCRT::_strncpy((char *)(local_38 + 1),pcVar12,0x7f);
           }
           local_38[0x21] = -1;
@@ -358,7 +358,7 @@ joined_r0x0064b49a:
         break;
       default:
         pcVar12 = thunk_FUN_00674af0((int)sVar4);
-        if (pcVar12 != (char *)0x0) {
+        if (pcVar12 != nullptr) {
           Library::MSVCRT::_strncpy((char *)(local_38 + 1),pcVar12,0x7f);
           local_38[0x21] = -1;
           iVar5 = -0x76;
@@ -367,7 +367,7 @@ joined_r0x0064b49a:
         goto LAB_0064b80a;
       }
 cf_common_exit_0064B291:
-      if (param_3 == (int *)0x0) {
+      if (param_3 == nullptr) {
         g_currentExceptionFrame = local_c0.previous;
         return local_8;
       }
@@ -425,7 +425,7 @@ LAB_0064b78b:
         }
       }
       pcVar12 = thunk_FUN_00674af0((int)*(short *)(local_10 + 1));
-      if (pcVar12 != (char *)0x0) {
+      if (pcVar12 != nullptr) {
         Library::MSVCRT::_strncpy((char *)(local_38 + 1),pcVar12,0x7f);
       }
 cf_error_exit_0064B714:
@@ -442,7 +442,7 @@ cf_error_exit_0064B714:
       if ((*param_1 != '\x04') && (*param_1 != '\x01')) {
 LAB_0064ae25:
         pcVar12 = thunk_FUN_00674af0((int)*(short *)(local_10 + 1));
-        if (pcVar12 != (char *)0x0) {
+        if (pcVar12 != nullptr) {
           Library::MSVCRT::_strncpy((char *)(local_38 + 1),pcVar12,0x7f);
         }
         local_38[0x21] = -1;
@@ -514,7 +514,7 @@ cf_error_exit_0064B368:
         if ((cVar3 == '\x06') || (cVar3 == '\x03')) {
           /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
           pcVar12 = (char *)(**(code **)(*local_38 + 8))(pcVar12);
-          if (pcVar12 == (char *)0x0) {
+          if (pcVar12 == nullptr) {
             RaiseInternalException
                       (-0x6b,g_overwriteContext_007ED77C,"E:\\__titans\\ai\\ai_erc.cpp",0x182);
           }
@@ -544,7 +544,7 @@ cf_error_exit_0064B368:
         }
       }
       pcVar12 = thunk_FUN_00674af0((int)*(short *)(local_10 + 1));
-      if (pcVar12 != (char *)0x0) {
+      if (pcVar12 != nullptr) {
         Library::MSVCRT::_strncpy((char *)(local_38 + 1),pcVar12,0x7f);
       }
       local_38[0x21] = -1;
@@ -652,7 +652,7 @@ cf_error_exit_0064B368:
           pbVar7 = (byte *)(**(code **)(*local_38 + 8))(param_1);
           /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
           pbVar6 = (byte *)(**(code **)(*local_38 + 8))(param_1 + 5);
-          if ((pbVar7 == (byte *)0x0) || (pbVar6 == (byte *)0x0)) {
+          if ((pbVar7 == nullptr) || (pbVar6 == nullptr)) {
             RaiseInternalException
                       (-0x6b,g_overwriteContext_007ED77C,"E:\\__titans\\ai\\ai_erc.cpp",0x11c);
           }
@@ -707,7 +707,7 @@ LAB_0064ab59:
       }
       if ((*param_1 != '\x04') && (*param_1 != '\x01')) {
         pcVar12 = thunk_FUN_00674af0((int)*(short *)(local_10 + 1));
-        if (pcVar12 != (char *)0x0) {
+        if (pcVar12 != nullptr) {
           Library::MSVCRT::_strncpy((char *)(local_38 + 1),pcVar12,0x7f);
         }
         local_38[0x21] = -1;
@@ -722,7 +722,7 @@ LAB_0064ab59:
     }
 LAB_0064b7ea:
     pcVar12 = thunk_FUN_00674af0((int)*(short *)(local_10 + 1));
-    if (pcVar12 != (char *)0x0) {
+    if (pcVar12 != nullptr) {
       Library::MSVCRT::_strncpy((char *)(local_38 + 1),pcVar12,0x7f);
     }
 LAB_0064b80a:
@@ -741,7 +741,7 @@ LAB_0064b80a:
           if ((*param_1 == '\x06') || (*param_1 == '\x03')) {
             /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
             pbVar7 = (byte *)(**(code **)(*local_38 + 8))(param_1);
-            if (pbVar7 == (byte *)0x0) {
+            if (pbVar7 == nullptr) {
               RaiseInternalException
                         (-0x6b,g_overwriteContext_007ED77C,"E:\\__titans\\ai\\ai_erc.cpp",
                          0x192);
@@ -761,7 +761,7 @@ LAB_0064b80a:
             }
             if ((*param_1 != '\x06') && (*param_1 != '\x03')) {
               pcVar12 = thunk_FUN_00674af0((int)*(short *)(local_10 + 1));
-              if (pcVar12 != (char *)0x0) {
+              if (pcVar12 != nullptr) {
                 Library::MSVCRT::_strncpy((char *)(local_38 + 1),pcVar12,0x7f);
               }
               local_38[0x21] = -1;
@@ -770,12 +770,12 @@ LAB_0064b80a:
             }
             /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
             pbVar7 = (byte *)(**(code **)(*local_38 + 8))(param_1);
-            if (pbVar7 == (byte *)0x0) {
+            if (pbVar7 == nullptr) {
               RaiseInternalException
                         (-0x6b,g_overwriteContext_007ED77C,"E:\\__titans\\ai\\ai_erc.cpp",
                          0x1a0);
             }
-            local_18 = (byte *)0x0;
+            local_18 = nullptr;
             local_8 = (float *)Library::DKW::LIB::FUN_006aac10(4);
             fVar18 = Library::MSVCRT::FUN_00730310(pbVar7,(int *)&local_18);
             *local_8 = (float)fVar18;
@@ -805,7 +805,7 @@ LAB_0064b80a:
           }
         }
         pcVar12 = thunk_FUN_00674af0((int)*(short *)(local_10 + 1));
-        if (pcVar12 != (char *)0x0) {
+        if (pcVar12 != nullptr) {
           Library::MSVCRT::_strncpy((char *)(local_38 + 1),pcVar12,0x7f);
         }
         local_38[0x21] = -1;
@@ -817,12 +817,12 @@ LAB_0064b80a:
           RaiseInternalException
                     (-0x6b,g_overwriteContext_007ED77C,"E:\\__titans\\ai\\ai_erc.cpp",0x206);
         }
-        local_28 = (char *)0x0;
+        local_28 = nullptr;
         iVar5 = param_2;
         if (0 < param_2) {
           do {
             cVar3 = *param_1;
-            local_c = (int *)0x0;
+            local_c = nullptr;
             if (cVar3 == '\x04') {
 /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
 LAB_0064b8f1:
@@ -841,7 +841,7 @@ LAB_0064b901:
                 goto LAB_0064b901;
               }
               pcVar12 = thunk_FUN_00674af0((int)*(short *)(local_10 + 1));
-              if (pcVar12 != (char *)0x0) {
+              if (pcVar12 != nullptr) {
                 Library::MSVCRT::_strncpy((char *)(local_38 + 1),pcVar12,0x7f);
               }
               local_38[0x21] = -1;
@@ -885,12 +885,12 @@ LAB_0064b901:
           RaiseInternalException
                     (-0x6b,g_overwriteContext_007ED77C,"E:\\__titans\\ai\\ai_erc.cpp",500);
         }
-        local_28 = (char *)0x0;
+        local_28 = nullptr;
         if (0 < param_2) {
           local_14 = (float)param_2;
           do {
             cVar3 = *param_1;
-            local_c = (int *)0x0;
+            local_c = nullptr;
             if (cVar3 == '\x04') {
 /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
 LAB_0064b659:
@@ -911,7 +911,7 @@ LAB_0064b663:
                 goto LAB_0064b663;
               }
               pcVar12 = thunk_FUN_00674af0((int)*(short *)(local_10 + 1));
-              if (pcVar12 != (char *)0x0) {
+              if (pcVar12 != nullptr) {
                 Library::MSVCRT::_strncpy((char *)(local_38 + 1),pcVar12,0x7f);
               }
               local_38[0x21] = -1;
@@ -955,7 +955,7 @@ LAB_0064b663:
     }
 LAB_0064bd33:
     pcVar12 = thunk_FUN_00674af0((int)*(short *)(local_10 + 1));
-    if (pcVar12 != (char *)0x0) {
+    if (pcVar12 != nullptr) {
       Library::MSVCRT::_strncpy((char *)(local_38 + 1),pcVar12,0x7f);
     }
     local_38[0x21] = -1;
@@ -976,7 +976,7 @@ LAB_0064bd33:
       goto cf_common_exit_0064B291;
     }
     pcVar12 = thunk_FUN_00674af0((int)*(short *)(local_10 + 1));
-    if (pcVar12 != (char *)0x0) {
+    if (pcVar12 != nullptr) {
       Library::MSVCRT::_strncpy((char *)(local_38 + 1),pcVar12,0x7f);
     }
     local_38[0x21] = -1;
@@ -1000,7 +1000,7 @@ LAB_0064bd33:
       goto cf_common_exit_0064B36F;
     }
     pcVar12 = thunk_FUN_00674af0((int)*(short *)(local_10 + 1));
-    if (pcVar12 != (char *)0x0) {
+    if (pcVar12 != nullptr) {
       Library::MSVCRT::_strncpy((char *)(local_38 + 1),pcVar12,0x7f);
     }
     local_38[0x21] = -1;
@@ -1031,7 +1031,7 @@ LAB_0064bd33:
     }
     if ((*param_1 != '\x06') && (*param_1 != '\x03')) {
       pcVar12 = thunk_FUN_00674af0((int)*(short *)(local_10 + 1));
-      if (pcVar12 != (char *)0x0) {
+      if (pcVar12 != nullptr) {
         Library::MSVCRT::_strncpy((char *)(local_38 + 1),pcVar12,0x7f);
       }
       local_38[0x21] = -1;
@@ -1039,7 +1039,7 @@ LAB_0064bd33:
     }
     /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
     local_18 = (byte *)(**(code **)(*local_38 + 8))(param_1);
-    if (local_18 == (byte *)0x0) {
+    if (local_18 == nullptr) {
       RaiseInternalException
                 (-0x6b,g_overwriteContext_007ED77C,"E:\\__titans\\ai\\ai_erc.cpp",0x21a);
     }
@@ -1067,7 +1067,7 @@ LAB_0064bd33:
           /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
           pcVar10 = (char *)(**(code **)(*local_38 + 8))(local_c);
           local_78 = pcVar10;
-          if (pcVar10 == (char *)0x0) {
+          if (pcVar10 == nullptr) {
             RaiseInternalException
                       (-0x6b,g_overwriteContext_007ED77C,"E:\\__titans\\ai\\ai_erc.cpp",0x220);
           }
@@ -1075,7 +1075,7 @@ LAB_0064bd33:
             local_28 = (char *)((int)pcVar12 + 0x200);
             local_1c = Library::DKW::LIB::MemRealloc(local_1c,(uint)local_28);
           }
-          puVar1 = (undefined4 *)((int)&local_1c->field_0000 + (int)local_14);
+          puVar1 = (undefined4 *)((int)local_14 + (int)local_1c);
           local_14 = (float)((int)local_14 + 4);
           local_2c = local_2c + 4;
           local_24 = (float)((int)local_24 + 4);
@@ -1099,7 +1099,7 @@ LAB_0064bd33:
             local_28 = pcVar12;
             local_1c = Library::DKW::LIB::MemRealloc(local_1c,(uint)pcVar12);
           }
-          puVar1 = (undefined4 *)((int)&local_1c->field_0000 + (int)local_14);
+          puVar1 = (undefined4 *)((int)local_14 + (int)local_1c);
           local_14 = (float)((int)local_14 + 4);
           *puVar1 = uVar11;
           local_24 = (float)((int)local_24 + 4);
@@ -1115,7 +1115,7 @@ LAB_0064bd33:
             local_28 = pcVar12;
             local_1c = Library::DKW::LIB::MemRealloc(local_1c,(uint)pcVar12);
           }
-          *(double *)((int)&local_1c->field_0000 + (int)local_14) = (double)local_34;
+          *(double *)((int)local_14 + (int)local_1c) = (double)local_34;
           local_14 = (float)((int)local_14 + 8);
           local_24 = (float)((int)local_24 + 8);
           local_2c = local_2c + 8;
@@ -1123,7 +1123,7 @@ LAB_0064bd33:
         }
         else {
           pcVar10 = thunk_FUN_00674af0((int)*(short *)(local_10 + 1));
-          if (pcVar10 != (char *)0x0) {
+          if (pcVar10 != nullptr) {
             Library::MSVCRT::_strncpy((char *)(local_38 + 1),pcVar10,0x7f);
           }
           local_38[0x21] = -1;
@@ -1135,11 +1135,11 @@ LAB_0064bd33:
     }
     fVar9 = local_20;
     local_8 = (float *)Library::DKW::LIB::FUN_006aac10((uint)local_20);
-    Library::MSVCRT::FUN_007300e0((undefined1 *)local_8,(int)fVar9,local_18,&local_1c->field_0000);
-    if (param_3 != (int *)0x0) {
+    Library::MSVCRT::FUN_007300e0((undefined1 *)local_8,(int)fVar9,local_18,local_1c);
+    if (param_3 != nullptr) {
       *param_3 = 3;
     }
-    if (local_1c == (AnonPointee_TLOBaseTy_0607 *)0x0) {
+    if (local_1c == nullptr) {
       g_currentExceptionFrame = local_c0.previous;
       return local_8;
     }
@@ -1161,7 +1161,7 @@ LAB_0064bd33:
         }
         else {
           pcVar12 = thunk_FUN_00674af0((int)*(short *)(local_10 + 1));
-          if (pcVar12 != (char *)0x0) {
+          if (pcVar12 != nullptr) {
             Library::MSVCRT::_strncpy((char *)(local_38 + 1),pcVar12,0x7f);
           }
           local_38[0x21] = -1;
@@ -1196,7 +1196,7 @@ LAB_0064bd33:
         }
         else {
           pcVar12 = thunk_FUN_00674af0((int)*(short *)(local_10 + 1));
-          if (pcVar12 != (char *)0x0) {
+          if (pcVar12 != nullptr) {
             Library::MSVCRT::_strncpy((char *)(local_38 + 1),pcVar12,0x7f);
           }
           local_38[0x21] = -1;
@@ -1216,7 +1216,7 @@ LAB_0064bd33:
 cf_common_exit_0064B79F:
     *local_8 = 0.0;
 cf_common_exit_0064B36F:
-    if (param_3 == (int *)0x0) {
+    if (param_3 == nullptr) {
       g_currentExceptionFrame = local_c0.previous;
       return local_8;
     }
@@ -1226,7 +1226,7 @@ cf_common_exit_0064B36F:
   default:
 cf_common_exit_0064C271:
     pcVar12 = thunk_FUN_00674af0(iVar5);
-    if (pcVar12 != (char *)0x0) {
+    if (pcVar12 != nullptr) {
       Library::MSVCRT::_strncpy((char *)(local_38 + 1),pcVar12,0x7f);
     }
     local_38[0x21] = -1;

@@ -9,7 +9,7 @@ undefined4 FUN_006b9aa0(AnonShape_006B9AA0_FC1882B5 *param_1,undefined4 *param_2
   if (*piVar2 <= piVar2[1]) {
     iVar1 = *piVar2 + 10;
     piVar2 = (int *)FUN_006bfb50(piVar2,iVar1 * 0xc + 8);
-    if (piVar2 == (int *)0x0) {
+    if (piVar2 == nullptr) {
       return 0;
     }
     *piVar2 = iVar1;

@@ -1,6 +1,7 @@
 #include "../../pseudocode_runtime.h"
 
 
+/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 /* Recovered from embedded debug metadata:
    E:\__titans\Start\sett_obj.cpp
    SettMapTy::PaintSC
@@ -29,14 +30,14 @@ void __thiscall SettMapTy::PaintSC(SettMapTy *this)
   local_8 = this;
   errorCode = Library::MSVCRT::__setjmp3(local_4c.jumpBuffer,0);
   if (errorCode == 0) {
-    if ((DAT_008087b6 != 0) && (g_startSystem_0081176C->field_02F4 != (ushort *)0x0)) {
+    if ((DAT_008087b6 != 0) && (g_startSystem_0081176C->field_02F4 != nullptr)) {
       FUN_006e83f0((AnonShape_006B5B10_E0D06CF1 *)g_startSystem_0081176C->field_02F0,0x14,0x14,0x8b,
                    (uint)DAT_008087c2);
       FUN_006b5440(g_startSystem_0081176C->field_02F0,0,0x14,0x14,
                    (uint)g_startSystem_0081176C->field_02F4,0,0);
       pSVar2 = local_8;
       if ((DAT_0080734b != '\0') &&
-         ((pDVar4 = local_8->field_1F84, pDVar4 != (DArrayTy *)0x0 && (0 < (int)pDVar4->count)))) {
+         ((pDVar4 = local_8->field_1F84, pDVar4 != nullptr && (0 < (int)pDVar4->count)))) {
         bVar8 = pDVar4->count != 0;
         uVar7 = 0;
         do {
@@ -45,9 +46,9 @@ void __thiscall SettMapTy::PaintSC(SettMapTy *this)
             pcVar6 = (char *)(pDVar4->elementSize * uVar7 + (int)pDVar4->data);
           }
           else {
-            pcVar6 = (char *)0x0;
+            pcVar6 = nullptr;
           }
-          if ((((pcVar6 != (char *)0x0) && (*pcVar6 != '\0')) && (pcVar6[4] != '\0')) &&
+          if ((((pcVar6 != nullptr) && (*pcVar6 != '\0')) && (pcVar6[4] != '\0')) &&
              (pcVar6[2] != -1)) {
             switch(pcVar6[2]) {
             case '\0':

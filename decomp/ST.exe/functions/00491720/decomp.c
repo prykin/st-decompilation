@@ -25,12 +25,12 @@ void __fastcall FUN_00491720(STBoatC *param_1,undefined4 param_2)
 
   arg_1 = 0;
   local_8 = 0;
-  if (DAT_008117bc != (undefined4 *)0x0) {
+  if (DAT_008117bc != nullptr) {
     local_18 = *(undefined2 *)&param_1->field_0024;
     local_16 = param_1->field_0032;
     ppuVar1 = &param_1->field_05A6;
     local_1c = 0x5dd3;
-    if ((*ppuVar1 == (ushort *)0x0) &&
+    if ((*ppuVar1 == nullptr) &&
        (iVar3 = STPlaySystemC::sub_006E62D0
                           (g_playSystem_00802A38,(AnonShape_005EFAE0_B406B78B *)param_1->field_05A2,
                            (int *)ppuVar1), iVar3 == -4)) {
@@ -44,7 +44,7 @@ void __fastcall FUN_00491720(STBoatC *param_1,undefined4 param_2)
   }
   param_1->field_05C0 = 0;
   param_1->field_07C2 = 0;
-  param_1->field_05A6 = (ushort *)0x0;
+  param_1->field_05A6 = nullptr;
   DumpClassC::WritePtr
             (param_1->field_005B,param_1->field_005D,param_1->field_005F,param_1->field_008E,
              (RecoveredRecord_DumpClassC_00495EC0 *)param_1);

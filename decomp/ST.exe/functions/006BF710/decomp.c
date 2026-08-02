@@ -44,7 +44,7 @@ FUN_006bf710(AnonShape_006BF710_259ECA93 *param_1,int param_2,int param_3,int pa
       local_24 = local_24 + iVar2;
     }
     pbVar4 = param_1->field_021C;
-    if (pbVar4 != (byte *)0x0) {
+    if (pbVar4 != nullptr) {
       pbVar4 = pbVar4 + iVar2;
     }
     local_8 = 0;
@@ -85,8 +85,8 @@ FUN_006bf710(AnonShape_006BF710_259ECA93 *param_1,int param_2,int param_3,int pa
     if (*param_8 == 0) {
       iVar3 = param_1->field_01F4 + 7;
       iVar3 = (int)(iVar3 + (iVar3 >> 0x1f & 7U)) >> 3;
-      local_30 = (byte *)0x0;
-      if (pbVar1 != (byte *)0x0) {
+      local_30 = nullptr;
+      if (pbVar1 != nullptr) {
         local_30 = pbVar1 + iVar3 * param_5 + (param_4 >> 3);
       }
       local_4c = *(int *)(&param_1->field_0x120 + param_1->field_01E4 * 8) +
@@ -116,7 +116,7 @@ FUN_006bf710(AnonShape_006BF710_259ECA93 *param_1,int param_2,int param_3,int pa
           ExceptionList = local_14;
           return 0;
         }
-        if (local_30 != (byte *)0x0) {
+        if (local_30 != nullptr) {
           local_30 = local_30 + iVar3;
         }
         local_4c = local_4c + param_1->field_01F0;

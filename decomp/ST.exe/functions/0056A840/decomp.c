@@ -7,14 +7,14 @@ void __thiscall FUN_0056a840(void *this,byte param_1)
   undefined1 *puVar3;
   int local_8;
 
-  puVar1 = (undefined *)0x0;
+  puVar1 = nullptr;
   puVar2 = (undefined1 *)((int)this + (uint)param_1 * 8 + 0x142f);
   puVar3 = (undefined1 *)(param_1 + 0x142f + (int)this);
   local_8 = 8;
   do {
     *puVar2 = 0;
     *puVar3 = 0;
-    if ((g_visibleClass_00802A88 != (VisibleClassTy *)0x0) &&
+    if ((g_visibleClass_00802A88 != nullptr) &&
        (param_1 == *(byte *)((int)this + 0x112d))) {
       VisibleClassTy::sub_0055B7F0(g_visibleClass_00802A88,0,puVar1);
     }

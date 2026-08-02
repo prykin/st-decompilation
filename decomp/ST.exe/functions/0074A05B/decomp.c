@@ -11,12 +11,12 @@ undefined4 __thiscall FUN_0074a05b(void *this,int param_1)
   lpCriticalSection = (LPCRITICAL_SECTION)((int)this + 0x7c);
   local_8 = this;
   EnterCriticalSection(lpCriticalSection);
-  local_8 = (void *)0x0;
+  local_8 = nullptr;
   if (param_1 == 0) {
     if (*(int *)((int)this + 0x78) == 0) {
       this_00 = (void *)Library::MSVCRT::FUN_0072e530(0xe0);
-      if (this_00 == (void *)0x0) {
-        puVar2 = (undefined4 *)0x0;
+      if (this_00 == nullptr) {
+        puVar2 = nullptr;
       }
       else {
         puVar2 = FUN_0074a95f(this_00,(int)this,&local_8,(short *)&DAT_007ee298);

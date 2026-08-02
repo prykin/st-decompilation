@@ -181,7 +181,7 @@ int __thiscall WaitTy::GetMessage(WaitTy *this,STMessage *message)
     /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
     (*(code *)this_02->field_0000->field_0008)();
     this_00 = this_02->field_1A5B->field_02E6;
-    if (this_00 != (MMsgTy *)0x0) {
+    if (this_00 != nullptr) {
       MMsgTy::HidePanel(this_00,1,0,1);
     }
     goto cf_common_exit_005EAB6A;
@@ -192,7 +192,7 @@ int __thiscall WaitTy::GetMessage(WaitTy *this,STMessage *message)
     if (DAT_008067a0 != '\0') {
       pDVar3 = this_02->field_1A5B->field_0686;
       if ((int)pDVar3->elementSize < 1) {
-        pcVar11 = (char *)0x0;
+        pcVar11 = nullptr;
       }
       else {
         pcVar11 = *(char **)pDVar3->growCapacity;
@@ -202,7 +202,7 @@ int __thiscall WaitTy::GetMessage(WaitTy *this,STMessage *message)
       if (CONCAT31(extraout_var,bVar5) != 0) {
         pDVar3 = this_02->field_1A5B->field_0686;
         if ((int)pDVar3->elementSize < 1) {
-          CFsgsConnection::SendChatMessage((CFsgsConnection *)&DAT_00802a90,(char *)0x0);
+          CFsgsConnection::SendChatMessage((CFsgsConnection *)&DAT_00802a90,nullptr);
         }
         else {
           CFsgsConnection::SendChatMessage
@@ -240,7 +240,7 @@ int __thiscall WaitTy::GetMessage(WaitTy *this,STMessage *message)
     memmove(pcVar12, pcVar11, uVar9); /* compiler REP MOVS byte copy */
     pDVar3 = this_01->field_0686;
     if ((int)pDVar3->elementSize < 1) {
-      pcVar11 = (char *)0x0;
+      pcVar11 = nullptr;
     }
     else {
       pcVar11 = *(char **)pDVar3->growCapacity;

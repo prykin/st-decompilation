@@ -28,10 +28,10 @@ void __thiscall PopUpTy::AddStr(PopUpTy *this,char *param_1,byte param_2)
   DArrayTy *local_c;
   uint *local_8;
 
-  local_c = (DArrayTy *)0x0;
-  local_10 = (DArrayTy *)0x0;
-  local_8 = (uint *)0x0;
-  if (param_1 != (char *)0x0) {
+  local_c = nullptr;
+  local_10 = nullptr;
+  local_8 = nullptr;
+  if (param_1 != nullptr) {
     local_58.previous = g_currentExceptionFrame;
     g_currentExceptionFrame = &local_58;
     local_14 = this;
@@ -48,14 +48,14 @@ void __thiscall PopUpTy::AddStr(PopUpTy *this,char *param_1,byte param_2)
       local_8 = Library::DKW::LIB::FUN_006aac10(~uVar9 + 4);
       this_00 = local_14;
       pDVar4 = local_c;
-      if (local_8 != (uint *)0x0) {
+      if (local_8 != nullptr) {
         wsprintfA((LPSTR)local_8,"%s%1d%s",&DAT_007c6ff0,param_2,param_1);
         pDVar4 = (DArrayTy *)ccFntTy::_TxtToSarr(this_00->field_0094,local_8);
         local_c = pDVar4;
         FreeAndNull(&local_8);
       }
       pDVar5 = local_10;
-      if (pDVar4 != (DArrayTy *)0x0) {
+      if (pDVar4 != nullptr) {
         pDVar5 = (DArrayTy *)
                  ccFntTy::FormSarr(this_00->field_0094,&pDVar4->flags," ,.;:!?/\\()[]{}",
                                    (&DAT_00807570)[(_DAT_00807348 & 0xff) * 4],0,0xffffffff,1);
@@ -63,11 +63,11 @@ void __thiscall PopUpTy::AddStr(PopUpTy *this,char *param_1,byte param_2)
         ccFntTy::SepColorStrInSarr(this_00->field_0094,(uint *)pDVar5,(uint *)pDVar5);
         FUN_006b5570(pDVar4);
       }
-      if (pDVar5 != (DArrayTy *)0x0) {
+      if (pDVar5 != nullptr) {
         iVar3 = 0;
         if (0 < (int)pDVar5->elementSize) {
           if ((int)pDVar5->elementSize < 1) {
-            pcVar6 = (char *)0x0;
+            pcVar6 = nullptr;
             goto LAB_0052d48d;
           }
           do {
@@ -84,7 +84,7 @@ LAB_0052d48d:
                                    (uint)(byte)this_00->field_009C * 4);
               }
               else {
-                pcVar6 = (char *)0x0;
+                pcVar6 = nullptr;
               }
               uVar8 = FUN_00711110(this_00->field_0094,pcVar6);
               if ((int)*(uint *)(this_00->field_0090 + 2) <= uVar8) {

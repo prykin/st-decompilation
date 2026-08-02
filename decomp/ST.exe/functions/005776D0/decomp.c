@@ -90,8 +90,8 @@ int __thiscall GameSystemC::GetMessage(GameSystemC *this,STMessage *message)
           this_01[0x21].objectLock = DAT_00808784;
           Library::Ourlib::ST3DPAUS::FUN_00725760
                     (g_sT3DSMAPContext_00807598,(int)DAT_00808784,
-                     -(uint)(DAT_00808784 != (void *)0x0) & DAT_008032b4);
-          if (g_pausePanel_008016E0 != (PausePanelTy *)0x0) {
+                     -(uint)(DAT_00808784 != nullptr) & DAT_008032b4);
+          if (g_pausePanel_008016E0 != nullptr) {
             PausePanelTy::SwitchPausePanel(g_pausePanel_008016E0,(int)DAT_00808784);
             g_currentExceptionFrame = local_8c.previous;
             return 0;
@@ -99,11 +99,11 @@ int __thiscall GameSystemC::GetMessage(GameSystemC *this,STMessage *message)
         }
       }
       else if (piVar18[2] == 0) {
-        if (this_01[0x21].objectLock == (void *)0x0) {
+        if (this_01[0x21].objectLock == nullptr) {
           DAT_00808784 = (void *)piVar18[1];
           Library::Ourlib::ST3DPAUS::FUN_00725760
                     (g_sT3DSMAPContext_00807598,(int)DAT_00808784,
-                     -(uint)(DAT_00808784 != (void *)0x0) & DAT_008032b4);
+                     -(uint)(DAT_00808784 != nullptr) & DAT_008032b4);
           g_currentExceptionFrame = local_8c.previous;
           return 0;
         }
@@ -113,11 +113,11 @@ int __thiscall GameSystemC::GetMessage(GameSystemC *this,STMessage *message)
           DAT_00808784 = (void *)piVar18[1];
           Library::Ourlib::ST3DPAUS::FUN_00725760
                     (g_sT3DSMAPContext_00807598,(int)DAT_00808784,
-                     -(uint)(DAT_00808784 != (void *)0x0) & DAT_008032b4);
+                     -(uint)(DAT_00808784 != nullptr) & DAT_008032b4);
         }
         pvVar3 = (void *)piVar18[1];
         this_01[0x21].objectLock = pvVar3;
-        if (g_pausePanel_008016E0 != (PausePanelTy *)0x0) {
+        if (g_pausePanel_008016E0 != nullptr) {
           PausePanelTy::SwitchPausePanel(g_pausePanel_008016E0,(int)pvVar3);
           g_currentExceptionFrame = local_8c.previous;
           return 0;
@@ -136,7 +136,7 @@ int __thiscall GameSystemC::GetMessage(GameSystemC *this,STMessage *message)
           iVar5 = (uVar10 & 0xff) * 0x18;
           DAT_00807654 = *(undefined4 *)(s_FrmPanelTy__GetMessage_007c2ae0 + iVar5 + 8);
         }
-        if (g_sT3DSMAPContext_00807598 != (ST3DSMAPContext *)0x0) {
+        if (g_sT3DSMAPContext_00807598 != nullptr) {
           ST3DSMAPContext::sub_006E8640
                     (g_sT3DSMAPContext_00807598,
                      *(char **)(s_FrmPanelTy__GetMessage_007c2ae0 + iVar5 + 0x10),
@@ -156,7 +156,7 @@ int __thiscall GameSystemC::GetMessage(GameSystemC *this,STMessage *message)
         thunk_FUN_0056a960(&DAT_00807620,(byte)((uint)piVar18[1] >> 0x10),*(byte *)(piVar18 + 1));
       }
       this_00 = g_playPanel_008016E4;
-      if (g_playPanel_008016E4 != (PlayPanelTy *)0x0) {
+      if (g_playPanel_008016E4 != nullptr) {
         g_playPanel_008016E4->field_0028 = 5;
         piVar12 = &this_00->field_0181;
         puVar19 = (undefined1 *)0x8;
@@ -167,7 +167,7 @@ int __thiscall GameSystemC::GetMessage(GameSystemC *this,STMessage *message)
           }
           piVar12 = piVar12 + 1;
           puVar19 = puVar19 + -1;
-        } while (puVar19 != (undefined1 *)0x0);
+        } while (puVar19 != nullptr);
       }
       if ((ushort)((uint)piVar18[1] >> 0x10) != (ushort)DAT_0080874d) {
         if (DAT_00808aaf != 0) {
@@ -184,7 +184,7 @@ int __thiscall GameSystemC::GetMessage(GameSystemC *this,STMessage *message)
         }
         pcVar13 = LoadResourceString(0x42c2,g_module_00807618);
         wsprintfA((LPSTR)&DAT_0080f33a,pcVar13);
-        if (g_popUp_008016D8 != (PopUpTy *)0x0) {
+        if (g_popUp_008016D8 != nullptr) {
           thunk_FUN_0052d320(g_popUp_008016D8,(char *)&DAT_0080f33a,8);
           g_currentExceptionFrame = local_8c.previous;
           return 0;
@@ -207,12 +207,12 @@ int __thiscall GameSystemC::GetMessage(GameSystemC *this,STMessage *message)
             pcVar13 = (char *)((uVar10 - 1) * array->elementSize + (int)array->data);
           }
           else {
-            pcVar13 = (char *)0x0;
+            pcVar13 = nullptr;
           }
-          if ((pcVar13 + 0x4c != (char *)0x0) &&
+          if ((pcVar13 + 0x4c != nullptr) &&
              (strategData = (AnonShape_00648C10_30A1BBFD *)
-                            LoadStrategData((int)pcVar8,pcVar13 + 0x4c,(int *)0x0),
-             strategData != (AnonShape_00648C10_30A1BBFD *)0x0)) {
+                            LoadStrategData((int)pcVar8,pcVar13 + 0x4c,nullptr),
+             strategData != nullptr)) {
             uVar10 = 0xffffffff;
             do {
               pcVar14 = pcVar13;
@@ -247,18 +247,18 @@ int __thiscall GameSystemC::GetMessage(GameSystemC *this,STMessage *message)
               puVar15 = (byte *)(&DAT_00808ab0 + (uint)DAT_00808aaf * 0x27);
               memmove(puVar15, pcVar13, 0x9c); /* compiler REP MOVS byte copy */
               DAT_00808aaf = DAT_00808aaf + 1;
-              if (g_playPanel_008016E4 != (PlayPanelTy *)0x0) {
+              if (g_playPanel_008016E4 != nullptr) {
                 PlayPanelTy::sub_0053A540(g_playPanel_008016E4);
               }
             }
             pcVar8 = (cMf32 *)0x577e83;
             StartStrateg(strategData,piVar18[2]);
-            *(undefined1 *)((int)&DAT_008087c4 + piVar18[2] * 0x51 + 3) = 1;
+            *(undefined1 *)(g_bulkInitializedRecords_008087C7 + piVar18[2]) = 1;
             array = (DArrayTy *)0x577e9d;
             FreeAndNull((void **)&stack0xffffffdc);
           }
         }
-        if (array != (DArrayTy *)0x0) {
+        if (array != nullptr) {
           DArrayDestroy(array);
         }
         cMf32::delete(pcVar8);
@@ -267,7 +267,7 @@ int __thiscall GameSystemC::GetMessage(GameSystemC *this,STMessage *message)
       }
       break;
     case 9:
-      if (DAT_008117bc != (undefined4 *)0x0) {
+      if (DAT_008117bc != nullptr) {
         memset(&local_48, 0, 0x20); /* compiler bulk-zero initialization */
         /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
         (**(code **)*DAT_008117bc)();
@@ -319,19 +319,19 @@ int __thiscall GameSystemC::GetMessage(GameSystemC *this,STMessage *message)
           if (iVar7 == 0) {
             pcVar8 = (cMf32 *)Library::Ourlib::MF32INT::FUN_006f0ec0
                                         (0x345,(byte *)&DAT_0080f022,0,0,0);
-            if (pcVar8 == (cMf32 *)0x0) {
+            if (pcVar8 == nullptr) {
               bVar16 = false;
             }
             else {
               puVar9 = cMf32::RecGet(pcVar8,(byte)local_1d90,PTR_s_DESCRIPTOR_0079b1a4,
                                      (int *)&stack0xffffffe0,0);
-              if (puVar9 != (ushort *)0x0) {
+              if (puVar9 != nullptr) {
                 piVar18 = (int *)&stack0xffffffe0;
                 puVar17 = PTR_s_SAVE_DESC_0079b1a0;
                 puVar9 = cMf32::RecGet(pcVar8,(byte)&stack0xfffffff0,PTR_s_SAVE_DESC_0079b1a0,
                                        piVar18,0);
-                if ((puVar9 != (ushort *)0x0) &&
-                   ((puVar17 != (undefined *)0x0 || (local_1d88 != piVar18)))) {
+                if ((puVar9 != nullptr) &&
+                   ((puVar17 != nullptr || (local_1d88 != piVar18)))) {
                   bVar16 = true;
                   cMf32::delete(pcVar8);
                   goto LAB_00577956;
@@ -357,7 +357,7 @@ LAB_00577956:
       thunk_FUN_00648dd0(uVar10);
       StartStrateg((AnonShape_00648C10_30A1BBFD *)(pcVar13 + 2),uVar10);
     }
-    if (g_optPanel_008016DC != (OptPanelTy *)0x0) {
+    if (g_optPanel_008016DC != nullptr) {
       OptPanelTy::sub_00532CE0(g_optPanel_008016DC);
       g_currentExceptionFrame = local_8c.previous;
       return 0;

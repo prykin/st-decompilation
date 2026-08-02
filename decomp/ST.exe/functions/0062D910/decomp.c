@@ -66,7 +66,7 @@ STManRub3C::AddNewDock
     return 0xffff;
   }
   if (local_8->field_0030[param_1 + 8] == 0) {
-    pDVar5 = Library::DKW::TBL::DArrayCreate((DArrayTy *)0x0,10,0x28,10);
+    pDVar5 = Library::DKW::TBL::DArrayCreate(nullptr,10,0x28,10);
     pSVar3->field_0030[param_1 + 8] = (uint)pDVar5;
   }
   else {
@@ -80,9 +80,9 @@ STManRub3C::AddNewDock
           piVar6 = (int *)(*(int *)(uVar1 + 8) * uVar8 + *(int *)(uVar1 + 0x1c));
         }
         else {
-          piVar6 = (int *)0x0;
+          piVar6 = nullptr;
         }
-        if ((piVar6 != (int *)0x0) && (*piVar6 == param_5)) {
+        if ((piVar6 != nullptr) && (*piVar6 == param_5)) {
           piVar6[3] = 0;
           *(ushort *)(piVar6 + 1) = param_6;
           *(ushort *)((int)piVar6 + 6) = param_2;
@@ -96,7 +96,7 @@ STManRub3C::AddNewDock
     }
   }
   pDVar5 = (DArrayTy *)pSVar3->field_0030[param_1 + 8];
-  if ((pDVar5 != (DArrayTy *)0x0) && (*param_7 == 0)) {
+  if ((pDVar5 != nullptr) && (*param_7 == 0)) {
     memset(&local_38, 0, 0x28); /* compiler bulk-zero initialization */
     local_34 = param_6;
     local_38 = param_5;

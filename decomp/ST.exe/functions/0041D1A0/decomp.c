@@ -11,7 +11,7 @@ void __thiscall STMineSetC::sub_0041D1A0(STMineSetC *this,int param_1)
   int iVar1;
 
   this->field_010D = param_1;
-  if (g_visibleClass_00802A88 != (VisibleClassTy *)0x0) {
+  if (g_visibleClass_00802A88 != nullptr) {
     VisibleClassTy::SetZoneAst
               (g_visibleClass_00802A88,(int)this->field_005B,(int)this->field_005D,
                (char)this->field_005F,this->field_0024,param_1,this->field_0018,0xffffffff);

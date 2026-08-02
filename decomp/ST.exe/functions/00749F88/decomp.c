@@ -27,7 +27,7 @@ int FUN_00749f88(LPCRITICAL_SECTION lpCriticalSection,int param_2,int param_3)
       (**(code **)((int)lpCriticalSection[-1].OwningThread + 0x28))(1);
       FUN_0074a81d(this,0);
       piVar1 = *(int **)((int)lpCriticalSection[4].OwningThread + 0x9c);
-      if (piVar1 != (int *)0x0) {
+      if (piVar1 != nullptr) {
         /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
         (**(code **)(*piVar1 + 0x14))(piVar1);
       }
@@ -41,8 +41,8 @@ int FUN_00749f88(LPCRITICAL_SECTION lpCriticalSection,int param_2,int param_3)
       LeaveCriticalSection((LPCRITICAL_SECTION)lpCriticalSection_00);
       return iVar3;
     }
-    FUN_00747406(&lpCriticalSection[-1].OwningThread,1,(int *)0x0,
-                 -(uint)(&lpCriticalSection[-1].OwningThread != (HANDLE *)0x0) &
+    FUN_00747406(&lpCriticalSection[-1].OwningThread,1,nullptr,
+                 -(uint)(&lpCriticalSection[-1].OwningThread != nullptr) &
                  (uint)lpCriticalSection);
     lpCriticalSection->RecursionCount = 2;
   }

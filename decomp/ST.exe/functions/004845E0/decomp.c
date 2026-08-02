@@ -26,7 +26,7 @@ STGameObjC::FUN_004845e0(STGameObjC *this,STGameObjC_sub_004845E0_param_1Enum pa
   undefined4 local_8;
 
   this_00 = param_2;
-  if ((param_2 != (int *)0x0) && (param_2[8] == 1000)) {
+  if ((param_2 != nullptr) && (param_2[8] == 1000)) {
     if (param_2[0x12d] != 0) {
       return 0;
     }
@@ -39,7 +39,7 @@ STGameObjC::FUN_004845e0(STGameObjC *this,STGameObjC_sub_004845E0_param_1Enum pa
   case CASE_0:
     iVar4 = thunk_FUN_00493cd0(this);
     if (iVar4 != 0) {
-      if (this_00 == (int *)0x0) {
+      if (this_00 == nullptr) {
         return 0;
       }
       if ((STGameObjC *)this_00 == this) {
@@ -68,7 +68,7 @@ STGameObjC::FUN_004845e0(STGameObjC *this,STGameObjC_sub_004845E0_param_1Enum pa
     if ((STGameObjC *)this_00 == this) {
       return 3;
     }
-    if (this_00 == (int *)0x0) {
+    if (this_00 == nullptr) {
       return 5;
     }
     iVar4 = this_00[8];
@@ -133,7 +133,8 @@ LAB_004857a5:
         bVar8 = iVar4 < 0;
       }
       else {
-        bVar8 = (&DAT_008087ea)[(uint)bVar1 * 0x51] != (&DAT_008087ea)[(uint)bVar7 * 0x51];
+        bVar8 = g_bulkInitializedRecords_008087C7[bVar1].field_0023 !=
+                g_bulkInitializedRecords_008087C7[bVar7].field_0023;
       }
       if (bVar8) goto LAB_0048589a;
       /* ST_PSEUDO[stack_slot_reuse,packed_or_unaligned_piece]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable; expected named packed member, bit extract/compose, or unaligned load */
@@ -164,7 +165,8 @@ LAB_0048586d:
         bVar8 = iVar4 < 0;
       }
       else {
-        bVar8 = (&DAT_008087ea)[(uint)bVar7 * 0x51] != (&DAT_008087ea)[(uint)bVar1 * 0x51];
+        bVar8 = g_bulkInitializedRecords_008087C7[bVar7].field_0023 !=
+                g_bulkInitializedRecords_008087C7[bVar1].field_0023;
       }
       if (!bVar8) {
         /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
@@ -301,7 +303,8 @@ LAB_00485f1f:
             bVar8 = iVar4 < 0;
           }
           else {
-            bVar8 = (&DAT_008087ea)[(uint)bVar1 * 0x51] != (&DAT_008087ea)[(uint)bVar7 * 0x51];
+            bVar8 = g_bulkInitializedRecords_008087C7[bVar1].field_0023 !=
+                    g_bulkInitializedRecords_008087C7[bVar7].field_0023;
           }
           if (bVar8) {
             return 0;
@@ -345,7 +348,8 @@ LAB_0048602b:
           bVar8 = iVar3 < 0;
         }
         else {
-          bVar8 = (&DAT_008087ea)[(uint)bVar1 * 0x51] != (&DAT_008087ea)[(uint)bVar7 * 0x51];
+          bVar8 = g_bulkInitializedRecords_008087C7[bVar1].field_0023 !=
+                  g_bulkInitializedRecords_008087C7[bVar7].field_0023;
         }
         if (bVar8) {
           return 0;
@@ -402,7 +406,8 @@ LAB_00485d2d:
           }
           iVar4 = (uint)bVar1 * 9;
 LAB_00486163:
-          bVar8 = (&DAT_008087ea)[iVar4 * 9] != (&DAT_008087ea)[((uint)param_2 & 0xff) * 0x51];
+          bVar8 = (&g_bulkInitializedRecords_008087C7[0].field_0023)[iVar4 * 9] !=
+                  g_bulkInitializedRecords_008087C7[(uint)param_2 & 0xff].field_0023;
           goto LAB_00485d55;
         }
         if (iVar4 == 9) {
@@ -413,7 +418,8 @@ LAB_00486163:
           /* ST_PSEUDO[stack_slot_reuse,packed_or_unaligned_piece]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable; expected named packed member, bit extract/compose, or unaligned load */
           param_1 = CONCAT31(param_1._1_3_,bVar1);
           if (DAT_00808a8f != '\0') {
-            bVar8 = (&DAT_008087ea)[(uint)bVar1 * 0x51] != (&DAT_008087ea)[(uint)bVar7 * 0x51];
+            bVar8 = g_bulkInitializedRecords_008087C7[bVar1].field_0023 !=
+                    g_bulkInitializedRecords_008087C7[bVar7].field_0023;
             goto LAB_004859d8;
           }
           if (bVar7 == bVar1) {
@@ -495,7 +501,8 @@ LAB_00485c58:
               bVar8 = iVar3 < 0;
             }
             else {
-              bVar8 = (&DAT_008087ea)[(uint)bVar1 * 0x51] != (&DAT_008087ea)[(uint)bVar7 * 0x51];
+              bVar8 = g_bulkInitializedRecords_008087C7[bVar1].field_0023 !=
+                      g_bulkInitializedRecords_008087C7[bVar7].field_0023;
             }
             if (bVar8) {
               if (iVar4 == 0x15) {
@@ -565,7 +572,8 @@ LAB_00485b29:
           bVar8 = iVar4 < 0;
         }
         else {
-          bVar8 = (&DAT_008087ea)[(uint)bVar1 * 0x51] != (&DAT_008087ea)[(uint)bVar7 * 0x51];
+          bVar8 = g_bulkInitializedRecords_008087C7[bVar1].field_0023 !=
+                  g_bulkInitializedRecords_008087C7[bVar7].field_0023;
         }
         if (bVar8) {
           return 0;
@@ -595,7 +603,7 @@ LAB_00485b29:
     if (iVar4 != 0) {
       return 0;
     }
-    if (this_00 == (int *)0x0) {
+    if (this_00 == nullptr) {
       return 1;
     }
     iVar4 = this_00[8];
@@ -650,7 +658,8 @@ LAB_00485b29:
         /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
         param_1 = (STGameObjC_sub_004845E0_param_1Enum)*(byte *)&this->field_0024;
         if (DAT_00808a8f != '\0') {
-          bVar8 = (&DAT_008087ea)[param_1 * 0x51] != (&DAT_008087ea)[(int)param_2 * 0x51];
+          bVar8 = g_bulkInitializedRecords_008087C7[param_1].field_0023 !=
+                  g_bulkInitializedRecords_008087C7[(int)param_2].field_0023;
           return (((ushort)bVar8 - (ushort)bVar8) - (ushort)bVar8 & 5) + 2;
         }
         if (*(byte *)(this_00 + 9) != *(byte *)&this->field_0024) {
@@ -711,7 +720,8 @@ LAB_00484943:
         bVar8 = iVar4 < 0;
       }
       else {
-        bVar8 = (&DAT_008087ea)[(uint)bVar1 * 0x51] != (&DAT_008087ea)[(uint)bVar7 * 0x51];
+        bVar8 = g_bulkInitializedRecords_008087C7[bVar1].field_0023 !=
+                g_bulkInitializedRecords_008087C7[bVar7].field_0023;
       }
       if (bVar8) goto LAB_00484a28;
       /* ST_PSEUDO[stack_slot_reuse,packed_or_unaligned_piece]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable; expected named packed member, bit extract/compose, or unaligned load */
@@ -740,7 +750,8 @@ LAB_00484a0b:
         bVar8 = iVar4 < 0;
       }
       else {
-        bVar8 = (&DAT_008087ea)[(uint)bVar7 * 0x51] != (&DAT_008087ea)[(uint)bVar1 * 0x51];
+        bVar8 = g_bulkInitializedRecords_008087C7[bVar7].field_0023 !=
+                g_bulkInitializedRecords_008087C7[bVar1].field_0023;
       }
       if (!bVar8) {
         return 2;
@@ -758,7 +769,8 @@ LAB_00484a28:
     /* ST_PSEUDO[stack_slot_reuse,packed_or_unaligned_piece]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable; expected named packed member, bit extract/compose, or unaligned load */
     param_1 = CONCAT31(param_1._1_3_,bVar1);
     if (DAT_00808a8f != '\0') {
-      bVar8 = (&DAT_008087ea)[(uint)bVar1 * 0x51] != (&DAT_008087ea)[(uint)bVar7 * 0x51];
+      bVar8 = g_bulkInitializedRecords_008087C7[bVar1].field_0023 !=
+              g_bulkInitializedRecords_008087C7[bVar7].field_0023;
       goto LAB_004847df;
     }
     if (bVar7 == bVar1) {
@@ -807,7 +819,7 @@ LAB_004847df:
   case CASE_4:
     iVar4 = thunk_FUN_00493cd0(this);
     if (iVar4 == 0) {
-      if (this_00 == (int *)0x0) {
+      if (this_00 == nullptr) {
         return 1;
       }
       if ((STGameObjC *)this_00 != this) {
@@ -835,7 +847,7 @@ LAB_004847df:
   case CASE_5:
     iVar4 = thunk_FUN_00493cd0(this);
     if (iVar4 == 0) {
-      if (this_00 == (int *)0x0) {
+      if (this_00 == nullptr) {
         return 1;
       }
       if ((STGameObjC *)this_00 != this) {
@@ -860,7 +872,7 @@ LAB_004847df:
   case CASE_7:
     iVar4 = thunk_FUN_00493cd0(this);
     if (iVar4 == 0) {
-      if (this_00 == (int *)0x0) {
+      if (this_00 == nullptr) {
         return 1;
       }
       if ((STGameObjC *)this_00 != this) {
@@ -898,7 +910,7 @@ LAB_004847df:
     if (iVar4 != 0) {
       return 0;
     }
-    if (this_00 == (int *)0x0) {
+    if (this_00 == nullptr) {
       return 1;
     }
     if (this->field_06F7 != 0x17) {
@@ -928,7 +940,8 @@ LAB_004847df:
     param_1 = (STGameObjC_sub_004845E0_param_1Enum)bVar7;
     local_8 = (uint)bVar1;
     if (DAT_00808a8f != '\0') {
-      bVar8 = (&DAT_008087ea)[local_8 * 0x51] != (&DAT_008087ea)[param_1 * 0x51];
+      bVar8 = g_bulkInitializedRecords_008087C7[local_8].field_0023 !=
+              g_bulkInitializedRecords_008087C7[param_1].field_0023;
       goto LAB_004853d2;
     }
     if (bVar7 == bVar1) {
@@ -984,7 +997,7 @@ LAB_004853d2:
     if (this->field_07CA != 0) {
       return 0;
     }
-    if (this_00 == (int *)0x0) {
+    if (this_00 == nullptr) {
       return 1;
     }
     if ((STGameObjC *)this_00 == this) {
@@ -1005,7 +1018,8 @@ LAB_004853d2:
     /* ST_PSEUDO[stack_slot_reuse,packed_or_unaligned_piece]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable; expected named packed member, bit extract/compose, or unaligned load */
     param_1 = CONCAT31(param_1._1_3_,bVar1);
     if (DAT_00808a8f != '\0') {
-      bVar8 = (&DAT_008087ea)[(uint)bVar1 * 0x51] != (&DAT_008087ea)[(uint)bVar7 * 0x51];
+      bVar8 = g_bulkInitializedRecords_008087C7[bVar1].field_0023 !=
+              g_bulkInitializedRecords_008087C7[bVar7].field_0023;
       goto LAB_00485002;
     }
     if (bVar7 == bVar1) {
@@ -1042,7 +1056,7 @@ LAB_00485002:
   case CASE_E:
     iVar4 = thunk_FUN_00493cd0(this);
     if (iVar4 == 0) {
-      if ((g_tLOBldMark_007FB2AC != (TLOBldMark *)0x0) && (g_tLOBldMark_007FB2AC->field_0024 != 0))
+      if ((g_tLOBldMark_007FB2AC != nullptr) && (g_tLOBldMark_007FB2AC->field_0024 != 0))
       {
         return 0x14;
       }
@@ -1057,7 +1071,7 @@ LAB_00485002:
     if ((STGameObjC *)this_00 == this) {
       return 0;
     }
-    if (this_00 == (int *)0x0) {
+    if (this_00 == nullptr) {
       return 1;
     }
     if (this_00[8] != 1000) {
@@ -1078,7 +1092,7 @@ LAB_00485002:
   case CASE_11:
     iVar4 = thunk_FUN_00493cd0(this);
     if (iVar4 == 0) {
-      if (this_00 == (int *)0x0) {
+      if (this_00 == nullptr) {
         return 1;
       }
       if ((STGameObjC *)this_00 != this) {
@@ -1106,7 +1120,7 @@ LAB_00485002:
   case CASE_12:
     iVar4 = thunk_FUN_00493cd0(this);
     if (iVar4 == 0) {
-      if (this_00 == (int *)0x0) {
+      if (this_00 == nullptr) {
         return 1;
       }
       if ((STGameObjC *)this_00 != this) {
@@ -1138,7 +1152,7 @@ LAB_00485002:
     if (this->field_07CA != 0) {
       return 0;
     }
-    if (this_00 == (int *)0x0) {
+    if (this_00 == nullptr) {
       return 1;
     }
     if ((STGameObjC *)this_00 == this) {
@@ -1175,7 +1189,8 @@ LAB_00484e9f:
         bVar8 = iVar4 < 0;
       }
       else {
-        bVar8 = (&DAT_008087ea)[(uint)bVar1 * 0x51] != (&DAT_008087ea)[(uint)bVar7 * 0x51];
+        bVar8 = g_bulkInitializedRecords_008087C7[bVar1].field_0023 !=
+                g_bulkInitializedRecords_008087C7[bVar7].field_0023;
       }
       /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
       if ((!bVar8) || (iVar4 = (**(code **)(*this_00 + 0x120))(), iVar4 == 1)) goto LAB_00484ed2;
@@ -1205,7 +1220,7 @@ LAB_00484ed2:
   case CASE_48:
     iVar4 = thunk_FUN_00493cd0(this);
     if (iVar4 == 0) {
-      if (this_00 == (int *)0x0) {
+      if (this_00 == nullptr) {
         return 1;
       }
       if ((STGameObjC *)this_00 != this) {
@@ -1232,7 +1247,7 @@ LAB_00484ed2:
   case CASE_4D:
     iVar4 = thunk_FUN_00493cd0(this);
     if (iVar4 == 0) {
-      if (this_00 == (int *)0x0) {
+      if (this_00 == nullptr) {
         return 1;
       }
       if ((STGameObjC *)this_00 != this) {

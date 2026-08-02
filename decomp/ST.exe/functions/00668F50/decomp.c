@@ -13,7 +13,7 @@ SubmarineTitans::Recovered::HiddenThis::AnonReceiver_0064A970::sub_00668F50
 {
   byte bVar1;
   uint uVar2;
-  char *pcVar3;
+  byte *pbVar3;
   uint uVar4;
   byte bVar5;
   int iVar6;
@@ -29,7 +29,8 @@ SubmarineTitans::Recovered::HiddenThis::AnonReceiver_0064A970::sub_00668F50
     /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
     if (param_1 == (char *)0x9) {
       uVar2 = (*this->vtable->slot_18)();
-      if (((-1 < (int)uVar2) && ((int)uVar2 < 8)) && ((&DAT_008087e9)[uVar2 * 0x51] != -1)) {
+      if (((-1 < (int)uVar2) && ((int)uVar2 < 8)) &&
+         (g_bulkInitializedRecords_008087C7[uVar2].field_0022 != 0xff)) {
         *param_3 = uVar2;
         return 1;
       }
@@ -45,21 +46,21 @@ SubmarineTitans::Recovered::HiddenThis::AnonReceiver_0064A970::sub_00668F50
       /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
       else if (param_1 == (char *)0xff) {
         uVar2 = 0;
-        pcVar3 = &DAT_008087e9;
+        pbVar3 = &g_bulkInitializedRecords_008087C7[0].field_0022;
         do {
-          if (*pcVar3 != -1) {
+          if (*pbVar3 != 0xff) {
             *param_3 = uVar2;
             iVar6 = iVar6 + 1;
             /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
             param_3 = param_3 + 1;
           }
-          pcVar3 = pcVar3 + 0x51;
+          pbVar3 = pbVar3 + 0x51;
           uVar2 = uVar2 + 1;
-        } while ((int)pcVar3 < 0x808a71);
+        } while ((int)pbVar3 < 0x808a71);
         return iVar6;
       }
     }
-    else if ((&DAT_008087e9)[(int)param_1 * 0x51] != -1) {
+    else if (g_bulkInitializedRecords_008087C7[(int)param_1].field_0022 != 0xff) {
       *param_3 = (uint)param_1;
       return 1;
     }
@@ -71,18 +72,19 @@ SubmarineTitans::Recovered::HiddenThis::AnonReceiver_0064A970::sub_00668F50
       /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
       if (param_1 == (char *)0x9) {
         uVar2 = (*this->vtable->slot_18)();
-        if (((-1 < (int)uVar2) && ((int)uVar2 < 8)) && ((&DAT_008087e9)[uVar2 * 0x51] != -1)) {
+        if (((-1 < (int)uVar2) && ((int)uVar2 < 8)) &&
+           (g_bulkInitializedRecords_008087C7[uVar2].field_0022 != 0xff)) {
           uVar7 = 0;
-          pcVar3 = &DAT_008087e9;
+          pbVar3 = &g_bulkInitializedRecords_008087C7[0].field_0022;
           do {
-            if ((uVar7 != uVar2) && (*pcVar3 != -1)) {
+            if ((uVar7 != uVar2) && (*pbVar3 != 0xff)) {
               if (DAT_00808a8f == '\0') {
                 iVar6 = thunk_FUN_005822e0(&DAT_00807620,(byte)uVar7,(byte)uVar2);
                 bVar9 = iVar6 < 0;
               }
               else {
-                bVar9 = (&DAT_008087ea)[(uVar2 & 0xff) * 0x51] !=
-                        (&DAT_008087ea)[(uVar7 & 0xff) * 0x51];
+                bVar9 = g_bulkInitializedRecords_008087C7[uVar2 & 0xff].field_0023 !=
+                        g_bulkInitializedRecords_008087C7[uVar7 & 0xff].field_0023;
               }
               if (bVar9) {
                 local_8 = local_8 + 1;
@@ -91,9 +93,9 @@ SubmarineTitans::Recovered::HiddenThis::AnonReceiver_0064A970::sub_00668F50
                 param_3 = param_3 + 1;
               }
             }
-            pcVar3 = pcVar3 + 0x51;
+            pbVar3 = pbVar3 + 0x51;
             uVar7 = uVar7 + 1;
-          } while ((int)pcVar3 < 0x808a71);
+          } while ((int)pbVar3 < 0x808a71);
           return local_8;
         }
       }
@@ -101,16 +103,16 @@ SubmarineTitans::Recovered::HiddenThis::AnonReceiver_0064A970::sub_00668F50
         /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
         if ((param_1 == (char *)0x8) && (DAT_0080874d != 0xff)) {
           uVar2 = 0;
-          pcVar3 = &DAT_008087e9;
+          pbVar3 = &g_bulkInitializedRecords_008087C7[0].field_0022;
           do {
-            if ((uVar2 != DAT_0080874d) && (*pcVar3 != -1)) {
+            if ((uVar2 != DAT_0080874d) && (*pbVar3 != 0xff)) {
               if (DAT_00808a8f == '\0') {
                 iVar6 = thunk_FUN_005822e0(&DAT_00807620,(byte)uVar2,DAT_0080874d);
                 bVar9 = iVar6 < 0;
               }
               else {
-                bVar9 = (&DAT_008087ea)[(uint)DAT_0080874d * 0x51] !=
-                        (&DAT_008087ea)[(uVar2 & 0xff) * 0x51];
+                bVar9 = g_bulkInitializedRecords_008087C7[DAT_0080874d].field_0023 !=
+                        g_bulkInitializedRecords_008087C7[uVar2 & 0xff].field_0023;
               }
               if (bVar9) {
                 *param_3 = uVar2;
@@ -119,24 +121,24 @@ SubmarineTitans::Recovered::HiddenThis::AnonReceiver_0064A970::sub_00668F50
                 param_3 = param_3 + 1;
               }
             }
-            pcVar3 = pcVar3 + 0x51;
+            pbVar3 = pbVar3 + 0x51;
             uVar2 = uVar2 + 1;
-          } while ((int)pcVar3 < 0x808a71);
+          } while ((int)pbVar3 < 0x808a71);
           return local_8;
         }
       }
-      else if ((&DAT_008087e9)[(int)param_1 * 0x51] != -1) {
-        pcVar8 = (char *)0x0;
-        pcVar3 = &DAT_008087e9;
+      else if (g_bulkInitializedRecords_008087C7[(int)param_1].field_0022 != 0xff) {
+        pcVar8 = nullptr;
+        pbVar3 = &g_bulkInitializedRecords_008087C7[0].field_0022;
         do {
-          if ((pcVar8 != param_1) && (*pcVar3 != -1)) {
+          if ((pcVar8 != param_1) && (*pbVar3 != 0xff)) {
             if (DAT_00808a8f == '\0') {
               iVar6 = thunk_FUN_005822e0(&DAT_00807620,(byte)pcVar8,bVar5);
               bVar9 = iVar6 < 0;
             }
             else {
-              bVar9 = (&DAT_008087ea)[((uint)param_1 & 0xff) * 0x51] !=
-                      (&DAT_008087ea)[((uint)pcVar8 & 0xff) * 0x51];
+              bVar9 = g_bulkInitializedRecords_008087C7[(uint)param_1 & 0xff].field_0023 !=
+                      g_bulkInitializedRecords_008087C7[(uint)pcVar8 & 0xff].field_0023;
             }
             if (bVar9) {
               local_8 = local_8 + 1;
@@ -145,9 +147,9 @@ SubmarineTitans::Recovered::HiddenThis::AnonReceiver_0064A970::sub_00668F50
               param_3 = param_3 + 1;
             }
           }
-          pcVar3 = pcVar3 + 0x51;
+          pbVar3 = pbVar3 + 0x51;
           pcVar8 = pcVar8 + 1;
-        } while ((int)pcVar3 < 0x808a71);
+        } while ((int)pbVar3 < 0x808a71);
         return local_8;
       }
     }
@@ -156,18 +158,19 @@ SubmarineTitans::Recovered::HiddenThis::AnonReceiver_0064A970::sub_00668F50
       /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
       if (param_1 == (char *)0x9) {
         uVar2 = (*this->vtable->slot_18)();
-        if (((-1 < (int)uVar2) && ((int)uVar2 < 8)) && ((&DAT_008087e9)[uVar2 * 0x51] != -1)) {
+        if (((-1 < (int)uVar2) && ((int)uVar2 < 8)) &&
+           (g_bulkInitializedRecords_008087C7[uVar2].field_0022 != 0xff)) {
           uVar7 = 0;
-          pcVar3 = &DAT_008087e9;
+          pbVar3 = &g_bulkInitializedRecords_008087C7[0].field_0022;
           do {
-            if (*pcVar3 != -1) {
+            if (*pbVar3 != 0xff) {
               if (DAT_00808a8f == '\0') {
                 iVar6 = thunk_FUN_005822e0(&DAT_00807620,(byte)uVar7,(byte)uVar2);
                 bVar9 = iVar6 < 0;
               }
               else {
-                bVar9 = (&DAT_008087ea)[(uVar2 & 0xff) * 0x51] !=
-                        (&DAT_008087ea)[(uVar7 & 0xff) * 0x51];
+                bVar9 = g_bulkInitializedRecords_008087C7[uVar2 & 0xff].field_0023 !=
+                        g_bulkInitializedRecords_008087C7[uVar7 & 0xff].field_0023;
               }
               if (!bVar9) {
                 local_8 = local_8 + 1;
@@ -176,9 +179,9 @@ SubmarineTitans::Recovered::HiddenThis::AnonReceiver_0064A970::sub_00668F50
                 param_3 = param_3 + 1;
               }
             }
-            pcVar3 = pcVar3 + 0x51;
+            pbVar3 = pbVar3 + 0x51;
             uVar7 = uVar7 + 1;
-          } while ((int)pcVar3 < 0x808a71);
+          } while ((int)pbVar3 < 0x808a71);
           return local_8;
         }
       }
@@ -186,16 +189,16 @@ SubmarineTitans::Recovered::HiddenThis::AnonReceiver_0064A970::sub_00668F50
         /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
         if ((param_1 == (char *)0x8) && (DAT_0080874d != 0xff)) {
           uVar2 = 0;
-          pcVar3 = &DAT_008087e9;
+          pbVar3 = &g_bulkInitializedRecords_008087C7[0].field_0022;
           do {
-            if (*pcVar3 != -1) {
+            if (*pbVar3 != 0xff) {
               if (DAT_00808a8f == '\0') {
                 iVar6 = thunk_FUN_005822e0(&DAT_00807620,(byte)uVar2,DAT_0080874d);
                 bVar9 = iVar6 < 0;
               }
               else {
-                bVar9 = (&DAT_008087ea)[(uint)DAT_0080874d * 0x51] !=
-                        (&DAT_008087ea)[(uVar2 & 0xff) * 0x51];
+                bVar9 = g_bulkInitializedRecords_008087C7[DAT_0080874d].field_0023 !=
+                        g_bulkInitializedRecords_008087C7[uVar2 & 0xff].field_0023;
               }
               if (!bVar9) {
                 *param_3 = uVar2;
@@ -204,24 +207,24 @@ SubmarineTitans::Recovered::HiddenThis::AnonReceiver_0064A970::sub_00668F50
                 param_3 = param_3 + 1;
               }
             }
-            pcVar3 = pcVar3 + 0x51;
+            pbVar3 = pbVar3 + 0x51;
             uVar2 = uVar2 + 1;
-          } while ((int)pcVar3 < 0x808a71);
+          } while ((int)pbVar3 < 0x808a71);
           return local_8;
         }
       }
-      else if ((&DAT_008087e9)[(int)param_1 * 0x51] != -1) {
+      else if (g_bulkInitializedRecords_008087C7[(int)param_1].field_0022 != 0xff) {
         uVar2 = 0;
-        pcVar3 = &DAT_008087e9;
+        pbVar3 = &g_bulkInitializedRecords_008087C7[0].field_0022;
         do {
-          if (*pcVar3 != -1) {
+          if (*pbVar3 != 0xff) {
             if (DAT_00808a8f == '\0') {
               iVar6 = thunk_FUN_005822e0(&DAT_00807620,(byte)uVar2,bVar5);
               bVar9 = iVar6 < 0;
             }
             else {
-              bVar9 = (&DAT_008087ea)[((uint)param_1 & 0xff) * 0x51] !=
-                      (&DAT_008087ea)[(uVar2 & 0xff) * 0x51];
+              bVar9 = g_bulkInitializedRecords_008087C7[(uint)param_1 & 0xff].field_0023 !=
+                      g_bulkInitializedRecords_008087C7[uVar2 & 0xff].field_0023;
             }
             if (!bVar9) {
               local_8 = local_8 + 1;
@@ -230,9 +233,9 @@ SubmarineTitans::Recovered::HiddenThis::AnonReceiver_0064A970::sub_00668F50
               param_3 = param_3 + 1;
             }
           }
-          pcVar3 = pcVar3 + 0x51;
+          pbVar3 = pbVar3 + 0x51;
           uVar2 = uVar2 + 1;
-        } while ((int)pcVar3 < 0x808a71);
+        } while ((int)pbVar3 < 0x808a71);
         return local_8;
       }
     }
@@ -241,18 +244,19 @@ SubmarineTitans::Recovered::HiddenThis::AnonReceiver_0064A970::sub_00668F50
       /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
       if (param_1 == (char *)0x9) {
         uVar2 = (*this->vtable->slot_18)();
-        if (((-1 < (int)uVar2) && ((int)uVar2 < 8)) && ((&DAT_008087e9)[uVar2 * 0x51] != -1)) {
+        if (((-1 < (int)uVar2) && ((int)uVar2 < 8)) &&
+           (g_bulkInitializedRecords_008087C7[uVar2].field_0022 != 0xff)) {
           uVar7 = 0;
-          pcVar3 = &DAT_008087e9;
+          pbVar3 = &g_bulkInitializedRecords_008087C7[0].field_0022;
           do {
-            if ((uVar7 != uVar2) && (*pcVar3 != -1)) {
+            if ((uVar7 != uVar2) && (*pbVar3 != 0xff)) {
               if (DAT_00808a8f == '\0') {
                 iVar6 = thunk_FUN_005822e0(&DAT_00807620,(byte)uVar7,(byte)uVar2);
                 bVar9 = iVar6 < 0;
               }
               else {
-                bVar9 = (&DAT_008087ea)[(uVar2 & 0xff) * 0x51] !=
-                        (&DAT_008087ea)[(uVar7 & 0xff) * 0x51];
+                bVar9 = g_bulkInitializedRecords_008087C7[uVar2 & 0xff].field_0023 !=
+                        g_bulkInitializedRecords_008087C7[uVar7 & 0xff].field_0023;
               }
               if (!bVar9) {
                 local_8 = local_8 + 1;
@@ -261,9 +265,9 @@ SubmarineTitans::Recovered::HiddenThis::AnonReceiver_0064A970::sub_00668F50
                 param_3 = param_3 + 1;
               }
             }
-            pcVar3 = pcVar3 + 0x51;
+            pbVar3 = pbVar3 + 0x51;
             uVar7 = uVar7 + 1;
-          } while ((int)pcVar3 < 0x808a71);
+          } while ((int)pbVar3 < 0x808a71);
           return local_8;
         }
       }
@@ -271,16 +275,16 @@ SubmarineTitans::Recovered::HiddenThis::AnonReceiver_0064A970::sub_00668F50
         /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
         if ((param_1 == (char *)0x8) && (DAT_0080874d != 0xff)) {
           uVar2 = 0;
-          pcVar3 = &DAT_008087e9;
+          pbVar3 = &g_bulkInitializedRecords_008087C7[0].field_0022;
           do {
-            if ((uVar2 != DAT_0080874d) && (*pcVar3 != -1)) {
+            if ((uVar2 != DAT_0080874d) && (*pbVar3 != 0xff)) {
               if (DAT_00808a8f == '\0') {
                 iVar6 = thunk_FUN_005822e0(&DAT_00807620,(byte)uVar2,DAT_0080874d);
                 bVar9 = iVar6 < 0;
               }
               else {
-                bVar9 = (&DAT_008087ea)[(uint)DAT_0080874d * 0x51] !=
-                        (&DAT_008087ea)[(uVar2 & 0xff) * 0x51];
+                bVar9 = g_bulkInitializedRecords_008087C7[DAT_0080874d].field_0023 !=
+                        g_bulkInitializedRecords_008087C7[uVar2 & 0xff].field_0023;
               }
               if (!bVar9) {
                 *param_3 = uVar2;
@@ -289,23 +293,23 @@ SubmarineTitans::Recovered::HiddenThis::AnonReceiver_0064A970::sub_00668F50
                 param_3 = param_3 + 1;
               }
             }
-            pcVar3 = pcVar3 + 0x51;
+            pbVar3 = pbVar3 + 0x51;
             uVar2 = uVar2 + 1;
-          } while ((int)pcVar3 < 0x808a71);
+          } while ((int)pbVar3 < 0x808a71);
           return local_8;
         }
       }
-      else if ((&DAT_008087e9)[(int)param_1 * 0x51] != -1) {
-        pcVar3 = (char *)0x0;
-        pcVar8 = &DAT_008087e9;
+      else if (g_bulkInitializedRecords_008087C7[(int)param_1].field_0022 != 0xff) {
+        pcVar8 = nullptr;
+        pbVar3 = &g_bulkInitializedRecords_008087C7[0].field_0022;
         do {
-          if ((pcVar3 != param_1) && (*pcVar8 != -1)) {
+          if ((pcVar8 != param_1) && (*pbVar3 != 0xff)) {
             if (DAT_00808a8f == '\0') {
-              if ((byte)pcVar3 == bVar5) {
+              if ((byte)pcVar8 == bVar5) {
                 iVar6 = 0;
               }
               else {
-                uVar2 = (uint)pcVar3 & 0xff;
+                uVar2 = (uint)pcVar8 & 0xff;
                 uVar7 = (uint)param_1 & 0xff;
                 bVar1 = g_playerRelationMatrix[uVar2][uVar7];
                 if ((bVar1 == 0) && (g_playerRelationMatrix[uVar7][uVar2] == 0)) {
@@ -327,19 +331,19 @@ SubmarineTitans::Recovered::HiddenThis::AnonReceiver_0064A970::sub_00668F50
               bVar9 = iVar6 < 0;
             }
             else {
-              bVar9 = (&DAT_008087ea)[((uint)param_1 & 0xff) * 0x51] !=
-                      (&DAT_008087ea)[((uint)pcVar3 & 0xff) * 0x51];
+              bVar9 = g_bulkInitializedRecords_008087C7[(uint)param_1 & 0xff].field_0023 !=
+                      g_bulkInitializedRecords_008087C7[(uint)pcVar8 & 0xff].field_0023;
             }
             if (!bVar9) {
-              *param_3 = (uint)pcVar3;
+              *param_3 = (uint)pcVar8;
               local_8 = local_8 + 1;
               /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
               param_3 = param_3 + 1;
             }
           }
-          pcVar8 = pcVar8 + 0x51;
-          pcVar3 = pcVar3 + 1;
-        } while ((int)pcVar8 < 0x808a71);
+          pbVar3 = pbVar3 + 0x51;
+          pcVar8 = pcVar8 + 1;
+        } while ((int)pbVar3 < 0x808a71);
         return local_8;
       }
     }
@@ -348,12 +352,13 @@ SubmarineTitans::Recovered::HiddenThis::AnonReceiver_0064A970::sub_00668F50
       /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
       if (param_1 == (char *)0x9) {
         uVar2 = (*this->vtable->slot_18)();
-        if (((-1 < (int)uVar2) && ((int)uVar2 < 8)) && ((&DAT_008087e9)[uVar2 * 0x51] != -1)) {
+        if (((-1 < (int)uVar2) && ((int)uVar2 < 8)) &&
+           (g_bulkInitializedRecords_008087C7[uVar2].field_0022 != 0xff)) {
           /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
           param_2 = 0;
-          pcVar3 = &DAT_008087e9;
+          pbVar3 = &g_bulkInitializedRecords_008087C7[0].field_0022;
           do {
-            if (*pcVar3 != -1) {
+            if (*pbVar3 != 0xff) {
               if (DAT_00808a8f == '\0') {
                 /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
                 if ((char)param_2 == (char)uVar2) {
@@ -382,8 +387,8 @@ LAB_00669807:
                 bVar9 = iVar6 < 0;
               }
               else {
-                bVar9 = (&DAT_008087ea)[(uVar2 & 0xff) * 0x51] !=
-                        (&DAT_008087ea)[(param_2 & 0xff) * 0x51];
+                bVar9 = g_bulkInitializedRecords_008087C7[uVar2 & 0xff].field_0023 !=
+                        g_bulkInitializedRecords_008087C7[param_2 & 0xff].field_0023;
               }
               if (!bVar9) {
                 if (DAT_00808a8f == '\0') {
@@ -413,8 +418,8 @@ LAB_006698b9:
                   bVar9 = iVar6 < 0;
                 }
                 else {
-                  bVar9 = (&DAT_008087ea)[(param_2 & 0xff) * 0x51] !=
-                          (&DAT_008087ea)[(uVar2 & 0xff) * 0x51];
+                  bVar9 = g_bulkInitializedRecords_008087C7[param_2 & 0xff].field_0023 !=
+                          g_bulkInitializedRecords_008087C7[uVar2 & 0xff].field_0023;
                 }
                 if (!bVar9) {
                   *param_3 = param_2;
@@ -424,10 +429,10 @@ LAB_006698b9:
                 }
               }
             }
-            pcVar3 = pcVar3 + 0x51;
+            pbVar3 = pbVar3 + 0x51;
             /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
             param_2 = param_2 + 1;
-            if (0x808a70 < (int)pcVar3) {
+            if (0x808a70 < (int)pbVar3) {
               return local_8;
             }
           } while( true );
@@ -439,7 +444,7 @@ LAB_006698b9:
           /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
           param_2 = 0;
           /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
-          param_1 = &DAT_008087e9;
+          param_1 = (char *)&g_bulkInitializedRecords_008087C7[0].field_0022;
           bVar5 = DAT_0080874d;
           do {
             if (*param_1 != -1) {
@@ -470,8 +475,8 @@ LAB_00669b3a:
                 bVar9 = iVar6 < 0;
               }
               else {
-                bVar9 = (&DAT_008087ea)[(uint)bVar5 * 0x51] !=
-                        (&DAT_008087ea)[(param_2 & 0xff) * 0x51];
+                bVar9 = g_bulkInitializedRecords_008087C7[bVar5].field_0023 !=
+                        g_bulkInitializedRecords_008087C7[param_2 & 0xff].field_0023;
               }
               if (!bVar9) {
                 if (DAT_00808a8f == '\0') {
@@ -480,8 +485,8 @@ LAB_00669b3a:
                   bVar5 = DAT_0080874d;
                 }
                 else {
-                  bVar9 = (&DAT_008087ea)[(param_2 & 0xff) * 0x51] !=
-                          (&DAT_008087ea)[(uint)bVar5 * 0x51];
+                  bVar9 = g_bulkInitializedRecords_008087C7[param_2 & 0xff].field_0023 !=
+                          g_bulkInitializedRecords_008087C7[bVar5].field_0023;
                 }
                 if (!bVar9) {
                   local_8 = local_8 + 1;
@@ -502,19 +507,19 @@ LAB_00669b3a:
           } while( true );
         }
       }
-      else if ((&DAT_008087e9)[(int)param_1 * 0x51] != -1) {
+      else if (g_bulkInitializedRecords_008087C7[(int)param_1].field_0022 != 0xff) {
         /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
         param_2 = 0;
-        pcVar3 = &DAT_008087e9;
+        pbVar3 = &g_bulkInitializedRecords_008087C7[0].field_0022;
         do {
-          if (*pcVar3 != -1) {
+          if (*pbVar3 != 0xff) {
             if (DAT_00808a8f == '\0') {
               iVar6 = thunk_FUN_005822e0(&DAT_00807620,(byte)param_2,bVar5);
               bVar9 = iVar6 < 0;
             }
             else {
-              bVar9 = (&DAT_008087ea)[((uint)param_1 & 0xff) * 0x51] !=
-                      (&DAT_008087ea)[(param_2 & 0xff) * 0x51];
+              bVar9 = g_bulkInitializedRecords_008087C7[(uint)param_1 & 0xff].field_0023 !=
+                      g_bulkInitializedRecords_008087C7[param_2 & 0xff].field_0023;
             }
             if (!bVar9) {
               if (DAT_00808a8f == '\0') {
@@ -544,8 +549,8 @@ LAB_00669a2a:
                 bVar9 = iVar6 < 0;
               }
               else {
-                bVar9 = (&DAT_008087ea)[(param_2 & 0xff) * 0x51] !=
-                        (&DAT_008087ea)[((uint)param_1 & 0xff) * 0x51];
+                bVar9 = g_bulkInitializedRecords_008087C7[param_2 & 0xff].field_0023 !=
+                        g_bulkInitializedRecords_008087C7[(uint)param_1 & 0xff].field_0023;
               }
               if (!bVar9) {
                 *param_3 = param_2;
@@ -555,10 +560,10 @@ LAB_00669a2a:
               }
             }
           }
-          pcVar3 = pcVar3 + 0x51;
+          pbVar3 = pbVar3 + 0x51;
           /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
           param_2 = param_2 + 1;
-          if (0x808a70 < (int)pcVar3) {
+          if (0x808a70 < (int)pbVar3) {
             return local_8;
           }
         } while( true );
@@ -569,12 +574,13 @@ LAB_00669a2a:
       /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
       if (param_1 == (char *)0x9) {
         uVar2 = (*this->vtable->slot_18)();
-        if (((-1 < (int)uVar2) && ((int)uVar2 < 8)) && ((&DAT_008087e9)[uVar2 * 0x51] != -1)) {
+        if (((-1 < (int)uVar2) && ((int)uVar2 < 8)) &&
+           (g_bulkInitializedRecords_008087C7[uVar2].field_0022 != 0xff)) {
           /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
           param_2 = 0;
-          pcVar3 = &DAT_008087e9;
+          pbVar3 = &g_bulkInitializedRecords_008087C7[0].field_0022;
           do {
-            if ((param_2 != uVar2) && (*pcVar3 != -1)) {
+            if ((param_2 != uVar2) && (*pbVar3 != 0xff)) {
               if (DAT_00808a8f == '\0') {
                 /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
                 if ((byte)param_2 == (byte)uVar2) {
@@ -603,8 +609,8 @@ LAB_00669cdc:
                 bVar9 = iVar6 < 0;
               }
               else {
-                bVar9 = (&DAT_008087ea)[(uVar2 & 0xff) * 0x51] !=
-                        (&DAT_008087ea)[(param_2 & 0xff) * 0x51];
+                bVar9 = g_bulkInitializedRecords_008087C7[uVar2 & 0xff].field_0023 !=
+                        g_bulkInitializedRecords_008087C7[param_2 & 0xff].field_0023;
               }
               if (!bVar9) {
                 if (DAT_00808a8f == '\0') {
@@ -612,8 +618,8 @@ LAB_00669cdc:
                   bVar9 = iVar6 < 0;
                 }
                 else {
-                  bVar9 = (&DAT_008087ea)[(param_2 & 0xff) * 0x51] !=
-                          (&DAT_008087ea)[(uVar2 & 0xff) * 0x51];
+                  bVar9 = g_bulkInitializedRecords_008087C7[param_2 & 0xff].field_0023 !=
+                          g_bulkInitializedRecords_008087C7[uVar2 & 0xff].field_0023;
                 }
                 if (!bVar9) {
                   *param_3 = param_2;
@@ -623,10 +629,10 @@ LAB_00669cdc:
                 }
               }
             }
-            pcVar3 = pcVar3 + 0x51;
+            pbVar3 = pbVar3 + 0x51;
             /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
             param_2 = param_2 + 1;
-            if (0x808a70 < (int)pcVar3) {
+            if (0x808a70 < (int)pbVar3) {
               return local_8;
             }
           } while( true );
@@ -638,7 +644,7 @@ LAB_00669cdc:
           /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
           param_2 = 0;
           /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
-          param_1 = &DAT_008087e9;
+          param_1 = (char *)&g_bulkInitializedRecords_008087C7[0].field_0022;
           do {
             if ((param_2 != DAT_0080874d) && (*param_1 != -1)) {
               if (DAT_00808a8f == '\0') {
@@ -646,8 +652,8 @@ LAB_00669cdc:
                 bVar9 = iVar6 < 0;
               }
               else {
-                bVar9 = (&DAT_008087ea)[(uint)DAT_0080874d * 0x51] !=
-                        (&DAT_008087ea)[(param_2 & 0xff) * 0x51];
+                bVar9 = g_bulkInitializedRecords_008087C7[DAT_0080874d].field_0023 !=
+                        g_bulkInitializedRecords_008087C7[param_2 & 0xff].field_0023;
               }
               if (!bVar9) {
                 if (DAT_00808a8f == '\0') {
@@ -677,8 +683,8 @@ LAB_0066a08e:
                   bVar9 = iVar6 < 0;
                 }
                 else {
-                  bVar9 = (&DAT_008087ea)[(param_2 & 0xff) * 0x51] !=
-                          (&DAT_008087ea)[(uint)DAT_0080874d * 0x51];
+                  bVar9 = g_bulkInitializedRecords_008087C7[param_2 & 0xff].field_0023 !=
+                          g_bulkInitializedRecords_008087C7[DAT_0080874d].field_0023;
                 }
                 if (!bVar9) {
                   *param_3 = param_2;
@@ -698,12 +704,12 @@ LAB_0066a08e:
           } while( true );
         }
       }
-      else if ((&DAT_008087e9)[(int)param_1 * 0x51] != -1) {
+      else if (g_bulkInitializedRecords_008087C7[(int)param_1].field_0022 != 0xff) {
         /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
         param_2 = 0;
-        pcVar3 = &DAT_008087e9;
+        pbVar3 = &g_bulkInitializedRecords_008087C7[0].field_0022;
         do {
-          if (((char *)param_2 != param_1) && (*pcVar3 != -1)) {
+          if (((char *)param_2 != param_1) && (*pbVar3 != 0xff)) {
             if (DAT_00808a8f == '\0') {
               /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
               if ((byte)param_2 == bVar5) {
@@ -732,8 +738,8 @@ LAB_00669e52:
               bVar9 = iVar6 < 0;
             }
             else {
-              bVar9 = (&DAT_008087ea)[((uint)param_1 & 0xff) * 0x51] !=
-                      (&DAT_008087ea)[(param_2 & 0xff) * 0x51];
+              bVar9 = g_bulkInitializedRecords_008087C7[(uint)param_1 & 0xff].field_0023 !=
+                      g_bulkInitializedRecords_008087C7[param_2 & 0xff].field_0023;
             }
             if (!bVar9) {
               if (DAT_00808a8f == '\0') {
@@ -763,8 +769,8 @@ LAB_00669f03:
                 bVar9 = iVar6 < 0;
               }
               else {
-                bVar9 = (&DAT_008087ea)[(param_2 & 0xff) * 0x51] !=
-                        (&DAT_008087ea)[((uint)param_1 & 0xff) * 0x51];
+                bVar9 = g_bulkInitializedRecords_008087C7[param_2 & 0xff].field_0023 !=
+                        g_bulkInitializedRecords_008087C7[(uint)param_1 & 0xff].field_0023;
               }
               if (!bVar9) {
                 *param_3 = param_2;
@@ -774,10 +780,10 @@ LAB_00669f03:
               }
             }
           }
-          pcVar3 = pcVar3 + 0x51;
+          pbVar3 = pbVar3 + 0x51;
           /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
           param_2 = param_2 + 1;
-          if (0x808a70 < (int)pcVar3) {
+          if (0x808a70 < (int)pbVar3) {
             return local_8;
           }
         } while( true );
@@ -788,12 +794,13 @@ LAB_00669f03:
       /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
       if (param_1 == (char *)0x9) {
         uVar2 = (*this->vtable->slot_18)();
-        if (((-1 < (int)uVar2) && ((int)uVar2 < 8)) && ((&DAT_008087e9)[uVar2 * 0x51] != -1)) {
+        if (((-1 < (int)uVar2) && ((int)uVar2 < 8)) &&
+           (g_bulkInitializedRecords_008087C7[uVar2].field_0022 != 0xff)) {
           /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
           param_2 = 0;
-          pcVar3 = &DAT_008087e9;
+          pbVar3 = &g_bulkInitializedRecords_008087C7[0].field_0022;
           do {
-            if ((param_2 != uVar2) && (*pcVar3 != -1)) {
+            if ((param_2 != uVar2) && (*pbVar3 != 0xff)) {
               if (DAT_00808a8f == '\0') {
                 /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
                 if ((byte)param_2 == (byte)uVar2) {
@@ -822,8 +829,8 @@ LAB_0066a1c9:
                 bVar9 = iVar6 < 0;
               }
               else {
-                bVar9 = (&DAT_008087ea)[(uVar2 & 0xff) * 0x51] !=
-                        (&DAT_008087ea)[(param_2 & 0xff) * 0x51];
+                bVar9 = g_bulkInitializedRecords_008087C7[uVar2 & 0xff].field_0023 !=
+                        g_bulkInitializedRecords_008087C7[param_2 & 0xff].field_0023;
               }
               if (!bVar9) {
                 if (DAT_00808a8f == '\0') {
@@ -831,8 +838,8 @@ LAB_0066a1c9:
                   bVar9 = iVar6 < 0;
                 }
                 else {
-                  bVar9 = (&DAT_008087ea)[(param_2 & 0xff) * 0x51] !=
-                          (&DAT_008087ea)[(uVar2 & 0xff) * 0x51];
+                  bVar9 = g_bulkInitializedRecords_008087C7[param_2 & 0xff].field_0023 !=
+                          g_bulkInitializedRecords_008087C7[uVar2 & 0xff].field_0023;
                 }
                 if (!bVar9) goto LAB_0066a23c;
               }
@@ -842,10 +849,10 @@ LAB_0066a1c9:
               param_3 = param_3 + 1;
             }
 LAB_0066a23c:
-            pcVar3 = pcVar3 + 0x51;
+            pbVar3 = pbVar3 + 0x51;
             /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
             param_2 = param_2 + 1;
-            if (0x808a70 < (int)pcVar3) {
+            if (0x808a70 < (int)pbVar3) {
               return local_8;
             }
           } while( true );
@@ -857,7 +864,7 @@ LAB_0066a23c:
           /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
           param_2 = 0;
           /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
-          param_1 = &DAT_008087e9;
+          param_1 = (char *)&g_bulkInitializedRecords_008087C7[0].field_0022;
           do {
             if ((param_2 != DAT_0080874d) && (*param_1 != -1)) {
               if (DAT_00808a8f == '\0') {
@@ -865,8 +872,8 @@ LAB_0066a23c:
                 bVar9 = iVar6 < 0;
               }
               else {
-                bVar9 = (&DAT_008087ea)[(uint)DAT_0080874d * 0x51] !=
-                        (&DAT_008087ea)[(param_2 & 0xff) * 0x51];
+                bVar9 = g_bulkInitializedRecords_008087C7[DAT_0080874d].field_0023 !=
+                        g_bulkInitializedRecords_008087C7[param_2 & 0xff].field_0023;
               }
               if (!bVar9) {
                 if (DAT_00808a8f == '\0') {
@@ -896,8 +903,8 @@ LAB_0066a57d:
                   bVar9 = iVar6 < 0;
                 }
                 else {
-                  bVar9 = (&DAT_008087ea)[(param_2 & 0xff) * 0x51] !=
-                          (&DAT_008087ea)[(uint)DAT_0080874d * 0x51];
+                  bVar9 = g_bulkInitializedRecords_008087C7[param_2 & 0xff].field_0023 !=
+                          g_bulkInitializedRecords_008087C7[DAT_0080874d].field_0023;
                 }
                 if (!bVar9) goto LAB_0066a598;
               }
@@ -914,12 +921,12 @@ LAB_0066a598:
           } while ((int)param_1 < 0x808a71);
         }
       }
-      else if ((&DAT_008087e9)[(int)param_1 * 0x51] != -1) {
+      else if (g_bulkInitializedRecords_008087C7[(int)param_1].field_0022 != 0xff) {
         /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
         param_2 = 0;
-        pcVar3 = &DAT_008087e9;
+        pbVar3 = &g_bulkInitializedRecords_008087C7[0].field_0022;
         do {
-          if (((char *)param_2 != param_1) && (*pcVar3 != -1)) {
+          if (((char *)param_2 != param_1) && (*pbVar3 != 0xff)) {
             if (DAT_00808a8f == '\0') {
               /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
               if ((byte)param_2 == bVar5) {
@@ -948,8 +955,8 @@ LAB_0066a341:
               bVar9 = iVar6 < 0;
             }
             else {
-              bVar9 = (&DAT_008087ea)[((uint)param_1 & 0xff) * 0x51] !=
-                      (&DAT_008087ea)[(param_2 & 0xff) * 0x51];
+              bVar9 = g_bulkInitializedRecords_008087C7[(uint)param_1 & 0xff].field_0023 !=
+                      g_bulkInitializedRecords_008087C7[param_2 & 0xff].field_0023;
             }
             if (!bVar9) {
               if (DAT_00808a8f == '\0') {
@@ -979,8 +986,8 @@ LAB_0066a3f2:
                 bVar9 = iVar6 < 0;
               }
               else {
-                bVar9 = (&DAT_008087ea)[(param_2 & 0xff) * 0x51] !=
-                        (&DAT_008087ea)[((uint)param_1 & 0xff) * 0x51];
+                bVar9 = g_bulkInitializedRecords_008087C7[param_2 & 0xff].field_0023 !=
+                        g_bulkInitializedRecords_008087C7[(uint)param_1 & 0xff].field_0023;
               }
               if (!bVar9) goto LAB_0066a419;
             }
@@ -990,10 +997,10 @@ LAB_0066a3f2:
             param_3 = param_3 + 1;
           }
 LAB_0066a419:
-          pcVar3 = pcVar3 + 0x51;
+          pbVar3 = pbVar3 + 0x51;
           /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
           param_2 = param_2 + 1;
-          if (0x808a70 < (int)pcVar3) {
+          if (0x808a70 < (int)pbVar3) {
             return local_8;
           }
         } while( true );

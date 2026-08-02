@@ -11,7 +11,7 @@ void FUN_00751c40(undefined4 param_1,uint param_2,int param_3,uint *param_4,int 
   local_2a = (undefined2)param_3;
   local_18 = param_5;
   local_28 = 0;
-  if ((((0xf < param_3) && (param_5 == 3)) && (local_28 = param_5, param_4 == (uint *)0x0)) &&
+  if ((((0xf < param_3) && (param_5 == 3)) && (local_28 = param_5, param_4 == nullptr)) &&
      (param_3 == 0x10)) {
     local_10[0] = 0xf800;
     local_10[1] = 0x7e0;

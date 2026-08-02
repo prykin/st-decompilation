@@ -97,7 +97,7 @@ int __thiscall SIDTy::GetMessage(SIDTy *this,STMessage *message)
         this_00->field_002D = 0x32;
         FUN_006e6080(this_00,2,uVar16,(undefined4 *)&this_00->field_0x1d);
         if ((int)this_00->field_1CD0->elementSize < 1) {
-          pcVar13 = (char *)0x0;
+          pcVar13 = nullptr;
         }
         else {
           pcVar13 = *(char **)this_00->field_1CD0->growCapacity;
@@ -121,18 +121,18 @@ int __thiscall SIDTy::GetMessage(SIDTy *this,STMessage *message)
           if (this_00->field_1A5F == '\0') {
             local_8 = (uint *)0xffffffff;
             if ((int)this_00->field_1CD0->elementSize < 1) {
-              pcVar13 = (char *)0x0;
+              pcVar13 = nullptr;
             }
             else {
               pcVar13 = *(char **)this_00->field_1CD0->growCapacity;
             }
             Library::MSVCRT::_strncpy((char *)&DAT_00807ddd,pcVar13,0x3f);
-            puVar18 = (uint *)0x0;
+            puVar18 = nullptr;
             local_c = this_00->field_1CCC->elementSize;
             puVar15 = local_8;
             if (0 < (int)local_c) {
               if ((int)local_c < 1) {
-                pbVar19 = (byte *)0x0;
+                pbVar19 = nullptr;
                 goto LAB_005d979c;
               }
               do {
@@ -224,7 +224,7 @@ LAB_005d97ca:
               }
               puVar15 = puVar15 + 1;
               local_8 = (uint *)((int)local_8 - 1);
-            } while (local_8 != (uint *)0x0);
+            } while (local_8 != nullptr);
             PaintExplanation(this_00);
           }
         }
@@ -248,7 +248,7 @@ LAB_005d97ca:
     }
     puVar6 = this_00->field_1CC8;
     local_8 = *(uint **)(puVar6 + 10);
-    if (local_8 == (uint *)0x0) {
+    if (local_8 == nullptr) {
       local_8 = (uint *)(((uint)puVar6[7] * *(int *)(puVar6 + 2) + 0x1f >> 3 & 0x1ffffffc) *
                         *(int *)(puVar6 + 4));
     }
@@ -308,7 +308,7 @@ LAB_005d97ca:
           pcVar13 = *(char **)(this_00->field_1CCC->growCapacity + (message->arg0).i32 * 4);
         }
         else {
-          pcVar13 = (char *)0x0;
+          pcVar13 = nullptr;
         }
         Library::MSVCRT::_strncpy((char *)&DAT_00807ddd,pcVar13,0x3f);
         if ((message->arg0).i32 < (int)this_00->field_1CCC->elementSize) {
@@ -317,7 +317,7 @@ LAB_005d97ca:
         }
         else {
           pDVar23 = this_00->field_1CD0;
-          pcVar13 = (char *)0x0;
+          pcVar13 = nullptr;
         }
       }
       Library::DKW::TBL::FUN_006b6020(&pDVar23->flags,0,pcVar13);
@@ -334,7 +334,7 @@ LAB_005d97ca:
           local_8 = *(uint **)(this_00->field_1CCC->growCapacity + uVar16 * 4);
         }
         else {
-          local_8 = (uint *)0x0;
+          local_8 = nullptr;
         }
         FUN_006b4170((AnonShape_006B5B10_E0D06CF1 *)this_00->field_1CB8,0,
                      (message->arg1).words.low + 3,(message->arg1).words.high + 0x15,0x142,0xe,0xff);
@@ -353,7 +353,7 @@ LAB_005d97ca:
           *(undefined1 *)puVar14 = 0xff;
           puVar14 = (undefined4 *)((int)puVar14 + 1);
         }
-        if (((message->arg0).words.high == 1) && (local_8 != (uint *)0x0)) {
+        if (((message->arg0).words.high == 1) && (local_8 != nullptr)) {
           FUN_006b5ee0((AnonShape_006B5B10_E0D06CF1 *)this_00->field_1CB8,0,
                        (message->arg1).words.low + 3,(message->arg1).words.high + 0x15,0x142,0xe,
                        0x87,0xd);

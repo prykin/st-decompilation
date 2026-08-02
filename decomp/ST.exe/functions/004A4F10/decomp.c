@@ -42,103 +42,103 @@ undefined4 * __thiscall STGroupBoatC::SaveGrpBData(STGroupBoatC *this,int *param
     return local_18;
   }
   *param_1 = 0x321;
-  if (local_14->field_0059 != (int *)0x0) {
+  if (local_14->field_0059 != nullptr) {
     iVar3 = *(int *)local_14->field_0059 * 0x10;
     local_8 = iVar3 + 0xc;
     *param_1 = iVar3 + 0x32d;
   }
-  if (local_14->field_00EF != (DArrayTy *)0x0) {
+  if (local_14->field_00EF != nullptr) {
     local_c = (ushort *)FUN_006b0020(&local_14->field_00EF->flags,(int *)&local_8);
     FreeAndNull(&local_c);
     *param_1 = *param_1 + local_8;
   }
-  if (pSVar2->field_0103 != (DArrayTy *)0x0) {
+  if (pSVar2->field_0103 != nullptr) {
     local_c = (ushort *)FUN_006b0020(&pSVar2->field_0103->flags,(int *)&local_8);
     FreeAndNull(&local_c);
     *param_1 = *param_1 + local_8;
   }
-  if (pSVar2->field_010F != (DArrayTy *)0x0) {
+  if (pSVar2->field_010F != nullptr) {
     local_c = (ushort *)FUN_006b0020(&pSVar2->field_010F->flags,(int *)&local_8);
     FreeAndNull(&local_c);
     *param_1 = *param_1 + local_8;
   }
-  if (pSVar2->field_0127 != (DArrayTy *)0x0) {
+  if (pSVar2->field_0127 != nullptr) {
     local_c = (ushort *)FUN_006b0020(&pSVar2->field_0127->flags,(int *)&local_8);
     FreeAndNull(&local_c);
     *param_1 = *param_1 + local_8;
   }
-  if (pSVar2->field_0160 != (DArrayTy *)0x0) {
+  if (pSVar2->field_0160 != nullptr) {
     local_c = (ushort *)FUN_006b0020(&pSVar2->field_0160->flags,(int *)&local_8);
     FreeAndNull(&local_c);
     *param_1 = *param_1 + local_8;
   }
-  if (pSVar2->field_0168 != (DArrayTy *)0x0) {
+  if (pSVar2->field_0168 != nullptr) {
     local_c = (ushort *)FUN_006b0020(&pSVar2->field_0168->flags,(int *)&local_8);
     FreeAndNull(&local_c);
     *param_1 = *param_1 + local_8;
   }
-  if (pSVar2->field_01CA != (DArrayTy *)0x0) {
+  if (pSVar2->field_01CA != nullptr) {
     local_c = (ushort *)FUN_006b0020(&pSVar2->field_01CA->flags,(int *)&local_8);
     FreeAndNull(&local_c);
     *param_1 = *param_1 + local_8;
   }
-  if (pSVar2->field_01CE != (DArrayTy *)0x0) {
+  if (pSVar2->field_01CE != nullptr) {
     local_c = (ushort *)FUN_006b0020(&pSVar2->field_01CE->flags,(int *)&local_8);
     FreeAndNull(&local_c);
     *param_1 = *param_1 + local_8;
   }
-  if (*(uint **)&pSVar2->field_0x1d2 != (uint *)0x0) {
+  if (*(uint **)&pSVar2->field_0x1d2 != nullptr) {
     local_c = (ushort *)FUN_006b0020(*(uint **)&pSVar2->field_0x1d2,(int *)&local_8);
     FreeAndNull(&local_c);
     *param_1 = *param_1 + local_8;
   }
-  if (pSVar2->field_01D6 != (DArrayTy *)0x0) {
+  if (pSVar2->field_01D6 != nullptr) {
     local_c = (ushort *)FUN_006b0020(&pSVar2->field_01D6->flags,(int *)&local_8);
     FreeAndNull(&local_c);
     *param_1 = *param_1 + local_8;
   }
-  if (pSVar2->field_01DA != (DArrayTy *)0x0) {
+  if (pSVar2->field_01DA != nullptr) {
     local_c = (ushort *)FUN_006b0020(&pSVar2->field_01DA->flags,(int *)&local_8);
     FreeAndNull(&local_c);
     *param_1 = *param_1 + local_8;
   }
-  if ((uint *)pSVar2->field_01DE != (uint *)0x0) {
+  if ((uint *)pSVar2->field_01DE != nullptr) {
     local_c = (ushort *)FUN_006b0020((uint *)pSVar2->field_01DE,(int *)&local_8);
     FreeAndNull(&local_c);
     *param_1 = *param_1 + local_8;
   }
-  if (pSVar2->field_020E != (DArrayTy *)0x0) {
+  if (pSVar2->field_020E != nullptr) {
     local_c = (ushort *)FUN_006b0020(&pSVar2->field_020E->flags,(int *)&local_8);
     FreeAndNull(&local_c);
     *param_1 = *param_1 + local_8;
   }
   *param_1 = *param_1 + pSVar2->field_021A * 8;
-  if (pSVar2->field_0226 != (DArrayTy *)0x0) {
+  if (pSVar2->field_0226 != nullptr) {
     local_c = (ushort *)FUN_006b0020(&pSVar2->field_0226->flags,(int *)&local_8);
     FreeAndNull(&local_c);
     *param_1 = *param_1 + local_8;
   }
-  if (pSVar2->field_022A != (DArrayTy *)0x0) {
+  if (pSVar2->field_022A != nullptr) {
     local_c = (ushort *)FUN_006b0020(&pSVar2->field_022A->flags,(int *)&local_8);
     FreeAndNull(&local_c);
     *param_1 = *param_1 + local_8;
   }
-  if (pSVar2->field_022E != (DArrayTy *)0x0) {
+  if (pSVar2->field_022E != nullptr) {
     local_c = (ushort *)FUN_006b0020(&pSVar2->field_022E->flags,(int *)&local_8);
     FreeAndNull(&local_c);
     *param_1 = *param_1 + local_8;
   }
-  if (pSVar2->field_024E != (DArrayTy *)0x0) {
+  if (pSVar2->field_024E != nullptr) {
     local_c = (ushort *)FUN_006b0020(&pSVar2->field_024E->flags,(int *)&local_8);
     FreeAndNull(&local_c);
     *param_1 = *param_1 + local_8;
   }
-  if (pSVar2->field_0266 != (DArrayTy *)0x0) {
+  if (pSVar2->field_0266 != nullptr) {
     local_c = (ushort *)FUN_006b0020(&pSVar2->field_0266->flags,(int *)&local_8);
     FreeAndNull(&local_c);
     *param_1 = *param_1 + local_8;
   }
-  if (*(uint **)&pSVar2->field_0x29f != (uint *)0x0) {
+  if (*(uint **)&pSVar2->field_0x29f != nullptr) {
     local_c = (ushort *)FUN_006b0020(*(uint **)&pSVar2->field_0x29f,(int *)&local_8);
     FreeAndNull(&local_c);
     *param_1 = *param_1 + local_8;
@@ -300,7 +300,7 @@ undefined4 * __thiscall STGroupBoatC::SaveGrpBData(STGroupBoatC *this,int *param
   *(undefined2 *)((int)puVar4 + 0x31b) = local_14->field_030C;
   *(undefined4 *)((int)puVar4 + 0x31d) = local_14->field_030E;
   piVar8 = local_14->field_0059;
-  if (piVar8 == (int *)0x0) {
+  if (piVar8 == nullptr) {
     local_8 = 0;
     puVar4[7] = 0xffffffff;
     puVar4[8] = 0;
@@ -323,7 +323,7 @@ undefined4 * __thiscall STGroupBoatC::SaveGrpBData(STGroupBoatC *this,int *param
   }
   local_10 = local_8 + 0x321;
   local_18 = puVar4;
-  if (local_14->field_00EF == (DArrayTy *)0x0) {
+  if (local_14->field_00EF == nullptr) {
     local_8 = 0;
     *(undefined4 *)((int)puVar4 + 0xb2) = 0xffffffff;
     *(undefined4 *)((int)puVar4 + 0xb6) = 0;
@@ -347,7 +347,7 @@ undefined4 * __thiscall STGroupBoatC::SaveGrpBData(STGroupBoatC *this,int *param
     FreeAndNull(&local_c);
   }
   local_10 = local_10 + local_8;
-  if (local_14->field_0103 == (DArrayTy *)0x0) {
+  if (local_14->field_0103 == nullptr) {
     local_8 = 0;
     *(undefined4 *)((int)puVar4 + 0xca) = 0xffffffff;
     *(undefined4 *)((int)puVar4 + 0xce) = 0;
@@ -371,7 +371,7 @@ undefined4 * __thiscall STGroupBoatC::SaveGrpBData(STGroupBoatC *this,int *param
     FreeAndNull(&local_c);
   }
   local_10 = local_10 + local_8;
-  if (local_14->field_010F == (DArrayTy *)0x0) {
+  if (local_14->field_010F == nullptr) {
     local_8 = 0;
     *(undefined4 *)((int)puVar4 + 0xda) = 0xffffffff;
     *(undefined4 *)((int)puVar4 + 0xde) = 0;
@@ -395,7 +395,7 @@ undefined4 * __thiscall STGroupBoatC::SaveGrpBData(STGroupBoatC *this,int *param
     FreeAndNull(&local_c);
   }
   local_10 = local_10 + local_8;
-  if (local_14->field_0127 == (DArrayTy *)0x0) {
+  if (local_14->field_0127 == nullptr) {
     local_8 = 0;
     *(undefined4 *)((int)puVar4 + 0xf6) = 0xffffffff;
     *(undefined4 *)((int)puVar4 + 0xfa) = 0;
@@ -419,7 +419,7 @@ undefined4 * __thiscall STGroupBoatC::SaveGrpBData(STGroupBoatC *this,int *param
     FreeAndNull(&local_c);
   }
   local_10 = local_10 + local_8;
-  if (local_14->field_0160 == (DArrayTy *)0x0) {
+  if (local_14->field_0160 == nullptr) {
     local_8 = 0;
     *(undefined4 *)((int)puVar4 + 0x133) = 0xffffffff;
     *(undefined4 *)((int)puVar4 + 0x137) = 0;
@@ -443,7 +443,7 @@ undefined4 * __thiscall STGroupBoatC::SaveGrpBData(STGroupBoatC *this,int *param
     FreeAndNull(&local_c);
   }
   local_10 = local_10 + local_8;
-  if (local_14->field_0168 == (DArrayTy *)0x0) {
+  if (local_14->field_0168 == nullptr) {
     local_8 = 0;
     *(undefined4 *)((int)puVar4 + 0x13f) = 0xffffffff;
     *(undefined4 *)((int)puVar4 + 0x143) = 0;
@@ -467,7 +467,7 @@ undefined4 * __thiscall STGroupBoatC::SaveGrpBData(STGroupBoatC *this,int *param
     FreeAndNull(&local_c);
   }
   local_10 = local_10 + local_8;
-  if (local_14->field_01CA == (DArrayTy *)0x0) {
+  if (local_14->field_01CA == nullptr) {
     local_8 = 0;
     *(undefined4 *)((int)puVar4 + 0x1a5) = 0xffffffff;
     *(undefined4 *)((int)puVar4 + 0x1a9) = 0;
@@ -491,7 +491,7 @@ undefined4 * __thiscall STGroupBoatC::SaveGrpBData(STGroupBoatC *this,int *param
     FreeAndNull(&local_c);
   }
   local_10 = local_10 + local_8;
-  if (local_14->field_01CE == (DArrayTy *)0x0) {
+  if (local_14->field_01CE == nullptr) {
     local_8 = 0;
     *(undefined4 *)((int)puVar4 + 0x1ad) = 0xffffffff;
     *(undefined4 *)((int)puVar4 + 0x1b1) = 0;
@@ -515,7 +515,7 @@ undefined4 * __thiscall STGroupBoatC::SaveGrpBData(STGroupBoatC *this,int *param
     FreeAndNull(&local_c);
   }
   local_10 = local_10 + local_8;
-  if (*(uint **)&local_14->field_0x1d2 == (uint *)0x0) {
+  if (*(uint **)&local_14->field_0x1d2 == nullptr) {
     local_8 = 0;
     *(undefined4 *)((int)puVar4 + 0x1b5) = 0xffffffff;
     *(undefined4 *)((int)puVar4 + 0x1b9) = 0;
@@ -539,7 +539,7 @@ undefined4 * __thiscall STGroupBoatC::SaveGrpBData(STGroupBoatC *this,int *param
     FreeAndNull(&local_c);
   }
   local_10 = local_10 + local_8;
-  if (local_14->field_01D6 == (DArrayTy *)0x0) {
+  if (local_14->field_01D6 == nullptr) {
     local_8 = 0;
     *(undefined4 *)((int)puVar4 + 0x1bd) = 0xffffffff;
     *(undefined4 *)((int)puVar4 + 0x1c1) = 0;
@@ -563,7 +563,7 @@ undefined4 * __thiscall STGroupBoatC::SaveGrpBData(STGroupBoatC *this,int *param
     FreeAndNull(&local_c);
   }
   local_10 = local_10 + local_8;
-  if (local_14->field_01DA == (DArrayTy *)0x0) {
+  if (local_14->field_01DA == nullptr) {
     local_8 = 0;
     *(undefined4 *)((int)puVar4 + 0x1c5) = 0xffffffff;
     *(undefined4 *)((int)puVar4 + 0x1c9) = 0;
@@ -587,7 +587,7 @@ undefined4 * __thiscall STGroupBoatC::SaveGrpBData(STGroupBoatC *this,int *param
     FreeAndNull(&local_c);
   }
   local_10 = local_10 + local_8;
-  if ((uint *)local_14->field_01DE == (uint *)0x0) {
+  if ((uint *)local_14->field_01DE == nullptr) {
     local_8 = 0;
     *(undefined4 *)((int)puVar4 + 0x1cd) = 0xffffffff;
     *(undefined4 *)((int)puVar4 + 0x1d1) = 0;
@@ -611,7 +611,7 @@ undefined4 * __thiscall STGroupBoatC::SaveGrpBData(STGroupBoatC *this,int *param
     FreeAndNull(&local_c);
   }
   local_10 = local_10 + local_8;
-  if (local_14->field_020E == (DArrayTy *)0x0) {
+  if (local_14->field_020E == nullptr) {
     local_8 = 0;
     *(undefined4 *)((int)puVar4 + 0x1fd) = 0xffffffff;
     *(undefined4 *)((int)puVar4 + 0x201) = 0;
@@ -636,7 +636,7 @@ undefined4 * __thiscall STGroupBoatC::SaveGrpBData(STGroupBoatC *this,int *param
   }
   local_10 = local_10 + local_8;
   local_c = local_14->field_021E;
-  if (local_c == (ushort *)0x0) {
+  if (local_c == nullptr) {
     local_8 = 0;
     *(undefined4 *)((int)puVar4 + 0x211) = 0xffffffff;
     *(undefined4 *)((int)puVar4 + 0x215) = 0;
@@ -659,7 +659,7 @@ undefined4 * __thiscall STGroupBoatC::SaveGrpBData(STGroupBoatC *this,int *param
     *(uint *)((int)puVar4 + 0x215) = local_8;
   }
   local_10 = local_10 + local_8;
-  if (local_14->field_0226 == (DArrayTy *)0x0) {
+  if (local_14->field_0226 == nullptr) {
     local_8 = 0;
     *(undefined4 *)((int)puVar4 + 0x21d) = 0xffffffff;
     *(undefined4 *)((int)puVar4 + 0x221) = 0;
@@ -683,7 +683,7 @@ undefined4 * __thiscall STGroupBoatC::SaveGrpBData(STGroupBoatC *this,int *param
     FreeAndNull(&local_c);
   }
   local_10 = local_10 + local_8;
-  if (local_14->field_022A == (DArrayTy *)0x0) {
+  if (local_14->field_022A == nullptr) {
     local_8 = 0;
     *(undefined4 *)((int)puVar4 + 0x225) = 0xffffffff;
     *(undefined4 *)((int)puVar4 + 0x229) = 0;
@@ -707,7 +707,7 @@ undefined4 * __thiscall STGroupBoatC::SaveGrpBData(STGroupBoatC *this,int *param
     FreeAndNull(&local_c);
   }
   local_10 = local_10 + local_8;
-  if (local_14->field_022E == (DArrayTy *)0x0) {
+  if (local_14->field_022E == nullptr) {
     local_8 = 0;
     *(undefined4 *)((int)puVar4 + 0x22d) = 0xffffffff;
     *(undefined4 *)((int)puVar4 + 0x231) = 0;
@@ -731,7 +731,7 @@ undefined4 * __thiscall STGroupBoatC::SaveGrpBData(STGroupBoatC *this,int *param
     FreeAndNull(&local_c);
   }
   local_10 = local_10 + local_8;
-  if (local_14->field_024E == (DArrayTy *)0x0) {
+  if (local_14->field_024E == nullptr) {
     local_8 = 0;
     *(undefined4 *)((int)puVar4 + 0x251) = 0xffffffff;
     *(undefined4 *)((int)puVar4 + 0x255) = 0;
@@ -755,7 +755,7 @@ undefined4 * __thiscall STGroupBoatC::SaveGrpBData(STGroupBoatC *this,int *param
     FreeAndNull(&local_c);
   }
   local_10 = local_10 + local_8;
-  if (local_14->field_0266 == (DArrayTy *)0x0) {
+  if (local_14->field_0266 == nullptr) {
     local_8 = 0;
     *(undefined4 *)((int)puVar4 + 0x26d) = 0xffffffff;
     *(undefined4 *)((int)puVar4 + 0x271) = 0;
@@ -779,7 +779,7 @@ undefined4 * __thiscall STGroupBoatC::SaveGrpBData(STGroupBoatC *this,int *param
     FreeAndNull(&local_c);
   }
   local_10 = local_10 + local_8;
-  if (*(uint **)&local_14->field_0x29f != (uint *)0x0) {
+  if (*(uint **)&local_14->field_0x29f != nullptr) {
     local_c = (ushort *)FUN_006b0020(*(uint **)&local_14->field_0x29f,(int *)&local_8);
     puVar9 = local_c;
     puVar6 = (byte *)(local_10 + (int)puVar4);

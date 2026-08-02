@@ -70,13 +70,13 @@ void __thiscall HelpPanelTy::InitHelpPanel(HelpPanelTy *this)
     return;
   }
   g_helpPanel_00801690 = local_10;
-  pDVar5 = Library::DKW::TBL::DArrayCreate((DArrayTy *)0x0,300,0x14,0x32);
+  pDVar5 = Library::DKW::TBL::DArrayCreate(nullptr,300,0x14,0x32);
   this_00->field_01B3 = (AnonPointee_HelpPanelTy_01B3 *)pDVar5;
-  pDVar5 = Library::DKW::TBL::DArrayCreate((DArrayTy *)0x0,200,0x14,0x32);
+  pDVar5 = Library::DKW::TBL::DArrayCreate(nullptr,200,0x14,0x32);
   this_00->field_01BB = pDVar5;
-  pDVar5 = Library::DKW::TBL::DArrayCreate((DArrayTy *)0x0,100,9,0x32);
+  pDVar5 = Library::DKW::TBL::DArrayCreate(nullptr,100,9,0x32);
   this_00->field_01CB = pDVar5;
-  pDVar5 = Library::DKW::TBL::DArrayCreate((DArrayTy *)0x0,0x14,0x19,0x14);
+  pDVar5 = Library::DKW::TBL::DArrayCreate(nullptr,0x14,0x19,0x14);
   this_00->field_01D7 = pDVar5;
   this_00->field_0253 = 0;
   this_00->field_0252 = 0;
@@ -107,7 +107,7 @@ void __thiscall HelpPanelTy::InitHelpPanel(HelpPanelTy *this)
   }
   local_8 = 0;
   if (*(int *)sizeHelp_exref != 0) {
-    local_c = (undefined4 *)0x0;
+    local_c = nullptr;
     do {
       puVar14 = (undefined4 *)((int)local_c + this_00->field_01C7);
       if (*(char *)(puVar14 + 2) != '\0') {
@@ -117,7 +117,7 @@ void __thiscall HelpPanelTy::InitHelpPanel(HelpPanelTy *this)
         local_14 = (char *)0x1;
         if (pDVar5->count != 0) {
           if (pDVar5->count == 0) {
-            pvVar6 = (void *)0x0;
+            pvVar6 = nullptr;
             goto LAB_00510f80;
           }
           do {
@@ -153,7 +153,7 @@ LAB_00510fa9:
   }
   do {
     pDVar5 = this_00->field_01BB;
-    local_c = (undefined4 *)0x0;
+    local_c = nullptr;
     uVar18 = pDVar5->count;
     uVar16 = 0;
     if (uVar18 != 1) {
@@ -163,7 +163,7 @@ LAB_00510fa9:
           pUVar19 = (UINT *)(pDVar5->elementSize * uVar16 + (int)pDVar5->data);
         }
         else {
-          pUVar19 = (UINT *)0x0;
+          pUVar19 = nullptr;
         }
         local_8 = uVar16 + 1;
         if (local_8 < uVar18) {
@@ -171,9 +171,9 @@ LAB_00510fa9:
           pUVar15 = (UINT *)(pDVar5->elementSize * local_8 + (int)pDVar5->data);
         }
         else {
-          pUVar15 = (UINT *)0x0;
+          pUVar15 = nullptr;
         }
-        if ((pUVar19 != (UINT *)0x0) && (pUVar15 != (UINT *)0x0)) {
+        if ((pUVar19 != nullptr) && (pUVar15 != nullptr)) {
           local_14 = LoadResourceString(*pUVar15,g_module_00807618);
           pcVar7 = LoadResourceString(*pUVar19,g_module_00807618);
           iVar4 = Library::MSVCRT::__strcmpi(pcVar7,local_14);
@@ -187,15 +187,15 @@ LAB_00510fa9:
         uVar16 = local_8;
       } while (local_8 < uVar18 - 1);
     }
-  } while (local_c != (undefined4 *)0x0);
+  } while (local_c != nullptr);
   iVar4 = 1;
-  piVar13 = (int *)0x0;
+  piVar13 = nullptr;
   pCVar8 = thunk_FUN_00571240("BKG_HELPW",0);
   puVar9 = cMf32::RecGet(g_cMf32_00806790,1,pCVar8,piVar13,iVar4);
   this_00->field_01DC = puVar9;
-  puVar9 = cMf32::RecGet(g_cMf32_00806790,1,"HLP_OBJ_BKG",(int *)0x0,1);
+  puVar9 = cMf32::RecGet(g_cMf32_00806790,1,"HLP_OBJ_BKG",nullptr,1);
   iVar4 = 1;
-  piVar13 = (int *)0x0;
+  piVar13 = nullptr;
   this_00->field_021C = puVar9;
   pCVar8 = thunk_FUN_00571240("BUT_HLPLINK",0);
   puVar9 = cMf32::RecGet(g_cMf32_00806790,1,pCVar8,piVar13,iVar4);
@@ -212,7 +212,7 @@ LAB_00510fa9:
   this_00->field_01E8 = pcVar10;
   pcVar10->field_0058 = 1;
   pcVar10->field_005C = 0;
-  puVar14 = (undefined4 *)0x0;
+  puVar14 = nullptr;
   iVar27 = 0;
   iVar4 = 1;
   bVar25 = 0;
@@ -222,35 +222,35 @@ LAB_00510fa9:
                      (DAT_00806794,CASE_B,pCVar8,uVar18,bVar25,iVar4,iVar27,puVar14);
   this_00->field_0220 = puVar9;
   puVar9 = Library::Ourlib::MFRLOAD::mfRLoad
-                     (DAT_00806794,CASE_B,"BKG_HLPTTREE",0xffffffff,0,1,0,(undefined4 *)0x0
+                     (DAT_00806794,CASE_B,"BKG_HLPTTREE",0xffffffff,0,1,0,nullptr
                      );
   this_00->field_0224 = puVar9;
   puVar9 = Library::Ourlib::MFRLOAD::mfRLoad
-                     (DAT_00806794,CASE_B,&DAT_007c20a0,0xffffffff,0,1,0,(undefined4 *)0x0);
+                     (DAT_00806794,CASE_B,&DAT_007c20a0,0xffffffff,0,1,0,nullptr);
   this_00->field_0230 = puVar9;
   puVar9 = Library::Ourlib::MFRLOAD::mfRLoad
-                     (DAT_00806794,CASE_B,&DAT_007c38c8,0xffffffff,0,1,0,(undefined4 *)0x0);
+                     (DAT_00806794,CASE_B,&DAT_007c38c8,0xffffffff,0,1,0,nullptr);
   this_00->field_0234 = puVar9;
   puVar9 = Library::Ourlib::MFRLOAD::mfRLoad
-                     (DAT_00806794,CASE_B,"HLP_UPG",0xffffffff,0,1,0,(undefined4 *)0x0);
+                     (DAT_00806794,CASE_B,"HLP_UPG",0xffffffff,0,1,0,nullptr);
   this_00->field_0228 = puVar9;
   puVar9 = Library::Ourlib::MFRLOAD::mfRLoad
-                     (DAT_00806794,CASE_B,"HLP_UPGD",0xffffffff,0,1,0,(undefined4 *)0x0);
+                     (DAT_00806794,CASE_B,"HLP_UPGD",0xffffffff,0,1,0,nullptr);
   this_00->field_022C = puVar9;
   puVar9 = Library::Ourlib::MFRLOAD::mfRLoad
-                     (DAT_00806794,CASE_B,&DAT_007c2048,0xffffffff,0,1,0,(undefined4 *)0x0);
+                     (DAT_00806794,CASE_B,&DAT_007c2048,0xffffffff,0,1,0,nullptr);
   this_00->field_0238 = puVar9;
   puVar9 = Library::Ourlib::MFRLOAD::mfRLoad
-                     (DAT_00806794,CASE_B,"HLP_FRAME",0xffffffff,0,1,0,(undefined4 *)0x0);
+                     (DAT_00806794,CASE_B,"HLP_FRAME",0xffffffff,0,1,0,nullptr);
   this_00->field_0248 = puVar9;
   puVar9 = Library::Ourlib::MFRLOAD::mfRLoad
-                     (DAT_00806794,CASE_B,"BOATS_R",0xffffffff,0,1,0,(undefined4 *)0x0);
+                     (DAT_00806794,CASE_B,"BOATS_R",0xffffffff,0,1,0,nullptr);
   this_00->field_023C = puVar9;
   puVar9 = Library::Ourlib::MFRLOAD::mfRLoad
-                     (DAT_00806794,CASE_B,&DAT_007c1910,0xffffffff,0,1,0,(undefined4 *)0x0);
+                     (DAT_00806794,CASE_B,&DAT_007c1910,0xffffffff,0,1,0,nullptr);
   this_00->field_0240 = puVar9;
   puVar9 = Library::Ourlib::MFRLOAD::mfRLoad
-                     (DAT_00806794,CASE_B,"INF_WEAP",0xffffffff,0,1,0,(undefined4 *)0x0);
+                     (DAT_00806794,CASE_B,"INF_WEAP",0xffffffff,0,1,0,nullptr);
   pcVar10 = this_00->field_01E4;
   this_00->field_0244 = puVar9;
   if (pcVar10->field_00A0 != 0) {
@@ -294,7 +294,7 @@ LAB_00510fa9:
   ccFntTy::WrStr(this_00->field_01E0,resourceString,iVar4,iVar27,uVar18);
   uVar29 = 0;
   uVar28 = 0;
-  pcVar7 = (char *)0x0;
+  pcVar7 = nullptr;
   uVar26 = 0;
   uVar24 = 0;
   sVar23 = 0;
@@ -319,7 +319,7 @@ LAB_00510fa9:
     uVar26 = 0;
     iVar20 = iVar4 + 0xc09f;
     uVar21 = 0;
-    pcVar7 = (char *)0x0;
+    pcVar7 = nullptr;
     uVar11 = 10000;
     uVar24 = 0;
     iVar22 = iVar4 + 0xc0af;

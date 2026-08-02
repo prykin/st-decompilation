@@ -20,7 +20,7 @@ undefined4 __thiscall STManRuinC::sub_00630AC0(STManRuinC *this,uint param_1)
   /* ST_PSEUDO[dynamic_array_indexing]: expected DArrayAt<T>(array, index) (runtime elementSize cannot be a static C array) */
   if ((array->count <= param_1) ||
      (psVar3 = (short *)((int)&array->data->field_0000 + array->elementSize * param_1),
-     psVar3 == (short *)0x0)) {
+     psVar3 == nullptr)) {
     return 0;
   }
   sVar2 = psVar3[3];

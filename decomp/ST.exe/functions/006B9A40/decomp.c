@@ -7,7 +7,7 @@ int FUN_006b9a40(int param_1,int *param_2)
 
   puVar1 = (undefined4 *)FUN_006bfb70(0x170);
   *param_2 = (int)puVar1;
-  if (puVar1 == (undefined4 *)0x0) {
+  if (puVar1 == nullptr) {
     return -2;
   }
   *puVar1 = 0x1e;

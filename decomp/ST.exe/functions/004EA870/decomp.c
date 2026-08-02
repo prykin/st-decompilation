@@ -19,7 +19,7 @@ undefined4 __fastcall FUN_004ea870(TLOBaseTy *param_1)
       array = (DArrayTy *)g_packedRecords_A62x8[(int)param_1->field_0024].field6_0x9;
       index = 0;
       if (array->count != 0) {
-        while (((DArrayGetElement(array,index,&local_8), local_8 == (TLOBaseTy *)0x0 ||
+        while (((DArrayGetElement(array,index,&local_8), local_8 == nullptr ||
                 (dVar2 = local_8->slot_2C(), dVar2 != 0x44)) ||
                (local_8->field_04D0 == CASE_0))) {
           index = index + 1;
@@ -30,7 +30,7 @@ undefined4 __fastcall FUN_004ea870(TLOBaseTy *param_1)
         }
         iVar1 = TLOBaseTy::sub_004C7860(param_1,3,0,1,1,1);
         if ((iVar1 != 0) && (iVar1 = thunk_FUN_004c7c20(param_1), iVar1 != 0)) {
-          TLOBaseTy::thunk_FUN_004c7cc0(param_1,3,0,1,0,0xffffffff,0,0xff,(char *)0x0);
+          TLOBaseTy::thunk_FUN_004c7cc0(param_1,3,0,1,0,0xffffffff,0,0xff,nullptr);
           param_1->field_04D0 = CASE_2;
           TLOBaseTy::RotateSpr(param_1,0);
         }

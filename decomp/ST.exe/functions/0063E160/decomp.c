@@ -27,16 +27,16 @@ undefined4 __thiscall STTmMineC::LoadImagSpr(STTmMineC *this,uint param_1,int pa
 
   pSVar1 = this->field_0336;
   local_14 = 0;
-  if (pSVar1 == (STTmMineC_field_0336DArray *)0x0) {
+  if (pSVar1 == nullptr) {
     return 0;
   }
   if (param_1 < pSVar1->count) {
     element_0336 = DArrayAt<STTmMineC_field_0336Element>(pSVar1, param_1);
   }
   else {
-    element_0336 = (STTmMineC_field_0336Element *)0x0;
+    element_0336 = nullptr;
   }
-  if (element_0336 != (STTmMineC_field_0336Element *)0x0) {
+  if (element_0336 != nullptr) {
     if ((param_2 != 0) && (-1 < element_0336->field_0038)) {
       return 0xffffffff;
     }
@@ -57,7 +57,7 @@ undefined4 __thiscall STTmMineC::LoadImagSpr(STTmMineC *this,uint param_1,int pa
     }
     puVar6 = Library::Ourlib::MFRLOAD::mfRLoad
                        (DAT_00806764,CASE_1D,(&PTR_s_blast_p_007d1f68)[*(int *)element_0336],0xffffffff
-                        ,0,1,0,(undefined4 *)0x0);
+                        ,0,1,0,nullptr);
     pSVar4 = local_10;
     uVar2 = *(uint *)(pcVar5 + 0x38);
     if ((int)uVar2 < 0) {

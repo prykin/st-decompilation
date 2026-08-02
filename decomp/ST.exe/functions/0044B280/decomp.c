@@ -30,8 +30,8 @@ STAllPlayersC::CalibrateTmp
   short local_8;
   short local_6;
 
-  local_10 = (DArrayTy *)0x0;
-  local_c = (DArrayTy *)0x0;
+  local_10 = nullptr;
+  local_c = nullptr;
   local_5c.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_5c;
   iVar2 = Library::MSVCRT::__setjmp3(local_5c.jumpBuffer,0);
@@ -47,7 +47,7 @@ STAllPlayersC::CalibrateTmp
     }
     return;
   }
-  if ((param_4 == (uint *)0x0) || (local_14 = param_4[3], local_14 == 0)) {
+  if ((param_4 == nullptr) || (local_14 = param_4[3], local_14 == 0)) {
     RaiseInternalException
               (-0x5001fff7,g_overwriteContext_007ED77C,"E:\\__titans\\wlad\\to_allpl.cpp",
                0x3075);
@@ -76,19 +76,19 @@ STAllPlayersC::CalibrateTmp
               (-0x5001fff7,g_overwriteContext_007ED77C,"E:\\__titans\\wlad\\to_allpl.cpp",
                0x307c);
   }
-  if ((param_5 != (int *)0x0) && (*param_5 == 0)) {
-    pDVar3 = Library::DKW::TBL::DArrayCreate((DArrayTy *)0x0,0,2,1);
+  if ((param_5 != nullptr) && (*param_5 == 0)) {
+    pDVar3 = Library::DKW::TBL::DArrayCreate(nullptr,0,2,1);
     *param_5 = (int)pDVar3;
   }
-  if ((param_6 != (int *)0x0) && (*param_6 == 0)) {
-    pDVar3 = Library::DKW::TBL::DArrayCreate((DArrayTy *)0x0,0,2,1);
+  if ((param_6 != nullptr) && (*param_6 == 0)) {
+    pDVar3 = Library::DKW::TBL::DArrayCreate(nullptr,0,2,1);
     *param_6 = (int)pDVar3;
   }
-  if ((param_7 != (int *)0x0) && (*param_7 == 0)) {
-    pDVar3 = Library::DKW::TBL::DArrayCreate((DArrayTy *)0x0,0,2,1);
+  if ((param_7 != nullptr) && (*param_7 == 0)) {
+    pDVar3 = Library::DKW::TBL::DArrayCreate(nullptr,0,2,1);
     *param_7 = (int)pDVar3;
   }
-  if (((param_5 == (int *)0x0) && (param_6 == (int *)0x0)) && (param_7 == (int *)0x0)) {
+  if (((param_5 == nullptr) && (param_6 == nullptr)) && (param_7 == nullptr)) {
     RaiseInternalException
               (-0x5001fff7,g_overwriteContext_007ED77C,"E:\\__titans\\wlad\\to_allpl.cpp",
                0x3080);
@@ -103,7 +103,7 @@ STAllPlayersC::CalibrateTmp
         do {
           DArrayGetElement(local_c,index,&local_6);
           if (local_8 == local_6) {
-            if (param_6 != (int *)0x0) {
+            if (param_6 != nullptr) {
               Library::DKW::TBL::DArrayAppend((DArrayTy *)*param_6,&local_6);
             }
             DArrayRemoveAt(local_10,index_00);
@@ -119,10 +119,10 @@ STAllPlayersC::CalibrateTmp
       index_00 = index_00 + 1;
     } while ((int)index_00 < (int)dVar5);
   }
-  if (param_5 != (int *)0x0) {
+  if (param_5 != nullptr) {
     Library::DKW::TBL::FUN_006afe40(param_5,&local_10->flags);
   }
-  if (param_7 != (int *)0x0) {
+  if (param_7 != nullptr) {
     Library::DKW::TBL::FUN_006afe40(param_7,&local_c->flags);
   }
   DArrayDestroy(local_10);

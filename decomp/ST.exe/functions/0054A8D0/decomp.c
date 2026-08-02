@@ -11,11 +11,11 @@
 void __thiscall CursorClassTy::sub_0054A8D0(CursorClassTy *this)
 
 {
-  if ((g_tLOBldMark_007FB2AC != (TLOBldMark *)0x0) && (g_tLOBldMark_007FB2AC->field_0018 == 0)) {
+  if ((g_tLOBldMark_007FB2AC != nullptr) && (g_tLOBldMark_007FB2AC->field_0018 == 0)) {
     TLOBldMark::sub_004C63F0(g_tLOBldMark_007FB2AC);
   }
   if ((this->field_00DE == CASE_5) && (-1 < this->field_010B)) {
-    if (g_sT3DSMAPContext_00807598 != (ST3DSMAPContext *)0x0) {
+    if (g_sT3DSMAPContext_00807598 != nullptr) {
       Library::Ourlib::ST3DSMAP::SprClose(g_sT3DSMAPContext_00807598,this->field_010B);
     }
     this->field_010B = -1;

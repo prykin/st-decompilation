@@ -36,8 +36,8 @@ uint * __thiscall STGroupBoatC::GrpUnLoadObj(STGroupBoatC *this,int param_1)
 
   /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
   local_14 = *(dword *)(this->field_0029 + 0xc);
-  local_10 = (DArrayTy *)0x0;
-  local_c = (DArrayTy *)0x0;
+  local_10 = nullptr;
+  local_c = nullptr;
   local_24 = 0;
   local_1c = (DArrayTy *)0x2;
   local_78.previous = g_currentExceptionFrame;
@@ -79,7 +79,7 @@ uint * __thiscall STGroupBoatC::GrpUnLoadObj(STGroupBoatC *this,int param_1)
         pSVar4 = (STBoatC *)
                  STAllPlayersC::GetObjPtr
                            (g_allPlayers_007FA174,pSVar2->field_0024,local_8._0_2_,CASE_1);
-        if (pSVar4 == (STBoatC *)0x0) {
+        if (pSVar4 == nullptr) {
           RaiseInternalException
                     (-0x5001fffc,g_overwriteContext_007ED77C,"E:\\__titans\\wlad\\to_grpb.cpp"
                      ,0xabe);
@@ -93,8 +93,8 @@ uint * __thiscall STGroupBoatC::GrpUnLoadObj(STGroupBoatC *this,int param_1)
             if (((*(short *)&pSVar2->field_0x2ad != -1) || (*(short *)&pSVar2->field_0x2af != -1))
                || (pSVar2->field_02B1 != -1)) {
               pDVar6 = local_10;
-              if (local_10 == (DArrayTy *)0x0) {
-                pDVar6 = Library::DKW::TBL::DArrayCreate((DArrayTy *)0x0,1,2,1);
+              if (local_10 == nullptr) {
+                pDVar6 = Library::DKW::TBL::DArrayCreate(nullptr,1,2,1);
                 local_10 = pDVar6;
               }
 LAB_0049e6f6:
@@ -109,8 +109,8 @@ LAB_0049e6f6:
             else if (((*(short *)&pSVar2->field_0x2ad != -1) ||
                      (*(short *)&pSVar2->field_0x2af != -1)) || (pSVar2->field_02B1 != -1)) {
               pDVar6 = local_c;
-              if (local_c == (DArrayTy *)0x0) {
-                pDVar6 = Library::DKW::TBL::DArrayCreate((DArrayTy *)0x0,1,2,1);
+              if (local_c == nullptr) {
+                pDVar6 = Library::DKW::TBL::DArrayCreate(nullptr,1,2,1);
                 local_c = pDVar6;
               }
               goto LAB_0049e6f6;
@@ -123,9 +123,9 @@ LAB_0049e6f6:
   }
   array = local_c;
   pDVar6 = local_10;
-  if ((local_10 == (DArrayTy *)0x0) || (local_c == (DArrayTy *)0x0)) {
-    if (local_10 == (DArrayTy *)0x0) {
-      if (local_c != (DArrayTy *)0x0) {
+  if ((local_10 == nullptr) || (local_c == nullptr)) {
+    if (local_10 == nullptr) {
+      if (local_c != nullptr) {
         dVar5 = local_c->count;
         uVar10 = 0;
         local_14 = dVar5;
@@ -140,12 +140,12 @@ LAB_0049e6f6:
             uVar10 = uVar10 + 1;
           } while ((int)uVar10 < (int)dVar5);
         }
-        local_1c = (DArrayTy *)0x0;
+        local_1c = nullptr;
       }
       pDVar6 = local_10;
       array = local_c;
-      if (local_10 == (DArrayTy *)0x0) {
-        if (local_c == (DArrayTy *)0x0) {
+      if (local_10 == nullptr) {
+        if (local_c == nullptr) {
           local_1c = local_c;
         }
         goto LAB_0049e790;
@@ -160,9 +160,9 @@ LAB_0049e794:
               (g_allPlayers_007FA174,CONCAT31((int3)(local_14 >> 8),pSVar2->field_0024),
                &local_10->flags,&local_c->flags);
 LAB_0049e790:
-    if (pDVar6 != (DArrayTy *)0x0) goto LAB_0049e794;
+    if (pDVar6 != nullptr) goto LAB_0049e794;
   }
-  if (array != (DArrayTy *)0x0) {
+  if (array != nullptr) {
     DArrayDestroy(array);
   }
   RaiseInternalException
@@ -179,7 +179,7 @@ LAB_0049e7c1:
           pSVar4 = (STBoatC *)
                    STAllPlayersC::GetObjPtr
                              (g_allPlayers_007FA174,pSVar2->field_0024,local_8._0_2_,CASE_1);
-          if (pSVar4 == (STBoatC *)0x0) {
+          if (pSVar4 == nullptr) {
             RaiseInternalException
                       (-0x5001fffc,g_overwriteContext_007ED77C,
                        "E:\\__titans\\wlad\\to_grpb.cpp",0xaf1);
@@ -198,7 +198,7 @@ LAB_0049e7c1:
       } while ((int)uVar10 < (int)local_14);
     }
     if (local_24 == 0) {
-      local_1c = (DArrayTy *)0x0;
+      local_1c = nullptr;
     }
   }
   g_currentExceptionFrame = local_78.previous;

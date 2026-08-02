@@ -102,7 +102,7 @@ LAB_0052e184:
               resourceString = *(char **)(puVar2[5] + local_c + (int)puVar14);
             }
             else {
-              resourceString = (char *)0x0;
+              resourceString = nullptr;
             }
             local_EAX_1044 = FUN_00711110(this_00->field_0094,resourceString);
             if ((int)*(uint *)(this_00->field_0090 + 2) <= local_EAX_1044) {
@@ -123,7 +123,7 @@ LAB_0052e184:
     }
     break;
   case MESS_ID_CREATE:
-    pcVar5 = (ccFntTy *)thunk_FUN_0052cce0(DAT_0080679c,(undefined *)0x0,DAT_00807dd9);
+    pcVar5 = (ccFntTy *)thunk_FUN_0052cce0(DAT_0080679c,nullptr,DAT_00807dd9);
     this_00->field_0094 = pcVar5;
     pcVar5->field_007E = 1;
     *(undefined2 *)&pcVar5->field_0x9e = 0;
@@ -161,14 +161,14 @@ LAB_0052e184:
       uVar11 = uVar11 + 0x13;
       local_10 = local_10 - 1;
     } while (local_10 != 0);
-    pDVar8 = Library::DKW::TBL::SArrayCreate((DArrayTy *)0x0,10,10);
+    pDVar8 = Library::DKW::TBL::SArrayCreate(nullptr,10,10);
     this_00->field_0098 = &pDVar8->flags;
     DVar9 = STAppC::sub_006E51B0((STAppC *)&DAT_00807620);
     this_00->field_009D = DVar9;
     g_popUp_008016D8 = this_00;
     break;
   case MESS_SHARED_0003:
-    g_popUp_008016D8 = (PopUpTy *)0x0;
+    g_popUp_008016D8 = nullptr;
     puVar14 = local_18->field_0018;
     iVar4 = 0xf;
     do {
@@ -179,16 +179,16 @@ LAB_0052e184:
       puVar14 = puVar14 + 1;
       iVar4 = iVar4 + -1;
     } while (iVar4 != 0);
-    if (this_00->field_0090 != (ushort *)0x0) {
+    if (this_00->field_0090 != nullptr) {
       FreeAndNull(&this_00->field_0090);
     }
-    if (this_00->field_0094 != (ccFntTy *)0x0) {
+    if (this_00->field_0094 != nullptr) {
       ccFntTy::operator_delete((uint *)this_00->field_0094);
-      this_00->field_0094 = (ccFntTy *)0x0;
+      this_00->field_0094 = nullptr;
     }
-    if ((DArrayTy *)this_00->field_0098 != (DArrayTy *)0x0) {
+    if ((DArrayTy *)this_00->field_0098 != nullptr) {
       FUN_006b5570((DArrayTy *)this_00->field_0098);
-      this_00->field_0098 = (uint *)0x0;
+      this_00->field_0098 = nullptr;
     }
     break;
   case MESS_SHARED_0005:

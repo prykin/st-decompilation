@@ -42,11 +42,11 @@ STAllPlayersC::GetTOBJListFromDArr
                                ,"STAllPlayersC::GetTOBJListFromDArr");
     if (iVar6 == 0) {
       RaiseInternalException(iVar4,0,"E:\\__titans\\wlad\\to_allpl.cpp",0x204a);
-      return (uint *)0x0;
+      return nullptr;
     }
     STDebugBreak(); /* noreturn in standalone pseudocode */
   }
-  local_c = Library::DKW::TBL::DArrayCreate((DArrayTy *)0x0,0,2,1);
+  local_c = Library::DKW::TBL::DArrayCreate(nullptr,0,2,1);
   this_00 = local_14;
   iVar4 = 0;
   if (0 < local_10) {
@@ -56,7 +56,7 @@ STAllPlayersC::GetTOBJListFromDArr
       local_8 = CONCAT22((short)((uint)param_2->field_001C >> 0x10),uVar1);
       if (uVar1 != 0xffff) {
         this_01 = GetObjPtr(this_00,(char)param_1,uVar1,CASE_1);
-        if (this_01 == (STGameObjC *)0x0) {
+        if (this_01 == nullptr) {
           RaiseInternalException
                     (-0x5001fffc,g_overwriteContext_007ED77C,
                      "E:\\__titans\\wlad\\to_allpl.cpp",0x2040);

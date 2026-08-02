@@ -141,7 +141,7 @@ LAB_006f86ce:
               param_3 = param_3 + -1;
               pbVar5 = pbVar3;
               puVar8 = puVar9;
-            } while (param_3 != (byte *)0x0);
+            } while (param_3 != nullptr);
           }
         }
         else if (0 < (int)param_7) {

@@ -67,11 +67,11 @@ void __thiscall MReportTy::PaintMReport(MReportTy *this,char param_1)
   FUN_006b5f80((int *)g_ddxContext_008075A8,0,0,g_nWidth_00806730,DAT_00806734);
   this_00 = local_20;
   PutDDXClip(0,0,0,0,800,(byte *)0x3c,'\x01',(BITMAPINFO *)local_20->field_005D);
-  if ((this_00->field_0457 == (HoloTy *)0x0) && (param_1 == '\0')) {
+  if ((this_00->field_0457 == nullptr) && (param_1 == '\0')) {
     OutTGlProc((MReportTy *)g_dDXContext_0080759C,g_dDXContext_0080759C,0,0,0x1a,10,0x2e9,0x32,
                (int)this_00);
   }
-  if (this_00->field_0453 != (HoloTy *)0x0) {
+  if (this_00->field_0453 != nullptr) {
     g_currentExceptionFrame = local_64.previous;
     return;
   }
@@ -104,7 +104,7 @@ void __thiscall MReportTy::PaintMReport(MReportTy *this,char param_1)
     ccFntTy::WrStr(this_00->field_0083,puVar9,iVar5,iVar14,uVar12);
     local_18 = (AnonShape_006B5B10_E0D06CF1 *)
                ccFntTy::CreateSurf(this_00->field_0083,(int)this_00->field_0073,0,0,0,0x136,0x22,0);
-    if (local_18 != (AnonShape_006B5B10_E0D06CF1 *)0x0) {
+    if (local_18 != nullptr) {
       local_10 = local_10 & 0xffffff00;
       if (DAT_0080c83e != 0xffffffff) {
         do {
@@ -200,7 +200,7 @@ LAB_005bf156:
     local_c = (RecoveredRecord_MReportTy_005BD4B0 *)
               ccFntTy::CreateSurf(this_00->field_0083,(int)this_00->field_0073,0,0x2f,2,0x2b7,0x1e,0
                                  );
-    if (local_c != (RecoveredRecord_MReportTy_005BD4B0 *)0x0) {
+    if (local_c != nullptr) {
       local_11 = '\x01';
       /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
       DAT_0080f33a._0_1_ = 0;
@@ -441,7 +441,7 @@ LAB_005bf156:
       pcVar20 = (char *)&DAT_0080f33a;
       memmove(pcVar20, pcVar8, uVar12); /* compiler REP MOVS byte copy */
       uVar13 = 0;
-      for (puVar9 = Library::MSVCRT::FUN_0072e560(&DAT_0080f33a,'\n'); puVar9 != (uint *)0x0;
+      for (puVar9 = Library::MSVCRT::FUN_0072e560(&DAT_0080f33a,'\n'); puVar9 != nullptr;
           puVar9 = Library::MSVCRT::FUN_0072e560(puVar9,'\n')) {
         *(undefined1 *)puVar9 = 0x20;
       }
@@ -483,8 +483,8 @@ LAB_005bef47:
           bVar21 = iVar5 < 0;
         }
         else {
-          bVar21 = (&DAT_008087ea)[(uint)bVar3 * 0x51] != (&DAT_008087ea)[(uint)DAT_0080c846 * 0x51]
-          ;
+          bVar21 = g_bulkInitializedRecords_008087C7[bVar3].field_0023 !=
+                   g_bulkInitializedRecords_008087C7[DAT_0080c846].field_0023;
         }
         if (bVar21) goto LAB_005bef67;
       }

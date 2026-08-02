@@ -27,7 +27,7 @@ int __thiscall TLOFakeTy::GetMessage(TLOFakeTy *this,STMessage *message)
   STSprGameObjC *local_c;
   STSprGameObjC_field_0231State *local_8;
 
-  pSVar10 = (STSprGameObjC_field_0231State *)0x0;
+  pSVar10 = nullptr;
   local_50.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_50;
   local_c = (STSprGameObjC *)this;
@@ -50,7 +50,7 @@ int __thiscall TLOFakeTy::GetMessage(TLOFakeTy *this,STMessage *message)
     pSVar4->field_0020 = 0x3ea;
     *(undefined4 *)&pSVar4->field_0x28 = 2;
     local_8 = (message->arg0).ptr;
-    if (pSVar4 != (STSprGameObjC *)0x0) {
+    if (pSVar4 != nullptr) {
       pSVar10 = &pSVar4->field_0231;
     }
     pSVar8 = local_8;
@@ -96,7 +96,7 @@ int __thiscall TLOFakeTy::GetMessage(TLOFakeTy *this,STMessage *message)
     }
   }
   else if (SVar2 == MESS_SHARED_0003) {
-    DAT_00800bcc = (STSprGameObjC *)0x0;
+    DAT_00800bcc = nullptr;
     thunk_FUN_004ad310((STT3DSprC *)&pSVar4->field_01D5);
     if (*(int *)&pSVar4->field_0x24d != 0) {
       FreeAndNull((void **)&pSVar4->field_0x24d);
@@ -106,8 +106,8 @@ int __thiscall TLOFakeTy::GetMessage(TLOFakeTy *this,STMessage *message)
   }
   else if (SVar2 == MESS_SHARED_010F) {
     local_8 = Library::DKW::LIB::MemAlloc(*(int *)&pSVar4->field_0x245 * 0xc + 0x1c);
-    if (pSVar4 == (STSprGameObjC *)0x0) {
-      pSVar10 = (STSprGameObjC_field_0231State *)0x0;
+    if (pSVar4 == nullptr) {
+      pSVar10 = nullptr;
     }
     else {
       pSVar10 = &pSVar4->field_0231;

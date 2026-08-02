@@ -111,7 +111,7 @@ void __fastcall FUN_005c0230(MReportTy *param_1)
   local_24 = 0xb209;
   local_2c = local_4c;
   (*param_1->field_000C->vtable->CreateObject)
-            ((SystemClassTy *)param_1->field_000C,5,&param_1->field_009F,(int *)0x0,local_5c,0);
+            ((SystemClassTy *)param_1->field_000C,5,&param_1->field_009F,nullptr,local_5c,0);
   MReportTy::SetCtrl(param_1);
   return;
 }

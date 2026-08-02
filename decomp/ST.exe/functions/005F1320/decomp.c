@@ -12,11 +12,11 @@ STManBasisC * __cdecl CreateSTManBasis(void)
   STManBasisC *this;
 
   this = (STManBasisC *)FUN_006b04d0(0x48);
-  if (this != (STManBasisC *)0x0) {
+  if (this != nullptr) {
     g_manBasis_00811784 = STManBasisC::STManBasisC(this);
     return g_manBasis_00811784;
   }
-  g_manBasis_00811784 = (STManBasisC *)0x0;
-  return (STManBasisC *)0x0;
+  g_manBasis_00811784 = nullptr;
+  return nullptr;
 }
 

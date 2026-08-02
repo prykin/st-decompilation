@@ -9,7 +9,7 @@ void __thiscall STBoatC::sub_00492420(STBoatC *this)
   int iVar1;
   STBoatC *local_8;
 
-  if ((this->field_07C6 == 1) && (this->field_07CA == (AnonShape_005EFAE0_B406B78B *)0x0)) {
+  if ((this->field_07C6 == 1) && (this->field_07CA == nullptr)) {
     this->field_07C6 = 0;
     local_8 = this;
     iVar1 = STPlaySystemC::sub_006E62D0(g_playSystem_00802A38,this->field_058E,(int *)&local_8);

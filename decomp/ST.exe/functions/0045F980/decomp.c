@@ -66,7 +66,7 @@ undefined4 __fastcall FUN_0045f980(STBoatC *param_1)
     if (iVar2 == 0) {
       sub_004167A0(param_1);
       this = thunk_FUN_0042b760(*(char *)&param_1->field_0024,param_1->field_0030);
-      if (this != (STGroupBoatC *)0x0) {
+      if (this != nullptr) {
         iVar2 = thunk_FUN_0040d540((AnonShape_0040D540_1BB7A4CF *)this,
                                    (uint)(ushort)param_1->field_0032);
         switch(iVar2) {

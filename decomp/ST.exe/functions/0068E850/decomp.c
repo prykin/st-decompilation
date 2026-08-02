@@ -20,7 +20,7 @@ int __thiscall FUN_0068e850(void *this,int param_1)
         piVar4 = (int *)(*(int *)(iVar1 + 8) * uVar5 + *(int *)(iVar1 + 0x1c));
       }
       else {
-        piVar4 = (int *)0x0;
+        piVar4 = nullptr;
       }
       if (((uint)piVar4[0xb] < 3) && (*piVar4 == param_1)) {
         iVar3 = iVar3 + 1;

@@ -14,10 +14,10 @@ undefined1 * FUN_006c7bb0(int *param_1,undefined1 *param_2,int *param_3)
   iVar1 = *(int *)((int)param_1 + 0x1a);
   /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
   iVar4 = *(int *)((int)param_1 + 0x1e);
-  if (param_2 == (undefined1 *)0x0) {
+  if (param_2 == nullptr) {
     param_2 = Library::DKW::LIB::MemAlloc(iVar1 * 4);
-    if (param_2 == (undefined1 *)0x0) {
-      return (undefined1 *)0x0;
+    if (param_2 == nullptr) {
+      return nullptr;
     }
   }
   if (iVar1 == 2) {
@@ -44,7 +44,7 @@ undefined1 * FUN_006c7bb0(int *param_1,undefined1 *param_2,int *param_3)
       puVar3 = puVar3 + 3;
     } while (iVar4 != 0);
   }
-  if (param_3 != (int *)0x0) {
+  if (param_3 != nullptr) {
     *param_3 = iVar1;
   }
   return param_2;

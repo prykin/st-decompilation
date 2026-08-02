@@ -142,15 +142,15 @@ int __thiscall STOctopusC::GetMessage(STOctopusC *this,STMessage *message)
     local_14 = (byte *)STT3DSprC::SaveSpr((STT3DSprC *)&this_00->field_01D5,&local_8);
     local_18 = (byte *)STAllPlayersC::SaveGObjData((STAllPlayersC *)this_00,(int *)&local_10);
     local_c = Library::DKW::LIB::MemAlloc(local_10 + 0x96 + local_8);
-    if (local_14 == (byte *)0x0) {
+    if (local_14 == nullptr) {
       g_currentExceptionFrame = local_88.previous;
       return 0;
     }
-    if (local_18 == (byte *)0x0) {
+    if (local_18 == nullptr) {
       g_currentExceptionFrame = local_88.previous;
       return 0;
     }
-    if (local_c == (AnonShape_00589C10_CECA1FB4 *)0x0) {
+    if (local_c == nullptr) {
       g_currentExceptionFrame = local_88.previous;
       return 0;
     }
@@ -349,7 +349,7 @@ cf_error_exit_0058A005:
     *(undefined2 *)&this_00->field_0x6c = *(undefined2 *)(local_1c + 0x21);
     *(undefined4 *)&this_00->field_0x24d = local_1c[0xc];
     local_44 = Library::DKW::LIB::MemAlloc(0x44);
-    if (local_44 != (void *)0x0) {
+    if (local_44 != nullptr) {
       iVar6 = 0;
       do {
         if (iVar6 == 8) {

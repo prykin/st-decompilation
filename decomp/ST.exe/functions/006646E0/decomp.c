@@ -25,7 +25,7 @@ undefined4 __fastcall FUN_006646e0(int param_1)
         puVar2 = (uint *)(array->elementSize * index + (int)array->data);
       }
       else {
-        puVar2 = (uint *)0x0;
+        puVar2 = nullptr;
       }
       if ((0x31 < *puVar2) && (*puVar2 < 100)) {
         DArrayRemoveAt(array,index);

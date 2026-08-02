@@ -43,10 +43,10 @@ uint __cdecl FUN_006d8120(AnonShape_006D8120_534053F7 *param_1)
     local_20 = param_1->field_000C;
     pbVar8 = (byte *)thunk_FUN_006a3be0(uVar7 * uVar5 + 0x203);
     uVar6 = 0;
-    if (pbVar8 != (byte *)0x0) {
+    if (pbVar8 != nullptr) {
       pbVar9 = pbVar8 + 0x200;
       uVar7 = 0;
-      pbVar13 = (byte *)0x0;
+      pbVar13 = nullptr;
       local_1c = 0;
       pbVar10 = pbVar9;
       pbVar16 = pbVar8;

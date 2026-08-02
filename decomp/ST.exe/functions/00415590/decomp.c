@@ -28,9 +28,9 @@ uint * STGroupBoatC::Way3DGrpGetDistrPoint
   local_c = 0;
   param_1->field_0027 = uVar2;
   if (uVar2 == 0) {
-    return (uint *)0x0;
+    return nullptr;
   }
-  array = Library::DKW::TBL::DArrayCreate((DArrayTy *)0x0,(uint)uVar2,6,1);
+  array = Library::DKW::TBL::DArrayCreate(nullptr,(uint)uVar2,6,1);
   local_8 = array;
   uVar2 = thunk_FUN_004233c0(param_1);
   DAT_007f4d4c = (uint)uVar2;
@@ -115,10 +115,10 @@ LAB_004157e1:
 LAB_004157f0:
   if (iVar4 != 0) {
     DArrayDestroy(array);
-    local_8 = (DArrayTy *)0x0;
+    local_8 = nullptr;
     RaiseInternalException
               (iVar4,g_overwriteContext_007ED77C,"E:\\__titans\\wlad\\Grpway3d.cpp",0xeb8);
-    return (uint *)0x0;
+    return nullptr;
   }
   return &array->flags;
 }

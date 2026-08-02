@@ -45,9 +45,9 @@ void __thiscall HelpPanelTy::RCProc(HelpPanelTy *this,int param_1,uint param_2,c
   AnonShape_00517A50_98726C61 *local_c;
   uint local_8;
 
-  pAVar12 = (AnonShape_00517A50_98726C61 *)0x0;
+  pAVar12 = nullptr;
   local_8 = 0;
-  local_c = (AnonShape_00517A50_98726C61 *)0x0;
+  local_c = nullptr;
   local_20 = this;
   local_10 = (byte *)FUN_0070b3a0((AnonShape_GLOBAL_0081175C_57F682DD *)this->field_0248,4);
   uVar11 = 0;
@@ -60,7 +60,7 @@ void __thiscall HelpPanelTy::RCProc(HelpPanelTy *this,int param_1,uint param_2,c
     }
     uVar11 = uVar11 + 1;
   } while (uVar11 < 0xb);
-  if (pAVar12 != (AnonShape_00517A50_98726C61 *)0x0) {
+  if (pAVar12 != nullptr) {
     pIVar20 = g_currentExceptionFrame;
     g_currentExceptionFrame = (InternalExceptionFrame *)&stack0xffffff80;
     iVar4 = Library::MSVCRT::__setjmp3(local_7c,0);
@@ -86,7 +86,7 @@ void __thiscall HelpPanelTy::RCProc(HelpPanelTy *this,int param_1,uint param_2,c
           *(undefined2 *)&local_20->field_0x2c = 0;
           local_20->field_002E = 2;
           *(undefined4 *)&local_20->field_0x30 = local_20->field_0178;
-          if (g_cursorClass_00802A30 != (CursorClassTy *)0x0) {
+          if (g_cursorClass_00802A30 != nullptr) {
             /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
             (**(code **)g_cursorClass_00802A30->field_0000)(&local_20->field_0x18);
           }
@@ -134,7 +134,7 @@ void __thiscall HelpPanelTy::RCProc(HelpPanelTy *this,int param_1,uint param_2,c
       pcVar14 = (char *)&DAT_0080f33a;
       memmove(pcVar14, pcVar7, uVar18); /* compiler REP MOVS byte copy */
       uVar10 = 0;
-      for (puVar6 = Library::MSVCRT::FUN_0072e560(&DAT_0080f33a,'\n'); puVar6 != (uint *)0x0;
+      for (puVar6 = Library::MSVCRT::FUN_0072e560(&DAT_0080f33a,'\n'); puVar6 != nullptr;
           puVar6 = Library::MSVCRT::FUN_0072e560(puVar6,'\n')) {
         *(undefined1 *)puVar6 = 0x20;
       }
@@ -194,7 +194,7 @@ void __thiscall HelpPanelTy::RCProc(HelpPanelTy *this,int param_1,uint param_2,c
         pcVar14 = (char *)&DAT_0080f33a;
         memmove(pcVar14, pcVar7, uVar18); /* compiler REP MOVS byte copy */
         uVar10 = 0;
-        for (puVar6 = Library::MSVCRT::FUN_0072e560(&DAT_0080f33a,'\n'); puVar6 != (uint *)0x0;
+        for (puVar6 = Library::MSVCRT::FUN_0072e560(&DAT_0080f33a,'\n'); puVar6 != nullptr;
             puVar6 = Library::MSVCRT::FUN_0072e560(puVar6,'\n')) {
           *(undefined1 *)puVar6 = 0x20;
         }
@@ -247,7 +247,7 @@ void __thiscall HelpPanelTy::RCProc(HelpPanelTy *this,int param_1,uint param_2,c
           pcVar14 = (char *)&DAT_0080f33a;
           memmove(pcVar14, pcVar7, uVar18); /* compiler REP MOVS byte copy */
           uVar10 = 0;
-          for (puVar6 = Library::MSVCRT::FUN_0072e560(&DAT_0080f33a,'\n'); puVar6 != (uint *)0x0;
+          for (puVar6 = Library::MSVCRT::FUN_0072e560(&DAT_0080f33a,'\n'); puVar6 != nullptr;
               puVar6 = Library::MSVCRT::FUN_0072e560(puVar6,'\n')) {
             *(undefined1 *)puVar6 = 0x20;
           }
@@ -363,7 +363,7 @@ void __thiscall HelpPanelTy::RCProc(HelpPanelTy *this,int param_1,uint param_2,c
         pcVar14 = (char *)&DAT_0080f33a;
         memmove(pcVar14, pcVar7, uVar18); /* compiler REP MOVS byte copy */
         uVar10 = 0;
-        for (puVar6 = Library::MSVCRT::FUN_0072e560(&DAT_0080f33a,'\n'); puVar6 != (uint *)0x0;
+        for (puVar6 = Library::MSVCRT::FUN_0072e560(&DAT_0080f33a,'\n'); puVar6 != nullptr;
             puVar6 = Library::MSVCRT::FUN_0072e560(puVar6,'\n')) {
           *(undefined1 *)puVar6 = 0x20;
         }
@@ -412,7 +412,7 @@ void __thiscall HelpPanelTy::RCProc(HelpPanelTy *this,int param_1,uint param_2,c
         pcVar7 = pcVar14 + -uVar18;
         pcVar14 = (char *)&DAT_0080f33a;
         memmove(pcVar14, pcVar7, uVar18); /* compiler REP MOVS byte copy */
-        for (puVar6 = Library::MSVCRT::FUN_0072e560(&DAT_0080f33a,'\n'); puVar6 != (uint *)0x0;
+        for (puVar6 = Library::MSVCRT::FUN_0072e560(&DAT_0080f33a,'\n'); puVar6 != nullptr;
             puVar6 = Library::MSVCRT::FUN_0072e560(puVar6,'\n')) {
           *(undefined1 *)puVar6 = 0x20;
         }

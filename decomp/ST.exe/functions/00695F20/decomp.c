@@ -14,7 +14,7 @@ void __thiscall CGenerate::sub_00695F20(CGenerate *this)
   dword dVar1;
   uint uVar2;
 
-  if (this->field_5853 != (CGenerate_field_5853DArray *)0x0) {
+  if (this->field_5853 != nullptr) {
     dVar1 = this->field_5853->count;
     uVar2 = 0;
     if (0 < (int)dVar1) {
@@ -24,7 +24,7 @@ void __thiscall CGenerate::sub_00695F20(CGenerate *this)
       } while ((int)uVar2 < (int)dVar1);
     }
     DArrayDestroy((DArrayTy *)this->field_5853);
-    this->field_5853 = (CGenerate_field_5853DArray *)0x0;
+    this->field_5853 = nullptr;
   }
   return;
 }

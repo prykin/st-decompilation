@@ -103,9 +103,9 @@ switchD_0056fad2_caseD_6105:
       g_cursorClass_00802A30->field_0493 = 0;
       CursorClassTy::sub_0054B540(pCVar10);
       ChangeResolution(pSVar11,0);
-      if (g_startSystem_0081176C == (StartSystemTy *)0x0) {
+      if (g_startSystem_0081176C == nullptr) {
         pSVar13 = (StartSystemTy *)Library::MSVCRT::FUN_0072e530(0x6b6);
-        if (pSVar13 != (StartSystemTy *)0x0) {
+        if (pSVar13 != nullptr) {
           StartSystemTy::StartSystemTy(pSVar13,pSVar11);
         }
         g_startSystem_0081176C->InitSystem();
@@ -142,7 +142,7 @@ switchD_0056fad2_caseD_6105:
       pCVar10 = g_cursorClass_00802A30;
       g_cursorClass_00802A30->field_0493 = 0;
       CursorClassTy::sub_0054B540(pCVar10);
-      if (g_startSystem_0081176C != (StartSystemTy *)0x0) {
+      if (g_startSystem_0081176C != nullptr) {
         FUN_006e4b80(pSVar11,(int)g_startSystem_0081176C);
       }
       uVar25 = 0xffffffff;
@@ -210,7 +210,7 @@ switchD_0056fad2_caseD_6105:
       CursorClassTy::sub_0054B540(pCVar10);
       thunk_FUN_005711d0(pSVar11,(int *)&g_parentSystem_0081163C);
       CloseGameDBs(pSVar11);
-      if (g_startSystem_0081176C != (StartSystemTy *)0x0) {
+      if (g_startSystem_0081176C != nullptr) {
         FUN_006e4b80(pSVar11,(int)g_startSystem_0081176C);
       }
       if (g_cursorClass_00802A30->field_00A9 == 0) {
@@ -257,9 +257,9 @@ switchD_0056fad2_caseD_6102:
       CursorClassTy::sub_0054B540(pCVar10);
       thunk_FUN_005711d0(pSVar11,(int *)&g_parentSystem_0081163C);
       CloseGameDBs(pSVar11);
-      if (g_startSystem_0081176C == (StartSystemTy *)0x0) {
+      if (g_startSystem_0081176C == nullptr) {
         pSVar13 = (StartSystemTy *)Library::MSVCRT::FUN_0072e530(0x6b6);
-        if (pSVar13 != (StartSystemTy *)0x0) {
+        if (pSVar13 != nullptr) {
           StartSystemTy::StartSystemTy(pSVar13,pSVar11);
         }
         g_startSystem_0081176C->InitSystem();
@@ -298,7 +298,7 @@ switchD_0056fad2_caseD_6102:
       pSVar11->field_112D = *(undefined1 *)((int)&message->arg0 + 2);
       pSVar11->field_112E = *(undefined1 *)&message->arg0;
       (&pSVar11->field_11A7)[(uint)(byte)pSVar11->field_112D * 0x51] = 0;
-      if (g_playSystem_00802A38 != (STPlaySystemC *)0x0) {
+      if (g_playSystem_00802A38 != nullptr) {
         STPlaySystemC::sub_006E57B0(g_playSystem_00802A38,0x121);
         g_playSystem_00802A38->vfunc_08(0x121,0,0,0,0);
         local_b8 = 0xf;
@@ -306,11 +306,11 @@ switchD_0056fad2_caseD_6102:
         (*g_playSystem_00802A38->vtable->SendMessage)
                   ((SystemWithNamedObjClassTy *)g_playSystem_00802A38,(int)local_c4);
       }
-      if (g_interSystem_00802A28 != (InterSystemC *)0x0) {
+      if (g_interSystem_00802A28 != nullptr) {
         thunk_FUN_005711d0(pSVar11,(int *)&g_interSystem_00802A28);
       }
       CreateInterSystem();
-      if (g_allPlayers_007FA174 != (STAllPlayersC *)0x0) {
+      if (g_allPlayers_007FA174 != nullptr) {
         thunk_FUN_0042a9f0(bVar4);
         g_currentExceptionFrame = local_a4.previous;
         return 0;
@@ -318,7 +318,7 @@ switchD_0056fad2_caseD_6102:
       break;
     case MESS_STARTSYSTEMTY_6104|MESS_SHARED_0003:
       DarkScreen(g_dDXContext_0080759C,10,2);
-      if (g_interSystem_00802A28 != (InterSystemC *)0x0) {
+      if (g_interSystem_00802A28 != nullptr) {
         thunk_FUN_005711d0(pSVar11,(int *)&g_interSystem_00802A28);
       }
       ChangeResolution(pSVar11,_DAT_00807348 & 0xff);
@@ -328,10 +328,10 @@ switchD_0056fad2_caseD_6102:
       pCVar10->field_04B6 = (&DAT_0080756c)[uVar25 * 4];
       pCVar10->field_04BA = (&DAT_00807570)[uVar25 * 4];
       pCVar10->field_04BE = (&DAT_00807574)[uVar25 * 4];
-      if (g_opticClass_007FB2A0 != (OpticClassC *)0x0) {
+      if (g_opticClass_007FB2A0 != nullptr) {
         OpticClassC::ReInitOptic(g_opticClass_007FB2A0,_DAT_00807348 & 0xff);
-        FUN_006b1a50(g_ddxContext_008075A8,3,(undefined4 *)0x0,&local_60);
-        if (g_cPanel_00801688 != (CPanelTy *)0x0) {
+        FUN_006b1a50(g_ddxContext_008075A8,3,nullptr,&local_60);
+        if (g_cPanel_00801688 != nullptr) {
           thunk_FUN_004a9b60(local_60,local_5c,local_58,
                              local_54 -
                              ((-(uint)(g_cPanel_00801688->field_023F != CASE_1) & 0xffffff65) + 0x9b
@@ -339,7 +339,7 @@ switchD_0056fad2_caseD_6102:
         }
       }
       CreateInterSystem();
-      if ((g_parentSystem_0081163C != (GameSystemC *)0x0) && ((message->arg0).u32 == 0)) {
+      if ((g_parentSystem_0081163C != nullptr) && ((message->arg0).u32 == 0)) {
         GameSystemC::sub_00577690(g_parentSystem_0081163C);
         g_currentExceptionFrame = local_a4.previous;
         return 0;
@@ -455,7 +455,7 @@ switchD_0056fad2_caseD_6102:
         FUN_006c3f00((int)g_anonShape_006C3FC0_72DDFA27_008075A0);
       }
       local_10 = FUN_006c2a00(&DAT_00803408);
-      if ((local_10 != 0) && (g_int_008075A4 == (int *)0x0)) {
+      if ((local_10 != 0) && (g_int_008075A4 == nullptr)) {
         FUN_006e3db0((int)&pSVar11->field_0x113a);
         g_currentExceptionFrame = local_a4.previous;
         return 0;
@@ -468,7 +468,7 @@ switchD_0056fad2_caseD_6102:
       pCVar10 = g_cursorClass_00802A30;
       g_cursorClass_00802A30->field_0493 = 0;
       CursorClassTy::sub_0054B540(pCVar10);
-      if (g_startSystem_0081176C != (StartSystemTy *)0x0) {
+      if (g_startSystem_0081176C != nullptr) {
         FUN_006e4b80(pSVar11,(int)g_startSystem_0081176C);
       }
       thunk_FUN_005711d0(pSVar11,(int *)&g_parentSystem_0081163C);
@@ -525,7 +525,7 @@ switchD_0056fad2_caseD_6102:
       do {
         if (iVar12 == 8) goto LAB_00570645;
         iVar20 = 0;
-        local_c = (DArrayTy *)0x0;
+        local_c = nullptr;
         pAVar7 = local_18->field_115A;
         puVar16 = (byte *)(&pAVar7->field_0004);
         if (0 < (int)*puVar16) {
@@ -539,7 +539,7 @@ switchD_0056fad2_caseD_6102:
             pAVar7 = (AnonPointee_STAppC_115A *)&pAVar7[1].field_0004;
           } while (iVar20 < (int)*puVar16);
         }
-        if (local_c != (DArrayTy *)0x0) {
+        if (local_c != nullptr) {
           local_108.previous = g_currentExceptionFrame;
           DAT_00806738 = iVar12;
           g_currentExceptionFrame = &local_108;
@@ -553,7 +553,7 @@ switchD_0056fad2_caseD_6102:
           }
           uVar25 = local_48;
           g_currentExceptionFrame = local_108.previous;
-          if ((local_c != (DArrayTy *)0x0) && (local_48 != 0)) break;
+          if ((local_c != nullptr) && (local_48 != 0)) break;
         }
         if (iVar12 == 0x10) {
           iVar12 = 8;
@@ -659,9 +659,9 @@ cf_common_exit_0057073B:
         PTR_00806740->iteratorIndex = uVar25 + 1;
       }
       else {
-        puVar16 = (byte *)0x0;
+        puVar16 = nullptr;
       }
-      if (puVar16 == (undefined4 *)0x0) {
+      if (puVar16 == nullptr) {
         pSVar11->field_1146 = 1;
         pSVar11->field_114A = 0x6123;
       }
@@ -702,12 +702,12 @@ cf_common_exit_0057073B:
         Library::MSVCRT::FUN_0072e730(&pSVar11->field_0x7c0a,local_14,local_24c,local_44c,local_54c);
         Library::MSVCRT::__makepath
                   (&pSVar11->field_7D1A,(char *)local_14,(char *)local_24c,
-                   PTR_s_CAMPAIGN_VPS_0079b03c,(char *)0x0);
+                   PTR_s_CAMPAIGN_VPS_0079b03c,nullptr);
         local_c = (DArrayTy *)
                   thunk_FUN_00683c70(&pSVar11->field_7D1A,
                                      (AnonShape_00683C70_22193481 *)&stack0xfffff65c,&local_50,
-                                     (int *)0x0,(undefined *)0x0);
-        if ((local_50 == 0x40) && (local_c != (DArrayTy *)0x0)) {
+                                     nullptr,nullptr);
+        if ((local_50 == 0x40) && (local_c != nullptr)) {
           uVar25 = local_c->iteratorIndex;
           if ((message->arg1).u32 == 0) {
             if (uVar25 < local_c->count) {
@@ -716,15 +716,15 @@ cf_common_exit_0057073B:
               local_c->iteratorIndex = uVar25 + 1;
             }
             else {
-              pcVar15 = (char *)0x0;
+              pcVar15 = nullptr;
             }
-            if (pcVar15 != (char *)0x0) {
+            if (pcVar15 != nullptr) {
               pcVar23 = pcVar15;
               puVar16 = (byte *)(&DAT_00803408);
               memmove(puVar16, pcVar23, 0x118); /* compiler REP MOVS byte copy */
               Library::MSVCRT::__makepath
                         ((char *)&DAT_00803408,(char *)local_14,(char *)local_24c,pcVar15,
-                         (char *)0x0);
+                         nullptr);
             }
           }
           else {
@@ -734,11 +734,11 @@ cf_common_exit_0057073B:
               local_c->iteratorIndex = uVar25 + 1;
             }
             else {
-              local_8 = (byte *)0x0;
+              local_8 = nullptr;
             }
-            if (local_8 != (byte *)0x0) {
+            if (local_8 != nullptr) {
               do {
-                Library::MSVCRT::FUN_0072e730(local_8,(byte *)0x0,(byte *)0x0,local_34c,(byte *)0x0);
+                Library::MSVCRT::FUN_0072e730(local_8,nullptr,nullptr,local_34c,nullptr);
                 FUN_006b77e0((char *)local_34c,local_34c);
                 FUN_006b77e0((char *)local_44c,local_44c);
                 pbVar22 = local_44c;
@@ -766,8 +766,8 @@ LAB_00570ab6:
                   memmove(puVar16, pbVar22, 0x118); /* compiler REP MOVS byte copy */
                   Library::MSVCRT::__makepath
                             ((char *)&DAT_00803408,(char *)local_14,(char *)local_24c,
-                             (char *)local_8,(char *)0x0);
-                  local_8 = (byte *)0x0;
+                             (char *)local_8,nullptr);
+                  local_8 = nullptr;
                 }
                 else {
                   uVar25 = local_c->iteratorIndex;
@@ -777,10 +777,10 @@ LAB_00570ab6:
                     local_c->iteratorIndex = uVar25 + 1;
                   }
                   else {
-                    local_8 = (byte *)0x0;
+                    local_8 = nullptr;
                   }
                 }
-              } while (local_8 != (byte *)0x0);
+              } while (local_8 != nullptr);
               DArrayDestroy(local_c);
               goto LAB_00570c2f;
             }

@@ -6,17 +6,17 @@ undefined4 __thiscall FUN_0074e1c9(void *this,int *param_1,int *param_2)
   int *piVar2;
   int iVar3;
 
-  if (param_1 != (int *)0x0) {
+  if (param_1 != nullptr) {
     iVar3 = 0;
     piVar2 = param_1;
     do {
       piVar2 = (int *)*piVar2;
       iVar3 = iVar3 + 1;
-    } while (piVar2 != (int *)0x0);
+    } while (piVar2 != nullptr);
     if (param_2[1] != 0) {
       *(undefined4 *)(param_2[1] + 4) = *(undefined4 *)this;
     }
-    if (*(int **)this != (int *)0x0) {
+    if (*(int **)this != nullptr) {
       **(int **)this = param_2[1];
     }
     if (*param_2 == 0) {
@@ -28,7 +28,7 @@ undefined4 __thiscall FUN_0074e1c9(void *this,int *param_1,int *param_2)
       *(undefined4 *)((int)this + 4) = 0;
     }
     param_2[1] = (int)param_1;
-    if (*(undefined4 **)this != (undefined4 *)0x0) {
+    if (*(undefined4 **)this != nullptr) {
       **(undefined4 **)this = 0;
     }
     param_1[1] = 0;

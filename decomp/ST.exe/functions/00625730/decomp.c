@@ -102,12 +102,12 @@ undefined4 __thiscall STMineSetC::sub_00625730(STMineSetC *this)
                || (this_00 = g_worldGrid.cells
                              [(int)sVar11 * (int)g_worldGrid.planeStride +
                               (int)sVar18 * (int)g_worldGrid.sizeX + (int)sVar17].objects[0],
-                  this_00 == (STWorldObject *)0x0)) goto LAB_00625b06;
+                  this_00 == nullptr)) goto LAB_00625b06;
             /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
             if (in_stack_00000010 == 0) {
               if ((this_00[1].vtable < (STWorldObjectVTable *)0x8) &&
-                 ((g_playSystem_00802A38 == (STPlaySystemC *)0x0 ||
-                  ((byte)(&DAT_008087e9)[(int)this_00[1].vtable * 0x51] < 8)))) {
+                 ((g_playSystem_00802A38 == nullptr ||
+                  (g_bulkInitializedRecords_008087C7[(int)this_00[1].vtable].field_0022 < 8)))) {
                 bVar1 = *(byte *)&this_00[1].vtable;
                 bVar2 = (byte)this->field_0262;
                 if (DAT_00808a8f == '\0') {
@@ -135,8 +135,8 @@ LAB_006259bf:
                   bVar15 = iVar5 < 0;
                 }
                 else {
-                  bVar15 = (&DAT_008087ea)[(uint)bVar2 * 0x51] !=
-                           (&DAT_008087ea)[(uint)bVar1 * 0x51];
+                  bVar15 = g_bulkInitializedRecords_008087C7[bVar2].field_0023 !=
+                           g_bulkInitializedRecords_008087C7[bVar1].field_0023;
                 }
                 if ((bVar15) && (iVar5 = (*this_00->vtable[5].slots_00_28[2])(), iVar5 != 0))
                 goto LAB_00625ad5;
@@ -162,7 +162,7 @@ LAB_006259bf:
                 if ((this_00->value_20 == 1000) || (this_00->value_20 == 0x14)) {
                   this->field_0241 = *(undefined4 *)&this_00->field_0x18;
                 }
-                if (DAT_00811798 != (void *)0x0) {
+                if (DAT_00811798 != nullptr) {
                   iVar5 = this->vfunc_2C();
                   iVar6 = this_00->GetObjectTypeId();
                   thunk_FUN_0061fe80(DAT_00811798,iVar12,iVar13,(uint)this_00[1].vtable,iVar6,iVar5);
@@ -189,7 +189,7 @@ LAB_00625b06:
                                      g_worldGrid.cells
                                      [(int)sVar11 * (int)g_worldGrid.planeStride +
                                       (int)sVar18 * (int)g_worldGrid.sizeX + (int)sVar17].objects[1]
-                          , pSVar14 != (STMineSetC *)0x0)) {
+                          , pSVar14 != nullptr)) {
                 uVar9 = pSVar14->vfunc_2C();
                 switch(uVar9) {
                 case 0xa6:
@@ -226,7 +226,7 @@ switchD_00625b9f_caseD_a8:
         if (((sVar11 < 0) || (g_worldGrid.sizeX <= sVar11)) ||
            ((sVar18 < 0 ||
             (((g_worldGrid.sizeY <= sVar18 || (sVar17 < 0)) || (g_worldGrid.sizeZ <= sVar17)))))) {
-          pSVar14 = (STMineSetC *)0x0;
+          pSVar14 = nullptr;
 /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
 LAB_00625d60:
           if (in_stack_00000010 != 0) {
@@ -274,7 +274,7 @@ LAB_00625d60:
                            (int)sVar18 * (int)g_worldGrid.sizeX + (int)sVar11].objects[1];
               }
             }
-            if (pSVar14 != (STMineSetC *)0x0) {
+            if (pSVar14 != nullptr) {
               uVar9 = pSVar14->vfunc_2C();
               switch(uVar9) {
               case 0xa6:
@@ -291,7 +291,7 @@ LAB_00625d60:
                     g_worldGrid.cells
                     [(int)sVar17 * (int)g_worldGrid.planeStride +
                      (int)sVar18 * (int)g_worldGrid.sizeX + (int)sVar11].objects[0];
-          if (pSVar14 == (STMineSetC *)0x0) goto LAB_00625d60;
+          if (pSVar14 == nullptr) goto LAB_00625d60;
           iVar5 = pSVar14->vfunc_F0();
           if (iVar5 != 0) {
             /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
@@ -315,7 +315,7 @@ LAB_00625d60:
                 if ((pSVar14->field_0020 == 1000) || (pSVar14->field_0020 == 0x14)) {
                   this->field_0241 = pSVar14->field_0018;
                 }
-                if (DAT_00811798 != (void *)0x0) {
+                if (DAT_00811798 != nullptr) {
                   iVar5 = this->vfunc_2C();
                   uVar9 = pSVar14->vfunc_2C();
                   thunk_FUN_0061fe80(DAT_00811798,iVar12,iVar13,pSVar14->field_0024,uVar9,iVar5);
@@ -324,8 +324,8 @@ LAB_00625d60:
               goto LAB_00625d60;
             }
             if (((uint)pSVar14->field_0024 < 8) &&
-               ((g_playSystem_00802A38 == (STPlaySystemC *)0x0 ||
-                ((byte)(&DAT_008087e9)[pSVar14->field_0024 * 0x51] < 8)))) {
+               ((g_playSystem_00802A38 == nullptr ||
+                (g_bulkInitializedRecords_008087C7[pSVar14->field_0024].field_0022 < 8)))) {
               bVar1 = *(byte *)&pSVar14->field_0024;
               bVar2 = (byte)this->field_0262;
               if (DAT_00808a8f == '\0') {
@@ -353,11 +353,12 @@ LAB_00625efc:
                 bVar16 = iVar10 < 0;
               }
               else {
-                bVar16 = (&DAT_008087ea)[(uint)bVar2 * 0x51] != (&DAT_008087ea)[(uint)bVar1 * 0x51];
+                bVar16 = g_bulkInitializedRecords_008087C7[bVar2].field_0023 !=
+                         g_bulkInitializedRecords_008087C7[bVar1].field_0023;
               }
               if (((bVar16) && (iVar10 = pSVar14->vfunc_F8(), iVar10 != 0)) &&
                  (iVar10 = thunk_FUN_006264d0(this,(int *)pSVar14,local_20), iVar10 != 0)) {
-                if (DAT_00811798 != (void *)0x0) {
+                if (DAT_00811798 != nullptr) {
                   iVar10 = this->vfunc_2C();
                   uVar9 = pSVar14->vfunc_2C();
                   thunk_FUN_0061fe80(DAT_00811798,iVar12,iVar13,pSVar14->field_0024,uVar9,iVar10);

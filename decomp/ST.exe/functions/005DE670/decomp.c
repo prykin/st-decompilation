@@ -37,7 +37,7 @@ void __fastcall FUN_005de670(AnonShape_005DE670_0D4D7A8C *param_1)
   param_1->field_06AE = 0;
   param_1->field_069E = 0;
   local_8 = 0;
-  local_c = (void *)0x0;
+  local_c = nullptr;
   local_14 = (HANDLE)0xffffffff;
   local_10 = (HANDLE)0xffffffff;
   local_1c = (AnonShape_005DE670_7D81EFA7 *)param_1;
@@ -55,7 +55,7 @@ void __fastcall FUN_005de670(AnonShape_005DE670_0D4D7A8C *param_1)
     if (local_10 != (HANDLE)0xffffffff) {
       CloseHandle(local_10);
     }
-    if (local_c != (void *)0x0) {
+    if (local_c != nullptr) {
       FreeAndNull(&local_c);
     }
     local_1c->field_06B2 = 0;
@@ -63,7 +63,7 @@ void __fastcall FUN_005de670(AnonShape_005DE670_0D4D7A8C *param_1)
     local_1c->field_069E = 0;
     return;
   }
-  Library::MSVCRT::FUN_0072e730(&DAT_0080ed16,local_478,local_374,local_16c,(byte *)0x0);
+  Library::MSVCRT::FUN_0072e730(&DAT_0080ed16,local_478,local_374,local_16c,nullptr);
   local_18 = 0xffffffff;
   pbVar9 = local_16c;
   do {
@@ -103,7 +103,7 @@ void __fastcall FUN_005de670(AnonShape_005DE670_0D4D7A8C *param_1)
               (-1,g_overwriteContext_007ED77C,"E:\\__titans\\Start\\startsys.cpp",0x41c);
   }
   local_c = Library::DKW::LIB::MemAlloc(pAVar2->field_06AE + local_18 + pAVar2->field_06B2);
-  if (local_c == (void *)0x0) {
+  if (local_c == nullptr) {
     RaiseInternalException
               (-1,g_overwriteContext_007ED77C,"E:\\__titans\\Start\\startsys.cpp",0x41e);
   }
@@ -155,7 +155,7 @@ void __fastcall FUN_005de670(AnonShape_005DE670_0D4D7A8C *param_1)
   *(void **)&pAVar2->field_0x69a = local_c;
   uVar7 = pAVar2->field_06B2 + pAVar2->field_06AE + local_18;
   pAVar2->field_069E = uVar7;
-  if ((g_int_00811764 == (int *)0x0) || (g_int_00811764[10] != 1)) {
+  if ((g_int_00811764 == nullptr) || (g_int_00811764[10] != 1)) {
     *(undefined4 *)&pAVar2->field_0x6a2 = 0x400;
     *(undefined4 *)&pAVar2->field_0x6aa = 5;
   }

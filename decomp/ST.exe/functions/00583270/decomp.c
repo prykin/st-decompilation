@@ -260,7 +260,7 @@ int __thiscall STJellyGunC::GetMessage(STJellyGunC *this,STMessage *message)
           this_00->field_0251 = local_38->field_0062;
           *(undefined4 *)&this_00->field_0x252 = local_38->field_0063;
           local_34 = Library::DKW::LIB::MemAlloc(0x44);
-          if (local_34 != (void *)0x0) {
+          if (local_34 != nullptr) {
             iVar5 = 0;
             do {
               piVar12 = DAT_00806774;
@@ -302,8 +302,8 @@ int __thiscall STJellyGunC::GetMessage(STJellyGunC *this,STMessage *message)
       local_14 = (byte *)STT3DSprC::SaveSpr((STT3DSprC *)&this_00->field_01D5,&local_8);
       local_18 = (byte *)STAllPlayersC::SaveGObjData((STAllPlayersC *)this_00,(int *)&local_10);
       local_c = Library::DKW::LIB::MemAlloc(local_10 + 0x6f + local_8);
-      if (((local_14 != (byte *)0x0) && (local_18 != (byte *)0x0)) &&
-         (local_c != (AnonShape_00583270_0B8831C2 *)0x0)) {
+      if (((local_14 != nullptr) && (local_18 != nullptr)) &&
+         (local_c != nullptr)) {
         puVar10 = (byte *)&this_00->field_0x256;
         pAVar15 = local_c;
         for (iVar5 = 0xf; iVar5 != 0; iVar5 = iVar5 + -1) {

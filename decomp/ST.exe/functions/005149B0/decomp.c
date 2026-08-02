@@ -74,7 +74,7 @@ LAB_00514ab9:
         else {
           local_10 = (int *)(iVar8 + pHVar4->field_01C7);
           if (uVar7 == 0) {
-            piVar6 = (int *)0x0;
+            piVar6 = nullptr;
             goto LAB_00514a8f;
           }
           do {

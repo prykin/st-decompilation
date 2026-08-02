@@ -11,14 +11,14 @@ void FUN_006e8840(AnonShape_006E8840_CF3FA5BA *param_1)
   int local_c;
 
   piVar2 = param_1->field_00A0;
-  if (piVar2 != (int *)0x0) {
+  if (piVar2 != nullptr) {
     local_c = param_1->field_0094;
     iVar5 = 0;
     iVar6 = 0;
     if (0 < local_c) {
       do {
         piVar3 = (int *)piVar2[1];
-        if ((piVar3 != (int *)0x0) && (iVar4 = *piVar2, 0 < iVar4)) {
+        if ((piVar3 != nullptr) && (iVar4 = *piVar2, 0 < iVar4)) {
           do {
             iVar1 = *(int *)(*piVar3 + 4);
             if (iVar5 < iVar1) {

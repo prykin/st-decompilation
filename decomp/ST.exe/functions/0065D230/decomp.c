@@ -13,7 +13,7 @@ AiFltClassTy * __thiscall AiFltClassTy::AiFltClassTy(AiFltClassTy *this)
   sub_006E60E0(this);
   this->vtable = &AiFltClassTyVTable;
   memset(&this->field_0020, 0, 0x260); /* compiler bulk-zero initialization */
-  this->field_0284 = (ushort *)0x0;
+  this->field_0284 = nullptr;
   this->field_0020 = 900;
   this->field_007D = 0xfffe;
   this->field_0097 = 0xff;

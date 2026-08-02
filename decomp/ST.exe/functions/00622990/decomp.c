@@ -32,7 +32,7 @@ byte * __thiscall STAllPlayersC::FUN_00622990(STAllPlayersC *this,uint *param_1)
   local_14 = STT3DSprC::SaveSpr((STT3DSprC *)&this->field_0x1d5,&local_8);
   local_18 = SaveGObjData(this,(int *)&local_c);
   newSize = local_c + 0x111 + local_8;
-  local_10 = Library::DKW::LIB::MemRealloc((AnonPointee_TLOBaseTy_0607 *)local_10,newSize);
+  local_10 = Library::DKW::LIB::MemRealloc(local_10,newSize);
   local_10->field_0109 = local_8;
   pAVar3 = local_10 + 1;
   puVar4 = local_14;

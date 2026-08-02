@@ -22,7 +22,7 @@ FSGSTy::OutChSlProc(FSGSTy *this,AnonShape_GLOBAL_0080759C_9638EF10 *param_1,und
   int local_c;
   undefined4 *local_8;
 
-  if (param_8 != (undefined4 *)0x0) {
+  if (param_8 != nullptr) {
     local_8 = param_8;
     local_50.previous = g_currentExceptionFrame;
     g_currentExceptionFrame = &local_50;

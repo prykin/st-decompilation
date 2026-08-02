@@ -60,7 +60,7 @@ LAB_00584666:
     }
   }
 LAB_005846f7:
-  if (piVar2 == (int *)0x0) {
+  if (piVar2 == nullptr) {
     piVar2 = &DAT_007cb5c8;
   }
   /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
@@ -83,12 +83,12 @@ LAB_005846f7:
              (((g_worldGrid.sizeY <= sVar8 || (sVar9 < 0)) || (g_worldGrid.sizeZ <= sVar9)))) ||
             (g_worldGrid.cells
              [(int)g_worldGrid.planeStride * (int)sVar9 + (int)g_worldGrid.sizeX * (int)sVar8 +
-              (int)sVar7].objects[0] == (STWorldObject *)0x0)) &&
+              (int)sVar7].objects[0] == nullptr)) &&
            ((((g_worldGrid.sizeX <= sVar7 || (sVar8 < 0)) ||
              ((g_worldGrid.sizeY <= sVar8 || ((sVar9 < 0 || (g_worldGrid.sizeZ <= sVar9)))))) ||
             (g_worldGrid.cells
              [(int)g_worldGrid.planeStride * (int)sVar9 + (int)g_worldGrid.sizeX * (int)sVar8 +
-              (int)sVar7].objects[1] == (STWorldObject *)0x0)))))))) {
+              (int)sVar7].objects[1] == nullptr)))))))) {
         *param_7 = iVar6;
         *param_8 = iVar3;
         *param_9 = iVar5;

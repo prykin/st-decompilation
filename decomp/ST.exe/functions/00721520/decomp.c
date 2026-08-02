@@ -18,14 +18,14 @@ void __thiscall FUN_00721520(void *this,int param_1,uint param_2)
   iVar2 = *(int *)((int)this + 0x138);
   if (iVar2 != 0) {
     local_c = *(char **)(iVar2 + 8);
-    if (local_c != (char *)0x0) {
+    if (local_c != nullptr) {
       local_8 = (char *)(*(int *)((int)this + 0x148) + param_1);
       uVar6 = *(int *)((int)this + 0x144) + param_2;
       if ((int)uVar6 < (int)local_c) {
         local_10 = *(char **)(*(int *)(iVar2 + 0x14) + uVar6 * 4);
       }
       else {
-        local_10 = (char *)0x0;
+        local_10 = nullptr;
       }
       uVar3 = 0xffffffff;
       pcVar7 = local_10;
@@ -41,7 +41,7 @@ void __thiscall FUN_00721520(void *this,int param_1,uint param_2)
             local_8 = *(char **)(*(int *)(*(int *)((int)this + 0x138) + 0x14) + -4 + uVar6 * 4);
           }
           else {
-            local_8 = (char *)0x0;
+            local_8 = nullptr;
           }
           uVar3 = 0xffffffff;
           pcVar7 = local_8;
@@ -108,7 +108,7 @@ void __thiscall FUN_00721520(void *this,int param_1,uint param_2)
             local_8 = *(char **)(*(int *)(*(int *)((int)this + 0x138) + 0x14) + (uVar6 + 1) * 4);
           }
           else {
-            local_8 = (char *)0x0;
+            local_8 = nullptr;
           }
           uVar3 = 0xffffffff;
           pcVar7 = local_8;

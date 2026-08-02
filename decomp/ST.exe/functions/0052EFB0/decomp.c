@@ -32,7 +32,7 @@ OptPanelTy::PaintDblBut
 
   local_10 = param_1->field_0018;
   local_c = param_1->field_0014;
-  local_8 = (ushort *)0x0;
+  local_8 = nullptr;
   if (param_6 == 0) {
     local_18 = local_10->field_0000;
   }
@@ -57,13 +57,13 @@ OptPanelTy::PaintDblBut
     }
     local_14 = iVar3 - this->field_0044;
   }
-  if ((param_4 != (undefined *)0x0) && (param_5 != (undefined *)0x0)) {
+  if ((param_4 != nullptr) && (param_5 != nullptr)) {
     local_60.previous = g_currentExceptionFrame;
     g_currentExceptionFrame = &local_60;
     local_1c = this;
     iVar3 = Library::MSVCRT::__setjmp3(local_60.jumpBuffer,0);
     if (iVar3 == 0) {
-      local_8 = cMf32::RecGet(g_cMf32_00806790,1,param_2,(int *)0x0,1);
+      local_8 = cMf32::RecGet(g_cMf32_00806790,1,param_2,nullptr,1);
       uVar6 = local_14;
       iVar3 = local_18;
       pOVar2 = local_1c;
@@ -71,7 +71,7 @@ OptPanelTy::PaintDblBut
              (byte *)local_8);
       cMf32::RecMemFree(g_cMf32_00806790,(uint *)&local_8);
       iVar9 = 1;
-      piVar8 = (int *)0x0;
+      piVar8 = nullptr;
       /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
       uVar4 = (*(code *)param_4)(param_1);
       iVar7 = 1;

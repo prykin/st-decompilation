@@ -48,7 +48,7 @@ FUN_004c21a0(void *this,Global_sub_004C21A0_param_1Enum param_1,int *param_2,flo
     if (param_2 == this) {
       sVar4 = 4;
     }
-    if ((param_2 == (int *)0x0) || (param_2[9] != *(int *)&local_8->field_0x24))
+    if ((param_2 == nullptr) || (param_2[9] != *(int *)&local_8->field_0x24))
     goto cf_common_exit_004C261B;
     iVar5 = param_2[8];
     if (iVar5 == 0x14) {
@@ -73,7 +73,7 @@ LAB_004c2616:
   switch(param_1) {
   case CASE_0:
     if ((AnonShape_004C21A0_FDE833A6 *)param_2 != local_8) {
-      if (param_2 == (int *)0x0) {
+      if (param_2 == nullptr) {
         if (local_8->field_0245 == 4) {
           if ((((-1 < iVar5) && (iVar5 < g_worldGrid.sizeX)) && (-1 < param_4)) &&
              (param_4 < g_worldGrid.sizeY)) {
@@ -99,7 +99,7 @@ LAB_004c2616:
         sVar4 = 7;
         break;
       }
-      if ((param_2 == (int *)0x0) || (param_2[9] != *(int *)&local_8->field_0x24)) break;
+      if ((param_2 == nullptr) || (param_2[9] != *(int *)&local_8->field_0x24)) break;
       iVar5 = param_2[8];
       if (iVar5 == 0x14) {
         iVar5 = *param_2;
@@ -129,13 +129,13 @@ LAB_004c2616:
     break;
   case CASE_E:
     sVar4 = 0x15;
-    if ((g_tLOBldMark_007FB2AC != (TLOBldMark *)0x0) && (g_tLOBldMark_007FB2AC->field_0024 != 0)) {
+    if ((g_tLOBldMark_007FB2AC != nullptr) && (g_tLOBldMark_007FB2AC->field_0024 != 0)) {
       sVar4 = 0x14;
     }
     break;
   /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
   case CASE_17:
-    if (((param_2 != (int *)0x0) && (local_8->field_0245 == 4)) &&
+    if (((param_2 != nullptr) && (local_8->field_0245 == 4)) &&
        (((iVar5 = (**(code **)(*param_2 + 0x2c))(), iVar5 == 0x37 ||
          (iVar5 = (**(code **)(*param_2 + 0x2c))(), iVar5 == 0x6c)) &&
         (iVar5 = thunk_FUN_004e8b10(param_2,*(uint *)&pAVar1->field_0x24), iVar5 != 0)))) {
@@ -146,7 +146,7 @@ LAB_004c2616:
   case CASE_26:
   case CASE_37:
 joined_r0x004c231f:
-    if (param_2 == (int *)0x0) {
+    if (param_2 == nullptr) {
       sVar4 = 6;
       break;
     }
@@ -157,7 +157,7 @@ joined_r0x004c231f:
   case CASE_43:
     if (((((-1 < iVar5) && (iVar5 < g_worldGrid.sizeX)) &&
          ((-1 < param_4 &&
-          ((param_4 < g_worldGrid.sizeY && (g_visibleClass_00802A88 != (VisibleClassTy *)0x0))))))
+          ((param_4 < g_worldGrid.sizeY && (g_visibleClass_00802A88 != nullptr))))))
         && (0x27 < *(int *)&local_8[2].field_0x3c)) &&
        (iVar5 = VisibleClassTy::sub_0055AD00
                           (g_visibleClass_00802A88,iVar5,param_4,2,*(uint *)&local_8->field_0x24,7),
@@ -166,7 +166,7 @@ joined_r0x004c231f:
     }
     break;
   case CASE_42:
-    if ((((param_2 != (int *)0x0) && (param_2[9] == *(int *)&local_8->field_0x24)) &&
+    if ((((param_2 != nullptr) && (param_2[9] == *(int *)&local_8->field_0x24)) &&
         (param_2[8] == 1000)) && (iVar5 = thunk_FUN_004dbb10(local_8,(int)param_2), iVar5 != 0)) {
       sVar4 = 0x1f;
       break;

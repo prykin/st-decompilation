@@ -112,7 +112,7 @@ joined_r0x004f81d1:
           if (bVar9 != 0) {
             puVar5 = &this_00->field_0C51;
           }
-          puVar18 = (undefined4 *)0x0;
+          puVar18 = nullptr;
           iVar17 = 0;
           iVar4 = 1;
           bVar9 = 0;
@@ -210,7 +210,7 @@ joined_r0x004f81d1:
           puVar7 = Library::Ourlib::MFRLOAD::mfRLoad
                              (DAT_00806794,CASE_1F,
                               *(char **)((int)this_00->field_0308 + uVar12 * 4 + -0x12),6,0,1,0,
-                              (undefined4 *)0x0);
+                              nullptr);
           *(ushort **)local_18 = puVar7;
           *local_10 = 1;
           *pbVar13 = 0;
@@ -272,7 +272,7 @@ joined_r0x004f81d1:
           if (0x31 < (uint)(this_00->field_0038 - *piVar11)) {
             *piVar11 = this_00->field_0038;
             if (*pbVar13 == 0) {
-              puVar18 = (undefined4 *)0x0;
+              puVar18 = nullptr;
               iVar17 = 0;
               iVar4 = 1;
               bVar9 = 0;
@@ -357,7 +357,7 @@ joined_r0x004f861b:
     if (0x31 < (uint)(this_00->field_0038 - this_00->field_0261)) {
       this_00->field_0261 = this_00->field_0038;
       if (this_00->field_025F == '\0') {
-        if (this_00->field_025B != (short *)0x0) {
+        if (this_00->field_025B != nullptr) {
           FUN_0070b600((int *)&this_00->field_025B);
         }
         psVar8 = (short *)0x1;
@@ -398,23 +398,23 @@ joined_r0x004f861b:
     this_00->field_0261 = this_00->field_0038;
     this_00->field_025F = bVar9;
     if ((short)(ushort)bVar9 < **ppsVar1) goto LAB_004f88e6;
-    if (*ppsVar1 != (short *)0x0) {
+    if (*ppsVar1 != nullptr) {
       FUN_0070b600((int *)ppsVar1);
     }
     pcVar16 = g_cMf32_00806790;
     if (this_00->field_0285 == '\0') {
       psVar8 = Library::Ourlib::MFIMG::mfQmtLoad
-                         (g_cMf32_00806758,&this_00->field_0265,6,0,(short *)0x0);
+                         (g_cMf32_00806758,&this_00->field_0265,6,0,nullptr);
       *ppsVar1 = psVar8;
       pcVar16 = g_cMf32_00806798;
-      if (psVar8 == (short *)0x0) goto LAB_004f8860;
+      if (psVar8 == nullptr) goto LAB_004f8860;
     }
     else {
 LAB_004f8860:
-      psVar8 = Library::Ourlib::MFIMG::mfQmtLoad(pcVar16,&this_00->field_0265,6,0,(short *)0x0);
+      psVar8 = Library::Ourlib::MFIMG::mfQmtLoad(pcVar16,&this_00->field_0265,6,0,nullptr);
       *ppsVar1 = psVar8;
     }
-    if (*ppsVar1 == (short *)0x0) {
+    if (*ppsVar1 == nullptr) {
       psVar8 = (short *)0x1;
       bVar3 = 0;
       bVar9 = 6;
@@ -428,7 +428,7 @@ LAB_004f8860:
 LAB_004f88e6:
   sub_004F1950(this_00);
 cf_common_join_004F88ED:
-  if (((this_00->field_01D8 != (HoloTy *)0x0) && ((g_playSystem_00802A38->field_00E4 & 1) != 0)) &&
+  if (((this_00->field_01D8 != nullptr) && ((g_playSystem_00802A38->field_00E4 & 1) != 0)) &&
      (iVar4 = *(int *)&this_00->field_01D8->field_0x4, iVar4 < this_00->field_01DC + -2)) {
     FUN_006b4170((AnonShape_006B5B10_E0D06CF1 *)this_00->field_01B4,0,100,5,0x226,0x55,0);
     uVar12 = FUN_007140e0(this_00->field_01D8,1,'\0');

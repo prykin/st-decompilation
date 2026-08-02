@@ -39,7 +39,7 @@ void __thiscall PausePanelTy::InitPausePanel(PausePanelTy *this)
     pcVar3->field_0058 = 0;
     pcVar3->field_005C = 0;
     iVar2 = 1;
-    piVar9 = (int *)0x0;
+    piVar9 = nullptr;
     pCVar4 = thunk_FUN_00571240("BKG_PAUSE",0);
     puVar5 = cMf32::RecGet(g_cMf32_00806790,1,pCVar4,piVar9,iVar2);
     this_00->field_0180 = puVar5;
@@ -54,7 +54,7 @@ void __thiscall PausePanelTy::InitPausePanel(PausePanelTy *this)
     ccFntTy::WrTxt(this_00->field_017C,resourceString,iVar2,iVar7,uVar8,iVar10,iVar11);
     pCVar4 = thunk_FUN_00571240("BUT_MEDIUM",0);
     uVar6 = PanelTy::CreateBut((PanelTy *)this_00,0,1,0x115,0x8b,1,0,1,pCVar4,0xbfff,0xc000,0,0,0,
-                               (char *)0x0,1);
+                               nullptr,1);
     this_00->field_0184 = uVar6;
     g_currentExceptionFrame = local_4c.previous;
     return;

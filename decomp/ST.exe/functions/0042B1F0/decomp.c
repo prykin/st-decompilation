@@ -85,25 +85,25 @@ STAllPlayersC::GetGObjFromBox
               (-0x5001fff7,g_overwriteContext_007ED77C,"E:\\__titans\\wlad\\to_allpl.cpp",
                0x133);
   }
-  if (param_8 == (int *)0x0) {
-    if (((param_9 == (int *)0x0) && (param_10 == (int *)0x0)) && (param_11 == (int *)0x0)) {
+  if (param_8 == nullptr) {
+    if (((param_9 == nullptr) && (param_10 == nullptr)) && (param_11 == nullptr)) {
       RaiseInternalException
                 (-0x5001fff7,g_overwriteContext_007ED77C,"E:\\__titans\\wlad\\to_allpl.cpp",
                  0x135);
     }
   }
   else if (*param_8 == 0) {
-    pDVar5 = Library::DKW::TBL::DArrayCreate((DArrayTy *)0x0,7,2,5);
+    pDVar5 = Library::DKW::TBL::DArrayCreate(nullptr,7,2,5);
     *param_8 = (int)pDVar5;
   }
-  if ((param_9 != (int *)0x0) && (*param_9 == 0)) {
-    pDVar5 = Library::DKW::TBL::DArrayCreate((DArrayTy *)0x0,7,2,5);
+  if ((param_9 != nullptr) && (*param_9 == 0)) {
+    pDVar5 = Library::DKW::TBL::DArrayCreate(nullptr,7,2,5);
     *param_9 = (int)pDVar5;
   }
-  if (param_10 != (int *)0x0) {
+  if (param_10 != nullptr) {
     *param_10 = 0;
   }
-  if (param_11 != (int *)0x0) {
+  if (param_11 != nullptr) {
     *param_11 = 0;
   }
   iVar7 = g_worldGrid.sizeX * local_c + local_8 + (iVar6 + -1) * (int)g_worldGrid.planeStride;
@@ -124,12 +124,12 @@ STAllPlayersC::GetGObjFromBox
             do {
               piVar1 = *(int **)((int)g_worldGrid.cells[1].objects + iVar4);
               /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-              if (((piVar1 != (int *)0x0) && (piVar1[9] == (int)param_1)) &&
+              if (((piVar1 != nullptr) && (piVar1[9] == (int)param_1)) &&
                  (iVar7 = (**(code **)(*piVar1 + 0xf8))(), iVar7 == 1)) {
                 iVar7 = piVar1[8];
                 if (iVar7 == 0x14) {
                   piVar3 = param_10;
-                  if (param_8 != (int *)0x0) {
+                  if (param_8 != nullptr) {
                     Library::DKW::TBL::DArrayAppend
                               ((DArrayTy *)*param_8,(void *)((int)piVar1 + 0x32));
                   }
@@ -137,12 +137,12 @@ STAllPlayersC::GetGObjFromBox
                 else {
                   if ((iVar7 != 1000) && (iVar7 != 0x3e9)) goto LAB_0042b469;
                   piVar3 = param_11;
-                  if (param_9 != (int *)0x0) {
+                  if (param_9 != nullptr) {
                     Library::DKW::TBL::DArrayAppend
                               ((DArrayTy *)*param_9,(void *)((int)piVar1 + 0x32));
                   }
                 }
-                if (piVar3 != (int *)0x0) {
+                if (piVar3 != nullptr) {
                   *piVar3 = *piVar3 + 1;
                 }
               }

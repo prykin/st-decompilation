@@ -42,7 +42,7 @@ ComboTy::OutBmpProc(ComboTy *this,DDXContext *param_1,undefined4 param_2,undefin
         g_currentExceptionFrame = local_4c.previous;
         return;
       }
-      FUN_006b4640(param_1,param_4 + 3,param_5,*(BITMAPINFO **)&pAVar2->field_0x74,(uint *)0x0);
+      FUN_006b4640(param_1,param_4 + 3,param_5,*(BITMAPINFO **)&pAVar2->field_0x74,nullptr);
       g_currentExceptionFrame = local_4c.previous;
       return;
     }

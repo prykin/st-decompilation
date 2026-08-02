@@ -84,14 +84,14 @@ undefined4 __thiscall STMineSetC::sub_00622BA0(STMineSetC *this)
     this->field_0352 = 1;
   }
   if (SVar1 < CASE_3) {
-    if (g_visibleClass_00802A88 != (VisibleClassTy *)0x0) {
+    if (g_visibleClass_00802A88 != nullptr) {
       VisibleClassTy::sub_00558DC0
                 (g_visibleClass_00802A88,(int)this->field_0047,(int)this->field_0049,
                  (undefined *)(int)this->field_004B,(int *)this->field_0024,
                  *(uint *)(&DAT_007d02b4 + (uint)SVar1 * 4),(int *)this->field_0018,0xffffffff);
     }
   }
-  else if ((SVar1 == CASE_3) && (g_visibleClass_00802A88 != (VisibleClassTy *)0x0)) {
+  else if ((SVar1 == CASE_3) && (g_visibleClass_00802A88 != nullptr)) {
     VisibleClassTy::sub_00558DC0
               (g_visibleClass_00802A88,(int)this->field_0047,(int)this->field_0049,
                (undefined *)(int)this->field_004B,(int *)this->field_0024,DAT_007d02c0,
@@ -111,7 +111,7 @@ undefined4 __thiscall STMineSetC::sub_00622BA0(STMineSetC *this)
            (((sVar6 < g_worldGrid.sizeY && (-1 < sVar7)) && (sVar7 < g_worldGrid.sizeZ)))) &&
           (g_worldGrid.cells
            [(int)g_worldGrid.planeStride * (int)sVar7 + (int)g_worldGrid.sizeX * (int)sVar6 +
-            (int)sVar5].objects[(byte)this->field_008E] != (STWorldObject *)0x0)))) {
+            (int)sVar5].objects[(byte)this->field_008E] != nullptr)))) {
         return 0;
       }
       iVar4 = DumpClassC::WritePtr

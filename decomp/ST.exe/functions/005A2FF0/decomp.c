@@ -31,7 +31,7 @@ void __thiscall FSGSTy::SetChannelList(FSGSTy *this,int param_1,undefined4 *para
     iVar3 = Library::MSVCRT::__setjmp3(local_50.jumpBuffer,0);
     this_00 = g_cursorClass_00802A30;
     if (iVar3 == 0) {
-      if (g_cursorClass_00802A30 != (CursorClassTy *)0x0) {
+      if (g_cursorClass_00802A30 != nullptr) {
         iVar3 = g_cursorClass_00802A30->field_00C9;
         iVar6 = g_cursorClass_00802A30->field_00C5;
         g_cursorClass_00802A30->field_0493 = CASE_1;
@@ -59,7 +59,7 @@ void __thiscall FSGSTy::SetChannelList(FSGSTy *this,int param_1,undefined4 *para
               _Str1 = (char *)(pDVar4->elementSize * uVar8 + (int)pDVar4->data);
             }
             else {
-              _Str1 = (char *)0x0;
+              _Str1 = nullptr;
             }
             uVar1 = uVar8 + 1;
             if (uVar1 < dVar7) {
@@ -67,7 +67,7 @@ void __thiscall FSGSTy::SetChannelList(FSGSTy *this,int param_1,undefined4 *para
               _Str2 = (char *)(pDVar4->elementSize * uVar1 + (int)pDVar4->data);
             }
             else {
-              _Str2 = (char *)0x0;
+              _Str2 = nullptr;
             }
             iVar3 = Library::MSVCRT::__strcmpi(_Str1,_Str2);
             if (0 < iVar3) {

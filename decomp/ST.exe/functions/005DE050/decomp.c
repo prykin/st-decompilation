@@ -27,9 +27,9 @@ StartSystemTy::PaintBinDesc(StartSystemTy *this,AnonShape_005DE050_5BD86458 *par
   int local_c;
   int local_8;
 
-  if ((((this->field_0544 != (AnonPointee_StartSystemTy_0544 *)0x0) &&
-       (this->field_0548 != (uint *)0x0)) && (-1 < (int)this->field_0540)) &&
-     ((param_1 != (AnonShape_005DE050_5BD86458 *)0x0 &&
+  if ((((this->field_0544 != nullptr) &&
+       (this->field_0548 != nullptr)) && (-1 < (int)this->field_0540)) &&
+     ((param_1 != nullptr &&
       (local_c = param_1->field_001C, local_c != 0)))) {
     pcVar1 = this->field_0034;
     local_10 = this;
@@ -53,9 +53,9 @@ StartSystemTy::PaintBinDesc(StartSystemTy *this,AnonShape_005DE050_5BD86458 *par
             resourceString = *(uint **)(pSVar4->field_0548[5] + uVar7 * 4);
           }
           else {
-            resourceString = (uint *)0x0;
+            resourceString = nullptr;
           }
-          if (resourceString != (uint *)0x0) {
+          if (resourceString != nullptr) {
             ccFntTy::SetSurf(pSVar4->field_0034,(int)pSVar4->field_0544,0,0,
                              (uVar7 - uVar5) * local_8,pSVar4->field_0544->field_0004,local_8);
             ccFntTy::WrStr(pSVar4->field_0034,resourceString,0,-1,0);

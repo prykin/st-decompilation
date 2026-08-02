@@ -21,7 +21,7 @@ undefined4 __fastcall FUN_00419a90(STFishC *param_1)
     if (cVar1 == '\0') {
       if ((((local_6 < 0) || (g_worldGrid.sizeX <= local_6)) || (local_8 < 0)) ||
          (((g_worldGrid.sizeY <= local_8 || (local_a < 0)) || (g_worldGrid.sizeZ <= local_a)))) {
-        pSVar2 = (STFishC *)0x0;
+        pSVar2 = nullptr;
       }
       else {
         pSVar2 = (STFishC *)

@@ -29,7 +29,7 @@ undefined4 __thiscall STGroupBoatC::IsAgAtt(STGroupBoatC *this,int param_1)
         /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
         pSVar3 = STAllPlayersC::GetObjPtr
                            (g_allPlayers_007FA174,this->field_0024,local_8._0_2_,CASE_1);
-        if (pSVar3 == (STGameObjC *)0x0) {
+        if (pSVar3 == nullptr) {
           iVar4 = ReportDebugMessage("E:\\__titans\\wlad\\to_grpb.cpp",0x1758,0,0,
                                      "%s","STGroupBoatC::IsAgAtt");
           if (iVar4 != 0) {

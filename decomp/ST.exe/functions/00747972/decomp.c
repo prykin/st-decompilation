@@ -7,7 +7,7 @@ undefined4 FUN_00747972(AnonShape_00747F3B_C97131D7 *param_1,undefined4 *param_2
   void *this;
   undefined4 *puVar3;
 
-  if (param_2 == (undefined4 *)0x0) {
+  if (param_2 == nullptr) {
     uVar1 = 0x80004003;
   }
   else {
@@ -19,14 +19,14 @@ undefined4 FUN_00747972(AnonShape_00747F3B_C97131D7 *param_1,undefined4 *param_2
     }
     else {
       this = (void *)Library::MSVCRT::FUN_0072e530(0x14);
-      if (this == (void *)0x0) {
-        puVar3 = (undefined4 *)0x0;
+      if (this == nullptr) {
+        puVar3 = nullptr;
       }
       else {
         puVar3 = FUN_00747874(this,(AnonShape_00747874_535F3AAD *)param_1->field_0008);
       }
       *param_2 = puVar3;
-      if (puVar3 == (undefined4 *)0x0) {
+      if (puVar3 == nullptr) {
         uVar1 = 0x8007000e;
       }
     }

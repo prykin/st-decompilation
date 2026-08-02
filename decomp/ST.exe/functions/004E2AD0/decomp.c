@@ -46,7 +46,7 @@ undefined4 __thiscall TLOBaseTy::sub_004E2AD0(TLOBaseTy *this,int param_1,uint p
   }
   (*pTVar5->vfunc_90)(this,4,uVar7);
 cf_common_exit_004E2B69:
-  if (DAT_008117bc == (undefined4 *)0x0) {
+  if (DAT_008117bc == nullptr) {
     return 0;
   }
   pbVar1 = this->field_0024;

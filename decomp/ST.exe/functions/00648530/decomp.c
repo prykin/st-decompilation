@@ -17,7 +17,7 @@ undefined4 * __cdecl FUN_00648530(ushort *param_1)
   InternalExceptionFrame local_4c;
   AnonShape_00648530_D39EB612 *local_8;
 
-  local_8 = (AnonShape_00648530_D39EB612 *)0x0;
+  local_8 = nullptr;
   local_4c.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_4c;
   iVar1 = Library::MSVCRT::__setjmp3(local_4c.jumpBuffer,0);
@@ -41,6 +41,6 @@ undefined4 * __cdecl FUN_00648530(ushort *param_1)
   g_currentExceptionFrame = local_4c.previous;
   thunk_FUN_006484f0((int *)&local_8);
   RaiseInternalException(iVar1,0,"E:\\__titans\\ai\\ai_boss_d.cpp",0x45);
-  return (undefined4 *)0x0;
+  return nullptr;
 }
 

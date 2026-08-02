@@ -54,7 +54,7 @@ MReportTy::CreateBut
     local_164 = param_8;
     local_16c = local_1ac;
     (*local_c->field_000C->vtable->CreateObject)
-              ((SystemClassTy *)local_c->field_000C,2,&local_8,(int *)0x0,local_1cc,0);
+              ((SystemClassTy *)local_c->field_000C,2,&local_8,nullptr,local_1cc,0);
     g_currentExceptionFrame = local_50.previous;
     return local_8;
   }

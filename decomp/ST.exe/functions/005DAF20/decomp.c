@@ -12,11 +12,11 @@ void __thiscall StartSystemTy::sub_005DAF20(StartSystemTy *this)
 {
   char cVar1;
 
-  if (g_int_00811764 == (int *)0x0) goto LAB_005dafab;
+  if (g_int_00811764 == nullptr) goto LAB_005dafab;
   FUN_006b6500(g_int_00811764,1);
   if (DAT_0080877e == '\0') {
     if (DAT_0080c50e != 0) {
-      FUN_00715360(g_int_00811764,0,'\x13',(char *)0x0,0,0,0xffffffff);
+      FUN_00715360(g_int_00811764,0,'\x13',nullptr,0,0,0xffffffff);
     }
     if (DAT_0080c50a != 0) {
       cVar1 = '\x11';
@@ -26,17 +26,17 @@ void __thiscall StartSystemTy::sub_005DAF20(StartSystemTy *this)
   else {
     cVar1 = '\x10';
 LAB_005daf91:
-    FUN_00715360(g_int_00811764,0,cVar1,(char *)0x0,0,0,0xffffffff);
+    FUN_00715360(g_int_00811764,0,cVar1,nullptr,0,0,0xffffffff);
   }
   FUN_006b6500(g_int_00811764,DAT_0080733c);
 LAB_005dafab:
   sub_005DAB30(this);
   thunk_FUN_005dac60();
   thunk_FUN_005daa60();
-  if (this->field_0696 != (DArrayTy *)0x0) {
+  if (this->field_0696 != nullptr) {
     FUN_006b5570(this->field_0696);
   }
-  this->field_0696 = (DArrayTy *)0x0;
+  this->field_0696 = nullptr;
   return;
 }
 

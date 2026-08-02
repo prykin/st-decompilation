@@ -9,9 +9,9 @@
 void FreeAndNull(void **value)
 
 {
-  if (*value != (undefined4 *)0x0) {
+  if (*value != nullptr) {
     Library::MSVCRT::thunk_FUN_006a4950(*value);
-    *value = (void *)0x0;
+    *value = nullptr;
   }
   return;
 }

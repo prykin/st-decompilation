@@ -14,7 +14,7 @@ uint __cdecl FUN_0067fab0(byte *param_1,undefined4 param_2)
   /* ST_PSEUDO[dynamic_array_indexing]: expected DArrayAt<T>(g_array_00848A30, uVar1) (runtime stride) */
   if ((uVar1 < g_array_00848A30->count) &&
      (puVar2 = (undefined4 *)(g_array_00848A30->elementSize * uVar1 + (int)g_array_00848A30->data),
-     puVar2 != (undefined4 *)0x0)) {
+     puVar2 != nullptr)) {
     *puVar2 = param_2;
     return uVar1;
   }

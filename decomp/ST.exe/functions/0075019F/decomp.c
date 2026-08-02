@@ -14,11 +14,11 @@ undefined4 __thiscall FUN_0075019f(void *this,AnonShape_0075019F_4BD22E12 *param
     this_00 = (int *)((int)this + 0x20);
   }
   local_8 = (int *)*this_00;
-  while ((local_8 != (int *)0x0 &&
+  while ((local_8 != nullptr &&
          (pAVar1 = (AnonShape_0075019F_4BD22E12 *)FUN_0074ded7((int)local_8), pAVar1 != param_1))) {
     FUN_0074dec2((int *)&local_8);
   }
-  if (local_8 == (int *)0x0) {
+  if (local_8 == nullptr) {
     local_c = 0x80040216;
   }
   else {

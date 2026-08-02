@@ -7,7 +7,7 @@ undefined4 __fastcall FUN_004e8f90(AnonShape_004E8F90_6386CD4A *param_1)
     param_1->field_04E0 = 0;
   }
   if (((param_1->field_04F8 != 0) && (param_1->field_04FC != 0)) &&
-     (param_1->field_061B != (void *)0x0)) {
+     (param_1->field_061B != nullptr)) {
     thunk_FUN_004e9bb0(param_1->field_061B,(int)param_1);
     param_1->field_04F8 = 0;
     param_1->field_04FC = 0;

@@ -20,7 +20,7 @@ short * __cdecl FUN_0067bba0(DArrayTy *param_1,uint param_2)
       /* ST_PSEUDO[dynamic_array_indexing]: expected DArrayAt<T>(param_1, uVar3) (runtime stride) */
       if ((((bVar4) &&
            (psVar2 = (short *)(param_1->elementSize * uVar3 + (int)param_1->data),
-           psVar2 != (short *)0x0)) && (*psVar2 != 0)) &&
+           psVar2 != nullptr)) && (*psVar2 != 0)) &&
          ((*(int *)(psVar2 + 6) < 0 && ((*(uint *)(psVar2 + 4) & param_2) != 0)))) {
         return psVar2;
       }
@@ -28,6 +28,6 @@ short * __cdecl FUN_0067bba0(DArrayTy *param_1,uint param_2)
       bVar4 = uVar3 < uVar1;
     } while ((int)uVar3 < (int)uVar1);
   }
-  return (short *)0x0;
+  return nullptr;
 }
 

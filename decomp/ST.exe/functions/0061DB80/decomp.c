@@ -28,7 +28,7 @@ undefined4 __thiscall STLightC::LoadNextLight(STLightC *this)
   if (iVar2 == 0) {
     puVar3 = Library::Ourlib::MFRLOAD::mfRLoad
                        (DAT_00806774,CASE_0,(&PTR_s_light01_007d0164)[local_c->field_003C],
-                        0xffffffff,0,1,0,(undefined4 *)0x0);
+                        0xffffffff,0,1,0,nullptr);
     sub_0061D9C0(this_00,puVar3,(int *)&local_8,0);
     puVar4 = Library::DKW::LIB::MemAlloc(this_00->field_0093 << 4);
     this_00->field_0057 = puVar4;
@@ -52,7 +52,7 @@ undefined4 __thiscall STLightC::LoadNextLight(STLightC *this)
     *(undefined4 *)this_00->field_0057 = 0;
     *(undefined4 *)((int)this_00->field_0057 + this_00->field_0093 * 0xc) = 0;
     pSVar5 = (STLightC_field_00A3DArray *)
-             Library::DKW::TBL::DArrayCreate((DArrayTy *)0x0,local_8,0x30,10);
+             Library::DKW::TBL::DArrayCreate(nullptr,local_8,0x30,10);
     this_00->field_00A3 = pSVar5;
     g_currentExceptionFrame = local_50.previous;
     return 1;

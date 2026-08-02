@@ -24,7 +24,7 @@ uint __fastcall FUN_0044ce40(STAllPlayersC *param_1)
       /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
       if ((local_c._0_2_ != 0xffff) &&
          (pSVar2 = STAllPlayersC::GetObjPtr(local_8,DAT_0080874d,local_c._0_2_,CASE_1),
-         pSVar2 != (STGameObjC *)0x0)) {
+         pSVar2 != nullptr)) {
         uVar3 = (*pSVar2->vtable->vfunc_2C)();
         switch(uVar3) {
         case 1:

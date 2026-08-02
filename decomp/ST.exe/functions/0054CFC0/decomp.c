@@ -30,7 +30,7 @@ undefined4 __thiscall STPlaySystemC::InitSystem(STPlaySystemC *this,int param_1)
   pSVar3 = local_8;
   if (errorCode == 0) {
     SystemClassTy::InitSystem((SystemClassTy *)local_8);
-    pSVar3->field_0039 = (AnonPointee_STPlaySystemC_0039 *)0x0;
+    pSVar3->field_0039 = nullptr;
     pSVar3->field_0045 = 7;
     pAVar4 = Library::DKW::LIB::MemAlloc(7);
     pSVar3->field_003D = pAVar4;
@@ -49,7 +49,7 @@ undefined4 __thiscall STPlaySystemC::InitSystem(STPlaySystemC *this,int param_1)
     pSVar3->field_0028 = 0;
     pSVar3->field_002C = 0;
     *puVar1 = 0;
-    if (g_cMf32_00806754 != (cMf32 *)0x0) {
+    if (g_cMf32_00806754 != nullptr) {
       local_c = puVar1;
       cMf32::RecGet(g_cMf32_00806754,0xc,PTR_DAT_0079ae30,(int *)&local_c,0);
     }

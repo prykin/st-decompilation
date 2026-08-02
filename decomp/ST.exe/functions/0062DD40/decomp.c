@@ -13,9 +13,9 @@ void __thiscall STManRub3C::sub_0062DD40(STManRub3C *this)
   ppDVar1 = &this->field_0050;
   iVar2 = 8;
   do {
-    if (*ppDVar1 != (DArrayTy *)0x0) {
+    if (*ppDVar1 != nullptr) {
       DArrayDestroy(*ppDVar1);
-      *ppDVar1 = (DArrayTy *)0x0;
+      *ppDVar1 = nullptr;
     }
     ppDVar1 = ppDVar1 + 1;
     iVar2 = iVar2 + -1;

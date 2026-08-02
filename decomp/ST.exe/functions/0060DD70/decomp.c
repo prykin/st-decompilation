@@ -57,7 +57,7 @@ int __fastcall FUN_0060dd70(AnonShape_0060DD70_701DD710 *param_1)
     if (local_14 == 0) {
       return 0;
     }
-    if (g_visibleClass_00802A88 == (VisibleClassTy *)0x0) {
+    if (g_visibleClass_00802A88 == nullptr) {
       return local_14;
     }
     iVar4 = param_1->field_024C;
@@ -108,7 +108,7 @@ int __fastcall FUN_0060dd70(AnonShape_0060DD70_701DD710 *param_1)
     if (pVVar2->field_0034 <= iVar4) {
       return local_14;
     }
-    if (pVVar2->field_004C == (byte *)0x0) {
+    if (pVVar2->field_004C == nullptr) {
       return local_14;
     }
     if (pVVar2->field_004C[local_20 + iVar4 * pVVar2->field_0030] != 0) {
@@ -137,7 +137,7 @@ int __fastcall FUN_0060dd70(AnonShape_0060DD70_701DD710 *param_1)
     if (pVVar3->field_0034 <= iVar6) {
       return local_14;
     }
-    if (pVVar3->field_004C == (byte *)0x0) {
+    if (pVVar3->field_004C == nullptr) {
       return local_14;
     }
     if (pVVar3->field_004C[local_24 + iVar6 * pVVar3->field_0030] != 0) {
@@ -168,7 +168,7 @@ int __fastcall FUN_0060dd70(AnonShape_0060DD70_701DD710 *param_1)
     if (pVVar2->field_0034 <= iVar4) {
       return local_14;
     }
-    if (pVVar2->field_004C == (byte *)0x0) {
+    if (pVVar2->field_004C == nullptr) {
       return local_14;
     }
     if (pVVar2->field_004C[local_24 + iVar4 * pVVar2->field_0030] != 0) {
@@ -196,7 +196,7 @@ int __fastcall FUN_0060dd70(AnonShape_0060DD70_701DD710 *param_1)
     if (pVVar3->field_0034 <= local_20) {
       return local_14;
     }
-    if (pVVar3->field_004C == (byte *)0x0) {
+    if (pVVar3->field_004C == nullptr) {
       return local_14;
     }
     if (pVVar3->field_004C[local_24 + local_20 * pVVar3->field_0030] != 0) {

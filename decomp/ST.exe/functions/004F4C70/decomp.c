@@ -148,7 +148,7 @@ void __cdecl FUN_004f4c70(int param_1,undefined *param_2,BYTE param_3)
   local_64[0x55] = 0x7c;
   local_64[0x56] = 0x7e;
   ccFntTy::operator_new
-            (0x19d,&local_a0,(uint *)0x0,local_64,param_1,local_c,1,4,1,1,0x20081c,param_2);
+            (0x19d,&local_a0,nullptr,local_64,param_1,local_c,1,4,1,1,0x20081c,param_2);
   return;
 }
 

@@ -13,7 +13,7 @@ void FUN_005c2760(void)
 
   DVar2 = timeGetTime();
   DVar1 = DAT_00811754;
-  if ((PTR_0081175c != (AnonShape_GLOBAL_0081175C_57F682DD *)0x0) && (99 < DVar2 - DAT_00811754)) {
+  if ((PTR_0081175c != nullptr) && (99 < DVar2 - DAT_00811754)) {
     FUN_006b5f80((int *)g_ddxContext_008075A8,0,0,g_nWidth_00806730,DAT_00806734);
     pBVar3 = (BITMAPINFO *)FUN_0070b3a0(PTR_0081175c,(int)(short)PTR_0081175c->field_0029);
     PutDDX(0x15,0x14,'\x06',pBVar3);

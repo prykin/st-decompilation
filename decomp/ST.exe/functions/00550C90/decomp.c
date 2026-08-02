@@ -12,7 +12,7 @@ void * __cdecl FUN_00550c90(void)
   undefined4 *this;
 
   this = FUN_006b04d0(0x1e1);
-  if (this != (undefined4 *)0x0) {
+  if (this != nullptr) {
     sub_006E5FB0(this);
     *(undefined2 *)((int)this + 0x1be) = 100;
     *(undefined2 *)(this + 0x6f) = 100;
@@ -44,6 +44,6 @@ void * __cdecl FUN_00550c90(void)
     *(undefined4 *)((int)this + 0x1dd) = 0;
     return this;
   }
-  return (void *)0x0;
+  return nullptr;
 }
 

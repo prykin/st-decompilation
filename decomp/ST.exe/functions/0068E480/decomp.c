@@ -28,7 +28,7 @@ uint __thiscall AiTactClassTy::sub_0068E480(AiTactClassTy *this,short param_1)
         element_00a5 = DArrayAt<AiTactClassTy_field_00A5Element>(pAVar1, uVar6);
       }
       else {
-        element_00a5 = (AiTactClassTy_field_00A5Element *)0x0;
+        element_00a5 = nullptr;
       }
       iVar3 = element_00a5->field_0004;
       /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */

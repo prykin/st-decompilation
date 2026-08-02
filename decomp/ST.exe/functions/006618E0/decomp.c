@@ -45,8 +45,8 @@ void __thiscall AiFltClassTy::GoToRepair(AiFltClassTy *this,int param_1)
        (local_20 = iVar5, local_c = sub_00661800((AnonShape_0065DA10_8B0AA883 *)this,extraout_EDX),
        (int)this->field_0179 < iVar5 - local_c)) {
       local_18 = thunk_FUN_0068f8f0(this->field_0284,this->field_007B);
-      local_8 = (DArrayTy *)0x0;
-      local_10 = (DArrayTy *)0x0;
+      local_8 = nullptr;
+      local_10 = nullptr;
       local_68.previous = g_currentExceptionFrame;
       g_currentExceptionFrame = &local_68;
       iVar5 = Library::MSVCRT::__setjmp3(local_68.jumpBuffer,0);
@@ -54,7 +54,7 @@ void __thiscall AiFltClassTy::GoToRepair(AiFltClassTy *this,int param_1)
       if (iVar5 == 0) {
         /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
         local_8 = (DArrayTy *)sub_0065DA10(local_1c,extraout_EDX_00);
-        if (local_8 != (DArrayTy *)0x0) {
+        if (local_8 != nullptr) {
           local_14 = 0;
           array = local_10;
           if (0 < (int)local_8->count) {
@@ -64,14 +64,14 @@ void __thiscall AiFltClassTy::GoToRepair(AiFltClassTy *this,int param_1)
                 puVar6 = (ushort *)(local_8->elementSize * local_14 + (int)local_8->data);
               }
               else {
-                puVar6 = (ushort *)0x0;
+                puVar6 = nullptr;
               }
               /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
               local_24 = CONCAT22((short)((uint)puVar6 >> 0x10),*puVar6);
               this_00 = STAllPlayersC::GetObjPtr
                                   (g_allPlayers_007FA174,*(char *)&pAVar3->field_0024,*puVar6,CASE_1
                                   );
-              if ((this_00 != (STGameObjC *)0x0) && ((int)pAVar3->field_0179 < local_20 - local_c))
+              if ((this_00 != nullptr) && ((int)pAVar3->field_0179 < local_20 - local_c))
               {
                 iVar5 = (*this_00->vtable->vfunc_2C)();
                 pIVar7 = thunk_FUN_00674fb0(iVar5);
@@ -110,7 +110,7 @@ LAB_00661a96:
                           }
                           else {
                             TLOBaseTy::thunk_FUN_004c7cc0
-                                      ((TLOBaseTy *)this_00,5,0,1,1,0xffffffff,0,0xff,(char *)0x0);
+                                      ((TLOBaseTy *)this_00,5,0,1,1,0xffffffff,0,0xff,nullptr);
                           }
                         }
                         local_c = local_c + 1;
@@ -124,8 +124,8 @@ LAB_00661a96:
                       bVar2 = true;
                     }
                     if ((bVar2) && (local_18 != 0)) {
-                      if (array == (DArrayTy *)0x0) {
-                        array = Library::DKW::TBL::DArrayCreate((DArrayTy *)0x0,10,2,10);
+                      if (array == nullptr) {
+                        array = Library::DKW::TBL::DArrayCreate(nullptr,10,2,10);
                         local_10 = array;
                       }
                       Library::DKW::TBL::DArrayAppend(array,&local_24);
@@ -138,12 +138,12 @@ LAB_00661a96:
             } while ((int)local_14 < (int)local_8->count);
           }
           DArrayDestroy(local_8);
-          local_8 = (DArrayTy *)0x0;
-          if (array != (DArrayTy *)0x0) {
+          local_8 = nullptr;
+          if (array != nullptr) {
             if (array->count != 0) {
               thunk_FUN_0068fa00(pAVar3->field_0284,&array->flags);
             }
-            if (array != (DArrayTy *)0x0) {
+            if (array != nullptr) {
               DArrayDestroy(array);
             }
           }
@@ -152,13 +152,13 @@ LAB_00661a96:
         return;
       }
       g_currentExceptionFrame = local_68.previous;
-      if (local_8 != (DArrayTy *)0x0) {
+      if (local_8 != nullptr) {
         DArrayDestroy(local_8);
-        local_8 = (DArrayTy *)0x0;
+        local_8 = nullptr;
       }
-      if (local_10 != (DArrayTy *)0x0) {
+      if (local_10 != nullptr) {
         DArrayDestroy(local_10);
-        local_10 = (DArrayTy *)0x0;
+        local_10 = nullptr;
       }
       iVar8 = ReportDebugMessage("E:\\__titans\\ai\\ai_flt.cpp",0x6e9,0,iVar5,"%s",
                                  "AiFltClassTy::GoToRepair");

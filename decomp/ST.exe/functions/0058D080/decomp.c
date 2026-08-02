@@ -41,9 +41,9 @@ undefined4 __cdecl FUN_0058d080(int param_1)
         }
         if (DAT_00811720 == 0) {
           FreeAndNull(&PTR_00811718);
-          PTR_00811718 = (AnonPointee_TLOBaseTy_0607 *)0x0;
+          PTR_00811718 = nullptr;
           FreeAndNull(&PTR_0081171c);
-          PTR_0081171c = (AnonPointee_TLOBaseTy_0607 *)0x0;
+          PTR_0081171c = nullptr;
         }
         return 1;
       }

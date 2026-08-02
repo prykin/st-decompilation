@@ -30,11 +30,11 @@ undefined4 __thiscall FUN_006d5260(void *this,undefined4 *param_1)
   pAVar1 = *(AnonShape_00749A79_05F12707 **)((int)this + 0x284);
   pAVar2 = (AnonShape_00749A79_05F12707 *)param_1[0x11];
   if (((uint)param_1[0x10] < 0x59) || (iVar4 = FUN_00749a5e((int)pAVar2), iVar4 == 0)) {
-    local_8 = (undefined4 *)0x0;
+    local_8 = nullptr;
   }
   else {
     local_8 = (undefined4 *)0x1;
-    if ((pAVar1 != (AnonShape_00749A79_05F12707 *)0x0) &&
+    if ((pAVar1 != nullptr) &&
        (iVar4 = FUN_00749a5e((int)pAVar1), iVar4 != 0)) {
       iVar4 = *(int *)&pAVar1[1].field_0xc;
       if ((*(int *)&pAVar2[1].field_0xc == iVar4) ||
@@ -53,7 +53,7 @@ undefined4 __thiscall FUN_006d5260(void *this,undefined4 *param_1)
         } while (bVar12);
         this = local_c;
         if (bVar12) {
-          local_8 = (undefined4 *)0x0;
+          local_8 = nullptr;
         }
       }
     }
@@ -71,12 +71,12 @@ undefined4 __thiscall FUN_006d5260(void *this,undefined4 *param_1)
     iVar4 = FUN_00749841((AnonShape_006B5B10_E0D06CF1 *)&pAVar1->field_0030);
     *(int *)(pAVar1 + 1) = iVar4;
   }
-  if (local_8 != (undefined4 *)0x0) {
+  if (local_8 != nullptr) {
     iVar4 = FUN_00749a79(pAVar1);
     /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
     param_1 = *(undefined4 **)&pAVar1[1].field_0xc;
     local_8 = param_1;
-    if (param_1 != (undefined4 *)0x0) {
+    if (param_1 != nullptr) {
       pptVar7 = &local_414;
       puVar10 = (undefined1 *)(iVar4 + 1);
       do {
@@ -89,12 +89,12 @@ undefined4 __thiscall FUN_006d5260(void *this,undefined4 *param_1)
         /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
         param_1 = (undefined4 *)((int)param_1 + -1);
         puVar10 = puVar11;
-      } while (param_1 != (undefined4 *)0x0);
+      } while (param_1 != nullptr);
     }
     iStart_00 = 0;
     pptVar7 = &local_414;
     do {
-      if (*pptVar7 != (tagPALETTEENTRY *)0x0) break;
+      if (*pptVar7 != nullptr) break;
       iStart_00 = iStart_00 + 1;
       pptVar7 = pptVar7 + 1;
     } while ((int)iStart_00 < 10);
@@ -129,7 +129,7 @@ undefined4 __thiscall FUN_006d5260(void *this,undefined4 *param_1)
     /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
     FUN_006b0a20(*(AnonShape_GLOBAL_0080759C_9638EF10 **)(*(int *)((int)local_c + 0x288) + 0x28),
                  (int)(&local_414 + iStart_00),iStart_00,(int)iStart - iStart_00,0);
-    FUN_00747406(this,9,(int *)0x0,0);
+    FUN_00747406(this,9,nullptr,0);
   }
   FUN_006d6110((void *)((int)this + 0x294),(int)this + 0x240);
   LeaveCriticalSection(local_14);

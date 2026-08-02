@@ -11,14 +11,14 @@ undefined4 __thiscall STVolcanoC::sub_00646DB0(STVolcanoC *this,undefined4 *para
 {
   byte *puVar2;
 
-  if (this == (STVolcanoC *)0x0) {
-    puVar2 = (byte *)0x0;
+  if (this == nullptr) {
+    puVar2 = nullptr;
   }
   else {
     puVar2 = (byte *)&this->field_0x1c;
   }
   memmove(puVar2, param_1, 0x95); /* compiler REP MOVS byte copy */
-  this->field_0061 = (ushort *)0x0;
+  this->field_0061 = nullptr;
   this->field_005D = -1;
   this->field_007A = -1;
   this->field_0086 = -1;

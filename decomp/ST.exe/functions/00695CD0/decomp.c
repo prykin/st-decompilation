@@ -18,13 +18,13 @@ void __thiscall FUN_00695cd0(void *this,uint param_1,int param_2,int param_3)
   iVar8 = *(int *)((int)this + 0x5853);
   /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
   if (((iVar8 != 0) && (param_1 < *(uint *)(iVar8 + 0xc))) &&
-     (piVar7 = (int *)(*(int *)(iVar8 + 8) * param_1 + *(int *)(iVar8 + 0x1c)), piVar7 != (int *)0x0
+     (piVar7 = (int *)(*(int *)(iVar8 + 8) * param_1 + *(int *)(iVar8 + 0x1c)), piVar7 != nullptr
      )) {
-    if (*(DArrayTy **)((int)piVar7 + 0x15) != (DArrayTy *)0x0) {
+    if (*(DArrayTy **)((int)piVar7 + 0x15) != nullptr) {
       DArrayDestroy(*(DArrayTy **)((int)piVar7 + 0x15));
       *(undefined4 *)((int)piVar7 + 0x15) = 0;
     }
-    if (*(DArrayTy **)((int)piVar7 + 0x19) != (DArrayTy *)0x0) {
+    if (*(DArrayTy **)((int)piVar7 + 0x19) != nullptr) {
       DArrayDestroy(*(DArrayTy **)((int)piVar7 + 0x19));
       *(undefined4 *)((int)piVar7 + 0x19) = 0;
     }
@@ -72,7 +72,7 @@ void __thiscall FUN_00695cd0(void *this,uint param_1,int param_2,int param_3)
           }
         }
         array = *(DArrayTy **)(iVar8 + 0x19);
-        if (array != (DArrayTy *)0x0) {
+        if (array != nullptr) {
           uVar5 = 0;
           if (0 < (int)array->count) {
             bVar9 = array->count != 0;
@@ -82,7 +82,7 @@ void __thiscall FUN_00695cd0(void *this,uint param_1,int param_2,int param_3)
                 puVar4 = (uint *)(array->elementSize * uVar5 + (int)array->data);
               }
               else {
-                puVar4 = (uint *)0x0;
+                puVar4 = nullptr;
               }
               uVar2 = *puVar4;
               if ((int)param_1 < (int)uVar2) {

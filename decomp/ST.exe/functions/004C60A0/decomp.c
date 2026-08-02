@@ -12,7 +12,7 @@ TLOBldMark * __thiscall TLOBldMark::TLOBldMark(TLOBldMark *this)
 {
   sub_006E5FB0(this);
   this->vtable = &TLOBldMarkVTable;
-  this->field_002C = (STT3DSprC *)0x0;
+  this->field_002C = nullptr;
   this->field_0024 = 0;
   this->field_0018 = 1;
   this->field_0030 = 0xffffffff;

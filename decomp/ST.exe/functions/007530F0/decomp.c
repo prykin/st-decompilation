@@ -13,8 +13,8 @@ undefined4 * FUN_007530f0(undefined4 *param_1,LPCSTR param_2,DWORD param_3,undef
     param_3 = 0x28;
   }
   puVar1 = Library::DKW::FMM::FUN_006d4220(param_1,param_2,param_3,param_4);
-  if (puVar1 == (undefined4 *)0x0) {
-    return (undefined4 *)0x0;
+  if (puVar1 == nullptr) {
+    return nullptr;
   }
   puVar3 = (byte *)puVar1[0xd];
   memset(puVar3, 0, 0x28); /* compiler bulk-zero initialization */

@@ -11,7 +11,7 @@
 void __thiscall CGenerate::sub_0069FF90(CGenerate *this)
 
 {
-  if (this->field_024A != (code *)0x0) {
+  if (this->field_024A != nullptr) {
     (*this->field_024A)(0);
   }
   return;

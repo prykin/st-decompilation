@@ -46,7 +46,7 @@ uint __cdecl FUN_006d7d9a(AnonShape_006D7D9A_A5401417 *param_1)
   }
   local_8 = (undefined4 *)thunk_FUN_006a3be0(iVar5 + 0x4101);
   uVar8 = 0xfffffffe;
-  if ((local_8 != (undefined4 *)0x0) && (uVar8 = (*pcVar3)(param_1,local_11,1), uVar8 == 1)) {
+  if ((local_8 != nullptr) && (uVar8 = (*pcVar3)(param_1,local_11,1), uVar8 == 1)) {
     if ((local_11[0] < 2) || (9 < local_11[0])) {
 LAB_006d7faf:
       uVar8 = 0xfffffffb;

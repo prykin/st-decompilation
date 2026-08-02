@@ -24,7 +24,7 @@ void __thiscall StartSystemTy::DoneSystem(StartSystemTy *this)
     sub_006E56B0(this,this->field_0550);
   }
   this->field_0550 = 0;
-  if (this->field_069A != (void *)0x0) {
+  if (this->field_069A != nullptr) {
     FreeAndNull(&this->field_069A);
   }
   DelAllAccelerators();

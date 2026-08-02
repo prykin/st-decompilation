@@ -13,17 +13,17 @@ undefined4 FUN_006ad190(undefined4 param_1,char *text,int param_3)
     DAT_00854a98 = 1;
   }
   DAT_00854eac = param_1;
-  if (g_int_00854EB4 != (int *)0x0) {
+  if (g_int_00854EB4 != nullptr) {
     Library::MSVCRT::FUN_0072ea90(g_int_00854EB4);
-    g_int_00854EB4 = (int *)0x0;
+    g_int_00854EB4 = nullptr;
   }
-  if ((text != (char *)0x0) && (*text != '\0')) {
+  if ((text != nullptr) && (*text != '\0')) {
     pcVar2 = &DAT_007ed7b0;
     if (param_3 == 0) {
       pcVar2 = &DAT_007ed7ac;
     }
     piVar1 = (int *)Library::MSVCRT::FUN_0072ea70(text,pcVar2);
-    if (piVar1 == (int *)0x0) {
+    if (piVar1 == nullptr) {
       return DAT_00857148;
     }
     GetLocalTime((LPSYSTEMTIME)&DAT_00854a88);

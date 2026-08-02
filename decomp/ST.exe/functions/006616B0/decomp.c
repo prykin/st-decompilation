@@ -21,7 +21,7 @@ void __thiscall FUN_006616b0(void *this,uint param_1,uint param_2)
         puVar5 = (uint *)(*(int *)(iVar1 + 8) * local_10 + *(int *)(iVar1 + 0x1c));
       }
       else {
-        puVar5 = (uint *)0x0;
+        puVar5 = nullptr;
       }
       if ((puVar5[10] == 0) && (puVar5[9] == 0)) {
         iVar6 = 0;

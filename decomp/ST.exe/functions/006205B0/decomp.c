@@ -25,7 +25,7 @@ undefined4 __thiscall FUN_006205b0(void *this,undefined4 *param_1,undefined4 *pa
         puVar4 = (uint *)(*(int *)(iVar5 + 8) * uVar6 + *(int *)(iVar5 + 0x1c));
       }
       else {
-        puVar4 = (uint *)0x0;
+        puVar4 = nullptr;
       }
       uVar2 = *puVar4;
       if ((uVar2 != 0) && (uVar7 < uVar2)) {

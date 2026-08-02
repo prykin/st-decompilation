@@ -54,23 +54,23 @@ int __thiscall BldLabPanelTy::GetMessage(BldLabPanelTy *this,STMessage *message)
         g_currentExceptionFrame = local_4c.previous;
         return 0;
       }
-      if (this_00->field_027A != (BldLabPanelTy_field_027ADArray *)0x0) {
+      if (this_00->field_027A != nullptr) {
         DArrayDestroy((DArrayTy *)this_00->field_027A);
       }
-      this_00->field_027A = (BldLabPanelTy_field_027ADArray *)0x0;
-      g_prodPanel_00801680 = (ProdPanelTy *)0x0;
+      this_00->field_027A = nullptr;
+      g_prodPanel_00801680 = nullptr;
       g_currentExceptionFrame = local_4c.previous;
       return 0;
     }
     pBVar2 = this_00->field_027A;
-    if ((pBVar2 == (BldLabPanelTy_field_027ADArray *)0x0) ||
+    if ((pBVar2 == nullptr) ||
        (iVar4 = SVar1 + this_00->field_0199, pBVar2->count <= iVar4 - 0xc09fU)) {
-      pGVar5 = (Global_sub_00526BA0_param_1Enum *)0x0;
+      pGVar5 = nullptr;
     }
     else {
       element_027a = DArrayAt<BldLabPanelTy_field_027AElement>(pBVar2, iVar4 + -0xc09f);
     }
-    if (element_027a == (BldLabPanelTy_field_027AElement *)0x0) {
+    if (element_027a == nullptr) {
       g_currentExceptionFrame = local_4c.previous;
       return 0;
     }

@@ -70,7 +70,7 @@ undefined4 FUN_00497370(int param_1,int param_2,uint param_3,uint param_4,void *
         puVar12 = (uint *)(pDVar14->elementSize * local_34 + (int)pDVar14->data);
       }
       else {
-        puVar12 = (uint *)0x0;
+        puVar12 = nullptr;
       }
       uVar4 = puVar12[2];
       if (uVar4 != param_3) {
@@ -102,8 +102,8 @@ LAB_004974ca:
           bVar15 = iVar3 < 0;
         }
         else {
-          bVar15 = (&DAT_008087ea)[(param_3 & 0xff) * 0x51] !=
-                   (&DAT_008087ea)[(uVar4 & 0xff) * 0x51];
+          bVar15 = g_bulkInitializedRecords_008087C7[param_3 & 0xff].field_0023 !=
+                   g_bulkInitializedRecords_008087C7[uVar4 & 0xff].field_0023;
         }
         if ((bVar15) &&
            (iVar3 = FUN_006aced8(*puVar12 * 0xc9 + 100,puVar12[1] * 0xc9 + 100,param_1 * 0xc9 + 100,

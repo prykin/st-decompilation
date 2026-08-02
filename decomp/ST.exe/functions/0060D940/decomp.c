@@ -44,7 +44,7 @@ undefined4 __fastcall FUN_0060d940(AnonShape_0060D940_4FDF4902 *param_1)
           iVar4 = param_1->field_0234;
           if ((uVar6 < *(uint *)(iVar4 + 0xc)) &&
              (puVar5 = (undefined4 *)(*(int *)(iVar4 + 8) * uVar6 + *(int *)(iVar4 + 0x1c)),
-             puVar5 != (undefined4 *)0x0)) {
+             puVar5 != nullptr)) {
             puVar5[6] = iVar7;
             puVar5[7] = iVar3;
             uVar1 = param_1->field_01F1;

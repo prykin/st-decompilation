@@ -23,7 +23,7 @@ int __thiscall STFieldC::sub_0060D660(STFieldC *this,int *param_1)
   size = iVar5 * 0x44;
   pvVar1 = Library::DKW::LIB::MemAlloc(size);
   this->field_0244 = pvVar1;
-  if (pvVar1 == (void *)0x0) {
+  if (pvVar1 == nullptr) {
     return 0;
   }
   iVar2 = thunk_FUN_0062ca00();

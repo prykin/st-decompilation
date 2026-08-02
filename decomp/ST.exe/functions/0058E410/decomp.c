@@ -12,10 +12,10 @@ STSharkC * __cdecl CreateSTShark(void)
   STSharkC *pSVar1;
 
   pSVar1 = (STSharkC *)FUN_006b04d0(0x28f);
-  if (pSVar1 != (STSharkC *)0x0) {
+  if (pSVar1 != nullptr) {
     pSVar1 = STSharkC::STSharkC(pSVar1);
     return pSVar1;
   }
-  return (STSharkC *)0x0;
+  return nullptr;
 }
 

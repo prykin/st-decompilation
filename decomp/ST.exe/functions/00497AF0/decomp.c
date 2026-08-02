@@ -25,7 +25,7 @@ STGroupBoatC * __thiscall STGroupBoatC::STGroupBoatC(STGroupBoatC *this)
   this->field_0051 = 0;
   this->field_004D = 0;
   this->field_0049 = 0;
-  this->field_0059 = (void *)0x0;
+  this->field_0059 = nullptr;
   memset(&this->field_005D, 0, 0x185); /* compiler bulk-zero initialization */
   iVar1 = 0;
   memset(&this->field_0x1e2, 0, 0x28); /* compiler bulk-zero initialization */
@@ -34,7 +34,7 @@ STGroupBoatC * __thiscall STGroupBoatC::STGroupBoatC(STGroupBoatC *this)
   iVar1 = 0;
   ppDVar2 = &this->field_0226;
   for (iVar1 = 9; iVar1 != 0; iVar1 = iVar1 + -1) {
-    *ppDVar2 = (DArrayTy *)0x0;
+    *ppDVar2 = nullptr;
     ppDVar2 = ppDVar2 + 1;
   }
   this->field_0232 = -1;

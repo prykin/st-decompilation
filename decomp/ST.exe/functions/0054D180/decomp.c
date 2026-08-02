@@ -25,13 +25,13 @@ void __thiscall STPlaySystemC::DoneSystem(STPlaySystemC *this)
     local_8->field_00CC = 0xf;
     local_8->field_00D0 = 0x7106;
     (*local_8->vtable->SendMessage)((SystemWithNamedObjClassTy *)local_8,(int)&local_8->field_0xc0);
-    if (pSVar2->field_0039 != (AnonPointee_STPlaySystemC_0039 *)0x0) {
+    if (pSVar2->field_0039 != nullptr) {
       FUN_006b9890((int *)&pSVar2->field_0039);
     }
-    if (pSVar2->field_004F != (void *)0x0) {
+    if (pSVar2->field_004F != nullptr) {
       FreeAndNull(&pSVar2->field_004F);
     }
-    if (pSVar2->field_003D != (AnonPointee_STPlaySystemC_003D *)0x0) {
+    if (pSVar2->field_003D != nullptr) {
       FreeAndNull(&pSVar2->field_003D);
     }
     pSVar2->field_0041 = 0;

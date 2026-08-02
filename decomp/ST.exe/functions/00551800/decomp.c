@@ -35,7 +35,7 @@ void __thiscall TradePanelTy::sub_00551800(TradePanelTy *this)
     *(undefined4 *)&this->field_0x2c = 0;
     goto LAB_00551a54;
   }
-  if ((iVar1 == 0) || (g_allPlayers_007FA174 == (STAllPlayersC *)0x0)) goto LAB_005519bc;
+  if ((iVar1 == 0) || (g_allPlayers_007FA174 == nullptr)) goto LAB_005519bc;
   this->field_0028 = 0x21;
   FUN_006e6080(this,2,iVar1,(undefined4 *)&this->field_0x18);
   iVar1 = *(int *)&this->field_0x2c;
@@ -88,7 +88,7 @@ LAB_005519bc:
   if (this->field_01CC == 0) {
     return;
   }
-  if (g_allPlayers_007FA174 == (STAllPlayersC *)0x0) {
+  if (g_allPlayers_007FA174 == nullptr) {
     return;
   }
   this->field_0028 = 0x21;

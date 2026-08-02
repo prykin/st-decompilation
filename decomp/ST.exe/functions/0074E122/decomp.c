@@ -5,7 +5,7 @@ void __thiscall FUN_0074e122(void *this,int *param_1,int param_2)
   int iVar1;
   int *piVar2;
 
-  if (param_1 == (int *)0x0) {
+  if (param_1 == nullptr) {
     FUN_0074df72(this,param_2);
   }
   else if (param_1 == *(int **)this) {
@@ -13,8 +13,8 @@ void __thiscall FUN_0074e122(void *this,int *param_1,int param_2)
   }
   else {
     piVar2 = (int *)FUN_0074e2ff((AnonShape_0074E2FF_47CF731F *)((int)this + 0xc));
-    if ((piVar2 == (int *)0x0) &&
-       (piVar2 = (int *)Library::MSVCRT::FUN_0072e530(0xc), piVar2 == (int *)0x0)) {
+    if ((piVar2 == nullptr) &&
+       (piVar2 = (int *)Library::MSVCRT::FUN_0072e530(0xc), piVar2 == nullptr)) {
       return;
     }
     piVar2[2] = param_2;

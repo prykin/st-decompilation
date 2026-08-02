@@ -10,7 +10,7 @@ void __cdecl FUN_00726260(uint *param_1)
   int iVar3;
 
   psVar1 = (short *)*param_1;
-  if (psVar1 != (short *)0x0) {
+  if (psVar1 != nullptr) {
     iVar2 = 0;
     if (0 < (int)psVar1[1] * (int)*psVar1) {
       iVar3 = 0;

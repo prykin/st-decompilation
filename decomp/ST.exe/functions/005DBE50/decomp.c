@@ -16,13 +16,13 @@ StartSystemTy::OutBmpProc
   int iVar2;
   InternalExceptionFrame local_48;
 
-  if (param_8 != (BITMAPINFO *)0x0) {
+  if (param_8 != nullptr) {
     local_48.previous = g_currentExceptionFrame;
     g_currentExceptionFrame = &local_48;
     errorCode = Library::MSVCRT::__setjmp3(local_48.jumpBuffer,0);
     if (errorCode == 0) {
       Library::DKW::DDX::FUN_006b4680
-                (param_1,param_4,param_5,param_8,(uint *)0x0,0,0,param_6,param_7,0x10000ff);
+                (param_1,param_4,param_5,param_8,nullptr,0,0,param_6,param_7,0x10000ff);
       g_currentExceptionFrame = local_48.previous;
       return;
     }

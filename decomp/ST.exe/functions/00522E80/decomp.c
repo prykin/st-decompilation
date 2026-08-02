@@ -76,7 +76,7 @@ int __thiscall IntercomPanelTy::GetMessage(IntercomPanelTy *this,STMessage *mess
           if (iVar6 <= this_00->field_0044) {
             ppAVar10 = local_8dc;
             for (iVar8 = 0x223; iVar8 != 0; iVar8 = iVar8 + -1) {
-              *ppAVar10 = (AnonShape_00710790_4CBB90D4 *)0x0;
+              *ppAVar10 = nullptr;
               ppAVar10 = ppAVar10 + 1;
             }
             pAVar3 = this_00->field_0180;
@@ -106,7 +106,7 @@ int __thiscall IntercomPanelTy::GetMessage(IntercomPanelTy *this,STMessage *mess
             local_890 = local_8b0;
             local_850 = local_8b0;
             (*this_00->field_000C->vtable->CreateObject)
-                      ((SystemClassTy *)this_00->field_000C,6,&this_00->field_01A0,(int *)0x0,
+                      ((SystemClassTy *)this_00->field_000C,6,&this_00->field_01A0,nullptr,
                        local_8dc,1);
           }
           Library::DKW::DDX::FUN_006b3640

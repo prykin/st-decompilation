@@ -20,7 +20,7 @@ undefined4 __thiscall TLOBaseTy::sub_004E3120(TLOBaseTy *this)
 
   if (*(int *)&this->field_0x361 == 2) {
     thunk_FUN_004e5f20(this->field_0024,*(uint *)&this->field_0x369);
-    if (DAT_008117bc != (undefined4 *)0x0) {
+    if (DAT_008117bc != nullptr) {
       uVar1 = *(undefined2 *)&this->field_0024;
       memset(local_24, 0, 0x20); /* compiler bulk-zero initialization */
       local_e = this->field_0032;

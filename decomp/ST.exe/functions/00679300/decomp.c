@@ -42,22 +42,22 @@ int __thiscall AiPlrClassTy::CloseTactByTitle(AiPlrClassTy *this,byte *param_1)
     return 0;
   }
   pDVar1 = pAVar3->field_0695;
-  if ((pDVar1 != (DArrayTy *)0x0) && ((int)index < (int)pDVar1->count)) {
+  if ((pDVar1 != nullptr) && ((int)index < (int)pDVar1->count)) {
     if (index < pDVar1->count) {
       /* ST_PSEUDO[dynamic_array_indexing]: expected DArrayAt<T>(pDVar1, index) (runtime stride) */
       puVar5 = (undefined4 *)(pDVar1->elementSize * index + (int)pDVar1->data);
     }
     else {
-      puVar5 = (undefined4 *)0x0;
+      puVar5 = nullptr;
     }
     if (puVar5[1] != 0) {
       this_00 = (AiTactClassTy *)*puVar5;
       goto LAB_00679378;
     }
   }
-  this_00 = (AiTactClassTy *)0x0;
+  this_00 = nullptr;
 LAB_00679378:
-  if (this_00 != (AiTactClassTy *)0x0) {
+  if (this_00 != nullptr) {
     pAVar7 = local_3c;
     for (iVar4 = 0xd; iVar4 != 0; iVar4 = iVar4 + -1) {
       *(undefined4 *)pAVar7 = 0;

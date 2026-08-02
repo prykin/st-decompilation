@@ -31,7 +31,7 @@ STManRuinC::sub_00630C50
   ushort *local_c;
   undefined **local_8;
 
-  local_c = (ushort *)0x0;
+  local_c = nullptr;
   if (param_2 == 1) {
     if (param_5 == 3) {
       local_8 = &PTR_s_ruin_s10_007d1850;
@@ -57,7 +57,7 @@ STManRuinC::sub_00630C50
   }
   puVar4 = Library::Ourlib::MFRLOAD::mfRLoad
                      (DAT_00806774,CASE_1D,local_8[local_10->field_0040],0xffffffff,0,1,0,
-                      (undefined4 *)0x0);
+                      nullptr);
   if (param_3 == 0) {
     if (param_2 == 1) {
       local_c = ST3DSMAPContext::sub_006E9000

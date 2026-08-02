@@ -54,7 +54,7 @@ STAllPlayersC::DeleteGuardBoat(STAllPlayersC *this,char param_1,short param_2,in
     }
     return;
   }
-  if (local_18 == (DArrayTy *)0x0) {
+  if (local_18 == nullptr) {
     RaiseInternalException
               (-0x5001fff7,g_overwriteContext_007ED77C,"E:\\__titans\\wlad\\to_allpl.cpp",
                0x291d);
@@ -124,7 +124,7 @@ STAllPlayersC::DeleteGuardBoat(STAllPlayersC *this,char param_1,short param_2,in
             do {
               DArrayGetElement(local_20,uVar8,local_8);
               pSVar4 = (STBoatC *)GetObjPtr(local_14,param_1,local_8[0],CASE_1);
-              if (pSVar4 == (STBoatC *)0x0) {
+              if (pSVar4 == nullptr) {
                 iVar3 = ReportDebugMessage("E:\\__titans\\wlad\\to_allpl.cpp",0x2955,0,0,
                                            "%s","STAllPlayersC::DeleteGuardBoat NULL"
                                           );

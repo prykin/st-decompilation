@@ -111,7 +111,7 @@ int FUN_006cef60(int *param_1,uint *param_2,AnonShape_006B5B10_E0D06CF1 *param_3
   }
   if ((param_12 & 0xc0000000) != 0) {
     /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
-    if (param_6 == (char *)0x0) {
+    if (param_6 == nullptr) {
       /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
       param_6 = (char *)FUN_006b4fa0((int *)param_5);
     }

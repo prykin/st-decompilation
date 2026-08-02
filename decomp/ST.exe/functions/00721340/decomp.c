@@ -20,7 +20,7 @@ uint __fastcall FUN_00721340(AnonShape_00721340_81196542 *param_1)
     local_c = *(char **)(*(int *)(iVar2 + 0x14) + (int)local_8 * 4);
   }
   else {
-    local_c = (char *)0x0;
+    local_c = nullptr;
   }
   uVar4 = 0xffffffff;
   pcVar6 = local_c;
@@ -41,7 +41,7 @@ uint __fastcall FUN_00721340(AnonShape_00721340_81196542 *param_1)
       pcVar6 = pcVar6 + 1;
     } while (cVar1 != '\0');
     local_8 = (char *)Library::DKW::LIB::FUN_006aac10(~uVar5);
-    if (local_8 == (char *)0x0) {
+    if (local_8 == nullptr) {
       return 0xfffffffe;
     }
     Library::MSVCRT::_strncpy
@@ -69,7 +69,7 @@ uint __fastcall FUN_00721340(AnonShape_00721340_81196542 *param_1)
           pcVar6 = pcVar6 + 1;
         } while (cVar1 != '\0');
         local_8 = (char *)Library::DKW::LIB::FUN_006aac10(~uVar4);
-        if (local_8 == (char *)0x0) {
+        if (local_8 == nullptr) {
           return 0xfffffffe;
         }
         Library::MSVCRT::_strncpy(local_8,local_c,param_1->field_0210 + param_1->field_0148);

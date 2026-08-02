@@ -32,7 +32,7 @@ LPSTR __cdecl GetOpponentNameDB(cMf32 *param_1)
     RaiseInternalException(iVar2,0,"E:\\__titans\\ai\\ai_plr_d.cpp",0x1fe);
     return (LPSTR)0x0;
   }
-  if (param_1 == (cMf32 *)0x0) {
+  if (param_1 == nullptr) {
     RaiseInternalException
               (-0x34,g_overwriteContext_007ED77C,"E:\\__titans\\ai\\ai_plr_d.cpp",0x1fa);
   }

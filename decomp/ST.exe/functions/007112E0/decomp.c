@@ -11,7 +11,7 @@ int __thiscall FUN_007112e0(void *this,uint *param_1)
   iVar4 = -1;
   bVar3 = false;
   local_8 = -1;
-  if (((param_1 != (uint *)0x0) && (*(int *)((int)this + 0x7e) != 0)) &&
+  if (((param_1 != nullptr) && (*(int *)((int)this + 0x7e) != 0)) &&
      (*(int *)((int)this + 0x82) < 0)) {
     cVar2 = (char)*param_1;
     iVar4 = local_8;

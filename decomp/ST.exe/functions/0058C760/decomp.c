@@ -72,8 +72,8 @@ int __thiscall STSatC::GetMessage(STSatC *this,STMessage *message)
       local_18 = (byte *)STT3DSprC::SaveSpr((STT3DSprC *)&this_00->field_01D5,&local_8);
       local_14 = (byte *)STAllPlayersC::SaveGObjData((STAllPlayersC *)this_00,(int *)&local_10);
       local_c = Library::DKW::LIB::MemAlloc(local_10 + 0x7c + local_8);
-      if (((local_18 != (byte *)0x0) && (local_14 != (byte *)0x0)) &&
-         (local_c != (AnonShape_0058C760_5C56630E *)0x0)) {
+      if (((local_18 != nullptr) && (local_14 != nullptr)) &&
+         (local_c != nullptr)) {
         puVar14 = (byte *)&this_00->field_0x275;
         pAVar17 = local_c;
         for (iVar9 = 9; iVar9 != 0; iVar9 = iVar9 + -1) {
@@ -225,16 +225,16 @@ int __thiscall STSatC::GetMessage(STSatC *this,STMessage *message)
           *(undefined2 *)&this_00->field_0x43 = *(undefined2 *)&local_20->field_0x6c;
           *(undefined2 *)&this_00->field_0x45 = local_20->field_006E;
           local_3c = Library::DKW::LIB::MemAlloc(0x44);
-          if (local_3c != (void *)0x0) {
+          if (local_3c != nullptr) {
             iVar9 = 0;
             do {
               *(int **)(iVar9 + (int)local_3c) = DAT_00806774;
               iVar9 = iVar9 + 4;
             } while (iVar9 < 0x44);
             if (((*(int *)&this_00->field_0x239 < 1) ||
-                (PTR_00806724 == (AnonShape_GLOBAL_00806724_3210464F *)0x0)) ||
+                (PTR_00806724 == nullptr)) ||
                (PTR_00806724 == (AnonShape_GLOBAL_00806724_3210464F *)0xffffffd0)) {
-              local_38 = (AnonShape_GLOBAL_00806724_3210464F *)0x0;
+              local_38 = nullptr;
             }
             else {
               local_38 = PTR_00806724 + *(int *)&this_00->field_0x239;

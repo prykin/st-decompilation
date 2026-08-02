@@ -11,13 +11,13 @@ void FUN_007596d0(int *param_1)
   iVar1 = *param_1;
   iVar4 = 0;
   iVar5 = 0;
-  for (piVar2 = *(int **)(iVar1 + 0x40); piVar2 != (int *)0x0; piVar2 = (int *)piVar2[0xb]) {
+  for (piVar2 = *(int **)(iVar1 + 0x40); piVar2 != nullptr; piVar2 = (int *)piVar2[0xb]) {
     if (*piVar2 == 0) {
       iVar4 = iVar4 + piVar2[3] * piVar2[2];
       iVar5 = iVar5 + piVar2[1] * piVar2[2];
     }
   }
-  for (piVar2 = *(int **)(iVar1 + 0x44); piVar2 != (int *)0x0; piVar2 = (int *)piVar2[0xb]) {
+  for (piVar2 = *(int **)(iVar1 + 0x44); piVar2 != nullptr; piVar2 = (int *)piVar2[0xb]) {
     if (*piVar2 == 0) {
       iVar4 = iVar4 + piVar2[3] * piVar2[2] * 0x100;
       iVar5 = iVar5 + piVar2[1] * piVar2[2] * 0x100;
@@ -34,7 +34,7 @@ void FUN_007596d0(int *param_1)
     else {
       iVar3 = 1000000000;
     }
-    for (piVar2 = *(int **)(iVar1 + 0x40); piVar2 != (int *)0x0; piVar2 = (int *)piVar2[0xb]) {
+    for (piVar2 = *(int **)(iVar1 + 0x40); piVar2 != nullptr; piVar2 = (int *)piVar2[0xb]) {
       if (*piVar2 == 0) {
         if (iVar3 < (int)((piVar2[1] - 1U) / (uint)piVar2[3] + 1)) {
           piVar2[4] = piVar2[3] * iVar3;
@@ -52,7 +52,7 @@ void FUN_007596d0(int *param_1)
         piVar2[9] = 0;
       }
     }
-    for (piVar2 = *(int **)(iVar1 + 0x44); piVar2 != (int *)0x0; piVar2 = (int *)piVar2[0xb]) {
+    for (piVar2 = *(int **)(iVar1 + 0x44); piVar2 != nullptr; piVar2 = (int *)piVar2[0xb]) {
       if (*piVar2 == 0) {
         if (iVar3 < (int)((piVar2[1] - 1U) / (uint)piVar2[3] + 1)) {
           piVar2[4] = piVar2[3] * iVar3;

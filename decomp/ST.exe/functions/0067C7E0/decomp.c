@@ -92,22 +92,22 @@ int __thiscall AiPlrClassTy::GetMessage(AiPlrClassTy *this,STMessage *message)
         } while (cVar1 != '\0');
         uVar10 = ~uVar10;
         pcVar12 = pcVar12 + -uVar10;
-        pcVar13 = &DAT_008087c8 + this_00->field_05D7 * 0x51;
+        pcVar13 = &g_bulkInitializedRecords_008087C7[this_00->field_05D7].field_0x1;
         memmove(pcVar13, pcVar12, uVar10); /* compiler REP MOVS byte copy */
-        if (local_18 != (byte *)0x0) {
+        if (local_18 != nullptr) {
           FreeAndNull(&local_18);
         }
       }
       else if (SVar2 == MESS_ID_NONE) {
         if ((&DAT_00809950)[local_10->field_05D7] == '\0') {
-          if (DAT_008117bc != (undefined4 *)0x0) {
+          if (DAT_008117bc != nullptr) {
             memset(local_38, 0, 0x20); /* compiler bulk-zero initialization */
             iVar5 = 0;
             local_38[4] = 0x5deb;
             /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
             local_24 = CONCAT22(local_24._2_2_,*(undefined2 *)&this_00->field_05D7);
-            if (this_00 == (AiPlrClassTy *)0x0) {
-              local_20 = (AiPlrClassTyVTable_at_1C **)0x0;
+            if (this_00 == nullptr) {
+              local_20 = nullptr;
             }
             else {
               local_20 = &this_00->vtable_at_1c;
@@ -141,12 +141,12 @@ int __thiscall AiPlrClassTy::GetMessage(AiPlrClassTy *this,STMessage *message)
       }
       else if (SVar2 == MESS_ID_CREATE) {
         puVar3 = (message->arg0).ptr;
-        if (puVar3 == (undefined4 *)0x0) {
+        if (puVar3 == nullptr) {
           RaiseInternalException
                     (-6,g_overwriteContext_007ED77C,"E:\\__titans\\ai\\ai_plr.cpp",0x586);
         }
         InitData(this_00,puVar3);
-        if (g_allPlayers_007FA174 != (STAllPlayersC *)0x0) {
+        if (g_allPlayers_007FA174 != nullptr) {
           thunk_FUN_004357b0(*(char *)&this_00->field_05D7,this_00);
         }
         if (puVar3[3] == 0) {
@@ -155,13 +155,13 @@ int __thiscall AiPlrClassTy::GetMessage(AiPlrClassTy *this,STMessage *message)
         thunk_FUN_0064a450();
       }
       else if (SVar2 == MESS_SHARED_0003) {
-        if (DAT_008117bc != (undefined4 *)0x0) {
+        if (DAT_008117bc != nullptr) {
           memset(local_38, 0, 0x20); /* compiler bulk-zero initialization */
           local_38[4] = 0x5dec;
           /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
           local_24 = CONCAT22(local_24._2_2_,*(undefined2 *)&this_00->field_05D7);
-          if (this_00 == (AiPlrClassTy *)0x0) {
-            local_20 = (AiPlrClassTyVTable_at_1C **)0x0;
+          if (this_00 == nullptr) {
+            local_20 = nullptr;
           }
           else {
             local_20 = &this_00->vtable_at_1c;
@@ -170,8 +170,8 @@ int __thiscall AiPlrClassTy::GetMessage(AiPlrClassTy *this,STMessage *message)
           (**(code **)*DAT_008117bc)(local_38);
         }
         thunk_FUN_0064a580();
-        if (g_allPlayers_007FA174 != (STAllPlayersC *)0x0) {
-          thunk_FUN_004357b0(*(char *)&this_00->field_05D7,(AiPlrClassTy *)0x0);
+        if (g_allPlayers_007FA174 != nullptr) {
+          thunk_FUN_004357b0(*(char *)&this_00->field_05D7,nullptr);
         }
         thunk_FUN_00678ba0(this_00);
       }
@@ -187,9 +187,9 @@ int __thiscall AiPlrClassTy::GetMessage(AiPlrClassTy *this,STMessage *message)
             piVar14 = (int *)(pDVar8->elementSize * uVar10 + (int)pDVar8->data);
           }
           else {
-            piVar14 = (int *)0x0;
+            piVar14 = nullptr;
           }
-          if ((AnonShape_005EFAE0_B406B78B *)piVar14[1] != (AnonShape_005EFAE0_B406B78B *)0x0) {
+          if ((AnonShape_005EFAE0_B406B78B *)piVar14[1] != nullptr) {
             local_c = 0;
             iVar5 = STPlaySystemC::sub_006E62D0
                               (g_playSystem_00802A38,(AnonShape_005EFAE0_B406B78B *)piVar14[1],
@@ -209,15 +209,15 @@ int __thiscall AiPlrClassTy::GetMessage(AiPlrClassTy *this,STMessage *message)
       }
     }
     else if (SVar2 == MESS_AIPLRCLASSTY_5D94) {
-      if (g_allPlayers_007FA174 == (STAllPlayersC *)0x0) {
-        objPtr = (STGameObjC *)0x0;
+      if (g_allPlayers_007FA174 == nullptr) {
+        objPtr = nullptr;
       }
       else {
         objPtr = STAllPlayersC::GetObjPtr
                            (g_allPlayers_007FA174,*(char *)&local_10->field_05D7,
                             (message->arg0).words.high,CASE_1);
       }
-      if (objPtr != (STGameObjC *)0x0) {
+      if (objPtr != nullptr) {
         iVar5 = (*objPtr->vtable->vfunc_2C)();
         if ((iVar5 < 1) || (0x28 < iVar5)) {
           bVar16 = false;
@@ -227,7 +227,7 @@ int __thiscall AiPlrClassTy::GetMessage(AiPlrClassTy *this,STMessage *message)
         }
         if ((bVar16) &&
            (this_01 = (AiFltClassTy *)thunk_FUN_00679e70(this_00,objPtr->field_081C),
-           this_01 != (AiFltClassTy *)0x0)) {
+           this_01 != nullptr)) {
           AiFltClassTy::_AddObjFlt(this_01,(uint)objPtr,0);
         }
       }
@@ -240,13 +240,13 @@ int __thiscall AiPlrClassTy::GetMessage(AiPlrClassTy *this,STMessage *message)
         thunk_FUN_00675dc0(local_10->field_05D7,(message->arg1).ptr);
       }
       else {
-        local_8 = (DArrayTy *)0x0;
+        local_8 = nullptr;
         Library::DKW::TBL::FUN_006afe40((int *)&local_8,(message->arg1).ptr);
         pDVar8 = local_8;
-        if (local_8 != (DArrayTy *)0x0) {
+        if (local_8 != nullptr) {
           ppAVar15 = &local_6c;
           for (iVar5 = 0xd; iVar5 != 0; iVar5 = iVar5 + -1) {
-            *ppAVar15 = (AnonShape_0068FD00_A5257008 *)0x0;
+            *ppAVar15 = nullptr;
             ppAVar15 = ppAVar15 + 1;
           }
           local_68 = this_00->field_06FE;

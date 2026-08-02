@@ -17,10 +17,10 @@ void __thiscall AiFltClassTy::sub_00661580(AiFltClassTy *this)
   bool bVar5;
 
   this_00 = this->field_0284;
-  if (this_00 == (ushort *)0x0) {
+  if (this_00 == nullptr) {
     return;
   }
-  if (this->field_020B == (DArrayTy *)0x0) {
+  if (this->field_020B == nullptr) {
     return;
   }
   if ((this->field_01FB != 0) && (this->field_0280 < this->field_01FF + this->field_01FB)) {
@@ -50,7 +50,7 @@ LAB_006615ff:
           puVar4 = (uint *)(pDVar2->elementSize * uVar3 + (int)pDVar2->data);
         }
         else {
-          puVar4 = (uint *)0x0;
+          puVar4 = nullptr;
         }
         if (((puVar4[10] == 0) && (puVar4[9] == 0)) &&
            (sub_00660F70(this,puVar4,(short)uVar3), puVar4[9] != 0)) {

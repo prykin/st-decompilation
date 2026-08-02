@@ -18,7 +18,7 @@ void __thiscall FUN_0060bd30(void *this,undefined4 *param_1,undefined4 param_2)
 
   ppuVar2 = local_40;
   for (iVar1 = 8; iVar1 != 0; iVar1 = iVar1 + -1) {
-    *ppuVar2 = (undefined4 *)0x0;
+    *ppuVar2 = nullptr;
     ppuVar2 = ppuVar2 + 1;
   }
   memset(local_20, 0, 0x1c); /* compiler bulk-zero initialization */

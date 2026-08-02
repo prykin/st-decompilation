@@ -10,7 +10,7 @@ undefined4 __thiscall TLOBaseTy::sub_004C2F70(TLOBaseTy *this)
   int iVar1;
   AnonShape_0060A470_93FA2EC1 *local_8;
 
-  local_8 = (AnonShape_0060A470_93FA2EC1 *)0x0;
+  local_8 = nullptr;
   if ((*(int *)(&DAT_007951b4 + this->field_0235 * 4) != 0) && (this->field_0408 != 0)) {
     iVar1 = STPlaySystemC::sub_006E62D0(g_playSystem_00802A38,this->field_040C,(int *)&local_8);
     if (iVar1 == 0) {

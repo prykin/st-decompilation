@@ -41,7 +41,7 @@ TLOBaseTy::FUN_004c7cc0
 
   if ((int)param_3 < 0) {
     iVar5 = (param_3 ^ (int)param_3 >> 0x1f) - ((int)param_3 >> 0x1f);
-    if ((this->field_03D4 != 0) && (this->field_0607 != (AnonPointee_TLOBaseTy_0607 *)0x0)) {
+    if ((this->field_03D4 != 0) && (this->field_0607 != nullptr)) {
       do {
         iVar1 = this->field_03D4;
         bVar4 = false;
@@ -132,7 +132,7 @@ LAB_004c7d8c:
             puVar13[2] = 0;
             *(undefined2 *)(puVar13 + 3) = 0;
             *(undefined1 *)((int)puVar13 + 0xe) = 0;
-            if (param_8 != (char *)0x0) {
+            if (param_8 != nullptr) {
               Library::MSVCRT::_strncpy
                         ((char *)(this->field_03D4 * 0x27 + 0x18 + (int)this->field_0607),param_8,
                          0xf);
@@ -160,7 +160,7 @@ LAB_004c7d8c:
           this->field_0385 = 0;
           this->field_0389 = 0;
           this->field_038B = 0;
-          if (param_8 != (char *)0x0) {
+          if (param_8 != nullptr) {
             Library::MSVCRT::_strncpy((char *)&this->field_037D,param_8,0xf);
           }
           thunk_FUN_004c7260(this,*(Global_sub_004C7260_param_1Enum *)&this->field_0x361,

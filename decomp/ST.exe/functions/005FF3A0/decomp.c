@@ -9,7 +9,7 @@ FUN_005ff3a0(void *this,undefined2 *param_1,undefined2 *param_2,short *param_3)
   this_00 = STAllPlayersC::GetObjPtr
                       (g_allPlayers_007FA174,*(char *)((int)this + 0x20a),
                        *(ushort *)((int)this + 0x224),CASE_1);
-  if (this_00 != (STGameObjC *)0x0) {
+  if (this_00 != nullptr) {
     iVar1 = this_00->vfunc_F8();
     if (iVar1 != 0) {
       thunk_FUN_00416270(this_00,param_1,(int *)param_2,(int *)param_3);

@@ -12,10 +12,10 @@ TLOFakeTy * __cdecl CreateTLOFake(void)
   TLOFakeTy *pTVar1;
 
   pTVar1 = (TLOFakeTy *)FUN_006b04d0(0x251);
-  if (pTVar1 != (TLOFakeTy *)0x0) {
+  if (pTVar1 != nullptr) {
     pTVar1 = TLOFakeTy::TLOFakeTy(pTVar1);
     return pTVar1;
   }
-  return (TLOFakeTy *)0x0;
+  return nullptr;
 }
 

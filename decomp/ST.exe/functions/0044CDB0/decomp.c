@@ -20,7 +20,7 @@ void FUN_0044cdb0(uint param_1,DArrayTy *groupContent,int param_3)
       if ((((ushort)param_1 != 0xffff) &&
           (pSVar3 = STAllPlayersC::GetObjPtr
                               (g_allPlayers_007FA174,(char)uVar2,(ushort)param_1,CASE_1),
-          pSVar3 != (STGameObjC *)0x0)) && (pSVar3->field_0020 == 0x14)) {
+          pSVar3 != nullptr)) && (pSVar3->field_0020 == 0x14)) {
         pSVar3->field_07EE = param_3;
       }
       uVar4 = uVar4 + 1;

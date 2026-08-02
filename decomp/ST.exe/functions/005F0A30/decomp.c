@@ -32,7 +32,7 @@ bool __fastcall FUN_005f0a30(STBoatC *param_1)
         this = g_worldGrid.cells
                [(int)g_worldGrid.planeStride * (int)(short)uVar4 +
                 (int)g_worldGrid.sizeX * (int)sVar2 + uVar5].objects[0];
-        if (this != (STWorldObject *)0x0) {
+        if (this != nullptr) {
           uVar5 = this->GetObjectTypeId();
           if (uVar5 == 99) {
             iVar6 = (*param_1->vtable[1].vfunc_14)();

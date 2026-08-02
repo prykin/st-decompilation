@@ -25,12 +25,12 @@ void __thiscall PausePanelTy::DonePausePanel(PausePanelTy *this)
       StartSystemTy::sub_006E56B0(local_8->field_000C,local_8->field_0184);
     }
     pPVar2->field_0184 = 0;
-    g_pausePanel_008016E0 = (PausePanelTy *)0x0;
-    if (pPVar2->field_017C != (ccFntTy *)0x0) {
+    g_pausePanel_008016E0 = nullptr;
+    if (pPVar2->field_017C != nullptr) {
       ccFntTy::operator_delete((uint *)pPVar2->field_017C);
-      pPVar2->field_017C = (ccFntTy *)0x0;
+      pPVar2->field_017C = nullptr;
     }
-    if (pPVar2->field_0180 != (ushort *)0x0) {
+    if (pPVar2->field_0180 != nullptr) {
       cMf32::RecMemFree(g_cMf32_00806790,(uint *)&pPVar2->field_0180);
     }
     g_currentExceptionFrame = local_4c.previous;

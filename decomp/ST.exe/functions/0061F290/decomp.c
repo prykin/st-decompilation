@@ -26,7 +26,7 @@ undefined4 __thiscall STLightC::sub_0061F290(STLightC *this,int param_1)
   int local_8;
 
   local_10 = 0;
-  if (this->field_00A3 != (STLightC_field_00A3DArray *)0x0) {
+  if (this->field_00A3 != nullptr) {
     dVar1 = this->field_00A3->count;
     if ((dVar1 != 0) && (local_c = 0, local_14 = this, 0 < (int)dVar1)) {
       do {
@@ -36,13 +36,13 @@ undefined4 __thiscall STLightC::sub_0061F290(STLightC *this,int param_1)
           element_00a3 = DArrayAt<STLightC_field_00A3Element>(pSVar2, local_c);
         }
         else {
-          element_00a3 = (STLightC_field_00A3Element *)0x0;
+          element_00a3 = nullptr;
         }
         if ((-1 < (int)element_00a3->spriteHandle) && (-1 < element_00a3->field_0000)) {
           if ((int)(g_playSystem_00802A38->field_00E4 - element_00a3->field_002A) <
               local_14->field_005F) {
             local_10 = 1;
-            if ((param_1 != 0) && (g_visibleClass_00802A88 != (VisibleClassTy *)0x0)) {
+            if ((param_1 != 0) && (g_visibleClass_00802A88 != nullptr)) {
               if ((float)element_00a3->field_000C < _DAT_0079034c) {
                 lVar6 = Library::MSVCRT::__ftol();
                 iVar4 = (short)lVar6 + -1;
@@ -74,7 +74,7 @@ undefined4 __thiscall STLightC::sub_0061F290(STLightC *this,int param_1)
                   ((this_00->field_0030 <= local_18 ||
                    ((iVar4 = g_centeredOffsets5[iVar4] + local_1c, iVar4 < 0 ||
                     (this_00->field_0034 <= iVar4)))))) ||
-                 ((this_00->field_004C == (byte *)0x0 ||
+                 ((this_00->field_004C == nullptr ||
                   (this_00->field_004C[local_18 + iVar4 * this_00->field_0030] != 0)))) {
                 if (element_00a3->state == 0) {
                   Library::Ourlib::ST3DSMAP::SprShow

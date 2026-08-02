@@ -13,7 +13,7 @@ void __thiscall GameSystemC::sub_00577690(GameSystemC *this)
   DVar1 = STAppC::sub_006E51B0(this->field_0018);
   this->field_0020 = DVar1;
   this->field_0024 = 0;
-  FUN_006bc360(DAT_0080679c,(undefined4 *)&this->field_0x28,(int *)0x0);
+  FUN_006bc360(DAT_0080679c,(undefined4 *)&this->field_0x28,nullptr);
   return;
 }
 

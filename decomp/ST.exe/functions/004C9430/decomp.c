@@ -13,7 +13,7 @@ undefined4 __thiscall FUN_004c9430(void *this,int param_1,int param_2)
       return 0;
     }
     piVar2 = *(int **)((int)this + 0x607);
-    if (piVar2 == (int *)0x0) {
+    if (piVar2 == nullptr) {
       return 0;
     }
     iVar3 = 0;

@@ -23,23 +23,23 @@ void __thiscall GameSystemC::DoneSystem(GameSystemC *this,int param_1)
   errorCode = Library::MSVCRT::__setjmp3(local_4c.jumpBuffer,0);
   pGVar3 = local_8;
   if (errorCode == 0) {
-    if (local_8->field_0431 != (void *)0x0) {
+    if (local_8->field_0431 != nullptr) {
       FUN_00725680((int *)&local_8->field_0431);
     }
     FUN_0070b1d0((int *)&PTR_00806724);
-    if (g_interSystem_00802A28 != (InterSystemC *)0x0) {
+    if (g_interSystem_00802A28 != nullptr) {
       thunk_FUN_005711d0(&DAT_00807620,(int *)&g_interSystem_00802A28);
     }
-    if (g_playSystem_00802A38 != (STPlaySystemC *)0x0) {
+    if (g_playSystem_00802A38 != nullptr) {
       thunk_FUN_005711d0(&DAT_00807620,(int *)&g_playSystem_00802A38);
     }
     thunk_FUN_0058d720();
     pSVar2 = g_sT3DSMAPContext_00807598;
     DAT_0080674c = 0;
-    if (g_sT3DSMAPContext_00807598 != (ST3DSMAPContext *)0x0) {
+    if (g_sT3DSMAPContext_00807598 != nullptr) {
       ST3DSMAPContext::sub_006DBCF0(g_sT3DSMAPContext_00807598);
       Library::MSVCRT::FUN_0072e2b0((HoloTy *)pSVar2);
-      g_sT3DSMAPContext_00807598 = (ST3DSMAPContext *)0x0;
+      g_sT3DSMAPContext_00807598 = nullptr;
     }
     thunk_FUN_00578370();
     if (DAT_00806750 != 0) {

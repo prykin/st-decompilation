@@ -30,7 +30,7 @@ void __cdecl _AddObjGrpExch(uint param_1,int *param_2)
     }
     STDebugBreak(); /* noreturn in standalone pseudocode */
   }
-  if (param_2 == (int *)0x0) {
+  if (param_2 == nullptr) {
     g_currentExceptionFrame = local_48.previous;
     return;
   }
@@ -55,7 +55,7 @@ void __cdecl _AddObjGrpExch(uint param_1,int *param_2)
   bVar3 = true;
 LAB_00675f12:
   if (bVar3) {
-    array = Library::DKW::TBL::DArrayCreate((DArrayTy *)0x0,1,2,1);
+    array = Library::DKW::TBL::DArrayCreate(nullptr,1,2,1);
     Library::DKW::TBL::DArrayAppend(array,(void *)((int)param_2 + 0x32));
     thunk_FUN_00675dc0(param_1,array);
     DArrayDestroy(array);

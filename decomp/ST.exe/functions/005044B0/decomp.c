@@ -63,7 +63,7 @@ void __thiscall CPanelTy::PaintMineInf(CPanelTy *this,int param_1)
     pcVar5 = LoadResourceString(0x2721,g_module_00807618);
     Library::MSVCRT::_strncpy(_Dest,pcVar5,_Count);
     pCVar2->field_0x212 = 0;
-    for (puVar6 = Library::MSVCRT::FUN_0072e560((uint *)_Dest,'\n'); puVar6 != (uint *)0x0;
+    for (puVar6 = Library::MSVCRT::FUN_0072e560((uint *)_Dest,'\n'); puVar6 != nullptr;
         puVar6 = Library::MSVCRT::FUN_0072e560(puVar6,'\n')) {
       *(undefined1 *)puVar6 = 0x20;
     }
@@ -74,7 +74,7 @@ void __thiscall CPanelTy::PaintMineInf(CPanelTy *this,int param_1)
     ccFntTy::WrTxt(pCVar2->field_01B8,&DAT_0080f33a,-2,-1,0,-1,-1);
     pbVar4 = (byte *)ccFntTy::CreateSurf(pCVar2->field_01C4,pCVar2->field_0194,0,iVar3,0x6d,0x75,0xe
                                          ,0);
-    if (pbVar4 != (byte *)0x0) {
+    if (pbVar4 != nullptr) {
       wsprintfA((LPSTR)&DAT_0080f33a,"%06d",(uint)(ushort)pCVar2->field_0C34);
       if (pCVar2->field_0BF5 == CASE_38) {
         uVar7 = 1;

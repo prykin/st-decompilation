@@ -93,8 +93,24 @@ public class STGlobalAggregateApplier extends GhidraScript {
                 primary.getSource().toString().equals(row.get("expected_name_source")) &&
                 current.getDataType().getPathName().equals(row.get("expected_type")) &&
                 current.getLength() == integer(row.get("expected_length"));
-            if (!baseline || primary.getSource() == SourceType.USER_DEFINED ||
-                    primary.getSource() == SourceType.IMPORTED) {
+            if (!baseline && current == null) {
+                Data containing = listing.getDefinedDataContaining(address);
+                baseline = containing != null &&
+                    ((primary == null && row.get("expected_name").isBlank()) ||
+                     (primary != null && primary.getName().equals(row.get("expected_name")) &&
+                      primary.getSource().toString().equals(
+                        row.get("expected_name_source")))) &&
+                    containing.getDataType().getPathName().equals(row.get("expected_type")) &&
+                    containing.getLength() == integer(row.get("expected_length"));
+                Symbol containingSymbol = containing == null ? null :
+                    symbols.getPrimarySymbol(containing.getMinAddress());
+                if (containingSymbol != null &&
+                        (containingSymbol.getSource() == SourceType.USER_DEFINED ||
+                         containingSymbol.getSource() == SourceType.IMPORTED)) baseline = false;
+            }
+            if (!baseline || primary != null &&
+                    (primary.getSource() == SourceType.USER_DEFINED ||
+                     primary.getSource() == SourceType.IMPORTED)) {
                 report.add(new Report(row.get("address"), row.get("aggregate_id"), "preserved",
                     "stale baseline or manual primary symbol")); return;
             }
@@ -136,7 +152,9 @@ public class STGlobalAggregateApplier extends GhidraScript {
         for (int offset = 1; offset < length; offset++) {
             Symbol symbol = symbols.getPrimarySymbol(base.add(offset));
             if (symbol != null && symbol.getSource() == SourceType.DEFAULT &&
-                    symbol.getName().matches("(?i)_?(?:DAT|PTR|UNK)_[0-9a-f]+")) symbol.delete();
+                    symbol.getName().matches(
+                        "(?i)_?(?:DAT|PTR|UNK)_[0-9a-f]+(?:\\+[0-9a-f]+)?"))
+                symbol.delete();
         }
     }
 
@@ -154,9 +172,15 @@ public class STGlobalAggregateApplier extends GhidraScript {
             int open = specification.indexOf('{');
             int close = specification.lastIndexOf('}');
             if (open <= "record:".length() || close <= open) return null;
-            String path = specification.substring("record:".length(), open);
+            String pathAndLength = specification.substring("record:".length(), open);
+            int at = pathAndLength.lastIndexOf('@');
+            String path = at < 0 ? pathAndLength : pathAndLength.substring(0, at);
+            int explicitLength = at < 0 ? -1 : integer(pathAndLength.substring(at + 1));
             DataType existing = dataTypes.getDataType(path);
-            if (existing != null) return existing instanceof Structure ? existing : null;
+            if (existing != null)
+                return existing instanceof Structure &&
+                    (explicitLength < 0 || existing.getLength() == explicitLength) ?
+                    existing : null;
             String fields = specification.substring(open + 1, close);
             int length = 0;
             List<RecordField> parsed = new ArrayList<>();
@@ -168,6 +192,10 @@ public class STGlobalAggregateApplier extends GhidraScript {
                 if (offset < 0 || type == null || type.getLength() < 1) return null;
                 parsed.add(new RecordField(offset, parts[1], type));
                 length = Math.max(length, offset + type.getLength());
+            }
+            if (explicitLength >= 0) {
+                if (explicitLength < length) return null;
+                length = explicitLength;
             }
             int separator = path.lastIndexOf('/');
             if (separator <= 0 || separator == path.length() - 1 || length < 1) return null;

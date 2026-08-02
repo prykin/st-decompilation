@@ -42,7 +42,7 @@ CPanelTy::SetButStruct
   CPanelTy *local_c;
   ushort *local_8;
 
-  local_8 = (ushort *)0x0;
+  local_8 = nullptr;
   local_50.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_50;
   local_c = this;
@@ -87,7 +87,7 @@ CPanelTy::SetButStruct
     *(undefined4 *)&param_1[1].field_0x54 = 1;
     *(undefined4 *)&param_1[1].field_0x58 = 1;
     wsprintfA(text,"%s0",param_7);
-    local_8 = cMf32::RecGet(g_cMf32_00806790,param_6,text,(int *)0x0,1);
+    local_8 = cMf32::RecGet(g_cMf32_00806790,param_6,text,nullptr,1);
     uVar3 = local_8[3];
     *(ushort *)&param_1->field_0x10 = local_8[2];
     *(ushort *)&param_1->field_0x12 = uVar3;
@@ -109,7 +109,7 @@ CPanelTy::SetButStruct
     *(ushort *)&param_1->field_0xb0 = param_9;
     param_1->field_00B2 = param_8;
     *(undefined4 *)(param_1 + 1) = param_10;
-    if (param_11 != (char *)0x0) {
+    if (param_11 != nullptr) {
       uVar5 = FUN_0070aa70(g_cMf32_00806790,param_11,0,1);
       *(undefined4 *)&param_1[1].field_0x70 = uVar5;
       iVar4 = Library::Ourlib::MFIMG::mfImgGetWidth(g_cMf32_00806790,0x12,param_11,1);

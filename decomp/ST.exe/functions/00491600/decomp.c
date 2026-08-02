@@ -21,11 +21,11 @@ void __fastcall FUN_00491600(AnonShape_00491600_23458133 *param_1)
   thunk_FUN_00495ff0(param_1->field_005B,param_1->field_005D,param_1->field_005F,param_1->field_008E
                      ,(AnonShape_00495FF0_59081BDD *)param_1);
   *(undefined4 *)&param_1[1].field_0x16 = 3;
-  if (DAT_008117bc != (undefined4 *)0x0) {
+  if (DAT_008117bc != nullptr) {
     local_10 = *(undefined2 *)&param_1->field_0x24;
     local_e = param_1->field_0032;
     local_14 = 0x5dd2;
-    if (param_1->field_05A6 == (AnonNested_00491600_05A6_E75AEFE8 *)0x0) {
+    if (param_1->field_05A6 == nullptr) {
       iVar2 = STPlaySystemC::sub_006E62D0
                         (g_playSystem_00802A38,param_1->field_05A2,(int *)&param_1->field_05A6);
       if (iVar2 == -4) {

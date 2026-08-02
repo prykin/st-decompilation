@@ -80,7 +80,7 @@ HoloTy::Init(HoloTy *this,HoloTy_Init_param_1Enum param_1,int param_2,int param_
     puVar4 = CalcHologram(local_14,&local_14->field_000F,local_8,local_c,param_5,param_6,
                           (byte)param_8);
     this_00->field_000B = puVar4;
-    if (puVar4 != (undefined4 *)0x0) {
+    if (puVar4 != nullptr) {
       puVar1 = &this_00->field_0x3;
       FUN_006b2330(g_ddxContext_008075A8,(uint *)puVar1,10,0x402842,0,0,(ushort *)this_00);
       uVar5 = *(uint *)puVar1;

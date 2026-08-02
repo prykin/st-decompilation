@@ -62,22 +62,22 @@ void __thiscall ResearchPanelTy::InitResearchPanel(ResearchPanelTy *this)
   g_prodPanel_008016E8 = (ProdPanelTy *)local_10;
   puVar5 = &local_10->field_027A;
   do {
-    pDVar3 = Library::DKW::TBL::DArrayCreate((DArrayTy *)0x0,0x28,0x30,10);
+    pDVar3 = Library::DKW::TBL::DArrayCreate(nullptr,0x28,0x30,10);
     *puVar5 = pDVar3;
     puVar5 = puVar5 + 1;
     iVar6 = iVar6 + -1;
   } while (iVar6 != 0);
   iVar6 = 1;
-  piVar10 = (int *)0x0;
+  piVar10 = nullptr;
   this_00->field_003C = this_00->field_003C + (g_nWidth_00806730 + -800) / 2;
   text = thunk_FUN_00571240("BKG_RESEARCHW",0);
   puVar4 = cMf32::RecGet(g_cMf32_00806790,1,text,piVar10,iVar6);
   this_00->field_0184 = puVar4;
   puVar4 = Library::Ourlib::MFRLOAD::mfRLoad
-                     (DAT_00806794,CASE_B,&DAT_007c20a0,0xffffffff,0,1,0,(undefined4 *)0x0);
+                     (DAT_00806794,CASE_B,&DAT_007c20a0,0xffffffff,0,1,0,nullptr);
   this_00->field_0188 = puVar4;
   puVar4 = Library::Ourlib::MFRLOAD::mfRLoad
-                     (DAT_00806794,CASE_B,&DAT_007c38c8,0xffffffff,0,1,0,(undefined4 *)0x0);
+                     (DAT_00806794,CASE_B,&DAT_007c38c8,0xffffffff,0,1,0,nullptr);
   this_00->field_018C = puVar4;
   ProdPanelTy::InitProdPanel
             ((ProdPanelTy *)this_00,0x2722,0x3f,2,0xc1,0xc,0x85,0x4f,0x68,0xc4,0x4f,0x20,0x13,0x33,
@@ -139,7 +139,7 @@ LAB_0053c30d:
     local_30 = 0xc0b4;
     local_38 = local_58;
     (*this_00->field_000C->vtable->CreateObject)
-              ((SystemClassTy *)this_00->field_000C,5,&this_00->field_0282,(int *)0x0,local_68,0);
+              ((SystemClassTy *)this_00->field_000C,5,&this_00->field_0282,nullptr,local_68,0);
   }
   g_currentExceptionFrame = local_ac.previous;
   return;

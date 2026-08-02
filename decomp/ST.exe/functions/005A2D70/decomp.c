@@ -28,7 +28,7 @@ void __thiscall FSGSTy::JoinChannel(FSGSTy *this,void *param_1)
     iVar3 = Library::MSVCRT::__setjmp3(local_7c.jumpBuffer,0);
     this_00 = g_cursorClass_00802A30;
     if (iVar3 == 0) {
-      if (g_cursorClass_00802A30 != (CursorClassTy *)0x0) {
+      if (g_cursorClass_00802A30 != nullptr) {
         iVar3 = g_cursorClass_00802A30->field_00C9;
         iVar5 = g_cursorClass_00802A30->field_00C5;
         g_cursorClass_00802A30->field_0493 = CASE_1;

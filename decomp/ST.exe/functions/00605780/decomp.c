@@ -7,10 +7,10 @@
 void __thiscall STExplosion::sub_00605780(STExplosion *this)
 
 {
-  if ((STT3DSprC *)this->field_02AF != (STT3DSprC *)0x0) {
+  if ((STT3DSprC *)this->field_02AF != nullptr) {
     thunk_FUN_004ad310((STT3DSprC *)this->field_02AF);
     Library::MSVCRT::FUN_0072e2b0(this->field_02AF);
-    this->field_02AF = (HoloTy *)0x0;
+    this->field_02AF = nullptr;
   }
   return;
 }

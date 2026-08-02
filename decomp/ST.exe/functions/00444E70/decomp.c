@@ -51,7 +51,7 @@ void __thiscall FUN_00444e70(void *this,ushort *param_1)
         *(undefined4 *)(iVar6 + 0x7f4e2f + iVar5) = 0;
       }
       else {
-        uVar2 = FUN_006b0060((uint *)0x0,(uint *)(*(int *)local_10 + (int)param_1));
+        uVar2 = FUN_006b0060(nullptr,(uint *)(*(int *)local_10 + (int)param_1));
         *(undefined4 *)(iVar6 + 0x7f4e2f + iVar5) = uVar2;
       }
       pAVar1 = local_8;
@@ -83,7 +83,7 @@ void __thiscall FUN_00444e70(void *this,ushort *param_1)
         *(undefined4 *)((int)puVar10 + 6) = 0;
       }
       else {
-        uVar2 = FUN_006b0060((uint *)0x0,(uint *)(local_10->field_0006 + (int)param_1));
+        uVar2 = FUN_006b0060(nullptr,(uint *)(local_10->field_0006 + (int)param_1));
         *(undefined4 *)((int)puVar10 + 6) = uVar2;
       }
       puVar10[0x13] = *(undefined4 *)&local_10->field_0x60;
@@ -94,13 +94,13 @@ void __thiscall FUN_00444e70(void *this,ushort *param_1)
         *(undefined4 *)((int)puVar10 + 0x56) = 0;
       }
       else {
-        uVar2 = FUN_006b0060((uint *)0x0,(uint *)(local_10->field_006A + (int)param_1));
+        uVar2 = FUN_006b0060(nullptr,(uint *)(local_10->field_006A + (int)param_1));
         *(undefined4 *)((int)puVar10 + 0x56) = uVar2;
       }
       local_10 = (AnonShape_00444E70_523E22DE *)&local_10->field_0x14;
       puVar10 = (byte *)(puVar10 + 4);
       local_14 = (AnonShape_00444E70_8EFB8E54 *)((int)&local_14[-1].field_000E + 1);
-    } while (local_14 != (AnonShape_00444E70_8EFB8E54 *)0x0);
+    } while (local_14 != nullptr);
     local_14 = (AnonShape_00444E70_8EFB8E54 *)&pAVar1->field_0x238;
     *(undefined4 *)((int)&g_packedRecords_A62x8[0].field448_0x203 + iVar5) =
          *(undefined4 *)&pAVar1->field_0x230;
@@ -115,13 +115,13 @@ void __thiscall FUN_00444e70(void *this,ushort *param_1)
         *(undefined4 *)((int)puVar10 + 6) = 0;
       }
       else {
-        uVar2 = FUN_006b0060((uint *)0x0,(uint *)(local_14->field_0006 + (int)param_1));
+        uVar2 = FUN_006b0060(nullptr,(uint *)(local_14->field_0006 + (int)param_1));
         *(undefined4 *)((int)puVar10 + 6) = uVar2;
       }
       local_14 = (AnonShape_00444E70_8EFB8E54 *)&local_14[1].field_0x4;
       puVar10 = (byte *)(puVar10 + 4);
       local_10 = (AnonShape_00444E70_523E22DE *)((int)&local_10[-1].field_0072 + 1);
-    } while (local_10 != (AnonShape_00444E70_523E22DE *)0x0);
+    } while (local_10 != nullptr);
     *(undefined4 *)((int)&g_packedRecords_A62x8[0].field587_0x2a7 + iVar5) =
          *(undefined4 *)&pAVar1->field_0x2fc;
     *(undefined4 *)((int)&g_packedRecords_A62x8[0].field588_0x2ab + iVar5) =
@@ -228,13 +228,13 @@ void __thiscall FUN_00444e70(void *this,ushort *param_1)
     }
     puVar12 = (uint *)(&g_packedRecords_A62x8[0].field_0x7ee + iVar5);
     piVar7 = (int *)&local_8->field_0xa77;
-    local_10 = (AnonShape_00444E70_523E22DE *)0x0;
+    local_10 = nullptr;
     do {
       FUN_006b0060(puVar12,(uint *)(*piVar7 + (int)param_1));
       piVar7 = piVar7 + 2;
       puVar12 = puVar12 + 0x11;
       local_14 = (AnonShape_00444E70_8EFB8E54 *)((int)&local_14[-1].field_000E + 1);
-    } while (local_14 != (AnonShape_00444E70_8EFB8E54 *)0x0);
+    } while (local_14 != nullptr);
     puVar10 = (byte *)&local_8->field_0xa17;
     puVar13 = (byte *)((int)&g_packedRecords_A62x8[0].field2383_0xa0e + iVar5);
     for (iVar6 = 5; iVar6 != 0; iVar6 = iVar6 + -1) {
@@ -266,23 +266,23 @@ void __thiscall FUN_00444e70(void *this,ushort *param_1)
     }
     else {
       uVar8 = local_8->field_0A6F / 0x18;
-      pDVar3 = Library::DKW::TBL::DArrayCreate((DArrayTy *)0x0,uVar8,0xc,1);
+      pDVar3 = Library::DKW::TBL::DArrayCreate(nullptr,uVar8,0xc,1);
       *(DArrayTy **)((int)&g_packedRecords_A62x8[0].field2377_0x9f6 + iVar5) = pDVar3;
-      local_10 = (AnonShape_00444E70_523E22DE *)0x0;
+      local_10 = nullptr;
       if (uVar8 != 0) {
         piVar7 = (int *)((int)param_1 + local_8->field_0A6B + 0x10);
         do {
           local_20 = 0;
           if (piVar7[-4] != -1) {
-            local_20 = FUN_006b0060((uint *)0x0,(uint *)(piVar7[-4] + (int)param_1));
+            local_20 = FUN_006b0060(nullptr,(uint *)(piVar7[-4] + (int)param_1));
           }
           local_1c = 0;
           if (piVar7[-2] != -1) {
-            local_1c = FUN_006b0060((uint *)0x0,(uint *)(piVar7[-2] + (int)param_1));
+            local_1c = FUN_006b0060(nullptr,(uint *)(piVar7[-2] + (int)param_1));
           }
           local_18 = 0;
           if (*piVar7 != -1) {
-            local_18 = FUN_006b0060((uint *)0x0,(uint *)(*piVar7 + (int)param_1));
+            local_18 = FUN_006b0060(nullptr,(uint *)(*piVar7 + (int)param_1));
           }
           Library::DKW::TBL::DArrayPut
                     (*(DArrayTy **)((int)&g_packedRecords_A62x8[0].field2377_0x9f6 + iVar5),

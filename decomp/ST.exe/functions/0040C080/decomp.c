@@ -74,9 +74,9 @@ undefined4 * __thiscall FUN_0040c080(void *this,uint param_1,uint *param_2)
   else {
     ExceptionList = &local_14;
     psVar4 = Library::DKW::LIB::MemAlloc(uVar9 * 4);
-    if (psVar4 != (short *)0x0) {
+    if (psVar4 != nullptr) {
       pAVar5 = (AnonShape_00497920_894F87D6 *)thunk_FUN_00423e70(this,param_1);
-      if (pAVar5 == (AnonShape_00497920_894F87D6 *)0x0) {
+      if (pAVar5 == nullptr) {
         psVar11 = psVar4;
         if (0 < (int)uVar9) {
           for (; uVar9 != 0; uVar9 = uVar9 - 1) {
@@ -352,7 +352,7 @@ LAB_0040c875:
           FUN_006a5e90(psVar4);
           RaiseInternalException
                     (-2,g_overwriteContext_007ED77C,"E:\\__titans\\wlad\\Grpway3d.cpp",0x233);
-          psVar4 = (short *)0x0;
+          psVar4 = nullptr;
         }
       }
     }

@@ -47,7 +47,7 @@ FUN_006d0cf0(AnonShape_006D0CF0_F5F86399 *param_1,int param_2,int param_3,
   ExceptionList = &local_14;
   puVar1 = &stack0xffffffa8;
   /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
-  if (param_5 == (char *)0x0) {
+  if (param_5 == nullptr) {
     ExceptionList = &local_14;
     /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
     param_5 = (char *)FUN_006b4fa0((int *)param_4);

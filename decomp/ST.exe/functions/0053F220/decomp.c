@@ -40,14 +40,14 @@ void __thiscall ProdPanelTy::DoneProdPanel(ProdPanelTy *this)
       puVar5 = puVar5 + 1;
       iVar3 = iVar3 + -1;
     } while (iVar3 != 0);
-    if (pPVar2->field_017C != (ccFntTy *)0x0) {
+    if (pPVar2->field_017C != nullptr) {
       ccFntTy::operator_delete((uint *)pPVar2->field_017C);
-      pPVar2->field_017C = (ccFntTy *)0x0;
+      pPVar2->field_017C = nullptr;
     }
     if (pPVar2->field_0184 != 0) {
       cMf32::RecMemFree(g_cMf32_00806790,&pPVar2->field_0184);
     }
-    pPVar2->field_0190 = (ushort *)0x0;
+    pPVar2->field_0190 = nullptr;
     pPVar2->field_0188 = 0;
     g_currentExceptionFrame = local_4c.previous;
     return;

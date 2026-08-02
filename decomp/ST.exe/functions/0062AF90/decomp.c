@@ -50,7 +50,7 @@ void __thiscall FUN_0062af90(void *this,int param_1,int param_2,int param_3)
        ((sVar3 = (short)iVar4, sVar3 < 0 ||
         (((g_worldGrid.sizeY <= sVar3 || (sVar1 = (short)iVar2, sVar1 < 0)) ||
          (g_worldGrid.sizeZ <= sVar1)))))) {
-      this_00 = (STWorldObject *)0x0;
+      this_00 = nullptr;
     }
     else {
       this_00 = g_worldGrid.cells
@@ -105,7 +105,7 @@ void __thiscall FUN_0062af90(void *this,int param_1,int param_2,int param_3)
     local_38._8_4_ = 0;
     /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
     local_38._12_4_ = 1;
-    if ((this_00 != (STWorldObject *)0x0) && (this_00->value_20 == 0xbe)) {
+    if ((this_00 != nullptr) && (this_00->value_20 == 0xbe)) {
       thunk_FUN_006301b0(this_00,&local_38);
       return;
     }

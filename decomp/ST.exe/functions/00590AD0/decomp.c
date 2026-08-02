@@ -15,7 +15,7 @@ MAdvTy * __cdecl CreateMAdv(void)
   int iVar1;
 
   this = (MAdvTy *)FUN_006b04d0(0x62);
-  if (this != (MAdvTy *)0x0) {
+  if (this != nullptr) {
     sub_006E5FB0(this);
     *(undefined4 *)this = 0x79bfe4;
     memset(&this->field_0x18, 0, 0x20); /* compiler bulk-zero initialization */
@@ -26,6 +26,6 @@ MAdvTy * __cdecl CreateMAdv(void)
     this->field_0x5c = 2;
     return this;
   }
-  return (MAdvTy *)0x0;
+  return nullptr;
 }
 

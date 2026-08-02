@@ -29,10 +29,10 @@ void __thiscall HoloTy::Done(HoloTy *this)
       FUN_006b3bb0((int *)g_ddxContext_008075A8,*(uint *)&local_8->field_0x3);
     }
     *(undefined4 *)&pHVar2->field_0x3 = 0xffffffff;
-    if (pHVar2->field_000B != (void *)0x0) {
+    if (pHVar2->field_000B != nullptr) {
       FreeAndNull(&pHVar2->field_000B);
     }
-    if (pHVar2->field_0007 != (void *)0x0) {
+    if (pHVar2->field_0007 != nullptr) {
       FreeAndNull(&pHVar2->field_0007);
     }
     g_currentExceptionFrame = local_4c.previous;

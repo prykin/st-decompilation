@@ -28,7 +28,7 @@ int FUN_006bb780(int param_1,undefined4 *param_2,undefined4 param_3,undefined4 p
       local_84 = 0x1007;
       local_3c = 0x40;
       local_34 = param_5;
-      if (param_7 == (undefined4 *)0x0) {
+      if (param_7 == nullptr) {
         if (param_5 == 0x10) {
           local_30 = 0x7c00;
           local_2c = 0x3e0;

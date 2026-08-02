@@ -18,13 +18,13 @@ void __cdecl FUN_00675dc0(uint param_1,DArrayTy *param_2)
   uint uVar5;
   uint uVar6;
 
-  if (((g_allPlayers_007FA174 != (STAllPlayersC *)0x0) && (param_2 != (DArrayTy *)0x0)) &&
+  if (((g_allPlayers_007FA174 != nullptr) && (param_2 != nullptr)) &&
      (dVar1 = param_2->count, dVar1 != 0)) {
     uVar6 = 0;
     if (dVar1 != 0) {
       uVar5 = 0;
       if (dVar1 == 0) {
-        puVar2 = (ushort *)0x0;
+        puVar2 = nullptr;
         goto LAB_00675dfe;
       }
       do {
@@ -32,7 +32,7 @@ void __cdecl FUN_00675dc0(uint param_1,DArrayTy *param_2)
         puVar2 = (ushort *)(param_2->elementSize * uVar5 + (int)param_2->data);
 LAB_00675dfe:
         pSVar3 = STAllPlayersC::GetObjPtr(g_allPlayers_007FA174,(char)param_1,*puVar2,CASE_1);
-        if (((pSVar3 != (STGameObjC *)0x0) && (iVar4 = (*pSVar3->vtable->vfunc_2C)(), iVar4 == 0x78)
+        if (((pSVar3 != nullptr) && (iVar4 = (*pSVar3->vtable->vfunc_2C)(), iVar4 == 0x78)
             ) && (iVar4 = (*pSVar3->vtable->vfunc_2C)(), iVar4 == 0x78)) {
           pSVar3->field_0269 = 0xffffffff;
         }
@@ -41,7 +41,7 @@ LAB_00675dfe:
       } while (uVar5 < param_2->count);
     }
     STAllPlayersC::AddObjsToGroup
-              (g_allPlayers_007FA174,(char)param_1,0,&param_2->flags,(undefined2 *)0x0);
+              (g_allPlayers_007FA174,(char)param_1,0,&param_2->flags,nullptr);
   }
   return;
 }

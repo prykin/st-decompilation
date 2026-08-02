@@ -41,7 +41,7 @@ void FUN_006c7f90(ushort *param_1,byte *param_2,HPALETTE param_3,int param_4)
       local_110[param_4] = (byte)param_4;
     }
     /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
-    if (param_2 == (byte *)0x0) {
+    if (param_2 == nullptr) {
       /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
       param_2 = (byte *)FUN_006b4fa0((int *)param_1);
     }

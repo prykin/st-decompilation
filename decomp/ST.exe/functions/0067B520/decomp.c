@@ -37,7 +37,7 @@ void __thiscall AiPlrClassTy::ExecTech(AiPlrClassTy *this,void *param_1)
   uint local_c;
   STGameObjC *local_8;
 
-  if (((this->field_0695 != (DArrayTy *)0x0) && (g_allPlayers_007FA174 != (STAllPlayersC *)0x0)) &&
+  if (((this->field_0695 != nullptr) && (g_allPlayers_007FA174 != nullptr)) &&
      ((this->field_066E == 0 || (this->field_0672 + this->field_066E <= this->field_06FE)))) {
     this->field_0672 = this->field_06FE;
     local_90.previous = g_currentExceptionFrame;
@@ -57,7 +57,7 @@ void __thiscall AiPlrClassTy::ExecTech(AiPlrClassTy *this,void *param_1)
             pvVar10 = (void *)((int)&array->data->field_0000 + array->elementSize * local_10);
           }
           else {
-            pvVar10 = (void *)0x0;
+            pvVar10 = nullptr;
           }
           switch(*(undefined1 *)((int)pvVar10 + 7)) {
           case 0:
@@ -96,10 +96,10 @@ LAB_0067b6db:
                   if (0 < (int)uVar5) {
                     do {
                       uVar9 = local_c;
-                      if (((pDVar8 == (DArrayTy *)0x0) || ((int)local_c < 0)) ||
+                      if (((pDVar8 == nullptr) || ((int)local_c < 0)) ||
                          ((int)uVar5 <= (int)local_c)) {
 LAB_0067b724:
-                        local_8 = (STGameObjC *)0x0;
+                        local_8 = nullptr;
                       }
                       else {
                         if (local_c < uVar5) {
@@ -107,12 +107,12 @@ LAB_0067b724:
                           puVar6 = (undefined4 *)(pDVar8->elementSize * local_c + (int)pDVar8->data);
                         }
                         else {
-                          puVar6 = (undefined4 *)0x0;
+                          puVar6 = nullptr;
                         }
                         if (puVar6[1] == 0) goto LAB_0067b724;
                         local_8 = (STGameObjC *)*puVar6;
                       }
-                      if (local_8 != (STGameObjC *)0x0) {
+                      if (local_8 != nullptr) {
                         pAVar12 = local_4c;
                         for (iVar4 = 0xd; iVar4 != 0; iVar4 = iVar4 + -1) {
                           *(undefined4 *)pAVar12 = 0;
@@ -148,15 +148,15 @@ LAB_0067b724:
             }
             break;
           case 1:
-            if (g_allPlayers_007FA174 == (STAllPlayersC *)0x0) {
-              local_8 = (STGameObjC *)0x0;
+            if (g_allPlayers_007FA174 == nullptr) {
+              local_8 = nullptr;
             }
             else {
               local_8 = STAllPlayersC::GetObjPtr
                                   (g_allPlayers_007FA174,*(char *)&this_00->field_05D7,
                                    *(ushort *)((int)pvVar10 + 8),CASE_1);
             }
-            if (local_8 == (STGameObjC *)0x0) {
+            if (local_8 == nullptr) {
               *(undefined1 *)((int)pvVar10 + 7) = 0;
               *(undefined2 *)((int)pvVar10 + 8) = 0;
             }
@@ -186,7 +186,7 @@ LAB_0067b724:
           bVar13 = local_10 < array->count;
         } while ((int)local_10 < (int)array->count);
       }
-      if (((g_allPlayers_007FA174 != (STAllPlayersC *)0x0) && (this_00->field_0662 == '\x01')) &&
+      if (((g_allPlayers_007FA174 != nullptr) && (this_00->field_0662 == '\x01')) &&
          (iVar4 = thunk_FUN_0067b1a0(this_00,(int)this_00->field_0660),
          iVar4 < (int)((-(uint)(this_00->field_05EC != 3) & 0xfffffffc) + 5))) {
         thunk_FUN_004e7230(this_00->field_05D7,(int)this_00->field_0660,local_c8,local_ac);

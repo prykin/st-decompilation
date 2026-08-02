@@ -61,10 +61,10 @@ VisibleClassTy::sub_0055BBC0
   uint index;
   RecoveredRecord_VisibleClassTy_0055B9F0 local_10;
 
-  if ((((this->field_0114 != 0) && (this->field_0110 != (VisibleClassTy_field_0110DArray *)0x0)) &&
+  if ((((this->field_0114 != 0) && (this->field_0110 != nullptr)) &&
       (param_5 < 8)) &&
-     ((g_playSystem_00802A38 == (STPlaySystemC *)0x0 || ((byte)(&DAT_008087e9)[param_5 * 0x51] < 8))
-     )) {
+     ((g_playSystem_00802A38 == nullptr ||
+      (g_bulkInitializedRecords_008087C7[param_5].field_0022 < 8)))) {
     /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
     local_10._6_1_ = param_4;
     local_10.field_0004 = param_3;

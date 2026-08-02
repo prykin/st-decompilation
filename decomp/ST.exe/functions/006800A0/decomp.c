@@ -33,7 +33,7 @@ int __cdecl FUN_006800a0(byte *param_1)
     return 8;
   }
   pcVar3 = thunk_FUN_0067eea0(param_1);
-  if (pcVar3 != (char *)0x0) {
+  if (pcVar3 != nullptr) {
     return 1;
   }
   iVar8 = 0;
@@ -45,7 +45,7 @@ int __cdecl FUN_006800a0(byte *param_1)
         pAVar6 = PTR_00848a2c->entries_0014[iVar8];
       }
       else {
-        pAVar6 = (AnonNested_AnonShape_GLOBAL_00848A2C_50EB5CD1_0014_282260F2 *)0x0;
+        pAVar6 = nullptr;
       }
       do {
         bVar1 = *pbVar5;
@@ -82,7 +82,7 @@ LAB_00680166:
         pAVar7 = PTR_00848a34->entries_0014[iVar8];
       }
       else {
-        pAVar7 = (AnonNested_AnonShape_GLOBAL_00848A34_1A834A18_0014_B03F56A9 *)0x0;
+        pAVar7 = nullptr;
       }
       do {
         bVar1 = *pbVar5;

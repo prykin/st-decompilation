@@ -32,14 +32,14 @@ short FUN_00435b90(uint param_1,DArrayTy *param_2,Global_sub_00435B90_param_3Enu
   local_10 = 0;
   local_c = 0;
   objPtr = (byte)param_1;
-  if ((param_4 != (int *)0x0) &&
+  if ((param_4 != nullptr) &&
      ((7 < objPtr ||
-      ((g_playSystem_00802A38 != (STPlaySystemC *)0x0 &&
-       (7 < (byte)(&DAT_008087e9)[(char)objPtr * 0x51])))))) {
+      ((g_playSystem_00802A38 != nullptr &&
+       (7 < g_bulkInitializedRecords_008087C7[(char)objPtr].field_0022)))))) {
     return 1;
   }
   /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
-  param_4 = (int *)0x0;
+  param_4 = nullptr;
   if (0 < (int)dVar3) {
     do {
       DArrayGetElement(param_2,(uint)param_4,&param_1);
@@ -59,10 +59,10 @@ short FUN_00435b90(uint param_1,DArrayTy *param_2,Global_sub_00435B90_param_3Enu
   }
   switch(param_3) {
   case CASE_0:
-    if ((arg_2 == (int *)0x0) ||
+    if ((arg_2 == nullptr) ||
        (((iVar7 = arg_2[8], iVar7 != 0x14 && (iVar7 != 1000)) && (iVar7 != 0x3e9)))) {
       /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
-      param_4 = (int *)0x0;
+      param_4 = nullptr;
       if ((int)dVar3 < 1) {
         return 0;
       }
@@ -86,7 +86,7 @@ short FUN_00435b90(uint param_1,DArrayTy *param_2,Global_sub_00435B90_param_3Enu
     /* ST_PSEUDO[raw_indirect_call,stack_slot_reuse]: expected typed vtable/callback call with explicit __thiscall receiver; compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
     if ((((iVar7 == 99) || (iVar7 = (**(code **)(*arg_2 + 0x2c))(), iVar7 == 0x52)) ||
         (iVar7 = (**(code **)(*arg_2 + 0x2c))(), iVar7 == 0x5f)) &&
-       (param_4 = (int *)0x0, 0 < (int)dVar3)) {
+       (param_4 = nullptr, 0 < (int)dVar3)) {
       do {
         DArrayGetElement(param_2,(uint)param_4,&param_1);
         if ((ushort)param_1 != 0xffff) {
@@ -129,7 +129,8 @@ LAB_004366b0:
       bVar9 = iVar7 < 0;
     }
     else {
-      bVar9 = (&DAT_008087ea)[(uVar8 & 0xff) * 0x51] != (&DAT_008087ea)[(uint)bVar1 * 0x51];
+      bVar9 = g_bulkInitializedRecords_008087C7[uVar8 & 0xff].field_0023 !=
+              g_bulkInitializedRecords_008087C7[bVar1].field_0023;
     }
     if (!bVar9) {
       if (arg_2[8] != 0x14) {
@@ -137,7 +138,7 @@ LAB_004366b0:
           /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
           iVar7 = (**(code **)(*arg_2 + 0x2c))();
           /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
-          if ((iVar7 == 0x33) && (param_4 = (int *)0x0, 0 < (int)dVar3)) {
+          if ((iVar7 == 0x33) && (param_4 = nullptr, 0 < (int)dVar3)) {
             do {
               DArrayGetElement(param_2,(uint)param_4,&param_1);
               if ((ushort)param_1 != 0xffff) {
@@ -156,7 +157,7 @@ LAB_004366b0:
           iVar7 = (**(code **)(*arg_2 + 0x2c))();
           /* ST_PSEUDO[raw_indirect_call,stack_slot_reuse]: expected typed vtable/callback call with explicit __thiscall receiver; compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
           if (((iVar7 == 0x37) || (iVar7 = (**(code **)(*arg_2 + 0x2c))(), iVar7 == 0x6c)) &&
-             (param_4 = (int *)0x0, 0 < (int)dVar3)) {
+             (param_4 = nullptr, 0 < (int)dVar3)) {
             do {
               DArrayGetElement(param_2,(uint)param_4,&param_1);
               if ((ushort)param_1 != 0xffff) {
@@ -177,7 +178,7 @@ LAB_004366b0:
           if ((((iVar7 == 0x38) || (iVar7 = (**(code **)(*arg_2 + 0x2c))(), iVar7 == 0x39)) ||
               ((iVar7 = (**(code **)(*arg_2 + 0x2c))(), iVar7 == 0x4f ||
                (iVar7 = (**(code **)(*arg_2 + 0x2c))(), iVar7 == 0x5e)))) &&
-             (param_4 = (int *)0x0, 0 < (int)dVar3)) {
+             (param_4 = nullptr, 0 < (int)dVar3)) {
             do {
               DArrayGetElement(param_2,(uint)param_4,&param_1);
               if ((ushort)param_1 != 0xffff) {
@@ -201,7 +202,7 @@ LAB_004366b0:
         return (-(ushort)(iVar7 != 1) & 0xfffc) + 4;
       }
       /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
-      param_4 = (int *)0x0;
+      param_4 = nullptr;
       if (0 < (int)dVar3) {
         do {
           DArrayGetElement(param_2,(uint)param_4,&param_1);
@@ -227,7 +228,7 @@ LAB_004366b0:
     /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
     iVar7 = (**(code **)(*arg_2 + 0x2c))();
     /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
-    param_4 = (int *)0x0;
+    param_4 = nullptr;
     if (iVar7 == 0x6c) {
       if (0 < (int)dVar3) {
         do {
@@ -272,7 +273,7 @@ switchD_00435c5c_caseD_1:
     goto switchD_00435c5c_caseD_1;
   /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
   case CASE_2:
-    param_4 = (int *)0x0;
+    param_4 = nullptr;
     if (0 < (int)dVar3) {
       do {
         DArrayGetElement(param_2,(uint)param_4,&param_1);
@@ -292,11 +293,11 @@ switchD_00435c5c_caseD_1:
     break;
   case CASE_3:
   case CASE_2B:
-    if (arg_2 == (int *)0x0) {
+    if (arg_2 == nullptr) {
       return 1;
     }
     /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
-    param_4 = (int *)0x0;
+    param_4 = nullptr;
     if (0 < (int)dVar3) {
       do {
         DArrayGetElement(param_2,(uint)param_4,&param_1);
@@ -317,11 +318,11 @@ switchD_00435c5c_caseD_1:
     }
     return 1;
   case CASE_4:
-    if (arg_2 == (int *)0x0) {
+    if (arg_2 == nullptr) {
       return 1;
     }
     /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
-    param_4 = (int *)0x0;
+    param_4 = nullptr;
     if (0 < (int)dVar3) {
       do {
         DArrayGetElement(param_2,(uint)param_4,&param_1);
@@ -340,11 +341,11 @@ switchD_00435c5c_caseD_1:
     }
     break;
   case CASE_5:
-    if (arg_2 == (int *)0x0) {
+    if (arg_2 == nullptr) {
       return 1;
     }
     /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
-    param_4 = (int *)0x0;
+    param_4 = nullptr;
     if (0 < (int)dVar3) {
       do {
         DArrayGetElement(param_2,(uint)param_4,&param_1);
@@ -364,7 +365,7 @@ switchD_00435c5c_caseD_1:
     break;
   /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
   case CASE_6:
-    param_4 = (int *)0x0;
+    param_4 = nullptr;
     if (0 < (int)dVar3) {
       do {
         DArrayGetElement(param_2,(uint)param_4,&param_1);
@@ -383,11 +384,11 @@ switchD_00435c5c_caseD_1:
     }
     break;
   case CASE_7:
-    if (arg_2 == (int *)0x0) {
+    if (arg_2 == nullptr) {
       return 1;
     }
     /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
-    param_4 = (int *)0x0;
+    param_4 = nullptr;
     if (0 < (int)dVar3) {
       do {
         DArrayGetElement(param_2,(uint)param_4,&param_1);
@@ -413,7 +414,7 @@ switchD_00435c5c_caseD_1:
     return 1;
   /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
   case CASE_8:
-    param_4 = (int *)0x0;
+    param_4 = nullptr;
     if (0 < (int)dVar3) {
       do {
         DArrayGetElement(param_2,(uint)param_4,&param_1);
@@ -433,7 +434,7 @@ switchD_00435c5c_caseD_1:
     break;
   /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
   case CASE_9:
-    param_4 = (int *)0x0;
+    param_4 = nullptr;
     if (0 < (int)dVar3) {
       do {
         DArrayGetElement(param_2,(uint)param_4,&param_1);
@@ -452,11 +453,11 @@ switchD_00435c5c_caseD_1:
     }
     break;
   case CASE_A:
-    if (arg_2 == (int *)0x0) {
+    if (arg_2 == nullptr) {
       return 1;
     }
     /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
-    param_4 = (int *)0x0;
+    param_4 = nullptr;
     if (0 < (int)dVar3) {
       do {
         DArrayGetElement(param_2,(uint)param_4,&param_1);
@@ -476,7 +477,7 @@ switchD_00435c5c_caseD_1:
     break;
   /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
   case CASE_D:
-    if ((arg_2 != (int *)0x0) && (param_4 = (int *)0x0, 0 < (int)dVar3)) {
+    if ((arg_2 != nullptr) && (param_4 = nullptr, 0 < (int)dVar3)) {
       do {
         DArrayGetElement(param_2,(uint)param_4,&param_1);
         if ((ushort)param_1 != 0xffff) {
@@ -500,7 +501,7 @@ switchD_00435c5c_caseD_1:
     break;
   /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
   case CASE_E:
-    param_4 = (int *)0x0;
+    param_4 = nullptr;
     if (0 < (int)dVar3) {
       do {
         DArrayGetElement(param_2,(uint)param_4,&param_1);
@@ -521,11 +522,11 @@ switchD_00435c5c_caseD_1:
     }
     return 0x15;
   case CASE_10:
-    if (arg_2 == (int *)0x0) {
+    if (arg_2 == nullptr) {
       return 1;
     }
     /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
-    param_4 = (int *)0x0;
+    param_4 = nullptr;
     if (0 < (int)dVar3) {
       do {
         DArrayGetElement(param_2,(uint)param_4,&param_1);
@@ -544,11 +545,11 @@ switchD_00435c5c_caseD_1:
     }
     break;
   case CASE_11:
-    if (arg_2 == (int *)0x0) {
+    if (arg_2 == nullptr) {
       return 1;
     }
     /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
-    param_4 = (int *)0x0;
+    param_4 = nullptr;
     if (0 < (int)dVar3) {
       do {
         DArrayGetElement(param_2,(uint)param_4,&param_1);
@@ -567,11 +568,11 @@ switchD_00435c5c_caseD_1:
     }
     break;
   case CASE_12:
-    if (arg_2 == (int *)0x0) {
+    if (arg_2 == nullptr) {
       return 1;
     }
     /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
-    param_4 = (int *)0x0;
+    param_4 = nullptr;
     if (0 < (int)dVar3) {
       do {
         DArrayGetElement(param_2,(uint)param_4,&param_1);
@@ -590,11 +591,11 @@ switchD_00435c5c_caseD_1:
     }
     break;
   case CASE_13:
-    if (arg_2 == (int *)0x0) {
+    if (arg_2 == nullptr) {
       return 1;
     }
     /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
-    param_4 = (int *)0x0;
+    param_4 = nullptr;
     if (0 < (int)dVar3) {
       do {
         DArrayGetElement(param_2,(uint)param_4,&param_1);
@@ -619,7 +620,7 @@ switchD_00435c5c_caseD_1:
     break;
   /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
   case CASE_18:
-    param_4 = (int *)0x0;
+    param_4 = nullptr;
     if (0 < (int)dVar3) {
       do {
         DArrayGetElement(param_2,(uint)param_4,&param_1);
@@ -644,7 +645,7 @@ switchD_00435c5c_caseD_1:
     break;
   /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
   case CASE_2D:
-    param_4 = (int *)0x0;
+    param_4 = nullptr;
     if (0 < (int)dVar3) {
       do {
         DArrayGetElement(param_2,(uint)param_4,&param_1);
@@ -663,11 +664,11 @@ switchD_00435c5c_caseD_1:
     }
     break;
   case CASE_4D:
-    if (arg_2 == (int *)0x0) {
+    if (arg_2 == nullptr) {
       return 1;
     }
     /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
-    param_4 = (int *)0x0;
+    param_4 = nullptr;
     if (0 < (int)dVar3) {
       do {
         DArrayGetElement(param_2,(uint)param_4,&param_1);

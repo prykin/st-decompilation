@@ -76,7 +76,7 @@ int __thiscall STGameObjC::GetMessage(STGameObjC *this,STMessage *message)
       return 0;
     }
     puVar2 = (message->arg0).ptr;
-    if (puVar2 == (uint *)0x0) {
+    if (puVar2 == nullptr) {
       RaiseInternalException
                 (-1,g_overwriteContext_007ED77C,"E:\\__titans\\wlad\\Tc_gobj.cpp",0x678);
     }
@@ -104,7 +104,7 @@ int __thiscall STGameObjC::GetMessage(STGameObjC *this,STMessage *message)
   uVar13 = this_00->field_0020;
   if (uVar13 < 0x1af) {
     if (uVar13 == 0x1ae) {
-      if (g_cPanel_00801688 == (CPanelTy *)0x0) {
+      if (g_cPanel_00801688 == nullptr) {
         g_currentExceptionFrame = local_58.previous;
         return 0;
       }
@@ -129,7 +129,7 @@ int __thiscall STGameObjC::GetMessage(STGameObjC *this,STMessage *message)
           thunk_FUN_0043fc50(CASE_1,0);
         }
       }
-      if (g_cPanel_00801688 == (CPanelTy *)0x0) {
+      if (g_cPanel_00801688 == nullptr) {
         g_currentExceptionFrame = local_58.previous;
         return 0;
       }
@@ -154,7 +154,7 @@ int __thiscall STGameObjC::GetMessage(STGameObjC *this,STMessage *message)
           thunk_FUN_0043fc50(CASE_2,0);
         }
       }
-      if (g_cPanel_00801688 == (CPanelTy *)0x0) {
+      if (g_cPanel_00801688 == nullptr) {
         g_currentExceptionFrame = local_58.previous;
         return 0;
       }
@@ -182,7 +182,7 @@ int __thiscall STGameObjC::GetMessage(STGameObjC *this,STMessage *message)
           thunk_FUN_0043fc50(CASE_E,0);
         }
       }
-      if (g_cPanel_00801688 == (CPanelTy *)0x0) {
+      if (g_cPanel_00801688 == nullptr) {
         g_currentExceptionFrame = local_58.previous;
         return 0;
       }
@@ -217,7 +217,7 @@ int __thiscall STGameObjC::GetMessage(STGameObjC *this,STMessage *message)
     if (uVar13 < 0x173) {
       if (uVar13 != 0x172) {
         if (uVar13 == 0x14) {
-          if ((g_cPanel_00801688 != (CPanelTy *)0x0) &&
+          if ((g_cPanel_00801688 != nullptr) &&
              (iVar12 = CPanelTy::sub_004FAB10(g_cPanel_00801688,CASE_1), iVar12 != 0)) {
             (*this_00->vtable->vfunc_30)(this_00->field_0121);
             iVar12 = 0x1b;
@@ -260,7 +260,7 @@ int __thiscall STGameObjC::GetMessage(STGameObjC *this,STMessage *message)
             }
           }
 LAB_0041b128:
-          if ((g_cPanel_00801688 != (CPanelTy *)0x0) &&
+          if ((g_cPanel_00801688 != nullptr) &&
              (iVar12 = CPanelTy::sub_004FAB10(g_cPanel_00801688,CASE_2), iVar12 != 0)) {
             (*this_00->vtable->vfunc_34)(this_00->field_0129);
             iVar12 = 0x17;
@@ -282,29 +282,29 @@ LAB_0041b128:
               thunk_FUN_0043fc50(CASE_2,0);
             }
           }
-          if ((g_cPanel_00801688 != (CPanelTy *)0x0) &&
+          if ((g_cPanel_00801688 != nullptr) &&
              (iVar12 = CPanelTy::sub_004FAB10(g_cPanel_00801688,CASE_8), iVar12 != 0)) {
             arg_1 = &this_00->field_0171;
-            if (this_00->field_0171 != (DArrayTy *)0x0) {
+            if (this_00->field_0171 != nullptr) {
               DArrayDestroy(this_00->field_0171);
             }
-            if (this_00->field_0175 != (DArrayTy *)0x0) {
+            if (this_00->field_0175 != nullptr) {
               DArrayDestroy(this_00->field_0175);
             }
-            if (this_00->field_0179 != (DArrayTy *)0x0) {
+            if (this_00->field_0179 != nullptr) {
               DArrayDestroy(this_00->field_0179);
             }
-            if (this_00->field_017D != (DArrayTy *)0x0) {
+            if (this_00->field_017D != nullptr) {
               DArrayDestroy(this_00->field_017D);
             }
-            if (this_00->field_0181 != (DArrayTy *)0x0) {
+            if (this_00->field_0181 != nullptr) {
               DArrayDestroy(this_00->field_0181);
             }
-            *arg_1 = (DArrayTy *)0x0;
-            this_00->field_0175 = (DArrayTy *)0x0;
-            this_00->field_0179 = (DArrayTy *)0x0;
-            this_00->field_017D = (DArrayTy *)0x0;
-            this_00->field_0181 = (DArrayTy *)0x0;
+            *arg_1 = nullptr;
+            this_00->field_0175 = nullptr;
+            this_00->field_0179 = nullptr;
+            this_00->field_017D = nullptr;
+            this_00->field_0181 = nullptr;
             (*this_00->vtable->vfunc_40)(arg_1);
             local_c = this_00->field_015D;
             bVar33 = false;
@@ -410,26 +410,26 @@ LAB_0041b2d2:
             }
 LAB_0041b308:
             if (bVar33) {
-              if (local_c != (DArrayTy *)0x0) {
+              if (local_c != nullptr) {
                 DArrayDestroy(local_c);
               }
-              if (this_00->field_0161 != (DArrayTy *)0x0) {
+              if (this_00->field_0161 != nullptr) {
                 DArrayDestroy(this_00->field_0161);
               }
-              if (this_00->field_0165 != (DArrayTy *)0x0) {
+              if (this_00->field_0165 != nullptr) {
                 DArrayDestroy(this_00->field_0165);
               }
-              if (this_00->field_0169 != (DArrayTy *)0x0) {
+              if (this_00->field_0169 != nullptr) {
                 DArrayDestroy(this_00->field_0169);
               }
-              if (this_00->field_016D != (DArrayTy *)0x0) {
+              if (this_00->field_016D != nullptr) {
                 DArrayDestroy(this_00->field_016D);
               }
-              this_00->field_015D = (DArrayTy *)0x0;
-              this_00->field_0161 = (DArrayTy *)0x0;
-              this_00->field_0165 = (DArrayTy *)0x0;
-              this_00->field_0169 = (DArrayTy *)0x0;
-              this_00->field_016D = (DArrayTy *)0x0;
+              this_00->field_015D = nullptr;
+              this_00->field_0161 = nullptr;
+              this_00->field_0165 = nullptr;
+              this_00->field_0169 = nullptr;
+              this_00->field_016D = nullptr;
               Library::DKW::TBL::FUN_006afe40
                         ((int *)&this_00->field_015D,&this_00->field_0171->flags);
               Library::DKW::TBL::FUN_006afe40
@@ -443,7 +443,7 @@ LAB_0041b308:
               thunk_FUN_0043fc50(CASE_8,0);
             }
           }
-          if ((g_cPanel_00801688 != (CPanelTy *)0x0) &&
+          if ((g_cPanel_00801688 != nullptr) &&
              (iVar12 = CPanelTy::sub_004FAB10(g_cPanel_00801688,CASE_B), iVar12 != 0)) {
             (*this_00->vtable->vfunc_4C)(this_00->field_0199);
             pAVar4 = this_00->field_0195;
@@ -469,7 +469,7 @@ LAB_0041b308:
               thunk_FUN_0043fc50(CASE_B,0);
             }
           }
-          if ((g_cPanel_00801688 != (CPanelTy *)0x0) &&
+          if ((g_cPanel_00801688 != nullptr) &&
              (iVar12 = CPanelTy::sub_004FAB10(g_cPanel_00801688,CASE_E), iVar12 != 0)) {
             (*this_00->vtable->vfunc_58)(this_00->field_01B1);
             pAVar5 = this_00->field_01AD;
@@ -493,7 +493,7 @@ LAB_0041b308:
               thunk_FUN_0043fc50(CASE_E,0);
             }
           }
-          if (g_cPanel_00801688 == (CPanelTy *)0x0) {
+          if (g_cPanel_00801688 == nullptr) {
             g_currentExceptionFrame = local_58.previous;
             return 0;
           }
@@ -538,7 +538,7 @@ cf_common_exit_0041B6C6:
       STDebugBreak(); /* noreturn in standalone pseudocode */
     }
 LAB_0041bdb3:
-    if (g_cPanel_00801688 == (CPanelTy *)0x0) {
+    if (g_cPanel_00801688 == nullptr) {
       g_currentExceptionFrame = local_58.previous;
       return 0;
     }
@@ -563,7 +563,7 @@ LAB_0041bdb3:
         thunk_FUN_0043fc50(CASE_5,0);
       }
     }
-    if (g_cPanel_00801688 == (CPanelTy *)0x0) {
+    if (g_cPanel_00801688 == nullptr) {
       g_currentExceptionFrame = local_58.previous;
       return 0;
     }
@@ -597,7 +597,7 @@ LAB_0041bdb3:
   if (uVar13 == 0x1b8) goto LAB_0041bdb3;
   if (uVar13 != 1000) {
     if (uVar13 != 0x3e9) goto cf_common_exit_0041B6C6;
-    if (g_cPanel_00801688 == (CPanelTy *)0x0) {
+    if (g_cPanel_00801688 == nullptr) {
       g_currentExceptionFrame = local_58.previous;
       return 0;
     }
@@ -622,7 +622,7 @@ LAB_0041bdb3:
         thunk_FUN_0043fc50(CASE_4,0);
       }
     }
-    if (g_cPanel_00801688 == (CPanelTy *)0x0) {
+    if (g_cPanel_00801688 == nullptr) {
       g_currentExceptionFrame = local_58.previous;
       return 0;
     }
@@ -653,7 +653,7 @@ LAB_0041bdb3:
     GVar34 = CASE_5;
     goto cf_common_exit_0041BE5F;
   }
-  if (g_cPanel_00801688 == (CPanelTy *)0x0) {
+  if (g_cPanel_00801688 == nullptr) {
     g_currentExceptionFrame = local_58.previous;
     return 0;
   }
@@ -678,7 +678,7 @@ LAB_0041bdb3:
       thunk_FUN_0043fc50(CASE_4,0);
     }
   }
-  if (g_cPanel_00801688 == (CPanelTy *)0x0) {
+  if (g_cPanel_00801688 == nullptr) {
     g_currentExceptionFrame = local_58.previous;
     return 0;
   }
@@ -703,17 +703,17 @@ LAB_0041bdb3:
       thunk_FUN_0043fc50(CASE_5,0);
     }
   }
-  if (g_cPanel_00801688 == (CPanelTy *)0x0) {
+  if (g_cPanel_00801688 == nullptr) {
     g_currentExceptionFrame = local_58.previous;
     return 0;
   }
   iVar12 = CPanelTy::sub_004FAB10(g_cPanel_00801688,CASE_6);
   if (iVar12 != 0) {
     puVar1 = &this_00->field_0135;
-    if ((DArrayTy *)this_00->field_0135 != (DArrayTy *)0x0) {
+    if ((DArrayTy *)this_00->field_0135 != nullptr) {
       DArrayDestroy((DArrayTy *)this_00->field_0135);
     }
-    if ((DArrayTy *)this_00->field_0139 != (DArrayTy *)0x0) {
+    if ((DArrayTy *)this_00->field_0139 != nullptr) {
       DArrayDestroy((DArrayTy *)this_00->field_0139);
     }
     *puVar1 = 0;
@@ -765,10 +765,10 @@ LAB_0041b8f6:
     }
 LAB_0041b92c:
     if (bVar33) {
-      if ((DArrayTy *)this_00->field_012D != (DArrayTy *)0x0) {
+      if ((DArrayTy *)this_00->field_012D != nullptr) {
         DArrayDestroy((DArrayTy *)this_00->field_012D);
       }
-      if ((DArrayTy *)this_00->field_0131 != (DArrayTy *)0x0) {
+      if ((DArrayTy *)this_00->field_0131 != nullptr) {
         DArrayDestroy((DArrayTy *)this_00->field_0131);
       }
       this_00->field_012D = 0;
@@ -779,23 +779,23 @@ LAB_0041b92c:
       goto cf_common_exit_0041BE5F;
     }
   }
-  if (g_cPanel_00801688 == (CPanelTy *)0x0) {
+  if (g_cPanel_00801688 == nullptr) {
     g_currentExceptionFrame = local_58.previous;
     return 0;
   }
   iVar12 = CPanelTy::sub_004FAB10(g_cPanel_00801688,CASE_7);
   if (iVar12 != 0) {
     puVar1 = &this_00->field_014D;
-    if ((DArrayTy *)this_00->field_014D != (DArrayTy *)0x0) {
+    if ((DArrayTy *)this_00->field_014D != nullptr) {
       DArrayDestroy((DArrayTy *)this_00->field_014D);
     }
-    if ((DArrayTy *)this_00->field_0151 != (DArrayTy *)0x0) {
+    if ((DArrayTy *)this_00->field_0151 != nullptr) {
       DArrayDestroy((DArrayTy *)this_00->field_0151);
     }
-    if ((DArrayTy *)this_00->field_0155 != (DArrayTy *)0x0) {
+    if ((DArrayTy *)this_00->field_0155 != nullptr) {
       DArrayDestroy((DArrayTy *)this_00->field_0155);
     }
-    if ((DArrayTy *)this_00->field_0159 != (DArrayTy *)0x0) {
+    if ((DArrayTy *)this_00->field_0159 != nullptr) {
       DArrayDestroy((DArrayTy *)this_00->field_0159);
     }
     *puVar1 = 0;
@@ -898,16 +898,16 @@ LAB_0041ba90:
     }
 LAB_0041bac6:
     if (bVar33) {
-      if (local_c != (DArrayTy *)0x0) {
+      if (local_c != nullptr) {
         DArrayDestroy(local_c);
       }
-      if ((DArrayTy *)this_00->field_0141 != (DArrayTy *)0x0) {
+      if ((DArrayTy *)this_00->field_0141 != nullptr) {
         DArrayDestroy((DArrayTy *)this_00->field_0141);
       }
-      if ((DArrayTy *)this_00->field_0145 != (DArrayTy *)0x0) {
+      if ((DArrayTy *)this_00->field_0145 != nullptr) {
         DArrayDestroy((DArrayTy *)this_00->field_0145);
       }
-      if ((DArrayTy *)this_00->field_0149 != (DArrayTy *)0x0) {
+      if ((DArrayTy *)this_00->field_0149 != nullptr) {
         DArrayDestroy((DArrayTy *)this_00->field_0149);
       }
       this_00->field_013D = 0;
@@ -922,7 +922,7 @@ LAB_0041bac6:
       goto cf_common_exit_0041BE5F;
     }
   }
-  if (g_cPanel_00801688 == (CPanelTy *)0x0) {
+  if (g_cPanel_00801688 == nullptr) {
     g_currentExceptionFrame = local_58.previous;
     return 0;
   }
@@ -947,7 +947,7 @@ LAB_0041bac6:
       thunk_FUN_0043fc50(CASE_9,0);
     }
   }
-  if (g_cPanel_00801688 == (CPanelTy *)0x0) {
+  if (g_cPanel_00801688 == nullptr) {
     g_currentExceptionFrame = local_58.previous;
     return 0;
   }
@@ -975,7 +975,7 @@ LAB_0041bac6:
       thunk_FUN_0043fc50(CASE_A,0);
     }
   }
-  if (g_cPanel_00801688 == (CPanelTy *)0x0) {
+  if (g_cPanel_00801688 == nullptr) {
     g_currentExceptionFrame = local_58.previous;
     return 0;
   }
@@ -983,14 +983,14 @@ LAB_0041bac6:
   if (iVar12 != 0) {
     puVar1 = &this_00->field_01A1;
     local_14 = puVar1;
-    if ((DArrayTy *)this_00->field_01A1 != (DArrayTy *)0x0) {
+    if ((DArrayTy *)this_00->field_01A1 != nullptr) {
       DArrayDestroy((DArrayTy *)this_00->field_01A1);
       *puVar1 = 0;
     }
     (*this_00->vtable->vfunc_50)(puVar1);
     pDVar21 = (DArrayTy *)this_00->field_019D;
     local_c = (DArrayTy *)&this_00->field_019D;
-    local_8 = (AnonShape_0041AF40_EF4C5356 *)0x0;
+    local_8 = nullptr;
     dVar3 = *(dword *)(*puVar1 + 0xc);
     if (dVar3 == pDVar21->count) {
       iVar12 = dVar3 * 0x30;
@@ -1011,7 +1011,7 @@ LAB_0041bcad:
       local_8 = (AnonShape_0041AF40_EF4C5356 *)0x1;
     }
     if (local_8 == (AnonShape_0041AF40_EF4C5356 *)0x1) {
-      if (pDVar21 != (DArrayTy *)0x0) {
+      if (pDVar21 != nullptr) {
         DArrayDestroy(pDVar21);
         local_c->flags = 0;
       }
@@ -1020,7 +1020,7 @@ LAB_0041bcad:
       goto cf_common_exit_0041BE5F;
     }
   }
-  if (g_cPanel_00801688 == (CPanelTy *)0x0) {
+  if (g_cPanel_00801688 == nullptr) {
     g_currentExceptionFrame = local_58.previous;
     return 0;
   }
@@ -1047,7 +1047,7 @@ LAB_0041bcad:
       thunk_FUN_0043fc50(CASE_D,0);
     }
   }
-  if (g_cPanel_00801688 == (CPanelTy *)0x0) {
+  if (g_cPanel_00801688 == nullptr) {
     g_currentExceptionFrame = local_58.previous;
     return 0;
   }

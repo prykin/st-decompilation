@@ -9,7 +9,7 @@
 void __fastcall FUN_0065d480(AiFltClassTy *param_1)
 
 {
-  if (param_1 != (AiFltClassTy *)0x0) {
+  if (param_1 != nullptr) {
     thunk_FUN_00668670((int)&param_1->field_0020);
     return;
   }

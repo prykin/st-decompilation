@@ -28,7 +28,7 @@ undefined4 __thiscall FUN_0069c360(void *this,int param_1,int *param_2,int param
   uVar3 = 0;
   if ((param_1 != 0) && (*(int *)((int)this + 0x56ff) != 0)) {
     if (0 < param_3) {
-      local_8 = (int *)0x0;
+      local_8 = nullptr;
       local_1c = param_3;
       iVar5 = (int)param_2 * 0xe;
       local_24 = (int)param_2 * 400;
@@ -40,7 +40,7 @@ undefined4 __thiscall FUN_0069c360(void *this,int param_1,int *param_2,int param
           param_2 = local_c;
           local_10 = piVar2;
           do {
-            local_18 = (int *)0x0;
+            local_18 = nullptr;
             /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
             bVar1 = *(byte *)((int)local_8 + local_14 + *(int *)((int)this + 0x56ff));
             local_2c = (uint)bVar1;
@@ -70,7 +70,7 @@ LAB_0069c428:
             param_2 = (int *)((int)param_2 + 0xe);
             local_14 = local_14 + 0x14;
             local_10 = (int *)((int)local_10 + -1);
-          } while (local_10 != (int *)0x0);
+          } while (local_10 != nullptr);
         }
         local_8 = (int *)((int)local_8 + local_24);
         local_c = (int *)((int)local_c + iVar5);
@@ -78,7 +78,7 @@ LAB_0069c428:
       } while (local_1c != 0);
       local_1c = 0;
     }
-    local_10 = (int *)0x0;
+    local_10 = nullptr;
     if (0 < param_3) {
       local_14 = 0;
       iVar5 = (int)piVar2 * 0xe;
@@ -88,7 +88,7 @@ LAB_0069c428:
       local_20 = this;
       do {
         /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
-        param_2 = (int *)0x0;
+        param_2 = nullptr;
         if (0 < (int)piVar2) {
           local_8 = local_18;
           uVar7 = local_2c;
@@ -96,7 +96,7 @@ LAB_0069c428:
             local_30 = *local_8;
             local_28 = uVar7;
             iVar5 = thunk_FUN_00696310(local_20,local_14 + (int)param_2,(int)piVar2,local_58,
-                                       (int *)0x0);
+                                       nullptr);
             iVar6 = 0;
             local_24 = 0;
             if (0 < iVar5) {

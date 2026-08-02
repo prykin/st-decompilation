@@ -15,7 +15,7 @@ void __thiscall AiPlrClassTy::sub_0067C110(AiPlrClassTy *this)
 
   ppAVar2 = &local_38;
   for (iVar1 = 0xd; iVar1 != 0; iVar1 = iVar1 + -1) {
-    *ppAVar2 = (AnonShape_0068FD00_A5257008 *)0x0;
+    *ppAVar2 = nullptr;
     ppAVar2 = ppAVar2 + 1;
   }
   local_34 = this->field_06FE;

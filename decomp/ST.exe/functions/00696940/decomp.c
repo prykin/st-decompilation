@@ -22,7 +22,7 @@ void __thiscall CGenerate::sub_00696940(CGenerate *this,int param_1)
   uint local_8;
 
   local_14 = 1;
-  if (this->field_5853 != (CGenerate_field_5853DArray *)0x0) {
+  if (this->field_5853 != nullptr) {
     dVar1 = this->field_5853->count;
     local_c = 0;
     if (0 < (int)dVar1) {
@@ -31,7 +31,7 @@ void __thiscall CGenerate::sub_00696940(CGenerate *this,int param_1)
         /* ST_PSEUDO[dynamic_array_indexing]: expected DArrayAt<T>(array, index) (runtime elementSize cannot be a static C array) */
         if (((local_c < pCVar2->count) &&
             (piVar7 = (int *)((int)&pCVar2->data->field_0000 + pCVar2->elementSize * local_c),
-            piVar7 != (int *)0x0)) && (*piVar7 != param_1)) {
+            piVar7 != nullptr)) && (*piVar7 != param_1)) {
           if (*(int *)((int)piVar7 + 0x15) != 0) {
             uVar3 = Library::MSVCRT::FUN_0072e6c0();
             local_14 = (int)uVar3 % 6 + 1;
@@ -75,7 +75,7 @@ void __thiscall CGenerate::sub_00696940(CGenerate *this,int param_1)
         /* ST_PSEUDO[dynamic_array_indexing]: expected DArrayAt<T>(array, index) (runtime elementSize cannot be a static C array) */
         if ((((local_c < pCVar2->count) &&
              (piVar7 = (int *)((int)&pCVar2->data->field_0000 + pCVar2->elementSize * local_c),
-             piVar7 != (int *)0x0)) && (*piVar7 == param_1)) &&
+             piVar7 != nullptr)) && (*piVar7 == param_1)) &&
            (iVar4 = *(int *)((int)piVar7 + 0x15), iVar4 != 0)) {
           uVar3 = *(uint *)(iVar4 + 0xc);
           local_8 = 0;
