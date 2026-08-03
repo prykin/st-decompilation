@@ -101,6 +101,13 @@ Original binaries are local under ignored `bin/` and must not be committed.
   same member. Bare `USER_DEFINED` source is not independent ABI provenance.
   Scan and prove exact stores before decompiling broad call-only candidates; a
   call without a stored target is not a callback-field proposal.
+- A callback stack parameter is automatic only from the complete machine chain:
+  every observed direct callsite passes an exact function address or null into
+  the same parameter, the callee calls through that parameter with one argument
+  count, and at least two exact target sites agree on a machine-derived ABI.
+  A cdecl count additionally requires matching caller cleanup at every indirect
+  site. Preserve manual/imported signatures and concrete parameter types; never
+  copy semantic argument types from an untrusted target signature.
 - A polymorphic dispatch interface is audit metadata only. It must not replace
   a physical class vptr or mutate synthetic tail slots; stale proposal files
   requesting those operations are refused by the applier.

@@ -183,10 +183,10 @@ small bounded recent history is retained. Expensive whole-program analyzers
 reuse artifacts only when the Program semantic fingerprint, analyzer source,
 declared inputs, and outputs all match; within one run, clean analyzer nodes are
 not recomputed after an unrelated fixed-point check. This includes class-layout
-recovery and the callback-field pass, whose proposal inputs are hashed explicitly.
-The callback-field pass runs after the broad deep structural fixed point rather
-than once per intermediate epoch; final export ABI stabilization still reruns it
-after any later Program mutation.
+recovery and both callback passes, whose proposal inputs are hashed explicitly.
+Callback-parameter and callback-field recovery run after the broad deep
+structural fixed point rather than once per intermediate epoch; final export ABI
+stabilization still reruns them after any later Program mutation.
 ABI-mutating barriers run `STAbiRegressionGate` against the receipt-selected
 accepted corpus before broad structural decompilers continue. The gate protects
 accepted typed vtable signatures and a small data-driven sentinel set under
@@ -260,6 +260,9 @@ The current work focuses on recovering what the binary can prove:
 - non-vtable callback fields proven by an exact function-address store with
   independent ABI provenance and a later indirect call through the same generated
   structure member;
+- callback parameters proven by complete direct-callsite coverage from exact
+  function-address arguments through one callee parameter to an indirect call,
+  with unanimous machine ABI and caller-cleanup evidence;
 - by-value nested records and fixed member-array bounds proven by exact typed
   `REP MOVS` copies and independently corroborated zero-initialization spans;
 - statically linked CRT, DKW, and internal `Ourlib` modules;

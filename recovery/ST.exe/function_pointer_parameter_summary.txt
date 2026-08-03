@@ -1,0 +1,17 @@
+program=ST.exe
+functions_scanned=5712
+direct_calls_seen=42453
+indirect_parameter_calls=30
+indirect_parameter_candidates=25
+backward_argument_callsites=67
+incomplete_backward_argument_callsites=0
+register_value_alternatives=48
+stack_cleanup_proofs=26
+stack_cleanup_failures=4
+exact_function_target_sites=63
+null_target_sites=6
+unknown_target_sites=13
+proposals=25
+auto_apply=0
+note=Automatic typing requires every observed direct callsite to pass an exact function address or null, at least two exact target sites, one indirect-call argument count, and one unanimous machine-derived cdecl/stdcall ABI; cdecl argument counts also require matching caller cleanup at every indirect site.
+note=USER_DEFINED/IMPORTED and concrete parameters are preserved; semantic argument types are copied only from independently trusted target ABIs.

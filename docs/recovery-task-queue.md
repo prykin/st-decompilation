@@ -5,7 +5,7 @@ last accepted repository state rather than from a rejected Ghidra Program.
 Generated `recovery/` or `decomp/` output is evidence, not an implementation
 surface.
 
-## Accepted baseline
+## Historical safety rollback baseline
 
 - Commit: `39097bd736` (`Infer callback fields and exact inline aggregates`).
 - Program semantic hash: `27b2e1eb234982f047ed62f60bc77e1a7bde68397a9bbe5e0b2e1686a4b2fed8`.
@@ -80,7 +80,7 @@ broad consumers when a barrier fails.
 
 ### Q-010 Keep dispatch interfaces out of class vptr fields
 
-Status: implemented and runtime-confirmed by accepted run `4fa6da...`. New
+Status: implemented and runtime-confirmed by accepted run `c67bb0...`. New
 dispatch interfaces and their tail signatures are emitted as `apply=0` audit rows.
 `STIndirectCallApplier` refuses old `create_dispatch_vtable`, synthetic-dispatch
 slot, and obsolete hard-coded `create_base_vtable` proposals even if an old TSV
@@ -129,9 +129,10 @@ Physical slot typing does not by itself rename or re-home the target function.
 ## P2 — reintroduce infrastructure independently
 
 Status: all six infrastructure items are present in the current pipeline. Their
-runtime evidence is retained per run. Accepted run `4fa6da...` reused 12
-persistent and five current-epoch analyzer results and completed in 400.813
-seconds, down from 1,992.613 seconds for the preceding accepted run.
+runtime evidence is retained per run. Accepted run `c67bb0...` reused 12
+persistent and five current-epoch analyzer results and completed in 235.773
+seconds. The callback-field machine prefilter reduced that analyzer from
+166.613 seconds to 2.300 seconds by skipping 1,138 call-only decompiles.
 
 Each item starts from the accepted source, compiles all scripts against Ghidra
 12.1.2/JDK 21 into a temporary output directory, and gets its own narrow runtime
@@ -168,6 +169,10 @@ rejected Program.
    nonzero geometry at root and recursive depths.
 7. Export-only presentation rules (`nullptr`, exact binary32 literals, closed
    cursor idioms, x87 survivor spelling), each proven bit- or address-exact.
+8. Function-pointer stack parameters from complete exact direct-callsite
+   coverage plus a same-parameter indirect call, with at least two target sites,
+   unanimous machine ABI, and cdecl caller-cleanup proof. Source is implemented;
+   runtime compile/yield/regression validation is pending.
 
 For every item: analyzer-only proposal review, one applier pass, one confirming
 pass, fixture diff, then broad regression gate. A failed item is reverted as a

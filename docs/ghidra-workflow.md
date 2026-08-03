@@ -978,7 +978,26 @@ migration instead of happening as a side effect of one decompiler run.
      `GetModuleHandleA("*.dll")` stores also receive a literal-derived module name.
 18. Run `STGlobalDataApplier`.
    - File: `<repo>/recovery/ST.exe/global_data_proposals.tsv`
-19. Run `STFunctionPointerFieldAnalyzer`.
+19. Run `STFunctionPointerParameterAnalyzer`.
+    - Directory: `<repo>/recovery`
+    - The analyzer follows an exact function address or null passed at every
+      observed direct callsite into one stack parameter, then proves that the
+      callee invokes that same parameter indirectly with one argument count.
+      A bounded backward CFG walk preserves VC6 pre-pushed outer arguments
+      across shared labels, nested cdecl calls, and their intervening stack
+      cleanup instead of assuming that every `CALL` empties the argument stack.
+    - Automatic rows require at least two exact target sites and one unanimous
+      machine ABI. `RET n` proves stdcall cleanup; cdecl additionally requires
+      matching caller cleanup at every indirect site. Unknown callsite values,
+      incoming-ECX targets, manual/imported signatures, and concrete parameter
+      types remain review-only.
+20. Run `STFunctionPointerParameterApplier`.
+    - File: `<repo>/recovery/ST.exe/function_pointer_parameter_proposals.tsv`
+    - The applier rechecks the parameter baseline and every target's current
+      machine ABI, creates only marker-owned function definitions, and applies
+      pointer types with `ANALYSIS` provenance transactionally. A stored
+      signature hash protects later edits to a generated callback definition.
+21. Run `STFunctionPointerFieldAnalyzer`.
     - Directory: `<repo>/recovery`
     - A field is enabled only when an exact function address is stored into it,
       an indirect call loads from that identical field, and all stored targets
@@ -992,14 +1011,14 @@ migration instead of happening as a side effect of one decompiler run.
       structural fixed point. It is not repeated for every intermediate layout
       epoch; export ABI stabilization reruns it if a later Program mutation makes
       the cached evidence stale.
-20. Run `STFunctionPointerFieldApplier`.
+22. Run `STFunctionPointerFieldApplier`.
     - File: `<repo>/recovery/ST.exe/function_pointer_field_proposals.tsv`
     - Only hash-intact generated structures and generic pointer-sized fields are
       mutable. Manual structures, concrete fields, incomplete chains, and ABI
       disagreements remain review-only.
-21. Run `STIndirectCallAnalyzer`.
+23. Run `STIndirectCallAnalyzer`.
     - Directory: `<repo>/recovery`
-22. Run `STIndirectCallApplier`.
+24. Run `STIndirectCallApplier`.
     - File: `<repo>/recovery/ST.exe/indirect_call_proposals.tsv`
     - The analyzer also groups physical vtable components by thunk-resolved
       implementation address. A generic occurrence inherits an existing
@@ -1010,18 +1029,18 @@ migration instead of happening as a side effect of one decompiler run.
       applier also refuses legacy `create_dispatch_vtable`, synthetic-dispatch
       slot, and hard-coded `create_base_vtable` rows even when an old proposal
       file enables them.
-23. Run `STPointerRoleRepairAnalyzer`.
+25. Run `STPointerRoleRepairAnalyzer`.
    - Directory: `<repo>/recovery`
    - This is normally a one-time cleanup after an older pointer-shape pass. It
      scans only locals carrying an `STPointerShapeApplier` marker.
-24. Run `STPointerRoleRepairApplier`.
+26. Run `STPointerRoleRepairApplier`.
    - File: `<repo>/recovery/ST.exe/pointer_role_repair_proposals.tsv`
-25. Run `STPointerShapeAnalyzer`.
+27. Run `STPointerShapeAnalyzer`.
    - Directory: `<repo>/recovery`
    - Run it after global-record application. Typed-call evidence propagates types through
      persistent locals, but no special case reconstructs pointers from a known player-block
      address or from manually named `tempSlots/objectIds` fields.
-26. Run `STPointerShapeApplier`.
+28. Run `STPointerShapeApplier`.
    - File: `<repo>/recovery/ST.exe/pointer_shape_target_proposals.tsv`
    - The program directory containing that file is also accepted. The sibling
      type and field proposal TSVs are loaded automatically.
@@ -1055,7 +1074,7 @@ migration instead of happening as a side effect of one decompiler run.
      When its first dword is repeatedly tested or updated with bit masks, that
      member is named `flags`; individual mask constants remain unnamed until
      independent enum/debug evidence exists.
-27. Run `STTypeFamilyAnalyzer`.
+29. Run `STTypeFamilyAnalyzer`.
     - Directory: `<repo>/recovery`
     - Inspect `<repo>/recovery/ST.exe/anon_named_type_matches.tsv`. Exact full-layout
       matches are automatic only when there is one unique named type with at least
@@ -1077,9 +1096,9 @@ migration instead of happening as a side effect of one decompiler run.
       only when `prototype_callsite_audit.tsv` proves direct pointer flow
       between them and their complete layouts, sole owner, and no-alias checks
       all agree.
-28. Run `STTypeFamilyApplier`.
+30. Run `STTypeFamilyApplier`.
     - File: `<repo>/recovery/ST.exe/type_family_proposals.tsv`
-29. Run `STManualTypeAuditAnalyzer`.
+31. Run `STManualTypeAuditAnalyzer`.
     - Directory: `<repo>/recovery`
     - Output: `manual_type_conflicts.tsv` and
       `manual_type_conflicts_summary.txt`.
@@ -1669,8 +1688,9 @@ a new conflict is what requires another iteration.
 | `STDiscriminatedPayloadAnalyzer/Applier` | Infer per-case payload layouts from direct reads, fixed pointer-advance copy loops, shared goto tails, and single-element DArray appends. The final pass recovers caller stack aggregates only when thunk-resolved vtable-slot machine evidence and the typed decompiler call agree on the exact case/stack pair; obsolete hash-intact generated family identities migrate by function-address/case provenance, never by layout similarity. Imported/library families are excluded, and any intact generated false-positive left by an earlier pre-library pass is retired through the ordinary type lifecycle. |
 | `STGlobalAggregateAnalyzer/Applier` | Audit indexed global ranges and install only bounded arrays/matrices with a proven extent/indexing formula, including composed affine packed-record strides closed by exact bulk-zero extents, transpose-proven binary relation matrices, and behavior-proven Win32 resource-string scratch arenas. |
 | `STGlobalDataAnalyzer/Applier` | Type generic globals from receiver/argument use and named-constructor stores, follow the constructor-result edge through MSVC new/null join blocks, accept ordinary `T **` address-taking when an unambiguous named-constructor store proves the singleton's `T *` value, promote script-owned anonymous singleton pointers to named classes or dominant statically linked library contexts, name literal-backed module handles, assign address-stable structural names, and audit every `PTR_*` symbol by pointer role. |
-| `STIndirectCallAnalyzer/Applier` | Audit raw indirect calls; refine trusted physical slots, install machine-proven neutral thiscall/stdcall definitions, and propagate an ABI only across unanimous typed vtable occurrences of the same resolved target. Polymorphic dispatch interfaces are proposal-only, and the applier refuses legacy attempts to install them into class vptrs or synthetic tail slots. |
+| `STFunctionPointerParameterAnalyzer/Applier` | Recover callback stack parameters from complete direct-callsite coverage: every observed caller passes an exact function address or null into the same parameter, the callee invokes it indirectly with one argument count, and at least two exact target sites agree on ECX use, `RET n`, and neutral parameter widths. Cdecl counts additionally require matching caller cleanup. Manual/imported signatures, concrete parameter types, and unknown callsite values remain review-only. |
 | `STFunctionPointerFieldAnalyzer/Applier` | Recover non-vtable callback members only from the complete chain “exact stored function address → one generated structure field → indirect call through that same field.” A cheap machine pass recognizes direct and register-mediated function-address stores; High p-code proves the exact field before call-only functions are decompiled. With no exact stored target, call-only decompilation and call-only proposal noise are skipped. All stored targets must have one imported or independently recovered ABI; bare `USER_DEFINED` provenance is review-only, and manual structures and concrete fields are preserved. The report retains all exact observed stores and their rejection reasons. |
+| `STIndirectCallAnalyzer/Applier` | Audit raw indirect calls; refine trusted physical slots, install machine-proven neutral thiscall/stdcall definitions, and propagate an ABI only across unanimous typed vtable occurrences of the same resolved target. Polymorphic dispatch interfaces are proposal-only, and the applier refuses legacy attempts to install them into class vptrs or synthetic tail slots. |
 | `STPointerRoleRepairAnalyzer/Applier` | Remove prior script-owned pointer constraints from stack slots with proven scalar lifetimes in unsettled functions, and retire locals pointing to generated view-only types. |
 | `STPointerShapeAnalyzer/Applier` | Recover and fixed-point-refine known or anonymous pointer-backed structures from fixed, nested, alias-mediated dereferences, typed calls, and field-by-field stack aggregate construction; analyzer and applier both treat weak scalar pointers such as default `short *`, `ushort *`, and `word *` as replaceable only after the normal multi-field/typed-call thresholds pass; grant very large functions the same 120-second decompiler budget as the exporter while retaining 30 seconds for ordinary bodies; merge non-conflicting generated partial views only when identity is proven; materialize a target-local exact-call superset instead of widening helper-local views; apply auto-`this` types through the owning class namespace. |
 | `STTypeFamilyAnalyzer/Applier` | Promote anonymous layouts to an explicit semantic anchor, propagate named aggregate returns, and give complete one-owner records deterministic generated names. Anonymous consolidation requires a semantic/HiddenThis anchor, a unique producer view which explicitly records that sole anonymous source and still matches its stored hash (or the complete legacy producer snapshot), or exact direct-call pointer dataflow plus complete-layout, one-owner, no-alias agreement; geometry alone never merges types. |

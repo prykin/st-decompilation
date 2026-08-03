@@ -39,10 +39,10 @@ have been checked.
 ## Latest accepted run
 
 The authoritative latest `full-export` was run
-`4fa6da5b7a6abee94d956916dc8f85258db2b1a42179b63287f7ea4d80b41679`.
+`c67bb0151620cc052d5d6e7217d5372cfd3770efecf69cdd5b223db33adc1e22`.
 Its tracked accepted projection is the source of truth; ignored run archives
 are disposable diagnostics and need not be retained. The run completed in
-400.813 seconds (`00:06:40`), with Program modification `3 -> 29` and
+235.773 seconds (`00:03:55`), with Program modification `30 -> 56` and
 semantic hash
 `27b2e1eb234982f047ed62f60bc77e1a7bde68397a9bbe5e0b2e1686a4b2fed8`.
 
@@ -54,26 +54,26 @@ fixture baseline is verified, all 2,409 accepted typed vtable slots are intact,
 and the broad gate reports zero warnings. The Program semantic hash remained
 equal to the accepted receipt despite the volatile modification-counter change.
 
-The complete pipeline recorded 135 report rows. It reused 12 persistent and
-five current-epoch analyzer results; `STDecompExport` completed in 42.469
-seconds. This is a 4.97x wall-clock improvement over the preceding accepted
-`d395e3...` run (`00:33:12`). The remaining dominant pass was
-`STFunctionPointerFieldAnalyzer` at 166.613 seconds.
+The complete pipeline recorded 135 steps. It reused 12 persistent and five
+current-epoch analyzer results; `STDecompExport` completed in 40.723 seconds.
+The machine STORE prefilter reduced `STFunctionPointerFieldAnalyzer` from
+166.613 seconds to 2.300 seconds: all 1,138 call-only candidates were skipped,
+with zero exact stored-field targets, proposals, or decompile failures.
 
 ## Accepted checkpoint history
 
-The repository and Ghidra project have been restored to commit `39097bd736`,
-the accepted state described above. A later rejected experiment is not present
-in the working Program, scripts, generated recovery output, or corpus. Its
-ignored run archives, analyzer cache, semantic marker, and untracked Ghidra
-database generations were quarantined outside the repository so a future
-launcher cannot mistake them for current evidence.
+Commit `39097bd736` is the historical safety rollback checkpoint, not the
+current repository HEAD. The tracked HEAD before the pending callback-parameter
+work is `0853f50eb7c2720bc600c3fda32696a723136b7b`; its accepted Program/corpus is
+the `c67bb0...` run above. The rejected dispatch experiment is not present in
+that Program, scripts, generated recovery output, or corpus. Its ignored run
+archives, analyzer cache, semantic marker, and untracked Ghidra database
+generations were quarantined outside the repository so a future launcher
+cannot mistake them for current evidence.
 
-The restored baseline itself contained no pending recovery-script changes. Its
-first intentional post-baseline task is the ABI fixture gate below, alongside
-the strengthened repository guidance in `AGENTS.md` and the ordered work in
-`docs/recovery-task-queue.md`. Do not reintroduce prototype, return,
-virtual-method, or dispatch-interface heuristics ahead of that gate.
+The ABI fixture gate described below was the first post-rollback safety task
+and remains mandatory. Do not put prototype, return, virtual-method, or
+dispatch-interface mutations ahead of that gate.
 
 That first queue item is now implemented in source as `STAbiRegressionGate`.
 It compares every accepted typed vtable slot with the current Program (merging
@@ -142,15 +142,43 @@ ran successfully in the latest accepted run:
   proposal rows were therefore call-only observations rather than callback
   candidates.
 
-The only new pending Java change makes that negative result cheap and less
-noisy. `STFunctionPointerFieldAnalyzer` now performs a machine STORE prefilter,
-admits both direct stores and `MOV reg,function; MOV [field],reg`, decompiles
-STORE candidates first, and decompiles call-only functions only if at least one
-exact stored target was recovered. Call-only evidence is no longer emitted as a
-field proposal. It adds no image address or hand-authored ST type allow-list.
-This optimization was authored through the SMB mount on a machine without
-Ghidra/JDK and therefore still requires the launcher's compile preflight and a
-`full-export` runtime check.
+That negative result is now cheap and runtime-confirmed. The new pending source
+change instead adds `STFunctionPointerParameterAnalyzer/Applier` for callbacks
+passed as ordinary stack parameters. It follows the complete machine chain
+“exact function address (or null) at every observed direct callsite -> one
+callee stack parameter -> indirect call through that parameter”. Automatic
+application additionally requires at least two exact target sites, one observed
+callback argument count, matching caller cleanup for cdecl calls, and a
+unanimous target ABI derived from ECX use and `RET n`. Unknown arguments,
+manual/imported signatures, concrete parameter types, or any ABI disagreement
+remain review-only. Generated type identities use addresses derived from the
+binary; the heuristic contains no ST image address or hand-authored type/name
+allow-list.
+
+Direct-call arguments are reconstructed with a bounded backward CFG proof, not
+a same-basic-block `PUSH` counter. This is necessary for VC6 code which
+pre-pushes an outer callback argument, calls a helper, performs partial/combined
+stack cleanup, and only then pushes the remaining outer arguments. The cdecl
+cleanup proof likewise follows later direct calls and their machine `RET n`
+until the observed callback stack depth is exactly balanced.
+
+The accepted corpus contains a concrete runtime-independent witness for review:
+`004F3540 CPanelTy::PaintBut` calls through its generic fifth stack parameter
+with three pushed words, while 15 direct calls through thunk `004022D9` pass
+exact callback thunks such as `00402BE4 -> 0052A3E0`. The caller pre-pushes that
+callback before a cdecl text helper and removes only the helper's two words
+before pushing the other four outer arguments. The callback targets use cdecl
+`RET 0`; their existing one-parameter Ghidra signatures therefore must not be
+blindly copied into the three-word callback definition. This witness motivated
+the generic CFG/stack proof but is not present as a Java address exception.
+
+The new pair runs after the broad structural fixed point and before callback
+fields/general indirect calls, then participates in final export indirect-ABI
+stabilization. It is cached by semantic Program/source/output hashes. These two
+scripts and the scheduler update were authored through the SMB mount on a
+machine without Ghidra/JDK, so they still require the launcher's compile
+preflight and a `full-export` runtime check. A successful preflight will load 83
+scripts rather than 81.
 
 The following sections are a chronological implementation/failure log. Any
 future-tense rerun checklist in that history has been superseded by the latest
@@ -266,7 +294,15 @@ No individual paths are required:
 
 Expected checks after completion:
 
-- build preflight: all Java scripts load with zero failures;
+- build preflight: all 83 Java scripts load with zero failures;
+- `function_pointer_parameter_summary.txt`: candidate, exact-target, unknown,
+  proposal, and auto-apply counts are plausible; inspect per-row caller-cleanup
+  evidence in the proposal TSV;
+- `function_pointer_parameter_proposals.tsv`: every `apply=1` row has complete
+  direct-callsite coverage, at least two exact target sites, one argument count,
+  and one machine ABI;
+- `function_pointer_parameter_apply_report.tsv`: no conflicts and a confirming
+  pass reports only `unchanged`/review-only rows;
 - `indirect_call_proposals.tsv`: dispatch interface/tail rows are `apply=0`
   audit rows;
 - `indirect_call_apply_report.tsv`: no dispatch view or synthetic tail is
@@ -295,10 +331,11 @@ files. Never start a second headless writer while the project is open.
 
 ## Validation performed
 
-The dispatch guard and first callback-provenance revision compiled together
-against Ghidra 12.1.2/JDK 21 during run `4fa6da...`; its build logs are retained
-in that run archive. The pending two-stage callback scheduling change has only
-static validation on this machine and must use the launcher's compile preflight.
+The dispatch guard and optimized callback-field pass compiled and completed
+against Ghidra 12.1.2/JDK 21 during run `c67bb0...`; its build logs are retained
+in that run archive. The pending function-pointer-parameter pair and scheduler
+integration have only static validation on this machine and must use the
+launcher's compile preflight.
 
 ## Historical address-free continuation after that validation
 

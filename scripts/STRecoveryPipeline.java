@@ -41,57 +41,61 @@ public class STRecoveryPipeline extends GhidraScript {
     private static final int MAX_DEEP_PASSES = 12;
     private static final int MAX_RUN_HISTORY = 3;
     private static final String ANALYZER_CACHE_SCHEMA = "1";
-    private static final Map<String, List<String>> CACHEABLE_ANALYZER_OUTPUTS = Map.of(
-        "STDArrayElementAnalyzer.java", List.of(
+    private static final Map<String, List<String>> CACHEABLE_ANALYZER_OUTPUTS = Map.ofEntries(
+        Map.entry("STDArrayElementAnalyzer.java", List.of(
             "darray_element_proposals.tsv", "darray_element_field_proposals.tsv",
             "darray_element_local_proposals.tsv", "darray_element_decompile_failures.tsv",
-            "darray_element_summary.txt"),
-        "STPointerShapeAnalyzer.java", List.of(
+            "darray_element_summary.txt")),
+        Map.entry("STPointerShapeAnalyzer.java", List.of(
             "pointer_shape_type_proposals.tsv", "pointer_shape_field_proposals.tsv",
             "pointer_shape_target_proposals.tsv", "pointer_shape_decompile_failures.tsv",
-            "pointer_shape_summary.txt"),
-        "STSwitchEnumAnalyzer.java", List.of(
+            "pointer_shape_summary.txt")),
+        Map.entry("STSwitchEnumAnalyzer.java", List.of(
             "switch_enum_proposals.tsv", "switch_enum_decompile_retries.tsv",
             "switch_enum_decompile_failures.tsv", "switch_enum_domains.tsv",
-            "switch_enum_summary.txt"),
-        "STDiscriminatedPayloadAnalyzer.java", List.of(
+            "switch_enum_summary.txt")),
+        Map.entry("STDiscriminatedPayloadAnalyzer.java", List.of(
             "discriminated_payload_proposals.tsv",
             "discriminated_stack_proposals.tsv",
-            "discriminated_payload_summary.txt"),
-        "STPointerRoleRepairAnalyzer.java", List.of(
+            "discriminated_payload_summary.txt")),
+        Map.entry("STPointerRoleRepairAnalyzer.java", List.of(
             "pointer_role_repair_proposals.tsv",
             "pointer_role_repair_failures.tsv",
-            "pointer_role_repair_summary.txt"),
-        "STPrototypeAnalyzer.java", List.of(
+            "pointer_role_repair_summary.txt")),
+        Map.entry("STPrototypeAnalyzer.java", List.of(
             "prototype_proposals.tsv", "prototype_callsite_audit.tsv",
-            "prototype_undefined_boundary_audit.tsv", "prototype_summary.txt"),
-        "STLocalLifetimeAnalyzer.java", List.of(
+            "prototype_undefined_boundary_audit.tsv", "prototype_summary.txt")),
+        Map.entry("STLocalLifetimeAnalyzer.java", List.of(
             "local_lifetime_proposals.tsv", "local_lifetime_failures.tsv",
-            "local_lifetime_summary.txt"),
-        "STControlFlowLabelAnalyzer.java", List.of(
+            "local_lifetime_summary.txt")),
+        Map.entry("STControlFlowLabelAnalyzer.java", List.of(
             "control_flow_label_proposals.tsv", "control_flow_label_unresolved.tsv",
-            "control_flow_label_summary.txt"),
-        "STFunctionPointerFieldAnalyzer.java", List.of(
+            "control_flow_label_summary.txt")),
+        Map.entry("STFunctionPointerParameterAnalyzer.java", List.of(
+            "function_pointer_parameter_proposals.tsv",
+            "function_pointer_parameter_summary.txt")),
+        Map.entry("STFunctionPointerFieldAnalyzer.java", List.of(
             "function_pointer_field_proposals.tsv",
             "function_pointer_field_failures.tsv",
-            "function_pointer_field_summary.txt"),
-        "STClassLayoutAnalyzer.java", List.of(
+            "function_pointer_field_summary.txt")),
+        Map.entry("STClassLayoutAnalyzer.java", List.of(
             "class_layout_proposals.tsv", "class_field_proposals.tsv",
             "class_nested_type_proposals.tsv", "class_nested_field_proposals.tsv",
-            "class_layout_summary.txt"));
-    private static final Map<String, List<String>> CACHEABLE_ANALYZER_INPUTS = Map.of(
-        "STDArrayElementAnalyzer.java", List.of(),
-        "STPointerShapeAnalyzer.java", List.of(),
-        "STSwitchEnumAnalyzer.java", List.of("switch_enum_domains.tsv"),
-        "STDiscriminatedPayloadAnalyzer.java", List.of(),
-        "STPointerRoleRepairAnalyzer.java", List.of(),
-        "STPrototypeAnalyzer.java", List.of(),
-        "STLocalLifetimeAnalyzer.java", List.of(),
-        "STControlFlowLabelAnalyzer.java", List.of(),
-        "STFunctionPointerFieldAnalyzer.java", List.of(),
-        "STClassLayoutAnalyzer.java", List.of(
+            "class_layout_summary.txt")));
+    private static final Map<String, List<String>> CACHEABLE_ANALYZER_INPUTS = Map.ofEntries(
+        Map.entry("STDArrayElementAnalyzer.java", List.of()),
+        Map.entry("STPointerShapeAnalyzer.java", List.of()),
+        Map.entry("STSwitchEnumAnalyzer.java", List.of("switch_enum_domains.tsv")),
+        Map.entry("STDiscriminatedPayloadAnalyzer.java", List.of()),
+        Map.entry("STPointerRoleRepairAnalyzer.java", List.of()),
+        Map.entry("STPrototypeAnalyzer.java", List.of()),
+        Map.entry("STLocalLifetimeAnalyzer.java", List.of()),
+        Map.entry("STControlFlowLabelAnalyzer.java", List.of()),
+        Map.entry("STFunctionPointerParameterAnalyzer.java", List.of()),
+        Map.entry("STFunctionPointerFieldAnalyzer.java", List.of()),
+        Map.entry("STClassLayoutAnalyzer.java", List.of(
             "constructor_class_sizes.tsv", "vtable_proposals.tsv",
-            "class_array_proposals.tsv", "inline_aggregate_proposals.tsv"));
+            "class_array_proposals.tsv", "inline_aggregate_proposals.tsv")));
     private static final Set<String> MUTATING_STATUSES = Set.of(
         "applied", "created", "converted", "updated", "partial", "renamed", "repaired");
     private static final Set<String> UNCHANGED_STATUSES = Set.of(
@@ -312,13 +316,16 @@ public class STRecoveryPipeline extends GhidraScript {
         // from implementation-based analyzers.
         runStructuralFixpoint();
 
-        // Callback-field discovery is deliberately outside the broad deep fixed point. It is
-        // one of the most expensive whole-program decompiler passes, while its evidence depends
-        // on the final layouts produced by that loop. Running it in every intermediate Program
-        // epoch repeated several minutes of work without making those early proposals safer.
-        // The export ABI fixed point below still reruns it after any later mutation, and deep-only
-        // mode still receives one current callback/indirect propagation pass here.
+        // Callback discovery is deliberately outside the broad deep fixed point. Field recovery
+        // is an expensive whole-program decompiler pass whose evidence depends on the final
+        // layouts produced by that loop; parameter recovery is machine-only, but consumes final
+        // signatures and must precede the general indirect-call pass. The export ABI fixed point
+        // below still reruns all three after a later mutation.
         section("post-structural indirect propagation");
+        pair("STFunctionPointerParameterAnalyzer.java",
+            "STFunctionPointerParameterApplier.java",
+            "function_pointer_parameter_proposals.tsv",
+            "function_pointer_parameter_apply_report.tsv");
         pair("STFunctionPointerFieldAnalyzer.java",
             "STFunctionPointerFieldApplier.java",
             "function_pointer_field_proposals.tsv",
@@ -422,7 +429,11 @@ public class STRecoveryPipeline extends GhidraScript {
         runAbiRegressionGate("export-return-repair");
 
         for (int pass = 1; pass <= 4; pass++) {
-            int changed = pair("STFunctionPointerFieldAnalyzer.java",
+            int changed = pair("STFunctionPointerParameterAnalyzer.java",
+                "STFunctionPointerParameterApplier.java",
+                "function_pointer_parameter_proposals.tsv",
+                "function_pointer_parameter_apply_report.tsv");
+            changed += pair("STFunctionPointerFieldAnalyzer.java",
                 "STFunctionPointerFieldApplier.java",
                 "function_pointer_field_proposals.tsv",
                 "function_pointer_field_apply_report.tsv");
