@@ -65,7 +65,7 @@ public class STIndirectCallAnalyzer extends GhidraScript {
         addDispatchVtables(rows, directory);
         addExistingVtableSlots(rows);
         rows.sort(Comparator.comparingInt((Row row) ->
-                "create_dispatch_vtable".equals(row.kind) ? 0 : 1)
+                "dispatch_interface_audit".equals(row.kind) ? 0 : 1)
             .thenComparing(row -> row.structurePath)
             .thenComparingInt(row -> row.offset));
         writeRows(directory.resolve("indirect_call_proposals.tsv"), rows);
@@ -134,14 +134,16 @@ public class STIndirectCallAnalyzer extends GhidraScript {
             if (ownerComponent == null || ownerComponent.getOffset() != 0 ||
                     ownerComponent.getLength() != currentProgram.getDefaultPointerSize())
                 continue;
-            rows.add(new Row(true, "create_dispatch_vtable", owner.getPathName(), 0,
+            rows.add(new Row(false, "dispatch_interface_audit", owner.getPathName(), 0,
                 name(ownerComponent), typeSpec(ownerComponent.getDataType()),
                 safeText(ownerComponent.getComment()), dispatchPath, name(ownerComponent),
                 hex(baseRow.get("table_address")), maximumSlots, "", "",
                 "dispatch_shape", "pointer:" + physical.getPathName(), -1, "", "",
-                "layout", "physical prefix has " + baseSlots + " slot(s); " +
+                "audit", "audit-only polymorphic interface; physical prefix has " +
+                    baseSlots + " slot(s); " +
                     related.size() + " independently recovered derived tables extend the " +
-                    ownerName + " dispatch interface to " + maximumSlots + " slot(s)"));
+                    ownerName + " dispatch interface to " + maximumSlots + " slot(s); " +
+                    "the class vptr must remain pointer:" + physical.getPathName()));
 
             for (int slot = baseSlots; slot < maximumSlots; slot++)
                 addDispatchSlot(rows, ownerName, physical, dispatch, dispatchPath,
@@ -207,10 +209,11 @@ public class STIndirectCallAnalyzer extends GhidraScript {
                 implementations * 2 < candidates) {
             if (exactCurrent && current.getDataType() instanceof Pointer pointer &&
                     generatedIndirectPointer(current, pointer))
-                rows.add(new Row(true, "revert_generated_slot", dispatchPath, offset,
+                rows.add(new Row(false, "dispatch_slot_audit", dispatchPath, offset,
                     expectedName, expectedType, expectedComment, dispatchPath, expectedName,
                     0, 0, "", "", "", "", -1, "", "", "cleanup",
-                    "derived-table ABI consensus for this dispatch slot no longer holds"));
+                    "audit-only dispatch metadata: derived-table ABI consensus for this " +
+                        "slot no longer holds"));
             return;
         }
         if (exactCurrent && !(current.getDataType() instanceof Pointer pointer &&
@@ -218,12 +221,12 @@ public class STIndirectCallAnalyzer extends GhidraScript {
                     generatedIndirectPointer(current, pointer)))) return;
 
         String mode = agreed.mode.replace("synthetic_", "synthetic_dispatch_");
-        rows.add(new Row(true, "vtable_slot", dispatchPath, offset,
+        rows.add(new Row(false, "dispatch_slot_audit", dispatchPath, offset,
             expectedName, expectedType, expectedComment, dispatchPath,
             String.format("vfunc_%02X", offset), 0, 0,
             addr(representative.getEntryPoint()), representative.getName(true), mode,
-            agreed.receiverType, agreed.stackParameters, agreed.parameterTypes, returned, "layout",
-            implementations + "/" + candidates +
+            agreed.receiverType, agreed.stackParameters, agreed.parameterTypes, returned, "audit",
+            "audit-only dispatch metadata; " + implementations + "/" + candidates +
                 " physical implementations across tables " +
                 String.join("|", tables) + " agree on " + mode +
                 ", stack cleanup words=" + agreed.stackParameters +
@@ -772,8 +775,8 @@ public class STIndirectCallAnalyzer extends GhidraScript {
             out.write("ST indirect-call prototypes\n\nIndirect call sites: " + sites.size() +
                 "\nProposals: " + rows.size() + "\nAutomatic: " +
                 rows.stream().filter(row -> row.apply).count() +
-                "\nDispatch interfaces: " + rows.stream().filter(row ->
-                    row.kind.equals("create_dispatch_vtable")).count() +
+                "\nDispatch interface audits: " + rows.stream().filter(row ->
+                    row.kind.equals("dispatch_interface_audit")).count() +
                 "\nDispatch tail ABI prototypes: " + rows.stream().filter(row ->
                     row.signatureMode.startsWith("synthetic_dispatch_")).count() +
                 "\nSynthetic ABI prototypes: " + rows.stream().filter(row ->

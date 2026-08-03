@@ -40,7 +40,10 @@ reviewed transitions. Two Ghidra runs compiled all 81 scripts and exposed a
 false raw-versus-normalized artifact comparison on an unchanged accepted
 Program. Token metrics now use an automatically generated raw fixture baseline
 bound to the accepted manifest, fresh Program semantic fingerprint, policy
-hash, and decompiler profile. A confirming runtime run remains required.
+hash, and decompiler profile. Confirmed by completed run
+`d395e3ebb9d434e2851255a8381c90e69559f2bd78545b9b13cb13d600c4ef90`:
+all ABI phases and the broad export gate passed, the raw baseline was verified,
+and the Program semantic hash remained at the accepted value.
 
 Before reintroducing an ABI-mutating heuristic, compare the following bodies
 against the accepted corpus by stable address:
@@ -62,8 +65,13 @@ cheaper failure.
 
 ### Q-002 Isolate risky Program mutations
 
-- Run new ABI/type appliers first against a local disposable copy of the clean
-  project, never the only accepted project database.
+Status: superseded for the current SMB-only workflow. Do not create or maintain
+a local project copy. Source-bundle pinning, analyzer/applier separation, ABI
+barriers, run archives, and transactional corpus export provide the automated
+isolation available in this environment. A new risky ABI heuristic must remain
+proposal-only until those gates cover it; the pipeline must stop before later
+broad consumers when a barrier fails.
+
 - Keep candidate recovery/corpus output separate until its export gate passes.
 - Promote the candidate only after the semantic diff and per-address fixture
   diff are reviewed.
@@ -71,6 +79,17 @@ cheaper failure.
 ## P1 — remove the demonstrated ABI hazards
 
 ### Q-010 Keep dispatch interfaces out of class vptr fields
+
+Status: implemented and runtime-confirmed by accepted run `4fa6da...`. New
+dispatch interfaces and their tail signatures are emitted as `apply=0` audit rows.
+`STIndirectCallApplier` refuses old `create_dispatch_vtable`, synthetic-dispatch
+slot, and obsolete hard-coded `create_base_vtable` proposals even if an old TSV
+still says `apply=1`. The accepted historical `STGameObjCDispatchVTable` is not
+automatically removed: replacing it requires a separately gated migration that
+preserves the useful tail-call evidence without changing the physical class
+vptr ABI. All ABI barriers and the broad export gate passed, the Program semantic
+hash stayed unchanged, and all accepted typed physical vtable slots remained
+intact.
 
 - A class vptr must continue to point to a physical vtable type.
 - A synthetic union/dispatch view may be emitted as audit metadata, but must not
@@ -81,6 +100,11 @@ cheaper failure.
 
 ### Q-011 Make return repair evidence-only
 
+Status: implemented. The current repair-only pass has no pending mutation;
+non-leaf void and forwarding decisions use whole-CFG caller/return evidence,
+and boolean source domains remain review-only unless ABI width is independently
+proven.
+
 - Never migrate a protected `bool`/narrow return to `undefined4` because an old
   script comment says that propagation was unsafe.
 - Require whole-CFG EAX evidence for non-leaf `void`, forwarding, or width
@@ -90,6 +114,11 @@ cheaper failure.
 
 ### Q-012 Separate virtual-method ownership, name, and ABI
 
+Status: implemented conservatively. The virtual-method and method-owner reports
+keep all automatic name/owner/convention changes disabled at the accepted
+checkpoint, while shared and multi-owner targets remain explicit review rows.
+Physical slot typing does not by itself rename or re-home the target function.
+
 - A recovered physical vtable slot may prove hidden ECX without proving a class
   name or semantic method name.
 - Ownerless/shared targets stay neutral and review-only unless every physical
@@ -98,6 +127,11 @@ cheaper failure.
   semantics unresolved in its own body.
 
 ## P2 — reintroduce infrastructure independently
+
+Status: all six infrastructure items are present in the current pipeline. Their
+runtime evidence is retained per run. Accepted run `4fa6da...` reused 12
+persistent and five current-epoch analyzer results and completed in 400.813
+seconds, down from 1,992.613 seconds for the preceding accepted run.
 
 Each item starts from the accepted source, compiles all scripts against Ghidra
 12.1.2/JDK 21 into a temporary output directory, and gets its own narrow runtime

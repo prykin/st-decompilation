@@ -56,12 +56,22 @@ public class STFunctionPointerFieldAnalyzer extends GhidraScript {
         "[STPointerShapeApplier]", "[STDArrayElementApplier]",
         "[STGlobalRecordApplier]", "[STGlobalAggregateApplier]",
         "[STDiscriminatedPayloadApplier]");
+    private static final Set<String> ABI_TAGS = Set.of(
+        "RECOVERED_ABI_CONSISTENCY", "RECOVERED_CALLSITE_CONVENTION",
+        "RECOVERED_CONSTRUCTOR", "RECOVERED_DESTRUCTOR",
+        "RECOVERED_HEURISTIC_SIGNATURE", "RECOVERED_HIDDEN_THIS",
+        "RECOVERED_MESSAGE_HANDLER", "RECOVERED_OBJECT_FACTORY",
+        "RECOVERED_PROTOTYPE", "RECOVERED_UTILITY_SEMANTICS",
+        "RECOVERED_VIRTUAL_METHOD");
 
     private final Map<FieldKey, Evidence> evidence = new TreeMap<>();
     private final List<Failure> failures = new ArrayList<>();
     private final Map<Object, FieldRef> fieldCache = new HashMap<>();
     private final Map<Object, Function> functionCache = new HashMap<>();
-    private int candidates;
+    private int candidates, machineStoreCandidates, machineCallCandidates;
+    private int machineAddressReferenceFunctions, machineIndirectWriteFunctions;
+    private int pcodeStoreOperations, exactFieldStores, trustedFieldStores;
+    private int skippedCallOnlyDecompiles;
 
     @Override
     protected void run() throws Exception {
@@ -75,18 +85,48 @@ public class STFunctionPointerFieldAnalyzer extends GhidraScript {
         Path directory = programDirectory(selected);
         Files.createDirectories(directory);
 
+        List<Function> storeFunctions = new ArrayList<>(), callFunctions = new ArrayList<>();
+        FunctionIterator functions = currentProgram.getFunctionManager().getFunctions(true);
+        while (functions.hasNext()) {
+            monitor.checkCancelled();
+            Function function = functions.next();
+            if (!candidate(function)) continue;
+            MachineCandidate machine = machineCandidate(function);
+            if (!machine.any()) continue;
+            candidates++;
+            if (machine.storedFunction()) {
+                machineStoreCandidates++;
+                storeFunctions.add(function);
+            }
+            if (machine.indirectCall()) {
+                machineCallCandidates++;
+                callFunctions.add(function);
+            }
+            if (machine.functionAddressReference()) machineAddressReferenceFunctions++;
+            if (machine.indirectWrite()) machineIndirectWriteFunctions++;
+        }
+
         DecompInterface decompiler = new DecompInterface();
         decompiler.toggleCCode(false);
         decompiler.toggleSyntaxTree(true);
         if (!decompiler.openProgram(currentProgram))
             throw new IllegalStateException("Decompiler could not open current program");
         try {
-            FunctionIterator functions = currentProgram.getFunctionManager().getFunctions(true);
-            while (functions.hasNext()) {
+            Set<Address> analyzed = new HashSet<>();
+            for (Function function : storeFunctions) {
                 monitor.checkCancelled();
-                Function function = functions.next();
-                if (!candidate(function) || !hasMachineCandidate(function)) continue;
-                candidates++;
+                analyze(function, decompiler);
+                analyzed.add(function.getEntryPoint());
+            }
+            boolean exactTargetStore = evidence.values().stream()
+                .anyMatch(value -> !value.observedTargets.isEmpty());
+            for (Function function : callFunctions) {
+                if (!analyzed.add(function.getEntryPoint())) continue;
+                if (!exactTargetStore) {
+                    skippedCallOnlyDecompiles++;
+                    continue;
+                }
+                monitor.checkCancelled();
                 analyze(function, decompiler);
             }
         }
@@ -107,8 +147,9 @@ public class STFunctionPointerFieldAnalyzer extends GhidraScript {
             !isLibrary(function);
     }
 
-    private boolean hasMachineCandidate(Function function) {
+    private MachineCandidate machineCandidate(Function function) {
         boolean storedFunction = false, indirectCall = false;
+        boolean functionAddressReference = false, indirectWrite = false;
         InstructionIterator instructions = currentProgram.getListing()
             .getInstructions(function.getBody(), true);
         while (instructions.hasNext()) {
@@ -116,12 +157,23 @@ public class STFunctionPointerFieldAnalyzer extends GhidraScript {
             String mnemonic = instruction.getMnemonicString().toUpperCase(Locale.ROOT);
             if ("CALL".equals(mnemonic) && directCalledFunction(instruction) == null)
                 indirectCall = true;
-            if (!"CALL".equals(mnemonic) && instruction.getNumOperands() >= 2 &&
-                    OperandType.isIndirect(instruction.getOperandType(0)) &&
-                    referencedFunction(instruction) != null) storedFunction = true;
-            if (storedFunction || indirectCall) return true;
+            boolean addressMaterialization = "MOV".equals(mnemonic) ||
+                "LEA".equals(mnemonic) || "PUSH".equals(mnemonic);
+            Function referenced = addressMaterialization ?
+                referencedFunction(instruction) : null;
+            if (referenced != null) functionAddressReference = true;
+            boolean writesIndirect = "MOV".equals(mnemonic) &&
+                instruction.getNumOperands() >= 2 &&
+                OperandType.isIndirect(instruction.getOperandType(0));
+            if (writesIndirect) indirectWrite = true;
+            if (writesIndirect && referenced != null) storedFunction = true;
         }
-        return false;
+        // Also admit the common two-instruction materialization
+        // MOV reg,function; MOV [field],reg. High p-code still has to prove that
+        // the exact function value reaches the exact structure field.
+        storedFunction |= functionAddressReference && indirectWrite;
+        return new MachineCandidate(storedFunction, indirectCall,
+            functionAddressReference, indirectWrite);
     }
 
     private void analyze(Function function, DecompInterface decompiler) {
@@ -153,18 +205,30 @@ public class STFunctionPointerFieldAnalyzer extends GhidraScript {
     }
 
     private void collectStore(Function containing, Object operation) throws Exception {
+        pcodeStoreOperations++;
         if (inputCount(operation) < 3) return;
         FieldRef field = fieldAddress(input(operation, 1), 0, new HashSet<>());
         Function target = functionValue(input(operation, 2), 0, new HashSet<>());
         if (field == null || target == null) return;
         Function resolved = resolveThunk(target);
-        if (resolved == null || !trustedSignature(resolved)) return;
+        if (resolved == null) return;
+        exactFieldStores++;
         FieldKey key = new FieldKey(field.structure.getPathName(), field.offset);
         Evidence value = evidence.computeIfAbsent(key,
             ignored -> new Evidence(field.structure, field.offset));
+        String observedSite = site(operation) + " " + containing.getName(true) +
+            " stores " + target.getName(true);
+        value.observedTargets.add(addr(resolved.getEntryPoint()));
+        value.observedStoreSites.add(observedSite);
+        String rejection = signatureRejection(resolved);
+        if (!rejection.isBlank()) {
+            value.rejectedStoreSites.add(observedSite + " [" + rejection + "]");
+            value.rejectionReasons.add(rejection);
+            return;
+        }
+        trustedFieldStores++;
         value.targets.put(addr(resolved.getEntryPoint()), resolved);
-        value.storeSites.add(site(operation) + " " + containing.getName(true) +
-            " stores " + target.getName(true));
+        value.storeSites.add(observedSite);
     }
 
     private void collectCall(Function containing, Object operation) throws Exception {
@@ -280,6 +344,7 @@ public class STFunctionPointerFieldAnalyzer extends GhidraScript {
         List<Row> rows = new ArrayList<>();
         for (Map.Entry<FieldKey, Evidence> entry : evidence.entrySet()) {
             Evidence value = entry.getValue();
+            if (value.observedTargets.isEmpty()) continue;
             DataTypeComponent component = value.structure.getComponentAt(value.offset);
             if (component == null || component.getOffset() != value.offset) continue;
             Set<String> signatures = new TreeSet<>();
@@ -294,9 +359,12 @@ public class STFunctionPointerFieldAnalyzer extends GhidraScript {
                 "_" + String.format("%04X", value.offset);
             String reason = "stores=" + value.storeSites.size() + ", calls=" +
                 value.callSites.size() + ", targets=" + value.targets.keySet() +
+                ", observed_targets=" + value.observedTargets +
                 ", signatures=" + signatures + ", call_argument_counts=" +
                 value.callArgumentCounts + (completeChain ? "" : "; incomplete chain") +
-                (compatible ? "" : "; conflicting target ABIs") +
+                (signatures.size() > 1 ? "; conflicting trusted target ABIs" : "") +
+                (value.targets.isEmpty() ?
+                    "; all exact stores rejected: " + value.rejectionReasons : "") +
                 (owned ? "" : "; manual/unowned structure") +
                 (baseline ? "" : "; concrete field type preserved");
             rows.add(new Row(apply, value.structure.getPathName(), value.offset,
@@ -306,7 +374,10 @@ public class STFunctionPointerFieldAnalyzer extends GhidraScript {
                 representative == null ? "" : addr(representative.getEntryPoint()),
                 representative == null ? "" : representative.getName(true),
                 String.join("|", value.targets.keySet()),
+                String.join("|", value.observedTargets),
+                String.join(" | ", value.observedStoreSites),
                 String.join(" | ", value.storeSites), String.join(" | ", value.callSites),
+                String.join(" | ", value.rejectedStoreSites),
                 apply ? "high" : "review", reason));
         }
         rows.sort(Comparator.comparing((Row row) -> row.structurePath)
@@ -331,16 +402,20 @@ public class STFunctionPointerFieldAnalyzer extends GhidraScript {
         String description = text(structure.getDescription());
         return GENERATED_MARKERS.stream().anyMatch(description::contains);
     }
-    private boolean trustedSignature(Function function) {
+    private String signatureRejection(Function function) {
         if (function == null || function.hasVarArgs() ||
                 function.getCallingConventionName() == null ||
-                function.getCallingConventionName().equals("unknown")) return false;
+                function.getCallingConventionName().equals("unknown"))
+            return function != null && function.hasVarArgs() ? "variadic target ABI" :
+                "unknown calling convention";
         SourceType source = function.getSignatureSource();
-        if (source == SourceType.USER_DEFINED || source == SourceType.IMPORTED) return true;
+        if (source == SourceType.IMPORTED) return "";
         for (FunctionTag tag : function.getTags())
-            if (tag.getName().startsWith("RECOVERED_") &&
-                    !tag.getName().equals("RECOVERED_CONTROL_FLOW_LABEL")) return true;
-        return false;
+            if (ABI_TAGS.contains(tag.getName()) ||
+                    tag.getName().startsWith("RECOVERED_UTILITY_")) return "";
+        return source == SourceType.USER_DEFINED ?
+            "USER_DEFINED without independent ABI provenance" :
+            "no imported or recovered ABI provenance";
     }
     private String signatureKey(Function function) {
         List<String> parts = new ArrayList<>();
@@ -446,14 +521,18 @@ public class STFunctionPointerFieldAnalyzer extends GhidraScript {
             out.write("apply\tstructure_path\tcomponent_offset\texpected_field_name\t" +
                 "expected_component_type\texpected_comment\tdefinition_path\t" +
                 "proposed_field_name\tsignature_function_address\tsignature_function\t" +
-                "target_addresses\tstore_sites\tindirect_call_sites\tconfidence\tevidence\n");
+                "target_addresses\tobserved_target_addresses\tobserved_store_sites\t" +
+                "store_sites\tindirect_call_sites\trejected_store_sites\t" +
+                "confidence\tevidence\n");
             for (Row row : rows)
                 out.write(bit(row.apply) + "\t" + row.structurePath + "\t" + row.offset +
                     "\t" + clean(row.expectedName) + "\t" + row.expectedType + "\t" +
                     clean(row.expectedComment) + "\t" + row.definitionPath + "\t" +
                     clean(row.proposedName) + "\t" + row.signatureAddress + "\t" +
                     clean(row.signatureName) + "\t" + row.targetAddresses + "\t" +
-                    clean(row.storeSites) + "\t" + clean(row.callSites) + "\t" +
+                    row.observedTargetAddresses + "\t" + clean(row.observedStoreSites) +
+                    "\t" + clean(row.storeSites) + "\t" + clean(row.callSites) + "\t" +
+                    clean(row.rejectedStoreSites) + "\t" +
                     row.confidence + "\t" + clean(row.reason) + "\n");
         }
     }
@@ -469,6 +548,15 @@ public class STFunctionPointerFieldAnalyzer extends GhidraScript {
         Files.write(path, List.of(
             "program=" + currentProgram.getName(),
             "machine_prefilter_candidates=" + candidates,
+            "machine_store_candidate_functions=" + machineStoreCandidates,
+            "machine_indirect_call_candidate_functions=" + machineCallCandidates,
+            "machine_function_address_reference_functions=" +
+                machineAddressReferenceFunctions,
+            "machine_indirect_write_functions=" + machineIndirectWriteFunctions,
+            "skipped_call_only_decompiles=" + skippedCallOnlyDecompiles,
+            "pcode_store_operations=" + pcodeStoreOperations,
+            "exact_structure_field_stores=" + exactFieldStores,
+            "trusted_structure_field_stores=" + trustedFieldStores,
             "field_candidates=" + rows.size(),
             "auto_apply=" + rows.stream().filter(row -> row.apply).count(),
             "decompile_failures=" + failures.size(),
@@ -521,7 +609,10 @@ public class STFunctionPointerFieldAnalyzer extends GhidraScript {
         final Structure structure;
         final int offset;
         final Map<String, Function> targets = new TreeMap<>();
-        final Set<String> storeSites = new TreeSet<>(), callSites = new TreeSet<>();
+        final Set<String> observedTargets = new TreeSet<>();
+        final Set<String> storeSites = new TreeSet<>(), observedStoreSites = new TreeSet<>(),
+            rejectedStoreSites = new TreeSet<>(), rejectionReasons = new TreeSet<>(),
+            callSites = new TreeSet<>();
         final Set<Integer> callArgumentCounts = new TreeSet<>();
         Evidence(Structure structure, int offset) { this.structure = structure; this.offset = offset; }
     }
@@ -529,6 +620,11 @@ public class STFunctionPointerFieldAnalyzer extends GhidraScript {
     private record Row(boolean apply, String structurePath, int offset,
         String expectedName, String expectedType, String expectedComment,
         String definitionPath, String proposedName, String signatureAddress,
-        String signatureName, String targetAddresses, String storeSites,
-        String callSites, String confidence, String reason) { }
+        String signatureName, String targetAddresses, String observedTargetAddresses,
+        String observedStoreSites, String storeSites, String callSites,
+        String rejectedStoreSites, String confidence, String reason) { }
+    private record MachineCandidate(boolean storedFunction, boolean indirectCall,
+        boolean functionAddressReference, boolean indirectWrite) {
+        boolean any() { return storedFunction || indirectCall; }
+    }
 }

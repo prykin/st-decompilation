@@ -1,6 +1,14 @@
 program=ST.exe
 machine_prefilter_candidates=1138
-field_candidates=258
+machine_store_candidate_functions=0
+machine_indirect_call_candidate_functions=1138
+machine_function_address_reference_functions=48
+machine_indirect_write_functions=0
+skipped_call_only_decompiles=1138
+pcode_store_operations=0
+exact_structure_field_stores=0
+trusted_structure_field_stores=0
+field_candidates=0
 auto_apply=0
 decompile_failures=0
 note=Application requires both an exact stored target and an indirect call through the same structure field.

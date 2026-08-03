@@ -9,8 +9,9 @@ script.
 
 ## Environment
 
-- Authoritative repository path: `<local-home>/st` on the local disk. Do not use
-  or inspect an SMB mirror.
+- Authoritative repository from this machine: `<local-volume>/st` over SMB.
+  Ghidra sees the same repository at `<local-home>/st`. Use those absolute paths
+  directly; do not create a local repository copy or symbolic link.
 - Ghidra host: Ghidra 12.1.2 with Homebrew OpenJDK 21.
 - Project on the Ghidra host: `<local-home>/st/proj/st.gpr`.
 - Scripts on the Ghidra host: `<local-home>/st/scripts`.
@@ -38,28 +39,28 @@ have been checked.
 ## Latest accepted run
 
 The authoritative latest `full-export` was run
-`7b7fef4db04628ca20247b53557ca9fc15ec76a913faab42e349be3abe265ea8`.
+`4fa6da5b7a6abee94d956916dc8f85258db2b1a42179b63287f7ea4d80b41679`.
 Its tracked accepted projection is the source of truth; ignored run archives
 are disposable diagnostics and need not be retained. The run completed in
-267.494 seconds (`00:04:27`), with Program modification `154 -> 193` and
+400.813 seconds (`00:06:40`), with Program modification `3 -> 29` and
 semantic hash
 `27b2e1eb234982f047ed62f60bc77e1a7bde68397a9bbe5e0b2e1686a4b2fed8`.
 
-Ghidra's load preflight accepted all 80 Java scripts with zero build failures.
+Ghidra's load preflight accepted all 81 Java scripts with zero build failures.
 The export receipt is `passed`; the gate reports zero hard regressions, 10,392
 internal functions, 5,712 exported bodies, and zero decompilation failures.
-Every physical vtable slot retained its type. Against the recovered failed-run
-baseline, both manifest hashes are `0a9c405f...`; the gate reports zero hard
-regressions and zero warnings. All appliers reported zero semantic mutations.
-The local class-layout fixed point therefore passed its runtime steady-state
-test rather than merely compiling.
+All seven ABI phases passed, including `accepted-refresh`; the generated raw
+fixture baseline is verified, all 2,409 accepted typed vtable slots are intact,
+and the broad gate reports zero warnings. The Program semantic hash remained
+equal to the accepted receipt despite the volatile modification-counter change.
 
-The complete 128-step pipeline was not truncated: 13 expensive analyzers reused
-the persistent semantic/source/dependency cache, five reused current-epoch
-artifacts, final ABI stabilization ran, evidence was recorded and verified,
-`STDecompExport` completed in 53.429 seconds, and the regression gate passed.
+The complete pipeline recorded 135 report rows. It reused 12 persistent and
+five current-epoch analyzer results; `STDecompExport` completed in 42.469
+seconds. This is a 4.97x wall-clock improvement over the preceding accepted
+`d395e3...` run (`00:33:12`). The remaining dominant pass was
+`STFunctionPointerFieldAnalyzer` at 166.613 seconds.
 
-## Current restored checkpoint
+## Accepted checkpoint history
 
 The repository and Ghidra project have been restored to commit `39097bd736`,
 the accepted state described above. A later rejected experiment is not present
@@ -84,9 +85,8 @@ Intentional changes require an exact baseline/candidate fingerprint pair in
 must be removed after acceptance. `STRecoveryPipeline` invokes the gate at ABI
 startup and at ABI barriers before broad consumers, snapshots the exact policy
 bundle into each ignored run archive, and preserves the small sentinel bodies
-inside a failed export's accepted baseline. These changes still require their
-first successful Ghidra runtime validation; do not describe them as accepted
-Program state until the gate passes on the restored database.
+inside a failed export's accepted baseline. The successful run named above is
+their runtime confirmation.
 
 Runtime attempts `73c493b12b54...` and `bca1c3fbab79...` both loaded all 81
 scripts with zero build failures and left the Program unchanged, but the
@@ -104,8 +104,8 @@ exporter normalization. Token metrics now use generated
 manifest, Program semantic hash, rules hash, and decompiler profile. Bootstrap
 or replacement is allowed only when a fresh Program fingerprint equals the
 `passed` receipt; an `accepted-refresh` phase runs only after the broad export
-gate passes. Do not add a reviewed transition for these false deltas. The new
-source requires one confirming `full-export`.
+gate passes. Do not add a reviewed transition for these false deltas. The raw
+baseline has now been confirmed by a complete `full-export`.
 
 A synthetic dispatch interface must never replace a class's physical vtable
 pointer in Ghidra. The rejected experiment did so for `TLOBaseTy`; neutral
@@ -121,11 +121,42 @@ comment and checks tag membership before writing. This source-only fix compiles
 with the pipeline and analyzer changes against Ghidra 12.1.2/JDK 21; it does not
 require another corpus export.
 
+## Current pending source changes
+
+The dispatch/callback source changes from the preceding checkpoint compiled and
+ran successfully in the latest accepted run:
+
+- `STIndirectCallAnalyzer` emits the polymorphic interface and its tail ABI as
+  `apply=0` audit rows;
+- `STIndirectCallApplier` refuses old dispatch-interface, dispatch-tail, and
+  obsolete hard-coded `create_base_vtable` rows even if a stale TSV enables
+  them; the dead creators were removed from the applier;
+- the historical accepted `STGameObjCDispatchVTable` remains installed until a
+  separately gated migration can preserve useful tail evidence without a class
+  vptr substitution;
+- `STFunctionPointerFieldAnalyzer` retained exact observed/rejected target
+  stores, reported STORE/prefilter counters, and stopped accepting bare
+  `USER_DEFINED` source as ABI evidence. Runtime evidence was conclusive: 1,138
+  machine candidates all came from indirect calls, there were no machine store
+  candidates, no exact structure-field stores, and no trusted stores. The 258
+  proposal rows were therefore call-only observations rather than callback
+  candidates.
+
+The only new pending Java change makes that negative result cheap and less
+noisy. `STFunctionPointerFieldAnalyzer` now performs a machine STORE prefilter,
+admits both direct stores and `MOV reg,function; MOV [field],reg`, decompiles
+STORE candidates first, and decompiles call-only functions only if at least one
+exact stored target was recovered. Call-only evidence is no longer emitted as a
+field proposal. It adds no image address or hand-authored ST type allow-list.
+This optimization was authored through the SMB mount on a machine without
+Ghidra/JDK and therefore still requires the launcher's compile preflight and a
+`full-export` runtime check.
+
 The following sections are a chronological implementation/failure log. Any
 future-tense rerun checklist in that history has been superseded by the latest
 accepted run above unless a later section explicitly reopens it.
 
-## Latest attempted run and pending source changes
+## Historical rejected run and then-pending source changes
 
 The latest attempted `full-export` is archived as
 `4c895a48ac0d63b17166c492578bad6adf808bb0f7cf8efe50e3303e05e9f549`.
@@ -224,9 +255,8 @@ not be forced into one persistent Listing type.
 
 ## Required next run
 
-Run `STRecoveryLauncher` in Ghidra and select `full-export`. A plain `export`
-would verify the exporter fix but would not apply the new allocator, singleton,
-pointer-shape, and ABI evidence.
+Run `STRecoveryLauncher` in Ghidra and select `full-export`. Use only the
+authoritative paths already inferred by the launcher:
 
 No individual paths are required:
 
@@ -236,48 +266,41 @@ No individual paths are required:
 
 Expected checks after completion:
 
-- `utility_function_proposals.tsv`: `006AAC10` is enabled as
-  `MemAllocClear`, then applied/unchanged on the fixed-point pass;
-- `global_data_proposals.tsv`: `00802A28` has `type_apply=1` for
-  `InterSystemC *`;
-- `pointer_shape_apply_report.tsv`: `00574920`, `00575120`, and `005751F0`
-  are no longer preserved merely because their old type was a weak short
-  pointer;
-- `abi_consistency_apply_report.tsv`: no `Missing data type: /undefined`;
-- old script-owned x87 repairs (including `006DC050`) migrate to exact custom
-  stack storage only when every observed double-width EBP access matches;
+- build preflight: all Java scripts load with zero failures;
+- `indirect_call_proposals.tsv`: dispatch interface/tail rows are `apply=0`
+  audit rows;
+- `indirect_call_apply_report.tsv`: no dispatch view or synthetic tail is
+  applied; an intentionally replayed old proposal would be `preserved`;
+- `function_pointer_field_summary.txt`: machine store candidates, p-code STORE
+  operations, exact field stores, and trusted field stores are reported;
+- `function_pointer_field_proposals.tsv`: observed and rejected stores retain
+  their exact evidence and reason;
+- Program semantic state remains unchanged unless a complete independently
+  proven callback chain is found;
 - `export_receipt.json`: final status is `passed`;
-- `export_regression_report.tsv`: the gate actually ran and has no hard
-  regressions.
+- all ABI barrier summaries and `export_regression_report.tsv`: no errors or
+  hard regressions.
 
 Do not update a hash or delete `decomp/` if the gate rejects the result. Inspect
 the report and preserve the retained accepted baseline.
 
 ## Current generated and project-file caveats
 
-Generated `recovery/` reports and many `decomp/` function files are dirty from
-the user's run. Preserve them; a successful rerun should replace the partial
-corpus coherently.
+Generated `recovery/` reports and `decomp/` files belong to the successful
+accepted run. Preserve unrelated changes; the next successful export replaces
+the corpus transactionally.
 
-The open/user Ghidra session also owns these untracked database journal files:
-
-```text
-proj/st.rep/idata/00/~0000000c.db/changeA.grf
-proj/st.rep/idata/00/~0000000c.db/changeB.grf
-proj/st.rep/idata/00/~0000000c.db/snapshotA.grf
-proj/st.rep/idata/00/~0000000c.db/snapshotB.grf
-```
-
-Do not delete, restore, rename, or otherwise manipulate them. Never start a
-second headless writer while the project is open.
+Do not delete, restore, rename, or otherwise manipulate live Ghidra journal
+files. Never start a second headless writer while the project is open.
 
 ## Validation performed
 
-The source state preceding the continuation below compiled together against the
-installed Ghidra 12.1.2 jars with Homebrew JDK 21. Class output was placed under
-`/tmp`, never under `scripts/`. Runtime effects remained pending a Ghidra rerun.
+The dispatch guard and first callback-provenance revision compiled together
+against Ghidra 12.1.2/JDK 21 during run `4fa6da...`; its build logs are retained
+in that run archive. The pending two-stage callback scheduling change has only
+static validation on this machine and must use the launcher's compile preflight.
 
-## Address-free continuation after that validation
+## Historical address-free continuation after that validation
 
 The following source changes were made later through the SMB-mounted repository
 from a machine without Ghidra. They have passed `git diff --check`, a balanced-token scan over all 77 Java
@@ -454,7 +477,7 @@ views, residual return-width artifacts, and unresolved callback/vtable
 prototypes. Allocation helpers must retain neutral `void *`; any record view is
 per-consumer and HighFunction-lifetime anchored.
 
-## Suggested commit title
+## Historical suggested commit title
 
 `feat(recovery): infer callback fields and exact inline aggregates`
 

@@ -1,5 +1,5 @@
 target	target_kind	status	detail
-/STGameObjC+0	create_dispatch_vtable	unchanged	polymorphic dispatch shape already has 82 slots and a current physical prefix
+/STGameObjC+0	dispatch_interface_audit	disabled	apply=0
 /SubmarineTitans/Recovered/VTables/AiBossClassTyVTable_at_1C+0	vtable_slot	unchanged	desired function pointer already present
 /SubmarineTitans/Recovered/VTables/AiBossClassTyVTable_at_1C+4	vtable_slot	unchanged	desired function pointer already present
 /SubmarineTitans/Recovered/VTables/AiBossClassTyVTable_at_1C+8	vtable_slot	unchanged	desired function pointer already present
@@ -533,18 +533,18 @@ target	target_kind	status	detail
 /SubmarineTitans/Recovered/VTables/STFishCVTable+280	vtable_slot	unchanged	desired function pointer already present
 /SubmarineTitans/Recovered/VTables/STFishCVTable+284	vtable_slot	disabled	apply=0
 /SubmarineTitans/Recovered/VTables/STFishCVTable+288	vtable_slot	disabled	apply=0
-/SubmarineTitans/Recovered/VTables/STGameObjCDispatchVTable+212	vtable_slot	unchanged	desired function pointer already present
-/SubmarineTitans/Recovered/VTables/STGameObjCDispatchVTable+216	vtable_slot	unchanged	desired function pointer already present
-/SubmarineTitans/Recovered/VTables/STGameObjCDispatchVTable+232	vtable_slot	unchanged	desired function pointer already present
-/SubmarineTitans/Recovered/VTables/STGameObjCDispatchVTable+236	vtable_slot	unchanged	desired function pointer already present
-/SubmarineTitans/Recovered/VTables/STGameObjCDispatchVTable+240	vtable_slot	unchanged	desired function pointer already present
-/SubmarineTitans/Recovered/VTables/STGameObjCDispatchVTable+248	vtable_slot	unchanged	desired function pointer already present
-/SubmarineTitans/Recovered/VTables/STGameObjCDispatchVTable+252	vtable_slot	unchanged	desired function pointer already present
-/SubmarineTitans/Recovered/VTables/STGameObjCDispatchVTable+256	vtable_slot	unchanged	desired function pointer already present
-/SubmarineTitans/Recovered/VTables/STGameObjCDispatchVTable+260	vtable_slot	unchanged	desired function pointer already present
-/SubmarineTitans/Recovered/VTables/STGameObjCDispatchVTable+268	vtable_slot	unchanged	desired function pointer already present
-/SubmarineTitans/Recovered/VTables/STGameObjCDispatchVTable+284	vtable_slot	unchanged	desired function pointer already present
-/SubmarineTitans/Recovered/VTables/STGameObjCDispatchVTable+288	vtable_slot	unchanged	desired function pointer already present
+/SubmarineTitans/Recovered/VTables/STGameObjCDispatchVTable+212	dispatch_slot_audit	disabled	apply=0
+/SubmarineTitans/Recovered/VTables/STGameObjCDispatchVTable+216	dispatch_slot_audit	disabled	apply=0
+/SubmarineTitans/Recovered/VTables/STGameObjCDispatchVTable+232	dispatch_slot_audit	disabled	apply=0
+/SubmarineTitans/Recovered/VTables/STGameObjCDispatchVTable+236	dispatch_slot_audit	disabled	apply=0
+/SubmarineTitans/Recovered/VTables/STGameObjCDispatchVTable+240	dispatch_slot_audit	disabled	apply=0
+/SubmarineTitans/Recovered/VTables/STGameObjCDispatchVTable+248	dispatch_slot_audit	disabled	apply=0
+/SubmarineTitans/Recovered/VTables/STGameObjCDispatchVTable+252	dispatch_slot_audit	disabled	apply=0
+/SubmarineTitans/Recovered/VTables/STGameObjCDispatchVTable+256	dispatch_slot_audit	disabled	apply=0
+/SubmarineTitans/Recovered/VTables/STGameObjCDispatchVTable+260	dispatch_slot_audit	disabled	apply=0
+/SubmarineTitans/Recovered/VTables/STGameObjCDispatchVTable+268	dispatch_slot_audit	disabled	apply=0
+/SubmarineTitans/Recovered/VTables/STGameObjCDispatchVTable+284	dispatch_slot_audit	disabled	apply=0
+/SubmarineTitans/Recovered/VTables/STGameObjCDispatchVTable+288	dispatch_slot_audit	disabled	apply=0
 /SubmarineTitans/Recovered/VTables/STGameObjCVTable+4	vtable_slot	unchanged	desired function pointer already present
 /SubmarineTitans/Recovered/VTables/STGameObjCVTable+8	vtable_slot	disabled	apply=0
 /SubmarineTitans/Recovered/VTables/STGameObjCVTable+12	vtable_slot	disabled	apply=0

@@ -97,7 +97,13 @@ Original binaries are local under ignored `bin/` and must not be committed.
   fields inside that span, and unchanged non-manual ABI baselines.
 - A non-vtable function-pointer field is automatic only when one exact generated
   structure member has both a stored function-address family with a unanimous
-  trusted ABI and an indirect call loaded from that same member.
+  imported or independently recovered ABI and an indirect call loaded from that
+  same member. Bare `USER_DEFINED` source is not independent ABI provenance.
+  Scan and prove exact stores before decompiling broad call-only candidates; a
+  call without a stored target is not a callback-field proposal.
+- A polymorphic dispatch interface is audit metadata only. It must not replace
+  a physical class vptr or mutate synthetic tail slots; stale proposal files
+  requesting those operations are refused by the applier.
 - A bulk zero span proves an extent, not an array element type. Install a fixed
   inline array only when independent indexed-stride evidence agrees; install a
   nested by-value member only for an exact complete typed copy into an

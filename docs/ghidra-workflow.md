@@ -248,11 +248,12 @@ new `leaf_void`, `ignored_eax_void`, pointer-return, and boolean candidates rema
 the responsibility of `deep` mode. This prevents export from opening a
 transitive `void`-inference fixed point immediately before decompilation.
 
-The first export after introducing an inferred dispatch interface may report a
-`stage_transition` warning for raw indirect calls: removing a wrapped
-`vtable[1]` alias can temporarily expose honest unresolved tail calls. This
-exception applies only while the previous export has zero dispatch interfaces;
-subsequent exports restore the normal non-increasing hard gate.
+Dispatch interfaces are audit metadata only. The analyzer may describe a
+polymorphic tail shared by longer related physical tables, but the applier must
+not install that view into a class vptr or type its synthetic tail slots. Old
+`apply=1` dispatch proposals are refused. The one historical accepted
+`STGameObjCDispatchVTable` remains a migration item; it is not a precedent for
+creating another interface.
 
 `Type bootstrap did not reach a fixed point` is a database-recovery failure, not
 an export-directory failure. Do not delete `decomp/`: inspect
@@ -551,14 +552,12 @@ This is what turns a raw slot-zero call into, for example,
 
 A physical base table may end at its last emitted code pointer even though
 objects reached through the base class dispatch to additional slots implemented
-by derived tables. The indirect-call analyzer keeps these facts separate: after
-at least two longer related tables agree, it proposes a script-owned
-`<Owner>DispatchVTable`, copies the exact physical prefix, and represents only
-the proven tail extent there. The physical table type and data length never
-change. Later passes refresh this generated prefix from the physical table while
-preserving the independently recovered tail. A tail slot receives a function definition only from non-contradictory
-ABI evidence in at least two implementations and at least half of the candidate
-tables; otherwise it remains `void *`.
+by derived tables. The indirect-call analyzer records this as an audit-only
+`<Owner>DispatchVTable` proposal after at least two longer related tables agree.
+It never changes the physical table type, data length, class vptr, or synthetic
+tail fields. A tail ABI is reported only from non-contradictory evidence in at
+least two implementations and at least half of the candidate tables; it remains
+metadata until a representation is proven not to affect the physical ABI.
 
 The vtable applier does not automatically rename slot functions. Virtual-method
 name, calling-convention, and signature flags remain independent. Manual
@@ -984,6 +983,11 @@ migration instead of happening as a side effect of one decompiler run.
     - A field is enabled only when an exact function address is stored into it,
       an indirect call loads from that identical field, and all stored targets
       share one trusted ABI.
+    - The analyzer first scans machine instructions for a direct function-address
+      store or the common `MOV reg,function; MOV [field],reg` form. It decompiles
+      those STORE candidates before call-only candidates; when no exact stored
+      target survives High p-code tracing, call-only functions are skipped and
+      no call-only field rows are emitted.
     - `STRecoveryPipeline` schedules this expensive pass after the broad deep
       structural fixed point. It is not repeated for every intermediate layout
       epoch; export ABI stabilization reruns it if a later Program mutation makes
@@ -1002,6 +1006,10 @@ migration instead of happening as a side effect of one decompiler run.
       function-pointer ABI only when every typed occurrence of that exact
       target is structurally equivalent. Receiver/signature disagreement
       invalidates the family rather than being majority-voted.
+    - Polymorphic dispatch interfaces and tail signatures are audit-only. The
+      applier also refuses legacy `create_dispatch_vtable`, synthetic-dispatch
+      slot, and hard-coded `create_base_vtable` rows even when an old proposal
+      file enables them.
 23. Run `STPointerRoleRepairAnalyzer`.
    - Directory: `<repo>/recovery`
    - This is normally a one-time cleanup after an older pointer-shape pass. It
@@ -1661,8 +1669,8 @@ a new conflict is what requires another iteration.
 | `STDiscriminatedPayloadAnalyzer/Applier` | Infer per-case payload layouts from direct reads, fixed pointer-advance copy loops, shared goto tails, and single-element DArray appends. The final pass recovers caller stack aggregates only when thunk-resolved vtable-slot machine evidence and the typed decompiler call agree on the exact case/stack pair; obsolete hash-intact generated family identities migrate by function-address/case provenance, never by layout similarity. Imported/library families are excluded, and any intact generated false-positive left by an earlier pre-library pass is retired through the ordinary type lifecycle. |
 | `STGlobalAggregateAnalyzer/Applier` | Audit indexed global ranges and install only bounded arrays/matrices with a proven extent/indexing formula, including composed affine packed-record strides closed by exact bulk-zero extents, transpose-proven binary relation matrices, and behavior-proven Win32 resource-string scratch arenas. |
 | `STGlobalDataAnalyzer/Applier` | Type generic globals from receiver/argument use and named-constructor stores, follow the constructor-result edge through MSVC new/null join blocks, accept ordinary `T **` address-taking when an unambiguous named-constructor store proves the singleton's `T *` value, promote script-owned anonymous singleton pointers to named classes or dominant statically linked library contexts, name literal-backed module handles, assign address-stable structural names, and audit every `PTR_*` symbol by pointer role. |
-| `STIndirectCallAnalyzer/Applier` | Audit raw indirect calls; refine trusted slots, install machine-proven neutral thiscall/stdcall definitions, and propagate an ABI only across unanimous typed vtable occurrences of the same resolved target. |
-| `STFunctionPointerFieldAnalyzer/Applier` | Recover non-vtable callback members only from the complete chain “exact stored function address → one generated structure field → indirect call through that same field.” All stored targets must have one trusted ABI; manual structures and concrete fields are preserved. |
+| `STIndirectCallAnalyzer/Applier` | Audit raw indirect calls; refine trusted physical slots, install machine-proven neutral thiscall/stdcall definitions, and propagate an ABI only across unanimous typed vtable occurrences of the same resolved target. Polymorphic dispatch interfaces are proposal-only, and the applier refuses legacy attempts to install them into class vptrs or synthetic tail slots. |
+| `STFunctionPointerFieldAnalyzer/Applier` | Recover non-vtable callback members only from the complete chain “exact stored function address → one generated structure field → indirect call through that same field.” A cheap machine pass recognizes direct and register-mediated function-address stores; High p-code proves the exact field before call-only functions are decompiled. With no exact stored target, call-only decompilation and call-only proposal noise are skipped. All stored targets must have one imported or independently recovered ABI; bare `USER_DEFINED` provenance is review-only, and manual structures and concrete fields are preserved. The report retains all exact observed stores and their rejection reasons. |
 | `STPointerRoleRepairAnalyzer/Applier` | Remove prior script-owned pointer constraints from stack slots with proven scalar lifetimes in unsettled functions, and retire locals pointing to generated view-only types. |
 | `STPointerShapeAnalyzer/Applier` | Recover and fixed-point-refine known or anonymous pointer-backed structures from fixed, nested, alias-mediated dereferences, typed calls, and field-by-field stack aggregate construction; analyzer and applier both treat weak scalar pointers such as default `short *`, `ushort *`, and `word *` as replaceable only after the normal multi-field/typed-call thresholds pass; grant very large functions the same 120-second decompiler budget as the exporter while retaining 30 seconds for ordinary bodies; merge non-conflicting generated partial views only when identity is proven; materialize a target-local exact-call superset instead of widening helper-local views; apply auto-`this` types through the owning class namespace. |
 | `STTypeFamilyAnalyzer/Applier` | Promote anonymous layouts to an explicit semantic anchor, propagate named aggregate returns, and give complete one-owner records deterministic generated names. Anonymous consolidation requires a semantic/HiddenThis anchor, a unique producer view which explicitly records that sole anonymous source and still matches its stored hash (or the complete legacy producer snapshot), or exact direct-call pointer dataflow plus complete-layout, one-owner, no-alias agreement; geometry alone never merges types. |

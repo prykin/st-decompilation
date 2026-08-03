@@ -255,10 +255,11 @@ The current work focuses on recovering what the binary can prove:
   and typed helper calls, using observed packed extents rather than assumed alignment;
 - exact anonymous type-family consolidation and named return-to-local propagation;
 - trusted indirect-call/vtable prototypes, neutral machine-proven thiscall/stdcall slot ABIs,
-  separately inferred polymorphic dispatch interfaces, and automatic unanimous-callsite
+  audit-only polymorphic dispatch interfaces, and automatic unanimous-callsite
   `__cdecl` correction, with ambiguous callsites retained for review;
-- non-vtable callback fields proven by an exact function-address store and a later
-  indirect call through the same generated structure member;
+- non-vtable callback fields proven by an exact function-address store with
+  independent ABI provenance and a later indirect call through the same generated
+  structure member;
 - by-value nested records and fixed member-array bounds proven by exact typed
   `REP MOVS` copies and independently corroborated zero-initialization spans;
 - statically linked CRT, DKW, and internal `Ourlib` modules;
