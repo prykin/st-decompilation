@@ -1,0 +1,2 @@
+enabled	transition_id	subject	baseline_sha256	candidate_sha256	rationale
+# Add only an exact subject/hash pair printed by abi_regression_report.tsv after independent machine-evidence review; remove it after acceptance.

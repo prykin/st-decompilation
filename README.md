@@ -39,6 +39,7 @@ files under [`recovery/ST.exe/`](recovery/ST.exe/).
 | `ghidra/` | Verified packed Ghidra Program checkpoint tracked through Git LFS. |
 | `proj/` | Ignored local expanded Ghidra working project, hydrated from `ghidra/`. |
 | `scripts/` | Ghidra Java analyzers, review/apply scripts, and the LLM corpus exporter. |
+| `config/` | Versioned data-driven regression policy consumed by the recovery scripts. |
 | `recovery/` | Reviewable TSV proposals, conflicts, summaries, and apply reports. |
 | `decomp/` | Address-stable text export of functions, types, globals, strings, and call graphs. |
 | `src/` | Reconstructed source code as it becomes ready to leave the Ghidra corpus. |
@@ -139,6 +140,12 @@ the corresponding expressions in each `decomp.c`.
 The normalization contract and examples are documented in
 [`docs/pseudocode-normalization.md`](docs/pseudocode-normalization.md).
 
+ABI-changing automation is guarded before the first Program mutation and again
+at dependency barriers by `STAbiRegressionGate`. Its durable sentinels and exact
+reviewed-transition fingerprints live under `config/`, while every ignored run
+archive snapshots the exact policy bundle it used. This keeps new regression
+coverage data-driven instead of accumulating address-specific branches in Java.
+
 This format is deliberately usable without a live Ghidra/MCP connection. An LLM
 can load a narrow set of functions and metadata from disk instead of spending
 context on interactive database queries.
@@ -180,6 +187,11 @@ recovery and the callback-field pass, whose proposal inputs are hashed explicitl
 The callback-field pass runs after the broad deep structural fixed point rather
 than once per intermediate epoch; final export ABI stabilization still reruns it
 after any later Program mutation.
+ABI-mutating barriers run `STAbiRegressionGate` against the receipt-selected
+accepted corpus before broad structural decompilers continue. The gate protects
+accepted typed vtable signatures and a small data-driven sentinel set under
+`config/`; intentional ABI transitions require exact reviewed fingerprints and
+cannot be approved with a wildcard or automatic baseline update.
 Class-layout refinements have their own bounded local fixed point, so a nested
 layout staircase converges before restarting unrelated whole-program analyzers.
 `build_manifest.tsv`,

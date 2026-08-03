@@ -1,0 +1,11 @@
+enabled	rule_id	function_address	checks	metrics	rationale
+# checks: boundary;identity. metrics: semicolon-separated token:<literal> counters, each nonincreasing against the accepted body.
+1	group_boat_message_dispatch	00497E00	boundary	token:extraout_;token:in_stack_;token:unaff_;token:CONCAT31(	Protect duplicated-receiver and narrow virtual-return regressions in a high-fanout message handler
+1	boat_bring_virtual_return	0047C050	boundary	token:extraout_;token:in_stack_;token:unaff_;token:CONCAT31(	Protect the accepted full-word slot F8 return and its callers
+1	base_virtual_slot_returns	0041F3B0	boundary	token:extraout_;token:in_stack_;token:unaff_;token:CONCAT31(	Protect accepted slot 0C and 7C return widths
+1	virtual_stack_arguments	004B8C80	boundary	token:extraout_;token:in_stack_;token:unaff_;token:CONCAT31(	Detect loss of the final explicit stack argument on virtual calls
+1	virtual_stack_liveins	004E0830	boundary	token:extraout_;token:in_stack_;token:unaff_;token:CONCAT31(	Detect virtual arguments escaping into synthetic incoming stack inputs
+1	protected_boolean_boundary_a	004952E0	boundary	token:extraout_;token:in_stack_;token:unaff_;token:CONCAT31(	Preserve a whole-CFG accepted boolean return boundary
+1	protected_boolean_boundary_b	005F0A30	boundary	token:extraout_;token:in_stack_;token:unaff_;token:CONCAT31(	Preserve a whole-CFG accepted boolean return and reject register-livein growth
+1	ownerless_virtual_boundary	005EF470	boundary;identity	token:extraout_;token:in_stack_;token:unaff_;token:CONCAT31(	Keep uncertain virtual ownership review-only until independent receiver evidence exists
+1	protected_boolean_boundary_c	005EF7A0	boundary	token:extraout_;token:in_stack_;token:unaff_;token:CONCAT31(	Preserve an accepted boolean ABI against generic family widening

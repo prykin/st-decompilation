@@ -130,6 +130,8 @@ public class STRecoveryPipeline extends GhidraScript {
     private long startupFingerprintModification = -1;
     private int analyzerEpochCacheHits;
     private int analyzerPersistentCacheHits;
+    private String abiRulesHash = "";
+    private String abiTransitionsHash = "";
 
     @Override
     protected void run() throws Exception {
@@ -151,6 +153,7 @@ public class STRecoveryPipeline extends GhidraScript {
         decompRoot = repository.resolve("decomp");
         reportPath = recoveryProgram.resolve("pipeline_report.tsv");
         validateRepository();
+        pinAbiPolicy();
         Files.createDirectories(recoveryProgram);
         Files.createDirectories(decompRoot);
 
@@ -161,6 +164,8 @@ public class STRecoveryPipeline extends GhidraScript {
         startRun(options.mode, started);
         try {
             preflightScripts();
+            section("startup ABI validation");
+            runAbiRegressionGate("startup");
             if (!options.mode.equals("export")) initializeAnalyzerCache();
             switch (options.mode) {
                 case "core" -> { runCore(); recordEvidence(); }
@@ -225,6 +230,7 @@ public class STRecoveryPipeline extends GhidraScript {
 
         fixUnclaimedCode();
         runStructuralFixpoint();
+        runAbiRegressionGate("core-final");
     }
 
     /** Slower whole-program propagation.  It assumes core outputs exist or were checked in. */
@@ -273,6 +279,9 @@ public class STRecoveryPipeline extends GhidraScript {
                 "method_owner_proposals.tsv", "method_owner_apply_report.tsv");
             changed += pair("STIndirectCallAnalyzer.java", "STIndirectCallApplier.java",
                 "indirect_call_proposals.tsv", "indirect_call_apply_report.tsv");
+            // ABI failures are cheap to detect here and expensive to discover after the
+            // broad pointer/array/class decompilers have consumed a poisoned boundary.
+            runAbiRegressionGate("deep-abi-pass-" + pass);
             changed += pair("STPointerRoleRepairAnalyzer.java",
                 "STPointerRoleRepairApplier.java", "pointer_role_repair_proposals.tsv",
                 "pointer_role_repair_apply_report.tsv");
@@ -316,6 +325,7 @@ public class STRecoveryPipeline extends GhidraScript {
             "function_pointer_field_apply_report.tsv");
         pair("STIndirectCallAnalyzer.java", "STIndirectCallApplier.java",
             "indirect_call_proposals.tsv", "indirect_call_apply_report.tsv");
+        runAbiRegressionGate("post-structural-indirect");
 
         section("deep finalization");
         pair("STSourceProvenanceAnalyzer.java", "STSourceProvenanceApplier.java",
@@ -358,6 +368,9 @@ public class STRecoveryPipeline extends GhidraScript {
             "export_regression_report.tsv");
         snapshotRunArtifact(recoveryProgram.resolve("export_receipt.json"),
             "export_receipt.json");
+        // The accepted corpus now describes the current Program. Refresh the raw
+        // fixture metric baseline only after the broad export gate has promoted it.
+        runAbiRegressionGate("accepted-refresh");
     }
 
     /**
@@ -406,6 +419,7 @@ public class STRecoveryPipeline extends GhidraScript {
             recoveryProgram.resolve("return_semantics_apply_report.tsv"),
             MUTATING_STATUSES);
         println("Export return rollback repairs: mutating rows=" + repairedReturns);
+        runAbiRegressionGate("export-return-repair");
 
         for (int pass = 1; pass <= 4; pass++) {
             int changed = pair("STFunctionPointerFieldAnalyzer.java",
@@ -414,6 +428,7 @@ public class STRecoveryPipeline extends GhidraScript {
                 "function_pointer_field_apply_report.tsv");
             changed += pair("STIndirectCallAnalyzer.java", "STIndirectCallApplier.java",
                 "indirect_call_proposals.tsv", "indirect_call_apply_report.tsv");
+            runAbiRegressionGate("export-indirect-pass-" + pass);
             println("Export indirect ABI stabilization pass " + pass +
                 ": mutating rows=" + changed);
             if (changed == 0) return;
@@ -421,6 +436,45 @@ public class STRecoveryPipeline extends GhidraScript {
         throw new IllegalStateException("Export indirect ABI stabilization did not reach a " +
             "fixed point in 4 passes; inspect indirect_call_apply_report.tsv under " +
             recoveryProgram);
+    }
+
+    /**
+     * Compare the current in-memory Program with the last accepted exported ABI.  This gate is
+     * intentionally read-only with respect to the Program and runs before broad consumers of
+     * function/vtable boundaries.
+     * Persistent fixture policy is data under config/; exact reviewed transitions are explicit
+     * fingerprints rather than a broad disable switch.
+     */
+    private void runAbiRegressionGate(String phase) throws Exception {
+        requirePinnedAbiPolicy();
+        Path baseline = acceptedAbiBaseline();
+        Path policy = repository.resolve("config");
+        String currentSemantic = ("startup".equals(phase) ||
+            "accepted-refresh".equals(phase)) ?
+                semanticFingerprintForCurrentModification() : "";
+        step("STAbiRegressionGate.java", baseline.toString(), recoveryProgram.toString(),
+            policy.toString(), phase, currentSemantic);
+        requirePinnedAbiPolicy();
+        String suffix = phase.replaceAll("[^A-Za-z0-9._-]+", "_");
+        snapshotRunArtifact(recoveryProgram.resolve("abi_regression_report.tsv"),
+            "abi_regression_" + suffix + ".tsv");
+        snapshotRunArtifact(recoveryProgram.resolve("abi_regression_summary.txt"),
+            "abi_regression_" + suffix + "_summary.txt");
+    }
+
+    private Path acceptedAbiBaseline() throws Exception {
+        Path current = decompRoot.resolve(currentProgram.getName());
+        Path receipt = recoveryProgram.resolve("export_receipt.json");
+        if (Files.isRegularFile(receipt)) {
+            String status = jsonStringField(
+                Files.readString(receipt, StandardCharsets.UTF_8), "status");
+            if ("passed".equals(status) && Files.isRegularFile(current.resolve("manifest.json")))
+                return current;
+        }
+        Path recovered = lastUnacceptedBaseline();
+        if (recovered != null) return recovered;
+        throw new IllegalStateException("No accepted corpus is available for the early ABI " +
+            "regression gate; restore a passed export before running mutating recovery");
     }
 
     private void recordEvidence() throws Exception {
@@ -699,13 +753,17 @@ public class STRecoveryPipeline extends GhidraScript {
 
     private void initializeAnalyzerCache() throws Exception {
         section("semantic analyzer cache");
-        step("STEvidenceLedger.java", "fingerprint", recoveryRoot.toString());
-        Path fingerprint = recoveryProgram.resolve("program_semantic.sha256");
-        startupSemanticFingerprint = Files.readString(fingerprint,
-            StandardCharsets.UTF_8).trim();
-        if (!startupSemanticFingerprint.matches("[0-9a-f]{64}"))
-            throw new IllegalStateException("Invalid semantic fingerprint in " + fingerprint);
         startupFingerprintModification = currentProgram.getModificationNumber();
+        startupSemanticFingerprint =
+            semanticFingerprintByModification.get(startupFingerprintModification);
+        if (startupSemanticFingerprint == null) {
+            step("STEvidenceLedger.java", "fingerprint", recoveryRoot.toString());
+            Path fingerprint = recoveryProgram.resolve("program_semantic.sha256");
+            startupSemanticFingerprint = Files.readString(fingerprint,
+                StandardCharsets.UTF_8).trim();
+        }
+        if (!startupSemanticFingerprint.matches("[0-9a-f]{64}"))
+            throw new IllegalStateException("Invalid startup semantic fingerprint");
         semanticFingerprintByModification.put(startupFingerprintModification,
             startupSemanticFingerprint);
         Path cache = recoveryProgram.resolve("analyzer_cache.tsv");
@@ -1408,6 +1466,14 @@ public class STRecoveryPipeline extends GhidraScript {
         Files.createDirectories(activeRun.resolve("artifacts"));
         Files.createDirectories(activeRun.resolve("build"));
         Files.createDirectories(activeRun.resolve("steps"));
+        Path policySnapshot = activeRun.resolve("policy");
+        Files.createDirectories(policySnapshot);
+        Files.copy(repository.resolve("config/abi-regression-rules.tsv"),
+            policySnapshot.resolve("abi-regression-rules.tsv"),
+            StandardCopyOption.REPLACE_EXISTING);
+        Files.copy(repository.resolve("config/abi-regression-transitions.tsv"),
+            policySnapshot.resolve("abi-regression-transitions.tsv"),
+            StandardCopyOption.REPLACE_EXISTING);
         eventsPath = activeRun.resolve("events.tsv");
         logPath = activeRun.resolve("pipeline.log");
         Files.writeString(eventsPath,
@@ -1444,6 +1510,8 @@ public class STRecoveryPipeline extends GhidraScript {
         snapshotRunArtifact(reportPath, "pipeline_report.tsv");
         for (String name : List.of("automation_state.tsv", "analyzer_cache.tsv",
                 "program_semantic.sha256", "switch_enum_domains.tsv",
+                "abi_regression_report.tsv", "abi_regression_summary.txt",
+                "abi_fixture_baseline.tsv",
                 "export_regression_report.tsv", "export_receipt.json"))
             snapshotRunArtifact(recoveryProgram.resolve(name), name);
         if (failure != null)
@@ -1467,6 +1535,8 @@ public class STRecoveryPipeline extends GhidraScript {
             "\"analyzer_epoch_cache_hit_count\":" + analyzerEpochCacheHits + "," +
             "\"analyzer_persistent_cache_hit_count\":" +
                 analyzerPersistentCacheHits + "," +
+            "\"abi_rules_sha256\":" + q(abiRulesHash) + "," +
+            "\"abi_transitions_sha256\":" + q(abiTransitionsHash) + "," +
             "\"pipeline_row_count\":" + report.size() +
             "}";
         Files.writeString(activeRun.resolve("run.json"), metadata + "\n",
@@ -1774,6 +1844,8 @@ public class STRecoveryPipeline extends GhidraScript {
         value.append("semantic=").append(semantic).append('\n');
         value.append("mode=").append(runMode).append('\n');
         value.append("status=").append(status).append('\n');
+        value.append("abi_rules=").append(abiRulesHash).append('\n');
+        value.append("abi_transitions=").append(abiTransitionsHash).append('\n');
         for (BuildRow row : builds)
             value.append("build|").append(row.script).append('|').append(row.sourceHash)
                 .append('|').append(row.status).append('\n');
@@ -1836,10 +1908,29 @@ public class STRecoveryPipeline extends GhidraScript {
     private void validateRepository() {
         if (!Files.isDirectory(repository.resolve("scripts")) ||
                 !Files.isRegularFile(repository.resolve("scripts/STRecoveryPipeline.java")) ||
+                !Files.isRegularFile(repository.resolve("scripts/STAbiRegressionGate.java")) ||
                 !Files.isRegularFile(repository.resolve("scripts/STExportRegressionGate.java")) ||
+                !Files.isRegularFile(repository.resolve("config/abi-regression-rules.tsv")) ||
+                !Files.isRegularFile(repository.resolve(
+                    "config/abi-regression-transitions.tsv")) ||
                 !Files.isDirectory(repository.resolve("recovery")))
             throw new IllegalStateException("Could not validate repository root " + repository +
                 "; expected scripts/ and recovery/ beside each other");
+    }
+
+    private void pinAbiPolicy() throws Exception {
+        abiRulesHash = sha256(repository.resolve("config/abi-regression-rules.tsv"));
+        abiTransitionsHash = sha256(
+            repository.resolve("config/abi-regression-transitions.tsv"));
+    }
+
+    private void requirePinnedAbiPolicy() throws Exception {
+        String rules = sha256(repository.resolve("config/abi-regression-rules.tsv"));
+        String transitions = sha256(
+            repository.resolve("config/abi-regression-transitions.tsv"));
+        if (!abiRulesHash.equals(rules) || !abiTransitionsHash.equals(transitions))
+            throw new IllegalStateException("ABI regression policy changed while the pipeline " +
+                "was running; restart so one pinned rule bundle governs the complete run");
     }
 
     private PipelineOptions options() throws Exception {

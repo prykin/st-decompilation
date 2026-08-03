@@ -97,6 +97,35 @@ The regression gate compares exported bodies by function address. A body may
 leave the corpus only when that same function is now explicitly classified as
 `LIBRARY`; all other per-address body losses remain hard regressions.
 
+`STAbiRegressionGate` is the earlier, cheaper companion to that export gate. It
+runs after ABI/indirect-call barriers and before broad pointer, DArray, and class
+consumers. It does not mutate the Program. Against the manifest named by the
+last accepted receipt it checks every already typed accepted vtable slot for
+calling-convention, receiver, argument-count, type-width, varargs/noreturn, and
+concrete-to-generic degradation. Physical aliases are merged by table address
+just as in the export gate; an accepted address-less dispatch view is keyed by
+its type path. The gate
+also rejects a new physical-class-vptr to synthetic-dispatch transition. A small
+sentinel set is freshly decompiled to catch increases in
+`extraout_*`, `in_stack_*`, `unaff_*`, and selected `CONCAT*` artifacts before a
+whole-corpus export is attempted.
+
+Persistent sentinel policy lives in
+`config/abi-regression-rules.tsv`, not in Java. Add a row when an export
+regression reveals a useful high-fanout or ABI-boundary canary. The engine reads
+the accepted signature and artifact counts from the accepted corpus, so normal
+baseline values are not copied into the rule. A deliberate ABI change must
+first fail and print exact baseline/candidate fingerprints. After reviewing the
+machine evidence, add only that exact pair to
+`config/abi-regression-transitions.tsv`; broad disables and wildcard transitions
+do not exist. The gate reports an unused transition as a warning so it can be
+removed after the candidate becomes the accepted baseline. A new class-vptr to
+synthetic-dispatch substitution is a non-waivable invariant, not a reviewable
+transition. The pipeline runs this gate once before any recovery mutation and
+again at ABI barriers. Each ignored run archive contains a `policy/` copy of
+both TSV files in addition to their hashes in `run.json`, so an old report can
+be reproduced against the exact rules which governed it.
+
 Before the first pipeline mutation, Ghidra's configured Java script provider is
 asked to load every repository `ST*.java` source. Results and source hashes are
 appended immediately to `build_manifest.tsv`, with full provider diagnostics
@@ -1486,6 +1515,7 @@ verification, the prior-corpus snapshot, `STDecompExport`, and
 - Directory: `<repo>/decomp`
 - Output: `<repo>/decomp/ST.exe`
 - Gate report: `<repo>/recovery/ST.exe/export_regression_report.tsv`
+- Early ABI report: `<repo>/recovery/ST.exe/abi_regression_report.tsv`
 - Atomic receipt: `<repo>/recovery/ST.exe/export_receipt.json`
 
 The exporter writes program metadata, types, globals, strings, symbols,
@@ -1626,6 +1656,7 @@ a new conflict is what requires another iteration.
 | `STPrototypeAnalyzer/Applier` | Propagate compatible parameter/return types and reviewed parameter names across direct calls, including externally anchored SCCs of unchanged wrapper boundaries. |
 | `STPrototypeRepairAnalyzer/Applier` | Isolate and safely correct stale types/names previously written by prototype propagation. |
 | `STManualTypeAuditAnalyzer` | Consolidate strong evidence that a protected/manual prototype or field type is stale; read-only by design. |
+| `STAbiRegressionGate` | Compare the current in-memory Program with the receipt-selected accepted corpus before expensive consumers run; protect all accepted typed vtable ABIs while merging physical aliases by table address, reject new class-vptr dispatch substitutions, decompile configurable ABI sentinels, and permit only exact fingerprinted reviewed transitions. |
 | `STGlobalRecordAnalyzer/Applier` | Recover packed arrays of repeated global records from a symbolically inferred base/stride plus independent extent evidence; create fields only from observed accesses, retire legacy seeded nested layouts, and migrate an obsolete generated Listing element identity only when its producer marker and stored/current layout hashes agree. |
 | `STDiscriminatedPayloadAnalyzer/Applier` | Infer per-case payload layouts from direct reads, fixed pointer-advance copy loops, shared goto tails, and single-element DArray appends. The final pass recovers caller stack aggregates only when thunk-resolved vtable-slot machine evidence and the typed decompiler call agree on the exact case/stack pair; obsolete hash-intact generated family identities migrate by function-address/case provenance, never by layout similarity. Imported/library families are excluded, and any intact generated false-positive left by an earlier pre-library pass is retired through the ordinary type lifecycle. |
 | `STGlobalAggregateAnalyzer/Applier` | Audit indexed global ranges and install only bounded arrays/matrices with a proven extent/indexing formula, including composed affine packed-record strides closed by exact bulk-zero extents, transpose-proven binary relation matrices, and behavior-proven Win32 resource-string scratch arenas. |

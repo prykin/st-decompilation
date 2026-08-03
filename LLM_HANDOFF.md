@@ -37,10 +37,11 @@ have been checked.
 
 ## Latest accepted run
 
-The authoritative latest `full-export` is run
-`7b7fef4db04628ca20247b53557ca9fc15ec76a913faab42e349be3abe265ea8`
-under `recovery/ST.exe/runs/`. It completed in 267.494 seconds (`00:04:27`),
-with Program modification `154 -> 193` and
+The authoritative latest `full-export` was run
+`7b7fef4db04628ca20247b53557ca9fc15ec76a913faab42e349be3abe265ea8`.
+Its tracked accepted projection is the source of truth; ignored run archives
+are disposable diagnostics and need not be retained. The run completed in
+267.494 seconds (`00:04:27`), with Program modification `154 -> 193` and
 semantic hash
 `27b2e1eb234982f047ed62f60bc77e1a7bde68397a9bbe5e0b2e1686a4b2fed8`.
 
@@ -58,12 +59,67 @@ the persistent semantic/source/dependency cache, five reused current-epoch
 artifacts, final ABI stabilization ran, evidence was recorded and verified,
 `STDecompExport` completed in 53.429 seconds, and the regression gate passed.
 
+## Current restored checkpoint
+
+The repository and Ghidra project have been restored to commit `39097bd736`,
+the accepted state described above. A later rejected experiment is not present
+in the working Program, scripts, generated recovery output, or corpus. Its
+ignored run archives, analyzer cache, semantic marker, and untracked Ghidra
+database generations were quarantined outside the repository so a future
+launcher cannot mistake them for current evidence.
+
+The restored baseline itself contained no pending recovery-script changes. Its
+first intentional post-baseline task is the ABI fixture gate below, alongside
+the strengthened repository guidance in `AGENTS.md` and the ordered work in
+`docs/recovery-task-queue.md`. Do not reintroduce prototype, return,
+virtual-method, or dispatch-interface heuristics ahead of that gate.
+
+That first queue item is now implemented in source as `STAbiRegressionGate`.
+It compares every accepted typed vtable slot with the current Program (merging
+physical aliases by table address),
+rejects a new class-vptr to synthetic-dispatch transition, and freshly
+decompiles the data-driven sentinels in `config/abi-regression-rules.tsv`.
+Intentional changes require an exact baseline/candidate fingerprint pair in
+`config/abi-regression-transitions.tsv`; unused transitions are warnings and
+must be removed after acceptance. `STRecoveryPipeline` invokes the gate at ABI
+startup and at ABI barriers before broad consumers, snapshots the exact policy
+bundle into each ignored run archive, and preserves the small sentinel bodies
+inside a failed export's accepted baseline. These changes still require their
+first successful Ghidra runtime validation; do not describe them as accepted
+Program state until the gate passes on the restored database.
+
+Runtime attempts `73c493b12b54...` and `bca1c3fbab79...` both loaded all 81
+scripts with zero build failures and left the Program unchanged, but the
+startup gate stopped on the same three artifact counters for `005F0A30`:
+`extraout_ 0 -> 2`, `in_stack_ 0 -> 6`, and `unaff_ 0 -> 6`. The second run
+confirmed `c_code=true;syntax_tree=true`, disproving the initial profile-only
+hypothesis. Accepted and candidate function boundaries were identical, all
+2,409 typed vtable slots and 59 class vptrs passed, and the freshly observed
+Program semantic hash still matched the accepted corpus.
+
+The actual bug was comparison across representation stages: the current body
+was a fresh raw decompile while the accepted `decomp.c` had passed through
+exporter normalization. Token metrics now use generated
+`abi_fixture_baseline.tsv` raw counts/body hashes, bound to the accepted
+manifest, Program semantic hash, rules hash, and decompiler profile. Bootstrap
+or replacement is allowed only when a fresh Program fingerprint equals the
+`passed` receipt; an `accepted-refresh` phase runs only after the broad export
+gate passes. Do not add a reviewed transition for these false deltas. The new
+source requires one confirming `full-export`.
+
+A synthetic dispatch interface must never replace a class's physical vtable
+pointer in Ghidra. The rejected experiment did so for `TLOBaseTy`; neutral
+dispatch signatures then lost real stack arguments and introduced false narrow
+returns, `extraout_*`, and `in_stack_*` artifacts. Treat such interfaces as
+audit metadata until a representation is proven not to affect physical slot
+types or decompiler ABI.
+
 One non-semantic idempotence issue remained: `STUtilityFunctionApplier` reported
 `changed=0` but raised Ghidra's volatile modification counter by repeatedly
 setting identical owned comments/tags. It now compares the complete replacement
 comment and checks tag membership before writing. This source-only fix compiles
 with the pipeline and analyzer changes against Ghidra 12.1.2/JDK 21; it does not
-require another corpus export. Exactly three archived runs are retained.
+require another corpus export.
 
 The following sections are a chronological implementation/failure log. Any
 future-tense rerun checklist in that history has been superseded by the latest

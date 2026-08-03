@@ -49,6 +49,10 @@ Original binaries are local under ignored `bin/` and must not be committed.
   source values do not prove a narrow EAX ABI return.
 - Packed/unaligned fields and overlapping unions are intentional. Never align or
   merge them merely to improve decompiler spelling.
+- Integer promotion in comparisons does not invalidate a proven narrow storage
+  width. Treat competing same-width scalar signedness on an already generated
+  field as review-only; automatically clearing it can make Ghidra oscillate
+  between the concrete scalar and `undefined` on successive decompiles.
 - A foreign class type appearing in a named method may be contamination from a
   weak method-owner vote. Audit the callee's full direct-caller coverage before
   extending the foreign layout; shared helpers must retain neutral receivers.
@@ -79,9 +83,18 @@ Original binaries are local under ignored `bin/` and must not be committed.
   an explicit read; an unresolved path is `unknown`, not ignored. A bare caller
   `RET` proves forwarding only when that caller already has a protected non-void
   return ABI—generic return types must not recursively validate each other.
+- ABI-mutating work must pass `STAbiRegressionGate` before broad structural
+  consumers run. Keep durable sentinels in `config/abi-regression-rules.tsv`,
+  never in Java. A deliberate ABI change may use only an exact reviewed
+  baseline/candidate fingerprint transition; never auto-update, wildcard, or
+  globally disable the accepted baseline.
 - `RecoveredRecord_<Owner>_<Address>` is a deterministic generated identity for
   one complete one-owner pointer shape. It is not an asserted original type name
   and never licenses geometry-only merging.
+- An allocation-backed packed record view belongs to its producer/consumer, not
+  to the neutral allocator. Automatic application requires one returned allocation
+  root, an exact machine fixed-copy span from one source parameter, non-overlapping
+  fields inside that span, and unchanged non-manual ABI baselines.
 - A non-vtable function-pointer field is automatic only when one exact generated
   structure member has both a stored function-address family with a unanimous
   trusted ABI and an indirect call loaded from that same member.
@@ -103,4 +116,5 @@ Original binaries are local under ignored `bin/` and must not be committed.
 
 See `README.md`, `docs/ghidra-workflow.md`,
 `docs/structure-recovery-gaps.md`, and `docs/pseudocode-normalization.md` for the
-full workflow and current safety boundaries.
+full workflow and current safety boundaries. Follow
+`docs/recovery-task-queue.md` for the ordered post-baseline recovery work.
