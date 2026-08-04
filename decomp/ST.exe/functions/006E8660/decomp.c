@@ -11,7 +11,7 @@ ST3DSMAPContext::sub_006E8660
 
 {
   byte *pbVar1;
-  undefined4 *puVar2;
+  void *pvVar2;
   int iVar3;
   AnonShape_006E8840_CF3FA5BA *pAVar4;
   AnonShape_006E8840_CF3FA5BA *pAVar5;
@@ -74,9 +74,9 @@ ST3DSMAPContext::sub_006E8660
   *(uint *)&pAVar4->field_0x18 = param_8;
   *(undefined4 *)&pAVar4->field_0x8c = 0xffffffff;
   if (0 < (int)param_2) {
-    puVar2 = Library::DKW::LIB::FUN_006aac10(param_2 << 2);
-    *(undefined4 **)(pAVar4 + 1) = puVar2;
-    if (puVar2 == nullptr) {
+    pvVar2 = Library::DKW::LIB::MemAllocClear(param_2 << 2);
+    *(void **)(pAVar4 + 1) = pvVar2;
+    if (pvVar2 == nullptr) {
       return 0xfffffffe;
     }
   }

@@ -27,10 +27,12 @@ import ghidra.app.script.GhidraScript;
 import ghidra.program.model.address.Address;
 import ghidra.program.model.data.AbstractIntegerDataType;
 import ghidra.program.model.data.DataType;
+import ghidra.program.model.data.DataTypeComponent;
 import ghidra.program.model.data.DataTypeManager;
 import ghidra.program.model.data.Enum;
 import ghidra.program.model.data.Pointer;
 import ghidra.program.model.data.PointerDataType;
+import ghidra.program.model.data.Structure;
 import ghidra.program.model.data.TypeDef;
 import ghidra.program.model.data.Undefined;
 import ghidra.program.model.listing.Function;
@@ -252,13 +254,18 @@ public class STLocalLifetimeApplier extends GhidraScript {
             }
             DataType current = (DataType)high.getClass()
                 .getMethod("getDataType").invoke(high);
-            if (equivalentType(prepared.proposed, current)) {
+            Set<Integer> groups = mergeGroups(high);
+            boolean recursiveIsolation = groups.size() > 1 &&
+                recursivePointerIdentity(prepared.proposed) != null &&
+                unt(row.get("reason")).contains(
+                    "heterogeneous siblings require isolation");
+            if (equivalentType(prepared.proposed, current) &&
+                    !recursiveIsolation) {
                 report.add(report(row, "unchanged",
                     "anchor lifetime already has the proposed type"));
                 return;
             }
 
-            Set<Integer> groups = mergeGroups(high);
             Object separated = high;
             if (groups.size() > 1) {
                 java.lang.reflect.Method split = null;
@@ -313,7 +320,8 @@ public class STLocalLifetimeApplier extends GhidraScript {
                     "typed lifetime did not persist in the Program database");
             mark(variable, row);
             String detail = typeSpecification(current) + " -> " +
-                typeSpecification(prepared.proposed);
+                typeSpecification(prepared.proposed) +
+                (groups.size() > 1 ? "; isolated merge group" : "");
             report.add(report(row, "pending", detail));
             applied.add(new Applied(prepared, variable, baseline, detail));
         }
@@ -360,7 +368,14 @@ public class STLocalLifetimeApplier extends GhidraScript {
         boolean scalarRole = kind.endsWith("_scalar_role");
         String expectedMnemonic = scalarRole ?
             unt(row.get("anchor_source")) :
-            kind.equals("typed_copy") ? "COPY" : "CALL";
+            switch (kind) {
+                case "typed_copy" -> "COPY";
+                case "typed_field_load" -> "LOAD";
+                case "typed_field_address" -> "PTRSUB";
+                case "typed_field_store" -> "STORE";
+                case "typed_recursive_cast" -> "CAST";
+                default -> "CALL";
+            };
         @SuppressWarnings("unchecked")
         Iterator<Object> iterator = (Iterator<Object>)highFunction.getClass()
             .getMethod("getPcodeOps", Address.class)
@@ -384,8 +399,14 @@ public class STLocalLifetimeApplier extends GhidraScript {
                 "anchor p-code op is missing" : "anchor p-code op is ambiguous");
         Object op = matching.get(0);
         Object varnode;
-        if (kind.equals("call_return") || kind.equals("typed_copy"))
+        if (kind.equals("call_return") || kind.equals("typed_copy") ||
+                kind.equals("typed_field_load") ||
+                kind.equals("typed_field_address") ||
+                kind.equals("typed_recursive_cast"))
             varnode = op.getClass().getMethod("getOutput").invoke(op);
+        else if (kind.equals("typed_field_store"))
+            varnode = op.getClass().getMethod("getInput", int.class)
+                .invoke(op, 2);
         else if (kind.equals("call_argument")) {
             int operand = integer(row.get("anchor_operand"));
             varnode = op.getClass().getMethod("getInput", int.class)
@@ -438,17 +459,53 @@ public class STLocalLifetimeApplier extends GhidraScript {
                 input.getClass().getMethod("getHigh").invoke(input);
             if (high == null) return null;
             Object symbol = high.getClass().getMethod("getSymbol").invoke(high);
-            if (symbol == null) return null;
+            DataType type = (DataType)high.getClass()
+                .getMethod("getDataType").invoke(high);
+            if (symbol == null)
+                return unt(row.get("anchor_source")).equals(
+                        "decompiler_nominal_type") &&
+                        recursivePointerIdentity(type) != null ?
+                    type : null;
             boolean parameter = (boolean)symbol.getClass()
                 .getMethod("isParameter").invoke(symbol);
             boolean global = (boolean)symbol.getClass()
                 .getMethod("isGlobal").invoke(symbol);
-            if (!parameter && !global) return null;
+            SourceType source = symbolSource(symbol);
+            boolean recursive = recursivePointerIdentity(type) != null;
+            if (!parameter && !global && !recursive) return null;
+            return source != SourceType.DEFAULT ||
+                untypedef(type) instanceof Pointer || recursive ? type : null;
+        }
+        if (anchor.kind.equals("typed_field_load") ||
+                anchor.kind.equals("typed_field_address") ||
+                anchor.kind.equals("typed_field_store")) {
+            Object address = anchor.kind.equals("typed_field_load") ?
+                anchor.op.getClass().getMethod("getInput", int.class)
+                    .invoke(anchor.op, 1) :
+                anchor.kind.equals("typed_field_store") ?
+                    anchor.op.getClass().getMethod("getInput", int.class)
+                        .invoke(anchor.op, 1) :
+                anchor.op.getClass().getMethod("getOutput").invoke(anchor.op);
+            TypedField field = typedRecursiveField(address);
+            if (field == null || !field.identity.equals(
+                    unt(row.get("anchor_source"))))
+                return null;
+            if (anchor.kind.equals("typed_field_load") ||
+                    anchor.kind.equals("typed_field_store")) return field.type;
+            return new PointerDataType(field.type,
+                currentProgram.getDefaultPointerSize(), dataTypes);
+        }
+        if (anchor.kind.equals("typed_recursive_cast")) {
+            Object input = anchor.op.getClass()
+                .getMethod("getInput", int.class).invoke(anchor.op, 0);
+            Object high = input == null ? null :
+                input.getClass().getMethod("getHigh").invoke(input);
+            if (high == null) return null;
             DataType type = (DataType)high.getClass()
                 .getMethod("getDataType").invoke(high);
-            SourceType source = symbolSource(symbol);
-            return source != SourceType.DEFAULT ||
-                untypedef(type) instanceof Pointer ? type : null;
+            String identity = recursivePointerIdentity(type);
+            return identity != null && identity.equals(
+                unt(row.get("anchor_source"))) ? type : null;
         }
         Function direct = directTarget(anchor.op);
         if (direct == null) return null;
@@ -472,6 +529,139 @@ public class STLocalLifetimeApplier extends GhidraScript {
         Parameter parameter = parameters[operand];
         return trustedParameter(signature.function, parameter) ?
             parameter.getDataType() : null;
+    }
+
+    /**
+     * Re-prove analyzer field anchors from the current HighFunction and the
+     * current hash-intact generated datatype.  The TSV cannot confer trust:
+     * any layout edit, offset change, or marker/hash mismatch makes the anchor
+     * stale and the proposal is refused.
+     */
+    private TypedField typedRecursiveField(Object address) throws Exception {
+        if (address == null) return null;
+        Object base = address;
+        long offset = 0;
+        Object definition = address.getClass().getMethod("getDef").invoke(address);
+        if (definition != null && mnemonic(definition).equals("PTRSUB")) {
+            base = definition.getClass().getMethod("getInput", int.class)
+                .invoke(definition, 0);
+            Object displacement = definition.getClass()
+                .getMethod("getInput", int.class).invoke(definition, 1);
+            Long value = constant(displacement);
+            if (value == null) return null;
+            offset = value;
+        }
+        Object high = base == null ? null :
+            base.getClass().getMethod("getHigh").invoke(base);
+        if (high == null) return null;
+        DataType baseType = (DataType)high.getClass()
+            .getMethod("getDataType").invoke(high);
+        baseType = untypedef(baseType);
+        if (!(baseType instanceof Pointer pointer)) return null;
+        DataType pointed = untypedef(pointer.getDataType());
+        if (!(pointed instanceof Structure structure) ||
+                !hashOwnedGeneratedStructure(structure) ||
+                offset < 0 || offset > Integer.MAX_VALUE) return null;
+        DataTypeComponent component = structure.getComponentAt((int)offset);
+        if (component == null || component.getOffset() != offset ||
+                component.getLength() <= 0 ||
+                !semanticType(component.getDataType())) return null;
+        boolean recursiveContainer = text(structure.getDescription())
+            .contains("[STRecursivePointeeApplier]");
+        if (!recursiveContainer &&
+                !pointsToHashOwnedRecursiveStructure(component.getDataType()))
+            return null;
+        return new TypedField(component.getDataType(),
+            structure.getPathName() + "+0x" +
+                Long.toHexString(offset).toUpperCase(Locale.ROOT));
+    }
+
+    private Long constant(Object varnode) {
+        if (varnode == null) return null;
+        try {
+            if (!(boolean)varnode.getClass().getMethod("isConstant").invoke(varnode))
+                return null;
+            return ((Number)varnode.getClass().getMethod("getOffset")
+                .invoke(varnode)).longValue();
+        }
+        catch (Exception ignored) {
+            return null;
+        }
+    }
+
+    private boolean hashOwnedGeneratedStructure(Structure structure) {
+        String description = text(structure.getDescription());
+        if (Set.of("[STRecursivePointeeApplier]", "[STClassLayoutApplier]",
+                "[STGlobalDataApplier]", "[STPointerShapeApplier]",
+                "[STTypeFamilyApplier]").stream()
+                .noneMatch(description::contains))
+            return false;
+        String stored = storedLayoutHash(description);
+        return stored != null && stored.equals(layoutHash(structure));
+    }
+
+    private boolean pointsToHashOwnedRecursiveStructure(DataType type) {
+        type = untypedef(type);
+        if (!(type instanceof Pointer pointer)) return false;
+        DataType pointed = untypedef(pointer.getDataType());
+        return pointed instanceof Structure structure &&
+            text(structure.getDescription()).contains(
+                "[STRecursivePointeeApplier]") &&
+            hashOwnedGeneratedStructure(structure);
+    }
+
+    private String recursivePointerIdentity(DataType type) {
+        String specification = typeSpecification(type);
+        int depth = 0;
+        DataType leaf = untypedef(type);
+        while (leaf instanceof Pointer pointer) {
+            depth++;
+            leaf = untypedef(pointer.getDataType());
+        }
+        if (depth == 0 || !(leaf instanceof Structure structure) ||
+                !text(structure.getDescription()).contains(
+                    "[STRecursivePointeeApplier]") ||
+                !hashOwnedGeneratedStructure(structure))
+            return null;
+        return specification + "->" + structure.getPathName();
+    }
+
+    private String storedLayoutHash(String description) {
+        String marker = "generated_layout_sha256=";
+        int index = description.indexOf(marker);
+        if (index < 0 || description.length() < index + marker.length() + 64)
+            return null;
+        String value = description.substring(index + marker.length(),
+            index + marker.length() + 64);
+        return value.matches("[0-9a-fA-F]{64}") ?
+            value.toLowerCase(Locale.ROOT) : null;
+    }
+
+    private String layoutHash(Structure structure) {
+        StringBuilder layout = new StringBuilder();
+        layout.append("length=").append(structure.getLength()).append('\n');
+        for (DataTypeComponent component : structure.getDefinedComponents()) {
+            layout.append(component.getOffset()).append('|')
+                .append(component.getLength()).append('|')
+                .append(component.getDataType().getPathName()).append('|')
+                .append(text(component.getFieldName())).append('|')
+                .append(text(component.getComment())).append('\n');
+        }
+        return sha256(layout.toString());
+    }
+
+    private String sha256(String value) {
+        try {
+            byte[] digest = MessageDigest.getInstance("SHA-256")
+                .digest(value.getBytes(StandardCharsets.UTF_8));
+            StringBuilder result = new StringBuilder();
+            for (byte item : digest)
+                result.append(String.format(Locale.ROOT, "%02x", item & 0xff));
+            return result.toString();
+        }
+        catch (Exception exception) {
+            throw new IllegalStateException("SHA-256 unavailable", exception);
+        }
     }
 
     private boolean validScalarRole(String kind, String mnemonic,
@@ -814,6 +1004,8 @@ public class STLocalLifetimeApplier extends GhidraScript {
             return false;
         if (type instanceof Pointer pointer) {
             DataType pointed = untypedef(pointer.getDataType());
+            while (pointed instanceof Pointer nested)
+                pointed = untypedef(nested.getDataType());
             return pointed != null && !Undefined.isUndefined(pointed) &&
                 !pointed.getPathName().equals("/void");
         }
@@ -1076,6 +1268,7 @@ public class STLocalLifetimeApplier extends GhidraScript {
     private record Tsv(List<String> header,
         List<Map<String, String>> rows) {}
     private record Anchor(Object op, Object varnode, String kind) {}
+    private record TypedField(DataType type, String identity) {}
     private record SignatureParameters(Function function,
         Parameter[] parameters) {}
     private record Prepared(Map<String, String> row, Object highFunction,

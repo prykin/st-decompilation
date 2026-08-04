@@ -51,19 +51,19 @@ LAB_0040d369:
           }
           else if (((psVar2[iVar7 + ((int)psVar9[2] - (int)param_2->field_004B) * iVar5] & 0xc000U)
                     != 0xc000) &&
-                  (iVar4 = thunk_FUN_00497920((AnonShape_00497920_894F87D6 *)param_2,
+                  (iVar4 = thunk_FUN_00497920((RecoveredRecord_STBoatC_0040AE40 *)param_2,
                                               (int)param_2->field_0047,(int)param_2->field_0049,
                                               (int)psVar9[2]), iVar4 != 0)) {
             if (psVar9[1] == param_2->field_0049) {
               if ((psVar2[iVar7 + iVar8] & 0xc000U) != 0xc000) {
-                iVar6 = thunk_FUN_00497920((AnonShape_00497920_894F87D6 *)param_2,(int)*psVar9,
+                iVar6 = thunk_FUN_00497920((RecoveredRecord_STBoatC_0040AE40 *)param_2,(int)*psVar9,
                                            (int)param_2->field_0049,(int)param_2->field_004B);
 joined_r0x0040d327:
                 if (iVar6 != 0) goto LAB_0040d369;
               }
             }
             else if ((psVar2[iVar7 + g_pathingGrid.sizeX * iVar6] & 0xc000U) != 0xc000) {
-              iVar6 = thunk_FUN_00497920((AnonShape_00497920_894F87D6 *)param_2,
+              iVar6 = thunk_FUN_00497920((RecoveredRecord_STBoatC_0040AE40 *)param_2,
                                          (int)param_2->field_0047,(int)psVar9[1],
                                          (int)param_2->field_004B);
               goto joined_r0x0040d327;
@@ -72,12 +72,12 @@ joined_r0x0040d327:
         }
         else if ((((psVar2[iVar7 + iVar8] & 0xc000U) != 0xc000) &&
                  ((psVar2[iVar7 + g_pathingGrid.sizeX * iVar6] & 0xc000U) != 0xc000)) &&
-                ((iVar4 = thunk_FUN_00497920((AnonShape_00497920_894F87D6 *)param_2,
+                ((iVar4 = thunk_FUN_00497920((RecoveredRecord_STBoatC_0040AE40 *)param_2,
                                              (int)param_2->field_0047,(int)psVar9[1],
                                              (int)param_2->field_004B), iVar4 != 0 &&
-                 (iVar4 = thunk_FUN_00497920((AnonShape_00497920_894F87D6 *)param_2,(int)*psVar9,
-                                             (int)param_2->field_0049,(int)param_2->field_004B),
-                 iVar4 != 0)))) {
+                 (iVar4 = thunk_FUN_00497920((RecoveredRecord_STBoatC_0040AE40 *)param_2,
+                                             (int)*psVar9,(int)param_2->field_0049,
+                                             (int)param_2->field_004B), iVar4 != 0)))) {
           if ((uVar3 & 0x4000) == 0) {
             if ((uVar3 & 0x2000) == 0) goto LAB_0040d369;
             if ((((((psVar2[iVar7 + iVar5] & 0xc000U) != 0xc000) &&
@@ -87,21 +87,22 @@ joined_r0x0040d327:
                 (((psVar2[iVar7 + iVar6 + iVar8] & 0xc000U) != 0xc000 &&
                  ((psVar2[iVar7 + iVar8] & 0xc000U) != 0xc000)))) &&
                (((((psVar2[iVar7 + iVar6] & 0xc000U) != 0xc000 &&
-                  ((iVar6 = thunk_FUN_00497920((AnonShape_00497920_894F87D6 *)param_2,
+                  ((iVar6 = thunk_FUN_00497920((RecoveredRecord_STBoatC_0040AE40 *)param_2,
                                                (int)param_2->field_0047,(int)param_2->field_0049,
                                                param_2->field_004B + 1), iVar6 != 0 &&
-                   (iVar6 = thunk_FUN_00497920((AnonShape_00497920_894F87D6 *)param_2,(int)*psVar9,
-                                               (int)param_2->field_0049,param_2->field_004B + 1),
-                   iVar6 != 0)))) &&
-                 (iVar6 = thunk_FUN_00497920((AnonShape_00497920_894F87D6 *)param_2,
+                   (iVar6 = thunk_FUN_00497920((RecoveredRecord_STBoatC_0040AE40 *)param_2,
+                                               (int)*psVar9,(int)param_2->field_0049,
+                                               param_2->field_004B + 1), iVar6 != 0)))) &&
+                 (iVar6 = thunk_FUN_00497920((RecoveredRecord_STBoatC_0040AE40 *)param_2,
                                              (int)param_2->field_0047,(int)psVar9[1],
                                              param_2->field_004B + 1), iVar6 != 0)) &&
-                ((iVar6 = thunk_FUN_00497920((AnonShape_00497920_894F87D6 *)param_2,(int)*psVar9,
-                                             (int)psVar9[1],(int)param_2->field_004B), iVar6 != 0 &&
-                 (iVar6 = thunk_FUN_00497920((AnonShape_00497920_894F87D6 *)param_2,
+                ((iVar6 = thunk_FUN_00497920((RecoveredRecord_STBoatC_0040AE40 *)param_2,
+                                             (int)*psVar9,(int)psVar9[1],(int)param_2->field_004B),
+                 iVar6 != 0 &&
+                 (iVar6 = thunk_FUN_00497920((RecoveredRecord_STBoatC_0040AE40 *)param_2,
                                              (int)param_2->field_0047,(int)psVar9[1],
                                              (int)param_2->field_004B), iVar6 != 0)))))) {
-              iVar6 = thunk_FUN_00497920((AnonShape_00497920_894F87D6 *)param_2,(int)*psVar9,
+              iVar6 = thunk_FUN_00497920((RecoveredRecord_STBoatC_0040AE40 *)param_2,(int)*psVar9,
                                          (int)param_2->field_0049,(int)param_2->field_004B);
               goto joined_r0x0040d327;
             }
@@ -113,21 +114,22 @@ joined_r0x0040d327:
                    ((((psVar2[iVar7 + iVar6 + iVar8] & 0xc000U) != 0xc000 &&
                      ((psVar2[iVar7 + iVar8] & 0xc000U) != 0xc000)) &&
                     (((psVar2[iVar7 + iVar6] & 0xc000U) != 0xc000 &&
-                     ((iVar6 = thunk_FUN_00497920((AnonShape_00497920_894F87D6 *)param_2,
+                     ((iVar6 = thunk_FUN_00497920((RecoveredRecord_STBoatC_0040AE40 *)param_2,
                                                   (int)param_2->field_0047,(int)param_2->field_0049,
                                                   param_2->field_004B + -1), iVar6 != 0 &&
-                      (iVar6 = thunk_FUN_00497920((AnonShape_00497920_894F87D6 *)param_2,
+                      (iVar6 = thunk_FUN_00497920((RecoveredRecord_STBoatC_0040AE40 *)param_2,
                                                   (int)*psVar9,(int)param_2->field_0049,
                                                   param_2->field_004B + -1), iVar6 != 0)))))))) &&
-                  ((iVar6 = thunk_FUN_00497920((AnonShape_00497920_894F87D6 *)param_2,
+                  ((iVar6 = thunk_FUN_00497920((RecoveredRecord_STBoatC_0040AE40 *)param_2,
                                                (int)param_2->field_0047,(int)psVar9[1],
                                                param_2->field_004B + -1), iVar6 != 0 &&
-                   ((iVar6 = thunk_FUN_00497920((AnonShape_00497920_894F87D6 *)param_2,(int)*psVar9,
-                                                (int)psVar9[1],(int)param_2->field_004B), iVar6 != 0
-                    && (iVar6 = thunk_FUN_00497920((AnonShape_00497920_894F87D6 *)param_2,
-                                                   (int)param_2->field_0047,(int)psVar9[1],
-                                                   (int)param_2->field_004B), iVar6 != 0)))))) {
-            iVar6 = thunk_FUN_00497920((AnonShape_00497920_894F87D6 *)param_2,(int)*psVar9,
+                   ((iVar6 = thunk_FUN_00497920((RecoveredRecord_STBoatC_0040AE40 *)param_2,
+                                                (int)*psVar9,(int)psVar9[1],(int)param_2->field_004B
+                                               ), iVar6 != 0 &&
+                    (iVar6 = thunk_FUN_00497920((RecoveredRecord_STBoatC_0040AE40 *)param_2,
+                                                (int)param_2->field_0047,(int)psVar9[1],
+                                                (int)param_2->field_004B), iVar6 != 0)))))) {
+            iVar6 = thunk_FUN_00497920((RecoveredRecord_STBoatC_0040AE40 *)param_2,(int)*psVar9,
                                        (int)param_2->field_0049,(int)param_2->field_004B);
             goto joined_r0x0040d327;
           }

@@ -15,7 +15,7 @@ void __thiscall VisibleClassTy::InitData(VisibleClassTy *this)
   int iVar5;
   byte *pbVar6;
   ushort *puVar7;
-  undefined4 *puVar8;
+  void *pvVar8;
   VisibleClassTy_field_00F4DArray *pVVar9;
   VisibleClassTy_field_0110DArray *pVVar10;
   uint uVar11;
@@ -57,17 +57,17 @@ void __thiscall VisibleClassTy::InitData(VisibleClassTy *this)
   }
   else {
     local_c->field_0114 = 1;
-    pbVar6 = (byte *)Library::DKW::LIB::FUN_006aac10(local_c->field_0024 * iVar4 * 2);
+    pbVar6 = Library::DKW::LIB::MemAllocClear(local_c->field_0024 * iVar4 * 2);
     pVVar3->field_0038 = pbVar6;
-    pbVar6 = (byte *)Library::DKW::LIB::FUN_006aac10(pVVar3->field_0030 * pVVar3->field_0034);
+    pbVar6 = Library::DKW::LIB::MemAllocClear(pVVar3->field_0030 * pVVar3->field_0034);
     pVVar3->field_004C = pbVar6;
-    puVar7 = (ushort *)Library::DKW::LIB::FUN_006aac10(pVVar3->field_0030 * pVVar3->field_0034 * 2);
+    puVar7 = Library::DKW::LIB::MemAllocClear(pVVar3->field_0030 * pVVar3->field_0034 * 2);
     pVVar3->field_0050 = puVar7;
     puVar14 = pVVar3->field_003C;
     iVar4 = 4;
     do {
-      puVar8 = Library::DKW::LIB::FUN_006aac10(pVVar3->field_0028 * pVVar3->field_002C);
-      *puVar14 = (uint)puVar8;
+      pvVar8 = Library::DKW::LIB::MemAllocClear(pVVar3->field_0028 * pVVar3->field_002C);
+      *puVar14 = (uint)pvVar8;
       puVar14 = puVar14 + 1;
       iVar4 = iVar4 + -1;
     } while (iVar4 != 0);

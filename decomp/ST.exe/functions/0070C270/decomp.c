@@ -22,7 +22,7 @@ undefined4 * __cdecl FUN_0070c270(int param_1)
   if (iVar5 == 0) {
     iVar5 = 0x100;
   }
-  puVar2 = Library::DKW::LIB::FUN_006aac10(iVar5 * 4);
+  puVar2 = Library::DKW::LIB::MemAllocClear(iVar5 * 4);
   if (puVar2 == nullptr) {
     return nullptr;
   }

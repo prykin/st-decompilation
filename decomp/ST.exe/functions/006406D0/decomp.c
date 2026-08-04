@@ -832,7 +832,7 @@ switchD_00640c2d_caseD_a2:
           local_200 = *(undefined2 *)&this_00->field_0x34;
           local_1f8 = 1;
           local_1fa = 0;
-          g_playSystem_00802A38->vfunc_08(0x147,0,0,local_220,0);
+          g_playSystem_00802A38->vfunc_08(0x147,0,0,(short)local_220,0);
         }
         local_22c = &local_c4;
         local_238 = local_30[2];
@@ -2764,7 +2764,7 @@ LAB_00642561:
     local_c = 0x488;
   }
 switchD_00640fbd_caseD_a2:
-  this_00->vfunc_90(2,local_c);
+  this_00->vfunc_90(2,(short)local_c);
   g_currentExceptionFrame = local_28c.previous;
   return 0;
 }

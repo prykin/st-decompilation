@@ -23,7 +23,7 @@ void __thiscall MReportTy::sub_005C00D0(MReportTy *this)
       else {
         *(undefined4 *)&this->field_0x31 = 1;
       }
-      (*this->field_000C->vtable->vfunc_18)(&this->field_0x1d);
+      (*this->field_000C->vtable->vfunc_18)((short)&this->field_0x1d);
     }
     bVar1 = bVar1 + 1;
     local_8 = (uint)bVar1;
@@ -31,7 +31,7 @@ void __thiscall MReportTy::sub_005C00D0(MReportTy *this)
   if ((this->field_009F != 0) && (this->field_0067 != '\0')) {
     this->field_0025 = this->field_009F;
     *(undefined4 *)&this->field_0x31 = 1;
-    (*this->field_000C->vtable->vfunc_18)(&this->field_0x1d);
+    (*this->field_000C->vtable->vfunc_18)((short)&this->field_0x1d);
   }
   return;
 }

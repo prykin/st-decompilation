@@ -299,7 +299,7 @@ LAB_005e8ee0:
                   }
                   uVar15 = this_01->field_1A5B->field_06A6;
                   this_01->field_1A7F = uVar15;
-                  pbVar11 = (byte *)Library::DKW::LIB::FUN_006aac10(uVar15);
+                  pbVar11 = Library::DKW::LIB::MemAllocClear(uVar15);
                   *value = pbVar11;
                   uVar23 = 0;
                   pcVar12 = LoadResourceString(0x252f,g_module_00807618);

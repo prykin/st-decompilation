@@ -25,7 +25,7 @@ ST3DSMAPContext::sub_006E98E0
       return 0;
     }
     if (pAVar1->field_00A0 == nullptr) {
-      piVar3 = Library::DKW::LIB::FUN_006aac10(pAVar1->field_0094 * 8);
+      piVar3 = Library::DKW::LIB::MemAllocClear(pAVar1->field_0094 * 8);
       pAVar1->field_00A0 = piVar3;
       if (piVar3 == nullptr) {
         return 0xfffffffe;

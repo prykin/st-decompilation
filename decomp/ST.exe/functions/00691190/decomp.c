@@ -15,19 +15,19 @@ byte * __cdecl TactDataPack(undefined4 *param_1,uint *param_2)
   code *pcVar1;
   int iVar2;
   AnonShape_00691190_783A1B6D *pAVar3;
-  AnonShape_GLOBAL_008489C4_F7BABFAC *pAVar4;
+  AllocationRecord_006684E0 *pAVar4;
   byte *pbVar5;
   int *piVar6;
+  uint uVar7;
   undefined4 *puVar8;
   int iVar9;
   AnonShape_00691190_783A1B6D *pAVar10;
   uint *puVar11;
-  byte *pbVar12;
-  bool bVar13;
+  bool bVar12;
   InternalExceptionFrame local_68;
   int *local_24;
   uint local_20;
-  byte *local_1c;
+  AllocationRecord_006684E0 *local_1c;
   int local_18;
   void *local_14;
   uint local_10;
@@ -56,7 +56,7 @@ byte * __cdecl TactDataPack(undefined4 *param_1,uint *param_2)
       iVar2 = iVar2 + -1;
     } while (iVar2 != 0);
     *param_2 = local_c + 0x10cU;
-    pAVar3 = (AnonShape_00691190_783A1B6D *)Library::DKW::LIB::FUN_006aac10(local_c + 0x10cU);
+    pAVar3 = Library::DKW::LIB::MemAllocClear(local_c + 0x10cU);
     puVar8 = param_1;
     pAVar10 = pAVar3;
     for (iVar2 = 0x43; iVar2 != 0; iVar2 = iVar2 + -1) {
@@ -88,9 +88,9 @@ byte * __cdecl TactDataPack(undefined4 *param_1,uint *param_2)
       iVar9 = *local_24;
       pAVar3 = local_8;
       if (0 < *(int *)(iVar9 + 0xc)) {
-        bVar13 = *(int *)(iVar9 + 0xc) != 0;
+        bVar12 = *(int *)(iVar9 + 0xc) != 0;
         do {
-          if (bVar13) {
+          if (bVar12) {
             /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
             iVar9 = *(int *)(iVar9 + 8) * local_20 + *(int *)(iVar9 + 0x1c);
           }
@@ -101,14 +101,23 @@ byte * __cdecl TactDataPack(undefined4 *param_1,uint *param_2)
             pAVar4 = nullptr;
           }
           else {
-            pAVar4 = (AnonShape_GLOBAL_008489C4_F7BABFAC *)(*(int *)(iVar9 + 4) + 0x20);
+            pAVar4 = (AllocationRecord_006684E0 *)(*(int *)(iVar9 + 4) + 0x20);
           }
           if (pAVar4 != nullptr) {
             local_1c = FltDataPack(pAVar4,&local_10);
             local_8 = Library::DKW::LIB::MemRealloc(local_8,local_8->field_0014 + local_10);
-            pbVar5 = local_1c;
-            pbVar12 = &local_8[1].field_0x3 + iVar2;
-            memmove(pbVar12, pbVar5, local_10); /* compiler REP MOVS byte copy */
+            pAVar4 = local_1c;
+            puVar8 = (undefined4 *)(&local_8[1].field_0x3 + iVar2);
+            for (uVar7 = local_10 >> 2; uVar7 != 0; uVar7 = uVar7 - 1) {
+              *puVar8 = *(undefined4 *)pAVar4;
+              pAVar4 = (AllocationRecord_006684E0 *)&pAVar4->field_0x4;
+              puVar8 = puVar8 + 1;
+            }
+            for (uVar7 = local_10 & 3; uVar7 != 0; uVar7 = uVar7 - 1) {
+              *(undefined1 *)puVar8 = *(undefined1 *)pAVar4;
+              pAVar4 = (AllocationRecord_006684E0 *)&pAVar4->field_0x1;
+              puVar8 = (undefined4 *)((int)puVar8 + 1);
+            }
             iVar2 = iVar2 + local_10;
             local_8->field_0014 = local_8->field_0014 + local_10;
             local_8->field_0105 = local_8->field_0105 + 1;
@@ -119,7 +128,7 @@ byte * __cdecl TactDataPack(undefined4 *param_1,uint *param_2)
           }
           local_20 = local_20 + 1;
           iVar9 = *local_24;
-          bVar13 = local_20 < *(uint *)(iVar9 + 0xc);
+          bVar12 = local_20 < *(uint *)(iVar9 + 0xc);
           pAVar3 = local_8;
         } while ((int)local_20 < (int)*(uint *)(iVar9 + 0xc));
       }

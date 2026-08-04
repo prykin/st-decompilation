@@ -17,7 +17,7 @@ STPlaySystemC::CreateGameObject
   int iVar3;
   InternalExceptionFrame local_50;
   STPlaySystemC *local_c;
-  undefined4 local_8;
+  undefined2 local_8 [2];
 
   local_50.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_50;
@@ -25,12 +25,13 @@ STPlaySystemC::CreateGameObject
   iVar2 = Library::MSVCRT::__setjmp3(local_50.jumpBuffer,0);
   this_00 = local_c;
   if (iVar2 == 0) {
-    iVar2 = thunk_FUN_0054cbb0(param_1,&local_8);
+    iVar2 = thunk_FUN_0054cbb0(param_1,(undefined4 *)local_8);
     if (iVar2 != 0) {
       RaiseInternalException
                 (-4,g_overwriteContext_007ED77C,"E:\\__titans\\Andrey\\tplaysys.cpp",0xef);
     }
-    iVar2 = this_00->vfunc_08(local_8,param_2,param_3,param_4,param_5);
+    iVar2 = this_00->vfunc_08(local_8[0],(undefined2)param_2,(undefined2)param_3,
+                       (undefined2)param_4,(undefined2)param_5);
     if (iVar2 != 0) {
       RaiseInternalException
                 (iVar2,g_overwriteContext_007ED77C,"E:\\__titans\\Andrey\\tplaysys.cpp",0xf0);

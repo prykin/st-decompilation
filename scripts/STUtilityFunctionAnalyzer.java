@@ -397,12 +397,9 @@ public class STUtilityFunctionAnalyzer extends GhidraScript {
             if (!allocatorSource(lower)) continue;
             List<Parameter> parameters = explicitParameters(function);
             int directCalls = function.getCalledFunctions(monitor).size();
-            boolean failureChecked = hasTestOfEax(function) &&
-                hasZeroEax(function) && directCalls >= 2;
-            if (!failureChecked) continue;
-
             if (lower.contains("memallcl.c") && parameters.size() == 1 &&
-                    hasZeroFillStore(function)) {
+                    hasZeroFillStore(function) && hasZeroEax(function) &&
+                    directCalls >= 2) {
                 result.add(new Rule(function.getEntryPoint().getOffset(),
                     "memory_allocate_zeroed", "MemAllocClear", "__stdcall",
                     "pointer:/void", new String[] { "/uint" },
@@ -412,7 +409,8 @@ public class STUtilityFunctionAnalyzer extends GhidraScript {
                         "neutral pointer"));
             }
             else if (lower.contains("memalloc.c") &&
-                    parameters.size() == 1) {
+                    parameters.size() == 1 && hasTestOfEax(function) &&
+                    hasZeroEax(function) && directCalls >= 2) {
                 result.add(new Rule(function.getEntryPoint().getOffset(),
                     "memory_allocate", "MemAlloc", "__stdcall",
                     "pointer:/void", new String[] { "/uint" },
@@ -421,7 +419,8 @@ public class STUtilityFunctionAnalyzer extends GhidraScript {
                         "and returns a neutral pointer"));
             }
             else if (lower.contains("memreall.c") &&
-                    parameters.size() == 2) {
+                    parameters.size() == 2 && hasTestOfEax(function) &&
+                    hasZeroEax(function) && directCalls >= 2) {
                 result.add(new Rule(function.getEntryPoint().getOffset(),
                     "memory_reallocate", "MemRealloc", "__stdcall",
                     "pointer:/void",

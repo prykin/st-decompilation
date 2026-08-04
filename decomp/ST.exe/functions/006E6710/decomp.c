@@ -22,7 +22,7 @@ ST3DSMAPContext::sub_006E6710
   do {
     if (pAVar1 == nullptr) {
 LAB_006e673a:
-      pAVar1 = (AnonPointee_ST3DSMAPContext_044E *)Library::DKW::LIB::FUN_006aac10(0x18);
+      pAVar1 = Library::DKW::LIB::MemAllocClear(0x18);
       if (pAVar1 != nullptr) {
         FUN_006b9910(&this->field_044E,(int)pAVar1);
 LAB_006e674e:

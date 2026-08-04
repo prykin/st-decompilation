@@ -63,7 +63,7 @@ HoloTy::CalcHologram
   }
   local_34 = uVar7;
   local_2c = uVar6;
-  local_1c = Library::DKW::LIB::FUN_006aac10(uVar6 * uVar3 * 4);
+  local_1c = Library::DKW::LIB::MemAllocClear(uVar6 * uVar3 * 4);
   local_c = local_1c;
   if ((local_1c != nullptr) && (local_14 = 0, uVar7 != 0)) {
     local_30 = (uint)param_6;

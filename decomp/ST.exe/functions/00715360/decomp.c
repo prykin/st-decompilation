@@ -67,7 +67,7 @@ FUN_00715360(int *param_1,int param_2,char param_3,char *param_4,uint param_5,in
     if (param_6 == 0) {
       uVar2 = param_5 + 5;
       local_c = uVar2;
-      local_8 = (AnonShape_00715360_91615618 *)Library::DKW::LIB::FUN_006aac10(uVar2);
+      local_8 = Library::DKW::LIB::MemAllocClear(uVar2);
       *(char *)local_8 = param_3;
       local_8->field_0001 = param_7;
       if (0 < (int)param_5) {
@@ -85,7 +85,7 @@ FUN_00715360(int *param_1,int param_2,char param_3,char *param_4,uint param_5,in
       }
     }
     else {
-      local_8 = (AnonShape_00715360_91615618 *)Library::DKW::LIB::FUN_006aac10(param_5 * 2 + 9);
+      local_8 = Library::DKW::LIB::MemAllocClear(param_5 * 2 + 9);
       *(char *)local_8 = param_3 + -0x80;
       local_8->field_0001 = param_7;
       local_8->field_0005 = param_5;

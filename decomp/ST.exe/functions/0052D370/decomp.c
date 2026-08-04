@@ -45,7 +45,7 @@ void __thiscall PopUpTy::AddStr(PopUpTy *this,char *param_1,byte param_2)
         cVar1 = *pcVar6;
         pcVar6 = pcVar6 + 1;
       } while (cVar1 != '\0');
-      local_8 = Library::DKW::LIB::FUN_006aac10(~uVar9 + 4);
+      local_8 = Library::DKW::LIB::MemAllocClear(~uVar9 + 4);
       this_00 = local_14;
       pDVar4 = local_c;
       if (local_8 != nullptr) {

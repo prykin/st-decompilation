@@ -53,7 +53,7 @@ FUN_0062b830(int param_1,int param_2,int param_3,undefined4 param_4,int *param_5
   local_8 = param_7;
   local_30 = (uint)(*(int *)(&DAT_00791d68 + iVar1 * 4) == 1);
   local_c = param_6;
-  g_playSystem_00802A38->vfunc_08(0x124,0,0,local_44,0);
+  g_playSystem_00802A38->vfunc_08(0x124,0,0,(short)local_44,0);
   STFishC::sub_004162B0
             ((STFishC *)this,(short *)((int)&param_3 + 2),(undefined2 *)((int)&param_2 + 2),
              (undefined2 *)((int)&param_1 + 2));

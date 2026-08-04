@@ -84,7 +84,7 @@ int __thiscall AiPlrClassTy::InitData(AiPlrClassTy *this,undefined4 *param_1)
         }
         if (puVar12[1] == 0) {
           iVar3 = puVar12[2];
-          puVar6 = (byte *)(Library::DKW::LIB::FUN_006aac10(puVar12[3]));
+          puVar6 = (byte *)(Library::DKW::LIB::MemAllocClear(puVar12[3]));
           uVar9 = puVar12[3];
           *puVar12 = puVar6;
           puVar12 = (byte *)(iVar3 + 0x12a + (int)param_1);

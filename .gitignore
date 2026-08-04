@@ -1,6 +1,10 @@
 # Original game binaries and other redistributable inputs.
 /bin/
 
+# Machine-local direct-access paths and toolchain selection.  A profile from
+# one checkout must never leak into another checkout or an SMB mount.
+/.st-local/
+
 # Expanded Ghidra working project. The verified packed checkpoint under
 # ghidra/ is the portable Git/LFS representation.
 /proj/

@@ -37,7 +37,7 @@ int __thiscall FUN_00462180(void *this,int param_1)
   ushort *puVar22;
   STWorldObject *pSVar23;
   bool bVar24;
-  AnonShape_00645880_0D5933D4 local_9c;
+  RecoveredRecord_STBoatC_00645880 local_9c;
   int local_74 [2];
   undefined1 local_6c [16];
   undefined4 local_5c;
@@ -651,11 +651,9 @@ LAB_004625fd:
                         [(int)sVar9 * (int)g_worldGrid.planeStride +
                          (int)sVar6 * (int)g_worldGrid.sizeX + (int)sVar7].objects[0];
             }
-            /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-            local_9c._8_2_ = *(undefined2 *)((int)this + 0x41);
-            local_9c.field_000A = *(undefined2 *)((int)this + 0x43);
-            /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-            local_9c._12_2_ = *(undefined2 *)((int)this + 0x45);
+            local_9c.field_0008 = *(ushort *)((int)this + 0x41);
+            local_9c.field_000A = *(ushort *)((int)this + 0x43);
+            local_9c.field_000C = *(ushort *)((int)this + 0x45);
             local_10 = 0;
             if (*(char *)((int)this + 0x2b2) != '\0') {
               puVar22 = (ushort *)((int)this + 0x2a8);
@@ -664,38 +662,30 @@ LAB_004625fd:
                           thunk_FUN_0041dc40(local_74,(short)*(undefined4 *)(puVar22 + -1),
                                              puVar22[1],*(short *)((int)this + 0x6c));
                 local_9c.field_000E = *(short *)((int)this + 0x41) + (short)*puVar11;
-                /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-                local_9c._16_2_ = *(short *)((int)this + 0x43) - (short)((uint)*puVar11 >> 0x10);
+                local_9c.field_0010 = *(short *)((int)this + 0x43) - (short)((uint)*puVar11 >> 0x10);
                 local_9c.field_0012 = *(short *)(puVar11 + 1) + *(short *)((int)this + 0x45);
                 local_30 = (uint)*puVar22 << 0x10;
                 puVar11 = (undefined4 *)
                           thunk_FUN_0041dc40(&local_c,0,0,*(short *)((int)this + 0x6c));
                 uVar8 = *puVar11;
                 local_2c = *(undefined2 *)(puVar11 + 1);
-                /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-                local_9c._20_2_ = (short)uVar8 + *(short *)&pSVar23[1].field_0x1d;
+                local_9c.field_0014 = (short)uVar8 + *(short *)&pSVar23[1].field_0x1d;
                 /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
                 local_30._2_2_ = (short)((uint)uVar8 >> 0x10);
                 /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
                 local_9c.field_0016 = *(short *)&pSVar23[1].field_0x1f - local_30._2_2_;
-                /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-                local_9c._24_2_ = *(undefined2 *)((int)&pSVar23[1].value_20 + 1);
-                /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-                local_9c._0_4_ = *(undefined4 *)((int)this + 0x24);
+                local_9c.field_0018 = *(short *)((int)&pSVar23[1].value_20 + 1);
+                local_9c.field_0000 = *(uint *)((int)this + 0x24);
                 local_9c.field_0022 = (-(uint)(*(int *)((int)this + 0x6f7) != 10) & 0xfffffffe) + 1;
                 if (*(int *)((int)this + 0x7de) == 0) {
-                  /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-                  local_9c._4_4_ = *(undefined4 *)((int)this + 0x79a);
+                  local_9c.field_0004 = *(uint *)((int)this + 0x79a);
                 }
                 else {
-                  /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-                  local_9c._4_4_ = 0xa1;
+                  local_9c.field_0004 = 0xa1;
                 }
-                local_9c.field_001A = *(undefined2 *)((int)this + 0x6c);
-                /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-                local_9c._28_4_ = *(undefined4 *)((int)this + 0x18);
-                /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-                local_9c._32_2_ = *(undefined2 *)((int)this + 0x32);
+                local_9c.field_001A = *(ushort *)((int)this + 0x6c);
+                local_9c.field_001C = *(uint *)((int)this + 0x18);
+                local_9c.field_0020 = *(ushort *)((int)this + 0x32);
                 local_30 = uVar8;
                 thunk_FUN_00645880(&local_9c);
                 *(undefined4 *)((int)this + 0x83a) = 0;
@@ -1142,8 +1132,8 @@ LAB_00463d56:
               (iVar15 = (*local_14->vtable->vfunc_F4)(*(undefined4 *)((int)this + 0x24)),
               iVar15 != 0)))) {
             STFishC::sub_004162B0(local_14,(short *)local_c,psVar2,psVar1);
-            sVar6 = *psVar1;
-            sVar9 = *psVar2;
+            sVar9 = *psVar1;
+            sVar6 = *psVar2;
             iVar15 = (int)*(short *)&local_c->vtable;
             goto cf_common_exit_00463FD6;
           }
@@ -1182,10 +1172,10 @@ LAB_00463d56:
               *(undefined4 *)((int)this + 0x82e) = 3;
               return 2;
             }
-            sVar6 = *psVar1;
-            sVar9 = *psVar2;
+            sVar9 = *psVar1;
+            sVar6 = *psVar2;
 cf_common_exit_00463FD6:
-            STBoatC::sub_00481520(this,iVar15,(int)sVar9,(int)sVar6);
+            STBoatC::sub_00481520(this,iVar15,(int)sVar6,(int)sVar9);
             STBoatC::sub_00460260(this,0);
             *(undefined2 *)((int)this + 0xf8) = 0;
 switchD_004638e6_caseD_2:
@@ -1251,8 +1241,8 @@ LAB_00463a83:
                     (local_c,(short *)((int)this + 0x800),(undefined2 *)((int)this + 0x802),
                      (undefined2 *)((int)this + 0x804));
 LAB_00463a91:
-          sVar6 = *(short *)((int)this + 0x804);
-          sVar9 = *(short *)((int)this + 0x802);
+          sVar9 = *(short *)((int)this + 0x804);
+          sVar6 = *(short *)((int)this + 0x802);
           iVar15 = (int)*(short *)((int)this + 0x800);
           goto cf_common_exit_00463FD6;
         }

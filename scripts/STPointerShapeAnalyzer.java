@@ -138,6 +138,29 @@ public class STPointerShapeAnalyzer extends GhidraScript {
     private static final Pattern LOCAL_STRUCTURE_DECLARATION = Pattern.compile(
         "(?m)^\\s*([A-Za-z_$][A-Za-z0-9_$:]*)\\s+" +
         "([A-Za-z_$][A-Za-z0-9_$]*)\\s*;");
+    private static final Pattern LOCAL_STRUCTURE_POINTER_DECLARATION = Pattern.compile(
+        "(?m)^\\s*([A-Za-z_$][A-Za-z0-9_$:]*)\\s*\\*\\s*" +
+        "([A-Za-z_$][A-Za-z0-9_$]*)\\s*;");
+    private static final Pattern TYPED_BASE_ZERO_ACCESS = Pattern.compile(
+        "\\*\\s*\\(\\s*([^()\\r\\n]{1,80}?)\\s*\\*\\s*\\)\\s*" +
+        "([A-Za-z_$][A-Za-z0-9_$:]*)(?![A-Za-z0-9_$:]|\\s*(?:->|\\+|\\[))");
+    private static final Pattern TYPED_MEMBER_REINTERPRET = Pattern.compile(
+        "\\*\\s*\\(\\s*([^()\\r\\n]{1,80}?)\\s*\\*\\s*\\)\\s*&\\s*" +
+        "([A-Za-z_$][A-Za-z0-9_$:]*)\\s*->\\s*" +
+        "([A-Za-z_$][A-Za-z0-9_$:]*)");
+    private static final Pattern INDEXED_MEMBER_REFERENCE = Pattern.compile(
+        "(?<![A-Za-z0-9_$:])([A-Za-z_$][A-Za-z0-9_$:]*)\\s*" +
+        "\\[\\s*(0[xX][0-9A-Fa-f]+|[0-9]+)\\s*\\]\\s*\\.\\s*" +
+        "([A-Za-z_$][A-Za-z0-9_$:]*)");
+    private static final Pattern ADDRESS_OF_INDEXED_MEMBER = Pattern.compile(
+        "&\\s*([A-Za-z_$][A-Za-z0-9_$:]*)\\s*" +
+        "\\[\\s*(0[xX][0-9A-Fa-f]+|[0-9]+)\\s*\\]\\s*\\.\\s*" +
+        "([A-Za-z_$][A-Za-z0-9_$:]*)");
+    private static final Pattern TYPED_INDEXED_MEMBER_REINTERPRET = Pattern.compile(
+        "\\*\\s*\\(\\s*([^()\\r\\n]{1,80}?)\\s*\\*\\s*\\)\\s*&\\s*" +
+        "([A-Za-z_$][A-Za-z0-9_$:]*)\\s*" +
+        "\\[\\s*(0[xX][0-9A-Fa-f]+|[0-9]+)\\s*\\]\\s*\\.\\s*" +
+        "([A-Za-z_$][A-Za-z0-9_$:]*)");
     private static final Pattern PIECE_ASSIGNMENT = Pattern.compile(
         "(?m)^\\s*([A-Za-z_$][A-Za-z0-9_$]*)\\._([0-9]+)_([0-9]+)_\\s*=\\s*" +
         "([^;\\r\\n]+);");
@@ -162,6 +185,11 @@ public class STPointerShapeAnalyzer extends GhidraScript {
     private int redirectedAliasAccesses;
     private int ownerThisSpillRepairs;
     private int typedFieldConsumerHints;
+    private int exactReinterpretAccesses;
+    private int indexedTailRepairs;
+    private final Map<String, TargetEvidence> generatedBackingTargets =
+        new LinkedHashMap<>();
+    private final Set<String> missingGeneratedBackingTargets = new HashSet<>();
 
     @Override
     protected void run() throws Exception {
@@ -218,7 +246,9 @@ public class STPointerShapeAnalyzer extends GhidraScript {
             ", pointer aliases=" + pointerFieldAliases + ", alias accesses=" +
             redirectedAliasAccesses + ", owner-this spill repairs=" +
             ownerThisSpillRepairs + ", typed-field consumers=" +
-            typedFieldConsumerHints + ", targets=" + analysis.targets.size() +
+            typedFieldConsumerHints + ", exact reinterpret=" +
+            exactReinterpretAccesses + ", indexed tails=" + indexedTailRepairs +
+            ", targets=" + analysis.targets.size() +
             ", target_apply=" + analysis.targets.stream().filter(row -> row.apply).count() +
             ", anonymous_types=" + analysis.types.stream().filter(row -> row.apply).count() +
             ", failures=" + failures.size());
@@ -306,6 +336,12 @@ public class STPointerShapeAnalyzer extends GhidraScript {
         collectAnonymousValueFields(function, c, locals);
         Set<String> stableStorages = stableStorages(locals);
         Map<String, TargetEvidence> functionTargets = new LinkedHashMap<>();
+        collectTransientGeneratedTargets(function, c, functionTargets);
+        c = collectIndexedGeneratedTails(function, c, locals, stableStorages,
+            functionTargets);
+        int before = rawAccesses;
+        collectTypedReinterpretedAccesses(function, c, locals, stableStorages,
+            functionTargets);
         int ownerSpillHints = collectOwnerThisSpills(function, c, locals,
             stableStorages, functionTargets);
         collectNestedAccesses(function, c, locals, stableStorages, functionTargets);
@@ -315,7 +351,6 @@ public class STPointerShapeAnalyzer extends GhidraScript {
             functionTargets);
         collectRawIndexedAccesses(function, c, locals, stableStorages, functionTargets);
         Matcher matcher = RAW_ACCESS.matcher(c);
-        int before = rawAccesses;
         while (matcher.find()) {
             monitor.checkCancelled();
             String valueType = matcher.group(1).trim();
@@ -368,6 +403,310 @@ public class STPointerShapeAnalyzer extends GhidraScript {
             if (target.typeEvidence.isEmpty() || targets.containsKey(target.key)) continue;
             targets.put(target.key, target);
         }
+    }
+
+    /**
+     * A decompiler HighVariable may already carry one of our generated pointer
+     * types without having a corresponding Listing local.  Retain that exact type
+     * identity while collecting layout evidence; a real script-owned parameter or
+     * local with the same type is used as the transactional backing target.
+     */
+    private void collectTransientGeneratedTargets(Function function, String c,
+            Map<String, TargetEvidence> functionTargets) {
+        Matcher declaration = LOCAL_STRUCTURE_POINTER_DECLARATION.matcher(c);
+        while (declaration.find()) {
+            Structure structure = uniqueStructure(declaration.group(1));
+            String name = declaration.group(2);
+            if (structure == null || !generatedAnonymousOwned(structure) ||
+                    !hasDirectCallRoot(c, name)) continue;
+            String key = addr(function.getEntryPoint()) + "|transient|" + name;
+            TargetEvidence transientTarget = new TargetEvidence(key, "transient",
+                function.getEntryPoint(), function.getName(true), name,
+                "HighVariable[" + name + "]", "pointer:" + structure.getPathName(),
+                SourceType.DEFAULT.toString(), true, false, false);
+            functionTargets.putIfAbsent(name, transientTarget);
+            targets.putIfAbsent(key, transientTarget);
+            ensureGeneratedBackingTarget(structure.getPathName());
+        }
+    }
+
+    private boolean hasDirectCallRoot(String c, String name) {
+        Matcher assignments = ASSIGNMENT.matcher(c);
+        while (assignments.find()) {
+            if (!assignments.group(1).equals(name)) continue;
+            String value = assignments.group(2).trim();
+            for (int pass = 0; pass < 4; pass++) {
+                Matcher cast = LEADING_CAST.matcher(value);
+                if (!cast.matches()) break;
+                value = cast.group(2).trim();
+            }
+            if (value.matches("[A-Za-z_$][A-Za-z0-9_$:]*\\s*\\(.*")) return true;
+        }
+        return false;
+    }
+
+    private void ensureGeneratedBackingTarget(String structurePath) {
+        if (generatedBackingTargets.containsKey(structurePath) ||
+                missingGeneratedBackingTargets.contains(structurePath)) return;
+        FunctionIterator functions = currentProgram.getFunctionManager().getFunctions(true);
+        while (functions.hasNext()) {
+            Function function = functions.next();
+            for (Variable variable : function.getAllVariables()) {
+                if (!variable.isValid() || variable.getVariableStorage() == null ||
+                        !pointedStructure(typeSpecification(variable.getDataType()))
+                            .equals(structurePath)) continue;
+                boolean ownedVariable = scriptOwnedPointer(variable.getComment());
+                if (protectedSource(variable.getSource()) && !ownedVariable) continue;
+                String storage = variable.getVariableStorage().toString();
+                String kind = variable instanceof Parameter ? "parameter" : "local";
+                String key = addr(function.getEntryPoint()) + "|" + kind + "|" + storage;
+                TargetEvidence backing = new TargetEvidence(key, kind,
+                    function.getEntryPoint(), function.getName(true), variable.getName(),
+                    storage, typeSpecification(variable.getDataType()),
+                    variable.getSource().toString(), true, false, true);
+                generatedBackingTargets.put(structurePath, backing);
+                targets.putIfAbsent(backing.key, backing);
+                return;
+            }
+        }
+        missingGeneratedBackingTargets.add(structurePath);
+    }
+
+    /**
+     * Ghidra spells a field beyond the current end of a too-short generated
+     * structure as base[constant].field_NNNN.  Treat this as a continuation of
+     * the same record only when one generated pointer has at least three distinct
+     * constant-index members and at least one of them is explicitly addressed.
+     * A variable subscript rejects the entire candidate, preserving real arrays.
+     */
+    private String collectIndexedGeneratedTails(Function function, String c,
+            Map<String, Variable> locals, Set<String> stableStorages,
+            Map<String, TargetEvidence> functionTargets) {
+        Map<String, List<IndexedMember>> byBase = new LinkedHashMap<>();
+        Matcher references = INDEXED_MEMBER_REFERENCE.matcher(c);
+        while (references.find()) {
+            String base = references.group(1);
+            long index = parseUnsigned(references.group(2));
+            if (index <= 0 || index > 0x1000) continue;
+            TargetEvidence target = canonicalTarget(function, locals, stableStorages,
+                functionTargets, base);
+            Structure owner = target == null ? null :
+                structureFromPointer(target.expectedType);
+            if (owner == null || !generatedAnonymousOwned(owner) ||
+                    owner.getLength() < 1) continue;
+            long memberOffset = memberOffset(target, references.group(3));
+            long absolute = index * (long)owner.getLength() + memberOffset;
+            if (memberOffset < 0 || memberOffset >= owner.getLength() ||
+                    absolute < 0 || absolute >= MAX_SHAPE_SIZE) continue;
+            byBase.computeIfAbsent(base, ignored -> new ArrayList<>()).add(
+                new IndexedMember(base, references.group(2), index,
+                    references.group(3), memberOffset, absolute, target, owner));
+        }
+        if (byBase.isEmpty()) return c;
+
+        Set<String> addressed = new HashSet<>();
+        Matcher addresses = ADDRESS_OF_INDEXED_MEMBER.matcher(c);
+        while (addresses.find())
+            addressed.add(indexedMemberKey(addresses.group(1), addresses.group(2),
+                addresses.group(3)));
+
+        Map<String, IndexedMember> approved = new LinkedHashMap<>();
+        for (Map.Entry<String, List<IndexedMember>> entry : byBase.entrySet()) {
+            String base = entry.getKey();
+            if (hasVariableIndex(c, base)) continue;
+            Set<Long> offsets = new HashSet<>();
+            boolean hasAddress = false;
+            Set<Long> indexes = new HashSet<>();
+            for (IndexedMember member : entry.getValue()) {
+                offsets.add(member.absoluteOffset);
+                indexes.add(member.index);
+                if (addressed.contains(member.key())) hasAddress = true;
+            }
+            if (offsets.size() < 3 || indexes.size() != 1 || !hasAddress) continue;
+            indexedTailRepairs++;
+            for (IndexedMember member : entry.getValue()) {
+                approved.put(member.key(), member);
+                DataTypeComponent component =
+                    member.owner.getComponentAt((int)member.memberOffset);
+                if (component == null || component.getOffset() != member.memberOffset ||
+                        component.getFieldName() == null ||
+                        !component.getFieldName().equals(member.memberName)) continue;
+                recordField(function, member.target, member.absoluteOffset,
+                    component.getLength(), typeSpecification(component.getDataType()),
+                    "constant-index generated tail " + base + "[" + member.indexText +
+                    "]." + member.memberName + " => +0x" +
+                    Long.toHexString(member.absoluteOffset).toUpperCase(Locale.ROOT));
+            }
+        }
+        if (approved.isEmpty()) return c;
+
+        Matcher exact = TYPED_INDEXED_MEMBER_REINTERPRET.matcher(c);
+        while (exact.find()) {
+            IndexedMember member = approved.get(indexedMemberKey(exact.group(2),
+                exact.group(3), exact.group(4)));
+            if (member == null) continue;
+            int width = accessWidth(exact.group(1));
+            if (width < 1 || width > 16 ||
+                    member.absoluteOffset + width > MAX_SHAPE_SIZE) continue;
+            recordExactField(function, member.target, member.absoluteOffset, width,
+                valueTypeSpecification(exact.group(1), width),
+                "exact reinterpret of constant-index generated tail");
+        }
+
+        StringBuffer normalized = new StringBuffer();
+        addresses.reset();
+        while (addresses.find()) {
+            IndexedMember member = approved.get(indexedMemberKey(addresses.group(1),
+                addresses.group(2), addresses.group(3)));
+            if (member == null) continue;
+            String replacement = "(" + member.baseName + " + 0x" +
+                Long.toHexString(member.absoluteOffset).toUpperCase(Locale.ROOT) + ")";
+            addresses.appendReplacement(normalized, Matcher.quoteReplacement(replacement));
+        }
+        addresses.appendTail(normalized);
+        return normalized.toString();
+    }
+
+    private boolean hasVariableIndex(String c, String base) {
+        Matcher indexes = Pattern.compile("(?<![A-Za-z0-9_$:])" +
+            Pattern.quote(base) + "\\s*\\[\\s*([^]\\r\\n]+)\\s*\\]").matcher(c);
+        while (indexes.find()) {
+            String value = indexes.group(1).trim();
+            if (!value.matches("(?:0[xX][0-9A-Fa-f]+|[0-9]+)")) return true;
+        }
+        return false;
+    }
+
+    private String indexedMemberKey(String base, String index, String member) {
+        return base + "|" + parseUnsigned(index) + "|" + member;
+    }
+
+    /** Exact casted loads expose the physical width hidden by a stale generated field. */
+    private void collectTypedReinterpretedAccesses(Function function, String c,
+            Map<String, Variable> locals, Set<String> stableStorages,
+            Map<String, TargetEvidence> functionTargets) {
+        Map<TargetEvidence, Map<String, ExactReinterpret>> candidates =
+            new LinkedHashMap<>();
+        Matcher zero = TYPED_BASE_ZERO_ACCESS.matcher(c);
+        while (zero.find()) {
+            TargetEvidence target = canonicalTarget(function, locals, stableStorages,
+                functionTargets, zero.group(2));
+            Structure owner = target == null ? null :
+                structureFromPointer(target.expectedType);
+            int width = accessWidth(zero.group(1));
+            if (owner == null || !generatedAnonymousOwned(owner) || width < 1 || width > 16)
+                continue;
+            addExactReinterpret(candidates, target, 0, width,
+                valueTypeSpecification(zero.group(1), width),
+                "exact reinterpret load at generated record base");
+        }
+
+        Matcher member = TYPED_MEMBER_REINTERPRET.matcher(c);
+        while (member.find()) {
+            TargetEvidence target = canonicalTarget(function, locals, stableStorages,
+                functionTargets, member.group(2));
+            Structure owner = target == null ? null :
+                structureFromPointer(target.expectedType);
+            int width = accessWidth(member.group(1));
+            long offset = target == null ? -1 : memberOffset(target, member.group(3));
+            if (owner == null || !generatedAnonymousOwned(owner) || width < 1 || width > 16 ||
+                    offset < 0 || offset + width > MAX_SHAPE_SIZE) continue;
+            addExactReinterpret(candidates, target, offset, width,
+                valueTypeSpecification(member.group(1), width),
+                "exact reinterpret load through generated member " + member.group(3));
+        }
+
+        /*
+         * A lone casted load is not enough to replace a structure member: optimized code
+         * routinely reads several adjacent bytes as one integer.  Promote only a connected
+         * run of at least two equal adjacent physical fields when one member of that run
+         * demonstrably widens or concretizes an existing weak generated field.  This
+         * recovers packed coordinate/header pairs such as short fields at +0 and +2 without
+         * turning every isolated dword load into a persistent layout assertion.
+         */
+        for (Map.Entry<TargetEvidence, Map<String, ExactReinterpret>> entry :
+                candidates.entrySet()) {
+            TargetEvidence target = entry.getKey();
+            Structure owner = structureFromPointer(target.expectedType);
+            if (owner == null) continue;
+            List<ExactReinterpret> values = new ArrayList<>(entry.getValue().values());
+            Set<ExactReinterpret> selected = new LinkedHashSet<>();
+            for (ExactReinterpret seed : values) {
+                if (!exactReinterpretSeed(owner, seed)) continue;
+                Set<ExactReinterpret> cluster = new LinkedHashSet<>();
+                cluster.add(seed);
+                boolean changed;
+                do {
+                    changed = false;
+                    for (ExactReinterpret candidate : values) {
+                        if (cluster.contains(candidate) ||
+                                candidate.width != seed.width ||
+                                !candidate.type.equals(seed.type)) continue;
+                        boolean adjacent = cluster.stream().anyMatch(current ->
+                            candidate.offset + candidate.width == current.offset ||
+                            current.offset + current.width == candidate.offset);
+                        if (adjacent) changed |= cluster.add(candidate);
+                    }
+                }
+                while (changed);
+                if (cluster.stream().map(value -> value.offset).distinct().count() >= 2)
+                    selected.addAll(cluster);
+            }
+            for (ExactReinterpret candidate : selected)
+                for (int count = 0; count < candidate.count; count++)
+                    recordExactField(function, target, candidate.offset,
+                        candidate.width, candidate.type, candidate.detail);
+        }
+    }
+
+    private void addExactReinterpret(
+            Map<TargetEvidence, Map<String, ExactReinterpret>> candidates,
+            TargetEvidence target, long offset, int width, String type, String detail) {
+        if (type == null || type.isBlank() || type.matches("/undefined(?:1|2|4|8)?"))
+            return;
+        String key = offset + "|" + width + "|" + type;
+        ExactReinterpret candidate = candidates.computeIfAbsent(target,
+            ignored -> new LinkedHashMap<>()).computeIfAbsent(key,
+                ignored -> new ExactReinterpret(offset, width, type, detail));
+        candidate.count++;
+    }
+
+    private boolean exactReinterpretSeed(Structure owner, ExactReinterpret candidate) {
+        DataTypeComponent component = owner.getComponentAt((int)candidate.offset);
+        if (component == null || component.getOffset() != candidate.offset ||
+                component.getFieldName() == null ||
+                !component.getFieldName().matches(
+                    "(?i)(?:field|value|unknown|unk)(?:_?(?:0x)?[0-9a-f]+)?"))
+            return false;
+        String current = typeSpecification(component.getDataType());
+        boolean concreteSameWidth = component.getLength() == candidate.width &&
+            current.matches("/undefined(?:1|2|4|8)?");
+        boolean weakWidening = candidate.width > component.getLength() &&
+            component.getLength() <= 2 && candidate.width <= 4 &&
+            current.matches("/(?:undefined(?:1|2)?|byte|char|uchar)");
+        if (!concreteSameWidth && !weakWidening) return false;
+        long end = candidate.offset + candidate.width;
+        for (DataTypeComponent other : owner.getDefinedComponents()) {
+            if (other == component) continue;
+            long otherStart = other.getOffset();
+            long otherEnd = otherStart + other.getLength();
+            if (candidate.offset < otherEnd && otherStart < end) return false;
+        }
+        return end <= MAX_SHAPE_SIZE;
+    }
+
+    private void recordExactField(Function function, TargetEvidence target, long offset,
+            int width, String type, String detail) {
+        FieldEvidence field = target.fields.computeIfAbsent(offset, FieldEvidence::new);
+        field.widths.merge(width, 1, Integer::sum);
+        field.exactWidths.merge(width, 1, Integer::sum);
+        if (type != null && !type.isBlank()) field.types.merge(type, 2, Integer::sum);
+        field.sites.add(addr(function.getEntryPoint()) + " " + detail + " +0x" +
+            Long.toHexString(offset).toUpperCase(Locale.ROOT));
+        target.accessCount++;
+        target.functions.add(addr(function.getEntryPoint()));
+        rawAccesses++;
+        exactReinterpretAccesses++;
     }
 
     /**
@@ -1244,6 +1583,7 @@ public class STPointerShapeAnalyzer extends GhidraScript {
 
     private Analysis makeProposals() {
         mergeGeneratedTypeEvidence();
+        suppressExactCoveredSubfields();
         Map<String, TypeProposal> types = new LinkedHashMap<>();
         Map<String, List<FieldProposal>> fields = new LinkedHashMap<>();
         List<TargetProposal> targetRows = new ArrayList<>();
@@ -1287,6 +1627,33 @@ public class STPointerShapeAnalyzer extends GhidraScript {
         targetRows.sort(Comparator.comparing((TargetProposal row) -> row.functionAddress)
             .thenComparing(row -> row.kind).thenComparing(row -> row.locator));
         return new Analysis(typeRows, fieldRows, targetRows);
+    }
+
+    /**
+     * Repeated exact full-width reinterpret loads supersede weak generated
+     * subpieces wholly contained in that scalar.  Partial overlaps, competing
+     * exact widths, and independently exact subfields remain unresolved.
+     */
+    private void suppressExactCoveredSubfields() {
+        for (TargetEvidence target : targets.values()) {
+            Set<Long> remove = new HashSet<>();
+            for (FieldEvidence container : target.fields.values()) {
+                int width = uniqueWidth(container);
+                int exactCount = container.exactWidths.values().stream()
+                    .mapToInt(Integer::intValue).sum();
+                if (width < 2 || exactCount < 2) continue;
+                long start = container.offset;
+                long end = start + width;
+                for (FieldEvidence candidate : target.fields.values()) {
+                    if (candidate == container || !candidate.exactWidths.isEmpty()) continue;
+                    int candidateWidth = uniqueWidth(candidate);
+                    if (candidateWidth < 1 || candidate.offset <= start ||
+                            candidate.offset + candidateWidth > end) continue;
+                    remove.add(candidate.offset);
+                }
+            }
+            for (Long offset : remove) target.fields.remove(offset);
+        }
     }
 
     /**
@@ -1357,6 +1724,8 @@ public class STPointerShapeAnalyzer extends GhidraScript {
             FieldEvidence found = entry.getValue();
             for (Map.Entry<Integer, Integer> width : found.widths.entrySet())
                 target.widths.merge(width.getKey(), width.getValue(), Integer::sum);
+            for (Map.Entry<Integer, Integer> width : found.exactWidths.entrySet())
+                target.exactWidths.merge(width.getKey(), width.getValue(), Integer::sum);
             for (Map.Entry<String, Integer> type : found.types.entrySet())
                 target.types.merge(type.getKey(), type.getValue(), Integer::sum);
             for (Map.Entry<Integer, Integer> stride : found.indexedStrides.entrySet())
@@ -1505,6 +1874,8 @@ public class STPointerShapeAnalyzer extends GhidraScript {
             FieldEvidence source = entry.getValue();
             for (Map.Entry<Integer, Integer> width : source.widths.entrySet())
                 destination.widths.merge(width.getKey(), width.getValue(), Integer::sum);
+            for (Map.Entry<Integer, Integer> width : source.exactWidths.entrySet())
+                destination.exactWidths.merge(width.getKey(), width.getValue(), Integer::sum);
             for (Map.Entry<String, Integer> type : source.types.entrySet())
                 destination.types.merge(type.getKey(), type.getValue(), Integer::sum);
             for (Map.Entry<Integer, Integer> stride : source.indexedStrides.entrySet())
@@ -1540,6 +1911,23 @@ public class STPointerShapeAnalyzer extends GhidraScript {
         if (!currentStructure.isBlank() && !generatedAnonymous)
             return new TargetDecision(false, false, currentStructure, "existing",
                 "target already has a named/manual structure pointer type");
+
+        // Exact reinterpret loads and constant-index continuation fields refine
+        // the already selected generated identity. Competing helper-local
+        // anonymous prefixes do not supersede that identity; named/manual types
+        // still take the normal semantic-type path below.
+        if (generatedAnonymous && anonymousOnlyTypeEvidence(target)) {
+            Structure current = structureFromPointer("pointer:" + currentStructure);
+            boolean covered = current != null && coversGeneratedFields(current, target);
+            boolean refine = covered && validFields(target) &&
+                needsGeneratedRefinement(current, target);
+            boolean apply = refine && automaticTarget(target) && !autoThis(target);
+            if (refine)
+                return new TargetDecision(apply, apply, currentStructure,
+                    apply ? "refine" : "review",
+                    "exact generated-layout evidence refines the current identity; " +
+                    "anonymous helper views remain partial aliases");
+        }
 
         if (!target.typeEvidence.isEmpty()) {
             if (generatedAnonymous && consolidateGlobalAnonymousViews(target,
@@ -1922,6 +2310,15 @@ public class STPointerShapeAnalyzer extends GhidraScript {
                 description.contains("generated_layout_sha256=");
     }
 
+    private boolean anonymousOnlyTypeEvidence(TargetEvidence target) {
+        for (String specification : target.typeEvidence.keySet()) {
+            Structure structure = structureFromPointer(specification);
+            if (structure == null || !anonymousTypePath(structure.getPathName()) ||
+                    !generatedAnonymousOwned(structure)) return false;
+        }
+        return true;
+    }
+
     private boolean automaticTarget(TargetEvidence target) {
         if (!target.databaseBacked || unsettledLocal(target)) return false;
         // An analyzer proposal must not create its backing anonymous datatype when
@@ -2051,6 +2448,7 @@ public class STPointerShapeAnalyzer extends GhidraScript {
             String name = proposedFieldName(field, width, nested);
             result.add(new FieldProposal(true, shapeId, field.offset, width, name, type,
                 field.sites.size(), "fixed-offset dereference; observed_types=" + field.types +
+                    "; exact_widths=" + field.exactWidths +
                     "; indexed_strides=" + field.indexedStrides +
                     "; semantic_roles=" + field.roles));
         }
@@ -2097,6 +2495,7 @@ public class STPointerShapeAnalyzer extends GhidraScript {
             result.add(new FieldProposal(true, shapeId, field.offset, width,
                 name, type, field.sites.size(),
                 "dereference through parent pointer field; observed_types=" + field.types +
+                    "; exact_widths=" + field.exactWidths +
                     "; semantic_roles=" + field.roles));
         }
         return result;
@@ -2317,13 +2716,38 @@ public class STPointerShapeAnalyzer extends GhidraScript {
         for (DataTypeComponent component : structure.getDefinedComponents()) {
             FieldEvidence field = target.fields.get((long)component.getOffset());
             int width = field == null ? -1 : uniqueWidth(field);
-            if (field == null || width != component.getLength()) return false;
+            if (field == null) return false;
+            if (width != component.getLength()) {
+                if (!safeExactGeneratedWidening(structure, component, field, width))
+                    return false;
+                continue;
+            }
             String observed = selectedType(field, width);
             DataType componentType = componentValueType(component, field, width);
             if (!Undefined.isUndefined(componentType) && !observed.isBlank() &&
                     !observed.equals(typeSpecification(componentType))) return false;
         }
         return true;
+    }
+
+    private boolean safeExactGeneratedWidening(Structure structure,
+            DataTypeComponent current, FieldEvidence field, int width) {
+        if (!generatedAnonymousOwned(structure) || width <= current.getLength() ||
+                field.exactWidths.size() != 1 ||
+                !field.exactWidths.containsKey(width) ||
+                current.getFieldName() == null ||
+                !current.getFieldName().matches(
+                    "(?i)(?:field|value|unknown|unk)(?:_?(?:0x)?[0-9a-f]+)?"))
+            return false;
+        long start = current.getOffset();
+        long end = start + width;
+        for (DataTypeComponent other : structure.getDefinedComponents()) {
+            if (other == current) continue;
+            long otherStart = other.getOffset();
+            long otherEnd = otherStart + other.getLength();
+            if (start < otherEnd && otherStart < end) return false;
+        }
+        return end <= MAX_SHAPE_SIZE;
     }
 
     private boolean needsGeneratedRefinement(Structure structure, TargetEvidence target) {
@@ -2391,6 +2815,19 @@ public class STPointerShapeAnalyzer extends GhidraScript {
     }
 
     private int uniqueWidth(FieldEvidence field) {
+        if (field.exactWidths.size() == 1)
+            return field.exactWidths.keySet().iterator().next();
+        if (field.exactWidths.size() > 1) {
+            List<Map.Entry<Integer, Integer>> exact =
+                new ArrayList<>(field.exactWidths.entrySet());
+            exact.sort(Comparator
+                .<Map.Entry<Integer, Integer>>comparingInt(Map.Entry::getValue).reversed()
+                .thenComparingInt(Map.Entry::getKey));
+            Map.Entry<Integer, Integer> first = exact.get(0);
+            Map.Entry<Integer, Integer> second = exact.get(1);
+            return first.getValue() >= 3 &&
+                first.getValue() >= second.getValue() * 4 ? first.getKey() : -1;
+        }
         if (field.widths.size() == 1)
             return field.widths.keySet().iterator().next();
         // Keep union-like alternatives unresolved unless one physical width is
@@ -2679,6 +3116,8 @@ public class STPointerShapeAnalyzer extends GhidraScript {
             "redirected_alias_accesses=" + redirectedAliasAccesses,
             "owner_this_spill_repairs=" + ownerThisSpillRepairs,
             "typed_field_consumer_hints=" + typedFieldConsumerHints,
+            "exact_reinterpret_accesses=" + exactReinterpretAccesses,
+            "indexed_generated_tail_repairs=" + indexedTailRepairs,
             "targets=" + analysis.targets.size(),
             "target_apply=" + analysis.targets.stream().filter(row -> row.apply).count(),
             "existing_type_targets=" + analysis.targets.stream()
@@ -2752,6 +3191,23 @@ public class STPointerShapeAnalyzer extends GhidraScript {
     private record SemanticChoice(String specification, String reason) {}
     private record PointerAlias(TargetEvidence parent, long parentOffset, long childBaseOffset,
         int elementWidth, String elementType) {}
+    private record IndexedMember(String baseName, String indexText, long index,
+        String memberName, long memberOffset, long absoluteOffset,
+        TargetEvidence target, Structure owner) {
+        String key() { return baseName + "|" + index + "|" + memberName; }
+    }
+    private static class ExactReinterpret {
+        final long offset;
+        final int width;
+        final String type, detail;
+        int count;
+        ExactReinterpret(long offset, int width, String type, String detail) {
+            this.offset = offset;
+            this.width = width;
+            this.type = type;
+            this.detail = detail;
+        }
+    }
     private static class NestedEvidence {
         final long parentOffset;
         final Map<Long, FieldEvidence> fields = new TreeMap<>();
@@ -2766,6 +3222,7 @@ public class STPointerShapeAnalyzer extends GhidraScript {
     private static class FieldEvidence {
         final long offset;
         final Map<Integer, Integer> widths = new TreeMap<>();
+        final Map<Integer, Integer> exactWidths = new TreeMap<>();
         final Map<String, Integer> types = new TreeMap<>();
         final Map<Integer, Integer> indexedStrides = new TreeMap<>();
         final Map<String, Integer> roles = new TreeMap<>();

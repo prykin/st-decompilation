@@ -6,7 +6,7 @@
    Diagnostic line evidence: 156 | 163 | 166 (metadata/report site, not the function definition)
    [STSourceProvenanceApplier end] */
 
-int __cdecl SaveBossEdit(int param_1,char *param_2,undefined4 *param_3,char param_4)
+int __cdecl SaveBossEdit(int param_1,char *param_2,AllocationRecord_00648620 *param_3,char param_4)
 
 {
   code *pcVar1;
@@ -15,8 +15,8 @@ int __cdecl SaveBossEdit(int param_1,char *param_2,undefined4 *param_3,char para
   InternalExceptionFrame local_58;
   uint local_14;
   uint local_10;
-  byte *local_c;
-  byte *local_8;
+  AllocationRecord_0065CD10 *local_c;
+  AllocationRecord_00648620 *local_8;
 
   local_8 = nullptr;
   local_c = nullptr;
@@ -24,15 +24,14 @@ int __cdecl SaveBossEdit(int param_1,char *param_2,undefined4 *param_3,char para
   g_currentExceptionFrame = &local_58;
   iVar2 = Library::MSVCRT::__setjmp3(local_58.jumpBuffer,0);
   if (iVar2 == 0) {
-    if (((param_1 == 0) || (param_2 == nullptr)) || (*(char *)((int)param_3 + 5) != '\x02')) {
+    if (((param_1 == 0) || (param_2 == nullptr)) || (param_3->field_0005 != '\x02')) {
       RaiseInternalException
                 (-0x34,g_overwriteContext_007ED77C,"E:\\__titans\\ai\\ai_boss_d.cpp",0x9c);
     }
-    /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-    local_c = EventDataPack(*(AnonShape_0065CD10_BA40DE58 **)((int)param_3 + 0x4e),&local_14);
+    local_c = EventDataPack(*(AllocationRecord_0065CD10 **)&param_3->field_0x4e,&local_14);
     local_8 = BossDataPack(param_3,(undefined4 *)local_c,local_14,&local_10);
     thunk_FUN_0065d0f0((int *)&local_c);
-    Library::Ourlib::MFAOBJ::mfAObjSave(param_1,param_2,local_8,local_10,param_4);
+    Library::Ourlib::MFAOBJ::mfAObjSave(param_1,param_2,(byte *)local_8,local_10,param_4);
     thunk_FUN_006484f0((int *)&local_8);
     g_currentExceptionFrame = local_58.previous;
     return 0;

@@ -168,7 +168,7 @@ MMsgTy::SetPanel(MMsgTy *this,UINT param_1,int param_2,int param_3,UINT param_4)
         local_34[3] = 2;
         local_34[4] = 0x6940;
         local_34[2] = iVar4;
-        (*pSVar1->vtable->vfunc_18)(local_34);
+        (*pSVar1->vtable->vfunc_18)((short)local_34);
       }
       g_currentExceptionFrame = local_78.previous;
       return 1;

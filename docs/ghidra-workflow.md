@@ -936,27 +936,41 @@ migration instead of happening as a side effect of one decompiler run.
      unambiguous protected/semantic, ABI, or previously machine-qualified
      external anchor. An unanchored cycle of generic returns cannot validate
      itself.
-12. Run `STGlobalRecordAnalyzer`.
+12. Run `STAllocationRecordAnalyzer`.
+   - Directory: `<repo>/recovery`
+   - The analyzer follows one neutral allocator result through machine aliases,
+     requires that exact root to be returned (null returns are allowed), and
+     reconstructs one contiguous source-parameter copy beginning at offset zero.
+     It records out-parameter and reallocated copies in
+     `allocation_record_machine_audit.tsv`, but leaves them review-only.
+13. Run `STAllocationRecordApplier`.
+   - File: `<repo>/recovery/ST.exe/allocation_record_proposals.tsv`
+   - Only the producer/consumer source parameter and return acquire the generated
+     packed record pointer. The allocator retains its neutral `void *` ABI.
+     Existing complete structures are reused; shorter generated source views are
+     extended monotonically, while manual/imported signatures and edited
+     generated layouts are preserved.
+14. Run `STGlobalRecordAnalyzer`.
    - Directory: `<repo>/recovery`
    - Rerun `STTypeBootstrapAnalyzer/Applier` first after script updates. The global-record
      geometry itself is inferred from the guarded lookup plus independent stride/range evidence;
      it no longer depends on a predeclared nested player-record layout.
-13. Run `STGlobalRecordApplier`.
+15. Run `STGlobalRecordApplier`.
    - File: `<repo>/recovery/ST.exe/global_record_proposals.tsv`
    - The sibling `global_record_field_proposals.tsv` is loaded automatically.
-14. The former `STSpatialGridAnalyzer/Applier` pair is retired.
+16. The former `STSpatialGridAnalyzer/Applier` pair is retired.
    - Four adjacent 16-bit values followed by a pointer prove descriptor geometry,
      but not `STWorldCell`, world/pathing semantics, or the pointee layout.
    - Existing bootstrap-owned spatial projections are marked `[ST_VIEW_ONLY]` and
      removed by the lifecycle pass after their last live reference disappears.
-15. Run `STGlobalAggregateAnalyzer`.
+17. Run `STGlobalAggregateAnalyzer`.
     - Directory: `<repo>/recovery`
     - In addition to indexed tables, this recognizes bounded Win32 resource-string
       scratch arenas from `LoadStringA`, a global base-plus-cursor destination, and
       the wrapper's exact chunk/capacity checks.
-16. Run `STGlobalAggregateApplier`.
+18. Run `STGlobalAggregateApplier`.
     - File: `<repo>/recovery/ST.exe/global_aggregate_proposals.tsv`
-17. Run `STGlobalDataAnalyzer`.
+19. Run `STGlobalDataAnalyzer`.
    - Directory: `<repo>/recovery`
    - Besides proposals it writes `global_pointer_audit.tsv`, a complete inventory
      of `PTR_*` data symbols split into control-flow/string/code table entries and
@@ -976,9 +990,9 @@ migration instead of happening as a side effect of one decompiler run.
      teardown `T **` use does not block promotion when ordinary family-context
      uses outvote it by at least 16:1.
      `GetModuleHandleA("*.dll")` stores also receive a literal-derived module name.
-18. Run `STGlobalDataApplier`.
+20. Run `STGlobalDataApplier`.
    - File: `<repo>/recovery/ST.exe/global_data_proposals.tsv`
-19. Run `STFunctionPointerParameterAnalyzer`.
+21. Run `STFunctionPointerParameterAnalyzer`.
     - Directory: `<repo>/recovery`
     - The analyzer follows an exact function address or null passed at every
       observed direct callsite into one stack parameter, then proves that the
@@ -991,13 +1005,13 @@ migration instead of happening as a side effect of one decompiler run.
       matching caller cleanup at every indirect site. Unknown callsite values,
       incoming-ECX targets, manual/imported signatures, and concrete parameter
       types remain review-only.
-20. Run `STFunctionPointerParameterApplier`.
+22. Run `STFunctionPointerParameterApplier`.
     - File: `<repo>/recovery/ST.exe/function_pointer_parameter_proposals.tsv`
     - The applier rechecks the parameter baseline and every target's current
       machine ABI, creates only marker-owned function definitions, and applies
       pointer types with `ANALYSIS` provenance transactionally. A stored
       signature hash protects later edits to a generated callback definition.
-21. Run `STFunctionPointerFieldAnalyzer`.
+23. Run `STFunctionPointerFieldAnalyzer`.
     - Directory: `<repo>/recovery`
     - A field is enabled only when an exact function address is stored into it,
       an indirect call loads from that identical field, and all stored targets
@@ -1011,14 +1025,14 @@ migration instead of happening as a side effect of one decompiler run.
       structural fixed point. It is not repeated for every intermediate layout
       epoch; export ABI stabilization reruns it if a later Program mutation makes
       the cached evidence stale.
-22. Run `STFunctionPointerFieldApplier`.
+24. Run `STFunctionPointerFieldApplier`.
     - File: `<repo>/recovery/ST.exe/function_pointer_field_proposals.tsv`
     - Only hash-intact generated structures and generic pointer-sized fields are
       mutable. Manual structures, concrete fields, incomplete chains, and ABI
       disagreements remain review-only.
-23. Run `STIndirectCallAnalyzer`.
+25. Run `STIndirectCallAnalyzer`.
     - Directory: `<repo>/recovery`
-24. Run `STIndirectCallApplier`.
+26. Run `STIndirectCallApplier`.
     - File: `<repo>/recovery/ST.exe/indirect_call_proposals.tsv`
     - The analyzer also groups physical vtable components by thunk-resolved
       implementation address. A generic occurrence inherits an existing
@@ -1029,18 +1043,18 @@ migration instead of happening as a side effect of one decompiler run.
       applier also refuses legacy `create_dispatch_vtable`, synthetic-dispatch
       slot, and hard-coded `create_base_vtable` rows even when an old proposal
       file enables them.
-25. Run `STPointerRoleRepairAnalyzer`.
+27. Run `STPointerRoleRepairAnalyzer`.
    - Directory: `<repo>/recovery`
    - This is normally a one-time cleanup after an older pointer-shape pass. It
      scans only locals carrying an `STPointerShapeApplier` marker.
-26. Run `STPointerRoleRepairApplier`.
+28. Run `STPointerRoleRepairApplier`.
    - File: `<repo>/recovery/ST.exe/pointer_role_repair_proposals.tsv`
-27. Run `STPointerShapeAnalyzer`.
+29. Run `STPointerShapeAnalyzer`.
    - Directory: `<repo>/recovery`
    - Run it after global-record application. Typed-call evidence propagates types through
      persistent locals, but no special case reconstructs pointers from a known player-block
      address or from manually named `tempSlots/objectIds` fields.
-28. Run `STPointerShapeApplier`.
+30. Run `STPointerShapeApplier`.
    - File: `<repo>/recovery/ST.exe/pointer_shape_target_proposals.tsv`
    - The program directory containing that file is also accepted. The sibling
      type and field proposal TSVs are loaded automatically.
@@ -1074,7 +1088,41 @@ migration instead of happening as a side effect of one decompiler run.
      When its first dword is repeatedly tested or updated with bit masks, that
      member is named `flags`; individual mask constants remain unnamed until
      independent enum/debug evidence exists.
-29. Run `STTypeFamilyAnalyzer`.
+   - A constant-index expression such as `generated[1].field_XXXX` may denote a
+     continuation beyond a formerly short generated layout. It is automatic only
+     when one positive constant index exposes at least three distinct absolute
+     members, one member address is taken, and the same base has no variable
+     subscript. The analyzer records absolute offsets; it never converts an
+     actual indexed collection into one giant structure.
+   - Casted accesses may refine weak generated fields only as a connected cluster
+     of at least two adjacent equal-width members, with at least one member whose
+     current generic type is concretized or safely widened. Lone compiler-wide
+     loads, overlaps, concrete/manual layouts, and competing widths remain
+     review-only. Weak subpieces fully covered by repeated exact-width evidence
+     are suppressed before the proposal is built.
+31. Run `STRecursivePointeeAnalyzer`.
+    - Directory: `<repo>/recovery`
+    - Optional second script argument: one function address for a narrow
+      diagnostic run. The normal pipeline does not use that restriction.
+    - The analyzer considers only hash-intact generated owner structures and
+      pointer-sized fields. Automatic rows require one exact owner-field
+      identity, at least two root loads, at least two recursive self-link
+      traversals, and at least two independently recovered partial views with
+      three nonzero, non-overlapping fields. Equal geometry under another root
+      is not identity evidence.
+32. Run `STRecursivePointeeApplier`.
+    - File: `<repo>/recovery/ST.exe/recursive_pointee_proposals.tsv`
+    - The applier creates a deterministic `RecursiveNode_<Owner>_<Offset>_*`,
+      installs `Node *next` at offset zero, specializes only that owner field,
+      and refreshes both generated safety hashes. Manual/imported/concrete,
+      stale, overlapping, COM/table-like, and single-view candidates remain
+      review-only. A confirming pass must report `unchanged`. The class-layout
+      pair treats a hash-intact recursive target as stronger than generic
+      `void *`/byte-pointer evidence and its applier refuses a stale proposal
+      which would downgrade it. The node datatype may still coexist with
+      function-local partial views when Ghidra merged incompatible SSA
+      lifetimes; do not force one persistent local type merely to remove casts.
+33. Run `STTypeFamilyAnalyzer`.
     - Directory: `<repo>/recovery`
     - Inspect `<repo>/recovery/ST.exe/anon_named_type_matches.tsv`. Exact full-layout
       matches are automatic only when there is one unique named type with at least
@@ -1096,9 +1144,9 @@ migration instead of happening as a side effect of one decompiler run.
       only when `prototype_callsite_audit.tsv` proves direct pointer flow
       between them and their complete layouts, sole owner, and no-alias checks
       all agree.
-30. Run `STTypeFamilyApplier`.
+34. Run `STTypeFamilyApplier`.
     - File: `<repo>/recovery/ST.exe/type_family_proposals.tsv`
-31. Run `STManualTypeAuditAnalyzer`.
+35. Run `STManualTypeAuditAnalyzer`.
     - Directory: `<repo>/recovery`
     - Output: `manual_type_conflicts.tsv` and
       `manual_type_conflicts_summary.txt`.
@@ -1236,10 +1284,23 @@ group has an independent exact semantic type anchor, the pair persists a
 different type for only that lifetime. It also types a single non-reused
 `undefinedN`/`undefinedN *` local when the same exact evidence exists: one
 trusted typed return or typed copy, or at least two agreeing typed call
-consumers. It does not use arithmetic shape or names to guess signedness.
-Physical register/stack reuse is not itself evidence: competing anchors and a
-dynamic local which reattaches anywhere except its original machine address are
-rejected.
+consumers. For a hash-intact recursive structure generated by
+`STRecursivePointeeApplier`, an exact component `LOAD`, `STORE`, address, or
+same-size p-code `CAST` is also a strong anchor. This permits an already-correct
+`Node *` group to be isolated from heterogeneous sibling lifetimes which make
+Ghidra print an undefined pointer tower; it does not enable same-type splits for
+ordinary scalars, typedefs, or generic pointers. An inseparable group carrying
+both `Node *` and `Node **` remains a conflict. It does not use arithmetic shape
+or names to guess signedness. Physical register/stack reuse is not itself
+evidence: competing anchors, edited/stale generated layouts, and a dynamic local
+which reattaches anywhere except its original machine address are rejected.
+
+The pipeline runs one whole-program local-lifetime pass. If that pass mutates a
+function, subsequent staircase passes decompile only the exact changed function
+addresses from the apply report. After targeted convergence it runs one final
+whole-program analyzer/applier confirmation so the committed proposal and apply
+report remain complete; an ordinary settled run still pays for only one broad
+pass.
 
 `STAbiConsistencyAnalyzer` separately repairs polluted incoming parameter roles.
 A direct x87 `double ptr [EBP+offset]` operand also proves an eight-byte
@@ -1672,7 +1733,7 @@ a new conflict is what requires another iteration.
 | `STClassArrayAnalyzer` | Prove fixed arrays embedded in generated class layouts from bounded indexed accesses and exact pointer-walk loops, and recover a selected pointer element's pointee width from its subsequent dereference; `STClassLayoutAnalyzer/Applier` consumes the proposals. |
 | `STInlineAggregateAnalyzer` | Recover exact by-value nested members from complete typed `REP MOVS` source spans and catalogue exact `REP STOS` zero spans. `STClassLayoutAnalyzer/Applier` consumes safe nested-member proposals; zero spans become array bounds only when independent indexed-stride evidence agrees. |
 | `STDArrayElementAnalyzer/Applier` | Recover one packed element record and one ABI-compatible descriptor specialization per generated class `DArrayTy` field from exact factory element sizes, runtime-stride aliases, exact inline-record snapshots, typed consumer parameters, and conservative state/index/handle/coordinate roles; decompile candidates in parallel with a short normal budget and retry only timed-out large bodies with the longer budget; retain the monotonic union of fields independently proven on earlier passes so applied member rendering cannot erase its own raw-access evidence. |
-| `STLocalLifetimeAnalyzer/Applier` | Split compiler-reused decompiler locals at distinct merge groups, type single-group raw-undefined locals from exact call/copy evidence, and recover scalar roles only from role-bearing p-code; verify the exact machine anchor after a fresh decompile. |
+| `STLocalLifetimeAnalyzer/Applier` | Split compiler-reused decompiler locals at distinct merge groups, type single-group raw-undefined locals from exact call/copy evidence, propagate hash-intact recursive-node fields through exact load/store/address/cast anchors, and recover scalar roles only from role-bearing p-code; verify the exact machine anchor after a fresh decompile and converge only changed functions before the final broad confirmation. |
 | `STMethodOwnerAnalyzer/Applier` | Assign structural class ownership to non-virtual methods, use typed global-singleton values passed in ECX as owner evidence, and repair weak script-owned assignments to high-fanout shared helpers; it participates in the deep fixed point after global typing. |
 | `STHiddenThisAnalyzer/Applier` | Recover anonymous `__thiscall` receivers from ECX/RET/call-site evidence with neutral structural owners required by Ghidra. |
 | `STDestructorAnalyzer/Applier` | Recover conservative destructor and scalar-deleting-destructor candidates. |
@@ -1682,6 +1743,7 @@ a new conflict is what requires another iteration.
 | `STReturnSemanticsAnalyzer/Applier` | Recover conservative leaf and CFG-proven non-leaf `void`, boolean, terminal `noreturn`, and unanimous evidence-backed structure-pointer returns; retain contradictory EAX reads for review and repair the short-lived unsafe automatic `void` rollback. |
 | `STPrototypeAnalyzer/Applier` | Propagate compatible parameter/return types and reviewed parameter names across direct calls, including externally anchored SCCs of unchanged wrapper boundaries. |
 | `STPrototypeRepairAnalyzer/Applier` | Isolate and safely correct stale types/names previously written by prototype propagation. |
+| `STAllocationRecordAnalyzer/Applier` | Recover producer/consumer-local packed records from one returned neutral-allocation root followed by an exact contiguous parameter-to-allocation fixed copy. Install only non-overlapping fields inside the copied span, reuse or monotonically extend hash-owned generated source views, and never specialize the shared allocator ABI. The machine audit retains exact non-returned and reallocated copies for review. |
 | `STManualTypeAuditAnalyzer` | Consolidate strong evidence that a protected/manual prototype or field type is stale; read-only by design. |
 | `STAbiRegressionGate` | Compare the current in-memory Program with the receipt-selected accepted corpus before expensive consumers run; protect all accepted typed vtable ABIs while merging physical aliases by table address, reject new class-vptr dispatch substitutions, decompile configurable ABI sentinels, and permit only exact fingerprinted reviewed transitions. |
 | `STGlobalRecordAnalyzer/Applier` | Recover packed arrays of repeated global records from a symbolically inferred base/stride plus independent extent evidence; create fields only from observed accesses, retire legacy seeded nested layouts, and migrate an obsolete generated Listing element identity only when its producer marker and stored/current layout hashes agree. |
@@ -1693,6 +1755,7 @@ a new conflict is what requires another iteration.
 | `STIndirectCallAnalyzer/Applier` | Audit raw indirect calls; refine trusted physical slots, install machine-proven neutral thiscall/stdcall definitions, and propagate an ABI only across unanimous typed vtable occurrences of the same resolved target. Polymorphic dispatch interfaces are proposal-only, and the applier refuses legacy attempts to install them into class vptrs or synthetic tail slots. |
 | `STPointerRoleRepairAnalyzer/Applier` | Remove prior script-owned pointer constraints from stack slots with proven scalar lifetimes in unsettled functions, and retire locals pointing to generated view-only types. |
 | `STPointerShapeAnalyzer/Applier` | Recover and fixed-point-refine known or anonymous pointer-backed structures from fixed, nested, alias-mediated dereferences, typed calls, and field-by-field stack aggregate construction; analyzer and applier both treat weak scalar pointers such as default `short *`, `ushort *`, and `word *` as replaceable only after the normal multi-field/typed-call thresholds pass; grant very large functions the same 120-second decompiler budget as the exporter while retaining 30 seconds for ordinary bodies; merge non-conflicting generated partial views only when identity is proven; materialize a target-local exact-call superset instead of widening helper-local views; apply auto-`this` types through the owning class namespace. |
+| `STRecursivePointeeAnalyzer/Applier` | Recover a recursive linked-node view only when repeated self-link traversal and at least two non-conflicting generated partial views meet at one exact hash-owned owner field. Identity is the owner path plus field offset; the applier installs a deterministic node with `next` at offset zero, preserves provenance for confirming passes, and never merges geometry across roots. |
 | `STTypeFamilyAnalyzer/Applier` | Promote anonymous layouts to an explicit semantic anchor, propagate named aggregate returns, and give complete one-owner records deterministic generated names. Anonymous consolidation requires a semantic/HiddenThis anchor, a unique producer view which explicitly records that sole anonymous source and still matches its stored hash (or the complete legacy producer snapshot), or exact direct-call pointer dataflow plus complete-layout, one-owner, no-alias agreement; geometry alone never merges types. |
 | `STTypeLifecycleAnalyzer/Applier` | Replace legacy views with one equivalent semantic anchor, consolidate an exact orphan HiddenThis duplicate into its unique namespace-backed receiver family, and remove unreferenced views, their direct Pointer/Array derivative chains, and hash-owned anonymous PointerShape/ClassPointee/HiddenThis types after zero-parent/signature/Listing-use revalidation. Analyzer and applier use whole-program usage indexes; the applier validates immutable target and replacement baselines, performs replacements first, then rebuilds one live removal index so a newly referenced type cannot be deleted. `ST_VIEW_ONLY` is an explicit pipeline-owned retirement opt-in which takes precedence over a stale coexisting anchor marker, including the oldest views that predate applier descriptions. |
 | `STEvidenceLedger` | Record/verify a deterministic semantic Program fingerprint and hashes of every proposal/apply artifact plus monotonic enum state before export; retain the volatile modification counter for diagnostics only. |

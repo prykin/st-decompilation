@@ -85,7 +85,8 @@
    establishes signed source width 2 | 0040D540 -> 00497920 @ 0040DBF7; MOVSX at 0040DBED
    establishes signed source width 2 */
 
-int FUN_00497920(AnonShape_00497920_894F87D6 *param_1,int param_2,int param_3,undefined4 param_4)
+int FUN_00497920(RecoveredRecord_STBoatC_0040AE40 *param_1,int param_2,int param_3,
+                undefined4 param_4)
 
 {
   int iVar1;

@@ -68,7 +68,7 @@ int __thiscall AiEventClassTy::InitData(AiEventClassTy *this,int *param_1)
     else {
       uVar11 = *piVar14 * 5;
     }
-    puVar5 = (byte *)(Library::DKW::LIB::FUN_006aac10(uVar11));
+    puVar5 = (byte *)(Library::DKW::LIB::MemAllocClear(uVar11));
     pAVar2->field_0502 = puVar5;
     if (piVar14 == nullptr) {
       uVar11 = 0;

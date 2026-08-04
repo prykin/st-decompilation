@@ -34,7 +34,7 @@ FUN_0065e9a0(void *this,short *param_1,short *param_2,uint param_3,uint param_4,
   local_10 = this;
   uVar2 = thunk_FUN_0043e460((char)psVar4);
   if (uVar2 != 0) {
-    local_8 = Library::DKW::LIB::FUN_006aac10((uint)uVar2 * 0x2c);
+    local_8 = Library::DKW::LIB::MemAllocClear((uint)uVar2 * 0x2c);
     DAT_00811900 = 0;
     /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
     if ((char)param_6 == '\b') {

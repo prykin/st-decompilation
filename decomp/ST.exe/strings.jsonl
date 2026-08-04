@@ -3541,7 +3541,7 @@
 {"address":"007ECAFC","type":"string","length":30,"value":"\"%ld bytes in %ld %hs Blocks.\\n\"","referenced_from":["006A5D60 FUN_006a5d60"]}
 {"address":"007ED718","type":"string","length":23,"value":"\"E:\\\\DKW\\\\WAY\\\\C\\\\way3d.cpp\"","referenced_from":["006A8270 Library::DKW::WAY::FUN_006a8270","006A88F0 Library::DKW::WAY::FUN_006a88f0"]}
 {"address":"007ED730","type":"string","length":26,"value":"\"E:\\\\DKW\\\\WAY\\\\C\\\\_chkway3.cpp\"","referenced_from":["006A9190 Library::DKW::WAY::FUN_006a9190"]}
-{"address":"007ED74C","type":"string","length":24,"value":"\"E:\\\\DKW\\\\LIB\\\\C\\\\memallcl.c\"","referenced_from":["006AAC10 Library::DKW::LIB::FUN_006aac10"]}
+{"address":"007ED74C","type":"string","length":24,"value":"\"E:\\\\DKW\\\\LIB\\\\C\\\\memallcl.c\"","referenced_from":["006AAC10 Library::DKW::LIB::MemAllocClear"]}
 {"address":"007ED764","type":"string","length":24,"value":"\"E:\\\\DKW\\\\LIB\\\\C\\\\memalloc.c\"","referenced_from":["006AAC70 Library::DKW::LIB::MemAlloc"]}
 {"address":"007ED780","type":"string","length":24,"value":"\"E:\\\\DKW\\\\LIB\\\\C\\\\memreall.c\"","referenced_from":["006ACF50 Library::DKW::LIB::MemRealloc"]}
 {"address":"007ED7B4","type":"string","length":24,"value":"\"User message too long\"","referenced_from":["006AD2A0 FUN_006ad2a0","006AD4D0 ReportDebugMessage","006ADB90 FUN_006adb90"]}

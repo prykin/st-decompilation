@@ -37,7 +37,7 @@ uint FUN_00435850(char param_1,int param_2,int *param_3)
   local_24 = uVar1 & 0xffff;
   local_2c = 1;
   local_34 = iVar2;
-  g_playSystem_00802A38->vfunc_08(0x10ff,local_10,&param_1,local_38,0);
+  g_playSystem_00802A38->vfunc_08(0x10ff,(short)local_10,(short)&param_1,(short)local_38,0);
   if (param_2 == 1) {
     thunk_FUN_00423360(_param_1);
   }

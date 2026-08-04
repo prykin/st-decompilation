@@ -83,7 +83,7 @@ SubmarineTitans::Recovered::HiddenThis::AnonReceiver_004167A0::FUN_00418030
     }
     if (pSVar6 == nullptr) {
       *(undefined4 *)&local_58->field_0x9b = 2;
-      puVar7 = (ushort *)Library::DKW::LIB::FUN_006aac10(0x10);
+      puVar7 = Library::DKW::LIB::MemAllocClear(0x10);
       this_00->field_0097 = puVar7;
       puVar7[4] = param_1;
       this_00->field_0097[5] = param_2;
@@ -95,7 +95,7 @@ SubmarineTitans::Recovered::HiddenThis::AnonReceiver_004167A0::FUN_00418030
     }
   }
   local_44 = (short *)0x3;
-  local_14 = (short *)Library::DKW::LIB::FUN_006aac10(0x2ae);
+  local_14 = Library::DKW::LIB::MemAllocClear(0x2ae);
   sVar3 = this_00->field_0047;
   local_54 = local_14 + 0xab;
   iVar4 = 2;

@@ -26,9 +26,9 @@ undefined4 * CreateBossData(void)
   undefined4 local_1c;
   uint local_18;
   uint local_14;
-  byte *local_10;
-  byte *local_c;
-  uint *local_8;
+  AllocationRecord_0065CD10 *local_10;
+  AllocationRecord_00648620 *local_c;
+  AllocationRecord_00648620 *local_8;
 
   local_c = nullptr;
   local_8 = nullptr;
@@ -147,6 +147,7 @@ undefined4 * CreateBossData(void)
   pcVar8 = pcVar11 + -uVar6;
   pcVar11 = pcVar10 + -1;
   memmove(pcVar11, pcVar8, uVar6); /* compiler REP MOVS byte copy */
+  uVar7 = 0;
   uVar6 = 0xffffffff;
   pcVar8 = "Arbiter_battle.arb";
   do {
@@ -171,11 +172,11 @@ undefined4 * CreateBossData(void)
   pcVar8 = pcVar11 + -uVar6;
   pcVar11 = pcVar10 + -1;
   memmove(pcVar11, pcVar8, uVar6); /* compiler REP MOVS byte copy */
-  local_8 = thunk_FUN_00683c70(local_17c,(AnonShape_00683C70_22193481 *)&stack0xfffffb6c,&local_1c,
+  local_8 = (AllocationRecord_00648620 *)
+            thunk_FUN_00683c70(local_17c,(AnonShape_00683C70_22193481 *)&stack0xfffffb6c,&local_1c,
                                local_34,nullptr);
   if (local_8 != nullptr) {
-    /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-    local_10 = EventDataPack(*(AnonShape_0065CD10_BA40DE58 **)((int)local_8 + 0x4e),&local_14);
+    local_10 = EventDataPack(*(AllocationRecord_0065CD10 **)&local_8->field_0x4e,&local_14);
     local_c = BossDataPack(local_8,(undefined4 *)local_10,local_14,&local_18);
     thunk_FUN_0065d0f0((int *)&local_10);
     thunk_FUN_006484f0((int *)&local_8);

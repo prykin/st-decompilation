@@ -75,7 +75,7 @@ FSGSTy::AddMessage(FSGSTy *this,byte param_1,byte *param_2,char *param_3,byte pa
       cVar2 = *pcVar10;
       pcVar10 = pcVar10 + 1;
     } while (cVar2 != '\0');
-    local_c = Library::DKW::LIB::FUN_006aac10(~uVar12 + 4);
+    local_c = Library::DKW::LIB::MemAllocClear(~uVar12 + 4);
     if (local_c == nullptr) {
       g_currentExceptionFrame = local_5c.previous;
       return;
@@ -99,7 +99,7 @@ FSGSTy::AddMessage(FSGSTy *this,byte param_1,byte *param_2,char *param_3,byte pa
       cVar2 = *pcVar10;
       pcVar10 = pcVar10 + 1;
     } while (cVar2 != '\0');
-    local_c = Library::DKW::LIB::FUN_006aac10(~uVar12 + ~uVar13 + 0xc);
+    local_c = Library::DKW::LIB::MemAllocClear(~uVar12 + ~uVar13 + 0xc);
     if (local_c == nullptr) {
       g_currentExceptionFrame = local_5c.previous;
       return;

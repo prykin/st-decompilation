@@ -12,8 +12,9 @@ undefined4 __thiscall CGenerate::sub_006A0150(CGenerate *this)
   int iVar3;
 
   pbVar1 = (byte *)Library::Ourlib::MFSTMAP::mfTMapCreate
-                             (this->field_0228,this->field_022C,this->field_0234,this->field_0239,
-                              0x20);
+                             ((this->aggregate_001C).field_020C,(this->aggregate_001C).field_0210,
+                              *(cMf32 **)&(this->aggregate_001C).field_0x218,
+                              *(int *)&(this->aggregate_001C).field_0x21d,0x20);
   this->field_000C = pbVar1;
   piVar2 = Library::Ourlib::MFSTMAP::FUN_006f0620((short *)pbVar1);
   this->field_0008 = piVar2;

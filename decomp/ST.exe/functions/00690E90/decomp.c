@@ -20,7 +20,7 @@ undefined4 * __cdecl FUN_00690e90(char *source,undefined2 param_2,undefined2 par
   g_currentExceptionFrame = &local_4c;
   exceptionCode = Library::MSVCRT::__setjmp3(local_4c.jumpBuffer,0);
   if (exceptionCode == 0) {
-    local_8 = (AnonShape_00690E90_9F986EB9 *)Library::DKW::LIB::FUN_006aac10(0x10c);
+    local_8 = Library::DKW::LIB::MemAllocClear(0x10c);
     *(undefined4 *)local_8 = 0x38e;
     *(undefined4 *)&local_8->field_0x14 = 0x10c;
     *(undefined1 *)((int)&local_8->field_0017 + 1) = 2;

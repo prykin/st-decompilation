@@ -1,5 +1,3 @@
-#include "../../pseudocode_runtime.h"
-
 
 int __fastcall
 FUN_0065dd30(AiFltClassTy *param_1,undefined4 param_2,uint param_3,uint param_4,char param_5,
@@ -84,7 +82,7 @@ LAB_0065de3c:
         if (param_3 == 0x3fffffff) {
 LAB_0065dea6:
           if ((param_6 != nullptr) && (*param_6 != 0)) {
-            (*this->vtable->vfunc_74)(local_2c);
+            (*this->vtable->vfunc_74)((short)local_2c);
             pbVar8 = local_2c;
             pbVar7 = param_6;
             do {

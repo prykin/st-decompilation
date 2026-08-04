@@ -1,7 +1,7 @@
 ST utility-function semantics
 
-Rules: 14
-Verified: 14
+Rules: 15
+Verified: 15
 
 006AE110 DArrayDestroy: apply - body pattern verified
 006AE290 DArrayCreate: apply - body pattern verified
@@ -15,5 +15,6 @@ Verified: 14
 006B1190 DArrayGetNext: apply - body pattern verified
 006CEA60 CopyRows: apply - body pattern verified
 006F2D90 mfAObjLoad: apply - body pattern verified
+006AAC10 MemAllocClear: apply - body pattern verified
 006AAC70 MemAlloc: apply - body pattern verified
 006ACF50 MemRealloc: apply - body pattern verified

@@ -208,9 +208,10 @@ LAB_004c7d8c:
           if (*(int *)(&DAT_00796230 + ((uVar9 & 0xffU) + this->field_0235 * 3) * 4) != 0) {
             pTVar3 = this->vtable;
             local_EAX_1031 = LookupRecordByte(*(char *)&this->field_023D);
-            (*pTVar3->vfunc_90)(this,3,*(undefined4 *)
-                                        (&DAT_00796230 +
-                                        ((local_EAX_1031 & 0xffU) + this->field_0235 * 3) * 4));
+            (*pTVar3->vfunc_90)(this,3,(short)*(undefined4 *)
+                                               (&DAT_00796230 +
+                                               ((local_EAX_1031 & 0xffU) + this->field_0235 * 3) * 4
+                                               ));
           }
         }
         else if (*(int *)&this->field_0x361 == 6) {

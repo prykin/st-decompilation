@@ -14,9 +14,9 @@ byte * __thiscall AiFltClassTy::PrepareToSave(AiFltClassTy *this,uint *param_1)
   code *pcVar1;
   AiFltClassTy *pAVar2;
   int errorCode;
-  AnonShape_GLOBAL_008489C4_F7BABFAC *pAVar3;
-  byte *pbVar4;
-  int iVar5;
+  AllocationRecord_006684E0 *pAVar3;
+  int iVar4;
+  byte *pbVar5;
   InternalExceptionFrame local_4c;
   AiFltClassTy *local_8;
 
@@ -30,25 +30,19 @@ byte * __thiscall AiFltClassTy::PrepareToSave(AiFltClassTy *this,uint *param_1)
       pAVar3 = nullptr;
     }
     else {
-      pAVar3 = (AnonShape_GLOBAL_008489C4_F7BABFAC *)&local_8->field_0020;
+      pAVar3 = (AllocationRecord_006684E0 *)&local_8->field_0020;
     }
-    pbVar4 = FltDataPack(pAVar3,param_1);
-    pbVar4[0] = 0x84;
-    pbVar4[1] = 3;
-    pbVar4[2] = 0;
-    pbVar4[3] = 0;
-    pbVar4[0xc] = 1;
-    pbVar4[0xd] = 0;
-    pbVar4[0xe] = 0;
-    pbVar4[0xf] = 0;
-    *(undefined4 *)(pbVar4 + 0x66) = pAVar2->field_001C;
+    pAVar3 = FltDataPack(pAVar3,param_1);
+    *(undefined4 *)pAVar3 = 900;
+    *(undefined4 *)&pAVar3->field_0xc = 1;
+    *(undefined4 *)&pAVar3->field_0x66 = pAVar2->field_001C;
     g_currentExceptionFrame = local_4c.previous;
-    return pbVar4;
+    return (byte *)pAVar3;
   }
   g_currentExceptionFrame = local_4c.previous;
-  iVar5 = ReportDebugMessage("E:\\__titans\\ai\\ai_flt.cpp",0x4f,0,errorCode,"%s",
+  iVar4 = ReportDebugMessage("E:\\__titans\\ai\\ai_flt.cpp",0x4f,0,errorCode,"%s",
                              "AiFltClassTy::PrepareToSave");
-  if (iVar5 != 0) {
+  if (iVar4 != 0) {
     STDebugBreak(); /* noreturn in standalone pseudocode */
   }
   RaiseInternalException(errorCode,0,"E:\\__titans\\ai\\ai_flt.cpp",0x50);

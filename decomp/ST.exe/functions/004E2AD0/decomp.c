@@ -12,8 +12,9 @@ undefined4 __thiscall TLOBaseTy::sub_004E2AD0(TLOBaseTy *this,int param_1,uint p
   byte *pbVar1;
   int uVar2;
   uint uVar3;
-  TLOBaseTyVTable *pTVar5;
-  undefined4 uVar7;
+  undefined4 uVar4;
+  TLOBaseTyVTable *pTVar6;
+  undefined2 arg_2;
   undefined4 local_24 [4];
   undefined4 local_14;
   undefined2 local_10;
@@ -32,8 +33,8 @@ undefined4 __thiscall TLOBaseTy::sub_004E2AD0(TLOBaseTy *this,int param_1,uint p
   uVar2 = LookupRecordByte(*(char *)&this->field_023D);
   uVar3 = uVar2 & 0xff;
   if (uVar3 == 1) {
-    pTVar5 = this->vtable;
-    uVar7 = 0x20c;
+    pTVar6 = this->vtable;
+    arg_2 = 0x20c;
   }
   else {
     if (uVar3 == 2) {
@@ -41,10 +42,10 @@ undefined4 __thiscall TLOBaseTy::sub_004E2AD0(TLOBaseTy *this,int param_1,uint p
       goto cf_common_exit_004E2B69;
     }
     if (uVar3 != 3) goto cf_common_exit_004E2B69;
-    pTVar5 = this->vtable;
-    uVar7 = 0x38f;
+    pTVar6 = this->vtable;
+    arg_2 = 0x38f;
   }
-  (*pTVar5->vfunc_90)(this,4,uVar7);
+  (*pTVar6->vfunc_90)(this,4,arg_2);
 cf_common_exit_004E2B69:
   if (DAT_008117bc == nullptr) {
     return 0;
@@ -55,8 +56,8 @@ cf_common_exit_004E2B69:
   local_10 = *(undefined2 *)&this->field_0024;
   local_14 = 0x5de6;
   local_c = (undefined2)param_2;
-  uVar7 = thunk_FUN_004e60d0((int)pbVar1,param_2);
-  local_a = (short)uVar7 + 1;
+  uVar4 = thunk_FUN_004e60d0((int)pbVar1,param_2);
+  local_a = (short)uVar4 + 1;
   /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
   (**(code **)*DAT_008117bc)(local_24);
   return 0;

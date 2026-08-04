@@ -14,20 +14,20 @@ boundary and concrete before/after forms.
 ## Current post-ABI snapshot
 
 The last completed corpus contains 5,712 function bodies.
-`pseudocode_idioms.jsonl` records 5,200 function/kind rows across 3,182 bodies
-(55.7%); kinds overlap:
+`pseudocode_idioms.jsonl` records 5,146 function/kind rows across 3,144 bodies
+(55.0%); kinds overlap:
 
 | Remaining presentation class | Functions | Occurrences | Main next step |
 | --- | ---: | ---: | --- |
-| Stack-slot lifetime reuse | 468 | 4,297 | Split only address-stable HighFunction merge groups; inseparable groups remain presentation debt. |
-| Raw pointer + constant offset | 1,167 | 3,031 | Recover compatible pointer families; retain real byte-buffer arithmetic. |
-| Packed/piece/CONCAT value | 283 | 1,510 | Use discriminator-local union facets, bit extraction, or explicit unaligned access. |
-| Raw indirect call | 835 | 2,103 | Recover callback/COM/vtable slot prototypes; audit likely unclassified runtime code separately. |
-| Residual return-width artifact | 147 | 1,078 | Distinguish return width, register clobbers, x87 stack outputs, and merged high variables. |
+| Stack-slot lifetime reuse | 469 | 4,312 | Split only address-stable HighFunction merge groups; inseparable groups remain presentation debt. |
+| Raw pointer + constant offset | 959 | 2,384 | Recover compatible pointer families; retain real byte-buffer arithmetic. |
+| Packed/piece/CONCAT value | 477 | 2,059 | Use discriminator-local union facets, bit extraction, or explicit unaligned access. |
+| Raw indirect call | 826 | 2,053 | Recover callback/COM/vtable slot prototypes; audit likely unclassified runtime code separately. |
+| Residual return-width artifact | 146 | 1,052 | Distinguish return width, register clobbers, x87 stack outputs, and merged high variables. |
 | Terminal debug trap | 968 | 1,277 | Already normalized to standalone noreturn `STDebugBreak()`. |
-| Residual live-in register | 183 | 766 | Verify function boundaries, SEH/setjmp state, and calling conventions. |
-| Runtime-stride DArray indexing | 183 | 311 | Present through a typed `DArrayAt<T>` source helper; a static datatype cannot fold it. |
-| Flattened player record array | 52 | 87 | Recompose only after exact base, stride, field, and index proof. |
+| Residual live-in register | 183 | 758 | Verify function boundaries, SEH/setjmp state, and calling conventions. |
+| Runtime-stride DArray indexing | 230 | 434 | Present through a typed `DArrayAt<T>` source helper; a static datatype cannot fold it. |
+| Flattened player record array | 55 | 92 | Recompose only after exact base, stride, field, and index proof. |
 
 ## Broad recursive textual audit
 
@@ -38,16 +38,16 @@ numbers of unique recovered objects:
 
 | Residual class | Functions | Matches | Interpretation |
 | --- | ---: | ---: | --- |
-| Scalar cast over a generic structure field | 809 | 5,602 | Usually a wrong receiver/pointer family or a field-width overlap; prioritize this structural cluster. |
-| Any generic `field_XXXX` name | 2,339 | 57,539 | Mostly semantic naming debt; a generic name alone does not mean the width/layout is wrong. |
-| Generic global aggregate | 47 | 172 | Singleton/aggregate layout is present but its global and/or member semantics are unnamed. |
-| Anonymous recovered type | 1,347 | 5,553 | Cross-function shape-family consolidation remains incomplete. |
-| Explicit `undefined*` type | 3,647 | 18,054 | Mixed prototype, local, field, and return-type debt; not all instances are independently actionable. |
-| Generic `DAT/PTR/UNK` symbol | 1,630 | 16,645 | Requires scalar/string/table/singleton/array classification before naming. |
+| Scalar cast over a generic structure field | 809 | 4,873 | Usually a wrong receiver/pointer family or a field-width overlap; prioritize this structural cluster. |
+| Any generic `field_XXXX` name | 2,450 | 60,514 | Mostly semantic naming debt; a generic name alone does not mean the width/layout is wrong. |
+| Generic global aggregate | 36 | 154 | Singleton/aggregate layout is present but its global and/or member semantics are unnamed. |
+| Anonymous recovered type | 1,326 | 4,830 | Cross-function shape-family consolidation remains incomplete. |
+| Explicit `undefined*` type | 3,590 | 16,319 | Mixed prototype, local, field, and return-type debt; not all instances are independently actionable. |
+| Generic `DAT/PTR/UNK` symbol | 1,577 | 15,890 | Requires scalar/string/table/singleton/array classification before naming. |
 | `goto` or `LAB_*` control-flow label | 917 | 11,723 | Includes legitimate optimized shared tails as well as still-unstructured CFGs. |
-| Raw indirect call spelling | 835 | 2,103 | Callback/vtable/function-pointer prototype debt. |
+| Raw indirect call spelling | 826 | 2,092 | Callback/vtable/function-pointer prototype debt. |
 | Unresolved register input | 183 | 766 | ABI, boundary, or SEH/setjmp live-in debt. |
-| Packed/unaligned or partial-piece spelling | 283 | 1,510 | Packed access, missing stack aggregate, or SSA merge. |
+| Packed/unaligned or partial-piece spelling | 293 | 1,394 | Packed access, missing stack aggregate, or SSA merge. |
 
 `STDecompExport` now regenerates `decomp_quality_summary.json` and
 `decomp_quality_issues.jsonl` from this recursive pass. The JSONL rows carry the
@@ -84,7 +84,7 @@ historical; use the regenerated `decomp_quality_summary.json` and
 | Raw form / cause | Matches | Functions | General treatment |
 | --- | ---: | ---: | --- |
 | Direct nested dereference (`*(T *)(*(U *)(base+a)+b)`) | 969 | 432 | `STPointerShapeAnalyzer` now records `a` as a pointer field and recovers a child layout at `b`. `STClassLayoutAnalyzer` does the same for fields reached from `this`. |
-| Three-or-more-level direct dereference | 31 | 21 | Kept as evidence after the first recovered pointee. Recursive anonymous type synthesis is not auto-applied yet; many current sites are COM/table chains where vtable or external interface typing is the stronger solution. |
+| Three-or-more-level direct dereference | 31 | 21 | `STRecursivePointeeAnalyzer/Applier` now handles the strict linked-list subset: one generated owner field, repeated self-link traversal, and at least two non-conflicting partial generated views. COM/table chains and geometry-only matches remain review-only because vtable or external-interface typing is stronger evidence. |
 | Pointer loaded into a scalar temporary and dereferenced later | 549 | 354 | Pointer aliases are now followed even when Ghidra calls the loaded value `int`, `uint`, or `undefined4`; simple copies/casts are propagated. |
 | Inlined `DArrayTy` addressing (`elementSize * index + data`) | 541 | 271 | Recognized as the existing `DArrayTy`, both for persistent pointer targets and class pointer fields. It is not emitted as another anonymous structure. |
 | Raw constant access relative to `this` | 11,219 | 1,122 | Direct fields belong to `STClassLayoutAnalyzer`; nested pointee fields are now recovered too. Residue usually means a wrong owner/calling convention, a preserved manual class, or conflicting/overlapping widths. |
@@ -96,6 +96,8 @@ historical; use the regenerated `decomp_quality_summary.json` and
 | Raw indirect/vtable call | 2,658 | 856 | `STVTable*` and `STVirtualMethod*` recover physical table ownership and slots. `STIndirectCall*` refines trusted physical slots and may install neutral thiscall/stdcall ABIs from non-contradictory machine evidence; `STHiddenThis*` handles ownerless ECX receivers. When longer related tables prove a polymorphic tail beyond a physical base table, the inferred `<Owner>DispatchVTable` and tail ABIs are audit-only: they never replace the class vptr or mutate synthetic slot types. A raw call by itself is not enough to invent a semantic class or callback signature. |
 | Callback passed as a stack parameter | current proposals | current proposals | `STFunctionPointerParameterAnalyzer/Applier` requires every observed direct callsite to pass an exact function address or null into the same callee parameter and requires the callee to call through it with one argument count. At least two exact target sites must share one ECX/`RET n` machine ABI; cdecl counts also need matching caller cleanup. Unknown callsites, concrete/manual parameters, or signature disagreement remain review-only. |
 | Stored non-vtable callback | current proposals | current proposals | `STFunctionPointerFieldAnalyzer/Applier` requires an exact function address stored into a generated structure field and a `CALLIND` loaded from the identical field. A machine STORE prefilter covers direct and register-mediated address materialization; call-only decompilation is skipped until at least one exact stored target is proven, and call-only rows are not proposals. Every stored target must share one imported or independently recovered ABI; bare `USER_DEFINED` source is not ABI evidence. The report preserves rejected stores and their reasons. A store without a call or a manual/concrete field remains review-only. |
+| Allocation-backed packed record | current proposals | current proposals | `STAllocationRecordAnalyzer/Applier` follows one neutral allocator result, an exact source-parameter copy from offset zero, packed overwrites inside that fixed span, and the unique returned root. It types only that producer/consumer boundary and keeps the shared allocator as `void *`. Out-parameter allocations, reallocations, overlaps, manual/imported baselines, and incomplete copies remain in the machine audit. |
+| Recursive linked-node root | 4 rooted candidates | 269 candidate functions | `STRecursivePointeeAnalyzer/Applier` keys identity to one hash-owned owner field, proves repeated self-link traversal, and merges only non-conflicting partial generated views observed at that exact root. The accepted run installs one 76-byte node with `Node *next` at offset zero; three rows remain review-only. `STClassLayout` preserves that hash-owned node over generic pointer evidence. `STLocalLifetimeAnalyzer/Applier` now re-proves exact generated-layout hashes and field load/store/address/cast anchors before isolating a `Node *` merge group. The accepted `006DDD50` witness no longer contains compounded undefined pointer towers; one inseparable `Node *`/`Node **` group correctly remains a conflict. |
 | Exact nested copy / zero span | current proposals | current proposals | `STInlineAggregateAnalyzer` installs a nested by-value member only when `REP MOVS` copies one complete independently typed structure into an automation-owned class range. `REP STOS` contributes an exact extent, but becomes a fixed array only when `STClassArrayAnalyzer` independently proves a stride and indexed use. |
 | Already typed `->vtable->slot` call | 822 | 225 | This is successful recovery, not residue. Ghidra intentionally prints the receiver as the first argument of an indirect `__thiscall` function pointer. |
 | Decompiled partial-field syntax (`._offset_size_`) | 1,815 | 282 | This mixes real subfield operations with missing stack aggregates. Confirmed `CmdToPlsObj` copy ranges are installed as discriminator-specific structures; giant compiler temporaries and reused SSA storage still require function-specific proof. |
@@ -136,9 +138,10 @@ historical; use the regenerated `decomp_quality_summary.json` and
   current type. The result compounds through list traversal and pointer-to-link
   locals. The safe database fix is to recover the node record and distinguish
   `Node *` from `Node **`; blindly collapsing stars in exported text would hide a
-  real link-to-link variable. Function-pointer field recovery may improve nearby
-  calls, but node recovery still needs a stable allocation/owner or complete
-  pointer-shape identity.
+  real link-to-link variable. The current accepted late-renderer witness now uses
+  `RecursiveNode_*` and `->next` after address-stable lifetime splitting. One
+  inseparable link cursor remains explicit because Ghidra has not exposed a safe
+  distinct `Node **` lifetime.
 - Unaligned stores such as `*(uint *)(buffer + 1)`, `*(byte *)(buffer + 5)`, and
   `*(int *)(buffer + 0x4a)` are often genuine packed serialization. In
   `BossDataPack`, the machine first copies a fixed `0x85`-byte header, overwrites

@@ -8,7 +8,7 @@ int __cdecl FUN_0064a6f0(int *param_1,int param_2)
 
 {
   int exceptionCode;
-  undefined4 *puVar1;
+  void *pvVar1;
   InternalExceptionFrame local_48;
 
   local_48.previous = g_currentExceptionFrame;
@@ -24,8 +24,8 @@ int __cdecl FUN_0064a6f0(int *param_1,int param_2)
       param_2 = 10;
     }
     *param_1 = param_2;
-    puVar1 = Library::DKW::LIB::FUN_006aac10(param_2 * 5);
-    param_1[2] = (int)puVar1;
+    pvVar1 = Library::DKW::LIB::MemAllocClear(param_2 * 5);
+    param_1[2] = (int)pvVar1;
     g_currentExceptionFrame = local_48.previous;
     return 0;
   }

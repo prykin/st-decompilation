@@ -15,7 +15,7 @@ void __thiscall STPlaySystemC::AddToRep(STPlaySystemC *this,undefined4 *param_1,
   code *pcVar1;
   STPlaySystemC *pSVar2;
   int iVar3;
-  undefined4 *puVar4;
+  void *pvVar4;
   int iVar5;
   uint uVar6;
   byte *puVar7;
@@ -29,13 +29,13 @@ void __thiscall STPlaySystemC::AddToRep(STPlaySystemC *this,undefined4 *param_1,
     local_c = this;
     iVar3 = Library::MSVCRT::__setjmp3(local_50.jumpBuffer,0);
     if (iVar3 == 0) {
-      puVar4 = Library::DKW::LIB::FUN_006aac10(param_2 + 8);
+      pvVar4 = Library::DKW::LIB::MemAllocClear(param_2 + 8);
       pSVar2 = local_c;
-      puVar4[1] = param_2;
-      puVar7 = (byte *)(puVar4 + 2);
+      *(uint *)((int)pvVar4 + 4) = param_2;
+      puVar7 = (byte *)((int)pvVar4 + 8);
       memmove(puVar7, param_1, param_2); /* compiler REP MOVS byte copy */
       puVar7 = (byte *)(&local_c->field_0065);
-      FUN_006b9910(puVar7,(int)puVar4);
+      FUN_006b9910(puVar7,(int)pvVar4);
       uVar6 = pSVar2->field_0069 + 1;
       pSVar2->field_0069 = uVar6;
       if (0xd2 < uVar6) {

@@ -1,6 +1,6 @@
 
 int * FUN_0055f0c0(int *param_1,uint param_2,uint param_3,int param_4,uint param_5,
-                  undefined *param_6,undefined *param_7)
+                  callback_0055F0C0_p5 *param_6,callback_0055F0C0_p6 *param_7)
 
 {
   uint *puVar1;
@@ -139,15 +139,12 @@ int * FUN_0055f0c0(int *param_1,uint param_2,uint param_3,int param_4,uint param
           if (iVar5 <= iVar3) break;
           *local_64 = iVar3;
           local_24[iVar3] = -1;
-          /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-          (*(code *)param_7)(local_30,local_50,local_24,iVar3);
+          (*param_7)(local_30,local_50,local_24,iVar3);
           local_50 = local_50 + 1;
           local_64 = local_64 + 1;
         } while (local_50 < (int)param_3);
       }
-      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-      if (((int)param_3 <= local_50) &&
-         (iVar3 = (*(code *)param_6)(local_30,param_3), local_2c < iVar3)) {
+      if (((int)param_3 <= local_50) && (iVar3 = (*param_6)(local_30,param_3), local_2c < iVar3)) {
         piVar4 = local_30;
         piVar7 = local_44[0];
         for (uVar2 = param_3 & 0x3fffffff; uVar2 != 0; uVar2 = uVar2 - 1) {

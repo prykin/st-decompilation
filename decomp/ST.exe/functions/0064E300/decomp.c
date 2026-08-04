@@ -24,8 +24,8 @@ uint FUN_0064e300(int param_1,char *param_2,ushort param_3,char param_4,ushort p
   uint local_20 [3];
   void *local_14;
   uint local_10;
-  byte *local_c;
-  AnonShape_GLOBAL_008489C4_F7BABFAC *local_8;
+  AllocationRecord_006684E0 *local_c;
+  AllocationRecord_006684E0 *local_8;
 
   local_10 = param_7;
   local_8 = nullptr;
@@ -54,7 +54,8 @@ uint FUN_0064e300(int param_1,char *param_2,ushort param_3,char param_4,ushort p
   if ((param_6 < '\0') || (iVar1 = (int)param_6, '\a' < param_6)) {
     iVar1 = param_1;
   }
-  local_8 = thunk_FUN_00668180(param_2,param_3,(short)param_4,param_5,(byte)iVar1);
+  local_8 = (AllocationRecord_006684E0 *)
+            thunk_FUN_00668180(param_2,param_3,(short)param_4,param_5,(byte)iVar1);
   *(int *)&local_8->field_0x4 = param_1;
   *(uint *)&local_8->field_0x77 = uVar2;
   local_c = FltDataPack(local_8,local_20);

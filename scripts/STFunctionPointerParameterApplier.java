@@ -452,10 +452,11 @@ public class STFunctionPointerParameterApplier extends GhidraScript {
 
     private boolean genericParameter(Parameter parameter) {
         DataType type = unwrap(parameter.getFormalDataType());
-        if (type instanceof Undefined) return type.getLength() == pointerSize;
+        if (Undefined.isUndefined(type)) return type.getLength() == pointerSize;
         if (!(type instanceof Pointer pointer)) return false;
         DataType pointed = unwrap(pointer.getDataType());
-        return pointed == null || pointed instanceof VoidDataType || pointed instanceof Undefined;
+        return pointed == null || pointed instanceof VoidDataType ||
+            Undefined.isUndefined(pointed);
     }
 
     private boolean generatedParameter(Parameter parameter) {

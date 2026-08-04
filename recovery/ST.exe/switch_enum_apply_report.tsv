@@ -76,7 +76,7 @@ function_address	enum_name	status	detail
 0044E980	STBoatC_GetVisualInfo_param_2Enum	unchanged	used equivalent /SubmarineTitans/Recovered/Enums/STBoatC_GetVisualInfo_param_2Enum; parameter already uses enum
 0044EE30	STBoatC_field_0459State	unchanged	used equivalent /SubmarineTitans/Recovered/Enums/STBoatC_field_0459State; field already uses enum
 0044EE30	STBoatC_field_045DState	unchanged	used equivalent /SubmarineTitans/Recovered/Enums/STBoatC_field_045DState; field already uses enum
-0044EE30	STBoatC_GetMessage_iVar12Enum	unchanged	used equivalent /SubmarineTitans/Recovered/Enums/STBoatC_GetMessage_iVar12Enum; generated enum domain already current
+0044EE30	STBoatC_GetMessage_iVar13Enum	unchanged	used equivalent /SubmarineTitans/Recovered/Enums/STBoatC_GetMessage_iVar13Enum; generated enum domain already current
 0044EE30	STBoatC_GetMessage_switch_1Enum	unchanged	used equivalent /SubmarineTitans/Recovered/Enums/STBoatC_GetMessage_switch_1Enum; generated enum domain already current
 0044EE30	STBoatC_GetMessage_switch_28Enum	unchanged	used equivalent /SubmarineTitans/Recovered/Enums/STBoatC_GetMessage_switch_28Enum; generated enum domain already current
 0044EE30	STBoatC_GetMessage_switch_29Enum	unchanged	used equivalent /SubmarineTitans/Recovered/Enums/STBoatC_GetMessage_switch_29Enum; generated enum domain already current
@@ -86,7 +86,7 @@ function_address	enum_name	status	detail
 0044EE30	STBoatC_GetMessage_switch_32Enum	unchanged	used equivalent /SubmarineTitans/Recovered/Enums/STBoatC_GetMessage_switch_32Enum; generated enum domain already current
 0044EE30	STBoatC_GetMessage_switch_33Enum	unchanged	used equivalent /SubmarineTitans/Recovered/Enums/STBoatC_GetMessage_switch_33Enum; generated enum domain already current
 0044EE30	STBoatC_GetMessage_switch_34Enum	unchanged	used equivalent /SubmarineTitans/Recovered/Enums/STBoatC_GetMessage_switch_34Enum; generated enum domain already current
-0044EE30	STBoatC_GetMessage_iVar12Enum	disabled	apply=0
+0044EE30	STBoatC_GetMessage_iVar13Enum	disabled	apply=0
 0044EE30	STBoatC_GetMessage_switch_1Enum	disabled	apply=0
 0044EE30	STBoatC_GetMessage_switch_2Enum	disabled	apply=0
 0044EE30	STBoatC_GetMessage_switch_28Enum	disabled	apply=0
@@ -293,7 +293,7 @@ function_address	enum_name	status	detail
 004E16D0	Global_sub_004E16D0_switch_0Enum	disabled	apply=0
 004E1930	Global_sub_004E1930_switch_0Enum	unchanged	used equivalent /SubmarineTitans/Recovered/Enums/Global_sub_004E1930_switch_0Enum; generated enum domain already current
 004E1930	Global_sub_004E1930_switch_0Enum	disabled	apply=0
-004E4B60	AnonShape_004E4B60_EABE8E44_field_0245State	disabled	apply=0
+004E4B60	STMineSetC_field_0245State	unchanged	used equivalent /SubmarineTitans/Recovered/Enums/STMineSetC_field_0245State; field already uses enum
 004E80F0	Global_sub_004E80F0_param_2Enum	unchanged	used equivalent /SubmarineTitans/Recovered/Enums/Global_sub_004E80F0_param_2Enum; parameter already uses enum
 004E9CE0	TLOBaseTy_field_046CState	unchanged	used equivalent /SubmarineTitans/Recovered/Enums/TLOBaseTy_field_046CState; field already uses enum
 004EAF90	AnonShape_004EAF90_D23494A9_field_04D0State	disabled	apply=0
@@ -795,8 +795,8 @@ function_address	enum_name	status	detail
 006406D0	STSprGameObjC_field_0259State	unchanged	used equivalent /SubmarineTitans/Recovered/Enums/STSprGameObjC_field_0259State; field already uses enum
 006406D0	STTorpC_GetMessage_SVar4Enum	unchanged	used equivalent /SubmarineTitans/Recovered/Enums/STTorpC_GetMessage_SVar4Enum; generated enum domain already current
 006406D0	STTorpC_GetMessage_SVar4Enum	disabled	apply=0
-00645880	Global_sub_00645880_iVar4Enum	unchanged	used equivalent /SubmarineTitans/Recovered/Enums/Global_sub_00645880_iVar4Enum; generated enum domain already current
-00645880	Global_sub_00645880_iVar4Enum	disabled	apply=0
+00645880	Global_sub_00645880_uVar3Enum	unchanged	used equivalent /SubmarineTitans/Recovered/Enums/Global_sub_00645880_uVar3Enum; generated enum domain already current
+00645880	Global_sub_00645880_uVar3Enum	disabled	apply=0
 00645D30	Global_sub_00645D30_param_2Enum	unchanged	used equivalent /SubmarineTitans/Recovered/Enums/Global_sub_00645D30_param_2Enum; parameter already uses enum
 006461E0	STVolcanoC_field_00A9State	unchanged	used equivalent /SubmarineTitans/Recovered/Enums/STVolcanoC_field_00A9State; field already uses enum
 00648FE0	Global_CreateAi_switch_0Enum	unchanged	used equivalent /SubmarineTitans/Recovered/Enums/Global_CreateAi_switch_0Enum; generated enum domain already current

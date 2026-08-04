@@ -43,7 +43,6 @@ int __thiscall STBoatC::LoadRC(STBoatC *this,int *param_1,undefined4 param_2,int
   int iVar21;
   short sVar22;
   byte bVar23;
-  undefined4 uVar24;
   undefined4 local_2c [2];
   undefined4 local_24;
   short local_20;
@@ -822,16 +821,16 @@ LAB_00468b38:
               iVar7 = *(int *)((int)this->field_06CB + 0x2c);
               if (iVar7 == 8) {
                 pSVar14 = this->vtable;
-                uVar24 = 0xfc;
+                uVar4 = 0xfc;
 LAB_0046739a:
-                (*pSVar14->vfunc_90)(this,3,uVar24);
+                (*pSVar14->vfunc_90)(this,3,uVar4);
               }
               else if (iVar7 == 0x14) {
                 this->vfunc_90(3,0x160);
               }
               else if (iVar7 == 0x1a) {
                 pSVar14 = this->vtable;
-                uVar24 = 0x19f;
+                uVar4 = 0x19f;
                 goto LAB_0046739a;
               }
             }
@@ -1559,16 +1558,16 @@ LAB_004691ae:
                 iVar5 = *(int *)((int)this->field_06CB + 0x2c);
                 if (iVar5 == 8) {
                   pSVar14 = this->vtable;
-                  uVar24 = 0xfb;
+                  uVar4 = 0xfb;
 LAB_004692be:
-                  (*pSVar14->vfunc_90)(this,3,uVar24);
+                  (*pSVar14->vfunc_90)(this,3,uVar4);
                 }
                 else if (iVar5 == 0x14) {
                   this->vfunc_90(3,0x15f);
                 }
                 else if (iVar5 == 0x1a) {
                   pSVar14 = this->vtable;
-                  uVar24 = 0x19e;
+                  uVar4 = 0x19e;
                   goto LAB_004692be;
                 }
               }

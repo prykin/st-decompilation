@@ -27,12 +27,12 @@ void __fastcall
 FUN_0065fa10(AnonShape_0065FA10_37C5A4D3 *param_1,int param_2,int param_3,int param_4,int param_5)
 
 {
-  STGroupBoatC *arg_1;
+  STGroupBoatC *pSVar1;
 
   if ((param_1->field_007D != 0xfffe) && (g_allPlayers_007FA174 != nullptr)) {
-    arg_1 = thunk_FUN_0042b760(param_1->field_0024,param_1->field_007D);
-    if (arg_1 != nullptr) {
-      arg_1->vfunc_18(param_3,param_4,param_5);
+    pSVar1 = thunk_FUN_0042b760(param_1->field_0024,param_1->field_007D);
+    if (pSVar1 != nullptr) {
+      (*pSVar1->vtable->vfunc_18)((short)pSVar1,(short)param_3,(short)param_4,(short)param_5);
     }
   }
   return;

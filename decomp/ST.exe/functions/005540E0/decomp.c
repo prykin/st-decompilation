@@ -56,7 +56,7 @@ uint * __thiscall cLoadingTy::new(cLoadingTy *this,uint param_1,char *text,uint 
     }
     STDebugBreak(); /* noreturn in standalone pseudocode */
   }
-  local_8 = Library::DKW::LIB::FUN_006aac10(param_1);
+  local_8 = Library::DKW::LIB::MemAllocClear(param_1);
   this_00 = g_cMf32_00806780;
   if (DAT_0080874e == '\x01') {
     local_c = 0;
@@ -111,6 +111,7 @@ uint * __thiscall cLoadingTy::new(cLoadingTy *this,uint param_1,char *text,uint 
       pcVar10 = pcVar9 + -uVar4;
       pcVar9 = local_253;
       memmove(pcVar9, pcVar10, uVar4); /* compiler REP MOVS byte copy */
+      uVar8 = 0;
       cMf32::ToBeg(g_cMf32_00806780,FUN_006f2d10,&local_254);
       puVar5 = cMf32::RecNameGetNext(this_00);
       while (puVar5 != nullptr) {

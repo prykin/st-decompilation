@@ -5,19 +5,23 @@
    [STSourceProvenanceApplier end]
 
    [STPrototypeApplier] Propagated parameter 0.
-   Evidence: 0067D880 -> 0067D1D0 @ 0067D8F6 */
+   Evidence: 0067D880 -> 0067D1D0 @ 0067D8F6
 
-undefined4 * __cdecl FUN_0067d1d0(ushort *param_1)
+   [STAllocationRecordApplier] Consumer-local packed record
+   /SubmarineTitans/Recovered/AllocationRecords/AllocationRecord_0067D1D0.
+   Evidence: exact 299-byte source-parameter copy at 0067D222..0067D226 */
+
+AllocationRecord_0067D1D0 * __cdecl FUN_0067d1d0(AllocationRecord_0067D1D0 *param_1)
 
 {
-  ushort uVar1;
-  int iVar2;
-  undefined4 *puVar3;
-  undefined4 uVar4;
-  DArrayTy *pDVar5;
-  undefined4 *puVar6;
-  AnonShape_0067D1D0_21940C5B *pAVar7;
-  ushort *puVar8;
+  int iVar1;
+  AllocationRecord_0065CB00 *pAVar2;
+  undefined4 uVar3;
+  DArrayTy *pDVar4;
+  AllocationRecord_00690FC0 *pAVar5;
+  AllocationRecord_0067D1D0 *pAVar6;
+  undefined4 *puVar7;
+  AnonShape_0067D1D0_21940C5B *pAVar8;
   uint uVar9;
   bool bVar10;
   InternalExceptionFrame local_4c;
@@ -26,69 +30,68 @@ undefined4 * __cdecl FUN_0067d1d0(ushort *param_1)
   local_8 = nullptr;
   local_4c.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_4c;
-  iVar2 = Library::MSVCRT::__setjmp3(local_4c.jumpBuffer,0);
-  if (iVar2 == 0) {
-    local_8 = (AnonShape_0067D1D0_21940C5B *)Library::DKW::LIB::FUN_006aac10(299);
-    puVar8 = param_1;
-    pAVar7 = local_8;
-    for (iVar2 = 0x4a; iVar2 != 0; iVar2 = iVar2 + -1) {
-      uVar1 = puVar8[1];
-      *(ushort *)&pAVar7->field_0x0 = puVar8[0];
-      *(ushort *)&pAVar7->field_0x2 = uVar1;
-      puVar8 = puVar8 + 2;
-      pAVar7 = (AnonShape_0067D1D0_21940C5B *)&pAVar7->field_0x4;
+  iVar1 = Library::MSVCRT::__setjmp3(local_4c.jumpBuffer,0);
+  if (iVar1 == 0) {
+    local_8 = Library::DKW::LIB::MemAllocClear(299);
+    pAVar6 = param_1;
+    pAVar8 = local_8;
+    for (iVar1 = 0x4a; iVar1 != 0; iVar1 = iVar1 + -1) {
+      *(undefined4 *)pAVar8 = *(undefined4 *)pAVar6;
+      pAVar6 = (AllocationRecord_0067D1D0 *)&pAVar6->field_0x4;
+      pAVar8 = (AnonShape_0067D1D0_21940C5B *)&pAVar8->field_0x4;
     }
-    *(ushort *)pAVar7 = *puVar8;
-    pAVar7->field_0x2 = (char)puVar8[1];
+    *(undefined2 *)pAVar8 = *(undefined2 *)pAVar6;
+    pAVar8->field_0x2 = pAVar6->field_0x2;
     *(undefined4 *)&local_8->field_0x14 = 299;
     local_8->field_0x18 = 2;
-    puVar3 = thunk_FUN_0065cb00((undefined4 *)
-                                (*(int *)&local_8[1].field_0x76 + 0x12a + (int)param_1));
-    iVar2 = 0;
-    *(undefined4 **)&local_8[1].field_0x7e = puVar3;
-    pAVar7 = local_8;
+    pAVar2 = thunk_FUN_0065cb00((AllocationRecord_0065CB00 *)
+                                (&param_1->field_0x12a + local_8->field_00FE));
+    iVar1 = 0;
+    local_8->field_0106 = pAVar2;
+    pAVar6 = (AllocationRecord_0067D1D0 *)local_8;
     do {
-      if (*(int *)(&pAVar7[1].field_0x3a + iVar2) != 0) {
-        uVar4 = FUN_006b0060(nullptr,
-                             (uint *)(*(int *)(&pAVar7[1].field_0x3e + iVar2) + 0x12a + (int)param_1
-                                     ));
-        *(undefined4 *)(&local_8[1].field_0x3a + iVar2) = uVar4;
-        pAVar7 = local_8;
+      if (*(int *)((int)&pAVar6->field_00C2 + iVar1) != 0) {
+        uVar3 = FUN_006b0060(nullptr,
+                             (uint *)(&param_1->field_0x12a + *(int *)(&pAVar6->field_0xc6 + iVar1))
+                            );
+        *(undefined4 *)((int)&local_8->field_00C2 + iVar1) = uVar3;
+        pAVar6 = (AllocationRecord_0067D1D0 *)local_8;
       }
-      iVar2 = iVar2 + 0xc;
-    } while (iVar2 < 0x3c);
-    if (*(int *)&pAVar7[1].field_0x3a == 0) {
-      pDVar5 = Library::DKW::TBL::DArrayCreate(nullptr,10,0x10,5);
-      *(DArrayTy **)&local_8[1].field_0x3a = pDVar5;
-      pAVar7 = local_8;
+      iVar1 = iVar1 + 0xc;
+    } while (iVar1 < 0x3c);
+    if (pAVar6->field_00C2 == 0) {
+      pDVar4 = Library::DKW::TBL::DArrayCreate(nullptr,10,0x10,5);
+      local_8->field_00C2 = pDVar4;
+      pAVar6 = (AllocationRecord_0067D1D0 *)local_8;
     }
-    iVar2 = *(int *)&pAVar7[1].field_0x3a;
+    iVar1 = pAVar6->field_00C2;
     uVar9 = 0;
-    if (0 < *(int *)(iVar2 + 0xc)) {
-      bVar10 = *(int *)(iVar2 + 0xc) != 0;
+    if (0 < *(int *)(iVar1 + 0xc)) {
+      bVar10 = *(int *)(iVar1 + 0xc) != 0;
       do {
         if (bVar10) {
-          puVar3 = (undefined4 *)(*(int *)(iVar2 + 8) * uVar9 + *(int *)(iVar2 + 0x1c));
+          puVar7 = (undefined4 *)(*(int *)(iVar1 + 8) * uVar9 + *(int *)(iVar1 + 0x1c));
         }
         else {
-          puVar3 = nullptr;
+          puVar7 = nullptr;
         }
-        if (puVar3[1] == 0) {
-          puVar6 = thunk_FUN_00690fc0((undefined4 *)(puVar3[2] + 0x12a + (int)param_1));
-          *puVar3 = puVar6;
-          pAVar7 = local_8;
+        if (puVar7[1] == 0) {
+          pAVar5 = thunk_FUN_00690fc0((AllocationRecord_00690FC0 *)
+                                      (&param_1->field_0x12a + puVar7[2]));
+          *puVar7 = pAVar5;
+          pAVar6 = (AllocationRecord_0067D1D0 *)local_8;
         }
-        iVar2 = *(int *)&pAVar7[1].field_0x3a;
+        iVar1 = pAVar6->field_00C2;
         uVar9 = uVar9 + 1;
-        bVar10 = uVar9 < *(uint *)(iVar2 + 0xc);
-      } while ((int)uVar9 < (int)*(uint *)(iVar2 + 0xc));
+        bVar10 = uVar9 < *(uint *)(iVar1 + 0xc);
+      } while ((int)uVar9 < (int)*(uint *)(iVar1 + 0xc));
     }
     g_currentExceptionFrame = local_4c.previous;
-    return (undefined4 *)pAVar7;
+    return pAVar6;
   }
   g_currentExceptionFrame = local_4c.previous;
   thunk_FUN_0067d160((int *)&local_8);
-  RaiseInternalException(iVar2,0,"E:\\__titans\\ai\\ai_plr_d.cpp",0x77);
+  RaiseInternalException(iVar1,0,"E:\\__titans\\ai\\ai_plr_d.cpp",0x77);
   return nullptr;
 }
 

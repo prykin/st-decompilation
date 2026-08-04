@@ -137,7 +137,7 @@ LAB_0054b366:
       CVar4 = CASE_47;
     }
     else {
-      pSVar6->vfunc_68(&local_30);
+      pSVar6->vfunc_68((short)&local_30);
       if (this_00->field_049E != local_30) {
         this_00->field_049E = local_30;
         module = g_module_00807618;

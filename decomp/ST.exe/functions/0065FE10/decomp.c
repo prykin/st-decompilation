@@ -81,7 +81,7 @@ LAB_0065fec9:
       if (((param_1->field_007D != 0xfffe) && (g_allPlayers_007FA174 != nullptr)) &&
          (this = thunk_FUN_0042b760(*(char *)&param_1->field_0024,param_1->field_007D),
          this != nullptr)) {
-        this->sub_00498D20(8,local_38);
+        this->sub_00498D20(8,(short)local_38);
         goto LAB_0065ff72;
       }
     }

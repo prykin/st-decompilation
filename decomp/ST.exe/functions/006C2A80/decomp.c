@@ -11,15 +11,15 @@
 uint FUN_006c2a80(int *param_1,DDXContext *param_2)
 
 {
-  undefined4 *puVar1;
+  void *pvVar1;
 
   *param_1 = 0;
-  puVar1 = Library::DKW::LIB::FUN_006aac10(0xb8);
-  if (puVar1 == nullptr) {
+  pvVar1 = Library::DKW::LIB::MemAllocClear(0xb8);
+  if (pvVar1 == nullptr) {
     return 0xfffffffe;
   }
-  puVar1[1] = param_2;
-  *param_1 = (int)puVar1;
+  *(DDXContext **)((int)pvVar1 + 4) = param_2;
+  *param_1 = (int)pvVar1;
   return 0;
 }
 

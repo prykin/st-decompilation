@@ -17,11 +17,12 @@ void __cdecl CreateMiniMap(short *param_1,int *param_2,uint param_3,byte *param_
   int iVar5;
   AnonShape_006DBCA0_EF06575F *pAVar6;
   ST3DSMAPContext *this;
-  undefined4 *puVar7;
+  void *pvVar7;
   uint uVar8;
   int *piVar9;
   int iVar10;
   undefined4 *puVar11;
+  undefined4 *puVar12;
   InternalExceptionFrame local_68;
   uint local_24;
   int local_20;
@@ -85,10 +86,10 @@ void __cdecl CreateMiniMap(short *param_1,int *param_2,uint param_3,byte *param_
     if (0 < *(int *)((int)param_1 + 0x455)) {
       piVar9 = (int *)((int)param_1 + 0x459);
       do {
-        puVar7 = (undefined4 *)*piVar9;
-        if ((puVar7 != nullptr) && (*(short *)(puVar7 + 2) != 0)) {
-          *puVar7 = this->field_0140;
-          this->field_0140 = puVar7;
+        puVar11 = (undefined4 *)*piVar9;
+        if ((puVar11 != nullptr) && (*(short *)(puVar11 + 2) != 0)) {
+          *puVar11 = this->field_0140;
+          this->field_0140 = puVar11;
           this->field_013C = this->field_013C + 1;
         }
         iVar5 = iVar5 + 1;
@@ -111,9 +112,9 @@ void __cdecl CreateMiniMap(short *param_1,int *param_2,uint param_3,byte *param_
                  (double)((float)(int)param_1[1] * _DAT_007904f4));
       ST3DSMAPContext::sub_006DDBE0(this);
       ST3DSMAPContext::sub_006DDD50(this);
-      puVar7 = Library::DKW::LIB::FUN_006aac10(local_24);
-      *local_c = (int)puVar7;
-      if (puVar7 == nullptr) {
+      pvVar7 = Library::DKW::LIB::MemAllocClear(local_24);
+      *local_c = (int)pvVar7;
+      if (pvVar7 == nullptr) {
         RaiseInternalException
                   (-2,g_overwriteContext_007ED77C,"E:\\__titans\\Andrey\\minimap.cpp",0x2f);
       }
@@ -121,18 +122,18 @@ void __cdecl CreateMiniMap(short *param_1,int *param_2,uint param_3,byte *param_
       if (0 < (int)param_3) {
         local_18 = 0;
         do {
-          puVar7 = (undefined4 *)(this->field_0028 * iVar5 + this->field_000C);
-          puVar11 = (undefined4 *)(*local_c + local_18);
+          puVar11 = (undefined4 *)(this->field_0028 * iVar5 + this->field_000C);
+          puVar12 = (undefined4 *)(*local_c + local_18);
           for (uVar8 = param_3 >> 2; uVar8 != 0; uVar8 = uVar8 - 1) {
-            *puVar11 = *puVar7;
-            puVar7 = puVar7 + 1;
+            *puVar12 = *puVar11;
             puVar11 = puVar11 + 1;
+            puVar12 = puVar12 + 1;
           }
           iVar5 = iVar5 + 1;
           for (uVar8 = param_3 & 3; uVar8 != 0; uVar8 = uVar8 - 1) {
-            *(undefined1 *)puVar11 = *(undefined1 *)puVar7;
-            puVar7 = (undefined4 *)((int)puVar7 + 1);
+            *(undefined1 *)puVar12 = *(undefined1 *)puVar11;
             puVar11 = (undefined4 *)((int)puVar11 + 1);
+            puVar12 = (undefined4 *)((int)puVar12 + 1);
           }
           local_18 = local_18 + param_3;
           uVar8 = local_1c;

@@ -15,7 +15,7 @@ undefined4 __thiscall FUN_00660420(void *this,undefined4 param_1)
   {
     this_00 = thunk_FUN_0042b760(*(char *)((int)this + 0x24),*(ushort *)((int)this + 0x7d));
     if (this_00 != nullptr) {
-      this_00->sub_00498D20(2,local_1c);
+      this_00->sub_00498D20(2,(short)local_1c);
       return 0;
     }
   }

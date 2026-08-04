@@ -1,0 +1,16 @@
+program=ST.exe
+functions_with_allocator_calls=237
+allocation_roots=458
+returned_allocation_roots=82
+exact_fixed_copy_roots=9
+field_complete_roots=9
+manual_or_imported_baselines=0
+overlap_or_geometry_conflicts=0
+string_moves=1036
+allocation_destination_moves=150
+parameter_source_moves=80
+exact_copy_segments=23
+proposals=9
+auto_apply=9
+note=Allocator return ABIs remain neutral. A record view belongs only to the producer/consumer function.
+note=Automatic rows require one returned allocation root, one exact source-parameter copy from offset zero, non-overlapping fields, and non-manual ABI baselines.

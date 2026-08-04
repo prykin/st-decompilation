@@ -11,10 +11,9 @@ undefined4 * __thiscall AiEventClassTy::PrepareToSave(AiEventClassTy *this,uint 
   code *pcVar1;
   AiEventClassTy *pAVar2;
   int errorCode;
-  AnonShape_0065CD10_BA40DE58 *pAVar3;
-  byte *pbVar4;
-  int iVar5;
-  undefined4 *puVar6;
+  AllocationRecord_0065CD10 *pAVar3;
+  int iVar4;
+  undefined4 *puVar5;
   InternalExceptionFrame local_4c;
   AiEventClassTy *local_8;
 
@@ -28,18 +27,18 @@ undefined4 * __thiscall AiEventClassTy::PrepareToSave(AiEventClassTy *this,uint 
       pAVar3 = nullptr;
     }
     else {
-      pAVar3 = (AnonShape_0065CD10_BA40DE58 *)&local_8->field_008C;
+      pAVar3 = (AllocationRecord_0065CD10 *)&local_8->field_008C;
     }
-    pbVar4 = EventDataPack(pAVar3,param_1);
-    *pbVar4 = 1;
-    *(uint *)(pbVar4 + 0x4e) = pAVar2->field_0088;
+    pAVar3 = EventDataPack(pAVar3,param_1);
+    *(undefined1 *)pAVar3 = 1;
+    *(uint *)&pAVar3->field_0x4e = pAVar2->field_0088;
     g_currentExceptionFrame = local_4c.previous;
-    return (undefined4 *)pbVar4;
+    return (undefined4 *)pAVar3;
   }
   g_currentExceptionFrame = local_4c.previous;
-  iVar5 = ReportDebugMessage("E:\\__titans\\ai\\ai_event.cpp",0x66,0,errorCode,"%s",
+  iVar4 = ReportDebugMessage("E:\\__titans\\ai\\ai_event.cpp",0x66,0,errorCode,"%s",
                              "AiEventClassTy::PrepareToSave");
-  if (iVar5 != 0) {
+  if (iVar4 != 0) {
     STDebugBreak(); /* noreturn in standalone pseudocode */
   }
   RaiseInternalException(errorCode,0,"E:\\__titans\\ai\\ai_event.cpp",0x67);

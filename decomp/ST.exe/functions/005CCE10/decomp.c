@@ -180,7 +180,7 @@ joined_r0x005cd0bb:
             }
           }
         }
-        (*pSVar5->field_000C->vtable->vfunc_18)(&pSVar5->field_0x1d);
+        (*pSVar5->field_000C->vtable->vfunc_18)((short)&pSVar5->field_0x1d);
         uVar10 = local_8;
       }
       local_18 = local_18 + 1;

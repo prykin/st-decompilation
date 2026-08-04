@@ -24,7 +24,7 @@ void __cdecl FUN_00648dd0(uint param_1)
     if (pAVar1 != nullptr) {
       memset(local_24, 0, 0x20); /* compiler bulk-zero initialization */
       local_14 = 0x5d97;
-      (*pAVar1->vtable->vfunc_00)(local_24);
+      (*pAVar1->vtable->vfunc_00)((short)local_24);
       thunk_FUN_0054cf70(g_playSystem_00802A38,pAVar1->field_0008);
     }
   }

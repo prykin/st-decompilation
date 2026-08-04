@@ -17,7 +17,7 @@ void __thiscall STBoatC::ChangeActivity(STBoatC *this,int param_1)
   STBoatC *this_00;
   int iVar2;
   int iVar3;
-  undefined4 arg_2;
+  undefined2 arg_2;
   InternalExceptionFrame local_4c;
   STBoatC *local_8;
 

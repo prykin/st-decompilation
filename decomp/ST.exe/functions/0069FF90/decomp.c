@@ -11,8 +11,11 @@
 void __thiscall CGenerate::sub_0069FF90(CGenerate *this)
 
 {
-  if (this->field_024A != nullptr) {
-    (*this->field_024A)(0);
+  code *pcVar1;
+
+  pcVar1 = *(code **)&(this->aggregate_001C).field_0x22e;
+  if (pcVar1 != nullptr) {
+    (*pcVar1)(0);
   }
   return;
 }

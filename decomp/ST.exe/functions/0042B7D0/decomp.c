@@ -97,7 +97,7 @@ STAllPlayersC::AddObjsToGroup
       local_2c = 0;
       local_40 = 1;
       local_38 = uVar6 & 0xffff;
-      g_playSystem_00802A38->vfunc_08(0x10ff,local_1c,&local_10,local_4c,0);
+      g_playSystem_00802A38->vfunc_08(0x10ff,(short)local_1c,(short)&local_10,(short)local_4c,0);
       Library::DKW::TBL::DArrayPut(array,uVar6 & 0xffff,&local_10);
       STGroupC::AddObjs(local_10,(DArrayTy *)groupContent,0);
       local_5 = 2;

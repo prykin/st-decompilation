@@ -194,7 +194,7 @@ int __thiscall AiEventClassTy::sub_0065BD70(AiEventClassTy *this,STMessage *mess
         }
         this->field_054F = uVar11;
 LAB_0065c021:
-        (*pSVar4->vtable->vfunc_74)(local_1c);
+        (*pSVar4->vtable->vfunc_74)((short)local_1c);
         Library::DKW::TBL::FUN_006b6020(&this->field_05B3->flags,0,local_1c);
       }
     }
@@ -224,7 +224,7 @@ LAB_0065c021:
       this->field_054B = (int)local_6;
       uVar5 = (*pSVar4->vtable->vfunc_138)();
       this->field_054F = uVar5;
-      (*pSVar4->vtable->vfunc_74)(local_1c);
+      (*pSVar4->vtable->vfunc_74)((short)local_1c);
       Library::DKW::TBL::FUN_006b6020(&this->field_05B3->flags,0,local_1c);
     }
     wVar7 = (pSVar2->arg1).words.low;
@@ -258,7 +258,7 @@ LAB_0065c021:
       /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
       this->field_0543 = (int)message._2_2_;
       this->field_054B = (int)local_6;
-      (*pSVar4->vtable->vfunc_74)(local_1c);
+      (*pSVar4->vtable->vfunc_74)((short)local_1c);
       Library::DKW::TBL::FUN_006b6020(&this->field_05B3->flags,0,local_1c);
     }
     wVar7 = (pSVar2->arg1).words.low;
@@ -399,7 +399,7 @@ LAB_0065c4bb:
       uVar11 = (uint)(ushort)pSVar4->field_0030;
     }
     this->field_0577 = uVar11;
-    (*pSVar4->vtable->vfunc_74)(local_1c);
+    (*pSVar4->vtable->vfunc_74)((short)local_1c);
     pDVar10 = this->field_05B3;
     pcVar9 = local_1c;
     uVar11 = 1;

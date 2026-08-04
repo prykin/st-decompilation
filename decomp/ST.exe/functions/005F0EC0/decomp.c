@@ -16,6 +16,7 @@ FUN_005f0ec0(int param_1,int param_2,undefined4 param_3,undefined4 param_4,undef
 {
   char cVar1;
   uint uVar3;
+  uint uVar4;
   char *pcVar5;
   char *pcVar7;
   int local_158 [7];
@@ -75,6 +76,7 @@ FUN_005f0ec0(int param_1,int param_2,undefined4 param_3,undefined4 param_4,undef
       pcVar5 = pcVar5 + -uVar3;
       pcVar7 = local_126;
       memmove(pcVar7, pcVar5, uVar3); /* compiler REP MOVS byte copy */
+      uVar4 = 0;
     }
     else {
       Library::MSVCRT::_strncpy(local_126,param_6,0xe);
@@ -110,7 +112,7 @@ FUN_005f0ec0(int param_1,int param_2,undefined4 param_3,undefined4 param_4,undef
       local_14 = 0;
     }
   }
-  g_playSystem_00802A38->vfunc_08(0x14f,0,0,local_158,0);
+  g_playSystem_00802A38->vfunc_08(0x14f,0,0,(short)local_158,0);
   return;
 }
 

@@ -20,7 +20,7 @@ AnonShape_GLOBAL_008489CC_CDF8C3F4 * FUN_0065d120(void)
   g_currentExceptionFrame = &local_4c;
   exceptionCode = Library::MSVCRT::__setjmp3(local_4c.jumpBuffer,0);
   if (exceptionCode == 0) {
-    local_8 = (AnonShape_GLOBAL_008489CC_CDF8C3F4 *)Library::DKW::LIB::FUN_006aac10(0x1b);
+    local_8 = Library::DKW::LIB::MemAllocClear(0x1b);
     *(undefined1 *)local_8 = 0;
     local_8->field_0009 = 0xffff;
     pDVar1 = Library::DKW::TBL::DArrayCreate(nullptr,5,2,5);

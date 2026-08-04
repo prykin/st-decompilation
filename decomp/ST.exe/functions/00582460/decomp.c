@@ -39,7 +39,7 @@ FUN_00582460(undefined4 param_1,undefined4 param_2,undefined4 param_3,undefined4
   local_44[3] = 1;
   local_10 = 0;
   local_8 = param_12;
-  g_playSystem_00802A38->vfunc_08(0x137,0,&param_9,local_44,0);
+  g_playSystem_00802A38->vfunc_08(0x137,0,(short)&param_9,(short)local_44,0);
   return param_9;
 }
 

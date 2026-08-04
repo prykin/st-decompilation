@@ -281,7 +281,7 @@ LAB_004212f3:
     local_18->field_0111 = iVar18;
     local_18->field_0115 = 0x36;
     puVar17 = (byte *)(local_14->field_0121);
-    puVar22 = (byte *)(&local_18[1].field_0x33 + iVar18 + -0x281);
+    puVar22 = (byte *)(&local_18->field_0x2b7 + iVar18 + -0x281);
     for (iVar16 = 0xd; iVar16 != 0; iVar16 = iVar16 + -1) {
       *puVar22 = *puVar17;
       puVar17 = (byte *)(puVar17 + 1);
@@ -291,7 +291,7 @@ LAB_004212f3:
     local_18->field_0119 = iVar18 + 0x36;
     local_18->field_011D = 0x36;
     puVar17 = (byte *)(local_14->field_0125);
-    puVar22 = (byte *)(&local_18[1].field_0x69 + iVar18 + -0x281);
+    puVar22 = (byte *)(&local_18->field_0x2ed + iVar18 + -0x281);
     for (iVar16 = 0x17; iVar16 != 0; iVar16 = iVar16 + -1) {
       *puVar22 = *puVar17;
       puVar17 = (byte *)(puVar17 + 1);
@@ -302,7 +302,7 @@ LAB_004212f3:
     uVar21 = iVar18 + 200;
     local_8 = 0x5c;
     puVar17 = (byte *)(local_14->field_0129);
-    puVar22 = (byte *)(&local_18[1].field_0xc5 + iVar18 + -0x281);
+    puVar22 = (byte *)(&local_18->field_0x349 + iVar18 + -0x281);
     for (iVar16 = 0x17; iVar16 != 0; iVar16 = iVar16 + -1) {
       *puVar22 = *puVar17;
       puVar17 = (byte *)(puVar17 + 1);
@@ -397,7 +397,7 @@ LAB_004212f3:
     else {
       if (iVar16 == 0x1ae) {
         pAVar7 = local_14->field_01AD;
-        puVar17 = (byte *)((int)&local_18[1].field_0121 + iVar18 + -0x281);
+        puVar17 = (byte *)((int)&local_18->field_03A5 + iVar18 + -0x281);
         *puVar17 = pAVar7->field_0000;
         puVar17[1] = pAVar7->field_0004;
         *(undefined2 *)(puVar17 + 2) = pAVar7->field_0008;
@@ -405,7 +405,7 @@ LAB_004212f3:
         local_18->field_0231 = iVar18 + 0x124;
         local_18->field_0235 = 0xb;
         pAVar8 = local_14->field_01B1;
-        puVar17 = (byte *)((int)&local_18[1].field_0129 + iVar18 + -0x27e);
+        puVar17 = (byte *)((int)&local_18->field_03AD + iVar18 + -0x27e);
         *puVar17 = pAVar8->field_0000;
         puVar17[1] = pAVar8->field_0004;
         *(undefined2 *)(puVar17 + 2) = pAVar8->field_0008;
@@ -413,13 +413,13 @@ LAB_004212f3:
         local_18->field_0239 = iVar18 + 0x12f;
         local_18->field_023D = 0xb;
         puVar9 = local_14->field_01C5;
-        *(undefined4 *)(&local_18[1].field_0x137 + iVar18 + -0x281) = *(undefined4 *)puVar9;
-        *(ushort *)((int)(&local_18[1].field_0x137 + iVar18 + -0x281) + 4) = puVar9[2];
+        *(undefined4 *)(&local_18[1].field_0xa + iVar18 + -0x281) = *(undefined4 *)puVar9;
+        *(ushort *)((int)(&local_18[1].field_0xa + iVar18 + -0x281) + 4) = puVar9[2];
         local_18->field_0261 = iVar18 + 0x13a;
         local_18->field_0265 = 6;
         puVar9 = local_14->field_01C9;
-        *(undefined4 *)(&local_18[1].field_0x13d + iVar18 + -0x281) = *(undefined4 *)puVar9;
-        *(ushort *)((int)(&local_18[1].field_0x13d + iVar18 + -0x281) + 4) = puVar9[2];
+        *(undefined4 *)(&local_18[1].field_0x10 + iVar18 + -0x281) = *(undefined4 *)puVar9;
+        *(ushort *)((int)(&local_18[1].field_0x10 + iVar18 + -0x281) + 4) = puVar9[2];
         local_18->field_0269 = iVar18 + 0x140;
         local_18->field_026D = 6;
         g_currentExceptionFrame = local_6c.previous;
@@ -549,7 +549,7 @@ LAB_004212f3:
         pAVar14->field_0229 = iVar16 + 0xc;
         pAVar14->field_022D = 0xc;
         pAVar5 = local_14->field_01B5;
-        puVar17 = (byte *)((int)&local_c[1].field_0006 + iVar16 + -0x272);
+        puVar17 = (byte *)(&local_c->field_0x28a + iVar16 + -0x272);
         *puVar17 = pAVar5->field_0000;
         puVar17[1] = pAVar5->field_0004;
         *(undefined2 *)(puVar17 + 2) = pAVar5->field_0008;
@@ -557,7 +557,7 @@ LAB_004212f3:
         pAVar14->field_0241 = iVar16 + 0x18;
         pAVar14->field_0245 = 0xb;
         pAVar6 = local_14->field_01B9;
-        puVar17 = (byte *)(&local_c[1].field_0x11 + iVar16 + -0x272);
+        puVar17 = (byte *)(&local_c->field_0x295 + iVar16 + -0x272);
         *puVar17 = pAVar6->field_0000;
         puVar17[1] = pAVar6->field_0004;
         *(undefined2 *)(puVar17 + 2) = pAVar6->field_0008;

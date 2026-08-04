@@ -7,24 +7,27 @@
    [STSourceProvenanceApplier end]
 
    [STPrototypeApplier] Propagated return.
-   Evidence: 0065CD10 returns used as parameter 0 of FUN_006809b0 @ 00686342 */
+   Evidence: 0065CD10 returns used as parameter 0 of FUN_006809b0 @ 00686342
 
-byte * __cdecl EventDataPack(AnonShape_0065CD10_BA40DE58 *param_1,uint *param_2)
+   [STAllocationRecordApplier] Consumer-local packed record
+   /SubmarineTitans/Recovered/AllocationRecords/AllocationRecord_0065CD10.
+   Evidence: exact 1183-byte source-parameter copy at 0065CE00..0065CE04 */
+
+AllocationRecord_0065CD10 * __cdecl EventDataPack(AllocationRecord_0065CD10 *param_1,uint *param_2)
 
 {
   code *pcVar1;
   int iVar2;
   AnonShape_0065CD10_CB9334E9 *pAVar3;
-  byte *pbVar4;
+  AllocationRecord_0065CD10 *pAVar4;
   uint uVar6;
   int iVar7;
   uint *puVar8;
   undefined4 *puVar9;
-  AnonShape_0065CD10_BA40DE58 *pAVar10;
-  byte *puVar11;
-  AnonShape_0065CD10_CB9334E9 *pAVar12;
-  byte *puVar13;
-  bool bVar14;
+  byte *puVar10;
+  AnonShape_0065CD10_CB9334E9 *pAVar11;
+  byte *puVar12;
+  bool bVar13;
   InternalExceptionFrame local_50;
   int local_c;
   AnonShape_0065CD10_CB9334E9 *local_8;
@@ -38,9 +41,9 @@ byte * __cdecl EventDataPack(AnonShape_0065CD10_BA40DE58 *param_1,uint *param_2)
     uVar6 = 0;
     iVar2 = param_1->field_0462;
     if (0 < *(int *)(iVar2 + 0xc)) {
-      bVar14 = *(int *)(iVar2 + 0xc) != 0;
+      bVar13 = *(int *)(iVar2 + 0xc) != 0;
       do {
-        if (bVar14) {
+        if (bVar13) {
           iVar2 = *(int *)(iVar2 + 8) * uVar6 + *(int *)(iVar2 + 0x1c);
         }
         else {
@@ -54,7 +57,7 @@ byte * __cdecl EventDataPack(AnonShape_0065CD10_BA40DE58 *param_1,uint *param_2)
         }
         iVar2 = param_1->field_0462;
         uVar6 = uVar6 + 1;
-        bVar14 = uVar6 < *(uint *)(iVar2 + 0xc);
+        bVar13 = uVar6 < *(uint *)(iVar2 + 0xc);
       } while ((int)uVar6 < (int)*(uint *)(iVar2 + 0xc));
     }
     /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
@@ -71,16 +74,16 @@ byte * __cdecl EventDataPack(AnonShape_0065CD10_BA40DE58 *param_1,uint *param_2)
     }
     local_c = local_c + iVar2 + iVar7;
     *param_2 = local_c + 0x49fU;
-    pAVar3 = (AnonShape_0065CD10_CB9334E9 *)Library::DKW::LIB::FUN_006aac10(local_c + 0x49fU);
-    pAVar10 = param_1;
-    pAVar12 = pAVar3;
+    pAVar3 = Library::DKW::LIB::MemAllocClear(local_c + 0x49fU);
+    pAVar4 = param_1;
+    pAVar11 = pAVar3;
     for (iVar2 = 0x127; iVar2 != 0; iVar2 = iVar2 + -1) {
-      *(undefined4 *)pAVar12 = *(undefined4 *)pAVar10;
-      pAVar10 = (AnonShape_0065CD10_BA40DE58 *)&pAVar10->field_0x4;
-      pAVar12 = (AnonShape_0065CD10_CB9334E9 *)&pAVar12->field_0x4;
+      *(undefined4 *)pAVar11 = *(undefined4 *)pAVar4;
+      pAVar4 = (AllocationRecord_0065CD10 *)((int)&pAVar4->field_0001 + 3);
+      pAVar11 = (AnonShape_0065CD10_CB9334E9 *)&pAVar11->field_0x4;
     }
-    *(undefined2 *)pAVar12 = *(undefined2 *)pAVar10;
-    pAVar12->field_0x2 = pAVar10->field_0x2;
+    *(undefined2 *)pAVar11 = *(undefined2 *)pAVar4;
+    pAVar11->field_0x2 = *(undefined1 *)((int)&pAVar4->field_0001 + 1);
     uVar6 = 0;
     *(uint *)&pAVar3->field_0x1 = *param_2;
     pAVar3->field_0x5 = 0;
@@ -88,9 +91,9 @@ byte * __cdecl EventDataPack(AnonShape_0065CD10_BA40DE58 *param_1,uint *param_2)
     puVar8 = (uint *)&pAVar3[1].field_0x1e;
     local_8 = pAVar3;
     if (0 < *(int *)(iVar2 + 0xc)) {
-      bVar14 = *(int *)(iVar2 + 0xc) != 0;
+      bVar13 = *(int *)(iVar2 + 0xc) != 0;
       do {
-        if (bVar14) {
+        if (bVar13) {
           iVar2 = *(int *)(iVar2 + 8) * uVar6 + *(int *)(iVar2 + 0x1c);
         }
         else {
@@ -105,7 +108,7 @@ byte * __cdecl EventDataPack(AnonShape_0065CD10_BA40DE58 *param_1,uint *param_2)
         }
         iVar2 = *(int *)&pAVar3->field_0x462;
         uVar6 = uVar6 + 1;
-        bVar14 = uVar6 < *(uint *)(iVar2 + 0xc);
+        bVar13 = uVar6 < *(uint *)(iVar2 + 0xc);
       } while ((int)uVar6 < (int)*(uint *)(iVar2 + 0xc));
     }
     FUN_006affc0(*(uint **)&pAVar3->field_0x462,puVar8,&local_c);
@@ -120,13 +123,13 @@ byte * __cdecl EventDataPack(AnonShape_0065CD10_BA40DE58 *param_1,uint *param_2)
     else {
       uVar6 = param_1->field_046E * 5;
     }
-    puVar11 = (byte *)(param_1->field_0476);
-    puVar13 = (byte *)(puVar9);
-    memmove(puVar13, puVar11, uVar6); /* compiler REP MOVS byte copy */
+    puVar10 = (byte *)(param_1->field_0476);
+    puVar12 = (byte *)(puVar9);
+    memmove(puVar12, puVar10, uVar6); /* compiler REP MOVS byte copy */
     local_8->field_047A = (undefined1 *)((int)puVar9 + (-0x49e - (int)local_8));
     local_8->field_0476 = 0;
     g_currentExceptionFrame = local_50.previous;
-    return (byte *)local_8;
+    return (AllocationRecord_0065CD10 *)local_8;
   }
   g_currentExceptionFrame = local_50.previous;
   if (local_8 != nullptr) {

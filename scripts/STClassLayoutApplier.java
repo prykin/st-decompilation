@@ -26,9 +26,11 @@ import ghidra.program.model.data.DataTypeComponent;
 import ghidra.program.model.data.DataTypeConflictHandler;
 import ghidra.program.model.data.DataTypeManager;
 import ghidra.program.model.data.Enum;
+import ghidra.program.model.data.Pointer;
 import ghidra.program.model.data.PointerDataType;
 import ghidra.program.model.data.Structure;
 import ghidra.program.model.data.StructureDataType;
+import ghidra.program.model.data.TypeDef;
 import ghidra.program.model.data.Undefined;
 
 public class STClassLayoutApplier extends GhidraScript {
@@ -254,7 +256,27 @@ public class STClassLayoutApplier extends GhidraScript {
                 if (!typeEvidence.isBlank()) comment += "; type_evidence=" + typeEvidence;
                 if (!nameEvidence.isBlank()) comment += "; name_evidence=" + nameEvidence;
                 DataTypeComponent enriched = existing.getComponentAt(offset);
-                if (enriched != null && enriched.getOffset() == offset &&
+                boolean protectedRecursivePointee = enriched != null &&
+                    enriched.getOffset() == offset && enriched.getLength() == size &&
+                    hashOwnedRecursivePointee(enriched.getDataType());
+                if (protectedRecursivePointee) {
+                    String currentType = typeSpecification(enriched.getDataType());
+                    if (!typeSpecification.equals(currentType) &&
+                            !genericPointerSpecification(typeSpecification))
+                        throw new IllegalStateException(
+                            "refusing concrete replacement of hash-owned recursive pointee at " +
+                            owner + "+0x" + Integer.toHexString(offset) + ": " + currentType +
+                            " -> " + typeSpecification);
+                    // Preserve the exact component presentation as well as its datatype.  The
+                    // recursive producer owns the root-field comment, and rewriting that comment
+                    // on every class-layout pass would otherwise create a false fixed-point edit.
+                    fieldType = enriched.getDataType();
+                    if (enriched.getFieldName() != null)
+                        fieldName = enriched.getFieldName();
+                    comment = enriched.getComment();
+                    typeApply = false;
+                }
+                else if (enriched != null && enriched.getOffset() == offset &&
                         enriched.getDataType() instanceof Enum && enriched.getLength() == size &&
                         enriched.getComment() != null &&
                         enriched.getComment().contains(SWITCH_ENUM_MARKER)) {
@@ -323,6 +345,37 @@ public class STClassLayoutApplier extends GhidraScript {
         DataType type = dataTypes.getDataType(specification);
         if (type == null) throw new IllegalArgumentException("missing data type " + specification);
         return type;
+    }
+
+    private boolean genericPointerSpecification(String specification) {
+        if (!specification.startsWith("pointer:")) return false;
+        String path = specification.substring("pointer:".length());
+        return Set.of("/void", "/byte", "/char", "/undefined", "/undefined1",
+            "/undefined2", "/undefined4", "/undefined8").contains(path);
+    }
+
+    private boolean hashOwnedRecursivePointee(DataType type) {
+        type = untypedef(type);
+        if (!(type instanceof Pointer pointer) || pointer.getDataType() == null) return false;
+        DataType pointed = untypedef(pointer.getDataType());
+        if (!(pointed instanceof Structure structure)) return false;
+        String description = structure.getDescription();
+        if (description == null ||
+                !description.contains("[STRecursivePointeeApplier]")) return false;
+        String stored = storedHash(description);
+        return stored != null && stored.equals(layoutHash(structure));
+    }
+
+    private DataType untypedef(DataType type) {
+        while (type instanceof TypeDef definition) type = definition.getBaseDataType();
+        return type;
+    }
+
+    private String typeSpecification(DataType type) {
+        type = untypedef(type);
+        if (type instanceof Pointer pointer && pointer.getDataType() != null)
+            return "pointer:" + untypedef(pointer.getDataType()).getPathName();
+        return type.getPathName();
     }
 
     private int elementSize(String specification) {

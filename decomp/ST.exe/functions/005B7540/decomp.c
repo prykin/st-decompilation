@@ -16,12 +16,12 @@ void __thiscall MMsgTy::NoneMMsg(MMsgTy *this)
   MMsgTy *this_00;
   int iVar6;
   uint uVar7;
-  undefined4 *puVar8;
+  byte *puVar8;
   int iVar9;
   char *pcVar10;
   UINT *pUVar11;
   uint *puVar12;
-  undefined4 *puVar14;
+  byte *puVar14;
   UINT *pUVar15;
   ccFntTy_CreateTypeSSpr_param_4Enum cVar16;
   int iVar17;
@@ -145,7 +145,7 @@ LAB_005b7ad9:
       if (this_00->field_009A != 0) {
         local_8 = &this_00->field_0066;
         local_10 = (UINT *)&this_00->field_0x1c82;
-        puVar8 = (undefined4 *)&this_00->field_0xa7;
+        puVar8 = (byte *)&this_00->field_0xa7;
         iVar6 = 0x68ff;
         do {
           if ((*(int *)((int)puVar8 + 0x15) != 0) && (*local_8 == 0)) {
@@ -162,7 +162,7 @@ LAB_005b7ad9:
           }
           local_10 = (UINT *)((int)local_10 + 2);
           local_8 = local_8 + 1;
-          puVar8 = (undefined4 *)((int)puVar8 + 0x1fb);
+          puVar8 = (byte *)((int)puVar8 + 0x1fb);
           iVar9 = iVar6 + -0x68fe;
           iVar6 = iVar6 + 1;
         } while (iVar9 < (int)(uint)this_00->field_009A);
@@ -172,7 +172,7 @@ LAB_005b7ad9:
         memset(local_58, 0, 0x20); /* compiler bulk-zero initialization */
         local_58[3] = 2;
         local_58[4] = 0x693f;
-        (*pSVar4->vtable->vfunc_18)(local_58);
+        (*pSVar4->vtable->vfunc_18)((short)local_58);
         g_currentExceptionFrame = local_bc.previous;
         return;
       }
@@ -242,12 +242,12 @@ LAB_005b7655:
           local_78[3] = 2;
           local_78[4] = 0x693f;
           local_78[2] = iVar6;
-          (*this_00->field_000C->vtable->vfunc_18)(local_78);
+          (*this_00->field_000C->vtable->vfunc_18)((short)local_78);
         }
         if (this_00->field_1A5F != '\0') {
           local_14 = 0;
-          puVar8 = (undefined4 *)&this_00->field_0x1a60;
-          puVar14 = &this_00->field_1CD0;
+          puVar8 = (byte *)&this_00->field_0x1a60;
+          puVar14 = (byte *)(&this_00->field_1CD0);
           memmove(puVar14, puVar8, 0x27); /* compiler REP MOVS byte copy */
           iVar6 = 0;
           if (this_00->field_009A != 0) {
@@ -300,7 +300,7 @@ LAB_005b7655:
         local_38[3] = 2;
         local_38[4] = 0x693f;
         local_38[2] = iVar6;
-        (*this_00->field_000C->vtable->vfunc_18)(local_38);
+        (*this_00->field_000C->vtable->vfunc_18)((short)local_38);
       }
       bVar2 = this_00->field_1A5A;
       if ((bVar2 != 0xff) && (*(int *)(&this_00->field_0xd1 + (uint)bVar2 * 0x1fb) != 0)) {

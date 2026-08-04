@@ -25,7 +25,7 @@ ST3DSMAPContext::sub_006E9000
   int iVar2;
   longlong lVar3;
 
-  pAVar1 = (AnonShape_006E8EA0_96B71903 *)Library::DKW::LIB::FUN_006aac10(0x2c);
+  pAVar1 = Library::DKW::LIB::MemAllocClear(0x2c);
   pAVar1->field_0008 = param_4;
   pAVar1->field_000C = param_5;
   pAVar1->field_0010 = param_6;

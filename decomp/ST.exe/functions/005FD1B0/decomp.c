@@ -88,7 +88,7 @@ FUN_005fd1b0(undefined4 param_1,undefined4 param_2,undefined4 param_3,undefined4
       local_11c = 0;
     }
   }
-  g_playSystem_00802A38->vfunc_08(0x157,0,&local_8,local_160,0);
+  g_playSystem_00802A38->vfunc_08(0x157,0,(short)&local_8,(short)local_160,0);
   if (local_8 == 0) {
     return 0;
   }

@@ -82,7 +82,7 @@ int * FUN_00561240(int param_1,int param_2,int param_3)
   iVar4 = param_1 + 0x8000 >> 0x10;
   iVar3 = ((local_8 + 0x8000 >> 0x10) - iVar4) + 1;
   local_10 = iVar4;
-  piVar5 = Library::DKW::LIB::FUN_006aac10(iVar3 * 8 + 0x1c);
+  piVar5 = Library::DKW::LIB::MemAllocClear(iVar3 * 8 + 0x1c);
   local_18 = 2;
   piVar5[4] = iVar3;
   piVar5[3] = iVar4;

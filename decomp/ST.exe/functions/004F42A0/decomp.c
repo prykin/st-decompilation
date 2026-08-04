@@ -17,7 +17,7 @@
 
 void __thiscall
 CPanelTy::PaintTab(CPanelTy *this,byte param_1,STMessage *param_2,byte param_3,char *text,
-                  char *param_5,undefined *param_6)
+                  char *param_5,callback_004F42A0_p6 *param_6)
 
 {
   code *pcVar1;
@@ -78,8 +78,7 @@ cf_common_join_004F4331:
     local_14 = this;
     iVar4 = Library::MSVCRT::__setjmp3(local_58.jumpBuffer,0);
     if (iVar4 == 0) {
-      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-      uVar5 = (*(code *)param_6)(param_2);
+      uVar5 = (*param_6)((AnonShape_0052A7B0_DD603BF4 *)param_2);
       text_00 = FUN_006f2c00(text,2,uVar5);
       local_8 = cMf32::RecGet(g_cMf32_00806790,param_3,text_00,nullptr,1);
       pCVar3 = local_14;

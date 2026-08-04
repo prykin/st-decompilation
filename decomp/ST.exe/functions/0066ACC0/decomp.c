@@ -314,7 +314,7 @@ SubmarineTitans::Recovered::HiddenThis::AnonReceiver_0064A970::FUN_0066acc0
           *(undefined4 *)&this_00->field_0x84 = 0xffffffff;
           RaiseInternalException(-0x78,g_overwriteContext_007ED77C,".\\ai\\ai_erc.h",0x79);
         }
-        local_14 = Library::DKW::LIB::FUN_006aac10(4);
+        local_14 = Library::DKW::LIB::MemAllocClear(4);
         if (DAT_00808a8f != '\0') {
           *local_14 = (uint)(g_bulkInitializedRecords_008087C7[(uint)local_8 & 0xff].field_0023 !=
                             g_bulkInitializedRecords_008087C7[(uint)local_50[0] & 0xff].field_0023);
@@ -410,7 +410,7 @@ LAB_0066bdcc:
             }
             iVar11 = (*this_00->vtable->slot_00)(param_1);
             iVar16 = (*this_00->vtable->slot_00)(param_1 + 5);
-            local_14 = Library::DKW::LIB::FUN_006aac10(4);
+            local_14 = Library::DKW::LIB::MemAllocClear(4);
             if (iVar16 < iVar11) {
               uVar13 = (*this_00->vtable->slot_10)(iVar16,iVar11);
               *local_14 = uVar13;
@@ -482,7 +482,7 @@ LAB_0066bdcc:
               RaiseInternalException
                         (-0x78,g_overwriteContext_007ED77C,".\\ai\\ai_erc.h",0x79);
             }
-            local_14 = Library::DKW::LIB::FUN_006aac10(4);
+            local_14 = Library::DKW::LIB::MemAllocClear(4);
             uVar13 = (*this_00->vtable->slot_24)(local_8);
             *local_14 = uVar13;
           }
@@ -515,7 +515,7 @@ LAB_0066bdcc:
             *(undefined4 *)&this_00->field_0x84 = 0xffffffff;
             RaiseInternalException(-0x78,g_overwriteContext_007ED77C,".\\ai\\ai_erc.h",0x79);
           }
-          local_14 = Library::DKW::LIB::FUN_006aac10(4);
+          local_14 = Library::DKW::LIB::MemAllocClear(4);
           *local_14 = (&DAT_0080e43b)[(int)local_8];
           goto cf_common_exit_00670431;
         }
@@ -545,7 +545,7 @@ LAB_0066bdcc:
                (iVar11 = (*this_00->vtable->slot_18)(), iVar11 == 8)) {
               iVar11 = (*this_00->vtable->slot_2C)(local_10);
               local_c = (char *)(uint)(iVar11 == 0);
-              local_14 = Library::DKW::LIB::FUN_006aac10(4);
+              local_14 = Library::DKW::LIB::MemAllocClear(4);
               *local_14 = (uint)local_c;
             }
             else {
@@ -559,9 +559,9 @@ LAB_0066bdcc:
                 }
                 if (pAVar14 != nullptr) {
                   iVar11 = (*pAVar14->vtable_at_1c->vfunc_2C)
-                                     ((AiPlrClassTy *)&pAVar14->vtable_at_1c,local_10);
+                                     ((AiPlrClassTy *)&pAVar14->vtable_at_1c,(short)local_10);
                   local_c = (char *)(uint)(iVar11 == 0);
-                  local_14 = Library::DKW::LIB::FUN_006aac10(4);
+                  local_14 = Library::DKW::LIB::MemAllocClear(4);
                   *local_14 = (uint)local_c;
                   goto cf_common_exit_00670431;
                 }
@@ -581,7 +581,7 @@ LAB_0066bdcc:
               }
               RaiseInternalException
                         (-0x78,g_overwriteContext_007ED77C,".\\ai\\ai_erc.h",0x79);
-              local_14 = Library::DKW::LIB::FUN_006aac10(4);
+              local_14 = Library::DKW::LIB::MemAllocClear(4);
               *local_14 = (uint)local_c;
             }
           }
@@ -604,7 +604,7 @@ LAB_0066bdcc:
                 local_10 = local_10 + 5;
               } while ((int)local_c < param_2);
             }
-            local_14 = Library::DKW::LIB::FUN_006aac10(4);
+            local_14 = Library::DKW::LIB::MemAllocClear(4);
             uVar13 = (*this_00->vtable->slot_00)(param_1);
             *local_14 = uVar13;
           }
@@ -652,7 +652,7 @@ cf_common_exit_00670456:
         if ((local_8 == (AiFltClassTy *)0x9) &&
            (iVar11 = (*this_00->vtable->slot_18)(), iVar11 == 8)) {
           local_c = (char *)(*this_00->vtable->slot_1C)(local_10);
-          local_14 = Library::DKW::LIB::FUN_006aac10(4);
+          local_14 = Library::DKW::LIB::MemAllocClear(4);
           *local_14 = (uint)local_c;
           goto cf_common_exit_00670431;
         }
@@ -669,8 +669,8 @@ cf_common_exit_00670456:
         }
         if (pAVar14 != nullptr) {
           local_c = (char *)(*pAVar14->vtable_at_1c->vfunc_1C)
-                                      ((AiPlrClassTy *)&pAVar14->vtable_at_1c,local_10);
-          local_14 = Library::DKW::LIB::FUN_006aac10(4);
+                                      ((AiPlrClassTy *)&pAVar14->vtable_at_1c,(short)local_10);
+          local_14 = Library::DKW::LIB::MemAllocClear(4);
           *local_14 = (uint)local_c;
           goto cf_common_exit_00670431;
         }
@@ -683,14 +683,14 @@ LAB_0066b1ad:
         *(AiFltClassTy **)&this_00->field_0x84 = local_8;
 LAB_0066b1fb:
         RaiseInternalException(-0x78,g_overwriteContext_007ED77C,".\\ai\\ai_erc.h",0x79);
-        local_14 = Library::DKW::LIB::FUN_006aac10(4);
+        local_14 = Library::DKW::LIB::MemAllocClear(4);
         *local_14 = (uint)local_c;
       }
       else {
         switch(iVar11) {
         case 0x7d7:
           uVar13 = (*this_00->vtable->slot_18)();
-          local_14 = Library::DKW::LIB::FUN_006aac10(4);
+          local_14 = Library::DKW::LIB::MemAllocClear(4);
           if (uVar13 == 8) {
             uVar13 = 0xff;
           }
@@ -699,11 +699,11 @@ LAB_0066b1fb:
         default:
           goto cf_common_exit_00670456;
         case 0x7da:
-          local_14 = Library::DKW::LIB::FUN_006aac10(4);
+          local_14 = Library::DKW::LIB::MemAllocClear(4);
           *local_14 = g_playSystem_00802A38->field_00E4 / 0x19;
           break;
         case 0x7dc:
-          local_14 = Library::DKW::LIB::FUN_006aac10(4);
+          local_14 = Library::DKW::LIB::MemAllocClear(4);
           *local_14 = g_playSystem_00802A38->field_00E4;
           break;
         case 0x7dd:
@@ -729,7 +729,7 @@ LAB_0066b1fb:
           if ((local_8 == (AiFltClassTy *)0x9) &&
              (iVar11 = (*this_00->vtable->slot_18)(), iVar11 == 8)) {
             local_c = (char *)(*this_00->vtable->slot_14)();
-            local_14 = Library::DKW::LIB::FUN_006aac10(4);
+            local_14 = Library::DKW::LIB::MemAllocClear(4);
             *local_14 = (uint)local_c;
             break;
           }
@@ -744,7 +744,7 @@ LAB_0066b1fb:
             if (pAVar14 != nullptr) {
               local_c = (char *)(*pAVar14->vtable_at_1c->vfunc_14)
                                           ((AiPlrClassTy *)&pAVar14->vtable_at_1c);
-              local_14 = Library::DKW::LIB::FUN_006aac10(4);
+              local_14 = Library::DKW::LIB::MemAllocClear(4);
               *local_14 = (uint)local_c;
               break;
             }
@@ -804,11 +804,11 @@ joined_r0x0066b1d2:
           if (g_cPanel_00801688 != nullptr) {
             thunk_FUN_004f91a0(g_cPanel_00801688,(byte)local_50[0],&local_1d,(int *)&local_8);
           }
-          local_14 = Library::DKW::LIB::FUN_006aac10(4);
+          local_14 = Library::DKW::LIB::MemAllocClear(4);
           *local_14 = ~-(uint)(local_1d != '\x01') & (uint)local_8;
           break;
         case 0x7e4:
-          local_14 = Library::DKW::LIB::FUN_006aac10(4);
+          local_14 = Library::DKW::LIB::MemAllocClear(4);
           if ((DAT_008087a0 == '\x03') || (DAT_008087a0 == '\b')) {
             *local_14 = _DAT_00807340 & 0xff;
           }
@@ -855,7 +855,7 @@ joined_r0x0066b1d2:
             *(undefined4 *)&this_00->field_0x84 = 0xffffffff;
             RaiseInternalException(-0x78,g_overwriteContext_007ED77C,".\\ai\\ai_erc.h",0x79);
           }
-          local_14 = Library::DKW::LIB::FUN_006aac10(4);
+          local_14 = Library::DKW::LIB::MemAllocClear(4);
           if (DAT_00808a8f != '\0') {
             *local_14 = (uint)g_bulkInitializedRecords_008087C7[(int)local_50[0]].field_0023;
             break;
@@ -901,7 +901,7 @@ joined_r0x0066b1d2:
       if (local_c == (char *)0x9) {
         pcVar27 = (char *)(*this_00->vtable->slot_18)();
       }
-      local_14 = Library::DKW::LIB::FUN_006aac10(4);
+      local_14 = Library::DKW::LIB::MemAllocClear(4);
       if ((pcVar27 < 8) &&
          ((g_playSystem_00802A38 == nullptr ||
           (g_bulkInitializedRecords_008087C7[(int)pcVar27].field_0022 < 8)))) {
@@ -933,7 +933,7 @@ LAB_0066bb5e:
       uVar28 = 0;
       if (DAT_00808a8f == '\0') {
 LAB_0066bff3:
-        local_14 = Library::DKW::LIB::FUN_006aac10(4);
+        local_14 = Library::DKW::LIB::MemAllocClear(4);
         *local_14 = uVar28;
       }
       else {
@@ -946,12 +946,12 @@ LAB_0066bff3:
           }
           pbVar18 = pbVar18 + 0x51;
         } while ((int)pbVar18 < 0x808a72);
-        local_14 = Library::DKW::LIB::FUN_006aac10(4);
+        local_14 = Library::DKW::LIB::MemAllocClear(4);
         *local_14 = 0;
       }
       break;
     case 0x7e9:
-      local_14 = Library::DKW::LIB::FUN_006aac10(4);
+      local_14 = Library::DKW::LIB::MemAllocClear(4);
       *local_14 = (uint)(DAT_00808a8f != '\0');
       break;
     case 0x7ea:
@@ -991,11 +991,11 @@ LAB_0066bff3:
         *(undefined4 *)&this_00->field_0x84 = 0xffffffff;
         RaiseInternalException(-0x78,g_overwriteContext_007ED77C,".\\ai\\ai_erc.h",0x79);
       }
-      local_14 = Library::DKW::LIB::FUN_006aac10(4);
+      local_14 = Library::DKW::LIB::MemAllocClear(4);
       *local_14 = (uint)(byte)local_50[0][0x32cd].field_0x268;
       break;
     case 0x7eb:
-      local_14 = Library::DKW::LIB::FUN_006aac10(4);
+      local_14 = Library::DKW::LIB::MemAllocClear(4);
       *local_14 = (uint)DAT_0080874d;
       break;
     case 0x7ec:
@@ -1035,11 +1035,11 @@ LAB_0066bff3:
         *(undefined4 *)&this_00->field_0x84 = 0xffffffff;
         RaiseInternalException(-0x78,g_overwriteContext_007ED77C,".\\ai\\ai_erc.h",0x79);
       }
-      local_14 = Library::DKW::LIB::FUN_006aac10(4);
+      local_14 = Library::DKW::LIB::MemAllocClear(4);
       *local_14 = (uint)g_bulkInitializedRecords_008087C7[(int)local_50[0]].field_0021;
       break;
     case 0x7ed:
-      local_14 = Library::DKW::LIB::FUN_006aac10(4);
+      local_14 = Library::DKW::LIB::MemAllocClear(4);
       *local_14 = (uint)(DAT_00808a94 != '\0');
       break;
     case 0x7ee:
@@ -1271,7 +1271,7 @@ LAB_0066bff3:
         } while (iVar11 != 0);
       }
 cf_common_exit_0066DF5E:
-      local_14 = Library::DKW::LIB::FUN_006aac10(4);
+      local_14 = Library::DKW::LIB::MemAllocClear(4);
       *local_14 = DAT_00811980;
       break;
     case 0x7f1:
@@ -1380,7 +1380,7 @@ cf_continue_loop_0066CACD:
           local_18 = pcVar27;
         } while (pcVar27 != nullptr);
       }
-      local_14 = Library::DKW::LIB::FUN_006aac10(4);
+      local_14 = Library::DKW::LIB::MemAllocClear(4);
       *local_14 = (uint)local_10;
       break;
     case 0x7f2:
@@ -1489,7 +1489,7 @@ cf_continue_loop_0066CD4A:
           local_18 = pcVar27;
         } while (pcVar27 != nullptr);
       }
-      local_14 = Library::DKW::LIB::FUN_006aac10(4);
+      local_14 = Library::DKW::LIB::MemAllocClear(4);
       *local_14 = (uint)local_10;
       break;
     case 0x7f3:
@@ -1598,7 +1598,7 @@ cf_continue_loop_0066CFCA:
           local_18 = pcVar27;
         } while (pcVar27 != nullptr);
       }
-      local_14 = Library::DKW::LIB::FUN_006aac10(4);
+      local_14 = Library::DKW::LIB::MemAllocClear(4);
       *local_14 = (uint)local_10;
       break;
     case 0x7f4:
@@ -1665,7 +1665,7 @@ cf_continue_loop_0066CFCA:
           local_8 = (AiFltClassTy *)&local_8->field_0x5;
         } while ((int)local_c < param_2);
       }
-      local_14 = Library::DKW::LIB::FUN_006aac10(4);
+      local_14 = Library::DKW::LIB::MemAllocClear(4);
       uVar22 = (*this_00->vtable->slot_00)(param_1 + 0x1e);
       uVar22 = (*this_00->vtable->slot_00)(param_1 + 0x19,uVar22);
       uVar22 = (*this_00->vtable->slot_00)(param_1 + 0x14,uVar22);
@@ -1991,7 +1991,7 @@ cf_continue_loop_0066CFCA:
     sVar10 = (*this_00->vtable->slot_00)();
     _EnumRCField(sVar10,(short)param_1,sVar9,sVar4,sVar7,sVar5,sVar6,pcVar27,uVar22);
 cf_common_exit_0066DCED:
-    local_14 = Library::DKW::LIB::FUN_006aac10(4);
+    local_14 = Library::DKW::LIB::MemAllocClear(4);
     *local_14 = DAT_00811980;
     break;
   case 0x7fc:
@@ -2124,7 +2124,7 @@ cf_common_exit_0066DCED:
       *(undefined4 *)&this_00->field_0x84 = 0xffffffff;
       RaiseInternalException(-0x78,g_overwriteContext_007ED77C,".\\ai\\ai_erc.h",0x79);
     }
-    local_14 = Library::DKW::LIB::FUN_006aac10(4);
+    local_14 = Library::DKW::LIB::MemAllocClear(4);
     *local_14 = (uint)local_c;
     break;
   default:
@@ -2203,7 +2203,7 @@ cf_common_exit_0066DCED:
         if (-1 < iVar16) {
           uVar22 = (*g_fish_00811984->vtable->vfunc_11C)();
           (*this_00->vtable->slot_20)(iVar16,uVar22);
-          local_14 = Library::DKW::LIB::FUN_006aac10(4);
+          local_14 = Library::DKW::LIB::MemAllocClear(4);
           *local_14 = (uint)local_10;
           break;
         }
@@ -2217,7 +2217,7 @@ cf_common_exit_0066DCED:
       *(undefined4 *)&this_00->field_0x84 = 0xffffffff;
       RaiseInternalException(-0x78,g_overwriteContext_007ED77C,".\\ai\\ai_erc.h",0x79);
     }
-    local_14 = Library::DKW::LIB::FUN_006aac10(4);
+    local_14 = Library::DKW::LIB::MemAllocClear(4);
     *local_14 = (uint)local_10;
     break;
   case 0x80d:
@@ -2292,7 +2292,7 @@ cf_common_exit_0066DCED:
         if (-1 < iVar16) {
           uVar22 = (*g_fish_00811984->vtable->vfunc_11C)();
           (*this_00->vtable->slot_20)(iVar16,uVar22);
-          local_14 = Library::DKW::LIB::FUN_006aac10(4);
+          local_14 = Library::DKW::LIB::MemAllocClear(4);
           *local_14 = (uint)local_10;
           break;
         }
@@ -2306,7 +2306,7 @@ cf_common_exit_0066DCED:
       *(undefined4 *)&this_00->field_0x84 = 0xffffffff;
       RaiseInternalException(-0x78,g_overwriteContext_007ED77C,".\\ai\\ai_erc.h",0x79);
     }
-    local_14 = Library::DKW::LIB::FUN_006aac10(4);
+    local_14 = Library::DKW::LIB::MemAllocClear(4);
     *local_14 = (uint)local_10;
     break;
   case 0x80e:
@@ -2366,7 +2366,7 @@ cf_common_exit_0066DCED:
         (*this_00->vtable->slot_20)(iVar16,uVar22);
       }
     }
-    local_14 = Library::DKW::LIB::FUN_006aac10(4);
+    local_14 = Library::DKW::LIB::MemAllocClear(4);
     *local_14 = (uint)local_10;
     break;
   case 0x80f:
@@ -2430,7 +2430,7 @@ cf_common_exit_0066DCED:
         (*this_00->vtable->slot_20)(iVar16,uVar22);
       }
     }
-    local_14 = Library::DKW::LIB::FUN_006aac10(4);
+    local_14 = Library::DKW::LIB::MemAllocClear(4);
     *local_14 = (uint)local_10;
     break;
   case 0x810:
@@ -2510,7 +2510,7 @@ cf_common_exit_0066DCED:
         if (-1 < iVar16) {
           uVar22 = (*g_fish_00811984->vtable->vfunc_11C)();
           (*this_00->vtable->slot_20)(iVar16,uVar22);
-          local_14 = Library::DKW::LIB::FUN_006aac10(4);
+          local_14 = Library::DKW::LIB::MemAllocClear(4);
           *local_14 = (uint)local_1c;
           break;
         }
@@ -2524,7 +2524,7 @@ cf_common_exit_0066DCED:
       *(undefined4 *)&this_00->field_0x84 = 0xffffffff;
       RaiseInternalException(-0x78,g_overwriteContext_007ED77C,".\\ai\\ai_erc.h",0x79);
     }
-    local_14 = Library::DKW::LIB::FUN_006aac10(4);
+    local_14 = Library::DKW::LIB::MemAllocClear(4);
     *local_14 = (uint)local_1c;
     break;
   case 0x816:
@@ -2562,12 +2562,12 @@ cf_common_exit_0066DCED:
         thunk_FUN_004e6f00((int)local_50[0]);
       }
       else if (*(short *)(param_1 + param_2 * 5 + 1) != 0x817) {
-        local_14 = Library::DKW::LIB::FUN_006aac10(4);
+        local_14 = Library::DKW::LIB::MemAllocClear(4);
         *local_14 = (uint)local_8;
         break;
       }
       local_8 = (AiFltClassTy *)thunk_FUN_004e6fe0((int)local_50[0]);
-      local_14 = Library::DKW::LIB::FUN_006aac10(4);
+      local_14 = Library::DKW::LIB::MemAllocClear(4);
       *local_14 = (uint)local_8;
     }
     else {
@@ -2577,7 +2577,7 @@ cf_common_exit_0066DCED:
       }
       *(undefined4 *)&this_00->field_0x84 = 0xffffffff;
       RaiseInternalException(-0x78,g_overwriteContext_007ED77C,".\\ai\\ai_erc.h",0x79);
-      local_14 = Library::DKW::LIB::FUN_006aac10(4);
+      local_14 = Library::DKW::LIB::MemAllocClear(4);
       *local_14 = (uint)local_8;
     }
     break;
@@ -2608,7 +2608,7 @@ cf_common_exit_0066DCED:
       *(undefined4 *)&this_00->field_0x84 = 0xffffffff;
       RaiseInternalException(-0x78,g_overwriteContext_007ED77C,".\\ai\\ai_erc.h",0x79);
     }
-    local_14 = Library::DKW::LIB::FUN_006aac10(4);
+    local_14 = Library::DKW::LIB::MemAllocClear(4);
     *local_14 = (uint)*(byte *)((int)&local_8[0x3006].field_00A7 + 1);
     break;
   case 0x819:
@@ -2659,13 +2659,13 @@ cf_common_exit_0066DCED:
       if (sVar4 == 0x819) {
         iVar11 = thunk_FUN_004e60d0((int)local_50[0],(int)local_c);
         bVar2 = (int)local_8 <= iVar11;
-        local_14 = Library::DKW::LIB::FUN_006aac10(4);
+        local_14 = Library::DKW::LIB::MemAllocClear(4);
         *local_14 = (uint)bVar2;
         break;
       }
       if (sVar4 == 0x81b) {
         iVar11 = thunk_FUN_004e5990((int)local_50[0],(uint)local_c,(int)local_8);
-        local_14 = Library::DKW::LIB::FUN_006aac10(4);
+        local_14 = Library::DKW::LIB::MemAllocClear(4);
         *local_14 = (uint)(iVar11 != 0);
         break;
       }
@@ -2673,11 +2673,11 @@ cf_common_exit_0066DCED:
         iVar11 = thunk_FUN_004e5cc0((int)local_50[0],(uint)local_c,(int)local_8);
         if ((iVar11 == 0) &&
            (iVar11 = thunk_FUN_004e7f20((int)local_50[0],(int)pcVar27,(int)pAVar15), iVar11 == 0)) {
-          local_14 = Library::DKW::LIB::FUN_006aac10(4);
+          local_14 = Library::DKW::LIB::MemAllocClear(4);
           *local_14 = 0;
         }
         else {
-          local_14 = Library::DKW::LIB::FUN_006aac10(4);
+          local_14 = Library::DKW::LIB::MemAllocClear(4);
           *local_14 = 1;
         }
         break;
@@ -2692,7 +2692,7 @@ cf_common_exit_0066DCED:
       RaiseInternalException(-0x78,g_overwriteContext_007ED77C,".\\ai\\ai_erc.h",0x79);
     }
     uVar13 = (uint)local_18;
-    local_14 = Library::DKW::LIB::FUN_006aac10(4);
+    local_14 = Library::DKW::LIB::MemAllocClear(4);
     *local_14 = uVar13;
     break;
   case 0x81a:
@@ -2735,7 +2735,7 @@ cf_common_exit_0066DCED:
     iVar11 = sub_00668F50(this_00,(char *)local_8,0,(uint *)local_50);
     if (iVar11 == 1) {
       iVar11 = thunk_FUN_004e5f90((int)local_50[0],(uint)local_c);
-      local_14 = Library::DKW::LIB::FUN_006aac10(4);
+      local_14 = Library::DKW::LIB::MemAllocClear(4);
       *local_14 = (uint)(iVar11 != 0);
     }
     else {
@@ -2746,7 +2746,7 @@ cf_common_exit_0066DCED:
       *(undefined4 *)&this_00->field_0x84 = 0xffffffff;
       RaiseInternalException(-0x78,g_overwriteContext_007ED77C,".\\ai\\ai_erc.h",0x79);
       uVar13 = (uint)local_10;
-      local_14 = Library::DKW::LIB::FUN_006aac10(4);
+      local_14 = Library::DKW::LIB::MemAllocClear(4);
       *local_14 = uVar13;
     }
     break;
@@ -2787,7 +2787,7 @@ cf_common_exit_0066DCED:
       *(undefined4 *)&this_00->field_0x84 = 0xffffffff;
       RaiseInternalException(-0x78,g_overwriteContext_007ED77C,".\\ai\\ai_erc.h",0x79);
     }
-    local_14 = Library::DKW::LIB::FUN_006aac10(4);
+    local_14 = Library::DKW::LIB::MemAllocClear(4);
     *local_14 = *(uint *)(&DAT_007e481c + (int)(&local_8->vtable + (int)local_c) * 4);
     break;
   case 0x82a:
@@ -2839,7 +2839,7 @@ cf_common_exit_0066DCED:
     pbVar17 = (byte *)(param_1 + 5);
     pbVar18 = (byte *)(*this_00->vtable->slot_08)(pbVar17,uVar22);
     iVar11 = thunk_FUN_0066ab60((byte)local_50[0],pbVar18,pbVar17);
-    local_14 = Library::DKW::LIB::FUN_006aac10(4);
+    local_14 = Library::DKW::LIB::MemAllocClear(4);
     if (iVar11 == 0) {
       *local_14 = 0xffffffff;
     }
@@ -3265,7 +3265,7 @@ LAB_0067041b:
       RaiseInternalException(-0xaa,g_overwriteContext_007ED77C,".\\ai\\ai_erc.h",0x79);
     }
 cf_common_exit_00670425:
-    local_14 = Library::DKW::LIB::FUN_006aac10(4);
+    local_14 = Library::DKW::LIB::MemAllocClear(4);
     *local_14 = (uint)pcVar27;
     break;
   case 0x848:
@@ -3339,23 +3339,23 @@ LAB_0066d630:
     g_currentExceptionFrame = local_260.previous;
     return puVar23;
   case 0x849:
-    local_14 = Library::DKW::LIB::FUN_006aac10(4);
+    local_14 = Library::DKW::LIB::MemAllocClear(4);
     *local_14 = DAT_00808a90 >> 8 & 0xff;
     break;
   case 0x84a:
-    local_14 = Library::DKW::LIB::FUN_006aac10(4);
+    local_14 = Library::DKW::LIB::MemAllocClear(4);
     *local_14 = DAT_00808a90 & 0xff;
     break;
   case 0x84b:
-    local_14 = Library::DKW::LIB::FUN_006aac10(4);
+    local_14 = Library::DKW::LIB::MemAllocClear(4);
     *local_14 = (uint)DAT_00808a9b;
     break;
   case 0x84c:
-    local_14 = Library::DKW::LIB::FUN_006aac10(4);
+    local_14 = Library::DKW::LIB::MemAllocClear(4);
     *local_14 = DAT_00808a90 >> 0x10 & 0xff;
     break;
   case 0x84d:
-    local_14 = Library::DKW::LIB::FUN_006aac10(4);
+    local_14 = Library::DKW::LIB::MemAllocClear(4);
     *local_14 = DAT_00808a90 >> 0x18;
   }
 cf_common_exit_00670431:

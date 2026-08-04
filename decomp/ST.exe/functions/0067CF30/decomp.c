@@ -27,7 +27,7 @@ undefined4 * __cdecl FUN_0067cf30(char *source,undefined2 param_2,char *param_3,
     RaiseInternalException(exceptionCode,0,"E:\\__titans\\ai\\ai_plr_d.cpp",0x28);
     return nullptr;
   }
-  local_8 = (AnonShape_0067CF30_CDCAC01F *)Library::DKW::LIB::FUN_006aac10(299);
+  local_8 = Library::DKW::LIB::MemAllocClear(299);
   *(undefined4 *)local_8 = 0x38e;
   *(undefined4 *)&local_8->field_0x14 = 299;
   local_8->field_0x18 = 2;

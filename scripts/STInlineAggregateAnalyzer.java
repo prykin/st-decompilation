@@ -349,8 +349,8 @@ public class STInlineAggregateAnalyzer extends GhidraScript {
     }
     private Memory memory(String operand) {
         String value = operand == null ? "" : operand.toUpperCase(Locale.ROOT)
-            .replace("BYTE PTR", "").replace("WORD PTR", "")
-            .replace("DWORD PTR", "").replace("QWORD PTR", "")
+            .replace("QWORD PTR", "").replace("DWORD PTR", "")
+            .replace("WORD PTR", "").replace("BYTE PTR", "")
             .replace(" ", "");
         Matcher matcher = MEMORY.matcher(value);
         if (!matcher.matches()) return null;

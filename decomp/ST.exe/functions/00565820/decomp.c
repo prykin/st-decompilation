@@ -40,7 +40,7 @@ uint * AiMinesDistribTgts(uint param_1,int param_2,int param_3,int param_4,int p
   short *local_54;
   DArrayTy *local_50;
   int local_4c;
-  undefined4 *local_48;
+  void *local_48;
   int local_44;
   short local_40;
   short local_3e;
@@ -84,7 +84,7 @@ uint * AiMinesDistribTgts(uint param_1,int param_2,int param_3,int param_4,int p
     iVar14 = iVar5 * iVar17;
     local_28 = iVar5;
     local_c = iVar17;
-    local_48 = Library::DKW::LIB::FUN_006aac10(iVar14 * 7);
+    local_48 = Library::DKW::LIB::MemAllocClear(iVar14 * 7);
     local_20 = nullptr;
     local_2c = nullptr;
     local_30 = local_14[1] + -1 + param_2;

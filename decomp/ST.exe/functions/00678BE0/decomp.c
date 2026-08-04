@@ -16,11 +16,11 @@ byte * __thiscall AiPlrClassTy::PrepareToSave(AiPlrClassTy *this,uint *param_1)
   int errorCode;
   int iVar3;
   byte *pbVar4;
-  AnonShape_0067D3B0_B421D52F *pAVar5;
+  AllocationRecord_0067D3B0 *pAVar5;
   InternalExceptionFrame local_58;
   AiPlrClassTy *local_14;
   uint local_10;
-  byte *local_c;
+  AllocationRecord_0067D3B0 *local_c;
   undefined4 *local_8;
 
   local_c = nullptr;
@@ -36,18 +36,15 @@ byte * __thiscall AiPlrClassTy::PrepareToSave(AiPlrClassTy *this,uint *param_1)
       pAVar5 = nullptr;
     }
     else {
-      pAVar5 = (AnonShape_0067D3B0_B421D52F *)&pAVar2->field_05D3;
+      pAVar5 = (AllocationRecord_0067D3B0 *)&pAVar2->field_05D3;
     }
     local_c = PlrDataPack(pAVar5,local_8,local_10,param_1);
-    local_c[0xc] = 1;
-    local_c[0xd] = 0;
-    local_c[0xe] = 0;
-    local_c[0xf] = 0;
+    *(undefined4 *)&local_c->field_0xc = 1;
     if (local_8 != nullptr) {
       FreeAndNull(&local_8);
     }
     g_currentExceptionFrame = local_58.previous;
-    return local_c;
+    return (byte *)local_c;
   }
   g_currentExceptionFrame = local_58.previous;
   if (local_8 != nullptr) {

@@ -76,7 +76,7 @@ LAB_006a2f2f:
              (double)((float)(int)param_1[1] * _DAT_007904f4));
   ST3DSMAPContext::sub_006DDBE0((ST3DSMAPContext *)local_14);
   ST3DSMAPContext::sub_006DDD50((ST3DSMAPContext *)local_14);
-  local_8 = (short *)Library::DKW::LIB::FUN_006aac10(0x4b79);
+  local_8 = Library::DKW::LIB::MemAllocClear(0x4b79);
   iVar10 = 0;
   iVar6 = 0;
   do {

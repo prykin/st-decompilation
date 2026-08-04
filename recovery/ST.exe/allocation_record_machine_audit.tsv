@@ -1,0 +1,13 @@
+function_address	function_name	allocation_call	allocator	returned_root	unknown_return_path	exact_span	copy_segments
+0054EEE0	STPlaySystemC::SetCtrlCmd	0054EFA3	Library::DKW::LIB::MemAllocClear	0	1	0	p4:dst+27:src+0:1@0054EFF8
+0062CA70	FUN_0062ca70	0062CA78	Library::DKW::LIB::MemAlloc	0	1	109	p1:dst+0:src+0:108@0062CA91 | p1:dst+108:src+108:1@0062CA93
+00648530	FUN_00648530	00648569	Library::DKW::LIB::MemAllocClear	1	0	133	p0:dst+0:src+0:132@0064857D | p0:dst+132:src+132:1@0064857F
+00648620	BossDataPack	00648664	Library::DKW::LIB::MemAllocClear	1	0	133	p0:dst+0:src+0:132@00648676 | p0:dst+132:src+132:1@0064867B
+0065CB00	FUN_0065cb00	0065CB3E	Library::DKW::LIB::MemAllocClear	1	0	1183	p0:dst+0:src+0:1180@0065CB52 | p0:dst+1180:src+1180:2@0065CB54 | p0:dst+1182:src+1182:1@0065CB56
+0065CD10	EventDataPack	0065CDF1	Library::DKW::LIB::MemAllocClear	1	0	1183	p0:dst+0:src+0:1180@0065CE00 | p0:dst+1180:src+1180:2@0065CE02 | p0:dst+1182:src+1182:1@0065CE04
+00668330	FUN_00668330	0066836E	Library::DKW::LIB::MemAllocClear	1	0	608	p0:dst+0:src+0:608@00668382
+006684E0	FltDataPack	00668556	Library::DKW::LIB::MemAllocClear	1	0	608	p0:dst+0:src+0:608@00668565
+0067D1D0	FUN_0067d1d0	0067D20E	Library::DKW::LIB::MemAllocClear	1	0	299	p0:dst+0:src+0:296@0067D222 | p0:dst+296:src+296:2@0067D224 | p0:dst+298:src+298:1@0067D226
+0067D3B0	PlrDataPack	0067D4F5	Library::DKW::LIB::MemAllocClear	1	0	299	p0:dst+0:src+0:296@0067D506 | p0:dst+296:src+296:2@0067D508 | p0:dst+298:src+298:1@0067D50A
+00690FC0	FUN_00690fc0	00690FFE	Library::DKW::LIB::MemAllocClear	1	0	268	p0:dst+0:src+0:268@00691012
+00691190	TactDataPack	0069120F	Library::DKW::LIB::MemAllocClear	0	1	268	p0:dst+0:src+0:268@0069121E

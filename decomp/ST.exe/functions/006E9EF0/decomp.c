@@ -23,7 +23,7 @@ ST3DSMAPContext::sub_006E9EF0
   uint *puVar1;
   ushort *puVar2;
   uint uVar3;
-  undefined4 *puVar4;
+  void *pvVar4;
   byte *pbVar5;
   int iVar6;
 
@@ -40,9 +40,9 @@ ST3DSMAPContext::sub_006E9EF0
           return;
         }
         if (puVar1[0x2a] == 0) {
-          puVar4 = Library::DKW::LIB::FUN_006aac10(puVar1[0x25] * 8);
-          puVar1[0x2a] = (uint)puVar4;
-          if (puVar4 == nullptr) {
+          pvVar4 = Library::DKW::LIB::MemAllocClear(puVar1[0x25] * 8);
+          puVar1[0x2a] = (uint)pvVar4;
+          if (pvVar4 == nullptr) {
             return;
           }
         }

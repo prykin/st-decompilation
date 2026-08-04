@@ -1,0 +1,12 @@
+owner_functions=1878
+machine_loop_functions=797
+machine_root_offset_functions=323
+candidate_functions=269
+decompiled_functions=269
+root_fields=4
+root_loads=10
+recursive_traversal_sites=40
+proposals=4
+auto_apply=1
+review_only=3
+decompile_failures=0

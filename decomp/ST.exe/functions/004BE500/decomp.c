@@ -37,8 +37,8 @@ void __thiscall TLOBaseTy::SetActivity(TLOBaseTy *this,int param_1)
       pTVar1 = this_00->vtable;
       uVar5 = LookupRecordByte(*(char *)&this_00->field_023D);
       (*pTVar1->vfunc_90)(this_00,4,
-                          *(undefined4 *)
-                           (&DAT_00795c00 + ((uVar5 & 0xffU) + this_00->field_0235 * 3) * 4));
+                          (short)*(undefined4 *)
+                                  (&DAT_00795c00 + ((uVar5 & 0xffU) + this_00->field_0235 * 3) * 4));
     }
     if (*(int *)(&DAT_00794d94 + this_00->field_0235 * 4) != 0) {
       sub_004C2F70(this_00);

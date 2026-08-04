@@ -13,7 +13,7 @@ void __thiscall PrividerTy::sub_005BB9F0(PrividerTy *this)
   if (this->field_1A73 != 0) {
     this->field_0025 = this->field_1A73;
     this->field_0031 = 1;
-    (*this->field_000C->vtable->vfunc_18)(&this->field_0x1d);
+    (*this->field_000C->vtable->vfunc_18)((short)&this->field_0x1d);
   }
   return;
 }

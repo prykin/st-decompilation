@@ -433,8 +433,8 @@ public class STIndirectCallAnalyzer extends GhidraScript {
 
     private Long stackArgumentOffset(String operand) {
         String value = operand.toUpperCase(Locale.ROOT)
-            .replace("BYTE PTR", "").replace("WORD PTR", "")
-            .replace("DWORD PTR", "").replace("QWORD PTR", "")
+            .replace("QWORD PTR", "").replace("DWORD PTR", "")
+            .replace("WORD PTR", "").replace("BYTE PTR", "")
             .replace(" ", "");
         Matcher matcher = STACK_ARGUMENT.matcher(value);
         if (!matcher.matches()) return null;

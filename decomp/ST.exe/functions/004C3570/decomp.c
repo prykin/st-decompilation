@@ -108,7 +108,7 @@ int __thiscall TLOBaseTy::fireProc(TLOBaseTy *this)
                   puVar8[0xe] = uVar5;
                 } while (uVar5 == this_00->field_0259);
                 if (*(int *)(&DAT_00795afc + this_00->field_0235 * 4) != 0) {
-                  this_00->vfunc_90(3,*(int *)(&DAT_00795afc + this_00->field_0235 * 4));
+                  this_00->vfunc_90(3,(short)*(int *)(&DAT_00795afc + this_00->field_0235 * 4));
                 }
               }
             }

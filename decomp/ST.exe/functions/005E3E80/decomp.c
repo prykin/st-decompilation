@@ -65,7 +65,7 @@ MTaskTy::CreateTextSSpr
       local_c = 0;
     }
     uVar2 = local_c;
-    local_8 = (AnonShape_005E3E80_D5AAB6C7 *)Library::DKW::LIB::FUN_006aac10(0x3d);
+    local_8 = Library::DKW::LIB::MemAllocClear(0x3d);
     local_8->field_0023 = 3;
     local_8->field_0029 = (undefined2)local_18;
     local_8->field_002B = (short)iVar3;

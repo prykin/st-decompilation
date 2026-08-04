@@ -14,7 +14,7 @@ SubmarineTitans::Recovered::HiddenThis::AnonReceiver_00714CE0::FUN_00714ce0
 {
   AnonReceiver_00714CE0 *pAVar1;
   int iVar2;
-  undefined4 *puVar3;
+  void *pvVar3;
   uint uVar4;
   byte *puVar6;
   InternalExceptionFrame local_4c;
@@ -36,18 +36,18 @@ SubmarineTitans::Recovered::HiddenThis::AnonReceiver_00714CE0::FUN_00714ce0
     return iVar2;
   }
   if (*(void **)local_8 == nullptr) {
-    puVar3 = Library::DKW::LIB::FUN_006aac10(param_1);
+    pvVar3 = Library::DKW::LIB::MemAllocClear(param_1);
     local_8 = pAVar1;
   }
   else {
-    puVar3 = Library::DKW::LIB::MemRealloc(*(void **)local_8,param_1);
+    pvVar3 = Library::DKW::LIB::MemRealloc(*(void **)local_8,param_1);
     iVar2 = *(int *)&pAVar1->field_0x4;
     uVar4 = param_1 - iVar2;
-    puVar6 = (byte *)(iVar2 + (int)puVar3);
+    puVar6 = (byte *)(iVar2 + (int)pvVar3);
     memset(puVar6, 0, uVar4); /* compiler bulk-zero initialization */
   }
   g_currentExceptionFrame = local_4c.previous;
-  *(undefined4 **)local_8 = puVar3;
+  *(void **)local_8 = pvVar3;
   *(uint *)&local_8->field_0x4 = param_1;
   return 0;
 }

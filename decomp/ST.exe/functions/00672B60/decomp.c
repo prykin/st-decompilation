@@ -34,7 +34,7 @@ int FUN_00672b60(char *param_1,AnonShape_GLOBAL_0081194C_4D1525E6 *param_2)
     DAT_00811908 = 0;
     DAT_007d2d24 = 0x600;
   }
-  local_1c = Library::DKW::LIB::FUN_006aac10(0x30);
+  local_1c = Library::DKW::LIB::MemAllocClear(0x30);
   if (local_1c == nullptr) {
     return -2;
   }

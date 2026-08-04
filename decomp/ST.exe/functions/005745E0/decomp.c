@@ -2,7 +2,7 @@
 void __cdecl FUN_005745e0(AnonShape_005745E0_AF52CC75 *param_1,undefined4 *param_2)
 
 {
-  void **ppvVar1;
+  RecursiveNode_ST3DSMAPContext_0140_DDDC9F89 **ppRVar1;
   ushort uVar2;
   ST3DSMAPContext *pSVar3;
   byte bVar4;
@@ -14,9 +14,9 @@ void __cdecl FUN_005745e0(AnonShape_005745E0_AF52CC75 *param_1,undefined4 *param
   char *pcVar10;
   byte *pbVar11;
   undefined4 local_28;
-  undefined4 *local_24;
+  void *local_24;
   int local_20;
-  undefined4 *local_18;
+  void *local_18;
   int local_14;
   int local_10;
   int local_c;
@@ -38,15 +38,15 @@ void __cdecl FUN_005745e0(AnonShape_005745E0_AF52CC75 *param_1,undefined4 *param
     if (piVar5 == nullptr) {
 cf_break_loop_00574651:
       local_14 = (int)*(short *)((int)param_2 + 6);
-      local_18 = (undefined4 *)(int)*(short *)(param_2 + 1);
+      local_18 = (void *)(int)*(short *)(param_2 + 1);
       local_10 = (int)*(short *)(param_2 + 2);
       *(undefined2 *)(param_2 + 1) = 0;
       *(undefined2 *)((int)param_2 + 6) = 0;
       *(undefined2 *)(param_2 + 2) = 0;
       pSVar3 = g_sT3DSMAPContext_0080760C;
-      ppvVar1 = &g_sT3DSMAPContext_0080760C->field_0140;
+      ppRVar1 = &g_sT3DSMAPContext_0080760C->field_0140;
       *param_2 = g_sT3DSMAPContext_0080760C->field_0140;
-      *ppvVar1 = param_2;
+      *ppRVar1 = (RecursiveNode_ST3DSMAPContext_0140_DDDC9F89 *)param_2;
       pSVar3->field_013C = pSVar3->field_013C + 1;
       ST3DSMAPContext::sub_006DDBE0(g_sT3DSMAPContext_0080760C);
       g_sT3DSMAPContext_0080760C->field_0124 = 3;
@@ -59,7 +59,7 @@ cf_break_loop_00574651:
       *(undefined2 *)(param_2 + 1) = local_18._0_2_;
       *(undefined2 *)((int)param_2 + 6) = (undefined2)local_14;
       *(undefined2 *)(param_2 + 2) = (undefined2)local_10;
-      local_24 = Library::DKW::LIB::FUN_006aac10
+      local_24 = Library::DKW::LIB::MemAllocClear
                            ((uint)param_1->field_0004 * (uint)param_1->field_0004);
       local_28 = param_2[10];
       local_10 = 0;

@@ -47,14 +47,14 @@ LAB_00660050:
         local_14 = 1;
         local_10 = nullptr;
         local_c = 0;
-        this->sub_00498D20(0x11,&local_14);
+        this->sub_00498D20(0x11,(short)&local_14);
         uVar2 = local_8;
         DArrayDestroy(array);
         return uVar2;
       }
       local_14 = 0;
       local_10 = array;
-      this->sub_00498D20(4,&local_14);
+      this->sub_00498D20(4,(short)&local_14);
       uVar2 = local_8;
       DArrayDestroy(array);
       return uVar2;

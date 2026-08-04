@@ -36,7 +36,6 @@ int __thiscall STBoatC::UnLoadRC(STBoatC *this,int param_1)
   int iVar24;
   short sVar25;
   byte bVar26;
-  undefined4 arg_2;
   undefined4 local_28 [2];
   undefined4 local_20;
   short local_1c;
@@ -585,16 +584,16 @@ cf_common_exit_0046E811:
           iVar6 = *(int *)((int)this->field_06CB + 0x2c);
           if (iVar6 == 8) {
             pSVar14 = this->vtable;
-            arg_2 = 0xfb;
+            uVar5 = 0xfb;
 LAB_0046e2c8:
-            (*pSVar14->vfunc_90)(this,3,arg_2);
+            (*pSVar14->vfunc_90)(this,3,uVar5);
           }
           else if (iVar6 == 0x14) {
             this->vfunc_90(3,0x15f);
           }
           else if (iVar6 == 0x1a) {
             pSVar14 = this->vtable;
-            arg_2 = 0x19e;
+            uVar5 = 0x19e;
             goto LAB_0046e2c8;
           }
         }

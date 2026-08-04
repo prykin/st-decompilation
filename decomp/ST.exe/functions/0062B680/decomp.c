@@ -53,7 +53,7 @@ FUN_0062b680(ushort param_1,ushort param_2,ushort param_3,ushort param_4,ushort 
   local_44[3] = 0;
   local_2c = 3;
   local_10 = 0;
-  g_playSystem_00802A38->vfunc_08(0x124,0,0,local_44,0);
+  g_playSystem_00802A38->vfunc_08(0x124,0,0,(short)local_44,0);
   return;
 }
 

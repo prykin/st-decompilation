@@ -9,6 +9,7 @@ import java.io.File;
 import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.Path;
+import java.security.MessageDigest;
 import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.HashSet;
@@ -27,8 +28,11 @@ import ghidra.program.model.address.Address;
 import ghidra.program.model.data.AbstractIntegerDataType;
 import ghidra.program.model.data.Array;
 import ghidra.program.model.data.DataType;
+import ghidra.program.model.data.DataTypeComponent;
 import ghidra.program.model.data.Enum;
 import ghidra.program.model.data.Pointer;
+import ghidra.program.model.data.PointerDataType;
+import ghidra.program.model.data.Structure;
 import ghidra.program.model.data.TypeDef;
 import ghidra.program.model.data.Undefined;
 import ghidra.program.model.listing.Function;
@@ -45,6 +49,7 @@ public class STLocalLifetimeAnalyzer extends GhidraScript {
     private static final int DECOMPILE_CHUNK_SIZE = 256;
     private static final int RETURN_WEIGHT = 12;
     private static final int COPY_WEIGHT = 10;
+    private static final int TYPED_FIELD_WEIGHT = 12;
     private static final int ARGUMENT_WEIGHT = 4;
     private static final int EXTENSION_ROLE_WEIGHT = 10;
     private static final int ARITHMETIC_ROLE_WEIGHT = 4;
@@ -74,12 +79,16 @@ public class STLocalLifetimeAnalyzer extends GhidraScript {
         Files.createDirectories(directory);
 
         List<Function> candidates = new ArrayList<>();
-        Address only = onlyFunction();
-        if (only != null) {
-            Function function = currentProgram.getFunctionManager().getFunctionAt(only);
-            if (function == null)
-                throw new IllegalArgumentException("No function at " + addr(only));
-            if (candidate(function)) candidates.add(function);
+        List<Address> only = selectedFunctions();
+        if (!only.isEmpty()) {
+            for (Address address : only) {
+                Function function = currentProgram.getFunctionManager()
+                    .getFunctionAt(address);
+                if (function == null)
+                    throw new IllegalArgumentException(
+                        "No function at " + addr(address));
+                if (candidate(function)) candidates.add(function);
+            }
         }
         else {
             FunctionIterator functions = currentProgram.getFunctionManager().getFunctions(true);
@@ -243,14 +252,16 @@ public class STLocalLifetimeAnalyzer extends GhidraScript {
             if (anchor == null) continue;
             boolean different = !selected.specification.equals(
                 currentSpecification);
+            boolean isolate = merged && isolationEligible(selected) &&
+                requiresIsolation(entry.getKey(), selected.specification,
+                    decisions);
             // Proposal TSVs are an apply/review queue, not an inventory of every
-            // already-correct HighVariable. Keep conflicts above and every differing
-            // type, but do not send tens of thousands of settled merge groups through
-            // the applier and SMB reports.
-            if (!different) continue;
+            // already-correct HighVariable. A same-typed group is retained only when
+            // heterogeneous sibling lifetimes make isolation itself meaningful.
+            if (!different && !isolate) continue;
             boolean manual = symbolSource == SourceType.USER_DEFINED ||
                 symbolSource == SourceType.IMPORTED;
-            boolean apply = different && !manual &&
+            boolean apply = (different || isolate) && !manual &&
                 selected.score >= automaticThreshold(selected);
             if (!merged) singleGroupProposals++;
             String confidence = apply ? "high" :
@@ -259,7 +270,8 @@ public class STLocalLifetimeAnalyzer extends GhidraScript {
                 "single undefined local lifetime") + "; exact_type_votes=" +
                 selected.anchors.size() + "; score=" + selected.score +
                 "; sources=" + selected.sources +
-                (different ? "" : "; group already has the merged type") +
+                (different ? "" :
+                    "; exact type matches merged local but heterogeneous siblings require isolation") +
                 (manual ? "; manual/imported HighSymbol preserved" : "") +
                 (selected.score < automaticThreshold(selected) ?
                     "; one-way call conversion alone is review-only" : "");
@@ -270,9 +282,40 @@ public class STLocalLifetimeAnalyzer extends GhidraScript {
         }
     }
 
+    private boolean requiresIsolation(short group, String specification,
+            Map<Short, Decision> decisions) {
+        for (Map.Entry<Short, Decision> sibling : decisions.entrySet()) {
+            if (sibling.getKey() == group) continue;
+            Decision decision = sibling.getValue();
+            if (decision.selected == null ||
+                    !decision.selected.specification.equals(specification))
+                return true;
+        }
+        return false;
+    }
+
+    private boolean isolationEligible(TypeEvidence evidence) {
+        DataType type = resolveTypeSpecification(evidence.specification);
+        return type != null && recursivePointerIdentity(type) != null;
+    }
+
+    private DataType resolveTypeSpecification(String specification) {
+        if (specification == null || specification.isBlank()) return null;
+        if (specification.startsWith("pointer:")) {
+            DataType pointed = resolveTypeSpecification(
+                specification.substring("pointer:".length()));
+            return pointed == null ? null : new PointerDataType(pointed,
+                currentProgram.getDefaultPointerSize(),
+                currentProgram.getDataTypeManager());
+        }
+        return currentProgram.getDataTypeManager().getDataType(specification);
+    }
+
     private int automaticThreshold(TypeEvidence evidence) {
         if (evidence.sources.contains("call_return")) return RETURN_WEIGHT;
         if (evidence.sources.contains("typed_copy")) return COPY_WEIGHT;
+        if (evidence.sources.contains("typed_recursive_field"))
+            return TYPED_FIELD_WEIGHT;
         return ARGUMENT_WEIGHT * 2;
     }
 
@@ -310,6 +353,12 @@ public class STLocalLifetimeAnalyzer extends GhidraScript {
                     collectCallReturn(definition, varnode, evidence);
                 else if (mnemonic.equals("COPY"))
                     collectTypedCopy(definition, varnode, evidence);
+                else if (mnemonic.equals("LOAD"))
+                    collectTypedFieldLoad(definition, varnode, evidence);
+                else if (mnemonic.equals("PTRSUB"))
+                    collectTypedFieldAddress(definition, varnode, evidence);
+                else if (mnemonic.equals("CAST"))
+                    collectTypedRecursiveCast(definition, varnode, evidence);
                 if (scalarEligible)
                     collectScalarRole(definition, varnode, evidence);
             }
@@ -320,6 +369,8 @@ public class STLocalLifetimeAnalyzer extends GhidraScript {
                 Object op = descendants.next();
                 if (mnemonic(op).equals("CALL"))
                     collectCallArgument(op, varnode, evidence);
+                else if (mnemonic(op).equals("STORE"))
+                    collectTypedFieldStore(op, varnode, evidence);
                 if (scalarEligible)
                     collectScalarRole(op, varnode, evidence);
             }
@@ -496,6 +547,215 @@ public class STLocalLifetimeAnalyzer extends GhidraScript {
         addEvidence(evidence, type, COPY_WEIGHT, "typed_copy", anchor);
     }
 
+    /**
+     * Recover a local lifetime from an exact component load of a hash-intact
+     * recursive structure. This is rooted in the current datatype and p-code
+     * address expression, never in a variable name or image address.
+     */
+    private void collectTypedFieldLoad(Object op, Object output,
+            Map<String, TypeEvidence> evidence) throws Exception {
+        Object address = op.getClass().getMethod("getInput", int.class)
+            .invoke(op, 1);
+        TypedField field = typedRecursiveField(address);
+        if (field == null) return;
+        int size = ((Number)output.getClass().getMethod("getSize")
+            .invoke(output)).intValue();
+        if (!usableType(field.type, size)) return;
+        Evidence anchor = anchor(op, "typed_field_load", 1, null,
+            field.identity);
+        addEvidence(evidence, field.type, TYPED_FIELD_WEIGHT,
+            "typed_recursive_field", anchor);
+    }
+
+    private void collectTypedFieldAddress(Object op, Object output,
+            Map<String, TypeEvidence> evidence) throws Exception {
+        TypedField field = typedRecursiveField(output);
+        if (field == null) return;
+        DataType pointer = new PointerDataType(field.type,
+            currentProgram.getDefaultPointerSize(),
+            currentProgram.getDataTypeManager());
+        int size = ((Number)output.getClass().getMethod("getSize")
+            .invoke(output)).intValue();
+        if (!usableType(pointer, size)) return;
+        Evidence anchor = anchor(op, "typed_field_address", -1, null,
+            field.identity);
+        addEvidence(evidence, pointer, TYPED_FIELD_WEIGHT,
+            "typed_recursive_field", anchor);
+    }
+
+    private void collectTypedFieldStore(Object op, Object value,
+            Map<String, TypeEvidence> evidence) throws Exception {
+        int count = ((Number)op.getClass().getMethod("getNumInputs")
+            .invoke(op)).intValue();
+        if (count < 3) return;
+        Object stored = op.getClass().getMethod("getInput", int.class)
+            .invoke(op, 2);
+        if (!sameLifetime(stored, value)) return;
+        Object address = op.getClass().getMethod("getInput", int.class)
+            .invoke(op, 1);
+        TypedField field = typedRecursiveField(address);
+        if (field == null) return;
+        int size = ((Number)value.getClass().getMethod("getSize")
+            .invoke(value)).intValue();
+        if (!usableType(field.type, size)) return;
+        Evidence anchor = anchor(op, "typed_field_store", 2, null,
+            field.identity);
+        addEvidence(evidence, field.type, TYPED_FIELD_WEIGHT,
+            "typed_recursive_field", anchor);
+    }
+
+    /**
+     * Ghidra commonly keeps the exact type on an ephemeral field-address/load
+     * HighVariable, then gives the persisted local reached through a same-size
+     * CAST an undefined pointer tower.  Carry the exact recursive-node pointer
+     * chain across that one machine no-op.  Nominal cast targets are ineligible
+     * at the caller, so this cannot overwrite a deliberate payload view.
+     */
+    private void collectTypedRecursiveCast(Object op, Object output,
+            Map<String, TypeEvidence> evidence) throws Exception {
+        Object input = op.getClass().getMethod("getInput", int.class)
+            .invoke(op, 0);
+        if (input == null || input == output) return;
+        Object sourceHigh = input.getClass().getMethod("getHigh").invoke(input);
+        Object outputHigh = output.getClass().getMethod("getHigh").invoke(output);
+        if (sourceHigh == null || sourceHigh == outputHigh) return;
+        DataType type = (DataType)sourceHigh.getClass()
+            .getMethod("getDataType").invoke(sourceHigh);
+        String identity = recursivePointerIdentity(type);
+        if (identity == null) return;
+        int size = ((Number)output.getClass().getMethod("getSize")
+            .invoke(output)).intValue();
+        if (!usableType(type, size)) return;
+        Evidence anchor = anchor(op, "typed_recursive_cast", 0, null,
+            identity);
+        addEvidence(evidence, type, TYPED_FIELD_WEIGHT,
+            "typed_recursive_field", anchor);
+    }
+
+    private TypedField typedRecursiveField(Object address) throws Exception {
+        if (address == null) return null;
+        Object base = address;
+        long offset = 0;
+        Object definition = address.getClass().getMethod("getDef").invoke(address);
+        if (definition != null && mnemonic(definition).equals("PTRSUB")) {
+            base = definition.getClass().getMethod("getInput", int.class)
+                .invoke(definition, 0);
+            Object displacement = definition.getClass()
+                .getMethod("getInput", int.class).invoke(definition, 1);
+            Long value = constant(displacement);
+            if (value == null) return null;
+            offset = value;
+        }
+        Object high = base == null ? null :
+            base.getClass().getMethod("getHigh").invoke(base);
+        if (high == null) return null;
+        DataType baseType = (DataType)high.getClass()
+            .getMethod("getDataType").invoke(high);
+        baseType = untypedef(baseType);
+        if (!(baseType instanceof Pointer pointer)) return null;
+        DataType pointed = untypedef(pointer.getDataType());
+        if (!(pointed instanceof Structure structure) ||
+                !hashOwnedGeneratedStructure(structure) ||
+                offset < 0 || offset > Integer.MAX_VALUE) return null;
+        DataTypeComponent component = structure.getComponentAt((int)offset);
+        if (component == null || component.getOffset() != offset ||
+                component.getLength() <= 0 ||
+                !semanticType(component.getDataType())) return null;
+        boolean recursiveContainer = text(structure.getDescription())
+            .contains("[STRecursivePointeeApplier]");
+        if (!recursiveContainer &&
+                !pointsToHashOwnedRecursiveStructure(component.getDataType())) return null;
+        return new TypedField(component.getDataType(),
+            structure.getPathName() + "+0x" +
+                Long.toHexString(offset).toUpperCase(Locale.ROOT));
+    }
+
+    private Long constant(Object varnode) {
+        if (varnode == null) return null;
+        try {
+            if (!(boolean)varnode.getClass().getMethod("isConstant").invoke(varnode))
+                return null;
+            return ((Number)varnode.getClass().getMethod("getOffset")
+                .invoke(varnode)).longValue();
+        }
+        catch (Exception ignored) {
+            return null;
+        }
+    }
+
+    private boolean hashOwnedGeneratedStructure(Structure structure) {
+        String description = text(structure.getDescription());
+        if (Set.of("[STRecursivePointeeApplier]", "[STClassLayoutApplier]",
+                "[STGlobalDataApplier]", "[STPointerShapeApplier]",
+                "[STTypeFamilyApplier]").stream().noneMatch(description::contains))
+            return false;
+        String stored = storedLayoutHash(description);
+        return stored != null && stored.equals(layoutHash(structure));
+    }
+
+    private boolean pointsToHashOwnedRecursiveStructure(DataType type) {
+        type = untypedef(type);
+        if (!(type instanceof Pointer pointer)) return false;
+        DataType pointed = untypedef(pointer.getDataType());
+        return pointed instanceof Structure structure &&
+            text(structure.getDescription()).contains("[STRecursivePointeeApplier]") &&
+            hashOwnedGeneratedStructure(structure);
+    }
+
+    private String recursivePointerIdentity(DataType type) {
+        String specification = typeSpecification(type);
+        int depth = 0;
+        DataType leaf = untypedef(type);
+        while (leaf instanceof Pointer pointer) {
+            depth++;
+            leaf = untypedef(pointer.getDataType());
+        }
+        if (depth == 0 || !(leaf instanceof Structure structure) ||
+                !text(structure.getDescription()).contains(
+                    "[STRecursivePointeeApplier]") ||
+                !hashOwnedGeneratedStructure(structure))
+            return null;
+        return specification + "->" + structure.getPathName();
+    }
+
+    private String storedLayoutHash(String description) {
+        String marker = "generated_layout_sha256=";
+        int index = description.indexOf(marker);
+        if (index < 0 || description.length() < index + marker.length() + 64)
+            return null;
+        String value = description.substring(index + marker.length(),
+            index + marker.length() + 64);
+        return value.matches("[0-9a-fA-F]{64}") ?
+            value.toLowerCase(Locale.ROOT) : null;
+    }
+
+    private String layoutHash(Structure structure) {
+        StringBuilder layout = new StringBuilder();
+        layout.append("length=").append(structure.getLength()).append('\n');
+        for (DataTypeComponent component : structure.getDefinedComponents()) {
+            layout.append(component.getOffset()).append('|')
+                .append(component.getLength()).append('|')
+                .append(component.getDataType().getPathName()).append('|')
+                .append(text(component.getFieldName())).append('|')
+                .append(text(component.getComment())).append('\n');
+        }
+        return sha256(layout.toString());
+    }
+
+    private String sha256(String value) {
+        try {
+            byte[] digest = MessageDigest.getInstance("SHA-256")
+                .digest(value.getBytes(StandardCharsets.UTF_8));
+            StringBuilder result = new StringBuilder();
+            for (byte item : digest)
+                result.append(String.format(Locale.ROOT, "%02x", item & 0xff));
+            return result.toString();
+        }
+        catch (Exception exception) {
+            throw new IllegalStateException("SHA-256 unavailable", exception);
+        }
+    }
+
     private void addEvidence(Map<String, TypeEvidence> evidence, DataType type,
             int weight, String source, Evidence anchor) {
         String specification = typeSpecification(type);
@@ -624,6 +884,8 @@ public class STLocalLifetimeAnalyzer extends GhidraScript {
             return false;
         if (type instanceof Pointer pointer) {
             DataType pointed = untypedef(pointer.getDataType());
+            while (pointed instanceof Pointer nested)
+                pointed = untypedef(nested.getDataType());
             return pointed != null && pointed.getLength() >= 0 &&
                 !Undefined.isUndefined(pointed) &&
                 !pointed.getPathName().equals("/void");
@@ -688,6 +950,8 @@ public class STLocalLifetimeAnalyzer extends GhidraScript {
         if (type == null || Undefined.isUndefined(type)) return true;
         if (!(type instanceof Pointer pointer)) return false;
         DataType pointed = untypedef(pointer.getDataType());
+        while (pointed instanceof Pointer nested)
+            pointed = untypedef(nested.getDataType());
         return pointed == null || Undefined.isUndefined(pointed);
     }
 
@@ -743,15 +1007,22 @@ public class STLocalLifetimeAnalyzer extends GhidraScript {
         return askDirectory("Select recovery output directory", "Select");
     }
 
-    private Address onlyFunction() {
+    private List<Address> selectedFunctions() {
         String[] args = getScriptArgs();
-        if (args.length < 2 || args[1].isBlank()) return null;
-        Address address = currentProgram.getAddressFactory()
-            .getAddress(args[1]);
-        if (address == null)
-            throw new IllegalArgumentException(
-                "Invalid function address: " + args[1]);
-        return address;
+        if (args.length < 2) return List.of();
+        Set<Address> selected = new java.util.TreeSet<>();
+        for (int index = 1; index < args.length; index++) {
+            for (String token : args[index].split("[,\\s]+")) {
+                if (token.isBlank()) continue;
+                Address address = currentProgram.getAddressFactory()
+                    .getAddress(token);
+                if (address == null)
+                    throw new IllegalArgumentException(
+                        "Invalid function address: " + token);
+                selected.add(address);
+            }
+        }
+        return List.copyOf(selected);
     }
 
     private Path programDirectory(File selected) {
@@ -813,7 +1084,7 @@ public class STLocalLifetimeAnalyzer extends GhidraScript {
             "decompile_failures=" + failures.size(),
             "policy=Distinct decompiler merge groups are split independently. A " +
                 "single-group raw undefined local is also eligible, but only from " +
-                "the same exact typed return/copy evidence or two agreeing typed " +
+                "the same exact typed return/copy/recursive-field evidence or two agreeing typed " +
                 "call arguments. Script-owned scalar splits are revisited so an " +
                 "exact nominal copy can restore an enum, typedef, or pointer. " +
                 "Competing exact types are review-only. Already-correct groups are " +
@@ -853,6 +1124,7 @@ public class STLocalLifetimeAnalyzer extends GhidraScript {
         Parameter[] parameters) {}
     private record ScalarRole(String kind, int operand, int weight,
         String source) {}
+    private record TypedField(DataType type, String identity) {}
     private record Evidence(String address, int time, String kind, int operand,
         String directTarget, String resolvedTarget, String source) {
         static final Comparator<Evidence> ORDER =

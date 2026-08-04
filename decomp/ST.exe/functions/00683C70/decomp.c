@@ -69,7 +69,7 @@ uint * FUN_00683c70(LPCSTR lpFileName,AnonShape_00683C70_22193481 *param_2,undef
   undefined2 extraout_var_04;
   byte *pbVar14;
   void *pvVar15;
-  AnonShape_0065CD10_BA40DE58 *pAVar16;
+  AllocationRecord_0065CD10 *pAVar16;
   undefined4 **ppuVar17;
   LPCSTR pCVar18;
   char *pcVar19;
@@ -113,10 +113,10 @@ uint * FUN_00683c70(LPCSTR lpFileName,AnonShape_00683C70_22193481 *param_2,undef
   undefined4 *local_f0;
   undefined4 local_ec;
   undefined4 local_e8;
-  AnonShape_0065CD10_BA40DE58 *local_e4;
+  AllocationRecord_0065CD10 *local_e4;
   undefined4 local_e0;
   undefined4 local_dc;
-  undefined4 local_d8;
+  uint local_d8;
   undefined4 local_d4;
   int local_d0;
   int local_cc;
@@ -169,15 +169,15 @@ uint * FUN_00683c70(LPCSTR lpFileName,AnonShape_00683C70_22193481 *param_2,undef
   undefined4 local_38;
   undefined4 local_34;
   int local_30;
-  byte *local_2c;
-  byte *local_28;
+  AllocationRecord_006684E0 *local_2c;
+  AllocationRecord_0067D3B0 *local_28;
   byte *local_24;
-  byte *local_20;
+  AllocationRecord_00648620 *local_20;
   undefined4 local_1c;
   uint local_18;
   undefined4 local_14;
   uint local_10;
-  byte *local_c;
+  AllocationRecord_0065CD10 *local_c;
   char local_5;
 
   local_30 = 1;
@@ -390,7 +390,7 @@ LAB_006840bc:
       }
       local_30 = 1;
       if (DAT_007d2d18 == 0x1c) {
-        pAVar16 = (AnonShape_0065CD10_BA40DE58 *)lpFileName;
+        pAVar16 = (AllocationRecord_0065CD10 *)lpFileName;
         if (param_3 != nullptr) {
           *param_3 = 6;
         }
@@ -1557,7 +1557,7 @@ switchD_006841b6_caseD_2:
                     (-0x8d,g_overwriteContext_007ED77C,"E:\\__titans\\ai\\ai_script.cpp",0x83f
                     );
         }
-        pAVar16 = (AnonShape_0065CD10_BA40DE58 *)g_dArray_008489D8;
+        pAVar16 = (AllocationRecord_0065CD10 *)g_dArray_008489D8;
         if (DAT_008489d0 == nullptr) {
           g_dArray_008489D8 = nullptr;
           if (param_3 != nullptr) {
@@ -2167,7 +2167,7 @@ cf_common_join_006895D5:
                       (-0x8c,g_overwriteContext_007ED77C,"E:\\__titans\\ai\\ai_script.cpp",
                        0x85b);
           }
-          DAT_008489dc = (AnonShape_0065CD10_BA40DE58 *)
+          DAT_008489dc = (AllocationRecord_0065CD10 *)
                          Library::DKW::TBL::SArrayCreate(nullptr,5,5);
           DAT_008488b0 = DAT_008488b0 + -1;
           goto switchD_006841b6_default;
@@ -2374,7 +2374,7 @@ cf_common_join_006895D5:
                       (-0x8c,g_overwriteContext_007ED77C,"E:\\__titans\\ai\\ai_script.cpp",
                        0x74c);
           }
-          DAT_008489b4 = (AnonShape_0065CD10_BA40DE58 *)
+          DAT_008489b4 = (AllocationRecord_0065CD10 *)
                          thunk_FUN_00648400((char *)(&DAT_00811aec)[DAT_008488b0 * 0xac5],
                                             (&DAT_00811c80)[DAT_008488b0 * 0xac5]);
           DAT_008488b0 = DAT_008488b0 + -1;
@@ -2393,12 +2393,13 @@ cf_common_join_006895D5:
             }
             goto cf_common_join_0068A687;
           }
-          local_c = EventDataPack(*(AnonShape_0065CD10_BA40DE58 **)&DAT_008489b4->field_0x4e,
-                                  &local_18);
-          local_20 = BossDataPack((uint *)DAT_008489b4,(undefined4 *)local_c,local_18,&local_10);
+          local_c = EventDataPack(*(AllocationRecord_0065CD10 **)&DAT_008489b4->field_0x4e,&local_18
+                                 );
+          local_20 = BossDataPack((AllocationRecord_00648620 *)DAT_008489b4,(undefined4 *)local_c,
+                                  local_18,&local_10);
           thunk_FUN_0065d0f0((int *)&local_c);
           thunk_FUN_006484f0((int *)&DAT_008489b4);
-          thunk_FUN_006809b0(local_20,local_10);
+          thunk_FUN_006809b0((byte *)local_20,local_10);
           thunk_FUN_006484f0((int *)&local_20);
           DAT_008488b0 = DAT_008488b0 + -1;
           goto switchD_006841b6_default;
@@ -2416,7 +2417,7 @@ cf_common_join_006895D5:
                       (-0x8c,g_overwriteContext_007ED77C,"E:\\__titans\\ai\\ai_script.cpp",
                        0x6e5);
           }
-          DAT_008489b8 = (AnonShape_0065CD10_BA40DE58 *)
+          DAT_008489b8 = (AllocationRecord_0065CD10 *)
                          thunk_FUN_0067cf30((char *)(&DAT_00811aec)[DAT_008488b0 * 0xac5],
                                             *(undefined2 *)(&DAT_00811c80 + DAT_008488b0 * 0xac5),
                                             (char *)(&DAT_00811af0)[DAT_008488b0 * 0xac5],
@@ -2437,13 +2438,13 @@ cf_common_join_006895D5:
             }
             goto cf_common_join_0068A687;
           }
-          local_c = EventDataPack(*(AnonShape_0065CD10_BA40DE58 **)&DAT_008489b8->field_0x106,
+          local_c = EventDataPack(*(AllocationRecord_0065CD10 **)&DAT_008489b8->field_0x106,
                                   &local_18);
-          local_28 = PlrDataPack((AnonShape_0067D3B0_B421D52F *)DAT_008489b8,(undefined4 *)local_c,
+          local_28 = PlrDataPack((AllocationRecord_0067D3B0 *)DAT_008489b8,(undefined4 *)local_c,
                                  local_18,&local_10);
           thunk_FUN_0065d0f0((int *)&local_c);
           thunk_FUN_0067d160((int *)&DAT_008489b8);
-          thunk_FUN_006809b0(local_28,local_10);
+          thunk_FUN_006809b0((byte *)local_28,local_10);
           thunk_FUN_0067d160((int *)&local_28);
           DAT_008488b0 = DAT_008488b0 + -1;
           goto switchD_006841b6_default;
@@ -2494,7 +2495,7 @@ cf_common_join_006895D5:
                       (-0x8c,g_overwriteContext_007ED77C,"E:\\__titans\\ai\\ai_script.cpp",
                        0x70e);
           }
-          DAT_008489c8 = (AnonShape_0065CD10_BA40DE58 *)
+          DAT_008489c8 = (AllocationRecord_0065CD10 *)
                          thunk_FUN_00690e90((char *)(&DAT_00811aec)[DAT_008488b0 * 0xac5],
                                             *(undefined2 *)(&DAT_00811c80 + DAT_008488b0 * 0xac5),
                                             *(undefined2 *)(&DAT_00811c84 + DAT_008488b0 * 0xac5));
@@ -2525,7 +2526,7 @@ cf_common_join_006895D5:
             local_e4 = DAT_008489c8;
             local_e0 = 0;
             local_dc = 0;
-            local_d8 = *(undefined4 *)&DAT_008489c8->field_0x14;
+            local_d8 = *(uint *)&DAT_008489c8->field_0x14;
             Library::DKW::TBL::DArrayAppend(*(DArrayTy **)&DAT_008489b8->field_0xc2,&local_e4);
             DAT_008489c8 = nullptr;
             DAT_008488b0 = DAT_008488b0 + -1;
@@ -2542,7 +2543,7 @@ cf_common_join_006895D5:
                     (-0x8d,g_overwriteContext_007ED77C,"E:\\__titans\\ai\\ai_script.cpp",0x733
                     );
         }
-        pAVar16 = (AnonShape_0065CD10_BA40DE58 *)PTR_008489c4;
+        pAVar16 = (AllocationRecord_0065CD10 *)PTR_008489c4;
         if (DAT_008489c8 == nullptr) {
           if (DAT_008489d0 == nullptr) {
             PTR_008489c4 = nullptr;
@@ -2551,9 +2552,9 @@ cf_common_join_006895D5:
             }
             goto cf_common_join_0068A687;
           }
-          local_2c = FltDataPack(PTR_008489c4,&local_10);
+          local_2c = FltDataPack((AllocationRecord_006684E0 *)PTR_008489c4,&local_10);
           thunk_FUN_006686c0((int *)&PTR_008489c4);
-          thunk_FUN_006809b0(local_2c,local_10);
+          thunk_FUN_006809b0((byte *)local_2c,local_10);
           thunk_FUN_006686c0((int *)&local_2c);
           DAT_008488b0 = DAT_008488b0 + -1;
         }
@@ -2825,7 +2826,7 @@ cf_common_join_006895D5:
                         (-0x8c,g_overwriteContext_007ED77C,"E:\\__titans\\ai\\ai_script.cpp",
                          0x774);
             }
-            DAT_008489bc = (AnonShape_0065CD10_BA40DE58 *)
+            DAT_008489bc = (AllocationRecord_0065CD10 *)
                            thunk_FUN_0065c9e0((char *)(&DAT_00811aec)[DAT_008488b0 * 0xac5]);
             DAT_008488b0 = DAT_008488b0 + -1;
             goto switchD_006841b6_default;
@@ -2873,7 +2874,7 @@ cf_common_join_006895D5:
           }
           local_c = EventDataPack(DAT_008489bc,&local_18);
           thunk_FUN_0065d0f0((int *)&DAT_008489bc);
-          thunk_FUN_006809b0(local_c,local_18);
+          thunk_FUN_006809b0((byte *)local_c,local_18);
           thunk_FUN_0065d0f0((int *)&local_c);
           DAT_008488b0 = DAT_008488b0 + -1;
           goto switchD_006841b6_default;
@@ -2962,7 +2963,7 @@ cf_common_join_006895D5:
                     (-0x8d,g_overwriteContext_007ED77C,"E:\\__titans\\ai\\ai_script.cpp",0x81d
                     );
         }
-        pAVar16 = (AnonShape_0065CD10_BA40DE58 *)g_array_008489D4;
+        pAVar16 = (AllocationRecord_0065CD10 *)g_array_008489D4;
         if (DAT_008489d0 == nullptr) {
           g_array_008489D4 = nullptr;
           if (param_3 != nullptr) {

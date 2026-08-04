@@ -1766,6 +1766,8 @@ public class STClassLayoutAnalyzer extends GhidraScript {
             boolean existingConcreteType = false;
             boolean generatedTypeRevision = false;
             boolean generatedSwitchEnumPreserved = false;
+            boolean generatedRecursivePointeePreserved = false;
+            String recursivePointeeConflict = "";
             String retiredDeprecatedInference = "";
             if (ownerVtable && existing != null && existing.getOffset() == field.offset &&
                     existing.getLength() == size) {
@@ -1797,10 +1799,27 @@ public class STClassLayoutAnalyzer extends GhidraScript {
                 type = typeSpecification(existing.getDataType());
                 if (existing.getFieldName() != null) name = existing.getFieldName();
                 existingConcreteType = true;
+                boolean retainedRecursivePointee =
+                    hashOwnedRecursivePointee(existing.getDataType());
                 boolean retainedDArraySpecialization =
                     inferredType.equals("pointer:" + DARRAY_PATH) &&
                     darraySpecialization(type);
-                if (retainedDArraySpecialization) {
+                if (retainedRecursivePointee && !inferredType.isBlank() &&
+                        !inferredType.equals(type)) {
+                    if (genericPointerSpecification(inferredType)) {
+                        // A generic pointer assignment remains compatible with a complete,
+                        // hash-owned recursive view.  It cannot erase the stronger geometry and
+                        // self-traversal proof on a later class-layout fixed-point pass.
+                        generatedRecursivePointeePreserved = true;
+                        inferredType = type;
+                    }
+                    else recursivePointeeConflict = inferredType;
+                    typeApply = false;
+                }
+                else if (retainedRecursivePointee) {
+                    typeApply = false;
+                }
+                else if (retainedDArraySpecialization) {
                     // STDArrayElementApplier refines only DArrayTy::data.  The
                     // generic descriptor evidence remains true and must not
                     // bounce the owner field back on the next fixed-point pass.
@@ -1844,7 +1863,12 @@ public class STClassLayoutAnalyzer extends GhidraScript {
                 reason += "; compatible_DArray_element_specialization_preserved";
             if (field.sizes.size() > 1 && consistent)
                 reason += "; compatible_subwidth_views=" + field.sizeText();
-            if (generatedTypeRevision)
+            if (generatedRecursivePointeePreserved)
+                reason += "; hash_owned_recursive_pointee_preserved_over_generic_pointer";
+            else if (!recursivePointeeConflict.isBlank())
+                reason += "; hash_owned_recursive_pointee_conflict_preserved=" + type +
+                    "; rejected_inference=" + recursivePointeeConflict;
+            else if (generatedTypeRevision)
                 reason += "; generated_concrete_type_revised=" + type + "->" + inferredType;
             else if (!retiredDeprecatedInference.isBlank())
                 reason += "; deprecated_generated_type_reverted=" + type +
@@ -1866,6 +1890,7 @@ public class STClassLayoutAnalyzer extends GhidraScript {
             result.add(new FieldProposal(evidence.owner, field.offset, size, name, type,
                 inferredType, typeApply, suggestedName, nameApply, field.typeEvidenceText(),
                 field.nameEvidenceText(), !retiredDeprecatedInference.isBlank() ? "repair" :
+                    !recursivePointeeConflict.isBlank() ? "conflict" :
                     typeApply ? "high" :
                     field.inferredTypes.size() > 1 ? "conflict" :
                     existingConcreteType ? "existing" : "none", nameConfidence,
@@ -1909,6 +1934,25 @@ public class STClassLayoutAnalyzer extends GhidraScript {
 
     private boolean darraySpecialization(String specification) {
         return specification.startsWith("pointer:" + DARRAY_SPECIALIZATION_ROOT);
+    }
+
+    private boolean genericPointerSpecification(String specification) {
+        if (!specification.startsWith("pointer:")) return false;
+        String path = specification.substring("pointer:".length());
+        return Set.of("/void", "/byte", "/char", "/undefined", "/undefined1",
+            "/undefined2", "/undefined4", "/undefined8").contains(path);
+    }
+
+    private boolean hashOwnedRecursivePointee(DataType type) {
+        type = untypedef(type);
+        if (!(type instanceof Pointer pointer) || pointer.getDataType() == null) return false;
+        DataType pointed = untypedef(pointer.getDataType());
+        if (!(pointed instanceof Structure structure)) return false;
+        String description = structure.getDescription();
+        if (description == null ||
+                !description.contains("[STRecursivePointeeApplier]")) return false;
+        String stored = storedLayoutHash(description);
+        return stored != null && stored.equals(layoutHash(structure));
     }
 
     private void disableDuplicateSuggestedNames(List<FieldProposal> fields) {

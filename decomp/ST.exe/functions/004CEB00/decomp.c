@@ -34,7 +34,7 @@ undefined4 __thiscall TLOBaseTy::sub_004CEB00(TLOBaseTy *this,int param_1)
   char *pcVar12;
   byte **ppbVar13;
   char *pcVar14;
-  undefined4 arg_2;
+  undefined2 arg_2;
   byte *local_6c [5];
   byte *local_58;
   int local_54;

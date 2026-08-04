@@ -37,7 +37,7 @@ void FUN_005335e0(void)
       pcVar9 = pcVar9 + 1;
     } while (cVar1 != '\0');
     local_10 = ~uVar5 + 0xd;
-    puVar3 = Library::DKW::LIB::FUN_006aac10(local_10);
+    puVar3 = Library::DKW::LIB::MemAllocClear(local_10);
     local_c = puVar3;
     if (puVar3 != nullptr) {
       *(undefined1 *)puVar3 = 2;
@@ -154,6 +154,7 @@ void FUN_005335e0(void)
     pcVar7 = pcVar9 + -uVar5;
     pcVar9 = pcVar8 + -1;
     memmove(pcVar9, pcVar7, uVar5); /* compiler REP MOVS byte copy */
+    uVar6 = 0;
     uVar5 = 0xffffffff;
     pcVar7 = (char *)((int)local_8 + 0x1f5);
     do {

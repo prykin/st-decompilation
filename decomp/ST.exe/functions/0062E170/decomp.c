@@ -24,7 +24,7 @@ void FUN_0062e170(undefined4 param_1,int param_2,int param_3,int param_4,undefin
   local_14 = param_4 * 200 + 100;
   local_c = param_5;
   local_8 = param_6;
-  g_playSystem_00802A38->vfunc_08(0x144,0,0,local_30,0);
+  g_playSystem_00802A38->vfunc_08(0x144,0,0,(short)local_30,0);
   return;
 }
 

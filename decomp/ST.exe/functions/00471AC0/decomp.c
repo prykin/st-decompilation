@@ -28,7 +28,7 @@ int __thiscall STBoatC::Guard(STBoatC *this,int param_1)
   undefined4 uVar10;
   undefined2 *puVar11;
   bool bVar12;
-  AnonShape_00645880_0D5933D4 local_64;
+  RecoveredRecord_STBoatC_00645880 local_64;
   undefined4 local_3c [2];
   short local_34;
   short sStack_32;
@@ -96,10 +96,8 @@ int __thiscall STBoatC::Guard(STBoatC *this,int param_1)
       case 10:
         thunk_FUN_00416270(pSVar5,(undefined2 *)&local_14,&local_18,&local_1c);
         local_64.field_000A = this->field_0043;
-        /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-        local_64._8_2_ = this->field_0041;
-        /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-        local_64._12_2_ = this->field_0045;
+        local_64.field_0008 = this->field_0041;
+        local_64.field_000C = this->field_0045;
         local_10 = 0;
         if (this->field_02B2 != '\0') {
           puVar11 = (undefined2 *)&this->field_0x2a8;
@@ -110,8 +108,7 @@ int __thiscall STBoatC::Guard(STBoatC *this,int param_1)
                                         this->field_006C);
             sStack_32 = (short)((uint)*puVar6 >> 0x10);
             local_64.field_000E = this->field_0041 + (short)*puVar6;
-            /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-            local_64._16_2_ = this->field_0043 - sStack_32;
+            local_64.field_0010 = this->field_0043 - sStack_32;
             local_64.field_0012 = *(short *)(puVar6 + 1) + this->field_0045;
             sStack_32 = *puVar11;
             local_34 = 0;
@@ -119,29 +116,22 @@ int __thiscall STBoatC::Guard(STBoatC *this,int param_1)
             local_34 = (short)*puVar6;
             sStack_32 = (short)((uint)*puVar6 >> 0x10);
             local_30 = *(undefined2 *)(puVar6 + 1);
-            /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-            local_64._20_2_ = local_34 + (short)local_14;
+            local_64.field_0014 = local_34 + (short)local_14;
             local_64.field_0016 = (short)local_18 - sStack_32;
-            /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-            local_64._0_4_ = this->field_0024;
-            /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-            local_64._24_2_ = (short)local_1c;
+            local_64.field_0000 = this->field_0024;
+            local_64.field_0018 = (short)local_1c;
             /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
             local_64.field_0022 =
                  (-(uint)(*(int *)((int)this->field_06CB + 0x2c) != 10) & 0xfffffffe) + 1;
             if (iVar7 == 10) {
-              /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-              local_64._4_4_ = 0xa1;
+              local_64.field_0004 = 0xa1;
             }
             else {
-              /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-              local_64._4_4_ = this->field_079A;
+              local_64.field_0004 = this->field_079A;
             }
             local_64.field_001A = this->field_006C;
-            /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-            local_64._28_4_ = this->field_0018;
-            /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-            local_64._32_2_ = this->field_0032;
+            local_64.field_001C = this->field_0018;
+            local_64.field_0020 = this->field_0032;
             thunk_FUN_00645880(&local_64);
             if (iVar7 == 10) {
               this->field_072A = 0;
@@ -253,10 +243,8 @@ LAB_00472a3a:
         case 10:
           thunk_FUN_00416270(pSVar5,(undefined2 *)&local_14,&local_18,&local_1c);
           local_64.field_000A = this->field_0043;
-          /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-          local_64._8_2_ = this->field_0041;
-          /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-          local_64._12_2_ = this->field_0045;
+          local_64.field_0008 = this->field_0041;
+          local_64.field_000C = this->field_0045;
           local_10 = 0;
           if (this->field_02B2 != '\0') {
             puVar11 = (undefined2 *)&this->field_0x2a8;
@@ -267,8 +255,7 @@ LAB_00472a3a:
                                           this->field_006C);
               sStack_32 = (short)((uint)*puVar6 >> 0x10);
               local_64.field_000E = this->field_0041 + (short)*puVar6;
-              /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-              local_64._16_2_ = this->field_0043 - sStack_32;
+              local_64.field_0010 = this->field_0043 - sStack_32;
               local_64.field_0012 = *(short *)(puVar6 + 1) + this->field_0045;
               sStack_32 = *puVar11;
               local_34 = 0;
@@ -276,29 +263,22 @@ LAB_00472a3a:
               local_34 = (short)*puVar6;
               sStack_32 = (short)((uint)*puVar6 >> 0x10);
               local_30 = *(undefined2 *)(puVar6 + 1);
-              /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-              local_64._20_2_ = local_34 + (short)local_14;
+              local_64.field_0014 = local_34 + (short)local_14;
               local_64.field_0016 = (short)local_18 - sStack_32;
-              /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-              local_64._0_4_ = this->field_0024;
-              /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-              local_64._24_2_ = (short)local_1c;
+              local_64.field_0000 = this->field_0024;
+              local_64.field_0018 = (short)local_1c;
               /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
               local_64.field_0022 =
                    (-(uint)(*(int *)((int)this->field_06CB + 0x2c) != 10) & 0xfffffffe) + 1;
               if (iVar7 == 10) {
-                /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-                local_64._4_4_ = 0xa1;
+                local_64.field_0004 = 0xa1;
               }
               else {
-                /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-                local_64._4_4_ = this->field_079A;
+                local_64.field_0004 = this->field_079A;
               }
               local_64.field_001A = this->field_006C;
-              /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-              local_64._28_4_ = this->field_0018;
-              /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-              local_64._32_2_ = this->field_0032;
+              local_64.field_001C = this->field_0018;
+              local_64.field_0020 = this->field_0032;
               thunk_FUN_00645880(&local_64);
               if (iVar7 == 10) {
                 this->field_072A = 0;
@@ -360,10 +340,8 @@ LAB_00472a3a:
       case 10:
         thunk_FUN_00416270(pSVar5,(undefined2 *)&local_14,&local_18,&local_1c);
         local_64.field_000A = this->field_0043;
-        /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-        local_64._8_2_ = this->field_0041;
-        /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-        local_64._12_2_ = this->field_0045;
+        local_64.field_0008 = this->field_0041;
+        local_64.field_000C = this->field_0045;
         local_10 = 0;
         if (this->field_02B2 != '\0') {
           puVar11 = (undefined2 *)&this->field_0x2a8;
@@ -374,8 +352,7 @@ LAB_00472a3a:
                                         this->field_006C);
             sStack_32 = (short)((uint)*puVar6 >> 0x10);
             local_64.field_000E = this->field_0041 + (short)*puVar6;
-            /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-            local_64._16_2_ = this->field_0043 - sStack_32;
+            local_64.field_0010 = this->field_0043 - sStack_32;
             local_64.field_0012 = *(short *)(puVar6 + 1) + this->field_0045;
             sStack_32 = *puVar11;
             local_34 = 0;
@@ -383,29 +360,22 @@ LAB_00472a3a:
             local_34 = (short)*puVar6;
             sStack_32 = (short)((uint)*puVar6 >> 0x10);
             local_30 = *(undefined2 *)(puVar6 + 1);
-            /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-            local_64._20_2_ = local_34 + (short)local_14;
+            local_64.field_0014 = local_34 + (short)local_14;
             local_64.field_0016 = (short)local_18 - sStack_32;
-            /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-            local_64._0_4_ = this->field_0024;
-            /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-            local_64._24_2_ = (short)local_1c;
+            local_64.field_0000 = this->field_0024;
+            local_64.field_0018 = (short)local_1c;
             /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
             local_64.field_0022 =
                  (-(uint)(*(int *)((int)this->field_06CB + 0x2c) != 10) & 0xfffffffe) + 1;
             if (iVar7 == 10) {
-              /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-              local_64._4_4_ = 0xa1;
+              local_64.field_0004 = 0xa1;
             }
             else {
-              /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-              local_64._4_4_ = this->field_079A;
+              local_64.field_0004 = this->field_079A;
             }
             local_64.field_001A = this->field_006C;
-            /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-            local_64._28_4_ = this->field_0018;
-            /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-            local_64._32_2_ = this->field_0032;
+            local_64.field_001C = this->field_0018;
+            local_64.field_0020 = this->field_0032;
             thunk_FUN_00645880(&local_64);
             if (iVar7 == 10) {
               this->field_072A = 0;
@@ -583,10 +553,8 @@ LAB_00471ec9:
   case 10:
     thunk_FUN_00416270(pSVar5,(undefined2 *)&local_14,&local_18,&local_1c);
     local_64.field_000A = this->field_0043;
-    /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-    local_64._8_2_ = this->field_0041;
-    /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-    local_64._12_2_ = this->field_0045;
+    local_64.field_0008 = this->field_0041;
+    local_64.field_000C = this->field_0045;
     local_10 = 0;
     if (this->field_02B2 != '\0') {
       puVar11 = (undefined2 *)&this->field_0x2a8;
@@ -597,8 +565,7 @@ LAB_00471ec9:
                                     this->field_006C);
         sStack_32 = (short)((uint)*puVar6 >> 0x10);
         local_64.field_000E = this->field_0041 + (short)*puVar6;
-        /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-        local_64._16_2_ = this->field_0043 - sStack_32;
+        local_64.field_0010 = this->field_0043 - sStack_32;
         local_64.field_0012 = *(short *)(puVar6 + 1) + this->field_0045;
         sStack_32 = *puVar11;
         local_34 = 0;
@@ -606,29 +573,22 @@ LAB_00471ec9:
         local_34 = (short)*puVar6;
         sStack_32 = (short)((uint)*puVar6 >> 0x10);
         local_30 = *(undefined2 *)(puVar6 + 1);
-        /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-        local_64._20_2_ = local_34 + (short)local_14;
+        local_64.field_0014 = local_34 + (short)local_14;
         local_64.field_0016 = (short)local_18 - sStack_32;
-        /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-        local_64._0_4_ = this->field_0024;
-        /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-        local_64._24_2_ = (short)local_1c;
+        local_64.field_0000 = this->field_0024;
+        local_64.field_0018 = (short)local_1c;
         /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
         local_64.field_0022 =
              (-(uint)(*(int *)((int)this->field_06CB + 0x2c) != 10) & 0xfffffffe) + 1;
         if (iVar7 == 10) {
-          /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-          local_64._4_4_ = 0xa1;
+          local_64.field_0004 = 0xa1;
         }
         else {
-          /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-          local_64._4_4_ = this->field_079A;
+          local_64.field_0004 = this->field_079A;
         }
         local_64.field_001A = this->field_006C;
-        /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-        local_64._28_4_ = this->field_0018;
-        /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-        local_64._32_2_ = this->field_0032;
+        local_64.field_001C = this->field_0018;
+        local_64.field_0020 = this->field_0032;
         thunk_FUN_00645880(&local_64);
         if (iVar7 == 10) {
           this->field_072A = 0;

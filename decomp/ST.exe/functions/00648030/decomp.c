@@ -91,7 +91,7 @@ int __thiscall AiBossClassTy::GetMessage(AiBossClassTy *this,STMessage *message)
         do {
           if ((*pbVar8 != 0xff) &&
              (pAVar4 = thunk_FUN_004357f0(cVar11), pAVar4 != nullptr)) {
-            (*pAVar4->vtable->vfunc_00)(message);
+            (*pAVar4->vtable->vfunc_00)((short)message);
           }
           pbVar8 = pbVar8 + 0x51;
           cVar11 = cVar11 + '\x01';

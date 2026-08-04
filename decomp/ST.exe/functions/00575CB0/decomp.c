@@ -388,7 +388,7 @@ LAB_00576308:
   else if ((SVar3 == MESS_SHARED_010F) &&
           (iVar8 = pSVar17->field_003C + pSVar17->field_0044, 0 < iVar8)) {
     local_20 = (AnonShape_0060EA30_DCEB68AD *)(iVar8 * 0x92 + 0x18);
-    local_1c = (byte *)Library::DKW::LIB::FUN_006aac10((uint)local_20);
+    local_1c = Library::DKW::LIB::MemAllocClear((uint)local_20);
     puVar18 = (byte *)&pSVar17->field_0x1c;
     pbVar10 = local_1c;
     memmove(pbVar10, puVar18, 0x14); /* compiler REP MOVS byte copy */

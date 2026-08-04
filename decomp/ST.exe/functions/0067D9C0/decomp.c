@@ -15,8 +15,8 @@ int __cdecl SavePlrEdit(int param_1,char *param_2,AnonShape_0067D9C0_2E8A2257 *p
   InternalExceptionFrame local_58;
   uint local_14;
   uint local_10;
-  byte *local_c;
-  byte *local_8;
+  AllocationRecord_0065CD10 *local_c;
+  AllocationRecord_0067D3B0 *local_8;
 
   local_8 = nullptr;
   local_c = nullptr;
@@ -28,11 +28,11 @@ int __cdecl SavePlrEdit(int param_1,char *param_2,AnonShape_0067D9C0_2E8A2257 *p
       RaiseInternalException
                 (-0x34,g_overwriteContext_007ED77C,"E:\\__titans\\ai\\ai_plr_d.cpp",0x10b);
     }
-    local_c = EventDataPack(param_3->field_0106,&local_14);
-    local_8 = PlrDataPack((AnonShape_0067D3B0_B421D52F *)param_3,(undefined4 *)local_c,local_14,
+    local_c = EventDataPack((AllocationRecord_0065CD10 *)param_3->field_0106,&local_14);
+    local_8 = PlrDataPack((AllocationRecord_0067D3B0 *)param_3,(undefined4 *)local_c,local_14,
                           &local_10);
     thunk_FUN_0065d0f0((int *)&local_c);
-    Library::Ourlib::MFAOBJ::mfAObjSave(param_1,param_2,local_8,local_10,param_4);
+    Library::Ourlib::MFAOBJ::mfAObjSave(param_1,param_2,(byte *)local_8,local_10,param_4);
     thunk_FUN_0067d160((int *)&local_8);
     g_currentExceptionFrame = local_58.previous;
     return 0;

@@ -42,7 +42,7 @@ FUN_00668180(char *text,ushort param_2,ushort param_3,ushort param_4,byte param_
   g_currentExceptionFrame = &local_4c;
   exceptionCode = Library::MSVCRT::__setjmp3(local_4c.jumpBuffer,0);
   if (exceptionCode == 0) {
-    local_8 = (AnonShape_00668180_E8377840 *)Library::DKW::LIB::FUN_006aac10(0x260);
+    local_8 = Library::DKW::LIB::MemAllocClear(0x260);
     *(undefined4 *)local_8 = 900;
     *(undefined4 *)&local_8->field_0x14 = 0x260;
     local_8->field_0x18 = 2;

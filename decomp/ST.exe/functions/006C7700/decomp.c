@@ -129,11 +129,13 @@ LAB_006c78ff:
   if (param_1->field_0026 != 0) {
     _llseek(param_1->field_0026,iVar7 + 0x80,0);
   }
-  *(int *)param_1 = (int)sStack_90;
-  *(int *)&param_1->field_0004 = (int)CONCAT11(uStack_8d,uStack_8e);
+  param_1->field_0000 = (int)sStack_90;
+  /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
+  param_1->field_0004 = (int)CONCAT11(uStack_8d,uStack_8e);
   param_1->field_0x10 = local_91;
-  *(int *)&param_1->field_0xc = ((int)local_8a - (int)CONCAT11(uStack_8d,uStack_8e)) + 1;
-  *(int *)&param_1->field_0x8 = ((int)local_8c - (int)sStack_90) + 1;
+  /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
+  param_1->field_000C = ((int)local_8a - (int)CONCAT11(uStack_8d,uStack_8e)) + 1;
+  param_1->field_0008 = ((int)local_8c - (int)sStack_90) + 1;
   param_1->field_0011 = local_53;
   param_1->field_0012 = (int)sStack_52;
   /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */

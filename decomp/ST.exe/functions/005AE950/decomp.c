@@ -13,18 +13,18 @@ void __thiscall ChooseMapTy::sub_005AE950(ChooseMapTy *this)
   if (this->field_1C83 != 0) {
     this->field_0025 = this->field_1C83;
     *(undefined4 *)&this->field_0x31 = 0;
-    (*this->field_000C->vtable->vfunc_18)(&this->field_0x1d);
+    (*this->field_000C->vtable->vfunc_18)((short)&this->field_0x1d);
   }
   if (this->field_1A6C != 0) {
     this->field_0025 = this->field_1A6C;
     *(undefined4 *)&this->field_0x31 = 0;
-    (*this->field_000C->vtable->vfunc_18)(&this->field_0x1d);
+    (*this->field_000C->vtable->vfunc_18)((short)&this->field_0x1d);
   }
   if (g_startSystem_0081176C->field_0389 != 0) {
     this->field_0025 = g_startSystem_0081176C->field_0389;
     this->field_002D = 0x20;
     *(undefined4 *)&this->field_0x31 = 0;
-    (*this->field_000C->vtable->vfunc_18)(&this->field_0x1d);
+    (*this->field_000C->vtable->vfunc_18)((short)&this->field_0x1d);
   }
   if (g_startSystem_0081176C->field_054C != 0) {
     this->field_002D = 0x20;

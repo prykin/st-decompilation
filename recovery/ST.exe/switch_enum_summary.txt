@@ -4,7 +4,7 @@ switches_seen=1080
 decompile_retries=5
 decompile_failures=0
 proposals=976
-auto_apply=561
+auto_apply=562
 target_kinds={class_field=91, generated_enum=377, global=6, local=377, parameter=125}
 note=At least three numeric case values are required to create a new enum; an existing script-owned enum can grow from one exact typed value.
 note_nested_switches=Case labels are assigned to their innermost switch; nested switches are analyzed independently.

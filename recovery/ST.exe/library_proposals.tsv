@@ -32,7 +32,7 @@ apply	address	old_name	library	namespace	confidence	evidence	references
 1	006A8270	Library::DKW::WAY::FUN_006a8270	DKW_WAY	Library::DKW::WAY	high	E:\\DKW\\WAY\\C\\way3d.cpp	006A83DE
 1	006A88F0	Library::DKW::WAY::FUN_006a88f0	DKW_WAY	Library::DKW::WAY	high	E:\\DKW\\WAY\\C\\way3d.cpp	006A89ED
 1	006A9190	Library::DKW::WAY::FUN_006a9190	DKW_WAY	Library::DKW::WAY	high	E:\\DKW\\WAY\\C\\_chkway3.cpp	006A9C0A
-1	006AAC10	Library::DKW::LIB::FUN_006aac10	DKW_LIB	Library::DKW::LIB	high	E:\\DKW\\LIB\\C\\memallcl.c	006AAC36
+1	006AAC10	Library::DKW::LIB::MemAllocClear	DKW_LIB	Library::DKW::LIB	high	E:\\DKW\\LIB\\C\\memallcl.c	006AAC36
 1	006AAC70	Library::DKW::LIB::MemAlloc	DKW_LIB	Library::DKW::LIB	high	E:\\DKW\\LIB\\C\\memalloc.c	006AAC93
 1	006ACF50	Library::DKW::LIB::MemRealloc	DKW_LIB	Library::DKW::LIB	high	E:\\DKW\\LIB\\C\\memreall.c	006ACF78
 1	006AE140	Library::DKW::TBL::DArrayPut	DKW_TBL	Library::DKW::TBL	high	E:\\DKW\\TBL\\C\\darrput.c	006AE1A1

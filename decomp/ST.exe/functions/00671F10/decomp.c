@@ -75,7 +75,7 @@ float * FUN_00671f10(int param_1,int *param_2,int *param_3)
         case 1:
         case 4:
           fVar6 = (float)(*local_24->vtable->slot_00)(puVar2);
-          local_18 = (float *)Library::DKW::LIB::FUN_006aac10(4);
+          local_18 = Library::DKW::LIB::MemAllocClear(4);
           *local_18 = fVar6;
           if (param_2 != nullptr) {
             *param_2 = 1;
@@ -85,7 +85,7 @@ float * FUN_00671f10(int param_1,int *param_2,int *param_3)
         case 5:
           fVar8 = (float10)(*local_24->vtable->slot_04)(puVar2);
           local_20 = (float)fVar8;
-          local_18 = (float *)Library::DKW::LIB::FUN_006aac10(4);
+          local_18 = Library::DKW::LIB::MemAllocClear(4);
           *local_18 = local_20;
           if (param_2 != nullptr) {
             *param_2 = 2;
@@ -99,7 +99,7 @@ float * FUN_00671f10(int param_1,int *param_2,int *param_3)
                       (-0x6b,g_overwriteContext_007ED77C,"E:\\__titans\\ai\\ai_interp.cpp",
                        0x585);
           }
-          local_18 = (float *)Library::DKW::LIB::FUN_006aac10(4);
+          local_18 = Library::DKW::LIB::MemAllocClear(4);
           *local_18 = fVar6;
           if (param_2 != nullptr) {
             *param_2 = 3;
@@ -143,7 +143,7 @@ cf_continue_loop_006721A4:
     }
     else {
       local_1c = 1;
-      local_8 = (float *)Library::DKW::LIB::FUN_006aac10(4);
+      local_8 = Library::DKW::LIB::MemAllocClear(4);
       *local_8 = (float)(uint)(local_10 == 0);
     }
     if (local_8 == nullptr) {

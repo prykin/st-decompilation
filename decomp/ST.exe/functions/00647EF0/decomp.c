@@ -16,11 +16,11 @@ byte * __thiscall AiBossClassTy::PrepareToSave(AiBossClassTy *this,uint *param_1
   int errorCode;
   int iVar3;
   byte *pbVar4;
-  uint *puVar5;
+  AllocationRecord_00648620 *pAVar5;
   InternalExceptionFrame local_58;
   AiBossClassTy *local_14;
   uint local_10;
-  byte *local_c;
+  AllocationRecord_00648620 *local_c;
   undefined4 *local_8;
 
   local_c = nullptr;
@@ -33,18 +33,18 @@ byte * __thiscall AiBossClassTy::PrepareToSave(AiBossClassTy *this,uint *param_1
   if (errorCode == 0) {
     local_8 = AiEventClassTy::PrepareToSave((AiEventClassTy *)&local_14->vtable_at_1c,&local_10);
     if (pAVar2 == nullptr) {
-      puVar5 = nullptr;
+      pAVar5 = nullptr;
     }
     else {
-      puVar5 = (uint *)&pAVar2->field_0x5d3;
+      pAVar5 = (AllocationRecord_00648620 *)&pAVar2->field_0x5d3;
     }
-    local_c = BossDataPack(puVar5,local_8,local_10,param_1);
-    *local_c = 1;
+    local_c = BossDataPack(pAVar5,local_8,local_10,param_1);
+    *(undefined1 *)local_c = 1;
     if (local_8 != nullptr) {
       FreeAndNull(&local_8);
     }
     g_currentExceptionFrame = local_58.previous;
-    return local_c;
+    return (byte *)local_c;
   }
   g_currentExceptionFrame = local_58.previous;
   if (local_8 != nullptr) {

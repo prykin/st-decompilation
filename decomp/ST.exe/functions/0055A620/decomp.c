@@ -49,7 +49,7 @@ VisibleClassTy::SetZoneMin2
         }
         STDebugBreak(); /* noreturn in standalone pseudocode */
       }
-      pbVar5 = (byte *)Library::DKW::LIB::FUN_006aac10(local_14->field_0024 * local_14->field_0020);
+      pbVar5 = Library::DKW::LIB::MemAllocClear(local_14->field_0024 * local_14->field_0020);
       this->field_00D4[param_4] = pbVar5;
       g_currentExceptionFrame = local_60.previous;
     }

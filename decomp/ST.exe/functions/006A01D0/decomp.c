@@ -42,10 +42,11 @@ undefined4 __thiscall CGenerate::CreateMap(CGenerate *this)
     }
     return 0;
   }
-  local_10->field_53EB = local_10->field_0228;
-  local_10->field_53EF = local_10->field_022C;
+  iVar3 = (local_10->aggregate_001C).field_0210;
+  local_10->field_53EB = (local_10->aggregate_001C).field_020C;
+  local_10->field_53EF = iVar3;
   uVar8 = 0xffffffff;
-  pcVar10 = &local_10->field_0x124;
+  pcVar10 = &(local_10->aggregate_001C).field_0x108;
   do {
     pcVar11 = pcVar10;
     if (uVar8 == 0) break;
@@ -59,15 +60,19 @@ undefined4 __thiscall CGenerate::CreateMap(CGenerate *this)
   pcVar11 = &local_10->field_0x53f3;
   memmove(pcVar11, pcVar10, uVar8); /* compiler REP MOVS byte copy */
   local_8 = nullptr;
-  cMf32::RecGet(local_10->field_0234,0xc,"TEXTURE_DSCR",(int *)&local_8,1);
+  cMf32::RecGet(*(cMf32 **)&(local_10->aggregate_001C).field_0x218,0xc,"TEXTURE_DSCR",
+                (int *)&local_8,1);
   thunk_FUN_00693710(*local_8);
-  cMf32::RecMemFree(this_00->field_0234,(uint *)&local_8);
-  pcVar4 = (cMf32 *)Library::Ourlib::MF32INT::FUN_006f0ec0(0x345,&this_00->field_0020,1,0,0);
+  cMf32::RecMemFree(*(cMf32 **)&(this_00->aggregate_001C).field_0x218,(uint *)&local_8);
+  pcVar4 = (cMf32 *)Library::Ourlib::MF32INT::FUN_006f0ec0
+                              (0x345,&(this_00->aggregate_001C).field_0x4,1,0,0);
   this_00->field_0018 = pcVar4;
   sub_0069FF90(this_00);
   pbVar5 = (byte *)Library::Ourlib::MFSTMAP::mfTMapCreate
-                             (this_00->field_0228,this_00->field_022C,this_00->field_0234,
-                              this_00->field_0239,0x20);
+                             ((this_00->aggregate_001C).field_020C,
+                              (this_00->aggregate_001C).field_0210,
+                              *(cMf32 **)&(this_00->aggregate_001C).field_0x218,
+                              *(int *)&(this_00->aggregate_001C).field_0x21d,0x20);
   this_00->field_000C = pbVar5;
   sub_0069FF90(this_00);
   piVar6 = Library::Ourlib::MFSTMAP::FUN_006f0620((short *)this_00->field_000C);
@@ -86,14 +91,14 @@ undefined4 __thiscall CGenerate::CreateMap(CGenerate *this)
     local_c = 0;
   }
   sub_0069FF90(this_00);
-  local_20 = this_00->field_0228;
-  local_1c = this_00->field_022C;
+  local_20 = (this_00->aggregate_001C).field_020C;
+  local_1c = (this_00->aggregate_001C).field_0210;
   local_18 = 6;
   sub_0069FF90(this_00);
   thunk_FUN_006945c0(&this_00->field_0x1bef,&local_20);
   sub_0069FF90(this_00);
-  thunk_FUN_00691690(&this_00->field_0x1c03,(cMf32 *)this_00->field_0239,nullptr,0,
-                     this_00->field_024A);
+  thunk_FUN_00691690(&this_00->field_0x1c03,*(cMf32 **)&(this_00->aggregate_001C).field_0x21d,
+                     nullptr,0,*(undefined **)&(this_00->aggregate_001C).field_0x22e);
   sub_0069FF90(this_00);
   g_currentExceptionFrame = local_64.previous;
   return local_c;

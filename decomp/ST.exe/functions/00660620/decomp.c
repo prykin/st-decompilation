@@ -31,7 +31,7 @@ FUN_00660620(AnonShape_00660620_6BCED4D7 *param_1,undefined4 param_2,uint param_
       if ((param_1->field_007D != 0xfffe) && (g_allPlayers_007FA174 != nullptr)) {
         pSVar1 = thunk_FUN_0042b760(param_1->field_0024,param_1->field_007D);
         if (pSVar1 != nullptr) {
-          pSVar1->sub_00498D20(5,&local_18);
+          pSVar1->sub_00498D20(5,(short)&local_18);
           if (array != nullptr) {
             DArrayDestroy(array);
           }

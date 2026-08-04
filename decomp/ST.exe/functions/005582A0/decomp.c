@@ -72,7 +72,7 @@ byte * __thiscall VisibleClassTy::PrepareToSave(VisibleClassTy *this,uint *param
 LAB_0055832e:
   uVar8 = iVar3 + local_18 + 0x81 + local_10;
   *param_1 = uVar8;
-  local_8 = (AnonShape_005582A0_F54946B9 *)Library::DKW::LIB::FUN_006aac10(uVar8);
+  local_8 = Library::DKW::LIB::MemAllocClear(uVar8);
   *(undefined4 *)local_8 = 0x50;
   *(undefined4 *)&local_8->field_0x4 = 0xff;
   *(undefined4 *)&local_8->field_0x8 = 2;

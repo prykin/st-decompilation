@@ -14,7 +14,7 @@ int __thiscall STBoatC::SetMine(STBoatC *this,int *param_1,undefined4 param_2,in
   code *pcVar4;
   int iVar5;
   STBoatCVTable *pSVar6;
-  undefined4 arg_2;
+  undefined2 arg_2;
 
   /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
   if ((param_1 == nullptr) || (param_1 == (int *)0x1)) {

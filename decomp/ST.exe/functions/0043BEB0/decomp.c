@@ -86,12 +86,12 @@ STAllPlayersC::GetPanelInfo
       pAVar16->field_0007 = (char)iVar4;
       local_1c = (DArrayTy *)g_packedRecords_A62x8[uVar15].field335_0x16d;
       local_14 = local_1c->count;
-      pAVar16[2].field_0002 = 0;
-      pAVar16[2].field_0003 = 0;
-      pAVar16[2].field_0004 = 0;
-      pAVar16[2].field_0005 = 0;
-      pAVar16[2].field_0006 = 0;
-      pAVar16[1].field_0009 = 1;
+      pAVar16[1].field_000E = 0;
+      pAVar16[1].field_000F = 0;
+      pAVar16[1].field_0x10 = 0;
+      pAVar16[1].field_0011 = 0;
+      pAVar16[1].field_0012 = 0;
+      pAVar16[1].field_0001 = 1;
       local_24 = 0;
       if ((int)local_14 < 1) {
         return;
@@ -107,11 +107,11 @@ STAllPlayersC::GetPanelInfo
           STFishC::sub_004162B0
                     ((STFishC *)pSVar9,&local_6,&local_8,(undefined2 *)((int)&param_1 + 2));
           *(undefined1 *)((int)pAVar16 + (0x2e - param_1._2_2_)) = 1;
-          (*pSVar9->vtable->vfunc_30)(local_6c);
+          (*pSVar9->vtable->vfunc_30)((short)local_6c);
           local_34 = local_64;
           local_30 = local_69;
           local_2c = local_51;
-          Library::DKW::TBL::DArrayAppend(*(DArrayTy **)&pAVar16[2].field_000A,&local_34);
+          Library::DKW::TBL::DArrayAppend(*(DArrayTy **)&pAVar16[1].field_0x16,&local_34);
           uVar13 = local_24;
         }
         local_24 = uVar13 + 1;
@@ -201,7 +201,7 @@ STAllPlayersC::GetPanelInfo
         } while ((int)uVar15 < (int)local_14);
       }
       if (uVar15 == local_14) {
-        pAVar16[1].field_0001 = 0;
+        pAVar16->field_0x15 = 0;
         pAVar16->field_0x8 = 0;
         pAVar16->field_0007 = 0;
         return;
@@ -209,11 +209,11 @@ STAllPlayersC::GetPanelInfo
       pAVar16->field_0x8 = 1;
       if (*(int *)&g_packedRecords_A62x8[DAT_0080874d].field_0x1 == 0) {
 LAB_0043c293:
-        pAVar16[1].field_0001 = 0;
+        pAVar16->field_0x15 = 0;
       }
       else {
         uVar15 = 0;
-        pAVar16[1].field_0001 = 3;
+        pAVar16->field_0x15 = 3;
         if (0 < (int)local_14) {
           do {
             DArrayGetElement(local_1c,uVar15,local_c);
@@ -223,15 +223,15 @@ LAB_0043c293:
               pSVar9 = GetObjPtr(this,DAT_0080874d,local_c._0_2_,CASE_1);
               pSVar5 = thunk_FUN_0042b760(DAT_0080874d,pSVar9->field_0030);
               if ((pSVar5 != nullptr) &&
-                 (pAVar16[1].field_0001 = 1, pSVar5->field_001C == 0)) break;
+                 (pAVar16->field_0x15 = 1, pSVar5->field_001C == 0)) break;
             }
             uVar15 = uVar15 + 1;
           } while ((int)uVar15 < (int)local_14);
         }
         if (uVar15 == local_14) {
-          if (pAVar16[1].field_0001 == '\x03') goto LAB_0043c293;
-          if (pAVar16[1].field_0001 == '\x01') {
-            pAVar16[1].field_0001 = 3;
+          if (pAVar16->field_0x15 == '\x03') goto LAB_0043c293;
+          if (pAVar16->field_0x15 == '\x01') {
+            pAVar16->field_0x15 = 3;
           }
         }
       }
@@ -250,10 +250,10 @@ LAB_0043c293:
       } while ((int)(pbVar12 + (-0xf - (int)pAVar16)) < 6);
       FreeAndNull(&local_18);
       uVar15 = 0;
-      pAVar16[2].field_0011 = 1;
-      pAVar16[2].field_0x10 = 1;
-      pAVar16[2].field_000F = 1;
-      pAVar16[2].field_000E = 1;
+      pAVar16[2].field_0001 = 1;
+      *(undefined1 *)(pAVar16 + 2) = 1;
+      *(undefined1 *)((int)&pAVar16[1].field_0018 + 3) = 1;
+      *(undefined1 *)((int)&pAVar16[1].field_0018 + 2) = 1;
       if (0 < (int)local_14) {
         do {
           DArrayGetElement(local_1c,uVar15,local_c);
@@ -261,7 +261,7 @@ LAB_0043c293:
           if (local_c._0_2_ != 0xffff) {
             /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
             pSVar9 = GetObjPtr(local_10,DAT_0080874d,local_c._0_2_,CASE_1);
-            (&pAVar16[2].field_000E)[pSVar9->field_07EE] = 3;
+            *(undefined1 *)((int)&pAVar16[1].field_0018 + pSVar9->field_07EE + 2) = 3;
           }
           uVar15 = uVar15 + 1;
         } while ((int)uVar15 < (int)local_14);
@@ -660,7 +660,7 @@ LAB_0043c293:
           goto cf_common_exit_0043C86F;
         case 0xf:
 cf_common_exit_0043C508:
-          *(undefined1 *)(pAVar16 + 1) = 3;
+          pAVar16->field_0x14 = 3;
           return;
         }
         break;
@@ -791,7 +791,7 @@ LAB_0043ca31:
       SVar18 = CASE_1;
 cf_common_exit_0043CA35:
       pSVar9 = GetObjPtr(local_10,cVar17,uVar3,SVar18);
-      (*pSVar9->vtable->vfunc_34)(param_2);
+      (*pSVar9->vtable->vfunc_34)((short)param_2);
       return;
     }
     if ((char)param_1 != '\x05') {
@@ -827,7 +827,7 @@ cf_common_exit_0043CA35:
             /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
             pSVar9 = GetObjPtr(local_10,*(char *)&g_packedRecords_A62x8[uVar15].field391_0x1b7,
                                local_c._0_2_,CASE_1);
-            (*pSVar9->vtable->vfunc_38)(param_2);
+            (*pSVar9->vtable->vfunc_38)((short)param_2);
             return;
           }
           uVar13 = uVar13 + 1;
@@ -867,7 +867,7 @@ cf_common_exit_0043CA35:
             /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
             pSVar9 = GetObjPtr(local_10,*(char *)&g_packedRecords_A62x8[uVar15].field391_0x1b7,
                                local_c._0_2_,CASE_1);
-            (*pSVar9->vtable->vfunc_3C)(param_2);
+            (*pSVar9->vtable->vfunc_3C)((short)param_2);
             return;
           }
           uVar13 = uVar13 + 1;
@@ -908,7 +908,7 @@ cf_common_exit_0043CA35:
             /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
             pSVar9 = GetObjPtr(local_10,*(char *)&g_packedRecords_A62x8[uVar15].field333_0x167,
                                local_c._0_2_,CASE_1);
-            (*pSVar9->vtable->vfunc_40)(pAVar16);
+            (*pSVar9->vtable->vfunc_40)((short)pAVar16);
             return;
           }
           uVar13 = uVar13 + 1;
@@ -944,7 +944,7 @@ cf_common_exit_0043CA35:
             /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
             pSVar9 = GetObjPtr(local_10,*(char *)&g_packedRecords_A62x8[uVar15].field391_0x1b7,
                                local_c._0_2_,CASE_1);
-            (*pSVar9->vtable->vfunc_44)(param_2);
+            (*pSVar9->vtable->vfunc_44)((short)param_2);
             return;
           }
           uVar13 = uVar13 + 1;
@@ -973,7 +973,7 @@ cf_common_exit_0043CA35:
           if (local_c._0_2_ != 0xffff) {
             /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
             pSVar9 = GetObjPtr(local_10,*(char *)(local_28 + 4),local_c._0_2_,CASE_1);
-            (*pSVar9->vtable->vfunc_48)(param_2);
+            (*pSVar9->vtable->vfunc_48)((short)param_2);
             return;
           }
           uVar15 = uVar15 + 1;
@@ -1013,7 +1013,7 @@ cf_common_exit_0043CA35:
               /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
               pSVar9 = GetObjPtr(local_10,*(char *)&g_packedRecords_A62x8[uVar15].field391_0x1b7,
                                  local_c._0_2_,CASE_1);
-              (*pSVar9->vtable->vfunc_50)(param_2);
+              (*pSVar9->vtable->vfunc_50)((short)param_2);
               return;
             }
             uVar13 = uVar13 + 1;
@@ -1025,14 +1025,7 @@ cf_common_exit_0043CA35:
           pAVar11 = (AnonShape_0043BEB0_1C00EC12 *)
                     &g_packedRecords_A62x8[DAT_0080874d].field340_0x17d;
           do {
-            /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-            iVar4._0_1_ = pAVar11[-0xffffffff00000001].field_000A;
-            /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-            iVar4._1_1_ = pAVar11[-0xffffffff00000001].field_000B;
-            /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-            iVar4._2_1_ = pAVar11[-0xffffffff00000001].field_0xc;
-            /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-            iVar4._3_1_ = pAVar11[-0xffffffff00000001].field_000D;
+            iVar4 = *(int *)&pAVar11[-1].field_0012;
             /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
             param_2 = pAVar11;
             if (iVar4 == 0) {
@@ -1055,7 +1048,7 @@ LAB_0043d41d:
                     uVar3 = local_c._0_2_;
                     if (uVar3 != 0xffff) {
                       SVar18 = CASE_1;
-                      cVar17 = param_2[-1].field_000E;
+                      cVar17 = param_2[-1].field_0x16;
                       goto LAB_0043d447;
                     }
                     uVar15 = uVar15 + 1;
@@ -1079,12 +1072,12 @@ LAB_0043d41d:
                 }
                 goto LAB_0043d41d;
               }
-              uVar3 = *(ushort *)&pAVar11[-1].field_0012;
+              uVar3 = *(ushort *)((int)&pAVar11[-1].field_0018 + 2);
               SVar18 = CASE_3;
               cVar17 = -1;
 LAB_0043d447:
               pSVar9 = GetObjPtr(local_10,cVar17,uVar3,SVar18);
-              (*pSVar9->vtable->vfunc_58)(pAVar16);
+              (*pSVar9->vtable->vfunc_58)((short)pAVar16);
             }
             pAVar11 = (AnonShape_0043BEB0_1C00EC12 *)&param_2->field_0x10;
             pAVar16 = (AnonShape_0043BEB0_1C00EC12 *)&pAVar16->field_000B;
@@ -1157,13 +1150,13 @@ LAB_0043d5b1:
               cVar17 = -1;
 LAB_0043d5b7:
               pSVar9 = GetObjPtr(local_10,cVar17,uVar3,SVar18);
-              (*pSVar9->vtable->vfunc_5C)(pAVar16);
+              (*pSVar9->vtable->vfunc_5C)((short)pAVar16);
             }
 LAB_0043d5c4:
             puVar14 = puVar14 + 8;
             pAVar16 = (AnonShape_0043BEB0_1C00EC12 *)&pAVar16->field_000B;
             /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
-            param_2 = (AnonShape_0043BEB0_1C00EC12 *)&param_2[-1].field_0x13;
+            param_2 = (AnonShape_0043BEB0_1C00EC12 *)((int)&param_2[-1].field_0018 + 3);
             /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
             if (param_2 == nullptr) {
               return;
@@ -1252,7 +1245,7 @@ LAB_0043d5c4:
           }
           if (g_packedRecords_A62x8[DAT_0080874d].field332_0x163 == 0x1ae) {
             pSVar9 = GetObjPtr(this,-1,g_packedRecords_A62x8[DAT_0080874d].field334_0x16b,CASE_3);
-            (*pSVar9->vtable->vfunc_64)(param_2);
+            (*pSVar9->vtable->vfunc_64)((short)param_2);
             return;
           }
           iVar4 = ReportDebugMessage("E:\\__titans\\wlad\\to_allpl.cpp",0x1f5d,0,0,
@@ -1292,7 +1285,7 @@ LAB_0043d5c4:
               /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
               pSVar9 = GetObjPtr(local_10,*(char *)&g_packedRecords_A62x8[uVar15].field333_0x167,
                                  local_c._0_2_,CASE_1);
-              (*pSVar9->vtable->vfunc_60)(param_2);
+              (*pSVar9->vtable->vfunc_60)((short)param_2);
               break;
             }
             uVar13 = uVar13 + 1;
@@ -1301,9 +1294,12 @@ LAB_0043d5c4:
         if ((ushort)g_packedRecords_A62x8[uVar15].field336_0x171 < 2) {
           return;
         }
-        *(undefined4 *)&param_2[0x15].field_0xc = 0xffffffff;
-        *(undefined4 *)(param_2 + 0x18) = 0xffffffff;
-        *(undefined4 *)&param_2[0x1a].field_0x8 = 0xffffffff;
+        *(undefined4 *)&param_2[0xf].field_0xc = 0xffffffff;
+        param_2[0x11].field_0004 = 0xff;
+        param_2[0x11].field_0005 = 0xff;
+        param_2[0x11].field_0006 = 0xff;
+        param_2[0x11].field_0007 = 0xff;
+        param_2[0x12].field_0018 = 0xffffffff;
         return;
       }
       uVar15 = (uint)DAT_0080874d;
@@ -1332,7 +1328,7 @@ LAB_0043d5c4:
             /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
             pSVar9 = GetObjPtr(local_10,*(char *)&g_packedRecords_A62x8[uVar15].field333_0x167,
                                local_c._0_2_,CASE_1);
-            (*pSVar9->vtable->vfunc_4C)(param_2);
+            (*pSVar9->vtable->vfunc_4C)((short)param_2);
             return;
           }
           uVar13 = uVar13 + 1;
@@ -1530,7 +1526,7 @@ LAB_0043cb81:
   SVar18 = CASE_1;
 cf_common_exit_0043CB5C:
   pSVar9 = GetObjPtr(local_10,cVar17,uVar3,SVar18);
-  (*pSVar9->vtable->vfunc_30)(param_2);
+  (*pSVar9->vtable->vfunc_30)((short)param_2);
   return;
 /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
 cf_common_exit_0043C94C:

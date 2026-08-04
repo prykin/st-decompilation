@@ -34,6 +34,7 @@ import ghidra.app.script.GhidraScriptProvider;
 import ghidra.app.script.GhidraScriptUtil;
 import ghidra.app.plugin.core.analysis.AutoAnalysisManager;
 import ghidra.framework.model.TransactionInfo;
+import ghidra.util.SystemUtilities;
 
 public class STRecoveryPipeline extends GhidraScript {
     private static final int MAX_BOOTSTRAP_PASSES = 24;
@@ -78,6 +79,15 @@ public class STRecoveryPipeline extends GhidraScript {
             "function_pointer_field_proposals.tsv",
             "function_pointer_field_failures.tsv",
             "function_pointer_field_summary.txt")),
+        Map.entry("STAllocationRecordAnalyzer.java", List.of(
+            "allocation_record_proposals.tsv",
+            "allocation_record_machine_audit.tsv",
+            "allocation_record_summary.txt")),
+        Map.entry("STRecursivePointeeAnalyzer.java", List.of(
+            "recursive_pointee_proposals.tsv",
+            "recursive_pointee_audit.tsv",
+            "recursive_pointee_failures.tsv",
+            "recursive_pointee_summary.txt")),
         Map.entry("STClassLayoutAnalyzer.java", List.of(
             "class_layout_proposals.tsv", "class_field_proposals.tsv",
             "class_nested_type_proposals.tsv", "class_nested_field_proposals.tsv",
@@ -93,6 +103,8 @@ public class STRecoveryPipeline extends GhidraScript {
         Map.entry("STControlFlowLabelAnalyzer.java", List.of()),
         Map.entry("STFunctionPointerParameterAnalyzer.java", List.of()),
         Map.entry("STFunctionPointerFieldAnalyzer.java", List.of()),
+        Map.entry("STAllocationRecordAnalyzer.java", List.of()),
+        Map.entry("STRecursivePointeeAnalyzer.java", List.of()),
         Map.entry("STClassLayoutAnalyzer.java", List.of(
             "constructor_class_sizes.tsv", "vtable_proposals.tsv",
             "class_array_proposals.tsv", "inline_aggregate_proposals.tsv")));
@@ -265,6 +277,10 @@ public class STRecoveryPipeline extends GhidraScript {
             changed += pair("STReturnSemanticsAnalyzer.java", "STReturnSemanticsApplier.java",
                 "return_semantics_proposals.tsv", "return_semantics_apply_report.tsv");
             changed += runPrototypeCycle();
+            changed += pair("STAllocationRecordAnalyzer.java",
+                "STAllocationRecordApplier.java",
+                "allocation_record_proposals.tsv",
+                "allocation_record_apply_report.tsv");
             changed += pair("STGlobalRecordAnalyzer.java", "STGlobalRecordApplier.java",
                 "global_record_proposals.tsv", "global_record_apply_report.tsv");
             changed += pair("STDiscriminatedPayloadAnalyzer.java",
@@ -291,6 +307,10 @@ public class STRecoveryPipeline extends GhidraScript {
                 "pointer_role_repair_apply_report.tsv");
             changed += pair("STPointerShapeAnalyzer.java", "STPointerShapeApplier.java",
                 "pointer_shape_target_proposals.tsv", "pointer_shape_apply_report.tsv");
+            changed += pair("STRecursivePointeeAnalyzer.java",
+                "STRecursivePointeeApplier.java",
+                "recursive_pointee_proposals.tsv",
+                "recursive_pointee_apply_report.tsv");
             changed += pair("STTypeFamilyAnalyzer.java", "STTypeFamilyApplier.java",
                 "type_family_proposals.tsv", "type_family_apply_report.tsv");
             changed += runClassLayoutFixpoint();
@@ -357,8 +377,7 @@ public class STRecoveryPipeline extends GhidraScript {
         // Compiler register/stack reuse can leave several independently typed
         // SSA merge groups under one rendered local. Run this once after the
         // structural/type fixed points, when exact call/copy anchors are strongest.
-        pair("STLocalLifetimeAnalyzer.java", "STLocalLifetimeApplier.java",
-            "local_lifetime_proposals.tsv", "local_lifetime_apply_report.tsv");
+        runLocalLifetimeFixpoint();
         runTypeLifecycleFixpoint();
     }
 
@@ -643,6 +662,98 @@ public class STRecoveryPipeline extends GhidraScript {
             recoveryProgram.resolve("discriminated_stack_proposals.tsv"));
         println("Final discriminated stack aggregates: mutating rows=" + changed);
         return changed;
+    }
+
+    /**
+     * A persisted split can expose the next independently typed merge group in
+     * the same function. Run the expensive whole-program analyzer once, chase
+     * that local staircase only in functions which actually changed, then
+     * refresh the canonical whole-program proposal/report pair at convergence.
+     */
+    private int runLocalLifetimeFixpoint() throws Exception {
+        section("local SSA lifetime fixpoint");
+        int totalChanged = pair("STLocalLifetimeAnalyzer.java",
+            "STLocalLifetimeApplier.java", "local_lifetime_proposals.tsv",
+            "local_lifetime_apply_report.tsv");
+        if (totalChanged == 0) return 0;
+
+        Path lastReport = recoveryProgram.resolve(
+            "local_lifetime_apply_report.tsv");
+        Set<String> targets = mutatingFunctionAddresses(lastReport);
+        for (int pass = 2; pass <= MAX_STRUCTURAL_PASSES; pass++) {
+            if (targets.isEmpty())
+                throw new IllegalStateException(
+                    "Local-lifetime applier reported mutations without function addresses");
+            Path root = activeRun.resolve("local-lifetime-fixpoint")
+                .resolve(String.format(Locale.ROOT, "pass-%02d", pass));
+            Files.createDirectories(root);
+            step("STLocalLifetimeAnalyzer.java", root.toString(),
+                String.join(",", targets));
+            Path programRoot = root.resolve(currentProgram.getName());
+            Path proposals = programRoot.resolve(
+                "local_lifetime_proposals.tsv");
+            Path applyReport = programRoot.resolve(
+                "local_lifetime_apply_report.tsv");
+            if (!Files.isRegularFile(proposals))
+                throw new IllegalStateException(
+                    "Targeted local-lifetime analysis produced no proposals: " +
+                        proposals);
+            step("STLocalLifetimeApplier.java", proposals.toString());
+            int changed = convergenceMutationCount(
+                "STLocalLifetimeApplier.java", proposals, applyReport,
+                MUTATING_STATUSES);
+            totalChanged += changed;
+            println("Local-lifetime targeted pass " + pass +
+                ": functions=" + targets.size() + ", mutating rows=" +
+                changed);
+            if (changed == 0) {
+                int finalChanged = pair("STLocalLifetimeAnalyzer.java",
+                    "STLocalLifetimeApplier.java",
+                    "local_lifetime_proposals.tsv",
+                    "local_lifetime_apply_report.tsv");
+                if (finalChanged != 0)
+                    throw new IllegalStateException(
+                        "Whole-program local-lifetime refresh found " +
+                        finalChanged + " mutation(s) after targeted convergence");
+                return totalChanged;
+            }
+            targets = mutatingFunctionAddresses(applyReport);
+        }
+        throw new IllegalStateException(
+            "Local-lifetime recovery did not reach a fixed point in " +
+                MAX_STRUCTURAL_PASSES + " passes");
+    }
+
+    private Set<String> mutatingFunctionAddresses(Path applyReport)
+            throws Exception {
+        if (!Files.isRegularFile(applyReport))
+            throw new IllegalStateException(
+                "Missing apply report: " + applyReport);
+        List<String> lines = Files.readAllLines(applyReport,
+            StandardCharsets.UTF_8);
+        if (lines.isEmpty()) return Set.of();
+        String[] header = lines.get(0).split("\\t", -1);
+        int addressColumn = indexOf(header, "function_address");
+        int statusColumn = indexOf(header, "status");
+        if (addressColumn < 0 || statusColumn < 0)
+            throw new IllegalStateException(
+                "Local-lifetime apply report lacks function_address/status: " +
+                    applyReport);
+        Set<String> result = new java.util.TreeSet<>();
+        for (int line = 1; line < lines.size(); line++) {
+            if (lines.get(line).isBlank()) continue;
+            String[] values = lines.get(line).split("\\t", -1);
+            if (addressColumn >= values.length || statusColumn >= values.length ||
+                    !MUTATING_STATUSES.contains(values[statusColumn]))
+                continue;
+            String address = values[addressColumn].trim().toUpperCase(Locale.ROOT);
+            if (!address.matches("[0-9A-F]{8,16}"))
+                throw new IllegalStateException(
+                    "Invalid mutating function address in " + applyReport +
+                        ": " + address);
+            result.add(address);
+        }
+        return result;
     }
 
     private int runDArrayTypes() throws Exception {
@@ -1055,7 +1166,11 @@ public class STRecoveryPipeline extends GhidraScript {
         Path source = repository.resolve("scripts").resolve(script);
         if (!Files.isRegularFile(source))
             throw new IllegalStateException("Pipeline script is missing: " + source);
+        // Empty positional arguments can be meaningful to the child script, but they have no
+        // value in the human-readable report.  Omitting them here prevents a trailing " | " and
+        // whitespace-only churn in the tracked bootstrap log without changing the invoked args.
         String argument = Arrays.stream(args).map(this::portableArgument)
+            .filter(value -> !value.isBlank())
             .collect(java.util.stream.Collectors.joining(" | "));
         int ordinal = ++sequence;
         println(String.format(Locale.ROOT, "[%02d] %s%s", ordinal, script,
@@ -1257,8 +1372,13 @@ public class STRecoveryPipeline extends GhidraScript {
         if (announced)
             println("Waiting for Ghidra auto-analysis " + context + "...");
         // Do not guard this call with isAnalyzing(): Ghidra clears that flag slightly before
-        // AnalysisWorkerCommand closes its outer Program transaction.
-        analysis.waitForAnalysis(null, monitor);
+        // AnalysisWorkerCommand closes its outer Program transaction.  In headless mode,
+        // waitForAnalysis() asks Ghidra 12.1.2 to persist analyzer timing statistics after the
+        // actual queue has drained.  The headless script is not inside a Program transaction at
+        // that point, so OptionsDB throws NoTransactionException even though analysis succeeded.
+        // startAnalysis(..., false) runs the same queue synchronously without that diagnostic
+        // timing write.  GUI mode retains waitForAnalysis() and its background-thread barrier.
+        drainAnalysis(analysis);
         for (int attempt = 0; attempt < 500; attempt++) {
             monitor.checkCancelled();
             TransactionInfo transaction = currentProgram.getCurrentTransactionInfo();
@@ -1268,9 +1388,14 @@ public class STRecoveryPipeline extends GhidraScript {
                 println("Waiting for Ghidra auto-analysis transaction " + context + "...");
                 announced = true;
             }
-            if (analysis.isAnalyzing()) analysis.waitForAnalysis(null, monitor);
+            if (analysis.isAnalyzing()) drainAnalysis(analysis);
             else Thread.sleep(10);
         }
+    }
+
+    private void drainAnalysis(AutoAnalysisManager analysis) {
+        if (SystemUtilities.isInHeadlessMode()) analysis.startAnalysis(monitor, false);
+        else analysis.waitForAnalysis(null, monitor);
     }
 
     /**
@@ -1344,14 +1469,36 @@ public class STRecoveryPipeline extends GhidraScript {
                 " mutating report row(s) because Program did not change");
             return 0;
         }
-        if (state.changed == 0 && lastStepMutatedProgram) {
-            println(applier + ": Program modification counter advanced without a mutating " +
-                "report row; treating report state as settled (rolled-back row transactions " +
-                "can advance Ghidra's diagnostic counter)");
-            logLine("diagnostic_modification_without_reported_mutation script=" + applier);
+        if (state.changed == 0) {
+            if (lastStepMutatedProgram) {
+                println(applier + ": Program modification counter advanced without a mutating " +
+                    "report row; treating report state as settled (rolled-back row transactions " +
+                    "can advance Ghidra's diagnostic counter)");
+                logLine("diagnostic_modification_without_reported_mutation script=" + applier);
+                rebaseAnalyzerStampsToCurrentModification();
+            }
             return 0;
         }
         return state.changed;
+    }
+
+    /**
+     * A transaction which writes no mutating apply-report row may still advance Ghidra's
+     * diagnostic modification number (for example, a rolled-back per-row transaction).  The
+     * analyzer products remain valid in that case.  Rebase only their volatile epoch marker;
+     * source, dependency, and artifact hashes still have to match at the next use.  A real
+     * mutating row never reaches this method and therefore invalidates the stamps normally.
+     */
+    private void rebaseAnalyzerStampsToCurrentModification() throws Exception {
+        long modification = currentProgram.getModificationNumber();
+        for (Map.Entry<String, AnalyzerStamp> entry :
+                new ArrayList<>(analyzerStamps.entrySet())) {
+            AnalyzerStamp stamp = entry.getValue();
+            entry.setValue(new AnalyzerStamp(modification, stamp.programSemantic,
+                stamp.sourceHash, stamp.dependencyToken, stamp.artifactToken));
+        }
+        logLine("analyzer_epoch_rebased modification=" + modification +
+            " entries=" + analyzerStamps.size());
     }
 
     private void annotateLastStep(String script, String detail) throws Exception {

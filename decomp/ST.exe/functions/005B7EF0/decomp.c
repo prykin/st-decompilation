@@ -16,11 +16,11 @@ MMsgTy::SetMessage(MMsgTy *this,UINT param_1,char param_2,undefined4 *param_3,un
   int iVar3;
   char *pcVar4;
   char *pcVar5;
-  undefined4 *puVar6;
+  byte *puVar6;
   uint *puVar7;
   int iVar8;
   uint uVar10;
-  undefined4 *puVar11;
+  byte *puVar11;
   int iVar12;
   ccFntTy_CreateTypeSSpr_param_4Enum cVar13;
   int iVar14;
@@ -50,11 +50,11 @@ MMsgTy::SetMessage(MMsgTy *this,UINT param_1,char param_2,undefined4 *param_3,un
         local_34[3] = 2;
         local_34[4] = 0x6940;
         local_34[2] = iVar3;
-        (*this_00->field_000C->vtable->vfunc_18)(local_34);
+        (*this_00->field_000C->vtable->vfunc_18)((short)local_34);
       }
       this_00->field_1CA9 = 1;
-      puVar6 = &this_00->field_1CD0;
-      puVar11 = (undefined4 *)&this_00->field_0x1a60;
+      puVar6 = (byte *)(&this_00->field_1CD0);
+      puVar11 = (byte *)&this_00->field_0x1a60;
       memmove(puVar11, puVar6, 0x27); /* compiler REP MOVS byte copy */
       this_00->field_1A5F = this_00->field_0065;
       this_00->field_002D = 0x21;
@@ -70,8 +70,8 @@ MMsgTy::SetMessage(MMsgTy *this,UINT param_1,char param_2,undefined4 *param_3,un
             *(ushort *)(&this_00->field_0x1c82 + uVar10 * 2) =
                  (-(ushort)(this_00->field_0031 != 0) & 2) - 1;
           }
-          puVar6 = (undefined4 *)(&this_00->field_0xbc + uVar10 * 0x1fb);
-          puVar11 = (undefined4 *)(&this_00->field_0x1a87 + uVar10 * 0x27);
+          puVar6 = (byte *)(&this_00->field_0xbc + uVar10 * 0x1fb);
+          puVar11 = (byte *)(&this_00->field_0x1a87 + uVar10 * 0x27);
           memmove(puVar11, puVar6, 0x27); /* compiler REP MOVS byte copy */
           bVar2 = (char)local_8 + 1;
           /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
@@ -128,18 +128,18 @@ MMsgTy::SetMessage(MMsgTy *this,UINT param_1,char param_2,undefined4 *param_3,un
         this_00->field_04D7 = 1;
         iVar3 = 8;
         if (param_3 == nullptr) {
-          puVar6 = (undefined4 *)&this_00->field_0x4b7;
+          puVar6 = (byte *)&this_00->field_0x4b7;
           for (; iVar3 != 0; iVar3 = iVar3 + -1) {
             *puVar6 = 0;
-            puVar6 = puVar6 + 1;
+            puVar6 = (byte *)(puVar6 + 1);
           }
         }
         else {
-          puVar6 = (undefined4 *)&this_00->field_0x4b7;
+          puVar6 = (byte *)&this_00->field_0x4b7;
           for (; iVar3 != 0; iVar3 = iVar3 + -1) {
             *puVar6 = *param_3;
             param_3 = param_3 + 1;
-            puVar6 = puVar6 + 1;
+            puVar6 = (byte *)(puVar6 + 1);
           }
         }
         uVar18 = 0xffffffff;
@@ -166,18 +166,18 @@ MMsgTy::SetMessage(MMsgTy *this,UINT param_1,char param_2,undefined4 *param_3,un
           this_00->field_04D7 = 1;
           iVar3 = 8;
           if (param_3 == nullptr) {
-            puVar6 = (undefined4 *)&this_00->field_0x4b7;
+            puVar6 = (byte *)&this_00->field_0x4b7;
             for (; iVar3 != 0; iVar3 = iVar3 + -1) {
               *puVar6 = 0;
-              puVar6 = puVar6 + 1;
+              puVar6 = (byte *)(puVar6 + 1);
             }
           }
           else {
-            puVar6 = (undefined4 *)&this_00->field_0x4b7;
+            puVar6 = (byte *)&this_00->field_0x4b7;
             for (; iVar3 != 0; iVar3 = iVar3 + -1) {
               *puVar6 = *param_3;
               param_3 = param_3 + 1;
-              puVar6 = puVar6 + 1;
+              puVar6 = (byte *)(puVar6 + 1);
             }
           }
           uVar18 = 0xffffffff;
@@ -207,18 +207,18 @@ MMsgTy::SetMessage(MMsgTy *this,UINT param_1,char param_2,undefined4 *param_3,un
           this_00->field_06D2 = 1;
           iVar3 = 8;
           if (param_3 == nullptr) {
-            puVar6 = (undefined4 *)&this_00->field_0x6b2;
+            puVar6 = (byte *)&this_00->field_0x6b2;
             for (; iVar3 != 0; iVar3 = iVar3 + -1) {
               *puVar6 = 0;
-              puVar6 = puVar6 + 1;
+              puVar6 = (byte *)(puVar6 + 1);
             }
           }
           else {
-            puVar6 = (undefined4 *)&this_00->field_0x6b2;
+            puVar6 = (byte *)&this_00->field_0x6b2;
             for (; iVar3 != 0; iVar3 = iVar3 + -1) {
               *puVar6 = *param_3;
               param_3 = param_3 + 1;
-              puVar6 = puVar6 + 1;
+              puVar6 = (byte *)(puVar6 + 1);
             }
           }
           uVar18 = 0xffffffff;
@@ -242,18 +242,18 @@ MMsgTy::SetMessage(MMsgTy *this,UINT param_1,char param_2,undefined4 *param_3,un
           this_00->field_04D7 = 1;
           iVar3 = 8;
           if (param_4 == nullptr) {
-            puVar6 = (undefined4 *)&this_00->field_0x4b7;
+            puVar6 = (byte *)&this_00->field_0x4b7;
             for (; iVar3 != 0; iVar3 = iVar3 + -1) {
               *puVar6 = 0;
-              puVar6 = puVar6 + 1;
+              puVar6 = (byte *)(puVar6 + 1);
             }
           }
           else {
-            puVar6 = (undefined4 *)&this_00->field_0x4b7;
+            puVar6 = (byte *)&this_00->field_0x4b7;
             for (; iVar3 != 0; iVar3 = iVar3 + -1) {
               *puVar6 = *param_4;
               param_4 = param_4 + 1;
-              puVar6 = puVar6 + 1;
+              puVar6 = (byte *)(puVar6 + 1);
             }
           }
           uVar18 = 0xffffffff;
@@ -278,18 +278,18 @@ MMsgTy::SetMessage(MMsgTy *this,UINT param_1,char param_2,undefined4 *param_3,un
         }
         iVar3 = 8;
         if (param_5 == nullptr) {
-          puVar6 = (undefined4 *)&this_00->field_0x2bc;
+          puVar6 = (byte *)&this_00->field_0x2bc;
           for (; iVar3 != 0; iVar3 = iVar3 + -1) {
             *puVar6 = 0;
-            puVar6 = puVar6 + 1;
+            puVar6 = (byte *)(puVar6 + 1);
           }
         }
         else {
-          puVar6 = (undefined4 *)&this_00->field_0x2bc;
+          puVar6 = (byte *)&this_00->field_0x2bc;
           for (; iVar3 != 0; iVar3 = iVar3 + -1) {
             *puVar6 = *param_5;
             param_5 = param_5 + 1;
-            puVar6 = puVar6 + 1;
+            puVar6 = (byte *)(puVar6 + 1);
           }
         }
         uVar18 = 0xffffffff;

@@ -102,15 +102,16 @@ int __thiscall TLOBaseTy::SetState(TLOBaseTy *this,int param_1,int param_2)
           pTVar4 = this_01->vtable;
           uVar10 = LookupRecordByte(*(char *)&this_01->field_023D);
           (*pTVar4->vfunc_90)(this_01,3,
-                              *(undefined4 *)
-                               (&DAT_007955d0 + ((uVar10 & 0xffU) + this_01->field_0235 * 3) * 4));
+                              (short)*(undefined4 *)
+                                      (&DAT_007955d0 +
+                                      ((uVar10 & 0xffU) + this_01->field_0235 * 3) * 4));
         }
       }
       else if (TVar3 == CASE_2) {
-        this_01->vfunc_90(3,*(undefined4 *)(&DAT_007958ec + this_01->field_0235 * 4));
+        this_01->vfunc_90(3,(short)*(undefined4 *)(&DAT_007958ec + this_01->field_0235 * 4));
       }
       else if (TVar3 == CASE_3) {
-        this_01->vfunc_90(3,*(undefined4 *)(&DAT_007959f4 + this_01->field_0235 * 4));
+        this_01->vfunc_90(3,(short)*(undefined4 *)(&DAT_007959f4 + this_01->field_0235 * 4));
       }
     }
     switch(this_01->field_0245) {
@@ -332,7 +333,7 @@ int __thiscall TLOBaseTy::SetState(TLOBaseTy *this,int param_1,int param_2)
     case CASE_36:
     case CASE_3D:
     case CASE_5D:
-      thunk_FUN_004e4b60((AnonShape_004E4B60_EABE8E44 *)this_01);
+      thunk_FUN_004e4b60((STMineSetC *)this_01);
       break;
     case CASE_45:
       thunk_FUN_004ea7e0((AnonShape_004D9BD0_B3B50583 *)this_01);

@@ -16,7 +16,7 @@ int * __cdecl FUN_0064a630(int param_1)
   g_currentExceptionFrame = &local_4c;
   exceptionCode = Library::MSVCRT::__setjmp3(local_4c.jumpBuffer,0);
   if (exceptionCode == 0) {
-    local_8 = Library::DKW::LIB::FUN_006aac10(0x10);
+    local_8 = Library::DKW::LIB::MemAllocClear(0x10);
     thunk_FUN_0064a6f0(local_8,param_1);
     g_currentExceptionFrame = local_4c.previous;
     return local_8;

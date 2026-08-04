@@ -1,5 +1,5 @@
 
-undefined4 __fastcall FUN_004d2760(AnonShape_004D2760_CB2BA53E *param_1)
+undefined4 __fastcall FUN_004d2760(TLOBaseTy *param_1)
 
 {
   dword dVar1;
@@ -7,56 +7,56 @@ undefined4 __fastcall FUN_004d2760(AnonShape_004D2760_CB2BA53E *param_1)
   undefined4 extraout_ECX;
   DArrayTy *pDVar2;
   /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
-  AnonShape_004D2760_CB2BA53E *extraout_EDX;
-  AnonShape_004D2760_CB2BA53E *pAVar3;
+  TLOBaseTy *extraout_EDX;
+  TLOBaseTy *pTVar3;
   int iVar4;
   uint uVar5;
   undefined4 *puVar6;
   int iVar7;
-  AnonShape_004D2760_CB2BA53E *local_c;
-  AnonShape_004D2760_CB2BA53E *local_8;
+  TLOBaseTy *local_c;
+  TLOBaseTy *local_8;
 
   local_8 = nullptr;
-  if (*(int *)&param_1[1].field_0x38 != 0) {
+  if (*(int *)&param_1->field_0x2a0 != 0) {
     sub_0041C5A0(param_1);
-    TLOBaseTy::sub_00417D30((TLOBaseTy *)param_1);
-    if (*(int *)&param_1->field_0x2c == 0) {
-      local_8 = (AnonShape_004D2760_CB2BA53E *)0x1;
+    TLOBaseTy::sub_00417D30(param_1);
+    if (param_1->field_002C == 0) {
+      local_8 = (TLOBaseTy *)0x1;
     }
-    else if (*(int *)&param_1->field_0x2c == 1) {
-      local_8 = (AnonShape_004D2760_CB2BA53E *)0x2;
+    else if (param_1->field_002C == 1) {
+      local_8 = (TLOBaseTy *)0x2;
     }
     iVar4 = param_1->field_0261;
     /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
-    pAVar3 = extraout_EDX;
-    if (iVar4 < (int)(&local_8->field_0x0 + iVar4)) {
+    pTVar3 = extraout_EDX;
+    if (iVar4 < (int)&local_8->vtable + iVar4) {
       do {
         iVar7 = param_1->field_025D;
-        if (iVar7 < (int)(&local_8->field_0x0 + iVar7)) {
+        if (iVar7 < (int)&local_8->vtable + iVar7) {
           do {
-            thunk_FUN_00496140((short)iVar7,(short)iVar4,param_1->field_0265);
+            thunk_FUN_00496140((short)iVar7,(short)iVar4,*(short *)&param_1->field_0265);
             iVar7 = iVar7 + 1;
-          } while (iVar7 < (int)(&local_8->field_0x0 + param_1->field_025D));
+          } while (iVar7 < (int)&local_8->vtable + param_1->field_025D);
         }
         iVar4 = iVar4 + 1;
-        pAVar3 = local_8;
-      } while (iVar4 < (int)(&local_8->field_0x0 + param_1->field_0261));
+        pTVar3 = local_8;
+      } while (iVar4 < (int)&local_8->vtable + param_1->field_0261);
     }
     /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-    iVar4 = thunk_FUN_004b7520(CONCAT31((int3)((uint)pAVar3 >> 8),param_1->field_0x24),
-                               param_1->field_0259);
+    iVar4 = thunk_FUN_004b7520(CONCAT31((int3)((uint)pTVar3 >> 8),
+                                        *(undefined1 *)&param_1->field_0024),param_1->field_0259);
     if (iVar4 != 0) {
-      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-      iVar4 = (**(code **)(*(int *)param_1 + 0x2c))();
+      dVar1 = param_1->slot_2C();
       /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
-      thunk_FUN_004b7710(CONCAT31((int3)((uint)extraout_ECX >> 8),param_1->field_0x24),iVar4);
+      thunk_FUN_004b7710(CONCAT31((int3)((uint)extraout_ECX >> 8),
+                                  *(undefined1 *)&param_1->field_0024),dVar1);
     }
-    TLOBaseTy::sub_0041D590((TLOBaseTy *)param_1);
+    TLOBaseTy::sub_0041D590(param_1);
   }
-  if (99 < *(int *)&param_1[1].field_0x40) {
-    *(undefined4 *)&param_1[1].field_0xe4 = 0xfe;
+  if (99 < *(int *)&param_1->field_0x2a8) {
+    param_1->field_034C = 0xfe;
   }
-  TLOBaseTy::sub_00419D30((TLOBaseTy *)param_1,*(int *)&param_1[1].field_0xe4);
+  TLOBaseTy::sub_00419D30(param_1,param_1->field_034C);
   if (g_array_007FA170 != nullptr) {
     dVar1 = g_array_007FA170->count;
     uVar5 = 0;
@@ -78,7 +78,7 @@ undefined4 __fastcall FUN_004d2760(AnonShape_004D2760_CB2BA53E *param_1)
   }
   iVar4 = param_1->field_0259;
   if (iVar4 == 100) {
-    pDVar2 = *(DArrayTy **)&g_packedRecords_A62x8[*(int *)&param_1->field_0x24].field_0x9d6;
+    pDVar2 = *(DArrayTy **)&g_packedRecords_A62x8[(int)param_1->field_0024].field_0x9d6;
     if (pDVar2 != nullptr) {
       uVar5 = 0;
       if (0 < (int)pDVar2->count) {
@@ -86,23 +86,22 @@ undefined4 __fastcall FUN_004d2760(AnonShape_004D2760_CB2BA53E *param_1)
           DArrayGetElement(pDVar2,uVar5,&local_8);
           if (local_8 == param_1) {
             DArrayRemoveAt(*(DArrayTy **)
-                            &g_packedRecords_A62x8[*(int *)&param_1->field_0x24].field_0x9d6,uVar5);
+                            &g_packedRecords_A62x8[(int)param_1->field_0024].field_0x9d6,uVar5);
             break;
           }
           uVar5 = uVar5 + 1;
-          pDVar2 = *(DArrayTy **)&g_packedRecords_A62x8[*(int *)&param_1->field_0x24].field_0x9d6;
+          pDVar2 = *(DArrayTy **)&g_packedRecords_A62x8[(int)param_1->field_0024].field_0x9d6;
         } while ((int)uVar5 < (int)pDVar2->count);
       }
-      if ((*(DArrayTy **)&g_packedRecords_A62x8[*(int *)&param_1->field_0x24].field_0x9d6)->count ==
-          0) {
-        DArrayDestroy(*(DArrayTy **)&g_packedRecords_A62x8[*(int *)&param_1->field_0x24].field_0x9d6
-                     );
-        *(undefined4 *)&g_packedRecords_A62x8[*(int *)&param_1->field_0x24].field_0x9d6 = 0;
+      if ((*(DArrayTy **)&g_packedRecords_A62x8[(int)param_1->field_0024].field_0x9d6)->count == 0)
+      {
+        DArrayDestroy(*(DArrayTy **)&g_packedRecords_A62x8[(int)param_1->field_0024].field_0x9d6);
+        *(undefined4 *)&g_packedRecords_A62x8[(int)param_1->field_0024].field_0x9d6 = 0;
       }
     }
   }
   else if (iVar4 == 0x4d) {
-    pDVar2 = *(DArrayTy **)&g_packedRecords_A62x8[*(int *)&param_1->field_0x24].field_0x9e2;
+    pDVar2 = *(DArrayTy **)&g_packedRecords_A62x8[(int)param_1->field_0024].field_0x9e2;
     if (pDVar2 != nullptr) {
       uVar5 = 0;
       if (0 < (int)pDVar2->count) {
@@ -110,23 +109,22 @@ undefined4 __fastcall FUN_004d2760(AnonShape_004D2760_CB2BA53E *param_1)
           DArrayGetElement(pDVar2,uVar5,&local_8);
           if (local_8 == param_1) {
             DArrayRemoveAt(*(DArrayTy **)
-                            &g_packedRecords_A62x8[*(int *)&param_1->field_0x24].field_0x9e2,uVar5);
+                            &g_packedRecords_A62x8[(int)param_1->field_0024].field_0x9e2,uVar5);
             break;
           }
           uVar5 = uVar5 + 1;
-          pDVar2 = *(DArrayTy **)&g_packedRecords_A62x8[*(int *)&param_1->field_0x24].field_0x9e2;
+          pDVar2 = *(DArrayTy **)&g_packedRecords_A62x8[(int)param_1->field_0024].field_0x9e2;
         } while ((int)uVar5 < (int)pDVar2->count);
       }
-      if ((*(DArrayTy **)&g_packedRecords_A62x8[*(int *)&param_1->field_0x24].field_0x9e2)->count ==
-          0) {
-        DArrayDestroy(*(DArrayTy **)&g_packedRecords_A62x8[*(int *)&param_1->field_0x24].field_0x9e2
-                     );
-        *(undefined4 *)&g_packedRecords_A62x8[*(int *)&param_1->field_0x24].field_0x9e2 = 0;
+      if ((*(DArrayTy **)&g_packedRecords_A62x8[(int)param_1->field_0024].field_0x9e2)->count == 0)
+      {
+        DArrayDestroy(*(DArrayTy **)&g_packedRecords_A62x8[(int)param_1->field_0024].field_0x9e2);
+        *(undefined4 *)&g_packedRecords_A62x8[(int)param_1->field_0024].field_0x9e2 = 0;
       }
     }
   }
   else if (iVar4 == 0x43) {
-    pDVar2 = *(DArrayTy **)&g_packedRecords_A62x8[*(int *)&param_1->field_0x24].field_0x9ee;
+    pDVar2 = *(DArrayTy **)&g_packedRecords_A62x8[(int)param_1->field_0024].field_0x9ee;
     if (pDVar2 != nullptr) {
       uVar5 = 0;
       if (0 < (int)pDVar2->count) {
@@ -134,23 +132,22 @@ undefined4 __fastcall FUN_004d2760(AnonShape_004D2760_CB2BA53E *param_1)
           DArrayGetElement(pDVar2,uVar5,&local_8);
           if (local_8 == param_1) {
             DArrayRemoveAt(*(DArrayTy **)
-                            &g_packedRecords_A62x8[*(int *)&param_1->field_0x24].field_0x9ee,uVar5);
+                            &g_packedRecords_A62x8[(int)param_1->field_0024].field_0x9ee,uVar5);
             break;
           }
           uVar5 = uVar5 + 1;
-          pDVar2 = *(DArrayTy **)&g_packedRecords_A62x8[*(int *)&param_1->field_0x24].field_0x9ee;
+          pDVar2 = *(DArrayTy **)&g_packedRecords_A62x8[(int)param_1->field_0024].field_0x9ee;
         } while ((int)uVar5 < (int)pDVar2->count);
       }
-      if ((*(DArrayTy **)&g_packedRecords_A62x8[*(int *)&param_1->field_0x24].field_0x9ee)->count ==
-          0) {
-        DArrayDestroy(*(DArrayTy **)&g_packedRecords_A62x8[*(int *)&param_1->field_0x24].field_0x9ee
-                     );
-        *(undefined4 *)&g_packedRecords_A62x8[*(int *)&param_1->field_0x24].field_0x9ee = 0;
+      if ((*(DArrayTy **)&g_packedRecords_A62x8[(int)param_1->field_0024].field_0x9ee)->count == 0)
+      {
+        DArrayDestroy(*(DArrayTy **)&g_packedRecords_A62x8[(int)param_1->field_0024].field_0x9ee);
+        *(undefined4 *)&g_packedRecords_A62x8[(int)param_1->field_0024].field_0x9ee = 0;
       }
     }
   }
   else if (iVar4 == 0x73) {
-    pDVar2 = *(DArrayTy **)&g_packedRecords_A62x8[*(int *)&param_1->field_0x24].field_0x9f2;
+    pDVar2 = *(DArrayTy **)&g_packedRecords_A62x8[(int)param_1->field_0024].field_0x9f2;
     if (pDVar2 != nullptr) {
       uVar5 = 0;
       if (0 < (int)pDVar2->count) {
@@ -158,18 +155,17 @@ undefined4 __fastcall FUN_004d2760(AnonShape_004D2760_CB2BA53E *param_1)
           DArrayGetElement(pDVar2,uVar5,&local_8);
           if (local_8 == param_1) {
             DArrayRemoveAt(*(DArrayTy **)
-                            &g_packedRecords_A62x8[*(int *)&param_1->field_0x24].field_0x9f2,uVar5);
+                            &g_packedRecords_A62x8[(int)param_1->field_0024].field_0x9f2,uVar5);
             break;
           }
           uVar5 = uVar5 + 1;
-          pDVar2 = *(DArrayTy **)&g_packedRecords_A62x8[*(int *)&param_1->field_0x24].field_0x9f2;
+          pDVar2 = *(DArrayTy **)&g_packedRecords_A62x8[(int)param_1->field_0024].field_0x9f2;
         } while ((int)uVar5 < (int)pDVar2->count);
       }
-      if ((*(DArrayTy **)&g_packedRecords_A62x8[*(int *)&param_1->field_0x24].field_0x9f2)->count ==
-          0) {
-        DArrayDestroy(*(DArrayTy **)&g_packedRecords_A62x8[*(int *)&param_1->field_0x24].field_0x9f2
-                     );
-        *(undefined4 *)&g_packedRecords_A62x8[*(int *)&param_1->field_0x24].field_0x9f2 = 0;
+      if ((*(DArrayTy **)&g_packedRecords_A62x8[(int)param_1->field_0024].field_0x9f2)->count == 0)
+      {
+        DArrayDestroy(*(DArrayTy **)&g_packedRecords_A62x8[(int)param_1->field_0024].field_0x9f2);
+        *(undefined4 *)&g_packedRecords_A62x8[(int)param_1->field_0024].field_0x9f2 = 0;
       }
     }
   }
@@ -195,7 +191,7 @@ undefined4 __fastcall FUN_004d2760(AnonShape_004D2760_CB2BA53E *param_1)
     }
   }
   else if (iVar4 == 0x65) {
-    pDVar2 = *(DArrayTy **)&g_packedRecords_A62x8[*(int *)&param_1->field_0x24].field_0x9e6;
+    pDVar2 = *(DArrayTy **)&g_packedRecords_A62x8[(int)param_1->field_0024].field_0x9e6;
     if (pDVar2 != nullptr) {
       uVar5 = 0;
       if (0 < (int)pDVar2->count) {
@@ -203,44 +199,42 @@ undefined4 __fastcall FUN_004d2760(AnonShape_004D2760_CB2BA53E *param_1)
           DArrayGetElement(pDVar2,uVar5,&local_8);
           if (local_8 == param_1) {
             DArrayRemoveAt(*(DArrayTy **)
-                            &g_packedRecords_A62x8[*(int *)&param_1->field_0x24].field_0x9e6,uVar5);
+                            &g_packedRecords_A62x8[(int)param_1->field_0024].field_0x9e6,uVar5);
             break;
           }
           uVar5 = uVar5 + 1;
-          pDVar2 = *(DArrayTy **)&g_packedRecords_A62x8[*(int *)&param_1->field_0x24].field_0x9e6;
+          pDVar2 = *(DArrayTy **)&g_packedRecords_A62x8[(int)param_1->field_0024].field_0x9e6;
         } while ((int)uVar5 < (int)pDVar2->count);
       }
-      if ((*(DArrayTy **)&g_packedRecords_A62x8[*(int *)&param_1->field_0x24].field_0x9e6)->count ==
-          0) {
-        DArrayDestroy(*(DArrayTy **)&g_packedRecords_A62x8[*(int *)&param_1->field_0x24].field_0x9e6
-                     );
-        *(undefined4 *)&g_packedRecords_A62x8[*(int *)&param_1->field_0x24].field_0x9e6 = 0;
+      if ((*(DArrayTy **)&g_packedRecords_A62x8[(int)param_1->field_0024].field_0x9e6)->count == 0)
+      {
+        DArrayDestroy(*(DArrayTy **)&g_packedRecords_A62x8[(int)param_1->field_0024].field_0x9e6);
+        *(undefined4 *)&g_packedRecords_A62x8[(int)param_1->field_0024].field_0x9e6 = 0;
       }
     }
   }
   else if ((iVar4 == 0x3b) &&
-          (pDVar2 = *(DArrayTy **)&g_packedRecords_A62x8[*(int *)&param_1->field_0x24].field_0x9ea,
+          (pDVar2 = *(DArrayTy **)&g_packedRecords_A62x8[(int)param_1->field_0024].field_0x9ea,
           pDVar2 != nullptr)) {
     uVar5 = 0;
     if (0 < (int)pDVar2->count) {
       do {
         DArrayGetElement(pDVar2,uVar5,&local_8);
         if (local_8 == param_1) {
-          DArrayRemoveAt(*(DArrayTy **)
-                          &g_packedRecords_A62x8[*(int *)&param_1->field_0x24].field_0x9ea,uVar5);
+          DArrayRemoveAt(*(DArrayTy **)&g_packedRecords_A62x8[(int)param_1->field_0024].field_0x9ea,
+                         uVar5);
           break;
         }
         uVar5 = uVar5 + 1;
-        pDVar2 = *(DArrayTy **)&g_packedRecords_A62x8[*(int *)&param_1->field_0x24].field_0x9ea;
+        pDVar2 = *(DArrayTy **)&g_packedRecords_A62x8[(int)param_1->field_0024].field_0x9ea;
       } while ((int)uVar5 < (int)pDVar2->count);
     }
-    if ((*(DArrayTy **)&g_packedRecords_A62x8[*(int *)&param_1->field_0x24].field_0x9ea)->count == 0
-       ) {
-      DArrayDestroy(*(DArrayTy **)&g_packedRecords_A62x8[*(int *)&param_1->field_0x24].field_0x9ea);
-      *(undefined4 *)&g_packedRecords_A62x8[*(int *)&param_1->field_0x24].field_0x9ea = 0;
+    if ((*(DArrayTy **)&g_packedRecords_A62x8[(int)param_1->field_0024].field_0x9ea)->count == 0) {
+      DArrayDestroy(*(DArrayTy **)&g_packedRecords_A62x8[(int)param_1->field_0024].field_0x9ea);
+      *(undefined4 *)&g_packedRecords_A62x8[(int)param_1->field_0024].field_0x9ea = 0;
     }
   }
-  puVar6 = (undefined4 *)&param_1[1].field_0xe8;
+  puVar6 = (undefined4 *)&param_1->field_0x350;
   iVar4 = 3;
   do {
     if ((STT3DSprC *)*puVar6 != nullptr) {
@@ -250,11 +244,11 @@ undefined4 __fastcall FUN_004d2760(AnonShape_004D2760_CB2BA53E *param_1)
     puVar6 = puVar6 + 1;
     iVar4 = iVar4 + -1;
   } while (iVar4 != 0);
-  if (*(STT3DSprC **)&param_1[1].field_0xf4 != nullptr) {
-    thunk_FUN_004ad310(*(STT3DSprC **)&param_1[1].field_0xf4);
-    Library::MSVCRT::FUN_0072e2b0(*(HoloTy **)&param_1[1].field_0xf4);
+  if (param_1->field_035C != nullptr) {
+    thunk_FUN_004ad310(param_1->field_035C);
+    Library::MSVCRT::FUN_0072e2b0((HoloTy *)param_1->field_035C);
   }
-  thunk_FUN_004ad310((STT3DSprC *)&param_1->field_0x1d5);
+  thunk_FUN_004ad310((STT3DSprC *)&param_1->field_01D5);
   return 0;
 }
 

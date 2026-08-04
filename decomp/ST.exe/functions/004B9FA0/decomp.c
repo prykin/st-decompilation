@@ -101,6 +101,7 @@ int __thiscall TLOBaseTy::GetMessage(TLOBaseTy *this,STMessage *message)
   byte *pbVar42;
   bool bVar43;
   char cVar44;
+  undefined2 arg_2;
   int *piVar45;
   int aiStack_6dc [17];
   undefined4 auStack_698 [17];
@@ -727,8 +728,9 @@ int __thiscall TLOBaseTy::GetMessage(TLOBaseTy *this,STMessage *message)
             local_EAX_1886 = LookupRecordByte(*(char *)&this_00->field_023D);
             (*pTVar28->vfunc_90)
                       (this_00,4,
-                       *(undefined4 *)
-                        (&DAT_007952b8 + ((local_EAX_1886 & 0xffU) + this_00->field_0235 * 3) * 4));
+                       (short)*(undefined4 *)
+                               (&DAT_007952b8 +
+                               ((local_EAX_1886 & 0xffU) + this_00->field_0235 * 3) * 4));
           }
           if (((this_00->field_0231 == CASE_0) || (this_00->field_0231 == CASE_3)) &&
              (g_manBasis_00811784 != nullptr)) {
@@ -1056,7 +1058,7 @@ int __thiscall TLOBaseTy::GetMessage(TLOBaseTy *this,STMessage *message)
       }
       local_18 = (AnonShape_0060EA30_DCEB68AD *)
                  ((this_00->field_03D4 + 0x1a) * 0x27 + local_ce + local_d6 + local_de + local_e6);
-      local_10 = (byte *)Library::DKW::LIB::FUN_006aac10((uint)local_18);
+      local_10 = Library::DKW::LIB::MemAllocClear((uint)local_18);
       ppbVar35 = local_4bc;
       pbVar36 = local_10;
       memmove(pbVar36, ppbVar35, 0x3f6); /* compiler REP MOVS byte copy */
@@ -1879,16 +1881,16 @@ LAB_004bc4c0:
       uVar27 = local_EAX_8211 & 0xff;
       if (uVar27 == 1) {
         pTVar28 = this_00->vtable;
-        uVar25 = 0x208;
+        arg_2 = 0x208;
 LAB_004bbfe9:
-        (*pTVar28->vfunc_90)(this_00,4,uVar25);
+        (*pTVar28->vfunc_90)(this_00,4,arg_2);
       }
       else if (uVar27 == 2) {
         this_00->vfunc_90(4,0x2d0);
       }
       else if (uVar27 == 3) {
         pTVar28 = this_00->vtable;
-        uVar25 = 0x38b;
+        arg_2 = 0x38b;
         goto LAB_004bbfe9;
       }
     }

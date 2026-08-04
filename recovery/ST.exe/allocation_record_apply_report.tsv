@@ -1,0 +1,10 @@
+function_address	status	detail
+00648530	unchanged	already present /SubmarineTitans/Recovered/AllocationRecords/AllocationRecord_00648530; fields=4; span=133
+00648620	unchanged	already present /SubmarineTitans/Recovered/AllocationRecords/AllocationRecord_00648620; fields=4; span=133
+0065CB00	unchanged	already present /SubmarineTitans/Recovered/AllocationRecords/AllocationRecord_0065CB00; fields=9; span=1183
+0065CD10	unchanged	already present /SubmarineTitans/Recovered/AllocationRecords/AllocationRecord_0065CD10; fields=11; span=1183
+00668330	unchanged	already present /SubmarineTitans/Recovered/AllocationRecords/AllocationRecord_00668330; fields=5; span=608
+006684E0	unchanged	already present /SubmarineTitans/Recovered/AllocationRecords/AllocationRecord_006684E0; fields=47; span=608
+0067D1D0	unchanged	already present /SubmarineTitans/Recovered/AllocationRecords/AllocationRecord_0067D1D0; fields=5; span=299
+0067D3B0	unchanged	already present /SubmarineTitans/Recovered/AllocationRecords/AllocationRecord_0067D3B0; fields=5; span=299
+00690FC0	unchanged	already present /SubmarineTitans/Recovered/AllocationRecords/AllocationRecord_00690FC0; fields=4; span=268

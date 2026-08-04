@@ -36,7 +36,7 @@ FUN_007527a0(AnonShape_006B5B10_E0D06CF1 *param_1,int param_2,int param_3,char p
   iVar15 = (int)(iVar1 + 7 + (iVar1 + 7 >> 0x1f & 7U)) >> 3;
   uVar13 = (uint)param_1->field_000E * iVar1 + 0x1f >> 3 & 0x1ffffffc;
   *param_5 = iVar15 * iVar2;
-  puVar3 = Library::DKW::LIB::FUN_006aac10(iVar15 * iVar2);
+  puVar3 = Library::DKW::LIB::MemAllocClear(iVar15 * iVar2);
   if (puVar3 == nullptr) {
     return nullptr;
   }

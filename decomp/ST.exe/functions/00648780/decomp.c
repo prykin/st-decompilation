@@ -14,8 +14,8 @@ undefined4 * __cdecl LoadBossEdit(int param_1,char *param_2)
   int iVar2;
   undefined4 *puVar3;
   InternalExceptionFrame local_50;
-  undefined4 *local_c;
-  ushort *local_8;
+  AllocationRecord_00648530 *local_c;
+  AllocationRecord_00648530 *local_8;
 
   local_c = nullptr;
   local_8 = nullptr;
@@ -27,13 +27,14 @@ undefined4 * __cdecl LoadBossEdit(int param_1,char *param_2)
       RaiseInternalException
                 (-0x34,g_overwriteContext_007ED77C,"E:\\__titans\\ai\\ai_boss_d.cpp",0x7f);
     }
-    local_8 = Library::Ourlib::MFAOBJ::mfAObjLoad((cMf32 *)param_1,param_2,1,0);
+    local_8 = (AllocationRecord_00648530 *)
+              Library::Ourlib::MFAOBJ::mfAObjLoad((cMf32 *)param_1,param_2,1,0);
     if (local_8 != nullptr) {
       local_c = thunk_FUN_00648530(local_8);
       thunk_FUN_006484f0((int *)&local_8);
     }
     g_currentExceptionFrame = local_50.previous;
-    return local_c;
+    return (undefined4 *)local_c;
   }
   g_currentExceptionFrame = local_50.previous;
   iVar2 = ReportDebugMessage("E:\\__titans\\ai\\ai_boss_d.cpp",0x86,0,errorCode,"%s",

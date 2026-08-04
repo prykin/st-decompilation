@@ -28,20 +28,20 @@ FUN_006e65c0(void *this,undefined4 param_1,char param_2,float param_3,float para
             ushort param_6,ushort param_7)
 
 {
-  undefined4 *puVar1;
+  void *pvVar1;
 
-  puVar1 = Library::DKW::LIB::FUN_006aac10(0x1c);
-  if (puVar1 == nullptr) {
+  pvVar1 = Library::DKW::LIB::MemAllocClear(0x1c);
+  if (pvVar1 == nullptr) {
     return 0xfffffffe;
   }
-  puVar1[6] = param_1;
-  *(char *)((int)puVar1 + 0x17) = param_2;
-  puVar1[1] = param_3;
-  puVar1[2] = param_4;
-  *(ushort *)((int)puVar1 + 0xe) = param_5;
-  *(ushort *)(puVar1 + 4) = param_6;
-  *(ushort *)((int)puVar1 + 0x12) = param_7;
-  FUN_006b9910((undefined4 *)((int)this + 0x442),(int)puVar1);
+  *(undefined4 *)((int)pvVar1 + 0x18) = param_1;
+  *(char *)((int)pvVar1 + 0x17) = param_2;
+  *(float *)((int)pvVar1 + 4) = param_3;
+  *(float *)((int)pvVar1 + 8) = param_4;
+  *(ushort *)((int)pvVar1 + 0xe) = param_5;
+  *(ushort *)((int)pvVar1 + 0x10) = param_6;
+  *(ushort *)((int)pvVar1 + 0x12) = param_7;
+  FUN_006b9910((undefined4 *)((int)this + 0x442),(int)pvVar1);
   return 0;
 }
 

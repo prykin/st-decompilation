@@ -1473,7 +1473,7 @@ switchD_00534835_caseD_1:
           local_20 = LoadStrategData((int)pcVar15,(char *)(element_02fd_2 + 0x13),(int *)&local_18);
           uVar12 = local_8;
           if (local_20 != nullptr) {
-            local_14 = Library::DKW::LIB::FUN_006aac10(local_18 + local_8 * 2);
+            local_14 = Library::DKW::LIB::MemAllocClear(local_18 + local_8 * 2);
             *(undefined1 *)local_14 = 1;
             pbVar16 = (byte *)((int)local_14 + uVar12);
             *pbVar16 = DAT_0080874d;
@@ -1506,7 +1506,7 @@ switchD_00534835_caseD_1:
         }
       }
       else {
-        local_14 = Library::DKW::LIB::FUN_006aac10(2);
+        local_14 = Library::DKW::LIB::MemAllocClear(2);
         if (local_14 != nullptr) {
           *(undefined1 *)local_14 = 0;
           *(byte *)((int)local_14 + 1) = DAT_0080874d;

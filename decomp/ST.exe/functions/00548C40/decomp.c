@@ -223,7 +223,7 @@ void __thiscall CursorClassTy::TakeCmdToRun(CursorClassTy *this,int param_1)
         }
         if (local_4c != nullptr) {
           local_18 = (uint *)(local_9c + 1);
-          local_94 = Library::DKW::LIB::FUN_006aac10((uint)local_18);
+          local_94 = Library::DKW::LIB::MemAllocClear((uint)local_18);
           if (local_94 != nullptr) {
             *(char *)local_94 = (this_00->field_04A2 == CASE_A) + '\x01';
             puVar9 = local_4c;
@@ -256,7 +256,7 @@ void __thiscall CursorClassTy::TakeCmdToRun(CursorClassTy *this,int param_1)
         }
         if (local_1c != nullptr) {
           local_24 = (uint *)(local_a8 + 1);
-          local_18 = Library::DKW::LIB::FUN_006aac10((uint)local_24);
+          local_18 = Library::DKW::LIB::MemAllocClear((uint)local_24);
           if (local_18 != nullptr) {
             *(undefined1 *)local_18 = 3;
             puVar10 = local_1c;
@@ -329,7 +329,7 @@ void __thiscall CursorClassTy::TakeCmdToRun(CursorClassTy *this,int param_1)
         }
         if (local_54 != nullptr) {
           local_18 = (uint *)(local_a4 + 1);
-          local_24 = Library::DKW::LIB::FUN_006aac10((uint)local_18);
+          local_24 = Library::DKW::LIB::MemAllocClear((uint)local_18);
           if (local_24 != nullptr) {
             *(undefined1 *)local_24 = 4;
             puVar14 = (byte *)(local_54);
@@ -386,7 +386,7 @@ void __thiscall CursorClassTy::TakeCmdToRun(CursorClassTy *this,int param_1)
       }
       if (local_3c != nullptr) {
         local_18 = (uint *)(local_98 + 1);
-        local_20 = Library::DKW::LIB::FUN_006aac10((uint)local_18);
+        local_20 = Library::DKW::LIB::MemAllocClear((uint)local_18);
         if (local_20 != nullptr) {
           *(char *)local_20 = (this_00->field_0494 == 0xc) + '\x01';
           puVar9 = local_3c;
@@ -537,7 +537,7 @@ void __thiscall CursorClassTy::TakeCmdToRun(CursorClassTy *this,int param_1)
         }
         if (local_44 != nullptr) {
           local_18 = (uint *)(local_a0 + 1);
-          local_14 = Library::DKW::LIB::FUN_006aac10((uint)local_18);
+          local_14 = Library::DKW::LIB::MemAllocClear((uint)local_18);
           if (local_14 != nullptr) {
             *(undefined1 *)local_14 = 3;
             puVar9 = local_44;

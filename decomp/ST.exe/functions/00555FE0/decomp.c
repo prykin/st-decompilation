@@ -33,7 +33,7 @@ byte * __thiscall TraksClassTy::PrepareToSave(TraksClassTy *this,uint *param_1)
   uVar5 = local_10;
   if (errorCode == 0) {
     *param_1 = local_10 + 0x5d;
-    local_8 = (byte *)Library::DKW::LIB::FUN_006aac10(local_10 + 0x5d);
+    local_8 = Library::DKW::LIB::MemAllocClear(local_10 + 0x5d);
     local_8[0] = 0x46;
     local_8[1] = 0;
     local_8[2] = 0;

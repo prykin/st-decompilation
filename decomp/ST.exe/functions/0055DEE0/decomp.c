@@ -41,7 +41,7 @@ void FUN_0055dee0(byte *param_1)
   local_18 = nullptr;
   local_24 = 0;
   local_20 = 0;
-  local_14 = (short *)Library::DKW::LIB::FUN_006aac10(DAT_008033a8 * DAT_008033a4 * 2);
+  local_14 = Library::DKW::LIB::MemAllocClear(DAT_008033a8 * DAT_008033a4 * 2);
   iVar4 = FUN_0055ee70(param_1,DAT_00803390,1);
   iVar9 = DAT_00803324 * DAT_00803358;
   iVar5 = DAT_008033a4;

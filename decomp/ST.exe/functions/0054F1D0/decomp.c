@@ -150,7 +150,7 @@ LAB_0054f52c:
                 local_2c = (AnonPointee_STPlaySystemC_0039 **)
                            (*(int *)((int)puVar19 + 0x13) + *(int *)((int)puVar19 + 0xf));
                 uVar9 = (int)local_2c + 0x1b;
-                puVar10 = Library::DKW::LIB::FUN_006aac10(uVar9);
+                puVar10 = Library::DKW::LIB::MemAllocClear(uVar9);
                 puVar20 = puVar19;
                 puVar23 = puVar10;
                 memmove(puVar23, puVar20, uVar9); /* compiler REP MOVS byte copy */

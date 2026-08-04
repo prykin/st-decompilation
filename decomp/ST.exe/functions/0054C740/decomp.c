@@ -38,13 +38,13 @@ void CreatePlaySystem(void)
     g_playSystem_00802A38->field_00E0 = 0;
     /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
     g_playSystem_00802A38->InitSystem(unaff_ESI);
-    g_playSystem_00802A38->vfunc_08(0x1100,0,&g_allPlayers_007FA174,0,0);
+    g_playSystem_00802A38->vfunc_08(0x1100,0,0xa174,0,0);
     g_playSystem_00802A38->vfunc_08(0x109,0,0,0,0);
     g_playSystem_00802A38->vfunc_08(0x121,0,0,0,0);
-    g_playSystem_00802A38->vfunc_08(0x143,&DAT_00811794,0,0,0);
-    g_playSystem_00802A38->vfunc_08(0x145,&DAT_008117a0,0,0,0);
-    g_playSystem_00802A38->vfunc_08(0x146,&DAT_008117ac,0,0,0);
-    g_playSystem_00802A38->vfunc_08(0x15b,&DAT_00811780,0,0,0);
+    g_playSystem_00802A38->vfunc_08(0x143,0x1794,0,0,0);
+    g_playSystem_00802A38->vfunc_08(0x145,0x17a0,0,0,0);
+    g_playSystem_00802A38->vfunc_08(0x146,0x17ac,0,0,0);
+    g_playSystem_00802A38->vfunc_08(0x15b,0x1780,0,0,0);
     thunk_FUN_0058d6f0();
     if (DAT_0080879c == 0) {
       bVar3 = 0;

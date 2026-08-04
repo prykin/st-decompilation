@@ -13,6 +13,13 @@ Original binaries are local under ignored `bin/` and must not be committed.
 
 ## Working model
 
+- If `.st-local/environment.conf` exists, it is a machine-local path profile.
+  Validate it with `.st-local/check-environment.sh` before using any value;
+  validation failure means that the whole profile must be ignored.
+  Use it only when `access_mode=direct` and the physical repository root
+  (`pwd -P`) exactly matches its `canonical_repo`; otherwise ignore it. In
+  particular, never reuse its paths from an SMB/network checkout. The entire
+  `.st-local/` directory is ignored and must not be committed.
 - `scripts/` contains Ghidra Java scripts, not a Gradle extension. Ghidra compiles
   them on demand with JDK 21.
 - Analyzers are read-only and write proposals to `recovery/ST.exe/`; appliers
@@ -77,8 +84,12 @@ Original binaries are local under ignored `bin/` and must not be committed.
   avoid persistent whole-local typing when evidence shows mixed scalar/pointer
   roles. `STLocalLifetimeAnalyzer/Applier` may split distinct decompiler merge
   groups or type a single raw-undefined group only from an address-stable exact
-  typed-call/copy anchor; a fresh decompile must reattach the database local to
-  that same anchor before `applied` is reported.
+  typed-call/copy anchor. It may also carry a hash-intact recursive-node member
+  through an exact field load/store/address or same-size decompiler cast. A
+  same-typed group is isolated only when its type chain ends at that recovered
+  recursive node and heterogeneous siblings otherwise poison its rendering. A
+  fresh decompile must reattach the database local to that same anchor before
+  `applied` is reported; inseparable `Node *`/`Node **` groups remain conflicts.
 - Non-leaf `void` is valid only when every direct-call CFG path kills EAX before
   an explicit read; an unresolved path is `unknown`, not ignored. A bare caller
   `RET` proves forwarding only when that caller already has a protected non-void
@@ -115,6 +126,11 @@ Original binaries are local under ignored `bin/` and must not be committed.
   inline array only when independent indexed-stride evidence agrees; install a
   nested by-value member only for an exact complete typed copy into an
   automation-owned range.
+- A recursive linked-node type is identified by one exact hash-owned owner field,
+  not by layout similarity. Automatic application requires repeated self-link
+  traversal and at least two non-conflicting generated partial views at that
+  same root; COM/table chains, concrete roots, and single-view geometry remain
+  review-only.
 
 ## Validation and hygiene
 

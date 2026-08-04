@@ -21,7 +21,7 @@ STPlaySystemC::SetCtrlCmd
   code *pcVar1;
   bool bVar2;
   int iVar3;
-  undefined4 *puVar4;
+  void *pvVar4;
   int iVar5;
   uint uVar6;
   uint uVar7;
@@ -91,19 +91,19 @@ STPlaySystemC::SetCtrlCmd
   if (iVar3 == 0) {
     iVar3 = local_c + param_7;
     local_10 = iVar3;
-    puVar4 = Library::DKW::LIB::FUN_006aac10(iVar3 + 0x1b);
-    puVar4[1] = local_8->field_00E4;
-    *(undefined1 *)(puVar4 + 2) = param_1;
-    *(char *)((int)puVar4 + 9) = (char)g_cursorClass_00802A30->field_04AE;
-    *(uint *)((int)puVar4 + 10) = param_2;
-    *(char *)((int)puVar4 + 0xe) = param_3;
-    *(uint *)((int)puVar4 + 0xf) = uVar7;
-    *(uint *)((int)puVar4 + 0x13) = param_7;
+    pvVar4 = Library::DKW::LIB::MemAllocClear(iVar3 + 0x1b);
+    *(uint *)((int)pvVar4 + 4) = local_8->field_00E4;
+    *(undefined1 *)((int)pvVar4 + 8) = param_1;
+    *(char *)((int)pvVar4 + 9) = (char)g_cursorClass_00802A30->field_04AE;
+    *(uint *)((int)pvVar4 + 10) = param_2;
+    *(char *)((int)pvVar4 + 0xe) = param_3;
+    *(uint *)((int)pvVar4 + 0xf) = uVar7;
+    *(uint *)((int)pvVar4 + 0x13) = param_7;
     local_c = iVar3;
     if (param_4 != nullptr) {
       uVar6 = uVar7 >> 2;
-      *(uint **)((int)puVar4 + 0x17) = (uint *)((int)puVar4 + 0x1b);
-      puVar8 = (uint *)((int)puVar4 + 0x1b);
+      *(uint **)((int)pvVar4 + 0x17) = (uint *)((int)pvVar4 + 0x1b);
+      puVar8 = (uint *)((int)pvVar4 + 0x1b);
       for (; uVar6 != 0; uVar6 = uVar6 - 1) {
         *puVar8 = *param_4;
         param_4 = param_4 + 1;
@@ -116,7 +116,7 @@ STPlaySystemC::SetCtrlCmd
       }
     }
     if ((param_6 != nullptr) && (param_7 != 0)) {
-      puVar9 = (byte *)(*(int *)((int)puVar4 + 0x17) + *(int *)((int)puVar4 + 0xf));
+      puVar9 = (byte *)(*(int *)((int)pvVar4 + 0x17) + *(int *)((int)pvVar4 + 0xf));
       memmove(puVar9, param_6, param_7); /* compiler REP MOVS byte copy */
     }
     if (DAT_0080877e == '\0') {
@@ -125,14 +125,14 @@ STPlaySystemC::SetCtrlCmd
         bVar2 = false;
       }
       if (bVar2) {
-        FUN_006b9910(&local_8->field_0039,(int)puVar4);
+        FUN_006b9910(&local_8->field_0039,(int)pvVar4);
         /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
         PlaySystemTy::SendClientMail((PlaySystemTy *)local_8,unaff_EDI);
         g_currentExceptionFrame = local_54.previous;
         return;
       }
     }
-    FUN_006b9910(&local_8->field_0039,(int)puVar4);
+    FUN_006b9910(&local_8->field_0039,(int)pvVar4);
     g_currentExceptionFrame = local_54.previous;
     return;
   }

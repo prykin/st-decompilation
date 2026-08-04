@@ -59,7 +59,9 @@ public class STFunctionPointerParameterAnalyzer extends GhidraScript {
     private int functionsScanned, directCallsSeen, exactTargetSites, nullSites,
         unknownSites, indirectParameterCalls, backwardArgumentCallsites,
         incompleteBackwardArgumentCallsites, registerValueAlternatives,
-        stackCleanupProofs, stackCleanupFailures;
+        stackCleanupProofs, stackCleanupFailures, completeCoverageCandidates,
+        enoughTargetCandidates, compatibleAbiCandidates, replaceableCandidates,
+        protectedBaselineCandidates, fullyProvenCandidates;
 
     @Override
     protected void run() throws Exception {
@@ -531,8 +533,15 @@ public class STFunctionPointerParameterAnalyzer extends GhidraScript {
             boolean replaceable = genericParameter(parameter) || generatedParameter(parameter);
             boolean manual = protectedSource(parameter.getSource()) ||
                 protectedSource(use.function.getSignatureSource());
-            boolean apply = argumentCount >= 0 && argumentCount <= MAX_ARGUMENTS &&
-                completeCoverage && enoughTargets && compatibleAbi && replaceable && !manual;
+            boolean fullyProven = argumentCount >= 0 && argumentCount <= MAX_ARGUMENTS &&
+                completeCoverage && enoughTargets && compatibleAbi;
+            if (completeCoverage) completeCoverageCandidates++;
+            if (enoughTargets) enoughTargetCandidates++;
+            if (compatibleAbi) compatibleAbiCandidates++;
+            if (replaceable) replaceableCandidates++;
+            if (manual) protectedBaselineCandidates++;
+            if (fullyProven) fullyProvenCandidates++;
+            boolean apply = fullyProven && replaceable && !manual;
             String definition = TYPE_ROOT + "callback_" + key.functionAddress + "_p" +
                 key.ordinal;
             String reason = "indirect_calls=" + use.sites.size() +
@@ -954,10 +963,12 @@ public class STFunctionPointerParameterAnalyzer extends GhidraScript {
 
     private boolean genericParameter(Parameter parameter) {
         DataType type = unwrap(parameter.getFormalDataType());
-        if (type instanceof Undefined) return type.getLength() == currentProgram.getDefaultPointerSize();
+        if (Undefined.isUndefined(type))
+            return type.getLength() == currentProgram.getDefaultPointerSize();
         if (!(type instanceof Pointer pointer)) return false;
         DataType pointed = unwrap(pointer.getDataType());
-        return pointed == null || pointed instanceof VoidDataType || pointed instanceof Undefined;
+        return pointed == null || pointed instanceof VoidDataType ||
+            Undefined.isUndefined(pointed);
     }
 
     private boolean generatedParameter(Parameter parameter) {
@@ -1137,6 +1148,12 @@ public class STFunctionPointerParameterAnalyzer extends GhidraScript {
             "null_target_sites=" + nullSites,
             "unknown_target_sites=" + unknownSites,
             "proposals=" + rows.size(),
+            "complete_coverage_candidates=" + completeCoverageCandidates,
+            "enough_target_candidates=" + enoughTargetCandidates,
+            "compatible_abi_candidates=" + compatibleAbiCandidates,
+            "fully_proven_candidates=" + fullyProvenCandidates,
+            "replaceable_parameter_candidates=" + replaceableCandidates,
+            "protected_baseline_candidates=" + protectedBaselineCandidates,
             "auto_apply=" + rows.stream().filter(row -> row.apply).count(),
             "note=Automatic typing requires every observed direct callsite to pass an exact " +
                 "function address or null, at least two exact target sites, one indirect-call " +

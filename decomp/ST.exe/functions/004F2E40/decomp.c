@@ -84,8 +84,8 @@ CPanelTy::SetButStruct
     }
     text = &local_c->field_01E1;
     *(int *)&param_1->field_0xc = iVar4 + param_5;
-    *(undefined4 *)&param_1[1].field_0x54 = 1;
-    *(undefined4 *)&param_1[1].field_0x58 = 1;
+    param_1->field_0108 = 1;
+    param_1->field_010C = 1;
     wsprintfA(text,"%s0",param_7);
     local_8 = cMf32::RecGet(g_cMf32_00806790,param_6,text,nullptr,1);
     uVar3 = local_8[3];
@@ -103,17 +103,17 @@ CPanelTy::SetButStruct
     param_1->field_008E = param_8;
     *(undefined4 *)&param_1->field_0x90 = param_10;
     *(undefined4 *)&param_1->field_0x98 = 0;
-    *(undefined4 *)&param_1[1].field_0x8 = 1;
+    param_1->field_00BC = 1;
     *(undefined4 *)&param_1->field_0xa4 = 0x101;
     *(undefined4 *)&param_1->field_0xac = 0x4202;
     *(ushort *)&param_1->field_0xb0 = param_9;
     param_1->field_00B2 = param_8;
-    *(undefined4 *)(param_1 + 1) = param_10;
+    *(undefined4 *)&param_1->field_0xb4 = param_10;
     if (param_11 != nullptr) {
       uVar5 = FUN_0070aa70(g_cMf32_00806790,param_11,0,1);
-      *(undefined4 *)&param_1[1].field_0x70 = uVar5;
+      param_1->field_0124 = uVar5;
       iVar4 = Library::Ourlib::MFIMG::mfImgGetWidth(g_cMf32_00806790,0x12,param_11,1);
-      *(int *)&param_1[1].field_0x74 = iVar4;
+      param_1->field_0128 = iVar4;
     }
     g_currentExceptionFrame = local_50.previous;
     return;

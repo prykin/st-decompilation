@@ -279,7 +279,7 @@ LAB_004d600f:
   }
   if (SVar1 < 4) {
     if (SVar1 == MESS_SHARED_0003) {
-      thunk_FUN_004d2760((AnonShape_004D2760_CB2BA53E *)this_00);
+      thunk_FUN_004d2760((TLOBaseTy *)this_00);
       g_currentExceptionFrame = local_70.previous;
       return 0;
     }

@@ -94,7 +94,7 @@ FUN_0055c320(void *this,byte *param_1,char *param_2,char *param_3,
     FreeAndNull((void **)((int)this + 0x644));
   }
   /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
-  param_1 = (byte *)Library::DKW::LIB::FUN_006aac10((uint)(param_1 + param_4->field_0008));
+  param_1 = Library::DKW::LIB::MemAllocClear((uint)(param_1 + param_4->field_0008));
   *(void **)((int)this + 0x644) = param_1;
   /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
   if (param_1 == nullptr) {

@@ -65,12 +65,12 @@ cheaper failure.
 
 ### Q-002 Isolate risky Program mutations
 
-Status: superseded for the current SMB-only workflow. Do not create or maintain
-a local project copy. Source-bundle pinning, analyzer/applier separation, ABI
-barriers, run archives, and transactional corpus export provide the automated
-isolation available in this environment. A new risky ABI heuristic must remain
-proposal-only until those gates cover it; the pipeline must stop before later
-broad consumers when a barrier fails.
+Status: superseded for the current single authoritative local-project workflow.
+Do not create or maintain an unmanaged project copy. Source-bundle pinning,
+analyzer/applier separation, ABI barriers, run archives, and transactional
+corpus export provide the automated isolation used here. A new risky ABI
+heuristic must remain proposal-only until those gates cover it; the pipeline
+must stop before later broad consumers when a barrier fails.
 
 - Keep candidate recovery/corpus output separate until its export gate passes.
 - Promote the candidate only after the semantic diff and per-address fixture
@@ -129,9 +129,11 @@ Physical slot typing does not by itself rename or re-home the target function.
 ## P2 — reintroduce infrastructure independently
 
 Status: all six infrastructure items are present in the current pipeline. Their
-runtime evidence is retained per run. Accepted run `c67bb0...` reused 12
-persistent and five current-epoch analyzer results and completed in 235.773
-seconds. The callback-field machine prefilter reduced that analyzer from
+runtime evidence is retained per run. Accepted run `7f9676d...` reused 11
+persistent and nine current-epoch analyzer results and completed in 317.510
+seconds. It exercised the run-local epoch rebase after an idempotent transaction
+advanced only Ghidra's volatile modification counter. The callback-field
+machine prefilter reduced that analyzer from
 166.613 seconds to 2.300 seconds by skipping 1,138 call-only decompiles.
 
 Each item starts from the accepted source, compiles all scripts against Ghidra
@@ -164,15 +166,42 @@ rejected Program.
    ABI from one consumer.
 4. Concrete `T **` loads rooted in one proven generated global record.
 5. Allocation-backed consumer-local packed records with an exact fixed-copy
-   span; allocator returns remain neutral.
+   span; allocator returns remain neutral. Status: implemented and accepted by
+   full-export run `3619c3f6f942...`. The machine scan found 458 allocation roots in 237
+   functions, 82 returned roots, nine exact returned fixed-copy records and no
+   overlap/manual-baseline conflicts. All nine applied once and the confirming
+   pass reports `unchanged=9`; every ABI phase and the broad export gate passed.
 6. Recursive linked pointee and nested-structure inference from matching
-   nonzero geometry at root and recursive depths.
+   nonzero geometry at root and recursive depths. Status: implemented and
+   accepted by full-export run `da57bbf2063b...`. The first automatic row is keyed to one generated
+   owner-field identity, combines two independently recovered partial views into
+   a 76-byte node with seven nonzero fields, and proves the self-link from repeated
+   traversal sites. The first apply reports `applied=1`; the confirming pass
+   reports `unchanged=1`. A generic class-layout precedence rule preserves this
+   hash-owned node over `void *` evidence, and three subsequent class-layout
+   applications all report `updated=0`, `unchanged=112`. All ABI and export
+   gates pass. The follow-up generated-layout and SSA-lifetime layer is accepted
+   by full-export run `4867017fb370...`: exact adjacent reinterpret clusters and
+   fixed-index generated tails refined 28 targets on the first pass, then
+   converged without further pointer-shape changes. Recursive field
+   load/store/address/cast anchors split five groups in `006DDD50`; restricted
+   passes converged `2 -> 1 -> 1 -> 0`, and the complete confirming pass made no
+   changes. The former `undefined4 ******` towers now render as the recovered
+   node and `->next`. One inseparable `Node *`/`Node **` group remains
+   review-only. All ABI gates and the broad gate pass; the latter reports three
+   expected stage-transition warnings and no hard regression.
 7. Export-only presentation rules (`nullptr`, exact binary32 literals, closed
    cursor idioms, x87 survivor spelling), each proven bit- or address-exact.
 8. Function-pointer stack parameters from complete exact direct-callsite
    coverage plus a same-parameter indirect call, with at least two target sites,
    unanimous machine ABI, and cdecl caller-cleanup proof. Source is implemented;
-   runtime compile/yield/regression validation is pending.
+   accepted run `85fe7d...` compiled and exercised it with complete CFG
+   reconstruction for all 67 candidate callsites, 25 review rows, and a passed
+   export gate. A generic-type predicate bug misclassified `undefined *` as
+   concrete and suppressed every automatic row. Accepted run `7f9676d...`
+   confirms the symmetric predicate fix: five complete rows are installed and
+   the confirming pass reports `unchanged=5`, `conflicts=0`; every ABI barrier
+   and the broad export gate passed.
 
 For every item: analyzer-only proposal review, one applier pass, one confirming
 pass, fixture diff, then broad regression gate. A failed item is reverted as a
@@ -184,13 +213,13 @@ The accepted corpus contains the following concrete debt:
 
 | Issue | Occurrences | Functions | Next evidence source |
 | --- | ---: | ---: | --- |
-| `undefined_type` | 16,448 | 3,596 | definitions, consumers, ABI-width families |
-| `raw_pointer_offset` | 2,840 | 1,130 | cross-function pointer families and complete records |
-| `raw_indirect_call` | 2,100 | 831 | stored callback targets and physical vtable slots |
-| `packed_or_unaligned_piece` | 1,493 | 292 | exact packed members or explicit unaligned helpers |
+| `undefined_type` | 16,319 | 3,590 | definitions, consumers, ABI-width families |
+| `raw_pointer_offset` | 2,827 | 1,121 | cross-function pointer families and complete records |
+| `raw_indirect_call` | 2,092 | 826 | stored callback targets and physical vtable slots |
+| `packed_or_unaligned_piece` | 1,394 | 293 | exact packed members or explicit unaligned helpers |
 | `return_width_artifact` | 1,077 | 146 | whole-CFG EAX and caller-consumer evidence |
 | `unresolved_register_input` | 766 | 183 | boundary ABI, SEH/setjmp, and true live-ins |
-| `dynamic_array_indexing` | 318 | 185 | per-owner DArray element descriptors |
+| `dynamic_array_indexing` | 319 | 185 | per-owner DArray element descriptors |
 
 Generic field/data names are a later semantic-naming layer. They must not drive
 layout or ABI changes merely because their raw occurrence counts are larger.

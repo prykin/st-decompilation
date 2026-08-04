@@ -9,9 +9,11 @@ script.
 
 ## Environment
 
-- Authoritative repository from this machine: `<local-volume>/st` over SMB.
-  Ghidra sees the same repository at `<local-home>/st`. Use those absolute paths
-  directly; do not create a local repository copy or symbolic link.
+- Authoritative repository path: `<local-home>/st` on the local disk. Do not use
+  or inspect an SMB mirror.
+- `.st-local/environment.conf` is the ignored machine profile for exact local
+  tool/project paths. Use it only when `access_mode=direct` and `pwd -P` equals
+  its `canonical_repo`; ignore it from every SMB or different checkout.
 - Ghidra host: Ghidra 12.1.2 with Homebrew OpenJDK 21.
 - Project on the Ghidra host: `<local-home>/st/proj/st.gpr`.
 - Scripts on the Ghidra host: `<local-home>/st/scripts`.
@@ -39,33 +41,71 @@ have been checked.
 ## Latest accepted run
 
 The authoritative latest `full-export` was run
-`c67bb0151620cc052d5d6e7217d5372cfd3770efecf69cdd5b223db33adc1e22`.
+`4867017fb370a0802379c1423802ed0fe344458e33d9f23d615cabf33ce464c3`.
 Its tracked accepted projection is the source of truth; ignored run archives
 are disposable diagnostics and need not be retained. The run completed in
-235.773 seconds (`00:03:55`), with Program modification `30 -> 56` and
-semantic hash
-`27b2e1eb234982f047ed62f60bc77e1a7bde68397a9bbe5e0b2e1686a4b2fed8`.
+`01:07:42`, with semantic hash
+`b4ff58aa651c9d831d379bb42c64eab0a4bbf1e28b5d1399b816bb6bd5ea35f0`
+and manifest hash
+`5461dccee17f32be6153b177f76feeda6638b68ed4a3d3a4fe8b8cae79864ef3`.
 
-Ghidra's load preflight accepted all 81 Java scripts with zero build failures.
+Ghidra's load preflight accepted all 87 Java scripts with zero build failures.
 The export receipt is `passed`; the gate reports zero hard regressions, 10,392
 internal functions, 5,712 exported bodies, and zero decompilation failures.
-All seven ABI phases passed, including `accepted-refresh`; the generated raw
+All ABI phases passed, including `accepted-refresh`; the generated raw
 fixture baseline is verified, all 2,409 accepted typed vtable slots are intact,
-and the broad gate reports zero warnings. The Program semantic hash remained
-equal to the accepted receipt despite the volatile modification-counter change.
+and the broad gate reports zero hard regressions and three stage-transition
+warnings. The
+Program semantic hash equals the accepted receipt.
 
-The complete pipeline recorded 135 steps. It reused 12 persistent and five
-current-epoch analyzer results; `STDecompExport` completed in 40.723 seconds.
-The machine STORE prefilter reduced `STFunctionPointerFieldAnalyzer` from
-166.613 seconds to 2.300 seconds: all 1,138 call-only candidates were skipped,
-with zero exact stored-field targets, proposals, or decompile failures.
+The run accepted recursive linked-pointee recovery. The machine prefilter
+decompiled 269 of 1,878 owner functions, found four rooted candidates and kept
+three review-only. One automatic row combines two independently recovered
+partial views at one exact owner field into a 76-byte recursive node with seven
+nonzero fields and `Node *next` at offset zero. It reports `unchanged=1` on the
+confirming pass, with zero conflicts and failures. The class-layout analyzer
+now preserves a hash-owned recursive node over generic `void *` evidence; all
+three later class-layout applications report `updated=0`, `unchanged=112`, and
+zero generated type revisions. This prevents the former deterministic
+`RecursiveNode * -> void * -> RecursiveNode *` fixed-point oscillation.
+
+The run also accepts the generic generated-layout refinement and recursive-node
+SSA-lifetime layer. The first pointer-shape pass applied four new generated
+targets and updated 24 existing ones; the confirming pass reported no changes.
+Its conservative exact-reinterpret rule requires a connected cluster of at
+least two adjacent equal-width fields and one weak generated-field seed. Its
+constant-index continuation rule requires at least three distinct absolute
+members, one explicit address-of use, one positive constant index, and no
+variable indexing. These rules contain no program address or ST semantic-name
+allow-list.
+
+The first local-lifetime pass applied five recursive-node groups in one
+function. Address-restricted passes then converged `2 -> 1 -> 1 -> 0`, followed
+by a complete confirming pass with zero changes. `STDecompExport` reused 10,296
+of 10,392 function shards and 5,636 of 5,712 quality analyses. Against the
+previous accepted corpus, anonymous-shape occurrences fell by 57, casted generic
+fields by 129, packed/piece forms by 99, raw indirect calls by one, raw pointer
+offsets by three, and undefined types by 78. The 203 additional generic field
+names are the expected layout-to-semantic-naming stage transition, not lost
+structure.
+
+The three motivating witnesses are now materially typed in the accepted
+corpus: `0040AE40` uses one nested record for its former
+`pAVar6[1].field_0x3b` tail, `005751F0` reads `field_0000` and `field_0002`
+instead of casting the parameter base, and `006DDD50` has no compounded
+`undefined4 ******` pointer declarations. It uses the recovered recursive node
+and `->next`. One true link cursor still needs a `Node **` view, and Ghidra emits
+several generated `temp_<hash>` local names after splitting; both are residual
+presentation/lifetime debt and must not be hidden by a whole-local type cast.
 
 ## Accepted checkpoint history
 
 Commit `39097bd736` is the historical safety rollback checkpoint, not the
-current repository HEAD. The tracked HEAD before the pending callback-parameter
-work is `0853f50eb7c2720bc600c3fda32696a723136b7b`; its accepted Program/corpus is
-the `c67bb0...` run above. The rejected dispatch experiment is not present in
+current repository HEAD. Current HEAD is `177312b8e7`; the working tree after
+it contains the validated function-pointer-parameter generic-type fix,
+headless analysis drain, allocation-record recovery, and run-local analyzer-epoch
+repair. Its accepted Program/corpus is the `4867017f...` run above. The rejected dispatch
+experiment is not present in
 that Program, scripts, generated recovery output, or corpus. Its ignored run
 archives, analyzer cache, semantic marker, and untracked Ghidra database
 generations were quarantined outside the repository so a future launcher
@@ -121,7 +161,49 @@ comment and checks tag membership before writing. This source-only fix compiles
 with the pipeline and analyzer changes against Ghidra 12.1.2/JDK 21; it does not
 require another corpus export.
 
-## Current pending source changes
+## Latest accepted semantic layer
+
+`STRecursivePointeeAnalyzer/Applier`, the generated-layout refinements in
+`STPointerShapeAnalyzer`, and the recursive-node support in
+`STLocalLifetimeAnalyzer/Applier` are the latest accepted P3 layer. They are
+generic and contain no image-address or semantic-name
+allow-list. Candidate identity is the exact generated owner datatype path plus
+field offset. Automatic application requires two root loads, two self-link
+traversals, two independently recovered partial generated views, at least three
+nonzero fields, non-overlapping geometry, and unchanged owner/source hashes.
+The applier creates a deterministic recursive node, installs `Node *next` at
+offset zero, changes only the proven root field, and refreshes both layout
+hashes. It preserves manual/imported, concrete, stale, COM/table-like and
+geometry-only matches.
+
+The full accepted run scanned 269 machine-prefiltered functions and produced
+four rooted audit rows, only one automatic. The accepted
+witness combines two partial views under
+`ST3DSMAPContext+0x140` into a 76-byte node with seven nonzero fields. The first
+apply reported `applied=1`; the complete fixed-point run then reported
+`apply=1`/`unchanged=1`, all ABI gates passed, the broad export gate passed with
+no hard regression and three stage-transition warnings, and the headless
+project save succeeded. `STClassLayoutAnalyzer`
+and its applier contain a generic hash-owned-recursive precedence rule plus an
+applier-side stale-TSV guard, so generic pointer evidence cannot downgrade the
+node on a later pass.
+
+`STPointerShapeAnalyzer` additionally accepts two closed forms which Ghidra
+otherwise leaves as raw casts. A constant-index generated tail is interpreted
+as a continuation of the same record only with one fixed positive index, at
+least three distinct absolute members, an address-of witness, and no variable
+subscript. Exact scalar reinterpretation refines generated fields only as a
+connected adjacent same-width cluster rooted in a demonstrably weak generated
+member; a lone widened compiler load is audit-only. Exact-covered weak subfields
+are suppressed, while overlaps and manual/named layouts remain protected.
+
+`STLocalLifetimeAnalyzer/Applier` can carry a hash-intact recursive member type
+through exact field load/store/address and same-size cast anchors. Same-typed
+groups are isolated only when heterogeneous siblings would otherwise compound
+the recovered node into an undefined pointer tower. The applier re-decompiles
+and reattaches each proposal to the same machine anchor before reporting it as
+applied. The pipeline follows only changed function addresses to convergence,
+then regenerates one complete canonical report.
 
 The dispatch/callback source changes from the preceding checkpoint compiled and
 ran successfully in the latest accepted run:
@@ -142,9 +224,9 @@ ran successfully in the latest accepted run:
   proposal rows were therefore call-only observations rather than callback
   candidates.
 
-That negative result is now cheap and runtime-confirmed. The new pending source
-change instead adds `STFunctionPointerParameterAnalyzer/Applier` for callbacks
-passed as ordinary stack parameters. It follows the complete machine chain
+That negative result is now cheap and runtime-confirmed.
+`STFunctionPointerParameterAnalyzer/Applier` handles callbacks passed as
+ordinary stack parameters. It follows the complete machine chain
 “exact function address (or null) at every observed direct callsite -> one
 callee stack parameter -> indirect call through that parameter”. Automatic
 application additionally requires at least two exact target sites, one observed
@@ -172,13 +254,29 @@ before pushing the other four outer arguments. The callback targets use cdecl
 blindly copied into the three-word callback definition. This witness motivated
 the generic CFG/stack proof but is not present as a Java address exception.
 
-The new pair runs after the broad structural fixed point and before callback
+The pair runs after the broad structural fixed point and before callback
 fields/general indirect calls, then participates in final export indirect-ABI
-stabilization. It is cached by semantic Program/source/output hashes. These two
-scripts and the scheduler update were authored through the SMB mount on a
-machine without Ghidra/JDK, so they still require the launcher's compile
-preflight and a `full-export` runtime check. A successful preflight will load 83
-scripts rather than 81.
+stabilization. It is cached by semantic Program/source/output hashes. Run
+`85fe7d...` compiled and executed it: 5,712 functions and 42,453 direct calls
+were scanned, 25 callback parameters were reported, all 67 backward-CFG
+callsite reconstructions completed, and the broad export gate passed.
+
+Run `7f9676d...` confirms the symmetric generic-type fix. Five rows have
+complete coverage, sufficient exact target sites, one machine ABI, a
+replaceable generic parameter, and no manual/imported baseline. They were
+applied once and the confirming run reports `unchanged=5`, `conflicts=0`; the
+other 20 rows remain review-only. The accepted corpus improves
+`raw_indirect_call` by seven and `undefined_type` by five with every ABI gate
+green.
+
+The pipeline drains headless auto-analysis with synchronous
+`startAnalysis(..., false)`: Ghidra 12.1.2's headless `waitForAnalysis()` tries
+to save analyzer timing data outside a Program transaction after the actual
+queue has completed. GUI mode retains `waitForAnalysis()`. If an applier reports
+no mutating row but an idempotent/rolled-back row transaction advances only the
+volatile modification number, current analyzer stamps are rebased without
+relaxing source/dependency/artifact hashes. The warm run exercised this path
+and avoided duplicate heavy decompilation.
 
 The following sections are a chronological implementation/failure log. Any
 future-tense rerun checklist in that history has been superseded by the latest
@@ -296,13 +394,15 @@ Expected checks after completion:
 
 - build preflight: all 83 Java scripts load with zero failures;
 - `function_pointer_parameter_summary.txt`: candidate, exact-target, unknown,
-  proposal, and auto-apply counts are plausible; inspect per-row caller-cleanup
-  evidence in the proposal TSV;
+  proof-stage, baseline-eligibility, proposal, and auto-apply counts are
+  plausible. With the unchanged accepted Program, five rows should become
+  automatic; inspect per-row caller-cleanup evidence in the proposal TSV;
 - `function_pointer_parameter_proposals.tsv`: every `apply=1` row has complete
   direct-callsite coverage, at least two exact target sites, one argument count,
   and one machine ABI;
-- `function_pointer_parameter_apply_report.tsv`: no conflicts and a confirming
-  pass reports only `unchanged`/review-only rows;
+- `function_pointer_parameter_apply_report.tsv`: no conflicts; the first pass
+  installs the five proven definitions and a confirming pass reports them as
+  `unchanged` with the remaining rows review-only;
 - `indirect_call_proposals.tsv`: dispatch interface/tail rows are `apply=0`
   audit rows;
 - `indirect_call_apply_report.tsv`: no dispatch view or synthetic tail is
@@ -311,8 +411,8 @@ Expected checks after completion:
   operations, exact field stores, and trusted field stores are reported;
 - `function_pointer_field_proposals.tsv`: observed and rejected stores retain
   their exact evidence and reason;
-- Program semantic state remains unchanged unless a complete independently
-  proven callback chain is found;
+- Program semantic state is expected to change only through those independently
+  proven callback parameters;
 - `export_receipt.json`: final status is `passed`;
 - all ABI barrier summaries and `export_regression_report.tsv`: no errors or
   hard regressions.
@@ -332,10 +432,10 @@ files. Never start a second headless writer while the project is open.
 ## Validation performed
 
 The dispatch guard and optimized callback-field pass compiled and completed
-against Ghidra 12.1.2/JDK 21 during run `c67bb0...`; its build logs are retained
-in that run archive. The pending function-pointer-parameter pair and scheduler
-integration have only static validation on this machine and must use the
-launcher's compile preflight.
+against Ghidra 12.1.2/JDK 21 during run `c67bb0...`. The function-pointer-
+parameter pair and scheduler integration compiled and completed during accepted
+run `85fe7d...`; only the corrected generic-undefined predicate and the added
+summary counters remain pending runtime validation.
 
 ## Historical address-free continuation after that validation
 
@@ -509,14 +609,18 @@ Expected next `full-export` results:
 
 After a successful export, choose the next cluster from
 `decomp_quality_summary.json` and `decomp_quality_issues.jsonl`. The strongest
-remaining cross-cutting candidates are allocation-backed transient record
-views, residual return-width artifacts, and unresolved callback/vtable
-prototypes. Allocation helpers must retain neutral `void *`; any record view is
-per-consumer and HighFunction-lifetime anchored.
+remaining cross-cutting candidates are whole-CFG return-width recovery (1,077
+occurrences in 146 functions), unresolved physical callback/vtable prototypes
+(2,092 raw calls in 826 functions), and exact packed-member refinement (1,394
+occurrences in 293 functions). Generic field names are a later semantic layer;
+their count must not drive unsafe geometry-only merges. A true `Node **` cursor
+which shares one inseparable HighFunction group with `Node *` remains
+presentation debt until a distinct address-stable lifetime or an exact API
+boundary proves it.
 
 ## Historical suggested commit title
 
-`feat(recovery): infer callback fields and exact inline aggregates`
+`feat(recovery): refine generated layouts and recursive local lifetimes`
 
 ## Lifecycle regression and final-pass speed fix
 

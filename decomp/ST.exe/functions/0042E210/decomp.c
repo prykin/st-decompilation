@@ -415,7 +415,7 @@ LAB_0042eb3e:
     local_30 = 0;
     local_44 = 1;
     local_3c = uVar12;
-    g_playSystem_00802A38->vfunc_08(0x10ff,local_10,&local_c,local_50,0);
+    g_playSystem_00802A38->vfunc_08(0x10ff,(short)local_10,(short)&local_c,(short)local_50,0);
     Library::DKW::TBL::DArrayPut(local_1c,uVar12,&local_c);
     iVar9 = param_5;
   }

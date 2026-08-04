@@ -99,7 +99,7 @@ LAB_0065e1b6:
 LAB_0065e218:
             pbVar8 = param_7;
             if ((param_7 != nullptr) && (*param_7 != 0)) {
-              (*this->vtable->vfunc_74)(local_2c);
+              (*this->vtable->vfunc_74)((short)local_2c);
               pbVar11 = local_2c;
               do {
                 bVar1 = *pbVar8;

@@ -23,7 +23,7 @@ VisibleClassTy::SetZoneDes
   code *pcVar2;
   bool bVar3;
   int iVar4;
-  undefined4 *puVar5;
+  void *pvVar5;
   byte *pbVar6;
   int iVar7;
   int iVar8;
@@ -53,8 +53,8 @@ VisibleClassTy::SetZoneDes
         }
         STDebugBreak(); /* noreturn in standalone pseudocode */
       }
-      puVar5 = Library::DKW::LIB::FUN_006aac10(local_14->field_0024 * local_14->field_0020);
-      this->field_003C[param_4 + 6] = (uint)puVar5;
+      pvVar5 = Library::DKW::LIB::MemAllocClear(local_14->field_0024 * local_14->field_0020);
+      this->field_003C[param_4 + 6] = (uint)pvVar5;
       g_currentExceptionFrame = local_60.previous;
     }
     if ((param_7 & 0x1000) != 0) {

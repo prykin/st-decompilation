@@ -11,18 +11,23 @@
 
    [STPrototypeApplier] Propagated return.
    Evidence: 00648620 returns used as parameter 0 of FUN_006809b0 @ 00685CD5 | 00648620 returns used
-   as parameter 2 of Library::Ourlib::MFAOBJ::mfAObjSave @ 00648960 */
+   as parameter 2 of Library::Ourlib::MFAOBJ::mfAObjSave @ 00648960
 
-byte * __cdecl BossDataPack(uint *param_1,undefined4 *param_2,int param_3,uint *param_4)
+   [STAllocationRecordApplier] Consumer-local packed record
+   /SubmarineTitans/Recovered/AllocationRecords/AllocationRecord_00648620.
+   Evidence: exact 133-byte source-parameter copy at 00648676..0064867B */
+
+AllocationRecord_00648620 * __cdecl
+BossDataPack(AllocationRecord_00648620 *param_1,undefined4 *param_2,int param_3,uint *param_4)
 
 {
   code *pcVar1;
   int iVar2;
-  uint *puVar3;
+  AllocationRecord_00648620 *pAVar3;
   int iVar4;
-  byte *pbVar5;
+  AllocationRecord_00648620 *pAVar5;
   uint uVar7;
-  uint *puVar8;
+  byte *puVar8;
   InternalExceptionFrame local_4c;
   void *local_8;
 
@@ -32,18 +37,23 @@ byte * __cdecl BossDataPack(uint *param_1,undefined4 *param_2,int param_3,uint *
   iVar2 = Library::MSVCRT::__setjmp3(local_4c.jumpBuffer,0);
   if (iVar2 == 0) {
     *param_4 = param_3 + 0x85U;
-    puVar3 = Library::DKW::LIB::FUN_006aac10(param_3 + 0x85U);
-    puVar8 = puVar3;
-    memmove(puVar8, param_1, 0x85); /* compiler REP MOVS byte copy */
-    *(uint *)((int)puVar3 + 1) = *param_4;
-    *(int *)((int)puVar3 + 0x4a) = param_3;
-    *(byte *)((int)puVar3 + 5) = 0;
-    uVar7 = *(uint *)((int)puVar3 + 0x4a);
-    puVar8 = puVar3 + 0x21;
+    pAVar3 = Library::DKW::LIB::MemAllocClear(param_3 + 0x85U);
+    pAVar5 = pAVar3;
+    for (iVar2 = 0x21; iVar2 != 0; iVar2 = iVar2 + -1) {
+      *(undefined4 *)pAVar5 = *(undefined4 *)param_1;
+      param_1 = (AllocationRecord_00648620 *)((int)&param_1->field_0001 + 3);
+      pAVar5 = (AllocationRecord_00648620 *)((int)&pAVar5->field_0001 + 3);
+    }
+    *(undefined1 *)pAVar5 = *(undefined1 *)param_1;
+    pAVar3->field_0001 = *param_4;
+    pAVar3->field_004A = param_3;
+    pAVar3->field_0005 = 0;
+    uVar7 = pAVar3->field_004A;
+    puVar8 = (byte *)&pAVar3->field_0x84;
     memmove(puVar8, param_2, uVar7); /* compiler REP MOVS byte copy */
-    *(byte **)((int)puVar3 + 0x46) = nullptr;
+    pAVar3->field_0046 = &pAVar3->field_0x84 + (-0x84 - (int)pAVar3);
     g_currentExceptionFrame = local_4c.previous;
-    return (byte *)puVar3;
+    return pAVar3;
   }
   g_currentExceptionFrame = local_4c.previous;
   if (local_8 != nullptr) {

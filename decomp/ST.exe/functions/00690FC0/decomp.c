@@ -2,20 +2,26 @@
 /* [STSourceProvenanceApplier begin]
    Recovered source file: E:\__titans\ai\ai_tact_d.cpp
    Diagnostic line evidence: 81 (metadata/report site, not the function definition)
-   [STSourceProvenanceApplier end] */
+   [STSourceProvenanceApplier end]
 
-undefined4 * __cdecl FUN_00690fc0(undefined4 *param_1)
+   [STAllocationRecordApplier] Consumer-local packed record
+   /SubmarineTitans/Recovered/AllocationRecords/AllocationRecord_00690FC0.
+   Evidence: exact 268-byte source-parameter copy at 00691012 */
+
+AllocationRecord_00690FC0 * __cdecl FUN_00690fc0(AllocationRecord_00690FC0 *param_1)
 
 {
   int iVar1;
-  AnonShape_00690FC0_955C4112 *pAVar2;
+  AllocationRecord_00690FC0 *pAVar2;
   undefined4 uVar3;
   DArrayTy *pDVar4;
-  undefined4 *puVar5;
-  AnonShape_00690FC0_955C4112 *pAVar6;
+  AllocationRecord_00668330 *pAVar5;
+  AllocationRecord_00690FC0 *pAVar6;
+  AllocationRecord_00668330 *pAVar7;
+  AllocationRecord_00690FC0 *pAVar8;
   InternalExceptionFrame local_54;
   undefined4 local_10;
-  undefined4 *local_c;
+  undefined1 *local_c;
   AnonShape_00690FC0_955C4112 *local_8;
 
   local_8 = nullptr;
@@ -23,59 +29,58 @@ undefined4 * __cdecl FUN_00690fc0(undefined4 *param_1)
   g_currentExceptionFrame = &local_54;
   iVar1 = Library::MSVCRT::__setjmp3(local_54.jumpBuffer,0);
   if (iVar1 == 0) {
-    pAVar2 = (AnonShape_00690FC0_955C4112 *)Library::DKW::LIB::FUN_006aac10(0x10c);
-    puVar5 = param_1;
-    pAVar6 = pAVar2;
+    pAVar2 = Library::DKW::LIB::MemAllocClear(0x10c);
+    pAVar6 = param_1;
+    pAVar8 = pAVar2;
     for (iVar1 = 0x43; iVar1 != 0; iVar1 = iVar1 + -1) {
-      *(undefined4 *)pAVar6 = *puVar5;
-      puVar5 = puVar5 + 1;
-      pAVar6 = (AnonShape_00690FC0_955C4112 *)&pAVar6->field_0x4;
+      *(undefined4 *)pAVar8 = *(undefined4 *)pAVar6;
+      pAVar6 = (AllocationRecord_00690FC0 *)&pAVar6->field_0x4;
+      pAVar8 = (AllocationRecord_00690FC0 *)&pAVar8->field_0x4;
     }
     iVar1 = 0;
-    *(undefined4 *)&pAVar2->field_0x14 = 0x10c;
-    pAVar2->field_0x18 = 2;
-    local_8 = pAVar2;
+    pAVar2->field_0014 = 0x10c;
+    pAVar2->field_0018 = 2;
+    local_8 = (AnonShape_00690FC0_955C4112 *)pAVar2;
     do {
       if (*(int *)((int)&pAVar2->field_0085 + iVar1) != 0) {
-        /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
         uVar3 = FUN_006b0060(nullptr,
-                             (uint *)(*(int *)(&pAVar2->field_0x89 + iVar1) + 0x10b + (int)param_1));
+                             (uint *)(&param_1->field_0x10b + *(int *)(&pAVar2->field_0x89 + iVar1))
+                            );
         *(undefined4 *)((int)&local_8->field_0085 + iVar1) = uVar3;
-        pAVar2 = local_8;
+        pAVar2 = (AllocationRecord_00690FC0 *)local_8;
       }
       iVar1 = iVar1 + 0xc;
     } while (iVar1 < 0x60);
-    if (pAVar2->field_0085 == nullptr) {
+    if (pAVar2->field_0085 == 0) {
       pDVar4 = Library::DKW::TBL::DArrayCreate(nullptr,10,8,10);
       local_8->field_0085 = &pDVar4->flags;
-      pAVar2 = local_8;
+      pAVar2 = (AllocationRecord_00690FC0 *)local_8;
     }
-    if (0 < pAVar2->field_0105) {
-      pAVar2->field_0085[3] = 0;
-      /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-      puVar5 = (undefined4 *)(*(int *)((int)param_1 + 0x107) + 0x10b + (int)param_1);
+    if (0 < (short)pAVar2->field_0105) {
+      *(undefined4 *)(pAVar2->field_0085 + 0xc) = 0;
+      pAVar7 = (AllocationRecord_00668330 *)(&param_1->field_0x10b + *(int *)&param_1->field_0x107);
       iVar1 = 0;
-      pAVar2 = local_8;
+      pAVar2 = (AllocationRecord_00690FC0 *)local_8;
       if (0 < local_8->field_0105) {
         do {
           local_10 = 0;
           local_c = nullptr;
-          local_c = thunk_FUN_00668330(puVar5);
-          if (local_c == nullptr) {
+          pAVar5 = thunk_FUN_00668330(pAVar7);
+          if (pAVar5 == nullptr) {
             local_c = nullptr;
           }
           else {
-            local_c = local_c + -8;
+            local_c = &pAVar5[-1].field_0x240;
           }
           Library::DKW::TBL::DArrayAppend((DArrayTy *)local_8->field_0085,&local_10);
-          puVar5 = (undefined4 *)((int)puVar5 + puVar5[5]);
+          pAVar7 = (AllocationRecord_00668330 *)(&pAVar7->field_0x0 + pAVar7->field_0014);
           iVar1 = iVar1 + 1;
-          pAVar2 = local_8;
+          pAVar2 = (AllocationRecord_00690FC0 *)local_8;
         } while (iVar1 < local_8->field_0105);
       }
     }
     g_currentExceptionFrame = local_54.previous;
-    return (undefined4 *)pAVar2;
+    return pAVar2;
   }
   g_currentExceptionFrame = local_54.previous;
   thunk_FUN_00691540((int *)&local_8);

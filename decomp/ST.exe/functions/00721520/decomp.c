@@ -59,7 +59,7 @@ void __thiscall FUN_00721520(void *this,int param_1,uint param_2)
             cVar1 = *pcVar7;
             pcVar7 = pcVar7 + 1;
           } while (cVar1 != '\0');
-          local_c = (char *)Library::DKW::LIB::FUN_006aac10(~uVar3 + ~uVar4);
+          local_c = Library::DKW::LIB::MemAllocClear(~uVar3 + ~uVar4);
           uVar3 = 0xffffffff;
           pcVar7 = local_8;
           do {
@@ -126,7 +126,7 @@ void __thiscall FUN_00721520(void *this,int param_1,uint param_2)
             cVar1 = *pcVar7;
             pcVar7 = pcVar7 + 1;
           } while (cVar1 != '\0');
-          local_c = (char *)Library::DKW::LIB::FUN_006aac10(~uVar3 + ~uVar4);
+          local_c = Library::DKW::LIB::MemAllocClear(~uVar3 + ~uVar4);
           uVar3 = 0xffffffff;
           pcVar7 = local_10;
           do {

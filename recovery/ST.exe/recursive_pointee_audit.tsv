@@ -1,0 +1,5 @@
+owner_path	field_offset	root_loads	traversal_sites	observed_cast_types	source_views	evidence_functions
+/SubmarineTitans/Recovered/LibraryContexts/ST3DSMAPContext	320	4	16	RecursiveNode_ST3DSMAPContext_0140_DDDC9F89	/SubmarineTitans/Recovered/PointerShapes/AnonShape_006E1EE0_698AE49A|/SubmarineTitans/Recovered/PointerShapes/AnonShape_007282B0_AFD740A9	006DDD50 ST3DSMAPContext::sub_006DDD50
+/SubmarineTitans/Recovered/LibraryContexts/ST3DSMAPContext	660	2	4	undefined4		006DE9C0 ST3DSMAPContext::sub_006DE9C0
+/SubmarineTitans/Recovered/LibraryContexts/ST3DSMAPContext	1098	2	10	AnonShape_006E6AF0_D2F012A7	/SubmarineTitans/Recovered/PointerShapes/AnonShape_006E6AF0_D2F012A7	006E6FB0 ST3DSMAPContext::sub_006E6FB0
+/SubmarineTitans/Recovered/LibraryContexts/ST3DSMAPContext	1094	2	10	AnonShape_006E6AF0_D2F012A7	/SubmarineTitans/Recovered/PointerShapes/AnonShape_006E6AF0_D2F012A7	006E6FB0 ST3DSMAPContext::sub_006E6FB0

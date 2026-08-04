@@ -12,30 +12,25 @@
 void __fastcall ST3DSMAPContext::sub_006DDD50(ST3DSMAPContext *param_1)
 
 {
-  undefined4 ******ppppppuVar1;
-  undefined4 ******ppppppuVar2;
-  int *piVar3;
-  AnonShape_006E1EE0_698AE49A *pAVar4;
-  AnonShape_007282B0_AFD740A9 *pAVar5;
-  undefined4 ******ppppppuVar6;
-  undefined4 ****ppppuVar7;
-  undefined4 ****ppppuVar8;
-  undefined4 ****ppppuVar9;
-  undefined4 ****ppppuVar10;
-  undefined4 ****ppppuVar11;
-  undefined1 uVar12;
-  char *pcVar13;
-  uint uVar14;
-  undefined4 ******ppppppuVar15;
-  int *piVar16;
-  int *piVar17;
-  char *pcVar18;
-  int iVar19;
-  undefined1 *puVar20;
-  int *piVar21;
-  int *piVar22;
-  int iVar23;
-  ushort *puVar24;
+  RecursiveNode_ST3DSMAPContext_0140_DDDC9F89 *pRVar1;
+  int iVar2;
+  int iVar3;
+  int iVar4;
+  int iVar5;
+  undefined1 uVar6;
+  char *pcVar7;
+  uint uVar8;
+  RecursiveNode_ST3DSMAPContext_0140_DDDC9F89 *pRVar9;
+  RecursiveNode_ST3DSMAPContext_0140_DDDC9F89 *pRVar10;
+  RecursiveNode_ST3DSMAPContext_0140_DDDC9F89 *pRVar11;
+  char *pcVar12;
+  int iVar13;
+  int iVar14;
+  undefined1 *puVar15;
+  RecursiveNode_ST3DSMAPContext_0140_DDDC9F89 *pRVar18;
+  RecursiveNode_ST3DSMAPContext_0140_DDDC9F89 *pRVar19;
+  int iVar20;
+  ushort *puVar21;
   int local_120;
   int local_11c;
   float local_ec [2];
@@ -56,31 +51,37 @@ void __fastcall ST3DSMAPContext::sub_006DDD50(ST3DSMAPContext *param_1)
   undefined4 local_84;
   undefined4 local_80;
   int local_7c [2];
-  undefined4 ****local_74;
-  undefined4 *****local_68 [4];
-  float local_58 [2];
+  int local_74;
+  undefined1 local_68 [24];
   char *local_50;
-  undefined4 *****local_44;
+  RecursiveNode_ST3DSMAPContext_0140_DDDC9F89 *local_44;
   float local_40;
   undefined4 *local_3c;
   int local_38;
   int local_34;
-  undefined4 local_30;
-  undefined4 local_2c;
+  int local_30;
+  int local_2c;
   undefined1 *local_1c;
   void *local_14;
   undefined1 *puStack_10;
   undefined *puStack_c;
   undefined4 local_8;
+  RecursiveNode_ST3DSMAPContext_0140_DDDC9F89 *pRVar15;
+  RecursiveNode_ST3DSMAPContext_0140_DDDC9F89 *temp_5f4598f33d;
+  RecursiveNode_ST3DSMAPContext_0140_DDDC9F89 *temp_5f0ea6b32c;
+  RecursiveNode_ST3DSMAPContext_0140_DDDC9F89 *temp_5f0605bde0;
+  RecursiveNode_ST3DSMAPContext_0140_DDDC9F89 *temp_5ff32f7558;
+  RecursiveNode_ST3DSMAPContext_0140_DDDC9F89 *temp_103fe0eba8e3;
+  RecursiveNode_ST3DSMAPContext_0140_DDDC9F89 *pRVar16;
+  RecursiveNode_ST3DSMAPContext_0140_DDDC9F89 *pRVar17;
 
   puStack_c = &DAT_0079dff8;
   puStack_10 = &LAB_0072d964;
   local_14 = ExceptionList;
   local_1c = &stack0xfffffed4;
-  /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-  if (((*(int *)&param_1->field_0x4 == 0) ||
-      ((*(uint *)(*(int *)&param_1->field_0x4 + 0xc) & 0x1100) != 0x100)) &&
-     ((*(int *)&param_1->field_0x2dc == 0 || (param_1->field_02D8 != 0)))) {
+  if (((param_1->field_0004 == nullptr) ||
+      ((param_1->field_0004->field_000C & 0x1100) != 0x100)) &&
+     ((param_1->field_02DC == 0 || (param_1->field_02D8 != 0)))) {
     ExceptionList = &local_14;
     param_1->field_02D8 = 1;
     local_8 = 0;
@@ -89,266 +90,274 @@ void __fastcall ST3DSMAPContext::sub_006DDD50(ST3DSMAPContext *param_1)
     local_1c = &stack0xfffffed4;
     Library::MSVCRT::FUN_0072da40();
     local_8 = 0xffffffff;
-    if ((*(int *)&param_1->field_0xa8 < 0) || (3 < *(int *)&param_1->field_0xa8)) {
-      local_90 = *(int *)&param_1->field_0x13c;
+    if (((int)param_1->field_00A8 < 0) || (3 < (int)param_1->field_00A8)) {
+      local_90 = param_1->field_013C;
       while (local_90 = local_90 + -1, local_cc = &stack0xfffffed4, local_1c = &stack0xfffffed4,
             0 < local_90) {
-        piVar21 = (int *)&param_1->field_0x140;
-        piVar16 = (int *)*piVar21;
+        pRVar18 = (RecursiveNode_ST3DSMAPContext_0140_DDDC9F89 *)&param_1->field_0140;
+        pRVar10 = *(RecursiveNode_ST3DSMAPContext_0140_DDDC9F89 **)pRVar18;
         local_11c = local_90;
         if (0 < local_90) {
           do {
-            piVar3 = (int *)*piVar16;
-            piVar17 = piVar3;
-            piVar22 = piVar16;
-            if ((short)piVar3[2] <= (short)piVar16[2]) {
-              *piVar21 = (int)piVar3;
-              *piVar16 = *piVar3;
-              *piVar3 = (int)piVar16;
-              piVar17 = piVar16;
-              piVar22 = piVar3;
+            pRVar1 = pRVar10->next;
+            pRVar11 = pRVar1;
+            pRVar19 = pRVar10;
+            if (pRVar1->field_0008 <= pRVar10->field_0008) {
+              pRVar18->next = pRVar1;
+              pRVar10->next = pRVar1->next;
+              pRVar1->next = pRVar10;
+              pRVar11 = pRVar10;
+              pRVar19 = pRVar1;
             }
             local_11c = local_11c + -1;
-            piVar16 = piVar17;
-            piVar21 = piVar22;
+            pRVar10 = pRVar11;
+            pRVar18 = pRVar19;
           } while (local_11c != 0);
         }
       }
     }
     else {
-      local_44 = (undefined4 *****)&param_1->field_0x140;
-      for (ppppppuVar1 = *(undefined4 *******)&param_1->field_0x140;
-          ((ppppppuVar1 != nullptr && (*(short *)(ppppppuVar1 + 2) == 0)) &&
-          ((int)ppppppuVar1[9] < 3)); ppppppuVar1 = (undefined4 ******)*ppppppuVar1) {
-        local_44 = ppppppuVar1;
+      local_44 = (RecursiveNode_ST3DSMAPContext_0140_DDDC9F89 *)&param_1->field_0140;
+      for (pRVar15 = param_1->field_0140;
+          ((pRVar15 != nullptr &&
+           (pRVar15->field_0008 == 0)) && (pRVar15->field_0024 < 3)); pRVar15 = pRVar15->next) {
+        local_44 = pRVar15;
       }
-      ppppppuVar1 = (undefined4 ******)*local_44;
+      temp_5f0ea6b32c = local_44->next;
       local_88 = 0;
       local_84 = 0;
       local_80 = 0;
-      local_68[0] = ppppppuVar1;
+      /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
+      local_68._0_4_ = temp_5f0ea6b32c;
       local_1c = &stack0xfffffed4;
       local_cc = &stack0xfffffed4;
-      for (ppppppuVar2 = ppppppuVar1; ppppppuVar2 != nullptr;
-          ppppppuVar2 = (undefined4 ******)*ppppppuVar2) {
+      for (pRVar16 = temp_5f0ea6b32c; pRVar16 != nullptr;
+          pRVar16 = pRVar16->next) {
         sub_006E25D0(param_1,local_7c);
-        ppppppuVar2[0x11] = (undefined4 *****)local_74;
+        *(int *)&pRVar16->field_0x44 = local_74;
       }
-      sub_006DD530(param_1,local_ec,&local_40,local_58);
-      while (ppppppuVar1 != nullptr) {
-        ppppppuVar2 = local_68;
-        for (ppppppuVar6 = ppppppuVar1; ppppppuVar6 != nullptr;
-            ppppppuVar6 = (undefined4 ******)*ppppppuVar6) {
-          ppppppuVar15 = ppppppuVar1;
+      sub_006DD530(param_1,local_ec,&local_40,(float *)(local_68 + 0x10));
+      while (temp_5f0ea6b32c != nullptr) {
+        temp_103fe0eba8e3 = (RecursiveNode_ST3DSMAPContext_0140_DDDC9F89 *)local_68;
+        for (pRVar17 = temp_5f0ea6b32c;
+            pRVar17 != nullptr; pRVar17 = pRVar17->next)
+        {
+          pRVar9 = temp_5f0ea6b32c;
           do {
-            if ((int)ppppppuVar6[0x11] < (int)ppppppuVar15[0x11]) break;
-            ppppppuVar15 = (undefined4 ******)*ppppppuVar15;
-          } while (ppppppuVar15 != nullptr);
-          if (ppppppuVar15 == nullptr) break;
-          ppppppuVar2 = ppppppuVar6;
+            if (*(int *)&pRVar17->field_0x44 < *(int *)&pRVar9->field_0x44) break;
+            pRVar9 = pRVar9->next;
+          } while (pRVar9 != nullptr);
+          if (pRVar9 == nullptr) break;
+          temp_103fe0eba8e3 = pRVar17;
         }
-        if (ppppppuVar6 == nullptr) {
-          *local_44 = ppppppuVar1;
+        if (pRVar17 == nullptr) {
+          local_44->next = temp_5f0ea6b32c;
         }
         else {
-          *ppppppuVar2 = *ppppppuVar6;
-          *ppppppuVar6 = nullptr;
-          *local_44 = ppppppuVar6;
-          ppppppuVar1 = (undefined4 ******)local_68[0];
-          local_44 = ppppppuVar6;
+          temp_103fe0eba8e3->next = pRVar17->next;
+          pRVar17->next = nullptr;
+          local_44->next = pRVar17;
+          /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
+          temp_5f0ea6b32c = (RecursiveNode_ST3DSMAPContext_0140_DDDC9F89 *)local_68._0_4_;
+          local_44 = pRVar17;
         }
       }
     }
-    if (*(int *)&param_1->field_0x124 == 0) {
-      for (pAVar4 = *(AnonShape_006E1EE0_698AE49A **)&param_1->field_0x140;
-          pAVar4 != nullptr;
-          pAVar4 = *(AnonShape_006E1EE0_698AE49A **)pAVar4) {
+    if (param_1->field_0124 == 0) {
+      for (temp_5f0605bde0 = param_1->field_0140;
+          temp_5f0605bde0 != nullptr;
+          temp_5f0605bde0 = temp_5f0605bde0->next) {
         SubmarineTitans::Recovered::HiddenThis::AnonReceiver_006E1EE0::FUN_006e1ee0
-                  ((AnonReceiver_006E1EE0 *)param_1,pAVar4,local_3c,(int)local_cc,local_a0);
-        FUN_00726ce0(param_1,(int)pAVar4);
-        iVar23 = 0;
+                  ((AnonReceiver_006E1EE0 *)param_1,(AnonShape_006E1EE0_698AE49A *)temp_5f0605bde0,
+                   local_3c,(int)local_cc,local_a0);
+        FUN_00726ce0(param_1,(int)temp_5f0605bde0);
+        iVar20 = 0;
         if (0 < local_a0[0]) {
           do {
-            FUN_007279b0(param_1,(int)pAVar4,(uint)(byte)local_cc[iVar23],(int)local_3c);
-            iVar23 = iVar23 + 1;
-          } while (iVar23 < local_a0[0]);
+            FUN_007279b0(param_1,(int)temp_5f0605bde0,(uint)(byte)local_cc[iVar20],(int)local_3c);
+            iVar20 = iVar20 + 1;
+          } while (iVar20 < local_a0[0]);
         }
       }
     }
-    else if (*(int *)&param_1->field_0x124 == 1) {
-      local_38 = *(int *)&param_1->field_0x374;
-      local_34 = *(int *)&param_1->field_0x378;
-      local_30 = *(undefined4 *)&param_1->field_0x370;
+    else if (param_1->field_0124 == 1) {
+      local_38 = param_1->field_0374;
+      local_34 = param_1->field_0378;
+      local_30 = param_1->field_0370;
       local_2c = local_30;
-      for (pAVar5 = *(AnonShape_007282B0_AFD740A9 **)&param_1->field_0x140;
-          pAVar5 != nullptr;
-          pAVar5 = *(AnonShape_007282B0_AFD740A9 **)pAVar5) {
+      for (temp_5ff32f7558 = param_1->field_0140;
+          temp_5ff32f7558 != nullptr;
+          temp_5ff32f7558 = temp_5ff32f7558->next) {
         SubmarineTitans::Recovered::HiddenThis::AnonReceiver_006E1EE0::FUN_006e1ee0
-                  ((AnonReceiver_006E1EE0 *)param_1,(AnonShape_006E1EE0_698AE49A *)pAVar5,local_3c,
-                   (int)local_cc,local_a0);
-        FUN_00726ce0(param_1,(int)pAVar5);
-        iVar23 = 0;
+                  ((AnonReceiver_006E1EE0 *)param_1,(AnonShape_006E1EE0_698AE49A *)temp_5ff32f7558,
+                   local_3c,(int)local_cc,local_a0);
+        FUN_00726ce0(param_1,(int)temp_5ff32f7558);
+        iVar20 = 0;
         if (0 < local_a0[0]) {
           do {
             SubmarineTitans::Recovered::HiddenThis::AnonReceiver_00727C80::FUN_007282b0
-                      ((AnonReceiver_00727C80 *)param_1,pAVar5,(uint)(byte)local_cc[iVar23],
+                      ((AnonReceiver_00727C80 *)param_1,
+                       (AnonShape_007282B0_AFD740A9 *)temp_5ff32f7558,(uint)(byte)local_cc[iVar20],
                        (int)local_3c);
-            iVar23 = iVar23 + 1;
-          } while (iVar23 < local_a0[0]);
+            iVar20 = iVar20 + 1;
+          } while (iVar20 < local_a0[0]);
         }
-        if (pAVar5->field_0008 == 0) {
+        if (temp_5ff32f7558->field_0008 == 0) {
           local_e4 = 0;
         }
         else {
-          local_e4 = ((int)pAVar5->field_0008 - (uint)pAVar5->field_0048) * param_1->field_0384;
+          local_e4 = ((int)temp_5ff32f7558->field_0008 - (uint)temp_5ff32f7558->field_0048) *
+                     param_1->field_0384;
         }
         local_bc = param_1->field_0380;
-        local_c4 = *(short *)&pAVar5->field_0x4 * local_bc;
-        local_c0 = *(short *)&pAVar5->field_0x6 * local_bc;
+        local_c4 = *(short *)&temp_5ff32f7558->field_0x4 * local_bc;
+        local_c0 = *(short *)&temp_5ff32f7558->field_0x6 * local_bc;
         local_bc = local_bc * 2;
         local_b8 = local_bc;
-        iVar23 = FUN_006b0460(&local_b4,&local_c4,&local_38);
-        if (iVar23 != 0) {
+        iVar20 = FUN_006b0460(&local_b4,&local_c4,&local_38);
+        if (iVar20 != 0) {
           if (local_e4 == 0) {
-            FUN_006b0330(*(int *)&param_1->field_0x14,param_1->field_0028,local_b4 - local_38,
-                         local_b0 - local_34,*(int *)&pAVar5->field_0x40,local_bc,
+            FUN_006b0330((int)param_1->field_0014,param_1->field_0028,local_b4 - local_38,
+                         local_b0 - local_34,*(int *)&temp_5ff32f7558->field_0x40,local_bc,
                          local_b4 - local_c4,local_b0 - local_c0,local_ac,local_a8,'\0');
           }
           else {
-            pcVar13 = (char *)((((local_b0 - local_34) * param_1->field_0028 +
-                                *(int *)&param_1->field_0x14) - local_38) + local_b4);
-            pcVar18 = (char *)((((local_b0 - local_c0) * local_bc + *(int *)&pAVar5->field_0x40) -
-                               local_c4) + local_b4);
+            pcVar7 = (char *)((int)param_1->field_0014 +
+                             local_b4 + ((local_b0 - local_34) * param_1->field_0028 - local_38));
+            pcVar12 = (char *)((((local_b0 - local_c0) * local_bc +
+                                *(int *)&temp_5ff32f7558->field_0x40) - local_c4) + local_b4);
             while (local_a8 = local_a8 + -1, -1 < local_a8) {
               if (-1 < local_ac + -1) {
                 local_120 = local_ac;
                 do {
-                  if (*pcVar18 != '\0') {
-                    *pcVar13 = *pcVar18 + (char)local_e4;
+                  if (*pcVar12 != '\0') {
+                    *pcVar7 = *pcVar12 + (char)local_e4;
                   }
-                  pcVar18 = pcVar18 + 1;
-                  pcVar13 = pcVar13 + 1;
+                  pcVar12 = pcVar12 + 1;
+                  pcVar7 = pcVar7 + 1;
                   local_120 = local_120 + -1;
                 } while (local_120 != 0);
               }
-              pcVar13 = pcVar13 + (param_1->field_0028 - local_ac);
-              pcVar18 = pcVar18 + (local_bc - local_ac);
+              pcVar7 = pcVar7 + (param_1->field_0028 - local_ac);
+              pcVar12 = pcVar12 + (local_bc - local_ac);
             }
           }
         }
       }
     }
     else {
-      for (pAVar4 = *(AnonShape_006E1EE0_698AE49A **)&param_1->field_0x140;
-          pAVar4 != nullptr;
-          pAVar4 = *(AnonShape_006E1EE0_698AE49A **)pAVar4) {
-        if (*(int *)&param_1->field_0x124 == 3) {
-          FUN_006e2b60(param_1,(AnonShape_006E2B60_E36B924C *)pAVar4,(int)local_3c,(int)local_cc,
-                       local_a0);
+      for (temp_5f4598f33d = param_1->field_0140;
+          temp_5f4598f33d != nullptr;
+          temp_5f4598f33d = temp_5f4598f33d->next) {
+        if (param_1->field_0124 == 3) {
+          FUN_006e2b60(param_1,(AnonShape_006E2B60_E36B924C *)temp_5f4598f33d,(int)local_3c,
+                       (int)local_cc,local_a0);
         }
         else {
           SubmarineTitans::Recovered::HiddenThis::AnonReceiver_006E1EE0::FUN_006e1ee0
-                    ((AnonReceiver_006E1EE0 *)param_1,pAVar4,local_3c,(int)local_cc,local_a0);
+                    ((AnonReceiver_006E1EE0 *)param_1,(AnonShape_006E1EE0_698AE49A *)temp_5f4598f33d
+                     ,local_3c,(int)local_cc,local_a0);
         }
-        FUN_00726ce0(param_1,(int)pAVar4);
-        iVar23 = 0;
+        FUN_00726ce0(param_1,(int)temp_5f4598f33d);
+        iVar20 = 0;
         if (0 < local_a0[0]) {
           do {
             SubmarineTitans::Recovered::HiddenThis::AnonReceiver_00727C80::FUN_00727da0
-                      ((AnonReceiver_00727C80 *)param_1,(AnonShape_00727DA0_C4265AA0 *)pAVar4,
-                       (uint)(byte)local_cc[iVar23],(int)local_3c);
-            iVar23 = iVar23 + 1;
-          } while (iVar23 < local_a0[0]);
+                      ((AnonReceiver_00727C80 *)param_1,
+                       (AnonShape_00727DA0_C4265AA0 *)temp_5f4598f33d,(uint)(byte)local_cc[iVar20],
+                       (int)local_3c);
+            iVar20 = iVar20 + 1;
+          } while (iVar20 < local_a0[0]);
         }
       }
     }
-    if (*(int *)&param_1->field_0x124 == 5) {
-      local_50 = *(char **)&param_1->field_0xc;
-      puVar24 = *(ushort **)&param_1->field_0x14;
+    if (param_1->field_0124 == 5) {
+      local_50 = (char *)param_1->field_000C;
+      puVar21 = param_1->field_0014;
       local_8c = 0;
-      if (0 < *(int *)&param_1->field_0x2c) {
+      if (0 < param_1->field_002C) {
         do {
-          iVar23 = 0;
+          iVar20 = 0;
           if (0 < param_1->field_0028) {
             do {
               if (*local_50 == -1) {
-                iVar19 = (int)((30000 - (uint)*puVar24) * 0x100) / 30000;
-                if (iVar19 < 0) {
-                  iVar19 = 0;
+                iVar14 = (int)((30000 - (uint)*puVar21) * 0x100) / 30000;
+                if (iVar14 < 0) {
+                  iVar14 = 0;
                 }
-                if (0xff < iVar19) {
-                  iVar19 = 0xff;
+                if (0xff < iVar14) {
+                  iVar14 = 0xff;
                 }
-                *local_50 = (char)iVar19;
+                *local_50 = (char)iVar14;
               }
               local_50 = local_50 + 1;
-              puVar24 = puVar24 + 1;
-              iVar23 = iVar23 + 1;
-            } while (iVar23 < param_1->field_0028);
+              puVar21 = puVar21 + 1;
+              iVar20 = iVar20 + 1;
+            } while (iVar20 < param_1->field_0028);
           }
           local_8c = local_8c + 1;
-        } while (local_8c < *(int *)&param_1->field_0x2c);
+        } while (local_8c < param_1->field_002C);
       }
     }
-    else if (*(int *)&param_1->field_0x124 == 2) {
+    else if (param_1->field_0124 == 2) {
       local_88 = 0;
       local_84 = 0;
       local_80 = 0;
       sub_006E25D0(param_1,local_7c);
-      ppppuVar7 = local_74;
+      iVar14 = local_74;
       sub_006E25D0(param_1,local_7c);
-      ppppuVar8 = local_74;
+      iVar2 = local_74;
       sub_006E25D0(param_1,local_7c);
-      ppppuVar9 = local_74;
+      iVar3 = local_74;
       sub_006E25D0(param_1,local_7c);
-      ppppuVar10 = local_74;
+      iVar4 = local_74;
       sub_006E25D0(param_1,local_7c);
-      ppppuVar11 = local_74;
+      iVar5 = local_74;
       sub_006E25D0(param_1,local_7c);
-      iVar23 = ((int)local_74 - (int)ppppuVar11) / 10;
-      puVar20 = *(undefined1 **)&param_1->field_0xc;
-      puVar24 = *(ushort **)&param_1->field_0x14;
+      iVar20 = (local_74 - iVar5) / 10;
+      puVar15 = (undefined1 *)param_1->field_000C;
+      puVar21 = param_1->field_0014;
       local_8c = 0;
-      if (0 < *(int *)&param_1->field_0x2c) {
+      if (0 < param_1->field_002C) {
         do {
-          iVar19 = 0;
+          iVar13 = 0;
           if (0 < param_1->field_0028) {
             do {
-              uVar14 = (uint)*puVar24;
-              if ((int)uVar14 < (int)local_74 - iVar23) {
-                if ((int)ppppuVar11 - iVar23 <= (int)uVar14) {
-                  uVar12 = param_1->field_0x439;
+              uVar8 = (uint)*puVar21;
+              if ((int)uVar8 < local_74 - iVar20) {
+                if (iVar5 - iVar20 <= (int)uVar8) {
+                  uVar6 = param_1->field_0439;
                   goto cf_common_join_006DE503;
                 }
-                if ((int)ppppuVar10 - iVar23 <= (int)uVar14) {
-                  uVar12 = param_1->field_0x43a;
+                if (iVar4 - iVar20 <= (int)uVar8) {
+                  uVar6 = param_1->field_043A;
                   goto cf_common_join_006DE503;
                 }
-                if ((int)ppppuVar9 - iVar23 <= (int)uVar14) {
-                  uVar12 = param_1->field_0x43b;
+                if (iVar3 - iVar20 <= (int)uVar8) {
+                  uVar6 = param_1->field_043B;
                   goto cf_common_join_006DE503;
                 }
-                if ((int)ppppuVar8 - iVar23 <= (int)uVar14) {
-                  uVar12 = param_1->field_0x43c;
+                if (iVar2 - iVar20 <= (int)uVar8) {
+                  uVar6 = param_1->field_043C;
                   goto cf_common_join_006DE503;
                 }
-                if ((int)ppppuVar7 - iVar23 <= (int)uVar14) {
-                  uVar12 = param_1->field_0x43d;
+                if (iVar14 - iVar20 <= (int)uVar8) {
+                  uVar6 = param_1->field_043D;
                   goto cf_common_join_006DE503;
                 }
               }
               else {
-                uVar12 = param_1->field_0x438;
+                uVar6 = param_1->field_0438;
 cf_common_join_006DE503:
-                *puVar20 = uVar12;
+                *puVar15 = uVar6;
               }
-              puVar20 = puVar20 + 1;
-              puVar24 = puVar24 + 1;
-              iVar19 = iVar19 + 1;
-            } while (iVar19 < param_1->field_0028);
+              puVar15 = puVar15 + 1;
+              puVar21 = puVar21 + 1;
+              iVar13 = iVar13 + 1;
+            } while (iVar13 < param_1->field_0028);
           }
           local_8c = local_8c + 1;
-        } while (local_8c < *(int *)&param_1->field_0x2c);
+        } while (local_8c < param_1->field_002C);
       }
     }
   }

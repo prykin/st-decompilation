@@ -16,7 +16,7 @@ void __thiscall Visible::PrepareAfterSave(Visible *this,ushort *param_1)
   int errorCode;
   uint uVar3;
   uint *puVar4;
-  undefined4 *puVar5;
+  void *pvVar5;
   undefined4 uVar6;
   uint uVar7;
   uint *puVar8;
@@ -62,7 +62,7 @@ void __thiscall Visible::PrepareAfterSave(Visible *this,ushort *param_1)
       local_10 = 4;
       local_8 = (uint *)(param_1 + 0x40);
       do {
-        puVar4 = Library::DKW::LIB::FUN_006aac10(uVar3);
+        puVar4 = Library::DKW::LIB::MemAllocClear(uVar3);
         *local_c = puVar4;
         uVar7 = pVVar2->field_002C * pVVar2->field_0028;
         local_c = local_c + 1;
@@ -73,12 +73,12 @@ void __thiscall Visible::PrepareAfterSave(Visible *this,ushort *param_1)
         local_10 = local_10 + -1;
         local_8 = puVar8;
       } while (local_10 != 0);
-      puVar5 = Library::DKW::LIB::FUN_006aac10(pVVar2->field_0020 * pVVar2->field_0024 * 2);
-      pVVar2->field_0038 = puVar5;
-      puVar5 = Library::DKW::LIB::FUN_006aac10(pVVar2->field_0030 * pVVar2->field_0034);
-      pVVar2->field_004C = puVar5;
-      puVar5 = Library::DKW::LIB::FUN_006aac10(pVVar2->field_0030 * pVVar2->field_0034 * 2);
-      pVVar2->field_0050 = puVar5;
+      pvVar5 = Library::DKW::LIB::MemAllocClear(pVVar2->field_0020 * pVVar2->field_0024 * 2);
+      pVVar2->field_0038 = pvVar5;
+      pvVar5 = Library::DKW::LIB::MemAllocClear(pVVar2->field_0030 * pVVar2->field_0034);
+      pVVar2->field_004C = pvVar5;
+      pvVar5 = Library::DKW::LIB::MemAllocClear(pVVar2->field_0030 * pVVar2->field_0034 * 2);
+      pVVar2->field_0050 = pvVar5;
       uVar6 = FUN_006b0060(nullptr,puVar8);
       pVVar2->field_00F4 = uVar6;
       /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */

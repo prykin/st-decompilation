@@ -213,7 +213,7 @@ int __thiscall StartSystemTy::GetMessage(StartSystemTy *this,STMessage *message)
       }
       local_48[3] = 2;
       local_48[2] = iVar3;
-      (*this_00->vtable->vfunc_18)(local_48);
+      (*this_00->vtable->vfunc_18)((short)local_48);
     }
   }
 switchD_005dd1c0_default:

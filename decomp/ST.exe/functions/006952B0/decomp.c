@@ -13,7 +13,7 @@ CGenerate::FUN_006952b0(CGenerate *this,AnonShape_006952B0_7A982E30 *param_1,byt
   CGenerate *this_00;
   int iVar2;
   AnonShape_006952B0_7A982E30 *pAVar3;
-  undefined4 *puVar4;
+  AnonShape_006952B0_7A982E30 *pAVar4;
   InternalExceptionFrame local_d4;
   DArrayTy *local_78;
   DArrayTy *local_74;
@@ -46,13 +46,13 @@ CGenerate::FUN_006952b0(CGenerate *this,AnonShape_006952B0_7A982E30 *param_1,byt
   local_4c = this;
   Library::MSVCRT::FUN_0072e6b0(*(DWORD *)param_1);
   pAVar3 = param_1;
-  puVar4 = (undefined4 *)&this->field_0x1c;
+  pAVar4 = &this->aggregate_001C;
   for (iVar2 = 0x8c; iVar2 != 0; iVar2 = iVar2 + -1) {
-    *puVar4 = *(undefined4 *)pAVar3;
+    *(undefined4 *)pAVar4 = *(undefined4 *)pAVar3;
     pAVar3 = (AnonShape_006952B0_7A982E30 *)&pAVar3->field_0x4;
-    puVar4 = puVar4 + 1;
+    pAVar4 = (AnonShape_006952B0_7A982E30 *)&pAVar4->field_0x4;
   }
-  *(undefined2 *)puVar4 = *(undefined2 *)pAVar3;
+  *(undefined2 *)pAVar4 = *(undefined2 *)pAVar3;
   iVar2 = CreateMap(this);
   sub_0069FF90(this);
   if (iVar2 != 0) {

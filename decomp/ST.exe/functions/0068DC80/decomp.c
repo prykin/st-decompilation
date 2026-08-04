@@ -23,9 +23,9 @@ int __thiscall AiTactClassTy::InitData(AiTactClassTy *this,undefined4 *param_1)
   AnonShape_0068DC80_4419198B *local_1c;
   AiTactClassTy *local_18;
   uint local_14;
-  AnonShape_GLOBAL_008489C4_F7BABFAC *local_10;
+  AllocationRecord_006684E0 *local_10;
   AnonShape_0068DC80_4419198B *local_c;
-  byte *local_8;
+  AllocationRecord_006684E0 *local_8;
 
   puVar10 = nullptr;
   local_c = nullptr;
@@ -92,13 +92,14 @@ int __thiscall AiTactClassTy::InitData(AiTactClassTy *this,undefined4 *param_1)
           iVar3 = iVar3 + 1;
         } while (iVar3 < pAVar2->field_0125);
       }
-      local_10 = thunk_FUN_00668180("__REPAIR_FLEET__",pAVar2->field_0039,0x8000,0,
+      local_10 = (AllocationRecord_006684E0 *)
+                 thunk_FUN_00668180("__REPAIR_FLEET__",pAVar2->field_0039,0x8000,0,
                                     *(byte *)&pAVar2->field_0024);
       local_8 = FltDataPack(local_10,&local_14);
       thunk_FUN_006686c0((int *)&local_10);
-      *(undefined4 *)(local_8 + 4) = pAVar2->field_0024;
-      *(undefined4 *)(local_8 + 0x77) = pAVar2->field_009D;
-      local_8[0x6a] = pAVar2->field_0088;
+      *(undefined4 *)&local_8->field_0x4 = pAVar2->field_0024;
+      *(undefined4 *)&local_8->field_0x77 = pAVar2->field_009D;
+      local_8->field_0x6a = pAVar2->field_0088;
       STPlaySystemC::CreateGameObject(g_playSystem_00802A38,900,&local_14,&local_c,local_8,0);
       thunk_FUN_006686c0((int *)&local_8);
       local_1c = local_c;

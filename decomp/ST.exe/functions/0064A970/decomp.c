@@ -139,7 +139,7 @@ switchD_0064aa67_caseD_1:
             cVar3 = *pcVar10;
             pcVar10 = pcVar10 + 1;
           } while (cVar3 != '\0');
-          local_8 = (float *)Library::DKW::LIB::FUN_006aac10(~uVar13 + ~uVar14 + 2);
+          local_8 = Library::DKW::LIB::MemAllocClear(~uVar13 + ~uVar14 + 2);
           if ((local_8 != nullptr) && (pcVar12 != nullptr)) {
             uVar13 = 0xffffffff;
             do {
@@ -206,7 +206,7 @@ cf_common_exit_0064BBB1:
           iVar5 = (**(code **)*local_38)(param_1);
           /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
           iVar8 = (**(code **)*local_38)(param_1 + 5);
-          local_8 = (float *)Library::DKW::LIB::FUN_006aac10(4);
+          local_8 = Library::DKW::LIB::MemAllocClear(4);
           switch(*(undefined2 *)(local_10 + 1)) {
           case 1:
             *local_8 = (float)(iVar8 + iVar5);
@@ -254,7 +254,7 @@ cf_common_exit_0064BBB1:
         /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
         fVar18 = (float10)(**(code **)(*local_38 + 4))(param_1 + 5);
         local_14 = (float)fVar18;
-        local_8 = (float *)Library::DKW::LIB::FUN_006aac10(4);
+        local_8 = Library::DKW::LIB::MemAllocClear(4);
         switch((int)*(short *)(local_10 + 1)) {
         case 1:
           *local_8 = local_14 + (float)local_c;
@@ -296,7 +296,7 @@ cf_common_exit_0064BBB1:
           /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
           fVar18 = (float10)(**(code **)(*local_38 + 4))(param_1 + 5);
           local_14 = (float)fVar18;
-          local_8 = (float *)Library::DKW::LIB::FUN_006aac10(4);
+          local_8 = Library::DKW::LIB::MemAllocClear(4);
           iVar5 = (int)*(short *)(local_10 + 1);
           switch(iVar5) {
           case 1:
@@ -326,7 +326,7 @@ cf_common_exit_0064BBB1:
         /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
         local_18 = (byte *)(**(code **)*local_38)(param_1 + 5);
         local_14 = (float)(int)local_18;
-        local_8 = (float *)Library::DKW::LIB::FUN_006aac10(4);
+        local_8 = Library::DKW::LIB::MemAllocClear(4);
         iVar5 = (int)*(short *)(local_10 + 1);
         switch(iVar5) {
         case 1:
@@ -396,7 +396,7 @@ switchD_0064aa67_caseD_3:
           iVar5 = (**(code **)*local_38)(param_1);
           /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
           iVar8 = (**(code **)*local_38)(param_1 + 5);
-          local_8 = (float *)Library::DKW::LIB::FUN_006aac10(4);
+          local_8 = Library::DKW::LIB::MemAllocClear(4);
           sVar4 = *(short *)(local_10 + 1);
           if (sVar4 == 3) {
             if ((iVar5 != 0) && (iVar8 != 0)) {
@@ -454,7 +454,7 @@ LAB_0064ae25:
       uVar13 = (**(code **)*local_38)(param_1);
       /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
       uVar14 = (**(code **)*local_38)(param_1 + 5);
-      local_8 = (float *)Library::DKW::LIB::FUN_006aac10(4);
+      local_8 = Library::DKW::LIB::MemAllocClear(4);
       sVar4 = *(short *)(local_10 + 1);
       if (sVar4 == 8) {
         *local_8 = (float)(uVar14 & uVar13);
@@ -479,7 +479,7 @@ cf_error_exit_0064B368:
                   (-0x6b,g_overwriteContext_007ED77C,"E:\\__titans\\ai\\ai_erc.cpp",0x164);
       }
       if ((*param_1 == '\x04') || (*param_1 == '\x01')) {
-        local_8 = (float *)Library::DKW::LIB::FUN_006aac10(4);
+        local_8 = Library::DKW::LIB::MemAllocClear(4);
         /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
         uVar13 = (**(code **)*local_38)(param_1);
         *local_8 = (float)~uVar13;
@@ -498,14 +498,14 @@ cf_error_exit_0064B368:
         pcVar12 = param_1 + iVar5 * 5;
         cVar3 = param_1[iVar5 * 5];
         if ((cVar3 == '\x04') || (cVar3 == '\x01')) {
-          local_8 = (float *)Library::DKW::LIB::FUN_006aac10(4);
+          local_8 = Library::DKW::LIB::MemAllocClear(4);
           /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
           fVar9 = (float)(**(code **)*local_38)(pcVar12);
           *local_8 = fVar9;
           goto cf_common_exit_0064B36F;
         }
         if ((cVar3 == '\x05') || (cVar3 == '\x02')) {
-          local_8 = (float *)Library::DKW::LIB::FUN_006aac10(4);
+          local_8 = Library::DKW::LIB::MemAllocClear(4);
           /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
           fVar18 = (float10)(**(code **)(*local_38 + 4))(pcVar12);
           *local_8 = (float)fVar18;
@@ -526,7 +526,7 @@ cf_error_exit_0064B368:
             cVar3 = *pcVar10;
             pcVar10 = pcVar10 + 1;
           } while (cVar3 != '\0');
-          local_8 = (float *)Library::DKW::LIB::FUN_006aac10(~uVar13 + 1);
+          local_8 = Library::DKW::LIB::MemAllocClear(~uVar13 + 1);
           uVar13 = 0xffffffff;
           do {
             pcVar10 = pcVar12;
@@ -567,7 +567,7 @@ cf_error_exit_0064B368:
           iVar5 = (**(code **)*local_38)(param_1);
           /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
           iVar8 = (**(code **)*local_38)(param_1 + 5);
-          local_8 = (float *)Library::DKW::LIB::FUN_006aac10(4);
+          local_8 = Library::DKW::LIB::MemAllocClear(4);
           switch(*(undefined2 *)(local_10 + 1)) {
           case 0x1e:
             *local_8 = (float)(uint)(iVar5 == iVar8);
@@ -601,7 +601,7 @@ cf_error_exit_0064B368:
           /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
           fVar18 = (float10)(**(code **)(*local_38 + 4))(param_1 + 5);
           local_24 = (float)fVar18;
-          local_8 = (float *)Library::DKW::LIB::FUN_006aac10(4);
+          local_8 = Library::DKW::LIB::MemAllocClear(4);
           switch(*(undefined2 *)(local_10 + 1)) {
           case 0x1e:
             if (local_20 == local_24) {
@@ -656,7 +656,7 @@ cf_error_exit_0064B368:
             RaiseInternalException
                       (-0x6b,g_overwriteContext_007ED77C,"E:\\__titans\\ai\\ai_erc.cpp",0x11c);
           }
-          local_8 = (float *)Library::DKW::LIB::FUN_006aac10(4);
+          local_8 = Library::DKW::LIB::MemAllocClear(4);
           do {
             bVar2 = *pbVar7;
             bVar17 = bVar2 < *pbVar6;
@@ -714,7 +714,7 @@ LAB_0064ab59:
         iVar5 = -0x76;
         goto cf_error_exit_0064C2A4;
       }
-      local_8 = (float *)Library::DKW::LIB::FUN_006aac10(4);
+      local_8 = Library::DKW::LIB::MemAllocClear(4);
       /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
       iVar5 = (**(code **)*local_38)(param_1);
       *local_8 = (float)(uint)(iVar5 == 0);
@@ -746,7 +746,7 @@ LAB_0064b80a:
                         (-0x6b,g_overwriteContext_007ED77C,"E:\\__titans\\ai\\ai_erc.cpp",
                          0x192);
             }
-            local_8 = (float *)Library::DKW::LIB::FUN_006aac10(4);
+            local_8 = Library::DKW::LIB::MemAllocClear(4);
             fVar9 = (float)Library::MSVCRT::FUN_0072ff00(pbVar7);
             *local_8 = fVar9;
             goto cf_common_exit_0064B36F;
@@ -776,7 +776,7 @@ LAB_0064b80a:
                          0x1a0);
             }
             local_18 = nullptr;
-            local_8 = (float *)Library::DKW::LIB::FUN_006aac10(4);
+            local_8 = Library::DKW::LIB::MemAllocClear(4);
             fVar18 = Library::MSVCRT::FUN_00730310(pbVar7,(int *)&local_18);
             *local_8 = (float)fVar18;
             goto cf_common_exit_0064B291;
@@ -798,7 +798,7 @@ LAB_0064b80a:
               if (0x24 < iVar8) {
                 iVar8 = 0x24;
               }
-              local_8 = (float *)Library::DKW::LIB::FUN_006aac10(0x40);
+              local_8 = Library::DKW::LIB::MemAllocClear(0x40);
               Library::MSVCRT::__itoa(iVar5,(char *)local_8,iVar8);
               goto cf_common_exit_0064BBB1;
             }
@@ -853,7 +853,7 @@ LAB_0064b901:
             iVar5 = iVar5 + -1;
           } while (iVar5 != 0);
         }
-        local_8 = (float *)Library::DKW::LIB::FUN_006aac10(4);
+        local_8 = Library::DKW::LIB::MemAllocClear(4);
         *local_8 = (float)local_28 / (float)param_2;
         goto cf_common_exit_0064B291;
       }
@@ -864,14 +864,14 @@ LAB_0064b901:
         }
         cVar3 = *param_1;
         if ((cVar3 == '\x04') || (cVar3 == '\x01')) {
-          local_8 = (float *)Library::DKW::LIB::FUN_006aac10(4);
+          local_8 = Library::DKW::LIB::MemAllocClear(4);
           /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
           iVar5 = (**(code **)*local_38)(param_1);
           *local_8 = (float)-iVar5;
           goto cf_common_exit_0064B36F;
         }
         if ((cVar3 == '\x05') || (cVar3 == '\x02')) {
-          local_8 = (float *)Library::DKW::LIB::FUN_006aac10(4);
+          local_8 = Library::DKW::LIB::MemAllocClear(4);
           /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
           fVar18 = (float10)(**(code **)(*local_38 + 4))(param_1);
           *local_8 = (float)-fVar18;
@@ -923,7 +923,7 @@ LAB_0064b663:
             local_14 = (float)((int)local_14 + -1);
           } while (local_14 != 0.0);
         }
-        local_8 = (float *)Library::DKW::LIB::FUN_006aac10(4);
+        local_8 = Library::DKW::LIB::MemAllocClear(4);
         *local_8 = (float)((int)local_28 / param_2);
         goto cf_common_exit_0064B36F;
       }
@@ -946,7 +946,7 @@ LAB_0064b663:
         if (0x40 < iVar5) {
           iVar5 = 0x40;
         }
-        local_8 = (float *)Library::DKW::LIB::FUN_006aac10(iVar5 + 10);
+        local_8 = Library::DKW::LIB::MemAllocClear(iVar5 + 10);
         Library::MSVCRT::FUN_007301e0
                   (SUB84((double)(float)local_18,0),
                    (int)((ulonglong)(double)(float)local_18 >> 0x20),iVar5,(char *)local_8);
@@ -971,7 +971,7 @@ LAB_0064bd33:
     if ((*param_1 == '\x04') || (*param_1 == '\x01')) {
       /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
       local_18 = (byte *)(**(code **)*local_38)(param_1);
-      local_8 = (float *)Library::DKW::LIB::FUN_006aac10(4);
+      local_8 = Library::DKW::LIB::MemAllocClear(4);
       *local_8 = (float)(int)local_18;
       goto cf_common_exit_0064B291;
     }
@@ -991,7 +991,7 @@ LAB_0064bd33:
       /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
       fVar18 = (float10)(**(code **)(*local_38 + 4))(param_1);
       local_18 = (byte *)(float)fVar18;
-      local_8 = (float *)Library::DKW::LIB::FUN_006aac10(4);
+      local_8 = Library::DKW::LIB::MemAllocClear(4);
       Library::MSVCRT::FUN_0072e150
                 (SUB84((double)(float)local_18,0),(uint)((ulonglong)(double)(float)local_18 >> 0x20)
                 );
@@ -1015,7 +1015,7 @@ LAB_0064bd33:
       /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
       fVar18 = (float10)(**(code **)(*local_38 + 4))(param_1);
       local_18 = (byte *)(float)fVar18;
-      local_8 = (float *)Library::DKW::LIB::FUN_006aac10(4);
+      local_8 = Library::DKW::LIB::MemAllocClear(4);
       Library::MSVCRT::FUN_00730450
                 (SUB84((double)(float)local_18,0),(uint)((ulonglong)(double)(float)local_18 >> 0x20)
                 );
@@ -1134,7 +1134,7 @@ LAB_0064bd33:
       } while (local_30 != 0);
     }
     fVar9 = local_20;
-    local_8 = (float *)Library::DKW::LIB::FUN_006aac10((uint)local_20);
+    local_8 = Library::DKW::LIB::MemAllocClear((uint)local_20);
     Library::MSVCRT::FUN_007300e0((undefined1 *)local_8,(int)fVar9,local_18,local_1c);
     if (param_3 != nullptr) {
       *param_3 = 3;
@@ -1172,7 +1172,7 @@ LAB_0064bd33:
         param_2 = param_2 + -1;
       } while (param_2 != 0);
     }
-    local_8 = (float *)Library::DKW::LIB::FUN_006aac10(4);
+    local_8 = Library::DKW::LIB::MemAllocClear(4);
     if (((local_68 <= local_74) && (local_74 < local_5c + local_68)) &&
        ((local_64 <= local_70 &&
         (((local_70 < local_58 + local_64 && (local_60 <= local_6c)) &&
@@ -1207,7 +1207,7 @@ LAB_0064bd33:
         param_2 = param_2 + -1;
       } while (param_2 != 0);
     }
-    local_8 = (float *)Library::DKW::LIB::FUN_006aac10(4);
+    local_8 = Library::DKW::LIB::MemAllocClear(4);
     if ((((local_48 <= local_50) && (local_50 < local_40 + local_48)) && (local_44 <= local_4c)) &&
        (local_4c < local_3c + local_44)) {
       *local_8 = 1.4013e-45;

@@ -51,11 +51,11 @@ FUN_00574920(AnonShape_00574920_7507981E *param_1,int param_2,int param_3,undefi
   local_14 = ExceptionList;
   local_1c = &stack0xffffff54;
   local_4c = nullptr;
-  iVar3 = (int)*(short *)&param_1->field_0002 * (int)*(short *)param_1;
+  iVar3 = (int)param_1->field_0002 * (int)param_1->field_0000;
   local_24 = (int)(iVar3 + (iVar3 >> 0x1f & 3U)) >> 2;
   local_40 = 1;
   local_2c = (int *)(&param_1[1].field_0x4 +
-                    (local_24 * 5 + param_2 + (*(short *)param_1 * param_3) / 2) * 4);
+                    (local_24 * 5 + param_2 + (param_1->field_0000 * param_3) / 2) * 4);
   local_34 = 5;
   ExceptionList = &local_14;
   do {

@@ -40,7 +40,7 @@ uint __fastcall FUN_00721340(AnonShape_00721340_81196542 *param_1)
       cVar1 = *pcVar6;
       pcVar6 = pcVar6 + 1;
     } while (cVar1 != '\0');
-    local_8 = (char *)Library::DKW::LIB::FUN_006aac10(~uVar5);
+    local_8 = Library::DKW::LIB::MemAllocClear(~uVar5);
     if (local_8 == nullptr) {
       return 0xfffffffe;
     }
@@ -68,7 +68,7 @@ uint __fastcall FUN_00721340(AnonShape_00721340_81196542 *param_1)
           cVar1 = *pcVar6;
           pcVar6 = pcVar6 + 1;
         } while (cVar1 != '\0');
-        local_8 = (char *)Library::DKW::LIB::FUN_006aac10(~uVar4);
+        local_8 = Library::DKW::LIB::MemAllocClear(~uVar4);
         if (local_8 == nullptr) {
           return 0xfffffffe;
         }

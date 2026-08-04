@@ -23,7 +23,8 @@ undefined4 __thiscall TLOBaseTy::FUN_004e2c30(TLOBaseTy *this,uint param_1)
   byte *puVar9;
   byte *pbVar10;
   int *piVar11;
-  int *piVar12;
+  undefined2 uVar12;
+  int *piVar13;
   undefined4 local_60 [4];
   undefined4 local_50;
   undefined2 local_4c;
@@ -100,27 +101,27 @@ undefined4 __thiscall TLOBaseTy::FUN_004e2c30(TLOBaseTy *this,uint param_1)
   if (this->field_0024 != (byte *)(uint)(byte)this->field_0010->field_112D)
   goto cf_common_exit_004E2FE4;
   thunk_FUN_0052af50(0,(float)this->field_01F9,(float)this->field_01FD);
-  piVar12 = &local_c;
+  piVar13 = &local_c;
   piVar11 = &local_8;
   local_8 = 0;
   local_c = 0;
   local_EAX_634 = LookupRecordByte(*(char *)&this->field_0024);
-  thunk_FUN_004e6e10(local_EAX_634 & 0xff,param_1,piVar11,piVar12);
+  thunk_FUN_004e6e10(local_EAX_634 & 0xff,param_1,piVar11,piVar13);
   if (local_8 != 0) {
     uVar5 = LookupRecordByte(*(char *)&this->field_0024);
     uVar6 = uVar5 & 0xff;
     if (uVar6 == 1) {
       pTVar7 = this->vtable;
-      uVar4 = 0x5f;
+      uVar12 = 0x5f;
 LAB_004e2efc:
-      (*pTVar7->vfunc_90)(this,6,uVar4);
+      (*pTVar7->vfunc_90)(this,6,uVar12);
     }
     else if (uVar6 == 2) {
       this->vfunc_90(6,0x60);
     }
     else if (uVar6 == 3) {
       pTVar7 = this->vtable;
-      uVar4 = 0x61;
+      uVar12 = 0x61;
       goto LAB_004e2efc;
     }
   }
@@ -129,16 +130,16 @@ LAB_004e2efc:
     uVar6 = local_EAX_741 & 0xff;
     if (uVar6 == 1) {
       pTVar7 = this->vtable;
-      uVar4 = 0x5c;
+      uVar12 = 0x5c;
 LAB_004e2f42:
-      (*pTVar7->vfunc_90)(this,6,uVar4);
+      (*pTVar7->vfunc_90)(this,6,uVar12);
     }
     else if (uVar6 == 2) {
       this->vfunc_90(6,0x5d);
     }
     else if (uVar6 == 3) {
       pTVar7 = this->vtable;
-      uVar4 = 0x5e;
+      uVar12 = 0x5e;
       goto LAB_004e2f42;
     }
   }
@@ -147,16 +148,16 @@ LAB_004e2f42:
     uVar6 = local_EAX_816 & 0xff;
     if (uVar6 == 1) {
       pTVar7 = this->vtable;
-      uVar4 = 0x59;
+      uVar12 = 0x59;
 LAB_004e2f8d:
-      (*pTVar7->vfunc_90)(this,6,uVar4);
+      (*pTVar7->vfunc_90)(this,6,uVar12);
     }
     else if (uVar6 == 2) {
       this->vfunc_90(6,0x5a);
     }
     else if (uVar6 == 3) {
       pTVar7 = this->vtable;
-      uVar4 = 0x5b;
+      uVar12 = 0x5b;
       goto LAB_004e2f8d;
     }
   }
@@ -164,7 +165,7 @@ LAB_004e2f8d:
   uVar6 = local_EAX_884 & 0xff;
   if (uVar6 == 1) {
     pTVar7 = this->vtable;
-    uVar4 = 0x20d;
+    uVar12 = 0x20d;
   }
   else {
     if (uVar6 == 2) {
@@ -173,9 +174,9 @@ LAB_004e2f8d:
     }
     if (uVar6 != 3) goto cf_common_exit_004E2FE4;
     pTVar7 = this->vtable;
-    uVar4 = 0x390;
+    uVar12 = 0x390;
   }
-  (*pTVar7->vfunc_90)(this,4,uVar4);
+  (*pTVar7->vfunc_90)(this,4,uVar12);
 cf_common_exit_004E2FE4:
   this->field_04D0 = CASE_0;
   RotateSpr(this,1);

@@ -77,7 +77,7 @@ undefined4 __thiscall FUN_00721830(void *this,char *param_1)
       cVar1 = *pcVar7;
       pcVar7 = pcVar7 + 1;
     } while (cVar1 != '\0');
-    psVar3 = (short *)Library::DKW::LIB::FUN_006aac10(~uVar4 + ~uVar5);
+    psVar3 = Library::DKW::LIB::MemAllocClear(~uVar4 + ~uVar5);
     uVar4 = 0xffffffff;
     do {
       pcVar7 = pcVar6;
