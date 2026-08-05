@@ -8,7 +8,6 @@
 uint __thiscall STManRub3C::AddNewRub3(STManRub3C *this,int *param_1)
 
 {
-  code *pcVar1;
   STManRub3C *pSVar2;
   int *piVar3;
   int iVar4;

@@ -9,7 +9,6 @@ void __thiscall STGroupBoatC::ChangeMDNotify(STGroupBoatC *this,int param_1,uint
 
 {
   dword dVar1;
-  code *pcVar2;
   STGroupBoatC *this_00;
   int iVar3;
   STGameObjC *this_01;

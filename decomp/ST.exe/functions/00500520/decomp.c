@@ -12,14 +12,13 @@
 void __thiscall CPanelTy::PaintDeep(CPanelTy *this,int param_1)
 
 {
-  code *pcVar1;
   CPanelTy *pCVar2;
   char cVar3;
   int iVar4;
   byte *pbVar5;
   uint uVar6;
   char *pcVar7;
-  AnonShape_006B5B10_E0D06CF1 *pAVar8;
+  RecoveredSourceFamily_dibcopy *pRVar8;
   int iVar9;
   int iVar10;
   InternalExceptionFrame local_70;
@@ -85,7 +84,7 @@ void __thiscall CPanelTy::PaintDeep(CPanelTy *this,int param_1)
                                         (int)(pcVar7 + iVar9));
           cVar3 = '\x06';
           iVar9 = iVar4 + 0x7c;
-          pAVar8 = (AnonShape_006B5B10_E0D06CF1 *)pCVar2->field_0148[(local_8 & 0xff) + 0xe];
+          pRVar8 = (RecoveredSourceFamily_dibcopy *)pCVar2->field_0148[(local_8 & 0xff) + 0xe];
         }
         else {
           if (*pcVar7 == '\0') {
@@ -100,9 +99,9 @@ void __thiscall CPanelTy::PaintDeep(CPanelTy *this,int param_1)
           iVar9 = 7;
           iVar10 = local_14;
 LAB_00500689:
-          pAVar8 = (AnonShape_006B5B10_E0D06CF1 *)pCVar2->field_0148[(local_8 & 0xff) + 0xe];
+          pRVar8 = (RecoveredSourceFamily_dibcopy *)pCVar2->field_0148[(local_8 & 0xff) + 0xe];
         }
-        DibPut(pAVar8,iVar9,iVar10,cVar3,pbVar5);
+        DibPut(pRVar8,iVar9,iVar10,cVar3,pbVar5);
         local_10 = local_10 + -0xb;
         iVar4 = iVar4 + 0xb;
         pcVar7 = pcVar7 + 1;

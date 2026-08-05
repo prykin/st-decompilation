@@ -8,7 +8,6 @@
 void __thiscall WaitTy::PaintWait(WaitTy *this,char param_1)
 
 {
-  code *pcVar1;
   WaitTy *pWVar2;
   int errorCode;
   uint *resourceString;

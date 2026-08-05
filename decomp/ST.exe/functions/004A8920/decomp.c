@@ -14,7 +14,6 @@ int __thiscall OpticClassC::GetMessage(OpticClassC *this,STMessage *message)
 
 {
   STMessageId SVar1;
-  code *pcVar2;
   int iVar3;
   uint uVar4;
   undefined4 uVar5;

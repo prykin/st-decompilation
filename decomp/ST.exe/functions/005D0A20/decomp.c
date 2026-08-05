@@ -14,7 +14,6 @@ void __thiscall SettMapMTy::ChangePlayerState(SettMapMTy *this,uint param_1)
 {
   uint index;
   SettMapMTy_field_1F84DArray *pSVar1;
-  code *pcVar2;
   SettMapMTy *this_00;
   int errorCode;
   SettMapMTy_field_1F84Element *element_1f84;

@@ -14,16 +14,16 @@ IntercomPanelTy * __cdecl CreateIntercomPanel(void)
   this = (IntercomPanelTy *)FUN_006b04d0(0x1a5);
   if (this != nullptr) {
     sub_006E5FB0(this);
-    *(undefined4 *)&this->field_0x5c = 0;
+    this->field_005C = 0;
     this->field_0060 = 0xffffffff;
-    *(undefined4 *)&this->field_0x64 = 4;
+    this->field_0064 = 4;
     this->field_0068 = 0;
     this->field_0172 = 2;
-    *(undefined4 *)&this->field_0x178 = 0;
+    this->field_0178 = 0;
     this->vtable = &IntercomPanelTyVTable;
     this->field_003C = 0xc;
     this->field_0044 = 0;
-    *(undefined4 *)&this->field_0x40 = 0x2f8;
+    this->field_0040 = 0x2f8;
     this->field_0048 = 0x1e;
     this->field_0180 = nullptr;
     this->field_0184 = nullptr;

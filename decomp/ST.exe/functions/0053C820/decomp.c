@@ -11,7 +11,6 @@ ResearchPanelTy::PaintUpdBut(ResearchPanelTy *this,AnonShape_004EF320_444F9AB1 *
 {
   uint uVar1;
   int *piVar2;
-  code *pcVar3;
   ResearchPanelTy *pRVar4;
   int iVar5;
   byte *pbVar6;
@@ -63,10 +62,10 @@ ResearchPanelTy::PaintUpdBut(ResearchPanelTy *this,AnonShape_004EF320_444F9AB1 *
     pbVar6 = (byte *)FUN_0070b3a0(pAVar8,local_c);
     iVar7 = local_14;
     iVar5 = local_18;
-    DibPut((AnonShape_006B5B10_E0D06CF1 *)pRVar4->field_0068,local_18,local_14,'\x01',pbVar6);
+    DibPut((RecoveredSourceFamily_dibcopy *)pRVar4->field_0068,local_18,local_14,'\x01',pbVar6);
     if ((param_1->field_0014 == 3) && (local_8 != nullptr)) {
       pbVar6 = (byte *)FUN_0070b3a0(pRVar4->field_0190,7 - (uint)(local_8[8] != CASE_0));
-      DibPut((AnonShape_006B5B10_E0D06CF1 *)pRVar4->field_0068,iVar5,iVar7,'\x06',pbVar6);
+      DibPut((RecoveredSourceFamily_dibcopy *)pRVar4->field_0068,iVar5,iVar7,'\x06',pbVar6);
     }
     Library::DKW::DDX::FUN_006b3640
               ((int *)g_ddxContext_008075A8,pRVar4->field_0060,0xffffffff,pRVar4->field_003C,

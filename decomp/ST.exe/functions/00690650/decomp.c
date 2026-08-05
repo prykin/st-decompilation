@@ -13,7 +13,6 @@ AiTactClassTy::HelpOrganize(AiTactClassTy *this,AnonShape_00690650_F810CDF4 *par
   byte bVar2;
   byte bVar3;
   AiFltClassTy *this_00;
-  code *pcVar4;
   AiTactClassTy *this_01;
   short sVar5;
   /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */

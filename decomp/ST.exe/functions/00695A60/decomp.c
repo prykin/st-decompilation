@@ -10,7 +10,6 @@ CGenerate::CteateField
           (CGenerate *this,int param_1,int param_2,int param_3,int param_4,int param_5,int param_6)
 
 {
-  code *pcVar1;
   CGenerate *pCVar2;
   int errorCode;
   byte *pbVar3;

@@ -19,7 +19,6 @@ void __thiscall STGameObjC::SetSelfCheckFlag(STGameObjC *this)
   uint uVar2;
   ushort *puVar3;
   undefined4 *puVar4;
-  code *pcVar5;
   byte *pbVar6;
   void *pvVar7;
   AnonPointee_STGameObjC_0195 *pAVar8;

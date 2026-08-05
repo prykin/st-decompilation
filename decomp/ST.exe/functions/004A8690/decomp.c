@@ -13,7 +13,6 @@ void __thiscall STGroupBoatC::GenSwitch(STGroupBoatC *this,int param_1)
 
 {
   uint uVar1;
-  code *pcVar2;
   STGameObjC *this_00;
   int iVar3;
   uint index;

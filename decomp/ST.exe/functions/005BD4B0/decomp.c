@@ -18,7 +18,6 @@ MReportTy::OutTGlProc
           int param_5,int param_6,int param_7,int param_8)
 
 {
-  code *pcVar1;
   int iVar2;
   int uVar3;
   undefined4 *puVar3;
@@ -61,7 +60,7 @@ MReportTy::OutTGlProc
         *(undefined1 *)puVar3 = 0x4c;
         puVar3 = (undefined4 *)((int)puVar3 + 1);
       }
-      FUN_006b5ee0((AnonShape_006B5B10_E0D06CF1 *)local_8,0,2,2,local_8->field_0004 + -4,
+      FUN_006b5ee0((RecoveredSourceFamily_dibcopy *)local_8,0,2,2,local_8->field_0004 + -4,
                    local_8->field_0008 + -4,0x18,0xd);
       ccFntTy::SetSurf(*(ccFntTy **)(iVar6 + 0x83),(int)local_8,0,5,5,local_8->field_0004 + -10,0xf);
       if (*(char *)(iVar6 + 0x67) == '\0') {

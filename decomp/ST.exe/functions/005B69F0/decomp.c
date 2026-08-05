@@ -15,7 +15,6 @@ ChatGlassTy::OutChGlProc
           undefined4 param_3,int param_4,int param_5,int param_6,int param_7,undefined4 *param_8)
 
 {
-  code *pcVar1;
   undefined4 *puVar2;
   int iVar3;
   int iVar4;

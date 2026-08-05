@@ -9,7 +9,6 @@ void __thiscall SettMapMTy::InitSettMap(SettMapMTy *this,char param_1)
 
 {
   ushort *puVar1;
-  code *pcVar2;
   SettMapMTy *this_00;
   int iVar3;
   void **value;

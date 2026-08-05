@@ -25,7 +25,6 @@ FUN_0057a2c0(AnonShape_0057A2C0_A829D396 *param_1,uint param_2,int *param_3,shor
   byte bVar3;
   byte bVar4;
   short sVar5;
-  code *pcVar6;
   short sVar7;
   undefined2 uVar8;
   void *pvVar9;

@@ -16,7 +16,6 @@ STAllPlayersC::GetTOBJListFromDArr
 
 {
   ushort uVar1;
-  code *pcVar2;
   bool bVar3;
   STAllPlayersC *this_00;
   int iVar4;

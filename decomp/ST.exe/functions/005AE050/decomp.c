@@ -15,10 +15,9 @@ void __thiscall ChooseMapTy::ShowDescription(ChooseMapTy *this,uint param_1)
 {
   char cVar1;
   ChooseMapTy_field_1A5FState CVar2;
-  AnonShape_006B5B10_E0D06CF1 *pAVar3;
+  RecoveredSourceFamily_dibcopy *pRVar3;
   ccFntTy *pcVar4;
   StartSystemTy *pSVar5;
-  code *pcVar6;
   int iVar7;
   ushort *puVar8;
   DArrayTy *pDVar9;
@@ -59,10 +58,10 @@ void __thiscall ChooseMapTy::ShowDescription(ChooseMapTy *this,uint param_1)
     STDebugBreak(); /* noreturn in standalone pseudocode */
   }
   puVar8 = Library::Ourlib::MFIMG::mfImgLoad(g_cMf32_00806780,1,"MM_MAPB",0,1);
-  DibPut((AnonShape_006B5B10_E0D06CF1 *)g_startSystem_0081176C->field_02F0,0,0,'\x01',(byte *)puVar8
-        );
-  pAVar3 = (AnonShape_006B5B10_E0D06CF1 *)g_startSystem_0081176C->field_0544;
-  FUN_006b4170(pAVar3,0,0,0,pAVar3->field_0004,pAVar3->field_0008,0xff);
+  DibPut((RecoveredSourceFamily_dibcopy *)g_startSystem_0081176C->field_02F0,0,0,'\x01',
+         (byte *)puVar8);
+  pRVar3 = (RecoveredSourceFamily_dibcopy *)g_startSystem_0081176C->field_0544;
+  FUN_006b4170(pRVar3,0,0,0,pRVar3->field_0004,pRVar3->field_0008,0xff);
   if ((DArrayTy *)g_startSystem_0081176C->field_0548 != nullptr) {
     FUN_006b5570((DArrayTy *)g_startSystem_0081176C->field_0548);
   }

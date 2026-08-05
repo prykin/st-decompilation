@@ -9,7 +9,6 @@ void __thiscall STBoatC::ExpIsOver(STBoatC *this,uint param_1)
 
 {
   DArrayTy *array;
-  code *pcVar1;
   bool bVar2;
   STBoatC *pSVar3;
   int errorCode;

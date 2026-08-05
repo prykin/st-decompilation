@@ -9,7 +9,6 @@
 void DestroyBaseSystem(void)
 
 {
-  code *pcVar1;
   int errorCode;
   int iVar2;
   InternalExceptionFrame local_48;

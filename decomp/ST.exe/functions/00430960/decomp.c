@@ -9,7 +9,6 @@ undefined4 __thiscall
 STAllPlayersC::UnRegisterTorpedo(STAllPlayersC *this,short param_1,int param_2)
 
 {
-  code *pcVar1;
   int errorCode;
   int iVar2;
   undefined4 uVar3;

@@ -13,7 +13,6 @@ void __thiscall CPanelTy::PlayBriefing(CPanelTy *this,char *param_1)
 
 {
   short **ppsVar1;
-  code *pcVar2;
   CPanelTy *pCVar3;
   int errorCode;
   DArrayTy *pDVar4;
@@ -54,7 +53,7 @@ void __thiscall CPanelTy::PlayBriefing(CPanelTy *this,char *param_1)
         *ppsVar1 = psVar9;
         pCVar3->field_0260 = CASE_1;
         pCVar3->field_025F = 0;
-        FUN_006b4170((AnonShape_006B5B10_E0D06CF1 *)pCVar3->field_01B4,0,100,5,0x226,0x55,0);
+        FUN_006b4170((RecoveredSourceFamily_dibcopy *)pCVar3->field_01B4,0,100,5,0x226,0x55,0);
         if ((DAT_0080c4f7 != 3) && (DAT_0080c4f7 != 1)) {
           pCVar3->field_0260 = CASE_3;
           DAT_0080c4f7 = 3;

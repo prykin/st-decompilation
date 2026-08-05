@@ -10,7 +10,6 @@ void __thiscall STTeamLissagC::InitVisibelSystem(STTeamLissagC *this)
 
 {
   DArrayTy *pDVar1;
-  code *pcVar2;
   int iVar3;
   ushort *puVar4;
   int iVar5;

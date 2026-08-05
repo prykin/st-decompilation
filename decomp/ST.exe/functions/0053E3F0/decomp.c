@@ -22,7 +22,6 @@ SpecPanelTy::InitPanel
 
 {
   AnonPointee_SpecPanelTy_0000 *pAVar1;
-  code *pcVar2;
   SpecPanelTy *pSVar3;
   int iVar4;
   ushort *puVar5;
@@ -71,7 +70,8 @@ SpecPanelTy::InitPanel
       *(undefined1 *)puVar7 = 0xff;
       puVar7 = (undefined4 *)((int)puVar7 + 1);
     }
-    DibPut((AnonShape_006B5B10_E0D06CF1 *)pSVar3->field_0068,0,0,'\x01',(byte *)pSVar3->field_0185);
+    DibPut((RecoveredSourceFamily_dibcopy *)pSVar3->field_0068,0,0,'\x01',(byte *)pSVar3->field_0185
+          );
     ccFntTy::SetSurf(pSVar3->field_0189,(int)pSVar3->field_0068,0,param_2,param_3,param_4,param_5);
     uVar10 = 0;
     iVar16 = -1;

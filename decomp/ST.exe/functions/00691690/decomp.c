@@ -27,19 +27,13 @@ FUN_00691690(void *this,cMf32 *param_1,cMf32 *param_2,int param_3,undefined *par
   ushort *puVar9;
   undefined4 *puVar10;
   int iVar11;
-  void **ppvVar12;
+  RecursiveNode_ST3DSMAPContext_0140_DDDC9F89 *pRVar12;
   byte bVar13;
   undefined4 uVar14;
   int iVar15;
   undefined4 uVar16;
   CHAR local_190 [260];
-  void *local_8c [2];
-  ushort local_84;
-  int local_70;
-  ushort *local_6c;
-  int local_68;
-  ushort *local_64;
-  byte local_44;
+  RecursiveNode_ST3DSMAPContext_0140_DDDC9F89 local_8c;
   AnonShape_006B4B20_3D4F4412 *local_3c;
   ushort *local_38;
   AnonShape_006B4B20_3D4F4412 *local_34;
@@ -126,9 +120,9 @@ LAB_0069177d:
           puVar9 = Library::Ourlib::MFSTMAP::FUN_006f0cd0(param_1,pcVar5,0);
           if (puVar9 != nullptr) {
             puVar4 = Library::DKW::LIB::MemAlloc(0xa9);
-            local_1c = (int *)(local_c * 6);
+            int scalar_local_1c = local_c * 6; /* split integer lifetime from pointer-typed SSA storage */
             local_28 = (int *)((int)local_14 +
-                              ((int)local_1c + local_8 + iVar11 * 0x49) * 8 + 0x1954);
+                              (scalar_local_1c + local_8 + iVar11 * 0x49) * 8 + 0x1954);
             *local_28 = (int)puVar4;
             for (iVar15 = 0x2a; iVar15 != 0; iVar15 = iVar15 + -1) {
               *puVar4 = 0;
@@ -150,10 +144,10 @@ LAB_0069177d:
                   uVar8 = local_8 + 1;
                 }
                 pcVar5 = thunk_FUN_006a2d00(1,local_c,uVar8,local_18 + 1,(uint)local_10);
-                ppvVar12 = local_8c;
+                pRVar12 = &local_8c;
                 for (iVar15 = 0x14; iVar15 != 0; iVar15 = iVar15 + -1) {
-                  *ppvVar12 = nullptr;
-                  ppvVar12 = ppvVar12 + 1;
+                  pRVar12->next = nullptr;
+                  pRVar12 = (RecursiveNode_ST3DSMAPContext_0140_DDDC9F89 *)&pRVar12->field_0004;
                 }
                 puVar9 = Library::Ourlib::MFSTMAP::FUN_006f0cd0(param_1,pcVar5,0);
                 if (puVar9 == nullptr) {
@@ -173,20 +167,20 @@ LAB_00691a65:
                     iVar15 = (int)local_10 * 0x10 + (local_18 + local_8 * 2) * 0xf0 + 0x2b68;
                     goto LAB_00691a65;
                   }
-                  local_70 = (int)(short)*puVar9;
-                  local_6c = puVar9 + 10;
-                  local_68 = (int)(short)puVar9[1];
-                  local_64 = puVar9 + (short)*puVar9 * 6 + 10;
-                  local_44 = (byte)local_8;
+                  local_8c.field_001C = (uint)(short)*puVar9;
+                  local_8c.field_0020 = (int)(puVar9 + 10);
+                  local_8c.field_0024 = (int)(short)puVar9[1];
+                  local_8c.field_0028 = (int)(puVar9 + (short)*puVar9 * 6 + 10);
+                  local_8c.field_0048 = (byte)local_8;
                   if (local_c == 0) {
-                    local_84 = (ushort)(byte)local_8;
+                    local_8c.field_0008 = (short)(byte)local_8;
                   }
                   else {
-                    local_84 = ((byte)local_8 - 1) + (short)local_c;
+                    local_8c.field_0008 = ((byte)local_8 - 1) + (short)local_c;
                   }
-                  local_8c[0] = this_00->field_0140;
+                  local_8c.next = this_00->field_0140;
                   this_00->field_013C = this_00->field_013C + 1;
-                  this_00->field_0140 = local_8c;
+                  this_00->field_0140 = &local_8c;
                   ST3DSMAPContext::sub_006DDBE0(this_00);
                   this_00->field_0124 = 5;
                   ST3DSMAPContext::sub_006DDD50(this_00);
@@ -208,7 +202,7 @@ LAB_00691a65:
                     puVar10 = Library::DKW::LIB::MemAlloc(0x640);
                     *(undefined4 **)
                      ((int)local_14 +
-                     (int)local_10 * 4 + (local_18 + ((int)local_1c + local_8) * 2) * 0x3c) =
+                     (int)local_10 * 4 + (local_18 + (scalar_local_1c + local_8) * 2) * 0x3c) =
                          puVar10;
                     puVar4 = (undefined4 *)this_00->field_000C;
                     for (iVar15 = 400; iVar11 = local_20, iVar15 != 0; iVar15 = iVar15 + -1) {
@@ -254,10 +248,10 @@ LAB_00691a65:
               }
               local_1c = (int *)((int)local_10 + 1);
               pcVar5 = thunk_FUN_006a2d00(0,local_c,uVar8,0,(uint)local_1c);
-              ppvVar12 = local_8c;
+              pRVar12 = &local_8c;
               for (iVar15 = 0x14; iVar15 != 0; iVar15 = iVar15 + -1) {
-                *ppvVar12 = nullptr;
-                ppvVar12 = ppvVar12 + 1;
+                pRVar12->next = nullptr;
+                pRVar12 = (RecursiveNode_ST3DSMAPContext_0140_DDDC9F89 *)&pRVar12->field_0004;
               }
               puVar9 = Library::Ourlib::MFSTMAP::FUN_006f0cd0(param_1,pcVar5,0);
               if (puVar9 == nullptr) {
@@ -267,20 +261,20 @@ LAB_00691a65:
                 *psVar1 = *psVar1 + 1;
               }
               else {
-                local_70 = (int)(short)*puVar9;
-                local_6c = puVar9 + 10;
-                local_68 = (int)(short)puVar9[1];
-                local_64 = puVar9 + (short)*puVar9 * 6 + 10;
-                local_44 = (byte)local_8;
+                local_8c.field_001C = (uint)(short)*puVar9;
+                local_8c.field_0020 = (int)(puVar9 + 10);
+                local_8c.field_0024 = (int)(short)puVar9[1];
+                local_8c.field_0028 = (int)(puVar9 + (short)*puVar9 * 6 + 10);
+                local_8c.field_0048 = (byte)local_8;
                 if (local_c == 0) {
-                  local_84 = (ushort)(byte)local_8;
+                  local_8c.field_0008 = (short)(byte)local_8;
                 }
                 else {
-                  local_84 = ((byte)local_8 - 1) + (short)local_c;
+                  local_8c.field_0008 = ((byte)local_8 - 1) + (short)local_c;
                 }
-                local_8c[0] = this_00->field_0140;
+                local_8c.next = this_00->field_0140;
                 this_00->field_013C = this_00->field_013C + 1;
-                this_00->field_0140 = local_8c;
+                this_00->field_0140 = &local_8c;
                 ST3DSMAPContext::sub_006DDBE0(this_00);
                 this_00->field_0124 = 5;
                 ST3DSMAPContext::sub_006DDD50(this_00);
@@ -344,10 +338,10 @@ LAB_00691a65:
               }
               pcVar5 = thunk_FUN_006a2d00(3,local_c,uVar8,1,(uint)local_10);
               puVar9 = Library::Ourlib::MFSTMAP::FUN_006f0cd0(param_1,pcVar5,0);
-              ppvVar12 = local_8c;
+              pRVar12 = &local_8c;
               for (iVar15 = 0x14; iVar15 != 0; iVar15 = iVar15 + -1) {
-                *ppvVar12 = nullptr;
-                ppvVar12 = ppvVar12 + 1;
+                pRVar12->next = nullptr;
+                pRVar12 = (RecursiveNode_ST3DSMAPContext_0140_DDDC9F89 *)&pRVar12->field_0004;
               }
               if (puVar9 == nullptr) {
                 /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
@@ -356,20 +350,20 @@ LAB_00691a65:
                 *psVar1 = *psVar1 + 1;
               }
               else {
-                local_70 = (int)(short)*puVar9;
-                local_6c = puVar9 + 10;
-                local_68 = (int)(short)puVar9[1];
-                local_44 = (byte)local_8;
-                local_64 = puVar9 + (short)*puVar9 * 6 + 10;
+                local_8c.field_001C = (uint)(short)*puVar9;
+                local_8c.field_0020 = (int)(puVar9 + 10);
+                local_8c.field_0024 = (int)(short)puVar9[1];
+                local_8c.field_0048 = (byte)local_8;
+                local_8c.field_0028 = (int)(puVar9 + (short)*puVar9 * 6 + 10);
                 if (local_c == 0) {
-                  local_84 = (ushort)(byte)local_8;
+                  local_8c.field_0008 = (short)(byte)local_8;
                 }
                 else {
-                  local_84 = ((byte)local_8 - 1) + (short)local_c;
+                  local_8c.field_0008 = ((byte)local_8 - 1) + (short)local_c;
                 }
-                local_8c[0] = this_00->field_0140;
+                local_8c.next = this_00->field_0140;
                 this_00->field_013C = this_00->field_013C + 1;
-                this_00->field_0140 = local_8c;
+                this_00->field_0140 = &local_8c;
                 ST3DSMAPContext::sub_006DDBE0(this_00);
                 this_00->field_0124 = 5;
                 ST3DSMAPContext::sub_006DDD50(this_00);

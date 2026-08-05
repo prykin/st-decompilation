@@ -8,7 +8,6 @@
 int __thiscall TLOBldMark::Create(TLOBldMark *this)
 
 {
-  code *pcVar1;
   InternalExceptionFrame *pIVar2;
   int iVar3;
   int iVar4;

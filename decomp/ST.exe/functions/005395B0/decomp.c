@@ -12,7 +12,6 @@
 void __thiscall PausePanelTy::SwitchPausePanel(PausePanelTy *this,int param_1)
 
 {
-  code *pcVar1;
   PausePanelTy *pPVar2;
   int errorCode;
   int iVar3;

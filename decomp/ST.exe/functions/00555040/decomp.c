@@ -15,7 +15,6 @@ cLoadingTy::SetState
 
 {
   char cVar1;
-  code *pcVar2;
   int iVar3;
   DWORD DVar4;
   char *pcVar5;
@@ -254,6 +253,7 @@ cLoadingTy::SetState
     pcVar5 = pcVar13 + -uVar8;
     pcVar13 = (char *)((int)puVar12 + -1);
     memmove(pcVar13, pcVar5, uVar8); /* compiler REP MOVS byte copy */
+    uVar9 = 0;
     goto joined_r0x00555393;
   case CASE_3:
     local_8->field_003C = -1;

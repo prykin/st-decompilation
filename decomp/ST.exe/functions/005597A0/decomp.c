@@ -20,7 +20,6 @@ VisibleClassTy::SetZoneDes
 
 {
   char cVar1;
-  code *pcVar2;
   bool bVar3;
   int iVar4;
   void *pvVar5;

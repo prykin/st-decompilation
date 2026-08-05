@@ -13,7 +13,6 @@ int __thiscall AiBossClassTy::GetMessage(AiBossClassTy *this,STMessage *message)
 
 {
   STMessageId SVar1;
-  code *pcVar2;
   AiBossClassTy *this_00;
   int iVar3;
   AiPlrClassTy *this_01;

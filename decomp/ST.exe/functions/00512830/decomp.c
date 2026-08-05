@@ -8,7 +8,6 @@
 void __thiscall HelpPanelTy::CreateSlider(HelpPanelTy *this,int param_1)
 
 {
-  code *pcVar1;
   HelpPanelTy *this_00;
   int iVar2;
   int iVar3;

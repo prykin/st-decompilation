@@ -15,7 +15,6 @@ undefined4 __thiscall STBoatC::CheckForReplenisher(STBoatC *this)
   DArrayTy *array;
   DArrayTy *array_00;
   dword dVar1;
-  code *pcVar2;
   int iVar3;
   undefined4 uVar4;
   uint index;
@@ -25,8 +24,8 @@ undefined4 __thiscall STBoatC::CheckForReplenisher(STBoatC *this)
   short local_8;
   short local_6;
 
-  array = (DArrayTy *)g_packedRecords_A62x8[this->field_0024].field603_0x2e7;
-  array_00 = (DArrayTy *)g_packedRecords_A62x8[this->field_0024].field6_0x9;
+  array = (DArrayTy *)g_packedRecords_A62x8[this->field_0024].field355_0x2e7;
+  array_00 = (DArrayTy *)g_packedRecords_A62x8[this->field_0024].field3_0x9;
   if (array != nullptr) {
     dVar1 = array->count;
     index = 0;

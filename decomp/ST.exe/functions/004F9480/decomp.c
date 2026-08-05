@@ -8,7 +8,6 @@
 void __thiscall CPanelTy::OutText(CPanelTy *this,int param_1,int param_2,undefined4 param_3)
 
 {
-  code *pcVar1;
   int errorCode;
   char *pcVar2;
   int iVar3;

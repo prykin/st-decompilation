@@ -20,7 +20,6 @@ MReportTy::PaintObjScore(MReportTy *this,int param_1,uint param_2,int param_3,in
 
 {
   char cVar1;
-  code *pcVar2;
   MReportTy *pMVar3;
   int errorCode;
   uint uVar4;

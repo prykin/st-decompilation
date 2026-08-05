@@ -13,7 +13,6 @@ uint * __thiscall STGroupBoatC::Scout(STGroupBoatC *this,int param_1)
 {
   undefined1 *puVar1;
   undefined1 *puVar2;
-  code *pcVar3;
   STGroupBoatC *pSVar4;
   int iVar5;
   DArrayTy *array;

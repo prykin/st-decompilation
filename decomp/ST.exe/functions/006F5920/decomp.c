@@ -42,7 +42,7 @@ uint FUN_006f5920(byte *param_1,int param_2,uint *param_3,int param_4,int param_
           do {
             param_1 = param_1 + uVar4;
             DAT_00857024 = DAT_00857024 + uVar4;
-            param_3 = (uint *)((int)param_3 + uVar4 * 2);
+            int scalar_param_3 = (int)param_3 + uVar4 * 2; /* split integer lifetime from pointer-typed SSA storage */
             iStack_18 = iVar9 - uVar4;
             if (iStack_18 == 0 || iVar9 < (int)uVar4) goto LAB_006f5a0d;
             bVar2 = *param_6;
@@ -57,7 +57,7 @@ uint FUN_006f5920(byte *param_1,int param_2,uint *param_3,int param_4,int param_
           uVar4 = uVar4 & 0x3f;
           pbVar11 = param_1;
           do {
-            if (*(uint *)((int)param_3 + -2) < uVar7) {
+            if (*(uint *)(scalar_param_3 + -2) < uVar7) {
               DAT_00857000 = '\x01';
               iVar9 = DAT_00857020;
               goto LAB_006f5b32;

@@ -51,8 +51,12 @@ public class STTypeFamilyAnalyzer extends GhidraScript {
     private static final String ANCHOR_MARKER = "[ST_SEMANTIC_ANCHOR]";
     private static final Pattern AUDIT_POINTER_ARGUMENT = Pattern.compile(
         "^p([0-9]+)=pointer:(/\\S*(?:AnonShape|AnonPointee|AnonReceiver)\\S*)\\b");
+    private static final Pattern AUDIT_FIRST_POINTER_ARGUMENT = Pattern.compile(
+        "^p0=pointer:(/\\S*(?:AnonShape|AnonPointee|AnonReceiver)\\S*)\\b");
     private static final Pattern ANON_ADDRESS =
         Pattern.compile("(?i)Anon(?:Shape|Receiver)_([0-9a-f]{8})");
+    private static final Pattern SOURCE_BASENAME = Pattern.compile(
+        "(?i)([A-Za-z0-9_$.-]+)\\.(?:c|cc|cpp|cxx)\\b");
     private Map<String, Integer> receiverOwnerCounts;
 
     @Override
@@ -143,6 +147,8 @@ public class STTypeFamilyAnalyzer extends GhidraScript {
         List<ContextualPromotion> contextualPromotions =
             contextualRecordPromotions(redirects);
         contextualPromotions.addAll(flowLinkedRecordPromotions(directory,
+            redirects, contextualPromotions));
+        contextualPromotions.addAll(sourceFunctionFamilyPromotions(directory,
             redirects, contextualPromotions));
         contextualPromotions.sort(
             Comparator.comparing(row -> row.sourceType));
@@ -504,17 +510,24 @@ public class STTypeFamilyAnalyzer extends GhidraScript {
         if (canonical == null) return;
         boolean apply = variable.getSource() != SourceType.USER_DEFINED &&
             variable.getSource() != SourceType.IMPORTED;
-        boolean contextual = canonical.startsWith(
+        boolean sourceFamily = canonical.startsWith(
+            POINTER_SHAPES + "RecoveredSourceFamily_");
+        boolean contextual = sourceFamily || canonical.startsWith(
             POINTER_SHAPES + "RecoveredRecord_");
-        rows.add(new Row(apply, addr(function.getEntryPoint()), function.getName(true), kind,
-            ordinal, variable.getName(), variable.getVariableStorage().toString(), typeSpec(type),
-            variable.getSource().toString(), "pointer:" + canonical,
-            false, contextual ? "CONTEXTUAL_GENERATED_RECORD" : "EXACT_NAMED_LAYOUT",
-            "high", contextual ?
+        String family = sourceFamily ? "SOURCE_FUNCTION_FAMILY" :
+            contextual ? "CONTEXTUAL_GENERATED_RECORD" : "EXACT_NAMED_LAYOUT";
+        String evidence = sourceFamily ?
+            "one script-owned pointer shape is anchored by one library source basename, " +
+                "multiple semantic function names, and exact first-argument call flow" :
+            contextual ?
                 "one script-owned pointer shape is used only by functions with one unique " +
                 "class-owner context; promote its stable machine layout to a generated " +
                 "owner-qualified record name" :
-                "anonymous structure has an exact full-layout match to one unique named type"));
+                "anonymous structure has an exact full-layout match to one unique named type";
+        rows.add(new Row(apply, addr(function.getEntryPoint()), function.getName(true), kind,
+            ordinal, variable.getName(), variable.getVariableStorage().toString(), typeSpec(type),
+            variable.getSource().toString(), "pointer:" + canonical,
+            false, family, "high", evidence));
     }
 
     /**
@@ -722,6 +735,165 @@ public class STTypeFamilyAnalyzer extends GhidraScript {
             }
         }
         return result;
+    }
+
+    /**
+     * Promote one anonymous identity to a deterministic source-family name when
+     * three independent facts agree: a statically linked library function with
+     * that exact first parameter names one source basename, several semantically
+     * named functions participate in exact p0 call flows, and every destination
+     * formal in those flows is the same pointer shape.  No layouts are merged:
+     * the generated family is a clone of one already proven script-owned shape.
+     *
+     * This deliberately does not use caller pseudocode or an address allow-list.
+     * A basename collision between two shapes disables both candidates rather
+     * than appending an arbitrary address to the public type name.
+     */
+    private List<ContextualPromotion> sourceFunctionFamilyPromotions(Path directory,
+            Map<String, String> redirects,
+            List<ContextualPromotion> existingPromotions) throws Exception {
+        Path audit = directory.resolve("prototype_callsite_audit.tsv");
+        if (!Files.isRegularFile(audit)) return List.of();
+
+        Map<String, Structure> structures = new TreeMap<>();
+        Iterator<Structure> iterator =
+            currentProgram.getDataTypeManager().getAllStructures();
+        while (iterator.hasNext()) {
+            Structure structure = iterator.next();
+            if (scriptOwnedPointerShape(structure) &&
+                    structure.getLength() >= 2 && structure.getLength() <= 0x400 &&
+                    concreteFields(structure) >= 3)
+                structures.put(structure.getPathName(), structure);
+        }
+        if (structures.isEmpty()) return List.of();
+
+        Set<String> already = new TreeSet<>();
+        for (ContextualPromotion promotion : existingPromotions)
+            already.add(promotion.sourceType);
+        Map<String, SourceFamilyEvidence> evidence = new TreeMap<>();
+
+        // A source basename is accepted only from a library-owned function whose
+        // first explicit formal already has this exact pointer identity.
+        FunctionIterator functions =
+            currentProgram.getFunctionManager().getFunctions(true);
+        while (functions.hasNext()) {
+            monitor.checkCancelled();
+            Function function = functions.next();
+            Parameter first = firstExplicitParameter(function);
+            String source = pointedPath(first == null ? null : first.getDataType());
+            if (!structures.containsKey(source) || !libraryFunction(function)) continue;
+            for (String basename : sourceBasenames(function))
+                evidence.computeIfAbsent(source, ignored -> new SourceFamilyEvidence())
+                    .basenames.add(basename);
+        }
+
+        for (Map<String, String> row : readTsv(audit)) {
+            if (!"exact_address_match".equals(safeText(row.get("status")))) continue;
+            String arguments = safeText(row.get("stack_arguments"));
+            Matcher firstArgument = AUDIT_FIRST_POINTER_ARGUMENT.matcher(arguments);
+            if (!firstArgument.find()) continue;
+            String source = firstArgument.group(1);
+            if (!structures.containsKey(source)) continue;
+
+            Address targetAddress = currentProgram.getAddressFactory()
+                .getAddress(safeText(row.get("resolved_address")));
+            Function target = targetAddress == null ? null :
+                currentProgram.getFunctionManager().getFunctionAt(targetAddress);
+            Parameter targetFirst = target == null ? null : firstExplicitParameter(target);
+            if (targetFirst == null ||
+                    !source.equals(pointedPath(targetFirst.getDataType()))) continue;
+
+            SourceFamilyEvidence item = evidence.computeIfAbsent(source,
+                ignored -> new SourceFamilyEvidence());
+            item.exactFlows++;
+            item.targets.add(addr(target.getEntryPoint()));
+            item.anchorAddresses.add(addr(target.getEntryPoint()));
+            if (semanticFunctionName(target)) item.namedFunctions.add(target.getName(true));
+
+            Address callerAddress = currentProgram.getAddressFactory()
+                .getAddress(safeText(row.get("caller_address")));
+            Function caller = callerAddress == null ? null :
+                currentProgram.getFunctionManager().getFunctionAt(callerAddress);
+            if (caller != null) {
+                item.anchorAddresses.add(addr(caller.getEntryPoint()));
+                if (semanticFunctionName(caller))
+                    item.namedFunctions.add(caller.getName(true));
+            }
+        }
+
+        Map<String, List<String>> sourcesByBasename = new TreeMap<>();
+        for (Map.Entry<String, SourceFamilyEvidence> entry : evidence.entrySet()) {
+            SourceFamilyEvidence item = entry.getValue();
+            if (item.basenames.size() == 1 && item.exactFlows >= 3 &&
+                    item.targets.size() >= 2 && item.namedFunctions.size() >= 2)
+                sourcesByBasename.computeIfAbsent(item.basenames.iterator().next(),
+                    ignored -> new ArrayList<>()).add(entry.getKey());
+        }
+
+        List<ContextualPromotion> result = new ArrayList<>();
+        for (Map.Entry<String, List<String>> family : sourcesByBasename.entrySet()) {
+            if (family.getValue().size() != 1) continue;
+            String source = family.getValue().get(0);
+            if (redirects.containsKey(source) || already.contains(source)) continue;
+            Structure structure = structures.get(source);
+            SourceFamilyEvidence item = evidence.get(source);
+            String basename = family.getKey();
+            String target = POINTER_SHAPES + "RecoveredSourceFamily_" +
+                sanitizeLeaf(basename);
+            DataType occupied =
+                currentProgram.getDataTypeManager().getDataType(target);
+            if (occupied != null && (!(occupied instanceof Structure existing) ||
+                    !existing.isEquivalent(structure))) continue;
+            String anchor = item.anchorAddresses.isEmpty() ? "" :
+                item.anchorAddresses.iterator().next();
+            result.add(new ContextualPromotion(source, target,
+                "source:" + basename, anchor, structure.getLength(),
+                concreteFields(structure),
+                anonymousUsage().getOrDefault(source, new Usage()).functions,
+                "library source basename=" + basename +
+                    "; exact first-argument flows=" + item.exactFlows +
+                    "; distinct destinations=" + item.targets.size() +
+                    "; semantic functions=" + String.join("|", item.namedFunctions) +
+                    "; one source shape is renamed without geometry merging"));
+            redirects.put(source, target);
+        }
+        return result;
+    }
+
+    private Parameter firstExplicitParameter(Function function) {
+        if (function == null) return null;
+        for (Parameter parameter : function.getParameters())
+            if (!parameter.isAutoParameter()) return parameter;
+        return null;
+    }
+
+    private String pointedPath(DataType type) {
+        return type instanceof Pointer pointer && pointer.getDataType() != null ?
+            pointer.getDataType().getPathName() : "";
+    }
+
+    private boolean libraryFunction(Function function) {
+        if (function.getName(true).startsWith("Library::")) return true;
+        return function.getTags().stream().anyMatch(tag ->
+            "LIBRARY".equals(tag.getName()) || tag.getName().startsWith("LIBRARY_"));
+    }
+
+    private Set<String> sourceBasenames(Function function) {
+        Set<String> result = new TreeSet<>();
+        String comments = safeText(function.getComment()) + "\n" +
+            safeText(function.getRepeatableComment());
+        Matcher matcher = SOURCE_BASENAME.matcher(comments);
+        while (matcher.find())
+            result.add(matcher.group(1).toLowerCase(Locale.ROOT));
+        return result;
+    }
+
+    private boolean semanticFunctionName(Function function) {
+        if (function == null || function.isThunk()) return false;
+        String name = function.getName();
+        return !name.matches("(?i)(?:FUN|sub|thunk_FUN)_[0-9a-f]+") &&
+            !name.matches("(?i)(?:LAB|caseD?)_[0-9a-f]+") &&
+            !name.isBlank();
     }
 
     private boolean scriptOwnedPointerShape(Structure structure) {
@@ -1132,6 +1304,13 @@ public class STTypeFamilyAnalyzer extends GhidraScript {
         String matchKind, int length, int observedFields, int concreteFields,
         int semanticMatches, String confidence, String evidence) {}
     private static class Usage { int functions, globals, fields; }
+    private static class SourceFamilyEvidence {
+        final Set<String> basenames = new TreeSet<>();
+        final Set<String> namedFunctions = new TreeSet<>();
+        final Set<String> targets = new TreeSet<>();
+        final Set<String> anchorAddresses = new TreeSet<>();
+        int exactFlows;
+    }
     private record AnonAuditRow(String anonymousType, String category, int length,
         int definedComponents, int concreteFields, int meaningfulFields,
         int functionTargets, int globalTargets, int fieldTargets,

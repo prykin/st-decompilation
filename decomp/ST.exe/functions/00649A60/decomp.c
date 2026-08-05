@@ -9,7 +9,6 @@
 undefined4 * __cdecl CreatePlrData(int param_1)
 
 {
-  code *pcVar1;
   int errorCode;
   undefined4 *puVar2;
   int iVar3;

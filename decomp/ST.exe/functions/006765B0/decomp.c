@@ -12,19 +12,19 @@ void FUN_006765b0(void)
   puVar3 = (byte *)(&DAT_0080e83b);
   memmove(puVar3, puVar2, 0x14); /* compiler REP MOVS byte copy */
   iVar1 = 0;
-  puVar2 = (byte *)&g_packedRecords_A62x8[DAT_0080874d].field_0x2ff;
+  puVar2 = (byte *)(&g_packedRecords_A62x8[DAT_0080874d].field376_0x2ff);
   puVar3 = (byte *)(&DAT_0080e84f);
   memmove(puVar3, puVar2, 0x14); /* compiler REP MOVS byte copy */
   iVar1 = 0;
-  puVar2 = (byte *)&g_packedRecords_A62x8[DAT_0080874d].field_0x327;
+  puVar2 = (byte *)(&g_packedRecords_A62x8[DAT_0080874d].field410_0x327);
   puVar3 = (byte *)(&DAT_0080e863);
   memmove(puVar3, puVar2, 0x26c); /* compiler REP MOVS byte copy */
   iVar1 = 0;
-  puVar2 = (byte *)&g_packedRecords_A62x8[DAT_0080874d].field_0x593;
+  puVar2 = (byte *)(&g_packedRecords_A62x8[DAT_0080874d].field1024_0x593);
   puVar3 = (byte *)(&DAT_0080eacf);
   memmove(puVar3, puVar2, 0x1a8); /* compiler REP MOVS byte copy */
   iVar1 = 0;
-  puVar2 = (byte *)&g_packedRecords_A62x8[DAT_0080874d].field_0x73b;
+  puVar2 = (byte *)&g_packedRecords_A62x8[DAT_0080874d].field1445_0x73b;
   puVar3 = (byte *)(&DAT_0080ec77);
   memmove(puVar3, puVar2, 0x9b); /* compiler REP MOVS byte copy */
   return;

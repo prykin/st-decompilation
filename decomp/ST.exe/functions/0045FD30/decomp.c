@@ -15,7 +15,6 @@ undefined4 __thiscall STBoatC::StopMove(STBoatC *this)
   short sVar1;
   short sVar2;
   short sVar3;
-  code *pcVar4;
   STGroupBoatC *this_00;
   int iVar5;
   undefined4 uVar6;

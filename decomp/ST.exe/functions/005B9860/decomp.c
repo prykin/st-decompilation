@@ -20,7 +20,6 @@ MMMObjTy::OutLstProc
           int param_5,int param_6,int param_7,int param_8)
 
 {
-  code *pcVar1;
   int errorCode;
   uint *resourceString;
   int iVar2;

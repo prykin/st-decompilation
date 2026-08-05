@@ -8,7 +8,6 @@
 uint * __thiscall STGroupBoatC::Bring(STGroupBoatC *this,int param_1)
 
 {
-  code *pcVar1;
   STGroupBoatC *pSVar2;
   int iVar3;
   STBoatC *pSVar4;

@@ -19,7 +19,6 @@ int __thiscall MoneyTy::GetMessage(MoneyTy *this,STMessage *message)
   undefined1 uVar1;
   undefined4 uVar2;
   uint uVar3;
-  code *pcVar4;
   bool bVar5;
   MoneyTy *this_00;
   ushort uVar6;

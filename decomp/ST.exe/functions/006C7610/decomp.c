@@ -11,9 +11,13 @@
    005CA877; literal 103 at 005CA84D | 005E11D0 -> 006C7610 @ 005E1259; literal 0 at 005E124C |
    005E4300 -> 006C7610 @ 005E43E7; literal 0 at 005E43D1 | 005E4570 -> 006C7610 @ 005E4D1D; literal
    0 at 005E4D07 | 005E4570 -> 006C7610 @ 005E4EEC; literal 0 at 005E4ED4 | 005E4570 -> 006C7610 @
-   005E5100; literal 0 at 005E50E8 | 006C7610 -> 006D7A30 @ 006C7675 */
+   005E5100; literal 0 at 005E50E8 | 006C7610 -> 006D7A30 @ 006C7675
 
-void FUN_006c7610(AnonShape_006B5B10_E0D06CF1 *param_1,int param_2,int param_3,int param_4,
+   [STTypeFamilyApplier] SOURCE_FUNCTION_FAMILY.
+   Evidence: one script-owned pointer shape is anchored by one library source basename, multiple
+   semantic function names, and exact first-argument call flow */
+
+void FUN_006c7610(RecoveredSourceFamily_dibcopy *param_1,int param_2,int param_3,int param_4,
                  uint param_5,uint param_6,int param_7,byte param_8)
 
 {

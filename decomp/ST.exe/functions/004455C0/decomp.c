@@ -8,7 +8,6 @@
 uint __thiscall STAllPlayersC::CreateBoat(STAllPlayersC *this,undefined4 *param_1)
 
 {
-  code *pcVar1;
   ushort uVar2;
   int iVar3;
   uint uVar4;

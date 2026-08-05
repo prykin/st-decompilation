@@ -19,8 +19,7 @@ int __thiscall MReportTy::GetMessage(MReportTy *this,STMessage *message)
   STMessageId SVar5;
   dword dVar6;
   DArrayTy *pDVar7;
-  AnonShape_006B5B10_E0D06CF1 *pAVar8;
-  code *pcVar9;
+  RecoveredSourceFamily_dibcopy *pRVar8;
   bool bVar10;
   MReportTy *this_00;
   DWORD DVar11;
@@ -98,8 +97,8 @@ int __thiscall MReportTy::GetMessage(MReportTy *this,STMessage *message)
           ccFntTy::WrStr(this_00->field_0087,&DAT_0080f33a,-1,-1,
                          (uint)((message->arg0).words.high == 1));
           if ((message->arg0).words.high == 1) {
-            pAVar8 = (message->arg1).ptr;
-            FUN_006b5ee0(pAVar8,0,0,0,pAVar8->field_0004,pAVar8->field_0008,0x18,0xd);
+            pRVar8 = (message->arg1).ptr;
+            FUN_006b5ee0(pRVar8,0,0,0,pRVar8->field_0004,pRVar8->field_0008,0x18,0xd);
           }
         }
       }
@@ -182,8 +181,8 @@ int __thiscall MReportTy::GetMessage(MReportTy *this,STMessage *message)
         ccFntTy::WrStr(this_00->field_0087,&DAT_0080f33a,-1,-1,
                        (uint)((message->arg0).words.high == 1));
         if ((message->arg0).words.high == 1) {
-          pAVar8 = (message->arg1).ptr;
-          FUN_006b5ee0(pAVar8,0,0,0,pAVar8->field_0004,pAVar8->field_0008,0x18,0xd);
+          pRVar8 = (message->arg1).ptr;
+          FUN_006b5ee0(pRVar8,0,0,0,pRVar8->field_0004,pRVar8->field_0008,0x18,0xd);
         }
       }
       goto cf_common_exit_005C22B1;

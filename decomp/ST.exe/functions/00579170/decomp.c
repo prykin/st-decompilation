@@ -16,7 +16,6 @@
 bool __thiscall STCrabC::Bad(STCrabC *this)
 
 {
-  code *pcVar1;
   undefined1 uVar2;
   int iVar3;
   int iVar4;

@@ -15,7 +15,7 @@ STAllPlayersC * __thiscall STAllPlayersC::STAllPlayersC(STAllPlayersC *this)
   pPVar1 = g_packedRecords_A62x8;
   for (iVar2 = 0x14d5; iVar2 != 0; iVar2 = iVar2 + -1) {
     *(undefined4 *)pPVar1 = 0;
-    pPVar1 = (PackedRecord_A62x8 *)&pPVar1->field_0x4;
+    pPVar1 = (PackedRecord_A62x8 *)((int)&pPVar1->field1_0x1 + 3);
   }
   pPVar1 = g_packedRecords_A62x8;
   do {

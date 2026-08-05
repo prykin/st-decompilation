@@ -9,7 +9,6 @@ uint __thiscall
 STGroupBoatC::GetPatrolTask(STGroupBoatC *this,int param_1,uint param_2,uint param_3)
 
 {
-  code *pcVar1;
   int iVar2;
   uint uVar3;
   STGameObjC *pSVar4;

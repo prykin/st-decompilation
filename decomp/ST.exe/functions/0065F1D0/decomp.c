@@ -10,7 +10,6 @@ int __thiscall AiFltClassTy::AppendZone(AiFltClassTy *this,short *param_1)
 {
   int iVar1;
   short sVar2;
-  code *pcVar3;
   bool bVar4;
   int iVar5;
   int iVar6;

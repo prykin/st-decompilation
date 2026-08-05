@@ -10,7 +10,6 @@ void __thiscall SettMapSTy::SetListCtrls(SettMapSTy *this)
 {
   DArrayTy *pDVar1;
   AnonPointee_SettMapSTy_0000 *pAVar2;
-  code *pcVar3;
   char cVar4;
   SettMapSTy *pSVar5;
   int iVar6;

@@ -10,7 +10,6 @@ MMsgTy::SetMessage(MMsgTy *this,UINT param_1,char param_2,undefined4 *param_3,un
                   undefined4 *param_5,int param_6,UINT param_7)
 
 {
-  code *pcVar1;
   MMsgTy *this_00;
   byte bVar2;
   int iVar3;

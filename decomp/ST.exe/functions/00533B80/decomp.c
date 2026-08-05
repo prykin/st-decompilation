@@ -15,8 +15,8 @@ void __fastcall FUN_00533b80(RecoveredRecord_STPlaySystemC_00533B80 *param_1)
   if ((DAT_008067a0 != '\0') && (param_1->field_0172 != 2)) {
     if ((param_1->field_01A4 == '\x05') && (param_1->field_01AB == '\x04')) {
       Library::DKW::WGR::FUN_006b55f0
-                ((AnonShape_006B5B10_E0D06CF1 *)param_1->field_0068,0,0x1d,0x13,param_1->field_0184,
-                 0,0x1d,0x13,0xee,0x6a);
+                ((RecoveredSourceFamily_dibcopy *)param_1->field_0068,0,0x1d,0x13,
+                 param_1->field_0184,0,0x1d,0x13,0xee,0x6a);
       ccFntTy::SetSurf(param_1->field_0180,param_1->field_0068,0,0x1d,0x13,0xee,0x6a);
       if (DAT_008067a0 == '\0') {
         resourceId = 0x3e84;

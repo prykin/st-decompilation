@@ -10,7 +10,6 @@ int __thiscall STBoatC::Capture(STBoatC *this,int param_1)
 {
   STBoatC_field_0611State SVar1;
   STWorldObject *pSVar2;
-  code *pcVar3;
   short sVar4;
   undefined2 uVar5;
   int iVar6;

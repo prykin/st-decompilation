@@ -8,7 +8,6 @@
 void __thiscall OptPanelTy::Question(OptPanelTy *this,char param_1)
 
 {
-  code *pcVar1;
   OptPanelTy *this_00;
   int iVar2;
   int iVar3;

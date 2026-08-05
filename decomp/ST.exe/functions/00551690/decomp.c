@@ -8,7 +8,6 @@
 void __thiscall TradePanelTy::ShiftControls(TradePanelTy *this,int param_1)
 
 {
-  code *pcVar1;
   TradePanelTy *this_00;
   short sVar2;
   int errorCode;

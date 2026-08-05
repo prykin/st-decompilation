@@ -10,7 +10,6 @@ void __thiscall HelpPanelTy::ArmProc(HelpPanelTy *this,int param_1,int param_2,c
 {
   char cVar1;
   HelpPanelTy_field_01A1State HVar2;
-  code *pcVar3;
   HelpPanelTy *this_00;
   int iVar4;
   UINT UVar5;
@@ -94,7 +93,7 @@ void __thiscall HelpPanelTy::ArmProc(HelpPanelTy *this,int param_1,int param_2,c
       uVar6 = thunk_FUN_005259b0(GVar19,0,'\x01');
       pbVar7 = (byte *)FUN_0070b3a0((AnonShape_GLOBAL_0081175C_57F682DD *)this_00->field_0244,uVar6);
       if (pbVar7 != nullptr) {
-        DibPut((AnonShape_006B5B10_E0D06CF1 *)this_00->field_0068,0x35,
+        DibPut((RecoveredSourceFamily_dibcopy *)this_00->field_0068,0x35,
                (0x1e - *(int *)(pbVar7 + 8)) / 2 + 0x2a,'\x06',pbVar7);
       }
       ccFntTy::SetSurf(this_00->field_01E0,(int)this_00->field_0218,0,0,local_8,0x91,0xf);
@@ -174,7 +173,7 @@ void __thiscall HelpPanelTy::ArmProc(HelpPanelTy *this,int param_1,int param_2,c
                                     ((int)&DAT_007bf67c + (int)piVar13),0);
         pbVar7 = (byte *)FUN_0070b3a0((AnonShape_GLOBAL_0081175C_57F682DD *)this_00->field_0230,
                                       uVar6);
-        DibPut((AnonShape_006B5B10_E0D06CF1 *)this_00->field_0218,0x96,local_8,'\x01',pbVar7);
+        DibPut((RecoveredSourceFamily_dibcopy *)this_00->field_0218,0x96,local_8,'\x01',pbVar7);
         local_60 = 0x96;
         local_58 = *(undefined4 *)(pbVar7 + 4);
         local_5c = local_8;
@@ -321,9 +320,10 @@ void __thiscall HelpPanelTy::ArmProc(HelpPanelTy *this,int param_1,int param_2,c
         uVar6 = thunk_FUN_00526ba0(local_c,cVar15);
         pbVar7 = (byte *)FUN_0070b3a0((AnonShape_GLOBAL_0081175C_57F682DD *)this_00->field_0240,
                                       uVar6);
-        DibPut((AnonShape_006B5B10_E0D06CF1 *)this_00->field_0218,0x96,local_8,'\x01',pbVar7);
+        DibPut((RecoveredSourceFamily_dibcopy *)this_00->field_0218,0x96,local_8,'\x01',pbVar7);
         pbVar7 = local_38;
-        DibPut((AnonShape_006B5B10_E0D06CF1 *)this_00->field_0218,0x94,local_8 - 2,'\x06',local_38);
+        DibPut((RecoveredSourceFamily_dibcopy *)this_00->field_0218,0x94,local_8 - 2,'\x06',local_38
+              );
         local_34 = 0x94;
         local_2c = *(undefined4 *)(pbVar7 + 4);
         local_30 = local_8 - 2;
@@ -374,10 +374,10 @@ void __thiscall HelpPanelTy::ArmProc(HelpPanelTy *this,int param_1,int param_2,c
           uVar6 = thunk_FUN_00526ba0(local_c,cVar15);
           pbVar7 = (byte *)FUN_0070b3a0((AnonShape_GLOBAL_0081175C_57F682DD *)this_00->field_023C,
                                         uVar6);
-          DibPut((AnonShape_006B5B10_E0D06CF1 *)this_00->field_0218,0x96,local_8,'\x01',pbVar7);
+          DibPut((RecoveredSourceFamily_dibcopy *)this_00->field_0218,0x96,local_8,'\x01',pbVar7);
           pbVar7 = local_38;
-          DibPut((AnonShape_006B5B10_E0D06CF1 *)this_00->field_0218,0x94,local_8 - 2,'\x06',local_38
-                );
+          DibPut((RecoveredSourceFamily_dibcopy *)this_00->field_0218,0x94,local_8 - 2,'\x06',
+                 local_38);
           local_34 = 0x94;
           local_2c = *(undefined4 *)(pbVar7 + 4);
           local_30 = local_8 - 2;
@@ -425,10 +425,10 @@ void __thiscall HelpPanelTy::ArmProc(HelpPanelTy *this,int param_1,int param_2,c
           uVar6 = thunk_FUN_00526ba0(local_c,cVar15);
           pbVar7 = (byte *)FUN_0070b3a0((AnonShape_GLOBAL_0081175C_57F682DD *)this_00->field_023C,
                                         uVar6);
-          DibPut((AnonShape_006B5B10_E0D06CF1 *)this_00->field_0218,0x96,local_8,'\x01',pbVar7);
+          DibPut((RecoveredSourceFamily_dibcopy *)this_00->field_0218,0x96,local_8,'\x01',pbVar7);
           pbVar7 = local_38;
-          DibPut((AnonShape_006B5B10_E0D06CF1 *)this_00->field_0218,0x94,local_8 - 2,'\x06',local_38
-                );
+          DibPut((RecoveredSourceFamily_dibcopy *)this_00->field_0218,0x94,local_8 - 2,'\x06',
+                 local_38);
           local_34 = 0x94;
           local_2c = *(undefined4 *)(pbVar7 + 4);
           local_30 = local_8 - 2;
@@ -480,10 +480,10 @@ void __thiscall HelpPanelTy::ArmProc(HelpPanelTy *this,int param_1,int param_2,c
                 uVar6 = thunk_FUN_00526ba0(local_c,cVar15);
                 pbVar7 = (byte *)FUN_0070b3a0((AnonShape_GLOBAL_0081175C_57F682DD *)
                                               this_00->field_0240,uVar6);
-                DibPut((AnonShape_006B5B10_E0D06CF1 *)this_00->field_0218,0x96,local_8,'\x01',pbVar7
-                      );
+                DibPut((RecoveredSourceFamily_dibcopy *)this_00->field_0218,0x96,local_8,'\x01',
+                       pbVar7);
                 pbVar7 = local_38;
-                DibPut((AnonShape_006B5B10_E0D06CF1 *)this_00->field_0218,0x94,local_8 - 2,'\x06',
+                DibPut((RecoveredSourceFamily_dibcopy *)this_00->field_0218,0x94,local_8 - 2,'\x06',
                        local_38);
                 local_34 = 0x94;
                 local_2c = *(undefined4 *)(pbVar7 + 4);

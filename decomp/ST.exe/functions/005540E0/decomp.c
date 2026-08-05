@@ -12,7 +12,6 @@ uint * __thiscall cLoadingTy::new(cLoadingTy *this,uint param_1,char *text,uint 
 
 {
   char cVar1;
-  code *pcVar2;
   cMf32 *this_00;
   int iVar3;
   LPSTR text_00;

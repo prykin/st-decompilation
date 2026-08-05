@@ -17,7 +17,6 @@ int __thiscall PrividerTy::GetMessage(PrividerTy *this,STMessage *message)
   STMessageId SVar3;
   StartSystemTy *pSVar4;
   STMessageArg SVar5;
-  code *pcVar6;
   CursorClassTy *pCVar7;
   PrividerTy *this_00;
   undefined1 uVar8;
@@ -137,7 +136,8 @@ LAB_005bccb9:
       if (SVar3 == MESS_SHARED_6501) goto switchD_005bc9da_caseD_6949;
       if (SVar3 != MESS_SHARED_6121) {
         if (SVar3 == MESS_PRIVIDERTY_631F) {
-          FUN_006b4170((AnonShape_006B5B10_E0D06CF1 *)this_00->field_1C8E,0,3,0x16,0x22c,0x16,0xff);
+          FUN_006b4170((RecoveredSourceFamily_dibcopy *)this_00->field_1C8E,0,3,0x16,0x22c,0x16,0xff
+                      );
           ccFntTy::SetSurf(g_startSystem_0081176C->field_0030,(int)this_00->field_1C8E,0,5,0x16,
                            0x226,0x16);
           ccFntTy::WrStr(g_startSystem_0081176C->field_0030,*(uint **)(message->arg0).ptr,0,-1,3);
@@ -191,9 +191,9 @@ LAB_005bccb9:
   if (MESS_SHARED_8160 < SVar3) {
     switch(SVar3) {
     case MESS_SIDTY_8161:
-      FUN_006b4170((AnonShape_006B5B10_E0D06CF1 *)this_00->field_1C82,0,0,
+      FUN_006b4170((RecoveredSourceFamily_dibcopy *)this_00->field_1C82,0,0,
                    (uint)(message->arg1).words.high,
-                   ((AnonShape_006B5B10_E0D06CF1 *)this_00->field_1C82)->field_0004,0x13,0);
+                   ((RecoveredSourceFamily_dibcopy *)this_00->field_1C82)->field_0004,0x13,0);
       ccFntTy::SetSurf(g_startSystem_0081176C->field_0030,(int)this_00->field_1C82,0,4,
                        (uint)(message->arg1).words.high,*(int *)(this_00->field_1C82 + 2) + -4,0x13);
       if (this_00->field_1A5F == '\0') {

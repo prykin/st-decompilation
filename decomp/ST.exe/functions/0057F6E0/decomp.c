@@ -16,7 +16,6 @@ int __thiscall STDcResourcC::CreateRes(STDcResourcC *this)
   short sVar1;
   short sVar2;
   short sVar3;
-  code *pcVar4;
   STDcResourcC *this_00;
   int iVar5;
   STT3DSprC *pSVar6;

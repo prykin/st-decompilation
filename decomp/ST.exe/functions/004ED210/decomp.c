@@ -45,7 +45,7 @@ undefined4 __fastcall FUN_004ed210(TLOBaseTy *param_1)
     uVar1 = sVar2 + iVar4;
     param_1->field_04E0[2] = uVar1;
     STT3DSprC::sub_004AD3C0
-              (param_1->field_05FF,
+              ((STT3DSprC *)param_1->field_05FF,
                (float)(int)param_1->field_04E0[0] * _DAT_007904f8 * _DAT_007904f0,
                (float)(int)uVar5 * _DAT_007904f8 * _DAT_007904f0,
                (float)(int)uVar1 * _DAT_007904f8 * _DAT_007904f0 + _DAT_007904fc);

@@ -10,7 +10,6 @@ MMsgTy::SetPanel(MMsgTy *this,UINT param_1,int param_2,int param_3,UINT param_4)
 
 {
   StartSystemTy *pSVar1;
-  code *pcVar2;
   MMsgTy *this_00;
   byte bVar3;
   int iVar4;
@@ -95,9 +94,8 @@ MMsgTy::SetPanel(MMsgTy *this,UINT param_1,int param_2,int param_3,UINT param_4)
           local_10 = (UINT *)(uVar10 * 0x27 + param_2);
           if (*local_10 == 0) {
             puVar7 = (undefined4 *)(&this_00->field_0xbc + uVar10 * 0x1fb);
-            memset(puVar7, 0, 0x26); /* compiler bulk-zero initialization */
+            memset(puVar7, 0, 0x27); /* compiler bulk-zero initialization */
             puVar7 = (undefined4 *)((byte *)puVar7 + 0x24);
-            *(undefined1 *)((int)puVar7 + 2) = 0;
           }
           else {
             uVar22 = 0xffffffff;

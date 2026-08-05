@@ -8,7 +8,6 @@
 void __thiscall OptPanelTy::SwitchOptPanelOff(OptPanelTy *this)
 
 {
-  code *pcVar1;
   OptPanelTy *this_00;
   int errorCode;
   int iVar2;

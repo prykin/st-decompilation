@@ -10,7 +10,6 @@ void __thiscall OpticClassC::ReInitOptic(OpticClassC *this,int param_1)
 
 {
   double dVar1;
-  code *pcVar2;
   int errorCode;
   int iVar3;
   uint uVar4;

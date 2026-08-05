@@ -9,7 +9,6 @@
 LPSTR __cdecl GetStrategName(undefined4 param_1,undefined4 param_2)
 
 {
-  code *pcVar1;
   int iVar2;
   LPSTR pCVar3;
   int iVar4;

@@ -12,7 +12,6 @@
 void __thiscall OptPanelTy::SwitchOptPanel(OptPanelTy *this,char param_1)
 
 {
-  code *pcVar1;
   OptPanelTy *this_00;
   int errorCode;
   int iVar2;

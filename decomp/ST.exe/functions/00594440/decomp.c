@@ -15,7 +15,6 @@ int __thiscall ComboTy::GetMessage(ComboTy *this,STMessage *message)
   undefined1 uVar1;
   STMessageId SVar2;
   ushort *puVar3;
-  code *pcVar4;
   ComboTy *this_00;
   int iVar5;
   undefined4 *puVar6;

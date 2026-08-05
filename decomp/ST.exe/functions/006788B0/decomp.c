@@ -21,9 +21,8 @@ AiPlrClassTy * __thiscall AiPlrClassTy::AiPlrClassTy(AiPlrClassTy *this)
   else {
     puVar2 = &this->field_05D3;
   }
-  memset(puVar2, 0, 0x12a); /* compiler bulk-zero initialization */
+  memset(puVar2, 0, 0x12b); /* compiler bulk-zero initialization */
   puVar2 = (undefined4 *)((byte *)puVar2 + 0x128);
-  *(undefined1 *)((int)puVar2 + 2) = 0;
   this->field_05D3 = 0x398;
   this->field_0640 = 0xff;
   return this;

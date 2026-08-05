@@ -8,7 +8,6 @@
 void __thiscall STGroupC::RestoreGrpData(STGroupC *this,int param_1)
 
 {
-  code *pcVar1;
   STGroupC *pSVar2;
   AnonShape_00424360_8159BFF1 *pAVar3;
   int iVar4;

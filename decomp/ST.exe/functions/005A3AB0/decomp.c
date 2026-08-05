@@ -9,7 +9,6 @@ void __thiscall FSGSTy::SetInfo(FSGSTy *this,byte *param_1,uint param_2,byte *pa
 
 {
   byte bVar1;
-  code *pcVar2;
   CursorClassTy *this_00;
   FSGSTy *this_01;
   byte *pbVar3;
@@ -131,8 +130,8 @@ LAB_005a3b63:
               /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
               wsprintfA((LPSTR)local_88,"%2d/%2d/%4d",local_24._6_4_ & 0xffff,
                         local_24.wMonth,local_24.wYear);
-              FUN_006b4170((AnonShape_006B5B10_E0D06CF1 *)this_01->field_1AC0,0,0xe2,0x11b,0xb2,0x17
-                           ,0xff);
+              FUN_006b4170((RecoveredSourceFamily_dibcopy *)this_01->field_1AC0,0,0xe2,0x11b,0xb2,
+                           0x17,0xff);
               ccFntTy::SetSurf(this_01->field_1A73,(int)this_01->field_1AC0,0,0xe2,0x11b,0xb2,0x17);
               ccFntTy::WrStr(this_01->field_1A73,local_88,-1,-1,0);
             }

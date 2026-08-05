@@ -652,34 +652,33 @@ LAB_00485b29:
       /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
       if (((iVar4 != 0x16) && (iVar4 = (**(code **)(*this_00 + 0x2c))(), iVar4 != 0x25)) ||
          (*(int *)((int)this_00 + 0x732) != 1)) {
-        /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
-        param_2 = (int *)(uint)*(byte *)(this_00 + 9);
+        int scalar_param_2 = uint)*(byte *)(this_00 + 9; /* split integer lifetime from pointer-typed SSA storage */
         /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
         param_1 = (STGameObjC_sub_004845E0_param_1Enum)*(byte *)&this->field_0024;
         if (DAT_00808a8f != '\0') {
           bVar8 = g_bulkInitializedRecords_008087C7[param_1].field_0023 !=
-                  g_bulkInitializedRecords_008087C7[(int)param_2].field_0023;
+                  g_bulkInitializedRecords_008087C7[scalar_param_2].field_0023;
           return (((ushort)bVar8 - (ushort)bVar8) - (ushort)bVar8 & 5) + 2;
         }
         if (*(byte *)(this_00 + 9) != *(byte *)&this->field_0024) {
-          bVar7 = g_playerRelationMatrix[(int)param_2][param_1];
+          bVar7 = g_playerRelationMatrix[scalar_param_2][param_1];
           if ((bVar7 == 0) &&
-             (*(char *)((int)param_2 + (int)(g_playerRelationMatrix + param_1)) == '\0')) {
+             (*(char *)(scalar_param_2 + (int)(g_playerRelationMatrix + param_1)) == '\0')) {
             iVar4 = -2;
             goto cf_common_exit_00484B10;
           }
           if ((bVar7 == 1) &&
-             (*(char *)((int)param_2 + (int)(g_playerRelationMatrix + param_1)) == '\0')) {
+             (*(char *)(scalar_param_2 + (int)(g_playerRelationMatrix + param_1)) == '\0')) {
             iVar4 = -1;
             goto cf_common_exit_00484B10;
           }
           if ((bVar7 == 0) &&
-             (*(char *)((int)param_2 + (int)(g_playerRelationMatrix + param_1)) == '\x01')) {
+             (*(char *)(scalar_param_2 + (int)(g_playerRelationMatrix + param_1)) == '\x01')) {
             iVar4 = 1;
             goto cf_common_exit_00484B10;
           }
           if ((bVar7 == 1) &&
-             (*(char *)((int)param_2 + (int)(g_playerRelationMatrix + param_1)) == '\x01')) {
+             (*(char *)(scalar_param_2 + (int)(g_playerRelationMatrix + param_1)) == '\x01')) {
             iVar4 = 2;
             goto cf_common_exit_00484B10;
           }

@@ -10,7 +10,6 @@ void __thiscall HelpPanelTy::RCProc(HelpPanelTy *this,int param_1,uint param_2,c
 {
   char cVar1;
   HelpPanelTy_field_01A1State HVar2;
-  code *pcVar3;
   HelpPanelTy *this_00;
   int iVar4;
   UINT UVar5;
@@ -144,9 +143,9 @@ void __thiscall HelpPanelTy::RCProc(HelpPanelTy *this,int param_1,uint param_2,c
       uVar18 = thunk_FUN_00526ba0(local_c->field_0009,*(char *)local_c);
       pbVar8 = (byte *)FUN_0070b3a0((AnonShape_GLOBAL_0081175C_57F682DD *)this_00->field_0240,uVar18
                                    );
-      DibPut((AnonShape_006B5B10_E0D06CF1 *)this_00->field_0218,0xcd,local_8,'\x01',pbVar8);
+      DibPut((RecoveredSourceFamily_dibcopy *)this_00->field_0218,0xcd,local_8,'\x01',pbVar8);
       pbVar8 = local_10;
-      DibPut((AnonShape_006B5B10_E0D06CF1 *)this_00->field_0218,0xcb,local_8 - 2,'\x06',local_10);
+      DibPut((RecoveredSourceFamily_dibcopy *)this_00->field_0218,0xcb,local_8 - 2,'\x06',local_10);
       local_3c = 0xcb;
       local_34 = *(undefined4 *)(pbVar8 + 4);
       local_38 = local_8 - 2;
@@ -204,9 +203,9 @@ void __thiscall HelpPanelTy::RCProc(HelpPanelTy *this,int param_1,uint param_2,c
         uVar18 = thunk_FUN_00526ba0(local_c->field_000D,*(char *)local_c);
         pbVar8 = (byte *)FUN_0070b3a0((AnonShape_GLOBAL_0081175C_57F682DD *)this_00->field_023C,
                                       uVar18);
-        DibPut((AnonShape_006B5B10_E0D06CF1 *)this_00->field_0218,0xcd,local_8,'\x01',pbVar8);
+        DibPut((RecoveredSourceFamily_dibcopy *)this_00->field_0218,0xcd,local_8,'\x01',pbVar8);
         pbVar8 = local_10;
-        DibPut((AnonShape_006B5B10_E0D06CF1 *)this_00->field_0218,0xcd,local_8,'\x06',local_10);
+        DibPut((RecoveredSourceFamily_dibcopy *)this_00->field_0218,0xcd,local_8,'\x06',local_10);
         local_3c = 0xcd;
         local_34 = *(undefined4 *)(pbVar8 + 4);
         local_38 = local_8;
@@ -257,10 +256,10 @@ void __thiscall HelpPanelTy::RCProc(HelpPanelTy *this,int param_1,uint param_2,c
           uVar18 = thunk_FUN_00526ba0(*local_14,*(char *)local_c);
           pbVar8 = (byte *)FUN_0070b3a0((AnonShape_GLOBAL_0081175C_57F682DD *)this_00->field_0240,
                                         uVar18);
-          DibPut((AnonShape_006B5B10_E0D06CF1 *)this_00->field_0218,0xcd,local_8,'\x01',pbVar8);
+          DibPut((RecoveredSourceFamily_dibcopy *)this_00->field_0218,0xcd,local_8,'\x01',pbVar8);
           pbVar8 = local_10;
-          DibPut((AnonShape_006B5B10_E0D06CF1 *)this_00->field_0218,0xcb,local_8 - 2,'\x06',local_10
-                );
+          DibPut((RecoveredSourceFamily_dibcopy *)this_00->field_0218,0xcb,local_8 - 2,'\x06',
+                 local_10);
           local_3c = 0xcb;
           local_34 = *(undefined4 *)(pbVar8 + 4);
           local_38 = local_8 - 2;
@@ -375,8 +374,8 @@ void __thiscall HelpPanelTy::RCProc(HelpPanelTy *this,int param_1,uint param_2,c
         uVar18 = thunk_FUN_00526ba0(local_c->field_001F,*(char *)local_c);
         pbVar9 = (byte *)FUN_0070b3a0((AnonShape_GLOBAL_0081175C_57F682DD *)this_00->field_023C,
                                       uVar18);
-        DibPut((AnonShape_006B5B10_E0D06CF1 *)this_00->field_0218,0xcd,local_8,'\x01',pbVar9);
-        DibPut((AnonShape_006B5B10_E0D06CF1 *)this_00->field_0218,0xcd,local_8,'\x06',pbVar8);
+        DibPut((RecoveredSourceFamily_dibcopy *)this_00->field_0218,0xcd,local_8,'\x01',pbVar9);
+        DibPut((RecoveredSourceFamily_dibcopy *)this_00->field_0218,0xcd,local_8,'\x06',pbVar8);
         local_3c = 0xcd;
         local_34 = *(undefined4 *)(pbVar8 + 4);
         local_38 = local_8;
@@ -424,9 +423,10 @@ void __thiscall HelpPanelTy::RCProc(HelpPanelTy *this,int param_1,uint param_2,c
         uVar18 = thunk_FUN_00526ba0(local_c->field_0023,*(char *)local_c);
         pbVar8 = (byte *)FUN_0070b3a0((AnonShape_GLOBAL_0081175C_57F682DD *)this_00->field_0240,
                                       uVar18);
-        DibPut((AnonShape_006B5B10_E0D06CF1 *)this_00->field_0218,0xcd,local_8,'\x01',pbVar8);
+        DibPut((RecoveredSourceFamily_dibcopy *)this_00->field_0218,0xcd,local_8,'\x01',pbVar8);
         pbVar8 = local_10;
-        DibPut((AnonShape_006B5B10_E0D06CF1 *)this_00->field_0218,0xcb,local_8 - 2,'\x06',local_10);
+        DibPut((RecoveredSourceFamily_dibcopy *)this_00->field_0218,0xcb,local_8 - 2,'\x06',local_10
+              );
         local_3c = 0xcb;
         local_34 = *(undefined4 *)(pbVar8 + 4);
         local_38 = local_8 - 2;

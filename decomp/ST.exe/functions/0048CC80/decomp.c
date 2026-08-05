@@ -9,7 +9,6 @@ void __thiscall STBoatC::_AddDefenceShots(STBoatC *this,char param_1,short param
 
 {
   dword index;
-  code *pcVar1;
   STBoatC *pSVar2;
   dword dVar3;
   int errorCode;

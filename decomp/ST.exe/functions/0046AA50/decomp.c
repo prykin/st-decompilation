@@ -16,7 +16,6 @@
 int __thiscall STBoatC::BackLoadRC(STBoatC *this,STBoatC *param_1)
 
 {
-  code *pcVar1;
   undefined2 uVar2;
   uint uVar3;
   int iVar4;

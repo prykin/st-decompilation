@@ -8,7 +8,6 @@
 int __thiscall AiEventClassTy::InitData(AiEventClassTy *this,int *param_1)
 
 {
-  code *pcVar1;
   AiEventClassTy *pAVar2;
   int iVar3;
   DArrayTy *pDVar4;

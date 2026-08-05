@@ -8,7 +8,6 @@
 void __thiscall BldObjPanelTy::InitBldObjPanel(BldObjPanelTy *this)
 
 {
-  code *pcVar1;
   BldObjPanelTy *this_00;
   byte bVar2;
   DArrayTy *pDVar3;

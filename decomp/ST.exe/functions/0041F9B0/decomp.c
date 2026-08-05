@@ -18,7 +18,6 @@ STSprGameObjC::CheckRay
 {
   byte bVar1;
   byte bVar2;
-  code *pcVar3;
   byte bVar4;
   int iVar5;
   undefined4 uVar6;

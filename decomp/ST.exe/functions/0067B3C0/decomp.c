@@ -13,7 +13,6 @@ int __thiscall
 AiPlrClassTy::SetTech(AiPlrClassTy *this,int param_1,int param_2,int param_3,char param_4)
 
 {
-  code *pcVar1;
   AiPlrClassTy *pAVar2;
   int iVar3;
   int iVar4;

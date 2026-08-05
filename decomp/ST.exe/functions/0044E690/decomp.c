@@ -22,10 +22,9 @@ STBoatC * __thiscall STBoatC::STBoatC(STBoatC *this)
   this->field_01D5 = &VTable_00790700;
   this->vtable = &STBoatCVTable;
   puVar2 = (undefined4 *)&this->field_0x231;
-  memset(puVar2, 0, 0x8e); /* compiler bulk-zero initialization */
+  memset(puVar2, 0, 0x8f); /* compiler bulk-zero initialization */
   puVar2 = (undefined4 *)((byte *)puVar2 + 0x8c);
   iVar1 = 0;
-  *(undefined1 *)((int)puVar2 + 2) = 0;
   memset(&this->field_02C0, 0, 0x195); /* compiler bulk-zero initialization */
   iVar1 = 0;
   this->field_0455 = 0;

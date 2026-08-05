@@ -11,6 +11,7 @@ void __fastcall FUN_00567330(int param_1)
   undefined4 *puVar5;
   int *piVar6;
   uint uVar7;
+  uint uVar8;
   byte *pbVar9;
   char *pcVar10;
   char *pcVar11;
@@ -41,6 +42,7 @@ void __fastcall FUN_00567330(int param_1)
       pbVar9 = (byte *)(pcVar11 + -uVar7);
       pbVar12 = local_150;
       memmove(pbVar12, pbVar9, uVar7); /* compiler REP MOVS byte copy */
+      uVar8 = 0;
       uVar7 = 0xffffffff;
       pcVar10 = PTR_s_sounds_0079b028;
       do {

@@ -7,6 +7,6 @@
 undefined4 FUN_004e4410(byte *param_1)
 
 {
-  return g_packedRecords_A62x8[(int)param_1].field2304_0x99e;
+  return g_packedRecords_A62x8[(int)param_1].field1951_0x99e;
 }
 

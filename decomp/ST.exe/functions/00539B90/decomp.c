@@ -9,7 +9,6 @@ void __thiscall PlayPanelTy::InitPlayPanel(PlayPanelTy *this)
 
 {
   ushort **ppuVar1;
-  code *pcVar2;
   PlayPanelTy *this_00;
   ccFntTy *pcVar3;
   ushort *puVar4;
@@ -130,7 +129,7 @@ void __thiscall PlayPanelTy::InitPlayPanel(PlayPanelTy *this)
     puVar4 = cMf32::RecGet(g_cMf32_00806790,1,pCVar5,piVar22,iVar8);
     ppuVar1 = &this_00->field_01CD;
     *ppuVar1 = puVar4;
-    DibPut((AnonShape_006B5B10_E0D06CF1 *)this_00->field_0068,0,0,'\x01',(byte *)puVar4);
+    DibPut((RecoveredSourceFamily_dibcopy *)this_00->field_0068,0,0,'\x01',(byte *)puVar4);
     cMf32::RecMemFree(g_cMf32_00806790,(uint *)ppuVar1);
     if (DAT_00808783 != '\x03') {
       iVar8 = 1;
@@ -138,7 +137,7 @@ void __thiscall PlayPanelTy::InitPlayPanel(PlayPanelTy *this)
       pCVar5 = thunk_FUN_00571240("BKG_DIPLOMACYC",0);
       puVar4 = cMf32::RecGet(g_cMf32_00806790,1,pCVar5,piVar22,iVar8);
       *ppuVar1 = puVar4;
-      DibPut((AnonShape_006B5B10_E0D06CF1 *)this_00->field_0068,0x20,0xa4,'\x01',(byte *)puVar4);
+      DibPut((RecoveredSourceFamily_dibcopy *)this_00->field_0068,0x20,0xa4,'\x01',(byte *)puVar4);
       cMf32::RecMemFree(g_cMf32_00806790,(uint *)ppuVar1);
     }
     iVar8 = 1;

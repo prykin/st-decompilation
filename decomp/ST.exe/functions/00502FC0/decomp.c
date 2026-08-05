@@ -19,7 +19,6 @@ void __thiscall CPanelTy::Update2PanelSI(CPanelTy *this)
 {
   CPanelTy_field_0B99State *pCVar1;
   char cVar2;
-  code *pcVar3;
   CPanelTy *this_00;
   byte bVar4;
   int iVar5;

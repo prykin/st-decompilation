@@ -11,7 +11,6 @@ void __thiscall BldLabPanelTy::PaintUpdBut(BldLabPanelTy *this,AnonShape_004EF32
   uint uVar1;
   int *piVar2;
   BldLabPanelTy_field_027ADArray *pBVar3;
-  code *pcVar4;
   BldLabPanelTy *pBVar5;
   int iVar6;
   byte *pbVar7;
@@ -63,10 +62,10 @@ void __thiscall BldLabPanelTy::PaintUpdBut(BldLabPanelTy *this,AnonShape_004EF32
     pbVar7 = (byte *)FUN_0070b3a0(pAVar9,local_c);
     iVar8 = local_14;
     iVar6 = local_18;
-    DibPut((AnonShape_006B5B10_E0D06CF1 *)pBVar5->field_0068,local_18,local_14,'\x01',pbVar7);
+    DibPut((RecoveredSourceFamily_dibcopy *)pBVar5->field_0068,local_18,local_14,'\x01',pbVar7);
     if ((param_1->field_0014 == 3) && (element_027a != nullptr)) {
       pbVar7 = (byte *)FUN_0070b3a0(pBVar5->field_0190,9 - (uint)((char)element_027a->field_0008 != 0));
-      DibPut((AnonShape_006B5B10_E0D06CF1 *)pBVar5->field_0068,iVar6,iVar8,'\x06',pbVar7);
+      DibPut((RecoveredSourceFamily_dibcopy *)pBVar5->field_0068,iVar6,iVar8,'\x06',pbVar7);
     }
     Library::DKW::DDX::FUN_006b3640
               ((int *)g_ddxContext_008075A8,pBVar5->field_0060,0xffffffff,pBVar5->field_003C,

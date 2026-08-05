@@ -9,7 +9,6 @@ void __thiscall FSGSTy::SetChannelList(FSGSTy *this,int param_1,undefined4 *para
 
 {
   uint uVar1;
-  code *pcVar2;
   CursorClassTy *this_00;
   FSGSTy *this_01;
   int iVar3;

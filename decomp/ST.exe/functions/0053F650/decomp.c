@@ -8,7 +8,6 @@
 undefined4 __thiscall ProdPanelTy::SetPanel(ProdPanelTy *this,char param_1)
 
 {
-  code *pcVar1;
   ProdPanelTy *this_00;
   int iVar2;
   int iVar3;

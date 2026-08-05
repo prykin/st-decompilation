@@ -11,7 +11,6 @@
 void __thiscall Visible::PrepareAfterSave(Visible *this,ushort *param_1)
 
 {
-  code *pcVar1;
   Visible *pVVar2;
   int errorCode;
   uint uVar3;

@@ -12,7 +12,6 @@ undefined4 __thiscall STBoatC::Bring(STBoatC *this,STBoatC *param_1)
   short sVar2;
   short sVar3;
   STBoatC_field_0687State SVar4;
-  code *pcVar5;
   ushort uVar6;
   int iVar7;
   undefined4 uVar8;

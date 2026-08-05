@@ -9,7 +9,6 @@ void __thiscall CursorClassTy::DrawSprite(CursorClassTy *this,int param_1,int pa
 
 {
   SpriteClassTy *pSVar1;
-  code *pcVar2;
   DWORD DVar3;
   CursorClassTy *pCVar4;
   int iVar5;

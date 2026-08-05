@@ -13,7 +13,6 @@ int __thiscall STBoatC::Recharge(STBoatC *this,int param_1)
   short sVar3;
   short sVar4;
   STWorldObject *pSVar5;
-  code *pcVar6;
   STBoatCVTable *pSVar7;
   int iVar8;
   int iVar9;

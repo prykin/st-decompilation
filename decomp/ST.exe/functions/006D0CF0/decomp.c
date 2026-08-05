@@ -3,12 +3,16 @@
    Evidence: exact anonymous structure fingerprint shared across functions
 
    [STPrototypeApplier] Propagated parameter 4.
-   Evidence: 006D0CF0 -> 006CEBE0 @ 006D0E8F | 006D0CF0 -> 006D13C0 @ 006D0ECE */
+   Evidence: 006D0CF0 -> 006CEBE0 @ 006D0E8F | 006D0CF0 -> 006D13C0 @ 006D0ECE
+
+   [STTypeFamilyApplier] SOURCE_FUNCTION_FAMILY.
+   Evidence: one script-owned pointer shape is anchored by one library source basename, multiple
+   semantic function names, and exact first-argument call flow */
 
 undefined4
 FUN_006d0cf0(AnonShape_006D0CF0_F5F86399 *param_1,int param_2,int param_3,
-            AnonShape_006B5B10_E0D06CF1 *param_4,char *param_5,int param_6,int param_7,int param_8,
-            int param_9,byte param_10)
+            RecoveredSourceFamily_dibcopy *param_4,char *param_5,int param_6,int param_7,int param_8
+            ,int param_9,byte param_10)
 
 {
   undefined1 *puVar1;
@@ -70,7 +74,7 @@ FUN_006d0cf0(AnonShape_006D0CF0_F5F86399 *param_1,int param_2,int param_3,
     local_48 = param_7 + (local_30 - iVar4);
     local_44 = local_2c;
     local_40 = local_28;
-    iVar2 = FUN_006d0680((AnonShape_006B5B10_E0D06CF1 *)&param_1->field_0x4c,&local_34,&local_20,
+    iVar2 = FUN_006d0680((RecoveredSourceFamily_dibcopy *)&param_1->field_0x4c,&local_34,&local_20,
                          param_4,&local_4c,local_3c);
     if (iVar2 != 0) {
       if ((int)local_3c[0] < 0) {

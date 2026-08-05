@@ -8,7 +8,6 @@
 void __thiscall FSGSTy::CloseButtons(FSGSTy *this)
 
 {
-  code *pcVar1;
   FSGSTy *this_00;
   int errorCode;
   int iVar2;

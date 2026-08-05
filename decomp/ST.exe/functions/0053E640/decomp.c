@@ -8,7 +8,6 @@
 void __thiscall SpecPanelTy::DonePanel(SpecPanelTy *this)
 
 {
-  code *pcVar1;
   SpecPanelTy *pSVar2;
   int errorCode;
   int iVar3;

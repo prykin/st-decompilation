@@ -14,10 +14,9 @@ int __thiscall MTaskTy::GetMessage(MTaskTy *this,STMessage *message)
 {
   char cVar1;
   STMessageId SVar2;
-  AnonShape_006B5B10_E0D06CF1 *pAVar3;
+  RecoveredSourceFamily_dibcopy *pRVar3;
   ccFntTy *pcVar4;
   AnonPointee_MTaskTy_06BF *pAVar5;
-  code *pcVar6;
   MTaskTy *this_00;
   byte bVar7;
   DWORD DVar8;
@@ -356,8 +355,8 @@ LAB_005e496b:
         local_c = (message->arg0).ptr;
         local_24 = (undefined4 *)0x1f52;
         local_1c = (AnonShape_005E4570_1DAE8C90 *)(&local_18->field_0x683 + *local_c * 0xc);
-        pAVar3 = *(AnonShape_006B5B10_E0D06CF1 **)local_1c;
-        local_8 = (AnonShape_005E4570_F1672769 *)pAVar3->field_0008;
+        pRVar3 = *(RecoveredSourceFamily_dibcopy **)local_1c;
+        local_8 = (AnonShape_005E4570_F1672769 *)pRVar3->field_0008;
         local_20 = STReplaceLowByte((uint32_t)(local_20), (uint8_t)((-(local_1c->field_000A != '\x01') & 0xecU) + 0x2c));
         if (local_c[1] == 3) {
           local_14 = (uint *)STReplaceLowByte((uint32_t)(local_14), (uint8_t)((-(local_1c->field_0x8 != '\x01') & 0xfeU) + 3));
@@ -366,12 +365,12 @@ LAB_005e496b:
           local_14 = (uint *)(STReplaceLowByte((uint32_t)(local_14), (uint8_t)((local_1c->field_0x8 != '\x01') + -1)) &
                              0xffffff02);
         }
-        local_10 = pAVar3[1].field_0004;
+        local_10 = pRVar3[1].field_0004;
         if (local_10 == 0) {
-          local_10 = ((uint)pAVar3->field_000E * pAVar3->field_0004 + 0x1f >> 3 & 0x1ffffffc) *
+          local_10 = ((uint)pRVar3->field_000E * pRVar3->field_0004 + 0x1f >> 3 & 0x1ffffffc) *
                      (int)local_8;
         }
-        puVar11 = (undefined4 *)FUN_006b4fa0((int *)pAVar3);
+        puVar11 = (undefined4 *)FUN_006b4fa0((int *)pRVar3);
         for (uVar18 = local_10 >> 2; uVar18 != 0; uVar18 = uVar18 - 1) {
           *puVar11 = 0xffffffff;
           puVar11 = puVar11 + 1;
@@ -380,13 +379,13 @@ LAB_005e496b:
           *(undefined1 *)puVar11 = 0xff;
           puVar11 = (undefined4 *)((int)puVar11 + 1);
         }
-        FUN_006c7610(pAVar3,0,0,0,0x16,(uint)local_8,2,0);
+        FUN_006c7610(pRVar3,0,0,0,0x16,(uint)local_8,2,0);
         if ((local_c[1] == 1) || ((local_c[1] == 3 && (local_c[2] != 0)))) {
           pbVar12 = (byte *)FUN_0070b3a0((AnonShape_GLOBAL_0081175C_57F682DD *)this_00->field_0081,
                                          (uint)(local_1c->field_000B == '\x01'));
-          DibPut(pAVar3,2,(int)&local_8[-1].field_0x1d4 / 2,'\x06',pbVar12);
+          DibPut(pRVar3,2,(int)&local_8[-1].field_0x1d4 / 2,'\x06',pbVar12);
         }
-        FUN_006c7570(pAVar3,0,0,0,(undefined4 *)0x16,(int)local_8,2,(byte)local_20);
+        FUN_006c7570(pRVar3,0,0,0,(undefined4 *)0x16,(int)local_8,2,(byte)local_20);
         iVar9 = *local_c;
         if (iVar9 == 1) {
           puVar11 = (undefined4 *)0x1f47;
@@ -400,7 +399,7 @@ LAB_005e496b:
             puVar11 = (undefined4 *)0x1f49;
           }
         }
-        ccFntTy::SetSurf(this_00->field_008D,(int)pAVar3,0,0x1b,0,pAVar3->field_0004 + -0x1b,
+        ccFntTy::SetSurf(this_00->field_008D,(int)pRVar3,0,0x1b,0,pRVar3->field_0004 + -0x1b,
                          (int)local_8);
         uVar18 = (uint)local_14 & 0xff;
         iVar22 = -1;
@@ -455,8 +454,8 @@ LAB_005e496b:
             *(undefined1 *)puVar14 = 0xff;
             puVar14 = (undefined4 *)((int)puVar14 + 1);
           }
-          FUN_006c7610((AnonShape_006B5B10_E0D06CF1 *)pAVar5,0,0,0,(uint)local_24,local_10,2,0);
-          FUN_006c7570((AnonShape_006B5B10_E0D06CF1 *)pAVar5,0,0,0,puVar11,local_10,2,
+          FUN_006c7610((RecoveredSourceFamily_dibcopy *)pAVar5,0,0,0,(uint)local_24,local_10,2,0);
+          FUN_006c7570((RecoveredSourceFamily_dibcopy *)pAVar5,0,0,0,puVar11,local_10,2,
                        (-(this_00->field_06C9 != '\x01') & 0xecU) + 0x2c);
           uVar15 = (uint)(message->arg0).words.high;
           uVar18 = uVar15;
@@ -502,21 +501,21 @@ LAB_005e496b:
   case MESS_SHARED_6334|MESS_ID_CREATE:
     if (((-1 < (int)local_18->field_0484) && (message != nullptr)) &&
        ((local_8 = (message->arg2).ptr, local_8 != nullptr &&
-        (pAVar3 = (AnonShape_006B5B10_E0D06CF1 *)local_18->field_06CB,
-        pAVar3 != nullptr)))) {
-      local_24 = (undefined4 *)pAVar3->field_0004;
+        (pRVar3 = (RecoveredSourceFamily_dibcopy *)local_18->field_06CB,
+        pRVar3 != nullptr)))) {
+      local_24 = (undefined4 *)pRVar3->field_0004;
       pcVar4 = local_18->field_008D;
-      local_10 = pAVar3->field_0008;
+      local_10 = pRVar3->field_0008;
       if (pcVar4->field_00A0 != 0) {
         FUN_00710790((AnonShape_00710790_4CBB90D4 *)pcVar4);
       }
-      local_14 = (uint *)pAVar3[1].field_0004;
+      local_14 = (uint *)pRVar3[1].field_0004;
       local_20 = *(int *)&pcVar4->field_0x8a;
       if (local_14 == nullptr) {
-        local_14 = (uint *)(((uint)pAVar3->field_000E * pAVar3->field_0004 + 0x1f >> 3 & 0x1ffffffc)
-                           * pAVar3->field_0008);
+        local_14 = (uint *)(((uint)pRVar3->field_000E * pRVar3->field_0004 + 0x1f >> 3 & 0x1ffffffc)
+                           * pRVar3->field_0008);
       }
-      puVar14 = (undefined4 *)FUN_006b4fa0((int *)pAVar3);
+      puVar14 = (undefined4 *)FUN_006b4fa0((int *)pRVar3);
       puVar11 = local_24;
       for (uVar18 = (uint)local_14 >> 2; uVar18 != 0; uVar18 = uVar18 - 1) {
         *puVar14 = 0xffffffff;
@@ -526,8 +525,8 @@ LAB_005e496b:
         *(undefined1 *)puVar14 = 0xff;
         puVar14 = (undefined4 *)((int)puVar14 + 1);
       }
-      FUN_006c7610(pAVar3,0,0,0,(uint)local_24,local_10,2,0);
-      FUN_006c7570(pAVar3,0,0,0,puVar11,local_10,2,(-(this_00->field_06D5 != '\x01') & 0xecU) + 0x2c
+      FUN_006c7610(pRVar3,0,0,0,(uint)local_24,local_10,2,0);
+      FUN_006c7570(pRVar3,0,0,0,puVar11,local_10,2,(-(this_00->field_06D5 != '\x01') & 0xecU) + 0x2c
                   );
       uVar15 = (uint)(message->arg0).words.high;
       uVar18 = uVar15;
@@ -540,7 +539,7 @@ LAB_005e496b:
             local_14 = nullptr;
           }
           if (local_14 != nullptr) {
-            ccFntTy::SetSurf(this_00->field_0089,(int)pAVar3,0,0xf,
+            ccFntTy::SetSurf(this_00->field_0089,(int)pRVar3,0,0xf,
                              (uVar18 - uVar15) * local_20 + 0xf,local_8->field_002C,local_20);
             ccFntTy::WrStr(this_00->field_0089,local_14,0,-1,
                            (-(uint)(this_00->field_06D3 != '\x01') & 0xfffffffe) + 2);

@@ -11,7 +11,6 @@
 uint __thiscall STGroupBoatC::GrpPatrol(STGroupBoatC *this,int param_1)
 
 {
-  code *pcVar1;
   byte bVar2;
   int iVar3;
   short *psVar4;
@@ -171,13 +170,13 @@ uint __thiscall STGroupBoatC::GrpPatrol(STGroupBoatC *this,int param_1)
   }
   local_2c = (iVar9 - local_c) + 1;
   local_20 = (iVar3 - local_8) + CASE_1;
-  local_34 = (AnonShape_00413AF0_B6B4EE9A *)(local_20 * local_2c);
+  int scalar_local_34 = local_20 * local_2c; /* split integer lifetime from pointer-typed SSA storage */
   local_14 = 0;
   do {
     local_10 = 0;
     psVar4 = g_pathingGrid.cells +
              iVar15 * local_8 + local_c + (int)g_pathingGrid.planeStride * (int)(short)local_14;
-    local_24 = g_pathingScratchGrid.cells + (int)(short)local_14 * (int)local_34;
+    local_24 = g_pathingScratchGrid.cells + (int)(short)local_14 * scalar_local_34;
     if (0 < (int)local_20) {
       do {
         psVar12 = psVar4;

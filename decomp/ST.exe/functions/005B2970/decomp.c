@@ -8,7 +8,6 @@
 void __thiscall MainMenuTy::InitMainMenu(MainMenuTy *this,char param_1)
 
 {
-  code *pcVar1;
   CursorClassTy *this_00;
   MainMenuTy *this_01;
   int iVar2;

@@ -9,7 +9,6 @@ void __thiscall WaitTy::CreateCtrls(WaitTy *this)
 
 {
   StartSystemTy *this_00;
-  code *pcVar1;
   WaitTy *pWVar2;
   int iVar3;
   int iVar4;

@@ -121,7 +121,7 @@ switchD_004806bc_caseD_a:
     break;
   /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
   case 0x15:
-    puVar5 = (undefined4 *)(((8 - (int)*(short *)((int)param_1 + 0x6c) / 0x2d) * 0x14) % 0xa0);
+    int scalar_puVar5 = ((8 - (int)*(short *)((int)param_1 + 0x6c) / 0x2d) * 0x14) % 0xa0; /* split integer lifetime from pointer-typed SSA storage */
     iVar4 = ((4 - DAT_008073fc) * 0x28) % 0xa0;
     /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
     iVar2 = *(int *)((int)param_1 + 0x822) + 1;
@@ -130,13 +130,13 @@ switchD_004806bc_caseD_a:
       *(undefined4 *)((int)param_1 + 0x822) = 0;
     }
     /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-    local_8 = (int)puVar5 + *(int *)((int)param_1 + 0x822) + iVar4;
-    local_c = puVar5;
+    local_8 = scalar_puVar5 + *(int *)((int)param_1 + 0x822) + iVar4;
+    int scalar_local_c = scalar_puVar5;
     uVar3 = thunk_FUN_004ac910(this,'\x0e');
     if (local_8 != uVar3) {
       STT3DSprC::SetCurFase(this,'\x0e',local_8);
       /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-      STT3DSprC::SetCurFase(this,'\f',(int)puVar5 + *(int *)((int)param_1 + 0x822) + iVar4);
+      STT3DSprC::SetCurFase(this,'\f',scalar_puVar5 + *(int *)((int)param_1 + 0x822) + iVar4);
       iVar2 = STT3DSprC::ShowCurFase(this,'\x0e');
       if (iVar2 != 0) {
         return 0xffffffff;
@@ -146,7 +146,7 @@ switchD_004806bc_caseD_a:
         return 0xffffffff;
       }
       /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-      iVar2 = STT3DSprC::SetCurShad(this,'\x0e',*(int *)((int)param_1 + 0x822) + (int)local_c);
+      iVar2 = STT3DSprC::SetCurShad(this,'\x0e',*(int *)((int)param_1 + 0x822) + scalar_local_c);
       if (iVar2 != 0) {
         return 0xffffffff;
       }

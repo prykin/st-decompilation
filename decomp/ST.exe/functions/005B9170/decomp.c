@@ -8,7 +8,6 @@
 void __thiscall MMsgTy::CloseSprBut(MMsgTy *this)
 
 {
-  code *pcVar1;
   MMsgTy *this_00;
   int errorCode;
   uint uVar2;

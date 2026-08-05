@@ -12,7 +12,6 @@ void __thiscall FSGSTy::ChangePlayer(FSGSTy *this,byte *param_1)
 
 {
   byte bVar1;
-  code *pcVar2;
   int iVar3;
   byte *pbVar4;
   int iVar5;

@@ -889,12 +889,10 @@ void __thiscall SettMapMTy::sub_005C29B0(SettMapMTy *this,char param_1)
     }
   }
   puVar12 = &local_2c8;
-  memset(puVar12, 0, 0x1f8); /* compiler bulk-zero initialization */
+  memset(puVar12, 0, 0x1fb); /* compiler bulk-zero initialization */
   puVar12 = (undefined4 *)((byte *)puVar12 + 0x1f8);
   iVar5 = 0;
   uVar18 = this_01->field_0008;
-  *(undefined2 *)puVar12 = 0;
-  *(undefined1 *)((int)puVar12 + 2) = 0;
   SVar1 = this_01->field_1E26;
   local_205 = 0x2340;
   local_1f4 = 2;

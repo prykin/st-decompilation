@@ -8,7 +8,6 @@
 void __thiscall IntercomPanelTy::PreInitIntercomPanel(IntercomPanelTy *this)
 
 {
-  code *pcVar1;
   IntercomPanelTy *pIVar2;
   int iVar3;
   int iVar4;

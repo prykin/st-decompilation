@@ -8,7 +8,6 @@
 undefined4 __thiscall STTorpC::ClearDangerous(STTorpC *this,int param_1,uint param_2)
 
 {
-  code *pcVar1;
   STTorpC *pSVar2;
   int errorCode;
   int iVar3;

@@ -16,7 +16,6 @@ STAllPlayersC::SelectObjects
 
 {
   int iVar1;
-  code *pcVar2;
   byte objPtr;
   uint uVar3;
   int iVar4;
@@ -42,7 +41,7 @@ STAllPlayersC::SelectObjects
   /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
   case CASE_0:
     param_3 = 0;
-    iVar8 = g_packedRecords_A62x8[uVar3].field6_0x9;
+    iVar8 = g_packedRecords_A62x8[uVar3].field3_0x9;
     iVar1 = *(int *)(iVar8 + 0xc);
     if (0 < iVar1) {
       do {
@@ -85,7 +84,7 @@ STAllPlayersC::SelectObjects
   /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
   case CASE_2:
     param_3 = 0;
-    iVar8 = g_packedRecords_A62x8[uVar3].field6_0x9;
+    iVar8 = g_packedRecords_A62x8[uVar3].field3_0x9;
     iVar1 = *(int *)(iVar8 + 0xc);
     if (0 < iVar1) {
       do {
@@ -109,7 +108,7 @@ STAllPlayersC::SelectObjects
   /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
   case CASE_3:
     param_3 = 0;
-    iVar8 = g_packedRecords_A62x8[uVar3].field6_0x9;
+    iVar8 = g_packedRecords_A62x8[uVar3].field3_0x9;
     iVar1 = *(int *)(iVar8 + 0xc);
     if (0 < iVar1) {
       do {
@@ -130,7 +129,7 @@ STAllPlayersC::SelectObjects
   /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
   case CASE_4:
     param_3 = 0;
-    iVar8 = g_packedRecords_A62x8[uVar3].field6_0x9;
+    iVar8 = g_packedRecords_A62x8[uVar3].field3_0x9;
     iVar1 = *(int *)(iVar8 + 0xc);
     if (0 < iVar1) {
       do {
@@ -151,7 +150,7 @@ STAllPlayersC::SelectObjects
   /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
   case CASE_5:
     param_3 = 0;
-    iVar8 = g_packedRecords_A62x8[uVar3].field6_0x9;
+    iVar8 = g_packedRecords_A62x8[uVar3].field3_0x9;
     iVar1 = *(int *)(iVar8 + 0xc);
     if (0 < iVar1) {
       do {
@@ -244,8 +243,8 @@ STAllPlayersC::SelectObjects
     DArrayDestroy(local_8);
     return;
   }
-  if (g_packedRecords_A62x8[uVar3].field448_0x203 == 0) {
-    iVar8 = g_packedRecords_A62x8[uVar3].field332_0x163;
+  if (g_packedRecords_A62x8[uVar3].field200_0x203 == 0) {
+    iVar8 = g_packedRecords_A62x8[uVar3].field96_0x163;
     if (iVar8 != 0) {
       if (iVar8 == 0x3c) {
         iVar8 = CheckTmps(objPtr,0,0x3c,objPtr,local_8,0);
@@ -255,7 +254,7 @@ STAllPlayersC::SelectObjects
         }
         if (-1 < iVar8) goto cf_common_exit_0044BD53;
         PushTV(objPtr,0);
-        if (g_packedRecords_A62x8[uVar3].field338_0x177 == uVar3) {
+        if (g_packedRecords_A62x8[uVar3].field105_0x177 == uVar3) {
           CalibrateTmp(this,objPtr,0,1,&local_8->flags,(int *)&local_10,nullptr,nullptr);
           ResetActivityFromObjs(this,uVar3,0x3c,local_10,0,0);
           DArrayDestroy(local_10);
@@ -288,7 +287,7 @@ STAllPlayersC::SelectObjects
     ActivateTV(this,objPtr,0,iVar8);
   }
   else {
-    if (g_packedRecords_A62x8[uVar3].field448_0x203 != 1) {
+    if (g_packedRecords_A62x8[uVar3].field200_0x203 != 1) {
       iVar8 = ReportDebugMessage("E:\\__titans\\wlad\\to_allpl.cpp",0x317d,0,0,"%s",
                                  "STAllPlayersC::SelectObjects GAMETYPE_BOAT wrong panel number");
       if (iVar8 != 0) {
@@ -296,9 +295,9 @@ STAllPlayersC::SelectObjects
       }
       goto cf_common_exit_0044BD53;
     }
-    g_packedRecords_A62x8[uVar3].field448_0x203 = 0;
+    g_packedRecords_A62x8[uVar3].field200_0x203 = 0;
     ResetActivityFromTmp(this,objPtr,1,0,0);
-    iVar8 = g_packedRecords_A62x8[uVar3].field332_0x163;
+    iVar8 = g_packedRecords_A62x8[uVar3].field96_0x163;
     if (iVar8 == 0) {
       iVar8 = CheckTmps(objPtr,0,0x3c,objPtr,local_8,0);
       if (0 < iVar8) {
@@ -334,7 +333,7 @@ cf_common_exit_0044BD3D:
     AddObjsToTmp(this,uVar3,0,0,local_8);
   }
 LAB_0044bd49:
-  g_packedRecords_A62x8[uVar3].field332_0x163 = 0x3c;
+  g_packedRecords_A62x8[uVar3].field96_0x163 = 0x3c;
 cf_common_exit_0044BD53:
   DArrayDestroy(local_8);
   SelfCheckObjControl(this);

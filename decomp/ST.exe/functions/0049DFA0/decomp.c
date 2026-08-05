@@ -8,7 +8,6 @@
 undefined4 __thiscall STGroupBoatC::GrpLoadObj(STGroupBoatC *this,int param_1)
 
 {
-  code *pcVar1;
   STGroupBoatC *pSVar2;
   int iVar3;
   dword dVar4;

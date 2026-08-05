@@ -10,7 +10,6 @@ void __thiscall ChooseMapTy::DoneChooseMap(ChooseMapTy *this)
 {
   ChooseMapTy_field_1A5FState CVar1;
   MMsgTy *this_00;
-  code *pcVar2;
   ChooseMapTy *pCVar3;
   int iVar4;
   int iVar5;

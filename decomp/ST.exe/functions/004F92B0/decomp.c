@@ -9,7 +9,6 @@ void __thiscall CPanelTy::OutText(CPanelTy *this,int *param_1,undefined4 param_2
 
 {
   ushort *puVar1;
-  code *pcVar2;
   CPanelTy *pCVar3;
   int errorCode;
   uint *puVar4;

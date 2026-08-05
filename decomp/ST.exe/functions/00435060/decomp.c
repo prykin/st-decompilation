@@ -10,7 +10,6 @@ void __thiscall STAllPlayersC::SelfCheckObjControl(STAllPlayersC *this)
 {
   int iVar1;
   int iVar2;
-  code *pcVar3;
   int iVar4;
   STGameObjC *pSVar5;
   uint uVar6;

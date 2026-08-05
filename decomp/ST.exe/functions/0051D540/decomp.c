@@ -10,7 +10,6 @@ void __thiscall HelpPanelTy::TipProc(HelpPanelTy *this,void *param_1,int param_2
 {
   char cVar1;
   HelpPanelTy_field_01A1State HVar2;
-  code *pcVar3;
   HelpPanelTy *this_00;
   char *pcVar4;
   int uVar10;
@@ -123,7 +122,7 @@ LAB_0051d689:
   pCVar5 = FUN_006f2c00(pCVar5,iVar8,uVar9);
   local_8 = cMf32::RecGet(g_cMf32_00806790,1,pCVar5,piVar13,iVar14);
   uVar9 = uVar10 + 10;
-  DibPut((AnonShape_006B5B10_E0D06CF1 *)this_00->field_0218,0x50,uVar9,'\x01',(byte *)local_8);
+  DibPut((RecoveredSourceFamily_dibcopy *)this_00->field_0218,0x50,uVar9,'\x01',(byte *)local_8);
   local_18 = *(int *)(local_8 + 2);
   ccFntTy::SetSurf(this_00->field_01E0,(int)this_00->field_0218,0,local_18 + 0x5f,uVar9,
                    0x13d - local_18,0xf);

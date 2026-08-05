@@ -41,7 +41,7 @@ void FUN_006f4e70(byte *param_1,int param_2,uint *param_3,int param_4,int param_
         if ((uVar5 & 0x80) == 0) {
           do {
             param_1 = param_1 + uVar5;
-            param_3 = (uint *)((int)param_3 + uVar5 * 2);
+            int scalar_param_3 = (int)param_3 + uVar5 * 2; /* split integer lifetime from pointer-typed SSA storage */
             pbVar10 = pbVar9 + -uVar5;
             if (pbVar10 == nullptr || (int)pbVar9 < (int)uVar5) goto LAB_006f4f0f;
             bVar4 = *param_6;
@@ -55,7 +55,7 @@ void FUN_006f4e70(byte *param_1,int param_2,uint *param_3,int param_4,int param_
           pbVar10 = pbVar10 + -(uVar5 & 0x3f);
           uVar5 = uVar5 & 0x3f;
           do {
-            if (*(uint *)((int)param_3 + -2) < uVar7) {
+            if (*(uint *)(scalar_param_3 + -2) < uVar7) {
               DAT_00857000 = '\x01';
               goto LAB_006f4f9d;
             }

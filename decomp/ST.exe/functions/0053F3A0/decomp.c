@@ -9,7 +9,6 @@ void __thiscall ProdPanelTy::SwitchPanel(ProdPanelTy *this,int param_1)
 
 {
   short sVar1;
-  code *pcVar2;
   ProdPanelTy *pPVar3;
   int errorCode;
   int iVar4;

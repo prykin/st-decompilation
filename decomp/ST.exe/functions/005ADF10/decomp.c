@@ -8,7 +8,6 @@
 void __thiscall ChooseMapTy::CloseButtons(ChooseMapTy *this)
 
 {
-  code *pcVar1;
   ChooseMapTy *this_00;
   int errorCode;
   int iVar2;

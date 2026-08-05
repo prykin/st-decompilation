@@ -8,7 +8,6 @@
 undefined4 __thiscall PlayPanelTy::SetPanel(PlayPanelTy *this,char param_1)
 
 {
-  code *pcVar1;
   PlayPanelTy *this_00;
   int iVar2;
   int iVar3;

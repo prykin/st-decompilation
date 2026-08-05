@@ -4,7 +4,6 @@
 void __cdecl FUN_006a5be0(int param_1)
 
 {
-  code *pcVar1;
   byte bVar2;
   int iVar3;
   uint uVar4;

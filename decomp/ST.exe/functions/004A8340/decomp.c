@@ -11,7 +11,6 @@ STGroupBoatC::GetDepotForAttack
           short *param_5,short *param_6)
 
 {
-  code *pcVar1;
   int iVar2;
   STGameObjC *pSVar3;
   int iVar4;

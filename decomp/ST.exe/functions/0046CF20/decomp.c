@@ -13,7 +13,6 @@
 uint __thiscall STBoatC::CreateGame(STBoatC *this,int *param_1)
 
 {
-  code *pcVar1;
   short sVar2;
   short sVar3;
   short sVar4;

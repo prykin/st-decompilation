@@ -16,7 +16,6 @@ int __thiscall STDcResourcC::GetMessage(STDcResourcC *this,STMessage *message)
   short sVar1;
   short sVar2;
   STMessageId SVar3;
-  code *pcVar4;
   bool bVar5;
   VisibleClassTy *pVVar6;
   STSprGameObjC *this_00;
@@ -121,7 +120,7 @@ int __thiscall STDcResourcC::GetMessage(STDcResourcC *this,STMessage *message)
       g_currentExceptionFrame = local_68.previous;
       return 0;
     }
-    sVar8 = *(short *)&this_00->field_0x245;
+    sVar8 = *(short *)((int)&this_00->field_0244 + 1);
     sVar1 = *(short *)&this_00->field_0x24d;
     sVar2 = *(short *)&this_00->field_0x249;
     if ((((sVar8 < 0) || (g_worldGrid.sizeX <= sVar8)) || (sVar2 < 0)) ||
@@ -165,7 +164,7 @@ int __thiscall STDcResourcC::GetMessage(STDcResourcC *this,STMessage *message)
       if (8 < iVar13) {
         iVar12 = local_14;
       }
-      local_20 = *(int *)((int)&DAT_007cb0b8 + iVar12) + *(int *)&this_00->field_0x245;
+      local_20 = *(int *)((int)&DAT_007cb0b8 + iVar12) + *(int *)((int)&this_00->field_0244 + 1);
       STT3DSprC::sub_004AD3C0
                 (*(STT3DSprC **)(*(int *)&this_00->field_0x26d + (int)local_18 * 4),
                  (float)local_20 * _DAT_007904f8 + _DAT_007904f4,
@@ -252,7 +251,7 @@ int __thiscall STDcResourcC::GetMessage(STDcResourcC *this,STMessage *message)
         /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
         uVar14 = extraout_var_04;
       }
-      sVar8 = *(short *)&this_00->field_0x245;
+      sVar8 = *(short *)((int)&this_00->field_0244 + 1);
       sVar1 = *(short *)&this_00->field_0x249;
       /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
       local_14 = CONCAT22(uVar14,sVar1);
@@ -286,8 +285,8 @@ int __thiscall STDcResourcC::GetMessage(STDcResourcC *this,STMessage *message)
       }
       *(uint *)&this_00->field_0x261 = *(uint *)&this_00->field_0x261 | 1;
       this_00->field_0259 = *(STSprGameObjC_field_0259State *)&this_00->field_0x251;
-      thunk_FUN_00417a20(this_00,*(short *)&this_00->field_0x245,*(short *)&this_00->field_0x249,
-                         *(short *)&this_00->field_0x24d,0);
+      thunk_FUN_00417a20(this_00,*(short *)((int)&this_00->field_0244 + 1),
+                         *(short *)&this_00->field_0x249,*(short *)&this_00->field_0x24d,0);
       iVar9 = CreateRes((STDcResourcC *)this_00);
       if (iVar9 == 0xffff) {
         iVar9 = 0x85;
@@ -305,7 +304,7 @@ int __thiscall STDcResourcC::GetMessage(STDcResourcC *this,STMessage *message)
       *(undefined4 *)&this_00->field_0x26d = 0;
       *(undefined4 *)&this_00->field_0x261 = 4;
       STAllPlayersC::RestoreGObjData((STAllPlayersC *)this_00,(undefined4 *)((int)local_18 + 0x46));
-      sVar8 = *(short *)&this_00->field_0x245;
+      sVar8 = *(short *)((int)&this_00->field_0244 + 1);
       sVar1 = *(short *)&this_00->field_0x249;
       /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
       local_14 = CONCAT22(extraout_var_03,sVar1);
@@ -343,8 +342,8 @@ int __thiscall STDcResourcC::GetMessage(STDcResourcC *this,STMessage *message)
       }
       *(uint *)&this_00->field_0x261 = *(uint *)&this_00->field_0x261 | 1;
       this_00->field_0259 = *(STSprGameObjC_field_0259State *)&this_00->field_0x251;
-      thunk_FUN_00417a20(this_00,*(short *)&this_00->field_0x245,*(short *)&this_00->field_0x249,
-                         *(short *)&this_00->field_0x24d,0);
+      thunk_FUN_00417a20(this_00,*(short *)((int)&this_00->field_0244 + 1),
+                         *(short *)&this_00->field_0x249,*(short *)&this_00->field_0x24d,0);
       iVar9 = CreateRes((STDcResourcC *)this_00);
       if (iVar9 == 0xffff) {
         iVar9 = 0xb1;
@@ -360,14 +359,16 @@ cf_common_exit_0057E624:
       return 0;
     }
     thunk_FUN_004d84e0((int)this_00);
-    *(undefined2 *)&this_00->field_0x47 = *(undefined2 *)&this_00->field_0x245;
-    *(undefined2 *)&this_00->field_0x5b = *(undefined2 *)&this_00->field_0x245;
+    uVar14 = *(undefined2 *)((int)&this_00->field_0244 + 1);
+    *(undefined2 *)&this_00->field_0x47 = uVar14;
+    *(undefined2 *)&this_00->field_0x5b = uVar14;
     *(undefined2 *)&this_00->field_0x49 = *(undefined2 *)&this_00->field_0x249;
     *(undefined2 *)&this_00->field_0x5d = *(undefined2 *)&this_00->field_0x249;
     *(undefined2 *)&this_00->field_0x4b = *(undefined2 *)&this_00->field_0x24d;
     *(undefined2 *)&this_00->field_0x5f = *(undefined2 *)&this_00->field_0x24d;
+    sVar8 = *(short *)((int)&this_00->field_0244 + 1);
     *(short *)&this_00->field_0x45 = *(short *)&this_00->field_0x24d * 200 + 100;
-    *(short *)&this_00->field_0x41 = *(short *)&this_00->field_0x245 * 0xc9 + 100;
+    *(short *)&this_00->field_0x41 = sVar8 * 0xc9 + 100;
     *(short *)&this_00->field_0x43 = *(short *)&this_00->field_0x249 * 0xc9 + 100;
     g_currentExceptionFrame = local_68.previous;
     return 0;
@@ -396,8 +397,8 @@ LAB_0057e6f0:
     else {
       VisibleClassTy::sub_00558C00
                 (g_visibleClass_00802A88,g_visibleClass_00802A88->field_010C,
-                 *(int *)&this_00->field_0x245,*(int *)&this_00->field_0x249,(int *)&local_18,
-                 &local_14);
+                 *(int *)((int)&this_00->field_0244 + 1),*(int *)&this_00->field_0x249,
+                 (int *)&local_18,&local_14);
       if ((iVar9 < 0) || (4 < iVar9)) {
         uVar10 = 0xffffffff;
       }
@@ -448,7 +449,7 @@ LAB_0057e6f0:
     }
     if (uVar10 != 2) {
       puVar11 = STFieldC::CreateField
-                          ((STFieldC *)this_00,*(int *)&this_00->field_0x245,
+                          ((STFieldC *)this_00,*(int *)((int)&this_00->field_0244 + 1),
                            *(int *)&this_00->field_0x249);
       *(undefined4 **)&this_00->field_0x273 = puVar11;
       goto cf_common_join_0057E9C2;
@@ -465,7 +466,8 @@ LAB_0057e6f0:
     else {
       VisibleClassTy::sub_00558C00
                 (g_visibleClass_00802A88,g_visibleClass_00802A88->field_010C,
-                 *(int *)&this_00->field_0x245,*(int *)&this_00->field_0x249,&local_1c,&local_20);
+                 *(int *)((int)&this_00->field_0244 + 1),*(int *)&this_00->field_0x249,&local_1c,
+                 &local_20);
       if ((iVar9 < 0) || (4 < iVar9)) {
         uVar10 = 0xffffffff;
       }

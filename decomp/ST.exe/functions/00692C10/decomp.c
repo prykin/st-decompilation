@@ -20,7 +20,6 @@ FUN_00692c10(Global_sub_00692C10_param_1Enum param_1,int param_2,undefined4 *par
 
 {
   char cVar1;
-  code *pcVar2;
   uint uVar3;
   uint *puVar4;
   int iVar5;

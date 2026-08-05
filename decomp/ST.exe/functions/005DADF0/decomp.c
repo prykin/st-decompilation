@@ -13,7 +13,6 @@ void __thiscall StartSystemTy::InitChat(StartSystemTy *this)
 
 {
   ushort *puVar1;
-  code *pcVar2;
   int errorCode;
   undefined4 *puVar3;
   int iVar4;

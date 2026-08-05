@@ -16,7 +16,6 @@ int __thiscall STBoatC::BackBring(STBoatC *this,int *param_1)
   short sVar2;
   short sVar3;
   STWorldObject *this_00;
-  code *pcVar4;
   int iVar5;
 
   sVar1 = this->field_066F;

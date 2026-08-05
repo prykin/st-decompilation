@@ -55,7 +55,7 @@ void __thiscall FUN_004cf640(void *this,int *param_1)
     local_10 = (undefined *)(uVar3 + -1);
     memset(local_fc, 0, 0xa0); /* compiler bulk-zero initialization */
     if (((*(int *)((int)this + 0x5ac) == 0x5c) &&
-        (pDVar3 = *(DArrayTy **)&g_packedRecords_A62x8[*(int *)((int)this + 0x24)].field_0x9de,
+        (pDVar3 = g_packedRecords_A62x8[*(int *)((int)this + 0x24)].field1970_0x9de,
         pDVar3 != nullptr)) && (index = 0, 0 < (int)pDVar3->count)) {
       do {
         DArrayGetElement(pDVar3,index,&local_28);
@@ -70,7 +70,7 @@ void __thiscall FUN_004cf640(void *this,int *param_1)
           iVar6 = iVar6 + -1;
         } while (iVar6 != 0);
         index = index + 1;
-        pDVar3 = *(DArrayTy **)&g_packedRecords_A62x8[*(int *)((int)this + 0x24)].field_0x9de;
+        pDVar3 = g_packedRecords_A62x8[*(int *)((int)this + 0x24)].field1970_0x9de;
       } while ((int)index < (int)pDVar3->count);
     }
     local_2c = (int)local_10 << 4;

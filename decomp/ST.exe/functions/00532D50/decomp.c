@@ -15,7 +15,6 @@ void __thiscall OptPanelTy::PrepFiles(OptPanelTy *this,uint param_1)
   uint index;
   char cVar1;
   byte bVar2;
-  code *pcVar3;
   InternalExceptionFrame *pIVar4;
   int iVar5;
   DArrayTy *pDVar6;

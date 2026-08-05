@@ -75,94 +75,86 @@ undefined4 __fastcall FUN_004d2760(TLOBaseTy *param_1)
   }
   iVar4 = param_1->field_0259;
   if (iVar4 == 100) {
-    pDVar2 = *(DArrayTy **)&g_packedRecords_A62x8[(int)param_1->field_0024].field_0x9d6;
+    pDVar2 = g_packedRecords_A62x8[(int)param_1->field_0024].field1968_0x9d6;
     if (pDVar2 != nullptr) {
       uVar5 = 0;
       if (0 < (int)pDVar2->count) {
         do {
           DArrayGetElement(pDVar2,uVar5,&local_8);
           if (local_8 == param_1) {
-            DArrayRemoveAt(*(DArrayTy **)
-                            &g_packedRecords_A62x8[(int)param_1->field_0024].field_0x9d6,uVar5);
+            DArrayRemoveAt(g_packedRecords_A62x8[(int)param_1->field_0024].field1968_0x9d6,uVar5);
             break;
           }
           uVar5 = uVar5 + 1;
-          pDVar2 = *(DArrayTy **)&g_packedRecords_A62x8[(int)param_1->field_0024].field_0x9d6;
+          pDVar2 = g_packedRecords_A62x8[(int)param_1->field_0024].field1968_0x9d6;
         } while ((int)uVar5 < (int)pDVar2->count);
       }
-      if ((*(DArrayTy **)&g_packedRecords_A62x8[(int)param_1->field_0024].field_0x9d6)->count == 0)
-      {
-        DArrayDestroy(*(DArrayTy **)&g_packedRecords_A62x8[(int)param_1->field_0024].field_0x9d6);
-        *(undefined4 *)&g_packedRecords_A62x8[(int)param_1->field_0024].field_0x9d6 = 0;
+      if ((g_packedRecords_A62x8[(int)param_1->field_0024].field1968_0x9d6)->count == 0) {
+        DArrayDestroy(g_packedRecords_A62x8[(int)param_1->field_0024].field1968_0x9d6);
+        g_packedRecords_A62x8[(int)param_1->field_0024].field1968_0x9d6 = nullptr;
       }
     }
   }
   else if (iVar4 == 0x4d) {
-    pDVar2 = *(DArrayTy **)&g_packedRecords_A62x8[(int)param_1->field_0024].field_0x9e2;
+    pDVar2 = g_packedRecords_A62x8[(int)param_1->field_0024].field1971_0x9e2;
     if (pDVar2 != nullptr) {
       uVar5 = 0;
       if (0 < (int)pDVar2->count) {
         do {
           DArrayGetElement(pDVar2,uVar5,&local_8);
           if (local_8 == param_1) {
-            DArrayRemoveAt(*(DArrayTy **)
-                            &g_packedRecords_A62x8[(int)param_1->field_0024].field_0x9e2,uVar5);
+            DArrayRemoveAt(g_packedRecords_A62x8[(int)param_1->field_0024].field1971_0x9e2,uVar5);
             break;
           }
           uVar5 = uVar5 + 1;
-          pDVar2 = *(DArrayTy **)&g_packedRecords_A62x8[(int)param_1->field_0024].field_0x9e2;
+          pDVar2 = g_packedRecords_A62x8[(int)param_1->field_0024].field1971_0x9e2;
         } while ((int)uVar5 < (int)pDVar2->count);
       }
-      if ((*(DArrayTy **)&g_packedRecords_A62x8[(int)param_1->field_0024].field_0x9e2)->count == 0)
-      {
-        DArrayDestroy(*(DArrayTy **)&g_packedRecords_A62x8[(int)param_1->field_0024].field_0x9e2);
-        *(undefined4 *)&g_packedRecords_A62x8[(int)param_1->field_0024].field_0x9e2 = 0;
+      if ((g_packedRecords_A62x8[(int)param_1->field_0024].field1971_0x9e2)->count == 0) {
+        DArrayDestroy(g_packedRecords_A62x8[(int)param_1->field_0024].field1971_0x9e2);
+        g_packedRecords_A62x8[(int)param_1->field_0024].field1971_0x9e2 = nullptr;
       }
     }
   }
   else if (iVar4 == 0x43) {
-    pDVar2 = *(DArrayTy **)&g_packedRecords_A62x8[(int)param_1->field_0024].field_0x9ee;
+    pDVar2 = g_packedRecords_A62x8[(int)param_1->field_0024].field1974_0x9ee;
     if (pDVar2 != nullptr) {
       uVar5 = 0;
       if (0 < (int)pDVar2->count) {
         do {
           DArrayGetElement(pDVar2,uVar5,&local_8);
           if (local_8 == param_1) {
-            DArrayRemoveAt(*(DArrayTy **)
-                            &g_packedRecords_A62x8[(int)param_1->field_0024].field_0x9ee,uVar5);
+            DArrayRemoveAt(g_packedRecords_A62x8[(int)param_1->field_0024].field1974_0x9ee,uVar5);
             break;
           }
           uVar5 = uVar5 + 1;
-          pDVar2 = *(DArrayTy **)&g_packedRecords_A62x8[(int)param_1->field_0024].field_0x9ee;
+          pDVar2 = g_packedRecords_A62x8[(int)param_1->field_0024].field1974_0x9ee;
         } while ((int)uVar5 < (int)pDVar2->count);
       }
-      if ((*(DArrayTy **)&g_packedRecords_A62x8[(int)param_1->field_0024].field_0x9ee)->count == 0)
-      {
-        DArrayDestroy(*(DArrayTy **)&g_packedRecords_A62x8[(int)param_1->field_0024].field_0x9ee);
-        *(undefined4 *)&g_packedRecords_A62x8[(int)param_1->field_0024].field_0x9ee = 0;
+      if ((g_packedRecords_A62x8[(int)param_1->field_0024].field1974_0x9ee)->count == 0) {
+        DArrayDestroy(g_packedRecords_A62x8[(int)param_1->field_0024].field1974_0x9ee);
+        g_packedRecords_A62x8[(int)param_1->field_0024].field1974_0x9ee = nullptr;
       }
     }
   }
   else if (iVar4 == 0x73) {
-    pDVar2 = *(DArrayTy **)&g_packedRecords_A62x8[(int)param_1->field_0024].field_0x9f2;
+    pDVar2 = g_packedRecords_A62x8[(int)param_1->field_0024].field1975_0x9f2;
     if (pDVar2 != nullptr) {
       uVar5 = 0;
       if (0 < (int)pDVar2->count) {
         do {
           DArrayGetElement(pDVar2,uVar5,&local_8);
           if (local_8 == param_1) {
-            DArrayRemoveAt(*(DArrayTy **)
-                            &g_packedRecords_A62x8[(int)param_1->field_0024].field_0x9f2,uVar5);
+            DArrayRemoveAt(g_packedRecords_A62x8[(int)param_1->field_0024].field1975_0x9f2,uVar5);
             break;
           }
           uVar5 = uVar5 + 1;
-          pDVar2 = *(DArrayTy **)&g_packedRecords_A62x8[(int)param_1->field_0024].field_0x9f2;
+          pDVar2 = g_packedRecords_A62x8[(int)param_1->field_0024].field1975_0x9f2;
         } while ((int)uVar5 < (int)pDVar2->count);
       }
-      if ((*(DArrayTy **)&g_packedRecords_A62x8[(int)param_1->field_0024].field_0x9f2)->count == 0)
-      {
-        DArrayDestroy(*(DArrayTy **)&g_packedRecords_A62x8[(int)param_1->field_0024].field_0x9f2);
-        *(undefined4 *)&g_packedRecords_A62x8[(int)param_1->field_0024].field_0x9f2 = 0;
+      if ((g_packedRecords_A62x8[(int)param_1->field_0024].field1975_0x9f2)->count == 0) {
+        DArrayDestroy(g_packedRecords_A62x8[(int)param_1->field_0024].field1975_0x9f2);
+        g_packedRecords_A62x8[(int)param_1->field_0024].field1975_0x9f2 = nullptr;
       }
     }
   }
@@ -188,47 +180,44 @@ undefined4 __fastcall FUN_004d2760(TLOBaseTy *param_1)
     }
   }
   else if (iVar4 == 0x65) {
-    pDVar2 = *(DArrayTy **)&g_packedRecords_A62x8[(int)param_1->field_0024].field_0x9e6;
+    pDVar2 = g_packedRecords_A62x8[(int)param_1->field_0024].field1972_0x9e6;
     if (pDVar2 != nullptr) {
       uVar5 = 0;
       if (0 < (int)pDVar2->count) {
         do {
           DArrayGetElement(pDVar2,uVar5,&local_8);
           if (local_8 == param_1) {
-            DArrayRemoveAt(*(DArrayTy **)
-                            &g_packedRecords_A62x8[(int)param_1->field_0024].field_0x9e6,uVar5);
+            DArrayRemoveAt(g_packedRecords_A62x8[(int)param_1->field_0024].field1972_0x9e6,uVar5);
             break;
           }
           uVar5 = uVar5 + 1;
-          pDVar2 = *(DArrayTy **)&g_packedRecords_A62x8[(int)param_1->field_0024].field_0x9e6;
+          pDVar2 = g_packedRecords_A62x8[(int)param_1->field_0024].field1972_0x9e6;
         } while ((int)uVar5 < (int)pDVar2->count);
       }
-      if ((*(DArrayTy **)&g_packedRecords_A62x8[(int)param_1->field_0024].field_0x9e6)->count == 0)
-      {
-        DArrayDestroy(*(DArrayTy **)&g_packedRecords_A62x8[(int)param_1->field_0024].field_0x9e6);
-        *(undefined4 *)&g_packedRecords_A62x8[(int)param_1->field_0024].field_0x9e6 = 0;
+      if ((g_packedRecords_A62x8[(int)param_1->field_0024].field1972_0x9e6)->count == 0) {
+        DArrayDestroy(g_packedRecords_A62x8[(int)param_1->field_0024].field1972_0x9e6);
+        g_packedRecords_A62x8[(int)param_1->field_0024].field1972_0x9e6 = nullptr;
       }
     }
   }
   else if ((iVar4 == 0x3b) &&
-          (pDVar2 = *(DArrayTy **)&g_packedRecords_A62x8[(int)param_1->field_0024].field_0x9ea,
+          (pDVar2 = g_packedRecords_A62x8[(int)param_1->field_0024].field1973_0x9ea,
           pDVar2 != nullptr)) {
     uVar5 = 0;
     if (0 < (int)pDVar2->count) {
       do {
         DArrayGetElement(pDVar2,uVar5,&local_8);
         if (local_8 == param_1) {
-          DArrayRemoveAt(*(DArrayTy **)&g_packedRecords_A62x8[(int)param_1->field_0024].field_0x9ea,
-                         uVar5);
+          DArrayRemoveAt(g_packedRecords_A62x8[(int)param_1->field_0024].field1973_0x9ea,uVar5);
           break;
         }
         uVar5 = uVar5 + 1;
-        pDVar2 = *(DArrayTy **)&g_packedRecords_A62x8[(int)param_1->field_0024].field_0x9ea;
+        pDVar2 = g_packedRecords_A62x8[(int)param_1->field_0024].field1973_0x9ea;
       } while ((int)uVar5 < (int)pDVar2->count);
     }
-    if ((*(DArrayTy **)&g_packedRecords_A62x8[(int)param_1->field_0024].field_0x9ea)->count == 0) {
-      DArrayDestroy(*(DArrayTy **)&g_packedRecords_A62x8[(int)param_1->field_0024].field_0x9ea);
-      *(undefined4 *)&g_packedRecords_A62x8[(int)param_1->field_0024].field_0x9ea = 0;
+    if ((g_packedRecords_A62x8[(int)param_1->field_0024].field1973_0x9ea)->count == 0) {
+      DArrayDestroy(g_packedRecords_A62x8[(int)param_1->field_0024].field1973_0x9ea);
+      g_packedRecords_A62x8[(int)param_1->field_0024].field1973_0x9ea = nullptr;
     }
   }
   puVar6 = (undefined4 *)&param_1->field_0x350;

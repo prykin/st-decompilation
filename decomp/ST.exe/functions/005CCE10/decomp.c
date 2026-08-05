@@ -15,7 +15,6 @@ void __thiscall SettMapMTy::SetListCtrls(SettMapMTy *this)
   SettMapMTy_field_1E26State SVar1;
   char cVar2;
   SettMapMTy_field_1F84DArray *pSVar3;
-  code *pcVar4;
   SettMapMTy *pSVar5;
   int iVar6;
   DArrayTy *pDVar7;

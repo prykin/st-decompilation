@@ -16,7 +16,6 @@ void __thiscall HelpPanelTy::PutToSHlp(HelpPanelTy *this)
 
 {
   dword dVar1;
-  code *pcVar2;
   HelpPanelTy *pHVar3;
   int iVar4;
   int iVar5;

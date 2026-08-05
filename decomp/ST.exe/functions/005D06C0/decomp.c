@@ -12,7 +12,6 @@
 void __thiscall SettMapMTy::ChangePlayerCiv(SettMapMTy *this,uint param_1,char param_2)
 
 {
-  code *pcVar1;
   SettMapMTy *pSVar2;
   int errorCode;
   SettMapMTy_field_1F84Element *element_1f84;

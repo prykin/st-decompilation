@@ -37,7 +37,6 @@ int __thiscall STBoatC::GetMessage(STBoatC *this,STMessage *message)
   short sVar6;
   short sVar7;
   STMessageId SVar8;
-  code *pcVar9;
   byte bVar10;
   byte bVar11;
   byte bVar12;
@@ -1065,7 +1064,7 @@ LAB_0045048a:
       if (iVar13 == 3) {
         if (((this_00->field_045D != CASE_16) &&
             (uVar16 = CheckPBoxCmd(this_00,CASE_16), uVar16 == 0)) &&
-           (g_packedRecords_A62x8[*(char *)&this_00->field_0024].field329_0x15f != 0)) {
+           ((short)g_packedRecords_A62x8[*(char *)&this_00->field_0024].field95_0x15f != 0)) {
           pDVar19 = Library::DKW::TBL::DArrayCreate(nullptr,1,2,1);
           Library::DKW::TBL::DArrayAppend(pDVar19,&this_00->field_0032);
           STAllPlayersC::AddObjsToGroup
@@ -1082,7 +1081,7 @@ LAB_0045048a:
       }
       else if (((this_00->field_045D != CASE_4) &&
                (uVar16 = CheckPBoxCmd(this_00,CASE_4), uVar16 == 0)) &&
-              (g_packedRecords_A62x8[*(char *)&this_00->field_0024].field326_0x15b != 0)) {
+              ((short)g_packedRecords_A62x8[*(char *)&this_00->field_0024].field94_0x15b != 0)) {
         pDVar19 = Library::DKW::TBL::DArrayCreate(nullptr,1,2,1);
         Library::DKW::TBL::DArrayAppend(pDVar19,&this_00->field_0032);
         STAllPlayersC::AddObjsToGroup

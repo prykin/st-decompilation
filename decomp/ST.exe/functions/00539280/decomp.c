@@ -8,7 +8,6 @@
 void __thiscall PausePanelTy::InitPausePanel(PausePanelTy *this)
 
 {
-  code *pcVar1;
   PausePanelTy *this_00;
   int iVar2;
   ccFntTy *pcVar3;
@@ -43,7 +42,7 @@ void __thiscall PausePanelTy::InitPausePanel(PausePanelTy *this)
     pCVar4 = thunk_FUN_00571240("BKG_PAUSE",0);
     puVar5 = cMf32::RecGet(g_cMf32_00806790,1,pCVar4,piVar9,iVar2);
     this_00->field_0180 = puVar5;
-    DibPut((AnonShape_006B5B10_E0D06CF1 *)this_00->field_0068,0,0,'\x01',(byte *)puVar5);
+    DibPut((RecoveredSourceFamily_dibcopy *)this_00->field_0068,0,0,'\x01',(byte *)puVar5);
     ccFntTy::SetSurf(this_00->field_017C,this_00->field_0068,0,0x52,2,0xd1,0xc);
     iVar11 = -1;
     iVar10 = -1;

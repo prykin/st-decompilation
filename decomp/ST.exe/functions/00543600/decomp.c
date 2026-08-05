@@ -9,7 +9,6 @@ void __thiscall CursorClassTy::InitCursor(CursorClassTy *this,undefined4 param_1
 
 {
   undefined4 *puVar1;
-  code *pcVar2;
   CursorClassTy *this_00;
   int iVar3;
   ushort *puVar4;

@@ -8,7 +8,6 @@
 uint __thiscall STTmMineC::CreatePart(STTmMineC *this,uint param_1)
 
 {
-  code *pcVar1;
   STTmMineC *pSVar2;
   int iVar3;
   STTmMineC_field_0336DArray *pSVar4;

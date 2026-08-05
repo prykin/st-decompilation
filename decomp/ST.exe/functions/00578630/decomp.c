@@ -14,7 +14,6 @@ int __thiscall STCrabC::GetMessage(STCrabC *this,STMessage *message)
 {
   undefined4 *puVar1;
   STMessageId SVar2;
-  code *pcVar3;
   byte bVar4;
   STSprGameObjC *this_00;
   undefined1 uVar5;
@@ -110,7 +109,7 @@ int __thiscall STCrabC::GetMessage(STCrabC *this,STMessage *message)
     ((byte *)((int)local_c + 0x52))[1] = uVar5;
     *(undefined2 *)(local_c + 0x15) = *(undefined2 *)&this_00->field_0x45;
     local_c[0xd] = this_00->field_0231;
-    local_c[0x12] = *(STSprGameObjC_field_0259State *)&this_00->field_0x245;
+    local_c[0x12] = *(STSprGameObjC_field_0259State *)((int)&this_00->field_0244 + 1);
     local_c[0x13] = *(STSprGameObjC_field_0259State *)&this_00->field_0x24d;
     local_c[0xe] = *(STSprGameObjC_field_0259State *)((int)&this_00->field_023E + 3);
     local_c[0xf] = *(STSprGameObjC_field_0259State *)&this_00->field_0x249;
@@ -327,7 +326,7 @@ cf_error_exit_00578B5D:
     this_00->field_0x44 = bVar4;
     *(short *)&this_00->field_0x45 = (short)local_20[0x15];
     this_00->field_0231 = local_20[0xd];
-    *(STSprGameObjC_field_0259State *)&this_00->field_0x245 = local_20[0x12];
+    *(STSprGameObjC_field_0259State *)((int)&this_00->field_0244 + 1) = local_20[0x12];
     *(STSprGameObjC_field_0259State *)&this_00->field_0x24d = local_20[0x13];
     *(STSprGameObjC_field_0259State *)((int)&this_00->field_023E + 3) = local_20[0xe];
     *(STSprGameObjC_field_0259State *)&this_00->field_0x249 = local_20[0xf];

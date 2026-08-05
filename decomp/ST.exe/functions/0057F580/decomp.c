@@ -12,7 +12,6 @@
 undefined4 * __thiscall STDcResourcC::Init(STDcResourcC *this)
 
 {
-  code *pcVar1;
   HoloTy_field_0001State HVar2;
   undefined1 uVar3;
   undefined1 uVar4;

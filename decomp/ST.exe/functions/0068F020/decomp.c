@@ -18,7 +18,6 @@ void __thiscall AiTactClassTy::GiveObjByClaim(AiTactClassTy *this,uint *param_1)
   ushort uVar1;
   AiTactClassTy_field_00BDDArray *pAVar2;
   uint uVar3;
-  code *pcVar4;
   AiTactClassTy *this_00;
   int iVar5;
   ushort *puVar6;

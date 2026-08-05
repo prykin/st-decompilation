@@ -8,7 +8,6 @@
 undefined4 __thiscall STGroupBoatC::GrpLoadRC(STGroupBoatC *this,int param_1)
 
 {
-  code *pcVar1;
   STGroupBoatC *this_00;
   byte bVar2;
   int iVar3;

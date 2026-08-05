@@ -13,7 +13,6 @@ TraksClassTy::TraksCreate
           short param_12,int param_13,short param_14,byte param_15)
 
 {
-  code *pcVar1;
   VisibleClassTy *pVVar2;
   int iVar3;
   char *text;

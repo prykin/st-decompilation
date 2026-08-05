@@ -196,7 +196,7 @@ LAB_004ae41c:
     }
     if (((int)param_4 < 0x54) || (0x5a < (int)param_4)) {
       if (param_4 == 100) {
-        pDVar12 = *(DArrayTy **)&g_packedRecords_A62x8[param_5].field_0x9d6;
+        pDVar12 = g_packedRecords_A62x8[param_5].field1968_0x9d6;
         if ((pDVar12 != nullptr) && (uVar19 = 0, 0 < (int)pDVar12->count)) {
           do {
             DArrayGetElement(pDVar12,uVar19,&local_10);
@@ -207,15 +207,15 @@ LAB_004ae41c:
                 (int)((uVar10 ^ uVar13) - uVar13) < 0x10)) &&
                (uVar10 = local_6 - param_2 >> 0x1f,
                (int)((local_6 - param_2 ^ uVar10) - uVar10) < 0x10)) goto cf_break_loop_004AEC96;
-            pDVar12 = *(DArrayTy **)&g_packedRecords_A62x8[param_5].field_0x9d6;
+            pDVar12 = g_packedRecords_A62x8[param_5].field1968_0x9d6;
             uVar19 = uVar19 + 1;
           } while ((int)uVar19 < (int)pDVar12->count);
         }
       }
       else if (param_4 == 0x4d) {
-        pDVar12 = *(DArrayTy **)&g_packedRecords_A62x8[param_5].field_0x9e2;
+        pDVar12 = g_packedRecords_A62x8[param_5].field1971_0x9e2;
         /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
-        param_10 = (int *)&g_packedRecords_A62x8[param_5].field_0x9e2;
+        param_10 = (int *)&g_packedRecords_A62x8[param_5].field1971_0x9e2;
         if (pDVar12 != nullptr) {
           iVar11 = DAT_00795118 / 0xc9;
           uVar19 = 0;
@@ -237,9 +237,9 @@ LAB_004ae41c:
         }
       }
       else if (param_4 == 0x43) {
-        pDVar12 = *(DArrayTy **)&g_packedRecords_A62x8[param_5].field_0x9ee;
+        pDVar12 = g_packedRecords_A62x8[param_5].field1974_0x9ee;
         /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
-        param_10 = (int *)&g_packedRecords_A62x8[param_5].field_0x9ee;
+        param_10 = (int *)&g_packedRecords_A62x8[param_5].field1974_0x9ee;
         if (pDVar12 != nullptr) {
           iVar11 = DAT_007950f0 / 0xc9;
           uVar19 = 0;
@@ -261,9 +261,9 @@ LAB_004ae41c:
         }
       }
       else if (param_4 == 0x73) {
-        pDVar12 = *(DArrayTy **)&g_packedRecords_A62x8[param_5].field_0x9f2;
+        pDVar12 = g_packedRecords_A62x8[param_5].field1975_0x9f2;
         /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
-        param_10 = (int *)&g_packedRecords_A62x8[param_5].field_0x9f2;
+        param_10 = (int *)&g_packedRecords_A62x8[param_5].field1975_0x9f2;
         if (pDVar12 != nullptr) {
           iVar11 = DAT_007951b0 / 0xc9;
           uVar19 = 0;
@@ -285,9 +285,9 @@ LAB_004ae41c:
         }
       }
       else if (param_4 == 0x65) {
-        pDVar12 = *(DArrayTy **)&g_packedRecords_A62x8[param_5].field_0x9e6;
+        pDVar12 = g_packedRecords_A62x8[param_5].field1972_0x9e6;
         /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
-        param_10 = (int *)&g_packedRecords_A62x8[param_5].field_0x9e6;
+        param_10 = (int *)&g_packedRecords_A62x8[param_5].field1972_0x9e6;
         if (pDVar12 != nullptr) {
           iVar11 = DAT_00795178 / 0xc9;
           uVar19 = 0;

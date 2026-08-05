@@ -8,7 +8,6 @@
 void __thiscall MainMenuTy::CloseButtons(MainMenuTy *this)
 
 {
-  code *pcVar1;
   int iVar2;
   DWORD DVar3;
   int iVar4;

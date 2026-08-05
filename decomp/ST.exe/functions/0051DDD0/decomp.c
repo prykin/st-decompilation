@@ -259,7 +259,7 @@ int __thiscall HelpPanelTy::GetMessage(HelpPanelTy *this,STMessage *message)
           this_00->field_01C3 = message->arg0;
           iVar8 = (ushort)this_00->field_01AF + 0x16;
           Library::DKW::WGR::FUN_006b55f0
-                    ((AnonShape_006B5B10_E0D06CF1 *)this_00->field_0068,0,0x21,iVar8,
+                    ((RecoveredSourceFamily_dibcopy *)this_00->field_0068,0,0x21,iVar8,
                      (byte *)this_00->field_01DC,0,0x21,iVar8,0x19c,
                      0x117 - (uint)(ushort)this_00->field_01AF);
           Library::DKW::WGR::FUN_006b5110
@@ -298,7 +298,7 @@ int __thiscall HelpPanelTy::GetMessage(HelpPanelTy *this,STMessage *message)
           local_14 = STReplaceLowByte((uint32_t)(local_14), (uint8_t)((-(DAT_0080874e != '\x01') & 6U) + 1));
         }
         Library::DKW::WGR::FUN_006b55f0
-                  ((AnonShape_006B5B10_E0D06CF1 *)this_00->field_0068,0,0x21,0x16,
+                  ((RecoveredSourceFamily_dibcopy *)this_00->field_0068,0,0x21,0x16,
                    (byte *)this_00->field_01DC,0,0x21,0x16,0x19c,0x118);
         pAVar5 = this_00->field_0218;
         local_1c = (uint *)pAVar5->field_0014;
@@ -539,7 +539,7 @@ int __thiscall HelpPanelTy::GetMessage(HelpPanelTy *this,STMessage *message)
         }
         iVar8 = (message->arg1).words.high + 0x16;
         Library::DKW::WGR::FUN_006b55f0
-                  ((AnonShape_006B5B10_E0D06CF1 *)this_00->field_0068,0,0x21,iVar8,
+                  ((RecoveredSourceFamily_dibcopy *)this_00->field_0068,0,0x21,iVar8,
                    (byte *)this_00->field_01DC,0,0x21,iVar8,0x19c,*(int *)(this_00->field_01EC + 8));
         piVar9 = (int *)this_00->field_01EC;
         uVar16 = piVar9[5];
@@ -759,11 +759,11 @@ switchD_0051ea9b_caseD_0:
       break;
     case MESS_SHARED_8166:
       pbVar11 = (byte *)FUN_0070b3a0((AnonShape_GLOBAL_0081175C_57F682DD *)this_00->field_0220,0);
-      DibPut((AnonShape_006B5B10_E0D06CF1 *)this_00->field_0068,0x1c3,0x2d,'\x06',pbVar11);
+      DibPut((RecoveredSourceFamily_dibcopy *)this_00->field_0068,0x1c3,0x2d,'\x06',pbVar11);
       /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
       pbVar11 = (byte *)FUN_0070b3a0((AnonShape_GLOBAL_0081175C_57F682DD *)this_00->field_0220,
                                      (*(int *)((message->arg2).u32 + 0x1c) != 1) + 1);
-      DibPut((AnonShape_006B5B10_E0D06CF1 *)this_00->field_0068,0x1c3,
+      DibPut((RecoveredSourceFamily_dibcopy *)this_00->field_0068,0x1c3,
              (message->arg0).words.high + 0x2d,'\x06',pbVar11);
       Library::DKW::DDX::FUN_006b3640
                 ((int *)g_ddxContext_008075A8,this_00->field_0060,0xffffffff,this_00->field_003C,

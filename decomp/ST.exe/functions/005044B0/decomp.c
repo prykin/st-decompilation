@@ -12,7 +12,6 @@
 void __thiscall CPanelTy::PaintMineInf(CPanelTy *this,int param_1)
 
 {
-  code *pcVar1;
   CPanelTy *pCVar2;
   int iVar3;
   byte *pbVar4;
@@ -33,7 +32,7 @@ void __thiscall CPanelTy::PaintMineInf(CPanelTy *this,int param_1)
   iVar3 = Library::MSVCRT::__setjmp3(local_54.jumpBuffer,0);
   pCVar2 = local_10;
   if (iVar3 == 0) {
-    DibPut((AnonShape_006B5B10_E0D06CF1 *)local_10->field_0194,param_1,0x50,'\x01',
+    DibPut((RecoveredSourceFamily_dibcopy *)local_10->field_0194,param_1,0x50,'\x01',
            (byte *)local_10->field_09D9[5]);
     if (pCVar2->field_0BF5 == CASE_38) {
       local_c = (undefined1 *)STReplaceLowByte((uint32_t)(local_c), (uint8_t)(2));
@@ -43,7 +42,7 @@ void __thiscall CPanelTy::PaintMineInf(CPanelTy *this,int param_1)
     }
     pbVar4 = (byte *)FUN_0070b3a0((AnonShape_GLOBAL_0081175C_57F682DD *)pCVar2->field_02D2,
                                   (uint)local_c & 0xff);
-    DibPut((AnonShape_006B5B10_E0D06CF1 *)pCVar2->field_0194,param_1 + 3,0x53,'\x01',pbVar4);
+    DibPut((RecoveredSourceFamily_dibcopy *)pCVar2->field_0194,param_1 + 3,0x53,'\x01',pbVar4);
     if (pCVar2->field_0BF5 == CASE_38) {
       local_c = &DAT_007aa024;
       local_8 = 0x271c;
@@ -81,7 +80,7 @@ void __thiscall CPanelTy::PaintMineInf(CPanelTy *this,int param_1)
         uVar7 = (-(uint)(pCVar2->field_0BF5 != CASE_4F) & 0xfffffffe) + 2;
       }
       ccFntTy::WrStr(pCVar2->field_01C4,&DAT_0080f33a,-1,-1,uVar7);
-      DibPut((AnonShape_006B5B10_E0D06CF1 *)pCVar2->field_0194,iVar3,0x6f,'\x01',pbVar4);
+      DibPut((RecoveredSourceFamily_dibcopy *)pCVar2->field_0194,iVar3,0x6f,'\x01',pbVar4);
       ccFntTy::EraseSufr(pCVar2->field_01C4);
     }
     g_currentExceptionFrame = local_54.previous;

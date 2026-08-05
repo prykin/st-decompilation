@@ -9,7 +9,6 @@
 void __thiscall MTestTy::NoneMTest(MTestTy *this)
 
 {
-  code *pcVar1;
   MTestTy *pMVar2;
   int iVar3;
   int iVar4;

@@ -5,7 +5,6 @@ int __cdecl FUN_006adb90(char *param_1,int param_2,int param_3,byte *param_4)
 
 {
   char cVar1;
-  code *pcVar2;
   int iVar3;
   uint uVar4;
   char *pcVar6;

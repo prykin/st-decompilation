@@ -9,7 +9,6 @@ void __thiscall PrividerTy::SetMode(PrividerTy *this,char param_1,char param_2)
 
 {
   StartSystemTy *pSVar1;
-  code *pcVar2;
   PrividerTy *this_00;
   int iVar3;
   int iVar4;

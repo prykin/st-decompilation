@@ -11,7 +11,6 @@ STAllPlayersC::AddObjToTmp2
           uint param_6)
 
 {
-  code *pcVar1;
   int iVar2;
   undefined4 uVar3;
   STGameObjC *this_00;

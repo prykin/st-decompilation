@@ -8,7 +8,6 @@
 void __thiscall MReportTy::PaintMainScore(MReportTy *this,int param_1,uint param_2,int param_3)
 
 {
-  code *pcVar1;
   MReportTy *pMVar2;
   int iVar3;
   uint uVar4;
@@ -29,7 +28,7 @@ void __thiscall MReportTy::PaintMainScore(MReportTy *this,int param_1,uint param
       local_10 = param_3 * 0x26 + 0x38;
       local_8 = uVar4;
       do {
-        DibPut((AnonShape_006B5B10_E0D06CF1 *)pMVar2->field_0073,iVar3,local_10,'\x06',
+        DibPut((RecoveredSourceFamily_dibcopy *)pMVar2->field_0073,iVar3,local_10,'\x06',
                (byte *)pMVar2->field_006F);
         iVar3 = iVar3 + 6;
         local_8 = local_8 - 1;
@@ -37,8 +36,9 @@ void __thiscall MReportTy::PaintMainScore(MReportTy *this,int param_1,uint param
     }
     wsprintfA((LPSTR)&DAT_0080f33a,"%8d",param_1);
     uVar4 = param_3 * 0x26 + 0x30;
-    FUN_006b4170((AnonShape_006B5B10_E0D06CF1 *)pMVar2->field_0073,0,0x280,uVar4,0x50,0x1c,0);
-    FUN_006b5ee0((AnonShape_006B5B10_E0D06CF1 *)pMVar2->field_0073,0,0x280,uVar4,0x50,0x1c,0x18,0xd);
+    FUN_006b4170((RecoveredSourceFamily_dibcopy *)pMVar2->field_0073,0,0x280,uVar4,0x50,0x1c,0);
+    FUN_006b5ee0((RecoveredSourceFamily_dibcopy *)pMVar2->field_0073,0,0x280,uVar4,0x50,0x1c,0x18,
+                 0xd);
     ccFntTy::SetSurf(pMVar2->field_008B,(int)pMVar2->field_0073,0,0x280,uVar4,0x50,0x1c);
     ccFntTy::WrStr(pMVar2->field_008B,&DAT_0080f33a,-1,-1,8);
     g_currentExceptionFrame = local_54.previous;

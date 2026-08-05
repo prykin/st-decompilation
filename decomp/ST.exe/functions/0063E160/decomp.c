@@ -11,7 +11,6 @@ undefined4 __thiscall STTmMineC::LoadImagSpr(STTmMineC *this,uint param_1,int pa
 {
   STTmMineC_field_0336DArray *pSVar1;
   uint uVar2;
-  code *pcVar3;
   STTmMineC *pSVar4;
   char *pcVar5;
   int errorCode;

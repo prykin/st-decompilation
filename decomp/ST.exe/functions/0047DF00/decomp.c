@@ -22,7 +22,6 @@ int __thiscall STBoatC::Dismant(STBoatC *this,int *param_1)
 {
   STBoatC_field_06C3State SVar1;
   undefined4 uVar2;
-  code *pcVar3;
   undefined2 uVar4;
   short sVar5;
   ushort uVar6;

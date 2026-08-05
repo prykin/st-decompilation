@@ -12,7 +12,6 @@
 undefined4 __thiscall STTorpC::SetDangerous(STTorpC *this,uint param_1,uint *param_2)
 
 {
-  code *pcVar1;
   int errorCode;
   uint uVar2;
   int iVar3;

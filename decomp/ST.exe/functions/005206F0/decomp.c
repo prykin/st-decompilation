@@ -10,7 +10,6 @@ void __thiscall InfocPanelTy::Update(InfocPanelTy *this)
 {
   undefined1 *puVar1;
   byte bVar2;
-  code *pcVar3;
   InfocPanelTy *this_00;
   byte bVar4;
   int iVar5;
@@ -89,7 +88,7 @@ void __thiscall InfocPanelTy::Update(InfocPanelTy *this)
       else {
         bVar4 = (-(DAT_0080874e != '\x01') & 0x89U) + 0x3a;
       }
-      FUN_006b4170((AnonShape_006B5B10_E0D06CF1 *)this_00->field_0068,0,0x30,uVar7,0x22,0xc,bVar4);
+      FUN_006b4170((RecoveredSourceFamily_dibcopy *)this_00->field_0068,0,0x30,uVar7,0x22,0xc,bVar4);
       if (local_5 < (byte)this_00->field_01AB) {
         ccFntTy::SetSurf(this_00->field_0189,this_00->field_0068,0,0x31,uVar7,0x10,0xc);
         bVar4 = g_bulkInitializedRecords_008087C7[*pbVar10].field_0021;
@@ -154,7 +153,7 @@ LAB_00520987:
         if (-1 < iVar5 + -1) {
           pbVar10 = (byte *)FUN_0070b3a0((AnonShape_GLOBAL_0081175C_57F682DD *)this_00->field_03C8,
                                          iVar5 + -1);
-          DibPut((AnonShape_006B5B10_E0D06CF1 *)this_00->field_0068,0x41,local_10,'\x06',pbVar10);
+          DibPut((RecoveredSourceFamily_dibcopy *)this_00->field_0068,0x41,local_10,'\x06',pbVar10);
           uVar7 = local_10;
         }
       }

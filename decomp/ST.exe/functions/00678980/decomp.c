@@ -8,7 +8,6 @@
 int __thiscall AiPlrClassTy::InitData(AiPlrClassTy *this,undefined4 *param_1)
 
 {
-  code *pcVar1;
   AiPlrClassTy *pAVar2;
   int iVar3;
   DArrayTy *pDVar4;

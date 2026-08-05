@@ -12,7 +12,6 @@
 int __thiscall TLOBaseTy::LoadImages(TLOBaseTy *this)
 
 {
-  code *pcVar1;
   TLOBaseTy *this_00;
   byte bVar2;
   int local_EAX_28;

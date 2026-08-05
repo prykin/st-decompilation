@@ -12,7 +12,6 @@
 void __thiscall FSGSTy::DeleteCtrls(FSGSTy *this)
 
 {
-  code *pcVar1;
   FSGSTy *pFVar2;
   int iVar3;
   HoloTy *pHVar4;

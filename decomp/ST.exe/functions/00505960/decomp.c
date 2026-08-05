@@ -12,7 +12,6 @@
 void __thiscall CPanelTy::PaintArsenal(CPanelTy *this)
 
 {
-  code *pcVar1;
   CPanelTy *pCVar2;
   int iVar3;
   uint uVar4;
@@ -48,9 +47,9 @@ void __thiscall CPanelTy::PaintArsenal(CPanelTy *this)
     }
     STDebugBreak(); /* noreturn in standalone pseudocode */
   }
-  FUN_006b4170((AnonShape_006B5B10_E0D06CF1 *)local_28->field_0194,0,0x49,0x50,0x6f,0x37,0x3d);
-  FUN_006b4170((AnonShape_006B5B10_E0D06CF1 *)pCVar2->field_0194,0,0x4a,0x51,0x29,0x34,0x3f);
-  FUN_006b4170((AnonShape_006B5B10_E0D06CF1 *)pCVar2->field_0194,0,0x4b,0x52,0x27,0x32,0x3a);
+  FUN_006b4170((RecoveredSourceFamily_dibcopy *)local_28->field_0194,0,0x49,0x50,0x6f,0x37,0x3d);
+  FUN_006b4170((RecoveredSourceFamily_dibcopy *)pCVar2->field_0194,0,0x4a,0x51,0x29,0x34,0x3f);
+  FUN_006b4170((RecoveredSourceFamily_dibcopy *)pCVar2->field_0194,0,0x4b,0x52,0x27,0x32,0x3a);
   if (pCVar2->field_09D4 == '\x01') {
     local_20 = STReplaceLowByte((uint32_t)(local_20), (uint8_t)(4));
     bVar7 = 3;
@@ -75,13 +74,13 @@ void __thiscall CPanelTy::PaintArsenal(CPanelTy *this)
         uVar4 = ((uint)local_18->field_0002 * 10) / (uint)local_18->field_0004;
       }
       pbVar5 = (byte *)FUN_0070b3a0((AnonShape_GLOBAL_0081175C_57F682DD *)pCVar2->field_02B2,5);
-      DibPut((AnonShape_006B5B10_E0D06CF1 *)pCVar2->field_0194,0x74,local_1c,'\x01',pbVar5);
+      DibPut((RecoveredSourceFamily_dibcopy *)pCVar2->field_0194,0x74,local_1c,'\x01',pbVar5);
       local_10 = local_10 & 0xffffff00;
       if (uVar4 != 0) {
         uVar8 = 0;
         do {
           pbVar5 = (byte *)FUN_0070b3a0((AnonShape_GLOBAL_0081175C_57F682DD *)pCVar2->field_02B6,1);
-          DibPut((AnonShape_006B5B10_E0D06CF1 *)pCVar2->field_0194,uVar8 * 4 + 0x76,local_1c + 2,
+          DibPut((RecoveredSourceFamily_dibcopy *)pCVar2->field_0194,uVar8 * 4 + 0x76,local_1c + 2,
                  '\x01',pbVar5);
           bVar7 = (byte)local_10 + 1;
           local_10 = STReplaceLowByte((uint32_t)(local_10), (uint8_t)(bVar7));
@@ -93,7 +92,8 @@ void __thiscall CPanelTy::PaintArsenal(CPanelTy *this)
         iVar3 = (local_10 & 0xff) * 4 + 0x76;
         do {
           pbVar5 = (byte *)FUN_0070b3a0((AnonShape_GLOBAL_0081175C_57F682DD *)pCVar2->field_02B6,0);
-          DibPut((AnonShape_006B5B10_E0D06CF1 *)pCVar2->field_0194,iVar3,local_1c + 2,'\x01',pbVar5);
+          DibPut((RecoveredSourceFamily_dibcopy *)pCVar2->field_0194,iVar3,local_1c + 2,'\x01',
+                 pbVar5);
           iVar3 = iVar3 + 4;
           iVar9 = iVar9 + -1;
         } while (iVar9 != 0);
@@ -127,7 +127,7 @@ void __thiscall CPanelTy::PaintArsenal(CPanelTy *this)
       pbVar5 = (byte *)FUN_0070b3a0(pAVar6,(-(uint)(*(char *)local_18 != '\0') & 0x14) + 0xb +
                                            local_14 + local_2c);
       if (pbVar5 != nullptr) {
-        DibPut((AnonShape_006B5B10_E0D06CF1 *)pCVar2->field_0194,local_c,local_8,'\x06',pbVar5);
+        DibPut((RecoveredSourceFamily_dibcopy *)pCVar2->field_0194,local_c,local_8,'\x06',pbVar5);
       }
       local_14 = local_14 + 1;
       local_18 = (AnonShape_00505960_269BEFC9 *)&local_18->field_0x6;

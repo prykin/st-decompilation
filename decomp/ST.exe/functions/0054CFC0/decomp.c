@@ -13,7 +13,6 @@ undefined4 __thiscall STPlaySystemC::InitSystem(STPlaySystemC *this)
 
 {
   uint *puVar1;
-  code *pcVar2;
   STPlaySystemC *pSVar3;
   int errorCode;
   AnonPointee_STPlaySystemC_003D *pAVar4;

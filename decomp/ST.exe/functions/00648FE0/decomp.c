@@ -11,7 +11,6 @@ void CreateAi(void)
 
 {
   char cVar1;
-  code *pcVar2;
   int iVar3;
   LPSTR text;
   int iVar4;
@@ -81,19 +80,19 @@ void CreateAi(void)
         memmove(piVar11, piVar9, 0x14); /* compiler REP MOVS byte copy */
         iVar3 = 0;
         piVar9 = DAT_0080ed12 + 0x106;
-        piVar11 = (int *)&g_packedRecords_A62x8[DAT_0080874d].field_0x2ff;
+        piVar11 = &g_packedRecords_A62x8[DAT_0080874d].field376_0x2ff;
         memmove(piVar11, piVar9, 0x14); /* compiler REP MOVS byte copy */
         iVar3 = 0;
         piVar9 = DAT_0080ed12 + 0x10b;
-        piVar11 = (int *)&g_packedRecords_A62x8[DAT_0080874d].field_0x327;
+        piVar11 = &g_packedRecords_A62x8[DAT_0080874d].field410_0x327;
         memmove(piVar11, piVar9, 0x26c); /* compiler REP MOVS byte copy */
         iVar3 = 0;
         piVar9 = DAT_0080ed12 + 0x1a6;
-        piVar11 = (int *)&g_packedRecords_A62x8[DAT_0080874d].field_0x593;
+        piVar11 = &g_packedRecords_A62x8[DAT_0080874d].field1024_0x593;
         memmove(piVar11, piVar9, 0x1a8); /* compiler REP MOVS byte copy */
         iVar3 = 0;
         piVar9 = DAT_0080ed12 + 0x210;
-        piVar11 = (int *)&g_packedRecords_A62x8[DAT_0080874d].field_0x73b;
+        piVar11 = (int *)&g_packedRecords_A62x8[DAT_0080874d].field1445_0x73b;
         memmove(piVar11, piVar9, 0x9b); /* compiler REP MOVS byte copy */
         if (DAT_0080ed12 != nullptr) {
           FreeAndNull(&DAT_0080ed12);

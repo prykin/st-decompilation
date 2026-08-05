@@ -36,7 +36,6 @@ SetAccelerator(int param_1,undefined4 param_2,undefined4 param_3,undefined4 para
               uint param_12)
 
 {
-  code *pcVar1;
   int iVar2;
   uint index;
   int iVar3;

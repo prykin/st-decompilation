@@ -13,7 +13,6 @@ FSGSTy::OutLadProc(FSGSTy *this,int param_1,MMMObjTy *param_2,MMMObjTy *param_3,
                   int param_5,FSGSTy *param_6,int param_7)
 
 {
-  code *pcVar1;
   int iVar2;
   uint *puVar3;
   int iVar4;

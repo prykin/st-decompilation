@@ -68,7 +68,7 @@ undefined4 __thiscall FUN_006d5260(void *this,undefined4 *param_1)
     *(int *)&pAVar1[1].field_0x10 = 1 << (bVar3 & 0x1f);
   }
   if (*(int *)(pAVar1 + 1) == 0) {
-    iVar4 = FUN_00749841((AnonShape_006B5B10_E0D06CF1 *)&pAVar1->field_0030);
+    iVar4 = FUN_00749841((RecoveredSourceFamily_dibcopy *)&pAVar1->field_0030);
     *(int *)(pAVar1 + 1) = iVar4;
   }
   if (local_8 != nullptr) {

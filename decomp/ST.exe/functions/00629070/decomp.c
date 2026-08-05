@@ -12,7 +12,6 @@ undefined4 __thiscall STParticleC::InitVisibelFlight(STParticleC *this,int param
   undefined4 *puVar1;
   int iVar2;
   uint uVar3;
-  code *pcVar4;
   short sVar5;
   float fVar6;
   VisibleClassTy *pVVar7;

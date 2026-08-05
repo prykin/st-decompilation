@@ -23,6 +23,8 @@ import java.util.TreeSet;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
+import ghidra.app.decompiler.DecompInterface;
+import ghidra.app.decompiler.DecompileResults;
 import ghidra.app.script.GhidraScript;
 import ghidra.program.model.address.Address;
 import ghidra.program.model.address.AddressSet;
@@ -98,6 +100,7 @@ public class STGlobalRecordAnalyzer extends GhidraScript {
         arrayEnd = base.add(totalSize - 1L);
 
         Scan scan = scanStrideUsers();
+        scanRenderedFieldTypes(scan);
         LayoutState layout = layoutState();
         RangeSafety range = rangeSafety();
         boolean evidenceStrong = scan.strideFunctions.size() >= 5 &&
@@ -105,7 +108,7 @@ public class STGlobalRecordAnalyzer extends GhidraScript {
             !scan.boundarySites.isEmpty() && !scan.baseSites.isEmpty();
         boolean apply = evidenceStrong && range.safe && layout.safe;
 
-        List<FieldProposal> fields = makeFields(scan, layout.structure == null, apply);
+        List<FieldProposal> fields = makeFields(scan, layout.structure, apply);
         long typedFields = fields.stream().filter(field -> field.apply &&
             !field.type.startsWith("/undefined")).count();
         long namedFields = fields.stream().filter(field -> field.apply &&
@@ -151,23 +154,24 @@ public class STGlobalRecordAnalyzer extends GhidraScript {
                 instructions.add(instruction);
                 if (hasScalar(instruction, stride)) hasStride = true;
             }
-            if (!hasStride) continue;
             String functionSite = addr(function.getEntryPoint()) + " " + function.getName(true);
-            result.strideFunctions.add(functionSite);
+            if (hasStride) result.strideFunctions.add(functionSite);
+            boolean recordUser = false;
             for (Instruction instruction : instructions) {
-                if (hasScalar(instruction, totalSize))
+                if (hasStride && hasScalar(instruction, totalSize))
                     result.totalSizeSites.add(functionSite + " @ " + addr(instruction.getAddress()));
-                if (hasScalar(instruction, count))
+                if (hasStride && hasScalar(instruction, count))
                     result.countSites.add(functionSite + " @ " + addr(instruction.getAddress()));
                 String[] operands = splitOperands(instruction.toString().toUpperCase(Locale.ROOT));
                 for (Reference reference : instruction.getReferencesFrom()) {
                     Address target = reference.getToAddress();
                     if (target == null || !currentProgram.getMemory().contains(target)) continue;
-                    if (target.equals(base))
+                    if (hasStride && target.equals(base))
                         result.baseSites.add(functionSite + " @ " + addr(instruction.getAddress()));
-                    if (target.equals(arrayEnd.add(1)))
+                    if (hasStride && target.equals(arrayEnd.add(1)))
                         result.boundarySites.add(functionSite + " @ " + addr(instruction.getAddress()));
                     if (target.compareTo(base) < 0 || target.compareTo(recordEnd) > 0) continue;
+                    recordUser = true;
                     int operandIndex = reference.getOperandIndex();
                     if (operandIndex < 0 || operandIndex >= operands.length) continue;
                     String operand = operands[operandIndex];
@@ -190,14 +194,165 @@ public class STGlobalRecordAnalyzer extends GhidraScript {
                     result.fieldSites++;
                 }
             }
+            if (recordUser) result.recordFunctions.add(function);
         }
         return result;
     }
 
-    private List<FieldProposal> makeFields(Scan scan, boolean includeListingBaseline,
+    /**
+     * Once base/stride/count are independently proven, an exact cast on a rendered member of
+     * that record is useful field-type evidence even when MSVC synthesized the record stride
+     * through LEA/SHL and no literal stride exists in the function. Conflicting same-width
+     * scalar spellings remain unresolved through {@link #unique(Map)}.
+     */
+    private void scanRenderedFieldTypes(Scan scan) throws Exception {
+        if (scan.recordFunctions.isEmpty()) return;
+        Pattern cast = Pattern.compile(
+            "\\*\\s*\\(\\s*(?<type>char|byte|short|ushort|int|uint|longlong|ulonglong|float|double)" +
+            "\\s*\\*\\s*\\)\\s*\\(?\\s*&?\\s*" + Pattern.quote(arrayName) +
+            "\\s*\\[[^\\]]+\\]\\s*\\.\\s*(?<field>[A-Za-z_$][A-Za-z0-9_$]*)",
+            Pattern.CASE_INSENSITIVE | Pattern.DOTALL);
+        Pattern pointerLocal = Pattern.compile(
+            "(?m)^\\s*(?<type>[A-Za-z_$][A-Za-z0-9_$:]*)\\s*\\*+\\s*" +
+            "(?<name>[A-Za-z_$][A-Za-z0-9_$]*)\\s*;");
+        Pattern pointerStore = Pattern.compile(
+            Pattern.quote(arrayName) + "\\s*\\[[^\\]]+\\]\\s*\\.\\s*" +
+            "(?<field>[A-Za-z_$][A-Za-z0-9_$]*)\\s*=\\s*\\(\\s*(?:int|uint)\\s*\\)\\s*" +
+            "(?<source>[A-Za-z_$][A-Za-z0-9_$]*)\\s*;",
+            Pattern.CASE_INSENSITIVE | Pattern.DOTALL);
+        Pattern pointerConsumer = Pattern.compile(
+            "\\(\\s*(?<type>[A-Za-z_$][A-Za-z0-9_$:]*)\\s*\\*\\s*\\)\\s*" +
+            Pattern.quote(arrayName) + "\\s*\\[[^\\]]+\\]\\s*\\.\\s*" +
+            "(?<field>[A-Za-z_$][A-Za-z0-9_$]*)",
+            Pattern.CASE_INSENSITIVE | Pattern.DOTALL);
+        DecompInterface decompiler = new DecompInterface();
+        decompiler.toggleCCode(true);
+        decompiler.toggleSyntaxTree(false);
+        if (!decompiler.openProgram(currentProgram))
+            throw new IllegalStateException("Unable to initialize decompiler");
+        try {
+            for (Function function : scan.recordFunctions) {
+                monitor.checkCancelled();
+                DecompileResults decompiled = decompiler.decompileFunction(function, 60, monitor);
+                if (!decompiled.decompileCompleted() ||
+                        decompiled.getDecompiledFunction() == null) continue;
+                String rendered = decompiled.getDecompiledFunction().getC();
+                String functionSite = addr(function.getEntryPoint()) + " " +
+                    function.getName(true);
+                Matcher matcher = cast.matcher(rendered);
+                while (matcher.find()) {
+                    int offset = renderedFieldOffset(matcher.group("field"));
+                    String type = scalarType(matcher.group("type"));
+                    int width = scalarWidth(type);
+                    if (type.isBlank() || width < 1 || offset < 0 ||
+                            offset + width > stride) continue;
+                    FieldEvidence field = scan.fields.computeIfAbsent((long)offset,
+                        FieldEvidence::new);
+                    field.sizes.merge(width, 1, Integer::sum);
+                    field.types.merge(type, 1, Integer::sum);
+                    field.sites.add(functionSite + " rendered exact scalar cast at +0x" +
+                        Integer.toHexString(offset).toUpperCase(Locale.ROOT));
+                }
+
+                Map<String, String> pointerLocals = new HashMap<>();
+                matcher = pointerLocal.matcher(rendered);
+                while (matcher.find()) {
+                    String path = uniqueStructurePath(matcher.group("type"));
+                    if (!path.isBlank()) pointerLocals.put(matcher.group("name"), path);
+                }
+                matcher = pointerStore.matcher(rendered);
+                while (matcher.find()) {
+                    int offset = renderedFieldOffset(matcher.group("field"));
+                    String path = pointerLocals.getOrDefault(matcher.group("source"), "");
+                    if (offset < 0 || offset + 4 > stride || path.isBlank()) continue;
+                    FieldEvidence field = scan.fields.computeIfAbsent((long)offset,
+                        FieldEvidence::new);
+                    field.pointerStores.merge(path, 1, Integer::sum);
+                    field.pointerSites.add(functionSite + " exact pointer store " + path +
+                        " at +0x" + Integer.toHexString(offset).toUpperCase(Locale.ROOT));
+                }
+                matcher = pointerConsumer.matcher(rendered);
+                while (matcher.find()) {
+                    int offset = renderedFieldOffset(matcher.group("field"));
+                    String path = uniqueStructurePath(matcher.group("type"));
+                    if (offset < 0 || offset + 4 > stride || path.isBlank()) continue;
+                    FieldEvidence field = scan.fields.computeIfAbsent((long)offset,
+                        FieldEvidence::new);
+                    field.pointerConsumers.merge(path, 1, Integer::sum);
+                    field.pointerSites.add(functionSite + " exact pointer consumer " + path +
+                        " at +0x" + Integer.toHexString(offset).toUpperCase(Locale.ROOT));
+                }
+            }
+        }
+        finally {
+            decompiler.dispose();
+        }
+    }
+
+    private int renderedFieldOffset(String name) {
+        if (name == null) return -1;
+        String lower = name.toLowerCase(Locale.ROOT);
+        String value;
+        int marker = lower.lastIndexOf("_0x");
+        if (marker >= 0) value = lower.substring(marker + 3);
+        else if (lower.startsWith("field_")) {
+            value = lower.substring("field_".length());
+            if (value.startsWith("0x")) value = value.substring(2);
+        }
+        else return -1;
+        try {
+            return Integer.parseUnsignedInt(value, 16);
+        }
+        catch (NumberFormatException exception) {
+            return -1;
+        }
+    }
+
+    private String uniqueStructurePath(String rendered) {
+        if (rendered == null || rendered.isBlank()) return "";
+        String leaf = rendered;
+        int namespace = leaf.lastIndexOf("::");
+        if (namespace >= 0) leaf = leaf.substring(namespace + 2);
+        List<DataType> matches = new ArrayList<>();
+        dataTypes.findDataTypes(leaf, matches);
+        Set<String> paths = new TreeSet<>();
+        for (DataType match : matches) {
+            if (match instanceof Structure && match.getName().equals(leaf))
+                paths.add(match.getPathName());
+        }
+        return paths.size() == 1 ? paths.iterator().next() : "";
+    }
+
+    private String scalarType(String rendered) {
+        return switch (rendered.toLowerCase(Locale.ROOT)) {
+            case "char" -> "/char";
+            case "byte" -> "/byte";
+            case "short" -> "/short";
+            case "ushort" -> "/ushort";
+            case "int" -> "/int";
+            case "uint" -> "/uint";
+            case "longlong" -> "/longlong";
+            case "ulonglong" -> "/ulonglong";
+            case "float" -> "/float";
+            case "double" -> "/double";
+            default -> "";
+        };
+    }
+
+    private int scalarWidth(String type) {
+        return switch (type) {
+            case "/char", "/byte" -> 1;
+            case "/short", "/ushort" -> 2;
+            case "/int", "/uint", "/float" -> 4;
+            case "/longlong", "/ulonglong", "/double" -> 8;
+            default -> -1;
+        };
+    }
+
+    private List<FieldProposal> makeFields(Scan scan, Structure installed,
             boolean parentApply) {
         List<FieldCandidate> candidates = new ArrayList<>();
-        if (includeListingBaseline) {
+        if (installed == null) {
             DataIterator data = listing.getDefinedData(new AddressSet(base, recordEnd), true);
             while (data.hasNext()) {
                 Data item = data.next();
@@ -211,10 +366,45 @@ public class STGlobalRecordAnalyzer extends GhidraScript {
                     "existing_first_record_data"));
             }
         }
+        else {
+            // The structure passed layoutState's ownership/hash check.  Retain its concrete
+            // fields as a weaker baseline so a cast which disappears after successful typing
+            // cannot make the next analyzer pass oscillate back to undefined.  Fresh unanimous
+            // scalar evidence below has priority 70 and can still revise this generated layout.
+            for (DataTypeComponent component : installed.getDefinedComponents()) {
+                boolean generic = Undefined.isUndefined(component.getDataType());
+                candidates.add(new FieldCandidate(component.getOffset(), component.getLength(),
+                    component.getFieldName() == null ? "" : component.getFieldName(),
+                    typeSpecification(component.getDataType()), generic ? 20 : 65, 0, 0,
+                    Set.of("hash-intact generated record field"),
+                    "existing_generated_field_baseline"));
+            }
+        }
         for (FieldEvidence evidence : scan.fields.values()) {
-            int size = best(evidence.sizes);
+            Set<String> provenPointers = new TreeSet<>();
+            for (String path : evidence.pointerStores.keySet()) {
+                if (evidence.pointerStores.getOrDefault(path, 0) > 0 &&
+                        evidence.pointerConsumers.getOrDefault(path, 0) > 0)
+                    provenPointers.add(path);
+            }
+            if (provenPointers.size() == 1) {
+                String path = provenPointers.iterator().next();
+                candidates.add(new FieldCandidate(evidence.offset, 4, "",
+                    "pointer:" + path, 100, evidence.reads, evidence.writes,
+                    evidence.pointerSites,
+                    "exact_pointer_store_and_consumer; stores=" +
+                        evidence.pointerStores.get(path) + "; consumers=" +
+                        evidence.pointerConsumers.get(path)));
+            }
             String type = unique(evidence.types);
-            if (type.isBlank()) type = "/undefined" + size;
+            int size;
+            if (type.isBlank()) {
+                size = best(evidence.sizes);
+                type = "/undefined" + size;
+            }
+            else {
+                size = scalarWidth(type);
+            }
             int priority = evidence.types.isEmpty() ? 60 : evidence.types.size() == 1 ? 70 : 55;
             candidates.add(new FieldCandidate(evidence.offset, size, "", type, priority,
                 evidence.reads, evidence.writes, evidence.sites,
@@ -716,6 +906,8 @@ public class STGlobalRecordAnalyzer extends GhidraScript {
 
     private static class Scan {
         final Map<Long, FieldEvidence> fields = new TreeMap<>();
+        final Set<Function> recordFunctions = new TreeSet<>(Comparator.comparing(
+            function -> function.getEntryPoint().toString()));
         final Set<String> strideFunctions = new TreeSet<>(), totalSizeSites = new TreeSet<>(),
             boundarySites = new TreeSet<>(), baseSites = new TreeSet<>(),
             countSites = new TreeSet<>();
@@ -726,7 +918,10 @@ public class STGlobalRecordAnalyzer extends GhidraScript {
     private static class FieldEvidence {
         final long offset; final Map<Integer, Integer> sizes = new TreeMap<>();
         final Map<String, Integer> types = new TreeMap<>();
-        final Set<String> sites = new TreeSet<>(); int reads, writes;
+        final Map<String, Integer> pointerStores = new TreeMap<>();
+        final Map<String, Integer> pointerConsumers = new TreeMap<>();
+        final Set<String> sites = new TreeSet<>(), pointerSites = new TreeSet<>();
+        int reads, writes;
         FieldEvidence(long offset) { this.offset = offset; }
     }
     private static class FieldCandidate {

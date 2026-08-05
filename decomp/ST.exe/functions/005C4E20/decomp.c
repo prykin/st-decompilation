@@ -9,7 +9,6 @@ void __thiscall SettMapTy::PaintSettMap(SettMapTy *this,char param_1)
 
 {
   SettMapTy_field_1E26State SVar1;
-  code *pcVar2;
   SettMapTy *pSVar3;
   int errorCode;
   uint *resourceString;

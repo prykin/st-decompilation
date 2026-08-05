@@ -8,7 +8,6 @@
 void __thiscall MMsgTy::InitMMsg(MMsgTy *this)
 
 {
-  code *pcVar1;
   MMsgTy *this_00;
   int errorCode;
   int iVar2;

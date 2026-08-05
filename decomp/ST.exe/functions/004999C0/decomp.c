@@ -10,7 +10,6 @@ STGroupBoatC::ReMakePVecAndTgtListExt(STGroupBoatC *this,char param_1,short para
 
 {
   dword dVar1;
-  code *pcVar2;
   STGroupBoatC *this_00;
   int errorCode;
   DArrayTy *array;

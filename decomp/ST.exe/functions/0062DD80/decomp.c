@@ -10,7 +10,6 @@ STManRub3C::AddNewColl3(STManRub3C *this,int param_1,int param_2,int param_3,int
 
 {
   uint uVar1;
-  code *pcVar2;
   STManRub3C *pSVar3;
   int iVar4;
   DArrayTy *pDVar5;

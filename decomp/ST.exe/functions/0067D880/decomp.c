@@ -9,7 +9,6 @@
 undefined4 * __cdecl LoadPlrEdit(int param_1,char *param_2)
 
 {
-  code *pcVar1;
   int errorCode;
   int iVar2;
   undefined4 *puVar3;

@@ -15,7 +15,7 @@ uint __fastcall FUN_0044ce40(STAllPlayersC *param_1)
 
   uVar5 = 0;
   index = 0;
-  array = (DArrayTy *)g_packedRecords_A62x8[DAT_0080874d].field335_0x16d;
+  array = (DArrayTy *)g_packedRecords_A62x8[DAT_0080874d].field102_0x16d;
   dVar1 = array->count;
   local_8 = param_1;
   if (0 < (int)dVar1) {

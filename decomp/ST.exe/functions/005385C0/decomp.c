@@ -10,7 +10,6 @@ UPanelTy::OutProc(UPanelTy *this,int *param_1,undefined4 param_2,undefined4 para
                  int param_5,undefined4 param_6,undefined4 param_7,BITMAPINFO *param_8)
 
 {
-  code *pcVar1;
   int errorCode;
   int iVar2;
   InternalExceptionFrame local_48;

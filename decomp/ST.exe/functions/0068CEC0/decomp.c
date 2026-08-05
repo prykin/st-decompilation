@@ -414,6 +414,7 @@ cf_continue_loop_0068D1EB:
         pcVar13 = pcVar11 + -uVar7;
         pcVar11 = pcVar10 + -1;
         memmove(pcVar11, pcVar13, uVar7); /* compiler REP MOVS byte copy */
+        uVar8 = 0;
         Library::DKW::TBL::FUN_006b5aa0(&pDVar5->flags,local_10bc);
         Library::DKW::TBL::FUN_006b5aa0(&pDVar5->flags,&DAT_008016a0);
         iVar17 = 0;
@@ -487,6 +488,7 @@ cf_continue_loop_0068D1EB:
         pcVar13 = pcVar13 + -uVar7;
         pcVar11 = (char *)&DAT_0084790c;
         memmove(pcVar11, pcVar13, uVar7); /* compiler REP MOVS byte copy */
+        uVar8 = 0;
       }
       param_3[1] = (int)&DAT_0084790c;
       uVar7 = 0xffffffff;

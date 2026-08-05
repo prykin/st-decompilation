@@ -14,20 +14,20 @@ int __thiscall STLBombC::GetMessage(STLBombC *this,STMessage *message)
 {
   STMessageId SVar1;
   dword dVar2;
-  code *pcVar3;
   undefined1 uVar4;
-  undefined2 uVar5;
+  undefined1 uVar5;
+  undefined1 uVar6;
   STSprGameObjC *this_00;
-  int iVar6;
   int iVar7;
-  uint uVar8;
-  short sVar9;
-  AnonShape_005859A0_2434EC3C *pAVar10;
-  byte *puVar11;
-  byte *pbVar12;
-  byte *puVar13;
-  AnonShape_005859A0_2F00015D *pAVar14;
-  byte *pbVar15;
+  int iVar8;
+  uint uVar9;
+  short sVar10;
+  AnonShape_005859A0_2434EC3C *pAVar11;
+  byte *puVar12;
+  byte *pbVar13;
+  byte *puVar14;
+  AnonShape_005859A0_2F00015D *pAVar15;
+  byte *pbVar16;
   InternalExceptionFrame local_80;
   void *local_3c;
   AnonShape_GLOBAL_00806724_3210464F *local_38;
@@ -50,14 +50,14 @@ int __thiscall STLBombC::GetMessage(STLBombC *this,STMessage *message)
   local_80.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_80;
   local_1c = (STSprGameObjC *)this;
-  iVar6 = Library::MSVCRT::__setjmp3(local_80.jumpBuffer,0);
+  iVar7 = Library::MSVCRT::__setjmp3(local_80.jumpBuffer,0);
   this_00 = local_1c;
-  if (iVar6 != 0) {
+  if (iVar7 != 0) {
     g_currentExceptionFrame = local_80.previous;
-    iVar7 = ReportDebugMessage("E:\\__titans\\Igor\\to_lbomb.cpp",0x230,0,iVar6,"%s",
+    iVar8 = ReportDebugMessage("E:\\__titans\\Igor\\to_lbomb.cpp",0x230,0,iVar7,"%s",
                                "STLBombC::GetMessage");
-    if (iVar7 == 0) {
-      RaiseInternalException(iVar6,0,"E:\\__titans\\Igor\\to_lbomb.cpp",0x231);
+    if (iVar8 == 0) {
+      RaiseInternalException(iVar7,0,"E:\\__titans\\Igor\\to_lbomb.cpp",0x231);
       return 0xffff;
     }
     STDebugBreak(); /* noreturn in standalone pseudocode */
@@ -71,43 +71,40 @@ int __thiscall STLBombC::GetMessage(STLBombC *this,STMessage *message)
       local_c = Library::DKW::LIB::MemAlloc(local_10 + 0x67 + local_8);
       if (((local_18 != nullptr) && (local_14 != nullptr)) &&
          (local_c != nullptr)) {
-        puVar11 = (byte *)&this_00->field_0x258;
-        pAVar14 = local_c;
-        for (iVar6 = 0xc; iVar6 != 0; iVar6 = iVar6 + -1) {
-          *(undefined4 *)pAVar14 = *puVar11;
-          puVar11 = (byte *)(puVar11 + 1);
-          pAVar14 = (AnonShape_005859A0_2F00015D *)&pAVar14->field_0x4;
-        }
-        *(undefined2 *)pAVar14 = *(undefined2 *)puVar11;
+        puVar12 = (byte *)&this_00->field_0x258;
+        pAVar15 = local_c;
+        memmove(pAVar15, puVar12, 0x32); /* compiler REP MOVS byte copy */
         *(undefined4 *)&local_c->field_0xc = 2;
         local_c->field_0032 = this_00->field_0231;
         *(undefined4 *)&local_c->field_0x36 = *(undefined4 *)&this_00->field_0x235;
         local_c->field_003A = *(undefined4 *)&this_00->field_0x23d;
         *(undefined4 *)&local_c->field_0x3e = *(undefined4 *)&this_00->field_0x249;
         uVar4 = this_00->field_024E;
-        uVar5 = *(undefined2 *)&this_00->field_0x24f;
+        uVar5 = this_00->field_024F;
+        uVar6 = this_00->field_0x250;
         local_c->field_0x42 = this_00->field_0x24d;
         local_c->field_0x43 = uVar4;
-        *(undefined2 *)&local_c->field_0x44 = uVar5;
+        local_c->field_0x44 = uVar5;
+        local_c->field_0x45 = uVar6;
         *(undefined4 *)&local_c->field_0x4e = *(undefined4 *)&this_00->field_0x251;
         *(undefined2 *)&local_c->field_0x52 = *(undefined2 *)&this_00->field_0x41;
         *(undefined2 *)&local_c->field_0x54 = *(undefined2 *)&this_00->field_0x43;
         *(undefined2 *)&local_c->field_0x56 = *(undefined2 *)&this_00->field_0x45;
         local_c->field_0046 = *(undefined4 *)((int)&this_00->field_023E + 3);
-        *(undefined4 *)&local_c->field_0x4a = *(undefined4 *)&this_00->field_0x245;
+        *(undefined4 *)&local_c->field_0x4a = *(undefined4 *)((int)&this_00->field_0244 + 1);
         *(undefined4 *)&local_c->field_0x58 = 0;
         local_c->field_0x5c = this_00->field_0x255;
         local_c->field_0x5d = this_00->field_0x256;
         local_c->field_0x5e = this_00->field_0x257;
         local_c->field_005F = local_8;
-        pbVar12 = local_18;
-        pbVar15 = &local_c->field_0x63;
-        memmove(pbVar15, pbVar12, local_8); /* compiler REP MOVS byte copy */
-        uVar8 = 0;
+        pbVar13 = local_18;
+        pbVar16 = &local_c->field_0x63;
+        memmove(pbVar16, pbVar13, local_8); /* compiler REP MOVS byte copy */
+        uVar9 = 0;
         *(uint *)(&local_c->field_0x63 + local_8) = local_10;
-        pbVar12 = local_14;
-        pbVar15 = &local_c[1].field_0x3 + local_8;
-        memmove(pbVar15, pbVar12, local_10); /* compiler REP MOVS byte copy */
+        pbVar13 = local_14;
+        pbVar16 = &local_c[1].field_0x3 + local_8;
+        memmove(pbVar16, pbVar13, local_10); /* compiler REP MOVS byte copy */
         STPlaySystemC::SaveObjData
                   (g_playSystem_00802A38,(int *)this_00->field_0018,(byte *)local_c,
                    (AnonShape_0060EA30_DCEB68AD *)(local_10 + 0x67 + local_8));
@@ -127,19 +124,19 @@ int __thiscall STLBombC::GetMessage(STLBombC *this,STMessage *message)
       if (SVar1 == MESS_ID_CREATE) {
         dVar2 = (message->arg0).u32;
         this_00->field_0231 = 4;
-        uVar8 = *(uint *)(dVar2 + 0xc);
-        if (uVar8 < 2) {
+        uVar9 = *(uint *)(dVar2 + 0xc);
+        if (uVar9 < 2) {
           *(undefined4 *)((int)&this_00->field_023E + 3) = 0;
           *(uint *)&this_00->field_0x23d = g_playSystem_00802A38->field_00E4;
-          puVar11 = (byte *)((message->arg0).ptr);
-          puVar13 = (byte *)&this_00->field_0x258;
-          memmove(puVar13, puVar11, 0x32); /* compiler REP MOVS byte copy */
+          puVar12 = (byte *)((message->arg0).ptr);
+          puVar14 = (byte *)&this_00->field_0x258;
+          memmove(puVar14, puVar12, 0x32); /* compiler REP MOVS byte copy */
           *(undefined4 *)&this_00->field_0x249 = 0x28;
           *(undefined4 *)&this_00->field_0x24d = 0xfffffe70;
-          iVar6 = STT3DSprC::LoadSequence
+          iVar7 = STT3DSprC::LoadSequence
                             ((STT3DSprC *)&this_00->field_01D5,0xe,DAT_00806774,"lasbom",
                              0x1d);
-          if (iVar6 != 0) {
+          if (iVar7 != 0) {
             RaiseInternalException
                       (-1,g_overwriteContext_007ED77C,"E:\\__titans\\Igor\\to_lbomb.cpp",0x19f
                       );
@@ -148,25 +145,21 @@ int __thiscall STLBombC::GetMessage(STLBombC *this,STMessage *message)
                     ((STT3DSprC *)&this_00->field_01D5,0xe,g_playSystem_00802A38->field_00E4);
           sub_00416240(this_00,*(ushort *)&this_00->field_0x26c,*(short *)&this_00->field_0x270,
                        *(ushort *)&this_00->field_0x274);
-          *(int *)&this_00->field_0x245 = (int)PTR_00806724->field_002C;
+          iVar7 = *(int *)&this_00->field_0x270;
+          iVar8 = *(int *)&this_00->field_0x26c;
+          *(int *)((int)&this_00->field_0244 + 1) = (int)PTR_00806724->field_002C;
           this_00->field_0231 = CASE_0;
-          thunk_FUN_005860d0(this_00,*(int *)&this_00->field_0x26c,*(int *)&this_00->field_0x270,
-                             0x463);
+          thunk_FUN_005860d0(this_00,iVar8,iVar7,0x463);
         }
-        else if (uVar8 == 2) {
+        else if (uVar9 == 2) {
           local_20 = (message->arg0).ptr;
-          pAVar10 = local_20;
-          puVar11 = (byte *)&this_00->field_0x258;
-          for (iVar6 = 0xc; iVar6 != 0; iVar6 = iVar6 + -1) {
-            *puVar11 = *(undefined4 *)pAVar10;
-            pAVar10 = (AnonShape_005859A0_2434EC3C *)&pAVar10->field_0x4;
-            puVar11 = (byte *)(puVar11 + 1);
-          }
-          *(undefined2 *)puVar11 = *(undefined2 *)pAVar10;
+          pAVar11 = local_20;
+          puVar12 = (byte *)&this_00->field_0x258;
+          memmove(puVar12, pAVar11, 0x32); /* compiler REP MOVS byte copy */
           local_8 = local_20->field_005F;
           STAllPlayersC::RestoreGObjData
                     ((STAllPlayersC *)this_00,(undefined4 *)(&local_20[1].field_0x3 + local_8));
-          pAVar10 = local_20;
+          pAVar11 = local_20;
           this_00->field_0231 = local_20->field_0032;
           *(undefined4 *)&this_00->field_0x235 = local_20->field_0036;
           *(undefined4 *)&this_00->field_0x23d = local_20->field_003A;
@@ -174,7 +167,7 @@ int __thiscall STLBombC::GetMessage(STLBombC *this,STMessage *message)
           *(undefined4 *)&this_00->field_0x249 = local_20->field_003E;
           *(undefined4 *)&this_00->field_0x251 = local_20->field_004E;
           *(undefined4 *)((int)&this_00->field_023E + 3) = local_20->field_0046;
-          *(undefined4 *)&this_00->field_0x245 = local_20->field_004A;
+          *(undefined4 *)((int)&this_00->field_0244 + 1) = local_20->field_004A;
           this_00->field_0x255 = local_20->field_0x5c;
           this_00->field_0x256 = local_20->field_005D;
           this_00->field_0x257 = local_20->field_005E;
@@ -183,19 +176,19 @@ int __thiscall STLBombC::GetMessage(STLBombC *this,STMessage *message)
           *(undefined2 *)&this_00->field_0x45 = local_20->field_0056;
           local_3c = Library::DKW::LIB::MemAlloc(0x44);
           if (local_3c != nullptr) {
-            iVar6 = 0;
+            iVar7 = 0;
             do {
-              *(int **)(iVar6 + (int)local_3c) = DAT_00806774;
-              iVar6 = iVar6 + 4;
-            } while (iVar6 < 0x44);
+              *(int **)(iVar7 + (int)local_3c) = DAT_00806774;
+              iVar7 = iVar7 + 4;
+            } while (iVar7 < 0x44);
             *(undefined4 *)((int)local_3c + 0x24) = DAT_00806764;
-            iVar6 = *(int *)((int)&this_00->field_023E + 3);
-            if (((iVar6 < 1) || (PTR_00806724 == nullptr)) ||
+            iVar7 = *(int *)((int)&this_00->field_023E + 3);
+            if (((iVar7 < 1) || (PTR_00806724 == nullptr)) ||
                (PTR_00806724 == (AnonShape_GLOBAL_00806724_3210464F *)0xffffffd0)) {
               local_38 = nullptr;
             }
             else {
-              local_38 = PTR_00806724 + iVar6;
+              local_38 = PTR_00806724 + iVar7;
             }
             local_34 = (int)PTR_00806724->field_002C;
             local_30 = DAT_008073cc;
@@ -204,33 +197,33 @@ int __thiscall STLBombC::GetMessage(STLBombC *this,STMessage *message)
             local_24 = 0;
             STT3DSprC::RestoreSpr
                       ((STT3DSprC *)&this_00->field_01D5,(int *)&local_3c,
-                       (AnonShape_004AD790_77673787 *)&pAVar10->field_0x63);
+                       (AnonShape_004AD790_77673787 *)&pAVar11->field_0x63);
             FreeAndNull(&local_3c);
           }
         }
-        iVar6 = *(int *)&this_00->field_0x26c;
-        sVar9 = (short)(iVar6 >> 0x1f);
-        if (iVar6 < 0) {
-          sVar9 = (((short)(iVar6 / 0xc9) + sVar9) - (short)((longlong)iVar6 * 0x28c1979 >> 0x3f)) +
-                  -1;
+        iVar7 = *(int *)&this_00->field_0x26c;
+        sVar10 = (short)(iVar7 >> 0x1f);
+        if (iVar7 < 0) {
+          sVar10 = (((short)(iVar7 / 0xc9) + sVar10) - (short)((longlong)iVar7 * 0x28c1979 >> 0x3f))
+                   + -1;
         }
         else {
-          sVar9 = ((short)(iVar6 / 0xc9) + sVar9) - (short)((longlong)iVar6 * 0x28c1979 >> 0x3f);
+          sVar10 = ((short)(iVar7 / 0xc9) + sVar10) - (short)((longlong)iVar7 * 0x28c1979 >> 0x3f);
         }
-        iVar6 = *(int *)&this_00->field_0x270;
-        *(short *)&this_00->field_0x47 = sVar9;
-        sVar9 = (short)(iVar6 >> 0x1f);
-        if (iVar6 < 0) {
+        iVar7 = *(int *)&this_00->field_0x270;
+        *(short *)&this_00->field_0x47 = sVar10;
+        sVar10 = (short)(iVar7 >> 0x1f);
+        if (iVar7 < 0) {
           *(undefined2 *)&this_00->field_0x4b = 4;
           *(short *)&this_00->field_0x49 =
-               (((short)(iVar6 / 0xc9) + sVar9) - (short)((longlong)iVar6 * 0x28c1979 >> 0x3f)) + -1
-          ;
+               (((short)(iVar7 / 0xc9) + sVar10) - (short)((longlong)iVar7 * 0x28c1979 >> 0x3f)) +
+               -1;
           g_currentExceptionFrame = local_80.previous;
           return 0;
         }
         *(undefined2 *)&this_00->field_0x4b = 4;
         *(short *)&this_00->field_0x49 =
-             ((short)(iVar6 / 0xc9) + sVar9) - (short)((longlong)iVar6 * 0x28c1979 >> 0x3f);
+             ((short)(iVar7 / 0xc9) + sVar10) - (short)((longlong)iVar7 * 0x28c1979 >> 0x3f);
         g_currentExceptionFrame = local_80.previous;
         return 0;
       }

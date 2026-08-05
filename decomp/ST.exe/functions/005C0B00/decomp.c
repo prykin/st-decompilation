@@ -18,7 +18,6 @@ MReportTy::PaintBut(MReportTy *this,STMessage *param_1,UINT param_2,int param_3,
 
 {
   word wVar1;
-  code *pcVar2;
   STMessageArg SVar3;
   byte *pbVar4;
   AnonPointee_MReportTy_0077 *pAVar5;
@@ -76,11 +75,11 @@ MReportTy::PaintBut(MReportTy *this,STMessage *param_1,UINT param_2,int param_3,
       *(undefined1 *)puVar6 = 0xff;
       puVar6 = (undefined4 *)((int)puVar6 + 1);
     }
-    FUN_006c7610((AnonShape_006B5B10_E0D06CF1 *)pAVar5,0,0,0,(uint)local_8,(uint)local_1c,param_3,
+    FUN_006c7610((RecoveredSourceFamily_dibcopy *)pAVar5,0,0,0,(uint)local_8,(uint)local_1c,param_3,
                  0x4c);
-    FUN_006c7570((AnonShape_006B5B10_E0D06CF1 *)pAVar5,0,2,2,local_8 + -1,(int)(pbVar4 + -4),param_3
-                 ,(byte)_local_10);
-    FUN_006c7570((AnonShape_006B5B10_E0D06CF1 *)pAVar5,0,0,0,local_8,(int)pbVar4,param_3,
+    FUN_006c7570((RecoveredSourceFamily_dibcopy *)pAVar5,0,2,2,local_8 + -1,(int)(pbVar4 + -4),
+                 param_3,(byte)_local_10);
+    FUN_006c7570((RecoveredSourceFamily_dibcopy *)pAVar5,0,0,0,local_8,(int)pbVar4,param_3,
                  (byte)_local_10);
     if (((param_4 == '\0') && (param_2 != 0)) || ((param_4 != '\0' && (param_5 != nullptr)))) {
       if (param_4 == '\0') {

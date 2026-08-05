@@ -11,7 +11,6 @@ undefined4 __thiscall STGroupBoatC::GrpUnLoadRC(STGroupBoatC *this,int param_1)
   short sVar1;
   short sVar2;
   short sVar3;
-  code *pcVar4;
   STGroupBoatC *pSVar5;
   DArrayTy *array;
   int iVar6;

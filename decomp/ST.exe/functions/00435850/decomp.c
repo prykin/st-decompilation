@@ -27,7 +27,7 @@ ushort FUN_00435850(char param_1,int param_2,int *param_3)
   DArrayTy *local_8;
 
   iVar2 = (int)param_1;
-  local_8 = (DArrayTy *)g_packedRecords_A62x8[iVar2].field5_0x5;
+  local_8 = (DArrayTy *)g_packedRecords_A62x8[iVar2].field2_0x5;
   index = local_8->count;
   uVar1 = index;
   while (index = index - 1, -1 < (int)index) {

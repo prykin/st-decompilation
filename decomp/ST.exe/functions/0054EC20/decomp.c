@@ -18,7 +18,6 @@ void __thiscall PlaySystemTy::SendClientMail(PlaySystemTy *this)
 {
   undefined4 *puVar1;
   undefined4 *puVar2;
-  code *pcVar3;
   uint uVar4;
   int iVar5;
   char *pcVar6;

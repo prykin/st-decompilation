@@ -15,7 +15,6 @@ STAllPlayersC::GetGObjFromZone
           int *param_6,int *param_7)
 
 {
-  code *pcVar1;
   int errorCode;
   int iVar2;
   InternalExceptionFrame local_4c;

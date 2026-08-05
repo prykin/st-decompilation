@@ -8,7 +8,6 @@
 undefined4 __thiscall CGenerate::_saveObj(CGenerate *this)
 
 {
-  code *pcVar1;
   InternalExceptionFrame *pIVar2;
   int iVar3;
   undefined4 uVar4;

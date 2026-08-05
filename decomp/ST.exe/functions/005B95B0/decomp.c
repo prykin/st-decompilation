@@ -44,10 +44,9 @@ MMsgTy * __cdecl CreateMMsg(void)
     puVar3 = (undefined4 *)&this->field_0xbc;
     do {
       puVar4 = puVar3;
-      memset(puVar4, 0, 0x26); /* compiler bulk-zero initialization */
+      memset(puVar4, 0, 0x27); /* compiler bulk-zero initialization */
       puVar4 = (undefined4 *)((byte *)puVar4 + 0x24);
       iVar1 = iVar1 + -1;
-      *(undefined1 *)((int)puVar4 + 2) = 0;
       puVar3 = (undefined4 *)((int)puVar3 + 0x1fb);
     } while (iVar1 != 0);
     SpriteClassTy::SpriteClassTy((SpriteClassTy *)&this->field_0x1cf7);

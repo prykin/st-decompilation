@@ -10,7 +10,6 @@ undefined4 __thiscall STGroupBoatC::GrpBuild(STGroupBoatC *this,int param_1)
 {
   short sVar1;
   short sVar2;
-  code *pcVar3;
   STGroupBoatC *pSVar4;
   DArrayTy *array;
   short sVar5;

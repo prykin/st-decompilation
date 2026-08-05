@@ -14,7 +14,6 @@ int __thiscall STPlaySystemC::GetMessage(STPlaySystemC *this,STMessage *message)
 {
   char cVar1;
   STPlaySystemCVTable *pSVar2;
-  code *pcVar3;
   cMf32 *this_00;
   int *piVar4;
   int iVar5;

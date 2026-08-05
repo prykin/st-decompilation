@@ -24,7 +24,6 @@ AiEventClassTy::__CreateObjPl
           undefined4 param_10,int param_11,int param_12)
 
 {
-  code *pcVar1;
   bool bVar2;
   int iVar3;
   char *_Source;

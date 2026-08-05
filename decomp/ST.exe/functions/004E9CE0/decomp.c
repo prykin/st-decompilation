@@ -12,7 +12,6 @@
 int __thiscall TLOBaseTy::teleNone(TLOBaseTy *this)
 
 {
-  code *pcVar1;
   bool bVar2;
   TLOBaseTy *this_00;
   int iVar3;

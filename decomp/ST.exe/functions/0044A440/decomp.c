@@ -12,7 +12,6 @@ undefined4 __thiscall
 STAllPlayersC::UnRegisterDeposit(STAllPlayersC *this,uint param_1,STResourceC *param_2)
 
 {
-  code *pcVar1;
   STAllPlayersC *this_00;
   int errorCode;
   STGameObjC *pSVar2;

@@ -12,7 +12,6 @@ FSGSTy::SetBanner(FSGSTy *this,char *param_1,undefined4 param_2,int param_3,uint
 {
   undefined1 *puVar1;
   char cVar2;
-  code *pcVar3;
   int iVar4;
   byte *puVar5;
   AnonShape_006C7D20_41F6C243 *pAVar6;

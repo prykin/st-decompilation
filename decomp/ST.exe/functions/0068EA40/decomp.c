@@ -8,7 +8,6 @@
 void __thiscall AiTactClassTy::ClaimRestore(AiTactClassTy *this)
 
 {
-  code *pcVar1;
   AiTactClassTy *pAVar2;
   int errorCode;
   AiTactClassTy_field_00BDDArray *pAVar3;

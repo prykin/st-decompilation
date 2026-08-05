@@ -9,7 +9,6 @@ undefined4 __thiscall
 STGroupBoatC::InitWay(STGroupBoatC *this,DArrayTy *param_1,int param_2,int param_3,int param_4)
 
 {
-  code *pcVar1;
   STGroupBoatC *pSVar2;
   int errorCode;
   STGameObjC *pSVar3;

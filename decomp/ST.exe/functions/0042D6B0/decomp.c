@@ -8,7 +8,6 @@
 void STAllPlayersC::RemoveActiveTV(char param_1)
 
 {
-  code *pcVar1;
   int iVar2;
   /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
   STAllPlayersC *in_ECX;
@@ -16,9 +15,9 @@ void STAllPlayersC::RemoveActiveTV(char param_1)
   undefined4 *puVar4;
 
   iVar3 = (int)param_1;
-  iVar2 = g_packedRecords_A62x8[iVar3].field448_0x203;
+  iVar2 = g_packedRecords_A62x8[iVar3].field200_0x203;
   if (iVar2 == 0) {
-    puVar4 = &g_packedRecords_A62x8[iVar3].field332_0x163;
+    puVar4 = &g_packedRecords_A62x8[iVar3].field96_0x163;
   }
   else {
     if (iVar2 != 1) {
@@ -29,7 +28,7 @@ void STAllPlayersC::RemoveActiveTV(char param_1)
       }
       STDebugBreak(); /* noreturn in standalone pseudocode */
     }
-    puVar4 = &g_packedRecords_A62x8[iVar3].field390_0x1b3;
+    puVar4 = &g_packedRecords_A62x8[iVar3].field149_0x1b3;
   }
   /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
   ResetActivityFromTmp(in_ECX,param_1,iVar2,0,1);

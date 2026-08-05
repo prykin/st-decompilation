@@ -9,7 +9,6 @@ void __thiscall
 CursorClassTy::CursDrawInit(CursorClassTy *this,int param_1,int param_2,int param_3,int param_4)
 
 {
-  code *pcVar1;
   int errorCode;
   int iVar2;
   InternalExceptionFrame local_4c;

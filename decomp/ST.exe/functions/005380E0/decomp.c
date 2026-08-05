@@ -12,7 +12,6 @@
 void __thiscall OptPanelTy::UpdateObjectives(OptPanelTy *this)
 
 {
-  code *pcVar1;
   int errorCode;
   int iVar2;
   InternalExceptionFrame local_4c;

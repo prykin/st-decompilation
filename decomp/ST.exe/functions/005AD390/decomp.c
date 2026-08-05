@@ -27,7 +27,6 @@ void __thiscall ChooseMapTy::NoneChooseMap(ChooseMapTy *this)
   byte bVar2;
   ChooseMapTy_field_1A5FState CVar3;
   uint uVar4;
-  code *pcVar5;
   ChooseMapTy *this_00;
   DWORD DVar6;
   int iVar7;

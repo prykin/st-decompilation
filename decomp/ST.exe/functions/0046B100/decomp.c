@@ -13,7 +13,6 @@ int __thiscall STBoatC::Build(STBoatC *this,uint param_1)
   ushort uVar3;
   STBoatC_field_0508State SVar4;
   STWorldObject *pSVar5;
-  code *pcVar6;
   undefined2 uVar7;
   undefined4 uVar8;
   int iVar9;
@@ -481,12 +480,10 @@ LAB_0046b6e2:
     }
     if (SVar4 == CASE_5) {
       puVar11 = &local_d8;
-      memset(puVar11, 0, 0x6c); /* compiler bulk-zero initialization */
+      memset(puVar11, 0, 0x6f); /* compiler bulk-zero initialization */
       puVar11 = (undefined4 *)((byte *)puVar11 + 0x6c);
       uVar8 = this->field_0502;
-      *(undefined2 *)puVar11 = 0;
       sVar18 = this->field_04DD;
-      *(undefined1 *)((int)puVar11 + 2) = 0;
       local_d4 = this->field_0024;
       local_b0 = this->field_04E3;
       local_a8 = (int)this->field_04DF;

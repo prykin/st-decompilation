@@ -8,7 +8,6 @@
 void __thiscall MTestTy::DoneMTest(MTestTy *this)
 
 {
-  code *pcVar1;
   MTestTy *this_00;
   int iVar2;
   int iVar3;

@@ -21,8 +21,7 @@ void __thiscall StartSystemTy::ChatMessage(StartSystemTy *this,STMessage *param_
   ushort *puVar3;
   dword dVar4;
   ccFntTy *pcVar5;
-  AnonShape_006B5B10_E0D06CF1 *pAVar6;
-  code *pcVar7;
+  RecoveredSourceFamily_dibcopy *pRVar6;
   StartSystemTy *this_00;
   undefined4 *puVar8;
   int iVar9;
@@ -68,9 +67,9 @@ void __thiscall StartSystemTy::ChatMessage(StartSystemTy *this,STMessage *param_
       if (pcVar5->field_00A0 != 0) {
         FUN_00710790((AnonShape_00710790_4CBB90D4 *)pcVar5);
       }
-      pAVar6 = (AnonShape_006B5B10_E0D06CF1 *)this_00->field_067E;
+      pRVar6 = (RecoveredSourceFamily_dibcopy *)this_00->field_067E;
       local_c = *(int *)&pcVar5->field_0x8a;
-      FUN_006b4170(pAVar6,0,0,0,pAVar6->field_0004,pAVar6->field_0008,0xff);
+      FUN_006b4170(pRVar6,0,0,0,pRVar6->field_0004,pRVar6->field_0008,0xff);
       uVar11 = (uint)(param_1->arg0).words.high;
       iVar10 = DAT_0080c4fa;
       uVar12 = uVar11;

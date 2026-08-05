@@ -8,7 +8,6 @@
 void __thiscall STGroupBoatC::ChangeMDNotify(STGroupBoatC *this,int param_1,short param_2)
 
 {
-  code *pcVar1;
   STGroupBoatC *this_00;
   int iVar2;
   int iVar3;

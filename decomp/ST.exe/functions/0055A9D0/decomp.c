@@ -12,7 +12,6 @@ VisibleClassTy::VisHoleCreate
 
 {
   VisibleClassTy_field_00F4DArray *array;
-  code *pcVar1;
   VisibleClassTy *this_00;
   int iVar2;
   int iVar3;

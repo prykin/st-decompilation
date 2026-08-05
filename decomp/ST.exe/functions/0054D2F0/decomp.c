@@ -12,7 +12,6 @@
 int __thiscall STPlaySystemC::Save(STPlaySystemC *this,cMf32 *param_1)
 
 {
-  code *pcVar1;
   STPlaySystemC *pSVar2;
   int iVar3;
   int iVar4;

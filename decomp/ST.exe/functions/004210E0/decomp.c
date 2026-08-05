@@ -19,7 +19,6 @@ undefined4 * __thiscall STAllPlayersC::SaveGObjData(STAllPlayersC *this,int *par
   ushort *puVar9;
   AnonPointee_STAllPlayersC_0195 *pAVar10;
   AnonPointee_STAllPlayersC_0199 *pAVar11;
-  code *pcVar12;
   uint *puVar13;
   AnonShape_004210E0_306A4C8B *pAVar14;
   STAllPlayersC *pSVar15;

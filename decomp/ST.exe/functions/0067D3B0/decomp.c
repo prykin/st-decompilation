@@ -23,7 +23,6 @@ PlrDataPack(AllocationRecord_0067D3B0 *param_1,undefined4 *param_2,int param_3,u
 {
   int iVar1;
   dword dVar2;
-  code *pcVar3;
   DArrayTy **ppDVar4;
   byte *pbVar5;
   AllocationRecord_0067D3B0 *pAVar6;

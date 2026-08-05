@@ -9,7 +9,6 @@ void __thiscall PlayPanelTy::SwitchOptPanel(PlayPanelTy *this,int param_1)
 
 {
   short sVar1;
-  code *pcVar2;
   PlayPanelTy *pPVar3;
   int errorCode;
   int iVar4;

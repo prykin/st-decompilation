@@ -22,7 +22,6 @@ int __thiscall STTorpC::GetMessage(STTorpC *this,STMessage *message)
   STMessageId SVar3;
   STSprGameObjC_field_0259State SVar4;
   longlong lVar5;
-  code *pcVar6;
   STSprGameObjC *this_00;
   byte bVar7;
   undefined2 uVar8;

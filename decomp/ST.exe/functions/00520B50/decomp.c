@@ -17,7 +17,6 @@ InfocPanelTy::PaintInfocObj
           (InfocPanelTy *this,ushort param_1,ushort param_2,int param_3,int param_4)
 
 {
-  code *pcVar1;
   InfocPanelTy *pIVar2;
   byte bVar3;
   int errorCode;
@@ -43,7 +42,8 @@ InfocPanelTy::PaintInfocObj
     else {
       bVar3 = (-(DAT_0080874e != '\x01') & 0x89U) + 0x3a;
     }
-    FUN_006b4170((AnonShape_006B5B10_E0D06CF1 *)pIVar2->field_0068,0,param_3,param_4,0x2d,0xc,bVar3);
+    FUN_006b4170((RecoveredSourceFamily_dibcopy *)pIVar2->field_0068,0,param_3,param_4,0x2d,0xc,
+                 bVar3);
     ccFntTy::SetSurf(pIVar2->field_0189,pIVar2->field_0068,0,param_3,param_4,0x2d,0xc);
     ccFntTy::WrStr(pIVar2->field_0189,(uint *)&pIVar2->field_018D,-1,-1,
                    (DAT_0080874e != '\x03') - 1 & 5);

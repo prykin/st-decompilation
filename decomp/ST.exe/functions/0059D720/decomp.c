@@ -16,7 +16,6 @@ void __thiscall FSGSTy::InfoCtrls(FSGSTy *this)
 
 {
   byte bVar1;
-  code *pcVar2;
   FSGSTy *this_00;
   byte *pbVar3;
   DArrayTy *pDVar4;

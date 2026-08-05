@@ -8,7 +8,6 @@
 void __thiscall BehPanelTy::ShiftControls(BehPanelTy *this,int param_1)
 
 {
-  code *pcVar1;
   BehPanelTy *this_00;
   short sVar2;
   int errorCode;

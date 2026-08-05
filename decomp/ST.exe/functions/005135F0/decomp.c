@@ -9,7 +9,6 @@ void __thiscall HelpPanelTy::HomeBut(HelpPanelTy *this)
 
 {
   HelpPanelTy_field_01A1State HVar1;
-  code *pcVar2;
   HelpPanelTy *this_00;
   int iVar3;
   undefined4 *puVar4;
@@ -56,7 +55,7 @@ void __thiscall HelpPanelTy::HomeBut(HelpPanelTy *this)
     this_00->field_01CF = 0xffffffff;
     this_00->field_01CB->count = 0;
     Library::DKW::WGR::FUN_006b55f0
-              ((AnonShape_006B5B10_E0D06CF1 *)this_00->field_0068,0,0x21,0x16,
+              ((RecoveredSourceFamily_dibcopy *)this_00->field_0068,0,0x21,0x16,
                (byte *)this_00->field_01DC,0,0x21,0x16,0x1b8,0x118);
     local_8 = 0;
     *(undefined4 *)&this_00->field_01B3->field_0xc = 0;

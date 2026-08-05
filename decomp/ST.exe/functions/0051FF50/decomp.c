@@ -8,7 +8,6 @@
 void __thiscall InfocPanelTy::InitInfocPanel(InfocPanelTy *this)
 
 {
-  code *pcVar1;
   InfocPanelTy *this_00;
   int iVar2;
   LPSTR pCVar3;

@@ -11,7 +11,6 @@ MTaskTy::CreateTextSSpr
           ccFntTy *param_6,int param_7,int param_8,int param_9)
 
 {
-  code *pcVar1;
   uint uVar2;
   int iVar3;
   int iVar4;

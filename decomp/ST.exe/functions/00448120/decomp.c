@@ -18,7 +18,6 @@ STAllPlayersC::PutOnPlaceGuardBoats
           int param_6,int param_7,DArrayTy *param_8)
 
 {
-  code *pcVar1;
   short sVar2;
   short sVar3;
   short sVar4;

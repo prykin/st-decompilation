@@ -1,1 +1,2 @@
 source_type	target_type	owner	anchor_function	length	concrete_fields	function_targets	evidence
+/SubmarineTitans/Recovered/PointerShapes/AnonShape_006B5B10_E0D06CF1	/SubmarineTitans/Recovered/PointerShapes/RecoveredSourceFamily_dibcopy	source:dibcopy	00501410	16	3	24	library source basename=dibcopy; exact first-argument flows=7; distinct destinations=6; semantic functions=CPanelTy::PaintBRLife|DibPut; one source shape is renamed without geometry merging

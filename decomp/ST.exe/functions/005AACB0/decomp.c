@@ -22,7 +22,6 @@ HoloTy::Init(HoloTy *this,HoloTy_Init_param_1Enum param_1,int param_2,int param_
 
 {
   undefined1 *puVar1;
-  code *pcVar2;
   HoloTy *this_00;
   int iVar3;
   undefined4 *puVar4;

@@ -9,7 +9,6 @@ void __thiscall AiTactClassTy::ClaimSave(AiTactClassTy *this)
 
 {
   void **value;
-  code *pcVar1;
   AiTactClassTy *pAVar2;
   int errorCode;
   void *pvVar3;

@@ -15,7 +15,6 @@ STAllPlayersC::GetTOBJImage
           (STAllPlayersC *this,int param_1,STAllPlayersC_GetTOBJImage_param_2Enum param_2)
 
 {
-  code *pcVar1;
   STAllPlayersC_GetTOBJImage_param_2Enum SVar2;
   ushort *puVar3;
   uint uVar4;

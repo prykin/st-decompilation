@@ -9,7 +9,6 @@
 uint * __cdecl _GetStaffGrpExch(undefined4 param_1)
 
 {
-  code *pcVar1;
   int errorCode;
   STGroupBoatC *this;
   uint *puVar2;

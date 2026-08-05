@@ -8,7 +8,6 @@
 undefined4 __thiscall HelpPanelTy::SetPanel(HelpPanelTy *this,char param_1)
 
 {
-  code *pcVar1;
   HelpPanelTy *this_00;
   int errorCode;
   int iVar2;

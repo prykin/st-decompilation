@@ -8,7 +8,6 @@
 void __thiscall SAMPanelTy::ShiftControls(SAMPanelTy *this,int param_1)
 
 {
-  code *pcVar1;
   SAMPanelTy *this_00;
   short sVar2;
   int iVar3;

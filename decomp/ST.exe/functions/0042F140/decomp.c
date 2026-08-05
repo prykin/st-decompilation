@@ -12,7 +12,6 @@ undefined4 __thiscall
 STAllPlayersC::UnRegisterGroup(STAllPlayersC *this,char param_1,ushort param_2,int param_3)
 
 {
-  code *pcVar1;
   DArrayTy *array;
   int iVar2;
   int iVar3;
@@ -22,7 +21,7 @@ STAllPlayersC::UnRegisterGroup(STAllPlayersC *this,char param_1,ushort param_2,i
   int local_8;
 
   local_50.previous = g_currentExceptionFrame;
-  local_c = (DArrayTy *)g_packedRecords_A62x8[param_1].field5_0x5;
+  local_c = (DArrayTy *)g_packedRecords_A62x8[param_1].field2_0x5;
   g_currentExceptionFrame = &local_50;
   iVar2 = Library::MSVCRT::__setjmp3(local_50.jumpBuffer,0);
   if (iVar2 == 0) {

@@ -13,7 +13,6 @@ int __thiscall JumpManagC::GetMessage(JumpManagC *this,STMessage *message)
 
 {
   STMessageId SVar1;
-  code *pcVar2;
   JumpManagC *this_00;
   int iVar3;
   int iVar4;

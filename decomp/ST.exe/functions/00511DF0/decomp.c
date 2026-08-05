@@ -13,7 +13,6 @@ void __thiscall HelpPanelTy::SwitchOptPanel(HelpPanelTy *this,int param_1)
 
 {
   short sVar1;
-  code *pcVar2;
   HelpPanelTy *this_00;
   int errorCode;
   int iVar3;

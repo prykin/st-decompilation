@@ -14,7 +14,6 @@ int __thiscall STColl3C::GetMessage(STColl3C *this,STMessage *message)
 {
   STMessageId SVar1;
   int *piVar2;
-  code *pcVar3;
   short sVar4;
   STColl3C *this_00;
   int iVar5;

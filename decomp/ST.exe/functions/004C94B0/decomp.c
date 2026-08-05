@@ -12,7 +12,6 @@
 undefined4 __thiscall TLOBaseTy::procResult(TLOBaseTy *this)
 
 {
-  code *pcVar1;
   TLOBaseTy *this_00;
   int errorCode;
   uint uVar3;

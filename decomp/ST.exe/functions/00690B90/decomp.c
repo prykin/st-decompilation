@@ -13,7 +13,6 @@ int __thiscall AiTactClassTy::GetMessage(AiTactClassTy *this,STMessage *message)
 
 {
   STMessageId SVar1;
-  code *pcVar2;
   AiTactClassTy *this_00;
   int iVar3;
   AiTactClassTy_field_00A5DArray *pAVar4;

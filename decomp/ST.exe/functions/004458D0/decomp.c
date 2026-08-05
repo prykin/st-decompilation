@@ -16,7 +16,6 @@ STAllPlayersC::GetBoatWeaponInfo
           undefined4 *param_3,undefined4 *param_4)
 
 {
-  code *pcVar1;
   int iVar2;
   undefined4 uVar3;
 

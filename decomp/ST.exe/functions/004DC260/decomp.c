@@ -33,7 +33,7 @@ undefined4 __fastcall FUN_004dc260(TLOBaseTy *param_1)
     if ((iVar2 + param_1->field_0271 <= uVar1) && (199 < param_1->field_04D4)) {
       param_1->field_0271 = uVar1;
       TLOBaseTy::fireFindCheckTarget(param_1,0,0);
-      if (param_1->field_028D != 0) {
+      if (param_1->field_028D != nullptr) {
         param_1->field_04D0 = CASE_2;
         TLOBaseTy::RotateSpr(param_1,0);
         return 0;

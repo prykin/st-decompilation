@@ -10,7 +10,6 @@ undefined4 __thiscall STGroupBoatC::GrpAttack(STGroupBoatC *this,int param_1)
 {
   byte bVar1;
   byte bVar2;
-  code *pcVar3;
   short sVar4;
   short sVar5;
   int iVar6;

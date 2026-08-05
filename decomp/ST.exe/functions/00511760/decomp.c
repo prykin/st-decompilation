@@ -8,7 +8,6 @@
 void __thiscall HelpPanelTy::DoneHelpPanel(HelpPanelTy *this)
 
 {
-  code *pcVar1;
   HelpPanelTy *pHVar2;
   int errorCode;
   int iVar3;

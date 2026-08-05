@@ -12,7 +12,6 @@
 void __thiscall ProdPanelTy::PreInitProdPanel(ProdPanelTy *this)
 
 {
-  code *pcVar1;
   ProdPanelTy *pPVar2;
   int iVar3;
   int iVar4;

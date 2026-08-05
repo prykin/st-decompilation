@@ -8,7 +8,6 @@
 void __thiscall STBoatC::NotReadyForLoading(STBoatC *this,int param_1)
 
 {
-  code *pcVar1;
   int iVar2;
   STFishC *local_14;
   short local_e;

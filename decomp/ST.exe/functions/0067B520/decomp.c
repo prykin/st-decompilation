@@ -16,7 +16,6 @@ void __thiscall AiPlrClassTy::ExecTech(AiPlrClassTy *this)
 
 {
   short sVar1;
-  code *pcVar2;
   AiPlrClassTy *this_00;
   undefined1 uVar3;
   int iVar4;

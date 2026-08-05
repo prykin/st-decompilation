@@ -27,7 +27,6 @@ void __thiscall STJellyGunC::LifeGun(STJellyGunC *this)
   short sVar5;
   short sVar6;
   STWorldObject *pSVar7;
-  code *pcVar8;
   uint uVar9;
   int iVar10;
   uint uVar11;

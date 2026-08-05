@@ -20,7 +20,6 @@ void __thiscall CPanelTy::SetControlObjSI(CPanelTy *this,char param_1)
   CPanelTy_field_0BFAState CVar1;
   char cVar2;
   AnonShape_GLOBAL_0081175C_57F682DD *pAVar3;
-  code *pcVar4;
   CPanelTy *this_00;
   Global_sub_00529590_param_1Enum *pGVar5;
   int iVar6;

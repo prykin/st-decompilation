@@ -10,7 +10,6 @@ void __thiscall FSGSTy::DelPlayer(FSGSTy *this,byte *param_1)
 {
   byte bVar1;
   DArrayTy *pDVar2;
-  code *pcVar3;
   FSGSTy *this_00;
   int iVar4;
   undefined4 uVar5;

@@ -9,7 +9,6 @@ void __thiscall
 MMObjTy::PaintButDib(MMObjTy *this,int param_1,int *param_2,int param_3,byte param_4,uint param_5)
 
 {
-  code *pcVar1;
   int errorCode;
   int iVar2;
   InternalExceptionFrame local_94;
@@ -66,7 +65,7 @@ MMObjTy::PaintButDib(MMObjTy *this,int param_1,int *param_2,int param_3,byte par
     if (-1 < (int)param_5) {
       FUN_006c7ea0((AnonPointee_MReportTy_0073 *)param_1,0,&local_50,8,(byte)param_5);
     }
-    FUN_006c7f10((AnonShape_006B5B10_E0D06CF1 *)param_1,0,&local_50,8,param_4);
+    FUN_006c7f10((RecoveredSourceFamily_dibcopy *)param_1,0,&local_50,8,param_4);
     g_currentExceptionFrame = local_94.previous;
     return;
   }

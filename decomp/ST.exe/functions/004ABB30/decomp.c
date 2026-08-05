@@ -9,7 +9,6 @@ undefined4 __thiscall STT3DSprC::UnLoadSequence(STT3DSprC *this,byte param_1)
 
 {
   void **value;
-  code *pcVar1;
   STT3DSprC *pSVar2;
   int iVar3;
   undefined4 uVar4;

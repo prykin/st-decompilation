@@ -9,7 +9,6 @@ void __thiscall MainMenuTy::SetMode(MainMenuTy *this,char param_1,int param_2)
 
 {
   StartServTy *pSVar1;
-  code *pcVar2;
   MainMenuTy *this_00;
   uint *puVar3;
   char *pcVar4;
@@ -295,11 +294,9 @@ void __thiscall MainMenuTy::SetMode(MainMenuTy *this,char param_1,int param_2)
     this_00->field_06C2 = 0x611f;
     this_00->field_08BD = 0x6122;
     puVar8 = &local_24c;
-    memset(puVar8, 0, 0x1f8); /* compiler bulk-zero initialization */
+    memset(puVar8, 0, 0x1fb); /* compiler bulk-zero initialization */
     puVar8 = (undefined4 *)((byte *)puVar8 + 0x1f8);
     pSVar1 = this_00->field_1A5B;
-    *(undefined2 *)puVar8 = 0;
-    *(undefined1 *)((int)puVar8 + 2) = 0;
     local_155 = this_00->field_0008;
     this_00->field_00D5 = 0;
     this_00->field_02D0 = 2;

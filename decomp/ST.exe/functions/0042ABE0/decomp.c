@@ -17,7 +17,6 @@ STAllPlayersC::GetGObjFromZone2
 
 {
   uint uVar1;
-  code *pcVar2;
   int iVar3;
   DArrayTy *pDVar4;
   int iVar5;

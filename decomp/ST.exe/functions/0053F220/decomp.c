@@ -8,7 +8,6 @@
 void __thiscall ProdPanelTy::DoneProdPanel(ProdPanelTy *this)
 
 {
-  code *pcVar1;
   ProdPanelTy *pPVar2;
   int iVar3;
   int iVar4;

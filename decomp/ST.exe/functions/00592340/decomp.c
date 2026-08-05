@@ -9,7 +9,6 @@ void __thiscall CampaignTy::LightPalette(CampaignTy *this)
 
 {
   undefined1 *puVar1;
-  code *pcVar2;
   CampaignTy *pCVar3;
   int iVar4;
   int iVar5;

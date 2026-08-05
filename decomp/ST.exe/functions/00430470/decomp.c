@@ -8,7 +8,6 @@
 undefined4 __thiscall STAllPlayersC::RegisterTorpedo(STAllPlayersC *this,int param_1,short param_2)
 
 {
-  code *pcVar1;
   uint index;
   int errorCode;
   int iVar2;

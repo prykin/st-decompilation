@@ -20,7 +20,6 @@ int __thiscall SettMapSTy::GetMessage(SettMapSTy *this,STMessage *message)
   dword dVar7;
   ccFntTy *pcVar8;
   int *piVar9;
-  code *pcVar10;
   StartSystemTy *pSVar11;
   SettMapTy *this_00;
   DWORD DVar12;
@@ -1197,7 +1196,7 @@ LAB_005d6784:
     pAVar34 = DArrayAt<AnonShape_005CBBE0_2D1CAA09>(pDVar17, uVar27);
   }
   local_28 = uVar28;
-  FUN_006b4170((AnonShape_006B5B10_E0D06CF1 *)this_00->field_20F4[uVar28],0,*piVar9 + -0x113,0,
+  FUN_006b4170((RecoveredSourceFamily_dibcopy *)this_00->field_20F4[uVar28],0,*piVar9 + -0x113,0,
                piVar9[2],piVar9[3],0xff);
   if (pAVar34 == nullptr) goto switchD_005d6abd_default;
   switch(local_2c) {
@@ -1239,7 +1238,7 @@ LAB_005d6784:
         default:
           bVar22 = 0xff;
         }
-        FUN_006b4170((AnonShape_006B5B10_E0D06CF1 *)this_00->field_20F4[uVar28],0,local_24 + 2,
+        FUN_006b4170((RecoveredSourceFamily_dibcopy *)this_00->field_20F4[uVar28],0,local_24 + 2,
                      local_20 + 2,local_1c + -4,local_18 + -4,bVar22);
       }
     }
@@ -1398,7 +1397,7 @@ LAB_005d6d70:
           if (-1 < iVar13 + -1) {
             pbVar16 = (byte *)FUN_0070b3a0((AnonShape_GLOBAL_0081175C_57F682DD *)this_00->field_1F4B
                                            ,iVar13 + -1);
-            DibPut((AnonShape_006B5B10_E0D06CF1 *)this_00->field_20F4[uVar28],
+            DibPut((RecoveredSourceFamily_dibcopy *)this_00->field_20F4[uVar28],
                    (local_1c - *(int *)(pbVar16 + 4)) / 2 + local_24,
                    (local_18 - *(int *)(pbVar16 + 8)) / 2 + 1 + local_20,'\x06',pbVar16);
           }

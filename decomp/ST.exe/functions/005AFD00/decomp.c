@@ -25,8 +25,7 @@ void __thiscall ChooseMapTy::PrepFiles(ChooseMapTy *this,uint param_1)
   char cVar1;
   ChooseMapTy_field_1A5FState CVar3;
   StartSystemTy *pSVar4;
-  AnonShape_006B5B10_E0D06CF1 *pAVar5;
-  code *pcVar6;
+  RecoveredSourceFamily_dibcopy *pRVar5;
   int iVar7;
   DArrayTy *pDVar8;
   cMf32 *pcVar9;
@@ -155,8 +154,8 @@ switchD_005afd30_caseD_c:
     local_60._0_2_ = 0xffff;
     MMsgTy::StatePanel(pSVar4->field_02E6,(int)&local_60);
   }
-  pAVar5 = (AnonShape_006B5B10_E0D06CF1 *)this_00->field_1C7B;
-  FUN_006b4170(pAVar5,0,0,0,pAVar5->field_0004,pAVar5->field_0008,0);
+  pRVar5 = (RecoveredSourceFamily_dibcopy *)this_00->field_1C7B;
+  FUN_006b4170(pRVar5,0,0,0,pRVar5->field_0004,pRVar5->field_0008,0);
   uVar21 = 0x3f;
   puVar18 = this_00->field_1C23;
   do {

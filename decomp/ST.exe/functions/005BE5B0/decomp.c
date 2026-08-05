@@ -43,7 +43,7 @@ void __thiscall MReportTy::PaintMReport(MReportTy *this,char param_1)
   InternalExceptionFrame local_64;
   MReportTy *local_20;
   undefined4 local_1c;
-  AnonShape_006B5B10_E0D06CF1 *local_18;
+  RecoveredSourceFamily_dibcopy *local_18;
   char local_11;
   uint local_10;
   RecoveredRecord_MReportTy_005BD4B0 *local_c;
@@ -81,7 +81,7 @@ void __thiscall MReportTy::PaintMReport(MReportTy *this,char param_1)
   }
   PutDDXClip(0x1a,0x46,0x1a,0x46,this_00->field_0073->field_0004,
              (byte *)this_00->field_0073->field_0008,'\x01',(BITMAPINFO *)this_00->field_005D);
-  FUN_006b4170((AnonShape_006B5B10_E0D06CF1 *)this_00->field_0073,0,0x2e,1,0x2ba,0x15c,0x4c);
+  FUN_006b4170((RecoveredSourceFamily_dibcopy *)this_00->field_0073,0,0x2e,1,0x2ba,0x15c,0x4c);
   pcVar18 = wsprintfA_exref;
   if (this_00->field_0067 == '\0') {
     ccFntTy::SetSurf(this_00->field_0083,(int)this_00->field_0073,0,0x37,10,
@@ -102,7 +102,7 @@ void __thiscall MReportTy::PaintMReport(MReportTy *this,char param_1)
     iVar5 = -1;
     puVar9 = (uint *)LoadResourceString(0x2440,g_module_00807618);
     ccFntTy::WrStr(this_00->field_0083,puVar9,iVar5,iVar14,uVar12);
-    local_18 = (AnonShape_006B5B10_E0D06CF1 *)
+    local_18 = (RecoveredSourceFamily_dibcopy *)
                ccFntTy::CreateSurf(this_00->field_0083,(int)this_00->field_0073,0,0,0,0x136,0x22,0);
     if (local_18 != nullptr) {
       local_10 = local_10 & 0xffffff00;
@@ -121,7 +121,7 @@ void __thiscall MReportTy::PaintMReport(MReportTy *this,char param_1)
               if (((&DAT_00808af4)[iVar5] == bVar3) && ((&DAT_00808af5)[iVar5] != '\0')) {
                 FUN_006b4170(local_18,0,0,0,local_18->field_0004,local_18->field_0008,0x4c);
                 ccFntTy::WrStr(this_00->field_0083,&DAT_00808ab0 + (UVar22 & 0xff) * 0x27,0,-1,0);
-                DibPut((AnonShape_006B5B10_E0D06CF1 *)this_00->field_0073,0x38,
+                DibPut((RecoveredSourceFamily_dibcopy *)this_00->field_0073,0x38,
                        (uVar12 & 0xff) * 0x26 + 0x2c,'\x01',(byte *)local_18);
                 break;
               }
@@ -192,7 +192,7 @@ LAB_005bf156:
       iVar5 = bVar3 - 1;
     }
     pbVar6 = (byte *)FUN_0070b3a0((AnonShape_GLOBAL_0081175C_57F682DD *)this_00->field_007F,iVar5);
-    DibPut((AnonShape_006B5B10_E0D06CF1 *)this_00->field_0073,0x2e,1,'\x06',pbVar6);
+    DibPut((RecoveredSourceFamily_dibcopy *)this_00->field_0073,0x2e,1,'\x06',pbVar6);
     local_c = (RecoveredRecord_MReportTy_005BD4B0 *)
               ccFntTy::CreateSurf(this_00->field_0083,(int)this_00->field_0073,0,0x2f,2,0x2b7,0x1e,0
                                  );
@@ -200,7 +200,7 @@ LAB_005bf156:
       local_11 = '\x01';
       /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
       DAT_0080f33a._0_1_ = 0;
-      local_18 = (AnonShape_006B5B10_E0D06CF1 *)((uint)local_18 & 0xffffff00);
+      local_18 = (RecoveredSourceFamily_dibcopy *)((uint)local_18 & 0xffffff00);
       if (DAT_00808aaf != 0) {
         do {
           uVar12 = (uint)local_18 & 0xff;
@@ -217,7 +217,7 @@ LAB_005bf156:
             if (0x2a8 < iVar5) break;
           }
           bVar3 = (char)local_18 + 1;
-          local_18 = (AnonShape_006B5B10_E0D06CF1 *)STReplaceLowByte((uint32_t)(local_18), (uint8_t)(bVar3));
+          local_18 = (RecoveredSourceFamily_dibcopy *)STReplaceLowByte((uint32_t)(local_18), (uint8_t)(bVar3));
         } while (bVar3 < DAT_00808aaf);
       }
       iVar5 = FUN_00711110(this_00->field_0083,(char *)&DAT_0080f33a);
@@ -290,7 +290,7 @@ LAB_005bf156:
         }
       }
       ccFntTy::WrStr(this_00->field_0083,&DAT_0080f33a,-1,-1,0);
-      DibPut((AnonShape_006B5B10_E0D06CF1 *)this_00->field_0073,0x2f,2,'\x01',(byte *)local_c);
+      DibPut((RecoveredSourceFamily_dibcopy *)this_00->field_0073,0x2f,2,'\x01',(byte *)local_c);
       ccFntTy::EraseSufr(this_00->field_0083);
       pcVar18 = wsprintfA_exref;
     }
@@ -404,7 +404,7 @@ LAB_005bf156:
     if (((-1 < iVar5) && (0 < iVar14)) && (iVar14 = (iVar5 * 0x26) / iVar14, 0 < iVar14)) {
       iVar5 = 0x1c7;
       do {
-        DibPut((AnonShape_006B5B10_E0D06CF1 *)this_00->field_0073,iVar5,0x121,'\x06',
+        DibPut((RecoveredSourceFamily_dibcopy *)this_00->field_0073,iVar5,0x121,'\x06',
                (byte *)this_00->field_006F);
         iVar5 = iVar5 + 6;
         iVar14 = iVar14 + -1;
@@ -517,7 +517,7 @@ LAB_005bef6c:
     *(undefined1 *)puVar10 = 0x4c;
     puVar10 = (undefined4 *)((int)puVar10 + 1);
   }
-  FUN_006b5ee0((AnonShape_006B5B10_E0D06CF1 *)local_c,0,2,2,local_c->field_0004 + -4,
+  FUN_006b5ee0((RecoveredSourceFamily_dibcopy *)local_c,0,2,2,local_c->field_0004 + -4,
                local_c->field_0008 + -4,0x18,0xd);
   ccFntTy::SetSurf(this_00->field_0083,(int)local_c,0,5,5,local_c->field_0004 + -0x69,
                    local_c->field_0008 + -10);
@@ -526,9 +526,9 @@ LAB_005bef6c:
   iVar5 = -1;
   puVar9 = (uint *)LoadResourceString(0x2444,g_module_00807618);
   ccFntTy::WrStr(this_00->field_0083,puVar9,iVar5,iVar14,uVar12);
-  FUN_006b4170((AnonShape_006B5B10_E0D06CF1 *)local_c,0,local_c->field_0004 + -0x69,
+  FUN_006b4170((RecoveredSourceFamily_dibcopy *)local_c,0,local_c->field_0004 + -0x69,
                (local_c->field_0008 + -0x1c) / 2,0x50,0x1c,0);
-  FUN_006b5ee0((AnonShape_006B5B10_E0D06CF1 *)local_c,0,local_c->field_0004 + -0x69,
+  FUN_006b5ee0((RecoveredSourceFamily_dibcopy *)local_c,0,local_c->field_0004 + -0x69,
                (local_c->field_0008 + -0x1c) / 2,0x50,0x1c,0x18,0xd);
   cVar16 = (char)(DAT_0080c83a / 0xe10);
   local_8 = STReplaceLowByte((uint32_t)(local_8), (uint8_t)(cVar16));

@@ -42,9 +42,8 @@ STGroupBoatC * __thiscall STGroupBoatC::STGroupBoatC(STGroupBoatC *this)
   memset(&this->field_024A, 0, 0x2c); /* compiler bulk-zero initialization */
   iVar1 = 0;
   puVar3 = (undefined4 *)&this->field_0276;
-  memset(puVar3, 0, 0x1e); /* compiler bulk-zero initialization */
+  memset(puVar3, 0, 0x1f); /* compiler bulk-zero initialization */
   puVar3 = (undefined4 *)((byte *)puVar3 + 0x1c);
-  *(undefined1 *)((int)puVar3 + 2) = 0;
   *(undefined4 *)&this->field_0x295 = 0;
   this->field_0299 = 0;
   this->field_029B = 0;

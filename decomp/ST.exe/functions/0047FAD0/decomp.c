@@ -20,7 +20,6 @@ int __thiscall STBoatC::BackDismant(STBoatC *this,int *param_1)
   short sVar1;
   short sVar2;
   short sVar3;
-  code *pcVar4;
   int iVar5;
 
   this->field_00B7 = 0;

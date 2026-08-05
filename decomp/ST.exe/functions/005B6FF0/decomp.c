@@ -8,7 +8,6 @@
 void __thiscall MMsgTy::HideSprites(MMsgTy *this)
 
 {
-  code *pcVar1;
   MMsgTy *pMVar2;
   int iVar3;
   int iVar4;

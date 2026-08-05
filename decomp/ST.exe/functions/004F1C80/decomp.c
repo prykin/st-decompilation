@@ -19,7 +19,7 @@ void __thiscall FUN_004f1c80(void *this,uint param_1,uint param_2)
     iVar3 = (uVar2 & 0xff) + (uVar1 & 0xff) * 6;
     pbVar4 = FUN_0070b650(*(short **)((int)this + iVar3 * 4 + 0xd0b),
                           (uint)*(byte *)(iVar3 + 0xd3b + (int)this));
-    DibPut(*(AnonShape_006B5B10_E0D06CF1 **)((int)this + (0x6a - (uVar1 & 0xff)) * 4),param_1,
+    DibPut(*(RecoveredSourceFamily_dibcopy **)((int)this + (0x6a - (uVar1 & 0xff)) * 4),param_1,
            param_2,'\x06',pbVar4);
   }
   return;

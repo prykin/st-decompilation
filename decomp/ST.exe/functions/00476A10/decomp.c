@@ -11,7 +11,6 @@ int __thiscall STBoatC::DCBomb(STBoatC *this,int param_1)
   short sVar1;
   short sVar2;
   short sVar3;
-  code *pcVar4;
   int iVar5;
   /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
   int unaff_ESI;

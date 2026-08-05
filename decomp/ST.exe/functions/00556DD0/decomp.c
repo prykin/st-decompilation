@@ -9,7 +9,6 @@ undefined4 __thiscall TraksClassTy::TraksCreateCollection(TraksClassTy *this,int
 
 {
   int iVar1;
-  code *pcVar2;
   TraksClassTy *this_00;
   int iVar3;
   int iVar4;

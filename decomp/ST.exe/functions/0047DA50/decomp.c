@@ -10,7 +10,6 @@ int __thiscall STBoatC::BackAnnih(STBoatC *this,int *param_1)
 {
   uint uVar1;
   undefined4 uVar2;
-  code *pcVar3;
   undefined2 uVar4;
   uint uVar5;
   undefined4 *puVar6;

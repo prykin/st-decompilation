@@ -9,7 +9,6 @@ void __thiscall STAppC::ChangeResolution(STAppC *this,int param_1)
 
 {
   AnonPointee_STAppC_115A *pAVar1;
-  code *pcVar2;
   int iVar3;
   DWORD DVar4;
   int iVar5;

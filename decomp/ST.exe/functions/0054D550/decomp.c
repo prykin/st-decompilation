@@ -12,7 +12,6 @@ int __thiscall
 STPlaySystemC::SaveObjData(STPlaySystemC *this,char *text,byte *param_2,uint param_3,byte param_4)
 
 {
-  code *pcVar1;
   int iVar2;
   int iVar3;
   InternalExceptionFrame local_4c;

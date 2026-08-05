@@ -9,7 +9,6 @@
 void __cdecl LandInit(AnonShape_005751F0_0FFC949A *param_1)
 
 {
-  code *pcVar1;
   int iVar2;
   AnonShape_006DBCA0_EF06575F *pAVar3;
   DArrayTy *pDVar4;

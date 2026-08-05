@@ -9,7 +9,6 @@ int __thiscall TLOBaseTy::fireProc(TLOBaseTy *this)
 
 {
   AnonPointee_TLOBaseTy_0291 *pAVar1;
-  code *pcVar2;
   TLOBaseTy *this_00;
   short sVar3;
   int iVar4;

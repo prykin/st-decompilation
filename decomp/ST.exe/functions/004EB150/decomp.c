@@ -14,34 +14,34 @@ undefined4 __thiscall FUN_004eb150(void *this,int param_1)
   iVar3 = param_1;
   uVar5 = *(int *)((int)this + 0x1c) * 0x41c64e6d + 0x3039;
   *(uint *)((int)this + 0x1c) = uVar5;
-  if ((uVar5 >> 0x10) % 0x385 + 0x834 + g_packedRecords_A62x8[param_1].field2331_0x9c2 <=
+  if ((uVar5 >> 0x10) % 0x385 + 0x834 + g_packedRecords_A62x8[param_1].field1963_0x9c2 <=
       g_playSystem_00802A38->field_00E4) {
-    g_packedRecords_A62x8[param_1].field2331_0x9c2 = g_playSystem_00802A38->field_00E4;
+    g_packedRecords_A62x8[param_1].field1963_0x9c2 = g_playSystem_00802A38->field_00E4;
     bVar4 = LookupRecordByte((char)param_1);
     if (bVar4 != 3) {
       if ((g_playSystem_00802A38->field_00E4 < 30000) ||
-         (0 < (int)g_packedRecords_A62x8[param_1].field2332_0x9c6)) {
+         (0 < (int)g_packedRecords_A62x8[param_1].field1964_0x9c6)) {
         if ((59999 < g_playSystem_00802A38->field_00E4) &&
-           ((int)g_packedRecords_A62x8[param_1].field2332_0x9c6 < 2)) {
-          g_packedRecords_A62x8[param_1].field2332_0x9c6 = 2;
+           ((int)g_packedRecords_A62x8[param_1].field1964_0x9c6 < 2)) {
+          g_packedRecords_A62x8[param_1].field1964_0x9c6 = 2;
         }
         /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
         param_1 = 0;
         iVar8 = 0;
-        piVar6 = &g_packedRecords_A62x8[iVar3].field2305_0x9a2;
+        piVar6 = &g_packedRecords_A62x8[iVar3].field1952_0x9a2;
       }
       else {
-        g_packedRecords_A62x8[param_1].field2332_0x9c6 = 1;
+        g_packedRecords_A62x8[param_1].field1964_0x9c6 = 1;
         /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
         param_1 = 0;
         iVar8 = 0;
-        piVar6 = &g_packedRecords_A62x8[iVar3].field2305_0x9a2;
+        piVar6 = &g_packedRecords_A62x8[iVar3].field1952_0x9a2;
       }
       while( true ) {
         do {
           piVar6[1] = *piVar6;
           piVar7 = piVar6 + 2;
-          iVar1 = iVar8 + (param_1 + g_packedRecords_A62x8[iVar3].field2332_0x9c6 * 2) * 2;
+          iVar1 = iVar8 + (param_1 + g_packedRecords_A62x8[iVar3].field1964_0x9c6 * 2) * 2;
           iVar2 = (&DAT_007c15c4)[iVar1 * 2];
           iVar1 = *(int *)(&DAT_007c15c0 + iVar1 * 8);
           uVar5 = *(int *)((int)this + 0x1c) * 0x41c64e6d + 0x3039;

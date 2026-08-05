@@ -8,7 +8,6 @@
 void __thiscall FSGSTy::PswCtrls(FSGSTy *this)
 
 {
-  code *pcVar1;
   FSGSTy *this_00;
   DArrayTy *pDVar2;
   int iVar3;

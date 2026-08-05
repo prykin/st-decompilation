@@ -15,7 +15,6 @@
 void __thiscall AiFltClassTy::GoToRepair(AiFltClassTy *this)
 
 {
-  code *pcVar1;
   bool bVar2;
   AiFltClassTy *pAVar3;
   undefined2 uVar4;

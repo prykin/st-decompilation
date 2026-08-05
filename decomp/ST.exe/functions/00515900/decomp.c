@@ -13,7 +13,6 @@ HelpPanelTy::DrawWeapon
           (HelpPanelTy *this,int param_1,int *param_2,int param_3,int param_4,byte param_5)
 
 {
-  code *pcVar1;
   int iVar2;
   uint uVar3;
   byte *pbVar4;
@@ -77,7 +76,7 @@ HelpPanelTy::DrawWeapon
         wsprintfA((LPSTR)&DAT_0080f33a,"%s (%d)",pcVar6,param_4);
       }
       ccFntTy::WrStr(local_8->field_01E0,&DAT_0080f33a,1,-1,(DAT_0080874e != '\x03') - 1 & 5);
-      DibPut((AnonShape_006B5B10_E0D06CF1 *)local_8->field_0218,
+      DibPut((RecoveredSourceFamily_dibcopy *)local_8->field_0218,
              (param_1 - *(int *)(pbVar4 + 4)) + -5,(0xf - *(int *)(pbVar4 + 8)) / 2 + *param_2,
              '\x06',pbVar4);
       local_28 = (param_1 - *(int *)(pbVar4 + 4)) + -5;

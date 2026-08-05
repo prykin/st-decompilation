@@ -12,7 +12,6 @@
 void __thiscall HoloTy::Done(HoloTy *this)
 
 {
-  code *pcVar1;
   HoloTy *pHVar2;
   int errorCode;
   int iVar3;

@@ -11,7 +11,6 @@
 void __thiscall cLoadingTy::DrawLineCR(cLoadingTy *this,char *resourceString)
 
 {
-  code *pcVar1;
   cLoadingTy *pcVar2;
   int iVar3;
   int iVar4;
@@ -26,7 +25,7 @@ void __thiscall cLoadingTy::DrawLineCR(cLoadingTy *this,char *resourceString)
   pcVar2 = local_8;
   if (iVar3 == 0) {
     sub_00555680(local_8,resourceString);
-    FUN_006b4170((AnonShape_006B5B10_E0D06CF1 *)pcVar2->field_0004,0,
+    FUN_006b4170((RecoveredSourceFamily_dibcopy *)pcVar2->field_0004,0,
                  pcVar2->field_0014 + pcVar2->field_000C,pcVar2->field_0010 + pcVar2->field_0018,
                  pcVar2->field_001C,pcVar2->field_0034,0);
     ccFntTy::WrStr(pcVar2->field_0008,(uint *)resourceString,pcVar2->field_000C,pcVar2->field_0010,
@@ -48,11 +47,11 @@ void __thiscall cLoadingTy::DrawLineCR(cLoadingTy *this,char *resourceString)
     }
     else {
       Library::DKW::WGR::FUN_006b55f0
-                ((AnonShape_006B5B10_E0D06CF1 *)pcVar2->field_0004,0,pcVar2->field_0014,
+                ((RecoveredSourceFamily_dibcopy *)pcVar2->field_0004,0,pcVar2->field_0014,
                  pcVar2->field_0018,(byte *)pcVar2->field_0004,0,pcVar2->field_0014,
                  pcVar2->field_0034 + pcVar2->field_0018,pcVar2->field_001C,
                  pcVar2->field_0020 - pcVar2->field_0034);
-      FUN_006b4170((AnonShape_006B5B10_E0D06CF1 *)pcVar2->field_0004,0,
+      FUN_006b4170((RecoveredSourceFamily_dibcopy *)pcVar2->field_0004,0,
                    pcVar2->field_0014 + pcVar2->field_000C,pcVar2->field_0010 + pcVar2->field_0018,
                    pcVar2->field_001C,pcVar2->field_0034,0);
       Library::DKW::DDX::FUN_006b42d0

@@ -13,7 +13,6 @@ int __thiscall TLOBldMark::GetMessage(TLOBldMark *this,STMessage *message)
 
 {
   STMessageId SVar1;
-  code *pcVar2;
   int iVar3;
   int iVar4;
   InternalExceptionFrame local_4c;

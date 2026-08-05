@@ -16,7 +16,6 @@ void __thiscall MainMenuTy::NoneMainMenu(MainMenuTy *this)
 
 {
   char cVar1;
-  code *pcVar2;
   MainMenuTy *this_00;
   DWORD DVar3;
   int iVar4;

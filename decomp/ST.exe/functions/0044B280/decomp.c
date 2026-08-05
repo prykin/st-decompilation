@@ -15,7 +15,6 @@ STAllPlayersC::CalibrateTmp
           int *param_6,int *param_7)
 
 {
-  code *pcVar1;
   int iVar2;
   DArrayTy *pDVar3;
   int iVar4;

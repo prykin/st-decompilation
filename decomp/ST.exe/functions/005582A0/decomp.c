@@ -11,7 +11,6 @@
 byte * __thiscall VisibleClassTy::PrepareToSave(VisibleClassTy *this,uint *param_1)
 
 {
-  code *pcVar1;
   VisibleClassTy *pVVar2;
   int iVar3;
   byte *puVar4;

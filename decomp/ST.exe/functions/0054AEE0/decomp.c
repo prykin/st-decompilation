@@ -14,7 +14,6 @@ void __thiscall CursorClassTy::GCGameState(CursorClassTy *this,int param_1)
 
 {
   char cVar1;
-  code *pcVar2;
   bool bVar3;
   CursorClassTy *this_00;
   CursorClassTy_SetGCType_param_1Enum CVar4;

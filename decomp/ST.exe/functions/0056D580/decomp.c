@@ -12,7 +12,6 @@
 void __thiscall STAppC::CloseGameDBs(STAppC *this)
 
 {
-  code *pcVar1;
   int errorCode;
   int iVar2;
   InternalExceptionFrame local_48;

@@ -14,19 +14,21 @@ int __thiscall STSharkC::GetMessage(STSharkC *this,STMessage *message)
 
 {
   STSprGameObjC_field_0231State *pSVar1;
-  STMessageId SVar2;
-  code *pcVar3;
-  undefined1 uVar4;
+  undefined2 uVar2;
+  undefined2 uVar3;
+  STMessageId SVar4;
+  undefined1 uVar6;
+  undefined3 uVar7;
   STSprGameObjC *this_00;
-  int iVar5;
-  int iVar6;
-  uint uVar7;
-  undefined2 uVar8;
-  short sVar9;
-  byte *puVar10;
-  byte *pbVar11;
-  AnonShape_0058D7C0_99A937C6 *pAVar12;
-  byte *pbVar13;
+  int iVar8;
+  int iVar9;
+  uint uVar10;
+  undefined2 uVar11;
+  short sVar12;
+  byte *puVar13;
+  byte *pbVar14;
+  AnonShape_0058D7C0_99A937C6 *pAVar15;
+  byte *pbVar16;
   InternalExceptionFrame local_80;
   void *local_3c;
   uint local_38;
@@ -49,38 +51,38 @@ int __thiscall STSharkC::GetMessage(STSharkC *this,STMessage *message)
   local_80.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_80;
   local_20 = (STSprGameObjC *)this;
-  iVar5 = Library::MSVCRT::__setjmp3(local_80.jumpBuffer,0);
+  iVar8 = Library::MSVCRT::__setjmp3(local_80.jumpBuffer,0);
   this_00 = local_20;
-  if (iVar5 != 0) {
+  if (iVar8 != 0) {
     g_currentExceptionFrame = local_80.previous;
-    iVar6 = ReportDebugMessage("E:\\__titans\\Igor\\To_shark.cpp",0x15e,0,iVar5,"%s",
+    iVar9 = ReportDebugMessage("E:\\__titans\\Igor\\To_shark.cpp",0x15e,0,iVar8,"%s",
                                "STSharkC::GetMessage");
-    if (iVar6 == 0) {
-      RaiseInternalException(iVar5,0,"E:\\__titans\\Igor\\To_shark.cpp",0x15f);
+    if (iVar9 == 0) {
+      RaiseInternalException(iVar8,0,"E:\\__titans\\Igor\\To_shark.cpp",0x15f);
       return 0xffff;
     }
     STDebugBreak(); /* noreturn in standalone pseudocode */
   }
   STSprGameObjC::GetMessage(local_20,message);
-  SVar2 = message->id;
-  if (SVar2 < MESS_ID_ALLCREATE) {
-    if (SVar2 == MESS_TORPHIT) {
+  SVar4 = message->id;
+  if (SVar4 < MESS_ID_ALLCREATE) {
+    if (SVar4 == MESS_TORPHIT) {
       if (*(int *)&this_00->field_0x257 == 4) {
         g_currentExceptionFrame = local_80.previous;
         return 0;
       }
-      puVar10 = (byte *)(&this_00->field_01D5);
+      puVar13 = (byte *)(&this_00->field_01D5);
       *(undefined4 *)&this_00->field_0x23d = 0;
-      STT3DSprC::StopShow((STT3DSprC *)puVar10,0xe);
-      thunk_FUN_004ad5e0((STT3DSprC *)puVar10);
-      STT3DSprC::LoadSequence((STT3DSprC *)puVar10,8,DAT_00806764,"expshark",0x1d);
-      STT3DSprC::StartShow((STT3DSprC *)puVar10,8,g_playSystem_00802A38->field_00E4);
+      STT3DSprC::StopShow((STT3DSprC *)puVar13,0xe);
+      thunk_FUN_004ad5e0((STT3DSprC *)puVar13);
+      STT3DSprC::LoadSequence((STT3DSprC *)puVar13,8,DAT_00806764,"expshark",0x1d);
+      STT3DSprC::StartShow((STT3DSprC *)puVar13,8,g_playSystem_00802A38->field_00E4);
       *(undefined4 *)&this_00->field_0x257 = 4;
       g_currentExceptionFrame = local_80.previous;
       return 0;
     }
-    if (MESS_SHARED_0003 < SVar2) {
-      if (SVar2 != MESS_SHARED_010F) {
+    if (MESS_SHARED_0003 < SVar4) {
+      if (SVar4 != MESS_SHARED_010F) {
         g_currentExceptionFrame = local_80.previous;
         return 0;
       }
@@ -99,34 +101,36 @@ int __thiscall STSharkC::GetMessage(STSharkC *this,STMessage *message)
         g_currentExceptionFrame = local_80.previous;
         return 0;
       }
-      pbVar11 = (byte *)((int)&this_00->field_0259 + 2);
-      pAVar12 = local_c;
-      memmove(pAVar12, pbVar11, 0x34); /* compiler REP MOVS byte copy */
+      pbVar14 = (byte *)((int)&this_00->field_0259 + 2);
+      pAVar15 = local_c;
+      memmove(pAVar15, pbVar14, 0x34); /* compiler REP MOVS byte copy */
       *(undefined4 *)&local_c->field_0xc = 2;
       local_c->field_0034 = (short)this_00->field_0231;
       local_c->field_0036 = *(undefined2 *)((int)&this_00->field_0231 + 2);
       *(undefined2 *)&local_c->field_0x38 = *(undefined2 *)&this_00->field_0x235;
       *(undefined2 *)&local_c->field_0x3a = *(undefined2 *)&this_00->field_0x237;
       *(undefined4 *)&local_c->field_0x3c = *(undefined4 *)&this_00->field_0x249;
-      uVar4 = this_00->field_024E;
+      uVar6 = this_00->field_024E;
       local_c->field_0x40 = this_00->field_0x24d;
-      local_c->field_0x41 = uVar4;
+      local_c->field_0x41 = uVar6;
       local_c->field_0042 = *(undefined4 *)&this_00->field_0x23d;
-      *(undefined4 *)&local_c->field_0x46 = *(undefined4 *)&this_00->field_0x24f;
+      uVar7 = *(undefined3 *)&this_00->field_0x250;
+      local_c->field_0x46 = this_00->field_024F;
+      *(undefined3 *)&local_c->field_0x47 = uVar7;
       *(undefined4 *)&local_c->field_0x4a = *(undefined4 *)&this_00->field_0x253;
       local_c->field_004E = *(undefined4 *)&this_00->field_0x257;
       local_c->field_0052 = *(undefined4 *)((int)&this_00->field_023E + 3);
-      *(undefined4 *)&local_c->field_0x56 = *(undefined4 *)&this_00->field_0x245;
+      *(undefined4 *)&local_c->field_0x56 = *(undefined4 *)((int)&this_00->field_0244 + 1);
       *(undefined4 *)&local_c->field_0x5a = 0;
       local_c->field_005E = local_8;
-      pbVar11 = local_18;
-      pbVar13 = &local_c->field_0x62;
-      memmove(pbVar13, pbVar11, local_8); /* compiler REP MOVS byte copy */
-      uVar7 = 0;
+      pbVar14 = local_18;
+      pbVar16 = &local_c->field_0x62;
+      memmove(pbVar16, pbVar14, local_8); /* compiler REP MOVS byte copy */
+      uVar10 = 0;
       *(uint *)(&local_c->field_0x62 + local_8) = local_10;
-      pbVar11 = local_14;
-      pbVar13 = &local_c[1].field_0x2 + local_8;
-      memmove(pbVar13, pbVar11, local_10); /* compiler REP MOVS byte copy */
+      pbVar14 = local_14;
+      pbVar16 = &local_c[1].field_0x2 + local_8;
+      memmove(pbVar16, pbVar14, local_10); /* compiler REP MOVS byte copy */
       STPlaySystemC::SaveObjData
                 (g_playSystem_00802A38,(int *)this_00->field_0018,(byte *)local_c,
                  (AnonShape_0060EA30_DCEB68AD *)(local_10 + 0x66 + local_8));
@@ -136,7 +140,7 @@ int __thiscall STSharkC::GetMessage(STSharkC *this,STMessage *message)
       g_currentExceptionFrame = local_80.previous;
       return 0;
     }
-    if (SVar2 == MESS_SHARED_0003) {
+    if (SVar4 == MESS_SHARED_0003) {
       sub_004167A0(this_00);
       thunk_FUN_00495ff0(*(short *)&this_00->field_0x5b,*(short *)&this_00->field_0x5d,
                          *(short *)&this_00->field_0x5f,this_00->field_0x8e,
@@ -146,12 +150,12 @@ int __thiscall STSharkC::GetMessage(STSharkC *this,STMessage *message)
       g_currentExceptionFrame = local_80.previous;
       return 0;
     }
-    if (SVar2 == MESS_ID_NONE) {
+    if (SVar4 == MESS_ID_NONE) {
       LifeShark((STSharkC *)this_00);
       g_currentExceptionFrame = local_80.previous;
       return 0;
     }
-    if (SVar2 != MESS_ID_CREATE) {
+    if (SVar4 != MESS_ID_CREATE) {
       g_currentExceptionFrame = local_80.previous;
       return 0;
     }
@@ -160,53 +164,55 @@ int __thiscall STSharkC::GetMessage(STSharkC *this,STMessage *message)
     *(undefined4 *)((int)&this_00->field_023E + 3) = 0;
     local_1c = (undefined4 *)(message->arg0).u32;
     if ((uint)local_1c[3] < 2) {
-      *(undefined4 *)&this_00->field_0x24f = 0;
+      *(undefined4 *)&this_00->field_024F = 0;
       *(undefined4 *)&this_00->field_0x253 = 0;
       *(undefined4 *)&this_00->field_0x249 = 0xff;
-      iVar5 = sub_0058FF70((STSharkC *)this_00);
-      *(int *)&this_00->field_0x24f = iVar5;
-      puVar10 = (byte *)((message->arg0).ptr);
-      pbVar11 = (byte *)((int)&this_00->field_0259 + 2);
-      memmove(pbVar11, puVar10, 0x34); /* compiler REP MOVS byte copy */
+      iVar8 = sub_0058FF70((STSharkC *)this_00);
+      *(int *)&this_00->field_024F = iVar8;
+      puVar13 = (byte *)((message->arg0).ptr);
+      pbVar14 = (byte *)((int)&this_00->field_0259 + 2);
+      memmove(pbVar14, puVar13, 0x34); /* compiler REP MOVS byte copy */
       thunk_FUN_0058eeb0((AnonShape_0058EEB0_904026FD *)this_00);
       *(undefined2 *)&this_00->field_0x5b = 0xffff;
       *(undefined2 *)&this_00->field_0x5d = 0xffff;
       *(undefined2 *)&this_00->field_0x5f = 0xffff;
       thunk_FUN_00417a00(this_00,1);
-      iVar5 = thunk_FUN_00417a20(this_00,*(short *)&this_00->field_0x26f,
+      iVar8 = thunk_FUN_00417a20(this_00,*(short *)&this_00->field_0x26f,
                                  *(short *)&this_00->field_0x273,*(short *)&this_00->field_0x277,1);
-      if (iVar5 == 0) {
-        iVar5 = thunk_FUN_00417e70(this_00,8);
-        if (iVar5 == 0) {
-          puVar10 = (byte *)(&this_00->field_01D5);
-          iVar5 = STT3DSprC::LoadSequence
-                            ((STT3DSprC *)puVar10,0xe,DAT_0080676c,"shark1",0x1d);
-          if (iVar5 != 0) {
+      if (iVar8 == 0) {
+        iVar8 = thunk_FUN_00417e70(this_00,8);
+        if (iVar8 == 0) {
+          puVar13 = (byte *)(&this_00->field_01D5);
+          iVar8 = STT3DSprC::LoadSequence
+                            ((STT3DSprC *)puVar13,0xe,DAT_0080676c,"shark1",0x1d);
+          if (iVar8 != 0) {
             RaiseInternalException
                       (-1,g_overwriteContext_007ED77C,"E:\\__titans\\Igor\\To_shark.cpp",0x9f);
           }
-          thunk_FUN_004ac610(puVar10,'\x0e');
-          STT3DSprC::StartShow((STT3DSprC *)puVar10,0xe,g_playSystem_00802A38->field_00E4);
+          thunk_FUN_004ac610(puVar13,'\x0e');
+          STT3DSprC::StartShow((STT3DSprC *)puVar13,0xe,g_playSystem_00802A38->field_00E4);
           if (local_1c[3] == 0) {
             STT3DSprC::sub_004AD3C0
-                      ((STT3DSprC *)puVar10,
+                      ((STT3DSprC *)puVar13,
                        (float)*(int *)&this_00->field_0x26f * _DAT_007904f8 + _DAT_007904f4,
                        (float)*(int *)&this_00->field_0x273 * _DAT_007904f8 + _DAT_007904f4,
                        (float)*(int *)&this_00->field_0x277 * _DAT_00790504 + _DAT_00790500);
-            iVar5 = thunk_FUN_00417ee0(this_00,*(short *)&this_00->field_0x27b);
-            if (iVar5 == 0) {
+            iVar8 = thunk_FUN_00417ee0(this_00,*(short *)&this_00->field_0x27b);
+            if (iVar8 == 0) {
 LAB_0058dc72:
-              *(int *)&this_00->field_0x245 = (int)PTR_00806724->field_002C;
-              uVar8 = *(undefined2 *)&this_00->field_0x4b;
-              *(undefined2 *)&this_00->field_0231 = *(undefined2 *)&this_00->field_0x47;
-              *(undefined2 *)((int)&this_00->field_0231 + 2) = *(undefined2 *)&this_00->field_0x49;
-              *(undefined2 *)&this_00->field_0x235 = uVar8;
+              uVar11 = *(undefined2 *)&this_00->field_0x47;
+              uVar2 = *(undefined2 *)&this_00->field_0x49;
+              *(int *)((int)&this_00->field_0244 + 1) = (int)PTR_00806724->field_002C;
+              uVar3 = *(undefined2 *)&this_00->field_0x4b;
+              *(undefined2 *)&this_00->field_0231 = uVar11;
+              *(undefined2 *)((int)&this_00->field_0231 + 2) = uVar2;
+              *(undefined2 *)&this_00->field_0x235 = uVar3;
               *(undefined4 *)&this_00->field_0x257 = 0;
             }
             else {
-              iVar5 = ReportDebugMessage("E:\\__titans\\Igor\\To_shark.cpp",0xaa,0,0,
+              iVar8 = ReportDebugMessage("E:\\__titans\\Igor\\To_shark.cpp",0xaa,0,0,
                                          "%s","STSharkC::GetMessage Dir Object err");
-              if (iVar5 != 0) {
+              if (iVar8 != 0) {
                 STDebugBreak(); /* noreturn in standalone pseudocode */
               }
               sub_0058EFE0((STSharkC *)this_00);
@@ -228,23 +234,23 @@ LAB_0058dc72:
               *(undefined4 *)&this_00->field_0x27b = 0x5a;
             }
             STT3DSprC::sub_004AD3C0
-                      ((STT3DSprC *)puVar10,(float)(int)local_1c * _DAT_007904f8 + _DAT_007904f4,
+                      ((STT3DSprC *)puVar13,(float)(int)local_1c * _DAT_007904f8 + _DAT_007904f4,
                        (float)*(int *)&this_00->field_0x273 * _DAT_007904f8 + _DAT_007904f4,
                        (float)*(int *)&this_00->field_0x277 * _DAT_00790504 + _DAT_00790500);
-            iVar5 = thunk_FUN_00417ee0(this_00,*(short *)&this_00->field_0x27b);
-            if (iVar5 == 0) goto LAB_0058dc72;
-            iVar5 = ReportDebugMessage("E:\\__titans\\Igor\\To_shark.cpp",200,0,0,
+            iVar8 = thunk_FUN_00417ee0(this_00,*(short *)&this_00->field_0x27b);
+            if (iVar8 == 0) goto LAB_0058dc72;
+            iVar8 = ReportDebugMessage("E:\\__titans\\Igor\\To_shark.cpp",200,0,0,
                                        "%s","STSharkC::GetMessage Dir Object err");
-            if (iVar5 != 0) {
+            if (iVar8 != 0) {
               STDebugBreak(); /* noreturn in standalone pseudocode */
             }
             sub_0058EFE0((STSharkC *)this_00);
           }
         }
         else {
-          iVar5 = ReportDebugMessage("E:\\__titans\\Igor\\To_shark.cpp",0x99,0,0,"%s"
+          iVar8 = ReportDebugMessage("E:\\__titans\\Igor\\To_shark.cpp",0x99,0,0,"%s"
                                      ,"STSharkC::GetMessage Phase Count err");
-          if (iVar5 != 0) {
+          if (iVar8 != 0) {
             STDebugBreak(); /* noreturn in standalone pseudocode */
           }
           sub_0058EFE0((STSharkC *)this_00);
@@ -255,14 +261,14 @@ LAB_0058dc72:
       }
     }
     else if (local_1c[3] == 2) {
-      puVar10 = (byte *)(local_1c);
-      pbVar11 = (byte *)((int)&this_00->field_0259 + 2);
-      memmove(pbVar11, puVar10, 0x34); /* compiler REP MOVS byte copy */
+      puVar13 = (byte *)(local_1c);
+      pbVar14 = (byte *)((int)&this_00->field_0259 + 2);
+      memmove(pbVar14, puVar13, 0x34); /* compiler REP MOVS byte copy */
       /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
       local_8 = *(uint *)((int)local_1c + 0x5e);
       STAllPlayersC::RestoreGObjData
                 ((STAllPlayersC *)this_00,(undefined4 *)(local_8 + 0x66 + (int)local_1c));
-      puVar10 = (byte *)(local_1c);
+      puVar13 = (byte *)(local_1c);
       *(undefined2 *)&this_00->field_0231 = *(undefined2 *)(local_1c + 0xd);
       *(undefined2 *)((int)&this_00->field_0231 + 2) = *(undefined2 *)((int)local_1c + 0x36);
       *(undefined2 *)&this_00->field_0x235 = *(undefined2 *)(local_1c + 0xe);
@@ -270,25 +276,25 @@ LAB_0058dc72:
       *(undefined4 *)&this_00->field_0x249 = local_1c[0xf];
       *(undefined2 *)&this_00->field_0x24d = *(undefined2 *)(local_1c + 0x10);
       *(undefined4 *)&this_00->field_0x23d = *(undefined4 *)((int)local_1c + 0x42);
-      *(undefined4 *)&this_00->field_0x24f = *(undefined4 *)((int)local_1c + 0x46);
+      *(undefined4 *)&this_00->field_024F = *(undefined4 *)((int)local_1c + 0x46);
       *(undefined4 *)&this_00->field_0x253 = *(undefined4 *)((int)local_1c + 0x4a);
       *(undefined4 *)&this_00->field_0x257 = *(undefined4 *)((int)local_1c + 0x4e);
       *(undefined4 *)((int)&this_00->field_023E + 3) = *(undefined4 *)((int)local_1c + 0x52);
-      *(undefined4 *)&this_00->field_0x245 = *(undefined4 *)((int)local_1c + 0x56);
+      *(undefined4 *)((int)&this_00->field_0244 + 1) = *(undefined4 *)((int)local_1c + 0x56);
       local_3c = Library::DKW::LIB::MemAlloc(0x44);
       if (local_3c != nullptr) {
-        iVar5 = 0;
+        iVar8 = 0;
         do {
-          *(int **)(iVar5 + (int)local_3c) = DAT_0080676c;
-          iVar5 = iVar5 + 4;
-        } while (iVar5 < 0x44);
-        iVar5 = *(int *)((int)&this_00->field_023E + 3);
-        if (((iVar5 < 1) || (PTR_00806724 == nullptr)) ||
+          *(int **)(iVar8 + (int)local_3c) = DAT_0080676c;
+          iVar8 = iVar8 + 4;
+        } while (iVar8 < 0x44);
+        iVar8 = *(int *)((int)&this_00->field_023E + 3);
+        if (((iVar8 < 1) || (PTR_00806724 == nullptr)) ||
            (PTR_00806724 == (AnonShape_GLOBAL_00806724_3210464F *)0xffffffd0)) {
           local_38 = 0;
         }
         else {
-          local_38 = PTR_00806724->entries[iVar5 + -1];
+          local_38 = PTR_00806724->entries[iVar8 + -1];
         }
         local_34 = (int)PTR_00806724->field_002C;
         local_2c = 0;
@@ -297,7 +303,7 @@ LAB_0058dc72:
         local_30 = DAT_008073cc;
         STT3DSprC::RestoreSpr
                   ((STT3DSprC *)&this_00->field_01D5,(int *)&local_3c,
-                   (AnonShape_004AD790_77673787 *)((int)puVar10 + 0x62));
+                   (AnonShape_004AD790_77673787 *)((int)puVar13 + 0x62));
         FreeAndNull(&local_3c);
         DumpClassC::WritePtr
                   (*(short *)&this_00->field_0x5b,*(short *)&this_00->field_0x5d,
@@ -308,8 +314,8 @@ LAB_0058dc72:
       g_currentExceptionFrame = local_80.previous;
       return 0;
     }
-    iVar5 = thunk_FUN_0058cfe0((int)this_00);
-    if (iVar5 != 0) {
+    iVar8 = thunk_FUN_0058cfe0((int)this_00);
+    if (iVar8 != 0) {
       g_currentExceptionFrame = local_80.previous;
       return 0;
     }
@@ -317,7 +323,7 @@ LAB_0058e0f9:
     sub_0058EFE0((STSharkC *)this_00);
   }
   else {
-    switch(SVar2) {
+    switch(SVar4) {
     case MESS_STOCTOPUSC_0112:
       thunk_FUN_004ad5e0((STT3DSprC *)&this_00->field_01D5);
       g_currentExceptionFrame = local_80.previous;
@@ -329,55 +335,55 @@ LAB_0058e0f9:
       return 0;
     case MESS_STOCTOPUSC_0127:
       pSVar1 = &this_00->field_0231;
-      local_1c = (undefined4 *)(int)(short)((message->arg1).words.low * 0xc9 + 100);
-      iVar5 = thunk_FUN_0058d160((short)*(undefined4 *)&this_00->field_0x27f,
+      int scalar_local_1c = int)(short)((message->arg1).words.low * 0xc9 + 100; /* split integer lifetime from pointer-typed SSA storage */
+      iVar8 = thunk_FUN_0058d160((short)*(undefined4 *)&this_00->field_0x27f,
                                  (short)*(undefined4 *)&this_00->field_0x283,
                                  (short)*(undefined4 *)&this_00->field_0x287,
                                  (short)*(undefined4 *)&this_00->field_0x28b,(int)this_00,
-                                 (int)(short)((message->arg0).words.low * 0xc9 + 100),(int)local_1c,
+                                 (int)(short)((message->arg0).words.low * 0xc9 + 100),scalar_local_1c,
                                  (int)(short)((message->arg0).words.high * 0xc9 + 100),
                                  (int)(short)((message->arg1).words.high * 0xc9 + 100),
                                  (undefined2 *)pSVar1,(undefined2 *)((int)&this_00->field_0231 + 2),
                                  (short *)&this_00->field_0x235);
-      if (iVar5 != 0) {
-        uVar8 = (undefined2)*pSVar1;
-        if ((short)uVar8 < 0) {
-          uVar8 = (((short)uVar8 / 0xc9 + ((short)uVar8 >> 0xf)) -
-                  (short)((longlong)(int)(short)uVar8 * 0x28c1979 >> 0x3f)) - CASE_1;
+      if (iVar8 != 0) {
+        uVar11 = (undefined2)*pSVar1;
+        if ((short)uVar11 < 0) {
+          uVar11 = (((short)uVar11 / 0xc9 + ((short)uVar11 >> 0xf)) -
+                   (short)((longlong)(int)(short)uVar11 * 0x28c1979 >> 0x3f)) - CASE_1;
         }
         else {
-          uVar8 = ((short)uVar8 / 0xc9 + ((short)uVar8 >> 0xf)) -
-                  (short)((longlong)(int)(short)uVar8 * 0x28c1979 >> 0x3f);
+          uVar11 = ((short)uVar11 / 0xc9 + ((short)uVar11 >> 0xf)) -
+                   (short)((longlong)(int)(short)uVar11 * 0x28c1979 >> 0x3f);
         }
-        *(undefined2 *)pSVar1 = uVar8;
-        uVar8 = *(undefined2 *)((int)&this_00->field_0231 + 2);
-        if ((short)uVar8 < 0) {
-          uVar8 = (((short)uVar8 / 0xc9 + ((short)uVar8 >> 0xf)) -
-                  (short)((longlong)(int)(short)uVar8 * 0x28c1979 >> 0x3f)) + 0xffff;
-        }
-        else {
-          uVar8 = ((short)uVar8 / 0xc9 + ((short)uVar8 >> 0xf)) -
-                  (short)((longlong)(int)(short)uVar8 * 0x28c1979 >> 0x3f);
-        }
-        *(undefined2 *)((int)&this_00->field_0231 + 2) = uVar8;
-        sVar9 = *(short *)&this_00->field_0x235;
-        if (sVar9 < 0) {
-          sVar9 = ((sVar9 / 200 + (sVar9 >> 0xf)) -
-                  (short)((longlong)(int)sVar9 * 0x51eb851f >> 0x3f)) + -1;
+        *(undefined2 *)pSVar1 = uVar11;
+        uVar11 = *(undefined2 *)((int)&this_00->field_0231 + 2);
+        if ((short)uVar11 < 0) {
+          uVar11 = (((short)uVar11 / 0xc9 + ((short)uVar11 >> 0xf)) -
+                   (short)((longlong)(int)(short)uVar11 * 0x28c1979 >> 0x3f)) + 0xffff;
         }
         else {
-          sVar9 = (sVar9 / 200 + (sVar9 >> 0xf)) -
-                  (short)((longlong)(int)sVar9 * 0x51eb851f >> 0x3f);
+          uVar11 = ((short)uVar11 / 0xc9 + ((short)uVar11 >> 0xf)) -
+                   (short)((longlong)(int)(short)uVar11 * 0x28c1979 >> 0x3f);
         }
-        *(short *)&this_00->field_0x235 = sVar9;
+        *(undefined2 *)((int)&this_00->field_0231 + 2) = uVar11;
+        sVar12 = *(short *)&this_00->field_0x235;
+        if (sVar12 < 0) {
+          sVar12 = ((sVar12 / 200 + (sVar12 >> 0xf)) -
+                   (short)((longlong)(int)sVar12 * 0x51eb851f >> 0x3f)) + -1;
+        }
+        else {
+          sVar12 = (sVar12 / 200 + (sVar12 >> 0xf)) -
+                   (short)((longlong)(int)sVar12 * 0x51eb851f >> 0x3f);
+        }
+        *(short *)&this_00->field_0x235 = sVar12;
         *(undefined4 *)&this_00->field_0x257 = 5;
         g_currentExceptionFrame = local_80.previous;
         return 0;
       }
       break;
     case MESS_HITKILL:
-      uVar7 = thunk_FUN_004ad650((STT3DSprC *)&this_00->field_01D5);
-      Library::Ourlib::ST3DSMAP::SprHide(this_00->field_0211,uVar7);
+      uVar10 = thunk_FUN_004ad650((STT3DSprC *)&this_00->field_01D5);
+      Library::Ourlib::ST3DSMAP::SprHide(this_00->field_0211,uVar10);
       goto LAB_0058e0f9;
     }
   }

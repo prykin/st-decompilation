@@ -8,7 +8,6 @@
 void __thiscall UpgPanelTy::ShiftControls(UpgPanelTy *this,int param_1)
 
 {
-  code *pcVar1;
   InternalExceptionFrame *pIVar2;
   short sVar3;
   int errorCode;

@@ -8,7 +8,6 @@
 void __thiscall FSGSTy::LoginCtrls(FSGSTy *this)
 
 {
-  code *pcVar1;
   FSGSTy *this_00;
   DArrayTy *pDVar2;
   undefined4 uVar3;

@@ -8,7 +8,6 @@
 void __thiscall SettMapTy::DoneSettMap(SettMapTy *this)
 
 {
-  code *pcVar1;
   SettMapTy *pSVar2;
   int iVar3;
   void *pvVar4;

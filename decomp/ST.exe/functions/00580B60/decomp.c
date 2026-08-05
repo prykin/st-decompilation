@@ -9,7 +9,6 @@
 undefined4 * __thiscall STFieldC::CreateField(STFieldC *this,int param_1,int param_2)
 
 {
-  code *pcVar1;
   STFieldC *pSVar2;
   int iVar3;
   ushort *puVar4;

@@ -9,7 +9,6 @@ void __thiscall ComboTy::DoneCombo(ComboTy *this)
 
 {
   undefined1 *puVar1;
-  code *pcVar2;
   ComboTy *this_00;
   int iVar3;
   int iVar4;

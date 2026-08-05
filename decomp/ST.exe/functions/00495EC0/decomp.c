@@ -14,7 +14,6 @@ DumpClassC::WritePtr
           RecoveredRecord_DumpClassC_00495EC0 *param_5)
 
 {
-  code *pcVar1;
   int iVar2;
   undefined4 uVar3;
 

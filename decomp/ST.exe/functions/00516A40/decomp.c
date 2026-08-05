@@ -12,7 +12,6 @@ void __thiscall HelpPanelTy::TechProc(HelpPanelTy *this,uint param_1,byte param_
 {
   char cVar1;
   HelpPanelTy_field_01A1State HVar2;
-  code *pcVar3;
   HelpPanelTy *this_00;
   undefined1 uVar4;
   ushort uVar5;
@@ -112,7 +111,7 @@ void __thiscall HelpPanelTy::TechProc(HelpPanelTy *this,uint param_1,byte param_
   DrawTitle(this_00,0x55fc,uVar12,UVar7);
   uVar12 = thunk_FUN_005276e0(GVar16,param_2);
   pbVar8 = (byte *)FUN_0070b3a0((AnonShape_GLOBAL_0081175C_57F682DD *)this_00->field_0230,uVar12);
-  DibPut((AnonShape_006B5B10_E0D06CF1 *)this_00->field_0068,0x35,0x2a,'\x01',pbVar8);
+  DibPut((RecoveredSourceFamily_dibcopy *)this_00->field_0068,0x35,0x2a,'\x01',pbVar8);
   ccFntTy::SetSurf(this_00->field_01E0,(int)this_00->field_0218,0,0,local_8,0x91,0xf);
   uVar12 = 3;
   iVar17 = -1;
@@ -224,7 +223,7 @@ LAB_00516f54:
   pbVar8 = (byte *)FUN_0070b3a0((AnonShape_GLOBAL_0081175C_57F682DD *)this_00->field_0248,iVar6);
   pAVar14 = this_00->field_0068;
 LAB_00516f6b:
-  DibPut((AnonShape_006B5B10_E0D06CF1 *)pAVar14,0x33,0x28,'\x06',pbVar8);
+  DibPut((RecoveredSourceFamily_dibcopy *)pAVar14,0x33,0x28,'\x06',pbVar8);
   local_8 = local_8 + 0xf;
   ccFntTy::SetSurf(this_00->field_01E0,(int)this_00->field_0218,0,0,local_8,0x91,0xf);
   uVar12 = 3;
@@ -337,9 +336,9 @@ LAB_00516f6b:
       uVar12 = thunk_FUN_00526ba0(local_10,(char)local_c);
       pbVar8 = (byte *)FUN_0070b3a0((AnonShape_GLOBAL_0081175C_57F682DD *)this_00->field_0240,uVar12
                                    );
-      DibPut((AnonShape_006B5B10_E0D06CF1 *)this_00->field_0218,0x96,local_8,'\x01',pbVar8);
+      DibPut((RecoveredSourceFamily_dibcopy *)this_00->field_0218,0x96,local_8,'\x01',pbVar8);
       pbVar8 = local_3c;
-      DibPut((AnonShape_006B5B10_E0D06CF1 *)this_00->field_0218,0x94,local_8 - 2,'\x06',local_3c);
+      DibPut((RecoveredSourceFamily_dibcopy *)this_00->field_0218,0x94,local_8 - 2,'\x06',local_3c);
       local_34 = 0x94;
       local_2c = *(undefined4 *)(pbVar8 + 4);
       local_30 = local_8 - 2;
@@ -377,9 +376,9 @@ LAB_00516f6b:
       uVar12 = thunk_FUN_00526ba0(local_14,(char)local_c);
       pbVar8 = (byte *)FUN_0070b3a0((AnonShape_GLOBAL_0081175C_57F682DD *)this_00->field_023C,uVar12
                                    );
-      DibPut((AnonShape_006B5B10_E0D06CF1 *)this_00->field_0218,0x96,local_8,'\x01',pbVar8);
+      DibPut((RecoveredSourceFamily_dibcopy *)this_00->field_0218,0x96,local_8,'\x01',pbVar8);
       pbVar8 = local_3c;
-      DibPut((AnonShape_006B5B10_E0D06CF1 *)this_00->field_0218,0x94,local_8 - 2,'\x06',local_3c);
+      DibPut((RecoveredSourceFamily_dibcopy *)this_00->field_0218,0x94,local_8 - 2,'\x06',local_3c);
       local_34 = 0x94;
       local_2c = *(undefined4 *)(pbVar8 + 4);
       local_30 = local_8 - 2;

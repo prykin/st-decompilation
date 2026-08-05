@@ -12,7 +12,6 @@
 void __thiscall CPanelTy::PaintBCapacity(CPanelTy *this)
 
 {
-  code *pcVar1;
   CPanelTy *pCVar2;
   byte bVar3;
   int iVar4;

@@ -10,7 +10,6 @@ void __thiscall TradePanelTy::PaintIndicators(TradePanelTy *this)
 {
   undefined1 *resourceString;
   ushort uVar1;
-  code *pcVar2;
   TradePanelTy *pTVar3;
   int iVar4;
   LPSTR text;
@@ -50,7 +49,7 @@ void __thiscall TradePanelTy::PaintIndicators(TradePanelTy *this)
         text = thunk_FUN_00571240("BKG_AMOUNTRC",0);
         puVar5 = Library::Ourlib::MFRLOAD::mfRLoad
                            (DAT_00806794,CASE_1,text,uVar6,bVar7,iVar8,iVar9,puVar10);
-        DibPut((AnonShape_006B5B10_E0D06CF1 *)pTVar3->field_0068,iVar4 + -3,0x45,'\x01',
+        DibPut((RecoveredSourceFamily_dibcopy *)pTVar3->field_0068,iVar4 + -3,0x45,'\x01',
                (byte *)puVar5);
         bVar7 = pTVar3->field_01D0;
         uVar1 = *(ushort *)(&pTVar3->field_0x1ad + (local_8 + (uint)bVar7 * 2) * 4);

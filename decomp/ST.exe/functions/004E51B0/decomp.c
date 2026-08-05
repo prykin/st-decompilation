@@ -46,15 +46,15 @@ undefined4 FUN_004e51b0(int *param_1,uint *param_2,uint *param_3)
   *(undefined4 *)&g_packedRecords_A62x8[(int)param_1].field_0x2f3 = 0;
   *(undefined4 *)&g_packedRecords_A62x8[(int)param_1].field_0x2f7 = 0;
   *(undefined4 *)&g_packedRecords_A62x8[(int)param_1].field_0x2fb = 0;
-  *(undefined4 *)&g_packedRecords_A62x8[(int)param_1].field_0x2ff = 0;
+  g_packedRecords_A62x8[(int)param_1].field376_0x2ff = 0;
   *(undefined4 *)&g_packedRecords_A62x8[(int)param_1].field_0x303 = 0;
   *(undefined4 *)&g_packedRecords_A62x8[(int)param_1].field_0x307 = 0;
   *(undefined4 *)&g_packedRecords_A62x8[(int)param_1].field_0x30b = 0;
   *(undefined4 *)&g_packedRecords_A62x8[(int)param_1].field_0x30f = 0;
-  memset(&g_packedRecords_A62x8[(int)param_1].field_0x327, 0, 0x26c); /* compiler bulk-zero initialization */
+  memset(&g_packedRecords_A62x8[(int)param_1].field410_0x327, 0, 0x26c); /* compiler bulk-zero initialization */
   iVar7 = 0;
   puVar10 = &DAT_00798fd8;
-  puVar14 = (undefined4 *)&g_packedRecords_A62x8[(int)param_1].field_0x73b;
+  puVar14 = (undefined4 *)&g_packedRecords_A62x8[(int)param_1].field1445_0x73b;
   memmove(puVar14, puVar10, 0x9a); /* compiler REP MOVS byte copy */
   puVar14 = puVar14 + 0x26;
   puVar10 = puVar10 + 0x26;
@@ -207,7 +207,7 @@ LAB_004e5598:
       param_3 = param_3 + 1;
     } while ((int)puVar13 < 0x7c0e4c);
     /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
-    param_2 = (uint *)&g_packedRecords_A62x8[(int)piVar5].field_0x593;
+    param_2 = &g_packedRecords_A62x8[(int)piVar5].field1024_0x593;
     /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
     param_3 = (uint *)0x32;
     do {
@@ -235,20 +235,23 @@ LAB_004e5655:
       /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
       param_2 = param_2 + 1;
       if (0x73 < (int)param_3) {
-        if (*(int *)(&g_packedRecords_A62x8[0].field_0x9ce + local_10) != 0) {
-          *(undefined4 *)(*(int *)(&g_packedRecords_A62x8[0].field_0x9ce + local_10) + 4) = 0;
-          iVar9 = DArrayGetNext(*(DArrayTy **)(&g_packedRecords_A62x8[0].field_0x9ce + local_10),
+        iVar9 = *(int *)((int)&g_packedRecords_A62x8[0].field1966_0x9ce + local_10);
+        if (iVar9 != 0) {
+          *(undefined4 *)(iVar9 + 4) = 0;
+          iVar9 = DArrayGetNext(*(DArrayTy **)
+                                 ((int)&g_packedRecords_A62x8[0].field1966_0x9ce + local_10),
                                 (byte *)&param_1);
           while (-1 < iVar9) {
             thunk_FUN_004dd880((AnonShape_004DDCC0_33DEB43E *)param_1);
-            iVar9 = DArrayGetNext(*(DArrayTy **)(&g_packedRecords_A62x8[0].field_0x9ce + iVar7),
+            iVar9 = DArrayGetNext(*(DArrayTy **)
+                                   ((int)&g_packedRecords_A62x8[0].field1966_0x9ce + iVar7),
                                   (byte *)&param_1);
           }
         }
-        iVar9 = *(int *)((int)&g_packedRecords_A62x8[0].field6_0x9 + iVar7);
+        iVar9 = *(int *)((int)&g_packedRecords_A62x8[0].field3_0x9 + iVar7);
         if (iVar9 != 0) {
           *(undefined4 *)(iVar9 + 4) = 0;
-          iVar9 = DArrayGetNext(*(DArrayTy **)((int)&g_packedRecords_A62x8[0].field6_0x9 + iVar7),
+          iVar9 = DArrayGetNext(*(DArrayTy **)((int)&g_packedRecords_A62x8[0].field3_0x9 + iVar7),
                                 (byte *)&param_1);
           while (-1 < iVar9) {
             if (param_1 != nullptr) {
@@ -274,7 +277,7 @@ LAB_004e5655:
                 }
               }
             }
-            iVar9 = DArrayGetNext(*(DArrayTy **)((int)&g_packedRecords_A62x8[0].field6_0x9 + iVar7),
+            iVar9 = DArrayGetNext(*(DArrayTy **)((int)&g_packedRecords_A62x8[0].field3_0x9 + iVar7),
                                   (byte *)&param_1);
           }
         }

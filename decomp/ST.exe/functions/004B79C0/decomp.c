@@ -14,14 +14,14 @@ undefined4 FUN_004b79c0(char param_1,int param_2)
     return 1;
   }
   index = 0;
-  array = *(DArrayTy **)&g_packedRecords_A62x8[param_1].field_0x992;
+  array = g_packedRecords_A62x8[param_1].field1948_0x992;
   if (array->count != 0) {
     do {
       DArrayGetElement(array,index,local_10);
       if (local_10[0] == param_2) {
         return 1;
       }
-      array = *(DArrayTy **)&g_packedRecords_A62x8[param_1].field_0x992;
+      array = g_packedRecords_A62x8[param_1].field1948_0x992;
       index = index + 1;
     } while (index < array->count);
   }

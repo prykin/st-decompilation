@@ -48,9 +48,8 @@ FUN_004b0f20(int param_1,int param_2,int param_3,int param_4,int param_5,uint pa
   undefined4 local_9;
 
   puVar2 = &local_74;
-  memset(puVar2, 0, 0x6e); /* compiler bulk-zero initialization */
+  memset(puVar2, 0, 0x6f); /* compiler bulk-zero initialization */
   puVar2 = (undefined4 *)((byte *)puVar2 + 0x6c);
-  *(undefined1 *)((int)puVar2 + 2) = 0;
   local_64 = *(undefined4 *)(&DAT_00791d68 + param_2 * 4);
   local_4c = param_2;
   local_48 = param_3;

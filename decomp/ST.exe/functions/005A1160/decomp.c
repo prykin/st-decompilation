@@ -11,7 +11,6 @@ void __thiscall FSGSTy::CheckUpdate(FSGSTy *this)
   char cVar1;
   ushort *puVar2;
   MMsgTy *this_00;
-  code *pcVar3;
   FSGSTy *this_01;
   int iVar4;
   char *pcVar5;

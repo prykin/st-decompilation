@@ -11,7 +11,6 @@ undefined4 __thiscall STFieldC::LoadImagSpr(STFieldC *this,uint param_1)
 {
   STFieldC_field_0234DArray *pSVar1;
   uint uVar2;
-  code *pcVar3;
   uint *puVar4;
   int errorCode;
   ushort *puVar5;

@@ -18,7 +18,6 @@ void __thiscall STSprGameObjC::LoadActFrame(STSprGameObjC *this)
 {
   undefined4 *this_00;
   char cVar1;
-  code *pcVar2;
   byte bVar3;
   STSprGameObjC_field_0259State SVar4;
   dword dVar5;

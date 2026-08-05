@@ -16,7 +16,6 @@ STRubbishC::LoadImagSpr
           STRubbishC_LoadImagSpr_param_4Enum param_4)
 
 {
-  code *pcVar1;
   STT3DSprC *this_00;
   int iVar2;
   int iVar3;

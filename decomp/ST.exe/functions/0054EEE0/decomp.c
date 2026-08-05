@@ -18,7 +18,6 @@ STPlaySystemC::SetCtrlCmd
           uint param_5,undefined4 *param_6,uint param_7)
 
 {
-  code *pcVar1;
   bool bVar2;
   int iVar3;
   void *pvVar4;

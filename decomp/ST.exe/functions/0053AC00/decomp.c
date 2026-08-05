@@ -10,7 +10,6 @@ void __thiscall PlayPanelTy::PaintPlayPanel(PlayPanelTy *this)
 {
   char cVar1;
   byte bVar2;
-  code *pcVar3;
   PlayPanelTy *pPVar4;
   int iVar5;
   byte *pbVar6;
@@ -44,7 +43,7 @@ void __thiscall PlayPanelTy::PaintPlayPanel(PlayPanelTy *this)
     }
     STDebugBreak(); /* noreturn in standalone pseudocode */
   }
-  DibPut((AnonShape_006B5B10_E0D06CF1 *)local_14->field_0068,0x1d,0x13,'\x01',
+  DibPut((RecoveredSourceFamily_dibcopy *)local_14->field_0068,0x1d,0x13,'\x01',
          (byte *)local_14->field_01CD);
   local_c = 0x1b;
   local_10 = 8;
@@ -56,7 +55,7 @@ void __thiscall PlayPanelTy::PaintPlayPanel(PlayPanelTy *this)
       local_8 = iVar5;
       pbVar6 = (byte *)FUN_0070b3a0((AnonShape_GLOBAL_0081175C_57F682DD *)pPVar4->field_01D1,
                                     (byte)(&DAT_00808af4)[uVar7 * 0x9c] + 9);
-      DibPut((AnonShape_006B5B10_E0D06CF1 *)pPVar4->field_0068,0x22,uVar8,'\x01',pbVar6);
+      DibPut((RecoveredSourceFamily_dibcopy *)pPVar4->field_0068,0x22,uVar8,'\x01',pbVar6);
       ccFntTy::SetSurf(pPVar4->field_01DD,(int)pPVar4->field_0068,0,0x37,uVar8,0x10,0xc);
       bVar2 = g_bulkInitializedRecords_008087C7
               [(byte)(&DAT_00808af4)[(iVar5 + pPVar4->field_01C9) * 0x9c]].field_0021;

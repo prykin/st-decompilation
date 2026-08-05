@@ -19,7 +19,6 @@ int __thiscall STBoatC::LoadRC(STBoatC *this,int *param_1)
 
 {
   STBoatC *pSVar1;
-  code *pcVar2;
   bool bVar3;
   undefined2 uVar4;
   int iVar5;

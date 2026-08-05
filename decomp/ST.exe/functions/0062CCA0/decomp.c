@@ -13,7 +13,6 @@ int __thiscall STManRub3C::GetMessage(STManRub3C *this,STMessage *message)
 
 {
   STMessageId SVar1;
-  code *pcVar2;
   STManRub3C *this_00;
   int iVar3;
   int iVar4;

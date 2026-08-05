@@ -33,7 +33,7 @@ undefined4 __fastcall FUN_004d0310(TLOBaseTy *param_1)
   uVar5 = 0;
   local_8 = 0;
   iVar4 = STT3DSprC::LoadSequence
-                    (param_1->field_05FF,0xe,DAT_0080677c,
+                    ((STT3DSprC *)param_1->field_05FF,0xe,DAT_0080677c,
                      &DAT_007a9342 + *(int *)&param_1->field_0x369 * 6,0x1d);
   if (iVar4 != 0) {
     RaiseInternalException
@@ -44,7 +44,7 @@ undefined4 __fastcall FUN_004d0310(TLOBaseTy *param_1)
     pbVar2 = param_1->field_0024;
   }
   wsprintfA(local_48,"%s%1i",&DAT_007a9342 + *(int *)&param_1->field_0x369 * 6,pbVar2);
-  iVar4 = STT3DSprC::LoadSequence(param_1->field_05FF,0xc,DAT_0080677c,local_48,0x1d);
+  iVar4 = STT3DSprC::LoadSequence((STT3DSprC *)param_1->field_05FF,0xc,DAT_0080677c,local_48,0x1d);
   if (iVar4 != 0) {
     RaiseInternalException
               (iVar4,g_overwriteContext_007ED77C,"E:\\__titans\\Artem\\TLO_dock.cpp",0x29a);
@@ -59,17 +59,17 @@ undefined4 __fastcall FUN_004d0310(TLOBaseTy *param_1)
     pcVar7 = pcVar7 + 1;
   } while (cVar1 != '\0');
   if (iVar4 == -2) {
-    STT3DSprC::StopShow(param_1->field_05FF,0xd);
+    STT3DSprC::StopShow((STT3DSprC *)param_1->field_05FF,0xd);
   }
   else {
-    iVar4 = STT3DSprC::LoadSequence(param_1->field_05FF,0xd,DAT_0080677c,pcVar8,0x1d);
+    iVar4 = STT3DSprC::LoadSequence((STT3DSprC *)param_1->field_05FF,0xd,DAT_0080677c,pcVar8,0x1d);
     if (iVar4 != 0) {
       return 0xffff;
     }
   }
   uVar9 = 10;
   iVar4 = thunk_FUN_004ad650((STT3DSprC *)&param_1->field_01D5);
-  uVar3 = thunk_FUN_004ad650(param_1->field_05FF);
+  uVar3 = thunk_FUN_004ad650((STT3DSprC *)param_1->field_05FF);
   FUN_006ea340((void *)param_1->field_0211,uVar3,iVar4,uVar9);
   iVar4 = thunk_FUN_004ab050();
   switch(iVar4) {
@@ -92,10 +92,10 @@ undefined4 __fastcall FUN_004d0310(TLOBaseTy *param_1)
   thunk_FUN_004ad460(param_1->field_05FF,0);
   thunk_FUN_004abce0(param_1->field_05FF,0xe,uVar5,uVar5,'\0');
   thunk_FUN_004abce0(param_1->field_05FF,0xc,uVar5,uVar5,'\0');
-  STT3DSprC::SetCurFase(param_1->field_05FF,'\x0e',uVar5);
-  STT3DSprC::SetCurFase(param_1->field_05FF,'\f',uVar5);
-  STT3DSprC::StartShow(param_1->field_05FF,0xe,g_playSystem_00802A38->field_00E4);
-  STT3DSprC::StartShow(param_1->field_05FF,0xc,g_playSystem_00802A38->field_00E4);
+  STT3DSprC::SetCurFase((STT3DSprC *)param_1->field_05FF,'\x0e',uVar5);
+  STT3DSprC::SetCurFase((STT3DSprC *)param_1->field_05FF,'\f',uVar5);
+  STT3DSprC::StartShow((STT3DSprC *)param_1->field_05FF,0xe,g_playSystem_00802A38->field_00E4);
+  STT3DSprC::StartShow((STT3DSprC *)param_1->field_05FF,0xc,g_playSystem_00802A38->field_00E4);
   uVar5 = local_8;
   iVar4 = -1;
   pcVar8 = (char *)((int)&DAT_007a9440 + *(int *)&param_1->field_0x369 * 6 + 2);
@@ -107,8 +107,8 @@ undefined4 __fastcall FUN_004d0310(TLOBaseTy *param_1)
   } while (cVar1 != '\0');
   if (iVar4 != -2) {
     thunk_FUN_004abce0(param_1->field_05FF,0xd,local_8,local_8,'\0');
-    STT3DSprC::SetCurFase(param_1->field_05FF,'\r',uVar5);
-    STT3DSprC::StartShow(param_1->field_05FF,0xd,g_playSystem_00802A38->field_00E4);
+    STT3DSprC::SetCurFase((STT3DSprC *)param_1->field_05FF,'\r',uVar5);
+    STT3DSprC::StartShow((STT3DSprC *)param_1->field_05FF,0xd,g_playSystem_00802A38->field_00E4);
   }
   return 0;
 }

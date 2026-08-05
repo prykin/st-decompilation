@@ -10,7 +10,6 @@ STAllPlayersC::AddObjsToTmp
           (STAllPlayersC *this,uint param_1,int param_2,int param_3,DArrayTy *param_4)
 
 {
-  code *pcVar1;
   int errorCode;
   int iVar2;
   undefined4 uVar3;

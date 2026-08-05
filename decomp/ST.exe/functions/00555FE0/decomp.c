@@ -11,7 +11,6 @@
 byte * __thiscall TraksClassTy::PrepareToSave(TraksClassTy *this,uint *param_1)
 
 {
-  code *pcVar1;
   int errorCode;
   int iVar2;
   byte *pbVar3;

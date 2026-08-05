@@ -9,7 +9,6 @@ void __thiscall CursorClassTy::ReInitCursorSpr(CursorClassTy *this,int param_1)
 
 {
   undefined4 *this_00;
-  code *pcVar1;
   CursorClassTy *this_01;
   int iVar2;
   int iVar3;

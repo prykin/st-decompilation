@@ -9,7 +9,6 @@ void __thiscall HelpPanelTy::IndexBut(HelpPanelTy *this)
 
 {
   HelpPanelTy_field_01A1State HVar1;
-  code *pcVar2;
   HelpPanelTy *this_00;
   int errorCode;
   int iVar3;
@@ -34,7 +33,7 @@ void __thiscall HelpPanelTy::IndexBut(HelpPanelTy *this)
     local_8->field_01A1 = CASE_A;
     local_8->field_01A3 = 0;
     Library::DKW::WGR::FUN_006b55f0
-              ((AnonShape_006B5B10_E0D06CF1 *)local_8->field_0068,0,0x21,0x16,
+              ((RecoveredSourceFamily_dibcopy *)local_8->field_0068,0,0x21,0x16,
                (byte *)local_8->field_01DC,0,0x21,0x16,0x1b8,0x118);
     if (this_00->field_0178 != 0) {
       this_00->field_0028 = 0x4202;

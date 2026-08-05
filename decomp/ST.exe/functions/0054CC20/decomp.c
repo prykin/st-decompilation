@@ -11,7 +11,6 @@ STPlaySystemC::CreateGameObject
           undefined4 param_5)
 
 {
-  code *pcVar1;
   STPlaySystemC *this_00;
   int iVar2;
   int iVar3;

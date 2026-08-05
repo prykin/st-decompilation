@@ -18,7 +18,6 @@ STAppC::MainWindowProc
           uint param_4)
 
 {
-  code *pcVar1;
   int iVar2;
   LRESULT LVar3;
   uint uVar4;

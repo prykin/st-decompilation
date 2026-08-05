@@ -9,7 +9,6 @@ undefined4 __thiscall STColl3C::LoadImagSpr(STColl3C *this,int param_1)
 
 {
   STColl3CVTable_at_1D5 **this_00;
-  code *pcVar1;
   STColl3C *this_01;
   int iVar2;
   int iVar3;

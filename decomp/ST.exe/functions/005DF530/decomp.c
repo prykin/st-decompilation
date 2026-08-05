@@ -12,7 +12,6 @@ MTaskTy::OutGlassBmpProc
 
 {
   AnonPointee_MReportTy_0073 *pAVar1;
-  code *pcVar2;
   int errorCode;
   int iVar3;
   InternalExceptionFrame local_4c;

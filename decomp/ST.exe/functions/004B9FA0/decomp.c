@@ -50,7 +50,6 @@ int __thiscall TLOBaseTy::GetMessage(TLOBaseTy *this,STMessage *message)
   uint uVar11;
   uint uVar12;
   char *pcVar13;
-  code *pcVar14;
   TLOBaseTy *this_00;
   short sVar15;
   int iVar17;
@@ -1733,7 +1732,7 @@ LAB_004bc4c0:
         }
         if ((TVar7 == CASE_3C) || (TVar7 == CASE_53)) {
           if (*pcVar13 == '\f') {
-            if (g_packedRecords_A62x8[(int)this_00->field_0024].field2383_0xa0e != 0) {
+            if (g_packedRecords_A62x8[(int)this_00->field_0024].field1982_0xa0e != 0) {
               g_currentExceptionFrame = local_c4.previous;
               return 0;
             }

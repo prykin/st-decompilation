@@ -20,7 +20,6 @@ int __thiscall STVolcanoC::GetMessage(STVolcanoC *this,STMessage *message)
   uint uVar1;
   STMessageId SVar2;
   uint uVar3;
-  code *pcVar4;
   STVolcanoC *this_00;
   int iVar5;
   ushort *puVar6;

@@ -8,7 +8,6 @@
 undefined4 __thiscall STGroupBoatC::DCBomb(STGroupBoatC *this,int param_1)
 
 {
-  code *pcVar1;
   STGroupBoatC *pSVar2;
   DArrayTy *array;
   int iVar3;

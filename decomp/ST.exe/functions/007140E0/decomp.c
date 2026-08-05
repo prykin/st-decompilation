@@ -23,7 +23,7 @@ int __thiscall FUN_007140e0(void *this,int param_1,char param_2)
   int local_18;
   int local_14;
   int local_10;
-  AnonShape_006B5B10_E0D06CF1 *local_c;
+  RecoveredSourceFamily_dibcopy *local_c;
   undefined1 local_5;
 
   iVar9 = 0;
@@ -39,7 +39,7 @@ int __thiscall FUN_007140e0(void *this,int param_1,char param_2)
   FUN_007109f0(*(void **)this,(AnonShape_007109F0_BD33A2FF *)((int)this + 0x10));
   this_00 = *(ccFntTy **)this;
   if (&stack0x00000000 != &DAT_0000000c) {
-    local_c = (AnonShape_006B5B10_E0D06CF1 *)this_00->field_0072;
+    local_c = (RecoveredSourceFamily_dibcopy *)this_00->field_0072;
   }
   if (&stack0x00000000 != (undefined1 *)0x10) {
     iVar9 = this_00->field_0076;
@@ -373,6 +373,7 @@ int __thiscall FUN_007140e0(void *this,int param_1,char param_2)
         pcVar4 = pcVar13 + -uVar7;
         pcVar13 = pcVar12 + -1;
         memmove(pcVar13, pcVar4, uVar7); /* compiler REP MOVS byte copy */
+        uVar6 = 0;
       }
       pcVar4 = Library::MSVCRT::__itoa(*(int *)((int)this + 0x98),local_24,0x10);
       uVar7 = 0xffffffff;

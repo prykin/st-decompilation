@@ -12,7 +12,6 @@
 void __thiscall STAllPlayersC::_MakeMDPairs(STAllPlayersC *this,char param_1)
 
 {
-  code *pcVar1;
   byte bVar2;
   int iVar3;
   DArrayTy *pDVar4;
@@ -81,7 +80,7 @@ void __thiscall STAllPlayersC::_MakeMDPairs(STAllPlayersC *this,char param_1)
   iVar3 = (int)param_1;
   if (0 < (int)local_24) {
     local_c = local_24;
-    puVar11 = &g_packedRecords_A62x8[iVar3].field9_0xf;
+    puVar11 = &g_packedRecords_A62x8[iVar3].field5_0xf;
     do {
       if ((DArrayTy *)*puVar11 != nullptr) {
         DArrayDestroy((DArrayTy *)*puVar11);
@@ -100,7 +99,7 @@ void __thiscall STAllPlayersC::_MakeMDPairs(STAllPlayersC *this,char param_1)
   local_20 = iVar3 * 0xa62;
   if (g_packedRecords_A62x8[iVar3].field0_0x0 != '\0') {
     if (0 < (int)pDVar9) {
-      puVar11 = &g_packedRecords_A62x8[iVar3].field9_0xf;
+      puVar11 = &g_packedRecords_A62x8[iVar3].field5_0xf;
       pDVar15 = pDVar9;
       do {
         pDVar4 = Library::DKW::TBL::DArrayCreate(nullptr,0,0x24,1);
@@ -109,7 +108,7 @@ void __thiscall STAllPlayersC::_MakeMDPairs(STAllPlayersC *this,char param_1)
         pDVar15 = (DArrayTy *)((int)&pDVar15[-1].data + 3);
       } while (pDVar15 != nullptr);
     }
-    local_18 = *(DArrayTy **)((int)&g_packedRecords_A62x8[0].field6_0x9 + local_20);
+    local_18 = *(DArrayTy **)((int)&g_packedRecords_A62x8[0].field3_0x9 + local_20);
     if ((local_18 != nullptr) &&
        (local_c = (DArrayTy *)local_18->count, local_c != nullptr)) {
       local_10 = Library::DKW::TBL::DArrayCreate(nullptr,0,4,1);
@@ -161,7 +160,7 @@ LAB_00441e92:
       local_3a = 0xffff;
       local_42 = 0xffff;
       if (0 < (int)pDVar9) {
-        puVar11 = (undefined4 *)((int)&g_packedRecords_A62x8[0].field9_0xf + local_20);
+        puVar11 = (undefined4 *)((int)&g_packedRecords_A62x8[0].field5_0xf + local_20);
         pDVar15 = pDVar9;
         do {
           Library::DKW::TBL::DArrayAppend((DArrayTy *)*puVar11,&local_48);
@@ -196,7 +195,7 @@ LAB_00441e92:
           if (0 < (int)local_24) {
             local_1c = local_60;
             local_18 = local_24;
-            local_14 = (undefined4 *)((int)&g_packedRecords_A62x8[0].field9_0xf + local_20);
+            local_14 = (undefined4 *)((int)&g_packedRecords_A62x8[0].field5_0xf + local_20);
             do {
               pDVar9 = (DArrayTy *)*local_1c;
               local_68 = pDVar9;

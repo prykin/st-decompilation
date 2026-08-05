@@ -19,7 +19,6 @@ void __thiscall CPanelTy::SetControlObj(CPanelTy *this,char param_1)
 {
   CPanelTy_field_0BFAState CVar1;
   char cVar2;
-  code *pcVar3;
   CPanelTy *this_00;
   Global_sub_00525EF0_param_1Enum GVar4;
   int iVar5;

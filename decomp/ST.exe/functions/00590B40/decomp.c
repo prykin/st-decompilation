@@ -9,7 +9,6 @@ void __thiscall CampaignTy::InitCampaign(CampaignTy *this,undefined4 param_1)
 
 {
   MMsgTy *this_00;
-  code *pcVar1;
   CursorClassTy *this_01;
   CampaignTy *this_02;
   int iVar2;
@@ -376,10 +375,9 @@ switchD_00590d73_default:
           this_02->field_1BF0 = this_02->field_0061;
           iVar2 = this_02->field_1A5B;
           puVar5 = &local_26c;
-          memset(puVar5, 0, 0x1fa); /* compiler bulk-zero initialization */
+          memset(puVar5, 0, 0x1fb); /* compiler bulk-zero initialization */
           puVar5 = (undefined4 *)((byte *)puVar5 + 0x1f8);
           iVar16 = 0;
-          *(undefined1 *)((int)puVar5 + 2) = 0;
           local_238 = this_02->field_0008;
           this_02->field_1BEC = 1;
           this_02->field_1BF4 = 0;

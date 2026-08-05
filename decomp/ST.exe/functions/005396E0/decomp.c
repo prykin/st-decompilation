@@ -12,7 +12,6 @@
 void __thiscall PausePanelTy::ShiftControls(PausePanelTy *this,int param_1)
 
 {
-  code *pcVar1;
   short sVar2;
   int iVar3;
   int iVar4;

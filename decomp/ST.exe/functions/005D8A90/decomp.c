@@ -8,7 +8,6 @@
 void __thiscall SIDTy::DeleteCtrls(SIDTy *this)
 
 {
-  code *pcVar1;
   SIDTy *pSVar2;
   int iVar3;
   int iVar4;

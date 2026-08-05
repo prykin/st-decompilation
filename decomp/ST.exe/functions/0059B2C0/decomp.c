@@ -15,7 +15,6 @@
 void __thiscall FSGSTy::PaintLadder(FSGSTy *this)
 
 {
-  code *pcVar1;
   FSGSTy *pFVar2;
   StartServTy *pSVar3;
   int iVar4;

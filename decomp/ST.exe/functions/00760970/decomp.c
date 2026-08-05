@@ -79,15 +79,15 @@ void FUN_00760970(int param_1,AnonShape_00760970_DF0E462C *param_2,int *param_3,
       local_c = (local_8 + iVar7) * 0x1d9 >> 8;
       iVar7 = ((iVar7 * -0x29d >> 8) - iVar10) + local_c;
       iVar9 = ((iVar9 - local_14) * 0x16a >> 8) - iVar7;
-      local_18 = (int *)(((local_8 * 0x115 >> 8) - local_c) + iVar9);
+      int scalar_local_18 = ((local_8 * 0x115 >> 8) - local_c) + iVar9; /* split integer lifetime from pointer-typed SSA storage */
       *piVar2 = iVar10 + iVar11;
       piVar2[0x38] = iVar11 - iVar10;
       piVar2[0x30] = local_24 - iVar7;
       piVar2[8] = iVar7 + local_24;
       piVar2[0x28] = iVar8 - iVar9;
       piVar2[0x10] = iVar9 + iVar8;
-      piVar2[0x20] = (int)local_18 + local_1c;
-      piVar2[0x18] = local_1c - (int)local_18;
+      piVar2[0x20] = scalar_local_18 + local_1c;
+      piVar2[0x18] = local_1c - scalar_local_18;
       iVar10 = local_28;
     }
     /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */

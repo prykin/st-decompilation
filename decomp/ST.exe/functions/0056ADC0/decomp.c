@@ -12,7 +12,6 @@ STAppC::InitApp(STAppC *this,HINSTANCE param_1,undefined4 param_2,undefined4 par
 {
   undefined1 *puVar1;
   char cVar2;
-  code *pcVar3;
   bool bVar4;
   byte bVar5;
   ATOM AVar6;

@@ -22,7 +22,6 @@ MMMObjTy::OutBSlProc
           int param_6,int param_7,undefined4 *param_8)
 
 {
-  code *pcVar1;
   int errorCode;
   int iVar2;
   InternalExceptionFrame local_50;

@@ -9,8 +9,7 @@ void __thiscall WaitTy::ShowDescription(WaitTy *this)
 
 {
   undefined1 *puVar1;
-  AnonShape_006B5B10_E0D06CF1 *pAVar2;
-  code *pcVar3;
+  RecoveredSourceFamily_dibcopy *pRVar2;
   cMf32 *pcVar4;
   int iVar5;
   ushort *puVar6;
@@ -46,10 +45,10 @@ void __thiscall WaitTy::ShowDescription(WaitTy *this)
     STDebugBreak(); /* noreturn in standalone pseudocode */
   }
   puVar6 = Library::Ourlib::MFIMG::mfImgLoad(g_cMf32_00806780,1,"MM_MAPB",0,1);
-  DibPut((AnonShape_006B5B10_E0D06CF1 *)g_startSystem_0081176C->field_02F0,0,0,'\x01',(byte *)puVar6
-        );
-  pAVar2 = (AnonShape_006B5B10_E0D06CF1 *)g_startSystem_0081176C->field_0544;
-  FUN_006b4170(pAVar2,0,0,0,pAVar2->field_0004,pAVar2->field_0008,0xff);
+  DibPut((RecoveredSourceFamily_dibcopy *)g_startSystem_0081176C->field_02F0,0,0,'\x01',
+         (byte *)puVar6);
+  pRVar2 = (RecoveredSourceFamily_dibcopy *)g_startSystem_0081176C->field_0544;
+  FUN_006b4170(pRVar2,0,0,0,pRVar2->field_0004,pRVar2->field_0008,0xff);
   if ((DArrayTy *)g_startSystem_0081176C->field_0548 != nullptr) {
     FUN_006b5570((DArrayTy *)g_startSystem_0081176C->field_0548);
   }

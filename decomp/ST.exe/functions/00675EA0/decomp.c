@@ -9,7 +9,6 @@
 void __cdecl _AddObjGrpExch(uint param_1,int *param_2)
 
 {
-  code *pcVar1;
   bool bVar2;
   bool bVar3;
   int iVar4;

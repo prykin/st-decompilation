@@ -9,7 +9,6 @@ void __thiscall TradePanelTy::InitTradePanel(TradePanelTy *this)
 
 {
   undefined1 *puVar1;
-  code *pcVar2;
   TradePanelTy *this_00;
   undefined4 *puVar3;
   LPSTR pCVar4;

@@ -28,7 +28,6 @@ void __thiscall STSharkC::LifeShark(STSharkC *this)
   short sVar1;
   short sVar2;
   short sVar3;
-  code *pcVar4;
   int iVar5;
   uint uVar7;
   int SVar9;

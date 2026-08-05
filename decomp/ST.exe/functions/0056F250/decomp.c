@@ -122,10 +122,10 @@ LAB_0056f325:
                     FUN_006b50c0(0x8b,0x8b,(uint)*(ushort *)(DAT_0080679c + 0xe),uVar4,puVar13,iVar3
                                 );
           if (local_c != nullptr) {
-            FUN_006b4170((AnonShape_006B5B10_E0D06CF1 *)local_c,0,0,0,local_c->field_0004,
+            FUN_006b4170((RecoveredSourceFamily_dibcopy *)local_c,0,0,0,local_c->field_0004,
                          local_c->field_0008,0);
             ST3DSMAPContext::sub_006E6FB0
-                      (g_sT3DSMAPContext_00807598,(AnonShape_006B5B10_E0D06CF1 *)local_c,0,0,1);
+                      (g_sT3DSMAPContext_00807598,(RecoveredSourceFamily_dibcopy *)local_c,0,0,1);
             puVar15 = nullptr;
             cVar14 = '\0';
             puVar13 = nullptr;
@@ -221,6 +221,7 @@ LAB_0056f325:
     pbVar9 = pbVar12 + -uVar5;
     pbVar12 = pbVar7;
     memmove(pbVar12, pbVar9, uVar5); /* compiler REP MOVS byte copy */
+    uVar6 = 0;
     uVar5 = 0xffffffff;
     pcVar10 = PTR_DAT_0079b038;
     do {

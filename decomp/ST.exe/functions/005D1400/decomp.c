@@ -32,7 +32,6 @@ int __thiscall SettMapMTy::GetMessage(SettMapMTy *this,STMessage *message)
   dword dVar10;
   ccFntTy *pcVar11;
   int *piVar12;
-  code *pcVar13;
   CursorClassTy *pCVar14;
   SettMapMTy *this_00;
   DWORD DVar15;
@@ -199,7 +198,7 @@ int __thiscall SettMapMTy::GetMessage(SettMapMTy *this,STMessage *message)
       }
       else if (SVar6 == MESS_CHOOSEMAPTY_6327) {
         piVar12 = (message->arg0).ptr;
-        sub_005B5F00(this_00,(AnonShape_006B5B10_E0D06CF1 *)this_00->field_2204,piVar12);
+        sub_005B5F00(this_00,(RecoveredSourceFamily_dibcopy *)this_00->field_2204,piVar12);
         iVar16 = *piVar12;
         local_10 = (char *)piVar12[5];
         ccFntTy::SetSurf(g_startSystem_0081176C->field_0034,(int)this_00->field_2204,0,
@@ -1736,7 +1735,7 @@ LAB_005d34ee:
               (&pSVar21->data->field_0000 + pSVar21->elementSize * uVar29);
   }
   local_10 = pcVar28;
-  FUN_006b4170((AnonShape_006B5B10_E0D06CF1 *)this_00->field_20CC[(int)pcVar28 + 10],0,
+  FUN_006b4170((RecoveredSourceFamily_dibcopy *)this_00->field_20CC[(int)pcVar28 + 10],0,
                *piVar12 + -0x113,0,piVar12[2],piVar12[3],0xff);
   if (pAVar36 == nullptr) goto switchD_005d35aa_default;
   switch(local_30) {
@@ -1786,7 +1785,7 @@ LAB_005d34ee:
         default:
           bVar23 = 0xff;
         }
-        FUN_006b4170((AnonShape_006B5B10_E0D06CF1 *)this_00->field_20CC[(int)pcVar28 + 10],0,
+        FUN_006b4170((RecoveredSourceFamily_dibcopy *)this_00->field_20CC[(int)pcVar28 + 10],0,
                      local_28 + 2,local_24 + 2,local_20 + -4,local_1c + -4,bVar23);
       }
     }
@@ -2011,7 +2010,7 @@ LAB_005d3bf4:
     pAVar25 = (AnonShape_GLOBAL_0081175C_57F682DD *)this_00->field_1F4F;
 LAB_005d3bfa:
     pbVar19 = (byte *)FUN_0070b3a0(pAVar25,iVar16);
-    DibPut((AnonShape_006B5B10_E0D06CF1 *)this_00->field_20CC[(int)pcVar28 + 10],
+    DibPut((RecoveredSourceFamily_dibcopy *)this_00->field_20CC[(int)pcVar28 + 10],
            (local_20 - *(int *)(pbVar19 + 4)) / 2 + local_28,
            (local_1c - *(int *)(pbVar19 + 8)) / 2 + 1 + local_24,'\x06',pbVar19);
   }

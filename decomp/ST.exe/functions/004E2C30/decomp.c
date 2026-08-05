@@ -53,7 +53,7 @@ undefined4 __thiscall TLOBaseTy::FUN_004e2c30(TLOBaseTy *this,uint param_1)
   puVar9 = (byte *)(local_2c);
   memmove(puVar9, puVar8, 0x14); /* compiler REP MOVS byte copy */
   iVar4 = 0;
-  puVar8 = (byte *)&g_packedRecords_A62x8[(int)pbVar1].field_0x2ff;
+  puVar8 = (byte *)(&g_packedRecords_A62x8[(int)pbVar1].field376_0x2ff);
   pbVar10 = local_40;
   memmove(pbVar10, puVar8, 0x14); /* compiler REP MOVS byte copy */
   thunk_FUN_004e6310(pbVar1,param_1,local_10 + 1);
@@ -82,8 +82,9 @@ undefined4 __thiscall TLOBaseTy::FUN_004e2c30(TLOBaseTy *this,uint param_1)
                    (local_18[(int)(local_10 ^ 7) >> 3] >> ((local_10 ^ 7) & 7) & 1) == 0)) &&
           (local_18 = &g_packedRecords_A62x8[(int)this->field_0024].field_0x2eb,
           (local_18[(int)(local_10 ^ 7) >> 3] >> ((local_10 ^ 7) & 7) & 1) != 0)) &&
-         (local_18 = &g_packedRecords_A62x8[(int)this->field_0024].field_0x2ff,
-         (local_18[(int)(local_10 ^ 7) >> 3] >> ((local_10 ^ 7) & 7) & 1) != 0)) {
+         (local_18 = (byte *)&g_packedRecords_A62x8[(int)this->field_0024].field376_0x2ff,
+         (*(byte *)((int)local_18 + ((int)(local_10 ^ 7) >> 3)) >> ((local_10 ^ 7) & 7) & 1) != 0))
+      {
         uVar3 = thunk_FUN_004e6140((int)this->field_0024,local_10);
         iVar4 = thunk_FUN_004e60d0((int)this->field_0024,uVar2);
         /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */

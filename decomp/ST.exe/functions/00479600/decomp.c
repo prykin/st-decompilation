@@ -14,7 +14,6 @@ int __thiscall STBoatC::Teleport(STBoatC *this,int param_1)
   undefined1 *puVar3;
   short *psVar4;
   undefined4 uVar5;
-  code *pcVar6;
   undefined2 uVar7;
   short sVar8;
   ushort uVar9;

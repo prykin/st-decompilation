@@ -13,7 +13,6 @@ void AiAiCalcMinesFields(uint param_1,int param_2,int param_3,int param_4,int pa
 {
   byte bVar1;
   byte bVar2;
-  code *pcVar3;
   byte *pbVar4;
   undefined1 *puVar5;
   int iVar6;

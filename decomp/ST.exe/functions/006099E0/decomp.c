@@ -8,7 +8,6 @@
 uint __thiscall STFieldC::CreateField(STFieldC *this,uint param_1)
 
 {
-  code *pcVar1;
   STFieldC *pSVar2;
   int iVar3;
   STFieldC_field_0234DArray *pSVar4;

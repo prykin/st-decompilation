@@ -10,11 +10,10 @@ void __thiscall ComboTy::InitCombo(ComboTy *this,undefined4 *param_1)
 {
   undefined1 *puVar1;
   uint *puVar2;
-  code *pcVar3;
   ComboTy *this_00;
   int iVar4;
   int local_EAX_159;
-  AnonShape_006B5B10_E0D06CF1 *pAVar5;
+  RecoveredSourceFamily_dibcopy *pRVar5;
   byte *puVar6;
   int uVar4;
   int *piVar7;
@@ -74,17 +73,17 @@ void __thiscall ComboTy::InitCombo(ComboTy *this,undefined4 *param_1)
     puVar6 = (byte *)(iVar4 + 0x28);
     local_EAX_159 = FUN_006b4fe0(iVar4);
     /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-    pAVar5 = (AnonShape_006B5B10_E0D06CF1 *)
+    pRVar5 = (RecoveredSourceFamily_dibcopy *)
              FUN_006b50c0(this_00->field_00F4,this_00->field_00F8,
                           (uint)*(ushort *)(this_00->field_00D4 + 0xe),local_EAX_159,puVar6,iVar13);
-    this_00->field_00FC = pAVar5;
-    uVar11 = pAVar5[1].field_0004;
+    this_00->field_00FC = pRVar5;
+    uVar11 = pRVar5[1].field_0004;
     if (uVar11 == 0) {
-      uVar11 = ((uint)pAVar5->field_000E * pAVar5->field_0004 + 0x1f >> 3 & 0x1ffffffc) *
-               pAVar5->field_0008;
+      uVar11 = ((uint)pRVar5->field_000E * pRVar5->field_0004 + 0x1f >> 3 & 0x1ffffffc) *
+               pRVar5->field_0008;
     }
     local_5 = this_00->field_00D8;
-    puVar6 = (byte *)FUN_006b4fa0((int *)pAVar5);
+    puVar6 = (byte *)FUN_006b4fa0((int *)pRVar5);
     iVar4 = 1;
     for (uVar9 = uVar11 >> 2; uVar9 != 0; uVar9 = uVar9 - 1) {
       *puVar6 = CONCAT22(CONCAT11(local_5,local_5),CONCAT11(local_5,local_5));

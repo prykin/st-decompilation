@@ -14,8 +14,7 @@ void __thiscall WaitTy::AddStr(WaitTy *this,uint *param_1,int param_2)
 {
   dword dVar1;
   ushort *puVar2;
-  AnonShape_006B5B10_E0D06CF1 *pAVar3;
-  code *pcVar4;
+  RecoveredSourceFamily_dibcopy *pRVar3;
   WaitTy *pWVar5;
   int iVar6;
   DArrayTy *pDVar7;
@@ -47,8 +46,9 @@ void __thiscall WaitTy::AddStr(WaitTy *this,uint *param_1,int param_2)
             uVar11 = pWVar5->field_1AF4;
           } while ((int)uVar11 < (int)pDVar8->elementSize);
         }
-        FUN_006b4170((AnonShape_006B5B10_E0D06CF1 *)pWVar5->field_1AEC,0,0,pWVar5->field_1AF4 * 0x13
-                     ,((AnonShape_006B5B10_E0D06CF1 *)pWVar5->field_1AEC)->field_0004,
+        FUN_006b4170((RecoveredSourceFamily_dibcopy *)pWVar5->field_1AEC,0,0,
+                     pWVar5->field_1AF4 * 0x13,
+                     ((RecoveredSourceFamily_dibcopy *)pWVar5->field_1AEC)->field_0004,
                      (0x16 - pWVar5->field_1AF4) * 0x13,0);
       }
       pDVar7 = (DArrayTy *)ccFntTy::_TxtToSarr(g_startSystem_0081176C->field_0030,param_1);
@@ -82,10 +82,10 @@ LAB_005e7d14:
         iVar6 = dVar1 - 1;
       }
       else if ((int)dVar1 < 0x2c) {
-        pAVar3 = (AnonShape_006B5B10_E0D06CF1 *)pWVar5->field_1AEC;
+        pRVar3 = (RecoveredSourceFamily_dibcopy *)pWVar5->field_1AEC;
         iVar6 = 0x2c - dVar1;
         Library::DKW::WGR::FUN_006b55f0
-                  (pAVar3,0,0,0,(byte *)pAVar3,0,0,dVar1 * 0x13 + -0x1a2,pAVar3->field_0004,
+                  (pRVar3,0,0,0,(byte *)pRVar3,0,0,dVar1 * 0x13 + -0x1a2,pRVar3->field_0004,
                    iVar6 * 0x13);
       }
       else {
@@ -117,8 +117,8 @@ LAB_005e7d14:
         local_8 = pWVar5->field_1A94 + iVar6;
         uVar11 = iVar6 * 0x13;
         do {
-          FUN_006b4170((AnonShape_006B5B10_E0D06CF1 *)pWVar5->field_1AEC,0,0,uVar11,
-                       ((AnonShape_006B5B10_E0D06CF1 *)pWVar5->field_1AEC)->field_0004,0x13,0);
+          FUN_006b4170((RecoveredSourceFamily_dibcopy *)pWVar5->field_1AEC,0,0,uVar11,
+                       ((RecoveredSourceFamily_dibcopy *)pWVar5->field_1AEC)->field_0004,0x13,0);
           ccFntTy::SetSurf(g_startSystem_0081176C->field_0030,(int)pWVar5->field_1AEC,0,2,uVar11,
                            *(int *)(pWVar5->field_1AEC + 2) + -4,0x13);
           if (iVar6 < (int)pWVar5->field_1AF0->elementSize) {

@@ -45,6 +45,7 @@ import ghidra.program.model.address.AddressSetView;
 import ghidra.program.model.data.DataType;
 import ghidra.program.model.data.DataTypeComponent;
 import ghidra.program.model.data.DataTypeManager;
+import ghidra.program.model.data.AbstractIntegerDataType;
 import ghidra.program.model.data.Array;
 import ghidra.program.model.data.Enum;
 import ghidra.program.model.data.Pointer;
@@ -88,7 +89,7 @@ public class STDecompExport extends GhidraScript {
     // Bump only when normalize/catalogue semantics change. Hashing this entire source file
     // made an unrelated manifest or I/O edit rescan all 5,000+ bodies.
     private static final String FUNCTION_ANALYSIS_LOGIC_ID =
-        "st-function-analysis-v6-narrow-returns-low-pieces-darray-record-address";
+        "st-function-analysis-v10-source-family-scalar-lifetime-bulk-tail-dead-synthetics";
     private static final Pattern NARROW_RETURN_PIECE_ASSIGNMENT = Pattern.compile(
         "(?<variable>[A-Za-z_$][A-Za-z0-9_$]*)\\._0_(?<width>[12])_\\s*=\\s*" +
         "(?<callee>[A-Za-z_$][A-Za-z0-9_$]*(?:::[A-Za-z_$][A-Za-z0-9_$]*)*)" +
@@ -130,6 +131,14 @@ public class STDecompExport extends GhidraScript {
         "\\k<pointer>[ \\t]*=[ \\t]*0;)?");
     private static final String BULK_ZERO_MARKER =
         "/* compiler bulk-zero initialization */";
+    private static final Pattern BULK_ZERO_MEMSET_LINE = Pattern.compile(
+        "^(?<indent>[ \\t]*)memset\\((?<pointer>[A-Za-z_$][A-Za-z0-9_$]*),[ \\t]*0,[ \\t]*" +
+        "(?<bytes>0x[0-9A-Fa-f]+|[0-9]+)\\);[ \\t]*" +
+        Pattern.quote(BULK_ZERO_MARKER) + "[ \\t]*$");
+    private static final Pattern BULK_ZERO_POINTER_ADVANCE = Pattern.compile(
+        "^[ \\t]*(?<pointer>[A-Za-z_$][A-Za-z0-9_$]*)[ \\t]*=[ \\t]*" +
+        "\\(undefined4[ \\t]*\\*\\)\\(\\(byte[ \\t]*\\*\\)\\k<pointer>[ \\t]*\\+[ \\t]*" +
+        "(?<bytes>0x[0-9A-Fa-f]+|[0-9]+)\\);[ \\t]*$");
     private static final Pattern BULK_COPY_WORD_HEADER = Pattern.compile(
         "^(?<indent>[ \\t]*)for[ \\t]*\\((?<counter>[A-Za-z_$][A-Za-z0-9_$]*)" +
         "[ \\t]*=[ \\t]*(?:\\(uint\\)[ \\t]*)?(?<bytes>[A-Za-z_$][A-Za-z0-9_$]*)" +
@@ -202,7 +211,7 @@ public class STDecompExport extends GhidraScript {
         "\\*\\([^)]*\\*\\)\\([^;]*(?:param_|local_|->)[^;]*[+-]\\s*0x[0-9A-Fa-f]+");
     private static final Pattern PACKED_PIECE = Pattern.compile(
         "(?:\\._[0-9]+_[0-9]+_|\\.\\*[0-9]+_[0-9]+\\*|" +
-        "(?:->|\\.)packed\\b|&\\([^)]*packed)");
+        "(?:->|\\.)packed\\b)");
     private static final Pattern TAGGED_24_COMPOSE = Pattern.compile(
         "CONCAT22\\s*\\(\\s*CONCAT11\\s*\\(\\s*([^,]+?)\\s*,\\s*" +
         "\\(char\\)\\s*\\(\\s*([A-Za-z_$][A-Za-z0-9_$]*" +
@@ -315,6 +324,7 @@ public class STDecompExport extends GhidraScript {
     private List<GlobalRecordDescriptor> globalRecordDescriptors = List.of();
     private Map<String, Integer> narrowReturnWidths = Map.of();
     private Map<String, List<RenderedCallableDependency>> renderedCallableMembers;
+    private Map<String, List<ghidra.program.model.data.Structure>> renderedStructureTypes;
     private String functionAnalysisSourceHash = "";
 
     @Override
@@ -1118,8 +1128,92 @@ public class STDecompExport extends GhidraScript {
         String normalized = String.join(System.lineSeparator(), output);
         NormalizedCode nullPointers = normalizeTypedNullPointers(normalized);
         NormalizedCode semicolons = normalizeDetachedSemicolons(nullPointers.code);
-        return new NormalizedCode(semicolons.code,
-            replacements + nullPointers.replacements + semicolons.replacements);
+        NormalizedCode scalarLifetimes =
+            normalizeIntegerStoredInPointerLifetimes(semicolons.code);
+        NormalizedCode narrowPromotions =
+            normalizeRedundantNarrowToDoublePromotions(scalarLifetimes.code);
+        NormalizedCode deadCodePointers =
+            removeDeadCodePointerDeclarations(narrowPromotions.code);
+        NormalizedCode deadSynthetics =
+            removeDeadSyntheticDeclarations(deadCodePointers.code);
+        return new NormalizedCode(deadSynthetics.code,
+            replacements + nullPointers.replacements + semicolons.replacements +
+                scalarLifetimes.replacements + deadCodePointers.replacements +
+                narrowPromotions.replacements + deadSynthetics.replacements);
+    }
+
+    /**
+     * A direct cast from an 8/16-bit integer member to double already performs the C integer
+     * promotion. Ghidra may spell that as `(double)(int)object->member`. Remove only the
+     * redundant inner cast when the pointer declaration resolves to one structure and that
+     * exact member is a concrete one- or two-byte integer. Complex expressions and generic,
+     * enum, union, or ambiguous members remain untouched.
+     */
+    private NormalizedCode normalizeRedundantNarrowToDoublePromotions(String code) {
+        if (code == null || code.isEmpty() || !code.contains("(double)(int)"))
+            return new NormalizedCode(code, 0);
+        Map<String, Structure> owners = new HashMap<>();
+        Matcher declarations = SIMPLE_POINTER_DECLARATION.matcher(code);
+        while (declarations.find()) {
+            Structure owner = uniqueStructure(declarations.group("type").trim());
+            if (owner != null) owners.put(declarations.group("name"), owner);
+        }
+        if (owners.isEmpty()) return new NormalizedCode(code, 0);
+        Pattern promotion = Pattern.compile(
+            "\\(double\\)\\s*\\(int\\)\\s*(?<name>[A-Za-z_$][A-Za-z0-9_$]*)" +
+            "->(?<field>[A-Za-z_$][A-Za-z0-9_$]*)");
+        Matcher matcher = promotion.matcher(code);
+        StringBuffer output = new StringBuffer();
+        int replacements = 0;
+        while (matcher.find()) {
+            Structure owner = owners.get(matcher.group("name"));
+            DataTypeComponent component = owner == null ? null :
+                componentByName(owner, matcher.group("field"));
+            DataType type = component == null ? null : unwrapTypeDef(component.getDataType());
+            if (!(type instanceof AbstractIntegerDataType) ||
+                    component.getLength() < 1 || component.getLength() > 2) {
+                matcher.appendReplacement(output, Matcher.quoteReplacement(matcher.group()));
+                continue;
+            }
+            matcher.appendReplacement(output, Matcher.quoteReplacement(
+                "(double)" + matcher.group("name") + "->" + matcher.group("field")));
+            replacements++;
+        }
+        matcher.appendTail(output);
+        return new NormalizedCode(output.toString(), replacements);
+    }
+
+    private Structure uniqueStructure(String rendered) {
+        if (rendered == null || rendered.isBlank()) return null;
+        String name = rendered;
+        int separator = name.lastIndexOf("::");
+        if (separator >= 0) name = name.substring(separator + 2);
+        List<DataType> matches = new ArrayList<>();
+        currentProgram.getDataTypeManager().findDataTypes(name, matches);
+        Structure result = null;
+        for (DataType candidate : matches) {
+            if (!(candidate instanceof Structure structure) ||
+                    !structure.getName().equals(name)) continue;
+            if (result != null && !result.getPathName().equals(structure.getPathName()))
+                return null;
+            result = structure;
+        }
+        return result;
+    }
+
+    private DataTypeComponent componentByName(Structure structure, String name) {
+        DataTypeComponent result = null;
+        for (DataTypeComponent component : structure.getDefinedComponents()) {
+            if (!name.equals(component.getFieldName())) continue;
+            if (result != null) return null;
+            result = component;
+        }
+        return result;
+    }
+
+    private DataType unwrapTypeDef(DataType type) {
+        while (type instanceof TypeDef typedef) type = typedef.getBaseDataType();
+        return type;
     }
 
     /** The corpus is a C++ projection; every typed `(T *)0x0` is the same null value. */
@@ -1133,6 +1227,212 @@ public class STDecompExport extends GhidraScript {
         }
         matcher.appendTail(output);
         return new NormalizedCode(output.toString(), replacements);
+    }
+
+    /** Remove Ghidra's unprototyped executable-pointer locals after another
+     * projection (most often terminal INT3 normalization) removed their only use. */
+    private NormalizedCode removeDeadCodePointerDeclarations(String code) {
+        if (code == null || code.isEmpty() || !code.contains("code *"))
+            return new NormalizedCode(code, 0);
+        Pattern declaration = Pattern.compile(
+            "(?m)^[ \\t]*code[ \\t]*\\*[ \\t]*(?<name>[A-Za-z_$][A-Za-z0-9_$]*)" +
+            "[ \\t]*;[ \\t]*(?:\\R|$)");
+        Matcher matcher = declaration.matcher(code);
+        StringBuffer output = new StringBuffer();
+        int replacements = 0;
+        while (matcher.find()) {
+            String name = matcher.group("name");
+            Pattern token = Pattern.compile("(?<![A-Za-z0-9_$])" +
+                Pattern.quote(name) + "(?![A-Za-z0-9_$])");
+            int occurrences = 0;
+            Matcher uses = token.matcher(code);
+            while (uses.find() && occurrences < 2) occurrences++;
+            if (occurrences == 1) {
+                matcher.appendReplacement(output, "");
+                replacements++;
+            }
+            else matcher.appendReplacement(output,
+                Matcher.quoteReplacement(matcher.group()));
+        }
+        matcher.appendTail(output);
+        return new NormalizedCode(output.toString(), replacements);
+    }
+
+    /**
+     * Ghidra creates extraout_* locals for register pieces whose producer is unresolved.  If a
+     * later normalization removed the only expression which mentioned one, retaining the bare
+     * declaration falsely advertises unresolved return/register state.  Remove only a synthetic
+     * declaration whose identifier has no second occurrence; live extraout values remain visible
+     * ABI debt and are never guessed away.
+     */
+    private NormalizedCode removeDeadSyntheticDeclarations(String code) {
+        if (code == null || code.isEmpty() || !code.contains("extraout_"))
+            return new NormalizedCode(code, 0);
+        Pattern declaration = Pattern.compile(
+            "(?m)^[ \\t]*(?:[A-Za-z_$][A-Za-z0-9_$:]*[ \\t]+)+" +
+            "(?:\\*+[ \\t]*)?(?<name>extraout_[A-Za-z0-9_$]+)" +
+            "[ \\t]*;[ \\t]*(?:\\R|$)");
+        Matcher matcher = declaration.matcher(code);
+        StringBuffer output = new StringBuffer();
+        int replacements = 0;
+        while (matcher.find()) {
+            String name = matcher.group("name");
+            Pattern token = Pattern.compile("(?<![A-Za-z0-9_$])" +
+                Pattern.quote(name) + "(?![A-Za-z0-9_$])");
+            int occurrences = 0;
+            Matcher uses = token.matcher(code);
+            while (uses.find() && occurrences < 2) occurrences++;
+            if (occurrences == 1) {
+                matcher.appendReplacement(output, "");
+                replacements++;
+            }
+            else matcher.appendReplacement(output,
+                Matcher.quoteReplacement(matcher.group()));
+        }
+        matcher.appendTail(output);
+        return new NormalizedCode(output.toString(), replacements);
+    }
+
+    /**
+     * Optimized x86 frequently reuses one register/stack merge for a pointer and
+     * later for a pure integer product. Ghidra must keep one Listing type and can
+     * consequently render `short *p = (short *)(x * y)`. Split only the textual
+     * lifetime whose complete downstream use is an explicit `(int)p` conversion
+     * (plus an equally constrained pointer-to-pointer copy). The database type
+     * and every real dereference remain untouched.
+     */
+    private NormalizedCode normalizeIntegerStoredInPointerLifetimes(String code) {
+        if (code == null || code.isEmpty()) return new NormalizedCode(code, 0);
+        Map<String, PointerDeclaration> pointers = pointerDeclarations(code);
+        if (pointers.isEmpty()) return new NormalizedCode(code, 0);
+        String[] lines = code.split("\\R", -1);
+        Pattern assignment = Pattern.compile(
+            "^(?<indent>[ \\t]*)(?<name>[A-Za-z_$][A-Za-z0-9_$]*)[ \\t]*=[ \\t]*" +
+            "\\([A-Za-z_$][A-Za-z0-9_$: ]*[ \\t]*\\*+\\)[ \\t]*" +
+            "\\((?<expr>.+)\\);[ \\t]*$");
+        Set<String> introduced = new HashSet<>();
+        int replacements = 0;
+        for (int index = 0; index < lines.length; index++) {
+            Matcher candidate = assignment.matcher(lines[index]);
+            if (!candidate.matches()) continue;
+            String name = candidate.group("name");
+            if (!pointers.containsKey(name)) continue;
+            String expression = candidate.group("expr").trim();
+            if (!integerProductExpression(expression)) continue;
+            int end = nextDirectAssignment(lines, name, index + 1);
+            List<ScalarPointerCopy> copies = new ArrayList<>();
+            if (!scalarOnlyPointerUses(lines, name, index + 1, end,
+                    pointers, copies)) continue;
+            String scalar = "scalar_" + name;
+            if (identifierOccurs(code, scalar, 0, code.length()) ||
+                    !introduced.add(scalar)) continue;
+            boolean copiesSafe = true;
+            for (ScalarPointerCopy copy : copies) {
+                String targetScalar = "scalar_" + copy.target;
+                if (identifierOccurs(code, targetScalar, 0, code.length()) ||
+                        !introduced.add(targetScalar)) {
+                    copiesSafe = false;
+                    break;
+                }
+            }
+            if (!copiesSafe) continue;
+
+            lines[index] = candidate.group("indent") + "int " + scalar + " = " +
+                expression + "; /* split integer lifetime from pointer-typed SSA storage */";
+            replaceExplicitIntCasts(lines, name, scalar, index + 1, end);
+            for (ScalarPointerCopy copy : copies) {
+                lines[copy.line] = copy.indent + "int scalar_" + copy.target +
+                    " = " + scalar + ";";
+                replaceExplicitIntCasts(lines, copy.target,
+                    "scalar_" + copy.target, copy.line + 1, copy.end);
+            }
+            replacements++;
+        }
+        if (replacements == 0) return new NormalizedCode(code, 0);
+        String normalized = String.join(System.lineSeparator(), lines);
+        for (String name : pointers.keySet())
+            normalized = removeUnusedPointerDeclaration(normalized, name);
+        return new NormalizedCode(normalized, replacements);
+    }
+
+    private boolean integerProductExpression(String expression) {
+        if (expression.contains("&") || expression.contains("nullptr")) return false;
+        String withoutCasts = expression.replaceAll(
+            "\\([A-Za-z_$][A-Za-z0-9_$: ]*[ \\t]*\\*+\\)", "")
+            .replaceAll("\\((?:u?int|u?short|byte|char|long|ulong)\\)", "");
+        return Pattern.compile("\\S[ \\t]*\\*[ \\t]*\\S")
+            .matcher(withoutCasts).find();
+    }
+
+    private int nextDirectAssignment(String[] lines, String name, int start) {
+        Pattern assignment = Pattern.compile("^[ \\t]*" + Pattern.quote(name) +
+            "[ \\t]*=(?!=)");
+        for (int index = start; index < lines.length; index++)
+            if (assignment.matcher(lines[index]).find()) return index;
+        return lines.length;
+    }
+
+    private boolean scalarOnlyPointerUses(String[] lines, String name, int start,
+            int end, Map<String, PointerDeclaration> pointers,
+            List<ScalarPointerCopy> copies) {
+        Pattern token = Pattern.compile("(?<![A-Za-z0-9_$])" +
+            Pattern.quote(name) + "(?![A-Za-z0-9_$])");
+        Pattern cast = Pattern.compile("\\(int\\)[ \\t]*" + Pattern.quote(name) +
+            "(?![A-Za-z0-9_$])");
+        Pattern copy = Pattern.compile(
+            "^(?<indent>[ \\t]*)(?<target>[A-Za-z_$][A-Za-z0-9_$]*)" +
+            "[ \\t]*=[ \\t]*" + Pattern.quote(name) + ";[ \\t]*$");
+        boolean used = false;
+        for (int index = start; index < end; index++) {
+            if (!token.matcher(lines[index]).find()) continue;
+            used = true;
+            String remainder = cast.matcher(lines[index]).replaceAll("");
+            if (!token.matcher(remainder).find()) continue;
+            Matcher copied = copy.matcher(lines[index]);
+            if (!copied.matches() || !pointers.containsKey(copied.group("target")))
+                return false;
+            String target = copied.group("target");
+            int targetEnd = nextDirectAssignment(lines, target, index + 1);
+            if (!onlyExplicitIntCasts(lines, target, index + 1, targetEnd)) return false;
+            copies.add(new ScalarPointerCopy(index, targetEnd,
+                copied.group("indent"), target));
+        }
+        return used;
+    }
+
+    private boolean onlyExplicitIntCasts(String[] lines, String name,
+            int start, int end) {
+        Pattern token = Pattern.compile("(?<![A-Za-z0-9_$])" +
+            Pattern.quote(name) + "(?![A-Za-z0-9_$])");
+        Pattern cast = Pattern.compile("\\(int\\)[ \\t]*" + Pattern.quote(name) +
+            "(?![A-Za-z0-9_$])");
+        boolean used = false;
+        for (int index = start; index < end; index++) {
+            if (!token.matcher(lines[index]).find()) continue;
+            used = true;
+            if (token.matcher(cast.matcher(lines[index]).replaceAll("")).find())
+                return false;
+        }
+        return used;
+    }
+
+    private void replaceExplicitIntCasts(String[] lines, String name,
+            String scalar, int start, int end) {
+        Pattern cast = Pattern.compile("\\(int\\)[ \\t]*" + Pattern.quote(name) +
+            "(?![A-Za-z0-9_$])");
+        for (int index = start; index < end; index++)
+            lines[index] = cast.matcher(lines[index])
+                .replaceAll(Matcher.quoteReplacement(scalar));
+    }
+
+    private String removeUnusedPointerDeclaration(String code, String name) {
+        Pattern declaration = Pattern.compile(
+            "(?m)^[ \\t]*[A-Za-z_$][A-Za-z0-9_$: ]*[ \\t]*\\*+[ \\t]*" +
+            Pattern.quote(name) + "[ \\t]*;[ \\t]*(?:\\R|$)");
+        Matcher matcher = declaration.matcher(code);
+        if (!matcher.find()) return code;
+        String without = code.substring(0, matcher.start()) + code.substring(matcher.end());
+        return identifierOccurs(without, name, 0, without.length()) ? code : without;
     }
 
     /** Exact runtime-stride element address. The descriptor remains generic;
@@ -3225,10 +3525,92 @@ public class STDecompExport extends GhidraScript {
             selected.code, BULK_ZERO_SIMPLE, candidates, false);
         NormalizedCode dynamic =
             normalizeDynamicBulkZeroLoops(simple.code, candidates);
-        String normalized = removeDeadBulkZeroLocals(dynamic.code, candidates);
+        NormalizedCode residual = normalizeBulkZeroResidualTails(dynamic.code);
+        String normalized = removeDeadBulkZeroLocals(residual.code, candidates);
         return new NormalizedCode(normalized,
             selected.replacements + simple.replacements +
-                dynamic.replacements);
+                dynamic.replacements + residual.replacements);
+    }
+
+    /**
+     * The fixed-loop normalizer can consume REP STOSD and its first STOSW tail
+     * while Ghidra leaves a final STOSB rendered through the already advanced
+     * undefined4 pointer. Extend the same memset only when the following fixed
+     * zero stores form a contiguous byte span. Intervening statements are kept;
+     * computed/nonzero stores and pointer redefinitions terminate the scan.
+     */
+    private NormalizedCode normalizeBulkZeroResidualTails(String code) {
+        if (code == null || code.isEmpty() || !code.contains(BULK_ZERO_MARKER))
+            return new NormalizedCode(code, 0);
+        String[] lines = code.split("\\R", -1);
+        boolean[] remove = new boolean[lines.length];
+        int replacements = 0;
+        for (int index = 0; index < lines.length; index++) {
+            Matcher memset = BULK_ZERO_MEMSET_LINE.matcher(lines[index]);
+            if (!memset.matches() || index + 1 >= lines.length) continue;
+            String pointer = memset.group("pointer");
+            Matcher advance = BULK_ZERO_POINTER_ADVANCE.matcher(lines[index + 1]);
+            if (!advance.matches() || !pointer.equals(advance.group("pointer"))) continue;
+            long covered = parseIntegerLiteral(memset.group("bytes"));
+            long base = parseIntegerLiteral(advance.group("bytes"));
+            if (covered < 0 || base < 0 || base > covered) continue;
+
+            List<Integer> absorbed = new ArrayList<>();
+            long extended = covered;
+            for (int cursor = index + 2;
+                    cursor < lines.length && cursor <= index + 9; cursor++) {
+                String line = lines[cursor];
+                if (directAssignmentTo(line, pointer)) break;
+                FixedZeroStore store = fixedZeroStore(line, pointer, base);
+                if (store != null) {
+                    if (store.offset > extended || store.offset + store.width < 0) break;
+                    if (store.offset + store.width <= extended || store.offset == extended) {
+                        extended = Math.max(extended, store.offset + store.width);
+                        absorbed.add(cursor);
+                        continue;
+                    }
+                    break;
+                }
+                if (identifierOccurs(line, pointer, 0, line.length())) break;
+            }
+            if (absorbed.isEmpty() || extended <= covered) continue;
+            lines[index] = memset.group("indent") + "memset(" + pointer +
+                ", 0, " + hexLiteral(extended) + "); " + BULK_ZERO_MARKER;
+            for (int line : absorbed) remove[line] = true;
+            replacements++;
+        }
+        if (replacements == 0) return new NormalizedCode(code, 0);
+        List<String> output = new ArrayList<>();
+        for (int index = 0; index < lines.length; index++)
+            if (!remove[index]) output.add(lines[index]);
+        return new NormalizedCode(String.join(System.lineSeparator(), output), replacements);
+    }
+
+    private FixedZeroStore fixedZeroStore(String line, String pointer, long base) {
+        Pattern pattern = Pattern.compile("^[ \\t]*\\*\\(undefined(?<width>[1248])[ \\t]*\\*\\)" +
+            "(?:(?<direct>" + Pattern.quote(pointer) + ")|" +
+            "\\(\\(int\\)" + Pattern.quote(pointer) +
+            "(?:[ \\t]*\\+[ \\t]*(?<offset>0x[0-9A-Fa-f]+|[0-9]+))?\\))" +
+            "[ \\t]*=[ \\t]*0;[ \\t]*$");
+        Matcher matcher = pattern.matcher(line);
+        if (!matcher.matches()) return null;
+        long relative = matcher.group("offset") == null ? 0 :
+            parseIntegerLiteral(matcher.group("offset"));
+        int width = Integer.parseInt(matcher.group("width"));
+        return relative < 0 ? null : new FixedZeroStore(base + relative, width);
+    }
+
+    private boolean directAssignmentTo(String line, String identifier) {
+        return Pattern.compile("^[ \\t]*" + Pattern.quote(identifier) +
+            "[ \\t]*=(?!=)").matcher(line).find();
+    }
+
+    private long parseIntegerLiteral(String value) {
+        try {
+            return value.regionMatches(true, 0, "0x", 0, 2) ?
+                Long.parseUnsignedLong(value.substring(2), 16) : Long.parseLong(value);
+        }
+        catch (RuntimeException exception) { return -1; }
     }
 
     /**
@@ -4606,12 +4988,106 @@ public class STDecompExport extends GhidraScript {
         }
         collectReferencedDataTypes(function, related);
         collectAccessedCompositeFields(function, related);
+        collectRenderedCompositeMembers(renderedCode, related);
         collectRenderedCallableMembers(renderedCode, related);
         MessageDigest digest = MessageDigest.getInstance("SHA-256");
         for (String item : related) updateDigest(digest, item);
         StringBuilder hex = new StringBuilder();
         for (byte value : digest.digest()) hex.append(String.format("%02x", value & 0xff));
         return hex.toString();
+    }
+
+    /**
+     * A decompiler-only local may acquire a structure type through SSA propagation without
+     * becoming a persistent Listing local.  Machine-level tracking then cannot always link a
+     * later field access back to the structure, so a newly recovered component could leave an
+     * otherwise reusable body stale.  Use the previous rendering only as a dependency locator:
+     * a structure type must be named in that body and the exact rendered member name/offset must
+     * also occur.  This keeps the fingerprint scoped to components capable of changing that one
+     * body instead of making it depend on every field or every data type in the program.
+     */
+    private void collectRenderedCompositeMembers(Path renderedCode, Set<String> result)
+            throws IOException {
+        if (renderedCode == null || !Files.isRegularFile(renderedCode)) return;
+        String code = Files.readString(renderedCode, StandardCharsets.UTF_8);
+        if (code.indexOf("->") < 0 && code.indexOf('.') < 0) return;
+        ensureRenderedStructureTypeIndex();
+
+        Set<String> identifiers = new HashSet<>();
+        Matcher identifier = SIMPLE_IDENTIFIER.matcher(code);
+        while (identifier.find()) identifiers.add(identifier.group());
+
+        Set<String> memberNames = new HashSet<>();
+        Set<Integer> genericOffsets = new HashSet<>();
+        Matcher member = RENDERED_MEMBER_ACCESS.matcher(code);
+        while (member.find()) {
+            String name = member.group(1);
+            memberNames.add(name);
+            Integer offset = renderedGenericFieldOffset(name);
+            if (offset != null) genericOffsets.add(offset);
+        }
+
+        for (String typeName : identifiers) {
+            List<ghidra.program.model.data.Structure> structures =
+                renderedStructureTypes.get(typeName);
+            if (structures == null) continue;
+            for (ghidra.program.model.data.Structure structure : structures) {
+                for (ghidra.program.model.data.DataTypeComponent component :
+                        structure.getDefinedComponents()) {
+                    String fieldName = nullToEmpty(component.getFieldName());
+                    if (!memberNames.contains(fieldName) &&
+                            !genericOffsets.contains(component.getOffset())) continue;
+                    addRenderedCompositeDependency(structure, component, result);
+                }
+                // An old rendering may spell a newly recovered component as field_0xNN even
+                // when it used to be an undefined filler and therefore was not defined.
+                for (int offset : genericOffsets) {
+                    if (offset < 0 || offset >= structure.getLength()) continue;
+                    ghidra.program.model.data.DataTypeComponent component =
+                        structure.getComponentContaining(offset);
+                    if (component != null && component.getOffset() == offset)
+                        addRenderedCompositeDependency(structure, component, result);
+                }
+            }
+        }
+    }
+
+    private void ensureRenderedStructureTypeIndex() throws IOException {
+        if (renderedStructureTypes != null) return;
+        Map<String, List<ghidra.program.model.data.Structure>> index = new HashMap<>();
+        Iterator<DataType> iterator = currentProgram.getDataTypeManager().getAllDataTypes();
+        while (iterator.hasNext()) {
+            checkCancelled();
+            DataType type = iterator.next();
+            if (!(type instanceof ghidra.program.model.data.Structure structure)) continue;
+            index.computeIfAbsent(structure.getName(), ignored -> new ArrayList<>())
+                .add(structure);
+        }
+        for (List<ghidra.program.model.data.Structure> structures : index.values())
+            structures.sort(Comparator.comparing(DataType::getPathName));
+        renderedStructureTypes = index;
+    }
+
+    private Integer renderedGenericFieldOffset(String name) {
+        Matcher matcher = Pattern.compile("^field_(?:0x)?([0-9A-Fa-f]+)$").matcher(name);
+        if (!matcher.matches()) return null;
+        try {
+            return Integer.parseUnsignedInt(matcher.group(1), 16);
+        }
+        catch (NumberFormatException exception) {
+            return null;
+        }
+    }
+
+    private void addRenderedCompositeDependency(
+            ghidra.program.model.data.Structure structure,
+            ghidra.program.model.data.DataTypeComponent component, Set<String> result) {
+        DataType type = component.getDataType();
+        result.add("rendered_field\u0000" + structure.getPathName() + "\u0000" +
+            component.getOffset() + "\u0000" + component.getLength() + "\u0000" +
+            nullToEmpty(component.getFieldName()) + "\u0000" + type.getPathName() +
+            "\u0000" + nullToEmpty(component.getComment()));
+        collectTypeIdentity(type, result);
     }
 
     /**
@@ -5330,6 +5806,9 @@ public class STDecompExport extends GhidraScript {
         }
     }
     private record NormalizedCode(String code, int replacements) { }
+    private record FixedZeroStore(long offset, int width) { }
+    private record ScalarPointerCopy(int line, int end, String indent,
+        String target) { }
     private record PointerDeclaration(String type, String indent, int stars,
         int width) { }
     private record CopyBody(String destination, String source) { }

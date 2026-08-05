@@ -13,7 +13,6 @@ void __thiscall
 STAllPlayersC::RegisterPGPair(STAllPlayersC *this,uint param_1,uint *param_2,uint *param_3)
 
 {
-  code *pcVar1;
   int iVar2;
   STGameObjC *pSVar3;
   DArrayTy *pDVar4;
@@ -160,7 +159,7 @@ STAllPlayersC::RegisterPGPair(STAllPlayersC *this,uint param_1,uint *param_2,uin
     local_30 = pDVar4->count;
     local_20 = 0;
     if (0 < (int)local_30) {
-      local_24 = &g_packedRecords_A62x8[objPtr].field2377_0x9f6;
+      local_24 = &g_packedRecords_A62x8[objPtr].field1976_0x9f6;
       do {
         DArrayGetElement(pDVar4,local_20,local_8);
         this_00 = (STBoatC *)GetObjPtr(this_01,objPtr,local_8[0],CASE_1);
@@ -173,7 +172,7 @@ STAllPlayersC::RegisterPGPair(STAllPlayersC *this,uint param_1,uint *param_2,uin
         local_20 = local_20 + 1;
       } while ((int)local_20 < (int)local_30);
     }
-    if (g_packedRecords_A62x8[objPtr].field2377_0x9f6 != 0) {
+    if (g_packedRecords_A62x8[objPtr].field1976_0x9f6 != 0) {
       OptimizeGuardBoats(this_01,objPtr);
       DistributeGuardBoats(this_01,objPtr);
     }
@@ -219,7 +218,7 @@ LAB_00445dca:
 LAB_00445e36:
   uVar6 = 0;
   if (0 < (int)local_c) {
-    local_24 = &g_packedRecords_A62x8[objPtr].field2377_0x9f6;
+    local_24 = &g_packedRecords_A62x8[objPtr].field1976_0x9f6;
     do {
       if (*local_24 == 0) break;
       DArrayGetElement(local_14,uVar6,local_8);
@@ -232,7 +231,7 @@ LAB_00445e36:
   }
   uVar6 = 0;
   if (0 < (int)local_10) {
-    local_24 = &g_packedRecords_A62x8[objPtr].field2377_0x9f6;
+    local_24 = &g_packedRecords_A62x8[objPtr].field1976_0x9f6;
     do {
       if (*local_24 == 0) break;
       DArrayGetElement(local_18,uVar6,local_8);
@@ -245,12 +244,12 @@ LAB_00445e36:
   local_40 = Library::DKW::TBL::DArrayCreate(nullptr,local_c,2,1);
   Library::DKW::TBL::FUN_006afe40((int *)&local_40,&local_14->flags);
   local_3c = Library::DKW::TBL::DArrayCreate(nullptr,1,4,1);
-  if (g_packedRecords_A62x8[objPtr].field2377_0x9f6 == 0) {
+  if (g_packedRecords_A62x8[objPtr].field1976_0x9f6 == 0) {
     pDVar4 = Library::DKW::TBL::DArrayCreate(nullptr,1,0xc,1);
-    g_packedRecords_A62x8[objPtr].field2377_0x9f6 = pDVar4;
+    g_packedRecords_A62x8[objPtr].field1976_0x9f6 = pDVar4;
   }
   Library::DKW::TBL::DArrayAppend
-            ((DArrayTy *)g_packedRecords_A62x8[objPtr].field2377_0x9f6,&local_44);
+            ((DArrayTy *)g_packedRecords_A62x8[objPtr].field1976_0x9f6,&local_44);
   OptimizeGuardBoats(this_01,objPtr);
   DistributeGuardBoats(this_01,objPtr);
   if (local_18 != nullptr) {

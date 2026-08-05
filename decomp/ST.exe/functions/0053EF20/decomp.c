@@ -23,7 +23,6 @@ ProdPanelTy::InitProdPanel
           int param_13,LPSTR text)
 
 {
-  code *pcVar1;
   ProdPanelTy *this_00;
   int iVar2;
   ccFntTy *pcVar3;
@@ -77,8 +76,8 @@ ProdPanelTy::InitProdPanel
       *(undefined1 *)puVar12 = 0xff;
       puVar12 = (undefined4 *)((int)puVar12 + 1);
     }
-    DibPut((AnonShape_006B5B10_E0D06CF1 *)this_00->field_0068,0,0,'\x01',(byte *)this_00->field_0184
-          );
+    DibPut((RecoveredSourceFamily_dibcopy *)this_00->field_0068,0,0,'\x01',
+           (byte *)this_00->field_0184);
     ccFntTy::SetSurf(this_00->field_017C,(int)this_00->field_0068,0,param_2,param_3,param_4,param_5);
     uVar9 = 0;
     iVar11 = -1;

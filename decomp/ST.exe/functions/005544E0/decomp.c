@@ -12,7 +12,6 @@
 void __cdecl cLoadingTy::delete(uint *param_1)
 
 {
-  code *pcVar1;
   int errorCode;
   int iVar2;
   InternalExceptionFrame local_48;

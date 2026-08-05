@@ -15,7 +15,6 @@
 int __thiscall STBoatC::BackCapture(STBoatC *this,int *param_1)
 
 {
-  code *pcVar1;
   undefined2 uVar2;
   STGameObjC *pSVar3;
   uint uVar4;

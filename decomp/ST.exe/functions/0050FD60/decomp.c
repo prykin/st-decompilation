@@ -9,7 +9,6 @@ void __thiscall FrmPanelTy::InitFrmPanel(FrmPanelTy *this)
 
 {
   FrmPanelTyVTable *pFVar1;
-  code *pcVar2;
   FrmPanelTy *this_00;
   int iVar3;
   LPSTR pCVar4;

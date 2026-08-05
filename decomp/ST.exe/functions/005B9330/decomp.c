@@ -12,7 +12,6 @@
 int __thiscall MMsgTy::GetMessage(MMsgTy *this,STMessage *message)
 
 {
-  code *pcVar1;
   MMsgTy *this_00;
   byte bVar2;
   DWORD DVar3;

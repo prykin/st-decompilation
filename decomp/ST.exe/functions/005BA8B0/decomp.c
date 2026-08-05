@@ -8,7 +8,6 @@
 void __thiscall PrividerTy::PaintPrivider(PrividerTy *this,char param_1)
 
 {
-  code *pcVar1;
   PrividerTy *pPVar2;
   int errorCode;
   uint *puVar3;

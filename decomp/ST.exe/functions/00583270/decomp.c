@@ -16,7 +16,6 @@ int __thiscall STJellyGunC::GetMessage(STJellyGunC *this,STMessage *message)
   char cVar1;
   STMessageId SVar2;
   undefined4 uVar3;
-  code *pcVar4;
   STJellyGunC *this_00;
   int iVar5;
   int iVar6;

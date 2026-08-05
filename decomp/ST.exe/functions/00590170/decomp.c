@@ -8,7 +8,6 @@
 void __thiscall MAdvTy::InitMAdv(MAdvTy *this)
 
 {
-  code *pcVar1;
   CursorClassTy *this_00;
   MAdvTy *this_01;
   int iVar2;

@@ -9,7 +9,6 @@
 ushort * __cdecl LoadStrategData(int param_1,char *param_2,int *param_3)
 
 {
-  code *pcVar1;
   int iVar2;
   int iVar3;
   ushort *puVar4;

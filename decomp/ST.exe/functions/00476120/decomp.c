@@ -8,7 +8,6 @@
 int __thiscall STBoatC::BackUnLoadObj(STBoatC *this,int *param_1)
 
 {
-  code *pcVar1;
   int iVar2;
   /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
   void *unaff_retaddr;

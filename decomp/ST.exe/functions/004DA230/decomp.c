@@ -9,7 +9,6 @@
 undefined4 __fastcall FUN_004da230(int param_1)
 
 {
-  code *pcVar1;
   int iVar2;
   undefined4 uVar3;
 

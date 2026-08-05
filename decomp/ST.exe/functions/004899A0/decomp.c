@@ -14,7 +14,6 @@ STBoatC::GetDefenceTarget(STBoatC *this,STBoatC_GetDefenceTarget_param_1Enum par
 
 {
   int iVar1;
-  code *pcVar2;
   undefined2 uVar3;
   STGroupBoatC *this_00;
   /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */

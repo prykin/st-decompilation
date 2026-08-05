@@ -12,7 +12,6 @@
 void __thiscall PlayPanelTy::ShiftControls(PlayPanelTy *this,int param_1)
 
 {
-  code *pcVar1;
   PlayPanelTy *this_00;
   short sVar2;
   int iVar3;

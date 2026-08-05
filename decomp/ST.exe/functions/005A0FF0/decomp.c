@@ -9,7 +9,6 @@ void __thiscall FSGSTy::DoLogon(FSGSTy *this)
 
 {
   StartSystemTy *pSVar1;
-  code *pcVar2;
   CursorClassTy *this_00;
   FSGSTy *pFVar3;
   int iVar4;

@@ -8,7 +8,6 @@
 void __thiscall SettMapMTy::DoneSettMap(SettMapMTy *this)
 
 {
-  code *pcVar1;
   SettMapMTy *this_00;
   int errorCode;
   int *piVar2;

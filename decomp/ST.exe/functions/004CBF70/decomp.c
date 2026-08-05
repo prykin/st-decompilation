@@ -5,10 +5,10 @@
 undefined4 __fastcall FUN_004cbf70(TLOBaseTy *param_1)
 
 {
-  if (param_1->field_05FF != nullptr) {
-    STT3DSprC::StopShow(param_1->field_05FF,0xe);
-    STT3DSprC::StopShow(param_1->field_05FF,0xc);
-    thunk_FUN_004ad430(param_1->field_05FF);
+  if ((STT3DSprC *)param_1->field_05FF != nullptr) {
+    STT3DSprC::StopShow((STT3DSprC *)param_1->field_05FF,0xe);
+    STT3DSprC::StopShow((STT3DSprC *)param_1->field_05FF,0xc);
+    thunk_FUN_004ad430((STT3DSprC *)param_1->field_05FF);
   }
   return 0;
 }

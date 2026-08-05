@@ -8,7 +8,6 @@
 undefined4 __thiscall STGroupC::AddObjs(STGroupC *this,DArrayTy *param_1,int param_2)
 
 {
-  code *pcVar1;
   STGroupC *this_00;
   uint uVar2;
   int errorCode;

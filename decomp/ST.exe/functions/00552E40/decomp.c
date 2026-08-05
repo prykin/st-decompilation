@@ -12,7 +12,6 @@
 int __thiscall UpgPanelTy::GetMessage(UpgPanelTy *this,STMessage *message)
 
 {
-  code *pcVar1;
   UpgPanelTy *this_00;
   int iVar2;
   int iVar3;

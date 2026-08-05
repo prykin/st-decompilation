@@ -12,9 +12,8 @@
 void __thiscall CPanelTy::PaintEnergy(CPanelTy *this,int param_1)
 
 {
-  code *pcVar1;
   CPanelTy *pCVar2;
-  AnonShape_006B5B10_E0D06CF1 *pAVar3;
+  RecoveredSourceFamily_dibcopy *pRVar3;
   int iVar4;
   uint uVar5;
   int iVar6;
@@ -25,10 +24,10 @@ void __thiscall CPanelTy::PaintEnergy(CPanelTy *this,int param_1)
   InternalExceptionFrame local_54;
   CPanelTy *local_10;
   uint local_c;
-  AnonShape_006B5B10_E0D06CF1 *local_8;
+  RecoveredSourceFamily_dibcopy *local_8;
 
   if (param_1 == 0) {
-    local_8 = (AnonShape_006B5B10_E0D06CF1 *)this->field_0194;
+    local_8 = (RecoveredSourceFamily_dibcopy *)this->field_0194;
     bVar8 = this->field_0C6D;
   }
   else {
@@ -54,13 +53,13 @@ void __thiscall CPanelTy::PaintEnergy(CPanelTy *this,int param_1)
     }
     if (param_1 == 0) {
       uVar5 = FUN_0070b3a0((AnonShape_GLOBAL_0081175C_57F682DD *)local_10->field_02DA,2);
-      pAVar3 = local_8;
+      pRVar3 = local_8;
       FUN_006b5440((ushort *)local_8,0,199,6,uVar5,0,0xff);
       iVar6 = FUN_0070b3a0((AnonShape_GLOBAL_0081175C_57F682DD *)pCVar2->field_02DA,3);
       iVar4 = (int)((local_c & 0xff) * *(int *)(iVar6 + 8)) / 100;
       iVar9 = *(int *)(iVar6 + 8) - iVar4;
       Library::DKW::WGR::FUN_006b5110
-                ((int)pAVar3,0,199,iVar9 + 6,iVar6,0,0,iVar9,*(int *)(iVar6 + 4),iVar4,0xff);
+                ((int)pRVar3,0,199,iVar9 + 6,iVar6,0,0,iVar9,*(int *)(iVar6 + 4),iVar4,0xff);
       puVar7 = pCVar2->field_0148[5];
       if ((int)puVar7 < 0) {
         g_currentExceptionFrame = local_54.previous;
@@ -71,13 +70,13 @@ void __thiscall CPanelTy::PaintEnergy(CPanelTy *this,int param_1)
     }
     else {
       uVar5 = FUN_0070b3a0((AnonShape_GLOBAL_0081175C_57F682DD *)local_10->field_02DA,0);
-      pAVar3 = local_8;
+      pRVar3 = local_8;
       FUN_006b5440((ushort *)local_8,0,2,6,uVar5,0,0xff);
       iVar6 = FUN_0070b3a0((AnonShape_GLOBAL_0081175C_57F682DD *)pCVar2->field_02DA,1);
       iVar4 = (int)((local_c & 0xff) * *(int *)(iVar6 + 8)) / 100;
       iVar9 = *(int *)(iVar6 + 8) - iVar4;
       Library::DKW::WGR::FUN_006b5110
-                ((int)pAVar3,0,2,iVar9 + 6,iVar6,0,0,iVar9,*(int *)(iVar6 + 4),iVar4,0xff);
+                ((int)pRVar3,0,2,iVar9 + 6,iVar6,0,0,iVar9,*(int *)(iVar6 + 4),iVar4,0xff);
       puVar7 = pCVar2->field_0148[3];
       if ((int)puVar7 < 0) {
         g_currentExceptionFrame = local_54.previous;

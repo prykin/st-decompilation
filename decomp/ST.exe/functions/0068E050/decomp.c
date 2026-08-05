@@ -11,7 +11,6 @@
 byte * __thiscall AiTactClassTy::PrepareToSave(AiTactClassTy *this,uint *param_1)
 
 {
-  code *pcVar1;
   AiTactClassTy *pAVar2;
   int errorCode;
   undefined4 *puVar3;

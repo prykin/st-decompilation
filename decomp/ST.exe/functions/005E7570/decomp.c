@@ -9,7 +9,6 @@ void __thiscall WaitTy::DoneWait(WaitTy *this)
 
 {
   MMsgTy *this_00;
-  code *pcVar1;
   WaitTy *pWVar2;
   int iVar3;
   int iVar4;

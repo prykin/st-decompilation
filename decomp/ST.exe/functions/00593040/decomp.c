@@ -16,7 +16,6 @@ int __thiscall CampaignTy::GetMessage(CampaignTy *this,STMessage *message)
   STMessageId SVar2;
   int *piVar3;
   MMsgTy *pMVar4;
-  code *pcVar5;
   CampaignTy *this_00;
   DWORD DVar6;
   int iVar7;

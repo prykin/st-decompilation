@@ -9,7 +9,6 @@ void __thiscall BehPanelTy::InitBehPanel(BehPanelTy *this)
 
 {
   BehPanelTyVTable *pBVar1;
-  code *pcVar2;
   BehPanelTy *this_00;
   LPSTR pCVar3;
   ushort *puVar4;

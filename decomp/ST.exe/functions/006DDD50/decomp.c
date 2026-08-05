@@ -134,11 +134,11 @@ void __fastcall ST3DSMAPContext::sub_006DDD50(ST3DSMAPContext *param_1)
       for (pRVar16 = temp_5f0ea6b32c; pRVar16 != nullptr;
           pRVar16 = pRVar16->next) {
         sub_006E25D0(param_1,local_7c,&local_88,
-                     (double)(int)*(short *)&pRVar16->field_0x4 * param_1->field_00C8,
-                     (double)(int)*(short *)&pRVar16->field_0x6 * param_1->field_00C8,
+                     (double)pRVar16->field_0004 * param_1->field_00C8,
+                     (double)pRVar16->field_0006 * param_1->field_00C8,
                      (double)(int)((int)pRVar16->field_0008 - (uint)pRVar16->field_0048) *
                      param_1->field_00D0,1);
-        *(int *)&pRVar16->field_0x44 = local_74;
+        pRVar16->field_0044 = local_74;
       }
       sub_006DD530(param_1,local_ec,&local_40,(float *)(local_68 + 0x10));
       while (temp_5f0ea6b32c != nullptr) {
@@ -148,7 +148,7 @@ void __fastcall ST3DSMAPContext::sub_006DDD50(ST3DSMAPContext *param_1)
         {
           pRVar9 = temp_5f0ea6b32c;
           do {
-            if (*(int *)&pRVar17->field_0x44 < *(int *)&pRVar9->field_0x44) break;
+            if (pRVar17->field_0044 < pRVar9->field_0044) break;
             pRVar9 = pRVar9->next;
           } while (pRVar9 != nullptr);
           if (pRVar9 == nullptr) break;
@@ -214,22 +214,22 @@ void __fastcall ST3DSMAPContext::sub_006DDD50(ST3DSMAPContext *param_1)
                      param_1->field_0384;
         }
         local_bc = param_1->field_0380;
-        local_c4 = *(short *)&temp_5ff32f7558->field_0x4 * local_bc;
-        local_c0 = *(short *)&temp_5ff32f7558->field_0x6 * local_bc;
+        local_c4 = temp_5ff32f7558->field_0004 * local_bc;
+        local_c0 = temp_5ff32f7558->field_0006 * local_bc;
         local_bc = local_bc * 2;
         local_b8 = local_bc;
         iVar20 = FUN_006b0460(&local_b4,&local_c4,&local_38);
         if (iVar20 != 0) {
           if (local_e4 == 0) {
             FUN_006b0330((int)param_1->field_0014,param_1->field_0028,local_b4 - local_38,
-                         local_b0 - local_34,*(int *)&temp_5ff32f7558->field_0x40,local_bc,
+                         local_b0 - local_34,temp_5ff32f7558->field_0040,local_bc,
                          local_b4 - local_c4,local_b0 - local_c0,local_ac,local_a8,'\0');
           }
           else {
             pcVar7 = (char *)((int)param_1->field_0014 +
                              local_b4 + ((local_b0 - local_34) * param_1->field_0028 - local_38));
-            pcVar12 = (char *)((((local_b0 - local_c0) * local_bc +
-                                *(int *)&temp_5ff32f7558->field_0x40) - local_c4) + local_b4);
+            pcVar12 = (char *)((((local_b0 - local_c0) * local_bc + temp_5ff32f7558->field_0040) -
+                               local_c4) + local_b4);
             while (local_a8 = local_a8 + -1, -1 < local_a8) {
               if (-1 < local_ac + -1) {
                 local_120 = local_ac;

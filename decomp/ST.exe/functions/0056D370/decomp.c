@@ -13,7 +13,6 @@ void __thiscall STAppC::OpenGameDBs(STAppC *this)
 
 {
   undefined1 *puVar1;
-  code *pcVar2;
   int errorCode;
   int iVar3;
   byte *puVar4;

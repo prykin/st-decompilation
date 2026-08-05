@@ -9,7 +9,6 @@ int __thiscall AiFltClassTy::InitData(AiFltClassTy *this,undefined4 *param_1)
 
 {
   DArrayTy **ppDVar1;
-  code *pcVar2;
   AiFltClassTy *pAVar3;
   int iVar4;
   DArrayTy *pDVar5;

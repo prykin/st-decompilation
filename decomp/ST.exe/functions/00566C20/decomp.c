@@ -14,7 +14,6 @@ int __thiscall SoundManagerTy::GetMessage(SoundManagerTy *this,STMessage *messag
 {
   SoundManagerTy_field_0038State SVar1;
   STMessageId SVar2;
-  code *pcVar3;
   SoundManagerTy *this_00;
   DWORD DVar4;
   int iVar5;

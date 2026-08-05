@@ -14,7 +14,6 @@ OptPanelTy::CreateSlider
           undefined4 param_6,uint param_7,int param_8)
 
 {
-  code *pcVar1;
   OptPanelTy *pOVar2;
   int iVar3;
   LPSTR pCVar4;

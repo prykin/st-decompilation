@@ -20,7 +20,6 @@ AllocationRecord_006684E0 * __cdecl FltDataPack(AllocationRecord_006684E0 *param
 
 {
   uint *puVar1;
-  code *pcVar2;
   int iVar3;
   AllocationRecord_006684E0 *pAVar4;
   int iVar5;

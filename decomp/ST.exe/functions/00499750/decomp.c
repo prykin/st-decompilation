@@ -11,7 +11,6 @@
 undefined4 __thiscall STGroupBoatC::ReMakePVecAndTgtList(STGroupBoatC *this,DArrayTy *param_1)
 
 {
-  code *pcVar1;
   STGroupBoatC *pSVar2;
   int iVar3;
   ushort *puVar4;

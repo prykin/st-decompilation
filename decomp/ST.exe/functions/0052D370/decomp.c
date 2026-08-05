@@ -13,7 +13,6 @@ void __thiscall PopUpTy::AddStr(PopUpTy *this,char *param_1,byte param_2)
 
 {
   char cVar1;
-  code *pcVar2;
   PopUpTy *this_00;
   int iVar3;
   DArrayTy *pDVar4;

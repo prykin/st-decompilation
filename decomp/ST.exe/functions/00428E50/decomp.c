@@ -11,7 +11,7 @@ void __cdecl FUN_00428e50(short *param_1)
 
 {
   double dVar1;
-  undefined2 uVar2;
+  short sVar2;
   RecursiveNode_ST3DSMAPContext_0140_DDDC9F89 *pRVar3;
   AnonShape_00428E50_DFCBD4F2 *pAVar4;
   undefined4 uVar5;
@@ -238,11 +238,11 @@ LAB_00428e95:
             goto LAB_004293c6;
           }
 LAB_004292e2:
-          local_14 = (int)*(short *)&pRVar3->field_0x6;
-          uVar2 = *(undefined2 *)&pRVar3->field_0x4;
+          local_14 = (int)pRVar3->field_0006;
+          sVar2 = pRVar3->field_0004;
           local_48 = (int *)(int)pRVar3->field_0008;
-          *(undefined2 *)&pRVar3->field_0x4 = 0;
-          *(undefined2 *)&pRVar3->field_0x6 = 0;
+          pRVar3->field_0004 = 0;
+          pRVar3->field_0006 = 0;
           pRVar3->field_0008 = (ushort)pRVar3->field_0048;
           pRVar3->next = pSVar7->field_0140;
           pSVar7->field_0140 = pRVar3;
@@ -251,9 +251,9 @@ LAB_004292e2:
           ST3DSMAPContext::sub_006DDD50(pSVar7);
           pSVar7->field_0140 = nullptr;
           pSVar7->field_013C = 0;
-          *(undefined2 *)&pRVar3->field_0x6 = (undefined2)local_14;
+          pRVar3->field_0006 = (short)local_14;
           pRVar3->field_0008 = (short)local_48;
-          *(undefined2 *)&pRVar3->field_0x4 = uVar2;
+          pRVar3->field_0004 = sVar2;
           local_110 = thunk_FUN_00428b20((int *)pSVar7->field_000C,local_e8,local_c4,local_108);
           local_114 = pRVar3->field_0028;
           local_10c = pRVar3->field_003C;
@@ -336,10 +336,10 @@ LAB_00429475:
              (local_ac = 0, (*(ushort *)&pAVar4[1].field_0xe & 0xf) != 0)) {
             local_ac = uVar12;
           }
-          local_28 = (int *)(iVar13 * local_38);
+          int scalar_local_28 = iVar13 * local_38; /* split integer lifetime from pointer-typed SSA storage */
           local_b8 = local_80 * 5;
           local_3c = 1;
-          local_8 = (int *)((int)param_1 + ((int)local_28 + local_64 + local_b8) * 4 + 0x459);
+          local_8 = (int *)((int)param_1 + (scalar_local_28 + local_64 + local_b8) * 4 + 0x459);
           local_34 = 0;
           local_1c = 5;
           local_14 = iVar13;
@@ -493,7 +493,7 @@ LAB_00429715:
             if ((((-1 < iVar13) && (iVar13 < local_38)) && (-1 < local_6c + local_78)) &&
                (local_6c + local_78 < local_38)) {
               local_8 = (int *)((int)param_1 +
-                               ((int)local_28 + local_b8 + local_a8 + local_68 + local_14) * 4 +
+                               (scalar_local_28 + local_b8 + local_a8 + local_68 + local_14) * 4 +
                                0x459);
               local_1c = 5;
               if (local_24 < 5) {
@@ -572,7 +572,7 @@ LAB_00429715:
                ((-1 < local_84 + local_78 && (local_84 + local_78 < local_38)))) {
               /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
               local_8 = (int *)((int)param_1 +
-                               ((int)local_28 + local_68 + local_74 + local_b8 + local_c0._4_4_) * 4
+                               (scalar_local_28 + local_68 + local_74 + local_b8 + local_c0._4_4_) * 4
                                + 0x459);
               if (local_24 < 5) {
                 local_1c = 5 - local_24;

@@ -9,7 +9,6 @@ void __thiscall HelpPanelTy::NatProc(HelpPanelTy *this,int param_1,char param_2)
 
 {
   HelpPanelTy_field_01A1State HVar1;
-  code *pcVar2;
   HelpPanelTy *this_00;
   int errorCode;
   UINT UVar3;

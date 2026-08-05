@@ -8,7 +8,6 @@
 void __thiscall SAMPanelTy::Update(SAMPanelTy *this)
 
 {
-  code *pcVar1;
   SAMPanelTy *this_00;
   int iVar2;
   int iVar3;

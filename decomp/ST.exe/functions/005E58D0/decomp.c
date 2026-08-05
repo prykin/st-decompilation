@@ -8,7 +8,6 @@
 void __thiscall MTestTy::InitMTest(MTestTy *this)
 
 {
-  code *pcVar1;
   CursorClassTy *this_00;
   MTestTy *this_01;
   int iVar2;

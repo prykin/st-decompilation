@@ -9,7 +9,6 @@ void __thiscall FSGSTy::DoneFSGS(FSGSTy *this)
 
 {
   MMsgTy *this_00;
-  code *pcVar1;
   FSGSTy *this_01;
   int errorCode;
   int iVar2;

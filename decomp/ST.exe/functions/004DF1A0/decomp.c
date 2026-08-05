@@ -9,7 +9,7 @@ undefined4 __fastcall FUN_004df1a0(TLOBaseTy *param_1)
   uint index;
   TLOBaseTy *local_8;
 
-  array = *(DArrayTy **)&g_packedRecords_A62x8[(int)param_1->field_0024].field_0x9ee;
+  array = g_packedRecords_A62x8[(int)param_1->field_0024].field1974_0x9ee;
   if (array != nullptr) {
     index = 0;
     local_8 = param_1;
@@ -17,17 +17,16 @@ undefined4 __fastcall FUN_004df1a0(TLOBaseTy *param_1)
       do {
         DArrayGetElement(array,index,&local_8);
         if (local_8 == param_1) {
-          DArrayRemoveAt(*(DArrayTy **)&g_packedRecords_A62x8[(int)param_1->field_0024].field_0x9ee,
-                         index);
+          DArrayRemoveAt(g_packedRecords_A62x8[(int)param_1->field_0024].field1974_0x9ee,index);
           break;
         }
         index = index + 1;
-        array = *(DArrayTy **)&g_packedRecords_A62x8[(int)param_1->field_0024].field_0x9ee;
+        array = g_packedRecords_A62x8[(int)param_1->field_0024].field1974_0x9ee;
       } while ((int)index < (int)array->count);
     }
-    if ((*(DArrayTy **)&g_packedRecords_A62x8[(int)param_1->field_0024].field_0x9ee)->count == 0) {
-      DArrayDestroy(*(DArrayTy **)&g_packedRecords_A62x8[(int)param_1->field_0024].field_0x9ee);
-      *(undefined4 *)&g_packedRecords_A62x8[(int)param_1->field_0024].field_0x9ee = 0;
+    if ((g_packedRecords_A62x8[(int)param_1->field_0024].field1974_0x9ee)->count == 0) {
+      DArrayDestroy(g_packedRecords_A62x8[(int)param_1->field_0024].field1974_0x9ee);
+      g_packedRecords_A62x8[(int)param_1->field_0024].field1974_0x9ee = nullptr;
     }
   }
   return 0;

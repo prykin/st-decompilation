@@ -8,7 +8,6 @@
 void __thiscall CursorClassTy::DelSysAcc(CursorClassTy *this)
 
 {
-  code *pcVar1;
   CursorClassTy *this_00;
   int iVar2;
   int iVar3;

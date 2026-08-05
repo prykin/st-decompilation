@@ -48,9 +48,13 @@
    006B4170 @ 005E7C9F; literal 0 at 005E7C84 | 005E7C00 -> 006B4170 @ 005E7E31; literal 0 at
    005E7E23 | 005E7FE0 -> 006B4170 @ 005E806A; literal 255 at 005E8059 | 005E9D70 -> 006B4170 @
    005EA002; literal 255 at 005E9FE0 | 006C7430 -> 006B4170 @ 006C751E; zero-filled partial register
-   load at 006C7502 */
+   load at 006C7502
 
-void FUN_006b4170(AnonShape_006B5B10_E0D06CF1 *param_1,int param_2,int lprcSrc2,int param_4,
+   [STTypeFamilyApplier] SOURCE_FUNCTION_FAMILY.
+   Evidence: one script-owned pointer shape is anchored by one library source basename, multiple
+   semantic function names, and exact first-argument call flow */
+
+void FUN_006b4170(RecoveredSourceFamily_dibcopy *param_1,int param_2,int lprcSrc2,int param_4,
                  int param_5,int param_6,byte param_7)
 
 {

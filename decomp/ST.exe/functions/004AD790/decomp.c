@@ -9,7 +9,6 @@ undefined4 * __thiscall STT3DSprC::SaveSpr(STT3DSprC *this,uint *param_1)
 
 {
   char cVar1;
-  code *pcVar2;
   STT3DSprC *this_00;
   int iVar3;
   int iVar4;

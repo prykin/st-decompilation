@@ -10,7 +10,6 @@ void __thiscall HelpPanelTy::FwdBut(HelpPanelTy *this)
 {
   DArrayTy *pDVar1;
   void *pvVar2;
-  code *pcVar3;
   int errorCode;
   int iVar4;
   uint uVar5;

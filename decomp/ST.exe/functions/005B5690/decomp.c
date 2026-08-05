@@ -14,7 +14,6 @@ MMObjTy::PaintSprBut(MMObjTy *this,int param_1,uint param_2,int param_3,int para
 
 {
   undefined4 uVar1;
-  code *pcVar2;
   MMObjTy *pMVar3;
   int iVar4;
   int iVar5;

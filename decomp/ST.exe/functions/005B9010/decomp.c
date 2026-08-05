@@ -9,7 +9,6 @@ void __thiscall MMsgTy::StatePanel(MMsgTy *this,int param_1)
 
 {
   short sVar1;
-  code *pcVar2;
   MMsgTy *this_00;
   byte bVar3;
   int errorCode;

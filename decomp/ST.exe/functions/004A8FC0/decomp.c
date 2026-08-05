@@ -10,7 +10,6 @@ void __thiscall OpticClassC::InitOptic(OpticClassC *this)
 
 {
   double dVar1;
-  code *pcVar2;
   int iVar3;
   byte *pbVar4;
   int iVar5;

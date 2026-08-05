@@ -9,7 +9,6 @@
 undefined4 __thiscall STJumpMineC::LoadImagJMine(STJumpMineC *this,int param_1)
 
 {
-  code *pcVar1;
   int iVar2;
   ushort *puVar3;
   int iVar4;

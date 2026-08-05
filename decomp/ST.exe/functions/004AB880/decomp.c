@@ -47,7 +47,6 @@ STT3DSprC::LoadSequence(STT3DSprC *this,byte param_1,int *param_2,char *text,byt
 {
   byte *pbVar1;
   char cVar2;
-  code *pcVar3;
   STT3DSprC *this_00;
   int iVar4;
   int iVar5;

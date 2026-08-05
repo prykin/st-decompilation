@@ -8,7 +8,6 @@
 void __thiscall SettMapMTy::DeleteCtrls(SettMapMTy *this)
 
 {
-  code *pcVar1;
   SettMapMTy *this_00;
   int iVar2;
   HoloTy *pHVar3;

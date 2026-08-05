@@ -10,7 +10,6 @@ undefined4 * CreateBossData(void)
 
 {
   char cVar1;
-  code *pcVar2;
   int iVar3;
   int iVar4;
   undefined4 *puVar5;

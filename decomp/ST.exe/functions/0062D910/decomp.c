@@ -28,7 +28,6 @@ STManRub3C::AddNewDock
 
 {
   uint uVar1;
-  code *pcVar2;
   STManRub3C *pSVar3;
   int iVar4;
   DArrayTy *pDVar5;

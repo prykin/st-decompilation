@@ -14,7 +14,6 @@ CPanelTy::PaintTxtBut
           undefined *param_6)
 
 {
-  code *pcVar1;
   uint uVar2;
   CPanelTy *pCVar3;
   int iVar4;
@@ -78,7 +77,7 @@ cf_common_join_004F3AC3:
       pCVar3 = local_10;
       uVar5 = local_14;
       uVar2 = (uint)param_1;
-      DibPut((AnonShape_006B5B10_E0D06CF1 *)local_10->field_0148[uVar2 + 0xe],local_c,local_14,
+      DibPut((RecoveredSourceFamily_dibcopy *)local_10->field_0148[uVar2 + 0xe],local_c,local_14,
              param_3,(byte *)local_8);
       cMf32::RecMemFree(g_cMf32_00806790,(uint *)&local_8);
       ccFntTy::SetSurf(pCVar3->field_01B8,(int)pCVar3->field_0148[uVar2 + 0xe],0,local_c,uVar5,

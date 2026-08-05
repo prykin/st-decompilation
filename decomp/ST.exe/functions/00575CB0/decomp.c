@@ -16,7 +16,6 @@ int __thiscall STAlgaC::GetMessage(STAlgaC *this,STMessage *message)
   char cVar1;
   byte bVar2;
   STMessageId SVar3;
-  code *pcVar4;
   AnonShape_00575CB0_065D0A66 *pAVar5;
   ST3DSMAPContext *pSVar6;
   int iVar7;

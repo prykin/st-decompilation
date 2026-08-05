@@ -9,7 +9,6 @@ void __thiscall
 UPanelTy::PaintIBut(UPanelTy *this,AnonShape_0053DAF0_3BDC2979 *param_1,char *param_2,UINT param_3)
 
 {
-  code *pcVar1;
   UPanelTy *pUVar2;
   undefined4 *errorCode;
   undefined4 uVar3;
@@ -52,7 +51,8 @@ UPanelTy::PaintIBut(UPanelTy *this,AnonShape_0053DAF0_3BDC2979 *param_1,char *pa
     puVar4 = Library::Ourlib::MFRLOAD::mfRLoad
                        (DAT_00806794,CASE_1,text,uVar5,bVar6,iVar7,(int)puVar8,puVar10);
     uVar5 = local_8;
-    DibPut((AnonShape_006B5B10_E0D06CF1 *)pUVar2->field_0068,local_c,local_8,'\x01',(byte *)puVar4);
+    DibPut((RecoveredSourceFamily_dibcopy *)pUVar2->field_0068,local_c,local_8,'\x01',(byte *)puVar4
+          );
     ccFntTy::SetSurf(g_interSystem_00802A28->field_0024,pUVar2->field_0068,0,local_c,uVar5,
                      local_14->field_0008,local_14->field_000C);
     uVar5 = thunk_FUN_00529fe0((int)param_1);

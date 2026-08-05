@@ -9,7 +9,6 @@ void __thiscall MTaskTy::InitMTask(MTaskTy *this,char param_1,undefined1 param_2
 
 {
   int iVar1;
-  code *pcVar2;
   CursorClassTy *this_00;
   MTaskTy *pMVar3;
   int iVar4;

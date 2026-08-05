@@ -19,7 +19,6 @@
 void __thiscall SettMapMTy::CheckPlList(SettMapMTy *this)
 
 {
-  code *pcVar1;
   bool bVar2;
   SettMapMTy *pSVar3;
   char cVar4;

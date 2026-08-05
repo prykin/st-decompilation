@@ -17,7 +17,6 @@ void __thiscall SettMapSTy::PrepPlList(SettMapSTy *this)
 {
   char cVar1;
   byte bVar2;
-  code *pcVar3;
   int iVar4;
   void *pvVar5;
   DArrayTy *pDVar6;

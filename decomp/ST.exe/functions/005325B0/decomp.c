@@ -19,7 +19,6 @@ void __thiscall OptPanelTy::PrepAsses(OptPanelTy *this)
   undefined1 *puVar1;
   char cVar2;
   byte bVar3;
-  code *pcVar4;
   int iVar5;
   cMf32 *pcVar6;
   OptPanelTy_field_02FDDArray *pOVar7;

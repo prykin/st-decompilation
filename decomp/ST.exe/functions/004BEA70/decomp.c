@@ -327,7 +327,7 @@ LAB_004bef54:
         if ((&DAT_007e1984)[local_EAX_3325 + ((uint)(byte)local_EAX_3286 + iVar20 * 3) * 3] == '\0')
         goto LAB_004bf7a5;
       }
-      if (g_packedRecords_A62x8[(int)this->field_0024].field2383_0xa0e != 0) goto LAB_004bf7a5;
+      if (g_packedRecords_A62x8[(int)this->field_0024].field1982_0xa0e != 0) goto LAB_004bf7a5;
       uVar7 = 1;
     }
     else {
@@ -707,7 +707,7 @@ LAB_004bf965:
     if (this->field_0024 == (byte *)this->field_023D) {
 LAB_004bf9c0:
       if (((this->field_0245 != CASE_0) || (*(int *)&this->field_0x361 != 0)) ||
-         (g_packedRecords_A62x8[(int)this->field_0024].field2383_0xa0e != 0)) goto LAB_004bf9f7;
+         (g_packedRecords_A62x8[(int)this->field_0024].field1982_0xa0e != 0)) goto LAB_004bf9f7;
       uVar7 = 1;
     }
     else {
@@ -1310,9 +1310,9 @@ cf_common_join_004C01F3:
     break;
   case CASE_3C:
   case CASE_53:
-    switch(g_packedRecords_A62x8[(int)this->field_0024].field2383_0xa0e) {
+    switch(g_packedRecords_A62x8[(int)this->field_0024].field1982_0xa0e) {
     case 0:
-      if (g_packedRecords_A62x8[(int)this->field_0024].field2385_0xa16 == 0)
+      if (g_packedRecords_A62x8[(int)this->field_0024].field1984_0xa16 == 0)
       goto switchD_004bef7c_caseD_52;
       *(undefined1 *)((int)param_1 + 0x47) = 3;
       break;
@@ -1334,7 +1334,7 @@ cf_common_join_004C01F3:
       *(undefined1 *)((int)param_1 + 0x47) = 1;
       iVar20 = thunk_FUN_004e60d0((int)this->field_0024,iVar20);
       uVar17 = (g_playSystem_00802A38->field_00E4 * 100 +
-               g_packedRecords_A62x8[(int)this->field_0024].field2386_0xa1a * -100) /
+               g_packedRecords_A62x8[(int)this->field_0024].field1985_0xa1a * -100) /
                *(uint *)(&DAT_00798f6c + iVar20 * 4);
       param_1[0x12] = uVar17;
       if (100 < uVar17) {
@@ -1345,7 +1345,7 @@ cf_common_join_004C01F3:
     case 2:
     case 3:
       *(undefined1 *)((int)param_1 + 0x47) = 2;
-      param_1[0x12] = (uint)g_packedRecords_A62x8[(int)this->field_0024].field2387_0xa1e / 0x19;
+      param_1[0x12] = (uint)g_packedRecords_A62x8[(int)this->field_0024].field1986_0xa1e / 0x19;
     }
     break;
   case CASE_41:
@@ -1407,12 +1407,18 @@ LAB_004c0f8e:
             (char)((longlong)iVar20 * 0x51eb851f >> 0x3f);
     goto LAB_004c0fcc;
   case CASE_50:
-    *(undefined1 *)(param_1 + 7) = g_packedRecords_A62x8[(int)this->field_0024].field_0x97a;
-    *(undefined1 *)((int)param_1 + 0x1d) = g_packedRecords_A62x8[(int)this->field_0024].field_0x97e;
-    *(undefined1 *)((int)param_1 + 0x1e) = g_packedRecords_A62x8[(int)this->field_0024].field_0x982;
-    *(undefined1 *)((int)param_1 + 0x1f) = g_packedRecords_A62x8[(int)this->field_0024].field_0x986;
-    *(undefined1 *)(param_1 + 8) = g_packedRecords_A62x8[(int)this->field_0024].field_0x98a;
-    *(undefined1 *)((int)param_1 + 0x21) = g_packedRecords_A62x8[(int)this->field_0024].field_0x98e;
+    *(undefined1 *)(param_1 + 7) =
+         *(undefined1 *)&g_packedRecords_A62x8[(int)this->field_0024].field1942_0x97a;
+    *(undefined1 *)((int)param_1 + 0x1d) =
+         *(undefined1 *)&g_packedRecords_A62x8[(int)this->field_0024].field1943_0x97e;
+    *(undefined1 *)((int)param_1 + 0x1e) =
+         *(undefined1 *)&g_packedRecords_A62x8[(int)this->field_0024].field1944_0x982;
+    *(undefined1 *)((int)param_1 + 0x1f) =
+         *(undefined1 *)&g_packedRecords_A62x8[(int)this->field_0024].field1945_0x986;
+    *(undefined1 *)(param_1 + 8) =
+         *(undefined1 *)&g_packedRecords_A62x8[(int)this->field_0024].field1946_0x98a;
+    *(undefined1 *)((int)param_1 + 0x21) =
+         *(undefined1 *)&g_packedRecords_A62x8[(int)this->field_0024].field1947_0x98e;
     break;
   /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
   case CASE_52:

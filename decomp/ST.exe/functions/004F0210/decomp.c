@@ -14,7 +14,6 @@ int __thiscall BldLabPanelTy::GetMessage(BldLabPanelTy *this,STMessage *message)
 {
   STMessageId SVar1;
   BldLabPanelTy_field_027ADArray *pBVar2;
-  code *pcVar3;
   BldLabPanelTy *this_00;
   int iVar4;
   Global_sub_00526BA0_param_1Enum *pGVar5;

@@ -15,7 +15,6 @@
 void __thiscall PopUpTy::OutStr(PopUpTy *this,byte param_1)
 
 {
-  code *pcVar1;
   uint uVar2;
   PopUpTy *pPVar3;
   int errorCode;

@@ -24,7 +24,6 @@ void __thiscall PrividerTy::NonePrivider(PrividerTy *this)
   uint uVar2;
   MMsgTy *this_00;
   StartSystemTy *pSVar3;
-  code *pcVar4;
   CursorClassTy *pCVar5;
   PrividerTy *this_01;
   short *psVar6;

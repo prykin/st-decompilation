@@ -11,7 +11,6 @@ STBoatC::GetExplosionInfo
           (STBoatC *this,uint param_1,short *param_2,short *param_3,short *param_4,uint *param_5)
 
 {
-  code *pcVar1;
   STBoatC *pSVar2;
   int iVar3;
   undefined4 *puVar4;

@@ -15,7 +15,6 @@ int __thiscall InfocPanelTy::GetMessage(InfocPanelTy *this,STMessage *message)
   STMessageId SVar1;
   int *piVar2;
   int iVar3;
-  code *pcVar4;
   bool bVar5;
   int iVar6;
   InfocPanelTy *this_00;
@@ -140,7 +139,7 @@ int __thiscall InfocPanelTy::GetMessage(InfocPanelTy *this,STMessage *message)
       uVar12 = bVar7 + 9;
     }
     pbVar10 = (byte *)FUN_0070b3a0((AnonShape_GLOBAL_0081175C_57F682DD *)this_00->field_03C4,uVar12);
-    DibPut((AnonShape_006B5B10_E0D06CF1 *)this_00->field_0068,iVar8 - iVar11,iVar3 - iVar6,'\x01',
+    DibPut((RecoveredSourceFamily_dibcopy *)this_00->field_0068,iVar8 - iVar11,iVar3 - iVar6,'\x01',
            pbVar10);
     Library::DKW::DDX::FUN_006b3640
               ((int *)g_ddxContext_008075A8,this_00->field_0060,0xffffffff,this_00->field_003C,

@@ -11,7 +11,6 @@ int __thiscall STBoatC::UnLoadRC(STBoatC *this,int param_1)
   STBoatC_field_054CState SVar1;
   STFishC *pSVar2;
   STWorldObject *pSVar3;
-  code *pcVar4;
   undefined2 uVar5;
   int iVar6;
   dword dVar7;

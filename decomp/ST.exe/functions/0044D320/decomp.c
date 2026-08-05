@@ -25,7 +25,7 @@ byte * FUN_0044d320(Global_sub_0044D320_param_1Enum param_1)
 
   GVar2 = param_1;
   local_8 = 0;
-  local_14 = (DArrayTy *)g_packedRecords_A62x8[DAT_0080874d].field335_0x16d;
+  local_14 = (DArrayTy *)g_packedRecords_A62x8[DAT_0080874d].field102_0x16d;
   local_10 = local_14->count;
   pbVar3 = Library::DKW::LIB::MemAlloc(0xc);
   if (param_1 < 0x1001) {
@@ -358,7 +358,8 @@ switchD_0044d78f_caseD_28:
               local_8 = 1;
               if ((pbVar3[6] == 0) &&
                  ((iVar4 = thunk_FUN_00486b40(objPtr), 0 < iVar4 &&
-                  (g_packedRecords_A62x8[*(char *)&objPtr->field_0024].field326_0x15b != 0)))) {
+                  ((short)g_packedRecords_A62x8[*(char *)&objPtr->field_0024].field94_0x15b != 0))))
+              {
                 pbVar3[6] = 1;
                 pbVar3[7] = 4;
               }
@@ -374,7 +375,8 @@ switchD_0044d78f_caseD_28:
               if (iVar4 == 4) {
                 local_8 = 1;
                 if (((pbVar3[6] == 0) && (iVar4 = thunk_FUN_00486b40(objPtr), 0 < iVar4)) &&
-                   (g_packedRecords_A62x8[*(char *)&objPtr->field_0024].field326_0x15b != 0)) {
+                   ((short)g_packedRecords_A62x8[*(char *)&objPtr->field_0024].field94_0x15b != 0))
+                {
                   pbVar3[6] = 1;
                   pbVar3[7] = 4;
                 }
@@ -392,7 +394,8 @@ switchD_0044d78f_caseD_28:
                   local_8 = 1;
                   iVar4 = thunk_FUN_00486b40(objPtr);
                   if (0 < iVar4) {
-                    sVar1 = g_packedRecords_A62x8[*(char *)&objPtr->field_0024].field326_0x15b;
+                    sVar1 = (short)g_packedRecords_A62x8[*(char *)&objPtr->field_0024].field94_0x15b
+                    ;
 joined_r0x0044d9f5:
                     if (sVar1 != 0) {
                       pbVar3[6] = 1;
@@ -409,7 +412,8 @@ joined_r0x0044d9f5:
                 if (((iVar4 == 5) || (iVar4 == 0xb)) || (iVar4 == 0x11)) {
                   local_8 = 1;
                   if (((pbVar3[6] == 0) && (iVar4 = thunk_FUN_00486b40(objPtr), 0 < iVar4)) &&
-                     (g_packedRecords_A62x8[*(char *)&objPtr->field_0024].field326_0x15b != 0)) {
+                     ((short)g_packedRecords_A62x8[*(char *)&objPtr->field_0024].field94_0x15b != 0)
+                     ) {
                     pbVar3[6] = 1;
                     pbVar3[7] = 4;
                   }
@@ -426,7 +430,8 @@ LAB_0044dc25:
                   local_8 = 1;
                   iVar4 = thunk_FUN_00486b40(objPtr);
                   if (0 < iVar4) {
-                    sVar1 = g_packedRecords_A62x8[*(char *)&objPtr->field_0024].field326_0x15b;
+                    sVar1 = (short)g_packedRecords_A62x8[*(char *)&objPtr->field_0024].field94_0x15b
+                    ;
                     goto joined_r0x0044d9f5;
                   }
                 }
@@ -443,7 +448,7 @@ LAB_0044dc25:
                 local_8 = 1;
                 iVar4 = thunk_FUN_00486b40(objPtr);
                 if (0 < iVar4) {
-                  sVar1 = g_packedRecords_A62x8[*(char *)&objPtr->field_0024].field326_0x15b;
+                  sVar1 = (short)g_packedRecords_A62x8[*(char *)&objPtr->field_0024].field94_0x15b;
                   goto joined_r0x0044d9f5;
                 }
               }
@@ -464,7 +469,8 @@ LAB_0044dc25:
               local_8 = 1;
               if ((pbVar3[6] == 0) &&
                  ((iVar4 = thunk_FUN_00486b40(objPtr), 0 < iVar4 &&
-                  (g_packedRecords_A62x8[*(char *)&objPtr->field_0024].field326_0x15b != 0)))) {
+                  ((short)g_packedRecords_A62x8[*(char *)&objPtr->field_0024].field94_0x15b != 0))))
+              {
                 pbVar3[6] = 1;
                 pbVar3[7] = 4;
               }
@@ -481,7 +487,7 @@ LAB_0044d9c4:
             local_8 = 1;
             iVar4 = thunk_FUN_00486b40(objPtr);
             if (0 < iVar4) {
-              sVar1 = g_packedRecords_A62x8[*(char *)&objPtr->field_0024].field326_0x15b;
+              sVar1 = (short)g_packedRecords_A62x8[*(char *)&objPtr->field_0024].field94_0x15b;
               goto joined_r0x0044d9f5;
             }
           }
@@ -493,7 +499,8 @@ LAB_0044d9c4:
               local_8 = 1;
               iVar4 = TLOBaseTy::sub_004D6DF0((TLOBaseTy *)objPtr);
               if (((0 < iVar4) && (uVar5 = thunk_FUN_004e41c0((uint)DAT_0080874d), 0 < (int)uVar5))
-                 && (g_packedRecords_A62x8[*(char *)&objPtr->field_0024].field329_0x15f != 0)) {
+                 && ((short)g_packedRecords_A62x8[*(char *)&objPtr->field_0024].field95_0x15f != 0))
+              {
                 pbVar3[6] = 1;
                 pbVar3[7] = 0x48;
               }
@@ -529,7 +536,8 @@ switchD_0044dcfe_caseD_19:
               local_8 = 1;
               iVar4 = TLOBaseTy::sub_004D6DF0((TLOBaseTy *)objPtr);
               if (((0 < iVar4) && (uVar5 = thunk_FUN_004e41c0((uint)DAT_0080874d), 0 < (int)uVar5))
-                 && (g_packedRecords_A62x8[*(char *)&objPtr->field_0024].field329_0x15f != 0)) {
+                 && ((short)g_packedRecords_A62x8[*(char *)&objPtr->field_0024].field95_0x15f != 0))
+              {
                 pbVar3[6] = 1;
                 pbVar3[7] = 0x48;
                 return pbVar3;
@@ -545,7 +553,8 @@ switchD_0044dcfe_caseD_19:
               local_8 = 1;
               iVar4 = TLOBaseTy::sub_004D6DF0((TLOBaseTy *)objPtr);
               if (((0 < iVar4) && (uVar5 = thunk_FUN_004e41c0((uint)DAT_0080874d), 0 < (int)uVar5))
-                 && (g_packedRecords_A62x8[*(char *)&objPtr->field_0024].field329_0x15f != 0)) {
+                 && ((short)g_packedRecords_A62x8[*(char *)&objPtr->field_0024].field95_0x15f != 0))
+              {
                 pbVar3[6] = 1;
                 pbVar3[7] = 0x48;
               }
@@ -562,7 +571,7 @@ switchD_0044dcfe_caseD_19:
             iVar4 = TLOBaseTy::sub_004D6DF0((TLOBaseTy *)objPtr);
             if ((0 < iVar4) &&
                ((uVar5 = thunk_FUN_004e41c0((uint)DAT_0080874d), 0 < (int)uVar5 &&
-                (g_packedRecords_A62x8[*(char *)&objPtr->field_0024].field329_0x15f != 0)))) {
+                ((short)g_packedRecords_A62x8[*(char *)&objPtr->field_0024].field95_0x15f != 0)))) {
               pbVar3[6] = 1;
               pbVar3[7] = 0x48;
             }
@@ -575,7 +584,7 @@ switchD_0044dcfe_caseD_19:
             local_8 = 1;
             iVar4 = TLOBaseTy::sub_004D6DF0((TLOBaseTy *)objPtr);
             if (((0 < iVar4) && (uVar5 = thunk_FUN_004e41c0((uint)DAT_0080874d), 0 < (int)uVar5)) &&
-               (g_packedRecords_A62x8[*(char *)&objPtr->field_0024].field329_0x15f != 0)) {
+               ((short)g_packedRecords_A62x8[*(char *)&objPtr->field_0024].field95_0x15f != 0)) {
               pbVar3[6] = 1;
               pbVar3[7] = 0x48;
             }

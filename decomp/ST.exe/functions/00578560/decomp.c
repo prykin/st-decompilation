@@ -8,7 +8,6 @@
 void __thiscall STCrabC::SetSprRange(STCrabC *this,uint param_1)
 
 {
-  code *pcVar1;
   int iVar2;
 
   if (7 < param_1) {

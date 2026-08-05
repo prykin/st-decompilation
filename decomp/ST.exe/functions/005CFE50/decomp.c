@@ -12,7 +12,6 @@
 void __thiscall SettMapMTy::SendDesc(SettMapMTy *this,int param_1)
 
 {
-  code *pcVar1;
   int errorCode;
   int iVar2;
   AnonShape_00571A30_67EE4B56 local_dc;

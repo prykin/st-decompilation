@@ -4,7 +4,6 @@
 undefined4 FUN_006a5cd0(void)
 
 {
-  code *pcVar1;
   int iVar2;
   undefined4 uVar3;
   undefined4 local_38 [2];

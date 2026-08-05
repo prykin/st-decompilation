@@ -10,7 +10,6 @@ void __thiscall FSGSTy::ChatCtrls(FSGSTy *this)
 {
   undefined1 *puVar1;
   AnonShape_00710790_4CBB90D4 *pAVar2;
-  code *pcVar3;
   short sVar4;
   uint uVar5;
   undefined4 uVar6;

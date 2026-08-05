@@ -13,7 +13,6 @@ void __thiscall CampaignTy::AnimationCampaign(CampaignTy *this)
 
 {
   AnonShape_GLOBAL_0081175C_57F682DD *pAVar1;
-  code *pcVar2;
   CampaignTy *this_00;
   int iVar3;
   BITMAPINFO *pBVar4;

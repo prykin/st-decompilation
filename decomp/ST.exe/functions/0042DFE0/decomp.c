@@ -10,7 +10,6 @@ uint __thiscall STAllPlayersC::PrepareToCmd(STAllPlayersC *this,undefined4 *para
 {
   DArrayTy *array;
   dword dVar1;
-  code *pcVar2;
   uint *puVar3;
   int iVar4;
   uint uVar5;
@@ -32,9 +31,9 @@ uint __thiscall STAllPlayersC::PrepareToCmd(STAllPlayersC *this,undefined4 *para
     *param_2 = 0;
   }
   uVar5 = (uint)DAT_0080874d;
-  if (g_packedRecords_A62x8[uVar5].field448_0x203 == 0) {
-    if (g_packedRecords_A62x8[uVar5].field333_0x167 == uVar5) {
-      if (g_packedRecords_A62x8[uVar5].field332_0x163 == 0x3c) {
+  if (g_packedRecords_A62x8[uVar5].field200_0x203 == 0) {
+    if (*(uint *)&g_packedRecords_A62x8[uVar5].field97_0x167 == uVar5) {
+      if (g_packedRecords_A62x8[uVar5].field96_0x163 == 0x3c) {
         local_10 = (uint *)thunk_FUN_0042d770(DAT_0080874d,(int *)&local_8);
         local_c = 0;
         if ((short)local_10 == 0x7fff) {
@@ -52,16 +51,16 @@ uint __thiscall STAllPlayersC::PrepareToCmd(STAllPlayersC *this,undefined4 *para
         }
         DArrayDestroy(local_8);
       }
-      else if (g_packedRecords_A62x8[uVar5].field332_0x163 == 0x1ae) {
+      else if (g_packedRecords_A62x8[uVar5].field96_0x163 == 0x1ae) {
         local_c = 2;
-        local_10 = (uint *)(uint)(ushort)g_packedRecords_A62x8[uVar5].field334_0x16b;
+        local_10 = (uint *)(uint)(ushort)g_packedRecords_A62x8[uVar5].field101_0x16b;
       }
     }
   }
-  else if (g_packedRecords_A62x8[uVar5].field448_0x203 == 1) {
-    if ((g_packedRecords_A62x8[uVar5].field391_0x1b7 == uVar5) &&
-       (g_packedRecords_A62x8[uVar5].field390_0x1b3 == 0x19a)) {
-      array = (DArrayTy *)g_packedRecords_A62x8[uVar5].field393_0x1bd;
+  else if (g_packedRecords_A62x8[uVar5].field200_0x203 == 1) {
+    if ((*(uint *)&g_packedRecords_A62x8[uVar5].field150_0x1b7 == uVar5) &&
+       (g_packedRecords_A62x8[uVar5].field149_0x1b3 == 0x19a)) {
+      array = (DArrayTy *)g_packedRecords_A62x8[uVar5].field155_0x1bd;
       uVar5 = 0;
       dVar1 = array->count;
       if (0 < (int)dVar1) {

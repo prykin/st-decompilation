@@ -16,7 +16,6 @@ void __thiscall AiPlrClassTy::Offensive(AiPlrClassTy *this)
 
 {
   STFishC *pSVar1;
-  code *pcVar2;
   AiPlrClassTy *this_00;
   undefined2 uVar3;
   int iVar4;

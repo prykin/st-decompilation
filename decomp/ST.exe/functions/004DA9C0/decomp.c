@@ -42,7 +42,7 @@ undefined4 __fastcall FUN_004da9c0(undefined4 param_1)
 
   local_28 = 0;
   local_14 = 0;
-  local_1c = &g_packedRecords_A62x8[0].field2383_0xa0e;
+  local_1c = &g_packedRecords_A62x8[0].field1982_0xa0e;
   local_18 = param_1;
   do {
     uVar8 = local_14;

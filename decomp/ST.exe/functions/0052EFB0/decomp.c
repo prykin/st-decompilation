@@ -11,7 +11,6 @@ OptPanelTy::PaintDblBut
           undefined *param_4,undefined *param_5,int param_6)
 
 {
-  code *pcVar1;
   OptPanelTy *pOVar2;
   int iVar3;
   undefined4 uVar4;
@@ -67,7 +66,7 @@ OptPanelTy::PaintDblBut
       uVar6 = local_14;
       iVar3 = local_18;
       pOVar2 = local_1c;
-      DibPut((AnonShape_006B5B10_E0D06CF1 *)local_1c->field_0068,local_18,local_14,'\x01',
+      DibPut((RecoveredSourceFamily_dibcopy *)local_1c->field_0068,local_18,local_14,'\x01',
              (byte *)local_8);
       cMf32::RecMemFree(g_cMf32_00806790,(uint *)&local_8);
       iVar9 = 1;
@@ -84,7 +83,7 @@ OptPanelTy::PaintDblBut
       else {
         iVar7 = local_c->field_0018;
       }
-      DibPut((AnonShape_006B5B10_E0D06CF1 *)pOVar2->field_0068,iVar3 + 5,
+      DibPut((RecoveredSourceFamily_dibcopy *)pOVar2->field_0068,iVar3 + 5,
              (iVar7 - *(int *)(local_8 + 4)) / 2 + 1 + uVar6,'\x01',(byte *)local_8);
       iVar3 = *(int *)(local_8 + 2);
       cMf32::RecMemFree(g_cMf32_00806790,(uint *)&local_8);

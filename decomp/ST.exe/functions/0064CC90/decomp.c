@@ -16,10 +16,9 @@ undefined4 * __fastcall FUN_0064cc90(undefined4 *param_1)
   else {
     puVar2 = param_1 + 0x23;
   }
-  memset(puVar2, 0, 0x49e); /* compiler bulk-zero initialization */
+  memset(puVar2, 0, 0x49f); /* compiler bulk-zero initialization */
   puVar2 = (undefined4 *)((byte *)puVar2 + 0x49c);
   iVar1 = 0;
-  *(undefined1 *)((int)puVar2 + 2) = 0;
   thunk_FUN_006728f0((undefined4 *)&DAT_007d3f78);
   *(undefined4 *)((int)param_1 + 0x5b3) = 0;
   memset((void *)((int)param_1 + 0x52f), 0, 0x84); /* compiler bulk-zero initialization */

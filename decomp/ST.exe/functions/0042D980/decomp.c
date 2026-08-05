@@ -12,7 +12,6 @@ STAllPlayersC::GetActiveCenter
 {
   DArrayTy *pDVar1;
   dword dVar2;
-  code *pcVar3;
   int iVar4;
   undefined4 uVar5;
   STGameObjC *pSVar6;
@@ -28,8 +27,8 @@ STAllPlayersC::GetActiveCenter
   int local_8;
 
   uVar7 = (uint)DAT_0080874d;
-  if (g_packedRecords_A62x8[uVar7].field448_0x203 == 0) {
-    iVar4 = g_packedRecords_A62x8[uVar7].field332_0x163;
+  if (g_packedRecords_A62x8[uVar7].field200_0x203 == 0) {
+    iVar4 = g_packedRecords_A62x8[uVar7].field96_0x163;
     if (iVar4 == 0) {
       if (param_1 != nullptr) {
         *param_1 = 0xffff;
@@ -44,7 +43,7 @@ STAllPlayersC::GetActiveCenter
       return 0xffffffff;
     }
     if (iVar4 == 0x3c) {
-      pDVar1 = (DArrayTy *)g_packedRecords_A62x8[uVar7].field335_0x16d;
+      pDVar1 = (DArrayTy *)g_packedRecords_A62x8[uVar7].field102_0x16d;
       iVar8 = 0;
       iVar4 = 0;
       dVar2 = pDVar1->count;
@@ -59,8 +58,8 @@ STAllPlayersC::GetActiveCenter
             local_1c = local_1c + 1;
             /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
             pSVar6 = GetObjPtr(g_allPlayers_007FA174,
-                               *(char *)&g_packedRecords_A62x8[DAT_0080874d].field333_0x167,
-                               local_14._0_2_,CASE_1);
+                               g_packedRecords_A62x8[DAT_0080874d].field97_0x167,local_14._0_2_,
+                               CASE_1);
             STFishC::sub_004162B0
                       ((STFishC *)pSVar6,(short *)&local_8,(undefined2 *)&local_c,
                        (undefined2 *)&local_10);
@@ -98,8 +97,8 @@ joined_r0x0042de37:
       return 0;
     }
     if (iVar4 == 0x1ae) {
-      pSVar6 = GetObjPtr(g_allPlayers_007FA174,*(char *)&g_packedRecords_A62x8[uVar7].field333_0x167
-                         ,g_packedRecords_A62x8[uVar7].field334_0x16b,CASE_3);
+      pSVar6 = GetObjPtr(g_allPlayers_007FA174,g_packedRecords_A62x8[uVar7].field97_0x167,
+                         g_packedRecords_A62x8[uVar7].field101_0x16b,CASE_3);
       STFishC::sub_004162B0
                 ((STFishC *)pSVar6,(short *)&local_8,(undefined2 *)&local_c,(undefined2 *)&local_10);
       if (param_1 != nullptr) {
@@ -123,15 +122,14 @@ joined_r0x0042de37:
     }
     goto joined_r0x0042dcbd;
   }
-  if (g_packedRecords_A62x8[uVar7].field448_0x203 == 1) {
-    iVar4 = g_packedRecords_A62x8[uVar7].field390_0x1b3;
+  if (g_packedRecords_A62x8[uVar7].field200_0x203 == 1) {
+    iVar4 = g_packedRecords_A62x8[uVar7].field149_0x1b3;
     if (0x19a < iVar4) {
       if (iVar4 == 0x1a4) {
         SVar10 = CASE_5;
 LAB_0042da27:
-        pSVar6 = GetObjPtr(g_allPlayers_007FA174,
-                           *(char *)&g_packedRecords_A62x8[uVar7].field391_0x1b7,
-                           g_packedRecords_A62x8[uVar7].field392_0x1bb,SVar10);
+        pSVar6 = GetObjPtr(g_allPlayers_007FA174,g_packedRecords_A62x8[uVar7].field150_0x1b7,
+                           g_packedRecords_A62x8[uVar7].field154_0x1bb,SVar10);
         STFishC::sub_004162B0
                   ((STFishC *)pSVar6,(short *)&local_8,(undefined2 *)&local_c,
                    (undefined2 *)&local_10);
@@ -146,9 +144,8 @@ LAB_0042dbdf:
           }
           goto joined_r0x0042dc09;
         }
-        pSVar6 = GetObjPtr(g_allPlayers_007FA174,
-                           *(char *)&g_packedRecords_A62x8[uVar7].field391_0x1b7,
-                           g_packedRecords_A62x8[uVar7].field392_0x1bb,CASE_6);
+        pSVar6 = GetObjPtr(g_allPlayers_007FA174,g_packedRecords_A62x8[uVar7].field150_0x1b7,
+                           g_packedRecords_A62x8[uVar7].field154_0x1bb,CASE_6);
         STFishC::sub_004162B0
                   ((STFishC *)pSVar6,(short *)&local_8,(undefined2 *)&local_c,
                    (undefined2 *)&local_10);
@@ -167,7 +164,7 @@ joined_r0x0042dc56:
       return 0;
     }
     if (iVar4 == 0x19a) {
-      pDVar1 = (DArrayTy *)g_packedRecords_A62x8[uVar7].field393_0x1bd;
+      pDVar1 = (DArrayTy *)g_packedRecords_A62x8[uVar7].field155_0x1bd;
       iVar8 = 0;
       iVar4 = 0;
       dVar2 = pDVar1->count;
@@ -182,8 +179,8 @@ joined_r0x0042dc56:
             local_1c = local_1c + 1;
             /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
             pSVar6 = GetObjPtr(g_allPlayers_007FA174,
-                               *(char *)&g_packedRecords_A62x8[DAT_0080874d].field391_0x1b7,
-                               local_14._0_2_,CASE_1);
+                               g_packedRecords_A62x8[DAT_0080874d].field150_0x1b7,local_14._0_2_,
+                               CASE_1);
             STFishC::sub_004162B0
                       ((STFishC *)pSVar6,(short *)&local_8,(undefined2 *)&local_c,
                        (undefined2 *)&local_10);
@@ -214,9 +211,8 @@ joined_r0x0042dc56:
     }
     if (iVar4 != 0) {
       if (iVar4 == 0x5a) {
-        pSVar6 = GetObjPtr(g_allPlayers_007FA174,
-                           *(char *)&g_packedRecords_A62x8[uVar7].field391_0x1b7,
-                           g_packedRecords_A62x8[uVar7].field392_0x1bb,CASE_4);
+        pSVar6 = GetObjPtr(g_allPlayers_007FA174,g_packedRecords_A62x8[uVar7].field150_0x1b7,
+                           g_packedRecords_A62x8[uVar7].field154_0x1bb,CASE_4);
         STFishC::sub_004162B0
                   ((STFishC *)pSVar6,(short *)&local_8,(undefined2 *)&local_c,
                    (undefined2 *)&local_10);

@@ -8,7 +8,6 @@
 void __thiscall MainMenuTy::DoneMainMenu(MainMenuTy *this)
 
 {
-  code *pcVar1;
   MainMenuTy *pMVar2;
   int iVar3;
   int iVar4;

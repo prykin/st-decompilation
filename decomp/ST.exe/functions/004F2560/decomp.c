@@ -15,7 +15,6 @@ void __thiscall CPanelTy::PaintWeap(CPanelTy *this,int param_1)
   char cVar1;
   ushort uVar2;
   Global_sub_005259B0_param_1Enum GVar3;
-  code *pcVar4;
   CPanelTy *pCVar5;
   int iVar6;
   uint uVar7;
@@ -38,7 +37,7 @@ void __thiscall CPanelTy::PaintWeap(CPanelTy *this,int param_1)
   int local_2c;
   int local_28;
   undefined1 *local_24;
-  AnonShape_006B5B10_E0D06CF1 *local_20;
+  RecoveredSourceFamily_dibcopy *local_20;
   uint local_1c;
   AnonShape_004F2560_DB98CB49 *local_18;
   int local_14;
@@ -48,13 +47,13 @@ void __thiscall CPanelTy::PaintWeap(CPanelTy *this,int param_1)
 
   local_18 = (AnonShape_004F2560_DB98CB49 *)&this->field_0B63;
   if (param_1 == 0) {
-    local_20 = (AnonShape_006B5B10_E0D06CF1 *)this->field_019C;
+    local_20 = (RecoveredSourceFamily_dibcopy *)this->field_019C;
     local_18 = (AnonShape_004F2560_DB98CB49 *)&this->field_0C51;
     local_28 = this->field_0058;
     local_2c = this->field_00B0;
   }
   else {
-    local_20 = (AnonShape_006B5B10_E0D06CF1 *)this->field_0184;
+    local_20 = (RecoveredSourceFamily_dibcopy *)this->field_0184;
     local_28 = this->field_0040;
     local_2c = this->field_0098;
   }

@@ -10,7 +10,6 @@ PanelTy::PaintIBut(PanelTy *this,AnonShape_00538DB0_574DDCD0 *param_1,char *para
                   int param_4,int param_5)
 
 {
-  code *pcVar1;
   PanelTy *pPVar2;
   undefined4 *errorCode;
   undefined4 uVar3;
@@ -75,7 +74,7 @@ LAB_00538de2:
   puVar4 = Library::Ourlib::MFRLOAD::mfRLoad
                      (DAT_00806794,CASE_1,text,uVar5,bVar6,iVar7,(int)puVar8,puVar10);
   uVar5 = local_c;
-  DibPut((AnonShape_006B5B10_E0D06CF1 *)pPVar2->field_0068,local_8,local_c,'\x01',(byte *)puVar4);
+  DibPut((RecoveredSourceFamily_dibcopy *)pPVar2->field_0068,local_8,local_c,'\x01',(byte *)puVar4);
   ccFntTy::SetSurf(g_interSystem_00802A28->field_0024,pPVar2->field_0068,0,local_8,uVar5,
                    local_14->field_0008,local_14->field_000C);
   uVar5 = thunk_FUN_00529fe0((int)param_1);

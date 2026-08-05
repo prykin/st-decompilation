@@ -12,7 +12,6 @@
 void __thiscall TraksClassTy::PrepareAfterSave(TraksClassTy *this,ushort *param_1)
 
 {
-  code *pcVar1;
   TraksClassTy *pTVar2;
   int iVar3;
   TraksClassTy_field_0024DArray *pTVar4;

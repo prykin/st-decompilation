@@ -11,7 +11,6 @@
 byte * __thiscall AiBossClassTy::PrepareToSave(AiBossClassTy *this,uint *param_1)
 
 {
-  code *pcVar1;
   AiBossClassTy *pAVar2;
   int errorCode;
   int iVar3;

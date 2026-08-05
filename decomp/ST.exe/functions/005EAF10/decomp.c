@@ -17,7 +17,6 @@ int __thiscall STArtiafactC::GetMessage(STArtiafactC *this,STMessage *message)
   short sVar3;
   STMessageId SVar4;
   dword dVar5;
-  code *pcVar6;
   bool bVar7;
   STArtiafactC *this_00;
   int iVar8;

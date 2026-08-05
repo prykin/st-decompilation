@@ -22,7 +22,7 @@ int __thiscall FUN_004dfc70(void *this,int *param_1)
   piVar1 = param_1;
   uVar5 = 0;
   local_8 = 0;
-  pDVar4 = (DArrayTy *)g_packedRecords_A62x8[(int)param_1].field6_0x9;
+  pDVar4 = (DArrayTy *)g_packedRecords_A62x8[(int)param_1].field3_0x9;
   if (pDVar4 != nullptr) {
     local_c = 0;
     local_10 = 0;
@@ -60,12 +60,12 @@ LAB_004dfd49:
             goto LAB_004dfd49;
           }
         }
-        pDVar4 = (DArrayTy *)g_packedRecords_A62x8[(int)piVar1].field6_0x9;
+        pDVar4 = (DArrayTy *)g_packedRecords_A62x8[(int)piVar1].field3_0x9;
         uVar5 = uVar5 + 1;
       } while (uVar5 < pDVar4->count);
     }
     uVar5 = 0;
-    pDVar4 = *(DArrayTy **)&g_packedRecords_A62x8[(int)piVar1].field_0x9d2;
+    pDVar4 = g_packedRecords_A62x8[(int)piVar1].field1967_0x9d2;
     iVar3 = 0;
     if (pDVar4 == nullptr) {
       if (local_10 != 0) {
@@ -81,7 +81,7 @@ LAB_004dfd49:
           if (local_8 != 0) {
             iVar3 = iVar3 + (int)(0x5dc / (ulonglong)(longlong)(int)local_8);
           }
-          pDVar4 = *(DArrayTy **)&g_packedRecords_A62x8[(int)piVar1].field_0x9d2;
+          pDVar4 = g_packedRecords_A62x8[(int)piVar1].field1967_0x9d2;
           uVar5 = uVar5 + 1;
         } while (uVar5 < pDVar4->count);
       }

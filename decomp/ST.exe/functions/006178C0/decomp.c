@@ -15,7 +15,6 @@
 void __thiscall JumpManagC::CheckSystrm(JumpManagC *this)
 
 {
-  code *pcVar1;
   DArrayTy *pDVar2;
   int iVar3;
   int iVar4;

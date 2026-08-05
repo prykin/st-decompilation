@@ -13,7 +13,6 @@ int __thiscall PanelTy::GetMessage(PanelTy *this,STMessage *message)
 
 {
   STMessageId SVar1;
-  code *pcVar2;
   PanelTy *this_00;
   DWORD DVar3;
   int iVar4;

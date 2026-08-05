@@ -8,7 +8,6 @@
 undefined4 __thiscall SpecPanelTy::SetPanel(SpecPanelTy *this,char param_1)
 
 {
-  code *pcVar1;
   SpecPanelTy *this_00;
   int iVar2;
   int iVar3;

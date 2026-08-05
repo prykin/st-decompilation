@@ -12,7 +12,6 @@
 int __cdecl LoadStartPlt(cMf32 *param_1,byte param_2)
 
 {
-  code *pcVar1;
   int iVar2;
   int iVar3;
   InternalExceptionFrame local_48;

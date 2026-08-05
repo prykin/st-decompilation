@@ -13,7 +13,6 @@ int __thiscall TraksClassTy::GetMessage(TraksClassTy *this,STMessage *message)
 
 {
   STMessageId SVar1;
-  code *pcVar2;
   TraksClassTy *this_00;
   int iVar3;
   TraksClassTy_field_0024DArray *pTVar4;

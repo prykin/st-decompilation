@@ -13,7 +13,6 @@ int __thiscall StartSystemTy::GetMessage(StartSystemTy *this,STMessage *message)
 
 {
   STMessageId SVar1;
-  code *pcVar2;
   StartSystemTy *this_00;
   int iVar3;
   int iVar4;

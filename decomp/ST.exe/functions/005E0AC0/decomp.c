@@ -10,7 +10,6 @@ void __thiscall MTaskTy::NoneMTask(MTaskTy *this)
 {
   int iVar1;
   undefined4 uVar2;
-  code *pcVar3;
   MTaskTy *this_00;
   int iVar4;
   uint uVar5;

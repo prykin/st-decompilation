@@ -13,7 +13,6 @@ STAllPlayersC::AddObjToTmp
           (STAllPlayersC *this,char param_1,int param_2,int param_3,char param_4,uint param_5)
 
 {
-  code *pcVar1;
   uint index;
   int iVar2;
   DArrayTy *pDVar3;

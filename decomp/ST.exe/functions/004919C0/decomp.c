@@ -18,7 +18,6 @@ STBoatC::GetCellForLoading
 
 {
   undefined2 uVar1;
-  code *pcVar2;
   int *piVar3;
   int iVar4;
   undefined4 uVar5;

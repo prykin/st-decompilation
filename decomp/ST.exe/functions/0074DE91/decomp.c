@@ -7,7 +7,7 @@ void __fastcall FUN_0074de91(undefined4 *param_1)
 
   pHVar2 = (HoloTy *)*param_1;
   while (pHVar2 != nullptr) {
-    pHVar1 = *(HoloTy **)((int)&pHVar2->field_0003 + 1);
+    pHVar1 = *(HoloTy **)&pHVar2->field_0x4;
     Library::MSVCRT::FUN_0072e2b0(pHVar2);
     pHVar2 = pHVar1;
   }

@@ -9,7 +9,6 @@ void __thiscall FSGSTy::SetGameList(FSGSTy *this,int param_1,int *param_2)
 
 {
   byte bVar1;
-  code *pcVar2;
   CursorClassTy *this_00;
   FSGSTy *this_01;
   int iVar3;

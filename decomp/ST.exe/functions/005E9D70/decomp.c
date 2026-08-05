@@ -8,8 +8,7 @@
 void __thiscall WaitTy::DeleteCtrls(WaitTy *this)
 
 {
-  AnonShape_006B5B10_E0D06CF1 *pAVar1;
-  code *pcVar2;
+  RecoveredSourceFamily_dibcopy *pRVar1;
   WaitTy *this_00;
   int iVar3;
   HoloTy *pHVar4;
@@ -111,8 +110,8 @@ void __thiscall WaitTy::DeleteCtrls(WaitTy *this)
       StartSystemTy::sub_006E56B0(this_00->field_000C,g_startSystem_0081176C->field_0389);
     }
     g_startSystem_0081176C->field_0389 = 0;
-    pAVar1 = (AnonShape_006B5B10_E0D06CF1 *)g_startSystem_0081176C->field_0544;
-    FUN_006b4170(pAVar1,0,0,0,pAVar1->field_0004,pAVar1->field_0008,0xff);
+    pRVar1 = (RecoveredSourceFamily_dibcopy *)g_startSystem_0081176C->field_0544;
+    FUN_006b4170(pRVar1,0,0,0,pRVar1->field_0004,pRVar1->field_0008,0xff);
     if ((DArrayTy *)g_startSystem_0081176C->field_0548 != nullptr) {
       FUN_006b5570((DArrayTy *)g_startSystem_0081176C->field_0548);
     }

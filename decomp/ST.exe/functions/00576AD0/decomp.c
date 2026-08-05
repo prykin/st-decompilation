@@ -8,7 +8,6 @@
 undefined4 __thiscall BaseSystemC::CreateSystemObjects(BaseSystemC *this)
 
 {
-  code *pcVar1;
   BaseSystemC *this_00;
   int errorCode;
   int iVar2;

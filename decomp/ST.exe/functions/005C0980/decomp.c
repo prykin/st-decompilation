@@ -12,7 +12,6 @@ MReportTy::CreateBut
           undefined4 param_8)
 
 {
-  code *pcVar1;
   int iVar2;
   undefined4 uVar3;
   int iVar4;

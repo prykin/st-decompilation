@@ -13,7 +13,6 @@ undefined4 __thiscall STGroupBoatC::IsAgAtt(STGroupBoatC *this)
 
 {
   uint uVar1;
-  code *pcVar2;
   STGameObjC *pSVar3;
   int iVar4;
   undefined4 uVar5;

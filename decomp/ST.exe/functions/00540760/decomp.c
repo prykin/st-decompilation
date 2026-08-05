@@ -7,10 +7,9 @@
    [STSourceProvenanceApplier end] */
 
 void __cdecl
-DibPut(AnonShape_006B5B10_E0D06CF1 *param_1,int param_2,int param_3,char param_4,byte *param_5)
+DibPut(RecoveredSourceFamily_dibcopy *param_1,int param_2,int param_3,char param_4,byte *param_5)
 
 {
-  code *pcVar1;
   int errorCode;
   int iVar2;
   InternalExceptionFrame local_48;

@@ -14,7 +14,6 @@ void __thiscall SettMapMTy::DeletePlayer(SettMapMTy *this,int param_1)
 {
   SettMapMTy_field_1F84DArray *pSVar1;
   uint uVar2;
-  code *pcVar3;
   int errorCode;
   SettMapMTy_field_1F84Element *element_1f84;
   int iVar5;

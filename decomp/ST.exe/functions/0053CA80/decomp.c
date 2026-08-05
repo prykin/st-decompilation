@@ -13,7 +13,6 @@ int __thiscall ResearchPanelTy::GetMessage(ResearchPanelTy *this,STMessage *mess
 
 {
   STMessageId SVar1;
-  code *pcVar2;
   ResearchPanelTy *this_00;
   int iVar3;
   int iVar4;

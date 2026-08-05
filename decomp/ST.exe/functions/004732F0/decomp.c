@@ -13,7 +13,6 @@ int __thiscall STBoatC::LoadObj(STBoatC *this,AnonShape_005EFAE0_B406B78B *param
 {
   undefined2 *puVar1;
   STFishCVTable *pSVar2;
-  code *pcVar3;
   undefined2 uVar4;
   int iVar5;
   /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */

@@ -10,7 +10,6 @@ uint * STGroupBoatC::Way3DGrpGetDistrPoint
                  ,int param_6,int param_7,int param_8)
 
 {
-  code *pcVar1;
   ushort uVar2;
   DArrayTy *array;
   uint *puVar3;

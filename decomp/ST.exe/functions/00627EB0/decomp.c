@@ -19,7 +19,6 @@ int __thiscall STParticleC::GetMessage(STParticleC *this,STMessage *message)
 {
   char cVar1;
   STMessageId SVar2;
-  code *pcVar3;
   short sVar4;
   float fVar5;
   STParticleC *this_00;

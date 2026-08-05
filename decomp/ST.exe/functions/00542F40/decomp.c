@@ -14,7 +14,6 @@ int __thiscall InterSystemC::GetMessage(InterSystemC *this,STMessage *message)
 
 {
   STMessageId SVar1;
-  code *pcVar2;
   int iVar3;
   uint uVar4;
   LPSTR pCVar5;

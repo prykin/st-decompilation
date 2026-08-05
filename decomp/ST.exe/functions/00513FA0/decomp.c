@@ -11,7 +11,6 @@ void __thiscall HelpPanelTy::NextBut(HelpPanelTy *this)
   AnonPointee_HelpPanelTy_01B3 *pAVar1;
   uint uVar2;
   void *pvVar3;
-  code *pcVar4;
   HelpPanelTy *this_00;
   int errorCode;
   int *piVar5;

@@ -16,7 +16,6 @@ STAllPlayersC::GetTOBJList
 
 {
   int *piVar1;
-  code *pcVar2;
   bool bVar3;
   int iVar4;
   STAllPlayersC_GetTOBJList_param_2Enum SVar5;
@@ -28,7 +27,7 @@ STAllPlayersC::GetTOBJList
   int local_c;
   DArrayTy *local_8;
 
-  local_10 = g_packedRecords_A62x8[param_1].field6_0x9;
+  local_10 = g_packedRecords_A62x8[param_1].field3_0x9;
   /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
   local_c = *(int *)(local_10 + 0xc);
   local_58.previous = g_currentExceptionFrame;

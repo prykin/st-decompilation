@@ -10,7 +10,6 @@ int __thiscall STAllPlayersC::_ChangeMD(STAllPlayersC *this,int param_1,int *par
 {
   DArrayTy *array;
   dword dVar1;
-  code *pcVar2;
   int *piVar3;
   int iVar4;
   int iVar5;
@@ -40,7 +39,7 @@ int __thiscall STAllPlayersC::_ChangeMD(STAllPlayersC *this,int param_1,int *par
     iVar4 = _SubMDObject(piVar3,uVar6);
   }
   if ((((iVar4 == 1) &&
-       (array = (DArrayTy *)g_packedRecords_A62x8[(int)piVar3].field5_0x5, array != nullptr)
+       (array = (DArrayTy *)g_packedRecords_A62x8[(int)piVar3].field2_0x5, array != nullptr)
        ) && (dVar1 = array->count, dVar1 != 0)) && (uVar6 = 0, 0 < (int)dVar1)) {
     do {
       DArrayGetElement(array,uVar6,&param_2);

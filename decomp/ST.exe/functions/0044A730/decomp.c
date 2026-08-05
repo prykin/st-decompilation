@@ -10,7 +10,6 @@ STAllPlayersC::UnRegisterContainer
           (STAllPlayersC *this,uint param_1,AnonShape_0044A730_DBE673B2 *param_2)
 
 {
-  code *pcVar1;
   STAllPlayersC *this_00;
   int errorCode;
   STGameObjC *pSVar2;

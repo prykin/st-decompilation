@@ -14,7 +14,6 @@ void __thiscall HelpPanelTy::LinkAct(HelpPanelTy *this,int param_1,int param_2)
 {
   char cVar1;
   AnonPointee_HelpPanelTy_01B3 *pAVar2;
-  code *pcVar3;
   HelpPanelTy *pHVar4;
   int iVar5;
   int *piVar6;

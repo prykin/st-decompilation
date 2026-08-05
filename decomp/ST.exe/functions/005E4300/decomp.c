@@ -14,7 +14,6 @@ MTaskTy::PaintBut(MTaskTy *this,int *param_1,UINT param_2,int param_3,int param_
 
 {
   int *piVar1;
-  code *pcVar2;
   MTaskTy *pMVar3;
   undefined4 *puVar4;
   int iVar5;
@@ -73,13 +72,13 @@ MTaskTy::PaintBut(MTaskTy *this,int *param_1,UINT param_2,int param_3,int param_
         *(undefined1 *)puVar6 = 0xff;
         puVar6 = (undefined4 *)((int)puVar6 + 1);
       }
-      FUN_006c7610((AnonShape_006B5B10_E0D06CF1 *)*param_1,0,0,0,(uint)local_c,(uint)local_14,
+      FUN_006c7610((RecoveredSourceFamily_dibcopy *)*param_1,0,0,0,(uint)local_c,(uint)local_14,
                    local_10,0);
       if (param_4 != 0) {
-        FUN_006c7570((AnonShape_006B5B10_E0D06CF1 *)*param_1,0,2,2,local_c + -1,(int)(puVar4 + -1),
-                     iVar5,(byte)_local_8);
+        FUN_006c7570((RecoveredSourceFamily_dibcopy *)*param_1,0,2,2,local_c + -1,(int)(puVar4 + -1)
+                     ,iVar5,(byte)_local_8);
       }
-      FUN_006c7570((AnonShape_006B5B10_E0D06CF1 *)*param_1,0,0,0,local_c,(int)puVar4,iVar5,
+      FUN_006c7570((RecoveredSourceFamily_dibcopy *)*param_1,0,0,0,local_c,(int)puVar4,iVar5,
                    (byte)_local_8);
       pMVar3 = local_18;
       if (param_2 != 0) {

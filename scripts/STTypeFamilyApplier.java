@@ -98,7 +98,8 @@ public class STTypeFamilyApplier extends GhidraScript {
             }
             DataType proposed = resolve(row.get("proposed_type"));
             if (proposed == null &&
-                    "CONTEXTUAL_GENERATED_RECORD".equals(row.get("family_id")))
+                    ("CONTEXTUAL_GENERATED_RECORD".equals(row.get("family_id")) ||
+                     "SOURCE_FUNCTION_FAMILY".equals(row.get("family_id"))))
                 proposed = materializeContextualRecord(row, variable.getDataType());
             if (proposed == null) { conflict(row, target, "proposed type missing"); return; }
             if (variable.getDataType().isEquivalent(proposed)) {
@@ -134,9 +135,12 @@ public class STTypeFamilyApplier extends GhidraScript {
             desired.replaceAtOffset(component.getOffset(), component.getDataType(),
                 component.getLength(), component.getFieldName(), component.getComment());
         String sourceDescription = source.getDescription();
-        desired.setDescription((sourceDescription == null ? "" : sourceDescription + " ") +
-            MARKER + " Contextual generated record; promoted_from=" +
-            source.getPathName());
+        String inherited = sourceDescription == null ? "" : sourceDescription.trim();
+        if (!inherited.isBlank() && !inherited.endsWith(";")) inherited += ";";
+        String family = row.get("family_id");
+        desired.setDescription((inherited.isBlank() ? "" : inherited + " ") +
+            MARKER + " Generated " + family + " record; promoted_from=" +
+            source.getPathName() + "; [ST_SEMANTIC_ANCHOR]");
 
         DataType existing = dataTypes.getDataType(targetPath);
         if (existing == null) {
@@ -152,7 +156,8 @@ public class STTypeFamilyApplier extends GhidraScript {
             if (!(existing instanceof Structure structure)) return null;
             String description = structure.getDescription();
             boolean scriptOwned = description != null &&
-                (description.contains(MARKER + " Contextual generated record") ||
+                (description.contains(MARKER + " Generated ") ||
+                 description.contains(MARKER + " Contextual generated record") ||
                  description.contains("[STPointerShapeApplier]"));
             if (!structure.isEquivalent(desired)) {
                 if (!scriptOwned) return null;

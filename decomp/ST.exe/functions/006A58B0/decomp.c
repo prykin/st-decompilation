@@ -6,7 +6,6 @@ FUN_006a58b0(undefined4 *param_1,AnonShape_006A58B0_8049417A *param_2,
             AnonShape_006A58B0_CDE73679 *param_3)
 
 {
-  code *pcVar1;
   undefined4 uVar2;
   int iVar3;
   int iVar4;

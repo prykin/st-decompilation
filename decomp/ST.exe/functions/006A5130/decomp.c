@@ -5,7 +5,6 @@ undefined4 __cdecl FUN_006a5130(char *param_1,char param_2,int param_3)
 
 {
   char cVar1;
-  code *pcVar2;
   undefined4 uVar3;
   int iVar4;
   void *local_14;

@@ -62,7 +62,7 @@ FUN_004b0250(uint param_1,int param_2,int *param_3,int *param_4,int *param_5,int
   local_2c = Library::DKW::TBL::DArrayCreate(nullptr,10,4,10);
   local_18 = 0;
   do {
-    local_34 = (short *)(g_worldGrid.planeStride * local_18);
+    int scalar_local_34 = g_worldGrid.planeStride * local_18; /* split integer lifetime from pointer-typed SSA storage */
     local_14 = 0;
     /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
     uVar10 = g_worldGrid._0_4_;
@@ -70,11 +70,11 @@ FUN_004b0250(uint param_1,int param_2,int *param_3,int *param_4,int *param_5,int
       do {
         iVar15 = 0;
         if (0 < (short)uVar10) {
-          psVar11 = (short *)((short)uVar10 * local_14 + (int)local_34);
-          local_1c = (short *)((int)psVar11 * 8);
+          psVar11 = (short *)((short)uVar10 * local_14 + scalar_local_34);
+          int scalar_local_1c = (int)psVar11 * 8; /* split integer lifetime from pointer-typed SSA storage */
           local_8 = psVar11;
           do {
-            local_c = *(STFishC **)((int)local_1c + (int)g_worldGrid.cells);
+            local_c = *(STFishC **)(scalar_local_1c + (int)g_worldGrid.cells);
             if (local_c == nullptr) {
               sVar14 = (short)iVar15;
               if (((((sVar14 < 0) || ((short)uVar10 <= sVar14)) ||

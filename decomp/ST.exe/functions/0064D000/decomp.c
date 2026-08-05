@@ -8,7 +8,6 @@
 undefined4 * __thiscall AiEventClassTy::PrepareToSave(AiEventClassTy *this,uint *param_1)
 
 {
-  code *pcVar1;
   AiEventClassTy *pAVar2;
   int errorCode;
   AllocationRecord_0065CD10 *pAVar3;

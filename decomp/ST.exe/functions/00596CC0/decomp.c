@@ -16,7 +16,6 @@
 void __thiscall FSGSTy::PaintFSGS(FSGSTy *this,char param_1)
 
 {
-  code *pcVar1;
   FSGSTy *this_00;
   int errorCode;
   int iVar2;

@@ -18,7 +18,7 @@ ST3DSMAPContext::sub_00709470
   short sVar2;
   int iVar3;
   undefined1 *puVar4;
-  AnonShape_006B5B10_E0D06CF1 *pAVar5;
+  RecoveredSourceFamily_dibcopy *pRVar5;
   byte *pbVar6;
   int iVar7;
   int *piVar8;
@@ -115,13 +115,13 @@ ST3DSMAPContext::sub_00709470
   } while (iVar13 != 0);
   iVar7 = iVar7 + param_4 * 2;
   if ((0 < iVar7) && (iVar11 = iVar11 + param_4 * 2, 0 < iVar11)) {
-    pAVar5 = (AnonShape_006B5B10_E0D06CF1 *)FUN_006b50c0(iVar7,iVar11,8,0x100,&local_414,1);
-    uVar12 = pAVar5[1].field_0004;
+    pRVar5 = (RecoveredSourceFamily_dibcopy *)FUN_006b50c0(iVar7,iVar11,8,0x100,&local_414,1);
+    uVar12 = pRVar5[1].field_0004;
     if (uVar12 == 0) {
-      uVar12 = ((uint)pAVar5->field_000E * pAVar5->field_0004 + 0x1f >> 3 & 0x1ffffffc) *
-               pAVar5->field_0008;
+      uVar12 = ((uint)pRVar5->field_000E * pRVar5->field_0004 + 0x1f >> 3 & 0x1ffffffc) *
+               pRVar5->field_0008;
     }
-    pbVar6 = (byte *)FUN_006b4fa0((int *)pAVar5);
+    pbVar6 = (byte *)FUN_006b4fa0((int *)pRVar5);
     for (uVar9 = uVar12 >> 2; uVar9 != 0; uVar9 = uVar9 - 1) {
       *(uint *)pbVar6 = CONCAT22(CONCAT11(param_5,param_5),CONCAT11(param_5,param_5));
       pbVar6 = pbVar6 + 4;
@@ -135,14 +135,14 @@ ST3DSMAPContext::sub_00709470
       do {
         pbVar6 = (byte *)*piVar8;
         if (((pbVar6 != nullptr) && (0 < *(int *)(pbVar6 + 4))) && (0 < *(int *)(pbVar6 + 8))) {
-          FUN_006b84d0(pAVar5,0,param_4 - local_8,param_4 - param_3,pbVar6);
+          FUN_006b84d0(pRVar5,0,param_4 - local_8,param_4 - param_3,pbVar6);
         }
         piVar8 = piVar8 + -1;
         /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
         param_2 = param_2 + -1;
       } while (param_2 != 0);
     }
-    return (uint)pAVar5;
+    return (uint)pRVar5;
   }
   return 0;
 }

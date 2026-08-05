@@ -58,7 +58,6 @@ void __thiscall STAllPlayersC::ActivateTV(STAllPlayersC *this,char param_1,int p
   undefined4 uVar2;
   undefined4 uVar3;
   undefined4 uVar4;
-  code *pcVar5;
   int iVar6;
   undefined4 *puVar7;
   uint uVar8;
@@ -66,7 +65,7 @@ void __thiscall STAllPlayersC::ActivateTV(STAllPlayersC *this,char param_1,int p
   AnonPointee_TLOBaseTy_0607 *pAVar9;
 
   if (param_2 == 0) {
-    pAVar10 = (AnonPointee_TLOBaseTy_0607 *)&g_packedRecords_A62x8[param_1].field332_0x163;
+    pAVar10 = (AnonPointee_TLOBaseTy_0607 *)&g_packedRecords_A62x8[param_1].field96_0x163;
   }
   else {
     if (param_2 != 1) {
@@ -77,7 +76,7 @@ void __thiscall STAllPlayersC::ActivateTV(STAllPlayersC *this,char param_1,int p
       }
       STDebugBreak(); /* noreturn in standalone pseudocode */
     }
-    pAVar10 = (AnonPointee_TLOBaseTy_0607 *)&g_packedRecords_A62x8[param_1].field390_0x1b3;
+    pAVar10 = (AnonPointee_TLOBaseTy_0607 *)&g_packedRecords_A62x8[param_1].field149_0x1b3;
   }
   pAVar9 = (AnonPointee_TLOBaseTy_0607 *)(int)param_1;
   if (0 < objPtr) {

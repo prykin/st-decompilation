@@ -18,7 +18,6 @@ void __thiscall CampaignTy::NoneCampaign(CampaignTy *this)
   char cVar1;
   int iVar2;
   int iVar3;
-  code *pcVar4;
   CampaignTy *this_00;
   DWORD DVar5;
   int iVar6;

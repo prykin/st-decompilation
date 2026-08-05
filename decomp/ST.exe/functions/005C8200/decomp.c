@@ -53,8 +53,7 @@ SubmarineTitans::Recovered::HiddenThis::AnonReceiver_004EEFB0::FUN_005c8200
       thunk_FUN_005c7800();
       return;
     }
-    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-    (*(code *)local_c->field_0000->field_0028)();
+    (*local_c->vtable->PrepPlList)((SettMapSTy *)local_c);
     return;
   }
   if (local_c->field_1F3F != nullptr) {
@@ -163,8 +162,7 @@ SubmarineTitans::Recovered::HiddenThis::AnonReceiver_004EEFB0::FUN_005c8200
     this_00->field_1C5E = 0;
     CFsgsConnection::UpdateGame((CFsgsConnection *)&DAT_00802a90,4,&this_00->field_0x1a5f);
   }
-  /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-  (*(code *)this_00->field_0000->field_0028)();
+  (*this_00->vtable->PrepPlList)((SettMapSTy *)this_00);
   SettMapTy::PaintSettMap(this_00,'\0');
   puVar10 = this_00->field_1F60;
   memset(local_38, 0, 0x20); /* compiler bulk-zero initialization */

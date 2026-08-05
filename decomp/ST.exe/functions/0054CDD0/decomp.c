@@ -13,7 +13,6 @@ int FUN_0054cdd0(undefined4 *param_1,int param_2,undefined4 *param_3,int *param_
                 undefined4 param_6)
 
 {
-  code *pcVar1;
   int iVar2;
   int iVar3;
   InternalExceptionFrame local_58;

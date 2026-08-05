@@ -12,7 +12,6 @@
 int __thiscall HelpStringTy::GetMessage(HelpStringTy *this,STMessage *message)
 
 {
-  code *pcVar1;
   HelpStringTy *this_00;
   int iVar2;
   ccFntTy *pcVar3;

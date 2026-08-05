@@ -125,10 +125,9 @@ void __cdecl FUN_00645880(RecoveredRecord_STBoatC_00645880 *param_1)
   case 0xb5:
     uVar1 = param_1->field_0020;
     puVar5 = local_98;
-    memset(puVar5, 0, 0x38); /* compiler bulk-zero initialization */
+    memset(puVar5, 0, 0x3a); /* compiler bulk-zero initialization */
     puVar5 = (undefined4 *)((byte *)puVar5 + 0x38);
     uVar6 = param_1->field_001C;
-    *(undefined2 *)puVar5 = 0;
     local_98[1] = param_1->field_0000;
     local_7c = (int)(short)param_1->field_0012;
     local_80 = (int)(short)param_1->field_0010;

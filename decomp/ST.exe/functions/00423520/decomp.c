@@ -8,7 +8,6 @@
 uint __thiscall STGroupC::GetTOBJQty(STGroupC *this,int param_1)
 
 {
-  code *pcVar1;
   STGroupC *pSVar2;
   int iVar3;
   STGameObjC *pSVar4;

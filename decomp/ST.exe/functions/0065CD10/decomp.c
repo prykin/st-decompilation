@@ -16,7 +16,6 @@
 AllocationRecord_0065CD10 * __cdecl EventDataPack(AllocationRecord_0065CD10 *param_1,uint *param_2)
 
 {
-  code *pcVar1;
   int iVar2;
   AnonShape_0065CD10_CB9334E9 *pAVar3;
   AllocationRecord_0065CD10 *pAVar4;

@@ -17,7 +17,6 @@ CPanelTy::PaintDamageXY
           (CPanelTy *this,int param_1,int param_2,uint param_3,byte param_4,UINT param_5)
 
 {
-  code *pcVar1;
   CPanelTy *pCVar2;
   int iVar3;
   uint *puVar4;

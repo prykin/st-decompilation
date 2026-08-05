@@ -5,7 +5,7 @@ undefined4 FUN_004d88b0(char param_1,undefined4 param_2)
   if (param_1 == 0xff) {
     return 0;
   }
-  g_packedRecords_A62x8[param_1].field19_0x1f = param_2;
+  g_packedRecords_A62x8[param_1].field15_0x1f = param_2;
   return param_2;
 }
 

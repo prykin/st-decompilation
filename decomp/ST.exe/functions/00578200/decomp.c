@@ -8,7 +8,6 @@
 undefined4 __thiscall DebugSystemC::CreateSystemObjects(DebugSystemC *this)
 
 {
-  code *pcVar1;
   int errorCode;
   int iVar2;
   undefined4 uVar3;

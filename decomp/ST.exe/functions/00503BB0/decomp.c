@@ -16,7 +16,6 @@ void __thiscall CPanelTy::SetCmdBoat(CPanelTy *this,byte param_1)
 
 {
   byte bVar1;
-  code *pcVar2;
   bool bVar3;
   CPanelTy *this_00;
   int iVar4;

@@ -15,7 +15,6 @@
 void __thiscall STGroupBoatC::SetPatrolCmdToBoat(STGroupBoatC *this)
 
 {
-  code *pcVar1;
   DArrayTy *array;
   STGameObjC *pSVar2;
   int iVar3;

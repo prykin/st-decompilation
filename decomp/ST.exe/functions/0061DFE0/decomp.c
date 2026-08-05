@@ -7,7 +7,7 @@
 void __fastcall FUN_0061dfe0(STLightC *param_1)
 
 {
-  int *piVar1;
+  uint *puVar1;
   uint uVar2;
   STLightC_field_00A3DArray *pSVar3;
   int iVar4;
@@ -28,16 +28,16 @@ void __fastcall FUN_0061dfe0(STLightC *param_1)
         if ((bVar6) &&
            (piVar5 = (int *)((int)&pSVar3->data->field_0000 + pSVar3->elementSize * local_8),
            piVar5 != nullptr)) {
-          piVar1 = (int *)((int)piVar5 + 0x26);
+          puVar1 = (uint *)((int)piVar5 + 0x26);
           ST3DSMAPContext::sub_006E88C0
-                    (g_sT3DSMAPContext_00807598,piVar1,piVar5[1],piVar5[2],piVar5[3],piVar5[4],
-                     piVar5[5],piVar5[6],piVar5[7],*(byte *)(piVar5 + 8),
+                    (g_sT3DSMAPContext_00807598,(int *)puVar1,piVar5[1],piVar5[2],piVar5[3],
+                     piVar5[4],piVar5[5],piVar5[6],piVar5[7],*(byte *)(piVar5 + 8),
                      *(undefined4 *)((int)piVar5 + 0x21),iVar4,0xffffffff);
-          if (*(undefined1 *)((int)piVar5 + 0x2f) == '\0') {
-            Library::Ourlib::ST3DSMAP::SprHide(g_sT3DSMAPContext_00807598,*piVar1);
+          if (*(byte *)((int)piVar5 + 0x2f) == 0) {
+            Library::Ourlib::ST3DSMAP::SprHide(g_sT3DSMAPContext_00807598,*puVar1);
           }
           else {
-            Library::Ourlib::ST3DSMAP::SprShow(g_sT3DSMAPContext_00807598,*piVar1,0);
+            Library::Ourlib::ST3DSMAP::SprShow(g_sT3DSMAPContext_00807598,*puVar1,0);
           }
         }
         pSVar3 = param_1->field_00A3;

@@ -24,7 +24,6 @@
 void __thiscall STBoatC::CmdToObj(STBoatC *this,STBoatC_CmdToObj_param_1Enum param_1,uint *param_2)
 
 {
-  code *pcVar1;
   int iVar2;
   uint *puVar3;
 

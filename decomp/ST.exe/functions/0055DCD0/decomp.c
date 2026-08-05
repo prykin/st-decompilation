@@ -14,7 +14,6 @@ void __cdecl
 SetPalette(undefined4 *param_1,int *param_2,cMf32 *param_3,char *param_4,int param_5,int param_6)
 
 {
-  code *pcVar1;
   int errorCode;
   int iVar2;
   undefined4 local_44c [256];

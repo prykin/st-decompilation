@@ -16,7 +16,6 @@ void __thiscall StartSystemTy::LoadMapData(StartSystemTy *this,cMf32 *param_1,ch
   ushort **value;
   ccFntTy *pcVar1;
   MMsgTy *this_00;
-  code *pcVar2;
   StartSystemTy *this_01;
   int iVar3;
   ushort *puVar4;

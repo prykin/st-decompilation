@@ -8,7 +8,6 @@
 uint __thiscall STGroupC::AddObj(STGroupC *this,uint param_1,int param_2)
 
 {
-  code *pcVar1;
   STGroupC *pSVar2;
   int errorCode;
   STGameObjC *this_00;

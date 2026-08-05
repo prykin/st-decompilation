@@ -9,7 +9,6 @@ void __thiscall SIDTy::InitSID(SIDTy *this)
 
 {
   uint *puVar1;
-  code *pcVar2;
   SIDTy *this_00;
   int iVar3;
   int local_EAX_181;

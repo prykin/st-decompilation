@@ -10,7 +10,6 @@ void __thiscall FSGSTy::ConnectProc(FSGSTy *this,int param_1,int param_2)
 {
   char cVar1;
   ushort *puVar2;
-  code *pcVar3;
   FSGSTy *pFVar4;
   int iVar5;
   undefined4 *puVar6;

@@ -9,7 +9,6 @@ void __thiscall
 FrmPanelTy::PaintBut(FrmPanelTy *this,AnonShape_005105E0_BBFE3E3B *param_1,char *param_2)
 
 {
-  code *pcVar1;
   FrmPanelTy *pFVar2;
   int iVar3;
   LPSTR text;
@@ -63,7 +62,8 @@ FrmPanelTy::PaintBut(FrmPanelTy *this,AnonShape_005105E0_BBFE3E3B *param_1,char 
   piVar5 = nullptr;
   text = FUN_006f2c00(param_2,1,local_8);
   local_c = cMf32::RecGet(g_cMf32_00806790,1,text,piVar5,iVar3);
-  DibPut((AnonShape_006B5B10_E0D06CF1 *)pFVar2->field_0068,local_18,local_10,'\x01',(byte *)local_c);
+  DibPut((RecoveredSourceFamily_dibcopy *)pFVar2->field_0068,local_18,local_10,'\x01',
+         (byte *)local_c);
   cMf32::RecMemFree(g_cMf32_00806790,(uint *)&local_c);
   Library::DKW::DDX::FUN_006b3640
             ((int *)g_ddxContext_008075A8,pFVar2->field_0060,0xffffffff,pFVar2->field_003C,

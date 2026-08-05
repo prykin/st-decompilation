@@ -12,9 +12,8 @@
 void __thiscall CPanelTy::PaintLife(CPanelTy *this,int param_1)
 
 {
-  code *pcVar1;
   CPanelTy *this_00;
-  AnonShape_006B5B10_E0D06CF1 *pAVar2;
+  RecoveredSourceFamily_dibcopy *pRVar2;
   byte bVar3;
   int iVar4;
   int iVar5;
@@ -23,17 +22,17 @@ void __thiscall CPanelTy::PaintLife(CPanelTy *this,int param_1)
   UINT UVar8;
   InternalExceptionFrame local_5c;
   CPanelTy *local_18;
-  AnonShape_006B5B10_E0D06CF1 *local_14;
+  RecoveredSourceFamily_dibcopy *local_14;
   uint local_10;
   uint local_c;
   char local_5;
 
   if (param_1 == 0) {
-    local_14 = (AnonShape_006B5B10_E0D06CF1 *)this->field_019C;
+    local_14 = (RecoveredSourceFamily_dibcopy *)this->field_019C;
     bVar3 = this->field_0C6C;
   }
   else {
-    local_14 = (AnonShape_006B5B10_E0D06CF1 *)this->field_0184;
+    local_14 = (RecoveredSourceFamily_dibcopy *)this->field_0184;
     bVar3 = this->field_0B7E;
   }
   local_c = STReplaceLowByte((uint32_t)(local_c), (uint8_t)(bVar3));
@@ -48,7 +47,7 @@ void __thiscall CPanelTy::PaintLife(CPanelTy *this,int param_1)
     g_currentExceptionFrame = &local_5c;
     local_18 = this;
     iVar4 = Library::MSVCRT::__setjmp3(local_5c.jumpBuffer,0);
-    pAVar2 = local_14;
+    pRVar2 = local_14;
     this_00 = local_18;
     if (iVar4 == 0) {
       bVar3 = (byte)local_c;
@@ -73,7 +72,7 @@ void __thiscall CPanelTy::PaintLife(CPanelTy *this,int param_1)
         UVar8 = 0x36b1;
         uVar7 = (uint)(byte)(100 - bVar3);
       }
-      PaintDamageXY(this_00,(int)pAVar2,5,0x27,(byte)uVar7,UVar8);
+      PaintDamageXY(this_00,(int)pRVar2,5,0x27,(byte)uVar7,UVar8);
       g_currentExceptionFrame = local_5c.previous;
       return;
     }

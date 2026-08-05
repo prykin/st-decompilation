@@ -8,7 +8,6 @@
 void __thiscall cLoadingTy::ShowScr(cLoadingTy *this,int param_1,int param_2)
 
 {
-  code *pcVar1;
   cLoadingTy *pcVar2;
   int iVar3;
   int iVar4;

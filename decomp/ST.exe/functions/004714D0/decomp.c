@@ -18,7 +18,6 @@
 int __thiscall STBoatC::BackToDok(STBoatC *this,int *param_1)
 
 {
-  code *pcVar1;
   undefined2 uVar2;
   uint uVar3;
   int iVar4;

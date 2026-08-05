@@ -12,7 +12,6 @@
 void __thiscall SettMapMTy::SendPlList(SettMapMTy *this,int param_1)
 
 {
-  code *pcVar1;
   char cVar2;
   char cVar3;
   char cVar4;

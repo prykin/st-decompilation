@@ -1,4 +1,5 @@
 kind	target	status	detail
+replace	/SubmarineTitans/Recovered/PointerShapes/AnonShape_006B5B10_E0D06CF1	replaced	/SubmarineTitans/Recovered/PointerShapes/RecoveredSourceFamily_dibcopy
 retain	/SubmarineTitans/Recovered/ClassPointees/AnonPointee_AiEventClassTy_0000	disabled	apply=0
 retain	/SubmarineTitans/Recovered/ClassPointees/AnonPointee_AiFltClassTy_0223	disabled	apply=0
 retain	/SubmarineTitans/Recovered/ClassPointees/AnonPointee_AiFltClassTy_022F	disabled	apply=0
@@ -1026,7 +1027,6 @@ retain	/SubmarineTitans/Recovered/PointerShapes/AnonShape_006B5480_2C1D4FBF	disa
 retain	/SubmarineTitans/Recovered/PointerShapes/AnonShape_006B5570_4D68B99C	disabled	apply=0
 retain	/SubmarineTitans/Recovered/PointerShapes/AnonShape_006B5A50_BD82F60D	disabled	apply=0
 retain	/SubmarineTitans/Recovered/PointerShapes/AnonShape_006B5A50_C145E640	disabled	apply=0
-retain	/SubmarineTitans/Recovered/PointerShapes/AnonShape_006B5B10_E0D06CF1	disabled	apply=0
 retain	/SubmarineTitans/Recovered/PointerShapes/AnonShape_006B6530_C4BC1053	disabled	apply=0
 retain	/SubmarineTitans/Recovered/PointerShapes/AnonShape_006B7190_816EEFBC	disabled	apply=0
 retain	/SubmarineTitans/Recovered/PointerShapes/AnonShape_006B7830_769CA2DF	disabled	apply=0
@@ -1255,6 +1255,8 @@ retain	/SubmarineTitans/Recovered/PointerShapes/AnonShape_00753B40_7E7955C3	disa
 retain	/SubmarineTitans/Recovered/PointerShapes/AnonShape_00753B80_E259A731	disabled	apply=0
 retain	/SubmarineTitans/Recovered/PointerShapes/AnonShape_00753C80_4C8E695D	disabled	apply=0
 retain	/SubmarineTitans/Recovered/PointerShapes/AnonShape_00753CE0_1943F9C2	disabled	apply=0
+retain	/SubmarineTitans/Recovered/PointerShapes/AnonShape_00753FD0_4E1BB8DD	disabled	apply=0
+retain	/SubmarineTitans/Recovered/PointerShapes/AnonShape_00754185_34BF31BE	disabled	apply=0
 retain	/SubmarineTitans/Recovered/PointerShapes/AnonShape_00754390_3E94CBF5	disabled	apply=0
 retain	/SubmarineTitans/Recovered/PointerShapes/AnonShape_007543F0_E9DD5DAA	disabled	apply=0
 retain	/SubmarineTitans/Recovered/PointerShapes/AnonShape_00754AF0_86EFDBFA	disabled	apply=0

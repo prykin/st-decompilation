@@ -13,7 +13,6 @@
 void __thiscall SettMapTy::PaintSC(SettMapTy *this)
 
 {
-  code *pcVar1;
   SettMapTy *pSVar2;
   byte bVar3;
   int errorCode;
@@ -31,8 +30,8 @@ void __thiscall SettMapTy::PaintSC(SettMapTy *this)
   errorCode = Library::MSVCRT::__setjmp3(local_4c.jumpBuffer,0);
   if (errorCode == 0) {
     if ((DAT_008087b6 != 0) && (g_startSystem_0081176C->field_02F4 != nullptr)) {
-      FUN_006e83f0((AnonShape_006B5B10_E0D06CF1 *)g_startSystem_0081176C->field_02F0,0x14,0x14,0x8b,
-                   (uint)DAT_008087c2);
+      FUN_006e83f0((RecoveredSourceFamily_dibcopy *)g_startSystem_0081176C->field_02F0,0x14,0x14,
+                   0x8b,(uint)DAT_008087c2);
       FUN_006b5440(g_startSystem_0081176C->field_02F0,0,0x14,0x14,
                    (uint)g_startSystem_0081176C->field_02F4,0,0);
       pSVar2 = local_8;

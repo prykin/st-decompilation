@@ -1,10 +1,10 @@
 ST cross-function type families
 
-Anonymous types audited: 1397
+Anonymous types audited: 1399
 Exact family members: 486
-Targets: 2
+Targets: 26
 Named anonymous matches: 205
 Automatic named matches: 0
-Contextual generated records: 0
-Automatic targets: 0
+Contextual generated records: 1
+Automatic targets: 24
 Note: anonymous-to-anonymous geometry matches are review-only unless one generated HiddenThis member uniquely owns a multi-function receiver namespace. Generated field_XXXX names are not semantic evidence. Exact named layouts are automatic only for evidence-qualified semantic anchors; [ST_VIEW_ONLY] types are never anchors. Anonymous pointer shapes may also consolidate when exact direct-call dataflow links the same pointer across their boundaries, every complete layout agrees, all uses have one owner, and no global/field aliases exist.

@@ -11,7 +11,6 @@ ProdPanelTy::CreateSlider
           int param_6,undefined4 param_7,undefined4 param_8)
 
 {
-  code *pcVar1;
   ProdPanelTy *this_00;
   int iVar2;
   LPSTR pCVar3;

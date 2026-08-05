@@ -30,9 +30,8 @@ FUN_004e99e0(void *this,undefined4 param_1,undefined4 param_2,undefined4 param_3
 
   if (*(int *)((int)this + 0x4f8) == 0) {
     puVar3 = &local_74;
-    memset(puVar3, 0, 0x6e); /* compiler bulk-zero initialization */
+    memset(puVar3, 0, 0x6f); /* compiler bulk-zero initialization */
     puVar3 = (undefined4 *)((byte *)puVar3 + 0x6c);
-    *(undefined1 *)((int)puVar3 + 2) = 0;
     local_70 = *(undefined4 *)((int)this + 0x24);
     local_48 = param_1;
     local_3c = (uint)*(ushort *)((int)this + 0x30);

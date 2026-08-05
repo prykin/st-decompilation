@@ -13,7 +13,6 @@ int __thiscall STJumpMineC::GetMessage(STJumpMineC *this,STMessage *message)
 
 {
   STMessageId SVar1;
-  code *pcVar2;
   STJumpMineC *this_00;
   byte bVar3;
   int iVar4;

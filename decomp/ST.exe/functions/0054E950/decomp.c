@@ -12,7 +12,6 @@
 void __thiscall STPlaySystemC::AddToRep(STPlaySystemC *this,undefined4 *param_1,uint param_2)
 
 {
-  code *pcVar1;
   STPlaySystemC *pSVar2;
   int iVar3;
   void *pvVar4;

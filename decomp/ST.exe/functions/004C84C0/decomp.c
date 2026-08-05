@@ -32,7 +32,6 @@ undefined4 __fastcall FUN_004c84c0(TLOBaseTy *param_1)
 {
   int iVar1;
   int iVar2;
-  code *pcVar3;
   bool bVar4;
   byte bVar5;
   int iVar6;

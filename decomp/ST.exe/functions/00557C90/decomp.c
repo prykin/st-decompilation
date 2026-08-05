@@ -9,7 +9,6 @@ void __thiscall VisibleClassTy::Init(VisibleClassTy *this)
 
 {
   undefined4 uVar1;
-  code *pcVar2;
   ST3DSMAPContext *pSVar3;
   VisibleClassTy *this_00;
   int iVar4;

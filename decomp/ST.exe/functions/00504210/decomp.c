@@ -8,7 +8,6 @@
 void __thiscall CPanelTy::UpdateStackPanel(CPanelTy *this,uint param_1)
 
 {
-  code *pcVar1;
   undefined1 uVar2;
   undefined1 uVar3;
   undefined1 uVar4;

@@ -166,11 +166,11 @@ LAB_00613c8b:
   if (((*(int *)((int)this + 0x2d9) == 0) && (*(int *)((int)this + 0x278) != 0)) && (local_14 != 0))
   {
     local_8 = local_8 + (*(short *)((int)this + 0x26c) * local_14) / 0x33;
-    local_c = (undefined4 *)((int)local_c + (*(short *)((int)this + 0x26e) * local_14) / 0x33);
+    int scalar_local_c = (int)local_c + (*(short *)((int)this + 0x26e) * local_14) / 0x33; /* split integer lifetime from pointer-typed SSA storage */
     iVar6 = iVar6 + (*(short *)((int)this + 0x270) * local_14) / 0x33;
   }
   *param_1 = local_8;
-  *param_2 = (int)local_c;
+  *param_2 = scalar_local_c;
   *param_3 = iVar6;
   return 1;
 }

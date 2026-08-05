@@ -8,7 +8,6 @@
 void __thiscall HelpPanelTy::CreateList(HelpPanelTy *this)
 
 {
-  code *pcVar1;
   HelpPanelTy *this_00;
   DArrayTy *pDVar2;
   int iVar3;
@@ -81,7 +80,7 @@ void __thiscall HelpPanelTy::CreateList(HelpPanelTy *this)
       StartSystemTy::sub_006E56B0(local_8->field_000C,local_8->field_019C);
     }
     Library::DKW::WGR::FUN_006b55f0
-              ((AnonShape_006B5B10_E0D06CF1 *)this_00->field_0068,0,0x21,0x16,
+              ((RecoveredSourceFamily_dibcopy *)this_00->field_0068,0,0x21,0x16,
                (byte *)this_00->field_01DC,0,0x21,0x16,0x19c,0x118);
     local_520[0] = 0;
     local_520[2] = this_00->field_003C + 0x21;

@@ -10,7 +10,6 @@ HelpPanelTy::AddLinks(HelpPanelTy *this,int *param_1,char param_2,int param_3,in
 
 {
   char cVar1;
-  code *pcVar2;
   HelpPanelTy *this_00;
   int iVar3;
   uint *puVar4;
@@ -76,7 +75,7 @@ LAB_00515ee1:
             local_14 = 0;
             *param_1 = *param_1 + 0xf;
           }
-          DibPut((AnonShape_006B5B10_E0D06CF1 *)this_00->field_0218,0x50,*param_1 + 1,'\x01',
+          DibPut((RecoveredSourceFamily_dibcopy *)this_00->field_0218,0x50,*param_1 + 1,'\x01',
                  (byte *)this_00->field_024C);
           local_24 = *(uint *)sizeHelp_exref;
           if (local_24 != 0) {

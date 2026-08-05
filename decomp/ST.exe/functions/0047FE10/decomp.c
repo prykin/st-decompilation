@@ -16,7 +16,6 @@ int __thiscall STBoatC::Scout(STBoatC *this,int param_1)
   short sVar2;
   short sVar3;
   undefined2 uVar4;
-  code *pcVar5;
   int iVar6;
   STGroupBoatC *pSVar7;
   /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */

@@ -14,7 +14,6 @@ ComboTy::OutBmpProc(ComboTy *this,DDXContext *param_1,undefined4 param_2,undefin
                    int param_4,int param_5,undefined4 param_6,undefined4 param_7,int param_8)
 
 {
-  code *pcVar1;
   AnonShape_005939E0_9F78A8B0 *pAVar2;
   int iVar3;
   int iVar4;

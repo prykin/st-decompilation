@@ -8,7 +8,6 @@
 uint STAllPlayersC::GetNInTmp(int param_1,int param_2)
 
 {
-  code *pcVar1;
   int iVar2;
   uint uVar3;
 

@@ -15,7 +15,6 @@ STBoatC::PrepareForLoading
 
 {
   short sVar1;
-  code *pcVar2;
   int iVar3;
 
   if ((AnonShape_005EFAE0_B406B78B *)param_1 == this->field_05A2) {

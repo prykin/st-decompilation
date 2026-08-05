@@ -11,7 +11,6 @@
 undefined4 __thiscall STAllPlayersC::_AddMDPairs(STAllPlayersC *this,char param_1,uint param_2)
 
 {
-  code *pcVar1;
   STAllPlayersC *pSVar2;
   byte bVar3;
   int iVar4;
@@ -81,7 +80,7 @@ undefined4 __thiscall STAllPlayersC::_AddMDPairs(STAllPlayersC *this,char param_
     return local_10;
   }
   if (0 < local_4c) {
-    piVar10 = &g_packedRecords_A62x8[param_1].field9_0xf;
+    piVar10 = &g_packedRecords_A62x8[param_1].field5_0xf;
     iVar4 = local_4c;
     do {
       if (*piVar10 == 0) {

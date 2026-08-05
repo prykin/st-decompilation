@@ -12,7 +12,6 @@ SettMapMTy::AddPlayerList(SettMapMTy *this,int param_1,uint param_2,int param_3,
   byte bVar1;
   SettMapMTy_field_1F84DArray *pSVar2;
   uint uVar3;
-  code *pcVar4;
   bool bVar5;
   SettMapMTy *this_00;
   int errorCode;

@@ -9,7 +9,6 @@
 undefined4 __fastcall FUN_004c6d00(STJellyGunC *param_1)
 
 {
-  code *pcVar1;
   short sVar2;
   int iVar3;
   undefined4 uVar4;

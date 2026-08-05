@@ -13,7 +13,6 @@
 void __thiscall STBoatC::ChangeActivity(STBoatC *this,int param_1)
 
 {
-  code *pcVar1;
   STBoatC *this_00;
   int iVar2;
   int iVar3;

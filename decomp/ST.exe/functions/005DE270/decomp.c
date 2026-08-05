@@ -11,7 +11,6 @@ void __thiscall StartSystemTy::CreateChatView(StartSystemTy *this)
   ccFntTy *pcVar1;
   undefined4 uVar2;
   undefined4 uVar3;
-  code *pcVar4;
   StartSystemTy *this_00;
   int iVar5;
   int iVar6;

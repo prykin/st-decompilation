@@ -12,7 +12,6 @@
 void __thiscall CampaignTy::PaintCampaign(CampaignTy *this)
 
 {
-  code *pcVar1;
   CampaignTy *pCVar2;
   uint errorCode;
   uint *puVar3;

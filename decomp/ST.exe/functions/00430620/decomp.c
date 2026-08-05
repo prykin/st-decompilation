@@ -8,7 +8,6 @@
 undefined4 __thiscall STAllPlayersC::IsTorpLive(STAllPlayersC *this,short param_1,int param_2)
 
 {
-  code *pcVar1;
   int iVar2;
   int iVar3;
   undefined4 uVar4;

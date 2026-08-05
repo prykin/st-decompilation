@@ -16,7 +16,6 @@ void __thiscall BldLabPanelTy::Update(BldLabPanelTy *this)
 
 {
   BldLabPanelTy_field_027ADArray **ppBVar1;
-  code *pcVar2;
   BldLabPanelTy *this_00;
   int errorCode;
   int iVar3;

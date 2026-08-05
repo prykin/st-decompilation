@@ -13,7 +13,6 @@ CPanelTy::OutProc(CPanelTy *this,DDXContext *param_1,undefined4 param_2,undefine
                  int param_4,int param_5,undefined4 param_6,undefined4 param_7,BITMAPINFO *param_8)
 
 {
-  code *pcVar1;
   int errorCode;
   int iVar2;
   InternalExceptionFrame local_48;

@@ -16,7 +16,6 @@ int __thiscall STBoatC::SetMine(STBoatC *this,int *param_1)
   short sVar1;
   short sVar2;
   short sVar3;
-  code *pcVar4;
   int iVar5;
   STBoatCVTable *pSVar6;
   undefined2 arg_2;

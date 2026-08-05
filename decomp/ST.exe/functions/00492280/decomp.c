@@ -9,7 +9,6 @@ void __thiscall STBoatC::CancelLoading(STBoatC *this,int param_1)
 
 {
   STBoatC_field_045DState SVar1;
-  code *pcVar2;
   int iVar3;
 
   SVar1 = this->field_045D;

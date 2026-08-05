@@ -12,7 +12,6 @@
 void __thiscall MReportTy::SetCtrl(MReportTy *this,int param_1)
 
 {
-  code *pcVar1;
   MReportTy *pMVar2;
   int iVar3;
   undefined1 *puVar4;

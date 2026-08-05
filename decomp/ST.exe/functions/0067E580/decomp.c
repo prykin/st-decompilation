@@ -12,7 +12,6 @@
 LPSTR __cdecl GetAssistantNameDB(cMf32 *param_1)
 
 {
-  code *pcVar1;
   undefined *text;
   int iVar2;
   LPSTR pCVar3;

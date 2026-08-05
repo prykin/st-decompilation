@@ -13,11 +13,9 @@ uint * AiMinesDistribTgts(uint param_1,int param_2,int param_3,int param_4,int p
   byte bVar1;
   byte bVar2;
   dword dVar3;
-  code *pcVar4;
   int iVar5;
   byte *pbVar6;
   DArrayTy *pDVar7;
-  uint *puVar8;
   int iVar9;
   byte *pbVar10;
   int iVar11;
@@ -313,12 +311,12 @@ LAB_00565c6c:
       local_94[local_8 + 5] = pDVar7->count;
       local_20 = local_1c;
       if (0 < local_28) {
-        local_18 = (DArrayTy *)((int)local_2c * 8);
+        int scalar_local_18 = (int)local_2c * 8; /* split integer lifetime from pointer-typed SSA storage */
         do {
           /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-          iVar5 = *(int *)((int)local_18 + 0x10 + (int)local_14) + local_38;
+          iVar5 = *(int *)(scalar_local_18 + 0x10 + (int)local_14) + local_38;
           /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-          iVar9 = *(int *)((int)local_18 + 0xc + (int)local_14) + local_38;
+          iVar9 = *(int *)(scalar_local_18 + 0xc + (int)local_14) + local_38;
           local_4c = iVar5;
           if (iVar9 <= iVar5) {
             do {

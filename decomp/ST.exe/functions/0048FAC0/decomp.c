@@ -8,7 +8,6 @@
 undefined4 * __thiscall STBoatC::SaveBoatData(STBoatC *this,int *param_1)
 
 {
-  code *pcVar1;
   int iVar2;
   undefined4 *puVar3;
   STBoatC *pSVar4;

@@ -8,7 +8,6 @@
 undefined4 __thiscall STGroupBoatC::GrpMove(STGroupBoatC *this,int param_1)
 
 {
-  code *pcVar1;
   STGroupBoatC *this_00;
   int iVar2;
   DArrayTy *array;

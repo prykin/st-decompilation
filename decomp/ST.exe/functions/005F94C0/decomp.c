@@ -8,7 +8,6 @@
 int __thiscall STColl3C::CreateAddSpr(STColl3C *this)
 
 {
-  code *pcVar1;
   int iVar2;
   ushort *puVar3;
   int iVar4;

@@ -9,7 +9,6 @@ undefined4 __thiscall
 STAllPlayersC::UnRegisterBlot(STAllPlayersC *this,uint param_1,AnonShape_0044AA20_1EE9340C *param_2)
 
 {
-  code *pcVar1;
   STAllPlayersC *this_00;
   int errorCode;
   STGameObjC *pSVar2;

@@ -4,10 +4,14 @@
    006D8A60 @ 006CF5EF | 006CEF60 -> 006DA080 @ 006CF4D7
 
    [STPrototypeApplier] Propagated parameter 4.
-   Evidence: 006B3120 -> 006CEF60 @ 006B3384 */
+   Evidence: 006B3120 -> 006CEF60 @ 006B3384
+
+   [STTypeFamilyApplier] SOURCE_FUNCTION_FAMILY.
+   Evidence: one script-owned pointer shape is anchored by one library source basename, multiple
+   semantic function names, and exact first-argument call flow */
 
 int FUN_006cef60(int *param_1,AnonShape_006D86E0_D6D32C07 *param_2,
-                AnonShape_006B5B10_E0D06CF1 *param_3,int param_4,
+                RecoveredSourceFamily_dibcopy *param_3,int param_4,
                 AnonShape_006D86E0_768BB816 *param_5,char *param_6,int param_7,int param_8,
                 int *param_9,int param_10,int param_11,uint param_12,undefined1 *param_13)
 

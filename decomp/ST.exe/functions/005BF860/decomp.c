@@ -10,7 +10,6 @@ void __thiscall MReportTy::NoneMReport(MReportTy *this)
 {
   char cVar1;
   AnonPointee_MReportTy_0073 *pAVar2;
-  code *pcVar3;
   bool bVar4;
   MTaskTy *this_00;
   int iVar5;

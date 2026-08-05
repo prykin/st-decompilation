@@ -33,7 +33,6 @@ StartServTy::WrTextDDX
           uint *resourceString,uint param_7,uint param_8,ccFntTy *param_9,uint param_10)
 
 {
-  code *pcVar1;
   int iVar2;
   InternalExceptionFrame local_50;
   BITMAPINFO *local_c;

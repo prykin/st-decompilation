@@ -1,8 +1,12 @@
 
 /* [STTypeFamilyApplier] EXACT_ANONYMOUS_LAYOUT.
-   Evidence: exact anonymous structure fingerprint shared across functions */
+   Evidence: exact anonymous structure fingerprint shared across functions
 
-int FUN_00749841(AnonShape_006B5B10_E0D06CF1 *param_1)
+   [STTypeFamilyApplier] SOURCE_FUNCTION_FAMILY.
+   Evidence: one script-owned pointer shape is anchored by one library source basename, multiple
+   semantic function names, and exact first-argument call flow */
+
+int FUN_00749841(RecoveredSourceFamily_dibcopy *param_1)
 
 {
   int iVar1;

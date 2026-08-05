@@ -12,7 +12,6 @@
 void __thiscall CPanelTy::InitCPanel(CPanelTy *this)
 
 {
-  code *pcVar1;
   CPanelTy *this_00;
   byte bVar2;
   int iVar3;

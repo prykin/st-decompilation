@@ -11,7 +11,6 @@ int __thiscall STBoatC::Annih(STBoatC *this,undefined4 *param_1)
   uint uVar1;
   STWorldObject *pSVar2;
   undefined4 uVar3;
-  code *pcVar4;
   undefined2 uVar5;
   int iVar6;
   uint uVar7;

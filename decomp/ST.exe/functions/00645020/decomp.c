@@ -8,7 +8,6 @@
 int __thiscall STTorpC::IsDangerous(STTorpC *this,int param_1,uint *param_2)
 
 {
-  code *pcVar1;
   dword dVar2;
   int iVar3;
   int iVar4;

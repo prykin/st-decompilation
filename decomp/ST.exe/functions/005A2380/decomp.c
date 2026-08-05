@@ -10,7 +10,6 @@ void __thiscall FSGSTy::AddPlayer(FSGSTy *this,undefined4 *param_1)
 {
   byte bVar1;
   DArrayTy *array;
-  code *pcVar2;
   FSGSTy *this_00;
   int iVar3;
   undefined4 uVar4;

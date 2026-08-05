@@ -8,7 +8,6 @@
 void __thiscall SIDTy::DoneSID(SIDTy *this)
 
 {
-  code *pcVar1;
   SIDTy *pSVar2;
   int errorCode;
   int iVar3;

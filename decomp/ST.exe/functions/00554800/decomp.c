@@ -14,7 +14,6 @@ cLoadingTy::InitParam
   ushort *puVar1;
   ccFntTy *pcVar2;
   undefined4 uVar3;
-  code *pcVar4;
   cLoadingTy *pcVar5;
   int iVar6;
   byte *puVar7;

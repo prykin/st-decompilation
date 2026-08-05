@@ -26,7 +26,6 @@ void __thiscall SettMapMTy::PrepPlList(SettMapMTy *this)
   char cVar1;
   SettMapMTy_field_1E26State SVar2;
   byte bVar3;
-  code *pcVar4;
   int iVar5;
   SettMapMTy_field_1F84DArray *pSVar6;
   char *pcVar7;

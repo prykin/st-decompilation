@@ -10,7 +10,6 @@ int __thiscall AiPlrClassTy::CloseAllTact(AiPlrClassTy *this)
 {
   uint index;
   DArrayTy *pDVar1;
-  code *pcVar2;
   AiPlrClassTy *pAVar3;
   int iVar4;
   undefined4 *puVar5;

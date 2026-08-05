@@ -2,7 +2,7 @@
 int FUN_004357b0(char playerId,AiPlrClassTy *aiPlayer)
 
 {
-  *(AiPlrClassTy **)&g_packedRecords_A62x8[playerId].field_0x1 = aiPlayer;
+  g_packedRecords_A62x8[playerId].field1_0x1 = (int)aiPlayer;
   return 0;
 }
 

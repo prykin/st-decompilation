@@ -15,7 +15,6 @@ int __thiscall STFishC::GetMessage(STFishC *this,STMessage *message)
 {
   undefined1 *puVar1;
   STMessageId SVar2;
-  code *pcVar3;
   STSprGameObjC *this_00;
   int iVar4;
   int iVar5;
@@ -121,7 +120,7 @@ int __thiscall STFishC::GetMessage(STFishC *this,STMessage *message)
       g_currentExceptionFrame = local_80.previous;
       return 0;
     }
-    puVar8 = (byte *)&this_00->field_0x243;
+    puVar8 = (byte *)((int)&this_00->field_0242 + 1);
     pAVar11 = local_c;
     memmove(pAVar11, puVar8, 0x28); /* compiler REP MOVS byte copy */
     *(undefined4 *)&local_c->field_0xc = 2;
@@ -177,7 +176,7 @@ int __thiscall STFishC::GetMessage(STFishC *this,STMessage *message)
   if (1 < (uint)local_20[3]) {
     if (local_20[3] == 2) {
       puVar8 = (byte *)(local_20);
-      puVar10 = (byte *)&this_00->field_0x243;
+      puVar10 = (byte *)((int)&this_00->field_0242 + 1);
       memmove(puVar10, puVar8, 0x28); /* compiler REP MOVS byte copy */
       /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
       local_8 = *(uint *)((int)local_20 + 0x3e);
@@ -224,7 +223,7 @@ int __thiscall STFishC::GetMessage(STFishC *this,STMessage *message)
   this_00->field_0231 = CASE_0;
   *(undefined4 *)((int)&this_00->field_023E + 1) = 0;
   puVar8 = (byte *)((message->arg0).ptr);
-  puVar10 = (byte *)&this_00->field_0x243;
+  puVar10 = (byte *)((int)&this_00->field_0242 + 1);
   memmove(puVar10, puVar8, 0x28); /* compiler REP MOVS byte copy */
   iVar4 = 0;
   thunk_FUN_0057cb30((AnonShape_0057CB30_71092CE7 *)this_00);
@@ -317,9 +316,9 @@ cf_common_exit_0057C3E4:
   return 0;
 switchD_0057c669_caseD_127:
   puVar1 = &this_00->field_0x235;
-  local_20 = (undefined4 *)(int)(short)((message->arg1).words.low * 0xc9 + 100);
+  int scalar_local_20 = int)(short)((message->arg1).words.low * 0xc9 + 100; /* split integer lifetime from pointer-typed SSA storage */
   iVar4 = thunk_FUN_0058d160(0,0,g_worldGrid.sizeX + -1,g_worldGrid.sizeY + -1,(int)this_00,
-                             (int)(short)((message->arg0).words.low * 0xc9 + 100),(int)local_20,
+                             (int)(short)((message->arg0).words.low * 0xc9 + 100),scalar_local_20,
                              (int)(short)((message->arg0).words.high * 0xc9 + 100),
                              (int)(short)((message->arg1).words.high * 0xc9 + 100),
                              (undefined2 *)puVar1,(undefined2 *)puVar1,

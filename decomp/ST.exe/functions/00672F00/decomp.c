@@ -60,6 +60,7 @@ int FUN_00672f00(void)
       pcVar6 = pcVar7 + -uVar4;
       pcVar7 = DAT_00811948;
       memmove(pcVar7, pcVar6, uVar4); /* compiler REP MOVS byte copy */
+      uVar5 = 0;
     }
     FUN_006a5e90((short *)piVar3[0xb]);
     if ((DAT_0085753c != nullptr) && ((char *)piVar3[7] != nullptr)) {

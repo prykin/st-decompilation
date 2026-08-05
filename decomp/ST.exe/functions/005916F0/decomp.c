@@ -9,7 +9,6 @@ void __thiscall CampaignTy::DoneCampaign(CampaignTy *this)
 
 {
   MMsgTy *this_00;
-  code *pcVar1;
   CampaignTy *pCVar2;
   int iVar3;
   undefined4 *puVar4;

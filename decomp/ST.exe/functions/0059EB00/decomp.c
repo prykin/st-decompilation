@@ -8,7 +8,6 @@
 void __thiscall FSGSTy::JoinGameCtrls(FSGSTy *this)
 
 {
-  code *pcVar1;
   FSGSTy *this_00;
   uint uVar2;
   undefined4 uVar3;

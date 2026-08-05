@@ -13,7 +13,6 @@ void __thiscall STAllPlayersC::OptimizeGuardBoats(STAllPlayersC *this,char param
 
 {
   dword dVar1;
-  code *pcVar2;
   int iVar3;
   DArrayTy *pDVar4;
   int iVar5;
@@ -41,8 +40,8 @@ void __thiscall STAllPlayersC::OptimizeGuardBoats(STAllPlayersC *this,char param
   uint local_c;
   short local_6;
 
-  local_1c = (DArrayTy *)g_packedRecords_A62x8[param_1].field2377_0x9f6;
-  local_40 = (DArrayTy *)g_packedRecords_A62x8[param_1].field2378_0x9fa;
+  local_1c = (DArrayTy *)g_packedRecords_A62x8[param_1].field1976_0x9f6;
+  local_40 = (DArrayTy *)g_packedRecords_A62x8[param_1].field1977_0x9fa;
   if (local_1c != nullptr) {
     local_90.previous = g_currentExceptionFrame;
     g_currentExceptionFrame = &local_90;
@@ -130,7 +129,7 @@ void __thiscall STAllPlayersC::OptimizeGuardBoats(STAllPlayersC *this,char param
       DArrayGetElement(array,0,&local_3c);
       uVar6 = local_3c->count;
       pDVar4 = Library::DKW::TBL::DArrayCreate(nullptr,uVar6,10,1);
-      g_packedRecords_A62x8[param_1].field2378_0x9fa = pDVar4;
+      g_packedRecords_A62x8[param_1].field1977_0x9fa = pDVar4;
       local_10 = 0;
       local_c = 0;
       local_40 = pDVar4;

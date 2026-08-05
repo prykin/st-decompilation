@@ -15,7 +15,6 @@ UPanelTy::PaintTxtBut
           ccFntTy *param_4,UINT param_5,undefined *param_6)
 
 {
-  code *pcVar1;
   UPanelTy *pUVar2;
   int iVar3;
   uint uVar4;
@@ -47,7 +46,7 @@ UPanelTy::PaintTxtBut
       uVar4 = local_c;
       pUVar2 = local_10;
       iVar3 = local_14;
-      DibPut((AnonShape_006B5B10_E0D06CF1 *)local_10->field_0068,local_14,local_c,param_2,
+      DibPut((RecoveredSourceFamily_dibcopy *)local_10->field_0068,local_14,local_c,param_2,
              (byte *)local_8);
       cMf32::RecMemFree(g_cMf32_00806790,(uint *)&local_8);
       ccFntTy::SetSurf(param_4,pUVar2->field_0068,0,iVar3,uVar4,local_18->field_0008,

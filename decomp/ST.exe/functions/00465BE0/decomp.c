@@ -8,7 +8,6 @@
 int __thiscall STBoatC::BackPatrol(STBoatC *this,int *param_1)
 
 {
-  code *pcVar1;
   int iVar2;
 
   if (this->field_0497 == 0) {

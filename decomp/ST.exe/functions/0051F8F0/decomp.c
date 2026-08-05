@@ -13,7 +13,6 @@ void __thiscall HelpStringTy::OutStr(HelpStringTy *this)
 
 {
   ushort *puVar1;
-  code *pcVar2;
   HelpStringTy *pHVar3;
   int iVar4;
   byte *puVar5;

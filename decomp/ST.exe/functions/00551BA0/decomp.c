@@ -8,7 +8,6 @@
 void __thiscall TradePanelTy::PaintPanel(TradePanelTy *this)
 
 {
-  code *pcVar1;
   TradePanelTy *this_00;
   int iVar2;
   uint uVar3;
@@ -30,16 +29,16 @@ void __thiscall TradePanelTy::PaintPanel(TradePanelTy *this)
   this_00 = local_10;
   if (iVar2 == 0) {
     Library::DKW::WGR::FUN_006b55f0
-              ((AnonShape_006B5B10_E0D06CF1 *)local_10->field_0068,0,0x1f,0x31,local_10->field_0185,
-               0,0x1f,0x31,0x44,0x39);
+              ((RecoveredSourceFamily_dibcopy *)local_10->field_0068,0,0x1f,0x31,
+               local_10->field_0185,0,0x1f,0x31,0x44,0x39);
     bVar7 = 0x3a;
     iVar2 = 0;
     uVar3 = FUN_0070b3a0((AnonShape_GLOBAL_0081175C_57F682DD *)this_00->field_01D1,
                          (uint)(byte)this_00->field_01D0);
     FUN_006b5440((ushort *)this_00->field_0068,0,0x22,0x38,uVar3,iVar2,bVar7);
     Library::DKW::WGR::FUN_006b55f0
-              ((AnonShape_006B5B10_E0D06CF1 *)this_00->field_0068,0,0xa6,0x31,this_00->field_0185,0,
-               0xa6,0x31,0x77,0x26);
+              ((RecoveredSourceFamily_dibcopy *)this_00->field_0068,0,0xa6,0x31,this_00->field_0185,
+               0,0xa6,0x31,0x77,0x26);
     if (this_00->field_01BB == '\0') {
       bVar7 = 0x3a;
       iVar2 = 0;
@@ -58,7 +57,7 @@ void __thiscall TradePanelTy::PaintPanel(TradePanelTy *this)
                                           *(ushort *)
                                            (&this_00->field_0x1ab +
                                            (iVar5 + (uint)(byte)this_00->field_01D0 * 2) * 4) - 1);
-            DibPut((AnonShape_006B5B10_E0D06CF1 *)this_00->field_0068,local_8,0x39,'\x01',pbVar4);
+            DibPut((RecoveredSourceFamily_dibcopy *)this_00->field_0068,local_8,0x39,'\x01',pbVar4);
           }
           wsprintfA(&this_00->field_018D,"%d:1",
                     (uint)*(ushort *)

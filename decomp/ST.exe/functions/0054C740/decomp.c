@@ -9,7 +9,6 @@
 void CreatePlaySystem(void)
 
 {
-  code *pcVar1;
   int errorCode;
   STPlaySystemC *this;
   int iVar2;

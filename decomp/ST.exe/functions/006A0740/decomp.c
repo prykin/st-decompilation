@@ -8,7 +8,6 @@
 int __thiscall CGenerate::SaveMap(CGenerate *this)
 
 {
-  code *pcVar1;
   CGenerate *this_00;
   int iVar2;
   char *pcVar3;

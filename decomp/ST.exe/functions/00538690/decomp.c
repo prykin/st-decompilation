@@ -19,7 +19,6 @@ PanelTy::CreateBut(PanelTy *this,undefined4 param_1,int param_2,int param_3,int 
                   undefined4 param_15)
 
 {
-  code *pcVar1;
   PanelTy *pPVar2;
   int iVar3;
   int iVar4;

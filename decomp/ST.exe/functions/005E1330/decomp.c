@@ -14,7 +14,6 @@ void __thiscall MTaskTy::PlayScript(MTaskTy *this)
   MTaskTy_field_0074DArray *pMVar3;
   ushort *puVar4;
   dword dVar5;
-  code *pcVar6;
   byte bVar7;
   byte bVar8;
   int iVar9;

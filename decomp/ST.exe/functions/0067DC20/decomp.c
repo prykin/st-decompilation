@@ -14,7 +14,6 @@ uint * __cdecl _CreateStgListByRoot(cMf32 *param_1,int param_2,char *param_3,uin
 
 {
   char cVar1;
-  code *pcVar2;
   char *pcVar3;
   int iVar4;
   uint *puVar5;

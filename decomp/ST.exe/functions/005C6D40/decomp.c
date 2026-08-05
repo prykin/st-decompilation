@@ -9,8 +9,7 @@ void __thiscall SettMapTy::DeleteCtrls(SettMapTy *this)
 
 {
   SettMapTy_field_1E26State SVar1;
-  AnonShape_006B5B10_E0D06CF1 *pAVar2;
-  code *pcVar3;
+  RecoveredSourceFamily_dibcopy *pRVar2;
   SettMapTy *this_00;
   int iVar4;
   HoloTy *pHVar5;
@@ -202,8 +201,8 @@ void __thiscall SettMapTy::DeleteCtrls(SettMapTy *this)
       StartSystemTy::sub_006E56B0(this_00->field_000C,g_startSystem_0081176C->field_0389);
     }
     g_startSystem_0081176C->field_0389 = 0;
-    pAVar2 = (AnonShape_006B5B10_E0D06CF1 *)g_startSystem_0081176C->field_0544;
-    FUN_006b4170(pAVar2,0,0,0,pAVar2->field_0004,pAVar2->field_0008,0xff);
+    pRVar2 = (RecoveredSourceFamily_dibcopy *)g_startSystem_0081176C->field_0544;
+    FUN_006b4170(pRVar2,0,0,0,pRVar2->field_0004,pRVar2->field_0008,0xff);
     if ((DArrayTy *)g_startSystem_0081176C->field_0548 != nullptr) {
       FUN_006b5570((DArrayTy *)g_startSystem_0081176C->field_0548);
     }

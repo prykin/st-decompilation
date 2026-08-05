@@ -13,7 +13,6 @@
 void __cdecl TransPutDDX(int param_1,int param_2,char param_3,BITMAPINFO *param_4,uint param_5)
 
 {
-  code *pcVar1;
   int errorCode;
   int iVar2;
   InternalExceptionFrame local_48;

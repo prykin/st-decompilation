@@ -10,7 +10,6 @@ STAllPlayersC::UnRegisterArtefact
           (STAllPlayersC *this,uint param_1,AnonShape_00449E60_F2069C78 *param_2)
 
 {
-  code *pcVar1;
   STAllPlayersC *this_00;
   int errorCode;
   STGameObjC *pSVar2;

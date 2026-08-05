@@ -16,7 +16,7 @@ uint FUN_00449a90(char param_1,short param_2)
   dword local_c;
   DArrayTy *local_8;
 
-  array = (DArrayTy *)g_packedRecords_A62x8[param_1].field2377_0x9f6;
+  array = (DArrayTy *)g_packedRecords_A62x8[param_1].field1976_0x9f6;
   if (((array != nullptr) && (local_c = array->count, local_c != 0)) &&
      (index = 0, local_8 = array, 0 < (int)local_c)) {
     do {

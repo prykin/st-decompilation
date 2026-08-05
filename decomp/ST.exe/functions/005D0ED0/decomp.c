@@ -16,7 +16,6 @@ SettMapMTy::ChangePlayerList
 {
   char cVar1;
   SettMapMTy_field_1F84DArray *pSVar2;
-  code *pcVar3;
   SettMapMTy *pSVar4;
   int errorCode;
   int iVar5;

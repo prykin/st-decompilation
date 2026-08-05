@@ -8,7 +8,6 @@
 void __thiscall UpgPanelTy::InitUpgPanel(UpgPanelTy *this)
 
 {
-  code *pcVar1;
   UpgPanelTy *this_00;
   int iVar2;
   LPSTR pCVar3;

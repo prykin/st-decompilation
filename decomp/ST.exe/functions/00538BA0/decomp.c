@@ -15,7 +15,6 @@ PanelTy::PaintTxtBut
           ccFntTy *param_4,UINT param_5,undefined *param_6,int param_7,int param_8)
 
 {
-  code *pcVar1;
   PanelTy *pPVar2;
   int iVar3;
   uint uVar4;
@@ -60,7 +59,7 @@ LAB_00538bd9:
       uVar4 = local_c;
       iVar3 = local_10;
       pPVar2 = local_14;
-      DibPut((AnonShape_006B5B10_E0D06CF1 *)local_14->field_0068,local_10,local_c,param_2,
+      DibPut((RecoveredSourceFamily_dibcopy *)local_14->field_0068,local_10,local_c,param_2,
              (byte *)local_8);
       cMf32::RecMemFree(g_cMf32_00806790,(uint *)&local_8);
       ccFntTy::SetSurf(param_4,pPVar2->field_0068,0,iVar3,uVar4,local_18->field_0008,

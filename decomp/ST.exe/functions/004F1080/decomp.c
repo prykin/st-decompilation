@@ -13,7 +13,6 @@ int __thiscall BldObjPanelTy::GetMessage(BldObjPanelTy *this,STMessage *message)
 
 {
   STMessageId SVar1;
-  code *pcVar2;
   BldObjPanelTy *this_00;
   int iVar3;
   undefined4 *puVar4;

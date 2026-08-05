@@ -85,7 +85,7 @@ int __thiscall PlayPanelTy::GetMessage(PlayPanelTy *this,STMessage *message)
       pCVar9 = thunk_FUN_00571240("BUT_SWITCH",0);
       pCVar9 = FUN_006f2c00(pCVar9,iVar15,uVar10);
       local_c = cMf32::RecGet(g_cMf32_00806790,1,pCVar9,piVar16,iVar18);
-      DibPut((AnonShape_006B5B10_E0D06CF1 *)this_00->field_0068,local_10,iVar7 + iVar12,'\x01',
+      DibPut((RecoveredSourceFamily_dibcopy *)this_00->field_0068,local_10,iVar7 + iVar12,'\x01',
              (byte *)local_c);
       cMf32::RecMemFree(g_cMf32_00806790,(uint *)&local_c);
       g_currentExceptionFrame = local_64.previous;
@@ -346,7 +346,7 @@ LAB_0053b2ea:
       }
       pbVar11 = (byte *)FUN_0070b3a0((AnonShape_GLOBAL_0081175C_57F682DD *)this_00->field_01D9,uVar8
                                     );
-      DibPut((AnonShape_006B5B10_E0D06CF1 *)this_00->field_0068,local_10,iVar7 + iVar12,'\x01',
+      DibPut((RecoveredSourceFamily_dibcopy *)this_00->field_0068,local_10,iVar7 + iVar12,'\x01',
              pbVar11);
       Library::DKW::DDX::FUN_006b3640
                 ((int *)g_ddxContext_008075A8,this_00->field_0060,0xffffffff,this_00->field_003C,
@@ -453,7 +453,7 @@ LAB_0053b2ea:
       else {
         bVar13 = (-(DAT_0080874e != '\x01') & 0x89U) + 0x3a;
       }
-      FUN_006b4170((AnonShape_006B5B10_E0D06CF1 *)this_00->field_0068,0,(int)local_c,local_8,
+      FUN_006b4170((RecoveredSourceFamily_dibcopy *)this_00->field_0068,0,(int)local_c,local_8,
                    piVar16[2],piVar16[3],bVar13);
       if ((message->arg0).words.low != 0) {
         iVar7 = (this_00->field_01C9 + (local_10 & 0xff)) * 0x9c;
@@ -494,7 +494,7 @@ LAB_0053b2ea:
           if ((-1 < iVar12) && ((&DAT_00808af5)[iVar7] != '\0')) {
             pbVar11 = (byte *)FUN_0070b3a0((AnonShape_GLOBAL_0081175C_57F682DD *)this_00->field_01D5
                                            ,iVar12);
-            DibPut((AnonShape_006B5B10_E0D06CF1 *)this_00->field_0068,(int)local_c,local_8,'\x06',
+            DibPut((RecoveredSourceFamily_dibcopy *)this_00->field_0068,(int)local_c,local_8,'\x06',
                    pbVar11);
           }
         }

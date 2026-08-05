@@ -9,7 +9,6 @@ void __thiscall CPanelTy::DoneCPanel(CPanelTy *this)
 
 {
   undefined1 *puVar1;
-  code *pcVar2;
   CPanelTy *this_00;
   int iVar3;
   int iVar4;

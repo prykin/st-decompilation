@@ -9,7 +9,6 @@ void __thiscall PopUpTy::Clear(PopUpTy *this)
 
 {
   ushort *puVar1;
-  code *pcVar2;
   PopUpTy *pPVar3;
   int iVar4;
   DArrayTy *pDVar5;

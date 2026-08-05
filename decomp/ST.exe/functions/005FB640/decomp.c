@@ -17,7 +17,6 @@ int __thiscall STContainerC::GetMessage(STContainerC *this,STMessage *message)
   short sVar3;
   STMessageId SVar4;
   dword dVar5;
-  code *pcVar6;
   bool bVar7;
   STContainerC *this_00;
   int iVar8;

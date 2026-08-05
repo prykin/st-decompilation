@@ -15,7 +15,6 @@ int __thiscall AiPlrClassTy::GetMessage(AiPlrClassTy *this,STMessage *message)
   char cVar1;
   STMessageId SVar2;
   undefined4 *puVar3;
-  code *pcVar4;
   AiPlrClassTy *this_00;
   int iVar5;
   byte *pbVar6;

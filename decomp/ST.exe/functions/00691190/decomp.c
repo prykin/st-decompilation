@@ -12,7 +12,6 @@
 byte * __cdecl TactDataPack(undefined4 *param_1,uint *param_2)
 
 {
-  code *pcVar1;
   int iVar2;
   AnonShape_00691190_783A1B6D *pAVar3;
   AllocationRecord_006684E0 *pAVar4;

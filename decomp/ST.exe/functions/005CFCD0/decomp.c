@@ -14,7 +14,6 @@ void __thiscall SettMapMTy::UpdatePing(SettMapMTy *this,int param_1,undefined4 p
 {
   SettMapMTy_field_1F84DArray *pSVar1;
   uint uVar2;
-  code *pcVar3;
   int iVar4;
   SettMapMTy_field_1F84Element *element_1f84;
   int iVar6;

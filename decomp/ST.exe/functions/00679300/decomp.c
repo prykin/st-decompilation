@@ -9,7 +9,6 @@ int __thiscall AiPlrClassTy::CloseTactByTitle(AiPlrClassTy *this,byte *param_1)
 
 {
   DArrayTy *pDVar1;
-  code *pcVar2;
   AiPlrClassTy *pAVar3;
   int iVar4;
   uint index;

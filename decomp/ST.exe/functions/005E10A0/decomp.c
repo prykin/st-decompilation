@@ -12,7 +12,6 @@
 void __thiscall MTaskTy::TTaskItemClose(MTaskTy *this,AnonShape_005E10A0_819783CC *param_1)
 
 {
-  code *pcVar1;
   int iVar2;
   int iVar3;
   AnonShape_005E10A0_819783CC *value;

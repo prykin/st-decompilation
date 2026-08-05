@@ -57,18 +57,7 @@ uint FUN_00755830(AnonShape_00753C80_4C8E695D *param_1,uint *param_2,int param_3
       }
       uVar6 = iVar4 + 8;
       puVar12 = puVar7 + 4;
-      for (uVar5 = uVar6 >> 2; uVar5 != 0; uVar5 = uVar5 - 1) {
-        *puVar12 = *param_2;
-        /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
-        param_2 = param_2 + 1;
-        puVar12 = puVar12 + 1;
-      }
-      for (uVar5 = uVar6 & 3; uVar5 != 0; uVar5 = uVar5 - 1) {
-        *(char *)puVar12 = (char)*param_2;
-        /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
-        param_2 = (uint *)((int)param_2 + 1);
-        puVar12 = (uint *)((int)puVar12 + 1);
-      }
+      memmove(puVar12, param_2, uVar6); /* compiler REP MOVS byte copy */
       *(short *)(puVar7 + 2) = (short)uVar6;
       puVar7[1] = uVar3;
       *(undefined4 *)(param_1->field_000C + 0x1c) = 0;

@@ -10,7 +10,6 @@ FSGSTy::SetLadder(FSGSTy *this,undefined4 param_1,uint param_2,int param_3,undef
 
 {
   void **value;
-  code *pcVar1;
   CursorClassTy *this_00;
   FSGSTy *this_01;
   int iVar2;

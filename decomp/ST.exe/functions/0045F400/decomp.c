@@ -13,7 +13,6 @@
 uint __thiscall STBoatC::CheckPBoxCmd(STBoatC *this,STBoatC_CheckPBoxCmd_param_1Enum param_1)
 
 {
-  code *pcVar1;
   int iVar2;
   uint uVar3;
 

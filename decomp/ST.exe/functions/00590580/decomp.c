@@ -12,7 +12,6 @@
 void __thiscall MAdvTy::PaintMAdv(MAdvTy *this)
 
 {
-  code *pcVar1;
   MAdvTy *pMVar2;
   int iVar3;
   uint *puVar4;

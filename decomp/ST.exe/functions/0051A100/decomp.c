@@ -10,7 +10,6 @@ void __thiscall HelpPanelTy::ObjProc(HelpPanelTy *this,int param_1,uint param_2,
 {
   Global_sub_00528060_param_1Enum *pGVar1;
   HelpPanelTy_field_01A1State HVar2;
-  code *pcVar3;
   HelpPanelTy *this_00;
   char cVar4;
   ushort uVar5;
@@ -253,7 +252,7 @@ void __thiscall HelpPanelTy::ObjProc(HelpPanelTy *this,int param_1,uint param_2,
         uVar14 = thunk_FUN_005276e0(*pGVar1,0);
         pbVar9 = (byte *)FUN_0070b3a0((AnonShape_GLOBAL_0081175C_57F682DD *)this_00->field_0230,
                                       uVar14);
-        DibPut((AnonShape_006B5B10_E0D06CF1 *)this_00->field_0218,0x96,local_8,'\x01',pbVar9);
+        DibPut((RecoveredSourceFamily_dibcopy *)this_00->field_0218,0x96,local_8,'\x01',pbVar9);
         local_5c = 0x96;
         local_54 = *(undefined4 *)(pbVar9 + 4);
         local_58 = local_8;

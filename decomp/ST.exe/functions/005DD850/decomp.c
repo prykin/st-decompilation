@@ -8,7 +8,6 @@
 void __thiscall StartSystemTy::AddToChat(StartSystemTy *this,int param_1)
 
 {
-  code *pcVar1;
   StartSystemTy *this_00;
   DArrayTy *pDVar2;
   DArrayTy *pDVar3;

@@ -8,7 +8,6 @@
 undefined4 __thiscall CPanelTy::ShiftControls(CPanelTy *this,int param_1)
 
 {
-  code *pcVar1;
   CPanelTy *this_00;
   int iVar2;
   int iVar3;

@@ -87,7 +87,7 @@ void __thiscall FUN_00488890(void *this,int param_1)
         iVar7 = thunk_FUN_004e6c20(*(int *)((int)this + 0x24),local_c);
         if ((iVar7 == 0) ||
            (((bVar4 = LookupRecordByte(*(char *)((int)this + 0x24)), bVar4 == 3 && (iVar6 != 0x5c))
-            && (*(int *)&g_packedRecords_A62x8[*(int *)((int)this + 0x24)].field_0x9ca == 0)))) {
+            && (g_packedRecords_A62x8[*(int *)((int)this + 0x24)].field1965_0x9ca == 0)))) {
           local_44 = '\0';
         }
         else {

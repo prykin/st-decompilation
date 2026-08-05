@@ -11,7 +11,6 @@
 byte * __thiscall AiFltClassTy::PrepareToSave(AiFltClassTy *this,uint *param_1)
 
 {
-  code *pcVar1;
   AiFltClassTy *pAVar2;
   int errorCode;
   AllocationRecord_006684E0 *pAVar3;

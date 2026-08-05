@@ -65,16 +65,12 @@ VisibleClassTy::sub_0055BBC0
       (param_5 < 8)) &&
      ((g_playSystem_00802A38 == nullptr ||
       (g_bulkInitializedRecords_008087C7[param_5].field_0022 < 8)))) {
-    /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-    local_10._6_1_ = param_4;
+    local_10.field_0006 = param_4;
     local_10.field_0004 = param_3;
-    /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-    local_10._1_1_ = (char)param_5;
-    /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-    local_10._0_1_ = param_1;
+    local_10.field_0001 = (char)param_5;
+    local_10.field_0000 = param_1;
     local_10.field_0002 = param_2;
-    /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-    local_10._7_1_ = param_6;
+    local_10.field_0007 = param_6;
     local_10.field_0008 = param_7;
     index = thunk_FUN_0055b9f0(this,&local_10);
     if (-1 < (int)index) {

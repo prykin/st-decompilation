@@ -11,7 +11,6 @@ MMObjTy::CreateSprBut
           ,undefined4 param_5,undefined4 param_6,undefined4 param_7,undefined4 param_8)
 
 {
-  code *pcVar1;
   int iVar2;
   int iVar3;
   undefined4 uVar4;

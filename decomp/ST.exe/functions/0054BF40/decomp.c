@@ -26,7 +26,6 @@ CursorClassTy::SetGCType
           (CursorClassTy *this,CursorClassTy_SetGCType_param_1Enum param_1,int param_2,int param_3)
 
 {
-  code *pcVar1;
   CursorClassTy *this_00;
   int iVar2;
   int iVar3;

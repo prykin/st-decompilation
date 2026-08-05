@@ -21,7 +21,6 @@ void __thiscall ChooseMapTy::CreateCtrls(ChooseMapTy *this,char param_1)
 
 {
   StartSystemTy *pSVar1;
-  code *pcVar2;
   ChooseMapTy *this_00;
   int iVar3;
   int iVar4;

@@ -35,7 +35,6 @@ int __thiscall TLOBaseTy::RotateSpr(TLOBaseTy *this,int param_1)
 {
   undefined4 *puVar1;
   AnonPointee_TLOBaseTy_01F5 *pAVar2;
-  code *pcVar3;
   TLOBaseTy *this_00;
   int iVar4;
   int iVar5;

@@ -11,7 +11,6 @@ PrividerTy::OutListProc
           DWORD param_6,DWORD param_7,int param_8)
 
 {
-  code *pcVar1;
   byte bVar2;
   int errorCode;
   int iVar3;

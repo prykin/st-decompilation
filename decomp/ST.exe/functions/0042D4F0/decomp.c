@@ -14,7 +14,6 @@ STAllPlayersC::ResetActivityFromTmp
           (STAllPlayersC *this,char param_1,int param_2,int param_3,int param_4)
 
 {
-  code *pcVar1;
   int iVar2;
   int *piVar3;
   DArrayTy *pDVar4;

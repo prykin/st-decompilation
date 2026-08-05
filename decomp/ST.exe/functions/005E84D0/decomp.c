@@ -21,7 +21,6 @@ void __thiscall WaitTy::NoneWait(WaitTy *this)
   byte bVar3;
   StartSystemTy *pSVar4;
   MMsgTy *this_00;
-  code *pcVar5;
   WaitTy *this_01;
   AnonShape_005E84D0_1273B60D *pAVar6;
   DWORD DVar7;

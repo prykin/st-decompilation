@@ -19,7 +19,6 @@ void __thiscall CPanelTy::Update2PanelWB(CPanelTy *this)
 {
   CPanelTy_field_0B99State *pCVar1;
   ushort *puVar2;
-  code *pcVar3;
   CPanelTy *this_00;
   int iVar4;
   int iVar5;

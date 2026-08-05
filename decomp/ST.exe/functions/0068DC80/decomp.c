@@ -8,7 +8,6 @@
 int __thiscall AiTactClassTy::InitData(AiTactClassTy *this,undefined4 *param_1)
 
 {
-  code *pcVar1;
   AiTactClassTy *pAVar2;
   int iVar3;
   AiTactClassTy_field_00A5DArray *pAVar4;

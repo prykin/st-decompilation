@@ -9,7 +9,6 @@ void __thiscall STAllPlayersC::SaveTmp(STAllPlayersC *this,int param_1)
 
 {
   int *piVar1;
-  code *pcVar2;
   int *piVar3;
   int iVar4;
   uint uVar5;
@@ -41,11 +40,11 @@ void __thiscall STAllPlayersC::SaveTmp(STAllPlayersC *this,int param_1)
   uVar5 = (uint)DAT_0080874d;
   /* ST_PSEUDO[flattened_global_record_array]: expected typedRecordArray[index].field after inferred base/stride proof */
   iVar4 = uVar5 * 0xa62;
-  if (g_packedRecords_A62x8[uVar5].field448_0x203 == 0) {
-    local_8 = &g_packedRecords_A62x8[uVar5].field332_0x163;
+  if (g_packedRecords_A62x8[uVar5].field200_0x203 == 0) {
+    local_8 = &g_packedRecords_A62x8[uVar5].field96_0x163;
   }
-  else if (g_packedRecords_A62x8[uVar5].field448_0x203 == 1) {
-    local_8 = &g_packedRecords_A62x8[uVar5].field390_0x1b3;
+  else if (g_packedRecords_A62x8[uVar5].field200_0x203 == 1) {
+    local_8 = &g_packedRecords_A62x8[uVar5].field149_0x1b3;
   }
   else {
     iVar6 = ReportDebugMessage("E:\\__titans\\wlad\\to_allpl.cpp",0x16dd,0,0,"%s",

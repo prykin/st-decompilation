@@ -8,7 +8,6 @@
 undefined4 __thiscall STLightC::LoadNextLight(STLightC *this)
 
 {
-  code *pcVar1;
   STLightC *this_00;
   int iVar2;
   ushort *puVar3;

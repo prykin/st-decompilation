@@ -12,7 +12,6 @@
 void __thiscall HelpPanelTy::ShiftControls(HelpPanelTy *this,int param_1)
 
 {
-  code *pcVar1;
   HelpPanelTy *this_00;
   short sVar2;
   int iVar3;

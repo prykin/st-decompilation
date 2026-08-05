@@ -13,9 +13,8 @@
 int __thiscall PopUpTy::GetMessage(PopUpTy *this,STMessage *message)
 
 {
-  AnonShape_006B5B10_E0D06CF1 *pAVar1;
+  RecoveredSourceFamily_dibcopy *pRVar1;
   uint *puVar2;
-  code *pcVar3;
   PopUpTy *this_00;
   int iVar4;
   ccFntTy *pcVar5;
@@ -62,13 +61,13 @@ int __thiscall PopUpTy::GetMessage(PopUpTy *this,STMessage *message)
       this_00->field_009D = DVar9;
       if (this_00->field_009C != '\0') {
         FUN_006b7830((AnonShape_006B7830_769CA2DF *)this_00->field_0098,0);
-        pAVar1 = (AnonShape_006B5B10_E0D06CF1 *)this_00->field_0090;
+        pRVar1 = (RecoveredSourceFamily_dibcopy *)this_00->field_0090;
         Library::DKW::WGR::FUN_006b55f0
-                  (pAVar1,0,0,0,(byte *)pAVar1,0,0,0x13,pAVar1->field_0004,
+                  (pRVar1,0,0,0,(byte *)pRVar1,0,0,0x13,pRVar1->field_0004,
                    (uint)(byte)this_00->field_009C * 0x13 + -0x13);
-        FUN_006b4170((AnonShape_006B5B10_E0D06CF1 *)this_00->field_0090,0,0,
+        FUN_006b4170((RecoveredSourceFamily_dibcopy *)this_00->field_0090,0,0,
                      (uint)(byte)this_00->field_009C * 0x13 + -0x13,
-                     ((AnonShape_006B5B10_E0D06CF1 *)this_00->field_0090)->field_0004,0x13,0x89);
+                     ((RecoveredSourceFamily_dibcopy *)this_00->field_0090)->field_0004,0x13,0x89);
         puVar14 = this_00->field_0098;
         if ((int)puVar14[2] <= (int)(uint)DAT_00807346) {
           this_00->field_009C = (char)puVar14[2];

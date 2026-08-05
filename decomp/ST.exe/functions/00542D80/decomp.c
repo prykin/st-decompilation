@@ -9,7 +9,6 @@
 void CreateInterSystem(void)
 
 {
-  code *pcVar1;
   int errorCode;
   InterSystemC *this;
   int iVar2;

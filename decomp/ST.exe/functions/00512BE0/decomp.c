@@ -21,7 +21,6 @@ void __thiscall HelpPanelTy::sub_00512BE0(HelpPanelTy *this,int param_1)
 
 {
   ccFntTy *pcVar1;
-  code *pcVar2;
   HelpPanelTy *this_00;
   int iVar3;
   int *piVar5;

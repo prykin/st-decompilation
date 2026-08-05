@@ -4,7 +4,6 @@
 void __cdecl FUN_006a5990(undefined4 *param_1)
 
 {
-  code *pcVar1;
   undefined4 *puVar2;
   int iVar3;
   uint uVar4;

@@ -70,7 +70,6 @@ STAllPlayersC::GetObjPtr
           STAllPlayersC_GetObjPtr_param_3Enum param_3)
 
 {
-  code *pcVar1;
   int iVar2;
   STGameObjC *pSVar3;
   DArrayTy *array;
@@ -81,7 +80,7 @@ STAllPlayersC::GetObjPtr
 
   switch(param_3) {
   case CASE_1:
-    array = (DArrayTy *)g_packedRecords_A62x8[objPtr].field6_0x9;
+    array = (DArrayTy *)g_packedRecords_A62x8[objPtr].field3_0x9;
     if (array == nullptr) {
       return nullptr;
     }

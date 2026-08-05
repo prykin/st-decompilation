@@ -37,7 +37,6 @@ CPanelTy::CreateBut(CPanelTy *this,byte param_1,undefined4 param_2,int param_3,i
                    undefined4 param_15,undefined4 param_16)
 
 {
-  code *pcVar1;
   uint uVar2;
   CPanelTy *pCVar3;
   int iVar4;

@@ -16,7 +16,6 @@ void __thiscall STGameObjC::ResetSelfCheckFlag(STGameObjC *this)
 
 {
   uint uVar1;
-  code *pcVar2;
   int iVar3;
 
   if (this->field_01CD != 1) {

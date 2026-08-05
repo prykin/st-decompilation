@@ -89,6 +89,7 @@ FUN_00649ff0(uint *param_1,undefined4 *param_2,undefined4 *param_3,int *param_4)
   pcVar4 = pcVar12 + -uVar7;
   pcVar12 = pcVar11 + -1;
   memmove(pcVar12, pcVar4, uVar7); /* compiler REP MOVS byte copy */
+  uVar8 = 0;
   uVar7 = 0xffffffff;
   pcVar4 = &DAT_00807680;
   do {

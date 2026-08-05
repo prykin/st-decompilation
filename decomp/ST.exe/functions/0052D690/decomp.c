@@ -10,7 +10,6 @@ void __thiscall PopUpTy::ChangeNumStr(PopUpTy *this)
 {
   ushort *puVar1;
   uint *puVar2;
-  code *pcVar3;
   PopUpTy *this_00;
   byte bVar4;
   int iVar5;

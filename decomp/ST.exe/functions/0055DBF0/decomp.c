@@ -26,7 +26,6 @@
 void __cdecl DarkScreen(DDXContext *param_1,int param_2,int param_3)
 
 {
-  code *pcVar1;
   int errorCode;
   int iVar2;
   undefined4 local_448 [256];

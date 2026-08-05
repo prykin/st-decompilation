@@ -13,7 +13,6 @@ void __thiscall SettMapMTy::AddPlList(SettMapMTy *this,int param_1)
 
 {
   SettMapMTy_field_1F84DArray *pSVar1;
-  code *pcVar2;
   int errorCode;
   int iVar3;
   uint uVar4;

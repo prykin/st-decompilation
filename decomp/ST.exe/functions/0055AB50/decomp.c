@@ -16,7 +16,6 @@ void __thiscall VisibleClassTy::VisHoleExec(VisibleClassTy *this)
 
 {
   VisibleClassTy_field_00F4DArray *pVVar1;
-  code *pcVar2;
   VisibleClassTy *this_00;
   uint uVar3;
   int errorCode;

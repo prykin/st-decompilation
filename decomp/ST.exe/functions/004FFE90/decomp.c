@@ -10,7 +10,6 @@ void __thiscall CPanelTy::Update5Panel(CPanelTy *this)
 {
   undefined1 *puVar1;
   char cVar2;
-  code *pcVar3;
   CPanelTy *this_00;
   byte bVar4;
   int iVar5;
@@ -125,7 +124,7 @@ void __thiscall CPanelTy::Update5Panel(CPanelTy *this)
     }
     if ((local_41 != this_00->field_0C54) || (local_3d != this_00->field_0C58)) {
       Library::DKW::WGR::FUN_006b55f0
-                ((AnonShape_006B5B10_E0D06CF1 *)this_00->field_019C,0,1,0,
+                ((RecoveredSourceFamily_dibcopy *)this_00->field_019C,0,1,0,
                  (byte *)this_00->field_0B47,0,1,0,0x4e,0x20);
       PaintName(this_00,0);
       if (-1 < (int)this_00->field_0148[7]) {
@@ -155,7 +154,7 @@ LAB_00500121:
 LAB_00500126:
     if (iVar5 != 0) {
       Library::DKW::WGR::FUN_006b55f0
-                ((AnonShape_006B5B10_E0D06CF1 *)this_00->field_019C,0,1,0,
+                ((RecoveredSourceFamily_dibcopy *)this_00->field_019C,0,1,0,
                  (byte *)this_00->field_0B47,0,1,0,0x4e,0x20);
       PaintName(this_00,0);
       if (-1 < (int)this_00->field_0148[7]) {
@@ -167,7 +166,7 @@ LAB_00500126:
     if ((((local_29 != this_00->field_0C6C) || (local_42 != this_00->field_0C53)) &&
         (iVar5 = this_00->field_0C54, iVar5 != 0xdd)) && ((iVar5 != 0xde && (iVar5 != 0xe0)))) {
       Library::DKW::WGR::FUN_006b55f0
-                ((AnonShape_006B5B10_E0D06CF1 *)this_00->field_019C,0,1,0x1f,
+                ((RecoveredSourceFamily_dibcopy *)this_00->field_019C,0,1,0x1f,
                  (byte *)this_00->field_0B47,0,1,0x1f,0x4e,0x11);
       PaintLife(this_00,0);
       if (-1 < (int)this_00->field_0148[7]) {
@@ -187,7 +186,7 @@ LAB_00500126:
         (local_1c != this_00->field_0C79)) &&
        (((iVar5 = this_00->field_0C54, iVar5 != 0xdd && (iVar5 != 0xde)) && (iVar5 != 0xe0)))) {
       Library::DKW::WGR::FUN_006b55f0
-                ((AnonShape_006B5B10_E0D06CF1 *)this_00->field_019C,0,1,0x2f,
+                ((RecoveredSourceFamily_dibcopy *)this_00->field_019C,0,1,0x2f,
                  (byte *)this_00->field_0B47,0,1,0x2f,0x4e,0x24);
       PaintWeap(this_00,0);
       if (-1 < (int)this_00->field_0148[7]) {

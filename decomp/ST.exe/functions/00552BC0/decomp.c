@@ -8,7 +8,6 @@
 void __thiscall UpgPanelTy::Update(UpgPanelTy *this)
 
 {
-  code *pcVar1;
   UpgPanelTy *pUVar2;
   int iVar3;
   uint uVar4;
@@ -48,7 +47,7 @@ void __thiscall UpgPanelTy::Update(UpgPanelTy *this)
         pAVar10 = (AnonShape_GLOBAL_0081175C_57F682DD *)pUVar2->field_03EB;
       }
       pbVar5 = (byte *)FUN_0070b3a0(pAVar10,uVar4);
-      DibPut((AnonShape_006B5B10_E0D06CF1 *)pUVar2->field_0068,0x24,iVar3,'\x01',pbVar5);
+      DibPut((RecoveredSourceFamily_dibcopy *)pUVar2->field_0068,0x24,iVar3,'\x01',pbVar5);
       puVar8 = puVar8 + 0xc;
       iVar3 = iVar3 + 0x1b;
       local_8 = local_8 + -1;
@@ -68,7 +67,7 @@ void __thiscall UpgPanelTy::Update(UpgPanelTy *this)
           pAVar10 = (AnonShape_GLOBAL_0081175C_57F682DD *)pUVar2->field_03EB;
         }
         pbVar5 = (byte *)FUN_0070b3a0(pAVar10,uVar4);
-        DibPut((AnonShape_006B5B10_E0D06CF1 *)pUVar2->field_0068,local_8,iVar3,'\x01',pbVar5);
+        DibPut((RecoveredSourceFamily_dibcopy *)pUVar2->field_0068,local_8,iVar3,'\x01',pbVar5);
         puVar8 = puVar8 + 0xc;
         iVar3 = iVar3 + 0x1b;
         local_10 = local_10 + -1;
@@ -89,7 +88,7 @@ void __thiscall UpgPanelTy::Update(UpgPanelTy *this)
         pAVar10 = (AnonShape_GLOBAL_0081175C_57F682DD *)pUVar2->field_03EB;
       }
       pbVar5 = (byte *)FUN_0070b3a0(pAVar10,uVar4);
-      DibPut((AnonShape_006B5B10_E0D06CF1 *)pUVar2->field_0068,0xd3,iVar3,'\x01',pbVar5);
+      DibPut((RecoveredSourceFamily_dibcopy *)pUVar2->field_0068,0xd3,iVar3,'\x01',pbVar5);
       puVar8 = puVar8 + 0xc;
       iVar3 = iVar3 + 0x1b;
       local_c = local_c + -1;

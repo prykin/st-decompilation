@@ -9,7 +9,6 @@
 void CreateBaseSystem(void)
 
 {
-  code *pcVar1;
   int errorCode;
   BaseSystemC *this;
   int iVar2;

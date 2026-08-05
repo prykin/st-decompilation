@@ -10,7 +10,6 @@ void __cdecl _AddAllGrpExch(uint param_1)
 
 {
   dword dVar1;
-  code *pcVar2;
   int iVar3;
   DArrayTy *array;
   ushort *puVar4;

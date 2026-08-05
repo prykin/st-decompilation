@@ -13,7 +13,6 @@ void __thiscall HelpPanelTy::CheckBkView(HelpPanelTy *this,int param_1,ushort pa
 {
   AnonPointee_HelpPanelTy_0218 **value;
   AnonPointee_HelpPanelTy_0218 *pAVar1;
-  code *pcVar2;
   HelpPanelTy *pHVar3;
   int iVar4;
   int uVar5;
@@ -58,8 +57,8 @@ void __thiscall HelpPanelTy::CheckBkView(HelpPanelTy *this,int param_1,ushort pa
       }
       pAVar1 = *value;
       Library::DKW::WGR::FUN_006b55f0
-                ((AnonShape_006B5B10_E0D06CF1 *)pAVar5,0,0,0,(byte *)pAVar1,0,0,0,pAVar1->field_0004
-                 ,pAVar1->field_0008);
+                ((RecoveredSourceFamily_dibcopy *)pAVar5,0,0,0,(byte *)pAVar1,0,0,0,
+                 pAVar1->field_0004,pAVar1->field_0008);
       FreeAndNull(value);
       *value = pAVar5;
       g_currentExceptionFrame = local_50.previous;

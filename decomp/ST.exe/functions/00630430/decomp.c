@@ -15,7 +15,6 @@ int __thiscall STManRuinC::GetMessage(STManRuinC *this,STMessage *message)
   STMessageId SVar1;
   uint uVar2;
   STManRuinC_field_003CDArray *pSVar3;
-  code *pcVar4;
   STManRuinC *this_00;
   int iVar5;
   byte *pbVar6;

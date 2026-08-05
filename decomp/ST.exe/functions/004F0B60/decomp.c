@@ -8,7 +8,6 @@
 void __thiscall BldObjPanelTy::Update(BldObjPanelTy *this)
 
 {
-  code *pcVar1;
   BldObjPanelTy *this_00;
   int errorCode;
   uint uVar2;

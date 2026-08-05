@@ -13,7 +13,6 @@ void __thiscall OptPanelTy::PrepMissObj(OptPanelTy *this)
 
 {
   undefined1 *puVar1;
-  code *pcVar2;
   OptPanelTy *this_00;
   int iVar3;
   DArrayTy *pDVar4;

@@ -22,7 +22,6 @@ int __thiscall STSprGameObjC::GetMessage(STSprGameObjC *this,STMessage *message)
 {
   byte bVar1;
   STMessageId SVar2;
-  code *pcVar3;
   STGameObjC *this_00;
   int iVar4;
   int iVar5;

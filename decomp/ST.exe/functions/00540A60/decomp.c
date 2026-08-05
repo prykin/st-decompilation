@@ -14,7 +14,6 @@ StartServTy::WrSarrDDX
           ,uint param_7,uint param_8,ccFntTy *param_9,undefined4 param_10)
 
 {
-  code *pcVar1;
   int iVar2;
   InternalExceptionFrame local_50;
   BITMAPINFO *local_c;

@@ -8,7 +8,6 @@
 void __thiscall MTaskTy::DoneMTask(MTaskTy *this)
 
 {
-  code *pcVar1;
   MTaskTy *this_00;
   int iVar2;
   DArrayTy *pDVar3;

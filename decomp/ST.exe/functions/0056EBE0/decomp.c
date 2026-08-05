@@ -83,6 +83,7 @@ void __thiscall STAppC::sub_0056EBE0(STAppC *this)
     pcVar11 = pcVar12 + -uVar8;
     pcVar12 = pcVar9 + 1;
     memmove(pcVar12, pcVar11, uVar8); /* compiler REP MOVS byte copy */
+    uVar5 = 0;
     if ((pcVar9[0x22] != -1) && (*pcVar9 == '\x01')) {
       pDVar4 = pDVar3;
       if ((pcVar9[0x21] != '\x01') && (pDVar4 = array, pcVar9[0x21] != '\x02')) {

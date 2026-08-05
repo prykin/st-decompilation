@@ -10,7 +10,6 @@ AiTactClassTy::PrepareToSave(AiTactClassTy *this,AnonShape_0068EB30_4F4B480A *pa
 
 {
   short sVar1;
-  code *pcVar2;
   AiTactClassTy *pAVar3;
   int iVar4;
   uint uVar5;

@@ -10,7 +10,6 @@ void __thiscall SIDTy::CreateCtrls(SIDTy *this)
 {
   undefined1 *lpPathName;
   char cVar1;
-  code *pcVar2;
   SIDTy *this_00;
   int iVar3;
   HANDLE pvVar4;

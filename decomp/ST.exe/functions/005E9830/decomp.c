@@ -8,7 +8,6 @@
 void __thiscall WaitTy::CloseButtons(WaitTy *this)
 
 {
-  code *pcVar1;
   WaitTy *this_00;
   int errorCode;
   int iVar2;

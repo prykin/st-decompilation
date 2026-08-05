@@ -14,7 +14,6 @@ void AiCalcDispositionAreas
 {
   byte bVar1;
   byte bVar2;
-  code *pcVar3;
   byte *pbVar4;
   undefined1 *puVar5;
   undefined4 *puVar6;

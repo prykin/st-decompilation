@@ -17,7 +17,6 @@
 int __thiscall STBoatC::BackAttack(STBoatC *this,int *param_1)
 
 {
-  code *pcVar1;
   short sVar2;
   int iVar3;
   uint uVar4;

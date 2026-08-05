@@ -11,6 +11,6 @@
 int __fastcall FUN_00544990(CursorClassTy *param_1)
 
 {
-  return (uint)(param_1->field_0493 == '\x02');
+  return (uint)(param_1->field_0493 == 2);
 }
 

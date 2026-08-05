@@ -8,7 +8,6 @@
 undefined4 __thiscall STT3DSprC::ShowCurFase(STT3DSprC *this,char param_1)
 
 {
-  code *pcVar1;
   STT3DSprC *pSVar2;
   int iVar3;
   undefined4 uVar4;

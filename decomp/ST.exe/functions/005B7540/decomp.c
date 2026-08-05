@@ -12,7 +12,6 @@ void __thiscall MMsgTy::NoneMMsg(MMsgTy *this)
   byte bVar2;
   UINT UVar3;
   StartSystemTy *pSVar4;
-  code *pcVar5;
   MMsgTy *this_00;
   int iVar6;
   uint uVar7;

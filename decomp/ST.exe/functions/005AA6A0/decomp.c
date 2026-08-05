@@ -9,7 +9,6 @@ void __thiscall HoloTy::OutHoloProc(HoloTy *this,uint param_1)
 
 {
   char cVar1;
-  code *pcVar2;
   int iVar3;
   int iVar4;
   int iVar5;

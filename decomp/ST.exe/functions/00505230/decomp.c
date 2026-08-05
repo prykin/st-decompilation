@@ -12,7 +12,6 @@
 void __thiscall CPanelTy::PaintMunition(CPanelTy *this,int param_1)
 
 {
-  code *pcVar1;
   CPanelTy *pCVar2;
   uint uVar3;
   int iVar4;
@@ -58,7 +57,7 @@ void __thiscall CPanelTy::PaintMunition(CPanelTy *this,int param_1)
     }
     STDebugBreak(); /* noreturn in standalone pseudocode */
   }
-  DibPut((AnonShape_006B5B10_E0D06CF1 *)local_2c->field_0194,param_1,0x36,'\x01',
+  DibPut((RecoveredSourceFamily_dibcopy *)local_2c->field_0194,param_1,0x36,'\x01',
          (byte *)local_2c->field_09D9[8]);
   pCVar9 = &pCVar2->field_0C11;
   local_6 = 0;
@@ -260,7 +259,7 @@ LAB_00505581:
     }
 switchD_00505324_default:
     if (pbVar5 != nullptr) {
-      DibPut((AnonShape_006B5B10_E0D06CF1 *)pCVar2->field_0194,local_10 + 0xf + param_1,
+      DibPut((RecoveredSourceFamily_dibcopy *)pCVar2->field_0194,local_10 + 0xf + param_1,
              local_c + 0x36,'\x06',pbVar5);
     }
     uVar3 = local_14;
@@ -276,8 +275,8 @@ switchD_00505324_default:
       local_20 = (local_14 & 0xff) * 0xb + 0x3b;
       do {
         pbVar5 = (byte *)FUN_0070b3a0((AnonShape_GLOBAL_0081175C_57F682DD *)pCVar2->field_02B6,3);
-        DibPut((AnonShape_006B5B10_E0D06CF1 *)pCVar2->field_0194,param_1 + 0x4d + uVar8 * 4,local_20
-               ,'\x01',pbVar5);
+        DibPut((RecoveredSourceFamily_dibcopy *)pCVar2->field_0194,param_1 + 0x4d + uVar8 * 4,
+               local_20,'\x01',pbVar5);
         bVar7 = (byte)local_18 + 1;
         local_18 = STReplaceLowByte((uint32_t)(local_18), (uint8_t)(bVar7));
         uVar8 = (uint)bVar7;
@@ -289,7 +288,7 @@ switchD_00505324_default:
       local_1c = param_1 + 0x4d + (local_18 & 0xff) * 4;
       do {
         pbVar5 = (byte *)FUN_0070b3a0((AnonShape_GLOBAL_0081175C_57F682DD *)pCVar2->field_02B6,0);
-        DibPut((AnonShape_006B5B10_E0D06CF1 *)pCVar2->field_0194,local_1c,local_20,'\x01',pbVar5);
+        DibPut((RecoveredSourceFamily_dibcopy *)pCVar2->field_0194,local_1c,local_20,'\x01',pbVar5);
         local_1c = local_1c + 4;
         iVar4 = iVar4 + -1;
       } while (iVar4 != 0);

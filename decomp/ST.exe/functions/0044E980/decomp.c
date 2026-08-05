@@ -31,7 +31,6 @@ STBoatC::GetVisualInfo
 
 {
   char cVar1;
-  code *pcVar2;
   int iVar3;
   uint uVar4;
   char *pcVar6;

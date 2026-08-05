@@ -9,7 +9,6 @@ void __thiscall SpecPanelTy::SwitchPanel(SpecPanelTy *this,int param_1)
 
 {
   short sVar1;
-  code *pcVar2;
   SpecPanelTy *pSVar3;
   int errorCode;
   int iVar4;

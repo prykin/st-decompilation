@@ -16,7 +16,6 @@ void __thiscall CursorClassTy::TakeCmdToRun(CursorClassTy *this,int param_1)
   short sVar1;
   STFishC *pSVar2;
   undefined4 uVar3;
-  code *pcVar4;
   CursorClassTy *this_00;
   int iVar5;
   HelpPanelTy_sub_00514BC0_param_1Enum HVar6;

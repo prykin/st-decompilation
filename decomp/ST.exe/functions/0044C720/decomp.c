@@ -14,7 +14,6 @@ STAllPlayersC::GetScrObjList
   byte bVar1;
   byte bVar2;
   int *piVar3;
-  code *pcVar4;
   bool bVar5;
   int iVar6;
   DArrayTy *pDVar7;

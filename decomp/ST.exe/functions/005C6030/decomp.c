@@ -11,7 +11,6 @@ void __thiscall SettMapTy::CreateCtrls(SettMapTy *this,char param_1)
   undefined1 *puVar1;
   SettMapTy_field_1E26State SVar2;
   MMMObjTy *pMVar3;
-  code *pcVar4;
   bool bVar5;
   undefined4 uVar6;
   cMf32 *pcVar7;

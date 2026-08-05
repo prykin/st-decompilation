@@ -10,7 +10,6 @@ void __thiscall TraksClassTy::TraksExec(TraksClassTy *this)
 {
   dword dVar1;
   TraksClassTy_field_0024DArray *pTVar2;
-  code *pcVar3;
   TraksClassTy *this_00;
   int iVar4;
   TraksClassTy_field_0024Element *element_0024;

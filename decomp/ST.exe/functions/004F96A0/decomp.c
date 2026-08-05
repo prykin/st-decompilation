@@ -16,7 +16,6 @@ void __thiscall CPanelTy::PlayBrief(CPanelTy *this)
 
 {
   short **ppsVar1;
-  code *pcVar2;
   CPanelTy *this_00;
   int iVar3;
   DArrayTy *pDVar4;
@@ -70,16 +69,16 @@ void __thiscall CPanelTy::PlayBrief(CPanelTy *this)
               Library::MSVCRT::FUN_0072e2b0(this_00->field_01D8);
               this_00->field_01D8 = nullptr;
             }
-            FUN_006b4170((AnonShape_006B5B10_E0D06CF1 *)this_00->field_01B4,0,100,5,0x226,0x55,0);
+            FUN_006b4170((RecoveredSourceFamily_dibcopy *)this_00->field_01B4,0,100,5,0x226,0x55,0);
             local_8 = Library::DKW::TBL::SArrayCreate(nullptr,10,10);
             if (*(int *)(puVar11 + 10) < 1) {
               local_c = (char *)g_dArray_0080C4C7->elementSize;
             }
             else {
-              local_c = (char *)(*(int *)(puVar11 + 6) + *(int *)(puVar11 + 10));
+              int scalar_local_c = *(int *)(puVar11 + 6) + *(int *)(puVar11 + 10); /* split integer lifetime from pointer-typed SSA storage */
             }
             iVar3 = *(int *)(puVar11 + 6);
-            if (iVar3 < (int)local_c) {
+            if (iVar3 < scalar_local_c) {
               do {
                 if (iVar3 < (int)g_dArray_0080C4C7->elementSize) {
                   pcVar6 = *(char **)(g_dArray_0080C4C7->growCapacity + iVar3 * 4);
@@ -89,7 +88,7 @@ void __thiscall CPanelTy::PlayBrief(CPanelTy *this)
                 }
                 thunk_FUN_005411a0(local_8,pcVar6,"@ %s");
                 iVar3 = iVar3 + 1;
-              } while (iVar3 < (int)local_c);
+              } while (iVar3 < scalar_local_c);
             }
             pDVar4 = (DArrayTy *)
                      ccFntTy::FormIndentSarr
@@ -107,7 +106,7 @@ void __thiscall CPanelTy::PlayBrief(CPanelTy *this)
                                                    100,5,0x226,0x55,0);
               if (pbVar5 != nullptr) {
                 ccFntTy::WrSarr(this_00->field_01D4,(int)local_8,0,-1,0,0,0);
-                DibPut((AnonShape_006B5B10_E0D06CF1 *)this_00->field_01B4,100,5,'\x01',pbVar5);
+                DibPut((RecoveredSourceFamily_dibcopy *)this_00->field_01B4,100,5,'\x01',pbVar5);
                 ccFntTy::EraseSufr(this_00->field_01D4);
                 if (puVar11[0xe] != '\0') {
                   thunk_FUN_005252c0(0x1e);

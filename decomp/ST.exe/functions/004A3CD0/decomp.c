@@ -10,7 +10,6 @@ STGroupBoatC::DistributeDock(STGroupBoatC *this,int param_1,DArrayTy *param_2,DA
 
 {
   dword dVar1;
-  code *pcVar2;
   STGroupBoatC *pSVar3;
   int iVar4;
   STGameObjC *pSVar5;

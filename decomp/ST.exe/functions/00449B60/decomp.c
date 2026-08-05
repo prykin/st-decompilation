@@ -20,7 +20,6 @@ STAllPlayersC::DestroyObjectMsg
           STAllPlayersC_DestroyObjectMsg_param_3Enum param_3,undefined4 param_4)
 
 {
-  code *pcVar1;
   uint uVar2;
   int iVar3;
   undefined4 uVar4;
@@ -42,7 +41,7 @@ STAllPlayersC::DestroyObjectMsg
   uVar2 = param_2;
   switch(param_3) {
   case CASE_1:
-    array = (DArrayTy *)g_packedRecords_A62x8[param_1].field6_0x9;
+    array = (DArrayTy *)g_packedRecords_A62x8[param_1].field3_0x9;
     break;
   case CASE_2:
     array = g_array_007FA154;

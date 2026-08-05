@@ -10,7 +10,6 @@ int STGroupBoatC::Way3DGrpDistribTgt
 
 {
   uint uVar1;
-  code *pcVar2;
   ushort uVar3;
   ushort *puVar4;
   STGameObjC *pSVar5;

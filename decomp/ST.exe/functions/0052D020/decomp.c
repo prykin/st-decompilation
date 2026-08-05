@@ -10,13 +10,13 @@ PopUpTy * __cdecl CreatePopUp(void)
 
 {
   PopUpTy *this;
-  undefined4 *puVar1;
+  uint *puVar1;
   int iVar2;
 
   this = (PopUpTy *)FUN_006b04d0(0xa1);
   if (this != nullptr) {
     sub_006E5FB0(this);
-    *(undefined **)this = &UNK_0079ace8;
+    this->field_0000 = 0x79ace8;
     this->field_0090 = nullptr;
     this->field_0094 = nullptr;
     this->field_0098 = nullptr;

@@ -8,7 +8,6 @@
 undefined4 __thiscall InterSystemC::CreateInterfObjects(InterSystemC *this)
 
 {
-  code *pcVar1;
   bool bVar2;
   InterSystemC *this_00;
   int iVar3;

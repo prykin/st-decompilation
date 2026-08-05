@@ -29,7 +29,6 @@ void __thiscall FSGSTy::NoneFSGS(FSGSTy *this)
   AnonPointee_FSGSTy_1A97 *pAVar2;
   HoloTy *this_00;
   MMsgTy *this_01;
-  code *pcVar3;
   CursorClassTy *pCVar4;
   FSGSTy *this_02;
   DWORD DVar5;
@@ -182,7 +181,7 @@ void __thiscall FSGSTy::NoneFSGS(FSGSTy *this)
       }
       pCVar9 = FUN_006f2c00("MM_BAN_",2,this_02->field_1A93);
       puVar10 = Library::Ourlib::MFIMG::mfImgLoad(g_cMf32_00806780,6,pCVar9,bVar16,iVar6);
-      DibPut((AnonShape_006B5B10_E0D06CF1 *)this_02->field_1A97,0,0,'\x06',(byte *)puVar10);
+      DibPut((RecoveredSourceFamily_dibcopy *)this_02->field_1A97,0,0,'\x06',(byte *)puVar10);
       FUN_006b35d0((int *)g_ddxContext_008075A8,this_02->field_1A8F);
       local_8 = 0;
     }
@@ -211,10 +210,9 @@ void __thiscall FSGSTy::NoneFSGS(FSGSTy *this)
       return;
     }
     puVar8 = &local_24;
-    memset(puVar8, 0, 0x18); /* compiler bulk-zero initialization */
+    memset(puVar8, 0, 0x1a); /* compiler bulk-zero initialization */
     puVar8 = (undefined4 *)((byte *)puVar8 + 0x18);
     this_00 = this_02->field_1F2B;
-    *(undefined2 *)puVar8 = 0;
     if (this_00 != nullptr) {
       HoloTy::Done(this_00);
       Library::MSVCRT::FUN_0072e2b0(this_02->field_1F2B);
@@ -400,7 +398,7 @@ joined_r0x00597872:
       }
       pCVar9 = FUN_006f2c00("MM_BAN_",2,this_02->field_1A93);
       puVar10 = Library::Ourlib::MFIMG::mfImgLoad(g_cMf32_00806780,6,pCVar9,bVar16,iVar6);
-      DibPut((AnonShape_006B5B10_E0D06CF1 *)this_02->field_1A97,0,0,'\x06',(byte *)puVar10);
+      DibPut((RecoveredSourceFamily_dibcopy *)this_02->field_1A97,0,0,'\x06',(byte *)puVar10);
       FUN_006b35d0((int *)g_ddxContext_008075A8,this_02->field_1A8F);
       local_8 = 0;
     }

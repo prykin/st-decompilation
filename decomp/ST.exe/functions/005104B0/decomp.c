@@ -8,7 +8,6 @@
 void __thiscall FrmPanelTy::Update(FrmPanelTy *this)
 
 {
-  code *pcVar1;
   FrmPanelTy *this_00;
   int iVar2;
   int iVar3;

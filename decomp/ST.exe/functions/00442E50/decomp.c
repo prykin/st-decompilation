@@ -14,7 +14,6 @@ STAllPlayersC::_AssignMDPairs
           DArrayTy *param_5)
 
 {
-  code *pcVar1;
   bool bVar2;
   STFishC *pSVar3;
   short sVar4;
@@ -245,7 +244,7 @@ LAB_00442f1f:
   }
   local_20 = Library::DKW::TBL::DArrayCreate(nullptr,local_3c,6,1);
   local_30 = Library::DKW::TBL::DArrayCreate(nullptr,local_2c,6,1);
-  pDVar8 = (DArrayTy *)g_packedRecords_A62x8[param_1].field5_0x5;
+  pDVar8 = (DArrayTy *)g_packedRecords_A62x8[param_1].field2_0x5;
   local_bc = pDVar8;
   if (pDVar8 == nullptr) {
     iVar5 = ReportDebugMessage("E:\\__titans\\wlad\\to_allpl.cpp",0x252c,0,0,"%s",

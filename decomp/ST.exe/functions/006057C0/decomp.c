@@ -93,7 +93,7 @@ void __fastcall FUN_006057c0(STExplosionC *param_1)
           if ((g_playSystem_00802A38->field_00E4 & 1) != 0) {
             param_1->field_029F = param_1->field_029F + 1;
           }
-          if (param_1->field_02A3 <= param_1->field_029F) {
+          if (param_1->field_02A3 <= (int)param_1->field_029F) {
             param_1->field_029F = 0;
             param_1->field_029E = 0;
             STT3DSprC::StopShow(param_1->field_02AF,0xf);

@@ -12,7 +12,6 @@ int __thiscall AiFltClassTy::AppendPoint(AiFltClassTy *this,short *param_1,int p
   short sVar2;
   short sVar3;
   short sVar4;
-  code *pcVar5;
   AiFltClassTy *this_00;
   int iVar6;
   uint uVar7;

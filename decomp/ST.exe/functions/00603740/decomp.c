@@ -17,7 +17,6 @@ int __thiscall STExplosion::GetMessage(STExplosion *this,STMessage *message)
   undefined1 *puVar2;
   STMessageId SVar3;
   AnonShape_00604A90_035626E6 *pAVar4;
-  code *pcVar5;
   short sVar6;
   STGameObjC *this_00;
   STGameObjC *this_01;

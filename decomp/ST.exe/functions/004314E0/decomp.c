@@ -11,7 +11,6 @@ STAllPlayersC::FramePick
           int param_6)
 
 {
-  code *pcVar1;
   int iVar2;
   int iVar3;
   STGameObjC *pSVar4;
@@ -151,19 +150,19 @@ STAllPlayersC::FramePick
                    (int *)&local_30,(int *)&local_38);
   if (local_10->count != 0) {
     iVar2 = (int)playerId;
-    if (g_packedRecords_A62x8[iVar2].field448_0x203 == 0) {
-      iVar3 = g_packedRecords_A62x8[iVar2].field332_0x163;
+    if (g_packedRecords_A62x8[iVar2].field200_0x203 == 0) {
+      iVar3 = g_packedRecords_A62x8[iVar2].field96_0x163;
       if (iVar3 == 0) {
 LAB_00431886:
         iVar3 = CheckTmps(playerId,0,0x3c,playerId,local_10,0);
         if (iVar3 < 1) goto cf_error_exit_004318A9;
         ActivateTV(this,playerId,0,iVar3);
 LAB_004318b5:
-        g_packedRecords_A62x8[iVar2].field332_0x163 = 0x3c;
+        g_packedRecords_A62x8[iVar2].field96_0x163 = 0x3c;
       }
       else if (iVar3 == 0x3c) {
         if (param_6 == 1) {
-          if (g_packedRecords_A62x8[iVar2].field333_0x167 == iVar2) {
+          if (*(int *)&g_packedRecords_A62x8[iVar2].field97_0x167 == iVar2) {
             CalibrateTmp(this,playerId,0,0,&local_10->flags,nullptr,(int *)&local_44,
                          (int *)&local_48);
             ResetActivityFromObjs(this,param_1,0x3c,local_44,0,0);
@@ -178,7 +177,7 @@ LAB_004318b5:
           if (iVar3 < 1) {
             if (iVar3 < 0) {
               PushTV(playerId,0);
-              if (g_packedRecords_A62x8[iVar2].field338_0x177 == (int)playerId) {
+              if (g_packedRecords_A62x8[iVar2].field105_0x177 == (int)playerId) {
                 CalibrateTmp(this,playerId,0,1,&local_10->flags,(int *)&local_24,nullptr,
                              nullptr);
                 ResetActivityFromObjs(this,param_1,0x3c,local_24,0,0);
@@ -214,11 +213,11 @@ LAB_004318b5:
         }
       }
     }
-    else if (g_packedRecords_A62x8[iVar2].field448_0x203 == 1) {
+    else if (g_packedRecords_A62x8[iVar2].field200_0x203 == 1) {
       if (param_6 != 1) {
-        g_packedRecords_A62x8[iVar2].field448_0x203 = 0;
+        g_packedRecords_A62x8[iVar2].field200_0x203 = 0;
         ResetActivityFromTmp(this,playerId,1,0,0);
-        iVar3 = g_packedRecords_A62x8[iVar2].field332_0x163;
+        iVar3 = g_packedRecords_A62x8[iVar2].field96_0x163;
         if (iVar3 == 0) goto LAB_00431886;
         if (iVar3 == 0x3c) {
           iVar3 = CheckTmps(playerId,0,0x3c,playerId,local_10,0);
@@ -276,8 +275,8 @@ cf_error_exit_004318A9:
     iVar2 = (int)playerId;
     /* ST_PSEUDO[flattened_global_record_array]: expected typedRecordArray[index].field after inferred base/stride proof */
     local_4c = iVar2 * 0xa62;
-    if (g_packedRecords_A62x8[iVar2].field448_0x203 == 0) {
-      iVar2 = g_packedRecords_A62x8[iVar2].field332_0x163;
+    if (g_packedRecords_A62x8[iVar2].field200_0x203 == 0) {
+      iVar2 = g_packedRecords_A62x8[iVar2].field96_0x163;
       sVar8 = (short)local_8;
       if (iVar2 == 0) {
         iVar2 = CheckTmps(playerId,0,pSVar4->field_0020,*(char *)&pSVar4->field_0024,nullptr
@@ -323,10 +322,10 @@ LAB_00431c38:
         }
       }
     }
-    else if (g_packedRecords_A62x8[iVar2].field448_0x203 == 1) {
-      g_packedRecords_A62x8[iVar2].field448_0x203 = 0;
+    else if (g_packedRecords_A62x8[iVar2].field200_0x203 == 1) {
+      g_packedRecords_A62x8[iVar2].field200_0x203 = 0;
       ResetActivityFromTmp(this,playerId,1,0,0);
-      iVar2 = *(int *)((int)&g_packedRecords_A62x8[0].field332_0x163 + local_4c);
+      iVar2 = *(int *)((int)&g_packedRecords_A62x8[0].field96_0x163 + local_4c);
       sVar8 = (short)local_8;
       if (iVar2 == 0) {
         iVar2 = CheckTmps(playerId,0,pSVar4->field_0020,*(char *)&pSVar4->field_0024,nullptr
@@ -389,10 +388,10 @@ LAB_00431a3f:
     iVar2 = (int)playerId;
     /* ST_PSEUDO[flattened_global_record_array]: expected typedRecordArray[index].field after inferred base/stride proof */
     local_4c = iVar2 * 0xa62;
-    if (g_packedRecords_A62x8[iVar2].field448_0x203 == 0) {
-      g_packedRecords_A62x8[iVar2].field448_0x203 = 1;
+    if (g_packedRecords_A62x8[iVar2].field200_0x203 == 0) {
+      g_packedRecords_A62x8[iVar2].field200_0x203 = 1;
       ResetActivityFromTmp(this,playerId,0,0,0);
-      iVar2 = *(int *)((int)&g_packedRecords_A62x8[0].field390_0x1b3 + local_4c);
+      iVar2 = *(int *)((int)&g_packedRecords_A62x8[0].field149_0x1b3 + local_4c);
       sVar8 = (short)local_8;
       if (iVar2 < 0x19b) {
         if (iVar2 == 0x19a) {
@@ -442,8 +441,8 @@ LAB_00431e77:
         }
       }
     }
-    else if (g_packedRecords_A62x8[iVar2].field448_0x203 == 1) {
-      iVar2 = g_packedRecords_A62x8[iVar2].field390_0x1b3;
+    else if (g_packedRecords_A62x8[iVar2].field200_0x203 == 1) {
+      iVar2 = g_packedRecords_A62x8[iVar2].field149_0x1b3;
       sVar8 = (short)local_8;
       if (iVar2 < 0x19b) {
         if (iVar2 == 0x19a) {
@@ -524,10 +523,10 @@ LAB_00431d42:
     iVar2 = (int)playerId;
     /* ST_PSEUDO[flattened_global_record_array]: expected typedRecordArray[index].field after inferred base/stride proof */
     local_4c = iVar2 * 0xa62;
-    if (g_packedRecords_A62x8[iVar2].field448_0x203 == 0) {
-      g_packedRecords_A62x8[iVar2].field448_0x203 = 1;
+    if (g_packedRecords_A62x8[iVar2].field200_0x203 == 0) {
+      g_packedRecords_A62x8[iVar2].field200_0x203 = 1;
       ResetActivityFromTmp(this,playerId,0,0,0);
-      iVar2 = *(int *)((int)&g_packedRecords_A62x8[0].field390_0x1b3 + local_4c);
+      iVar2 = *(int *)((int)&g_packedRecords_A62x8[0].field149_0x1b3 + local_4c);
       sVar8 = (short)local_8;
       if (iVar2 < 0x19b) {
         if (iVar2 == 0x19a) {
@@ -575,8 +574,8 @@ LAB_004321a3:
         }
       }
     }
-    else if (g_packedRecords_A62x8[iVar2].field448_0x203 == 1) {
-      iVar2 = g_packedRecords_A62x8[iVar2].field390_0x1b3;
+    else if (g_packedRecords_A62x8[iVar2].field200_0x203 == 1) {
+      iVar2 = g_packedRecords_A62x8[iVar2].field149_0x1b3;
       sVar8 = (short)local_8;
       if (iVar2 < 0x19b) {
         if (iVar2 == 0x19a) {
@@ -648,10 +647,10 @@ LAB_0043206e:
     DArrayGetElement(local_14,0,&local_8);
     local_14->count = 0;
     Library::DKW::TBL::DArrayAppend(local_14,&local_8);
-    if (g_packedRecords_A62x8[playerId].field448_0x203 == 0) {
-      g_packedRecords_A62x8[playerId].field448_0x203 = 1;
+    if (g_packedRecords_A62x8[playerId].field200_0x203 == 0) {
+      g_packedRecords_A62x8[playerId].field200_0x203 = 1;
       ResetActivityFromTmp(this,playerId,0,0,0);
-      iVar2 = g_packedRecords_A62x8[playerId].field390_0x1b3;
+      iVar2 = g_packedRecords_A62x8[playerId].field149_0x1b3;
       if (iVar2 < 0x19b) {
         if (iVar2 == 0x19a) {
           iVar2 = CheckTmps(playerId,1,0x19a,playerId,local_14,0);
@@ -673,7 +672,7 @@ cf_error_exit_0043256B:
           ActivateTV(this,playerId,1,iVar2);
         }
 LAB_00432578:
-        g_packedRecords_A62x8[playerId].field390_0x1b3 = 0x19a;
+        g_packedRecords_A62x8[playerId].field149_0x1b3 = 0x19a;
       }
       else if ((iVar2 == 0x1a4) || (iVar2 == 0x1b8)) {
 LAB_00432536:
@@ -693,15 +692,15 @@ LAB_0043250f:
         }
       }
     }
-    else if (g_packedRecords_A62x8[playerId].field448_0x203 == 1) {
-      iVar2 = g_packedRecords_A62x8[playerId].field390_0x1b3;
+    else if (g_packedRecords_A62x8[playerId].field200_0x203 == 1) {
+      iVar2 = g_packedRecords_A62x8[playerId].field149_0x1b3;
       if (iVar2 < 0x19b) {
         if (iVar2 == 0x19a) {
           iVar2 = CheckTmps(playerId,1,0x19a,playerId,local_14,0);
           if (iVar2 < 1) {
             if (iVar2 < 0) {
               PushTV(playerId,1);
-              if (g_packedRecords_A62x8[playerId].field396_0x1c7 == (int)playerId) {
+              if (g_packedRecords_A62x8[playerId].field158_0x1c7 == (int)playerId) {
                 CalibrateTmp(this,playerId,1,1,&local_14->flags,(int *)&local_24,nullptr,
                              nullptr);
                 ResetActivityFromObjs(this,param_1,0x19a,local_24,0,0);
@@ -777,10 +776,10 @@ LAB_00432582:
     iVar2 = (int)playerId;
     /* ST_PSEUDO[flattened_global_record_array]: expected typedRecordArray[index].field after inferred base/stride proof */
     local_4c = iVar2 * 0xa62;
-    if (g_packedRecords_A62x8[iVar2].field448_0x203 == 0) {
-      g_packedRecords_A62x8[iVar2].field448_0x203 = 1;
+    if (g_packedRecords_A62x8[iVar2].field200_0x203 == 0) {
+      g_packedRecords_A62x8[iVar2].field200_0x203 = 1;
       ResetActivityFromTmp(this,playerId,0,0,0);
-      iVar2 = *(int *)((int)&g_packedRecords_A62x8[0].field390_0x1b3 + local_4c);
+      iVar2 = *(int *)((int)&g_packedRecords_A62x8[0].field149_0x1b3 + local_4c);
       sVar8 = (short)local_8;
       if (iVar2 < 0x19b) {
         if (iVar2 == 0x19a) {
@@ -830,8 +829,8 @@ LAB_0043283b:
         }
       }
     }
-    else if (g_packedRecords_A62x8[iVar2].field448_0x203 == 1) {
-      iVar2 = g_packedRecords_A62x8[iVar2].field390_0x1b3;
+    else if (g_packedRecords_A62x8[iVar2].field200_0x203 == 1) {
+      iVar2 = g_packedRecords_A62x8[iVar2].field149_0x1b3;
       sVar8 = (short)local_8;
       if (iVar2 < 0x19b) {
         if (iVar2 == 0x19a) {
@@ -912,10 +911,10 @@ LAB_00432706:
     iVar2 = (int)playerId;
     /* ST_PSEUDO[flattened_global_record_array]: expected typedRecordArray[index].field after inferred base/stride proof */
     local_4c = iVar2 * 0xa62;
-    if (g_packedRecords_A62x8[iVar2].field448_0x203 == 0) {
-      g_packedRecords_A62x8[iVar2].field448_0x203 = 1;
+    if (g_packedRecords_A62x8[iVar2].field200_0x203 == 0) {
+      g_packedRecords_A62x8[iVar2].field200_0x203 = 1;
       ResetActivityFromTmp(this,playerId,0,0,0);
-      iVar2 = *(int *)((int)&g_packedRecords_A62x8[0].field390_0x1b3 + local_4c);
+      iVar2 = *(int *)((int)&g_packedRecords_A62x8[0].field149_0x1b3 + local_4c);
       sVar8 = (short)local_8;
       if (iVar2 < 0x19b) {
         if (iVar2 == 0x19a) {
@@ -963,8 +962,8 @@ LAB_00432b67:
         }
       }
     }
-    else if (g_packedRecords_A62x8[iVar2].field448_0x203 == 1) {
-      iVar2 = g_packedRecords_A62x8[iVar2].field390_0x1b3;
+    else if (g_packedRecords_A62x8[iVar2].field200_0x203 == 1) {
+      iVar2 = g_packedRecords_A62x8[iVar2].field149_0x1b3;
       sVar8 = (short)local_8;
       if (iVar2 < 0x19b) {
         if (iVar2 == 0x19a) {
@@ -1039,8 +1038,8 @@ LAB_00432a32:
     DArrayGetElement(local_3c,0,local_c);
     local_3c->count = 0;
     Library::DKW::TBL::DArrayAppend(local_3c,local_c);
-    if (g_packedRecords_A62x8[playerId].field448_0x203 == 0) {
-      iVar2 = g_packedRecords_A62x8[playerId].field332_0x163;
+    if (g_packedRecords_A62x8[playerId].field200_0x203 == 0) {
+      iVar2 = g_packedRecords_A62x8[playerId].field96_0x163;
       if (iVar2 == 0) {
 LAB_00432e7f:
         iVar2 = CheckTmps(playerId,0,0x3c,local_c[0],local_18,0);
@@ -1051,7 +1050,7 @@ cf_error_exit_00432EAE:
         else {
           ActivateTV(this,playerId,0,iVar2);
         }
-        g_packedRecords_A62x8[playerId].field332_0x163 = 0x3c;
+        g_packedRecords_A62x8[playerId].field96_0x163 = 0x3c;
       }
       else if (iVar2 == 0x3c) {
         iVar2 = CheckTmps(playerId,0,0x3c,local_c[0],local_18,0);
@@ -1083,10 +1082,10 @@ cf_error_exit_00432EAE:
         }
       }
     }
-    else if (g_packedRecords_A62x8[playerId].field448_0x203 == 1) {
-      g_packedRecords_A62x8[playerId].field448_0x203 = 0;
+    else if (g_packedRecords_A62x8[playerId].field200_0x203 == 1) {
+      g_packedRecords_A62x8[playerId].field200_0x203 = 0;
       ResetActivityFromTmp(this,playerId,1,0,0);
-      iVar2 = g_packedRecords_A62x8[playerId].field332_0x163;
+      iVar2 = g_packedRecords_A62x8[playerId].field96_0x163;
       if (iVar2 == 0) goto LAB_00432e7f;
       if (iVar2 == 0x3c) {
         iVar2 = CheckTmps(playerId,0,0x3c,local_c[0],local_18,0);
@@ -1141,8 +1140,8 @@ cf_error_exit_00432EAE:
     iVar2 = (int)playerId;
     /* ST_PSEUDO[flattened_global_record_array]: expected typedRecordArray[index].field after inferred base/stride proof */
     local_4c = iVar2 * 0xa62;
-    if (g_packedRecords_A62x8[iVar2].field448_0x203 == 0) {
-      iVar2 = g_packedRecords_A62x8[iVar2].field332_0x163;
+    if (g_packedRecords_A62x8[iVar2].field200_0x203 == 0) {
+      iVar2 = g_packedRecords_A62x8[iVar2].field96_0x163;
       sVar8 = (short)local_8;
       if (iVar2 == 0) {
         iVar2 = CheckTmps(playerId,0,pSVar4->field_0020,*(char *)&pSVar4->field_0024,nullptr
@@ -1188,10 +1187,10 @@ LAB_0043322b:
         }
       }
     }
-    else if (g_packedRecords_A62x8[iVar2].field448_0x203 == 1) {
-      g_packedRecords_A62x8[iVar2].field448_0x203 = 0;
+    else if (g_packedRecords_A62x8[iVar2].field200_0x203 == 1) {
+      g_packedRecords_A62x8[iVar2].field200_0x203 = 0;
       ResetActivityFromTmp(this,playerId,1,0,0);
-      iVar2 = *(int *)((int)&g_packedRecords_A62x8[0].field332_0x163 + local_4c);
+      iVar2 = *(int *)((int)&g_packedRecords_A62x8[0].field96_0x163 + local_4c);
       sVar8 = (short)local_8;
       if (iVar2 == 0) {
         iVar2 = CheckTmps(playerId,0,pSVar4->field_0020,*(char *)&pSVar4->field_0024,nullptr
@@ -1252,8 +1251,8 @@ LAB_00433046:
   DArrayGetElement(local_40,0,local_c);
   local_40->count = 0;
   Library::DKW::TBL::DArrayAppend(local_40,local_c);
-  if (g_packedRecords_A62x8[playerId].field448_0x203 != 0) {
-    if (g_packedRecords_A62x8[playerId].field448_0x203 != 1) {
+  if (g_packedRecords_A62x8[playerId].field200_0x203 != 0) {
+    if (g_packedRecords_A62x8[playerId].field200_0x203 != 1) {
       iVar2 = ReportDebugMessage("E:\\__titans\\wlad\\to_allpl.cpp",0xdcb,0,0,"%s",
                                  "STAllPlayersC::FramePick GAMETYPE_OBJECT (enemy) wrong panel number");
       if (iVar2 != 0) {
@@ -1261,7 +1260,7 @@ LAB_00433046:
       }
       goto cf_error_exit_004334F5;
     }
-    iVar2 = g_packedRecords_A62x8[playerId].field390_0x1b3;
+    iVar2 = g_packedRecords_A62x8[playerId].field149_0x1b3;
     if (iVar2 < 0x19b) {
       if (iVar2 == 0x19a) {
         iVar2 = CheckTmps(playerId,1,0x19a,local_c[0],local_1c,0);
@@ -1295,9 +1294,9 @@ LAB_00433363:
     }
     goto cf_error_exit_004334F5;
   }
-  g_packedRecords_A62x8[playerId].field448_0x203 = 1;
+  g_packedRecords_A62x8[playerId].field200_0x203 = 1;
   ResetActivityFromTmp(this,playerId,0,0,0);
-  iVar2 = g_packedRecords_A62x8[playerId].field390_0x1b3;
+  iVar2 = g_packedRecords_A62x8[playerId].field149_0x1b3;
   if (iVar2 < 0x19b) {
     if (iVar2 == 0x19a) {
       iVar2 = CheckTmps(playerId,1,0x19a,local_c[0],local_1c,0);
@@ -1337,7 +1336,7 @@ LAB_004334a3:
 cf_error_exit_004334DF:
     AddObjToTmp(this,playerId,1,0,local_c[0],local_8);
   }
-  g_packedRecords_A62x8[playerId].field390_0x1b3 = 0x19a;
+  g_packedRecords_A62x8[playerId].field149_0x1b3 = 0x19a;
 cf_error_exit_004334F5:
   RaiseInternalException
             (-0x5001fff7,g_overwriteContext_007ED77C,"E:\\__titans\\wlad\\to_allpl.cpp",0xdce);

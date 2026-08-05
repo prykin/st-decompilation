@@ -12,7 +12,6 @@ undefined4 __cdecl FUN_0057b350(int *param_1,int param_2,int *param_3)
   short *psVar1;
   undefined2 *puVar2;
   int iVar3;
-  code *pcVar4;
   int *piVar5;
   undefined2 uVar6;
   void *pvVar7;

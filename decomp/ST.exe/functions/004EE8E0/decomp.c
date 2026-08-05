@@ -35,9 +35,8 @@ BldBoatPanelTy * __cdecl CreateBldBoatPanel(void)
     *(undefined4 *)&this->field_0x1ad = 0;
     *(undefined4 *)&this->field_0x1b1 = 0;
     puVar2 = (undefined4 *)&this->field_01B5;
-    memset(puVar2, 0, 0xc2); /* compiler bulk-zero initialization */
+    memset(puVar2, 0, 0xc3); /* compiler bulk-zero initialization */
     puVar2 = (undefined4 *)((byte *)puVar2 + 0xc0);
-    *(undefined1 *)((int)puVar2 + 2) = 0;
     this->field_0199 = 0;
     this->field_0279 = 1;
     this->field_0278 = 0;

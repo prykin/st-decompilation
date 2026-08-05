@@ -8,7 +8,6 @@
 void __thiscall MReportTy::DoneMReport(MReportTy *this)
 
 {
-  code *pcVar1;
   MReportTy *pMVar2;
   int iVar3;
   int iVar4;

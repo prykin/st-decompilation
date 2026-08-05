@@ -8,7 +8,6 @@
 void __thiscall MAdvTy::DoneMAdv(MAdvTy *this)
 
 {
-  code *pcVar1;
   MAdvTy *this_00;
   int iVar2;
   int iVar3;

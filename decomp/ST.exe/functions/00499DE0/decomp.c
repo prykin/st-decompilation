@@ -9,7 +9,6 @@ undefined4 __thiscall STGroupBoatC::DistributeTargets(STGroupBoatC *this,uint *p
 
 {
   ushort *puVar1;
-  code *pcVar2;
   STGroupBoatC *this_00;
   int iVar3;
   STBoatC *pSVar4;

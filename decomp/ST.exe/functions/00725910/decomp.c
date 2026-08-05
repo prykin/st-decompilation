@@ -189,6 +189,7 @@ FUN_00725910(HANDLE hFindFile,char *text,undefined4 param_3,undefined *param_4,u
           pcVar7 = pcVar11 + -uVar5;
           pcVar11 = local_108;
           memmove(pcVar11, pcVar7, uVar5); /* compiler REP MOVS byte copy */
+          uVar6 = 0;
           FUN_006b8280(local_108,local_108);
           uVar5 = 0xffffffff;
           pCVar8 = local_248.cFileName;

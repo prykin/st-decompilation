@@ -12,7 +12,6 @@
 void __thiscall CPanelTy::PaintBEnergy(CPanelTy *this)
 
 {
-  code *pcVar1;
   CPanelTy *pCVar2;
   int iVar3;
   byte *pbVar4;

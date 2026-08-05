@@ -185,7 +185,7 @@ int __thiscall OptPanelTy::GetMessage(OptPanelTy *this,STMessage *message)
               }
               ccFntTy::WrStr(this_00->field_017C,puVar26,2,-1,uVar12);
               Library::DKW::WGR::FUN_006b55f0
-                        ((AnonShape_006B5B10_E0D06CF1 *)this_00->field_0068,0,
+                        ((RecoveredSourceFamily_dibcopy *)this_00->field_0068,0,
                          (message->arg1).words.low + 0x26,(message->arg1).words.high + 0x31,
                          (byte *)this_00->field_01E5,0,0,0,200,*(int *)(this_00->field_01E5 + 4));
               Library::DKW::DDX::FUN_006b3640
@@ -246,7 +246,7 @@ int __thiscall OptPanelTy::GetMessage(OptPanelTy *this,STMessage *message)
                 ccFntTy::WrStr(this_00->field_017C,puVar26,0,-1,0);
                 puVar18 = this_00->field_01E5;
                 Library::DKW::WGR::FUN_006b55f0
-                          ((AnonShape_006B5B10_E0D06CF1 *)this_00->field_0068,0,0x26,0x1c,
+                          ((RecoveredSourceFamily_dibcopy *)this_00->field_0068,0,0x26,0x1c,
                            (byte *)puVar18,0,0,0,*(int *)(puVar18 + 2),*(int *)(puVar18 + 4));
                 g_currentExceptionFrame = local_8c.previous;
                 return 0;
@@ -286,7 +286,7 @@ int __thiscall OptPanelTy::GetMessage(OptPanelTy *this,STMessage *message)
               ccFntTy::WrStr(this_00->field_017C,puVar26,iVar29,iVar32,uVar12);
               puVar18 = this_00->field_01E5;
               Library::DKW::WGR::FUN_006b55f0
-                        ((AnonShape_006B5B10_E0D06CF1 *)this_00->field_0068,0,0x26,0x1c,
+                        ((RecoveredSourceFamily_dibcopy *)this_00->field_0068,0,0x26,0x1c,
                          (byte *)puVar18,0,0,0,*(int *)(puVar18 + 2),*(int *)(puVar18 + 4));
               g_currentExceptionFrame = local_8c.previous;
               return 0;
@@ -318,7 +318,7 @@ int __thiscall OptPanelTy::GetMessage(OptPanelTy *this,STMessage *message)
               FUN_00710790((AnonShape_00710790_4CBB90D4 *)pcVar31);
             }
             local_8 = *(uint *)&pcVar31->field_0x8a;
-            FUN_006b4170((AnonShape_006B5B10_E0D06CF1 *)this_00->field_0068,0,0x26,0x1a,0xca,0x6f,
+            FUN_006b4170((RecoveredSourceFamily_dibcopy *)this_00->field_0068,0,0x26,0x1a,0xca,0x6f,
                          (DAT_0080874e != '\x03') - 1U & 0x73);
             uVar17 = (uint)(message->arg0).words.high;
             uVar12 = uVar17;
@@ -1596,7 +1596,7 @@ switchD_00534835_caseD_1:
       return 0;
     case CASE_D:
       DAT_00807346 = (*(char *)&message->arg0 + '\x01') * '\x05';
-      DibPut((AnonShape_006B5B10_E0D06CF1 *)this_00->field_0068,0xaa,0x6f,'\x01',
+      DibPut((RecoveredSourceFamily_dibcopy *)this_00->field_0068,0xaa,0x6f,'\x01',
              (byte *)this_00->field_018C);
       wsprintfA(&this_00->field_006C,"%d",(uint)(byte)DAT_00807346);
       ccFntTy::SetSurf(this_00->field_017C,this_00->field_0068,0,0xaa,0x6f,
@@ -1745,7 +1745,7 @@ LAB_00535ef1:
       return 0;
     case CASE_D:
       DAT_00807347 = *(byte *)&message->arg0;
-      DibPut((AnonShape_006B5B10_E0D06CF1 *)this_00->field_0068,0xaa,0x81,'\x01',
+      DibPut((RecoveredSourceFamily_dibcopy *)this_00->field_0068,0xaa,0x81,'\x01',
              (byte *)this_00->field_018C);
       wsprintfA(&this_00->field_006C,"%d",DAT_00807347 + 1);
       ccFntTy::SetSurf(this_00->field_017C,this_00->field_0068,0,0xaa,0x81,
@@ -2189,8 +2189,8 @@ cf_common_exit_00536EE8:
       }
       puVar18 = this_00->field_01E5;
       Library::DKW::WGR::FUN_006b55f0
-                ((AnonShape_006B5B10_E0D06CF1 *)this_00->field_0068,0,0x26,0x1c,(byte *)puVar18,0,0,
-                 0,*(int *)(puVar18 + 2),*(int *)(puVar18 + 4));
+                ((RecoveredSourceFamily_dibcopy *)this_00->field_0068,0,0x26,0x1c,(byte *)puVar18,0,
+                 0,0,*(int *)(puVar18 + 2),*(int *)(puVar18 + 4));
       Library::DKW::DDX::FUN_006b3640
                 ((int *)g_ddxContext_008075A8,this_00->field_0060,0xffffffff,this_00->field_003C,
                  this_00->field_0044);

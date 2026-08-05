@@ -16,7 +16,6 @@ undefined4 __thiscall STGameObjC::MoveStep(STGameObjC *this)
   ushort *puVar1;
   ushort uVar2;
   ushort *puVar3;
-  code *pcVar4;
   int iVar5;
   uint uVar6;
   undefined4 uVar7;

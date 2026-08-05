@@ -24,7 +24,6 @@ FSGSTy::OutTRGlProc(FSGSTy *this,AnonShape_GLOBAL_0080759C_9638EF10 *param_1,MMM
 
 {
   StartServTy *this_00;
-  code *pcVar1;
   int errorCode;
   uint *puVar2;
   int iVar3;

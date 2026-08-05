@@ -9,7 +9,6 @@ void __thiscall PrividerTy::DeleteCtrls(PrividerTy *this,char param_1)
 
 {
   ushort *puVar1;
-  code *pcVar2;
   PrividerTy *pPVar3;
   int iVar4;
   HoloTy *pHVar5;

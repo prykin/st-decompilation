@@ -14,7 +14,6 @@ int __thiscall STJellyManC::GetMessage(STJellyManC *this,STMessage *message)
 {
   STMessageId SVar1;
   dword dVar2;
-  code *pcVar3;
   undefined1 uVar4;
   undefined1 uVar5;
   undefined1 uVar6;

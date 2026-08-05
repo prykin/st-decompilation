@@ -47,7 +47,6 @@ int __thiscall TLOBaseTy::SetState(TLOBaseTy *this,int param_1,int param_2)
   TLOBaseTy_field_0245State TVar3;
   TLOBaseTyVTable *pTVar4;
   TLOBaseTy_field_05ACState TVar5;
-  code *pcVar6;
   bool bVar7;
   TLOBaseTy *this_01;
   short sVar8;

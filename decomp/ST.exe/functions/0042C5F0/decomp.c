@@ -16,7 +16,6 @@ STAllPlayersC::DelObjFromTmps
   undefined4 *puVar1;
   DArrayTy *pDVar2;
   dword dVar3;
-  code *pcVar4;
   STGameObjC *pSVar5;
   int iVar6;
   undefined4 uVar7;

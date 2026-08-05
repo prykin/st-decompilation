@@ -31,7 +31,6 @@ CPanelTy::SetButStruct
 
 {
   undefined1 *text;
-  code *pcVar1;
   uint uVar2;
   ushort uVar3;
   int iVar4;

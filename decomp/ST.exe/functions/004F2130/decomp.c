@@ -17,7 +17,6 @@ CPanelTy::PaintCostsXY
           ushort param_6,ushort param_7)
 
 {
-  code *pcVar1;
   CPanelTy *pCVar2;
   int iVar3;
   uint *resourceString;

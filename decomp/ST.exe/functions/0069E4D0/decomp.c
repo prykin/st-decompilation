@@ -124,17 +124,17 @@ LAB_0069e69c:
         if (((0 < iVar3 + param_2) && (0 < iVar6 + param_3)) &&
            ((-1 < (int)local_14 &&
             ((((int)local_14 < param_4 && (-1 < iVar5)) && (iVar5 < param_5)))))) {
-          local_14 = (int *)(iVar5 * param_4 + (int)local_14);
-          iVar5 = param_1 + (int)local_14 * 0xe;
+          int scalar_local_14 = iVar5 * param_4 + (int)local_14; /* split integer lifetime from pointer-typed SSA storage */
+          iVar5 = param_1 + scalar_local_14 * 0xe;
           if ((*(int *)(iVar5 + 6) < 0) && (*(int *)(iVar5 + 2) == 0)) {
-            local_1c = thunk_FUN_00696310(local_18,(int)local_14,param_4,local_a0,nullptr);
+            local_1c = thunk_FUN_00696310(local_18,scalar_local_14,param_4,local_a0,nullptr);
             iVar5 = local_c;
-            piVar9 = local_14;
+            int scalar_piVar9 = scalar_local_14;
             iVar7 = 0;
             if (local_1c < 1) {
 LAB_0069e887:
               *(undefined4 *)((int)local_3c + local_c) = 1;
-              *(undefined4 *)(param_1 + 6 + (int)piVar9 * 0xe) = 0x3ef;
+              *(undefined4 *)(param_1 + 6 + scalar_piVar9 * 0xe) = 0x3ef;
               uVar2 = Library::MSVCRT::FUN_0072e6c0();
               thunk_FUN_006a0ae0(local_18,iVar3 + param_2,iVar6 + param_3,0,0x3ef,
                                  uVar2 % (DAT_007d934c - 4U) + 4);

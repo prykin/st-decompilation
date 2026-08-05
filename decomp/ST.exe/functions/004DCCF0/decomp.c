@@ -20,11 +20,10 @@ undefined4 __fastcall FUN_004dccf0(AnonShape_004DCCF0_FF75E3FE *param_1)
   int local_8;
 
   puVar4 = local_48;
-  memset(puVar4, 0, 0x3c); /* compiler bulk-zero initialization */
+  memset(puVar4, 0, 0x3e); /* compiler bulk-zero initialization */
   puVar4 = (undefined4 *)((byte *)puVar4 + 0x3c);
   uVar2 = param_1->field_0018;
   uVar1 = param_1->field_0032;
-  *(undefined2 *)puVar4 = 0;
   local_2c = param_1->field_05B4;
   local_48[3] = 1;
   local_48[2] = 1;

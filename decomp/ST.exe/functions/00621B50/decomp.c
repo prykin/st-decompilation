@@ -22,7 +22,6 @@ int __thiscall STMineSetC::GetMessage(STMineSetC *this,STMessage *message)
   short sVar4;
   STMessageId SVar5;
   dword dVar6;
-  code *pcVar7;
   bool bVar8;
   STMineSetC *this_00;
   byte bVar9;

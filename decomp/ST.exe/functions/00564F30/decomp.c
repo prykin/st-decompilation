@@ -46,8 +46,7 @@ int FUN_00564f30(int param_1,int param_2,int param_3,int *param_4,int param_5,in
   uVar7 = 0;
   local_2c = 0;
   local_18 = 0;
-  /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
-  param_4 = (int *)(DAT_00803380 + local_8 * DAT_008033a4 * 2);
+  int scalar_param_4 = DAT_00803380 + local_8 * DAT_008033a4 * 2; /* split integer lifetime from pointer-typed SSA storage */
   iVar11 = 0;
   local_14 = 0;
   if (0 < *(int *)(iVar3 + 0x10)) {
@@ -56,7 +55,7 @@ int FUN_00564f30(int param_1,int param_2,int param_3,int *param_4,int param_5,in
       if ((-1 < local_8) && (local_8 < DAT_008033a8)) {
         iVar5 = *local_20 + param_1;
         if (iVar5 <= local_20[1] + param_1) {
-          pbVar8 = (byte *)((int)param_4 + iVar5 * 2);
+          pbVar8 = (byte *)(scalar_param_4 + iVar5 * 2);
           do {
             if ((-1 < iVar5) && (iVar5 < DAT_008033a4)) {
               local_2c = local_2c + (*pbVar8 & 7) + (uint)(*pbVar8 >> 4) * -2;

@@ -13,7 +13,6 @@
 undefined1 FUN_00430750(Global_sub_00430750_param_1Enum param_1)
 
 {
-  code *pcVar1;
   undefined1 uVar2;
   int iVar3;
 

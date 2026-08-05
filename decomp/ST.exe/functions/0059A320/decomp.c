@@ -9,7 +9,6 @@ void __thiscall FSGSTy::PaintLogPsw(FSGSTy *this)
 
 {
   ushort *puVar1;
-  code *pcVar2;
   FSGSTy *pFVar3;
   int iVar4;
   undefined4 *puVar5;
@@ -47,28 +46,28 @@ void __thiscall FSGSTy::PaintLogPsw(FSGSTy *this)
     iVar4 = 0;
     puVar6 = (uint *)LoadResourceString(0x254f,g_module_00807618);
     ccFntTy::WrStr(pFVar3->field_1A73,puVar6,iVar4,iVar9,uVar8);
-    FUN_006b5ee0((AnonShape_006B5B10_E0D06CF1 *)pFVar3->field_1AC0,0,0x18,0x3d,0x188,0x1b,0xf,0xd);
+    FUN_006b5ee0((RecoveredSourceFamily_dibcopy *)pFVar3->field_1AC0,0,0x18,0x3d,0x188,0x1b,0xf,0xd);
     ccFntTy::SetSurf(pFVar3->field_1A73,(int)pFVar3->field_1AC0,0,0x19,0x61,0xb4,0x14);
     uVar8 = 2;
     iVar9 = -1;
     iVar4 = 0;
     puVar6 = (uint *)LoadResourceString(0x2556,g_module_00807618);
     ccFntTy::WrStr(pFVar3->field_1A73,puVar6,iVar4,iVar9,uVar8);
-    FUN_006b5ee0((AnonShape_006B5B10_E0D06CF1 *)pFVar3->field_1AC0,0,0x18,0x74,0xb6,0x16,0xf,0xd);
+    FUN_006b5ee0((RecoveredSourceFamily_dibcopy *)pFVar3->field_1AC0,0,0x18,0x74,0xb6,0x16,0xf,0xd);
     ccFntTy::SetSurf(pFVar3->field_1A73,(int)pFVar3->field_1AC0,0,0x19,0x89,0xb4,0x14);
     uVar8 = 2;
     iVar9 = -1;
     iVar4 = 0;
     puVar6 = (uint *)LoadResourceString(0x2555,g_module_00807618);
     ccFntTy::WrStr(pFVar3->field_1A73,puVar6,iVar4,iVar9,uVar8);
-    FUN_006b5ee0((AnonShape_006B5B10_E0D06CF1 *)pFVar3->field_1AC0,0,0x18,0x9c,0xb6,0x16,0xf,0xd);
+    FUN_006b5ee0((RecoveredSourceFamily_dibcopy *)pFVar3->field_1AC0,0,0x18,0x9c,0xb6,0x16,0xf,0xd);
     ccFntTy::SetSurf(pFVar3->field_1A73,(int)pFVar3->field_1AC0,0,0x19,0xb1,0xb4,0x14);
     uVar8 = 2;
     iVar9 = -1;
     iVar4 = 0;
     puVar6 = (uint *)LoadResourceString(0x2554,g_module_00807618);
     ccFntTy::WrStr(pFVar3->field_1A73,puVar6,iVar4,iVar9,uVar8);
-    FUN_006b5ee0((AnonShape_006B5B10_E0D06CF1 *)pFVar3->field_1AC0,0,0x18,0xc4,0xb6,0x16,0xf,0xd);
+    FUN_006b5ee0((RecoveredSourceFamily_dibcopy *)pFVar3->field_1AC0,0,0x18,0xc4,0xb6,0x16,0xf,0xd);
     Library::DKW::DDX::FUN_006b3430((int *)g_ddxContext_008075A8,pFVar3->field_1ABC);
     FUN_006b35d0((int *)g_ddxContext_008075A8,pFVar3->field_1ABC);
     g_currentExceptionFrame = local_4c.previous;

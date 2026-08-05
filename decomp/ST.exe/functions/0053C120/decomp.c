@@ -8,7 +8,6 @@
 void __thiscall ResearchPanelTy::InitResearchPanel(ResearchPanelTy *this)
 
 {
-  code *pcVar1;
   ResearchPanelTy *this_00;
   int iVar2;
   DArrayTy *pDVar3;

@@ -12,7 +12,6 @@
 int __thiscall MAdvTy::GetMessage(MAdvTy *this,STMessage *message)
 
 {
-  code *pcVar1;
   MAdvTy *this_00;
   DWORD DVar2;
   int iVar3;

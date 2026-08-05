@@ -20,7 +20,6 @@ void __thiscall STFishC::LifeFish(STFishC *this)
 
 {
   undefined4 *this_00;
-  code *pcVar1;
   int iVar2;
   uint uVar3;
   int iVar4;

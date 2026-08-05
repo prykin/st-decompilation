@@ -25,10 +25,9 @@ ChooseMapTy::InitChooseMap
 
 {
   ChooseMapTy_field_1A5FState CVar1;
-  AnonShape_006B5B10_E0D06CF1 *pAVar2;
+  RecoveredSourceFamily_dibcopy *pRVar2;
   MMsgTy *this_00;
   StartSystemTy *pSVar3;
-  code *pcVar4;
   CursorClassTy *this_01;
   ChooseMapTy *this_02;
   int iVar5;
@@ -311,8 +310,8 @@ LAB_005ab4e5:
                      (DAT_00806784,CASE_B,"FILE_LIST",0xffffffff,0,1,0,nullptr);
   this_02->field_1C7F = puVar7;
   puVar7 = Library::Ourlib::MFIMG::mfImgLoad(g_cMf32_00806780,1,"MM_MAPB",0,1);
-  DibPut((AnonShape_006B5B10_E0D06CF1 *)g_startSystem_0081176C->field_02F0,0,0,'\x01',(byte *)puVar7
-        );
+  DibPut((RecoveredSourceFamily_dibcopy *)g_startSystem_0081176C->field_02F0,0,0,'\x01',
+         (byte *)puVar7);
   *(undefined4 *)&this_02->field_0x20b3 = 0x1010101;
   this_02->field_20B7 = 1;
   switch(this_02->field_1A5F) {
@@ -346,9 +345,9 @@ switchD_005ab66b_caseD_6:
       case CASE_7:
         this_02->field_0x20b5 = 0;
       default:
-        pAVar2 = (AnonShape_006B5B10_E0D06CF1 *)g_startSystem_0081176C->field_0544;
+        pRVar2 = (RecoveredSourceFamily_dibcopy *)g_startSystem_0081176C->field_0544;
         local_c = param_2 - 1;
-        FUN_006b4170(pAVar2,0,0,0,pAVar2->field_0004,pAVar2->field_0008,0xff);
+        FUN_006b4170(pRVar2,0,0,0,pRVar2->field_0004,pRVar2->field_0008,0xff);
         if ((DArrayTy *)g_startSystem_0081176C->field_0548 != nullptr) {
           FUN_006b5570((DArrayTy *)g_startSystem_0081176C->field_0548);
         }
@@ -768,12 +767,10 @@ switchD_005ab66b_caseD_6:
           this_01->field_04DF = -1;
         }
         puVar10 = &local_20c;
-        memset(puVar10, 0, 0x1f8); /* compiler bulk-zero initialization */
+        memset(puVar10, 0, 0x1fb); /* compiler bulk-zero initialization */
         puVar10 = (undefined4 *)((byte *)puVar10 + 0x1f8);
         iVar5 = 0;
         CVar1 = this_02->field_1A5F;
-        *(undefined2 *)puVar10 = 0;
-        *(undefined1 *)((int)puVar10 + 2) = 0;
         local_13c = this_02->field_0008;
         this_02->field_0065 = 3;
         local_149 = 0x2340;

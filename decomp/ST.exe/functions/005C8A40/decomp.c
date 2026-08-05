@@ -26,7 +26,6 @@ int __thiscall SettMapTy::GetMessage(SettMapTy *this,STMessage *message)
   STMessageId SVar5;
   ccFntTy *pcVar6;
   int *piVar7;
-  code *pcVar8;
   SettMapTy *this_00;
   byte bVar9;
   char cVar10;
@@ -44,7 +43,7 @@ int __thiscall SettMapTy::GetMessage(SettMapTy *this,STMessage *message)
   DArrayTy *pDVar21;
   char *pcVar23;
   uint *puVar24;
-  AnonShape_006B5B10_E0D06CF1 *pAVar25;
+  RecoveredSourceFamily_dibcopy *pRVar25;
   UINT resourceId;
   undefined4 uVar26;
   InternalExceptionFrame local_dc;
@@ -220,12 +219,12 @@ switchD_005c8bd0_caseD_611f:
           default:
             bVar9 = 0xff;
           }
-          pAVar25 = (message->arg1).ptr;
-          FUN_006b4170(pAVar25,0,2,2,pAVar25->field_0004 + -4,pAVar25->field_0008 + -4,bVar9);
+          pRVar25 = (message->arg1).ptr;
+          FUN_006b4170(pRVar25,0,2,2,pRVar25->field_0004 + -4,pRVar25->field_0008 + -4,bVar9);
         }
         if ((message->arg0).words.high == 1) {
-          pAVar25 = (message->arg1).ptr;
-          FUN_006b5ee0(pAVar25,0,0,0,pAVar25->field_0004,pAVar25->field_0008,0xf,0xd);
+          pRVar25 = (message->arg1).ptr;
+          FUN_006b5ee0(pRVar25,0,0,0,pRVar25->field_0004,pRVar25->field_0008,0xf,0xd);
         }
       }
       else if (SVar5 < (MESS_SHARED_6334|MESS_ID_CREATE)) {
@@ -326,8 +325,8 @@ cf_common_join_005C8ECC:
         ccFntTy::WrStr(g_startSystem_0081176C->field_0034,puVar18,-1,-1,
                        3 - ((message->arg0).words.high != 1));
         if ((message->arg0).words.high == 1) {
-          pAVar25 = (message->arg1).ptr;
-          FUN_006b5ee0(pAVar25,0,0,0,pAVar25->field_0004,pAVar25->field_0008,0xf,0xd);
+          pRVar25 = (message->arg1).ptr;
+          FUN_006b5ee0(pRVar25,0,0,0,pRVar25->field_0004,pRVar25->field_0008,0xf,0xd);
         }
       }
       goto cf_common_join_005CA971;
@@ -1334,7 +1333,7 @@ LAB_005ca73b:
     MMObjTy::PaintButDib
               ((MMObjTy *)this_00,this_00->field_1C67,&local_30,2,
                (-((message->arg0).words.low != 0) & 0xfcU) + 0x23,0x67);
-    DibPut((AnonShape_006B5B10_E0D06CF1 *)this_00->field_1C67,
+    DibPut((RecoveredSourceFamily_dibcopy *)this_00->field_1C67,
            (local_28 - (int)local_c) + -8 + local_30,(int)(local_24 - local_34) / 2 + local_2c,
            '\x06',(byte *)this_00->field_1E2B);
     ccFntTy::SetSurf(g_startSystem_0081176C->field_0034,this_00->field_1C67,0,pDVar21->flags - 10,
@@ -1353,12 +1352,12 @@ LAB_005ca73b:
     break;
   case MESS_SHARED_6980|MESS_SHARED_0005:
     piVar7 = (message->arg1).ptr;
-    FUN_006c7610((AnonShape_006B5B10_E0D06CF1 *)this_00->field_1C67,0,*piVar7 + -10,
+    FUN_006c7610((RecoveredSourceFamily_dibcopy *)this_00->field_1C67,0,*piVar7 + -10,
                  piVar7[1] + -0xb4,piVar7[2],piVar7[3],piVar7[3] / 2,0x67);
-    FUN_006c7570((AnonShape_006B5B10_E0D06CF1 *)this_00->field_1C67,0,*piVar7 + -8,piVar7[1] + -0xb2
-                 ,(undefined4 *)(piVar7[2] + -4),piVar7[3] + -4,piVar7[3] / 2 + -2,
+    FUN_006c7570((RecoveredSourceFamily_dibcopy *)this_00->field_1C67,0,*piVar7 + -8,
+                 piVar7[1] + -0xb2,(undefined4 *)(piVar7[2] + -4),piVar7[3] + -4,piVar7[3] / 2 + -2,
                  (-((message->arg0).words.low != 0) & 0xfcU) + 0x23);
-    FUN_006c7570((AnonShape_006B5B10_E0D06CF1 *)this_00->field_1C67,0,*piVar7 + -10,
+    FUN_006c7570((RecoveredSourceFamily_dibcopy *)this_00->field_1C67,0,*piVar7 + -10,
                  piVar7[1] + -0xb4,(undefined4 *)piVar7[2],piVar7[3],piVar7[3] / 2,
                  (-((message->arg0).words.low != 0) & 0xfcU) + 0x23);
     ccFntTy::SetSurf(g_startSystem_0081176C->field_0030,this_00->field_1C67,0,*piVar7 + -10,
@@ -1540,7 +1539,7 @@ LAB_005cab38:
 LAB_005cadd5:
     pbVar16 = (byte *)FUN_0070b3a0(this_00->field_1F4F,0);
     iVar12 = (local_10 + -0x10) / 2 + local_18;
-    pAVar25 = (AnonShape_006B5B10_E0D06CF1 *)this_00->field_1E1E;
+    pRVar25 = (RecoveredSourceFamily_dibcopy *)this_00->field_1E1E;
     iVar17 = (local_14 + -0x11) / 2 + local_1c;
     goto cf_common_exit_005CAE0F;
   case 0x658a:
@@ -1548,7 +1547,7 @@ LAB_005cadd5:
       pbVar16 = (byte *)FUN_0070b3a0(this_00->field_1F4F,0);
       iVar12 = (local_10 + -0x10) / 2 + local_18;
       iVar17 = (local_14 + -0x11) / 2 + local_1c;
-      pAVar25 = (AnonShape_006B5B10_E0D06CF1 *)this_00->field_1E1E;
+      pRVar25 = (RecoveredSourceFamily_dibcopy *)this_00->field_1E1E;
       goto cf_common_exit_005CAE0F;
     }
     break;
@@ -1559,9 +1558,9 @@ LAB_005cad88:
       pbVar16 = (byte *)FUN_0070b3a0(this_00->field_1F4F,0);
       iVar12 = (local_10 + -0x10) / 2 + local_18;
       iVar17 = (local_14 + -0x11) / 2 + local_1c;
-      pAVar25 = (AnonShape_006B5B10_E0D06CF1 *)this_00->field_1E1E;
+      pRVar25 = (RecoveredSourceFamily_dibcopy *)this_00->field_1E1E;
 cf_common_exit_005CAE0F:
-      DibPut(pAVar25,iVar17,iVar12,'\x06',pbVar16);
+      DibPut(pRVar25,iVar17,iVar12,'\x06',pbVar16);
     }
     break;
   case 0x658c:

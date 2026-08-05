@@ -16,7 +16,6 @@ void __thiscall STGroupBoatC::ReMakePatrolPoints(STGroupBoatC *this)
 
 {
   ushort uVar1;
-  code *pcVar2;
   DArrayTy *array;
   short *psVar3;
   DArrayTy *pDVar4;

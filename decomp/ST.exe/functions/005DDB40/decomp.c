@@ -12,7 +12,7 @@ undefined4 __fastcall FUN_005ddb40(int param_1)
   int iVar4;
   uint uVar5;
   uint uVar6;
-  int iVar7;
+  DArrayTy *pDVar7;
   char *pcVar8;
   char *pcVar9;
   char local_460 [64];
@@ -35,7 +35,7 @@ undefined4 __fastcall FUN_005ddb40(int param_1)
     return 0;
   }
   /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-  iVar7 = *(int *)(param_1 + 0x696);
+  pDVar7 = *(DArrayTy **)(param_1 + 0x696);
   pcVar8 = local_460;
   for (iVar4 = 0x114; iVar4 != 0; iVar4 = iVar4 + -1) {
     pcVar8[0] = '\0';
@@ -46,7 +46,7 @@ undefined4 __fastcall FUN_005ddb40(int param_1)
   }
   *pcVar8 = '\0';
   iVar4 = 0;
-  if (0 < *(int *)(iVar7 + 8)) {
+  if (0 < (int)pDVar7->elementSize) {
     do {
       uVar5 = 0xffffffff;
       local_c = local_460;
@@ -64,8 +64,8 @@ undefined4 __fastcall FUN_005ddb40(int param_1)
       pcVar9 = local_c;
       memmove(pcVar9, pcVar8, uVar5); /* compiler REP MOVS byte copy */
       uVar6 = 0;
-      if (iVar4 < *(int *)(iVar7 + 8)) {
-        pcVar8 = *(char **)(*(int *)(iVar7 + 0x14) + iVar4 * 4);
+      if (iVar4 < (int)pDVar7->elementSize) {
+        pcVar8 = *(char **)(pDVar7->growCapacity + iVar4 * 4);
       }
       else {
         pcVar8 = nullptr;
@@ -93,9 +93,9 @@ undefined4 __fastcall FUN_005ddb40(int param_1)
         pcVar9 = pcVar9 + 1;
       }
       StartSystemTy::AddToChat(local_8,(int)local_460);
-      iVar7 = pSVar2->field_0696;
+      pDVar7 = pSVar2->field_0696;
       iVar4 = iVar4 + 1;
-    } while (iVar4 < *(int *)(iVar7 + 8));
+    } while (iVar4 < (int)pDVar7->elementSize);
   }
   return 1;
 }

@@ -18,7 +18,6 @@ void __thiscall ChooseMapTy::PaintChooseMap(ChooseMapTy *this,char param_1)
 
 {
   ChooseMapTy_field_1A5FState CVar1;
-  code *pcVar2;
   ChooseMapTy *pCVar3;
   int errorCode;
   UINT resourceId;

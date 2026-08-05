@@ -10,7 +10,6 @@ int __thiscall STBoatC::BackWaitLoad(STBoatC *this,int *param_1)
 {
   uint uVar1;
   undefined4 uVar2;
-  code *pcVar3;
   int iVar4;
   uint uVar5;
   undefined4 *puVar6;

@@ -8,7 +8,6 @@
 void __thiscall UpgPanelTy::DoneUpgPanel(UpgPanelTy *this)
 
 {
-  code *pcVar1;
   InternalExceptionFrame *pIVar2;
   int errorCode;
   int iVar3;

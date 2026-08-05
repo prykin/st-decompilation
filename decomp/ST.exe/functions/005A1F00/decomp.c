@@ -19,7 +19,6 @@ FSGSTy::AddMessage(FSGSTy *this,byte param_1,byte *param_2,char *param_3,byte pa
   byte bVar1;
   char cVar2;
   AnonShape_006B7830_769CA2DF *pAVar3;
-  code *pcVar4;
   FSGSTy *this_00;
   short sVar5;
   int iVar6;

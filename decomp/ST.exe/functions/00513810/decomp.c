@@ -16,7 +16,6 @@ void __thiscall HelpPanelTy::BackBut(HelpPanelTy *this)
 
 {
   HelpPanelTy_field_01A1State HVar1;
-  code *pcVar2;
   HelpPanelTy *this_00;
   int iVar3;
   int iVar4;
@@ -57,7 +56,7 @@ void __thiscall HelpPanelTy::BackBut(HelpPanelTy *this)
       this_00->field_01A1 = HVar1;
       this_00->field_01A3 = local_8;
       Library::DKW::WGR::FUN_006b55f0
-                ((AnonShape_006B5B10_E0D06CF1 *)this_00->field_0068,0,0x21,0x16,
+                ((RecoveredSourceFamily_dibcopy *)this_00->field_0068,0,0x21,0x16,
                  (byte *)this_00->field_01DC,0,0x21,0x16,0x1b8,0x118);
       CreateList(this_00);
       if (this_00->field_01A2 == '\0') {

@@ -14,7 +14,6 @@ BehPanelTy::PaintBBut
 
 {
   AnonNested_004EE350_0018_78690378 *pAVar1;
-  code *pcVar2;
   BehPanelTy *pBVar3;
   int *errorCode;
   LPSTR text;
@@ -43,7 +42,7 @@ BehPanelTy::PaintBBut
     text = FUN_006f2c00(param_2,1,(uint)param_3);
     local_8 = cMf32::RecGet(g_cMf32_00806790,1,text,errorCode,iVar4);
     pBVar3 = local_14;
-    DibPut((AnonShape_006B5B10_E0D06CF1 *)local_14->field_0068,local_10,local_c,'\x01',
+    DibPut((RecoveredSourceFamily_dibcopy *)local_14->field_0068,local_10,local_c,'\x01',
            (byte *)local_8);
     cMf32::RecMemFree(g_cMf32_00806790,(uint *)&local_8);
     Library::DKW::DDX::FUN_006b3640

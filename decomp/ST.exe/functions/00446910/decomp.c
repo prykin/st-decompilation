@@ -9,7 +9,6 @@ void __thiscall STAllPlayersC::DeletePGPairs(STAllPlayersC *this,char param_1)
 
 {
   dword dVar1;
-  code *pcVar2;
   DArrayTy *array;
   int exceptionCode;
   int iVar3;
@@ -21,7 +20,7 @@ void __thiscall STAllPlayersC::DeletePGPairs(STAllPlayersC *this,char param_1)
   DArrayTy *local_8;
 
   local_58.previous = g_currentExceptionFrame;
-  local_8 = (DArrayTy *)g_packedRecords_A62x8[param_1].field2377_0x9f6;
+  local_8 = (DArrayTy *)g_packedRecords_A62x8[param_1].field1976_0x9f6;
   g_currentExceptionFrame = &local_58;
   exceptionCode = Library::MSVCRT::__setjmp3(local_58.jumpBuffer,0);
   array = local_8;
@@ -38,7 +37,7 @@ void __thiscall STAllPlayersC::DeletePGPairs(STAllPlayersC *this,char param_1)
         } while ((int)index < (int)dVar1);
       }
       DArrayDestroy(array);
-      g_packedRecords_A62x8[param_1].field2377_0x9f6 = 0;
+      g_packedRecords_A62x8[param_1].field1976_0x9f6 = 0;
     }
     g_currentExceptionFrame = local_58.previous;
     return;

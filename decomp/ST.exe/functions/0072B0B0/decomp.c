@@ -33,7 +33,7 @@ void FUN_0072b0b0(void)
   uint local_2c;
   uint local_28;
   uint local_24;
-  AnonShape_006B5B10_E0D06CF1 *local_20;
+  RecoveredSourceFamily_dibcopy *local_20;
   undefined1 *local_1c;
   void *local_14;
   undefined1 *puStack_10;

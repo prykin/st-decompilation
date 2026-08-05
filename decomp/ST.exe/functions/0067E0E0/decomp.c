@@ -9,7 +9,6 @@
 uint * __cdecl CreateStrategList(int param_1,int param_2,uint param_3)
 
 {
-  code *pcVar1;
   int errorCode;
   LPSTR pCVar2;
   uint *puVar3;

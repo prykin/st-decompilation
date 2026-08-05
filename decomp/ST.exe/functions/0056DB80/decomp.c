@@ -11,7 +11,6 @@ void __thiscall STAppC::StartGame(STAppC *this)
   ushort **value;
   STAppC_field_1180State SVar1;
   undefined4 uVar2;
-  code *pcVar3;
   ST3DSMAPContext *pSVar4;
   InternalExceptionFrame *pIVar5;
   uint *puVar6;

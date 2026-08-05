@@ -10,7 +10,6 @@ void __thiscall HelpPanelTy::PrevBut(HelpPanelTy *this)
 {
   AnonPointee_HelpPanelTy_01B3 *pAVar1;
   void *pvVar2;
-  code *pcVar3;
   HelpPanelTy *this_00;
   int iVar4;
   int *piVar5;

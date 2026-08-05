@@ -14,7 +14,6 @@ void __thiscall CPanelTy::Update1Panel(CPanelTy *this)
   DArrayTy *pDVar1;
   ushort *puVar2;
   Global_sub_00526BA0_param_1Enum GVar3;
-  code *pcVar4;
   CPanelTy *this_00;
   byte bVar5;
   int iVar6;
@@ -147,7 +146,7 @@ void __thiscall CPanelTy::Update1Panel(CPanelTy *this)
     uVar7 = FUN_006b5a50(local_16,(AnonShape_006B5A50_BD82F60D *)this_00->field_0B95);
     if (uVar7 != 0) {
       Library::DKW::WGR::FUN_006b55f0
-                ((AnonShape_006B5B10_E0D06CF1 *)this_00->field_0184,0,0,0,
+                ((RecoveredSourceFamily_dibcopy *)this_00->field_0184,0,0,0,
                  (byte *)this_00->field_0958,0,0,0,*(int *)(this_00->field_0958 + 2),0x3c);
       dVar19 = this_00->field_0B95->count;
       pcVar8 = LoadResourceString(0x36b9,g_module_00807618);
@@ -233,7 +232,7 @@ LAB_004ff723:
     }
     else {
       Library::DKW::WGR::FUN_006b55f0
-                ((AnonShape_006B5B10_E0D06CF1 *)this_00->field_0184,0,1,0,
+                ((RecoveredSourceFamily_dibcopy *)this_00->field_0184,0,1,0,
                  (byte *)this_00->field_0958,0,1,0,0x4e,0x20);
       PaintName(this_00,1);
       if (-1 < (int)this_00->field_0148[1]) {
@@ -264,8 +263,8 @@ LAB_004ff875:
 LAB_004ff87a:
   if (iVar6 != 0) {
     Library::DKW::WGR::FUN_006b55f0
-              ((AnonShape_006B5B10_E0D06CF1 *)this_00->field_0184,0,1,0,(byte *)this_00->field_0958,
-               0,1,0,0x4e,0x20);
+              ((RecoveredSourceFamily_dibcopy *)this_00->field_0184,0,1,0,
+               (byte *)this_00->field_0958,0,1,0,0x4e,0x20);
     PaintName(this_00,1);
     if (-1 < (int)this_00->field_0148[1]) {
       Library::DKW::DDX::FUN_006b3640
@@ -275,7 +274,7 @@ LAB_004ff87a:
   }
   if (local_2d != this_00->field_0B7E) {
     Library::DKW::WGR::FUN_006b55f0
-              ((AnonShape_006B5B10_E0D06CF1 *)this_00->field_0184,0,1,0x1f,
+              ((RecoveredSourceFamily_dibcopy *)this_00->field_0184,0,1,0x1f,
                (byte *)this_00->field_0958,0,1,0x1f,0x4e,0x11);
     PaintLife(this_00,1);
     if (-1 < (int)this_00->field_0148[1]) {
@@ -292,7 +291,7 @@ LAB_004ff87a:
   if (((iVar6 == 7) || (iVar6 == 0x13)) || (iVar6 == 0x1b)) {
     if (*(Global_sub_00526BA0_param_1Enum *)&this_00->field_0xb81 != local_2a) {
       Library::DKW::WGR::FUN_006b55f0
-                ((AnonShape_006B5B10_E0D06CF1 *)this_00->field_0184,0,1,0x2f,
+                ((RecoveredSourceFamily_dibcopy *)this_00->field_0184,0,1,0x2f,
                  (byte *)this_00->field_0958,0,1,0x2f,0x4e,0x24);
       if (-1 < (int)this_00->field_0148[1]) {
         Library::DKW::DDX::FUN_006b3640
@@ -306,16 +305,16 @@ LAB_004ff87a:
       uVar7 = thunk_FUN_00526ba0(GVar3,this_00->field_0xb85);
       pbVar15 = (byte *)FUN_0070b3a0((AnonShape_GLOBAL_0081175C_57F682DD *)this_00->field_02BE,uVar7
                                     );
-      DibPut((AnonShape_006B5B10_E0D06CF1 *)this_00->field_0184,0xb,0x31,'\x01',pbVar15);
+      DibPut((RecoveredSourceFamily_dibcopy *)this_00->field_0184,0xb,0x31,'\x01',pbVar15);
       pbVar15 = (byte *)FUN_0070b3a0((AnonShape_GLOBAL_0081175C_57F682DD *)this_00->field_02CA,1);
-      DibPut((AnonShape_006B5B10_E0D06CF1 *)this_00->field_0184,10,0x30,'\x06',pbVar15);
+      DibPut((RecoveredSourceFamily_dibcopy *)this_00->field_0184,10,0x30,'\x06',pbVar15);
       if (-1 < (int)this_00->field_0148[1]) {
         Library::DKW::DDX::FUN_006b3640
                   ((int *)g_ddxContext_008075A8,(uint)this_00->field_0148[1],0xffffffff,
                    this_00->field_0040,this_00->field_0098);
       }
     }
-    FUN_006b4170((AnonShape_006B5B10_E0D06CF1 *)this_00->field_0184,0,0x3b,0x31,7,0x21,0);
+    FUN_006b4170((RecoveredSourceFamily_dibcopy *)this_00->field_0184,0,0x3b,0x31,7,0x21,0);
     bVar5 = this_00->field_0xb86;
     cVar13 = (char)(((uint)bVar5 * 0x21) / 100);
     local_8 = STReplaceLowByte((uint32_t)(local_8), (uint8_t)(cVar13));
@@ -330,7 +329,7 @@ LAB_004ff87a:
     }
     uVar7 = local_8 & 0xff;
     Library::DKW::WGR::FUN_006b55f0
-              ((AnonShape_006B5B10_E0D06CF1 *)this_00->field_0184,0,0x3c,0x52 - uVar7,
+              ((RecoveredSourceFamily_dibcopy *)this_00->field_0184,0,0x3c,0x52 - uVar7,
                (byte *)this_00->field_028A,0,iVar6,*(int *)(this_00->field_028A + 4) - uVar7,5,uVar7
               );
     puVar2 = this_00->field_0148[1];
@@ -342,7 +341,7 @@ LAB_004ff87a:
         ((local_2a._2_2_ == *(short *)&this_00->field_0xb83 && (local_24 == this_00->field_0B87))))
        && (local_20 == this_00->field_0B8B)) goto cf_common_exit_004FFB91;
     Library::DKW::WGR::FUN_006b55f0
-              ((AnonShape_006B5B10_E0D06CF1 *)this_00->field_0184,0,1,0x2f,
+              ((RecoveredSourceFamily_dibcopy *)this_00->field_0184,0,1,0x2f,
                (byte *)this_00->field_0958,0,1,0x2f,0x4e,0x24);
     PaintWeap(this_00,1);
     puVar2 = this_00->field_0148[1];

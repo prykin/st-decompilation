@@ -8,7 +8,6 @@
 int __thiscall STExplosionC::CreateGroupPart(STExplosionC *this,int param_1)
 
 {
-  code *pcVar1;
   STExplosionC *pSVar2;
   int iVar3;
   HoloTy *pHVar4;

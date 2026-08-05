@@ -8,7 +8,6 @@
 void __thiscall STGroupBoatC::RestoreGrpBData(STGroupBoatC *this,undefined4 *param_1)
 
 {
-  code *pcVar1;
   undefined4 *puVar2;
   int iVar3;
   byte *puVar4;

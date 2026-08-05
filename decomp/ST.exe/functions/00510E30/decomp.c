@@ -9,7 +9,6 @@ void __thiscall HelpPanelTy::InitHelpPanel(HelpPanelTy *this)
 
 {
   AnonPointee_HelpPanelTy_0068 *pAVar1;
-  code *pcVar2;
   bool bVar3;
   HelpPanelTy *this_00;
   int iVar4;
@@ -282,7 +281,8 @@ LAB_00510fa9:
     *(undefined1 *)puVar14 = 0xff;
     puVar14 = (undefined4 *)((int)puVar14 + 1);
   }
-  DibPut((AnonShape_006B5B10_E0D06CF1 *)this_00->field_0068,0,0,'\x01',(byte *)this_00->field_01DC);
+  DibPut((RecoveredSourceFamily_dibcopy *)this_00->field_0068,0,0,'\x01',(byte *)this_00->field_01DC
+        );
   ccFntTy::SetSurf(this_00->field_01E0,(int)this_00->field_0068,0,0x6c,2,0x117,0xc);
   uVar18 = 0;
   iVar27 = -1;

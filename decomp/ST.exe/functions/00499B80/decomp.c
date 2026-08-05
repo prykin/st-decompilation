@@ -8,7 +8,6 @@
 undefined4 __thiscall STGroupBoatC::MakePVec(STGroupBoatC *this)
 
 {
-  code *pcVar1;
   uint uVar2;
   STGroupBoatC *pSVar3;
   int iVar4;

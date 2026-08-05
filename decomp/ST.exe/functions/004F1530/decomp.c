@@ -14,7 +14,6 @@ CPanelTy::OutProc(CPanelTy *this,int param_1,undefined4 param_2,undefined4 param
                  AnonPointee_MReportTy_0073 *param_8)
 
 {
-  code *pcVar1;
   int errorCode;
   int iVar2;
   InternalExceptionFrame local_48;

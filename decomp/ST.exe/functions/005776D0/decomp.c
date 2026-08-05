@@ -26,7 +26,6 @@ int __thiscall GameSystemC::GetMessage(GameSystemC *this,STMessage *message)
   byte bVar2;
   size_t _Count;
   void *pvVar3;
-  code *pcVar4;
   PlayPanelTy *this_00;
   int iVar5;
   HANDLE pvVar6;

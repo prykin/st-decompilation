@@ -13,7 +13,6 @@ void FUN_0055dee0(byte *param_1)
   int iVar9;
   short sVar10;
   uint uVar11;
-  ushort *puVar12;
   byte *pbVar13;
   byte *pbVar14;
   ushort *puVar15;
@@ -49,12 +48,12 @@ void FUN_0055dee0(byte *param_1)
     local_44 = (undefined1 *)(iVar4 + 1U >> 1);
     pbVar13 = param_1;
     do {
-      puVar15 = (ushort *)(DAT_00803304 + (char)*pbVar13);
+      int scalar_puVar15 = DAT_00803304 + (char)*pbVar13; /* split integer lifetime from pointer-typed SSA storage */
       pbVar17 = (byte *)(DAT_00803308 + (char)pbVar13[1]);
-      if (((((int)puVar15 < 0) || (iVar5 <= (int)puVar15)) || ((int)pbVar17 < 0)) ||
+      if ((((scalar_puVar15 < 0) || (iVar5 <= scalar_puVar15)) || ((int)pbVar17 < 0)) ||
          ((DAT_008033a8 <= (int)pbVar17 ||
-          (*(short *)(DAT_008033b4 + (int)(iVar5 * (int)pbVar17 + (int)puVar15) * 2) < 1)))) {
-        iVar16 = (int)puVar15 * 0x10000;
+          (*(short *)(DAT_008033b4 + (int)(iVar5 * (int)pbVar17 + scalar_puVar15) * 2) < 1)))) {
+        iVar16 = scalar_puVar15 * 0x10000;
         iVar18 = (int)pbVar17 * 0x10000;
         iVar4 = DAT_00803390;
         do {
@@ -153,9 +152,9 @@ LAB_0055e048:
           param_1 = local_18;
           local_3c = (ushort *)local_24;
           local_1c = local_8;
-          puVar12 = (ushort *)(DAT_008033a4 * (int)local_18 + (int)local_8);
-          if ((ushort)local_14[(int)puVar12] < 0xff) {
-            local_14[(int)puVar12] = local_14[(int)puVar12] + 1;
+          int scalar_puVar12 = DAT_008033a4 * (int)local_18 + (int)local_8; /* split integer lifetime from pointer-typed SSA storage */
+          if ((ushort)local_14[scalar_puVar12] < 0xff) {
+            local_14[scalar_puVar12] = local_14[scalar_puVar12] + 1;
           }
           goto LAB_0055e048;
         }
@@ -225,7 +224,7 @@ LAB_0055eb08:
                       if ((-1 < iVar9) && (iVar9 < DAT_008033a4)) {
                         /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
                         param_1 = param_1 + 1;
-                        local_3c = (ushort *)((int)local_3c + (uint)*puVar15);
+                        int scalar_local_3c = (int)local_3c + (uint)*puVar15; /* split integer lifetime from pointer-typed SSA storage */
                       }
                       puVar15 = puVar15 + 1;
                     }
@@ -234,7 +233,7 @@ LAB_0055eb08:
                   local_40 = local_40 + DAT_008033a4;
                 } while (iVar4 <= local_38);
                 if ((int)param_1 < 1) goto LAB_0055eb08;
-                uVar3 = (undefined1)((int)local_3c / (int)param_1);
+                uVar3 = (undefined1)(scalar_local_3c / (int)param_1);
               }
               *local_44 = uVar3;
               local_44 = local_44 + 2;
@@ -497,7 +496,7 @@ LAB_0055eb08:
                (byte)((int)(iVar16 + (uint)*(byte *)((int)local_10 + 1) * 4) / (iVar9 * 3));
           iVar5 = DAT_008033a4;
         }
-        local_40 = (ushort *)(iVar9 * 4);
+        int scalar_local_40 = iVar9 * 4; /* split integer lifetime from pointer-typed SSA storage */
         local_3c = local_8 + 3;
         pbVar13 = (byte *)((int)local_10 + 3);
         local_44 = (undefined1 *)0x2;
@@ -505,7 +504,7 @@ LAB_0055eb08:
         do {
           iVar16 = iVar16 + (uint)*local_3c;
           if ((pbVar13[-1] & 7) != 0) {
-            *pbVar13 = (byte)((int)(iVar16 + (uint)*pbVar13 * 4) / (int)local_40);
+            *pbVar13 = (byte)((int)(iVar16 + (uint)*pbVar13 * 4) / scalar_local_40);
             iVar5 = DAT_008033a4;
           }
           local_3c = local_3c + 1;

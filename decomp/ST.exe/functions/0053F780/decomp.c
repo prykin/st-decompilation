@@ -12,7 +12,6 @@
 void __thiscall ProdPanelTy::ShiftControls(ProdPanelTy *this,int param_1)
 
 {
-  code *pcVar1;
   ProdPanelTy *this_00;
   short sVar2;
   undefined4 uVar3;

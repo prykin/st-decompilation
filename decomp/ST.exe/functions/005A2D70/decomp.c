@@ -16,7 +16,6 @@ void __thiscall FSGSTy::JoinChannel(FSGSTy *this)
 
 {
   undefined1 *puVar1;
-  code *pcVar2;
   CursorClassTy *this_00;
   FSGSTy *this_01;
   int iVar3;

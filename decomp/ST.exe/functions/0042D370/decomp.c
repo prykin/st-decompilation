@@ -10,7 +10,6 @@ STAllPlayersC::SetActivityToObjs
           (STAllPlayersC *this,uint param_1,int param_2,DArrayTy *param_3,uint param_4)
 
 {
-  code *pcVar1;
   STGameObjC *pSVar2;
   int iVar3;
   uint index;

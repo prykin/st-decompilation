@@ -9,7 +9,6 @@
 undefined4 __thiscall STVolcanoC::LoadImagVolcano(STVolcanoC *this,int param_1)
 
 {
-  code *pcVar1;
   STVolcanoC *pSVar2;
   int errorCode;
   ushort *puVar3;

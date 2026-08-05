@@ -9,12 +9,11 @@ void __thiscall CPanelTy::PaintInfoObj(CPanelTy *this)
 
 {
   char cVar1;
-  code *pcVar2;
   CPanelTy *this_00;
   int iVar3;
   byte *pbVar4;
   int iVar5;
-  AnonShape_006B5B10_E0D06CF1 *pAVar6;
+  RecoveredSourceFamily_dibcopy *pRVar6;
   InternalExceptionFrame local_4c;
   CPanelTy *local_8;
 
@@ -33,30 +32,32 @@ void __thiscall CPanelTy::PaintInfoObj(CPanelTy *this)
     RaiseInternalException(iVar3,0,"E:\\__titans\\Andrey\\cpanel1.cpp",0xb5);
     return;
   }
-  DibPut((AnonShape_006B5B10_E0D06CF1 *)local_8->field_01A0,0,0,'\x01',(byte *)local_8->field_0B43);
-  DibPut((AnonShape_006B5B10_E0D06CF1 *)this_00->field_019C,0,0,'\x01',(byte *)this_00->field_0B47);
+  DibPut((RecoveredSourceFamily_dibcopy *)local_8->field_01A0,0,0,'\x01',(byte *)local_8->field_0B43
+        );
+  DibPut((RecoveredSourceFamily_dibcopy *)this_00->field_019C,0,0,'\x01',(byte *)this_00->field_0B47
+        );
   if (this_00->field_02E6 != nullptr) {
     thunk_FUN_004f1890(this_00,1);
   }
   if (this_00->field_0C51 == '\0') {
     if (DAT_0080874e == '\x03') {
-      DibPut((AnonShape_006B5B10_E0D06CF1 *)this_00->field_0194,0x73,0,'\x06',
+      DibPut((RecoveredSourceFamily_dibcopy *)this_00->field_0194,0x73,0,'\x06',
              (byte *)this_00->field_09D9[8]);
       goto LAB_004fef26;
     }
     pbVar4 = (byte *)FUN_0070b3a0((AnonShape_GLOBAL_0081175C_57F682DD *)this_00->field_029E,1);
-    pAVar6 = (AnonShape_006B5B10_E0D06CF1 *)this_00->field_0198;
+    pRVar6 = (RecoveredSourceFamily_dibcopy *)this_00->field_0198;
   }
   else {
     if (DAT_0080874e == '\x03') {
-      DibPut((AnonShape_006B5B10_E0D06CF1 *)this_00->field_0194,0x73,0,'\x06',
+      DibPut((RecoveredSourceFamily_dibcopy *)this_00->field_0194,0x73,0,'\x06',
              (byte *)this_00->field_09D9[10]);
       goto LAB_004fef26;
     }
     pbVar4 = (byte *)FUN_0070b3a0((AnonShape_GLOBAL_0081175C_57F682DD *)this_00->field_029E,0);
-    pAVar6 = (AnonShape_006B5B10_E0D06CF1 *)this_00->field_0198;
+    pRVar6 = (RecoveredSourceFamily_dibcopy *)this_00->field_0198;
   }
-  DibPut(pAVar6,0,0,'\x01',pbVar4);
+  DibPut(pRVar6,0,0,'\x01',pbVar4);
 LAB_004fef26:
   PaintDeep(this_00,0);
   cVar1 = this_00->field_0C51;

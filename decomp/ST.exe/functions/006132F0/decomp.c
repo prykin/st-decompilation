@@ -9,7 +9,6 @@
 undefined4 __thiscall STGenBombC::LoadImagSpr(STGenBombC *this,int param_1,int param_2)
 
 {
-  code *pcVar1;
   short sVar2;
   VisibleClassTy *pVVar3;
   STGenBombC *pSVar4;

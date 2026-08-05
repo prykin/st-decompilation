@@ -8,7 +8,6 @@
 void __thiscall AiTactClassTy::BackFromRepair(AiTactClassTy *this,short param_1)
 
 {
-  code *pcVar1;
   AiTactClassTy *this_00;
   void *this_01;
   int iVar2;

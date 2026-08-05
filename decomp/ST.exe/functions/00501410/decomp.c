@@ -9,7 +9,6 @@ void __thiscall CPanelTy::PaintBRLife(CPanelTy *this,int param_1)
 
 {
   byte bVar1;
-  code *pcVar2;
   CPanelTy *pCVar3;
   int iVar4;
   uint uVar5;

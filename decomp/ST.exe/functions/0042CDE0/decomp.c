@@ -13,7 +13,6 @@ undefined4 STAllPlayersC::PushTV(char param_1,int param_2,int param_3,char param
 {
   DArrayTy *array;
   dword dVar1;
-  code *pcVar2;
   int iVar3;
   undefined4 uVar4;
   uint index;

@@ -9,7 +9,6 @@ void __thiscall PrividerTy::DonePrivider(PrividerTy *this)
 
 {
   MMsgTy *this_00;
-  code *pcVar1;
   CursorClassTy *this_01;
   PrividerTy *pPVar2;
   int iVar3;

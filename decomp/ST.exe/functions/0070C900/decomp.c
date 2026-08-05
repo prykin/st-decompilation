@@ -1,9 +1,13 @@
 
 /* [STPrototypeApplier] Propagated parameter 0.
-   Evidence: 0070C900 -> 007527A0 @ 0070C965 | 0070C900 -> 00752CF0 @ 0070C94A */
+   Evidence: 0070C900 -> 007527A0 @ 0070C965 | 0070C900 -> 00752CF0 @ 0070C94A
+
+   [STTypeFamilyApplier] SOURCE_FUNCTION_FAMILY.
+   Evidence: one script-owned pointer shape is anchored by one library source basename, multiple
+   semantic function names, and exact first-argument call flow */
 
 undefined4 * __cdecl
-FUN_0070c900(AnonShape_006B5B10_E0D06CF1 *param_1,uint *param_2,char param_3,int param_4)
+FUN_0070c900(RecoveredSourceFamily_dibcopy *param_1,uint *param_2,char param_3,int param_4)
 
 {
   int iVar1;

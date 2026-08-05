@@ -47,6 +47,38 @@ This is not a request to change the ABI signature. A later source extractor
 should introduce a distinct local at the first overwrite. The same sites are
 catalogued in `pseudocode_idioms.jsonl` and `decomp_quality_issues.jsonl`.
 
+### Integer-only lifetimes rendered as pointers
+
+The inverse SSA artifact also occurs: Ghidra assigns a pointer-flavoured local
+name/type to a value which is defined by pure integer multiplication and is used
+only as a count or byte-size factor. When the definition/use interval is closed
+and contains no dereference, address escape, or pointer consumer, the exporter
+splits the source projection into an `int` lifetime:
+
+```c
+int scalar_psVar13 = (int)grid.sizeY * (int)grid.sizeX;
+```
+
+This does not persist a local type into Ghidra, because a later SSA lifetime may
+legitimately reuse the same machine storage as a pointer. Ambiguous or mixed-use
+intervals remain unchanged.
+
+For a separately proven 8/16-bit integer structure member, the exporter also
+reduces Ghidra's redundant `(double)(int)object->member` to
+`(double)object->member`. C performs the same integer promotion before the
+floating conversion. The fold requires one unambiguous structure declaration
+and an exact concrete narrow-integer member; complex expressions, enums,
+unions, and generic fields are untouched.
+
+### Opaque `code *` locals
+
+Ghidra's `code *` means “pointer to executable code with no recovered
+FunctionDefinition”, not a source-language type. A declaration whose identifier
+has no use is exporter-owned dead SSA noise and is removed. A live value such as
+`pcVar1 = *(code **)&object->callback; (*pcVar1)(0);` is retained: it is genuine
+callback/prototype recovery debt and must be solved from a stored target family
+or another exact ABI anchor rather than hidden by presentation rewriting.
+
 ## Automatically normalized terminal `INT3`
 
 Ghidra commonly renders a terminal x86 `INT3` as if `swi(3)` returned a function
@@ -328,6 +360,10 @@ load_i32_unaligned(&payload->bytes[8])
 The shared union cannot globally select the correct facet for every switch arm.
 These cases are catalogued as `packed_or_unaligned_piece`; source reconstruction
 must use the discriminator and local data flow.
+
+The detector matches actual `object.packed`/`object->packed` members and
+decompiler partial-piece syntax. An identifier which merely contains the word,
+such as `g_packedRecords_A62x8`, is not evidence of an unaligned access.
 
 ### Raw indirect calls
 

@@ -9,7 +9,6 @@
 uint * __cdecl CreateAssistantList(int param_1,int param_2,uint param_3)
 
 {
-  code *pcVar1;
   int errorCode;
   uint *puVar2;
   int iVar3;

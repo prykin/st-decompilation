@@ -11,7 +11,6 @@ StartSystemTy::OutBmpProc
           int param_5,DWORD param_6,DWORD param_7,BITMAPINFO *param_8)
 
 {
-  code *pcVar1;
   int errorCode;
   int iVar2;
   InternalExceptionFrame local_48;

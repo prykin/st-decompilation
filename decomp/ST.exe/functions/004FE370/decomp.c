@@ -12,7 +12,6 @@
 void __thiscall CPanelTy::PaintName(CPanelTy *this,int param_1)
 
 {
-  code *pcVar1;
   CPanelTy *pCVar2;
   char cVar3;
   int iVar4;

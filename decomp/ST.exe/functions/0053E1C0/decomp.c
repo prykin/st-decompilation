@@ -10,7 +10,6 @@ UPanelTy::CreateTab(UPanelTy *this,byte param_1,byte param_2,int param_3,int par
                    uint param_6,int param_7,int param_8,undefined4 param_9,undefined4 param_10)
 
 {
-  code *pcVar1;
   byte bVar2;
   int iVar3;
   undefined4 uVar4;

@@ -16,7 +16,6 @@ int __thiscall AiFltClassTy::GetAiMess(AiFltClassTy *this,uint *param_1)
   uint *puVar7;
   dword dVar8;
   undefined4 uVar9;
-  code *pcVar10;
   AiFltClassTy *this_00;
   undefined2 uVar11;
   int iVar12;

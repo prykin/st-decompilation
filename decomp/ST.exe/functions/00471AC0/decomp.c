@@ -9,7 +9,6 @@ int __thiscall STBoatC::Guard(STBoatC *this,int param_1)
 
 {
   dword dVar1;
-  code *pcVar2;
   short sVar3;
   int iVar4;
   STGameObjC *pSVar5;

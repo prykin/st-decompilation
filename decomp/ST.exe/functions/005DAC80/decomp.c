@@ -8,7 +8,6 @@
 void __thiscall StartSystemTy::GetIP(StartSystemTy *this)
 
 {
-  code *pcVar1;
   StartSystemTy *pSVar2;
   int iVar3;
   DArrayTy *pDVar4;

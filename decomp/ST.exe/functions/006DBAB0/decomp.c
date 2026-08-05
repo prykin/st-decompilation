@@ -15,72 +15,73 @@ void __thiscall ST3DSMAPContext::sub_006DBAB0(ST3DSMAPContext *this)
 
   do {
     iVar2 = 0;
-    if (*(int *)this != 0) {
-      *(undefined4 *)(*(int *)this + 0x22c) = 0;
+    if (this->field_0000 != nullptr) {
+      this->field_0000[0x8b] = 0;
     }
-    FUN_006b9890((int *)&this->field_0x44a);
-    FUN_006b9890((int *)&this->field_0x44e);
-    FUN_006b9890((int *)&this->field_0x452);
-    FreeAndNull((void **)&this->field_0x420);
-    *(undefined4 *)&this->field_0x428 = 0;
-    *(undefined4 *)&this->field_0x42c = 0;
-    *(undefined4 *)&this->field_0x430 = 0;
-    *(undefined4 *)&this->field_0x434 = 0;
-    *(undefined4 *)&this[1].field_0x36 = 0;
-    *(undefined4 *)&this[1].field_0x3a = 0;
-    *(undefined4 *)&this[1].field_0x3e = 0;
-    *(undefined4 *)&this[1].field_0x42 = 0;
-    *(undefined4 *)&this[1].field_0x4e = 0;
-    *(undefined4 *)&this->field_0x43e = 0;
-    *(undefined4 *)((int)&this[1].field_0058 + 2) = 0;
-    *(undefined4 *)&this[1].field_0x5e = 0;
-    *(undefined4 *)&this[1].field_0x6a = 0;
-    *(undefined4 *)&this[1].field_0x6e = 0;
-    FreeAndNull((void **)&this->field_0x388);
-    if (*(int *)&this->field_0x31c != 0) {
+    FUN_006b9890((int *)&this->field_044A);
+    FUN_006b9890((int *)&this->field_044E);
+    FUN_006b9890((int *)&this->field_0452);
+    FreeAndNull(&this->field_0420);
+    this->field_0428 = 0;
+    this->field_042C = 0;
+    this->field_0430 = 0;
+    this->field_0434 = 0;
+    this->field_04A2 = 0;
+    this->field_04A6 = 0;
+    this->field_04AA = 0;
+    this->field_04AE = 0;
+    this->field_04BA = 0;
+    this->field_043E = 0;
+    this->field_04C6 = 0;
+    this->field_04CA = 0;
+    this->field_04D6 = 0;
+    this->field_04DA = 0;
+    FreeAndNull((void **)&this->field_0388);
+    if (this->field_031C != nullptr) {
       uVar1 = 0;
-      if (0 < *(int *)&this->field_0x310) {
+      if (0 < (int)this->field_0310) {
         do {
-          if ((*(uint *)(iVar2 + *(int *)&this->field_0x31c) & 0x8000) != 0) {
+          if ((*(uint *)(this->field_031C + iVar2) & 0x8000) != 0) {
             Library::Ourlib::ST3DSMAP::SprClose(this,uVar1);
           }
-          FUN_006a5e90(*(short **)(iVar2 + 0xec + *(int *)&this->field_0x31c));
+          /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
+          FUN_006a5e90(*(short **)(this->field_031C + iVar2 + 0xec));
           uVar1 = uVar1 + 1;
           iVar2 = iVar2 + 0x114;
-        } while ((int)uVar1 < *(int *)&this->field_0x310);
+        } while ((int)uVar1 < (int)this->field_0310);
       }
-      FreeAndNull((void **)&this->field_0x31c);
-      FreeAndNull((void **)&this->field_0x330);
+      FreeAndNull(&this->field_031C);
+      FreeAndNull((void **)&this->field_0330);
     }
-    *(undefined4 *)&this->field_0x2e0 = 0;
-    *(int *)this = 0;
-    *(undefined4 *)&this->field_0x310 = 0;
-    *(undefined4 *)&this->field_0x318 = 0;
-    *(undefined4 *)&this->field_0x328 = 0;
-    *(undefined4 *)&this->field_0x32c = 0;
-    *(undefined4 *)&this->field_0x2dc = 0;
-    *(undefined4 *)&this->field_0x2a8 = 0;
-    FreeAndNull((void **)&this->field_0x8);
-    FreeAndNull((void **)&this->field_0x10);
-    FreeAndNull((void **)&this->field_0x18);
-    FreeAndNull((void **)&this->field_0x158);
-    FreeAndNull((void **)&this->field_0x154);
-    FreeAndNull((void **)&this->field_001C);
-    FreeAndNull((void **)&this->field_0x350);
-    FreeAndNull((void **)&this->field_0x354);
-    FreeAndNull((void **)&this->field_0x2b0);
-    FUN_006b9890((int *)&this->field_0x294);
+    this->field_02E0 = 0;
+    this->field_0000 = nullptr;
+    this->field_0310 = 0;
+    this->field_0318 = 0;
+    this->field_0328 = 0;
+    this->field_032C = 0;
+    this->field_02DC = 0;
+    this->field_02A8 = 0;
+    FreeAndNull(&this->field_0008);
+    FreeAndNull(&this->field_0010);
+    FreeAndNull(&this->field_0018);
+    FreeAndNull(&this->field_0158);
+    FreeAndNull(&this->field_0154);
+    FreeAndNull(&this->field_001C);
+    FreeAndNull(&this->field_0350);
+    FreeAndNull(&this->field_0354);
+    FreeAndNull(&this->field_02B0);
+    FUN_006b9890(&this->field_0294);
     FUN_006e6620((int)this);
-    *(undefined4 *)&this->field_0x14 = 0;
-    *(undefined4 *)&this->field_0x4 = 0;
-    *(undefined4 *)&this->field_0x280 = 0;
+    this->field_0014 = nullptr;
+    this->field_0004 = nullptr;
+    this->field_0280 = nullptr;
     this->field_0290 = 0;
-    *(undefined4 *)&this->field_0x29c = 0;
-    *(undefined4 *)&this->field_0x140 = 0;
-    *(undefined4 *)&this->field_0x28c = 0;
-    *(undefined4 *)&this->field_0x13c = 0;
-    *(undefined4 *)&this->field_0x124 = 0;
-    this = *(ST3DSMAPContext **)&this->field_0x358;
+    this->field_029C = 0;
+    this->field_0140 = nullptr;
+    this->field_028C = 0;
+    this->field_013C = 0;
+    this->field_0124 = 0;
+    this = (ST3DSMAPContext *)this->field_0358;
   } while (this != nullptr);
   return;
 }

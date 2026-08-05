@@ -11,7 +11,6 @@ undefined4 __thiscall STParticleC::InitVisibelDeton(STParticleC *this,int param_
 {
   undefined4 *puVar1;
   AnonPointee_STParticleC_00EB *pAVar2;
-  code *pcVar3;
   short sVar4;
   float fVar5;
   VisibleClassTy *pVVar6;

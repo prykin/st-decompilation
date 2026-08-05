@@ -14,7 +14,6 @@ void __thiscall HelpPanelTy::DrawTitle(HelpPanelTy *this,UINT param_1,int param_
 {
   char cVar1;
   AnonPointee_HelpPanelTy_0218 *pAVar2;
-  code *pcVar3;
   HelpPanelTy *pHVar4;
   int iVar5;
   uint uVar6;
@@ -51,7 +50,7 @@ void __thiscall HelpPanelTy::DrawTitle(HelpPanelTy *this,UINT param_1,int param_
   *(undefined4 *)(pHVar4->field_01D7 + 0xc) = 0;
   pHVar4->field_01DB = 0;
   Library::DKW::WGR::FUN_006b55f0
-            ((AnonShape_006B5B10_E0D06CF1 *)pHVar4->field_0068,0,0x21,0x16,
+            ((RecoveredSourceFamily_dibcopy *)pHVar4->field_0068,0,0x21,0x16,
              (byte *)pHVar4->field_01DC,0,0x21,0x16,0x1b8,0x118);
   uVar10 = local_8;
   ccFntTy::SetSurf(pHVar4->field_01E4,(int)pHVar4->field_0068,0,0x21,local_8,0x19c,0x14);

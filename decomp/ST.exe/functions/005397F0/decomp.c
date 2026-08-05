@@ -13,7 +13,6 @@ int __thiscall PausePanelTy::GetMessage(PausePanelTy *this,STMessage *message)
 
 {
   STMessageId SVar1;
-  code *pcVar2;
   PausePanelTy *this_00;
   int iVar3;
   LPSTR pCVar4;

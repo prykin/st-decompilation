@@ -16,7 +16,6 @@
 int __thiscall STGroupC::GetMessage(STGroupC *this,STMessage *message)
 
 {
-  code *pcVar1;
   STGroupC *this_00;
   int iVar2;
   uint *puVar3;

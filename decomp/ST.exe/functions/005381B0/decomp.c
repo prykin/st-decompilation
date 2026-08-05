@@ -8,7 +8,6 @@
 void __thiscall PanelTy::InitPanel(PanelTy *this)
 
 {
-  code *pcVar1;
   PanelTy *this_00;
   int iVar2;
   int uVar3;

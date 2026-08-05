@@ -62,9 +62,8 @@ FUN_00627850(undefined4 param_1,undefined4 param_2,undefined4 param_3,undefined4
                           (short)((longlong)param_7 * 0x51eb851f >> 0x3f));
   }
   puVar9 = &local_5c;
-  memset(puVar9, 0, 0x4e); /* compiler bulk-zero initialization */
+  memset(puVar9, 0, 0x4f); /* compiler bulk-zero initialization */
   puVar9 = (undefined4 *)((byte *)puVar9 + 0x4c);
-  *(undefined1 *)((int)puVar9 + 2) = 0;
   local_19 = param_3;
   local_54 = 1;
   local_50 = 1;

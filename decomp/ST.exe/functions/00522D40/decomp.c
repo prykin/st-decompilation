@@ -18,7 +18,6 @@ void __thiscall IntercomPanelTy::SwitchIntercomPanel(IntercomPanelTy *this,byte 
 
 {
   short sVar1;
-  code *pcVar2;
   IntercomPanelTy *pIVar3;
   int errorCode;
   int iVar4;

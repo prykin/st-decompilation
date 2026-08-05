@@ -10,7 +10,6 @@ void __thiscall CPanelTy::PaintNewDeep(CPanelTy *this)
 {
   byte *pbVar1;
   ushort *puVar2;
-  code *pcVar3;
   CPanelTy *pCVar4;
   char cVar5;
   int iVar6;
@@ -18,7 +17,7 @@ void __thiscall CPanelTy::PaintNewDeep(CPanelTy *this)
   byte *pbVar8;
   int iVar9;
   byte bVar10;
-  AnonShape_006B5B10_E0D06CF1 *pAVar11;
+  RecoveredSourceFamily_dibcopy *pRVar11;
   InternalExceptionFrame local_60;
   byte *local_1c;
   undefined4 local_18;
@@ -118,17 +117,17 @@ LAB_00500d40:
             uVar7 = (uint)(byte)pCVar4->field_02A8;
             pbVar8 = (byte *)FUN_0070b3a0((AnonShape_GLOBAL_0081175C_57F682DD *)pCVar4->field_02A2,
                                           local_8 & 0xff);
-            pAVar11 = pCVar4->field_018C;
+            pRVar11 = pCVar4->field_018C;
             iVar6 = (5 - uVar7) * 0xb;
           }
           else {
             uVar7 = (uint)*pbVar1;
             pbVar8 = (byte *)FUN_0070b3a0((AnonShape_GLOBAL_0081175C_57F682DD *)pCVar4->field_02A2,
                                           local_8 & 0xff);
-            pAVar11 = (AnonShape_006B5B10_E0D06CF1 *)pCVar4->field_0194;
+            pRVar11 = (RecoveredSourceFamily_dibcopy *)pCVar4->field_0194;
             iVar6 = uVar7 * 0xb + 0x87;
           }
-          DibPut(pAVar11,iVar6,uVar7 * 0xb + 0xb,'\x06',pbVar8);
+          DibPut(pRVar11,iVar6,uVar7 * 0xb + 0xb,'\x06',pbVar8);
           bVar10 = (-((char)local_c != '\0') & 2U) + 3;
           local_14 = STReplaceLowByte((uint32_t)(local_14), (uint8_t)(bVar10));
           if (bVar10 < 0xb) {
@@ -144,14 +143,14 @@ joined_r0x00500e7c:
         }
         else {
           if ((char)local_c == '\0') {
-            pAVar11 = (AnonShape_006B5B10_E0D06CF1 *)pCVar4->field_0188;
+            pRVar11 = (RecoveredSourceFamily_dibcopy *)pCVar4->field_0188;
           }
           else {
-            pAVar11 = (AnonShape_006B5B10_E0D06CF1 *)pCVar4->field_0198;
+            pRVar11 = (RecoveredSourceFamily_dibcopy *)pCVar4->field_0198;
           }
           pbVar8 = (byte *)FUN_0070b3a0((AnonShape_GLOBAL_0081175C_57F682DD *)pCVar4->field_02A2,
                                         local_8 & 0xff);
-          DibPut(pAVar11,7,(uint)*pbVar1 * 0x1d + 6,'\x01',pbVar8);
+          DibPut(pRVar11,7,(uint)*pbVar1 * 0x1d + 6,'\x01',pbVar8);
           bVar10 = (-((char)local_c != '\0') & 4U) + 2;
           local_18 = STReplaceLowByte((uint32_t)(local_18), (uint8_t)(bVar10));
           if (bVar10 < 0xb) {

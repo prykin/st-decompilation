@@ -21,7 +21,7 @@ undefined4 __thiscall STAllPlayersC::sub_004EB010(STAllPlayersC *this,int param_
   local_8 = 0;
   /* ST_PSEUDO[flattened_global_record_array]: expected typedRecordArray[index].field after inferred base/stride proof */
   iVar7 = param_1 * 0xa62;
-  g_packedRecords_A62x8[param_1].field2332_0x9c6 = 0;
+  g_packedRecords_A62x8[param_1].field1964_0x9c6 = 0;
   local_10 = 0;
   while( true ) {
     do {
@@ -38,7 +38,7 @@ undefined4 __thiscall STAllPlayersC::sub_004EB010(STAllPlayersC *this,int param_
         iVar6 = (&DAT_007c15c4)[iVar6 * 2];
         iVar5 = *(int *)(&DAT_007c15c0 +
                         (local_10 +
-                        (local_8 + g_packedRecords_A62x8[param_1].field2332_0x9c6 * 2) * 2) * 8);
+                        (local_8 + g_packedRecords_A62x8[param_1].field1964_0x9c6 * 2) * 2) * 8);
         uVar3 = this->field_001C * 0x41c64e6d + 0x3039;
         this->field_001C = uVar3;
         iVar5 = iVar5 + (uVar3 >> 0x10) % ((iVar6 - iVar5) + 1U);
@@ -53,7 +53,7 @@ undefined4 __thiscall STAllPlayersC::sub_004EB010(STAllPlayersC *this,int param_
     local_10 = 0;
     local_8 = iVar6;
   }
-  g_packedRecords_A62x8[param_1].field2331_0x9c2 = g_playSystem_00802A38->field_00E4;
+  g_packedRecords_A62x8[param_1].field1963_0x9c2 = g_playSystem_00802A38->field_00E4;
   return 0;
 }
 

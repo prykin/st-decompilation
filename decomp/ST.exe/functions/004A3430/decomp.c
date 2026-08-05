@@ -10,7 +10,6 @@ STGroupBoatC::DistributeMD
           (STGroupBoatC *this,int param_1,DArrayTy *param_2,DArrayTy *param_3,DArrayTy *param_4)
 
 {
-  code *pcVar1;
   STGroupBoatC *pSVar2;
   int iVar3;
   STBoatC *pSVar4;

@@ -20,8 +20,7 @@ void __thiscall CPanelTy::Update4PanelWB(CPanelTy *this)
   CPanelTy_field_0BF5State *pCVar1;
   CPanelTy_field_0BFAState CVar2;
   CPanelTy_field_0C3CState CVar3;
-  AnonShape_006B5B10_E0D06CF1 *pAVar4;
-  code *pcVar5;
+  RecoveredSourceFamily_dibcopy *pRVar4;
   CPanelTy *this_00;
   byte bVar6;
   Global_sub_00525EF0_param_1Enum GVar7;
@@ -195,11 +194,11 @@ cf_common_exit_005091B9:
       FUN_006e6080(this_00,2,this_00->field_09C0[1],(undefined4 *)&this_00->field_0x18);
     }
     if (*(int *)&this_00->field_0xc12 == local_5f) {
-      iVar8 = (((AnonShape_006B5B10_E0D06CF1 *)this_00->field_0194)->field_0004 -
+      iVar8 = (((RecoveredSourceFamily_dibcopy *)this_00->field_0194)->field_0004 -
               *(int *)(this_00->field_09D9[5] + 4)) / 2;
       if (this_00->field_0C24 != local_4d[0]) {
-        FUN_006b4170((AnonShape_006B5B10_E0D06CF1 *)this_00->field_0194,0,iVar8 + 0x36,0x5d,7,0x21,0
-                    );
+        FUN_006b4170((RecoveredSourceFamily_dibcopy *)this_00->field_0194,0,iVar8 + 0x36,0x5d,7,0x21
+                     ,0);
         bVar6 = this_00->field_0C24;
         local_c = STReplaceLowByte((uint32_t)(local_c), (uint8_t)(bVar6));
         cVar13 = (char)(((uint)bVar6 * 0x21) / 100);
@@ -215,14 +214,14 @@ cf_common_exit_005091B9:
         }
         uVar9 = (uint)local_10 & 0xff;
         Library::DKW::WGR::FUN_006b55f0
-                  ((AnonShape_006B5B10_E0D06CF1 *)this_00->field_0194,0,iVar8 + 0x37,0x7e - uVar9,
+                  ((RecoveredSourceFamily_dibcopy *)this_00->field_0194,0,iVar8 + 0x37,0x7e - uVar9,
                    (byte *)this_00->field_028A,0,iVar15,*(int *)(this_00->field_028A + 4) - uVar9,5,
                    uVar9);
         Library::DKW::WGR::FUN_006b55f0
-                  ((AnonShape_006B5B10_E0D06CF1 *)this_00->field_0194,0,iVar8 + 0x3f,0x5c,
+                  ((RecoveredSourceFamily_dibcopy *)this_00->field_0194,0,iVar8 + 0x3f,0x5c,
                    (byte *)this_00->field_09D9[5],0,0x3f,0xc,0x75,0x11);
         Library::DKW::WGR::FUN_006b55f0
-                  ((AnonShape_006B5B10_E0D06CF1 *)this_00->field_0194,0,iVar8 + 0x3f,0x6c,
+                  ((RecoveredSourceFamily_dibcopy *)this_00->field_0194,0,iVar8 + 0x3f,0x6c,
                    (byte *)this_00->field_09D9[5],0,0x3f,0x1c,0x44,0x13);
         PaintDamageXY(this_00,this_00->field_0194,iVar8 + 0x41,0x5d,this_00->field_0C24,0x2714);
         PaintCostsXY(this_00,this_00->field_0194,iVar8 + 0x41,0x68,this_00->field_0C1C,
@@ -366,11 +365,11 @@ cf_common_exit_005091B9:
   case CASE_44:
   case CASE_49:
     if ((*(int *)&this_00->field_0xc12 == local_5f) && (this_00->field_0C26 == local_4b)) {
-      iVar8 = (((AnonShape_006B5B10_E0D06CF1 *)this_00->field_0194)->field_0004 -
+      iVar8 = (((RecoveredSourceFamily_dibcopy *)this_00->field_0194)->field_0004 -
               *(int *)(this_00->field_09D9[5] + 4)) / 2;
       if (this_00->field_0C24 != local_4d[0]) {
-        FUN_006b4170((AnonShape_006B5B10_E0D06CF1 *)this_00->field_0194,0,iVar8 + 0x36,0x5d,7,0x21,0
-                    );
+        FUN_006b4170((RecoveredSourceFamily_dibcopy *)this_00->field_0194,0,iVar8 + 0x36,0x5d,7,0x21
+                     ,0);
         bVar6 = this_00->field_0C24;
         cVar13 = (char)(((uint)bVar6 * 0x21) / 100);
         local_c = STReplaceLowByte((uint32_t)(local_c), (uint8_t)(cVar13));
@@ -385,14 +384,14 @@ cf_common_exit_005091B9:
         }
         uVar9 = local_c & 0xff;
         Library::DKW::WGR::FUN_006b55f0
-                  ((AnonShape_006B5B10_E0D06CF1 *)this_00->field_0194,0,iVar8 + 0x37,0x7e - uVar9,
+                  ((RecoveredSourceFamily_dibcopy *)this_00->field_0194,0,iVar8 + 0x37,0x7e - uVar9,
                    (byte *)this_00->field_028A,0,iVar15,*(int *)(this_00->field_028A + 4) - uVar9,5,
                    uVar9);
         Library::DKW::WGR::FUN_006b55f0
-                  ((AnonShape_006B5B10_E0D06CF1 *)this_00->field_0194,0,iVar8 + 0x3f,0x5c,
+                  ((RecoveredSourceFamily_dibcopy *)this_00->field_0194,0,iVar8 + 0x3f,0x5c,
                    (byte *)this_00->field_09D9[5],0,0x3f,0xc,0x75,0x11);
         Library::DKW::WGR::FUN_006b55f0
-                  ((AnonShape_006B5B10_E0D06CF1 *)this_00->field_0194,0,iVar8 + 0x3f,0x6c,
+                  ((RecoveredSourceFamily_dibcopy *)this_00->field_0194,0,iVar8 + 0x3f,0x6c,
                    (byte *)this_00->field_09D9[5],0,0x3f,0x1c,0x44,0x13);
         PaintDamageXY(this_00,this_00->field_0194,iVar8 + 0x41,0x5d,this_00->field_0C24,0x2714);
         PaintCostsXY(this_00,this_00->field_0194,iVar8 + 0x41,0x68,this_00->field_0C1C,
@@ -405,8 +404,8 @@ cf_common_exit_005091B9:
       }
       if ((this_00->field_0BF5 != CASE_44) || (this_00->field_0C34 == local_3d))
       goto cf_common_exit_00509192;
-      DibPut((AnonShape_006B5B10_E0D06CF1 *)this_00->field_0194,
-             (((AnonShape_006B5B10_E0D06CF1 *)this_00->field_0194)->field_0004 -
+      DibPut((RecoveredSourceFamily_dibcopy *)this_00->field_0194,
+             (((RecoveredSourceFamily_dibcopy *)this_00->field_0194)->field_0004 -
              *(int *)((byte *)this_00->field_09D9[10] + 4)) / 2,0x37,'\x01',
              (byte *)this_00->field_09D9[10]);
       uVar9 = (uint)(ushort)this_00->field_0C34;
@@ -432,7 +431,7 @@ cf_common_exit_005091B9:
       iVar15 = (*(int *)(this_00->field_0194 + 4) - *(int *)(this_00->field_09D9[5] + 4)) / 2;
       do {
         if (*local_8 != *local_10) {
-          FUN_006b4170((AnonShape_006B5B10_E0D06CF1 *)this_00->field_0194,0,iVar15 + 0x36,iVar8,7,
+          FUN_006b4170((RecoveredSourceFamily_dibcopy *)this_00->field_0194,0,iVar15 + 0x36,iVar8,7,
                        0x21,0);
           bVar6 = *local_8;
           local_1c = STReplaceLowByte((uint32_t)(local_1c), (uint8_t)(bVar6));
@@ -449,15 +448,15 @@ cf_common_exit_005091B9:
           }
           uVar9 = local_20 & 0xff;
           Library::DKW::WGR::FUN_006b55f0
-                    ((AnonShape_006B5B10_E0D06CF1 *)this_00->field_0194,0,iVar15 + 0x37,
+                    ((RecoveredSourceFamily_dibcopy *)this_00->field_0194,0,iVar15 + 0x37,
                      (iVar8 - uVar9) + 0x21,(byte *)this_00->field_028A,0,local_14,
                      *(int *)(this_00->field_028A + 4) - uVar9,5,uVar9);
           Library::DKW::WGR::FUN_006b55f0
-                    ((AnonShape_006B5B10_E0D06CF1 *)this_00->field_0194,0,iVar15 + 0x3f,iVar8 + -1,
-                     (byte *)this_00->field_09D9[5],0,0x3f,0xc,0x75,0x11);
+                    ((RecoveredSourceFamily_dibcopy *)this_00->field_0194,0,iVar15 + 0x3f,iVar8 + -1
+                     ,(byte *)this_00->field_09D9[5],0,0x3f,0xc,0x75,0x11);
           Library::DKW::WGR::FUN_006b55f0
-                    ((AnonShape_006B5B10_E0D06CF1 *)this_00->field_0194,0,iVar15 + 0x3f,iVar8 + 0xf,
-                     (byte *)this_00->field_09D9[5],0,0x3f,0x1c,0x44,0x13);
+                    ((RecoveredSourceFamily_dibcopy *)this_00->field_0194,0,iVar15 + 0x3f,
+                     iVar8 + 0xf,(byte *)this_00->field_09D9[5],0,0x3f,0x1c,0x44,0x13);
           PaintDamageXY(this_00,this_00->field_0194,iVar15 + 0x41,iVar8,100 - *local_8,0x36b1);
           PaintCostsXY(this_00,this_00->field_0194,iVar15 + 0x41,iVar8 + 0xb,*local_18,local_18[2],4
                        ,2);
@@ -514,7 +513,7 @@ cf_common_exit_005091B9:
     uVar26 = this_00->field_0050;
     goto cf_common_exit_0050918D;
   case CASE_35:
-    iVar8 = (((AnonShape_006B5B10_E0D06CF1 *)this_00->field_0194)->field_0004 -
+    iVar8 = (((RecoveredSourceFamily_dibcopy *)this_00->field_0194)->field_0004 -
             *(int *)((byte *)this_00->field_09D9[5] + 4)) / 2;
     if (this_00->field_0C31 == local_40) {
       if (this_00->field_0C31 == '\0') {
@@ -531,7 +530,7 @@ cf_common_exit_005091B9:
       }
       if (this_00->field_0C33 == local_3e) goto cf_common_exit_00509192;
       Library::DKW::WGR::FUN_006b55f0
-                ((AnonShape_006B5B10_E0D06CF1 *)this_00->field_0194,0,iVar8 + 0x39,0x65,
+                ((RecoveredSourceFamily_dibcopy *)this_00->field_0194,0,iVar8 + 0x39,0x65,
                  (byte *)this_00->field_09D9[5],0,0x39,0x15,0x4c,0x1b);
       PaintPerRes(this_00,iVar8);
       puVar12 = this_00->field_0148[5];
@@ -560,7 +559,7 @@ cf_common_exit_005091B9:
     if (this_00->field_0C29 != 0) {
       do {
         pbVar10 = (byte *)FUN_0070b3a0((AnonShape_GLOBAL_0081175C_57F682DD *)this_00->field_02B6,3);
-        DibPut((AnonShape_006B5B10_E0D06CF1 *)this_00->field_0194,
+        DibPut((RecoveredSourceFamily_dibcopy *)this_00->field_0194,
                iVar8 + 6 + ((uint)local_8 & 0xff) * 4,0x75,'\x01',pbVar10);
         bVar6 = (byte)local_8 + 1;
         local_8 = (byte *)STReplaceLowByte((uint32_t)(local_8), (uint8_t)(bVar6));
@@ -571,7 +570,7 @@ cf_common_exit_005091B9:
       iVar8 = iVar8 + 6 + ((uint)local_8 & 0xff) * 4;
       do {
         pbVar10 = (byte *)FUN_0070b3a0((AnonShape_GLOBAL_0081175C_57F682DD *)this_00->field_02B6,0);
-        DibPut((AnonShape_006B5B10_E0D06CF1 *)this_00->field_0194,iVar8,0x75,'\x01',pbVar10);
+        DibPut((RecoveredSourceFamily_dibcopy *)this_00->field_0194,iVar8,0x75,'\x01',pbVar10);
         iVar8 = iVar8 + 4;
         iVar15 = iVar15 + -1;
       } while (iVar15 != 0);
@@ -603,7 +602,7 @@ cf_common_exit_0050918D:
         do {
           pbVar10 = (byte *)FUN_0070b3a0((AnonShape_GLOBAL_0081175C_57F682DD *)this_00->field_02B6,3
                                         );
-          DibPut((AnonShape_006B5B10_E0D06CF1 *)this_00->field_0194,
+          DibPut((RecoveredSourceFamily_dibcopy *)this_00->field_0194,
                  iVar8 + 0x70 + ((uint)local_8 & 0xff) * 4,0x54,'\x01',pbVar10);
           bVar6 = (byte)local_8 + 1;
           local_8 = (byte *)STReplaceLowByte((uint32_t)(local_8), (uint8_t)(bVar6));
@@ -615,7 +614,7 @@ cf_common_exit_0050918D:
         do {
           pbVar10 = (byte *)FUN_0070b3a0((AnonShape_GLOBAL_0081175C_57F682DD *)this_00->field_02B6,0
                                         );
-          DibPut((AnonShape_006B5B10_E0D06CF1 *)this_00->field_0194,iVar15,0x54,'\x01',pbVar10);
+          DibPut((RecoveredSourceFamily_dibcopy *)this_00->field_0194,iVar15,0x54,'\x01',pbVar10);
           iVar15 = iVar15 + 4;
           local_c = local_c - 1;
         } while (local_c != 0);
@@ -632,7 +631,7 @@ cf_common_exit_0050918D:
         do {
           pbVar10 = (byte *)FUN_0070b3a0((AnonShape_GLOBAL_0081175C_57F682DD *)this_00->field_02B6,3
                                         );
-          DibPut((AnonShape_006B5B10_E0D06CF1 *)this_00->field_0194,
+          DibPut((RecoveredSourceFamily_dibcopy *)this_00->field_0194,
                  iVar8 + 0x70 + ((uint)local_8 & 0xff) * 4,0x5f,'\x01',pbVar10);
           bVar6 = (byte)local_8 + 1;
           local_8 = (byte *)STReplaceLowByte((uint32_t)(local_8), (uint8_t)(bVar6));
@@ -644,7 +643,7 @@ cf_common_exit_0050918D:
         do {
           pbVar10 = (byte *)FUN_0070b3a0((AnonShape_GLOBAL_0081175C_57F682DD *)this_00->field_02B6,0
                                         );
-          DibPut((AnonShape_006B5B10_E0D06CF1 *)this_00->field_0194,iVar15,0x5f,'\x01',pbVar10);
+          DibPut((RecoveredSourceFamily_dibcopy *)this_00->field_0194,iVar15,0x5f,'\x01',pbVar10);
           iVar15 = iVar15 + 4;
           local_c = local_c - 1;
         } while (local_c != 0);
@@ -662,7 +661,7 @@ cf_common_exit_0050918D:
       uVar9 = 0;
       do {
         pbVar10 = (byte *)FUN_0070b3a0((AnonShape_GLOBAL_0081175C_57F682DD *)this_00->field_02B6,2);
-        DibPut((AnonShape_006B5B10_E0D06CF1 *)this_00->field_0194,iVar8 + 0xb + uVar9 * 4,0x76,
+        DibPut((RecoveredSourceFamily_dibcopy *)this_00->field_0194,iVar8 + 0xb + uVar9 * 4,0x76,
                '\x01',pbVar10);
         bVar6 = (byte)local_8 + 1;
         local_8 = (byte *)STReplaceLowByte((uint32_t)(local_8), (uint8_t)(bVar6));
@@ -674,7 +673,7 @@ cf_common_exit_0050918D:
       iVar15 = 0x28 - ((uint)local_8 & 0xff);
       do {
         pbVar10 = (byte *)FUN_0070b3a0((AnonShape_GLOBAL_0081175C_57F682DD *)this_00->field_02B6,0);
-        DibPut((AnonShape_006B5B10_E0D06CF1 *)this_00->field_0194,iVar8,0x76,'\x01',pbVar10);
+        DibPut((RecoveredSourceFamily_dibcopy *)this_00->field_0194,iVar8,0x76,'\x01',pbVar10);
         iVar8 = iVar8 + 4;
         iVar15 = iVar15 + -1;
       } while (iVar15 != 0);
@@ -693,10 +692,10 @@ cf_common_exit_0050918D:
       goto cf_common_exit_00509192;
     }
     pbVar10 = (byte *)this_00->field_09D9[5];
-    pAVar4 = (AnonShape_006B5B10_E0D06CF1 *)this_00->field_0194;
-    iVar8 = (pAVar4->field_0004 - *(int *)(pbVar10 + 4)) / 2;
+    pRVar4 = (RecoveredSourceFamily_dibcopy *)this_00->field_0194;
+    iVar8 = (pRVar4->field_0004 - *(int *)(pbVar10 + 4)) / 2;
     if (CVar3 == CASE_1) {
-      Library::DKW::WGR::FUN_006b55f0(pAVar4,0,iVar8 + 0x39,0x65,pbVar10,0,0x39,0x15,0x4c,0x1b);
+      Library::DKW::WGR::FUN_006b55f0(pRVar4,0,iVar8 + 0x39,0x65,pbVar10,0,0x39,0x15,0x4c,0x1b);
       PaintDamageXY(this_00,this_00->field_0194,iVar8 + 0x39,0x65,*(byte *)&this_00->field_0C3D,
                     0x2714);
       local_14 = 0;
@@ -708,7 +707,7 @@ cf_common_exit_0050918D:
         do {
           pbVar10 = (byte *)FUN_0070b3a0((AnonShape_GLOBAL_0081175C_57F682DD *)this_00->field_02B6,3
                                         );
-          DibPut((AnonShape_006B5B10_E0D06CF1 *)this_00->field_0194,iVar15,0x5c,'\x01',pbVar10);
+          DibPut((RecoveredSourceFamily_dibcopy *)this_00->field_0194,iVar15,0x5c,'\x01',pbVar10);
           iVar15 = iVar15 + 4;
           local_c = local_c - 1;
         } while (local_c != 0);
@@ -719,7 +718,7 @@ cf_common_exit_0050918D:
         do {
           pbVar10 = (byte *)FUN_0070b3a0((AnonShape_GLOBAL_0081175C_57F682DD *)this_00->field_02B6,0
                                         );
-          DibPut((AnonShape_006B5B10_E0D06CF1 *)this_00->field_0194,iVar8,0x5c,'\x01',pbVar10);
+          DibPut((RecoveredSourceFamily_dibcopy *)this_00->field_0194,iVar8,0x5c,'\x01',pbVar10);
           iVar8 = iVar8 + 4;
           iVar15 = iVar15 + -1;
         } while (iVar15 != 0);
@@ -727,7 +726,7 @@ cf_common_exit_0050918D:
     }
     else if (CVar3 == CASE_2) {
       Library::DKW::WGR::FUN_006b55f0
-                (pAVar4,0,iVar8,0x71,pbVar10,0,0,0x21,*(int *)(pbVar10 + 4),
+                (pRVar4,0,iVar8,0x71,pbVar10,0,0,0x21,*(int *)(pbVar10 + 4),
                  *(int *)(pbVar10 + 8) + -0x21);
       wsprintfA((LPSTR)&DAT_0080f33a,"%4d",this_00->field_0C3D);
       /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */

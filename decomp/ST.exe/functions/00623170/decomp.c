@@ -10,7 +10,6 @@ undefined4 __thiscall STMineSetC::LoadImagMineSet(STMineSetC *this,int param_1)
 
 {
   undefined4 *this_00;
-  code *pcVar1;
   STMineSetC *pSVar2;
   int iVar3;
   int iVar4;

@@ -8,7 +8,6 @@
 void __thiscall AiTactClassTy::InitDistrObj(AiTactClassTy *this)
 
 {
-  code *pcVar1;
   AiTactClassTy *this_00;
   int errorCode;
   DArrayTy *array;

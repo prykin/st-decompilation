@@ -10,7 +10,6 @@ int __thiscall TLOBaseTy::ReloadLogoPlane(TLOBaseTy *this)
 {
   undefined4 *puVar1;
   AnonPointee_TLOBaseTy_01F5 *pAVar2;
-  code *pcVar3;
   TLOBaseTy *pTVar4;
   int iVar5;
   undefined4 uVar6;

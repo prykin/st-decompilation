@@ -13,7 +13,6 @@ void __thiscall HelpPanelTy::MObjProc(HelpPanelTy *this)
 
 {
   HelpPanelTy_field_01A1State HVar1;
-  code *pcVar2;
   HelpPanelTy *this_00;
   int errorCode;
   int iVar3;

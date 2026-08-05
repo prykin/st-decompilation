@@ -72,9 +72,8 @@ STBHEShellC::sub_005F4C50
       if (0 < this->field_0109) {
         do {
           puVar4 = (undefined4 *)local_2c;
-          memset(puVar4, 0, 0x22); /* compiler bulk-zero initialization */
+          memset(puVar4, 0, 0x23); /* compiler bulk-zero initialization */
           puVar4 = (undefined4 *)((byte *)puVar4 + 0x20);
-          *(undefined1 *)((int)puVar4 + 2) = 0;
           /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
           if (param_4 == 0) {
             fcos((float10)param_1);

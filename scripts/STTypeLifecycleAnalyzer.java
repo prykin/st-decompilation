@@ -106,12 +106,16 @@ public class STTypeLifecycleAnalyzer extends GhidraScript {
                     "unique namespace-backed HiddenThis receiver family"));
             }
             else if (anchors.size() == 1 && (description.contains(VIEW) ||
-                    type.getName().contains(".conflict"))) {
+                    type.getName().contains(".conflict") ||
+                    explicitlyPromotedFrom(type, anchors.get(0)))) {
                 DataType replacement = anchors.get(0);
                 rows.add(new Row(true, "replace", type.getPathName(),
                     replacement.getPathName(), replacementBaseline(replacement),
                     type.getLength(), parents, functionUses,
-                    listingUses, description, "unique equivalent semantic anchor"));
+                    listingUses, description,
+                    explicitlyPromotedFrom(type, replacement) ?
+                        "exact source-family promotion retains one layout identity" :
+                        "unique equivalent semantic anchor"));
             }
             else if (anchors.isEmpty() &&
                     (description.contains(VIEW) || derivedView ||
@@ -254,6 +258,15 @@ public class STTypeLifecycleAnalyzer extends GhidraScript {
         start += marker.length();
         int end = description.indexOf(';', start);
         return description.substring(start, end < 0 ? description.length() : end).trim();
+    }
+
+    private boolean explicitlyPromotedFrom(DataType source, DataType replacement) {
+        String description = text(replacement.getDescription());
+        return description.contains(
+                "[STTypeFamilyApplier] Generated SOURCE_FUNCTION_FAMILY") &&
+            source.isEquivalent(replacement) &&
+            source.getCategoryPath().equals(replacement.getCategoryPath()) &&
+            source.getPathName().equals(attribute(description, "promoted_from"));
     }
 
     private String parentPath(DataType type) {

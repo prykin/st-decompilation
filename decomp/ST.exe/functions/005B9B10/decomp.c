@@ -9,7 +9,6 @@ void __thiscall PrividerTy::InitPrivider(PrividerTy *this,char param_1,char para
 
 {
   MMsgTy *this_00;
-  code *pcVar1;
   CursorClassTy *this_01;
   PrividerTy *this_02;
   int iVar2;

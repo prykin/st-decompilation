@@ -9,9 +9,8 @@
 void __thiscall WaitTy::InitWait(WaitTy *this,undefined4 param_1,undefined4 param_2)
 
 {
-  AnonShape_006B5B10_E0D06CF1 *pAVar1;
+  RecoveredSourceFamily_dibcopy *pRVar1;
   StartSystemTy *pSVar2;
-  code *pcVar3;
   CursorClassTy *this_00;
   WaitTy *this_01;
   int iVar4;
@@ -72,10 +71,10 @@ void __thiscall WaitTy::InitWait(WaitTy *this,undefined4 param_1,undefined4 para
     Library::Ourlib::PALETTE::FUN_00718780
               ((int)local_668,0,0x100,0x8b,0x15,(undefined4 *)&this_01->field_1A5B->field_0x144);
     puVar6 = Library::Ourlib::MFIMG::mfImgLoad(g_cMf32_00806780,1,"MM_MAPB",0,1);
-    DibPut((AnonShape_006B5B10_E0D06CF1 *)g_startSystem_0081176C->field_02F0,0,0,'\x01',
+    DibPut((RecoveredSourceFamily_dibcopy *)g_startSystem_0081176C->field_02F0,0,0,'\x01',
            (byte *)puVar6);
-    pAVar1 = (AnonShape_006B5B10_E0D06CF1 *)g_startSystem_0081176C->field_0544;
-    FUN_006b4170(pAVar1,0,0,0,pAVar1->field_0004,pAVar1->field_0008,0xff);
+    pRVar1 = (RecoveredSourceFamily_dibcopy *)g_startSystem_0081176C->field_0544;
+    FUN_006b4170(pRVar1,0,0,0,pRVar1->field_0004,pRVar1->field_0008,0xff);
     if ((DArrayTy *)g_startSystem_0081176C->field_0548 != nullptr) {
       FUN_006b5570((DArrayTy *)g_startSystem_0081176C->field_0548);
     }
@@ -364,11 +363,10 @@ void __thiscall WaitTy::InitWait(WaitTy *this,undefined4 param_1,undefined4 para
     }
     this_01->field_0065 = 3;
     puVar7 = &local_268;
-    memset(puVar7, 0, 0x1fa); /* compiler bulk-zero initialization */
+    memset(puVar7, 0, 0x1fb); /* compiler bulk-zero initialization */
     puVar7 = (undefined4 *)((byte *)puVar7 + 0x1f8);
     iVar4 = 0;
     pSVar2 = this_01->field_1A5B;
-    *(undefined1 *)((int)puVar7 + 2) = 0;
     local_194 = 2;
     local_16d = 2;
     local_198 = this_01->field_0008;

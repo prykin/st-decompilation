@@ -8,7 +8,6 @@
 void __thiscall PausePanelTy::DonePausePanel(PausePanelTy *this)
 
 {
-  code *pcVar1;
   PausePanelTy *pPVar2;
   int errorCode;
   int iVar3;

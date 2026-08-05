@@ -9,7 +9,6 @@ void __thiscall FSGSTy::PrepBkgMess(FSGSTy *this,char param_1)
 
 {
   ushort **value;
-  code *pcVar1;
   FSGSTy *pFVar2;
   int iVar3;
   int uVar4;

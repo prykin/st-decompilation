@@ -11,7 +11,6 @@ int __thiscall STBoatC::ToDok(STBoatC *this,int param_1)
   uint uVar1;
   STBoatC_field_0580State SVar2;
   undefined4 uVar3;
-  code *pcVar4;
   undefined2 uVar5;
   int iVar6;
   dword dVar7;

@@ -17,7 +17,6 @@ STAllPlayersC::DeleteGuardBoat(STAllPlayersC *this,char param_1,short param_2,in
 
 {
   dword dVar1;
-  code *pcVar2;
   STAllPlayersC *this_00;
   int iVar3;
   STBoatC *pSVar4;
@@ -37,7 +36,7 @@ STAllPlayersC::DeleteGuardBoat(STAllPlayersC *this,char param_1,short param_2,in
   short local_8 [2];
 
   local_68.previous = g_currentExceptionFrame;
-  local_18 = (DArrayTy *)g_packedRecords_A62x8[param_1].field2377_0x9f6;
+  local_18 = (DArrayTy *)g_packedRecords_A62x8[param_1].field1976_0x9f6;
   g_currentExceptionFrame = &local_68;
   local_14 = this;
   iVar3 = Library::MSVCRT::__setjmp3(local_68.jumpBuffer,0);

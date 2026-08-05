@@ -18,7 +18,6 @@ MMMObjTy::PaintSlBut
           (MMMObjTy *this,RecoveredRecord_MMMObjTy_005B6560 *param_1,int param_2,byte param_3)
 
 {
-  code *pcVar1;
   int iVar2;
   int iVar3;
   uint uVar4;

@@ -9,7 +9,6 @@ void __cdecl FUN_00575640(short *param_1,undefined4 *param_2,short *param_3)
   short sVar3;
   int iVar4;
   int iVar5;
-  short *psVar6;
   undefined2 *puVar7;
   uint uVar8;
   short *psVar9;
@@ -142,9 +141,9 @@ void __cdecl FUN_00575640(short *param_1,undefined4 *param_2,short *param_3)
       iVar13 = 0;
       if (0 < psVar2[1]) {
         do {
-          psVar6 = (short *)(*psVar2 * iVar13 + (int)param_3);
-          psVar9 = param_1 + (int)psVar6;
-          puVar7 = (undefined2 *)((int)psVar6 * 2 + (int)param_2);
+          int scalar_psVar6 = *psVar2 * iVar13 + (int)param_3; /* split integer lifetime from pointer-typed SSA storage */
+          psVar9 = param_1 + scalar_psVar6;
+          puVar7 = (undefined2 *)(scalar_psVar6 * 2 + (int)param_2);
           iVar5 = 0;
           if (0 < *psVar2) {
             do {

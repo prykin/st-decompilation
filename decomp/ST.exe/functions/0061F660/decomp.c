@@ -14,7 +14,6 @@ int __thiscall SndUnderAttMenegC::GetMessage(SndUnderAttMenegC *this,STMessage *
 
 {
   STMessageId SVar1;
-  code *pcVar2;
   float fVar3;
   int iVar4;
   int iVar5;

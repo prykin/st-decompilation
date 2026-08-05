@@ -143,7 +143,7 @@ int __thiscall CPanelTy::GetMessage(CPanelTy *this,STMessage *message)
       if (local_44->field_0138 != 0) {
         iVar5 = local_44->field_00A8;
       }
-      FUN_006b4170((AnonShape_006B5B10_E0D06CF1 *)local_44->field_0194,0,
+      FUN_006b4170((RecoveredSourceFamily_dibcopy *)local_44->field_0194,0,
                    *piVar21 - local_44->field_0050,piVar21[1] - iVar5,piVar21[2],piVar21[3],
                    (-(DAT_0080874e != '\x01') & 0x89U) + 0x3a);
       if (this_00->field_0BFC == '\0') {
@@ -165,7 +165,7 @@ int __thiscall CPanelTy::GetMessage(CPanelTy *this,STMessage *message)
       local_1c = (char *)(piVar21[1] - iVar5);
       pbVar10 = (byte *)FUN_0070b3a0((AnonShape_GLOBAL_0081175C_57F682DD *)this_00->field_0B17,uVar7
                                     );
-      DibPut((AnonShape_006B5B10_E0D06CF1 *)this_00->field_0194,*piVar21 - this_00->field_0050,
+      DibPut((RecoveredSourceFamily_dibcopy *)this_00->field_0194,*piVar21 - this_00->field_0050,
              (int)local_1c,'\x01',pbVar10);
       iVar5 = DAT_00806734;
       if (this_00->field_0138 != 0) {
@@ -224,7 +224,7 @@ int __thiscall CPanelTy::GetMessage(CPanelTy *this,STMessage *message)
       if (this_00->field_0138 != 0) {
         iVar5 = this_00->field_00A8;
       }
-      FUN_006b4170((AnonShape_006B5B10_E0D06CF1 *)this_00->field_0194,0,
+      FUN_006b4170((RecoveredSourceFamily_dibcopy *)this_00->field_0194,0,
                    *piVar21 - this_00->field_0050,piVar21[1] - iVar5,piVar21[2],piVar21[3],
                    (-(DAT_0080874e != '\x03') & 0xfdU) + 0x3d);
       if (-1 < (int)uVar7) {
@@ -241,7 +241,7 @@ int __thiscall CPanelTy::GetMessage(CPanelTy *this,STMessage *message)
         }
         pbVar10 = (byte *)FUN_0070b3a0((AnonShape_GLOBAL_0081175C_57F682DD *)this_00->field_09D5,
                                        iVar5);
-        DibPut((AnonShape_006B5B10_E0D06CF1 *)this_00->field_0194,*piVar21 - this_00->field_0050,
+        DibPut((RecoveredSourceFamily_dibcopy *)this_00->field_0194,*piVar21 - this_00->field_0050,
                iVar11 - iVar30,'\x01',pbVar10);
       }
       puVar6 = this_00->field_0148[5];
@@ -444,7 +444,7 @@ LAB_004fd533:
       }
       pbVar10 = (byte *)FUN_0070b3a0((AnonShape_GLOBAL_0081175C_57F682DD *)local_44->field_09D5,
                                      (uint)local_c & 0xff);
-      DibPut((AnonShape_006B5B10_E0D06CF1 *)this_00->field_0194,*piVar21 - this_00->field_0050,
+      DibPut((RecoveredSourceFamily_dibcopy *)this_00->field_0194,*piVar21 - this_00->field_0050,
              iVar5 - iVar11,'\x01',pbVar10);
       puVar6 = this_00->field_0148[5];
       if ((int)puVar6 < 0) break;

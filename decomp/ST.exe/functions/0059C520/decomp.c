@@ -12,7 +12,6 @@
 void __thiscall FSGSTy::CreateCtrls(FSGSTy *this)
 
 {
-  code *pcVar1;
   FSGSTy *pFVar2;
   int errorCode;
   int iVar3;

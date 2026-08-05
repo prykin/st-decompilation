@@ -9,7 +9,6 @@ void __thiscall TLOBaseTy::SetActivity(TLOBaseTy *this,int param_1)
 
 {
   TLOBaseTyVTable *pTVar1;
-  code *pcVar2;
   TLOBaseTy *this_00;
   dword dVar3;
   int iVar4;

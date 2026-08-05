@@ -21,7 +21,6 @@ AllocationRecord_00648620 * __cdecl
 BossDataPack(AllocationRecord_00648620 *param_1,undefined4 *param_2,int param_3,uint *param_4)
 
 {
-  code *pcVar1;
   int iVar2;
   AllocationRecord_00648620 *pAVar3;
   int iVar4;

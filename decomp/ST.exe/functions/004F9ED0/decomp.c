@@ -16,7 +16,6 @@
 void __thiscall CPanelTy::SwitchCPanel(CPanelTy *this)
 
 {
-  code *pcVar1;
   bool bVar2;
   CPanelTy *this_00;
   int iVar3;

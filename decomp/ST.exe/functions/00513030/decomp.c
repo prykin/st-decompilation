@@ -12,7 +12,6 @@ void __thiscall HelpPanelTy::ChangeTree(HelpPanelTy *this,int *param_1,int param
   DArrayTy *array;
   AnonPointee_HelpPanelTy_01B3 *pAVar2;
   undefined4 uVar3;
-  code *pcVar4;
   bool bVar5;
   HelpPanelTy *this_00;
   byte bVar6;
@@ -179,7 +178,7 @@ LAB_00513233:
   *(bool *)((int)piVar12 + 0x12) = *(char *)((int)piVar12 + 0x12) == '\0';
   if ((this_00->field_019C != 0) && (this_00->field_01A1 == 0)) {
     Library::DKW::WGR::FUN_006b55f0
-              ((AnonShape_006B5B10_E0D06CF1 *)this_00->field_0068,0,0x21,0x16,
+              ((RecoveredSourceFamily_dibcopy *)this_00->field_0068,0,0x21,0x16,
                (byte *)this_00->field_01DC,0,0x21,0x16,0x19c,0x118);
     puVar1 = &this_00->field_0x18;
     memset((void *)puVar1, 0, 0x20); /* compiler bulk-zero initialization */

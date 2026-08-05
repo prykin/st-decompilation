@@ -8,7 +8,6 @@
 int __thiscall STBoatC::BackLoadObj(STBoatC *this,int *param_1)
 
 {
-  code *pcVar1;
   int iVar2;
 
   if (param_1 == nullptr) {

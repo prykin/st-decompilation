@@ -18,7 +18,7 @@ short FUN_0043e640(char param_1,Global_sub_0043E640_param_2Enum param_2,int para
 
   iVar7 = 0;
   sVar4 = 0;
-  iVar1 = g_packedRecords_A62x8[param_1].field6_0x9;
+  iVar1 = g_packedRecords_A62x8[param_1].field3_0x9;
   local_8 = *(int *)(iVar1 + 0xc);
   sVar3 = 0;
   if (0 < local_8) {

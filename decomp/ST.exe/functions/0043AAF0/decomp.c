@@ -19,7 +19,6 @@ STAllPlayersC::GetCamPoint
 
 {
   dword dVar1;
-  code *pcVar2;
   int iVar3;
   undefined4 uVar4;
   STGameObjC *pSVar5;

@@ -14,7 +14,6 @@ _EnumMines(int param_1,short param_2,char param_3,byte *param_4,short param_5,sh
 {
   byte bVar1;
   STFishC *this;
-  code *pcVar2;
   int iVar3;
   undefined4 *puVar4;
   dword dVar5;

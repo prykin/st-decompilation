@@ -13,7 +13,6 @@ void __thiscall SettMapMTy::RunGame(SettMapMTy *this)
 
 {
   MMsgTy *this_00;
-  code *pcVar1;
   SettMapMTy *this_01;
   int errorCode;
   int iVar2;

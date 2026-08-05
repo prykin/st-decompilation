@@ -8,7 +8,6 @@
 undefined4 __thiscall STAllPlayersC::RegisterMine(STAllPlayersC *this,ushort param_1,void *param_2)
 
 {
-  code *pcVar1;
   int iVar2;
   int iVar3;
   undefined4 uVar4;

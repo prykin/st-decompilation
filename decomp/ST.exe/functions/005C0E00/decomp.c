@@ -10,7 +10,6 @@ void __thiscall MReportTy::SetCtrl(MReportTy *this)
 {
   undefined1 *puVar1;
   DArrayTy *pDVar2;
-  code *pcVar3;
   short sVar4;
   int iVar5;
   byte *puVar6;

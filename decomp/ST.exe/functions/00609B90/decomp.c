@@ -10,7 +10,6 @@ undefined4 __thiscall STFieldC::InitSprSistem(STFieldC *this,int param_1)
 {
   dword dVar1;
   STFieldC_field_0234DArray *pSVar2;
-  code *pcVar3;
   STFieldC *this_00;
   int errorCode;
   STFieldC_field_0234Element *element_0234;

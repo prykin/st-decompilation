@@ -9,7 +9,6 @@
 undefined4 __thiscall STPlaySystemC::Life(STPlaySystemC *this)
 
 {
-  code *pcVar1;
   STPlaySystemC *this_00;
   int iVar2;
   char *pcVar3;

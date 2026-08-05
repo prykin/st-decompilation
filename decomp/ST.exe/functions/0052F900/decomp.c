@@ -16,7 +16,6 @@
 void __thiscall OptPanelTy::ShiftControls(OptPanelTy *this,int param_1)
 
 {
-  code *pcVar1;
   OptPanelTy *this_00;
   short sVar2;
   undefined4 uVar3;

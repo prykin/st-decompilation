@@ -9,7 +9,6 @@ void __thiscall InfocPanelTy::PaintInfoc(InfocPanelTy *this)
 
 {
   char cVar1;
-  code *pcVar2;
   InfocPanelTy *this_00;
   byte bVar3;
   int iVar4;
@@ -175,7 +174,7 @@ void __thiscall InfocPanelTy::PaintInfoc(InfocPanelTy *this)
     iVar11 = 0x14;
     do {
       pbVar5 = (byte *)FUN_0070b3a0((AnonShape_GLOBAL_0081175C_57F682DD *)this_00->field_03CC,0);
-      DibPut((AnonShape_006B5B10_E0D06CF1 *)this_00->field_0068,iVar4,0x71,'\x01',pbVar5);
+      DibPut((RecoveredSourceFamily_dibcopy *)this_00->field_0068,iVar4,0x71,'\x01',pbVar5);
       iVar4 = iVar4 + 4;
       iVar11 = iVar11 + -1;
     } while (iVar11 != 0);
@@ -188,7 +187,7 @@ void __thiscall InfocPanelTy::PaintInfoc(InfocPanelTy *this)
         uVar9 = 1;
         do {
           pbVar5 = (byte *)FUN_0070b3a0((AnonShape_GLOBAL_0081175C_57F682DD *)this_00->field_03CC,0);
-          DibPut((AnonShape_006B5B10_E0D06CF1 *)this_00->field_0068,uVar9 * 4 + 0xca,0x71,'\x01',
+          DibPut((RecoveredSourceFamily_dibcopy *)this_00->field_0068,uVar9 * 4 + 0xca,0x71,'\x01',
                  pbVar5);
           local_8 = local_8 + 1;
           uVar9 = (uint)local_8;
@@ -204,7 +203,7 @@ void __thiscall InfocPanelTy::PaintInfoc(InfocPanelTy *this)
         iVar4 = (uint)bVar3 * 4 + 0xca;
         do {
           pbVar5 = (byte *)FUN_0070b3a0((AnonShape_GLOBAL_0081175C_57F682DD *)this_00->field_03CC,4);
-          DibPut((AnonShape_006B5B10_E0D06CF1 *)this_00->field_0068,iVar4,0x71,'\x01',pbVar5);
+          DibPut((RecoveredSourceFamily_dibcopy *)this_00->field_0068,iVar4,0x71,'\x01',pbVar5);
           iVar4 = iVar4 + 4;
           iVar11 = iVar11 + -1;
         } while (iVar11 != 0);
@@ -218,7 +217,7 @@ void __thiscall InfocPanelTy::PaintInfoc(InfocPanelTy *this)
         do {
           pbVar5 = (byte *)FUN_0070b3a0((AnonShape_GLOBAL_0081175C_57F682DD *)this_00->field_03CC,
                                         (-(uint)(DAT_0080874e != '\x03') & 2) + 1);
-          DibPut((AnonShape_006B5B10_E0D06CF1 *)this_00->field_0068,uVar9 * 4 + 0xca,0x71,'\x01',
+          DibPut((RecoveredSourceFamily_dibcopy *)this_00->field_0068,uVar9 * 4 + 0xca,0x71,'\x01',
                  pbVar5);
           local_8 = local_8 + 1;
           uVar9 = (uint)local_8;
@@ -233,7 +232,7 @@ void __thiscall InfocPanelTy::PaintInfoc(InfocPanelTy *this)
         iVar4 = (uint)bVar3 * 4 + 0xca;
         do {
           pbVar5 = (byte *)FUN_0070b3a0((AnonShape_GLOBAL_0081175C_57F682DD *)this_00->field_03CC,0);
-          DibPut((AnonShape_006B5B10_E0D06CF1 *)this_00->field_0068,iVar4,0x71,'\x01',pbVar5);
+          DibPut((RecoveredSourceFamily_dibcopy *)this_00->field_0068,iVar4,0x71,'\x01',pbVar5);
           iVar4 = iVar4 + 4;
           iVar11 = iVar11 + -1;
         } while (iVar11 != 0);

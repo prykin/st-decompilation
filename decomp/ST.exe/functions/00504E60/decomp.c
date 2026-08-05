@@ -8,7 +8,6 @@
 void __thiscall CPanelTy::PaintIDSObj(CPanelTy *this)
 
 {
-  code *pcVar1;
   CPanelTy *pCVar2;
   int iVar3;
   uint *resourceString;
@@ -36,7 +35,7 @@ void __thiscall CPanelTy::PaintIDSObj(CPanelTy *this)
     return;
   }
   if (DAT_0080874e == '\x03') {
-    DibPut((AnonShape_006B5B10_E0D06CF1 *)local_8->field_0194,0xf,0x8d,'\x01',
+    DibPut((RecoveredSourceFamily_dibcopy *)local_8->field_0194,0xf,0x8d,'\x01',
            (byte *)local_8->field_09D9[6]);
     if (pCVar2->field_0C4D == 0) goto cf_common_exit_00504F81;
     ccFntTy::SetSurf(pCVar2->field_01B8,pCVar2->field_0194,0,0x10,0x8e,
@@ -44,7 +43,7 @@ void __thiscall CPanelTy::PaintIDSObj(CPanelTy *this)
     resourceId = pCVar2->field_0C4D;
   }
   else {
-    DibPut((AnonShape_006B5B10_E0D06CF1 *)local_8->field_0194,4,0x89,'\x01',
+    DibPut((RecoveredSourceFamily_dibcopy *)local_8->field_0194,4,0x89,'\x01',
            (byte *)local_8->field_09D9[6]);
     if (pCVar2->field_0C4D == 0) goto cf_common_exit_00504F81;
     ccFntTy::SetSurf(pCVar2->field_01B8,pCVar2->field_0194,0,6,0x8b,200,0xb);

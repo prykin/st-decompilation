@@ -8,7 +8,6 @@
 undefined4 __thiscall GameSystemC::CreateSystemObjects(GameSystemC *this)
 
 {
-  code *pcVar1;
   GameSystemC *this_00;
   int errorCode;
   int iVar2;

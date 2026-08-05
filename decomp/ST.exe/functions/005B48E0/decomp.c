@@ -10,7 +10,6 @@ void __thiscall MainMenuTy::AnimationMainMenu(MainMenuTy *this)
 {
   int *piVar1;
   AnonShape_GLOBAL_0081175C_57F682DD *pAVar2;
-  code *pcVar3;
   int iVar4;
   uint uVar5;
   BITMAPINFO *pBVar6;

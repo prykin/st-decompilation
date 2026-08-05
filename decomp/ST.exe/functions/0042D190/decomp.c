@@ -15,7 +15,6 @@ STAllPlayersC::ResetActivityFromObjs
 
 {
   dword dVar1;
-  code *pcVar2;
   STGameObjC *pSVar3;
   int iVar4;
   uint index;

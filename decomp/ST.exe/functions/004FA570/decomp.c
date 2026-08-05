@@ -12,7 +12,6 @@
 void __thiscall CPanelTy::ShiftControls(CPanelTy *this,int param_1,int param_2)
 
 {
-  code *pcVar1;
   CPanelTy *this_00;
   short sVar2;
   int iVar3;

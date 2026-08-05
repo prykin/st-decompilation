@@ -31,7 +31,6 @@ MMObjTy::InitSprBut(MMObjTy *this,RecoveredRecord_MMObjTy_005B5240 *param_1,char
                    int param_23,int param_24)
 
 {
-  code *pcVar1;
   int iVar2;
   uint *puVar3;
   undefined4 *puVar4;
@@ -47,9 +46,8 @@ MMObjTy::InitSprBut(MMObjTy *this,RecoveredRecord_MMObjTy_005B5240 *param_1,char
   iVar2 = Library::MSVCRT::__setjmp3(local_48.jumpBuffer,0);
   if (iVar2 == 0) {
     puVar4 = (undefined4 *)&param_1->field_0x21;
-    memset(puVar4, 0, 0x26); /* compiler bulk-zero initialization */
+    memset(puVar4, 0, 0x27); /* compiler bulk-zero initialization */
     puVar4 = (undefined4 *)((byte *)puVar4 + 0x24);
-    *(undefined1 *)((int)puVar4 + 2) = 0;
     *(undefined4 *)&param_1->field_0x8 = param_9;
     *(undefined4 *)param_1 = param_7;
     *(undefined4 *)&param_1->field_0x4 = param_8;

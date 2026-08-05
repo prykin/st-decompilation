@@ -20,7 +20,6 @@ CPanelTy::PaintBBut(CPanelTy *this,byte param_1,STMessage *param_2,byte param_3,
                    byte param_5)
 
 {
-  code *pcVar1;
   uint uVar2;
   CPanelTy *pCVar3;
   int *errorCode;
@@ -85,7 +84,7 @@ CPanelTy::PaintBBut(CPanelTy *this,byte param_1,STMessage *param_2,byte param_3,
 LAB_004f38ad:
     iVar5 = iVar5 - local_8->field_00C0;
   }
-  DibPut((AnonShape_006B5B10_E0D06CF1 *)local_8->field_0148[uVar2 + 0xe],
+  DibPut((RecoveredSourceFamily_dibcopy *)local_8->field_0148[uVar2 + 0xe],
          *local_10 - (&local_8->field_003C)[uVar2],iVar5 - iVar4,param_3,(byte *)local_c);
   cMf32::RecMemFree(g_cMf32_00806790,(uint *)&local_c);
   if ((param_1 < 0xb) && (-1 < (int)pCVar3->field_0148[uVar2])) {

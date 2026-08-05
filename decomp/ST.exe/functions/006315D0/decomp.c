@@ -101,7 +101,7 @@ LAB_00631713:
               if (((uVar6 == 0) && (this_00->field_0048 != 0)) && (this_00->field_0061 != 0)) {
                 Library::Ourlib::ST3DSMAP::SprClose(g_sT3DSMAPContext_00807598,this_00->field_0061);
               }
-              this_00->field_0061 = -1;
+              this_00->field_0061 = 0xffffffff;
               return;
             }
           }

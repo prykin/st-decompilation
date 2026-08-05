@@ -8,7 +8,6 @@
 int __thiscall STRubbishC::RubbishCreatePart(STRubbishC *this)
 
 {
-  code *pcVar1;
   int iVar2;
   int *piVar3;
   undefined4 *puVar4;

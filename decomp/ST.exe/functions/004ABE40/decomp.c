@@ -14,7 +14,6 @@ undefined4 __thiscall STT3DSprC::SetCurFase(STT3DSprC *this,char param_1,uint pa
 {
   int *piVar1;
   int iVar2;
-  code *pcVar3;
   int iVar4;
   undefined4 uVar5;
   int *piVar6;

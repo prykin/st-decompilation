@@ -21,7 +21,6 @@
 void __cdecl StartStrateg(AnonShape_00648C10_30A1BBFD *strategData,uint param_2)
 
 {
-  code *pcVar1;
   int errorCode;
   AiPlrClassTy *pAVar2;
   int iVar3;

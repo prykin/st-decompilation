@@ -31,7 +31,6 @@ int __thiscall FUN_0040ae40(void *this,uint param_1,char param_2)
   int iVar10;
   int iVar11;
   int iVar12;
-  short *psVar13;
   InternalExceptionFrame local_90;
   int local_4c;
   STGameObjC *local_48;
@@ -363,18 +362,18 @@ LAB_0040b56a:
                         psVar7,local_24);
     pSVar5->field_009F = psVar7;
     if (psVar7 == nullptr) {
-      psVar13 = (short *)((int)g_pathingGrid.sizeY * (int)g_pathingGrid.sizeX);
-      local_40 = psVar13;
-      local_2c = Library::DKW::LIB::MemAlloc((int)g_pathingGrid.sizeZ * (int)psVar13 * 2);
+      int scalar_psVar13 = (int)g_pathingGrid.sizeY * (int)g_pathingGrid.sizeX; /* split integer lifetime from pointer-typed SSA storage */
+      int scalar_local_40 = scalar_psVar13;
+      local_2c = Library::DKW::LIB::MemAlloc((int)g_pathingGrid.sizeZ * scalar_psVar13 * 2);
       iVar6 = (int)g_pathingGrid.sizeZ;
       psVar7 = g_pathingGrid.cells;
       psVar9 = local_2c;
-      for (uVar8 = (iVar6 * (int)psVar13 & 0x7fffffffU) >> 1; uVar8 != 0; uVar8 = uVar8 - 1) {
+      for (uVar8 = (iVar6 * scalar_psVar13 & 0x7fffffffU) >> 1; uVar8 != 0; uVar8 = uVar8 - 1) {
         *(undefined4 *)psVar9 = *(undefined4 *)psVar7;
         psVar7 = psVar7 + 2;
         psVar9 = psVar9 + 2;
       }
-      for (uVar8 = iVar6 * (int)psVar13 * 2 & 3; uVar8 != 0; uVar8 = uVar8 - 1) {
+      for (uVar8 = iVar6 * scalar_psVar13 * 2 & 3; uVar8 != 0; uVar8 = uVar8 - 1) {
         *(char *)psVar9 = (char)*psVar7;
         psVar7 = (short *)((int)psVar7 + 1);
         psVar9 = (short *)((int)psVar9 + 1);
@@ -384,7 +383,7 @@ LAB_0040b56a:
         do {
           local_10 = local_2c +
                      ((int)pSVar5->field_0049 + local_44) * (int)g_pathingGrid.sizeX +
-                     (pSVar5->field_004B + local_1c) * (int)local_40 + (int)pSVar5->field_0047;
+                     (pSVar5->field_004B + local_1c) * scalar_local_40 + (int)pSVar5->field_0047;
           if ((int)local_44 <= local_c) {
             iVar6 = (local_c - local_44) + 1;
             psVar7 = local_18;

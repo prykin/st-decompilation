@@ -8,7 +8,6 @@
 void __thiscall TradePanelTy::Update(TradePanelTy *this)
 
 {
-  code *pcVar1;
   TradePanelTy *this_00;
   int errorCode;
   int iVar2;

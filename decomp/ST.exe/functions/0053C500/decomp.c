@@ -8,7 +8,6 @@
 void __thiscall ResearchPanelTy::Update(ResearchPanelTy *this)
 
 {
-  code *pcVar1;
   ResearchPanelTy *this_00;
   int errorCode;
   uint uVar2;

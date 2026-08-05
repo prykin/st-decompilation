@@ -11,7 +11,6 @@ AiEventClassTy::_CreateArt
           undefined4 param_5,char *param_6,char *param_7,undefined4 param_8)
 
 {
-  code *pcVar1;
   bool bVar2;
   int iVar3;
   int iVar4;

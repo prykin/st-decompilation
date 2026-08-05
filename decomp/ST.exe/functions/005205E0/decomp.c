@@ -8,7 +8,6 @@
 void __thiscall InfocPanelTy::ShiftControls(InfocPanelTy *this,int param_1)
 
 {
-  code *pcVar1;
   short sVar2;
   int errorCode;
   int iVar3;

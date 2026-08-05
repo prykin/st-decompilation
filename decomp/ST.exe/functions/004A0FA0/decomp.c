@@ -15,7 +15,6 @@
 void __thiscall STGroupBoatC::RechargeNewCmd(STGroupBoatC *this)
 
 {
-  code *pcVar1;
   uint uVar2;
   STGroupBoatC *this_00;
   int iVar3;
@@ -735,7 +734,7 @@ LAB_004a1a74:
       } while (uVar11 < local_18);
     }
     if (local_e8 != 0xffffffff) {
-      DArrayGetElement((DArrayTy *)g_packedRecords_A62x8[this_00->field_0024].field2377_0x9f6,
+      DArrayGetElement((DArrayTy *)g_packedRecords_A62x8[this_00->field_0024].field1976_0x9f6,
                        local_e8,local_130);
       Library::DKW::TBL::FUN_006afe40((int *)&local_10,local_130[0]);
       /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */

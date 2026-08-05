@@ -9,7 +9,6 @@ void __thiscall PopUpTy::ChangeState(PopUpTy *this)
 
 {
   uint *puVar1;
-  code *pcVar2;
   PopUpTy *pPVar3;
   int iVar4;
   char *resourceString;

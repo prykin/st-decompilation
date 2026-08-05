@@ -16,7 +16,6 @@ STAllPlayersC::GetGObjFromBox
 
 {
   int *piVar1;
-  code *pcVar2;
   int *piVar3;
   int iVar4;
   DArrayTy *pDVar5;

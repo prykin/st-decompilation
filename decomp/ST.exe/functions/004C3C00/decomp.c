@@ -11,7 +11,6 @@ int __thiscall TLOBaseTy::fireFindCheckTarget(TLOBaseTy *this,int param_1,int pa
   byte bVar1;
   byte bVar2;
   byte bVar3;
-  code *pcVar4;
   TLOBaseTy *this_00;
   short sVar5;
   short sVar6;

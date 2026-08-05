@@ -8,7 +8,6 @@
 undefined4 __thiscall StartSystemTy::InitSystem(StartSystemTy *this)
 
 {
-  code *pcVar1;
   int iVar2;
   LPSTR pCVar3;
   int iVar4;

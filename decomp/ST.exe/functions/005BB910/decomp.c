@@ -12,7 +12,6 @@
 void __thiscall PrividerTy::CloseButtons(PrividerTy *this,char param_1)
 
 {
-  code *pcVar1;
   PrividerTy *this_00;
   int errorCode;
   int iVar2;

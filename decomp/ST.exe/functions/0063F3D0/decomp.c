@@ -10,7 +10,6 @@ undefined4 __thiscall STTmMineC::LoadImagVacuum(STTmMineC *this,int param_1)
 
 {
   uint *puVar1;
-  code *pcVar2;
   STTmMineC *pSVar3;
   int errorCode;
   ushort *puVar4;

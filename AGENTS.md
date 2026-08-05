@@ -117,6 +117,11 @@ Original binaries are local under ignored `bin/` and must not be committed.
 - `RecoveredRecord_<Owner>_<Address>` is a deterministic generated identity for
   one complete one-owner pointer shape. It is not an asserted original type name
   and never licenses geometry-only merging.
+- A source-derived type family requires one script-owned shape, one unambiguous
+  recovered source basename, exact interprocedural flow into the first explicit
+  parameter, at least three such flows spanning two callees, and at least two
+  semantically named functions. Layout or basename equality alone is never
+  sufficient; basename collisions remain review-only.
 - An allocation-backed packed record view belongs to its producer/consumer, not
   to the neutral allocator. Automatic application requires one returned allocation
   root, an exact machine fixed-copy span from one source parameter, non-overlapping
@@ -157,11 +162,19 @@ Original binaries are local under ignored `bin/` and must not be committed.
   inline array only when independent indexed-stride evidence agrees; install a
   nested by-value member only for an exact complete typed copy into an
   automation-owned range.
+- A generated global-record word may become `T *` only when the same exact
+  member has both a store from a locally typed `T *` and a read/consumer cast as
+  that unique `T *`. This paired evidence outranks a decompiler `(int)` storage
+  cast; either half by itself does not.
 - A recursive linked-node type is identified by one exact hash-owned owner field,
   not by layout similarity. Automatic application requires repeated self-link
   traversal and at least two non-conflicting generated partial views at that
   same root; COM/table chains, concrete roots, and single-view geometry remain
   review-only.
+- Export fingerprints must include only composite members actually rendered by
+  the cached body. A generated layout change must invalidate functions which
+  spell the changed field, but unrelated additions elsewhere in that structure
+  must not invalidate every user.
 
 ## Validation and hygiene
 

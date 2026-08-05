@@ -8,7 +8,6 @@
 void __thiscall STTorpC::RestoreTorpData(STTorpC *this,int param_1)
 
 {
-  code *pcVar1;
   STTorpC *pSVar2;
   int iVar3;
   DArrayTy *pDVar4;

@@ -18,7 +18,6 @@
 int __thiscall STBoatC::BackBuild(STBoatC *this,int *param_1)
 
 {
-  code *pcVar1;
   undefined2 uVar2;
   uint uVar3;
   undefined4 uVar4;

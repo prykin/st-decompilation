@@ -9,7 +9,6 @@ void __thiscall FSGSTy::LicCtrls(FSGSTy *this)
 
 {
   ccFntTy *pcVar1;
-  code *pcVar2;
   FSGSTy *this_00;
   uint uVar3;
   undefined4 uVar4;

@@ -14,7 +14,6 @@ int __thiscall MainMenuTy::GetMessage(MainMenuTy *this,STMessage *message)
 
 {
   StartServTy *pSVar1;
-  code *pcVar2;
   MainMenuTy *this_00;
   DWORD DVar3;
   int iVar4;

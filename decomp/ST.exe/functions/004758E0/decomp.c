@@ -13,7 +13,6 @@ int __thiscall STBoatC::UnLoadObj(STBoatC *this,int param_1)
 {
   undefined1 uVar1;
   undefined1 uVar2;
-  code *pcVar3;
   short sVar4;
   int iVar5;
   uint uVar6;

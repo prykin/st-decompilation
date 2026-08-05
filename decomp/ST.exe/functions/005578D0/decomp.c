@@ -9,7 +9,6 @@ void __thiscall VisibleClassTy::InitData(VisibleClassTy *this)
 
 {
   byte bVar1;
-  code *pcVar2;
   VisibleClassTy *pVVar3;
   int iVar4;
   int iVar5;

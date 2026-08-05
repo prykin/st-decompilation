@@ -14,7 +14,6 @@ int __thiscall MTestTy::GetMessage(MTestTy *this,STMessage *message)
 
 {
   int *piVar1;
-  code *pcVar2;
   HoloTy *pHVar3;
   MTestTy *this_00;
   DWORD DVar4;

@@ -28,7 +28,6 @@ void __thiscall FSGSTy::SetState(FSGSTy *this,byte param_1)
   FSGSTy_field_1A5FState FVar1;
   ushort *puVar2;
   StartSystemTy *pSVar3;
-  code *pcVar4;
   FSGSTy *this_00;
   undefined4 *puVar5;
   uint *resourceString;

@@ -8,7 +8,6 @@
 void __thiscall STAllPlayersC::RestoreGObjData(STAllPlayersC *this,undefined4 *param_1)
 
 {
-  code *pcVar1;
   AnonShape_00422210_9D5BEAD8 *pAVar2;
   int iVar3;
   byte *puVar4;

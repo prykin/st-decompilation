@@ -8,7 +8,6 @@
 void __thiscall PlayPanelTy::DonePlayPanel(PlayPanelTy *this)
 
 {
-  code *pcVar1;
   PlayPanelTy *pPVar2;
   int iVar3;
   int iVar4;

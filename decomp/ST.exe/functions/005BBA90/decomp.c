@@ -13,7 +13,6 @@ void __thiscall PrividerTy::CreateCtrls(PrividerTy *this,char param_1)
 
 {
   undefined1 *puVar1;
-  code *pcVar2;
   PrividerTy *this_00;
   int iVar3;
   int iVar4;

@@ -8,7 +8,6 @@
 void __thiscall cLoadingTy::DrawLine(cLoadingTy *this,uint *param_1)
 
 {
-  code *pcVar1;
   cLoadingTy *pcVar2;
   int iVar3;
   int iVar4;
@@ -22,7 +21,7 @@ void __thiscall cLoadingTy::DrawLine(cLoadingTy *this,uint *param_1)
   iVar3 = Library::MSVCRT::__setjmp3(local_4c.jumpBuffer,0);
   pcVar2 = local_8;
   if (iVar3 == 0) {
-    FUN_006b4170((AnonShape_006B5B10_E0D06CF1 *)local_8->field_0004,0,
+    FUN_006b4170((RecoveredSourceFamily_dibcopy *)local_8->field_0004,0,
                  local_8->field_0014 + local_8->field_000C,local_8->field_0010 + local_8->field_0018
                  ,local_8->field_001C,local_8->field_0034,0);
     ccFntTy::WrStr(pcVar2->field_0008,param_1,pcVar2->field_000C,pcVar2->field_0010,

@@ -22,7 +22,6 @@ VisibleClassTy::SetZoneAst
 
 {
   byte bVar1;
-  code *pcVar2;
   bool bVar3;
   int iVar4;
   byte *pbVar5;

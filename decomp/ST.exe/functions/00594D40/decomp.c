@@ -20,7 +20,6 @@ FSGSTy::OutTRGlProc(FSGSTy *this,int param_1,MMMObjTy *param_2,MMMObjTy *param_3
                    int param_5,int param_6,int param_7,UINT param_8)
 
 {
-  code *pcVar1;
   int errorCode;
   uint *resourceString;
   int iVar2;

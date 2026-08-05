@@ -13,7 +13,6 @@ void __thiscall
 SettMapMTy::PrepareAFT(SettMapMTy *this,AnonShape_005D4990_5F0525CF *param_1,uint *param_2)
 
 {
-  code *pcVar1;
   int iVar2;
   int iVar3;
   uint uVar4;

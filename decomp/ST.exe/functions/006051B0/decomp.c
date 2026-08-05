@@ -10,7 +10,6 @@ undefined4 __thiscall
 STExplosionC::LoadImagSpr(STExplosionC *this,undefined4 param_1,undefined4 param_2,char param_3)
 
 {
-  code *pcVar1;
   short sVar2;
   VisibleClassTy *pVVar3;
   STExplosionC *pSVar4;

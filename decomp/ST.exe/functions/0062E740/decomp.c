@@ -16,7 +16,6 @@ int __thiscall STRubbishC::GetMessage(STRubbishC *this,STMessage *message)
   short sVar2;
   short sVar3;
   STMessageId SVar4;
-  code *pcVar5;
   STGameObjC *this_00;
   int iVar6;
   STWorldObject *pSVar7;

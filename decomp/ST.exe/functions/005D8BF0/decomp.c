@@ -14,7 +14,6 @@ void __thiscall SIDTy::PrepFiles(SIDTy *this)
 {
   char cVar1;
   byte bVar2;
-  code *pcVar3;
   int iVar4;
   DArrayTy *pDVar5;
   HANDLE hFindFile;
@@ -71,7 +70,7 @@ void __thiscall SIDTy::PrepFiles(SIDTy *this)
   this_01->field_002D = 0x29;
   this_01->field_0031 = 0x19;
   FUN_006e6080(this_01,2,uVar10,(undefined4 *)&this_01->field_0x1d);
-  FUN_006b4170((AnonShape_006B5B10_E0D06CF1 *)this_01->field_1CB8,0,3,0x15,0x142,0x62,0xff);
+  FUN_006b4170((RecoveredSourceFamily_dibcopy *)this_01->field_1CB8,0,3,0x15,0x142,0x62,0xff);
   FUN_006b35d0((int *)g_ddxContext_008075A8,this_01->field_1CB4);
   wsprintfA(&this_01->field_1CD4,"%s%s",&DAT_00807680,PTR_s_SAVEGAME__0079c19c);
   uVar10 = 0xffffffff;

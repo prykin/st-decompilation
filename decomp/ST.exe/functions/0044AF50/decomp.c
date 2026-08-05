@@ -13,14 +13,13 @@ void STAllPlayersC::PushTV(char param_1,int param_2)
 
 {
   DArrayTy *array;
-  code *pcVar1;
   int iVar2;
   AnonPointee_TLOBaseTy_0607 *pAVar3;
   Global_sub_0043FC50_param_1Enum GVar4;
 
   if (param_2 == 0) {
     GVar4 = CASE_E;
-    pAVar3 = (AnonPointee_TLOBaseTy_0607 *)&g_packedRecords_A62x8[param_1].field332_0x163;
+    pAVar3 = (AnonPointee_TLOBaseTy_0607 *)&g_packedRecords_A62x8[param_1].field96_0x163;
   }
   else {
     if (param_2 != 1) {
@@ -32,7 +31,7 @@ void STAllPlayersC::PushTV(char param_1,int param_2)
       STDebugBreak(); /* noreturn in standalone pseudocode */
     }
     GVar4 = CASE_F;
-    pAVar3 = (AnonPointee_TLOBaseTy_0607 *)&g_packedRecords_A62x8[param_1].field390_0x1b3;
+    pAVar3 = (AnonPointee_TLOBaseTy_0607 *)&g_packedRecords_A62x8[param_1].field149_0x1b3;
   }
   thunk_FUN_0043fc50(GVar4,0);
   array = *(DArrayTy **)((int)&pAVar3[3].field_0000 + 2);

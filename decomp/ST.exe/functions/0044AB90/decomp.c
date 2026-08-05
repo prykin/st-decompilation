@@ -24,7 +24,6 @@ int STAllPlayersC::CheckTmps
               short objectId)
 
 {
-  code *pcVar1;
   int iVar2;
   int *piVar3;
   DArrayTy *array;

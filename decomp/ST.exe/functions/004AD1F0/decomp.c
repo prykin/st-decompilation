@@ -13,7 +13,6 @@ STT3DSprC::Init(STT3DSprC *this,undefined4 param_1,uint param_2,uint param_3,STD
                uint param_5,uint param_6,uint param_7)
 
 {
-  code *pcVar1;
   STT3DSprC *pSVar2;
   int iVar3;
   AnonPointee_STT3DSprC_0020 *pAVar4;

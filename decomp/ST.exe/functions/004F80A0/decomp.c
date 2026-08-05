@@ -17,7 +17,6 @@ void __thiscall CPanelTy::PaintTV(CPanelTy *this)
 
 {
   short **ppsVar1;
-  code *pcVar2;
   CPanelTy *this_00;
   byte bVar3;
   int iVar4;
@@ -420,7 +419,7 @@ LAB_004f88e6:
 cf_common_join_004F88ED:
   if (((this_00->field_01D8 != nullptr) && ((g_playSystem_00802A38->field_00E4 & 1) != 0)) &&
      (iVar4 = *(int *)&this_00->field_01D8->field_0x4, iVar4 < this_00->field_01DC + -2)) {
-    FUN_006b4170((AnonShape_006B5B10_E0D06CF1 *)this_00->field_01B4,0,100,5,0x226,0x55,0);
+    FUN_006b4170((RecoveredSourceFamily_dibcopy *)this_00->field_01B4,0,100,5,0x226,0x55,0);
     uVar12 = FUN_007140e0(this_00->field_01D8,1,'\0');
     if (uVar12 != 0) {
       FUN_006b5440((ushort *)this_00->field_01B4,0,100,5,uVar12,0,0xff);

@@ -14,8 +14,7 @@ StartSystemTy::PaintBinDesc(StartSystemTy *this,AnonShape_005DE050_5BD86458 *par
 
 {
   ccFntTy *pcVar1;
-  AnonShape_006B5B10_E0D06CF1 *pAVar2;
-  code *pcVar3;
+  RecoveredSourceFamily_dibcopy *pRVar2;
   StartSystemTy *pSVar4;
   int errorCode;
   uint uVar5;
@@ -42,8 +41,8 @@ StartSystemTy::PaintBinDesc(StartSystemTy *this,AnonShape_005DE050_5BD86458 *par
     errorCode = Library::MSVCRT::__setjmp3(local_54.jumpBuffer,0);
     pSVar4 = local_10;
     if (errorCode == 0) {
-      pAVar2 = (AnonShape_006B5B10_E0D06CF1 *)local_10->field_0544;
-      FUN_006b4170(pAVar2,0,0,0,pAVar2->field_0004,pAVar2->field_0008,0xff);
+      pRVar2 = (RecoveredSourceFamily_dibcopy *)local_10->field_0544;
+      FUN_006b4170(pRVar2,0,0,0,pRVar2->field_0004,pRVar2->field_0008,0xff);
       uVar5 = (uint)param_1->field_0016;
       uVar7 = uVar5;
       /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */

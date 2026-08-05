@@ -46,10 +46,9 @@ SettMapTy * __cdecl CreateSettMap(void)
     puVar2 = (undefined4 *)&this->field_0xbc;
     do {
       puVar3 = puVar2;
-      memset(puVar3, 0, 0x26); /* compiler bulk-zero initialization */
+      memset(puVar3, 0, 0x27); /* compiler bulk-zero initialization */
       puVar3 = (undefined4 *)((byte *)puVar3 + 0x24);
       iVar1 = 0;
-      *(undefined1 *)((int)puVar3 + 2) = 0;
       local_8 = local_8 + -1;
       puVar2 = (undefined4 *)((int)puVar2 + 0x1fb);
     } while (local_8 != 0);

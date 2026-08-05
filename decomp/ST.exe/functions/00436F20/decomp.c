@@ -66,7 +66,6 @@ void __thiscall STAllPlayersC::CmdToPlsObj(STAllPlayersC *this,void *command)
   int iVar7;
   char *pcVar8;
   undefined2 *puVar9;
-  code *pcVar10;
   byte bVar11;
   undefined2 uVar12;
   short sVar13;
@@ -215,7 +214,7 @@ void __thiscall STAllPlayersC::CmdToPlsObj(STAllPlayersC *this,void *command)
   local_38 = STReplaceLowWord((uint32_t)(this), (uint16_t)(uVar24));
   local_8 = nullptr;
   uVar14 = *(uint *)((int)command + 10) >> 0x10;
-  pDVar16 = *(DArrayTy **)&g_packedRecords_A62x8[(byte)bVar1].field_0x1;
+  pDVar16 = (DArrayTy *)g_packedRecords_A62x8[(byte)bVar1].field1_0x1;
   local_30 = pDVar16;
   local_20 = this;
   if (uVar14 != 0) {

@@ -24,11 +24,10 @@
 void __thiscall CPanelTy::PaintCtrlBoat(CPanelTy *this)
 
 {
-  code *pcVar1;
   CPanelTy *this_00;
   int iVar2;
   int iVar3;
-  AnonShape_006B5B10_E0D06CF1 *pAVar4;
+  RecoveredSourceFamily_dibcopy *pRVar4;
   byte *pbVar5;
   InternalExceptionFrame local_4c;
   CPanelTy *local_8;
@@ -52,14 +51,14 @@ void __thiscall CPanelTy::PaintCtrlBoat(CPanelTy *this)
   case CASE_0:
   case CASE_4:
     pbVar5 = (byte *)local_8->field_0974[0];
-    pAVar4 = local_8->field_018C;
+    pRVar4 = local_8->field_018C;
     iVar3 = 0;
     iVar2 = 0;
     goto LAB_00501758;
   case CASE_1:
     if ((local_8->field_0B99 == CASE_9) || (local_8->field_0B99 == CASE_15)) {
       pbVar5 = (byte *)local_8->field_0974[1];
-      pAVar4 = local_8->field_018C;
+      pRVar4 = local_8->field_018C;
       iVar3 = 0;
       iVar2 = 0;
       goto LAB_00501758;
@@ -84,11 +83,11 @@ void __thiscall CPanelTy::PaintCtrlBoat(CPanelTy *this)
     }
 switchD_0050162e_caseD_a:
     pbVar5 = (byte *)this_00->field_0974[4];
-    pAVar4 = this_00->field_018C;
+    pRVar4 = this_00->field_018C;
     iVar3 = 0x61;
-    iVar2 = (pAVar4->field_0004 - *(int *)(pbVar5 + 4)) / 2;
+    iVar2 = (pRVar4->field_0004 - *(int *)(pbVar5 + 4)) / 2;
 LAB_00501758:
-    DibPut(pAVar4,iVar2,iVar3,'\x01',pbVar5);
+    DibPut(pRVar4,iVar2,iVar3,'\x01',pbVar5);
     break;
   case CASE_3:
     DibPut(local_8->field_018C,0,0,'\x01',(byte *)local_8->field_0974[0]);

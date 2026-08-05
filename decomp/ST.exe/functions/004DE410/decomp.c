@@ -12,7 +12,7 @@ int FUN_004de410(void *param_1,int param_2,int param_3)
   iVar2 = param_2;
   local_8 = 0;
   pPVar1 = g_packedRecords_A62x8 + (int)param_1;
-  array = *(DArrayTy **)&pPVar1->field_0x9ce;
+  array = pPVar1->field1966_0x9ce;
   if ((array != nullptr) && (index = 0, 0 < (int)array->count)) {
     do {
       DArrayGetElement(array,index,&param_1);
@@ -26,7 +26,7 @@ int FUN_004de410(void *param_1,int param_2,int param_3)
         local_8 = local_8 + iVar3;
       }
       index = index + 1;
-      array = *(DArrayTy **)&pPVar1->field_0x9ce;
+      array = pPVar1->field1966_0x9ce;
     } while ((int)index < (int)array->count);
     return local_8;
   }

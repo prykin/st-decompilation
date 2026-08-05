@@ -8,7 +8,6 @@
 void __thiscall CPanelTy::PaintMap(CPanelTy *this)
 
 {
-  code *pcVar1;
   CPanelTy *pCVar2;
   int iVar3;
   uint uVar4;
@@ -25,8 +24,8 @@ void __thiscall CPanelTy::PaintMap(CPanelTy *this)
   iVar3 = Library::MSVCRT::__setjmp3(local_4c.jumpBuffer,0);
   pCVar2 = local_8;
   if (iVar3 == 0) {
-    DibPut((AnonShape_006B5B10_E0D06CF1 *)local_8->field_0190,0,0,'\x01',(byte *)local_8->field_0994
-          );
+    DibPut((RecoveredSourceFamily_dibcopy *)local_8->field_0190,0,0,'\x01',
+           (byte *)local_8->field_0994);
     ccFntTy::SetSurf(pCVar2->field_01B8,pCVar2->field_0190,0,5,6,0x2a,10);
     iVar7 = -1;
     iVar6 = -1;

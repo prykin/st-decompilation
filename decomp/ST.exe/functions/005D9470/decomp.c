@@ -20,7 +20,6 @@ int __thiscall SIDTy::GetMessage(SIDTy *this,STMessage *message)
   ushort *puVar6;
   int *piVar7;
   dword dVar8;
-  code *pcVar9;
   SIDTy *this_00;
   DWORD DVar10;
   int iVar11;
@@ -267,7 +266,7 @@ LAB_005d97ca:
     }
     puVar6 = this_00->field_1CC8;
     Library::DKW::WGR::FUN_006b55f0
-              ((AnonShape_006B5B10_E0D06CF1 *)this_00->field_1CB8,0,4,1,(byte *)puVar6,0,0,0,
+              ((RecoveredSourceFamily_dibcopy *)this_00->field_1CB8,0,4,1,(byte *)puVar6,0,0,0,
                *(int *)(puVar6 + 2),*(int *)(puVar6 + 4));
   }
   else {
@@ -332,7 +331,7 @@ LAB_005d97ca:
         else {
           local_8 = nullptr;
         }
-        FUN_006b4170((AnonShape_006B5B10_E0D06CF1 *)this_00->field_1CB8,0,
+        FUN_006b4170((RecoveredSourceFamily_dibcopy *)this_00->field_1CB8,0,
                      (message->arg1).words.low + 3,(message->arg1).words.high + 0x15,0x142,0xe,0xff);
         puVar6 = this_00->field_1CBC;
         local_c = *(dword *)(puVar6 + 10);
@@ -350,7 +349,7 @@ LAB_005d97ca:
           puVar14 = (undefined4 *)((int)puVar14 + 1);
         }
         if (((message->arg0).words.high == 1) && (local_8 != nullptr)) {
-          FUN_006b5ee0((AnonShape_006B5B10_E0D06CF1 *)this_00->field_1CB8,0,
+          FUN_006b5ee0((RecoveredSourceFamily_dibcopy *)this_00->field_1CB8,0,
                        (message->arg1).words.low + 3,(message->arg1).words.high + 0x15,0x142,0xe,
                        0x87,0xd);
         }
@@ -373,7 +372,7 @@ LAB_005d97ca:
     local_18 = piVar7[2];
     local_1c = piVar7[1] - 0x1a9;
     local_14 = piVar7[3];
-    FUN_006b4170((AnonShape_006B5B10_E0D06CF1 *)this_00->field_1CB8,0,local_20,local_1c,local_18,
+    FUN_006b4170((RecoveredSourceFamily_dibcopy *)this_00->field_1CB8,0,local_20,local_1c,local_18,
                  local_14,0xff);
     MMObjTy::PaintButDib((MMObjTy *)this_00,(int)this_00->field_1CB8,&local_20,2,0x87,0xffffffff);
     if ((local_c & 0xff) == 1) {

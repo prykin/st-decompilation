@@ -12,7 +12,7 @@ int FUN_006b3120(uint *param_1,uint *param_2)
   int local_24 [3];
   uint local_18;
   undefined4 local_14;
-  AnonShape_006B5B10_E0D06CF1 *local_10;
+  RecoveredSourceFamily_dibcopy *local_10;
   AnonShape_006D86E0_D6D32C07 *local_c;
   int local_8;
 

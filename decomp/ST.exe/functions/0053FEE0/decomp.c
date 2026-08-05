@@ -10,7 +10,6 @@ ProdPanelTy::PaintTab(ProdPanelTy *this,AnonShape_0053FEE0_A49592EB *param_1,und
 
 {
   AnonNested_0053FEE0_0014_154E5252 *pAVar1;
-  code *pcVar2;
   ProdPanelTy *pPVar3;
   int *piVar4;
   undefined4 uVar5;
@@ -47,7 +46,7 @@ ProdPanelTy::PaintTab(ProdPanelTy *this,AnonShape_0053FEE0_A49592EB *param_1,und
       local_8 = cMf32::RecGet(g_cMf32_00806790,1,pCVar6,piVar4,iVar8);
       iVar7 = local_c;
       pPVar3 = local_14;
-      DibPut((AnonShape_006B5B10_E0D06CF1 *)local_14->field_0068,local_10,local_c,'\x01',
+      DibPut((RecoveredSourceFamily_dibcopy *)local_14->field_0068,local_10,local_c,'\x01',
              (byte *)local_8);
       cMf32::RecMemFree(g_cMf32_00806790,(uint *)&local_8);
       if (param_1->field_0014->field_0004 == 3) {
@@ -55,7 +54,7 @@ ProdPanelTy::PaintTab(ProdPanelTy *this,AnonShape_0053FEE0_A49592EB *param_1,und
         piVar4 = nullptr;
         pCVar6 = thunk_FUN_00571240("BUT_MFFRAMES",0);
         local_8 = cMf32::RecGet(g_cMf32_00806790,6,pCVar6,piVar4,iVar8);
-        DibPut((AnonShape_006B5B10_E0D06CF1 *)pPVar3->field_0068,local_10,iVar7,'\x06',
+        DibPut((RecoveredSourceFamily_dibcopy *)pPVar3->field_0068,local_10,iVar7,'\x06',
                (byte *)local_8);
         cMf32::RecMemFree(g_cMf32_00806790,(uint *)&local_8);
       }

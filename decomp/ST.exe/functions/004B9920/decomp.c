@@ -39,7 +39,7 @@ undefined4 __fastcall FUN_004b9920(AnonShape_004B9920_1D6BF5BA *param_1)
     thunk_FUN_004dfe90((int)param_1);
   }
   if (param_1->field_05AC == 0x5c) {
-    *(undefined4 *)&g_packedRecords_A62x8[param_1->field_0024].field_0x9ca = 1;
+    g_packedRecords_A62x8[param_1->field_0024].field1965_0x9ca = 1;
   }
   return 0;
 }

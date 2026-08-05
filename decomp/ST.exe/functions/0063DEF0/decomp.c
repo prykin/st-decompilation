@@ -9,7 +9,6 @@
 undefined4 __thiscall STTmMineC::LoadImagNuclear(STTmMineC *this,int param_1)
 
 {
-  code *pcVar1;
   STTmMineC *pSVar2;
   int errorCode;
   ushort *puVar3;

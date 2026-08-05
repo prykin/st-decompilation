@@ -9,7 +9,6 @@
 void CreateGameSystem(void)
 
 {
-  code *pcVar1;
   CursorClassTy *this;
   int iVar2;
   GameSystemC *this_00;

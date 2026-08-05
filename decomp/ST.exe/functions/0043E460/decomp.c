@@ -12,7 +12,7 @@ short FUN_0043e460(char param_1)
 
   iVar7 = 0;
   sVar5 = 0;
-  iVar1 = g_packedRecords_A62x8[param_1].field6_0x9;
+  iVar1 = g_packedRecords_A62x8[param_1].field3_0x9;
   iVar2 = *(int *)(iVar1 + 0xc);
   sVar4 = 0;
   if (0 < iVar2) {

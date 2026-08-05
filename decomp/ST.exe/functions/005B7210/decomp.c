@@ -12,7 +12,6 @@
 void __thiscall MMsgTy::ShowSprites(MMsgTy *this)
 
 {
-  code *pcVar1;
   MMsgTy *pMVar2;
   int iVar3;
   int iVar4;

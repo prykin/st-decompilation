@@ -224,10 +224,10 @@ The accepted corpus contains the following concrete debt:
 
 | Issue | Occurrences | Functions | Next evidence source |
 | --- | ---: | ---: | --- |
-| `undefined_type` | 16,289 | 3,577 | definitions, consumers, ABI-width families |
-| `raw_pointer_offset` | 2,802 | 1,094 | cross-function pointer families and complete records |
-| `raw_indirect_call` | 1,888 | 774 | stored callback targets and physical vtable slots |
-| `packed_or_unaligned_piece` | 1,051 | 215 | exact packed members or explicit unaligned helpers |
+| `undefined_type` | 16,278 | 3,574 | definitions, consumers, ABI-width families |
+| `raw_pointer_offset` | 2,813 | 1,094 | cross-function pointer families and complete records |
+| `raw_indirect_call` | 1,885 | 773 | stored callback targets and physical vtable slots |
+| `packed_or_unaligned_piece` | 1,047 | 214 | exact packed members or explicit unaligned helpers |
 | `return_width_artifact` | 1,062 | 142 | whole-CFG EAX and caller-consumer evidence |
 | `unresolved_register_input` | 472 | 132 | boundary ABI, SEH/setjmp, and true live-ins |
 | `dynamic_array_indexing` | 76 | 39 | per-owner DArray element descriptors |
@@ -258,23 +258,41 @@ weakening genuine signedness or value-domain conflicts.
 
 ### Q-042 Name source-family buffer descriptors without geometry merging
 
-Status: next candidate, audited only. The largest anonymous family is
-`AnonShape_006B5B10_E0D06CF1` (671 rendered occurrences). It is a 16-byte
-three-field view used by `DibPut` and the `DKW/WGR` routines whose recovered
-source includes `dibcopy.c`. That is strong evidence for one raster/DIB
-descriptor family, but there is not yet an independent named datatype anchor;
-the current type-family analyzer therefore correctly reports
-`no_named_layout_match` and enables nothing.
+Status: implemented and accepted. `STTypeFamilyAnalyzer` now derives a generated
+source family only from one hash-intact script-owned pointer shape, one
+unambiguous recovered library-source basename, at least three exact
+interprocedural flows into the first explicit parameter spanning two callees,
+and at least two semantically named functions. Basename collisions, multiple
+source shapes, incomplete flows, and geometry-only matches remain review-only.
 
-A safe generalization should derive a semantic family only from a dominant
-recovered source basename plus exact direct-call parameter flow across several
-named functions, then require complete layout agreement and one physical
-producer/owner. It must not promote every class field passed to the drawing
-helpers: current class-layout reports also contain real `int`, `ushort *`, and
-owner-local pointee alternatives. The remaining local-lifetime conflicts are
-likewise real domain questions (predominantly `int`/`uint` and `bool`/`byte`),
-not typedef aliases; settle them from definitions, comparisons, and stores
-before reducing the broad `undefined_type` count.
+The first family promotes `AnonShape_006B5B10_E0D06CF1` to
+`RecoveredSourceFamily_dibcopy`: seven exact first-parameter flows reach six
+destinations, including the named `DibPut` and `CPanelTy::PaintBRLife`
+functions. `STTypeLifecycleApplier` performs the one exact global identity
+replacement from the recorded source shape; it does not merge other equal
+layouts. The broad anonymous-shape count falls from 4,829 to 4,151 without an
+ABI change.
+
+### Q-043 Refine generated members and exporter SSA presentation
+
+Status: implemented and accepted. After recursive-node identity is independently
+proven, exact direct scalar casts refine its `short` members at `+0x04/+0x06`
+and `int` members at `+0x40/+0x44`. The global-record pass now scans every exact
+record reference even when the compiler synthesized the stride, retains
+hash-owned concrete fields monotonically, and requires matching typed stores
+and consumers before replacing a four-byte scalar with `T *`. This recovered 11
+`DArrayTy *` record members and converged to `unchanged=1`.
+
+Exporter-only normalization splits closed integer lifetimes from pointer-typed
+SSA names, removes unused `code *` declarations while retaining live unresolved
+callbacks, folds an exact bulk-zero tail byte into `memset`, removes only a
+type-proven redundant narrow-integer-to-double promotion, and fingerprints only
+composite members actually rendered by a cached body. The pathing-grid product
+is now an `int` lifetime, the recursive-node casts render as members, and
+`LookupRecordByte` remains a direct byte field return. Live `code *` values and
+the remaining closed-ABI narrow-return artifacts are deliberately not guessed.
+Accepted export `63f884ee37f1...` reused all 10,392 function bodies, passed the
+broad and ABI gates with zero errors/warnings, and retained zero failed bodies.
 
 Generic field/data names are a later semantic-naming layer. They must not drive
 layout or ABI changes merely because their raw occurrence counts are larger.

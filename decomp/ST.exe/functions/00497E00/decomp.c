@@ -18,7 +18,6 @@ int __thiscall STGroupBoatC::GetMessage(STGroupBoatC *this,STMessage *message)
 {
   STMessageId SVar1;
   void *pvVar2;
-  code *pcVar3;
   STGroupBoatC *this_00;
   int iVar4;
   uint *puVar5;

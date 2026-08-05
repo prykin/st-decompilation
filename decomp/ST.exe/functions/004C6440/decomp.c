@@ -18,7 +18,6 @@ TLOBldMark::sub_004C6440
 
 {
   char cVar1;
-  code *pcVar2;
   float fVar3;
   VisibleClassTy *pVVar4;
   int iVar5;

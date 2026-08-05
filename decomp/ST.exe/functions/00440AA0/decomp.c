@@ -12,7 +12,6 @@ STAllPlayersC::_AssignDocks(STAllPlayersC *this,char param_1,DArrayTy *param_2,D
 
 {
   dword dVar1;
-  code *pcVar2;
   byte bVar3;
   int iVar4;
   STGameObjC *pSVar5;
@@ -74,7 +73,7 @@ STAllPlayersC::_AssignDocks(STAllPlayersC *this,char param_1,DArrayTy *param_2,D
 
   local_70 = nullptr;
   local_c8.previous = g_currentExceptionFrame;
-  local_80 = (DArrayTy *)g_packedRecords_A62x8[param_1].field5_0x5;
+  local_80 = (DArrayTy *)g_packedRecords_A62x8[param_1].field2_0x5;
   g_currentExceptionFrame = &local_c8;
   local_40 = this;
   iVar4 = Library::MSVCRT::__setjmp3(local_c8.jumpBuffer,0);

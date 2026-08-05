@@ -20,6 +20,7 @@ import java.util.Locale;
 import java.util.Map;
 import java.util.Set;
 import java.util.TreeMap;
+import java.util.TreeSet;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -67,6 +68,8 @@ public class STRecursivePointeeAnalyzer extends GhidraScript {
         ")\\s*\\*\\s*\\)\\s*)?(" + IDENT + ")\\s*->\\s*(" + IDENT + ")");
     private static final Pattern LOCAL_DECLARATION = Pattern.compile(
         "(?m)^\\s*(" + TYPE + ")\\s+(?:\\*+\\s*)?(" + IDENT + ")\\s*;");
+    private static final String DIRECT_SCALAR_TYPE =
+        "byte|char|short|ushort|int|uint|float|double|undefined1|undefined2|undefined4|undefined8";
     private static final Pattern STORED_HASH = Pattern.compile(
         "generated_layout_sha256=([0-9a-fA-F]{64})");
 
@@ -269,8 +272,59 @@ public class STRecursivePointeeAnalyzer extends GhidraScript {
                 if (!provenanceViews(item, view))
                     item.views.put(view.getPathName(), view);
             }
+            collectDirectFields(function, code, item, currentNode, localViews);
         }
     }
+
+    /**
+     * Once one owner field and its recursive node identity are proven, an exact
+     * scalar access through a generated field spelling is additional layout
+     * evidence for that same node. Only a direct &node->field_OFFSET cast with a
+     * fixed primitive width is accepted; computed offsets remain review-only.
+     */
+    private void collectDirectFields(Function function, String code, Evidence item,
+            Structure currentNode, Map<String, Structure> localViews) {
+        if (currentNode == null || !eligibleView(currentNode)) return;
+        for (Map.Entry<String, Structure> local : localViews.entrySet()) {
+            if (!local.getValue().getPathName().equals(currentNode.getPathName())) continue;
+            String variable = local.getKey();
+            Pattern access = Pattern.compile("\\*\\s*\\(\\s*(" +
+                DIRECT_SCALAR_TYPE + ")\\s*\\*\\s*\\)\\s*&\\s*" +
+                Pattern.quote(variable) +
+                "\\s*->\\s*field_(0[xX][0-9A-Fa-f]+|[0-9A-Fa-f]+)");
+            Matcher matcher = access.matcher(code);
+            while (matcher.find()) {
+                String token = matcher.group(1).toLowerCase(Locale.ROOT);
+                int width = scalarWidth(token);
+                int offset;
+                try {
+                    String value = matcher.group(2);
+                    offset = Integer.parseUnsignedInt(
+                        value.regionMatches(true, 0, "0x", 0, 2) ?
+                            value.substring(2) : value, 16);
+                }
+                catch (RuntimeException exception) { continue; }
+                if (width < 1 || offset <= 0 || offset + width > MAX_NODE_SIZE) continue;
+                String type = scalarType(token);
+                String key = offset + ":" + width + ":" + type;
+                DirectField field = item.directFields.computeIfAbsent(key,
+                    ignored -> new DirectField(offset, width, type));
+                field.sources.add(addr(function.getEntryPoint()) + ":" + variable);
+            }
+        }
+    }
+
+    private int scalarWidth(String token) {
+        return switch (token) {
+            case "byte", "char", "undefined1" -> 1;
+            case "short", "ushort", "undefined2" -> 2;
+            case "int", "uint", "float", "undefined4" -> 4;
+            case "double", "undefined8" -> 8;
+            default -> 0;
+        };
+    }
+
+    private String scalarType(String token) { return "/" + token; }
 
     private boolean provenanceViews(Evidence item, Structure view) {
         String description = text(view.getDescription());
@@ -353,6 +407,7 @@ public class STRecursivePointeeAnalyzer extends GhidraScript {
                 Long.toHexString(item.offset).toUpperCase(Locale.ROOT) +
                 "; root_loads=" + item.rootLoads + "; recursive_traversals=" +
                 item.traversals + "; source_views=" + item.views.size() +
+                "; exact_direct_fields=" + item.directFields.size() +
                 "; nonzero_fields=" + layout.nonzeroFields +
                 (ownerSafe ? "" : "; owner layout is manual/stale") +
                 (rootCompatible ? "" : "; root field is concrete/incompatible") +
@@ -407,6 +462,30 @@ public class STRecursivePointeeAnalyzer extends GhidraScript {
                 }
                 length = Math.max(length, offset + width);
             }
+        }
+        for (DirectField direct : item.directFields.values()) {
+            int offset = direct.offset;
+            int width = direct.width;
+            if (offset <= 0 || width < 1 || offset + width > MAX_NODE_SIZE) {
+                safe = false;
+                continue;
+            }
+            for (Field prior : fields.values())
+                if (overlap(offset, width, prior.offset, prior.width) &&
+                        offset != prior.offset) safe = false;
+            Field prior = fields.get(offset);
+            String sources = "direct:" + String.join("|", direct.sources);
+            if (prior == null) {
+                fields.put(offset, new Field(offset, width, direct.type,
+                    String.format("field_%04X", offset), direct.sources.size(), sources));
+            }
+            else if (prior.width != width) safe = false;
+            else {
+                fields.put(offset, new Field(offset, width,
+                    mergeType(prior.type, direct.type, width), prior.name,
+                    prior.evidence + direct.sources.size(), prior.sources + "|" + sources));
+            }
+            length = Math.max(length, offset + width);
         }
         List<Field> selected = new ArrayList<>(fields.values());
         String serialized = serialize(selected);
@@ -677,6 +756,7 @@ public class STRecursivePointeeAnalyzer extends GhidraScript {
         final Set<String> functions = new LinkedHashSet<>();
         final Set<String> variables = new LinkedHashSet<>();
         final Set<String> castTypes = new LinkedHashSet<>();
+        final Map<String, DirectField> directFields = new TreeMap<>();
         int rootLoads;
         int traversals;
         Evidence(Structure owner, int offset, String fieldName, String expectedType,
@@ -687,6 +767,17 @@ public class STRecursivePointeeAnalyzer extends GhidraScript {
             this.expectedType = expectedType;
             this.fieldComment = fieldComment;
             this.ownerHash = ownerHash;
+        }
+    }
+    private static final class DirectField {
+        final int offset;
+        final int width;
+        final String type;
+        final Set<String> sources = new TreeSet<>();
+        DirectField(int offset, int width, String type) {
+            this.offset = offset;
+            this.width = width;
+            this.type = type;
         }
     }
     private record Field(int offset, int width, String type, String name,

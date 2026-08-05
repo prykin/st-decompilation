@@ -8,7 +8,6 @@
 void __thiscall STAppC::DoneApp(STAppC *this)
 
 {
-  code *pcVar1;
   int *piVar2;
   STAppC *pSVar3;
   int iVar4;

@@ -9,10 +9,11 @@ void FUN_004353b0(uint param_1,uint param_2,uint param_3)
   char objPtr;
 
   uVar2 = (uint)DAT_0080874d;
-  if (((g_packedRecords_A62x8[uVar2].field448_0x203 == 1) &&
-      (g_packedRecords_A62x8[uVar2].field390_0x1b3 == 0x19a)) &&
-     (objPtr = (char)param_1, g_packedRecords_A62x8[uVar2].field391_0x1b7 == (int)objPtr)) {
-    DArrayGetElement((DArrayTy *)g_packedRecords_A62x8[uVar2].field393_0x1bd,0,
+  if (((g_packedRecords_A62x8[uVar2].field200_0x203 == 1) &&
+      (g_packedRecords_A62x8[uVar2].field149_0x1b3 == 0x19a)) &&
+     (objPtr = (char)param_1, *(int *)&g_packedRecords_A62x8[uVar2].field150_0x1b7 == (int)objPtr))
+  {
+    DArrayGetElement((DArrayTy *)g_packedRecords_A62x8[uVar2].field155_0x1bd,0,
                      (void *)((int)&param_1 + 2));
     /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
     if (param_1._2_2_ == (ushort)param_2) {
@@ -20,7 +21,7 @@ void FUN_004353b0(uint param_1,uint param_2,uint param_3)
       pSVar1 = STAllPlayersC::GetObjPtr(in_ECX,objPtr,(ushort)param_2,CASE_1);
       pSVar1->vfunc_E8(0);
       Library::DKW::TBL::DArrayPut
-                ((DArrayTy *)g_packedRecords_A62x8[DAT_0080874d].field393_0x1bd,0,&param_3);
+                ((DArrayTy *)g_packedRecords_A62x8[DAT_0080874d].field155_0x1bd,0,&param_3);
       /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
       pSVar1 = STAllPlayersC::GetObjPtr(in_ECX,objPtr,(ushort)param_3,CASE_1);
       STGameObjC::SetSelfCheckFlag(pSVar1);

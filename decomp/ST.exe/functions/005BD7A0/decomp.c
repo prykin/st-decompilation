@@ -9,7 +9,6 @@
 void __thiscall MReportTy::InitMReport(MReportTy *this,undefined1 param_1)
 
 {
-  code *pcVar1;
   CursorClassTy *this_00;
   cMf32 *pcVar2;
   int iVar3;
@@ -21,7 +20,7 @@ void __thiscall MReportTy::InitMReport(MReportTy *this,undefined1 param_1)
   int uVar8;
   void *pvVar8;
   int local_EAX_565;
-  AnonShape_006B5B10_E0D06CF1 *pAVar9;
+  RecoveredSourceFamily_dibcopy *pRVar9;
   DArrayTy *pDVar10;
   char *pcVar11;
   HoloTy *pHVar12;
@@ -128,12 +127,12 @@ void __thiscall MReportTy::InitMReport(MReportTy *this,undefined1 param_1)
   puVar19 = (undefined4 *)(this_01->field_005D + 0x28);
   local_EAX_565 = FUN_006b4fe0(this_01->field_005D);
   /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-  pAVar9 = (AnonShape_006B5B10_E0D06CF1 *)
+  pRVar9 = (RecoveredSourceFamily_dibcopy *)
            FUN_006b50c0(0x2e9,0x15e,(uint)*(ushort *)(this_01->field_005D + 0xe),local_EAX_565,
                         puVar19,iVar3);
-  this_01->field_0073 = (AnonPointee_MReportTy_0073 *)pAVar9;
-  FUN_006b4170(pAVar9,0,0,0,0x2e9,0x15e,0xff);
-  FUN_006b5ee0((AnonShape_006B5B10_E0D06CF1 *)this_01->field_0073,0,0x2d,0,700,0x15e,0x18,0xd);
+  this_01->field_0073 = (AnonPointee_MReportTy_0073 *)pRVar9;
+  FUN_006b4170(pRVar9,0,0,0,0x2e9,0x15e,0xff);
+  FUN_006b5ee0((RecoveredSourceFamily_dibcopy *)this_01->field_0073,0,0x2d,0,700,0x15e,0x18,0xd);
   Library::Ourlib::PALETTE::FUN_00718780
             ((int)local_6a4,0,0x100,0x1a,0x10,(undefined4 *)&this_01->field_0xa3);
   Library::Ourlib::PALETTE::FUN_00718780

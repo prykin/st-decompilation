@@ -10,7 +10,6 @@ PopUpTy::OutProc(PopUpTy *this,int *param_1,int param_2,undefined4 param_3,int p
                 undefined4 param_6,undefined4 param_7,int param_8)
 
 {
-  code *pcVar1;
   byte bVar2;
   int errorCode;
   int iVar3;

@@ -30,7 +30,6 @@ int __thiscall ChooseMapTy::GetMessage(ChooseMapTy *this,STMessage *message)
   dword dVar7;
   DArrayTy *pDVar8;
   StartSystemTy *this_00;
-  code *pcVar9;
   ChooseMapTy *this_01;
   undefined1 uVar10;
   bool bVar11;
@@ -158,7 +157,7 @@ int __thiscall ChooseMapTy::GetMessage(ChooseMapTy *this,STMessage *message)
     if (SVar5 == MESS_CHOOSEMAPTY_6327) {
       piVar6 = (message->arg0).ptr;
       resourceId = 0x2342;
-      sub_005B5BE0(this_01,(AnonShape_006B5B10_E0D06CF1 *)this_01->field_1C8B,piVar6);
+      sub_005B5BE0(this_01,(RecoveredSourceFamily_dibcopy *)this_01->field_1C8B,piVar6);
       switch(this_01->field_1A5F) {
       case CASE_1:
       case CASE_2:
@@ -315,9 +314,9 @@ cf_common_exit_005B0DCE:
           }
         }
         local_c = nullptr;
-        FUN_006b4170((AnonShape_006B5B10_E0D06CF1 *)this_01->field_1C7B,0,0,
+        FUN_006b4170((RecoveredSourceFamily_dibcopy *)this_01->field_1C7B,0,0,
                      (uint)(message->arg1).words.high,
-                     ((AnonShape_006B5B10_E0D06CF1 *)this_01->field_1C7B)->field_0004,0x13,0);
+                     ((RecoveredSourceFamily_dibcopy *)this_01->field_1C7B)->field_0004,0x13,0);
         if ((int)(uint)(message->arg0).words.low < (int)this_01->field_1C9F->elementSize) {
           pbVar20 = &DAT_007cc8b4;
           puVar14 = local_8;
@@ -347,7 +346,7 @@ LAB_005b1da4:
           pbVar20 = (byte *)FUN_0070b3a0((AnonShape_GLOBAL_0081175C_57F682DD *)this_01->field_1C7F,
                                          uVar27);
           pcVar19 = *(char **)(pbVar20 + 4);
-          DibPut((AnonShape_006B5B10_E0D06CF1 *)this_01->field_1C7B,2,
+          DibPut((RecoveredSourceFamily_dibcopy *)this_01->field_1C7B,2,
                  (0x13 - *(int *)(pbVar20 + 8)) / 2 + (uint)(message->arg1).words.high,'\x06',
                  pbVar20);
         }

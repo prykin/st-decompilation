@@ -47,7 +47,7 @@ undefined4 __fastcall FUN_004de820(AnonShape_004DE820_615D04DD *param_1)
   }
   iVar2 = *(int *)&param_1->field_0x24;
   *(int *)&param_1[2].field_0xde = *(int *)&param_1[2].field_0xde + 1;
-  g_packedRecords_A62x8[iVar2].field1863_0x7d6 = g_packedRecords_A62x8[iVar2].field1863_0x7d6 + 1;
+  g_packedRecords_A62x8[iVar2].field1600_0x7d6 = g_packedRecords_A62x8[iVar2].field1600_0x7d6 + 1;
   return 1;
 }
 

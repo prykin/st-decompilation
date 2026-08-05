@@ -9,7 +9,6 @@
 int __cdecl DelPlrEdit(int param_1,char *param_2)
 
 {
-  code *pcVar1;
   int iVar2;
   int iVar3;
   InternalExceptionFrame local_48;

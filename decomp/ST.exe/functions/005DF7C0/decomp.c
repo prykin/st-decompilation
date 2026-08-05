@@ -16,7 +16,6 @@ MTaskTy::OutGlassATxtProc
 {
   uint uVar1;
   AnonPointee_MReportTy_0073 *pAVar2;
-  code *pcVar3;
   int errorCode;
   int iVar4;
   uint uVar5;

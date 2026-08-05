@@ -14,7 +14,7 @@ void FUN_0042a9f0(char param_1)
   iVar1 = (int)param_1;
   /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
   _param_1 = 5;
-  puVar2 = &g_packedRecords_A62x8[iVar1].field335_0x16d;
+  puVar2 = &g_packedRecords_A62x8[iVar1].field102_0x16d;
   do {
     if ((DArrayTy *)*puVar2 != nullptr) {
       DArrayDestroy((DArrayTy *)*puVar2);
@@ -30,7 +30,7 @@ void FUN_0042a9f0(char param_1)
     /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
     _param_1 = _param_1 + -1;
   } while (_param_1 != 0);
-  puVar2 = &g_packedRecords_A62x8[iVar1].field452_0x211;
+  puVar2 = &g_packedRecords_A62x8[iVar1].field204_0x211;
   iVar1 = 10;
   do {
     if ((DArrayTy *)*puVar2 != nullptr) {

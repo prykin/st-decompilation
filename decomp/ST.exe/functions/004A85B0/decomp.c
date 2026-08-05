@@ -16,7 +16,6 @@ void __thiscall STGroupBoatC::StartReceiveOrderSound(STGroupBoatC *this)
 
 {
   uint uVar1;
-  code *pcVar2;
   STGameObjC *pSVar3;
   int iVar4;
   uint index;

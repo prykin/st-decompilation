@@ -11,7 +11,6 @@ STAllPlayersC::GetPanelInfo
 
 {
   DArrayTy *pDVar1;
-  code *pcVar2;
   byte bVar3;
   ushort uVar4;
   int iVar5;
@@ -52,7 +51,7 @@ STAllPlayersC::GetPanelInfo
   local_10 = this;
   if ((char)param_1 == '\x01') {
     uVar16 = (uint)DAT_0080874d;
-    iVar5 = g_packedRecords_A62x8[uVar16].field332_0x163;
+    iVar5 = g_packedRecords_A62x8[uVar16].field96_0x163;
     if (iVar5 == 0) {
       return;
     }
@@ -65,18 +64,18 @@ STAllPlayersC::GetPanelInfo
         }
         STDebugBreak(); /* noreturn in standalone pseudocode */
       }
-      uVar4 = g_packedRecords_A62x8[uVar16].field334_0x16b;
+      uVar4 = g_packedRecords_A62x8[uVar16].field101_0x16b;
       SVar19 = CASE_3;
       cVar18 = -1;
       goto cf_common_exit_0043CB5C;
     }
-    if (g_packedRecords_A62x8[uVar16].field336_0x171 != 1) {
-      if ((ushort)g_packedRecords_A62x8[uVar16].field336_0x171 < 2) {
+    if (g_packedRecords_A62x8[uVar16].field103_0x171 != 1) {
+      if ((ushort)g_packedRecords_A62x8[uVar16].field103_0x171 < 2) {
         *(undefined1 *)param_2 = 0;
         return;
       }
       *(undefined1 *)param_2 = 2;
-      if (g_packedRecords_A62x8[DAT_0080874d].field448_0x203 == 0) {
+      if (g_packedRecords_A62x8[DAT_0080874d].field200_0x203 == 0) {
         param_2->field_0001 = 1;
       }
       else {
@@ -85,7 +84,7 @@ STAllPlayersC::GetPanelInfo
       param_2->field_0002 = 1;
       bVar3 = LookupRecordByte(DAT_0080874d);
       pAVar17->field_0007 = bVar3;
-      local_1c = (DArrayTy *)g_packedRecords_A62x8[uVar16].field335_0x16d;
+      local_1c = (DArrayTy *)g_packedRecords_A62x8[uVar16].field102_0x16d;
       local_14 = local_1c->count;
       pAVar17[1].field_000E = 0;
       pAVar17[1].field_000F = 0;
@@ -103,8 +102,8 @@ STAllPlayersC::GetPanelInfo
         /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
         if (local_c._0_2_ != 0xffff) {
           /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-          pSVar10 = GetObjPtr(local_10,*(char *)&g_packedRecords_A62x8[uVar16].field333_0x167,
-                              local_c._0_2_,CASE_1);
+          pSVar10 = GetObjPtr(local_10,g_packedRecords_A62x8[uVar16].field97_0x167,local_c._0_2_,
+                              CASE_1);
           STFishC::sub_004162B0
                     ((STFishC *)pSVar10,&local_6,&local_8,(undefined2 *)((int)&param_1 + 2));
           *(undefined1 *)((int)pAVar17 + (0x2e - param_1._2_2_)) = 1;
@@ -119,7 +118,7 @@ STAllPlayersC::GetPanelInfo
       } while ((int)local_24 < (int)local_14);
       return;
     }
-    pDVar1 = (DArrayTy *)g_packedRecords_A62x8[uVar16].field335_0x16d;
+    pDVar1 = (DArrayTy *)g_packedRecords_A62x8[uVar16].field102_0x16d;
     uVar14 = 0;
     local_14 = pDVar1->count;
     if ((int)local_14 < 1) {
@@ -135,12 +134,12 @@ STAllPlayersC::GetPanelInfo
         return;
       }
     }
-    cVar18 = *(char *)&g_packedRecords_A62x8[uVar16].field333_0x167;
+    cVar18 = g_packedRecords_A62x8[uVar16].field97_0x167;
   }
   else {
     if ((char)param_1 == '\x02') {
       uVar16 = (uint)DAT_0080874d;
-      iVar5 = g_packedRecords_A62x8[uVar16].field332_0x163;
+      iVar5 = g_packedRecords_A62x8[uVar16].field96_0x163;
       if (iVar5 == 0) {
         return;
       }
@@ -153,13 +152,13 @@ STAllPlayersC::GetPanelInfo
           }
           STDebugBreak(); /* noreturn in standalone pseudocode */
         }
-        uVar4 = g_packedRecords_A62x8[uVar16].field334_0x16b;
+        uVar4 = g_packedRecords_A62x8[uVar16].field101_0x16b;
         SVar19 = CASE_3;
         cVar18 = -1;
         goto cf_common_exit_0043CA35;
       }
-      if (g_packedRecords_A62x8[uVar16].field336_0x171 == 1) {
-        pDVar1 = (DArrayTy *)g_packedRecords_A62x8[uVar16].field335_0x16d;
+      if (g_packedRecords_A62x8[uVar16].field103_0x171 == 1) {
+        pDVar1 = (DArrayTy *)g_packedRecords_A62x8[uVar16].field102_0x16d;
         uVar14 = 0;
         local_14 = pDVar1->count;
         if ((int)local_14 < 1) {
@@ -175,17 +174,17 @@ STAllPlayersC::GetPanelInfo
             return;
           }
         }
-        cVar18 = *(char *)&g_packedRecords_A62x8[uVar16].field333_0x167;
+        cVar18 = g_packedRecords_A62x8[uVar16].field97_0x167;
         goto LAB_0043ca31;
       }
-      if ((ushort)g_packedRecords_A62x8[uVar16].field336_0x171 < 2) {
+      if ((ushort)g_packedRecords_A62x8[uVar16].field103_0x171 < 2) {
         param_2->field_0005 = 0;
         return;
       }
       param_2->field_0005 = 2;
       bVar3 = LookupRecordByte(DAT_0080874d);
       pAVar17->field_0004 = bVar3;
-      local_1c = (DArrayTy *)g_packedRecords_A62x8[uVar16].field335_0x16d;
+      local_1c = (DArrayTy *)g_packedRecords_A62x8[uVar16].field102_0x16d;
       local_14 = local_1c->count;
       uVar16 = 0;
       if (0 < (int)local_14) {
@@ -208,7 +207,7 @@ STAllPlayersC::GetPanelInfo
         return;
       }
       pAVar17->field_0x8 = 1;
-      if (*(int *)&g_packedRecords_A62x8[DAT_0080874d].field_0x1 == 0) {
+      if (g_packedRecords_A62x8[DAT_0080874d].field1_0x1 == 0) {
 LAB_0043c293:
         pAVar17->field_0x15 = 0;
       }
@@ -728,10 +727,10 @@ cf_common_exit_0043C86F:
     }
     if ((char)param_1 == '\x04') {
       uVar16 = (uint)DAT_0080874d;
-      iVar5 = g_packedRecords_A62x8[uVar16].field390_0x1b3;
+      iVar5 = g_packedRecords_A62x8[uVar16].field149_0x1b3;
       if (0x19a < iVar5) {
         if (iVar5 == 0x1a4) {
-          uVar4 = g_packedRecords_A62x8[uVar16].field392_0x1bb;
+          uVar4 = g_packedRecords_A62x8[uVar16].field154_0x1bb;
           SVar19 = CASE_5;
           cVar18 = -1;
         }
@@ -745,7 +744,7 @@ LAB_0043ca5a:
             }
             STDebugBreak(); /* noreturn in standalone pseudocode */
           }
-          uVar4 = g_packedRecords_A62x8[uVar16].field392_0x1bb;
+          uVar4 = g_packedRecords_A62x8[uVar16].field154_0x1bb;
           SVar19 = CASE_6;
           cVar18 = -1;
         }
@@ -756,22 +755,22 @@ LAB_0043ca5a:
           return;
         }
         if (iVar5 == 0x5a) {
-          uVar4 = g_packedRecords_A62x8[uVar16].field392_0x1bb;
+          uVar4 = g_packedRecords_A62x8[uVar16].field154_0x1bb;
           SVar19 = CASE_4;
           cVar18 = -1;
         }
         else {
           if (iVar5 != 0x172) goto LAB_0043ca5a;
-          uVar4 = g_packedRecords_A62x8[uVar16].field392_0x1bb;
+          uVar4 = g_packedRecords_A62x8[uVar16].field154_0x1bb;
           SVar19 = CASE_2;
           cVar18 = -1;
         }
         goto cf_common_exit_0043CA35;
       }
-      if (g_packedRecords_A62x8[uVar16].field394_0x1c1 != 1) {
+      if (g_packedRecords_A62x8[uVar16].field156_0x1c1 != 1) {
         return;
       }
-      pDVar1 = (DArrayTy *)g_packedRecords_A62x8[uVar16].field393_0x1bd;
+      pDVar1 = (DArrayTy *)g_packedRecords_A62x8[uVar16].field155_0x1bd;
       uVar14 = 0;
       local_14 = pDVar1->count;
       if ((int)local_14 < 1) {
@@ -787,7 +786,7 @@ LAB_0043ca5a:
           return;
         }
       }
-      cVar18 = *(char *)&g_packedRecords_A62x8[uVar16].field391_0x1b7;
+      cVar18 = g_packedRecords_A62x8[uVar16].field150_0x1b7;
 LAB_0043ca31:
       SVar19 = CASE_1;
 cf_common_exit_0043CA35:
@@ -801,10 +800,10 @@ cf_common_exit_0043CA35:
           *(undefined4 *)(*(int *)param_2 + 0xc) = 0;
         }
         uVar16 = (uint)DAT_0080874d;
-        if (g_packedRecords_A62x8[uVar16].field390_0x1b3 == 0) {
+        if (g_packedRecords_A62x8[uVar16].field149_0x1b3 == 0) {
           return;
         }
-        if (g_packedRecords_A62x8[uVar16].field390_0x1b3 != 0x19a) {
+        if (g_packedRecords_A62x8[uVar16].field149_0x1b3 != 0x19a) {
           iVar5 = ReportDebugMessage("E:\\__titans\\wlad\\to_allpl.cpp",0x1d95,0,0,
                                      "%s","STAllPlayersC::GetPanelInfo (6) unknown game type");
           if (iVar5 == 0) {
@@ -812,10 +811,10 @@ cf_common_exit_0043CA35:
           }
           STDebugBreak(); /* noreturn in standalone pseudocode */
         }
-        if (g_packedRecords_A62x8[uVar16].field394_0x1c1 != 1) {
+        if (g_packedRecords_A62x8[uVar16].field156_0x1c1 != 1) {
           return;
         }
-        pDVar1 = (DArrayTy *)g_packedRecords_A62x8[uVar16].field393_0x1bd;
+        pDVar1 = (DArrayTy *)g_packedRecords_A62x8[uVar16].field155_0x1bd;
         uVar14 = 0;
         local_14 = pDVar1->count;
         if ((int)local_14 < 1) {
@@ -826,8 +825,8 @@ cf_common_exit_0043CA35:
           /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
           if (local_c._0_2_ != 0xffff) {
             /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-            pSVar10 = GetObjPtr(local_10,*(char *)&g_packedRecords_A62x8[uVar16].field391_0x1b7,
-                                local_c._0_2_,CASE_1);
+            pSVar10 = GetObjPtr(local_10,g_packedRecords_A62x8[uVar16].field150_0x1b7,local_c._0_2_,
+                                CASE_1);
             (*pSVar10->vtable->vfunc_38)((short)param_2);
             return;
           }
@@ -841,10 +840,10 @@ cf_common_exit_0043CA35:
         *(undefined4 *)(*(int *)&param_2->field_0x8 + 0xc) = 0;
         *(undefined4 *)(*(int *)&param_2->field_0xc + 0xc) = 0;
         uVar16 = (uint)DAT_0080874d;
-        if (g_packedRecords_A62x8[uVar16].field390_0x1b3 == 0) {
+        if (g_packedRecords_A62x8[uVar16].field149_0x1b3 == 0) {
           return;
         }
-        if (g_packedRecords_A62x8[uVar16].field390_0x1b3 != 0x19a) {
+        if (g_packedRecords_A62x8[uVar16].field149_0x1b3 != 0x19a) {
           iVar5 = ReportDebugMessage("E:\\__titans\\wlad\\to_allpl.cpp",0x1db2,0,0,
                                      "%s","STAllPlayersC::GetPanelInfo (7) unknown game type");
           if (iVar5 == 0) {
@@ -852,10 +851,10 @@ cf_common_exit_0043CA35:
           }
           STDebugBreak(); /* noreturn in standalone pseudocode */
         }
-        if (g_packedRecords_A62x8[uVar16].field394_0x1c1 != 1) {
+        if (g_packedRecords_A62x8[uVar16].field156_0x1c1 != 1) {
           return;
         }
-        pDVar1 = (DArrayTy *)g_packedRecords_A62x8[uVar16].field393_0x1bd;
+        pDVar1 = (DArrayTy *)g_packedRecords_A62x8[uVar16].field155_0x1bd;
         uVar14 = 0;
         local_14 = pDVar1->count;
         if ((int)local_14 < 1) {
@@ -866,8 +865,8 @@ cf_common_exit_0043CA35:
           /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
           if (local_c._0_2_ != 0xffff) {
             /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-            pSVar10 = GetObjPtr(local_10,*(char *)&g_packedRecords_A62x8[uVar16].field391_0x1b7,
-                                local_c._0_2_,CASE_1);
+            pSVar10 = GetObjPtr(local_10,g_packedRecords_A62x8[uVar16].field150_0x1b7,local_c._0_2_,
+                                CASE_1);
             (*pSVar10->vtable->vfunc_3C)((short)param_2);
             return;
           }
@@ -882,10 +881,10 @@ cf_common_exit_0043CA35:
         *(undefined4 *)(*(int *)&param_2->field_0x8 + 0xc) = 0;
         *(undefined4 *)(*(int *)&param_2->field_0xc + 0xc) = 0;
         *(undefined4 *)(*(int *)&param_2->field_0x10 + 0xc) = 0;
-        if (g_packedRecords_A62x8[uVar16].field332_0x163 == 0) {
+        if (g_packedRecords_A62x8[uVar16].field96_0x163 == 0) {
           return;
         }
-        if (g_packedRecords_A62x8[uVar16].field332_0x163 != 0x3c) {
+        if (g_packedRecords_A62x8[uVar16].field96_0x163 != 0x3c) {
           iVar5 = ReportDebugMessage("E:\\__titans\\wlad\\to_allpl.cpp",0x1dd0,0,0,
                                      "%s","STAllPlayersC::GetPanelInfo (8) unknown game type");
           if (iVar5 == 0) {
@@ -893,10 +892,10 @@ cf_common_exit_0043CA35:
           }
           STDebugBreak(); /* noreturn in standalone pseudocode */
         }
-        if (g_packedRecords_A62x8[uVar16].field336_0x171 == 0) {
+        if (g_packedRecords_A62x8[uVar16].field103_0x171 == 0) {
           return;
         }
-        local_1c = (DArrayTy *)g_packedRecords_A62x8[uVar16].field335_0x16d;
+        local_1c = (DArrayTy *)g_packedRecords_A62x8[uVar16].field102_0x16d;
         uVar14 = 0;
         local_14 = local_1c->count;
         if ((int)local_14 < 1) {
@@ -907,8 +906,8 @@ cf_common_exit_0043CA35:
           /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
           if (local_c._0_2_ != 0xffff) {
             /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-            pSVar10 = GetObjPtr(local_10,*(char *)&g_packedRecords_A62x8[uVar16].field333_0x167,
-                                local_c._0_2_,CASE_1);
+            pSVar10 = GetObjPtr(local_10,g_packedRecords_A62x8[uVar16].field97_0x167,local_c._0_2_,
+                                CASE_1);
             (*pSVar10->vtable->vfunc_40)((short)pAVar17);
             return;
           }
@@ -918,10 +917,10 @@ cf_common_exit_0043CA35:
       }
       if ((char)param_1 == '\t') {
         uVar16 = (uint)DAT_0080874d;
-        if (g_packedRecords_A62x8[uVar16].field390_0x1b3 == 0) {
+        if (g_packedRecords_A62x8[uVar16].field149_0x1b3 == 0) {
           return;
         }
-        if (g_packedRecords_A62x8[uVar16].field390_0x1b3 != 0x19a) {
+        if (g_packedRecords_A62x8[uVar16].field149_0x1b3 != 0x19a) {
           iVar5 = ReportDebugMessage("E:\\__titans\\wlad\\to_allpl.cpp",0x1dec,0,0,
                                      "%s","STAllPlayersC::GetPanelInfo (9) unknown game type");
           if (iVar5 == 0) {
@@ -929,10 +928,10 @@ cf_common_exit_0043CA35:
           }
           STDebugBreak(); /* noreturn in standalone pseudocode */
         }
-        if (g_packedRecords_A62x8[uVar16].field394_0x1c1 != 1) {
+        if (g_packedRecords_A62x8[uVar16].field156_0x1c1 != 1) {
           return;
         }
-        pDVar1 = (DArrayTy *)g_packedRecords_A62x8[uVar16].field393_0x1bd;
+        pDVar1 = (DArrayTy *)g_packedRecords_A62x8[uVar16].field155_0x1bd;
         uVar14 = 0;
         local_14 = pDVar1->count;
         if ((int)local_14 < 1) {
@@ -943,8 +942,8 @@ cf_common_exit_0043CA35:
           /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
           if (local_c._0_2_ != 0xffff) {
             /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-            pSVar10 = GetObjPtr(local_10,*(char *)&g_packedRecords_A62x8[uVar16].field391_0x1b7,
-                                local_c._0_2_,CASE_1);
+            pSVar10 = GetObjPtr(local_10,g_packedRecords_A62x8[uVar16].field150_0x1b7,local_c._0_2_,
+                                CASE_1);
             (*pSVar10->vtable->vfunc_44)((short)param_2);
             return;
           }
@@ -955,13 +954,13 @@ cf_common_exit_0043CA35:
       if ((char)param_1 == '\n') {
         uVar16 = (uint)DAT_0080874d;
         local_28 = STRecordByteAddress(g_packedRecords_A62x8, uVar16, 0x1B3);
-        if (g_packedRecords_A62x8[uVar16].field390_0x1b3 != 0x19a) {
+        if (g_packedRecords_A62x8[uVar16].field149_0x1b3 != 0x19a) {
           return;
         }
-        if (g_packedRecords_A62x8[uVar16].field394_0x1c1 != 1) {
+        if (g_packedRecords_A62x8[uVar16].field156_0x1c1 != 1) {
           return;
         }
-        pDVar1 = (DArrayTy *)g_packedRecords_A62x8[uVar16].field393_0x1bd;
+        pDVar1 = (DArrayTy *)g_packedRecords_A62x8[uVar16].field155_0x1bd;
         uVar16 = 0;
         dVar9 = pDVar1->count;
         if ((int)dVar9 < 1) {
@@ -986,10 +985,10 @@ cf_common_exit_0043CA35:
             *(undefined4 *)(*(int *)param_2 + 0xc) = 0;
           }
           uVar16 = (uint)DAT_0080874d;
-          if (g_packedRecords_A62x8[uVar16].field390_0x1b3 == 0) {
+          if (g_packedRecords_A62x8[uVar16].field149_0x1b3 == 0) {
             return;
           }
-          if (g_packedRecords_A62x8[uVar16].field390_0x1b3 != 0x19a) {
+          if (g_packedRecords_A62x8[uVar16].field149_0x1b3 != 0x19a) {
             iVar5 = ReportDebugMessage("E:\\__titans\\wlad\\to_allpl.cpp",0x1ea3,0,0,
                                        "%s","STAllPlayersC::GetPanelInfo (12) unknown game type");
             if (iVar5 == 0) {
@@ -997,10 +996,10 @@ cf_common_exit_0043CA35:
             }
             STDebugBreak(); /* noreturn in standalone pseudocode */
           }
-          if (g_packedRecords_A62x8[uVar16].field394_0x1c1 != 1) {
+          if (g_packedRecords_A62x8[uVar16].field156_0x1c1 != 1) {
             return;
           }
-          pDVar1 = (DArrayTy *)g_packedRecords_A62x8[uVar16].field393_0x1bd;
+          pDVar1 = (DArrayTy *)g_packedRecords_A62x8[uVar16].field155_0x1bd;
           uVar14 = 0;
           local_14 = pDVar1->count;
           if ((int)local_14 < 1) {
@@ -1011,7 +1010,7 @@ cf_common_exit_0043CA35:
             /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
             if (local_c._0_2_ != 0xffff) {
               /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-              pSVar10 = GetObjPtr(local_10,*(char *)&g_packedRecords_A62x8[uVar16].field391_0x1b7,
+              pSVar10 = GetObjPtr(local_10,g_packedRecords_A62x8[uVar16].field150_0x1b7,
                                   local_c._0_2_,CASE_1);
               (*pSVar10->vtable->vfunc_50)((short)param_2);
               return;
@@ -1023,7 +1022,7 @@ cf_common_exit_0043CA35:
         if ((char)param_1 == '\x0e') {
           local_28 = 4;
           pAVar12 = (AnonShape_0043BEB0_1C00EC12 *)
-                    &g_packedRecords_A62x8[DAT_0080874d].field340_0x17d;
+                    &g_packedRecords_A62x8[DAT_0080874d].field107_0x17d;
           do {
             iVar5 = *(int *)&pAVar12[-1].field_0012;
             /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
@@ -1090,7 +1089,7 @@ LAB_0043d447:
         if ((char)param_1 == '\x0f') {
           /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
           param_2 = (AnonShape_0043BEB0_1C00EC12 *)0x4;
-          puVar15 = &g_packedRecords_A62x8[DAT_0080874d].field397_0x1cb;
+          puVar15 = &g_packedRecords_A62x8[DAT_0080874d].field159_0x1cb;
           do {
             iVar5 = *(int *)(puVar15 + -4);
             if (iVar5 < 0x19b) {
@@ -1166,10 +1165,10 @@ LAB_0043d5c4:
         if ((char)param_1 != '\x10') {
           if ((char)param_1 == '\x11') {
             uVar16 = (uint)DAT_0080874d;
-            if (g_packedRecords_A62x8[uVar16].field332_0x163 == 0) {
+            if (g_packedRecords_A62x8[uVar16].field96_0x163 == 0) {
               return;
             }
-            if (g_packedRecords_A62x8[uVar16].field332_0x163 != 0x3c) {
+            if (g_packedRecords_A62x8[uVar16].field96_0x163 != 0x3c) {
               iVar5 = ReportDebugMessage("E:\\__titans\\wlad\\to_allpl.cpp",0x1f4c,0,0,
                                          "%s","STAllPlayersC::GetPanelInfo (17) invalid game type");
               if (iVar5 == 0) {
@@ -1177,10 +1176,10 @@ LAB_0043d5c4:
               }
               STDebugBreak(); /* noreturn in standalone pseudocode */
             }
-            if ((ushort)g_packedRecords_A62x8[uVar16].field336_0x171 < 2) {
+            if ((ushort)g_packedRecords_A62x8[uVar16].field103_0x171 < 2) {
               return;
             }
-            pDVar1 = (DArrayTy *)g_packedRecords_A62x8[uVar16].field335_0x16d;
+            pDVar1 = (DArrayTy *)g_packedRecords_A62x8[uVar16].field102_0x16d;
             iVar5 = 0;
             uVar16 = 0;
             local_14 = pDVar1->count;
@@ -1240,11 +1239,11 @@ LAB_0043d5c4:
           if ((char)param_1 != '\x12') {
             return;
           }
-          if (g_packedRecords_A62x8[DAT_0080874d].field332_0x163 == 0) {
+          if (g_packedRecords_A62x8[DAT_0080874d].field96_0x163 == 0) {
             return;
           }
-          if (g_packedRecords_A62x8[DAT_0080874d].field332_0x163 == 0x1ae) {
-            pSVar10 = GetObjPtr(this,-1,g_packedRecords_A62x8[DAT_0080874d].field334_0x16b,CASE_3);
+          if (g_packedRecords_A62x8[DAT_0080874d].field96_0x163 == 0x1ae) {
+            pSVar10 = GetObjPtr(this,-1,g_packedRecords_A62x8[DAT_0080874d].field101_0x16b,CASE_3);
             (*pSVar10->vtable->vfunc_64)((short)param_2);
             return;
           }
@@ -1256,7 +1255,7 @@ LAB_0043d5c4:
           STDebugBreak(); /* noreturn in standalone pseudocode */
         }
         uVar16 = (uint)DAT_0080874d;
-        iVar5 = g_packedRecords_A62x8[uVar16].field332_0x163;
+        iVar5 = g_packedRecords_A62x8[uVar16].field96_0x163;
         if (iVar5 == 0) {
           return;
         }
@@ -1271,10 +1270,10 @@ LAB_0043d5c4:
           }
           STDebugBreak(); /* noreturn in standalone pseudocode */
         }
-        if (g_packedRecords_A62x8[uVar16].field336_0x171 == 0) {
+        if (g_packedRecords_A62x8[uVar16].field103_0x171 == 0) {
           return;
         }
-        pDVar1 = (DArrayTy *)g_packedRecords_A62x8[uVar16].field335_0x16d;
+        pDVar1 = (DArrayTy *)g_packedRecords_A62x8[uVar16].field102_0x16d;
         uVar14 = 0;
         local_14 = pDVar1->count;
         if (0 < (int)local_14) {
@@ -1283,15 +1282,15 @@ LAB_0043d5c4:
             /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
             if (local_c._0_2_ != 0xffff) {
               /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-              pSVar10 = GetObjPtr(local_10,*(char *)&g_packedRecords_A62x8[uVar16].field333_0x167,
-                                  local_c._0_2_,CASE_1);
+              pSVar10 = GetObjPtr(local_10,g_packedRecords_A62x8[uVar16].field97_0x167,local_c._0_2_
+                                  ,CASE_1);
               (*pSVar10->vtable->vfunc_60)((short)param_2);
               break;
             }
             uVar14 = uVar14 + 1;
           } while ((int)uVar14 < (int)local_14);
         }
-        if ((ushort)g_packedRecords_A62x8[uVar16].field336_0x171 < 2) {
+        if ((ushort)g_packedRecords_A62x8[uVar16].field103_0x171 < 2) {
           return;
         }
         *(undefined4 *)&param_2[0xf].field_0xc = 0xffffffff;
@@ -1303,10 +1302,10 @@ LAB_0043d5c4:
         return;
       }
       uVar16 = (uint)DAT_0080874d;
-      if (g_packedRecords_A62x8[uVar16].field332_0x163 == 0) {
+      if (g_packedRecords_A62x8[uVar16].field96_0x163 == 0) {
         return;
       }
-      if (g_packedRecords_A62x8[uVar16].field332_0x163 != 0x3c) {
+      if (g_packedRecords_A62x8[uVar16].field96_0x163 != 0x3c) {
         iVar5 = ReportDebugMessage("E:\\__titans\\wlad\\to_allpl.cpp",0x1e85,0,0,"%s"
                                    ,"STAllPlayersC::GetPanelInfo (11) invalid game type");
         if (iVar5 == 0) {
@@ -1314,8 +1313,8 @@ LAB_0043d5c4:
         }
         STDebugBreak(); /* noreturn in standalone pseudocode */
       }
-      if (g_packedRecords_A62x8[uVar16].field336_0x171 == 1) {
-        pDVar1 = (DArrayTy *)g_packedRecords_A62x8[uVar16].field335_0x16d;
+      if (g_packedRecords_A62x8[uVar16].field103_0x171 == 1) {
+        pDVar1 = (DArrayTy *)g_packedRecords_A62x8[uVar16].field102_0x16d;
         uVar14 = 0;
         local_14 = pDVar1->count;
         if ((int)local_14 < 1) {
@@ -1326,8 +1325,8 @@ LAB_0043d5c4:
           /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
           if (local_c._0_2_ != 0xffff) {
             /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-            pSVar10 = GetObjPtr(local_10,*(char *)&g_packedRecords_A62x8[uVar16].field333_0x167,
-                                local_c._0_2_,CASE_1);
+            pSVar10 = GetObjPtr(local_10,g_packedRecords_A62x8[uVar16].field97_0x167,local_c._0_2_,
+                                CASE_1);
             (*pSVar10->vtable->vfunc_4C)((short)param_2);
             return;
           }
@@ -1335,7 +1334,7 @@ LAB_0043d5c4:
         } while ((int)uVar14 < (int)local_14);
         return;
       }
-      if ((ushort)g_packedRecords_A62x8[uVar16].field336_0x171 < 2) {
+      if ((ushort)g_packedRecords_A62x8[uVar16].field103_0x171 < 2) {
         return;
       }
       *(undefined4 *)param_2 = 0;
@@ -1351,7 +1350,7 @@ LAB_0043d5c4:
       param_2->field_000E = 1;
       param_2->field_000F = 1;
       param_2->field_000B = 0;
-      pDVar1 = (DArrayTy *)g_packedRecords_A62x8[uVar16].field335_0x16d;
+      pDVar1 = (DArrayTy *)g_packedRecords_A62x8[uVar16].field102_0x16d;
       uVar16 = 0;
       local_14 = pDVar1->count;
       param_2->field_0011 = 1;
@@ -1462,10 +1461,10 @@ switchD_0043d1bf_caseD_a:
       }
     }
     uVar16 = (uint)DAT_0080874d;
-    iVar5 = g_packedRecords_A62x8[uVar16].field390_0x1b3;
+    iVar5 = g_packedRecords_A62x8[uVar16].field149_0x1b3;
     if (0x19a < iVar5) {
       if (iVar5 == 0x1a4) {
-        uVar4 = g_packedRecords_A62x8[uVar16].field392_0x1bb;
+        uVar4 = g_packedRecords_A62x8[uVar16].field154_0x1bb;
         SVar19 = CASE_5;
         cVar18 = -1;
       }
@@ -1479,7 +1478,7 @@ LAB_0043cb81:
           }
           STDebugBreak(); /* noreturn in standalone pseudocode */
         }
-        uVar4 = g_packedRecords_A62x8[uVar16].field392_0x1bb;
+        uVar4 = g_packedRecords_A62x8[uVar16].field154_0x1bb;
         SVar19 = CASE_6;
         cVar18 = -1;
       }
@@ -1490,22 +1489,22 @@ LAB_0043cb81:
         return;
       }
       if (iVar5 == 0x5a) {
-        uVar4 = g_packedRecords_A62x8[uVar16].field392_0x1bb;
+        uVar4 = g_packedRecords_A62x8[uVar16].field154_0x1bb;
         SVar19 = CASE_4;
         cVar18 = -1;
       }
       else {
         if (iVar5 != 0x172) goto LAB_0043cb81;
-        uVar4 = g_packedRecords_A62x8[uVar16].field392_0x1bb;
+        uVar4 = g_packedRecords_A62x8[uVar16].field154_0x1bb;
         SVar19 = CASE_2;
         cVar18 = -1;
       }
       goto cf_common_exit_0043CB5C;
     }
-    if (g_packedRecords_A62x8[uVar16].field394_0x1c1 != 1) {
+    if (g_packedRecords_A62x8[uVar16].field156_0x1c1 != 1) {
       return;
     }
-    pDVar1 = (DArrayTy *)g_packedRecords_A62x8[uVar16].field393_0x1bd;
+    pDVar1 = (DArrayTy *)g_packedRecords_A62x8[uVar16].field155_0x1bd;
     uVar14 = 0;
     local_14 = pDVar1->count;
     if ((int)local_14 < 1) {
@@ -1521,7 +1520,7 @@ LAB_0043cb81:
         return;
       }
     }
-    cVar18 = *(char *)&g_packedRecords_A62x8[uVar16].field391_0x1b7;
+    cVar18 = g_packedRecords_A62x8[uVar16].field150_0x1b7;
   }
   SVar19 = CASE_1;
 cf_common_exit_0043CB5C:

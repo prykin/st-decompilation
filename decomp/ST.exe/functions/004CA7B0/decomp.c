@@ -48,7 +48,7 @@ cf_common_exit_004CA871:
       iVar4 = ((0x18 - this->field_0259 / 0xf) % 0x18 + (4 - DAT_008073fc) * 6) % 0x18;
       iVar2 = (int)param_1 * iVar4;
       thunk_FUN_004abce0(this_00,bVar6,iVar2,iVar2,'\0');
-      puVar8 = (uint *)((int)param_1 * iVar4);
+      int scalar_puVar8 = (int)param_1 * iVar4; /* split integer lifetime from pointer-typed SSA storage */
       goto cf_common_exit_004CAAA4;
     }
   }
@@ -65,12 +65,12 @@ LAB_004ca835:
         local_10 = iVar2 + -1 + (int)param_1;
       }
       pAVar1 = this->field_01F5;
-      iVar2 = *(int *)(&pAVar1->field_0x10 + (int)puVar8 * 0x24);
-      if (iVar2 < *(int *)(&pAVar1->field_0x14 + (int)puVar8 * 0x24)) {
-        iVar2 = *(int *)(&pAVar1->field_0x18 + (int)puVar8 * 0x24) - iVar2;
+      iVar2 = *(int *)(&pAVar1->field_0x10 + scalar_puVar8 * 0x24);
+      if (iVar2 < *(int *)(&pAVar1->field_0x14 + scalar_puVar8 * 0x24)) {
+        iVar2 = *(int *)(&pAVar1->field_0x18 + scalar_puVar8 * 0x24) - iVar2;
       }
       else {
-        iVar2 = iVar2 - *(int *)(&pAVar1->field_0x18 + (int)puVar8 * 0x24);
+        iVar2 = iVar2 - *(int *)(&pAVar1->field_0x18 + scalar_puVar8 * 0x24);
       }
       thunk_FUN_004abce0(this_00,bVar6,(int)param_1,local_10,'\0');
       puVar8 = param_1;

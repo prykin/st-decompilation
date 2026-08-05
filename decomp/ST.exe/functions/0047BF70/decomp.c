@@ -8,7 +8,6 @@
 int __thiscall STBoatC::BackTeleport(STBoatC *this,int *param_1)
 
 {
-  code *pcVar1;
   int iVar2;
 
   this->field_00B7 = 0;

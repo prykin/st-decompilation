@@ -20,7 +20,6 @@
 void __thiscall STBoatC::_SetSpeedFireLife(STBoatC *this)
 
 {
-  code *pcVar1;
   byte bVar2;
   int iVar3;
 

@@ -9,7 +9,6 @@ void __thiscall AiTactClassTy::GiveObjByGrpNum(AiTactClassTy *this,DArrayTy *par
 
 {
   uint index;
-  code *pcVar1;
   bool bVar2;
   int iVar3;
   ushort *puVar4;

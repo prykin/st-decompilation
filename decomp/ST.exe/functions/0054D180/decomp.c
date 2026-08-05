@@ -8,7 +8,6 @@
 void __thiscall STPlaySystemC::DoneSystem(STPlaySystemC *this)
 
 {
-  code *pcVar1;
   STPlaySystemC *pSVar2;
   int iVar3;
   int iVar4;

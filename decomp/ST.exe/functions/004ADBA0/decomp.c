@@ -16,7 +16,6 @@ STT3DSprC::RestoreSpr(STT3DSprC *this,int *param_1,AnonShape_004AD790_77673787 *
   byte *pbVar1;
   ushort *puVar2;
   char cVar3;
-  code *pcVar4;
   STT3DSprC *this_00;
   AnonShape_004ADBA0_0D812343 *pAVar5;
   int iVar6;

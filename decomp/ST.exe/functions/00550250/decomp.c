@@ -16,7 +16,6 @@
 void __thiscall STPlaySystemC::SendMail(STPlaySystemC *this)
 
 {
-  code *pcVar1;
   STPlaySystemC *this_00;
   int iVar2;
   int iVar3;

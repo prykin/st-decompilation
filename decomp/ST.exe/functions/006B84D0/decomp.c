@@ -4,16 +4,20 @@
 
    [STReturnSemanticsApplier] ignored_eax_void.
    Evidence: all observed direct callers ignore the return register (ignored=2, used=0), and
-   decompilation contains no value return */
+   decompilation contains no value return
 
-void FUN_006b84d0(AnonShape_006B5B10_E0D06CF1 *param_1,int param_2,int param_3,int param_4,
+   [STTypeFamilyApplier] SOURCE_FUNCTION_FAMILY.
+   Evidence: one script-owned pointer shape is anchored by one library source basename, multiple
+   semantic function names, and exact first-argument call flow */
+
+void FUN_006b84d0(RecoveredSourceFamily_dibcopy *param_1,int param_2,int param_3,int param_4,
                  byte *param_5)
 
 {
   short sVar1;
   short sVar2;
   int iVar3;
-  AnonShape_006B5B10_E0D06CF1 *pAVar4;
+  RecoveredSourceFamily_dibcopy *pRVar4;
   int local_24 [3];
   int local_18;
   int local_14;
@@ -38,16 +42,16 @@ void FUN_006b84d0(AnonShape_006B5B10_E0D06CF1 *param_1,int param_2,int param_3,i
   local_24[1] = 0;
   local_24[0] = 0;
   local_18 = param_1->field_0008;
-  pAVar4 = (AnonShape_006B5B10_E0D06CF1 *)
+  pRVar4 = (RecoveredSourceFamily_dibcopy *)
            ((uint)param_1->field_000E * local_24[2] + 0x1f >> 3 & 0x1ffffffc);
   if (local_18 < 0) {
     local_18 = -local_18;
     /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
-    param_1 = pAVar4;
+    param_1 = pRVar4;
   }
   else {
     /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
-    param_1 = (AnonShape_006B5B10_E0D06CF1 *)-(int)pAVar4;
+    param_1 = (RecoveredSourceFamily_dibcopy *)-(int)pRVar4;
   }
   local_14 = param_3 + sVar1;
   local_10 = param_4 + sVar2;
@@ -57,7 +61,7 @@ void FUN_006b84d0(AnonShape_006B5B10_E0D06CF1 *param_1,int param_2,int param_3,i
     if ((int)param_1 < 0) {
       iVar3 = (local_18 - local_10) + -1;
     }
-    FUN_006d2820((byte *)((int)pAVar4 * iVar3 + local_14 + param_2),param_1,param_5,
+    FUN_006d2820((byte *)((int)pRVar4 * iVar3 + local_14 + param_2),param_1,param_5,
                  local_14 - (param_3 + sVar1),local_10 - (param_4 + sVar2),local_c,local_8,0,
                  nullptr,0,0,nullptr);
   }

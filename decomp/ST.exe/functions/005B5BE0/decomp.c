@@ -12,7 +12,7 @@
    incoming_ecx_receiver_callers=0; attributed_named_callers=1; owner_evidence_coverage=adequate */
 
 void __thiscall
-ChooseMapTy::sub_005B5BE0(ChooseMapTy *this,AnonShape_006B5B10_E0D06CF1 *param_1,int *param_2)
+ChooseMapTy::sub_005B5BE0(ChooseMapTy *this,RecoveredSourceFamily_dibcopy *param_1,int *param_2)
 
 {
   int iVar1;

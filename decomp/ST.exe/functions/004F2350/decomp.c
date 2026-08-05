@@ -20,7 +20,6 @@ CPanelTy::PaintCostsXYSI
           (CPanelTy *this,int param_1,ushort param_2,ushort param_3,ushort param_4,ushort param_5)
 
 {
-  code *pcVar1;
   CPanelTy *pCVar2;
   int iVar3;
   uint *resourceString;

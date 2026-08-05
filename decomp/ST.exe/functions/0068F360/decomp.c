@@ -14,7 +14,6 @@ void __thiscall AiTactClassTy::GiveObjByFltType(AiTactClassTy *this,uint *param_
   ushort uVar1;
   short sVar2;
   uint index;
-  code *pcVar3;
   bool bVar4;
   AiTactClassTy *pAVar5;
   int iVar6;

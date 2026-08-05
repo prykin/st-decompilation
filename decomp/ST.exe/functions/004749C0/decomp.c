@@ -14,7 +14,6 @@ int __thiscall STBoatC::WaitLoad(STBoatC *this,STBoatC *param_1)
   uint uVar1;
   undefined4 uVar2;
   ulonglong uVar3;
-  code *pcVar4;
   undefined2 uVar5;
   uint uVar6;
   undefined4 *puVar7;

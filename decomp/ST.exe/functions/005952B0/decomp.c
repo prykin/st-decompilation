@@ -19,7 +19,6 @@ FSGSTy::OutSGlProc(FSGSTy *this,AnonShape_GLOBAL_0080759C_9638EF10 *param_1,MMMO
                   MMMObjTy *param_3,int param_4,int param_5,int param_6,int param_7,int param_8)
 
 {
-  code *pcVar1;
   int iVar2;
   uint *puVar3;
   int iVar4;

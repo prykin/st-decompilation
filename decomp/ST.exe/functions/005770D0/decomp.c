@@ -15,7 +15,6 @@
 void __thiscall GameSystemC::DoneSystem(GameSystemC *this)
 
 {
-  code *pcVar1;
   ST3DSMAPContext *pSVar2;
   GameSystemC *pGVar3;
   int errorCode;

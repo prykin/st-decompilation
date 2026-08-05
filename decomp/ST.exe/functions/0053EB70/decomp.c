@@ -14,7 +14,6 @@ int __thiscall SpecPanelTy::GetMessage(SpecPanelTy *this,STMessage *message)
 {
   STMessageId SVar1;
   AnonPointee_SpecPanelTy_0000 *pAVar2;
-  code *pcVar3;
   SpecPanelTy *this_00;
   int iVar4;
   LPSTR pCVar5;

@@ -11,7 +11,6 @@ FSGSTy::ChangePlayerPing(FSGSTy *this,undefined4 param_1,int param_2,undefined4 
 {
   DArrayTy *pDVar1;
   uint uVar2;
-  code *pcVar3;
   int errorCode;
   void *pvVar4;
   int iVar5;

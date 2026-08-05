@@ -13,7 +13,6 @@ int __thiscall ProdPanelTy::GetMessage(ProdPanelTy *this,STMessage *message)
 
 {
   STMessageId SVar1;
-  code *pcVar2;
   ProdPanelTy *this_00;
   int iVar3;
   LPSTR pCVar4;

@@ -9,7 +9,6 @@ void __thiscall STGroupC::SetAVPar(STGroupC *this,uint param_1)
 
 {
   uint uVar1;
-  code *pcVar2;
   STGameObjC *this_00;
   int iVar3;
   uint index;

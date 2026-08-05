@@ -9,7 +9,6 @@ int __thiscall AiTactClassTy::GetAiMess(AiTactClassTy *this,AnonShape_0068FD00_A
 
 {
   undefined4 uVar1;
-  code *pcVar2;
   AiTactClassTy *this_00;
   int iVar3;
   AiTactClassTy_field_00A5DArray *pAVar4;

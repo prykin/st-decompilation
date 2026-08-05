@@ -18,7 +18,6 @@ undefined4 __thiscall SettMapMTy::NoneSettMap(SettMapMTy *this)
 {
   byte bVar1;
   SettMapMTy_field_2237DArray *pSVar2;
-  code *pcVar3;
   char cVar4;
   char cVar5;
   SettMapMTy *this_00;

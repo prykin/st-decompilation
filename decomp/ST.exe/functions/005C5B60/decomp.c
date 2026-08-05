@@ -8,7 +8,6 @@
 void __thiscall SettMapTy::CloseButtons(SettMapTy *this)
 
 {
-  code *pcVar1;
   SettMapTy *this_00;
   int errorCode;
   int iVar2;

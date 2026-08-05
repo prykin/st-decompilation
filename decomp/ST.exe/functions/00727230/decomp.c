@@ -381,12 +381,11 @@ LAB_007275f0:
       } while (iVar8 != 0 && bVar16);
 LAB_007278f0:
       piVar4 = param_1;
-      /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
-      param_1 = (int *)(DAT_0085707c + (DAT_00857064 + iVar2) * DAT_00857090 * 2);
+      int scalar_param_1 = DAT_0085707c + (DAT_00857064 + iVar2) * DAT_00857090 * 2; /* split integer lifetime from pointer-typed SSA storage */
       local_8 = (DAT_008570ec - DAT_00857064) - iVar2;
       do {
         uVar1 = piVar4[4];
-        puVar15 = (uint *)(*piVar4 * 2 + (int)param_1);
+        puVar15 = (uint *)(*piVar4 * 2 + scalar_param_1);
         if (0 < (int)uVar1) {
           uVar3 = piVar4[1];
           iVar2 = piVar4[5];

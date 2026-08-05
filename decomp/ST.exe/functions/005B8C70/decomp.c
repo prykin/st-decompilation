@@ -9,7 +9,6 @@ void __thiscall MMsgTy::HidePanel(MMsgTy *this,int param_1,int param_2,int param
 
 {
   uint uVar1;
-  code *pcVar2;
   MMsgTy *this_00;
   int iVar3;
   int iVar4;

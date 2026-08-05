@@ -10,7 +10,6 @@ uint __thiscall CPanelTy::PaintSMap(CPanelTy *this)
 {
   undefined1 *resourceString;
   ulonglong uVar1;
-  code *pcVar2;
   CPanelTy *pCVar3;
   int errorCode;
   uint uVar4;
@@ -64,7 +63,7 @@ uint __thiscall CPanelTy::PaintSMap(CPanelTy *this)
   local_8->field_0998 = local_8->field_0038;
   sub_0052B330(local_8);
   ST3DSMAPContext::sub_006E6FB0
-            (g_sT3DSMAPContext_00807598,(AnonShape_006B5B10_E0D06CF1 *)pCVar3->field_0190,5,7,
+            (g_sT3DSMAPContext_00807598,(RecoveredSourceFamily_dibcopy *)pCVar3->field_0190,5,7,
              (uint)(pCVar3->field_023F != CASE_2));
   puVar5 = (ushort *)(g_playSystem_00802A38->field_00E4 * 0x51eb851f);
   uVar4 = g_playSystem_00802A38->field_00E4 / 0x19;

@@ -8,7 +8,6 @@
 void __thiscall FrmPanelTy::ShiftControls(FrmPanelTy *this,int param_1)
 
 {
-  code *pcVar1;
   FrmPanelTy *this_00;
   short sVar2;
   int iVar3;

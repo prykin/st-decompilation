@@ -12,7 +12,6 @@
 void __thiscall MTaskTy::PaintMTask(MTaskTy *this)
 
 {
-  code *pcVar1;
   int errorCode;
   int iVar2;
   InternalExceptionFrame local_4c;

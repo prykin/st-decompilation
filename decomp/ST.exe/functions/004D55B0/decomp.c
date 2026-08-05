@@ -14,7 +14,6 @@ int __thiscall TLOEmbryoTy::GetMessage(TLOEmbryoTy *this,STMessage *message)
 {
   STMessageId SVar1;
   dword dVar2;
-  code *pcVar3;
   bool bVar4;
   TLOEmbryoTy *this_00;
   int iVar5;

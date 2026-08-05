@@ -13,7 +13,6 @@ void __thiscall HelpPanelTy::DrawDescription(HelpPanelTy *this,int *param_1,UINT
 
 {
   char cVar1;
-  code *pcVar2;
   HelpPanelTy *this_00;
   int iVar3;
   uint *resourceString;

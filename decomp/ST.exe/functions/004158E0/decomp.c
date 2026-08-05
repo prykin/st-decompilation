@@ -21,10 +21,9 @@ STGameObjC * __thiscall STGameObjC::STGameObjC(STGameObjC *this)
   this->field_0030 = 0xffff;
   this->field_0032 = 0xffff;
   puVar2 = (undefined4 *)&this->field_0x34;
-  memset(puVar2, 0, 0x5e); /* compiler bulk-zero initialization */
+  memset(puVar2, 0, 0x5f); /* compiler bulk-zero initialization */
   puVar2 = (undefined4 *)((byte *)puVar2 + 0x5c);
   iVar1 = 0;
-  *(undefined1 *)((int)puVar2 + 2) = 0;
   this->field_005F = -1;
   this->field_005D = -1;
   this->field_005B = -1;

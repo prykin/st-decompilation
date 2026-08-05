@@ -9,7 +9,6 @@
 int __cdecl _GetEmbrTobjGrpExch(uint param_1,int param_2)
 
 {
-  code *pcVar1;
   DArrayTy *array;
   int iVar2;
   STGroupBoatC *this;

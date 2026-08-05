@@ -20,12 +20,12 @@ PlayPanelTy * __cdecl CreatePlayPanel(void)
     this->field_0044 = 0;
     this->field_003C = 0;
     this->field_0060 = 0xffffffff;
-    *(undefined4 *)&this->field_0x64 = 4;
+    this->field_0064 = 4;
     this->field_0068 = nullptr;
     this->field_0172 = 2;
-    *(undefined4 *)&this->field_0x178 = 0;
+    this->field_0178 = 0;
     this->vtable = &PlayPanelTyVTable;
-    *(undefined4 *)&this->field_0x40 = 0x1d0;
+    this->field_0040 = 0x1d0;
     this->field_0048 = 0xdc;
     this->field_0180 = 0;
     this->field_01CD = nullptr;

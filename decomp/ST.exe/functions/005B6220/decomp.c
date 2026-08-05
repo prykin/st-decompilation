@@ -12,7 +12,6 @@
 void __thiscall MMObjTy::DoneMMObj(MMObjTy *this)
 
 {
-  code *pcVar1;
   MMObjTy *pMVar2;
   int iVar3;
   int iVar4;

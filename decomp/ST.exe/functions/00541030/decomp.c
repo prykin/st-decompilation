@@ -9,7 +9,6 @@
 void DelAllAccelerators(void)
 
 {
-  code *pcVar1;
   int iVar2;
   int iVar3;
   byte *pbVar4;

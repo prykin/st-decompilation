@@ -13,7 +13,6 @@ int __thiscall VisibleClassTy::GetMessage(VisibleClassTy *this,STMessage *messag
 
 {
   STMessageId SVar1;
-  code *pcVar2;
   VisibleClassTy *this_00;
   int iVar3;
   VisibleClassTy_field_0110Element *element_0110;

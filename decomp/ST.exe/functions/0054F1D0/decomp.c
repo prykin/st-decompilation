@@ -12,7 +12,6 @@ undefined4 * __thiscall STPlaySystemC::PrepareMail(STPlaySystemC *this)
   undefined2 *puVar2;
   char cVar3;
   AnonPointee_STPlaySystemC_0039 *pAVar4;
-  code *pcVar5;
   STPlaySystemC *pSVar6;
   byte bVar7;
   int iVar8;

@@ -14,7 +14,6 @@ void __thiscall OptPanelTy::Notification(OptPanelTy *this,char param_1,byte para
 
 {
   OptPanelTy_field_0172State OVar1;
-  code *pcVar2;
   OptPanelTy *this_00;
   int errorCode;
   int iVar3;

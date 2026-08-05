@@ -11,7 +11,6 @@ void __thiscall FSGSTy::Finished(FSGSTy *this,int param_1)
   ushort *puVar1;
   StartSystemTy *pSVar2;
   MMsgTy *this_00;
-  code *pcVar3;
   CursorClassTy *this_01;
   FSGSTy *this_02;
   int iVar4;

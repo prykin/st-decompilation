@@ -9,7 +9,6 @@
 void __cdecl PutDDX(int param_1,int param_2,char param_3,BITMAPINFO *param_4)
 
 {
-  code *pcVar1;
   int errorCode;
   int iVar2;
   InternalExceptionFrame local_48;

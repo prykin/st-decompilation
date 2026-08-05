@@ -12,7 +12,6 @@
 void __thiscall STBoatC::_CheckDefenceShots(STBoatC *this,int param_1)
 
 {
-  code *pcVar1;
   STBoatC *pSVar2;
   int iVar3;
   STGameObjC *this_00;

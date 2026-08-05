@@ -12,7 +12,6 @@
 int __thiscall DumpClassC::GetMessage(DumpClassC *this,STMessage *message)
 
 {
-  code *pcVar1;
   DumpClassC *pDVar2;
   int iVar3;
   uint uVar4;

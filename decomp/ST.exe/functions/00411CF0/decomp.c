@@ -56,7 +56,7 @@ int FUN_00411cf0(char *param_1,int param_2)
   pcVar7 = pcVar1;
   if (0 < (int)pcVar1) {
     pcVar4 = param_1 + (int)pcVar1 * 4;
-    pcVar7 = (char *)((int)pcVar1 * 2);
+    int scalar_pcVar7 = (int)pcVar1 * 2; /* split integer lifetime from pointer-typed SSA storage */
     pcVar8 = param_1;
     /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
     param_1 = pcVar1;
@@ -70,7 +70,7 @@ int FUN_00411cf0(char *param_1,int param_2)
     } while (param_1 != nullptr);
   }
   if (0 < (int)pcVar1) {
-    iVar5 = (int)pcVar7 * 4;
+    iVar5 = scalar_pcVar7 * 4;
     pcVar7 = pcVar7 + (int)pcVar1;
     pcVar4 = pcVar6 + iVar5;
     pcVar8 = pcVar6;

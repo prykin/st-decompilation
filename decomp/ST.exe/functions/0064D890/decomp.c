@@ -14,7 +14,6 @@ AiEventClassTy::_CreateRCCont
           undefined4 param_5,undefined4 param_6,char *param_7,int param_8)
 
 {
-  code *pcVar1;
   bool bVar2;
   int iVar3;
   int iVar4;

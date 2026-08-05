@@ -23,7 +23,6 @@ int __thiscall STGameObjC::GetMessage(STGameObjC *this,STMessage *message)
   dword *pdVar9;
   AnonPointee_STGameObjC_01B5 *pAVar10;
   AnonPointee_STGameObjC_01B9 *pAVar11;
-  code *pcVar12;
   STGameObjC *this_00;
   int iVar13;
   uint uVar14;

@@ -13,7 +13,6 @@ int __thiscall STDestC::GetMessage(STDestC *this,STMessage *message)
 
 {
   STMessageId SVar1;
-  code *pcVar2;
   AnonShape_00602BE0_B1CC517D *this_00;
   int iVar3;
   byte *puVar4;

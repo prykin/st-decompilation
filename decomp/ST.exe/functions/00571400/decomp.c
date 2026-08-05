@@ -9,7 +9,6 @@ void __thiscall STAppC::ReadCmdPlay(STAppC *this,int param_1)
 
 {
   uint newSize;
-  code *pcVar1;
   STAppC *pSVar2;
   int iVar3;
   HANDLE hFile;

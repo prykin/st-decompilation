@@ -9,7 +9,6 @@ void __thiscall FSGSTy::InitFSGS(FSGSTy *this,byte param_1)
 
 {
   MMsgTy *pMVar1;
-  code *pcVar2;
   CursorClassTy *this_00;
   FSGSTy *this_01;
   int iVar3;
@@ -135,7 +134,7 @@ void __thiscall FSGSTy::InitFSGS(FSGSTy *this,byte param_1)
   }
   text = FUN_006f2c00("MM_BAN_",2,this_01->field_1A93);
   puVar4 = Library::Ourlib::MFIMG::mfImgLoad(g_cMf32_00806780,6,text,bVar14,iVar3);
-  DibPut((AnonShape_006B5B10_E0D06CF1 *)this_01->field_1A97,0,0,'\x06',(byte *)puVar4);
+  DibPut((RecoveredSourceFamily_dibcopy *)this_01->field_1A97,0,0,'\x06',(byte *)puVar4);
   pAVar9 = this_01->field_1A97;
   FUN_006b2330(g_ddxContext_008075A8,&this_01->field_1A8F,0x31,0x4023f6,pAVar9->field_0004,
                pAVar9->field_0008,(ushort *)pAVar9);

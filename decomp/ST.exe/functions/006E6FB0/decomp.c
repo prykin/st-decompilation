@@ -11,11 +11,15 @@
 
    [STSwitchEnumApplier] Switch target field_00A8 uses
    /SubmarineTitans/Recovered/Enums/ST3DSMAPContext_field_00A8State. Cases:
-   CASE_0=0;CASE_1=1;CASE_2=2;CASE_3=3 */
+   CASE_0=0;CASE_1=1;CASE_2=2;CASE_3=3
+
+   [STTypeFamilyApplier] SOURCE_FUNCTION_FAMILY.
+   Evidence: one script-owned pointer shape is anchored by one library source basename, multiple
+   semantic function names, and exact first-argument call flow */
 
 void __thiscall
 ST3DSMAPContext::sub_006E6FB0
-          (ST3DSMAPContext *this,AnonShape_006B5B10_E0D06CF1 *param_1,int param_2,int param_3,
+          (ST3DSMAPContext *this,RecoveredSourceFamily_dibcopy *param_1,int param_2,int param_3,
           int param_4)
 
 {

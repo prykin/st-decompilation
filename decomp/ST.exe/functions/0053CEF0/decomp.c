@@ -9,7 +9,6 @@ void __thiscall SAMPanelTy::InitSAMPanel(SAMPanelTy *this)
 
 {
   SAMPanelTyVTable *pSVar1;
-  code *pcVar2;
   SAMPanelTy *this_00;
   int iVar3;
   LPSTR pCVar4;
@@ -83,7 +82,7 @@ void __thiscall SAMPanelTy::InitSAMPanel(SAMPanelTy *this)
         iVar15 = 0;
         resourceString = (uint *)LoadResourceString(iVar3 - 0x842b,g_module_00807618);
         ccFntTy::WrStr(this_00->field_0189,resourceString,iVar15,iVar7,uVar11);
-        DibPut((AnonShape_006B5B10_E0D06CF1 *)this_00->field_0068,0x37,local_8,'\x01',pbVar6);
+        DibPut((RecoveredSourceFamily_dibcopy *)this_00->field_0068,0x37,local_8,'\x01',pbVar6);
         ccFntTy::EraseSufr(this_00->field_0189);
       }
       iVar3 = iVar3 + 1;

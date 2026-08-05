@@ -16,7 +16,6 @@ int __thiscall SettMapTy::NoneSettMap(SettMapTy *this)
   SettMapTy_field_1E26State SVar2;
   byte bVar3;
   uint uVar4;
-  code *pcVar5;
   SettMapTy *this_00;
   DWORD DVar6;
   int iVar7;

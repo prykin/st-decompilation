@@ -13,7 +13,6 @@ void __thiscall SIDTy::PaintExplanation(SIDTy *this)
 
 {
   ushort *puVar1;
-  code *pcVar2;
   SIDTy *pSVar3;
   int iVar4;
   undefined4 *puVar5;
@@ -34,7 +33,7 @@ void __thiscall SIDTy::PaintExplanation(SIDTy *this)
   iVar4 = Library::MSVCRT::__setjmp3(local_4c.jumpBuffer,0);
   pSVar3 = local_8;
   if (iVar4 == 0) {
-    FUN_006b4170((AnonShape_006B5B10_E0D06CF1 *)local_8->field_1CB8,0,0,0x7d,
+    FUN_006b4170((RecoveredSourceFamily_dibcopy *)local_8->field_1CB8,0,0,0x7d,
                  *(int *)(local_8->field_1CC0 + 2),*(int *)(local_8->field_1CC0 + 4),0xff);
     puVar1 = pSVar3->field_1CC0;
     uVar8 = *(uint *)(puVar1 + 10);

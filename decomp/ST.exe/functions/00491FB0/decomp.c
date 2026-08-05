@@ -12,7 +12,6 @@
 void __thiscall STBoatC::ReadyForLoading(STBoatC *this,STFishC *param_1)
 
 {
-  code *pcVar1;
   int iVar2;
 
   if ((((this->field_045D == CASE_F) || (this->field_045D == CASE_E)) &&

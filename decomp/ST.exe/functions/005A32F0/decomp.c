@@ -10,7 +10,6 @@ void __thiscall FSGSTy::CreateGame(FSGSTy *this,int param_1)
 {
   uint uVar1;
   MMsgTy *pMVar2;
-  code *pcVar3;
   CursorClassTy *this_00;
   FSGSTy *this_01;
   int iVar4;

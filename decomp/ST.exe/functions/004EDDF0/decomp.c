@@ -8,7 +8,6 @@
 void __thiscall BehPanelTy::DoneBehPanel(BehPanelTy *this)
 
 {
-  code *pcVar1;
   BehPanelTy *pBVar2;
   int errorCode;
   int iVar3;

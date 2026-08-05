@@ -8,7 +8,6 @@
 void __thiscall STBoatC::RestoreBoatData(STBoatC *this,int param_1)
 
 {
-  code *pcVar1;
   AnonShape_004900E0_F89C68CE *pAVar2;
   int iVar3;
   undefined4 uVar4;

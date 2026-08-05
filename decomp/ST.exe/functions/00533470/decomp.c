@@ -10,7 +10,6 @@ undefined4 __thiscall OptPanelTy::CheckFiles(OptPanelTy *this,byte *param_1)
 {
   byte bVar1;
   uint uVar2;
-  code *pcVar3;
   int iVar4;
   byte *pbVar5;
   int iVar6;

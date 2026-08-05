@@ -12,7 +12,6 @@
 void __thiscall MainMenuTy::PaintMainMenu(MainMenuTy *this)
 
 {
-  code *pcVar1;
   MainMenuTy *pMVar2;
   int uVar3;
   uint *puVar3;

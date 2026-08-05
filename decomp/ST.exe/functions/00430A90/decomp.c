@@ -17,7 +17,6 @@ int __thiscall STAllPlayersC::GetMessage(STAllPlayersC *this,STMessage *message)
   DArrayTy *array;
   DArrayTy *array_00;
   dword dVar3;
-  code *pcVar4;
   STAllPlayersC *this_00;
   int iVar5;
   byte *pbVar6;
@@ -62,7 +61,7 @@ int __thiscall STAllPlayersC::GetMessage(STAllPlayersC *this,STMessage *message)
     if (SVar2 == MESS_SHARED_0003) {
       thunk_FUN_00446a70();
       local_20 = 0;
-      local_14 = (byte *)&g_packedRecords_A62x8[0].field6_0x9;
+      local_14 = (byte *)&g_packedRecords_A62x8[0].field3_0x9;
       do {
         uVar11 = 0;
         array = *(DArrayTy **)((int)local_14 + -4);
@@ -166,7 +165,7 @@ int __thiscall STAllPlayersC::GetMessage(STAllPlayersC *this,STMessage *message)
           uVar11 = uVar11 + 1;
         } while ((int)uVar11 < (int)dVar3);
       }
-      local_14 = (byte *)&g_packedRecords_A62x8[0].field5_0x5;
+      local_14 = (byte *)&g_packedRecords_A62x8[0].field2_0x5;
       do {
         pbVar6 = local_14;
         DArrayDestroy(*(DArrayTy **)((int)local_14 + 4));
@@ -236,7 +235,7 @@ int __thiscall STAllPlayersC::GetMessage(STAllPlayersC *this,STMessage *message)
     if (SVar2 == MESS_ID_NONE) {
       iVar5 = 0;
       local_14 = &g_bulkInitializedRecords_008087C7[0].field_0022;
-      piVar13 = &g_packedRecords_A62x8[0].field2382_0xa0a;
+      piVar13 = &g_packedRecords_A62x8[0].field1981_0xa0a;
       do {
         cVar14 = (char)iVar5;
         if (0x18 < g_playSystem_00802A38->field_00E4 - *piVar13) {
@@ -279,7 +278,7 @@ int __thiscall STAllPlayersC::GetMessage(STAllPlayersC *this,STMessage *message)
       if (local_c == nullptr) {
         piVar13 = nullptr;
         pbVar6 = &g_bulkInitializedRecords_008087C7[0].field_0022;
-        puVar12 = &g_packedRecords_A62x8[0].field5_0x5;
+        puVar12 = &g_packedRecords_A62x8[0].field2_0x5;
         do {
           puVar7 = Library::DKW::TBL::FUN_006ae310(nullptr,0xf,4,5,0x40307b);
           puVar12[1] = puVar7;
@@ -318,7 +317,7 @@ int __thiscall STAllPlayersC::GetMessage(STAllPlayersC *this,STMessage *message)
         return 0;
       }
       cVar14 = '\0';
-      puVar12 = &g_packedRecords_A62x8[0].field5_0x5;
+      puVar12 = &g_packedRecords_A62x8[0].field2_0x5;
       do {
         puVar7 = Library::DKW::TBL::FUN_006ae310(nullptr,0xf,4,5,0x40307b);
         puVar12[1] = puVar7;

@@ -11,7 +11,6 @@ TraksClassTy::DrawTrakSprite(TraksClassTy *this,RecoveredRecord_TraksClassTy_005
 
 {
   undefined2 uVar1;
-  code *pcVar2;
   int iVar3;
   short sVar4;
   int iVar5;

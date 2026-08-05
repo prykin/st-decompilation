@@ -13,20 +13,20 @@ int __thiscall STOctopusC::GetMessage(STOctopusC *this,STMessage *message)
 
 {
   STMessageId SVar1;
-  code *pcVar2;
   undefined1 uVar3;
-  undefined2 uVar4;
+  undefined1 uVar4;
+  undefined1 uVar5;
   STSprGameObjC *this_00;
-  short sVar5;
-  int iVar6;
-  undefined4 uVar7;
-  int iVar8;
-  uint uVar9;
-  byte *puVar10;
-  byte *pbVar11;
-  byte *puVar12;
-  AnonShape_00589C10_CECA1FB4 *pAVar13;
-  byte *pbVar14;
+  short sVar6;
+  int iVar7;
+  undefined4 uVar8;
+  int iVar9;
+  uint uVar10;
+  byte *puVar11;
+  byte *pbVar12;
+  byte *puVar13;
+  AnonShape_00589C10_CECA1FB4 *pAVar14;
+  byte *pbVar15;
   InternalExceptionFrame local_88;
   void *local_44;
   undefined4 local_40;
@@ -48,16 +48,16 @@ int __thiscall STOctopusC::GetMessage(STOctopusC *this,STMessage *message)
   local_88.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_88;
   local_28 = (STSprGameObjC *)this;
-  iVar6 = Library::MSVCRT::__setjmp3(local_88.jumpBuffer,0);
+  iVar7 = Library::MSVCRT::__setjmp3(local_88.jumpBuffer,0);
   this_00 = local_28;
-  if (iVar6 != 0) {
+  if (iVar7 != 0) {
     g_currentExceptionFrame = local_88.previous;
-    iVar8 = ReportDebugMessage("E:\\__titans\\Igor\\to_oct.cpp",0x1cf,0,iVar6,"%s",
+    iVar9 = ReportDebugMessage("E:\\__titans\\Igor\\to_oct.cpp",0x1cf,0,iVar7,"%s",
                                "STOctopusC::GetMessage");
-    if (iVar8 != 0) {
+    if (iVar9 != 0) {
       STDebugBreak(); /* noreturn in standalone pseudocode */
     }
-    RaiseInternalException(iVar6,0,"E:\\__titans\\Igor\\to_oct.cpp",0x1d0);
+    RaiseInternalException(iVar7,0,"E:\\__titans\\Igor\\to_oct.cpp",0x1d0);
     return 0xffff;
   }
   STSprGameObjC::GetMessage(local_28,message);
@@ -68,15 +68,15 @@ int __thiscall STOctopusC::GetMessage(STOctopusC *this,STMessage *message)
         g_currentExceptionFrame = local_88.previous;
         return 0;
       }
-      puVar10 = (byte *)(&this_00->field_01D5);
+      puVar11 = (byte *)(&this_00->field_01D5);
       if (DAT_0080732c == 0) {
-        STT3DSprC::sub_004AD070((STT3DSprC *)puVar10,0xe);
-        STT3DSprC::sub_004AD070((STT3DSprC *)puVar10,8);
+        STT3DSprC::sub_004AD070((STT3DSprC *)puVar11,0xe);
+        STT3DSprC::sub_004AD070((STT3DSprC *)puVar11,8);
         g_currentExceptionFrame = local_88.previous;
         return 0;
       }
-      thunk_FUN_004ad0e0(puVar10,0xe);
-      thunk_FUN_004ad0e0(puVar10,8);
+      thunk_FUN_004ad0e0(puVar11,0xe);
+      thunk_FUN_004ad0e0(puVar11,8);
       g_currentExceptionFrame = local_88.previous;
       return 0;
     }
@@ -85,8 +85,8 @@ int __thiscall STOctopusC::GetMessage(STOctopusC *this,STMessage *message)
         g_currentExceptionFrame = local_88.previous;
         return 0;
       }
-      uVar9 = thunk_FUN_004ad650((STT3DSprC *)&this_00->field_01D5);
-      Library::Ourlib::ST3DSMAP::SprHide(this_00->field_0211,uVar9);
+      uVar10 = thunk_FUN_004ad650((STT3DSprC *)&this_00->field_01D5);
+      Library::Ourlib::ST3DSMAP::SprHide(this_00->field_0211,uVar10);
       thunk_FUN_005899e0(this_00);
       *(undefined4 *)&this_00->field_0x249 = 2;
       g_currentExceptionFrame = local_88.previous;
@@ -97,28 +97,28 @@ int __thiscall STOctopusC::GetMessage(STOctopusC *this,STMessage *message)
         g_currentExceptionFrame = local_88.previous;
         return 0;
       }
-      iVar6 = thunk_FUN_0058d160(0,0,g_worldGrid.sizeX + -1,g_worldGrid.sizeY + -1,(int)this_00,
+      iVar7 = thunk_FUN_0058d160(0,0,g_worldGrid.sizeX + -1,g_worldGrid.sizeY + -1,(int)this_00,
                                  (int)(short)((message->arg0).words.low * 0xc9 + 100),
                                  (int)(short)((message->arg1).words.low * 0xc9 + 100),
                                  (int)(short)((message->arg0).words.high * 0xc9 + 100),
                                  (int)(short)((message->arg1).words.high * 0xc9 + 100),
                                  (undefined2 *)&local_1c,local_24,(short *)&local_20);
-      if (iVar6 == 0) {
+      if (iVar7 == 0) {
         g_currentExceptionFrame = local_88.previous;
         return 0;
       }
       sub_0058AF70((STOctopusC *)this_00,(short)local_1c,local_24[0],(short)local_20);
-      sVar5 = (*this_00->vtable->vfunc_10)
+      sVar6 = (*this_00->vtable->vfunc_10)
                         (*(short *)&this_00->field_0x41,*(short *)&this_00->field_0x43,
                          (int)*(undefined2 *)&this_00->field_0x45,(short)local_1c,local_24[0],
                          local_20);
-      *(short *)&this_00->field_0x6c = sVar5 / 0x2d - (short)((int)sVar5 / -0x4c000000);
-      iVar6 = *(int *)&this_00->field_0x251 * 0x1850;
-      *(int *)&this_00->field_0x251 = (int)(iVar6 + (iVar6 >> 0x1f & 0xfffU)) >> 0xc;
-      iVar6 = *(int *)&this_00->field_0x255 * 0x1850;
-      *(int *)&this_00->field_0x255 = (int)(iVar6 + (iVar6 >> 0x1f & 0xfffU)) >> 0xc;
-      iVar6 = this_00->field_0259 * 0x1850;
-      this_00->field_0259 = (int)(iVar6 + (iVar6 >> 0x1f & 0xfffU)) >> 0xc;
+      *(short *)&this_00->field_0x6c = sVar6 / 0x2d - (short)((int)sVar6 / -0x4c000000);
+      iVar7 = *(int *)&this_00->field_0x251 * 0x1850;
+      *(int *)&this_00->field_0x251 = (int)(iVar7 + (iVar7 >> 0x1f & 0xfffU)) >> 0xc;
+      iVar7 = *(int *)&this_00->field_0x255 * 0x1850;
+      *(int *)&this_00->field_0x255 = (int)(iVar7 + (iVar7 >> 0x1f & 0xfffU)) >> 0xc;
+      iVar7 = this_00->field_0259 * 0x1850;
+      this_00->field_0259 = (int)(iVar7 + (iVar7 >> 0x1f & 0xfffU)) >> 0xc;
       g_currentExceptionFrame = local_88.previous;
       return 0;
     }
@@ -152,11 +152,11 @@ int __thiscall STOctopusC::GetMessage(STOctopusC *this,STMessage *message)
       g_currentExceptionFrame = local_88.previous;
       return 0;
     }
-    puVar10 = (byte *)&this_00->field_0x285;
-    pAVar13 = local_c;
-    memmove(pAVar13, puVar10, 0x28); /* compiler REP MOVS byte copy */
+    puVar11 = (byte *)&this_00->field_0x285;
+    pAVar14 = local_c;
+    memmove(pAVar14, puVar11, 0x28); /* compiler REP MOVS byte copy */
     *(undefined4 *)&local_c->field_0xc = 2;
-    *(undefined4 *)&local_c->field_0x28 = *(undefined4 *)&this_00->field_0x245;
+    *(undefined4 *)&local_c->field_0x28 = *(undefined4 *)((int)&this_00->field_0244 + 1);
     *(undefined4 *)&local_c->field_0x2c = *(undefined4 *)&this_00->field_0x249;
     *(undefined2 *)&local_c->field_0x78 = *(undefined2 *)&this_00->field_0x41;
     *(undefined2 *)&local_c->field_0x7a = *(undefined2 *)&this_00->field_0x43;
@@ -184,20 +184,22 @@ int __thiscall STOctopusC::GetMessage(STOctopusC *this,STMessage *message)
     *(undefined2 *)&local_c->field_0x82 = *(undefined2 *)&this_00->field_0x52;
     *(undefined2 *)&local_c->field_0x84 = *(undefined2 *)&this_00->field_0x6c;
     uVar3 = this_00->field_024E;
-    uVar4 = *(undefined2 *)&this_00->field_0x24f;
+    uVar4 = this_00->field_024F;
+    uVar5 = this_00->field_0x250;
     local_c->field_0x30 = this_00->field_0x24d;
     local_c->field_0x31 = uVar3;
-    *(undefined2 *)&local_c->field_0x32 = uVar4;
+    local_c->field_0x32 = uVar4;
+    local_c->field_0x33 = uVar5;
     *(undefined4 *)&local_c->field_0x8a = 0;
     local_c->field_008E = local_8;
-    pbVar11 = local_14;
-    pbVar14 = &local_c->field_0x92;
-    memmove(pbVar14, pbVar11, local_8); /* compiler REP MOVS byte copy */
-    uVar9 = 0;
+    pbVar12 = local_14;
+    pbVar15 = &local_c->field_0x92;
+    memmove(pbVar15, pbVar12, local_8); /* compiler REP MOVS byte copy */
+    uVar10 = 0;
     *(uint *)(&local_c->field_0x92 + local_8) = local_10;
-    pbVar11 = local_18;
-    pbVar14 = &local_c[1].field_0x2 + local_8;
-    memmove(pbVar14, pbVar11, local_10); /* compiler REP MOVS byte copy */
+    pbVar12 = local_18;
+    pbVar15 = &local_c[1].field_0x2 + local_8;
+    memmove(pbVar15, pbVar12, local_10); /* compiler REP MOVS byte copy */
     STPlaySystemC::SaveObjData
               (g_playSystem_00802A38,(int *)this_00->field_0018,(byte *)local_c,
                (AnonShape_0060EA30_DCEB68AD *)(local_10 + 0x96 + local_8));
@@ -229,63 +231,63 @@ int __thiscall STOctopusC::GetMessage(STOctopusC *this,STMessage *message)
   *(undefined4 *)&this_00->field_0x249 = 3;
   local_1c = (undefined4 *)(message->arg0).u32;
   if ((uint)local_1c[3] < 2) {
-    uVar9 = g_playSystem_00802A38->field_00E4;
+    uVar10 = g_playSystem_00802A38->field_00E4;
     *(undefined4 *)&this_00->field_0x24d = 0;
     this_00->field_0231 = CASE_0;
-    *(uint *)&this_00->field_0x245 = uVar9 - 3;
+    *(uint *)((int)&this_00->field_0244 + 1) = uVar10 - 3;
     *(undefined4 *)&this_00->field_0x235 = 0;
     *(undefined4 *)&this_00->field_0x271 = 0;
     *(undefined4 *)&this_00->field_0x26d = 0;
     *(undefined4 *)&this_00->field_0x269 = 0;
     *(undefined4 *)&this_00->field_0x281 = 0;
     *(undefined4 *)((int)&this_00->field_023E + 3) = 0;
-    puVar10 = (byte *)((message->arg0).ptr);
-    puVar12 = (byte *)&this_00->field_0x285;
-    memmove(puVar12, puVar10, 0x28); /* compiler REP MOVS byte copy */
-    iVar6 = 0;
+    puVar11 = (byte *)((message->arg0).ptr);
+    puVar13 = (byte *)&this_00->field_0x285;
+    memmove(puVar13, puVar11, 0x28); /* compiler REP MOVS byte copy */
+    iVar7 = 0;
     Bad((STOctopusC *)this_00);
     if (((((*(int *)&this_00->field_0x299 < 0) ||
           ((int)g_worldGrid.sizeX <= *(int *)&this_00->field_0x299)) ||
          (*(int *)&this_00->field_0x29d < 0)) ||
         (((int)g_worldGrid.sizeY <= *(int *)&this_00->field_0x29d ||
-         (iVar6 = *(int *)&this_00->field_0x2a1, iVar6 < 0)))) ||
-       ((g_worldGrid.sizeZ <= iVar6 ||
-        (iVar6 = thunk_FUN_004961b0(*(short *)&this_00->field_0x299,*(short *)&this_00->field_0x29d,
-                                    (short)iVar6), iVar6 == 0)))) goto LAB_0058a0d0;
+         (iVar7 = *(int *)&this_00->field_0x2a1, iVar7 < 0)))) ||
+       ((g_worldGrid.sizeZ <= iVar7 ||
+        (iVar7 = thunk_FUN_004961b0(*(short *)&this_00->field_0x299,*(short *)&this_00->field_0x29d,
+                                    (short)iVar7), iVar7 == 0)))) goto LAB_0058a0d0;
     switch(*(undefined4 *)&this_00->field_0x2a5) {
     case 0xf8:
-      iVar6 = STT3DSprC::LoadSequence
+      iVar7 = STT3DSprC::LoadSequence
                         ((STT3DSprC *)&this_00->field_01D5,0xe,DAT_0080676c,"octopus2",0x1d
                         );
-      if (iVar6 != 0) {
-        iVar6 = 0xe9;
+      if (iVar7 != 0) {
+        iVar7 = 0xe9;
 cf_error_exit_0058A005:
         RaiseInternalException
-                  (-1,g_overwriteContext_007ED77C,"E:\\__titans\\Igor\\to_oct.cpp",iVar6);
+                  (-1,g_overwriteContext_007ED77C,"E:\\__titans\\Igor\\to_oct.cpp",iVar7);
       }
       break;
     case 0xf9:
-      iVar6 = STT3DSprC::LoadSequence
+      iVar7 = STT3DSprC::LoadSequence
                         ((STT3DSprC *)&this_00->field_01D5,0xe,DAT_0080676c,"octopus1",0x1d
                         );
-      if (iVar6 != 0) {
-        iVar6 = 0xe4;
+      if (iVar7 != 0) {
+        iVar7 = 0xe4;
         goto cf_error_exit_0058A005;
       }
       break;
     case 0xfa:
-      iVar6 = STT3DSprC::LoadSequence
+      iVar7 = STT3DSprC::LoadSequence
                         ((STT3DSprC *)&this_00->field_01D5,0xe,DAT_0080676c,"medusa2",0x1d);
-      if (iVar6 != 0) {
-        iVar6 = 0xf3;
+      if (iVar7 != 0) {
+        iVar7 = 0xf3;
         goto cf_error_exit_0058A005;
       }
       break;
     case 0xfb:
-      iVar6 = STT3DSprC::LoadSequence
+      iVar7 = STT3DSprC::LoadSequence
                         ((STT3DSprC *)&this_00->field_01D5,0xe,DAT_0080676c,"medusa1",0x1d);
-      if (iVar6 != 0) {
-        iVar6 = 0xee;
+      if (iVar7 != 0) {
+        iVar7 = 0xee;
         goto cf_error_exit_0058A005;
       }
     }
@@ -298,23 +300,23 @@ cf_error_exit_0058A005:
     *(undefined4 *)&this_00->field_0x251 = 1;
     *(undefined4 *)&this_00->field_0x255 = 1;
     this_00->field_0259 = 1;
-    uVar7 = sub_0058B190((STOctopusC *)this_00,(short *)&this_00->field_0x4e,
+    uVar8 = sub_0058B190((STOctopusC *)this_00,(short *)&this_00->field_0x4e,
                          (short *)&this_00->field_0x50,(short *)&this_00->field_0x52,
                          (short *)&this_00->field_0x6c);
-    *(undefined4 *)&this_00->field_0x249 = uVar7;
+    *(undefined4 *)&this_00->field_0x249 = uVar8;
     this_00->field_0231 = CASE_0;
   }
   else if (local_1c[3] == 2) {
-    puVar10 = (byte *)(local_1c);
-    puVar12 = (byte *)&this_00->field_0x285;
-    memmove(puVar12, puVar10, 0x28); /* compiler REP MOVS byte copy */
+    puVar11 = (byte *)(local_1c);
+    puVar13 = (byte *)&this_00->field_0x285;
+    memmove(puVar13, puVar11, 0x28); /* compiler REP MOVS byte copy */
     /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
     local_8 = *(uint *)((int)local_1c + 0x8e);
     STAllPlayersC::RestoreGObjData
               ((STAllPlayersC *)this_00,(undefined4 *)(local_8 + 0x96 + (int)local_1c));
-    puVar10 = (byte *)(local_1c);
+    puVar11 = (byte *)(local_1c);
     *(undefined4 *)&this_00->field_0x249 = local_1c[0xb];
-    *(undefined4 *)&this_00->field_0x245 = local_1c[10];
+    *(undefined4 *)((int)&this_00->field_0244 + 1) = local_1c[10];
     *(undefined2 *)&this_00->field_0x41 = *(undefined2 *)(local_1c + 0x1e);
     *(undefined2 *)&this_00->field_0x43 = *(undefined2 *)((int)local_1c + 0x7a);
     *(undefined2 *)&this_00->field_0x45 = *(undefined2 *)(local_1c + 0x1f);
@@ -343,16 +345,16 @@ cf_error_exit_0058A005:
     *(undefined4 *)&this_00->field_0x24d = local_1c[0xc];
     local_44 = Library::DKW::LIB::MemAlloc(0x44);
     if (local_44 != nullptr) {
-      iVar6 = 0;
+      iVar7 = 0;
       do {
-        if (iVar6 == 8) {
+        if (iVar7 == 8) {
           *(undefined4 *)((int)local_44 + 0x20) = DAT_00806774;
         }
         else {
-          *(int **)((int)local_44 + iVar6 * 4) = DAT_0080676c;
+          *(int **)((int)local_44 + iVar7 * 4) = DAT_0080676c;
         }
-        iVar6 = iVar6 + 1;
-      } while (iVar6 < 0x11);
+        iVar7 = iVar7 + 1;
+      } while (iVar7 < 0x11);
       local_40 = 0;
       local_3c = 0;
       local_38 = DAT_008073cc;
@@ -361,11 +363,11 @@ cf_error_exit_0058A005:
       local_2c = 0;
       STT3DSprC::RestoreSpr
                 ((STT3DSprC *)&this_00->field_01D5,(int *)&local_44,
-                 (AnonShape_004AD790_77673787 *)((int)puVar10 + 0x92));
+                 (AnonShape_004AD790_77673787 *)((int)puVar11 + 0x92));
       FreeAndNull(&local_44);
     }
   }
-  if ((*(int *)&this_00->field_0x249 == 3) || (iVar6 = thunk_FUN_0058cfe0((int)this_00), iVar6 != 0)
+  if ((*(int *)&this_00->field_0x249 == 3) || (iVar7 = thunk_FUN_0058cfe0((int)this_00), iVar7 != 0)
      ) {
     g_currentExceptionFrame = local_88.previous;
     return 0;

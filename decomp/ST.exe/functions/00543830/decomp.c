@@ -8,7 +8,6 @@
 void __thiscall CursorClassTy::DoneCursor(CursorClassTy *this)
 
 {
-  code *pcVar1;
   CursorClassTy *pCVar2;
   int errorCode;
   int iVar3;

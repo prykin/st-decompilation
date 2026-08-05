@@ -12,7 +12,6 @@ undefined4 __thiscall
 STAllPlayersC::UnRegisterMine(STAllPlayersC *this,uint param_1,uint param_2,STMineSetC *param_3)
 
 {
-  code *pcVar1;
   STAllPlayersC *this_00;
   int errorCode;
   STGameObjC *pSVar2;

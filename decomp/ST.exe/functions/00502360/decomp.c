@@ -10,7 +10,6 @@ void __thiscall CPanelTy::SetControlBoat(CPanelTy *this)
 {
   CPanelTy_field_0B9EState CVar1;
   CPanelTy_field_0B99State CVar2;
-  code *pcVar3;
   CPanelTy *this_00;
   char *pcVar4;
   LPSTR pCVar5;

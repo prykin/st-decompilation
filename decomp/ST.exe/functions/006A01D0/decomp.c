@@ -9,7 +9,6 @@ undefined4 __thiscall CGenerate::CreateMap(CGenerate *this)
 
 {
   char cVar1;
-  code *pcVar2;
   CGenerate *this_00;
   int iVar3;
   cMf32 *pcVar4;

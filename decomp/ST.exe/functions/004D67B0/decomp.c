@@ -8,7 +8,6 @@
 void __thiscall TLOBaseTy::SetActivity(TLOBaseTy *this,int param_1)
 
 {
-  code *pcVar1;
   dword dVar2;
   int errorCode;
   int iVar3;

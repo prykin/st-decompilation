@@ -13,7 +13,6 @@ void __thiscall CPanelTy::SwitchTV(CPanelTy *this,int param_1)
 
 {
   char cVar1;
-  code *pcVar2;
   CPanelTy *this_00;
   uint uVar3;
   undefined1 *puVar4;

@@ -8,7 +8,6 @@
 int __thiscall STGroupC::SaveGrpData(STGroupC *this,int *param_1)
 
 {
-  code *pcVar1;
   int iVar2;
   void *pvVar3;
   int iVar4;

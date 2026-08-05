@@ -4,7 +4,6 @@
 undefined4 FUN_006a5210(void)
 
 {
-  code *pcVar1;
   bool bVar2;
   undefined4 *puVar3;
   int iVar4;

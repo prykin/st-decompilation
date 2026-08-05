@@ -15,7 +15,6 @@
 void __thiscall cLoadingTy::SetProcess(cLoadingTy *this,int param_1,char *text,int param_3)
 
 {
-  code *pcVar1;
   cLoadingTy *this_00;
   int errorCode;
   DWORD DVar2;

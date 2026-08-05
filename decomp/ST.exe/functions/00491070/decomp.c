@@ -8,7 +8,6 @@
 void __thiscall STBoatC::ReleaseLoad(STBoatC *this,uint param_1)
 
 {
-  code *pcVar1;
   int iVar2;
   int *piVar3;
 

@@ -1,10 +1,14 @@
 
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 /* [STTypeFamilyApplier] EXACT_ANONYMOUS_LAYOUT.
-   Evidence: exact anonymous structure fingerprint shared across functions */
+   Evidence: exact anonymous structure fingerprint shared across functions
+
+   [STTypeFamilyApplier] SOURCE_FUNCTION_FAMILY.
+   Evidence: one script-owned pointer shape is anchored by one library source basename, multiple
+   semantic function names, and exact first-argument call flow */
 
 void __cdecl
-FUN_006e83f0(AnonShape_006B5B10_E0D06CF1 *param_1,int param_2,int param_3,int param_4,int param_5)
+FUN_006e83f0(RecoveredSourceFamily_dibcopy *param_1,int param_2,int param_3,int param_4,int param_5)
 
 {
   int iVar1;

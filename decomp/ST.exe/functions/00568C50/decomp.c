@@ -8,7 +8,6 @@
 void __thiscall SoundClassTy::CheckFader(SoundClassTy *this)
 
 {
-  code *pcVar1;
   SoundClassTy *pSVar2;
   int iVar3;
   DWORD DVar4;

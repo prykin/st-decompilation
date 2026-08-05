@@ -8,7 +8,6 @@
 void __thiscall BldLabPanelTy::InitBldLabPanel(BldLabPanelTy *this)
 
 {
-  code *pcVar1;
   BldLabPanelTy *this_00;
   int errorCode;
   BldLabPanelTy_field_027ADArray *pBVar2;

@@ -16,11 +16,8 @@ undefined4 __thiscall FUN_00604fc0(void *this,AnonShape_00604A90_035626E6 *param
 
   pAVar5 = param_1;
   puVar6 = (byte *)((int)this + 0x1d5);
-  for (iVar3 = 0x10; iVar3 != 0; iVar3 = iVar3 + -1) {
-    *puVar6 = *(undefined4 *)pAVar5;
-    pAVar5 = (AnonShape_00604A90_035626E6 *)&pAVar5->field_0x4;
-    puVar6 = (byte *)(puVar6 + 1);
-  }
+  memmove(puVar6, pAVar5, 0x40); /* compiler REP MOVS byte copy */
+  iVar3 = 0;
   *(undefined4 *)((int)this + 0x215) = *(undefined4 *)&param_1->field_0x40;
   puVar6 = (byte *)&param_1->field_0x44;
   puVar8 = (byte *)((int)this + 0x219);

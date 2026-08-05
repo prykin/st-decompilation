@@ -10,7 +10,6 @@ LPSTR __cdecl GetStrategNameDB(int param_1,int param_2)
 
 {
   char cVar1;
-  code *pcVar2;
   int iVar3;
   LPSTR pCVar4;
   int iVar5;

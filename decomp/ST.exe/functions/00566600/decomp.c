@@ -42,7 +42,7 @@ int FUN_00566600(int param_1)
     SoundManagerTy::sub_00566900(local_10);
     return iVar2;
   }
-  if (local_10->field_0018 != 0) {
+  if (local_10->field_0018 != nullptr) {
     g_currentExceptionFrame = local_60.previous;
     return local_1c;
   }
@@ -139,7 +139,7 @@ int FUN_00566600(int param_1)
   iVar2 = 0;
   bVar12 = 0;
   pCVar5 = FUN_006f2c00(PTR_s_GM_SET_0079b010,1,local_10->field_0028);
-  local_8 = Library::Ourlib::MFAOBJ::mfAObjLoad((cMf32 *)local_10->field_0018,pCVar5,bVar12,iVar2);
+  local_8 = Library::Ourlib::MFAOBJ::mfAObjLoad(local_10->field_0018,pCVar5,bVar12,iVar2);
   if (local_8 == nullptr) {
     uVar7 = Library::MSVCRT::FUN_0072e6c0();
     iVar13 = 0;
@@ -147,8 +147,7 @@ int FUN_00566600(int param_1)
     iVar2 = uVar7 % uVar6 + 1;
     local_10->field_0028 = iVar2;
     pCVar5 = FUN_006f2c00(PTR_s_GM_SET_0079b010,1,iVar2);
-    local_8 = Library::Ourlib::MFAOBJ::mfAObjLoad
-                        ((cMf32 *)local_10->field_0018,pCVar5,bVar12,iVar13);
+    local_8 = Library::Ourlib::MFAOBJ::mfAObjLoad(local_10->field_0018,pCVar5,bVar12,iVar13);
     if (local_8 == nullptr) {
       RaiseInternalException
                 (-4,g_overwriteContext_007ED77C,"E:\\__titans\\snd_mngr.cpp",0x32);
@@ -160,7 +159,7 @@ int FUN_00566600(int param_1)
   local_10->field_0034 = *(int *)(local_8 + 4);
 LAB_0056681c:
   if (local_8 != nullptr) {
-    cMf32::RecMemFree((cMf32 *)local_10->field_0018,(uint *)&local_8);
+    cMf32::RecMemFree(local_10->field_0018,(uint *)&local_8);
   }
   g_currentExceptionFrame = local_60.previous;
   return local_1c;

@@ -19,7 +19,6 @@ CursorClassTy::SetImages
           uint param_5,int param_6,int param_7)
 
 {
-  code *pcVar1;
   CursorClassTy *pCVar2;
   int iVar3;
   InternalExceptionFrame local_4c;

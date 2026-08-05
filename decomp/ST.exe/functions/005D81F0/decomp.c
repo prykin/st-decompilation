@@ -15,7 +15,6 @@
 void __thiscall SIDTy::NoneSID(SIDTy *this)
 
 {
-  code *pcVar1;
   SIDTy *this_00;
   DWORD DVar2;
   int iVar3;

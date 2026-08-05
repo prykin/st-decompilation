@@ -8,7 +8,6 @@
 void __thiscall OptPanelTy::InitOptPanel(OptPanelTy *this)
 
 {
-  code *pcVar1;
   OptPanelTy *this_00;
   int iVar2;
   ccFntTy *pcVar3;

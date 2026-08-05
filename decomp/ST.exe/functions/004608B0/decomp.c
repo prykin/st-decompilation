@@ -11,7 +11,6 @@ int __thiscall STBoatC::Defence(STBoatC *this,int param_1)
   STBoatC_field_045DState SVar1;
   dword dVar2;
   undefined4 uVar3;
-  code *pcVar4;
   short sVar5;
   int iVar6;
   STGameObjC *pSVar7;

@@ -16,7 +16,6 @@ int __thiscall IntercomPanelTy::GetMessage(IntercomPanelTy *this,STMessage *mess
   STMessageId SVar2;
   AnonShape_00710790_4CBB90D4 *pAVar3;
   ushort *puVar4;
-  code *pcVar5;
   IntercomPanelTy *this_00;
   int iVar6;
   byte *puVar7;
@@ -178,7 +177,7 @@ int __thiscall IntercomPanelTy::GetMessage(IntercomPanelTy *this,STMessage *mess
     }
     puVar4 = this_00->field_019C;
     Library::DKW::WGR::FUN_006b55f0
-              ((AnonShape_006B5B10_E0D06CF1 *)this_00->field_0068,0,
+              ((RecoveredSourceFamily_dibcopy *)this_00->field_0068,0,
                (-(uint)(DAT_0080874e != '\x03') & 0xffffffe7) + 0x1e,5,(byte *)puVar4,0,0,0,
                *(int *)(puVar4 + 2),*(int *)(puVar4 + 4));
     Library::DKW::DDX::FUN_006b3640

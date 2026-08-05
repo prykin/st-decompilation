@@ -8,7 +8,6 @@
 int __thiscall AiBossClassTy::InitData(AiBossClassTy *this,undefined4 *param_1)
 
 {
-  code *pcVar1;
   int iVar2;
   int iVar3;
   byte *puVar4;

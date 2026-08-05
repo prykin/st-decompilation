@@ -8,7 +8,6 @@
 undefined4 * __thiscall STExplosionC::SaveObj(STExplosionC *this,uint *param_1)
 
 {
-  code *pcVar1;
   undefined1 *puVar2;
   int iVar3;
   HoloTy **ppHVar4;
@@ -54,11 +53,8 @@ undefined4 * __thiscall STExplosionC::SaveObj(STExplosionC *this,uint *param_1)
     this->field_01E1 = 1;
     puVar7 = (byte *)&this->field_0x1d5;
     pAVar12 = local_48;
-    for (iVar3 = 0x10; iVar3 != 0; iVar3 = iVar3 + -1) {
-      *(undefined4 *)pAVar12 = *puVar7;
-      puVar7 = (byte *)(puVar7 + 1);
-      pAVar12 = (AnonShape_00604A90_035626E6 *)&pAVar12->field_0x4;
-    }
+    memmove(pAVar12, puVar7, 0x40); /* compiler REP MOVS byte copy */
+    iVar3 = 0;
     *(undefined4 *)&local_48->field_0x40 = this->field_0215;
     ppHVar4 = &this->field_0219;
     puVar7 = (byte *)&local_48->field_0x44;

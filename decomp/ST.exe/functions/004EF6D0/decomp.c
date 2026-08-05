@@ -13,7 +13,6 @@ int __thiscall BldBoatPanelTy::GetMessage(BldBoatPanelTy *this,STMessage *messag
 
 {
   STMessageId SVar1;
-  code *pcVar2;
   BldBoatPanelTy *this_00;
   ushort uVar3;
   int iVar4;

@@ -13,7 +13,7 @@ void __thiscall FUN_005ef6c0(void *this,int param_1)
               STAllPlayersC::GetObjPtr
                         (g_allPlayers_007FA174,*(char *)((int)this + 0x2a3),
                          *(ushort *)((int)this + 0x2ab),CASE_1);
-    if ((this_00 != nullptr) && (this_00->field_0018 == *(uint *)((int)this + 0x2a7)))
+    if ((this_00 != nullptr) && (this_00->field_0018 == *(int *)((int)this + 0x2a7)))
     goto LAB_005ef720;
   }
   if (*(AnonShape_005EFAE0_B406B78B **)((int)this + 0x2a7) != nullptr) {

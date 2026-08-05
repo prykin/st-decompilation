@@ -1308,10 +1308,10 @@ switchD_00545816_default:
                        this_00->field_04CA + -10,this_00->field_04CE + -10);
       ccFntTy::WrTxt(g_startSystem_0081176C->field_0038,local_524,-2,-1,
                      (uint)(message->arg0).words.low,-1,-1);
-      FUN_006b5ee0((AnonShape_006B5B10_E0D06CF1 *)this_00->field_04D2,0,0,0,this_00->field_04CA,
+      FUN_006b5ee0((RecoveredSourceFamily_dibcopy *)this_00->field_04D2,0,0,0,this_00->field_04CA,
                    this_00->field_04CE,0x18,0xd);
-      FUN_006b5ee0((AnonShape_006B5B10_E0D06CF1 *)this_00->field_04D2,0,1,1,this_00->field_04CA + -2
-                   ,this_00->field_04CE + -2,0x1d,0xd);
+      FUN_006b5ee0((RecoveredSourceFamily_dibcopy *)this_00->field_04D2,0,1,1,
+                   this_00->field_04CA + -2,this_00->field_04CE + -2,0x1d,0xd);
       bVar33 = 0x18;
     }
     else {
@@ -1359,14 +1359,14 @@ switchD_00545816_default:
                        this_00->field_04CA + -10,this_00->field_04CE + -10);
       ccFntTy::WrTxt(g_interSystem_00802A28->field_0028,local_524,-2,-1,
                      (uint)(message->arg0).words.low,-1,-1);
-      FUN_006b5ee0((AnonShape_006B5B10_E0D06CF1 *)this_00->field_04D2,0,0,0,this_00->field_04CA,
+      FUN_006b5ee0((RecoveredSourceFamily_dibcopy *)this_00->field_04D2,0,0,0,this_00->field_04CA,
                    this_00->field_04CE,0x6f,0xd);
-      FUN_006b5ee0((AnonShape_006B5B10_E0D06CF1 *)this_00->field_04D2,0,1,1,this_00->field_04CA + -2
-                   ,this_00->field_04CE + -2,0xb3,0xd);
+      FUN_006b5ee0((RecoveredSourceFamily_dibcopy *)this_00->field_04D2,0,1,1,
+                   this_00->field_04CA + -2,this_00->field_04CE + -2,0xb3,0xd);
       bVar33 = 0x6f;
     }
-    FUN_006b5ee0((AnonShape_006B5B10_E0D06CF1 *)this_00->field_04D2,0,3,3,this_00->field_04CA + -6,
-                 this_00->field_04CE + -6,bVar33,0xd);
+    FUN_006b5ee0((RecoveredSourceFamily_dibcopy *)this_00->field_04D2,0,3,3,this_00->field_04CA + -6
+                 ,this_00->field_04CE + -6,bVar33,0xd);
 cf_common_exit_00545FF6:
     if (800 < this_00->field_04CA) {
       g_currentExceptionFrame = local_e0.previous;

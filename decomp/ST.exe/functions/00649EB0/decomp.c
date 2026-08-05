@@ -9,7 +9,6 @@
 undefined4 * CreateDefaultBossData(void)
 
 {
-  code *pcVar1;
   int errorCode;
   int iVar2;
   undefined4 *puVar3;

@@ -15,7 +15,6 @@ StartSystemTy::SetObjectives(StartSystemTy *this,int param_1,char *param_2,int p
 
 {
   ccFntTy *pcVar1;
-  code *pcVar2;
   StartSystemTy *this_00;
   int iVar3;
   DArrayTy *pDVar4;

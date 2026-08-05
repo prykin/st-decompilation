@@ -12,7 +12,6 @@ undefined4 __thiscall
 STJellyManC::Error(STJellyManC *this,undefined4 param_1,int *param_2,undefined4 param_3)
 
 {
-  code *pcVar1;
   int iVar2;
   undefined4 uVar3;
 

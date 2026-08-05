@@ -18,7 +18,6 @@ HoloTy::CalcHologram
           )
 
 {
-  code *pcVar1;
   int iVar2;
   uint uVar3;
   int iVar4;

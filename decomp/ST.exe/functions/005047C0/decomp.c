@@ -8,7 +8,6 @@
 uint __thiscall CPanelTy::PaintPerRes(CPanelTy *this,int param_1)
 
 {
-  code *pcVar1;
   CPanelTy *this_00;
   int iVar2;
   byte *pbVar3;
@@ -38,7 +37,7 @@ uint __thiscall CPanelTy::PaintPerRes(CPanelTy *this,int param_1)
       uVar7 = 0;
       do {
         pbVar3 = (byte *)FUN_0070b3a0((AnonShape_GLOBAL_0081175C_57F682DD *)this_00->field_02B6,3);
-        DibPut((AnonShape_006B5B10_E0D06CF1 *)this_00->field_0194,param_1 + 0xb + uVar7 * 4,0x5c,
+        DibPut((RecoveredSourceFamily_dibcopy *)this_00->field_0194,param_1 + 0xb + uVar7 * 4,0x5c,
                '\x01',pbVar3);
         bVar5 = (byte)local_8 + 1;
         local_8 = STReplaceLowByte((uint32_t)(local_8), (uint8_t)(bVar5));
@@ -51,7 +50,8 @@ uint __thiscall CPanelTy::PaintPerRes(CPanelTy *this,int param_1)
       iVar6 = 0x28 - (local_8 & 0xff);
       do {
         pbVar3 = (byte *)FUN_0070b3a0((AnonShape_GLOBAL_0081175C_57F682DD *)this_00->field_02B6,0);
-        uVar4 = DibPut((AnonShape_006B5B10_E0D06CF1 *)this_00->field_0194,iVar2,0x5c,'\x01',pbVar3);
+        uVar4 = DibPut((RecoveredSourceFamily_dibcopy *)this_00->field_0194,iVar2,0x5c,'\x01',pbVar3
+                      );
         iVar2 = iVar2 + 4;
         iVar6 = iVar6 + -1;
       } while (iVar6 != 0);
