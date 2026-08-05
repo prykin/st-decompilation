@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* [STMethodOwnerApplier] Structural method owner recovered as TLOBaseTy.
    Evidence: this_call_owners=[TLOBaseTy]; agreed_this_calls=1; incoming_this_accesses=10;
@@ -91,9 +93,7 @@ undefined4 __thiscall TLOBaseTy::sub_004C56B0(TLOBaseTy *this,void *param_1)
       if (((((sVar8 < 0) || (g_worldGrid.sizeX <= sVar8)) || (sVar7 < 0)) ||
           ((g_worldGrid.sizeY <= sVar7 || (sVar6 < 0)))) ||
          ((g_worldGrid.sizeZ <= sVar6 ||
-          (g_worldGrid.cells
-           [(int)sVar7 * (int)g_worldGrid.sizeX + (int)sVar6 * (int)g_worldGrid.planeStride +
-            (int)sVar8].objects[1] == nullptr)))) {
+          (STGridAt3D(g_worldGrid, sVar8, sVar7, sVar6).objects[1] == nullptr)))) {
         return 1;
       }
     }

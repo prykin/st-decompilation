@@ -31,9 +31,7 @@ STBoatC::SetNewMD(STBoatC *this,int param_1,short param_2,short param_3,short pa
      ((((param_2 < 0 || (g_worldGrid.sizeX <= param_2)) || (param_3 < 0)) ||
       (((g_worldGrid.sizeY <= param_3 || (param_4 < 0)) ||
        ((g_worldGrid.sizeZ <= param_4 ||
-        ((in_EAX = g_worldGrid.cells
-                   [(int)g_worldGrid.planeStride * (int)param_4 +
-                    (int)g_worldGrid.sizeX * (int)param_3 + (int)param_2].objects[0],
+        ((in_EAX = STGridAt3D(g_worldGrid, param_2, param_3, param_4).objects[0],
          in_EAX == nullptr || (*(int *)&in_EAX->field_0x18 != param_5)))))))))) {
     iVar7 = ReportDebugMessage("E:\\__titans\\wlad\\To_boat.cpp",0x4bcc,0,0,"%s",
                                "STBoatC::SetNewMD");
@@ -58,9 +56,7 @@ STBoatC::SetNewMD(STBoatC *this,int param_1,short param_2,short param_3,short pa
          ((-1 < sVar3 &&
           (((sVar3 < g_worldGrid.sizeY && (-1 < sVar2)) && (sVar2 < g_worldGrid.sizeZ)))))) {
         iVar7 = (int)sVar1;
-        pSVar4 = g_worldGrid.cells
-                 [(int)g_worldGrid.planeStride * (int)sVar2 + (int)g_worldGrid.sizeX * (int)sVar3 +
-                  iVar7].objects[0];
+        pSVar4 = STGridAt3D(g_worldGrid, iVar7, sVar3, sVar2).objects[0];
         if (pSVar4 != nullptr) {
           thunk_FUN_004e18e0(pSVar4,this->field_0018);
           iVar7 = thunk_FUN_004e1690(pSVar4,this->field_0018);
@@ -86,9 +82,7 @@ STBoatC::SetNewMD(STBoatC *this,int param_1,short param_2,short param_3,short pa
     if (((((-1 < sVar1) && (sVar1 < g_worldGrid.sizeX)) && (-1 < sVar3)) &&
         ((sVar3 < g_worldGrid.sizeY && (-1 < sVar2)))) && (sVar2 < g_worldGrid.sizeZ)) {
       iVar7 = (int)sVar1;
-      pSVar4 = g_worldGrid.cells
-               [(int)g_worldGrid.planeStride * (int)sVar2 + (int)g_worldGrid.sizeX * (int)sVar3 +
-                iVar7].objects[0];
+      pSVar4 = STGridAt3D(g_worldGrid, iVar7, sVar3, sVar2).objects[0];
       if (pSVar4 != nullptr) {
         thunk_FUN_004e18e0(pSVar4,this->field_0018);
         iVar7 = thunk_FUN_004e1690(pSVar4,this->field_0018);

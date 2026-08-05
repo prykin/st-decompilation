@@ -14,7 +14,7 @@ undefined4 * __thiscall FUN_0040c080(void *this,uint param_1,uint *param_2)
   int iVar2;
   undefined1 *puVar3;
   short *psVar4;
-  RecoveredRecord_STBoatC_0040AE40 *pRVar5;
+  STGameObjC *pSVar5;
   int iVar6;
   int iVar7;
   int iVar8;
@@ -75,8 +75,8 @@ undefined4 * __thiscall FUN_0040c080(void *this,uint param_1,uint *param_2)
     ExceptionList = &local_14;
     psVar4 = Library::DKW::LIB::MemAlloc(uVar9 * 4);
     if (psVar4 != nullptr) {
-      pRVar5 = (RecoveredRecord_STBoatC_0040AE40 *)thunk_FUN_00423e70(this,param_1);
-      if (pRVar5 == nullptr) {
+      pSVar5 = thunk_FUN_00423e70(this,(ushort)param_1);
+      if (pSVar5 == nullptr) {
         psVar11 = psVar4;
         if (0 < (int)uVar9) {
           for (; uVar9 != 0; uVar9 = uVar9 - 1) {
@@ -90,9 +90,9 @@ undefined4 * __thiscall FUN_0040c080(void *this,uint param_1,uint *param_2)
         local_8 = 0;
         Library::MSVCRT::FUN_0072da40();
         local_8 = 0xffffffff;
-        iVar8 = (int)pRVar5->field_0047;
-        local_a8 = (int)pRVar5->field_0049;
-        local_20 = (int)pRVar5->field_004B;
+        iVar8 = (int)pSVar5->field_0047;
+        local_a8 = (int)pSVar5->field_0049;
+        local_20 = (int)pSVar5->field_004B;
         uVar9 = 0;
         local_9c = local_a8;
         local_74 = iVar8;
@@ -158,27 +158,27 @@ undefined4 * __thiscall FUN_0040c080(void *this,uint param_1,uint *param_2)
         if (g_pathingGrid.sizeZ <= local_30) {
           local_30 = g_pathingGrid.sizeZ + -1;
         }
-        local_ac = pRVar5->field_0047 + -2;
+        local_ac = pSVar5->field_0047 + -2;
         if (local_ac < 0) {
           local_ac = 0;
         }
-        local_38 = pRVar5->field_0049 + -2;
+        local_38 = pSVar5->field_0049 + -2;
         if (local_38 < 0) {
           local_38 = 0;
         }
-        local_5c = pRVar5->field_004B + -2;
+        local_5c = pSVar5->field_004B + -2;
         if (local_5c < 0) {
           local_5c = 0;
         }
-        local_b8 = pRVar5->field_0047 + 2;
+        local_b8 = pSVar5->field_0047 + 2;
         if (g_pathingGrid.sizeX <= local_b8) {
           local_b8 = g_pathingGrid.sizeX + -1;
         }
-        local_40 = pRVar5->field_0049 + 2;
+        local_40 = pSVar5->field_0049 + 2;
         if (g_pathingGrid.sizeY <= local_40) {
           local_40 = g_pathingGrid.sizeY + -1;
         }
-        local_6c = pRVar5->field_004B + 2;
+        local_6c = pSVar5->field_004B + 2;
         if (g_pathingGrid.sizeZ <= local_6c) {
           local_6c = g_pathingGrid.sizeZ + -1;
         }
@@ -221,7 +221,8 @@ undefined4 * __thiscall FUN_0040c080(void *this,uint param_1,uint *param_2)
                 }
                 for (; iVar7 <= local_b8; iVar7 = iVar7 + 1) {
                   if ((psVar11[iVar7] == 0) &&
-                     (iVar8 = thunk_FUN_00497920(pRVar5,iVar7,local_88,local_8c), iVar8 == 0)) {
+                     (iVar8 = thunk_FUN_00497920((RecoveredRecord_STBoatC_0040AE40 *)pSVar5,iVar7,
+                                                 local_88,local_8c), iVar8 == 0)) {
                     psVar10[iVar7 - local_74] = -3;
                   }
                   else {
@@ -261,8 +262,8 @@ undefined4 * __thiscall FUN_0040c080(void *this,uint param_1,uint *param_2)
             psVar10 = psVar10 + local_2c;
           }
         }
-        iVar8 = FUN_006ab090((int)local_54,local_2c,local_70,local_68,pRVar5->field_0047 - local_74,
-                             pRVar5->field_0049 - local_9c,pRVar5->field_004B - local_20,-1,-1,-1);
+        iVar8 = FUN_006ab090((int)local_54,local_2c,local_70,local_68,pSVar5->field_0047 - local_74,
+                             pSVar5->field_0049 - local_9c,pSVar5->field_004B - local_20,-1,-1,-1);
         if (iVar8 == 0) {
           local_34 = 0;
           if (0 < (int)local_80) {

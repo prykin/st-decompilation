@@ -152,9 +152,7 @@ LAB_0049cf10:
       sVar5 = -1;
     }
     else {
-      sVar5 = g_pathingGrid.cells
-              [(int)sVar2 * (int)g_pathingGrid.sizeX + (int)sVar1 * (int)g_pathingGrid.planeStride +
-               (int)sVar5];
+      sVar5 = STGridAt3D(g_pathingGrid, sVar5, sVar2, sVar1);
     }
     if (sVar5 != 0) {
       g_currentExceptionFrame = local_8c.previous;

@@ -21,25 +21,23 @@ ST3DSMAPContext::sub_006E1320
   int local_30;
   int local_2c;
   int local_28;
-  undefined4 local_20;
-  undefined4 local_1c;
-  undefined4 local_18;
+  float local_20 [3];
   double local_14;
   double local_c;
 
   local_c = this->field_0098;
   local_14 = this->field_00A0;
-  local_20 = 0;
-  local_1c = 0;
-  local_18 = 0;
-  sub_006E25D0(this,&local_40);
+  local_20[0] = 0.0;
+  local_20[1] = 0.0;
+  local_20[2] = 0.0;
+  sub_006E25D0(this,&local_40,local_20,local_c,local_14,0.0,0);
   Library::Ourlib::STREND::FUN_006dd050(this,this->field_00A8,*param_1,*param_2);
   dVar1 = local_14;
   *(undefined4 *)param_1 = *(undefined4 *)&this->field_0098;
   *(undefined4 *)((int)param_1 + 4) = *(undefined4 *)((int)&this->field_0098 + 4);
   *(undefined4 *)param_2 = *(undefined4 *)&this->field_00A0;
   *(undefined4 *)((int)param_2 + 4) = *(undefined4 *)((int)&this->field_00A0 + 4);
-  sub_006E25D0(this,&local_30);
+  sub_006E25D0(this,&local_30,local_20,local_c,local_14,0.0,0);
   *param_3 = (local_30 - local_40) + 0x8000 >> 0x10;
   *param_4 = (local_2c - local_3c) + 0x8000 >> 0x10;
   if (param_5 != nullptr) {

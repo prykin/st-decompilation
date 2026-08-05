@@ -1,7 +1,11 @@
 
-void FUN_006e4290(undefined4 param_1,undefined4 param_2,undefined4 param_3,undefined4 param_4)
+/* [STPrototypeApplier] Propagated return.
+   Evidence: 006E4290 returns return of AppClassTy::AddDecodeMessage @ 006E42BA */
+
+int FUN_006e4290(undefined4 param_1,undefined4 param_2,undefined4 param_3,undefined4 param_4)
 
 {
+  int iVar1;
   /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
   AppClassTy *in_ECX;
   undefined4 local_14;
@@ -14,7 +18,7 @@ void FUN_006e4290(undefined4 param_1,undefined4 param_2,undefined4 param_3,undef
   local_10 = param_2;
   local_8 = param_4;
   /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
-  AppClassTy::AddDecodeMessage(in_ECX,&local_14);
-  return;
+  iVar1 = AppClassTy::AddDecodeMessage(in_ECX,&local_14);
+  return iVar1;
 }
 

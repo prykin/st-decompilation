@@ -3,9 +3,16 @@
 
 /* Recovered from embedded debug metadata:
    E:\__titans\Igor\to_oct.cpp
-   STOctopusC::Bad */
+   STOctopusC::Bad
+   [STAbiConsistencyApplier] machine_thiscall_arity target=function:-1: prototype=undefined1
+   __thiscall Bad(STOctopusC * this) Evidence: every machine RET purges exactly 0 explicit stack
+   bytes; current signature describes 4; removed trailing parameter slots have no listing
+   references; ret_sites=0058A94E RET
+   [STAbiConsistencyApplier] machine_thiscall_unsized_return_migration target=return:-1:
+   return=/undefined Evidence: legacy ABI applier materialized the unsized return as undefined1
+   while changing only function arity; restore Ghidra DefaultDataType */
 
-void __thiscall STOctopusC::Bad(STOctopusC *this,int param_1)
+void __thiscall STOctopusC::Bad(STOctopusC *this)
 
 {
   code *pcVar1;

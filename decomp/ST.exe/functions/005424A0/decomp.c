@@ -46,7 +46,7 @@ undefined4 __thiscall InterSystemC::CreateInterfObjects(InterSystemC *this)
   undefined2 local_d2;
   undefined4 local_d0;
   undefined4 local_c8;
-  undefined4 local_60;
+  ushort *local_60;
   int local_5c;
   InterSystemC *local_8;
 

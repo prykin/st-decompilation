@@ -27,7 +27,7 @@ ST3DSMAPContext::sub_006E1C20
   local_14 = (float)this->field_0098;
   local_10 = (float)this->field_00A0;
   local_c = 0;
-  sub_006E25D0(this,&local_24);
+  sub_006E25D0(this,&local_24,&local_14,0.0,0.0,0.0,1);
   fVar1 = (float)((int)param_1 * 0x10000 - local_24) * (float)_DAT_0079b148;
   fVar2 = (float)(param_2 * 0x10000 - local_20) * (float)_DAT_0079b148;
   fVar3 = param_3 * (float)_DAT_0079df60;

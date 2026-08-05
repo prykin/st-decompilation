@@ -320,6 +320,7 @@ switchD_005c1b14_caseD_5:
     pcVar13 = pcVar21 + -uVar17;
     pcVar21 = &DAT_0080ef1e;
     memmove(pcVar21, pcVar13, uVar17); /* compiler REP MOVS byte copy */
+    uVar18 = 0;
     uVar17 = 0xffffffff;
     pcVar13 = &DAT_0080ed16;
     do {

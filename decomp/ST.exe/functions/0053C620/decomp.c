@@ -32,11 +32,11 @@ void __thiscall ResearchPanelTy::sub_0053C620(ResearchPanelTy *this)
     do {
       this->field_0028 = 0x21;
       FUN_006e6080(this,2,*puVar6,(undefined4 *)&this->field_0x18);
-      iVar4 = this->field_002C;
+      iVar4 = *(int *)&this->field_0x2c;
       /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
       uVar3 = (uint)((uint)(local_c + this->field_0199) <
                     *(uint *)((&this->field_027A)[(byte)this->field_0278] + 0xc));
-      this->field_002C = uVar3;
+      *(uint *)&this->field_0x2c = uVar3;
       if (uVar3 == 0) {
         if (iVar4 != 0) goto LAB_0053c75b;
 LAB_0053c6ac:
@@ -51,7 +51,7 @@ LAB_0053c75b:
       }
       FUN_006e6080(this,2,uVar1,(undefined4 *)&this->field_0x18);
       /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-      if ((((this->field_002C != 0) &&
+      if ((((*(int *)&this->field_0x2c != 0) &&
            (iVar4 = (&this->field_027A)[(byte)this->field_0278], iVar4 != 0)) &&
           (uVar3 = this->field_0199 + local_c, uVar3 < *(uint *)(iVar4 + 0xc))) &&
          (pGVar5 = (Global_sub_00528060_param_1Enum *)
@@ -66,7 +66,7 @@ LAB_0053c75b:
           pGVar5 = pGVar5 + 0x12;
           puVar7 = (byte *)(local_8 + 2);
           memmove(puVar7, pGVar5, 0x1e); /* compiler REP MOVS byte copy */
-          pGVar5 = (Global_sub_00528060_param_1Enum *)((byte *)pGVar5 + 0x1c);
+          pGVar5 = pGVar5 + 0x1c;
         }
         else {
           local_8[2] = *(undefined4 *)(pGVar5 + 10);

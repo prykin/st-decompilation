@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* [STMethodOwnerApplier] Structural method owner recovered as STBoatC.
    Evidence: this_call_owners=[STBoatC]; agreed_this_calls=1; incoming_this_accesses=16;
@@ -41,9 +43,7 @@ int __thiscall STBoatC::sub_004939B0(STBoatC *this,short *param_1,short *param_2
       if (((((sVar3 < 0) || (g_worldGrid.sizeX <= sVar3)) ||
            ((sVar5 < 0 || ((g_worldGrid.sizeY <= sVar5 || (sVar1 < 0)))))) ||
           (g_worldGrid.sizeZ <= sVar1)) ||
-         (g_worldGrid.cells
-          [(int)g_worldGrid.planeStride * (int)sVar1 + (int)g_worldGrid.sizeX * (int)sVar5 +
-           (int)sVar3].objects[0] == nullptr)) {
+         (STGridAt3D(g_worldGrid, sVar3, sVar5, sVar1).objects[0] == nullptr)) {
         iVar4 = FUN_006aadd0((int)this->field_0047,(int)this->field_0049,(int)this->field_004B,iVar4
                              ,this->field_063B + iVar7,this->field_063D + 1);
         if (iVar4 < local_c) {

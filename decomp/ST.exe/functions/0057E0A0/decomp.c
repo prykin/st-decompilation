@@ -129,9 +129,7 @@ int __thiscall STDcResourcC::GetMessage(STDcResourcC *this,STMessage *message)
       pSVar16 = nullptr;
     }
     else {
-      pSVar16 = g_worldGrid.cells
-                [(int)sVar1 * (int)g_worldGrid.planeStride + (int)sVar2 * (int)g_worldGrid.sizeX +
-                 (int)sVar8].objects[0];
+      pSVar16 = STGridAt3D(g_worldGrid, sVar8, sVar2, sVar1).objects[0];
     }
     if (pSVar16 == nullptr) {
       g_currentExceptionFrame = local_68.previous;
@@ -265,18 +263,14 @@ int __thiscall STDcResourcC::GetMessage(STDcResourcC *this,STMessage *message)
         pSVar16 = nullptr;
       }
       else {
-        pSVar16 = g_worldGrid.cells
-                  [(int)g_worldGrid.planeStride * (int)sVar2 + (int)g_worldGrid.sizeX * (int)sVar1 +
-                   (int)sVar8].objects[0];
+        pSVar16 = STGridAt3D(g_worldGrid, sVar8, sVar1, sVar2).objects[0];
       }
       if (((((sVar8 < 0) || (g_worldGrid.sizeX <= sVar8)) || (sVar1 < 0)) ||
           ((g_worldGrid.sizeY <= sVar1 || (sVar2 < 0)))) || (g_worldGrid.sizeZ <= sVar2)) {
         sVar8 = -1;
       }
       else {
-        sVar8 = g_pathingGrid.cells
-                [(int)g_pathingGrid.sizeX * (int)sVar1 + (int)g_pathingGrid.planeStride * (int)sVar2
-                 + (int)sVar8];
+        sVar8 = STGridAt3D(g_pathingGrid, sVar8, sVar1, sVar2);
       }
       if ((sVar8 != 0) &&
          ((pSVar16 == nullptr ||
@@ -321,9 +315,7 @@ int __thiscall STDcResourcC::GetMessage(STDcResourcC *this,STMessage *message)
         pSVar16 = nullptr;
       }
       else {
-        pSVar16 = g_worldGrid.cells
-                  [(int)sVar1 * (int)g_worldGrid.sizeX + (int)g_worldGrid.planeStride * (int)sVar2 +
-                   (int)sVar8].objects[0];
+        pSVar16 = STGridAt3D(g_worldGrid, sVar8, sVar1, sVar2).objects[0];
       }
       if (((sVar8 < 0) || (g_worldGrid.sizeX <= sVar8)) ||
          ((sVar1 < 0 ||
@@ -331,9 +323,7 @@ int __thiscall STDcResourcC::GetMessage(STDcResourcC *this,STMessage *message)
         sVar8 = -1;
       }
       else {
-        sVar8 = g_pathingGrid.cells
-                [(int)sVar1 * (int)g_pathingGrid.sizeX + (int)g_pathingGrid.planeStride * (int)sVar2
-                 + (int)sVar8];
+        sVar8 = STGridAt3D(g_pathingGrid, sVar8, sVar1, sVar2);
       }
       if ((sVar8 != 0) &&
          ((pSVar16 == nullptr ||

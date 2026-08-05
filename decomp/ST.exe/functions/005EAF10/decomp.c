@@ -59,7 +59,7 @@ int __thiscall STArtiafactC::GetMessage(STArtiafactC *this,STMessage *message)
             g_currentExceptionFrame = local_60.previous;
             return 0;
           }
-          thunk_FUN_004ad5e0((STT3DSprC *)&local_8->field_01D5);
+          thunk_FUN_004ad5e0((STT3DSprC *)&local_8->vtable_at_1d5);
           g_currentExceptionFrame = local_60.previous;
           return 0;
         case MESS_STSPRGAMEOBJC_0113:
@@ -67,8 +67,7 @@ int __thiscall STArtiafactC::GetMessage(STArtiafactC *this,STMessage *message)
             g_currentExceptionFrame = local_60.previous;
             return 0;
           }
-          /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-          (**(code **)local_8->field_01D5)();
+          (*local_8->vtable_at_1d5->vfunc_00)();
           g_currentExceptionFrame = local_60.previous;
           return 0;
         default:
@@ -83,8 +82,7 @@ int __thiscall STArtiafactC::GetMessage(STArtiafactC *this,STMessage *message)
                                    (g_allPlayers_007FA174,local_8->field_02A3,local_8->field_02AB,
                                     CASE_1), pSVar11 != nullptr)))) {
             thunk_FUN_00492510(pSVar11,(int)this_00->field_0018);
-            /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-            (*(code *)this_00->field_0000->field_00AC)(pSVar11->field_0018);
+            this_00->vfunc_AC((short)pSVar11->field_0018);
           }
           switch(*(undefined4 *)(dVar5 + 0x18)) {
           case 2:
@@ -101,7 +99,7 @@ int __thiscall STArtiafactC::GetMessage(STArtiafactC *this,STMessage *message)
             this_00->field_02E0 = g_playSystem_00802A38->field_00E4 + 0x15;
             iVar19 = this_00->field_02BE;
             iVar18 = 1;
-            uVar10 = thunk_FUN_004ad650((STT3DSprC *)&this_00->field_01D5);
+            uVar10 = thunk_FUN_004ad650((STT3DSprC *)&this_00->vtable_at_1d5);
             thunk_FUN_006377b0(uVar10,iVar18,iVar19,iVar12,iVar8,uVar20);
             g_currentExceptionFrame = local_60.previous;
             return 0;
@@ -116,7 +114,7 @@ int __thiscall STArtiafactC::GetMessage(STArtiafactC *this,STMessage *message)
             this_00->field_030F = *(undefined2 *)(dVar5 + 0xc);
             this_00->field_030D = 1;
             if (-1 < this_00->field_02D6) {
-              thunk_FUN_004ad430((STT3DSprC *)&this_00->field_01D5);
+              thunk_FUN_004ad430((STT3DSprC *)&this_00->vtable_at_1d5);
             }
             sub_005EBCB0(this_00);
             g_currentExceptionFrame = local_60.previous;
@@ -136,8 +134,7 @@ int __thiscall STArtiafactC::GetMessage(STArtiafactC *this,STMessage *message)
           g_currentExceptionFrame = local_60.previous;
           return 0;
         }
-        /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-        iVar8 = (*(code *)local_8->field_0000->field_0124)(*puVar15);
+        iVar8 = local_8->vfunc_124((short)*puVar15);
         if (iVar8 == 0) {
           g_currentExceptionFrame = local_60.previous;
           return 0;
@@ -173,7 +170,7 @@ int __thiscall STArtiafactC::GetMessage(STArtiafactC *this,STMessage *message)
         if (iVar8 == 0) {
           this_00->field_0252 = this_00->field_0252 + -1;
         }
-        thunk_FUN_004ad310((STT3DSprC *)&this_00->field_01D5);
+        thunk_FUN_004ad310((STT3DSprC *)&this_00->vtable_at_1d5);
         if (this_00->field_02E4 == '\0') {
           g_currentExceptionFrame = local_60.previous;
           return 0;
@@ -213,9 +210,7 @@ int __thiscall STArtiafactC::GetMessage(STArtiafactC *this,STMessage *message)
               pSVar17 = nullptr;
             }
             else {
-              pSVar17 = g_worldGrid.cells
-                        [(int)g_worldGrid.planeStride * (int)sVar3 +
-                         (int)g_worldGrid.sizeX * (int)sVar2 + (int)sVar1].objects[0];
+              pSVar17 = STGridAt3D(g_worldGrid, sVar1, sVar2, sVar3).objects[0];
             }
             bVar7 = true;
             if ((pSVar17 == nullptr) &&
@@ -245,9 +240,7 @@ int __thiscall STArtiafactC::GetMessage(STArtiafactC *this,STMessage *message)
                 pSVar17 = nullptr;
               }
               else {
-                pSVar17 = g_worldGrid.cells
-                          [(int)g_worldGrid.planeStride * (int)sVar3 +
-                           (int)g_worldGrid.sizeX * (int)sVar2 + (int)sVar1].objects[0];
+                pSVar17 = STGridAt3D(g_worldGrid, sVar1, sVar2, sVar3).objects[0];
               }
               bVar7 = true;
               if ((pSVar17 == nullptr) &&
@@ -278,7 +271,7 @@ int __thiscall STArtiafactC::GetMessage(STArtiafactC *this,STMessage *message)
             g_currentExceptionFrame = local_60.previous;
             return 0;
           }
-          thunk_FUN_004ad460(&this_00->field_01D5,0);
+          thunk_FUN_004ad460(&this_00->vtable_at_1d5,0);
           this_00->field_02B9 = 1;
           this_00->field_02DE = 0;
           g_currentExceptionFrame = local_60.previous;
@@ -369,9 +362,8 @@ int __thiscall STArtiafactC::GetMessage(STArtiafactC *this,STMessage *message)
     RaiseInternalException(iVar8,0,"E:\\__titans\\nick\\to_artf.cpp",0x1b4);
   }
   return 0xffff;
-/* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
 switchD_005eb627_caseD_2:
-  iVar8 = (*(code *)this_00->field_0000->field_0124)(20000);
+  iVar8 = this_00->vfunc_124(20000);
   if (iVar8 == 0) {
     g_currentExceptionFrame = local_60.previous;
     return 0;
@@ -428,8 +420,7 @@ switchD_005eb5ad_caseD_129:
     this_00->field_02C6 = this_00->field_027F;
   }
   thunk_FUN_005ef5f0((int)this_00);
-  /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-  iVar8 = (*(code *)this_00->field_0000->field_00D8)();
+  iVar8 = this_00->vfunc_D8();
   if (iVar8 == 0) {
     g_currentExceptionFrame = local_60.previous;
     return 0;

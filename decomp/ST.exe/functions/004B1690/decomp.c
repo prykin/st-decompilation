@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 undefined4 __cdecl FUN_004b1690(int param_1,int param_2,int param_3,int param_4,int param_5)
 
@@ -39,16 +41,12 @@ cf_break_loop_004B1816:
                 if (((((sVar7 < g_worldGrid.sizeX) && (-1 < sVar6)) &&
                      ((sVar6 < g_worldGrid.sizeY &&
                       (((-1 < sVar2 && (sVar2 < g_worldGrid.sizeZ)) &&
-                       (g_worldGrid.cells
-                        [(int)sVar2 * (int)g_worldGrid.planeStride +
-                         (int)sVar6 * (int)g_worldGrid.sizeX + (int)sVar7].objects[0] !=
+                       (STGridAt3D(g_worldGrid, sVar7, sVar6, sVar2).objects[0] !=
                         nullptr)))))) || ((sVar7 < 0 || (g_worldGrid.sizeX <= sVar7))))
                    || ((sVar6 < 0 ||
                        (((g_worldGrid.sizeY <= sVar6 || (sVar2 < 0)) ||
                         ((g_worldGrid.sizeZ <= sVar2 ||
-                         (g_pathingGrid.cells
-                          [(int)sVar6 * (int)g_pathingGrid.sizeX +
-                           (int)sVar2 * (int)g_pathingGrid.planeStride + (int)sVar7] != 0))))))))
+                         (STGridAt3D(g_pathingGrid, sVar7, sVar6, sVar2) != 0))))))))
                 goto cf_break_loop_004B1816;
                 iVar3 = iVar3 + 1;
               } while (iVar3 < param_3 + 1);
@@ -88,16 +86,12 @@ cf_break_loop_004B1816:
               if ((-1 < sVar6) &&
                  ((((((sVar4 = (short)iVar5, sVar6 < g_worldGrid.sizeX && (-1 < sVar4)) &&
                      (sVar4 < g_worldGrid.sizeY)) && ((-1 < sVar2 && (sVar2 < g_worldGrid.sizeZ))))
-                   && (g_worldGrid.cells
-                       [(int)sVar4 * (int)g_worldGrid.sizeX +
-                        (int)g_worldGrid.planeStride * (int)sVar2 + (int)sVar6].objects[0] !=
+                   && (STGridAt3D(g_worldGrid, sVar6, sVar4, sVar2).objects[0] !=
                        nullptr)) ||
                   ((((-1 < sVar6 && (sVar6 < g_worldGrid.sizeX)) &&
                     ((-1 < sVar4 &&
                      (((sVar4 < g_worldGrid.sizeY && (-1 < sVar2)) && (sVar2 < g_worldGrid.sizeZ))))
-                    )) && (g_pathingGrid.cells
-                           [(int)sVar4 * (int)g_pathingGrid.sizeX +
-                            (int)g_pathingGrid.planeStride * (int)sVar2 + (int)sVar6] != -1)))))) {
+                    )) && (STGridAt3D(g_pathingGrid, sVar6, sVar4, sVar2) != -1)))))) {
                 local_c = 0;
                 goto LAB_004b199c;
               }

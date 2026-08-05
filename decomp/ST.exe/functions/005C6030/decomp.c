@@ -33,7 +33,7 @@ void __thiscall SettMapTy::CreateCtrls(SettMapTy *this,char param_1)
   undefined4 local_5b0;
   undefined4 local_5ac;
   undefined4 local_5a8;
-  undefined4 local_4ac;
+  ushort *local_4ac;
   int local_4a8;
   undefined4 local_454 [5];
   undefined4 local_440;
@@ -315,19 +315,15 @@ void __thiscall SettMapTy::CreateCtrls(SettMapTy *this,char param_1)
       local_5d8 = DAT_0080995c;
       puVar13 = (byte *)(&DAT_00809960);
       puVar16 = (byte *)(local_61c);
-      for (iVar11 = 8; iVar11 != 0; iVar11 = iVar11 + -1) {
-        *puVar16 = *puVar13;
-        puVar13 = (byte *)(puVar13 + 1);
-        puVar16 = (byte *)(puVar16 + 1);
-      }
+      memmove(puVar16, puVar13, 0x20); /* compiler REP MOVS byte copy */
+      iVar11 = 0;
       StartSystemTy::LoadMapData(g_startSystem_0081176C,this_00->field_1F3F,SVar2);
       DAT_0080995c = local_5d8;
       puVar13 = (byte *)(local_61c);
       puVar16 = (byte *)(&DAT_00809960);
       memmove(puVar16, puVar13, 0x20); /* compiler REP MOVS byte copy */
     }
-    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-    (*(code *)this_00->field_0000->field_0028)();
+    (*this_00->vtable->PrepPlList)((SettMapSTy *)this_00);
   }
 LAB_005c665d:
   if (this_00->field_211D != 0) {

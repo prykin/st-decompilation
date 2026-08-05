@@ -14,8 +14,8 @@ SoundManagerTy * __cdecl CreateSoundManager(void)
   this = (SoundManagerTy *)FUN_006b04d0(0x41);
   if (this != nullptr) {
     sub_006E5FB0(this);
-    *(undefined **)this = &UNK_0079b024;
-    this->field_0038 = 0;
+    this->vtable = &SoundManagerTyVTable;
+    this->field_0038 = CASE_0;
     this->field_0024 = 0;
     this->field_0020 = 0;
     this->field_0039 = -1;
@@ -24,7 +24,7 @@ SoundManagerTy * __cdecl CreateSoundManager(void)
     this->field_002C = 0;
     this->field_0030 = 0;
     this->field_0034 = 0;
-    this->field_0018 = 0;
+    this->field_0018 = nullptr;
     return this;
   }
   return nullptr;

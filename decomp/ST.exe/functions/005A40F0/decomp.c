@@ -17,8 +17,6 @@ FSGSTy::SetLadder(FSGSTy *this,undefined4 param_1,uint param_2,int param_3,undef
   undefined4 *puVar3;
   int iVar4;
   uint uVar5;
-  /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
-  int unaff_EDI;
   InternalExceptionFrame local_6c;
   undefined4 local_28 [4];
   undefined4 local_18;
@@ -60,8 +58,7 @@ FSGSTy::SetLadder(FSGSTy *this,undefined4 param_1,uint param_2,int param_3,undef
         param_4 = (undefined4 *)((int)param_4 + 1);
         puVar3 = (undefined4 *)((int)puVar3 + 1);
       }
-      /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
-      PaintLadder(this_01,unaff_EDI);
+      PaintLadder(this_01);
       memset(local_28, 0, 0x20); /* compiler bulk-zero initialization */
       local_18 = 0x20;
       if ((this_01->field_1EDF == 0) || (local_14 = 1, this_01->field_1A6B == 0)) {

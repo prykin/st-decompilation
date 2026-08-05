@@ -10,9 +10,13 @@
 
    [STReturnSemanticsApplier] ignored_eax_void.
    Evidence: all observed direct callers ignore the return register (ignored=3, used=0), and
-   decompilation contains no value return */
+   decompilation contains no value return
+   [STAbiConsistencyApplier] machine_thiscall_arity target=function:-1: prototype=void __thiscall
+   CheckPlList(SettMapMTy * this) Evidence: every machine RET purges exactly 0 explicit stack bytes;
+   current signature describes 4; removed trailing parameter slots have no listing references;
+   ret_sites=005D0557 RET | 005D059D RET */
 
-void __thiscall SettMapMTy::CheckPlList(SettMapMTy *this,void *param_1)
+void __thiscall SettMapMTy::CheckPlList(SettMapMTy *this)
 
 {
   code *pcVar1;

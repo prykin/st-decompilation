@@ -31,7 +31,7 @@ ST3DSMAPContext::sub_006E2970
   local_10 = param_1;
   local_c = param_2;
   local_8 = param_3;
-  sub_006E25D0(this,&local_20);
+  sub_006E25D0(this,&local_20,&local_10,0.0,0.0,0.0,1);
   *param_4 = (local_20 >> 0x10) + this->field_0020;
   *param_5 = (local_1c >> 0x10) + this->field_0024;
   return;

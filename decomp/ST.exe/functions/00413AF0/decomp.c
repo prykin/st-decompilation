@@ -8,20 +8,16 @@ void FUN_00413af0(void *param_1,DArrayTy *param_2,int param_3,int param_4,int pa
   short sVar2;
   short sVar3;
   int iVar4;
-  undefined1 *puVar5;
-  int iVar6;
-  short *psVar7;
-  int iVar8;
-  undefined2 *puVar9;
+  int *piVar5;
+  undefined1 *puVar6;
+  int iVar7;
+  ushort *puVar8;
+  STGameObjC *pSVar9;
   int iVar10;
   int iVar11;
   uint uVar12;
-  /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
-  int *extraout_EDX;
-  int *piVar13;
-  uint uVar14;
-  byte *puVar15;
-  undefined8 uVar16;
+  uint uVar13;
+  byte *puVar14;
   int local_48;
   int local_40;
   int local_34;
@@ -48,14 +44,14 @@ void FUN_00413af0(void *param_1,DArrayTy *param_2,int param_3,int param_4,int pa
   }
   local_8 = 0;
   Library::MSVCRT::FUN_0072da40();
-  iVar6 = DAT_007f4d34 * DAT_007f4d30 * DAT_007f4d2c + 7;
-  uVar14 = (int)(iVar6 + (iVar6 >> 0x1f & 7U)) >> 3;
+  iVar7 = DAT_007f4d34 * DAT_007f4d30 * DAT_007f4d2c + 7;
+  uVar13 = (int)(iVar7 + (iVar7 >> 0x1f & 7U)) >> 3;
   DAT_007f4d3c = &stack0xffffff84;
   Library::MSVCRT::FUN_0072da40();
-  puVar15 = (byte *)&stack0xffffff84;
-  memset(puVar15, 0, uVar14); /* compiler bulk-zero initialization */
+  puVar14 = (byte *)&stack0xffffff84;
+  memset(puVar14, 0, uVar13); /* compiler bulk-zero initialization */
   local_8 = 0xffffffff;
-  iVar6 = DAT_007f4d30 * DAT_007f4d2c;
+  iVar7 = DAT_007f4d30 * DAT_007f4d2c;
   DAT_007f4d24 = 0;
   DAT_007f4cfc = &stack0xffffff84;
   /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
@@ -64,48 +60,45 @@ void FUN_00413af0(void *param_1,DArrayTy *param_2,int param_3,int param_4,int pa
     DAT_007f4d4c = *(uint *)(*(int *)((int)param_1 + 0x29) + 0xc);
     local_28 = 0;
     DAT_007f4cfc = &stack0xffffff84;
-    puVar5 = &stack0xffffff84;
+    puVar6 = &stack0xffffff84;
     if (0 < (int)DAT_007f4d4c) {
       do {
-        DAT_007f4cfc = puVar5;
+        DAT_007f4cfc = puVar6;
         /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-        iVar8 = *(int *)((int)param_1 + 0x29);
-        if (local_28 < *(uint *)(iVar8 + 0xc)) {
+        iVar11 = *(int *)((int)param_1 + 0x29);
+        if (local_28 < *(uint *)(iVar11 + 0xc)) {
           /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-          psVar7 = (short *)(*(int *)(iVar8 + 8) * local_28 + *(int *)(iVar8 + 0x1c));
+          puVar8 = (ushort *)(*(int *)(iVar11 + 8) * local_28 + *(int *)(iVar11 + 0x1c));
         }
         else {
-          psVar7 = nullptr;
+          puVar8 = nullptr;
         }
-        if (psVar7 == nullptr) break;
-        /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-        if ((*psVar7 != -1) &&
-           (iVar8 = thunk_FUN_00423e70(param_1,CONCAT22((short)((uint)psVar7 >> 0x10),*psVar7)),
-           iVar8 != 0)) {
-          iVar11 = *(int *)(iVar8 + 199);
+        if (puVar8 == nullptr) break;
+        if ((*puVar8 != 0xffff) &&
+           (pSVar9 = thunk_FUN_00423e70(param_1,*puVar8), pSVar9 != nullptr)) {
+          iVar11 = pSVar9->field_00C7;
           if (((iVar11 < 0) ||
-              (((g_pathingGrid.sizeX <= iVar11 || (iVar10 = *(int *)(iVar8 + 0xcb), iVar10 < 0)) ||
+              (((g_pathingGrid.sizeX <= iVar11 || (iVar10 = pSVar9->field_00CB, iVar10 < 0)) ||
                (g_pathingGrid.sizeY <= iVar10)))) ||
-             ((iVar4 = *(int *)(iVar8 + 0xcf), iVar4 < 0 || (g_pathingGrid.sizeZ <= iVar4)))) {
-            sVar1 = *(short *)(iVar8 + 0x47);
+             ((iVar4 = pSVar9->field_00CF, iVar4 < 0 || (g_pathingGrid.sizeZ <= iVar4)))) {
+            sVar1 = pSVar9->field_0047;
             if ((-1 < sVar1) &&
-               (((sVar1 < g_pathingGrid.sizeX && (sVar2 = *(short *)(iVar8 + 0x49), -1 < sVar2)) &&
+               (((sVar1 < g_pathingGrid.sizeX && (sVar2 = pSVar9->field_0049, -1 < sVar2)) &&
                 ((sVar2 < g_pathingGrid.sizeY &&
-                 ((sVar3 = *(short *)(iVar8 + 0x4b), -1 < sVar3 && (sVar3 < g_pathingGrid.sizeZ)))))
-                ))) {
-              uVar12 = sVar3 * iVar6 + sVar2 * DAT_007f4d2c + (int)sVar1 ^ 7;
+                 ((sVar3 = pSVar9->field_004B, -1 < sVar3 && (sVar3 < g_pathingGrid.sizeZ)))))))) {
+              uVar12 = sVar3 * iVar7 + sVar2 * DAT_007f4d2c + (int)sVar1 ^ 7;
               DAT_007f4cfc[(int)uVar12 >> 3] =
                    DAT_007f4cfc[(int)uVar12 >> 3] | '\x01' << (uVar12 & 7);
             }
           }
           else {
-            uVar12 = iVar4 * iVar6 + iVar11 + iVar10 * DAT_007f4d2c ^ 7;
+            uVar12 = iVar4 * iVar7 + iVar11 + iVar10 * DAT_007f4d2c ^ 7;
             DAT_007f4cfc[(int)uVar12 >> 3] = DAT_007f4cfc[(int)uVar12 >> 3] | '\x01' << (uVar12 & 7);
           }
           DAT_007f4d24 = DAT_007f4d24 + 1;
         }
         local_28 = local_28 + 1;
-        puVar5 = DAT_007f4cfc;
+        puVar6 = DAT_007f4cfc;
       } while ((int)local_28 < (int)DAT_007f4d4c);
     }
   }
@@ -121,40 +114,35 @@ void FUN_00413af0(void *param_1,DArrayTy *param_2,int param_3,int param_4,int pa
   if ((*(int *)((int)param_1 + 0x4d) == -2) || (*(int *)((int)param_1 + 0x4d) == -3)) {
     local_48 = 0;
     local_28 = 0;
-    /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
-    piVar13 = extraout_EDX;
     /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
     if (*(short *)((int)param_1 + 0x27) != 0) {
       do {
         if (local_28 < param_2->count) {
           /* ST_PSEUDO[dynamic_array_indexing]: expected DArrayAt<T>(param_2, local_28) (runtime stride) */
-          puVar9 = (undefined2 *)(param_2->elementSize * local_28 + (int)param_2->data);
+          puVar8 = (ushort *)(param_2->elementSize * local_28 + (int)param_2->data);
         }
         else {
-          puVar9 = nullptr;
+          puVar8 = nullptr;
         }
-        /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-        uVar16 = thunk_FUN_00423e70(param_1,CONCAT22((short)((uint)piVar13 >> 0x10),*puVar9));
-        piVar13 = (int *)((ulonglong)uVar16 >> 0x20);
-        iVar8 = (int)uVar16;
-        if (iVar8 != 0) {
-          *(undefined4 *)(iVar8 + 0xb7) = 0;
+        pSVar9 = thunk_FUN_00423e70(param_1,*puVar8);
+        if (pSVar9 != nullptr) {
+          pSVar9->field_00B7 = 0;
           if (0 < DAT_007f4d24) {
-            iVar11 = *(int *)(iVar8 + 199);
+            iVar11 = pSVar9->field_00C7;
             if (((((iVar11 < 0) || (g_pathingGrid.sizeX <= iVar11)) ||
-                 (iVar10 = *(int *)(iVar8 + 0xcb), iVar10 < 0)) ||
-                ((g_pathingGrid.sizeY <= iVar10 || (iVar4 = *(int *)(iVar8 + 0xcf), iVar4 < 0)))) ||
+                 (iVar10 = pSVar9->field_00CB, iVar10 < 0)) ||
+                ((g_pathingGrid.sizeY <= iVar10 || (iVar4 = pSVar9->field_00CF, iVar4 < 0)))) ||
                (g_pathingGrid.sizeZ <= iVar4)) {
-              sVar1 = *(short *)(iVar8 + 0x47);
+              sVar1 = pSVar9->field_0047;
               if (((-1 < sVar1) && (sVar1 < g_pathingGrid.sizeX)) &&
-                 ((sVar2 = *(short *)(iVar8 + 0x49), -1 < sVar2 &&
-                  (((sVar2 < g_pathingGrid.sizeY && (sVar3 = *(short *)(iVar8 + 0x4b), -1 < sVar3))
-                   && (sVar3 < g_pathingGrid.sizeZ)))))) {
-                local_20 = sVar2 * DAT_007f4d2c + sVar3 * iVar6 + (int)sVar1;
+                 ((sVar2 = pSVar9->field_0049, -1 < sVar2 &&
+                  (((sVar2 < g_pathingGrid.sizeY && (sVar3 = pSVar9->field_004B, -1 < sVar3)) &&
+                   (sVar3 < g_pathingGrid.sizeZ)))))) {
+                local_20 = sVar2 * DAT_007f4d2c + sVar3 * iVar7 + (int)sVar1;
               }
             }
             else {
-              local_20 = iVar4 * iVar6 + iVar11 + iVar10 * DAT_007f4d2c;
+              local_20 = iVar4 * iVar7 + iVar11 + iVar10 * DAT_007f4d2c;
             }
             if (((byte)DAT_007f4cfc[(int)(local_20 ^ 7) >> 3] >> ((local_20 ^ 7) & 7) & 1) != 0) {
               DAT_007f4cfc[(int)(local_20 ^ 7) >> 3] =
@@ -163,27 +151,27 @@ void FUN_00413af0(void *param_1,DArrayTy *param_2,int param_3,int param_4,int pa
             }
           }
           /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-          piVar13 = *(int **)((int)param_1 + 0x59);
+          piVar5 = *(int **)((int)param_1 + 0x59);
           iVar11 = local_48;
-          if ((uint)*(ushort *)(iVar8 + 0x32) != piVar13[local_48 * 4 + 6]) {
+          if ((uint)(ushort)pSVar9->field_0032 != piVar5[local_48 * 4 + 6]) {
             iVar10 = local_48;
             do {
               iVar10 = iVar10 + 1;
-              if (*piVar13 <= iVar10) {
+              if (*piVar5 <= iVar10) {
                 iVar10 = 0;
               }
-              iVar11 = *piVar13;
+              iVar11 = *piVar5;
             } while ((iVar10 != local_48) &&
-                    (iVar11 = iVar10, (uint)*(ushort *)(iVar8 + 0x32) != piVar13[iVar10 * 4 + 6]));
+                    (iVar11 = iVar10, (uint)(ushort)pSVar9->field_0032 != piVar5[iVar10 * 4 + 6]));
           }
-          if (iVar11 < *piVar13) {
-            DAT_007f4d04[DAT_007f4d40 * 7] = (int)*(short *)(iVar8 + 0x47);
-            local_30 = local_30 + 2 + *(short *)(iVar8 + 0x47) * 4;
-            DAT_007f4d04[DAT_007f4d40 * 7 + 1] = (int)*(short *)(iVar8 + 0x49);
-            local_34 = local_34 + 2 + *(short *)(iVar8 + 0x49) * 4;
-            DAT_007f4d04[DAT_007f4d40 * 7 + 2] = (int)*(short *)(iVar8 + 0x4b);
-            local_40 = local_40 + 2 + *(short *)(iVar8 + 0x4b) * 4;
-            DAT_007f4d04[DAT_007f4d40 * 7 + 6] = local_28;
+          if (iVar11 < *piVar5) {
+            *(int *)((int)DAT_007f4d04 + DAT_007f4d40 * 0x1c) = (int)pSVar9->field_0047;
+            local_30 = local_30 + 2 + pSVar9->field_0047 * 4;
+            *(int *)((int)DAT_007f4d04 + DAT_007f4d40 * 0x1c + 4) = (int)pSVar9->field_0049;
+            local_34 = local_34 + 2 + pSVar9->field_0049 * 4;
+            *(int *)((int)DAT_007f4d04 + DAT_007f4d40 * 0x1c + 8) = (int)pSVar9->field_004B;
+            local_40 = local_40 + 2 + pSVar9->field_004B * 4;
+            *(uint *)((int)DAT_007f4d04 + DAT_007f4d40 * 0x1c + 0x18) = local_28;
             /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
             if (*(int *)((int)param_1 + 0x4d) == -3) {
               *(undefined4 *)(DAT_007f4d3c + DAT_007f4d40 * 0x14) =
@@ -194,39 +182,38 @@ void FUN_00413af0(void *param_1,DArrayTy *param_2,int param_3,int param_4,int pa
                    *(undefined4 *)(*(int *)((int)param_1 + 0x59) + 0x14 + iVar11 * 0x10);
             }
             else {
-              /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-              DAT_007f4d04[DAT_007f4d40 * 7 + 3] =
-                   *(int *)(*(int *)((int)param_1 + 0x59) + 0xc + iVar11 * 0x10);
-              /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-              DAT_007f4d04[DAT_007f4d40 * 7 + 4] =
-                   *(int *)((iVar11 + 1) * 0x10 + *(int *)((int)param_1 + 0x59));
-              /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-              DAT_007f4d04[DAT_007f4d40 * 7 + 5] =
-                   *(int *)(*(int *)((int)param_1 + 0x59) + 0x14 + iVar11 * 0x10);
+              *(undefined4 *)((int)DAT_007f4d04 + DAT_007f4d40 * 0x1c + 0xc) =
+                   *(undefined4 *)(*(int *)((int)param_1 + 0x59) + 0xc + iVar11 * 0x10);
+              *(undefined4 *)((int)DAT_007f4d04 + DAT_007f4d40 * 0x1c + 0x10) =
+                   *(undefined4 *)((iVar11 + 1) * 0x10 + *(int *)((int)param_1 + 0x59));
+              *(undefined4 *)((int)DAT_007f4d04 + DAT_007f4d40 * 0x1c + 0x14) =
+                   *(undefined4 *)(*(int *)((int)param_1 + 0x59) + 0x14 + iVar11 * 0x10);
             }
             local_48 = iVar11 + 1;
             /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-            piVar13 = *(int **)((int)param_1 + 0x59);
-            if (*piVar13 <= local_48) {
+            if (**(int **)((int)param_1 + 0x59) <= local_48) {
               local_48 = 0;
             }
             DAT_007f4d40 = DAT_007f4d40 + 1;
           }
           else {
             DAT_007f4cf8 = DAT_007f4cf8 + 1;
-            /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-            DAT_007f4d04[((uint)*(ushort *)((int)param_1 + 0x27) - DAT_007f4cf8) * 7] =
-                 (int)*(short *)(iVar8 + 0x47);
-            /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-            DAT_007f4d04[((uint)*(ushort *)((int)param_1 + 0x27) - DAT_007f4cf8) * 7 + 1] =
-                 (int)*(short *)(iVar8 + 0x49);
-            /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-            DAT_007f4d04[((uint)*(ushort *)((int)param_1 + 0x27) - DAT_007f4cf8) * 7 + 2] =
-                 (int)*(short *)(iVar8 + 0x4b);
-            piVar13 = DAT_007f4d04;
-            /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-            DAT_007f4d04[((uint)*(ushort *)((int)param_1 + 0x27) - DAT_007f4cf8) * 7 + 6] = local_28
-            ;
+            *(int *)((int)DAT_007f4d04 +
+                    /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
+                    ((uint)*(ushort *)((int)param_1 + 0x27) - DAT_007f4cf8) * 0x1c) =
+                 (int)pSVar9->field_0047;
+            *(int *)((int)DAT_007f4d04 +
+                    /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
+                    ((uint)*(ushort *)((int)param_1 + 0x27) - DAT_007f4cf8) * 0x1c + 4) =
+                 (int)pSVar9->field_0049;
+            *(int *)((int)DAT_007f4d04 +
+                    /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
+                    ((uint)*(ushort *)((int)param_1 + 0x27) - DAT_007f4cf8) * 0x1c + 8) =
+                 (int)pSVar9->field_004B;
+            *(uint *)((int)DAT_007f4d04 +
+                     /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
+                     ((uint)*(ushort *)((int)param_1 + 0x27) - DAT_007f4cf8) * 0x1c + 0x18) =
+                 local_28;
           }
         }
         local_28 = local_28 + 1;
@@ -236,54 +223,46 @@ void FUN_00413af0(void *param_1,DArrayTy *param_2,int param_3,int param_4,int pa
   }
   else {
     local_28 = 0;
-    /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
-    piVar13 = extraout_EDX;
     /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
     if (*(short *)((int)param_1 + 0x27) != 0) {
       do {
         if (local_28 < param_2->count) {
           /* ST_PSEUDO[dynamic_array_indexing]: expected DArrayAt<T>(param_2, local_28) (runtime stride) */
-          puVar9 = (undefined2 *)(param_2->elementSize * local_28 + (int)param_2->data);
+          puVar8 = (ushort *)(param_2->elementSize * local_28 + (int)param_2->data);
         }
         else {
-          puVar9 = nullptr;
+          puVar8 = nullptr;
         }
-        /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-        uVar16 = thunk_FUN_00423e70(param_1,CONCAT22((short)((uint)piVar13 >> 0x10),*puVar9));
-        piVar13 = (int *)((ulonglong)uVar16 >> 0x20);
-        iVar8 = (int)uVar16;
-        if (iVar8 != 0) {
-          *(undefined4 *)(iVar8 + 0xb7) = 0;
-          DAT_007f4d04[DAT_007f4d40 * 7] = (int)*(short *)(iVar8 + 0x47);
-          local_30 = local_30 + 2 + *(short *)(iVar8 + 0x47) * 4;
-          DAT_007f4d04[DAT_007f4d40 * 7 + 1] = (int)*(short *)(iVar8 + 0x49);
-          local_34 = local_34 + 2 + *(short *)(iVar8 + 0x49) * 4;
-          DAT_007f4d04[DAT_007f4d40 * 7 + 2] = (int)*(short *)(iVar8 + 0x4b);
-          local_40 = local_40 + 2 + *(short *)(iVar8 + 0x4b) * 4;
-          piVar13 = (int *)(DAT_007f4d40 * 7);
-          DAT_007f4d04[DAT_007f4d40 * 7 + 6] = local_28;
+        pSVar9 = thunk_FUN_00423e70(param_1,*puVar8);
+        if (pSVar9 != nullptr) {
+          pSVar9->field_00B7 = 0;
+          *(int *)((int)DAT_007f4d04 + DAT_007f4d40 * 0x1c) = (int)pSVar9->field_0047;
+          local_30 = local_30 + 2 + pSVar9->field_0047 * 4;
+          *(int *)((int)DAT_007f4d04 + DAT_007f4d40 * 0x1c + 4) = (int)pSVar9->field_0049;
+          local_34 = local_34 + 2 + pSVar9->field_0049 * 4;
+          *(int *)((int)DAT_007f4d04 + DAT_007f4d40 * 0x1c + 8) = (int)pSVar9->field_004B;
+          local_40 = local_40 + 2 + pSVar9->field_004B * 4;
+          *(uint *)((int)DAT_007f4d04 + DAT_007f4d40 * 0x1c + 0x18) = local_28;
           if (0 < DAT_007f4d24) {
-            iVar11 = *(int *)(iVar8 + 199);
+            iVar11 = pSVar9->field_00C7;
             if (((iVar11 < 0) || (g_pathingGrid.sizeX <= iVar11)) ||
-               ((iVar10 = *(int *)(iVar8 + 0xcb), iVar10 < 0 ||
-                (((g_pathingGrid.sizeY <= iVar10 || (iVar4 = *(int *)(iVar8 + 0xcf), iVar4 < 0)) ||
+               ((iVar10 = pSVar9->field_00CB, iVar10 < 0 ||
+                (((g_pathingGrid.sizeY <= iVar10 || (iVar4 = pSVar9->field_00CF, iVar4 < 0)) ||
                  (g_pathingGrid.sizeZ <= iVar4)))))) {
-              sVar1 = *(short *)(iVar8 + 0x47);
+              sVar1 = pSVar9->field_0047;
               if (((-1 < sVar1) && (sVar1 < g_pathingGrid.sizeX)) &&
-                 ((sVar2 = *(short *)(iVar8 + 0x49), -1 < sVar2 &&
-                  (((sVar2 < g_pathingGrid.sizeY && (sVar3 = *(short *)(iVar8 + 0x4b), -1 < sVar3))
-                   && (sVar3 < g_pathingGrid.sizeZ)))))) {
-                local_20 = sVar2 * DAT_007f4d2c + sVar3 * iVar6 + (int)sVar1;
+                 ((sVar2 = pSVar9->field_0049, -1 < sVar2 &&
+                  (((sVar2 < g_pathingGrid.sizeY && (sVar3 = pSVar9->field_004B, -1 < sVar3)) &&
+                   (sVar3 < g_pathingGrid.sizeZ)))))) {
+                local_20 = sVar2 * DAT_007f4d2c + sVar3 * iVar7 + (int)sVar1;
               }
             }
             else {
-              local_20 = iVar4 * iVar6 + iVar11 + iVar10 * DAT_007f4d2c;
+              local_20 = iVar4 * iVar7 + iVar11 + iVar10 * DAT_007f4d2c;
             }
-            piVar13 = (int *)(local_20 ^ 7);
-            if (((byte)DAT_007f4cfc[(int)piVar13 >> 3] >> ((uint)piVar13 & 7) & 1) != 0) {
-              piVar13 = (int *)(local_20 ^ 7);
-              DAT_007f4cfc[(int)piVar13 >> 3] =
-                   DAT_007f4cfc[(int)piVar13 >> 3] & ~('\x01' << ((uint)piVar13 & 7));
+            if (((byte)DAT_007f4cfc[(int)(local_20 ^ 7) >> 3] >> ((local_20 ^ 7) & 7) & 1) != 0) {
+              DAT_007f4cfc[(int)(local_20 ^ 7) >> 3] =
+                   DAT_007f4cfc[(int)(local_20 ^ 7) >> 3] & ~('\x01' << ((local_20 ^ 7) & 7));
               DAT_007f4d24 = DAT_007f4d24 + -1;
             }
           }
@@ -299,10 +278,10 @@ void FUN_00413af0(void *param_1,DArrayTy *param_2,int param_3,int param_4,int pa
   }
   DAT_007f4d20 = DAT_007f4d40;
   if (0 < DAT_007f4d40) {
-    iVar6 = DAT_007f4d40 / 2;
-    DAT_007f4d0c = (iVar6 + local_30) / DAT_007f4d40;
-    DAT_007f4d10 = (local_34 + iVar6) / DAT_007f4d40;
-    DAT_007f4d1c = (iVar6 + local_40) / DAT_007f4d40;
+    iVar7 = DAT_007f4d40 / 2;
+    DAT_007f4d0c = (iVar7 + local_30) / DAT_007f4d40;
+    DAT_007f4d10 = (local_34 + iVar7) / DAT_007f4d40;
+    DAT_007f4d1c = (iVar7 + local_40) / DAT_007f4d40;
     DAT_007f4d08 = FUN_006ad0b0(DAT_007f4d0c >> 2,DAT_007f4d10 >> 2,param_3,param_4);
     if (DAT_007f4d08 == 0x7f) {
       DAT_007f4d08 = 0;
@@ -311,11 +290,11 @@ void FUN_00413af0(void *param_1,DArrayTy *param_2,int param_3,int param_4,int pa
   /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
   if (((*(int *)((int)param_1 + 0x4d) != 0) && ((*(byte *)((int)param_1 + 0x49) & 1) == 0)) &&
      (DAT_007f4d4c == *(ushort *)((int)param_1 + 0x27))) {
-    iVar6 = FUN_006db910(DAT_007f4d0c,DAT_007f4d10,param_3 * 4 + 2,param_4 * 4 + 2);
-    iVar6 = ((iVar6 * 4 + 0x2d) / 0x5a) * 0x5a;
-    iVar6 = (int)(iVar6 + (iVar6 >> 0x1f & 3U)) >> 2;
-    *(int *)((int)param_1 + 0x55) = iVar6;
-    if (iVar6 == 0x168) {
+    iVar7 = FUN_006db910(DAT_007f4d0c,DAT_007f4d10,param_3 * 4 + 2,param_4 * 4 + 2);
+    iVar7 = ((iVar7 * 4 + 0x2d) / 0x5a) * 0x5a;
+    iVar7 = (int)(iVar7 + (iVar7 >> 0x1f & 3U)) >> 2;
+    *(int *)((int)param_1 + 0x55) = iVar7;
+    if (iVar7 == 0x168) {
       *(undefined4 *)((int)param_1 + 0x55) = 0;
     }
   }
@@ -324,8 +303,8 @@ void FUN_00413af0(void *param_1,DArrayTy *param_2,int param_3,int param_4,int pa
   /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
   DAT_007f4d38 = FUN_006db6d0(*(int *)((int)param_1 + 0x55));
   /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-  iVar6 = *(int *)((int)param_1 + 0x4d);
-  switch(iVar6) {
+  iVar7 = *(int *)((int)param_1 + 0x4d);
+  switch(iVar7) {
   /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
   case 1:
     thunk_FUN_0040e0f0(param_3,param_4,param_5,0,*(int *)((int)param_1 + 0x51));
@@ -343,7 +322,7 @@ void FUN_00413af0(void *param_1,DArrayTy *param_2,int param_3,int param_4,int pa
   case 4:
   case 5:
     thunk_FUN_00411e50(param_3,param_4,param_5,0,*(int *)((int)param_1 + 0x51),
-                       *(uint *)((int)param_1 + 0x55),(uint)(iVar6 == 4));
+                       *(uint *)((int)param_1 + 0x55),(uint)(iVar7 == 4));
     break;
   /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
   case -10:
@@ -351,66 +330,67 @@ void FUN_00413af0(void *param_1,DArrayTy *param_2,int param_3,int param_4,int pa
     break;
   /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
   default:
-    iVar6 = *(int *)((int)param_1 + 0x51);
+    iVar7 = *(int *)((int)param_1 + 0x51);
     goto LAB_0041463f;
   case -3:
   case -2:
     if (DAT_007f4d20 < 1) {
-      iVar6 = 0;
+      iVar7 = 0;
     }
     else {
       /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-      iVar6 = thunk_FUN_00412960(param_3,param_4,param_5,0,*(int *)((int)param_1 + 0x55),
+      iVar7 = thunk_FUN_00412960(param_3,param_4,param_5,0,*(int *)((int)param_1 + 0x55),
                                  *(int *)((int)param_1 + 0x51),
                                  *(AnonShape_00412960_B35D15BC **)((int)param_1 + 0x59),
-                                 (uint)(iVar6 == -2));
+                                 (uint)(iVar7 == -2));
     }
-    if ((iVar6 != 0) || (DAT_007f4cf8 < 1)) break;
+    if ((iVar7 != 0) || (DAT_007f4cf8 < 1)) break;
     /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-    DAT_007f4d48 = DAT_007f4d04 + ((uint)*(ushort *)((int)param_1 + 0x27) - DAT_007f4cf8) * 7;
+    DAT_007f4d48 = (void *)((int)DAT_007f4d04 +
+                           ((uint)*(ushort *)((int)param_1 + 0x27) - DAT_007f4cf8) * 0x1c);
     DAT_007f4d20 = DAT_007f4cf8;
     /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-    iVar6 = *(int *)((int)param_1 + 0x55);
-    if ((iVar6 < 0x152) && (0x17 < iVar6)) {
-      if (iVar6 < 0x125) {
-        if (iVar6 < 0xf8) {
-          if (iVar6 < 0xcb) {
-            if (iVar6 < 0x9e) {
-              if (iVar6 < 0x71) {
-                DAT_007f4d08 = (0x43 < iVar6) + 1;
-                iVar6 = 0;
+    iVar7 = *(int *)((int)param_1 + 0x55);
+    if ((iVar7 < 0x152) && (0x17 < iVar7)) {
+      if (iVar7 < 0x125) {
+        if (iVar7 < 0xf8) {
+          if (iVar7 < 0xcb) {
+            if (iVar7 < 0x9e) {
+              if (iVar7 < 0x71) {
+                DAT_007f4d08 = (0x43 < iVar7) + 1;
+                iVar7 = 0;
               }
               else {
                 DAT_007f4d08 = 3;
-                iVar6 = 0;
+                iVar7 = 0;
               }
             }
             else {
               DAT_007f4d08 = 4;
-              iVar6 = 0;
+              iVar7 = 0;
             }
           }
           else {
             DAT_007f4d08 = 5;
-            iVar6 = 0;
+            iVar7 = 0;
           }
         }
         else {
           DAT_007f4d08 = 6;
-          iVar6 = 0;
+          iVar7 = 0;
         }
       }
       else {
         DAT_007f4d08 = 7;
-        iVar6 = 0;
+        iVar7 = 0;
       }
     }
     else {
       DAT_007f4d08 = 0;
-      iVar6 = 0;
+      iVar7 = 0;
     }
 LAB_0041463f:
-    thunk_FUN_00413050(param_3,param_4,param_5,0,iVar6);
+    thunk_FUN_00413050(param_3,param_4,param_5,0,iVar7);
   }
   *(uint *)((int)param_1 + 0x49) = *(uint *)((int)param_1 + 0x49) & 0xfffffffe;
   ExceptionList = local_14;

@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* [STAbiConsistencyApplier] stack_parameter_width: parameter=/short Evidence: entry-use
    width=/short; unmasked_dword_reads=0; evidence=0061B89C MOVSX EAX,word ptr [EBP + 0x8]
@@ -48,9 +50,7 @@ STJumpMineC::sub_0061B340
         if (((((param_1 < 0) || (g_worldGrid.sizeX <= param_1)) || (param_2 < 0)) ||
             ((g_worldGrid.sizeY <= param_2 || (sVar12 < 0)))) ||
            ((g_worldGrid.sizeZ <= sVar12 ||
-            (pSVar4 = g_worldGrid.cells
-                      [(int)g_worldGrid.planeStride * (int)sVar12 +
-                       (int)g_worldGrid.sizeX * (int)param_2 + (int)param_1].objects[0],
+            (pSVar4 = STGridAt3D(g_worldGrid, param_1, param_2, sVar12).objects[0],
             pSVar4 == nullptr)))) {
           ST3DSMAPContext::sub_006E3310
                     (g_sT3DSMAPContext_00807598,
@@ -207,9 +207,7 @@ LAB_0061b627:
       if (g_worldGrid.sizeZ <= sVar12) {
         return local_8;
       }
-      pSVar4 = g_worldGrid.cells
-               [(int)g_worldGrid.planeStride * (int)sVar12 + (int)g_worldGrid.sizeX * (int)param_2 +
-                (int)param_1].objects[0];
+      pSVar4 = STGridAt3D(g_worldGrid, param_1, param_2, sVar12).objects[0];
       if (pSVar4 == nullptr) {
         return local_8;
       }

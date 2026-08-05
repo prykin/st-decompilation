@@ -30,9 +30,7 @@ ST3DSMAPContext::sub_006DBD20
   int local_3c;
   int local_30;
   int local_2c;
-  undefined4 local_20;
-  undefined4 local_1c;
-  undefined4 local_18;
+  float local_20 [3];
   double local_14;
   double local_c;
 
@@ -78,11 +76,11 @@ ST3DSMAPContext::sub_006DBD20
   sub_006DD610(param_1,(-(uint)(param_1->field_0124 != 1) & 0xfffffffc) + 4,param_1->field_0098,
                param_1->field_00A0);
   if ((param_1->field_0124 == 0) || (param_1->field_0124 == 10)) {
-    local_20 = 0;
-    local_1c = 0;
-    local_18 = 0;
-    sub_006E25D0(param_1,&local_40);
-    sub_006E25D0(param_1,&local_30);
+    local_20[0] = 0.0;
+    local_20[1] = 0.0;
+    local_20[2] = 0.0;
+    sub_006E25D0(param_1,&local_40,local_20,0.0,0.0,0.0,1);
+    sub_006E25D0(param_1,&local_30,local_20,0.0,0.0,1.0,1);
     param_1->field_0108 = local_2c - local_3c;
   }
   param_1->field_02D8 = 1;

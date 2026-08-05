@@ -110,9 +110,11 @@ record, and uses allocation-size/matched-constructor evidence to recover concret
 `CreateOwner` functions without guessing from code similarity. Shared factory
 targets are applied once, and manual names or prototypes are never replaced.
 
-The exporter also normalizes proven terminal `INT3` artifacts and compiler
-bulk-zero loops (`REP STOS*`) into standalone `STDebugBreak`/`memset` source, and
-writes `pseudocode_idioms.jsonl` for forms that Ghidra cannot
+The exporter also normalizes proven terminal `INT3` artifacts, compiler
+bulk-zero loops (`REP STOS*`), exact fixed `REP MOVS` copies, and recovered
+three-dimensional row-major grid indexing into standalone
+`STDebugBreak`/`memset`/`memmove`/`STGridAt3D` source. It writes
+`pseudocode_idioms.jsonl` for forms that Ghidra cannot
 reliably spell as structured C (packed/unaligned fields, runtime-stride arrays,
 flat global-record arithmetic, raw indirect calls, and residual ABI artifacts).
 Physical argument-slot reuse is catalogued separately so a later source

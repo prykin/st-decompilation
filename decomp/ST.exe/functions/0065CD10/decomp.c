@@ -77,12 +77,9 @@ AllocationRecord_0065CD10 * __cdecl EventDataPack(AllocationRecord_0065CD10 *par
     pAVar3 = Library::DKW::LIB::MemAllocClear(local_c + 0x49fU);
     pAVar4 = param_1;
     pAVar11 = pAVar3;
-    for (iVar2 = 0x127; iVar2 != 0; iVar2 = iVar2 + -1) {
-      *(undefined4 *)pAVar11 = *(undefined4 *)pAVar4;
-      pAVar4 = (AllocationRecord_0065CD10 *)((int)&pAVar4->field_0001 + 3);
-      pAVar11 = (AnonShape_0065CD10_CB9334E9 *)&pAVar11->field_0x4;
-    }
-    *(undefined2 *)pAVar11 = *(undefined2 *)pAVar4;
+    memmove(pAVar11, pAVar4, 0x49e); /* compiler REP MOVS byte copy */
+    pAVar11 = (AnonShape_0065CD10_CB9334E9 *)((byte *)pAVar11 + 0x49c);
+    pAVar4 = (AllocationRecord_0065CD10 *)((byte *)pAVar4 + 0x49c);
     pAVar11->field_0x2 = *(undefined1 *)((int)&pAVar4->field_0001 + 1);
     uVar6 = 0;
     *(uint *)&pAVar3->field_0x1 = *param_2;

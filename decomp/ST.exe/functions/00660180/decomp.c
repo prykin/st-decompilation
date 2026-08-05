@@ -65,7 +65,7 @@ SubmarineTitans::Recovered::HiddenThis::AnonReceiver_00660180::FUN_00660180
       if (pSVar3 == nullptr) {
         return 0xffffffff;
       }
-      pSVar3->sub_00498D20(2,local_34);
+      pSVar3->sub_00498D20(2,(short)local_34);
       return 0;
     }
   }
@@ -104,7 +104,7 @@ SubmarineTitans::Recovered::HiddenThis::AnonReceiver_00660180::FUN_00660180
               (-1,g_overwriteContext_007ED77C,"E:\\__titans\\ai\\ai_flt.cpp",0x467);
   }
   else {
-    pSVar3->sub_00498D20(6,&local_1c);
+    pSVar3->sub_00498D20(6,(short)&local_1c);
   }
   if (array != nullptr) {
     DArrayDestroy(array);

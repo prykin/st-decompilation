@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* [STPrototypeApplier] Propagated return.
    Evidence: 004952E0 returns return of FUN_004b7d50 @ 004953DE
@@ -23,9 +25,7 @@ bool __thiscall STBoatC::sub_004952E0(STBoatC *this)
   if (((((-1 < sVar1) && (sVar1 < g_worldGrid.sizeX)) && (-1 < sVar3)) &&
       ((sVar3 < g_worldGrid.sizeY && (-1 < sVar2)))) &&
      ((sVar2 < g_worldGrid.sizeZ &&
-      ((pSVar5 = g_worldGrid.cells
-                 [(int)g_worldGrid.planeStride * (int)sVar2 + (int)g_worldGrid.sizeX * (int)sVar3 +
-                  (int)sVar1].objects[0], pSVar5 != nullptr &&
+      ((pSVar5 = STGridAt3D(g_worldGrid, sVar1, sVar3, sVar2).objects[0], pSVar5 != nullptr &&
        (pSVar5->value_20 == 1000)))))) {
     thunk_FUN_004b7d50(pSVar5,this);
   }
@@ -36,9 +36,7 @@ bool __thiscall STBoatC::sub_004952E0(STBoatC *this)
   if ((((-1 < (short)uVar4) && ((short)uVar4 < g_worldGrid.sizeX)) && (-1 < sVar2)) &&
      (((sVar2 < g_worldGrid.sizeY && (-1 < sVar1)) && (sVar1 < g_worldGrid.sizeZ)))) {
     uVar7 = (uint)(short)uVar4;
-    pSVar5 = g_worldGrid.cells
-             [(int)g_worldGrid.planeStride * (int)sVar1 + (int)g_worldGrid.sizeX * (int)sVar2 +
-              uVar7].objects[0];
+    pSVar5 = STGridAt3D(g_worldGrid, uVar7, sVar2, sVar1).objects[0];
     if ((pSVar5 != nullptr) && (pSVar5->value_20 == 1000)) {
       bVar6 = thunk_FUN_004b7d50(pSVar5,this);
       uVar7 = (uint)bVar6;

@@ -101,12 +101,8 @@ function_address	function	parameter_ordinal	parameter_name	parameter_type	storag
 0044E980	STBoatC::GetVisualInfo	3	param_4	pointer:/undefined4	Stack[0x10]:4	0x14	0	0	100	1	0	0	0	2	0	0044E983 incoming load: MOV EAX,dword ptr [EBP + 0x14] | 0044E993 pointer-like dereference: MOV dword ptr [EAX],ECX | 0044E9D4 pointer-like dereference: MOV dword ptr [EAX],0x0
 0044E980	STBoatC::GetVisualInfo	5	param_6	pointer:/undefined1	Stack[0x18]:4	0x18	0	0	101	1	1	0	0	1	0	0044E98C incoming load: MOV EDX,dword ptr [EBP + 0x18] | 0044E998 pointer-like dereference: MOV byte ptr [EDX],0x0 | 0044EBFA scalar operation: DEC EDI
 0044E980	STBoatC::GetVisualInfo	5	param_6	pointer:/undefined1	Stack[0x18]:4	0x1c	0	0	100	1	0	0	0	1	0	0044E995 incoming load: MOV ECX,dword ptr [EBP + 0x1c] | 0044E99F pointer-like dereference: MOV byte ptr [ECX],0x1d
-0045FD30	STBoatC::StopMove	1	param_1	pointer:/void	Stack[0x4]:4	0x4	0	0	0	0	0	0	0	0	0	-
-0045FD30	STBoatC::StopMove	1	param_1	pointer:/void	Stack[0x4]:4	0x8	0	0	0	0	0	0	0	0	0	-
 0047D080	STBoatC::Annih	1	param_1	pointer:/undefined4	Stack[0x4]:4	0x4	0	0	0	0	0	0	0	0	0	-
 0047D080	STBoatC::Annih	1	param_1	pointer:/undefined4	Stack[0x4]:4	0x8	0	0	1100	1	0	0	0	0	1	0047D086 incoming load: MOV EAX,dword ptr [EBP + 0x8] | 0047D3A5 first slot write: MOV dword ptr [EBP + 0x8],EAX
-0047FAD0	STBoatC::BackDismant	3	param_3	pointer:/void	Stack[0xc]:4	0xc	0	0	0	0	0	0	0	0	0	-
-0047FAD0	STBoatC::BackDismant	3	param_3	pointer:/void	Stack[0xc]:4	0x10	0	0	0	0	0	0	0	0	0	-
 00486B60	FUN_00486b60	1	param_1	pointer:/undefined1	Stack[0x4]:4	0x4	0	0	0	0	0	0	0	0	0	-
 00486B60	FUN_00486b60	1	param_1	pointer:/undefined1	Stack[0x4]:4	0x8	0	0	103	1	3	0	0	29	0	00486B68 incoming load: MOV ESI,dword ptr [EBP + 0x8] | 00486B6E pointer-like dereference: MOV byte ptr [ESI],0x1 | 00486B7D pointer-like dereference: MOV byte ptr [ESI + 0x1],AL | 00486B82 pointer-like dereference: MOV byte ptr [ESI + 0x1],BL | 00486B87 pointer-like dereference: MOV byte ptr [ESI + 0x2],0x1 | 00486B94 pointer-like dereference: MOV byte ptr [ESI + 0x1d],BL | 00486B99 pointer-like dereference: MOV byte ptr [ESI + 0x1d],0x1 | 00486BA4 pointer-like dereference: MOV byte ptr [ESI + 0x1b],AL | 00486BB1 pointer-like dereference: MOV byte ptr [ESI + 0x1c],AL | 00486BBA pointer-like dereference: MOV dword ptr [ESI + 0x3],ECX | 00486BCF pointer-like dereference: MOV byte ptr [ESI + 0x7],AL | 00486BDB pointer-like dereference: MOV dword ptr [ESI + 0x8],EAX | 00486BDE scalar operation: LEA EDX,[ESI + 0xc] | 00486C50 pointer-like dereference: MOV dword ptr [ESI + 0x1e],EAX | 00486C67 pointer-like dereference: MOV byte ptr [ESI + 0x22],BL | 00486C6F pointer-like dereference: MOV byte ptr [ESI + 0x23],AL
 00486E20	FUN_00486e20	1	param_1	pointer:/undefined4	Stack[0x4]:4	0x4	0	0	0	0	0	0	0	0	0	-
@@ -115,8 +111,6 @@ function_address	function	parameter_ordinal	parameter_name	parameter_type	storag
 00488D10	FUN_00488d10	1	param_1	pointer:/undefined4	Stack[0x4]:4	0x8	0	0	101	1	1	0	0	37	0	00488D13 incoming load: MOV EAX,dword ptr [EBP + 0x8] | 00488D1C pointer-like dereference: MOV dword ptr [ESI],EDX | 00488D1E pointer-like dereference: MOV dword ptr [ESI + 0x4],EDX | 00488D21 pointer-like dereference: MOV dword ptr [ESI + 0x8],EDX | 00488D24 pointer-like dereference: MOV dword ptr [ESI + 0xc],EDX | 00488D27 pointer-like dereference: MOV word ptr [ESI + 0x10],DX | 00488D2B pointer-like dereference: MOV byte ptr [ESI + 0x12],DL | 00488D34 pointer-like dereference: MOV dword ptr [EAX],EDX | 00488D36 pointer-like dereference: MOV byte ptr [EAX + 0x4],0x2b | 00488D3A pointer-like dereference: MOV byte ptr [EAX + 0x5],0x2c | 00488D3E pointer-like dereference: MOV byte ptr [EAX + 0x6],0x5 | 00488D42 pointer-like dereference: MOV byte ptr [EAX + 0x7],0x6 | 00488D46 pointer-like dereference: MOV byte ptr [EAX + 0x8],0x4d | 00488D4A pointer-like dereference: MOV byte ptr [EAX + 0x9],0x2d | 00488D5A pointer-like dereference: MOV byte ptr [EAX + 0x10],0x3 | 00488D5E pointer-like dereference: MOV byte ptr [EAX + 0x11],BL
 00488EE0	FUN_00488ee0	1	param_1	pointer:/undefined1	Stack[0x4]:4	0x4	0	0	0	0	0	0	0	0	0	-
 00488EE0	FUN_00488ee0	1	param_1	pointer:/undefined1	Stack[0x4]:4	0x8	0	0	100	1	0	0	0	5	0	00488EE4 incoming load: MOV ESI,dword ptr [EBP + 0x8] | 00488EEA pointer-like dereference: MOV byte ptr [ESI],0x1 | 00488EED pointer-like dereference: MOV byte ptr [ESI + 0x1],0x1 | 00488EF7 pointer-like dereference: MOV dword ptr [ESI + 0x2],EAX | 00488F0C pointer-like dereference: MOV byte ptr [ESI + 0x6],AL | 00488F12 pointer-like dereference: MOV dword ptr [ESI + 0x7],EDX
-0048A670	STBoatC::_SetSpeedFireLife	1	param_1	pointer:/void	Stack[0x4]:4	0x4	0	0	0	0	0	0	0	0	0	-
-0048A670	STBoatC::_SetSpeedFireLife	1	param_1	pointer:/void	Stack[0x4]:4	0x8	0	0	0	0	0	0	0	0	0	-
 0048DC90	FUN_0048dc90	1	param_1	pointer:/undefined4	Stack[0x4]:4	0x4	0	0	0	0	0	0	0	0	0	-
 0048DC90	FUN_0048dc90	1	param_1	pointer:/undefined4	Stack[0x4]:4	0x8	0	0	100	1	0	0	0	0	0	0048DC93 incoming load: MOV EAX,dword ptr [EBP + 0x8]
 0048DCC0	FUN_0048dcc0	1	param_1	pointer:/undefined4	Stack[0x4]:4	0x4	0	0	0	0	0	0	0	0	0	-
@@ -145,8 +139,6 @@ function_address	function	parameter_ordinal	parameter_name	parameter_type	storag
 0049A500	STGroupBoatC::sub_0049A500	2	param_2	pointer:/undefined2	Stack[0x8]:4	0xc	0	0	100	1	0	0	0	1	0	0049A5A9 incoming load: MOV ECX,dword ptr [EBP + 0xc] | 0049A5BC pointer-like dereference: MOV word ptr [ECX],AX
 0049A500	STGroupBoatC::sub_0049A500	3	param_3	pointer:/undefined2	Stack[0xc]:4	0xc	0	0	100	1	0	0	0	1	0	0049A5A9 incoming load: MOV ECX,dword ptr [EBP + 0xc] | 0049A5BC pointer-like dereference: MOV word ptr [ECX],AX
 0049A500	STGroupBoatC::sub_0049A500	3	param_3	pointer:/undefined2	Stack[0xc]:4	0x10	0	0	100	1	0	0	0	1	0	0049A5BF incoming load: MOV ECX,dword ptr [EBP + 0x10] | 0049A5D4 pointer-like dereference: MOV word ptr [ECX],AX
-004A0FA0	STGroupBoatC::RechargeNewCmd	1	param_1	pointer:/void	Stack[0x4]:4	0x4	0	0	0	0	0	0	0	0	0	-
-004A0FA0	STGroupBoatC::RechargeNewCmd	1	param_1	pointer:/void	Stack[0x4]:4	0x8	0	0	0	0	0	0	0	0	0	-
 004A67A0	STGroupBoatC::RestoreGrpBData	1	param_1	pointer:/undefined4	Stack[0x4]:4	0x4	0	0	0	0	0	0	0	0	0	-
 004A67A0	STGroupBoatC::RestoreGrpBData	1	param_1	pointer:/undefined4	Stack[0x4]:4	0x8	0	0	101	1	1	0	0	0	0	004A67A6 incoming load: MOV EAX,dword ptr [EBP + 0x8] | 004A67B8 scalar operation: LEA EAX,[EBP + -0x48]
 004A8340	STGroupBoatC::GetDepotForAttack	2	param_2	pointer:/undefined1	Stack[0x8]:4	0x8	0	0	100	1	0	0	0	0	0	004A83B7 incoming load: MOV EDX,dword ptr [EBP + 0x8]
@@ -187,8 +179,6 @@ function_address	function	parameter_ordinal	parameter_name	parameter_type	storag
 004C7260	FUN_004c7260	4	param_4	pointer:/undefined4	Stack[0x10]:4	0x14	0	0	100	1	0	0	0	2	0	004C7294 incoming load: MOV EAX,dword ptr [EBP + 0x14] | 004C72A1 pointer-like dereference: MOV dword ptr [EAX],0x0 | 004C72CD pointer-like dereference: MOV dword ptr [EAX],EDX
 004C7260	FUN_004c7260	6	param_6	pointer:/undefined4	Stack[0x18]:4	0x18	0	0	100	1	0	0	0	2	0	004C727D incoming load: MOV EBX,dword ptr [EBP + 0x18] | 004C7298 pointer-like dereference: MOV dword ptr [EBX],0x0 | 004C72D9 pointer-like dereference: MOV dword ptr [EBX],EAX
 004C7260	FUN_004c7260	6	param_6	pointer:/undefined4	Stack[0x18]:4	0x1c	0	0	200	2	0	0	0	2	0	004C727A incoming load: MOV ECX,dword ptr [EBP + 0x1c] | 004C7289 pointer-like dereference: MOV dword ptr [ECX],0x0 | 004C72D6 incoming load: MOV EDX,dword ptr [EBP + 0x1c] | 004C72E4 pointer-like dereference: MOV dword ptr [EDX],ECX
-004C9770	TLOBaseTy::LoadImages	1	param_1	pointer:/void	Stack[0x4]:4	0x4	0	0	0	0	0	0	0	0	0	-
-004C9770	TLOBaseTy::LoadImages	1	param_1	pointer:/void	Stack[0x4]:4	0x8	0	0	0	0	0	0	0	0	0	-
 004D6590	FUN_004d6590	5	param_5	pointer:/undefined4	Stack[0x14]:4	0x14	0	0	100	1	0	0	0	2	0	004D661C incoming load: MOV EBX,dword ptr [EBP + 0x14] | 004D6636 pointer-like dereference: MOV word ptr [EBX],CX | 004D66AC pointer-like dereference: MOVSX EDX,word ptr [EBX]
 004D6590	FUN_004d6590	5	param_5	pointer:/undefined4	Stack[0x14]:4	0x18	0	0	301	3	1	0	0	3	0	004D6627 incoming load: MOV EDX,dword ptr [EBP + 0x18] | 004D6639 pointer-like dereference: MOV dword ptr [EDX],0x0 | 004D6643 scalar operation: LEA EDX,[EBP + 0x8] | 004D6712 incoming load: MOV EAX,dword ptr [EBP + 0x18] | 004D6715 pointer-like dereference: MOV dword ptr [EAX],0x0 | 004D6723 incoming load: MOV ECX,dword ptr [EBP + 0x18] | 004D6728 pointer-like dereference: MOV dword ptr [ECX],0x1
 004D6D50	FUN_004d6d50	1	param_1	pointer:/undefined4	Stack[0x4]:4	0x4	0	0	0	0	0	0	0	0	0	-
@@ -223,8 +213,6 @@ function_address	function	parameter_ordinal	parameter_name	parameter_type	storag
 004E9960	FUN_004e9960	3	param_3	pointer:/undefined4	Stack[0xc]:4	0x10	0	0	100	1	0	0	0	1	0	004E99A3 incoming load: MOV EAX,dword ptr [EBP + 0x10] | 004E99AC pointer-like dereference: MOV dword ptr [EAX],EDX
 004EBFD0	FUN_004ebfd0	4	param_4	pointer:/undefined4	Stack[0x10]:4	0x10	0	0	100	1	0	0	0	1	0	004EC006 incoming load: MOV EDX,dword ptr [EBP + 0x10] | 004EC016 pointer-like dereference: MOV dword ptr [EDX],ECX
 004EBFD0	FUN_004ebfd0	4	param_4	pointer:/undefined4	Stack[0x10]:4	0x14	0	0	100	1	0	0	0	1	0	004EC013 incoming load: MOV EAX,dword ptr [EBP + 0x14] | 004EC018 pointer-like dereference: MOV dword ptr [EAX],0x5a
-004EFD10	BldLabPanelTy::Update	1	param_1	pointer:/void	Stack[0x4]:4	0x4	0	0	0	0	0	0	0	0	0	-
-004EFD10	BldLabPanelTy::Update	1	param_1	pointer:/void	Stack[0x4]:4	0x8	0	0	0	0	0	0	0	0	0	-
 004F19D0	FUN_004f19d0	2	param_3	pointer:/undefined4	Stack[0xc]:4	0xc	0	0	300	3	0	0	0	0	0	004F19FB incoming load: MOV EAX,dword ptr [EBP + 0xc] | 004F1AB6 incoming load: MOV ECX,dword ptr [EBP + 0xc] | 004F1B74 incoming load: MOV EAX,dword ptr [EBP + 0xc]
 004F19D0	FUN_004f19d0	2	param_3	pointer:/undefined4	Stack[0xc]:4	0x10	0	0	1400	14	0	0	0	14	0	004F1A14 incoming load: MOV ECX,dword ptr [EBP + 0x10] | 004F1A1F pointer-like dereference: MOV dword ptr [ECX],0x3 | 004F1A2F incoming load: MOV EAX,dword ptr [EBP + 0x10] | 004F1A35 pointer-like dereference: MOV dword ptr [EAX],0x52 | 004F1A4A incoming load: MOV EDX,dword ptr [EBP + 0x10] | 004F1A50 pointer-like dereference: MOV dword ptr [EDX],0x52 | 004F1A65 incoming load: MOV ECX,dword ptr [EBP + 0x10] | 004F1A70 pointer-like dereference: MOV dword ptr [ECX],0xa1 | 004F1A80 incoming load: MOV EAX,dword ptr [EBP + 0x10] | 004F1A86 pointer-like dereference: MOV dword ptr [EAX],0xa1 | 004F1A9B incoming load: MOV EDX,dword ptr [EBP + 0x10] | 004F1AA1 pointer-like dereference: MOV dword ptr [EDX],0x3 | 004F1AD2 incoming load: MOV EDX,dword ptr [EBP + 0x10] | 004F1AD8 pointer-like dereference: MOV dword ptr [EDX],0xa2 | 004F1AED incoming load: MOV ECX,dword ptr [EBP + 0x10] | 004F1AF8 pointer-like dereference: MOV dword ptr [ECX],0x53
 004F19D0	FUN_004f19d0	3	param_4	pointer:/undefined4	Stack[0x10]:4	0x10	0	0	1400	14	0	0	0	14	0	004F1A14 incoming load: MOV ECX,dword ptr [EBP + 0x10] | 004F1A1F pointer-like dereference: MOV dword ptr [ECX],0x3 | 004F1A2F incoming load: MOV EAX,dword ptr [EBP + 0x10] | 004F1A35 pointer-like dereference: MOV dword ptr [EAX],0x52 | 004F1A4A incoming load: MOV EDX,dword ptr [EBP + 0x10] | 004F1A50 pointer-like dereference: MOV dword ptr [EDX],0x52 | 004F1A65 incoming load: MOV ECX,dword ptr [EBP + 0x10] | 004F1A70 pointer-like dereference: MOV dword ptr [ECX],0xa1 | 004F1A80 incoming load: MOV EAX,dword ptr [EBP + 0x10] | 004F1A86 pointer-like dereference: MOV dword ptr [EAX],0xa1 | 004F1A9B incoming load: MOV EDX,dword ptr [EBP + 0x10] | 004F1AA1 pointer-like dereference: MOV dword ptr [EDX],0x3 | 004F1AD2 incoming load: MOV EDX,dword ptr [EBP + 0x10] | 004F1AD8 pointer-like dereference: MOV dword ptr [EDX],0xa2 | 004F1AED incoming load: MOV ECX,dword ptr [EBP + 0x10] | 004F1AF8 pointer-like dereference: MOV dword ptr [ECX],0x53
@@ -247,8 +235,6 @@ function_address	function	parameter_ordinal	parameter_name	parameter_type	storag
 004F4C70	FUN_004f4c70	1	param_2	pointer:/undefined	Stack[0x8]:4	0xc	0	0	100	1	0	0	0	0	0	004F4DBE incoming load: MOV ECX,dword ptr [EBP + 0xc]
 004F91A0	FUN_004f91a0	2	param_2	pointer:/undefined1	Stack[0x8]:4	0x8	0	0	100	1	0	0	0	0	0	004F91A3 incoming load: MOV EDX,dword ptr [EBP + 0x8]
 004F91A0	FUN_004f91a0	2	param_2	pointer:/undefined1	Stack[0x8]:4	0xc	0	0	100	1	0	0	0	1	0	004F91AC incoming load: MOV ESI,dword ptr [EBP + 0xc] | 004F91C4 pointer-like dereference: MOV byte ptr [ESI],AL
-00513810	HelpPanelTy::BackBut	1	param_1	pointer:/void	Stack[0x4]:4	0x4	0	0	0	0	0	0	0	0	0	-
-00513810	HelpPanelTy::BackBut	1	param_1	pointer:/void	Stack[0x4]:4	0x8	0	0	0	0	0	0	0	0	0	-
 0051D540	HelpPanelTy::TipProc	1	param_1	pointer:/void	Stack[0x4]:4	0x4	0	0	0	0	0	0	0	0	0	-
 0051D540	HelpPanelTy::TipProc	1	param_1	pointer:/void	Stack[0x4]:4	0x8	0	0	200	2	0	0	0	0	0	0051D54E incoming load: MOV ECX,dword ptr [EBP + 0x8] | 0051D5DD incoming load: MOV EDI,dword ptr [EBP + 0x8]
 00526100	FUN_00526100	0	param_1	pointer:/undefined1	Stack[0x4]:4	0x4	0	0	0	0	0	0	0	0	0	-
@@ -259,8 +245,6 @@ function_address	function	parameter_ordinal	parameter_name	parameter_type	storag
 0052EFB0	OptPanelTy::PaintDblBut	4	param_4	pointer:/undefined	Stack[0x10]:4	0x14	0	0	100	1	0	0	0	0	0	0052F017 incoming load: MOV EAX,dword ptr [EBP + 0x14]
 0052EFB0	OptPanelTy::PaintDblBut	5	param_5	pointer:/undefined	Stack[0x14]:4	0x14	0	0	100	1	0	0	0	0	0	0052F017 incoming load: MOV EAX,dword ptr [EBP + 0x14]
 0052EFB0	OptPanelTy::PaintDblBut	5	param_5	pointer:/undefined	Stack[0x14]:4	0x18	0	0	101	1	1	0	0	0	0	0052F022 incoming load: MOV EAX,dword ptr [EBP + 0x18] | 0052F033 scalar operation: LEA EAX,[EBP + -0x58]
-005325B0	OptPanelTy::PrepAsses	1	param_1	pointer:/void	Stack[0x4]:4	0x4	0	0	0	0	0	0	0	0	0	-
-005325B0	OptPanelTy::PrepAsses	1	param_1	pointer:/void	Stack[0x4]:4	0x8	0	0	0	0	0	0	0	0	0	-
 005389E0	PanelTy::PaintBut	4	param_4	pointer:/undefined	Stack[0x10]:4	0x10	0	0	100	1	0	0	0	0	0	00538A87 incoming load: MOV EDX,dword ptr [EBP + 0x10]
 005389E0	PanelTy::PaintBut	4	param_4	pointer:/undefined	Stack[0x10]:4	0x14	0	0	101	1	1	0	0	0	0	00538A4C incoming load: MOV EAX,dword ptr [EBP + 0x14] | 00538A5D scalar operation: LEA EAX,[EBP + -0x50]
 00538BA0	PanelTy::PaintTxtBut	6	param_6	pointer:/undefined	Stack[0x18]:4	0x18	0	0	100	1	0	0	0	0	0	00538CB5 incoming load: MOV EAX,dword ptr [EBP + 0x18]
@@ -315,8 +299,6 @@ function_address	function	parameter_ordinal	parameter_name	parameter_type	storag
 0054EDF0	FUN_0054edf0	0	param_1	pointer:/undefined4	Stack[0x4]:4	0x8	0	0	1100	1	0	0	0	0	1	0054EDFF incoming load: MOV EBX,dword ptr [EBP + 0x8] | 0054EE5B first slot write: MOV dword ptr [EBP + 0x8],0x0
 0054EEE0	STPlaySystemC::SetCtrlCmd	6	param_6	pointer:/undefined4	Stack[0x18]:4	0x18	0	0	100	1	0	0	0	0	0	0054EEE6 incoming load: MOV EAX,dword ptr [EBP + 0x18]
 0054EEE0	STPlaySystemC::SetCtrlCmd	6	param_6	pointer:/undefined4	Stack[0x18]:4	0x1c	0	0	100	1	0	0	0	0	0	0054F000 incoming load: MOV ESI,dword ptr [EBP + 0x1c]
-00550250	STPlaySystemC::SendMail	1	param_1	pointer:/void	Stack[0x4]:4	0x4	0	0	0	0	0	0	0	0	0	-
-00550250	STPlaySystemC::SendMail	1	param_1	pointer:/void	Stack[0x4]:4	0x8	0	0	0	0	0	0	0	0	0	-
 00553B00	FUN_00553b00	5	param_6	pointer:/undefined	Stack[0x18]:4	0x18	0	0	200	2	0	0	0	0	0	00553B98 incoming load: MOV EDX,dword ptr [EBP + 0x18]
 00553B00	FUN_00553b00	5	param_6	pointer:/undefined	Stack[0x18]:4	0x1c	0	0	1103	1	3	0	0	0	1	00553B13 incoming load: MOV ESI,dword ptr [EBP + 0x1c] | 00553B24 scalar operation: LEA EDX,[ESI + ESI*0x1 + 0x1] | 00553B2B scalar operation: SUB ECX,ESI | 00553B2D scalar operation: SUB EAX,ESI | 00553B40 first slot write: MOV dword ptr [EBP + 0x1c],EBX
 00553C20	FUN_00553c20	5	param_6	pointer:/undefined	Stack[0x18]:4	0x18	0	0	200	2	0	0	0	0	0	00553CB7 incoming load: MOV EDX,dword ptr [EBP + 0x18]
@@ -337,8 +319,6 @@ function_address	function	parameter_ordinal	parameter_name	parameter_type	storag
 0055A9D0	VisibleClassTy::VisHoleCreate	3	param_3	pointer:/undefined	Stack[0xc]:4	0x10	0	0	100	1	0	0	0	0	0	0055AA4A incoming load: MOV EAX,dword ptr [EBP + 0x10]
 0055A9D0	VisibleClassTy::VisHoleCreate	5	param_5	pointer:/undefined	Stack[0x14]:4	0x14	0	0	100	1	0	0	0	0	0	0055AA44 incoming load: MOV ECX,dword ptr [EBP + 0x14]
 0055A9D0	VisibleClassTy::VisHoleCreate	5	param_5	pointer:/undefined	Stack[0x14]:4	0x18	0	0	220	2	0	1	0	0	0	0055A9F0 incoming load: MOV EAX,dword ptr [EBP + 0x18] | 0055AA56 incoming load: MOV EAX,dword ptr [EBP + 0x18]
-0055AB50	VisibleClassTy::VisHoleExec	1	param_1	pointer:/void	Stack[0x4]:4	0x4	0	0	0	0	0	0	0	0	0	-
-0055AB50	VisibleClassTy::VisHoleExec	1	param_1	pointer:/void	Stack[0x4]:4	0x8	0	0	0	0	0	0	0	0	0	-
 0055B7F0	VisibleClassTy::sub_0055B7F0	2	param_2	pointer:/undefined	Stack[0x8]:4	0x8	0	0	400	4	0	0	0	0	0	0055B83A incoming load: MOV EAX,dword ptr [EBP + 0x8] | 0055B8AE incoming load: MOV EDX,dword ptr [EBP + 0x8] | 0055B8F9 incoming load: MOV EDX,dword ptr [EBP + 0x8] | 0055B960 incoming load: MOV EAX,dword ptr [EBP + 0x8]
 0055B7F0	VisibleClassTy::sub_0055B7F0	2	param_2	pointer:/undefined	Stack[0x8]:4	0xc	0	0	111	1	1	0	1	4	0	0055B805 incoming load: MOV EBX,dword ptr [EBP + 0xc] | 0055B81A scalar operation: LEA EAX,[EBX + EBX*0x8] | 0055B841 pointer-like dereference: MOV CL,byte ptr [EBX + ESI*0x1 + 0xfc] | 0055B852 pointer-like dereference: MOV byte ptr [EBX + ESI*0x1 + 0xfc],AL | 0055B87E pointer-like dereference: MOV AL,byte ptr [EBX + ESI*0x1 + 0xfc] | 0055B968 pointer-like dereference: MOV byte ptr [EBX + ESI*0x1 + 0xfc],0x0
 0055C0E0	FUN_0055c0e0	5	param_5	pointer:/undefined4	Stack[0x14]:4	0x14	0	0	100	1	0	0	0	0	0	0055C123 incoming load: MOV ECX,dword ptr [EBP + 0x14]
@@ -435,30 +415,20 @@ function_address	function	parameter_ordinal	parameter_name	parameter_type	storag
 0058F680	FUN_0058f680	2	param_2	pointer:/undefined2	Stack[0x8]:4	0xc	0	0	100	1	0	0	0	1	0	0058FD1D incoming load: MOV ECX,dword ptr [EBP + 0xc] | 0058FD26 pointer-like dereference: MOV word ptr [ECX],BX
 0058F680	FUN_0058f680	3	param_3	pointer:/undefined2	Stack[0xc]:4	0xc	0	0	100	1	0	0	0	1	0	0058FD1D incoming load: MOV ECX,dword ptr [EBP + 0xc] | 0058FD26 pointer-like dereference: MOV word ptr [ECX],BX
 0058F680	FUN_0058f680	3	param_3	pointer:/undefined2	Stack[0xc]:4	0x10	0	0	100	1	0	0	0	1	0	0058FD23 incoming load: MOV EDX,dword ptr [EBP + 0x10] | 0058FD29 pointer-like dereference: MOV word ptr [EDX],AX
-00591BF0	CampaignTy::NoneCampaign	1	param_1	pointer:/void	Stack[0x4]:4	0x4	0	0	0	0	0	0	0	0	0	-
-00591BF0	CampaignTy::NoneCampaign	1	param_1	pointer:/void	Stack[0x4]:4	0x8	0	0	0	0	0	0	0	0	0	-
 00593B50	ComboTy::InitCombo	1	param_1	pointer:/undefined4	Stack[0x4]:4	0x4	0	0	0	0	0	0	0	0	0	-
 00593B50	ComboTy::InitCombo	1	param_1	pointer:/undefined4	Stack[0x4]:4	0x8	0	0	100	1	0	0	0	0	0	00593B8B incoming load: MOV ESI,dword ptr [EBP + 0x8]
 00594850	FUN_00594850	1	param_2	pointer:/undefined	Stack[0x8]:4	0x8	0	0	100	1	0	0	0	0	0	005949B0 incoming load: MOV EAX,dword ptr [EBP + 0x8]
 00594850	FUN_00594850	1	param_2	pointer:/undefined	Stack[0x8]:4	0xc	0	0	100	1	0	0	0	0	0	005949A7 incoming load: MOV EAX,dword ptr [EBP + 0xc]
 00594B90	FSGSTy::OutChSlProc	8	param_8	pointer:/undefined4	Stack[0x20]:4	0x20	0	0	604	6	4	0	0	0	0	00594BD3 incoming load: MOV ECX,dword ptr [EBP + 0x20] | 00594BF2 incoming load: MOV EDX,dword ptr [EBP + 0x20] | 00594C06 incoming load: MOV EDX,dword ptr [EBP + 0x20] | 00594C10 scalar operation: LEA EAX,[EDX + -0x62] | 00594C2A incoming load: MOV ECX,dword ptr [EBP + 0x20] | 00594C31 scalar operation: LEA EAX,[ECX + -0x62] | 00594C4E incoming load: MOV EDX,dword ptr [EBP + 0x20] | 00594C51 scalar operation: LEA EAX,[ECX + EDX*0x1 + -0x16] | 00594C71 incoming load: MOV ECX,dword ptr [EBP + 0x20] | 00594C7B scalar operation: LEA EDX,[EAX + ECX*0x1 + -0x1]
 00594B90	FSGSTy::OutChSlProc	8	param_8	pointer:/undefined4	Stack[0x20]:4	0x24	0	0	100	1	0	0	0	0	0	00594B96 incoming load: MOV EAX,dword ptr [EBP + 0x24]
-0059D720	FSGSTy::InfoCtrls	1	param_1	pointer:/void	Stack[0x4]:4	0x4	0	0	0	0	0	0	0	0	0	-
-0059D720	FSGSTy::InfoCtrls	1	param_1	pointer:/void	Stack[0x4]:4	0x8	0	0	0	0	0	0	0	0	0	-
 005A1920	FSGSTy::SetBanner	5	param_5	pointer:/undefined4	Stack[0x14]:4	0x14	0	0	201	2	1	0	0	0	0	005A19FD incoming load: MOV ESI,dword ptr [EBP + 0x14] | 005A1A20 scalar operation: SHR ECX,0x2 | 005A1C01 incoming load: MOV ECX,dword ptr [EBP + 0x14]
 005A1920	FSGSTy::SetBanner	5	param_5	pointer:/undefined4	Stack[0x14]:4	0x18	0	0	300	3	0	0	0	0	0	005A1929 incoming load: MOV EAX,dword ptr [EBP + 0x18] | 005A1A19 incoming load: MOV ESI,dword ptr [EBP + 0x18] | 005A1C04 incoming load: MOV EDX,dword ptr [EBP + 0x18]
 005A2380	FSGSTy::AddPlayer	1	param_1	pointer:/undefined4	Stack[0x4]:4	0x4	0	0	0	0	0	0	0	0	0	-
 005A2380	FSGSTy::AddPlayer	1	param_1	pointer:/undefined4	Stack[0x4]:4	0x8	0	0	101	1	1	0	0	0	0	005A242E incoming load: MOV ESI,dword ptr [EBP + 0x8] | 005A2499 scalar operation: LEA ESI,[EBX + 0x1d]
-005A2D70	FSGSTy::JoinChannel	1	param_1	pointer:/void	Stack[0x4]:4	0x4	0	0	0	0	0	0	0	0	0	-
-005A2D70	FSGSTy::JoinChannel	1	param_1	pointer:/void	Stack[0x4]:4	0x8	0	0	0	0	0	0	0	0	0	-
 005A2FF0	FSGSTy::SetChannelList	2	param_2	pointer:/undefined4	Stack[0x8]:4	0x8	0	0	101	1	1	0	0	0	0	005A309B incoming load: MOV EBX,dword ptr [EBP + 0x8] | 005A30C2 scalar operation: DEC EBX
 005A2FF0	FSGSTy::SetChannelList	2	param_2	pointer:/undefined4	Stack[0x8]:4	0xc	0	0	101	1	1	0	0	0	0	005A30AF incoming load: MOV EDI,dword ptr [EBP + 0xc] | 005A30BF scalar operation: ADD EDI,0x68
 005A40F0	FSGSTy::SetLadder	4	param_4	pointer:/undefined4	Stack[0x10]:4	0x10	0	0	101	1	1	0	0	0	0	005A41A5 incoming load: MOV EAX,dword ptr [EBP + 0x10] | 005A41B7 scalar operation: LEA EDX,[EAX + EAX*0x8]
 005A40F0	FSGSTy::SetLadder	4	param_4	pointer:/undefined4	Stack[0x10]:4	0x14	0	0	100	1	0	0	0	0	0	005A41CB incoming load: MOV ESI,dword ptr [EBP + 0x14]
-005AD390	ChooseMapTy::NoneChooseMap	1	param_1	pointer:/undefined4	Stack[0x4]:4	0x4	0	0	0	0	0	0	0	0	0	-
-005AD390	ChooseMapTy::NoneChooseMap	1	param_1	pointer:/undefined4	Stack[0x4]:4	0x8	0	0	0	0	0	0	0	0	0	-
-005B3430	MainMenuTy::NoneMainMenu	1	param_1	pointer:/void	Stack[0x4]:4	0x4	0	0	0	0	0	0	0	0	0	-
-005B3430	MainMenuTy::NoneMainMenu	1	param_1	pointer:/void	Stack[0x4]:4	0x8	0	0	0	0	0	0	0	0	0	-
 005B67A0	MMMObjTy::OutRGlProc	8	param_8	pointer:/undefined4	Stack[0x20]:4	0x20	0	0	100	1	0	0	0	0	0	005B67DF incoming load: MOV EDI,dword ptr [EBP + 0x20]
 005B67A0	MMMObjTy::OutRGlProc	8	param_8	pointer:/undefined4	Stack[0x20]:4	0x24	0	0	100	1	0	0	0	0	0	005B67A6 incoming load: MOV EAX,dword ptr [EBP + 0x24]
 005B68B0	MMMObjTy::OutBSlProc	8	param_8	pointer:/undefined4	Stack[0x20]:4	0x20	0	0	101	1	1	0	0	0	0	005B68EF incoming load: MOV EDI,dword ptr [EBP + 0x20] | 005B6917 scalar operation: ADD EDI,-0x4c
@@ -475,12 +445,6 @@ function_address	function	parameter_ordinal	parameter_name	parameter_type	storag
 005B8F40	MMsgTy::FUN_005b8f40	1	param_1	pointer:/undefined4	Stack[0x4]:4	0x8	0	0	100	1	0	0	0	4	0	005B8F43 incoming load: MOV EAX,dword ptr [EBP + 0x8] | 005B8F4B pointer-like dereference: MOV ESI,dword ptr [EAX] | 005B8F5B pointer-like dereference: MOV ESI,dword ptr [EAX + 0x4] | 005B8F61 pointer-like dereference: MOV ESI,dword ptr [EAX + 0x8] | 005B8F67 pointer-like dereference: MOV AL,byte ptr [EAX + 0xc]
 005B99F0	MMMObjTy::OutEdProc	8	param_8	pointer:/undefined4	Stack[0x20]:4	0x20	0	0	200	2	0	0	0	0	0	005B9A2F incoming load: MOV ECX,dword ptr [EBP + 0x20] | 005B9A4E incoming load: MOV EDX,dword ptr [EBP + 0x20]
 005B99F0	MMMObjTy::OutEdProc	8	param_8	pointer:/undefined4	Stack[0x20]:4	0x24	0	0	100	1	0	0	0	0	0	005B99F6 incoming load: MOV EAX,dword ptr [EBP + 0x24]
-005BAE00	PrividerTy::NonePrivider	1	param_1	pointer:/undefined4	Stack[0x4]:4	0x4	0	0	0	0	0	0	0	0	0	-
-005BAE00	PrividerTy::NonePrivider	1	param_1	pointer:/undefined4	Stack[0x4]:4	0x8	0	0	0	0	0	0	0	0	0	-
-005D0150	SettMapMTy::CheckPlList	1	param_1	pointer:/void	Stack[0x4]:4	0x4	0	0	0	0	0	0	0	0	0	-
-005D0150	SettMapMTy::CheckPlList	1	param_1	pointer:/void	Stack[0x4]:4	0x8	0	0	0	0	0	0	0	0	0	-
-005D81F0	SIDTy::NoneSID	1	param_1	pointer:/void	Stack[0x4]:4	0x4	0	0	0	0	0	0	0	0	0	-
-005D81F0	SIDTy::NoneSID	1	param_1	pointer:/void	Stack[0x4]:4	0x8	0	0	0	0	0	0	0	0	0	-
 005DA130	FUN_005da130	1	param_2	pointer:/undefined	Stack[0x8]:4	0x8	0	0	101	1	1	0	0	0	0	005DA248 incoming load: MOV ECX,dword ptr [EBP + 0x8] | 005DA25E scalar operation: LEA ECX,[EBP + -0x74]
 005DA130	FUN_005da130	1	param_2	pointer:/undefined	Stack[0x8]:4	0xc	0	0	100	1	0	0	0	0	0	005DA241 incoming load: MOV ECX,dword ptr [EBP + 0xc]
 005DA310	FUN_005da310	1	param_2	pointer:/undefined	Stack[0x8]:4	0x8	0	0	101	1	1	0	0	0	0	005DA46E incoming load: MOV ECX,dword ptr [EBP + 0x8] | 005DA483 scalar operation: LEA ECX,[EBP + 0xffffff60]
@@ -795,10 +759,6 @@ function_address	function	parameter_ordinal	parameter_name	parameter_type	storag
 00678980	AiPlrClassTy::InitData	1	param_1	pointer:/undefined4	Stack[0x4]:4	0x8	0	0	304	3	4	0	0	0	0	006789C6 incoming load: MOV EAX,dword ptr [EBP + 0x8] | 006789EC scalar operation: LEA EAX,[ECX + EAX*0x1 + 0x12a] | 006789FC scalar operation: LEA ESI,[EBX + 0x695] | 00678A12 incoming load: MOV EAX,dword ptr [EBP + 0x8] | 00678A15 scalar operation: LEA EAX,[EDX + EAX*0x1 + 0x12a] | 00678A91 incoming load: MOV EAX,dword ptr [EBP + 0x8] | 00678A98 scalar operation: LEA EDI,[EDX + EAX*0x1 + 0x12a]
 0067A240	AiPlrClassTy::sub_0067A240	1	param_1	pointer:/undefined	Stack[0x4]:4	0x4	0	0	0	0	0	0	0	0	0	-
 0067A240	AiPlrClassTy::sub_0067A240	1	param_1	pointer:/undefined	Stack[0x4]:4	0x8	0	0	100	1	0	0	0	0	0	0067A288 incoming load: MOV ECX,dword ptr [EBP + 0x8]
-0067B520	AiPlrClassTy::ExecTech	1	param_1	pointer:/void	Stack[0x4]:4	0x4	0	0	0	0	0	0	0	0	0	-
-0067B520	AiPlrClassTy::ExecTech	1	param_1	pointer:/void	Stack[0x4]:4	0x8	0	0	0	0	0	0	0	0	0	-
-0067C180	AiPlrClassTy::Offensive	1	param_1	pointer:/void	Stack[0x4]:4	0x4	0	0	0	0	0	0	0	0	0	-
-0067C180	AiPlrClassTy::Offensive	1	param_1	pointer:/void	Stack[0x4]:4	0x8	0	0	0	0	0	0	0	0	0	-
 0067D3B0	PlrDataPack	1	param_2	pointer:/undefined4	Stack[0x8]:4	0x8	0	0	401	4	1	0	0	9	0	0067D3EF incoming load: MOV EDI,dword ptr [EBP + 0x8] | 0067D3F8 pointer-like dereference: CMP byte ptr [EDI + 0x18],0x2 | 0067D3FE pointer-like dereference: MOV EAX,dword ptr [EDI + 0xc2] | 0067D41B pointer-like dereference: MOV EAX,dword ptr [EDI + 0xc2] | 0067D464 incoming load: MOV EDX,dword ptr [EBP + 0x8] | 0067D468 pointer-like dereference: MOV EAX,dword ptr [EDX + 0xc2] | 0067D47A pointer-like dereference: MOV EDX,dword ptr [EDI + 0xc2] | 0067D480 scalar operation: LEA ECX,[EDI + 0xc2] | 0067D615 incoming load: MOV EDX,dword ptr [EBP + 0x8] | 0067D618 pointer-like dereference: CMP byte ptr [EDX + 0x18],0x2 | 0067D6A2 incoming load: MOV EBX,dword ptr [EBP + 0x8] | 0067D6AB pointer-like dereference: CMP byte ptr [EBX + 0x18],0x2 | 0067D6B1 pointer-like dereference: MOV EAX,dword ptr [EBX + 0xc2] | 0067D709 pointer-like dereference: MOV EAX,dword ptr [EBX + 0xc2]
 0067D3B0	PlrDataPack	1	param_2	pointer:/undefined4	Stack[0x8]:4	0xc	0	0	100	1	0	0	0	0	0	0067D50E incoming load: MOV ESI,dword ptr [EBP + 0xc]
 006807D0	FUN_006807d0	0	param_1	pointer:/undefined4	Stack[0x4]:4	0x4	0	0	0	0	0	0	0	0	0	-
@@ -1533,7 +1493,3 @@ function_address	function	parameter_ordinal	parameter_name	parameter_type	storag
 0075FD10	FUN_0075fd10	0	param_1	pointer:/undefined4	Stack[0x4]:4	0x8	0	0	1100	1	0	0	0	1	1	0075FD13 incoming load: MOV EAX,dword ptr [EBP + 0x8] | 0075FD19 pointer-like dereference: MOV ECX,dword ptr [EAX] | 0075FD28 first slot write: MOV dword ptr [EBP + 0x8],EAX
 0075FEE0	FUN_0075fee0	2	param_3	pointer:/undefined4	Stack[0xc]:4	0xc	0	0	1101	1	1	0	0	0	1	0075FF0A incoming load: MOV ECX,dword ptr [EBP + 0xc] | 0075FF12 scalar operation: SUB ECX,EBX | 0075FF36 first slot write: MOV dword ptr [EBP + 0xc],EDX
 0075FEE0	FUN_0075fee0	2	param_3	pointer:/undefined4	Stack[0xc]:4	0x10	0	0	1101	1	1	0	0	2	1	0075FF0E incoming load: MOV EBX,dword ptr [EBP + 0x10] | 0075FF12 scalar operation: SUB ECX,EBX | 0075FF20 pointer-like dereference: MOV ECX,dword ptr [EBX] | 0075FF65 pointer-like dereference: MOV ECX,dword ptr [EBX] | 0075FF77 first slot write: MOV dword ptr [EBP + 0x10],EDX
-00760300	FUN_00760300	1	param_2	pointer:/undefined4	Stack[0x8]:4	0x8	0	0	0	0	0	0	0	0	0	-
-00760300	FUN_00760300	1	param_2	pointer:/undefined4	Stack[0x8]:4	0xc	0	0	100	1	0	0	0	0	0	00760303 incoming load: MOV EAX,dword ptr [EBP + 0xc]
-00760340	FUN_00760340	1	param_2	pointer:/undefined4	Stack[0x8]:4	0x8	0	0	0	0	0	0	0	0	0	-
-00760340	FUN_00760340	1	param_2	pointer:/undefined4	Stack[0x8]:4	0xc	0	0	100	1	0	0	0	0	0	00760343 incoming load: MOV EAX,dword ptr [EBP + 0xc]

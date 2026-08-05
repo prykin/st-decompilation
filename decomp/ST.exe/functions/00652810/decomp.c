@@ -5451,9 +5451,7 @@ LAB_00655871:
                               }
                               else {
                                 pSVar30 = (STFishC *)
-                                          g_worldGrid.cells
-                                          [(int)sVar6 * (int)g_worldGrid.planeStride +
-                                           (int)sVar22 * (int)g_worldGrid.sizeX + (int)sVar24].
+                                          STGridAt3D(g_worldGrid, sVar24, sVar22, sVar6).
                                           objects[0];
                               }
                             }
@@ -5462,9 +5460,7 @@ LAB_00655871:
                                   || ((g_worldGrid.sizeY <= sVar22 || (sVar6 < 0)))) ||
                                  (g_worldGrid.sizeZ <= sVar6)) goto LAB_00655871;
                               pSVar30 = (STFishC *)
-                                        g_worldGrid.cells
-                                        [(int)sVar6 * (int)g_worldGrid.planeStride +
-                                         (int)sVar22 * (int)g_worldGrid.sizeX + (int)sVar24].objects
+                                        STGridAt3D(g_worldGrid, sVar24, sVar22, sVar6).objects
                                         [1];
                             }
                             else if (local_154 == (byte *)0x2) {

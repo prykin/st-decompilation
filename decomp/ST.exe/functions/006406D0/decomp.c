@@ -43,15 +43,18 @@ int __thiscall STTorpC::GetMessage(STTorpC *this,STMessage *message)
   undefined2 extraout_var_00;
   /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
   undefined2 extraout_var_01;
-  undefined2 uVar19;
-  int iVar20;
-  byte *puVar21;
-  char *pcVar22;
+  undefined2 uVar20;
+  uint uVar19;
+  int iVar21;
+  byte *puVar22;
   char *pcVar23;
   char *pcVar24;
-  bool bVar25;
-  uint uVar26;
-  undefined4 uVar27;
+  char *pcVar25;
+  bool bVar26;
+  undefined1 uVar27;
+  undefined1 uVar28;
+  undefined1 uVar29;
+  undefined1 uVar30;
   InternalExceptionFrame local_28c;
   undefined4 local_248 [2];
   undefined1 local_240 [8];
@@ -82,7 +85,8 @@ int __thiscall STTorpC::GetMessage(STTorpC *this,STMessage *message)
   undefined4 local_1b8;
   undefined4 local_1b4;
   short sStack_1b2;
-  int local_1b0;
+  undefined4 local_1b0;
+  short sStack_1ae;
   undefined4 local_1a8;
   undefined4 local_1a4;
   short sStack_1a2;
@@ -90,7 +94,8 @@ int __thiscall STTorpC::GetMessage(STTorpC *this,STMessage *message)
   undefined4 local_198;
   undefined4 local_194;
   short sStack_192;
-  int local_190;
+  undefined4 local_190;
+  short sStack_18e;
   float local_188;
   float local_184;
   float local_180;
@@ -162,7 +167,7 @@ int __thiscall STTorpC::GetMessage(STTorpC *this,STMessage *message)
   if (iVar10 != 0) {
     g_currentExceptionFrame = local_28c.previous;
     iVar11 = ReportDebugMessage("E:\\__titans\\nick\\to_torp.cpp",0x350,0,iVar10,"%s"
-                                ,"STTorpC::GetMessage");
+                                ,0,(char)iVar10,0xcc,"STTorpC::GetMessage");
     if (iVar11 == 0) {
       RaiseInternalException(iVar10,0,"E:\\__titans\\nick\\to_torp.cpp",0x351);
       return 0xffff;
@@ -245,19 +250,19 @@ int __thiscall STTorpC::GetMessage(STTorpC *this,STMessage *message)
       g_currentExceptionFrame = local_28c.previous;
       return 0;
     }
-    local_14 = (int)*(short *)&this_00->field_0x24f;
+    local_14 = (int)*(short *)&this_00->field_024F;
     local_164 = (float)(int)*(short *)&this_00->field_0x24b * _DAT_007904f8 * _DAT_007904f0;
     local_160 = (float)(int)*(short *)&this_00->field_0x24d * _DAT_007904f8 * _DAT_007904f0;
     local_15c = (float)local_14 * _DAT_007904f8 * _DAT_007904f0;
-    ST3DSMAPContext::sub_006E25D0(this_00->field_0211,&local_1b8);
+    ST3DSMAPContext::sub_006E25D0(this_00->field_0211,&local_1b8,&local_164,0.0,0.0,0.0,1);
     local_14 = (int)*(short *)&this_00->field_0x255;
     local_170 = (float)(int)*(short *)&this_00->field_0x251 * _DAT_007904f8 * _DAT_007904f0;
     local_16c = (float)(int)*(short *)&this_00->field_0x253 * _DAT_007904f8 * _DAT_007904f0;
     local_168 = (float)local_14 * _DAT_007904f8 * _DAT_007904f0;
-    ST3DSMAPContext::sub_006E25D0(this_00->field_0211,&local_1c8);
+    ST3DSMAPContext::sub_006E25D0(this_00->field_0211,&local_1c8,&local_170,0.0,0.0,0.0,1);
     /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
     sVar9 = (*this_00->vtable->vfunc_14)
-                      (local_1b8._2_2_,sStack_1b2,local_1b0 >> 0x10,local_1c8._2_2_,sStack_1c2,
+                      (local_1b8._2_2_,sStack_1b2,(int)sStack_1ae,local_1c8._2_2_,sStack_1c2,
                        local_1c0 >> 0x10);
     thunk_FUN_004abce0(&this_00->field_01D5,0,*(int *)(&DAT_007d2138 + sVar9 * 4),
                        *(int *)(&DAT_007d2138 + sVar9 * 4),'\0');
@@ -313,7 +318,7 @@ int __thiscall STTorpC::GetMessage(STTorpC *this,STMessage *message)
       }
       piVar12 = thunk_FUN_0062bbc0((int)*(short *)&this_00->field_0x24b,
                                    (int)*(short *)&this_00->field_0x24d,
-                                   (int)*(short *)&this_00->field_0x24f,
+                                   (int)*(short *)&this_00->field_024F,
                                    (int)*(short *)&this_00->field_0x251,
                                    (int)*(short *)&this_00->field_0x253,
                                    (int)*(short *)&this_00->field_0x255,0x9a,
@@ -323,11 +328,11 @@ int __thiscall STTorpC::GetMessage(STTorpC *this,STMessage *message)
       return 0;
     }
     puVar14 = (byte *)(iVar10 + 0x14);
-    puVar21 = (byte *)&this_00->field_0x245;
-    memmove(puVar21, puVar14, 0x44); /* compiler REP MOVS byte copy */
+    puVar22 = (byte *)((int)&this_00->field_0244 + 1);
+    memmove(puVar22, puVar14, 0x44); /* compiler REP MOVS byte copy */
     sVar9 = *(short *)&this_00->field_0x24b;
     if ((((sVar9 < 0) || (sVar2 = *(short *)&this_00->field_0x24d, sVar2 < 0)) ||
-        (*(short *)&this_00->field_0x24f < 0)) ||
+        (*(short *)&this_00->field_024F < 0)) ||
        ((g_worldGrid.sizeX <=
          (short)((sVar9 / 0xc9 + (sVar9 >> 0xf)) - (short)((longlong)(int)sVar9 * 0x28c1979 >> 0x3f)
                 ) ||
@@ -402,17 +407,17 @@ LAB_00642c6e:
       thunk_FUN_00417ff0(this_00,bVar7);
     }
     iVar10 = sub_00415B30(this_00,*(short *)&this_00->field_0x24b,*(short *)&this_00->field_0x24d,
-                          *(short *)&this_00->field_0x24f,*(short *)&this_00->field_0x251,
+                          *(short *)&this_00->field_024F,*(short *)&this_00->field_0x251,
                           *(short *)&this_00->field_0x253,*(short *)&this_00->field_0x255,
                           this_00->field_0x61);
     uVar8 = 0;
     /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
-    uVar19 = extraout_var_00;
+    uVar20 = extraout_var_00;
     if (iVar10 != 0) {
       RaiseInternalException
                 (-1,g_overwriteContext_007ED77C,"E:\\__titans\\nick\\to_torp.cpp",0x8a);
       /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
-      uVar19 = extraout_var_01;
+      uVar20 = extraout_var_01;
       /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
       uVar8 = extraout_var;
     }
@@ -420,7 +425,7 @@ LAB_00642c6e:
     /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
     uVar8 = (*this_00->vtable->vfunc_10)
                       (*(short *)&this_00->field_0x24b,*(short *)&this_00->field_0x24d,
-                       CONCAT22(uVar19,*(undefined2 *)&this_00->field_0x24f),
+                       CONCAT22(uVar20,*(undefined2 *)&this_00->field_024F),
                        *(short *)&this_00->field_0x251,*(short *)&this_00->field_0x253,
                        CONCAT22(uVar8,*(undefined2 *)&this_00->field_0x255));
     *(undefined2 *)&this_00->field_0x6c = uVar8;
@@ -477,7 +482,7 @@ switchD_00640ad9_caseD_a2:
     if (this_00->field_0259 == CASE_9A) {
       piVar12 = thunk_FUN_0062bbc0((int)*(short *)&this_00->field_0x24b,
                                    (int)*(short *)&this_00->field_0x24d,
-                                   (int)*(short *)&this_00->field_0x24f,
+                                   (int)*(short *)&this_00->field_024F,
                                    (int)*(short *)&this_00->field_0x251,
                                    (int)*(short *)&this_00->field_0x253,
                                    (int)*(short *)&this_00->field_0x255,0x9a,
@@ -500,92 +505,92 @@ switchD_00640ad9_caseD_a2:
     switch(this_00->field_0259) {
     case CASE_96:
     case CASE_B4:
-      pcVar22 = "atorsm";
+      pcVar23 = "atorsm";
       break;
     case CASE_97:
-      pcVar22 = "atorme";
+      pcVar23 = "atorme";
       break;
     case CASE_98:
-      pcVar22 = "atorla";
+      pcVar23 = "atorla";
       break;
     case CASE_99:
-      pcVar22 = "acas0";
+      pcVar23 = "acas0";
       break;
     case CASE_9A:
-      pcVar22 = "aemtor";
+      pcVar23 = "aemtor";
       break;
     case CASE_9B:
     case CASE_9D:
-      pcVar22 = "alray1";
+      pcVar23 = "alray1";
       break;
     case CASE_9C:
-      pcVar22 = "alray0";
+      pcVar23 = "alray0";
       break;
     case CASE_9E:
-      pcVar22 = "alray2";
+      pcVar23 = "alray2";
       break;
     case CASE_9F:
     case CASE_A3:
     case CASE_A4:
-      pcVar22 = &DAT_007d2578;
+      pcVar23 = &DAT_007d2578;
       break;
     case CASE_A0:
     case CASE_BF:
-      pcVar22 = &DAT_007d251c;
+      pcVar23 = &DAT_007d251c;
       break;
     case CASE_A1:
-      pcVar22 = "pr_torp";
+      pcVar23 = "pr_torp";
       break;
     default:
       goto switchD_00640c2d_caseD_a2;
     case CASE_A5:
-      pcVar22 = "satlas";
+      pcVar23 = "satlas";
       break;
     case CASE_AC:
-      pcVar22 = "aspltor";
+      pcVar23 = "aspltor";
       break;
     case CASE_AD:
-      pcVar22 = "neuro";
+      pcVar23 = "neuro";
       break;
     case CASE_AE:
-      pcVar22 = "agcan";
+      pcVar23 = "agcan";
       break;
     case CASE_B6:
     case CASE_BA:
-      pcVar22 = "eshell";
+      pcVar23 = "eshell";
       break;
     case CASE_B7:
-      pcVar22 = "ionbomb";
+      pcVar23 = "ionbomb";
       break;
     case CASE_B8:
-      pcVar22 = "biaacc";
+      pcVar23 = "biaacc";
       break;
     case CASE_B9:
-      pcVar22 = &DAT_007d2534;
+      pcVar23 = &DAT_007d2534;
     }
     uVar17 = 0xffffffff;
     do {
-      pcVar24 = pcVar22;
+      pcVar25 = pcVar23;
       if (uVar17 == 0) break;
       uVar17 = uVar17 - 1;
-      pcVar24 = pcVar22 + 1;
-      cVar1 = *pcVar22;
-      pcVar22 = pcVar24;
+      pcVar25 = pcVar23 + 1;
+      cVar1 = *pcVar23;
+      pcVar23 = pcVar25;
     } while (cVar1 != '\0');
     uVar17 = ~uVar17;
     iVar10 = -1;
-    pcVar22 = local_60;
+    pcVar23 = local_60;
     do {
-      pcVar23 = pcVar22;
+      pcVar24 = pcVar23;
       if (iVar10 == 0) break;
       iVar10 = iVar10 + -1;
-      pcVar23 = pcVar22 + 1;
-      cVar1 = *pcVar22;
-      pcVar22 = pcVar23;
+      pcVar24 = pcVar23 + 1;
+      cVar1 = *pcVar23;
+      pcVar23 = pcVar24;
     } while (cVar1 != '\0');
-    pcVar22 = pcVar24 + -uVar17;
-    pcVar24 = pcVar23 + -1;
-    memmove(pcVar24, pcVar22, uVar17); /* compiler REP MOVS byte copy */
+    pcVar23 = pcVar25 + -uVar17;
+    pcVar25 = pcVar24 + -1;
+    memmove(pcVar25, pcVar23, uVar17); /* compiler REP MOVS byte copy */
 switchD_00640c2d_caseD_a2:
     puVar14 = (byte *)(&this_00->field_01D5);
     iVar10 = STT3DSprC::LoadSequence((STT3DSprC *)puVar14,0,DAT_00806774,local_60,0x1d);
@@ -601,32 +606,41 @@ switchD_00640c2d_caseD_a2:
     case CASE_A4:
     case CASE_AE:
     case CASE_BF:
-      iVar11 = 9;
-      iVar10 = 0;
+      uVar28 = 9;
+      uVar29 = 0;
+      uVar8 = 0;
+      uVar27 = 0;
       break;
     default:
-      local_10 = (int)*(short *)&this_00->field_0x24f;
+      local_10 = (int)*(short *)&this_00->field_024F;
       local_17c = (float)(int)*(short *)&this_00->field_0x24b * _DAT_007904f8 * _DAT_007904f0;
       local_178 = (float)(int)*(short *)&this_00->field_0x24d * _DAT_007904f8 * _DAT_007904f0;
       local_174 = (float)local_10 * _DAT_007904f8 * _DAT_007904f0;
-      ST3DSMAPContext::sub_006E25D0(this_00->field_0211,&local_198);
+      ST3DSMAPContext::sub_006E25D0(this_00->field_0211,&local_198,&local_17c,0.0,0.0,0.0,1);
       local_10 = (int)*(short *)&this_00->field_0x255;
       local_188 = (float)(int)*(short *)&this_00->field_0x251 * _DAT_007904f8 * _DAT_007904f0;
       local_184 = (float)(int)*(short *)&this_00->field_0x253 * _DAT_007904f8 * _DAT_007904f0;
       local_180 = (float)local_10 * _DAT_007904f8 * _DAT_007904f0;
-      ST3DSMAPContext::sub_006E25D0(this_00->field_0211,&local_1a8);
+      ST3DSMAPContext::sub_006E25D0(this_00->field_0211,&local_1a8,&local_188,0.0,0.0,0.0,1);
       /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
       sVar9 = (*this_00->vtable->vfunc_14)
-                        (local_198._2_2_,sStack_192,local_190 >> 0x10,local_1a8._2_2_,sStack_1a2,
+                        (local_198._2_2_,sStack_192,(int)sStack_18e,local_1a8._2_2_,sStack_1a2,
                          local_1a0 >> 0x10);
-      iVar10 = *(int *)(&DAT_007d2138 + sVar9 * 4);
-      iVar11 = iVar10;
+      uVar15 = *(undefined4 *)(&DAT_007d2138 + sVar9 * 4);
+      uVar27 = (undefined1)uVar15;
+      uVar29 = (undefined1)((uint)uVar15 >> 8);
+      uVar8 = (undefined2)((uint)uVar15 >> 0x10);
+      uVar28 = uVar27;
       break;
     case CASE_A5:
-      iVar11 = 0;
-      iVar10 = 0;
+      uVar28 = 0;
+      uVar29 = 0;
+      uVar8 = 0;
+      uVar27 = 0;
     }
-    thunk_FUN_004abce0(puVar14,0,iVar10,iVar11,'\0');
+    /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
+    thunk_FUN_004abce0(puVar14,0,CONCAT22(uVar8,CONCAT11(uVar29,uVar27)),
+                       CONCAT22(uVar8,CONCAT11(uVar29,uVar28)),'\0');
     STT3DSprC::StartShow((STT3DSprC *)puVar14,0,g_playSystem_00802A38->field_00E4);
     uVar15 = STAllPlayersC::RegisterTorpedo(g_allPlayers_007FA174,(int)this_00,-1);
     *(short *)&this_00->field_0x26e = (short)uVar15;
@@ -635,20 +649,20 @@ switchD_00640c2d_caseD_a2:
       iVar11 = (int)*(short *)&this_00->field_0x49;
       if ((((iVar10 < 0) || (iVar11 < 0)) || (g_worldGrid.sizeX <= iVar10)) ||
          (g_worldGrid.sizeY <= iVar11)) {
-        bVar25 = false;
+        bVar26 = false;
       }
       else {
-        bVar25 = *(char *)(g_worldGrid.sizeX * iVar11 + DAT_007fb26c + iVar10) != '\0';
+        bVar26 = *(char *)(g_worldGrid.sizeX * iVar11 + DAT_007fb26c + iVar10) != '\0';
       }
-      if (bVar25) {
+      if (bVar26) {
         if ((&DAT_007fb24c)[this_00->field_0024] == 0) {
-          bVar25 = false;
+          bVar26 = false;
         }
         else {
-          bVar25 = *(char *)(g_worldGrid.sizeX * iVar11 + (&DAT_007fb24c)[this_00->field_0024] +
+          bVar26 = *(char *)(g_worldGrid.sizeX * iVar11 + (&DAT_007fb24c)[this_00->field_0024] +
                             iVar10) != '\0';
         }
-        if (bVar25) {
+        if (bVar26) {
           this_00->field_0x286 = 1;
         }
       }
@@ -804,14 +818,14 @@ switchD_00640c2d_caseD_a2:
         /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
         iVar10 = (**(code **)(*local_30 + 0x2c))();
         if (iVar10 == 0x68) {
-          uVar8 = *(undefined2 *)&this_00->field_0x245;
+          uVar8 = *(undefined2 *)((int)&this_00->field_0244 + 1);
           memset(local_220, 0, 0x58); /* compiler bulk-zero initialization */
           local_220[0] = 0x15e;
           local_220[3] = 1;
           local_220[2] = 1;
           local_220[1] = local_30[9];
           local_208 = *(undefined2 *)&this_00->field_0x249;
-          local_20a = *(undefined2 *)&this_00->field_0x247;
+          local_20a = *(undefined2 *)((int)&this_00->field_0246 + 1);
           /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
           local_1ef = *(undefined2 *)((int)local_30 + 0x32);
           local_1f3 = local_30[6];
@@ -920,27 +934,27 @@ switchD_00640c2d_caseD_a2:
     iVar10 = (int)*(short *)&this_00->field_0x49;
     if ((iVar11 < 0) ||
        (((iVar10 < 0 || (g_worldGrid.sizeX <= iVar11)) || (g_worldGrid.sizeY <= iVar10)))) {
-      bVar25 = false;
+      bVar26 = false;
     }
     else {
-      bVar25 = *(char *)(g_worldGrid.sizeX * iVar10 + DAT_007fb26c + iVar11) != '\0';
+      bVar26 = *(char *)(g_worldGrid.sizeX * iVar10 + DAT_007fb26c + iVar11) != '\0';
     }
-    iVar20 = local_34;
-    if (bVar25) {
+    iVar21 = local_34;
+    if (bVar26) {
       if ((&DAT_007fb24c)[this_00->field_0024] == 0) {
-        bVar25 = false;
+        bVar26 = false;
       }
       else {
-        bVar25 = *(char *)(g_worldGrid.sizeX * iVar10 + (&DAT_007fb24c)[this_00->field_0024] +
+        bVar26 = *(char *)(g_worldGrid.sizeX * iVar10 + (&DAT_007fb24c)[this_00->field_0024] +
                           iVar11) != '\0';
       }
-      if ((!bVar25) || (this_00->field_0x286 == '\0')) {
+      if ((!bVar26) || (this_00->field_0x286 == '\0')) {
         local_18 = 1;
         *(undefined4 *)&this_00->field_0x270 = 0;
-        iVar20 = 2;
+        iVar21 = 2;
       }
     }
-    if (1 < iVar20) {
+    if (1 < iVar21) {
       if ((this_00->field_0259 == CASE_AD) &&
          (iVar10 = thunk_FUN_004e60d0(this_00->field_0024,0x7e), iVar10 != 0)) {
         iVar10 = 0x1389;
@@ -991,7 +1005,7 @@ switchD_00640c2d_caseD_a2:
     }
   }
   local_d4 = *(undefined4 *)&this_00->field_0x264;
-  bVar25 = false;
+  bVar26 = false;
   switch(this_00->field_0259) {
   case CASE_96:
   case CASE_97:
@@ -1016,7 +1030,7 @@ switchD_00640c2d_caseD_a2:
   case CASE_A4:
     local_13c[0] = 2;
     local_13c[1] = 1;
-    bVar25 = true;
+    bVar26 = true;
     local_d0 = 1;
     goto switchD_006415e9_caseD_9f;
   case CASE_AC:
@@ -1024,9 +1038,9 @@ switchD_00640c2d_caseD_a2:
     local_13c[0] = 6;
   }
   local_13c[1] = 1;
-  bVar25 = true;
+  bVar26 = true;
 switchD_006415e9_caseD_9f:
-  if ((this_00->field_0x27d != '\0') && (bVar25)) {
+  if ((this_00->field_0x27d != '\0') && (bVar26)) {
     if (this_00->field_0259 == CASE_A1) {
       iVar10 = FUN_006acf0d(local_80,local_7c,local_78,(int)*(short *)&this_00->field_0x41,
                             (int)*(short *)&this_00->field_0x43,(int)*(short *)&this_00->field_0x45);
@@ -1038,11 +1052,11 @@ switchD_006415e9_caseD_9f:
       }
       else {
         local_94 = ((*(short *)&this_00->field_0x41 - local_80) * 10000) / iVar10;
-        iVar20 = local_94 * iVar10;
+        iVar21 = local_94 * iVar10;
         local_10 = ((*(short *)&this_00->field_0x43 - local_7c) * 10000) / iVar10;
         local_14 = local_10 * iVar10;
         local_a8 = local_10 / 10000;
-        local_cc = iVar20 / 40000 + local_a8 + local_80;
+        local_cc = iVar21 / 40000 + local_a8 + local_80;
         local_84 = local_94 / 10000;
         local_34 = local_14 / 40000 + local_84 + local_7c;
         uVar17 = *(int *)&this_00->field_0x1c * 0x41c64e6d + 0x3039;
@@ -1060,7 +1074,7 @@ switchD_006415e9_caseD_9f:
         iVar11 = (uVar17 >> 0x10) % 0xb + 5;
         lVar5 = (longlong)(iVar11 * local_10) * -0x68db8bad;
         TraksClassTy::TraksCreate
-                  (g_traksClass_00802A7C,7,1,0,((iVar20 * 3) / 40000 - local_a8) + local_80,local_34
+                  (g_traksClass_00802A7C,7,1,0,((iVar21 * 3) / 40000 - local_a8) + local_80,local_34
                    ,(iVar10 * 3) / 40000 + local_78,
                    (short)(int)(lVar5 >> 0x2c) - (short)(lVar5 >> 0x3f),
                    (short)((iVar11 * local_94) / 10000),0,0,0,0,-1,0,0);
@@ -1105,7 +1119,7 @@ cf_common_exit_00642C8B:
 LAB_00641a40:
       uVar17 = iVar10 * 0x41c64e6d + 0x3039;
       *(uint *)&this_00->field_0x1c = uVar17;
-      uVar26 = 7;
+      bVar7 = 7;
     }
     else {
       iVar10 = (*pSVar18->vtable->vfunc_2C)();
@@ -1115,9 +1129,9 @@ LAB_00641a40:
       }
       uVar17 = *(int *)&this_00->field_0x1c * 0x41c64e6d + 0x3039;
       *(uint *)&this_00->field_0x1c = uVar17;
-      uVar26 = 5;
+      bVar7 = 5;
     }
-    thunk_FUN_0057b670((int *)this_00,0,uVar26,(short *)0x1,(short *)(uVar17 >> 0x10));
+    thunk_FUN_0057b670((int *)this_00,0,(uint)bVar7,(short *)0x1,(short *)(uVar17 >> 0x10));
   }
   if (this_00->field_0259 == CASE_B7) {
     uVar17 = *(int *)&this_00->field_0x1c * 0x41c64e6d + 0x3039;
@@ -1135,716 +1149,716 @@ LAB_00641a40:
   case CASE_96:
   case CASE_B4:
     uVar17 = 0xffffffff;
-    pcVar22 = &DAT_007d2514;
+    pcVar23 = &DAT_007d2514;
     do {
-      pcVar24 = pcVar22;
+      pcVar25 = pcVar23;
       if (uVar17 == 0) break;
       uVar17 = uVar17 - 1;
-      pcVar24 = pcVar22 + 1;
-      cVar1 = *pcVar22;
-      pcVar22 = pcVar24;
+      pcVar25 = pcVar23 + 1;
+      cVar1 = *pcVar23;
+      pcVar23 = pcVar25;
     } while (cVar1 != '\0');
     uVar17 = ~uVar17;
     local_5 = 0x14;
     iVar10 = -1;
-    pcVar22 = local_48;
+    pcVar23 = local_48;
     do {
-      pcVar23 = pcVar22;
+      pcVar24 = pcVar23;
       if (iVar10 == 0) break;
       iVar10 = iVar10 + -1;
-      pcVar23 = pcVar22 + 1;
-      cVar1 = *pcVar22;
-      pcVar22 = pcVar23;
+      pcVar24 = pcVar23 + 1;
+      cVar1 = *pcVar23;
+      pcVar23 = pcVar24;
     } while (cVar1 != '\0');
-    pcVar22 = pcVar24 + -uVar17;
-    pcVar24 = pcVar23 + -1;
-    memmove(pcVar24, pcVar22, uVar17); /* compiler REP MOVS byte copy */
-    uVar26 = 0;
+    pcVar23 = pcVar25 + -uVar17;
+    pcVar25 = pcVar24 + -1;
+    memmove(pcVar25, pcVar23, uVar17); /* compiler REP MOVS byte copy */
+    uVar19 = 0;
     uVar17 = 0xffffffff;
-    pcVar22 = &DAT_007d2508;
+    pcVar23 = &DAT_007d2508;
     do {
-      pcVar24 = pcVar22;
+      pcVar25 = pcVar23;
       if (uVar17 == 0) break;
       uVar17 = uVar17 - 1;
-      pcVar24 = pcVar22 + 1;
-      cVar1 = *pcVar22;
-      pcVar22 = pcVar24;
+      pcVar25 = pcVar23 + 1;
+      cVar1 = *pcVar23;
+      pcVar23 = pcVar25;
     } while (cVar1 != '\0');
     uVar17 = ~uVar17;
     iVar10 = -1;
-    pcVar22 = local_2c;
+    pcVar23 = local_2c;
     do {
-      pcVar23 = pcVar22;
+      pcVar24 = pcVar23;
       if (iVar10 == 0) break;
       iVar10 = iVar10 + -1;
-      pcVar23 = pcVar22 + 1;
-      cVar1 = *pcVar22;
-      pcVar22 = pcVar23;
+      pcVar24 = pcVar23 + 1;
+      cVar1 = *pcVar23;
+      pcVar23 = pcVar24;
     } while (cVar1 != '\0');
-    pcVar22 = pcVar24 + -uVar17;
-    pcVar24 = pcVar23 + -1;
-    memmove(pcVar24, pcVar22, uVar17); /* compiler REP MOVS byte copy */
-    uVar26 = 0;
+    pcVar23 = pcVar25 + -uVar17;
+    pcVar25 = pcVar24 + -1;
+    memmove(pcVar25, pcVar23, uVar17); /* compiler REP MOVS byte copy */
+    uVar19 = 0;
     uVar17 = 0xffffffff;
-    pcVar22 = &DAT_007d0570;
+    pcVar23 = &DAT_007d0570;
     do {
-      pcVar24 = pcVar22;
+      pcVar25 = pcVar23;
       if (uVar17 == 0) break;
       uVar17 = uVar17 - 1;
-      pcVar24 = pcVar22 + 1;
-      cVar1 = *pcVar22;
-      pcVar22 = pcVar24;
+      pcVar25 = pcVar23 + 1;
+      cVar1 = *pcVar23;
+      pcVar23 = pcVar25;
     } while (cVar1 != '\0');
     uVar17 = ~uVar17;
     iVar10 = -1;
-    pcVar22 = local_74;
+    pcVar23 = local_74;
     do {
-      pcVar23 = pcVar22;
+      pcVar24 = pcVar23;
       if (iVar10 == 0) break;
       iVar10 = iVar10 + -1;
-      pcVar23 = pcVar22 + 1;
-      cVar1 = *pcVar22;
-      pcVar22 = pcVar23;
+      pcVar24 = pcVar23 + 1;
+      cVar1 = *pcVar23;
+      pcVar23 = pcVar24;
     } while (cVar1 != '\0');
-    pcVar22 = pcVar24 + -uVar17;
-    pcVar24 = pcVar23 + -1;
-    memmove(pcVar24, pcVar22, uVar17); /* compiler REP MOVS byte copy */
-    uVar26 = 0;
+    pcVar23 = pcVar25 + -uVar17;
+    pcVar25 = pcVar24 + -1;
+    memmove(pcVar25, pcVar23, uVar17); /* compiler REP MOVS byte copy */
+    uVar19 = 0;
     break;
   case CASE_97:
     if (this_00->field_0x288 == '\x02') {
       uVar17 = 0xffffffff;
       local_5 = 10;
-      pcVar22 = &DAT_007d2500;
+      pcVar23 = &DAT_007d2500;
       do {
-        pcVar24 = pcVar22;
+        pcVar25 = pcVar23;
         if (uVar17 == 0) break;
         uVar17 = uVar17 - 1;
-        pcVar24 = pcVar22 + 1;
-        cVar1 = *pcVar22;
-        pcVar22 = pcVar24;
+        pcVar25 = pcVar23 + 1;
+        cVar1 = *pcVar23;
+        pcVar23 = pcVar25;
       } while (cVar1 != '\0');
       uVar17 = ~uVar17;
       iVar10 = -1;
-      pcVar22 = local_48;
+      pcVar23 = local_48;
       do {
-        pcVar23 = pcVar22;
+        pcVar24 = pcVar23;
         if (iVar10 == 0) break;
         iVar10 = iVar10 + -1;
-        pcVar23 = pcVar22 + 1;
-        cVar1 = *pcVar22;
-        pcVar22 = pcVar23;
+        pcVar24 = pcVar23 + 1;
+        cVar1 = *pcVar23;
+        pcVar23 = pcVar24;
       } while (cVar1 != '\0');
-      pcVar22 = pcVar24 + -uVar17;
-      pcVar24 = pcVar23 + -1;
-      memmove(pcVar24, pcVar22, uVar17); /* compiler REP MOVS byte copy */
-      uVar26 = 0;
+      pcVar23 = pcVar25 + -uVar17;
+      pcVar25 = pcVar24 + -1;
+      memmove(pcVar25, pcVar23, uVar17); /* compiler REP MOVS byte copy */
+      uVar19 = 0;
       uVar17 = 0xffffffff;
-      pcVar22 = &DAT_007d0588;
+      pcVar23 = &DAT_007d0588;
       do {
-        pcVar24 = pcVar22;
+        pcVar25 = pcVar23;
         if (uVar17 == 0) break;
         uVar17 = uVar17 - 1;
-        pcVar24 = pcVar22 + 1;
-        cVar1 = *pcVar22;
-        pcVar22 = pcVar24;
+        pcVar25 = pcVar23 + 1;
+        cVar1 = *pcVar23;
+        pcVar23 = pcVar25;
       } while (cVar1 != '\0');
       uVar17 = ~uVar17;
       iVar10 = -1;
-      pcVar22 = local_2c;
+      pcVar23 = local_2c;
       do {
-        pcVar23 = pcVar22;
+        pcVar24 = pcVar23;
         if (iVar10 == 0) break;
         iVar10 = iVar10 + -1;
-        pcVar23 = pcVar22 + 1;
-        cVar1 = *pcVar22;
-        pcVar22 = pcVar23;
+        pcVar24 = pcVar23 + 1;
+        cVar1 = *pcVar23;
+        pcVar23 = pcVar24;
       } while (cVar1 != '\0');
-      pcVar22 = pcVar24 + -uVar17;
-      pcVar24 = pcVar23 + -1;
-      memmove(pcVar24, pcVar22, uVar17); /* compiler REP MOVS byte copy */
-      uVar26 = 0;
+      pcVar23 = pcVar25 + -uVar17;
+      pcVar25 = pcVar24 + -1;
+      memmove(pcVar25, pcVar23, uVar17); /* compiler REP MOVS byte copy */
+      uVar19 = 0;
       uVar17 = 0xffffffff;
-      pcVar22 = &DAT_007d0564;
+      pcVar23 = &DAT_007d0564;
       do {
-        pcVar24 = pcVar22;
+        pcVar25 = pcVar23;
         if (uVar17 == 0) break;
         uVar17 = uVar17 - 1;
-        pcVar24 = pcVar22 + 1;
-        cVar1 = *pcVar22;
-        pcVar22 = pcVar24;
+        pcVar25 = pcVar23 + 1;
+        cVar1 = *pcVar23;
+        pcVar23 = pcVar25;
       } while (cVar1 != '\0');
       uVar17 = ~uVar17;
       iVar10 = -1;
-      pcVar22 = local_74;
+      pcVar23 = local_74;
       do {
-        pcVar23 = pcVar22;
+        pcVar24 = pcVar23;
         if (iVar10 == 0) break;
         iVar10 = iVar10 + -1;
-        pcVar23 = pcVar22 + 1;
-        cVar1 = *pcVar22;
-        pcVar22 = pcVar23;
+        pcVar24 = pcVar23 + 1;
+        cVar1 = *pcVar23;
+        pcVar23 = pcVar24;
       } while (cVar1 != '\0');
-      pcVar22 = pcVar24 + -uVar17;
-      pcVar24 = pcVar23 + -1;
-      memmove(pcVar24, pcVar22, uVar17); /* compiler REP MOVS byte copy */
-      uVar26 = 0;
+      pcVar23 = pcVar25 + -uVar17;
+      pcVar25 = pcVar24 + -1;
+      memmove(pcVar25, pcVar23, uVar17); /* compiler REP MOVS byte copy */
+      uVar19 = 0;
     }
     else {
       uVar17 = 0xffffffff;
       local_5 = 0x14;
-      pcVar22 = &DAT_007d0594;
+      pcVar23 = &DAT_007d0594;
       do {
-        pcVar24 = pcVar22;
+        pcVar25 = pcVar23;
         if (uVar17 == 0) break;
         uVar17 = uVar17 - 1;
-        pcVar24 = pcVar22 + 1;
-        cVar1 = *pcVar22;
-        pcVar22 = pcVar24;
+        pcVar25 = pcVar23 + 1;
+        cVar1 = *pcVar23;
+        pcVar23 = pcVar25;
       } while (cVar1 != '\0');
       uVar17 = ~uVar17;
       iVar10 = -1;
-      pcVar22 = local_48;
+      pcVar23 = local_48;
       do {
-        pcVar23 = pcVar22;
+        pcVar24 = pcVar23;
         if (iVar10 == 0) break;
         iVar10 = iVar10 + -1;
-        pcVar23 = pcVar22 + 1;
-        cVar1 = *pcVar22;
-        pcVar22 = pcVar23;
+        pcVar24 = pcVar23 + 1;
+        cVar1 = *pcVar23;
+        pcVar23 = pcVar24;
       } while (cVar1 != '\0');
-      pcVar22 = pcVar24 + -uVar17;
-      pcVar24 = pcVar23 + -1;
-      memmove(pcVar24, pcVar22, uVar17); /* compiler REP MOVS byte copy */
-      uVar26 = 0;
+      pcVar23 = pcVar25 + -uVar17;
+      pcVar25 = pcVar24 + -1;
+      memmove(pcVar25, pcVar23, uVar17); /* compiler REP MOVS byte copy */
+      uVar19 = 0;
       uVar17 = 0xffffffff;
-      pcVar22 = &DAT_007d0588;
+      pcVar23 = &DAT_007d0588;
       do {
-        pcVar24 = pcVar22;
+        pcVar25 = pcVar23;
         if (uVar17 == 0) break;
         uVar17 = uVar17 - 1;
-        pcVar24 = pcVar22 + 1;
-        cVar1 = *pcVar22;
-        pcVar22 = pcVar24;
+        pcVar25 = pcVar23 + 1;
+        cVar1 = *pcVar23;
+        pcVar23 = pcVar25;
       } while (cVar1 != '\0');
       uVar17 = ~uVar17;
       iVar10 = -1;
-      pcVar22 = local_2c;
+      pcVar23 = local_2c;
       do {
-        pcVar23 = pcVar22;
+        pcVar24 = pcVar23;
         if (iVar10 == 0) break;
         iVar10 = iVar10 + -1;
-        pcVar23 = pcVar22 + 1;
-        cVar1 = *pcVar22;
-        pcVar22 = pcVar23;
+        pcVar24 = pcVar23 + 1;
+        cVar1 = *pcVar23;
+        pcVar23 = pcVar24;
       } while (cVar1 != '\0');
-      pcVar22 = pcVar24 + -uVar17;
-      pcVar24 = pcVar23 + -1;
-      memmove(pcVar24, pcVar22, uVar17); /* compiler REP MOVS byte copy */
-      uVar26 = 0;
+      pcVar23 = pcVar25 + -uVar17;
+      pcVar25 = pcVar24 + -1;
+      memmove(pcVar25, pcVar23, uVar17); /* compiler REP MOVS byte copy */
+      uVar19 = 0;
       uVar17 = 0xffffffff;
-      pcVar22 = &DAT_007d0564;
+      pcVar23 = &DAT_007d0564;
       do {
-        pcVar24 = pcVar22;
+        pcVar25 = pcVar23;
         if (uVar17 == 0) break;
         uVar17 = uVar17 - 1;
-        pcVar24 = pcVar22 + 1;
-        cVar1 = *pcVar22;
-        pcVar22 = pcVar24;
+        pcVar25 = pcVar23 + 1;
+        cVar1 = *pcVar23;
+        pcVar23 = pcVar25;
       } while (cVar1 != '\0');
       uVar17 = ~uVar17;
       iVar10 = -1;
-      pcVar22 = local_74;
+      pcVar23 = local_74;
       do {
-        pcVar23 = pcVar22;
+        pcVar24 = pcVar23;
         if (iVar10 == 0) break;
         iVar10 = iVar10 + -1;
-        pcVar23 = pcVar22 + 1;
-        cVar1 = *pcVar22;
-        pcVar22 = pcVar23;
+        pcVar24 = pcVar23 + 1;
+        cVar1 = *pcVar23;
+        pcVar23 = pcVar24;
       } while (cVar1 != '\0');
-      pcVar22 = pcVar24 + -uVar17;
-      pcVar24 = pcVar23 + -1;
-      memmove(pcVar24, pcVar22, uVar17); /* compiler REP MOVS byte copy */
-      uVar26 = 0;
+      pcVar23 = pcVar25 + -uVar17;
+      pcVar25 = pcVar24 + -1;
+      memmove(pcVar25, pcVar23, uVar17); /* compiler REP MOVS byte copy */
+      uVar19 = 0;
     }
     break;
   case CASE_98:
     uVar17 = 0xffffffff;
-    pcVar22 = &DAT_007d24f8;
+    pcVar23 = &DAT_007d24f8;
     do {
-      pcVar24 = pcVar22;
+      pcVar25 = pcVar23;
       if (uVar17 == 0) break;
       uVar17 = uVar17 - 1;
-      pcVar24 = pcVar22 + 1;
-      cVar1 = *pcVar22;
-      pcVar22 = pcVar24;
+      pcVar25 = pcVar23 + 1;
+      cVar1 = *pcVar23;
+      pcVar23 = pcVar25;
     } while (cVar1 != '\0');
     uVar17 = ~uVar17;
     local_5 = 0x12;
     iVar10 = -1;
-    pcVar22 = local_48;
+    pcVar23 = local_48;
     do {
-      pcVar23 = pcVar22;
+      pcVar24 = pcVar23;
       if (iVar10 == 0) break;
       iVar10 = iVar10 + -1;
-      pcVar23 = pcVar22 + 1;
-      cVar1 = *pcVar22;
-      pcVar22 = pcVar23;
+      pcVar24 = pcVar23 + 1;
+      cVar1 = *pcVar23;
+      pcVar23 = pcVar24;
     } while (cVar1 != '\0');
-    pcVar22 = pcVar24 + -uVar17;
-    pcVar24 = pcVar23 + -1;
-    memmove(pcVar24, pcVar22, uVar17); /* compiler REP MOVS byte copy */
-    uVar26 = 0;
+    pcVar23 = pcVar25 + -uVar17;
+    pcVar25 = pcVar24 + -1;
+    memmove(pcVar25, pcVar23, uVar17); /* compiler REP MOVS byte copy */
+    uVar19 = 0;
     uVar17 = 0xffffffff;
-    pcVar22 = "expmask3";
+    pcVar23 = "expmask3";
     do {
-      pcVar24 = pcVar22;
+      pcVar25 = pcVar23;
       if (uVar17 == 0) break;
       uVar17 = uVar17 - 1;
-      pcVar24 = pcVar22 + 1;
-      cVar1 = *pcVar22;
-      pcVar22 = pcVar24;
+      pcVar25 = pcVar23 + 1;
+      cVar1 = *pcVar23;
+      pcVar23 = pcVar25;
     } while (cVar1 != '\0');
     uVar17 = ~uVar17;
     iVar10 = -1;
-    pcVar22 = local_2c;
+    pcVar23 = local_2c;
     do {
-      pcVar23 = pcVar22;
+      pcVar24 = pcVar23;
       if (iVar10 == 0) break;
       iVar10 = iVar10 + -1;
-      pcVar23 = pcVar22 + 1;
-      cVar1 = *pcVar22;
-      pcVar22 = pcVar23;
+      pcVar24 = pcVar23 + 1;
+      cVar1 = *pcVar23;
+      pcVar23 = pcVar24;
     } while (cVar1 != '\0');
-    pcVar22 = pcVar24 + -uVar17;
-    pcVar24 = pcVar23 + -1;
-    memmove(pcVar24, pcVar22, uVar17); /* compiler REP MOVS byte copy */
-    uVar26 = 0;
+    pcVar23 = pcVar25 + -uVar17;
+    pcVar25 = pcVar24 + -1;
+    memmove(pcVar25, pcVar23, uVar17); /* compiler REP MOVS byte copy */
+    uVar19 = 0;
     uVar17 = 0xffffffff;
-    pcVar22 = &DAT_007d24ec;
+    pcVar23 = &DAT_007d24ec;
     do {
-      pcVar24 = pcVar22;
+      pcVar25 = pcVar23;
       if (uVar17 == 0) break;
       uVar17 = uVar17 - 1;
-      pcVar24 = pcVar22 + 1;
-      cVar1 = *pcVar22;
-      pcVar22 = pcVar24;
+      pcVar25 = pcVar23 + 1;
+      cVar1 = *pcVar23;
+      pcVar23 = pcVar25;
     } while (cVar1 != '\0');
     uVar17 = ~uVar17;
     iVar10 = -1;
-    pcVar22 = local_74;
+    pcVar23 = local_74;
     do {
-      pcVar23 = pcVar22;
+      pcVar24 = pcVar23;
       if (iVar10 == 0) break;
       iVar10 = iVar10 + -1;
-      pcVar23 = pcVar22 + 1;
-      cVar1 = *pcVar22;
-      pcVar22 = pcVar23;
+      pcVar24 = pcVar23 + 1;
+      cVar1 = *pcVar23;
+      pcVar23 = pcVar24;
     } while (cVar1 != '\0');
-    pcVar22 = pcVar24 + -uVar17;
-    pcVar24 = pcVar23 + -1;
-    memmove(pcVar24, pcVar22, uVar17); /* compiler REP MOVS byte copy */
-    uVar26 = 0;
+    pcVar23 = pcVar25 + -uVar17;
+    pcVar25 = pcVar24 + -1;
+    memmove(pcVar25, pcVar23, uVar17); /* compiler REP MOVS byte copy */
+    uVar19 = 0;
     break;
   case CASE_99:
   case CASE_A3:
-    pcVar22 = "expcshl";
+    pcVar23 = "expcshl";
     goto LAB_006424a7;
   case CASE_9A:
     uVar17 = 0xffffffff;
-    pcVar22 = &DAT_007d2500;
+    pcVar23 = &DAT_007d2500;
     do {
-      pcVar24 = pcVar22;
+      pcVar25 = pcVar23;
       if (uVar17 == 0) break;
       uVar17 = uVar17 - 1;
-      pcVar24 = pcVar22 + 1;
-      cVar1 = *pcVar22;
-      pcVar22 = pcVar24;
+      pcVar25 = pcVar23 + 1;
+      cVar1 = *pcVar23;
+      pcVar23 = pcVar25;
     } while (cVar1 != '\0');
     uVar17 = ~uVar17;
     local_5 = 10;
     iVar10 = -1;
-    pcVar22 = local_48;
+    pcVar23 = local_48;
     do {
-      pcVar23 = pcVar22;
+      pcVar24 = pcVar23;
       if (iVar10 == 0) break;
       iVar10 = iVar10 + -1;
-      pcVar23 = pcVar22 + 1;
-      cVar1 = *pcVar22;
-      pcVar22 = pcVar23;
+      pcVar24 = pcVar23 + 1;
+      cVar1 = *pcVar23;
+      pcVar23 = pcVar24;
     } while (cVar1 != '\0');
-    pcVar22 = pcVar24 + -uVar17;
-    pcVar24 = pcVar23 + -1;
-    memmove(pcVar24, pcVar22, uVar17); /* compiler REP MOVS byte copy */
-    uVar26 = 0;
+    pcVar23 = pcVar25 + -uVar17;
+    pcVar25 = pcVar24 + -1;
+    memmove(pcVar25, pcVar23, uVar17); /* compiler REP MOVS byte copy */
+    uVar19 = 0;
     uVar17 = 0xffffffff;
-    pcVar22 = "expmask3";
+    pcVar23 = "expmask3";
     do {
-      pcVar24 = pcVar22;
+      pcVar25 = pcVar23;
       if (uVar17 == 0) break;
       uVar17 = uVar17 - 1;
-      pcVar24 = pcVar22 + 1;
-      cVar1 = *pcVar22;
-      pcVar22 = pcVar24;
+      pcVar25 = pcVar23 + 1;
+      cVar1 = *pcVar23;
+      pcVar23 = pcVar25;
     } while (cVar1 != '\0');
     uVar17 = ~uVar17;
     iVar10 = -1;
-    pcVar22 = local_2c;
+    pcVar23 = local_2c;
     do {
-      pcVar23 = pcVar22;
+      pcVar24 = pcVar23;
       if (iVar10 == 0) break;
       iVar10 = iVar10 + -1;
-      pcVar23 = pcVar22 + 1;
-      cVar1 = *pcVar22;
-      pcVar22 = pcVar23;
+      pcVar24 = pcVar23 + 1;
+      cVar1 = *pcVar23;
+      pcVar23 = pcVar24;
     } while (cVar1 != '\0');
-    pcVar22 = pcVar24 + -uVar17;
-    pcVar24 = pcVar23 + -1;
-    memmove(pcVar24, pcVar22, uVar17); /* compiler REP MOVS byte copy */
-    uVar26 = 0;
+    pcVar23 = pcVar25 + -uVar17;
+    pcVar25 = pcVar24 + -1;
+    memmove(pcVar25, pcVar23, uVar17); /* compiler REP MOVS byte copy */
+    uVar19 = 0;
     uVar17 = 0xffffffff;
-    pcVar22 = &DAT_007d0564;
+    pcVar23 = &DAT_007d0564;
     do {
-      pcVar24 = pcVar22;
+      pcVar25 = pcVar23;
       if (uVar17 == 0) break;
       uVar17 = uVar17 - 1;
-      pcVar24 = pcVar22 + 1;
-      cVar1 = *pcVar22;
-      pcVar22 = pcVar24;
+      pcVar25 = pcVar23 + 1;
+      cVar1 = *pcVar23;
+      pcVar23 = pcVar25;
     } while (cVar1 != '\0');
     uVar17 = ~uVar17;
     iVar10 = -1;
-    pcVar22 = local_74;
+    pcVar23 = local_74;
     do {
-      pcVar23 = pcVar22;
+      pcVar24 = pcVar23;
       if (iVar10 == 0) break;
       iVar10 = iVar10 + -1;
-      pcVar23 = pcVar22 + 1;
-      cVar1 = *pcVar22;
-      pcVar22 = pcVar23;
+      pcVar24 = pcVar23 + 1;
+      cVar1 = *pcVar23;
+      pcVar23 = pcVar24;
     } while (cVar1 != '\0');
-    pcVar22 = pcVar24 + -uVar17;
-    pcVar24 = pcVar23 + -1;
-    memmove(pcVar24, pcVar22, uVar17); /* compiler REP MOVS byte copy */
-    uVar26 = 0;
+    pcVar23 = pcVar25 + -uVar17;
+    pcVar25 = pcVar24 + -1;
+    memmove(pcVar25, pcVar23, uVar17); /* compiler REP MOVS byte copy */
+    uVar19 = 0;
     break;
   case CASE_9B:
   case CASE_9D:
     uVar17 = 0xffffffff;
-    pcVar22 = "exprlas";
+    pcVar23 = "exprlas";
     do {
-      pcVar24 = pcVar22;
+      pcVar25 = pcVar23;
       if (uVar17 == 0) break;
       uVar17 = uVar17 - 1;
-      pcVar24 = pcVar22 + 1;
-      cVar1 = *pcVar22;
-      pcVar22 = pcVar24;
+      pcVar25 = pcVar23 + 1;
+      cVar1 = *pcVar23;
+      pcVar23 = pcVar25;
     } while (cVar1 != '\0');
     uVar17 = ~uVar17;
     iVar10 = -1;
-    pcVar22 = local_48;
+    pcVar23 = local_48;
     do {
-      pcVar23 = pcVar22;
+      pcVar24 = pcVar23;
       if (iVar10 == 0) break;
       iVar10 = iVar10 + -1;
-      pcVar23 = pcVar22 + 1;
-      cVar1 = *pcVar22;
-      pcVar22 = pcVar23;
+      pcVar24 = pcVar23 + 1;
+      cVar1 = *pcVar23;
+      pcVar23 = pcVar24;
     } while (cVar1 != '\0');
-    pcVar22 = pcVar24 + -uVar17;
-    pcVar24 = pcVar23 + -1;
-    memmove(pcVar24, pcVar22, uVar17); /* compiler REP MOVS byte copy */
-    uVar26 = 0;
+    pcVar23 = pcVar25 + -uVar17;
+    pcVar25 = pcVar24 + -1;
+    memmove(pcVar25, pcVar23, uVar17); /* compiler REP MOVS byte copy */
+    uVar19 = 0;
     uVar17 = 0xffffffff;
-    pcVar22 = &DAT_007d2508;
+    pcVar23 = &DAT_007d2508;
     do {
-      pcVar24 = pcVar22;
+      pcVar25 = pcVar23;
       if (uVar17 == 0) break;
       uVar17 = uVar17 - 1;
-      pcVar24 = pcVar22 + 1;
-      cVar1 = *pcVar22;
-      pcVar22 = pcVar24;
+      pcVar25 = pcVar23 + 1;
+      cVar1 = *pcVar23;
+      pcVar23 = pcVar25;
     } while (cVar1 != '\0');
     uVar17 = ~uVar17;
     iVar10 = -1;
-    pcVar22 = local_2c;
+    pcVar23 = local_2c;
     do {
-      pcVar23 = pcVar22;
+      pcVar24 = pcVar23;
       if (iVar10 == 0) break;
       iVar10 = iVar10 + -1;
-      pcVar23 = pcVar22 + 1;
-      cVar1 = *pcVar22;
-      pcVar22 = pcVar23;
+      pcVar24 = pcVar23 + 1;
+      cVar1 = *pcVar23;
+      pcVar23 = pcVar24;
     } while (cVar1 != '\0');
-    pcVar22 = pcVar24 + -uVar17;
-    pcVar24 = pcVar23 + -1;
-    memmove(pcVar24, pcVar22, uVar17); /* compiler REP MOVS byte copy */
-    uVar26 = 0;
+    pcVar23 = pcVar25 + -uVar17;
+    pcVar25 = pcVar24 + -1;
+    memmove(pcVar25, pcVar23, uVar17); /* compiler REP MOVS byte copy */
+    uVar19 = 0;
     break;
   case CASE_9C:
     uVar17 = 0xffffffff;
-    pcVar22 = "expllas";
+    pcVar23 = "expllas";
     do {
-      pcVar24 = pcVar22;
+      pcVar25 = pcVar23;
       if (uVar17 == 0) break;
       uVar17 = uVar17 - 1;
-      pcVar24 = pcVar22 + 1;
-      cVar1 = *pcVar22;
-      pcVar22 = pcVar24;
+      pcVar25 = pcVar23 + 1;
+      cVar1 = *pcVar23;
+      pcVar23 = pcVar25;
     } while (cVar1 != '\0');
     uVar17 = ~uVar17;
     iVar10 = -1;
-    pcVar22 = local_48;
+    pcVar23 = local_48;
     do {
-      pcVar23 = pcVar22;
+      pcVar24 = pcVar23;
       if (iVar10 == 0) break;
       iVar10 = iVar10 + -1;
-      pcVar23 = pcVar22 + 1;
-      cVar1 = *pcVar22;
-      pcVar22 = pcVar23;
+      pcVar24 = pcVar23 + 1;
+      cVar1 = *pcVar23;
+      pcVar23 = pcVar24;
     } while (cVar1 != '\0');
-    pcVar22 = pcVar24 + -uVar17;
-    pcVar24 = pcVar23 + -1;
-    memmove(pcVar24, pcVar22, uVar17); /* compiler REP MOVS byte copy */
-    uVar26 = 0;
+    pcVar23 = pcVar25 + -uVar17;
+    pcVar25 = pcVar24 + -1;
+    memmove(pcVar25, pcVar23, uVar17); /* compiler REP MOVS byte copy */
+    uVar19 = 0;
     uVar17 = 0xffffffff;
-    pcVar22 = &DAT_007d2508;
+    pcVar23 = &DAT_007d2508;
     do {
-      pcVar24 = pcVar22;
+      pcVar25 = pcVar23;
       if (uVar17 == 0) break;
       uVar17 = uVar17 - 1;
-      pcVar24 = pcVar22 + 1;
-      cVar1 = *pcVar22;
-      pcVar22 = pcVar24;
+      pcVar25 = pcVar23 + 1;
+      cVar1 = *pcVar23;
+      pcVar23 = pcVar25;
     } while (cVar1 != '\0');
     uVar17 = ~uVar17;
     iVar10 = -1;
-    pcVar22 = local_2c;
+    pcVar23 = local_2c;
     do {
-      pcVar23 = pcVar22;
+      pcVar24 = pcVar23;
       if (iVar10 == 0) break;
       iVar10 = iVar10 + -1;
-      pcVar23 = pcVar22 + 1;
-      cVar1 = *pcVar22;
-      pcVar22 = pcVar23;
+      pcVar24 = pcVar23 + 1;
+      cVar1 = *pcVar23;
+      pcVar23 = pcVar24;
     } while (cVar1 != '\0');
-    pcVar22 = pcVar24 + -uVar17;
-    pcVar24 = pcVar23 + -1;
-    memmove(pcVar24, pcVar22, uVar17); /* compiler REP MOVS byte copy */
-    uVar26 = 0;
+    pcVar23 = pcVar25 + -uVar17;
+    pcVar25 = pcVar24 + -1;
+    memmove(pcVar25, pcVar23, uVar17); /* compiler REP MOVS byte copy */
+    uVar19 = 0;
     break;
   case CASE_9E:
     uVar17 = 0xffffffff;
-    pcVar22 = &DAT_007d24c8;
+    pcVar23 = &DAT_007d24c8;
     do {
-      pcVar24 = pcVar22;
+      pcVar25 = pcVar23;
       if (uVar17 == 0) break;
       uVar17 = uVar17 - 1;
-      pcVar24 = pcVar22 + 1;
-      cVar1 = *pcVar22;
-      pcVar22 = pcVar24;
+      pcVar25 = pcVar23 + 1;
+      cVar1 = *pcVar23;
+      pcVar23 = pcVar25;
     } while (cVar1 != '\0');
     uVar17 = ~uVar17;
     iVar10 = -1;
-    pcVar22 = local_48;
+    pcVar23 = local_48;
     do {
-      pcVar23 = pcVar22;
+      pcVar24 = pcVar23;
       if (iVar10 == 0) break;
       iVar10 = iVar10 + -1;
-      pcVar23 = pcVar22 + 1;
-      cVar1 = *pcVar22;
-      pcVar22 = pcVar23;
+      pcVar24 = pcVar23 + 1;
+      cVar1 = *pcVar23;
+      pcVar23 = pcVar24;
     } while (cVar1 != '\0');
-    pcVar22 = pcVar24 + -uVar17;
-    pcVar24 = pcVar23 + -1;
-    memmove(pcVar24, pcVar22, uVar17); /* compiler REP MOVS byte copy */
-    uVar26 = 0;
+    pcVar23 = pcVar25 + -uVar17;
+    pcVar25 = pcVar24 + -1;
+    memmove(pcVar25, pcVar23, uVar17); /* compiler REP MOVS byte copy */
+    uVar19 = 0;
     uVar17 = 0xffffffff;
-    pcVar22 = &DAT_007d2508;
+    pcVar23 = &DAT_007d2508;
     do {
-      pcVar24 = pcVar22;
+      pcVar25 = pcVar23;
       if (uVar17 == 0) break;
       uVar17 = uVar17 - 1;
-      pcVar24 = pcVar22 + 1;
-      cVar1 = *pcVar22;
-      pcVar22 = pcVar24;
+      pcVar25 = pcVar23 + 1;
+      cVar1 = *pcVar23;
+      pcVar23 = pcVar25;
     } while (cVar1 != '\0');
     uVar17 = ~uVar17;
     iVar10 = -1;
-    pcVar22 = local_2c;
+    pcVar23 = local_2c;
     do {
-      pcVar23 = pcVar22;
+      pcVar24 = pcVar23;
       if (iVar10 == 0) break;
       iVar10 = iVar10 + -1;
-      pcVar23 = pcVar22 + 1;
-      cVar1 = *pcVar22;
-      pcVar22 = pcVar23;
+      pcVar24 = pcVar23 + 1;
+      cVar1 = *pcVar23;
+      pcVar23 = pcVar24;
     } while (cVar1 != '\0');
-    pcVar22 = pcVar24 + -uVar17;
-    pcVar24 = pcVar23 + -1;
-    memmove(pcVar24, pcVar22, uVar17); /* compiler REP MOVS byte copy */
-    uVar26 = 0;
+    pcVar23 = pcVar25 + -uVar17;
+    pcVar25 = pcVar24 + -1;
+    memmove(pcVar25, pcVar23, uVar17); /* compiler REP MOVS byte copy */
+    uVar19 = 0;
     break;
   case CASE_9F:
-    pcVar22 = "exphfs";
+    pcVar23 = "exphfs";
     goto LAB_006424a7;
   case CASE_A0:
   case CASE_A1:
     uVar17 = 0xffffffff;
-    pcVar22 = &DAT_007d24ac;
+    pcVar23 = &DAT_007d24ac;
     do {
-      pcVar24 = pcVar22;
+      pcVar25 = pcVar23;
       if (uVar17 == 0) break;
       uVar17 = uVar17 - 1;
-      pcVar24 = pcVar22 + 1;
-      cVar1 = *pcVar22;
-      pcVar22 = pcVar24;
+      pcVar25 = pcVar23 + 1;
+      cVar1 = *pcVar23;
+      pcVar23 = pcVar25;
     } while (cVar1 != '\0');
     uVar17 = ~uVar17;
     local_5 = 10;
     iVar10 = -1;
-    pcVar22 = local_48;
+    pcVar23 = local_48;
     do {
-      pcVar23 = pcVar22;
+      pcVar24 = pcVar23;
       if (iVar10 == 0) break;
       iVar10 = iVar10 + -1;
-      pcVar23 = pcVar22 + 1;
-      cVar1 = *pcVar22;
-      pcVar22 = pcVar23;
+      pcVar24 = pcVar23 + 1;
+      cVar1 = *pcVar23;
+      pcVar23 = pcVar24;
     } while (cVar1 != '\0');
-    pcVar22 = pcVar24 + -uVar17;
-    pcVar24 = pcVar23 + -1;
-    memmove(pcVar24, pcVar22, uVar17); /* compiler REP MOVS byte copy */
-    uVar26 = 0;
+    pcVar23 = pcVar25 + -uVar17;
+    pcVar25 = pcVar24 + -1;
+    memmove(pcVar25, pcVar23, uVar17); /* compiler REP MOVS byte copy */
+    uVar19 = 0;
     uVar17 = 0xffffffff;
-    pcVar22 = &DAT_007d0588;
+    pcVar23 = &DAT_007d0588;
     do {
-      pcVar24 = pcVar22;
+      pcVar25 = pcVar23;
       if (uVar17 == 0) break;
       uVar17 = uVar17 - 1;
-      pcVar24 = pcVar22 + 1;
-      cVar1 = *pcVar22;
-      pcVar22 = pcVar24;
+      pcVar25 = pcVar23 + 1;
+      cVar1 = *pcVar23;
+      pcVar23 = pcVar25;
     } while (cVar1 != '\0');
     uVar17 = ~uVar17;
     iVar10 = -1;
-    pcVar22 = local_2c;
+    pcVar23 = local_2c;
     do {
-      pcVar23 = pcVar22;
+      pcVar24 = pcVar23;
       if (iVar10 == 0) break;
       iVar10 = iVar10 + -1;
-      pcVar23 = pcVar22 + 1;
-      cVar1 = *pcVar22;
-      pcVar22 = pcVar23;
+      pcVar24 = pcVar23 + 1;
+      cVar1 = *pcVar23;
+      pcVar23 = pcVar24;
     } while (cVar1 != '\0');
-    pcVar22 = pcVar24 + -uVar17;
-    pcVar24 = pcVar23 + -1;
-    memmove(pcVar24, pcVar22, uVar17); /* compiler REP MOVS byte copy */
-    uVar26 = 0;
+    pcVar23 = pcVar25 + -uVar17;
+    pcVar25 = pcVar24 + -1;
+    memmove(pcVar25, pcVar23, uVar17); /* compiler REP MOVS byte copy */
+    uVar19 = 0;
     uVar17 = 0xffffffff;
-    pcVar22 = &DAT_007d0570;
+    pcVar23 = &DAT_007d0570;
     do {
-      pcVar24 = pcVar22;
+      pcVar25 = pcVar23;
       if (uVar17 == 0) break;
       uVar17 = uVar17 - 1;
-      pcVar24 = pcVar22 + 1;
-      cVar1 = *pcVar22;
-      pcVar22 = pcVar24;
+      pcVar25 = pcVar23 + 1;
+      cVar1 = *pcVar23;
+      pcVar23 = pcVar25;
     } while (cVar1 != '\0');
     uVar17 = ~uVar17;
     iVar10 = -1;
-    pcVar22 = local_74;
+    pcVar23 = local_74;
     do {
-      pcVar23 = pcVar22;
+      pcVar24 = pcVar23;
       if (iVar10 == 0) break;
       iVar10 = iVar10 + -1;
-      pcVar23 = pcVar22 + 1;
-      cVar1 = *pcVar22;
-      pcVar22 = pcVar23;
+      pcVar24 = pcVar23 + 1;
+      cVar1 = *pcVar23;
+      pcVar23 = pcVar24;
     } while (cVar1 != '\0');
-    pcVar22 = pcVar24 + -uVar17;
-    pcVar24 = pcVar23 + -1;
-    memmove(pcVar24, pcVar22, uVar17); /* compiler REP MOVS byte copy */
-    uVar26 = 0;
+    pcVar23 = pcVar25 + -uVar17;
+    pcVar25 = pcVar24 + -1;
+    memmove(pcVar25, pcVar23, uVar17); /* compiler REP MOVS byte copy */
+    uVar19 = 0;
     break;
   case CASE_A4:
     uVar17 = 0xffffffff;
-    pcVar22 = &DAT_007d24a4;
+    pcVar23 = &DAT_007d24a4;
     do {
-      pcVar24 = pcVar22;
+      pcVar25 = pcVar23;
       if (uVar17 == 0) break;
       uVar17 = uVar17 - 1;
-      pcVar24 = pcVar22 + 1;
-      cVar1 = *pcVar22;
-      pcVar22 = pcVar24;
+      pcVar25 = pcVar23 + 1;
+      cVar1 = *pcVar23;
+      pcVar23 = pcVar25;
     } while (cVar1 != '\0');
     uVar17 = ~uVar17;
     local_5 = 0x22;
     iVar10 = -1;
-    pcVar22 = local_48;
+    pcVar23 = local_48;
     do {
-      pcVar23 = pcVar22;
+      pcVar24 = pcVar23;
       if (iVar10 == 0) break;
       iVar10 = iVar10 + -1;
-      pcVar23 = pcVar22 + 1;
-      cVar1 = *pcVar22;
-      pcVar22 = pcVar23;
+      pcVar24 = pcVar23 + 1;
+      cVar1 = *pcVar23;
+      pcVar23 = pcVar24;
     } while (cVar1 != '\0');
-    pcVar22 = pcVar24 + -uVar17;
-    pcVar24 = pcVar23 + -1;
-    memmove(pcVar24, pcVar22, uVar17); /* compiler REP MOVS byte copy */
-    uVar26 = 0;
+    pcVar23 = pcVar25 + -uVar17;
+    pcVar25 = pcVar24 + -1;
+    memmove(pcVar25, pcVar23, uVar17); /* compiler REP MOVS byte copy */
+    uVar19 = 0;
     uVar17 = 0xffffffff;
-    pcVar22 = "expmask3";
+    pcVar23 = "expmask3";
     do {
-      pcVar24 = pcVar22;
+      pcVar25 = pcVar23;
       if (uVar17 == 0) break;
       uVar17 = uVar17 - 1;
-      pcVar24 = pcVar22 + 1;
-      cVar1 = *pcVar22;
-      pcVar22 = pcVar24;
+      pcVar25 = pcVar23 + 1;
+      cVar1 = *pcVar23;
+      pcVar23 = pcVar25;
     } while (cVar1 != '\0');
     uVar17 = ~uVar17;
     iVar10 = -1;
-    pcVar22 = local_2c;
+    pcVar23 = local_2c;
     do {
-      pcVar23 = pcVar22;
+      pcVar24 = pcVar23;
       if (iVar10 == 0) break;
       iVar10 = iVar10 + -1;
-      pcVar23 = pcVar22 + 1;
-      cVar1 = *pcVar22;
-      pcVar22 = pcVar23;
+      pcVar24 = pcVar23 + 1;
+      cVar1 = *pcVar23;
+      pcVar23 = pcVar24;
     } while (cVar1 != '\0');
-    pcVar22 = pcVar24 + -uVar17;
-    pcVar24 = pcVar23 + -1;
-    memmove(pcVar24, pcVar22, uVar17); /* compiler REP MOVS byte copy */
-    uVar26 = 0;
+    pcVar23 = pcVar25 + -uVar17;
+    pcVar25 = pcVar24 + -1;
+    memmove(pcVar25, pcVar23, uVar17); /* compiler REP MOVS byte copy */
+    uVar19 = 0;
     uVar17 = 0xffffffff;
-    pcVar22 = &DAT_007d24ec;
+    pcVar23 = &DAT_007d24ec;
     do {
-      pcVar24 = pcVar22;
+      pcVar25 = pcVar23;
       if (uVar17 == 0) break;
       uVar17 = uVar17 - 1;
-      pcVar24 = pcVar22 + 1;
-      cVar1 = *pcVar22;
-      pcVar22 = pcVar24;
+      pcVar25 = pcVar23 + 1;
+      cVar1 = *pcVar23;
+      pcVar23 = pcVar25;
     } while (cVar1 != '\0');
     uVar17 = ~uVar17;
     iVar10 = -1;
-    pcVar22 = local_74;
+    pcVar23 = local_74;
     do {
-      pcVar23 = pcVar22;
+      pcVar24 = pcVar23;
       if (iVar10 == 0) break;
       iVar10 = iVar10 + -1;
-      pcVar23 = pcVar22 + 1;
-      cVar1 = *pcVar22;
-      pcVar22 = pcVar23;
+      pcVar24 = pcVar23 + 1;
+      cVar1 = *pcVar23;
+      pcVar23 = pcVar24;
     } while (cVar1 != '\0');
-    pcVar22 = pcVar24 + -uVar17;
-    pcVar24 = pcVar23 + -1;
-    memmove(pcVar24, pcVar22, uVar17); /* compiler REP MOVS byte copy */
-    uVar26 = 0;
+    pcVar23 = pcVar25 + -uVar17;
+    pcVar25 = pcVar24 + -1;
+    memmove(pcVar25, pcVar23, uVar17); /* compiler REP MOVS byte copy */
+    uVar19 = 0;
     break;
   case CASE_A5:
     uVar17 = *(int *)&this_00->field_0x1c * 0x41c64e6d + 0x3039;
@@ -1852,790 +1866,790 @@ LAB_00641a40:
     uVar17 = (uVar17 >> 0x10) % 3;
     if (uVar17 == 0) {
       uVar17 = 0xffffffff;
-      pcVar22 = &DAT_007d2490;
+      pcVar23 = &DAT_007d2490;
       do {
-        pcVar24 = pcVar22;
+        pcVar25 = pcVar23;
         if (uVar17 == 0) break;
         uVar17 = uVar17 - 1;
-        pcVar24 = pcVar22 + 1;
-        cVar1 = *pcVar22;
-        pcVar22 = pcVar24;
+        pcVar25 = pcVar23 + 1;
+        cVar1 = *pcVar23;
+        pcVar23 = pcVar25;
       } while (cVar1 != '\0');
       uVar17 = ~uVar17;
       local_5 = 0x16;
       iVar10 = -1;
-      pcVar22 = local_48;
+      pcVar23 = local_48;
       do {
-        pcVar23 = pcVar22;
+        pcVar24 = pcVar23;
         if (iVar10 == 0) break;
         iVar10 = iVar10 + -1;
-        pcVar23 = pcVar22 + 1;
-        cVar1 = *pcVar22;
-        pcVar22 = pcVar23;
+        pcVar24 = pcVar23 + 1;
+        cVar1 = *pcVar23;
+        pcVar23 = pcVar24;
       } while (cVar1 != '\0');
-      pcVar22 = pcVar24 + -uVar17;
-      pcVar24 = pcVar23 + -1;
-      memmove(pcVar24, pcVar22, uVar17); /* compiler REP MOVS byte copy */
-      uVar26 = 0;
+      pcVar23 = pcVar25 + -uVar17;
+      pcVar25 = pcVar24 + -1;
+      memmove(pcVar25, pcVar23, uVar17); /* compiler REP MOVS byte copy */
+      uVar19 = 0;
       uVar17 = 0xffffffff;
-      pcVar22 = "expmask3";
+      pcVar23 = "expmask3";
       do {
-        pcVar24 = pcVar22;
+        pcVar25 = pcVar23;
         if (uVar17 == 0) break;
         uVar17 = uVar17 - 1;
-        pcVar24 = pcVar22 + 1;
-        cVar1 = *pcVar22;
-        pcVar22 = pcVar24;
+        pcVar25 = pcVar23 + 1;
+        cVar1 = *pcVar23;
+        pcVar23 = pcVar25;
       } while (cVar1 != '\0');
       uVar17 = ~uVar17;
       iVar10 = -1;
-      pcVar22 = local_2c;
+      pcVar23 = local_2c;
       do {
-        pcVar23 = pcVar22;
+        pcVar24 = pcVar23;
         if (iVar10 == 0) break;
         iVar10 = iVar10 + -1;
-        pcVar23 = pcVar22 + 1;
-        cVar1 = *pcVar22;
-        pcVar22 = pcVar23;
+        pcVar24 = pcVar23 + 1;
+        cVar1 = *pcVar23;
+        pcVar23 = pcVar24;
       } while (cVar1 != '\0');
-      pcVar22 = pcVar24 + -uVar17;
-      pcVar24 = pcVar23 + -1;
-      memmove(pcVar24, pcVar22, uVar17); /* compiler REP MOVS byte copy */
-      uVar26 = 0;
+      pcVar23 = pcVar25 + -uVar17;
+      pcVar25 = pcVar24 + -1;
+      memmove(pcVar25, pcVar23, uVar17); /* compiler REP MOVS byte copy */
+      uVar19 = 0;
       uVar17 = 0xffffffff;
-      pcVar22 = &DAT_007d2484;
+      pcVar23 = &DAT_007d2484;
       do {
-        pcVar24 = pcVar22;
+        pcVar25 = pcVar23;
         if (uVar17 == 0) break;
         uVar17 = uVar17 - 1;
-        pcVar24 = pcVar22 + 1;
-        cVar1 = *pcVar22;
-        pcVar22 = pcVar24;
+        pcVar25 = pcVar23 + 1;
+        cVar1 = *pcVar23;
+        pcVar23 = pcVar25;
       } while (cVar1 != '\0');
       uVar17 = ~uVar17;
       iVar10 = -1;
-      pcVar22 = local_74;
+      pcVar23 = local_74;
       do {
-        pcVar23 = pcVar22;
+        pcVar24 = pcVar23;
         if (iVar10 == 0) break;
         iVar10 = iVar10 + -1;
-        pcVar23 = pcVar22 + 1;
-        cVar1 = *pcVar22;
-        pcVar22 = pcVar23;
+        pcVar24 = pcVar23 + 1;
+        cVar1 = *pcVar23;
+        pcVar23 = pcVar24;
       } while (cVar1 != '\0');
-      pcVar22 = pcVar24 + -uVar17;
-      pcVar24 = pcVar23 + -1;
-      memmove(pcVar24, pcVar22, uVar17); /* compiler REP MOVS byte copy */
-      uVar26 = 0;
+      pcVar23 = pcVar25 + -uVar17;
+      pcVar25 = pcVar24 + -1;
+      memmove(pcVar25, pcVar23, uVar17); /* compiler REP MOVS byte copy */
+      uVar19 = 0;
       uVar17 = 0;
     }
     else if (uVar17 == 1) {
       uVar17 = 0xffffffff;
-      pcVar22 = &DAT_007d2474;
+      pcVar23 = &DAT_007d2474;
       do {
-        pcVar24 = pcVar22;
+        pcVar25 = pcVar23;
         if (uVar17 == 0) break;
         uVar17 = uVar17 - 1;
-        pcVar24 = pcVar22 + 1;
-        cVar1 = *pcVar22;
-        pcVar22 = pcVar24;
+        pcVar25 = pcVar23 + 1;
+        cVar1 = *pcVar23;
+        pcVar23 = pcVar25;
       } while (cVar1 != '\0');
       uVar17 = ~uVar17;
       local_5 = 0x16;
       iVar10 = -1;
-      pcVar22 = local_48;
+      pcVar23 = local_48;
       do {
-        pcVar23 = pcVar22;
+        pcVar24 = pcVar23;
         if (iVar10 == 0) break;
         iVar10 = iVar10 + -1;
-        pcVar23 = pcVar22 + 1;
-        cVar1 = *pcVar22;
-        pcVar22 = pcVar23;
+        pcVar24 = pcVar23 + 1;
+        cVar1 = *pcVar23;
+        pcVar23 = pcVar24;
       } while (cVar1 != '\0');
-      pcVar22 = pcVar24 + -uVar17;
-      pcVar24 = pcVar23 + -1;
-      memmove(pcVar24, pcVar22, uVar17); /* compiler REP MOVS byte copy */
-      uVar26 = 0;
+      pcVar23 = pcVar25 + -uVar17;
+      pcVar25 = pcVar24 + -1;
+      memmove(pcVar25, pcVar23, uVar17); /* compiler REP MOVS byte copy */
+      uVar19 = 0;
       uVar17 = 0xffffffff;
-      pcVar22 = "expmask3";
+      pcVar23 = "expmask3";
       do {
-        pcVar24 = pcVar22;
+        pcVar25 = pcVar23;
         if (uVar17 == 0) break;
         uVar17 = uVar17 - 1;
-        pcVar24 = pcVar22 + 1;
-        cVar1 = *pcVar22;
-        pcVar22 = pcVar24;
+        pcVar25 = pcVar23 + 1;
+        cVar1 = *pcVar23;
+        pcVar23 = pcVar25;
       } while (cVar1 != '\0');
       uVar17 = ~uVar17;
       iVar10 = -1;
-      pcVar22 = local_2c;
+      pcVar23 = local_2c;
       do {
-        pcVar23 = pcVar22;
+        pcVar24 = pcVar23;
         if (iVar10 == 0) break;
         iVar10 = iVar10 + -1;
-        pcVar23 = pcVar22 + 1;
-        cVar1 = *pcVar22;
-        pcVar22 = pcVar23;
+        pcVar24 = pcVar23 + 1;
+        cVar1 = *pcVar23;
+        pcVar23 = pcVar24;
       } while (cVar1 != '\0');
-      pcVar22 = pcVar24 + -uVar17;
-      pcVar24 = pcVar23 + -1;
-      memmove(pcVar24, pcVar22, uVar17); /* compiler REP MOVS byte copy */
-      uVar26 = 0;
+      pcVar23 = pcVar25 + -uVar17;
+      pcVar25 = pcVar24 + -1;
+      memmove(pcVar25, pcVar23, uVar17); /* compiler REP MOVS byte copy */
+      uVar19 = 0;
       uVar17 = 0xffffffff;
-      pcVar22 = &DAT_007d2484;
+      pcVar23 = &DAT_007d2484;
       do {
-        pcVar24 = pcVar22;
+        pcVar25 = pcVar23;
         if (uVar17 == 0) break;
         uVar17 = uVar17 - 1;
-        pcVar24 = pcVar22 + 1;
-        cVar1 = *pcVar22;
-        pcVar22 = pcVar24;
+        pcVar25 = pcVar23 + 1;
+        cVar1 = *pcVar23;
+        pcVar23 = pcVar25;
       } while (cVar1 != '\0');
       uVar17 = ~uVar17;
       iVar10 = -1;
-      pcVar22 = local_74;
+      pcVar23 = local_74;
       do {
-        pcVar23 = pcVar22;
+        pcVar24 = pcVar23;
         if (iVar10 == 0) break;
         iVar10 = iVar10 + -1;
-        pcVar23 = pcVar22 + 1;
-        cVar1 = *pcVar22;
-        pcVar22 = pcVar23;
+        pcVar24 = pcVar23 + 1;
+        cVar1 = *pcVar23;
+        pcVar23 = pcVar24;
       } while (cVar1 != '\0');
-      pcVar22 = pcVar24 + -uVar17;
-      pcVar24 = pcVar23 + -1;
-      memmove(pcVar24, pcVar22, uVar17); /* compiler REP MOVS byte copy */
-      uVar26 = 0;
+      pcVar23 = pcVar25 + -uVar17;
+      pcVar25 = pcVar24 + -1;
+      memmove(pcVar25, pcVar23, uVar17); /* compiler REP MOVS byte copy */
+      uVar19 = 0;
       uVar17 = 0;
     }
     else if (uVar17 == 2) {
       uVar17 = 0xffffffff;
       local_5 = 0x16;
-      pcVar22 = &DAT_007d247c;
+      pcVar23 = &DAT_007d247c;
       do {
-        pcVar24 = pcVar22;
+        pcVar25 = pcVar23;
         if (uVar17 == 0) break;
         uVar17 = uVar17 - 1;
-        pcVar24 = pcVar22 + 1;
-        cVar1 = *pcVar22;
-        pcVar22 = pcVar24;
+        pcVar25 = pcVar23 + 1;
+        cVar1 = *pcVar23;
+        pcVar23 = pcVar25;
       } while (cVar1 != '\0');
       uVar17 = ~uVar17;
       iVar10 = -1;
-      pcVar22 = local_48;
+      pcVar23 = local_48;
       do {
-        pcVar23 = pcVar22;
+        pcVar24 = pcVar23;
         if (iVar10 == 0) break;
         iVar10 = iVar10 + -1;
-        pcVar23 = pcVar22 + 1;
-        cVar1 = *pcVar22;
-        pcVar22 = pcVar23;
+        pcVar24 = pcVar23 + 1;
+        cVar1 = *pcVar23;
+        pcVar23 = pcVar24;
       } while (cVar1 != '\0');
-      pcVar22 = pcVar24 + -uVar17;
-      pcVar24 = pcVar23 + -1;
-      memmove(pcVar24, pcVar22, uVar17); /* compiler REP MOVS byte copy */
-      uVar26 = 0;
+      pcVar23 = pcVar25 + -uVar17;
+      pcVar25 = pcVar24 + -1;
+      memmove(pcVar25, pcVar23, uVar17); /* compiler REP MOVS byte copy */
+      uVar19 = 0;
       uVar17 = 0xffffffff;
-      pcVar22 = "expmask3";
+      pcVar23 = "expmask3";
       do {
-        pcVar24 = pcVar22;
+        pcVar25 = pcVar23;
         if (uVar17 == 0) break;
         uVar17 = uVar17 - 1;
-        pcVar24 = pcVar22 + 1;
-        cVar1 = *pcVar22;
-        pcVar22 = pcVar24;
+        pcVar25 = pcVar23 + 1;
+        cVar1 = *pcVar23;
+        pcVar23 = pcVar25;
       } while (cVar1 != '\0');
       uVar17 = ~uVar17;
       iVar10 = -1;
-      pcVar22 = local_2c;
+      pcVar23 = local_2c;
       do {
-        pcVar23 = pcVar22;
+        pcVar24 = pcVar23;
         if (iVar10 == 0) break;
         iVar10 = iVar10 + -1;
-        pcVar23 = pcVar22 + 1;
-        cVar1 = *pcVar22;
-        pcVar22 = pcVar23;
+        pcVar24 = pcVar23 + 1;
+        cVar1 = *pcVar23;
+        pcVar23 = pcVar24;
       } while (cVar1 != '\0');
-      pcVar22 = pcVar24 + -uVar17;
-      pcVar24 = pcVar23 + -1;
-      memmove(pcVar24, pcVar22, uVar17); /* compiler REP MOVS byte copy */
-      uVar26 = 0;
+      pcVar23 = pcVar25 + -uVar17;
+      pcVar25 = pcVar24 + -1;
+      memmove(pcVar25, pcVar23, uVar17); /* compiler REP MOVS byte copy */
+      uVar19 = 0;
       uVar17 = 0xffffffff;
-      pcVar22 = &DAT_007d24ec;
+      pcVar23 = &DAT_007d24ec;
       do {
-        pcVar24 = pcVar22;
+        pcVar25 = pcVar23;
         if (uVar17 == 0) break;
         uVar17 = uVar17 - 1;
-        pcVar24 = pcVar22 + 1;
-        cVar1 = *pcVar22;
-        pcVar22 = pcVar24;
+        pcVar25 = pcVar23 + 1;
+        cVar1 = *pcVar23;
+        pcVar23 = pcVar25;
       } while (cVar1 != '\0');
       uVar17 = ~uVar17;
       iVar10 = -1;
-      pcVar22 = local_74;
+      pcVar23 = local_74;
       do {
-        pcVar23 = pcVar22;
+        pcVar24 = pcVar23;
         if (iVar10 == 0) break;
         iVar10 = iVar10 + -1;
-        pcVar23 = pcVar22 + 1;
-        cVar1 = *pcVar22;
-        pcVar22 = pcVar23;
+        pcVar24 = pcVar23 + 1;
+        cVar1 = *pcVar23;
+        pcVar23 = pcVar24;
       } while (cVar1 != '\0');
-      pcVar22 = pcVar24 + -uVar17;
-      pcVar24 = pcVar23 + -1;
-      memmove(pcVar24, pcVar22, uVar17); /* compiler REP MOVS byte copy */
-      uVar26 = 0;
+      pcVar23 = pcVar25 + -uVar17;
+      pcVar25 = pcVar24 + -1;
+      memmove(pcVar25, pcVar23, uVar17); /* compiler REP MOVS byte copy */
+      uVar19 = 0;
     }
     else {
       uVar17 = 0xffffffff;
       local_5 = 0x16;
-      pcVar22 = &DAT_007d2490;
+      pcVar23 = &DAT_007d2490;
       do {
-        pcVar24 = pcVar22;
+        pcVar25 = pcVar23;
         if (uVar17 == 0) break;
         uVar17 = uVar17 - 1;
-        pcVar24 = pcVar22 + 1;
-        cVar1 = *pcVar22;
-        pcVar22 = pcVar24;
+        pcVar25 = pcVar23 + 1;
+        cVar1 = *pcVar23;
+        pcVar23 = pcVar25;
       } while (cVar1 != '\0');
       uVar17 = ~uVar17;
       iVar10 = -1;
-      pcVar22 = local_48;
+      pcVar23 = local_48;
       do {
-        pcVar23 = pcVar22;
+        pcVar24 = pcVar23;
         if (iVar10 == 0) break;
         iVar10 = iVar10 + -1;
-        pcVar23 = pcVar22 + 1;
-        cVar1 = *pcVar22;
-        pcVar22 = pcVar23;
+        pcVar24 = pcVar23 + 1;
+        cVar1 = *pcVar23;
+        pcVar23 = pcVar24;
       } while (cVar1 != '\0');
-      pcVar22 = pcVar24 + -uVar17;
-      pcVar24 = pcVar23 + -1;
-      memmove(pcVar24, pcVar22, uVar17); /* compiler REP MOVS byte copy */
-      uVar26 = 0;
+      pcVar23 = pcVar25 + -uVar17;
+      pcVar25 = pcVar24 + -1;
+      memmove(pcVar25, pcVar23, uVar17); /* compiler REP MOVS byte copy */
+      uVar19 = 0;
       uVar17 = 0xffffffff;
-      pcVar22 = "expmask3";
+      pcVar23 = "expmask3";
       do {
-        pcVar24 = pcVar22;
+        pcVar25 = pcVar23;
         if (uVar17 == 0) break;
         uVar17 = uVar17 - 1;
-        pcVar24 = pcVar22 + 1;
-        cVar1 = *pcVar22;
-        pcVar22 = pcVar24;
+        pcVar25 = pcVar23 + 1;
+        cVar1 = *pcVar23;
+        pcVar23 = pcVar25;
       } while (cVar1 != '\0');
       uVar17 = ~uVar17;
       iVar10 = -1;
-      pcVar22 = local_2c;
+      pcVar23 = local_2c;
       do {
-        pcVar23 = pcVar22;
+        pcVar24 = pcVar23;
         if (iVar10 == 0) break;
         iVar10 = iVar10 + -1;
-        pcVar23 = pcVar22 + 1;
-        cVar1 = *pcVar22;
-        pcVar22 = pcVar23;
+        pcVar24 = pcVar23 + 1;
+        cVar1 = *pcVar23;
+        pcVar23 = pcVar24;
       } while (cVar1 != '\0');
-      pcVar22 = pcVar24 + -uVar17;
-      pcVar24 = pcVar23 + -1;
-      memmove(pcVar24, pcVar22, uVar17); /* compiler REP MOVS byte copy */
-      uVar26 = 0;
+      pcVar23 = pcVar25 + -uVar17;
+      pcVar25 = pcVar24 + -1;
+      memmove(pcVar25, pcVar23, uVar17); /* compiler REP MOVS byte copy */
+      uVar19 = 0;
       uVar17 = 0xffffffff;
-      pcVar22 = &DAT_007d2484;
+      pcVar23 = &DAT_007d2484;
       do {
-        pcVar24 = pcVar22;
+        pcVar25 = pcVar23;
         if (uVar17 == 0) break;
         uVar17 = uVar17 - 1;
-        pcVar24 = pcVar22 + 1;
-        cVar1 = *pcVar22;
-        pcVar22 = pcVar24;
+        pcVar25 = pcVar23 + 1;
+        cVar1 = *pcVar23;
+        pcVar23 = pcVar25;
       } while (cVar1 != '\0');
       uVar17 = ~uVar17;
       iVar10 = -1;
-      pcVar22 = local_74;
+      pcVar23 = local_74;
       do {
-        pcVar23 = pcVar22;
+        pcVar24 = pcVar23;
         if (iVar10 == 0) break;
         iVar10 = iVar10 + -1;
-        pcVar23 = pcVar22 + 1;
-        cVar1 = *pcVar22;
-        pcVar22 = pcVar23;
+        pcVar24 = pcVar23 + 1;
+        cVar1 = *pcVar23;
+        pcVar23 = pcVar24;
       } while (cVar1 != '\0');
-      pcVar22 = pcVar24 + -uVar17;
-      pcVar24 = pcVar23 + -1;
-      memmove(pcVar24, pcVar22, uVar17); /* compiler REP MOVS byte copy */
-      uVar26 = 0;
+      pcVar23 = pcVar25 + -uVar17;
+      pcVar25 = pcVar24 + -1;
+      memmove(pcVar25, pcVar23, uVar17); /* compiler REP MOVS byte copy */
+      uVar19 = 0;
     }
     break;
   case CASE_AC:
     uVar17 = 0xffffffff;
-    pcVar22 = "expemag";
+    pcVar23 = "expemag";
     do {
-      pcVar24 = pcVar22;
+      pcVar25 = pcVar23;
       if (uVar17 == 0) break;
       uVar17 = uVar17 - 1;
-      pcVar24 = pcVar22 + 1;
-      cVar1 = *pcVar22;
-      pcVar22 = pcVar24;
+      pcVar25 = pcVar23 + 1;
+      cVar1 = *pcVar23;
+      pcVar23 = pcVar25;
     } while (cVar1 != '\0');
     uVar17 = ~uVar17;
     local_5 = 10;
     iVar10 = -1;
-    pcVar22 = local_48;
+    pcVar23 = local_48;
     do {
-      pcVar23 = pcVar22;
+      pcVar24 = pcVar23;
       if (iVar10 == 0) break;
       iVar10 = iVar10 + -1;
-      pcVar23 = pcVar22 + 1;
-      cVar1 = *pcVar22;
-      pcVar22 = pcVar23;
+      pcVar24 = pcVar23 + 1;
+      cVar1 = *pcVar23;
+      pcVar23 = pcVar24;
     } while (cVar1 != '\0');
-    pcVar22 = pcVar24 + -uVar17;
-    pcVar24 = pcVar23 + -1;
-    memmove(pcVar24, pcVar22, uVar17); /* compiler REP MOVS byte copy */
-    uVar26 = 0;
+    pcVar23 = pcVar25 + -uVar17;
+    pcVar25 = pcVar24 + -1;
+    memmove(pcVar25, pcVar23, uVar17); /* compiler REP MOVS byte copy */
+    uVar19 = 0;
     uVar17 = 0xffffffff;
-    pcVar22 = &DAT_007d2508;
+    pcVar23 = &DAT_007d2508;
     do {
-      pcVar24 = pcVar22;
+      pcVar25 = pcVar23;
       if (uVar17 == 0) break;
       uVar17 = uVar17 - 1;
-      pcVar24 = pcVar22 + 1;
-      cVar1 = *pcVar22;
-      pcVar22 = pcVar24;
+      pcVar25 = pcVar23 + 1;
+      cVar1 = *pcVar23;
+      pcVar23 = pcVar25;
     } while (cVar1 != '\0');
     uVar17 = ~uVar17;
     iVar10 = -1;
-    pcVar22 = local_2c;
+    pcVar23 = local_2c;
     do {
-      pcVar23 = pcVar22;
+      pcVar24 = pcVar23;
       if (iVar10 == 0) break;
       iVar10 = iVar10 + -1;
-      pcVar23 = pcVar22 + 1;
-      cVar1 = *pcVar22;
-      pcVar22 = pcVar23;
+      pcVar24 = pcVar23 + 1;
+      cVar1 = *pcVar23;
+      pcVar23 = pcVar24;
     } while (cVar1 != '\0');
-    pcVar22 = pcVar24 + -uVar17;
-    pcVar24 = pcVar23 + -1;
-    memmove(pcVar24, pcVar22, uVar17); /* compiler REP MOVS byte copy */
-    uVar26 = 0;
+    pcVar23 = pcVar25 + -uVar17;
+    pcVar25 = pcVar24 + -1;
+    memmove(pcVar25, pcVar23, uVar17); /* compiler REP MOVS byte copy */
+    uVar19 = 0;
     uVar17 = 0xffffffff;
-    pcVar22 = &DAT_007d0564;
+    pcVar23 = &DAT_007d0564;
     do {
-      pcVar24 = pcVar22;
+      pcVar25 = pcVar23;
       if (uVar17 == 0) break;
       uVar17 = uVar17 - 1;
-      pcVar24 = pcVar22 + 1;
-      cVar1 = *pcVar22;
-      pcVar22 = pcVar24;
+      pcVar25 = pcVar23 + 1;
+      cVar1 = *pcVar23;
+      pcVar23 = pcVar25;
     } while (cVar1 != '\0');
     uVar17 = ~uVar17;
     iVar10 = -1;
-    pcVar22 = local_74;
+    pcVar23 = local_74;
     do {
-      pcVar23 = pcVar22;
+      pcVar24 = pcVar23;
       if (iVar10 == 0) break;
       iVar10 = iVar10 + -1;
-      pcVar23 = pcVar22 + 1;
-      cVar1 = *pcVar22;
-      pcVar22 = pcVar23;
+      pcVar24 = pcVar23 + 1;
+      cVar1 = *pcVar23;
+      pcVar23 = pcVar24;
     } while (cVar1 != '\0');
-    pcVar22 = pcVar24 + -uVar17;
-    pcVar24 = pcVar23 + -1;
-    memmove(pcVar24, pcVar22, uVar17); /* compiler REP MOVS byte copy */
-    uVar26 = 0;
+    pcVar23 = pcVar25 + -uVar17;
+    pcVar25 = pcVar24 + -1;
+    memmove(pcVar25, pcVar23, uVar17); /* compiler REP MOVS byte copy */
+    uVar19 = 0;
     break;
   case CASE_AD:
     uVar17 = 0xffffffff;
-    pcVar22 = &DAT_007d2444;
+    pcVar23 = &DAT_007d2444;
     do {
-      pcVar24 = pcVar22;
+      pcVar25 = pcVar23;
       if (uVar17 == 0) break;
       uVar17 = uVar17 - 1;
-      pcVar24 = pcVar22 + 1;
-      cVar1 = *pcVar22;
-      pcVar22 = pcVar24;
+      pcVar25 = pcVar23 + 1;
+      cVar1 = *pcVar23;
+      pcVar23 = pcVar25;
     } while (cVar1 != '\0');
     uVar17 = ~uVar17;
     iVar10 = -1;
-    pcVar22 = local_48;
+    pcVar23 = local_48;
     do {
-      pcVar23 = pcVar22;
+      pcVar24 = pcVar23;
       if (iVar10 == 0) break;
       iVar10 = iVar10 + -1;
-      pcVar23 = pcVar22 + 1;
-      cVar1 = *pcVar22;
-      pcVar22 = pcVar23;
+      pcVar24 = pcVar23 + 1;
+      cVar1 = *pcVar23;
+      pcVar23 = pcVar24;
     } while (cVar1 != '\0');
-    pcVar22 = pcVar24 + -uVar17;
-    pcVar24 = pcVar23 + -1;
-    memmove(pcVar24, pcVar22, uVar17); /* compiler REP MOVS byte copy */
-    uVar26 = 0;
+    pcVar23 = pcVar25 + -uVar17;
+    pcVar25 = pcVar24 + -1;
+    memmove(pcVar25, pcVar23, uVar17); /* compiler REP MOVS byte copy */
+    uVar19 = 0;
     uVar17 = 0xffffffff;
-    pcVar22 = &DAT_007d2508;
+    pcVar23 = &DAT_007d2508;
     do {
-      pcVar24 = pcVar22;
+      pcVar25 = pcVar23;
       if (uVar17 == 0) break;
       uVar17 = uVar17 - 1;
-      pcVar24 = pcVar22 + 1;
-      cVar1 = *pcVar22;
-      pcVar22 = pcVar24;
+      pcVar25 = pcVar23 + 1;
+      cVar1 = *pcVar23;
+      pcVar23 = pcVar25;
     } while (cVar1 != '\0');
     uVar17 = ~uVar17;
     iVar10 = -1;
-    pcVar22 = local_2c;
+    pcVar23 = local_2c;
     do {
-      pcVar23 = pcVar22;
+      pcVar24 = pcVar23;
       if (iVar10 == 0) break;
       iVar10 = iVar10 + -1;
-      pcVar23 = pcVar22 + 1;
-      cVar1 = *pcVar22;
-      pcVar22 = pcVar23;
+      pcVar24 = pcVar23 + 1;
+      cVar1 = *pcVar23;
+      pcVar23 = pcVar24;
     } while (cVar1 != '\0');
-    pcVar22 = pcVar24 + -uVar17;
-    pcVar24 = pcVar23 + -1;
-    memmove(pcVar24, pcVar22, uVar17); /* compiler REP MOVS byte copy */
-    uVar26 = 0;
+    pcVar23 = pcVar25 + -uVar17;
+    pcVar25 = pcVar24 + -1;
+    memmove(pcVar25, pcVar23, uVar17); /* compiler REP MOVS byte copy */
+    uVar19 = 0;
     break;
   case CASE_AE:
     uVar17 = 0xffffffff;
-    pcVar22 = &DAT_007d2498;
+    pcVar23 = &DAT_007d2498;
     do {
-      pcVar24 = pcVar22;
+      pcVar25 = pcVar23;
       if (uVar17 == 0) break;
       uVar17 = uVar17 - 1;
-      pcVar24 = pcVar22 + 1;
-      cVar1 = *pcVar22;
-      pcVar22 = pcVar24;
+      pcVar25 = pcVar23 + 1;
+      cVar1 = *pcVar23;
+      pcVar23 = pcVar25;
     } while (cVar1 != '\0');
     uVar17 = ~uVar17;
     local_5 = 9;
     iVar10 = -1;
-    pcVar22 = local_48;
+    pcVar23 = local_48;
     do {
-      pcVar23 = pcVar22;
+      pcVar24 = pcVar23;
       if (iVar10 == 0) break;
       iVar10 = iVar10 + -1;
-      pcVar23 = pcVar22 + 1;
-      cVar1 = *pcVar22;
-      pcVar22 = pcVar23;
+      pcVar24 = pcVar23 + 1;
+      cVar1 = *pcVar23;
+      pcVar23 = pcVar24;
     } while (cVar1 != '\0');
-    pcVar22 = pcVar24 + -uVar17;
-    pcVar24 = pcVar23 + -1;
-    memmove(pcVar24, pcVar22, uVar17); /* compiler REP MOVS byte copy */
-    uVar26 = 0;
+    pcVar23 = pcVar25 + -uVar17;
+    pcVar25 = pcVar24 + -1;
+    memmove(pcVar25, pcVar23, uVar17); /* compiler REP MOVS byte copy */
+    uVar19 = 0;
     uVar17 = 0xffffffff;
-    pcVar22 = &DAT_007d2508;
+    pcVar23 = &DAT_007d2508;
     do {
-      pcVar24 = pcVar22;
+      pcVar25 = pcVar23;
       if (uVar17 == 0) break;
       uVar17 = uVar17 - 1;
-      pcVar24 = pcVar22 + 1;
-      cVar1 = *pcVar22;
-      pcVar22 = pcVar24;
+      pcVar25 = pcVar23 + 1;
+      cVar1 = *pcVar23;
+      pcVar23 = pcVar25;
     } while (cVar1 != '\0');
     uVar17 = ~uVar17;
     iVar10 = -1;
-    pcVar22 = local_2c;
+    pcVar23 = local_2c;
     do {
-      pcVar23 = pcVar22;
+      pcVar24 = pcVar23;
       if (iVar10 == 0) break;
       iVar10 = iVar10 + -1;
-      pcVar23 = pcVar22 + 1;
-      cVar1 = *pcVar22;
-      pcVar22 = pcVar23;
+      pcVar24 = pcVar23 + 1;
+      cVar1 = *pcVar23;
+      pcVar23 = pcVar24;
     } while (cVar1 != '\0');
-    pcVar22 = pcVar24 + -uVar17;
-    pcVar24 = pcVar23 + -1;
-    memmove(pcVar24, pcVar22, uVar17); /* compiler REP MOVS byte copy */
-    uVar26 = 0;
+    pcVar23 = pcVar25 + -uVar17;
+    pcVar25 = pcVar24 + -1;
+    memmove(pcVar25, pcVar23, uVar17); /* compiler REP MOVS byte copy */
+    uVar19 = 0;
     uVar17 = 0xffffffff;
-    pcVar22 = &DAT_007d0570;
+    pcVar23 = &DAT_007d0570;
     do {
-      pcVar24 = pcVar22;
+      pcVar25 = pcVar23;
       if (uVar17 == 0) break;
       uVar17 = uVar17 - 1;
-      pcVar24 = pcVar22 + 1;
-      cVar1 = *pcVar22;
-      pcVar22 = pcVar24;
+      pcVar25 = pcVar23 + 1;
+      cVar1 = *pcVar23;
+      pcVar23 = pcVar25;
     } while (cVar1 != '\0');
     uVar17 = ~uVar17;
     iVar10 = -1;
-    pcVar22 = local_74;
+    pcVar23 = local_74;
     do {
-      pcVar23 = pcVar22;
+      pcVar24 = pcVar23;
       if (iVar10 == 0) break;
       iVar10 = iVar10 + -1;
-      pcVar23 = pcVar22 + 1;
-      cVar1 = *pcVar22;
-      pcVar22 = pcVar23;
+      pcVar24 = pcVar23 + 1;
+      cVar1 = *pcVar23;
+      pcVar23 = pcVar24;
     } while (cVar1 != '\0');
-    pcVar22 = pcVar24 + -uVar17;
-    pcVar24 = pcVar23 + -1;
-    memmove(pcVar24, pcVar22, uVar17); /* compiler REP MOVS byte copy */
-    uVar26 = 0;
+    pcVar23 = pcVar25 + -uVar17;
+    pcVar25 = pcVar24 + -1;
+    memmove(pcVar25, pcVar23, uVar17); /* compiler REP MOVS byte copy */
+    uVar19 = 0;
     break;
   case CASE_B6:
   case CASE_BA:
-    pcVar22 = &DAT_007d2438;
+    pcVar23 = &DAT_007d2438;
 LAB_006424a7:
     uVar17 = 0xffffffff;
     do {
-      pcVar24 = pcVar22;
+      pcVar25 = pcVar23;
       if (uVar17 == 0) break;
       uVar17 = uVar17 - 1;
-      pcVar24 = pcVar22 + 1;
-      cVar1 = *pcVar22;
-      pcVar22 = pcVar24;
+      pcVar25 = pcVar23 + 1;
+      cVar1 = *pcVar23;
+      pcVar23 = pcVar25;
     } while (cVar1 != '\0');
     uVar17 = ~uVar17;
     iVar10 = -1;
-    pcVar22 = local_48;
+    pcVar23 = local_48;
     do {
-      pcVar23 = pcVar22;
+      pcVar24 = pcVar23;
       if (iVar10 == 0) break;
       iVar10 = iVar10 + -1;
-      pcVar23 = pcVar22 + 1;
-      cVar1 = *pcVar22;
-      pcVar22 = pcVar23;
+      pcVar24 = pcVar23 + 1;
+      cVar1 = *pcVar23;
+      pcVar23 = pcVar24;
     } while (cVar1 != '\0');
-    pcVar22 = pcVar24 + -uVar17;
-    pcVar24 = pcVar23 + -1;
-    memmove(pcVar24, pcVar22, uVar17); /* compiler REP MOVS byte copy */
-    uVar26 = 0;
+    pcVar23 = pcVar25 + -uVar17;
+    pcVar25 = pcVar24 + -1;
+    memmove(pcVar25, pcVar23, uVar17); /* compiler REP MOVS byte copy */
+    uVar19 = 0;
     uVar17 = 0xffffffff;
-    pcVar22 = &DAT_007d2508;
+    pcVar23 = &DAT_007d2508;
     do {
-      pcVar24 = pcVar22;
+      pcVar25 = pcVar23;
       if (uVar17 == 0) break;
       uVar17 = uVar17 - 1;
-      pcVar24 = pcVar22 + 1;
-      cVar1 = *pcVar22;
-      pcVar22 = pcVar24;
+      pcVar25 = pcVar23 + 1;
+      cVar1 = *pcVar23;
+      pcVar23 = pcVar25;
     } while (cVar1 != '\0');
     uVar17 = ~uVar17;
     iVar10 = -1;
-    pcVar22 = local_2c;
+    pcVar23 = local_2c;
     do {
-      pcVar23 = pcVar22;
+      pcVar24 = pcVar23;
       if (iVar10 == 0) break;
       iVar10 = iVar10 + -1;
-      pcVar23 = pcVar22 + 1;
-      cVar1 = *pcVar22;
-      pcVar22 = pcVar23;
+      pcVar24 = pcVar23 + 1;
+      cVar1 = *pcVar23;
+      pcVar23 = pcVar24;
     } while (cVar1 != '\0');
-    pcVar22 = pcVar24 + -uVar17;
-    pcVar24 = pcVar23 + -1;
-    memmove(pcVar24, pcVar22, uVar17); /* compiler REP MOVS byte copy */
-    uVar26 = 0;
-    pcVar22 = &DAT_007d0570;
+    pcVar23 = pcVar25 + -uVar17;
+    pcVar25 = pcVar24 + -1;
+    memmove(pcVar25, pcVar23, uVar17); /* compiler REP MOVS byte copy */
+    uVar19 = 0;
+    pcVar23 = &DAT_007d0570;
 LAB_00642561:
     uVar17 = 0xffffffff;
     do {
-      pcVar24 = pcVar22;
+      pcVar25 = pcVar23;
       if (uVar17 == 0) break;
       uVar17 = uVar17 - 1;
-      pcVar24 = pcVar22 + 1;
-      cVar1 = *pcVar22;
-      pcVar22 = pcVar24;
+      pcVar25 = pcVar23 + 1;
+      cVar1 = *pcVar23;
+      pcVar23 = pcVar25;
     } while (cVar1 != '\0');
     uVar17 = ~uVar17;
     local_5 = 0xf;
     iVar10 = -1;
-    pcVar22 = local_74;
+    pcVar23 = local_74;
     do {
-      pcVar23 = pcVar22;
+      pcVar24 = pcVar23;
       if (iVar10 == 0) break;
       iVar10 = iVar10 + -1;
-      pcVar23 = pcVar22 + 1;
-      cVar1 = *pcVar22;
-      pcVar22 = pcVar23;
+      pcVar24 = pcVar23 + 1;
+      cVar1 = *pcVar23;
+      pcVar23 = pcVar24;
     } while (cVar1 != '\0');
-    pcVar22 = pcVar24 + -uVar17;
-    pcVar24 = pcVar23 + -1;
-    memmove(pcVar24, pcVar22, uVar17); /* compiler REP MOVS byte copy */
-    uVar26 = 0;
+    pcVar23 = pcVar25 + -uVar17;
+    pcVar25 = pcVar24 + -1;
+    memmove(pcVar25, pcVar23, uVar17); /* compiler REP MOVS byte copy */
+    uVar19 = 0;
     break;
   case CASE_B7:
   case CASE_B9:
     uVar17 = 0xffffffff;
-    pcVar22 = "explioc";
+    pcVar23 = "explioc";
     do {
-      pcVar24 = pcVar22;
+      pcVar25 = pcVar23;
       if (uVar17 == 0) break;
       uVar17 = uVar17 - 1;
-      pcVar24 = pcVar22 + 1;
-      cVar1 = *pcVar22;
-      pcVar22 = pcVar24;
+      pcVar25 = pcVar23 + 1;
+      cVar1 = *pcVar23;
+      pcVar23 = pcVar25;
     } while (cVar1 != '\0');
     uVar17 = ~uVar17;
     iVar10 = -1;
-    pcVar22 = local_48;
+    pcVar23 = local_48;
     do {
-      pcVar23 = pcVar22;
+      pcVar24 = pcVar23;
       if (iVar10 == 0) break;
       iVar10 = iVar10 + -1;
-      pcVar23 = pcVar22 + 1;
-      cVar1 = *pcVar22;
-      pcVar22 = pcVar23;
+      pcVar24 = pcVar23 + 1;
+      cVar1 = *pcVar23;
+      pcVar23 = pcVar24;
     } while (cVar1 != '\0');
-    pcVar22 = pcVar24 + -uVar17;
-    pcVar24 = pcVar23 + -1;
-    memmove(pcVar24, pcVar22, uVar17); /* compiler REP MOVS byte copy */
-    uVar26 = 0;
+    pcVar23 = pcVar25 + -uVar17;
+    pcVar25 = pcVar24 + -1;
+    memmove(pcVar25, pcVar23, uVar17); /* compiler REP MOVS byte copy */
+    uVar19 = 0;
     uVar17 = 0xffffffff;
-    pcVar22 = &DAT_007d2508;
+    pcVar23 = &DAT_007d2508;
     do {
-      pcVar24 = pcVar22;
+      pcVar25 = pcVar23;
       if (uVar17 == 0) break;
       uVar17 = uVar17 - 1;
-      pcVar24 = pcVar22 + 1;
-      cVar1 = *pcVar22;
-      pcVar22 = pcVar24;
+      pcVar25 = pcVar23 + 1;
+      cVar1 = *pcVar23;
+      pcVar23 = pcVar25;
     } while (cVar1 != '\0');
     uVar17 = ~uVar17;
     iVar10 = -1;
-    pcVar22 = local_2c;
+    pcVar23 = local_2c;
     do {
-      pcVar23 = pcVar22;
+      pcVar24 = pcVar23;
       if (iVar10 == 0) break;
       iVar10 = iVar10 + -1;
-      pcVar23 = pcVar22 + 1;
-      cVar1 = *pcVar22;
-      pcVar22 = pcVar23;
+      pcVar24 = pcVar23 + 1;
+      cVar1 = *pcVar23;
+      pcVar23 = pcVar24;
     } while (cVar1 != '\0');
-    pcVar22 = pcVar24 + -uVar17;
-    pcVar24 = pcVar23 + -1;
-    memmove(pcVar24, pcVar22, uVar17); /* compiler REP MOVS byte copy */
-    uVar26 = 0;
+    pcVar23 = pcVar25 + -uVar17;
+    pcVar25 = pcVar24 + -1;
+    memmove(pcVar25, pcVar23, uVar17); /* compiler REP MOVS byte copy */
+    uVar19 = 0;
     break;
   case CASE_B8:
     uVar17 = 0xffffffff;
-    pcVar22 = &DAT_007d245c;
+    pcVar23 = &DAT_007d245c;
     do {
-      pcVar24 = pcVar22;
+      pcVar25 = pcVar23;
       if (uVar17 == 0) break;
       uVar17 = uVar17 - 1;
-      pcVar24 = pcVar22 + 1;
-      cVar1 = *pcVar22;
-      pcVar22 = pcVar24;
+      pcVar25 = pcVar23 + 1;
+      cVar1 = *pcVar23;
+      pcVar23 = pcVar25;
     } while (cVar1 != '\0');
     uVar17 = ~uVar17;
     local_5 = 0x12;
     iVar10 = -1;
-    pcVar22 = local_48;
+    pcVar23 = local_48;
     do {
-      pcVar23 = pcVar22;
+      pcVar24 = pcVar23;
       if (iVar10 == 0) break;
       iVar10 = iVar10 + -1;
-      pcVar23 = pcVar22 + 1;
-      cVar1 = *pcVar22;
-      pcVar22 = pcVar23;
+      pcVar24 = pcVar23 + 1;
+      cVar1 = *pcVar23;
+      pcVar23 = pcVar24;
     } while (cVar1 != '\0');
-    pcVar22 = pcVar24 + -uVar17;
-    pcVar24 = pcVar23 + -1;
-    memmove(pcVar24, pcVar22, uVar17); /* compiler REP MOVS byte copy */
-    uVar26 = 0;
+    pcVar23 = pcVar25 + -uVar17;
+    pcVar25 = pcVar24 + -1;
+    memmove(pcVar25, pcVar23, uVar17); /* compiler REP MOVS byte copy */
+    uVar19 = 0;
     uVar17 = 0xffffffff;
-    pcVar22 = &DAT_007d2508;
+    pcVar23 = &DAT_007d2508;
     do {
-      pcVar24 = pcVar22;
+      pcVar25 = pcVar23;
       if (uVar17 == 0) break;
       uVar17 = uVar17 - 1;
-      pcVar24 = pcVar22 + 1;
-      cVar1 = *pcVar22;
-      pcVar22 = pcVar24;
+      pcVar25 = pcVar23 + 1;
+      cVar1 = *pcVar23;
+      pcVar23 = pcVar25;
     } while (cVar1 != '\0');
     uVar17 = ~uVar17;
     iVar10 = -1;
-    pcVar22 = local_2c;
+    pcVar23 = local_2c;
     do {
-      pcVar23 = pcVar22;
+      pcVar24 = pcVar23;
       if (iVar10 == 0) break;
       iVar10 = iVar10 + -1;
-      pcVar23 = pcVar22 + 1;
-      cVar1 = *pcVar22;
-      pcVar22 = pcVar23;
+      pcVar24 = pcVar23 + 1;
+      cVar1 = *pcVar23;
+      pcVar23 = pcVar24;
     } while (cVar1 != '\0');
-    pcVar22 = pcVar24 + -uVar17;
-    pcVar24 = pcVar23 + -1;
-    memmove(pcVar24, pcVar22, uVar17); /* compiler REP MOVS byte copy */
-    uVar26 = 0;
+    pcVar23 = pcVar25 + -uVar17;
+    pcVar25 = pcVar24 + -1;
+    memmove(pcVar25, pcVar23, uVar17); /* compiler REP MOVS byte copy */
+    uVar19 = 0;
     uVar17 = 0xffffffff;
-    pcVar22 = &DAT_007d0570;
+    pcVar23 = &DAT_007d0570;
     do {
-      pcVar24 = pcVar22;
+      pcVar25 = pcVar23;
       if (uVar17 == 0) break;
       uVar17 = uVar17 - 1;
-      pcVar24 = pcVar22 + 1;
-      cVar1 = *pcVar22;
-      pcVar22 = pcVar24;
+      pcVar25 = pcVar23 + 1;
+      cVar1 = *pcVar23;
+      pcVar23 = pcVar25;
     } while (cVar1 != '\0');
     uVar17 = ~uVar17;
     iVar10 = -1;
-    pcVar22 = local_74;
+    pcVar23 = local_74;
     do {
-      pcVar23 = pcVar22;
+      pcVar24 = pcVar23;
       if (iVar10 == 0) break;
       iVar10 = iVar10 + -1;
-      pcVar23 = pcVar22 + 1;
-      cVar1 = *pcVar22;
-      pcVar22 = pcVar23;
+      pcVar24 = pcVar23 + 1;
+      cVar1 = *pcVar23;
+      pcVar23 = pcVar24;
     } while (cVar1 != '\0');
-    pcVar22 = pcVar24 + -uVar17;
-    pcVar24 = pcVar23 + -1;
-    memmove(pcVar24, pcVar22, uVar17); /* compiler REP MOVS byte copy */
-    uVar26 = 0;
+    pcVar23 = pcVar25 + -uVar17;
+    pcVar25 = pcVar24 + -1;
+    memmove(pcVar25, pcVar23, uVar17); /* compiler REP MOVS byte copy */
+    uVar19 = 0;
     break;
   case CASE_BF:
     uVar17 = 0xffffffff;
-    pcVar22 = "exppar";
+    pcVar23 = "exppar";
     do {
-      pcVar24 = pcVar22;
+      pcVar25 = pcVar23;
       if (uVar17 == 0) break;
       uVar17 = uVar17 - 1;
-      pcVar24 = pcVar22 + 1;
-      cVar1 = *pcVar22;
-      pcVar22 = pcVar24;
+      pcVar25 = pcVar23 + 1;
+      cVar1 = *pcVar23;
+      pcVar23 = pcVar25;
     } while (cVar1 != '\0');
     uVar17 = ~uVar17;
     iVar10 = -1;
-    pcVar22 = local_48;
+    pcVar23 = local_48;
     do {
-      pcVar23 = pcVar22;
+      pcVar24 = pcVar23;
       if (iVar10 == 0) break;
       iVar10 = iVar10 + -1;
-      pcVar23 = pcVar22 + 1;
-      cVar1 = *pcVar22;
-      pcVar22 = pcVar23;
+      pcVar24 = pcVar23 + 1;
+      cVar1 = *pcVar23;
+      pcVar23 = pcVar24;
     } while (cVar1 != '\0');
-    pcVar22 = pcVar24 + -uVar17;
-    pcVar24 = pcVar23 + -1;
-    memmove(pcVar24, pcVar22, uVar17); /* compiler REP MOVS byte copy */
-    uVar26 = 0;
+    pcVar23 = pcVar25 + -uVar17;
+    pcVar25 = pcVar24 + -1;
+    memmove(pcVar25, pcVar23, uVar17); /* compiler REP MOVS byte copy */
+    uVar19 = 0;
     uVar17 = 0xffffffff;
-    pcVar22 = &DAT_007d0588;
+    pcVar23 = &DAT_007d0588;
     do {
-      pcVar24 = pcVar22;
+      pcVar25 = pcVar23;
       if (uVar17 == 0) break;
       uVar17 = uVar17 - 1;
-      pcVar24 = pcVar22 + 1;
-      cVar1 = *pcVar22;
-      pcVar22 = pcVar24;
+      pcVar25 = pcVar23 + 1;
+      cVar1 = *pcVar23;
+      pcVar23 = pcVar25;
     } while (cVar1 != '\0');
     uVar17 = ~uVar17;
     iVar10 = -1;
-    pcVar22 = local_2c;
+    pcVar23 = local_2c;
     do {
-      pcVar23 = pcVar22;
+      pcVar24 = pcVar23;
       if (iVar10 == 0) break;
       iVar10 = iVar10 + -1;
-      pcVar23 = pcVar22 + 1;
-      cVar1 = *pcVar22;
-      pcVar22 = pcVar23;
+      pcVar24 = pcVar23 + 1;
+      cVar1 = *pcVar23;
+      pcVar23 = pcVar24;
     } while (cVar1 != '\0');
-    pcVar22 = pcVar24 + -uVar17;
-    pcVar24 = pcVar23 + -1;
-    memmove(pcVar24, pcVar22, uVar17); /* compiler REP MOVS byte copy */
-    pcVar22 = &DAT_007d0564;
+    pcVar23 = pcVar25 + -uVar17;
+    pcVar25 = pcVar24 + -1;
+    memmove(pcVar25, pcVar23, uVar17); /* compiler REP MOVS byte copy */
+    pcVar23 = &DAT_007d0564;
     goto LAB_00642561;
   }
   puVar14 = (byte *)(&this_00->field_01D5);
@@ -2677,11 +2691,18 @@ LAB_00642561:
     STT3DSprC::sub_004ACF20((STT3DSprC *)puVar14,DAT_008032b8,0x10);
     STT3DSprC::sub_004ACFE0((STT3DSprC *)puVar14,'\x01');
   }
-  uVar27 = 0x45;
-  uVar15 = 0x5a;
-  iVar10 = 1;
+  uVar15 = 0x45;
+  uVar29 = 0x5a;
+  uVar30 = 0;
+  uVar20 = 0;
+  uVar28 = 1;
+  uVar27 = 0;
+  uVar8 = 0;
   uVar17 = thunk_FUN_004ad650((STT3DSprC *)puVar14);
-  Library::Ourlib::ST3DSMAP::SprSetLevBeforeLand(this_00->field_0211,uVar17,iVar10,uVar15,uVar27);
+  /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
+  Library::Ourlib::ST3DSMAP::SprSetLevBeforeLand
+            (this_00->field_0211,uVar17,CONCAT22(uVar8,CONCAT11(uVar27,uVar28)),
+             CONCAT22(uVar20,CONCAT11(uVar30,uVar29)),uVar15);
   iVar10 = this_00->vfunc_D8();
   if (iVar10 != 0) {
     RaiseInternalException

@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 uint FUN_00757530(AnonShape_00757530_EEED7D69 *param_1,int param_2,undefined4 *param_3)
 
@@ -6,7 +8,6 @@ uint FUN_00757530(AnonShape_00757530_EEED7D69 *param_1,int param_2,undefined4 *p
   short sVar2;
   int iVar3;
   AnonNested_00757530_000C_743CE253 *pAVar4;
-  uint uVar5;
   AnonShape_00757530_EEED7D69 *pAVar6;
   AnonNested_00757530_000C_743CE253 **ppAVar7;
 
@@ -37,16 +38,7 @@ uint FUN_00757530(AnonShape_00757530_EEED7D69 *param_1,int param_2,undefined4 *p
   }
   if (uVar1 != 0) {
     pAVar4 = *ppAVar7;
-    for (uVar5 = uVar1 >> 2; uVar5 != 0; uVar5 = uVar5 - 1) {
-      *(undefined4 *)pAVar4 = *param_3;
-      param_3 = param_3 + 1;
-      pAVar4 = (AnonNested_00757530_000C_743CE253 *)&pAVar4->field_0x4;
-    }
-    for (uVar5 = uVar1 & 3; uVar5 != 0; uVar5 = uVar5 - 1) {
-      *(undefined1 *)pAVar4 = *(undefined1 *)param_3;
-      param_3 = (undefined4 *)((int)param_3 + 1);
-      pAVar4 = (AnonNested_00757530_000C_743CE253 *)&pAVar4->field_0x1;
-    }
+    memmove(pAVar4, param_3, uVar1); /* compiler REP MOVS byte copy */
   }
   return uVar1;
 }

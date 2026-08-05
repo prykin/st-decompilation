@@ -24,12 +24,12 @@ void __thiscall HelpPanelTy::CreateSlider(HelpPanelTy *this,int param_1)
   undefined4 local_310;
   undefined4 local_30c;
   undefined4 local_308;
-  undefined4 local_2f8;
+  ushort *local_2f8;
   int local_2f4;
   undefined4 local_2a0;
   int local_29c [26];
   undefined4 local_234;
-  undefined4 local_178;
+  ushort *local_178;
   int local_174;
   undefined4 local_120;
   undefined4 local_11c;

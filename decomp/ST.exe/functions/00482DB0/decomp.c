@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* [STAbiConsistencyApplier] full_eax_return: return=/int Evidence: all observed callers consume
    full EAX (1), none consume AL/AX, and every RET path defines full EAX; sites=00462180 @ 00462366
@@ -73,9 +75,7 @@ int __fastcall FUN_00482db0(int *param_1,undefined4 param_2)
         ((-1 < sVar3 && ((sVar3 < g_worldGrid.sizeY && (-1 < sVar1)))))) &&
        (sVar1 < g_worldGrid.sizeZ)) {
       local_8 = (RecoveredRecord_STBoatC_00482DB0 *)
-                g_worldGrid.cells
-                [(int)g_worldGrid.planeStride * (int)sVar1 + (int)g_worldGrid.sizeX * (int)sVar3 +
-                 (int)sVar7].objects[1];
+                STGridAt3D(g_worldGrid, sVar7, sVar3, sVar1).objects[1];
 LAB_00482f52:
       if ((local_8 != nullptr) &&
          (*(int *)&local_8->field_0x18 == param_1[0x1fd])) goto LAB_00482fa9;
@@ -87,9 +87,7 @@ LAB_00482f52:
        ((-1 < sVar3 &&
         (((sVar3 < g_worldGrid.sizeY && (-1 < sVar1)) && (sVar1 < g_worldGrid.sizeZ)))))) {
       local_8 = (RecoveredRecord_STBoatC_00482DB0 *)
-                g_worldGrid.cells
-                [(int)g_worldGrid.planeStride * (int)sVar1 + (int)g_worldGrid.sizeX * (int)sVar3 +
-                 (int)sVar7].objects[0];
+                STGridAt3D(g_worldGrid, sVar7, sVar3, sVar1).objects[0];
       goto LAB_00482f52;
     }
   }

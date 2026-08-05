@@ -237,9 +237,7 @@ int __thiscall STMineSetC::GetMessage(STMineSetC *this,STMessage *message)
         pSVar15 = nullptr;
       }
       else {
-        pSVar15 = g_worldGrid.cells
-                  [(int)g_worldGrid.planeStride * (int)sVar3 + (int)g_worldGrid.sizeX * (int)sVar4 +
-                   (int)sVar2].objects[local_14];
+        pSVar15 = STGridAt3D(g_worldGrid, sVar2, sVar4, sVar3).objects[local_14];
       }
       if ((pSVar15 == nullptr) &&
          (iVar9 = DumpClassC::WritePtr

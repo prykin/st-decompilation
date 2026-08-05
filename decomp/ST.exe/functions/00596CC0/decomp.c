@@ -25,8 +25,6 @@ void __thiscall FSGSTy::PaintFSGS(FSGSTy *this,char param_1)
   undefined4 *this_02;
   /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
   FSGSTy *extraout_ECX;
-  /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
-  int unaff_ESI;
   InternalExceptionFrame local_50;
   FSGSTy *local_c;
   UINT local_8;
@@ -149,8 +147,7 @@ LAB_00596d8b:
     }
     OutLadProc((FSGSTy *)g_dDXContext_0080759C,(int)g_dDXContext_0080759C,nullptr,
                nullptr,0x22,0x5e,(FSGSTy *)0x2e1,0x175);
-    /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
-    PaintLadder(this_00,unaff_ESI);
+    PaintLadder(this_00);
     g_currentExceptionFrame = local_50.previous;
     return;
   case CASE_A:

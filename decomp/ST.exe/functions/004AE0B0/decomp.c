@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* [STSwitchEnumApplier] Switch target param_4 uses
    /SubmarineTitans/Recovered/Enums/Global_sub_004AE0B0_param_4Enum. Cases:
@@ -72,16 +74,12 @@ cf_break_loop_004AE25B:
           if ((((sVar13 < g_worldGrid.sizeX) && (-1 < sVar3)) &&
               ((sVar3 < g_worldGrid.sizeY &&
                (((-1 < sVar14 && (sVar14 < g_worldGrid.sizeZ)) &&
-                (g_worldGrid.cells
-                 [(int)sVar14 * (int)g_worldGrid.planeStride + (int)sVar3 * (int)g_worldGrid.sizeX +
-                  (int)sVar13].objects[0] != nullptr)))))) ||
+                (STGridAt3D(g_worldGrid, sVar13, sVar3, sVar14).objects[0] != nullptr)))))) ||
              (((sVar13 < 0 || (g_worldGrid.sizeX <= sVar13)) ||
               ((sVar3 < 0 ||
                (((g_worldGrid.sizeY <= sVar3 || (sVar14 < 0)) ||
                 ((g_worldGrid.sizeZ <= sVar14 ||
-                 (g_pathingGrid.cells
-                  [(int)sVar3 * (int)g_pathingGrid.sizeX +
-                   (int)sVar14 * (int)g_pathingGrid.planeStride + (int)sVar13] != 0))))))))))
+                 (STGridAt3D(g_pathingGrid, sVar13, sVar3, sVar14) != 0))))))))))
           goto cf_break_loop_004AE25B;
           iVar5 = iVar5 + 1;
         } while (iVar5 < param_3 + 1);
@@ -101,15 +99,11 @@ cf_break_loop_004AE25B:
           if ((-1 < sVar3) &&
              ((((((sVar4 = (short)iVar6, sVar3 < g_worldGrid.sizeX && (-1 < sVar4)) &&
                  (sVar4 < g_worldGrid.sizeY)) && ((-1 < sVar14 && (sVar14 < g_worldGrid.sizeZ)))) &&
-               (g_worldGrid.cells
-                [(int)sVar14 * (int)g_worldGrid.planeStride + (int)sVar4 * (int)g_worldGrid.sizeX +
-                 (int)sVar3].objects[0] != nullptr)) ||
+               (STGridAt3D(g_worldGrid, sVar3, sVar4, sVar14).objects[0] != nullptr)) ||
               (((-1 < sVar3 && (sVar3 < g_worldGrid.sizeX)) &&
                ((-1 < sVar4 &&
                 ((((sVar4 < g_worldGrid.sizeY && (-1 < sVar14)) && (sVar14 < g_worldGrid.sizeZ)) &&
-                 (g_pathingGrid.cells
-                  [(int)sVar4 * (int)g_pathingGrid.sizeX +
-                   (int)sVar14 * (int)g_pathingGrid.planeStride + (int)sVar3] != -1)))))))))) {
+                 (STGridAt3D(g_pathingGrid, sVar3, sVar4, sVar14) != -1)))))))))) {
             local_18 = 0;
             goto LAB_004ae37e;
           }

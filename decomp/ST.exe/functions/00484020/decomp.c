@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* [STAbiConsistencyApplier] stack_parameter_width: parameter=/short Evidence: entry-use
    width=/short; unmasked_dword_reads=0; evidence=004842C6 MOVSX EDX,word ptr [EBP + 0x8] | 00484301
@@ -67,15 +69,11 @@ FUN_00484020(void *this,short param_1,short *param_2,short *param_3,short *param
   sVar1 = *(short *)((int)this + 0x804);
   if (((((((sVar3 < 0) || (g_worldGrid.sizeX <= sVar3)) || (sVar4 < 0)) ||
         ((g_worldGrid.sizeY <= sVar4 || (sVar1 < 0)))) || (g_worldGrid.sizeZ <= sVar1)) ||
-      (local_10 = g_worldGrid.cells
-                  [(int)sVar1 * (int)g_worldGrid.planeStride + (int)sVar4 * (int)g_worldGrid.sizeX +
-                   (int)sVar3].objects[0], local_10 == nullptr)) &&
+      (local_10 = STGridAt3D(g_worldGrid, sVar3, sVar4, sVar1).objects[0], local_10 == nullptr)) &&
      ((((sVar3 < 0 || (g_worldGrid.sizeX <= sVar3)) ||
        ((sVar4 < 0 ||
         (((g_worldGrid.sizeY <= sVar4 || (sVar1 < 0)) || (g_worldGrid.sizeZ <= sVar1)))))) ||
-      (local_10 = g_worldGrid.cells
-                  [(int)sVar1 * (int)g_worldGrid.planeStride + (int)sVar4 * (int)g_worldGrid.sizeX +
-                   (int)sVar3].objects[1], local_10 == nullptr)))) {
+      (local_10 = STGridAt3D(g_worldGrid, sVar3, sVar4, sVar1).objects[1], local_10 == nullptr)))) {
     return 0;
   }
   thunk_FUN_00416270(local_10,(undefined2 *)&local_14,&local_18,(int *)&param_1);
@@ -97,9 +95,7 @@ FUN_00484020(void *this,short param_1,short *param_2,short *param_3,short *param
             if (local_2c <= local_28 + -1) {
               sVar1 = *param_3;
               sVar2 = *param_4;
-              if ((-1 < g_pathingGrid.cells
-                        [(int)sVar2 * (int)g_pathingGrid.planeStride +
-                         local_2c + (int)sVar1 * (int)g_pathingGrid.sizeX]) &&
+              if ((-1 < STGridAt3D(g_pathingGrid, local_2c, sVar1, sVar2)) &&
                  ((((sVar4 < 0 || (g_worldGrid.sizeX <= sVar4)) ||
                    ((sVar1 < 0 ||
                     (((g_worldGrid.sizeY <= sVar1 || (sVar2 < 0)) || (g_worldGrid.sizeZ <= sVar2))))

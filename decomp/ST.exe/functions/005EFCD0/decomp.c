@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 void __fastcall FUN_005efcd0(AnonShape_005EFCD0_3603EDD8 *param_1)
 
@@ -15,9 +17,7 @@ void __fastcall FUN_005efcd0(AnonShape_005EFCD0_3603EDD8 *param_1)
   if ((((((sVar1 < 0) || (g_worldGrid.sizeX <= sVar1)) || (sVar2 < 0)) ||
        ((g_worldGrid.sizeY <= sVar2 || (sVar3 < 0)))) ||
       ((g_worldGrid.sizeZ <= sVar3 ||
-       (g_worldGrid.cells
-        [(int)g_worldGrid.planeStride * (int)sVar3 + (int)g_worldGrid.sizeX * (int)sVar2 +
-         (int)sVar1].objects[0] == nullptr)))) &&
+       (STGridAt3D(g_worldGrid, sVar1, sVar2, sVar3).objects[0] == nullptr)))) &&
      (iVar5 = DumpClassC::WritePtr
                         (sVar1,sVar2,sVar3,0,(RecoveredRecord_DumpClassC_00495EC0 *)param_1),
      iVar5 == 0)) {

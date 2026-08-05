@@ -3,9 +3,13 @@
 
 /* Recovered from embedded debug metadata:
    E:\__titans\Start\sett_obj.cpp
-   SettMapTy::NoneSettMap */
+   SettMapTy::NoneSettMap
+   [STAbiConsistencyApplier] machine_thiscall_arity target=function:-1: prototype=int __thiscall
+   NoneSettMap(SettMapTy * this) Evidence: every machine RET purges exactly 0 explicit stack bytes;
+   current signature describes 4; removed trailing parameter slots have no listing references;
+   ret_sites=005C51AB RET | 005C53DE RET | 005C58D5 RET | 005C58FC RET | 005C5942 RET */
 
-int __thiscall SettMapTy::NoneSettMap(SettMapTy *this,int *param_1)
+int __thiscall SettMapTy::NoneSettMap(SettMapTy *this)
 
 {
   char cVar1;
@@ -196,8 +200,7 @@ int __thiscall SettMapTy::NoneSettMap(SettMapTy *this,int *param_1)
                   ((int *)g_ddxContext_008075A8,g_startSystem_0081176C->field_0554);
       }
       this_00->field_0065 = 1;
-      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-      (**(code **)&this_00->field_0000->field_0x18)(0);
+      this_00->CreateCtrls('\0');
       SVar2 = this_00->field_1E26;
       if (((SVar2 == CASE_6) || (SVar2 == CASE_7)) || (SVar2 == CASE_E)) {
         SubmarineTitans::Recovered::HiddenThis::AnonReceiver_004EEFB0::thunk_FUN_005c8200

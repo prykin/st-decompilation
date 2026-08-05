@@ -8,7 +8,6 @@ function_address	function	target_kind	target_ordinal	target_name	current_type	st
 00401032	FSGSTy::OutLadProc	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
 0040103C	thunk_FUN_00590130	parameter	1	param_1	/undefined4	Stack[0x4]:4	DEFAULT		0	0	no_evidence		-
 0040103C	thunk_FUN_00590130	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
-00401046	STLightC::sub_0061D6D0	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
 0040104B	thunk_FUN_005797b0	return		<RETURN>	/undefined4	EAX:4	DEFAULT		0	0	no_evidence		-
 0040105A	thunk_FUN_00627850	parameter	0	param_1	/undefined4	Stack[0x4]:4	DEFAULT		0	0	no_evidence		-
 0040105A	thunk_FUN_00627850	parameter	1	param_2	/undefined4	Stack[0x8]:4	DEFAULT		0	0	no_evidence		-
@@ -40,14 +39,10 @@ function_address	function	target_kind	target_ordinal	target_name	current_type	st
 004010F0	thunk_FUN_0044cdb0	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
 004010F5	STFieldC::sub_00609CD0	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
 004010FA	thunk_FUN_00697cf0	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
-00401104	thunk_FUN_006a3c10	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
 00401109	thunk_FUN_00619540	parameter	1	param_2	/undefined4	Stack[0x8]:4	DEFAULT		0	0	no_evidence		-
 0040110E	WaitTy::CloseButtons	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
-00401113	STBoatC::BackBuild	parameter	2	param_2	/undefined4	Stack[0x8]:4	DEFAULT		0	0	no_evidence		-
-00401113	STBoatC::BackBuild	parameter	3	param_3	/undefined4	Stack[0xc]:4	DEFAULT		0	0	no_evidence		-
 00401122	thunk_FUN_004dbb60	return		<RETURN>	/undefined4	EAX:4	DEFAULT		0	0	no_evidence		-
 00401127	TraksClassTy::DrawTrakSprite	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
-0040112C	thunk_FUN_006a3c50	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
 00401140	thunk_FUN_0060aa00	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
 00401145	MTestTy::DoneMTest	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
 0040114F	thunk_FUN_0055d630	parameter	1	param_1	/undefined4	Stack[0x4]:4	DEFAULT		0	0	no_evidence		-
@@ -65,7 +60,6 @@ function_address	function	target_kind	target_ordinal	target_name	current_type	st
 004011BD	thunk_FUN_004e5a10	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
 004011C7	thunk_FUN_0044ede0	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
 004011CC	thunk_FUN_0064e680	return		<RETURN>	/undefined4	EAX:4	DEFAULT		0	0	no_evidence		-
-004011D1	STBoatC::CreateGame	parameter	2	param_2	/undefined4	Stack[0x8]:4	DEFAULT		0	0	no_evidence		-
 004011DB	STBoatC::ReleaseLoad	parameter	1	param_1	/undefined4	Stack[0x4]:4	DEFAULT		0	0	no_evidence		-
 004011DB	STBoatC::ReleaseLoad	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
 004011EA	BldBoatPanelTy::PaintBldBut	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
@@ -219,7 +213,7 @@ function_address	function	target_kind	target_ordinal	target_name	current_type	st
 004015FF	thunk_FUN_004ec6c0	return		<RETURN>	/undefined4	EAX:4	DEFAULT		0	0	no_evidence		-
 00401609	SoundManagerTy::sub_00566AA0	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
 0040160E	InfocPanelTy::Update	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
-00401618	thunk_FUN_00493ca0	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
+00401618	thunk_FUN_00493ca0	return		<RETURN>	/undefined1	AL:1	DEFAULT		0	0	no_evidence		-
 00401622	thunk_FUN_00553410	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
 00401627	thunk_FUN_004d8e70	parameter	3	param_3	/undefined4	Stack[0xc]:4	DEFAULT		0	0	no_evidence		-
 00401627	thunk_FUN_004d8e70	return		<RETURN>	/undefined4	EAX:4	DEFAULT		0	0	no_evidence		-
@@ -237,12 +231,10 @@ function_address	function	target_kind	target_ordinal	target_name	current_type	st
 00401695	thunk_FUN_004d6c00	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
 0040169A	thunk_FUN_0061c5f0	return		<RETURN>	/undefined4	EAX:4	DEFAULT		0	0	no_evidence		-
 004016A4	thunk_FUN_005f3b00	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
-004016A9	thunk_FUN_005f1380	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
 004016AE	thunk_FUN_004e46f0	return		<RETURN>	/undefined4	EAX:4	DEFAULT		0	0	no_evidence		-
 004016B3	thunk_FUN_00668a70	return		<RETURN>	/undefined4	EAX:4	DEFAULT		0	0	no_evidence		-
 004016BD	thunk_FUN_005eda50	return		<RETURN>	/undefined4	EAX:4	DEFAULT		0	0	no_evidence		-
 004016C2	thunk_FUN_005745e0	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
-004016C7	STJellyGunC::sub_00582580	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
 004016CC	thunk_FUN_006832e0	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
 004016E0	thunk_FUN_004d8870	return		<RETURN>	/undefined4	EAX:4	DEFAULT		0	0	no_evidence		-
 004016EA	thunk_FUN_0060d340	return		<RETURN>	/undefined4	EAX:4	DEFAULT		0	0	no_evidence		-
@@ -279,9 +271,9 @@ function_address	function	target_kind	target_ordinal	target_name	current_type	st
 00401799	thunk_FUN_004e80f0	return		<RETURN>	/undefined4	EAX:4	DEFAULT		0	0	no_evidence		-
 0040179E	thunk_FUN_0060d940	return		<RETURN>	/undefined4	EAX:4	DEFAULT		0	0	no_evidence		-
 004017A3	thunk_FUN_0055bf20	parameter	1	param_1	/undefined4	Stack[0x4]:4	DEFAULT		0	0	no_evidence		-
-004017A8	OptPanelTy::PrepAsses	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
+004017A8	OptPanelTy::PrepAsses	return		<RETURN>	/undefined1	AL:1	DEFAULT		0	0	no_evidence		-
 004017AD	thunk_FUN_00606a50	return		<RETURN>	/undefined4	EAX:4	DEFAULT		0	0	no_evidence		-
-004017DA	GameSystemC::DoneSystem	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
+004017DA	GameSystemC::DoneSystem	return		<RETURN>	/undefined1	AL:1	DEFAULT		0	0	no_evidence		-
 004017E4	OpticClassC::sub_004AB070	return		<RETURN>	/undefined4	EAX:4	DEFAULT		0	0	no_evidence		-
 004017E9	CPanelTy::CreateBut	parameter	2	param_2	/undefined4	Stack[0x8]:4	DEFAULT		0	0	no_evidence		-
 004017E9	CPanelTy::CreateBut	parameter	8	param_8	/undefined4	Stack[0x20]:4	DEFAULT		0	0	no_evidence		-
@@ -373,7 +365,6 @@ function_address	function	target_kind	target_ordinal	target_name	current_type	st
 004019FB	thunk_FUN_0057f240	return		<RETURN>	/undefined1	AL:1	DEFAULT		0	0	no_evidence		-
 00401A05	STOctopusC::sub_0058B190	return		<RETURN>	/undefined4	EAX:4	DEFAULT		0	0	no_evidence		-
 00401A0A	thunk_FUN_00488d10	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
-00401A19	MTestTy::sub_005E5F60	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
 00401A1E	HelpPanelTy::NextBut	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
 00401A28	thunk_FUN_004e7390	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
 00401A2D	thunk_FUN_00668aa0	return		<RETURN>	/undefined4	EAX:4	DEFAULT		0	0	no_evidence		-
@@ -407,8 +398,7 @@ function_address	function	target_kind	target_ordinal	target_name	current_type	st
 00401AE6	thunk_FUN_0060bc80	parameter	1	param_1	/undefined4	Stack[0x4]:4	DEFAULT		0	0	no_evidence		-
 00401AE6	thunk_FUN_0060bc80	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
 00401AF0	thunk_FUN_004f0af0	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
-00401B04	STColl3C::sub_005F66B0	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
-00401B09	AiFltClassTy::GoToRepair	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
+00401B09	AiFltClassTy::GoToRepair	return		<RETURN>	/undefined1	AL:1	DEFAULT		0	0	no_evidence		-
 00401B0E	thunk_FUN_005eeff0	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
 00401B18	thunk_FUN_004e4f30	return		<RETURN>	/undefined4	EAX:4	DEFAULT		0	0	no_evidence		-
 00401B27	AiEventClassTy::_CreateRCCont	parameter	5	param_5	/undefined4	Stack[0x14]:4	DEFAULT		0	0	no_evidence		-
@@ -443,7 +433,6 @@ function_address	function	target_kind	target_ordinal	target_name	current_type	st
 00401BFE	thunk_FUN_005edc20	return		<RETURN>	/undefined4	EAX:4	DEFAULT		0	0	no_evidence		-
 00401C08	thunk_FUN_004de820	return		<RETURN>	/undefined4	EAX:4	DEFAULT		0	0	no_evidence		-
 00401C1C	thunk_FUN_004eb6d0	return		<RETURN>	/undefined4	EAX:4	DEFAULT		0	0	no_evidence		-
-00401C21	thunk_FUN_005fce30	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
 00401C26	thunk_FUN_004956c0	parameter	1	param_1	/undefined4	Stack[0x4]:4	DEFAULT		0	0	no_evidence		-
 00401C2B	thunk_FUN_004dbe00	return		<RETURN>	/undefined4	EAX:4	DEFAULT		0	0	no_evidence		-
 00401C35	thunk_FUN_0064fef0	return		<RETURN>	/undefined4	EAX:4	DEFAULT		0	0	no_evidence		-
@@ -454,7 +443,6 @@ function_address	function	target_kind	target_ordinal	target_name	current_type	st
 00401C53	STAllPlayersC::PutOnPlaceGuardBoats	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
 00401C58	thunk_FUN_00651df0	return		<RETURN>	/undefined4	EAX:4	DEFAULT		0	0	no_evidence		-
 00401C67	thunk_FUN_00651010	return		<RETURN>	/undefined4	EAX:4	DEFAULT		0	0	no_evidence		-
-00401C71	thunk_FUN_00544100	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
 00401C76	thunk_FUN_004d0f80	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
 00401C7B	thunk_FUN_004dd740	return		<RETURN>	/undefined4	EAX:4	DEFAULT		0	0	no_evidence		-
 00401C80	AiPlrClassTy::sub_0067BFD0	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
@@ -467,7 +455,6 @@ function_address	function	target_kind	target_ordinal	target_name	current_type	st
 00401CA8	thunk_FUN_0065bd20	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
 00401CB7	VisibleClassTy::SetZoneTsh	parameter	6	param_6	/undefined4	Stack[0x18]:4	DEFAULT		0	0	no_evidence		-
 00401CBC	OptPanelTy::sub_00532CE0	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
-00401CC1	thunk_FUN_006099a0	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
 00401CDA	thunk_FUN_00568940	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
 00401CDF	AiFltClassTy::sub_0065D6E0	parameter	1	param_2	/undefined4	EDX:4	DEFAULT		0	0	no_evidence		-
 00401CDF	AiFltClassTy::sub_0065D6E0	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
@@ -508,7 +495,6 @@ function_address	function	target_kind	target_ordinal	target_name	current_type	st
 00401DCA	InterSystemC::CreateSystemObjects	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
 00401DD4	thunk_FUN_004d0a80	return		<RETURN>	/undefined4	EAX:4	DEFAULT		0	0	no_evidence		-
 00401DDE	thunk_FUN_00491200	return		<RETURN>	/undefined4	EAX:4	DEFAULT		0	0	no_evidence		-
-00401DE3	thunk_FUN_00584ad0	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
 00401DE8	thunk_FUN_00483300	parameter	1	param_2	/undefined4	EDX:4	DEFAULT		0	0	no_evidence		-
 00401DED	thunk_FUN_0064ee90	return		<RETURN>	/undefined4	EAX:4	DEFAULT		0	0	no_evidence		-
 00401DF2	thunk_FUN_00492f30	parameter	1	param_2	/undefined4	EDX:4	DEFAULT		0	0	no_evidence		-
@@ -519,7 +505,6 @@ function_address	function	target_kind	target_ordinal	target_name	current_type	st
 00401E15	CPanelTy::sub_004F8020	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
 00401E24	thunk_FUN_00617eb0	return		<RETURN>	/undefined4	EAX:4	DEFAULT		0	0	no_evidence		-
 00401E29	thunk_FUN_00486e20	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
-00401E2E	thunk_FUN_0062e520	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
 00401E33	thunk_FUN_00490e90	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
 00401E38	thunk_FUN_005deb90	return		<RETURN>	/undefined4	EAX:4	DEFAULT		0	0	no_evidence		-
 00401E42	thunk_FUN_0064f5e0	return		<RETURN>	/undefined4	EAX:4	DEFAULT		0	0	no_evidence		-
@@ -551,7 +536,7 @@ function_address	function	target_kind	target_ordinal	target_name	current_type	st
 00401EF1	thunk_FUN_0065e6c0	parameter	1	param_2	/undefined4	EDX:4	DEFAULT		0	0	no_evidence		-
 00401EF1	thunk_FUN_0065e6c0	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
 00401EF6	thunk_FUN_005ec510	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
-00401EFB	STSharkC::LifeShark	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
+00401EFB	STSharkC::LifeShark	return		<RETURN>	/undefined1	AL:1	DEFAULT		0	0	no_evidence		-
 00401F00	MainMenuTy::SetMode	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
 00401F05	thunk_FUN_006940b0	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
 00401F0A	thunk_FUN_0065dd30	parameter	1	param_2	/undefined4	EDX:4	DEFAULT		0	0	no_evidence		-
@@ -592,7 +577,6 @@ function_address	function	target_kind	target_ordinal	target_name	current_type	st
 00401FD7	STSharkC::CreateShark	return		<RETURN>	/undefined4	EAX:4	DEFAULT		0	0	no_evidence		-
 00401FE1	thunk_FUN_0064ee40	return		<RETURN>	/undefined4	EAX:4	DEFAULT		0	0	no_evidence		-
 00401FE6	PopUpTy::ChangeState	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
-00401FEB	thunk_FUN_005ec620	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
 00401FF0	thunk_FUN_004b6d70	parameter	1	param_2	/undefined4	EDX:4	DEFAULT		0	0	no_evidence		-
 00401FF0	thunk_FUN_004b6d70	return		<RETURN>	/undefined4	EAX:4	DEFAULT		0	0	no_evidence		-
 00401FF5	thunk_FUN_00575a10	parameter	1	param_2	/undefined4	Stack[0x8]:4	DEFAULT		0	0	no_evidence		-
@@ -603,7 +587,7 @@ function_address	function	target_kind	target_ordinal	target_name	current_type	st
 00402022	FSGSTy::NewIDCtrls	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
 00402027	thunk_FUN_00650370	return		<RETURN>	/undefined4	EAX:4	DEFAULT		0	0	no_evidence		-
 0040202C	thunk_FUN_0060cef0	return		<RETURN>	/undefined4	EAX:4	DEFAULT		0	0	no_evidence		-
-00402031	FSGSTy::PaintLadder	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
+00402031	FSGSTy::PaintLadder	return		<RETURN>	/undefined1	AL:1	DEFAULT		0	0	no_evidence		-
 00402036	thunk_FUN_00594850	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
 0040203B	thunk_FUN_0041dbc0	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
 00402040	thunk_FUN_005809e0	return		<RETURN>	/undefined4	EAX:4	DEFAULT		0	0	no_evidence		-
@@ -629,7 +613,6 @@ function_address	function	target_kind	target_ordinal	target_name	current_type	st
 0040209A	thunk_FUN_0057bee0	return		<RETURN>	/undefined4	EAX:4	DEFAULT		0	0	no_evidence		-
 0040209F	thunk_FUN_00553480	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
 004020A4	thunk_FUN_006484f0	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
-004020A9	thunk_FUN_005fce50	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
 004020AE	STAllPlayersC::UnRegisterObject	return		<RETURN>	/undefined4	EAX:4	DEFAULT		0	0	no_evidence		-
 004020B8	HelpPanelTy::TipProc	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
 004020C7	thunk_FUN_005fa360	return		<RETURN>	/undefined4	EAX:4	DEFAULT		0	0	no_evidence		-
@@ -741,9 +724,8 @@ function_address	function	target_kind	target_ordinal	target_name	current_type	st
 00402360	thunk_FUN_005da980	return		<RETURN>	/undefined4	EAX:4	DEFAULT		0	0	no_evidence		-
 0040236F	STVolcanoC::sub_00646DB0	return		<RETURN>	/undefined4	EAX:4	DEFAULT		0	0	no_evidence		-
 00402374	STMineSetC::sub_00622880	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
-00402379	AiPlrClassTy::Offensive	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
+00402379	AiPlrClassTy::Offensive	return		<RETURN>	/undefined1	AL:1	DEFAULT		0	0	no_evidence		-
 0040237E	StartSystemTy::InitSystem	return		<RETURN>	/undefined4	EAX:4	DEFAULT		0	0	no_evidence		-
-0040238D	thunk_FUN_004803b0	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
 00402392	FSGSTy::LoginCtrls	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
 004023A1	TLOEmbryoTy::sub_0041C3F0	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
 004023A6	SettMapMTy::sub_005C29B0	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
@@ -756,7 +738,6 @@ function_address	function	target_kind	target_ordinal	target_name	current_type	st
 004023BF	MReportTy::DoneMReport	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
 004023CE	STBoatC::sub_0048DBA0	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
 004023D3	thunk_FUN_00695cd0	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
-004023EC	STJumpMineC::sub_006192E0	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
 004023F1	thunk_FUN_0064eaa0	return		<RETURN>	/undefined4	EAX:4	DEFAULT		0	0	no_evidence		-
 004023F6	StartSystemTy::OutBmpProc	parameter	2	param_2	/undefined4	Stack[0x8]:4	DEFAULT		0	0	no_evidence		-
 004023F6	StartSystemTy::OutBmpProc	parameter	3	param_3	/undefined4	Stack[0xc]:4	DEFAULT		0	0	no_evidence		-
@@ -785,7 +766,6 @@ function_address	function	target_kind	target_ordinal	target_name	current_type	st
 00402487	thunk_FUN_00555650	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
 0040248C	thunk_FUN_00650760	return		<RETURN>	/undefined4	EAX:4	DEFAULT		0	0	no_evidence		-
 00402491	STBoatC::sub_00492390	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
-00402496	thunk_FUN_0066ac80	parameter	0	param_1	/undefined4	Stack[0x4]:4	DEFAULT		0	0	no_evidence		-
 004024A0	CursorClassTy::AddSysAcc	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
 004024AF	STPlaySystemC::DoneSystem	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
 004024B9	thunk_FUN_006809f0	return		<RETURN>	/undefined4	EAX:4	DEFAULT		0	0	no_evidence		-
@@ -814,7 +794,6 @@ function_address	function	target_kind	target_ordinal	target_name	current_type	st
 0040256D	thunk_FUN_00626ec0	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
 00402577	thunk_FUN_0055c180	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
 00402581	thunk_FUN_004e2190	return		<RETURN>	/undefined4	EAX:4	DEFAULT		0	0	no_evidence		-
-00402586	thunk_FUN_00488ee0	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
 00402590	CPanelTy::PaintCtrlObjSI	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
 004025AE	thunk_FUN_00430750	return		<RETURN>	/undefined1	AL:1	DEFAULT		0	0	no_evidence		-
 004025B3	STAppC::sub_0056EF50	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
@@ -833,7 +812,7 @@ function_address	function	target_kind	target_ordinal	target_name	current_type	st
 00402612	STFishC::sub_0057D5F0	return		<RETURN>	/undefined4	EAX:4	DEFAULT		0	0	no_evidence		-
 00402617	thunk_FUN_00571e40	return		<RETURN>	/undefined4	EAX:4	DEFAULT		0	0	no_evidence		-
 0040261C	CampaignTy::LightPalette	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
-00402626	FSGSTy::InfoCtrls	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
+00402626	FSGSTy::InfoCtrls	return		<RETURN>	/undefined1	AL:1	DEFAULT		0	0	no_evidence		-
 0040262B	thunk_FUN_00682d70	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
 00402630	OptPanelTy::SwitchOptPanelOff	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
 0040263A	thunk_FUN_00578520	parameter	1	param_1	/undefined4	Stack[0x4]:4	DEFAULT		0	0	no_evidence		-
@@ -862,7 +841,6 @@ function_address	function	target_kind	target_ordinal	target_name	current_type	st
 004026C6	thunk_FUN_005ff3a0	return		<RETURN>	/undefined4	EAX:4	DEFAULT		0	0	no_evidence		-
 004026DF	thunk_FUN_004dd500	parameter	1	param_2	/undefined4	EDX:4	DEFAULT		0	0	no_evidence		-
 004026DF	thunk_FUN_004dd500	return		<RETURN>	/undefined4	EAX:4	DEFAULT		0	0	no_evidence		-
-004026E9	thunk_FUN_006301b0	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
 004026F8	thunk_FUN_00692530	return		<RETURN>	/undefined4	EAX:4	DEFAULT		0	0	no_evidence		-
 00402707	thunk_FUN_006404b0	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
 00402711	thunk_FUN_0063d100	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
@@ -876,7 +854,7 @@ function_address	function	target_kind	target_ordinal	target_name	current_type	st
 00402757	thunk_FUN_005f0470	return		<RETURN>	/undefined4	EAX:4	DEFAULT		0	0	no_evidence		-
 00402761	STT3DSprC::sub_004AD070	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
 00402770	thunk_FUN_004232e0	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
-00402775	CPanelTy::PlayBrief	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
+00402775	CPanelTy::PlayBrief	return		<RETURN>	/undefined1	AL:1	DEFAULT		0	0	no_evidence		-
 0040277A	BldBoatPanelTy::Update	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
 00402784	thunk_FUN_00680fa0	return		<RETURN>	/undefined4	EAX:4	DEFAULT		0	0	no_evidence		-
 00402789	thunk_FUN_005293c0	return		<RETURN>	/undefined4	EAX:4	DEFAULT		0	0	no_evidence		-
@@ -909,7 +887,6 @@ function_address	function	target_kind	target_ordinal	target_name	current_type	st
 00402851	OptPanelTy::SetOptControls	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
 00402856	thunk_FUN_006a0ae0	parameter	3	param_3	/undefined4	Stack[0xc]:4	DEFAULT		0	0	no_evidence		-
 0040286A	thunk_FUN_00416330	return		<RETURN>	/undefined1	AL:1	DEFAULT		0	0	no_evidence		-
-0040286F	thunk_FUN_00423e70	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
 00402874	OptPanelTy::CheckFiles	return		<RETURN>	/undefined4	EAX:4	DEFAULT		0	0	no_evidence		-
 00402883	thunk_FUN_004d8d40	return		<RETURN>	/undefined4	EAX:4	DEFAULT		0	0	no_evidence		-
 0040288D	thunk_FUN_004cfde0	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
@@ -963,7 +940,7 @@ function_address	function	target_kind	target_ordinal	target_name	current_type	st
 0040298C	thunk_FUN_006473e0	parameter	1	param_1	/undefined4	Stack[0x4]:4	DEFAULT		0	0	no_evidence		-
 00402991	STAllPlayersC::RegisterTorpedo	return		<RETURN>	/undefined4	EAX:4	DEFAULT		0	0	no_evidence		-
 004029A0	thunk_FUN_004c2e60	return		<RETURN>	/undefined4	EAX:4	DEFAULT		0	0	no_evidence		-
-004029A5	ChooseMapTy::NoneChooseMap	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
+004029A5	ChooseMapTy::NoneChooseMap	return		<RETURN>	/undefined1	AL:1	DEFAULT		0	0	no_evidence		-
 004029AA	thunk_FUN_004be1a0	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
 004029AF	SIDTy::InitSID	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
 004029BE	thunk_FUN_00660420	parameter	1	param_1	/undefined4	Stack[0x4]:4	DEFAULT		0	0	no_evidence		-
@@ -973,7 +950,6 @@ function_address	function	target_kind	target_ordinal	target_name	current_type	st
 004029D2	thunk_FUN_004d9bb0	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
 004029D7	thunk_FUN_004ea6e0	parameter	3	param_4	/undefined4	Stack[0x10]:4	DEFAULT		0	0	no_evidence		-
 004029D7	thunk_FUN_004ea6e0	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
-004029DC	thunk_FUN_0062e610	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
 004029E1	thunk_FUN_004dd6c0	parameter	1	param_1	/undefined4	Stack[0x4]:4	DEFAULT		0	0	no_evidence		-
 004029E1	thunk_FUN_004dd6c0	return		<RETURN>	/undefined4	EAX:4	DEFAULT		0	0	no_evidence		-
 004029E6	thunk_FUN_0067be20	parameter	1	param_2	/undefined4	EDX:4	DEFAULT		0	0	no_evidence		-
@@ -1016,10 +992,8 @@ function_address	function	target_kind	target_ordinal	target_name	current_type	st
 00402AFE	thunk_FUN_004168d0	parameter	2	param_3	/undefined4	Stack[0xc]:4	DEFAULT		0	0	no_evidence		-
 00402AFE	thunk_FUN_004168d0	return		<RETURN>	/undefined2	AX:2	DEFAULT		0	0	no_evidence		-
 00402B03	thunk_FUN_00584b10	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
-00402B08	thunk_FUN_00617880	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
 00402B12	thunk_FUN_005f6df0	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
 00402B17	thunk_FUN_004d9000	return		<RETURN>	/undefined4	EAX:4	DEFAULT		0	0	no_evidence		-
-00402B21	thunk_FUN_006a3be0	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
 00402B2B	thunk_FUN_00608e90	return		<RETURN>	/undefined4	EAX:4	DEFAULT		0	0	no_evidence		-
 00402B35	thunk_FUN_004be290	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
 00402B3F	STMineSetC::sub_0041D1A0	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
@@ -1067,9 +1041,8 @@ function_address	function	target_kind	target_ordinal	target_name	current_type	st
 00402C70	FSGSTy::Download	parameter	1	param_1	/undefined4	Stack[0x4]:4	DEFAULT		0	0	no_evidence		-
 00402C70	FSGSTy::Download	parameter	2	param_2	/undefined4	Stack[0x8]:4	DEFAULT		0	0	no_evidence		-
 00402C70	FSGSTy::Download	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
-00402C75	thunk_FUN_005fce70	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
 00402C7F	AiTactClassTy::sub_00690A40	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
-00402C84	FSGSTy::JoinChannel	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
+00402C84	FSGSTy::JoinChannel	return		<RETURN>	/undefined1	AL:1	DEFAULT		0	0	no_evidence		-
 00402C8E	AiFltClassTy::sub_00661580	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
 00402C93	thunk_FUN_004cd790	return		<RETURN>	/undefined4	EAX:4	DEFAULT		0	0	no_evidence		-
 00402C98	thunk_FUN_004b79c0	return		<RETURN>	/undefined4	EAX:4	DEFAULT		0	0	no_evidence		-
@@ -1116,7 +1089,7 @@ function_address	function	target_kind	target_ordinal	target_name	current_type	st
 00402D8D	thunk_FUN_00672930	return		<RETURN>	/undefined4	EAX:4	DEFAULT		0	0	no_evidence		-
 00402D92	TLOBaseTy::sub_004B9A40	return		<RETURN>	/undefined4	EAX:4	DEFAULT		0	0	no_evidence		-
 00402D9C	thunk_FUN_004e4b10	return		<RETURN>	/undefined4	EAX:4	DEFAULT		0	0	no_evidence		-
-00402DA1	STGroupBoatC::RechargeNewCmd	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
+00402DA1	STGroupBoatC::RechargeNewCmd	return		<RETURN>	/undefined1	AL:1	DEFAULT		0	0	no_evidence		-
 00402DA6	thunk_FUN_004e4b60	return		<RETURN>	/undefined4	EAX:4	DEFAULT		0	0	no_evidence		-
 00402DB0	thunk_FUN_004f9260	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
 00402DBA	thunk_FUN_004dba70	return		<RETURN>	/undefined4	EAX:4	DEFAULT		0	0	no_evidence		-
@@ -1147,12 +1120,12 @@ function_address	function	target_kind	target_ordinal	target_name	current_type	st
 00402E14	FUN_00402e14	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
 00402E19	thunk_FUN_00618240	return		<RETURN>	/undefined4	EAX:4	DEFAULT		0	0	no_evidence		-
 00402E1E	thunk_FUN_004d0310	return		<RETURN>	/undefined4	EAX:4	DEFAULT		0	0	no_evidence		-
-00402E2D	HelpPanelTy::BackBut	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
+00402E2D	HelpPanelTy::BackBut	return		<RETURN>	/undefined1	AL:1	DEFAULT		0	0	no_evidence		-
 00402E32	thunk_FUN_004e6b40	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
 00402E3C	thunk_FUN_00681fe0	return		<RETURN>	/undefined4	EAX:4	DEFAULT		0	0	no_evidence		-
 00402E41	thunk_FUN_005fb170	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
 00402E46	ResearchPanelTy::Update	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
-00402E55	SettMapSTy::PrepPlList	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
+00402E55	SettMapSTy::PrepPlList	return		<RETURN>	/undefined1	AL:1	DEFAULT		0	0	no_evidence		-
 00402E5A	thunk_FUN_0055c500	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
 00402E69	thunk_FUN_0055d670	parameter	1	param_1	/undefined4	Stack[0x4]:4	DEFAULT		0	0	no_evidence		-
 00402E69	thunk_FUN_0055d670	parameter	2	param_2	/undefined4	Stack[0x8]:4	DEFAULT		0	0	no_evidence		-
@@ -1192,7 +1165,6 @@ function_address	function	target_kind	target_ordinal	target_name	current_type	st
 00402F1D	thunk_FUN_00680c20	return		<RETURN>	/undefined4	EAX:4	DEFAULT		0	0	no_evidence		-
 00402F22	thunk_FUN_005ec5e0	return		<RETURN>	/undefined4	EAX:4	DEFAULT		0	0	no_evidence		-
 00402F27	thunk_FUN_004e5b80	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
-00402F2C	thunk_FUN_00673160	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
 00402F31	thunk_FUN_004cbe10	return		<RETURN>	/undefined4	EAX:4	DEFAULT		0	0	no_evidence		-
 00402F36	thunk_FUN_0063cb30	return		<RETURN>	/undefined4	EAX:4	DEFAULT		0	0	no_evidence		-
 00402F3B	STGroupC::thunk_FUN_004244f0	parameter	1	param_1	/undefined4	Stack[0x4]:4	DEFAULT		0	0	no_evidence		-
@@ -1313,7 +1285,7 @@ function_address	function	target_kind	target_ordinal	target_name	current_type	st
 0040320B	thunk_FUN_004e1e30	return		<RETURN>	/undefined4	EAX:4	DEFAULT		0	0	no_evidence		-
 00403210	thunk_FUN_004d08e0	return		<RETURN>	/undefined4	EAX:4	DEFAULT		0	0	no_evidence		-
 00403215	CPanelTy::PaintMap	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
-0040321F	STGameObjC::ResetSelfCheckFlag	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
+0040321F	STGameObjC::ResetSelfCheckFlag	return		<RETURN>	/undefined1	AL:1	DEFAULT		0	0	no_evidence		-
 00403229	DibPut	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
 00403238	thunk_FUN_004cdeb0	parameter	1	param_1	/undefined4	Stack[0x4]:4	DEFAULT		0	0	no_evidence		-
 00403238	thunk_FUN_004cdeb0	return		<RETURN>	/undefined4	EAX:4	DEFAULT		0	0	no_evidence		-
@@ -1333,7 +1305,6 @@ function_address	function	target_kind	target_ordinal	target_name	current_type	st
 0040329C	thunk_FUN_00568bc0	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
 004032A1	TLOBldMark::sub_004C61E0	return		<RETURN>	/undefined4	EAX:4	DEFAULT		0	0	no_evidence		-
 004032B0	thunk_FUN_0067f420	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
-004032BA	STFishC::sub_0057BF20	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
 004032BF	SettMapMTy::DeleteCtrls	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
 004032C4	thunk_FUN_005672e0	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
 004032C9	STPlaySystemC::Life	return		<RETURN>	/undefined4	EAX:4	DEFAULT		0	0	no_evidence		-
@@ -1363,7 +1334,6 @@ function_address	function	target_kind	target_ordinal	target_name	current_type	st
 00403369	thunk_FUN_00627280	return		<RETURN>	/undefined4	EAX:4	DEFAULT		0	0	no_evidence		-
 0040336E	thunk_FUN_005f0280	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
 00403373	PanelTy::PaintBut	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
-00403378	MAdvTy::sub_00590860	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
 0040337D	thunk_FUN_005c5eb0	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
 00403382	thunk_FUN_004cd6f0	return		<RETURN>	/undefined4	EAX:4	DEFAULT		0	0	no_evidence		-
 0040338C	thunk_FUN_0041d8e0	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
@@ -1440,10 +1410,8 @@ function_address	function	target_kind	target_ordinal	target_name	current_type	st
 004035CB	thunk_FUN_004d8360	return		<RETURN>	/undefined4	EAX:4	DEFAULT		0	0	no_evidence		-
 004035D0	thunk_FUN_00650a90	return		<RETURN>	/undefined4	EAX:4	DEFAULT		0	0	no_evidence		-
 004035DF	thunk_FUN_004c7260	return		<RETURN>	/undefined4	EAX:4	DEFAULT		0	0	no_evidence		-
-004035E4	STBoatC::BackDismant	parameter	2	param_2	/undefined4	Stack[0x8]:4	DEFAULT		0	0	no_evidence		-
 004035EE	thunk_FUN_004e51b0	return		<RETURN>	/undefined4	EAX:4	DEFAULT		0	0	no_evidence		-
 004035F3	STManRuinC::sub_00631510	parameter	1	param_1	/undefined4	Stack[0x4]:4	DEFAULT		0	0	no_evidence		-
-004035F3	STManRuinC::sub_00631510	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
 004035FD	thunk_FUN_0064e230	parameter	0	param_1	/undefined4	Stack[0x4]:4	DEFAULT		0	0	no_evidence		-
 004035FD	thunk_FUN_0064e230	parameter	1	param_2	/undefined4	Stack[0x8]:4	DEFAULT		0	0	no_evidence		-
 004035FD	thunk_FUN_0064e230	parameter	3	param_4	/undefined4	Stack[0x10]:4	DEFAULT		0	0	no_evidence		-
@@ -1494,7 +1462,7 @@ function_address	function	target_kind	target_ordinal	target_name	current_type	st
 004036E8	thunk_FUN_00683150	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
 004036ED	thunk_FUN_00695010	return		<RETURN>	/undefined4	EAX:4	DEFAULT		0	0	no_evidence		-
 004036F2	thunk_FUN_00424790	return		<RETURN>	/undefined4	EAX:4	DEFAULT		0	0	no_evidence		-
-004036F7	STSprGameObjC::LoadLifeFrame	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
+004036F7	STSprGameObjC::LoadLifeFrame	return		<RETURN>	/undefined1	AL:1	DEFAULT		0	0	no_evidence		-
 004036FC	thunk_FUN_00647a60	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
 00403706	MReportTy::NoneMReport	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
 00403710	MTestTy::NoneMTest	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
@@ -1516,7 +1484,6 @@ function_address	function	target_kind	target_ordinal	target_name	current_type	st
 00403788	thunk_FUN_00424620	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
 0040378D	thunk_FUN_0064ea60	return		<RETURN>	/undefined4	EAX:4	DEFAULT		0	0	no_evidence		-
 00403797	thunk_FUN_0063de20	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
-0040379C	thunk_FUN_004769f0	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
 004037B0	thunk_FUN_004de030	return		<RETURN>	/undefined4	EAX:4	DEFAULT		0	0	no_evidence		-
 004037B5	thunk_FUN_004934b0	return		<RETURN>	/undefined4	EAX:4	DEFAULT		0	0	no_evidence		-
 004037BF	thunk_FUN_004d6d50	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
@@ -1553,12 +1520,10 @@ function_address	function	target_kind	target_ordinal	target_name	current_type	st
 00403882	_EnumRCCont	parameter	10	param_11	/undefined4	Stack[0x2c]:4	DEFAULT		0	0	no_evidence		-
 00403887	OptPanelTy::DoneOptPanel	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
 00403896	thunk_FUN_00480600	return		<RETURN>	/undefined4	EAX:4	DEFAULT		0	0	no_evidence		-
-0040389B	thunk_FUN_005fcd80	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
 004038A0	thunk_FUN_0061ca90	return		<RETURN>	/undefined4	EAX:4	DEFAULT		0	0	no_evidence		-
 004038AF	thunk_FUN_006686f0	return		<RETURN>	/undefined4	EAX:4	DEFAULT		0	0	no_evidence		-
 004038B4	thunk_FUN_00626c90	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
 004038B9	thunk_FUN_004b2d10	return		<RETURN>	/undefined4	EAX:4	DEFAULT		0	0	no_evidence		-
-004038C3	thunk_FUN_005fcda0	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
 004038EB	BldLabPanelTy::sub_004EFE20	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
 004038F0	thunk_FUN_00698f90	return		<RETURN>	/undefined4	EAX:4	DEFAULT		0	0	no_evidence		-
 004038FA	thunk_FUN_005fd380	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
@@ -1580,7 +1545,6 @@ function_address	function	target_kind	target_ordinal	target_name	current_type	st
 00403954	thunk_FUN_004d89b0	return		<RETURN>	/undefined4	EAX:4	DEFAULT		0	0	no_evidence		-
 00403959	thunk_FUN_00413af0	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
 00403963	thunk_FUN_005f6ad0	return		<RETURN>	/undefined4	EAX:4	DEFAULT		0	0	no_evidence		-
-00403968	ComboTy::sub_005943F0	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
 0040396D	STParticleC::sub_0062AEF0	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
 0040397C	thunk_FUN_0045ff30	return		<RETURN>	/undefined4	EAX:4	DEFAULT		0	0	no_evidence		-
 00403981	FSGSTy::OutSGlProc	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
@@ -1623,7 +1587,7 @@ function_address	function	target_kind	target_ordinal	target_name	current_type	st
 00403A58	STAppC::CommonFunction	return		<RETURN>	/undefined4	EAX:4	DEFAULT		0	0	no_evidence		-
 00403A5D	STAllPlayersC::UnRegisterArtefact	return		<RETURN>	/undefined4	EAX:4	DEFAULT		0	0	no_evidence		-
 00403A6C	thunk_FUN_005c0230	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
-00403A71	STGroupBoatC::StartReceiveOrderSound	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
+00403A71	STGroupBoatC::StartReceiveOrderSound	return		<RETURN>	/undefined1	AL:1	DEFAULT		0	0	no_evidence		-
 00403A76	thunk_FUN_0056f250	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
 00403A7B	thunk_FUN_0061d0c0	parameter	0	param_1	/undefined4	Stack[0x4]:4	DEFAULT		0	0	no_evidence		-
 00403A7B	thunk_FUN_0061d0c0	parameter	1	param_2	/undefined4	Stack[0x8]:4	DEFAULT		0	0	no_evidence		-
@@ -1688,11 +1652,9 @@ function_address	function	target_kind	target_ordinal	target_name	current_type	st
 00403BE8	thunk_FUN_00660540	parameter	5	param_5	/undefined2	Stack[0x14]:2	DEFAULT		0	0	no_evidence		-
 00403BE8	thunk_FUN_00660540	return		<RETURN>	/undefined4	EAX:4	DEFAULT		0	0	no_evidence		-
 00403C06	thunk_FUN_004e3910	return		<RETURN>	/undefined4	EAX:4	DEFAULT		0	0	no_evidence		-
-00403C10	thunk_FUN_005fd6a0	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
 00403C15	AiEventClassTy::__CreateObjPl	parameter	9	param_9	/undefined4	Stack[0x24]:4	DEFAULT		0	0	no_evidence		-
 00403C15	AiEventClassTy::__CreateObjPl	parameter	10	param_10	/undefined4	Stack[0x28]:4	DEFAULT		0	0	no_evidence		-
 00403C1A	STColl3C::sub_005FA070	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
-00403C1F	STBoatC::Dismant	parameter	2	param_2	/undefined4	Stack[0x8]:4	DEFAULT		0	0	no_evidence		-
 00403C24	thunk_FUN_005fa7f0	parameter	1	param_1	/undefined4	Stack[0x4]:4	DEFAULT		0	0	no_evidence		-
 00403C24	thunk_FUN_005fa7f0	parameter	2	param_2	/undefined4	Stack[0x8]:4	DEFAULT		0	0	no_evidence		-
 00403C24	thunk_FUN_005fa7f0	parameter	3	param_3	/undefined4	Stack[0xc]:4	DEFAULT		0	0	no_evidence		-
@@ -1718,7 +1680,6 @@ function_address	function	target_kind	target_ordinal	target_name	current_type	st
 00403CA1	thunk_FUN_00694890	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
 00403CAB	thunk_FUN_00585020	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
 00403CBA	thunk_FUN_004e27e0	return		<RETURN>	/undefined4	EAX:4	DEFAULT		0	0	no_evidence		-
-00403CBF	thunk_FUN_00647be0	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
 00403CC9	thunk_FUN_00626e60	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
 00403CCE	thunk_FUN_004b7e30	return		<RETURN>	/undefined4	EAX:4	DEFAULT		0	0	no_evidence		-
 00403CD3	thunk_FUN_0064e9a0	return		<RETURN>	/undefined4	EAX:4	DEFAULT		0	0	no_evidence		-
@@ -1742,7 +1703,7 @@ function_address	function	target_kind	target_ordinal	target_name	current_type	st
 00403D50	thunk_FUN_00678870	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
 00403D55	thunk_FUN_005f0360	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
 00403D5A	thunk_FUN_004cfff0	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
-00403D64	SIDTy::NoneSID	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
+00403D64	SIDTy::NoneSID	return		<RETURN>	/undefined1	AL:1	DEFAULT		0	0	no_evidence		-
 00403D69	thunk_FUN_004dd7c0	return		<RETURN>	/undefined4	EAX:4	DEFAULT		0	0	no_evidence		-
 00403D96	SAMPanelTy::DoneSAMPanel	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
 00403DA0	BehPanelTy::Update	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
@@ -1819,7 +1780,6 @@ function_address	function	target_kind	target_ordinal	target_name	current_type	st
 00403F4E	thunk_FUN_0065ef70	return		<RETURN>	/undefined4	EAX:4	DEFAULT		0	0	no_evidence		-
 00403F58	thunk_FUN_00423320	parameter	1	param_1	/undefined4	Stack[0x4]:4	DEFAULT		0	0	no_evidence		-
 00403F58	thunk_FUN_00423320	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
-00403F5D	thunk_FUN_005ec640	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
 00403F62	thunk_FUN_004ecdd0	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
 00403F67	thunk_FUN_0056a840	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
 00403F6C	thunk_FUN_00660620	parameter	1	param_2	/undefined4	EDX:4	DEFAULT		0	0	no_evidence		-
@@ -1832,7 +1792,7 @@ function_address	function	target_kind	target_ordinal	target_name	current_type	st
 00403F76	thunk_FUN_00581120	parameter	5	param_6	/undefined4	Stack[0x18]:4	DEFAULT		0	0	no_evidence		-
 00403F76	thunk_FUN_00581120	parameter	6	param_7	/undefined4	Stack[0x1c]:4	DEFAULT		0	0	no_evidence		-
 00403F76	thunk_FUN_00581120	return		<RETURN>	/undefined4	EAX:4	DEFAULT		0	0	no_evidence		-
-00403F80	STGroupBoatC::ReMakePatrolPoints	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
+00403F80	STGroupBoatC::ReMakePatrolPoints	return		<RETURN>	/undefined1	AL:1	DEFAULT		0	0	no_evidence		-
 00403F8A	thunk_FUN_005f9f70	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
 00403F94	TLOBaseTy::SetActivity	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
 00403F99	thunk_FUN_00681e60	return		<RETURN>	/undefined4	EAX:4	DEFAULT		0	0	no_evidence		-
@@ -1862,7 +1822,7 @@ function_address	function	target_kind	target_ordinal	target_name	current_type	st
 0040402A	CPanelTy::OutProc	parameter	7	param_7	/undefined4	Stack[0x1c]:4	DEFAULT		0	0	no_evidence		-
 0040402A	CPanelTy::OutProc	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
 0040402F	thunk_FUN_00575460	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
-00404034	VisibleClassTy::VisHoleExec	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
+00404034	VisibleClassTy::VisHoleExec	return		<RETURN>	/undefined1	AL:1	DEFAULT		0	0	no_evidence		-
 00404043	thunk_FUN_00589970	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
 00404048	thunk_FUN_004da390	return		<RETURN>	/undefined4	EAX:4	DEFAULT		0	0	no_evidence		-
 0040404D	thunk_FUN_004b7aa0	return		<RETURN>	/undefined4	EAX:4	DEFAULT		0	0	no_evidence		-
@@ -1887,7 +1847,6 @@ function_address	function	target_kind	target_ordinal	target_name	current_type	st
 004040A7	VisibleClassTy::sub_0055AD00	return		<RETURN>	/undefined4	EAX:4	DEFAULT		0	0	no_evidence		-
 004040B1	InfocPanelTy::InitInfocPanel	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
 004040B6	thunk_FUN_0048dcc0	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
-004040C0	thunk_FUN_005ef490	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
 004040CA	TraksClassTy::TraksExec	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
 004040D4	thunk_FUN_004cbad0	return		<RETURN>	/undefined4	EAX:4	DEFAULT		0	0	no_evidence		-
 004040E3	thunk_FUN_00638ca0	return		<RETURN>	/undefined4	EAX:4	DEFAULT		0	0	no_evidence		-
@@ -1900,7 +1859,6 @@ function_address	function	target_kind	target_ordinal	target_name	current_type	st
 00404133	thunk_FUN_005faff0	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
 00404138	thunk_FUN_004c2950	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
 00404142	_EnumRCField	parameter	8	param_9	/undefined4	Stack[0x24]:4	DEFAULT		0	0	no_evidence		-
-00404147	STMineSetC::sub_00622670	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
 00404151	thunk_FUN_005f9e40	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
 0040415B	CPanelTy::UpdateStackPanel	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
 0040416F	thunk_FUN_0055d4c0	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
@@ -1949,13 +1907,13 @@ function_address	function	target_kind	target_ordinal	target_name	current_type	st
 00404287	thunk_FUN_006904d0	parameter	2	param_2	/undefined4	Stack[0x8]:4	DEFAULT		0	0	no_evidence		-
 00404291	VisibleClassTy::sub_00559D60	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
 00404296	PlayPanelTy::DonePlayPanel	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
-0040429B	PrividerTy::NonePrivider	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
+0040429B	PrividerTy::NonePrivider	return		<RETURN>	/undefined1	AL:1	DEFAULT		0	0	no_evidence		-
 004042A5	thunk_FUN_005defe0	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
 004042AF	thunk_FUN_004ac910	return		<RETURN>	/undefined4	EAX:4	DEFAULT		0	0	no_evidence		-
 004042B4	ChooseMapTy::ShowDescription	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
 004042B9	thunk_FUN_00572920	return		<RETURN>	/undefined4	EAX:4	DEFAULT		0	0	no_evidence		-
 004042BE	BehPanelTy::PaintBBut	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
-004042C8	STGameObjC::SetSelfCheckFlag	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
+004042C8	STGameObjC::SetSelfCheckFlag	return		<RETURN>	/undefined1	AL:1	DEFAULT		0	0	no_evidence		-
 004042D7	thunk_FUN_006830f0	return		<RETURN>	/undefined4	EAX:4	DEFAULT		0	0	no_evidence		-
 004042DC	thunk_FUN_004d5470	return		<RETURN>	/undefined4	EAX:4	DEFAULT		0	0	no_evidence		-
 004042E1	thunk_FUN_00627e80	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
@@ -1978,7 +1936,7 @@ function_address	function	target_kind	target_ordinal	target_name	current_type	st
 0040434F	PausePanelTy::InitPausePanel	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
 00404354	thunk_FUN_006a0ef0	return		<RETURN>	/undefined4	EAX:4	DEFAULT		0	0	no_evidence		-
 00404359	thunk_FUN_0067a390	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
-00404363	SettMapMTy::PrepPlList	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
+00404363	SettMapMTy::PrepPlList	return		<RETURN>	/undefined1	AL:1	DEFAULT		0	0	no_evidence		-
 00404377	thunk_FUN_005ee670	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
 0040437C	thunk_FUN_00580700	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
 00404381	cLoadingTy::DrawLine	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
@@ -2009,14 +1967,12 @@ function_address	function	target_kind	target_ordinal	target_name	current_type	st
 00404435	thunk_FUN_0068f8f0	return		<RETURN>	/undefined4	EAX:4	DEFAULT		0	0	no_evidence		-
 0040443F	thunk_FUN_0041af10	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
 00404444	thunk_FUN_0041ad80	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
-00404449	thunk_FUN_00580380	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
 0040444E	DestroyBaseSystem	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
 0040446C	thunk_FUN_00678580	parameter	0	param_1	/undefined4	Stack[0x4]:4	DEFAULT		0	0	no_evidence		-
 0040446C	thunk_FUN_00678580	parameter	1	param_2	/undefined4	Stack[0x8]:4	DEFAULT		0	0	no_evidence		-
 0040446C	thunk_FUN_00678580	parameter	2	param_3	/undefined4	Stack[0xc]:4	DEFAULT		0	0	no_evidence		-
 0040446C	thunk_FUN_00678580	return		<RETURN>	/undefined4	EAX:4	DEFAULT		0	0	no_evidence		-
 00404471	thunk_FUN_006820f0	return		<RETURN>	/undefined4	EAX:4	DEFAULT		0	0	no_evidence		-
-00404476	thunk_FUN_005fd360	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
 00404485	thunk_FUN_00682ec0	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
 0040448A	thunk_FUN_0055ddf0	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
 0040448F	thunk_FUN_004cba10	return		<RETURN>	/undefined4	EAX:4	DEFAULT		0	0	no_evidence		-
@@ -2028,7 +1984,7 @@ function_address	function	target_kind	target_ordinal	target_name	current_type	st
 004044C1	thunk_FUN_00651cd0	return		<RETURN>	/undefined4	EAX:4	DEFAULT		0	0	no_evidence		-
 004044CB	thunk_FUN_006405f0	parameter	1	param_2	/undefined4	Stack[0x8]:4	DEFAULT		0	0	no_evidence		-
 004044CB	thunk_FUN_006405f0	parameter	2	param_3	/undefined4	Stack[0xc]:4	DEFAULT		0	0	no_evidence		-
-004044D0	WaitTy::NoneWait	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
+004044D0	WaitTy::NoneWait	return		<RETURN>	/undefined1	AL:1	DEFAULT		0	0	no_evidence		-
 004044DA	thunk_FUN_00635bf0	return		<RETURN>	/undefined4	EAX:4	DEFAULT		0	0	no_evidence		-
 004044DF	thunk_FUN_004dd700	return		<RETURN>	/undefined4	EAX:4	DEFAULT		0	0	no_evidence		-
 004044E4	thunk_FUN_0043e420	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
@@ -2038,12 +1994,11 @@ function_address	function	target_kind	target_ordinal	target_name	current_type	st
 004044FD	FSGSTy::SetLadder	parameter	2	param_2	/undefined4	Stack[0x8]:4	DEFAULT		0	0	no_evidence		-
 004044FD	FSGSTy::SetLadder	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
 00404502	thunk_FUN_006503b0	return		<RETURN>	/undefined4	EAX:4	DEFAULT		0	0	no_evidence		-
-00404507	thunk_FUN_004732d0	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
 0040450C	Library::MSVCRT::thunk_FUN_006a49c0	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
 0040451B	thunk_FUN_00660700	return		<RETURN>	/undefined4	EAX:4	DEFAULT		0	0	no_evidence		-
 0040452A	CampaignTy::DoneCampaign	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
 00404534	thunk_FUN_00619320	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
-00404539	CampaignTy::NoneCampaign	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
+00404539	CampaignTy::NoneCampaign	return		<RETURN>	/undefined1	AL:1	DEFAULT		0	0	no_evidence		-
 00404548	thunk_FUN_0067ff00	return		<RETURN>	/undefined4	EAX:4	DEFAULT		0	0	no_evidence		-
 0040454D	FSGSTy::InitFSGS	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
 00404552	thunk_FUN_00571320	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
@@ -2059,7 +2014,7 @@ function_address	function	target_kind	target_ordinal	target_name	current_type	st
 00404584	FrmPanelTy::InitFrmPanel	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
 00404589	GameSystemC::InitSystem	return		<RETURN>	/undefined4	EAX:4	DEFAULT		0	0	no_evidence		-
 00404593	ChooseMapTy::CloseButtons	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
-00404598	AiTactClassTy::ExecClaim	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
+00404598	AiTactClassTy::ExecClaim	return		<RETURN>	/undefined1	AL:1	DEFAULT		0	0	no_evidence		-
 004045A2	thunk_FUN_004def50	return		<RETURN>	/undefined4	EAX:4	DEFAULT		0	0	no_evidence		-
 004045AC	thunk_FUN_00416390	return		<RETURN>	/undefined4	EAX:4	DEFAULT		0	0	no_evidence		-
 004045B1	thunk_FUN_00680ee0	return		<RETURN>	/undefined4	EAX:4	DEFAULT		0	0	no_evidence		-
@@ -2083,7 +2038,6 @@ function_address	function	target_kind	target_ordinal	target_name	current_type	st
 0040462E	MMsgTy::HideSprites	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
 00404633	thunk_FUN_00693710	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
 00404638	cLoadingTy::sub_00555680	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
-0040463D	thunk_FUN_0060ec00	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
 00404642	thunk_FUN_0067ee70	return		<RETURN>	/undefined4	EAX:4	DEFAULT		0	0	no_evidence		-
 00404647	STAllPlayersC::PointPick	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
 0040464C	sub_0041C5A0	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
@@ -2124,8 +2078,6 @@ function_address	function	target_kind	target_ordinal	target_name	current_type	st
 0040476E	thunk_FUN_004ce670	return		<RETURN>	/undefined4	EAX:4	DEFAULT		0	0	no_evidence		-
 00404773	thunk_FUN_00680b50	return		<RETURN>	/undefined4	EAX:4	DEFAULT		0	0	no_evidence		-
 00404778	AiFltClassTy::sub_00664960	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
-0040477D	STContainerC::sub_005FC3E0	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
-00404787	thunk_FUN_004795e0	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
 00404791	thunk_FUN_004d9fe0	return		<RETURN>	/undefined4	EAX:4	DEFAULT		0	0	no_evidence		-
 0040479B	thunk_FUN_0060d390	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
 004047A0	STExplosion::sub_00605130	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
@@ -2137,7 +2089,6 @@ function_address	function	target_kind	target_ordinal	target_name	current_type	st
 004047E1	thunk_FUN_0064e260	parameter	1	param_2	/undefined4	Stack[0x8]:4	DEFAULT		0	0	no_evidence		-
 004047E6	thunk_FUN_0069f5c0	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
 004047EB	thunk_FUN_0065e450	parameter	1	param_2	/undefined4	EDX:4	DEFAULT		0	0	no_evidence		-
-004047F0	thunk_FUN_006a4910	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
 004047F5	thunk_FUN_00683040	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
 004047FA	thunk_FUN_004ec2a0	return		<RETURN>	/undefined4	EAX:4	DEFAULT		0	0	no_evidence		-
 004047FF	CPanelTy::OutProc	parameter	2	param_2	/undefined4	Stack[0x8]:4	DEFAULT		0	0	no_evidence		-
@@ -2148,12 +2099,10 @@ function_address	function	target_kind	target_ordinal	target_name	current_type	st
 00404804	STBHEShellC::sub_005F53A0	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
 00404809	SettMapMTy::InitSettMap	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
 0040480E	STBoatC::Bring	return		<RETURN>	/undefined4	EAX:4	DEFAULT		0	0	no_evidence		-
-00404813	STBoatC::SetMine	parameter	2	param_2	/undefined4	Stack[0x8]:4	DEFAULT		0	0	no_evidence		-
 00404818	TLOBldMark::sub_004C6440	return		<RETURN>	/undefined4	EAX:4	DEFAULT		0	0	no_evidence		-
 0040481D	thunk_FUN_004dff30	return		<RETURN>	/undefined4	EAX:4	DEFAULT		0	0	no_evidence		-
 00404822	CGenerate::sub_006A09F0	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
 00404831	thunk_FUN_0055bdd0	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
-00404836	thunk_FUN_00646d00	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
 0040484A	thunk_FUN_004b1040	parameter	8	param_9	/undefined4	Stack[0x24]:4	DEFAULT		0	0	no_evidence		-
 0040484A	thunk_FUN_004b1040	parameter	9	param_10	/undefined4	Stack[0x28]:4	DEFAULT		0	0	no_evidence		-
 0040484A	thunk_FUN_004b1040	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
@@ -2168,7 +2117,6 @@ function_address	function	target_kind	target_ordinal	target_name	current_type	st
 00404895	TLOBaseTy::sub_004CFA00	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
 0040489F	thunk_FUN_00647d90	parameter	1	param_1	/undefined4	Stack[0x4]:4	DEFAULT		0	0	no_evidence		-
 0040489F	thunk_FUN_00647d90	parameter	2	param_2	/undefined4	Stack[0x8]:4	DEFAULT		0	0	no_evidence		-
-0040489F	thunk_FUN_00647d90	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
 004048B8	TLOBaseTy::sub_004CBF30	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
 004048C2	thunk_FUN_00428dc0	parameter	4	param_5	/undefined4	Stack[0x14]:4	DEFAULT		0	0	no_evidence		-
 004048C2	thunk_FUN_00428dc0	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
@@ -2180,7 +2128,6 @@ function_address	function	target_kind	target_ordinal	target_name	current_type	st
 004048F9	STGameObjC::MoveStep	return		<RETURN>	/undefined4	EAX:4	DEFAULT		0	0	no_evidence		-
 004048FE	TraksClassTy::TraksCreateCollection	return		<RETURN>	/undefined4	EAX:4	DEFAULT		0	0	no_evidence		-
 00404908	STBoatC::sub_0048DFD0	return		<RETURN>	/undefined4	EAX:4	DEFAULT		0	0	no_evidence		-
-0040490D	STJumpMineC::sub_00619350	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
 00404912	thunk_FUN_004d8190	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
 0040491C	thunk_FUN_0067f260	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
 00404926	thunk_FUN_004cc7f0	return		<RETURN>	/undefined4	EAX:4	DEFAULT		0	0	no_evidence		-
@@ -2257,9 +2204,8 @@ function_address	function	target_kind	target_ordinal	target_name	current_type	st
 00404B10	thunk_FUN_00621090	parameter	1	param_1	/undefined4	Stack[0x4]:4	DEFAULT		0	0	no_evidence		-
 00404B10	thunk_FUN_00621090	parameter	3	param_3	/undefined4	Stack[0xc]:4	DEFAULT		0	0	no_evidence		-
 00404B10	thunk_FUN_00621090	parameter	4	param_4	/undefined4	Stack[0x10]:4	DEFAULT		0	0	no_evidence		-
-00404B1A	STGroupBoatC::SetPatrolCmdToBoat	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
+00404B1A	STGroupBoatC::SetPatrolCmdToBoat	return		<RETURN>	/undefined1	AL:1	DEFAULT		0	0	no_evidence		-
 00404B1F	thunk_FUN_0067f740	parameter	1	param_2	/undefined4	Stack[0x8]:4	DEFAULT		0	0	no_evidence		-
-00404B24	thunk_FUN_006308b0	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
 00404B42	CPanelTy::DoneCPanel	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
 00404B47	SndUnderAttMenegC::sub_0061FCC0	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
 00404B4C	STAppC::sub_0056E9E0	return		<RETURN>	/undefined4	EAX:4	DEFAULT		0	0	no_evidence		-
@@ -2288,8 +2234,6 @@ function_address	function	target_kind	target_ordinal	target_name	current_type	st
 00404BF6	STJellyManC::Error	return		<RETURN>	/undefined4	EAX:4	DEFAULT		0	0	no_evidence		-
 00404C00	STAllPlayersC::GetCursorType	parameter	1	param_1	/undefined4	Stack[0x4]:4	DEFAULT		0	0	no_evidence		-
 00404C00	STAllPlayersC::GetCursorType	parameter	3	param_3	/undefined4	Stack[0xc]:4	DEFAULT		0	0	no_evidence		-
-00404C00	STAllPlayersC::GetCursorType	parameter	5	param_5	/undefined4	Stack[0x14]:4	DEFAULT		0	0	no_evidence		-
-00404C00	STAllPlayersC::GetCursorType	parameter	6	param_6	/undefined4	Stack[0x18]:4	DEFAULT		0	0	no_evidence		-
 00404C05	thunk_FUN_0064f700	return		<RETURN>	/undefined4	EAX:4	DEFAULT		0	0	no_evidence		-
 00404C0A	thunk_FUN_0060e470	parameter	8	param_9	/undefined4	Stack[0x24]:4	DEFAULT		0	0	no_evidence		-
 00404C0A	thunk_FUN_0060e470	return		<RETURN>	/undefined4	EAX:4	DEFAULT		0	0	no_evidence		-
@@ -2310,7 +2254,6 @@ function_address	function	target_kind	target_ordinal	target_name	current_type	st
 00404C4B	thunk_FUN_00497850	return		<RETURN>	/undefined4	EAX:4	DEFAULT		0	0	no_evidence		-
 00404C50	thunk_FUN_00678950	parameter	1	param_1	/undefined4	Stack[0x4]:4	DEFAULT		0	0	no_evidence		-
 00404C50	thunk_FUN_00678950	parameter	2	param_2	/undefined4	Stack[0x8]:4	DEFAULT		0	0	no_evidence		-
-00404C50	thunk_FUN_00678950	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
 00404C55	thunk_FUN_0043fc50	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
 00404C5A	thunk_FUN_004be3d0	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
 00404C5F	MMObjTy::PaintButDib	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
@@ -2329,7 +2272,6 @@ function_address	function	target_kind	target_ordinal	target_name	current_type	st
 00404CA0	STExplosion::sub_00606050	parameter	8	param_8	/undefined4	Stack[0x20]:4	DEFAULT		0	0	no_evidence		-
 00404CA0	STExplosion::sub_00606050	parameter	9	param_9	/undefined1	Stack[0x24]:1	DEFAULT		0	0	no_evidence		-
 00404CB4	thunk_FUN_00660910	return		<RETURN>	/undefined4	EAX:4	DEFAULT		0	0	no_evidence		-
-00404CB9	thunk_FUN_005783f0	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
 00404CBE	thunk_FUN_00555840	parameter	0	param_1	/undefined4	Stack[0x4]:4	DEFAULT		0	0	no_evidence		-
 00404CC8	thunk_FUN_0063c030	parameter	1	param_1	/undefined4	Stack[0x4]:4	DEFAULT		0	0	no_evidence		-
 00404CC8	thunk_FUN_0063c030	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
@@ -2342,7 +2284,7 @@ function_address	function	target_kind	target_ordinal	target_name	current_type	st
 00404CF5	thunk_FUN_006a1620	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
 00404D04	thunk_FUN_004d8530	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
 00404D09	JumpManagC::sub_006179D0	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
-00404D0E	STOctopusC::Bad	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
+00404D0E	STOctopusC::Bad	return		<RETURN>	/undefined1	AL:1	DEFAULT		0	0	no_evidence		-
 00404D13	thunk_FUN_006a5210	return		<RETURN>	/undefined4	EAX:4	DEFAULT		0	0	no_evidence		-
 00404D1D	HelpPanelTy::sub_00514BC0	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
 00404D22	thunk_FUN_00495e50	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
@@ -2360,7 +2302,6 @@ function_address	function	target_kind	target_ordinal	target_name	current_type	st
 00404DA9	_GetStaffGrpExch	parameter	0	param_1	/undefined4	Stack[0x4]:4	DEFAULT		0	0	no_evidence		-
 00404DAE	thunk_FUN_004eef20	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
 00404DB3	thunk_FUN_00682cf0	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
-00404DB8	thunk_FUN_005b66e0	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
 00404DC2	thunk_FUN_004e7eb0	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
 00404DD1	thunk_FUN_00419a90	return		<RETURN>	/undefined4	EAX:4	DEFAULT		0	0	no_evidence		-
 00404DDB	thunk_FUN_0054cdd0	parameter	5	param_6	/undefined4	Stack[0x18]:4	DEFAULT		0	0	no_evidence		-
@@ -2426,7 +2367,7 @@ function_address	function	target_kind	target_ordinal	target_name	current_type	st
 00404FB6	thunk_FUN_004dd2b0	return		<RETURN>	/undefined4	EAX:4	DEFAULT		0	0	no_evidence		-
 00404FBB	thunk_FUN_004de7b0	return		<RETURN>	/undefined4	EAX:4	DEFAULT		0	0	no_evidence		-
 00404FC0	thunk_FUN_0041acf0	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
-00404FC5	FSGSTy::NoneFSGS	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
+00404FC5	FSGSTy::NoneFSGS	return		<RETURN>	/undefined1	AL:1	DEFAULT		0	0	no_evidence		-
 00404FCA	StartSystemTy::sub_005DA940	return		<RETURN>	/undefined1	AL:1	DEFAULT		0	0	no_evidence		-
 00404FDE	thunk_FUN_004ebfd0	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
 00404FE8	thunk_FUN_00680340	parameter	1	param_2	/undefined4	Stack[0x8]:4	DEFAULT		0	0	no_evidence		-
@@ -2444,14 +2385,13 @@ function_address	function	target_kind	target_ordinal	target_name	current_type	st
 00405024	thunk_FUN_004e41f0	parameter	1	param_2	/undefined4	Stack[0x8]:4	DEFAULT		0	0	no_evidence		-
 00405029	thunk_FUN_005f07a0	return		<RETURN>	/undefined4	EAX:4	DEFAULT		0	0	no_evidence		-
 00405033	UpgPanelTy::Update	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
-00405038	thunk_FUN_005811c0	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
 0040503D	thunk_FUN_0041da30	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
 00405042	thunk_FUN_0064d0e0	parameter	3	param_3	/undefined4	Stack[0xc]:4	DEFAULT		0	0	no_evidence		-
 0040504C	PausePanelTy::SwitchPausePanel	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
 00405051	thunk_FUN_00423c70	return		<RETURN>	/undefined4	EAX:4	DEFAULT		0	0	no_evidence		-
 00405056	thunk_FUN_00620e40	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
 00405060	thunk_FUN_0048a910	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
-00405065	AiPlrClassTy::ExecTech	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
+00405065	AiPlrClassTy::ExecTech	return		<RETURN>	/undefined1	AL:1	DEFAULT		0	0	no_evidence		-
 0040506A	thunk_FUN_00690e90	parameter	1	param_2	/undefined2	Stack[0x8]:2	DEFAULT		0	0	no_evidence		-
 0040506A	thunk_FUN_00690e90	parameter	2	param_3	/undefined2	Stack[0xc]:2	DEFAULT		0	0	no_evidence		-
 0040506F	HelpPanelTy::AddLinks	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
@@ -2459,7 +2399,6 @@ function_address	function	target_kind	target_ordinal	target_name	current_type	st
 00405074	thunk_FUN_0067cf30	parameter	3	param_4	/undefined4	Stack[0x10]:4	DEFAULT		0	0	no_evidence		-
 0040507E	CursorClassTy::SetGCType	return		<RETURN>	/undefined4	EAX:4	DEFAULT		0	0	no_evidence		-
 00405088	thunk_FUN_00423e00	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
-0040508D	thunk_FUN_005ec680	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
 00405092	thunk_FUN_004d6930	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
 00405097	thunk_FUN_004dbcc0	return		<RETURN>	/undefined4	EAX:4	DEFAULT		0	0	no_evidence		-
 0040509C	thunk_FUN_004aa8d0	return		<RETURN>	/undefined4	EAX:4	DEFAULT		0	0	no_evidence		-
@@ -2478,7 +2417,7 @@ function_address	function	target_kind	target_ordinal	target_name	current_type	st
 004050FB	thunk_FUN_00677ef0	parameter	0	param_1	/undefined4	Stack[0x4]:4	DEFAULT		0	0	no_evidence		-
 004050FB	thunk_FUN_00677ef0	parameter	1	param_2	/undefined4	Stack[0x8]:4	DEFAULT		0	0	no_evidence		-
 004050FB	thunk_FUN_00677ef0	return		<RETURN>	/undefined4	EAX:4	DEFAULT		0	0	no_evidence		-
-00405100	HelpPanelTy::PutToSHlp	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
+00405100	HelpPanelTy::PutToSHlp	return		<RETURN>	/undefined1	AL:1	DEFAULT		0	0	no_evidence		-
 00405105	thunk_FUN_00418010	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
 0040510A	thunk_FUN_0064eba0	return		<RETURN>	/undefined4	EAX:4	DEFAULT		0	0	no_evidence		-
 0040510F	thunk_FUN_00568010	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
@@ -2561,7 +2500,7 @@ function_address	function	target_kind	target_ordinal	target_name	current_type	st
 00405308	thunk_FUN_006a3930	parameter	6	param_7	/undefined4	Stack[0x1c]:4	DEFAULT		0	0	no_evidence		-
 0040530D	thunk_FUN_004e6140	return		<RETURN>	/undefined1	AL:1	DEFAULT		0	0	no_evidence		-
 00405312	MTestTy::InitMTest	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
-00405317	MainMenuTy::NoneMainMenu	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
+00405317	MainMenuTy::NoneMainMenu	return		<RETURN>	/undefined1	AL:1	DEFAULT		0	0	no_evidence		-
 0040531C	thunk_FUN_005f9cb0	return		<RETURN>	/undefined4	EAX:4	DEFAULT		0	0	no_evidence		-
 00405326	STGroupBoatC::GrpRepSub	return		<RETURN>	/undefined4	EAX:4	DEFAULT		0	0	no_evidence		-
 00405330	thunk_FUN_004e4140	return		<RETURN>	/undefined4	EAX:4	DEFAULT		0	0	no_evidence		-
@@ -2596,7 +2535,6 @@ function_address	function	target_kind	target_ordinal	target_name	current_type	st
 0040542A	TLOBaseTy::sub_004C6C70	parameter	3	param_3	/undefined4	Stack[0xc]:4	DEFAULT		0	0	no_evidence		-
 0040542A	TLOBaseTy::sub_004C6C70	return		<RETURN>	/undefined4	EAX:4	DEFAULT		0	0	no_evidence		-
 0040542F	thunk_FUN_00682340	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
-00405434	STBoatC::LoadRC	parameter	2	param_2	/undefined4	Stack[0x8]:4	DEFAULT		0	0	no_evidence		-
 00405443	STPlaySystemC::sub_0054EBB0	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
 00405448	thunk_FUN_004e6e10	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
 0040544D	thunk_FUN_00497000	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
@@ -2609,13 +2547,11 @@ function_address	function	target_kind	target_ordinal	target_name	current_type	st
 00405470	thunk_FUN_004e1490	return		<RETURN>	/undefined4	EAX:4	DEFAULT		0	0	no_evidence		-
 00405475	thunk_FUN_0060ecc0	return		<RETURN>	/undefined4	EAX:4	DEFAULT		0	0	no_evidence		-
 0040547A	CGenerate::sub_00696940	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
-00405484	thunk_FUN_00639630	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
 0040548E	thunk_FUN_0058eeb0	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
 004054A7	BldBoatPanelTy::InitBldBoatPanel	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
 004054AC	thunk_FUN_00651770	return		<RETURN>	/undefined4	EAX:4	DEFAULT		0	0	no_evidence		-
 004054C0	thunk_FUN_00635da0	return		<RETURN>	/undefined4	EAX:4	DEFAULT		0	0	no_evidence		-
 004054CA	thunk_FUN_00529480	return		<RETURN>	/undefined4	EAX:4	DEFAULT		0	0	no_evidence		-
-004054CF	thunk_FUN_00604160	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
 004054D4	thunk_FUN_004ebcb0	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
 004054E3	STBoatC::NotReadyForLoading	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
 004054E8	thunk_FUN_004dc720	return		<RETURN>	/undefined4	EAX:4	DEFAULT		0	0	no_evidence		-
@@ -2652,7 +2588,6 @@ function_address	function	target_kind	target_ordinal	target_name	current_type	st
 004055B5	SettMapTy::CreateCtrls	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
 004055BA	STBHEShellC::sub_005F35F0	return		<RETURN>	/undefined4	EAX:4	DEFAULT		0	0	no_evidence		-
 004055BF	thunk_FUN_00486a60	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
-004055CE	thunk_FUN_006a4130	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
 004055D3	thunk_FUN_005ede30	return		<RETURN>	/undefined4	EAX:4	DEFAULT		0	0	no_evidence		-
 004055DD	thunk_FUN_006033d0	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
 004055E2	thunk_FUN_004ddd50	return		<RETURN>	/undefined4	EAX:4	DEFAULT		0	0	no_evidence		-
@@ -2722,7 +2657,6 @@ function_address	function	target_kind	target_ordinal	target_name	current_type	st
 004057EA	UPanelTy::OutProc	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
 004057F4	STAllPlayersC::RestoreTmp	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
 00405803	HelpPanelTy::IndexBut	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
-00405808	thunk_FUN_0063cc10	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
 00405812	CPanelTy::PaintTxtBut	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
 00405821	TLOBaseTy::sub_004DE7D0	parameter	1	param_1	/undefined4	Stack[0x4]:4	DEFAULT		0	0	no_evidence		-
 00405821	TLOBaseTy::sub_004DE7D0	parameter	2	param_2	/undefined4	Stack[0x8]:4	DEFAULT		0	0	no_evidence		-
@@ -2739,7 +2673,6 @@ function_address	function	target_kind	target_ordinal	target_name	current_type	st
 0040586C	thunk_FUN_0065e9a0	return		<RETURN>	/undefined4	EAX:4	DEFAULT		0	0	no_evidence		-
 00405876	thunk_FUN_00674ce0	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
 0040587B	BldLabPanelTy::PaintUpdBut	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
-00405885	STRubbishC::sub_0062F900	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
 0040588A	thunk_FUN_0057bd70	return		<RETURN>	/undefined4	EAX:4	DEFAULT		0	0	no_evidence		-
 0040588F	thunk_FUN_005fd1b0	parameter	0	param_1	/undefined4	Stack[0x4]:4	DEFAULT		0	0	no_evidence		-
 0040588F	thunk_FUN_005fd1b0	parameter	1	param_2	/undefined4	Stack[0x8]:4	DEFAULT		0	0	no_evidence		-
@@ -2752,13 +2685,9 @@ function_address	function	target_kind	target_ordinal	target_name	current_type	st
 0040588F	thunk_FUN_005fd1b0	parameter	12	param_13	/undefined4	Stack[0x34]:4	DEFAULT		0	0	no_evidence		-
 0040588F	thunk_FUN_005fd1b0	return		<RETURN>	/undefined4	EAX:4	DEFAULT		0	0	no_evidence		-
 00405899	thunk_FUN_0055d440	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
-0040589E	thunk_FUN_00476cc0	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
 004058A3	thunk_FUN_0044ce40	parameter	0	param_1	/undefined4	ECX:4	DEFAULT		0	0	no_evidence		-
 004058A8	thunk_FUN_0061fe80	parameter	4	param_4	/undefined4	Stack[0x10]:4	DEFAULT		0	0	no_evidence		-
-004058B2	thunk_FUN_0058bb50	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
 004058B7	thunk_FUN_004dcaa0	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
-004058BC	STBoatC::BackToDok	parameter	2	param_2	/undefined4	Stack[0x8]:4	DEFAULT		0	0	no_evidence		-
-004058BC	STBoatC::BackToDok	parameter	3	param_3	/undefined4	Stack[0xc]:4	DEFAULT		0	0	no_evidence		-
 004058C6	STLightC::sub_0061D650	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
 004058CB	thunk_FUN_006a5cd0	return		<RETURN>	/undefined4	EAX:4	DEFAULT		0	0	no_evidence		-
 004058D5	MAdvTy::NoneMAdv	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
@@ -2776,7 +2705,7 @@ function_address	function	target_kind	target_ordinal	target_name	current_type	st
 0040592A	thunk_FUN_00627650	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
 00405939	thunk_FUN_0055c6c0	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
 0040593E	STGroupBoatC::GrpMove	return		<RETURN>	/undefined4	EAX:4	DEFAULT		0	0	no_evidence		-
-00405943	STJellyGunC::LifeGun	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
+00405943	STJellyGunC::LifeGun	return		<RETURN>	/undefined1	AL:1	DEFAULT		0	0	no_evidence		-
 00405948	SubmarineTitans::Recovered::HiddenThis::AnonReceiver_00493610::thunk_FUN_00493610	return		<RETURN>	/undefined4	EAX:4	DEFAULT		0	0	no_evidence		-
 0040594D	thunk_FUN_004d6890	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
 00405957	AiTactClassTy::BackFromRepair	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
@@ -2852,7 +2781,6 @@ function_address	function	target_kind	target_ordinal	target_name	current_type	st
 00405B4B	thunk_FUN_0064edc0	return		<RETURN>	/undefined4	EAX:4	DEFAULT		0	0	no_evidence		-
 00405B5F	thunk_FUN_004ea870	return		<RETURN>	/undefined4	EAX:4	DEFAULT		0	0	no_evidence		-
 00405B64	thunk_FUN_004ad740	parameter	1	param_2	/undefined4	Stack[0x8]:4	DEFAULT		0	0	no_evidence		-
-00405B64	thunk_FUN_004ad740	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
 00405B69	thunk_FUN_00491600	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
 00405B6E	thunk_FUN_0064e290	parameter	0	param_1	/undefined4	Stack[0x4]:4	DEFAULT		0	0	no_evidence		-
 00405B6E	thunk_FUN_0064e290	parameter	1	param_2	/undefined4	Stack[0x8]:4	DEFAULT		0	0	no_evidence		-
@@ -2876,7 +2804,7 @@ function_address	function	target_kind	target_ordinal	target_name	current_type	st
 00405BDC	STExplosionC::LoadImagSpr	parameter	2	param_2	/undefined4	Stack[0x8]:4	DEFAULT		0	0	no_evidence		-
 00405BDC	STExplosionC::LoadImagSpr	return		<RETURN>	/undefined4	EAX:4	DEFAULT		0	0	no_evidence		-
 00405BE6	thunk_FUN_0041d7e0	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
-00405BF0	thunk_FUN_0053c490	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
+00405BF0	ResearchPanelTy::ShiftControls	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
 00405BF5	thunk_FUN_004a9d60	return		<RETURN>	/undefined4	EAX:4	DEFAULT		0	0	no_evidence		-
 00405BFA	STMineSetC::sub_006239A0	return		<RETURN>	/undefined4	EAX:4	DEFAULT		0	0	no_evidence		-
 00405BFF	VisibleClassTy::Init	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
@@ -2937,7 +2865,6 @@ function_address	function	target_kind	target_ordinal	target_name	current_type	st
 00405D3F	ProdPanelTy::CreateSlider	parameter	5	param_5	/undefined4	Stack[0x14]:4	DEFAULT		0	0	no_evidence		-
 00405D3F	ProdPanelTy::CreateSlider	parameter	7	param_7	/undefined4	Stack[0x1c]:4	DEFAULT		0	0	no_evidence		-
 00405D3F	ProdPanelTy::CreateSlider	parameter	8	param_8	/undefined4	Stack[0x20]:4	DEFAULT		0	0	no_evidence		-
-00405D49	thunk_FUN_00435820	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
 00405D53	STParticleC::InitVisibelDeton	return		<RETURN>	/undefined4	EAX:4	DEFAULT		0	0	no_evidence		-
 00405D62	thunk_FUN_00620da0	parameter	2	param_2	/undefined4	Stack[0x8]:4	DEFAULT		0	0	no_evidence		-
 00405D62	thunk_FUN_00620da0	parameter	3	param_3	/undefined4	Stack[0xc]:4	DEFAULT		0	0	no_evidence		-
@@ -2990,7 +2917,7 @@ function_address	function	target_kind	target_ordinal	target_name	current_type	st
 00405E84	thunk_FUN_00580450	parameter	4	param_5	/undefined4	Stack[0x14]:4	DEFAULT		0	0	no_evidence		-
 00405E84	thunk_FUN_00580450	return		<RETURN>	/undefined4	EAX:4	DEFAULT		0	0	no_evidence		-
 00405E89	WaitTy::DoneWait	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
-00405E8E	BldLabPanelTy::Update	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
+00405E8E	BldLabPanelTy::Update	return		<RETURN>	/undefined1	AL:1	DEFAULT		0	0	no_evidence		-
 00405E98	thunk_FUN_0067f180	return		<RETURN>	/undefined4	EAX:4	DEFAULT		0	0	no_evidence		-
 00405E9D	thunk_FUN_005682c0	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
 00405EAC	thunk_FUN_0064f000	return		<RETURN>	/undefined4	EAX:4	DEFAULT		0	0	no_evidence		-
@@ -3010,13 +2937,12 @@ function_address	function	target_kind	target_ordinal	target_name	current_type	st
 00405ECF	MReportTy::CreateBut	return		<RETURN>	/undefined4	EAX:4	DEFAULT		0	0	no_evidence		-
 00405EE3	thunk_FUN_006a0070	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
 00405EE8	thunk_FUN_004e0250	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
-00405EF2	thunk_FUN_005862e0	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
 00405EF7	OptPanelTy::Notification	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
 00405EFC	thunk_FUN_00632e30	return		<RETURN>	/undefined4	EAX:4	DEFAULT		0	0	no_evidence		-
 00405F01	thunk_FUN_0064e5c0	parameter	0	param_1	/undefined1	Stack[0x4]:1	DEFAULT		0	0	no_evidence		-
 00405F01	thunk_FUN_0064e5c0	parameter	3	param_4	/undefined4	Stack[0x10]:4	DEFAULT		0	0	no_evidence		-
 00405F01	thunk_FUN_0064e5c0	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
-00405F06	STFishC::LifeFish	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
+00405F06	STFishC::LifeFish	return		<RETURN>	/undefined1	AL:1	DEFAULT		0	0	no_evidence		-
 00405F0B	STFishC::sub_004162F0	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
 00405F10	MainMenuTy::CloseButtons	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
 00405F15	VisibleClassTy::sub_0055B7F0	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
@@ -3070,8 +2996,8 @@ function_address	function	target_kind	target_ordinal	target_name	current_type	st
 00419D30	TLOBaseTy::sub_00419D30	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
 00419DB0	FUN_00419db0	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
 00419DD0	FUN_00419dd0	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
-00419DF0	STGameObjC::SetSelfCheckFlag	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
-0041A680	STGameObjC::ResetSelfCheckFlag	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
+00419DF0	STGameObjC::SetSelfCheckFlag	return		<RETURN>	/undefined1	AL:1	DEFAULT		0	0	no_evidence		-
+0041A680	STGameObjC::ResetSelfCheckFlag	return		<RETURN>	/undefined1	AL:1	DEFAULT		0	0	no_evidence		-
 0041AB60	FUN_0041ab60	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
 0041AB90	FUN_0041ab90	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
 0041ABC0	FUN_0041abc0	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
@@ -3129,7 +3055,7 @@ function_address	function	target_kind	target_ordinal	target_name	current_type	st
 0041F630	FUN_0041f630	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
 0041F970	STSprGameObjC::sub_0041F970	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
 0041F9B0	STSprGameObjC::CheckRay	return		<RETURN>	/undefined4	EAX:4	DEFAULT		0	0	no_evidence		-
-00420AE0	STSprGameObjC::LoadLifeFrame	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
+00420AE0	STSprGameObjC::LoadLifeFrame	return		<RETURN>	/undefined1	AL:1	DEFAULT		0	0	no_evidence		-
 004210C0	FUN_004210c0	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
 00422210	STAllPlayersC::RestoreGObjData	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
 00422E20	FUN_00422e20	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
@@ -3151,7 +3077,6 @@ function_address	function	target_kind	target_ordinal	target_name	current_type	st
 00423D80	FUN_00423d80	return		<RETURN>	/undefined4	EAX:4	DEFAULT		0	0	no_evidence		-
 00423E00	FUN_00423e00	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
 00423E30	FUN_00423e30	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
-00423E70	FUN_00423e70	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT	pointer:/STGameObjC	1	1	width_mismatch	{pointer:/STGameObjC=1}	00423E70 returns return of STAllPlayersC::GetObjPtr @ 00423E89
 00423EA0	STGroupC::FUN_00423ea0	parameter	1	param_1	/undefined4	Stack[0x4]:4	DEFAULT		0	0	no_evidence		-
 00423EA0	STGroupC::FUN_00423ea0	parameter	2	param_2	/undefined4	Stack[0x8]:4	DEFAULT		0	0	no_evidence		-
 00424360	STGroupC::RestoreGrpData	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
@@ -3212,11 +3137,8 @@ function_address	function	target_kind	target_ordinal	target_name	current_type	st
 004354E0	STAllPlayersC::ReplaceObject	parameter	2	param_2	/undefined4	Stack[0x8]:4	DEFAULT	/uint	0	1	insufficient_independent_evidence	{/uint=1}	004D32C0 -> 004354E0 @ 004D3986; unproven partial register write at 004D3972
 004354E0	STAllPlayersC::ReplaceObject	parameter	3	param_3	/undefined4	Stack[0xc]:4	DEFAULT	/uint	0	1	insufficient_independent_evidence	{/uint=1}	004D32C0 -> 004354E0 @ 004D3986; unproven partial register write at 004D3976
 004354E0	STAllPlayersC::ReplaceObject	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
-00435820	FUN_00435820	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT	/int	1	1	width_mismatch	{/int=1}	00435820 returns return of ST3DSMAPContext::sub_006EB350 @ 0043583B
 00435930	STAllPlayersC::GetCursorType	parameter	1	param_1	/undefined4	Stack[0x4]:4	DEFAULT	/SubmarineTitans/Recovered/Enums/Global_sub_00435B90_param_3Enum	0	1	insufficient_independent_evidence	{/SubmarineTitans/Recovered/Enums/Global_sub_00435B90_param_3Enum=1}	00435930 -> 00435B90 @ 00435B00
 00435930	STAllPlayersC::GetCursorType	parameter	3	param_3	/undefined4	Stack[0xc]:4	DEFAULT		0	0	no_evidence		-
-00435930	STAllPlayersC::GetCursorType	parameter	5	param_5	/undefined4	Stack[0x14]:4	DEFAULT		0	0	no_evidence		-
-00435930	STAllPlayersC::GetCursorType	parameter	6	param_6	/undefined4	Stack[0x18]:4	DEFAULT		0	0	no_evidence		-
 00435B90	FUN_00435b90	parameter	4	param_5	/undefined4	Stack[0x14]:4	DEFAULT		0	0	no_evidence		-
 00438E30	STAllPlayersC::SaveTmp	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
 00439100	STAllPlayersC::RestoreTmp	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
@@ -3278,23 +3200,9 @@ function_address	function	target_kind	target_ordinal	target_name	current_type	st
 0045FF50	STBoatC::sub_0045FF50	return		<RETURN>	/undefined4	EAX:4	DEFAULT		0	0	no_evidence		-
 004602B0	STBoatC::sub_004602B0	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
 004602E0	FUN_004602e0	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
-00465C60	STBoatC::LoadRC	parameter	2	param_2	/undefined4	Stack[0x8]:4	DEFAULT		0	0	no_evidence		-
-0046C980	STBoatC::BackBuild	parameter	2	param_2	/undefined4	Stack[0x8]:4	DEFAULT		0	0	no_evidence		-
-0046C980	STBoatC::BackBuild	parameter	3	param_3	/undefined4	Stack[0xc]:4	DEFAULT		0	0	no_evidence		-
-0046CF20	STBoatC::CreateGame	parameter	2	param_2	/undefined4	Stack[0x8]:4	DEFAULT		0	0	no_evidence		-
 0046D400	FUN_0046d400	parameter	1	param_2	/undefined4	EDX:4	DEFAULT		0	0	no_evidence		-
 0046D400	FUN_0046d400	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
-004714D0	STBoatC::BackToDok	parameter	2	param_2	/undefined4	Stack[0x8]:4	DEFAULT		0	0	no_evidence		-
-004714D0	STBoatC::BackToDok	parameter	3	param_3	/undefined4	Stack[0xc]:4	DEFAULT		0	0	no_evidence		-
-004732D0	FUN_004732d0	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT	/int	1	1	width_mismatch	{/int=1}	004732D0 returns return of FUN_004620f0 @ 004732DD
-004761B0	STBoatC::SetMine	parameter	2	param_2	/undefined4	Stack[0x8]:4	DEFAULT		0	0	no_evidence		-
-004769F0	FUN_004769f0	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT	/int	1	1	width_mismatch	{/int=1}	004769F0 returns return of STBoatC::sub_00460360 @ 004769FD
-00476CC0	FUN_00476cc0	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT	/int	1	1	width_mismatch	{/int=1}	00476CC0 returns return of STBoatC::sub_00460360 @ 00476CCD
-004795E0	FUN_004795e0	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT	/int	1	1	width_mismatch	{/int=1}	004795E0 returns return of STBoatC::sub_00460360 @ 004795ED
 0047C050	STBoatC::Bring	return		<RETURN>	/undefined4	EAX:4	DEFAULT		0	0	no_evidence		-
-0047DF00	STBoatC::Dismant	parameter	2	param_2	/undefined4	Stack[0x8]:4	DEFAULT		0	0	no_evidence		-
-0047FAD0	STBoatC::BackDismant	parameter	2	param_2	/undefined4	Stack[0x8]:4	DEFAULT		0	0	no_evidence		-
-004803B0	FUN_004803b0	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT	/int	1	1	width_mismatch	{/int=1}	004803B0 returns return of STBoatC::sub_00460360 @ 004803BD
 00480600	FUN_00480600	return		<RETURN>	/undefined4	EAX:4	DEFAULT		0	0	no_evidence		-
 00481520	STBoatC::sub_00481520	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
 00482450	STBoatC::GetExplosionInfo	return		<RETURN>	/undefined4	EAX:4	DEFAULT		0	0	no_evidence		-
@@ -3316,7 +3224,6 @@ function_address	function	target_kind	target_ordinal	target_name	current_type	st
 00486E20	FUN_00486e20	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
 00488890	FUN_00488890	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
 00488D10	FUN_00488d10	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
-00488EE0	FUN_00488ee0	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT	/int	1	1	width_mismatch	{/int=1}	00488EE0 returns return of FUN_004e8030 @ 00488F18
 00488F30	STBoatC::GetInfo16	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
 004898C0	FUN_004898c0	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
 00489950	FUN_00489950	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
@@ -3373,7 +3280,7 @@ function_address	function	target_kind	target_ordinal	target_name	current_type	st
 00493340	STBoatC::CheckForReplenisher	return		<RETURN>	/undefined4	EAX:4	DEFAULT		0	0	no_evidence		-
 004934B0	FUN_004934b0	return		<RETURN>	/undefined4	EAX:4	DEFAULT		0	0	no_evidence		-
 00493610	SubmarineTitans::Recovered::HiddenThis::AnonReceiver_00493610::FUN_00493610	return		<RETURN>	/undefined4	EAX:4	DEFAULT		0	0	no_evidence		-
-00493CA0	FUN_00493ca0	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT	/int	1	1	width_mismatch	{/int=1}	00493CA0 returns return of FUN_004e8030 @ 00493CB2
+00493CA0	FUN_00493ca0	return		<RETURN>	/undefined1	AL:1	DEFAULT	/int	1	1	width_mismatch	{/int=1}	00493CA0 returns return of FUN_004e8030 @ 00493CB2
 00493CD0	FUN_00493cd0	return		<RETURN>	/undefined4	EAX:4	DEFAULT		0	0	no_evidence		-
 00493D10	FUN_00493d10	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
 00494160	FUN_00494160	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
@@ -3429,18 +3336,18 @@ function_address	function	target_kind	target_ordinal	target_name	current_type	st
 004A0040	STGroupBoatC::GrpDismant	return		<RETURN>	/undefined4	EAX:4	DEFAULT		0	0	no_evidence		-
 004A0990	STGroupBoatC::GrpRepSub	return		<RETURN>	/undefined4	EAX:4	DEFAULT		0	0	no_evidence		-
 004A0EE0	FUN_004a0ee0	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
-004A0FA0	STGroupBoatC::RechargeNewCmd	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
+004A0FA0	STGroupBoatC::RechargeNewCmd	return		<RETURN>	/undefined1	AL:1	DEFAULT		0	0	no_evidence		-
 004A3430	STGroupBoatC::DistributeMD	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
 004A3CD0	STGroupBoatC::DistributeDock	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
 004A4240	STGroupBoatC::ChangeMDNotify	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
 004A4D60	STGroupBoatC::ChangeMDNotify	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
 004A67A0	STGroupBoatC::RestoreGrpBData	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
-004A7490	STGroupBoatC::ReMakePatrolPoints	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
+004A7490	STGroupBoatC::ReMakePatrolPoints	return		<RETURN>	/undefined1	AL:1	DEFAULT		0	0	no_evidence		-
 004A7E30	STGroupBoatC::sub_004A7E30	return		<RETURN>	/undefined4	EAX:4	DEFAULT		0	0	no_evidence		-
-004A80A0	STGroupBoatC::SetPatrolCmdToBoat	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
+004A80A0	STGroupBoatC::SetPatrolCmdToBoat	return		<RETURN>	/undefined1	AL:1	DEFAULT		0	0	no_evidence		-
 004A8220	FUN_004a8220	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
 004A8340	STGroupBoatC::GetDepotForAttack	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
-004A85B0	STGroupBoatC::StartReceiveOrderSound	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
+004A85B0	STGroupBoatC::StartReceiveOrderSound	return		<RETURN>	/undefined1	AL:1	DEFAULT		0	0	no_evidence		-
 004A87A0	STGroupBoatC::IsAgAtt	return		<RETURN>	/undefined4	EAX:4	DEFAULT		0	0	no_evidence		-
 004A8F20	FUN_004a8f20	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
 004A8FC0	OpticClassC::InitOptic	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
@@ -3503,7 +3410,6 @@ function_address	function	target_kind	target_ordinal	target_name	current_type	st
 004AD630	FUN_004ad630	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
 004AD6C0	FUN_004ad6c0	parameter	1	param_2	/undefined4	Stack[0x8]:4	DEFAULT		0	0	no_evidence		-
 004AD740	FUN_004ad740	parameter	1	param_2	/undefined4	Stack[0x8]:4	DEFAULT		0	0	no_evidence		-
-004AD740	FUN_004ad740	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT	/int	1	1	width_mismatch	{/int=1}	004AD740 returns return of SubmarineTitans::Recovered::HiddenThis::AnonReceiver_004248D0::FUN_00424e10 @ 004AD779
 004AE080	FUN_004ae080	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
 004AE0B0	FUN_004ae0b0	return		<RETURN>	/undefined4	EAX:4	DEFAULT		0	0	no_evidence		-
 004AF080	FUN_004af080	parameter	7	param_8	/undefined4	Stack[0x20]:4	DEFAULT	/int	0	1	insufficient_independent_evidence	{/int=1}	004B0D10 -> 004AF080 @ 004B0E36; FUN_004b0d10 parameter param_8
@@ -4008,7 +3914,7 @@ function_address	function	target_kind	target_ordinal	target_name	current_type	st
 004EF020	BldBoatPanelTy::Update	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
 004EF320	BldBoatPanelTy::PaintBldBut	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
 004EFB60	BldLabPanelTy::InitBldLabPanel	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
-004EFD10	BldLabPanelTy::Update	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
+004EFD10	BldLabPanelTy::Update	return		<RETURN>	/undefined1	AL:1	DEFAULT		0	0	no_evidence		-
 004EFE20	BldLabPanelTy::sub_004EFE20	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
 004EFFE0	BldLabPanelTy::PaintUpdBut	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
 004F05C0	BldObjPanelTy::InitBldObjPanel	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
@@ -4061,7 +3967,7 @@ function_address	function	target_kind	target_ordinal	target_name	current_type	st
 004F9480	CPanelTy::OutText	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
 004F95B0	CPanelTy::OutText	parameter	2	param_2	/undefined4	Stack[0x8]:4	DEFAULT		0	0	no_evidence		-
 004F95B0	CPanelTy::OutText	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
-004F96A0	CPanelTy::PlayBrief	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
+004F96A0	CPanelTy::PlayBrief	return		<RETURN>	/undefined1	AL:1	DEFAULT		0	0	no_evidence		-
 004F9ED0	CPanelTy::SwitchCPanel	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
 004FA3B0	CPanelTy::sub_004FA3B0	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
 004FA400	CPanelTy::ShiftControls	return		<RETURN>	/undefined4	EAX:4	DEFAULT		0	0	no_evidence		-
@@ -4109,9 +4015,9 @@ function_address	function	target_kind	target_ordinal	target_name	current_type	st
 00512830	HelpPanelTy::CreateSlider	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
 00512BE0	HelpPanelTy::sub_00512BE0	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
 00513030	HelpPanelTy::ChangeTree	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
-005134B0	HelpPanelTy::PutToSHlp	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
+005134B0	HelpPanelTy::PutToSHlp	return		<RETURN>	/undefined1	AL:1	DEFAULT		0	0	no_evidence		-
 005135F0	HelpPanelTy::HomeBut	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
-00513810	HelpPanelTy::BackBut	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
+00513810	HelpPanelTy::BackBut	return		<RETURN>	/undefined1	AL:1	DEFAULT		0	0	no_evidence		-
 00513A40	HelpPanelTy::IndexBut	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
 00513BC0	HelpPanelTy::PrevBut	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
 00513FA0	HelpPanelTy::NextBut	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
@@ -4201,7 +4107,7 @@ function_address	function	target_kind	target_ordinal	target_name	current_type	st
 0052F2B0	OptPanelTy::SwitchOptPanel	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
 0052F7E0	OptPanelTy::SwitchOptPanelOff	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
 0052FB00	OptPanelTy::SetOptControls	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
-005325B0	OptPanelTy::PrepAsses	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
+005325B0	OptPanelTy::PrepAsses	return		<RETURN>	/undefined1	AL:1	DEFAULT		0	0	no_evidence		-
 00532CE0	OptPanelTy::sub_00532CE0	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
 00533470	OptPanelTy::CheckFiles	return		<RETURN>	/undefined4	EAX:4	DEFAULT		0	0	no_evidence		-
 005335E0	FUN_005335e0	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
@@ -4235,7 +4141,7 @@ function_address	function	target_kind	target_ordinal	target_name	current_type	st
 0053A820	PlayPanelTy::SetPanel	return		<RETURN>	/undefined4	EAX:4	DEFAULT		0	0	no_evidence		-
 0053AC00	PlayPanelTy::PaintPlayPanel	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
 0053C120	ResearchPanelTy::InitResearchPanel	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
-0053C490	FUN_0053c490	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
+0053C490	ResearchPanelTy::ShiftControls	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
 0053C500	ResearchPanelTy::Update	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
 0053C820	ResearchPanelTy::PaintUpdBut	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
 0053CEF0	SAMPanelTy::InitSAMPanel	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
@@ -4303,7 +4209,6 @@ function_address	function	target_kind	target_ordinal	target_name	current_type	st
 00543AD0	CursorClassTy::SetImages	parameter	3	param_3	/undefined4	Stack[0xc]:4	DEFAULT		0	0	no_evidence		-
 00543C90	CursorClassTy::DrawSprite	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
 00543FA0	CursorClassTy::CursDrawInit	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
-00544100	FUN_00544100	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
 005441A0	CursorClassTy::AddSysAcc	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
 00544460	CursorClassTy::DelSysAcc	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
 005446C0	CursorClassTy::AddOpticAcc	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
@@ -4407,7 +4312,7 @@ function_address	function	target_kind	target_ordinal	target_name	current_type	st
 0055A620	VisibleClassTy::SetZoneMin2	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
 0055A870	VisibleClassTy::sub_0055A870	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
 0055A9D0	VisibleClassTy::VisHoleCreate	parameter	6	param_6	/undefined4	Stack[0x18]:4	DEFAULT		0	0	no_evidence		-
-0055AB50	VisibleClassTy::VisHoleExec	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
+0055AB50	VisibleClassTy::VisHoleExec	return		<RETURN>	/undefined1	AL:1	DEFAULT		0	0	no_evidence		-
 0055AD00	VisibleClassTy::sub_0055AD00	parameter	3	param_3	/undefined4	Stack[0xc]:4	DEFAULT		0	0	no_evidence		-
 0055AD00	VisibleClassTy::sub_0055AD00	return		<RETURN>	/undefined4	EAX:4	DEFAULT		0	0	no_evidence		-
 0055AFB0	FUN_0055afb0	parameter	3	param_3	/undefined4	Stack[0xc]:4	DEFAULT		0	0	no_evidence		-
@@ -4421,7 +4326,6 @@ function_address	function	target_kind	target_ordinal	target_name	current_type	st
 0055B7F0	VisibleClassTy::sub_0055B7F0	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
 0055BB00	VisibleClassTy::sub_0055BB00	parameter	7	param_7	/undefined4	Stack[0x1c]:4	DEFAULT	/uint	0	1	insufficient_independent_evidence	{/uint=1}	00559B30 -> 0055BB00 @ 00559BF0; VisibleClassTy::SetZoneAst parameter param_6
 0055BCB0	FUN_0055bcb0	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
-0055BD80	FUN_0055bd80	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT	/int	1	1	width_mismatch	{/int=1}	0055BD80 returns return of Library::MSVCRT::FUN_0072ece0 @ 0055BD8B
 0055BDD0	FUN_0055bdd0	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
 0055BEB0	FUN_0055beb0	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
 0055BF20	FUN_0055bf20	parameter	1	param_1	/undefined4	Stack[0x4]:4	DEFAULT		0	0	no_evidence		-
@@ -4536,8 +4440,8 @@ function_address	function	target_kind	target_ordinal	target_name	current_type	st
 005751F0	LandInit	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
 00575460	FUN_00575460	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
 00575640	FUN_00575640	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
-005759D0	thunk_FUN_005759f0	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
-005759F0	FUN_005759f0	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT	pointer:/STAppC	1	1	width_mismatch	{pointer:/STAppC=1}	005759F0 returns return of STAppC::STAppC @ 005759FF
+005759D0	thunk_FUN_005759f0	return		<RETURN>	/undefined1	AL:1	DEFAULT		0	0	no_evidence		-
+005759F0	FUN_005759f0	return		<RETURN>	/undefined1	AL:1	DEFAULT	pointer:/STAppC	1	1	width_mismatch	{pointer:/STAppC=1}	005759F0 returns return of STAppC::STAppC @ 005759FF
 00575A10	FUN_00575a10	parameter	1	param_2	/undefined4	Stack[0x8]:4	DEFAULT		0	0	no_evidence		-
 00575A10	FUN_00575a10	parameter	2	param_3	/undefined4	Stack[0xc]:4	DEFAULT		0	0	no_evidence		-
 00575A10	FUN_00575a10	return		<RETURN>	/undefined4	EAX:4	DEFAULT		0	0	no_evidence		-
@@ -4546,14 +4450,13 @@ function_address	function	target_kind	target_ordinal	target_name	current_type	st
 00576CE0	DestroyBaseSystem	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
 00576E10	GameSystemC::CreateSystemObjects	return		<RETURN>	/undefined4	EAX:4	DEFAULT		0	0	no_evidence		-
 00576EF0	GameSystemC::InitSystem	return		<RETURN>	/undefined4	EAX:4	DEFAULT		0	0	no_evidence		-
-005770D0	GameSystemC::DoneSystem	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
+005770D0	GameSystemC::DoneSystem	return		<RETURN>	/undefined1	AL:1	DEFAULT		0	0	no_evidence		-
 00577280	CreateGameSystem	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
 00577440	FUN_00577440	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
 00577690	GameSystemC::sub_00577690	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
 00578200	DebugSystemC::CreateSystemObjects	return		<RETURN>	/undefined4	EAX:4	DEFAULT		0	0	no_evidence		-
 005782D0	FUN_005782d0	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
 00578370	FUN_00578370	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
-005783F0	FUN_005783f0	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
 00578430	FUN_00578430	return		<RETURN>	/undefined4	EAX:4	DEFAULT		0	0	no_evidence		-
 00578520	FUN_00578520	parameter	1	param_1	/undefined4	Stack[0x4]:4	DEFAULT		0	0	no_evidence		-
 00578520	FUN_00578520	return		<RETURN>	/undefined4	EAX:4	DEFAULT		0	0	no_evidence		-
@@ -4580,11 +4483,10 @@ function_address	function	target_kind	target_ordinal	target_name	current_type	st
 0057BD70	FUN_0057bd70	return		<RETURN>	/undefined4	EAX:4	DEFAULT		0	0	no_evidence		-
 0057BEE0	FUN_0057bee0	parameter	1	param_1	/undefined4	Stack[0x4]:4	DEFAULT		0	0	no_evidence		-
 0057BEE0	FUN_0057bee0	return		<RETURN>	/undefined4	EAX:4	DEFAULT		0	0	no_evidence		-
-0057BF20	STFishC::sub_0057BF20	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
 0057CB30	FUN_0057cb30	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
 0057CB80	FUN_0057cb80	parameter	1	param_1	/undefined4	Stack[0x4]:4	DEFAULT		0	0	no_evidence		-
 0057CC90	FUN_0057cc90	return		<RETURN>	/undefined4	EAX:4	DEFAULT		0	0	no_evidence		-
-0057CD70	STFishC::LifeFish	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
+0057CD70	STFishC::LifeFish	return		<RETURN>	/undefined1	AL:1	DEFAULT		0	0	no_evidence		-
 0057D420	FUN_0057d420	return		<RETURN>	/undefined4	EAX:4	DEFAULT		0	0	no_evidence		-
 0057D5F0	STFishC::sub_0057D5F0	return		<RETURN>	/undefined4	EAX:4	DEFAULT		0	0	no_evidence		-
 0057D700	STFishC::sub_0057D700	return		<RETURN>	/undefined4	EAX:4	DEFAULT		0	0	no_evidence		-
@@ -4601,7 +4503,6 @@ function_address	function	target_kind	target_ordinal	target_name	current_type	st
 005802A0	STResourceC::sub_005802A0	parameter	1	param_1	/undefined4	Stack[0x4]:4	DEFAULT		0	0	no_evidence		-
 005802A0	STResourceC::sub_005802A0	parameter	2	param_2	/undefined4	Stack[0x8]:4	DEFAULT		0	0	no_evidence		-
 005802A0	STResourceC::sub_005802A0	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
-00580380	FUN_00580380	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
 005803E0	FUN_005803e0	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
 00580450	FUN_00580450	parameter	0	param_1	/undefined4	Stack[0x4]:4	DEFAULT		0	0	no_evidence		-
 00580450	FUN_00580450	parameter	1	param_2	/undefined4	Stack[0x8]:4	DEFAULT		0	0	no_evidence		-
@@ -4635,7 +4536,6 @@ function_address	function	target_kind	target_ordinal	target_name	current_type	st
 00581120	FUN_00581120	parameter	5	param_6	/undefined4	Stack[0x18]:4	DEFAULT		0	0	no_evidence		-
 00581120	FUN_00581120	parameter	6	param_7	/undefined4	Stack[0x1c]:4	DEFAULT		0	0	no_evidence		-
 00581120	FUN_00581120	return		<RETURN>	/undefined4	EAX:4	DEFAULT		0	0	no_evidence		-
-005811C0	FUN_005811c0	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
 00581200	FUN_00581200	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
 00581AC0	STJellyManC::Error	parameter	1	param_1	/undefined4	Stack[0x4]:4	DEFAULT		0	0	no_evidence		-
 00581AC0	STJellyManC::Error	parameter	3	param_3	/undefined4	Stack[0xc]:4	DEFAULT		0	0	no_evidence		-
@@ -4657,8 +4557,7 @@ function_address	function	target_kind	target_ordinal	target_name	current_type	st
 00582460	FUN_00582460	parameter	9	param_10	/undefined4	Stack[0x28]:4	DEFAULT		0	0	no_evidence		-
 00582460	FUN_00582460	parameter	11	param_12	/undefined2	Stack[0x30]:2	DEFAULT	/ushort	0	1	insufficient_independent_evidence	{/ushort=1}	00581AC0 -> 00582460 @ 00581B44; literal 65535 at 00581B0D
 00582460	FUN_00582460	return		<RETURN>	/undefined4	EAX:4	DEFAULT		0	0	no_evidence		-
-00582580	STJellyGunC::sub_00582580	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
-005825C0	STJellyGunC::LifeGun	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
+005825C0	STJellyGunC::LifeGun	return		<RETURN>	/undefined1	AL:1	DEFAULT		0	0	no_evidence		-
 00584060	STJellyGunC::sub_00584060	return		<RETURN>	/undefined4	EAX:4	DEFAULT		0	0	no_evidence		-
 00584380	STJellyGunC::sub_00584380	return		<RETURN>	/undefined4	EAX:4	DEFAULT		0	0	no_evidence		-
 005844B0	FUN_005844b0	parameter	1	param_1	/undefined4	Stack[0x4]:4	DEFAULT		0	0	no_evidence		-
@@ -4674,7 +4573,6 @@ function_address	function	target_kind	target_ordinal	target_name	current_type	st
 00584A30	FUN_00584a30	parameter	6	param_7	/undefined4	Stack[0x1c]:4	DEFAULT		0	0	no_evidence		-
 00584A30	FUN_00584a30	parameter	7	param_8	/undefined4	Stack[0x20]:4	DEFAULT		0	0	no_evidence		-
 00584A30	FUN_00584a30	return		<RETURN>	/undefined4	EAX:4	DEFAULT		0	0	no_evidence		-
-00584AD0	FUN_00584ad0	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
 00584B10	FUN_00584b10	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
 00584D10	FUN_00584d10	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
 00585020	FUN_00585020	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
@@ -4684,7 +4582,6 @@ function_address	function	target_kind	target_ordinal	target_name	current_type	st
 00586240	FUN_00586240	parameter	4	param_5	/undefined4	Stack[0x14]:4	DEFAULT		0	0	no_evidence		-
 00586240	FUN_00586240	parameter	5	param_6	/undefined4	Stack[0x18]:4	DEFAULT		0	0	no_evidence		-
 00586240	FUN_00586240	return		<RETURN>	/undefined4	EAX:4	DEFAULT		0	0	no_evidence		-
-005862E0	FUN_005862e0	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
 00586AF0	FUN_00586af0	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
 00589740	FUN_00589740	return		<RETURN>	/undefined4	EAX:4	DEFAULT		0	0	no_evidence		-
 00589970	FUN_00589970	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
@@ -4692,7 +4589,7 @@ function_address	function	target_kind	target_ordinal	target_name	current_type	st
 00589B10	FUN_00589b10	parameter	1	param_1	/undefined4	Stack[0x4]:4	DEFAULT		0	0	no_evidence		-
 00589B10	FUN_00589b10	return		<RETURN>	/undefined4	EAX:4	DEFAULT		0	0	no_evidence		-
 00589B50	STOctopusC::SetSprRange	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
-0058A8D0	STOctopusC::Bad	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
+0058A8D0	STOctopusC::Bad	return		<RETURN>	/undefined1	AL:1	DEFAULT		0	0	no_evidence		-
 0058A970	FUN_0058a970	parameter	1	param_1	/undefined4	Stack[0x4]:4	DEFAULT		0	0	no_evidence		-
 0058A9E0	FUN_0058a9e0	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
 0058AF70	STOctopusC::sub_0058AF70	return		<RETURN>	/undefined4	EAX:4	DEFAULT		0	0	no_evidence		-
@@ -4710,7 +4607,6 @@ function_address	function	target_kind	target_ordinal	target_name	current_type	st
 0058BAB0	FUN_0058bab0	parameter	3	param_4	/undefined4	Stack[0x10]:4	DEFAULT		0	0	no_evidence		-
 0058BAB0	FUN_0058bab0	parameter	4	param_5	/undefined4	Stack[0x14]:4	DEFAULT		0	0	no_evidence		-
 0058BAB0	FUN_0058bab0	return		<RETURN>	/undefined4	EAX:4	DEFAULT		0	0	no_evidence		-
-0058BB50	FUN_0058bb50	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
 0058BB90	FUN_0058bb90	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
 0058BD90	FUN_0058bd90	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
 0058C560	FUN_0058c560	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
@@ -4728,7 +4624,7 @@ function_address	function	target_kind	target_ordinal	target_name	current_type	st
 0058E440	FUN_0058e440	return		<RETURN>	/undefined4	EAX:4	DEFAULT		0	0	no_evidence		-
 0058E530	FUN_0058e530	parameter	1	param_1	/undefined4	Stack[0x4]:4	DEFAULT		0	0	no_evidence		-
 0058E530	FUN_0058e530	return		<RETURN>	/undefined4	EAX:4	DEFAULT		0	0	no_evidence		-
-0058E570	STSharkC::LifeShark	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
+0058E570	STSharkC::LifeShark	return		<RETURN>	/undefined1	AL:1	DEFAULT		0	0	no_evidence		-
 0058EEB0	FUN_0058eeb0	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
 0058F030	FUN_0058f030	return		<RETURN>	/undefined4	EAX:4	DEFAULT		0	0	no_evidence		-
 00590010	STSharkC::CreateShark	parameter	4	param_4	/undefined4	Stack[0x10]:4	DEFAULT		0	0	no_evidence		-
@@ -4744,11 +4640,10 @@ function_address	function	target_kind	target_ordinal	target_name	current_type	st
 00590170	MAdvTy::InitMAdv	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
 00590410	MAdvTy::DoneMAdv	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
 005907D0	MAdvTy::NoneMAdv	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
-00590860	MAdvTy::sub_00590860	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
 00590B40	CampaignTy::InitCampaign	parameter	1	param_1	/undefined4	Stack[0x4]:4	DEFAULT		0	0	no_evidence		-
 00590B40	CampaignTy::InitCampaign	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
 005916F0	CampaignTy::DoneCampaign	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
-00591BF0	CampaignTy::NoneCampaign	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
+00591BF0	CampaignTy::NoneCampaign	return		<RETURN>	/undefined1	AL:1	DEFAULT		0	0	no_evidence		-
 00592340	CampaignTy::LightPalette	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
 00592470	CampaignTy::CloseButtons	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
 005925A0	CampaignTy::sub_005925A0	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
@@ -4761,7 +4656,6 @@ function_address	function	target_kind	target_ordinal	target_name	current_type	st
 005939E0	ComboTy::OutBmpProc	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
 00593B50	ComboTy::InitCombo	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
 005941D0	ComboTy::DoneCombo	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
-005943F0	ComboTy::sub_005943F0	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
 00594850	FUN_00594850	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
 00594B90	FSGSTy::OutChSlProc	parameter	2	param_2	/undefined4	Stack[0x8]:4	DEFAULT		0	0	no_evidence		-
 00594B90	FSGSTy::OutChSlProc	parameter	3	param_3	/undefined4	Stack[0xc]:4	DEFAULT		0	0	no_evidence		-
@@ -4771,7 +4665,7 @@ function_address	function	target_kind	target_ordinal	target_name	current_type	st
 005956C0	FSGSTy::OutLadProc	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
 00595E40	FSGSTy::InitFSGS	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
 005967F0	FSGSTy::DoneFSGS	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
-00597120	FSGSTy::NoneFSGS	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
+00597120	FSGSTy::NoneFSGS	return		<RETURN>	/undefined1	AL:1	DEFAULT		0	0	no_evidence		-
 00597E70	FSGSTy::SetState	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
 005999C0	FSGSTy::PrepBkgMess	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
 00599BE0	FSGSTy::PaintLogLogin	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
@@ -4779,7 +4673,7 @@ function_address	function	target_kind	target_ordinal	target_name	current_type	st
 0059A320	FSGSTy::PaintLogPsw	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
 0059A640	FSGSTy::PaintGameNew	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
 0059A910	FSGSTy::PaintInfo	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
-0059B2C0	FSGSTy::PaintLadder	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
+0059B2C0	FSGSTy::PaintLadder	return		<RETURN>	/undefined1	AL:1	DEFAULT		0	0	no_evidence		-
 0059B740	FSGSTy::CloseButtons	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
 0059B820	FSGSTy::sub_0059B820	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
 0059BE50	FSGSTy::sub_0059BE50	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
@@ -4788,7 +4682,7 @@ function_address	function	target_kind	target_ordinal	target_name	current_type	st
 0059C9F0	FSGSTy::NewIDCtrls	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
 0059CEE0	FSGSTy::PswCtrls	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
 0059D240	FSGSTy::LicCtrls	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
-0059D720	FSGSTy::InfoCtrls	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
+0059D720	FSGSTy::InfoCtrls	return		<RETURN>	/undefined1	AL:1	DEFAULT		0	0	no_evidence		-
 0059DB20	FSGSTy::ChatCtrls	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
 0059E7F0	FSGSTy::NewGameCtrls	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
 0059EB00	FSGSTy::JoinGameCtrls	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
@@ -4810,7 +4704,7 @@ function_address	function	target_kind	target_ordinal	target_name	current_type	st
 005A2C10	FSGSTy::ChangePlayerPing	parameter	1	param_1	/undefined4	Stack[0x4]:4	DEFAULT		0	0	no_evidence		-
 005A2C10	FSGSTy::ChangePlayerPing	parameter	3	param_3	/undefined4	Stack[0xc]:4	DEFAULT		0	0	no_evidence		-
 005A2C10	FSGSTy::ChangePlayerPing	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
-005A2D70	FSGSTy::JoinChannel	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
+005A2D70	FSGSTy::JoinChannel	return		<RETURN>	/undefined1	AL:1	DEFAULT		0	0	no_evidence		-
 005A2FF0	FSGSTy::SetChannelList	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
 005A32F0	FSGSTy::CreateGame	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
 005A3540	FSGSTy::SetGameList	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
@@ -4826,7 +4720,7 @@ function_address	function	target_kind	target_ordinal	target_name	current_type	st
 005AB300	ChooseMapTy::InitChooseMap	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
 005ACB30	ChooseMapTy::DoneChooseMap	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
 005AD050	ChooseMapTy::PaintChooseMap	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
-005AD390	ChooseMapTy::NoneChooseMap	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
+005AD390	ChooseMapTy::NoneChooseMap	return		<RETURN>	/undefined1	AL:1	DEFAULT		0	0	no_evidence		-
 005ADF10	ChooseMapTy::CloseButtons	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
 005AE050	ChooseMapTy::ShowDescription	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
 005AE840	ChooseMapTy::sub_005AE840	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
@@ -4835,7 +4729,7 @@ function_address	function	target_kind	target_ordinal	target_name	current_type	st
 005AFD00	ChooseMapTy::PrepFiles	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
 005B2970	MainMenuTy::InitMainMenu	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
 005B2F90	MainMenuTy::DoneMainMenu	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
-005B3430	MainMenuTy::NoneMainMenu	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
+005B3430	MainMenuTy::NoneMainMenu	return		<RETURN>	/undefined1	AL:1	DEFAULT		0	0	no_evidence		-
 005B3B00	MainMenuTy::LightPalette	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
 005B3C30	MainMenuTy::CloseButtons	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
 005B3D60	MainMenuTy::SetMode	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
@@ -4860,7 +4754,6 @@ function_address	function	target_kind	target_ordinal	target_name	current_type	st
 005B5BE0	ChooseMapTy::sub_005B5BE0	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
 005B5F00	SettMapMTy::sub_005B5F00	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
 005B6350	FUN_005b6350	parameter	1	param_1	/undefined4	Stack[0x4]:4	DEFAULT		0	0	no_evidence		-
-005B66E0	FUN_005b66e0	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
 005B6730	FUN_005b6730	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
 005B69F0	ChatGlassTy::OutChGlProc	parameter	2	param_2	/undefined4	Stack[0x8]:4	DEFAULT		0	0	no_evidence		-
 005B69F0	ChatGlassTy::OutChGlProc	parameter	3	param_3	/undefined4	Stack[0xc]:4	DEFAULT		0	0	no_evidence		-
@@ -4887,7 +4780,7 @@ function_address	function	target_kind	target_ordinal	target_name	current_type	st
 005BA560	PrividerTy::DonePrivider	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
 005BA8B0	PrividerTy::PaintPrivider	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
 005BAAC0	PrividerTy::SetMode	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
-005BAE00	PrividerTy::NonePrivider	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
+005BAE00	PrividerTy::NonePrivider	return		<RETURN>	/undefined1	AL:1	DEFAULT		0	0	no_evidence		-
 005BB9F0	PrividerTy::sub_005BB9F0	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
 005BBA40	FUN_005bba40	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
 005BC050	PrividerTy::DeleteCtrls	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
@@ -4937,7 +4830,7 @@ function_address	function	target_kind	target_ordinal	target_name	current_type	st
 005CCC30	FUN_005ccc30	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
 005CCD00	FUN_005ccd00	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
 005CCE10	SettMapMTy::SetListCtrls	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
-005CD430	SettMapMTy::PrepPlList	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
+005CD430	SettMapMTy::PrepPlList	return		<RETURN>	/undefined1	AL:1	DEFAULT		0	0	no_evidence		-
 005CD9A0	SettMapMTy::ChgPlList	parameter	1	param_1	/undefined4	Stack[0x4]:4	DEFAULT		0	0	no_evidence		-
 005CD9A0	SettMapMTy::ChgPlList	parameter	2	param_2	/undefined4	Stack[0x8]:4	DEFAULT		0	0	no_evidence		-
 005CD9A0	SettMapMTy::ChgPlList	parameter	3	param_3	/undefined4	Stack[0xc]:4	DEFAULT		0	0	no_evidence		-
@@ -4946,11 +4839,11 @@ function_address	function	target_kind	target_ordinal	target_name	current_type	st
 005CFCD0	SettMapMTy::UpdatePing	parameter	2	param_2	/undefined4	Stack[0x8]:4	DEFAULT		0	0	no_evidence		-
 005D1100	SettMapMTy::AddPlayerList	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
 005D4E90	SettMapSTy::SetListCtrls	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
-005D5160	SettMapSTy::PrepPlList	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
+005D5160	SettMapSTy::PrepPlList	return		<RETURN>	/undefined1	AL:1	DEFAULT		0	0	no_evidence		-
 005D7A50	SIDTy::InitSID	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
 005D7F80	SIDTy::DoneSID	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
 005D8160	SIDTy::PaintSID	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
-005D81F0	SIDTy::NoneSID	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
+005D81F0	SIDTy::NoneSID	return		<RETURN>	/undefined1	AL:1	DEFAULT		0	0	no_evidence		-
 005D8450	SIDTy::CreateCtrls	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
 005D8A90	SIDTy::DeleteCtrls	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
 005DA130	FUN_005da130	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
@@ -5017,7 +4910,6 @@ function_address	function	target_kind	target_ordinal	target_name	current_type	st
 005E58D0	MTestTy::InitMTest	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
 005E5BA0	MTestTy::DoneMTest	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
 005E5E30	MTestTy::NoneMTest	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
-005E5F60	MTestTy::sub_005E5F60	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
 005E6640	ChooseMapTy::OutListProc	parameter	3	param_3	/undefined4	Stack[0xc]:4	DEFAULT		0	0	no_evidence		-
 005E6640	ChooseMapTy::OutListProc	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
 005E6770	WaitTy::InitWait	parameter	1	param_1	/undefined4	Stack[0x4]:4	DEFAULT		0	0	no_evidence		-
@@ -5026,7 +4918,7 @@ function_address	function	target_kind	target_ordinal	target_name	current_type	st
 005E7570	WaitTy::DoneWait	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
 005E79B0	WaitTy::PaintWait	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
 005E7FE0	WaitTy::ShowDescription	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
-005E84D0	WaitTy::NoneWait	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
+005E84D0	WaitTy::NoneWait	return		<RETURN>	/undefined1	AL:1	DEFAULT		0	0	no_evidence		-
 005E9830	WaitTy::CloseButtons	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
 005E9A40	WaitTy::sub_005E9A40	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
 005E9B50	WaitTy::CreateCtrls	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
@@ -5035,9 +4927,6 @@ function_address	function	target_kind	target_ordinal	target_name	current_type	st
 005EC510	FUN_005ec510	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
 005EC550	FUN_005ec550	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
 005EC5E0	FUN_005ec5e0	return		<RETURN>	/undefined4	EAX:4	DEFAULT		0	0	no_evidence		-
-005EC620	FUN_005ec620	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
-005EC640	FUN_005ec640	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT	pointer:/char	1	1	width_mismatch	{pointer:/char=1}	005EC640 returns return of Library::MSVCRT::_strncpy @ 005EC667
-005EC680	FUN_005ec680	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
 005EC6A0	FUN_005ec6a0	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
 005EC740	FUN_005ec740	parameter	1	param_2	/undefined4	Stack[0x8]:4	DEFAULT		0	0	no_evidence		-
 005EC740	FUN_005ec740	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
@@ -5060,7 +4949,6 @@ function_address	function	target_kind	target_ordinal	target_name	current_type	st
 005EF430	FUN_005ef430	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
 005EF450	FUN_005ef450	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
 005EF470	FUN_005ef470	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
-005EF490	FUN_005ef490	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
 005EF5D0	FUN_005ef5d0	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
 005EF6C0	FUN_005ef6c0	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
 005EFA30	FUN_005efa30	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
@@ -5103,7 +4991,6 @@ function_address	function	target_kind	target_ordinal	target_name	current_type	st
 005F0EC0	FUN_005f0ec0	parameter	7	param_8	/undefined4	Stack[0x20]:4	DEFAULT		0	0	no_evidence		-
 005F0EC0	FUN_005f0ec0	parameter	8	param_9	/undefined4	Stack[0x24]:4	DEFAULT		0	0	no_evidence		-
 005F0EC0	FUN_005f0ec0	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
-005F1380	FUN_005f1380	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
 005F13C0	FUN_005f13c0	return		<RETURN>	/undefined4	EAX:4	DEFAULT		0	0	no_evidence		-
 005F15F0	FUN_005f15f0	parameter	3	param_3	/undefined2	Stack[0xc]:2	DEFAULT	/ushort	0	1	insufficient_independent_evidence	{/ushort=1}	005F23D0 -> 005F15F0 @ 005F26C1; literal 0 at 005F26BD
 005F15F0	FUN_005f15f0	parameter	4	param_4	/undefined1	Stack[0x10]:1	DEFAULT	/byte	0	1	insufficient_independent_evidence	{/byte=1}	005F23D0 -> 005F15F0 @ 005F26C1; FUN_005f23d0 parameter param_4
@@ -5131,7 +5018,6 @@ function_address	function	target_kind	target_ordinal	target_name	current_type	st
 005F5E30	STBHEShellC::sub_005F5E30	parameter	2	param_2	/undefined4	Stack[0x8]:4	DEFAULT		0	0	no_evidence		-
 005F5E30	STBHEShellC::sub_005F5E30	parameter	3	param_3	/undefined4	Stack[0xc]:4	DEFAULT		0	0	no_evidence		-
 005F5E30	STBHEShellC::sub_005F5E30	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
-005F66B0	STColl3C::sub_005F66B0	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
 005F6AD0	FUN_005f6ad0	return		<RETURN>	/undefined4	EAX:4	DEFAULT		0	0	no_evidence		-
 005F6AF0	STColl3C::LoadImagSpr	return		<RETURN>	/undefined4	EAX:4	DEFAULT		0	0	no_evidence		-
 005F6DF0	FUN_005f6df0	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
@@ -5175,17 +5061,11 @@ function_address	function	target_kind	target_ordinal	target_name	current_type	st
 005FB540	FUN_005fb540	return		<RETURN>	/undefined4	EAX:4	DEFAULT		0	0	no_evidence		-
 005FB5C0	FUN_005fb5c0	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
 005FB600	FUN_005fb600	return		<RETURN>	/undefined4	EAX:4	DEFAULT		0	0	no_evidence		-
-005FC3E0	STContainerC::sub_005FC3E0	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
 005FC4A0	FUN_005fc4a0	return		<RETURN>	/undefined4	EAX:4	DEFAULT		0	0	no_evidence		-
 005FCC70	FUN_005fcc70	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
 005FCCB0	FUN_005fccb0	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
 005FCD40	FUN_005fcd40	return		<RETURN>	/undefined4	EAX:4	DEFAULT		0	0	no_evidence		-
-005FCD80	FUN_005fcd80	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
-005FCDA0	FUN_005fcda0	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
 005FCDC0	FUN_005fcdc0	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
-005FCE30	FUN_005fce30	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
-005FCE50	FUN_005fce50	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
-005FCE70	FUN_005fce70	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT	pointer:/char	1	1	width_mismatch	{pointer:/char=1}	005FCE70 returns return of Library::MSVCRT::_strncpy @ 005FCE97
 005FCEB0	FUN_005fceb0	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
 005FCF50	FUN_005fcf50	parameter	1	param_2	/undefined4	Stack[0x8]:4	DEFAULT		0	0	no_evidence		-
 005FCF50	FUN_005fcf50	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
@@ -5206,11 +5086,9 @@ function_address	function	target_kind	target_ordinal	target_name	current_type	st
 005FD1B0	FUN_005fd1b0	parameter	11	param_12	/undefined4	Stack[0x30]:4	DEFAULT		0	0	no_evidence		-
 005FD1B0	FUN_005fd1b0	parameter	12	param_13	/undefined4	Stack[0x34]:4	DEFAULT		0	0	no_evidence		-
 005FD1B0	FUN_005fd1b0	return		<RETURN>	/undefined4	EAX:4	DEFAULT		0	0	no_evidence		-
-005FD360	FUN_005fd360	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
 005FD380	FUN_005fd380	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
 005FD3A0	FUN_005fd3a0	return		<RETURN>	/undefined4	EAX:4	DEFAULT		0	0	no_evidence		-
 005FD5C0	FUN_005fd5c0	return		<RETURN>	/undefined4	EAX:4	DEFAULT		0	0	no_evidence		-
-005FD6A0	FUN_005fd6a0	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
 005FD750	FUN_005fd750	parameter	5	param_6	/undefined4	Stack[0x18]:4	DEFAULT		0	0	no_evidence		-
 005FD830	FUN_005fd830	return		<RETURN>	/undefined4	EAX:4	DEFAULT		0	0	no_evidence		-
 005FDA60	FUN_005fda60	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
@@ -5246,7 +5124,6 @@ function_address	function	target_kind	target_ordinal	target_name	current_type	st
 006034E0	FUN_006034e0	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
 006036A0	FUN_006036a0	return		<RETURN>	/undefined4	EAX:4	DEFAULT		0	0	no_evidence		-
 00604120	STExplosion::sub_00604120	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
-00604160	FUN_00604160	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
 006042D0	FUN_006042d0	parameter	1	param_1	/undefined4	Stack[0x4]:4	DEFAULT		0	0	no_evidence		-
 006042D0	FUN_006042d0	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
 00604820	FUN_00604820	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
@@ -5272,7 +5149,6 @@ function_address	function	target_kind	target_ordinal	target_name	current_type	st
 00608B50	FUN_00608b50	parameter	8	param_8	/undefined4	Stack[0x20]:4	DEFAULT		0	0	no_evidence		-
 00608B50	FUN_00608b50	parameter	9	param_9	/undefined1	Stack[0x24]:1	DEFAULT	/byte	0	1	insufficient_independent_evidence	{/byte=1}	00603740 -> 00608B50 @ 00603C13; unproven partial register write at 00603BDD
 00608E90	FUN_00608e90	return		<RETURN>	/undefined4	EAX:4	DEFAULT		0	0	no_evidence		-
-006099A0	FUN_006099a0	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
 00609B90	STFieldC::InitSprSistem	return		<RETURN>	/undefined4	EAX:4	DEFAULT		0	0	no_evidence		-
 00609CD0	STFieldC::sub_00609CD0	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
 00609D60	STFieldC::LoadImagSpr	return		<RETURN>	/undefined4	EAX:4	DEFAULT		0	0	no_evidence		-
@@ -5305,7 +5181,6 @@ function_address	function	target_kind	target_ordinal	target_name	current_type	st
 0060E470	FUN_0060e470	return		<RETURN>	/undefined4	EAX:4	DEFAULT		0	0	no_evidence		-
 0060E680	FUN_0060e680	return		<RETURN>	/undefined4	EAX:4	DEFAULT		0	0	no_evidence		-
 0060EA30	FUN_0060ea30	return		<RETURN>	/undefined4	EAX:4	DEFAULT		0	0	no_evidence		-
-0060EC00	FUN_0060ec00	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
 0060ECC0	FUN_0060ecc0	return		<RETURN>	/undefined4	EAX:4	DEFAULT		0	0	no_evidence		-
 0060F940	FUN_0060f940	return		<RETURN>	/undefined4	EAX:4	DEFAULT		0	0	no_evidence		-
 00613110	FUN_00613110	parameter	0	param_1	/undefined4	Stack[0x4]:4	DEFAULT		0	0	no_evidence		-
@@ -5327,8 +5202,7 @@ function_address	function	target_kind	target_ordinal	target_name	current_type	st
 00616280	FUN_00616280	return		<RETURN>	/undefined4	EAX:4	DEFAULT		0	0	no_evidence		-
 006164E0	FUN_006164e0	return		<RETURN>	/undefined4	EAX:4	DEFAULT		0	0	no_evidence		-
 006173A0	FUN_006173a0	return		<RETURN>	/undefined4	EAX:4	DEFAULT		0	0	no_evidence		-
-00617880	FUN_00617880	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
-006178C0	JumpManagC::CheckSystrm	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
+006178C0	JumpManagC::CheckSystrm	return		<RETURN>	/undefined1	AL:1	DEFAULT		0	0	no_evidence		-
 006179D0	JumpManagC::sub_006179D0	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
 00617A20	FUN_00617a20	parameter	2	param_2	/undefined4	Stack[0x8]:4	DEFAULT		0	0	no_evidence		-
 00617A20	FUN_00617a20	parameter	3	param_3	/undefined4	Stack[0xc]:4	DEFAULT		0	0	no_evidence		-
@@ -5350,9 +5224,7 @@ function_address	function	target_kind	target_ordinal	target_name	current_type	st
 00618B40	FUN_00618b40	parameter	1	param_1	/undefined4	Stack[0x4]:4	DEFAULT		0	0	no_evidence		-
 00618B40	FUN_00618b40	parameter	2	param_2	/undefined2	Stack[0x8]:2	DEFAULT	/ushort	0	1	insufficient_independent_evidence	{/ushort=1}	004CCC10 -> 00618B40 @ 004CD101; unproven partial register write at 004CD0F5
 00618B40	FUN_00618b40	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
-006192E0	STJumpMineC::sub_006192E0	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
 00619320	FUN_00619320	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
-00619350	STJumpMineC::sub_00619350	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT	pointer:/byte	1	1	width_mismatch	{pointer:/byte=1}	00619350 returns used as parameter 2 of STPlaySystemC::SaveObjData @ 00618EC9
 006193A0	FUN_006193a0	return		<RETURN>	/undefined4	EAX:4	DEFAULT		0	0	no_evidence		-
 006193E0	STJumpMineC::sub_006193E0	return		<RETURN>	/undefined4	EAX:4	DEFAULT		0	0	no_evidence		-
 00619540	FUN_00619540	parameter	1	param_2	/undefined4	Stack[0x8]:4	DEFAULT		0	0	no_evidence		-
@@ -5382,7 +5254,6 @@ function_address	function	target_kind	target_ordinal	target_name	current_type	st
 0061D0C0	FUN_0061d0c0	parameter	11	param_12	/undefined4	Stack[0x30]:4	DEFAULT		0	0	no_evidence		-
 0061D0C0	FUN_0061d0c0	return		<RETURN>	/undefined4	EAX:4	DEFAULT		0	0	no_evidence		-
 0061D650	STLightC::sub_0061D650	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
-0061D6D0	STLightC::sub_0061D6D0	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
 0061DB80	STLightC::LoadNextLight	return		<RETURN>	/undefined4	EAX:4	DEFAULT		0	0	no_evidence		-
 0061DD40	FUN_0061dd40	return		<RETURN>	/undefined4	EAX:4	DEFAULT		0	0	no_evidence		-
 0061DFE0	FUN_0061dfe0	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
@@ -5446,7 +5317,6 @@ function_address	function	target_kind	target_ordinal	target_name	current_type	st
 006216E0	FUN_006216e0	parameter	1	param_1	/undefined4	Stack[0x4]:4	DEFAULT		0	0	no_evidence		-
 00621780	FUN_00621780	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
 00621A70	FUN_00621a70	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
-00622670	STMineSetC::sub_00622670	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
 00622880	STMineSetC::sub_00622880	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
 00622BA0	STMineSetC::sub_00622BA0	return		<RETURN>	/undefined4	EAX:4	DEFAULT		0	0	no_evidence		-
 00623040	FUN_00623040	parameter	1	param_2	/undefined4	Stack[0x8]:4	DEFAULT		0	0	no_evidence		-
@@ -5561,8 +5431,6 @@ function_address	function	target_kind	target_ordinal	target_name	current_type	st
 0062E440	FUN_0062e440	parameter	3	param_4	/undefined2	Stack[0x10]:2	DEFAULT		0	0	no_evidence		-
 0062E440	FUN_0062e440	return		<RETURN>	/undefined4	EAX:4	DEFAULT		0	0	no_evidence		-
 0062E490	FUN_0062e490	return		<RETURN>	/undefined4	EAX:4	DEFAULT		0	0	no_evidence		-
-0062E520	FUN_0062e520	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT	/uint	1	1	width_mismatch	{/uint=1}	0062E520 returns return of FUN_0062dbd0 @ 0062E531
-0062E610	FUN_0062e610	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT	/uint	1	1	width_mismatch	{/uint=1}	0062E610 returns return of FUN_0062dfd0 @ 0062E625
 0062E640	FUN_0062e640	return		<RETURN>	/undefined4	EAX:4	DEFAULT		0	0	no_evidence		-
 0062E6B0	FUN_0062e6b0	return		<RETURN>	/undefined4	EAX:4	DEFAULT		0	0	no_evidence		-
 0062EF00	STRubbishC::sub_0062EF00	return		<RETURN>	/undefined4	EAX:4	DEFAULT		0	0	no_evidence		-
@@ -5576,15 +5444,12 @@ function_address	function	target_kind	target_ordinal	target_name	current_type	st
 0062F6C0	FUN_0062f6c0	return		<RETURN>	/undefined4	EAX:4	DEFAULT		0	0	no_evidence		-
 0062F7A0	FUN_0062f7a0	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
 0062F830	FUN_0062f830	return		<RETURN>	/undefined4	EAX:4	DEFAULT		0	0	no_evidence		-
-0062F900	STRubbishC::sub_0062F900	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
 0062F940	FUN_0062f940	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT	pointer:/byte	1	1	width_mismatch	{pointer:/byte=1}	0062F940 returns used as parameter 2 of STPlaySystemC::SaveObjData @ 0062EB26
 0062FE00	FUN_0062fe00	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
 00630000	FUN_00630000	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
 00630160	FUN_00630160	return		<RETURN>	/undefined4	EAX:4	DEFAULT		0	0	no_evidence		-
-006301B0	FUN_006301b0	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT	/int	1	1	width_mismatch	{/int=1}	006301B0 returns return of STRubbishC::sub_0062FCA0 @ 006301BD
 00630220	FUN_00630220	return		<RETURN>	/undefined4	EAX:4	DEFAULT		0	0	no_evidence		-
 00630340	FUN_00630340	return		<RETURN>	/undefined4	EAX:4	DEFAULT		0	0	no_evidence		-
-006308B0	FUN_006308b0	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
 006308F0	STManRuinC::sub_006308F0	parameter	5	param_5	/undefined4	Stack[0x14]:4	DEFAULT		0	0	no_evidence		-
 00630AC0	STManRuinC::sub_00630AC0	return		<RETURN>	/undefined4	EAX:4	DEFAULT		0	0	no_evidence		-
 00630BB0	STManRuinC::sub_00630BB0	parameter	4	param_4	/undefined4	Stack[0x10]:4	DEFAULT		0	0	no_evidence		-
@@ -5598,7 +5463,6 @@ function_address	function	target_kind	target_ordinal	target_name	current_type	st
 00631390	STManRuinC::sub_00631390	return		<RETURN>	/undefined4	EAX:4	DEFAULT		0	0	no_evidence		-
 00631450	STManRuinC::sub_00631450	return		<RETURN>	/undefined4	EAX:4	DEFAULT		0	0	no_evidence		-
 00631510	STManRuinC::sub_00631510	parameter	1	param_1	/undefined4	Stack[0x4]:4	DEFAULT		0	0	no_evidence		-
-00631510	STManRuinC::sub_00631510	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT	/uint	1	1	width_mismatch	{/uint=1}	00631510 returns return of STManRuinC::sub_006308F0 @ 0063154D
 00631560	STManRuinC::sub_00631560	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
 006315D0	FUN_006315d0	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
 00631880	STManRuinC::sub_00631880	parameter	2	param_2	/undefined4	Stack[0x8]:4	DEFAULT		0	0	no_evidence		-
@@ -5659,7 +5523,6 @@ function_address	function	target_kind	target_ordinal	target_name	current_type	st
 00638CA0	FUN_00638ca0	return		<RETURN>	/undefined4	EAX:4	DEFAULT		0	0	no_evidence		-
 00639500	FUN_00639500	parameter	1	param_1	/undefined4	Stack[0x4]:4	DEFAULT	/uint	0	1	insufficient_independent_evidence	{/uint=1}	00638CA0 -> 00639500 @ 00638D0D; /STPlaySystemC+0xe4
 00639500	FUN_00639500	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
-00639630	FUN_00639630	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
 00639990	FUN_00639990	return		<RETURN>	/undefined4	EAX:4	DEFAULT		0	0	no_evidence		-
 00639C90	FUN_00639c90	return		<RETURN>	/undefined4	EAX:4	DEFAULT		0	0	no_evidence		-
 0063C030	FUN_0063c030	parameter	1	param_1	/undefined4	Stack[0x4]:4	DEFAULT	/uint	0	1	insufficient_independent_evidence	{/uint=1}	00639C90 -> 0063C030 @ 00639D04; /STPlaySystemC+0xe4
@@ -5667,7 +5530,6 @@ function_address	function	target_kind	target_ordinal	target_name	current_type	st
 0063CA50	FUN_0063ca50	parameter	1	param_1	/undefined4	Stack[0x4]:4	DEFAULT		0	0	no_evidence		-
 0063CA50	FUN_0063ca50	return		<RETURN>	/undefined4	EAX:4	DEFAULT		0	0	no_evidence		-
 0063CB30	FUN_0063cb30	return		<RETURN>	/undefined4	EAX:4	DEFAULT		0	0	no_evidence		-
-0063CC10	FUN_0063cc10	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
 0063CC50	FUN_0063cc50	return		<RETURN>	/undefined4	EAX:4	DEFAULT		0	0	no_evidence		-
 0063D100	FUN_0063d100	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
 0063D410	FUN_0063d410	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
@@ -5702,7 +5564,6 @@ function_address	function	target_kind	target_ordinal	target_name	current_type	st
 00645D30	FUN_00645d30	return		<RETURN>	/undefined4	EAX:4	DEFAULT		0	0	no_evidence		-
 00645F10	SubmarineTitans::Recovered::HiddenThis::AnonReceiver_00644410::sub_00645F10	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
 00646110	FUN_00646110	return		<RETURN>	/undefined4	EAX:4	DEFAULT		0	0	no_evidence		-
-00646D00	FUN_00646d00	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
 00646D40	STVolcanoC::sub_00646D40	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT	pointer:/byte	1	1	width_mismatch	{pointer:/byte=1}	00646D40 returns used as parameter 2 of STPlaySystemC::SaveObjData @ 006469B1
 00646DB0	STVolcanoC::sub_00646DB0	return		<RETURN>	/undefined4	EAX:4	DEFAULT		0	0	no_evidence		-
 006472B0	STVolcanoC::sub_006472B0	return		<RETURN>	/undefined4	EAX:4	DEFAULT		0	0	no_evidence		-
@@ -5715,7 +5576,6 @@ function_address	function	target_kind	target_ordinal	target_name	current_type	st
 00647B40	FUN_00647b40	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
 00647B60	FUN_00647b60	return		<RETURN>	/undefined4	EAX:4	DEFAULT		0	0	no_evidence		-
 00647BA0	FUN_00647ba0	return		<RETURN>	/undefined4	EAX:4	DEFAULT		0	0	no_evidence		-
-00647BE0	FUN_00647be0	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT	/int	1	1	width_mismatch	{/int=1}	00647BE0 returns return of Library::DKW::TBL::FUN_006b5aa0 @ 00647BF4
 00647C80	FUN_00647c80	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
 00647CA0	FUN_00647ca0	return		<RETURN>	/undefined4	EAX:4	DEFAULT		0	0	no_evidence		-
 00647CE0	FUN_00647ce0	parameter	2	param_2	/undefined4	Stack[0x8]:4	DEFAULT		0	0	no_evidence		-
@@ -5724,7 +5584,6 @@ function_address	function	target_kind	target_ordinal	target_name	current_type	st
 00647D50	FUN_00647d50	return		<RETURN>	/undefined4	EAX:4	DEFAULT		0	0	no_evidence		-
 00647D90	FUN_00647d90	parameter	1	param_1	/undefined4	Stack[0x4]:4	DEFAULT		0	0	no_evidence		-
 00647D90	FUN_00647d90	parameter	2	param_2	/undefined4	Stack[0x8]:4	DEFAULT		0	0	no_evidence		-
-00647D90	FUN_00647d90	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
 00647ED0	FUN_00647ed0	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
 00648400	FUN_00648400	parameter	1	param_2	/undefined4	Stack[0x8]:4	DEFAULT		0	0	no_evidence		-
 006484F0	FUN_006484f0	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
@@ -5907,7 +5766,7 @@ function_address	function	target_kind	target_ordinal	target_name	current_type	st
 00661790	FUN_00661790	parameter	1	param_1	/undefined4	Stack[0x4]:4	DEFAULT		0	0	no_evidence		-
 00661790	FUN_00661790	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
 00661800	AiFltClassTy::sub_00661800	parameter	1	param_2	/undefined4	EDX:4	DEFAULT		0	0	no_evidence		-
-006618E0	AiFltClassTy::GoToRepair	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
+006618E0	AiFltClassTy::GoToRepair	return		<RETURN>	/undefined1	AL:1	DEFAULT		0	0	no_evidence		-
 00661CA0	AiFltClassTy::sub_00661CA0	parameter	1	param_2	/undefined4	EDX:4	DEFAULT		0	0	no_evidence		-
 00661CA0	AiFltClassTy::sub_00661CA0	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
 00664540	SubmarineTitans::Recovered::HiddenThis::AnonReceiver_00664540::FUN_00664540	return		<RETURN>	/undefined4	EAX:4	DEFAULT		0	0	no_evidence		-
@@ -5921,14 +5780,12 @@ function_address	function	target_kind	target_ordinal	target_name	current_type	st
 00668A30	FUN_00668a30	return		<RETURN>	/undefined4	EAX:4	DEFAULT		0	0	no_evidence		-
 00668A70	FUN_00668a70	return		<RETURN>	/undefined4	EAX:4	DEFAULT		0	0	no_evidence		-
 00668AA0	FUN_00668aa0	return		<RETURN>	/undefined4	EAX:4	DEFAULT		0	0	no_evidence		-
-0066AC80	FUN_0066ac80	parameter	0	param_1	/undefined4	Stack[0x4]:4	DEFAULT		0	0	no_evidence		-
 006728F0	FUN_006728f0	return		<RETURN>	/undefined4	EAX:4	DEFAULT		0	0	no_evidence		-
 00672930	FUN_00672930	return		<RETURN>	/undefined4	EAX:4	DEFAULT		0	0	no_evidence		-
 00672A30	FUN_00672a30	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
 00672A70	FUN_00672a70	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
 00672AF0	FUN_00672af0	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
 00672B30	FUN_00672b30	return		<RETURN>	/undefined1	AL:1	DEFAULT		0	0	no_evidence		-
-00673160	FUN_00673160	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT	/int	1	1	width_mismatch	{/int=1}	00673160 returns return of Library::MSVCRT::__strcmpi @ 00673174
 00673190	FUN_00673190	parameter	0	param_1	/undefined4	Stack[0x4]:4	DEFAULT		0	0	no_evidence		-
 00673190	FUN_00673190	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
 00673690	FUN_00673690	parameter	0	param_1	/undefined4	Stack[0x4]:4	DEFAULT		0	0	no_evidence		-
@@ -6000,7 +5857,6 @@ function_address	function	target_kind	target_ordinal	target_name	current_type	st
 00678890	FUN_00678890	return		<RETURN>	/undefined4	EAX:4	DEFAULT		0	0	no_evidence		-
 00678950	FUN_00678950	parameter	1	param_1	/undefined4	Stack[0x4]:4	DEFAULT		0	0	no_evidence		-
 00678950	FUN_00678950	parameter	2	param_2	/undefined4	Stack[0x8]:4	DEFAULT		0	0	no_evidence		-
-00678950	FUN_00678950	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
 00678D90	FUN_00678d90	return		<RETURN>	/undefined4	EAX:4	DEFAULT		0	0	no_evidence		-
 00678FC0	AiPlrClassTy::sub_00678FC0	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
 00679600	FUN_00679600	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
@@ -6014,14 +5870,14 @@ function_address	function	target_kind	target_ordinal	target_name	current_type	st
 0067A390	FUN_0067a390	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
 0067B210	FUN_0067b210	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
 0067B380	FUN_0067b380	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
-0067B520	AiPlrClassTy::ExecTech	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
+0067B520	AiPlrClassTy::ExecTech	return		<RETURN>	/undefined1	AL:1	DEFAULT		0	0	no_evidence		-
 0067BA50	FUN_0067ba50	return		<RETURN>	/undefined4	EAX:4	DEFAULT		0	0	no_evidence		-
 0067BE20	FUN_0067be20	parameter	1	param_2	/undefined4	EDX:4	DEFAULT		0	0	no_evidence		-
 0067BE20	FUN_0067be20	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
 0067BF60	FUN_0067bf60	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
 0067BFD0	AiPlrClassTy::sub_0067BFD0	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
 0067C110	AiPlrClassTy::sub_0067C110	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
-0067C180	AiPlrClassTy::Offensive	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
+0067C180	AiPlrClassTy::Offensive	return		<RETURN>	/undefined1	AL:1	DEFAULT		0	0	no_evidence		-
 0067CF30	FUN_0067cf30	parameter	1	param_2	/undefined2	Stack[0x8]:2	DEFAULT	/ushort	0	1	insufficient_independent_evidence	{/ushort=1}	00683C70 -> 0067CF30 @ 00685749; unproven partial register write at 00685739
 0067CF30	FUN_0067cf30	parameter	3	param_4	/undefined4	Stack[0x10]:4	DEFAULT		0	0	no_evidence		-
 0067D160	FUN_0067d160	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
@@ -6137,7 +5993,7 @@ function_address	function	target_kind	target_ordinal	target_name	current_type	st
 0068E910	FUN_0068e910	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
 0068E950	AiTactClassTy::ClaimSave	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
 0068EA40	AiTactClassTy::ClaimRestore	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
-0068EC70	AiTactClassTy::ExecClaim	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
+0068EC70	AiTactClassTy::ExecClaim	return		<RETURN>	/undefined1	AL:1	DEFAULT		0	0	no_evidence		-
 0068F360	AiTactClassTy::GiveObjByFltType	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
 0068F660	AiTactClassTy::GiveObjByGrpNum	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
 0068F7E0	AiTactClassTy::InitDistrObj	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
@@ -6292,14 +6148,7 @@ function_address	function	target_kind	target_ordinal	target_name	current_type	st
 006A3840	FUN_006a3840	parameter	6	param_7	/undefined4	Stack[0x1c]:4	DEFAULT		0	0	no_evidence		-
 006A3840	FUN_006a3840	return		<RETURN>	/undefined4	EAX:4	DEFAULT		0	0	no_evidence		-
 006A3930	FUN_006a3930	parameter	6	param_7	/undefined4	Stack[0x1c]:4	DEFAULT		0	0	no_evidence		-
-006A3BE0	FUN_006a3be0	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT	pointer:/int	1	1	width_mismatch	{pointer:/int=1}	006A3BE0 returns return of Library::MSVCRT::FUN_006a3c80 @ 006A3BFC
-006A3C10	FUN_006a3c10	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT	pointer:/int	1	1	width_mismatch	{pointer:/int=1}	006A3C10 returns return of Library::MSVCRT::FUN_006a3c80 @ 006A3C32
-006A3C50	FUN_006a3c50	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT	pointer:/int	1	1	width_mismatch	{pointer:/int=1}	006A3C50 returns return of Library::MSVCRT::FUN_006a3c80 @ 006A3C6A
-006A3D10	FUN_006a3d10	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT	pointer:/int	1	1	width_mismatch	{pointer:/int=1}	006A3D10 returns return of Library::MSVCRT::FUN_006a3d40 @ 006A3D26
 006A4090	FUN_006a4090	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
-006A4130	FUN_006a4130	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT	pointer:/int	1	1	width_mismatch	{pointer:/int=1}	006A4130 returns return of Library::MSVCRT::FUN_006a4160 @ 006A414A
-006A48E0	FUN_006a48e0	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
-006A4910	FUN_006a4910	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT	pointer:/int	1	1	width_mismatch	{pointer:/int=1}	006A4910 returns return of Library::MSVCRT::FUN_006a41e0 @ 006A4932
 006A4950	Library::MSVCRT::FUN_006a4950	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
 006A49C0	Library::MSVCRT::FUN_006a49c0	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
 006A4EF0	FUN_006a4ef0	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
@@ -6380,12 +6229,10 @@ function_address	function	target_kind	target_ordinal	target_name	current_type	st
 006B1CC0	FUN_006b1cc0	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
 006B1D20	FUN_006b1d20	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
 006B2020	FUN_006b2020	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
-006B2300	FUN_006b2300	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT	/int	1	1	width_mismatch	{/int=1}	006B2300 returns return of Library::DKW::DDX::FUN_006b1d50 @ 006B2329
 006B2330	FUN_006b2330	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
 006B23A0	FUN_006b23a0	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
 006B23E0	FUN_006b23e0	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
 006B2410	FUN_006b2410	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
-006B2560	FUN_006b2560	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT	/uint	1	1	width_mismatch	{/uint=1}	006B2560 returns return of FUN_006b2480 @ 006B257F
 006B2710	FUN_006b2710	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
 006B27B0	FUN_006b27b0	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
 006B2800	FUN_006b2800	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
@@ -6418,8 +6265,6 @@ function_address	function	target_kind	target_ordinal	target_name	current_type	st
 006B4447	Library::DKW::DDX::thunk_FUN_006b4563	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
 006B449D	Library::DKW::DDX::thunk_FUN_006b4563	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
 006B4563	Library::DKW::DDX::FUN_006b4563	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
-006B4640	FUN_006b4640	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT	/int	1	1	width_mismatch	{/int=1}	006B4640 returns return of Library::DKW::DDX::FUN_006b42d0 @ 006B466E
-006B48A0	FUN_006b48a0	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT	/int	1	1	width_mismatch	{/int=1}	006B48A0 returns return of Library::DKW::DDX::FUN_006b4680 @ 006B48D2
 006B4B20	FUN_006b4b20	return		<RETURN>	/undefined4	EAX:4	DEFAULT		0	0	no_evidence		-
 006B50C0	FUN_006b50c0	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		4	0	conflicting_evidence	{/uint=1, pointer:/ushort=3}	006B50C0 returns stored into /CursorClassTy+0x4d2 @ 00543710 | 006B50C0 returns stored into /IntercomPanelTy+0x19c @ 00521AA8 | 006B50C0 returns stored into /OptPanelTy+0x1e5 @ 0052E75C | 006B50C0 returns used as parameter 2 of FUN_006b2410 @ 00599A8C
 006B5110	Library::DKW::WGR::FUN_006b5110	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
@@ -6477,7 +6322,6 @@ function_address	function	target_kind	target_ordinal	target_name	current_type	st
 006B9940	Library::DKW::DDX::FUN_006b9940	parameter	1	param_2	/undefined4	Stack[0x8]:4	DEFAULT		0	0	no_evidence		-
 006B9940	Library::DKW::DDX::FUN_006b9940	parameter	2	param_3	/undefined4	Stack[0xc]:4	DEFAULT	/WinDef.h/HWND	0	1	insufficient_independent_evidence	{/WinDef.h/HWND=1}	006B9B20 -> 006B9940 @ 006B9B31; FUN_006b9b20 parameter param_2
 006B9AA0	FUN_006b9aa0	return		<RETURN>	/undefined4	EAX:4	DEFAULT		0	0	no_evidence		-
-006B9B20	FUN_006b9b20	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT	/int	1	1	width_mismatch	{/int=1}	006B9B20 returns return of Library::DKW::DDX::FUN_006b9940 @ 006B9B37
 006BA530	Library::DKW::DDX::FUN_006ba530	parameter	1	param_2	/undefined4	Stack[0x8]:4	DEFAULT		0	0	no_evidence		-
 006BA740	FUN_006ba740	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
 006BA760	FUN_006ba760	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
@@ -6515,8 +6359,8 @@ function_address	function	target_kind	target_ordinal	target_name	current_type	st
 006BF9F0	Library::DKW::DDX::FUN_006bf9f0	parameter	4	param_5	/undefined4	Stack[0x14]:4	DEFAULT		0	0	no_evidence		-
 006BF9F0	Library::DKW::DDX::FUN_006bf9f0	return		<RETURN>	/undefined4	EAX:4	DEFAULT		0	0	no_evidence		-
 006BFB30	FUN_006bfb30	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
-006BFB50	FUN_006bfb50	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
-006BFB70	FUN_006bfb70	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
+006BFB50	FUN_006bfb50	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT	pointer:/int	1	1	width_mismatch	{pointer:/int=1}	006BFB50 returns return of FUN_006a4130 @ 006BFB6D
+006BFB70	FUN_006bfb70	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT	pointer:/int	1	1	width_mismatch	{pointer:/int=1}	006BFB70 returns return of FUN_006a3be0 @ 006BFB89
 006BFBF0	FUN_006bfbf0	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
 006C0800	FUN_006c0800	parameter	2	param_3	/undefined4	Stack[0xc]:4	DEFAULT		0	0	no_evidence		-
 006C0800	FUN_006c0800	parameter	3	param_4	/undefined4	Stack[0x10]:4	DEFAULT		0	0	no_evidence		-
@@ -6528,7 +6372,6 @@ function_address	function	target_kind	target_ordinal	target_name	current_type	st
 006C0800	FUN_006c0800	parameter	9	param_10	/undefined4	Stack[0x28]:4	DEFAULT		0	0	no_evidence		-
 006C0800	FUN_006c0800	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
 006C08E0	FUN_006c08e0	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
-006C1390	FUN_006c1390	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT	/int	1	1	width_mismatch	{/int=1}	006C1390 returns return of Library::DKW::SND::FUN_006c0fb0 @ 006C13BF
 006C13D0	Library::DKW::SND::FUN_006c13d0	parameter	2	param_3	/undefined4	Stack[0xc]:4	DEFAULT		0	0	no_evidence		-
 006C13D0	Library::DKW::SND::FUN_006c13d0	return		<RETURN>	/undefined4	EAX:4	DEFAULT		0	0	no_evidence		-
 006C14B0	Library::DKW::SND::FUN_006c14b0	parameter	0	param_1	/undefined4	Stack[0x4]:4	DEFAULT		0	0	no_evidence		-
@@ -6558,7 +6401,6 @@ function_address	function	target_kind	target_ordinal	target_name	current_type	st
 006C2160	Library::DKW::SND::FUN_006c2160	parameter	6	param_7	/undefined4	Stack[0x1c]:4	DEFAULT		0	0	no_evidence		-
 006C2160	Library::DKW::SND::FUN_006c2160	parameter	7	param_8	/undefined4	Stack[0x20]:4	DEFAULT		0	0	no_evidence		-
 006C2160	Library::DKW::SND::FUN_006c2160	parameter	8	param_9	/undefined4	Stack[0x24]:4	DEFAULT		0	0	no_evidence		-
-006C21E0	FUN_006c21e0	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT	/int	1	1	width_mismatch	{/int=1}	006C21E0 returns return of Library::DKW::SND::FUN_006c0fb0 @ 006C221A
 006C2220	Library::DKW::SND::FUN_006c2220	parameter	1	param_2	/undefined4	Stack[0x8]:4	DEFAULT		0	0	no_evidence		-
 006C2220	Library::DKW::SND::FUN_006c2220	parameter	2	param_3	/undefined4	Stack[0xc]:4	DEFAULT		0	0	no_evidence		-
 006C2220	Library::DKW::SND::FUN_006c2220	parameter	3	param_4	/undefined4	Stack[0x10]:4	DEFAULT		0	0	no_evidence		-
@@ -6642,7 +6484,6 @@ function_address	function	target_kind	target_ordinal	target_name	current_type	st
 006C7E90	FUN_006c7e90	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
 006C7EA0	FUN_006c7ea0	parameter	1	param_2	/undefined4	Stack[0x8]:4	DEFAULT		0	0	no_evidence		-
 006C7F10	FUN_006c7f10	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
-006C8290	FUN_006c8290	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT	/uint	1	1	width_mismatch	{/uint=1}	006C8290 returns return of FUN_006c82bb @ 006C82A2
 006C82BB	FUN_006c82bb	parameter	0	param_1	/undefined4	ECX:4	DEFAULT		0	0	no_evidence		-
 006C8910	FUN_006c8910	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT	pointer:/byte	1	1	width_mismatch	{pointer:/byte=1}	006C8910 returns used as parameter 1 of FUN_00680890 @ 00680A54
 006C8E20	Library::DKW::FIO::FUN_006c8e20	return		<RETURN>	/undefined4	EAX:4	DEFAULT		0	0	no_evidence		-
@@ -6675,7 +6516,6 @@ function_address	function	target_kind	target_ordinal	target_name	current_type	st
 006D0680	FUN_006d0680	return		<RETURN>	/undefined4	EAX:4	DEFAULT		0	0	no_evidence		-
 006D07D0	FUN_006d07d0	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
 006D0820	FUN_006d0820	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
-006D0CC0	FUN_006d0cc0	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT	/int	1	1	width_mismatch	{/int=1}	006D0CC0 returns return of Library::DKW::DDX::FUN_006d0a20 @ 006D0CE9
 006D0CF0	FUN_006d0cf0	return		<RETURN>	/undefined4	EAX:4	DEFAULT		0	0	no_evidence		-
 006D11F0	FUN_006d11f0	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
 006D1250	FUN_006d1250	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
@@ -6744,9 +6584,7 @@ function_address	function	target_kind	target_ordinal	target_name	current_type	st
 006D6160	FUN_006d6160	parameter	3	param_3	/undefined4	Stack[0xc]:4	DEFAULT		0	0	no_evidence		-
 006D6160	FUN_006d6160	parameter	4	param_4	/undefined4	Stack[0x10]:4	DEFAULT		0	0	no_evidence		-
 006D6160	FUN_006d6160	parameter	5	param_5	/undefined4	Stack[0x14]:4	DEFAULT		0	0	no_evidence		-
-006D61C0	FUN_006d61c0	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
 006D61E0	FUN_006d61e0	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
-006D6250	FUN_006d6250	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT	/int	1	1	width_mismatch	{/int=1}	006D6250 returns return of FUN_00748dae @ 006D6261
 006D6270	FUN_006d6270	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
 006D7000	FUN_006d7000	return		<RETURN>	/undefined4	EAX:4	DEFAULT		0	0	no_evidence		-
 006D7060	FUN_006d7060	parameter	1	param_1	/undefined4	Stack[0x4]:4	DEFAULT		0	0	no_evidence		-
@@ -6766,7 +6604,6 @@ function_address	function	target_kind	target_ordinal	target_name	current_type	st
 006D71D0	FUN_006d71d0	return		<RETURN>	/undefined4	EAX:4	DEFAULT		0	0	no_evidence		-
 006D7310	FUN_006d7310	parameter	0	param_1	/undefined4	Stack[0x4]:4	DEFAULT		0	0	no_evidence		-
 006D7310	FUN_006d7310	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
-006D7330	FUN_006d7330	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT	/int	1	1	width_mismatch	{/int=1}	006D7330 returns return of FUN_0074ceb2 @ 006D7343
 006D7380	FUN_006d7380	return		<RETURN>	/undefined4	EAX:4	DEFAULT		0	0	no_evidence		-
 006D7430	FUN_006d7430	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
 006D7440	FUN_006d7440	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
@@ -6802,12 +6639,10 @@ function_address	function	target_kind	target_ordinal	target_name	current_type	st
 006DAD00	Library::DKW::DDX::FUN_006dad00	parameter	10	param_11	/undefined1	Stack[0x2c]:1	DEFAULT		0	0	no_evidence		-
 006DAEA0	FUN_006daea0	parameter	5	param_6	/undefined4	Stack[0x18]:4	DEFAULT		0	0	no_evidence		-
 006DAEA0	FUN_006daea0	parameter	6	param_7	/undefined1	Stack[0x1c]:1	DEFAULT		0	0	no_evidence		-
-006DAEA0	FUN_006daea0	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT	/int	1	1	width_mismatch	{/int=1}	006DAEA0 returns return of Library::DKW::DDX::FUN_006dad00 @ 006DAECB
 006DB0D0	FUN_006db0d0	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
 006DB1F0	FUN_006db1f0	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
 006DB610	FUN_006db610	return		<RETURN>	/undefined4	EAX:4	DEFAULT		0	0	no_evidence		-
 006DB630	FUN_006db630	return		<RETURN>	/undefined4	EAX:4	DEFAULT		0	0	no_evidence		-
-006DB6D0	FUN_006db6d0	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT	/int	1	1	width_mismatch	{/int=1}	006DB6D0 returns return of Library::DKW::STR::FUN_006db640 @ 006DB6E0
 006DBAB0	ST3DSMAPContext::sub_006DBAB0	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
 006DBCA0	FUN_006dbca0	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
 006DBD20	ST3DSMAPContext::sub_006DBD20	parameter	1	param_2	/undefined4	Stack[0x4]:4	DEFAULT		0	0	no_evidence		-
@@ -6857,18 +6692,15 @@ function_address	function	target_kind	target_ordinal	target_name	current_type	st
 006E3970	AppClassTy::DeleteObject	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
 006E3A70	FUN_006e3a70	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
 006E3A90	FUN_006e3a90	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
-006E3DB0	FUN_006e3db0	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT	/int	1	1	width_mismatch	{/int=1}	006E3DB0 returns return of AppClassTy::SendMessage @ 006E3DC5
 006E4290	FUN_006e4290	parameter	0	param_1	/undefined4	Stack[0x4]:4	DEFAULT		0	0	no_evidence		-
 006E4290	FUN_006e4290	parameter	1	param_2	/undefined4	Stack[0x8]:4	DEFAULT		0	0	no_evidence		-
 006E4290	FUN_006e4290	parameter	2	param_3	/undefined4	Stack[0xc]:4	DEFAULT		0	0	no_evidence		-
 006E4290	FUN_006e4290	parameter	3	param_4	/undefined4	Stack[0x10]:4	DEFAULT		0	0	no_evidence		-
-006E4290	FUN_006e4290	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT	/int	1	1	width_mismatch	{/int=1}	006E4290 returns return of AppClassTy::AddDecodeMessage @ 006E42BA
 006E42C0	FUN_006e42c0	return		<RETURN>	/undefined4	EAX:4	DEFAULT		0	0	no_evidence		-
 006E4340	FUN_006e4340	parameter	2	param_2	/undefined4	Stack[0x8]:4	DEFAULT		0	0	no_evidence		-
 006E4340	FUN_006e4340	parameter	3	param_3	/undefined4	Stack[0xc]:4	DEFAULT		0	0	no_evidence		-
 006E4340	FUN_006e4340	parameter	4	param_4	/undefined4	Stack[0x10]:4	DEFAULT		0	0	no_evidence		-
 006E4340	FUN_006e4340	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
-006E45A0	FUN_006e45a0	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT	/int	1	1	width_mismatch	{/int=1}	006E45A0 returns return of FUN_006e4540 @ 006E45B1
 006E45C0	FUN_006e45c0	return		<RETURN>	/undefined4	EAX:4	DEFAULT		0	0	no_evidence		-
 006E4620	FUN_006e4620	return		<RETURN>	/undefined4	EAX:4	DEFAULT		0	0	no_evidence		-
 006E4B80	FUN_006e4b80	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
@@ -6895,21 +6727,14 @@ function_address	function	target_kind	target_ordinal	target_name	current_type	st
 006E56B0	StartSystemTy::sub_006E56B0	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
 006E5740	FUN_006e5740	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
 006E57B0	STPlaySystemC::sub_006E57B0	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
-006E5950	FUN_006e5950	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT	/int	1	1	width_mismatch	{/int=1}	006E5950 returns return of SystemClassTy::SendMessage @ 006E5965
 006E5C70	SystemClassTy::GetToAllObjects	parameter	1	param_1	/undefined4	Stack[0x4]:4	DEFAULT		0	0	no_evidence		-
 006E5FB0	sub_006E5FB0	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
-006E5FE0	FUN_006e5fe0	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
 006E6000	FUN_006e6000	parameter	1	param_1	/undefined4	Stack[0x4]:4	DEFAULT		0	0	no_evidence		-
 006E6000	FUN_006e6000	parameter	2	param_2	/undefined4	Stack[0x8]:4	DEFAULT		0	0	no_evidence		-
-006E6000	FUN_006e6000	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
-006E6020	FUN_006e6020	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT	/int	1	1	width_mismatch	{/int=1}	006E6020 returns return of AppClassTy::PostMessage @ 006E603C
-006E6040	FUN_006e6040	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT	/int	1	1	width_mismatch	{/int=1}	006E6040 returns return of AppClassTy::PostNextMessage @ 006E605C
 006E6060	FUN_006e6060	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
 006E6080	FUN_006e6080	parameter	1	param_1	/undefined4	Stack[0x4]:4	DEFAULT		0	0	no_evidence		-
 006E6080	FUN_006e6080	parameter	2	param_2	/undefined4	Stack[0x8]:4	DEFAULT		0	0	no_evidence		-
 006E6080	FUN_006e6080	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
-006E60A0	sub_006E60A0	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT	/int	1	1	width_mismatch	{/int=1}	006E60A0 returns return of SystemClassTy::PostMessage @ 006E60BC
-006E60C0	FUN_006e60c0	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT	/int	1	1	width_mismatch	{/int=1}	006E60C0 returns return of SystemClassTy::PostNextMessage @ 006E60DC
 006E6100	SystemWithNamedObjClassTy::SystemWithNamedObjClassTy	parameter	1	param_1	/undefined4	Stack[0x4]:4	DEFAULT		0	0	no_evidence		-
 006E6100	SystemWithNamedObjClassTy::SystemWithNamedObjClassTy	parameter	2	param_2	/undefined4	Stack[0x8]:4	DEFAULT		0	0	no_evidence		-
 006E6130	FUN_006e6130	parameter	1	param_1	/undefined4	Stack[0x4]:4	DEFAULT		0	0	no_evidence		-
@@ -7122,16 +6947,8 @@ function_address	function	target_kind	target_ordinal	target_name	current_type	st
 0070A870	Library::Ourlib::MFIMG::mfImgGetTransp	parameter	0	param_1	/undefined4	Stack[0x4]:4	DEFAULT		0	0	no_evidence		-
 0070A930	Library::Ourlib::MFIMG::mfImgGetNumIms	parameter	0	param_1	/undefined4	Stack[0x4]:4	DEFAULT		0	0	no_evidence		-
 0070A9F0	FUN_0070a9f0	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		9	0	conflicting_evidence	{/int=1, pointer:/ushort=8}	0070A9F0 returns return of Library::Ourlib::MFIMG::mfImgLoad @ 0070AA0E | 0070A9F0 returns stored into /StartSystemTy+0x2c @ 0059100F | 0070A9F0 returns stored into /StartSystemTy+0x2c @ 00595F1D | 0070A9F0 returns stored into /StartSystemTy+0x2c @ 005AB579 | 0070A9F0 returns stored into /StartSystemTy+0x2c @ 005B2CBC | 0070A9F0 returns stored into /StartSystemTy+0x2c @ 005B9BE5 | 0070A9F0 returns stored into /StartSystemTy+0x2c @ 005C2B9F | 0070A9F0 returns stored into /StartSystemTy+0x2c @ 005E6846 | 0070A9F0 returns used as parameter 1 of ccFntTy::SetSurf @ 004F592D
-0070AA10	FUN_0070aa10	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT	pointer:/ushort	1	1	width_mismatch	{pointer:/ushort=1}	0070AA10 returns return of Library::Ourlib::MFIMG::mfImgLoad @ 0070AA2E
-0070AA30	FUN_0070aa30	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT	pointer:/ushort	1	1	width_mismatch	{pointer:/ushort=1}	0070AA30 returns return of Library::Ourlib::MFIMG::mfImgLoad @ 0070AA4E
-0070AA50	FUN_0070aa50	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT	pointer:/ushort	1	1	width_mismatch	{pointer:/ushort=1}	0070AA50 returns return of Library::Ourlib::MFIMG::mfImgLoad @ 0070AA6E
-0070AA70	FUN_0070aa70	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT	pointer:/ushort	1	1	width_mismatch	{pointer:/ushort=1}	0070AA70 returns return of Library::Ourlib::MFIMG::mfImgLoad @ 0070AA8E
-0070AA90	FUN_0070aa90	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT	pointer:/ushort	1	1	width_mismatch	{pointer:/ushort=1}	0070AA90 returns return of Library::Ourlib::MFIMG::mfImgLoad @ 0070AAAE
-0070AAB0	FUN_0070aab0	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT	pointer:/ushort	1	1	width_mismatch	{pointer:/ushort=1}	0070AAB0 returns return of Library::Ourlib::MFIMG::mfImgLoad @ 0070AACE
 0070AAD0	Library::Ourlib::MFIMG::mfGifLoadToDib	parameter	0	param_1	/undefined4	Stack[0x4]:4	DEFAULT		0	0	no_evidence		-
-0070ABF0	FUN_0070abf0	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT	pointer:/ushort	1	1	width_mismatch	{pointer:/ushort=1}	0070ABF0 returns return of Library::Ourlib::MFIMG::mfImgLoad @ 0070AC0E
 0070AC10	Library::Ourlib::MFIMG::mfPcxLoadToDib	parameter	0	param_1	/undefined4	Stack[0x4]:4	DEFAULT		0	0	no_evidence		-
-0070AD40	FUN_0070ad40	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT	pointer:/ushort	1	1	width_mismatch	{pointer:/ushort=1}	0070AD40 returns return of Library::Ourlib::MFIMG::mfImgLoad @ 0070AD5E
 0070AD60	Library::Ourlib::MFIMG::mfJpgLoadToDib	parameter	0	param_1	/undefined4	Stack[0x4]:4	DEFAULT		0	0	no_evidence		-
 0070AD60	Library::Ourlib::MFIMG::mfJpgLoadToDib	return		<RETURN>	/undefined4	EAX:4	DEFAULT		0	0	no_evidence		-
 0070B220	Library::Ourlib::MFIMG::mfImtGetNumIms	parameter	0	param_1	/undefined4	Stack[0x4]:4	DEFAULT		0	0	no_evidence		-
@@ -7143,7 +6960,6 @@ function_address	function	target_kind	target_ordinal	target_name	current_type	st
 0070B410	FUN_0070b410	return		<RETURN>	/undefined4	EAX:4	DEFAULT		0	0	no_evidence		-
 0070B600	FUN_0070b600	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
 0070B630	FUN_0070b630	parameter	0	param_1	/undefined4	Stack[0x4]:4	DEFAULT		0	0	no_evidence		-
-0070B630	FUN_0070b630	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT	/int	1	1	width_mismatch	{/int=1}	0070B630 returns return of Library::Ourlib::MFIMG::mfImgGetNumIms @ 0070B64C
 0070B670	FUN_0070b670	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
 0070B680	FUN_0070b680	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
 0070B690	FUN_0070b690	return		<RETURN>	/undefined4	EAX:4	DEFAULT		0	0	no_evidence		-
@@ -7576,13 +7392,13 @@ function_address	function	target_kind	target_ordinal	target_name	current_type	st
 0074748E	FUN_0074748e	return		<RETURN>	/undefined4	EAX:4	DEFAULT		0	0	no_evidence		-
 00747603	FUN_00747603	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
 00747622	FUN_00747622	return		<RETURN>	/undefined4	EAX:4	DEFAULT		0	0	no_evidence		-
-0074766E	FUN_0074766e	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT	/winnt.h/LONG	1	1	width_mismatch	{/winnt.h/LONG=1}	0074766E returns return of KERNEL32.DLL::InterlockedIncrement @ 0074767C
+0074766E	FUN_0074766e	return		<RETURN>	/undefined1	AL:1	DEFAULT	/winnt.h/LONG	1	1	width_mismatch	{/winnt.h/LONG=1}	0074766E returns return of KERNEL32.DLL::InterlockedIncrement @ 0074767C
 007476A9	FUN_007476a9	return		<RETURN>	/undefined4	EAX:4	DEFAULT		0	0	no_evidence		-
 007477EA	FUN_007477ea	return		<RETURN>	/undefined4	EAX:4	DEFAULT		0	0	no_evidence		-
 0074784F	FUN_0074784f	return		<RETURN>	/undefined4	EAX:4	DEFAULT		0	0	no_evidence		-
 007478D8	FUN_007478d8	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
 007478EB	FUN_007478eb	return		<RETURN>	/undefined4	EAX:4	DEFAULT		0	0	no_evidence		-
-00747937	FUN_00747937	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT	/winnt.h/LONG	1	1	width_mismatch	{/winnt.h/LONG=1}	00747937 returns return of KERNEL32.DLL::InterlockedIncrement @ 00747945
+00747937	FUN_00747937	return		<RETURN>	/undefined1	AL:1	DEFAULT	/winnt.h/LONG	1	1	width_mismatch	{/winnt.h/LONG=1}	00747937 returns return of KERNEL32.DLL::InterlockedIncrement @ 00747945
 00747972	FUN_00747972	return		<RETURN>	/undefined4	EAX:4	DEFAULT		0	0	no_evidence		-
 00747AF8	FUN_00747af8	return		<RETURN>	/undefined4	EAX:4	DEFAULT		0	0	no_evidence		-
 00747B12	FUN_00747b12	parameter	1	param_1	/undefined4	Stack[0x4]:4	DEFAULT		0	0	no_evidence		-
@@ -7657,7 +7473,6 @@ function_address	function	target_kind	target_ordinal	target_name	current_type	st
 00748A83	FUN_00748a83	parameter	5	param_5	/undefined4	Stack[0x14]:4	DEFAULT		0	0	no_evidence		-
 00748A83	FUN_00748a83	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
 00748AE7	FUN_00748ae7	return		<RETURN>	/undefined4	EAX:4	DEFAULT		0	0	no_evidence		-
-00748B37	FUN_00748b37	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT	/winnt.h/LONG	1	1	width_mismatch	{/winnt.h/LONG=1}	00748B37 returns return of KERNEL32.DLL::InterlockedIncrement @ 00748B45
 00748BAE	FUN_00748bae	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
 00748BC0	FUN_00748bc0	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
 00748BCA	FUN_00748bca	return		<RETURN>	/undefined4	EAX:4	DEFAULT		0	0	no_evidence		-
@@ -7891,7 +7706,6 @@ function_address	function	target_kind	target_ordinal	target_name	current_type	st
 0074E4DA	FUN_0074e4da	parameter	2	param_3	/undefined4	Stack[0xc]:4	DEFAULT		0	0	no_evidence		-
 0074E4DA	FUN_0074e4da	parameter	3	param_4	/undefined4	Stack[0x10]:4	DEFAULT		0	0	no_evidence		-
 0074E4DA	FUN_0074e4da	parameter	5	param_6	/undefined4	Stack[0x18]:4	DEFAULT		0	0	no_evidence		-
-0074E4DA	FUN_0074e4da	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT	/uint	1	1	width_mismatch	{/uint=1}	0074E4DA returns return of FUN_0074e40e @ 0074E4FB
 0074E4FE	FUN_0074e4fe	parameter	1	param_2	/undefined4	Stack[0x8]:4	DEFAULT		0	0	no_evidence		-
 0074E4FE	FUN_0074e4fe	parameter	3	param_4	/undefined4	Stack[0x10]:4	DEFAULT		0	0	no_evidence		-
 0074E4FE	FUN_0074e4fe	parameter	4	param_5	/undefined4	Stack[0x14]:4	DEFAULT		0	0	no_evidence		-
@@ -7905,7 +7719,6 @@ function_address	function	target_kind	target_ordinal	target_name	current_type	st
 0074E5FE	FUN_0074e5fe	parameter	2	param_3	/undefined4	Stack[0xc]:4	DEFAULT		0	0	no_evidence		-
 0074E5FE	FUN_0074e5fe	parameter	3	param_4	/undefined4	Stack[0x10]:4	DEFAULT		0	0	no_evidence		-
 0074E5FE	FUN_0074e5fe	parameter	5	param_6	/undefined4	Stack[0x18]:4	DEFAULT		0	0	no_evidence		-
-0074E5FE	FUN_0074e5fe	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT	/uint	1	1	width_mismatch	{/uint=1}	0074E5FE returns return of FUN_0074e40e @ 0074E61F
 0074E622	FUN_0074e622	parameter	1	param_2	/undefined4	Stack[0x8]:4	DEFAULT		0	0	no_evidence		-
 0074E622	FUN_0074e622	parameter	3	param_4	/undefined4	Stack[0x10]:4	DEFAULT		0	0	no_evidence		-
 0074E622	FUN_0074e622	parameter	4	param_5	/undefined4	Stack[0x14]:4	DEFAULT		0	0	no_evidence		-
@@ -7917,12 +7730,11 @@ function_address	function	target_kind	target_ordinal	target_name	current_type	st
 0074E6A1	FUN_0074e6a1	parameter	1	param_1	/undefined4	Stack[0x4]:4	DEFAULT		0	0	no_evidence		-
 0074E6BE	FUN_0074e6be	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
 0074E6F6	FUN_0074e6f6	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
-0074E70A	FUN_0074e70a	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT	/uint	1	1	width_mismatch	{/uint=1}	0074E70A returns return of FUN_0074e337 @ 0074E728
+0074E70A	FUN_0074e70a	return		<RETURN>	/undefined1	AL:1	DEFAULT	/uint	1	1	width_mismatch	{/uint=1}	0074E70A returns return of FUN_0074e337 @ 0074E728
 0074E72B	FUN_0074e72b	parameter	1	param_2	/undefined4	Stack[0x8]:4	DEFAULT		0	0	no_evidence		-
 0074E72B	FUN_0074e72b	parameter	2	param_3	/undefined4	Stack[0xc]:4	DEFAULT		0	0	no_evidence		-
 0074E72B	FUN_0074e72b	parameter	3	param_4	/undefined4	Stack[0x10]:4	DEFAULT		0	0	no_evidence		-
 0074E72B	FUN_0074e72b	parameter	5	param_6	/undefined4	Stack[0x18]:4	DEFAULT		0	0	no_evidence		-
-0074E72B	FUN_0074e72b	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT	/uint	1	1	width_mismatch	{/uint=1}	0074E72B returns return of FUN_0074e40e @ 0074E74C
 0074E74F	FUN_0074e74f	parameter	1	param_2	/undefined4	Stack[0x8]:4	DEFAULT		0	0	no_evidence		-
 0074E74F	FUN_0074e74f	parameter	3	param_4	/undefined4	Stack[0x10]:4	DEFAULT		0	0	no_evidence		-
 0074E74F	FUN_0074e74f	parameter	4	param_5	/undefined4	Stack[0x14]:4	DEFAULT		0	0	no_evidence		-
@@ -7956,9 +7768,9 @@ function_address	function	target_kind	target_ordinal	target_name	current_type	st
 0074EB07	FUN_0074eb07	parameter	2	param_3	/undefined4	Stack[0xc]:4	DEFAULT		0	0	no_evidence		-
 0074EB3C	FUN_0074eb3c	parameter	2	param_2	/undefined4	Stack[0x8]:4	DEFAULT		0	0	no_evidence		-
 0074EB6B	FUN_0074eb6b	parameter	1	param_2	/undefined4	Stack[0x8]:4	DEFAULT		0	0	no_evidence		-
-0074EB99	FUN_0074eb99	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT	/int	1	1	width_mismatch	{/int=1}	0074EB99 returns return of FUN_0074eb3c @ 0074EBAB
-0074EBAE	FUN_0074ebae	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT	/int	1	1	width_mismatch	{/int=1}	0074EBAE returns return of FUN_0074eb3c @ 0074EBC0
-0074EBC3	FUN_0074ebc3	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT	/int	1	1	width_mismatch	{/int=1}	0074EBC3 returns return of FUN_0074eb3c @ 0074EBD5
+0074EB99	FUN_0074eb99	return		<RETURN>	/undefined1	AL:1	DEFAULT	/int	1	1	width_mismatch	{/int=1}	0074EB99 returns return of FUN_0074eb3c @ 0074EBAB
+0074EBAE	FUN_0074ebae	return		<RETURN>	/undefined1	AL:1	DEFAULT	/int	1	1	width_mismatch	{/int=1}	0074EBAE returns return of FUN_0074eb3c @ 0074EBC0
+0074EBC3	FUN_0074ebc3	return		<RETURN>	/undefined1	AL:1	DEFAULT	/int	1	1	width_mismatch	{/int=1}	0074EBC3 returns return of FUN_0074eb3c @ 0074EBD5
 0074EBD8	FUN_0074ebd8	parameter	1	param_2	/undefined4	Stack[0x8]:4	DEFAULT		0	0	no_evidence		-
 0074EBD8	FUN_0074ebd8	parameter	2	param_3	/undefined4	Stack[0xc]:4	DEFAULT		0	0	no_evidence		-
 0074EC0D	FUN_0074ec0d	parameter	1	param_2	/undefined4	Stack[0x8]:4	DEFAULT		0	0	no_evidence		-
@@ -8002,7 +7814,6 @@ function_address	function	target_kind	target_ordinal	target_name	current_type	st
 0074F7E9	FUN_0074f7e9	parameter	2	param_3	/undefined4	Stack[0xc]:4	DEFAULT		0	0	no_evidence		-
 0074F7E9	FUN_0074f7e9	parameter	3	param_4	/undefined4	Stack[0x10]:4	DEFAULT		0	0	no_evidence		-
 0074F7E9	FUN_0074f7e9	parameter	5	param_6	/undefined4	Stack[0x18]:4	DEFAULT		0	0	no_evidence		-
-0074F7E9	FUN_0074f7e9	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT	/uint	1	1	width_mismatch	{/uint=1}	0074F7E9 returns return of FUN_0074e40e @ 0074F80A
 0074F80D	FUN_0074f80d	parameter	1	param_2	/undefined4	Stack[0x8]:4	DEFAULT		0	0	no_evidence		-
 0074F80D	FUN_0074f80d	parameter	3	param_4	/undefined4	Stack[0x10]:4	DEFAULT		0	0	no_evidence		-
 0074F80D	FUN_0074f80d	parameter	4	param_5	/undefined4	Stack[0x14]:4	DEFAULT		0	0	no_evidence		-
@@ -8016,7 +7827,6 @@ function_address	function	target_kind	target_ordinal	target_name	current_type	st
 0074F8F9	FUN_0074f8f9	parameter	2	param_3	/undefined4	Stack[0xc]:4	DEFAULT		0	0	no_evidence		-
 0074F8F9	FUN_0074f8f9	parameter	3	param_4	/undefined4	Stack[0x10]:4	DEFAULT		0	0	no_evidence		-
 0074F8F9	FUN_0074f8f9	parameter	5	param_6	/undefined4	Stack[0x18]:4	DEFAULT		0	0	no_evidence		-
-0074F8F9	FUN_0074f8f9	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT	/uint	1	1	width_mismatch	{/uint=1}	0074F8F9 returns return of FUN_0074e40e @ 0074F91A
 0074F91D	FUN_0074f91d	parameter	1	param_2	/undefined4	Stack[0x8]:4	DEFAULT		0	0	no_evidence		-
 0074F91D	FUN_0074f91d	parameter	3	param_4	/undefined4	Stack[0x10]:4	DEFAULT		0	0	no_evidence		-
 0074F91D	FUN_0074f91d	parameter	4	param_5	/undefined4	Stack[0x14]:4	DEFAULT		0	0	no_evidence		-
@@ -8030,7 +7840,6 @@ function_address	function	target_kind	target_ordinal	target_name	current_type	st
 0074FA1D	FUN_0074fa1d	parameter	2	param_3	/undefined4	Stack[0xc]:4	DEFAULT		0	0	no_evidence		-
 0074FA1D	FUN_0074fa1d	parameter	3	param_4	/undefined4	Stack[0x10]:4	DEFAULT		0	0	no_evidence		-
 0074FA1D	FUN_0074fa1d	parameter	5	param_6	/undefined4	Stack[0x18]:4	DEFAULT		0	0	no_evidence		-
-0074FA1D	FUN_0074fa1d	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT	/uint	1	1	width_mismatch	{/uint=1}	0074FA1D returns return of FUN_0074e40e @ 0074FA3E
 0074FA41	FUN_0074fa41	parameter	1	param_2	/undefined4	Stack[0x8]:4	DEFAULT		0	0	no_evidence		-
 0074FA41	FUN_0074fa41	parameter	3	param_4	/undefined4	Stack[0x10]:4	DEFAULT		0	0	no_evidence		-
 0074FA41	FUN_0074fa41	parameter	4	param_5	/undefined4	Stack[0x14]:4	DEFAULT		0	0	no_evidence		-
@@ -8081,7 +7890,6 @@ function_address	function	target_kind	target_ordinal	target_name	current_type	st
 00750FB0	FUN_00750fb0	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
 00751140	FUN_00751140	parameter	2	param_3	/undefined4	Stack[0xc]:4	DEFAULT		0	0	no_evidence		-
 00751140	FUN_00751140	parameter	3	param_4	/undefined4	Stack[0x10]:4	DEFAULT		0	0	no_evidence		-
-00751140	FUN_00751140	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT	/int	1	1	width_mismatch	{/int=1}	00751140 returns return of FUN_00753f10 @ 00751160
 007514F0	Library::DKW::PK::FUN_007514f0	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
 007515E0	Library::DKW::PK::FUN_007515e0	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
 00751B10	FUN_00751b10	return		<RETURN>	/undefined4	EAX:4	DEFAULT		0	0	no_evidence		-
@@ -8090,11 +7898,8 @@ function_address	function	target_kind	target_ordinal	target_name	current_type	st
 00751E70	Library::DKW::JPG::FUN_00751e70	return		<RETURN>	/undefined4	EAX:4	DEFAULT		0	0	no_evidence		-
 00751F30	Library::DKW::GPC::FUN_00751f30	parameter	0	param_1	/undefined4	Stack[0x4]:4	DEFAULT		0	0	no_evidence		-
 00751FC0	Library::DKW::GPC::FUN_00751fc0	parameter	0	param_1	/undefined4	Stack[0x4]:4	DEFAULT		0	0	no_evidence		-
-00752060	FUN_00752060	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT	/winnt.h/LONG	1	1	width_mismatch	{/winnt.h/LONG=1}	00752060 returns return of KERNEL32.DLL::_llseek @ 00752075
-00752080	FUN_00752080	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT	/winnt.h/LONG	1	1	width_mismatch	{/winnt.h/LONG=1}	00752080 returns return of KERNEL32.DLL::_llseek @ 00752097
 007521B0	FUN_007521b0	return		<RETURN>	/undefined4	EAX:4	DEFAULT		0	0	no_evidence		-
 00752CF0	FUN_00752cf0	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
-00752E10	FUN_00752e10	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT	/int	1	1	width_mismatch	{/int=1}	00752E10 returns return of Library::DKW::DDX::FUN_006c53b0 @ 00752E33
 00753020	FUN_00753020	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
 00753050	FUN_00753050	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
 007530F0	FUN_007530f0	parameter	3	param_4	/undefined4	Stack[0x10]:4	DEFAULT		0	0	no_evidence		-
@@ -8102,7 +7907,6 @@ function_address	function	target_kind	target_ordinal	target_name	current_type	st
 00753300	Library::DKW::DB::FUN_00753300	parameter	2	param_3	/undefined2	Stack[0xc]:2	DEFAULT	/ushort	0	1	insufficient_independent_evidence	{/ushort=1}	00750970 -> 00753300 @ 00750985; literal 0 at 00750981
 00753300	Library::DKW::DB::FUN_00753300	parameter	4	param_5	/undefined4	Stack[0x14]:4	DEFAULT		0	0	no_evidence		-
 007537C0	Library::DKW::DB::FUN_007537c0	parameter	2	param_3	/undefined2	Stack[0xc]:2	DEFAULT		0	0	no_evidence		-
-00753AE0	FUN_00753ae0	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT	pointer:/int	1	1	width_mismatch	{pointer:/int=1}	00753AE0 returns return of Library::DKW::DB::FUN_00753920 @ 00753AF5
 00753B00	FUN_00753b00	parameter	2	param_3	/undefined2	Stack[0xc]:2	DEFAULT		0	0	no_evidence		-
 00753B00	FUN_00753b00	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
 00753B80	FUN_00753b80	parameter	1	param_2	/undefined4	Stack[0x8]:4	DEFAULT		0	0	no_evidence		-
@@ -8323,10 +8127,8 @@ function_address	function	target_kind	target_ordinal	target_name	current_type	st
 0075FFF0	FUN_0075fff0	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
 00760100	FUN_00760100	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
 007602E0	FUN_007602e0	parameter	0	param_1	/undefined4	Stack[0x4]:4	DEFAULT		0	0	no_evidence		-
-007602E0	FUN_007602e0	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
 00760300	FUN_00760300	parameter	0	param_1	/undefined4	Stack[0x4]:4	DEFAULT		0	0	no_evidence		-
 00760320	FUN_00760320	parameter	0	param_1	/undefined4	Stack[0x4]:4	DEFAULT		0	0	no_evidence		-
-00760320	FUN_00760320	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
 00760340	FUN_00760340	parameter	0	param_1	/undefined4	Stack[0x4]:4	DEFAULT		0	0	no_evidence		-
 00760340	FUN_00760340	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
 00760360	FUN_00760360	parameter	0	param_1	/undefined4	Stack[0x4]:4	DEFAULT		0	0	no_evidence		-
@@ -8342,4 +8144,3 @@ function_address	function	target_kind	target_ordinal	target_name	current_type	st
 00761550	FUN_00761550	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
 00761770	FUN_00761770	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
 00761960	FUN_00761960	return		<RETURN>	/undefined4	EAX:4	DEFAULT		0	0	no_evidence		-
-00761A00	FUN_00761a00	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT	/int	1	1	width_mismatch	{/int=1}	00761A00 returns return of FID_conflict:_remove @ 00761A10

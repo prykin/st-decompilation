@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 void __fastcall FUN_0058bd90(AnonShape_0058BD90_DCBCF849 *param_1)
 
@@ -187,12 +189,8 @@ switchD_0058bec9_caseD_0:
      ((sVar6 < 0 ||
       ((((g_worldGrid.sizeY <= sVar6 || (sVar7 = (short)iVar2, sVar7 < 0)) ||
         (g_worldGrid.sizeZ <= sVar7)) ||
-       ((g_worldGrid.cells
-         [(int)g_worldGrid.planeStride * (int)sVar7 + (int)g_worldGrid.sizeX * (int)sVar6 +
-          (int)sVar5].objects[0] == nullptr ||
-        (g_worldGrid.cells
-         [(int)g_worldGrid.planeStride * (int)sVar7 + (int)g_worldGrid.sizeX * (int)sVar6 +
-          (int)sVar5].objects[0]->value_20 == 400)))))))) {
+       ((STGridAt3D(g_worldGrid, sVar5, sVar6, sVar7).objects[0] == nullptr ||
+        (STGridAt3D(g_worldGrid, sVar5, sVar6, sVar7).objects[0]->value_20 == 400)))))))) {
     if ((5 < iVar2) && ((g_playSystem_00802A38->field_00E4 & 3) == 0)) {
       iVar2 = param_1->field_0239;
       iVar4 = iVar2 + 1;

@@ -16,13 +16,13 @@ Visible * __cdecl CreateVisible(void)
   this = (Visible *)FUN_006b04d0(0x118);
   if (this != nullptr) {
     sub_006E5FB0(this);
-    *(undefined4 *)this = 0x79c01c;
+    this->vtable = &VisibleVTable;
     memset(&this->field_0x88, 0, 0x80); /* compiler bulk-zero initialization */
-    *(undefined4 *)&this->field_0x10c = 0;
+    this->field_010C = 0;
     this->field_0114 = 0;
     this->field_0110 = 0;
-    *(undefined4 *)&this->field_0x108 = 0xffffffff;
-    *(undefined4 *)&this->field_0x84 = 1;
+    this->field_0108 = 0xffffffff;
+    this->field_0084 = 1;
     return this;
   }
   return nullptr;

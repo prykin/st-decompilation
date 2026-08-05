@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* [STPrototypeApplier] Propagated parameter 1.
    Evidence: 00664960 -> 00660B50 @ 00666DA3; MOVSX at 00666D98 establishes signed source width 2
@@ -35,9 +37,7 @@ FUN_00660b50(AnonShape_00660620_6BCED4D7 *param_1,int param_2,short param_3,shor
   else if ((((-1 < param_3) && (param_3 < g_worldGrid.sizeX)) && (-1 < param_4)) &&
           (param_4 < g_worldGrid.sizeY)) {
     if ((-1 < (short)param_5) && ((short)param_5 < g_worldGrid.sizeZ)) {
-      if (g_worldGrid.cells
-          [(int)g_worldGrid.planeStride * (int)(short)param_5 +
-           (int)g_worldGrid.sizeX * (int)param_4 + (int)param_3].objects[0] != nullptr)
+      if (STGridAt3D(g_worldGrid, param_3, param_4, param_5).objects[0] != nullptr)
       {
         /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
         _local_14 = CONCAT22(param_4,param_3);

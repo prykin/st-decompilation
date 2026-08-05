@@ -42,8 +42,7 @@ void __thiscall CPanelTy::SetControlObj(CPanelTy *this,char param_1)
   undefined4 uVar22;
   char *pcVar23;
   undefined4 uVar24;
-  AnonShape_004F2E40_DC76A8C6 local_b44;
-  undefined4 auStack_a34 [502];
+  AnonShape_004F2E40_DC76A8C6 local_b44 [7];
   undefined4 local_25c [84];
   InternalExceptionFrame local_10c;
   undefined4 local_c8 [4];
@@ -177,11 +176,11 @@ switchD_00509942_caseD_2:
       puVar15 = local_c;
       pcVar6 = thunk_FUN_00529590(*local_1c,this_00->field_0BF5);
       pCVar7 = thunk_FUN_00571240(pcVar6,iVar5);
-      SetButStruct(this_00,(AnonShape_004F2E40_DC76A8C6 *)((int)&local_b44 + local_28 * 0x17c),5,
+      SetButStruct(this_00,(AnonShape_004F2E40_DC76A8C6 *)((int)local_b44 + local_28 * 0x17c),5,
                    local_8,iVar13,iVar12,1,pCVar7,uVar19,uVar20,puVar15,pcVar23);
-      iVar5 = local_28 * 0x5f;
+      iVar5 = local_28 * 0x17c;
       local_28 = local_28 + 1;
-      auStack_a34[iVar5] = 1;
+      *(undefined4 *)((int)local_b44 + iVar5 + 0x110) = 1;
       iVar5 = local_14;
 LAB_00509a02:
       bVar11 = (char)local_10 + 1;
@@ -191,7 +190,7 @@ LAB_00509a02:
       local_10 = CONCAT31(local_10._1_3_,bVar11);
     } while (bVar11 < 6);
     local_60 = this_00->field_0008;
-    local_24 = &local_b44;
+    local_24 = local_b44;
     local_70[0] = 1;
     local_70[1] = 0xffffffff;
     local_5c = 2;

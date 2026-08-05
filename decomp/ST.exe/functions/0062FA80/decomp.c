@@ -37,9 +37,7 @@ int __thiscall FUN_0062fa80(void *this,AnonShape_0062FA80_0B91B2B9 *param_1)
     if ((((((sVar1 < 0) || (g_worldGrid.sizeX <= sVar1)) || (sVar3 < 0)) ||
          ((g_worldGrid.sizeY <= sVar3 || (sVar2 < 0)))) ||
         ((g_worldGrid.sizeZ <= sVar2 ||
-         (g_worldGrid.cells
-          [(int)g_worldGrid.planeStride * (int)sVar2 + (int)g_worldGrid.sizeX * (int)sVar3 +
-           (int)sVar1].objects[1] == nullptr)))) &&
+         (STGridAt3D(g_worldGrid, sVar1, sVar3, sVar2).objects[1] == nullptr)))) &&
        (iVar7 = DumpClassC::WritePtr
                           ((short)*(undefined4 *)((int)this + 0x1d5),
                            (short)*(undefined4 *)((int)this + 0x1d9),

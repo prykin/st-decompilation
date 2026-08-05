@@ -1,10 +1,18 @@
 
 /* [STUnclaimedCodeApplier] Exact function entry recovered from thunk_target.
-   Evidence: D:0079C39C>00401FEB | P:0079C39C>00401FEB */
+   Evidence: D:0079C39C>00401FEB | P:0079C39C>00401FEB
 
-int __fastcall FUN_005ec620(int param_1)
+   [STVirtualMethodApplier] Recovered from virtual table slot family.
+   Tables: 0079C260
+   Entries: 00401FEB
+   Slots: 0x13C
+   Anchor:
+   Evidence: slot_family_has_no_named_method; unique_owner_for_target;
+   receiver_only_leaf_virtual_signature */
+
+dword __thiscall STArtiafactC::FUN_005ec620(STArtiafactC *this)
 
 {
-  return param_1 + 0x367;
+  return (dword)&this->field_0x367;
 }
 

@@ -291,9 +291,19 @@ public class STObjectFactoryAnalyzer extends GhidraScript {
                 if (owner != null) constructors.add(owner);
             }
             row.constructorOwners.addAll(constructors);
+            String vptrOwner = exactFactoryVptrOwner(function);
             String sizeOwner = uniqueSizeOwner(row.allocationSize);
             String returnOwner = pointerOwner(function.getReturnType());
-            if (sizeOwner != null) {
+            if (vptrOwner != null) {
+                row.owner = vptrOwner;
+                row.confidence = "high";
+                row.evidence.add("final exact returned-object vptr names " + vptrOwner +
+                    " through an applied semantic vtable");
+                if (sizeOwner != null && !sizeOwner.equals(vptrOwner))
+                    row.evidence.add("vptr owner overrides conflicting allocation-size owner " +
+                        sizeOwner);
+            }
+            else if (sizeOwner != null) {
                 row.owner = sizeOwner;
                 row.confidence = "high";
                 row.evidence.add("allocation size " + row.allocationSize +
@@ -326,6 +336,44 @@ public class STObjectFactoryAnalyzer extends GhidraScript {
             row.proposedReturnType = row.owner.isBlank() ? "void *" : row.owner + " *";
             row.reason = String.join("; ", row.evidence);
         }
+    }
+
+    /**
+     * Consume the semantic vtable installed by STVTableApplier to close the factory/vptr
+     * cycle.  Only a zero-displacement immediate store is considered, and only when the
+     * live table data type names a currently known class.  The last such store is the
+     * derived vptr after any base-construction phase.
+     */
+    private String exactFactoryVptrOwner(Function function) {
+        String owner = null;
+        InstructionIterator iterator = currentProgram.getListing()
+            .getInstructions(function.getBody(), true);
+        while (iterator.hasNext()) {
+            Instruction instruction = iterator.next();
+            if (!"MOV".equalsIgnoreCase(instruction.getMnemonicString()) ||
+                    instruction.getNumOperands() < 2) continue;
+            String destination = instruction.getDefaultOperandRepresentation(0)
+                .toUpperCase(Locale.ROOT).replace(" ", "")
+                .replace("DWORDPTR", "").replace("QWORDPTR", "")
+                .replace("WORDPTR", "").replace("BYTEPTR", "");
+            if (!destination.matches("\\[(?:EAX|EBX|ECX|EDX|ESI|EDI)\\]")) continue;
+            Scalar scalar = instruction.getScalar(1);
+            if (scalar == null) continue;
+            Address table;
+            try {
+                table = currentProgram.getAddressFactory().getDefaultAddressSpace()
+                    .getAddress(scalar.getUnsignedValue());
+            }
+            catch (IllegalArgumentException exception) { continue; }
+            ghidra.program.model.listing.Data data =
+                currentProgram.getListing().getDefinedDataAt(table);
+            if (data == null || !(data.getDataType() instanceof Structure structure)) continue;
+            String typeName = structure.getName();
+            if (!typeName.endsWith("VTable") || typeName.startsWith("VTable_")) continue;
+            String candidate = typeName.substring(0, typeName.length() - "VTable".length());
+            if (classTypes.containsKey(candidate)) owner = candidate;
+        }
+        return owner;
     }
 
     private List<CallEvidence> calls(Function function) {

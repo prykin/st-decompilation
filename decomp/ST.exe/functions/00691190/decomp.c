@@ -18,8 +18,7 @@ byte * __cdecl TactDataPack(undefined4 *param_1,uint *param_2)
   AllocationRecord_006684E0 *pAVar4;
   byte *pbVar5;
   int *piVar6;
-  uint uVar7;
-  undefined4 *puVar8;
+  byte *puVar8;
   int iVar9;
   AnonShape_00691190_783A1B6D *pAVar10;
   uint *puVar11;
@@ -57,11 +56,11 @@ byte * __cdecl TactDataPack(undefined4 *param_1,uint *param_2)
     } while (iVar2 != 0);
     *param_2 = local_c + 0x10cU;
     pAVar3 = Library::DKW::LIB::MemAllocClear(local_c + 0x10cU);
-    puVar8 = param_1;
+    puVar8 = (byte *)(param_1);
     pAVar10 = pAVar3;
     for (iVar2 = 0x43; iVar2 != 0; iVar2 = iVar2 + -1) {
       *(undefined4 *)pAVar10 = *puVar8;
-      puVar8 = puVar8 + 1;
+      puVar8 = (byte *)(puVar8 + 1);
       pAVar10 = (AnonShape_00691190_783A1B6D *)&pAVar10->field_0x4;
     }
     iVar9 = 0;
@@ -107,17 +106,8 @@ byte * __cdecl TactDataPack(undefined4 *param_1,uint *param_2)
             local_1c = FltDataPack(pAVar4,&local_10);
             local_8 = Library::DKW::LIB::MemRealloc(local_8,local_8->field_0014 + local_10);
             pAVar4 = local_1c;
-            puVar8 = (undefined4 *)(&local_8[1].field_0x3 + iVar2);
-            for (uVar7 = local_10 >> 2; uVar7 != 0; uVar7 = uVar7 - 1) {
-              *puVar8 = *(undefined4 *)pAVar4;
-              pAVar4 = (AllocationRecord_006684E0 *)&pAVar4->field_0x4;
-              puVar8 = puVar8 + 1;
-            }
-            for (uVar7 = local_10 & 3; uVar7 != 0; uVar7 = uVar7 - 1) {
-              *(undefined1 *)puVar8 = *(undefined1 *)pAVar4;
-              pAVar4 = (AllocationRecord_006684E0 *)&pAVar4->field_0x1;
-              puVar8 = (undefined4 *)((int)puVar8 + 1);
-            }
+            puVar8 = (byte *)(&local_8[1].field_0x3 + iVar2);
+            memmove(puVar8, pAVar4, local_10); /* compiler REP MOVS byte copy */
             iVar2 = iVar2 + local_10;
             local_8->field_0014 = local_8->field_0014 + local_10;
             local_8->field_0105 = local_8->field_0105 + 1;

@@ -1,8 +1,13 @@
 
-void __cdecl FUN_006a48e0(undefined4 *param_1,uint param_2)
+/* [STPrototypeApplier] Propagated return.
+   Evidence: 006A48E0 returns return of FUN_006a4910 @ 006A48FA */
+
+int * __cdecl FUN_006a48e0(undefined4 *param_1,uint param_2)
 
 {
-  thunk_FUN_006a4910(param_1,param_2,1,nullptr,0);
-  return;
+  int *piVar1;
+
+  piVar1 = thunk_FUN_006a4910(param_1,param_2,1,nullptr,0);
+  return piVar1;
 }
 

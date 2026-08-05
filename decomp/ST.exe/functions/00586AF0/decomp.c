@@ -345,9 +345,7 @@ LAB_00587dde:
             ((sVar15 = (short)local_38, sVar15 < 0 ||
              ((g_worldGrid.sizeY <= sVar15 || (sVar16 = (short)local_3c, sVar16 < 0)))))) ||
            ((g_worldGrid.sizeZ <= sVar16 ||
-            (pSVar17 = g_worldGrid.cells
-                       [(int)g_worldGrid.planeStride * (int)sVar16 +
-                        (int)g_worldGrid.sizeX * (int)sVar15 + (int)sVar14].objects[0],
+            (pSVar17 = STGridAt3D(g_worldGrid, sVar14, sVar15, sVar16).objects[0],
             local_20 = pSVar17, pSVar17 == nullptr)))) {
           uVar8 = thunk_FUN_00496250(iVar9,local_14,iVar7);
           local_20 = (STWorldObject *)(uint)(-1 < (int)uVar8);
@@ -489,9 +487,7 @@ LAB_00588002:
         if ((((sVar16 < 0) || (g_worldGrid.sizeX <= sVar16)) || (sVar14 < 0)) ||
            (((g_worldGrid.sizeY <= sVar14 || (sVar15 < 0)) ||
             ((g_worldGrid.sizeZ <= sVar15 ||
-             (pSVar17 = g_worldGrid.cells
-                        [(int)g_worldGrid.planeStride * (int)sVar15 +
-                         (int)g_worldGrid.sizeX * (int)sVar14 + (int)sVar16].objects[0],
+             (pSVar17 = STGridAt3D(g_worldGrid, sVar16, sVar14, sVar15).objects[0],
              pSVar17 == nullptr)))))) {
           uVar8 = thunk_FUN_00496250(local_c,local_1c,local_18);
           pSVar17 = (STWorldObject *)(uint)(-1 < (int)uVar8);
@@ -745,9 +741,7 @@ LAB_00587161:
          ((sVar15 = (short)local_38, sVar15 < 0 ||
           ((g_worldGrid.sizeY <= sVar15 || (sVar16 = (short)local_3c, sVar16 < 0)))))) ||
         (g_worldGrid.sizeZ <= sVar16)) ||
-       (pSVar17 = g_worldGrid.cells
-                  [(int)g_worldGrid.planeStride * (int)sVar16 + (int)sVar15 * (int)g_worldGrid.sizeX
-                   + (int)sVar14].objects[0], local_20 = pSVar17, pSVar17 == nullptr))
+       (pSVar17 = STGridAt3D(g_worldGrid, sVar14, sVar15, sVar16).objects[0], local_20 = pSVar17, pSVar17 == nullptr))
     {
       uVar8 = thunk_FUN_00496250(local_10,local_14,local_18);
       local_38 = 0;
@@ -891,9 +885,7 @@ LAB_005873a4:
       }
       if ((((((sVar14 < 0) || (g_worldGrid.sizeX <= sVar14)) || (sVar15 < 0)) ||
            ((g_worldGrid.sizeY <= sVar15 || (sVar16 < 0)))) || (g_worldGrid.sizeZ <= sVar16)) ||
-         (pSVar17 = g_worldGrid.cells
-                    [(int)g_worldGrid.planeStride * (int)sVar16 +
-                     (int)g_worldGrid.sizeX * (int)sVar15 + (int)sVar14].objects[0],
+         (pSVar17 = STGridAt3D(g_worldGrid, sVar14, sVar15, sVar16).objects[0],
          local_20 = pSVar17, pSVar17 == nullptr)) {
         uVar8 = thunk_FUN_00496250(local_c,local_1c,iVar7);
         local_20 = (STWorldObject *)(uint)(-1 < (int)uVar8);

@@ -3,9 +3,16 @@
 
 /* Recovered from embedded debug metadata:
    E:\__titans\Start\wait_obj.cpp
-   WaitTy::NoneWait */
+   WaitTy::NoneWait
+   [STAbiConsistencyApplier] machine_thiscall_arity target=function:-1: prototype=undefined1
+   __thiscall NoneWait(WaitTy * this) Evidence: every machine RET purges exactly 0 explicit stack
+   bytes; current signature describes 4; removed trailing parameter slots have no listing
+   references; ret_sites=005E86EA RET | 005E8A4B RET | 005E93A5 RET | 005E93EC RET
+   [STAbiConsistencyApplier] machine_thiscall_unsized_return_migration target=return:-1:
+   return=/undefined Evidence: legacy ABI applier materialized the unsized return as undefined1
+   while changing only function arity; restore Ghidra DefaultDataType */
 
-void __thiscall WaitTy::NoneWait(WaitTy *this,int *param_1)
+void __thiscall WaitTy::NoneWait(WaitTy *this)
 
 {
   undefined1 *puVar1;
@@ -30,10 +37,11 @@ void __thiscall WaitTy::NoneWait(WaitTy *this,int *param_1)
   uint uVar17;
   AnonShape_005E84D0_1273B60D *pAVar18;
   undefined4 *puVar19;
-  undefined4 *puVar20;
-  UINT UVar21;
-  int *piVar22;
-  undefined4 uVar23;
+  STMessage *pSVar20;
+  undefined4 *puVar21;
+  UINT UVar22;
+  int *piVar23;
+  undefined4 uVar24;
   char local_114 [2];
   undefined1 local_112;
   InternalExceptionFrame local_ec;
@@ -49,7 +57,7 @@ void __thiscall WaitTy::NoneWait(WaitTy *this,int *param_1)
   int local_5b;
   undefined4 local_57;
   WaitTy *local_50;
-  int local_4c [8];
+  STMessage local_4c;
   uint local_2c;
   uint local_28;
   int local_24;
@@ -87,8 +95,11 @@ void __thiscall WaitTy::NoneWait(WaitTy *this,int *param_1)
   if (cVar2 == '\x01') {
     if (this_01->field_1A75 == '\0') {
       local_14 = nullptr;
-      memset(local_4c, 0, 0x20); /* compiler bulk-zero initialization */
-      iVar8 = 0;
+      pSVar20 = &local_4c;
+      for (iVar8 = 8; iVar8 != 0; iVar8 = iVar8 + -1) {
+        pSVar20->unknown_00 = 0;
+        pSVar20 = (STMessage *)&pSVar20->unknown_04;
+      }
       if (this_01->field_1A70 == 0) {
         pcVar12 = local_114;
         for (iVar8 = 9; iVar8 != 0; iVar8 = iVar8 + -1) {
@@ -122,15 +133,14 @@ void __thiscall WaitTy::NoneWait(WaitTy *this,int *param_1)
 LAB_005e9233:
             this_01->field_1A74 = 0;
             this_01->field_1A75 = 1;
-            local_4c[4] = (-(uint)(DAT_008067a0 != '\0') & 4) + 0x694d;
+            local_4c.id = (-(uint)(DAT_008067a0 != '\0') & 4) + MESS_WAITTY_694D;
             if (this_01->field_1A5B->field_02E6 == nullptr) {
-              /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-              (*(code *)this_01->field_0000->field_0000)(local_4c);
+              this_01->GetMessage(&local_4c);
             }
             else {
-              local_4c[2] = this_01->field_0008;
-              local_4c[3] = 2;
-              MMsgTy::SetMessage(this_01->field_1A5B->field_02E6,0x2525,'\0',local_4c,
+              local_4c.unknown_08 = this_01->field_0008;
+              local_4c.unknown_0c = 2;
+              MMsgTy::SetMessage(this_01->field_1A5B->field_02E6,0x2525,'\0',&local_4c.unknown_00,
                                  nullptr,nullptr,0,0);
             }
           }
@@ -141,11 +151,11 @@ LAB_005e9233:
             switch(local_2c) {
             case 0x10:
               if (this_01->field_0065 == '\x01') {
-                local_4c[4] = (-(uint)(DAT_008067a0 != '\0') & 4) + 0x694d;
+                local_4c.id = (-(uint)(DAT_008067a0 != '\0') & 4) + MESS_WAITTY_694D;
                 if (this_01->field_1A5B->field_02E6 == nullptr) goto LAB_005e91f7;
-                local_4c[2] = this_01->field_0008;
-                local_4c[3] = 2;
-                MMsgTy::SetMessage(this_01->field_1A5B->field_02E6,0x2524,'\0',local_4c,
+                local_4c.unknown_08 = this_01->field_0008;
+                local_4c.unknown_0c = 2;
+                MMsgTy::SetMessage(this_01->field_1A5B->field_02E6,0x2524,'\0',&local_4c.unknown_00,
                                    nullptr,nullptr,0,0);
               }
               break;
@@ -211,9 +221,9 @@ LAB_005e9233:
                          ((*(char *)local_10 == '\x01' && (*puVar1 == '\x05')))) {
                         this_01->field_1A74 = 0;
                         thunk_FUN_005dac60();
-                        piVar22 = nullptr;
+                        piVar23 = nullptr;
                         this_01->field_1A75 = 1;
-                        UVar21 = 0x2523;
+                        UVar22 = 0x2523;
                         goto LAB_005e8ee0;
                       }
                       this_01->field_1A76 = 1;
@@ -237,8 +247,7 @@ LAB_005e9233:
                       DAT_008087be = 0;
                     }
                     this_01->field_1A64 = 1;
-                    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-                    (*(code *)this_01->field_0000->field_0008)();
+                    this_01->CloseButtons();
                     this_00 = this_01->field_1A5B->field_02E6;
                     if (this_00 != nullptr) {
                       MMsgTy::HidePanel(this_00,1,0,1);
@@ -265,12 +274,12 @@ LAB_005e9233:
                 memset(local_8c, 0, 0x20); /* compiler bulk-zero initialization */
                 this_01->field_1A75 = 1;
                 local_8c[2] = this_01->field_0008;
-                piVar22 = local_8c;
+                piVar23 = local_8c;
                 local_8c[4] = (-(uint)(DAT_008067a0 != '\0') & 4) + 0x694d;
                 local_8c[3] = 2;
-                UVar21 = 0x2526;
+                UVar22 = 0x2526;
 LAB_005e8ee0:
-                MMsgTy::SetMessage(this_01->field_1A5B->field_02E6,UVar21,'\0',piVar22,
+                MMsgTy::SetMessage(this_01->field_1A5B->field_02E6,UVar22,'\0',piVar23,
                                    nullptr,nullptr,0,0);
               }
               break;
@@ -301,9 +310,9 @@ LAB_005e8ee0:
                   this_01->field_1A7F = uVar15;
                   pbVar11 = Library::DKW::LIB::MemAllocClear(uVar15);
                   *value = pbVar11;
-                  uVar23 = 0;
+                  uVar24 = 0;
                   pcVar12 = LoadResourceString(0x252f,g_module_00807618);
-                  wsprintfA((LPSTR)&DAT_0080f33a,pcVar12,uVar23);
+                  wsprintfA((LPSTR)&DAT_0080f33a,pcVar12,uVar24);
                   AddStr(this_01,&DAT_0080f33a,0);
                 }
                 iVar8 = *(int *)((int)&pAVar6->field_0003 + 1);
@@ -312,18 +321,18 @@ LAB_005e8ee0:
                   local_10 = (AnonShape_005E84D0_1273B60D *)(this_01->field_1A83 + iVar8);
                   if (*(char *)local_10 == '\0') {
                     puVar19 = (undefined4 *)((int)&pAVar6[2].field_0003 + 1);
-                    puVar20 = (undefined4 *)
+                    puVar21 = (undefined4 *)
                               (this_01->field_1A5B->field_06A2 * iVar8 +
                               (int)this_01->field_1A5B->field_069A);
                     for (uVar15 = local_28 - 0x1c >> 2; uVar15 != 0; uVar15 = uVar15 - 1) {
-                      *puVar20 = *puVar19;
+                      *puVar21 = *puVar19;
                       puVar19 = puVar19 + 1;
-                      puVar20 = puVar20 + 1;
+                      puVar21 = puVar21 + 1;
                     }
                     for (uVar15 = local_28 - 0x1c & 3; uVar15 != 0; uVar15 = uVar15 - 1) {
-                      *(undefined1 *)puVar20 = *(undefined1 *)puVar19;
+                      *(undefined1 *)puVar21 = *(undefined1 *)puVar19;
                       puVar19 = (undefined4 *)((int)puVar19 + 1);
-                      puVar20 = (undefined4 *)((int)puVar20 + 1);
+                      puVar21 = (undefined4 *)((int)puVar21 + 1);
                     }
                     *(char *)local_10 = '\x01';
                     this_01->field_1A7B = this_01->field_0061;
@@ -352,16 +361,15 @@ LAB_005e8ee0:
             case 0x33:
             case 0x35:
               this_01->field_1A75 = 1;
-              local_4c[4] = (-(uint)(DAT_008067a0 != '\0') & 4) + 0x694d;
+              local_4c.id = (-(uint)(DAT_008067a0 != '\0') & 4) + MESS_WAITTY_694D;
               if (this_01->field_1A5B->field_02E6 == nullptr) {
-/* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
 LAB_005e91f7:
-                (*(code *)this_01->field_0000->field_0000)(local_4c);
+                this_01->GetMessage(&local_4c);
               }
               else {
-                local_4c[2] = this_01->field_0008;
-                local_4c[3] = 2;
-                MMsgTy::SetMessage(this_01->field_1A5B->field_02E6,0x2522,'\0',local_4c,
+                local_4c.unknown_08 = this_01->field_0008;
+                local_4c.unknown_0c = 2;
+                MMsgTy::SetMessage(this_01->field_1A5B->field_02E6,0x2522,'\0',&local_4c.unknown_00,
                                    nullptr,nullptr,0,0);
               }
             }

@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* [STPrototypeApplier] Propagated parameter 6.
    Evidence: 0064D270 -> 00675B10 @ 0064D376; MOVSX at 0064D35A establishes signed source width 2 */
@@ -50,12 +52,8 @@ FUN_00675b10(int param_1,int param_2,short param_3,short *param_4,short *param_5
              (((((sVar7 < 0 || (g_worldGrid.sizeX <= sVar7)) || (sVar8 < 0)) ||
                ((g_worldGrid.sizeY <= sVar8 || (sVar5 < 0)))) ||
               ((g_worldGrid.sizeZ <= sVar5 ||
-               ((g_worldGrid.cells
-                 [(int)g_worldGrid.planeStride * (int)sVar5 + (int)g_worldGrid.sizeX * (int)sVar8 +
-                  (int)sVar7].objects[0] == nullptr ||
-                (iVar2 = (*g_worldGrid.cells
-                           [(int)g_worldGrid.planeStride * (int)sVar5 +
-                            (int)g_worldGrid.sizeX * (int)sVar8 + (int)sVar7].objects[0]->vtable[5].
+               ((STGridAt3D(g_worldGrid, sVar7, sVar8, sVar5).objects[0] == nullptr ||
+                (iVar2 = (*STGridAt3D(g_worldGrid, sVar7, sVar8, sVar5).objects[0]->vtable[5].
                            slots_00_28[9])(param_7), iVar2 != 0)))))))) {
             *param_4 = sVar7;
             *param_5 = sVar8;

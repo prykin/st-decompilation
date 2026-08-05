@@ -14,7 +14,7 @@ MoneyTy * __cdecl CreateMoney(void)
   this = (MoneyTy *)FUN_006b04d0(0xa6);
   if (this != nullptr) {
     sub_006E5FB0(this);
-    *(undefined **)this = &UNK_0079ace4;
+    this->vtable = &MoneyTyVTable;
     this->field_0048 = 0x24;
     this->field_0050 = 0x24;
     this->field_0034 = 0xf;

@@ -50,7 +50,7 @@ public class STRecoveryPipeline extends GhidraScript {
         Map.entry("STPointerShapeAnalyzer.java", List.of(
             "pointer_shape_type_proposals.tsv", "pointer_shape_field_proposals.tsv",
             "pointer_shape_target_proposals.tsv", "pointer_shape_decompile_failures.tsv",
-            "pointer_shape_summary.txt")),
+            "pointer_shape_call_type_edges.tsv", "pointer_shape_summary.txt")),
         Map.entry("STSwitchEnumAnalyzer.java", List.of(
             "switch_enum_proposals.tsv", "switch_enum_decompile_retries.tsv",
             "switch_enum_decompile_failures.tsv", "switch_enum_domains.tsv",
@@ -246,6 +246,11 @@ public class STRecoveryPipeline extends GhidraScript {
 
         fixUnclaimedCode();
         runStructuralFixpoint();
+        // Exact object-factory vptr stores can split a formerly concatenated generated table.
+        // Refresh indirect slot ABIs against the new physical structures before the early gate:
+        // the call evidence is still valid, but its structure-relative component moved.
+        pair("STIndirectCallAnalyzer.java", "STIndirectCallApplier.java",
+            "indirect_call_proposals.tsv", "indirect_call_apply_report.tsv");
         runAbiRegressionGate("core-final");
     }
 

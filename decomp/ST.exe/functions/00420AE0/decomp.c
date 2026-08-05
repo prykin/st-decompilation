@@ -3,9 +3,16 @@
 
 /* Recovered from embedded debug metadata:
    E:\__titans\wlad\Tc_gobj.cpp
-   STSprGameObjC::LoadLifeFrame */
+   STSprGameObjC::LoadLifeFrame
+   [STAbiConsistencyApplier] machine_thiscall_arity target=function:-1: prototype=undefined1
+   __thiscall LoadLifeFrame(STSprGameObjC * this) Evidence: every machine RET purges exactly 0
+   explicit stack bytes; current signature describes 4; removed trailing parameter slots have no
+   listing references; ret_sites=00420E2C RET | 00420E58 RET
+   [STAbiConsistencyApplier] machine_thiscall_unsized_return_migration target=return:-1:
+   return=/undefined Evidence: legacy ABI applier materialized the unsized return as undefined1
+   while changing only function arity; restore Ghidra DefaultDataType */
 
-void __thiscall STSprGameObjC::LoadLifeFrame(STSprGameObjC *this,int *param_1)
+void __thiscall STSprGameObjC::LoadLifeFrame(STSprGameObjC *this)
 
 {
   undefined4 *this_00;
@@ -261,7 +268,6 @@ void __thiscall STSprGameObjC::LoadLifeFrame(STSprGameObjC *this,int *param_1)
     pcVar8 = pcVar10 + -uVar5;
     pcVar10 = pcVar9 + -1;
     memmove(pcVar10, pcVar8, uVar5); /* compiler REP MOVS byte copy */
-    uVar7 = 0;
     pcVar8 = &DAT_007a4fb4;
     break;
   default:
@@ -450,6 +456,7 @@ void __thiscall STSprGameObjC::LoadLifeFrame(STSprGameObjC *this,int *param_1)
     pcVar8 = pcVar10 + -uVar5;
     pcVar10 = pcVar9 + -1;
     memmove(pcVar10, pcVar8, uVar5); /* compiler REP MOVS byte copy */
+    uVar7 = 0;
     pcVar8 = &DAT_007a4ff4;
   }
   uVar5 = 0xffffffff;

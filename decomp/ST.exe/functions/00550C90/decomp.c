@@ -25,7 +25,7 @@ void * __cdecl FUN_00550c90(void)
     this[0x5f] = 0;
     *(undefined4 *)((int)this + 0x185) = 0;
     *(undefined4 *)((int)this + 0x189) = 0;
-    *this = &PTR_GetMessage_0079ae64;
+    *this = &VTable_0079AE64;
     this[0xf] = 0x1c7;
     this[0x11] = 0;
     this[0x10] = 0x13d;

@@ -17,21 +17,21 @@ UpgPanelTy * __cdecl CreateUpgPanel(void)
   if (this != nullptr) {
     sub_006E5FB0(this);
     this->field_005C = 0;
-    *(undefined4 *)&this->field_0x60 = 0xffffffff;
-    *(undefined4 *)&this->field_0x64 = 4;
+    this->field_0060 = 0xffffffff;
+    this->field_0064 = 4;
     this->field_0068 = 0;
     this->field_0172 = 2;
-    *(undefined4 *)&this->field_0x178 = 0;
-    *(undefined4 *)&this->field_0x17c = 0;
-    *(undefined4 *)&this->field_0x185 = 0;
-    *(undefined4 *)&this->field_0x189 = 0;
-    this->field_0000 = (AnonPointee_UpgPanelTy_0000 *)&PTR_GetMessage_0079ae90;
-    *(undefined4 *)&this->field_0x3c = 0xc;
-    *(undefined4 *)&this->field_0x44 = 0;
-    *(undefined4 *)&this->field_0x40 = 0x128;
-    *(undefined4 *)&this->field_0x48 = 0x8c;
-    *(undefined4 *)&this->field_0x180 = 1;
-    this->field_0x184 = 0;
+    this->field_0178 = 0;
+    this->field_017C = 0;
+    this->field_0185 = 0;
+    this->field_0189 = 0;
+    this->vtable = &UpgPanelTyVTable;
+    this->field_003C = 0xc;
+    this->field_0044 = 0;
+    this->field_0040 = 0x128;
+    this->field_0048 = 0x8c;
+    this->field_0180 = 1;
+    this->field_0184 = 0;
     memset(&this->field_01AB, 0, 0x240); /* compiler bulk-zero initialization */
     this->field_03F3 = nullptr;
     this->field_03EF = nullptr;

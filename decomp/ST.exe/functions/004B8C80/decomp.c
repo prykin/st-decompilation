@@ -14,9 +14,7 @@ undefined4 __fastcall FUN_004b8c80(TLOBaseTy *param_1)
   int TVar6;
   int uVar4;
   TLOBaseTyVTable *pTVar7;
-  /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
-  void *unaff_EDI;
-  undefined4 arg_2;
+  undefined2 arg_2;
   undefined4 local_2c [2];
   int local_24;
   undefined4 local_20;
@@ -119,8 +117,7 @@ undefined4 __fastcall FUN_004b8c80(TLOBaseTy *param_1)
         iVar4 = param_1->field_04BC;
         if (iVar4 == 1) {
           param_1->field_04BC = 2;
-          /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
-          TLOBaseTy::LoadImages(param_1,unaff_EDI);
+          TLOBaseTy::LoadImages(param_1);
           param_1->vfunc_D8();
           return 0;
         }
@@ -130,8 +127,7 @@ undefined4 __fastcall FUN_004b8c80(TLOBaseTy *param_1)
               + param_1->field_04B8 <= g_playSystem_00802A38->field_00E4) {
             param_1->vfunc_90(3,0x361);
             param_1->field_04BC = 3;
-            /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
-            TLOBaseTy::LoadImages(param_1,unaff_EDI);
+            TLOBaseTy::LoadImages(param_1);
             param_1->vfunc_90(3,0x361);
             param_1->vfunc_D8();
             return 0;
@@ -141,8 +137,7 @@ undefined4 __fastcall FUN_004b8c80(TLOBaseTy *param_1)
         if (iVar4 != 3) goto cf_common_exit_004B9130;
       }
       param_1->field_04BC = 4;
-      /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
-      TLOBaseTy::LoadImages(param_1,unaff_EDI);
+      TLOBaseTy::LoadImages(param_1);
       param_1->vfunc_90(3,0x362);
 cf_common_exit_004B9130:
       param_1->vfunc_D8();

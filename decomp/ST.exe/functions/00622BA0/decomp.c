@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* [STMethodOwnerApplier] Structural method owner recovered as STMineSetC.
    Evidence: this_call_owners=[STMineSetC]; agreed_this_calls=1; incoming_this_accesses=71;
@@ -109,9 +111,7 @@ undefined4 __thiscall STMineSetC::sub_00622BA0(STMineSetC *this)
       if (((-1 < sVar5) && (sVar5 < g_worldGrid.sizeX)) &&
          (((-1 < sVar6 &&
            (((sVar6 < g_worldGrid.sizeY && (-1 < sVar7)) && (sVar7 < g_worldGrid.sizeZ)))) &&
-          (g_worldGrid.cells
-           [(int)g_worldGrid.planeStride * (int)sVar7 + (int)g_worldGrid.sizeX * (int)sVar6 +
-            (int)sVar5].objects[(byte)this->field_008E] != nullptr)))) {
+          (STGridAt3D(g_worldGrid, sVar5, sVar6, sVar7).objects[(byte)this->field_008E] != nullptr)))) {
         return 0;
       }
       iVar4 = DumpClassC::WritePtr

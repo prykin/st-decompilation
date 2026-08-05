@@ -14,13 +14,14 @@ PrividerTy * __cdecl CreatePrivider(void)
   undefined4 *puVar2;
   SpriteClassTy *this_00;
   undefined4 *puVar3;
+  uint *puVar4;
   int local_8;
 
   this = (PrividerTy *)FUN_006b04d0(0x1c9e);
   if (this != nullptr) {
     sub_006E5FB0(this);
     this->vtable = (PrividerTyVTable *)&VTable_0079C018;
-    *(undefined4 *)&this->field_0x18 = 0;
+    this->field_0018 = 0;
     this->field_005D = nullptr;
     memset(&this->field_0x1d, 0, 0x20); /* compiler bulk-zero initialization */
     iVar1 = 0;
@@ -38,7 +39,7 @@ PrividerTy * __cdecl CreatePrivider(void)
     } while (local_8 != 0);
     this->vtable = (PrividerTyVTable *)&MMObjTyVTable;
     this->field_0065 = 2;
-    this->field_0x9a = 0;
+    this->field_009A = 0;
     memset(&this->field_0x66, 0, 0x34); /* compiler bulk-zero initialization */
     iVar1 = 0;
     local_8 = 0xd;
@@ -56,17 +57,17 @@ PrividerTy * __cdecl CreatePrivider(void)
     SpriteClassTy::SpriteClassTy((SpriteClassTy *)&this->field_1B08);
     SpriteClassTy::SpriteClassTy((SpriteClassTy *)&this->field_1B99);
     this->vtable = &PrividerTyVTable;
-    *(undefined4 *)&this->field_0x1a65 = 1;
+    this->field_1A65 = 1;
     this->field_1A73 = 0;
     this->field_1A61 = 0;
     this->field_1A71 = 0;
     this->field_1A69 = 0;
     this->field_1A6D = 0;
     this->field_1A72 = 0;
-    puVar2 = &this->field_1C2A;
+    puVar4 = this->field_1C2A;
     for (iVar1 = 0x16; iVar1 != 0; iVar1 = iVar1 + -1) {
-      *puVar2 = 0xffffffff;
-      puVar2 = puVar2 + 1;
+      *puVar4 = 0xffffffff;
+      puVar4 = puVar4 + 1;
     }
     this->field_1C8A = 0xffffffff;
     this->field_1C82 = nullptr;

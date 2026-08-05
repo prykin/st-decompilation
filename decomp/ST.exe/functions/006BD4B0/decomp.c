@@ -8,7 +8,7 @@ void FUN_006bd4b0(void)
 
   if (((*DAT_00854f44 & 0x80004) == 0x80004) && ((byte *)DAT_00854f44[0x30] != nullptr)) {
     CopyRows((byte *)DAT_00854f44[0x30],DAT_00854f44[3],
-             (byte *)(DAT_00854f44[2] * (int)DAT_00854fe0 + DAT_00854f44[1] + (int)DAT_00854f00),
+             &DAT_00854f00->field_0x0 + DAT_00854f44[2] * (int)DAT_00854fe0 + DAT_00854f44[1],
              (int)DAT_00854fe0,DAT_00854f44[3],DAT_00854f44[4]);
   }
   DAT_00854edc = DAT_00854f44[0x1a];

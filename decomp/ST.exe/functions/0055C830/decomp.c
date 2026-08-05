@@ -19,8 +19,6 @@ FUN_0055c830(void *this,Global_sub_0055C830_param_1Enum param_1,byte *param_2,un
   uint uVar6;
   uint uVar7;
   byte *pbVar8;
-  /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
-  void *unaff_EDI;
   byte *pbVar9;
   bool bVar10;
   CHAR local_688 [512];
@@ -221,8 +219,7 @@ LAB_0055c9c5:
     case CASE_7:
       if ((*(char *)((int)this + 9) == '\0') && (g_fSGS_0081174C != nullptr)) {
         FSGSTy::AddMessage(g_fSGS_0081174C,1,&DAT_008016a0,param_5,5);
-        /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
-        FSGSTy::JoinChannel(g_fSGS_0081174C,unaff_EDI);
+        FSGSTy::JoinChannel(g_fSGS_0081174C);
         return;
       }
       break;
@@ -241,8 +238,7 @@ LAB_0055c9c5:
       if (g_fSGS_0081174C != nullptr) {
         *(undefined4 *)((int)this + 0x1b) = 0x6156;
         *(Global_sub_0055C830_param_1Enum *)((int)this + 0x1f) = param_1;
-        /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-        (*(code *)g_fSGS_0081174C->field_0000->field_0000)((int)this + 0xb);
+        g_fSGS_0081174C->GetMessage((STMessage *)((int)this + 0xb));
       }
       break;
     case CASE_10:

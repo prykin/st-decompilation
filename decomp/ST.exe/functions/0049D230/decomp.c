@@ -141,9 +141,7 @@ LAB_0049d3ca:
       this_01 = nullptr;
     }
     else {
-      this_01 = g_worldGrid.cells
-                [(int)g_worldGrid.planeStride * (int)sVar2 + (int)g_worldGrid.sizeX * (int)sVar3 +
-                 (int)sVar1].objects[0];
+      this_01 = STGridAt3D(g_worldGrid, sVar1, sVar3, sVar2).objects[0];
     }
     uVar10 = 0;
     if (((this_01 == nullptr) ||

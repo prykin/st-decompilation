@@ -10,7 +10,7 @@ void * __cdecl FUN_007242d0(void)
   this = FUN_006b04d0(0x78);
   if (this != nullptr) {
     sub_006E5FB0(this);
-    *this = 0x79e2c0;
+    *this = &VTable_0079E2C0;
     this[0x19] = 0;
     this[6] = 0;
     return this;

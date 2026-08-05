@@ -38,8 +38,6 @@ int __thiscall HelpPanelTy::GetMessage(HelpPanelTy *this,STMessage *message)
   uint uVar18;
   ushort uVar19;
   byte bVar20;
-  /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
-  void *unaff_EDI;
   char *pcVar21;
   bool bVar22;
   code *pcVar23;
@@ -161,44 +159,37 @@ int __thiscall HelpPanelTy::GetMessage(HelpPanelTy *this,STMessage *message)
             switch((char)piVar9[4]) {
             case '\x01':
               RCProc(this_00,(int)pvVar6,uVar16,'\0');
-              /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
-              PutToSHlp(this_00,(int)unaff_EDI);
+              PutToSHlp(this_00);
               g_currentExceptionFrame = local_84.previous;
               return 0;
             case '\x02':
               ObjProc(this_00,(int)pvVar6,uVar16,'\0');
-              /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
-              PutToSHlp(this_00,(int)unaff_EDI);
+              PutToSHlp(this_00);
               g_currentExceptionFrame = local_84.previous;
               return 0;
             case '\x03':
               SubProc(this_00,(int)pvVar6,'\0');
-              /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
-              PutToSHlp(this_00,(int)unaff_EDI);
+              PutToSHlp(this_00);
               g_currentExceptionFrame = local_84.previous;
               return 0;
             case '\x04':
               ArmProc(this_00,(int)pvVar6,uVar16,'\0');
-              /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
-              PutToSHlp(this_00,(int)unaff_EDI);
+              PutToSHlp(this_00);
               g_currentExceptionFrame = local_84.previous;
               return 0;
             case '\x05':
               TechProc(this_00,(uint)pvVar6,(byte)uVar16,'\0');
-              /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
-              PutToSHlp(this_00,(int)unaff_EDI);
+              PutToSHlp(this_00);
               g_currentExceptionFrame = local_84.previous;
               return 0;
             case '\x06':
               TTreeProc(this_00,(uint)pvVar6,'\0');
-              /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
-              PutToSHlp(this_00,(int)unaff_EDI);
+              PutToSHlp(this_00);
               g_currentExceptionFrame = local_84.previous;
               return 0;
             case '\a':
               MObjProc(this_00);
-              /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
-              PutToSHlp(this_00,(int)unaff_EDI);
+              PutToSHlp(this_00);
               g_currentExceptionFrame = local_84.previous;
               return 0;
             case '\b':
@@ -206,25 +197,21 @@ int __thiscall HelpPanelTy::GetMessage(HelpPanelTy *this,STMessage *message)
               break;
             case '\n':
               IndexBut(this_00);
-              /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
-              PutToSHlp(this_00,(int)unaff_EDI);
+              PutToSHlp(this_00);
               g_currentExceptionFrame = local_84.previous;
               return 0;
             case '\v':
               SpecProc(this_00,(int)pvVar6,uVar16,'\0');
-              /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
-              PutToSHlp(this_00,(int)unaff_EDI);
+              PutToSHlp(this_00);
               g_currentExceptionFrame = local_84.previous;
               return 0;
             case '\f':
               NatProc(this_00,(int)pvVar6,'\0');
-              /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
-              PutToSHlp(this_00,(int)unaff_EDI);
+              PutToSHlp(this_00);
               g_currentExceptionFrame = local_84.previous;
               return 0;
             }
-            /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
-            PutToSHlp(this_00,(int)unaff_EDI);
+            PutToSHlp(this_00);
             g_currentExceptionFrame = local_84.previous;
             return 0;
           case CASE_6:
@@ -751,8 +738,7 @@ LAB_0051ef61:
       bVar22 = true;
 switchD_0051ea9b_caseD_0:
       if (bVar22) {
-        /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
-        PutToSHlp(this_00,(int)unaff_EDI);
+        PutToSHlp(this_00);
         g_currentExceptionFrame = local_84.previous;
         return 0;
       }
@@ -801,9 +787,8 @@ switchD_0051ea9b_caseD_0:
       HomeBut(this_00);
       g_currentExceptionFrame = local_84.previous;
       return 0;
-    /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
     case MESS_BEHPANELTY_C0A0:
-      BackBut(this_00,unaff_EDI);
+      BackBut(this_00);
       g_currentExceptionFrame = local_84.previous;
       return 0;
     case MESS_FSGSTY_C0A1:
@@ -902,8 +887,7 @@ switchD_0051e4d9_caseD_6:
   }
   TechProc(this_00,*(uint *)((int)local_10 + (uint)uVar19 * 0xd),
            *(byte *)((int)local_10 + (uint)uVar19 * 0xd + 4),'\0');
-  /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
-  PutToSHlp(this_00,(int)unaff_EDI);
+  PutToSHlp(this_00);
   g_currentExceptionFrame = local_84.previous;
   return 0;
 LAB_0051e1b2:

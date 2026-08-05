@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* [STHiddenThisApplier] Anonymous hidden receiver recovered as
    /SubmarineTitans/Recovered/HiddenThis/AnonReceiver_004DB160.
@@ -44,9 +46,7 @@ STAllPlayersC::sub_004DB160
   if ((((((-1 < sVar2) && (sVar2 < g_worldGrid.sizeX)) && (sVar9 = (short)*param_4, -1 < sVar9)) &&
        ((sVar9 < g_worldGrid.sizeY && (sVar7 = (short)*param_5, -1 < sVar7)))) &&
       ((sVar7 < g_worldGrid.sizeZ &&
-       ((this_00 = g_worldGrid.cells
-                   [(int)g_worldGrid.planeStride * (int)sVar7 + (int)g_worldGrid.sizeX * (int)sVar9
-                    + (int)sVar2].objects[0], this_00 != nullptr &&
+       ((this_00 = STGridAt3D(g_worldGrid, sVar2, sVar9, sVar7).objects[0], this_00 != nullptr &&
         (this_00[1].vtable != (STWorldObjectVTable *)param_1)))))) &&
      ((iVar3 = this_00->GetObjectTypeId(), iVar3 == 0x3c ||
       (iVar3 = this_00->GetObjectTypeId(), iVar3 == 0x53)))) {
@@ -167,9 +167,7 @@ LAB_004db257:
                   && (((sVar9 = (short)iVar12, -1 < sVar9 && (sVar9 < g_worldGrid.sizeY)) &&
                       (sVar7 = (short)local_8, -1 < sVar7)))) &&
                  (((sVar7 < g_worldGrid.sizeZ &&
-                   (this_00 = g_worldGrid.cells
-                              [(int)sVar7 * (int)g_worldGrid.planeStride +
-                               (int)sVar9 * (int)g_worldGrid.sizeX + (int)sVar2].objects[0],
+                   (this_00 = STGridAt3D(g_worldGrid, sVar2, sVar9, sVar7).objects[0],
                    this_00 != nullptr)) &&
                   ((this_00[1].vtable != (STWorldObjectVTable *)param_1 &&
                    ((iVar3 = this_00->GetObjectTypeId(), iVar3 == 0x3c ||

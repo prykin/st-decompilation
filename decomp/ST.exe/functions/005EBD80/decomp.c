@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 undefined4 __fastcall FUN_005ebd80(AnonShape_005EBD80_1A4ED01F *param_1)
 
@@ -56,9 +58,7 @@ undefined4 __fastcall FUN_005ebd80(AnonShape_005EBD80_1A4ED01F *param_1)
   if ((((((sVar8 < 0) || (g_worldGrid.sizeX <= sVar8)) ||
         ((sVar1 < 0 || ((g_worldGrid.sizeY <= sVar1 || (sVar2 < 0)))))) ||
        (g_worldGrid.sizeZ <= sVar2)) ||
-      (g_worldGrid.cells
-       [(int)g_worldGrid.planeStride * (int)sVar2 + (int)g_worldGrid.sizeX * (int)sVar1 + (int)sVar8
-       ].objects[0] == nullptr)) &&
+      (STGridAt3D(g_worldGrid, sVar8, sVar1, sVar2).objects[0] == nullptr)) &&
      (iVar5 = DumpClassC::WritePtr
                         (sVar8,sVar1,sVar2,0,(RecoveredRecord_DumpClassC_00495EC0 *)param_1),
      iVar5 == 0)) {
@@ -87,9 +87,7 @@ undefined4 __fastcall FUN_005ebd80(AnonShape_005EBD80_1A4ED01F *param_1)
     if (g_worldGrid.sizeZ <= sVar1) {
       return 0;
     }
-    this = g_worldGrid.cells
-           [(int)g_worldGrid.planeStride * (int)sVar1 + (int)g_worldGrid.sizeX * (int)sVar2 +
-            (int)sVar8].objects[0];
+    this = STGridAt3D(g_worldGrid, sVar8, sVar2, sVar1).objects[0];
     if (this == nullptr) {
       return 0;
     }

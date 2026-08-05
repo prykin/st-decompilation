@@ -127,12 +127,9 @@ PlrDataPack(AllocationRecord_0067D3B0 *param_1,undefined4 *param_2,int param_3,u
     pAVar6 = Library::DKW::LIB::MemAllocClear(iVar12 + 299U);
     pAVar14 = param_1;
     pAVar19 = pAVar6;
-    for (iVar12 = 0x4a; iVar12 != 0; iVar12 = iVar12 + -1) {
-      *(undefined4 *)pAVar19 = *(undefined4 *)pAVar14;
-      pAVar14 = (AllocationRecord_0067D3B0 *)&pAVar14->field_0x4;
-      pAVar19 = (AllocationRecord_0067D3B0 *)&pAVar19->field_0x4;
-    }
-    *(undefined2 *)pAVar19 = *(undefined2 *)pAVar14;
+    memmove(pAVar19, pAVar14, 0x12a); /* compiler REP MOVS byte copy */
+    pAVar19 = (AllocationRecord_0067D3B0 *)((byte *)pAVar19 + 0x128);
+    pAVar14 = (AllocationRecord_0067D3B0 *)((byte *)pAVar14 + 0x128);
     pAVar19->field_0x2 = pAVar14->field_0x2;
     pAVar6->field_0018 = 0;
     pAVar6->field_0014 = *param_4;

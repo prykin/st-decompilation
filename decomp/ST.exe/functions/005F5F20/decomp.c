@@ -18,10 +18,11 @@ int __thiscall STColl3C::GetMessage(STColl3C *this,STMessage *message)
   short sVar4;
   STColl3C *this_00;
   int iVar5;
-  int iVar6;
-  byte *puVar7;
+  dword dVar6;
+  int iVar7;
   byte *puVar8;
-  STWorldObject *pSVar9;
+  byte *puVar9;
+  STWorldObject *pSVar10;
   InternalExceptionFrame local_60;
   byte *local_1c;
   AnonShape_0060EA30_DCEB68AD *local_18;
@@ -41,9 +42,9 @@ int __thiscall STColl3C::GetMessage(STColl3C *this,STMessage *message)
   this_00 = local_8;
   if (iVar5 != 0) {
     g_currentExceptionFrame = local_60.previous;
-    iVar6 = ReportDebugMessage("E:\\__titans\\nick\\to_coll3.cpp",0xe8,0,iVar5,"%s",
+    iVar7 = ReportDebugMessage("E:\\__titans\\nick\\to_coll3.cpp",0xe8,0,iVar5,"%s",
                                "STColl3C::GetMessage");
-    if (iVar6 == 0) {
+    if (iVar7 == 0) {
       RaiseInternalException(iVar5,0,"E:\\__titans\\nick\\to_coll3.cpp",0xea);
       return 0xffff;
     }
@@ -102,7 +103,7 @@ int __thiscall STColl3C::GetMessage(STColl3C *this,STMessage *message)
   }
   if (SVar1 == MESS_ID_NONE) {
     sub_005F6F60(local_8);
-    (*this_00->vtable[0x36].vfunc_00)();
+    this_00->vfunc_D8();
     g_currentExceptionFrame = local_60.previous;
     return 0;
   }
@@ -110,10 +111,10 @@ int __thiscall STColl3C::GetMessage(STColl3C *this,STMessage *message)
     g_currentExceptionFrame = local_60.previous;
     return 0;
   }
-  puVar7 = (byte *)((message->arg0).ptr);
-  if (puVar7[3] != 2) {
-    puVar8 = (byte *)&local_8->field_0x231;
-    memmove(puVar8, puVar7, 0x2c); /* compiler REP MOVS byte copy */
+  puVar8 = (byte *)((message->arg0).ptr);
+  if (puVar8[3] != 2) {
+    puVar9 = (byte *)&local_8->field_0x231;
+    memmove(puVar9, puVar8, 0x2c); /* compiler REP MOVS byte copy */
     iVar5 = local_8->field_0245;
     sVar4 = (short)(iVar5 >> 0x1f);
     if (iVar5 < 0) {
@@ -124,27 +125,27 @@ int __thiscall STColl3C::GetMessage(STColl3C *this,STMessage *message)
       iVar5 = (int)(short)(((short)(iVar5 / 0xc9) + sVar4) -
                           (short)((longlong)iVar5 * 0x28c1979 >> 0x3f));
     }
-    iVar6 = local_8->field_0249;
+    iVar7 = local_8->field_0249;
     local_8->field_025D = iVar5;
-    sVar4 = (short)(iVar6 >> 0x1f);
-    if (iVar6 < 0) {
-      iVar5 = (short)(((short)(iVar6 / 0xc9) + sVar4) - (short)((longlong)iVar6 * 0x28c1979 >> 0x3f)
+    sVar4 = (short)(iVar7 >> 0x1f);
+    if (iVar7 < 0) {
+      iVar5 = (short)(((short)(iVar7 / 0xc9) + sVar4) - (short)((longlong)iVar7 * 0x28c1979 >> 0x3f)
                      ) + -1;
     }
     else {
-      iVar5 = (int)(short)(((short)(iVar6 / 0xc9) + sVar4) -
-                          (short)((longlong)iVar6 * 0x28c1979 >> 0x3f));
+      iVar5 = (int)(short)(((short)(iVar7 / 0xc9) + sVar4) -
+                          (short)((longlong)iVar7 * 0x28c1979 >> 0x3f));
     }
-    iVar6 = local_8->field_024D;
+    iVar7 = local_8->field_024D;
     local_8->field_0261 = iVar5;
-    sVar4 = (short)(iVar6 >> 0x1f);
-    if (iVar6 < 0) {
-      iVar5 = (short)(((short)(iVar6 / 200) + sVar4) - (short)((longlong)iVar6 * 0x51eb851f >> 0x3f)
+    sVar4 = (short)(iVar7 >> 0x1f);
+    if (iVar7 < 0) {
+      iVar5 = (short)(((short)(iVar7 / 200) + sVar4) - (short)((longlong)iVar7 * 0x51eb851f >> 0x3f)
                      ) + -1;
     }
     else {
-      iVar5 = (int)(short)(((short)(iVar6 / 200) + sVar4) -
-                          (short)((longlong)iVar6 * 0x51eb851f >> 0x3f));
+      iVar5 = (int)(short)(((short)(iVar7 / 200) + sVar4) -
+                          (short)((longlong)iVar7 * 0x51eb851f >> 0x3f));
     }
     local_8->field_0265 = iVar5;
     sub_005FA8B0(local_8,&local_8->field_027D,&local_8->field_0281,&local_8->field_0285);
@@ -159,7 +160,7 @@ int __thiscall STColl3C::GetMessage(STColl3C *this,STMessage *message)
     g_currentExceptionFrame = local_60.previous;
     return 0;
   }
-  iVar5 = sub_005F68B0(local_8,puVar7);
+  iVar5 = sub_005F68B0(local_8,puVar8);
   if (iVar5 == 0) {
     sub_005F66B0(this_00);
     g_currentExceptionFrame = local_60.previous;
@@ -171,14 +172,12 @@ int __thiscall STColl3C::GetMessage(STColl3C *this,STMessage *message)
     if (((((local_14[0] < 0) || (g_worldGrid.sizeX <= local_14[0])) || (local_10[0] < 0)) ||
         ((g_worldGrid.sizeY <= local_10[0] || (local_c[0] < 0)))) ||
        (g_worldGrid.sizeZ <= local_c[0])) {
-      pSVar9 = nullptr;
+      pSVar10 = nullptr;
     }
     else {
-      pSVar9 = g_worldGrid.cells
-               [(int)g_worldGrid.planeStride * (int)local_c[0] +
-                (int)g_worldGrid.sizeX * (int)local_10[0] + (int)local_14[0]].objects[0];
+      pSVar10 = STGridAt3D(g_worldGrid, local_14[0], local_10[0], local_c[0]).objects[0];
     }
-    if ((pSVar9 == nullptr) &&
+    if ((pSVar10 == nullptr) &&
        ((this_00->field_02DD == CASE_1 ||
         (iVar5 = DumpClassC::WritePtr
                            (local_14[0],local_10[0],local_c[0],0,
@@ -196,8 +195,8 @@ LAB_005f61e2:
   return 0;
 switchD_005f6301_caseD_110:
   piVar2 = (message->arg0).ptr;
-  iVar5 = (*local_8->vtable[0x1e].vfunc_00)();
-  if (iVar5 < 1) {
+  dVar6 = local_8->slot_78();
+  if ((int)dVar6 < 1) {
     g_currentExceptionFrame = local_60.previous;
     return 0;
   }

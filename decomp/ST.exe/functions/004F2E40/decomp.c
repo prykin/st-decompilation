@@ -35,7 +35,7 @@ CPanelTy::SetButStruct
   uint uVar2;
   ushort uVar3;
   int iVar4;
-  undefined4 uVar5;
+  ushort *puVar5;
   int iVar6;
   AnonShape_004F2E40_DC76A8C6 *pAVar7;
   InternalExceptionFrame local_50;
@@ -110,8 +110,8 @@ CPanelTy::SetButStruct
     param_1->field_00B2 = param_8;
     *(undefined4 *)&param_1->field_0xb4 = param_10;
     if (param_11 != nullptr) {
-      uVar5 = FUN_0070aa70(g_cMf32_00806790,param_11,0,1);
-      param_1->field_0124 = uVar5;
+      puVar5 = FUN_0070aa70(g_cMf32_00806790,param_11,0,1);
+      param_1->field_0124 = puVar5;
       iVar4 = Library::Ourlib::MFIMG::mfImgGetWidth(g_cMf32_00806790,0x12,param_11,1);
       param_1->field_0128 = iVar4;
     }

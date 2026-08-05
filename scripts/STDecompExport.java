@@ -87,7 +87,7 @@ public class STDecompExport extends GhidraScript {
     // Bump only when normalize/catalogue semantics change. Hashing this entire source file
     // made an unrelated manifest or I/O edit rescan all 5,000+ bodies.
     private static final String FUNCTION_ANALYSIS_LOGIC_ID =
-        "st-function-analysis-v2-null-x87-subnormal";
+        "st-function-analysis-v3-structural-copy-grid";
     private static final Pattern INT3_ASSIGNMENT = Pattern.compile(
         "^(\\s*)([A-Za-z_][A-Za-z0-9_]*)\\s*=\\s*\\(code \\*\\)swi\\(3\\);\\s*$");
     private static final Pattern ASSIGNED_INDIRECT_CALL = Pattern.compile(
@@ -95,6 +95,8 @@ public class STDecompExport extends GhidraScript {
         "(?:\\([^()]+\\)\\s*)?\\(\\*([A-Za-z_][A-Za-z0-9_]*)\\)\\(\\);\\s*$");
     private static final Pattern PLAIN_INDIRECT_CALL = Pattern.compile(
         "^(\\s*)\\(\\*([A-Za-z_][A-Za-z0-9_]*)\\)\\(\\);\\s*$");
+    private static final Pattern RENDERED_MEMBER_ACCESS = Pattern.compile(
+        "(?:->|\\.)\\s*([A-Za-z_$][A-Za-z0-9_$]*)");
     private static final Pattern EXPLICIT_THIS_VIRTUAL_CALL = Pattern.compile(
         "\\(\\*([A-Za-z_][A-Za-z0-9_]*)->vtable->" +
         "([A-Za-z_][A-Za-z0-9_]*)\\)\\s*\\(");
@@ -148,6 +150,17 @@ public class STDecompExport extends GhidraScript {
     private static final Pattern BYTE_POINTER_INCREMENT_FOUR = Pattern.compile(
         "^(?<name>[A-Za-z_$][A-Za-z0-9_$]*)[ \\t]*=[ \\t]*\\k<name>" +
         "[ \\t]*\\+[ \\t]*4;$");
+    private static final Pattern STRUCTURAL_FIELD_POINTER_INCREMENT = Pattern.compile(
+        "^(?<name>[A-Za-z_$][A-Za-z0-9_$]*)[ \\t]*=[ \\t]*" +
+        "\\([^;]+?\\*+\\)[ \\t]*(?:" +
+        "&[ \\t]*\\k<name>->[ \\t]*field_(?:0[xX])?(?<direct>[0-9A-Fa-f]+)|" +
+        "\\(\\(int\\)[ \\t]*&[ \\t]*\\k<name>->[ \\t]*" +
+        "field_(?:0[xX])?(?<base>[0-9A-Fa-f]+)[ \\t]*\\+[ \\t]*" +
+        "(?<delta>0[xX][0-9A-Fa-f]+|[0-9]+)\\))" +
+        ";$");
+    private static final Pattern GRID_CELL_ACCESS = Pattern.compile(
+        "(?<![A-Za-z0-9_$:])(?<grid>[A-Za-z_$][A-Za-z0-9_$]*)" +
+        "\\.cells\\s*\\[");
     private static final Pattern BYTE_ZERO_ELEMENT = Pattern.compile(
         "^(?<name>[A-Za-z_$][A-Za-z0-9_$]*)\\[(?<index>[0-3])\\]" +
         "[ \\t]*=[ \\t]*(?:\\([^)]*\\)[ \\t]*)?0;$");
@@ -278,6 +291,7 @@ public class STDecompExport extends GhidraScript {
     private final Map<String, QualityAggregate> qualityAggregates = new TreeMap<>();
     private Map<String, DArrayDescriptor> darrayDescriptors = Map.of();
     private Set<Long> globalRecordStrides = Set.of();
+    private Map<String, List<RenderedCallableDependency>> renderedCallableMembers;
     private String functionAnalysisSourceHash = "";
 
     @Override
@@ -697,15 +711,16 @@ public class STDecompExport extends GhidraScript {
             collectReferencedData(function, stringsUsed, globalsUsed);
             List<String> comments = collectComments(function);
             callRelationRows.addAll(functionCallRelations(function));
+            Path decompPath = dir.resolve("decomp.c");
             String fingerprint = functionFingerprint(function, tags, callers, callees,
-                stringsUsed, globalsUsed, comments, calledFunctions);
+                stringsUsed, globalsUsed, comments, calledFunctions, decompPath);
             Path fingerprintPath = dir.resolve("fingerprint.sha256");
             Path metaPath = dir.resolve("meta.json");
             String storedFingerprint = Files.exists(fingerprintPath) ?
                 Files.readString(fingerprintPath, StandardCharsets.UTF_8).trim() : "";
             boolean reusable = Files.exists(metaPath) && fingerprint.equals(storedFingerprint) &&
                 (!bodyExported ||
-                    (Files.exists(dir.resolve("decomp.c")) && Files.exists(dir.resolve("listing.asm"))));
+                    (Files.exists(decompPath) && Files.exists(dir.resolve("listing.asm"))));
 
             if (reusable) {
                 if (bodyExported) {
@@ -715,7 +730,7 @@ public class STDecompExport extends GhidraScript {
                         currentFunctionAnalysis.put(id, cached);
                         analysisCacheHits++;
                     }
-                    else normalizeAndCatalog(function, dir.resolve("decomp.c"), fingerprint,
+                    else normalizeAndCatalog(function, decompPath, fingerprint,
                         currentFunctionAnalysis);
                 }
                 String meta = Files.readString(metaPath, StandardCharsets.UTF_8).trim();
@@ -754,7 +769,13 @@ public class STDecompExport extends GhidraScript {
                 NormalizedCode enumNormalized =
                     normalizeKnownEnumCompositions(function, machineNormalized.code);
                 cCode = annotatePseudocode(function, enumNormalized.code);
-                writeText(dir.resolve("decomp.c"), cCode);
+                writeText(decompPath, cCode);
+                // A decompiler-only receiver/local is not present in Listing variables, but
+                // its rendered virtual member still depends on the nested FunctionDefinition.
+                // Recompute after writing so a first export records those scoped dependencies
+                // immediately instead of requiring a second pass.
+                fingerprint = functionFingerprint(function, tags, callers, callees,
+                    stringsUsed, globalsUsed, comments, calledFunctions, decompPath);
                 catalogAndCache(function, cCode, fingerprint, currentFunctionAnalysis);
                 writeFunctionListing(function, dir.resolve("listing.asm"));
             }
@@ -1019,13 +1040,15 @@ public class STDecompExport extends GhidraScript {
             normalizeExplicitThisVirtualCalls(darrayAliases.code);
         NormalizedCode affineCancellation =
             normalizeAffineSelfCancellation(virtualCalls.code);
-        code = affineCancellation.code;
+        NormalizedCode gridIndexing =
+            normalizeGridCellIndexing(affineCancellation.code);
+        code = gridIndexing.code;
         String[] lines = code.split("\\R", -1);
         List<String> output = new ArrayList<>();
         int replacements = legacyBulkCopy.replacements +
             bulkZero.replacements + bulkCopy.replacements +
             darrayAliases.replacements + virtualCalls.replacements +
-            affineCancellation.replacements;
+            affineCancellation.replacements + gridIndexing.replacements;
         for (int index = 0; index < lines.length; index++) {
             Matcher assignment = INT3_ASSIGNMENT.matcher(lines[index]);
             if (!assignment.matches() || index + 1 >= lines.length) {
@@ -1107,6 +1130,109 @@ public class STDecompExport extends GhidraScript {
         }
         matcher.appendTail(output);
         return new NormalizedCode(output.toString(), replacements);
+    }
+
+    /**
+     * Recover the exact row-major spelling already proven by STWorldGrid and
+     * STPathingGrid layouts.  This is deliberately structural: any recovered
+     * aggregate with cells, sizeX and planeStride participates, and the three
+     * coordinate terms may appear in any additive order.
+     */
+    private NormalizedCode normalizeGridCellIndexing(String code) {
+        Matcher matcher = GRID_CELL_ACCESS.matcher(code);
+        StringBuilder output = new StringBuilder(code.length());
+        int search = 0, copied = 0, replacements = 0;
+        while (matcher.find(search)) {
+            int open = matcher.end() - 1;
+            int close = matchingBracket(code, open);
+            if (close < 0) break;
+            String grid = matcher.group("grid");
+            GridCoordinates coordinates = gridCoordinates(
+                code.substring(open + 1, close), grid);
+            if (coordinates == null) {
+                search = close + 1;
+                continue;
+            }
+            output.append(code, copied, matcher.start());
+            output.append("STGridAt3D(").append(grid).append(", ")
+                .append(coordinates.x).append(", ")
+                .append(coordinates.y).append(", ")
+                .append(coordinates.z).append(')');
+            copied = close + 1;
+            search = close + 1;
+            replacements++;
+        }
+        if (replacements == 0) return new NormalizedCode(code, 0);
+        output.append(code, copied, code.length());
+        return new NormalizedCode(output.toString(), replacements);
+    }
+
+    private GridCoordinates gridCoordinates(String expression, String grid) {
+        List<String> terms = splitTopLevel(expression, '+');
+        if (terms.size() != 3) return null;
+        String x = null, y = null, z = null;
+        for (String term : terms) {
+            List<String> factors = splitTopLevel(stripOuterParentheses(term), '*');
+            if (factors.size() == 1) {
+                if (x != null) return null;
+                x = cleanGridCoordinate(factors.get(0));
+                continue;
+            }
+            if (factors.size() != 2) return null;
+            String left = scalarCastless(factors.get(0));
+            String right = scalarCastless(factors.get(1));
+            String sizeX = grid + ".sizeX";
+            String planeStride = grid + ".planeStride";
+            if (left.equals(sizeX) || right.equals(sizeX)) {
+                if (y != null) return null;
+                y = cleanGridCoordinate(left.equals(sizeX) ? factors.get(1) : factors.get(0));
+            }
+            else if (left.equals(planeStride) || right.equals(planeStride)) {
+                if (z != null) return null;
+                z = cleanGridCoordinate(left.equals(planeStride) ? factors.get(1) : factors.get(0));
+            }
+            else return null;
+        }
+        return x == null || y == null || z == null ? null :
+            new GridCoordinates(x, y, z);
+    }
+
+    private String cleanGridCoordinate(String expression) {
+        String value = stripOuterParentheses(expression);
+        String castless = scalarCastless(value);
+        return castless.isBlank() ? value.trim() : castless;
+    }
+
+    private String scalarCastless(String expression) {
+        String value = stripOuterParentheses(expression).trim();
+        while (true) {
+            Matcher cast = Pattern.compile(
+                "^\\(\\s*(?:char|byte|u?short|u?int|long|ulong|word|dword)\\s*\\)\\s*(.+)$",
+                Pattern.CASE_INSENSITIVE).matcher(value);
+            if (!cast.matches()) return stripOuterParentheses(value).trim();
+            value = stripOuterParentheses(cast.group(1)).trim();
+        }
+    }
+
+    private int matchingBracket(String text, int open) {
+        if (open < 0 || open >= text.length() || text.charAt(open) != '[') return -1;
+        int depth = 0;
+        boolean string = false, character = false, escaped = false;
+        for (int index = open; index < text.length(); index++) {
+            char ch = text.charAt(index);
+            if (string || character) {
+                if (escaped) { escaped = false; continue; }
+                if (ch == '\\') { escaped = true; continue; }
+                if (string && ch == '"') string = false;
+                else if (character && ch == '\'') character = false;
+                continue;
+            }
+            if (ch == '"') { string = true; continue; }
+            if (ch == '\'') { character = true; continue; }
+            if (ch == '[') depth++;
+            else if (ch == ']' && --depth == 0) return index;
+        }
+        return -1;
     }
 
     /**
@@ -2688,6 +2814,17 @@ public class STDecompExport extends GhidraScript {
             boolean allowByteCast) {
         String direct = incrementedPointer(statement, allowByteCast);
         if (direct != null) return direct;
+        Matcher structural = STRUCTURAL_FIELD_POINTER_INCREMENT.matcher(statement);
+        if (structural.matches()) {
+            Long base = structural.group("direct") != null ?
+                hexDigits(structural.group("direct")) : hexDigits(structural.group("base"));
+            Long delta = structural.group("delta") == null ? 0L :
+                unsignedLiteral(structural.group("delta"));
+            if (base != null && delta != null && base <= Long.MAX_VALUE - delta &&
+                    base + delta == transferWidth &&
+                    declarations.containsKey(structural.group("name")))
+                return structural.group("name");
+        }
         if (transferWidth <= 1) return null;
         Matcher bytes = Pattern.compile(
             "^(?<name>[A-Za-z_$][A-Za-z0-9_$]*)[ \\t]*=[ \\t]*\\k<name>" +
@@ -2696,6 +2833,12 @@ public class STDecompExport extends GhidraScript {
         PointerDeclaration declaration = declarations.get(bytes.group("name"));
         return declaration != null && declaration.width == 1 ?
             bytes.group("name") : null;
+    }
+
+    private Long hexDigits(String value) {
+        if (value == null || value.isBlank()) return null;
+        try { return Long.parseUnsignedLong(value, 16); }
+        catch (NumberFormatException ignored) { return null; }
     }
 
     private String incrementedPointer(String statement,
@@ -3163,6 +3306,7 @@ public class STDecompExport extends GhidraScript {
                 if (to == null || !to.isMemoryAddress()) continue;
                 Data data = listing.getDataContaining(to);
                 if (data == null || !to.equals(data.getMinAddress())) continue;
+                if (!data.hasStringValue() && !rawStringStorage(data.getDataType())) continue;
                 String value = data.hasStringValue() && data.getValue() instanceof String ?
                     (String)data.getValue() : asciiCString(data.getMinAddress(), 128);
                 if (value == null || value.isEmpty()) continue;
@@ -3179,6 +3323,42 @@ public class STDecompExport extends GhidraScript {
         }
         result.values().removeIf(value -> value == null);
         return result;
+    }
+
+    /**
+     * A vtable or packed record can begin with bytes which accidentally decode as a tiny
+     * printf string.  Raw literal recovery is valid only for scalar byte/char/undefined
+     * storage; structured, pointer, array, enum, and callable data retain their symbol.
+     */
+    private boolean rawStringStorage(DataType type) {
+        DataType current = type;
+        Set<String> seen = new HashSet<>();
+        while (current instanceof ghidra.program.model.data.TypeDef typedef &&
+                seen.add(current.getPathName())) current = typedef.getBaseDataType();
+        String name = current == null ? "" : current.getName().toLowerCase(Locale.ROOT);
+        return name.equals("char") || name.equals("signed char") ||
+            name.equals("unsigned char") || name.equals("byte") ||
+            name.startsWith("undefined");
+    }
+
+    private String compositeStringCandidateFingerprint(Function function) {
+        Set<String> rows = new TreeSet<>();
+        CodeUnitIterator units = listing.getCodeUnits(function.getBody(), true);
+        while (units.hasNext()) {
+            Address from = units.next().getMinAddress();
+            for (Reference reference : references.getReferencesFrom(from)) {
+                Address to = reference.getToAddress();
+                if (to == null || !to.isMemoryAddress()) continue;
+                Data data = listing.getDataContaining(to);
+                if (data == null || !to.equals(data.getMinAddress()) ||
+                        data.hasStringValue() || rawStringStorage(data.getDataType())) continue;
+                String value = asciiCString(data.getMinAddress(), 128);
+                if (value == null || !value.contains("%")) continue;
+                rows.add("structured_raw_string_rejected_v1\u0000" +
+                    addr(data.getMinAddress()) + "\u0000" + data.getDataType().getPathName());
+            }
+        }
+        return String.join("\n", rows);
     }
 
     private void putLiteralName(Map<String, String> literals, String name, String literal) {
@@ -3267,7 +3447,8 @@ public class STDecompExport extends GhidraScript {
         List<String> clean = new ArrayList<>();
         boolean needsRuntime = code.contains("STDebugBreak()") ||
             code.contains(BULK_ZERO_MARKER) ||
-            code.contains(BULK_COPY_MARKER) || code.contains("DArrayAt<");
+            code.contains(BULK_COPY_MARKER) || code.contains("DArrayAt<") ||
+            code.contains("STGridAt3D(");
         boolean hasRuntimeInclude = false;
         for (String line : lines) {
             if (line.contains(PSEUDOCODE_COMMENT_MARKER)) continue;
@@ -4002,6 +4183,12 @@ public class STDecompExport extends GhidraScript {
             "    return reinterpret_cast<Element *>(\n" +
             "        reinterpret_cast<uint8_t *>(array->data) + array->elementSize * index);\n" +
             "}\n" +
+            "template <typename Grid, typename X, typename Y, typename Z>\n" +
+            "static inline auto &STGridAt3D(Grid &grid, X x, Y y, Z z) {\n" +
+            "    return grid.cells[static_cast<int>(x) +\n" +
+            "        static_cast<int>(grid.sizeX) * static_cast<int>(y) +\n" +
+            "        static_cast<int>(grid.planeStride) * static_cast<int>(z)];\n" +
+            "}\n" +
             "#endif\n" +
             "#if defined(_MSC_VER)\n" +
             "__declspec(noreturn) static __inline void STDebugBreak(void) { abort(); }\n" +
@@ -4013,9 +4200,11 @@ public class STDecompExport extends GhidraScript {
 
     private String functionFingerprint(Function function, List<String> tags, List<String> callers,
             List<String> callees, List<String> stringsUsed, List<String> globalsUsed,
-            List<String> comments, Set<Function> calledFunctions) throws Exception {
+            List<String> comments, Set<Function> calledFunctions, Path renderedCode)
+            throws Exception {
         MessageDigest digest = MessageDigest.getInstance("SHA-256");
-        updateDigest(digest, functionDataTypesFingerprint(function, calledFunctions));
+        updateDigest(digest,
+            functionDataTypesFingerprint(function, calledFunctions, renderedCode));
         updateDigest(digest, function.getName(true));
         updateDigest(digest, function.getSignature().getPrototypeString(true));
         updateDigest(digest, nullToEmpty(function.getCallingConventionName()));
@@ -4045,6 +4234,9 @@ public class STDecompExport extends GhidraScript {
         updateDigest(digest, String.join("\n", globalsUsed));
         updateDigest(digest, String.join("\n", comments));
         updateDigest(digest, functionSymbolsFingerprint(function));
+        String compositeStringGuard = compositeStringCandidateFingerprint(function);
+        if (!compositeStringGuard.isEmpty())
+            updateDigest(digest, compositeStringGuard);
         InstructionIterator instructions = listing.getInstructions(function.getBody(), true);
         while (instructions.hasNext()) {
             checkCancelled();
@@ -4093,8 +4285,8 @@ public class STDecompExport extends GhidraScript {
         }
     }
 
-    private String functionDataTypesFingerprint(Function function, Set<Function> calledFunctions)
-            throws Exception {
+    private String functionDataTypesFingerprint(Function function, Set<Function> calledFunctions,
+            Path renderedCode) throws Exception {
         Set<String> related = new TreeSet<>();
         collectTypeIdentity(function.getReturnType(), related);
         for (Variable variable : function.getParameters()) collectTypeIdentity(variable.getDataType(), related);
@@ -4106,11 +4298,82 @@ public class STDecompExport extends GhidraScript {
         }
         collectReferencedDataTypes(function, related);
         collectAccessedCompositeFields(function, related);
+        collectRenderedCallableMembers(renderedCode, related);
         MessageDigest digest = MessageDigest.getInstance("SHA-256");
         for (String item : related) updateDigest(digest, item);
         StringBuilder hex = new StringBuilder();
         for (byte value : digest.digest()) hex.append(String.format("%02x", value & 0xff));
         return hex.toString();
+    }
+
+    /**
+     * The Listing does not always retain the receiver that the decompiler derives from a
+     * saved ECX value.  In that case machine-level composite tracking cannot associate an
+     * indirect call with its vtable slot, even though the previous C rendering can.  Record
+     * only callable members which the function actually rendered.  This closes the cache
+     * hole without making every function depend on every vtable or on unrelated new types.
+     */
+    private void collectRenderedCallableMembers(Path renderedCode, Set<String> result)
+            throws IOException {
+        if (renderedCode == null || !Files.isRegularFile(renderedCode)) return;
+        String code = Files.readString(renderedCode, StandardCharsets.UTF_8);
+        if (code.indexOf("->") < 0 && code.indexOf('.') < 0) return;
+        ensureRenderedCallableMemberIndex();
+        Set<String> names = new HashSet<>();
+        Matcher matcher = RENDERED_MEMBER_ACCESS.matcher(code);
+        while (matcher.find()) names.add(matcher.group(1));
+        for (String name : names) {
+            List<RenderedCallableDependency> dependencies =
+                renderedCallableMembers.get(name);
+            if (dependencies == null) continue;
+            for (RenderedCallableDependency dependency : dependencies) {
+                result.add("rendered_callable_member\u0000" + dependency.ownerPath +
+                    "\u0000" + dependency.offset + "\u0000" + dependency.length +
+                    "\u0000" + dependency.fieldName + "\u0000" +
+                    dependency.type.getPathName() + "\u0000" + dependency.comment);
+                collectTypeIdentity(dependency.type, result);
+            }
+        }
+    }
+
+    private void ensureRenderedCallableMemberIndex() throws IOException {
+        if (renderedCallableMembers != null) return;
+        Map<String, List<RenderedCallableDependency>> index = new HashMap<>();
+        Iterator<DataType> iterator = currentProgram.getDataTypeManager().getAllDataTypes();
+        while (iterator.hasNext()) {
+            checkCancelled();
+            DataType type = iterator.next();
+            if (!(type instanceof ghidra.program.model.data.Structure structure)) continue;
+            for (DataTypeComponent component : structure.getDefinedComponents()) {
+                String fieldName = component.getFieldName();
+                if (fieldName == null || fieldName.isBlank() ||
+                        callableDefinition(component.getDataType()) == null) continue;
+                index.computeIfAbsent(fieldName, ignored -> new ArrayList<>()).add(
+                    new RenderedCallableDependency(structure.getPathName(),
+                        component.getOffset(), component.getLength(), fieldName,
+                        component.getDataType(), nullToEmpty(component.getComment())));
+            }
+        }
+        for (List<RenderedCallableDependency> dependencies : index.values()) {
+            dependencies.sort(Comparator
+                .comparing((RenderedCallableDependency value) -> value.ownerPath)
+                .thenComparingInt(value -> value.offset)
+                .thenComparing(value -> value.type.getPathName()));
+        }
+        renderedCallableMembers = index;
+    }
+
+    private ghidra.program.model.data.FunctionDefinition callableDefinition(DataType type) {
+        DataType current = type;
+        Set<String> seen = new HashSet<>();
+        while (current instanceof ghidra.program.model.data.TypeDef typedef &&
+                seen.add(current.getPathName())) current = typedef.getBaseDataType();
+        if (current instanceof ghidra.program.model.data.Pointer pointer)
+            current = pointer.getDataType();
+        while (current instanceof ghidra.program.model.data.TypeDef typedef &&
+                seen.add(current.getPathName())) current = typedef.getBaseDataType();
+        return current instanceof ghidra.program.model.data.FunctionDefinition definition ?
+            definition : null;
     }
 
     private void collectTypeIdentity(DataType type, Set<String> result) {
@@ -5650,6 +5913,9 @@ public class STDecompExport extends GhidraScript {
     private record CachedFunctionAnalysis(String fingerprint, int normalizationCount,
         List<String> pseudocodeRows, List<String> qualityRows,
         Map<String, Integer> qualityOccurrences) { }
+    private record RenderedCallableDependency(String ownerPath, int offset, int length,
+        String fieldName, DataType type, String comment) { }
+    private record GridCoordinates(String x, String y, String z) { }
     private record X87Memory(String base, long offset) { }
     private record X87SavedValue(int savedOffset, int destinationOffset) { }
 

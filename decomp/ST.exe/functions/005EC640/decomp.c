@@ -1,9 +1,14 @@
 
-void __thiscall FUN_005ec640(void *this,char *param_1)
+/* [STPrototypeApplier] Propagated return.
+   Evidence: 005EC640 returns return of Library::MSVCRT::_strncpy @ 005EC667 */
+
+char * __thiscall FUN_005ec640(void *this,char *param_1)
 
 {
-  Library::MSVCRT::_strncpy((char *)((int)this + 0x367),param_1,0x103);
+  char *pcVar1;
+
+  pcVar1 = Library::MSVCRT::_strncpy((char *)((int)this + 0x367),param_1,0x103);
   *(undefined1 *)((int)this + 0x46a) = 0;
-  return;
+  return pcVar1;
 }
 

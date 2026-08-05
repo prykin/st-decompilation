@@ -3,9 +3,13 @@
 
 /* Recovered from embedded debug metadata:
    E:\__titans\Igor\To_gold.cpp
-   STDcResourcC::Init */
+   STDcResourcC::Init
+   [STAbiConsistencyApplier] machine_thiscall_arity target=function:-1: prototype=undefined4 *
+   __thiscall Init(STDcResourcC * this) Evidence: every machine RET purges exactly 0 explicit stack
+   bytes; current signature describes 4; removed trailing parameter slots have no listing
+   references; ret_sites=0057F5AF RET | 0057F667 RET | 0057F678 RET | 0057F680 RET */
 
-undefined4 * __thiscall STDcResourcC::Init(STDcResourcC *this,uint param_1)
+undefined4 * __thiscall STDcResourcC::Init(STDcResourcC *this)
 
 {
   code *pcVar1;

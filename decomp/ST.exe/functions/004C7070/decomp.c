@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* [STMethodOwnerApplier] Structural method owner recovered as TLOBaseTy.
    Evidence: this_call_owners=[TLOBaseTy]; agreed_this_calls=1; incoming_this_accesses=4;
@@ -45,16 +47,12 @@ LAB_004c7175:
           sVar4 = (short)iVar5;
           if ((((g_worldGrid.sizeX <= sVar2) || (sVar1 < 0)) || (g_worldGrid.sizeY <= sVar1)) ||
              (((sVar4 < 0 || (g_worldGrid.sizeZ <= sVar4)) ||
-              (g_worldGrid.cells
-               [(int)sVar4 * (int)g_worldGrid.planeStride + (int)g_worldGrid.sizeX * (int)sVar1 +
-                (int)sVar2].objects[0] == nullptr)))) {
+              (STGridAt3D(g_worldGrid, sVar2, sVar1, sVar4).objects[0] == nullptr)))) {
             if (((sVar2 < 0) || (g_worldGrid.sizeX <= sVar2)) ||
                ((sVar1 < 0 ||
                 (((g_worldGrid.sizeY <= sVar1 || (sVar4 < 0)) || (g_worldGrid.sizeZ <= sVar4))))))
             goto LAB_004c719b;
-            sVar4 = g_pathingGrid.cells
-                    [(int)sVar4 * (int)g_pathingGrid.planeStride +
-                     (int)g_pathingGrid.sizeX * (int)sVar1 + (int)sVar2];
+            sVar4 = STGridAt3D(g_pathingGrid, sVar2, sVar1, sVar4);
             if (sVar4 == -1) goto LAB_004c716e;
             goto LAB_004c7175;
           }

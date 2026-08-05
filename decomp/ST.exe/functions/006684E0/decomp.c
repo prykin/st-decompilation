@@ -52,11 +52,7 @@ AllocationRecord_006684E0 * __cdecl FltDataPack(AllocationRecord_006684E0 *param
     *param_2 = local_c + 0x260U;
     pAVar4 = Library::DKW::LIB::MemAllocClear(local_c + 0x260U);
     pAVar7 = pAVar4;
-    for (iVar3 = 0x98; iVar3 != 0; iVar3 = iVar3 + -1) {
-      *(undefined4 *)pAVar7 = *(undefined4 *)param_1;
-      param_1 = (AllocationRecord_006684E0 *)&param_1->field_0x4;
-      pAVar7 = (AllocationRecord_006684E0 *)&pAVar7->field_0x4;
-    }
+    memmove(pAVar7, param_1, 0x260); /* compiler REP MOVS byte copy */
     iVar3 = 0;
     pAVar4->field_0014 = *param_2;
     pAVar4->field_0018 = 0;

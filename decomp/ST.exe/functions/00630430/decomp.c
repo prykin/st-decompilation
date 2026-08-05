@@ -28,7 +28,7 @@ int __thiscall STManRuinC::GetMessage(STManRuinC *this,STMessage *message)
   byte *local_14;
   uint local_10;
   STManRuinC *local_c;
-  ushort *local_8;
+  AnonShape_00630430_7FBC9B9C *local_8;
 
   local_8 = nullptr;
   local_58.previous = g_currentExceptionFrame;
@@ -118,7 +118,8 @@ int __thiscall STManRuinC::GetMessage(STManRuinC *this,STMessage *message)
   }
   local_c->field_0071 = local_c->field_0018 * DAT_00808754;
   if (g_cMf32_00806754 != nullptr) {
-    local_8 = Library::Ourlib::MFAOBJ::mfAObjLoad(g_cMf32_00806754,PTR_DAT_0079d198,0,0);
+    local_8 = (AnonShape_00630430_7FBC9B9C *)
+              Library::Ourlib::MFAOBJ::mfAObjLoad(g_cMf32_00806754,PTR_DAT_0079d198,0,0);
   }
   if (local_8 == nullptr) {
 LAB_006304e7:
@@ -128,7 +129,7 @@ LAB_006304e7:
     this_00->field_0028 = 1;
   }
   else {
-    if (*(int *)(local_8 + 6) == 2) {
+    if (local_8->field_000C == 2) {
       sub_00631390(this_00,(undefined4 *)local_8);
       this_00->field_0071 = this_00->field_0065;
       sub_00631450(this_00);

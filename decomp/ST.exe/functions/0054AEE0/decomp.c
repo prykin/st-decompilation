@@ -26,10 +26,6 @@ void __thiscall CursorClassTy::GCGameState(CursorClassTy *this,int param_1)
   Global_sub_005121F0_param_1Enum GVar9;
   int iVar10;
   uint uVar11;
-  /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
-  undefined4 unaff_ESI;
-  /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
-  undefined4 unaff_EDI;
   char *pcVar14;
   uint *puVar15;
   longlong lVar16;
@@ -173,21 +169,19 @@ LAB_0054b366:
         }
       }
       if (this_00->field_04DE == '\0') {
-/* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
 LAB_0054b2a9:
         CVar4 = STAllPlayersC::GetCursorType
                           (g_allPlayers_007FA174,this_00->field_04A2,
                            (AnonShape_00435930_AC276C8C *)this_00->field_049A,
                            this_00->field_00C5 - this_00->field_04B2,
-                           (int *)(this_00->field_00C9 - this_00->field_04B6),unaff_EDI,unaff_ESI);
+                           (int *)(this_00->field_00C9 - this_00->field_04B6));
         while (CVar4 == CASE_58) {
           sub_0054A8D0(this_00);
-          /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
           CVar4 = STAllPlayersC::GetCursorType
                             (g_allPlayers_007FA174,this_00->field_04A2,
                              (AnonShape_00435930_AC276C8C *)this_00->field_049A,
                              this_00->field_00C5 - this_00->field_04B2,
-                             (int *)(this_00->field_00C9 - this_00->field_04B6),unaff_EDI,unaff_ESI);
+                             (int *)(this_00->field_00C9 - this_00->field_04B6));
         }
         iVar5 = this_00->field_0038;
         iVar10 = this_00->field_0034;

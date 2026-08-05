@@ -51,7 +51,7 @@ void __thiscall MReportTy::DoneMReport(MReportTy *this)
       pMVar2->field_0457 = nullptr;
     }
     cMf32::RecMemFree(g_cMf32_00806780,&pMVar2->field_005D);
-    cMf32::RecMemFree(g_cMf32_00806780,&pMVar2->field_006F);
+    cMf32::RecMemFree(g_cMf32_00806780,(uint *)&pMVar2->field_006F);
     if (pMVar2->field_0077 != nullptr) {
       FreeAndNull(&pMVar2->field_0077);
     }

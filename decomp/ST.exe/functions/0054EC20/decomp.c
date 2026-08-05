@@ -7,9 +7,13 @@
 
    [STReturnSemanticsApplier] ignored_eax_void.
    Evidence: all observed direct callers ignore the return register (ignored=2, used=0), and
-   decompilation contains no value return */
+   decompilation contains no value return
+   [STAbiConsistencyApplier] machine_thiscall_arity target=function:-1: prototype=void __thiscall
+   SendClientMail(PlaySystemTy * this) Evidence: every machine RET purges exactly 0 explicit stack
+   bytes; current signature describes 4; removed trailing parameter slots have no listing
+   references; ret_sites=0054ED48 RET | 0054ED8E RET */
 
-void __thiscall PlaySystemTy::SendClientMail(PlaySystemTy *this,int param_1)
+void __thiscall PlaySystemTy::SendClientMail(PlaySystemTy *this)
 
 {
   undefined4 *puVar1;

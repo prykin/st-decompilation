@@ -10,7 +10,7 @@ TrackbarClassTy * __cdecl CreateTrackbar(void)
   pTVar1 = (TrackbarClassTy *)FUN_006b04d0(0x19c);
   if (pTVar1 != nullptr) {
     FUN_0072b700((undefined4 *)pTVar1);
-    pTVar1->field_0000 = 0x79e2cc;
+    pTVar1->vtable = &TrackbarClassTyVTable;
     pTVar1->field_0134 = 0;
     return pTVar1;
   }

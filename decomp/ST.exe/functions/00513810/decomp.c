@@ -3,9 +3,16 @@
 
 /* Recovered from embedded debug metadata:
    E:\__titans\Andrey\helppan.cpp
-   HelpPanelTy::BackBut */
+   HelpPanelTy::BackBut
+   [STAbiConsistencyApplier] machine_thiscall_arity target=function:-1: prototype=undefined1
+   __thiscall BackBut(HelpPanelTy * this) Evidence: every machine RET purges exactly 0 explicit
+   stack bytes; current signature describes 4; removed trailing parameter slots have no listing
+   references; ret_sites=005138AF RET | 005138D5 RET | 0051397C RET | 005139C2 RET
+   [STAbiConsistencyApplier] machine_thiscall_unsized_return_migration target=return:-1:
+   return=/undefined Evidence: legacy ABI applier materialized the unsized return as undefined1
+   while changing only function arity; restore Ghidra DefaultDataType */
 
-void __thiscall HelpPanelTy::BackBut(HelpPanelTy *this,void *param_1)
+void __thiscall HelpPanelTy::BackBut(HelpPanelTy *this)
 
 {
   HelpPanelTy_field_01A1State HVar1;
@@ -13,8 +20,6 @@ void __thiscall HelpPanelTy::BackBut(HelpPanelTy *this,void *param_1)
   HelpPanelTy *this_00;
   int iVar3;
   int iVar4;
-  /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
-  int unaff_EDI;
   InternalExceptionFrame local_50;
   HelpPanelTy *local_c;
   undefined4 local_8;
@@ -40,8 +45,7 @@ void __thiscall HelpPanelTy::BackBut(HelpPanelTy *this,void *param_1)
       if (HVar1 != 0) {
         if (HVar1 == CASE_6) {
           TTreeProc(this_00,this_00->field_01AB,'\0');
-          /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
-          PutToSHlp(this_00,unaff_EDI);
+          PutToSHlp(this_00);
           g_currentExceptionFrame = local_50.previous;
           return;
         }

@@ -174,6 +174,18 @@ function fingerprint or forcing a new Ghidra decompilation. Adjusted copies and
 extra observable loop statements remain untouched. Normalized sites are
 recorded as `bulk_byte_copy` in `pseudocode_idioms.jsonl`.
 
+The same proof accepts a decompiler pointer advance expressed through the end
+of a generated packed record, for example:
+
+```c
+source = (Record *)((int)&source->field_0001 + 3);
+```
+
+only when the parsed field offset plus the literal delta is exactly the
+per-iteration transfer width. It is then the same `source += 4 bytes` machine
+step as an ordinary pointer increment. A mismatched offset, non-literal delta,
+different base, or observable advanced pointer keeps the original loop.
+
 ## Catalogued forms awaiting typed rewriting
 
 Every export recreates `decomp/ST.exe/pseudocode_idioms.jsonl`. Each JSON object
@@ -343,6 +355,27 @@ the observed wrapper family, not evidence for a character string merely because
 some bytes are printable. The exporter does not rewrite the value speculatively:
 the ABI pass must merge the adjacent incoming dwords, after which Ghidra renders
 ordinary `double` literals itself.
+
+### Exact recovered three-dimensional grid indexing
+
+Once a recovered aggregate exposes `cells`, `sizeX`, and `planeStride`, an
+exact three-term row-major access such as:
+
+```c
+grid.cells[z * grid.planeStride + x + y * grid.sizeX]
+```
+
+is rendered as:
+
+```c
+STGridAt3D(grid, x, y, z)
+```
+
+The three additive terms may appear in any order, but there must be exactly one
+unscaled coordinate, one factor using that same aggregate's `sizeX`, and one
+factor using its `planeStride`. The generated C++ helper retains the original
+row-major address calculation; incomplete, adjusted, or mixed-base expressions
+remain untouched.
 
 ### Exact affine cancellation and partial-register returns
 

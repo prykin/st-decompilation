@@ -180,16 +180,13 @@ STSprGameObjC::CheckRay
             pSVar10 = nullptr;
           }
           else {
-            pSVar10 = g_worldGrid.cells
-                      [(int)g_worldGrid.planeStride * (int)sVar11 +
-                       (int)g_worldGrid.sizeX * (int)sVar8 + (int)sVar7].objects[0];
+            pSVar10 = STGridAt3D(g_worldGrid, sVar7, sVar8, sVar11).objects[0];
           }
           if (((pSVar10 == nullptr) || ((STWorldObjectVTable *)0x7 < pSVar10[1].vtable)
               ) || ((g_playSystem_00802A38 != nullptr &&
                     (7 < g_bulkInitializedRecords_008087C7[(int)pSVar10[1].vtable].field_0022)))) {
 LAB_0041fe0d:
-            if (g_pathingGrid.cells
-                [g_pathingGrid.sizeX * iVar5 + local_c + g_pathingGrid.planeStride * iVar9] < 0) {
+            if (STGridAt3D(g_pathingGrid, local_c, iVar5, iVar9) < 0) {
               RaiseInternalException
                         (-0x5001fff7,g_overwriteContext_007ED77C,
                          "E:\\__titans\\wlad\\Tc_gobj.cpp",0xb85);
@@ -200,9 +197,7 @@ LAB_0041fe0d:
               pSVar10 = nullptr;
             }
             else {
-              pSVar10 = g_worldGrid.cells
-                        [(int)g_worldGrid.planeStride * (int)sVar11 +
-                         (int)g_worldGrid.sizeX * (int)sVar8 + (int)sVar7].objects[1];
+              pSVar10 = STGridAt3D(g_worldGrid, sVar7, sVar8, sVar11).objects[1];
             }
             if (((pSVar10 != nullptr) &&
                 (pSVar10[1].vtable < (STWorldObjectVTable *)0x8)) &&

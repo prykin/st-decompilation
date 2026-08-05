@@ -115,13 +115,9 @@ int __thiscall STBoatC::GetMessage(STBoatC *this,STMessage *message)
   /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
   uint extraout_EDX_13;
   uint uVar27;
-  /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
-  int *unaff_ESI;
   int iVar29;
   byte *pbVar30;
   ushort *puVar31;
-  /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
-  void *unaff_EDI;
   char *pcVar32;
   char *pcVar33;
   char *pcVar34;
@@ -322,9 +318,7 @@ int __thiscall STBoatC::GetMessage(STBoatC *this,STMessage *message)
         pSVar24 = nullptr;
       }
       else {
-        pSVar24 = g_worldGrid.cells
-                  [(int)g_worldGrid.planeStride * (int)sVar5 + (int)g_worldGrid.sizeX * (int)sVar7 +
-                   (int)sVar4].objects[0];
+        pSVar24 = STGridAt3D(g_worldGrid, sVar4, sVar7, sVar5).objects[0];
       }
       if (((pSVar24 != nullptr) &&
           (*(int *)&pSVar24->field_0x18 == this_00->field_0679)) &&
@@ -350,9 +344,7 @@ int __thiscall STBoatC::GetMessage(STBoatC *this,STMessage *message)
       }
       else {
         local_24 = (AnonShape_004B9D90_4F3151F9 *)
-                   g_worldGrid.cells
-                   [(int)g_worldGrid.planeStride * (int)sVar5 + (int)g_worldGrid.sizeX * (int)sVar7
-                    + (int)sVar4].objects[0];
+                   STGridAt3D(g_worldGrid, sVar4, sVar7, sVar5).objects[0];
       }
       if (((local_24 == nullptr) ||
           (*(AnonShape_005EFAE0_B406B78B **)&local_24->field_0x18 != this_00->field_06AF)) ||
@@ -876,9 +868,7 @@ LAB_00459f59:
         pSVar24 = nullptr;
       }
       else {
-        pSVar24 = g_worldGrid.cells
-                  [(int)g_worldGrid.planeStride * (int)sVar4 + (int)g_worldGrid.sizeX * (int)sVar39
-                   + (int)sVar5].objects[0];
+        pSVar24 = STGridAt3D(g_worldGrid, sVar5, sVar39, sVar4).objects[0];
         pSVar20 = local_1c;
       }
       if (((pSVar24 != nullptr) &&
@@ -933,9 +923,7 @@ LAB_00459f59:
       }
       else {
         local_28 = (AnonShape_004B9D90_4F3151F9 *)
-                   g_worldGrid.cells
-                   [(int)g_worldGrid.planeStride * (int)sVar4 + (int)g_worldGrid.sizeX * (int)sVar5
-                    + (int)sVar39].objects[0];
+                   STGridAt3D(g_worldGrid, sVar39, sVar5, sVar4).objects[0];
       }
       if (((local_28 == nullptr) ||
           (*(AnonShape_005EFAE0_B406B78B **)&local_28->field_0x18 != this_00->field_06AF)) ||
@@ -978,9 +966,7 @@ LAB_00459f59:
       }
       else {
         local_10 = (STFishC *)
-                   g_worldGrid.cells
-                   [(int)g_worldGrid.planeStride * (int)sVar4 + (int)g_worldGrid.sizeX * (int)sVar5
-                    + (int)sVar39].objects[0];
+                   STGridAt3D(g_worldGrid, sVar39, sVar5, sVar4).objects[0];
       }
       if ((local_10 != nullptr) && (local_10->field_0018 == this_00->field_055A)) {
         thunk_FUN_004e2200(local_10,this_00->field_0568,this_00->field_0018,this_00->field_0716);
@@ -1514,16 +1500,14 @@ LAB_0045ad7b:
       case CASE_65:
         local_8 = sub_00460360(this_00);
         break;
-      /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
       case CASE_66:
-        local_8 = BackAttack(this_00,(int *)0x2,(int)unaff_EDI,(int)unaff_ESI);
+        local_8 = BackAttack(this_00,(int *)0x2);
         break;
       case CASE_67:
         local_8 = thunk_FUN_004620f0(this_00);
         break;
-      /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
       case CASE_68:
-        local_8 = BackToDok(this_00,(int *)0x2,unaff_EDI,unaff_ESI);
+        local_8 = BackToDok(this_00,(int *)0x2);
         break;
       case CASE_69:
         local_8 = thunk_FUN_004732d0((int *)this_00);
@@ -1561,13 +1545,11 @@ LAB_0045ad7b:
       case CASE_74:
         local_8 = BackUnLoadObj(this_00,(int *)0x2);
         break;
-      /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
       case CASE_75:
-        local_8 = BackBuild(this_00,(int *)0x2,unaff_EDI,unaff_ESI);
+        local_8 = BackBuild(this_00,(int *)0x2);
         break;
-      /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
       case CASE_76:
-        local_8 = BackDismant(this_00,(int *)0x2,unaff_EDI,unaff_ESI);
+        local_8 = BackDismant(this_00,(int *)0x2);
         break;
       case CASE_77:
         local_8 = thunk_FUN_0046d400((int *)this_00,uVar16);
@@ -1804,8 +1786,7 @@ LAB_0045ad7b:
         case CASE_2:
           this_00->field_045D = 0;
           this_00->field_0459 = CASE_66;
-          /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
-          local_EAX_10888 = BackAttack(this_00,nullptr,(int)unaff_EDI,(int)unaff_ESI);
+          local_EAX_10888 = BackAttack(this_00,nullptr);
           if (local_EAX_10888 != -1) goto cf_common_exit_00458C5B;
           iVar13 = 0x549;
           local_8 = local_EAX_10888;
@@ -1821,8 +1802,7 @@ LAB_0045ad7b:
         case CASE_4:
           this_00->field_045D = 0;
           this_00->field_0459 = CASE_68;
-          /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
-          local_EAX_10888 = BackToDok(this_00,nullptr,unaff_EDI,unaff_ESI);
+          local_EAX_10888 = BackToDok(this_00,nullptr);
           if (local_EAX_10888 != -1) goto cf_common_exit_00458C5B;
           iVar13 = 0x567;
           local_8 = local_EAX_10888;
@@ -1926,8 +1906,7 @@ LAB_0045ad7b:
         case CASE_11:
           this_00->field_045D = 0;
           this_00->field_0459 = CASE_75;
-          /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
-          local_EAX_10888 = BackBuild(this_00,nullptr,unaff_EDI,unaff_ESI);
+          local_EAX_10888 = BackBuild(this_00,nullptr);
           if (local_EAX_10888 != -1) goto cf_common_exit_00458C5B;
           iVar13 = 0x558;
           local_8 = local_EAX_10888;
@@ -1935,8 +1914,7 @@ LAB_0045ad7b:
         case CASE_12:
           this_00->field_045D = 0;
           this_00->field_0459 = CASE_76;
-          /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
-          local_EAX_10888 = BackDismant(this_00,nullptr,unaff_EDI,unaff_ESI);
+          local_EAX_10888 = BackDismant(this_00,nullptr);
           if (local_EAX_10888 != -1) goto cf_common_exit_00458C5B;
           iVar13 = 0x5a3;
           local_8 = local_EAX_10888;
@@ -1989,8 +1967,7 @@ LAB_0045ad7b:
       else if (this_00->field_02F8 == 1) {
         if (this_00->field_045D == 0) {
           this_00->field_045D = CASE_C;
-          /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
-          iVar13 = LoadRC(this_00,nullptr,unaff_EDI,(int)unaff_ESI);
+          iVar13 = LoadRC(this_00,nullptr);
           if (iVar13 != -1) {
             g_currentExceptionFrame = local_184.previous;
             return 0;
@@ -2011,8 +1988,7 @@ LAB_0045ad7b:
         case CASE_2:
           this_00->field_045D = 0;
           this_00->field_0459 = CASE_66;
-          /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
-          local_EAX_10888 = BackAttack(this_00,nullptr,(int)unaff_EDI,(int)unaff_ESI);
+          local_EAX_10888 = BackAttack(this_00,nullptr);
           if (local_EAX_10888 != -1) goto cf_common_exit_00458C5B;
           iVar13 = 0x5cb;
           local_8 = local_EAX_10888;
@@ -2028,8 +2004,7 @@ LAB_0045ad7b:
         case CASE_4:
           this_00->field_045D = 0;
           this_00->field_0459 = CASE_68;
-          /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
-          local_EAX_10888 = BackToDok(this_00,nullptr,unaff_EDI,unaff_ESI);
+          local_EAX_10888 = BackToDok(this_00,nullptr);
           if (local_EAX_10888 != -1) goto cf_common_exit_00458C5B;
           iVar13 = 0x5e9;
           local_8 = local_EAX_10888;
@@ -2133,8 +2108,7 @@ LAB_0045ad7b:
         case CASE_11:
           this_00->field_045D = 0;
           this_00->field_0459 = CASE_75;
-          /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
-          local_EAX_10888 = BackBuild(this_00,nullptr,unaff_EDI,unaff_ESI);
+          local_EAX_10888 = BackBuild(this_00,nullptr);
           if (local_EAX_10888 != -1) goto cf_common_exit_00458C5B;
           iVar13 = 0x5da;
           local_8 = local_EAX_10888;
@@ -2142,8 +2116,7 @@ LAB_0045ad7b:
         case CASE_12:
           this_00->field_045D = 0;
           this_00->field_0459 = CASE_76;
-          /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
-          local_EAX_10888 = BackDismant(this_00,nullptr,unaff_EDI,unaff_ESI);
+          local_EAX_10888 = BackDismant(this_00,nullptr);
           if (local_EAX_10888 != -1) goto cf_common_exit_00458C5B;
           iVar13 = 0x625;
           local_8 = local_EAX_10888;
@@ -2229,8 +2202,7 @@ LAB_0045ad7b:
         case CASE_2:
           this_00->field_045D = 0;
           this_00->field_0459 = CASE_66;
-          /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
-          local_EAX_10888 = BackAttack(this_00,nullptr,(int)unaff_EDI,(int)unaff_ESI);
+          local_EAX_10888 = BackAttack(this_00,nullptr);
           if (local_EAX_10888 != -1) goto cf_common_exit_00458C5B;
           iVar13 = 0x652;
           local_8 = local_EAX_10888;
@@ -2246,8 +2218,7 @@ LAB_0045ad7b:
         case CASE_4:
           this_00->field_045D = 0;
           this_00->field_0459 = CASE_68;
-          /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
-          local_EAX_10888 = BackToDok(this_00,nullptr,unaff_EDI,unaff_ESI);
+          local_EAX_10888 = BackToDok(this_00,nullptr);
           if (local_EAX_10888 != -1) goto cf_common_exit_00458C5B;
           iVar13 = 0x670;
           local_8 = local_EAX_10888;
@@ -2351,8 +2322,7 @@ LAB_0045ad7b:
         case CASE_11:
           this_00->field_045D = 0;
           this_00->field_0459 = CASE_75;
-          /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
-          local_EAX_10888 = BackBuild(this_00,nullptr,unaff_EDI,unaff_ESI);
+          local_EAX_10888 = BackBuild(this_00,nullptr);
           if (local_EAX_10888 != -1) goto cf_common_exit_00458C5B;
           iVar13 = 0x661;
           local_8 = local_EAX_10888;
@@ -2360,8 +2330,7 @@ LAB_0045ad7b:
         case CASE_12:
           this_00->field_045D = 0;
           this_00->field_0459 = CASE_76;
-          /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
-          local_EAX_10888 = BackDismant(this_00,nullptr,unaff_EDI,unaff_ESI);
+          local_EAX_10888 = BackDismant(this_00,nullptr);
           if (local_EAX_10888 != -1) goto cf_common_exit_00458C5B;
           iVar13 = 0x6ac;
           local_8 = local_EAX_10888;
@@ -2435,8 +2404,7 @@ LAB_0045ad7b:
         case CASE_2:
           this_00->field_045D = 0;
           this_00->field_0459 = CASE_66;
-          /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
-          local_EAX_10888 = BackAttack(this_00,nullptr,(int)unaff_EDI,(int)unaff_ESI);
+          local_EAX_10888 = BackAttack(this_00,nullptr);
           if (local_EAX_10888 != -1) goto cf_common_exit_00458C5B;
           iVar13 = 0x6d4;
           local_8 = local_EAX_10888;
@@ -2452,8 +2420,7 @@ LAB_0045ad7b:
         case CASE_4:
           this_00->field_045D = 0;
           this_00->field_0459 = CASE_68;
-          /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
-          local_EAX_10888 = BackToDok(this_00,nullptr,unaff_EDI,unaff_ESI);
+          local_EAX_10888 = BackToDok(this_00,nullptr);
           if (local_EAX_10888 != -1) goto cf_common_exit_00458C5B;
           iVar13 = 0x6f2;
           local_8 = local_EAX_10888;
@@ -2557,8 +2524,7 @@ LAB_0045ad7b:
         case CASE_11:
           this_00->field_045D = 0;
           this_00->field_0459 = CASE_75;
-          /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
-          local_EAX_10888 = BackBuild(this_00,nullptr,unaff_EDI,unaff_ESI);
+          local_EAX_10888 = BackBuild(this_00,nullptr);
           if (local_EAX_10888 != -1) goto cf_common_exit_00458C5B;
           iVar13 = 0x6e3;
           local_8 = local_EAX_10888;
@@ -2566,8 +2532,7 @@ LAB_0045ad7b:
         case CASE_12:
           this_00->field_045D = 0;
           this_00->field_0459 = CASE_76;
-          /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
-          local_EAX_10888 = BackDismant(this_00,nullptr,unaff_EDI,unaff_ESI);
+          local_EAX_10888 = BackDismant(this_00,nullptr);
           if (local_EAX_10888 != -1) goto cf_common_exit_00458C5B;
           iVar13 = 0x72e;
           local_8 = local_EAX_10888;
@@ -2653,8 +2618,7 @@ LAB_0045ad7b:
         case CASE_2:
           this_00->field_045D = 0;
           this_00->field_0459 = CASE_66;
-          /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
-          local_EAX_10888 = BackAttack(this_00,nullptr,(int)unaff_EDI,(int)unaff_ESI);
+          local_EAX_10888 = BackAttack(this_00,nullptr);
           if (local_EAX_10888 != -1) goto cf_common_exit_00458C5B;
           iVar13 = 0x75b;
           local_8 = local_EAX_10888;
@@ -2670,8 +2634,7 @@ LAB_0045ad7b:
         case CASE_4:
           this_00->field_045D = 0;
           this_00->field_0459 = CASE_68;
-          /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
-          local_EAX_10888 = BackToDok(this_00,nullptr,unaff_EDI,unaff_ESI);
+          local_EAX_10888 = BackToDok(this_00,nullptr);
           if (local_EAX_10888 != -1) goto cf_common_exit_00458C5B;
           iVar13 = 0x779;
           local_8 = local_EAX_10888;
@@ -2775,8 +2738,7 @@ LAB_0045ad7b:
         case CASE_11:
           this_00->field_045D = 0;
           this_00->field_0459 = CASE_75;
-          /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
-          local_EAX_10888 = BackBuild(this_00,nullptr,unaff_EDI,unaff_ESI);
+          local_EAX_10888 = BackBuild(this_00,nullptr);
           if (local_EAX_10888 != -1) goto cf_common_exit_00458C5B;
           iVar13 = 0x76a;
           local_8 = local_EAX_10888;
@@ -2784,8 +2746,7 @@ LAB_0045ad7b:
         case CASE_12:
           this_00->field_045D = 0;
           this_00->field_0459 = CASE_76;
-          /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
-          local_EAX_10888 = BackDismant(this_00,nullptr,unaff_EDI,unaff_ESI);
+          local_EAX_10888 = BackDismant(this_00,nullptr);
           if (local_EAX_10888 != -1) goto cf_common_exit_00458C5B;
           iVar13 = 0x7b5;
           local_8 = local_EAX_10888;
@@ -2859,8 +2820,7 @@ LAB_0045ad7b:
         case CASE_2:
           this_00->field_045D = 0;
           this_00->field_0459 = CASE_66;
-          /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
-          local_EAX_10888 = BackAttack(this_00,nullptr,(int)unaff_EDI,(int)unaff_ESI);
+          local_EAX_10888 = BackAttack(this_00,nullptr);
           if (local_EAX_10888 != -1) goto cf_common_exit_00458C5B;
           iVar13 = 0x7dc;
           local_8 = local_EAX_10888;
@@ -2876,8 +2836,7 @@ LAB_0045ad7b:
         case CASE_4:
           this_00->field_045D = 0;
           this_00->field_0459 = CASE_68;
-          /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
-          local_EAX_10888 = BackToDok(this_00,nullptr,unaff_EDI,unaff_ESI);
+          local_EAX_10888 = BackToDok(this_00,nullptr);
           if (local_EAX_10888 != -1) goto cf_common_exit_00458C5B;
           iVar13 = 0x7fa;
           local_8 = local_EAX_10888;
@@ -2981,8 +2940,7 @@ LAB_0045ad7b:
         case CASE_11:
           this_00->field_045D = 0;
           this_00->field_0459 = CASE_75;
-          /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
-          local_EAX_10888 = BackBuild(this_00,nullptr,unaff_EDI,unaff_ESI);
+          local_EAX_10888 = BackBuild(this_00,nullptr);
           if (local_EAX_10888 != -1) goto cf_common_exit_00458C5B;
           iVar13 = 0x7eb;
           local_8 = local_EAX_10888;
@@ -2990,8 +2948,7 @@ LAB_0045ad7b:
         case CASE_12:
           this_00->field_045D = 0;
           this_00->field_0459 = CASE_76;
-          /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
-          local_EAX_10888 = BackDismant(this_00,nullptr,unaff_EDI,unaff_ESI);
+          local_EAX_10888 = BackDismant(this_00,nullptr);
           if (local_EAX_10888 != -1) goto cf_common_exit_00458C5B;
           iVar13 = 0x836;
           local_8 = local_EAX_10888;
@@ -3065,8 +3022,7 @@ LAB_0045ad7b:
         case CASE_2:
           this_00->field_045D = 0;
           this_00->field_0459 = CASE_66;
-          /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
-          local_EAX_10888 = BackAttack(this_00,nullptr,(int)unaff_EDI,(int)unaff_ESI);
+          local_EAX_10888 = BackAttack(this_00,nullptr);
           if (local_EAX_10888 != -1) goto cf_common_exit_00458C5B;
           iVar13 = 0x85d;
           local_8 = local_EAX_10888;
@@ -3082,8 +3038,7 @@ LAB_0045ad7b:
         case CASE_4:
           this_00->field_045D = 0;
           this_00->field_0459 = CASE_68;
-          /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
-          local_EAX_10888 = BackToDok(this_00,nullptr,unaff_EDI,unaff_ESI);
+          local_EAX_10888 = BackToDok(this_00,nullptr);
           if (local_EAX_10888 != -1) goto cf_common_exit_00458C5B;
           iVar13 = 0x87b;
           local_8 = local_EAX_10888;
@@ -3187,8 +3142,7 @@ LAB_0045ad7b:
         case CASE_11:
           this_00->field_045D = 0;
           this_00->field_0459 = CASE_75;
-          /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
-          local_EAX_10888 = BackBuild(this_00,nullptr,unaff_EDI,unaff_ESI);
+          local_EAX_10888 = BackBuild(this_00,nullptr);
           if (local_EAX_10888 != -1) goto cf_common_exit_00458C5B;
           iVar13 = 0x86c;
           local_8 = local_EAX_10888;
@@ -3196,8 +3150,7 @@ LAB_0045ad7b:
         case CASE_12:
           this_00->field_045D = 0;
           this_00->field_0459 = CASE_76;
-          /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
-          local_EAX_10888 = BackDismant(this_00,nullptr,unaff_EDI,unaff_ESI);
+          local_EAX_10888 = BackDismant(this_00,nullptr);
           if (local_EAX_10888 != -1) goto cf_common_exit_00458C5B;
           iVar13 = 0x8b7;
           local_8 = local_EAX_10888;
@@ -3271,8 +3224,7 @@ LAB_0045ad7b:
         case CASE_2:
           this_00->field_045D = 0;
           this_00->field_0459 = CASE_66;
-          /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
-          local_EAX_10888 = BackAttack(this_00,nullptr,(int)unaff_EDI,(int)unaff_ESI);
+          local_EAX_10888 = BackAttack(this_00,nullptr);
           if (local_EAX_10888 != -1) goto cf_common_exit_00458C5B;
           iVar13 = 0x8de;
           local_8 = local_EAX_10888;
@@ -3288,8 +3240,7 @@ LAB_0045ad7b:
         case CASE_4:
           this_00->field_045D = 0;
           this_00->field_0459 = CASE_68;
-          /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
-          local_EAX_10888 = BackToDok(this_00,nullptr,unaff_EDI,unaff_ESI);
+          local_EAX_10888 = BackToDok(this_00,nullptr);
           if (local_EAX_10888 != -1) goto cf_common_exit_00458C5B;
           iVar13 = 0x8fc;
           local_8 = local_EAX_10888;
@@ -3393,8 +3344,7 @@ LAB_0045ad7b:
         case CASE_11:
           this_00->field_045D = 0;
           this_00->field_0459 = CASE_75;
-          /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
-          local_EAX_10888 = BackBuild(this_00,nullptr,unaff_EDI,unaff_ESI);
+          local_EAX_10888 = BackBuild(this_00,nullptr);
           if (local_EAX_10888 != -1) goto cf_common_exit_00458C5B;
           iVar13 = 0x8ed;
           local_8 = local_EAX_10888;
@@ -3402,8 +3352,7 @@ LAB_0045ad7b:
         case CASE_12:
           this_00->field_045D = 0;
           this_00->field_0459 = CASE_76;
-          /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
-          local_EAX_10888 = BackDismant(this_00,nullptr,unaff_EDI,unaff_ESI);
+          local_EAX_10888 = BackDismant(this_00,nullptr);
           if (local_EAX_10888 != -1) goto cf_common_exit_00458C5B;
           iVar13 = 0x938;
           local_8 = local_EAX_10888;
@@ -3477,8 +3426,7 @@ LAB_0045ad7b:
         case CASE_2:
           this_00->field_045D = 0;
           this_00->field_0459 = CASE_66;
-          /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
-          local_EAX_10888 = BackAttack(this_00,nullptr,(int)unaff_EDI,(int)unaff_ESI);
+          local_EAX_10888 = BackAttack(this_00,nullptr);
           if (local_EAX_10888 != -1) goto cf_common_exit_00458C5B;
           iVar13 = 0x95f;
           local_8 = local_EAX_10888;
@@ -3494,8 +3442,7 @@ LAB_0045ad7b:
         case CASE_4:
           this_00->field_045D = 0;
           this_00->field_0459 = CASE_68;
-          /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
-          local_EAX_10888 = BackToDok(this_00,nullptr,unaff_EDI,unaff_ESI);
+          local_EAX_10888 = BackToDok(this_00,nullptr);
           if (local_EAX_10888 != -1) goto cf_common_exit_00458C5B;
           iVar13 = 0x97d;
           local_8 = local_EAX_10888;
@@ -3599,8 +3546,7 @@ LAB_0045ad7b:
         case CASE_11:
           this_00->field_045D = 0;
           this_00->field_0459 = CASE_75;
-          /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
-          local_EAX_10888 = BackBuild(this_00,nullptr,unaff_EDI,unaff_ESI);
+          local_EAX_10888 = BackBuild(this_00,nullptr);
           if (local_EAX_10888 != -1) goto cf_common_exit_00458C5B;
           iVar13 = 0x96e;
           local_8 = local_EAX_10888;
@@ -3608,8 +3554,7 @@ LAB_0045ad7b:
         case CASE_12:
           this_00->field_045D = 0;
           this_00->field_0459 = CASE_76;
-          /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
-          local_EAX_10888 = BackDismant(this_00,nullptr,unaff_EDI,unaff_ESI);
+          local_EAX_10888 = BackDismant(this_00,nullptr);
           if (local_EAX_10888 != -1) goto cf_common_exit_00458C5B;
           iVar13 = 0x9b9;
           local_8 = local_EAX_10888;
@@ -3683,8 +3628,7 @@ LAB_0045ad7b:
         case CASE_2:
           this_00->field_045D = 0;
           this_00->field_0459 = CASE_66;
-          /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
-          local_EAX_10888 = BackAttack(this_00,nullptr,(int)unaff_EDI,(int)unaff_ESI);
+          local_EAX_10888 = BackAttack(this_00,nullptr);
           if (local_EAX_10888 != -1) goto cf_common_exit_00458C5B;
           iVar13 = 0x9e0;
           local_8 = local_EAX_10888;
@@ -3700,8 +3644,7 @@ LAB_0045ad7b:
         case CASE_4:
           this_00->field_045D = 0;
           this_00->field_0459 = CASE_68;
-          /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
-          local_EAX_10888 = BackToDok(this_00,nullptr,unaff_EDI,unaff_ESI);
+          local_EAX_10888 = BackToDok(this_00,nullptr);
           if (local_EAX_10888 != -1) goto cf_common_exit_00458C5B;
           iVar13 = 0x9fe;
           local_8 = local_EAX_10888;
@@ -3805,8 +3748,7 @@ LAB_0045ad7b:
         case CASE_11:
           this_00->field_045D = 0;
           this_00->field_0459 = CASE_75;
-          /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
-          local_EAX_10888 = BackBuild(this_00,nullptr,unaff_EDI,unaff_ESI);
+          local_EAX_10888 = BackBuild(this_00,nullptr);
           if (local_EAX_10888 != -1) goto cf_common_exit_00458C5B;
           iVar13 = 0x9ef;
           local_8 = local_EAX_10888;
@@ -3814,8 +3756,7 @@ LAB_0045ad7b:
         case CASE_12:
           this_00->field_045D = 0;
           this_00->field_0459 = CASE_76;
-          /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
-          local_EAX_10888 = BackDismant(this_00,nullptr,unaff_EDI,unaff_ESI);
+          local_EAX_10888 = BackDismant(this_00,nullptr);
           if (local_EAX_10888 != -1) goto cf_common_exit_00458C5B;
           iVar13 = 0xa3a;
           local_8 = local_EAX_10888;
@@ -3889,8 +3830,7 @@ LAB_0045ad7b:
         case CASE_2:
           this_00->field_045D = 0;
           this_00->field_0459 = CASE_66;
-          /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
-          local_EAX_10888 = BackAttack(this_00,nullptr,(int)unaff_EDI,(int)unaff_ESI);
+          local_EAX_10888 = BackAttack(this_00,nullptr);
           if (local_EAX_10888 != -1) goto cf_common_exit_00458C5B;
           iVar13 = 0xa61;
           local_8 = local_EAX_10888;
@@ -3906,8 +3846,7 @@ LAB_0045ad7b:
         case CASE_4:
           this_00->field_045D = 0;
           this_00->field_0459 = CASE_68;
-          /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
-          local_EAX_10888 = BackToDok(this_00,nullptr,unaff_EDI,unaff_ESI);
+          local_EAX_10888 = BackToDok(this_00,nullptr);
           if (local_EAX_10888 != -1) goto cf_common_exit_00458C5B;
           iVar13 = 0xa7f;
           local_8 = local_EAX_10888;
@@ -4011,8 +3950,7 @@ LAB_0045ad7b:
         case CASE_11:
           this_00->field_045D = 0;
           this_00->field_0459 = CASE_75;
-          /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
-          local_EAX_10888 = BackBuild(this_00,nullptr,unaff_EDI,unaff_ESI);
+          local_EAX_10888 = BackBuild(this_00,nullptr);
           if (local_EAX_10888 != -1) goto cf_common_exit_00458C5B;
           iVar13 = 0xa70;
           local_8 = local_EAX_10888;
@@ -4020,8 +3958,7 @@ LAB_0045ad7b:
         case CASE_12:
           this_00->field_045D = 0;
           this_00->field_0459 = CASE_76;
-          /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
-          local_EAX_10888 = BackDismant(this_00,nullptr,unaff_EDI,unaff_ESI);
+          local_EAX_10888 = BackDismant(this_00,nullptr);
           if (local_EAX_10888 != -1) goto cf_common_exit_00458C5B;
           iVar13 = 0xabb;
           local_8 = local_EAX_10888;
@@ -4074,8 +4011,7 @@ LAB_0045ad7b:
       else if (this_00->field_02E4 == 1) {
         if (this_00->field_045D == 0) {
           this_00->field_045D = CASE_7;
-          /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
-          iVar13 = SetMine(this_00,nullptr,unaff_EDI,(int)unaff_ESI);
+          iVar13 = SetMine(this_00,nullptr);
           local_8 = iVar13;
           if (iVar13 == -1) {
             RaiseInternalException
@@ -4108,8 +4044,7 @@ LAB_0045ad7b:
         case CASE_2:
           this_00->field_045D = 0;
           this_00->field_0459 = CASE_66;
-          /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
-          local_EAX_10888 = BackAttack(this_00,nullptr,(int)unaff_EDI,(int)unaff_ESI);
+          local_EAX_10888 = BackAttack(this_00,nullptr);
           if (local_EAX_10888 != -1) goto cf_common_exit_00458C5B;
           iVar13 = 0xae8;
           local_8 = local_EAX_10888;
@@ -4125,8 +4060,7 @@ LAB_0045ad7b:
         case CASE_4:
           this_00->field_045D = 0;
           this_00->field_0459 = CASE_68;
-          /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
-          local_EAX_10888 = BackToDok(this_00,nullptr,unaff_EDI,unaff_ESI);
+          local_EAX_10888 = BackToDok(this_00,nullptr);
           if (local_EAX_10888 != -1) goto cf_common_exit_00458C5B;
           iVar13 = 0xb06;
           local_8 = local_EAX_10888;
@@ -4230,8 +4164,7 @@ LAB_0045ad7b:
         case CASE_11:
           this_00->field_045D = 0;
           this_00->field_0459 = CASE_75;
-          /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
-          local_EAX_10888 = BackBuild(this_00,nullptr,unaff_EDI,unaff_ESI);
+          local_EAX_10888 = BackBuild(this_00,nullptr);
           if (local_EAX_10888 != -1) goto cf_common_exit_00458C5B;
           iVar13 = 0xaf7;
           local_8 = local_EAX_10888;
@@ -4239,8 +4172,7 @@ LAB_0045ad7b:
         case CASE_12:
           this_00->field_045D = 0;
           this_00->field_0459 = CASE_76;
-          /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
-          local_EAX_10888 = BackDismant(this_00,nullptr,unaff_EDI,unaff_ESI);
+          local_EAX_10888 = BackDismant(this_00,nullptr);
           if (local_EAX_10888 != -1) goto cf_common_exit_00458C5B;
           iVar13 = 0xb42;
           local_8 = local_EAX_10888;
@@ -4326,8 +4258,7 @@ LAB_0045ad7b:
         case CASE_2:
           this_00->field_045D = 0;
           this_00->field_0459 = CASE_66;
-          /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
-          local_EAX_10888 = BackAttack(this_00,nullptr,(int)unaff_EDI,(int)unaff_ESI);
+          local_EAX_10888 = BackAttack(this_00,nullptr);
           if (local_EAX_10888 != -1) goto cf_common_exit_00458C5B;
           iVar13 = 0xb6f;
           local_8 = local_EAX_10888;
@@ -4343,8 +4274,7 @@ LAB_0045ad7b:
         case CASE_4:
           this_00->field_045D = 0;
           this_00->field_0459 = CASE_68;
-          /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
-          local_EAX_10888 = BackToDok(this_00,nullptr,unaff_EDI,unaff_ESI);
+          local_EAX_10888 = BackToDok(this_00,nullptr);
           if (local_EAX_10888 != -1) goto cf_common_exit_00458C5B;
           iVar13 = 0xb8d;
           local_8 = local_EAX_10888;
@@ -4448,8 +4378,7 @@ LAB_0045ad7b:
         case CASE_11:
           this_00->field_045D = 0;
           this_00->field_0459 = CASE_75;
-          /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
-          local_EAX_10888 = BackBuild(this_00,nullptr,unaff_EDI,unaff_ESI);
+          local_EAX_10888 = BackBuild(this_00,nullptr);
           if (local_EAX_10888 != -1) goto cf_common_exit_00458C5B;
           iVar13 = 0xb7e;
           local_8 = local_EAX_10888;
@@ -4457,8 +4386,7 @@ LAB_0045ad7b:
         case CASE_12:
           this_00->field_045D = 0;
           this_00->field_0459 = CASE_76;
-          /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
-          local_EAX_10888 = BackDismant(this_00,nullptr,unaff_EDI,unaff_ESI);
+          local_EAX_10888 = BackDismant(this_00,nullptr);
           if (local_EAX_10888 != -1) goto cf_common_exit_00458C5B;
           iVar13 = 0xbc9;
           local_8 = local_EAX_10888;
@@ -4544,8 +4472,7 @@ LAB_0045ad7b:
         case CASE_2:
           this_00->field_045D = 0;
           this_00->field_0459 = CASE_66;
-          /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
-          local_EAX_10888 = BackAttack(this_00,nullptr,(int)unaff_EDI,(int)unaff_ESI);
+          local_EAX_10888 = BackAttack(this_00,nullptr);
           if (local_EAX_10888 != -1) goto cf_common_exit_00458C5B;
           iVar13 = 0xbf6;
           local_8 = local_EAX_10888;
@@ -4561,8 +4488,7 @@ LAB_0045ad7b:
         case CASE_4:
           this_00->field_045D = 0;
           this_00->field_0459 = CASE_68;
-          /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
-          local_EAX_10888 = BackToDok(this_00,nullptr,unaff_EDI,unaff_ESI);
+          local_EAX_10888 = BackToDok(this_00,nullptr);
           if (local_EAX_10888 != -1) goto cf_common_exit_00458C5B;
           iVar13 = 0xc14;
           local_8 = local_EAX_10888;
@@ -4666,8 +4592,7 @@ LAB_0045ad7b:
         case CASE_11:
           this_00->field_045D = 0;
           this_00->field_0459 = CASE_75;
-          /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
-          local_EAX_10888 = BackBuild(this_00,nullptr,unaff_EDI,unaff_ESI);
+          local_EAX_10888 = BackBuild(this_00,nullptr);
           if (local_EAX_10888 != -1) goto cf_common_exit_00458C5B;
           iVar13 = 0xc05;
           local_8 = local_EAX_10888;
@@ -4675,8 +4600,7 @@ LAB_0045ad7b:
         case CASE_12:
           this_00->field_045D = 0;
           this_00->field_0459 = CASE_76;
-          /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
-          local_EAX_10888 = BackDismant(this_00,nullptr,unaff_EDI,unaff_ESI);
+          local_EAX_10888 = BackDismant(this_00,nullptr);
           if (local_EAX_10888 != -1) goto cf_common_exit_00458C5B;
           iVar13 = 0xc50;
           local_8 = local_EAX_10888;
@@ -4762,8 +4686,7 @@ LAB_0045ad7b:
         case CASE_2:
           this_00->field_045D = 0;
           this_00->field_0459 = CASE_66;
-          /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
-          local_EAX_10888 = BackAttack(this_00,nullptr,(int)unaff_EDI,(int)unaff_ESI);
+          local_EAX_10888 = BackAttack(this_00,nullptr);
           if (local_EAX_10888 != -1) goto cf_common_exit_00458C5B;
           iVar13 = 0xc7d;
           local_8 = local_EAX_10888;
@@ -4779,8 +4702,7 @@ LAB_0045ad7b:
         case CASE_4:
           this_00->field_045D = 0;
           this_00->field_0459 = CASE_68;
-          /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
-          local_EAX_10888 = BackToDok(this_00,nullptr,unaff_EDI,unaff_ESI);
+          local_EAX_10888 = BackToDok(this_00,nullptr);
           if (local_EAX_10888 != -1) goto cf_common_exit_00458C5B;
           iVar13 = 0xc9b;
           local_8 = local_EAX_10888;
@@ -4884,8 +4806,7 @@ LAB_0045ad7b:
         case CASE_11:
           this_00->field_045D = 0;
           this_00->field_0459 = CASE_75;
-          /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
-          local_EAX_10888 = BackBuild(this_00,nullptr,unaff_EDI,unaff_ESI);
+          local_EAX_10888 = BackBuild(this_00,nullptr);
           if (local_EAX_10888 != -1) goto cf_common_exit_00458C5B;
           iVar13 = 0xc8c;
           local_8 = local_EAX_10888;
@@ -4893,8 +4814,7 @@ LAB_0045ad7b:
         case CASE_12:
           this_00->field_045D = 0;
           this_00->field_0459 = CASE_76;
-          /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
-          local_EAX_10888 = BackDismant(this_00,nullptr,unaff_EDI,unaff_ESI);
+          local_EAX_10888 = BackDismant(this_00,nullptr);
           if (local_EAX_10888 != -1) goto cf_common_exit_00458C5B;
           iVar13 = 0xcd7;
           local_8 = local_EAX_10888;
@@ -4980,8 +4900,7 @@ LAB_0045ad7b:
         case CASE_2:
           this_00->field_045D = 0;
           this_00->field_0459 = CASE_66;
-          /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
-          local_EAX_10888 = BackAttack(this_00,nullptr,(int)unaff_EDI,(int)unaff_ESI);
+          local_EAX_10888 = BackAttack(this_00,nullptr);
           if (local_EAX_10888 != -1) goto cf_common_exit_00458C5B;
           iVar13 = 0xd04;
           local_8 = local_EAX_10888;
@@ -4997,8 +4916,7 @@ LAB_0045ad7b:
         case CASE_4:
           this_00->field_045D = 0;
           this_00->field_0459 = CASE_68;
-          /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
-          local_EAX_10888 = BackToDok(this_00,nullptr,unaff_EDI,unaff_ESI);
+          local_EAX_10888 = BackToDok(this_00,nullptr);
           if (local_EAX_10888 != -1) goto cf_common_exit_00458C5B;
           iVar13 = 0xd22;
           local_8 = local_EAX_10888;
@@ -5102,8 +5020,7 @@ LAB_0045ad7b:
         case CASE_11:
           this_00->field_045D = 0;
           this_00->field_0459 = CASE_75;
-          /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
-          local_EAX_10888 = BackBuild(this_00,nullptr,unaff_EDI,unaff_ESI);
+          local_EAX_10888 = BackBuild(this_00,nullptr);
           if (local_EAX_10888 != -1) goto cf_common_exit_00458C5B;
           iVar13 = 0xd13;
           local_8 = local_EAX_10888;
@@ -5111,8 +5028,7 @@ LAB_0045ad7b:
         case CASE_12:
           this_00->field_045D = 0;
           this_00->field_0459 = CASE_76;
-          /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
-          local_EAX_10888 = BackDismant(this_00,nullptr,unaff_EDI,unaff_ESI);
+          local_EAX_10888 = BackDismant(this_00,nullptr);
           if (local_EAX_10888 != -1) goto cf_common_exit_00458C5B;
           iVar13 = 0xd5e;
           local_8 = local_EAX_10888;
@@ -5198,8 +5114,7 @@ LAB_0045ad7b:
         case CASE_2:
           this_00->field_045D = 0;
           this_00->field_0459 = CASE_66;
-          /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
-          local_EAX_10888 = BackAttack(this_00,nullptr,(int)unaff_EDI,(int)unaff_ESI);
+          local_EAX_10888 = BackAttack(this_00,nullptr);
           if (local_EAX_10888 != -1) goto cf_common_exit_00458C5B;
           iVar13 = 0xd8b;
           local_8 = local_EAX_10888;
@@ -5215,8 +5130,7 @@ LAB_0045ad7b:
         case CASE_4:
           this_00->field_045D = 0;
           this_00->field_0459 = CASE_68;
-          /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
-          local_EAX_10888 = BackToDok(this_00,nullptr,unaff_EDI,unaff_ESI);
+          local_EAX_10888 = BackToDok(this_00,nullptr);
           if (local_EAX_10888 != -1) goto cf_common_exit_00458C5B;
           iVar13 = 0xda9;
           local_8 = local_EAX_10888;
@@ -5320,8 +5234,7 @@ LAB_0045ad7b:
         case CASE_11:
           this_00->field_045D = 0;
           this_00->field_0459 = CASE_75;
-          /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
-          local_EAX_10888 = BackBuild(this_00,nullptr,unaff_EDI,unaff_ESI);
+          local_EAX_10888 = BackBuild(this_00,nullptr);
           if (local_EAX_10888 != -1) goto cf_common_exit_00458C5B;
           iVar13 = 0xd9a;
           local_8 = local_EAX_10888;
@@ -5329,8 +5242,7 @@ LAB_0045ad7b:
         case CASE_12:
           this_00->field_045D = 0;
           this_00->field_0459 = CASE_76;
-          /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
-          local_EAX_10888 = BackDismant(this_00,nullptr,unaff_EDI,unaff_ESI);
+          local_EAX_10888 = BackDismant(this_00,nullptr);
           if (local_EAX_10888 != -1) goto cf_common_exit_00458C5B;
           iVar13 = 0xde5;
           local_8 = local_EAX_10888;
@@ -5416,8 +5328,7 @@ LAB_0045ad7b:
         case CASE_2:
           this_00->field_045D = 0;
           this_00->field_0459 = CASE_66;
-          /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
-          local_EAX_10888 = BackAttack(this_00,nullptr,(int)unaff_EDI,(int)unaff_ESI);
+          local_EAX_10888 = BackAttack(this_00,nullptr);
           if (local_EAX_10888 != -1) goto cf_common_exit_00458C5B;
           iVar13 = 0xe12;
           local_8 = local_EAX_10888;
@@ -5433,8 +5344,7 @@ LAB_0045ad7b:
         case CASE_4:
           this_00->field_045D = 0;
           this_00->field_0459 = CASE_68;
-          /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
-          local_EAX_10888 = BackToDok(this_00,nullptr,unaff_EDI,unaff_ESI);
+          local_EAX_10888 = BackToDok(this_00,nullptr);
           if (local_EAX_10888 != -1) goto cf_common_exit_00458C5B;
           iVar13 = 0xe30;
           local_8 = local_EAX_10888;
@@ -5538,8 +5448,7 @@ LAB_0045ad7b:
         case CASE_11:
           this_00->field_045D = 0;
           this_00->field_0459 = CASE_75;
-          /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
-          local_EAX_10888 = BackBuild(this_00,nullptr,unaff_EDI,unaff_ESI);
+          local_EAX_10888 = BackBuild(this_00,nullptr);
           if (local_EAX_10888 != -1) goto cf_common_exit_00458C5B;
           iVar13 = 0xe21;
           local_8 = local_EAX_10888;
@@ -5547,8 +5456,7 @@ LAB_0045ad7b:
         case CASE_12:
           this_00->field_045D = 0;
           this_00->field_0459 = CASE_76;
-          /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
-          local_EAX_10888 = BackDismant(this_00,nullptr,unaff_EDI,unaff_ESI);
+          local_EAX_10888 = BackDismant(this_00,nullptr);
           if (local_EAX_10888 != -1) goto cf_common_exit_00458C5B;
           iVar13 = 0xe6c;
           local_8 = local_EAX_10888;
@@ -5601,8 +5509,7 @@ LAB_0045ad7b:
       else if (this_00->field_0310 == 1) {
         if (this_00->field_045D == 0) {
           this_00->field_045D = CASE_12;
-          /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
-          iVar13 = Dismant(this_00,nullptr,unaff_EDI,unaff_ESI);
+          iVar13 = Dismant(this_00,nullptr);
           local_8 = iVar13;
           if (iVar13 == -1) {
             RaiseInternalException
@@ -5635,8 +5542,7 @@ LAB_0045ad7b:
         case CASE_2:
           this_00->field_045D = 0;
           this_00->field_0459 = CASE_66;
-          /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
-          local_EAX_10888 = BackAttack(this_00,nullptr,(int)unaff_EDI,(int)unaff_ESI);
+          local_EAX_10888 = BackAttack(this_00,nullptr);
           if (local_EAX_10888 != -1) goto cf_common_exit_00458C5B;
           iVar13 = 0xe99;
           local_8 = local_EAX_10888;
@@ -5652,8 +5558,7 @@ LAB_0045ad7b:
         case CASE_4:
           this_00->field_045D = 0;
           this_00->field_0459 = CASE_68;
-          /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
-          local_EAX_10888 = BackToDok(this_00,nullptr,unaff_EDI,unaff_ESI);
+          local_EAX_10888 = BackToDok(this_00,nullptr);
           if (local_EAX_10888 != -1) goto cf_common_exit_00458C5B;
           iVar13 = 0xeb7;
           local_8 = local_EAX_10888;
@@ -5757,8 +5662,7 @@ LAB_0045ad7b:
         case CASE_11:
           this_00->field_045D = 0;
           this_00->field_0459 = CASE_75;
-          /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
-          local_EAX_10888 = BackBuild(this_00,nullptr,unaff_EDI,unaff_ESI);
+          local_EAX_10888 = BackBuild(this_00,nullptr);
           if (local_EAX_10888 != -1) goto cf_common_exit_00458C5B;
           iVar13 = 0xea8;
           local_8 = local_EAX_10888;
@@ -5766,8 +5670,7 @@ LAB_0045ad7b:
         case CASE_12:
           this_00->field_045D = 0;
           this_00->field_0459 = CASE_76;
-          /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
-          local_EAX_10888 = BackDismant(this_00,nullptr,unaff_EDI,unaff_ESI);
+          local_EAX_10888 = BackDismant(this_00,nullptr);
           if (local_EAX_10888 != -1) goto cf_common_exit_00458C5B;
           iVar13 = 0xef3;
           local_8 = local_EAX_10888;
@@ -5853,8 +5756,7 @@ LAB_0045ad7b:
         case CASE_2:
           this_00->field_045D = 0;
           this_00->field_0459 = CASE_66;
-          /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
-          local_EAX_10888 = BackAttack(this_00,nullptr,(int)unaff_EDI,(int)unaff_ESI);
+          local_EAX_10888 = BackAttack(this_00,nullptr);
           if (local_EAX_10888 != -1) goto cf_common_exit_00458C5B;
           iVar13 = 0xf20;
           local_8 = local_EAX_10888;
@@ -5870,8 +5772,7 @@ LAB_0045ad7b:
         case CASE_4:
           this_00->field_045D = 0;
           this_00->field_0459 = CASE_68;
-          /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
-          local_EAX_10888 = BackToDok(this_00,nullptr,unaff_EDI,unaff_ESI);
+          local_EAX_10888 = BackToDok(this_00,nullptr);
           if (local_EAX_10888 != -1) goto cf_common_exit_00458C5B;
           iVar13 = 0xf3e;
           local_8 = local_EAX_10888;
@@ -5975,8 +5876,7 @@ LAB_0045ad7b:
         case CASE_11:
           this_00->field_045D = 0;
           this_00->field_0459 = CASE_75;
-          /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
-          local_EAX_10888 = BackBuild(this_00,nullptr,unaff_EDI,unaff_ESI);
+          local_EAX_10888 = BackBuild(this_00,nullptr);
           if (local_EAX_10888 != -1) goto cf_common_exit_00458C5B;
           iVar13 = 0xf2f;
           local_8 = local_EAX_10888;
@@ -5984,8 +5884,7 @@ LAB_0045ad7b:
         case CASE_12:
           this_00->field_045D = 0;
           this_00->field_0459 = CASE_76;
-          /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
-          local_EAX_10888 = BackDismant(this_00,nullptr,unaff_EDI,unaff_ESI);
+          local_EAX_10888 = BackDismant(this_00,nullptr);
           if (local_EAX_10888 != -1) goto cf_common_exit_00458C5B;
           iVar13 = 0xf7a;
           local_8 = local_EAX_10888;
@@ -6071,8 +5970,7 @@ LAB_0045ad7b:
         case CASE_2:
           this_00->field_045D = 0;
           this_00->field_0459 = CASE_66;
-          /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
-          local_EAX_10888 = BackAttack(this_00,nullptr,(int)unaff_EDI,(int)unaff_ESI);
+          local_EAX_10888 = BackAttack(this_00,nullptr);
           if (local_EAX_10888 != -1) goto cf_common_exit_00458C5B;
           iVar13 = 0xfa7;
           local_8 = local_EAX_10888;
@@ -6088,8 +5986,7 @@ LAB_0045ad7b:
         case CASE_4:
           this_00->field_045D = 0;
           this_00->field_0459 = CASE_68;
-          /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
-          local_EAX_10888 = BackToDok(this_00,nullptr,unaff_EDI,unaff_ESI);
+          local_EAX_10888 = BackToDok(this_00,nullptr);
           if (local_EAX_10888 != -1) goto cf_common_exit_00458C5B;
           iVar13 = 0xfc5;
           local_8 = local_EAX_10888;
@@ -6193,8 +6090,7 @@ LAB_0045ad7b:
         case CASE_11:
           this_00->field_045D = 0;
           this_00->field_0459 = CASE_75;
-          /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
-          local_EAX_10888 = BackBuild(this_00,nullptr,unaff_EDI,unaff_ESI);
+          local_EAX_10888 = BackBuild(this_00,nullptr);
           if (local_EAX_10888 != -1) goto cf_common_exit_00458C5B;
           iVar13 = 0xfb6;
           local_8 = local_EAX_10888;
@@ -6202,8 +6098,7 @@ LAB_0045ad7b:
         case CASE_12:
           this_00->field_045D = 0;
           this_00->field_0459 = CASE_76;
-          /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
-          local_EAX_10888 = BackDismant(this_00,nullptr,unaff_EDI,unaff_ESI);
+          local_EAX_10888 = BackDismant(this_00,nullptr);
           if (local_EAX_10888 != -1) goto cf_common_exit_00458C5B;
           iVar13 = 0x1001;
           local_8 = local_EAX_10888;
@@ -6278,8 +6173,7 @@ LAB_0045ad7b:
         case CASE_2:
           this_00->field_045D = 0;
           this_00->field_0459 = CASE_66;
-          /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
-          local_EAX_10888 = BackAttack(this_00,nullptr,(int)unaff_EDI,(int)unaff_ESI);
+          local_EAX_10888 = BackAttack(this_00,nullptr);
           if (local_EAX_10888 != -1) goto cf_common_exit_00458C5B;
           iVar13 = 0x1028;
           local_8 = local_EAX_10888;
@@ -6295,8 +6189,7 @@ LAB_0045ad7b:
         case CASE_4:
           this_00->field_045D = 0;
           this_00->field_0459 = CASE_68;
-          /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
-          local_EAX_10888 = BackToDok(this_00,nullptr,unaff_EDI,unaff_ESI);
+          local_EAX_10888 = BackToDok(this_00,nullptr);
           if (local_EAX_10888 != -1) goto cf_common_exit_00458C5B;
           iVar13 = 0x1046;
           local_8 = local_EAX_10888;
@@ -6400,8 +6293,7 @@ LAB_0045ad7b:
         case CASE_11:
           this_00->field_045D = 0;
           this_00->field_0459 = CASE_75;
-          /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
-          local_EAX_10888 = BackBuild(this_00,nullptr,unaff_EDI,unaff_ESI);
+          local_EAX_10888 = BackBuild(this_00,nullptr);
           if (local_EAX_10888 != -1) goto cf_common_exit_00458C5B;
           iVar13 = 0x1037;
           local_8 = local_EAX_10888;
@@ -6602,7 +6494,7 @@ LAB_0045910d:
         local_9c.arg0.words.high = this_00->field_0032;
         local_9c.arg0.words.low = *(undefined2 *)&this_00->field_0024;
         local_9c.arg1 = (STMessageArg)this_00->field_0018;
-        (*pAVar22->vtable->vfunc_00)((short)&local_9c);
+        pAVar22->GetMessage(&local_9c);
       }
       this_00->field_045D = CASE_3;
       iVar13 = Defence(this_00,0);
@@ -6655,9 +6547,8 @@ LAB_0045910d:
       iVar13 = 0x10ed;
       local_8 = -1;
       break;
-    /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
     case CASE_7:
-      iVar13 = SetMine(this_00,(int *)0x2,unaff_EDI,(int)unaff_ESI);
+      iVar13 = SetMine(this_00,(int *)0x2);
       local_8 = iVar13;
       if (iVar13 == -1) {
         RaiseInternalException
@@ -6761,9 +6652,8 @@ LAB_0045910d:
       iVar13 = 0x119d;
       local_8 = -1;
       break;
-    /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
     case CASE_C:
-      iVar13 = LoadRC(this_00,(int *)0x2,unaff_EDI,(int)unaff_ESI);
+      iVar13 = LoadRC(this_00,(int *)0x2);
       local_8 = iVar13;
       if (iVar13 == -1) {
         RaiseInternalException
@@ -6888,9 +6778,8 @@ LAB_0045910d:
       iVar13 = 0x1101;
       local_8 = -1;
       break;
-    /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
     case CASE_12:
-      iVar13 = Dismant(this_00,(int *)0x2,unaff_EDI,unaff_ESI);
+      iVar13 = Dismant(this_00,(int *)0x2);
       local_8 = iVar13;
       if (iVar13 == -1) {
         RaiseInternalException
@@ -6910,9 +6799,8 @@ LAB_0045910d:
       iVar13 = 0x11a7;
       local_8 = -1;
       break;
-    /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
     case CASE_13:
-      uVar16 = CreateGame(this_00,(int *)0x2,unaff_EDI);
+      uVar16 = CreateGame(this_00,(int *)0x2);
       local_8 = uVar16;
       if (uVar16 == 0xffffffff) {
         RaiseInternalException
@@ -6992,7 +6880,7 @@ LAB_0045910d:
         local_9c.arg0.words.high = this_00->field_0032;
         local_9c.arg0.words.low = *(undefined2 *)&this_00->field_0024;
         local_9c.arg1 = (STMessageArg)this_00->field_0018;
-        (*pAVar22->vtable->vfunc_00)((short)&local_9c);
+        pAVar22->GetMessage(&local_9c);
       }
       this_00->field_045D = CASE_3;
       iVar13 = Defence(this_00,0);
@@ -7101,9 +6989,7 @@ cf_error_exit_0045AEE3:
     }
     else {
       local_10 = (STFishC *)
-                 g_worldGrid.cells
-                 [(int)sVar4 * (int)g_worldGrid.planeStride + (int)sVar5 * (int)g_worldGrid.sizeX +
-                  (int)sVar39].objects[(byte)this_00->field_008E];
+                 STGridAt3D(g_worldGrid, sVar39, sVar5, sVar4).objects[(byte)this_00->field_008E];
     }
     if (local_10 != nullptr) {
       /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
@@ -7151,8 +7037,7 @@ cf_error_exit_0045AEE3:
     }
     thunk_FUN_00416390((AnonShape_00416390_86C8F938 *)this_00);
     this_00->field_00E3 = 0;
-    /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
-    _SetSpeedFireLife(this_00,unaff_EDI);
+    _SetSpeedFireLife(this_00);
     iVar13 = *(int *)(dVar14 + 0x26);
     if (iVar13 < 0) {
       this_00->field_0716 = 1;
@@ -7305,8 +7190,7 @@ cf_error_exit_0045AEE3:
     this_00->field_006E = 0;
     thunk_FUN_00416390((AnonShape_00416390_86C8F938 *)this_00);
     this_00->field_00E3 = 0;
-    /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
-    _SetSpeedFireLife(this_00,unaff_EDI);
+    _SetSpeedFireLife(this_00);
     thunk_FUN_0048a910((AnonShape_0048A910_6D6DD7B1 *)this_00);
     thunk_FUN_0048a840((AnonShape_0048A840_34A87A21 *)this_00);
     thunk_FUN_00495ff0(*(short *)(dVar14 + 0x1c),*(short *)(dVar14 + 0x1e),*(short *)(dVar14 + 0x20)

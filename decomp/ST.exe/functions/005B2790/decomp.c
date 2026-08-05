@@ -14,13 +14,14 @@ ChooseMapTy * __cdecl CreateChooseMap(void)
   undefined4 *puVar2;
   SpriteClassTy *this_00;
   undefined4 *puVar3;
+  uint *puVar4;
   int local_8;
 
   this = (ChooseMapTy *)FUN_006b04d0(0x20c4);
   if (this != nullptr) {
     sub_006E5FB0(this);
-    this->field_0000 = (AnonPointee_ChooseMapTy_0000 *)&VTable_0079C018;
-    *(undefined4 *)&this->field_0x18 = 0;
+    this->vtable = (ChooseMapTyVTable *)&VTable_0079C018;
+    this->field_0018 = 0;
     this->field_005D = nullptr;
     memset(&this->field_0x1d, 0, 0x20); /* compiler bulk-zero initialization */
     iVar1 = 0;
@@ -36,9 +37,9 @@ ChooseMapTy * __cdecl CreateChooseMap(void)
       this_00 = (SpriteClassTy *)&this_00[3].field_0048;
       local_8 = local_8 + -1;
     } while (local_8 != 0);
-    this->field_0000 = (AnonPointee_ChooseMapTy_0000 *)&MMObjTyVTable;
+    this->vtable = (ChooseMapTyVTable *)&MMObjTyVTable;
     this->field_0065 = 2;
-    this->field_0x9a = 0;
+    this->field_009A = 0;
     memset(&this->field_0x66, 0, 0x34); /* compiler bulk-zero initialization */
     iVar1 = 0;
     local_8 = 0xd;
@@ -55,13 +56,13 @@ ChooseMapTy * __cdecl CreateChooseMap(void)
     SpriteClassTy::SpriteClassTy((SpriteClassTy *)&this->field_1A70);
     SpriteClassTy::SpriteClassTy((SpriteClassTy *)&this->field_1B01);
     SpriteClassTy::SpriteClassTy((SpriteClassTy *)&this->field_1B92);
-    this->field_0000 = (AnonPointee_ChooseMapTy_0000 *)&VTable_0079C088;
+    this->vtable = &ChooseMapTyVTable;
     this->field_1A60 = 1;
     this->field_1A6C = 0;
-    puVar2 = &this->field_1C23;
+    puVar4 = this->field_1C23;
     for (iVar1 = 0x16; iVar1 != 0; iVar1 = iVar1 + -1) {
-      *puVar2 = 0xffffffff;
-      puVar2 = puVar2 + 1;
+      *puVar4 = 0xffffffff;
+      puVar4 = puVar4 + 1;
     }
     this->field_1C87 = 0xffffffff;
     this->field_1C7B = nullptr;

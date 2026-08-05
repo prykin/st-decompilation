@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 int FUN_006b7190(int *param_1)
 
@@ -5,8 +7,7 @@ int FUN_006b7190(int *param_1)
   int *piVar1;
   int iVar2;
   void *pvVar3;
-  undefined4 *puVar4;
-  uint uVar5;
+  byte *puVar4;
   uint uVar6;
   AnonShape_006B7190_816EEFBC *pAVar7;
   undefined1 local_14 [4];
@@ -61,17 +62,9 @@ LAB_006b719c:
     param_1[5] = (int)pvVar3;
     uVar6 = param_1[4];
     pAVar7 = local_8 + 1;
-    puVar4 = (undefined4 *)param_1[5];
-    for (uVar5 = uVar6 >> 2; uVar5 != 0; uVar5 = uVar5 - 1) {
-      *puVar4 = *(undefined4 *)pAVar7;
-      pAVar7 = (AnonShape_006B7190_816EEFBC *)((int)&pAVar7->field_0002 + 2);
-      puVar4 = puVar4 + 1;
-    }
-    for (uVar6 = uVar6 & 3; uVar6 != 0; uVar6 = uVar6 - 1) {
-      *(undefined1 *)puVar4 = *(undefined1 *)pAVar7;
-      pAVar7 = (AnonShape_006B7190_816EEFBC *)&pAVar7->field_0001;
-      puVar4 = (undefined4 *)((int)puVar4 + 1);
-    }
+    puVar4 = (byte *)param_1[5];
+    memmove(puVar4, pAVar7, uVar6); /* compiler REP MOVS byte copy */
+    uVar6 = 0;
   }
   if (*(char *)local_8 == '\x06') goto code_r0x006b72b1;
   goto LAB_006b7373;
@@ -83,16 +76,16 @@ code_r0x006b72b1:
        ((int)(short)local_8->field_0002 == param_1[3] + -1)) {
       param_1[3] = param_1[3] + -1;
       pAVar7 = local_8 + 1;
-      puVar4 = (undefined4 *)(param_1[5] + param_1[4]);
+      puVar4 = (byte *)(param_1[5] + param_1[4]);
       for (uVar6 = local_c - 8 >> 2; uVar6 != 0; uVar6 = uVar6 - 1) {
         *puVar4 = *(undefined4 *)pAVar7;
         pAVar7 = (AnonShape_006B7190_816EEFBC *)((int)&pAVar7->field_0002 + 2);
-        puVar4 = puVar4 + 1;
+        puVar4 = (byte *)(puVar4 + 1);
       }
       for (uVar6 = local_c - 8 & 3; uVar6 != 0; uVar6 = uVar6 - 1) {
         *(undefined1 *)puVar4 = *(undefined1 *)pAVar7;
         pAVar7 = (AnonShape_006B7190_816EEFBC *)&pAVar7->field_0001;
-        puVar4 = (undefined4 *)((int)puVar4 + 1);
+        puVar4 = (byte *)((int)puVar4 + 1);
       }
       param_1[4] = param_1[4] + (local_c - 8);
       if (param_1[3] == 0) {
@@ -102,7 +95,7 @@ code_r0x006b72b1:
         FUN_006b98c0(piVar1 + 0x14,param_1);
         FreeAndNull(&param_1);
 LAB_006b7373:
-        puVar4 = Library::DKW::LIB::MemAlloc(0x14);
+        puVar4 = (byte *)(Library::DKW::LIB::MemAlloc(0x14));
         if (puVar4 == nullptr) {
           return -2;
         }

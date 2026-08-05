@@ -3,9 +3,13 @@
 
 /* Recovered from embedded debug metadata:
    E:\__titans\wlad\to_grpb.cpp
-   STGroupBoatC::IsAgAtt */
+   STGroupBoatC::IsAgAtt
+   [STAbiConsistencyApplier] machine_thiscall_arity target=function:-1: prototype=undefined4
+   __thiscall IsAgAtt(STGroupBoatC * this) Evidence: every machine RET purges exactly 0 explicit
+   stack bytes; current signature describes 4; removed trailing parameter slots have no listing
+   references; ret_sites=004A8853 RET | 004A885C RET */
 
-undefined4 __thiscall STGroupBoatC::IsAgAtt(STGroupBoatC *this,int param_1)
+undefined4 __thiscall STGroupBoatC::IsAgAtt(STGroupBoatC *this)
 
 {
   uint uVar1;

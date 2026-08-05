@@ -23,8 +23,6 @@ int __thiscall STFishC::GetMessage(STFishC *this,STMessage *message)
   short sVar7;
   byte *puVar8;
   byte *pbVar9;
-  /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
-  int *unaff_EDI;
   byte *puVar10;
   AnonShape_0057BF60_C1393638 *pAVar11;
   byte *pbVar12;
@@ -125,11 +123,7 @@ int __thiscall STFishC::GetMessage(STFishC *this,STMessage *message)
     }
     puVar8 = (byte *)&this_00->field_0x243;
     pAVar11 = local_c;
-    for (iVar4 = 10; iVar4 != 0; iVar4 = iVar4 + -1) {
-      *(undefined4 *)pAVar11 = *puVar8;
-      puVar8 = (byte *)(puVar8 + 1);
-      pAVar11 = (AnonShape_0057BF60_C1393638 *)&pAVar11->field_0x4;
-    }
+    memmove(pAVar11, puVar8, 0x28); /* compiler REP MOVS byte copy */
     *(undefined4 *)&local_c->field_0xc = 2;
     local_c->field_0028 = this_00->field_0231;
     local_c->field_002C = *(undefined4 *)&this_00->field_0x23b;
@@ -171,8 +165,7 @@ int __thiscall STFishC::GetMessage(STFishC *this,STMessage *message)
       g_currentExceptionFrame = local_80.previous;
       return 0;
     }
-    /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
-    LifeFish((STFishC *)this_00,unaff_EDI);
+    LifeFish((STFishC *)this_00);
     g_currentExceptionFrame = local_80.previous;
     return 0;
   }

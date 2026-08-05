@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 undefined4 __fastcall FUN_005f07a0(STBoatC *param_1)
 
@@ -23,9 +25,7 @@ undefined4 __fastcall FUN_005f07a0(STBoatC *param_1)
          (((sVar2 < g_worldGrid.sizeY && (-1 < sVar3)) &&
           ((sVar3 < g_worldGrid.sizeZ &&
            (this = (STFishC *)
-                   g_worldGrid.cells
-                   [(int)g_worldGrid.planeStride * (int)sVar3 + (int)g_worldGrid.sizeX * (int)sVar2
-                    + (int)sVar1].objects[0], this != nullptr)))))) {
+                   STGridAt3D(g_worldGrid, sVar1, sVar2, sVar3).objects[0], this != nullptr)))))) {
         dVar5 = this->slot_2C();
         if (dVar5 == 99) {
           iVar4 = thunk_FUN_004b7d00(this,param_1);

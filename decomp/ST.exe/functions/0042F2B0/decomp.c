@@ -462,7 +462,7 @@ LAB_0042f547:
   pDVar8 = local_14;
   uVar10 = param_3;
   if ((ushort)param_2 != 0xffff) {
-    local_10->vfunc_04(param_3);
+    local_10->vfunc_04((ushort)param_3);
     Library::DKW::TBL::DArrayPut(local_14,param_3 & 0xffff,&local_c);
     sVar4 = thunk_FUN_004233c0(pSVar3);
     if ((sVar4 != 0) || (iVar9 = thunk_FUN_004233a0((int)pSVar3), iVar9 != 0)) goto LAB_00430018;

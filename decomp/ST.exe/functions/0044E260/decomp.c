@@ -16,8 +16,6 @@ void FUN_0044e260(uint param_1,uint param_2,uint param_3,int *param_4)
   STAllPlayersC *in_ECX;
   int iVar11;
   uint uVar12;
-  /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
-  int unaff_EDI;
   STGameObjC *pSVar13;
   undefined1 local_2c [4];
   int local_28;
@@ -33,8 +31,7 @@ void FUN_0044e260(uint param_1,uint param_2,uint param_3,int *param_4)
   piVar4 = param_4;
   local_14 = (STGameObjC *)thunk_FUN_0042b760((char)param_1,(ushort)param_2);
   if (local_14 != nullptr) {
-    /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
-    pDVar5 = (DArrayTy *)STGroupC::GetGroupContent((STGroupC *)local_14,unaff_EDI);
+    pDVar5 = (DArrayTy *)STGroupC::GetGroupContent((STGroupC *)local_14);
     /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
     param_2 = pDVar5->count;
     if (param_2 != 0) {

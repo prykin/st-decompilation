@@ -7,8 +7,6 @@ void FUN_004353b0(uint param_1,uint param_2,uint param_3)
   STAllPlayersC *in_ECX;
   uint uVar2;
   char objPtr;
-  /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
-  int *unaff_EDI;
 
   uVar2 = (uint)DAT_0080874d;
   if (((g_packedRecords_A62x8[uVar2].field448_0x203 == 1) &&
@@ -25,8 +23,7 @@ void FUN_004353b0(uint param_1,uint param_2,uint param_3)
                 ((DArrayTy *)g_packedRecords_A62x8[DAT_0080874d].field393_0x1bd,0,&param_3);
       /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
       pSVar1 = STAllPlayersC::GetObjPtr(in_ECX,objPtr,(ushort)param_3,CASE_1);
-      /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
-      STGameObjC::SetSelfCheckFlag(pSVar1,unaff_EDI);
+      STGameObjC::SetSelfCheckFlag(pSVar1);
       pSVar1->vfunc_E8(1);
       thunk_FUN_0043fc50(CASE_4,0);
       thunk_FUN_0043fc50(CASE_5,0);

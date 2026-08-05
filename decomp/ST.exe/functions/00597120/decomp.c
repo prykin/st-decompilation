@@ -12,9 +12,17 @@
 
    [STSwitchEnumApplier] Switch target field_1A5F uses
    /SubmarineTitans/Recovered/Enums/FSGSTy_field_1A5FState. Cases:
-   CASE_1=1;CASE_2=2;CASE_3=3;CASE_4=4;CASE_5=5;CASE_6=6;CASE_7=7;CASE_8=8;CASE_9=9;CASE_A=10 */
+   CASE_1=1;CASE_2=2;CASE_3=3;CASE_4=4;CASE_5=5;CASE_6=6;CASE_7=7;CASE_8=8;CASE_9=9;CASE_A=10
+   [STAbiConsistencyApplier] machine_thiscall_arity target=function:-1: prototype=undefined1
+   __thiscall NoneFSGS(FSGSTy * this) Evidence: every machine RET purges exactly 0 explicit stack
+   bytes; current signature describes 4; removed trailing parameter slots have no listing
+   references; ret_sites=00597422 RET | 00597462 RET | 0059748B RET | 005974B4 RET | 00597916 RET |
+   00597B00 RET | 00597B47 RET
+   [STAbiConsistencyApplier] machine_thiscall_unsized_return_migration target=return:-1:
+   return=/undefined Evidence: legacy ABI applier materialized the unsized return as undefined1
+   while changing only function arity; restore Ghidra DefaultDataType */
 
-void __thiscall FSGSTy::NoneFSGS(FSGSTy *this,int param_1)
+void __thiscall FSGSTy::NoneFSGS(FSGSTy *this)
 
 {
   FSGSTy_field_1A5FState FVar1;

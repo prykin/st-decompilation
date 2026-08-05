@@ -2,11 +2,15 @@
 /* [STMethodOwnerApplier] Structural method owner recovered as STContainerC.
    Evidence: this_call_owners=[STContainerC]; agreed_this_calls=3; incoming_this_accesses=2;
    incoming_edx_uses=0; incoming_stack_parameter_uses=0; direct_non_thunk_callers=0;
-   incoming_ecx_receiver_callers=0; attributed_named_callers=1; owner_evidence_coverage=adequate */
+   incoming_ecx_receiver_callers=0; attributed_named_callers=1; owner_evidence_coverage=adequate
 
-void __thiscall STContainerC::sub_005FC3E0(STContainerC *this)
+   [STPrototypeApplier] Propagated return.
+   Evidence: 005FC3E0 returns return of sub_006E60A0 @ 005FC416 */
+
+int __thiscall STContainerC::sub_005FC3E0(STContainerC *this)
 
 {
+  int iVar1;
   undefined4 local_24 [3];
   undefined4 local_18;
   undefined4 local_14;
@@ -15,8 +19,8 @@ void __thiscall STContainerC::sub_005FC3E0(STContainerC *this)
   local_18 = 0;
   local_10 = this->field_0008;
   local_14 = 10;
-  sub_006E60A0(this,local_24);
+  iVar1 = sub_006E60A0(this,local_24);
   this->field_023A = 6;
-  return;
+  return iVar1;
 }
 

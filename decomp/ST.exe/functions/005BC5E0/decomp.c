@@ -31,8 +31,6 @@ int __thiscall PrividerTy::GetMessage(PrividerTy *this,STMessage *message)
   undefined4 uVar12;
   int iVar13;
   MMsgTy *pMVar14;
-  /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
-  undefined4 *unaff_EDI;
   byte bVar16;
   char cVar17;
   uint uVar18;
@@ -80,8 +78,7 @@ int __thiscall PrividerTy::GetMessage(PrividerTy *this,STMessage *message)
             PaintPrivider(this_00,'\0');
           }
           else if (SVar3 == MESS_ID_NONE) {
-            /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
-            NonePrivider(this_00,unaff_EDI);
+            NonePrivider(this_00);
           }
           else if (SVar3 == MESS_ID_CREATE) {
             /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */

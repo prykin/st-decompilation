@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* [STPrototypeApplier] Propagated parameter 0.
    Evidence: 0047BF70 -> 00493BC0 @ 0047BFA4; STBoatC::BackTeleport this; stable alias ESI
@@ -22,9 +24,7 @@ void __fastcall FUN_00493bc0(STBoatC *param_1)
     if (((-1 < sVar1) &&
         (((sVar1 < g_worldGrid.sizeX && (-1 < sVar3)) && (sVar3 < g_worldGrid.sizeY)))) &&
        ((-1 < sVar2 && (sVar2 < g_worldGrid.sizeZ)))) {
-      this = g_worldGrid.cells
-             [(int)g_worldGrid.planeStride * (int)sVar2 + (int)g_worldGrid.sizeX * (int)sVar3 +
-              (int)sVar1].objects[0];
+      this = STGridAt3D(g_worldGrid, sVar1, sVar3, sVar2).objects[0];
       if ((this != nullptr) && (*(int *)&this->field_0x18 == param_1->field_063F)) {
         iVar4 = (*this->vtable[5].slots_00_28[2])();
         if (iVar4 != 0) {

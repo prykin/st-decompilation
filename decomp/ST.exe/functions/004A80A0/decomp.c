@@ -3,9 +3,16 @@
 
 /* Recovered from embedded debug metadata:
    E:\__titans\wlad\to_grpb.cpp
-   STGroupBoatC::SetPatrolCmdToBoat */
+   STGroupBoatC::SetPatrolCmdToBoat
+   [STAbiConsistencyApplier] machine_thiscall_arity target=function:-1: prototype=undefined1
+   __thiscall SetPatrolCmdToBoat(STGroupBoatC * this) Evidence: every machine RET purges exactly 0
+   explicit stack bytes; current signature describes 4; removed trailing parameter slots have no
+   listing references; ret_sites=004A81C6 RET
+   [STAbiConsistencyApplier] machine_thiscall_unsized_return_migration target=return:-1:
+   return=/undefined Evidence: legacy ABI applier materialized the unsized return as undefined1
+   while changing only function arity; restore Ghidra DefaultDataType */
 
-void __thiscall STGroupBoatC::SetPatrolCmdToBoat(STGroupBoatC *this,int param_1)
+void __thiscall STGroupBoatC::SetPatrolCmdToBoat(STGroupBoatC *this)
 
 {
   code *pcVar1;

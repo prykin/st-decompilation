@@ -17,13 +17,13 @@ MAdvTy * __cdecl CreateMAdv(void)
   this = (MAdvTy *)FUN_006b04d0(0x62);
   if (this != nullptr) {
     sub_006E5FB0(this);
-    *(undefined4 *)this = 0x79bfe4;
+    this->vtable = &MAdvTyVTable;
     memset(&this->field_0x18, 0, 0x20); /* compiler bulk-zero initialization */
     iVar1 = 0;
     memset(&this->field_0x38, 0, 0x20); /* compiler bulk-zero initialization */
     this->field_005E = 0;
     this->field_005D = 0;
-    this->field_0x5c = 2;
+    this->field_005C = 2;
     return this;
   }
   return nullptr;

@@ -16,6 +16,7 @@ void __thiscall SIDTy::CreateCtrls(SIDTy *this)
   HANDLE pvVar4;
   int iVar5;
   uint uVar6;
+  uint uVar7;
   char *pcVar8;
   char *pcVar9;
   char *pcVar10;
@@ -119,6 +120,7 @@ void __thiscall SIDTy::CreateCtrls(SIDTy *this)
   pcVar8 = pcVar10 + -uVar6;
   pcVar10 = &this_00->field_1CD4;
   memmove(pcVar10, pcVar8, uVar6); /* compiler REP MOVS byte copy */
+  uVar7 = 0;
   uVar6 = 0xffffffff;
   pcVar8 = PTR_s_SAVEGAME__0079c19c;
   do {

@@ -39,7 +39,7 @@ undefined4 __fastcall FUN_004dec10(TLOBaseTy *param_1)
     break;
   case CASE_2:
     iVar3 = 0x2d;
-    iVar1 = thunk_FUN_004b79c0(*(char *)&param_1->field_0024,param_1->field_0018);
+    iVar1 = thunk_FUN_004b79c0(*(char *)&param_1->field_0024,(int)param_1->field_0018);
     if (iVar1 == 0) {
       iVar3 = 0xb4;
     }

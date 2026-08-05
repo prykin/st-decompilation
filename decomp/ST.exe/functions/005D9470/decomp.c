@@ -32,8 +32,6 @@ int __thiscall SIDTy::GetMessage(SIDTy *this,STMessage *message)
   uint *puVar18;
   UINT resourceId;
   byte *pbVar19;
-  /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
-  void *unaff_EDI;
   char *pcVar20;
   byte *pbVar21;
   bool bVar22;
@@ -75,8 +73,7 @@ int __thiscall SIDTy::GetMessage(SIDTy *this,STMessage *message)
           PaintSID(this_00);
         }
         else if (SVar5 == MESS_ID_NONE) {
-          /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
-          NoneSID(this_00,unaff_EDI);
+          NoneSID(this_00);
         }
         else if (SVar5 == MESS_ID_CREATE) {
           InitSID(this_00);
@@ -88,8 +85,7 @@ int __thiscall SIDTy::GetMessage(SIDTy *this,STMessage *message)
       else if (SVar5 == MESS_MMSGTY_68FF) {
         this_00->field_1A5F = 0;
         this_00->field_002D = message->id + 1;
-        /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-        (**(code **)this_00->field_0000)(&this_00->field_0x1d);
+        this_00->GetMessage((STMessage *)&this_00->field_0x1d);
       }
       else if (SVar5 == MESS_SHARED_6900) {
         thunk_FUN_005b6730(this_00,10,'\x01',-1);

@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* [STMethodOwnerApplier] Structural method owner recovered as STBoatC.
    Evidence: this_call_owners=[STBoatC]; agreed_this_calls=2; incoming_this_accesses=9;
@@ -22,9 +24,7 @@ void __thiscall STBoatC::sub_0048D930(STBoatC *this)
     if ((((-1 < sVar1) &&
          (((sVar1 < g_worldGrid.sizeX && (-1 < sVar3)) && (sVar3 < g_worldGrid.sizeY)))) &&
         (((-1 < sVar2 && (sVar2 < g_worldGrid.sizeZ)) &&
-         (pSVar4 = g_worldGrid.cells
-                   [(int)g_worldGrid.planeStride * (int)sVar2 + (int)g_worldGrid.sizeX * (int)sVar3
-                    + (int)sVar1].objects[0], pSVar4 != nullptr)))) &&
+         (pSVar4 = STGridAt3D(g_worldGrid, sVar1, sVar3, sVar2).objects[0], pSVar4 != nullptr)))) &&
        (*(int *)&pSVar4->field_0x18 == this->field_04A1)) {
       thunk_FUN_004e18e0(pSVar4,this->field_0018);
       thunk_FUN_004e1690(pSVar4,this->field_0018);
@@ -35,9 +35,7 @@ void __thiscall STBoatC::sub_0048D930(STBoatC *this)
     if (((-1 < sVar1) && (sVar1 < g_worldGrid.sizeX)) &&
        ((-1 < sVar3 &&
         ((((sVar3 < g_worldGrid.sizeY && (-1 < sVar2)) && (sVar2 < g_worldGrid.sizeZ)) &&
-         ((pSVar4 = g_worldGrid.cells
-                    [(int)g_worldGrid.planeStride * (int)sVar2 + (int)g_worldGrid.sizeX * (int)sVar3
-                     + (int)sVar1].objects[0], pSVar4 != nullptr &&
+         ((pSVar4 = STGridAt3D(g_worldGrid, sVar1, sVar3, sVar2).objects[0], pSVar4 != nullptr &&
           (*(int *)&pSVar4->field_0x18 == this->field_04AB)))))))) {
       thunk_FUN_004e18e0(pSVar4,this->field_0018);
       thunk_FUN_004e1690(pSVar4,this->field_0018);
@@ -50,9 +48,7 @@ void __thiscall STBoatC::sub_0048D930(STBoatC *this)
     if ((((-1 < sVar1) &&
          (((sVar1 < g_worldGrid.sizeX && (-1 < sVar3)) && (sVar3 < g_worldGrid.sizeY)))) &&
         (((-1 < sVar2 && (sVar2 < g_worldGrid.sizeZ)) &&
-         (pSVar4 = g_worldGrid.cells
-                   [(int)g_worldGrid.planeStride * (int)sVar2 + (int)g_worldGrid.sizeX * (int)sVar3
-                    + (int)sVar1].objects[0], pSVar4 != nullptr)))) &&
+         (pSVar4 = STGridAt3D(g_worldGrid, sVar1, sVar3, sVar2).objects[0], pSVar4 != nullptr)))) &&
        (*(int *)&pSVar4->field_0x18 == this->field_0532)) {
       thunk_FUN_004e18e0(pSVar4,this->field_0018);
       thunk_FUN_004e1690(pSVar4,this->field_0018);

@@ -220,6 +220,7 @@ void __thiscall ChooseMapTy::ShowDescription(ChooseMapTy *this,uint param_1)
     pcVar18 = pcVar20 + -uVar14;
     pcVar20 = pcVar19 + -1;
     memmove(pcVar20, pcVar18, uVar14); /* compiler REP MOVS byte copy */
+    uVar15 = 0;
     FUN_006b8280(local_18,local_18);
     uVar14 = 0xffffffff;
     pcVar18 = PTR_s_ADDON_0079c060;

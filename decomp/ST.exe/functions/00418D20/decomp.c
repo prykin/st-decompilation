@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 uint FUN_00418d20(short param_1,short param_2,short param_3,short param_4,short param_5,
                  short param_6)
@@ -22,9 +24,7 @@ uint FUN_00418d20(short param_1,short param_2,short param_3,short param_4,short 
         }
         if (sVar5 != 1) {
           if (param_6 == param_3) {
-            if (g_worldGrid.cells
-                [(param_2 + -1) * (int)g_worldGrid.sizeX + (int)param_1 +
-                 (int)g_worldGrid.planeStride * (int)param_3].objects[0] == nullptr) {
+            if (STGridAt3D(g_worldGrid, param_1, param_2 + -1, param_3).objects[0] == nullptr) {
               return (uint)(g_worldGrid.cells
                             [(int)param_2 * (int)g_worldGrid.sizeX + (int)param_1 +
                              (int)g_worldGrid.planeStride * (int)param_3 + 1].objects[0] !=

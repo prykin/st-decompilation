@@ -24,8 +24,6 @@ HelpPanelTy::sub_00514BC0
   void *pvVar4;
   bool bVar5;
   int iVar6;
-  /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
-  int unaff_EDI;
   uint local_c;
 
   bVar5 = false;
@@ -135,8 +133,7 @@ LAB_00514d04:
     }
     iVar6 = this->field_01C7 + local_c * 0x11;
     LinkAct(this,*(int *)(iVar6 + 9),*(int *)(iVar6 + 0xd));
-    /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
-    PutToSHlp(this,unaff_EDI);
+    PutToSHlp(this);
     local_c = *(uint *)sizeHelp_exref;
     /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
     (**(code **)(this->vtable + 0x18))(1);

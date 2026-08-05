@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 /* [STReturnSemanticsApplier] ignored_eax_void.
@@ -129,32 +131,22 @@ cf_common_join_0063EACD:
                   sVar3 = (short)local_10;
                   if ((((((short)local_c < g_worldGrid.sizeX) && (-1 < sVar8)) &&
                        (sVar8 < g_worldGrid.sizeY)) && ((-1 < sVar3 && (sVar3 < g_worldGrid.sizeZ)))
-                      ) && (g_worldGrid.cells
-                            [(int)sVar3 * (int)g_worldGrid.planeStride +
-                             (int)g_worldGrid.sizeX * (int)sVar8 + (int)(short)local_c].objects[0]
+                      ) && (STGridAt3D(g_worldGrid, local_c, sVar8, sVar3).objects[0]
                             != nullptr)) {
                     /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
                     thunk_FUN_00601d10(*(int *)((int)this + 0x259),local_1c,
-                                       (int)g_worldGrid.cells
-                                            [(int)sVar3 * (int)g_worldGrid.planeStride +
-                                             (int)g_worldGrid.sizeX * (int)sVar8 +
-                                             (int)(short)local_c].objects[0],
+                                       (int)STGridAt3D(g_worldGrid, local_c, sVar8, sVar3).objects[0],
                                        (short)*(undefined4 *)((int)this + 0x25d),
                                        *(ushort *)((int)this + 0x261),0xa8,0x110);
                   }
                   if ((((short)local_c < g_worldGrid.sizeX) && (-1 < sVar8)) &&
                      ((sVar8 < g_worldGrid.sizeY &&
                       (((-1 < sVar3 && (sVar3 < g_worldGrid.sizeZ)) &&
-                       (g_worldGrid.cells
-                        [(int)sVar3 * (int)g_worldGrid.planeStride +
-                         (int)g_worldGrid.sizeX * (int)sVar8 + (int)(short)local_c].objects[1] !=
+                       (STGridAt3D(g_worldGrid, local_c, sVar8, sVar3).objects[1] !=
                         nullptr)))))) {
                     /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
                     thunk_FUN_00601d10(*(int *)((int)this + 0x259),local_1c,
-                                       (int)g_worldGrid.cells
-                                            [(int)sVar3 * (int)g_worldGrid.planeStride +
-                                             (int)g_worldGrid.sizeX * (int)sVar8 +
-                                             (int)(short)local_c].objects[1],
+                                       (int)STGridAt3D(g_worldGrid, local_c, sVar8, sVar3).objects[1],
                                        (short)*(undefined4 *)((int)this + 0x25d),
                                        *(ushort *)((int)this + 0x261),0xa8,0x110);
                   }
@@ -200,15 +192,11 @@ cf_common_join_0063EACD:
               if ((((-1 < (short)local_c) && ((short)local_c < g_worldGrid.sizeX)) && (-1 < sVar8))
                  && (((sVar8 < g_worldGrid.sizeY && (sVar3 = (short)local_10, -1 < sVar3)) &&
                      ((sVar3 < g_worldGrid.sizeZ &&
-                      (g_worldGrid.cells
-                       [(int)sVar3 * (int)g_worldGrid.planeStride +
-                        (int)g_worldGrid.sizeX * (int)sVar8 + (int)(short)local_c].objects[0] !=
+                      (STGridAt3D(g_worldGrid, local_c, sVar8, sVar3).objects[0] !=
                        nullptr)))))) {
                 /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
                 thunk_FUN_00601d10(*(int *)((int)this + 0x259),local_1c,
-                                   (int)g_worldGrid.cells
-                                        [(int)sVar3 * (int)g_worldGrid.planeStride +
-                                         (int)g_worldGrid.sizeX * (int)sVar8 + (int)(short)local_c].
+                                   (int)STGridAt3D(g_worldGrid, local_c, sVar8, sVar3).
                                         objects[0],(short)*(undefined4 *)((int)this + 0x25d),
                                    *(ushort *)((int)this + 0x261),0xa8,0x110);
               }

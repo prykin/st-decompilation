@@ -3,9 +3,16 @@
 
 /* Recovered from embedded debug metadata:
    E:\__titans\tsystem.cpp
-   GameSystemC::DoneSystem */
+   GameSystemC::DoneSystem
+   [STAbiConsistencyApplier] machine_thiscall_arity target=function:-1: prototype=undefined1
+   __thiscall DoneSystem(GameSystemC * this) Evidence: every machine RET purges exactly 0 explicit
+   stack bytes; current signature describes 4; removed trailing parameter slots have no listing
+   references; ret_sites=005771CE RET | 00577213 RET
+   [STAbiConsistencyApplier] machine_thiscall_unsized_return_migration target=return:-1:
+   return=/undefined Evidence: legacy ABI applier materialized the unsized return as undefined1
+   while changing only function arity; restore Ghidra DefaultDataType */
 
-void __thiscall GameSystemC::DoneSystem(GameSystemC *this,int param_1)
+void __thiscall GameSystemC::DoneSystem(GameSystemC *this)
 
 {
   code *pcVar1;

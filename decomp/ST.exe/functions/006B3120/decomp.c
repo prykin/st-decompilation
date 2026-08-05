@@ -13,7 +13,7 @@ int FUN_006b3120(uint *param_1,uint *param_2)
   uint local_18;
   undefined4 local_14;
   AnonShape_006B5B10_E0D06CF1 *local_10;
-  uint *local_c;
+  AnonShape_006D86E0_D6D32C07 *local_c;
   int local_8;
 
   puVar4 = param_2;
@@ -114,9 +114,10 @@ LAB_006b334d:
           if (local_8 == 0) {
 LAB_006b3351:
             iVar7 = FUN_006cee10((int)puVar3,(int)puVar4);
-            local_8 = FUN_006cef60((int *)puVar3,local_c,local_10,(int)puVar4,param_1,
-                                   (char *)param_2,puVar4[10],puVar4[0xb],local_24,0,iVar7,
-                                   *puVar4 & 0xff000000,nullptr);
+            local_8 = FUN_006cef60((int *)puVar3,local_c,local_10,(int)puVar4,
+                                   (AnonShape_006D86E0_768BB816 *)param_1,(char *)param_2,puVar4[10]
+                                   ,puVar4[0xb],local_24,0,iVar7,*puVar4 & 0xff000000,
+                                   nullptr);
             if (local_c != nullptr) {
               /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
               (**(code **)(**(int **)(*puVar3 + 0x44) + 0x80))(*(int **)(*puVar3 + 0x44),0);

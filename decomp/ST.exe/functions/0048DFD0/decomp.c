@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* WARNING: Type propagation algorithm not settling */
 /* [STHiddenThisApplier] Anonymous hidden receiver recovered as
@@ -347,12 +349,8 @@ STBoatC::sub_0048DFD0
   }
   if (param_7 < 1) {
     if (param_3 < 1) {
-      if ((g_worldGrid.cells
-           [(int)g_worldGrid.planeStride * (int)param_3 + (int)g_worldGrid.sizeX * (int)param_2 +
-            (int)param_1].objects[0] == nullptr) &&
-         (g_worldGrid.cells
-          [(int)g_worldGrid.planeStride * (int)param_3 + (int)g_worldGrid.sizeX * (int)param_2 +
-           (int)param_1].objects[1] == nullptr)) {
+      if ((STGridAt3D(g_worldGrid, param_1, param_2, param_3).objects[0] == nullptr) &&
+         (STGridAt3D(g_worldGrid, param_1, param_2, param_3).objects[1] == nullptr)) {
         *param_8 = param_1;
         *param_9 = param_2;
         *param_10 = param_3;
@@ -371,9 +369,7 @@ STBoatC::sub_0048DFD0
            (((g_worldGrid.sizeZ <= sVar11 ||
              (g_worldGrid.cells[(int)sVar11 * (int)g_worldGrid.planeStride + iVar8 + iVar5].objects
               [0] == nullptr)) ||
-            (g_pathingGrid.cells
-             [(int)g_pathingGrid.sizeX * (int)param_2 +
-              iVar8 + (local_1c + -1) * (int)g_pathingGrid.planeStride] == 0)))))) &&
+            (STGridAt3D(g_pathingGrid, iVar8, param_2, local_1c + -1) == 0)))))) &&
          (((sVar11 = param_3 + -1, sVar11 < 0 || (g_worldGrid.sizeZ <= sVar11)) ||
           (g_worldGrid.cells[(int)sVar11 * (int)g_worldGrid.planeStride + iVar8 + iVar5].objects[1]
            == nullptr)))) {
@@ -757,17 +753,13 @@ LAB_0048f3f7:
                       else if (((((g_worldGrid.sizeX <= sVar11) || (sVar12 < 0)) ||
                                 (g_worldGrid.sizeY <= sVar12)) ||
                                ((sVar3 < 0 || (g_worldGrid.sizeZ <= sVar3)))) ||
-                              (g_worldGrid.cells
-                               [(int)sVar3 * (int)g_worldGrid.planeStride +
-                                (int)sVar12 * (int)g_worldGrid.sizeX + (int)sVar11].objects[0] ==
+                              (STGridAt3D(g_worldGrid, sVar11, sVar12, sVar3).objects[0] ==
                                nullptr)) {
 joined_r0x0048f3a9:
                         if ((((sVar11 < 0) || (g_worldGrid.sizeX <= sVar11)) || (sVar12 < 0)) ||
                            ((((g_worldGrid.sizeY <= sVar12 || (sVar3 < 0)) ||
                              (g_worldGrid.sizeZ <= sVar3)) ||
-                            (g_worldGrid.cells
-                             [(int)sVar3 * (int)g_worldGrid.planeStride +
-                              (int)sVar12 * (int)g_worldGrid.sizeX + (int)sVar11].objects[1] ==
+                            (STGridAt3D(g_worldGrid, sVar11, sVar12, sVar3).objects[1] ==
                              nullptr)))) goto LAB_0048f3f7;
                       }
                     }
@@ -775,30 +767,22 @@ joined_r0x0048f3a9:
                             ((((g_worldGrid.sizeX <= sVar11 || (sVar12 < 0)) ||
                               ((g_worldGrid.sizeY <= sVar12 ||
                                (((sVar3 < 0 || (g_worldGrid.sizeZ <= sVar3)) ||
-                                (g_worldGrid.cells
-                                 [(int)sVar3 * (int)g_worldGrid.planeStride +
-                                  (int)sVar12 * (int)g_worldGrid.sizeX + (int)sVar11].objects[0] ==
+                                (STGridAt3D(g_worldGrid, sVar11, sVar12, sVar3).objects[0] ==
                                  nullptr)))))) &&
                              (((sVar11 < 0 || (g_worldGrid.sizeX <= sVar11)) ||
                               ((sVar12 < 0 ||
                                (((g_worldGrid.sizeY <= sVar12 || (sVar3 < 0)) ||
                                 ((g_worldGrid.sizeZ <= sVar3 ||
-                                 (g_worldGrid.cells
-                                  [(int)sVar3 * (int)g_worldGrid.planeStride +
-                                   (int)sVar12 * (int)g_worldGrid.sizeX + (int)sVar11].objects[1] ==
+                                 (STGridAt3D(g_worldGrid, sVar11, sVar12, sVar3).objects[1] ==
                                   nullptr)))))))))))) {
                       sVar3 = sVar3 + -1;
                       if (sVar11 < 0) goto LAB_0048f3f7;
                       if (((((g_worldGrid.sizeX <= sVar11) || (sVar12 < 0)) ||
                            (g_worldGrid.sizeY <= sVar12)) ||
                           ((sVar3 < 0 || (g_worldGrid.sizeZ <= sVar3)))) ||
-                         ((g_worldGrid.cells
-                           [(int)sVar3 * (int)g_worldGrid.planeStride +
-                            (int)sVar12 * (int)g_worldGrid.sizeX + (int)sVar11].objects[0] ==
+                         ((STGridAt3D(g_worldGrid, sVar11, sVar12, sVar3).objects[0] ==
                            nullptr ||
-                          (g_pathingGrid.cells
-                           [g_pathingGrid.sizeX * iVar14 +
-                            iVar8 + (iVar4 + -1) * (int)g_pathingGrid.planeStride] == 0))))
+                          (STGridAt3D(g_pathingGrid, iVar8, iVar14, iVar4 + -1) == 0))))
                       goto joined_r0x0048f3a9;
                     }
                   }

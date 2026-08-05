@@ -3,9 +3,16 @@
 
 /* Recovered from embedded debug metadata:
    E:\__titans\wlad\to_grpb.cpp
-   STGroupBoatC::RechargeNewCmd */
+   STGroupBoatC::RechargeNewCmd
+   [STAbiConsistencyApplier] machine_thiscall_arity target=function:-1: prototype=undefined1
+   __thiscall RechargeNewCmd(STGroupBoatC * this) Evidence: every machine RET purges exactly 0
+   explicit stack bytes; current signature describes 4; removed trailing parameter slots have no
+   listing references; ret_sites=004A297E RET | 004A2C89 RET | 004A2CD7 RET
+   [STAbiConsistencyApplier] machine_thiscall_unsized_return_migration target=return:-1:
+   return=/undefined Evidence: legacy ABI applier materialized the unsized return as undefined1
+   while changing only function arity; restore Ghidra DefaultDataType */
 
-void __thiscall STGroupBoatC::RechargeNewCmd(STGroupBoatC *this,void *param_1)
+void __thiscall STGroupBoatC::RechargeNewCmd(STGroupBoatC *this)
 
 {
   code *pcVar1;
@@ -75,8 +82,6 @@ void __thiscall STGroupBoatC::RechargeNewCmd(STGroupBoatC *this,void *param_1)
   STGroupBoatC_field_01E6State SVar10;
   uint uVar11;
   uint uVar12;
-  /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
-  int unaff_EDI;
   STBoatC_CmdToObj_param_1Enum SVar13;
   uint *puVar14;
   InternalExceptionFrame local_19c;
@@ -279,8 +284,7 @@ void __thiscall STGroupBoatC::RechargeNewCmd(STGroupBoatC *this,void *param_1)
   }
   if (this_00->field_01E6 == CASE_6) {
     local_4c = g_playSystem_00802A38->field_00E4;
-    /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
-    ReMakePatrolPoints(this_00,unaff_EDI);
+    ReMakePatrolPoints(this_00);
     local_28 = Library::DKW::TBL::DArrayCreate(nullptr,0,2,1);
     if (this_00->field_022E->count == 0) {
       uVar11 = 0;

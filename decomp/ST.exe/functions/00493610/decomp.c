@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* [STHiddenThisApplier] Anonymous hidden receiver recovered as
    /SubmarineTitans/Recovered/HiddenThis/AnonReceiver_00493610.
@@ -40,8 +42,7 @@ SubmarineTitans::Recovered::HiddenThis::AnonReceiver_00493610::FUN_00493610
            (iVar7 = *(short *)&this->field_0x61d + -1, iVar7 <= *(short *)&this->field_0x61d + 2)) {
           do {
             if (((-1 < iVar7) && (iVar3 = (int)g_worldGrid.sizeX, iVar7 <= iVar3 + -1)) &&
-               (g_pathingGrid.cells
-                [g_pathingGrid.planeStride * iVar5 + g_pathingGrid.sizeX * iVar9 + iVar7] == 0)) {
+               (STGridAt3D(g_pathingGrid, iVar7, iVar9, iVar5) == 0)) {
               sVar6 = (short)iVar7;
               sVar8 = (short)iVar9;
               sVar4 = (short)iVar5;
@@ -63,8 +64,7 @@ SubmarineTitans::Recovered::HiddenThis::AnonReceiver_00493610::FUN_00493610
                         ))) || (g_worldGrid.cells
                                 [(int)g_worldGrid.planeStride * (int)sVar1 + sVar8 * iVar3 +
                                  (int)sVar6].objects[0] == nullptr)) ||
-                     (g_pathingGrid.cells
-                      [local_8 * g_pathingGrid.planeStride + g_pathingGrid.sizeX * iVar9 + iVar7] ==
+                     (STGridAt3D(g_pathingGrid, iVar7, iVar9, local_8) ==
                       0)) && (((((sVar6 < 0 || (g_worldGrid.sizeX <= sVar6)) || (sVar8 < 0)) ||
                                ((g_worldGrid.sizeY <= sVar8 || (sVar1 = sVar4 + -1, sVar1 < 0)))) ||
                               ((g_worldGrid.sizeZ <= sVar1 ||

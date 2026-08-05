@@ -17,14 +17,13 @@ MainMenuTy * __cdecl CreateMainMenu(void)
   undefined4 *puVar3;
   SpriteClassTy *this_00;
   undefined4 *puVar4;
-  AnonPointee_MainMenuTy_1AA7 **ppAVar5;
 
   this = (MainMenuTy *)FUN_006b04d0(0x1ee4);
   if (this != nullptr) {
     sub_006E5FB0(this);
-    this->field_0000 = &VTable_0079C018;
-    *(undefined4 *)&this->field_0x18 = 0;
-    *(undefined4 *)&this->field_0x5d = 0;
+    this->vtable = (MainMenuTyVTable *)&VTable_0079C018;
+    this->field_0018 = 0;
+    this->field_005D = 0;
     memset(&this->field_0x1d, 0, 0x20); /* compiler bulk-zero initialization */
     iVar1 = 0;
     memset(&this->field_0x3d, 0, 0x20); /* compiler bulk-zero initialization */
@@ -38,7 +37,7 @@ MainMenuTy * __cdecl CreateMainMenu(void)
       this_00 = (SpriteClassTy *)&this_00[3].field_0048;
       iVar1 = iVar1 + -1;
     } while (iVar1 != 0);
-    this->field_0000 = &MMObjTyVTable;
+    this->vtable = (MainMenuTyVTable *)&MMObjTyVTable;
     this->field_0065 = 2;
     this->field_009A = 0;
     memset(&this->field_0066, 0, 0x34); /* compiler bulk-zero initialization */
@@ -52,14 +51,11 @@ MainMenuTy * __cdecl CreateMainMenu(void)
       *(undefined1 *)((int)puVar4 + 2) = 0;
       puVar3 = (undefined4 *)((int)puVar3 + 0x1fb);
     } while (iVar1 != 0);
-    this->field_0000 = &UNK_0079c098;
+    this->vtable = &MainMenuTyVTable;
     memset(&this->field_1A7F, 0, 0x28); /* compiler bulk-zero initialization */
     iVar1 = 0;
-    ppAVar5 = &this->field_1AA7;
-    for (iVar1 = 10; iVar1 != 0; iVar1 = iVar1 + -1) {
-      *ppAVar5 = nullptr;
-      ppAVar5 = ppAVar5 + 1;
-    }
+    memset(this->field_1AA7, 0, 0x28); /* compiler bulk-zero initialization */
+    iVar1 = 0;
     this->field_1ACF = 0;
     this->field_1EE3 = 0;
     this->field_1EDF = 1;

@@ -13,8 +13,7 @@ void __thiscall FUN_0055beb0(void *this,DWORD lastError)
      (g_fSGS_0081174C != nullptr)) {
     *(undefined4 *)((int)this + 0x1b) = 0x614f;
     *(DWORD *)((int)this + 0x1f) = lastError;
-    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-    (*(code *)g_fSGS_0081174C->field_0000->field_0000)((int)this + 0xb);
+    g_fSGS_0081174C->GetMessage((STMessage *)((int)this + 0xb));
   }
   return;
 }

@@ -84,15 +84,11 @@ FUN_004b0250(uint param_1,int param_2,int *param_3,int *param_4,int *param_5,int
 LAB_004b03a2:
                 *(undefined1 *)((int)psVar11 + iVar15 + (int)local_10) = 3;
               }
-              else if (g_pathingGrid.cells
-                       [(int)sVar4 * (int)g_pathingGrid.planeStride +
-                        (int)sVar8 * (int)g_pathingGrid.sizeX + (int)sVar14] == 0) {
+              else if (STGridAt3D(g_pathingGrid, sVar14, sVar8, sVar4) == 0) {
                 *(undefined1 *)((int)psVar11 + iVar15 + (int)local_10) = 0;
               }
               else {
-                if (g_pathingGrid.cells
-                    [(int)sVar4 * (int)g_pathingGrid.planeStride +
-                     (int)sVar8 * (int)g_pathingGrid.sizeX + (int)sVar14] == -1) goto LAB_004b03a2;
+                if (STGridAt3D(g_pathingGrid, sVar14, sVar8, sVar4) == -1) goto LAB_004b03a2;
                 *(undefined1 *)((int)psVar11 + iVar15 + (int)local_10) = 1;
               }
             }

@@ -83,12 +83,9 @@ int __thiscall TLOEmbryoTy::Create(TLOEmbryoTy *this,RecoveredRecord_TLOEmbryoTy
     puVar14 = (byte *)&local_3c->field_0x231;
   }
   pRVar11 = param_1;
-  for (iVar3 = 0x1b; iVar3 != 0; iVar3 = iVar3 + -1) {
-    *puVar14 = *(undefined4 *)pRVar11;
-    pRVar11 = (RecoveredRecord_TLOEmbryoTy_004D11D0 *)&pRVar11->field_0x4;
-    puVar14 = (byte *)(puVar14 + 1);
-  }
-  *(undefined2 *)puVar14 = *(undefined2 *)pRVar11;
+  memmove(puVar14, pRVar11, 0x6e); /* compiler REP MOVS byte copy */
+  puVar14 = (byte *)(puVar14 + 0x1b);
+  pRVar11 = (RecoveredRecord_TLOEmbryoTy_004D11D0 *)((byte *)pRVar11 + 0x6c);
   *(undefined1 *)((int)puVar14 + 2) = pRVar11->field_0x2;
   local_3c->field_0368 = local_3c->field_0259 + -0x32;
   local_EAX_120 = LookupRecordByte(*(char *)&local_3c->field_0024);
@@ -141,9 +138,7 @@ int __thiscall TLOEmbryoTy::Create(TLOEmbryoTy *this,RecoveredRecord_TLOEmbryoTy
             this_01 = nullptr;
           }
           else {
-            this_01 = g_worldGrid.cells
-                      [(int)sVar17 * (int)g_worldGrid.sizeX +
-                       (int)sVar1 * (int)g_worldGrid.planeStride + (int)sVar16].objects[1];
+            this_01 = STGridAt3D(g_worldGrid, sVar16, sVar17, sVar1).objects[1];
           }
           if ((this_01 != nullptr) && (this_01->value_20 == 0xbe)) {
             thunk_FUN_00630110(this_01,(char)this_00->field_0024);

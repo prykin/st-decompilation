@@ -8,7 +8,7 @@
 void __thiscall BehPanelTy::InitBehPanel(BehPanelTy *this)
 
 {
-  AnonPointee_BehPanelTy_0000 *pAVar1;
+  BehPanelTyVTable *pBVar1;
   code *pcVar2;
   BehPanelTy *this_00;
   LPSTR pCVar3;
@@ -17,21 +17,20 @@ void __thiscall BehPanelTy::InitBehPanel(BehPanelTy *this)
   byte bVar6;
   int iVar7;
   uint uVar8;
-  undefined4 uVar10;
-  Global_mfRLoad_param_2Enum GVar11;
-  undefined4 uVar12;
+  Global_mfRLoad_param_2Enum GVar10;
+  undefined4 uVar11;
+  short sVar12;
   int iVar13;
   uint uVar14;
-  int iVar15;
-  undefined4 uVar16;
+  undefined2 uVar15;
+  int iVar16;
   UINT UVar17;
   undefined4 uVar18;
-  undefined4 uVar19;
-  int iVar20;
-  undefined4 uVar21;
+  int iVar19;
+  undefined4 uVar20;
+  undefined4 *puVar21;
   undefined4 uVar22;
-  undefined4 *puVar23;
-  undefined4 uVar24;
+  undefined4 uVar23;
   int local_994 [32];
   undefined4 auStack_914 [3];
   int aiStack_908 [9];
@@ -54,11 +53,11 @@ void __thiscall BehPanelTy::InitBehPanel(BehPanelTy *this)
   int local_c;
   int local_8;
 
-  puVar23 = local_68;
+  puVar21 = local_68;
   local_18 = this;
   for (iVar7 = 0x14; iVar7 != 0; iVar7 = iVar7 + -1) {
-    *puVar23 = 0;
-    puVar23 = puVar23 + 1;
+    *puVar21 = 0;
+    puVar21 = puVar21 + 1;
   }
   memset(local_994, 0, 0x8e8); /* compiler bulk-zero initialization */
   local_ac.previous = g_currentExceptionFrame;
@@ -75,17 +74,17 @@ void __thiscall BehPanelTy::InitBehPanel(BehPanelTy *this)
     }
     STDebugBreak(); /* noreturn in standalone pseudocode */
   }
-  uVar22 = 0x77;
-  uVar19 = 0x99;
+  uVar20 = 0x77;
+  uVar18 = 0x99;
   UVar17 = 0x4e5d;
-  iVar15 = 0xb;
+  iVar16 = 0xb;
   iVar13 = 0x84;
-  uVar12 = 3;
+  uVar11 = 3;
   iVar7 = 0x36;
   g_behPanel_00801678 = local_18;
   pCVar3 = thunk_FUN_00571240("BKG_BEHAVIOURW",0);
   SpecPanelTy::InitPanel
-            ((SpecPanelTy *)this_00,pCVar3,iVar7,uVar12,iVar13,iVar15,UVar17,uVar19,uVar22);
+            ((SpecPanelTy *)this_00,pCVar3,iVar7,uVar11,iVar13,iVar16,UVar17,uVar18,uVar20);
   puVar4 = Library::Ourlib::MFRLOAD::mfRLoad
                      (DAT_00806794,CASE_B,"BUT_MSK_SI",0xffffffff,0,1,0,nullptr);
   this_00->field_02B8 = puVar4;
@@ -158,13 +157,13 @@ switchD_004ed72f_default:
     if (this_00->field_005C != 0) {
       iVar7 = this_00->field_0044;
     }
-    puVar23 = nullptr;
-    iVar20 = 0;
+    puVar21 = nullptr;
+    iVar19 = 0;
     local_994[uVar8 * 0x5f + 3] = iVar7 + local_8;
-    iVar15 = 1;
+    iVar16 = 1;
     bVar6 = 0;
     uVar14 = 0xffffffff;
-    uVar12 = 0;
+    uVar11 = 0;
     iVar13 = 1;
     auStack_88c[uVar8 * 0x5f] = 1;
     iVar7 = 0;
@@ -172,30 +171,30 @@ switchD_004ed72f_default:
     if (DAT_0080874e == '\x03') {
       pcVar5 = thunk_FUN_00529590((&this_00->field_0x1af)[uVar8],0);
       pCVar3 = thunk_FUN_00571240(pcVar5,iVar7);
-      pCVar3 = FUN_006f2c00(pCVar3,iVar13,uVar12);
-      GVar11 = CASE_6;
+      pCVar3 = FUN_006f2c00(pCVar3,iVar13,uVar11);
+      GVar10 = CASE_6;
     }
     else {
       pcVar5 = thunk_FUN_00529590((&this_00->field_0x1af)[uVar8],0);
       pCVar3 = thunk_FUN_00571240(pcVar5,iVar7);
-      pCVar3 = FUN_006f2c00(pCVar3,iVar13,uVar12);
-      GVar11 = CASE_1;
+      pCVar3 = FUN_006f2c00(pCVar3,iVar13,uVar11);
+      GVar10 = CASE_1;
     }
     puVar4 = Library::Ourlib::MFRLOAD::mfRLoad
-                       (DAT_00806794,GVar11,pCVar3,uVar14,bVar6,iVar15,iVar20,puVar23);
+                       (DAT_00806794,GVar10,pCVar3,uVar14,bVar6,iVar16,iVar19,puVar21);
     iVar7 = *(int *)(puVar4 + 4);
     local_994[uVar8 * 0x5f + 4] = *(int *)(puVar4 + 2);
     local_994[uVar8 * 0x5f + 5] = iVar7;
-    local_14 = (int)&this_00->field_0000 + uVar8 * 0x27;
+    local_14 = (int)&this_00->vtable + uVar8 * 0x27;
     *(undefined1 *)(local_14 + 0x1ce) = 1;
     iVar7 = thunk_FUN_00525390((&this_00->field_0x1af)[uVar8],0);
     *(int *)(local_14 + 0x1cf) = iVar7;
-    uVar12 = thunk_FUN_005272b0((&this_00->field_0x1af)[uVar8]);
+    uVar11 = thunk_FUN_005272b0((&this_00->field_0x1af)[uVar8]);
     iVar13 = local_14;
     auStack_914[uVar8 * 0x5f] = 0x101;
     auStack_914[uVar8 * 0x5f + 1] = 3;
     auStack_914[uVar8 * 0x5f + 2] = 0x4201;
-    *(undefined4 *)(iVar13 + 0x1d7) = uVar12;
+    *(undefined4 *)(iVar13 + 0x1d7) = uVar11;
     *(undefined2 *)(aiStack_908 + uVar8 * 0x5f) = 0;
     *(undefined2 *)((int)aiStack_908 + (uVar8 * 0xbe + 1) * 2) = 1;
     aiStack_908[uVar8 * 0x5f + 1] = iVar13 + 0x1ce;
@@ -210,9 +209,9 @@ switchD_004ed72f_default:
     *(undefined2 *)((int)aiStack_8e4 + (uVar8 * 0xbe + 1) * 2) = 1;
     aiStack_8e4[uVar8 * 0x5f + 1] = iVar13 + 0x1ce;
     if (-1 < iVar7) {
-      uVar12 = *(undefined4 *)(&DAT_00807e66 + iVar7 * 4);
+      uVar11 = *(undefined4 *)(&DAT_00807e66 + iVar7 * 4);
       auStack_870[uVar8 * 0x5f + 2] = 8;
-      auStack_870[uVar8 * 0x5f + 3] = uVar12;
+      auStack_870[uVar8 * 0x5f + 3] = uVar11;
     }
     bVar6 = (byte)local_10;
     auStack_88c[uVar8 * 0x5f + 2] = 1;
@@ -227,9 +226,9 @@ LAB_004eda0d:
         if (bVar6 == 0) goto LAB_004eda0d;
         iVar13 = uVar8 - 1;
       }
-      uVar12 = FUN_0070b3a0((AnonShape_GLOBAL_0081175C_57F682DD *)this_00->field_02B8,iVar13);
+      uVar11 = FUN_0070b3a0((AnonShape_GLOBAL_0081175C_57F682DD *)this_00->field_02B8,iVar13);
       bVar6 = (byte)local_10;
-      auStack_870[iVar7 * 0x5f] = uVar12;
+      auStack_870[iVar7 * 0x5f] = uVar11;
       auStack_870[iVar7 * 0x5f + 1] = 0x3c;
     }
 /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
@@ -248,51 +247,49 @@ LAB_004eda47:
       local_38 = local_58;
       (*this_00->field_000C->vtable->CreateObject)
                 ((SystemClassTy *)this_00->field_000C,9,&this_00->field_01BE,nullptr,local_68,0);
-      uVar24 = 1;
-      pAVar1 = this_00->field_0000;
-      uVar21 = 0;
-      uVar18 = 0x4e8a;
-      uVar16 = 0;
-      uVar22 = 2;
-      uVar19 = 0xc0af;
-      uVar12 = 0xc09f;
+      uVar22 = 1;
+      pBVar1 = this_00->vtable;
+      pcVar5 = nullptr;
+      uVar20 = 0x4e8a;
+      uVar15 = 0;
+      sVar12 = 2;
+      uVar18 = 0xc0af;
+      uVar11 = 0xc09f;
       pCVar3 = thunk_FUN_00571240("BUT_BHOLD",0);
-      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-      uVar12 = (*(code *)pAVar1->field_0004)
-                         (0,0,(-(DAT_0080874e != '\x03') & 2U) + 0x1f,
-                          (-(DAT_0080874e != '\x03') & 7U) + 0x5a,0,1,1,pCVar3,uVar12,uVar19,uVar22,
-                          uVar16,uVar18,uVar21,uVar24);
-      uVar10 = 1;
-      pAVar1 = this_00->field_0000;
-      uVar24 = 0;
-      uVar21 = 0x4e88;
-      uVar18 = 0;
-      uVar16 = 2;
-      uVar22 = 0xc0b0;
-      uVar19 = 0xc0a0;
-      this_00->field_01C2 = uVar12;
+      uVar11 = (*pBVar1->CreateBut)
+                         ((PanelTy *)this_00,0,0,(-(uint)(DAT_0080874e != '\x03') & 2) + 0x1f,
+                          (-(uint)(DAT_0080874e != '\x03') & 7) + 0x5a,0,1,1,pCVar3,uVar11,uVar18,
+                          sVar12,uVar15,uVar20,pcVar5,uVar22);
+      uVar23 = 1;
+      pBVar1 = this_00->vtable;
+      pcVar5 = nullptr;
+      uVar22 = 0x4e88;
+      uVar15 = 0;
+      sVar12 = 2;
+      uVar20 = 0xc0b0;
+      uVar18 = 0xc0a0;
+      this_00->field_01C2 = uVar11;
       pCVar3 = thunk_FUN_00571240("BUT_BHOLD",0);
-      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-      uVar12 = (*(code *)pAVar1->field_0004)
-                         (0,0,(-(DAT_0080874e != '\x03') & 6U) + 0x45,
-                          (-(DAT_0080874e != '\x03') & 7U) + 0x5a,0,1,1,pCVar3,uVar19,uVar22,uVar16,
-                          uVar18,uVar21,uVar24,uVar10);
-      uVar10 = 1;
-      pAVar1 = this_00->field_0000;
-      uVar24 = 0;
-      uVar21 = 0x4e89;
-      uVar18 = 0;
-      uVar16 = 2;
-      uVar22 = 0xc0b1;
-      uVar19 = 0xc0a1;
-      this_00->field_01C6 = uVar12;
+      uVar11 = (*pBVar1->CreateBut)
+                         ((PanelTy *)this_00,0,0,(-(uint)(DAT_0080874e != '\x03') & 6) + 0x45,
+                          (-(uint)(DAT_0080874e != '\x03') & 7) + 0x5a,0,1,1,pCVar3,uVar18,uVar20,
+                          sVar12,uVar15,uVar22,pcVar5,uVar23);
+      uVar23 = 1;
+      pBVar1 = this_00->vtable;
+      pcVar5 = nullptr;
+      uVar22 = 0x4e89;
+      uVar15 = 0;
+      sVar12 = 2;
+      uVar20 = 0xc0b1;
+      uVar18 = 0xc0a1;
+      this_00->field_01C6 = uVar11;
       pCVar3 = thunk_FUN_00571240("BUT_BAGR",0);
-      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-      uVar12 = (*(code *)pAVar1->field_0004)
-                         (0,0,(-(uint)(DAT_0080874e != '\x03') & 0xfffffffd) + 0xb3,
-                          (-(DAT_0080874e != '\x03') & 7U) + 0x5a,0,1,1,pCVar3,uVar19,uVar22,uVar16,
-                          uVar18,uVar21,uVar24,uVar10);
-      this_00->field_01CA = uVar12;
+      uVar11 = (*pBVar1->CreateBut)
+                         ((PanelTy *)this_00,0,0,
+                          (-(uint)(DAT_0080874e != '\x03') & 0xfffffffd) + 0xb3,
+                          (-(uint)(DAT_0080874e != '\x03') & 7) + 0x5a,0,1,1,pCVar3,uVar18,uVar20,
+                          sVar12,uVar15,uVar22,pcVar5,uVar23);
+      this_00->field_01CA = uVar11;
       g_currentExceptionFrame = local_ac.previous;
       return;
     }

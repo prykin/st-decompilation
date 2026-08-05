@@ -57,8 +57,6 @@ int __thiscall TLOBaseTy::SetState(TLOBaseTy *this,int param_1,int param_2)
   int iVar10;
   int iVar11;
   short sVar12;
-  /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
-  void *unaff_EDI;
   InternalExceptionFrame local_50;
   TLOBaseTy *local_c;
   int local_8;
@@ -88,8 +86,7 @@ int __thiscall TLOBaseTy::SetState(TLOBaseTy *this,int param_1,int param_2)
     else {
       thunk_FUN_004cc810((AnonShape_004CC900_31EE9CAA *)this_01);
     }
-    /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
-    LoadImages(this_01,unaff_EDI);
+    LoadImages(this_01);
     if (*(int *)(&DAT_00791a10 + this_01->field_0235 * 4) != 0) {
       AddSprInit(this_01);
     }
@@ -131,9 +128,7 @@ int __thiscall TLOBaseTy::SetState(TLOBaseTy *this,int param_1,int param_2)
         sVar8 = -1;
       }
       else {
-        sVar8 = g_pathingGrid.cells
-                [(int)g_pathingGrid.sizeX * (int)sVar12 +
-                 (int)g_pathingGrid.planeStride * (int)sVar1 + (int)sVar8];
+        sVar8 = STGridAt3D(g_pathingGrid, sVar8, sVar12, sVar1);
       }
       if (sVar8 == 0) {
         local_8 = this_01->field_05B4;
@@ -173,9 +168,7 @@ int __thiscall TLOBaseTy::SetState(TLOBaseTy *this,int param_1,int param_2)
         sVar8 = -1;
       }
       else {
-        sVar8 = g_pathingGrid.cells
-                [(int)g_pathingGrid.sizeX * (int)sVar12 +
-                 (int)g_pathingGrid.planeStride * (int)sVar1 + (int)sVar8];
+        sVar8 = STGridAt3D(g_pathingGrid, sVar8, sVar12, sVar1);
       }
       if (sVar8 != 0) {
         local_8 = this_01->field_05B4;
@@ -309,9 +302,7 @@ int __thiscall TLOBaseTy::SetState(TLOBaseTy *this,int param_1,int param_2)
         sVar12 = -1;
       }
       else {
-        sVar12 = g_pathingGrid.cells
-                 [(int)g_pathingGrid.sizeX * (int)sVar12 +
-                  (int)g_pathingGrid.planeStride * (int)sVar1 + (int)sVar8];
+        sVar12 = STGridAt3D(g_pathingGrid, sVar8, sVar12, sVar1);
       }
       if (sVar12 != 0) {
         iVar9 = thunk_FUN_00496140(sVar8,*(short *)&this_01->field_05B4,sVar1);

@@ -25,8 +25,6 @@ STPlaySystemC::SetCtrlCmd
   int iVar5;
   uint uVar6;
   uint uVar7;
-  /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
-  int unaff_EDI;
   uint *puVar8;
   byte *puVar9;
   InternalExceptionFrame local_54;
@@ -126,8 +124,7 @@ STPlaySystemC::SetCtrlCmd
       }
       if (bVar2) {
         FUN_006b9910(&local_8->field_0039,(int)pvVar4);
-        /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
-        PlaySystemTy::SendClientMail((PlaySystemTy *)local_8,unaff_EDI);
+        PlaySystemTy::SendClientMail((PlaySystemTy *)local_8);
         g_currentExceptionFrame = local_54.previous;
         return;
       }

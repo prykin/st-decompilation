@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* [STMethodOwnerApplier] Structural method owner recovered as STBoatC.
    Evidence: this_call_owners=[STBoatC]; agreed_this_calls=1; incoming_this_accesses=5;
@@ -123,16 +125,12 @@ undefined4 __thiscall STBoatC::sub_004926C0(STBoatC *this,int param_1)
   if ((((((short)uVar1 < 0) || (g_worldGrid.sizeX <= (short)uVar1)) || ((short)uVar2 < 0)) ||
       (((g_worldGrid.sizeY <= (short)uVar2 || (g_worldGrid.sizeZ < 5)) ||
        (local_8 = (int)g_worldGrid.planeStride,
-       g_worldGrid.cells
-       [(int)(short)uVar2 * (int)g_worldGrid.sizeX + g_worldGrid.planeStride * 4 + (int)(short)uVar1
-       ].objects[0] == nullptr)))) &&
+       STGridAt3D(g_worldGrid, uVar1, uVar2, 4).objects[0] == nullptr)))) &&
      ((((short)uVar1 < 0 || (g_worldGrid.sizeX <= (short)uVar1)) ||
       (((short)uVar2 < 0 ||
        (((g_worldGrid.sizeY <= (short)uVar2 || (g_worldGrid.sizeZ < 5)) ||
         (local_8 = (int)g_worldGrid.planeStride,
-        g_worldGrid.cells
-        [(int)(short)uVar2 * (int)g_worldGrid.sizeX + g_worldGrid.planeStride * 4 +
-         (int)(short)uVar1].objects[1] == nullptr)))))))) {
+        STGridAt3D(g_worldGrid, uVar1, uVar2, 4).objects[1] == nullptr)))))))) {
     *(ushort *)&this->field_0x5f2 = uVar1;
     *(ushort *)&this->field_0x5f4 = uVar2;
     *(undefined2 *)&this->field_0x5f6 = 4;

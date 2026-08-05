@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 uint FUN_00496250(int param_1,int param_2,int param_3)
 
@@ -51,8 +53,7 @@ switchD_0049655f_caseD_0:
   if ((((-1 < (int)uVar13) && ((int)uVar13 <= (int)g_worldGrid.sizeX)) && (-1 < (int)uVar10)) &&
      ((((int)uVar10 <= (int)g_worldGrid.sizeY && (-1 < iVar12)) &&
       ((iVar12 <= g_worldGrid.sizeZ &&
-       (sVar1 = g_pathingGrid.cells
-                [(int)g_pathingGrid.sizeX * uVar10 + uVar13 + g_pathingGrid.planeStride * iVar12],
+       (sVar1 = STGridAt3D(g_pathingGrid, uVar13, uVar10, iVar12),
        sVar1 != 0)))))) {
     if (sVar1 == -1) {
       return 0x7f;

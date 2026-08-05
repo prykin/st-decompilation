@@ -7,13 +7,17 @@
 
    [STPrototypeApplier] Propagated parameter 2.
    Evidence: 00435945 MOV EAX,dword ptr [EDI + 0x20] classifies dword parameter loaded at 00435939
-    */
+   [STAbiConsistencyApplier] machine_thiscall_arity target=function:-1: prototype=short __thiscall
+   GetCursorType(STAllPlayersC * this, undefined4 param_1, AnonShape_00435930_AC276C8C * param_2,
+   undefined4 param_3, int * param_4) Evidence: every machine RET purges exactly 16 explicit stack
+   bytes; current signature describes 24; removed trailing parameter slots have no listing
+   references; ret_sites=00435A2B RET 0x10 | 00435A5D RET 0x10 | 00435A9C RET 0x10 | 00435AD1 RET
+   0x10 | 00435B0B RET 0x10 */
 
 short __thiscall
 STAllPlayersC::GetCursorType
           (STAllPlayersC *this,Global_sub_00435B90_param_3Enum param_1,
-          AnonShape_00435930_AC276C8C *param_2,undefined4 param_3,int *param_4,undefined4 param_5,
-          undefined4 param_6)
+          AnonShape_00435930_AC276C8C *param_2,undefined4 param_3,int *param_4)
 
 {
   DArrayTy *array;

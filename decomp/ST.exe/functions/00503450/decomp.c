@@ -32,9 +32,7 @@ void __thiscall CPanelTy::SetControlBoatSI(CPanelTy *this)
   char *pcVar21;
   undefined4 uVar22;
   undefined4 local_c28 [140];
-  AnonShape_004F2E40_DC76A8C6 local_9f8;
-  undefined4 auStack_8e8 [5];
-  undefined4 auStack_8d4 [497];
+  AnonShape_004F2E40_DC76A8C6 local_9f8 [7];
   undefined4 local_110 [22];
   InternalExceptionFrame local_b8;
   undefined4 local_74 [4];
@@ -154,17 +152,17 @@ LAB_005035b5:
       pcVar5 = thunk_FUN_00529590(*(Global_sub_00529590_param_1Enum *)
                                    ((int)this_00->field_0B1F + uVar13 + 0x83),this_00->field_0B99);
       pCVar6 = thunk_FUN_00571240(pcVar5,iVar9);
-      SetButStruct(this_00,(AnonShape_004F2E40_DC76A8C6 *)((int)&local_9f8 + local_2c * 0x17c),3,
+      SetButStruct(this_00,(AnonShape_004F2E40_DC76A8C6 *)((int)local_9f8 + local_2c * 0x17c),3,
                    local_14,iVar8,local_8,6,pCVar6,uVar16,uVar17,puVar18,pcVar21);
       iVar9 = local_2c;
-      auStack_8e8[local_2c * 0x5f] = 1;
+      *(undefined4 *)((int)local_9f8 + local_2c * 0x17c + 0x110) = 1;
       if ((byte)local_c == 0) {
 LAB_00503678:
         iVar10 = 0;
 LAB_0050367a:
         uVar7 = FUN_0070b3a0((AnonShape_GLOBAL_0081175C_57F682DD *)this_00->field_02DE,iVar10);
-        auStack_8d4[iVar9 * 0x5f] = uVar7;
-        auStack_8d4[iVar9 * 0x5f + 1] = 0x3c;
+        *(undefined4 *)((int)local_9f8 + iVar9 * 0x17c + 0x124) = uVar7;
+        *(undefined4 *)((int)local_9f8 + iVar9 * 0x17c + 0x128) = 0x3c;
         iVar9 = local_2c;
       }
       else if ((1 < (byte)local_c) && ((byte)local_c < 5)) {
@@ -178,7 +176,7 @@ LAB_005036ae:
       /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
       local_c = CONCAT31(local_c._1_3_,bVar4);
     } while (bVar4 < 6);
-    local_28 = &local_9f8;
+    local_28 = local_9f8;
     local_64 = this_00->field_0008;
     local_74[0] = 1;
     local_74[1] = 0xffffffff;

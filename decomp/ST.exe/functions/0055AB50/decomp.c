@@ -3,9 +3,16 @@
 
 /* Recovered from embedded debug metadata:
    E:\__titans\grig\visible.cpp
-   VisibleClassTy::VisHoleExec */
+   VisibleClassTy::VisHoleExec
+   [STAbiConsistencyApplier] machine_thiscall_arity target=function:-1: prototype=undefined1
+   __thiscall VisHoleExec(VisibleClassTy * this) Evidence: every machine RET purges exactly 0
+   explicit stack bytes; current signature describes 4; removed trailing parameter slots have no
+   listing references; ret_sites=0055AC44 RET | 0055AC9C RET
+   [STAbiConsistencyApplier] machine_thiscall_unsized_return_migration target=return:-1:
+   return=/undefined Evidence: legacy ABI applier materialized the unsized return as undefined1
+   while changing only function arity; restore Ghidra DefaultDataType */
 
-void __thiscall VisibleClassTy::VisHoleExec(VisibleClassTy *this,void *param_1)
+void __thiscall VisibleClassTy::VisHoleExec(VisibleClassTy *this)
 
 {
   VisibleClassTy_field_00F4DArray *pVVar1;

@@ -25,7 +25,7 @@ int __thiscall STExplosion::GetMessage(STExplosion *this,STMessage *message)
   AnonReceiver_00636260 *this_02;
   int iVar8;
   AnonShape_00604A90_035626E6 *pAVar9;
-  undefined4 *puVar10;
+  byte *puVar10;
   byte **value;
   InternalExceptionFrame local_54;
   STGameObjC *local_10;
@@ -106,12 +106,8 @@ int __thiscall STExplosion::GetMessage(STExplosion *this,STMessage *message)
         pAVar4 = (AnonShape_00604A90_035626E6 *)(message->arg0).u32;
         if (*(int *)&pAVar4->field_0xc == 0) {
           pAVar9 = pAVar4;
-          puVar10 = (undefined4 *)&this_00->field_0x1d5;
-          for (iVar7 = 0x10; iVar7 != 0; iVar7 = iVar7 + -1) {
-            *puVar10 = *(undefined4 *)pAVar9;
-            pAVar9 = (AnonShape_00604A90_035626E6 *)&pAVar9->field_0x4;
-            puVar10 = puVar10 + 1;
-          }
+          puVar10 = (byte *)&this_00->field_0x1d5;
+          memmove(puVar10, pAVar9, 0x40); /* compiler REP MOVS byte copy */
           sub_00605130((STExplosion *)local_10);
           puVar2 = &this_01->field_0x272;
           iVar7 = sub_00604350((STExplosion *)this_01);

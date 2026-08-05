@@ -1,8 +1,15 @@
 
-undefined4 __fastcall FUN_005fcda0(int param_1)
+/* [STVirtualMethodApplier] Recovered from virtual table slot family.
+   Tables: 0079C714
+   Entries: 004038C3
+   Slots: 0x130
+   Anchor:
+   Evidence: slot_family_has_no_named_method; unique_owner_for_target;
+   receiver_only_leaf_virtual_signature */
+
+dword __thiscall STContainerC::FUN_005fcda0(STContainerC *this)
 
 {
-  /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-  return *(undefined4 *)(param_1 + 0x346);
+  return this->field_0346;
 }
 

@@ -70,8 +70,7 @@ int __thiscall BldBoatPanelTy::GetMessage(BldBoatPanelTy *this,STMessage *messag
       this_00->field_0279 = this_00->field_0278;
       this_00->field_0278 = *(char *)(message->arg0).ptr + -1;
       thunk_FUN_005252c0(0xae);
-      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-      (**(code **)(this_00->field_0000 + 0x1c))();
+      this_00->Update();
       g_currentExceptionFrame = local_58.previous;
       return 0;
     }

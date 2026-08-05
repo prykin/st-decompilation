@@ -25,8 +25,6 @@ STAllPlayersC::SelectObjects
   STGroupBoatC *this_00;
   STGameObjC *pSVar7;
   int iVar8;
-  /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
-  int unaff_EDI;
   uint index;
   char cVar9;
   undefined1 local_14 [4];
@@ -214,8 +212,7 @@ STAllPlayersC::SelectObjects
            (this_00 = thunk_FUN_0042b760(objPtr,*(ushort *)(iVar8 + 0x30)),
            this_00 != nullptr)))) {
       DArrayDestroy(local_8);
-      /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
-      local_8 = (DArrayTy *)STGroupC::GetGroupContent((STGroupC *)this_00,unaff_EDI);
+      local_8 = (DArrayTy *)STGroupC::GetGroupContent((STGroupC *)this_00);
       /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
       param_2 = local_8->count;
       index = 0;

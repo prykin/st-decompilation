@@ -1,5 +1,3 @@
-#include "../../pseudocode_runtime.h"
-
 
 /* [STReturnSemanticsApplier] ignored_eax_void.
    Evidence: all observed direct callers ignore the return register (ignored=2, used=0), and
@@ -13,19 +11,24 @@
 void __cdecl FUN_00648dd0(uint param_1)
 
 {
-  AiPlrClassTy *pAVar1;
-  undefined4 local_24 [4];
-  undefined4 local_14;
+  AiPlrClassTy *this;
+  int iVar1;
+  STMessage *pSVar2;
+  STMessage local_24;
 
   if ((((g_allPlayers_007FA174 != nullptr) &&
        (g_playSystem_00802A38 != nullptr)) && (param_1 < 8)) &&
      (g_bulkInitializedRecords_008087C7[param_1].field_0022 < 8)) {
-    pAVar1 = thunk_FUN_004357f0((char)param_1);
-    if (pAVar1 != nullptr) {
-      memset(local_24, 0, 0x20); /* compiler bulk-zero initialization */
-      local_14 = 0x5d97;
-      (*pAVar1->vtable->vfunc_00)((short)local_24);
-      thunk_FUN_0054cf70(g_playSystem_00802A38,pAVar1->field_0008);
+    this = thunk_FUN_004357f0((char)param_1);
+    if (this != nullptr) {
+      pSVar2 = &local_24;
+      for (iVar1 = 8; iVar1 != 0; iVar1 = iVar1 + -1) {
+        pSVar2->unknown_00 = 0;
+        pSVar2 = (STMessage *)&pSVar2->unknown_04;
+      }
+      local_24.id = MESS_AIPLRCLASSTY_5D97;
+      this->GetMessage(&local_24);
+      thunk_FUN_0054cf70(g_playSystem_00802A38,this->field_0008);
     }
   }
   return;

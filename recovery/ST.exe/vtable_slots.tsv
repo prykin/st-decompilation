@@ -374,49 +374,49 @@ table_address	owner	slot_index	slot_offset	pointer_address	raw_target_address	ra
 00798C70		70	0x118	00798D88	004041E2	thunk_FUN_004231c0	004041E2	thunk_FUN_004231c0	false	false	004041E2	thunk_FUN_004231c0	true	004231C0	FUN_004231c0		FUN_004231c0	0	0
 00798C70		71	0x11C	00798D8C	00404F66	thunk_FUN_004231e0	00404F66	thunk_FUN_004231e0	false	false	00404F66	thunk_FUN_004231e0	true	004231E0	FUN_004231e0		FUN_004231e0	0	0
 00798C70		72	0x120	00798D90	004045CF	thunk_FUN_00423200	004045CF	thunk_FUN_00423200	false	false	004045CF	thunk_FUN_00423200	true	00423200	FUN_00423200		FUN_00423200	0	0
-0079AB74		0	0x0	0079AB74	00404BBF	BehPanelTy::GetMessage	00404BBF	BehPanelTy::GetMessage	false	false	00404BBF	BehPanelTy::GetMessage	true	004EE4D0	BehPanelTy::GetMessage	BehPanelTy	BehPanelTy::GetMessage	0	0
-0079AB74		1	0x4	0079AB78	0040300D	PanelTy::CreateBut	0040300D	PanelTy::CreateBut	false	false	0040300D	PanelTy::CreateBut	true	00538690	PanelTy::CreateBut	PanelTy	PanelTy::CreateBut	0	0
-0079AB74		2	0x8	0079AB7C	00403373	PanelTy::PaintBut	00403373	PanelTy::PaintBut	false	false	00403373	PanelTy::PaintBut	true	005389E0	PanelTy::PaintBut	PanelTy	PanelTy::PaintBut	0	0
-0079AB74		3	0xC	0079AB80	00401C9E	PanelTy::PaintTxtBut	00401C9E	PanelTy::PaintTxtBut	false	false	00401C9E	PanelTy::PaintTxtBut	true	00538BA0	PanelTy::PaintTxtBut	PanelTy	PanelTy::PaintTxtBut	0	0
-0079AB74		4	0x10	0079AB84	00402121	PanelTy::PaintIBut	00402121	PanelTy::PaintIBut	false	false	00402121	PanelTy::PaintIBut	true	00538DB0	PanelTy::PaintIBut	PanelTy	PanelTy::PaintIBut	0	0
-0079AB74		5	0x14	0079AB88	004056D2	PanelTy::PaintLBut	004056D2	PanelTy::PaintLBut	false	false	004056D2	PanelTy::PaintLBut	true	00538FC0	PanelTy::PaintLBut	PanelTy	PanelTy::PaintLBut	0	0
-0079AB74		6	0x18	0079AB8C	004040ED	BehPanelTy::ShiftControls	004040ED	BehPanelTy::ShiftControls	false	false	004040ED	BehPanelTy::ShiftControls	true	004EDF30	BehPanelTy::ShiftControls	BehPanelTy	BehPanelTy::ShiftControls	0	0
-0079AB74		7	0x1C	0079AB90	00401E4C	SpecPanelTy::SetPanel	00401E4C	SpecPanelTy::SetPanel	false	false	00401E4C	SpecPanelTy::SetPanel	true	0053E920	SpecPanelTy::SetPanel	SpecPanelTy	SpecPanelTy::SetPanel	0	0
-0079AB74		8	0x20	0079AB94	00403DA0	BehPanelTy::Update	00403DA0	BehPanelTy::Update	false	false	00403DA0	BehPanelTy::Update	true	004EE0A0	BehPanelTy::Update	BehPanelTy	BehPanelTy::Update	0	0
-0079ABA0		0	0x0	0079ABA0	00402C25	BldBoatPanelTy::GetMessage	00402C25	BldBoatPanelTy::GetMessage	false	false	00402C25	BldBoatPanelTy::GetMessage	true	004EF6D0	BldBoatPanelTy::GetMessage	BldBoatPanelTy	BldBoatPanelTy::GetMessage	0	0
-0079ABA0		1	0x4	0079ABA4	0040300D	PanelTy::CreateBut	0040300D	PanelTy::CreateBut	false	false	0040300D	PanelTy::CreateBut	true	00538690	PanelTy::CreateBut	PanelTy	PanelTy::CreateBut	0	0
-0079ABA0		2	0x8	0079ABA8	00403373	PanelTy::PaintBut	00403373	PanelTy::PaintBut	false	false	00403373	PanelTy::PaintBut	true	005389E0	PanelTy::PaintBut	PanelTy	PanelTy::PaintBut	0	0
-0079ABA0		3	0xC	0079ABAC	00401C9E	PanelTy::PaintTxtBut	00401C9E	PanelTy::PaintTxtBut	false	false	00401C9E	PanelTy::PaintTxtBut	true	00538BA0	PanelTy::PaintTxtBut	PanelTy	PanelTy::PaintTxtBut	0	0
-0079ABA0		4	0x10	0079ABB0	00402121	PanelTy::PaintIBut	00402121	PanelTy::PaintIBut	false	false	00402121	PanelTy::PaintIBut	true	00538DB0	PanelTy::PaintIBut	PanelTy	PanelTy::PaintIBut	0	0
-0079ABA0		5	0x14	0079ABB4	004056D2	PanelTy::PaintLBut	004056D2	PanelTy::PaintLBut	false	false	004056D2	PanelTy::PaintLBut	true	00538FC0	PanelTy::PaintLBut	PanelTy	PanelTy::PaintLBut	0	0
-0079ABA0		6	0x18	0079ABB8	00402914	thunk_FUN_004eefb0	00402914	thunk_FUN_004eefb0	false	false	00402914	thunk_FUN_004eefb0	true	004EEFB0	FUN_004eefb0		FUN_004eefb0	0	0
-0079ABA0		7	0x1C	0079ABBC	0040277A	BldBoatPanelTy::Update	0040277A	BldBoatPanelTy::Update	false	false	0040277A	BldBoatPanelTy::Update	true	004EF020	BldBoatPanelTy::Update	BldBoatPanelTy	BldBoatPanelTy::Update	0	0
-0079ABC8		0	0x0	0079ABC8	00403823	BldLabPanelTy::GetMessage	00403823	BldLabPanelTy::GetMessage	false	false	00403823	BldLabPanelTy::GetMessage	true	004F0210	BldLabPanelTy::GetMessage	BldLabPanelTy	BldLabPanelTy::GetMessage	0	0
-0079ABC8		1	0x4	0079ABCC	0040300D	PanelTy::CreateBut	0040300D	PanelTy::CreateBut	false	false	0040300D	PanelTy::CreateBut	true	00538690	PanelTy::CreateBut	PanelTy	PanelTy::CreateBut	0	0
-0079ABC8		2	0x8	0079ABD0	00403373	PanelTy::PaintBut	00403373	PanelTy::PaintBut	false	false	00403373	PanelTy::PaintBut	true	005389E0	PanelTy::PaintBut	PanelTy	PanelTy::PaintBut	0	0
-0079ABC8		3	0xC	0079ABD4	00401C9E	PanelTy::PaintTxtBut	00401C9E	PanelTy::PaintTxtBut	false	false	00401C9E	PanelTy::PaintTxtBut	true	00538BA0	PanelTy::PaintTxtBut	PanelTy	PanelTy::PaintTxtBut	0	0
-0079ABC8		4	0x10	0079ABD8	00402121	PanelTy::PaintIBut	00402121	PanelTy::PaintIBut	false	false	00402121	PanelTy::PaintIBut	true	00538DB0	PanelTy::PaintIBut	PanelTy	PanelTy::PaintIBut	0	0
-0079ABC8		5	0x14	0079ABDC	004056D2	PanelTy::PaintLBut	004056D2	PanelTy::PaintLBut	false	false	004056D2	PanelTy::PaintLBut	true	00538FC0	PanelTy::PaintLBut	PanelTy	PanelTy::PaintLBut	0	0
-0079ABC8		6	0x18	0079ABE0	00402B3A	ProdPanelTy::ShiftControls	00402B3A	ProdPanelTy::ShiftControls	false	false	00402B3A	ProdPanelTy::ShiftControls	true	0053F780	ProdPanelTy::ShiftControls	ProdPanelTy	ProdPanelTy::ShiftControls	0	0
-0079ABC8		7	0x1C	0079ABE4	00405E8E	BldLabPanelTy::Update	00405E8E	BldLabPanelTy::Update	false	false	00405E8E	BldLabPanelTy::Update	true	004EFD10	BldLabPanelTy::Update	BldLabPanelTy	BldLabPanelTy::Update	0	0
-0079ABF0		0	0x0	0079ABF0	00402450	BldObjPanelTy::GetMessage	00402450	BldObjPanelTy::GetMessage	false	false	00402450	BldObjPanelTy::GetMessage	true	004F1080	BldObjPanelTy::GetMessage	BldObjPanelTy	BldObjPanelTy::GetMessage	0	0
-0079ABF0		1	0x4	0079ABF4	0040300D	PanelTy::CreateBut	0040300D	PanelTy::CreateBut	false	false	0040300D	PanelTy::CreateBut	true	00538690	PanelTy::CreateBut	PanelTy	PanelTy::CreateBut	0	0
-0079ABF0		2	0x8	0079ABF8	00403373	PanelTy::PaintBut	00403373	PanelTy::PaintBut	false	false	00403373	PanelTy::PaintBut	true	005389E0	PanelTy::PaintBut	PanelTy	PanelTy::PaintBut	0	0
-0079ABF0		3	0xC	0079ABFC	00401C9E	PanelTy::PaintTxtBut	00401C9E	PanelTy::PaintTxtBut	false	false	00401C9E	PanelTy::PaintTxtBut	true	00538BA0	PanelTy::PaintTxtBut	PanelTy	PanelTy::PaintTxtBut	0	0
-0079ABF0		4	0x10	0079AC00	00402121	PanelTy::PaintIBut	00402121	PanelTy::PaintIBut	false	false	00402121	PanelTy::PaintIBut	true	00538DB0	PanelTy::PaintIBut	PanelTy	PanelTy::PaintIBut	0	0
-0079ABF0		5	0x14	0079AC04	004056D2	PanelTy::PaintLBut	004056D2	PanelTy::PaintLBut	false	false	004056D2	PanelTy::PaintLBut	true	00538FC0	PanelTy::PaintLBut	PanelTy	PanelTy::PaintLBut	0	0
-0079ABF0		6	0x18	0079AC08	00401AF0	thunk_FUN_004f0af0	00401AF0	thunk_FUN_004f0af0	false	false	00401AF0	thunk_FUN_004f0af0	true	004F0AF0	FUN_004f0af0		FUN_004f0af0	0	0
-0079ABF0		7	0x1C	0079AC0C	00403BE3	BldObjPanelTy::Update	00403BE3	BldObjPanelTy::Update	false	false	00403BE3	BldObjPanelTy::Update	true	004F0B60	BldObjPanelTy::Update	BldObjPanelTy	BldObjPanelTy::Update	0	0
-0079AC18		0	0x0	0079AC18	004046BA	CPanelTy::GetMessage	004046BA	CPanelTy::GetMessage	false	false	004046BA	CPanelTy::GetMessage	true	004FB060	CPanelTy::GetMessage	CPanelTy	CPanelTy::GetMessage	0	0
-0079AC18		1	0x4	0079AC1C	00404246	FrmPanelTy::GetMessage	00404246	FrmPanelTy::GetMessage	false	false	00404246	FrmPanelTy::GetMessage	true	005107C0	FrmPanelTy::GetMessage	FrmPanelTy	FrmPanelTy::GetMessage	0	0
-0079AC18		2	0x8	0079AC20	0040300D	PanelTy::CreateBut	0040300D	PanelTy::CreateBut	false	false	0040300D	PanelTy::CreateBut	true	00538690	PanelTy::CreateBut	PanelTy	PanelTy::CreateBut	0	0
-0079AC18		3	0xC	0079AC24	00403373	PanelTy::PaintBut	00403373	PanelTy::PaintBut	false	false	00403373	PanelTy::PaintBut	true	005389E0	PanelTy::PaintBut	PanelTy	PanelTy::PaintBut	0	0
-0079AC18		4	0x10	0079AC28	00401C9E	PanelTy::PaintTxtBut	00401C9E	PanelTy::PaintTxtBut	false	false	00401C9E	PanelTy::PaintTxtBut	true	00538BA0	PanelTy::PaintTxtBut	PanelTy	PanelTy::PaintTxtBut	0	0
-0079AC18		5	0x14	0079AC2C	00402121	PanelTy::PaintIBut	00402121	PanelTy::PaintIBut	false	false	00402121	PanelTy::PaintIBut	true	00538DB0	PanelTy::PaintIBut	PanelTy	PanelTy::PaintIBut	0	0
-0079AC18		6	0x18	0079AC30	004056D2	PanelTy::PaintLBut	004056D2	PanelTy::PaintLBut	false	false	004056D2	PanelTy::PaintLBut	true	00538FC0	PanelTy::PaintLBut	PanelTy	PanelTy::PaintLBut	0	0
-0079AC18		7	0x1C	0079AC34	00402536	FrmPanelTy::ShiftControls	00402536	FrmPanelTy::ShiftControls	false	false	00402536	FrmPanelTy::ShiftControls	true	00510370	FrmPanelTy::ShiftControls	FrmPanelTy	FrmPanelTy::ShiftControls	0	0
-0079AC18		8	0x20	0079AC38	00401E4C	SpecPanelTy::SetPanel	00401E4C	SpecPanelTy::SetPanel	false	false	00401E4C	SpecPanelTy::SetPanel	true	0053E920	SpecPanelTy::SetPanel	SpecPanelTy	SpecPanelTy::SetPanel	0	0
-0079AC18		9	0x24	0079AC3C	00404327	FrmPanelTy::Update	00404327	FrmPanelTy::Update	false	false	00404327	FrmPanelTy::Update	true	005104B0	FrmPanelTy::Update	FrmPanelTy	FrmPanelTy::Update	0	0
+0079AB74	BehPanelTy	0	0x0	0079AB74	00404BBF	BehPanelTy::GetMessage	00404BBF	BehPanelTy::GetMessage	false	false	00404BBF	BehPanelTy::GetMessage	true	004EE4D0	BehPanelTy::GetMessage	BehPanelTy	BehPanelTy::GetMessage	0	0
+0079AB74	BehPanelTy	1	0x4	0079AB78	0040300D	PanelTy::CreateBut	0040300D	PanelTy::CreateBut	false	false	0040300D	PanelTy::CreateBut	true	00538690	PanelTy::CreateBut	PanelTy	PanelTy::CreateBut	0	0
+0079AB74	BehPanelTy	2	0x8	0079AB7C	00403373	PanelTy::PaintBut	00403373	PanelTy::PaintBut	false	false	00403373	PanelTy::PaintBut	true	005389E0	PanelTy::PaintBut	PanelTy	PanelTy::PaintBut	0	0
+0079AB74	BehPanelTy	3	0xC	0079AB80	00401C9E	PanelTy::PaintTxtBut	00401C9E	PanelTy::PaintTxtBut	false	false	00401C9E	PanelTy::PaintTxtBut	true	00538BA0	PanelTy::PaintTxtBut	PanelTy	PanelTy::PaintTxtBut	0	0
+0079AB74	BehPanelTy	4	0x10	0079AB84	00402121	PanelTy::PaintIBut	00402121	PanelTy::PaintIBut	false	false	00402121	PanelTy::PaintIBut	true	00538DB0	PanelTy::PaintIBut	PanelTy	PanelTy::PaintIBut	0	0
+0079AB74	BehPanelTy	5	0x14	0079AB88	004056D2	PanelTy::PaintLBut	004056D2	PanelTy::PaintLBut	false	false	004056D2	PanelTy::PaintLBut	true	00538FC0	PanelTy::PaintLBut	PanelTy	PanelTy::PaintLBut	0	0
+0079AB74	BehPanelTy	6	0x18	0079AB8C	004040ED	BehPanelTy::ShiftControls	004040ED	BehPanelTy::ShiftControls	false	false	004040ED	BehPanelTy::ShiftControls	true	004EDF30	BehPanelTy::ShiftControls	BehPanelTy	BehPanelTy::ShiftControls	0	0
+0079AB74	BehPanelTy	7	0x1C	0079AB90	00401E4C	SpecPanelTy::SetPanel	00401E4C	SpecPanelTy::SetPanel	false	false	00401E4C	SpecPanelTy::SetPanel	true	0053E920	SpecPanelTy::SetPanel	SpecPanelTy	SpecPanelTy::SetPanel	0	0
+0079AB74	BehPanelTy	8	0x20	0079AB94	00403DA0	BehPanelTy::Update	00403DA0	BehPanelTy::Update	false	false	00403DA0	BehPanelTy::Update	true	004EE0A0	BehPanelTy::Update	BehPanelTy	BehPanelTy::Update	0	0
+0079ABA0	BldBoatPanelTy	0	0x0	0079ABA0	00402C25	BldBoatPanelTy::GetMessage	00402C25	BldBoatPanelTy::GetMessage	false	false	00402C25	BldBoatPanelTy::GetMessage	true	004EF6D0	BldBoatPanelTy::GetMessage	BldBoatPanelTy	BldBoatPanelTy::GetMessage	0	0
+0079ABA0	BldBoatPanelTy	1	0x4	0079ABA4	0040300D	PanelTy::CreateBut	0040300D	PanelTy::CreateBut	false	false	0040300D	PanelTy::CreateBut	true	00538690	PanelTy::CreateBut	PanelTy	PanelTy::CreateBut	0	0
+0079ABA0	BldBoatPanelTy	2	0x8	0079ABA8	00403373	PanelTy::PaintBut	00403373	PanelTy::PaintBut	false	false	00403373	PanelTy::PaintBut	true	005389E0	PanelTy::PaintBut	PanelTy	PanelTy::PaintBut	0	0
+0079ABA0	BldBoatPanelTy	3	0xC	0079ABAC	00401C9E	PanelTy::PaintTxtBut	00401C9E	PanelTy::PaintTxtBut	false	false	00401C9E	PanelTy::PaintTxtBut	true	00538BA0	PanelTy::PaintTxtBut	PanelTy	PanelTy::PaintTxtBut	0	0
+0079ABA0	BldBoatPanelTy	4	0x10	0079ABB0	00402121	PanelTy::PaintIBut	00402121	PanelTy::PaintIBut	false	false	00402121	PanelTy::PaintIBut	true	00538DB0	PanelTy::PaintIBut	PanelTy	PanelTy::PaintIBut	0	0
+0079ABA0	BldBoatPanelTy	5	0x14	0079ABB4	004056D2	PanelTy::PaintLBut	004056D2	PanelTy::PaintLBut	false	false	004056D2	PanelTy::PaintLBut	true	00538FC0	PanelTy::PaintLBut	PanelTy	PanelTy::PaintLBut	0	0
+0079ABA0	BldBoatPanelTy	6	0x18	0079ABB8	00402914	thunk_FUN_004eefb0	00402914	thunk_FUN_004eefb0	false	false	00402914	thunk_FUN_004eefb0	true	004EEFB0	FUN_004eefb0		BldBoatPanelTy::vfunc_18	0	0
+0079ABA0	BldBoatPanelTy	7	0x1C	0079ABBC	0040277A	BldBoatPanelTy::Update	0040277A	BldBoatPanelTy::Update	false	false	0040277A	BldBoatPanelTy::Update	true	004EF020	BldBoatPanelTy::Update	BldBoatPanelTy	BldBoatPanelTy::Update	0	0
+0079ABC8	BldLabPanelTy	0	0x0	0079ABC8	00403823	BldLabPanelTy::GetMessage	00403823	BldLabPanelTy::GetMessage	false	false	00403823	BldLabPanelTy::GetMessage	true	004F0210	BldLabPanelTy::GetMessage	BldLabPanelTy	BldLabPanelTy::GetMessage	0	0
+0079ABC8	BldLabPanelTy	1	0x4	0079ABCC	0040300D	PanelTy::CreateBut	0040300D	PanelTy::CreateBut	false	false	0040300D	PanelTy::CreateBut	true	00538690	PanelTy::CreateBut	PanelTy	PanelTy::CreateBut	0	0
+0079ABC8	BldLabPanelTy	2	0x8	0079ABD0	00403373	PanelTy::PaintBut	00403373	PanelTy::PaintBut	false	false	00403373	PanelTy::PaintBut	true	005389E0	PanelTy::PaintBut	PanelTy	PanelTy::PaintBut	0	0
+0079ABC8	BldLabPanelTy	3	0xC	0079ABD4	00401C9E	PanelTy::PaintTxtBut	00401C9E	PanelTy::PaintTxtBut	false	false	00401C9E	PanelTy::PaintTxtBut	true	00538BA0	PanelTy::PaintTxtBut	PanelTy	PanelTy::PaintTxtBut	0	0
+0079ABC8	BldLabPanelTy	4	0x10	0079ABD8	00402121	PanelTy::PaintIBut	00402121	PanelTy::PaintIBut	false	false	00402121	PanelTy::PaintIBut	true	00538DB0	PanelTy::PaintIBut	PanelTy	PanelTy::PaintIBut	0	0
+0079ABC8	BldLabPanelTy	5	0x14	0079ABDC	004056D2	PanelTy::PaintLBut	004056D2	PanelTy::PaintLBut	false	false	004056D2	PanelTy::PaintLBut	true	00538FC0	PanelTy::PaintLBut	PanelTy	PanelTy::PaintLBut	0	0
+0079ABC8	BldLabPanelTy	6	0x18	0079ABE0	00402B3A	ProdPanelTy::ShiftControls	00402B3A	ProdPanelTy::ShiftControls	false	false	00402B3A	ProdPanelTy::ShiftControls	true	0053F780	ProdPanelTy::ShiftControls	ProdPanelTy	ProdPanelTy::ShiftControls	0	0
+0079ABC8	BldLabPanelTy	7	0x1C	0079ABE4	00405E8E	BldLabPanelTy::Update	00405E8E	BldLabPanelTy::Update	false	false	00405E8E	BldLabPanelTy::Update	true	004EFD10	BldLabPanelTy::Update	BldLabPanelTy	BldLabPanelTy::Update	0	0
+0079ABF0	BldObjPanelTy	0	0x0	0079ABF0	00402450	BldObjPanelTy::GetMessage	00402450	BldObjPanelTy::GetMessage	false	false	00402450	BldObjPanelTy::GetMessage	true	004F1080	BldObjPanelTy::GetMessage	BldObjPanelTy	BldObjPanelTy::GetMessage	0	0
+0079ABF0	BldObjPanelTy	1	0x4	0079ABF4	0040300D	PanelTy::CreateBut	0040300D	PanelTy::CreateBut	false	false	0040300D	PanelTy::CreateBut	true	00538690	PanelTy::CreateBut	PanelTy	PanelTy::CreateBut	0	0
+0079ABF0	BldObjPanelTy	2	0x8	0079ABF8	00403373	PanelTy::PaintBut	00403373	PanelTy::PaintBut	false	false	00403373	PanelTy::PaintBut	true	005389E0	PanelTy::PaintBut	PanelTy	PanelTy::PaintBut	0	0
+0079ABF0	BldObjPanelTy	3	0xC	0079ABFC	00401C9E	PanelTy::PaintTxtBut	00401C9E	PanelTy::PaintTxtBut	false	false	00401C9E	PanelTy::PaintTxtBut	true	00538BA0	PanelTy::PaintTxtBut	PanelTy	PanelTy::PaintTxtBut	0	0
+0079ABF0	BldObjPanelTy	4	0x10	0079AC00	00402121	PanelTy::PaintIBut	00402121	PanelTy::PaintIBut	false	false	00402121	PanelTy::PaintIBut	true	00538DB0	PanelTy::PaintIBut	PanelTy	PanelTy::PaintIBut	0	0
+0079ABF0	BldObjPanelTy	5	0x14	0079AC04	004056D2	PanelTy::PaintLBut	004056D2	PanelTy::PaintLBut	false	false	004056D2	PanelTy::PaintLBut	true	00538FC0	PanelTy::PaintLBut	PanelTy	PanelTy::PaintLBut	0	0
+0079ABF0	BldObjPanelTy	6	0x18	0079AC08	00401AF0	thunk_FUN_004f0af0	00401AF0	thunk_FUN_004f0af0	false	false	00401AF0	thunk_FUN_004f0af0	true	004F0AF0	FUN_004f0af0		BldObjPanelTy::vfunc_18	0	0
+0079ABF0	BldObjPanelTy	7	0x1C	0079AC0C	00403BE3	BldObjPanelTy::Update	00403BE3	BldObjPanelTy::Update	false	false	00403BE3	BldObjPanelTy::Update	true	004F0B60	BldObjPanelTy::Update	BldObjPanelTy	BldObjPanelTy::Update	0	0
+0079AC18	CPanelTy	0	0x0	0079AC18	004046BA	CPanelTy::GetMessage	004046BA	CPanelTy::GetMessage	false	false	004046BA	CPanelTy::GetMessage	true	004FB060	CPanelTy::GetMessage	CPanelTy	CPanelTy::GetMessage	0	0
+0079AC1C	FrmPanelTy	0	0x0	0079AC1C	00404246	FrmPanelTy::GetMessage	00404246	FrmPanelTy::GetMessage	false	false	00404246	FrmPanelTy::GetMessage	true	005107C0	FrmPanelTy::GetMessage	FrmPanelTy	FrmPanelTy::GetMessage	0	0
+0079AC1C	FrmPanelTy	1	0x4	0079AC20	0040300D	PanelTy::CreateBut	0040300D	PanelTy::CreateBut	false	false	0040300D	PanelTy::CreateBut	true	00538690	PanelTy::CreateBut	PanelTy	PanelTy::CreateBut	0	0
+0079AC1C	FrmPanelTy	2	0x8	0079AC24	00403373	PanelTy::PaintBut	00403373	PanelTy::PaintBut	false	false	00403373	PanelTy::PaintBut	true	005389E0	PanelTy::PaintBut	PanelTy	PanelTy::PaintBut	0	0
+0079AC1C	FrmPanelTy	3	0xC	0079AC28	00401C9E	PanelTy::PaintTxtBut	00401C9E	PanelTy::PaintTxtBut	false	false	00401C9E	PanelTy::PaintTxtBut	true	00538BA0	PanelTy::PaintTxtBut	PanelTy	PanelTy::PaintTxtBut	0	0
+0079AC1C	FrmPanelTy	4	0x10	0079AC2C	00402121	PanelTy::PaintIBut	00402121	PanelTy::PaintIBut	false	false	00402121	PanelTy::PaintIBut	true	00538DB0	PanelTy::PaintIBut	PanelTy	PanelTy::PaintIBut	0	0
+0079AC1C	FrmPanelTy	5	0x14	0079AC30	004056D2	PanelTy::PaintLBut	004056D2	PanelTy::PaintLBut	false	false	004056D2	PanelTy::PaintLBut	true	00538FC0	PanelTy::PaintLBut	PanelTy	PanelTy::PaintLBut	0	0
+0079AC1C	FrmPanelTy	6	0x18	0079AC34	00402536	FrmPanelTy::ShiftControls	00402536	FrmPanelTy::ShiftControls	false	false	00402536	FrmPanelTy::ShiftControls	true	00510370	FrmPanelTy::ShiftControls	FrmPanelTy	FrmPanelTy::ShiftControls	0	0
+0079AC1C	FrmPanelTy	7	0x1C	0079AC38	00401E4C	SpecPanelTy::SetPanel	00401E4C	SpecPanelTy::SetPanel	false	false	00401E4C	SpecPanelTy::SetPanel	true	0053E920	SpecPanelTy::SetPanel	SpecPanelTy	SpecPanelTy::SetPanel	0	0
+0079AC1C	FrmPanelTy	8	0x20	0079AC3C	00404327	FrmPanelTy::Update	00404327	FrmPanelTy::Update	false	false	00404327	FrmPanelTy::Update	true	005104B0	FrmPanelTy::Update	FrmPanelTy	FrmPanelTy::Update	0	0
 0079AC48	HelpPanelTy	0	0x0	0079AC48	00404458	HelpPanelTy::GetMessage	00404458	HelpPanelTy::GetMessage	false	false	00404458	HelpPanelTy::GetMessage	true	0051DDD0	HelpPanelTy::GetMessage	HelpPanelTy	HelpPanelTy::GetMessage	0	0
 0079AC48	HelpPanelTy	1	0x4	0079AC4C	0040300D	PanelTy::CreateBut	0040300D	PanelTy::CreateBut	false	false	0040300D	PanelTy::CreateBut	true	00538690	PanelTy::CreateBut	PanelTy	PanelTy::CreateBut	0	0
 0079AC48	HelpPanelTy	2	0x8	0079AC50	00403373	PanelTy::PaintBut	00403373	PanelTy::PaintBut	false	false	00403373	PanelTy::PaintBut	true	005389E0	PanelTy::PaintBut	PanelTy	PanelTy::PaintBut	0	0
@@ -424,57 +424,59 @@ table_address	owner	slot_index	slot_offset	pointer_address	raw_target_address	ra
 0079AC48	HelpPanelTy	4	0x10	0079AC58	00402121	PanelTy::PaintIBut	00402121	PanelTy::PaintIBut	false	false	00402121	PanelTy::PaintIBut	true	00538DB0	PanelTy::PaintIBut	PanelTy	PanelTy::PaintIBut	0	0
 0079AC48	HelpPanelTy	5	0x14	0079AC5C	004056D2	PanelTy::PaintLBut	004056D2	PanelTy::PaintLBut	false	false	004056D2	PanelTy::PaintLBut	true	00538FC0	PanelTy::PaintLBut	PanelTy	PanelTy::PaintLBut	0	0
 0079AC48	HelpPanelTy	6	0x18	0079AC60	00401857	HelpPanelTy::SetPanel	00401857	HelpPanelTy::SetPanel	false	false	00401857	HelpPanelTy::SetPanel	true	00511FA0	HelpPanelTy::SetPanel	HelpPanelTy	HelpPanelTy::SetPanel	0	0
-0079AC6C		0	0x0	0079AC6C	00403C60	HelpStringTy::GetMessage	00403C60	HelpStringTy::GetMessage	false	false	00403C60	HelpStringTy::GetMessage	true	0051FBA0	HelpStringTy::GetMessage	HelpStringTy	HelpStringTy::GetMessage	0	0
-0079AC6C		1	0x4	0079AC70	00401C03	InfocPanelTy::GetMessage	00401C03	InfocPanelTy::GetMessage	false	false	00401C03	InfocPanelTy::GetMessage	true	00521490	InfocPanelTy::GetMessage	InfocPanelTy	InfocPanelTy::GetMessage	0	0
-0079AC6C		2	0x8	0079AC74	0040300D	PanelTy::CreateBut	0040300D	PanelTy::CreateBut	false	false	0040300D	PanelTy::CreateBut	true	00538690	PanelTy::CreateBut	PanelTy	PanelTy::CreateBut	0	0
-0079AC6C		3	0xC	0079AC78	00403373	PanelTy::PaintBut	00403373	PanelTy::PaintBut	false	false	00403373	PanelTy::PaintBut	true	005389E0	PanelTy::PaintBut	PanelTy	PanelTy::PaintBut	0	0
-0079AC6C		4	0x10	0079AC7C	00401C9E	PanelTy::PaintTxtBut	00401C9E	PanelTy::PaintTxtBut	false	false	00401C9E	PanelTy::PaintTxtBut	true	00538BA0	PanelTy::PaintTxtBut	PanelTy	PanelTy::PaintTxtBut	0	0
-0079AC6C		5	0x14	0079AC80	00402121	PanelTy::PaintIBut	00402121	PanelTy::PaintIBut	false	false	00402121	PanelTy::PaintIBut	true	00538DB0	PanelTy::PaintIBut	PanelTy	PanelTy::PaintIBut	0	0
-0079AC6C		6	0x18	0079AC84	004056D2	PanelTy::PaintLBut	004056D2	PanelTy::PaintLBut	false	false	004056D2	PanelTy::PaintLBut	true	00538FC0	PanelTy::PaintLBut	PanelTy	PanelTy::PaintLBut	0	0
-0079AC6C		7	0x1C	0079AC88	00405B0A	InfocPanelTy::ShiftControls	00405B0A	InfocPanelTy::ShiftControls	false	false	00405B0A	InfocPanelTy::ShiftControls	true	005205E0	InfocPanelTy::ShiftControls	InfocPanelTy	InfocPanelTy::ShiftControls	0	0
-0079AC6C		8	0x20	0079AC8C	00401E4C	SpecPanelTy::SetPanel	00401E4C	SpecPanelTy::SetPanel	false	false	00401E4C	SpecPanelTy::SetPanel	true	0053E920	SpecPanelTy::SetPanel	SpecPanelTy	SpecPanelTy::SetPanel	0	0
-0079AC6C		9	0x24	0079AC90	0040160E	InfocPanelTy::Update	0040160E	InfocPanelTy::Update	false	false	0040160E	InfocPanelTy::Update	true	005206F0	InfocPanelTy::Update	InfocPanelTy	InfocPanelTy::Update	0	0
-0079AC9C		0	0x0	0079AC9C	00401B9F	IntercomPanelTy::GetMessage	00401B9F	IntercomPanelTy::GetMessage	false	false	00401B9F	IntercomPanelTy::GetMessage	true	00522E80	IntercomPanelTy::GetMessage	IntercomPanelTy	IntercomPanelTy::GetMessage	0	0
-0079AC9C		1	0x4	0079ACA0	0040300D	PanelTy::CreateBut	0040300D	PanelTy::CreateBut	false	false	0040300D	PanelTy::CreateBut	true	00538690	PanelTy::CreateBut	PanelTy	PanelTy::CreateBut	0	0
-0079AC9C		2	0x8	0079ACA4	00403373	PanelTy::PaintBut	00403373	PanelTy::PaintBut	false	false	00403373	PanelTy::PaintBut	true	005389E0	PanelTy::PaintBut	PanelTy	PanelTy::PaintBut	0	0
-0079AC9C		3	0xC	0079ACA8	00401C9E	PanelTy::PaintTxtBut	00401C9E	PanelTy::PaintTxtBut	false	false	00401C9E	PanelTy::PaintTxtBut	true	00538BA0	PanelTy::PaintTxtBut	PanelTy	PanelTy::PaintTxtBut	0	0
-0079AC9C		4	0x10	0079ACAC	00402121	PanelTy::PaintIBut	00402121	PanelTy::PaintIBut	false	false	00402121	PanelTy::PaintIBut	true	00538DB0	PanelTy::PaintIBut	PanelTy	PanelTy::PaintIBut	0	0
-0079AC9C		5	0x14	0079ACB0	004056D2	PanelTy::PaintLBut	004056D2	PanelTy::PaintLBut	false	false	004056D2	PanelTy::PaintLBut	true	00538FC0	PanelTy::PaintLBut	PanelTy	PanelTy::PaintLBut	0	0
-0079AD10		0	0x0	0079AD10	00405EA7	OptPanelTy::GetMessage	00405EA7	OptPanelTy::GetMessage	false	false	00405EA7	OptPanelTy::GetMessage	true	00533D10	OptPanelTy::GetMessage	OptPanelTy	OptPanelTy::GetMessage	0	0
-0079AD10		1	0x4	0079AD14	0040300D	PanelTy::CreateBut	0040300D	PanelTy::CreateBut	false	false	0040300D	PanelTy::CreateBut	true	00538690	PanelTy::CreateBut	PanelTy	PanelTy::CreateBut	0	0
-0079AD10		2	0x8	0079AD18	00403373	PanelTy::PaintBut	00403373	PanelTy::PaintBut	false	false	00403373	PanelTy::PaintBut	true	005389E0	PanelTy::PaintBut	PanelTy	PanelTy::PaintBut	0	0
-0079AD10		3	0xC	0079AD1C	00401C9E	PanelTy::PaintTxtBut	00401C9E	PanelTy::PaintTxtBut	false	false	00401C9E	PanelTy::PaintTxtBut	true	00538BA0	PanelTy::PaintTxtBut	PanelTy	PanelTy::PaintTxtBut	0	0
-0079AD10		4	0x10	0079AD20	00402121	PanelTy::PaintIBut	00402121	PanelTy::PaintIBut	false	false	00402121	PanelTy::PaintIBut	true	00538DB0	PanelTy::PaintIBut	PanelTy	PanelTy::PaintIBut	0	0
-0079AD10		5	0x14	0079AD24	004056D2	PanelTy::PaintLBut	004056D2	PanelTy::PaintLBut	false	false	004056D2	PanelTy::PaintLBut	true	00538FC0	PanelTy::PaintLBut	PanelTy	PanelTy::PaintLBut	0	0
-0079AD2C		0	0x0	0079AD2C	004021D0	PausePanelTy::GetMessage	004021D0	PausePanelTy::GetMessage	false	false	004021D0	PausePanelTy::GetMessage	true	005397F0	PausePanelTy::GetMessage	PausePanelTy	PausePanelTy::GetMessage	0	0
-0079AD2C		1	0x4	0079AD30	0040300D	PanelTy::CreateBut	0040300D	PanelTy::CreateBut	false	false	0040300D	PanelTy::CreateBut	true	00538690	PanelTy::CreateBut	PanelTy	PanelTy::CreateBut	0	0
-0079AD2C		2	0x8	0079AD34	00403373	PanelTy::PaintBut	00403373	PanelTy::PaintBut	false	false	00403373	PanelTy::PaintBut	true	005389E0	PanelTy::PaintBut	PanelTy	PanelTy::PaintBut	0	0
-0079AD2C		3	0xC	0079AD38	00401C9E	PanelTy::PaintTxtBut	00401C9E	PanelTy::PaintTxtBut	false	false	00401C9E	PanelTy::PaintTxtBut	true	00538BA0	PanelTy::PaintTxtBut	PanelTy	PanelTy::PaintTxtBut	0	0
-0079AD2C		4	0x10	0079AD3C	00402121	PanelTy::PaintIBut	00402121	PanelTy::PaintIBut	false	false	00402121	PanelTy::PaintIBut	true	00538DB0	PanelTy::PaintIBut	PanelTy	PanelTy::PaintIBut	0	0
-0079AD2C		5	0x14	0079AD40	004056D2	PanelTy::PaintLBut	004056D2	PanelTy::PaintLBut	false	false	004056D2	PanelTy::PaintLBut	true	00538FC0	PanelTy::PaintLBut	PanelTy	PanelTy::PaintLBut	0	0
-0079AD48		0	0x0	0079AD48	00402766	PlayPanelTy::GetMessage	00402766	PlayPanelTy::GetMessage	false	false	00402766	PlayPanelTy::GetMessage	true	0053AFB0	PlayPanelTy::GetMessage	PlayPanelTy	PlayPanelTy::GetMessage	0	0
-0079AD48		1	0x4	0079AD4C	0040300D	PanelTy::CreateBut	0040300D	PanelTy::CreateBut	false	false	0040300D	PanelTy::CreateBut	true	00538690	PanelTy::CreateBut	PanelTy	PanelTy::CreateBut	0	0
-0079AD48		2	0x8	0079AD50	00403373	PanelTy::PaintBut	00403373	PanelTy::PaintBut	false	false	00403373	PanelTy::PaintBut	true	005389E0	PanelTy::PaintBut	PanelTy	PanelTy::PaintBut	0	0
-0079AD48		3	0xC	0079AD54	00401C9E	PanelTy::PaintTxtBut	00401C9E	PanelTy::PaintTxtBut	false	false	00401C9E	PanelTy::PaintTxtBut	true	00538BA0	PanelTy::PaintTxtBut	PanelTy	PanelTy::PaintTxtBut	0	0
-0079AD48		4	0x10	0079AD58	00402121	PanelTy::PaintIBut	00402121	PanelTy::PaintIBut	false	false	00402121	PanelTy::PaintIBut	true	00538DB0	PanelTy::PaintIBut	PanelTy	PanelTy::PaintIBut	0	0
-0079AD48		5	0x14	0079AD5C	004056D2	PanelTy::PaintLBut	004056D2	PanelTy::PaintLBut	false	false	004056D2	PanelTy::PaintLBut	true	00538FC0	PanelTy::PaintLBut	PanelTy	PanelTy::PaintLBut	0	0
-0079AD64		0	0x0	0079AD64	004031C5	ResearchPanelTy::GetMessage	004031C5	ResearchPanelTy::GetMessage	false	false	004031C5	ResearchPanelTy::GetMessage	true	0053CA80	ResearchPanelTy::GetMessage	ResearchPanelTy	ResearchPanelTy::GetMessage	0	0
-0079AD64		1	0x4	0079AD68	0040300D	PanelTy::CreateBut	0040300D	PanelTy::CreateBut	false	false	0040300D	PanelTy::CreateBut	true	00538690	PanelTy::CreateBut	PanelTy	PanelTy::CreateBut	0	0
-0079AD64		2	0x8	0079AD6C	00403373	PanelTy::PaintBut	00403373	PanelTy::PaintBut	false	false	00403373	PanelTy::PaintBut	true	005389E0	PanelTy::PaintBut	PanelTy	PanelTy::PaintBut	0	0
-0079AD64		3	0xC	0079AD70	00401C9E	PanelTy::PaintTxtBut	00401C9E	PanelTy::PaintTxtBut	false	false	00401C9E	PanelTy::PaintTxtBut	true	00538BA0	PanelTy::PaintTxtBut	PanelTy	PanelTy::PaintTxtBut	0	0
-0079AD64		4	0x10	0079AD74	00402121	PanelTy::PaintIBut	00402121	PanelTy::PaintIBut	false	false	00402121	PanelTy::PaintIBut	true	00538DB0	PanelTy::PaintIBut	PanelTy	PanelTy::PaintIBut	0	0
-0079AD64		5	0x14	0079AD78	004056D2	PanelTy::PaintLBut	004056D2	PanelTy::PaintLBut	false	false	004056D2	PanelTy::PaintLBut	true	00538FC0	PanelTy::PaintLBut	PanelTy	PanelTy::PaintLBut	0	0
-0079AD64		6	0x18	0079AD7C	00405BF0	thunk_FUN_0053c490	00405BF0	thunk_FUN_0053c490	false	false	00405BF0	thunk_FUN_0053c490	true	0053C490	FUN_0053c490		FUN_0053c490	0	0
-0079AD64		7	0x1C	0079AD80	00402E46	ResearchPanelTy::Update	00402E46	ResearchPanelTy::Update	false	false	00402E46	ResearchPanelTy::Update	true	0053C500	ResearchPanelTy::Update	ResearchPanelTy	ResearchPanelTy::Update	0	0
-0079AD8C		0	0x0	0079AD8C	00403355	SAMPanelTy::GetMessage	00403355	SAMPanelTy::GetMessage	false	false	00403355	SAMPanelTy::GetMessage	true	0053D4D0	SAMPanelTy::GetMessage	SAMPanelTy	SAMPanelTy::GetMessage	0	0
-0079AD8C		1	0x4	0079AD90	0040300D	PanelTy::CreateBut	0040300D	PanelTy::CreateBut	false	false	0040300D	PanelTy::CreateBut	true	00538690	PanelTy::CreateBut	PanelTy	PanelTy::CreateBut	0	0
-0079AD8C		2	0x8	0079AD94	00403373	PanelTy::PaintBut	00403373	PanelTy::PaintBut	false	false	00403373	PanelTy::PaintBut	true	005389E0	PanelTy::PaintBut	PanelTy	PanelTy::PaintBut	0	0
-0079AD8C		3	0xC	0079AD98	00401C9E	PanelTy::PaintTxtBut	00401C9E	PanelTy::PaintTxtBut	false	false	00401C9E	PanelTy::PaintTxtBut	true	00538BA0	PanelTy::PaintTxtBut	PanelTy	PanelTy::PaintTxtBut	0	0
-0079AD8C		4	0x10	0079AD9C	00402121	PanelTy::PaintIBut	00402121	PanelTy::PaintIBut	false	false	00402121	PanelTy::PaintIBut	true	00538DB0	PanelTy::PaintIBut	PanelTy	PanelTy::PaintIBut	0	0
-0079AD8C		5	0x14	0079ADA0	004056D2	PanelTy::PaintLBut	004056D2	PanelTy::PaintLBut	false	false	004056D2	PanelTy::PaintLBut	true	00538FC0	PanelTy::PaintLBut	PanelTy	PanelTy::PaintLBut	0	0
-0079AD8C		6	0x18	0079ADA4	00404016	SAMPanelTy::ShiftControls	00404016	SAMPanelTy::ShiftControls	false	false	00404016	SAMPanelTy::ShiftControls	true	0053D290	SAMPanelTy::ShiftControls	SAMPanelTy	SAMPanelTy::ShiftControls	0	0
-0079AD8C		7	0x1C	0079ADA8	00401E4C	SpecPanelTy::SetPanel	00401E4C	SpecPanelTy::SetPanel	false	false	00401E4C	SpecPanelTy::SetPanel	true	0053E920	SpecPanelTy::SetPanel	SpecPanelTy	SpecPanelTy::SetPanel	0	0
-0079AD8C		8	0x20	0079ADAC	00404A8E	SAMPanelTy::Update	00404A8E	SAMPanelTy::Update	false	false	00404A8E	SAMPanelTy::Update	true	0053D3B0	SAMPanelTy::Update	SAMPanelTy	SAMPanelTy::Update	0	0
+0079AC6C	HelpStringTy	0	0x0	0079AC6C	00403C60	HelpStringTy::GetMessage	00403C60	HelpStringTy::GetMessage	false	false	00403C60	HelpStringTy::GetMessage	true	0051FBA0	HelpStringTy::GetMessage	HelpStringTy	HelpStringTy::GetMessage	0	0
+0079AC70	InfocPanelTy	0	0x0	0079AC70	00401C03	InfocPanelTy::GetMessage	00401C03	InfocPanelTy::GetMessage	false	false	00401C03	InfocPanelTy::GetMessage	true	00521490	InfocPanelTy::GetMessage	InfocPanelTy	InfocPanelTy::GetMessage	0	0
+0079AC70	InfocPanelTy	1	0x4	0079AC74	0040300D	PanelTy::CreateBut	0040300D	PanelTy::CreateBut	false	false	0040300D	PanelTy::CreateBut	true	00538690	PanelTy::CreateBut	PanelTy	PanelTy::CreateBut	0	0
+0079AC70	InfocPanelTy	2	0x8	0079AC78	00403373	PanelTy::PaintBut	00403373	PanelTy::PaintBut	false	false	00403373	PanelTy::PaintBut	true	005389E0	PanelTy::PaintBut	PanelTy	PanelTy::PaintBut	0	0
+0079AC70	InfocPanelTy	3	0xC	0079AC7C	00401C9E	PanelTy::PaintTxtBut	00401C9E	PanelTy::PaintTxtBut	false	false	00401C9E	PanelTy::PaintTxtBut	true	00538BA0	PanelTy::PaintTxtBut	PanelTy	PanelTy::PaintTxtBut	0	0
+0079AC70	InfocPanelTy	4	0x10	0079AC80	00402121	PanelTy::PaintIBut	00402121	PanelTy::PaintIBut	false	false	00402121	PanelTy::PaintIBut	true	00538DB0	PanelTy::PaintIBut	PanelTy	PanelTy::PaintIBut	0	0
+0079AC70	InfocPanelTy	5	0x14	0079AC84	004056D2	PanelTy::PaintLBut	004056D2	PanelTy::PaintLBut	false	false	004056D2	PanelTy::PaintLBut	true	00538FC0	PanelTy::PaintLBut	PanelTy	PanelTy::PaintLBut	0	0
+0079AC70	InfocPanelTy	6	0x18	0079AC88	00405B0A	InfocPanelTy::ShiftControls	00405B0A	InfocPanelTy::ShiftControls	false	false	00405B0A	InfocPanelTy::ShiftControls	true	005205E0	InfocPanelTy::ShiftControls	InfocPanelTy	InfocPanelTy::ShiftControls	0	0
+0079AC70	InfocPanelTy	7	0x1C	0079AC8C	00401E4C	SpecPanelTy::SetPanel	00401E4C	SpecPanelTy::SetPanel	false	false	00401E4C	SpecPanelTy::SetPanel	true	0053E920	SpecPanelTy::SetPanel	SpecPanelTy	SpecPanelTy::SetPanel	0	0
+0079AC70	InfocPanelTy	8	0x20	0079AC90	0040160E	InfocPanelTy::Update	0040160E	InfocPanelTy::Update	false	false	0040160E	InfocPanelTy::Update	true	005206F0	InfocPanelTy::Update	InfocPanelTy	InfocPanelTy::Update	0	0
+0079AC9C	IntercomPanelTy	0	0x0	0079AC9C	00401B9F	IntercomPanelTy::GetMessage	00401B9F	IntercomPanelTy::GetMessage	false	false	00401B9F	IntercomPanelTy::GetMessage	true	00522E80	IntercomPanelTy::GetMessage	IntercomPanelTy	IntercomPanelTy::GetMessage	0	0
+0079AC9C	IntercomPanelTy	1	0x4	0079ACA0	0040300D	PanelTy::CreateBut	0040300D	PanelTy::CreateBut	false	false	0040300D	PanelTy::CreateBut	true	00538690	PanelTy::CreateBut	PanelTy	PanelTy::CreateBut	0	0
+0079AC9C	IntercomPanelTy	2	0x8	0079ACA4	00403373	PanelTy::PaintBut	00403373	PanelTy::PaintBut	false	false	00403373	PanelTy::PaintBut	true	005389E0	PanelTy::PaintBut	PanelTy	PanelTy::PaintBut	0	0
+0079AC9C	IntercomPanelTy	3	0xC	0079ACA8	00401C9E	PanelTy::PaintTxtBut	00401C9E	PanelTy::PaintTxtBut	false	false	00401C9E	PanelTy::PaintTxtBut	true	00538BA0	PanelTy::PaintTxtBut	PanelTy	PanelTy::PaintTxtBut	0	0
+0079AC9C	IntercomPanelTy	4	0x10	0079ACAC	00402121	PanelTy::PaintIBut	00402121	PanelTy::PaintIBut	false	false	00402121	PanelTy::PaintIBut	true	00538DB0	PanelTy::PaintIBut	PanelTy	PanelTy::PaintIBut	0	0
+0079AC9C	IntercomPanelTy	5	0x14	0079ACB0	004056D2	PanelTy::PaintLBut	004056D2	PanelTy::PaintLBut	false	false	004056D2	PanelTy::PaintLBut	true	00538FC0	PanelTy::PaintLBut	PanelTy	PanelTy::PaintLBut	0	0
+0079ACE4	MoneyTy	0	0x0	0079ACE4	004019D3	MoneyTy::GetMessage	004019D3	MoneyTy::GetMessage	false	false	004019D3	MoneyTy::GetMessage	true	0052BF00	MoneyTy::GetMessage	MoneyTy	MoneyTy::GetMessage	0	0
+0079ACE4	MoneyTy	1	0x4	0079ACE8	00405B55	PopUpTy::GetMessage	00405B55	PopUpTy::GetMessage	false	false	00405B55	PopUpTy::GetMessage	true	0052DD20	PopUpTy::GetMessage	PopUpTy	PopUpTy::GetMessage	0	0
+0079AD10	OptPanelTy	0	0x0	0079AD10	00405EA7	OptPanelTy::GetMessage	00405EA7	OptPanelTy::GetMessage	false	false	00405EA7	OptPanelTy::GetMessage	true	00533D10	OptPanelTy::GetMessage	OptPanelTy	OptPanelTy::GetMessage	0	0
+0079AD10	OptPanelTy	1	0x4	0079AD14	0040300D	PanelTy::CreateBut	0040300D	PanelTy::CreateBut	false	false	0040300D	PanelTy::CreateBut	true	00538690	PanelTy::CreateBut	PanelTy	PanelTy::CreateBut	0	0
+0079AD10	OptPanelTy	2	0x8	0079AD18	00403373	PanelTy::PaintBut	00403373	PanelTy::PaintBut	false	false	00403373	PanelTy::PaintBut	true	005389E0	PanelTy::PaintBut	PanelTy	PanelTy::PaintBut	0	0
+0079AD10	OptPanelTy	3	0xC	0079AD1C	00401C9E	PanelTy::PaintTxtBut	00401C9E	PanelTy::PaintTxtBut	false	false	00401C9E	PanelTy::PaintTxtBut	true	00538BA0	PanelTy::PaintTxtBut	PanelTy	PanelTy::PaintTxtBut	0	0
+0079AD10	OptPanelTy	4	0x10	0079AD20	00402121	PanelTy::PaintIBut	00402121	PanelTy::PaintIBut	false	false	00402121	PanelTy::PaintIBut	true	00538DB0	PanelTy::PaintIBut	PanelTy	PanelTy::PaintIBut	0	0
+0079AD10	OptPanelTy	5	0x14	0079AD24	004056D2	PanelTy::PaintLBut	004056D2	PanelTy::PaintLBut	false	false	004056D2	PanelTy::PaintLBut	true	00538FC0	PanelTy::PaintLBut	PanelTy	PanelTy::PaintLBut	0	0
+0079AD2C	PausePanelTy	0	0x0	0079AD2C	004021D0	PausePanelTy::GetMessage	004021D0	PausePanelTy::GetMessage	false	false	004021D0	PausePanelTy::GetMessage	true	005397F0	PausePanelTy::GetMessage	PausePanelTy	PausePanelTy::GetMessage	0	0
+0079AD2C	PausePanelTy	1	0x4	0079AD30	0040300D	PanelTy::CreateBut	0040300D	PanelTy::CreateBut	false	false	0040300D	PanelTy::CreateBut	true	00538690	PanelTy::CreateBut	PanelTy	PanelTy::CreateBut	0	0
+0079AD2C	PausePanelTy	2	0x8	0079AD34	00403373	PanelTy::PaintBut	00403373	PanelTy::PaintBut	false	false	00403373	PanelTy::PaintBut	true	005389E0	PanelTy::PaintBut	PanelTy	PanelTy::PaintBut	0	0
+0079AD2C	PausePanelTy	3	0xC	0079AD38	00401C9E	PanelTy::PaintTxtBut	00401C9E	PanelTy::PaintTxtBut	false	false	00401C9E	PanelTy::PaintTxtBut	true	00538BA0	PanelTy::PaintTxtBut	PanelTy	PanelTy::PaintTxtBut	0	0
+0079AD2C	PausePanelTy	4	0x10	0079AD3C	00402121	PanelTy::PaintIBut	00402121	PanelTy::PaintIBut	false	false	00402121	PanelTy::PaintIBut	true	00538DB0	PanelTy::PaintIBut	PanelTy	PanelTy::PaintIBut	0	0
+0079AD2C	PausePanelTy	5	0x14	0079AD40	004056D2	PanelTy::PaintLBut	004056D2	PanelTy::PaintLBut	false	false	004056D2	PanelTy::PaintLBut	true	00538FC0	PanelTy::PaintLBut	PanelTy	PanelTy::PaintLBut	0	0
+0079AD48	PlayPanelTy	0	0x0	0079AD48	00402766	PlayPanelTy::GetMessage	00402766	PlayPanelTy::GetMessage	false	false	00402766	PlayPanelTy::GetMessage	true	0053AFB0	PlayPanelTy::GetMessage	PlayPanelTy	PlayPanelTy::GetMessage	0	0
+0079AD48	PlayPanelTy	1	0x4	0079AD4C	0040300D	PanelTy::CreateBut	0040300D	PanelTy::CreateBut	false	false	0040300D	PanelTy::CreateBut	true	00538690	PanelTy::CreateBut	PanelTy	PanelTy::CreateBut	0	0
+0079AD48	PlayPanelTy	2	0x8	0079AD50	00403373	PanelTy::PaintBut	00403373	PanelTy::PaintBut	false	false	00403373	PanelTy::PaintBut	true	005389E0	PanelTy::PaintBut	PanelTy	PanelTy::PaintBut	0	0
+0079AD48	PlayPanelTy	3	0xC	0079AD54	00401C9E	PanelTy::PaintTxtBut	00401C9E	PanelTy::PaintTxtBut	false	false	00401C9E	PanelTy::PaintTxtBut	true	00538BA0	PanelTy::PaintTxtBut	PanelTy	PanelTy::PaintTxtBut	0	0
+0079AD48	PlayPanelTy	4	0x10	0079AD58	00402121	PanelTy::PaintIBut	00402121	PanelTy::PaintIBut	false	false	00402121	PanelTy::PaintIBut	true	00538DB0	PanelTy::PaintIBut	PanelTy	PanelTy::PaintIBut	0	0
+0079AD48	PlayPanelTy	5	0x14	0079AD5C	004056D2	PanelTy::PaintLBut	004056D2	PanelTy::PaintLBut	false	false	004056D2	PanelTy::PaintLBut	true	00538FC0	PanelTy::PaintLBut	PanelTy	PanelTy::PaintLBut	0	0
+0079AD64	ResearchPanelTy	0	0x0	0079AD64	004031C5	ResearchPanelTy::GetMessage	004031C5	ResearchPanelTy::GetMessage	false	false	004031C5	ResearchPanelTy::GetMessage	true	0053CA80	ResearchPanelTy::GetMessage	ResearchPanelTy	ResearchPanelTy::GetMessage	0	0
+0079AD64	ResearchPanelTy	1	0x4	0079AD68	0040300D	PanelTy::CreateBut	0040300D	PanelTy::CreateBut	false	false	0040300D	PanelTy::CreateBut	true	00538690	PanelTy::CreateBut	PanelTy	PanelTy::CreateBut	0	0
+0079AD64	ResearchPanelTy	2	0x8	0079AD6C	00403373	PanelTy::PaintBut	00403373	PanelTy::PaintBut	false	false	00403373	PanelTy::PaintBut	true	005389E0	PanelTy::PaintBut	PanelTy	PanelTy::PaintBut	0	0
+0079AD64	ResearchPanelTy	3	0xC	0079AD70	00401C9E	PanelTy::PaintTxtBut	00401C9E	PanelTy::PaintTxtBut	false	false	00401C9E	PanelTy::PaintTxtBut	true	00538BA0	PanelTy::PaintTxtBut	PanelTy	PanelTy::PaintTxtBut	0	0
+0079AD64	ResearchPanelTy	4	0x10	0079AD74	00402121	PanelTy::PaintIBut	00402121	PanelTy::PaintIBut	false	false	00402121	PanelTy::PaintIBut	true	00538DB0	PanelTy::PaintIBut	PanelTy	PanelTy::PaintIBut	0	0
+0079AD64	ResearchPanelTy	5	0x14	0079AD78	004056D2	PanelTy::PaintLBut	004056D2	PanelTy::PaintLBut	false	false	004056D2	PanelTy::PaintLBut	true	00538FC0	PanelTy::PaintLBut	PanelTy	PanelTy::PaintLBut	0	0
+0079AD64	ResearchPanelTy	6	0x18	0079AD7C	00405BF0	ResearchPanelTy::ShiftControls	00405BF0	ResearchPanelTy::ShiftControls	false	false	00405BF0	ResearchPanelTy::ShiftControls	true	0053C490	ResearchPanelTy::ShiftControls	ResearchPanelTy	ResearchPanelTy::ShiftControls	0	0
+0079AD64	ResearchPanelTy	7	0x1C	0079AD80	00402E46	ResearchPanelTy::Update	00402E46	ResearchPanelTy::Update	false	false	00402E46	ResearchPanelTy::Update	true	0053C500	ResearchPanelTy::Update	ResearchPanelTy	ResearchPanelTy::Update	0	0
+0079AD8C	SAMPanelTy	0	0x0	0079AD8C	00403355	SAMPanelTy::GetMessage	00403355	SAMPanelTy::GetMessage	false	false	00403355	SAMPanelTy::GetMessage	true	0053D4D0	SAMPanelTy::GetMessage	SAMPanelTy	SAMPanelTy::GetMessage	0	0
+0079AD8C	SAMPanelTy	1	0x4	0079AD90	0040300D	PanelTy::CreateBut	0040300D	PanelTy::CreateBut	false	false	0040300D	PanelTy::CreateBut	true	00538690	PanelTy::CreateBut	PanelTy	PanelTy::CreateBut	0	0
+0079AD8C	SAMPanelTy	2	0x8	0079AD94	00403373	PanelTy::PaintBut	00403373	PanelTy::PaintBut	false	false	00403373	PanelTy::PaintBut	true	005389E0	PanelTy::PaintBut	PanelTy	PanelTy::PaintBut	0	0
+0079AD8C	SAMPanelTy	3	0xC	0079AD98	00401C9E	PanelTy::PaintTxtBut	00401C9E	PanelTy::PaintTxtBut	false	false	00401C9E	PanelTy::PaintTxtBut	true	00538BA0	PanelTy::PaintTxtBut	PanelTy	PanelTy::PaintTxtBut	0	0
+0079AD8C	SAMPanelTy	4	0x10	0079AD9C	00402121	PanelTy::PaintIBut	00402121	PanelTy::PaintIBut	false	false	00402121	PanelTy::PaintIBut	true	00538DB0	PanelTy::PaintIBut	PanelTy	PanelTy::PaintIBut	0	0
+0079AD8C	SAMPanelTy	5	0x14	0079ADA0	004056D2	PanelTy::PaintLBut	004056D2	PanelTy::PaintLBut	false	false	004056D2	PanelTy::PaintLBut	true	00538FC0	PanelTy::PaintLBut	PanelTy	PanelTy::PaintLBut	0	0
+0079AD8C	SAMPanelTy	6	0x18	0079ADA4	00404016	SAMPanelTy::ShiftControls	00404016	SAMPanelTy::ShiftControls	false	false	00404016	SAMPanelTy::ShiftControls	true	0053D290	SAMPanelTy::ShiftControls	SAMPanelTy	SAMPanelTy::ShiftControls	0	0
+0079AD8C	SAMPanelTy	7	0x1C	0079ADA8	00401E4C	SpecPanelTy::SetPanel	00401E4C	SpecPanelTy::SetPanel	false	false	00401E4C	SpecPanelTy::SetPanel	true	0053E920	SpecPanelTy::SetPanel	SpecPanelTy	SpecPanelTy::SetPanel	0	0
+0079AD8C	SAMPanelTy	8	0x20	0079ADAC	00404A8E	SAMPanelTy::Update	00404A8E	SAMPanelTy::Update	false	false	00404A8E	SAMPanelTy::Update	true	0053D3B0	SAMPanelTy::Update	SAMPanelTy	SAMPanelTy::Update	0	0
 0079ADB8	InterSystemC	0	0x0	0079ADB8	006E51F0	SystemClassTy::InitSystem	006E51F0	SystemClassTy::InitSystem	false	false	006E51F0	SystemClassTy::InitSystem	false	006E51F0	SystemClassTy::InitSystem		SystemClassTy::InitSystem	0	0
 0079ADB8	InterSystemC	1	0x4	0079ADBC	0040105F	InterSystemC::DoneSystem	0040105F	InterSystemC::DoneSystem	false	false	0040105F	InterSystemC::DoneSystem	true	00542EC0	InterSystemC::DoneSystem	InterSystemC	InterSystemC::DoneSystem	0	0
 0079ADB8	InterSystemC	2	0x8	0079ADC0	006E5580	SystemClassTy::CreateObject	006E5580	SystemClassTy::CreateObject	false	false	006E5580	SystemClassTy::CreateObject	false	006E5580	SystemClassTy::CreateObject		SystemClassTy::CreateObject	0	0
@@ -505,15 +507,15 @@ table_address	owner	slot_index	slot_offset	pointer_address	raw_target_address	ra
 0079AE64		6	0x18	0079AE7C	00403918	TradePanelTy::ShiftControls	00403918	TradePanelTy::ShiftControls	false	false	00403918	TradePanelTy::ShiftControls	true	00551690	TradePanelTy::ShiftControls	TradePanelTy	TradePanelTy::ShiftControls	0	0
 0079AE64		7	0x1C	0079AE80	00401E4C	SpecPanelTy::SetPanel	00401E4C	SpecPanelTy::SetPanel	false	false	00401E4C	SpecPanelTy::SetPanel	true	0053E920	SpecPanelTy::SetPanel	SpecPanelTy	SpecPanelTy::SetPanel	0	0
 0079AE64		8	0x20	0079AE84	004046EC	TradePanelTy::Update	004046EC	TradePanelTy::Update	false	false	004046EC	TradePanelTy::Update	true	005521B0	TradePanelTy::Update	TradePanelTy	TradePanelTy::Update	0	0
-0079AE90		0	0x0	0079AE90	00403BAC	UpgPanelTy::GetMessage	00403BAC	UpgPanelTy::GetMessage	false	false	00403BAC	UpgPanelTy::GetMessage	true	00552E40	UpgPanelTy::GetMessage	UpgPanelTy	UpgPanelTy::GetMessage	0	0
-0079AE90		1	0x4	0079AE94	0040300D	PanelTy::CreateBut	0040300D	PanelTy::CreateBut	false	false	0040300D	PanelTy::CreateBut	true	00538690	PanelTy::CreateBut	PanelTy	PanelTy::CreateBut	0	0
-0079AE90		2	0x8	0079AE98	00403373	PanelTy::PaintBut	00403373	PanelTy::PaintBut	false	false	00403373	PanelTy::PaintBut	true	005389E0	PanelTy::PaintBut	PanelTy	PanelTy::PaintBut	0	0
-0079AE90		3	0xC	0079AE9C	00401C9E	PanelTy::PaintTxtBut	00401C9E	PanelTy::PaintTxtBut	false	false	00401C9E	PanelTy::PaintTxtBut	true	00538BA0	PanelTy::PaintTxtBut	PanelTy	PanelTy::PaintTxtBut	0	0
-0079AE90		4	0x10	0079AEA0	00402121	PanelTy::PaintIBut	00402121	PanelTy::PaintIBut	false	false	00402121	PanelTy::PaintIBut	true	00538DB0	PanelTy::PaintIBut	PanelTy	PanelTy::PaintIBut	0	0
-0079AE90		5	0x14	0079AEA4	004056D2	PanelTy::PaintLBut	004056D2	PanelTy::PaintLBut	false	false	004056D2	PanelTy::PaintLBut	true	00538FC0	PanelTy::PaintLBut	PanelTy	PanelTy::PaintLBut	0	0
-0079AE90		6	0x18	0079AEA8	00403DB9	UpgPanelTy::ShiftControls	00403DB9	UpgPanelTy::ShiftControls	false	false	00403DB9	UpgPanelTy::ShiftControls	true	00552AF0	UpgPanelTy::ShiftControls	UpgPanelTy	UpgPanelTy::ShiftControls	0	0
-0079AE90		7	0x1C	0079AEAC	00401E4C	SpecPanelTy::SetPanel	00401E4C	SpecPanelTy::SetPanel	false	false	00401E4C	SpecPanelTy::SetPanel	true	0053E920	SpecPanelTy::SetPanel	SpecPanelTy	SpecPanelTy::SetPanel	0	0
-0079AE90		8	0x20	0079AEB0	00405033	UpgPanelTy::Update	00405033	UpgPanelTy::Update	false	false	00405033	UpgPanelTy::Update	true	00552BC0	UpgPanelTy::Update	UpgPanelTy	UpgPanelTy::Update	0	0
+0079AE90	UpgPanelTy	0	0x0	0079AE90	00403BAC	UpgPanelTy::GetMessage	00403BAC	UpgPanelTy::GetMessage	false	false	00403BAC	UpgPanelTy::GetMessage	true	00552E40	UpgPanelTy::GetMessage	UpgPanelTy	UpgPanelTy::GetMessage	0	0
+0079AE90	UpgPanelTy	1	0x4	0079AE94	0040300D	PanelTy::CreateBut	0040300D	PanelTy::CreateBut	false	false	0040300D	PanelTy::CreateBut	true	00538690	PanelTy::CreateBut	PanelTy	PanelTy::CreateBut	0	0
+0079AE90	UpgPanelTy	2	0x8	0079AE98	00403373	PanelTy::PaintBut	00403373	PanelTy::PaintBut	false	false	00403373	PanelTy::PaintBut	true	005389E0	PanelTy::PaintBut	PanelTy	PanelTy::PaintBut	0	0
+0079AE90	UpgPanelTy	3	0xC	0079AE9C	00401C9E	PanelTy::PaintTxtBut	00401C9E	PanelTy::PaintTxtBut	false	false	00401C9E	PanelTy::PaintTxtBut	true	00538BA0	PanelTy::PaintTxtBut	PanelTy	PanelTy::PaintTxtBut	0	0
+0079AE90	UpgPanelTy	4	0x10	0079AEA0	00402121	PanelTy::PaintIBut	00402121	PanelTy::PaintIBut	false	false	00402121	PanelTy::PaintIBut	true	00538DB0	PanelTy::PaintIBut	PanelTy	PanelTy::PaintIBut	0	0
+0079AE90	UpgPanelTy	5	0x14	0079AEA4	004056D2	PanelTy::PaintLBut	004056D2	PanelTy::PaintLBut	false	false	004056D2	PanelTy::PaintLBut	true	00538FC0	PanelTy::PaintLBut	PanelTy	PanelTy::PaintLBut	0	0
+0079AE90	UpgPanelTy	6	0x18	0079AEA8	00403DB9	UpgPanelTy::ShiftControls	00403DB9	UpgPanelTy::ShiftControls	false	false	00403DB9	UpgPanelTy::ShiftControls	true	00552AF0	UpgPanelTy::ShiftControls	UpgPanelTy	UpgPanelTy::ShiftControls	0	0
+0079AE90	UpgPanelTy	7	0x1C	0079AEAC	00401E4C	SpecPanelTy::SetPanel	00401E4C	SpecPanelTy::SetPanel	false	false	00401E4C	SpecPanelTy::SetPanel	true	0053E920	SpecPanelTy::SetPanel	SpecPanelTy	SpecPanelTy::SetPanel	0	0
+0079AE90	UpgPanelTy	8	0x20	0079AEB0	00405033	UpgPanelTy::Update	00405033	UpgPanelTy::Update	false	false	00405033	UpgPanelTy::Update	true	00552BC0	UpgPanelTy::Update	UpgPanelTy	UpgPanelTy::Update	0	0
 0079AEC0	TraksClassTy	0	0x0	0079AEC0	00401A23	TraksClassTy::GetMessage	00401A23	TraksClassTy::GetMessage	false	false	00401A23	TraksClassTy::GetMessage	true	005564C0	TraksClassTy::GetMessage	TraksClassTy	TraksClassTy::GetMessage	0	0
 0079AEEC	VisibleClassTy	0	0x0	0079AEEC	00401D48	VisibleClassTy::GetMessage	00401D48	VisibleClassTy::GetMessage	false	false	00401D48	VisibleClassTy::GetMessage	true	00558840	VisibleClassTy::GetMessage	VisibleClassTy	VisibleClassTy::GetMessage	0	0
 0079AEFC	CFsgsConnection	0	0x0	0079AEFC	00402216	thunk_FUN_0055c830	00402216	thunk_FUN_0055c830	false	false	00402216	thunk_FUN_0055c830	true	0055C830	FUN_0055c830		CFsgsConnection::vfunc_00	0	0
@@ -539,6 +541,7 @@ table_address	owner	slot_index	slot_offset	pointer_address	raw_target_address	ra
 0079AEFC	CFsgsConnection	20	0x50	0079AF4C	00403A94	thunk_FUN_0055d6b0	00403A94	thunk_FUN_0055d6b0	false	false	00403A94	thunk_FUN_0055d6b0	true	0055D6B0	FUN_0055d6b0		CFsgsConnection::vfunc_50	0	0
 0079AEFC	CFsgsConnection	21	0x54	0079AF50	00404994	thunk_FUN_0055c590	00404994	thunk_FUN_0055c590	false	false	00404994	thunk_FUN_0055c590	true	0055C590	FUN_0055c590		CFsgsConnection::vfunc_54	0	0
 0079AEFC	CFsgsConnection	22	0x58	0079AF54	004025BD	thunk_FUN_0055bd40	004025BD	thunk_FUN_0055bd40	false	false	004025BD	thunk_FUN_0055bd40	true	0055BD40	FUN_0055bd40		CFsgsConnection::vfunc_58	0	0
+0079B024	SoundManagerTy	0	0x0	0079B024	00402531	SoundManagerTy::GetMessage	00402531	SoundManagerTy::GetMessage	false	false	00402531	SoundManagerTy::GetMessage	true	00566C20	SoundManagerTy::GetMessage	SoundManagerTy	SoundManagerTy::GetMessage	0	0
 0079B0A8	STAppC	0	0x0	0079B0A8	004045F2	STAppC::InitApp	004045F2	STAppC::InitApp	false	false	004045F2	STAppC::InitApp	true	0056ADC0	STAppC::InitApp	STAppC	STAppC::InitApp	0	0
 0079B0A8	STAppC	1	0x4	0079B0AC	0040269E	STAppC::DoneApp	0040269E	STAppC::DoneApp	false	false	0040269E	STAppC::DoneApp	true	0056C750	STAppC::DoneApp	STAppC	STAppC::DoneApp	0	0
 0079B0A8	STAppC	2	0x8	0079B0B0	00402B44	thunk_FUN_0056a820	00402B44	thunk_FUN_0056a820	false	false	00402B44	thunk_FUN_0056a820	true	0056A820	FUN_0056a820		STAppC::vfunc_08	0	0
@@ -546,6 +549,7 @@ table_address	owner	slot_index	slot_offset	pointer_address	raw_target_address	ra
 0079B0A8	STAppC	4	0x10	0079B0B8	006E4FA0	FUN_006e4fa0	006E4FA0	FUN_006e4fa0	false	false	006E4FA0	FUN_006e4fa0	false	006E4FA0	FUN_006e4fa0		STAppC::vfunc_10	0	0
 0079B0A8	STAppC	5	0x14	0079B0BC	00403A58	STAppC::CommonFunction	00403A58	STAppC::CommonFunction	false	false	00403A58	STAppC::CommonFunction	true	0056D1F0	STAppC::CommonFunction	STAppC	STAppC::CommonFunction	0	0
 0079B0A8	STAppC	6	0x18	0079B0C0	004058EE	STAppC::GetMessage	004058EE	STAppC::GetMessage	false	false	004058EE	STAppC::GetMessage	true	0056FA60	STAppC::GetMessage	STAppC	STAppC::GetMessage	0	0
+0079B188	STAlgaC	0	0x0	0079B188	004016E5	STAlgaC::GetMessage	004016E5	STAlgaC::GetMessage	false	false	004016E5	STAlgaC::GetMessage	true	00575CB0	STAlgaC::GetMessage	STAlgaC	STAlgaC::GetMessage	0	0
 0079B1B4	BaseSystemC	0	0x0	0079B1B4	006E51F0	SystemClassTy::InitSystem	006E51F0	SystemClassTy::InitSystem	false	false	006E51F0	SystemClassTy::InitSystem	false	006E51F0	SystemClassTy::InitSystem		SystemClassTy::InitSystem	0	0
 0079B1B4	BaseSystemC	1	0x4	0079B1B8	006E52D0	FUN_006e52d0	006E52D0	FUN_006e52d0	false	false	006E52D0	FUN_006e52d0	false	006E52D0	FUN_006e52d0		BaseSystemC::vfunc_04	0	0
 0079B1B4	BaseSystemC	2	0x8	0079B1BC	006E5580	SystemClassTy::CreateObject	006E5580	SystemClassTy::CreateObject	false	false	006E5580	SystemClassTy::CreateObject	false	006E5580	SystemClassTy::CreateObject		SystemClassTy::CreateObject	0	0
@@ -1291,58 +1295,59 @@ table_address	owner	slot_index	slot_offset	pointer_address	raw_target_address	ra
 0079BE80	STSharkC	70	0x118	0079BF98	004041E2	thunk_FUN_004231c0	004041E2	thunk_FUN_004231c0	false	false	004041E2	thunk_FUN_004231c0	true	004231C0	FUN_004231c0		STSharkC::vfunc_118	0	0
 0079BE80	STSharkC	71	0x11C	0079BF9C	00404F66	thunk_FUN_004231e0	00404F66	thunk_FUN_004231e0	false	false	00404F66	thunk_FUN_004231e0	true	004231E0	FUN_004231e0		STSharkC::vfunc_11C	0	0
 0079BE80	STSharkC	72	0x120	0079BFA0	004045CF	thunk_FUN_00423200	004045CF	thunk_FUN_00423200	false	false	004045CF	thunk_FUN_00423200	true	00423200	FUN_00423200		STSharkC::vfunc_120	0	0
-0079BFE0	MAdvTy	0	0x0	0079BFE0	00405605	thunk_FUN_004210a0	00405605	thunk_FUN_004210a0	false	false	00405605	thunk_FUN_004210a0	true	004210A0	FUN_004210a0		MAdvTy::vfunc_00	0	0
-0079BFE0	MAdvTy	1	0x4	0079BFE4	00401703	MAdvTy::GetMessage	00401703	MAdvTy::GetMessage	false	false	00401703	MAdvTy::GetMessage	true	005908B0	MAdvTy::GetMessage	MAdvTy	MAdvTy::GetMessage	0	0
-0079BFF8		0	0x0	0079BFF8	00402752	CampaignTy::GetMessage	00402752	CampaignTy::GetMessage	false	false	00402752	CampaignTy::GetMessage	true	00593040	CampaignTy::GetMessage	CampaignTy	CampaignTy::GetMessage	0	0
-0079BFF8		1	0x4	0079BFFC	0040458E	MMObjTy::DoneMMObj	0040458E	MMObjTy::DoneMMObj	false	false	0040458E	MMObjTy::DoneMMObj	true	005B6220	MMObjTy::DoneMMObj	MMObjTy	MMObjTy::DoneMMObj	0	0
-0079BFF8		2	0x8	0079C000	00401979	CampaignTy::CloseButtons	00401979	CampaignTy::CloseButtons	false	false	00401979	CampaignTy::CloseButtons	true	00592470	CampaignTy::CloseButtons	CampaignTy	CampaignTy::CloseButtons	0	0
+0079BFE0		0	0x0	0079BFE0	00405605	thunk_FUN_004210a0	00405605	thunk_FUN_004210a0	false	false	00405605	thunk_FUN_004210a0	true	004210A0	FUN_004210a0		FUN_004210a0	0	0
+0079BFE4	MAdvTy	0	0x0	0079BFE4	00401703	MAdvTy::GetMessage	00401703	MAdvTy::GetMessage	false	false	00401703	MAdvTy::GetMessage	true	005908B0	MAdvTy::GetMessage	MAdvTy	MAdvTy::GetMessage	0	0
+0079BFF8	CampaignTy	0	0x0	0079BFF8	00402752	CampaignTy::GetMessage	00402752	CampaignTy::GetMessage	false	false	00402752	CampaignTy::GetMessage	true	00593040	CampaignTy::GetMessage	CampaignTy	CampaignTy::GetMessage	0	0
+0079BFF8	CampaignTy	1	0x4	0079BFFC	0040458E	MMObjTy::DoneMMObj	0040458E	MMObjTy::DoneMMObj	false	false	0040458E	MMObjTy::DoneMMObj	true	005B6220	MMObjTy::DoneMMObj	MMObjTy	MMObjTy::DoneMMObj	0	0
+0079BFF8	CampaignTy	2	0x8	0079C000	00401979	CampaignTy::CloseButtons	00401979	CampaignTy::CloseButtons	false	false	00401979	CampaignTy::CloseButtons	true	00592470	CampaignTy::CloseButtons	CampaignTy	CampaignTy::CloseButtons	0	0
 0079C008	MMObjTy	0	0x0	0079C008	00401280	MMObjTy::GetMessage	00401280	MMObjTy::GetMessage	false	false	00401280	MMObjTy::GetMessage	true	005B6430	MMObjTy::GetMessage	MMObjTy	MMObjTy::GetMessage	0	0
 0079C008	MMObjTy	1	0x4	0079C00C	0040458E	MMObjTy::DoneMMObj	0040458E	MMObjTy::DoneMMObj	false	false	0040458E	MMObjTy::DoneMMObj	true	005B6220	MMObjTy::DoneMMObj	MMObjTy	MMObjTy::DoneMMObj	0	0
 0079C008	MMObjTy	2	0x8	0079C010	00403459	MMObjTy::CloseButtons	00403459	MMObjTy::CloseButtons	false	false	00403459	MMObjTy::CloseButtons	true	005B6480	MMObjTy::CloseButtons	MMObjTy	MMObjTy::CloseButtons	0	0
-0079C018	ComboTy	0	0x0	0079C018	006E5FD0	FUN_006e5fd0	006E5FD0	FUN_006e5fd0	false	false	006E5FD0	FUN_006e5fd0	false	006E5FD0	FUN_006e5fd0		ComboTy::vfunc_00	0	0
-0079C018	ComboTy	1	0x4	0079C01C	00402289	ComboTy::GetMessage	00402289	ComboTy::GetMessage	false	false	00402289	ComboTy::GetMessage	true	00594440	ComboTy::GetMessage	ComboTy	ComboTy::GetMessage	0	0
+0079C018		0	0x0	0079C018	006E5FD0	FUN_006e5fd0	006E5FD0	FUN_006e5fd0	false	false	006E5FD0	FUN_006e5fd0	false	006E5FD0	FUN_006e5fd0		FUN_006e5fd0	0	0
+0079C01C	Visible	0	0x0	0079C01C	00402289	ComboTy::GetMessage	00402289	ComboTy::GetMessage	false	false	00402289	ComboTy::GetMessage	true	00594440	ComboTy::GetMessage	ComboTy	ComboTy::GetMessage	0	0
 0079C02C	FSGSTy	0	0x0	0079C02C	00404165	FSGSTy::GetMessage	00404165	FSGSTy::GetMessage	false	false	00404165	FSGSTy::GetMessage	true	005A4350	FSGSTy::GetMessage	FSGSTy	FSGSTy::GetMessage	0	0
 0079C02C	FSGSTy	1	0x4	0079C030	0040458E	MMObjTy::DoneMMObj	0040458E	MMObjTy::DoneMMObj	false	false	0040458E	MMObjTy::DoneMMObj	true	005B6220	MMObjTy::DoneMMObj	MMObjTy	MMObjTy::DoneMMObj	0	0
 0079C02C	FSGSTy	2	0x8	0079C034	004021C1	FSGSTy::CloseButtons	004021C1	FSGSTy::CloseButtons	false	false	004021C1	FSGSTy::CloseButtons	true	0059B740	FSGSTy::CloseButtons	FSGSTy	FSGSTy::CloseButtons	0	0
 0079C088	ChooseMapTy	0	0x0	0079C088	00402E4B	ChooseMapTy::GetMessage	00402E4B	ChooseMapTy::GetMessage	false	false	00402E4B	ChooseMapTy::GetMessage	true	005B0BA0	ChooseMapTy::GetMessage	ChooseMapTy	ChooseMapTy::GetMessage	0	0
 0079C088	ChooseMapTy	1	0x4	0079C08C	0040458E	MMObjTy::DoneMMObj	0040458E	MMObjTy::DoneMMObj	false	false	0040458E	MMObjTy::DoneMMObj	true	005B6220	MMObjTy::DoneMMObj	MMObjTy	MMObjTy::DoneMMObj	0	0
 0079C088	ChooseMapTy	2	0x8	0079C090	00404593	ChooseMapTy::CloseButtons	00404593	ChooseMapTy::CloseButtons	false	false	00404593	ChooseMapTy::CloseButtons	true	005ADF10	ChooseMapTy::CloseButtons	ChooseMapTy	ChooseMapTy::CloseButtons	0	0
-0079C098		0	0x0	0079C098	0040280B	MainMenuTy::GetMessage	0040280B	MainMenuTy::GetMessage	false	false	0040280B	MainMenuTy::GetMessage	true	005B4BB0	MainMenuTy::GetMessage	MainMenuTy	MainMenuTy::GetMessage	0	0
-0079C098		1	0x4	0079C09C	0040458E	MMObjTy::DoneMMObj	0040458E	MMObjTy::DoneMMObj	false	false	0040458E	MMObjTy::DoneMMObj	true	005B6220	MMObjTy::DoneMMObj	MMObjTy	MMObjTy::DoneMMObj	0	0
-0079C098		2	0x8	0079C0A0	00405F10	MainMenuTy::CloseButtons	00405F10	MainMenuTy::CloseButtons	false	false	00405F10	MainMenuTy::CloseButtons	true	005B3C30	MainMenuTy::CloseButtons	MainMenuTy	MainMenuTy::CloseButtons	0	0
-0079C0A8		0	0x0	0079C0A8	0040198D	MMsgTy::GetMessage	0040198D	MMsgTy::GetMessage	false	false	0040198D	MMsgTy::GetMessage	true	005B9330	MMsgTy::GetMessage	MMsgTy	MMsgTy::GetMessage	0	0
-0079C0A8		1	0x4	0079C0AC	0040458E	MMObjTy::DoneMMObj	0040458E	MMObjTy::DoneMMObj	false	false	0040458E	MMObjTy::DoneMMObj	true	005B6220	MMObjTy::DoneMMObj	MMObjTy	MMObjTy::DoneMMObj	0	0
-0079C0A8		2	0x8	0079C0B0	00405867	MMsgTy::CloseSprBut	00405867	MMsgTy::CloseSprBut	false	false	00405867	MMsgTy::CloseSprBut	true	005B9170	MMsgTy::CloseSprBut	MMsgTy	MMsgTy::CloseSprBut	0	0
+0079C098	MainMenuTy	0	0x0	0079C098	0040280B	MainMenuTy::GetMessage	0040280B	MainMenuTy::GetMessage	false	false	0040280B	MainMenuTy::GetMessage	true	005B4BB0	MainMenuTy::GetMessage	MainMenuTy	MainMenuTy::GetMessage	0	0
+0079C098	MainMenuTy	1	0x4	0079C09C	0040458E	MMObjTy::DoneMMObj	0040458E	MMObjTy::DoneMMObj	false	false	0040458E	MMObjTy::DoneMMObj	true	005B6220	MMObjTy::DoneMMObj	MMObjTy	MMObjTy::DoneMMObj	0	0
+0079C098	MainMenuTy	2	0x8	0079C0A0	00405F10	MainMenuTy::CloseButtons	00405F10	MainMenuTy::CloseButtons	false	false	00405F10	MainMenuTy::CloseButtons	true	005B3C30	MainMenuTy::CloseButtons	MainMenuTy	MainMenuTy::CloseButtons	0	0
+0079C0A8	MMsgTy	0	0x0	0079C0A8	0040198D	MMsgTy::GetMessage	0040198D	MMsgTy::GetMessage	false	false	0040198D	MMsgTy::GetMessage	true	005B9330	MMsgTy::GetMessage	MMsgTy	MMsgTy::GetMessage	0	0
+0079C0A8	MMsgTy	1	0x4	0079C0AC	0040458E	MMObjTy::DoneMMObj	0040458E	MMObjTy::DoneMMObj	false	false	0040458E	MMObjTy::DoneMMObj	true	005B6220	MMObjTy::DoneMMObj	MMObjTy	MMObjTy::DoneMMObj	0	0
+0079C0A8	MMsgTy	2	0x8	0079C0B0	00405867	MMsgTy::CloseSprBut	00405867	MMsgTy::CloseSprBut	false	false	00405867	MMsgTy::CloseSprBut	true	005B9170	MMsgTy::CloseSprBut	MMsgTy	MMsgTy::CloseSprBut	0	0
 0079C0C4	PrividerTy	0	0x0	0079C0C4	00401CC6	PrividerTy::GetMessage	00401CC6	PrividerTy::GetMessage	false	false	00401CC6	PrividerTy::GetMessage	true	005BC5E0	PrividerTy::GetMessage	PrividerTy	PrividerTy::GetMessage	0	0
 0079C0C4	PrividerTy	1	0x4	0079C0C8	0040458E	MMObjTy::DoneMMObj	0040458E	MMObjTy::DoneMMObj	false	false	0040458E	MMObjTy::DoneMMObj	true	005B6220	MMObjTy::DoneMMObj	MMObjTy	MMObjTy::DoneMMObj	0	0
 0079C0C4	PrividerTy	2	0x8	0079C0CC	00403459	MMObjTy::CloseButtons	00403459	MMObjTy::CloseButtons	false	false	00403459	MMObjTy::CloseButtons	true	005B6480	MMObjTy::CloseButtons	MMObjTy	MMObjTy::CloseButtons	0	0
-0079C124		0	0x0	0079C124	0040137A	SettMapMTy::GetMessage	0040137A	SettMapMTy::GetMessage	false	false	0040137A	SettMapMTy::GetMessage	true	005D1400	SettMapMTy::GetMessage	SettMapMTy	SettMapMTy::GetMessage	0	0
-0079C124		1	0x4	0079C128	0040458E	MMObjTy::DoneMMObj	0040458E	MMObjTy::DoneMMObj	false	false	0040458E	MMObjTy::DoneMMObj	true	005B6220	MMObjTy::DoneMMObj	MMObjTy	MMObjTy::DoneMMObj	0	0
-0079C124		2	0x8	0079C12C	00405A88	SettMapTy::CloseButtons	00405A88	SettMapTy::CloseButtons	false	false	00405A88	SettMapTy::CloseButtons	true	005C5B60	SettMapTy::CloseButtons	SettMapTy	SettMapTy::CloseButtons	0	0
-0079C124		3	0xC	0079C130	00404FAC	SettMapMTy::NoneSettMap	00404FAC	SettMapMTy::NoneSettMap	false	false	00404FAC	SettMapMTy::NoneSettMap	true	005CE0E0	SettMapMTy::NoneSettMap	SettMapMTy	SettMapMTy::NoneSettMap	0	0
-0079C124		4	0x10	0079C134	00404809	SettMapMTy::InitSettMap	00404809	SettMapMTy::InitSettMap	false	false	00404809	SettMapMTy::InitSettMap	true	005CBD00	SettMapMTy::InitSettMap	SettMapMTy	SettMapMTy::InitSettMap	0	0
-0079C124		5	0x14	0079C138	004048D6	SettMapMTy::DoneSettMap	004048D6	SettMapMTy::DoneSettMap	false	false	004048D6	SettMapMTy::DoneSettMap	true	005CC2D0	SettMapMTy::DoneSettMap	SettMapMTy	SettMapMTy::DoneSettMap	0	0
-0079C124		6	0x18	0079C13C	004034C2	SettMapMTy::CreateCtrls	004034C2	SettMapMTy::CreateCtrls	false	false	004034C2	SettMapMTy::CreateCtrls	true	005CC440	SettMapMTy::CreateCtrls	SettMapMTy	SettMapMTy::CreateCtrls	0	0
-0079C124		7	0x1C	0079C140	004032BF	SettMapMTy::DeleteCtrls	004032BF	SettMapMTy::DeleteCtrls	false	false	004032BF	SettMapMTy::DeleteCtrls	true	005CC840	SettMapMTy::DeleteCtrls	SettMapMTy	SettMapMTy::DeleteCtrls	0	0
-0079C124		8	0x20	0079C144	00405BC3	thunk_FUN_005ccc30	00405BC3	thunk_FUN_005ccc30	false	false	00405BC3	thunk_FUN_005ccc30	true	005CCC30	FUN_005ccc30		FUN_005ccc30	0	0
-0079C124		9	0x24	0079C148	0040524A	thunk_FUN_005ccd00	0040524A	thunk_FUN_005ccd00	false	false	0040524A	thunk_FUN_005ccd00	true	005CCD00	FUN_005ccd00		FUN_005ccd00	0	0
-0079C124		10	0x28	0079C14C	00404363	SettMapMTy::PrepPlList	00404363	SettMapMTy::PrepPlList	false	false	00404363	SettMapMTy::PrepPlList	true	005CD430	SettMapMTy::PrepPlList	SettMapMTy	SettMapMTy::PrepPlList	0	0
-0079C124		11	0x2C	0079C150	00402950	SettMapMTy::SetListCtrls	00402950	SettMapMTy::SetListCtrls	false	false	00402950	SettMapMTy::SetListCtrls	true	005CCE10	SettMapMTy::SetListCtrls	SettMapMTy	SettMapMTy::SetListCtrls	0	0
-0079C160		0	0x0	0079C160	00404D7C	SettMapSTy::GetMessage	00404D7C	SettMapSTy::GetMessage	false	false	00404D7C	SettMapSTy::GetMessage	true	005D5560	SettMapSTy::GetMessage	SettMapSTy	SettMapSTy::GetMessage	0	0
-0079C160		1	0x4	0079C164	0040458E	MMObjTy::DoneMMObj	0040458E	MMObjTy::DoneMMObj	false	false	0040458E	MMObjTy::DoneMMObj	true	005B6220	MMObjTy::DoneMMObj	MMObjTy	MMObjTy::DoneMMObj	0	0
-0079C160		2	0x8	0079C168	00405A88	SettMapTy::CloseButtons	00405A88	SettMapTy::CloseButtons	false	false	00405A88	SettMapTy::CloseButtons	true	005C5B60	SettMapTy::CloseButtons	SettMapTy	SettMapTy::CloseButtons	0	0
-0079C160		3	0xC	0079C16C	00402383	SettMapTy::NoneSettMap	00402383	SettMapTy::NoneSettMap	false	false	00402383	SettMapTy::NoneSettMap	true	005C5130	SettMapTy::NoneSettMap	SettMapTy	SettMapTy::NoneSettMap	0	0
-0079C160		4	0x10	0079C170	004023A6	SettMapMTy::sub_005C29B0	004023A6	SettMapMTy::sub_005C29B0	false	false	004023A6	SettMapMTy::sub_005C29B0	true	005C29B0	SettMapMTy::sub_005C29B0	SettMapMTy	SettMapMTy::sub_005C29B0	0	0
-0079C160		5	0x14	0079C174	00403FB7	SettMapTy::DoneSettMap	00403FB7	SettMapTy::DoneSettMap	false	false	00403FB7	SettMapTy::DoneSettMap	true	005C4930	SettMapTy::DoneSettMap	SettMapTy	SettMapTy::DoneSettMap	0	0
-0079C160		6	0x18	0079C178	004055B5	SettMapTy::CreateCtrls	004055B5	SettMapTy::CreateCtrls	false	false	004055B5	SettMapTy::CreateCtrls	true	005C6030	SettMapTy::CreateCtrls	SettMapTy	SettMapTy::CreateCtrls	0	0
-0079C160		7	0x1C	0079C17C	00404E94	SettMapTy::DeleteCtrls	00404E94	SettMapTy::DeleteCtrls	false	false	00404E94	SettMapTy::DeleteCtrls	true	005C6D40	SettMapTy::DeleteCtrls	SettMapTy	SettMapTy::DeleteCtrls	0	0
-0079C160		8	0x20	0079C180	00405DD5	thunk_FUN_005c5ca0	00405DD5	thunk_FUN_005c5ca0	false	false	00405DD5	thunk_FUN_005c5ca0	true	005C5CA0	FUN_005c5ca0		FUN_005c5ca0	0	0
-0079C160		9	0x24	0079C184	0040337D	thunk_FUN_005c5eb0	0040337D	thunk_FUN_005c5eb0	false	false	0040337D	thunk_FUN_005c5eb0	true	005C5EB0	FUN_005c5eb0		FUN_005c5eb0	0	0
-0079C160		10	0x28	0079C188	00402E55	SettMapSTy::PrepPlList	00402E55	SettMapSTy::PrepPlList	false	false	00402E55	SettMapSTy::PrepPlList	true	005D5160	SettMapSTy::PrepPlList	SettMapSTy	SettMapSTy::PrepPlList	0	0
-0079C160		11	0x2C	0079C18C	004031A2	SettMapSTy::SetListCtrls	004031A2	SettMapSTy::SetListCtrls	false	false	004031A2	SettMapSTy::SetListCtrls	true	005D4E90	SettMapSTy::SetListCtrls	SettMapSTy	SettMapSTy::SetListCtrls	0	0
-0079C1AC		0	0x0	0079C1AC	00404A70	SIDTy::GetMessage	00404A70	SIDTy::GetMessage	false	false	00404A70	SIDTy::GetMessage	true	005D9470	SIDTy::GetMessage	SIDTy	SIDTy::GetMessage	0	0
-0079C1AC		1	0x4	0079C1B0	0040458E	MMObjTy::DoneMMObj	0040458E	MMObjTy::DoneMMObj	false	false	0040458E	MMObjTy::DoneMMObj	true	005B6220	MMObjTy::DoneMMObj	MMObjTy	MMObjTy::DoneMMObj	0	0
-0079C1AC		2	0x8	0079C1B4	00403459	MMObjTy::CloseButtons	00403459	MMObjTy::CloseButtons	false	false	00403459	MMObjTy::CloseButtons	true	005B6480	MMObjTy::CloseButtons	MMObjTy	MMObjTy::CloseButtons	0	0
+0079C0E4	MReportTy	0	0x0	0079C0E4	00402AD1	MReportTy::GetMessage	00402AD1	MReportTy::GetMessage	false	false	00402AD1	MReportTy::GetMessage	true	005C1A90	MReportTy::GetMessage	MReportTy	MReportTy::GetMessage	0	0
+0079C124	SettMapMTy	0	0x0	0079C124	0040137A	SettMapMTy::GetMessage	0040137A	SettMapMTy::GetMessage	false	false	0040137A	SettMapMTy::GetMessage	true	005D1400	SettMapMTy::GetMessage	SettMapMTy	SettMapMTy::GetMessage	0	0
+0079C124	SettMapMTy	1	0x4	0079C128	0040458E	MMObjTy::DoneMMObj	0040458E	MMObjTy::DoneMMObj	false	false	0040458E	MMObjTy::DoneMMObj	true	005B6220	MMObjTy::DoneMMObj	MMObjTy	MMObjTy::DoneMMObj	0	0
+0079C124	SettMapMTy	2	0x8	0079C12C	00405A88	SettMapTy::CloseButtons	00405A88	SettMapTy::CloseButtons	false	false	00405A88	SettMapTy::CloseButtons	true	005C5B60	SettMapTy::CloseButtons	SettMapTy	SettMapTy::CloseButtons	0	0
+0079C124	SettMapMTy	3	0xC	0079C130	00404FAC	SettMapMTy::NoneSettMap	00404FAC	SettMapMTy::NoneSettMap	false	false	00404FAC	SettMapMTy::NoneSettMap	true	005CE0E0	SettMapMTy::NoneSettMap	SettMapMTy	SettMapMTy::NoneSettMap	0	0
+0079C124	SettMapMTy	4	0x10	0079C134	00404809	SettMapMTy::InitSettMap	00404809	SettMapMTy::InitSettMap	false	false	00404809	SettMapMTy::InitSettMap	true	005CBD00	SettMapMTy::InitSettMap	SettMapMTy	SettMapMTy::InitSettMap	0	0
+0079C124	SettMapMTy	5	0x14	0079C138	004048D6	SettMapMTy::DoneSettMap	004048D6	SettMapMTy::DoneSettMap	false	false	004048D6	SettMapMTy::DoneSettMap	true	005CC2D0	SettMapMTy::DoneSettMap	SettMapMTy	SettMapMTy::DoneSettMap	0	0
+0079C124	SettMapMTy	6	0x18	0079C13C	004034C2	SettMapMTy::CreateCtrls	004034C2	SettMapMTy::CreateCtrls	false	false	004034C2	SettMapMTy::CreateCtrls	true	005CC440	SettMapMTy::CreateCtrls	SettMapMTy	SettMapMTy::CreateCtrls	0	0
+0079C124	SettMapMTy	7	0x1C	0079C140	004032BF	SettMapMTy::DeleteCtrls	004032BF	SettMapMTy::DeleteCtrls	false	false	004032BF	SettMapMTy::DeleteCtrls	true	005CC840	SettMapMTy::DeleteCtrls	SettMapMTy	SettMapMTy::DeleteCtrls	0	0
+0079C124	SettMapMTy	8	0x20	0079C144	00405BC3	thunk_FUN_005ccc30	00405BC3	thunk_FUN_005ccc30	false	false	00405BC3	thunk_FUN_005ccc30	true	005CCC30	FUN_005ccc30		SettMapMTy::vfunc_20	0	0
+0079C124	SettMapMTy	9	0x24	0079C148	0040524A	thunk_FUN_005ccd00	0040524A	thunk_FUN_005ccd00	false	false	0040524A	thunk_FUN_005ccd00	true	005CCD00	FUN_005ccd00		SettMapMTy::vfunc_24	0	0
+0079C124	SettMapMTy	10	0x28	0079C14C	00404363	SettMapMTy::PrepPlList	00404363	SettMapMTy::PrepPlList	false	false	00404363	SettMapMTy::PrepPlList	true	005CD430	SettMapMTy::PrepPlList	SettMapMTy	SettMapMTy::PrepPlList	0	0
+0079C124	SettMapMTy	11	0x2C	0079C150	00402950	SettMapMTy::SetListCtrls	00402950	SettMapMTy::SetListCtrls	false	false	00402950	SettMapMTy::SetListCtrls	true	005CCE10	SettMapMTy::SetListCtrls	SettMapMTy	SettMapMTy::SetListCtrls	0	0
+0079C160	SettMapTy	0	0x0	0079C160	00404D7C	SettMapSTy::GetMessage	00404D7C	SettMapSTy::GetMessage	false	false	00404D7C	SettMapSTy::GetMessage	true	005D5560	SettMapSTy::GetMessage	SettMapSTy	SettMapSTy::GetMessage	0	0
+0079C160	SettMapTy	1	0x4	0079C164	0040458E	MMObjTy::DoneMMObj	0040458E	MMObjTy::DoneMMObj	false	false	0040458E	MMObjTy::DoneMMObj	true	005B6220	MMObjTy::DoneMMObj	MMObjTy	MMObjTy::DoneMMObj	0	0
+0079C160	SettMapTy	2	0x8	0079C168	00405A88	SettMapTy::CloseButtons	00405A88	SettMapTy::CloseButtons	false	false	00405A88	SettMapTy::CloseButtons	true	005C5B60	SettMapTy::CloseButtons	SettMapTy	SettMapTy::CloseButtons	0	0
+0079C160	SettMapTy	3	0xC	0079C16C	00402383	SettMapTy::NoneSettMap	00402383	SettMapTy::NoneSettMap	false	false	00402383	SettMapTy::NoneSettMap	true	005C5130	SettMapTy::NoneSettMap	SettMapTy	SettMapTy::NoneSettMap	0	0
+0079C160	SettMapTy	4	0x10	0079C170	004023A6	SettMapMTy::sub_005C29B0	004023A6	SettMapMTy::sub_005C29B0	false	false	004023A6	SettMapMTy::sub_005C29B0	true	005C29B0	SettMapMTy::sub_005C29B0	SettMapMTy	SettMapMTy::sub_005C29B0	0	0
+0079C160	SettMapTy	5	0x14	0079C174	00403FB7	SettMapTy::DoneSettMap	00403FB7	SettMapTy::DoneSettMap	false	false	00403FB7	SettMapTy::DoneSettMap	true	005C4930	SettMapTy::DoneSettMap	SettMapTy	SettMapTy::DoneSettMap	0	0
+0079C160	SettMapTy	6	0x18	0079C178	004055B5	SettMapTy::CreateCtrls	004055B5	SettMapTy::CreateCtrls	false	false	004055B5	SettMapTy::CreateCtrls	true	005C6030	SettMapTy::CreateCtrls	SettMapTy	SettMapTy::CreateCtrls	0	0
+0079C160	SettMapTy	7	0x1C	0079C17C	00404E94	SettMapTy::DeleteCtrls	00404E94	SettMapTy::DeleteCtrls	false	false	00404E94	SettMapTy::DeleteCtrls	true	005C6D40	SettMapTy::DeleteCtrls	SettMapTy	SettMapTy::DeleteCtrls	0	0
+0079C160	SettMapTy	8	0x20	0079C180	00405DD5	thunk_FUN_005c5ca0	00405DD5	thunk_FUN_005c5ca0	false	false	00405DD5	thunk_FUN_005c5ca0	true	005C5CA0	FUN_005c5ca0		SettMapTy::vfunc_20	0	0
+0079C160	SettMapTy	9	0x24	0079C184	0040337D	thunk_FUN_005c5eb0	0040337D	thunk_FUN_005c5eb0	false	false	0040337D	thunk_FUN_005c5eb0	true	005C5EB0	FUN_005c5eb0		SettMapTy::vfunc_24	0	0
+0079C160	SettMapTy	10	0x28	0079C188	00402E55	SettMapSTy::PrepPlList	00402E55	SettMapSTy::PrepPlList	false	false	00402E55	SettMapSTy::PrepPlList	true	005D5160	SettMapSTy::PrepPlList	SettMapSTy	SettMapSTy::PrepPlList	0	0
+0079C160	SettMapTy	11	0x2C	0079C18C	004031A2	SettMapSTy::SetListCtrls	004031A2	SettMapSTy::SetListCtrls	false	false	004031A2	SettMapSTy::SetListCtrls	true	005D4E90	SettMapSTy::SetListCtrls	SettMapSTy	SettMapSTy::SetListCtrls	0	0
+0079C1AC	SIDTy	0	0x0	0079C1AC	00404A70	SIDTy::GetMessage	00404A70	SIDTy::GetMessage	false	false	00404A70	SIDTy::GetMessage	true	005D9470	SIDTy::GetMessage	SIDTy	SIDTy::GetMessage	0	0
+0079C1AC	SIDTy	1	0x4	0079C1B0	0040458E	MMObjTy::DoneMMObj	0040458E	MMObjTy::DoneMMObj	false	false	0040458E	MMObjTy::DoneMMObj	true	005B6220	MMObjTy::DoneMMObj	MMObjTy	MMObjTy::DoneMMObj	0	0
+0079C1AC	SIDTy	2	0x8	0079C1B4	00403459	MMObjTy::CloseButtons	00403459	MMObjTy::CloseButtons	false	false	00403459	MMObjTy::CloseButtons	true	005B6480	MMObjTy::CloseButtons	MMObjTy	MMObjTy::CloseButtons	0	0
 0079C1E8	StartSystemTy	0	0x0	0079C1E8	0040237E	StartSystemTy::InitSystem	0040237E	StartSystemTy::InitSystem	false	false	0040237E	StartSystemTy::InitSystem	true	005DCC10	StartSystemTy::InitSystem	StartSystemTy	StartSystemTy::InitSystem	0	0
 0079C1E8	StartSystemTy	1	0x4	0079C1EC	004042E6	StartSystemTy::DoneSystem	004042E6	StartSystemTy::DoneSystem	false	false	004042E6	StartSystemTy::DoneSystem	true	005DCDB0	StartSystemTy::DoneSystem	StartSystemTy	StartSystemTy::DoneSystem	0	0
 0079C1E8	StartSystemTy	2	0x8	0079C1F0	006E5580	SystemClassTy::CreateObject	006E5580	SystemClassTy::CreateObject	false	false	006E5580	SystemClassTy::CreateObject	false	006E5580	SystemClassTy::CreateObject		SystemClassTy::CreateObject	0	0
@@ -1352,92 +1357,93 @@ table_address	owner	slot_index	slot_offset	pointer_address	raw_target_address	ra
 0079C1E8	StartSystemTy	6	0x18	0079C200	006E5950	FUN_006e5950	006E5950	FUN_006e5950	false	false	006E5950	FUN_006e5950	false	006E5950	FUN_006e5950		StartSystemTy::vfunc_18	0	0
 0079C1E8	StartSystemTy	7	0x1C	0079C204	006E5D90	SystemClassTy::Life	006E5D90	SystemClassTy::Life	false	false	006E5D90	SystemClassTy::Life	false	006E5D90	SystemClassTy::Life		SystemClassTy::Life	0	0
 0079C1E8	StartSystemTy	8	0x20	0079C208	004046CE	StartSystemTy::GetMessage	004046CE	StartSystemTy::GetMessage	false	false	004046CE	StartSystemTy::GetMessage	true	005DCE90	StartSystemTy::GetMessage	StartSystemTy	StartSystemTy::GetMessage	0	0
+0079C23C	MTestTy	0	0x0	0079C23C	0040598E	MTestTy::GetMessage	0040598E	MTestTy::GetMessage	false	false	0040598E	MTestTy::GetMessage	true	005E5FB0	MTestTy::GetMessage	MTestTy	MTestTy::GetMessage	0	0
 0079C24C	WaitTy	0	0x0	0079C24C	004038D7	WaitTy::GetMessage	004038D7	WaitTy::GetMessage	false	false	004038D7	WaitTy::GetMessage	true	005EA680	WaitTy::GetMessage	WaitTy	WaitTy::GetMessage	0	0
 0079C24C	WaitTy	1	0x4	0079C250	0040458E	MMObjTy::DoneMMObj	0040458E	MMObjTy::DoneMMObj	false	false	0040458E	MMObjTy::DoneMMObj	true	005B6220	MMObjTy::DoneMMObj	MMObjTy	MMObjTy::DoneMMObj	0	0
 0079C24C	WaitTy	2	0x8	0079C254	0040110E	WaitTy::CloseButtons	0040110E	WaitTy::CloseButtons	false	false	0040110E	WaitTy::CloseButtons	true	005E9830	WaitTy::CloseButtons	WaitTy	WaitTy::CloseButtons	0	0
-0079C25C		0	0x0	0079C25C	00405605	thunk_FUN_004210a0	00405605	thunk_FUN_004210a0	false	false	00405605	thunk_FUN_004210a0	true	004210A0	FUN_004210a0		FUN_004210a0	0	0
-0079C25C		1	0x4	0079C260	00404D68	STArtiafactC::GetMessage	00404D68	STArtiafactC::GetMessage	false	false	00404D68	STArtiafactC::GetMessage	true	005EAF10	STArtiafactC::GetMessage	STArtiafactC	STArtiafactC::GetMessage	0	0
-0079C25C		2	0x8	0079C264	00402964	thunk_FUN_00415b10	00402964	thunk_FUN_00415b10	false	false	00402964	thunk_FUN_00415b10	true	00415B10	FUN_00415b10		FUN_00415b10	0	0
-0079C25C		3	0xC	0079C268	00404F25	thunk_FUN_0041e510	00404F25	thunk_FUN_0041e510	false	false	00404F25	thunk_FUN_0041e510	true	0041E510	FUN_0041e510		FUN_0041e510	0	0
-0079C25C		4	0x10	0079C26C	004039E5	thunk_FUN_005f0380	004039E5	thunk_FUN_005f0380	false	false	004039E5	thunk_FUN_005f0380	true	005F0380	FUN_005f0380		FUN_005f0380	0	0
-0079C25C		5	0x14	0079C270	00402AFE	thunk_FUN_004168d0	00402AFE	thunk_FUN_004168d0	false	false	00402AFE	thunk_FUN_004168d0	true	004168D0	FUN_004168d0		FUN_004168d0	0	0
-0079C25C		6	0x18	0079C274	004036AC	thunk_FUN_00416db0	004036AC	thunk_FUN_00416db0	false	false	004036AC	thunk_FUN_00416db0	true	00416DB0	FUN_00416db0		FUN_00416db0	0	0
-0079C25C		7	0x1C	0079C278	00404BCE	thunk_FUN_00417f30	00404BCE	thunk_FUN_00417f30	false	false	00404BCE	thunk_FUN_00417f30	true	00417F30	FUN_00417f30		FUN_00417f30	0	0
-0079C25C		8	0x20	0079C27C	004048F9	STGameObjC::MoveStep	004048F9	STGameObjC::MoveStep	false	false	004048F9	STGameObjC::MoveStep	true	004189D0	STGameObjC::MoveStep	STGameObjC	STGameObjC::MoveStep	0	0
-0079C25C		9	0x24	0079C280	00404DD1	thunk_FUN_00419a90	00404DD1	thunk_FUN_00419a90	false	false	00404DD1	thunk_FUN_00419a90	true	00419A90	FUN_00419a90		FUN_00419a90	0	0
-0079C25C		10	0x28	0079C284	00401438	thunk_FUN_00419bf0	00401438	thunk_FUN_00419bf0	false	false	00401438	thunk_FUN_00419bf0	true	00419BF0	FUN_00419bf0		FUN_00419bf0	0	0
-0079C25C		11	0x2C	0079C288	00401F96	thunk_FUN_005f0e20	00401F96	thunk_FUN_005f0e20	false	false	00401F96	thunk_FUN_005f0e20	true	005F0E20	FUN_005f0e20		FUN_005f0e20	0	0
-0079C25C		12	0x30	0079C28C	00401091	STSprGameObjC::thunk_FUN_005f0220	00401091	STSprGameObjC::thunk_FUN_005f0220	false	false	00401091	STSprGameObjC::thunk_FUN_005f0220	true	005F0220	STSprGameObjC::FUN_005f0220	STSprGameObjC	STSprGameObjC::FUN_005f0220	0	0
-0079C25C		13	0x34	0079C290	00402D1F	thunk_FUN_005f00b0	00402D1F	thunk_FUN_005f00b0	false	false	00402D1F	thunk_FUN_005f00b0	true	005F00B0	FUN_005f00b0		FUN_005f00b0	0	0
-0079C25C		14	0x38	0079C294	00403201	thunk_FUN_005f0150	00403201	thunk_FUN_005f0150	false	false	00403201	thunk_FUN_005f0150	true	005F0150	FUN_005f0150		FUN_005f0150	0	0
-0079C25C		15	0x3C	0079C298	00404DE5	thunk_FUN_0041abc0	00404DE5	thunk_FUN_0041abc0	false	false	00404DE5	thunk_FUN_0041abc0	true	0041ABC0	FUN_0041abc0		FUN_0041abc0	0	0
-0079C25C		16	0x40	0079C29C	004056DC	thunk_FUN_0041abf0	004056DC	thunk_FUN_0041abf0	false	false	004056DC	thunk_FUN_0041abf0	true	0041ABF0	FUN_0041abf0		FUN_0041abf0	0	0
-0079C25C		17	0x44	0079C2A0	0040295A	thunk_FUN_0041ac40	0040295A	thunk_FUN_0041ac40	false	false	0040295A	thunk_FUN_0041ac40	true	0041AC40	FUN_0041ac40		FUN_0041ac40	0	0
-0079C25C		18	0x48	0079C2A4	004050BF	thunk_FUN_0041ac90	004050BF	thunk_FUN_0041ac90	false	false	004050BF	thunk_FUN_0041ac90	true	0041AC90	FUN_0041ac90		FUN_0041ac90	0	0
-0079C25C		19	0x4C	0079C2A8	004014E7	thunk_FUN_0041acc0	004014E7	thunk_FUN_0041acc0	false	false	004014E7	thunk_FUN_0041acc0	true	0041ACC0	FUN_0041acc0		FUN_0041acc0	0	0
-0079C25C		20	0x50	0079C2AC	00404FC0	thunk_FUN_0041acf0	00404FC0	thunk_FUN_0041acf0	false	false	00404FC0	thunk_FUN_0041acf0	true	0041ACF0	FUN_0041acf0		FUN_0041acf0	0	0
-0079C25C		21	0x54	0079C2B0	00405B41	thunk_FUN_0041ad20	00405B41	thunk_FUN_0041ad20	false	false	00405B41	thunk_FUN_0041ad20	true	0041AD20	FUN_0041ad20		FUN_0041ad20	0	0
-0079C25C		22	0x58	0079C2B4	004039F9	thunk_FUN_0041ad50	004039F9	thunk_FUN_0041ad50	false	false	004039F9	thunk_FUN_0041ad50	true	0041AD50	FUN_0041ad50		FUN_0041ad50	0	0
-0079C25C		23	0x5C	0079C2B8	0040336E	thunk_FUN_005f0280	0040336E	thunk_FUN_005f0280	false	false	0040336E	thunk_FUN_005f0280	true	005F0280	FUN_005f0280		FUN_005f0280	0	0
-0079C25C		24	0x60	0079C2BC	00403C29	thunk_FUN_005f0240	00403C29	thunk_FUN_005f0240	false	false	00403C29	thunk_FUN_005f0240	true	005F0240	FUN_005f0240		FUN_005f0240	0	0
-0079C25C		25	0x64	0079C2C0	004045B6	thunk_FUN_0041ade0	004045B6	thunk_FUN_0041ade0	false	false	004045B6	thunk_FUN_0041ade0	true	0041ADE0	FUN_0041ade0		FUN_0041ade0	0	0
-0079C25C		26	0x68	0079C2C4	004054F7	thunk_FUN_0041ae10	004054F7	thunk_FUN_0041ae10	false	false	004054F7	thunk_FUN_0041ae10	true	0041AE10	FUN_0041ae10		FUN_0041ae10	0	0
-0079C25C		27	0x6C	0079C2C8	00401780	thunk_FUN_0041ae40	00401780	thunk_FUN_0041ae40	false	false	00401780	thunk_FUN_0041ae40	true	0041AE40	FUN_0041ae40		FUN_0041ae40	0	0
-0079C25C		28	0x70	0079C2CC	004039C2	thunk_FUN_0041ae80	004039C2	thunk_FUN_0041ae80	false	false	004039C2	thunk_FUN_0041ae80	true	0041AE80	FUN_0041ae80		FUN_0041ae80	0	0
-0079C25C		29	0x74	0079C2D0	00403756	thunk_FUN_005ec550	00403756	thunk_FUN_005ec550	false	false	00403756	thunk_FUN_005ec550	true	005EC550	FUN_005ec550		FUN_005ec550	0	0
-0079C25C		30	0x78	0079C2D4	00401EF6	thunk_FUN_005ec510	00401EF6	thunk_FUN_005ec510	false	false	00401EF6	thunk_FUN_005ec510	true	005EC510	FUN_005ec510		FUN_005ec510	0	0
-0079C25C		31	0x7C	0079C2D8	00401B81	STSprGameObjC::thunk_FUN_005efa10	00401B81	STSprGameObjC::thunk_FUN_005efa10	false	false	00401B81	STSprGameObjC::thunk_FUN_005efa10	true	005EFA10	STSprGameObjC::FUN_005efa10	STSprGameObjC	STSprGameObjC::FUN_005efa10	0	0
-0079C25C		32	0x80	0079C2DC	0040252C	thunk_FUN_005efa30	0040252C	thunk_FUN_005efa30	false	false	0040252C	thunk_FUN_005efa30	true	005EFA30	FUN_005efa30		FUN_005efa30	0	0
-0079C25C		33	0x84	0079C2E0	0040411F	thunk_FUN_0041c300	0040411F	thunk_FUN_0041c300	false	false	0040411F	thunk_FUN_0041c300	true	0041C300	FUN_0041c300		FUN_0041c300	0	0
-0079C25C		34	0x88	0079C2E4	004054D9	thunk_FUN_0041c320	004054D9	thunk_FUN_0041c320	false	false	004054D9	thunk_FUN_0041c320	true	0041C320	FUN_0041c320		FUN_0041c320	0	0
-0079C25C		35	0x8C	0079C2E8	004045DE	thunk_FUN_0041c340	004045DE	thunk_FUN_0041c340	false	false	004045DE	thunk_FUN_0041c340	true	0041C340	FUN_0041c340		FUN_0041c340	0	0
-0079C25C		36	0x90	0079C2EC	00405D26	thunk_FUN_0041c360	00405D26	thunk_FUN_0041c360	false	false	00405D26	thunk_FUN_0041c360	true	0041C360	FUN_0041c360		FUN_0041c360	0	0
-0079C25C		37	0x94	0079C2F0	0040574F	thunk_FUN_0041c380	0040574F	thunk_FUN_0041c380	false	false	0040574F	thunk_FUN_0041c380	true	0041C380	FUN_0041c380		FUN_0041c380	0	0
-0079C25C		38	0x98	0079C2F4	00403931	thunk_FUN_0041d5e0	00403931	thunk_FUN_0041d5e0	false	false	00403931	thunk_FUN_0041d5e0	true	0041D5E0	FUN_0041d5e0		FUN_0041d5e0	0	0
-0079C25C		39	0x9C	0079C2F8	00403846	thunk_FUN_0041d600	00403846	thunk_FUN_0041d600	false	false	00403846	thunk_FUN_0041d600	true	0041D600	FUN_0041d600		FUN_0041d600	0	0
-0079C25C		40	0xA0	0079C2FC	004030DF	thunk_FUN_005efa70	004030DF	thunk_FUN_005efa70	false	false	004030DF	thunk_FUN_005efa70	true	005EFA70	FUN_005efa70		FUN_005efa70	0	0
-0079C25C		41	0xA4	0079C300	00404E99	thunk_FUN_005efa90	00404E99	thunk_FUN_005efa90	false	false	00404E99	thunk_FUN_005efa90	true	005EFA90	FUN_005efa90		FUN_005efa90	0	0
-0079C25C		42	0xA8	0079C304	00405D58	STSprGameObjC::thunk_FUN_005efac0	00405D58	STSprGameObjC::thunk_FUN_005efac0	false	false	00405D58	STSprGameObjC::thunk_FUN_005efac0	true	005EFAC0	STSprGameObjC::FUN_005efac0	STSprGameObjC	STSprGameObjC::FUN_005efac0	0	0
-0079C25C		43	0xAC	0079C308	00402F9A	thunk_FUN_005efae0	00402F9A	thunk_FUN_005efae0	false	false	00402F9A	thunk_FUN_005efae0	true	005EFAE0	FUN_005efae0		FUN_005efae0	0	0
-0079C25C		44	0xB0	0079C30C	00405AC4	thunk_FUN_005efb80	00405AC4	thunk_FUN_005efb80	false	false	00405AC4	thunk_FUN_005efb80	true	005EFB80	FUN_005efb80		FUN_005efb80	0	0
-0079C25C		45	0xB4	0079C310	00403C6F	thunk_FUN_005efbd0	00403C6F	thunk_FUN_005efbd0	false	false	00403C6F	thunk_FUN_005efbd0	true	005EFBD0	FUN_005efbd0		FUN_005efbd0	0	0
-0079C25C		46	0xB8	0079C314	004018BB	thunk_FUN_005efc40	004018BB	thunk_FUN_005efc40	false	false	004018BB	thunk_FUN_005efc40	true	005EFC40	FUN_005efc40		FUN_005efc40	0	0
-0079C25C		47	0xBC	0079C318	00402969	thunk_FUN_005efcd0	00402969	thunk_FUN_005efcd0	false	false	00402969	thunk_FUN_005efcd0	true	005EFCD0	FUN_005efcd0		FUN_005efcd0	0	0
-0079C25C		48	0xC0	0079C31C	00403A53	STSprGameObjC::thunk_FUN_005f0030	00403A53	STSprGameObjC::thunk_FUN_005f0030	false	false	00403A53	STSprGameObjC::thunk_FUN_005f0030	true	005F0030	STSprGameObjC::FUN_005f0030	STSprGameObjC	STSprGameObjC::FUN_005f0030	0	0
-0079C25C		49	0xC4	0079C320	00405E02	thunk_FUN_0041d8c0	00405E02	thunk_FUN_0041d8c0	false	false	00405E02	thunk_FUN_0041d8c0	true	0041D8C0	FUN_0041d8c0		FUN_0041d8c0	0	0
-0079C25C		50	0xC8	0079C324	00404ECB	thunk_FUN_00418ce0	00404ECB	thunk_FUN_00418ce0	false	false	00404ECB	thunk_FUN_00418ce0	true	00418CE0	FUN_00418ce0		FUN_00418ce0	0	0
-0079C25C		51	0xCC	0079C328	00403AEE	thunk_FUN_00418d00	00403AEE	thunk_FUN_00418d00	false	false	00403AEE	thunk_FUN_00418d00	true	00418D00	FUN_00418d00		FUN_00418d00	0	0
-0079C25C		52	0xD0	0079C32C	004034D6	thunk_FUN_004d7010	004034D6	thunk_FUN_004d7010	false	false	004034D6	thunk_FUN_004d7010	true	004D7010	FUN_004d7010		FUN_004d7010	0	0
-0079C25C		53	0xD4	0079C330	0040167C	thunk_FUN_004d7040	0040167C	thunk_FUN_004d7040	false	false	0040167C	thunk_FUN_004d7040	true	004D7040	FUN_004d7040		FUN_004d7040	0	0
-0079C25C		54	0xD8	0079C334	004053DA	thunk_FUN_0041da10	004053DA	thunk_FUN_0041da10	false	false	004053DA	thunk_FUN_0041da10	true	0041DA10	FUN_0041da10		FUN_0041da10	0	0
-0079C25C		55	0xDC	0079C338	0040503D	thunk_FUN_0041da30	0040503D	thunk_FUN_0041da30	false	false	0040503D	thunk_FUN_0041da30	true	0041DA30	FUN_0041da30		FUN_0041da30	0	0
-0079C25C		56	0xE0	0079C33C	004037AB	thunk_FUN_005ee080	004037AB	thunk_FUN_005ee080	false	false	004037AB	thunk_FUN_005ee080	true	005EE080	FUN_005ee080		FUN_005ee080	0	0
-0079C25C		57	0xE4	0079C340	004049E9	thunk_FUN_005ee3f0	004049E9	thunk_FUN_005ee3f0	false	false	004049E9	thunk_FUN_005ee3f0	true	005EE3F0	FUN_005ee3f0		FUN_005ee3f0	0	0
-0079C25C		58	0xE8	0079C344	004018ED	thunk_FUN_0041dc20	004018ED	thunk_FUN_0041dc20	false	false	004018ED	thunk_FUN_0041dc20	true	0041DC20	FUN_0041dc20		FUN_0041dc20	0	0
-0079C25C		59	0xEC	0079C348	00404E8A	thunk_FUN_0041dd00	00404E8A	thunk_FUN_0041dd00	false	false	00404E8A	thunk_FUN_0041dd00	true	0041DD00	FUN_0041dd00		FUN_0041dd00	0	0
-0079C25C		60	0xF0	0079C34C	00402365	STSprGameObjC::thunk_FUN_005ef9f0	00402365	STSprGameObjC::thunk_FUN_005ef9f0	false	false	00402365	STSprGameObjC::thunk_FUN_005ef9f0	true	005EF9F0	STSprGameObjC::FUN_005ef9f0	STSprGameObjC	STSprGameObjC::FUN_005ef9f0	0	0
-0079C25C		61	0xF4	0079C350	00405CE0	thunk_FUN_005f0090	00405CE0	thunk_FUN_005f0090	false	false	00405CE0	thunk_FUN_005f0090	true	005F0090	FUN_005f0090		FUN_005f0090	0	0
-0079C25C		62	0xF8	0079C354	00403C9C	thunk_FUN_0041f350	00403C9C	thunk_FUN_0041f350	false	false	00403C9C	thunk_FUN_0041f350	true	0041F350	FUN_0041f350		FUN_0041f350	0	0
-0079C25C		63	0xFC	0079C358	004018DE	thunk_FUN_005f0050	004018DE	thunk_FUN_005f0050	false	false	004018DE	thunk_FUN_005f0050	true	005F0050	FUN_005f0050		FUN_005f0050	0	0
-0079C25C		64	0x100	0079C35C	00403E13	thunk_FUN_004210c0	00403E13	thunk_FUN_004210c0	false	false	00403E13	thunk_FUN_004210c0	true	004210C0	FUN_004210c0		FUN_004210c0	0	0
-0079C25C		65	0x104	0079C360	00401B3B	thunk_FUN_00422e20	00401B3B	thunk_FUN_00422e20	false	false	00401B3B	thunk_FUN_00422e20	true	00422E20	FUN_00422e20		FUN_00422e20	0	0
-0079C25C		66	0x108	0079C364	00401DAC	thunk_FUN_00422ff0	00401DAC	thunk_FUN_00422ff0	false	false	00401DAC	thunk_FUN_00422ff0	true	00422FF0	FUN_00422ff0		FUN_00422ff0	0	0
-0079C25C		67	0x10C	0079C368	00402482	thunk_FUN_00423140	00402482	thunk_FUN_00423140	false	false	00402482	thunk_FUN_00423140	true	00423140	FUN_00423140		FUN_00423140	0	0
-0079C25C		68	0x110	0079C36C	00401474	thunk_FUN_00423160	00401474	thunk_FUN_00423160	false	false	00401474	thunk_FUN_00423160	true	00423160	FUN_00423160		FUN_00423160	0	0
-0079C25C		69	0x114	0079C370	00402BB2	thunk_FUN_00423180	00402BB2	thunk_FUN_00423180	false	false	00402BB2	thunk_FUN_00423180	true	00423180	FUN_00423180		FUN_00423180	0	0
-0079C25C		70	0x118	0079C374	00402757	thunk_FUN_005f0470	00402757	thunk_FUN_005f0470	false	false	00402757	thunk_FUN_005f0470	true	005F0470	FUN_005f0470		FUN_005f0470	0	0
-0079C25C		71	0x11C	0079C378	00404679	thunk_FUN_005f04b0	00404679	thunk_FUN_005f04b0	false	false	00404679	thunk_FUN_005f04b0	true	005F04B0	FUN_005f04b0		FUN_005f04b0	0	0
-0079C25C		72	0x120	0079C37C	00404F66	thunk_FUN_004231e0	00404F66	thunk_FUN_004231e0	false	false	00404F66	thunk_FUN_004231e0	true	004231E0	FUN_004231e0		FUN_004231e0	0	0
-0079C25C		73	0x124	0079C380	004045CF	thunk_FUN_00423200	004045CF	thunk_FUN_00423200	false	false	004045CF	thunk_FUN_00423200	true	00423200	FUN_00423200		FUN_00423200	0	0
-0079C25C		74	0x128	0079C384	0040306C	thunk_FUN_005ebd00	0040306C	thunk_FUN_005ebd00	false	false	0040306C	thunk_FUN_005ebd00	true	005EBD00	FUN_005ebd00		FUN_005ebd00	0	0
-0079C25C		75	0x12C	0079C388	004040C0	thunk_FUN_005ef490	004040C0	thunk_FUN_005ef490	false	false	004040C0	thunk_FUN_005ef490	true	005EF490	FUN_005ef490		FUN_005ef490	0	0
-0079C25C		76	0x130	0079C38C	00403D55	thunk_FUN_005f0360	00403D55	thunk_FUN_005f0360	false	false	00403D55	thunk_FUN_005f0360	true	005F0360	FUN_005f0360		FUN_005f0360	0	0
-0079C25C		77	0x134	0079C390	00405006	thunk_FUN_005f03d0	00405006	thunk_FUN_005f03d0	false	false	00405006	thunk_FUN_005f03d0	true	005F03D0	FUN_005f03d0		FUN_005f03d0	0	0
-0079C25C		78	0x138	0079C394	0040508D	thunk_FUN_005ec680	0040508D	thunk_FUN_005ec680	false	false	0040508D	thunk_FUN_005ec680	true	005EC680	FUN_005ec680		FUN_005ec680	0	0
-0079C25C		79	0x13C	0079C398	00404115	thunk_FUN_005f0410	00404115	thunk_FUN_005f0410	false	false	00404115	thunk_FUN_005f0410	true	005F0410	FUN_005f0410		FUN_005f0410	0	0
-0079C25C		80	0x140	0079C39C	00401FEB	thunk_FUN_005ec620	00401FEB	thunk_FUN_005ec620	false	false	00401FEB	thunk_FUN_005ec620	true	005EC620	FUN_005ec620		FUN_005ec620	0	0
-0079C25C		81	0x144	0079C3A0	00403F5D	thunk_FUN_005ec640	00403F5D	thunk_FUN_005ec640	false	false	00403F5D	thunk_FUN_005ec640	true	005EC640	FUN_005ec640		FUN_005ec640	0	0
-0079C25C		82	0x148	0079C3A4	00404C87	thunk_FUN_005ef5d0	00404C87	thunk_FUN_005ef5d0	false	false	00404C87	thunk_FUN_005ef5d0	true	005EF5D0	FUN_005ef5d0		FUN_005ef5d0	0	0
+0079C25C	STArtiafactC	0	0x0	0079C25C	00405605	thunk_FUN_004210a0	00405605	thunk_FUN_004210a0	false	false	00405605	thunk_FUN_004210a0	true	004210A0	FUN_004210a0		STArtiafactC::vfunc_00	0	0
+0079C260	STArtiafactC	0	0x0	0079C260	00404D68	STArtiafactC::GetMessage	00404D68	STArtiafactC::GetMessage	false	false	00404D68	STArtiafactC::GetMessage	true	005EAF10	STArtiafactC::GetMessage	STArtiafactC	STArtiafactC::GetMessage	0	0
+0079C260	STArtiafactC	1	0x4	0079C264	00402964	thunk_FUN_00415b10	00402964	thunk_FUN_00415b10	false	false	00402964	thunk_FUN_00415b10	true	00415B10	FUN_00415b10		STArtiafactC::vfunc_04	0	0
+0079C260	STArtiafactC	2	0x8	0079C268	00404F25	thunk_FUN_0041e510	00404F25	thunk_FUN_0041e510	false	false	00404F25	thunk_FUN_0041e510	true	0041E510	FUN_0041e510		STArtiafactC::vfunc_08	0	0
+0079C260	STArtiafactC	3	0xC	0079C26C	004039E5	thunk_FUN_005f0380	004039E5	thunk_FUN_005f0380	false	false	004039E5	thunk_FUN_005f0380	true	005F0380	FUN_005f0380		STArtiafactC::vfunc_0C	0	0
+0079C260	STArtiafactC	4	0x10	0079C270	00402AFE	thunk_FUN_004168d0	00402AFE	thunk_FUN_004168d0	false	false	00402AFE	thunk_FUN_004168d0	true	004168D0	FUN_004168d0		STArtiafactC::vfunc_10	0	0
+0079C260	STArtiafactC	5	0x14	0079C274	004036AC	thunk_FUN_00416db0	004036AC	thunk_FUN_00416db0	false	false	004036AC	thunk_FUN_00416db0	true	00416DB0	FUN_00416db0		STArtiafactC::vfunc_14	0	0
+0079C260	STArtiafactC	6	0x18	0079C278	00404BCE	thunk_FUN_00417f30	00404BCE	thunk_FUN_00417f30	false	false	00404BCE	thunk_FUN_00417f30	true	00417F30	FUN_00417f30		STArtiafactC::vfunc_18	0	0
+0079C260	STArtiafactC	7	0x1C	0079C27C	004048F9	STGameObjC::MoveStep	004048F9	STGameObjC::MoveStep	false	false	004048F9	STGameObjC::MoveStep	true	004189D0	STGameObjC::MoveStep	STGameObjC	STGameObjC::MoveStep	0	0
+0079C260	STArtiafactC	8	0x20	0079C280	00404DD1	thunk_FUN_00419a90	00404DD1	thunk_FUN_00419a90	false	false	00404DD1	thunk_FUN_00419a90	true	00419A90	FUN_00419a90		STArtiafactC::vfunc_20	0	0
+0079C260	STArtiafactC	9	0x24	0079C284	00401438	thunk_FUN_00419bf0	00401438	thunk_FUN_00419bf0	false	false	00401438	thunk_FUN_00419bf0	true	00419BF0	FUN_00419bf0		STArtiafactC::vfunc_24	0	0
+0079C260	STArtiafactC	10	0x28	0079C288	00401F96	thunk_FUN_005f0e20	00401F96	thunk_FUN_005f0e20	false	false	00401F96	thunk_FUN_005f0e20	true	005F0E20	FUN_005f0e20		STArtiafactC::vfunc_28	0	0
+0079C260	STArtiafactC	11	0x2C	0079C28C	00401091	STSprGameObjC::thunk_FUN_005f0220	00401091	STSprGameObjC::thunk_FUN_005f0220	false	false	00401091	STSprGameObjC::thunk_FUN_005f0220	true	005F0220	STSprGameObjC::FUN_005f0220	STSprGameObjC	STSprGameObjC::FUN_005f0220	0	0
+0079C260	STArtiafactC	12	0x30	0079C290	00402D1F	thunk_FUN_005f00b0	00402D1F	thunk_FUN_005f00b0	false	false	00402D1F	thunk_FUN_005f00b0	true	005F00B0	FUN_005f00b0		STArtiafactC::vfunc_30	0	0
+0079C260	STArtiafactC	13	0x34	0079C294	00403201	thunk_FUN_005f0150	00403201	thunk_FUN_005f0150	false	false	00403201	thunk_FUN_005f0150	true	005F0150	FUN_005f0150		STArtiafactC::vfunc_34	0	0
+0079C260	STArtiafactC	14	0x38	0079C298	00404DE5	thunk_FUN_0041abc0	00404DE5	thunk_FUN_0041abc0	false	false	00404DE5	thunk_FUN_0041abc0	true	0041ABC0	FUN_0041abc0		STArtiafactC::vfunc_38	0	0
+0079C260	STArtiafactC	15	0x3C	0079C29C	004056DC	thunk_FUN_0041abf0	004056DC	thunk_FUN_0041abf0	false	false	004056DC	thunk_FUN_0041abf0	true	0041ABF0	FUN_0041abf0		STArtiafactC::vfunc_3C	0	0
+0079C260	STArtiafactC	16	0x40	0079C2A0	0040295A	thunk_FUN_0041ac40	0040295A	thunk_FUN_0041ac40	false	false	0040295A	thunk_FUN_0041ac40	true	0041AC40	FUN_0041ac40		STArtiafactC::vfunc_40	0	0
+0079C260	STArtiafactC	17	0x44	0079C2A4	004050BF	thunk_FUN_0041ac90	004050BF	thunk_FUN_0041ac90	false	false	004050BF	thunk_FUN_0041ac90	true	0041AC90	FUN_0041ac90		STArtiafactC::vfunc_44	0	0
+0079C260	STArtiafactC	18	0x48	0079C2A8	004014E7	thunk_FUN_0041acc0	004014E7	thunk_FUN_0041acc0	false	false	004014E7	thunk_FUN_0041acc0	true	0041ACC0	FUN_0041acc0		STArtiafactC::vfunc_48	0	0
+0079C260	STArtiafactC	19	0x4C	0079C2AC	00404FC0	thunk_FUN_0041acf0	00404FC0	thunk_FUN_0041acf0	false	false	00404FC0	thunk_FUN_0041acf0	true	0041ACF0	FUN_0041acf0		STArtiafactC::vfunc_4C	0	0
+0079C260	STArtiafactC	20	0x50	0079C2B0	00405B41	thunk_FUN_0041ad20	00405B41	thunk_FUN_0041ad20	false	false	00405B41	thunk_FUN_0041ad20	true	0041AD20	FUN_0041ad20		STArtiafactC::vfunc_50	0	0
+0079C260	STArtiafactC	21	0x54	0079C2B4	004039F9	thunk_FUN_0041ad50	004039F9	thunk_FUN_0041ad50	false	false	004039F9	thunk_FUN_0041ad50	true	0041AD50	FUN_0041ad50		STArtiafactC::vfunc_54	0	0
+0079C260	STArtiafactC	22	0x58	0079C2B8	0040336E	thunk_FUN_005f0280	0040336E	thunk_FUN_005f0280	false	false	0040336E	thunk_FUN_005f0280	true	005F0280	FUN_005f0280		STArtiafactC::vfunc_58	0	0
+0079C260	STArtiafactC	23	0x5C	0079C2BC	00403C29	thunk_FUN_005f0240	00403C29	thunk_FUN_005f0240	false	false	00403C29	thunk_FUN_005f0240	true	005F0240	FUN_005f0240		STArtiafactC::vfunc_5C	0	0
+0079C260	STArtiafactC	24	0x60	0079C2C0	004045B6	thunk_FUN_0041ade0	004045B6	thunk_FUN_0041ade0	false	false	004045B6	thunk_FUN_0041ade0	true	0041ADE0	FUN_0041ade0		STArtiafactC::vfunc_60	0	0
+0079C260	STArtiafactC	25	0x64	0079C2C4	004054F7	thunk_FUN_0041ae10	004054F7	thunk_FUN_0041ae10	false	false	004054F7	thunk_FUN_0041ae10	true	0041AE10	FUN_0041ae10		STArtiafactC::vfunc_64	0	0
+0079C260	STArtiafactC	26	0x68	0079C2C8	00401780	thunk_FUN_0041ae40	00401780	thunk_FUN_0041ae40	false	false	00401780	thunk_FUN_0041ae40	true	0041AE40	FUN_0041ae40		STArtiafactC::vfunc_68	0	0
+0079C260	STArtiafactC	27	0x6C	0079C2CC	004039C2	thunk_FUN_0041ae80	004039C2	thunk_FUN_0041ae80	false	false	004039C2	thunk_FUN_0041ae80	true	0041AE80	FUN_0041ae80		STArtiafactC::vfunc_6C	0	0
+0079C260	STArtiafactC	28	0x70	0079C2D0	00403756	thunk_FUN_005ec550	00403756	thunk_FUN_005ec550	false	false	00403756	thunk_FUN_005ec550	true	005EC550	FUN_005ec550		STArtiafactC::vfunc_70	0	0
+0079C260	STArtiafactC	29	0x74	0079C2D4	00401EF6	thunk_FUN_005ec510	00401EF6	thunk_FUN_005ec510	false	false	00401EF6	thunk_FUN_005ec510	true	005EC510	FUN_005ec510		STArtiafactC::vfunc_74	0	0
+0079C260	STArtiafactC	30	0x78	0079C2D8	00401B81	STSprGameObjC::thunk_FUN_005efa10	00401B81	STSprGameObjC::thunk_FUN_005efa10	false	false	00401B81	STSprGameObjC::thunk_FUN_005efa10	true	005EFA10	STSprGameObjC::FUN_005efa10	STSprGameObjC	STSprGameObjC::FUN_005efa10	0	0
+0079C260	STArtiafactC	31	0x7C	0079C2DC	0040252C	thunk_FUN_005efa30	0040252C	thunk_FUN_005efa30	false	false	0040252C	thunk_FUN_005efa30	true	005EFA30	FUN_005efa30		STArtiafactC::vfunc_7C	0	0
+0079C260	STArtiafactC	32	0x80	0079C2E0	0040411F	thunk_FUN_0041c300	0040411F	thunk_FUN_0041c300	false	false	0040411F	thunk_FUN_0041c300	true	0041C300	FUN_0041c300		STArtiafactC::vfunc_80	0	0
+0079C260	STArtiafactC	33	0x84	0079C2E4	004054D9	thunk_FUN_0041c320	004054D9	thunk_FUN_0041c320	false	false	004054D9	thunk_FUN_0041c320	true	0041C320	FUN_0041c320		STArtiafactC::vfunc_84	0	0
+0079C260	STArtiafactC	34	0x88	0079C2E8	004045DE	thunk_FUN_0041c340	004045DE	thunk_FUN_0041c340	false	false	004045DE	thunk_FUN_0041c340	true	0041C340	FUN_0041c340		STArtiafactC::vfunc_88	0	0
+0079C260	STArtiafactC	35	0x8C	0079C2EC	00405D26	thunk_FUN_0041c360	00405D26	thunk_FUN_0041c360	false	false	00405D26	thunk_FUN_0041c360	true	0041C360	FUN_0041c360		STArtiafactC::vfunc_8C	0	0
+0079C260	STArtiafactC	36	0x90	0079C2F0	0040574F	thunk_FUN_0041c380	0040574F	thunk_FUN_0041c380	false	false	0040574F	thunk_FUN_0041c380	true	0041C380	FUN_0041c380		STArtiafactC::vfunc_90	0	0
+0079C260	STArtiafactC	37	0x94	0079C2F4	00403931	thunk_FUN_0041d5e0	00403931	thunk_FUN_0041d5e0	false	false	00403931	thunk_FUN_0041d5e0	true	0041D5E0	FUN_0041d5e0		STArtiafactC::vfunc_94	0	0
+0079C260	STArtiafactC	38	0x98	0079C2F8	00403846	thunk_FUN_0041d600	00403846	thunk_FUN_0041d600	false	false	00403846	thunk_FUN_0041d600	true	0041D600	FUN_0041d600		STArtiafactC::vfunc_98	0	0
+0079C260	STArtiafactC	39	0x9C	0079C2FC	004030DF	thunk_FUN_005efa70	004030DF	thunk_FUN_005efa70	false	false	004030DF	thunk_FUN_005efa70	true	005EFA70	FUN_005efa70		STArtiafactC::vfunc_9C	0	0
+0079C260	STArtiafactC	40	0xA0	0079C300	00404E99	thunk_FUN_005efa90	00404E99	thunk_FUN_005efa90	false	false	00404E99	thunk_FUN_005efa90	true	005EFA90	FUN_005efa90		STArtiafactC::vfunc_A0	0	0
+0079C260	STArtiafactC	41	0xA4	0079C304	00405D58	STSprGameObjC::thunk_FUN_005efac0	00405D58	STSprGameObjC::thunk_FUN_005efac0	false	false	00405D58	STSprGameObjC::thunk_FUN_005efac0	true	005EFAC0	STSprGameObjC::FUN_005efac0	STSprGameObjC	STSprGameObjC::FUN_005efac0	0	0
+0079C260	STArtiafactC	42	0xA8	0079C308	00402F9A	thunk_FUN_005efae0	00402F9A	thunk_FUN_005efae0	false	false	00402F9A	thunk_FUN_005efae0	true	005EFAE0	FUN_005efae0		STArtiafactC::vfunc_A8	0	0
+0079C260	STArtiafactC	43	0xAC	0079C30C	00405AC4	thunk_FUN_005efb80	00405AC4	thunk_FUN_005efb80	false	false	00405AC4	thunk_FUN_005efb80	true	005EFB80	FUN_005efb80		STArtiafactC::vfunc_AC	0	0
+0079C260	STArtiafactC	44	0xB0	0079C310	00403C6F	thunk_FUN_005efbd0	00403C6F	thunk_FUN_005efbd0	false	false	00403C6F	thunk_FUN_005efbd0	true	005EFBD0	FUN_005efbd0		STArtiafactC::vfunc_B0	0	0
+0079C260	STArtiafactC	45	0xB4	0079C314	004018BB	thunk_FUN_005efc40	004018BB	thunk_FUN_005efc40	false	false	004018BB	thunk_FUN_005efc40	true	005EFC40	FUN_005efc40		STArtiafactC::vfunc_B4	0	0
+0079C260	STArtiafactC	46	0xB8	0079C318	00402969	thunk_FUN_005efcd0	00402969	thunk_FUN_005efcd0	false	false	00402969	thunk_FUN_005efcd0	true	005EFCD0	FUN_005efcd0		STArtiafactC::vfunc_B8	0	0
+0079C260	STArtiafactC	47	0xBC	0079C31C	00403A53	STSprGameObjC::thunk_FUN_005f0030	00403A53	STSprGameObjC::thunk_FUN_005f0030	false	false	00403A53	STSprGameObjC::thunk_FUN_005f0030	true	005F0030	STSprGameObjC::FUN_005f0030	STSprGameObjC	STSprGameObjC::FUN_005f0030	0	0
+0079C260	STArtiafactC	48	0xC0	0079C320	00405E02	thunk_FUN_0041d8c0	00405E02	thunk_FUN_0041d8c0	false	false	00405E02	thunk_FUN_0041d8c0	true	0041D8C0	FUN_0041d8c0		STArtiafactC::vfunc_C0	0	0
+0079C260	STArtiafactC	49	0xC4	0079C324	00404ECB	thunk_FUN_00418ce0	00404ECB	thunk_FUN_00418ce0	false	false	00404ECB	thunk_FUN_00418ce0	true	00418CE0	FUN_00418ce0		STArtiafactC::vfunc_C4	0	0
+0079C260	STArtiafactC	50	0xC8	0079C328	00403AEE	thunk_FUN_00418d00	00403AEE	thunk_FUN_00418d00	false	false	00403AEE	thunk_FUN_00418d00	true	00418D00	FUN_00418d00		STArtiafactC::vfunc_C8	0	0
+0079C260	STArtiafactC	51	0xCC	0079C32C	004034D6	thunk_FUN_004d7010	004034D6	thunk_FUN_004d7010	false	false	004034D6	thunk_FUN_004d7010	true	004D7010	FUN_004d7010		STArtiafactC::vfunc_CC	0	0
+0079C260	STArtiafactC	52	0xD0	0079C330	0040167C	thunk_FUN_004d7040	0040167C	thunk_FUN_004d7040	false	false	0040167C	thunk_FUN_004d7040	true	004D7040	FUN_004d7040		STArtiafactC::vfunc_D0	0	0
+0079C260	STArtiafactC	53	0xD4	0079C334	004053DA	thunk_FUN_0041da10	004053DA	thunk_FUN_0041da10	false	false	004053DA	thunk_FUN_0041da10	true	0041DA10	FUN_0041da10		STArtiafactC::vfunc_D4	0	0
+0079C260	STArtiafactC	54	0xD8	0079C338	0040503D	thunk_FUN_0041da30	0040503D	thunk_FUN_0041da30	false	false	0040503D	thunk_FUN_0041da30	true	0041DA30	FUN_0041da30		STArtiafactC::vfunc_D8	0	0
+0079C260	STArtiafactC	55	0xDC	0079C33C	004037AB	thunk_FUN_005ee080	004037AB	thunk_FUN_005ee080	false	false	004037AB	thunk_FUN_005ee080	true	005EE080	FUN_005ee080		STArtiafactC::vfunc_DC	0	0
+0079C260	STArtiafactC	56	0xE0	0079C340	004049E9	thunk_FUN_005ee3f0	004049E9	thunk_FUN_005ee3f0	false	false	004049E9	thunk_FUN_005ee3f0	true	005EE3F0	FUN_005ee3f0		STArtiafactC::vfunc_E0	0	0
+0079C260	STArtiafactC	57	0xE4	0079C344	004018ED	thunk_FUN_0041dc20	004018ED	thunk_FUN_0041dc20	false	false	004018ED	thunk_FUN_0041dc20	true	0041DC20	FUN_0041dc20		STArtiafactC::vfunc_E4	0	0
+0079C260	STArtiafactC	58	0xE8	0079C348	00404E8A	thunk_FUN_0041dd00	00404E8A	thunk_FUN_0041dd00	false	false	00404E8A	thunk_FUN_0041dd00	true	0041DD00	FUN_0041dd00		STArtiafactC::vfunc_E8	0	0
+0079C260	STArtiafactC	59	0xEC	0079C34C	00402365	STSprGameObjC::thunk_FUN_005ef9f0	00402365	STSprGameObjC::thunk_FUN_005ef9f0	false	false	00402365	STSprGameObjC::thunk_FUN_005ef9f0	true	005EF9F0	STSprGameObjC::FUN_005ef9f0	STSprGameObjC	STSprGameObjC::FUN_005ef9f0	0	0
+0079C260	STArtiafactC	60	0xF0	0079C350	00405CE0	thunk_FUN_005f0090	00405CE0	thunk_FUN_005f0090	false	false	00405CE0	thunk_FUN_005f0090	true	005F0090	FUN_005f0090		STArtiafactC::vfunc_F0	0	0
+0079C260	STArtiafactC	61	0xF4	0079C354	00403C9C	thunk_FUN_0041f350	00403C9C	thunk_FUN_0041f350	false	false	00403C9C	thunk_FUN_0041f350	true	0041F350	FUN_0041f350		STArtiafactC::vfunc_F4	0	0
+0079C260	STArtiafactC	62	0xF8	0079C358	004018DE	thunk_FUN_005f0050	004018DE	thunk_FUN_005f0050	false	false	004018DE	thunk_FUN_005f0050	true	005F0050	FUN_005f0050		STArtiafactC::vfunc_F8	0	0
+0079C260	STArtiafactC	63	0xFC	0079C35C	00403E13	thunk_FUN_004210c0	00403E13	thunk_FUN_004210c0	false	false	00403E13	thunk_FUN_004210c0	true	004210C0	FUN_004210c0		STArtiafactC::vfunc_FC	0	0
+0079C260	STArtiafactC	64	0x100	0079C360	00401B3B	thunk_FUN_00422e20	00401B3B	thunk_FUN_00422e20	false	false	00401B3B	thunk_FUN_00422e20	true	00422E20	FUN_00422e20		STArtiafactC::vfunc_100	0	0
+0079C260	STArtiafactC	65	0x104	0079C364	00401DAC	thunk_FUN_00422ff0	00401DAC	thunk_FUN_00422ff0	false	false	00401DAC	thunk_FUN_00422ff0	true	00422FF0	FUN_00422ff0		STArtiafactC::vfunc_104	0	0
+0079C260	STArtiafactC	66	0x108	0079C368	00402482	thunk_FUN_00423140	00402482	thunk_FUN_00423140	false	false	00402482	thunk_FUN_00423140	true	00423140	FUN_00423140		STArtiafactC::vfunc_108	0	0
+0079C260	STArtiafactC	67	0x10C	0079C36C	00401474	thunk_FUN_00423160	00401474	thunk_FUN_00423160	false	false	00401474	thunk_FUN_00423160	true	00423160	FUN_00423160		STArtiafactC::vfunc_10C	0	0
+0079C260	STArtiafactC	68	0x110	0079C370	00402BB2	thunk_FUN_00423180	00402BB2	thunk_FUN_00423180	false	false	00402BB2	thunk_FUN_00423180	true	00423180	FUN_00423180		STArtiafactC::vfunc_110	0	0
+0079C260	STArtiafactC	69	0x114	0079C374	00402757	thunk_FUN_005f0470	00402757	thunk_FUN_005f0470	false	false	00402757	thunk_FUN_005f0470	true	005F0470	FUN_005f0470		STArtiafactC::vfunc_114	0	0
+0079C260	STArtiafactC	70	0x118	0079C378	00404679	thunk_FUN_005f04b0	00404679	thunk_FUN_005f04b0	false	false	00404679	thunk_FUN_005f04b0	true	005F04B0	FUN_005f04b0		STArtiafactC::vfunc_118	0	0
+0079C260	STArtiafactC	71	0x11C	0079C37C	00404F66	thunk_FUN_004231e0	00404F66	thunk_FUN_004231e0	false	false	00404F66	thunk_FUN_004231e0	true	004231E0	FUN_004231e0		STArtiafactC::vfunc_11C	0	0
+0079C260	STArtiafactC	72	0x120	0079C380	004045CF	thunk_FUN_00423200	004045CF	thunk_FUN_00423200	false	false	004045CF	thunk_FUN_00423200	true	00423200	FUN_00423200		STArtiafactC::vfunc_120	0	0
+0079C260	STArtiafactC	73	0x124	0079C384	0040306C	thunk_FUN_005ebd00	0040306C	thunk_FUN_005ebd00	false	false	0040306C	thunk_FUN_005ebd00	true	005EBD00	FUN_005ebd00		STArtiafactC::vfunc_124	0	0
+0079C260	STArtiafactC	74	0x128	0079C388	004040C0	STArtiafactC::thunk_FUN_005ef490	004040C0	STArtiafactC::thunk_FUN_005ef490	false	false	004040C0	STArtiafactC::thunk_FUN_005ef490	true	005EF490	STArtiafactC::FUN_005ef490	STArtiafactC	STArtiafactC::FUN_005ef490	0	0
+0079C260	STArtiafactC	75	0x12C	0079C38C	00403D55	thunk_FUN_005f0360	00403D55	thunk_FUN_005f0360	false	false	00403D55	thunk_FUN_005f0360	true	005F0360	FUN_005f0360		STArtiafactC::vfunc_12C	0	0
+0079C260	STArtiafactC	76	0x130	0079C390	00405006	thunk_FUN_005f03d0	00405006	thunk_FUN_005f03d0	false	false	00405006	thunk_FUN_005f03d0	true	005F03D0	FUN_005f03d0		STArtiafactC::vfunc_130	0	0
+0079C260	STArtiafactC	77	0x134	0079C394	0040508D	STArtiafactC::thunk_FUN_005ec680	0040508D	STArtiafactC::thunk_FUN_005ec680	false	false	0040508D	STArtiafactC::thunk_FUN_005ec680	true	005EC680	STArtiafactC::FUN_005ec680	STArtiafactC	STArtiafactC::FUN_005ec680	0	0
+0079C260	STArtiafactC	78	0x138	0079C398	00404115	thunk_FUN_005f0410	00404115	thunk_FUN_005f0410	false	false	00404115	thunk_FUN_005f0410	true	005F0410	FUN_005f0410		STArtiafactC::vfunc_138	0	0
+0079C260	STArtiafactC	79	0x13C	0079C39C	00401FEB	STArtiafactC::thunk_FUN_005ec620	00401FEB	STArtiafactC::thunk_FUN_005ec620	false	false	00401FEB	STArtiafactC::thunk_FUN_005ec620	true	005EC620	STArtiafactC::FUN_005ec620	STArtiafactC	STArtiafactC::FUN_005ec620	0	0
+0079C260	STArtiafactC	80	0x140	0079C3A0	00403F5D	thunk_FUN_005ec640	00403F5D	thunk_FUN_005ec640	false	false	00403F5D	thunk_FUN_005ec640	true	005EC640	FUN_005ec640		STArtiafactC::vfunc_140	0	0
+0079C260	STArtiafactC	81	0x144	0079C3A4	00404C87	thunk_FUN_005ef5d0	00404C87	thunk_FUN_005ef5d0	false	false	00404C87	thunk_FUN_005ef5d0	true	005EF5D0	FUN_005ef5d0		STArtiafactC::vfunc_144	0	0
 0079C3EC	STSprGameObjC	0	0x0	0079C3EC	00404F07	STSprGameObjC::GetMessage	00404F07	STSprGameObjC::GetMessage	false	false	00404F07	STSprGameObjC::GetMessage	true	0041E530	STSprGameObjC::GetMessage	STSprGameObjC	STSprGameObjC::GetMessage	0	0
 0079C3EC	STSprGameObjC	1	0x4	0079C3F0	00402964	thunk_FUN_00415b10	00402964	thunk_FUN_00415b10	false	false	00402964	thunk_FUN_00415b10	true	00415B10	FUN_00415b10		STSprGameObjC::vfunc_04	0	0
 0079C3EC	STSprGameObjC	2	0x8	0079C3F4	00404F25	thunk_FUN_0041e510	00404F25	thunk_FUN_0041e510	false	false	00404F25	thunk_FUN_0041e510	true	0041E510	FUN_0041e510		STSprGameObjC::vfunc_08	0	0
@@ -1597,89 +1603,89 @@ table_address	owner	slot_index	slot_offset	pointer_address	raw_target_address	ra
 0079C5AC	STColl3C	70	0x118	0079C6C4	004041E2	thunk_FUN_004231c0	004041E2	thunk_FUN_004231c0	false	false	004041E2	thunk_FUN_004231c0	true	004231C0	FUN_004231c0		STColl3C::vfunc_118	0	0
 0079C5AC	STColl3C	71	0x11C	0079C6C8	00404F66	thunk_FUN_004231e0	00404F66	thunk_FUN_004231e0	false	false	00404F66	thunk_FUN_004231e0	true	004231E0	FUN_004231e0		STColl3C::vfunc_11C	0	0
 0079C5AC	STColl3C	72	0x120	0079C6CC	004045CF	thunk_FUN_00423200	004045CF	thunk_FUN_00423200	false	false	004045CF	thunk_FUN_00423200	true	00423200	FUN_00423200		STColl3C::vfunc_120	0	0
-0079C710		0	0x0	0079C710	00405605	thunk_FUN_004210a0	00405605	thunk_FUN_004210a0	false	false	00405605	thunk_FUN_004210a0	true	004210A0	FUN_004210a0		FUN_004210a0	0	0
-0079C710		1	0x4	0079C714	004033C3	STContainerC::GetMessage	004033C3	STContainerC::GetMessage	false	false	004033C3	STContainerC::GetMessage	true	005FB640	STContainerC::GetMessage	STContainerC	STContainerC::GetMessage	0	0
-0079C710		2	0x8	0079C718	00402964	thunk_FUN_00415b10	00402964	thunk_FUN_00415b10	false	false	00402964	thunk_FUN_00415b10	true	00415B10	FUN_00415b10		FUN_00415b10	0	0
-0079C710		3	0xC	0079C71C	00404F25	thunk_FUN_0041e510	00404F25	thunk_FUN_0041e510	false	false	00404F25	thunk_FUN_0041e510	true	0041E510	FUN_0041e510		FUN_0041e510	0	0
-0079C710		4	0x10	0079C720	004039E5	thunk_FUN_005f0380	004039E5	thunk_FUN_005f0380	false	false	004039E5	thunk_FUN_005f0380	true	005F0380	FUN_005f0380		FUN_005f0380	0	0
-0079C710		5	0x14	0079C724	00402AFE	thunk_FUN_004168d0	00402AFE	thunk_FUN_004168d0	false	false	00402AFE	thunk_FUN_004168d0	true	004168D0	FUN_004168d0		FUN_004168d0	0	0
-0079C710		6	0x18	0079C728	004036AC	thunk_FUN_00416db0	004036AC	thunk_FUN_00416db0	false	false	004036AC	thunk_FUN_00416db0	true	00416DB0	FUN_00416db0		FUN_00416db0	0	0
-0079C710		7	0x1C	0079C72C	00404BCE	thunk_FUN_00417f30	00404BCE	thunk_FUN_00417f30	false	false	00404BCE	thunk_FUN_00417f30	true	00417F30	FUN_00417f30		FUN_00417f30	0	0
-0079C710		8	0x20	0079C730	004048F9	STGameObjC::MoveStep	004048F9	STGameObjC::MoveStep	false	false	004048F9	STGameObjC::MoveStep	true	004189D0	STGameObjC::MoveStep	STGameObjC	STGameObjC::MoveStep	0	0
-0079C710		9	0x24	0079C734	00404DD1	thunk_FUN_00419a90	00404DD1	thunk_FUN_00419a90	false	false	00404DD1	thunk_FUN_00419a90	true	00419A90	FUN_00419a90		FUN_00419a90	0	0
-0079C710		10	0x28	0079C738	00401438	thunk_FUN_00419bf0	00401438	thunk_FUN_00419bf0	false	false	00401438	thunk_FUN_00419bf0	true	00419BF0	FUN_00419bf0		FUN_00419bf0	0	0
-0079C710		11	0x2C	0079C73C	00401F96	thunk_FUN_005f0e20	00401F96	thunk_FUN_005f0e20	false	false	00401F96	thunk_FUN_005f0e20	true	005F0E20	FUN_005f0e20		FUN_005f0e20	0	0
-0079C710		12	0x30	0079C740	00401091	STSprGameObjC::thunk_FUN_005f0220	00401091	STSprGameObjC::thunk_FUN_005f0220	false	false	00401091	STSprGameObjC::thunk_FUN_005f0220	true	005F0220	STSprGameObjC::FUN_005f0220	STSprGameObjC	STSprGameObjC::FUN_005f0220	0	0
-0079C710		13	0x34	0079C744	00402D1F	thunk_FUN_005f00b0	00402D1F	thunk_FUN_005f00b0	false	false	00402D1F	thunk_FUN_005f00b0	true	005F00B0	FUN_005f00b0		FUN_005f00b0	0	0
-0079C710		14	0x38	0079C748	00403201	thunk_FUN_005f0150	00403201	thunk_FUN_005f0150	false	false	00403201	thunk_FUN_005f0150	true	005F0150	FUN_005f0150		FUN_005f0150	0	0
-0079C710		15	0x3C	0079C74C	00404DE5	thunk_FUN_0041abc0	00404DE5	thunk_FUN_0041abc0	false	false	00404DE5	thunk_FUN_0041abc0	true	0041ABC0	FUN_0041abc0		FUN_0041abc0	0	0
-0079C710		16	0x40	0079C750	004056DC	thunk_FUN_0041abf0	004056DC	thunk_FUN_0041abf0	false	false	004056DC	thunk_FUN_0041abf0	true	0041ABF0	FUN_0041abf0		FUN_0041abf0	0	0
-0079C710		17	0x44	0079C754	0040295A	thunk_FUN_0041ac40	0040295A	thunk_FUN_0041ac40	false	false	0040295A	thunk_FUN_0041ac40	true	0041AC40	FUN_0041ac40		FUN_0041ac40	0	0
-0079C710		18	0x48	0079C758	004050BF	thunk_FUN_0041ac90	004050BF	thunk_FUN_0041ac90	false	false	004050BF	thunk_FUN_0041ac90	true	0041AC90	FUN_0041ac90		FUN_0041ac90	0	0
-0079C710		19	0x4C	0079C75C	004014E7	thunk_FUN_0041acc0	004014E7	thunk_FUN_0041acc0	false	false	004014E7	thunk_FUN_0041acc0	true	0041ACC0	FUN_0041acc0		FUN_0041acc0	0	0
-0079C710		20	0x50	0079C760	00404FC0	thunk_FUN_0041acf0	00404FC0	thunk_FUN_0041acf0	false	false	00404FC0	thunk_FUN_0041acf0	true	0041ACF0	FUN_0041acf0		FUN_0041acf0	0	0
-0079C710		21	0x54	0079C764	00405B41	thunk_FUN_0041ad20	00405B41	thunk_FUN_0041ad20	false	false	00405B41	thunk_FUN_0041ad20	true	0041AD20	FUN_0041ad20		FUN_0041ad20	0	0
-0079C710		22	0x58	0079C768	004039F9	thunk_FUN_0041ad50	004039F9	thunk_FUN_0041ad50	false	false	004039F9	thunk_FUN_0041ad50	true	0041AD50	FUN_0041ad50		FUN_0041ad50	0	0
-0079C710		23	0x5C	0079C76C	0040336E	thunk_FUN_005f0280	0040336E	thunk_FUN_005f0280	false	false	0040336E	thunk_FUN_005f0280	true	005F0280	FUN_005f0280		FUN_005f0280	0	0
-0079C710		24	0x60	0079C770	00403C29	thunk_FUN_005f0240	00403C29	thunk_FUN_005f0240	false	false	00403C29	thunk_FUN_005f0240	true	005F0240	FUN_005f0240		FUN_005f0240	0	0
-0079C710		25	0x64	0079C774	004045B6	thunk_FUN_0041ade0	004045B6	thunk_FUN_0041ade0	false	false	004045B6	thunk_FUN_0041ade0	true	0041ADE0	FUN_0041ade0		FUN_0041ade0	0	0
-0079C710		26	0x68	0079C778	004054F7	thunk_FUN_0041ae10	004054F7	thunk_FUN_0041ae10	false	false	004054F7	thunk_FUN_0041ae10	true	0041AE10	FUN_0041ae10		FUN_0041ae10	0	0
-0079C710		27	0x6C	0079C77C	00401780	thunk_FUN_0041ae40	00401780	thunk_FUN_0041ae40	false	false	00401780	thunk_FUN_0041ae40	true	0041AE40	FUN_0041ae40		FUN_0041ae40	0	0
-0079C710		28	0x70	0079C780	004039C2	thunk_FUN_0041ae80	004039C2	thunk_FUN_0041ae80	false	false	004039C2	thunk_FUN_0041ae80	true	0041AE80	FUN_0041ae80		FUN_0041ae80	0	0
-0079C710		29	0x74	0079C784	00401B5E	thunk_FUN_005fccb0	00401B5E	thunk_FUN_005fccb0	false	false	00401B5E	thunk_FUN_005fccb0	true	005FCCB0	FUN_005fccb0		FUN_005fccb0	0	0
-0079C710		30	0x78	0079C788	004056E6	thunk_FUN_005fcc70	004056E6	thunk_FUN_005fcc70	false	false	004056E6	thunk_FUN_005fcc70	true	005FCC70	FUN_005fcc70		FUN_005fcc70	0	0
-0079C710		31	0x7C	0079C78C	00401B81	STSprGameObjC::thunk_FUN_005efa10	00401B81	STSprGameObjC::thunk_FUN_005efa10	false	false	00401B81	STSprGameObjC::thunk_FUN_005efa10	true	005EFA10	STSprGameObjC::FUN_005efa10	STSprGameObjC	STSprGameObjC::FUN_005efa10	0	0
-0079C710		32	0x80	0079C790	0040252C	thunk_FUN_005efa30	0040252C	thunk_FUN_005efa30	false	false	0040252C	thunk_FUN_005efa30	true	005EFA30	FUN_005efa30		FUN_005efa30	0	0
-0079C710		33	0x84	0079C794	0040411F	thunk_FUN_0041c300	0040411F	thunk_FUN_0041c300	false	false	0040411F	thunk_FUN_0041c300	true	0041C300	FUN_0041c300		FUN_0041c300	0	0
-0079C710		34	0x88	0079C798	004054D9	thunk_FUN_0041c320	004054D9	thunk_FUN_0041c320	false	false	004054D9	thunk_FUN_0041c320	true	0041C320	FUN_0041c320		FUN_0041c320	0	0
-0079C710		35	0x8C	0079C79C	004045DE	thunk_FUN_0041c340	004045DE	thunk_FUN_0041c340	false	false	004045DE	thunk_FUN_0041c340	true	0041C340	FUN_0041c340		FUN_0041c340	0	0
-0079C710		36	0x90	0079C7A0	00405D26	thunk_FUN_0041c360	00405D26	thunk_FUN_0041c360	false	false	00405D26	thunk_FUN_0041c360	true	0041C360	FUN_0041c360		FUN_0041c360	0	0
-0079C710		37	0x94	0079C7A4	0040574F	thunk_FUN_0041c380	0040574F	thunk_FUN_0041c380	false	false	0040574F	thunk_FUN_0041c380	true	0041C380	FUN_0041c380		FUN_0041c380	0	0
-0079C710		38	0x98	0079C7A8	00403931	thunk_FUN_0041d5e0	00403931	thunk_FUN_0041d5e0	false	false	00403931	thunk_FUN_0041d5e0	true	0041D5E0	FUN_0041d5e0		FUN_0041d5e0	0	0
-0079C710		39	0x9C	0079C7AC	00403846	thunk_FUN_0041d600	00403846	thunk_FUN_0041d600	false	false	00403846	thunk_FUN_0041d600	true	0041D600	FUN_0041d600		FUN_0041d600	0	0
-0079C710		40	0xA0	0079C7B0	004030DF	thunk_FUN_005efa70	004030DF	thunk_FUN_005efa70	false	false	004030DF	thunk_FUN_005efa70	true	005EFA70	FUN_005efa70		FUN_005efa70	0	0
-0079C710		41	0xA4	0079C7B4	00404E99	thunk_FUN_005efa90	00404E99	thunk_FUN_005efa90	false	false	00404E99	thunk_FUN_005efa90	true	005EFA90	FUN_005efa90		FUN_005efa90	0	0
-0079C710		42	0xA8	0079C7B8	00405D58	STSprGameObjC::thunk_FUN_005efac0	00405D58	STSprGameObjC::thunk_FUN_005efac0	false	false	00405D58	STSprGameObjC::thunk_FUN_005efac0	true	005EFAC0	STSprGameObjC::FUN_005efac0	STSprGameObjC	STSprGameObjC::FUN_005efac0	0	0
-0079C710		43	0xAC	0079C7BC	00402F9A	thunk_FUN_005efae0	00402F9A	thunk_FUN_005efae0	false	false	00402F9A	thunk_FUN_005efae0	true	005EFAE0	FUN_005efae0		FUN_005efae0	0	0
-0079C710		44	0xB0	0079C7C0	00405AC4	thunk_FUN_005efb80	00405AC4	thunk_FUN_005efb80	false	false	00405AC4	thunk_FUN_005efb80	true	005EFB80	FUN_005efb80		FUN_005efb80	0	0
-0079C710		45	0xB4	0079C7C4	00403C6F	thunk_FUN_005efbd0	00403C6F	thunk_FUN_005efbd0	false	false	00403C6F	thunk_FUN_005efbd0	true	005EFBD0	FUN_005efbd0		FUN_005efbd0	0	0
-0079C710		46	0xB8	0079C7C8	004018BB	thunk_FUN_005efc40	004018BB	thunk_FUN_005efc40	false	false	004018BB	thunk_FUN_005efc40	true	005EFC40	FUN_005efc40		FUN_005efc40	0	0
-0079C710		47	0xBC	0079C7CC	00402969	thunk_FUN_005efcd0	00402969	thunk_FUN_005efcd0	false	false	00402969	thunk_FUN_005efcd0	true	005EFCD0	FUN_005efcd0		FUN_005efcd0	0	0
-0079C710		48	0xC0	0079C7D0	00403A53	STSprGameObjC::thunk_FUN_005f0030	00403A53	STSprGameObjC::thunk_FUN_005f0030	false	false	00403A53	STSprGameObjC::thunk_FUN_005f0030	true	005F0030	STSprGameObjC::FUN_005f0030	STSprGameObjC	STSprGameObjC::FUN_005f0030	0	0
-0079C710		49	0xC4	0079C7D4	00405E02	thunk_FUN_0041d8c0	00405E02	thunk_FUN_0041d8c0	false	false	00405E02	thunk_FUN_0041d8c0	true	0041D8C0	FUN_0041d8c0		FUN_0041d8c0	0	0
-0079C710		50	0xC8	0079C7D8	00404ECB	thunk_FUN_00418ce0	00404ECB	thunk_FUN_00418ce0	false	false	00404ECB	thunk_FUN_00418ce0	true	00418CE0	FUN_00418ce0		FUN_00418ce0	0	0
-0079C710		51	0xCC	0079C7DC	00403AEE	thunk_FUN_00418d00	00403AEE	thunk_FUN_00418d00	false	false	00403AEE	thunk_FUN_00418d00	true	00418D00	FUN_00418d00		FUN_00418d00	0	0
-0079C710		52	0xD0	0079C7E0	004034D6	thunk_FUN_004d7010	004034D6	thunk_FUN_004d7010	false	false	004034D6	thunk_FUN_004d7010	true	004D7010	FUN_004d7010		FUN_004d7010	0	0
-0079C710		53	0xD4	0079C7E4	0040167C	thunk_FUN_004d7040	0040167C	thunk_FUN_004d7040	false	false	0040167C	thunk_FUN_004d7040	true	004D7040	FUN_004d7040		FUN_004d7040	0	0
-0079C710		54	0xD8	0079C7E8	004053DA	thunk_FUN_0041da10	004053DA	thunk_FUN_0041da10	false	false	004053DA	thunk_FUN_0041da10	true	0041DA10	FUN_0041da10		FUN_0041da10	0	0
-0079C710		55	0xDC	0079C7EC	0040503D	thunk_FUN_0041da30	0040503D	thunk_FUN_0041da30	false	false	0040503D	thunk_FUN_0041da30	true	0041DA30	FUN_0041da30		FUN_0041da30	0	0
-0079C710		56	0xE0	0079C7F0	004037AB	thunk_FUN_005ee080	004037AB	thunk_FUN_005ee080	false	false	004037AB	thunk_FUN_005ee080	true	005EE080	FUN_005ee080		FUN_005ee080	0	0
-0079C710		57	0xE4	0079C7F4	004049E9	thunk_FUN_005ee3f0	004049E9	thunk_FUN_005ee3f0	false	false	004049E9	thunk_FUN_005ee3f0	true	005EE3F0	FUN_005ee3f0		FUN_005ee3f0	0	0
-0079C710		58	0xE8	0079C7F8	004018ED	thunk_FUN_0041dc20	004018ED	thunk_FUN_0041dc20	false	false	004018ED	thunk_FUN_0041dc20	true	0041DC20	FUN_0041dc20		FUN_0041dc20	0	0
-0079C710		59	0xEC	0079C7FC	00404E8A	thunk_FUN_0041dd00	00404E8A	thunk_FUN_0041dd00	false	false	00404E8A	thunk_FUN_0041dd00	true	0041DD00	FUN_0041dd00		FUN_0041dd00	0	0
-0079C710		60	0xF0	0079C800	00402365	STSprGameObjC::thunk_FUN_005ef9f0	00402365	STSprGameObjC::thunk_FUN_005ef9f0	false	false	00402365	STSprGameObjC::thunk_FUN_005ef9f0	true	005EF9F0	STSprGameObjC::FUN_005ef9f0	STSprGameObjC	STSprGameObjC::FUN_005ef9f0	0	0
-0079C710		61	0xF4	0079C804	00405CE0	thunk_FUN_005f0090	00405CE0	thunk_FUN_005f0090	false	false	00405CE0	thunk_FUN_005f0090	true	005F0090	FUN_005f0090		FUN_005f0090	0	0
-0079C710		62	0xF8	0079C808	00403C9C	thunk_FUN_0041f350	00403C9C	thunk_FUN_0041f350	false	false	00403C9C	thunk_FUN_0041f350	true	0041F350	FUN_0041f350		FUN_0041f350	0	0
-0079C710		63	0xFC	0079C80C	004018DE	thunk_FUN_005f0050	004018DE	thunk_FUN_005f0050	false	false	004018DE	thunk_FUN_005f0050	true	005F0050	FUN_005f0050		FUN_005f0050	0	0
-0079C710		64	0x100	0079C810	00403E13	thunk_FUN_004210c0	00403E13	thunk_FUN_004210c0	false	false	00403E13	thunk_FUN_004210c0	true	004210C0	FUN_004210c0		FUN_004210c0	0	0
-0079C710		65	0x104	0079C814	00401B3B	thunk_FUN_00422e20	00401B3B	thunk_FUN_00422e20	false	false	00401B3B	thunk_FUN_00422e20	true	00422E20	FUN_00422e20		FUN_00422e20	0	0
-0079C710		66	0x108	0079C818	00401DAC	thunk_FUN_00422ff0	00401DAC	thunk_FUN_00422ff0	false	false	00401DAC	thunk_FUN_00422ff0	true	00422FF0	FUN_00422ff0		FUN_00422ff0	0	0
-0079C710		67	0x10C	0079C81C	00402482	thunk_FUN_00423140	00402482	thunk_FUN_00423140	false	false	00402482	thunk_FUN_00423140	true	00423140	FUN_00423140		FUN_00423140	0	0
-0079C710		68	0x110	0079C820	00401474	thunk_FUN_00423160	00401474	thunk_FUN_00423160	false	false	00401474	thunk_FUN_00423160	true	00423160	FUN_00423160		FUN_00423160	0	0
-0079C710		69	0x114	0079C824	00402BB2	thunk_FUN_00423180	00402BB2	thunk_FUN_00423180	false	false	00402BB2	thunk_FUN_00423180	true	00423180	FUN_00423180		FUN_00423180	0	0
-0079C710		70	0x118	0079C828	00402757	thunk_FUN_005f0470	00402757	thunk_FUN_005f0470	false	false	00402757	thunk_FUN_005f0470	true	005F0470	FUN_005f0470		FUN_005f0470	0	0
-0079C710		71	0x11C	0079C82C	00404679	thunk_FUN_005f04b0	00404679	thunk_FUN_005f04b0	false	false	00404679	thunk_FUN_005f04b0	true	005F04B0	FUN_005f04b0		FUN_005f04b0	0	0
-0079C710		72	0x120	0079C830	00404F66	thunk_FUN_004231e0	00404F66	thunk_FUN_004231e0	false	false	00404F66	thunk_FUN_004231e0	true	004231E0	FUN_004231e0		FUN_004231e0	0	0
-0079C710		73	0x124	0079C834	004045CF	thunk_FUN_00423200	004045CF	thunk_FUN_00423200	false	false	004045CF	thunk_FUN_00423200	true	00423200	FUN_00423200		FUN_00423200	0	0
-0079C710		74	0x128	0079C838	00405AF6	thunk_FUN_005fc450	00405AF6	thunk_FUN_005fc450	false	false	00405AF6	thunk_FUN_005fc450	true	005FC450	FUN_005fc450		FUN_005fc450	0	0
-0079C710		75	0x12C	0079C83C	00404476	thunk_FUN_005fd360	00404476	thunk_FUN_005fd360	false	false	00404476	thunk_FUN_005fd360	true	005FD360	FUN_005fd360		FUN_005fd360	0	0
-0079C710		76	0x130	0079C840	0040389B	thunk_FUN_005fcd80	0040389B	thunk_FUN_005fcd80	false	false	0040389B	thunk_FUN_005fcd80	true	005FCD80	FUN_005fcd80		FUN_005fcd80	0	0
-0079C710		77	0x134	0079C844	004038C3	thunk_FUN_005fcda0	004038C3	thunk_FUN_005fcda0	false	false	004038C3	thunk_FUN_005fcda0	true	005FCDA0	FUN_005fcda0		FUN_005fcda0	0	0
-0079C710		78	0x138	0079C848	004042FF	thunk_FUN_005fcdc0	004042FF	thunk_FUN_005fcdc0	false	false	004042FF	thunk_FUN_005fcdc0	true	005FCDC0	FUN_005fcdc0		FUN_005fcdc0	0	0
-0079C710		79	0x13C	0079C84C	00401C21	thunk_FUN_005fce30	00401C21	thunk_FUN_005fce30	false	false	00401C21	thunk_FUN_005fce30	true	005FCE30	FUN_005fce30		FUN_005fce30	0	0
-0079C710		80	0x140	0079C850	004020A9	thunk_FUN_005fce50	004020A9	thunk_FUN_005fce50	false	false	004020A9	thunk_FUN_005fce50	true	005FCE50	FUN_005fce50		FUN_005fce50	0	0
-0079C710		81	0x144	0079C854	00402C75	thunk_FUN_005fce70	00402C75	thunk_FUN_005fce70	false	false	00402C75	thunk_FUN_005fce70	true	005FCE70	FUN_005fce70		FUN_005fce70	0	0
-0079C710		82	0x148	0079C858	004038FA	thunk_FUN_005fd380	004038FA	thunk_FUN_005fd380	false	false	004038FA	thunk_FUN_005fd380	true	005FD380	FUN_005fd380		FUN_005fd380	0	0
+0079C710	STContainerC	0	0x0	0079C710	00405605	thunk_FUN_004210a0	00405605	thunk_FUN_004210a0	false	false	00405605	thunk_FUN_004210a0	true	004210A0	FUN_004210a0		STContainerC::vfunc_00	0	0
+0079C714	STContainerC	0	0x0	0079C714	004033C3	STContainerC::GetMessage	004033C3	STContainerC::GetMessage	false	false	004033C3	STContainerC::GetMessage	true	005FB640	STContainerC::GetMessage	STContainerC	STContainerC::GetMessage	0	0
+0079C714	STContainerC	1	0x4	0079C718	00402964	thunk_FUN_00415b10	00402964	thunk_FUN_00415b10	false	false	00402964	thunk_FUN_00415b10	true	00415B10	FUN_00415b10		STContainerC::vfunc_04	0	0
+0079C714	STContainerC	2	0x8	0079C71C	00404F25	thunk_FUN_0041e510	00404F25	thunk_FUN_0041e510	false	false	00404F25	thunk_FUN_0041e510	true	0041E510	FUN_0041e510		STContainerC::vfunc_08	0	0
+0079C714	STContainerC	3	0xC	0079C720	004039E5	thunk_FUN_005f0380	004039E5	thunk_FUN_005f0380	false	false	004039E5	thunk_FUN_005f0380	true	005F0380	FUN_005f0380		STContainerC::vfunc_0C	0	0
+0079C714	STContainerC	4	0x10	0079C724	00402AFE	thunk_FUN_004168d0	00402AFE	thunk_FUN_004168d0	false	false	00402AFE	thunk_FUN_004168d0	true	004168D0	FUN_004168d0		STContainerC::vfunc_10	0	0
+0079C714	STContainerC	5	0x14	0079C728	004036AC	thunk_FUN_00416db0	004036AC	thunk_FUN_00416db0	false	false	004036AC	thunk_FUN_00416db0	true	00416DB0	FUN_00416db0		STContainerC::vfunc_14	0	0
+0079C714	STContainerC	6	0x18	0079C72C	00404BCE	thunk_FUN_00417f30	00404BCE	thunk_FUN_00417f30	false	false	00404BCE	thunk_FUN_00417f30	true	00417F30	FUN_00417f30		STContainerC::vfunc_18	0	0
+0079C714	STContainerC	7	0x1C	0079C730	004048F9	STGameObjC::MoveStep	004048F9	STGameObjC::MoveStep	false	false	004048F9	STGameObjC::MoveStep	true	004189D0	STGameObjC::MoveStep	STGameObjC	STGameObjC::MoveStep	0	0
+0079C714	STContainerC	8	0x20	0079C734	00404DD1	thunk_FUN_00419a90	00404DD1	thunk_FUN_00419a90	false	false	00404DD1	thunk_FUN_00419a90	true	00419A90	FUN_00419a90		STContainerC::vfunc_20	0	0
+0079C714	STContainerC	9	0x24	0079C738	00401438	thunk_FUN_00419bf0	00401438	thunk_FUN_00419bf0	false	false	00401438	thunk_FUN_00419bf0	true	00419BF0	FUN_00419bf0		STContainerC::vfunc_24	0	0
+0079C714	STContainerC	10	0x28	0079C73C	00401F96	thunk_FUN_005f0e20	00401F96	thunk_FUN_005f0e20	false	false	00401F96	thunk_FUN_005f0e20	true	005F0E20	FUN_005f0e20		STContainerC::vfunc_28	0	0
+0079C714	STContainerC	11	0x2C	0079C740	00401091	STSprGameObjC::thunk_FUN_005f0220	00401091	STSprGameObjC::thunk_FUN_005f0220	false	false	00401091	STSprGameObjC::thunk_FUN_005f0220	true	005F0220	STSprGameObjC::FUN_005f0220	STSprGameObjC	STSprGameObjC::FUN_005f0220	0	0
+0079C714	STContainerC	12	0x30	0079C744	00402D1F	thunk_FUN_005f00b0	00402D1F	thunk_FUN_005f00b0	false	false	00402D1F	thunk_FUN_005f00b0	true	005F00B0	FUN_005f00b0		STContainerC::vfunc_30	0	0
+0079C714	STContainerC	13	0x34	0079C748	00403201	thunk_FUN_005f0150	00403201	thunk_FUN_005f0150	false	false	00403201	thunk_FUN_005f0150	true	005F0150	FUN_005f0150		STContainerC::vfunc_34	0	0
+0079C714	STContainerC	14	0x38	0079C74C	00404DE5	thunk_FUN_0041abc0	00404DE5	thunk_FUN_0041abc0	false	false	00404DE5	thunk_FUN_0041abc0	true	0041ABC0	FUN_0041abc0		STContainerC::vfunc_38	0	0
+0079C714	STContainerC	15	0x3C	0079C750	004056DC	thunk_FUN_0041abf0	004056DC	thunk_FUN_0041abf0	false	false	004056DC	thunk_FUN_0041abf0	true	0041ABF0	FUN_0041abf0		STContainerC::vfunc_3C	0	0
+0079C714	STContainerC	16	0x40	0079C754	0040295A	thunk_FUN_0041ac40	0040295A	thunk_FUN_0041ac40	false	false	0040295A	thunk_FUN_0041ac40	true	0041AC40	FUN_0041ac40		STContainerC::vfunc_40	0	0
+0079C714	STContainerC	17	0x44	0079C758	004050BF	thunk_FUN_0041ac90	004050BF	thunk_FUN_0041ac90	false	false	004050BF	thunk_FUN_0041ac90	true	0041AC90	FUN_0041ac90		STContainerC::vfunc_44	0	0
+0079C714	STContainerC	18	0x48	0079C75C	004014E7	thunk_FUN_0041acc0	004014E7	thunk_FUN_0041acc0	false	false	004014E7	thunk_FUN_0041acc0	true	0041ACC0	FUN_0041acc0		STContainerC::vfunc_48	0	0
+0079C714	STContainerC	19	0x4C	0079C760	00404FC0	thunk_FUN_0041acf0	00404FC0	thunk_FUN_0041acf0	false	false	00404FC0	thunk_FUN_0041acf0	true	0041ACF0	FUN_0041acf0		STContainerC::vfunc_4C	0	0
+0079C714	STContainerC	20	0x50	0079C764	00405B41	thunk_FUN_0041ad20	00405B41	thunk_FUN_0041ad20	false	false	00405B41	thunk_FUN_0041ad20	true	0041AD20	FUN_0041ad20		STContainerC::vfunc_50	0	0
+0079C714	STContainerC	21	0x54	0079C768	004039F9	thunk_FUN_0041ad50	004039F9	thunk_FUN_0041ad50	false	false	004039F9	thunk_FUN_0041ad50	true	0041AD50	FUN_0041ad50		STContainerC::vfunc_54	0	0
+0079C714	STContainerC	22	0x58	0079C76C	0040336E	thunk_FUN_005f0280	0040336E	thunk_FUN_005f0280	false	false	0040336E	thunk_FUN_005f0280	true	005F0280	FUN_005f0280		STContainerC::vfunc_58	0	0
+0079C714	STContainerC	23	0x5C	0079C770	00403C29	thunk_FUN_005f0240	00403C29	thunk_FUN_005f0240	false	false	00403C29	thunk_FUN_005f0240	true	005F0240	FUN_005f0240		STContainerC::vfunc_5C	0	0
+0079C714	STContainerC	24	0x60	0079C774	004045B6	thunk_FUN_0041ade0	004045B6	thunk_FUN_0041ade0	false	false	004045B6	thunk_FUN_0041ade0	true	0041ADE0	FUN_0041ade0		STContainerC::vfunc_60	0	0
+0079C714	STContainerC	25	0x64	0079C778	004054F7	thunk_FUN_0041ae10	004054F7	thunk_FUN_0041ae10	false	false	004054F7	thunk_FUN_0041ae10	true	0041AE10	FUN_0041ae10		STContainerC::vfunc_64	0	0
+0079C714	STContainerC	26	0x68	0079C77C	00401780	thunk_FUN_0041ae40	00401780	thunk_FUN_0041ae40	false	false	00401780	thunk_FUN_0041ae40	true	0041AE40	FUN_0041ae40		STContainerC::vfunc_68	0	0
+0079C714	STContainerC	27	0x6C	0079C780	004039C2	thunk_FUN_0041ae80	004039C2	thunk_FUN_0041ae80	false	false	004039C2	thunk_FUN_0041ae80	true	0041AE80	FUN_0041ae80		STContainerC::vfunc_6C	0	0
+0079C714	STContainerC	28	0x70	0079C784	00401B5E	thunk_FUN_005fccb0	00401B5E	thunk_FUN_005fccb0	false	false	00401B5E	thunk_FUN_005fccb0	true	005FCCB0	FUN_005fccb0		STContainerC::vfunc_70	0	0
+0079C714	STContainerC	29	0x74	0079C788	004056E6	thunk_FUN_005fcc70	004056E6	thunk_FUN_005fcc70	false	false	004056E6	thunk_FUN_005fcc70	true	005FCC70	FUN_005fcc70		STContainerC::vfunc_74	0	0
+0079C714	STContainerC	30	0x78	0079C78C	00401B81	STSprGameObjC::thunk_FUN_005efa10	00401B81	STSprGameObjC::thunk_FUN_005efa10	false	false	00401B81	STSprGameObjC::thunk_FUN_005efa10	true	005EFA10	STSprGameObjC::FUN_005efa10	STSprGameObjC	STSprGameObjC::FUN_005efa10	0	0
+0079C714	STContainerC	31	0x7C	0079C790	0040252C	thunk_FUN_005efa30	0040252C	thunk_FUN_005efa30	false	false	0040252C	thunk_FUN_005efa30	true	005EFA30	FUN_005efa30		STContainerC::vfunc_7C	0	0
+0079C714	STContainerC	32	0x80	0079C794	0040411F	thunk_FUN_0041c300	0040411F	thunk_FUN_0041c300	false	false	0040411F	thunk_FUN_0041c300	true	0041C300	FUN_0041c300		STContainerC::vfunc_80	0	0
+0079C714	STContainerC	33	0x84	0079C798	004054D9	thunk_FUN_0041c320	004054D9	thunk_FUN_0041c320	false	false	004054D9	thunk_FUN_0041c320	true	0041C320	FUN_0041c320		STContainerC::vfunc_84	0	0
+0079C714	STContainerC	34	0x88	0079C79C	004045DE	thunk_FUN_0041c340	004045DE	thunk_FUN_0041c340	false	false	004045DE	thunk_FUN_0041c340	true	0041C340	FUN_0041c340		STContainerC::vfunc_88	0	0
+0079C714	STContainerC	35	0x8C	0079C7A0	00405D26	thunk_FUN_0041c360	00405D26	thunk_FUN_0041c360	false	false	00405D26	thunk_FUN_0041c360	true	0041C360	FUN_0041c360		STContainerC::vfunc_8C	0	0
+0079C714	STContainerC	36	0x90	0079C7A4	0040574F	thunk_FUN_0041c380	0040574F	thunk_FUN_0041c380	false	false	0040574F	thunk_FUN_0041c380	true	0041C380	FUN_0041c380		STContainerC::vfunc_90	0	0
+0079C714	STContainerC	37	0x94	0079C7A8	00403931	thunk_FUN_0041d5e0	00403931	thunk_FUN_0041d5e0	false	false	00403931	thunk_FUN_0041d5e0	true	0041D5E0	FUN_0041d5e0		STContainerC::vfunc_94	0	0
+0079C714	STContainerC	38	0x98	0079C7AC	00403846	thunk_FUN_0041d600	00403846	thunk_FUN_0041d600	false	false	00403846	thunk_FUN_0041d600	true	0041D600	FUN_0041d600		STContainerC::vfunc_98	0	0
+0079C714	STContainerC	39	0x9C	0079C7B0	004030DF	thunk_FUN_005efa70	004030DF	thunk_FUN_005efa70	false	false	004030DF	thunk_FUN_005efa70	true	005EFA70	FUN_005efa70		STContainerC::vfunc_9C	0	0
+0079C714	STContainerC	40	0xA0	0079C7B4	00404E99	thunk_FUN_005efa90	00404E99	thunk_FUN_005efa90	false	false	00404E99	thunk_FUN_005efa90	true	005EFA90	FUN_005efa90		STContainerC::vfunc_A0	0	0
+0079C714	STContainerC	41	0xA4	0079C7B8	00405D58	STSprGameObjC::thunk_FUN_005efac0	00405D58	STSprGameObjC::thunk_FUN_005efac0	false	false	00405D58	STSprGameObjC::thunk_FUN_005efac0	true	005EFAC0	STSprGameObjC::FUN_005efac0	STSprGameObjC	STSprGameObjC::FUN_005efac0	0	0
+0079C714	STContainerC	42	0xA8	0079C7BC	00402F9A	thunk_FUN_005efae0	00402F9A	thunk_FUN_005efae0	false	false	00402F9A	thunk_FUN_005efae0	true	005EFAE0	FUN_005efae0		STContainerC::vfunc_A8	0	0
+0079C714	STContainerC	43	0xAC	0079C7C0	00405AC4	thunk_FUN_005efb80	00405AC4	thunk_FUN_005efb80	false	false	00405AC4	thunk_FUN_005efb80	true	005EFB80	FUN_005efb80		STContainerC::vfunc_AC	0	0
+0079C714	STContainerC	44	0xB0	0079C7C4	00403C6F	thunk_FUN_005efbd0	00403C6F	thunk_FUN_005efbd0	false	false	00403C6F	thunk_FUN_005efbd0	true	005EFBD0	FUN_005efbd0		STContainerC::vfunc_B0	0	0
+0079C714	STContainerC	45	0xB4	0079C7C8	004018BB	thunk_FUN_005efc40	004018BB	thunk_FUN_005efc40	false	false	004018BB	thunk_FUN_005efc40	true	005EFC40	FUN_005efc40		STContainerC::vfunc_B4	0	0
+0079C714	STContainerC	46	0xB8	0079C7CC	00402969	thunk_FUN_005efcd0	00402969	thunk_FUN_005efcd0	false	false	00402969	thunk_FUN_005efcd0	true	005EFCD0	FUN_005efcd0		STContainerC::vfunc_B8	0	0
+0079C714	STContainerC	47	0xBC	0079C7D0	00403A53	STSprGameObjC::thunk_FUN_005f0030	00403A53	STSprGameObjC::thunk_FUN_005f0030	false	false	00403A53	STSprGameObjC::thunk_FUN_005f0030	true	005F0030	STSprGameObjC::FUN_005f0030	STSprGameObjC	STSprGameObjC::FUN_005f0030	0	0
+0079C714	STContainerC	48	0xC0	0079C7D4	00405E02	thunk_FUN_0041d8c0	00405E02	thunk_FUN_0041d8c0	false	false	00405E02	thunk_FUN_0041d8c0	true	0041D8C0	FUN_0041d8c0		STContainerC::vfunc_C0	0	0
+0079C714	STContainerC	49	0xC4	0079C7D8	00404ECB	thunk_FUN_00418ce0	00404ECB	thunk_FUN_00418ce0	false	false	00404ECB	thunk_FUN_00418ce0	true	00418CE0	FUN_00418ce0		STContainerC::vfunc_C4	0	0
+0079C714	STContainerC	50	0xC8	0079C7DC	00403AEE	thunk_FUN_00418d00	00403AEE	thunk_FUN_00418d00	false	false	00403AEE	thunk_FUN_00418d00	true	00418D00	FUN_00418d00		STContainerC::vfunc_C8	0	0
+0079C714	STContainerC	51	0xCC	0079C7E0	004034D6	thunk_FUN_004d7010	004034D6	thunk_FUN_004d7010	false	false	004034D6	thunk_FUN_004d7010	true	004D7010	FUN_004d7010		STContainerC::vfunc_CC	0	0
+0079C714	STContainerC	52	0xD0	0079C7E4	0040167C	thunk_FUN_004d7040	0040167C	thunk_FUN_004d7040	false	false	0040167C	thunk_FUN_004d7040	true	004D7040	FUN_004d7040		STContainerC::vfunc_D0	0	0
+0079C714	STContainerC	53	0xD4	0079C7E8	004053DA	thunk_FUN_0041da10	004053DA	thunk_FUN_0041da10	false	false	004053DA	thunk_FUN_0041da10	true	0041DA10	FUN_0041da10		STContainerC::vfunc_D4	0	0
+0079C714	STContainerC	54	0xD8	0079C7EC	0040503D	thunk_FUN_0041da30	0040503D	thunk_FUN_0041da30	false	false	0040503D	thunk_FUN_0041da30	true	0041DA30	FUN_0041da30		STContainerC::vfunc_D8	0	0
+0079C714	STContainerC	55	0xDC	0079C7F0	004037AB	thunk_FUN_005ee080	004037AB	thunk_FUN_005ee080	false	false	004037AB	thunk_FUN_005ee080	true	005EE080	FUN_005ee080		STContainerC::vfunc_DC	0	0
+0079C714	STContainerC	56	0xE0	0079C7F4	004049E9	thunk_FUN_005ee3f0	004049E9	thunk_FUN_005ee3f0	false	false	004049E9	thunk_FUN_005ee3f0	true	005EE3F0	FUN_005ee3f0		STContainerC::vfunc_E0	0	0
+0079C714	STContainerC	57	0xE4	0079C7F8	004018ED	thunk_FUN_0041dc20	004018ED	thunk_FUN_0041dc20	false	false	004018ED	thunk_FUN_0041dc20	true	0041DC20	FUN_0041dc20		STContainerC::vfunc_E4	0	0
+0079C714	STContainerC	58	0xE8	0079C7FC	00404E8A	thunk_FUN_0041dd00	00404E8A	thunk_FUN_0041dd00	false	false	00404E8A	thunk_FUN_0041dd00	true	0041DD00	FUN_0041dd00		STContainerC::vfunc_E8	0	0
+0079C714	STContainerC	59	0xEC	0079C800	00402365	STSprGameObjC::thunk_FUN_005ef9f0	00402365	STSprGameObjC::thunk_FUN_005ef9f0	false	false	00402365	STSprGameObjC::thunk_FUN_005ef9f0	true	005EF9F0	STSprGameObjC::FUN_005ef9f0	STSprGameObjC	STSprGameObjC::FUN_005ef9f0	0	0
+0079C714	STContainerC	60	0xF0	0079C804	00405CE0	thunk_FUN_005f0090	00405CE0	thunk_FUN_005f0090	false	false	00405CE0	thunk_FUN_005f0090	true	005F0090	FUN_005f0090		STContainerC::vfunc_F0	0	0
+0079C714	STContainerC	61	0xF4	0079C808	00403C9C	thunk_FUN_0041f350	00403C9C	thunk_FUN_0041f350	false	false	00403C9C	thunk_FUN_0041f350	true	0041F350	FUN_0041f350		STContainerC::vfunc_F4	0	0
+0079C714	STContainerC	62	0xF8	0079C80C	004018DE	thunk_FUN_005f0050	004018DE	thunk_FUN_005f0050	false	false	004018DE	thunk_FUN_005f0050	true	005F0050	FUN_005f0050		STContainerC::vfunc_F8	0	0
+0079C714	STContainerC	63	0xFC	0079C810	00403E13	thunk_FUN_004210c0	00403E13	thunk_FUN_004210c0	false	false	00403E13	thunk_FUN_004210c0	true	004210C0	FUN_004210c0		STContainerC::vfunc_FC	0	0
+0079C714	STContainerC	64	0x100	0079C814	00401B3B	thunk_FUN_00422e20	00401B3B	thunk_FUN_00422e20	false	false	00401B3B	thunk_FUN_00422e20	true	00422E20	FUN_00422e20		STContainerC::vfunc_100	0	0
+0079C714	STContainerC	65	0x104	0079C818	00401DAC	thunk_FUN_00422ff0	00401DAC	thunk_FUN_00422ff0	false	false	00401DAC	thunk_FUN_00422ff0	true	00422FF0	FUN_00422ff0		STContainerC::vfunc_104	0	0
+0079C714	STContainerC	66	0x108	0079C81C	00402482	thunk_FUN_00423140	00402482	thunk_FUN_00423140	false	false	00402482	thunk_FUN_00423140	true	00423140	FUN_00423140		STContainerC::vfunc_108	0	0
+0079C714	STContainerC	67	0x10C	0079C820	00401474	thunk_FUN_00423160	00401474	thunk_FUN_00423160	false	false	00401474	thunk_FUN_00423160	true	00423160	FUN_00423160		STContainerC::vfunc_10C	0	0
+0079C714	STContainerC	68	0x110	0079C824	00402BB2	thunk_FUN_00423180	00402BB2	thunk_FUN_00423180	false	false	00402BB2	thunk_FUN_00423180	true	00423180	FUN_00423180		STContainerC::vfunc_110	0	0
+0079C714	STContainerC	69	0x114	0079C828	00402757	thunk_FUN_005f0470	00402757	thunk_FUN_005f0470	false	false	00402757	thunk_FUN_005f0470	true	005F0470	FUN_005f0470		STContainerC::vfunc_114	0	0
+0079C714	STContainerC	70	0x118	0079C82C	00404679	thunk_FUN_005f04b0	00404679	thunk_FUN_005f04b0	false	false	00404679	thunk_FUN_005f04b0	true	005F04B0	FUN_005f04b0		STContainerC::vfunc_118	0	0
+0079C714	STContainerC	71	0x11C	0079C830	00404F66	thunk_FUN_004231e0	00404F66	thunk_FUN_004231e0	false	false	00404F66	thunk_FUN_004231e0	true	004231E0	FUN_004231e0		STContainerC::vfunc_11C	0	0
+0079C714	STContainerC	72	0x120	0079C834	004045CF	thunk_FUN_00423200	004045CF	thunk_FUN_00423200	false	false	004045CF	thunk_FUN_00423200	true	00423200	FUN_00423200		STContainerC::vfunc_120	0	0
+0079C714	STContainerC	73	0x124	0079C838	00405AF6	thunk_FUN_005fc450	00405AF6	thunk_FUN_005fc450	false	false	00405AF6	thunk_FUN_005fc450	true	005FC450	FUN_005fc450		STContainerC::vfunc_124	0	0
+0079C714	STContainerC	74	0x128	0079C83C	00404476	STContainerC::thunk_FUN_005fd360	00404476	STContainerC::thunk_FUN_005fd360	false	false	00404476	STContainerC::thunk_FUN_005fd360	true	005FD360	STContainerC::FUN_005fd360	STContainerC	STContainerC::FUN_005fd360	0	0
+0079C714	STContainerC	75	0x12C	0079C840	0040389B	STContainerC::thunk_FUN_005fcd80	0040389B	STContainerC::thunk_FUN_005fcd80	false	false	0040389B	STContainerC::thunk_FUN_005fcd80	true	005FCD80	STContainerC::FUN_005fcd80	STContainerC	STContainerC::FUN_005fcd80	0	0
+0079C714	STContainerC	76	0x130	0079C844	004038C3	STContainerC::thunk_FUN_005fcda0	004038C3	STContainerC::thunk_FUN_005fcda0	false	false	004038C3	STContainerC::thunk_FUN_005fcda0	true	005FCDA0	STContainerC::FUN_005fcda0	STContainerC	STContainerC::FUN_005fcda0	0	0
+0079C714	STContainerC	77	0x134	0079C848	004042FF	thunk_FUN_005fcdc0	004042FF	thunk_FUN_005fcdc0	false	false	004042FF	thunk_FUN_005fcdc0	true	005FCDC0	FUN_005fcdc0		STContainerC::vfunc_134	0	0
+0079C714	STContainerC	78	0x138	0079C84C	00401C21	STContainerC::thunk_FUN_005fce30	00401C21	STContainerC::thunk_FUN_005fce30	false	false	00401C21	STContainerC::thunk_FUN_005fce30	true	005FCE30	STContainerC::FUN_005fce30	STContainerC	STContainerC::FUN_005fce30	0	0
+0079C714	STContainerC	79	0x13C	0079C850	004020A9	STContainerC::thunk_FUN_005fce50	004020A9	STContainerC::thunk_FUN_005fce50	false	false	004020A9	STContainerC::thunk_FUN_005fce50	true	005FCE50	STContainerC::FUN_005fce50	STContainerC	STContainerC::FUN_005fce50	0	0
+0079C714	STContainerC	80	0x140	0079C854	00402C75	thunk_FUN_005fce70	00402C75	thunk_FUN_005fce70	false	false	00402C75	thunk_FUN_005fce70	true	005FCE70	FUN_005fce70		STContainerC::vfunc_140	0	0
+0079C714	STContainerC	81	0x144	0079C858	004038FA	thunk_FUN_005fd380	004038FA	thunk_FUN_005fd380	false	false	004038FA	thunk_FUN_005fd380	true	005FD380	FUN_005fd380		STContainerC::vfunc_144	0	0
 0079C8A0	STGameObjC	0	0x0	0079C8A0	004056B9	thunk_FUN_005fd3a0	004056B9	thunk_FUN_005fd3a0	false	false	004056B9	thunk_FUN_005fd3a0	true	005FD3A0	FUN_005fd3a0		STGameObjC::vfunc_00	0	0
 0079C8A0	STGameObjC	1	0x4	0079C8A4	00402964	thunk_FUN_00415b10	00402964	thunk_FUN_00415b10	false	false	00402964	thunk_FUN_00415b10	true	00415B10	FUN_00415b10		STGameObjC::vfunc_04	0	0
 0079C8A0	STGameObjC	2	0x8	0079C8A8	00402EFA	thunk_FUN_00418990	00402EFA	thunk_FUN_00418990	false	false	00402EFA	thunk_FUN_00418990	true	00418990	FUN_00418990		STGameObjC::vfunc_08	0	0
@@ -2247,79 +2253,79 @@ table_address	owner	slot_index	slot_offset	pointer_address	raw_target_address	ra
 0079D33C	STGameObjC	71	0x11C	0079D458	00404F66	thunk_FUN_004231e0	00404F66	thunk_FUN_004231e0	false	false	00404F66	thunk_FUN_004231e0	true	004231E0	FUN_004231e0		STGameObjC::vfunc_11C	0	0
 0079D33C	STGameObjC	72	0x120	0079D45C	004045CF	thunk_FUN_00423200	004045CF	thunk_FUN_00423200	false	false	004045CF	thunk_FUN_00423200	true	00423200	FUN_00423200		STGameObjC::vfunc_120	0	0
 0079D49C		0	0x0	0079D49C	00405605	thunk_FUN_004210a0	00405605	thunk_FUN_004210a0	false	false	00405605	thunk_FUN_004210a0	true	004210A0	FUN_004210a0		FUN_004210a0	0	0
-0079D4AC		0	0x0	0079D4AC	00404CAF	STTorpC::GetMessage	00404CAF	STTorpC::GetMessage	false	false	00404CAF	STTorpC::GetMessage	true	006406D0	STTorpC::GetMessage	STTorpC	STTorpC::GetMessage	0	0
-0079D4AC		1	0x4	0079D4B0	00402964	thunk_FUN_00415b10	00402964	thunk_FUN_00415b10	false	false	00402964	thunk_FUN_00415b10	true	00415B10	FUN_00415b10		FUN_00415b10	0	0
-0079D4AC		2	0x8	0079D4B4	00404F25	thunk_FUN_0041e510	00404F25	thunk_FUN_0041e510	false	false	00404F25	thunk_FUN_0041e510	true	0041E510	FUN_0041e510		FUN_0041e510	0	0
-0079D4AC		3	0xC	0079D4B8	00402EC3	thunk_FUN_004189b0	00402EC3	thunk_FUN_004189b0	false	false	00402EC3	thunk_FUN_004189b0	true	004189B0	FUN_004189b0		FUN_004189b0	0	0
-0079D4AC		4	0x10	0079D4BC	00402AFE	thunk_FUN_004168d0	00402AFE	thunk_FUN_004168d0	false	false	00402AFE	thunk_FUN_004168d0	true	004168D0	FUN_004168d0		FUN_004168d0	0	0
-0079D4AC		5	0x14	0079D4C0	004036AC	thunk_FUN_00416db0	004036AC	thunk_FUN_00416db0	false	false	004036AC	thunk_FUN_00416db0	true	00416DB0	FUN_00416db0		FUN_00416db0	0	0
-0079D4AC		6	0x18	0079D4C4	00404BCE	thunk_FUN_00417f30	00404BCE	thunk_FUN_00417f30	false	false	00404BCE	thunk_FUN_00417f30	true	00417F30	FUN_00417f30		FUN_00417f30	0	0
-0079D4AC		7	0x1C	0079D4C8	004048F9	STGameObjC::MoveStep	004048F9	STGameObjC::MoveStep	false	false	004048F9	STGameObjC::MoveStep	true	004189D0	STGameObjC::MoveStep	STGameObjC	STGameObjC::MoveStep	0	0
-0079D4AC		8	0x20	0079D4CC	00404DD1	thunk_FUN_00419a90	00404DD1	thunk_FUN_00419a90	false	false	00404DD1	thunk_FUN_00419a90	true	00419A90	FUN_00419a90		FUN_00419a90	0	0
-0079D4AC		9	0x24	0079D4D0	00401438	thunk_FUN_00419bf0	00401438	thunk_FUN_00419bf0	false	false	00401438	thunk_FUN_00419bf0	true	00419BF0	FUN_00419bf0		FUN_00419bf0	0	0
-0079D4AC		10	0x28	0079D4D4	00404232	thunk_FUN_00419db0	00404232	thunk_FUN_00419db0	false	false	00404232	thunk_FUN_00419db0	true	00419DB0	FUN_00419db0		FUN_00419db0	0	0
-0079D4AC		11	0x2C	0079D4D8	004024E6	thunk_FUN_00419dd0	004024E6	thunk_FUN_00419dd0	false	false	004024E6	thunk_FUN_00419dd0	true	00419DD0	FUN_00419dd0		FUN_00419dd0	0	0
-0079D4AC		12	0x30	0079D4DC	00404F70	thunk_FUN_0041ab60	00404F70	thunk_FUN_0041ab60	false	false	00404F70	thunk_FUN_0041ab60	true	0041AB60	FUN_0041ab60		FUN_0041ab60	0	0
-0079D4AC		13	0x34	0079D4E0	00402D2E	thunk_FUN_0041ab90	00402D2E	thunk_FUN_0041ab90	false	false	00402D2E	thunk_FUN_0041ab90	true	0041AB90	FUN_0041ab90		FUN_0041ab90	0	0
-0079D4AC		14	0x38	0079D4E4	00404DE5	thunk_FUN_0041abc0	00404DE5	thunk_FUN_0041abc0	false	false	00404DE5	thunk_FUN_0041abc0	true	0041ABC0	FUN_0041abc0		FUN_0041abc0	0	0
-0079D4AC		15	0x3C	0079D4E8	004056DC	thunk_FUN_0041abf0	004056DC	thunk_FUN_0041abf0	false	false	004056DC	thunk_FUN_0041abf0	true	0041ABF0	FUN_0041abf0		FUN_0041abf0	0	0
-0079D4AC		16	0x40	0079D4EC	0040295A	thunk_FUN_0041ac40	0040295A	thunk_FUN_0041ac40	false	false	0040295A	thunk_FUN_0041ac40	true	0041AC40	FUN_0041ac40		FUN_0041ac40	0	0
-0079D4AC		17	0x44	0079D4F0	004050BF	thunk_FUN_0041ac90	004050BF	thunk_FUN_0041ac90	false	false	004050BF	thunk_FUN_0041ac90	true	0041AC90	FUN_0041ac90		FUN_0041ac90	0	0
-0079D4AC		18	0x48	0079D4F4	004014E7	thunk_FUN_0041acc0	004014E7	thunk_FUN_0041acc0	false	false	004014E7	thunk_FUN_0041acc0	true	0041ACC0	FUN_0041acc0		FUN_0041acc0	0	0
-0079D4AC		19	0x4C	0079D4F8	00404FC0	thunk_FUN_0041acf0	00404FC0	thunk_FUN_0041acf0	false	false	00404FC0	thunk_FUN_0041acf0	true	0041ACF0	FUN_0041acf0		FUN_0041acf0	0	0
-0079D4AC		20	0x50	0079D4FC	00405B41	thunk_FUN_0041ad20	00405B41	thunk_FUN_0041ad20	false	false	00405B41	thunk_FUN_0041ad20	true	0041AD20	FUN_0041ad20		FUN_0041ad20	0	0
-0079D4AC		21	0x54	0079D500	004039F9	thunk_FUN_0041ad50	004039F9	thunk_FUN_0041ad50	false	false	004039F9	thunk_FUN_0041ad50	true	0041AD50	FUN_0041ad50		FUN_0041ad50	0	0
-0079D4AC		22	0x58	0079D504	00404444	thunk_FUN_0041ad80	00404444	thunk_FUN_0041ad80	false	false	00404444	thunk_FUN_0041ad80	true	0041AD80	FUN_0041ad80		FUN_0041ad80	0	0
-0079D4AC		23	0x5C	0079D508	00404624	thunk_FUN_0041adb0	00404624	thunk_FUN_0041adb0	false	false	00404624	thunk_FUN_0041adb0	true	0041ADB0	FUN_0041adb0		FUN_0041adb0	0	0
-0079D4AC		24	0x60	0079D50C	004045B6	thunk_FUN_0041ade0	004045B6	thunk_FUN_0041ade0	false	false	004045B6	thunk_FUN_0041ade0	true	0041ADE0	FUN_0041ade0		FUN_0041ade0	0	0
-0079D4AC		25	0x64	0079D510	004054F7	thunk_FUN_0041ae10	004054F7	thunk_FUN_0041ae10	false	false	004054F7	thunk_FUN_0041ae10	true	0041AE10	FUN_0041ae10		FUN_0041ae10	0	0
-0079D4AC		26	0x68	0079D514	00401780	thunk_FUN_0041ae40	00401780	thunk_FUN_0041ae40	false	false	00401780	thunk_FUN_0041ae40	true	0041AE40	FUN_0041ae40		FUN_0041ae40	0	0
-0079D4AC		27	0x6C	0079D518	004039C2	thunk_FUN_0041ae80	004039C2	thunk_FUN_0041ae80	false	false	004039C2	thunk_FUN_0041ae80	true	0041AE80	FUN_0041ae80		FUN_0041ae80	0	0
-0079D4AC		28	0x70	0079D51C	0040572C	thunk_FUN_0041aec0	0040572C	thunk_FUN_0041aec0	false	false	0040572C	thunk_FUN_0041aec0	true	0041AEC0	FUN_0041aec0		FUN_0041aec0	0	0
-0079D4AC		29	0x74	0079D520	00402BF8	thunk_FUN_0041aea0	00402BF8	thunk_FUN_0041aea0	false	false	00402BF8	thunk_FUN_0041aea0	true	0041AEA0	FUN_0041aea0		FUN_0041aea0	0	0
-0079D4AC		30	0x78	0079D524	0040349F	thunk_FUN_0041c2c0	0040349F	thunk_FUN_0041c2c0	false	false	0040349F	thunk_FUN_0041c2c0	true	0041C2C0	FUN_0041c2c0		FUN_0041c2c0	0	0
-0079D4AC		31	0x7C	0079D528	00405501	thunk_FUN_0041c2e0	00405501	thunk_FUN_0041c2e0	false	false	00405501	thunk_FUN_0041c2e0	true	0041C2E0	FUN_0041c2e0		FUN_0041c2e0	0	0
-0079D4AC		32	0x80	0079D52C	0040411F	thunk_FUN_0041c300	0040411F	thunk_FUN_0041c300	false	false	0040411F	thunk_FUN_0041c300	true	0041C300	FUN_0041c300		FUN_0041c300	0	0
-0079D4AC		33	0x84	0079D530	004054D9	thunk_FUN_0041c320	004054D9	thunk_FUN_0041c320	false	false	004054D9	thunk_FUN_0041c320	true	0041C320	FUN_0041c320		FUN_0041c320	0	0
-0079D4AC		34	0x88	0079D534	004045DE	thunk_FUN_0041c340	004045DE	thunk_FUN_0041c340	false	false	004045DE	thunk_FUN_0041c340	true	0041C340	FUN_0041c340		FUN_0041c340	0	0
-0079D4AC		35	0x8C	0079D538	00405D26	thunk_FUN_0041c360	00405D26	thunk_FUN_0041c360	false	false	00405D26	thunk_FUN_0041c360	true	0041C360	FUN_0041c360		FUN_0041c360	0	0
-0079D4AC		36	0x90	0079D53C	0040574F	thunk_FUN_0041c380	0040574F	thunk_FUN_0041c380	false	false	0040574F	thunk_FUN_0041c380	true	0041C380	FUN_0041c380		FUN_0041c380	0	0
-0079D4AC		37	0x94	0079D540	00403931	thunk_FUN_0041d5e0	00403931	thunk_FUN_0041d5e0	false	false	00403931	thunk_FUN_0041d5e0	true	0041D5E0	FUN_0041d5e0		FUN_0041d5e0	0	0
-0079D4AC		38	0x98	0079D544	00403846	thunk_FUN_0041d600	00403846	thunk_FUN_0041d600	false	false	00403846	thunk_FUN_0041d600	true	0041D600	FUN_0041d600		FUN_0041d600	0	0
-0079D4AC		39	0x9C	0079D548	00401F23	thunk_FUN_0041d760	00401F23	thunk_FUN_0041d760	false	false	00401F23	thunk_FUN_0041d760	true	0041D760	FUN_0041d760		FUN_0041d760	0	0
-0079D4AC		40	0xA0	0079D54C	0040574A	thunk_FUN_0041d780	0040574A	thunk_FUN_0041d780	false	false	0040574A	thunk_FUN_0041d780	true	0041D780	FUN_0041d780		FUN_0041d780	0	0
-0079D4AC		41	0xA4	0079D550	0040229D	thunk_FUN_0041d7a0	0040229D	thunk_FUN_0041d7a0	false	false	0040229D	thunk_FUN_0041d7a0	true	0041D7A0	FUN_0041d7a0		FUN_0041d7a0	0	0
-0079D4AC		42	0xA8	0079D554	00404EA8	thunk_FUN_0041d7c0	00404EA8	thunk_FUN_0041d7c0	false	false	00404EA8	thunk_FUN_0041d7c0	true	0041D7C0	FUN_0041d7c0		FUN_0041d7c0	0	0
-0079D4AC		43	0xAC	0079D558	00405BE6	thunk_FUN_0041d7e0	00405BE6	thunk_FUN_0041d7e0	false	false	00405BE6	thunk_FUN_0041d7e0	true	0041D7E0	FUN_0041d7e0		FUN_0041d7e0	0	0
-0079D4AC		44	0xB0	0079D55C	00404E03	thunk_FUN_0041d800	00404E03	thunk_FUN_0041d800	false	false	00404E03	thunk_FUN_0041d800	true	0041D800	FUN_0041d800		FUN_0041d800	0	0
-0079D4AC		45	0xB4	0079D560	00403D3C	thunk_FUN_0041d820	00403D3C	thunk_FUN_0041d820	false	false	00403D3C	thunk_FUN_0041d820	true	0041D820	FUN_0041d820		FUN_0041d820	0	0
-0079D4AC		46	0xB8	0079D564	00401F28	thunk_FUN_0041d860	00401F28	thunk_FUN_0041d860	false	false	00401F28	thunk_FUN_0041d860	true	0041D860	FUN_0041d860		FUN_0041d860	0	0
-0079D4AC		47	0xBC	0079D568	004018D9	thunk_FUN_0041d8a0	004018D9	thunk_FUN_0041d8a0	false	false	004018D9	thunk_FUN_0041d8a0	true	0041D8A0	FUN_0041d8a0		FUN_0041d8a0	0	0
-0079D4AC		48	0xC0	0079D56C	00405E02	thunk_FUN_0041d8c0	00405E02	thunk_FUN_0041d8c0	false	false	00405E02	thunk_FUN_0041d8c0	true	0041D8C0	FUN_0041d8c0		FUN_0041d8c0	0	0
-0079D4AC		49	0xC4	0079D570	00404ECB	thunk_FUN_00418ce0	00404ECB	thunk_FUN_00418ce0	false	false	00404ECB	thunk_FUN_00418ce0	true	00418CE0	FUN_00418ce0		FUN_00418ce0	0	0
-0079D4AC		50	0xC8	0079D574	00403AEE	thunk_FUN_00418d00	00403AEE	thunk_FUN_00418d00	false	false	00403AEE	thunk_FUN_00418d00	true	00418D00	FUN_00418d00		FUN_00418d00	0	0
-0079D4AC		51	0xCC	0079D578	004034D6	thunk_FUN_004d7010	004034D6	thunk_FUN_004d7010	false	false	004034D6	thunk_FUN_004d7010	true	004D7010	FUN_004d7010		FUN_004d7010	0	0
-0079D4AC		52	0xD0	0079D57C	0040167C	thunk_FUN_004d7040	0040167C	thunk_FUN_004d7040	false	false	0040167C	thunk_FUN_004d7040	true	004D7040	FUN_004d7040		FUN_004d7040	0	0
-0079D4AC		53	0xD4	0079D580	004053DA	thunk_FUN_0041da10	004053DA	thunk_FUN_0041da10	false	false	004053DA	thunk_FUN_0041da10	true	0041DA10	FUN_0041da10		FUN_0041da10	0	0
-0079D4AC		54	0xD8	0079D584	00402644	thunk_FUN_00643e20	00402644	thunk_FUN_00643e20	false	false	00402644	thunk_FUN_00643e20	true	00643E20	FUN_00643e20		FUN_00643e20	0	0
-0079D4AC		55	0xDC	0079D588	0040203B	thunk_FUN_0041dbc0	0040203B	thunk_FUN_0041dbc0	false	false	0040203B	thunk_FUN_0041dbc0	true	0041DBC0	FUN_0041dbc0		FUN_0041dbc0	0	0
-0079D4AC		56	0xE0	0079D58C	00402905	thunk_FUN_0041dbe0	00402905	thunk_FUN_0041dbe0	false	false	00402905	thunk_FUN_0041dbe0	true	0041DBE0	FUN_0041dbe0		FUN_0041dbe0	0	0
-0079D4AC		57	0xE4	0079D590	004018ED	thunk_FUN_0041dc20	004018ED	thunk_FUN_0041dc20	false	false	004018ED	thunk_FUN_0041dc20	true	0041DC20	FUN_0041dc20		FUN_0041dc20	0	0
-0079D4AC		58	0xE8	0079D594	00404E8A	thunk_FUN_0041dd00	00404E8A	thunk_FUN_0041dd00	false	false	00404E8A	thunk_FUN_0041dd00	true	0041DD00	FUN_0041dd00		FUN_0041dd00	0	0
-0079D4AC		59	0xEC	0079D598	004059F7	thunk_FUN_0041f310	004059F7	thunk_FUN_0041f310	false	false	004059F7	thunk_FUN_0041f310	true	0041F310	FUN_0041f310		FUN_0041f310	0	0
-0079D4AC		60	0xF0	0079D59C	00403936	thunk_FUN_0041f330	00403936	thunk_FUN_0041f330	false	false	00403936	thunk_FUN_0041f330	true	0041F330	FUN_0041f330		FUN_0041f330	0	0
-0079D4AC		61	0xF4	0079D5A0	00403C9C	thunk_FUN_0041f350	00403C9C	thunk_FUN_0041f350	false	false	00403C9C	thunk_FUN_0041f350	true	0041F350	FUN_0041f350		FUN_0041f350	0	0
-0079D4AC		62	0xF8	0079D5A4	00401A6E	thunk_FUN_0041f370	00401A6E	thunk_FUN_0041f370	false	false	00401A6E	thunk_FUN_0041f370	true	0041F370	FUN_0041f370		FUN_0041f370	0	0
-0079D4AC		63	0xFC	0079D5A8	00403E13	thunk_FUN_004210c0	00403E13	thunk_FUN_004210c0	false	false	00403E13	thunk_FUN_004210c0	true	004210C0	FUN_004210c0		FUN_004210c0	0	0
-0079D4AC		64	0x100	0079D5AC	00401B3B	thunk_FUN_00422e20	00401B3B	thunk_FUN_00422e20	false	false	00401B3B	thunk_FUN_00422e20	true	00422E20	FUN_00422e20		FUN_00422e20	0	0
-0079D4AC		65	0x104	0079D5B0	00401DAC	thunk_FUN_00422ff0	00401DAC	thunk_FUN_00422ff0	false	false	00401DAC	thunk_FUN_00422ff0	true	00422FF0	FUN_00422ff0		FUN_00422ff0	0	0
-0079D4AC		66	0x108	0079D5B4	00402482	thunk_FUN_00423140	00402482	thunk_FUN_00423140	false	false	00402482	thunk_FUN_00423140	true	00423140	FUN_00423140		FUN_00423140	0	0
-0079D4AC		67	0x10C	0079D5B8	00401474	thunk_FUN_00423160	00401474	thunk_FUN_00423160	false	false	00401474	thunk_FUN_00423160	true	00423160	FUN_00423160		FUN_00423160	0	0
-0079D4AC		68	0x110	0079D5BC	00402BB2	thunk_FUN_00423180	00402BB2	thunk_FUN_00423180	false	false	00402BB2	thunk_FUN_00423180	true	00423180	FUN_00423180		FUN_00423180	0	0
-0079D4AC		69	0x114	0079D5C0	00402A45	thunk_FUN_004231a0	00402A45	thunk_FUN_004231a0	false	false	00402A45	thunk_FUN_004231a0	true	004231A0	FUN_004231a0		FUN_004231a0	0	0
-0079D4AC		70	0x118	0079D5C4	004041E2	thunk_FUN_004231c0	004041E2	thunk_FUN_004231c0	false	false	004041E2	thunk_FUN_004231c0	true	004231C0	FUN_004231c0		FUN_004231c0	0	0
-0079D4AC		71	0x11C	0079D5C8	00404F66	thunk_FUN_004231e0	00404F66	thunk_FUN_004231e0	false	false	00404F66	thunk_FUN_004231e0	true	004231E0	FUN_004231e0		FUN_004231e0	0	0
-0079D4AC		72	0x120	0079D5CC	004045CF	thunk_FUN_00423200	004045CF	thunk_FUN_00423200	false	false	004045CF	thunk_FUN_00423200	true	00423200	FUN_00423200		FUN_00423200	0	0
+0079D4AC	STTorpC	0	0x0	0079D4AC	00404CAF	STTorpC::GetMessage	00404CAF	STTorpC::GetMessage	false	false	00404CAF	STTorpC::GetMessage	true	006406D0	STTorpC::GetMessage	STTorpC	STTorpC::GetMessage	0	0
+0079D4AC	STTorpC	1	0x4	0079D4B0	00402964	thunk_FUN_00415b10	00402964	thunk_FUN_00415b10	false	false	00402964	thunk_FUN_00415b10	true	00415B10	FUN_00415b10		STTorpC::vfunc_04	0	0
+0079D4AC	STTorpC	2	0x8	0079D4B4	00404F25	thunk_FUN_0041e510	00404F25	thunk_FUN_0041e510	false	false	00404F25	thunk_FUN_0041e510	true	0041E510	FUN_0041e510		STTorpC::vfunc_08	0	0
+0079D4AC	STTorpC	3	0xC	0079D4B8	00402EC3	thunk_FUN_004189b0	00402EC3	thunk_FUN_004189b0	false	false	00402EC3	thunk_FUN_004189b0	true	004189B0	FUN_004189b0		STTorpC::vfunc_0C	0	0
+0079D4AC	STTorpC	4	0x10	0079D4BC	00402AFE	thunk_FUN_004168d0	00402AFE	thunk_FUN_004168d0	false	false	00402AFE	thunk_FUN_004168d0	true	004168D0	FUN_004168d0		STTorpC::vfunc_10	0	0
+0079D4AC	STTorpC	5	0x14	0079D4C0	004036AC	thunk_FUN_00416db0	004036AC	thunk_FUN_00416db0	false	false	004036AC	thunk_FUN_00416db0	true	00416DB0	FUN_00416db0		STTorpC::vfunc_14	0	0
+0079D4AC	STTorpC	6	0x18	0079D4C4	00404BCE	thunk_FUN_00417f30	00404BCE	thunk_FUN_00417f30	false	false	00404BCE	thunk_FUN_00417f30	true	00417F30	FUN_00417f30		STTorpC::vfunc_18	0	0
+0079D4AC	STTorpC	7	0x1C	0079D4C8	004048F9	STGameObjC::MoveStep	004048F9	STGameObjC::MoveStep	false	false	004048F9	STGameObjC::MoveStep	true	004189D0	STGameObjC::MoveStep	STGameObjC	STGameObjC::MoveStep	0	0
+0079D4AC	STTorpC	8	0x20	0079D4CC	00404DD1	thunk_FUN_00419a90	00404DD1	thunk_FUN_00419a90	false	false	00404DD1	thunk_FUN_00419a90	true	00419A90	FUN_00419a90		STTorpC::vfunc_20	0	0
+0079D4AC	STTorpC	9	0x24	0079D4D0	00401438	thunk_FUN_00419bf0	00401438	thunk_FUN_00419bf0	false	false	00401438	thunk_FUN_00419bf0	true	00419BF0	FUN_00419bf0		STTorpC::vfunc_24	0	0
+0079D4AC	STTorpC	10	0x28	0079D4D4	00404232	thunk_FUN_00419db0	00404232	thunk_FUN_00419db0	false	false	00404232	thunk_FUN_00419db0	true	00419DB0	FUN_00419db0		STTorpC::vfunc_28	0	0
+0079D4AC	STTorpC	11	0x2C	0079D4D8	004024E6	thunk_FUN_00419dd0	004024E6	thunk_FUN_00419dd0	false	false	004024E6	thunk_FUN_00419dd0	true	00419DD0	FUN_00419dd0		STTorpC::vfunc_2C	0	0
+0079D4AC	STTorpC	12	0x30	0079D4DC	00404F70	thunk_FUN_0041ab60	00404F70	thunk_FUN_0041ab60	false	false	00404F70	thunk_FUN_0041ab60	true	0041AB60	FUN_0041ab60		STTorpC::vfunc_30	0	0
+0079D4AC	STTorpC	13	0x34	0079D4E0	00402D2E	thunk_FUN_0041ab90	00402D2E	thunk_FUN_0041ab90	false	false	00402D2E	thunk_FUN_0041ab90	true	0041AB90	FUN_0041ab90		STTorpC::vfunc_34	0	0
+0079D4AC	STTorpC	14	0x38	0079D4E4	00404DE5	thunk_FUN_0041abc0	00404DE5	thunk_FUN_0041abc0	false	false	00404DE5	thunk_FUN_0041abc0	true	0041ABC0	FUN_0041abc0		STTorpC::vfunc_38	0	0
+0079D4AC	STTorpC	15	0x3C	0079D4E8	004056DC	thunk_FUN_0041abf0	004056DC	thunk_FUN_0041abf0	false	false	004056DC	thunk_FUN_0041abf0	true	0041ABF0	FUN_0041abf0		STTorpC::vfunc_3C	0	0
+0079D4AC	STTorpC	16	0x40	0079D4EC	0040295A	thunk_FUN_0041ac40	0040295A	thunk_FUN_0041ac40	false	false	0040295A	thunk_FUN_0041ac40	true	0041AC40	FUN_0041ac40		STTorpC::vfunc_40	0	0
+0079D4AC	STTorpC	17	0x44	0079D4F0	004050BF	thunk_FUN_0041ac90	004050BF	thunk_FUN_0041ac90	false	false	004050BF	thunk_FUN_0041ac90	true	0041AC90	FUN_0041ac90		STTorpC::vfunc_44	0	0
+0079D4AC	STTorpC	18	0x48	0079D4F4	004014E7	thunk_FUN_0041acc0	004014E7	thunk_FUN_0041acc0	false	false	004014E7	thunk_FUN_0041acc0	true	0041ACC0	FUN_0041acc0		STTorpC::vfunc_48	0	0
+0079D4AC	STTorpC	19	0x4C	0079D4F8	00404FC0	thunk_FUN_0041acf0	00404FC0	thunk_FUN_0041acf0	false	false	00404FC0	thunk_FUN_0041acf0	true	0041ACF0	FUN_0041acf0		STTorpC::vfunc_4C	0	0
+0079D4AC	STTorpC	20	0x50	0079D4FC	00405B41	thunk_FUN_0041ad20	00405B41	thunk_FUN_0041ad20	false	false	00405B41	thunk_FUN_0041ad20	true	0041AD20	FUN_0041ad20		STTorpC::vfunc_50	0	0
+0079D4AC	STTorpC	21	0x54	0079D500	004039F9	thunk_FUN_0041ad50	004039F9	thunk_FUN_0041ad50	false	false	004039F9	thunk_FUN_0041ad50	true	0041AD50	FUN_0041ad50		STTorpC::vfunc_54	0	0
+0079D4AC	STTorpC	22	0x58	0079D504	00404444	thunk_FUN_0041ad80	00404444	thunk_FUN_0041ad80	false	false	00404444	thunk_FUN_0041ad80	true	0041AD80	FUN_0041ad80		STTorpC::vfunc_58	0	0
+0079D4AC	STTorpC	23	0x5C	0079D508	00404624	thunk_FUN_0041adb0	00404624	thunk_FUN_0041adb0	false	false	00404624	thunk_FUN_0041adb0	true	0041ADB0	FUN_0041adb0		STTorpC::vfunc_5C	0	0
+0079D4AC	STTorpC	24	0x60	0079D50C	004045B6	thunk_FUN_0041ade0	004045B6	thunk_FUN_0041ade0	false	false	004045B6	thunk_FUN_0041ade0	true	0041ADE0	FUN_0041ade0		STTorpC::vfunc_60	0	0
+0079D4AC	STTorpC	25	0x64	0079D510	004054F7	thunk_FUN_0041ae10	004054F7	thunk_FUN_0041ae10	false	false	004054F7	thunk_FUN_0041ae10	true	0041AE10	FUN_0041ae10		STTorpC::vfunc_64	0	0
+0079D4AC	STTorpC	26	0x68	0079D514	00401780	thunk_FUN_0041ae40	00401780	thunk_FUN_0041ae40	false	false	00401780	thunk_FUN_0041ae40	true	0041AE40	FUN_0041ae40		STTorpC::vfunc_68	0	0
+0079D4AC	STTorpC	27	0x6C	0079D518	004039C2	thunk_FUN_0041ae80	004039C2	thunk_FUN_0041ae80	false	false	004039C2	thunk_FUN_0041ae80	true	0041AE80	FUN_0041ae80		STTorpC::vfunc_6C	0	0
+0079D4AC	STTorpC	28	0x70	0079D51C	0040572C	thunk_FUN_0041aec0	0040572C	thunk_FUN_0041aec0	false	false	0040572C	thunk_FUN_0041aec0	true	0041AEC0	FUN_0041aec0		STTorpC::vfunc_70	0	0
+0079D4AC	STTorpC	29	0x74	0079D520	00402BF8	thunk_FUN_0041aea0	00402BF8	thunk_FUN_0041aea0	false	false	00402BF8	thunk_FUN_0041aea0	true	0041AEA0	FUN_0041aea0		STTorpC::vfunc_74	0	0
+0079D4AC	STTorpC	30	0x78	0079D524	0040349F	thunk_FUN_0041c2c0	0040349F	thunk_FUN_0041c2c0	false	false	0040349F	thunk_FUN_0041c2c0	true	0041C2C0	FUN_0041c2c0		STTorpC::vfunc_78	0	0
+0079D4AC	STTorpC	31	0x7C	0079D528	00405501	thunk_FUN_0041c2e0	00405501	thunk_FUN_0041c2e0	false	false	00405501	thunk_FUN_0041c2e0	true	0041C2E0	FUN_0041c2e0		STTorpC::vfunc_7C	0	0
+0079D4AC	STTorpC	32	0x80	0079D52C	0040411F	thunk_FUN_0041c300	0040411F	thunk_FUN_0041c300	false	false	0040411F	thunk_FUN_0041c300	true	0041C300	FUN_0041c300		STTorpC::vfunc_80	0	0
+0079D4AC	STTorpC	33	0x84	0079D530	004054D9	thunk_FUN_0041c320	004054D9	thunk_FUN_0041c320	false	false	004054D9	thunk_FUN_0041c320	true	0041C320	FUN_0041c320		STTorpC::vfunc_84	0	0
+0079D4AC	STTorpC	34	0x88	0079D534	004045DE	thunk_FUN_0041c340	004045DE	thunk_FUN_0041c340	false	false	004045DE	thunk_FUN_0041c340	true	0041C340	FUN_0041c340		STTorpC::vfunc_88	0	0
+0079D4AC	STTorpC	35	0x8C	0079D538	00405D26	thunk_FUN_0041c360	00405D26	thunk_FUN_0041c360	false	false	00405D26	thunk_FUN_0041c360	true	0041C360	FUN_0041c360		STTorpC::vfunc_8C	0	0
+0079D4AC	STTorpC	36	0x90	0079D53C	0040574F	thunk_FUN_0041c380	0040574F	thunk_FUN_0041c380	false	false	0040574F	thunk_FUN_0041c380	true	0041C380	FUN_0041c380		STTorpC::vfunc_90	0	0
+0079D4AC	STTorpC	37	0x94	0079D540	00403931	thunk_FUN_0041d5e0	00403931	thunk_FUN_0041d5e0	false	false	00403931	thunk_FUN_0041d5e0	true	0041D5E0	FUN_0041d5e0		STTorpC::vfunc_94	0	0
+0079D4AC	STTorpC	38	0x98	0079D544	00403846	thunk_FUN_0041d600	00403846	thunk_FUN_0041d600	false	false	00403846	thunk_FUN_0041d600	true	0041D600	FUN_0041d600		STTorpC::vfunc_98	0	0
+0079D4AC	STTorpC	39	0x9C	0079D548	00401F23	thunk_FUN_0041d760	00401F23	thunk_FUN_0041d760	false	false	00401F23	thunk_FUN_0041d760	true	0041D760	FUN_0041d760		STTorpC::vfunc_9C	0	0
+0079D4AC	STTorpC	40	0xA0	0079D54C	0040574A	thunk_FUN_0041d780	0040574A	thunk_FUN_0041d780	false	false	0040574A	thunk_FUN_0041d780	true	0041D780	FUN_0041d780		STTorpC::vfunc_A0	0	0
+0079D4AC	STTorpC	41	0xA4	0079D550	0040229D	thunk_FUN_0041d7a0	0040229D	thunk_FUN_0041d7a0	false	false	0040229D	thunk_FUN_0041d7a0	true	0041D7A0	FUN_0041d7a0		STTorpC::vfunc_A4	0	0
+0079D4AC	STTorpC	42	0xA8	0079D554	00404EA8	thunk_FUN_0041d7c0	00404EA8	thunk_FUN_0041d7c0	false	false	00404EA8	thunk_FUN_0041d7c0	true	0041D7C0	FUN_0041d7c0		STTorpC::vfunc_A8	0	0
+0079D4AC	STTorpC	43	0xAC	0079D558	00405BE6	thunk_FUN_0041d7e0	00405BE6	thunk_FUN_0041d7e0	false	false	00405BE6	thunk_FUN_0041d7e0	true	0041D7E0	FUN_0041d7e0		STTorpC::vfunc_AC	0	0
+0079D4AC	STTorpC	44	0xB0	0079D55C	00404E03	thunk_FUN_0041d800	00404E03	thunk_FUN_0041d800	false	false	00404E03	thunk_FUN_0041d800	true	0041D800	FUN_0041d800		STTorpC::vfunc_B0	0	0
+0079D4AC	STTorpC	45	0xB4	0079D560	00403D3C	thunk_FUN_0041d820	00403D3C	thunk_FUN_0041d820	false	false	00403D3C	thunk_FUN_0041d820	true	0041D820	FUN_0041d820		STTorpC::vfunc_B4	0	0
+0079D4AC	STTorpC	46	0xB8	0079D564	00401F28	thunk_FUN_0041d860	00401F28	thunk_FUN_0041d860	false	false	00401F28	thunk_FUN_0041d860	true	0041D860	FUN_0041d860		STTorpC::vfunc_B8	0	0
+0079D4AC	STTorpC	47	0xBC	0079D568	004018D9	thunk_FUN_0041d8a0	004018D9	thunk_FUN_0041d8a0	false	false	004018D9	thunk_FUN_0041d8a0	true	0041D8A0	FUN_0041d8a0		STTorpC::vfunc_BC	0	0
+0079D4AC	STTorpC	48	0xC0	0079D56C	00405E02	thunk_FUN_0041d8c0	00405E02	thunk_FUN_0041d8c0	false	false	00405E02	thunk_FUN_0041d8c0	true	0041D8C0	FUN_0041d8c0		STTorpC::vfunc_C0	0	0
+0079D4AC	STTorpC	49	0xC4	0079D570	00404ECB	thunk_FUN_00418ce0	00404ECB	thunk_FUN_00418ce0	false	false	00404ECB	thunk_FUN_00418ce0	true	00418CE0	FUN_00418ce0		STTorpC::vfunc_C4	0	0
+0079D4AC	STTorpC	50	0xC8	0079D574	00403AEE	thunk_FUN_00418d00	00403AEE	thunk_FUN_00418d00	false	false	00403AEE	thunk_FUN_00418d00	true	00418D00	FUN_00418d00		STTorpC::vfunc_C8	0	0
+0079D4AC	STTorpC	51	0xCC	0079D578	004034D6	thunk_FUN_004d7010	004034D6	thunk_FUN_004d7010	false	false	004034D6	thunk_FUN_004d7010	true	004D7010	FUN_004d7010		STTorpC::vfunc_CC	0	0
+0079D4AC	STTorpC	52	0xD0	0079D57C	0040167C	thunk_FUN_004d7040	0040167C	thunk_FUN_004d7040	false	false	0040167C	thunk_FUN_004d7040	true	004D7040	FUN_004d7040		STTorpC::vfunc_D0	0	0
+0079D4AC	STTorpC	53	0xD4	0079D580	004053DA	thunk_FUN_0041da10	004053DA	thunk_FUN_0041da10	false	false	004053DA	thunk_FUN_0041da10	true	0041DA10	FUN_0041da10		STTorpC::vfunc_D4	0	0
+0079D4AC	STTorpC	54	0xD8	0079D584	00402644	thunk_FUN_00643e20	00402644	thunk_FUN_00643e20	false	false	00402644	thunk_FUN_00643e20	true	00643E20	FUN_00643e20		STTorpC::vfunc_D8	0	0
+0079D4AC	STTorpC	55	0xDC	0079D588	0040203B	thunk_FUN_0041dbc0	0040203B	thunk_FUN_0041dbc0	false	false	0040203B	thunk_FUN_0041dbc0	true	0041DBC0	FUN_0041dbc0		STTorpC::vfunc_DC	0	0
+0079D4AC	STTorpC	56	0xE0	0079D58C	00402905	thunk_FUN_0041dbe0	00402905	thunk_FUN_0041dbe0	false	false	00402905	thunk_FUN_0041dbe0	true	0041DBE0	FUN_0041dbe0		STTorpC::vfunc_E0	0	0
+0079D4AC	STTorpC	57	0xE4	0079D590	004018ED	thunk_FUN_0041dc20	004018ED	thunk_FUN_0041dc20	false	false	004018ED	thunk_FUN_0041dc20	true	0041DC20	FUN_0041dc20		STTorpC::vfunc_E4	0	0
+0079D4AC	STTorpC	58	0xE8	0079D594	00404E8A	thunk_FUN_0041dd00	00404E8A	thunk_FUN_0041dd00	false	false	00404E8A	thunk_FUN_0041dd00	true	0041DD00	FUN_0041dd00		STTorpC::vfunc_E8	0	0
+0079D4AC	STTorpC	59	0xEC	0079D598	004059F7	thunk_FUN_0041f310	004059F7	thunk_FUN_0041f310	false	false	004059F7	thunk_FUN_0041f310	true	0041F310	FUN_0041f310		STTorpC::vfunc_EC	0	0
+0079D4AC	STTorpC	60	0xF0	0079D59C	00403936	thunk_FUN_0041f330	00403936	thunk_FUN_0041f330	false	false	00403936	thunk_FUN_0041f330	true	0041F330	FUN_0041f330		STTorpC::vfunc_F0	0	0
+0079D4AC	STTorpC	61	0xF4	0079D5A0	00403C9C	thunk_FUN_0041f350	00403C9C	thunk_FUN_0041f350	false	false	00403C9C	thunk_FUN_0041f350	true	0041F350	FUN_0041f350		STTorpC::vfunc_F4	0	0
+0079D4AC	STTorpC	62	0xF8	0079D5A4	00401A6E	thunk_FUN_0041f370	00401A6E	thunk_FUN_0041f370	false	false	00401A6E	thunk_FUN_0041f370	true	0041F370	FUN_0041f370		STTorpC::vfunc_F8	0	0
+0079D4AC	STTorpC	63	0xFC	0079D5A8	00403E13	thunk_FUN_004210c0	00403E13	thunk_FUN_004210c0	false	false	00403E13	thunk_FUN_004210c0	true	004210C0	FUN_004210c0		STTorpC::vfunc_FC	0	0
+0079D4AC	STTorpC	64	0x100	0079D5AC	00401B3B	thunk_FUN_00422e20	00401B3B	thunk_FUN_00422e20	false	false	00401B3B	thunk_FUN_00422e20	true	00422E20	FUN_00422e20		STTorpC::vfunc_100	0	0
+0079D4AC	STTorpC	65	0x104	0079D5B0	00401DAC	thunk_FUN_00422ff0	00401DAC	thunk_FUN_00422ff0	false	false	00401DAC	thunk_FUN_00422ff0	true	00422FF0	FUN_00422ff0		STTorpC::vfunc_104	0	0
+0079D4AC	STTorpC	66	0x108	0079D5B4	00402482	thunk_FUN_00423140	00402482	thunk_FUN_00423140	false	false	00402482	thunk_FUN_00423140	true	00423140	FUN_00423140		STTorpC::vfunc_108	0	0
+0079D4AC	STTorpC	67	0x10C	0079D5B8	00401474	thunk_FUN_00423160	00401474	thunk_FUN_00423160	false	false	00401474	thunk_FUN_00423160	true	00423160	FUN_00423160		STTorpC::vfunc_10C	0	0
+0079D4AC	STTorpC	68	0x110	0079D5BC	00402BB2	thunk_FUN_00423180	00402BB2	thunk_FUN_00423180	false	false	00402BB2	thunk_FUN_00423180	true	00423180	FUN_00423180		STTorpC::vfunc_110	0	0
+0079D4AC	STTorpC	69	0x114	0079D5C0	00402A45	thunk_FUN_004231a0	00402A45	thunk_FUN_004231a0	false	false	00402A45	thunk_FUN_004231a0	true	004231A0	FUN_004231a0		STTorpC::vfunc_114	0	0
+0079D4AC	STTorpC	70	0x118	0079D5C4	004041E2	thunk_FUN_004231c0	004041E2	thunk_FUN_004231c0	false	false	004041E2	thunk_FUN_004231c0	true	004231C0	FUN_004231c0		STTorpC::vfunc_118	0	0
+0079D4AC	STTorpC	71	0x11C	0079D5C8	00404F66	thunk_FUN_004231e0	00404F66	thunk_FUN_004231e0	false	false	00404F66	thunk_FUN_004231e0	true	004231E0	FUN_004231e0		STTorpC::vfunc_11C	0	0
+0079D4AC	STTorpC	72	0x120	0079D5CC	004045CF	thunk_FUN_00423200	004045CF	thunk_FUN_00423200	false	false	004045CF	thunk_FUN_00423200	true	00423200	FUN_00423200		STTorpC::vfunc_120	0	0
 0079D610	STVolcanoC	0	0x0	0079D610	004038D2	STVolcanoC::GetMessage	004038D2	STVolcanoC::GetMessage	false	false	004038D2	STVolcanoC::GetMessage	true	006461E0	STVolcanoC::GetMessage	STVolcanoC	STVolcanoC::GetMessage	0	0
 0079D618	AiBossClassTy	0	0x0	0079D618	00405961	thunk_FUN_00647b60	00405961	thunk_FUN_00647b60	false	false	00405961	thunk_FUN_00647b60	true	00647B60	FUN_00647b60		AiBossClassTy::vfunc_00	0	0
 0079D618	AiBossClassTy	1	0x4	0079D61C	00404D9A	thunk_FUN_00647b80	00404D9A	thunk_FUN_00647b80	false	false	00404D9A	thunk_FUN_00647b80	true	00647B80	FUN_00647b80		AiBossClassTy::vfunc_04	0	0
@@ -2659,26 +2665,26 @@ table_address	owner	slot_index	slot_offset	pointer_address	raw_target_address	ra
 0079E21C	SpriteClassTy	1	0x4	0079E220	00715C60	SpriteClassTy::SetImagesReg	00715C60	SpriteClassTy::SetImagesReg	false	false	00715C60	SpriteClassTy::SetImagesReg	false	00715C60	SpriteClassTy::SetImagesReg		SpriteClassTy::SetImagesReg	0	0
 0079E21C	SpriteClassTy	2	0x8	0079E224	00716480	SpriteClassTy::SetImagesPtr	00716480	SpriteClassTy::SetImagesPtr	false	false	00716480	SpriteClassTy::SetImagesPtr	false	00716480	SpriteClassTy::SetImagesPtr		SpriteClassTy::SetImagesPtr	0	0
 0079E284		0	0x0	0079E284	0071CA50	InputClassTy::GetMessage	0071CA50	InputClassTy::GetMessage	false	false	0071CA50	InputClassTy::GetMessage	false	0071CA50	InputClassTy::GetMessage		InputClassTy::GetMessage	0	0
-0079E284		1	0x4	0079E288	0071CFD0	ButtonClassTy::GetMessage	0071CFD0	ButtonClassTy::GetMessage	false	false	0071CFD0	ButtonClassTy::GetMessage	false	0071CFD0	ButtonClassTy::GetMessage		ButtonClassTy::GetMessage	0	0
-0079E284		2	0x8	0079E28C	0071CF60	FUN_0071cf60	0071CF60	FUN_0071cf60	false	false	0071CF60	FUN_0071cf60	false	0071CF60	FUN_0071cf60		FUN_0071cf60	0	0
-0079E284		3	0xC	0079E290	0071CF80	FUN_0071cf80	0071CF80	FUN_0071cf80	false	false	0071CF80	FUN_0071cf80	false	0071CF80	FUN_0071cf80		FUN_0071cf80	0	0
+0079E288	ButtonClassTy	0	0x0	0079E288	0071CFD0	ButtonClassTy::GetMessage	0071CFD0	ButtonClassTy::GetMessage	false	false	0071CFD0	ButtonClassTy::GetMessage	false	0071CFD0	ButtonClassTy::GetMessage		ButtonClassTy::GetMessage	0	0
+0079E288	ButtonClassTy	1	0x4	0079E28C	0071CF60	FUN_0071cf60	0071CF60	FUN_0071cf60	false	false	0071CF60	FUN_0071cf60	false	0071CF60	FUN_0071cf60		ButtonClassTy::vfunc_04	0	0
+0079E288	ButtonClassTy	2	0x8	0079E290	0071CF80	FUN_0071cf80	0071CF80	FUN_0071cf80	false	false	0071CF80	FUN_0071cf80	false	0071CF80	FUN_0071cf80		ButtonClassTy::vfunc_08	0	0
 0079E294		0	0x0	0079E294	0071E0E0	RadioClassTy::GetMessage	0071E0E0	RadioClassTy::GetMessage	false	false	0071E0E0	RadioClassTy::GetMessage	false	0071E0E0	RadioClassTy::GetMessage		RadioClassTy::GetMessage	0	0
 0079E298		0	0x0	0079E298	0071E8B0	ViewerClassTy::GetMessage	0071E8B0	ViewerClassTy::GetMessage	false	false	0071E8B0	ViewerClassTy::GetMessage	false	0071E8B0	ViewerClassTy::GetMessage		ViewerClassTy::GetMessage	0	0
 0079E298		1	0x4	0079E29C	0071E730	ViewerClassTy::_Draw	0071E730	ViewerClassTy::_Draw	false	false	0071E730	ViewerClassTy::_Draw	false	0071E730	ViewerClassTy::_Draw		ViewerClassTy::_Draw	0	0
 0079E298		2	0x8	0079E2A0	0071E860	FUN_0071e860	0071E860	FUN_0071e860	false	false	0071E860	FUN_0071e860	false	0071E860	FUN_0071e860		FUN_0071e860	0	0
-0079E298		3	0xC	0079E2A4	0071F3A0	ListClassTy::GetMessage	0071F3A0	ListClassTy::GetMessage	false	false	0071F3A0	ListClassTy::GetMessage	false	0071F3A0	ListClassTy::GetMessage		ListClassTy::GetMessage	0	0
-0079E298		4	0x10	0079E2A8	0071F230	FUN_0071f230	0071F230	FUN_0071f230	false	false	0071F230	FUN_0071f230	false	0071F230	FUN_0071f230		FUN_0071f230	0	0
-0079E298		5	0x14	0079E2AC	0071F2B0	FUN_0071f2b0	0071F2B0	FUN_0071f2b0	false	false	0071F2B0	FUN_0071f2b0	false	0071F2B0	FUN_0071f2b0		FUN_0071f2b0	0	0
-0079E298		6	0x18	0079E2B0	0071F2F0	FUN_0071f2f0	0071F2F0	FUN_0071f2f0	false	false	0071F2F0	FUN_0071f2f0	false	0071F2F0	FUN_0071f2f0		FUN_0071f2f0	0	0
+0079E2A4	ListClassTy	0	0x0	0079E2A4	0071F3A0	ListClassTy::GetMessage	0071F3A0	ListClassTy::GetMessage	false	false	0071F3A0	ListClassTy::GetMessage	false	0071F3A0	ListClassTy::GetMessage		ListClassTy::GetMessage	0	0
+0079E2A4	ListClassTy	1	0x4	0079E2A8	0071F230	FUN_0071f230	0071F230	FUN_0071f230	false	false	0071F230	FUN_0071f230	false	0071F230	FUN_0071f230		ListClassTy::vfunc_04	0	0
+0079E2A4	ListClassTy	2	0x8	0079E2AC	0071F2B0	FUN_0071f2b0	0071F2B0	FUN_0071f2b0	false	false	0071F2B0	FUN_0071f2b0	false	0071F2B0	FUN_0071f2b0		ListClassTy::vfunc_08	0	0
+0079E2A4	ListClassTy	3	0xC	0079E2B0	0071F2F0	FUN_0071f2f0	0071F2F0	FUN_0071f2f0	false	false	0071F2F0	FUN_0071f2f0	false	0071F2F0	FUN_0071f2f0		ListClassTy::vfunc_0C	0	0
 0079E2B4		0	0x0	0079E2B4	00722410	EditorClassTy::GetMessage	00722410	EditorClassTy::GetMessage	false	false	00722410	EditorClassTy::GetMessage	false	00722410	EditorClassTy::GetMessage		EditorClassTy::GetMessage	0	0
 0079E2B4		1	0x4	0079E2B8	00720A50	EditorClassTy::_Draw	00720A50	EditorClassTy::_Draw	false	false	00720A50	EditorClassTy::_Draw	false	00720A50	EditorClassTy::_Draw		EditorClassTy::_Draw	0	0
 0079E2B4		2	0x8	0079E2BC	007209D0	FUN_007209d0	007209D0	FUN_007209d0	false	false	007209D0	FUN_007209d0	false	007209D0	FUN_007209d0		FUN_007209d0	0	0
-0079E2B4		3	0xC	0079E2C0	00723420	TabClassTy::GetMessage	00723420	TabClassTy::GetMessage	false	false	00723420	TabClassTy::GetMessage	false	00723420	TabClassTy::GetMessage		TabClassTy::GetMessage	0	0
-0079E2B4		4	0x10	0079E2C4	007233D0	FUN_007233d0	007233D0	FUN_007233d0	false	false	007233D0	FUN_007233d0	false	007233D0	FUN_007233d0		FUN_007233d0	0	0
+0079E2C0		0	0x0	0079E2C0	00723420	TabClassTy::GetMessage	00723420	TabClassTy::GetMessage	false	false	00723420	TabClassTy::GetMessage	false	00723420	TabClassTy::GetMessage		TabClassTy::GetMessage	0	0
+0079E2C0		1	0x4	0079E2C4	007233D0	FUN_007233d0	007233D0	FUN_007233d0	false	false	007233D0	FUN_007233d0	false	007233D0	FUN_007233d0		FUN_007233d0	0	0
 0079E2C8		0	0x0	0079E2C8	007244B0	SliderClassTy::GetMessage	007244B0	SliderClassTy::GetMessage	false	false	007244B0	SliderClassTy::GetMessage	false	007244B0	SliderClassTy::GetMessage		SliderClassTy::GetMessage	0	0
-0079E2C8		1	0x4	0079E2CC	00725020	TrackbarClassTy::GetMessage	00725020	TrackbarClassTy::GetMessage	false	false	00725020	TrackbarClassTy::GetMessage	false	00725020	TrackbarClassTy::GetMessage		TrackbarClassTy::GetMessage	0	0
-0079E2C8		2	0x8	0079E2D0	00724D20	FUN_00724d20	00724D20	FUN_00724d20	false	false	00724D20	FUN_00724d20	false	00724D20	FUN_00724d20		FUN_00724d20	0	0
-0079E2C8		3	0xC	0079E2D4	00724D40	FUN_00724d40	00724D40	FUN_00724d40	false	false	00724D40	FUN_00724d40	false	00724D40	FUN_00724d40		FUN_00724d40	0	0
+0079E2CC	TrackbarClassTy	0	0x0	0079E2CC	00725020	TrackbarClassTy::GetMessage	00725020	TrackbarClassTy::GetMessage	false	false	00725020	TrackbarClassTy::GetMessage	false	00725020	TrackbarClassTy::GetMessage		TrackbarClassTy::GetMessage	0	0
+0079E2CC	TrackbarClassTy	1	0x4	0079E2D0	00724D20	FUN_00724d20	00724D20	FUN_00724d20	false	false	00724D20	FUN_00724d20	false	00724D20	FUN_00724d20		TrackbarClassTy::vfunc_04	0	0
+0079E2CC	TrackbarClassTy	2	0x8	0079E2D4	00724D40	FUN_00724d40	00724D40	FUN_00724d40	false	false	00724D40	FUN_00724d40	false	00724D40	FUN_00724d40		TrackbarClassTy::vfunc_08	0	0
 0079E360		0	0x0	0079E360	0072B780	ControlClassTy::GetMessage	0072B780	ControlClassTy::GetMessage	false	false	0072B780	ControlClassTy::GetMessage	false	0072B780	ControlClassTy::GetMessage		ControlClassTy::GetMessage	0	0
 0079E360		1	0x4	0079E364	00734210	Library::MSVCRT::FUN_00734210	00734210	Library::MSVCRT::FUN_00734210	false	false	00734210	Library::MSVCRT::FUN_00734210	false	00734210	Library::MSVCRT::FUN_00734210		Library::MSVCRT::FUN_00734210	0	0
 007A1108		0	0x0	007A1108	00747622	FUN_00747622	00747622	FUN_00747622	false	false	00747622	FUN_00747622	false	00747622	FUN_00747622		FUN_00747622	0	0

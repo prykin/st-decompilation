@@ -131,9 +131,7 @@ FUN_00618240(void *this,int param_1,int param_2,int param_3,undefined4 *param_4)
                   this_00 = nullptr;
                 }
                 else {
-                  this_00 = g_worldGrid.cells
-                            [(int)g_worldGrid.planeStride * (int)sVar9 +
-                             (int)g_worldGrid.sizeX * (int)sVar7 + (int)sVar12].objects[0];
+                  this_00 = STGridAt3D(g_worldGrid, sVar12, sVar7, sVar9).objects[0];
                   iVar8 = local_34;
                 }
                 if (((this_00 != nullptr) &&

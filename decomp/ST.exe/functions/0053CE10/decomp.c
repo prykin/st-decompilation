@@ -18,23 +18,23 @@ SAMPanelTy * __cdecl CreateSAMPanel(void)
     sub_006E5FB0(this);
     this->field_005C = 0;
     this->field_0060 = 0xffffffff;
-    *(undefined4 *)&this->field_0x64 = 4;
+    this->field_0064 = 4;
     this->field_0068 = 0;
     this->field_0172 = 2;
-    *(undefined4 *)&this->field_0x178 = 0;
-    *(undefined4 *)&this->field_0x17c = 0;
+    this->field_0178 = 0;
+    this->field_017C = 0;
     this->field_0185 = 0;
     this->field_0189 = nullptr;
-    this->field_0000 = (AnonPointee_SAMPanelTy_0000 *)&PTR_GetMessage_0079ad8c;
+    this->vtable = &SAMPanelTyVTable;
     this->field_003C = 0xc;
     this->field_0044 = 0;
-    *(undefined4 *)&this->field_0x40 = 0x128;
-    *(undefined4 *)&this->field_0x48 = 0x8c;
-    *(undefined4 *)&this->field_0x180 = 1;
-    this->field_0x184 = 0;
+    this->field_0040 = 0x128;
+    this->field_0048 = 0x8c;
+    this->field_0180 = 1;
+    this->field_0184 = 0;
     this->field_01AB = 0;
     this->field_01AF = 0;
-    memset(&this->field_01B5, 0, 0x1c); /* compiler bulk-zero initialization */
+    memset(this->field_01B5, 0, 0x1c); /* compiler bulk-zero initialization */
     this->field_01B1 = nullptr;
     return this;
   }

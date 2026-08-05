@@ -13,7 +13,7 @@ int __thiscall SAMPanelTy::GetMessage(SAMPanelTy *this,STMessage *message)
 
 {
   STMessageId SVar1;
-  AnonPointee_SAMPanelTy_0000 *pAVar2;
+  SAMPanelTyVTable *pSVar2;
   int iVar3;
   code *pcVar4;
   SAMPanelTy *this_00;
@@ -22,10 +22,8 @@ int __thiscall SAMPanelTy::GetMessage(SAMPanelTy *this,STMessage *message)
   LPSTR pCVar7;
   int iVar8;
   byte *pbVar9;
-  int iVar10;
-  undefined4 uVar11;
-  undefined4 uVar12;
-  undefined4 uVar13;
+  UINT UVar10;
+  int iVar11;
   InternalExceptionFrame local_54;
   byte local_10;
   undefined3 uStack_f;
@@ -40,9 +38,9 @@ int __thiscall SAMPanelTy::GetMessage(SAMPanelTy *this,STMessage *message)
   this_00 = local_c;
   if (iVar6 != 0) {
     g_currentExceptionFrame = local_54.previous;
-    iVar10 = ReportDebugMessage("E:\\__titans\\Andrey\\setamine.cpp",0x94,0,iVar6,
+    iVar11 = ReportDebugMessage("E:\\__titans\\Andrey\\setamine.cpp",0x94,0,iVar6,
                                 "%s","SAMPanelTy::GetMessage");
-    if (iVar10 != 0) {
+    if (iVar11 != 0) {
       STDebugBreak(); /* noreturn in standalone pseudocode */
     }
     RaiseInternalException(iVar6,0,"E:\\__titans\\Andrey\\setamine.cpp",0x94);
@@ -80,7 +78,7 @@ int __thiscall SAMPanelTy::GetMessage(SAMPanelTy *this,STMessage *message)
     if (SVar1 < MESS_SAMPANELTY_B518) {
       iVar6 = this_00->field_003C;
       bVar5 = (char)message->id - 0xf;
-      iVar10 = *(int *)(message->arg1).ptr;
+      iVar11 = *(int *)(message->arg1).ptr;
       iVar3 = *(int *)((int)(message->arg1).ptr + 4);
       /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
       _local_10 = CONCAT31(uStack_f,bVar5);
@@ -91,20 +89,19 @@ int __thiscall SAMPanelTy::GetMessage(SAMPanelTy *this,STMessage *message)
       pbVar9 = (byte *)FUN_0070b3a0((AnonShape_GLOBAL_0081175C_57F682DD *)this_00->field_01B1,
                                     (uint)(*(char *)((int)this_00->field_01B5 + (bVar5 - 10)) ==
                                           '\0'));
-      DibPut((AnonShape_006B5B10_E0D06CF1 *)this_00->field_0068,iVar10 - iVar6,iVar3 - iVar8,'\x01',
+      DibPut((AnonShape_006B5B10_E0D06CF1 *)this_00->field_0068,iVar11 - iVar6,iVar3 - iVar8,'\x01',
              pbVar9);
       Library::DKW::DDX::FUN_006b3640
                 ((int *)g_ddxContext_008075A8,this_00->field_0060,0xffffffff,this_00->field_003C,
                  this_00->field_0044);
     }
     else if (SVar1 == MESS_SAMPANELTY_B518) {
-      pAVar2 = this_00->field_0000;
-      uVar13 = 1;
-      uVar12 = 0;
-      uVar11 = 0x2755;
+      pSVar2 = this_00->vtable;
+      iVar11 = 1;
+      iVar6 = 0;
+      UVar10 = 0x2755;
       pCVar7 = thunk_FUN_00571240("BUT_BIG",0);
-      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-      (*(code *)pAVar2->field_0010)(message,pCVar7,uVar11,uVar12,uVar13);
+      (*pSVar2->PaintIBut)((PanelTy *)this_00,(int)message,pCVar7,UVar10,iVar6,iVar11);
       g_currentExceptionFrame = local_54.previous;
       return 0;
     }

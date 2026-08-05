@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 void __thiscall FUN_0062af90(void *this,int param_1,int param_2,int param_3)
 
@@ -53,9 +55,7 @@ void __thiscall FUN_0062af90(void *this,int param_1,int param_2,int param_3)
       this_00 = nullptr;
     }
     else {
-      this_00 = g_worldGrid.cells
-                [(int)g_worldGrid.planeStride * (int)sVar1 + (int)sVar3 * (int)g_worldGrid.sizeX +
-                 (int)sVar6].objects[1];
+      this_00 = STGridAt3D(g_worldGrid, sVar6, sVar3, sVar1).objects[1];
     }
     pAVar8 = &local_38;
     local_8 = this;

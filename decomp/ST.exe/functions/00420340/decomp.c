@@ -7,9 +7,13 @@
 
    [STReturnSemanticsApplier] ignored_eax_void.
    Evidence: all observed direct callers ignore the return register (ignored=2, used=0), and
-   decompilation contains no value return */
+   decompilation contains no value return
+   [STAbiConsistencyApplier] machine_thiscall_arity target=function:-1: prototype=void __thiscall
+   LoadActFrame(STSprGameObjC * this) Evidence: every machine RET purges exactly 0 explicit stack
+   bytes; current signature describes 4; removed trailing parameter slots have no listing
+   references; ret_sites=004207C7 RET | 00420829 RET | 00420855 RET */
 
-void __thiscall STSprGameObjC::LoadActFrame(STSprGameObjC *this,int *param_1)
+void __thiscall STSprGameObjC::LoadActFrame(STSprGameObjC *this)
 
 {
   undefined4 *this_00;
@@ -167,7 +171,6 @@ switchD_00420436_caseD_1:
       pcVar10 = pcVar12 + -uVar6;
       pcVar12 = pcVar11 + -1;
       memmove(pcVar12, pcVar10, uVar6); /* compiler REP MOVS byte copy */
-      uVar8 = 0;
       pcVar10 = &DAT_007a4fb0;
       break;
     case 2:
@@ -381,6 +384,7 @@ switchD_00420436_caseD_1:
       pcVar10 = pcVar12 + -uVar6;
       pcVar12 = pcVar11 + -1;
       memmove(pcVar12, pcVar10, uVar6); /* compiler REP MOVS byte copy */
+      uVar8 = 0;
       pcVar10 = &DAT_007a4ff4;
     }
 LAB_00420678:
@@ -536,6 +540,7 @@ switchD_00420436_caseD_2:
     pcVar10 = pcVar12 + -uVar6;
     pcVar12 = pcVar11 + -1;
     memmove(pcVar12, pcVar10, uVar6); /* compiler REP MOVS byte copy */
+    uVar8 = 0;
     uVar6 = 0xffffffff;
     pcVar10 = local_10;
     do {

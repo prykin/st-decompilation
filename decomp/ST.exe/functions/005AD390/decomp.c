@@ -12,9 +12,15 @@
    [STSwitchEnumApplier] Switch target field_1A5F uses
    /SubmarineTitans/Recovered/Enums/ChooseMapTy_field_1A5FState. Cases:
    CASE_0=0;CASE_1=1;CASE_2=2;CASE_3=3;CASE_4=4;CASE_5=5;CASE_6=6;CASE_7=7;CASE_9=9;CASE_A=10;CASE_B=11;CASE_C=12;CASE_D=13;CASE_10=16;CASE_13=19;CASE_14=20;CASE_15=21
-    */
+   [STAbiConsistencyApplier] machine_thiscall_arity target=function:-1: prototype=undefined1
+   __thiscall NoneChooseMap(ChooseMapTy * this) Evidence: every machine RET purges exactly 0
+   explicit stack bytes; current signature describes 4; removed trailing parameter slots have no
+   listing references; ret_sites=005AD62C RET | 005AD9DB RET | 005ADC09 RET | 005ADC4F RET
+   [STAbiConsistencyApplier] machine_thiscall_unsized_return_migration target=return:-1:
+   return=/undefined Evidence: legacy ABI applier materialized the unsized return as undefined1
+   while changing only function arity; restore Ghidra DefaultDataType */
 
-void __thiscall ChooseMapTy::NoneChooseMap(ChooseMapTy *this,undefined4 *param_1)
+void __thiscall ChooseMapTy::NoneChooseMap(ChooseMapTy *this)
 
 {
   char cVar1;
@@ -27,8 +33,9 @@ void __thiscall ChooseMapTy::NoneChooseMap(ChooseMapTy *this,undefined4 *param_1
   int iVar7;
   int iVar8;
   uint *puVar9;
+  STMessage *pSVar10;
   InternalExceptionFrame local_b0;
-  int local_6c [8];
+  STMessage local_6c;
   uint local_4c;
   undefined2 local_48;
   undefined1 local_46;
@@ -99,17 +106,19 @@ void __thiscall ChooseMapTy::NoneChooseMap(ChooseMapTy *this,undefined4 *param_1
             iVar7 = Library::Ourlib::CONNECT::FUN_00715630
                               (g_int_00811764,-1,&local_18,&local_1c,&local_c,&local_4c,-1,0);
             if (iVar7 == -0x4d) {
-              memset(local_6c, 0, 0x20); /* compiler bulk-zero initialization */
-              iVar7 = 0;
-              local_6c[4] = (-(uint)(DAT_008067a0 != '\0') & 4) + 0x694d;
+              pSVar10 = &local_6c;
+              for (iVar7 = 8; iVar7 != 0; iVar7 = iVar7 + -1) {
+                pSVar10->unknown_00 = 0;
+                pSVar10 = (STMessage *)&pSVar10->unknown_04;
+              }
+              local_6c.id = (-(uint)(DAT_008067a0 != '\0') & 4) + MESS_WAITTY_694D;
               if (this_00->field_1A5B->field_02E6 == nullptr) {
-                /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-                (*(code *)this_00->field_0000->field_0000)(local_6c);
+                this_00->GetMessage(&local_6c);
               }
               else {
-                local_6c[2] = this_00->field_0008;
-                local_6c[3] = 2;
-                MMsgTy::SetMessage(this_00->field_1A5B->field_02E6,0x2522,'\0',local_6c,
+                local_6c.unknown_08 = this_00->field_0008;
+                local_6c.unknown_0c = 2;
+                MMsgTy::SetMessage(this_00->field_1A5B->field_02E6,0x2522,'\0',&local_6c.unknown_00,
                                    nullptr,nullptr,0,0);
               }
             }

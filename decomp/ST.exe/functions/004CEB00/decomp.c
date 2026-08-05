@@ -112,9 +112,7 @@ switchD_004ceb68_caseD_32:
           if ((((sVar3 < 0) || (g_worldGrid.sizeX <= sVar3)) || (sVar6 = (short)local_c, sVar6 < 0))
              || (((g_worldGrid.sizeY <= sVar6 || (sVar10 < 0)) ||
                  ((g_worldGrid.sizeZ <= sVar10 ||
-                  (g_worldGrid.cells
-                   [(int)sVar10 * (int)g_worldGrid.planeStride + (int)g_worldGrid.sizeX * (int)sVar6
-                    + (int)sVar3].objects[0] == nullptr)))))) {
+                  (STGridAt3D(g_worldGrid, sVar3, sVar6, sVar10).objects[0] == nullptr)))))) {
             this->field_04E0[0] = local_8;
             iVar5 = this->field_05B8;
             this->field_04DC = 1;

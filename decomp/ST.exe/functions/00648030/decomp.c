@@ -16,16 +16,16 @@ int __thiscall AiBossClassTy::GetMessage(AiBossClassTy *this,STMessage *message)
   code *pcVar2;
   AiBossClassTy *this_00;
   int iVar3;
-  AiPlrClassTy *pAVar4;
-  int iVar5;
+  AiPlrClassTy *this_01;
+  int iVar4;
+  uint uVar5;
   uint uVar6;
-  uint uVar7;
-  byte *pbVar8;
-  byte *puVar9;
-  char *pcVar10;
-  char cVar11;
-  byte *puVar12;
-  char *pcVar13;
+  byte *pbVar7;
+  byte *puVar8;
+  char *pcVar9;
+  char cVar10;
+  byte *puVar11;
+  char *pcVar12;
   InternalExceptionFrame local_54;
   AiBossClassTy *local_10;
   byte *local_c;
@@ -38,17 +38,17 @@ int __thiscall AiBossClassTy::GetMessage(AiBossClassTy *this,STMessage *message)
   this_00 = local_10;
   if (iVar3 != 0) {
     g_currentExceptionFrame = local_54.previous;
-    iVar5 = ReportDebugMessage("E:\\__titans\\ai\\ai_boss.cpp",0xde,0,iVar3,
+    iVar4 = ReportDebugMessage("E:\\__titans\\ai\\ai_boss.cpp",0xde,0,iVar3,
                                "AiBossClassTy::GetMessage error mess->id == %lX Name=%d",message->id,
                                local_10->field_0018);
-    if (iVar5 == 0) {
+    if (iVar4 == 0) {
       RaiseInternalException(iVar3,0,"E:\\__titans\\ai\\ai_boss.cpp",0xdf);
       return 0xffff;
     }
     STDebugBreak(); /* noreturn in standalone pseudocode */
   }
-  uVar6 = g_playSystem_00802A38->field_00E4;
-  local_10->field_0658 = uVar6;
+  uVar5 = g_playSystem_00802A38->field_00E4;
+  local_10->field_0658 = uVar5;
   SVar1 = message->id;
   if (SVar1 < MESS_TORPHIT) {
     if (SVar1 == MESS_SHARED_010F) {
@@ -63,12 +63,12 @@ int __thiscall AiBossClassTy::GetMessage(AiBossClassTy *this,STMessage *message)
       AiEventClassTy::GetMessage((AiEventClassTy *)&local_10->vtable_at_1c,message);
     }
     else if (SVar1 == MESS_ID_CREATE) {
-      puVar9 = (byte *)((message->arg0).ptr);
-      if (puVar9 == nullptr) {
+      puVar8 = (byte *)((message->arg0).ptr);
+      if (puVar8 == nullptr) {
         RaiseInternalException
                   (-6,g_overwriteContext_007ED77C,"E:\\__titans\\ai\\ai_boss.cpp",0x61);
       }
-      InitData(this_00,puVar9);
+      InitData(this_00,puVar8);
       DAT_008117bc = this_00;
       thunk_FUN_0064a450();
     }
@@ -81,21 +81,21 @@ int __thiscall AiBossClassTy::GetMessage(AiBossClassTy *this,STMessage *message)
   else if (SVar1 < 0x5ded) {
     if ((0x5dcf < SVar1) || ((0x5dc4 < SVar1 && (SVar1 < 0x5dc7)))) {
       if (SVar1 == MESS_SHARED_5DD5) {
-        if (uVar6 < local_10->field_0629 + 5) goto LAB_00648291;
-        local_10->field_0629 = uVar6;
+        if (uVar5 < local_10->field_0629 + 5) goto LAB_00648291;
+        local_10->field_0629 = uVar5;
       }
       AiEventClassTy::GetMessage((AiEventClassTy *)&local_10->vtable_at_1c,message);
       if (g_allPlayers_007FA174 != nullptr) {
-        cVar11 = '\0';
-        pbVar8 = &g_bulkInitializedRecords_008087C7[0].field_0022;
+        cVar10 = '\0';
+        pbVar7 = &g_bulkInitializedRecords_008087C7[0].field_0022;
         do {
-          if ((*pbVar8 != 0xff) &&
-             (pAVar4 = thunk_FUN_004357f0(cVar11), pAVar4 != nullptr)) {
-            (*pAVar4->vtable->vfunc_00)((short)message);
+          if ((*pbVar7 != 0xff) &&
+             (this_01 = thunk_FUN_004357f0(cVar10), this_01 != nullptr)) {
+            this_01->GetMessage(message);
           }
-          pbVar8 = pbVar8 + 0x51;
-          cVar11 = cVar11 + '\x01';
-        } while ((int)pbVar8 < 0x808a71);
+          pbVar7 = pbVar7 + 0x51;
+          cVar10 = cVar10 + '\x01';
+        } while ((int)pbVar7 < 0x808a71);
       }
     }
   }
@@ -107,39 +107,39 @@ int __thiscall AiBossClassTy::GetMessage(AiBossClassTy *this,STMessage *message)
     else {
       DAT_0080c83a = g_playSystem_00802A38->field_00E4 / 0x19;
     }
-    puVar9 = (byte *)(&DAT_008087b6);
-    puVar12 = (byte *)(&DAT_0080c967);
-    memmove(puVar12, puVar9, 0x1999); /* compiler REP MOVS byte copy */
+    puVar8 = (byte *)(&DAT_008087b6);
+    puVar11 = (byte *)(&DAT_0080c967);
+    memmove(puVar11, puVar8, 0x1999); /* compiler REP MOVS byte copy */
     thunk_FUN_006765b0();
-    uVar6 = 0xffffffff;
-    pcVar10 = &DAT_0080ef1e;
+    uVar5 = 0xffffffff;
+    pcVar9 = &DAT_0080ef1e;
     do {
-      pcVar13 = pcVar10;
-      if (uVar6 == 0) break;
-      uVar6 = uVar6 - 1;
-      pcVar13 = pcVar10 + 1;
-      cVar11 = *pcVar10;
-      pcVar10 = pcVar13;
-    } while (cVar11 != '\0');
-    uVar6 = ~uVar6;
-    pcVar10 = pcVar13 + -uVar6;
-    pcVar13 = (char *)&DAT_0080c52e;
-    memmove(pcVar13, pcVar10, uVar6); /* compiler REP MOVS byte copy */
-    uVar7 = 0;
-    uVar6 = 0xffffffff;
-    pcVar10 = (char *)&DAT_0080c3c3;
+      pcVar12 = pcVar9;
+      if (uVar5 == 0) break;
+      uVar5 = uVar5 - 1;
+      pcVar12 = pcVar9 + 1;
+      cVar10 = *pcVar9;
+      pcVar9 = pcVar12;
+    } while (cVar10 != '\0');
+    uVar5 = ~uVar5;
+    pcVar9 = pcVar12 + -uVar5;
+    pcVar12 = (char *)&DAT_0080c52e;
+    memmove(pcVar12, pcVar9, uVar5); /* compiler REP MOVS byte copy */
+    uVar6 = 0;
+    uVar5 = 0xffffffff;
+    pcVar9 = (char *)&DAT_0080c3c3;
     do {
-      pcVar13 = pcVar10;
-      if (uVar6 == 0) break;
-      uVar6 = uVar6 - 1;
-      pcVar13 = pcVar10 + 1;
-      cVar11 = *pcVar10;
-      pcVar10 = pcVar13;
-    } while (cVar11 != '\0');
-    uVar6 = ~uVar6;
-    pcVar10 = pcVar13 + -uVar6;
-    pcVar13 = (char *)&DAT_0080c736;
-    memmove(pcVar13, pcVar10, uVar6); /* compiler REP MOVS byte copy */
+      pcVar12 = pcVar9;
+      if (uVar5 == 0) break;
+      uVar5 = uVar5 - 1;
+      pcVar12 = pcVar9 + 1;
+      cVar10 = *pcVar9;
+      pcVar9 = pcVar12;
+    } while (cVar10 != '\0');
+    uVar5 = ~uVar5;
+    pcVar9 = pcVar12 + -uVar5;
+    pcVar12 = (char *)&DAT_0080c736;
+    memmove(pcVar12, pcVar9, uVar5); /* compiler REP MOVS byte copy */
     if (DAT_008087a0 == '\b') {
       thunk_FUN_006767d0();
     }

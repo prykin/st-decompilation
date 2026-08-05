@@ -38,8 +38,7 @@ void __thiscall FSGSTy::DoLogon(FSGSTy *this)
       this_00->field_04DF = -1;
     }
     pFVar3 = local_8;
-    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-    (*(code *)local_8->field_0000->field_0008)();
+    local_8->CloseButtons();
     pFVar3->field_1A61 = 2;
     pSVar1 = pFVar3->field_1A5B;
     if (pSVar1->field_02E6 != nullptr) {

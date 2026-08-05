@@ -3,9 +3,14 @@
 
 /* Recovered from embedded debug metadata:
    E:\__titans\wlad\To_boat.cpp
-   STBoatC::CreateGame */
+   STBoatC::CreateGame
+   [STAbiConsistencyApplier] machine_thiscall_arity target=function:-1: prototype=uint __thiscall
+   CreateGame(STBoatC * this, int * param_1) Evidence: every machine RET purges exactly 4 explicit
+   stack bytes; current signature describes 8; removed trailing parameter slots have no listing
+   references; ret_sites=0046CFD8 RET 0x4 | 0046D190 RET 0x4 | 0046D1B5 RET 0x4 | 0046D201 RET 0x4 |
+   0046D2E7 RET 0x4 | 0046D2F1 RET 0x4 */
 
-uint __thiscall STBoatC::CreateGame(STBoatC *this,int *param_1,undefined4 param_2)
+uint __thiscall STBoatC::CreateGame(STBoatC *this,int *param_1)
 
 {
   code *pcVar1;

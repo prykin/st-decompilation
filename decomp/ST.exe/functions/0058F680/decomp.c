@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 int __thiscall
 FUN_0058f680(void *this,undefined2 *param_1,undefined2 *param_2,undefined2 *param_3,short *param_4)
@@ -242,17 +244,13 @@ LAB_0058fb0d:
                        ((sVar11 < 0 ||
                         ((((g_worldGrid.sizeY <= sVar11 || (sVar12 < 0)) ||
                           (g_worldGrid.sizeZ <= sVar12)) ||
-                         (g_worldGrid.cells
-                          [(int)sVar12 * (int)g_worldGrid.planeStride +
-                           (int)sVar11 * (int)g_worldGrid.sizeX + (int)sVar4].objects[0] ==
+                         (STGridAt3D(g_worldGrid, sVar4, sVar11, sVar12).objects[0] ==
                           nullptr)))))))) &&
                      (((sVar4 < 0 || (g_worldGrid.sizeX <= sVar4)) ||
                       ((sVar11 < 0 ||
                        (((g_worldGrid.sizeY <= sVar11 || (sVar12 < 0)) ||
                         ((g_worldGrid.sizeZ <= sVar12 ||
-                         (g_worldGrid.cells
-                          [(int)sVar12 * (int)g_worldGrid.planeStride +
-                           (int)sVar11 * (int)g_worldGrid.sizeX + (int)sVar4].objects[1] ==
+                         (STGridAt3D(g_worldGrid, sVar4, sVar11, sVar12).objects[1] ==
                           nullptr)))))))))) goto LAB_0058fd1a;
                   bVar10 = (int)(uVar9 - (int)*(short *)((int)this + 0x47)) < 0;
                   if (uVar9 == (int)*(short *)((int)this + 0x47) || bVar10) break;

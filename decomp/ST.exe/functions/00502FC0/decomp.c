@@ -51,11 +51,7 @@ void __thiscall CPanelTy::Update2PanelSI(CPanelTy *this)
   pCVar1 = &local_c->field_0B99;
   pCVar8 = pCVar1;
   pRVar9 = &local_68;
-  for (iVar5 = 0x17; iVar5 != 0; iVar5 = iVar5 + -1) {
-    *(CPanelTy_field_0B99State *)pRVar9 = *pCVar8;
-    pCVar8 = pCVar8 + 1;
-    pRVar9 = (RecoveredRecord_CPanelTy_00501D00 *)&pRVar9->field_0x4;
-  }
+  memmove(pRVar9, pCVar8, 0x5c); /* compiler REP MOVS byte copy */
   memset(pCVar1, 0, 0x5c); /* compiler bulk-zero initialization */
   STAllPlayersC::GetPanelInfo(g_allPlayers_007FA174,2,(AnonShape_0043BEB0_1C00EC12 *)pCVar1);
   /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */

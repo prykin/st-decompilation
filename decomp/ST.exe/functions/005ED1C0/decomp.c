@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 undefined4 __thiscall FUN_005ed1c0(void *this,int *param_1,int *param_2,int *param_3,int *param_4)
 
@@ -172,9 +174,7 @@ LAB_005ed68c:
     if (((-1 < sVar6) && (sVar6 < g_worldGrid.sizeX)) &&
        ((-1 < sVar10 &&
         (((sVar10 < g_worldGrid.sizeY && (-1 < sVar9)) && (sVar9 < g_worldGrid.sizeZ)))))) {
-      pSVar2 = g_worldGrid.cells
-               [(int)g_worldGrid.planeStride * (int)sVar9 + (int)g_worldGrid.sizeX * (int)sVar10 +
-                (int)sVar6].objects[0];
+      pSVar2 = STGridAt3D(g_worldGrid, sVar6, sVar10, sVar9).objects[0];
 joined_r0x005ed4b7:
       if (pSVar2 != nullptr) goto LAB_005ed643;
     }
@@ -202,9 +202,7 @@ joined_r0x005ed4b7:
     sVar6 = *(short *)((int)this + 0x242);
     if ((((-1 < sVar6) && (sVar6 < g_worldGrid.sizeX)) && (-1 < sVar10)) &&
        (((sVar10 < g_worldGrid.sizeY && (-1 < sVar9)) && (sVar9 < g_worldGrid.sizeZ)))) {
-      pSVar2 = g_worldGrid.cells
-               [(int)sVar9 * (int)g_worldGrid.planeStride + (int)sVar10 * (int)g_worldGrid.sizeX +
-                (int)sVar6].objects[0];
+      pSVar2 = STGridAt3D(g_worldGrid, sVar6, sVar10, sVar9).objects[0];
       goto joined_r0x005ed4b7;
     }
   }

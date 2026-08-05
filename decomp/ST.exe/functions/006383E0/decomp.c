@@ -128,9 +128,7 @@ FUN_006383e0(int param_1,int param_2,int param_3,undefined4 param_4,ushort param
             this = nullptr;
           }
           else {
-            this = g_worldGrid.cells
-                   [(int)sVar2 * (int)g_worldGrid.sizeX + (int)sVar7 * (int)g_worldGrid.planeStride
-                    + (int)sVar9].objects[0];
+            this = STGridAt3D(g_worldGrid, sVar9, sVar2, sVar7).objects[0];
           }
           if ((this != nullptr) &&
              (iVar3 = (*this->vtable[5].slots_00_28[0])(), iVar8 = local_50, iVar3 != 0)) {

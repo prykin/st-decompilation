@@ -20,6 +20,14 @@ int __thiscall FUN_006de570(void *this,int param_1,int param_2)
   int iVar2;
   int iVar3;
   int iVar4;
+  /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
+  undefined4 in_stack_0000000c;
+  /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
+  undefined4 in_stack_00000010;
+  /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
+  undefined4 in_stack_00000014;
+  /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
+  undefined4 in_stack_00000018;
   int local_2c;
   int local_28;
   float local_1c;
@@ -36,7 +44,10 @@ int __thiscall FUN_006de570(void *this,int param_1,int param_2)
   local_14 = 0;
   /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
   param_2 = 30000;
-  ST3DSMAPContext::sub_006E25D0(this,&local_2c);
+  /* ST_PSEUDO[unresolved_register_input,packed_or_unaligned_piece]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention; expected named packed member, bit extract/compose, or unaligned load */
+  ST3DSMAPContext::sub_006E25D0
+            (this,&local_2c,&local_1c,0.0,0.0,(double)CONCAT44(in_stack_00000010,in_stack_0000000c),
+             1);
   iVar1 = local_2c >> 0x10;
   iVar4 = 30000;
   if (iVar1 < 30000) {
@@ -58,7 +69,10 @@ int __thiscall FUN_006de570(void *this,int param_1,int param_2)
       (*(int *)((int)this + 0x34) <= iVar2)) && (iVar2 < *(int *)((int)this + 0x3c))) {
     return 1;
   }
-  ST3DSMAPContext::sub_006E25D0(this,&local_2c);
+  /* ST_PSEUDO[unresolved_register_input,packed_or_unaligned_piece]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention; expected named packed member, bit extract/compose, or unaligned load */
+  ST3DSMAPContext::sub_006E25D0
+            (this,&local_2c,&local_1c,0.0,0.0,(double)CONCAT44(in_stack_00000018,in_stack_00000014),
+             1);
   iVar1 = local_2c >> 0x10;
   if (iVar1 < iVar4) {
     iVar4 = iVar1;
@@ -80,7 +94,10 @@ int __thiscall FUN_006de570(void *this,int param_1,int param_2)
     return 1;
   }
   local_10 = *(double *)((int)this + 200) + *(double *)((int)this + 200);
-  ST3DSMAPContext::sub_006E25D0(this,&local_2c);
+  /* ST_PSEUDO[unresolved_register_input,packed_or_unaligned_piece]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention; expected named packed member, bit extract/compose, or unaligned load */
+  ST3DSMAPContext::sub_006E25D0
+            (this,&local_2c,&local_1c,local_10,local_10,
+             (double)CONCAT44(in_stack_00000010,in_stack_0000000c),1);
   iVar1 = local_2c >> 0x10;
   if (iVar1 < iVar4) {
     iVar4 = iVar1;
@@ -102,7 +119,10 @@ int __thiscall FUN_006de570(void *this,int param_1,int param_2)
     return 1;
   }
   local_10 = *(double *)((int)this + 200) + *(double *)((int)this + 200);
-  ST3DSMAPContext::sub_006E25D0(this,&local_2c);
+  /* ST_PSEUDO[unresolved_register_input,packed_or_unaligned_piece]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention; expected named packed member, bit extract/compose, or unaligned load */
+  ST3DSMAPContext::sub_006E25D0
+            (this,&local_2c,&local_1c,local_10,local_10,
+             (double)CONCAT44(in_stack_00000018,in_stack_00000014),1);
   iVar1 = local_2c >> 0x10;
   if (iVar1 < iVar4) {
     iVar4 = iVar1;
@@ -123,7 +143,10 @@ int __thiscall FUN_006de570(void *this,int param_1,int param_2)
       (*(int *)((int)this + 0x34) <= iVar2)) && (iVar2 < *(int *)((int)this + 0x3c))) {
     return 1;
   }
-  ST3DSMAPContext::sub_006E25D0(this,&local_2c);
+  /* ST_PSEUDO[unresolved_register_input,packed_or_unaligned_piece]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention; expected named packed member, bit extract/compose, or unaligned load */
+  ST3DSMAPContext::sub_006E25D0
+            (this,&local_2c,&local_1c,*(double *)((int)this + 200) + *(double *)((int)this + 200),
+             0.0,(double)CONCAT44(in_stack_00000010,in_stack_0000000c),1);
   iVar1 = local_2c >> 0x10;
   if (iVar1 < iVar4) {
     iVar4 = iVar1;
@@ -144,7 +167,10 @@ int __thiscall FUN_006de570(void *this,int param_1,int param_2)
      ((*(int *)((int)this + 0x34) <= iVar2 && (iVar2 < *(int *)((int)this + 0x3c))))) {
     return 1;
   }
-  ST3DSMAPContext::sub_006E25D0(this,&local_2c);
+  /* ST_PSEUDO[unresolved_register_input,packed_or_unaligned_piece]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention; expected named packed member, bit extract/compose, or unaligned load */
+  ST3DSMAPContext::sub_006E25D0
+            (this,&local_2c,&local_1c,*(double *)((int)this + 200) + *(double *)((int)this + 200),
+             0.0,(double)CONCAT44(in_stack_00000018,in_stack_00000014),1);
   iVar1 = local_2c >> 0x10;
   if (iVar1 < iVar4) {
     iVar4 = iVar1;
@@ -165,7 +191,11 @@ int __thiscall FUN_006de570(void *this,int param_1,int param_2)
      ((*(int *)((int)this + 0x34) <= iVar2 && (iVar2 < *(int *)((int)this + 0x3c))))) {
     return 1;
   }
-  ST3DSMAPContext::sub_006E25D0(this,&local_2c);
+  /* ST_PSEUDO[unresolved_register_input,packed_or_unaligned_piece]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention; expected named packed member, bit extract/compose, or unaligned load */
+  ST3DSMAPContext::sub_006E25D0
+            (this,&local_2c,&local_1c,0.0,
+             *(double *)((int)this + 200) + *(double *)((int)this + 200),
+             (double)CONCAT44(in_stack_00000010,in_stack_0000000c),1);
   iVar1 = local_2c >> 0x10;
   if (iVar1 < iVar4) {
     iVar4 = iVar1;
@@ -187,7 +217,11 @@ int __thiscall FUN_006de570(void *this,int param_1,int param_2)
       (*(int *)((int)this + 0x34) <= iVar2)) && (iVar2 < *(int *)((int)this + 0x3c))) {
     return 1;
   }
-  ST3DSMAPContext::sub_006E25D0(this,&local_2c);
+  /* ST_PSEUDO[unresolved_register_input,packed_or_unaligned_piece]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention; expected named packed member, bit extract/compose, or unaligned load */
+  ST3DSMAPContext::sub_006E25D0
+            (this,&local_2c,&local_1c,0.0,
+             *(double *)((int)this + 200) + *(double *)((int)this + 200),
+             (double)CONCAT44(in_stack_00000018,in_stack_00000014),1);
   local_2c = local_2c >> 0x10;
   if (local_2c < iVar4) {
     iVar4 = local_2c;

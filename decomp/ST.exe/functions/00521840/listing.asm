@@ -1,4 +1,4 @@
-FUN_00521840:
+CreateIntercomPanel:
 00521840  53                        PUSH EBX
 00521841  56                        PUSH ESI
 00521842  68 A5 01 00 00            PUSH 0x1a5

@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* [STMethodOwnerApplier] Structural method owner recovered as STColl3C.
    Evidence: this_call_owners=[STColl3C]; agreed_this_calls=1; incoming_this_accesses=3;
@@ -28,9 +30,7 @@ undefined4 __thiscall STColl3C::sub_005FA8B0(STColl3C *this,int *param_1,int *pa
       ((g_worldGrid.sizeY <= sVar3 || (sVar2 < 0)))) ||
      ((g_worldGrid.sizeZ <= sVar2 ||
       (this_00 = (STFishC *)
-                 g_worldGrid.cells
-                 [(int)g_worldGrid.planeStride * (int)sVar2 + (int)g_worldGrid.sizeX * (int)sVar3 +
-                  (int)sVar1].objects[0], this_00 == nullptr)))) {
+                 STGridAt3D(g_worldGrid, sVar1, sVar3, sVar2).objects[0], this_00 == nullptr)))) {
     if (((AnonShape_005EFAE0_B406B78B *)this->field_0255 == nullptr) ||
        (iVar5 = STPlaySystemC::sub_006E62D0
                           (g_playSystem_00802A38,(AnonShape_005EFAE0_B406B78B *)this->field_0255,

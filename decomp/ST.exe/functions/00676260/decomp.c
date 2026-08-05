@@ -18,8 +18,6 @@ int __cdecl _GetEmbrTobjGrpExch(uint param_1,int param_2)
   int iVar5;
   uint uVar6;
   uint uVar7;
-  /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
-  int unaff_EDI;
   InternalExceptionFrame local_50;
   DArrayTy *local_c;
   int local_8;
@@ -38,8 +36,7 @@ int __cdecl _GetEmbrTobjGrpExch(uint param_1,int param_2)
       this = thunk_FUN_0042b760((char)param_1,0);
     }
     if (this != nullptr) {
-      /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
-      local_c = (DArrayTy *)STGroupC::GetGroupContent((STGroupC *)this,unaff_EDI);
+      local_c = (DArrayTy *)STGroupC::GetGroupContent((STGroupC *)this);
     }
     array = local_c;
     if (local_c->count != 0) {

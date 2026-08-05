@@ -202,6 +202,17 @@ rejected Program.
    confirms the symmetric predicate fix: five complete rows are installed and
    the confirming pass reports `unchanged=5`, `conflicts=0`; every ABI barrier
    and the broad export gate passed.
+9. Element-scaled pointer offsets and consumer-local views of heterogeneous
+   loader results. Status: implemented and accepted by full-export run
+   `8538b1d383ad...`. The analyzer now distinguishes `T * + n` from
+   `(int)pointer + n`, retries transient decompile failures, and keeps newly
+   exposed broad geometry review-only. Three single-call loader consumers
+   received local 16-byte views with the observed `int` at `+0x0c`; the shared
+   loader prototype remained protected and unspecialized. The first pass made
+   seven type/local operations across four enabled targets; the confirming pass
+   reports `target_apply=0`, `anonymous_types=0`, and `failures=0`. Export-only
+   exact structural-copy and row-major grid normalizations then passed every ABI
+   barrier and the broad gate with no hard regression.
 
 For every item: analyzer-only proposal review, one applier pass, one confirming
 pass, fixture diff, then broad regression gate. A failed item is reverted as a
@@ -213,16 +224,33 @@ The accepted corpus contains the following concrete debt:
 
 | Issue | Occurrences | Functions | Next evidence source |
 | --- | ---: | ---: | --- |
-| `undefined_type` | 16,319 | 3,590 | definitions, consumers, ABI-width families |
-| `raw_pointer_offset` | 2,827 | 1,121 | cross-function pointer families and complete records |
-| `raw_indirect_call` | 2,092 | 826 | stored callback targets and physical vtable slots |
-| `packed_or_unaligned_piece` | 1,394 | 293 | exact packed members or explicit unaligned helpers |
-| `return_width_artifact` | 1,077 | 146 | whole-CFG EAX and caller-consumer evidence |
-| `unresolved_register_input` | 766 | 183 | boundary ABI, SEH/setjmp, and true live-ins |
-| `dynamic_array_indexing` | 319 | 185 | per-owner DArray element descriptors |
+| `undefined_type` | 16,277 | 3,580 | definitions, consumers, ABI-width families |
+| `raw_pointer_offset` | 2,816 | 1,111 | cross-function pointer families and complete records |
+| `raw_indirect_call` | 1,888 | 774 | stored callback targets and physical vtable slots |
+| `packed_or_unaligned_piece` | 1,390 | 292 | exact packed members or explicit unaligned helpers |
+| `return_width_artifact` | 1,066 | 144 | whole-CFG EAX and caller-consumer evidence |
+| `unresolved_register_input` | 470 | 132 | boundary ABI, SEH/setjmp, and true live-ins |
+| `dynamic_array_indexing` | 318 | 185 | per-owner DArray element descriptors |
 
 Generic field/data names are a later semantic-naming layer. They must not drive
 layout or ABI changes merely because their raw occurrence counts are larger.
+
+### Q-040 Bound adjacent jump and lookup tables
+
+Status: diagnosed, not yet applied. `004AE0B0` contains a four-entry dword jump
+table at `004AED14..004AED23`, immediately followed by a byte lookup table at
+`004AED24`. Ghidra reads the first lookup bytes `00 01 03 03` as a fifth
+little-endian code pointer (`03030100`) and warns that it cannot read that
+address. The executable bytes are intact; the recovery error is the inferred
+table boundary.
+
+Implement this as a general analyzer/applier pair, not an address suppression:
+require a bounded indirect-jump index, consecutive in-memory executable targets,
+then an adjacent candidate element outside executable memory whose bytes also
+have independent byte-table reads. The analyzer should propose the exact dword
+extent and following byte-array extent; the applier must preserve manual data,
+references, and switch overrides. A fresh decompile must remove the invalid
+target while preserving all real switch cases.
 
 ## Definition of done for one queue item
 

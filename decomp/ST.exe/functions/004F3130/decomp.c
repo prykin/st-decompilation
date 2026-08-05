@@ -72,7 +72,7 @@ CPanelTy::CreateBut(CPanelTy *this,byte param_1,undefined4 param_2,int param_3,i
   undefined4 local_d0;
   undefined4 local_84;
   undefined4 local_80;
-  undefined4 local_68;
+  ushort *local_68;
   int local_64;
   undefined4 local_60;
   undefined4 local_5c;

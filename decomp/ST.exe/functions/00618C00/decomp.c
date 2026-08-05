@@ -44,7 +44,7 @@ int __thiscall STJumpMineC::GetMessage(STJumpMineC *this,STMessage *message)
   SVar1 = message->id;
   if (SVar1 < MESS_TORPHIT) {
     if (SVar1 == MESS_SHARED_010F) {
-      local_10 = (byte *)sub_00619350(local_8,&local_c);
+      local_10 = sub_00619350(local_8,&local_c);
       STPlaySystemC::SaveObjData(g_playSystem_00802A38,this_00->field_0018,local_10,local_c);
       FreeAndNull(&local_10);
       g_currentExceptionFrame = local_58.previous;

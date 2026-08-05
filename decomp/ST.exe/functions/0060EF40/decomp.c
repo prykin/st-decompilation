@@ -149,9 +149,7 @@ SubmarineTitans::Recovered::HiddenThis::AnonReceiver_0060EF40::FUN_0060ef40
               pSVar9 = nullptr;
             }
             else {
-              pSVar9 = g_worldGrid.cells
-                       [(int)sVar5 * (int)g_worldGrid.planeStride +
-                        (int)sVar8 * (int)g_worldGrid.sizeX + (int)sVar10].objects[0];
+              pSVar9 = STGridAt3D(g_worldGrid, sVar10, sVar8, sVar5).objects[0];
             }
             if (((pSVar9 == nullptr) ||
                 (iVar1 = (*pSVar9->vtable[5].slots_00_28[2])(), iVar1 == 0)) ||

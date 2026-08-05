@@ -3,9 +3,13 @@
 
 /* Recovered from embedded debug metadata:
    E:\__titans\wlad\To_boat.cpp
-   STBoatC::CheckForReplenisher */
+   STBoatC::CheckForReplenisher
+   [STAbiConsistencyApplier] machine_thiscall_arity target=function:-1: prototype=undefined4
+   __thiscall CheckForReplenisher(STBoatC * this) Evidence: every machine RET purges exactly 0
+   explicit stack bytes; current signature describes 4; removed trailing parameter slots have no
+   listing references; ret_sites=0049344B RET | 00493457 RET */
 
-undefined4 __thiscall STBoatC::CheckForReplenisher(STBoatC *this,int param_1)
+undefined4 __thiscall STBoatC::CheckForReplenisher(STBoatC *this)
 
 {
   DArrayTy *array;

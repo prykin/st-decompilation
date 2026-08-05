@@ -27,8 +27,6 @@ int __thiscall STGroupBoatC::GetMessage(STGroupBoatC *this,STMessage *message)
   uint uVar7;
   uint index;
   byte *pbVar8;
-  /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
-  void *unaff_EDI;
   byte *pbVar9;
   bool bVar10;
   InternalExceptionFrame local_84;
@@ -233,8 +231,7 @@ int __thiscall STGroupBoatC::GetMessage(STGroupBoatC *this,STMessage *message)
         } while ((int)uVar7 < (int)array->count);
       }
       if (this_00->field_01E6 == CASE_6) {
-        /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
-        ReMakePatrolPoints(this_00,(int)unaff_EDI);
+        ReMakePatrolPoints(this_00);
         sub_004A7E30(this_00,1);
       }
       if ((this_00->field_0027 == 0) && (this_00->field_0020 == 0)) {
@@ -245,8 +242,7 @@ int __thiscall STGroupBoatC::GetMessage(STGroupBoatC *this,STMessage *message)
     }
     if ((this_00->field_006D == 1) &&
        (this_00->field_006D = 0, this_00->field_002D != nullptr)) {
-      /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
-      RechargeNewCmd(this_00,unaff_EDI);
+      RechargeNewCmd(this_00);
       DArrayDestroy(this_00->field_002D);
       this_00->field_002D = nullptr;
     }

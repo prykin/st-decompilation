@@ -66,8 +66,7 @@ void __thiscall SettMapMTy::ChangePlayerColor(SettMapMTy *this,uint param_1,char
             bVar6 = uVar5 < pSVar4->count;
           } while ((int)uVar5 < (int)pSVar4->count);
         }
-        /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-        (*(code *)this_00->field_0000->field_002C)();
+        this_00->SetListCtrls();
         SettMapTy::PaintSC((SettMapTy *)this_00);
         this_00->field_2121 = this_00->field_2121 + 1;
       }

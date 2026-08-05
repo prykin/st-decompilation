@@ -129,9 +129,7 @@ int __thiscall TLOBaseTy::fireFindCheckTarget(TLOBaseTy *this,int param_1,int pa
                       }
                       else {
                         local_8 = (STFishC *)
-                                  g_worldGrid.cells
-                                  [(int)sVar14 * (int)g_worldGrid.sizeX +
-                                   (int)sVar5 * (int)g_worldGrid.planeStride + (int)sVar6].objects
+                                  STGridAt3D(g_worldGrid, sVar6, sVar14, sVar5).objects
                                   [0];
                         iVar7 = local_18;
                       }

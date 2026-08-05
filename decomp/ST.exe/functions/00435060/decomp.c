@@ -13,8 +13,6 @@ void __thiscall STAllPlayersC::SelfCheckObjControl(STAllPlayersC *this)
   code *pcVar3;
   int iVar4;
   STGameObjC *pSVar5;
-  /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
-  int *unaff_EDI;
   uint uVar6;
   int iVar7;
   undefined1 local_c [4];
@@ -39,12 +37,10 @@ void __thiscall STAllPlayersC::SelfCheckObjControl(STAllPlayersC *this)
                 pSVar5 = GetObjPtr(this,*(char *)(iVar4 + 4),local_c._0_2_,CASE_1);
                 if (pSVar5 != nullptr) {
                   if (local_8 == 0) {
-                    /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
-                    STGameObjC::SetSelfCheckFlag(pSVar5,unaff_EDI);
+                    STGameObjC::SetSelfCheckFlag(pSVar5);
                   }
                   else {
-                    /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
-                    STGameObjC::ResetSelfCheckFlag(pSVar5,(int)unaff_EDI);
+                    STGameObjC::ResetSelfCheckFlag(pSVar5);
                   }
                 }
                 uVar6 = uVar6 + 1;
@@ -56,12 +52,10 @@ void __thiscall STAllPlayersC::SelfCheckObjControl(STAllPlayersC *this)
           pSVar5 = GetObjPtr(this,-1,*(ushort *)(iVar4 + 8),CASE_3);
           if (pSVar5 != nullptr) {
             if (local_8 == 0) {
-              /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
-              STGameObjC::SetSelfCheckFlag(pSVar5,unaff_EDI);
+              STGameObjC::SetSelfCheckFlag(pSVar5);
             }
             else {
-              /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
-              STGameObjC::ResetSelfCheckFlag(pSVar5,(int)unaff_EDI);
+              STGameObjC::ResetSelfCheckFlag(pSVar5);
             }
           }
         }
@@ -94,12 +88,10 @@ void __thiscall STAllPlayersC::SelfCheckObjControl(STAllPlayersC *this)
                 pSVar5 = GetObjPtr(this,*(char *)(iVar4 + 4),local_c._0_2_,CASE_1);
                 if (pSVar5 != nullptr) {
                   if (local_8 == 0) {
-                    /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
-                    STGameObjC::SetSelfCheckFlag(pSVar5,unaff_EDI);
+                    STGameObjC::SetSelfCheckFlag(pSVar5);
                   }
                   else {
-                    /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
-                    STGameObjC::ResetSelfCheckFlag(pSVar5,(int)unaff_EDI);
+                    STGameObjC::ResetSelfCheckFlag(pSVar5);
                   }
                 }
                 uVar6 = uVar6 + 1;
@@ -113,8 +105,7 @@ void __thiscall STAllPlayersC::SelfCheckObjControl(STAllPlayersC *this)
             pSVar5 = GetObjPtr(this,-1,*(ushort *)(iVar4 + 8),CASE_4);
             if (pSVar5 != nullptr) {
               if (iVar7 != 0) goto LAB_004352f5;
-              /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
-              STGameObjC::SetSelfCheckFlag(pSVar5,unaff_EDI);
+              STGameObjC::SetSelfCheckFlag(pSVar5);
             }
           }
           else {
@@ -122,8 +113,7 @@ void __thiscall STAllPlayersC::SelfCheckObjControl(STAllPlayersC *this)
             pSVar5 = GetObjPtr(this,-1,*(ushort *)(iVar4 + 8),CASE_2);
             if (pSVar5 != nullptr) {
               if (iVar7 != 0) goto LAB_004352f5;
-              /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
-              STGameObjC::SetSelfCheckFlag(pSVar5,unaff_EDI);
+              STGameObjC::SetSelfCheckFlag(pSVar5);
             }
           }
         }
@@ -132,13 +122,11 @@ void __thiscall STAllPlayersC::SelfCheckObjControl(STAllPlayersC *this)
         pSVar5 = GetObjPtr(this,-1,*(ushort *)(iVar4 + 8),CASE_5);
         if (pSVar5 != nullptr) {
           if (iVar7 == 0) {
-            /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
-            STGameObjC::SetSelfCheckFlag(pSVar5,unaff_EDI);
+            STGameObjC::SetSelfCheckFlag(pSVar5);
           }
           else {
-/* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
 LAB_004352f5:
-            STGameObjC::ResetSelfCheckFlag(pSVar5,(int)unaff_EDI);
+            STGameObjC::ResetSelfCheckFlag(pSVar5);
           }
         }
       }
@@ -146,8 +134,7 @@ LAB_004352f5:
         pSVar5 = GetObjPtr(this,-1,*(ushort *)(iVar4 + 8),CASE_6);
         if (pSVar5 != nullptr) {
           if (iVar7 != 0) goto LAB_004352f5;
-          /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
-          STGameObjC::SetSelfCheckFlag(pSVar5,unaff_EDI);
+          STGameObjC::SetSelfCheckFlag(pSVar5);
         }
       }
       else {

@@ -6,11 +6,15 @@
 
    [STSwitchEnumApplier] Switch target field_02AE uses
    /SubmarineTitans/Recovered/Enums/STMineSetC_field_02AEState. Cases:
-   CASE_0=0;CASE_1=1;CASE_2=2;CASE_3=3;CASE_4=4;CASE_5=5 */
+   CASE_0=0;CASE_1=1;CASE_2=2;CASE_3=3;CASE_4=4;CASE_5=5
 
-void __thiscall STMineSetC::sub_00622670(STMineSetC *this)
+   [STPrototypeApplier] Propagated return.
+   Evidence: 00622670 returns return of sub_006E60A0 @ 006226A0 */
+
+int __thiscall STMineSetC::sub_00622670(STMineSetC *this)
 
 {
+  int iVar1;
   undefined4 local_24 [3];
   undefined4 local_18;
   undefined4 local_14;
@@ -20,7 +24,7 @@ void __thiscall STMineSetC::sub_00622670(STMineSetC *this)
   this->field_02AE = CASE_5;
   local_18 = 0;
   local_14 = 10;
-  sub_006E60A0(this,local_24);
-  return;
+  iVar1 = sub_006E60A0(this,local_24);
+  return iVar1;
 }
 

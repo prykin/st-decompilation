@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 undefined4 __thiscall FUN_004ce250(void *this,int param_1)
 
@@ -28,9 +30,7 @@ undefined4 __thiscall FUN_004ce250(void *this,int param_1)
             ((sVar3 = (short)iVar4, -1 < sVar3 && (sVar3 < g_worldGrid.sizeY)))) &&
            ((-1 < sVar1 &&
             ((sVar1 < g_worldGrid.sizeZ &&
-             (pSVar2 = g_worldGrid.cells
-                       [(int)g_worldGrid.planeStride * (int)sVar1 +
-                        (int)g_worldGrid.sizeX * (int)sVar3 + (int)sVar6].objects[0],
+             (pSVar2 = STGridAt3D(g_worldGrid, sVar6, sVar3, sVar1).objects[0],
              pSVar2 != nullptr)))))) {
           iVar4 = pSVar2->GetObjectTypeId();
           if (0x53 < iVar4) {
@@ -47,9 +47,7 @@ undefined4 __thiscall FUN_004ce250(void *this,int param_1)
            (((sVar3 = (short)iVar4, -1 < sVar3 && (sVar3 < g_worldGrid.sizeY)) &&
             ((-1 < sVar1 &&
              ((sVar1 < g_worldGrid.sizeZ &&
-              (pSVar2 = g_worldGrid.cells
-                        [(int)g_worldGrid.planeStride * (int)sVar1 +
-                         (int)g_worldGrid.sizeX * (int)sVar3 + (int)sVar6].objects[0],
+              (pSVar2 = STGridAt3D(g_worldGrid, sVar6, sVar3, sVar1).objects[0],
               pSVar2 != nullptr)))))))) {
           iVar4 = pSVar2->GetObjectTypeId();
           if (0x53 < iVar4) {
@@ -68,9 +66,7 @@ undefined4 __thiscall FUN_004ce250(void *this,int param_1)
           if ((((-1 < sVar3) && (sVar3 < g_worldGrid.sizeX)) && (-1 < sVar6)) &&
              (((sVar6 < g_worldGrid.sizeY && (-1 < sVar1)) &&
               ((sVar1 < g_worldGrid.sizeZ &&
-               (pSVar2 = g_worldGrid.cells
-                         [(int)g_worldGrid.planeStride * (int)sVar1 +
-                          (int)g_worldGrid.sizeX * (int)sVar6 + (int)sVar3].objects[0],
+               (pSVar2 = STGridAt3D(g_worldGrid, sVar3, sVar6, sVar1).objects[0],
                pSVar2 != nullptr)))))) {
             iVar4 = pSVar2->GetObjectTypeId();
             if (0x53 < iVar4) {
@@ -89,9 +85,7 @@ undefined4 __thiscall FUN_004ce250(void *this,int param_1)
           if (((((-1 < sVar3) && (sVar3 < g_worldGrid.sizeX)) && (-1 < sVar6)) &&
               ((sVar6 < g_worldGrid.sizeY && (-1 < sVar1)))) &&
              ((sVar1 < g_worldGrid.sizeZ &&
-              (pSVar2 = g_worldGrid.cells
-                        [(int)g_worldGrid.planeStride * (int)sVar1 +
-                         (int)sVar6 * (int)g_worldGrid.sizeX + (int)sVar3].objects[0],
+              (pSVar2 = STGridAt3D(g_worldGrid, sVar3, sVar6, sVar1).objects[0],
               pSVar2 != nullptr)))) {
             iVar4 = pSVar2->GetObjectTypeId();
             if (0x53 < iVar4) {

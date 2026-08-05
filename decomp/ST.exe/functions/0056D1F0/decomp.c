@@ -3,9 +3,13 @@
 
 /* Recovered from embedded debug metadata:
    E:\__titans\tapp.cpp
-   STAppC::CommonFunction */
+   STAppC::CommonFunction
+   [STAbiConsistencyApplier] machine_thiscall_arity target=function:-1: prototype=undefined4
+   __thiscall CommonFunction(STAppC * this) Evidence: every machine RET purges exactly 0 explicit
+   stack bytes; current signature describes 4; removed trailing parameter slots have no listing
+   references; ret_sites=0056D20A RET | 0056D257 RET | 0056D2D8 RET | 0056D31F RET */
 
-undefined4 __thiscall STAppC::CommonFunction(STAppC *this,int param_1)
+undefined4 __thiscall STAppC::CommonFunction(STAppC *this)
 
 {
   code *pcVar1;

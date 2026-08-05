@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* [STPrototypeApplier] Propagated parameter 3.
    Evidence: 00624140 -> 006E3310 @ 00624383 | 006255B0 -> 00624140 @ 00625685; FUN_006255b0
@@ -35,9 +37,7 @@ FUN_00624140(void *this,int param_1,int param_2,Global_sub_0061BDB0_param_1Enum 
       if (((((-1 < sVar7) && (sVar7 < g_worldGrid.sizeX)) &&
            ((-1 < sVar8 && ((sVar8 < g_worldGrid.sizeY && (-1 < sVar9)))))) &&
           (sVar9 < g_worldGrid.sizeZ)) &&
-         (g_worldGrid.cells
-          [(int)g_worldGrid.planeStride * (int)sVar9 + (int)g_worldGrid.sizeX * (int)sVar8 +
-           (int)sVar7].objects[0] != nullptr)) {
+         (STGridAt3D(g_worldGrid, sVar7, sVar8, sVar9).objects[0] != nullptr)) {
         if (param_8 < 1) {
           iVar4 = (int)pGVar3 * 0xc9 + 0x32;
           if (iVar4 < param_6) {

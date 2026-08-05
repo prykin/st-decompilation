@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* [STSwitchEnumApplier] Switch target param_1 uses
    /SubmarineTitans/Recovered/Enums/Global_sub_004B1FB0_param_1Enum. Cases:
@@ -68,9 +70,7 @@ FUN_004b1fb0(Global_sub_004B1FB0_param_1Enum param_1,int *param_2,int *param_3,i
           this = nullptr;
         }
         else {
-          this = g_worldGrid.cells
-                 [(int)g_worldGrid.planeStride * (int)local_a +
-                  (int)g_worldGrid.sizeX * (int)local_6 + (int)local_8].objects[0];
+          this = STGridAt3D(g_worldGrid, local_8, local_6, local_a).objects[0];
         }
         switch(param_1) {
         case CASE_5E:

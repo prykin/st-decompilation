@@ -16,8 +16,6 @@ void __thiscall FSGSTy::CreateCtrls(FSGSTy *this)
   FSGSTy *pFVar2;
   int errorCode;
   int iVar3;
-  /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
-  void *unaff_ESI;
   InternalExceptionFrame local_4c;
   FSGSTy *local_8;
 
@@ -60,9 +58,8 @@ void __thiscall FSGSTy::CreateCtrls(FSGSTy *this)
     case CASE_9:
       LadderCtrls(local_8);
       break;
-    /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
     case CASE_A:
-      InfoCtrls(local_8,unaff_ESI);
+      InfoCtrls(local_8);
       g_currentExceptionFrame = local_4c.previous;
       return;
     }

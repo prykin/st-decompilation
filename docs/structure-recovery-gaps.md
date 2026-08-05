@@ -42,7 +42,7 @@ numbers of unique recovered objects:
 | Any generic `field_XXXX` name | 2,450 | 60,514 | Mostly semantic naming debt; a generic name alone does not mean the width/layout is wrong. |
 | Generic global aggregate | 36 | 154 | Singleton/aggregate layout is present but its global and/or member semantics are unnamed. |
 | Anonymous recovered type | 1,326 | 4,830 | Cross-function shape-family consolidation remains incomplete. |
-| Explicit `undefined*` type | 3,590 | 16,319 | Mixed prototype, local, field, and return-type debt; not all instances are independently actionable. |
+| Explicit `undefined*` type | 3,590 | 16,305 | Mixed prototype, local, field, and return-type debt; not all instances are independently actionable. |
 | Generic `DAT/PTR/UNK` symbol | 1,577 | 15,890 | Requires scalar/string/table/singleton/array classification before naming. |
 | `goto` or `LAB_*` control-flow label | 917 | 11,723 | Includes legitimate optimized shared tails as well as still-unstructured CFGs. |
 | Raw indirect call spelling | 826 | 2,092 | Callback/vtable/function-pointer prototype debt. |
@@ -210,6 +210,9 @@ therefore has two polymorphic world-object pointers, while the linear index is
 the vtable pointer, the field at `+0x20`, and the receiver-only virtual getter at
 slot `+0x2c` whose result is compared with object-type constants. It deliberately
 does not claim every cell object is one concrete derived class such as `STFishC`.
+The exporter renders any exact recovered aggregate with this same three-term
+geometry as `STGridAt3D(grid, x, y, z)`. This is presentation-only and does not
+merge the distinct world/pathing grid types or invent coordinate semantics.
 
 ## Safety policy
 

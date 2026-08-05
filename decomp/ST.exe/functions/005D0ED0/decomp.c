@@ -23,8 +23,6 @@ SettMapMTy::ChangePlayerList
   uint uVar6;
   SettMapMTy_field_1F84Element *element_1f84;
   char *pcVar9;
-  /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
-  void *unaff_EDI;
   char *pcVar10;
   InternalExceptionFrame local_4c;
   SettMapMTy *local_8;
@@ -92,13 +90,11 @@ SettMapMTy::ChangePlayerList
         if ((element_1f84->field_0000 != '\0') && (element_1f84->field_0004 != '\x02')) {
           element_1f84->field_0001 = '\x01';
         }
-        /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
-        CheckPlList(local_8,unaff_EDI);
+        CheckPlList(local_8);
         if ((pSVar4->field_1E26 != CASE_C) && (pSVar4->field_1E26 != CASE_10)) {
           sub_005D1380(pSVar4);
         }
-        /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-        (*(code *)pSVar4->field_0000->field_002C)();
+        pSVar4->SetListCtrls();
         SettMapTy::PaintSC((SettMapTy *)pSVar4);
         pSVar4->field_2121 = pSVar4->field_2121 + 1;
       }

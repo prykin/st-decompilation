@@ -41,7 +41,7 @@ void __thiscall SettMapMTy::DeleteCtrls(SettMapMTy *this)
     if (-1 < (int)this_00->field_2200) {
       FUN_006b3af0((int *)g_ddxContext_008075A8,this_00->field_2200);
     }
-    if (this_00->field_21E6 != '\0') {
+    if (this_00->field_0x21e6 != '\0') {
       if (g_startSystem_0081176C->field_054C != 0) {
         StartSystemTy::sub_006E56B0(this_00->field_000C,g_startSystem_0081176C->field_054C);
         g_startSystem_0081176C->field_054C = 0;

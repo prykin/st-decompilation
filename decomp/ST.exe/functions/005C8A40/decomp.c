@@ -120,20 +120,16 @@ int __thiscall SettMapTy::GetMessage(SettMapTy *this,STMessage *message)
             PaintSettMap(this_00,'\0');
           }
           else if (SVar5 == MESS_ID_NONE) {
-            /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-            (*(code *)this_00->field_0000->field_000C)();
+            this_00->NoneSettMap();
           }
           else if (SVar5 == MESS_ID_CREATE) {
             /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-            uVar19 = *(uint *)((message->arg0).u32 + 0x18);
-            this_00->field_1E27 = uVar19;
-            /* ST_PSEUDO[raw_indirect_call,packed_or_unaligned_piece]: expected typed vtable/callback call with explicit __thiscall receiver; expected named packed member, bit extract/compose, or unaligned load */
-            (*(code *)this_00->field_0000->field_0010)
-                      (CONCAT31((int3)(uVar19 >> 8),*(undefined1 *)((message->arg0).u32 + 0x14)));
+            this_00->field_1E27 = *(uint *)((message->arg0).u32 + 0x18);
+            /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
+            this_00->sub_005C29B0(*(undefined1 *)((message->arg0).u32 + 0x14));
           }
           else if (SVar5 == MESS_SHARED_0003) {
-            /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-            (*(code *)this_00->field_0000->field_0014)();
+            this_00->DoneSettMap();
           }
         }
         else if (SVar5 == MESS_SHARED_6105) {
@@ -159,8 +155,7 @@ switchD_005c8bd0_caseD_611f:
           break;
         case MESS_SHARED_6200:
           this_00->field_1F88 = message->arg0;
-          /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-          (*(code *)this_00->field_0000->field_002C)();
+          (*this_00->vtable->SetListCtrls)((SettMapSTy *)this_00);
           break;
         case MESS_PLAYPANELTY_6201:
           MMMObjTy::PaintSlBut
@@ -411,8 +406,7 @@ cf_common_join_005C8ECC:
             Library::MSVCRT::_strncpy(&this_00->field_1A8A,(char *)&DAT_0080c3c3,0x1d5);
             this_00->field_1C5E = 0;
           }
-          /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-          (*(code *)this_00->field_0000->field_002C)();
+          (*this_00->vtable->SetListCtrls)((SettMapSTy *)this_00);
           break;
         /* ST_PSEUDO[dynamic_array_indexing,packed_or_unaligned_piece]: expected DArrayAt<T>(array, index) (runtime elementSize cannot be a static C array); expected named packed member, bit extract/compose, or unaligned load */
         case 3:
@@ -807,8 +801,7 @@ joined_r0x005c964b:
           uVar19 = this_00->field_2125[10];
           this_00->field_002D = 5;
           FUN_006e6080(this_00,2,uVar19,(undefined4 *)&this_00->field_0x1d);
-          /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-          (*(code *)this_00->field_0000->field_002C)();
+          (*this_00->vtable->SetListCtrls)((SettMapSTy *)this_00);
         }
         break;
       case MESS_SETTMAPMTY_654A:
@@ -1157,13 +1150,11 @@ LAB_005c9c8a:
       thunk_FUN_005c7800();
     }
     break;
-  /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
   case MESS_PRIVIDERTY_693F:
-    (*(code *)this_00->field_0000->field_0020)();
+    this_00->vfunc_20();
     break;
-  /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
   case MESS_SHARED_6940:
-    (*(code *)this_00->field_0000->field_0024)();
+    this_00->vfunc_24();
     break;
   case MESS_CHOOSEMAPTY_6942:
     this_00->field_0045 = 0x200;
@@ -1180,15 +1171,13 @@ LAB_005c9c8a:
     *(undefined4 *)&this_00->field_0x21e1 = 0x1010101;
     *(undefined2 *)&this_00->field_0x21e5 = 0x101;
     this_00->field_21E7 = 1;
-    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-    (*(code *)this_00->field_0000->field_0008)();
+    this_00->CloseButtons();
     /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
     this_01 = *(MMsgTy **)(this_00->field_1A5B + 0x2e6);
     goto LAB_005c9e75;
   case MESS_MAINMENUTY_6944|MESS_SHARED_0003:
     thunk_FUN_005b6350(this_00,0x611f,this_00->field_1E27,(uint)this_00->field_1E26);
-    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-    (*(code *)this_00->field_0000->field_0008)();
+    this_00->CloseButtons();
     /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
     if (*(int *)(this_00->field_1A5B + 0x2e6) != 0) {
       local_58 = 0;
@@ -1242,8 +1231,7 @@ LAB_005c9c8a:
     thunk_FUN_005b6350(this_00,0x6109,1,(uint)(this_00->field_1E26 == CASE_E));
     this_00->field_0x21e6 = 0;
     this_00->field_0x21e4 = 0;
-    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-    (*(code *)this_00->field_0000->field_0008)();
+    this_00->CloseButtons();
     /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
     if (*(int *)(this_00->field_1A5B + 0x2e6) != 0) {
       local_48 = 0;
@@ -1259,9 +1247,8 @@ LAB_005c9c8a:
     *(undefined4 *)&this_00->field_0x21e1 = 0x1010101;
     *(undefined2 *)&this_00->field_0x21e5 = 0x101;
     this_00->field_21E7 = 1;
-/* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
 LAB_005c9e62:
-    (*(code *)this_00->field_0000->field_0008)();
+    this_00->CloseButtons();
     /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
     this_01 = *(MMsgTy **)(this_00->field_1A5B + 0x2e6);
 LAB_005c9e75:

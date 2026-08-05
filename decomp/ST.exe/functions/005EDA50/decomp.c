@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 undefined4 __fastcall FUN_005eda50(AnonShape_005EDA50_4BDBD797 *param_1)
 
@@ -6,17 +8,16 @@ undefined4 __fastcall FUN_005eda50(AnonShape_005EDA50_4BDBD797 *param_1)
   short sVar2;
   short sVar3;
   STBoatC *this;
-  uint uVar4;
+  int iVar4;
   dword dVar5;
-  int iVar6;
-  undefined4 uVar7;
+  undefined4 uVar6;
   undefined4 local_18;
   int local_14;
   int local_10;
   int local_c;
   int local_8;
 
-  uVar7 = 0;
+  uVar6 = 0;
   local_18 = 0;
   if (0 < param_1->field_005F) {
     sVar2 = param_1->field_005D;
@@ -26,24 +27,22 @@ undefined4 __fastcall FUN_005eda50(AnonShape_005EDA50_4BDBD797 *param_1)
        (((sVar2 < g_worldGrid.sizeY && (-1 < sVar1)) &&
         ((sVar1 < g_worldGrid.sizeZ &&
          (this = (STBoatC *)
-                 g_worldGrid.cells
-                 [(int)g_worldGrid.planeStride * (int)sVar1 + (int)g_worldGrid.sizeX * (int)sVar2 +
-                  (int)sVar3].objects[0], uVar7 = local_18, this != nullptr)))))) {
+                 STGridAt3D(g_worldGrid, sVar3, sVar2, sVar1).objects[0], uVar6 = local_18, this != nullptr)))))) {
       /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
       if ((param_1->field_02E9 != '\0') &&
-         (uVar4 = (**(code **)(*(int *)param_1 + 0x128))(), this->field_0018 == uVar4)) {
+         (iVar4 = (**(code **)(*(int *)param_1 + 0x128))(), this->field_0018 == iVar4)) {
         return 0;
       }
       dVar5 = this->slot_2C();
-      if ((((dVar5 == 0x52) || (dVar5 == 0x5f)) && (iVar6 = thunk_FUN_004e1490(this), iVar6 != 0))
+      if ((((dVar5 == 0x52) || (dVar5 == 0x5f)) && (iVar4 = thunk_FUN_004e1490(this), iVar4 != 0))
          && (this->field_0508 == CASE_0)) {
         /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-        iVar6 = (**(code **)(*(int *)param_1 + 0xc))();
-        thunk_FUN_004ebcb0(this,*(int *)&param_1->field_0x18,iVar6);
+        iVar4 = (**(code **)(*(int *)param_1 + 0xc))();
+        thunk_FUN_004ebcb0(this,*(int *)&param_1->field_0x18,iVar4);
         thunk_FUN_004ebfd0(this,&local_14,&local_10,&local_c,&local_8);
-        iVar6 = thunk_FUN_005ecd70(param_1,local_14,local_10,local_c,local_8,'\x01',0x3c);
-        if (iVar6 != 0) {
-          uVar7 = 1;
+        iVar4 = thunk_FUN_005ecd70(param_1,local_14,local_10,local_c,local_8,'\x01',0x3c);
+        if (iVar4 != 0) {
+          uVar6 = 1;
           if (param_1->field_0211 != nullptr) {
             Library::Ourlib::ST3DSMAP::SprSetLevBefore
                       (param_1->field_0211,param_1->field_01ED,this->field_01ED);
@@ -53,6 +52,6 @@ undefined4 __fastcall FUN_005eda50(AnonShape_005EDA50_4BDBD797 *param_1)
       }
     }
   }
-  return uVar7;
+  return uVar6;
 }
 

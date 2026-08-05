@@ -174,9 +174,7 @@ cf_common_exit_00476DBA:
                   (sVar4 = this->field_060D + 1, -1 < sVar17)) &&
                  ((sVar17 < g_worldGrid.sizeX && (-1 < sVar20)))) && (sVar20 < g_worldGrid.sizeY))
                && (((-1 < sVar4 && (sVar4 < g_worldGrid.sizeZ)) &&
-                   ((pSVar2 = g_worldGrid.cells
-                              [(int)g_worldGrid.sizeX * (int)sVar20 +
-                               iVar16 + (int)sVar4 * (int)g_worldGrid.planeStride].objects[0],
+                   ((pSVar2 = STGridAt3D(g_worldGrid, iVar16, sVar20, sVar4).objects[0],
                     pSVar2 != nullptr &&
                     ((pSVar2->value_20 == 0x14 && (*(int *)((int)&pSVar2[0x1f].vtable + 1) == 9)))))
                    ))) {

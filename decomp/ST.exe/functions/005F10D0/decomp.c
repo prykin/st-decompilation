@@ -21,7 +21,7 @@ int __thiscall STManBasisC::GetMessage(STManBasisC *this,STMessage *message)
   byte *local_14;
   uint local_10;
   STManBasisC *local_c;
-  ushort *local_8;
+  AnonShape_005F10D0_60EBA416 *local_8;
 
   local_8 = nullptr;
   local_58.previous = g_currentExceptionFrame;
@@ -54,7 +54,8 @@ int __thiscall STManBasisC::GetMessage(STManBasisC *this,STMessage *message)
     if (SVar1 == MESS_ID_CREATE) {
       local_c->field_001C = local_c->field_0018 * DAT_00808754;
       if (g_cMf32_00806754 != nullptr) {
-        local_8 = Library::Ourlib::MFAOBJ::mfAObjLoad(g_cMf32_00806754,PTR_s_BASIS_MAN_0079c57c,0,0);
+        local_8 = (AnonShape_005F10D0_60EBA416 *)
+                  Library::Ourlib::MFAOBJ::mfAObjLoad(g_cMf32_00806754,PTR_s_BASIS_MAN_0079c57c,0,0);
       }
       if (local_8 == nullptr) {
         this_00->field_0020 = nullptr;
@@ -62,7 +63,7 @@ int __thiscall STManBasisC::GetMessage(STManBasisC *this,STMessage *message)
         this_00->field_0028 = 1;
         this_00->field_002C = 1;
       }
-      else if (*(int *)(local_8 + 6) == 2) {
+      else if (local_8->field_000C == 2) {
         sub_005F2110(this_00,(undefined4 *)local_8);
         this_00->field_001C = this_00->field_0044;
         sub_005F21D0(this_00);

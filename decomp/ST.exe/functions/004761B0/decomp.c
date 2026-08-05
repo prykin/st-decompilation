@@ -3,9 +3,14 @@
 
 /* Recovered from embedded debug metadata:
    E:\__titans\wlad\To_boat.cpp
-   STBoatC::SetMine */
+   STBoatC::SetMine
+   [STAbiConsistencyApplier] machine_thiscall_arity target=function:-1: prototype=int __thiscall
+   SetMine(STBoatC * this, int * param_1) Evidence: every machine RET purges exactly 4 explicit
+   stack bytes; current signature describes 12; removed trailing parameter slots have no listing
+   references; ret_sites=00476220 RET 0x4 | 00476236 RET 0x4 | 00476405 RET 0x4 | 00476560 RET 0x4 |
+   0047659B RET 0x4 | 00476645 RET 0x4 | 0047666D RET 0x4 | 004767DD RET 0x4 | 0047681F RET 0x4 */
 
-int __thiscall STBoatC::SetMine(STBoatC *this,int *param_1,undefined4 param_2,int param_3)
+int __thiscall STBoatC::SetMine(STBoatC *this,int *param_1)
 
 {
   short sVar1;
@@ -33,22 +38,16 @@ int __thiscall STBoatC::SetMine(STBoatC *this,int *param_1,undefined4 param_2,in
     *(short *)&this->field_0x5de = sVar2;
     *(short *)&this->field_0x5e6 = sVar3;
     *(short *)&this->field_0x5e0 = sVar3;
+    /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
     if ((((((sVar1 < 0) || (g_worldGrid.sizeX <= sVar1)) || (sVar2 < 0)) ||
          (((g_worldGrid.sizeY <= sVar2 || (sVar3 < 0)) ||
           ((g_worldGrid.sizeZ <= sVar3 ||
-           (g_pathingGrid.cells
-            [(int)g_pathingGrid.sizeX * (int)sVar2 + (int)g_pathingGrid.planeStride * (int)sVar3 +
-             (int)sVar1] != 0)))))) ||
-        /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
+           (STGridAt3D(g_pathingGrid, sVar1, sVar2, sVar3) != 0)))))) ||
         (((-1 < sVar1 && (sVar1 < g_worldGrid.sizeX)) &&
          ((-1 < sVar2 &&
           (((((sVar2 < g_worldGrid.sizeY && (-1 < sVar3)) && (sVar3 < g_worldGrid.sizeZ)) &&
-            (g_worldGrid.cells
-             [(int)g_worldGrid.planeStride * (int)sVar3 + (int)g_worldGrid.sizeX * (int)sVar2 +
-              (int)sVar1].objects[1] != nullptr)) &&
-           ((iVar5 = g_worldGrid.cells
-                     [(int)g_worldGrid.planeStride * (int)sVar3 +
-                      (int)g_worldGrid.sizeX * (int)sVar2 + (int)sVar1].objects[1]->value_20,
+            (STGridAt3D(g_worldGrid, sVar1, sVar2, sVar3).objects[1] != nullptr)) &&
+           ((iVar5 = STGridAt3D(g_worldGrid, sVar1, sVar2, sVar3).objects[1]->value_20,
             iVar5 == 0x5a || (iVar5 == 0x1ae)))))))))) &&
        (iVar5 = sub_0048DFD0(this,sVar1,sVar2,sVar3,this->field_0047,this->field_0049,
                              (int *)CONCAT22((short)((uint)&this->field_0x5e2 >> 0x10),
@@ -76,21 +75,15 @@ int __thiscall STBoatC::SetMine(STBoatC *this,int *param_1,undefined4 param_2,in
       *(short *)&this->field_0x5dc = sVar1;
       *(short *)&this->field_0x5de = sVar2;
       *(short *)&this->field_0x5e0 = sVar3;
+      /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
       if ((((((((sVar1 < 0) || (g_worldGrid.sizeX <= sVar1)) || (sVar2 < 0)) ||
              ((g_worldGrid.sizeY <= sVar2 || (sVar3 < 0)))) || (g_worldGrid.sizeZ <= sVar3)) ||
-           (g_pathingGrid.cells
-            [(int)g_pathingGrid.sizeX * (int)sVar2 + (int)g_pathingGrid.planeStride * (int)sVar3 +
-             (int)sVar1] != 0)) ||
-          /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
+           (STGridAt3D(g_pathingGrid, sVar1, sVar2, sVar3) != 0)) ||
           ((((-1 < sVar1 && (sVar1 < g_worldGrid.sizeX)) &&
             ((-1 < sVar2 &&
              (((sVar2 < g_worldGrid.sizeY && (-1 < sVar3)) && (sVar3 < g_worldGrid.sizeZ)))))) &&
-           ((g_worldGrid.cells
-             [(int)g_worldGrid.planeStride * (int)sVar3 + (int)g_worldGrid.sizeX * (int)sVar2 +
-              (int)sVar1].objects[1] != nullptr &&
-            ((iVar5 = g_worldGrid.cells
-                      [(int)g_worldGrid.planeStride * (int)sVar3 +
-                       (int)g_worldGrid.sizeX * (int)sVar2 + (int)sVar1].objects[1]->value_20,
+           ((STGridAt3D(g_worldGrid, sVar1, sVar2, sVar3).objects[1] != nullptr &&
+            ((iVar5 = STGridAt3D(g_worldGrid, sVar1, sVar2, sVar3).objects[1]->value_20,
              iVar5 == 0x5a || (iVar5 == 0x1ae)))))))) &&
          (iVar5 = sub_0048DFD0(this,sVar1,sVar2,sVar3,this->field_0047,this->field_0049,
                                (int *)CONCAT22((short)((uint)&this->field_0x5e2 >> 0x10),
@@ -113,25 +106,17 @@ int __thiscall STBoatC::SetMine(STBoatC *this,int *param_1,undefined4 param_2,in
       if (((((((-1 < sVar1) && (sVar1 < g_worldGrid.sizeX)) &&
              ((-1 < sVar2 &&
               (((sVar2 < g_worldGrid.sizeY && (-1 < sVar3)) && (sVar3 < g_worldGrid.sizeZ)))))) &&
-            (g_worldGrid.cells
-             [(int)g_worldGrid.planeStride * (int)sVar3 + (int)g_worldGrid.sizeX * (int)sVar2 +
-              (int)sVar1].objects[0] != nullptr)) ||
+            (STGridAt3D(g_worldGrid, sVar1, sVar2, sVar3).objects[0] != nullptr)) ||
+           /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
            ((sVar1 < 0 || (g_worldGrid.sizeX <= sVar1)))) ||
           ((((sVar2 < 0 || ((g_worldGrid.sizeY <= sVar2 || (sVar3 < 0)))) ||
             ((g_worldGrid.sizeZ <= sVar3 ||
-             (g_pathingGrid.cells
-              [(int)g_pathingGrid.sizeX * (int)sVar2 + (int)g_pathingGrid.planeStride * (int)sVar3 +
-               (int)sVar1] != 0)))) ||
-           /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
+             (STGridAt3D(g_pathingGrid, sVar1, sVar2, sVar3) != 0)))) ||
            (((((-1 < sVar1 && (sVar1 < g_worldGrid.sizeX)) && (-1 < sVar2)) &&
              (((sVar2 < g_worldGrid.sizeY && (-1 < sVar3)) &&
               ((sVar3 < g_worldGrid.sizeZ &&
-               (g_worldGrid.cells
-                [(int)g_worldGrid.planeStride * (int)sVar3 + (int)g_worldGrid.sizeX * (int)sVar2 +
-                 (int)sVar1].objects[1] != nullptr)))))) &&
-            ((iVar5 = g_worldGrid.cells
-                      [(int)g_worldGrid.planeStride * (int)sVar3 +
-                       (int)g_worldGrid.sizeX * (int)sVar2 + (int)sVar1].objects[1]->value_20,
+               (STGridAt3D(g_worldGrid, sVar1, sVar2, sVar3).objects[1] != nullptr)))))) &&
+            ((iVar5 = STGridAt3D(g_worldGrid, sVar1, sVar2, sVar3).objects[1]->value_20,
              iVar5 == 0x5a || (iVar5 == 0x1ae)))))))) &&
          (iVar5 = sub_0048DFD0(this,sVar1,sVar2,sVar3,this->field_0047,this->field_0049,
                                (int *)CONCAT22((short)((uint)&this->field_0x5e2 >> 0x10),

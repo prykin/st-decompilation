@@ -116,9 +116,7 @@ int __thiscall STBoatC::LoadObj(STBoatC *this,AnonShape_005EFAE0_B406B78B *param
     }
     else {
       local_c = (STFishC *)
-                g_worldGrid.cells
-                [(int)sVar16 * (int)g_worldGrid.sizeX + (int)g_worldGrid.planeStride * (int)sVar17 +
-                 (int)sVar15].objects[0];
+                STGridAt3D(g_worldGrid, sVar15, sVar16, sVar17).objects[0];
     }
     if ((local_c == nullptr) ||
        ((AnonShape_005EFAE0_B406B78B *)local_c->field_0018 != param_1)) {
@@ -187,9 +185,7 @@ int __thiscall STBoatC::LoadObj(STBoatC *this,AnonShape_005EFAE0_B406B78B *param
       }
       else {
         local_c = (STFishC *)
-                  g_worldGrid.cells
-                  [(int)sVar16 * (int)g_worldGrid.planeStride + (int)sVar17 * (int)g_worldGrid.sizeX
-                   + (int)sVar15].objects[0];
+                  STGridAt3D(g_worldGrid, sVar15, sVar17, sVar16).objects[0];
       }
       if ((((local_c == nullptr) ||
            ((AnonShape_005EFAE0_B406B78B *)local_c->field_0018 != this->field_058E)) &&
@@ -258,9 +254,7 @@ int __thiscall STBoatC::LoadObj(STBoatC *this,AnonShape_005EFAE0_B406B78B *param
       }
       else {
         local_c = (STFishC *)
-                  g_worldGrid.cells
-                  [(int)sVar16 * (int)g_worldGrid.planeStride + (int)sVar17 * (int)g_worldGrid.sizeX
-                   + (int)sVar15].objects[0];
+                  STGridAt3D(g_worldGrid, sVar15, sVar17, sVar16).objects[0];
       }
       if (((local_c == nullptr) ||
           ((AnonShape_005EFAE0_B406B78B *)local_c->field_0018 != this->field_058E)) &&
@@ -338,9 +332,7 @@ LAB_004736e2:
     }
     else {
       local_c = (STFishC *)
-                g_worldGrid.cells
-                [(int)sVar16 * (int)g_worldGrid.planeStride + (int)sVar17 * (int)g_worldGrid.sizeX +
-                 (int)sVar15].objects[0];
+                STGridAt3D(g_worldGrid, sVar15, sVar17, sVar16).objects[0];
     }
     if (((local_c == nullptr) ||
         ((AnonShape_005EFAE0_B406B78B *)local_c->field_0018 != this->field_058E)) &&
@@ -369,9 +361,7 @@ cf_common_exit_0047405D:
         pSVar6 = nullptr;
       }
       else {
-        pSVar6 = g_worldGrid.cells
-                 [(int)sVar16 * (int)g_worldGrid.planeStride + (int)sVar17 * (int)g_worldGrid.sizeX
-                  + (int)sVar15].objects[0];
+        pSVar6 = STGridAt3D(g_worldGrid, sVar15, sVar17, sVar16).objects[0];
       }
       Library::Ourlib::ST3DSMAP::SprSetLevAfter
                 (this->field_0211,this->field_01ED,*(int *)&pSVar6[0xd].field_0x19);
@@ -516,9 +506,7 @@ cf_common_exit_0047405D:
       }
       else {
         local_c = (STFishC *)
-                  g_worldGrid.cells
-                  [(int)sVar16 * (int)g_worldGrid.planeStride + (int)sVar17 * (int)g_worldGrid.sizeX
-                   + (int)sVar15].objects[0];
+                  STGridAt3D(g_worldGrid, sVar15, sVar17, sVar16).objects[0];
       }
       if (((local_c != nullptr) &&
           ((AnonShape_005EFAE0_B406B78B *)local_c->field_0018 == this->field_058E)) &&

@@ -1,8 +1,10 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* [STPrototypeApplier] Propagated return.
    Evidence: 005F0A30 returns return of FUN_004b7d50 @ 005F0B4F */
 
-bool __fastcall FUN_005f0a30(STBoatC *param_1)
+bool __fastcall FUN_005f0a30(STSprGameObjC *param_1)
 
 {
   short sVar1;
@@ -18,32 +20,29 @@ bool __fastcall FUN_005f0a30(STBoatC *param_1)
   uVar5 = (uint)(byte)param_1->field_024F;
   if ((param_1->field_024F != 0) &&
      (uVar5 = (uint)(ushort)param_1->field_0246, 0 < (short)param_1->field_0246)) {
-    uVar5 = thunk_FUN_004961b0(param_1->field_0242,*(short *)&param_1->field_0x244,
-                               (short)(uVar5 - 1));
+    uVar5 = thunk_FUN_004961b0(param_1->field_0242,param_1->field_0244,(short)(uVar5 - 1));
     if (uVar5 == 0) {
       sVar1 = param_1->field_0242;
-      sVar2 = *(short *)&param_1->field_0x244;
+      sVar2 = param_1->field_0244;
       uVar4 = param_1->field_0246 - 1;
       uVar5 = (uint)uVar4;
       if ((((-1 < sVar1) && (sVar1 < g_worldGrid.sizeX)) && (-1 < sVar2)) &&
          (((sVar2 < g_worldGrid.sizeY && (-1 < (short)uVar4)) && ((short)uVar4 < g_worldGrid.sizeZ))
          )) {
         uVar5 = (uint)sVar1;
-        this = g_worldGrid.cells
-               [(int)g_worldGrid.planeStride * (int)(short)uVar4 +
-                (int)g_worldGrid.sizeX * (int)sVar2 + uVar5].objects[0];
+        this = STGridAt3D(g_worldGrid, uVar5, sVar2, uVar4).objects[0];
         if (this != nullptr) {
           uVar5 = this->GetObjectTypeId();
           if (uVar5 == 99) {
-            iVar6 = (*param_1->vtable[1].vfunc_14)();
-            iVar7 = (*param_1->vtable[1].vfunc_0C)();
+            iVar6 = (*param_1->vtable->vfunc_138)();
+            iVar7 = (*param_1->vtable->vfunc_130)();
             dVar8 = param_1->slot_2C();
             thunk_FUN_004b7e30(this,dVar8,iVar7,iVar6);
-            iVar6 = (*param_1->vtable->vfunc_AC)(*(undefined4 *)&this->field_0x18);
+            iVar6 = param_1->vfunc_AC((short)*(undefined4 *)&this->field_0x18);
             uVar5 = 0;
             if (iVar6 != 0) {
               thunk_FUN_004b7de0((int *)this);
-              bVar3 = thunk_FUN_004b7d50(this,param_1);
+              bVar3 = thunk_FUN_004b7d50(this,(STBoatC *)param_1);
               uVar5 = (uint)bVar3;
             }
           }

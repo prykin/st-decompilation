@@ -6,9 +6,15 @@
 /* WARNING: Removing unreachable block (ram,0x004657b5) */
 /* Recovered from embedded debug metadata:
    E:\__titans\wlad\To_boat.cpp
-   STBoatC::BackAttack */
+   STBoatC::BackAttack
+   [STAbiConsistencyApplier] machine_thiscall_arity target=function:-1: prototype=int __thiscall
+   BackAttack(STBoatC * this, int * param_1) Evidence: every machine RET purges exactly 4 explicit
+   stack bytes; current signature describes 12; removed trailing parameter slots have no listing
+   references; ret_sites=004653E5 RET 0x4 | 0046543A RET 0x4 | 004654E4 RET 0x4 | 0046559A RET 0x4 |
+   004655F1 RET 0x4 | 004656CB RET 0x4 | 00465736 RET 0x4 | 00465781 RET 0x4 | 0046578D RET 0x4 |
+   004657BC RET 0x4 */
 
-int __thiscall STBoatC::BackAttack(STBoatC *this,int *param_1,int param_2,int param_3)
+int __thiscall STBoatC::BackAttack(STBoatC *this,int *param_1)
 
 {
   code *pcVar1;

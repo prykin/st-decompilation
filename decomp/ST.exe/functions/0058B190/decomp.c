@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* [STMethodOwnerApplier] Structural method owner recovered as STOctopusC.
    Evidence: this_call_owners=[STOctopusC]; agreed_this_calls=1; incoming_this_accesses=59;
@@ -260,9 +262,7 @@ LAB_0058b5ac:
              ((((sVar9 < 0 || (g_worldGrid.sizeX <= sVar9)) || (sVar10 < 0)) ||
               (((g_worldGrid.sizeY <= sVar10 || (sVar2 = (short)local_8, sVar2 < 0)) ||
                ((g_worldGrid.sizeZ <= sVar2 ||
-                (g_worldGrid.cells
-                 [(int)sVar10 * (int)g_worldGrid.sizeX + (int)g_worldGrid.planeStride * (int)sVar2 +
-                  (int)sVar9].objects[0] == nullptr)))))))) {
+                (STGridAt3D(g_worldGrid, sVar9, sVar10, sVar2).objects[0] == nullptr)))))))) {
             if (iVar3 != local_8) {
               local_c = (int)(short)((short)iVar3 * 200 + 100);
             }

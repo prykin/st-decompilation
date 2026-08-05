@@ -17,17 +17,17 @@ PausePanelTy * __cdecl CreatePausePanel(void)
     this->field_005C = 0;
     this->field_003C = 0;
     this->field_0068 = 0;
-    *(undefined4 *)&this->field_0x178 = 0;
+    this->field_0178 = 0;
     this->field_017C = nullptr;
     this->field_0180 = nullptr;
     this->field_0184 = 0;
     this->field_0060 = 0xffffffff;
-    *(undefined4 *)&this->field_0x64 = 4;
+    this->field_0064 = 4;
     this->field_0172 = CASE_2;
-    *(undefined ***)this = &PTR_GetMessage_0079ad2c;
+    this->vtable = &PausePanelTyVTable;
     this->field_0044 = 0x9c;
     this->field_0040 = 0x174;
-    *(undefined4 *)&this->field_0x48 = 0xa0;
+    this->field_0048 = 0xa0;
     return this;
   }
   return nullptr;

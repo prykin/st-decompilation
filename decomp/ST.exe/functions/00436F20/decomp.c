@@ -101,8 +101,6 @@ void __thiscall STAllPlayersC::CmdToPlsObj(STAllPlayersC *this,void *command)
   undefined4 extraout_EDX_01;
   /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
   undefined4 extraout_EDX_02;
-  /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
-  int unaff_EDI;
   byte *puVar25;
   undefined2 arg_1;
   undefined2 arg_2;
@@ -279,28 +277,20 @@ void __thiscall STAllPlayersC::CmdToPlsObj(STAllPlayersC *this,void *command)
       local_6c = (DArrayTy *)(int)(short)uVar23;
       local_30 = (DArrayTy *)(int)(short)uVar3;
       iVar24 = (int)(short)uVar2;
-      if ((g_pathingGrid.cells
-           [(int)g_pathingGrid.planeStride * (int)local_30 + iVar24 +
-            (int)g_pathingGrid.sizeX * (int)local_6c] != 0) &&
+      if ((STGridAt3D(g_pathingGrid, iVar24, local_6c, local_30) != 0) &&
          ((((((((short)uVar2 < 0 || (g_worldGrid.sizeX <= (short)uVar2)) || ((short)uVar23 < 0)) ||
              ((g_worldGrid.sizeY <= (short)uVar23 || ((short)uVar3 < 0)))) ||
             (g_worldGrid.sizeZ <= (short)uVar3)) ||
-           (g_worldGrid.cells
-            [(int)g_worldGrid.sizeX * (int)local_6c +
-             iVar24 + (int)g_worldGrid.planeStride * (int)local_30].objects[0] ==
+           (STGridAt3D(g_worldGrid, iVar24, local_6c, local_30).objects[0] ==
             nullptr)) && (local_28 = local_2c, (short)uVar3 < 5)))) {
         while( true ) {
           sVar12 = (short)local_28;
-          if (g_pathingGrid.cells
-              [(int)g_pathingGrid.planeStride * (int)sVar12 + iVar24 +
-               (int)g_pathingGrid.sizeX * (int)local_6c] == 0) break;
+          if (STGridAt3D(g_pathingGrid, iVar24, local_6c, sVar12) == 0) break;
           if (((((-1 < (short)uVar2) && ((short)uVar2 < g_worldGrid.sizeX)) &&
                ((-1 < (short)uVar23 &&
                 ((((short)uVar23 < g_worldGrid.sizeY && (-1 < sVar12)) &&
                  (sVar12 < g_worldGrid.sizeZ)))))) &&
-              (g_worldGrid.cells
-               [(int)g_worldGrid.planeStride * (int)sVar12 +
-                iVar24 + (int)g_worldGrid.sizeX * (int)(short)uVar23].objects[0] !=
+              (STGridAt3D(g_worldGrid, iVar24, uVar23, sVar12).objects[0] !=
                nullptr)) ||
              (local_28 = (DArrayTy *)((int)&local_28->flags + 1), 4 < (short)local_28))
           goto cf_common_exit_00437191;
@@ -351,8 +341,7 @@ cf_common_exit_00437191:
         if (pSVar16 == nullptr) {
           return;
         }
-        /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
-        local_c = (DArrayTy *)STGroupC::GetGroupContent((STGroupC *)pSVar16,unaff_EDI);
+        local_c = (DArrayTy *)STGroupC::GetGroupContent((STGroupC *)pSVar16);
         /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
         uVar13 = extraout_ECX_04;
       }
@@ -382,8 +371,7 @@ cf_common_exit_00437191:
         if (pSVar16 == nullptr) {
           return;
         }
-        /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
-        pDVar15 = (DArrayTy *)STGroupC::GetGroupContent((STGroupC *)pSVar16,unaff_EDI);
+        pDVar15 = (DArrayTy *)STGroupC::GetGroupContent((STGroupC *)pSVar16);
         /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
         uVar21 = extraout_ECX_01;
       }
@@ -416,8 +404,7 @@ cf_common_exit_00437191:
         if (pSVar16 == nullptr) {
           return;
         }
-        /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
-        local_c = (DArrayTy *)STGroupC::GetGroupContent((STGroupC *)pSVar16,unaff_EDI);
+        local_c = (DArrayTy *)STGroupC::GetGroupContent((STGroupC *)pSVar16);
         /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
         uVar21 = extraout_EDX_02;
       }
@@ -448,8 +435,7 @@ cf_common_exit_00437191:
         if (pSVar16 == nullptr) {
           return;
         }
-        /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
-        pDVar15 = (DArrayTy *)STGroupC::GetGroupContent((STGroupC *)pSVar16,unaff_EDI);
+        pDVar15 = (DArrayTy *)STGroupC::GetGroupContent((STGroupC *)pSVar16);
       }
       else {
         iVar24 = *(int *)((int)command + 0xf);
@@ -500,8 +486,7 @@ cf_common_exit_00437191:
     if ((*(char *)((int)command + 0xe) == ')') && (**(char **)((int)command + 0x17) == '\x01')) {
       return;
     }
-    /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
-    pDVar17 = (DArrayTy *)STGroupC::GetGroupContent((STGroupC *)pSVar16,unaff_EDI);
+    pDVar17 = (DArrayTy *)STGroupC::GetGroupContent((STGroupC *)pSVar16);
     AddObjsToGroup(local_20,*(char *)((int)command + 8),0xfffe,(uint *)pDVar17,
                    (undefined2 *)&local_1c);
     DArrayDestroy(pDVar17);
@@ -510,14 +495,12 @@ cf_common_exit_00437191:
   if (pSVar16 == nullptr) {
     return;
   }
-  /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
-  STGroupBoatC::StartReceiveOrderSound(pSVar16,unaff_EDI);
+  STGroupBoatC::StartReceiveOrderSound(pSVar16);
   switch(*(undefined1 *)((int)command + 0xe)) {
   case 10:
     goto cf_common_exit_0043824D;
-  /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
   case 0x14:
-    iVar24 = STGroupBoatC::IsAgAtt(pSVar16,unaff_EDI);
+    iVar24 = STGroupBoatC::IsAgAtt(pSVar16);
     if (iVar24 != 0) {
       pDVar15 = Library::DKW::TBL::DArrayCreate(nullptr,1,6,1);
       uStack_14 = **(undefined2 **)((int)command + 0x17);
@@ -637,9 +620,7 @@ LAB_00437842:
       if (((-1 < sVar5) && (sVar5 < g_worldGrid.sizeX)) &&
          ((((-1 < sVar4 && ((sVar4 < g_worldGrid.sizeY && (-1 < sVar12)))) &&
            (sVar12 < g_worldGrid.sizeZ)) &&
-          (pSVar19 = g_worldGrid.cells
-                     [(int)sVar12 * (int)g_worldGrid.planeStride +
-                      (int)sVar4 * (int)g_worldGrid.sizeX + (int)sVar5].objects[0],
+          (pSVar19 = STGridAt3D(g_worldGrid, sVar5, sVar4, sVar12).objects[0],
           pSVar19 != nullptr)))) {
         pDVar15 = Library::DKW::TBL::DArrayCreate(nullptr,1,2,1);
         Library::DKW::TBL::DArrayAppend(pDVar15,&pSVar19[1].field_0xe);
@@ -668,9 +649,7 @@ LAB_00437842:
       if ((((-1 < sVar12) && (sVar12 < g_worldGrid.sizeX)) &&
           ((-1 < sVar5 &&
            (((sVar5 < g_worldGrid.sizeY && (-1 < sVar4)) && (sVar4 < g_worldGrid.sizeZ)))))) &&
-         (g_worldGrid.cells
-          [(int)sVar4 * (int)g_worldGrid.planeStride + (int)sVar5 * (int)g_worldGrid.sizeX +
-           (int)sVar12].objects[0] != nullptr)) {
+         (STGridAt3D(g_worldGrid, sVar12, sVar5, sVar4).objects[0] != nullptr)) {
         uStack_98 = 0;
         uStack_94 = *(undefined2 *)(puVar6 + 1);
         uStack_92 = *(undefined2 *)(puVar6 + 5);
@@ -829,9 +808,7 @@ cf_common_exit_0043824D:
       if ((((-1 < sStack_58) && (sStack_58 < g_worldGrid.sizeX)) &&
           ((-1 < sStack_56 &&
            (((sStack_56 < g_worldGrid.sizeY && (-1 < sStack_54)) && (sStack_54 < g_worldGrid.sizeZ))
-           )))) && ((pSVar19 = g_worldGrid.cells
-                               [(int)sStack_54 * (int)g_worldGrid.planeStride +
-                                (int)sStack_56 * (int)g_worldGrid.sizeX + (int)sStack_58].objects[0]
+           )))) && ((pSVar19 = STGridAt3D(g_worldGrid, sStack_58, sStack_56, sStack_54).objects[0]
                     , pSVar19 != nullptr && (pSVar19->value_20 == 1000)))) {
         iVar24 = pSVar19->GetObjectTypeId();
         if (iVar24 == 0x37) {
@@ -880,9 +857,7 @@ cf_common_exit_0043824D:
     if (g_worldGrid.sizeZ <= sVar12) {
       return;
     }
-    pSVar19 = g_worldGrid.cells
-              [(int)sVar4 * (int)g_worldGrid.sizeX + (int)sVar12 * (int)g_worldGrid.planeStride +
-               (int)sStack_a0].objects[0];
+    pSVar19 = STGridAt3D(g_worldGrid, sStack_a0, sVar4, sVar12).objects[0];
     if (pSVar19 == nullptr) {
       return;
     }
@@ -917,8 +892,7 @@ cf_common_exit_0043824D:
       DArrayDestroy(local_c);
       return;
     }
-    /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
-    local_c = (DArrayTy *)STGroupC::GetGroupContent((STGroupC *)pSVar16,unaff_EDI);
+    local_c = (DArrayTy *)STGroupC::GetGroupContent((STGroupC *)pSVar16);
     dVar20 = local_c->count;
     local_154 = dVar20;
     local_6c = Library::DKW::TBL::DArrayCreate(nullptr,0,2,1);
@@ -1028,9 +1002,7 @@ LAB_00437cb5:
         pSVar19 = nullptr;
       }
       else {
-        pSVar19 = g_worldGrid.cells
-                  [(int)sVar12 * (int)g_worldGrid.planeStride + (int)sVar4 * (int)g_worldGrid.sizeX
-                   + (int)sVar5].objects[0];
+        pSVar19 = STGridAt3D(g_worldGrid, sVar5, sVar4, sVar12).objects[0];
       }
       Library::DKW::TBL::DArrayAppend(local_30,&pSVar19[1].field_0xe);
       local_f8 = pDVar15;

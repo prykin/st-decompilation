@@ -25,8 +25,6 @@ int __thiscall STSharkC::GetMessage(STSharkC *this,STMessage *message)
   short sVar9;
   byte *puVar10;
   byte *pbVar11;
-  /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
-  int *unaff_EDI;
   AnonShape_0058D7C0_99A937C6 *pAVar12;
   byte *pbVar13;
   InternalExceptionFrame local_80;
@@ -103,11 +101,7 @@ int __thiscall STSharkC::GetMessage(STSharkC *this,STMessage *message)
       }
       pbVar11 = (byte *)((int)&this_00->field_0259 + 2);
       pAVar12 = local_c;
-      for (iVar5 = 0xd; iVar5 != 0; iVar5 = iVar5 + -1) {
-        *(undefined4 *)pAVar12 = *(undefined4 *)pbVar11;
-        pbVar11 = pbVar11 + 4;
-        pAVar12 = (AnonShape_0058D7C0_99A937C6 *)&pAVar12->field_0x4;
-      }
+      memmove(pAVar12, pbVar11, 0x34); /* compiler REP MOVS byte copy */
       *(undefined4 *)&local_c->field_0xc = 2;
       local_c->field_0034 = (short)this_00->field_0231;
       local_c->field_0036 = *(undefined2 *)((int)&this_00->field_0231 + 2);
@@ -153,8 +147,7 @@ int __thiscall STSharkC::GetMessage(STSharkC *this,STMessage *message)
       return 0;
     }
     if (SVar2 == MESS_ID_NONE) {
-      /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
-      LifeShark((STSharkC *)this_00,unaff_EDI);
+      LifeShark((STSharkC *)this_00);
       g_currentExceptionFrame = local_80.previous;
       return 0;
     }

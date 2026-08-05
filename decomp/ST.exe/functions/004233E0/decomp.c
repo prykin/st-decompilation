@@ -3,9 +3,13 @@
 
 /* Recovered from embedded debug metadata:
    E:\__titans\wlad\tc_grp.cpp
-   STGroupC::GetGroupContent */
+   STGroupC::GetGroupContent
+   [STAbiConsistencyApplier] machine_thiscall_arity target=function:-1: prototype=uint * __thiscall
+   GetGroupContent(STGroupC * this) Evidence: every machine RET purges exactly 0 explicit stack
+   bytes; current signature describes 4; removed trailing parameter slots have no listing
+   references; ret_sites=00423494 RET | 004234D5 RET */
 
-uint * __thiscall STGroupC::GetGroupContent(STGroupC *this,int param_1)
+uint * __thiscall STGroupC::GetGroupContent(STGroupC *this)
 
 {
   code *pcVar1;

@@ -8,9 +8,16 @@
 
    [STSwitchEnumApplier] Switch target field_0235 uses
    /SubmarineTitans/Recovered/Enums/STJellyGunC_field_0235State. Cases:
-   CASE_1=1;CASE_2=2;CASE_3=3;CASE_4=4 */
+   CASE_1=1;CASE_2=2;CASE_3=3;CASE_4=4
+   [STAbiConsistencyApplier] machine_thiscall_arity target=function:-1: prototype=undefined1
+   __thiscall LifeGun(STJellyGunC * this) Evidence: every machine RET purges exactly 0 explicit
+   stack bytes; current signature describes 4; removed trailing parameter slots have no listing
+   references; ret_sites=00582E57 RET | 00582ECB RET | 00582FCA RET
+   [STAbiConsistencyApplier] machine_thiscall_unsized_return_migration target=return:-1:
+   return=/undefined Evidence: legacy ABI applier materialized the unsized return as undefined1
+   while changing only function arity; restore Ghidra DefaultDataType */
 
-void __thiscall STJellyGunC::LifeGun(STJellyGunC *this,int *param_1)
+void __thiscall STJellyGunC::LifeGun(STJellyGunC *this)
 
 {
   undefined4 *puVar1;
@@ -127,9 +134,7 @@ LAB_005829f4:
       if (((((((-1 < sVar4) && (sVar4 < g_worldGrid.sizeX)) && (-1 < sVar6)) &&
             ((sVar6 < g_worldGrid.sizeY && (-1 < sVar5)))) &&
            ((sVar5 < g_worldGrid.sizeZ &&
-            (pSVar7 = g_worldGrid.cells
-                      [(int)sVar6 * (int)g_worldGrid.sizeX +
-                       (int)g_worldGrid.planeStride * (int)sVar5 + (int)sVar4].objects[0],
+            (pSVar7 = STGridAt3D(g_worldGrid, sVar4, sVar6, sVar5).objects[0],
             pSVar7 != nullptr)))) &&
           ((pSVar7->value_20 == 1000 || (pSVar7->value_20 == 0x14)))) &&
          ((iVar10 = (*pSVar7->vtable[5].slots_00_28[0])(), iVar10 != 0 &&

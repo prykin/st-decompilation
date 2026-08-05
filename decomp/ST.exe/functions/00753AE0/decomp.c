@@ -1,8 +1,13 @@
 
-void FUN_00753ae0(LPCSTR param_1,undefined4 *param_2)
+/* [STPrototypeApplier] Propagated return.
+   Evidence: 00753AE0 returns return of Library::DKW::DB::FUN_00753920 @ 00753AF5 */
+
+int * FUN_00753ae0(LPCSTR param_1,undefined4 *param_2)
 
 {
-  Library::DKW::DB::FUN_00753920(param_1,param_2,1);
-  return;
+  int *piVar1;
+
+  piVar1 = Library::DKW::DB::FUN_00753920(param_1,param_2,1);
+  return piVar1;
 }
 

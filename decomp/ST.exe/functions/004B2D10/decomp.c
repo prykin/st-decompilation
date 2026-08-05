@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 undefined4 __cdecl FUN_004b2d10(byte param_1,int param_2,int param_3,int param_4)
 
@@ -76,8 +78,7 @@ undefined4 __cdecl FUN_004b2d10(byte param_1,int param_2,int param_3,int param_4
              (iVar6 = FUN_006aced8(param_3,param_4,iVar7,param_2), iVar6 <= DAT_007951b0 / 0xc9))))
            && (local_2c = 0, 0 < g_worldGrid.sizeZ)) {
           do {
-            this = g_worldGrid.cells
-                   [g_worldGrid.sizeX * param_2 + iVar7 + g_worldGrid.planeStride * local_2c].
+            this = STGridAt3D(g_worldGrid, iVar7, param_2, local_2c).
                    objects[0];
             if ((((this != nullptr) && (this[1].vtable < (STWorldObjectVTable *)0x8))
                 && ((g_playSystem_00802A38 == nullptr ||

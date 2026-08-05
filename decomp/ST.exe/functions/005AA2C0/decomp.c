@@ -19,8 +19,8 @@ FSGSTy * __cdecl CreateFSGS(void)
   this = (FSGSTy *)FUN_006b04d0(0x20c3);
   if (this != nullptr) {
     sub_006E5FB0(this);
-    this->field_0000 = (AnonPointee_FSGSTy_0000 *)&VTable_0079C018;
-    *(undefined4 *)&this->field_0x18 = 0;
+    this->vtable = (FSGSTyVTable *)&VTable_0079C018;
+    this->field_0018 = 0;
     this->field_005D = nullptr;
     memset(&this->field_0x1d, 0, 0x20); /* compiler bulk-zero initialization */
     iVar1 = 0;
@@ -36,9 +36,9 @@ FSGSTy * __cdecl CreateFSGS(void)
       this_00 = (SpriteClassTy *)&this_00[3].field_0048;
       local_8 = local_8 + -1;
     } while (local_8 != 0);
-    this->field_0000 = (AnonPointee_FSGSTy_0000 *)&MMObjTyVTable;
+    this->vtable = (FSGSTyVTable *)&MMObjTyVTable;
     this->field_0065 = CASE_2;
-    this->field_0x9a = 0;
+    this->field_009A = 0;
     memset(&this->field_0x66, 0, 0x34); /* compiler bulk-zero initialization */
     iVar1 = 0;
     local_8 = 0xd;
@@ -58,7 +58,7 @@ FSGSTy * __cdecl CreateFSGS(void)
     SpriteClassTy::SpriteClassTy((SpriteClassTy *)&this->field_1CDB);
     SpriteClassTy::SpriteClassTy((SpriteClassTy *)&this->field_1D6C);
     SpriteClassTy::SpriteClassTy((SpriteClassTy *)&this->field_1DFD);
-    this->field_0000 = (AnonPointee_FSGSTy_0000 *)&VTable_0079C02C;
+    this->vtable = &FSGSTyVTable;
     this->field_1A6B = 1;
     this->field_0065 = CASE_1;
     this->field_1A61 = 0;
@@ -78,16 +78,16 @@ FSGSTy * __cdecl CreateFSGS(void)
     this->field_1A8B = nullptr;
     this->field_1A87 = nullptr;
     this->field_1A83 = nullptr;
-    this->field_1A8F = -1;
+    this->field_1A8F = 0xffffffff;
     this->field_1A93 = 9;
     this->field_1A97 = nullptr;
     this->field_1AAB = (LPCSTR)0x0;
     this->field_1AB3 = 0;
-    this->field_1A9B = 0;
+    this->field_1A9B = nullptr;
     this->field_1A9F = nullptr;
     this->field_1AA3 = 0;
     this->field_1AB7 = 0;
-    this->field_1ABC = -1;
+    this->field_1ABC = 0xffffffff;
     this->field_1AC0 = nullptr;
     this->field_1ABB = 0;
     this->field_1AE4 = (LPCSTR)0x0;
@@ -110,7 +110,7 @@ FSGSTy * __cdecl CreateFSGS(void)
     this->field_1B08 = nullptr;
     this->field_1B0C = nullptr;
     this->field_1E9A = nullptr;
-    this->field_1E96 = 0;
+    this->field_1E96 = nullptr;
     this->field_1E92 = nullptr;
     this->field_1E8E = 0;
     this->field_1B24 = 0;
@@ -130,8 +130,8 @@ FSGSTy * __cdecl CreateFSGS(void)
     this->field_1EB6 = 0;
     this->field_1EBE = nullptr;
     this->field_1EC2 = 0x100;
-    *(undefined4 *)&this->field_0x1ece = 0;
-    this->field_1EDB = 0;
+    this->field_1ECE = 0;
+    this->field_1EDB = nullptr;
     this->field_1EE3 = 0;
     this->field_1EDF = 0;
     memset(&this->field_1EE7, 0, 0x3c); /* compiler bulk-zero initialization */

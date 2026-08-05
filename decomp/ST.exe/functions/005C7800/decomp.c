@@ -39,12 +39,10 @@ void FUN_005c7800(void)
   if (iVar5 != 0) {
     g_currentExceptionFrame = local_8c.previous;
     memset(&stack0xffffffc8, 0, 0x20); /* compiler bulk-zero initialization */
-    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-    (**(code **)this->field_0000)();
+    (*this->vtable->GetMessage)((SettMapSTy *)this,(STMessage *)&stack0xffffffc8);
     return;
   }
-  /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-  (*(code *)this->field_0000->field_0024)();
+  this->vfunc_24();
   if (g_cursorClass_00802A30 != nullptr) {
     if (g_cursorClass_00802A30->field_00A9 == 0) {
       Library::DKW::DDX::FUN_006b8b10((int *)g_cursorClass_00802A30->field_00AD);
@@ -266,8 +264,7 @@ LAB_005c7ae0:
       CFsgsConnection::UpdateGame((CFsgsConnection *)&DAT_00802a90,4,&this->field_0x1a5f);
     }
   }
-  /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-  (*(code *)this->field_0000->field_0028)();
+  (*this->vtable->PrepPlList)((SettMapSTy *)this);
   if (PTR_00811758 != nullptr) {
     FreeAndNull(&PTR_00811758);
   }

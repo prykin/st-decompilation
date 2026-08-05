@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 void __thiscall FUN_00490a00(void *this,short param_1,short param_2,short param_3)
 
@@ -16,9 +18,7 @@ void __thiscall FUN_00490a00(void *this,short param_1,short param_2,short param_
     if ((((-1 < sVar1) && (sVar1 < g_worldGrid.sizeX)) &&
         ((-1 < sVar3 && ((sVar3 < g_worldGrid.sizeY && (-1 < sVar2)))))) &&
        (sVar2 < g_worldGrid.sizeZ)) {
-      this_00 = g_worldGrid.cells
-                [(int)g_worldGrid.planeStride * (int)sVar2 + (int)g_worldGrid.sizeX * (int)sVar3 +
-                 (int)sVar1].objects[0];
+      this_00 = STGridAt3D(g_worldGrid, sVar1, sVar3, sVar2).objects[0];
       if (this_00 != nullptr) {
         thunk_FUN_004e22a0(this_00,*(int *)((int)this + 0x568),*(int *)((int)this + 0x18));
         thunk_FUN_004e2000(this_00,*(int *)((int)this + 0x568),*(int *)((int)this + 0x18));

@@ -11,9 +11,13 @@
 
    [STReturnSemanticsApplier] ignored_eax_void.
    Evidence: all observed direct callers ignore the return register (ignored=2, used=0), and
-   decompilation contains no value return */
+   decompilation contains no value return
+   [STAbiConsistencyApplier] machine_thiscall_arity target=function:-1: prototype=void __thiscall
+   _SetSpeedFireLife(STBoatC * this) Evidence: every machine RET purges exactly 0 explicit stack
+   bytes; current signature describes 4; removed trailing parameter slots have no listing
+   references; ret_sites=0048A73F RET */
 
-void __thiscall STBoatC::_SetSpeedFireLife(STBoatC *this,void *param_1)
+void __thiscall STBoatC::_SetSpeedFireLife(STBoatC *this)
 
 {
   code *pcVar1;

@@ -64,7 +64,7 @@ UPanelTy::CreateBut(UPanelTy *this,undefined4 param_1,int param_2,int param_3,in
   undefined4 local_114;
   undefined4 local_c8;
   undefined4 local_c4;
-  undefined4 local_ac;
+  ushort *local_ac;
   int local_a8;
   InternalExceptionFrame local_54;
   UPanelTy *local_10;

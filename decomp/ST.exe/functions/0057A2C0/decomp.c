@@ -355,9 +355,7 @@ LAB_0057ac02:
                     this = nullptr;
                   }
                   else {
-                    this = g_worldGrid.cells
-                           [(int)sVar17 * (int)g_worldGrid.planeStride +
-                            (int)sVar7 * (int)g_worldGrid.sizeX + (int)sVar12].objects[0];
+                    this = STGridAt3D(g_worldGrid, sVar12, sVar7, sVar17).objects[0];
                   }
                   local_74 = iVar20;
                   if (((this != nullptr) &&

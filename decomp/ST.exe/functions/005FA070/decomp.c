@@ -8,7 +8,7 @@ void __thiscall STColl3C::sub_005FA070(STColl3C *this)
 
 {
   if (this->field_02DD == CASE_5) {
-    (*this->vtable[8].vfunc_00)();
+    this->vfunc_20();
     sub_004167A0(this);
   }
   thunk_FUN_005fa030(this);

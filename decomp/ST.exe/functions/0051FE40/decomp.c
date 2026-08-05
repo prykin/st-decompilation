@@ -19,20 +19,20 @@ InfocPanelTy * __cdecl CreateInfocPanel(void)
     sub_006E5FB0(this);
     this->field_005C = 0;
     this->field_0060 = 0xffffffff;
-    *(undefined4 *)&this->field_0x64 = 4;
+    this->field_0064 = 4;
     this->field_0068 = 0;
     this->field_0172 = 2;
     this->field_0178 = 0;
-    *(undefined4 *)&this->field_0x17c = 0;
-    *(undefined4 *)&this->field_0x185 = 0;
+    this->field_017C = 0;
+    this->field_0185 = 0;
     this->field_0189 = nullptr;
-    this->field_0000 = (AnonPointee_InfocPanelTy_0000 *)&PTR_GetMessage_0079ac70;
+    this->vtable = &InfocPanelTyVTable;
     this->field_003C = 0x1c7;
     this->field_0044 = 0;
-    *(undefined4 *)&this->field_0x40 = 0x13d;
+    this->field_0040 = 0x13d;
     this->field_0048 = 0xa1;
-    *(undefined4 *)&this->field_0x180 = 0;
-    this->field_0x184 = 0;
+    this->field_0180 = 0;
+    this->field_0184 = 0;
     this->field_03D0 = 0;
     this->field_03D4 = 0xff;
     memset(&this->field_01AB, 0, 0x129); /* compiler bulk-zero initialization */

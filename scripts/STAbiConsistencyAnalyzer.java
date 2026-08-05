@@ -30,6 +30,7 @@ import ghidra.program.model.data.Pointer;
 import ghidra.program.model.data.Structure;
 import ghidra.program.model.data.TypeDef;
 import ghidra.program.model.data.Undefined;
+import ghidra.program.model.data.VoidDataType;
 import ghidra.program.model.lang.OperandType;
 import ghidra.program.model.lang.Register;
 import ghidra.program.model.listing.Function;
@@ -88,9 +89,14 @@ public class STAbiConsistencyAnalyzer extends GhidraScript {
             Function function = functions.next();
             if (function.isExternal() || function.isThunk() || isLibrary(function)) continue;
             functionsSeen++;
+            addLegacyMachineArityReturnMigration(function, rows);
+            if (addEbpContextRegisterRepair(function, rows)) continue;
             // A full prototype rewrite changes ordinals.  Do not emit stale
             // per-parameter rows for the same baseline in this pass.
+            if (addMachineStackArityExpansion(function, rows)) continue;
             if (addX87DoubleParameterRepair(function, rows)) continue;
+            if (addMachineThiscallArityRepair(function, rows)) continue;
+            addUnsafeUnknownConventionReturnRevert(function, rows);
             addReturnWidthRepair(function, rows);
             addParameterWidthRepairs(function, rows);
             addParameterScalarRoleRepairs(function, rows);
@@ -129,11 +135,14 @@ public class STAbiConsistencyAnalyzer extends GhidraScript {
                     scanReturnedPointerUse(caller, call, pointerEvidence);
                 }
                 RegisterUse use = firstAccumulatorUse(caller, call);
-                if (use.width == 0) continue;
                 ReturnUse aggregate = returnUses.computeIfAbsent(called.getEntryPoint(),
                     ignored -> new ReturnUse());
                 if (use.width >= 4) aggregate.full++;
-                else aggregate.narrow++;
+                else if (use.width > 0) aggregate.narrow++;
+                else {
+                    if (use.evidence.startsWith("killed:")) aggregate.ignored++;
+                    else aggregate.unknown++;
+                }
                 if (aggregate.sites.size() < 24)
                     aggregate.sites.add(addr(caller.getEntryPoint()) + " @ " +
                         addr(call.getAddress()) + " -> " + use.evidence);
@@ -150,10 +159,15 @@ public class STAbiConsistencyAnalyzer extends GhidraScript {
                 return new RegisterUse(input, instruction.getMnemonicString().toUpperCase(Locale.ROOT) +
                     " " + instruction.toString());
             if (accumulatorWidth(instruction.getResultObjects()) > 0 ||
-                    "CALL".equalsIgnoreCase(instruction.getMnemonicString())) break;
+                    "CALL".equalsIgnoreCase(instruction.getMnemonicString()))
+                return new RegisterUse(0, "killed: " +
+                    instruction.getMnemonicString().toUpperCase(Locale.ROOT) +
+                    " " + instruction);
+            if (instruction.getFlowType().isTerminal())
+                return new RegisterUse(0, "unknown: terminal before explicit EAX kill");
             instruction = listing.getInstructionAfter(instruction.getAddress());
         }
-        return new RegisterUse(0, "");
+        return new RegisterUse(0, "unknown: no EAX read/kill within scan limit");
     }
 
     private int accumulatorWidth(Object[] objects) {
@@ -187,6 +201,401 @@ public class STAbiConsistencyAnalyzer extends GhidraScript {
                 "the helper computes the ring-buffer address in EAX and callers consume that " +
                 "address immediately; observed callers=" + callers));
         }
+    }
+
+    /**
+     * Some compiler/runtime helpers in this binary form a closed machine ABI which carries a
+     * large codec state record in EBP.  Ghidra's ordinary fastcall model mistakes preserved or
+     * immediately overwritten ECX/EDX for parameters and leaves the real EBP value as unaff_EBP.
+     * Recover only the exact non-frame-pointer case: EBP is read before any definition, every
+     * current explicit parameter is a generic ECX/EDX register word, and neither register is
+     * semantically read before being overwritten (push/pop preservation does not count).
+     */
+    private boolean addEbpContextRegisterRepair(Function function, List<Row> rows)
+            throws Exception {
+        if (pointerSize != 4 || function.hasVarArgs() ||
+                manual(function.getSignatureSource()) ||
+                manual(function.getReturn().getSource()) ||
+                !incomingEbpContextUse(function)) return false;
+        List<Parameter> parameters = explicitParameters(function);
+        if (parameters.isEmpty() || parameters.stream().anyMatch(parameter ->
+                manual(parameter.getSource()) || parameter.hasStackStorage() ||
+                !genericDword(parameter.getFormalDataType()) ||
+                !Set.of("ECX:4", "EDX:4").contains(
+                    parameter.getVariableStorage().toString()))) return false;
+        if (semanticIncomingRegisterUse(function, "ECX") ||
+                semanticIncomingRegisterUse(function, "EDX")) return false;
+
+        String returned = null;
+        DataType currentReturn = unwrap(function.getReturnType());
+        if (currentReturn instanceof VoidDataType) returned = "/void";
+        else {
+            ReturnUse use = returnUses.get(function.getEntryPoint());
+            if (use != null && use.full > 0 && use.narrow == 0 &&
+                    allReturnsDefineFullAccumulator(function)) returned = "/int";
+            else if (use != null && use.ignored > 0 && use.full == 0 &&
+                    use.narrow == 0 && use.unknown == 0) returned = "/void";
+        }
+        if (returned == null) return false;
+        Register ebp = currentProgram.getRegister("EBP");
+        if (ebp == null) return false;
+        String storage = new VariableStorage(currentProgram, ebp)
+            .getSerializationString();
+        rows.add(Row.fullCustom(function, "ebp_context_register", true,
+            returned, "unknown", false, "pointer:/void", "context", storage,
+            "high", "incoming EBP is dereferenced before any EBP definition; " +
+                "all current explicit parameters are generic ECX/EDX words; ECX/EDX " +
+                "are overwritten or preserved without semantic incoming use; return=" +
+                returned + (returnUses.get(function.getEntryPoint()) == null ? "" :
+                    "; caller_return_uses=" +
+                    returnUses.get(function.getEntryPoint()).full +
+                    ", ignored=" +
+                    returnUses.get(function.getEntryPoint()).ignored)));
+        return true;
+    }
+
+    private boolean incomingEbpContextUse(Function function) {
+        boolean live = true;
+        InstructionIterator instructions = listing.getInstructions(function.getBody(), true);
+        while (instructions.hasNext() && live) {
+            Instruction instruction = instructions.next();
+            for (int operand = 0; operand < instruction.getNumOperands(); operand++) {
+                String rendered = instruction.getDefaultOperandRepresentation(operand)
+                    .toUpperCase(Locale.ROOT);
+                if (rendered.contains("[") && containsRegister(rendered, "EBP"))
+                    return true;
+            }
+            for (Object output : instruction.getResultObjects())
+                if (output instanceof Register register &&
+                        "EBP".equals(register.getName().toUpperCase(Locale.ROOT)))
+                    live = false;
+        }
+        return false;
+    }
+
+    private boolean semanticIncomingRegisterUse(Function function, String wanted) {
+        boolean live = true;
+        InstructionIterator instructions = listing.getInstructions(function.getBody(), true);
+        while (instructions.hasNext() && live) {
+            Instruction instruction = instructions.next();
+            String mnemonic = instruction.getMnemonicString().toUpperCase(Locale.ROOT);
+            boolean preservationPush = "PUSH".equals(mnemonic) &&
+                instruction.getNumOperands() > 0 &&
+                wanted.equals(fullRegister(
+                    instruction.getDefaultOperandRepresentation(0)));
+            if (!preservationPush) {
+                for (Object input : instruction.getInputObjects())
+                    if (input instanceof Register register &&
+                            wanted.equals(register.getName().toUpperCase(Locale.ROOT)))
+                        return true;
+            }
+            for (Object output : instruction.getResultObjects())
+                if (output instanceof Register register &&
+                        wanted.equals(register.getName().toUpperCase(Locale.ROOT)))
+                    live = false;
+        }
+        return false;
+    }
+
+    /**
+     * Embedded debug strings prove names, but some historical debug-symbol imports also
+     * installed a guessed trailing parameter.  For x86 __thiscall the immediate on every
+     * RET is the exact number of explicit stack bytes removed by the callee.  A smaller,
+     * unanimous RET purge therefore disproves trailing parameters in the current signature.
+     *
+     * This repair is deliberately limited to debug-named functions and removes only a
+     * complete trailing suffix whose incoming stack slots are never referenced.  It does
+     * not infer argument types and it does not trust a single caller's current prototype.
+     */
+    private boolean addMachineThiscallArityRepair(Function function, List<Row> rows)
+            throws Exception {
+        if (!"__thiscall".equals(function.getCallingConventionName()) ||
+                function.hasVarArgs() || !hasTag(function, "RECOVERED_DEBUG_NAME") ||
+                function.getSignatureSource() != SourceType.USER_DEFINED)
+            return false;
+        List<Parameter> parameters = explicitParameters(function);
+        if (parameters.isEmpty() || parameters.stream().anyMatch(parameter ->
+                !parameter.hasStackStorage())) return false;
+        RetPurge purge = uniformRetPurge(function);
+        if (purge == null) return false;
+
+        int consumed = 0, keep = 0;
+        while (keep < parameters.size() && consumed < purge.bytes) {
+            int span = parameterSpan(parameters.get(keep));
+            if (consumed + span > purge.bytes) return false;
+            consumed += span;
+            keep++;
+        }
+        if (consumed != purge.bytes || keep == parameters.size()) return false;
+        for (int index = keep; index < parameters.size(); index++)
+            if (incomingStackSlotReferenced(function, parameters.get(index))) return false;
+
+        List<String> types = new ArrayList<>(), names = new ArrayList<>();
+        for (int index = 0; index < keep; index++) {
+            Parameter parameter = parameters.get(index);
+            types.add(typeSpec(parameter.getFormalDataType()));
+            names.add(parameter.getName());
+        }
+        rows.add(Row.full(function, "machine_thiscall_arity", true,
+            typeSpec(function.getReturnType()), function.getCallingConventionName(), false,
+            String.join(";", types), String.join(";", names), "high",
+            "every machine RET purges exactly " + purge.bytes +
+            " explicit stack bytes; current signature describes " +
+            parameters.stream().mapToInt(this::parameterSpan).sum() +
+            "; removed trailing parameter slots have no listing references; ret_sites=" +
+            String.join(" | ", purge.sites)));
+        return true;
+    }
+
+    private RetPurge uniformRetPurge(Function function) {
+        Integer bytes = null;
+        List<String> sites = new ArrayList<>();
+        InstructionIterator instructions = listing.getInstructions(function.getBody(), true);
+        while (instructions.hasNext()) {
+            Instruction instruction = instructions.next();
+            String mnemonic = instruction.getMnemonicString().toUpperCase(Locale.ROOT);
+            if (!mnemonic.startsWith("RET")) continue;
+            int current = 0;
+            if (instruction.getNumOperands() > 0) {
+                Scalar scalar = instruction.getScalar(0);
+                if (scalar == null || scalar.getUnsignedValue() > Integer.MAX_VALUE)
+                    return null;
+                current = (int)scalar.getUnsignedValue();
+            }
+            if (bytes != null && bytes != current) return null;
+            bytes = current;
+            sites.add(addr(instruction.getAddress()) + " " + instruction);
+        }
+        return bytes == null ? null : new RetPurge(bytes, sites);
+    }
+
+    /**
+     * Expand a truncated callee-cleaned x86 prototype from the callee itself.
+     * A unanimous {@code RET n} fixes the explicit stack byte count, while
+     * complete pre-write reads of that incoming range prove that the bytes are
+     * real arguments rather than an unusual cleanup convention.  At least one
+     * newly exposed x87 qword is required: this keeps the rule focused on the
+     * common failure mode where an old one-dword signature hid later doubles.
+     *
+     * Callers are deliberately not evidence here.  Their decompilation already
+     * depends on the bad prototype and would make the inference circular.
+     */
+    private boolean addMachineStackArityExpansion(Function function, List<Row> rows)
+            throws Exception {
+        if (pointerSize != 4 || function.hasVarArgs() ||
+                !("__thiscall".equals(function.getCallingConventionName()) ||
+                    "__stdcall".equals(function.getCallingConventionName())) ||
+                manual(function.getSignatureSource()) ||
+                manual(function.getReturn().getSource())) return false;
+
+        List<Parameter> parameters = explicitParameters(function).stream()
+            .sorted(Comparator.comparingInt(Parameter::getOrdinal)).toList();
+        if (parameters.stream().anyMatch(parameter ->
+                manual(parameter.getSource()) || !parameter.hasStackStorage())) return false;
+        RetPurge purge = uniformRetPurge(function);
+        if (purge == null || purge.bytes <= 0 || purge.bytes > 0x100 ||
+                purge.bytes % pointerSize != 0) return false;
+
+        int declaredBytes = parameters.stream().mapToInt(this::parameterSpan).sum();
+        if (declaredBytes >= purge.bytes || declaredBytes % pointerSize != 0) return false;
+
+        IncomingStackEvidence incoming = incomingStackEvidence(function,
+            pointerSize * 2L, purge.bytes);
+        for (long offset = pointerSize * 2L;
+                offset < pointerSize * 2L + purge.bytes; offset++)
+            if (!incoming.readBytes.contains(offset)) return false;
+
+        long missingStart = pointerSize * 2L + declaredBytes;
+        boolean newX87Double = incoming.doubleStarts.stream()
+            .anyMatch(offset -> offset >= missingStart);
+        if (!newX87Double) return false;
+
+        List<String> types = new ArrayList<>(), names = new ArrayList<>(),
+            storages = new ArrayList<>(), selected = new ArrayList<>();
+        Set<String> usedNames = new HashSet<>();
+        long frameOffset = pointerSize * 2L;
+        for (Parameter parameter : parameters) {
+            int span = parameterSpan(parameter);
+            types.add(typeSpec(parameter.getFormalDataType()));
+            names.add(parameter.getName());
+            usedNames.add(parameter.getName());
+            int storageLength = parameter.getFormalDataType().getLength() > 0 ?
+                parameter.getFormalDataType().getLength() : parameter.getLength();
+            storages.add(new VariableStorage(currentProgram,
+                (int)(frameOffset - pointerSize), storageLength)
+                .getSerializationString());
+            frameOffset += span;
+        }
+
+        int nextName = parameters.size() + 1;
+        while (frameOffset < pointerSize * 2L + purge.bytes) {
+            String type;
+            int length;
+            if (incoming.doubleStarts.contains(frameOffset)) {
+                type = "/double";
+                length = 8;
+            }
+            else {
+                type = incoming.floatPointerStarts.contains(frameOffset) ?
+                    "pointer:/float" : "/undefined4";
+                length = pointerSize;
+            }
+            // A qword may begin only on the current dword boundary and must fit
+            // wholly inside the exact RET purge.
+            if (frameOffset + length > pointerSize * 2L + purge.bytes) return false;
+            String name;
+            do name = "param_" + nextName++; while (!usedNames.add(name));
+            types.add(type);
+            names.add(name);
+            storages.add(new VariableStorage(currentProgram,
+                (int)(frameOffset - pointerSize), length).getSerializationString());
+            selected.add("EBP+0x" + Long.toHexString(frameOffset).toUpperCase(Locale.ROOT) +
+                "=" + type);
+            frameOffset += length;
+        }
+
+        StoragePlan customPlan = withAutoParameters(function,
+            new StoragePlan(types, names, storages));
+        rows.add(Row.fullCustom(function, "machine_stack_arity_expansion", true,
+            typeSpec(function.getReturnType()), function.getCallingConventionName(), false,
+            String.join(";", customPlan.types), String.join(";", customPlan.names),
+            String.join(";", customPlan.storages), "high",
+            "every machine RET purges exactly " + purge.bytes +
+            " explicit stack bytes while the current signature describes " +
+            declaredBytes + "; every incoming byte is read before an overlapping " +
+            "listing write; newly exposed x87 double slot(s)=" +
+            incoming.doubleStarts.stream().filter(offset -> offset >= missingStart).toList() +
+            "; inferred=" + selected + "; sites=" +
+            String.join(" | ", incoming.sites) + "; ret_sites=" +
+            String.join(" | ", purge.sites)));
+        return true;
+    }
+
+    private IncomingStackEvidence incomingStackEvidence(Function function,
+            long start, int byteCount) {
+        long end = start + byteCount;
+        Set<Long> readBytes = new HashSet<>(), writtenBytes = new HashSet<>(),
+            doubleStarts = new HashSet<>(), floatPointerStarts = new HashSet<>();
+        List<String> sites = new ArrayList<>();
+        InstructionIterator instructions = listing.getInstructions(function.getBody(), true);
+        while (instructions.hasNext()) {
+            Instruction instruction = instructions.next();
+            String mnemonic = instruction.getMnemonicString().toUpperCase(Locale.ROOT);
+            for (int operand = 0; operand < instruction.getNumOperands(); operand++) {
+                Long offset = stackOffset(instruction, operand);
+                if (offset == null || offset < start || offset >= end) continue;
+                String rendered = instruction.getDefaultOperandRepresentation(operand)
+                    .toUpperCase(Locale.ROOT);
+                int width = memoryWidth(rendered);
+                if (width <= 0) width = pointerSize;
+                width = (int)Math.min(width, end - offset);
+                boolean write = operand == 0 && writesStackMemory(mnemonic);
+                boolean read = !write || readsFirstOperand(mnemonic);
+                if (read && !stackRangeWritten(writtenBytes, offset, width)) {
+                    for (int index = 0; index < width; index++)
+                        readBytes.add(offset + index);
+                    if (width == 8 && x87MemoryRead(mnemonic) &&
+                            (rendered.contains("DOUBLE PTR") ||
+                                rendered.contains("QWORD PTR")))
+                        doubleStarts.add(offset);
+                    if (sites.size() < 32)
+                        sites.add(addr(instruction.getAddress()) + " " + instruction);
+                }
+                if (write)
+                    for (int index = 0; index < width; index++)
+                        writtenBytes.add(offset + index);
+            }
+        }
+        for (long offset = start; offset < end; offset += pointerSize)
+            if (floatPointerParameter(function, offset)) floatPointerStarts.add(offset);
+        return new IncomingStackEvidence(readBytes, doubleStarts,
+            floatPointerStarts, sites);
+    }
+
+    /** Exact MOV from one incoming dword followed by at least two distinct
+     * float dereferences through that register proves a float-vector pointer. */
+    private boolean floatPointerParameter(Function function, long frameOffset) {
+        InstructionIterator instructions = listing.getInstructions(function.getBody(), true);
+        while (instructions.hasNext()) {
+            Instruction load = instructions.next();
+            if (!"MOV".equalsIgnoreCase(load.getMnemonicString()) ||
+                    load.getNumOperands() < 2 ||
+                    !Long.valueOf(frameOffset).equals(stackOffset(load, 1))) continue;
+            String register = fullRegister(load.getDefaultOperandRepresentation(0));
+            if (register.isBlank()) continue;
+            Set<Long> offsets = new HashSet<>();
+            boolean conflict = false;
+            Instruction use = listing.getInstructionAfter(load.getAddress());
+            while (use != null && function.getBody().contains(use.getAddress())) {
+                String mnemonic = use.getMnemonicString().toUpperCase(Locale.ROOT);
+                List<String> operands = operandRepresentations(use);
+                for (String operand : operands) {
+                    if (!memoryUsesUnscaledRegister(operand, register)) continue;
+                    if (!operand.contains("FLOAT PTR")) { conflict = true; break; }
+                    BaseMemory memory = baseMemory(operand);
+                    if (memory != null && register.equals(memory.base))
+                        offsets.add(memory.offset);
+                }
+                if (conflict || "CALL".equals(mnemonic)) break;
+                String destination = operands.isEmpty() ? "" : fullRegister(operands.get(0));
+                if (register.equals(destination) && writesFirstOperand(mnemonic)) break;
+                use = listing.getInstructionAfter(use.getAddress());
+            }
+            if (!conflict && offsets.size() >= 2) return true;
+        }
+        return false;
+    }
+
+    private boolean incomingStackSlotReferenced(Function function, Parameter parameter) {
+        long expectedOffset = (long)parameter.getStackOffset() + pointerSize;
+        InstructionIterator instructions = listing.getInstructions(function.getBody(), true);
+        while (instructions.hasNext()) {
+            Instruction instruction = instructions.next();
+            for (int operand = 0; operand < instruction.getNumOperands(); operand++) {
+                Long offset = stackOffset(instruction, operand);
+                if (offset != null && offset == expectedOffset) return true;
+            }
+        }
+        return false;
+    }
+
+    /**
+     * A semantic return propagated through a wrapper is unsafe while the wrapper's own
+     * calling convention is still unknown: Ghidra locks an incomplete prototype and turns
+     * real live-in registers/stack slots into unaff_/in_stack_ artifacts.  Retire only the
+     * exact automation-owned state; a later convention recovery can infer it again.
+     */
+    private void addUnsafeUnknownConventionReturnRevert(Function function, List<Row> rows) {
+        if (!"unknown".equalsIgnoreCase(function.getCallingConventionName()) ||
+                !hasTag(function, "RECOVERED_PROTOTYPE") ||
+                "/undefined".equals(typeSpec(function.getReturnType()))) return;
+        String comment = function.getComment();
+        if (comment == null || !comment.contains("[STPrototypeApplier] Propagated return."))
+            return;
+        Parameter returned = function.getReturn();
+        if (manual(returned.getSource())) return;
+        rows.add(Row.target(function, "unknown_convention_return_revert", true,
+            "return", -1, returned, "", "/undefined", "high",
+            "automation-owned propagated return is deferred until the wrapper calling " +
+            "convention and live-in parameter storage are recovered"));
+    }
+
+    /** One-time lifecycle repair for databases touched by the earlier applier which
+     * accidentally materialized Ghidra's unsized `/undefined` as `/undefined1` while
+     * removing phantom parameters.  The exact automation marker is the ownership proof. */
+    private void addLegacyMachineArityReturnMigration(Function function, List<Row> rows) {
+        if (!hasTag(function, "RECOVERED_ABI_CONSISTENCY")) return;
+        if (function.getReturn().getVariableStorage().isUnassignedStorage()) return;
+        String comment = function.getComment();
+        if (comment == null || !comment.contains(
+                "[STAbiConsistencyApplier] machine_thiscall_arity ") ||
+                !comment.contains("machine_thiscall_arity target=function:-1: " +
+                    "prototype=undefined1 "))
+            return;
+        rows.add(Row.target(function, "machine_thiscall_unsized_return_migration", true,
+            "return", -1, function.getReturn(), "", "/undefined", "high",
+            "legacy ABI applier materialized the unsized return as undefined1 while " +
+            "changing only function arity; restore Ghidra DefaultDataType"));
     }
 
     private void addReturnWidthRepair(Function function, List<Row> rows) {
@@ -852,9 +1261,24 @@ public class STAbiConsistencyAnalyzer extends GhidraScript {
     private void addParameterWidthRepairs(Function function, List<Row> rows) {
         for (Parameter parameter : function.getParameters()) {
             if (parameter.isAutoParameter() || !parameter.isStackVariable() ||
-                    manual(parameter.getSource()) || !genericDword(parameter.getFormalDataType())) continue;
+                    manual(parameter.getSource())) continue;
+            String previousGeneratedType = previousGeneratedWidthType(function, parameter);
+            boolean generic = genericDword(parameter.getFormalDataType());
+            boolean generatedNarrow = !previousGeneratedType.isBlank() &&
+                parameter.getFormalDataType().getLength() > 0 &&
+                parameter.getFormalDataType().getLength() < pointerSize;
+            if (!generic && !generatedNarrow) continue;
             WidthEvidence evidence = parameterWidth(function, parameter);
-            if (evidence == null || evidence.proposedType.isBlank() || evidence.conflict) continue;
+            if (evidence == null || evidence.proposedType.isBlank() || evidence.conflict) {
+                if (generatedNarrow) {
+                    rows.add(Row.target(function, "stack_parameter_width_revert", true,
+                        "parameter", parameter.getOrdinal(), parameter,
+                        parameter.getName(), previousGeneratedType, "high",
+                        "previous automatic narrow-width proof no longer qualifies; " +
+                        "restoring generated baseline " + previousGeneratedType));
+                }
+                continue;
+            }
             if (evidence.proposedType.equals(typeSpec(parameter.getFormalDataType()))) continue;
             rows.add(Row.target(function, "stack_parameter_width", true, "parameter",
                 parameter.getOrdinal(), parameter, parameter.getName(), evidence.proposedType,
@@ -1182,6 +1606,8 @@ public class STAbiConsistencyAnalyzer extends GhidraScript {
                 else if (sourceOperand && "MOV".equals(mnemonic) &&
                         upperSource.contains("DWORD PTR")) {
                     proposed = maskedLoadType(instruction);
+                    if (proposed.isBlank())
+                        proposed = forwardedNarrowParameterType(function, instruction);
                     if (proposed.isBlank()) unmaskedDwordReads++;
                 }
                 else if (upperSource.contains("DWORD PTR")) unmaskedDwordReads++;
@@ -1189,7 +1615,8 @@ public class STAbiConsistencyAnalyzer extends GhidraScript {
                     candidates.add(proposed);
                     if (sites.size() < 12) sites.add(addr(instruction.getAddress()) + " " +
                         instruction.toString() +
-                        ("MOV".equals(mnemonic) ? "; first-use mask" : ""));
+                        ("MOV".equals(mnemonic) ?
+                            "; first-use mask or exact narrow callee formal" : ""));
                 }
             }
         }
@@ -1199,6 +1626,100 @@ public class STAbiConsistencyAnalyzer extends GhidraScript {
         return new WidthEvidence(proposed, conflict, "entry-use width=" + proposed +
             "; unmasked_dword_reads=" + unmaskedDwordReads + "; evidence=" +
             String.join(" | ", sites));
+    }
+
+    /**
+     * A 32-bit x86 stack slot is often loaded with MOV even when the source-level
+     * parameter is byte/word-sized.  In a transparent one-call wrapper the callee's
+     * independently recovered narrow formal is the only observable consumer of that
+     * slot.  Treat it like an immediate mask, but only when the load is pushed intact,
+     * the complete push vector matches the callee, and no control-flow split intervenes.
+     */
+    private String forwardedNarrowParameterType(Function wrapper, Instruction load) {
+        if (wrapper.getBody().getNumAddresses() > 64) return "";
+        String register = fullRegister(load.getDefaultOperandRepresentation(0));
+        if (register.isBlank()) return "";
+        List<String> pushes = new ArrayList<>();
+        boolean pushedLoadedValue = false;
+        int calls = 0;
+        Instruction instruction = listing.getInstructionAfter(load.getAddress());
+        for (int count = 0; instruction != null && count < 24 &&
+                wrapper.getBody().contains(instruction.getAddress()); count++) {
+            String mnemonic = instruction.getMnemonicString().toUpperCase(Locale.ROOT);
+            List<String> operands = operandRepresentations(instruction);
+            if (instruction.getFlowType().isJump() ||
+                    instruction.getFlowType().isTerminal()) return "";
+            if ("PUSH".equals(mnemonic)) {
+                String source = operands.isEmpty() ? "" : fullRegister(operands.get(0));
+                pushes.add(source);
+                if (register.equals(source)) pushedLoadedValue = true;
+                instruction = listing.getInstructionAfter(instruction.getAddress());
+                continue;
+            }
+            if ("CALL".equals(mnemonic)) {
+                calls++;
+                Function called = resolveThunk(directCalledFunction(instruction));
+                if (called == null || !pushedLoadedValue || calls != 1) return "";
+                List<Parameter> targets = new ArrayList<>();
+                for (Parameter parameter : explicitParameters(called))
+                    if (parameter.hasStackStorage()) targets.add(parameter);
+                if (pushes.size() != targets.size()) return "";
+                String selected = "";
+                int matches = 0;
+                for (int index = 0; index < targets.size(); index++) {
+                    String pushed = pushes.get(pushes.size() - 1 - index);
+                    if (!register.equals(pushed)) continue;
+                    DataType targetType = unwrap(targets.get(index).getFormalDataType());
+                    if (targetType == null || targetType.getLength() < 1 ||
+                            targetType.getLength() >= pointerSize ||
+                            targetType instanceof Pointer || Undefined.isUndefined(targetType))
+                        return "";
+                    selected = typeSpec(targetType);
+                    matches++;
+                }
+                if (matches != 1) return "";
+                // A call destroys EAX/ECX/EDX, so any later spelling of those registers
+                // is a new SSA value.  Callee-saved registers retain the forwarded input;
+                // reject the narrowing if that old value has another downstream use.
+                if (Set.of("EAX", "ECX", "EDX").contains(register)) return selected;
+                return registerValueUsedAfterCall(wrapper, instruction, register) ? "" : selected;
+            }
+            // Before the value is copied to the outgoing stack, any other use or
+            // redefinition of its register means this is not a transparent forward.
+            if (!pushedLoadedValue &&
+                    (mentionsRegister(instruction.getInputObjects(), register) ||
+                     mentionsRegister(instruction.getResultObjects(), register))) return "";
+            instruction = listing.getInstructionAfter(instruction.getAddress());
+        }
+        return "";
+    }
+
+    private boolean registerValueUsedAfterCall(Function function, Instruction call,
+            String register) {
+        Instruction instruction = listing.getInstructionAfter(call.getAddress());
+        while (instruction != null && function.getBody().contains(instruction.getAddress())) {
+            boolean input = mentionsRegister(instruction.getInputObjects(), register);
+            boolean output = mentionsRegister(instruction.getResultObjects(), register);
+            if (input) return true;
+            if (output) return false;
+            instruction = listing.getInstructionAfter(instruction.getAddress());
+        }
+        return false;
+    }
+
+    private String previousGeneratedWidthType(Function function, Parameter parameter) {
+        String comment = function.getComment();
+        if (comment == null || comment.isBlank()) return "";
+        String prefix = "[STAbiConsistencyApplier] stack_parameter_width target=parameter:" +
+            parameter.getOrdinal() + ":";
+        for (String line : comment.split("\\R")) {
+            String trimmed = line.trim();
+            if (!trimmed.startsWith(prefix)) continue;
+            Matcher matcher = Pattern.compile(
+                "(?:^|\\s)previous_type=([^\\s;]+)").matcher(trimmed);
+            if (matcher.find()) return matcher.group(1);
+        }
+        return "";
     }
 
     private String maskedLoadType(Instruction load) {
@@ -1526,6 +2047,7 @@ public class STAbiConsistencyAnalyzer extends GhidraScript {
                 "\nProposals: " + rows.size() + "\nAutomatic: " +
                 rows.stream().filter(row -> row.apply).count() + "\n");
             for (String kind : List.of("known_setjmp3", "known_load_resource_string",
+                    "ebp_context_register",
                     "x87_double_parameter_slots", "x87_stack_storage_migration",
                     "full_eax_return", "stack_parameter_width",
                     "stack_parameter_scalar_role", "pointer_return_element_width"))
@@ -1535,6 +2057,8 @@ public class STAbiConsistencyAnalyzer extends GhidraScript {
             out.write("note_returns=Full-EAX repairs require full-width caller use and a full EAX definition on every RET path.\n");
             out.write("note_parameters=Narrow stack parameters require consistent MOVSX/MOVZX or an immediate AND mask and no unmasked dword reads.\n");
             out.write("note_x87_doubles=An exact x87 double-width EBP read before any overlapping stack write may merge adjacent generic dwords; one generic qword may also be retyped when its exact halves are stored into an independently typed double class field. Stack byte count is preserved.\n");
+            out.write("note_stack_arity_expansion=A truncated non-manual __thiscall/__stdcall signature may expand to an exact unanimous RET purge only when every incoming byte is read before overlap and the missing suffix contains an exact x87 double slot; callers are not evidence.\n");
+            out.write("note_ebp_context=Non-frame helpers may receive one neutral context pointer in EBP only when EBP is read before definition and generic ECX/EDX inputs have no semantic use.\n");
             out.write("note_scalar_roles=Generic pointer parameters become int/uint only when their incoming lifetime has multiple scalar operations, a signed/range comparison, and no pointer dereference before the first argument-slot overwrite.\n");
             out.write("note_pointer_returns=Generic pointer returns gain only a byte/word/dword element width when at least two caller dereferences agree; no semantic table type is guessed.\n");
         }
@@ -1560,7 +2084,7 @@ public class STAbiConsistencyAnalyzer extends GhidraScript {
     }
 
     private static class ReturnUse {
-        int full, narrow;
+        int full, narrow, ignored, unknown;
         final List<String> sites = new ArrayList<>();
     }
     private static class ScalarRoleEvidence {
@@ -1578,6 +2102,10 @@ public class STAbiConsistencyAnalyzer extends GhidraScript {
         final List<String> sites = new ArrayList<>();
     }
     private record RegisterUse(int width, String evidence) { }
+    private record RetPurge(int bytes, List<String> sites) { }
+    private record IncomingStackEvidence(Set<Long> readBytes,
+        Set<Long> doubleStarts, Set<Long> floatPointerStarts,
+        List<String> sites) { }
     private record ParameterSlot(Parameter parameter, long offset, int span) { }
     private record StoragePlan(List<String> types, List<String> names,
         List<String> storages) { }

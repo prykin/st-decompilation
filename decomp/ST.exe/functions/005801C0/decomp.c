@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 void __thiscall FUN_005801c0(void *this,int param_1)
 
@@ -18,9 +20,7 @@ void __thiscall FUN_005801c0(void *this,int param_1)
     }
     else {
       pAVar4 = (AnonShape_004E0250_5A3B9236 *)
-               g_worldGrid.cells
-               [(int)g_worldGrid.planeStride * (int)sVar2 + (int)g_worldGrid.sizeX * (int)sVar3 +
-                (int)sVar1].objects[0];
+               STGridAt3D(g_worldGrid, sVar1, sVar3, sVar2).objects[0];
     }
     if (pAVar4->field_0018 == *(int *)((int)this + 0x269)) {
       thunk_FUN_004e0250(pAVar4);

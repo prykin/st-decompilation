@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 undefined4 __thiscall
 FUN_005ecfe0(void *this,int param_1,int param_2,int param_3,int param_4,int param_5)
@@ -34,12 +36,8 @@ FUN_005ecfe0(void *this,int param_1,int param_2,int param_3,int param_4,int para
     if ((((sVar2 < 0) || (g_worldGrid.sizeX <= sVar2)) ||
         ((sVar1 < 0 ||
          ((((g_worldGrid.sizeY <= sVar1 || (sVar4 < 0)) || (g_worldGrid.sizeZ <= sVar4)) ||
-          ((g_worldGrid.cells
-            [(int)g_worldGrid.planeStride * (int)sVar4 + (int)g_worldGrid.sizeX * (int)sVar1 +
-             (int)sVar2].objects[0] == nullptr ||
-           (g_worldGrid.cells
-            [(int)g_worldGrid.planeStride * (int)sVar4 + (int)g_worldGrid.sizeX * (int)sVar1 +
-             (int)sVar2].objects[0] == this)))))))) &&
+          ((STGridAt3D(g_worldGrid, sVar2, sVar1, sVar4).objects[0] == nullptr ||
+           (STGridAt3D(g_worldGrid, sVar2, sVar1, sVar4).objects[0] == this)))))))) &&
        (iVar3 = thunk_FUN_005ecd70(this,(int)(short)(sVar2 * 0xc9 + 100),
                                    (int)(short)(sVar1 * 0xc9 + 100),
                                    (int)(short)((short)param_1 * 200 + 100),param_5,'\0',0x1e),

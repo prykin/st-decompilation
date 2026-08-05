@@ -43,12 +43,12 @@ void __thiscall HelpPanelTy::CreateList(HelpPanelTy *this)
   undefined4 local_2e4;
   undefined4 local_2e0;
   undefined4 local_2dc;
-  undefined4 local_2cc;
+  ushort *local_2cc;
   int local_2c8;
   undefined4 local_274;
   int local_270 [26];
   undefined4 local_208;
-  undefined4 local_14c;
+  ushort *local_14c;
   int local_148;
   undefined4 local_f4;
   undefined4 local_f0;

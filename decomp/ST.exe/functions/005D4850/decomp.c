@@ -14,9 +14,9 @@ void __thiscall SettMapMTy::RunGame(SettMapMTy *this)
 {
   MMsgTy *this_00;
   code *pcVar1;
-  SettMapMTy *pSVar2;
+  SettMapMTy *this_01;
   int errorCode;
-  int iVar3;
+  int iVar2;
   InternalExceptionFrame local_4c;
   SettMapMTy *local_8;
 
@@ -28,17 +28,16 @@ void __thiscall SettMapMTy::RunGame(SettMapMTy *this)
     if (DAT_0080877e != '\0') {
       FUN_006b7070(g_int_00811764);
     }
-    pSVar2 = local_8;
+    this_01 = local_8;
     thunk_FUN_005b6350(local_8,0x6948,0,0);
-    pSVar2->field_21E6 = 1;
-    pSVar2->field_21E5 = 1;
-    pSVar2->field_21E4 = 1;
-    pSVar2->field_21E7 = 1;
-    pSVar2->field_21E2 = 1;
-    pSVar2->field_21E1 = 1;
-    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-    (*(code *)pSVar2->field_0000->field_0008)();
-    this_00 = pSVar2->field_1A5B->field_02E6;
+    this_01->field_0x21e6 = 1;
+    this_01->field_0x21e5 = 1;
+    this_01->field_0x21e4 = 1;
+    this_01->field_21E7 = 1;
+    this_01->field_0x21e2 = 1;
+    this_01->field_0x21e1 = 1;
+    (*this_01->vtable->CloseButtons)((SettMapTy *)this_01);
+    this_00 = this_01->field_1A5B->field_02E6;
     if (this_00 != nullptr) {
       MMsgTy::HidePanel(this_00,1,0,1);
     }
@@ -46,9 +45,9 @@ void __thiscall SettMapMTy::RunGame(SettMapMTy *this)
     return;
   }
   g_currentExceptionFrame = local_4c.previous;
-  iVar3 = ReportDebugMessage("E:\\__titans\\Start\\settmobj.cpp",0x998,0,errorCode,
+  iVar2 = ReportDebugMessage("E:\\__titans\\Start\\settmobj.cpp",0x998,0,errorCode,
                              "%s","SettMapMTy::RunGame");
-  if (iVar3 != 0) {
+  if (iVar2 != 0) {
     STDebugBreak(); /* noreturn in standalone pseudocode */
   }
   RaiseInternalException(errorCode,0,"E:\\__titans\\Start\\settmobj.cpp",0x998);

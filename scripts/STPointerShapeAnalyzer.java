@@ -56,6 +56,7 @@ import ghidra.util.task.TaskMonitor;
 public class STPointerShapeAnalyzer extends GhidraScript {
     private static final int DECOMPILE_TIMEOUT = 30;
     private static final int LARGE_DECOMPILE_TIMEOUT = 120;
+    private static final int RETRY_DECOMPILE_TIMEOUT = 300;
     private static final long LARGE_FUNCTION_BYTES = 0x4000;
     private static final int MAX_SHAPE_SIZE = 0x4000;
     private static final String DARRAY_PATH = "/SubmarineTitans/Recovered/DArrayTy";
@@ -141,6 +142,12 @@ public class STPointerShapeAnalyzer extends GhidraScript {
     private static final Pattern LOCAL_STRUCTURE_POINTER_DECLARATION = Pattern.compile(
         "(?m)^\\s*([A-Za-z_$][A-Za-z0-9_$:]*)\\s*\\*\\s*" +
         "([A-Za-z_$][A-Za-z0-9_$]*)\\s*;");
+    private static final Pattern RENDERED_POINTER_DECLARATION = Pattern.compile(
+        "(?m)^\\s*([A-Za-z_$][A-Za-z0-9_$: ]*)\\s*(\\*+)\\s*" +
+        "([A-Za-z_$][A-Za-z0-9_$]*)\\s*;");
+    private static final Pattern RENDERED_POINTER_PARAMETER = Pattern.compile(
+        "(?:\\(|,)\\s*([A-Za-z_$][A-Za-z0-9_$: ]*)\\s*(\\*+)\\s*" +
+        "([A-Za-z_$][A-Za-z0-9_$]*)(?=\\s*[,\\)])");
     private static final Pattern TYPED_BASE_ZERO_ACCESS = Pattern.compile(
         "\\*\\s*\\(\\s*([^()\\r\\n]{1,80}?)\\s*\\*\\s*\\)\\s*" +
         "([A-Za-z_$][A-Za-z0-9_$:]*)(?![A-Za-z0-9_$:]|\\s*(?:->|\\+|\\[))");
@@ -169,6 +176,11 @@ public class STPointerShapeAnalyzer extends GhidraScript {
         "([0-9A-Fa-f]+)\\s*=\\s*([^;\\r\\n]+);");
     private static final Pattern LEADING_CAST = Pattern.compile(
         "^\\(\\s*([^()\\r\\n]{1,80})\\s*\\)\\s*(.+)$");
+    private static final Pattern VTABLE_TARGET = Pattern.compile(
+        "(?i)->\\s*([0-9a-f]{8,16})\\b");
+    private static final Pattern MEMORY_REGISTER = Pattern.compile(
+        "(?i)(?:BYTE|WORD|DWORD|QWORD)?\\s*PTR\\s*\\[\\s*([A-Z][A-Z0-9]*)" +
+        "(?:\\s*\\+\\s*(0X[0-9A-F]+|[0-9]+))?\\s*\\]");
 
     private final Map<String, TargetEvidence> targets = new LinkedHashMap<>();
     private final Map<String, Map<Long, FieldEvidence>> anonymousValueFields =
@@ -187,9 +199,14 @@ public class STPointerShapeAnalyzer extends GhidraScript {
     private int typedFieldConsumerHints;
     private int exactReinterpretAccesses;
     private int indexedTailRepairs;
+    private int propagatedCallTypeTargets;
     private final Map<String, TargetEvidence> generatedBackingTargets =
         new LinkedHashMap<>();
     private final Set<String> missingGeneratedBackingTargets = new HashSet<>();
+    private final List<CallTypeEdge> callTypeEdges = new ArrayList<>();
+    private final Map<String, Map<String, Set<String>>> callTypeSeeds =
+        new LinkedHashMap<>();
+    private Map<String, List<Function>> globalCallAliases;
 
     @Override
     protected void run() throws Exception {
@@ -209,15 +226,18 @@ public class STPointerShapeAnalyzer extends GhidraScript {
         while (allStructures.hasNext()) structures.add(allStructures.next());
         List<Function> normal = new ArrayList<>();
         List<Function> large = new ArrayList<>();
-        Address only = onlyFunction();
-        if (only != null) {
-            Function function = currentProgram.getFunctionManager().getFunctionAt(only);
-            if (function == null) throw new IllegalArgumentException(
-                "No function at " + addr(only));
-            if (candidate(function) && hasPointerMemoryAccess(function)) {
-                if (decompileTimeout(function) == LARGE_DECOMPILE_TIMEOUT)
-                    large.add(function);
-                else normal.add(function);
+        List<Address> selectedFunctions = selectedFunctions();
+        if (!selectedFunctions.isEmpty()) {
+            for (Address selectedFunction : selectedFunctions) {
+                Function function = currentProgram.getFunctionManager()
+                    .getFunctionAt(selectedFunction);
+                if (function == null) throw new IllegalArgumentException(
+                    "No function at " + addr(selectedFunction));
+                if (candidate(function) && hasPointerMemoryAccess(function)) {
+                    if (decompileTimeout(function) == LARGE_DECOMPILE_TIMEOUT)
+                        large.add(function);
+                    else normal.add(function);
+                }
             }
         }
         else {
@@ -232,11 +252,13 @@ public class STPointerShapeAnalyzer extends GhidraScript {
         }
         analyzeParallel(normal, DECOMPILE_TIMEOUT);
         analyzeParallel(large, LARGE_DECOMPILE_TIMEOUT);
+        propagateCallBoundaryTypes();
 
         Analysis analysis = makeProposals();
         writeTypes(directory.resolve("pointer_shape_type_proposals.tsv"), analysis.types);
         writeFields(directory.resolve("pointer_shape_field_proposals.tsv"), analysis.fields);
         writeTargets(directory.resolve("pointer_shape_target_proposals.tsv"), analysis.targets);
+        writeCallTypeEdges(directory.resolve("pointer_shape_call_type_edges.tsv"));
         writeFailures(directory.resolve("pointer_shape_decompile_failures.tsv"));
         writeSummary(directory.resolve("pointer_shape_summary.txt"), analysis);
 
@@ -248,6 +270,9 @@ public class STPointerShapeAnalyzer extends GhidraScript {
             ownerThisSpillRepairs + ", typed-field consumers=" +
             typedFieldConsumerHints + ", exact reinterpret=" +
             exactReinterpretAccesses + ", indexed tails=" + indexedTailRepairs +
+            ", call type edges=" + callTypeEdges.size() +
+            ", call type seeds=" + callTypeSeeds.size() +
+            ", propagated call targets=" + propagatedCallTypeTargets +
             ", targets=" + analysis.targets.size() +
             ", target_apply=" + analysis.targets.stream().filter(row -> row.apply).count() +
             ", anonymous_types=" + analysis.types.stream().filter(row -> row.apply).count() +
@@ -313,6 +338,19 @@ public class STPointerShapeAnalyzer extends GhidraScript {
             List<Decompiled> units = ParallelDecompiler.decompileFunctions(
                 callback, functions, monitor);
             units.removeIf(unit -> unit == null || unit.function == null);
+            if (timeout < LARGE_DECOMPILE_TIMEOUT) {
+                List<Function> retry = units.stream()
+                    .filter(unit -> !unit.error.isBlank())
+                    .map(unit -> unit.function).toList();
+                if (!retry.isEmpty()) {
+                    units.removeIf(unit -> !unit.error.isBlank());
+                    callback.setTimeout(RETRY_DECOMPILE_TIMEOUT);
+                    List<Decompiled> retried = ParallelDecompiler.decompileFunctions(
+                        callback, retry, monitor);
+                    retried.removeIf(unit -> unit == null || unit.function == null);
+                    units.addAll(retried);
+                }
+            }
             units.sort(Comparator.comparing(unit -> unit.function.getEntryPoint()));
             for (Decompiled unit : units) analyzeFunction(unit);
         }
@@ -333,6 +371,9 @@ public class STPointerShapeAnalyzer extends GhidraScript {
         if (c.contains("Type propagation algorithm not settling"))
             unsettledFunctions.add(function.getEntryPoint());
         Map<String, Variable> locals = localVariables(function);
+        Map<String, Integer> renderedPointerWidths = renderedPointerWidths(c);
+        Map<String, String> renderedStructurePointers =
+            renderedStructurePointers(c);
         collectAnonymousValueFields(function, c, locals);
         Set<String> stableStorages = stableStorages(locals);
         Map<String, TargetEvidence> functionTargets = new LinkedHashMap<>();
@@ -344,18 +385,22 @@ public class STPointerShapeAnalyzer extends GhidraScript {
             functionTargets);
         int ownerSpillHints = collectOwnerThisSpills(function, c, locals,
             stableStorages, functionTargets);
-        collectNestedAccesses(function, c, locals, stableStorages, functionTargets);
+        collectNestedAccesses(function, c, locals, stableStorages, functionTargets,
+            renderedPointerWidths);
         Map<String, PointerAlias> aliases = collectPointerAliases(function, c, locals,
-            stableStorages, functionTargets);
+            stableStorages, functionTargets, renderedPointerWidths);
         collectCountedPointerTableRoles(function, c, locals, stableStorages,
             functionTargets);
-        collectRawIndexedAccesses(function, c, locals, stableStorages, functionTargets);
+        collectRawIndexedAccesses(function, c, locals, stableStorages, functionTargets,
+            renderedPointerWidths);
         Matcher matcher = RAW_ACCESS.matcher(c);
         while (matcher.find()) {
             monitor.checkCancelled();
             String valueType = matcher.group(1).trim();
             String name = matcher.group(2);
-            long offset = parseUnsigned(matcher.group(3));
+            long renderedOffset = parseUnsigned(matcher.group(3));
+            long offset = byteOffset(matcher.group(), name, renderedOffset,
+                renderedPointerWidths);
             if (offset < 0 || offset >= MAX_SHAPE_SIZE || name.equals("this") ||
                     name.startsWith("this_")) continue;
             int width = accessWidth(valueType);
@@ -363,18 +408,22 @@ public class STPointerShapeAnalyzer extends GhidraScript {
             PointerAlias alias = aliases.get(name);
             if (alias != null) {
                 long scaled = alias.childBaseOffset +
-                    (integerCastBefore(matcher.group(), name) ? offset :
-                        offset * alias.elementWidth);
+                    (integerCastBefore(matcher.group(), name) ? renderedOffset :
+                        renderedOffset * alias.elementWidth);
                 recordNestedField(function, alias.parent, alias.parentOffset, scaled,
                     width, valueTypeSpecification(valueType, width),
-                    name + "+0x" + Long.toHexString(offset).toUpperCase(Locale.ROOT) +
+                    name + "+0x" + Long.toHexString(renderedOffset).toUpperCase(Locale.ROOT) +
                     " through pointer-field alias");
+                if (scaledPointerExpression(matcher.group(), name, renderedPointerWidths))
+                    alias.parent.scaledPointerEvidence = true;
                 redirectedAliasAccesses++;
             }
             else {
                 TargetEvidence canonical = canonicalTarget(function, locals, stableStorages,
                     functionTargets, name);
                 if (canonical == null) continue;
+                if (scaledPointerExpression(matcher.group(), name, renderedPointerWidths))
+                    canonical.scaledPointerEvidence = true;
                 recordField(function, canonical, offset, width,
                     valueTypeSpecification(valueType, width), name + "+0x" +
                     Long.toHexString(offset).toUpperCase(Locale.ROOT));
@@ -384,6 +433,7 @@ public class STPointerShapeAnalyzer extends GhidraScript {
         collectAliasIndexes(function, c, aliases);
         collectTypedDArrayTargets(function, c, locals, stableStorages, functionTargets);
         collectDArrayEvidence(c, functionTargets, aliases);
+        collectCallTypeEdges(function, c, locals, renderedStructurePointers);
         boolean hasRawAccess = rawAccesses != before;
         if (hasRawAccess) functionsWithRawAccess++;
         if (!hasRawAccess && ownerSpillHints == 0) return;
@@ -398,7 +448,9 @@ public class STPointerShapeAnalyzer extends GhidraScript {
             if (potential != null) functionTargets.put(entry.getKey(), potential);
         }
         markDiscriminatedPayloads(function, c, locals, stableStorages, functionTargets);
-        collectCallEvidence(function, c, locals, stableStorages, functionTargets);
+        collectCallEvidence(function, c, locals, stableStorages, functionTargets,
+            renderedStructurePointers);
+        markCallResultViews(c, functionTargets, renderedPointerWidths);
         for (TargetEvidence target : functionTargets.values()) {
             if (target.typeEvidence.isEmpty() || targets.containsKey(target.key)) continue;
             targets.put(target.key, target);
@@ -808,18 +860,22 @@ public class STPointerShapeAnalyzer extends GhidraScript {
 
     private void collectNestedAccesses(Function function, String c,
             Map<String, Variable> locals, Set<String> stableStorages,
-            Map<String, TargetEvidence> functionTargets) {
+            Map<String, TargetEvidence> functionTargets,
+            Map<String, Integer> renderedPointerWidths) {
         Matcher nested = NESTED_ACCESS.matcher(c);
         while (nested.find()) {
             String valueType = nested.group(1).trim();
             String name = nested.group(3);
-            long parentOffset = parseUnsigned(nested.group(4));
+            long parentOffset = byteOffset(nested.group(), name,
+                parseUnsigned(nested.group(4)), renderedPointerWidths);
             long childOffset = parseUnsigned(nested.group(5));
             int width = accessWidth(valueType);
             if (!validNestedOffsets(parentOffset, childOffset, width)) continue;
             TargetEvidence parent = canonicalTarget(function, locals, stableStorages,
                 functionTargets, name);
             if (parent == null) continue;
+            if (scaledPointerExpression(nested.group(), name, renderedPointerWidths))
+                parent.scaledPointerEvidence = true;
             recordNestedField(function, parent, parentOffset, childOffset, width,
                 valueTypeSpecification(valueType, width), "nested " + name + "+0x" +
                 Long.toHexString(parentOffset).toUpperCase(Locale.ROOT) + " -> +0x" +
@@ -830,12 +886,15 @@ public class STPointerShapeAnalyzer extends GhidraScript {
         while (zero.find()) {
             String valueType = zero.group(1).trim();
             String name = zero.group(2);
-            long parentOffset = parseUnsigned(zero.group(3));
+            long parentOffset = byteOffset(zero.group(), name,
+                parseUnsigned(zero.group(3)), renderedPointerWidths);
             int width = accessWidth(valueType);
             if (!validNestedOffsets(parentOffset, 0, width)) continue;
             TargetEvidence parent = canonicalTarget(function, locals, stableStorages,
                 functionTargets, name);
             if (parent == null) continue;
+            if (scaledPointerExpression(zero.group(), name, renderedPointerWidths))
+                parent.scaledPointerEvidence = true;
             recordNestedField(function, parent, parentOffset, 0, width,
                 valueTypeSpecification(valueType, width), "nested-zero " + name + "+0x" +
                 Long.toHexString(parentOffset).toUpperCase(Locale.ROOT));
@@ -845,7 +904,8 @@ public class STPointerShapeAnalyzer extends GhidraScript {
         while (indexed.find()) {
             String elementType = indexed.group(1).trim();
             String name = indexed.group(2);
-            long parentOffset = parseUnsigned(indexed.group(3));
+            long parentOffset = byteOffset(indexed.group(), name,
+                parseUnsigned(indexed.group(3)), renderedPointerWidths);
             long index = parseUnsigned(indexed.group(4));
             int width = accessWidth(elementType);
             long childOffset = index * Math.max(1, width);
@@ -853,6 +913,8 @@ public class STPointerShapeAnalyzer extends GhidraScript {
             TargetEvidence parent = canonicalTarget(function, locals, stableStorages,
                 functionTargets, name);
             if (parent == null) continue;
+            if (scaledPointerExpression(indexed.group(), name, renderedPointerWidths))
+                parent.scaledPointerEvidence = true;
             recordNestedField(function, parent, parentOffset, childOffset, width,
                 valueTypeSpecification(elementType, width), "nested-index " + name +
                 "+0x" + Long.toHexString(parentOffset).toUpperCase(Locale.ROOT) +
@@ -863,7 +925,8 @@ public class STPointerShapeAnalyzer extends GhidraScript {
 
     private Map<String, PointerAlias> collectPointerAliases(Function function, String c,
             Map<String, Variable> locals, Set<String> stableStorages,
-            Map<String, TargetEvidence> functionTargets) {
+            Map<String, TargetEvidence> functionTargets,
+            Map<String, Integer> renderedPointerWidths) {
         Map<String, PointerAlias> result = new LinkedHashMap<>();
         Matcher assignment = ASSIGNMENT.matcher(c);
         while (assignment.find()) {
@@ -910,7 +973,8 @@ public class STPointerShapeAnalyzer extends GhidraScript {
             else {
                 loadedType = access.group(1).trim();
                 parentName = access.group(2);
-                parentOffset = parseUnsigned(access.group(3));
+                parentOffset = byteOffset(access.group(), parentName,
+                    parseUnsigned(access.group(3)), renderedPointerWidths);
             }
             boolean declaredPointer = loadedType.contains("*");
             if (!declaredPointer && (accessWidth(loadedType) !=
@@ -924,6 +988,8 @@ public class STPointerShapeAnalyzer extends GhidraScript {
                 parent = canonicalTarget(function, locals, stableStorages,
                     functionTargets, parentName);
             if (parent == null) continue;
+            if (raw && scaledPointerExpression(access.group(), parentName,
+                    renderedPointerWidths)) parent.scaledPointerEvidence = true;
             recordPointerField(function, parent, parentOffset,
                 "pointer-field alias " + aliasName + " = " + parentName + "+0x" +
                 Long.toHexString(parentOffset).toUpperCase(Locale.ROOT) +
@@ -1132,13 +1198,19 @@ public class STPointerShapeAnalyzer extends GhidraScript {
      */
     private void collectRawIndexedAccesses(Function function, String c,
             Map<String, Variable> locals, Set<String> stableStorages,
-            Map<String, TargetEvidence> functionTargets) {
+            Map<String, TargetEvidence> functionTargets,
+            Map<String, Integer> renderedPointerWidths) {
         Matcher matcher = RAW_INDEXED_ACCESS.matcher(c);
         while (matcher.find()) {
             String valueType = matcher.group(1).trim();
             String name = matcher.group(2);
-            long offset = parseUnsigned(matcher.group(3));
-            int scale = (int)parseUnsigned(matcher.group(5));
+            long renderedOffset = parseUnsigned(matcher.group(3));
+            long renderedScale = parseUnsigned(matcher.group(5));
+            int elementWidth = integerCastBefore(matcher.group(), name) ? 1 :
+                renderedPointerWidths.getOrDefault(name, 1);
+            long offset = renderedOffset * elementWidth;
+            long effectiveScale = renderedScale * elementWidth;
+            int scale = effectiveScale > Integer.MAX_VALUE ? -1 : (int)effectiveScale;
             int width = accessWidth(valueType);
             if (offset < 0 || offset >= MAX_SHAPE_SIZE || width < 1 ||
                     width > 16 || scale != width || offset + width > MAX_SHAPE_SIZE ||
@@ -1146,6 +1218,7 @@ public class STPointerShapeAnalyzer extends GhidraScript {
             TargetEvidence target = canonicalTarget(function, locals, stableStorages,
                 functionTargets, name);
             if (target == null) continue;
+            if (elementWidth > 1) target.scaledPointerEvidence = true;
             FieldEvidence field = target.fields.computeIfAbsent(offset, FieldEvidence::new);
             field.widths.merge(width, 1, Integer::sum);
             String type = valueTypeSpecification(valueType, width);
@@ -1263,6 +1336,70 @@ public class STPointerShapeAnalyzer extends GhidraScript {
         return accessWidth(loadedPointerType.substring(0, star).trim());
     }
 
+    /**
+     * Offsets in decompiler C are expressed in elements until the base is cast
+     * to an integer.  Listing locals can retain an older generic type while the
+     * current HighVariable is rendered as (for example) {@code ushort *}; using
+     * the literal as a byte offset then creates a structurally impossible field.
+     */
+    private long byteOffset(String expression, String name, long renderedOffset,
+            Map<String, Integer> renderedPointerWidths) {
+        if (renderedOffset < 0 || integerCastBefore(expression, name))
+            return renderedOffset;
+        int width = renderedPointerWidths.getOrDefault(name, 1);
+        if (width < 1 || renderedOffset > Long.MAX_VALUE / width) return -1;
+        return renderedOffset * width;
+    }
+
+    private boolean scaledPointerExpression(String expression, String name,
+            Map<String, Integer> renderedPointerWidths) {
+        return !integerCastBefore(expression, name) &&
+            renderedPointerWidths.getOrDefault(name, 1) > 1;
+    }
+
+    private Map<String, Integer> renderedPointerWidths(String c) {
+        Map<String, Integer> result = new LinkedHashMap<>();
+        Matcher matcher = RENDERED_POINTER_DECLARATION.matcher(c);
+        while (matcher.find()) {
+            int width = renderedPointerWidth(matcher.group(1), matcher.group(2));
+            if (width > 0) result.putIfAbsent(matcher.group(3), width);
+        }
+        int body = c.indexOf('{');
+        String signature = body < 0 ? c : c.substring(0, body);
+        matcher = RENDERED_POINTER_PARAMETER.matcher(signature);
+        while (matcher.find()) {
+            int width = renderedPointerWidth(matcher.group(1), matcher.group(2));
+            if (width > 0) result.putIfAbsent(matcher.group(3), width);
+        }
+        return result;
+    }
+
+    private Map<String, String> renderedStructurePointers(String c) {
+        Map<String, String> result = new LinkedHashMap<>();
+        Matcher matcher = LOCAL_STRUCTURE_POINTER_DECLARATION.matcher(c);
+        while (matcher.find()) {
+            Structure structure = uniqueStructure(matcher.group(1));
+            if (structure != null && namedReceiverType(structure))
+                result.putIfAbsent(matcher.group(2), structure.getPathName());
+        }
+        int body = c.indexOf('{');
+        String signature = body < 0 ? c : c.substring(0, body);
+        matcher = RENDERED_POINTER_PARAMETER.matcher(signature);
+        while (matcher.find()) {
+            if (matcher.group(2).length() != 1) continue;
+            Structure structure = uniqueStructure(matcher.group(1).trim());
+            if (structure != null && namedReceiverType(structure))
+                result.putIfAbsent(matcher.group(3), structure.getPathName());
+        }
+        return result;
+    }
+
+    private int renderedPointerWidth(String type, String stars) {
+        if (stars == null || stars.isEmpty()) return -1;
+        if (stars.length() > 1) return currentProgram.getDefaultPointerSize();
+        return accessWidth(type.trim());
+    }
+
     private boolean integerCastBefore(String expression, String name) {
         return Pattern.compile("(?i)\\(\\s*(?:u?int|long|ulong|dword|word|qword)\\s*\\)\\s*" +
             Pattern.quote(name) + "\\b").matcher(expression).find();
@@ -1332,7 +1469,8 @@ public class STPointerShapeAnalyzer extends GhidraScript {
 
     private void collectCallEvidence(Function containing, String c,
             Map<String, Variable> locals, Set<String> stableStorages,
-            Map<String, TargetEvidence> functionTargets) {
+            Map<String, TargetEvidence> functionTargets,
+            Map<String, String> renderedStructurePointers) {
         for (CallSite call : directCalls(containing, c)) {
             Function called = call.function;
             List<String> arguments = call.arguments;
@@ -1349,6 +1487,8 @@ public class STPointerShapeAnalyzer extends GhidraScript {
             Parameter[] parameters = called.getParameters();
             if (parameters.length == arguments.size()) {
                 for (int index = 0; index < parameters.length; index++) {
+                    markGenericPointerConsumer(arguments.get(index), parameters[index], called,
+                        functionTargets, site);
                     String type = structurePointer(parameters[index].getDataType());
                     if (!type.isBlank()) {
                         int weight =
@@ -1369,6 +1509,147 @@ public class STPointerShapeAnalyzer extends GhidraScript {
                     stableStorages, functionTargets, "pointer:" + owner, 2,
                     site + " typed this receiver");
             }
+        }
+    }
+
+    private void collectCallTypeEdges(Function containing, String c,
+            Map<String, Variable> locals,
+            Map<String, String> renderedStructurePointers) {
+        for (CallSite call : directCalls(containing, c)) {
+            Parameter[] parameters = call.function.getParameters();
+            if (parameters.length != call.arguments.size()) continue;
+            String site = addr(containing.getEntryPoint()) + " C call -> " +
+                call.function.getName(true);
+            for (int index = 0; index < parameters.length; index++)
+                recordCallTypeEdge(containing, call.arguments.get(index), locals,
+                    renderedStructurePointers, call.function, parameters[index], site);
+        }
+    }
+
+    /**
+     * Preserve named receiver alternatives across neutral generated helpers.  The edge is
+     * address/storage based; casts printed at either call boundary are presentation only and
+     * cannot manufacture a type seed.  Seeds come from the decompiler's independently rendered
+     * named pointer declaration at the originating caller.
+     */
+    private void recordCallTypeEdge(Function containing, String expression,
+            Map<String, Variable> locals,
+            Map<String, String> renderedStructurePointers, Function called,
+            Parameter parameter, String site) {
+        String sourceName = simpleArgumentName(expression);
+        Variable sourceVariable = locals.get(sourceName);
+        if (sourceName.isBlank() || sourceVariable == null || parameter == null ||
+                sourceVariable.getVariableStorage() == null ||
+                parameter.getVariableStorage() == null) return;
+        String sourceKind = sourceVariable instanceof Parameter ? "parameter" : "local";
+        String destinationKind = parameter instanceof Parameter ? "parameter" : "local";
+        String sourceKey = targetKey(containing, sourceKind,
+            sourceVariable.getVariableStorage().toString());
+        String destinationKey = targetKey(called, destinationKind,
+            parameter.getVariableStorage().toString());
+        callTypeEdges.add(new CallTypeEdge(sourceKey, destinationKey, site));
+        String seed = renderedStructurePointers.get(sourceName);
+        if (seed != null && !seed.isBlank())
+            callTypeSeeds.computeIfAbsent(sourceKey, ignored -> new TreeMap<>())
+                .computeIfAbsent(seed, ignored -> new TreeSet<>())
+                .add(addr(containing.getEntryPoint()) + "|" + sourceName);
+    }
+
+    private String targetKey(Function function, String kind, String storage) {
+        return addr(function.getEntryPoint()) + "|" + kind + "|" + storage;
+    }
+
+    private void propagateCallBoundaryTypes() {
+        Map<String, Map<String, Set<String>>> flowing = new LinkedHashMap<>();
+        for (Map.Entry<String, Map<String, Set<String>>> seed :
+                callTypeSeeds.entrySet()) {
+            Map<String, Set<String>> copy = new TreeMap<>();
+            for (Map.Entry<String, Set<String>> type : seed.getValue().entrySet())
+                copy.put(type.getKey(), new TreeSet<>(type.getValue()));
+            flowing.put(seed.getKey(), copy);
+        }
+        boolean changed = true;
+        for (int pass = 0; changed && pass < 64; pass++) {
+            changed = false;
+            for (CallTypeEdge edge : callTypeEdges) {
+                Map<String, Set<String>> source = flowing.get(edge.sourceKey);
+                if (source == null) continue;
+                Map<String, Set<String>> destination = flowing.computeIfAbsent(
+                    edge.destinationKey, ignored -> new TreeMap<>());
+                for (Map.Entry<String, Set<String>> type : source.entrySet())
+                    if (destination.computeIfAbsent(type.getKey(),
+                            ignored -> new TreeSet<>()).addAll(type.getValue()))
+                        changed = true;
+            }
+        }
+        for (TargetEvidence target : targets.values()) {
+            Map<String, Set<String>> values = flowing.get(target.key);
+            if (values == null) continue;
+            for (Map.Entry<String, Set<String>> value : values.entrySet()) {
+                target.incomingNamedTypes.put(value.getKey(),
+                    new TreeSet<>(value.getValue()));
+                target.typeSites.add("interprocedural named receiver flow " +
+                    value.getKey() + " from " + value.getValue());
+            }
+            if (!values.isEmpty()) propagatedCallTypeTargets++;
+        }
+    }
+
+    private void markGenericPointerConsumer(String expression, Parameter parameter,
+            Function called, Map<String, TargetEvidence> functionTargets, String site) {
+        if (expression == null || expression.contains("&") || called == null ||
+                isLibrary(called) || parameter == null) return;
+        DataType type = untypedef(parameter.getDataType());
+        if (!(type instanceof Pointer pointer)) return;
+        DataType pointed = untypedef(pointer.getDataType());
+        if (pointed != null && !Undefined.isUndefined(pointed) &&
+                !pointed.getPathName().equals("/void")) return;
+        String name = simpleArgumentName(expression);
+        TargetEvidence target = functionTargets.get(name);
+        if (target == null || !target.kind.equals("local")) return;
+        target.genericPointerConsumers++;
+        target.typeSites.add(site + " consumes call-result view " + name +
+            " through generic pointer parameter " + parameter.getName());
+    }
+
+    /**
+     * A pointer returned by one call, inspected through fixed offsets, and then
+     * handed to one internal generic consumer is a consumer-local record view.
+     * The rule does not type the shared producer ABI and rejects array syntax,
+     * pointer iteration, competing non-null definitions, and transient values.
+     */
+    private void markCallResultViews(String c,
+            Map<String, TargetEvidence> functionTargets,
+            Map<String, Integer> renderedPointerWidths) {
+        for (TargetEvidence target : functionTargets.values()) {
+            if (!target.kind.equals("local") || !target.databaseBacked ||
+                    !renderedPointerWidths.containsKey(target.name) ||
+                    target.genericPointerConsumers < 1 || target.fields.isEmpty()) continue;
+            Pattern definitions = Pattern.compile("(?m)^\\s*" +
+                Pattern.quote(target.name) + "\\s*=\\s*([^;]+);");
+            Matcher matcher = definitions.matcher(c);
+            int calls = 0;
+            boolean competing = false;
+            while (matcher.find()) {
+                String expression = matcher.group(1).trim();
+                if (expression.equals("nullptr") || expression.equals("0") ||
+                        expression.matches("\\([^)]*\\*+\\)\\s*0x0")) continue;
+                String value = expression;
+                while (true) {
+                    Matcher cast = Pattern.compile(
+                        "^\\([^()]+\\*+\\)\\s*(.+)$", Pattern.DOTALL).matcher(value);
+                    if (!cast.matches()) break;
+                    value = cast.group(1).trim();
+                }
+                if (value.matches(
+                        "[A-Za-z_$][A-Za-z0-9_$:]*(?:\\s*::\\s*[A-Za-z_$][A-Za-z0-9_$:]*)*" +
+                        "\\s*\\([\\s\\S]*\\)")) calls++;
+                else competing = true;
+            }
+            boolean arrayStyle = Pattern.compile("(?<![A-Za-z0-9_$:])" +
+                Pattern.quote(target.name) +
+                "\\s*(?:\\[|\\+\\+|--|\\+=|-=)").matcher(c).find();
+            if (calls == 1 && !competing && !arrayStyle) target.callResultView = true;
         }
     }
 
@@ -1468,14 +1749,29 @@ public class STPointerShapeAnalyzer extends GhidraScript {
     private List<CallSite> directCalls(Function containing, String c) {
         Map<String, List<Function>> byName = new LinkedHashMap<>();
         for (Function direct : containing.getCalledFunctions(monitor)) {
-            addCallAlias(byName, direct.getName(), resolveThunk(direct));
-            addCallAlias(byName, direct.getName(true), resolveThunk(direct));
+            Function resolved = resolveThunk(direct);
+            addCallAlias(byName, direct.getName(), resolved);
+            addCallAlias(byName, direct.getName(true), resolved);
+            if (resolved != null) {
+                Address[] thunkAddresses =
+                    resolved.getFunctionThunkAddresses(true);
+                if (thunkAddresses == null) continue;
+                for (Address thunkAddress : thunkAddresses) {
+                    Function thunk = currentProgram.getFunctionManager()
+                        .getFunctionAt(thunkAddress);
+                    if (thunk == null) continue;
+                    addCallAlias(byName, thunk.getName(), resolved);
+                    addCallAlias(byName, thunk.getName(true), resolved);
+                }
+            }
         }
         if (byName.isEmpty()) return List.of();
         List<CallSite> result = new ArrayList<>();
         Matcher matcher = CALL_HEAD.matcher(c);
         while (matcher.find()) {
             List<Function> candidates = byName.get(matcher.group(1));
+            if (candidates == null)
+                candidates = globalCallAliases().get(matcher.group(1));
             if (candidates == null) continue;
             int open = c.indexOf('(', matcher.start(1) + matcher.group(1).length());
             int close = matchingParen(c, open);
@@ -1485,6 +1781,20 @@ public class STPointerShapeAnalyzer extends GhidraScript {
             if (called != null) result.add(new CallSite(called, arguments));
         }
         return result;
+    }
+
+    private Map<String, List<Function>> globalCallAliases() {
+        if (globalCallAliases != null) return globalCallAliases;
+        globalCallAliases = new LinkedHashMap<>();
+        FunctionIterator functions =
+            currentProgram.getFunctionManager().getFunctions(true);
+        while (functions.hasNext()) {
+            Function function = functions.next();
+            Function resolved = resolveThunk(function);
+            addCallAlias(globalCallAliases, function.getName(), resolved);
+            addCallAlias(globalCallAliases, function.getName(true), resolved);
+        }
+        return globalCallAliases;
     }
 
     private void addCallAlias(Map<String, List<Function>> byName, String name,
@@ -1673,6 +1983,7 @@ public class STPointerShapeAnalyzer extends GhidraScript {
                     !target.scriptOwned) continue;
             MergedGeneratedEvidence value = merged.computeIfAbsent(path,
                 ignored -> new MergedGeneratedEvidence());
+            value.scaledPointerEvidence |= target.scaledPointerEvidence;
             if (!value.baselineSeeded) {
                 for (DataTypeComponent component : structure.getDefinedComponents()) {
                     FieldEvidence field = value.fields.computeIfAbsent(
@@ -1710,6 +2021,7 @@ public class STPointerShapeAnalyzer extends GhidraScript {
             String path = pointedStructure(target.expectedType);
             MergedGeneratedEvidence value = merged.get(path);
             if (value == null) continue;
+            target.scaledPointerEvidence |= value.scaledPointerEvidence;
             mergeFields(target.fields, value.fields);
             for (Map.Entry<Long, NestedEvidence> nested : value.nested.entrySet())
                 target.nested.put(nested.getKey(), nested.getValue());
@@ -1908,6 +2220,9 @@ public class STPointerShapeAnalyzer extends GhidraScript {
         }
         boolean generatedAnonymous = !currentStructure.isBlank() && target.scriptOwned &&
             generatedRefinablePath(currentStructure);
+        TargetDecision commonReceiver = commonReceiverBoundaryDecision(target,
+            currentStructure);
+        if (commonReceiver != null) return commonReceiver;
         if (!currentStructure.isBlank() && !generatedAnonymous)
             return new TargetDecision(false, false, currentStructure, "existing",
                 "target already has a named/manual structure pointer type");
@@ -2068,23 +2383,252 @@ public class STPointerShapeAnalyzer extends GhidraScript {
         }
 
         boolean multiField = target.fields.size() >= 2 && target.accessCount >= 3;
+        boolean callResultView = target.callResultView &&
+            target.genericPointerConsumers >= 1 && target.accessCount >= 1;
         boolean strongNested = target.nested.values().stream().anyMatch(nested -> {
             List<FieldEvidence> selected = selectedNestedFields(nested);
             return usableNested(nested, selected);
         });
         String path = anonymousPath(target);
         boolean replaceable = replaceable(target.expectedType) || target.scriptOwned;
-        boolean apply = (multiField || strongNested) && replaceable && automaticTarget(target) &&
+        boolean apply = (multiField || strongNested || callResultView) && replaceable && automaticTarget(target) &&
             !autoThis(target);
         String reason = multiField ? "multiple consistent fixed offsets in one persistent target" :
             strongNested ? "consistent nested offsets through a pointer field in one persistent target" :
+            callResultView ? "single-call consumer-local record view with fixed-offset evidence" :
             "single/weak fixed-offset profile retained for review";
         if (!replaceable) reason += "; concrete target type preserved";
         else if (!target.databaseBacked)
             reason += "; transient decompiler symbol requires review";
         else if (unsettledLocal(target))
             reason += "; unsettled decompiler type propagation: persistent local requires role repair";
+        else if (target.scaledPointerEvidence && !target.callResultView)
+            reason += "; newly corrected element-scaled pointer geometry is review-only";
         return new TargetDecision(apply, true, path, apply ? "layout" : "review", reason);
+    }
+
+    /**
+     * Correct a script-owned receiver which was contaminated by one derived caller.  At least
+     * two independently named caller families must flow through the complete call chain.  The
+     * replacement is the unique non-caller class whose object extent covers every machine
+     * access and whose physical vtable both covers every machine slot and strongly agrees with
+     * every caller table.  This deliberately does not infer inheritance from layout alone.
+     */
+    private TargetDecision commonReceiverBoundaryDecision(TargetEvidence target,
+            String currentStructure) {
+        if (!target.kind.equals("parameter") || !target.scriptOwned ||
+                !target.databaseBacked || currentStructure.isBlank() ||
+                target.incomingNamedTypes.size() < 2 ||
+                target.functionAddress == null) return null;
+        Map<String, Set<String>> externalIncoming = new TreeMap<>();
+        String selfPrefix = addr(target.functionAddress) + "|";
+        for (Map.Entry<String, Set<String>> entry :
+                target.incomingNamedTypes.entrySet()) {
+            Set<String> origins = new TreeSet<>(entry.getValue());
+            origins.removeIf(origin -> origin.startsWith(selfPrefix));
+            if (!origins.isEmpty()) externalIncoming.put(entry.getKey(), origins);
+        }
+        if (externalIncoming.size() < 2) return null;
+        target.typeSites.add("common receiver audit incoming=" +
+            externalIncoming.keySet());
+        Set<String> origins = new TreeSet<>();
+        for (Set<String> values : externalIncoming.values())
+            origins.addAll(values);
+        if (origins.size() < 2) return null;
+        Function function = currentProgram.getFunctionManager().getFunctionAt(
+            target.functionAddress);
+        ReceiverMachineProfile profile = receiverMachineProfile(function,
+            target.locator);
+        if (profile == null || profile.virtualSlots.isEmpty()) {
+            target.typeSites.add("common receiver audit: no receiver-relative " +
+                "machine virtual slots");
+            return null;
+        }
+        target.typeSites.add("common receiver machine profile: extent=0x" +
+            Integer.toHexString(profile.objectExtent).toUpperCase(Locale.ROOT) +
+            ", slots=" + profile.virtualSlots);
+        Structure currentOwner = structureFromPointer("pointer:" + currentStructure);
+        Structure currentTable = vtableForOwner(currentOwner);
+        int maximumSlot = profile.virtualSlots.stream().mapToInt(Integer::intValue)
+            .max().orElse(-1);
+        if (currentTable == null || maximumSlot < currentTable.getLength()) return null;
+
+        List<Structure> sourceTables = new ArrayList<>();
+        for (String path : externalIncoming.keySet()) {
+            DataType value = dataTypes.getDataType(path);
+            Structure table = value instanceof Structure owner ?
+                vtableForOwner(owner) : null;
+            if (table == null) return null;
+            sourceTables.add(table);
+        }
+        ReceiverCandidate best = null;
+        ReceiverCandidate second = null;
+        for (Structure candidate : structures) {
+            String path = candidate.getPathName();
+            if (!namedReceiverType(candidate) || path.contains("/VTables/") ||
+                    externalIncoming.containsKey(path) ||
+                    path.equals(currentStructure) ||
+                    candidate.getLength() < profile.objectExtent) continue;
+            Structure table = vtableForOwner(candidate);
+            if (table == null || maximumSlot >= table.getLength() ||
+                    !supportsSlots(table, profile.virtualSlots)) continue;
+            double minimum = 1.0;
+            int compared = 0;
+            for (Structure source : sourceTables) {
+                SlotAgreement agreement = slotAgreement(table, source);
+                minimum = Math.min(minimum, agreement.ratio);
+                compared += agreement.compared;
+            }
+            target.typeSites.add("common receiver candidate " + path +
+                " minimum_agreement=" +
+                String.format(Locale.ROOT, "%.3f", minimum) +
+                " comparisons=" + compared);
+            if (minimum < 0.70 || compared < sourceTables.size() * 12) continue;
+            ReceiverCandidate ranked = new ReceiverCandidate(candidate, minimum,
+                compared);
+            if (best == null || ranked.betterThan(best)) {
+                second = best;
+                best = ranked;
+            }
+            else if (second == null || ranked.betterThan(second)) second = ranked;
+        }
+        if (best == null || second != null &&
+                best.minimumAgreement - second.minimumAgreement < 0.03) return null;
+        return new TargetDecision(true, false, best.owner.getPathName(), "high",
+            "two-or-more named receiver families propagated across exact call boundaries; " +
+                "current physical vtable length=0x" +
+                Integer.toHexString(currentTable.getLength()).toUpperCase(Locale.ROOT) +
+                " is shorter than machine virtual slot 0x" +
+                Integer.toHexString(maximumSlot).toUpperCase(Locale.ROOT) +
+                "; unique common receiver " + best.owner.getPathName() +
+                " covers object extent 0x" +
+                Integer.toHexString(profile.objectExtent).toUpperCase(Locale.ROOT) +
+                " and all slots; minimum exact slot-family agreement=" +
+                String.format(Locale.ROOT, "%.3f", best.minimumAgreement) +
+                " across " + best.compared + " comparisons; incoming=" +
+                externalIncoming.keySet());
+    }
+
+    private ReceiverMachineProfile receiverMachineProfile(Function function,
+            String storage) {
+        if (function == null || storage == null) return null;
+        Matcher initial = Pattern.compile("(?i)([A-Z][A-Z0-9]*):[0-9]+")
+            .matcher(storage);
+        if (!initial.find()) return null;
+        Set<String> receiver = new HashSet<>();
+        Set<String> vtable = new HashSet<>();
+        receiver.add(initial.group(1).toUpperCase(Locale.ROOT));
+        Set<Integer> slots = new TreeSet<>();
+        int extent = 0;
+        InstructionIterator instructions = currentProgram.getListing()
+            .getInstructions(function.getBody(), true);
+        while (instructions.hasNext()) {
+            Instruction instruction = instructions.next();
+            String mnemonic = instruction.getMnemonicString().toUpperCase(Locale.ROOT);
+            for (int operand = 0; operand < instruction.getNumOperands(); operand++) {
+                Matcher memory = MEMORY_REGISTER.matcher(
+                    instruction.getDefaultOperandRepresentation(operand)
+                        .toUpperCase(Locale.ROOT));
+                if (!memory.find()) continue;
+                String base = memory.group(1).toUpperCase(Locale.ROOT);
+                int offset = memory.group(2) == null ? 0 :
+                    (int)parseUnsigned(memory.group(2));
+                if (receiver.contains(base)) extent = Math.max(extent, offset + 1);
+                if ("CALL".equals(mnemonic) && vtable.contains(base)) slots.add(offset);
+            }
+            String destination = registerOperand(instruction, 0);
+            String source = registerOperand(instruction, 1);
+            boolean sourceReceiver = source != null && receiver.contains(source);
+            boolean sourceVtable = source != null && vtable.contains(source);
+            boolean loadsVtable = false;
+            if ("MOV".equals(mnemonic) && destination != null &&
+                    instruction.getNumOperands() > 1) {
+                Matcher memory = MEMORY_REGISTER.matcher(
+                    instruction.getDefaultOperandRepresentation(1)
+                        .toUpperCase(Locale.ROOT));
+                loadsVtable = memory.matches() &&
+                    receiver.contains(memory.group(1).toUpperCase(Locale.ROOT)) &&
+                    memory.group(2) == null;
+                receiver.remove(destination);
+                vtable.remove(destination);
+                if (sourceReceiver) receiver.add(destination);
+                if (sourceVtable || loadsVtable) vtable.add(destination);
+            }
+            else if (destination != null && instruction.getResultObjects().length > 0) {
+                receiver.remove(destination);
+                vtable.remove(destination);
+            }
+            if (instruction.getFlowType().isCall()) {
+                for (String volatileRegister : Set.of("EAX", "ECX", "EDX")) {
+                    receiver.remove(volatileRegister);
+                    vtable.remove(volatileRegister);
+                }
+            }
+        }
+        return new ReceiverMachineProfile(Math.max(extent, shapeLengthForMachine(function,
+            storage)), slots);
+    }
+
+    private int shapeLengthForMachine(Function function, String storage) {
+        String key = targetKey(function, "parameter", storage);
+        TargetEvidence evidence = targets.get(key);
+        return evidence == null ? 0 : shapeLength(evidence);
+    }
+
+    private String registerOperand(Instruction instruction, int operand) {
+        if (operand < 0 || operand >= instruction.getNumOperands()) return null;
+        String value = instruction.getDefaultOperandRepresentation(operand)
+            .trim().toUpperCase(Locale.ROOT);
+        return value.matches("[A-Z][A-Z0-9]*") ? value : null;
+    }
+
+    private Structure vtableForOwner(Structure owner) {
+        if (owner == null) return null;
+        DataType primary = dataTypes.getDataType(
+            "/SubmarineTitans/Recovered/VTables/" + owner.getName() + "VTable");
+        if (primary instanceof Structure table) return table;
+        DataTypeComponent component = owner.getComponentAt(0);
+        if (component == null || component.getOffset() != 0) return null;
+        DataType value = untypedef(component.getDataType());
+        if (!(value instanceof Pointer pointer)) return null;
+        value = untypedef(pointer.getDataType());
+        return value instanceof Structure table &&
+            table.getPathName().contains("/VTables/") ? table : null;
+    }
+
+    private boolean supportsSlots(Structure table, Set<Integer> slots) {
+        for (int slot : slots)
+            if (slotTarget(table, slot) == null) return false;
+        return true;
+    }
+
+    private SlotAgreement slotAgreement(Structure candidate, Structure source) {
+        int length = Math.min(candidate.getLength(), source.getLength());
+        int compared = 0;
+        int matched = 0;
+        for (int offset = 0; offset < length;
+                offset += currentProgram.getDefaultPointerSize()) {
+            Address left = slotTarget(candidate, offset);
+            Address right = slotTarget(source, offset);
+            if (left == null || right == null) continue;
+            compared++;
+            if (left.equals(right)) matched++;
+        }
+        return new SlotAgreement(compared == 0 ? 0.0 :
+            (double)matched / compared, compared);
+    }
+
+    private Address slotTarget(Structure table, int offset) {
+        DataTypeComponent component = table.getComponentAt(offset);
+        if (component == null || component.getOffset() != offset) return null;
+        Matcher matcher = VTABLE_TARGET.matcher(
+            component.getComment() == null ? "" : component.getComment());
+        if (!matcher.find()) return null;
+        Address address = currentProgram.getAddressFactory().getAddress(matcher.group(1));
+        Function function = address == null ? null :
+            currentProgram.getFunctionManager().getFunctionAt(address);
+        function = resolveThunk(function);
+        return function == null ? address : function.getEntryPoint();
     }
 
     /**
@@ -2321,6 +2865,12 @@ public class STPointerShapeAnalyzer extends GhidraScript {
 
     private boolean automaticTarget(TargetEvidence target) {
         if (!target.databaseBacked || unsettledLocal(target)) return false;
+        // Correctly scaling decompiler pointer arithmetic can reveal a large
+        // amount of previously hidden geometry. Keep that new geometry visible
+        // in proposals, but apply it automatically only for the closed
+        // call-result/consumer-local case proved above. This prevents one
+        // analyzer upgrade from revising dozens of established generated views.
+        if (target.scaledPointerEvidence && !target.callResultView) return false;
         // An analyzer proposal must not create its backing anonymous datatype when
         // the corresponding target is guaranteed to be preserved by the applier.
         // Otherwise every run creates an unreachable type which TypeLifecycle then
@@ -3035,11 +3585,18 @@ public class STPointerShapeAnalyzer extends GhidraScript {
         return askDirectory("Select recovery output directory", "Select");
     }
 
-    private Address onlyFunction() {
+    private List<Address> selectedFunctions() {
         String[] args = getScriptArgs();
-        if (args.length < 2 || args[1].isBlank()) return null;
-        Address result = currentProgram.getAddressFactory().getAddress(args[1]);
-        if (result == null) throw new IllegalArgumentException("Invalid function address " + args[1]);
+        if (args.length < 2) return List.of();
+        List<Address> result = new ArrayList<>();
+        for (int index = 1; index < args.length; index++) {
+            if (args[index].isBlank()) continue;
+            Address address = currentProgram.getAddressFactory().getAddress(args[index]);
+            if (address == null)
+                throw new IllegalArgumentException(
+                    "Invalid function address " + args[index]);
+            if (!result.contains(address)) result.add(address);
+        }
         return result;
     }
 
@@ -3056,6 +3613,16 @@ public class STPointerShapeAnalyzer extends GhidraScript {
             for (TypeProposal row : rows) out.write(bit(row.apply) + "\t" + row.shapeId +
                 "\t" + row.typePath + "\t" + row.length + "\t" + row.targetCount + "\t" +
                 row.fieldCount + "\t" + row.confidence + "\t" + tsv(row.reason) + "\n");
+        }
+    }
+
+    private void writeCallTypeEdges(Path path) throws Exception {
+        try (BufferedWriter out = Files.newBufferedWriter(path,
+                StandardCharsets.UTF_8)) {
+            out.write("source_target\tdestination_target\tsite\n");
+            for (CallTypeEdge edge : callTypeEdges)
+                out.write(tsv(edge.sourceKey) + "\t" +
+                    tsv(edge.destinationKey) + "\t" + tsv(edge.site) + "\n");
         }
     }
 
@@ -3172,11 +3739,12 @@ public class STPointerShapeAnalyzer extends GhidraScript {
         final Map<Long, FieldEvidence> fields = new TreeMap<>();
         final Map<Long, NestedEvidence> nested = new TreeMap<>();
         final Map<String, Integer> typeEvidence = new TreeMap<>();
+        final Map<String, Set<String>> incomingNamedTypes = new TreeMap<>();
         final Set<String> typeSites = new TreeSet<>();
         final Set<String> functions = new TreeSet<>();
-        boolean discriminatedPayload;
+        boolean discriminatedPayload, callResultView, scaledPointerEvidence;
         String directThisOwner = "";
-        int accessCount, dArrayIndexEvidence;
+        int accessCount, dArrayIndexEvidence, genericPointerConsumers;
         TargetEvidence(String key, String kind, Address functionAddress, String functionName,
                 String name, String locator, String expectedType, String expectedSource,
                 boolean scriptOwned, boolean typeFamilyOwned, boolean databaseBacked) {
@@ -3188,6 +3756,20 @@ public class STPointerShapeAnalyzer extends GhidraScript {
         }
     }
     private record CallSite(Function function, List<String> arguments) {}
+    private record CallTypeEdge(String sourceKey, String destinationKey,
+        String site) {}
+    private record ReceiverMachineProfile(int objectExtent,
+        Set<Integer> virtualSlots) {}
+    private record SlotAgreement(double ratio, int compared) {}
+    private record ReceiverCandidate(Structure owner, double minimumAgreement,
+            int compared) {
+        boolean betterThan(ReceiverCandidate other) {
+            int score = Double.compare(minimumAgreement, other.minimumAgreement);
+            if (score != 0) return score > 0;
+            if (compared != other.compared) return compared > other.compared;
+            return owner.getPathName().compareTo(other.owner.getPathName()) < 0;
+        }
+    }
     private record SemanticChoice(String specification, String reason) {}
     private record PointerAlias(TargetEvidence parent, long parentOffset, long childBaseOffset,
         int elementWidth, String elementType) {}
@@ -3217,7 +3799,7 @@ public class STPointerShapeAnalyzer extends GhidraScript {
     private static class MergedGeneratedEvidence {
         final Map<Long, FieldEvidence> fields = new TreeMap<>();
         final Map<Long, NestedEvidence> nested = new TreeMap<>();
-        boolean baselineSeeded;
+        boolean baselineSeeded, scaledPointerEvidence;
     }
     private static class FieldEvidence {
         final long offset;

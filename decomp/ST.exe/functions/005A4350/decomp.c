@@ -62,18 +62,17 @@ int __thiscall FSGSTy::GetMessage(FSGSTy *this,STMessage *message)
   byte *pbVar36;
   CursorClassTy *pCVar37;
   void *pvVar38;
-  /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
-  int unaff_EDI;
   char *pcVar39;
-  byte *pbVar40;
-  LPCSTR pCVar41;
-  AnonShape_005A4350_59BACD18 *pAVar42;
-  bool bVar43;
-  BITMAPINFO *pBVar44;
-  int iVar45;
-  DWORD DVar46;
-  int iVar47;
+  STMessage *pSVar40;
+  byte *pbVar41;
+  LPCSTR pCVar42;
+  AnonShape_005A4350_59BACD18 *pAVar43;
+  bool bVar44;
+  BITMAPINFO *pBVar45;
+  int iVar46;
+  DWORD DVar47;
   int iVar48;
+  int iVar49;
   char local_6b8 [32];
   undefined1 local_698;
   CHAR local_4b8 [260];
@@ -98,11 +97,11 @@ int __thiscall FSGSTy::GetMessage(FSGSTy *this,STMessage *message)
   undefined4 local_1bc [4];
   undefined4 local_1ac;
   undefined4 local_1a8;
-  undefined4 local_19c [8];
+  STMessage local_19c;
   undefined4 local_17c [2];
   undefined2 local_172;
   undefined2 local_170;
-  undefined4 local_160 [8];
+  STMessage local_160;
   int local_140;
   int local_13c;
   int local_138;
@@ -194,9 +193,9 @@ int __thiscall FSGSTy::GetMessage(FSGSTy *this,STMessage *message)
   this_00 = local_20;
   if (iVar21 != 0) {
     g_currentExceptionFrame = local_21c.previous;
-    iVar45 = ReportDebugMessage("E:\\__titans\\Start\\fsgs_obj.cpp",0x1048,0,iVar21,
+    iVar46 = ReportDebugMessage("E:\\__titans\\Start\\fsgs_obj.cpp",0x1048,0,iVar21,
                                 "%s","FSGSTy::GetMessage");
-    if (iVar45 != 0) {
+    if (iVar46 != 0) {
       STDebugBreak(); /* noreturn in standalone pseudocode */
     }
     RaiseInternalException(iVar21,0,"E:\\__titans\\Start\\fsgs_obj.cpp",0x1048);
@@ -233,10 +232,9 @@ int __thiscall FSGSTy::GetMessage(FSGSTy *this,STMessage *message)
         goto cf_common_exit_005A8CA7;
       }
       switch(SVar6) {
-      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
       case MESS_FSGSTY_694A:
       case 0x694e:
-        (*(code *)this_00->field_0000->field_0008)();
+        this_00->CloseButtons();
         this_00->field_1A61 = (message->id != MESS_FSGSTY_694A) + '\a';
         pSVar13 = this_00->field_1A5B;
         if (pSVar13->field_02E6 == nullptr) break;
@@ -255,8 +253,7 @@ int __thiscall FSGSTy::GetMessage(FSGSTy *this,STMessage *message)
         goto cf_common_exit_005A7F3B;
       case 0x694b:
         if (this_00->field_1A5F == CASE_2) {
-          /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-          (*(code *)this_00->field_0000->field_0008)();
+          this_00->CloseButtons();
           this_00->field_1A61 = 5;
           if (this_00->field_1A5B->field_02E6 != nullptr) {
             local_8c = 0;
@@ -300,10 +297,10 @@ int __thiscall FSGSTy::GetMessage(FSGSTy *this,STMessage *message)
             pCVar37 = g_cursorClass_00802A30;
             if (g_cursorClass_00802A30 != nullptr) {
               iVar21 = g_cursorClass_00802A30->field_00C9;
-              iVar45 = g_cursorClass_00802A30->field_00C5;
+              iVar46 = g_cursorClass_00802A30->field_00C5;
               g_cursorClass_00802A30->field_0493 = CASE_5;
               pCVar37->field_0494 = 0xffff;
-              CursorClassTy::SetGCType(pCVar37,CASE_0,iVar45,iVar21);
+              CursorClassTy::SetGCType(pCVar37,CASE_0,iVar46,iVar21);
               CursorClassTy::DrawSprite(pCVar37,pCVar37->field_00C5,pCVar37->field_00C9);
               pCVar37->field_00D2 = 0;
               pCVar37->field_04DF = -1;
@@ -364,22 +361,22 @@ int __thiscall FSGSTy::GetMessage(FSGSTy *this,STMessage *message)
           this_00->field_1A61 = 6;
           break;
         case CASE_A:
-          pbVar40 = this_00->field_1B0C;
-          if (pbVar40 != nullptr) {
+          pbVar41 = this_00->field_1B0C;
+          if (pbVar41 != nullptr) {
             pbVar36 = &DAT_00807e1d;
             do {
-              bVar34 = *pbVar40;
-              bVar43 = bVar34 < *pbVar36;
+              bVar34 = *pbVar41;
+              bVar44 = bVar34 < *pbVar36;
               if (bVar34 != *pbVar36) {
 LAB_005a63e7:
-                iVar21 = (1 - (uint)bVar43) - (uint)(bVar43 != 0);
+                iVar21 = (1 - (uint)bVar44) - (uint)(bVar44 != 0);
                 goto LAB_005a63ec;
               }
               if (bVar34 == 0) break;
-              bVar34 = pbVar40[1];
-              bVar43 = bVar34 < pbVar36[1];
+              bVar34 = pbVar41[1];
+              bVar44 = bVar34 < pbVar36[1];
               if (bVar34 != pbVar36[1]) goto LAB_005a63e7;
-              pbVar40 = pbVar40 + 2;
+              pbVar41 = pbVar41 + 2;
               pbVar36 = pbVar36 + 2;
             } while (bVar34 != 0);
             iVar21 = 0;
@@ -398,12 +395,12 @@ LAB_005a63ec:
                 pcVar27 = *(char **)this_00->field_1AFC->growCapacity;
               }
               if ((int)this_00->field_1AF8->elementSize < 1) {
-                pbVar40 = nullptr;
+                pbVar41 = nullptr;
               }
               else {
-                pbVar40 = *(byte **)this_00->field_1AF8->growCapacity;
+                pbVar41 = *(byte **)this_00->field_1AF8->growCapacity;
               }
-              thunk_FUN_0055c320(&DAT_00802a90,pbVar40,pcVar27,pcVar39,
+              thunk_FUN_0055c320(&DAT_00802a90,pbVar41,pcVar27,pcVar39,
                                  (AnonShape_0055C320_953077EC *)this_00->field_1B04);
               local_e4 = DAT_008030d4;
               local_110 = "Profile\\Age";
@@ -418,8 +415,7 @@ LAB_005a63ec:
           }
           this_00->field_1A61 = this_00->field_1ED2;
         }
-        /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-        (*(code *)this_00->field_0000->field_0008)();
+        this_00->CloseButtons();
         pSVar13 = this_00->field_1A5B;
         if (pSVar13->field_02E6 != nullptr) {
           puVar23 = local_2e4;
@@ -488,26 +484,26 @@ LAB_005a63ec:
         if (this_00->field_1A5F != CASE_2) {
           if (this_00->field_1A5F == CASE_4) {
             if ((int)this_00->field_1AF0->elementSize < 1) {
-              pbVar40 = nullptr;
+              pbVar41 = nullptr;
             }
             else {
-              pbVar40 = *(byte **)this_00->field_1AF0->growCapacity;
+              pbVar41 = *(byte **)this_00->field_1AF0->growCapacity;
             }
             pbVar36 = (byte *)&DAT_00807e5d;
             do {
               bVar34 = *pbVar36;
-              bVar43 = bVar34 < *pbVar40;
-              if (bVar34 != *pbVar40) {
+              bVar44 = bVar34 < *pbVar41;
+              if (bVar34 != *pbVar41) {
 LAB_005a6653:
-                iVar21 = (1 - (uint)bVar43) - (uint)(bVar43 != 0);
+                iVar21 = (1 - (uint)bVar44) - (uint)(bVar44 != 0);
                 goto LAB_005a6658;
               }
               if (bVar34 == 0) break;
               bVar34 = pbVar36[1];
-              bVar43 = bVar34 < pbVar40[1];
-              if (bVar34 != pbVar40[1]) goto LAB_005a6653;
+              bVar44 = bVar34 < pbVar41[1];
+              if (bVar34 != pbVar41[1]) goto LAB_005a6653;
               pbVar36 = pbVar36 + 2;
-              pbVar40 = pbVar40 + 2;
+              pbVar41 = pbVar41 + 2;
             } while (bVar34 != 0);
             iVar21 = 0;
 LAB_005a6658:
@@ -519,10 +515,10 @@ LAB_005a6658:
               pCVar37 = g_cursorClass_00802A30;
               if (g_cursorClass_00802A30 != nullptr) {
                 iVar21 = g_cursorClass_00802A30->field_00C9;
-                iVar45 = g_cursorClass_00802A30->field_00C5;
+                iVar46 = g_cursorClass_00802A30->field_00C5;
                 g_cursorClass_00802A30->field_0493 = CASE_5;
                 pCVar37->field_0494 = 0xffff;
-                CursorClassTy::SetGCType(pCVar37,CASE_0,iVar45,iVar21);
+                CursorClassTy::SetGCType(pCVar37,CASE_0,iVar46,iVar21);
                 CursorClassTy::DrawSprite(pCVar37,pCVar37->field_00C5,pCVar37->field_00C9);
                 pCVar37->field_00D2 = 0;
                 pCVar37->field_04DF = -1;
@@ -540,12 +536,12 @@ LAB_005a6658:
                 pcVar27 = *(char **)this_00->field_1AFC->growCapacity;
               }
               if ((int)this_00->field_1AF8->elementSize < 1) {
-                pbVar40 = nullptr;
+                pbVar41 = nullptr;
               }
               else {
-                pbVar40 = *(byte **)this_00->field_1AF8->growCapacity;
+                pbVar41 = *(byte **)this_00->field_1AF8->growCapacity;
               }
-              thunk_FUN_0055c320(&DAT_00802a90,pbVar40,pcVar27,pcVar39,
+              thunk_FUN_0055c320(&DAT_00802a90,pbVar41,pcVar27,pcVar39,
                                  (AnonShape_0055C320_953077EC *)this_00->field_1B04);
               CFsgsConnection::CreateNewAccount
                         ((CFsgsConnection *)&DAT_00802a90,&DAT_00807e1d,(char *)&DAT_00807e5d);
@@ -567,10 +563,10 @@ LAB_005a6658:
         pCVar37 = g_cursorClass_00802A30;
         if (g_cursorClass_00802A30 != nullptr) {
           iVar21 = g_cursorClass_00802A30->field_00C9;
-          iVar45 = g_cursorClass_00802A30->field_00C5;
+          iVar46 = g_cursorClass_00802A30->field_00C5;
           g_cursorClass_00802A30->field_0493 = CASE_5;
           pCVar37->field_0494 = 0xffff;
-          CursorClassTy::SetGCType(pCVar37,CASE_0,iVar45,iVar21);
+          CursorClassTy::SetGCType(pCVar37,CASE_0,iVar46,iVar21);
           CursorClassTy::DrawSprite(pCVar37,pCVar37->field_00C5,pCVar37->field_00C9);
           pCVar37->field_00D2 = 0;
           pCVar37->field_04DF = -1;
@@ -584,9 +580,8 @@ LAB_005a67e1:
         }
         DAT_00802a9a = 0;
         break;
-      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
       case 0x6954:
-        (*(code *)this_00->field_0000->field_0008)();
+        this_00->CloseButtons();
         this_00->field_1A61 = 4;
         if (this_00->field_1A5B->field_02E6 != nullptr) {
           local_bc = 0;
@@ -599,7 +594,7 @@ LAB_005a67e1:
       case 0x6955:
         pCVar14 = (LPCSTR)this_00->field_1AB7;
         pCVar29 = (LPCSTR)0x0;
-        pCVar41 = (LPCSTR)0x0;
+        pCVar42 = (LPCSTR)0x0;
         if (pCVar14 != (LPCSTR)0x0) {
           if ((message->arg0).u32 == 0) {
             switch(this_00->field_1A5F) {
@@ -608,64 +603,64 @@ LAB_005a67e1:
             case CASE_7:
               goto switchD_005a6a92_caseD_2;
             case CASE_4:
-              pCVar41 = (LPCSTR)this_00->field_1AC4;
-              if (pCVar14 == pCVar41) {
-                pCVar29 = pCVar41;
-                pCVar41 = (LPCSTR)this_00->field_1AC8;
+              pCVar42 = (LPCSTR)this_00->field_1AC4;
+              if (pCVar14 == pCVar42) {
+                pCVar29 = pCVar42;
+                pCVar42 = (LPCSTR)this_00->field_1AC8;
               }
               else if (pCVar14 == (LPCSTR)this_00->field_1AC8) {
                 pCVar29 = (LPCSTR)this_00->field_1AC8;
-                pCVar41 = (LPCSTR)this_00->field_1ACC;
+                pCVar42 = (LPCSTR)this_00->field_1ACC;
               }
               else if (pCVar14 == (LPCSTR)this_00->field_1ACC) {
                 pCVar29 = (LPCSTR)this_00->field_1ACC;
-                pCVar41 = (LPCSTR)this_00->field_1AD8;
+                pCVar42 = (LPCSTR)this_00->field_1AD8;
               }
               else if (pCVar14 == (LPCSTR)this_00->field_1AD8) {
                 pCVar29 = (LPCSTR)this_00->field_1AD8;
-                pCVar41 = (LPCSTR)this_00->field_1ADC;
+                pCVar42 = (LPCSTR)this_00->field_1ADC;
               }
               else if (pCVar14 == (LPCSTR)this_00->field_1ADC) {
                 pCVar29 = (LPCSTR)this_00->field_1ADC;
-                pCVar41 = (LPCSTR)this_00->field_1AE0;
+                pCVar42 = (LPCSTR)this_00->field_1AE0;
               }
               else {
                 if (pCVar14 != (LPCSTR)this_00->field_1AE0) goto LAB_005a6cc4;
                 pCVar29 = (LPCSTR)this_00->field_1AE0;
-                pCVar41 = this_00->field_1AE4;
+                pCVar42 = this_00->field_1AE4;
               }
               break;
             case CASE_5:
-              pCVar41 = (LPCSTR)this_00->field_1AC4;
-              if (pCVar14 == pCVar41) {
-                pCVar29 = pCVar41;
-                pCVar41 = (LPCSTR)this_00->field_1AC8;
+              pCVar42 = (LPCSTR)this_00->field_1AC4;
+              if (pCVar14 == pCVar42) {
+                pCVar29 = pCVar42;
+                pCVar42 = (LPCSTR)this_00->field_1AC8;
               }
               else if (pCVar14 == (LPCSTR)this_00->field_1AC8) {
                 pCVar29 = (LPCSTR)this_00->field_1AC8;
-                pCVar41 = (LPCSTR)this_00->field_1AD4;
+                pCVar42 = (LPCSTR)this_00->field_1AD4;
               }
               else if (pCVar14 == (LPCSTR)this_00->field_1AD4) {
                 pCVar29 = (LPCSTR)this_00->field_1AD4;
-                pCVar41 = (LPCSTR)this_00->field_1ACC;
+                pCVar42 = (LPCSTR)this_00->field_1ACC;
               }
               else {
                 pCVar29 = (LPCSTR)this_00->field_1ACC;
               }
               break;
             case CASE_A:
-              pCVar41 = (LPCSTR)this_00->field_1AD8;
-              if (pCVar14 == pCVar41) {
-                pCVar29 = pCVar41;
-                pCVar41 = (LPCSTR)this_00->field_1ADC;
+              pCVar42 = (LPCSTR)this_00->field_1AD8;
+              if (pCVar14 == pCVar42) {
+                pCVar29 = pCVar42;
+                pCVar42 = (LPCSTR)this_00->field_1ADC;
               }
               else if (pCVar14 == (LPCSTR)this_00->field_1ADC) {
                 pCVar29 = (LPCSTR)this_00->field_1ADC;
-                pCVar41 = (LPCSTR)this_00->field_1AE0;
+                pCVar42 = (LPCSTR)this_00->field_1AE0;
               }
               else if (pCVar14 == (LPCSTR)this_00->field_1AE0) {
                 pCVar29 = (LPCSTR)this_00->field_1AE0;
-                pCVar41 = this_00->field_1AE4;
+                pCVar42 = this_00->field_1AE4;
               }
               else {
 LAB_005a6cc4:
@@ -679,28 +674,28 @@ LAB_005a6cc4:
             case CASE_6:
             case CASE_7:
 switchD_005a6a92_caseD_2:
-              pCVar41 = (LPCSTR)this_00->field_1AC4;
-              if (pCVar14 == pCVar41) {
-                pCVar29 = pCVar41;
-                pCVar41 = (LPCSTR)this_00->field_1AC8;
+              pCVar42 = (LPCSTR)this_00->field_1AC4;
+              if (pCVar14 == pCVar42) {
+                pCVar29 = pCVar42;
+                pCVar42 = (LPCSTR)this_00->field_1AC8;
               }
               else {
                 pCVar29 = (LPCSTR)this_00->field_1AC8;
               }
               break;
             case CASE_4:
-              pCVar41 = (LPCSTR)this_00->field_1AC4;
-              if (pCVar14 == pCVar41) {
-                pCVar29 = pCVar41;
-                pCVar41 = this_00->field_1AE4;
+              pCVar42 = (LPCSTR)this_00->field_1AC4;
+              if (pCVar14 == pCVar42) {
+                pCVar29 = pCVar42;
+                pCVar42 = this_00->field_1AE4;
               }
               else {
                 pCVar15 = (LPCSTR)this_00->field_1AC8;
                 pCVar29 = pCVar15;
                 if (((pCVar14 != pCVar15) &&
-                    (pCVar16 = (LPCSTR)this_00->field_1ACC, pCVar29 = pCVar16, pCVar41 = pCVar15,
+                    (pCVar16 = (LPCSTR)this_00->field_1ACC, pCVar29 = pCVar16, pCVar42 = pCVar15,
                     pCVar14 != pCVar16)) &&
-                   (pCVar15 = (LPCSTR)this_00->field_1AD8, pCVar29 = pCVar15, pCVar41 = pCVar16,
+                   (pCVar15 = (LPCSTR)this_00->field_1AD8, pCVar29 = pCVar15, pCVar42 = pCVar16,
                    pCVar14 != pCVar15)) {
                   pCVar16 = (LPCSTR)this_00->field_1ADC;
                   goto joined_r0x005a6ba3;
@@ -708,19 +703,19 @@ switchD_005a6a92_caseD_2:
               }
               break;
             case CASE_5:
-              pCVar41 = (LPCSTR)this_00->field_1AC4;
-              if (pCVar14 == pCVar41) {
-                pCVar29 = pCVar41;
-                pCVar41 = (LPCSTR)this_00->field_1ACC;
+              pCVar42 = (LPCSTR)this_00->field_1AC4;
+              if (pCVar14 == pCVar42) {
+                pCVar29 = pCVar42;
+                pCVar42 = (LPCSTR)this_00->field_1ACC;
               }
               else {
                 pCVar15 = (LPCSTR)this_00->field_1AC8;
                 pCVar29 = pCVar15;
                 if ((pCVar14 != pCVar15) &&
-                   (pCVar16 = (LPCSTR)this_00->field_1AD4, pCVar29 = pCVar16, pCVar41 = pCVar15,
+                   (pCVar16 = (LPCSTR)this_00->field_1AD4, pCVar29 = pCVar16, pCVar42 = pCVar15,
                    pCVar14 != pCVar16)) {
                   pCVar29 = (LPCSTR)this_00->field_1ACC;
-                  pCVar41 = pCVar16;
+                  pCVar42 = pCVar16;
                 }
               }
               break;
@@ -728,18 +723,18 @@ switchD_005a6a92_caseD_2:
               pCVar15 = (LPCSTR)this_00->field_1AD8;
               if (pCVar14 == pCVar15) {
                 pCVar29 = pCVar15;
-                pCVar41 = this_00->field_1AE4;
+                pCVar42 = this_00->field_1AE4;
               }
               else {
                 pCVar16 = (LPCSTR)this_00->field_1ADC;
 joined_r0x005a6ba3:
                 pCVar29 = pCVar16;
-                pCVar41 = pCVar15;
+                pCVar42 = pCVar15;
                 if ((pCVar14 != pCVar16) &&
-                   (pCVar15 = (LPCSTR)this_00->field_1AE0, pCVar29 = pCVar15, pCVar41 = pCVar16,
+                   (pCVar15 = (LPCSTR)this_00->field_1AE0, pCVar29 = pCVar15, pCVar42 = pCVar16,
                    pCVar14 != pCVar15)) {
                   pCVar29 = this_00->field_1AE4;
-                  pCVar41 = pCVar15;
+                  pCVar42 = pCVar15;
                 }
               }
             }
@@ -750,9 +745,9 @@ joined_r0x005a6ba3:
           *(undefined4 *)&this_00->field_0x31 = 0;
           FUN_006e6080(this_00,2,pCVar29,(undefined4 *)&this_00->field_0x1d);
         }
-        if (pCVar41 != (LPCSTR)0x0) {
+        if (pCVar42 != (LPCSTR)0x0) {
           *(undefined4 *)&this_00->field_0x31 = 1;
-          FUN_006e6080(this_00,2,pCVar41,(undefined4 *)&this_00->field_0x1d);
+          FUN_006e6080(this_00,2,pCVar42,(undefined4 *)&this_00->field_0x1d);
         }
         break;
       case MESS_CHOOSEMAPTY_6956:
@@ -777,13 +772,13 @@ LAB_005a6d57:
           puVar23 = (undefined4 *)((int)puVar23 + 1);
         }
         ccFntTy::SetSurf(this_00->field_1A73,(int)this_00->field_1AC0,0,0,0x16,0x1b8,0xf0);
+        iVar49 = -1;
         iVar48 = -1;
-        iVar47 = -1;
         uVar35 = 2;
-        iVar45 = -1;
+        iVar46 = -1;
         iVar21 = -2;
         puVar24 = (uint *)LoadResourceString(0x25be,g_module_00807618);
-        ccFntTy::WrTxt(this_00->field_1A73,puVar24,iVar21,iVar45,uVar35,iVar47,iVar48);
+        ccFntTy::WrTxt(this_00->field_1A73,puVar24,iVar21,iVar46,uVar35,iVar48,iVar49);
         FUN_006b35d0((int *)g_ddxContext_008075A8,this_00->field_1ABC);
         wsprintfA((LPSTR)&DAT_0080f33a,"%s%s%s",&DAT_00807680,PTR_s_UPDATES__0079c020,
                   &DAT_0080f126);
@@ -816,17 +811,17 @@ LAB_005a6e50:
         switch(SVar6) {
         case MESS_SIDTY_8161:
           if ((this_00->field_1E8E == 0) || (this_00->field_1E9A == nullptr)) break;
-          pAVar42 = (AnonShape_005A4350_59BACD18 *)(message->arg2).u32;
-          local_1c = pAVar42;
-          FUN_006b5f80((int *)g_ddxContext_008075A8,*(int *)&pAVar42->field_0x24,
-                       (uint)(message->arg1).words.high + *(int *)&pAVar42->field_0x28,
-                       pAVar42->field_002C,0x11);
+          pAVar43 = (AnonShape_005A4350_59BACD18 *)(message->arg2).u32;
+          local_1c = pAVar43;
+          FUN_006b5f80((int *)g_ddxContext_008075A8,*(int *)&pAVar43->field_0x24,
+                       (uint)(message->arg1).words.high + *(int *)&pAVar43->field_0x28,
+                       pAVar43->field_002C,0x11);
           if (this_00->field_1A5F == CASE_6) {
-            iVar21 = (uint)(message->arg1).words.high + *(int *)&pAVar42->field_0x28;
-            PutDDXClip(*(int *)&pAVar42->field_0x24,iVar21,*(int *)&pAVar42->field_0x24 + -0x1e9,
-                       iVar21 + -0x5e,pAVar42->field_002C,(byte *)0x11,'\x01',this_00->field_1E9A);
+            iVar21 = (uint)(message->arg1).words.high + *(int *)&pAVar43->field_0x28;
+            PutDDXClip(*(int *)&pAVar43->field_0x24,iVar21,*(int *)&pAVar43->field_0x24 + -0x1e9,
+                       iVar21 + -0x5e,pAVar43->field_002C,(byte *)0x11,'\x01',this_00->field_1E9A);
             FUN_006b4170((AnonShape_006B5B10_E0D06CF1 *)this_00->field_1E8E,0,0,0,
-                         pAVar42->field_002C,0x11,0xff);
+                         pAVar43->field_002C,0x11,0xff);
             if (this_00->field_1A60 == '\0') {
               pDVar25 = this_00->field_1EA6;
               if (pDVar25 != nullptr) {
@@ -840,7 +835,7 @@ LAB_005a6e50:
                 }
                 if (local_8 != nullptr) {
                   ccFntTy::SetSurf(this_00->field_1A73,this_00->field_1E8E,0,0x23,0,
-                                   pAVar42->field_002C + -0x46,0x11);
+                                   pAVar43->field_002C + -0x46,0x11);
                   /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
                   if (*(undefined1 *)((int)local_8 + 0x2d) == '\0') {
                     local_c = (AnonShape_005A4350_59BACD18 *)
@@ -856,20 +851,20 @@ LAB_005a6e50:
                     if ((*(undefined1 *)((int)local_8 + 0x25) & 0x10) != 0) {
                       uVar35 = FUN_0070b3a0((AnonShape_GLOBAL_0081175C_57F682DD *)
                                             this_00->field_1A8B,3);
-                      FUN_006b5440((ushort *)this_00->field_1E8E,0,pAVar42->field_002C + -0x1d,
+                      FUN_006b5440((ushort *)this_00->field_1E8E,0,pAVar43->field_002C + -0x1d,
                                    (0x11 - *(int *)(uVar35 + 8)) / 2,uVar35,0,0xff);
                     }
                   }
                   else {
-                    pbVar40 = (byte *)FUN_0070b3a0((AnonShape_GLOBAL_0081175C_57F682DD *)
+                    pbVar41 = (byte *)FUN_0070b3a0((AnonShape_GLOBAL_0081175C_57F682DD *)
                                                    this_00->field_1A87,1);
                     DibPut((AnonShape_006B5B10_E0D06CF1 *)this_00->field_1E8E,3,
-                           (0x11 - *(int *)(pbVar40 + 8)) / 2,'\x06',pbVar40);
+                           (0x11 - *(int *)(pbVar41 + 8)) / 2,'\x06',pbVar41);
                     uVar35 = (-(uint)((message->arg0).words.high != 0) & 0xfffffffe) + 2;
-                    iVar45 = -1;
+                    iVar46 = -1;
                     iVar21 = 0;
                     puVar24 = (uint *)LoadResourceString(0x2567,g_module_00807618);
-                    ccFntTy::WrStr(this_00->field_1A73,puVar24,iVar21,iVar45,uVar35);
+                    ccFntTy::WrStr(this_00->field_1A73,puVar24,iVar21,iVar46,uVar35);
                   }
                 }
               }
@@ -903,12 +898,12 @@ LAB_005a6e50:
                     /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
                     local_10 = (uint *)CONCAT31(local_10._1_3_,4);
                   }
-                  pbVar40 = (byte *)FUN_0070b3a0((AnonShape_GLOBAL_0081175C_57F682DD *)
+                  pbVar41 = (byte *)FUN_0070b3a0((AnonShape_GLOBAL_0081175C_57F682DD *)
                                                  this_00->field_1A87,(uint)local_10 & 0xff);
                   DibPut((AnonShape_006B5B10_E0D06CF1 *)this_00->field_1E8E,3,
-                         (0x11 - *(int *)(pbVar40 + 8)) / 2,'\x06',pbVar40);
+                         (0x11 - *(int *)(pbVar41 + 8)) / 2,'\x06',pbVar41);
                   ccFntTy::SetSurf(this_00->field_1A73,this_00->field_1E8E,0,0x23,0,
-                                   pAVar42->field_002C + -0x46,0x11);
+                                   pAVar43->field_002C + -0x46,0x11);
                   iVar21 = (-(uint)((message->arg0).words.high != 0) & 0xfffffffe) + 2;
                   wsprintfA((LPSTR)&DAT_0080f33a,"&%d%s (&0%d&%d)",iVar21,local_c,
                             *(undefined4 *)&local_c[2].field_0x4,iVar21);
@@ -918,11 +913,11 @@ LAB_005a6e50:
             }
           }
           else {
-            iVar21 = (uint)(message->arg1).words.high + *(int *)&pAVar42->field_0x28;
-            PutDDXClip(*(int *)&pAVar42->field_0x24,iVar21,*(int *)&pAVar42->field_0x24 + -0x13,
-                       iVar21 + -0x5e,pAVar42->field_002C,(byte *)0x11,'\x01',this_00->field_1E9A);
+            iVar21 = (uint)(message->arg1).words.high + *(int *)&pAVar43->field_0x28;
+            PutDDXClip(*(int *)&pAVar43->field_0x24,iVar21,*(int *)&pAVar43->field_0x24 + -0x13,
+                       iVar21 + -0x5e,pAVar43->field_002C,(byte *)0x11,'\x01',this_00->field_1E9A);
             FUN_006b4170((AnonShape_006B5B10_E0D06CF1 *)this_00->field_1E8E,0,0,0,
-                         pAVar42->field_002C,0x11,0xff);
+                         pAVar43->field_002C,0x11,0xff);
             pFVar8 = this_00->field_1EBE;
             if (pFVar8 != nullptr) {
               uVar35 = (uint)(message->arg0).words.low;
@@ -941,22 +936,22 @@ LAB_005a6e50:
                   cVar2 = *pcVar39;
                   pcVar39 = pcVar39 + 1;
                 } while (cVar2 != '\0');
-                pbVar40 = (byte *)FUN_0070b3a0((AnonShape_GLOBAL_0081175C_57F682DD *)
+                pbVar41 = (byte *)FUN_0070b3a0((AnonShape_GLOBAL_0081175C_57F682DD *)
                                                this_00->field_1A87,-(uint)(iVar21 != -2) & 4);
                 DibPut((AnonShape_006B5B10_E0D06CF1 *)this_00->field_1E8E,3,
-                       (0x11 - *(int *)(pbVar40 + 8)) / 2,'\x06',pbVar40);
+                       (0x11 - *(int *)(pbVar41 + 8)) / 2,'\x06',pbVar41);
                 ccFntTy::SetSurf(this_00->field_1A73,this_00->field_1E8E,0,0x23,0,
                                  local_1c->field_002C + -0x40,0x11);
                 ccFntTy::WrStr(this_00->field_1A73,element_1ebe + 0xb,0,-1,
                                (-(uint)((message->arg0).words.high != 0) & 0xfffffffe) + 2);
-                pAVar42 = local_1c;
+                pAVar43 = local_1c;
               }
             }
           }
-          DVar46 = pAVar42->field_002C;
-          pBVar44 = (BITMAPINFO *)this_00->field_1E8E;
+          DVar47 = pAVar43->field_002C;
+          pBVar45 = (BITMAPINFO *)this_00->field_1E8E;
           DVar20 = 0x11;
-          iVar21 = (uint)(message->arg1).words.high + *(int *)&pAVar42->field_0x28;
+          iVar21 = (uint)(message->arg1).words.high + *(int *)&pAVar43->field_0x28;
           goto LAB_005a89f6;
         case MESS_OPTPANELTY_8162:
           if ((g_cursorClass_00802A30 != nullptr) &&
@@ -974,10 +969,10 @@ LAB_005a6e50:
               if (pcVar39 != nullptr) {
                 if (g_cursorClass_00802A30 != nullptr) {
                   iVar21 = g_cursorClass_00802A30->field_00C9;
-                  iVar45 = g_cursorClass_00802A30->field_00C5;
+                  iVar46 = g_cursorClass_00802A30->field_00C5;
                   g_cursorClass_00802A30->field_0493 = CASE_5;
                   pCVar37->field_0494 = 0xffff;
-                  CursorClassTy::SetGCType(pCVar37,CASE_0,iVar45,iVar21);
+                  CursorClassTy::SetGCType(pCVar37,CASE_0,iVar46,iVar21);
                   CursorClassTy::DrawSprite(pCVar37,pCVar37->field_00C5,pCVar37->field_00C9);
                   pCVar37->field_00D2 = 0;
                   pCVar37->field_04DF = -1;
@@ -1008,10 +1003,10 @@ LAB_005a6e50:
           if (uVar35 == 0) {
             if (g_cursorClass_00802A30 != nullptr) {
               iVar21 = g_cursorClass_00802A30->field_00C9;
-              iVar45 = g_cursorClass_00802A30->field_00C5;
+              iVar46 = g_cursorClass_00802A30->field_00C5;
               g_cursorClass_00802A30->field_0493 = CASE_5;
               pCVar37->field_0494 = 0xffff;
-              CursorClassTy::SetGCType(pCVar37,CASE_0,iVar45,iVar21);
+              CursorClassTy::SetGCType(pCVar37,CASE_0,iVar46,iVar21);
               CursorClassTy::DrawSprite(pCVar37,pCVar37->field_00C5,pCVar37->field_00C9);
               pCVar37->field_00D2 = 0;
               pCVar37->field_04DF = -1;
@@ -1049,9 +1044,9 @@ LAB_005a6e50:
             cVar2 = *pcVar27;
             pcVar27 = pcVar27 + 1;
           } while (cVar2 != '\0');
-          pbVar40 = Library::DKW::LIB::MemAlloc(~uVar35);
+          pbVar41 = Library::DKW::LIB::MemAlloc(~uVar35);
           uVar35 = 0xffffffff;
-          this_00->field_1B0C = pbVar40;
+          this_00->field_1B0C = pbVar41;
           do {
             pcVar27 = pcVar39;
             if (uVar35 == 0) break;
@@ -1062,10 +1057,9 @@ LAB_005a6e50:
           } while (cVar2 != '\0');
           uVar35 = ~uVar35;
           pbVar36 = (byte *)(pcVar27 + -uVar35);
-          memmove(pbVar40, pbVar36, uVar35); /* compiler REP MOVS byte copy */
+          memmove(pbVar41, pbVar36, uVar35); /* compiler REP MOVS byte copy */
           uVar32 = 0;
-          /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-          (*(code *)this_00->field_0000->field_0008)();
+          this_00->CloseButtons();
           this_00->field_1A61 = 10;
           this_00->field_1ED2 = 6;
           pSVar13 = this_00->field_1A5B;
@@ -1103,13 +1097,13 @@ LAB_005a6e50:
           }
           else if (this_00->field_1A5F == CASE_8) {
             pFVar8 = this_00->field_1EBE;
-            bVar43 = true;
+            bVar44 = true;
             /* ST_PSEUDO[dynamic_array_indexing]: expected DArrayAt<T>(array, index) (runtime elementSize cannot be a static C array) */
             if (((pFVar8 != nullptr) && ((message->arg0).u32 < pFVar8->count)
                 ) && (puVar24 = (uint *)((int)&pFVar8->data->field_0000 +
                                         pFVar8->elementSize * (message->arg0).u32),
                      puVar24 != nullptr)) {
-              bVar43 = false;
+              bVar44 = false;
               Library::DKW::TBL::FUN_006b6020(&this_00->field_1AE8->flags,0,(char *)(puVar24 + 0xb));
               this_00->field_002D = 0x33;
               *(DArrayTy **)&this_00->field_0x31 = this_00->field_1AE8;
@@ -1119,21 +1113,21 @@ LAB_005a6e50:
               FUN_006b4170((AnonShape_006B5B10_E0D06CF1 *)this_00->field_1E8E,0,0,0,0x15e,0x8c,0xff);
               ccFntTy::SetSurf(this_00->field_1A73,this_00->field_1E8E,0,0,0,0x15e,0x11);
               uVar35 = 2;
-              iVar45 = -1;
+              iVar46 = -1;
               iVar21 = -1;
               puVar31 = (uint *)LoadResourceString(0x2572,g_module_00807618);
-              ccFntTy::WrStr(this_00->field_1A73,puVar31,iVar21,iVar45,uVar35);
+              ccFntTy::WrStr(this_00->field_1A73,puVar31,iVar21,iVar46,uVar35);
               ccFntTy::SetSurf(this_00->field_1A73,this_00->field_1E8E,0,10,0x11,0x14a,0x11);
               ccFntTy::WrStr(this_00->field_1A73,puVar24 + 7,0,-1,0);
               ccFntTy::SetSurf(this_00->field_1A73,this_00->field_1E8E,0,0,0x22,0x15e,0x11);
               uVar35 = 2;
-              iVar45 = -1;
+              iVar46 = -1;
               iVar21 = -1;
               puVar31 = (uint *)LoadResourceString(0x2347,g_module_00807618);
-              ccFntTy::WrStr(this_00->field_1A73,puVar31,iVar21,iVar45,uVar35);
+              ccFntTy::WrStr(this_00->field_1A73,puVar31,iVar21,iVar46,uVar35);
               ccFntTy::SetSurf(this_00->field_1A73,this_00->field_1E8E,0,10,0x33,0x14a,0x11);
               uVar35 = 0;
-              iVar45 = -1;
+              iVar46 = -1;
               iVar21 = 0;
               if (*(char *)(puVar24 + 0x1f) == '\0') {
                 puVar31 = (uint *)LoadResourceString(0x2573,g_module_00807618);
@@ -1141,13 +1135,13 @@ LAB_005a6e50:
               else {
                 puVar31 = (uint *)((int)puVar24 + 0x83);
               }
-              ccFntTy::WrStr(this_00->field_1A73,puVar31,iVar21,iVar45,uVar35);
+              ccFntTy::WrStr(this_00->field_1A73,puVar31,iVar21,iVar46,uVar35);
               ccFntTy::SetSurf(this_00->field_1A73,this_00->field_1E8E,0,0,0x44,0x15e,0x11);
               uVar35 = 2;
-              iVar45 = -1;
+              iVar46 = -1;
               iVar21 = -1;
               puVar31 = (uint *)LoadResourceString(0x2344,g_module_00807618);
-              ccFntTy::WrStr(this_00->field_1A73,puVar31,iVar21,iVar45,uVar35);
+              ccFntTy::WrStr(this_00->field_1A73,puVar31,iVar21,iVar46,uVar35);
               if (*(char *)(puVar24 + 0x1f) != '\0') {
                 ccFntTy::SetSurf(this_00->field_1A73,this_00->field_1E8E,0,10,0x55,0x14a,0x11);
                 iVar21 = (int)(char)*(undefined1 *)((int)puVar24 + 0x7e) << 1;
@@ -1156,10 +1150,10 @@ LAB_005a6e50:
               }
               ccFntTy::SetSurf(this_00->field_1A73,this_00->field_1E8E,0,0,0x66,0x15e,0x11);
               uVar35 = 2;
-              iVar45 = -1;
+              iVar46 = -1;
               iVar21 = -1;
               puVar31 = (uint *)LoadResourceString(0x2345,g_module_00807618);
-              ccFntTy::WrStr(this_00->field_1A73,puVar31,iVar21,iVar45,uVar35);
+              ccFntTy::WrStr(this_00->field_1A73,puVar31,iVar21,iVar46,uVar35);
               if (*(char *)(puVar24 + 0x1f) != '\0') {
                 ccFntTy::SetSurf(this_00->field_1A73,this_00->field_1E8E,0,10,0x77,0x14a,0x11);
                 pcVar39 = LoadResourceString(0x2574,g_module_00807618);
@@ -1171,7 +1165,7 @@ LAB_005a6e50:
                         ((int *)g_dDXContext_0080759C,0x1a4,0x7d,(BITMAPINFO *)this_00->field_1E8E,
                          nullptr,0,0,0x15e,0x8c,0x10000ff);
             }
-            if (bVar43) {
+            if (bVar44) {
               Library::DKW::TBL::FUN_006b6020(&this_00->field_1AE8->flags,0,&DAT_008016a0);
               this_00->field_002D = 0x33;
               *(DArrayTy **)&this_00->field_0x31 = this_00->field_1AE8;
@@ -1181,28 +1175,28 @@ LAB_005a6e50:
               FUN_006b4170((AnonShape_006B5B10_E0D06CF1 *)this_00->field_1E8E,0,0,0,0x15e,0x8c,0xff);
               ccFntTy::SetSurf(this_00->field_1A73,this_00->field_1E8E,0,0,0,0x15e,0x11);
               uVar35 = 2;
-              iVar45 = -1;
+              iVar46 = -1;
               iVar21 = -1;
               puVar24 = (uint *)LoadResourceString(0x2572,g_module_00807618);
-              ccFntTy::WrStr(this_00->field_1A73,puVar24,iVar21,iVar45,uVar35);
+              ccFntTy::WrStr(this_00->field_1A73,puVar24,iVar21,iVar46,uVar35);
               ccFntTy::SetSurf(this_00->field_1A73,this_00->field_1E8E,0,0,0x22,0x15e,0x11);
               uVar35 = 2;
-              iVar45 = -1;
+              iVar46 = -1;
               iVar21 = -1;
               puVar24 = (uint *)LoadResourceString(0x2347,g_module_00807618);
-              ccFntTy::WrStr(this_00->field_1A73,puVar24,iVar21,iVar45,uVar35);
+              ccFntTy::WrStr(this_00->field_1A73,puVar24,iVar21,iVar46,uVar35);
               ccFntTy::SetSurf(this_00->field_1A73,this_00->field_1E8E,0,0,0x44,0x15e,0x11);
               uVar35 = 2;
-              iVar45 = -1;
+              iVar46 = -1;
               iVar21 = -1;
               puVar24 = (uint *)LoadResourceString(0x2344,g_module_00807618);
-              ccFntTy::WrStr(this_00->field_1A73,puVar24,iVar21,iVar45,uVar35);
+              ccFntTy::WrStr(this_00->field_1A73,puVar24,iVar21,iVar46,uVar35);
               ccFntTy::SetSurf(this_00->field_1A73,this_00->field_1E8E,0,0,0x66,0x15e,0x11);
               uVar35 = 2;
-              iVar45 = -1;
+              iVar46 = -1;
               iVar21 = -1;
               puVar24 = (uint *)LoadResourceString(0x2345,g_module_00807618);
-              ccFntTy::WrStr(this_00->field_1A73,puVar24,iVar21,iVar45,uVar35);
+              ccFntTy::WrStr(this_00->field_1A73,puVar24,iVar21,iVar46,uVar35);
               Library::DKW::DDX::FUN_006b4680
                         ((int *)g_dDXContext_0080759C,0x1a4,0x7d,(BITMAPINFO *)this_00->field_1E8E,
                          nullptr,0,0,0x15e,0x8c,0x10000ff);
@@ -1238,9 +1232,9 @@ LAB_005a6e50:
         else {
           pcVar39 = *(char **)this_00->field_1EA2->field_0014;
         }
-        bVar43 = thunk_FUN_00571810(pcVar39);
+        bVar44 = thunk_FUN_00571810(pcVar39);
         /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
-        if (CONCAT31(extraout_var,bVar43) == 0) {
+        if (CONCAT31(extraout_var,bVar44) == 0) {
           if ((int)this_00->field_1EA2->field_0008 < 1) {
             pcVar39 = nullptr;
           }
@@ -1340,16 +1334,16 @@ LAB_005a8c85:
       piVar17 = (message->arg1).ptr;
       iVar21 = *piVar17;
       local_140 = iVar21 + -0xb4;
-      iVar45 = piVar17[1];
-      local_13c = iVar45 + -0xaa;
+      iVar46 = piVar17[1];
+      local_13c = iVar46 + -0xaa;
       local_138 = piVar17[2];
       local_134 = piVar17[3];
       FUN_006b4170((AnonShape_006B5B10_E0D06CF1 *)this_00->field_1AC0,0,iVar21 + -0xb3,
-                   iVar45 + -0xa9,local_138 + -2,local_134 + -2,0xff);
+                   iVar46 + -0xa9,local_138 + -2,local_134 + -2,0xff);
       if (DAT_0080735f != '\0') {
-        pbVar40 = (byte *)FUN_0070b3a0((AnonShape_GLOBAL_0081175C_57F682DD *)this_00->field_1A83,0);
-        DibPut((AnonShape_006B5B10_E0D06CF1 *)this_00->field_1AC0,iVar21 + -0xb2,iVar45 + -0xa8,
-               '\x06',pbVar40);
+        pbVar41 = (byte *)FUN_0070b3a0((AnonShape_GLOBAL_0081175C_57F682DD *)this_00->field_1A83,0);
+        DibPut((AnonShape_006B5B10_E0D06CF1 *)this_00->field_1AC0,iVar21 + -0xb2,iVar46 + -0xa8,
+               '\x06',pbVar41);
       }
       break;
     case MESS_SIDTY_6981:
@@ -1388,10 +1382,10 @@ LAB_005a8c85:
       }
       uVar4 = (message->arg1).words.low;
       if ((uVar4 != 0xffff) || ((message->arg1).words.high != 0xffff)) {
-        iVar47 = (uint)(message->arg1).words.high + local_4c;
-        iVar45 = (uint)uVar4 + local_50;
-        FUN_006b5b10((AnonShape_006E6FB0_BC494FEA *)this_00->field_1AC0,0,iVar45,iVar47,iVar45,
-                     iVar47 + iVar21,9,0xd);
+        iVar48 = (uint)(message->arg1).words.high + local_4c;
+        iVar46 = (uint)uVar4 + local_50;
+        FUN_006b5b10((AnonShape_006E6FB0_BC494FEA *)this_00->field_1AC0,0,iVar46,iVar48,iVar46,
+                     iVar48 + iVar21,9,0xd);
       }
       goto LAB_005a7c92;
     case MESS_SHARED_6980|MESS_ID_CREATE:
@@ -1472,16 +1466,16 @@ LAB_005a8c85:
       break;
     case 0x6984:
       if ((this_00->field_1E8E == 0) || (this_00->field_1E92 == nullptr)) break;
-      pAVar42 = (AnonShape_005A4350_59BACD18 *)(message->arg2).u32;
-      FUN_006b5f80((int *)g_ddxContext_008075A8,*(int *)&pAVar42->field_0x24,
-                   *(int *)&pAVar42->field_0x28,pAVar42->field_002C,*(int *)(pAVar42 + 1));
-      PutDDXClip(*(int *)&pAVar42->field_0x24,*(int *)&pAVar42->field_0x28,
-                 *(int *)&pAVar42->field_0x24 + -0x13,0x160,pAVar42->field_002C,
-                 *(byte **)(pAVar42 + 1),'\x01',this_00->field_1E92);
-      FUN_006b4170((AnonShape_006B5B10_E0D06CF1 *)this_00->field_1E8E,0,0,0,pAVar42->field_002C,
-                   *(int *)(pAVar42 + 1),0xff);
-      ccFntTy::SetSurf(this_00->field_1A73,this_00->field_1E8E,0,0,0,pAVar42->field_002C,
-                       *(int *)(pAVar42 + 1));
+      pAVar43 = (AnonShape_005A4350_59BACD18 *)(message->arg2).u32;
+      FUN_006b5f80((int *)g_ddxContext_008075A8,*(int *)&pAVar43->field_0x24,
+                   *(int *)&pAVar43->field_0x28,pAVar43->field_002C,*(int *)(pAVar43 + 1));
+      PutDDXClip(*(int *)&pAVar43->field_0x24,*(int *)&pAVar43->field_0x28,
+                 *(int *)&pAVar43->field_0x24 + -0x13,0x160,pAVar43->field_002C,
+                 *(byte **)(pAVar43 + 1),'\x01',this_00->field_1E92);
+      FUN_006b4170((AnonShape_006B5B10_E0D06CF1 *)this_00->field_1E8E,0,0,0,pAVar43->field_002C,
+                   *(int *)(pAVar43 + 1),0xff);
+      ccFntTy::SetSurf(this_00->field_1A73,this_00->field_1E8E,0,0,0,pAVar43->field_002C,
+                       *(int *)(pAVar43 + 1));
       wVar5 = (message->arg0).words.low;
       if (wVar5 == 1) {
         uVar35 = 2;
@@ -1489,10 +1483,10 @@ LAB_005a8c85:
       else {
         uVar35 = (-(uint)(wVar5 != 0) & 2) + 1;
       }
-      iVar45 = -1;
+      iVar46 = -1;
       iVar21 = -1;
       puVar24 = (uint *)LoadResourceString(0x2565,g_module_00807618);
-      ccFntTy::WrStr(this_00->field_1A73,puVar24,iVar21,iVar45,uVar35);
+      ccFntTy::WrStr(this_00->field_1A73,puVar24,iVar21,iVar46,uVar35);
       goto LAB_005a754e;
     case MESS_SHARED_6980|MESS_SHARED_0005:
     case MESS_MMSGTY_6986:
@@ -1639,17 +1633,17 @@ LAB_005a7656:
       case MESS_SHARED_0008|MESS_SHARED_0005:
         local_8 = (uint *)0x25b1;
       }
-      pAVar42 = local_c;
+      pAVar43 = local_c;
       FUN_006b5f80((int *)g_ddxContext_008075A8,*(int *)&local_c->field_0x24,
                    *(int *)&local_c->field_0x28,local_c->field_002C,*(int *)(local_c + 1));
-      PutDDXClip(*(int *)&pAVar42->field_0x24,*(int *)&pAVar42->field_0x28,
-                 *(int *)&pAVar42->field_0x24 - (int)local_10,
-                 *(int *)&pAVar42->field_0x28 - (int)local_1c,pAVar42->field_002C,
-                 *(byte **)(pAVar42 + 1),'\x01',local_14);
-      FUN_006b4170((AnonShape_006B5B10_E0D06CF1 *)this_00->field_1E8E,0,0,0,pAVar42->field_002C,
-                   *(int *)(pAVar42 + 1),0xff);
-      ccFntTy::SetSurf(this_00->field_1A73,this_00->field_1E8E,0,0,0,pAVar42->field_002C,
-                       *(int *)(pAVar42 + 1));
+      PutDDXClip(*(int *)&pAVar43->field_0x24,*(int *)&pAVar43->field_0x28,
+                 *(int *)&pAVar43->field_0x24 - (int)local_10,
+                 *(int *)&pAVar43->field_0x28 - (int)local_1c,pAVar43->field_002C,
+                 *(byte **)(pAVar43 + 1),'\x01',local_14);
+      FUN_006b4170((AnonShape_006B5B10_E0D06CF1 *)this_00->field_1E8E,0,0,0,pAVar43->field_002C,
+                   *(int *)(pAVar43 + 1),0xff);
+      ccFntTy::SetSurf(this_00->field_1A73,this_00->field_1E8E,0,0,0,pAVar43->field_002C,
+                       *(int *)(pAVar43 + 1));
       wVar5 = (message->arg0).words.low;
       if (wVar5 == 1) {
         local_c = (AnonShape_005A4350_59BACD18 *)0x2;
@@ -1672,7 +1666,7 @@ LAB_005a7656:
         bVar34 = (-(wVar5 != 2) & 0x10U) - 2;
       }
       FUN_006c7570((AnonShape_006B5B10_E0D06CF1 *)this_00->field_1E8E,0,0,0,
-                   (undefined4 *)pAVar42->field_002C,*(int *)(pAVar42 + 1),4,bVar34);
+                   (undefined4 *)pAVar43->field_002C,*(int *)(pAVar43 + 1),4,bVar34);
       wVar5 = (message->arg0).words.low;
       if (wVar5 == 0) {
         bVar34 = 0xd;
@@ -1681,16 +1675,16 @@ LAB_005a7656:
         bVar34 = (-(wVar5 != 2) & 0x10U) - 2;
       }
       FUN_006c7570((AnonShape_006B5B10_E0D06CF1 *)this_00->field_1E8E,0,2,2,
-                   (undefined4 *)(pAVar42->field_002C + -4),*(int *)(pAVar42 + 1) + -4,4,bVar34);
+                   (undefined4 *)(pAVar43->field_002C + -4),*(int *)(pAVar43 + 1) + -4,4,bVar34);
 LAB_005a754e:
-      DVar20 = *(DWORD *)(pAVar42 + 1);
-      DVar46 = pAVar42->field_002C;
-      pBVar44 = (BITMAPINFO *)this_00->field_1E8E;
-      iVar21 = *(int *)&pAVar42->field_0x28;
+      DVar20 = *(DWORD *)(pAVar43 + 1);
+      DVar47 = pAVar43->field_002C;
+      pBVar45 = (BITMAPINFO *)this_00->field_1E8E;
+      iVar21 = *(int *)&pAVar43->field_0x28;
 LAB_005a89f6:
       Library::DKW::DDX::FUN_006b4680
-                ((int *)g_dDXContext_0080759C,*(int *)&pAVar42->field_0x24,iVar21,pBVar44,
-                 nullptr,0,0,DVar46,DVar20,0x10000ff);
+                ((int *)g_dDXContext_0080759C,*(int *)&pAVar43->field_0x24,iVar21,pBVar45,
+                 nullptr,0,0,DVar47,DVar20,0x10000ff);
       break;
     case 0x6987:
       if ((this_00->field_1E8E != 0) && (this_00->field_1E9A != nullptr)) {
@@ -1754,12 +1748,12 @@ LAB_005a89f6:
     case 0x698b:
       piVar17 = (message->arg1).ptr;
       iVar21 = *piVar17;
-      iVar45 = iVar21 + -0xb4;
+      iVar46 = iVar21 + -0xb4;
       local_3c = piVar17[1] - 0xaa;
       local_38 = (undefined4 *)piVar17[2];
       local_34 = piVar17[3];
-      local_40 = iVar45;
-      FUN_006b4170((AnonShape_006B5B10_E0D06CF1 *)this_00->field_1AC0,0,iVar45,local_3c,
+      local_40 = iVar46;
+      FUN_006b4170((AnonShape_006B5B10_E0D06CF1 *)this_00->field_1AC0,0,iVar46,local_3c,
                    (int)local_38,local_34,0xff);
       wVar5 = (message->arg0).words.low;
       if (wVar5 == 0) {
@@ -1768,7 +1762,7 @@ LAB_005a89f6:
       else {
         bVar34 = (-(wVar5 != 2) & 0x10U) - 2;
       }
-      FUN_006c7570((AnonShape_006B5B10_E0D06CF1 *)this_00->field_1AC0,0,iVar45,local_3c,local_38,
+      FUN_006c7570((AnonShape_006B5B10_E0D06CF1 *)this_00->field_1AC0,0,iVar46,local_3c,local_38,
                    local_34,4,bVar34);
       wVar5 = (message->arg0).words.low;
       if (wVar5 == 0) {
@@ -1799,7 +1793,7 @@ LAB_005a89f6:
 LAB_005a7c26:
         local_8 = (uint *)0x2341;
       }
-      ccFntTy::SetSurf(this_00->field_1A73,(int)this_00->field_1AC0,0,iVar45,local_3c,(int)local_38,
+      ccFntTy::SetSurf(this_00->field_1A73,(int)this_00->field_1AC0,0,iVar46,local_3c,(int)local_38,
                        local_34);
       wVar5 = (message->arg0).words.low;
       if (wVar5 == 1) {
@@ -1808,10 +1802,10 @@ LAB_005a7c26:
       else {
         uVar35 = (-(uint)(wVar5 != 0) & 2) + 1;
       }
-      iVar45 = -1;
+      iVar46 = -1;
       iVar21 = -1;
       puVar24 = (uint *)LoadResourceString((UINT)local_8,g_module_00807618);
-      ccFntTy::WrStr(this_00->field_1A73,puVar24,iVar21,iVar45,uVar35);
+      ccFntTy::WrStr(this_00->field_1A73,puVar24,iVar21,iVar46,uVar35);
 LAB_005a7c92:
       FUN_006b35d0((int *)g_ddxContext_008075A8,this_00->field_1ABC);
       break;
@@ -1834,8 +1828,7 @@ LAB_005a7c92:
     goto cf_common_exit_005A8CA7;
   }
   if (SVar6 == MESS_FSGSTY_6949) {
-    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-    (*(code *)this_00->field_0000->field_0008)();
+    this_00->CloseButtons();
     this_00->field_1A61 = 9;
     pSVar13 = this_00->field_1A5B;
     if (pSVar13->field_02E6 == nullptr) goto cf_common_exit_005A8CA7;
@@ -1996,7 +1989,7 @@ joined_r0x005a55e5:
               pCVar37->field_0494 = 0xffff;
               CursorClassTy::SetGCType(pCVar37,CASE_0,pCVar37->field_00C5,pCVar37->field_00C9);
               iVar21 = pCVar37->field_00C9;
-              iVar45 = pCVar37->field_00C5;
+              iVar46 = pCVar37->field_00C5;
             }
             else {
               /* ST_PSEUDO[dynamic_array_indexing]: expected DArrayAt<T>(array, index) (runtime elementSize cannot be a static C array) */
@@ -2006,15 +1999,15 @@ joined_r0x005a55e5:
               pCVar37 = g_cursorClass_00802A30;
               if (g_cursorClass_00802A30 == nullptr) goto cf_common_exit_005A5634;
               iVar21 = g_cursorClass_00802A30->field_00C9;
-              iVar45 = g_cursorClass_00802A30->field_00C5;
+              iVar46 = g_cursorClass_00802A30->field_00C5;
               g_cursorClass_00802A30->field_0493 = CASE_5;
               pCVar37->field_0494 = 0xffff;
-              CursorClassTy::SetGCType(pCVar37,CASE_0,iVar45,iVar21);
+              CursorClassTy::SetGCType(pCVar37,CASE_0,iVar46,iVar21);
               iVar21 = pCVar37->field_00C9;
-              iVar45 = pCVar37->field_00C5;
+              iVar46 = pCVar37->field_00C5;
             }
 LAB_005a561c:
-            CursorClassTy::DrawSprite(pCVar37,iVar45,iVar21);
+            CursorClassTy::DrawSprite(pCVar37,iVar46,iVar21);
             pCVar37->field_00D2 = 0;
             pCVar37->field_04DF = -1;
           }
@@ -2051,12 +2044,12 @@ LAB_005a561c:
               pCVar37 = g_cursorClass_00802A30;
               if (g_cursorClass_00802A30 != nullptr) {
                 iVar21 = g_cursorClass_00802A30->field_00C9;
-                iVar45 = g_cursorClass_00802A30->field_00C5;
+                iVar46 = g_cursorClass_00802A30->field_00C5;
                 g_cursorClass_00802A30->field_0493 = CASE_5;
                 pCVar37->field_0494 = 0xffff;
-                CursorClassTy::SetGCType(pCVar37,CASE_0,iVar45,iVar21);
+                CursorClassTy::SetGCType(pCVar37,CASE_0,iVar46,iVar21);
                 iVar21 = pCVar37->field_00C9;
-                iVar45 = pCVar37->field_00C5;
+                iVar46 = pCVar37->field_00C5;
                 goto LAB_005a561c;
               }
             }
@@ -2069,10 +2062,10 @@ cf_common_exit_005A5634:
         if (SVar6 == MESS_FSGSTY_6903) {
           if (g_cursorClass_00802A30 != nullptr) {
             iVar21 = g_cursorClass_00802A30->field_00C9;
-            iVar45 = g_cursorClass_00802A30->field_00C5;
+            iVar46 = g_cursorClass_00802A30->field_00C5;
             g_cursorClass_00802A30->field_0493 = CASE_5;
             pCVar37->field_0494 = 0xffff;
-            CursorClassTy::SetGCType(pCVar37,CASE_0,iVar45,iVar21);
+            CursorClassTy::SetGCType(pCVar37,CASE_0,iVar46,iVar21);
             CursorClassTy::DrawSprite(pCVar37,pCVar37->field_00C5,pCVar37->field_00C9);
             pCVar37->field_00D2 = 0;
             pCVar37->field_04DF = -1;
@@ -2392,7 +2385,7 @@ joined_r0x005a5b89:
       goto joined_r0x005a5b89;
     case MESS_SHARED_6900|MESS_SHARED_0008:
       if (g_cursorClass_00802A30->field_0493 == CASE_5) break;
-      bVar43 = false;
+      bVar44 = false;
       if (DAT_00803148 != 0) {
         if (DAT_00803148 < 0x10) {
           DAT_00803148 = 0;
@@ -2400,19 +2393,19 @@ joined_r0x005a5b89:
         else {
           DAT_00803148 = DAT_00803148 - 0xf;
         }
-        bVar43 = true;
+        bVar44 = true;
       }
-      if ((!bVar43) ||
+      if ((!bVar44) ||
          (CFsgsConnection::RequestLadderList
                     ((CFsgsConnection *)&DAT_00802a90,DAT_00803140,0,DAT_00803148,0xf),
          pCVar37 = g_cursorClass_00802A30, g_cursorClass_00802A30 == nullptr)) break;
       iVar21 = g_cursorClass_00802A30->field_00C9;
-      iVar45 = g_cursorClass_00802A30->field_00C5;
+      iVar46 = g_cursorClass_00802A30->field_00C5;
       g_cursorClass_00802A30->field_0493 = CASE_5;
       pCVar37->field_0494 = 0xffff;
-      CursorClassTy::SetGCType(pCVar37,CASE_0,iVar45,iVar21);
+      CursorClassTy::SetGCType(pCVar37,CASE_0,iVar46,iVar21);
       iVar21 = pCVar37->field_00C9;
-      iVar45 = pCVar37->field_00C5;
+      iVar46 = pCVar37->field_00C5;
       goto cf_common_exit_005A52AA;
     case MESS_SHARED_6900|MESS_CURSORCLASSTY_0009:
       if ((g_cursorClass_00802A30->field_0493 == CASE_5) || (0xf422f < DAT_00803148)) break;
@@ -2422,14 +2415,14 @@ joined_r0x005a5b89:
       pCVar37 = g_cursorClass_00802A30;
       if (g_cursorClass_00802A30 == nullptr) break;
       iVar21 = g_cursorClass_00802A30->field_00C9;
-      iVar45 = g_cursorClass_00802A30->field_00C5;
+      iVar46 = g_cursorClass_00802A30->field_00C5;
       g_cursorClass_00802A30->field_0493 = CASE_5;
       pCVar37->field_0494 = 0xffff;
-      CursorClassTy::SetGCType(pCVar37,CASE_0,iVar45,iVar21);
+      CursorClassTy::SetGCType(pCVar37,CASE_0,iVar46,iVar21);
       iVar21 = pCVar37->field_00C9;
-      iVar45 = pCVar37->field_00C5;
+      iVar46 = pCVar37->field_00C5;
 cf_common_exit_005A52AA:
-      CursorClassTy::DrawSprite(pCVar37,iVar45,iVar21);
+      CursorClassTy::DrawSprite(pCVar37,iVar46,iVar21);
       pCVar37->field_00D2 = 0;
       pCVar37->field_04DF = -1;
       break;
@@ -2475,9 +2468,9 @@ cf_common_exit_005A52AA:
       /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
       local_c = (AnonShape_005A4350_59BACD18 *)CONCAT31(local_c._1_3_,bVar34);
       if ((this_00->field_1EE3 <= (uint)bVar34) || (this_00->field_1EDB == nullptr)) break;
-      iVar45 = (uint)bVar34 * 0x24;
+      iVar46 = (uint)bVar34 * 0x24;
       iVar21 = -1;
-      pcVar39 = (char *)(iVar45 + 0x14 + (int)this_00->field_1EDB);
+      pcVar39 = (char *)(iVar46 + 0x14 + (int)this_00->field_1EDB);
       do {
         if (iVar21 == 0) break;
         iVar21 = iVar21 + -1;
@@ -2489,17 +2482,17 @@ cf_common_exit_005A52AA:
         FreeAndNull(&this_00->field_1B0C);
       }
       uVar35 = 0xffffffff;
-      pcVar39 = (char *)(iVar45 + 0x14 + (int)this_00->field_1EDB);
+      pcVar39 = (char *)(iVar46 + 0x14 + (int)this_00->field_1EDB);
       do {
         if (uVar35 == 0) break;
         uVar35 = uVar35 - 1;
         cVar2 = *pcVar39;
         pcVar39 = pcVar39 + 1;
       } while (cVar2 != '\0');
-      pbVar40 = Library::DKW::LIB::MemAlloc(~uVar35);
-      this_00->field_1B0C = pbVar40;
+      pbVar41 = Library::DKW::LIB::MemAlloc(~uVar35);
+      this_00->field_1B0C = pbVar41;
       uVar35 = 0xffffffff;
-      pcVar39 = (char *)(iVar45 + 0x14 + (int)this_00->field_1EDB);
+      pcVar39 = (char *)(iVar46 + 0x14 + (int)this_00->field_1EDB);
       do {
         pcVar27 = pcVar39;
         if (uVar35 == 0) break;
@@ -2510,10 +2503,9 @@ cf_common_exit_005A52AA:
       } while (cVar2 != '\0');
       uVar35 = ~uVar35;
       pbVar36 = (byte *)(pcVar27 + -uVar35);
-      memmove(pbVar40, pbVar36, uVar35); /* compiler REP MOVS byte copy */
+      memmove(pbVar41, pbVar36, uVar35); /* compiler REP MOVS byte copy */
       uVar32 = 0;
-      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-      (*(code *)this_00->field_0000->field_0008)();
+      this_00->CloseButtons();
       this_00->field_1A61 = 10;
       this_00->field_1ED2 = 9;
       pSVar13 = this_00->field_1A5B;
@@ -2541,8 +2533,7 @@ cf_common_exit_005A52AA:
       thunk_FUN_005b6350(this_00,0x6105,0,1);
       this_00->field_1A61 = 0;
       CFsgsConnection::CancelConnection((CFsgsConnection *)&DAT_00802a90);
-      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-      (*(code *)this_00->field_0000->field_0008)();
+      this_00->CloseButtons();
       pMVar33 = this_00->field_1A5B->field_02E6;
       if (pMVar33 != nullptr) {
         MMsgTy::HidePanel(pMVar33,1,0,1);
@@ -2553,8 +2544,7 @@ cf_common_exit_005A52AA:
   if (SVar6 == MESS_ID_MSGOK) {
     FVar3 = this_00->field_1A5F;
     if (FVar3 == CASE_3) {
-      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-      (*(code *)this_00->field_0000->field_0008)();
+      this_00->CloseButtons();
       this_00->field_1A61 = 4;
       if (this_00->field_1A5B->field_02E6 != nullptr) {
         local_dc = 0;
@@ -2620,12 +2610,12 @@ cf_common_exit_005A52AA:
       pCVar37 = g_cursorClass_00802A30;
       if (g_cursorClass_00802A30 == nullptr) goto cf_common_exit_005A8CA7;
       iVar21 = g_cursorClass_00802A30->field_00C9;
-      iVar45 = g_cursorClass_00802A30->field_00C5;
+      iVar46 = g_cursorClass_00802A30->field_00C5;
       g_cursorClass_00802A30->field_0493 = CASE_5;
       pCVar37->field_0494 = 0xffff;
-      CursorClassTy::SetGCType(pCVar37,CASE_0,iVar45,iVar21);
+      CursorClassTy::SetGCType(pCVar37,CASE_0,iVar46,iVar21);
       iVar21 = pCVar37->field_00C9;
-      iVar45 = pCVar37->field_00C5;
+      iVar46 = pCVar37->field_00C5;
       goto cf_common_exit_005A52AA;
     }
     if ((FVar3 != CASE_8) ||
@@ -2650,9 +2640,9 @@ cf_common_exit_005A52AA:
     local_8 = (uint *)((int)&pFVar8->data->field_0000 +
                       pFVar8->elementSize * *(uint *)&this_00->field_0x31);
     if (local_8 == nullptr) goto cf_common_exit_005A8CA7;
-    pbVar40 = (byte *)(local_8 + 0x13);
+    pbVar41 = (byte *)(local_8 + 0x13);
     iVar21 = -1;
-    pcVar39 = (char *)pbVar40;
+    pcVar39 = (char *)pbVar41;
     do {
       if (iVar21 == 0) break;
       iVar21 = iVar21 + -1;
@@ -2667,18 +2657,18 @@ cf_common_exit_005A52AA:
         pbVar36 = *(byte **)this_00->field_1AEC->growCapacity;
       }
       do {
-        bVar34 = *pbVar40;
-        bVar43 = bVar34 < *pbVar36;
+        bVar34 = *pbVar41;
+        bVar44 = bVar34 < *pbVar36;
         if (bVar34 != *pbVar36) {
 LAB_005a4eca:
-          iVar21 = (1 - (uint)bVar43) - (uint)(bVar43 != 0);
+          iVar21 = (1 - (uint)bVar44) - (uint)(bVar44 != 0);
           goto LAB_005a4ecf;
         }
         if (bVar34 == 0) break;
-        bVar34 = pbVar40[1];
-        bVar43 = bVar34 < pbVar36[1];
+        bVar34 = pbVar41[1];
+        bVar44 = bVar34 < pbVar36[1];
         if (bVar34 != pbVar36[1]) goto LAB_005a4eca;
-        pbVar40 = pbVar40 + 2;
+        pbVar41 = pbVar41 + 2;
         pbVar36 = pbVar36 + 2;
       } while (bVar34 != 0);
       iVar21 = 0;
@@ -2716,10 +2706,10 @@ LAB_005a4ecf:
     g_currentExceptionFrame = local_3b4.previous;
     if (g_cursorClass_00802A30 != nullptr) {
       iVar21 = g_cursorClass_00802A30->field_00C9;
-      iVar45 = g_cursorClass_00802A30->field_00C5;
+      iVar46 = g_cursorClass_00802A30->field_00C5;
       g_cursorClass_00802A30->field_0493 = CASE_1;
       pCVar37->field_0494 = 0xffff;
-      CursorClassTy::SetGCType(pCVar37,CASE_0,iVar45,iVar21);
+      CursorClassTy::SetGCType(pCVar37,CASE_0,iVar46,iVar21);
       CursorClassTy::DrawSprite(pCVar37,pCVar37->field_00C5,pCVar37->field_00C9);
       pCVar37->field_00D2 = 0;
       pCVar37->field_04DF = -1;
@@ -2761,8 +2751,7 @@ LAB_005a50be:
       DAT_00803400 = 4;
     }
     thunk_FUN_005b6350(local_20,0x6109,0,1);
-    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-    (*(code *)this_00->field_0000->field_0008)((MMObjTy *)this_00);
+    this_00->CloseButtons();
     pMVar33 = this_00->field_1A5B->field_02E6;
     if (pMVar33 != nullptr) {
       MMsgTy::HidePanel(pMVar33,1,0,1);
@@ -2782,9 +2771,8 @@ LAB_005a50be:
         }
         else {
           switch(SVar6) {
-          /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
           case MESS_ID_NONE:
-            NoneFSGS(this_00,unaff_EDI);
+            NoneFSGS(this_00);
             break;
           /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
           case MESS_ID_CREATE:
@@ -2820,18 +2808,21 @@ LAB_005a50be:
             pCVar37->field_04DF = -1;
           }
           pSVar13 = this_00->field_1A5B;
-          memset(local_19c, 0, 0x20); /* compiler bulk-zero initialization */
-          local_19c[2] = this_00->field_0008;
-          local_19c[3] = 2;
-          local_19c[4] = 0x6941;
+          pSVar40 = &local_19c;
+          for (iVar21 = 8; iVar21 != 0; iVar21 = iVar21 + -1) {
+            pSVar40->unknown_00 = 0;
+            pSVar40 = (STMessage *)&pSVar40->unknown_04;
+          }
+          local_19c.unknown_08 = this_00->field_0008;
+          local_19c.unknown_0c = 2;
+          local_19c.id = MESS_FSGSTY_6941;
           pMVar33 = pSVar13->field_02E6;
           if (pMVar33 == nullptr) {
-            /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-            (*(code *)this_00->field_0000->field_0000)(local_19c);
+            this_00->GetMessage(&local_19c);
           }
           else {
-            MMsgTy::SetMessage(pMVar33,0x2593,'\0',local_19c,nullptr,nullptr,
-                               (message->arg0).i32,0x2599);
+            MMsgTy::SetMessage(pMVar33,0x2593,'\0',&local_19c.unknown_00,nullptr,
+                               nullptr,(message->arg0).i32,0x2599);
           }
           break;
         case MESS_FSGSTY_6150:
@@ -2845,10 +2836,14 @@ LAB_005a50be:
               pCVar37->field_04DF = -1;
             }
             iVar21 = (message->arg0).i32;
-            memset(local_160, 0, 0x20); /* compiler bulk-zero initialization */
-            local_160[2] = this_00->field_0008;
-            local_160[3] = 2;
-            local_160[4] = 0x6941;
+            pSVar40 = &local_160;
+            for (iVar46 = 8; iVar46 != 0; iVar46 = iVar46 + -1) {
+              pSVar40->unknown_00 = 0;
+              pSVar40 = (STMessage *)&pSVar40->unknown_04;
+            }
+            local_160.unknown_08 = this_00->field_0008;
+            local_160.unknown_0c = 2;
+            local_160.id = MESS_FSGSTY_6941;
             switch(iVar21) {
             case 1:
               UVar22 = 0x2580;
@@ -2867,16 +2862,15 @@ LAB_005a50be:
             }
             if ((UVar22 == 0) ||
                (pMVar33 = this_00->field_1A5B->field_02E6, pMVar33 == nullptr)) {
-              /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-              (*(code *)this_00->field_0000->field_0000)(local_160);
+              this_00->GetMessage(&local_160);
             }
             else if (UVar22 == 0x2584) {
-              MMsgTy::SetMessage(pMVar33,0x2584,'\0',local_160,nullptr,nullptr,
-                                 iVar21,0x2599);
+              MMsgTy::SetMessage(pMVar33,0x2584,'\0',&local_160.unknown_00,nullptr,
+                                 nullptr,iVar21,0x2599);
             }
             else {
-              MMsgTy::SetMessage(pMVar33,UVar22,'\0',local_160,nullptr,nullptr,0
-                                 ,0);
+              MMsgTy::SetMessage(pMVar33,UVar22,'\0',&local_160.unknown_00,nullptr,
+                                 nullptr,0,0);
             }
           }
         }
@@ -2902,13 +2896,13 @@ LAB_005a50be:
         puVar23 = (undefined4 *)((int)puVar23 + 1);
       }
       ccFntTy::SetSurf(this_00->field_1A73,(int)this_00->field_1AC0,0,0,0x16,0x1b8,0xf0);
+      iVar49 = -1;
       iVar48 = -1;
-      iVar47 = -1;
       uVar35 = 2;
-      iVar45 = -1;
+      iVar46 = -1;
       iVar21 = -1;
       puVar24 = (uint *)LoadResourceString(0x25b6,g_module_00807618);
-      ccFntTy::WrTxt(this_00->field_1A73,puVar24,iVar21,iVar45,uVar35,iVar47,iVar48);
+      ccFntTy::WrTxt(this_00->field_1A73,puVar24,iVar21,iVar46,uVar35,iVar48,iVar49);
       FUN_006b35d0((int *)g_ddxContext_008075A8,this_00->field_1ABC);
       CFsgsConnection::RequestDatafile((CFsgsConnection *)&DAT_00802a90,"st.inf");
       goto cf_common_exit_005A8CA7;
@@ -3017,8 +3011,7 @@ LAB_005a50be:
       }
       pDVar25 = Library::DKW::TBL::SArrayCreate(nullptr,100,100);
       this_00->field_1E9E = &pDVar25->flags;
-      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-      (*(code *)this_00->field_0000->field_0008)();
+      this_00->CloseButtons();
       this_00->field_1A61 = 6;
       if (this_00->field_1A5B->field_02E6 != nullptr) {
         local_ac = 0;
@@ -3042,8 +3035,7 @@ LAB_005a50be:
       uVar35 = (message->arg0).u32;
       if (uVar35 == 0) {
         this_00->field_002D = 0x6952;
-        /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-        (*(code *)this_00->field_0000->field_0000)(&this_00->field_0x1d);
+        this_00->GetMessage((STMessage *)&this_00->field_0x1d);
       }
       else if ((uVar35 != 0) && (uVar35 < 3)) {
         puVar23 = local_300;

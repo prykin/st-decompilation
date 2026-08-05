@@ -16,7 +16,7 @@ void __thiscall CPanelTy::sub_004FA870(CPanelTy *this,CPanelTy_sub_004FA870_para
 
 {
   if (this->field_012C != 0) {
-    *(undefined1 *)((int)&this->field_0B4B + param_1 + 3) = 1;
+    *(undefined1 *)((int)this->field_0B1F + param_1 + 0x2f) = 1;
     return;
   }
   /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
@@ -48,8 +48,7 @@ void __thiscall CPanelTy::sub_004FA870(CPanelTy *this,CPanelTy_sub_004FA870_para
     /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
     else if (param_1 == 9) {
       if (g_infocPanel_00801698 != nullptr) {
-        /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-        (*(code *)g_infocPanel_00801698->field_0000->field_0020)();
+        g_infocPanel_00801698->Update();
         return;
       }
     }
@@ -64,8 +63,7 @@ void __thiscall CPanelTy::sub_004FA870(CPanelTy *this,CPanelTy_sub_004FA870_para
     /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
     else if (param_1 == 0xb) {
       if (g_behPanel_00801678 != nullptr) {
-        /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-        (*(code *)g_behPanel_00801678->field_0000[2].field_0008)();
+        g_behPanel_00801678->Update();
         return;
       }
     }
@@ -80,24 +78,21 @@ void __thiscall CPanelTy::sub_004FA870(CPanelTy *this,CPanelTy_sub_004FA870_para
     /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
     else if (param_1 == 0x10) {
       if (g_upgPanel_00802A48 != nullptr) {
-        /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-        (*(code *)g_upgPanel_00802A48->field_0000->field_0020)();
+        g_upgPanel_00802A48->Update();
         return;
       }
     }
     /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
     else if (param_1 == 0x11) {
       if (g_frmPanel_0080168C != nullptr) {
-        /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-        (**(code **)(g_frmPanel_0080168C->field_0000 + 1))();
+        g_frmPanel_0080168C->Update();
         return;
       }
     }
     /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
     else if (param_1 == 0x12) {
       if (g_sAMPanel_008016EC != nullptr) {
-        /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-        (**(code **)&g_sAMPanel_008016EC->field_0000[1].field_0xc)();
+        g_sAMPanel_008016EC->Update();
         return;
       }
     }

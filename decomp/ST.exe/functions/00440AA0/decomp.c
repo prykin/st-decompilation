@@ -221,9 +221,7 @@ LAB_00440c19:
                       this_00 = nullptr;
                     }
                     else {
-                      this_00 = g_worldGrid.cells
-                                [(int)local_f8 * (int)g_worldGrid.planeStride +
-                                 (int)local_fa * (int)g_worldGrid.sizeX + (int)local_fc].objects[0];
+                      this_00 = STGridAt3D(g_worldGrid, local_fc, local_fa, local_f8).objects[0];
                     }
                     if (((this_00 != nullptr) &&
                         (this_00[1].vtable == (STWorldObjectVTable *)(int)param_1)) &&

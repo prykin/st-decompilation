@@ -26,8 +26,7 @@ int __thiscall WaitTy::GetMessage(WaitTy *this,STMessage *message)
   undefined3 extraout_var;
   int iVar8;
   uint uVar9;
-  /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
-  int *unaff_EDI;
+  uint uVar10;
   char *pcVar11;
   char *pcVar12;
   char local_4a4 [64];
@@ -80,8 +79,7 @@ int __thiscall WaitTy::GetMessage(WaitTy *this,STMessage *message)
           DoneWait(this_02);
         }
         else if (SVar2 == MESS_ID_NONE) {
-          /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
-          NoneWait(this_02,unaff_EDI);
+          NoneWait(this_02);
         }
         else if (SVar2 == MESS_ID_CREATE) {
           /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
@@ -178,8 +176,7 @@ int __thiscall WaitTy::GetMessage(WaitTy *this,STMessage *message)
         DAT_00811768 = '\x02';
       }
     }
-    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-    (*(code *)this_02->field_0000->field_0008)();
+    this_02->CloseButtons();
     this_00 = this_02->field_1A5B->field_02E6;
     if (this_00 != nullptr) {
       MMsgTy::HidePanel(this_00,1,0,1);
@@ -238,6 +235,7 @@ int __thiscall WaitTy::GetMessage(WaitTy *this,STMessage *message)
     pcVar11 = pcVar12 + -uVar9;
     pcVar12 = local_4a4;
     memmove(pcVar12, pcVar11, uVar9); /* compiler REP MOVS byte copy */
+    uVar10 = 0;
     pDVar3 = this_01->field_0686;
     if ((int)pDVar3->elementSize < 1) {
       pcVar11 = nullptr;

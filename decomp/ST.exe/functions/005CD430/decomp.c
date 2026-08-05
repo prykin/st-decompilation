@@ -11,9 +11,16 @@
 
    [STSwitchEnumApplier] Switch target field_1E26 uses
    /SubmarineTitans/Recovered/Enums/SettMapMTy_field_1E26State. Cases:
-   CASE_5=5;CASE_C=12;CASE_F=15;CASE_10=16 */
+   CASE_5=5;CASE_C=12;CASE_F=15;CASE_10=16
+   [STAbiConsistencyApplier] machine_thiscall_arity target=function:-1: prototype=undefined1
+   __thiscall PrepPlList(SettMapMTy * this) Evidence: every machine RET purges exactly 0 explicit
+   stack bytes; current signature describes 4; removed trailing parameter slots have no listing
+   references; ret_sites=005CD811 RET | 005CD85A RET
+   [STAbiConsistencyApplier] machine_thiscall_unsized_return_migration target=return:-1:
+   return=/undefined Evidence: legacy ABI applier materialized the unsized return as undefined1
+   while changing only function arity; restore Ghidra DefaultDataType */
 
-void __thiscall SettMapMTy::PrepPlList(SettMapMTy *this,int *param_1)
+void __thiscall SettMapMTy::PrepPlList(SettMapMTy *this)
 
 {
   char cVar1;
@@ -268,8 +275,7 @@ LAB_005cd675:
   }
 LAB_005cd7f2:
   SettMapTy::PaintSC((SettMapTy *)pSVar11);
-  /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-  (*(code *)pSVar11->field_0000->field_0020)();
+  pSVar11->vfunc_20();
   g_currentExceptionFrame = local_b8.previous;
   return;
   while( true ) {

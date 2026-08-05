@@ -63,7 +63,7 @@ target_address	status	proposed_name	detail
 0041F330	disabled		all apply flags are 0
 0041F350	disabled		all apply flags are 0
 0041F370	disabled		all apply flags are 0
-004210A0	disabled	STColl3C::vfunc_0	all apply flags are 0
+004210A0	disabled		all apply flags are 0
 004210C0	disabled		all apply flags are 0
 00422E20	disabled		all apply flags are 0
 00422FF0	disabled		all apply flags are 0
@@ -176,6 +176,35 @@ target_address	status	proposed_name	detail
 004DA340	disabled	TLOBaseTy::vfunc_44	all apply flags are 0
 004E3200	disabled	TLOBaseTy::vfunc_38	all apply flags are 0
 004EB600	disabled	TLOBaseTy::vfunc_48	all apply flags are 0
+004EDF30	disabled	BehPanelTy::ShiftControls	all apply flags are 0
+004EE0A0	disabled	BehPanelTy::Update	all apply flags are 0
+004EE4D0	disabled	BehPanelTy::GetMessage	all apply flags are 0
+004EFD10	disabled	BldLabPanelTy::Update	all apply flags are 0
+004F0210	disabled	BldLabPanelTy::GetMessage	all apply flags are 0
+00510370	disabled	FrmPanelTy::ShiftControls	all apply flags are 0
+005104B0	disabled	FrmPanelTy::Update	all apply flags are 0
+005107C0	disabled	FrmPanelTy::GetMessage	all apply flags are 0
+0051FBA0	disabled	HelpStringTy::GetMessage	all apply flags are 0
+005205E0	disabled	InfocPanelTy::ShiftControls	all apply flags are 0
+005206F0	disabled	InfocPanelTy::Update	all apply flags are 0
+00521490	disabled	InfocPanelTy::GetMessage	all apply flags are 0
+0052BF00	disabled	MoneyTy::GetMessage	all apply flags are 0
+0052DD20	disabled	PopUpTy::GetMessage	all apply flags are 0
+00533D10	disabled	OptPanelTy::GetMessage	all apply flags are 0
+00538690	disabled	PanelTy::CreateBut	all apply flags are 0
+005389E0	disabled	PanelTy::PaintBut	all apply flags are 0
+00538BA0	disabled	PanelTy::PaintTxtBut	all apply flags are 0
+00538DB0	disabled	PanelTy::PaintIBut	all apply flags are 0
+00538FC0	disabled	PanelTy::PaintLBut	all apply flags are 0
+005397F0	disabled	PausePanelTy::GetMessage	all apply flags are 0
+0053C490	disabled	ResearchPanelTy::ShiftControls	all apply flags are 0
+0053C500	disabled	ResearchPanelTy::Update	all apply flags are 0
+0053CA80	disabled	ResearchPanelTy::GetMessage	all apply flags are 0
+0053D290	disabled	SAMPanelTy::ShiftControls	all apply flags are 0
+0053D3B0	disabled	SAMPanelTy::Update	all apply flags are 0
+0053D4D0	disabled	SAMPanelTy::GetMessage	all apply flags are 0
+0053E920	disabled	SpecPanelTy::SetPanel	all apply flags are 0
+0053F780	disabled	ProdPanelTy::ShiftControls	all apply flags are 0
 00542480	disabled	InterSystemC::CreateSystemObjects	all apply flags are 0
 00542EC0	disabled	InterSystemC::DoneSystem	all apply flags are 0
 00542F40	disabled	InterSystemC::GetMessage	all apply flags are 0
@@ -185,6 +214,9 @@ target_address	status	proposed_name	detail
 0054D180	disabled	STPlaySystemC::DoneSystem	all apply flags are 0
 0054D640	disabled	STPlaySystemC::Life	all apply flags are 0
 0054E4F0	disabled	STPlaySystemC::GetMessage	all apply flags are 0
+00552AF0	disabled	UpgPanelTy::ShiftControls	all apply flags are 0
+00552BC0	disabled	UpgPanelTy::Update	all apply flags are 0
+00552E40	disabled	UpgPanelTy::GetMessage	all apply flags are 0
 005564C0	disabled	TraksClassTy::GetMessage	all apply flags are 0
 00558840	disabled	VisibleClassTy::GetMessage	all apply flags are 0
 0055BD40	disabled	CFsgsConnection::vfunc_58	all apply flags are 0
@@ -208,11 +240,13 @@ target_address	status	proposed_name	detail
 0055D630	disabled	CFsgsConnection::vfunc_44	all apply flags are 0
 0055D670	disabled	CFsgsConnection::vfunc_4C	all apply flags are 0
 0055D6B0	disabled	CFsgsConnection::vfunc_50	all apply flags are 0
+00566C20	disabled	SoundManagerTy::GetMessage	all apply flags are 0
 0056A820	disabled		all apply flags are 0
 0056ADC0	disabled	STAppC::InitApp	all apply flags are 0
 0056C750	disabled	STAppC::DoneApp	all apply flags are 0
 0056D1F0	disabled	STAppC::CommonFunction	all apply flags are 0
 0056FA60	disabled	STAppC::GetMessage	all apply flags are 0
+00575CB0	disabled	STAlgaC::GetMessage	all apply flags are 0
 00576AD0	disabled	BaseSystemC::CreateSystemObjects	all apply flags are 0
 00576E10	disabled	GameSystemC::CreateSystemObjects	all apply flags are 0
 00576EF0	disabled	GameSystemC::InitSystem	all apply flags are 0
@@ -254,48 +288,91 @@ target_address	status	proposed_name	detail
 0058E440	disabled	STSharkC::vfunc_DC	all apply flags are 0
 0058E530	disabled	STSharkC::vfunc_E0	all apply flags are 0
 00590150	disabled	STSharkC::vfunc_2C	all apply flags are 0
+005908B0	disabled	MAdvTy::GetMessage	all apply flags are 0
+00592470	disabled	CampaignTy::CloseButtons	all apply flags are 0
+00593040	disabled	CampaignTy::GetMessage	all apply flags are 0
+00594440	disabled	ComboTy::GetMessage	all apply flags are 0
+0059B740	disabled	FSGSTy::CloseButtons	all apply flags are 0
+005A4350	disabled	FSGSTy::GetMessage	all apply flags are 0
+005ADF10	disabled	ChooseMapTy::CloseButtons	all apply flags are 0
+005B0BA0	disabled	ChooseMapTy::GetMessage	all apply flags are 0
+005B3C30	disabled	MainMenuTy::CloseButtons	all apply flags are 0
+005B4BB0	disabled	MainMenuTy::GetMessage	all apply flags are 0
 005B6220	disabled	MMObjTy::DoneMMObj	all apply flags are 0
 005B6430	disabled	MMObjTy::GetMessage	all apply flags are 0
 005B6480	disabled	MMObjTy::CloseButtons	all apply flags are 0
 005BC5E0	disabled	PrividerTy::GetMessage	all apply flags are 0
+005C1A90	disabled	MReportTy::GetMessage	all apply flags are 0
+005C29B0	disabled	SettMapMTy::sub_005C29B0	all apply flags are 0
+005C4930	disabled	SettMapTy::DoneSettMap	all apply flags are 0
+005C5130	disabled	SettMapTy::NoneSettMap	all apply flags are 0
+005C5B60	disabled	SettMapTy::CloseButtons	all apply flags are 0
+005C5CA0	disabled	SettMapTy::vfunc_20	all apply flags are 0
+005C5EB0	disabled	SettMapTy::vfunc_24	all apply flags are 0
+005C6030	disabled	SettMapTy::CreateCtrls	all apply flags are 0
+005C6D40	disabled	SettMapTy::DeleteCtrls	all apply flags are 0
+005CBD00	disabled	SettMapMTy::InitSettMap	all apply flags are 0
+005CC2D0	disabled	SettMapMTy::DoneSettMap	all apply flags are 0
+005CC440	disabled	SettMapMTy::CreateCtrls	all apply flags are 0
+005CC840	disabled	SettMapMTy::DeleteCtrls	all apply flags are 0
+005CCC30	disabled	SettMapMTy::vfunc_20	all apply flags are 0
+005CCD00	disabled	SettMapMTy::vfunc_24	all apply flags are 0
+005CCE10	disabled	SettMapMTy::SetListCtrls	all apply flags are 0
+005CD430	disabled	SettMapMTy::PrepPlList	all apply flags are 0
+005CE0E0	disabled	SettMapMTy::NoneSettMap	all apply flags are 0
+005D1400	disabled	SettMapMTy::GetMessage	all apply flags are 0
+005D4E90	disabled	SettMapSTy::SetListCtrls	all apply flags are 0
+005D5160	disabled	SettMapSTy::PrepPlList	all apply flags are 0
+005D5560	disabled	SettMapSTy::GetMessage	all apply flags are 0
 005DCC10	disabled	StartSystemTy::InitSystem	all apply flags are 0
 005DCD90	disabled	StartSystemTy::CreateSystemObjects	all apply flags are 0
 005DCDB0	disabled	StartSystemTy::DoneSystem	all apply flags are 0
 005DCE90	disabled	StartSystemTy::GetMessage	all apply flags are 0
-005EE080	disabled	STSprGameObjC::vfunc_DC	all apply flags are 0
-005EE3F0	disabled	STSprGameObjC::vfunc_E0	all apply flags are 0
+005E9830	disabled	WaitTy::CloseButtons	all apply flags are 0
+005EA680	disabled	WaitTy::GetMessage	all apply flags are 0
+005EAF10	disabled	STArtiafactC::GetMessage	all apply flags are 0
+005EBD00	disabled	STArtiafactC::vfunc_124	all apply flags are 0
+005EC510	disabled	STArtiafactC::vfunc_74	all apply flags are 0
+005EC550	disabled	STArtiafactC::vfunc_70	all apply flags are 0
+005EC620	disabled	STArtiafactC::vfunc_13C	all apply flags are 0
+005EC640	disabled	STArtiafactC::vfunc_140	all apply flags are 0
+005EC680	disabled	STArtiafactC::vfunc_134	all apply flags are 0
+005EE080	disabled		all apply flags are 0
+005EE3F0	disabled		all apply flags are 0
 005EF430	disabled	STSprGameObjC::vfunc_124	all apply flags are 0
 005EF450	disabled	STSprGameObjC::vfunc_128	all apply flags are 0
 005EF470	disabled	STSprGameObjC::vfunc_144	all apply flags are 0
-005EF9F0	disabled	STSprGameObjC::vfunc_EC	all apply flags are 0
-005EFA10	disabled	STSprGameObjC::vfunc_78	all apply flags are 0
-005EFA30	disabled	STSprGameObjC::vfunc_7C	all apply flags are 0
-005EFA70	disabled	STSprGameObjC::vfunc_9C	all apply flags are 0
-005EFA90	disabled	STSprGameObjC::vfunc_A0	all apply flags are 0
-005EFAC0	disabled	STSprGameObjC::vfunc_A4	all apply flags are 0
-005EFAE0	disabled	STSprGameObjC::vfunc_A8	all apply flags are 0
-005EFB80	disabled	STSprGameObjC::vfunc_AC	all apply flags are 0
-005EFBD0	disabled	STSprGameObjC::vfunc_B0	all apply flags are 0
-005EFC40	disabled	STSprGameObjC::vfunc_B4	all apply flags are 0
-005EFCD0	disabled	STSprGameObjC::vfunc_B8	all apply flags are 0
-005F0030	disabled	STSprGameObjC::vfunc_BC	all apply flags are 0
-005F0050	disabled	STSprGameObjC::vfunc_F8	all apply flags are 0
-005F0090	disabled	STSprGameObjC::vfunc_F0	all apply flags are 0
-005F00B0	disabled	STSprGameObjC::vfunc_30	all apply flags are 0
-005F0150	disabled	STSprGameObjC::vfunc_34	all apply flags are 0
-005F0220	disabled	STSprGameObjC::vfunc_2C	all apply flags are 0
-005F0240	disabled	STSprGameObjC::vfunc_5C	all apply flags are 0
-005F0280	disabled	STSprGameObjC::vfunc_58	all apply flags are 0
-005F0360	disabled	STSprGameObjC::vfunc_12C	all apply flags are 0
-005F0380	disabled	STSprGameObjC::vfunc_C	all apply flags are 0
-005F03D0	disabled	STSprGameObjC::vfunc_130	all apply flags are 0
+005EF490	disabled	STArtiafactC::vfunc_128	all apply flags are 0
+005EF5D0	disabled	STArtiafactC::vfunc_144	all apply flags are 0
+005EF9F0	disabled		all apply flags are 0
+005EFA10	disabled		all apply flags are 0
+005EFA30	disabled		all apply flags are 0
+005EFA70	disabled		all apply flags are 0
+005EFA90	disabled		all apply flags are 0
+005EFAC0	disabled		all apply flags are 0
+005EFAE0	disabled		all apply flags are 0
+005EFB80	disabled		all apply flags are 0
+005EFBD0	disabled		all apply flags are 0
+005EFC40	disabled		all apply flags are 0
+005EFCD0	disabled		all apply flags are 0
+005F0030	disabled		all apply flags are 0
+005F0050	disabled		all apply flags are 0
+005F0090	disabled		all apply flags are 0
+005F00B0	disabled		all apply flags are 0
+005F0150	disabled		all apply flags are 0
+005F0220	disabled		all apply flags are 0
+005F0240	disabled		all apply flags are 0
+005F0280	disabled		all apply flags are 0
+005F0360	disabled		all apply flags are 0
+005F0380	disabled		all apply flags are 0
+005F03D0	disabled		all apply flags are 0
 005F03F0	disabled	STSprGameObjC::vfunc_134	all apply flags are 0
-005F0410	disabled	STSprGameObjC::vfunc_138	all apply flags are 0
+005F0410	disabled		all apply flags are 0
 005F0430	disabled	STSprGameObjC::vfunc_13C	all apply flags are 0
 005F0450	disabled	STSprGameObjC::vfunc_140	all apply flags are 0
-005F0470	disabled	STSprGameObjC::vfunc_114	all apply flags are 0
-005F04B0	disabled	STSprGameObjC::vfunc_118	all apply flags are 0
-005F0E20	disabled	STSprGameObjC::vfunc_28	all apply flags are 0
+005F0470	disabled		all apply flags are 0
+005F04B0	disabled		all apply flags are 0
+005F0E20	disabled		all apply flags are 0
 005F10D0	disabled	STManBasisC::GetMessage	all apply flags are 0
 005F27C0	disabled	STBHEShellC::GetMessage	all apply flags are 0
 005F5F20	disabled	STColl3C::GetMessage	all apply flags are 0
@@ -305,6 +382,18 @@ target_address	status	proposed_name	detail
 005FB540	disabled	STColl3C::vfunc_E0	all apply flags are 0
 005FB5C0	disabled	STColl3C::vfunc_EC	all apply flags are 0
 005FB5E0	disabled	STColl3C::vfunc_F8	all apply flags are 0
+005FB640	disabled	STContainerC::GetMessage	all apply flags are 0
+005FC450	disabled	STContainerC::vfunc_124	all apply flags are 0
+005FCC70	disabled	STContainerC::vfunc_74	all apply flags are 0
+005FCCB0	disabled	STContainerC::vfunc_70	all apply flags are 0
+005FCD80	disabled	STContainerC::vfunc_12C	all apply flags are 0
+005FCDA0	disabled	STContainerC::vfunc_130	all apply flags are 0
+005FCDC0	disabled	STContainerC::vfunc_134	all apply flags are 0
+005FCE30	disabled	STContainerC::vfunc_138	all apply flags are 0
+005FCE50	disabled	STContainerC::vfunc_13C	all apply flags are 0
+005FCE70	disabled	STContainerC::vfunc_140	all apply flags are 0
+005FD360	disabled	STContainerC::vfunc_128	all apply flags are 0
+005FD380	disabled	STContainerC::vfunc_144	all apply flags are 0
 00601F80	disabled	STDestC::GetMessage	all apply flags are 0
 00602700	disabled	STDestC::vfunc_74	all apply flags are 0
 00602740	disabled	STDestC::vfunc_70	all apply flags are 0
@@ -336,6 +425,8 @@ target_address	status	proposed_name	detail
 0062CCA0	disabled	STManRub3C::GetMessage	all apply flags are 0
 0062E740	disabled	STRubbishC::GetMessage	all apply flags are 0
 00630430	disabled	STManRuinC::GetMessage	all apply flags are 0
+006406D0	disabled	STTorpC::GetMessage	all apply flags are 0
+00643E20	disabled	STTorpC::vfunc_D8	all apply flags are 0
 006461E0	disabled	STVolcanoC::GetMessage	all apply flags are 0
 00647B40	disabled	AiBossClassTy::vfunc_18	all apply flags are 0
 00647B60	disabled		all apply flags are 0
@@ -364,3 +455,10 @@ target_address	status	proposed_name	detail
 006E5950	disabled		all apply flags are 0
 006E6130	disabled		all apply flags are 0
 006E6150	disabled		all apply flags are 0
+0071CF60	disabled	ButtonClassTy::vfunc_4	all apply flags are 0
+0071CF80	disabled	ButtonClassTy::vfunc_8	all apply flags are 0
+0071F230	disabled	ListClassTy::vfunc_4	all apply flags are 0
+0071F2B0	disabled	ListClassTy::vfunc_8	all apply flags are 0
+0071F2F0	disabled	ListClassTy::vfunc_C	all apply flags are 0
+00724D20	disabled	TrackbarClassTy::vfunc_4	all apply flags are 0
+00724D40	disabled	TrackbarClassTy::vfunc_8	all apply flags are 0

@@ -12,14 +12,11 @@ uint * __fastcall AiFltClassTy::sub_0065DA10(AiFltClassTy *param_1,undefined4 pa
 {
   STGroupBoatC *this;
   uint *puVar1;
-  /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
-  int in_stack_00000004;
 
   if ((param_1->field_007D != 0xfffe) && (g_allPlayers_007FA174 != nullptr)) {
     this = thunk_FUN_0042b760(*(char *)&param_1->field_0024,param_1->field_007D);
     if (this != nullptr) {
-      /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
-      puVar1 = STGroupC::GetGroupContent((STGroupC *)this,in_stack_00000004);
+      puVar1 = STGroupC::GetGroupContent((STGroupC *)this);
       return puVar1;
     }
   }

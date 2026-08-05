@@ -7,9 +7,17 @@
 
    [STSwitchEnumApplier] Switch target field_0065 uses
    /SubmarineTitans/Recovered/Enums/PrividerTy_field_0065State. Cases:
-   CASE_1=1;CASE_3=3;CASE_4=4;CASE_5=5 */
+   CASE_1=1;CASE_3=3;CASE_4=4;CASE_5=5
+   [STAbiConsistencyApplier] machine_thiscall_arity target=function:-1: prototype=undefined1
+   __thiscall NonePrivider(PrividerTy * this) Evidence: every machine RET purges exactly 0 explicit
+   stack bytes; current signature describes 4; removed trailing parameter slots have no listing
+   references; ret_sites=005BAF4D RET | 005BB0C1 RET | 005BB17F RET | 005BB561 RET | 005BB641 RET |
+   005BB65E RET | 005BB6A5 RET
+   [STAbiConsistencyApplier] machine_thiscall_unsized_return_migration target=return:-1:
+   return=/undefined Evidence: legacy ABI applier materialized the unsized return as undefined1
+   while changing only function arity; restore Ghidra DefaultDataType */
 
-void __thiscall PrividerTy::NonePrivider(PrividerTy *this,undefined4 *param_1)
+void __thiscall PrividerTy::NonePrivider(PrividerTy *this)
 
 {
   byte bVar1;

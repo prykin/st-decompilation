@@ -58,7 +58,7 @@ void __fastcall ST3DSMAPContext::sub_006E1050(ST3DSMAPContext *param_1)
   local_18 = ((float)local_8 + (float)_DAT_007901c0) * (float)param_1->field_00C8;
   local_10 = 0;
   local_14 = ((float)local_c + (float)_DAT_007901c0) * (float)param_1->field_00C8;
-  sub_006E25D0(param_1,&local_28);
+  sub_006E25D0(param_1,&local_28,&local_18,0.0,0.0,0.0,1);
   iVar3 = (local_28 >> 0x10) % param_1->field_02C0;
   param_1->field_02C8 = iVar3;
   if (iVar3 != 0) {

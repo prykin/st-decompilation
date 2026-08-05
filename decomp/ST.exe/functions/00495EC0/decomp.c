@@ -27,12 +27,8 @@ DumpClassC::WritePtr
     }
     return 0;
   }
-  if (g_worldGrid.cells
-      [(int)g_worldGrid.sizeX * (int)param_2 + (int)g_worldGrid.planeStride * (int)param_3 +
-       (int)param_1].objects[param_4] == nullptr) {
-    g_worldGrid.cells
-    [(int)g_worldGrid.sizeX * (int)param_2 + (int)g_worldGrid.planeStride * (int)param_3 +
-     (int)param_1].objects[param_4] = (STWorldObject *)param_5;
+  if (STGridAt3D(g_worldGrid, param_1, param_2, param_3).objects[param_4] == nullptr) {
+    STGridAt3D(g_worldGrid, param_1, param_2, param_3).objects[param_4] = (STWorldObject *)param_5;
     param_5->field_005F = param_3;
     param_5->field_005D = param_2;
     param_5->field_005B = param_1;

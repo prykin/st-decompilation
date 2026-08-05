@@ -46,8 +46,6 @@ void __thiscall OptPanelTy::SetOptControls(OptPanelTy *this)
   ushort *puVar19;
   OptPanelTy *this_00;
   char *pcVar20;
-  /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
-  void *unaff_EDI;
   char *pcVar21;
   char *pcVar22;
   SNDContext *pSVar23;
@@ -92,14 +90,14 @@ void __thiscall OptPanelTy::SetOptControls(OptPanelTy *this)
   undefined4 local_1034;
   undefined4 local_1030;
   undefined4 local_102c;
-  undefined4 local_101c;
+  ushort *local_101c;
   int local_1018;
   undefined4 local_fc4;
   int local_fc0 [4];
   undefined4 local_fb0;
   undefined4 local_fac;
   undefined4 local_f58;
-  undefined4 local_e9c;
+  ushort *local_e9c;
   int local_e98;
   undefined4 local_d80;
   undefined4 local_994;
@@ -137,7 +135,7 @@ void __thiscall OptPanelTy::SetOptControls(OptPanelTy *this)
   undefined4 local_540;
   undefined4 local_53c;
   undefined4 local_538;
-  undefined4 local_528;
+  ushort *local_528;
   int local_524;
   undefined4 local_4d0;
   undefined4 local_4cc;
@@ -153,7 +151,7 @@ void __thiscall OptPanelTy::SetOptControls(OptPanelTy *this)
   undefined4 local_3c0;
   undefined4 local_3bc;
   undefined4 local_3b8;
-  undefined4 local_3a8;
+  ushort *local_3a8;
   int local_3a4;
   undefined4 local_2ac;
   InternalExceptionFrame local_2a8;
@@ -811,6 +809,7 @@ cf_common_join_005305BC:
       pcVar8 = pcVar7 + -uVar38;
       pcVar7 = pcVar20 + -1;
       memmove(pcVar7, pcVar8, uVar38); /* compiler REP MOVS byte copy */
+      uVar18 = 0;
       uVar38 = 0xffffffff;
       pcVar8 = (char *)&DAT_00807ddd;
       do {
@@ -974,8 +973,7 @@ cf_common_join_005305BC:
       uVar38 = UPanelTy::CreateBut((UPanelTy *)this_00,0,1,0x78,0x7d,1,pCVar16,uVar15,uVar27,sVar28,
                                    uVar30,uVar34,pcVar8,uVar37,uVar40);
       this_00->field_01B5[2] = uVar38;
-      /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
-      PrepAsses(this_00,unaff_EDI);
+      PrepAsses(this_00);
     }
     else {
       pCVar16 = thunk_FUN_00571240("BUT_MEDIUM",0);

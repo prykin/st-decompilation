@@ -4,11 +4,15 @@
 /* [STMethodOwnerApplier] Structural method owner recovered as MTestTy.
    Evidence: this_call_owners=[MTestTy]; agreed_this_calls=1; incoming_this_accesses=6;
    incoming_edx_uses=0; incoming_stack_parameter_uses=0; direct_non_thunk_callers=0;
-   incoming_ecx_receiver_callers=0; attributed_named_callers=1; owner_evidence_coverage=adequate */
+   incoming_ecx_receiver_callers=0; attributed_named_callers=1; owner_evidence_coverage=adequate
 
-void __thiscall MTestTy::sub_005E5F60(MTestTy *this)
+   [STPrototypeApplier] Propagated return.
+   Evidence: 005E5F60 returns return of sub_006E60A0 @ 005E5F99 */
+
+int __thiscall MTestTy::sub_005E5F60(MTestTy *this)
 
 {
+  int iVar1;
 
   memset(&this->field_0x61, 0, 0x20); /* compiler bulk-zero initialization */
   /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
@@ -16,7 +20,7 @@ void __thiscall MTestTy::sub_005E5F60(MTestTy *this)
   this->field_006D = 0;
   this->field_0071 = 10;
   this->field_0075 = this->field_0008;
-  sub_006E60A0(this,(undefined4 *)&this->field_0x61);
-  return;
+  iVar1 = sub_006E60A0(this,(undefined4 *)&this->field_0x61);
+  return iVar1;
 }
 

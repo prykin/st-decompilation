@@ -17,14 +17,14 @@ MReportTy * __cdecl CreateMReport(void)
   this = (MReportTy *)FUN_006b04d0(0x45b);
   if (this != nullptr) {
     sub_006E5FB0(this);
-    *(undefined4 *)&this->field_0x18 = 0;
+    this->field_0018 = 0;
     this->field_005D = 0;
     memset(&this->field_0x1d, 0, 0x20); /* compiler bulk-zero initialization */
     iVar1 = 0;
     memset(&this->field_0x3d, 0, 0x20); /* compiler bulk-zero initialization */
     iVar1 = 0;
     DAT_0080879c = 0;
-    *(undefined **)this = &UNK_0079c0e4;
+    this->vtable = &MReportTyVTable;
     memset(&this->field_0x1d, 0, 0x20); /* compiler bulk-zero initialization */
     iVar1 = 0;
     memset(&this->field_0x3d, 0, 0x20); /* compiler bulk-zero initialization */
@@ -32,9 +32,9 @@ MReportTy * __cdecl CreateMReport(void)
     this->field_0065 = 2;
     this->field_0066 = 1;
     this->field_0073 = nullptr;
-    this->field_007B = 0;
+    this->field_007B = nullptr;
     this->field_0077 = nullptr;
-    this->field_006F = 0;
+    this->field_006F = nullptr;
     this->field_008B = nullptr;
     this->field_0087 = nullptr;
     this->field_0083 = nullptr;
@@ -53,7 +53,7 @@ MReportTy * __cdecl CreateMReport(void)
     this->field_006A = 0;
     this->field_006B = 0;
     this->field_0347 = nullptr;
-    *(undefined4 *)&this->field_0x34b = 0;
+    this->field_034B = 0;
     this->field_034F = 0;
     memset(&this->field_0353, 0, 0xfc); /* compiler bulk-zero initialization */
     this->field_044F = 0;

@@ -38,7 +38,7 @@ LAB_005fd4eb:
       if (puVar4[3] != 2) {
         puVar5 = (byte *)((int)this + 0x206);
         memmove(puVar5, puVar4, 0x2c); /* compiler REP MOVS byte copy */
-        puVar4 = (undefined4 *)((byte *)puVar4 + 0x2c);
+        puVar4 = puVar4 + 0xb;
         *(undefined4 *)((int)this + 0x22a) = DAT_007e65e4;
         iVar3 = thunk_FUN_005fd830();
         if (iVar3 != 0) {

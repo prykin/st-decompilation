@@ -265,7 +265,7 @@ LAB_005f79aa:
     break;
   case CASE_5:
     if (this->field_02EA != 0) {
-      (*this->vtable[8].vfunc_00)();
+      this->vfunc_20();
     }
     SVar4 = thunk_FUN_005f8d10((int *)this);
     this->field_02DD = SVar4;

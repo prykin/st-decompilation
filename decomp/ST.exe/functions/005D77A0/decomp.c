@@ -14,13 +14,14 @@ SettMapTy * __cdecl CreateSettMap(void)
   undefined4 *puVar2;
   SpriteClassTy *this_00;
   undefined4 *puVar3;
+  uint *puVar4;
   int local_8;
 
   this = (SettMapTy *)FUN_006b04d0(0x21fc);
   if (this != nullptr) {
     sub_006E5FB0(this);
-    this->field_0000 = (AnonPointee_SettMapTy_0000 *)&VTable_0079C018;
-    *(undefined4 *)&this->field_0x18 = 0;
+    this->vtable = (SettMapTyVTable *)&VTable_0079C018;
+    this->field_0018 = 0;
     this->field_005D = 0;
     memset(&this->field_0x1d, 0, 0x20); /* compiler bulk-zero initialization */
     iVar1 = 0;
@@ -36,9 +37,9 @@ SettMapTy * __cdecl CreateSettMap(void)
       this_00 = (SpriteClassTy *)&this_00[3].field_0048;
       local_8 = local_8 + -1;
     } while (local_8 != 0);
-    this->field_0000 = (AnonPointee_SettMapTy_0000 *)&MMObjTyVTable;
+    this->vtable = (SettMapTyVTable *)&MMObjTyVTable;
     this->field_0065 = 2;
-    this->field_0x9a = 0;
+    this->field_009A = 0;
     memset(&this->field_0x66, 0, 0x34); /* compiler bulk-zero initialization */
     iVar1 = 0;
     local_8 = 0xd;
@@ -65,25 +66,25 @@ SettMapTy * __cdecl CreateSettMap(void)
     memset(&this->field_0x2161, 0, 0x80); /* compiler bulk-zero initialization */
     iVar1 = 0;
     this->field_1E2F = nullptr;
-    this->field_1F43 = 0;
+    this->field_1F43 = nullptr;
     this->field_1F3F = nullptr;
-    this->field_1F4F = 0;
-    *(undefined4 *)&this->field_0x1f4b = 0;
+    this->field_1F4F = nullptr;
+    this->field_1F4B = 0;
     this->field_1F84 = nullptr;
     memset(&this->field_1F8C, 0, 0x140); /* compiler bulk-zero initialization */
     iVar1 = 0;
     this->field_211D = 0;
     this->field_1F88 = 0;
-    puVar2 = &this->field_20CC;
+    puVar4 = this->field_20CC;
     for (iVar1 = 10; iVar1 != 0; iVar1 = iVar1 + -1) {
-      *puVar2 = 0xffffffff;
-      puVar2 = puVar2 + 1;
+      *puVar4 = 0xffffffff;
+      puVar4 = puVar4 + 1;
     }
-    memset(&this->field_20F4, 0, 0x28); /* compiler bulk-zero initialization */
+    memset(this->field_20F4, 0, 0x28); /* compiler bulk-zero initialization */
     iVar1 = 0;
     this->field_1E1E = 0;
     this->field_1E22 = 0xffffffff;
-    memset(&this->field_2125, 0, 0x38); /* compiler bulk-zero initialization */
+    memset(this->field_2125, 0, 0x38); /* compiler bulk-zero initialization */
     iVar1 = 0;
     this->field_215D = 0;
     this->field_21F8 = nullptr;
@@ -95,14 +96,14 @@ SettMapTy * __cdecl CreateSettMap(void)
     this->field_1C67 = 0;
     this->field_1F47 = 0;
     this->field_1F7C = nullptr;
-    memset(&this->field_1F60, 0, 0x1c); /* compiler bulk-zero initialization */
+    memset(this->field_1F60, 0, 0x1c); /* compiler bulk-zero initialization */
     this->field_1F58 = 0;
     this->field_1F57 = 1;
     this->field_1F5D = 1;
     this->field_1F5E = 1;
     this->field_1F5F = 1;
     this->field_1F5C = 4;
-    this->field_0000 = (AnonPointee_SettMapTy_0000 *)&VTable_0079C160;
+    this->vtable = &SettMapTyVTable;
     return this;
   }
   return nullptr;

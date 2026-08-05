@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 undefined4 __fastcall FUN_00419a90(STFishC *param_1)
 
@@ -25,9 +27,7 @@ undefined4 __fastcall FUN_00419a90(STFishC *param_1)
       }
       else {
         pSVar2 = (STFishC *)
-                 g_worldGrid.cells
-                 [(int)g_worldGrid.planeStride * (int)local_a +
-                  (int)g_worldGrid.sizeX * (int)local_8 + (int)local_6].objects
+                 STGridAt3D(g_worldGrid, local_6, local_8, local_a).objects
                  [(byte)param_1->field_008E];
       }
       if (pSVar2 == param_1) {

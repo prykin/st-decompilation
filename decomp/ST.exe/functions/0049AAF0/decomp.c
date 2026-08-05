@@ -151,9 +151,7 @@ undefined4 __thiscall STGroupBoatC::GrpAttack(STGroupBoatC *this,int param_1)
                     pSVar12 = nullptr;
                   }
                   else {
-                    pSVar12 = g_worldGrid.cells
-                              [(int)g_worldGrid.sizeX * (int)sVar4 +
-                               (int)sVar5 + g_worldGrid.planeStride * iVar6].objects[0];
+                    pSVar12 = STGridAt3D(g_worldGrid, sVar5, sVar4, iVar6).objects[0];
                   }
                   if ((pSVar12 == nullptr) ||
                      (((iVar9 = pSVar12->value_20, iVar9 != 0x14 && (iVar9 != 1000)) &&
@@ -167,9 +165,7 @@ LAB_0049af27:
                       pSVar12 = nullptr;
                     }
                     else {
-                      pSVar12 = g_worldGrid.cells
-                                [(int)g_worldGrid.sizeX * (int)sVar5 +
-                                 (int)(short)local_c + g_worldGrid.planeStride * iVar6].objects[1];
+                      pSVar12 = STGridAt3D(g_worldGrid, local_c, sVar5, iVar6).objects[1];
                     }
                     if (((pSVar12 != nullptr) && (pSVar12->value_20 == 0x1ae)) &&
                        ((local_2c = *(byte *)&pSVar12[1].vtable, local_2c < 8 &&

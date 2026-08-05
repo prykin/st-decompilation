@@ -1,4 +1,4 @@
-FUN_00539aa0:
+CreatePlayPanel:
 00539AA0  53                        PUSH EBX
 00539AA1  56                        PUSH ESI
 00539AA2  68 E1 01 00 00            PUSH 0x1e1

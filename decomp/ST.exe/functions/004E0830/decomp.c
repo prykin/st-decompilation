@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* [STSwitchEnumApplier] Switch target field_05AC uses
    /SubmarineTitans/Recovered/Enums/TLOBaseTy_field_05ACState. Cases:
@@ -54,7 +56,8 @@ undefined4 __fastcall FUN_004e0830(TLOBaseTy *param_1)
   char *pcVar20;
   int *piVar21;
   char cVar22;
-  undefined4 uVar23;
+  undefined2 uVar23;
+  undefined4 uVar24;
 
   if (param_1->field_04D0 == CASE_1) {
     if (*(int *)&param_1->field_01F5->field_0x1a4 == *(int *)&param_1->field_01F5->field_0x1a0) {
@@ -68,19 +71,19 @@ undefined4 __fastcall FUN_004e0830(TLOBaseTy *param_1)
 switchD_004e08b2_caseD_39:
             pTVar9 = param_1->vtable;
             iVar5 = LookupRecordByte(*(char *)&param_1->field_023D);
-            (*pTVar9->vfunc_90)(param_1,3,(-(uint)((char)iVar5 != '\x02') & 0xffffff3a) + 0x2e9);
+            (*pTVar9->vfunc_90)(param_1,3,(-(ushort)((char)iVar5 != '\x02') & 0xff3a) + 0x2e9);
             break;
           case CASE_3B:
 switchD_004e08b2_caseD_3b:
             pTVar9 = param_1->vtable;
             iVar5 = LookupRecordByte(*(char *)&param_1->field_023D);
-            (*pTVar9->vfunc_90)(param_1,3,(-(uint)((char)iVar5 != '\x02') & 0xffffff3a) + 0x2f6);
+            (*pTVar9->vfunc_90)(param_1,3,(-(ushort)((char)iVar5 != '\x02') & 0xff3a) + 0x2f6);
             break;
           case CASE_4F:
 switchD_004e08b2_caseD_4f:
             pTVar9 = param_1->vtable;
             iVar5 = LookupRecordByte(*(char *)&param_1->field_023D);
-            (*pTVar9->vfunc_90)(param_1,3,(-(uint)((char)iVar5 != '\x02') & 0xffffff32) + 0x34f);
+            (*pTVar9->vfunc_90)(param_1,3,(-(ushort)((char)iVar5 != '\x02') & 0xff32) + 0x34f);
             break;
           case CASE_5E:
 switchD_004e08b2_caseD_5e:
@@ -110,7 +113,7 @@ LAB_004e0a1f:
           case CASE_52:
             pTVar9 = param_1->vtable;
             iVar5 = LookupRecordByte(*(char *)&param_1->field_023D);
-            (*pTVar9->vfunc_90)(param_1,3,(-(uint)((char)iVar5 != '\x02') & 0xffffff3b) + 0x35c);
+            (*pTVar9->vfunc_90)(param_1,3,(-(ushort)((char)iVar5 != '\x02') & 0xff3b) + 0x35c);
             break;
           case CASE_5E:
             goto switchD_004e08b2_caseD_5e;
@@ -163,9 +166,7 @@ LAB_004e0a4f:
             if (((sVar4 < 0) || (g_worldGrid.sizeX <= sVar4)) ||
                ((sVar12 = (short)uVar11, sVar12 < 0 ||
                 ((((g_worldGrid.sizeY <= sVar12 || (sVar13 < 0)) || (g_worldGrid.sizeZ <= sVar13))
-                 || (g_worldGrid.cells
-                     [(int)sVar12 * (int)g_worldGrid.sizeX +
-                      (int)g_worldGrid.planeStride * (int)sVar13 + (int)sVar4].objects[0] ==
+                 || (STGridAt3D(g_worldGrid, sVar4, sVar12, sVar13).objects[0] ==
                      nullptr)))))) {
               param_1->field_04E0[4] = uVar7;
               iVar5 = param_1->field_05B8;
@@ -188,7 +189,7 @@ LAB_004e0a4f:
               if (param_1->field_05AC == CASE_52) {
                 pTVar9 = param_1->vtable;
                 iVar5 = LookupRecordByte(*(char *)&param_1->field_023D);
-                (*pTVar9->vfunc_90)(param_1,3,(-(uint)((char)iVar5 != '\x02') & 0xffffff3b) + 0x35e);
+                (*pTVar9->vfunc_90)(param_1,3,(-(ushort)((char)iVar5 != '\x02') & 0xff3b) + 0x35e);
                 goto switchD_004e0aad_default;
               }
               if (param_1->field_05AC != CASE_5F) goto switchD_004e0aad_default;
@@ -225,7 +226,7 @@ LAB_004e0a4f:
     piVar21 = param_1->field_0018;
     uVar11 = param_1->field_04E0[6];
     uVar19 = param_1->field_04E0[5];
-    uVar23 = 0x5a;
+    uVar24 = 0x5a;
     uVar7 = param_1->field_04E0[4];
     pcVar20 = nullptr;
     uVar18 = (ushort)param_1->field_04E0[9];
@@ -237,7 +238,7 @@ LAB_004e0a4f:
     param_1->field_04E0[3] = 0;
     uVar8 = LookupRecordByte(cVar22);
     thunk_FUN_005fd1b0(param_1->field_0024,uVar8 & 0xff,uVar14,uVar15,uVar16,uVar17,uVar18,uVar7,
-                       uVar19,uVar11,pcVar20,piVar21,uVar23);
+                       uVar19,uVar11,pcVar20,piVar21,uVar24);
     if (param_1->field_0024 == (byte *)(uint)(byte)param_1->field_0010->field_112D) {
       thunk_FUN_0052af50(0,(float)param_1->field_01F9,(float)param_1->field_01FD);
       uVar10 = LookupRecordByte(*(char *)&param_1->field_0024);
@@ -296,7 +297,7 @@ LAB_004e0f14:
     pTVar9 = param_1->vtable;
 LAB_004e0e15:
     iVar5 = LookupRecordByte(cVar22);
-    (*pTVar9->vfunc_90)(param_1,3,(-(uint)((char)iVar5 != '\x02') & 0xffffff3b) + 0x35f);
+    (*pTVar9->vfunc_90)(param_1,3,(-(ushort)((char)iVar5 != '\x02') & 0xff3b) + 0x35f);
   }
 switchD_004e0aad_default:
   if ((param_1->field_05AC == CASE_61) && (param_1->field_04E0[0] != 0)) {

@@ -14,8 +14,6 @@ uint * __cdecl _GetStaffGrpExch(undefined4 param_1)
   STGroupBoatC *this;
   uint *puVar2;
   int iVar3;
-  /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
-  int unaff_ESI;
   InternalExceptionFrame local_4c;
   uint *local_8;
 
@@ -40,8 +38,7 @@ uint * __cdecl _GetStaffGrpExch(undefined4 param_1)
     this = thunk_FUN_0042b760((char)param_1,0);
   }
   if (this != nullptr) {
-    /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
-    puVar2 = STGroupC::GetGroupContent((STGroupC *)this,unaff_ESI);
+    puVar2 = STGroupC::GetGroupContent((STGroupC *)this);
     g_currentExceptionFrame = local_4c.previous;
     return puVar2;
   }

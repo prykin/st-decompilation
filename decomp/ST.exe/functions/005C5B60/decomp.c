@@ -22,8 +22,7 @@ void __thiscall SettMapTy::CloseButtons(SettMapTy *this)
   this_00 = local_8;
   if (errorCode == 0) {
     MMObjTy::CloseButtons((MMObjTy *)local_8);
-    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-    (*(code *)this_00->field_0000->field_001C)();
+    this_00->DeleteCtrls();
     if (this_00->field_0x21e4 != '\0') {
       if (g_startSystem_0081176C->field_02FC != 0xffffffff) {
         Library::DKW::DDX::FUN_006b34d0

@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* [STMethodOwnerApplier] Structural method owner recovered as STFishC.
    Evidence: this_call_owners=[STFishC]; agreed_this_calls=1; incoming_this_accesses=7;
@@ -240,16 +242,12 @@ cf_continue_loop_0057DBE9:
         (((sVar1 < 0 || (g_worldGrid.sizeX <= sVar1)) ||
          ((sVar12 < 0 ||
           ((((g_worldGrid.sizeY <= sVar12 || (sVar13 < 0)) || (g_worldGrid.sizeZ <= sVar13)) ||
-           (g_worldGrid.cells
-            [(int)sVar12 * (int)g_worldGrid.sizeX + (int)g_worldGrid.planeStride * (int)sVar13 +
-             (int)sVar1].objects[0] == nullptr)))))))) &&
+           (STGridAt3D(g_worldGrid, sVar1, sVar12, sVar13).objects[0] == nullptr)))))))) &&
        (((sVar1 < 0 || (g_worldGrid.sizeX <= sVar1)) ||
         ((sVar12 < 0 ||
          (((g_worldGrid.sizeY <= sVar12 || (sVar13 < 0)) ||
           ((g_worldGrid.sizeZ <= sVar13 ||
-           (g_worldGrid.cells
-            [(int)sVar12 * (int)g_worldGrid.sizeX + (int)g_worldGrid.planeStride * (int)sVar13 +
-             (int)sVar1].objects[1] == nullptr)))))))))) {
+           (STGridAt3D(g_worldGrid, sVar1, sVar12, sVar13).objects[1] == nullptr)))))))))) {
       *param_1 = uVar10;
       *param_2 = uVar9;
       *param_3 = local_18;

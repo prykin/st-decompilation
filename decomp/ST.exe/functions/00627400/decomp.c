@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* [STMethodOwnerApplier] Structural method owner recovered as STMineSetC.
    Evidence: this_call_owners=[STMineSetC]; agreed_this_calls=1; incoming_this_accesses=8;
@@ -21,15 +23,11 @@ undefined4 __thiscall STMineSetC::sub_00627400(STMineSetC *this,undefined4 param
      (((g_worldGrid.sizeY <= sVar2 || (sVar3 < 0)) ||
       ((g_worldGrid.sizeZ <= sVar3 ||
        (this_00 = (STFishC *)
-                  g_worldGrid.cells
-                  [(int)g_worldGrid.planeStride * (int)sVar3 + (int)g_worldGrid.sizeX * (int)sVar2 +
-                   (int)sVar1].objects[(byte)this->field_008E], this_00 == nullptr)))))) {
+                  STGridAt3D(g_worldGrid, sVar1, sVar2, sVar3).objects[(byte)this->field_008E], this_00 == nullptr)))))) {
     if ((((((sVar1 < 0) || (g_worldGrid.sizeX <= sVar1)) || (sVar2 < 0)) ||
          ((g_worldGrid.sizeY <= sVar2 || (sVar3 < 0)))) ||
         ((g_worldGrid.sizeZ <= sVar3 ||
-         (g_worldGrid.cells
-          [(int)g_worldGrid.planeStride * (int)sVar3 + (int)g_worldGrid.sizeX * (int)sVar2 +
-           (int)sVar1].objects[(byte)this->field_008E] == nullptr)))) &&
+         (STGridAt3D(g_worldGrid, sVar1, sVar2, sVar3).objects[(byte)this->field_008E] == nullptr)))) &&
        (iVar4 = DumpClassC::WritePtr
                           (sVar1,sVar2,sVar3,this->field_008E,
                            (RecoveredRecord_DumpClassC_00495EC0 *)this), iVar4 == 0)) {

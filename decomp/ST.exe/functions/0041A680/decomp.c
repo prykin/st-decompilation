@@ -3,9 +3,16 @@
 
 /* Recovered from embedded debug metadata:
    E:\__titans\wlad\Tc_gobj.cpp
-   STGameObjC::ResetSelfCheckFlag */
+   STGameObjC::ResetSelfCheckFlag
+   [STAbiConsistencyApplier] machine_thiscall_arity target=function:-1: prototype=undefined1
+   __thiscall ResetSelfCheckFlag(STGameObjC * this) Evidence: every machine RET purges exactly 0
+   explicit stack bytes; current signature describes 4; removed trailing parameter slots have no
+   listing references; ret_sites=0041A82B RET | 0041A86A RET | 0041AA54 RET
+   [STAbiConsistencyApplier] machine_thiscall_unsized_return_migration target=return:-1:
+   return=/undefined Evidence: legacy ABI applier materialized the unsized return as undefined1
+   while changing only function arity; restore Ghidra DefaultDataType */
 
-void __thiscall STGameObjC::ResetSelfCheckFlag(STGameObjC *this,int param_1)
+void __thiscall STGameObjC::ResetSelfCheckFlag(STGameObjC *this)
 
 {
   uint uVar1;

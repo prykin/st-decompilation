@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* [STAbiConsistencyApplier] full_eax_return: return=/int Evidence: all observed callers consume
    full EAX (47), none consume AL/AX, and every RET path defines full EAX; sites=0040AE40 @ 0040B0E7
@@ -100,9 +102,7 @@ int FUN_00497920(RecoveredRecord_STBoatC_0040AE40 *param_1,int param_2,int param
   if ((((-1 < sVar5) && (sVar5 < g_worldGrid.sizeX)) && (sVar4 = (short)param_3, -1 < sVar4)) &&
      (((sVar4 < g_worldGrid.sizeY && (sVar3 = (short)param_4, -1 < sVar3)) &&
       ((sVar3 < g_worldGrid.sizeZ &&
-       (this = g_worldGrid.cells
-               [(int)g_worldGrid.planeStride * (int)sVar3 + (int)g_worldGrid.sizeX * (int)sVar4 +
-                (int)sVar5].objects[0], this != nullptr)))))) {
+       (this = STGridAt3D(g_worldGrid, sVar5, sVar4, sVar3).objects[0], this != nullptr)))))) {
     if (((this[1].vtable != (STWorldObjectVTable *)param_1->field_0024) ||
         (*(short *)&this[1].field_0xc != param_1->field_0030)) ||
        (*(int *)((int)&this[7].vtable + 1) == 1)) {

@@ -17,11 +17,10 @@ int __thiscall FrmPanelTy::GetMessage(FrmPanelTy *this,STMessage *message)
   int iVar2;
   LPSTR pCVar3;
   int iVar4;
-  AnonPointee_FrmPanelTy_0000 *pAVar5;
+  FrmPanelTyVTable *pFVar5;
   char *pcVar6;
   code *pcVar7;
   undefined4 uVar8;
-  undefined4 uVar9;
   InternalExceptionFrame local_60;
   uint local_1c [4];
   undefined2 local_c;
@@ -66,7 +65,7 @@ int __thiscall FrmPanelTy::GetMessage(FrmPanelTy *this,STMessage *message)
           }
           else {
             if (SVar1 == MESS_FRMPANELTY_B109) {
-              pAVar5 = this_00->field_0000;
+              pFVar5 = this_00->vtable;
               pcVar6 = "BUT_FINC";
               goto LAB_00510902;
             }
@@ -101,7 +100,7 @@ cf_common_exit_005109A5:
           g_currentExceptionFrame = local_60.previous;
           return 0;
         }
-        pAVar5 = this_00->field_0000;
+        pFVar5 = this_00->vtable;
         pcVar6 = "BUT_FDEC";
       }
       else {
@@ -110,11 +109,11 @@ cf_common_exit_005109A5:
         case MESS_CPANELTY_B10E:
           goto cf_common_exit_005109A5;
         case MESS_CPANELTY_B10D:
-          pAVar5 = this_00->field_0000;
+          pFVar5 = this_00->vtable;
           pcVar6 = "BUT_FRLFT";
           break;
         case 0xb10f:
-          pAVar5 = this_00->field_0000;
+          pFVar5 = this_00->vtable;
           pcVar6 = "BUT_FRRT";
           break;
         default:
@@ -122,44 +121,42 @@ cf_common_exit_005109A5:
         }
       }
 LAB_00510902:
-      uVar8 = 1;
-      uVar9 = 0;
+      iVar4 = 1;
+      iVar2 = 0;
       pcVar7 = thunk_FUN_0052a080;
       pCVar3 = thunk_FUN_00571240(pcVar6,0);
-      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-      (*(code *)pAVar5->field_0008)(message,6,pCVar3,pcVar7,uVar9,uVar8);
+      (*pFVar5->PaintBut)((PanelTy *)this_00,(int)message,6,pCVar3,pcVar7,iVar2,iVar4);
       g_currentExceptionFrame = local_60.previous;
       return 0;
     }
     switch(SVar1) {
     case MESS_SHARED_C09F:
-      uVar9 = 1;
+      uVar8 = 1;
       break;
     case MESS_BEHPANELTY_C0A0:
-      uVar9 = 3;
+      uVar8 = 3;
       break;
     case MESS_FSGSTY_C0A1:
-      uVar9 = 6;
+      uVar8 = 6;
       break;
     case MESS_SHARED_C0A2:
-      uVar9 = 7;
+      uVar8 = 7;
       break;
     case MESS_SHARED_C0A3:
-      uVar9 = 2;
+      uVar8 = 2;
       break;
     case MESS_BLDLABPANELTY_C0A4:
-      uVar9 = 4;
+      uVar8 = 4;
       break;
     case MESS_FRMPANELTY_C0A5:
-      uVar9 = 5;
+      uVar8 = 5;
       break;
     default:
       goto switchD_00510930_default;
     }
-    CursorClassTy::sub_0054B630(g_cursorClass_00802A30,0x4e,uVar9);
-/* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+    CursorClassTy::sub_0054B630(g_cursorClass_00802A30,0x4e,uVar8);
 switchD_00510930_default:
-    (*(code *)this_00->field_0000->field_001C)(0);
+    (*this_00->vtable->SetPanel)((SpecPanelTy *)this_00,'\0');
     thunk_FUN_005252c0(0xae);
     g_currentExceptionFrame = local_60.previous;
     return 0;

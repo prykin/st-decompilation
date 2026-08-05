@@ -138,7 +138,7 @@ joined_r0x00676ef3:
 LAB_00676efc:
             if (local_10 == 0) goto LAB_00677024;
             if ((param_4 != nullptr) && (*param_4 != 0)) {
-              (*this->vtable->vfunc_74)(local_2c);
+              (*this->vtable->vfunc_74)((short)local_2c);
               pbVar11 = local_2c;
               pbVar8 = param_4;
               do {

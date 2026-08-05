@@ -1,8 +1,13 @@
 
-void __thiscall FUN_00647d90(void *this,undefined4 param_1,undefined4 param_2,undefined4 *param_3)
+/* [STPrototypeApplier] Propagated return.
+   Evidence: 00647D90 returns return of FUN_006e6000 @ 00647DA8 */
+
+int __thiscall FUN_00647d90(void *this,undefined4 param_1,undefined4 param_2,undefined4 *param_3)
 
 {
-  FUN_006e6000((void *)((int)this + -0x1c),param_1,param_2,param_3);
-  return;
+  int iVar1;
+
+  iVar1 = FUN_006e6000((void *)((int)this + -0x1c),param_1,param_2,param_3);
+  return iVar1;
 }
 

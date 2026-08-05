@@ -12,9 +12,16 @@
 
    [STSwitchEnumApplier] Switch target field_0257 uses
    /SubmarineTitans/Recovered/Enums/STSharkC_field_0257State. Cases:
-   CASE_0=0;CASE_1=1;CASE_2=2;CASE_3=3;CASE_4=4;CASE_5=5;CASE_6=6;CASE_7=7 */
+   CASE_0=0;CASE_1=1;CASE_2=2;CASE_3=3;CASE_4=4;CASE_5=5;CASE_6=6;CASE_7=7
+   [STAbiConsistencyApplier] machine_thiscall_arity target=function:-1: prototype=undefined1
+   __thiscall LifeShark(STSharkC * this) Evidence: every machine RET purges exactly 0 explicit stack
+   bytes; current signature describes 4; removed trailing parameter slots have no listing
+   references; ret_sites=0058E9F8 RET | 0058ECB0 RET
+   [STAbiConsistencyApplier] machine_thiscall_unsized_return_migration target=return:-1:
+   return=/undefined Evidence: legacy ABI applier materialized the unsized return as undefined1
+   while changing only function arity; restore Ghidra DefaultDataType */
 
-void __thiscall STSharkC::LifeShark(STSharkC *this,int *param_1)
+void __thiscall STSharkC::LifeShark(STSharkC *this)
 
 {
   undefined4 *this_00;
@@ -122,9 +129,7 @@ LAB_0058ea68:
              ((-1 < sVar3 && ((sVar3 < g_worldGrid.sizeY && (-1 < sVar2)))))) &&
             (sVar2 < g_worldGrid.sizeZ)) &&
            ((((pSVar8 = (STGameObjC *)
-                        g_worldGrid.cells
-                        [(int)g_worldGrid.planeStride * (int)sVar2 +
-                         (int)g_worldGrid.sizeX * (int)sVar3 + (int)sVar1].objects[0],
+                        STGridAt3D(g_worldGrid, sVar1, sVar3, sVar2).objects[0],
               local_8 = pSVar8, pSVar8 != nullptr &&
               (STFishC::sub_004162B0
                          ((STFishC *)pSVar8,&this->field_0231,&this->field_0233,&this->field_0235),
@@ -170,9 +175,7 @@ LAB_0058ea68:
       }
       else {
         local_8 = (STGameObjC *)
-                  g_worldGrid.cells
-                  [(int)g_worldGrid.planeStride * (int)sVar1 + (int)g_worldGrid.sizeX * (int)sVar2 +
-                   (int)sVar3].objects[0];
+                  STGridAt3D(g_worldGrid, sVar3, sVar2, sVar1).objects[0];
       }
       if (((this->field_0047 != sVar3) || (this->field_0049 != sVar2)) ||
          ((this->field_004B != sVar1 ||

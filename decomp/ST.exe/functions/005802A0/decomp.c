@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* [STMethodOwnerApplier] Structural method owner recovered as STResourceC.
    Evidence: this_call_owners=[STResourceC]; agreed_this_calls=1; incoming_this_accesses=3;
@@ -22,9 +24,7 @@ void __thiscall STResourceC::sub_005802A0(STResourceC *this,int param_1,int para
     }
     else {
       pAVar4 = (AnonShape_004E0250_5A3B9236 *)
-               g_worldGrid.cells
-               [(int)g_worldGrid.planeStride * (int)sVar2 + (int)g_worldGrid.sizeX * (int)sVar3 +
-                (int)sVar1].objects[0];
+               STGridAt3D(g_worldGrid, sVar1, sVar3, sVar2).objects[0];
     }
     if (pAVar4->field_0018 == this->field_0269) {
       thunk_FUN_004e0250(pAVar4);

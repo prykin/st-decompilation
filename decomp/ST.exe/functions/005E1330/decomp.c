@@ -1806,12 +1806,12 @@ LAB_005e195d:
           puVar12 = (uint *)Library::Ourlib::MFWAV::mfWavLoad
                                       (this_01->field_0070,(char *)((int)element_0074 + 0x2d),0,
                                        nullptr);
-          *(uint **)&this_01->field_0x85 = puVar12;
+          this_01->field_0085 = puVar12;
           if (puVar12 == nullptr) {
             puVar12 = (uint *)Library::Ourlib::MFWAV::mfWavLoad
                                         (g_cMf32_00806798,(char *)((int)element_0074 + 0x2d),0,
                                          nullptr);
-            *(uint **)&this_01->field_0x85 = puVar12;
+            this_01->field_0085 = puVar12;
             if (puVar12 == nullptr) {
               /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
               in_stack_ffffffdc = (DDXContext_008075A8 *)0x5e1cab;

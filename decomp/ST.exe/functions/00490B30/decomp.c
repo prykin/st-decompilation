@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 void __thiscall
 FUN_00490b30(void *this,AnonShape_00490B30_6CCF6294 *param_1,short param_2,uint param_3)
@@ -26,9 +28,7 @@ FUN_00490b30(void *this,AnonShape_00490B30_6CCF6294 *param_1,short param_2,uint 
     else {
       /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
       param_1 = (AnonShape_00490B30_6CCF6294 *)
-                g_worldGrid.cells
-                [(int)g_worldGrid.planeStride * (int)sVar2 + (int)g_worldGrid.sizeX * (int)sVar3 +
-                 (int)sVar1].objects[0];
+                STGridAt3D(g_worldGrid, sVar1, sVar3, sVar2).objects[0];
     }
     if ((((param_1 != nullptr) &&
          (param_1->field_0018 == *(int *)((int)this + 0x7f4))) ||

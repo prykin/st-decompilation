@@ -7,9 +7,16 @@
 
    [STSwitchEnumApplier] Switch target field_0267 uses
    /SubmarineTitans/Recovered/Enums/STFishC_field_0267State. Cases:
-   CASE_E7=231;CASE_E8=232;CASE_E9=233;CASE_EA=234;CASE_EB=235 */
+   CASE_E7=231;CASE_E8=232;CASE_E9=233;CASE_EA=234;CASE_EB=235
+   [STAbiConsistencyApplier] machine_thiscall_arity target=function:-1: prototype=undefined1
+   __thiscall LifeFish(STFishC * this) Evidence: every machine RET purges exactly 0 explicit stack
+   bytes; current signature describes 4; removed trailing parameter slots have no listing
+   references; ret_sites=0057CFB3 RET | 0057D2AB RET
+   [STAbiConsistencyApplier] machine_thiscall_unsized_return_migration target=return:-1:
+   return=/undefined Evidence: legacy ABI applier materialized the unsized return as undefined1
+   while changing only function arity; restore Ghidra DefaultDataType */
 
-void __thiscall STFishC::LifeFish(STFishC *this,int *param_1)
+void __thiscall STFishC::LifeFish(STFishC *this)
 
 {
   undefined4 *this_00;

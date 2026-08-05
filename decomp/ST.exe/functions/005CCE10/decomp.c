@@ -78,7 +78,7 @@ void __thiscall SettMapMTy::SetListCtrls(SettMapMTy *this)
     local_18 = 0;
     uVar10 = local_8;
     do {
-      if ((&pSVar5->field_0000)[uVar10 + local_18] != nullptr) {
+      if ((&pSVar5->vtable)[uVar10 + local_18] != nullptr) {
         pSVar3 = pSVar5->field_1F84;
         if ((pSVar3 == nullptr) ||
            (uVar9 = pSVar5->field_1F88 + local_10, pSVar3->count <= uVar9)) {
@@ -89,7 +89,7 @@ void __thiscall SettMapMTy::SetListCtrls(SettMapMTy *this)
           pcVar11 = &pSVar3->data->field_0000 + pSVar3->elementSize * uVar9;
         }
         SVar1 = pSVar5->field_1E26;
-        pSVar5->field_0025 = (&pSVar5->field_0000)[uVar10 + local_18];
+        pSVar5->field_0025 = (&pSVar5->vtable)[uVar10 + local_18];
         pSVar5->field_0031 = 0;
         if (((SVar1 != CASE_C) && (SVar1 != CASE_10)) && (pcVar11 != nullptr)) {
           switch(local_18) {

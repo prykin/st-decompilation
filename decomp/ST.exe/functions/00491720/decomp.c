@@ -32,8 +32,8 @@ void __fastcall FUN_00491720(STBoatC *param_1,undefined4 param_2)
     local_1c = 0x5dd3;
     if ((*ppuVar1 == nullptr) &&
        (iVar3 = STPlaySystemC::sub_006E62D0
-                          (g_playSystem_00802A38,(AnonShape_005EFAE0_B406B78B *)param_1->field_05A2,
-                           (int *)ppuVar1), iVar3 == -4)) {
+                          (g_playSystem_00802A38,param_1->field_05A2,(int *)ppuVar1), iVar3 == -4))
+    {
       RaiseInternalException
                 (-4,g_overwriteContext_007ED77C,"E:\\__titans\\wlad\\To_boat.cpp",0x501f);
     }

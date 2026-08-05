@@ -28,7 +28,7 @@ int __thiscall FUN_00605b60(void *this,uint param_1,uint param_2,int *param_3,in
   uint local_54;
   uint local_50;
   int local_4c;
-  int local_48;
+  uint local_48;
   int local_44;
   undefined4 local_40;
   byte local_37;

@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* [STPrototypeApplier] Propagated parameter 1.
    Evidence: 0048D650 parameter used as this of STFishC::sub_004162B0 @ 0048D671
@@ -30,9 +32,7 @@ int __thiscall FUN_0048d650(void *this,STFishC *param_1)
       if ((((sVar1 < 0) || (g_worldGrid.sizeX <= sVar1)) || (sVar4 < 0)) ||
          (((g_worldGrid.sizeY <= sVar4 || (sVar3 < 0)) ||
           ((g_worldGrid.sizeZ <= sVar3 ||
-           (g_worldGrid.cells
-            [(int)g_worldGrid.planeStride * (int)sVar3 + (int)g_worldGrid.sizeX * (int)sVar4 +
-             (int)sVar1].objects[0] == nullptr)))))) {
+           (STGridAt3D(g_worldGrid, sVar1, sVar4, sVar3).objects[0] == nullptr)))))) {
         iVar2 = FUN_006aadd0((int)*(short *)((int)this + 0x47),(int)*(short *)((int)this + 0x49),
                              (int)*(short *)((int)this + 0x4b),(short)param_1 + local_10,
                              local_8[0] + iVar5,local_c[0] + 1);

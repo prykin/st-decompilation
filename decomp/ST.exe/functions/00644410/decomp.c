@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* [STHiddenThisApplier] Anonymous hidden receiver recovered as
    /SubmarineTitans/Recovered/HiddenThis/AnonReceiver_00644410.
@@ -165,9 +167,7 @@ SubmarineTitans::Recovered::HiddenThis::AnonReceiver_00644410::FUN_00644410
                       iVar6 = local_20;
                       if (((((undefined4 *)iVar12 == local_30) && (local_1c == local_28)) &&
                           (iVar5 == local_24)) &&
-                         ((g_pathingGrid.cells
-                           [g_pathingGrid.planeStride * iVar12 +
-                            iVar5 + g_pathingGrid.sizeX * local_1c] < 0 &&
+                         ((STGridAt3D(g_pathingGrid, iVar5, local_1c, iVar12) < 0 &&
                           (this_00 == nullptr)))) {
                         *param_1 = 1;
                         local_10->field_0270 = 0;
@@ -234,15 +234,9 @@ SubmarineTitans::Recovered::HiddenThis::AnonReceiver_00644410::FUN_00644410
                           iVar4 = (int)(short)((sVar2 / 0xc9 + (sVar2 >> 0xf)) -
                                               (short)((longlong)local_38 * 0x28c1979 >> 0x3f));
                         }
-                        if (-1 < g_pathingGrid.cells
-                                 [iVar7 * g_pathingGrid.planeStride +
-                                  iVar4 + iVar10 * g_pathingGrid.sizeX]) {
-                          if (g_pathingGrid.cells
-                              [iVar12 * g_pathingGrid.planeStride +
-                               iVar3 + iVar5 * g_pathingGrid.sizeX] ==
-                              g_pathingGrid.cells
-                              [iVar7 * g_pathingGrid.planeStride +
-                               iVar4 + iVar10 * g_pathingGrid.sizeX]) {
+                        if (-1 < STGridAt3D(g_pathingGrid, iVar4, iVar10, iVar7)) {
+                          if (STGridAt3D(g_pathingGrid, iVar3, iVar5, iVar12) ==
+                              STGridAt3D(g_pathingGrid, iVar4, iVar10, iVar7)) {
                             return;
                           }
                           iVar5 = local_38 - local_20;
@@ -287,9 +281,7 @@ SubmarineTitans::Recovered::HiddenThis::AnonReceiver_00644410::FUN_00644410
                             }
                             iVar7 = iVar6;
                             iVar10 = iVar12;
-                            if (g_pathingGrid.cells
-                                [local_2c * g_pathingGrid.planeStride +
-                                 iVar3 + iVar5 * g_pathingGrid.sizeX] < 0) {
+                            if (STGridAt3D(g_pathingGrid, iVar3, iVar5, local_2c) < 0) {
                               /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
                               param_1 = local_18;
                               iVar7 = local_38;
@@ -340,9 +332,7 @@ SubmarineTitans::Recovered::HiddenThis::AnonReceiver_00644410::FUN_00644410
                             iVar3 = (int)(short)(((short)(iVar6 / 0xc9) + sVar2) -
                                                 (short)((longlong)iVar6 * 0x28c1979 >> 0x3f));
                           }
-                          if (g_pathingGrid.cells
-                              [(int)param_1 * (int)g_pathingGrid.planeStride +
-                               iVar3 + iVar5 * g_pathingGrid.sizeX] < 0) {
+                          if (STGridAt3D(g_pathingGrid, iVar3, iVar5, param_1) < 0) {
                             iVar6 = local_38;
                             local_18 = local_30;
                             iVar12 = local_34;

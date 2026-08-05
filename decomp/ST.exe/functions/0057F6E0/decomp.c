@@ -25,8 +25,6 @@ int __thiscall STDcResourcC::CreateRes(STDcResourcC *this)
   int iVar9;
   int iVar10;
   int iVar11;
-  /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
-  uint unaff_EDI;
   int iVar12;
   byte bVar13;
   InternalExceptionFrame local_5c;
@@ -69,9 +67,7 @@ int __thiscall STDcResourcC::CreateRes(STDcResourcC *this)
         else {
           pSVar6 = (STT3DSprC *)&this_00->field_01D5;
         }
-        /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
-        if ((3 < local_14) &&
-           (pSVar6 = (STT3DSprC *)Init(this_00,unaff_EDI), pSVar6 == nullptr))
+        if ((3 < local_14) && (pSVar6 = (STT3DSprC *)Init(this_00), pSVar6 == nullptr))
         goto cf_break_loop_0057FAA5;
         bVar13 = 0x1d;
         pcVar7 = (char *)sub_0057F3A0(this_00,local_c,0);
@@ -113,9 +109,7 @@ int __thiscall STDcResourcC::CreateRes(STDcResourcC *this)
         else {
           pSVar6 = (STT3DSprC *)&this_00->field_01D5;
         }
-        /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
-        if ((3 < local_14) &&
-           (pSVar6 = (STT3DSprC *)Init(this_00,unaff_EDI), pSVar6 == nullptr))
+        if ((3 < local_14) && (pSVar6 = (STT3DSprC *)Init(this_00), pSVar6 == nullptr))
         goto cf_break_loop_0057FAA5;
         bVar13 = 0x1d;
         pcVar7 = (char *)sub_0057F2E0(this_00,local_c,0);
@@ -160,9 +154,7 @@ int __thiscall STDcResourcC::CreateRes(STDcResourcC *this)
         else {
           pSVar6 = (STT3DSprC *)&this_00->field_01D5;
         }
-        /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
-        if ((iVar5 < 0) ||
-           (pSVar6 = (STT3DSprC *)Init(this_00,unaff_EDI), pSVar6 != nullptr)) {
+        if ((iVar5 < 0) || (pSVar6 = (STT3DSprC *)Init(this_00), pSVar6 != nullptr)) {
           bVar13 = 0x1d;
           pcVar7 = (char *)sub_0057F470(this_00,iVar5,0);
           iVar10 = STT3DSprC::LoadSequence(pSVar6,0xe,DAT_00806774,pcVar7,bVar13);
@@ -214,9 +206,7 @@ LAB_0057fc59:
         pSVar8 = nullptr;
       }
       else {
-        pSVar8 = g_worldGrid.cells
-                 [(int)g_worldGrid.planeStride * (int)sVar2 + (int)g_worldGrid.sizeX * (int)sVar3 +
-                  (int)sVar1].objects[0];
+        pSVar8 = STGridAt3D(g_worldGrid, sVar1, sVar3, sVar2).objects[0];
       }
       if (pSVar8 == nullptr) {
         sub_005805C0(this_00);

@@ -17,8 +17,6 @@ void __thiscall HelpPanelTy::NextBut(HelpPanelTy *this)
   int *piVar5;
   int iVar6;
   uint uVar7;
-  /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
-  int unaff_EDI;
   InternalExceptionFrame local_4c;
   HelpPanelTy *local_8;
 
@@ -62,44 +60,37 @@ void __thiscall HelpPanelTy::NextBut(HelpPanelTy *this)
       switch((char)piVar5[2]) {
       case '\x01':
         RCProc(local_8,(int)pvVar3,uVar7,'\0');
-        /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
-        PutToSHlp(this_00,unaff_EDI);
+        PutToSHlp(this_00);
         g_currentExceptionFrame = local_4c.previous;
         return;
       case '\x02':
         ObjProc(local_8,(int)pvVar3,uVar7,'\0');
-        /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
-        PutToSHlp(this_00,unaff_EDI);
+        PutToSHlp(this_00);
         g_currentExceptionFrame = local_4c.previous;
         return;
       case '\x03':
         SubProc(local_8,(int)pvVar3,'\0');
-        /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
-        PutToSHlp(this_00,unaff_EDI);
+        PutToSHlp(this_00);
         g_currentExceptionFrame = local_4c.previous;
         return;
       case '\x04':
         ArmProc(local_8,(int)pvVar3,uVar7,'\0');
-        /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
-        PutToSHlp(this_00,unaff_EDI);
+        PutToSHlp(this_00);
         g_currentExceptionFrame = local_4c.previous;
         return;
       case '\x05':
         TechProc(local_8,(uint)pvVar3,(byte)uVar7,'\0');
-        /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
-        PutToSHlp(this_00,unaff_EDI);
+        PutToSHlp(this_00);
         g_currentExceptionFrame = local_4c.previous;
         return;
       case '\x06':
         TTreeProc(local_8,(uint)pvVar3,'\0');
-        /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
-        PutToSHlp(this_00,unaff_EDI);
+        PutToSHlp(this_00);
         g_currentExceptionFrame = local_4c.previous;
         return;
       case '\a':
         MObjProc(local_8);
-        /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
-        PutToSHlp(this_00,unaff_EDI);
+        PutToSHlp(this_00);
         g_currentExceptionFrame = local_4c.previous;
         return;
       case '\b':
@@ -107,25 +98,21 @@ void __thiscall HelpPanelTy::NextBut(HelpPanelTy *this)
         break;
       case '\n':
         IndexBut(local_8);
-        /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
-        PutToSHlp(this_00,unaff_EDI);
+        PutToSHlp(this_00);
         g_currentExceptionFrame = local_4c.previous;
         return;
       case '\v':
         SpecProc(local_8,(int)pvVar3,uVar7,'\0');
-        /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
-        PutToSHlp(this_00,unaff_EDI);
+        PutToSHlp(this_00);
         g_currentExceptionFrame = local_4c.previous;
         return;
       case '\f':
         NatProc(local_8,(int)pvVar3,'\0');
-        /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
-        PutToSHlp(this_00,unaff_EDI);
+        PutToSHlp(this_00);
         g_currentExceptionFrame = local_4c.previous;
         return;
       }
-      /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
-      PutToSHlp(this_00,unaff_EDI);
+      PutToSHlp(this_00);
       g_currentExceptionFrame = local_4c.previous;
       return;
     }

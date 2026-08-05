@@ -378,9 +378,10 @@ public class STExportRegressionGate extends GhidraScript {
                 if (!pathMatcher.find()) continue;
                 String typePath = unescape(pathMatcher.group(1));
                 Matcher sourceMatcher = VTABLE_SOURCE.matcher(line);
-                String tableIdentity = sourceMatcher.find() ?
-                    "table:" + sourceMatcher.group(1).toUpperCase(Locale.ROOT) :
-                    "path:" + typePath;
+                String tableAddress = sourceMatcher.find() ?
+                    sourceMatcher.group(1).toUpperCase(Locale.ROOT) : "";
+                String tableIdentity = tableAddress.isBlank() ?
+                    "path:" + typePath : "table:" + tableAddress;
                 if (typePath.endsWith("DispatchVTable") &&
                         result.dispatchVtableIdentities.add(tableIdentity))
                     result.dispatchVtables++;
@@ -389,7 +390,15 @@ public class STExportRegressionGate extends GhidraScript {
                     String type = unescape(component.group(3));
                     // Physical table address + byte offset is stable across deterministic
                     // generated type/field renames; those names are presentation, not identity.
-                    String key = tableIdentity + "@" + component.group(1);
+                    int componentOffset = Integer.parseInt(component.group(1));
+                    // A newly proven vptr store may split one formerly concatenated
+                    // generated table into several physical tables.  The byte address of
+                    // the pointer slot survives that repartitioning; table-name-plus-offset
+                    // does not.  Keep path identity only for legacy descriptions which have
+                    // no source address.
+                    String key = tableAddress.isBlank() ?
+                        tableIdentity + "@" + componentOffset :
+                        physicalSlotIdentity(tableAddress, componentOffset);
                     String previous = result.vtableSlots.put(key, type);
                     if (previous == null) {
                         if (isRecoveredFunctionPointer(type)) result.typedVtableSlots++;
@@ -426,6 +435,16 @@ public class STExportRegressionGate extends GhidraScript {
     private boolean isRecoveredFunctionPointer(String type) {
         return type.contains("/SubmarineTitans/Recovered/VTableFunctions/") ||
             type.contains("/SubmarineTitans/Recovered/IndirectCallFunctions/");
+    }
+
+    private String physicalSlotIdentity(String tableAddress, int offset) {
+        if (tableAddress == null || tableAddress.isBlank()) return "";
+        try {
+            long value = Long.parseUnsignedLong(tableAddress, 16) +
+                Integer.toUnsignedLong(offset);
+            return "slot:" + String.format(Locale.ROOT, "%08X", value);
+        }
+        catch (NumberFormatException exception) { return ""; }
     }
 
     private String terminalTarget(String address, CorpusMetrics metrics) {

@@ -3,14 +3,19 @@
 
 /* Recovered from embedded debug metadata:
    E:\__titans\wlad\Tc_gobj.cpp
-   STGameObjC::MoveStep */
+   STGameObjC::MoveStep
+   [STAbiConsistencyApplier] machine_thiscall_arity target=function:-1: prototype=undefined4
+   __thiscall MoveStep(STGameObjC * this) Evidence: every machine RET purges exactly 0 explicit
+   stack bytes; current signature describes 4; removed trailing parameter slots have no listing
+   references; ret_sites=004189ED RET | 004189FE RET | 00418ABB RET | 00418B0E RET | 00418B7E RET |
+   00418BE6 RET | 00418C26 RET | 00418C3F RET */
 
-undefined4 __thiscall STGameObjC::MoveStep(STGameObjC *this,int *param_1)
+undefined4 __thiscall STGameObjC::MoveStep(STGameObjC *this)
 
 {
-  ushort uVar1;
-  int iVar2;
-  int iVar3;
+  ushort *puVar1;
+  ushort uVar2;
+  ushort *puVar3;
   code *pcVar4;
   int iVar5;
   uint uVar6;
@@ -61,15 +66,15 @@ undefined4 __thiscall STGameObjC::MoveStep(STGameObjC *this,int *param_1)
                                (short)local_c,(short)local_8);
     if (uVar6 != 0xffffffff) {
       if (uVar6 == 1) {
-        iVar2 = this->field_009B;
-        iVar3 = this->field_0097;
-        iVar5 = iVar3 + iVar2 * 8;
+        iVar5 = this->field_009B;
+        puVar3 = this->field_0097;
+        puVar1 = puVar3 + iVar5 * 4;
         /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-        local_10 = CONCAT22((short)((uint)iVar2 >> 0x10),*(undefined2 *)(iVar3 + -8 + iVar2 * 8));
+        local_10 = CONCAT22((short)((uint)iVar5 >> 0x10),puVar3[iVar5 * 4 + -4]);
         /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-        local_c = CONCAT22((short)((uint)iVar3 >> 0x10),*(undefined2 *)(iVar5 + -6));
+        local_c = CONCAT22((short)((uint)puVar3 >> 0x10),puVar1[-3]);
         /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-        local_8 = CONCAT22((short)((uint)iVar5 >> 0x10),*(undefined2 *)(iVar5 + -4));
+        local_8 = CONCAT22((short)((uint)puVar1 >> 0x10),puVar1[-2]);
         this->field_00E4 = 0;
         this->field_00E3 = 0;
         sub_004167A0(this);
@@ -86,9 +91,9 @@ undefined4 __thiscall STGameObjC::MoveStep(STGameObjC *this,int *param_1)
           return 2;
         }
       }
-      uVar1 = *(ushort *)(this->field_0097 + 6 + this->field_00D3 * 8);
-      if (((uVar1 & 0xfff) != 0xffe) && (uVar1 != this->field_006C)) {
-        thunk_FUN_00417740(this,this->field_006C,uVar1);
+      uVar2 = this->field_0097[this->field_00D3 * 4 + 3];
+      if (((uVar2 & 0xfff) != 0xffe) && (uVar2 != this->field_006C)) {
+        thunk_FUN_00417740(this,this->field_006C,uVar2);
       }
       thunk_FUN_004168b0((int)this);
       return 0;

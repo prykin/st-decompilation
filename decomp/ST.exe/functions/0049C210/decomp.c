@@ -336,9 +336,7 @@ undefined4 __thiscall STGroupBoatC::GrpLoadRC(STGroupBoatC *this,int param_1)
                 pSVar9 = nullptr;
               }
               else {
-                pSVar9 = g_worldGrid.cells
-                         [(int)local_78[2] * (int)g_worldGrid.planeStride +
-                          (int)local_78[1] * (int)g_worldGrid.sizeX + (int)local_78[0]].objects[0];
+                pSVar9 = STGridAt3D(g_worldGrid, local_78[0], local_78[1], local_78[2]).objects[0];
               }
               if (((pSVar9 != nullptr) && (*(int *)&pSVar9->field_0x18 == local_72)) &&
                  (iVar2 = (*pSVar9->vtable[2].slots_00_28[10])(&local_1c), 0 < iVar2)) break;
@@ -352,9 +350,7 @@ undefined4 __thiscall STGroupBoatC::GrpLoadRC(STGroupBoatC *this,int param_1)
               pSVar9 = nullptr;
             }
             else {
-              pSVar9 = g_worldGrid.cells
-                       [(int)local_6a * (int)g_worldGrid.planeStride +
-                        (int)local_6c * (int)g_worldGrid.sizeX + (int)local_6e].objects[0];
+              pSVar9 = STGridAt3D(g_worldGrid, local_6e, local_6c, local_6a).objects[0];
             }
             if ((pSVar9 != nullptr) && (*(int *)&pSVar9->field_0x18 == local_68))
             break;

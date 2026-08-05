@@ -57,9 +57,7 @@ int __thiscall STBoatC::Annih(STBoatC *this,undefined4 *param_1)
     if (((((sVar14 < 0) || (g_worldGrid.sizeX <= sVar14)) || (sVar15 < 0)) ||
         ((g_worldGrid.sizeY <= sVar15 || (sVar16 < 0)))) ||
        ((g_worldGrid.sizeZ <= sVar16 ||
-        (pSVar2 = g_worldGrid.cells
-                  [(int)sVar16 * (int)g_worldGrid.planeStride + (int)sVar15 * (int)g_worldGrid.sizeX
-                   + (int)sVar14].objects[0], pSVar2 == nullptr)))) {
+        (pSVar2 = STGridAt3D(g_worldGrid, sVar14, sVar15, sVar16).objects[0], pSVar2 == nullptr)))) {
 LAB_0047d831:
       sub_004952E0(this);
       return 0;
@@ -190,9 +188,7 @@ LAB_0047d831:
           if (((((-1 < sVar14) && (sVar14 < g_worldGrid.sizeX)) && (-1 < sVar16)) &&
               ((sVar16 < g_worldGrid.sizeY && (-1 < sVar15)))) &&
              ((sVar15 < g_worldGrid.sizeZ &&
-              ((pSVar2 = g_worldGrid.cells
-                         [(int)sVar15 * (int)g_worldGrid.planeStride +
-                          (int)sVar16 * (int)g_worldGrid.sizeX + (int)sVar14].objects[0],
+              ((pSVar2 = STGridAt3D(g_worldGrid, sVar14, sVar16, sVar15).objects[0],
                pSVar2 != nullptr && (*(int *)&pSVar2->field_0x18 == this->field_0697)))
               ))) {
             iVar9 = (*pSVar2->vtable[5].slots_00_28[2])();
@@ -223,9 +219,7 @@ LAB_0047d241:
       if ((((-1 < sVar14) && (sVar14 < g_worldGrid.sizeX)) &&
           ((-1 < sVar16 &&
            (((sVar16 < g_worldGrid.sizeY && (-1 < sVar15)) && (sVar15 < g_worldGrid.sizeZ)))))) &&
-         ((pSVar2 = g_worldGrid.cells
-                    [(int)sVar15 * (int)g_worldGrid.planeStride +
-                     (int)sVar16 * (int)g_worldGrid.sizeX + (int)sVar14].objects[0],
+         ((pSVar2 = STGridAt3D(g_worldGrid, sVar14, sVar16, sVar15).objects[0],
           pSVar2 != nullptr && (*(int *)&pSVar2->field_0x18 == this->field_0697)))) {
         iVar9 = (*pSVar2->vtable[5].slots_00_28[2])();
         if (iVar9 == 1) {
@@ -261,9 +255,7 @@ LAB_0047d241:
       if ((((-1 < sVar14) && (sVar14 < g_worldGrid.sizeX)) &&
           ((-1 < sVar16 &&
            (((sVar16 < g_worldGrid.sizeY && (-1 < sVar15)) && (sVar15 < g_worldGrid.sizeZ)))))) &&
-         ((pSVar2 = g_worldGrid.cells
-                    [(int)sVar15 * (int)g_worldGrid.planeStride +
-                     (int)sVar16 * (int)g_worldGrid.sizeX + (int)sVar14].objects[0],
+         ((pSVar2 = STGridAt3D(g_worldGrid, sVar14, sVar16, sVar15).objects[0],
           pSVar2 != nullptr && (*(int *)&pSVar2->field_0x18 == this->field_0697)))) {
         iVar9 = (*pSVar2->vtable[5].slots_00_28[2])();
         if (iVar9 == 1) {

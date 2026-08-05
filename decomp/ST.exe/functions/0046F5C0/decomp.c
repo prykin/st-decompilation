@@ -81,9 +81,7 @@ int __thiscall STBoatC::ToDok(STBoatC *this,int param_1)
     if (g_worldGrid.sizeZ <= sVar19) {
       return 0;
     }
-    pSVar16 = g_worldGrid.cells
-              [(int)sVar19 * (int)g_worldGrid.planeStride + (int)sVar21 * (int)g_worldGrid.sizeX +
-               (int)sVar14].objects[0];
+    pSVar16 = STGridAt3D(g_worldGrid, sVar14, sVar21, sVar19).objects[0];
     if (pSVar16 == nullptr) {
       return 0;
     }
@@ -133,9 +131,7 @@ cf_common_exit_00470E32:
         pSVar16 = nullptr;
       }
       else {
-        pSVar16 = g_worldGrid.cells
-                  [(int)sVar19 * (int)g_worldGrid.planeStride + (int)sVar21 * (int)g_worldGrid.sizeX
-                   + (int)sVar14].objects[0];
+        pSVar16 = STGridAt3D(g_worldGrid, sVar14, sVar21, sVar19).objects[0];
       }
       iVar6 = sub_00490570(this);
       if (iVar6 != 1) {
@@ -186,9 +182,7 @@ LAB_0046f888:
         if ((((((-1 < sVar14) && (sVar14 < g_worldGrid.sizeX)) && (-1 < sVar21)) &&
              ((sVar21 < g_worldGrid.sizeY && (-1 < sVar19)))) &&
             ((sVar19 < g_worldGrid.sizeZ &&
-             ((pSVar16 = g_worldGrid.cells
-                         [(int)sVar19 * (int)g_worldGrid.planeStride +
-                          (int)sVar21 * (int)g_worldGrid.sizeX + (int)sVar14].objects[0],
+             ((pSVar16 = STGridAt3D(g_worldGrid, sVar14, sVar21, sVar19).objects[0],
               pSVar16 != nullptr &&
               (iVar6 = pSVar16->GetObjectTypeId(), iVar6 == 0x33)))))) &&
            (pSVar16[1].vtable == (STWorldObjectVTable *)this->field_0024))
@@ -241,9 +235,7 @@ cf_error_exit_00470C46:
           ((-1 < sVar21 && ((sVar21 < g_worldGrid.sizeY && (-1 < sVar19)))))) &&
          ((sVar19 < g_worldGrid.sizeZ &&
           (((pSVar17 = (STFishC *)
-                       g_worldGrid.cells
-                       [(int)sVar19 * (int)g_worldGrid.planeStride +
-                        (int)sVar21 * (int)g_worldGrid.sizeX + (int)sVar14].objects[0],
+                       STGridAt3D(g_worldGrid, sVar14, sVar21, sVar19).objects[0],
             pSVar17 != nullptr &&
             (dVar7 = pSVar17->slot_2C(), dVar7 == 0x33)) &&
            (pSVar17->field_0024 == this->field_0024)))))) {
@@ -286,9 +278,7 @@ LAB_0046fd3e:
           if ((((-1 < sVar14) && (sVar14 < g_worldGrid.sizeX)) &&
               ((-1 < sVar21 && ((sVar21 < g_worldGrid.sizeY && (-1 < sVar19)))))) &&
              ((sVar19 < g_worldGrid.sizeZ &&
-              ((((pSVar16 = g_worldGrid.cells
-                            [(int)sVar19 * (int)g_worldGrid.planeStride +
-                             (int)sVar21 * (int)g_worldGrid.sizeX + (int)sVar14].objects[0],
+              ((((pSVar16 = STGridAt3D(g_worldGrid, sVar14, sVar21, sVar19).objects[0],
                  pSVar16 != nullptr &&
                  (iVar6 = pSVar16->GetObjectTypeId(), iVar6 == 0x33)) &&
                 (*(int *)&pSVar16[0x21].field_0x10 == 0)) &&
@@ -317,9 +307,7 @@ LAB_0046fd3e:
              (((sVar21 < 0 || ((g_worldGrid.sizeY <= sVar21 || (sVar19 < 0)))) ||
               ((g_worldGrid.sizeZ <= sVar19 ||
                (((pSVar17 = (STFishC *)
-                            g_worldGrid.cells
-                            [(int)sVar19 * (int)g_worldGrid.planeStride +
-                             (int)sVar21 * (int)g_worldGrid.sizeX + (int)sVar14].objects[0],
+                            STGridAt3D(g_worldGrid, sVar14, sVar21, sVar19).objects[0],
                  pSVar17 == nullptr ||
                  (dVar7 = pSVar17->slot_2C(), dVar7 != 0x33)) ||
                 (pSVar17->field_0024 != this->field_0024)))))))) goto LAB_004700a6;
@@ -337,9 +325,7 @@ LAB_0046fd3e:
              ((sVar21 < 0 || ((g_worldGrid.sizeY <= sVar21 || (sVar19 < 0)))))) ||
             (g_worldGrid.sizeZ <= sVar19)) ||
            (((pSVar17 = (STFishC *)
-                        g_worldGrid.cells
-                        [(int)sVar19 * (int)g_worldGrid.planeStride +
-                         (int)sVar21 * (int)g_worldGrid.sizeX + (int)sVar14].objects[0],
+                        STGridAt3D(g_worldGrid, sVar14, sVar21, sVar19).objects[0],
              pSVar17 == nullptr ||
              (dVar7 = pSVar17->slot_2C(), dVar7 != 0x33)) ||
             (pSVar17->field_0024 != this->field_0024)))) {
@@ -501,9 +487,7 @@ LAB_004707ad:
       if ((((-1 < sVar14) && (sVar14 < g_worldGrid.sizeX)) && (-1 < sVar21)) &&
          (((sVar21 < g_worldGrid.sizeY && (-1 < sVar19)) &&
           ((sVar19 < g_worldGrid.sizeZ &&
-           ((pSVar16 = g_worldGrid.cells
-                       [(int)sVar19 * (int)g_worldGrid.planeStride +
-                        (int)sVar21 * (int)g_worldGrid.sizeX + (int)sVar14].objects[0],
+           ((pSVar16 = STGridAt3D(g_worldGrid, sVar14, sVar21, sVar19).objects[0],
             pSVar16 != nullptr && (*(int *)&pSVar16->field_0x18 == this->field_055A))))
           )))) {
         if (g_playSystem_00802A38->field_00E4 == this->field_0574 + this->field_0578) {
@@ -729,9 +713,7 @@ LAB_004707ad:
     if ((((sVar14 < 0) || (g_worldGrid.sizeX <= sVar14)) || (sVar21 < 0)) ||
        (((g_worldGrid.sizeY <= sVar21 || (sVar19 < 0)) ||
         ((g_worldGrid.sizeZ <= sVar19 ||
-         ((pSVar16 = g_worldGrid.cells
-                     [(int)sVar19 * (int)g_worldGrid.planeStride +
-                      (int)sVar21 * (int)g_worldGrid.sizeX + (int)sVar14].objects[0],
+         ((pSVar16 = STGridAt3D(g_worldGrid, sVar14, sVar21, sVar19).objects[0],
           pSVar16 == nullptr || (*(int *)&pSVar16->field_0x18 != this->field_055A))))))
        )) {
 cf_common_exit_00470B14:
@@ -794,9 +776,7 @@ cf_common_exit_00470B14:
     if (((((((sVar14 < 0) || (g_worldGrid.sizeX <= sVar14)) || (sVar21 < 0)) ||
           ((g_worldGrid.sizeY <= sVar21 || (sVar19 < 0)))) || (g_worldGrid.sizeZ <= sVar19)) ||
         ((pSVar17 = (STFishC *)
-                    g_worldGrid.cells
-                    [(int)sVar19 * (int)g_worldGrid.planeStride +
-                     (int)sVar21 * (int)g_worldGrid.sizeX + (int)sVar14].objects[0],
+                    STGridAt3D(g_worldGrid, sVar14, sVar21, sVar19).objects[0],
          pSVar17 == nullptr || (dVar7 = pSVar17->slot_2C(), dVar7 != 0x33))
         )) || (pSVar17->field_0024 != this->field_0024)) goto LAB_0046fd37;
     iVar6 = thunk_FUN_004e1eb0(pSVar17,(int)this->field_0041,(int)this->field_0043,

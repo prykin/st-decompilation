@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* [STPrototypeApplier] Propagated parameter 0.
    Evidence: 0046B100 -> 0048DCF0 @ 0046B225; STBoatC::Build this; stable alias ESI | 0046B100 ->
@@ -32,9 +34,7 @@ bool __fastcall FUN_0048dcf0(STBoatC *param_1)
         if ((((sVar3 < 0) || (g_worldGrid.sizeX <= sVar3)) ||
             ((sVar2 < 0 ||
              (((g_worldGrid.sizeY <= sVar2 || (sVar1 < 0)) || (g_worldGrid.sizeZ <= sVar1)))))) ||
-           (g_worldGrid.cells
-            [(int)g_worldGrid.planeStride * (int)sVar1 + (int)g_worldGrid.sizeX * (int)sVar2 +
-             (int)sVar3].objects[0] == nullptr)) {
+           (STGridAt3D(g_worldGrid, sVar3, sVar2, sVar1).objects[0] == nullptr)) {
           iVar4 = FUN_006aadd0((int)param_1->field_0047,(int)param_1->field_0049,
                                (int)param_1->field_004B,param_1->field_04DD + local_8,
                                param_1->field_04DF + iVar5,param_1->field_04E1 + 1);
@@ -54,9 +54,7 @@ bool __fastcall FUN_0048dcf0(STBoatC *param_1)
   if ((((-1 < sVar1) && (sVar1 < g_worldGrid.sizeX)) && (-1 < sVar3)) &&
      (((sVar3 < g_worldGrid.sizeY && (-1 < sVar2)) &&
       ((sVar2 < g_worldGrid.sizeZ &&
-       (g_worldGrid.cells
-        [(int)g_worldGrid.planeStride * (int)sVar2 + (int)g_worldGrid.sizeX * (int)sVar3 +
-         (int)sVar1].objects[0] != nullptr)))))) {
+       (STGridAt3D(g_worldGrid, sVar1, sVar3, sVar2).objects[0] != nullptr)))))) {
     return false;
   }
   return true;

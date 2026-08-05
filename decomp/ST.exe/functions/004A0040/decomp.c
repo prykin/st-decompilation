@@ -84,9 +84,7 @@ undefined4 __thiscall STGroupBoatC::GrpDismant(STGroupBoatC *this,int param_1)
     }
     else {
       pAVar15 = (AnonShape_004B9D90_4F3151F9 *)
-                g_worldGrid.cells
-                [(int)g_worldGrid.planeStride * (int)sVar2 + (int)g_worldGrid.sizeX * (int)sVar3 +
-                 (int)sVar1].objects[0];
+                STGridAt3D(g_worldGrid, sVar1, sVar3, sVar2).objects[0];
     }
     if (((pAVar15 == nullptr) || (*(int *)&pAVar15->field_0x20 != 1000))
        || ((*(int *)&pAVar15->field_0x24 != (int)pSVar6->field_0024 ||

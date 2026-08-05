@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 undefined4 __thiscall
 FUN_005797b0(void *this,undefined2 *param_1,undefined2 *param_2,undefined2 *param_3)
@@ -243,9 +245,7 @@ switchD_0057988b_default:
                (((((sVar4 < 0 || (g_worldGrid.sizeX <= sVar4)) || ((short)local_8 < 0)) ||
                  ((g_worldGrid.sizeY <= (short)local_8 || (local_10 < 0)))) ||
                 ((g_worldGrid.sizeZ <= local_10 ||
-                 (g_worldGrid.cells
-                  [(int)g_worldGrid.sizeX * (int)(short)local_8 +
-                   (int)sVar4 + (int)g_worldGrid.planeStride * (int)local_10].objects[0] ==
+                 (STGridAt3D(g_worldGrid, sVar4, local_8, local_10).objects[0] ==
                   nullptr)))))) {
               if ((*(short *)((int)this + 0x47) != iVar3) ||
                  (*(short *)((int)this + 0x49) != local_8)) {

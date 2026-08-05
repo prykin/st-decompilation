@@ -229,9 +229,7 @@ int FUN_004b33d0(uint param_1,int *param_2)
     while (-1 < iVar9) {
       if (local_58 != nullptr) {
         STFishC::sub_004162B0(local_58,local_7c,local_8c,local_a8);
-        this = g_worldGrid.cells
-               [(int)local_8c[0] * (int)g_worldGrid.sizeX +
-                (int)g_worldGrid.planeStride * (int)local_a8[0] + (int)local_7c[0]].objects[0];
+        this = STGridAt3D(g_worldGrid, local_7c[0], local_8c[0], local_a8[0]).objects[0];
         local_110 = this;
         if (this == nullptr) {
           pbVar24 = &local_2ec;
@@ -1501,9 +1499,7 @@ LAB_004b5fd6:
                 sVar17 = -1;
               }
               else {
-                sVar17 = g_pathingGrid.cells
-                         [(int)sVar8 * (int)g_pathingGrid.sizeX +
-                          (int)sVar19 * (int)g_pathingGrid.planeStride + (int)sVar17];
+                sVar17 = STGridAt3D(g_pathingGrid, sVar17, sVar8, sVar19);
               }
               if (sVar17 == 0) {
                 local_58 = (STFishC *)g_worldGrid.cells[iVar9].objects[1];

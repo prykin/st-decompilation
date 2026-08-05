@@ -3,9 +3,19 @@
 
 /* Recovered from embedded debug metadata:
    E:\__titans\wlad\To_boat.cpp
-   STBoatC::LoadRC */
+   STBoatC::LoadRC
+   [STAbiConsistencyApplier] machine_thiscall_arity target=function:-1: prototype=int __thiscall
+   LoadRC(STBoatC * this, int * param_1) Evidence: every machine RET purges exactly 4 explicit stack
+   bytes; current signature describes 12; removed trailing parameter slots have no listing
+   references; ret_sites=00465CAA RET 0x4 | 00465E3D RET 0x4 | 00465E8D RET 0x4 | 00465ECB RET 0x4 |
+   00465EE4 RET 0x4 | 004660FE RET 0x4 | 00466405 RET 0x4 | 0046649A RET 0x4 | 00466506 RET 0x4 |
+   0046686A RET 0x4 | 00466BB6 RET 0x4 | 00466BCF RET 0x4 | 00466D79 RET 0x4 | 00466DE6 RET 0x4 |
+   00466FED RET 0x4 | 004674DE RET 0x4 | 00467756 RET 0x4 | 0046776F RET 0x4 | 00467C9F RET 0x4 |
+   004681EC RET 0x4 | 0046833D RET 0x4 | 0046858A RET 0x4 | 004685A3 RET 0x4 | 00468810 RET 0x4 |
+   0046889D RET 0x4 | 00468B1B RET 0x4 | 00468C69 RET 0x4 | 00468D28 RET 0x4 | 00468FCE RET 0x4 |
+   004693E2 RET 0x4 | 00469754 RET 0x4 | 004698B3 RET 0x4 | 0046998F RET 0x4 | 00469A02 RET 0x4 */
 
-int __thiscall STBoatC::LoadRC(STBoatC *this,int *param_1,undefined4 param_2,int param_3)
+int __thiscall STBoatC::LoadRC(STBoatC *this,int *param_1)
 
 {
   STBoatC *pSVar1;
@@ -118,9 +128,7 @@ LAB_00465cda:
             pSVar6 = nullptr;
           }
           else {
-            pSVar6 = g_worldGrid.cells
-                     [(int)g_worldGrid.planeStride * (int)sVar16 +
-                      (int)g_worldGrid.sizeX * (int)sVar17 + (int)sVar11].objects[0];
+            pSVar6 = STGridAt3D(g_worldGrid, sVar11, sVar17, sVar16).objects[0];
           }
           if (*(int *)&pSVar6->field_0x18 != this->field_04A1) {
             this->field_04A1 = 0xffffffff;
@@ -146,9 +154,7 @@ LAB_00465cda:
             pSVar6 = nullptr;
           }
           else {
-            pSVar6 = g_worldGrid.cells
-                     [(int)sVar16 * (int)g_worldGrid.planeStride +
-                      (int)sVar17 * (int)g_worldGrid.sizeX + (int)sVar11].objects[0];
+            pSVar6 = STGridAt3D(g_worldGrid, sVar11, sVar17, sVar16).objects[0];
           }
           if (*(int *)&pSVar6->field_0x18 != this->field_04AB) {
             this->field_04AB = 0xffffffff;
@@ -197,9 +203,7 @@ cf_common_exit_00465E7B:
                  ((sVar17 < g_worldGrid.sizeY && (-1 < sVar16)))) &&
                 ((sVar16 < g_worldGrid.sizeZ &&
                  ((pSVar1 = (STBoatC *)
-                            g_worldGrid.cells
-                            [(int)sVar16 * (int)g_worldGrid.planeStride +
-                             (int)sVar17 * (int)g_worldGrid.sizeX + (int)sVar11].objects[0],
+                            STGridAt3D(g_worldGrid, sVar11, sVar17, sVar16).objects[0],
                   pSVar1 != nullptr && (pSVar1->field_0018 == this->field_04A1)))))) &&
                (iVar5 = thunk_FUN_004e1490(pSVar1), iVar5 != 1)) {
               /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
@@ -230,9 +234,7 @@ cf_common_exit_00465E7B:
                 pSVar6 = nullptr;
               }
               else {
-                pSVar6 = g_worldGrid.cells
-                         [(int)sVar16 * (int)g_worldGrid.planeStride +
-                          (int)sVar17 * (int)g_worldGrid.sizeX + (int)sVar11].objects[0];
+                pSVar6 = STGridAt3D(g_worldGrid, sVar11, sVar17, sVar16).objects[0];
               }
               if (*(int *)&pSVar6->field_0x18 != this->field_04A1) {
                 this->field_04A1 = 0xffffffff;
@@ -254,9 +256,7 @@ cf_common_exit_00465E7B:
                 pSVar6 = nullptr;
               }
               else {
-                pSVar6 = g_worldGrid.cells
-                         [(int)sVar16 * (int)g_worldGrid.planeStride +
-                          (int)sVar17 * (int)g_worldGrid.sizeX + (int)sVar11].objects[0];
+                pSVar6 = STGridAt3D(g_worldGrid, sVar11, sVar17, sVar16).objects[0];
               }
               if (*(int *)&pSVar6->field_0x18 != this->field_04AB) {
                 this->field_04AB = 0xffffffff;
@@ -332,9 +332,7 @@ LAB_00465f11:
             pSVar6 = nullptr;
           }
           else {
-            pSVar6 = g_worldGrid.cells
-                     [(int)sVar16 * (int)g_worldGrid.planeStride +
-                      (int)sVar17 * (int)g_worldGrid.sizeX + (int)sVar11].objects[0];
+            pSVar6 = STGridAt3D(g_worldGrid, sVar11, sVar17, sVar16).objects[0];
           }
           if (*(int *)&pSVar6->field_0x18 != this->field_04A1) {
             this->field_04A1 = 0xffffffff;
@@ -360,9 +358,7 @@ LAB_00465f11:
             pSVar6 = nullptr;
           }
           else {
-            pSVar6 = g_worldGrid.cells
-                     [(int)sVar16 * (int)g_worldGrid.planeStride +
-                      (int)sVar17 * (int)g_worldGrid.sizeX + (int)sVar11].objects[0];
+            pSVar6 = STGridAt3D(g_worldGrid, sVar11, sVar17, sVar16).objects[0];
           }
           if (*(int *)&pSVar6->field_0x18 != this->field_04AB) {
             this->field_04AB = 0xffffffff;
@@ -424,9 +420,7 @@ cf_common_exit_00465E5A:
             return 2;
           }
           pSVar1 = (STBoatC *)
-                   g_worldGrid.cells
-                   [(int)sVar16 * (int)g_worldGrid.planeStride +
-                    (int)sVar17 * (int)g_worldGrid.sizeX + (int)sVar11].objects[0];
+                   STGridAt3D(g_worldGrid, sVar11, sVar17, sVar16).objects[0];
           if (pSVar1 == nullptr) {
             return 2;
           }
@@ -463,9 +457,7 @@ LAB_00468322:
               pSVar6 = nullptr;
             }
             else {
-              pSVar6 = g_worldGrid.cells
-                       [(int)sVar16 * (int)g_worldGrid.planeStride +
-                        (int)sVar17 * (int)g_worldGrid.sizeX + (int)sVar11].objects[0];
+              pSVar6 = STGridAt3D(g_worldGrid, sVar11, sVar17, sVar16).objects[0];
             }
             if (*(int *)&pSVar6->field_0x18 != this->field_04A1) {
               this->field_04A1 = 0xffffffff;
@@ -487,9 +479,7 @@ LAB_00468322:
               pSVar6 = nullptr;
             }
             else {
-              pSVar6 = g_worldGrid.cells
-                       [(int)sVar16 * (int)g_worldGrid.planeStride +
-                        (int)sVar17 * (int)g_worldGrid.sizeX + (int)sVar11].objects[0];
+              pSVar6 = STGridAt3D(g_worldGrid, sVar11, sVar17, sVar16).objects[0];
             }
             if (*(int *)&pSVar6->field_0x18 != this->field_04AB) {
               this->field_04AB = 0xffffffff;
@@ -548,9 +538,7 @@ LAB_00466087:
                   pSVar6 = nullptr;
                 }
                 else {
-                  pSVar6 = g_worldGrid.cells
-                           [(int)sVar16 * (int)g_worldGrid.planeStride +
-                            (int)sVar17 * (int)g_worldGrid.sizeX + (int)sVar11].objects[0];
+                  pSVar6 = STGridAt3D(g_worldGrid, sVar11, sVar17, sVar16).objects[0];
                 }
                 if (*(int *)&pSVar6->field_0x18 != this->field_04A1) {
                   this->field_04A1 = 0xffffffff;
@@ -573,9 +561,7 @@ LAB_00466087:
                   pSVar6 = nullptr;
                 }
                 else {
-                  pSVar6 = g_worldGrid.cells
-                           [(int)sVar16 * (int)g_worldGrid.planeStride +
-                            (int)sVar17 * (int)g_worldGrid.sizeX + (int)sVar11].objects[0];
+                  pSVar6 = STGridAt3D(g_worldGrid, sVar11, sVar17, sVar16).objects[0];
                 }
                 if (*(int *)&pSVar6->field_0x18 != this->field_04AB) {
                   this->field_04AB = 0xffffffff;
@@ -659,9 +645,7 @@ LAB_00466bff:
               pSVar6 = nullptr;
             }
             else {
-              pSVar6 = g_worldGrid.cells
-                       [(int)sVar16 * (int)g_worldGrid.planeStride +
-                        (int)sVar17 * (int)g_worldGrid.sizeX + (int)sVar11].objects[0];
+              pSVar6 = STGridAt3D(g_worldGrid, sVar11, sVar17, sVar16).objects[0];
             }
             if (*(int *)&pSVar6->field_0x18 != this->field_04A1) {
               this->field_04A1 = 0xffffffff;
@@ -686,9 +670,7 @@ LAB_00466bff:
               pSVar6 = nullptr;
             }
             else {
-              pSVar6 = g_worldGrid.cells
-                       [(int)sVar16 * (int)g_worldGrid.planeStride +
-                        (int)sVar17 * (int)g_worldGrid.sizeX + (int)sVar11].objects[0];
+              pSVar6 = STGridAt3D(g_worldGrid, sVar11, sVar17, sVar16).objects[0];
             }
             if (*(int *)&pSVar6->field_0x18 != this->field_04AB) {
               this->field_04AB = 0xffffffff;
@@ -723,9 +705,7 @@ LAB_00466bff:
                 pSVar6 = nullptr;
               }
               else {
-                pSVar6 = g_worldGrid.cells
-                         [(int)sVar16 * (int)g_worldGrid.planeStride +
-                          (int)sVar17 * (int)g_worldGrid.sizeX + (int)sVar11].objects[0];
+                pSVar6 = STGridAt3D(g_worldGrid, sVar11, sVar17, sVar16).objects[0];
               }
               if (*(int *)&pSVar6->field_0x18 != this->field_04A1) {
                 this->field_04A1 = 0xffffffff;
@@ -748,9 +728,7 @@ LAB_00466bff:
                 pSVar6 = nullptr;
               }
               else {
-                pSVar6 = g_worldGrid.cells
-                         [(int)sVar16 * (int)g_worldGrid.planeStride +
-                          (int)sVar17 * (int)g_worldGrid.sizeX + (int)sVar11].objects[0];
+                pSVar6 = STGridAt3D(g_worldGrid, sVar11, sVar17, sVar16).objects[0];
               }
               if (*(int *)&pSVar6->field_0x18 != this->field_04AB) {
                 this->field_04AB = 0xffffffff;
@@ -798,9 +776,7 @@ LAB_00466bff:
         if ((((sVar11 < 0) || (g_worldGrid.sizeX <= sVar11)) ||
             ((sVar17 < 0 ||
              (((g_worldGrid.sizeY <= sVar17 || (sVar16 < 0)) || (g_worldGrid.sizeZ <= sVar16))))))
-           || ((pSVar6 = g_worldGrid.cells
-                         [(int)sVar16 * (int)g_worldGrid.planeStride +
-                          (int)sVar17 * (int)g_worldGrid.sizeX + (int)sVar11].objects[0],
+           || ((pSVar6 = STGridAt3D(g_worldGrid, sVar11, sVar17, sVar16).objects[0],
                pSVar6 == nullptr || (*(int *)&pSVar6->field_0x18 != this->field_04A1)))
            ) {
           sub_0048D930(this);
@@ -922,9 +898,7 @@ cf_common_exit_00468C50:
                       pSVar6 = nullptr;
                     }
                     else {
-                      pSVar6 = g_worldGrid.cells
-                               [(int)sVar16 * (int)g_worldGrid.planeStride +
-                                (int)sVar17 * (int)g_worldGrid.sizeX + (int)sVar11].objects[0];
+                      pSVar6 = STGridAt3D(g_worldGrid, sVar11, sVar17, sVar16).objects[0];
                     }
                     if (*(int *)&pSVar6->field_0x18 != this->field_04A1) {
                       this->field_04A1 = 0xffffffff;
@@ -946,9 +920,7 @@ cf_common_exit_00468C50:
                       pSVar6 = nullptr;
                     }
                     else {
-                      pSVar6 = g_worldGrid.cells
-                               [(int)sVar16 * (int)g_worldGrid.planeStride +
-                                (int)sVar17 * (int)g_worldGrid.sizeX + (int)sVar11].objects[0];
+                      pSVar6 = STGridAt3D(g_worldGrid, sVar11, sVar17, sVar16).objects[0];
                     }
                     if (*(int *)&pSVar6->field_0x18 != this->field_04AB) {
                       this->field_04AB = 0xffffffff;
@@ -980,9 +952,7 @@ cf_common_exit_00468C50:
                     ((g_worldGrid.sizeY <= sVar17 || (sVar16 < 0)))) ||
                    (g_worldGrid.sizeZ <= sVar16)) ||
                   ((pSVar1 = (STBoatC *)
-                             g_worldGrid.cells
-                             [(int)sVar16 * (int)g_worldGrid.planeStride +
-                              (int)sVar17 * (int)g_worldGrid.sizeX + (int)sVar11].objects[0],
+                             STGridAt3D(g_worldGrid, sVar11, sVar17, sVar16).objects[0],
                    pSVar1 == nullptr || (pSVar1->field_0018 != this->field_04AB)))) ||
                  ((iVar5 = thunk_FUN_004e1490(pSVar1), iVar5 != 1 ||
                   (iVar5 = thunk_FUN_0048d650(this,(STFishC *)pSVar1), iVar5 != 1))))
@@ -1055,9 +1025,7 @@ cf_error_exit_004660E9:
                 return 2;
               }
               pSVar1 = (STBoatC *)
-                       g_worldGrid.cells
-                       [(int)sVar16 * (int)g_worldGrid.planeStride +
-                        (int)sVar17 * (int)g_worldGrid.sizeX + (int)sVar11].objects[0];
+                       STGridAt3D(g_worldGrid, sVar11, sVar17, sVar16).objects[0];
               if (pSVar1 == nullptr) {
                 return 2;
               }
@@ -1094,9 +1062,7 @@ cf_error_exit_004660E9:
                   pSVar6 = nullptr;
                 }
                 else {
-                  pSVar6 = g_worldGrid.cells
-                           [(int)sVar16 * (int)g_worldGrid.planeStride +
-                            (int)sVar17 * (int)g_worldGrid.sizeX + (int)sVar11].objects[0];
+                  pSVar6 = STGridAt3D(g_worldGrid, sVar11, sVar17, sVar16).objects[0];
                 }
                 if (*(int *)&pSVar6->field_0x18 != this->field_04A1) {
                   this->field_04A1 = 0xffffffff;
@@ -1116,9 +1082,7 @@ cf_error_exit_004660E9:
                   pSVar6 = nullptr;
                 }
                 else {
-                  pSVar6 = g_worldGrid.cells
-                           [(int)sVar16 * (int)g_worldGrid.planeStride +
-                            (int)sVar17 * (int)g_worldGrid.sizeX + (int)sVar11].objects[0];
+                  pSVar6 = STGridAt3D(g_worldGrid, sVar11, sVar17, sVar16).objects[0];
                 }
                 if (*(int *)&pSVar6->field_0x18 != this->field_04AB) {
                   this->field_04AB = 0xffffffff;
@@ -1492,9 +1456,7 @@ LAB_00468493:
                     pSVar6 = nullptr;
                   }
                   else {
-                    pSVar6 = g_worldGrid.cells
-                             [(int)sVar16 * (int)g_worldGrid.planeStride +
-                              (int)sVar17 * (int)g_worldGrid.sizeX + (int)sVar11].objects[0];
+                    pSVar6 = STGridAt3D(g_worldGrid, sVar11, sVar17, sVar16).objects[0];
                   }
                   if (*(int *)&pSVar6->field_0x18 != this->field_04A1) {
                     this->field_04A1 = 0xffffffff;
@@ -1514,9 +1476,7 @@ LAB_00468493:
                     pSVar6 = nullptr;
                   }
                   else {
-                    pSVar6 = g_worldGrid.cells
-                             [(int)sVar16 * (int)g_worldGrid.planeStride +
-                              (int)sVar17 * (int)g_worldGrid.sizeX + (int)sVar11].objects[0];
+                    pSVar6 = STGridAt3D(g_worldGrid, sVar11, sVar17, sVar16).objects[0];
                   }
                   if (*(int *)&pSVar6->field_0x18 != this->field_04AB) {
                     this->field_04AB = 0xffffffff;
@@ -1546,9 +1506,7 @@ LAB_004691ae:
             if ((((((-1 < sVar11) && (sVar11 < g_worldGrid.sizeX)) &&
                   ((-1 < sVar17 &&
                    (((sVar17 < g_worldGrid.sizeY && (-1 < sVar16)) && (sVar16 < g_worldGrid.sizeZ)))
-                   ))) && ((pSVar6 = g_worldGrid.cells
-                                     [(int)sVar16 * (int)g_worldGrid.planeStride +
-                                      (int)sVar17 * (int)g_worldGrid.sizeX + (int)sVar11].objects[0]
+                   ))) && ((pSVar6 = STGridAt3D(g_worldGrid, sVar11, sVar17, sVar16).objects[0]
                            , pSVar6 != nullptr &&
                            (*(int *)&pSVar6->field_0x18 == this->field_04AB)))) &&
                 (*(int *)&pSVar6[0x21].field_0x10 == 0)) && (*(int *)&pSVar6[0x10].field_0x5 != 6))
@@ -1629,9 +1587,7 @@ LAB_004692be:
               if ((((-1 < sVar11) && (sVar11 < g_worldGrid.sizeX)) &&
                   ((-1 < sVar17 &&
                    (((sVar17 < g_worldGrid.sizeY && (-1 < sVar16)) && (sVar16 < g_worldGrid.sizeZ)))
-                   ))) && ((pSVar6 = g_worldGrid.cells
-                                     [(int)sVar16 * (int)g_worldGrid.planeStride +
-                                      (int)sVar17 * (int)g_worldGrid.sizeX + (int)sVar11].objects[0]
+                   ))) && ((pSVar6 = STGridAt3D(g_worldGrid, sVar11, sVar17, sVar16).objects[0]
                            , pSVar6 != nullptr &&
                            (*(int *)&pSVar6->field_0x18 == this->field_04AB)))) {
                 thunk_FUN_004e1690(pSVar6,this->field_0018);
@@ -1649,14 +1605,10 @@ LAB_004692be:
                  (((sVar17 < g_worldGrid.sizeY && (-1 < sVar16)) &&
                   ((sVar16 < g_worldGrid.sizeZ &&
                    ((STFishC *)
-                    g_worldGrid.cells
-                    [(int)sVar16 * (int)g_worldGrid.planeStride +
-                     (int)sVar17 * (int)g_worldGrid.sizeX + (int)sVar11].objects[0] !=
+                    STGridAt3D(g_worldGrid, sVar11, sVar17, sVar16).objects[0] !=
                     nullptr)))))) {
                 thunk_FUN_0048d650(this,(STFishC *)
-                                        g_worldGrid.cells
-                                        [(int)sVar16 * (int)g_worldGrid.planeStride +
-                                         (int)sVar17 * (int)g_worldGrid.sizeX + (int)sVar11].objects
+                                        STGridAt3D(g_worldGrid, sVar11, sVar17, sVar16).objects
                                         [0]);
               }
               sub_00481520(this,(int)this->field_04C5,(int)this->field_04C7,(int)this->field_04C9);
@@ -1701,9 +1653,7 @@ LAB_004685d3:
                 pSVar6 = nullptr;
               }
               else {
-                pSVar6 = g_worldGrid.cells
-                         [(int)sVar16 * (int)g_worldGrid.planeStride +
-                          (int)sVar17 * (int)g_worldGrid.sizeX + (int)sVar11].objects[0];
+                pSVar6 = STGridAt3D(g_worldGrid, sVar11, sVar17, sVar16).objects[0];
               }
               if (*(int *)&pSVar6->field_0x18 != this->field_04A1) {
                 this->field_04A1 = 0xffffffff;
@@ -1728,9 +1678,7 @@ LAB_004685d3:
                 pSVar6 = nullptr;
               }
               else {
-                pSVar6 = g_worldGrid.cells
-                         [(int)sVar16 * (int)g_worldGrid.planeStride +
-                          (int)sVar17 * (int)g_worldGrid.sizeX + (int)sVar11].objects[0];
+                pSVar6 = STGridAt3D(g_worldGrid, sVar11, sVar17, sVar16).objects[0];
               }
               if (*(int *)&pSVar6->field_0x18 != this->field_04AB) {
                 this->field_04AB = 0xffffffff;
@@ -1764,9 +1712,7 @@ LAB_004685d3:
                    ((sVar17 < g_worldGrid.sizeY && (-1 < sVar16)))) &&
                   ((sVar16 < g_worldGrid.sizeZ &&
                    ((pSVar1 = (STBoatC *)
-                              g_worldGrid.cells
-                              [(int)sVar16 * (int)g_worldGrid.planeStride +
-                               (int)sVar17 * (int)g_worldGrid.sizeX + (int)sVar11].objects[0],
+                              STGridAt3D(g_worldGrid, sVar11, sVar17, sVar16).objects[0],
                     pSVar1 != nullptr && (pSVar1->field_0018 == this->field_04AB)))))) &&
                  (iVar5 = thunk_FUN_004e1490(pSVar1), iVar5 != 1)) {
                 /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
@@ -1798,9 +1744,7 @@ LAB_004685d3:
                   pSVar6 = nullptr;
                 }
                 else {
-                  pSVar6 = g_worldGrid.cells
-                           [(int)sVar16 * (int)g_worldGrid.planeStride +
-                            (int)sVar17 * (int)g_worldGrid.sizeX + (int)sVar11].objects[0];
+                  pSVar6 = STGridAt3D(g_worldGrid, sVar11, sVar17, sVar16).objects[0];
                 }
                 if (*(int *)&pSVar6->field_0x18 != this->field_04A1) {
                   this->field_04A1 = 0xffffffff;
@@ -1819,9 +1763,7 @@ LAB_004685d3:
                   pSVar6 = nullptr;
                 }
                 else {
-                  pSVar6 = g_worldGrid.cells
-                           [(int)sVar16 * (int)g_worldGrid.planeStride +
-                            (int)sVar17 * (int)g_worldGrid.sizeX + (int)sVar11].objects[0];
+                  pSVar6 = STGridAt3D(g_worldGrid, sVar11, sVar17, sVar16).objects[0];
                 }
                 if (*(int *)&pSVar6->field_0x18 != this->field_04AB) {
                   this->field_04AB = 0xffffffff;
@@ -1895,9 +1837,7 @@ LAB_0046779f:
               pSVar6 = nullptr;
             }
             else {
-              pSVar6 = g_worldGrid.cells
-                       [(int)sVar16 * (int)g_worldGrid.planeStride +
-                        (int)sVar17 * (int)g_worldGrid.sizeX + (int)sVar11].objects[0];
+              pSVar6 = STGridAt3D(g_worldGrid, sVar11, sVar17, sVar16).objects[0];
             }
             if (*(int *)&pSVar6->field_0x18 != this->field_04A1) {
               this->field_04A1 = 0xffffffff;
@@ -1923,9 +1863,7 @@ LAB_0046779f:
               pSVar6 = nullptr;
             }
             else {
-              pSVar6 = g_worldGrid.cells
-                       [(int)sVar16 * (int)g_worldGrid.planeStride +
-                        (int)sVar17 * (int)g_worldGrid.sizeX + (int)sVar11].objects[0];
+              pSVar6 = STGridAt3D(g_worldGrid, sVar11, sVar17, sVar16).objects[0];
             }
             if (*(int *)&pSVar6->field_0x18 != this->field_04AB) {
               this->field_04AB = 0xffffffff;
@@ -2016,9 +1954,7 @@ LAB_00467da5:
               pSVar6 = nullptr;
             }
             else {
-              pSVar6 = g_worldGrid.cells
-                       [(int)sVar16 * (int)g_worldGrid.planeStride +
-                        (int)sVar17 * (int)g_worldGrid.sizeX + (int)sVar11].objects[0];
+              pSVar6 = STGridAt3D(g_worldGrid, sVar11, sVar17, sVar16).objects[0];
             }
             if (*(int *)&pSVar6->field_0x18 != this->field_04A1) {
               this->field_04A1 = 0xffffffff;
@@ -2040,9 +1976,7 @@ LAB_00467da5:
               pSVar6 = nullptr;
             }
             else {
-              pSVar6 = g_worldGrid.cells
-                       [(int)sVar16 * (int)g_worldGrid.planeStride +
-                        (int)sVar17 * (int)g_worldGrid.sizeX + (int)sVar11].objects[0];
+              pSVar6 = STGridAt3D(g_worldGrid, sVar11, sVar17, sVar16).objects[0];
             }
             if (*(int *)&pSVar6->field_0x18 != this->field_04AB) {
               this->field_04AB = 0xffffffff;
@@ -2086,9 +2020,7 @@ LAB_00466744:
              ((g_worldGrid.sizeY <= sVar17 || (sVar16 < 0)))) ||
             ((g_worldGrid.sizeZ <= sVar16 ||
              ((pSVar1 = (STBoatC *)
-                        g_worldGrid.cells
-                        [(int)sVar16 * (int)g_worldGrid.planeStride +
-                         (int)sVar17 * (int)g_worldGrid.sizeX + (int)sVar11].objects[0],
+                        STGridAt3D(g_worldGrid, sVar11, sVar17, sVar16).objects[0],
               pSVar1 == nullptr || (pSVar1->field_0018 != this->field_04A1)))))) ||
            (iVar5 = thunk_FUN_004e1490(pSVar1), iVar5 != 1)) goto cf_common_exit_004699E9;
         sub_004602B0(this);
@@ -2144,9 +2076,7 @@ switchD_0046878c_caseD_1:
           pSVar6 = nullptr;
         }
         else {
-          pSVar6 = g_worldGrid.cells
-                   [(int)sVar16 * (int)g_worldGrid.planeStride +
-                    (int)sVar17 * (int)g_worldGrid.sizeX + (int)sVar11].objects[0];
+          pSVar6 = STGridAt3D(g_worldGrid, sVar11, sVar17, sVar16).objects[0];
         }
         if (*(int *)&pSVar6->field_0x18 != this->field_04A1) {
           this->field_04A1 = 0xffffffff;
@@ -2165,9 +2095,7 @@ switchD_0046878c_caseD_1:
           pSVar6 = nullptr;
         }
         else {
-          pSVar6 = g_worldGrid.cells
-                   [(int)sVar16 * (int)g_worldGrid.planeStride +
-                    (int)sVar17 * (int)g_worldGrid.sizeX + (int)sVar11].objects[0];
+          pSVar6 = STGridAt3D(g_worldGrid, sVar11, sVar17, sVar16).objects[0];
         }
         if (*(int *)&pSVar6->field_0x18 != this->field_04AB) {
           this->field_04AB = 0xffffffff;
@@ -2214,13 +2142,9 @@ switchD_0046878c_caseD_1:
      ((-1 < sVar17 &&
       ((((sVar17 < g_worldGrid.sizeY && (-1 < sVar16)) && (sVar16 < g_worldGrid.sizeZ)) &&
        ((STFishC *)
-        g_worldGrid.cells
-        [(int)sVar16 * (int)g_worldGrid.planeStride + (int)sVar17 * (int)g_worldGrid.sizeX +
-         (int)sVar11].objects[0] != nullptr)))))) {
+        STGridAt3D(g_worldGrid, sVar11, sVar17, sVar16).objects[0] != nullptr)))))) {
     thunk_FUN_0048d650(this,(STFishC *)
-                            g_worldGrid.cells
-                            [(int)sVar16 * (int)g_worldGrid.planeStride +
-                             (int)sVar17 * (int)g_worldGrid.sizeX + (int)sVar11].objects[0]);
+                            STGridAt3D(g_worldGrid, sVar11, sVar17, sVar16).objects[0]);
   }
   sub_00481520(this,(int)this->field_04C5,(int)this->field_04C7,(int)this->field_04C9);
   goto cf_common_exit_00468C49;

@@ -3,9 +3,16 @@
 
 /* Recovered from embedded debug metadata:
    E:\__titans\Start\settsobj.cpp
-   SettMapSTy::PrepPlList */
+   SettMapSTy::PrepPlList
+   [STAbiConsistencyApplier] machine_thiscall_arity target=function:-1: prototype=undefined1
+   __thiscall PrepPlList(SettMapSTy * this) Evidence: every machine RET purges exactly 0 explicit
+   stack bytes; current signature describes 4; removed trailing parameter slots have no listing
+   references; ret_sites=005D5445 RET | 005D548E RET
+   [STAbiConsistencyApplier] machine_thiscall_unsized_return_migration target=return:-1:
+   return=/undefined Evidence: legacy ABI applier materialized the unsized return as undefined1
+   while changing only function arity; restore Ghidra DefaultDataType */
 
-void __thiscall SettMapSTy::PrepPlList(SettMapSTy *this,int *param_1)
+void __thiscall SettMapSTy::PrepPlList(SettMapSTy *this)
 
 {
   char cVar1;
@@ -250,8 +257,7 @@ code_r0x005d540b:
   }
 LAB_005d5426:
   SettMapTy::PaintSC(this_00);
-  /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-  (*(code *)this_00->field_0000->field_0020)();
+  this_00->vfunc_20();
   g_currentExceptionFrame = local_b8.previous;
   return;
 }

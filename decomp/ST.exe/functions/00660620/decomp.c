@@ -7,8 +7,6 @@ FUN_00660620(AnonShape_00660620_6BCED4D7 *param_1,undefined4 param_2,uint param_
 {
   STGroupBoatC *pSVar1;
   DArrayTy *array;
-  /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
-  int unaff_EDI;
   undefined4 local_18;
   DArrayTy *local_14;
   undefined4 local_10;
@@ -23,8 +21,7 @@ FUN_00660620(AnonShape_00660620_6BCED4D7 *param_1,undefined4 param_2,uint param_
   local_8 = 0;
   pSVar1 = thunk_FUN_0042b760(param_1->field_0024,(ushort)param_3);
   if (pSVar1 != nullptr) {
-    /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
-    array = (DArrayTy *)STGroupC::GetGroupContent((STGroupC *)pSVar1,unaff_EDI);
+    array = (DArrayTy *)STGroupC::GetGroupContent((STGroupC *)pSVar1);
     if ((array != nullptr) || (_DAT_0000000c != 0)) {
       local_18 = 0;
       local_14 = array;

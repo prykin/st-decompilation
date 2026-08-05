@@ -52,7 +52,10 @@ import ghidra.program.model.listing.Parameter;
 import ghidra.program.model.listing.GhidraClass;
 import ghidra.program.model.listing.Listing;
 import ghidra.program.model.mem.MemoryAccessException;
+import ghidra.program.model.scalar.Scalar;
 import ghidra.program.model.symbol.Namespace;
+import ghidra.program.model.symbol.RefType;
+import ghidra.program.model.symbol.Reference;
 import ghidra.program.model.symbol.SourceType;
 import ghidra.program.model.symbol.Symbol;
 import ghidra.program.model.symbol.SymbolTable;
@@ -431,6 +434,7 @@ public class STVTableApplier extends GhidraScript {
                         structure.getLength(), clearMode);
                 }
                 installTableLabel(tableAddress, proposedName);
+                int materializedReferences = materializeVptrStoreReferences(row, tableAddress);
                 addTableComment(tableAddress, effectiveProposal);
                 // Migrate the live owner field before considering retirement of the old table
                 // type.  Removing it first leaves a /-BAD-/ component and makes the owner hash
@@ -447,7 +451,8 @@ public class STVTableApplier extends GhidraScript {
                     typeResolution.updated ? "updated" : "already_present";
                 report.add(new ReportRow("table", addressText, status, proposedName,
                     typeResolution.detail + " " + structure.getPathName() + "; " +
-                    slotCount + " slots" + (retainedPriorType ?
+                    slotCount + " slots; vptr references materialized=" +
+                    materializedReferences + (retainedPriorType ?
                     "; retained prior type because it is referenced, modified, or lacks a baseline" : "")));
             }
             catch (Exception exception) {
@@ -455,6 +460,48 @@ public class STVTableApplier extends GhidraScript {
                     message(exception)));
             }
         }
+    }
+
+    /**
+     * Ghidra sometimes decodes MOV [object], imm32 without creating a data reference for
+     * the immediate.  The analyzer records only exact object-relative vptr stores.  Recheck
+     * the live instruction and immediate here before adding the missing reference; this is
+     * what lets the decompiler connect the typed owner field to the typed table symbol.
+     */
+    private int materializeVptrStoreReferences(Map<String, String> proposal,
+            Address tableAddress) {
+        String encoded = unt(proposal.get("vptr_store_sites"));
+        if (encoded.isBlank()) return 0;
+        int added = 0;
+        for (String part : encoded.split("\\s*\\|\\s*")) {
+            String siteText = part.trim();
+            if (siteText.isBlank()) continue;
+            Address site;
+            try { site = address(siteText); }
+            catch (Exception exception) { continue; }
+            ghidra.program.model.listing.Instruction instruction =
+                listing.getInstructionAt(site);
+            if (instruction == null ||
+                    !"MOV".equalsIgnoreCase(instruction.getMnemonicString()) ||
+                    instruction.getNumOperands() < 2 ||
+                    !instruction.getDefaultOperandRepresentation(0).contains("[")) continue;
+            Scalar immediate = instruction.getScalar(1);
+            if (immediate == null || immediate.getUnsignedValue() !=
+                    tableAddress.getOffset()) continue;
+            boolean exists = false;
+            for (Reference reference : instruction.getReferencesFrom()) {
+                if (reference.getOperandIndex() == 1 &&
+                        reference.getToAddress().equals(tableAddress)) {
+                    exists = true;
+                    break;
+                }
+            }
+            if (exists) continue;
+            currentProgram.getReferenceManager().addMemoryReference(site, tableAddress,
+                RefType.DATA, SourceType.ANALYSIS, 1);
+            added++;
+        }
+        return added;
     }
 
     private String selectedTableName(Map<String, String> row) {
@@ -809,6 +856,10 @@ public class STVTableApplier extends GhidraScript {
         if (function == null) return false;
         if (function.getSignatureSource() == SourceType.USER_DEFINED ||
                 hasTag(function, VIRTUAL_METHOD_TAG)) return true;
+        String comment = function.getComment();
+        if (hasTag(function, "RECOVERED_ABI_CONSISTENCY") && comment != null &&
+                comment.contains("[STAbiConsistencyApplier] machine_thiscall_arity "))
+            return true;
         return hasTag(function, MESSAGE_HANDLER_TAG) && isMessageHandlerSignature(function);
     }
 

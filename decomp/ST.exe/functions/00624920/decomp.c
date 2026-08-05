@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* [STSwitchEnumApplier] Switch target param_1 uses
    /SubmarineTitans/Recovered/Enums/Global_sub_00624920_param_1Enum. Cases:
@@ -163,9 +165,7 @@ STMineSetC::sub_00624920
         if (((((sVar3 < 0) || (g_worldGrid.sizeX <= sVar3)) || (sVar4 < 0)) ||
             ((g_worldGrid.sizeY <= sVar4 || (sVar13 < 0)))) ||
            ((g_worldGrid.sizeZ <= sVar13 ||
-            (g_worldGrid.cells
-             [(int)g_worldGrid.sizeX * (int)sVar4 + (int)g_worldGrid.planeStride * (int)sVar13 +
-              (int)sVar3].objects[(byte)this->field_008E] == nullptr)))) {
+            (STGridAt3D(g_worldGrid, sVar3, sVar4, sVar13).objects[(byte)this->field_008E] == nullptr)))) {
           iVar6 = thunk_FUN_00495ff0(sVar3,sVar4,this->field_004B,this->field_008E,
                                      (AnonShape_00495FF0_59081BDD *)this);
           if (iVar6 == 0) {
@@ -176,9 +176,7 @@ STMineSetC::sub_00624920
           if (((((sVar3 < 0) || (g_worldGrid.sizeX <= sVar3)) ||
                ((sVar4 < 0 ||
                 (((g_worldGrid.sizeY <= sVar4 || (sVar13 < 0)) || (g_worldGrid.sizeZ <= sVar13))))))
-              || (g_worldGrid.cells
-                  [(int)sVar4 * (int)g_worldGrid.sizeX + (int)g_worldGrid.planeStride * (int)sVar13
-                   + (int)sVar3].objects[(byte)this->field_008E] == nullptr)) &&
+              || (STGridAt3D(g_worldGrid, sVar3, sVar4, sVar13).objects[(byte)this->field_008E] == nullptr)) &&
              (iVar6 = DumpClassC::WritePtr
                                 (sVar3,sVar4,sVar13,this->field_008E,
                                  (RecoveredRecord_DumpClassC_00495EC0 *)this), iVar6 == 0)) {

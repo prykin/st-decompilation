@@ -1,4 +1,4 @@
-FUN_004ee8e0:
+CreateBldBoatPanel:
 004EE8E0  53                        PUSH EBX
 004EE8E1  56                        PUSH ESI
 004EE8E2  68 96 02 00 00            PUSH 0x296

@@ -72,8 +72,7 @@ void __thiscall CPanelTy::Update5Panel(CPanelTy *this)
       ProdPanelTy::SetPanel(g_prodPanel_0080167C,'\0');
     }
     if (g_infocPanel_00801698 != nullptr) {
-      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-      (*(code *)g_infocPanel_00801698->field_0000->field_001C)(0);
+      (*g_infocPanel_00801698->vtable->SetPanel)((SpecPanelTy *)g_infocPanel_00801698,'\0');
     }
     if (g_tradePanel_00802A44 != nullptr) {
       TradePanelTy::sub_00552160(g_tradePanel_00802A44,'\0','\0');
@@ -94,8 +93,7 @@ void __thiscall CPanelTy::Update5Panel(CPanelTy *this)
       ProdPanelTy::SetPanel(g_prodPanel_0080167C,'\0');
     }
     if (g_infocPanel_00801698 != nullptr) {
-      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-      (*(code *)g_infocPanel_00801698->field_0000->field_001C)(0);
+      (*g_infocPanel_00801698->vtable->SetPanel)((SpecPanelTy *)g_infocPanel_00801698,'\0');
     }
     if (g_tradePanel_00802A44 != nullptr) {
       TradePanelTy::sub_00552160(g_tradePanel_00802A44,'\0','\0');
@@ -115,8 +113,7 @@ void __thiscall CPanelTy::Update5Panel(CPanelTy *this)
         ProdPanelTy::SetPanel(g_prodPanel_0080167C,'\0');
       }
       if (g_infocPanel_00801698 != nullptr) {
-        /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-        (*(code *)g_infocPanel_00801698->field_0000->field_001C)(0);
+        (*g_infocPanel_00801698->vtable->SetPanel)((SpecPanelTy *)g_infocPanel_00801698,'\0');
       }
       if (g_tradePanel_00802A44 != nullptr) {
         TradePanelTy::sub_00552160(g_tradePanel_00802A44,'\0','\0');

@@ -54,6 +54,11 @@ Original binaries are local under ignored `bin/` and must not be committed.
 - Respect 32-bit MSVC ABI details: `__thiscall` uses ECX, `RET n` proves callee
   cleanup/argument bytes, `_setjmp3` has two fixed args plus varargs, and narrow
   source values do not prove a narrow EAX ABI return.
+- A truncated callee-cleaned prototype may be expanded only from the callee:
+  unanimous nonzero `RET n`, complete pre-write reads of the newly exposed
+  incoming EBP range, and an independently typed machine-width anchor such as
+  an x87 `double ptr` slot. Caller pseudocode is downstream evidence and must
+  not be used to prove the missing arity.
 - Packed/unaligned fields and overlapping unions are intentional. Never align or
   merge them merely to improve decompiler spelling.
 - Integer promotion in comparisons does not invalidate a proven narrow storage
@@ -71,6 +76,11 @@ Original binaries are local under ignored `bin/` and must not be committed.
 - A library loader returning heterogeneous serialized records must retain a
   neutral `byte *` ABI. Recover a separate payload view at each consumer; do not
   propagate one consumer's structure back into the loader return.
+- Decompiler `T * + n` arithmetic is measured in pointee elements unless an
+  explicit integer cast proves byte arithmetic. Derive the current rendered
+  pointee width before recording a field offset; newly exposed scaled geometry
+  is review-only unless a closed single-call consumer-local view independently
+  satisfies the normal application constraints.
 - `Owner::sub_ADDRESS` is an automation-owned structural placeholder: method
   ownership is proven, but no original semantic method name has been recovered.
 - A fixed class-member array may be installed only from a proven bound or exact
@@ -122,6 +132,22 @@ Original binaries are local under ignored `bin/` and must not be committed.
 - A polymorphic dispatch interface is audit metadata only. It must not replace
   a physical class vptr or mutate synthetic tail slots; stale proposal files
   requesting those operations are refused by the applier.
+- A weak or generic target Listing signature must not erase a stronger
+  receiver-aware generated function-pointer ABI already installed in a physical
+  vtable slot. Recover the deterministic generated slot family or leave the
+  proposed downgrade disabled.
+- A class's offset-zero vptr uses its proven primary physical vtable. A secondary
+  `OwnerVTable_at_OFFSET` may type only that exact secondary subobject offset and
+  must never win by proposal-file order.
+- A neutral helper receiver may be promoted to a common class only from exact
+  call-boundary propagation across at least two independently named caller
+  families plus unique physical-vtable slot-family agreement and sufficient
+  object extent. Geometry or one caller family is review-only.
+- An incoming EBP context is a custom x86 ABI parameter only when EBP is
+  dereferenced before definition, every current explicit ECX/EDX parameter is a
+  generic word, and neither register has semantic incoming use. A non-void
+  return additionally requires complete caller-use and full-EAX definition
+  evidence; unresolved paths stay unknown.
 - A bulk zero span proves an extent, not an array element type. Install a fixed
   inline array only when independent indexed-stride evidence agrees; install a
   nested by-value member only for an exact complete typed copy into an

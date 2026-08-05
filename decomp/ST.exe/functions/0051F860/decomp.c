@@ -16,7 +16,7 @@ HelpStringTy * __cdecl CreateHelpString(void)
   this = (HelpStringTy *)FUN_006b04d0(0x132);
   if (this != nullptr) {
     sub_006E5FB0(this);
-    *(undefined ***)this = &PTR_GetMessage_0079ac6c;
+    this->vtable = &HelpStringTyVTable;
     this->field_011D = 0;
     this->field_011C = 0;
     this->field_0126 = 0;

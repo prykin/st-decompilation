@@ -566,7 +566,7 @@ thunk_address	status	proposed_qualified_name	details
 00401C0D	disabled	FUN_005cbbe0	apply=0
 00401C12	disabled	JumpManagC::JumpManagC	apply=0
 00401C1C	disabled	FUN_004eb6d0	apply=0
-00401C21	disabled	FUN_005fce30	apply=0
+00401C21	disabled	STContainerC::FUN_005fce30	apply=0
 00401C26	disabled	FUN_004956c0	apply=0
 00401C2B	disabled	FUN_004dbe00	apply=0
 00401C30	disabled	FUN_004b70d0	apply=0
@@ -753,7 +753,7 @@ thunk_address	status	proposed_qualified_name	details
 00401FDC	disabled	TLOBaseTy::sub_004CE7D0	apply=0
 00401FE1	disabled	FUN_0064ee40	apply=0
 00401FE6	disabled	PopUpTy::ChangeState	apply=0
-00401FEB	disabled	FUN_005ec620	apply=0
+00401FEB	disabled	STArtiafactC::FUN_005ec620	apply=0
 00401FF0	disabled	FUN_004b6d70	apply=0
 00401FF5	disabled	FUN_00575a10	apply=0
 00401FFA	disabled	STPlaySystemC::STPlaySystemC	apply=0
@@ -790,7 +790,7 @@ thunk_address	status	proposed_qualified_name	details
 0040209A	disabled	FUN_0057bee0	apply=0
 0040209F	disabled	FUN_00553480	apply=0
 004020A4	disabled	FUN_006484f0	apply=0
-004020A9	disabled	FUN_005fce50	apply=0
+004020A9	disabled	STContainerC::FUN_005fce50	apply=0
 004020AE	disabled	STAllPlayersC::UnRegisterObject	apply=0
 004020B8	disabled	HelpPanelTy::TipProc	apply=0
 004020C2	disabled	FUN_006753a0	apply=0
@@ -1940,14 +1940,14 @@ thunk_address	status	proposed_qualified_name	details
 0040388C	disabled	VisibleClassTy::sub_00558DC0	apply=0
 00403891	disabled	FUN_00544150	apply=0
 00403896	disabled	FUN_00480600	apply=0
-0040389B	disabled	FUN_005fcd80	apply=0
+0040389B	disabled	STContainerC::FUN_005fcd80	apply=0
 004038A0	disabled	FUN_0061ca90	apply=0
 004038AA	disabled	FUN_00693910	apply=0
 004038AF	disabled	FUN_006686f0	apply=0
 004038B4	disabled	FUN_00626c90	apply=0
 004038B9	disabled	FUN_004b2d10	apply=0
 004038BE	disabled	PlayPanelTy::ShiftControls	apply=0
-004038C3	disabled	FUN_005fcda0	apply=0
+004038C3	disabled	STContainerC::FUN_005fcda0	apply=0
 004038C8	disabled	CreateFSGS	apply=0
 004038CD	disabled	FUN_005861a0	apply=0
 004038D2	disabled	STVolcanoC::GetMessage	apply=0
@@ -2337,7 +2337,7 @@ thunk_address	status	proposed_qualified_name	details
 004040B1	disabled	InfocPanelTy::InitInfocPanel	apply=0
 004040B6	disabled	FUN_0048dcc0	apply=0
 004040BB	disabled	STGroupBoatC::GenSwitch	apply=0
-004040C0	disabled	FUN_005ef490	apply=0
+004040C0	disabled	STArtiafactC::FUN_005ef490	apply=0
 004040C5	disabled	FUN_00529500	apply=0
 004040CA	disabled	TraksClassTy::TraksExec	apply=0
 004040CF	disabled	FUN_0060ccf0	apply=0
@@ -2516,7 +2516,7 @@ thunk_address	status	proposed_qualified_name	details
 00404467	disabled	FUN_004c5e30	apply=0
 0040446C	disabled	FUN_00678580	apply=0
 00404471	disabled	FUN_006820f0	apply=0
-00404476	disabled	FUN_005fd360	apply=0
+00404476	disabled	STContainerC::FUN_005fd360	apply=0
 00404480	disabled	FUN_006a3420	apply=0
 00404485	disabled	FUN_00682ec0	apply=0
 0040448A	disabled	FUN_0055ddf0	apply=0
@@ -3096,7 +3096,7 @@ thunk_address	status	proposed_qualified_name	details
 0040507E	disabled	CursorClassTy::SetGCType	apply=0
 00405083	disabled	FUN_004b7d90	apply=0
 00405088	disabled	FUN_00423e00	apply=0
-0040508D	disabled	FUN_005ec680	apply=0
+0040508D	disabled	STArtiafactC::FUN_005ec680	apply=0
 00405092	disabled	FUN_004d6930	apply=0
 00405097	disabled	FUN_004dbcc0	apply=0
 0040509C	disabled	FUN_004aa8d0	apply=0
@@ -3633,7 +3633,7 @@ thunk_address	status	proposed_qualified_name	details
 00405BE1	disabled	FUN_0056a5c0	apply=0
 00405BE6	disabled	FUN_0041d7e0	apply=0
 00405BEB	disabled	FUN_0069c790	apply=0
-00405BF0	disabled	FUN_0053c490	apply=0
+00405BF0	disabled	ResearchPanelTy::ShiftControls	apply=0
 00405BF5	disabled	FUN_004a9d60	apply=0
 00405BFA	disabled	STMineSetC::sub_006239A0	apply=0
 00405BFF	disabled	VisibleClassTy::Init	apply=0

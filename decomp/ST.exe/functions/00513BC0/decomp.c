@@ -15,8 +15,6 @@ void __thiscall HelpPanelTy::PrevBut(HelpPanelTy *this)
   int iVar4;
   int *piVar5;
   int iVar6;
-  /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
-  int unaff_EDI;
   uint uVar7;
   InternalExceptionFrame local_50;
   uint local_c;
@@ -80,44 +78,37 @@ void __thiscall HelpPanelTy::PrevBut(HelpPanelTy *this)
       switch((char)piVar5[2]) {
       case '\x01':
         RCProc(local_8,(int)pvVar2,uVar7,'\0');
-        /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
-        PutToSHlp(this_00,unaff_EDI);
+        PutToSHlp(this_00);
         g_currentExceptionFrame = local_50.previous;
         return;
       case '\x02':
         ObjProc(local_8,(int)pvVar2,uVar7,'\0');
-        /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
-        PutToSHlp(this_00,unaff_EDI);
+        PutToSHlp(this_00);
         g_currentExceptionFrame = local_50.previous;
         return;
       case '\x03':
         SubProc(local_8,(int)pvVar2,'\0');
-        /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
-        PutToSHlp(this_00,unaff_EDI);
+        PutToSHlp(this_00);
         g_currentExceptionFrame = local_50.previous;
         return;
       case '\x04':
         ArmProc(local_8,(int)pvVar2,uVar7,'\0');
-        /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
-        PutToSHlp(this_00,unaff_EDI);
+        PutToSHlp(this_00);
         g_currentExceptionFrame = local_50.previous;
         return;
       case '\x05':
         TechProc(local_8,(uint)pvVar2,(byte)uVar7,'\0');
-        /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
-        PutToSHlp(this_00,unaff_EDI);
+        PutToSHlp(this_00);
         g_currentExceptionFrame = local_50.previous;
         return;
       case '\x06':
         TTreeProc(local_8,(uint)pvVar2,'\0');
-        /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
-        PutToSHlp(this_00,unaff_EDI);
+        PutToSHlp(this_00);
         g_currentExceptionFrame = local_50.previous;
         return;
       case '\a':
         MObjProc(local_8);
-        /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
-        PutToSHlp(this_00,unaff_EDI);
+        PutToSHlp(this_00);
         g_currentExceptionFrame = local_50.previous;
         return;
       case '\b':
@@ -125,25 +116,21 @@ void __thiscall HelpPanelTy::PrevBut(HelpPanelTy *this)
         break;
       case '\n':
         IndexBut(local_8);
-        /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
-        PutToSHlp(this_00,unaff_EDI);
+        PutToSHlp(this_00);
         g_currentExceptionFrame = local_50.previous;
         return;
       case '\v':
         SpecProc(local_8,(int)pvVar2,uVar7,'\0');
-        /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
-        PutToSHlp(this_00,unaff_EDI);
+        PutToSHlp(this_00);
         g_currentExceptionFrame = local_50.previous;
         return;
       case '\f':
         NatProc(local_8,(int)pvVar2,'\0');
-        /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
-        PutToSHlp(this_00,unaff_EDI);
+        PutToSHlp(this_00);
         g_currentExceptionFrame = local_50.previous;
         return;
       }
-      /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
-      PutToSHlp(this_00,unaff_EDI);
+      PutToSHlp(this_00);
       g_currentExceptionFrame = local_50.previous;
       return;
     }

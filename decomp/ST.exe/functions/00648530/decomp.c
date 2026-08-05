@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* [STSourceProvenanceApplier begin]
    Recovered source file: E:\__titans\ai\ai_boss_d.cpp
@@ -29,12 +31,7 @@ AllocationRecord_00648530 * __cdecl FUN_00648530(AllocationRecord_00648530 *para
     local_8 = Library::DKW::LIB::MemAllocClear(0x85);
     pAVar3 = param_1;
     pAVar4 = local_8;
-    for (iVar1 = 0x21; iVar1 != 0; iVar1 = iVar1 + -1) {
-      *(undefined4 *)pAVar4 = *(undefined4 *)pAVar3;
-      pAVar3 = (AllocationRecord_00648530 *)((int)&pAVar3->field_0001 + 3);
-      pAVar4 = (AnonShape_00648530_D39EB612 *)((int)&pAVar4->field_0001 + 3);
-    }
-    *(undefined1 *)pAVar4 = *(undefined1 *)pAVar3;
+    memmove(pAVar4, pAVar3, 0x85); /* compiler REP MOVS byte copy */
     local_8->field_0001 = 0x85;
     local_8->field_0005 = 2;
     pAVar2 = thunk_FUN_0065cb00((AllocationRecord_0065CB00 *)

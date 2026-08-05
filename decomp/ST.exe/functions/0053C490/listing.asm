@@ -1,4 +1,4 @@
-FUN_0053c490:
+ResearchPanelTy::ShiftControls:
 0053C490  55                        PUSH EBP
 0053C491  8B EC                     MOV EBP,ESP
 0053C493  56                        PUSH ESI

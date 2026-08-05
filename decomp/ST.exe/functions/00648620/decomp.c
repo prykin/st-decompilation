@@ -39,12 +39,7 @@ BossDataPack(AllocationRecord_00648620 *param_1,undefined4 *param_2,int param_3,
     *param_4 = param_3 + 0x85U;
     pAVar3 = Library::DKW::LIB::MemAllocClear(param_3 + 0x85U);
     pAVar5 = pAVar3;
-    for (iVar2 = 0x21; iVar2 != 0; iVar2 = iVar2 + -1) {
-      *(undefined4 *)pAVar5 = *(undefined4 *)param_1;
-      param_1 = (AllocationRecord_00648620 *)((int)&param_1->field_0001 + 3);
-      pAVar5 = (AllocationRecord_00648620 *)((int)&pAVar5->field_0001 + 3);
-    }
-    *(undefined1 *)pAVar5 = *(undefined1 *)param_1;
+    memmove(pAVar5, param_1, 0x85); /* compiler REP MOVS byte copy */
     pAVar3->field_0001 = *param_4;
     pAVar3->field_004A = param_3;
     pAVar3->field_0005 = 0;

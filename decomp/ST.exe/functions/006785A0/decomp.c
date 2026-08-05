@@ -70,7 +70,7 @@ _EnumDest(byte *param_1,char param_2,short param_3,short param_4,short param_5,s
       iVar3 = 1;
       local_14 = 1;
       if ((param_1 != nullptr) && (*param_1 != 0)) {
-        (*this->vtable->vfunc_74)(local_28);
+        (*this->vtable->vfunc_74)((short)local_28);
         pbVar7 = local_28;
         pbVar5 = param_1;
         do {

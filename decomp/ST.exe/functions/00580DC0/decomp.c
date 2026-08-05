@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 undefined4 __fastcall FUN_00580dc0(STJellyGunC *param_1)
 
@@ -29,9 +31,7 @@ undefined4 __fastcall FUN_00580dc0(STJellyGunC *param_1)
         ((sVar2 < g_worldGrid.sizeY && (-1 < sVar1)))) &&
        ((sVar1 < g_worldGrid.sizeZ &&
         (pAVar4 = (AnonShape_004E0250_5A3B9236 *)
-                  g_worldGrid.cells
-                  [(int)g_worldGrid.planeStride * (int)sVar1 + (int)g_worldGrid.sizeX * (int)sVar2 +
-                   (int)sVar3].objects[0], pAVar4 != nullptr)))) {
+                  STGridAt3D(g_worldGrid, sVar3, sVar2, sVar1).objects[0], pAVar4 != nullptr)))) {
       /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
       iVar5 = (**(code **)(*(int *)pAVar4 + 0x2c))();
       /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */

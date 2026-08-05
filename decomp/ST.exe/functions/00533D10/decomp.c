@@ -517,8 +517,7 @@ LAB_00534016:
           }
           (message->arg2).u32 = 0;
           message->id = (SVar6 != MESS_OPTPANELTY_A105) + MESS_SHARED_C09F;
-          /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-          (**(code **)this_00->field_0000)(message);
+          this_00->GetMessage(message);
           g_currentExceptionFrame = local_8c.previous;
           return 0;
         }
@@ -1038,8 +1037,7 @@ LAB_00534654:
         g_playSystem_00802A38->GetMessage((int)&this_00->field_0x18);
         this_00->field_0028 = 0xc001;
         this_00->field_0034 = 0;
-        /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-        (**(code **)this_00->field_0000)(&this_00->field_0x18);
+        this_00->GetMessage((STMessage *)&this_00->field_0x18);
         g_currentExceptionFrame = local_8c.previous;
         return 0;
       }
@@ -1213,8 +1211,7 @@ LAB_005350bc:
 switchD_00535190_caseD_3:
       this_00->field_0028 = 0xc0a1;
       this_00->field_0034 = 0;
-      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-      (**(code **)this_00->field_0000)(&this_00->field_0x18);
+      this_00->GetMessage((STMessage *)&this_00->field_0x18);
       g_currentExceptionFrame = local_8c.previous;
       return 0;
     default:
@@ -1518,8 +1515,7 @@ switchD_00534835_caseD_1:
       if (local_1c != nullptr) {
         this_00->field_0028 = 0xc001;
         this_00->field_0034 = 0;
-        /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-        (**(code **)this_00->field_0000)(&this_00->field_0x18);
+        this_00->GetMessage((STMessage *)&this_00->field_0x18);
         g_currentExceptionFrame = local_8c.previous;
         return 0;
       }

@@ -63,7 +63,7 @@ void __thiscall CursorClassTy::TakeCmdToRun(CursorClassTy *this,int param_1)
   undefined1 local_15b;
   undefined1 local_15a;
   undefined1 local_159;
-  undefined4 local_148;
+  float local_148;
   undefined4 local_144;
   int local_140;
   uint local_13c;
@@ -180,10 +180,10 @@ void __thiscall CursorClassTy::TakeCmdToRun(CursorClassTy *this,int param_1)
     STDebugBreak(); /* noreturn in standalone pseudocode */
   }
   if (g_sT3DSMAPContext_00807598 != nullptr) {
-    local_148 = local_124->field_00EF;
+    local_148 = (float)local_124->field_00EF;
     local_144 = local_124->field_00F3;
     local_140 = iVar5;
-    ST3DSMAPContext::sub_006E25D0(g_sT3DSMAPContext_00807598,&local_218);
+    ST3DSMAPContext::sub_006E25D0(g_sT3DSMAPContext_00807598,&local_218,&local_148,0.0,0.0,0.0,0);
     this_00->field_00DF = local_218 >> 0x10;
     this_00->field_00E7 = (this_00->field_00C5 - this_00->field_04B2) - (local_218 >> 0x10);
     this_00->field_00E3 = local_214 >> 0x10;

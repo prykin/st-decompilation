@@ -26,8 +26,6 @@ int __thiscall MainMenuTy::GetMessage(MainMenuTy *this,STMessage *message)
   MMsgTy *this_01;
   /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
   undefined4 extraout_EDX;
-  /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
-  void *unaff_EDI;
   char cVar9;
   InternalExceptionFrame local_8c;
   undefined4 local_48 [8];
@@ -109,8 +107,7 @@ switchD_005b4c27_default:
           PaintMainMenu(this_00);
         }
         else if (SVar1 == 0) {
-          /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
-          NoneMainMenu(this_00,unaff_EDI);
+          NoneMainMenu(this_00);
         }
         else if (SVar1 == 2) {
           InitMainMenu(this_00,*(char *)&message->arg0);
@@ -144,9 +141,8 @@ switchD_005b4c27_default:
         }
       }
     }
-/* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
 LAB_005b4de5:
-    (**(code **)(this_00->field_0000 + 8))();
+    this_00->CloseButtons();
     /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
     this_01 = *(MMsgTy **)(this_00->field_1A5B + 0x2e6);
 LAB_005b4df8:
@@ -187,8 +183,7 @@ LAB_005b4df8:
     if (this_00->field_1EE3 == '\0') {
       sub_005B47E0(this_00);
       this_00->field_1A5A = 4;
-      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-      (**(code **)(this_00->field_0000 + 8))();
+      this_00->CloseButtons();
     }
     break;
   case 0x6942:
@@ -196,8 +191,7 @@ LAB_005b4df8:
     goto LAB_005b4ee5;
   case 0x6943:
     thunk_FUN_005b6350(this_00,0x6942,0,0);
-    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-    (**(code **)(this_00->field_0000 + 8))();
+    this_00->CloseButtons();
     /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
     this_01 = *(MMsgTy **)(this_00->field_1A5B + 0x2e6);
     goto LAB_005b4df8;

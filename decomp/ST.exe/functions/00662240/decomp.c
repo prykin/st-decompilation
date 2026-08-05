@@ -1074,9 +1074,7 @@ LAB_00662f34:
           this_02 = nullptr;
         }
         else {
-          this_02 = g_worldGrid.cells
-                    [(int)g_worldGrid.planeStride * (int)sVar4 + (int)g_worldGrid.sizeX * (int)sVar1
-                     + (int)sVar2].objects[0];
+          this_02 = STGridAt3D(g_worldGrid, sVar2, sVar1, sVar4).objects[0];
         }
         if ((this_02 != nullptr) &&
            (this_02[1].vtable == (STWorldObjectVTable *)local_c->field_0024)) {

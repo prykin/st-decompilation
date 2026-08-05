@@ -73,7 +73,7 @@ _EnumRCCont(short param_1,short param_2,byte *param_3,short param_4,short param_
       iVar3 = 1;
       local_14 = 1;
       if ((param_3 != nullptr) && (*param_3 != 0)) {
-        (*this->vtable->vfunc_74)(local_2c);
+        (*this->vtable->vfunc_74)((short)local_2c);
         pbVar9 = local_2c;
         pbVar5 = param_3;
         do {

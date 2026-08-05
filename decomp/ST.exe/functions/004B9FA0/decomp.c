@@ -1755,8 +1755,7 @@ LAB_004bc4c0:
             g_currentExceptionFrame = local_c4.previous;
             return 0;
           }
-          /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-          (*(code *)g_infocPanel_00801698->field_0000->field_001C)(1);
+          (*g_infocPanel_00801698->vtable->SetPanel)((SpecPanelTy *)g_infocPanel_00801698,'\x01');
           g_currentExceptionFrame = local_c4.previous;
           return 0;
         }
@@ -2007,9 +2006,7 @@ LAB_004bbfe9:
             pSVar31 = nullptr;
           }
           else {
-            pSVar31 = g_worldGrid.cells
-                      [(int)g_worldGrid.planeStride * (int)sVar15 +
-                       (int)g_worldGrid.sizeX * (int)sVar4 + (int)sVar16].objects[0];
+            pSVar31 = STGridAt3D(g_worldGrid, sVar16, sVar4, sVar15).objects[0];
           }
           if (pSVar31 == nullptr) {
             if (((sVar16 < 0) || (g_worldGrid.sizeX <= sVar16)) ||
@@ -2019,9 +2016,7 @@ LAB_004bbfe9:
               sVar15 = -1;
             }
             else {
-              sVar15 = g_pathingGrid.cells
-                       [(int)g_pathingGrid.planeStride * (int)sVar15 +
-                        (int)g_pathingGrid.sizeX * (int)sVar4 + (int)sVar16];
+              sVar15 = STGridAt3D(g_pathingGrid, sVar16, sVar4, sVar15);
             }
             if (sVar15 == -1) {
               local_8 = (byte *)((int)&puRam00000000 + 1);

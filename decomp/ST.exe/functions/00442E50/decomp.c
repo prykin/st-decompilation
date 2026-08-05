@@ -40,8 +40,6 @@ STAllPlayersC::_AssignMDPairs
   short *psVar15;
   dword dVar16;
   uint uVar17;
-  /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
-  int unaff_EDI;
   short *psVar18;
   DArrayTy *pDVar19;
   undefined8 uVar20;
@@ -270,8 +268,7 @@ LAB_00442f1f:
       /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
       if ((local_1c != nullptr) &&
          (iVar5 = (**(code **)(local_1c->vtable + 0xc))(), iVar5 == 8)) {
-        /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
-        local_48 = (DArrayTy *)STGroupC::GetGroupContent(local_1c,unaff_EDI);
+        local_48 = (DArrayTy *)STGroupC::GetGroupContent(local_1c);
         local_b8 = local_48->count;
         if ((local_b8 != 0) && (local_44 = nullptr, 0 < (int)local_b8)) {
 LAB_0044326c:
@@ -326,9 +323,7 @@ LAB_0044326c:
             }
             else {
               local_40 = (STFishC *)
-                         g_worldGrid.cells
-                         [(int)local_158[2] * (int)g_worldGrid.planeStride +
-                          (int)local_158[1] * (int)g_worldGrid.sizeX + (int)local_158[0]].objects[0]
+                         STGridAt3D(g_worldGrid, local_158[0], local_158[1], local_158[2]).objects[0]
               ;
               pSVar10 = g_worldGrid.cells;
             }
@@ -641,9 +636,7 @@ LAB_004434a2:
   else {
     iVar5 = (int)local_14e;
     local_40 = (STFishC *)
-               g_worldGrid.cells
-               [(int)local_14a * (int)g_worldGrid.planeStride +
-                (int)local_14c * (int)g_worldGrid.sizeX + iVar5].objects[0];
+               STGridAt3D(g_worldGrid, iVar5, local_14c, local_14a).objects[0];
   }
   if (local_40 != nullptr) {
     /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */

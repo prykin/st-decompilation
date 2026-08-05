@@ -103,7 +103,17 @@ public class STIndirectCallApplier extends GhidraScript {
             if (signature == null) { conflict(target, row, "signature function missing"); return; }
             String mode = row.get("signature_mode");
             DataType desired;
-            if ("target".equals(mode)) desired = functionPointer(signature);
+            if ("target".equals(mode)) {
+                if (component != null && strongerThanTarget(component, signature)) {
+                    preserve(target, row,
+                        "refusing to replace a stronger receiver-aware function-pointer " +
+                            "ABI with the weaker target Listing signature");
+                    return;
+                }
+                desired = functionPointer(signature);
+            }
+            else if ("generated_family".equals(mode))
+                desired = resolveSpecification(row.get("receiver_type"));
             else if ("family_target".equals(mode))
                 desired = familyTargetFunctionPointer(signature);
             else if ("synthetic_thiscall".equals(mode))
@@ -168,6 +178,38 @@ public class STIndirectCallApplier extends GhidraScript {
                 !(pointer.getDataType() instanceof FunctionDefinition definition)) return false;
         return text(component.getComment()).contains(MARKER) &&
             text(definition.getComment()).contains(MARKER);
+    }
+
+    private boolean strongerThanTarget(DataTypeComponent component, Function target) {
+        if (!(component.getDataType() instanceof Pointer pointer) ||
+                !(pointer.getDataType() instanceof FunctionDefinition definition))
+            return false;
+        String existingConvention = text(definition.getCallingConventionName());
+        String targetConvention = text(target.getCallingConventionName());
+        boolean existingReceiver = "__thiscall".equals(existingConvention) &&
+            definition.getArguments().length > 0 &&
+            definition.getArguments()[0].getDataType() instanceof Pointer;
+        boolean targetReceiver = "__thiscall".equals(targetConvention) &&
+            target.getParameterCount() > 0 &&
+            target.getParameter(0).getDataType() instanceof Pointer;
+        return (existingReceiver && !targetReceiver) ||
+            (concreteConvention(existingConvention) &&
+                !concreteConvention(targetConvention)) ||
+            definition.getArguments().length > target.getParameterCount() ||
+            concreteWidth(definition.getReturnType()) >
+                concreteWidth(target.getReturnType());
+    }
+
+    private boolean concreteConvention(String convention) {
+        return convention != null && !convention.isBlank() &&
+            !"unknown".equalsIgnoreCase(convention) &&
+            !"default".equalsIgnoreCase(convention);
+    }
+
+    private int concreteWidth(DataType type) {
+        if (type == null || type instanceof VoidDataType) return 0;
+        String name = type.getName().toLowerCase(Locale.ROOT);
+        return name.startsWith("undefined") ? 0 : Math.max(0, type.getLength());
     }
 
     private boolean unsafeSyntheticVtableMutation(Map<String, String> row) {

@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* [STMethodOwnerApplier] Structural method owner recovered as STMineSetC.
    Evidence: this_call_owners=[STMineSetC]; agreed_this_calls=1; incoming_this_accesses=18;
@@ -99,9 +101,7 @@ undefined4 __thiscall STMineSetC::sub_00625730(STMineSetC *this)
             if (iVar5 == 0) goto switchD_00625b9f_caseD_a8;
             if ((((((sVar17 < 0) || (g_worldGrid.sizeX <= sVar17)) || (sVar18 < 0)) ||
                  ((g_worldGrid.sizeY <= sVar18 || (sVar11 < 0)))) || (g_worldGrid.sizeZ <= sVar11))
-               || (this_00 = g_worldGrid.cells
-                             [(int)sVar11 * (int)g_worldGrid.planeStride +
-                              (int)sVar18 * (int)g_worldGrid.sizeX + (int)sVar17].objects[0],
+               || (this_00 = STGridAt3D(g_worldGrid, sVar17, sVar18, sVar11).objects[0],
                   this_00 == nullptr)) goto LAB_00625b06;
             /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
             if (in_stack_00000010 == 0) {
@@ -186,9 +186,7 @@ LAB_00625b06:
                   (((sVar17 < g_worldGrid.sizeX && (-1 < sVar18)) &&
                    ((sVar18 < g_worldGrid.sizeY && ((-1 < sVar11 && (sVar11 < g_worldGrid.sizeZ)))))
                    ))) && (pSVar14 = (STMineSetC *)
-                                     g_worldGrid.cells
-                                     [(int)sVar11 * (int)g_worldGrid.planeStride +
-                                      (int)sVar18 * (int)g_worldGrid.sizeX + (int)sVar17].objects[1]
+                                     STGridAt3D(g_worldGrid, sVar17, sVar18, sVar11).objects[1]
                           , pSVar14 != nullptr)) {
                 uVar9 = pSVar14->vfunc_2C();
                 switch(uVar9) {
@@ -269,9 +267,7 @@ LAB_00625d60:
                     (((g_worldGrid.sizeY <= sVar18 || (sVar17 < 0)) || (g_worldGrid.sizeZ <= sVar17)
                      ))))) goto cf_continue_loop_0062607F;
                 pSVar14 = (STMineSetC *)
-                          g_worldGrid.cells
-                          [(int)sVar17 * (int)g_worldGrid.planeStride +
-                           (int)sVar18 * (int)g_worldGrid.sizeX + (int)sVar11].objects[1];
+                          STGridAt3D(g_worldGrid, sVar11, sVar18, sVar17).objects[1];
               }
             }
             if (pSVar14 != nullptr) {
@@ -288,9 +284,7 @@ LAB_00625d60:
         }
         else {
           pSVar14 = (STMineSetC *)
-                    g_worldGrid.cells
-                    [(int)sVar17 * (int)g_worldGrid.planeStride +
-                     (int)sVar18 * (int)g_worldGrid.sizeX + (int)sVar11].objects[0];
+                    STGridAt3D(g_worldGrid, sVar11, sVar18, sVar17).objects[0];
           if (pSVar14 == nullptr) goto LAB_00625d60;
           iVar5 = pSVar14->vfunc_F0();
           if (iVar5 != 0) {

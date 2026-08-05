@@ -14,14 +14,13 @@ undefined4 __fastcall FUN_004de820(AnonShape_004DE820_615D04DD *param_1)
   if (iVar2 != *(int *)(param_1->field_01F5 + 0x1c4)) {
     return 0;
   }
-  iVar2 = 3;
   /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
   (**(code **)(*(int *)param_1 + 0x90))(3,0x273);
   bVar1 = false;
   this = thunk_FUN_0042b760(param_1->field_0x24,*(ushort *)&param_1->field_0x30);
   if (((this != nullptr) &&
-      (array = (DArrayTy *)STGroupC::GetGroupContent((STGroupC *)this,iVar2),
-      array != nullptr)) && (array->count != 0)) {
+      (array = (DArrayTy *)STGroupC::GetGroupContent((STGroupC *)this), array != nullptr))
+     && (array->count != 0)) {
     array->iteratorIndex = 0;
     iVar2 = DArrayGetNext(array,(byte *)&local_8);
     while (-1 < iVar2) {

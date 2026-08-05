@@ -14,7 +14,7 @@ ListClassTy * __cdecl CreateList(void)
     pLVar1->field_01E4 = 0;
     pLVar1->field_01E0 = 0;
     pLVar1->field_01F8 = 0;
-    pLVar1->field_0000 = 0x79e2a4;
+    pLVar1->vtable = &ListClassTyVTable;
     return pLVar1;
   }
   return nullptr;

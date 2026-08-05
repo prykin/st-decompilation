@@ -46,8 +46,6 @@ int __thiscall ChooseMapTy::GetMessage(ChooseMapTy *this,STMessage *message)
   char *pcVar19;
   byte *pbVar20;
   byte *pbVar21;
-  /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
-  undefined4 *unaff_EDI;
   UINT resourceId;
   char *pcVar22;
   char *pcVar23;
@@ -207,9 +205,8 @@ int __thiscall ChooseMapTy::GetMessage(ChooseMapTy *this,STMessage *message)
       }
       else {
         switch(SVar5) {
-        /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
         case MESS_ID_NONE:
-          NoneChooseMap(this_01,unaff_EDI);
+          NoneChooseMap(this_01);
           break;
         /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
         case MESS_ID_CREATE:
@@ -369,8 +366,7 @@ LAB_005b1da4:
         if ((message->arg0).u32 < uVar27) {
           if (this_01->field_1A5F == CASE_3) {
             this_01->field_002D = 0x6956;
-            /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-            (*(code *)this_01->field_0000->field_0000)(&this_01->field_0x1d);
+            this_01->GetMessage((STMessage *)&this_01->field_0x1d);
           }
           else {
             uVar17 = (uint)(message->arg0).words.low;
@@ -460,23 +456,20 @@ LAB_005b1b6c:
           case CASE_1:
           case CASE_2:
             this_01->field_002D = 0x694a;
-            /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-            (*(code *)this_01->field_0000->field_0000)(&this_01->field_0x1d);
+            this_01->GetMessage((STMessage *)&this_01->field_0x1d);
             break;
           case CASE_4:
           case CASE_5:
           case CASE_C:
           case CASE_13:
             this_01->field_002D = 0x694e;
-            /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-            (*(code *)this_01->field_0000->field_0000)(&this_01->field_0x1d);
+            this_01->GetMessage((STMessage *)&this_01->field_0x1d);
             break;
           case CASE_9:
           case CASE_A:
           case CASE_B:
             this_01->field_002D = 0x6949;
-            /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-            (*(code *)this_01->field_0000->field_0000)(&this_01->field_0x1d);
+            this_01->GetMessage((STMessage *)&this_01->field_0x1d);
           }
         }
         break;
@@ -711,8 +704,7 @@ LAB_005b2011:
     this_01->field_0x20b3 = 1;
     this_01->field_0x20b4 = 1;
     this_01->field_20B7 = 0;
-    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-    (*(code *)this_01->field_0000->field_0008)();
+    this_01->CloseButtons();
     pMVar16 = this_01->field_1A5B->field_02E6;
 LAB_005b1644:
     if (pMVar16 != nullptr) {
@@ -738,8 +730,7 @@ LAB_005b1644:
       uVar10 = 0;
     }
     this_01->field_20B7 = uVar10;
-    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-    (*(code *)this_01->field_0000->field_0008)();
+    this_01->CloseButtons();
     pMVar16 = this_01->field_1A5B->field_02E6;
     if (pMVar16 != nullptr) {
       MMsgTy::HidePanel(pMVar16,1,0,1);
@@ -924,8 +915,7 @@ LAB_005b1644:
       uVar10 = 0;
     }
     this_01->field_20B7 = uVar10;
-    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-    (*(code *)this_01->field_0000->field_0008)();
+    this_01->CloseButtons();
     pMVar16 = this_01->field_1A5B->field_02E6;
     goto LAB_005b1644;
   case 0x694b:
@@ -1009,8 +999,7 @@ LAB_005b1644:
           this_01->field_0x20b6 = 0;
           this_01->field_0x20b5 = 0;
           this_01->field_0x20b4 = 0;
-          /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-          (*(code *)this_01->field_0000->field_0008)();
+          this_01->CloseButtons();
           if (this_01->field_1A5B->field_02E6 != nullptr) {
             local_38 = 0;
             local_3c = 0x10001;
@@ -1041,8 +1030,7 @@ LAB_005b1644:
     this_01->field_20B7 = 0;
     this_01->field_0x20b6 = 0;
     this_01->field_0x20b5 = 0;
-    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-    (*(code *)this_01->field_0000->field_0008)();
+    this_01->CloseButtons();
     if (this_01->field_1A5B->field_02E6 != nullptr) {
       local_18 = 0;
       local_14 = 0;
@@ -1198,8 +1186,7 @@ switchD_005b1362_caseD_6:
     this_01->field_0x20b6 = 0;
     this_01->field_0x20b5 = 0;
     this_01->field_20B7 = 0;
-    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-    (*(code *)this_01->field_0000->field_0008)();
+    this_01->CloseButtons();
     if (this_01->field_1A5B->field_02E6 != nullptr) {
       local_28 = 0;
       local_24 = 0;
@@ -1216,9 +1203,8 @@ switchD_005b1362_caseD_6:
     this_01->field_0x20b5 = 1;
     this_01->field_0x20b3 = 1;
     this_01->field_0x20b4 = 1;
-/* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
 LAB_005b1108:
-    (*(code *)this_01->field_0000->field_0008)();
+    this_01->CloseButtons();
     pMVar16 = this_01->field_1A5B->field_02E6;
     if (pMVar16 != nullptr) {
       MMsgTy::HidePanel(pMVar16,1,0,1);

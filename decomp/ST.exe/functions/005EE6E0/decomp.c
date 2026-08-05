@@ -245,7 +245,7 @@ joined_r0x005eed0b:
     break;
   case 8:
     if ((uint)param_1->field_028F <= g_playSystem_00802A38->field_00E4) {
-      thunk_FUN_005f0a30((STBoatC *)param_1);
+      thunk_FUN_005f0a30((STSprGameObjC *)param_1);
       param_1->field_023A = 6;
       return local_8;
     }

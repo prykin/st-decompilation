@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* [STHiddenThisApplier] Anonymous hidden receiver recovered as
    /SubmarineTitans/Recovered/HiddenThis/AnonReceiver_00417FF0.
@@ -77,8 +79,7 @@ SubmarineTitans::Recovered::HiddenThis::AnonReceiver_004167A0::FUN_00418030
       pSVar6 = nullptr;
     }
     else {
-      pSVar6 = g_worldGrid.cells
-               [(int)local_2c + g_worldGrid.sizeX * iVar4 + g_worldGrid.planeStride * iVar14].
+      pSVar6 = STGridAt3D(g_worldGrid, local_2c, iVar4, iVar14).
                objects[(byte)local_58->field_008E];
     }
     if (pSVar6 == nullptr) {
@@ -159,9 +160,7 @@ SubmarineTitans::Recovered::HiddenThis::AnonReceiver_004167A0::FUN_00418030
             }
             else {
               pSVar10 = (STBoatC *)
-                        g_worldGrid.cells
-                        [(int)sVar11 * (int)g_worldGrid.planeStride +
-                         (int)sVar13 * (int)g_worldGrid.sizeX + (int)sVar3].objects[0];
+                        STGridAt3D(g_worldGrid, sVar3, sVar13, sVar11).objects[0];
             }
             psVar15 = local_50;
             if (pSVar10 == nullptr) {
@@ -173,9 +172,7 @@ SubmarineTitans::Recovered::HiddenThis::AnonReceiver_004167A0::FUN_00418030
                 }
                 else {
                   pSVar10 = (STBoatC *)
-                            g_worldGrid.cells
-                            [(int)sVar11 * (int)g_worldGrid.planeStride +
-                             (int)sVar13 * (int)g_worldGrid.sizeX + (int)sVar3].objects[1];
+                            STGridAt3D(g_worldGrid, sVar3, sVar13, sVar11).objects[1];
                   psVar15 = (short *)(int)g_worldGrid.sizeX;
                 }
               }

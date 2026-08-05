@@ -75,8 +75,6 @@ int __thiscall CPanelTy::GetMessage(CPanelTy *this,STMessage *message)
   ushort **ppuVar17;
   FrmPanelTy *pFVar18;
   short sVar19;
-  /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
-  int unaff_EDI;
   undefined1 *puVar20;
   int *piVar21;
   bool *pbVar22;
@@ -1122,8 +1120,7 @@ LAB_004fbaa0:
       PaintTV(local_44);
       PaintNewDeep(this_00);
       PaintSMap(this_00);
-      /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
-      PlayBrief(this_00,unaff_EDI);
+      PlayBrief(this_00);
       bVar15 = 0;
       local_c = (int *)((uint)local_c & 0xffffff00);
       /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
@@ -1182,8 +1179,7 @@ LAB_004fbaa0:
               uVar27 = extraout_EDX_02;
             }
             if ((bVar15 == 8) && (g_infocPanel_00801698 != nullptr)) {
-              /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-              (*(code *)g_infocPanel_00801698->field_0000->field_0020)();
+              g_infocPanel_00801698->Update();
               /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
               uVar27 = extraout_EDX_03;
             }
@@ -1194,8 +1190,7 @@ LAB_004fbaa0:
               uVar27 = extraout_EDX_04;
             }
             if ((bVar15 == 10) && (g_behPanel_00801678 != nullptr)) {
-              /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-              (*(code *)g_behPanel_00801678->field_0000[2].field_0008)();
+              g_behPanel_00801678->Update();
               /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
               uVar27 = extraout_EDX_05;
             }
@@ -1206,20 +1201,17 @@ LAB_004fbaa0:
               uVar27 = extraout_EDX_06;
             }
             if ((bVar15 == 0xf) && (g_upgPanel_00802A48 != nullptr)) {
-              /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-              (*(code *)g_upgPanel_00802A48->field_0000->field_0020)();
+              g_upgPanel_00802A48->Update();
               /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
               uVar27 = extraout_EDX_07;
             }
             if ((bVar15 == 0x10) && (g_frmPanel_0080168C != nullptr)) {
-              /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-              (**(code **)(g_frmPanel_0080168C->field_0000 + 1))();
+              g_frmPanel_0080168C->Update();
               /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
               uVar27 = extraout_EDX_08;
             }
             if ((bVar15 == 0x11) && (g_sAMPanel_008016EC != nullptr)) {
-              /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-              (**(code **)&g_sAMPanel_008016EC->field_0000[1].field_0xc)();
+              g_sAMPanel_008016EC->Update();
               /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
               uVar27 = extraout_EDX_09;
             }
@@ -1562,8 +1554,7 @@ LAB_004fc53f:
     break;
   case 0xb117:
     if (g_upgPanel_00802A48 != nullptr) {
-      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-      (*(code *)g_upgPanel_00802A48->field_0000->field_001C)(1);
+      (*g_upgPanel_00802A48->vtable->SetPanel)((SpecPanelTy *)g_upgPanel_00802A48,'\x01');
     }
     break;
   case MESS_CPANELTY_B110|MESS_SHARED_0008:
@@ -1576,8 +1567,7 @@ LAB_004fc53f:
     break;
   case MESS_CPANELTY_B110|MESS_CURSORCLASSTY_0009:
     if (g_frmPanel_0080168C != nullptr) {
-      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-      (*(code *)g_frmPanel_0080168C->field_0000->field_001C)(1);
+      (*g_frmPanel_0080168C->vtable->SetPanel)((SpecPanelTy *)g_frmPanel_0080168C,'\x01');
     }
     break;
   case MESS_CPANELTY_B110|MESS_SYSTEMCLASSTY_000A:

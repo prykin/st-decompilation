@@ -7,12 +7,17 @@
    0070AA70 @ 0054289E | 005C6030 -> 0070AA70 @ 005C60D8
 
    [STPrototypeApplier] Propagated parameter 0.
-   Evidence: 005C6030 -> 0070AA70 @ 005C60D8 */
+   Evidence: 005C6030 -> 0070AA70 @ 005C60D8
 
-void __cdecl FUN_0070aa70(cMf32 *param_1,char *text,byte param_3,int param_4)
+   [STPrototypeApplier] Propagated return.
+   Evidence: 0070AA70 returns return of Library::Ourlib::MFIMG::mfImgLoad @ 0070AA8E */
+
+ushort * __cdecl FUN_0070aa70(cMf32 *param_1,char *text,byte param_3,int param_4)
 
 {
-  Library::Ourlib::MFIMG::mfImgLoad(param_1,0x12,text,param_3,param_4);
-  return;
+  ushort *puVar1;
+
+  puVar1 = Library::Ourlib::MFIMG::mfImgLoad(param_1,0x12,text,param_3,param_4);
+  return puVar1;
 }
 

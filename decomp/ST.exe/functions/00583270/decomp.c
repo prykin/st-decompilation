@@ -25,8 +25,6 @@ int __thiscall STJellyGunC::GetMessage(STJellyGunC *this,STMessage *message)
   AnonShape_00583270_F758043B *pAVar9;
   byte *puVar10;
   byte *pbVar11;
-  /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
-  int *unaff_EDI;
   int *piVar12;
   byte *puVar13;
   char *pcVar14;
@@ -101,8 +99,7 @@ int __thiscall STJellyGunC::GetMessage(STJellyGunC *this,STMessage *message)
         return 0;
       }
       if (SVar2 == MESS_ID_NONE) {
-        /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
-        LifeGun(this_00,unaff_EDI);
+        LifeGun(this_00);
         g_currentExceptionFrame = local_a0.previous;
         return 0;
       }
@@ -237,12 +234,7 @@ int __thiscall STJellyGunC::GetMessage(STJellyGunC *this,STMessage *message)
         else if (*(uint *)&local_38->field_0xc == 2) {
           pAVar9 = local_38;
           puVar10 = (byte *)&this_00->field_0x256;
-          for (iVar5 = 0xf; iVar5 != 0; iVar5 = iVar5 + -1) {
-            *puVar10 = *(undefined4 *)pAVar9;
-            pAVar9 = (AnonShape_00583270_F758043B *)&pAVar9->field_0x4;
-            puVar10 = (byte *)(puVar10 + 1);
-          }
-          *(undefined2 *)puVar10 = *(undefined2 *)pAVar9;
+          memmove(puVar10, pAVar9, 0x3e); /* compiler REP MOVS byte copy */
           local_8 = local_38->field_0067;
           STAllPlayersC::RestoreGObjData
                     ((STAllPlayersC *)this_00,(undefined4 *)(&local_38[1].field_0x3 + local_8));
@@ -306,12 +298,7 @@ int __thiscall STJellyGunC::GetMessage(STJellyGunC *this,STMessage *message)
          (local_c != nullptr)) {
         puVar10 = (byte *)&this_00->field_0x256;
         pAVar15 = local_c;
-        for (iVar5 = 0xf; iVar5 != 0; iVar5 = iVar5 + -1) {
-          *(undefined4 *)pAVar15 = *puVar10;
-          puVar10 = (byte *)(puVar10 + 1);
-          pAVar15 = (AnonShape_00583270_0B8831C2 *)&pAVar15->field_0x4;
-        }
-        *(undefined2 *)pAVar15 = *(undefined2 *)puVar10;
+        memmove(pAVar15, puVar10, 0x3e); /* compiler REP MOVS byte copy */
         *(undefined4 *)&local_c->field_0xc = 2;
         *(STJellyGunC_field_0235State *)&local_c->field_0x42 = this_00->field_0235;
         local_c->field_0046 = this_00->field_023D;

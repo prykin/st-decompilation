@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 undefined4 __thiscall FUN_006264d0(void *this,int *param_1,int param_2)
 
@@ -155,13 +157,10 @@ undefined4 __thiscall FUN_006264d0(void *this,int *param_1,int param_2)
                (sVar10 = (short)iVar14, sVar10 < 0)) ||
               ((g_worldGrid.sizeY <= sVar10 || (sVar12 = (short)iVar6, sVar12 < 0)))) ||
              ((g_worldGrid.sizeZ <= sVar12 ||
-              (pSVar3 = g_worldGrid.cells
-                        [(int)g_worldGrid.planeStride * (int)sVar12 +
-                         (int)g_worldGrid.sizeX * (int)sVar10 + (int)sVar7].objects[0],
+              (pSVar3 = STGridAt3D(g_worldGrid, sVar7, sVar10, sVar12).objects[0],
               piVar9 = local_18, iVar11 = local_c, pSVar3 == nullptr)))) {
             piVar8 = piVar9;
-            if (g_pathingGrid.cells
-                [g_pathingGrid.sizeX * iVar14 + iVar5 + g_pathingGrid.planeStride * iVar6] < 0) {
+            if (STGridAt3D(g_pathingGrid, iVar5, iVar14, iVar6) < 0) {
               return 0;
             }
           }

@@ -12,38 +12,38 @@ void __thiscall FSGSTy::CreateGame(FSGSTy *this,int param_1)
   MMsgTy *pMVar2;
   code *pcVar3;
   CursorClassTy *this_00;
-  FSGSTy *pFVar4;
+  FSGSTy *this_01;
+  int iVar4;
   int iVar5;
-  int iVar6;
   InternalExceptionFrame local_4c;
   FSGSTy *local_8;
 
   local_4c.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_4c;
   local_8 = this;
-  iVar5 = Library::MSVCRT::__setjmp3(local_4c.jumpBuffer,0);
+  iVar4 = Library::MSVCRT::__setjmp3(local_4c.jumpBuffer,0);
   this_00 = g_cursorClass_00802A30;
-  if (iVar5 != 0) {
+  if (iVar4 != 0) {
     g_currentExceptionFrame = local_4c.previous;
-    iVar6 = ReportDebugMessage("E:\\__titans\\Start\\fsgs_obj.cpp",0xab9,0,iVar5,"%s"
+    iVar5 = ReportDebugMessage("E:\\__titans\\Start\\fsgs_obj.cpp",0xab9,0,iVar4,"%s"
                                ,"FSGSTy::CreateGame");
-    if (iVar6 == 0) {
-      RaiseInternalException(iVar5,0,"E:\\__titans\\Start\\fsgs_obj.cpp",0xab9);
+    if (iVar5 == 0) {
+      RaiseInternalException(iVar4,0,"E:\\__titans\\Start\\fsgs_obj.cpp",0xab9);
       return;
     }
     STDebugBreak(); /* noreturn in standalone pseudocode */
   }
   if (g_cursorClass_00802A30 != nullptr) {
-    iVar5 = g_cursorClass_00802A30->field_00C9;
-    iVar6 = g_cursorClass_00802A30->field_00C5;
+    iVar4 = g_cursorClass_00802A30->field_00C9;
+    iVar5 = g_cursorClass_00802A30->field_00C5;
     g_cursorClass_00802A30->field_0493 = CASE_1;
     this_00->field_0494 = 0xffff;
-    CursorClassTy::SetGCType(this_00,CASE_0,iVar6,iVar5);
+    CursorClassTy::SetGCType(this_00,CASE_0,iVar5,iVar4);
     CursorClassTy::DrawSprite(this_00,this_00->field_00C5,this_00->field_00C9);
     this_00->field_00D2 = 0;
     this_00->field_04DF = -1;
   }
-  pFVar4 = local_8;
+  this_01 = local_8;
   if (param_1 != 0) {
     pMVar2 = local_8->field_1A5B->field_02E6;
     if (pMVar2 == nullptr) {
@@ -80,9 +80,8 @@ void __thiscall FSGSTy::CreateGame(FSGSTy *this,int param_1)
   DAT_00803400 = 4;
 cf_common_exit_005A33FB:
   thunk_FUN_005b6350(local_8,0x611f,0x13,0);
-  /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-  (*(code *)pFVar4->field_0000->field_0008)();
-  pMVar2 = pFVar4->field_1A5B->field_02E6;
+  this_01->CloseButtons();
+  pMVar2 = this_01->field_1A5B->field_02E6;
   if (pMVar2 == nullptr) {
     g_currentExceptionFrame = local_4c.previous;
     return;

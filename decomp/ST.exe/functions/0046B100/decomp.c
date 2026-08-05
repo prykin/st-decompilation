@@ -101,9 +101,7 @@ int __thiscall STBoatC::Build(STBoatC *this,uint param_1)
     if ((((sVar18 < 0) || (g_worldGrid.sizeX <= sVar18)) || (sVar20 < 0)) ||
        (((g_worldGrid.sizeY <= sVar20 || (sVar19 < 0)) ||
         ((g_worldGrid.sizeZ <= sVar19 ||
-         (g_pathingGrid.cells
-          [(int)g_pathingGrid.sizeX * (int)sVar20 + (int)g_pathingGrid.planeStride * (int)sVar19 +
-           (int)sVar18] != 0)))))) {
+         (STGridAt3D(g_pathingGrid, sVar18, sVar20, sVar19) != 0)))))) {
       return 0;
     }
     this->field_04DD = sVar18;
@@ -156,15 +154,11 @@ int __thiscall STBoatC::Build(STBoatC *this,uint param_1)
       if ((((-1 < sVar18) && (sVar18 < g_worldGrid.sizeX)) && (-1 < (short)uVar3)) &&
          ((((short)uVar3 < g_worldGrid.sizeY && (-1 < sVar19)) &&
           ((sVar19 < g_worldGrid.sizeZ &&
-           (g_pathingGrid.cells
-            [(int)g_pathingGrid.sizeX * (int)(short)uVar3 +
-             (int)g_pathingGrid.planeStride * (int)sVar19 + (int)sVar18] == 0)))))) break;
+           (STGridAt3D(g_pathingGrid, sVar18, uVar3, sVar19) == 0)))))) break;
       if (((sVar18 < 0) || (g_worldGrid.sizeX <= sVar18)) ||
          (((short)uVar3 < 0 ||
           ((((g_worldGrid.sizeY <= (short)uVar3 || (sVar19 < 0)) || (g_worldGrid.sizeZ <= sVar19))
-           || (pSVar5 = g_worldGrid.cells
-                        [(int)(short)uVar3 * (int)g_worldGrid.sizeX +
-                         (int)g_worldGrid.planeStride * (int)sVar19 + (int)sVar18].objects[0],
+           || (pSVar5 = STGridAt3D(g_worldGrid, sVar18, uVar3, sVar19).objects[0],
               pSVar5 == nullptr)))))) {
         iVar13 = ReportDebugMessage("E:\\__titans\\wlad\\To_boat.cpp",0x23c0,0,0,"%s"
                                     ,"STBoatC::Build NULL");

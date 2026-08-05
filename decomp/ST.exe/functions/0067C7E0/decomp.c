@@ -28,8 +28,6 @@ int __thiscall AiPlrClassTy::GetMessage(AiPlrClassTy *this,STMessage *message)
   /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
   undefined2 extraout_var;
   char *pcVar12;
-  /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
-  void *unaff_EDI;
   char *pcVar13;
   int *piVar14;
   AnonShape_0068FD00_A5257008 **ppAVar15;
@@ -122,10 +120,8 @@ int __thiscall AiPlrClassTy::GetMessage(AiPlrClassTy *this,STMessage *message)
           }
           else {
             thunk_FUN_0067a390((AnonShape_00679600_B8E418A8 *)this_00);
-            /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
-            ExecTech(this_00,unaff_EDI);
-            /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
-            Offensive(this_00,unaff_EDI);
+            ExecTech(this_00);
+            Offensive(this_00);
           }
         }
         else {

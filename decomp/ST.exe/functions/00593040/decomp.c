@@ -28,8 +28,6 @@ int __thiscall CampaignTy::GetMessage(CampaignTy *this,STMessage *message)
   int iVar12;
   uint uVar13;
   char *pcVar15;
-  /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
-  void *unaff_EDI;
   char *pcVar16;
   byte bVar18;
   InternalExceptionFrame local_54;
@@ -65,8 +63,7 @@ int __thiscall CampaignTy::GetMessage(CampaignTy *this,STMessage *message)
         PaintCampaign(this_00);
       }
       else if (SVar2 == MESS_ID_NONE) {
-        /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
-        NoneCampaign(this_00,unaff_EDI);
+        NoneCampaign(this_00);
       }
       else if (SVar2 == MESS_ID_CREATE) {
         /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
@@ -103,8 +100,7 @@ int __thiscall CampaignTy::GetMessage(CampaignTy *this,STMessage *message)
     break;
   case MESS_WAITTY_6943:
     thunk_FUN_005b6350(this_00,0x6942,(message->arg0).u32,0);
-    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-    (**(code **)(this_00->field_0000 + 8))();
+    this_00->CloseButtons();
     /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
     pMVar4 = *(MMsgTy **)(this_00->field_1A5B + 0x2e6);
     if (pMVar4 != nullptr) {
@@ -158,8 +154,7 @@ int __thiscall CampaignTy::GetMessage(CampaignTy *this,STMessage *message)
       if (iVar7 != 0) {
         memset(&DAT_0080c522, 0, 0x27f0); /* compiler bulk-zero initialization */
         thunk_FUN_005b6350(this_00,(-(uint)(this_00->field_1FFC != 0) & 8) + 0x6948,0,0);
-        /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-        (**(code **)(this_00->field_0000 + 8))();
+        this_00->CloseButtons();
         /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
         pMVar4 = *(MMsgTy **)(this_00->field_1A5B + 0x2e6);
         if (pMVar4 != nullptr) {
@@ -187,11 +182,11 @@ int __thiscall CampaignTy::GetMessage(CampaignTy *this,STMessage *message)
     case 0:
     case 2:
     case 3:
-      iVar11 = (int)&this_00->field_0000 + iVar7 * 0x1fb;
+      iVar11 = (int)&this_00->vtable + iVar7 * 0x1fb;
       iVar9 = *(int *)(iVar11 + 0xef) + -1;
       break;
     case 1:
-      iVar11 = (int)&this_00->field_0000 + iVar7 * 0x1fb;
+      iVar11 = (int)&this_00->vtable + iVar7 * 0x1fb;
       iVar9 = *(int *)(iVar11 + 0xef) + -2;
       break;
     default:

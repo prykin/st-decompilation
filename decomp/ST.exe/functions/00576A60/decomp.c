@@ -14,7 +14,7 @@ STAlgaC * __cdecl CreateSTAlga(void)
   this = (STAlgaC *)FUN_006b04d0(0x4c);
   if (this != nullptr) {
     sub_006E60E0(this);
-    *(undefined **)this = &UNK_0079b188;
+    this->vtable = &STAlgaCVTable;
     return this;
   }
   return nullptr;

@@ -3,9 +3,13 @@
 
 /* Recovered from embedded debug metadata:
    E:\__titans\wlad\To_boat.cpp
-   STBoatC::StopMove */
+   STBoatC::StopMove
+   [STAbiConsistencyApplier] machine_thiscall_arity target=function:-1: prototype=undefined4
+   __thiscall StopMove(STBoatC * this) Evidence: every machine RET purges exactly 0 explicit stack
+   bytes; current signature describes 4; removed trailing parameter slots have no listing
+   references; ret_sites=0045FD5F RET | 0045FDC7 RET | 0045FE7C RET | 0045FE91 RET | 0045FEA6 RET */
 
-undefined4 __thiscall STBoatC::StopMove(STBoatC *this,void *param_1)
+undefined4 __thiscall STBoatC::StopMove(STBoatC *this)
 
 {
   short sVar1;
@@ -46,9 +50,7 @@ undefined4 __thiscall STBoatC::StopMove(STBoatC *this,void *param_1)
     }
     else {
       pSVar7 = (STBoatC *)
-               g_worldGrid.cells
-               [(int)g_worldGrid.planeStride * (int)sVar2 + (int)g_worldGrid.sizeX * (int)sVar3 +
-                (int)sVar1].objects[(byte)this->field_008E];
+               STGridAt3D(g_worldGrid, sVar1, sVar3, sVar2).objects[(byte)this->field_008E];
     }
     if (pSVar7 == this) {
       sub_004167A0(this);

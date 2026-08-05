@@ -8,26 +8,26 @@
    Evidence: registry[45] at 007CA888 stores type 0x0303 and executable pointer 00402AA9; allocation
    size 7850 has no unique current class-layout match */
 
-void * __cdecl FUN_005b95b0(void)
+MMsgTy * __cdecl CreateMMsg(void)
 
 {
-  undefined4 *this;
+  MMsgTy *this;
   int iVar1;
   undefined4 *puVar3;
   SpriteClassTy *this_00;
   undefined4 *puVar4;
 
-  this = FUN_006b04d0(0x1eaa);
+  this = (MMsgTy *)FUN_006b04d0(0x1eaa);
   if (this != nullptr) {
     sub_006E5FB0(this);
-    *this = &VTable_0079C018;
-    this[6] = 0;
-    *(undefined4 *)((int)this + 0x5d) = 0;
-    memset((void *)((int)this + 0x1d), 0, 0x20); /* compiler bulk-zero initialization */
+    this->vtable = (MMsgTyVTable *)&VTable_0079C018;
+    *(undefined4 *)&this->field_0x18 = 0;
+    *(undefined4 *)&this->field_0x5d = 0;
+    memset(&this->field_0x1d, 0, 0x20); /* compiler bulk-zero initialization */
     iVar1 = 0;
-    memset((void *)((int)this + 0x3d), 0, 0x20); /* compiler bulk-zero initialization */
+    memset(&this->field_0x3d, 0, 0x20); /* compiler bulk-zero initialization */
     DAT_0080879c = 0;
-    this_00 = (SpriteClassTy *)(this + 0x5d);
+    this_00 = (SpriteClassTy *)&this->field_0x174;
     iVar1 = 0xd;
     do {
       SpriteClassTy::SpriteClassTy(this_00 + -1);
@@ -36,12 +36,12 @@ void * __cdecl FUN_005b95b0(void)
       this_00 = (SpriteClassTy *)&this_00[3].field_0048;
       iVar1 = iVar1 + -1;
     } while (iVar1 != 0);
-    *this = &MMObjTyVTable;
-    *(undefined1 *)((int)this + 0x65) = 2;
-    *(undefined1 *)((int)this + 0x9a) = 0;
-    memset((void *)((int)this + 0x66), 0, 0x34); /* compiler bulk-zero initialization */
+    this->vtable = (MMsgTyVTable *)&MMObjTyVTable;
+    this->field_0065 = 2;
+    this->field_009A = 0;
+    memset(&this->field_0066, 0, 0x34); /* compiler bulk-zero initialization */
     iVar1 = 0xd;
-    puVar3 = this + 0x2f;
+    puVar3 = (undefined4 *)&this->field_0xbc;
     do {
       puVar4 = puVar3;
       memset(puVar4, 0, 0x26); /* compiler bulk-zero initialization */
@@ -50,19 +50,19 @@ void * __cdecl FUN_005b95b0(void)
       *(undefined1 *)((int)puVar4 + 2) = 0;
       puVar3 = (undefined4 *)((int)puVar3 + 0x1fb);
     } while (iVar1 != 0);
-    SpriteClassTy::SpriteClassTy((SpriteClassTy *)((int)this + 0x1cf7));
-    SpriteClassTy::SpriteClassTy((SpriteClassTy *)(this + 0x762));
-    SpriteClassTy::SpriteClassTy((SpriteClassTy *)((int)this + 0x1e19));
-    *this = &UNK_0079c0a8;
-    *(undefined1 *)((int)this + 0x1a5f) = 0;
-    *(undefined1 *)((int)this + 0x1caa) = 0;
-    *(undefined1 *)((int)this + 0x1ca9) = 0;
-    *(undefined4 *)((int)this + 0x1cab) = 0;
-    memset((void *)((int)this + 0x1c82), 0, 0x1a); /* compiler bulk-zero initialization */
-    this[0x727] = 0x1010101;
-    this[0x728] = 0x1010101;
-    this[0x729] = 0x1010101;
-    *(undefined1 *)(this + 0x72a) = 1;
+    SpriteClassTy::SpriteClassTy((SpriteClassTy *)&this->field_0x1cf7);
+    SpriteClassTy::SpriteClassTy((SpriteClassTy *)&this->field_1D88);
+    SpriteClassTy::SpriteClassTy((SpriteClassTy *)&this[1].field_0x45);
+    this->vtable = &MMsgTyVTable;
+    this->field_1A5F = 0;
+    this->field_1CAA = 0;
+    this->field_1CA9 = 0;
+    this->field_1CAB = 0;
+    memset(&this->field_0x1c82, 0, 0x1a); /* compiler bulk-zero initialization */
+    this->field_1C9C = 0x1010101;
+    this->field_1CA0 = 0x1010101;
+    this->field_1CA4 = 0x1010101;
+    this->field_1CA8 = 1;
     return this;
   }
   return nullptr;

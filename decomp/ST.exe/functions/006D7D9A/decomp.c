@@ -27,8 +27,8 @@ uint __cdecl FUN_006d7d9a(AnonShape_006D7D9A_A5401417 *param_1)
   uint local_16;
   byte local_12;
   byte local_11 [5];
-  undefined4 *local_c;
-  undefined4 *local_8;
+  int *local_c;
+  int *local_8;
 
   pcVar3 = (code *)param_1->field_0042;
   pcVar4 = (code *)param_1->field_0046;
@@ -44,7 +44,7 @@ uint __cdecl FUN_006d7d9a(AnonShape_006D7D9A_A5401417 *param_1)
   if (cVar2 != '\0') {
     local_3a = 8;
   }
-  local_8 = (undefined4 *)thunk_FUN_006a3be0(iVar5 + 0x4101);
+  local_8 = thunk_FUN_006a3be0(iVar5 + 0x4101);
   uVar8 = 0xfffffffe;
   if ((local_8 != nullptr) && (uVar8 = (*pcVar3)(param_1,local_11,1), uVar8 == 1)) {
     if ((local_11[0] < 2) || (9 < local_11[0])) {
@@ -113,7 +113,7 @@ LAB_006d7faf:
             for (iVar13 = iVar12; iVar13 != 0; iVar13 = iVar13 + -1) {
               *(undefined1 *)local_c = *puVar15;
               puVar15 = puVar15 + 1;
-              local_c = (undefined4 *)((int)local_c + 1);
+              local_c = (int *)((int)local_c + 1);
             }
             bVar7 = local_3e < iVar12;
             local_3e = iVar1;

@@ -60,6 +60,7 @@ public class STClassLayoutAnalyzer extends GhidraScript {
         MARKER, "[STGlobalDataApplier]");
     private static final String HASH_MARKER = "generated_layout_sha256=";
     private static final String SWITCH_ENUM_MARKER = "[STSwitchEnumApplier]";
+    private static final String OBJECT_FACTORY_TAG = "RECOVERED_OBJECT_FACTORY";
     private static final String DARRAY_PATH = "/SubmarineTitans/Recovered/DArrayTy";
     private static final String DARRAY_SPECIALIZATION_ROOT =
         "/SubmarineTitans/Recovered/DArraySpecializations/";
@@ -567,7 +568,7 @@ public class STClassLayoutAnalyzer extends GhidraScript {
             if (collect != null)
                 collectCrossInstruction(function, instruction, mnemonic, text, operands,
                     state, owners, links);
-            transferCrossInstruction(instruction, mnemonic, operands, state, owners);
+            transferCrossInstruction(function, instruction, mnemonic, operands, state, owners);
         }
         return state;
     }
@@ -662,13 +663,16 @@ public class STClassLayoutAnalyzer extends GhidraScript {
         }
     }
 
-    private void transferCrossInstruction(Instruction instruction, String mnemonic,
+    private void transferCrossInstruction(Function function, Instruction instruction, String mnemonic,
             String[] operands, CrossState state, Map<String, CrossOwner> owners) {
         if ("CALL".equals(mnemonic)) {
             Function called = calledFunction(instruction);
             state.registers.remove("EAX"); state.registers.remove("ECX");
             state.registers.remove("EDX");
             CrossValue returned = called == null ? null : crossPointer(called.getReturnType(), owners);
+            CrossValue factoryResult = factoryAllocationResult(function, instruction,
+                called, owners);
+            if (factoryResult != null) returned = factoryResult;
             // Allocators and factory helpers frequently still have an undefined/integer
             // return type.  MSVC then initializes the object through EAX before storing
             // it in an already typed singleton.  The later store is a strong backward
@@ -746,6 +750,34 @@ public class STClassLayoutAnalyzer extends GhidraScript {
                 state.registers.get(destination).kind == CrossKind.FIELD) return;
         if (!Set.of("CMP", "TEST", "PUSH", "JMP", "RET").contains(mnemonic))
             state.registers.remove(destination);
+    }
+
+    /**
+     * Central object-factory recovery has already proved a concrete result class and
+     * exact allocation extent.  When such a function calls a generic pointer allocator
+     * with that exact extent, the returned EAX lifetime is an address of the factory's
+     * result object.  Seeding that one lifetime lets the ordinary cross-class CFG pass
+     * observe every packed initialization write without parsing decompiler text or
+     * hard-coding allocator/function addresses.
+     */
+    private CrossValue factoryAllocationResult(Function containing, Instruction call,
+            Function called, Map<String, CrossOwner> owners) {
+        if (!hasFunctionTag(containing, OBJECT_FACTORY_TAG) || called == null) return null;
+        CrossValue owner = crossPointer(containing.getReturnType(), owners);
+        CrossValue allocatorReturn = crossPointer(called.getReturnType(), owners);
+        if (owner == null || owner.kind != CrossKind.ADDRESS ||
+                allocatorReturn == null || allocatorReturn.kind != CrossKind.GENERIC_POINTER)
+            return null;
+        CrossOwner classOwner = owners.get(owner.ownerPath);
+        if (classOwner == null || classOwner.structure.getLength() < 4) return null;
+        Instruction previous = currentProgram.getListing()
+            .getInstructionBefore(call.getAddress());
+        if (previous == null || !containing.getBody().contains(previous.getAddress()) ||
+                !"PUSH".equalsIgnoreCase(previous.getMnemonicString())) return null;
+        String[] operands = splitOperands(previous.toString().toUpperCase(Locale.ROOT));
+        Long allocationSize = operands.length == 0 ? null : immediate(operands[0]);
+        return allocationSize != null && allocationSize == classOwner.structure.getLength() ?
+            owner : null;
     }
 
     /**
@@ -2138,6 +2170,7 @@ public class STClassLayoutAnalyzer extends GhidraScript {
 
     private Map<String, String> readVtableTypes(Path path) throws Exception {
         Map<String, String> result = new TreeMap<>();
+        Map<String, Integer> priorities = new TreeMap<>();
         if (!Files.isRegularFile(path)) return result;
         Tsv tsv = readTsv(path);
         if (!tsv.header.contains("owner") || !tsv.header.contains("proposed_name")) return result;
@@ -2146,7 +2179,15 @@ public class STClassLayoutAnalyzer extends GhidraScript {
             if (owner.isBlank() || name.isBlank()) continue;
             DataType type = dataTypes.getDataType(
                 "/SubmarineTitans/Recovered/VTables/" + name);
-            if (type != null) result.putIfAbsent(owner, type.getPathName());
+            if (type == null) continue;
+            boolean primary = enabled(row.get("primary_vptr_store")) &&
+                unt(row.get("this_vptr_offsets")).matches(
+                    "(?i)(?:^|\\s*\\|\\s*)0x0(?:$|\\s*\\|\\s*)");
+            int priority = primary ? 2 : enabled(row.get("apply")) ? 1 : 0;
+            if (priority > priorities.getOrDefault(owner, -1)) {
+                priorities.put(owner, priority);
+                result.put(owner, type.getPathName());
+            }
         }
         // Keep a polymorphic dispatch shape distinct from the exact physical table applied
         // at a constructor address. This prevents high virtual offsets from wrapping through

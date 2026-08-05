@@ -8,27 +8,27 @@
 void __thiscall SAMPanelTy::InitSAMPanel(SAMPanelTy *this)
 
 {
-  AnonPointee_SAMPanelTy_0000 *pAVar1;
+  SAMPanelTyVTable *pSVar1;
   code *pcVar2;
-  SAMPanelTy *pSVar3;
-  int iVar4;
-  LPSTR pCVar5;
-  ushort *puVar6;
-  byte *pbVar7;
+  SAMPanelTy *this_00;
+  int iVar3;
+  LPSTR pCVar4;
+  ushort *puVar5;
+  byte *pbVar6;
   uint *resourceString;
-  int iVar8;
-  undefined4 uVar9;
-  int iVar10;
+  int iVar7;
+  undefined4 uVar8;
+  int iVar9;
+  short sVar10;
   uint uVar11;
-  undefined4 uVar12;
-  byte bVar13;
+  byte bVar12;
+  undefined2 uVar13;
   undefined4 uVar14;
-  undefined4 uVar15;
-  int iVar16;
-  undefined4 uVar17;
-  undefined4 *puVar18;
+  int iVar15;
+  char *pcVar16;
+  undefined4 *puVar17;
+  undefined4 uVar18;
   undefined4 uVar19;
-  undefined4 uVar20;
   InternalExceptionFrame local_5c;
   SAMPanelTy *local_14;
   int local_10;
@@ -38,83 +38,82 @@ void __thiscall SAMPanelTy::InitSAMPanel(SAMPanelTy *this)
   local_5c.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_5c;
   local_14 = this;
-  iVar4 = Library::MSVCRT::__setjmp3(local_5c.jumpBuffer,0);
-  pSVar3 = local_14;
-  if (iVar4 == 0) {
+  iVar3 = Library::MSVCRT::__setjmp3(local_5c.jumpBuffer,0);
+  this_00 = local_14;
+  if (iVar3 == 0) {
     g_sAMPanel_008016EC = local_14;
     SpecPanelTy::InitPanel
               ((SpecPanelTy *)local_14,"BKG_SETANYW",0x2f,2,0xc6,0xc,0x2735,0xc9,0x77);
-    puVar18 = nullptr;
-    iVar16 = 0;
-    iVar4 = 1;
-    bVar13 = 0;
+    puVar17 = nullptr;
+    iVar15 = 0;
+    iVar3 = 1;
+    bVar12 = 0;
     uVar11 = 0xffffffff;
-    pCVar5 = thunk_FUN_00571240("BUT_PRODWEAP",0);
-    puVar6 = Library::Ourlib::MFRLOAD::mfRLoad
-                       (DAT_00806794,CASE_B,pCVar5,uVar11,bVar13,iVar4,iVar16,puVar18);
-    local_c = pSVar3->field_01B5;
-    pSVar3->field_01B1 = puVar6;
-    iVar4 = 0xb4ff;
+    pCVar4 = thunk_FUN_00571240("BUT_PRODWEAP",0);
+    puVar5 = Library::Ourlib::MFRLOAD::mfRLoad
+                       (DAT_00806794,CASE_B,pCVar4,uVar11,bVar12,iVar3,iVar15,puVar17);
+    local_c = this_00->field_01B5;
+    this_00->field_01B1 = puVar5;
+    iVar3 = 0xb4ff;
     local_8 = 0x17;
     local_10 = 6;
     do {
-      uVar19 = 1;
-      uVar17 = 0;
-      uVar15 = 0;
-      pAVar1 = pSVar3->field_0000;
+      uVar18 = 1;
+      pcVar16 = nullptr;
       uVar14 = 0;
-      iVar16 = iVar4 + 0x10;
-      uVar12 = 0;
-      uVar9 = 0;
-      iVar8 = 1;
-      iVar10 = iVar4;
-      pCVar5 = thunk_FUN_00571240("BUT_PRODWEAP",0);
-      pCVar5 = FUN_006f2c00(pCVar5,iVar8,uVar9);
-      iVar8 = local_8;
-      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-      uVar11 = (*(code *)pAVar1->field_0004)
-                         (0,1,0x24,local_8 + 1,0,1,1,pCVar5,iVar10,iVar16,uVar12,uVar14,uVar15,
-                          uVar17,uVar19);
+      pSVar1 = this_00->vtable;
+      uVar13 = 0;
+      iVar15 = iVar3 + 0x10;
+      sVar10 = 0;
+      uVar8 = 0;
+      iVar7 = 1;
+      iVar9 = iVar3;
+      pCVar4 = thunk_FUN_00571240("BUT_PRODWEAP",0);
+      pCVar4 = FUN_006f2c00(pCVar4,iVar7,uVar8);
+      iVar7 = local_8;
+      uVar11 = (*pSVar1->CreateBut)
+                         ((PanelTy *)this_00,0,1,0x24,local_8 + 1,0,1,1,pCVar4,iVar9,iVar15,sVar10,
+                          uVar13,uVar14,pcVar16,uVar18);
       *local_c = uVar11;
-      pbVar7 = (byte *)ccFntTy::CreateSurf(pSVar3->field_0189,pSVar3->field_0185,0,0x37,iVar8,0xd2,
-                                           0xc,0);
-      if (pbVar7 != nullptr) {
+      pbVar6 = (byte *)ccFntTy::CreateSurf(this_00->field_0189,this_00->field_0185,0,0x37,iVar7,0xd2
+                                           ,0xc,0);
+      if (pbVar6 != nullptr) {
         uVar11 = 0;
-        iVar8 = -1;
-        iVar16 = 0;
-        resourceString = (uint *)LoadResourceString(iVar4 - 0x842b,g_module_00807618);
-        ccFntTy::WrStr(pSVar3->field_0189,resourceString,iVar16,iVar8,uVar11);
-        DibPut((AnonShape_006B5B10_E0D06CF1 *)pSVar3->field_0068,0x37,local_8,'\x01',pbVar7);
-        ccFntTy::EraseSufr(pSVar3->field_0189);
+        iVar7 = -1;
+        iVar15 = 0;
+        resourceString = (uint *)LoadResourceString(iVar3 - 0x842b,g_module_00807618);
+        ccFntTy::WrStr(this_00->field_0189,resourceString,iVar15,iVar7,uVar11);
+        DibPut((AnonShape_006B5B10_E0D06CF1 *)this_00->field_0068,0x37,local_8,'\x01',pbVar6);
+        ccFntTy::EraseSufr(this_00->field_0189);
       }
-      iVar4 = iVar4 + 1;
+      iVar3 = iVar3 + 1;
       local_c = local_c + 1;
       local_8 = local_8 + 0xb;
       local_10 = local_10 + -1;
     } while (local_10 != 0);
-    uVar20 = 1;
-    pAVar1 = pSVar3->field_0000;
-    uVar19 = 0;
-    uVar17 = 0;
-    uVar15 = 0;
-    uVar14 = 0;
-    uVar12 = 0xb518;
-    uVar9 = 0xb508;
-    pCVar5 = thunk_FUN_00571240("BUT_BIG",0);
-    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-    uVar9 = (*(code *)pAVar1->field_0004)
-                      (0,1,0xa0,0x5c,0,1,1,pCVar5,uVar9,uVar12,uVar14,uVar15,uVar17,uVar19,uVar20);
-    pSVar3->field_01CD = uVar9;
+    uVar19 = 1;
+    pSVar1 = this_00->vtable;
+    pcVar16 = nullptr;
+    uVar18 = 0;
+    uVar13 = 0;
+    sVar10 = 0;
+    uVar14 = 0xb518;
+    uVar8 = 0xb508;
+    pCVar4 = thunk_FUN_00571240("BUT_BIG",0);
+    uVar8 = (*pSVar1->CreateBut)
+                      ((PanelTy *)this_00,0,1,0xa0,0x5c,0,1,1,pCVar4,uVar8,uVar14,sVar10,uVar13,
+                       uVar18,pcVar16,uVar19);
+    this_00->field_01CD = uVar8;
     g_currentExceptionFrame = local_5c.previous;
     return;
   }
   g_currentExceptionFrame = local_5c.previous;
-  iVar16 = ReportDebugMessage("E:\\__titans\\Andrey\\setamine.cpp",0x29,0,iVar4,"%s",
+  iVar15 = ReportDebugMessage("E:\\__titans\\Andrey\\setamine.cpp",0x29,0,iVar3,"%s",
                               "SAMPanelTy::InitSAMPanel");
-  if (iVar16 != 0) {
+  if (iVar15 != 0) {
     STDebugBreak(); /* noreturn in standalone pseudocode */
   }
-  RaiseInternalException(iVar4,0,"E:\\__titans\\Andrey\\setamine.cpp",0x29);
+  RaiseInternalException(iVar3,0,"E:\\__titans\\Andrey\\setamine.cpp",0x29);
   return;
 }
 

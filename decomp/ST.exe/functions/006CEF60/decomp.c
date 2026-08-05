@@ -6,9 +6,10 @@
    [STPrototypeApplier] Propagated parameter 4.
    Evidence: 006B3120 -> 006CEF60 @ 006B3384 */
 
-int FUN_006cef60(int *param_1,uint *param_2,AnonShape_006B5B10_E0D06CF1 *param_3,int param_4,
-                uint *param_5,char *param_6,int param_7,int param_8,int *param_9,int param_10,
-                int param_11,uint param_12,undefined1 *param_13)
+int FUN_006cef60(int *param_1,AnonShape_006D86E0_D6D32C07 *param_2,
+                AnonShape_006B5B10_E0D06CF1 *param_3,int param_4,
+                AnonShape_006D86E0_768BB816 *param_5,char *param_6,int param_7,int param_8,
+                int *param_9,int param_10,int param_11,uint param_12,undefined1 *param_13)
 
 {
   int *piVar1;
@@ -16,9 +17,9 @@ int FUN_006cef60(int *param_1,uint *param_2,AnonShape_006B5B10_E0D06CF1 *param_3
   int *piVar3;
   int iVar4;
   int iVar5;
-  int iVar6;
-  uint uVar7;
-  uint *puVar8;
+  AnonShape_006D86E0_768BB816 *pAVar6;
+  int iVar7;
+  uint uVar8;
   int iVar9;
   uint uVar10;
   int iVar11;
@@ -70,10 +71,10 @@ int FUN_006cef60(int *param_1,uint *param_2,AnonShape_006B5B10_E0D06CF1 *param_3
   ExceptionList = &local_14;
   iVar4 = FUN_006cfeb0(&local_38,&local_38,&local_48);
   pbVar2 = local_2c;
-  uVar7 = local_30;
-  iVar6 = local_34;
+  uVar8 = local_30;
+  iVar7 = local_34;
   iVar5 = local_38;
-  puVar8 = param_5;
+  pAVar6 = param_5;
   iVar11 = param_4;
   if (iVar4 == 0) goto LAB_006cf911;
   /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
@@ -115,14 +116,16 @@ int FUN_006cef60(int *param_1,uint *param_2,AnonShape_006B5B10_E0D06CF1 *param_3
       /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
       param_6 = (char *)FUN_006b4fa0((int *)param_5);
     }
-    uVar7 = (uint)*(ushort *)((int)puVar8 + 0xe) * puVar8[1] + 0x1f >> 3 & 0x1ffffffc;
+    uVar8 = (uint)*(ushort *)&pAVar6->field_0xe * *(int *)&pAVar6->field_0x4 + 0x1f >> 3 &
+            0x1ffffffc;
     /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
-    param_6 = param_6 + ((puVar8[2] - ((param_9[1] - param_8) + local_34)) - (int)local_2c) * uVar7
-                        + (*param_9 - param_7) + local_38;
+    param_6 = param_6 + ((*(int *)&pAVar6->field_0x8 - ((param_9[1] - param_8) + local_34)) -
+                        (int)local_2c) * uVar8 + (*param_9 - param_7) + local_38;
     /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
-    param_2 = (uint *)((int)param_2 + (int)(local_2c + local_34 + -1) * (int)param_3 + local_38);
+    param_2 = (AnonShape_006D86E0_D6D32C07 *)
+              (&param_2->field_0x0 + (int)(local_2c + local_34 + -1) * (int)param_3 + local_38);
     local_8 = 0;
-    FUN_006cebe0((char *)param_2,-(int)param_3,param_6,uVar7,local_30,(int)local_2c,
+    FUN_006cebe0((char *)param_2,-(int)param_3,param_6,uVar8,local_30,(int)local_2c,
                  *(char *)(iVar11 + 0x54));
     goto LAB_006cf911;
   }
@@ -148,13 +151,13 @@ LAB_006cf209:
     local_30 = local_30 + local_38;
     local_2c = local_2c + local_34;
     local_a0 = 0;
-    for (puVar8 = param_5; (local_a0 < param_10 && (iVar5 = *(int *)((int)puVar8 + 6), iVar5 != 0));
-        puVar8 = (uint *)((int)puVar8 + 10)) {
-      if (-1 < (short)puVar8[1]) {
-        iVar6 = ((int)(short)*puVar8 - *(int *)(iVar11 + 0x28)) + *(int *)(iVar11 + 0x18);
-        iVar12 = ((int)*(short *)((int)puVar8 + 2) - *(int *)(iVar11 + 0x2c)) +
+    for (pAVar6 = param_5; (local_a0 < param_10 && (iVar5 = *(int *)&pAVar6->field_0x6, iVar5 != 0))
+        ; pAVar6 = (AnonShape_006D86E0_768BB816 *)&pAVar6->field_0xa) {
+      if (-1 < *(short *)&pAVar6->field_0x4) {
+        iVar7 = ((int)*(short *)pAVar6 - *(int *)(iVar11 + 0x28)) + *(int *)(iVar11 + 0x18);
+        iVar12 = ((int)*(short *)&pAVar6->field_0002 - *(int *)(iVar11 + 0x2c)) +
                  *(int *)(iVar11 + 0x1c);
-        iVar4 = ((int)*(short *)(iVar5 + 0xe) - *param_9) + iVar6 + param_7;
+        iVar4 = ((int)*(short *)(iVar5 + 0xe) - *param_9) + iVar7 + param_7;
         iVar9 = ((int)*(short *)(iVar5 + 0x10) - param_9[1]) + iVar12 + param_8;
         local_58 = (uint)*(short *)(iVar5 + 0x12);
         local_54 = (byte *)(int)*(short *)(iVar5 + 0x14);
@@ -163,15 +166,16 @@ LAB_006cf209:
         iVar5 = FUN_006cfeb0(&local_60,&local_60,&local_38);
         if (iVar5 != 0) {
           iVar4 = local_60 - iVar4;
-          uVar7 = local_5c - iVar9;
+          uVar8 = local_5c - iVar9;
           /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
           if (*(int *)(*param_1 + 0x20) == 0x10) {
-            iVar5 = local_60 * 2 + local_5c * (int)param_3;
+            pAVar13 = (AnonShape_006D86E0_D6D32C07 *)
+                      (&param_2->field_0x0 + local_60 * 2 + local_5c * (int)param_3);
           }
           else {
-            iVar5 = local_5c * (int)param_3 + local_60;
+            pAVar13 = (AnonShape_006D86E0_D6D32C07 *)
+                      (&param_2->field_0x0 + local_5c * (int)param_3 + local_60);
           }
-          pAVar13 = (AnonShape_006D86E0_D6D32C07 *)((int)param_2 + iVar5);
           uVar10 = param_12 & 0xff;
           if (uVar10 == 0) {
             local_8 = 1;
@@ -179,7 +183,7 @@ LAB_006cf209:
             if (*(int *)(*param_1 + 0x20) == 0x10) {
               iVar5 = *(int *)(iVar11 + 0xbc) + 7;
               /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-              FUN_006d3300((uint *)pAVar13,(int)param_3,*(byte **)((int)puVar8 + 6),iVar4,uVar7,
+              FUN_006d3300((uint *)pAVar13,(int)param_3,*(byte **)&pAVar6->field_0x6,iVar4,uVar8,
                            local_58,local_54,local_24,*(byte **)(iVar11 + 0xb8),
                            (int)(iVar5 + (iVar5 >> 0x1f & 7U)) >> 3,
                            ((*param_9 - *(int *)(iVar11 + 0x18)) - param_7) +
@@ -190,8 +194,8 @@ LAB_006cf209:
             else {
               iVar5 = *(int *)(iVar11 + 0xbc) + 7;
               /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-              FUN_006d2820((byte *)pAVar13,param_3,*(byte **)((int)puVar8 + 6),iVar4,uVar7,local_58,
-                           (uint)local_54,*(int *)(iVar11 + 0xb0),*(byte **)(iVar11 + 0xb8),
+              FUN_006d2820((byte *)pAVar13,param_3,*(byte **)&pAVar6->field_0x6,iVar4,uVar8,local_58
+                           ,(uint)local_54,*(int *)(iVar11 + 0xb0),*(byte **)(iVar11 + 0xb8),
                            (int)(iVar5 + (iVar5 >> 0x1f & 7U)) >> 3,
                            ((*param_9 - *(int *)(iVar11 + 0x18)) - param_7) +
                            *(int *)(iVar11 + 0x28) + local_60,
@@ -202,23 +206,23 @@ LAB_006cf37b:
             local_8 = 0xffffffff;
           }
           else if (uVar10 == 2) {
-            pbVar2 = *(byte **)((int)puVar8 + 6);
-            local_90 = (int)(short)*puVar8 + iVar6 + (*(short *)(pbVar2 + 0xe) - local_38) + param_7
-            ;
+            pbVar2 = *(byte **)&pAVar6->field_0x6;
+            local_90 = (int)*(short *)pAVar6 + iVar7 + (*(short *)(pbVar2 + 0xe) - local_38) +
+                       param_7;
             if (local_90 < 0) {
               local_90 = 0;
             }
-            iVar5 = (int)*(short *)((int)puVar8 + 2) +
+            iVar5 = (int)*(short *)&pAVar6->field_0002 +
                     iVar12 + (*(short *)(pbVar2 + 0x10) - local_34) + param_8;
             if (iVar5 < 0) {
               iVar5 = 0;
             }
             local_8c = FUN_006da080(param_1,(uint *)pAVar13,(int)param_3,local_90,iVar5,pbVar2,iVar4
-                                    ,uVar7,local_58,local_54,param_13);
+                                    ,uVar8,local_58,local_54,param_13);
           }
           else if (uVar10 == 1) {
             if ((param_1[0x74] == 0) ||
-               (((*(AnonShape_006D86E0_768BB816 **)((int)puVar8 + 6))->field_000D & 3) != 1)) {
+               (((*(AnonShape_006D86E0_768BB816 **)&pAVar6->field_0x6)->field_000D & 3) != 1)) {
               local_20 = *(uint *)(iVar11 + 0x5c);
               if ((*(int *)(iVar11 + 100) == 1) && (local_20 == 0)) {
                 local_20 = param_1[0x75];
@@ -226,7 +230,7 @@ LAB_006cf37b:
               local_8 = 2;
               iVar5 = *(int *)(iVar11 + 0xbc) + 7;
               /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-              FUN_006d8a60((uint *)pAVar13,(int)param_3,*(byte **)((int)puVar8 + 6),iVar4,uVar7,
+              FUN_006d8a60((uint *)pAVar13,(int)param_3,*(byte **)&pAVar6->field_0x6,iVar4,uVar8,
                            local_58,(int)local_54,
                            (undefined *)(-(uint)((param_12 & 0x100) != 0) & local_20),
                            *(uint *)(iVar11 + 0x60),*(AnonShape_006D8A60_CD460E10 **)(iVar11 + 100),
@@ -239,9 +243,8 @@ LAB_006cf37b:
             }
             else {
               local_8 = 3;
-              /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-              FUN_006d86e0(pAVar13,(int)param_3,*(AnonShape_006D86E0_768BB816 **)((int)puVar8 + 6),
-                           iVar4,uVar7,local_58,(uint)local_54,(byte)*(undefined4 *)(iVar11 + 0x60),
+              FUN_006d86e0(pAVar13,(int)param_3,*(AnonShape_006D86E0_768BB816 **)&pAVar6->field_0x6,
+                           iVar4,uVar8,local_58,(uint)local_54,(byte)*(undefined4 *)(iVar11 + 0x60),
                            (char)*(undefined4 *)(iVar11 + 100));
             }
             goto LAB_006cf37b;
@@ -281,30 +284,31 @@ LAB_006cf37b:
 /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
 LAB_006cf695:
   if (*(int *)(*param_1 + 0x20) == 0x10) {
-    iVar12 = iVar5 * 2 + iVar6 * (int)param_3;
+    /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
+    param_2 = (AnonShape_006D86E0_D6D32C07 *)
+              (&param_2->field_0x0 + iVar5 * 2 + iVar7 * (int)param_3);
   }
   else {
-    iVar12 = iVar6 * (int)param_3 + iVar5;
+    /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
+    param_2 = (AnonShape_006D86E0_D6D32C07 *)(&param_2->field_0x0 + iVar7 * (int)param_3 + iVar5);
   }
-  /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
-  param_2 = (uint *)((int)param_2 + iVar12);
   iVar5 = (*param_9 - param_7) + iVar5;
-  uVar14 = (param_9[1] - param_8) + iVar6;
+  uVar14 = (param_9[1] - param_8) + iVar7;
   if (uVar10 == 0) {
     local_8 = 4;
     /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
     if (*(int *)(*param_1 + 0x20) == 0x10) {
-      iVar6 = *(int *)(iVar11 + 0xbc) + 7;
-      FUN_006d3300(param_2,(int)param_3,(byte *)param_5,iVar5,uVar14,uVar7,pbVar2,local_24,
-                   *(byte **)(iVar11 + 0xb8),(int)(iVar6 + (iVar6 >> 0x1f & 7U)) >> 3,
+      iVar7 = *(int *)(iVar11 + 0xbc) + 7;
+      FUN_006d3300((uint *)param_2,(int)param_3,(byte *)param_5,iVar5,uVar14,uVar8,pbVar2,local_24,
+                   *(byte **)(iVar11 + 0xb8),(int)(iVar7 + (iVar7 >> 0x1f & 7U)) >> 3,
                    (*(int *)(iVar11 + 0x28) - *(int *)(iVar11 + 0x18)) + iVar5,
                    (*(int *)(iVar11 + 0x2c) - *(int *)(iVar11 + 0x1c)) + uVar14);
     }
     else {
-      iVar6 = *(int *)(iVar11 + 0xbc) + 7;
-      FUN_006d2820((byte *)param_2,param_3,(byte *)param_5,iVar5,uVar14,uVar7,(uint)pbVar2,
+      iVar7 = *(int *)(iVar11 + 0xbc) + 7;
+      FUN_006d2820((byte *)param_2,param_3,(byte *)param_5,iVar5,uVar14,uVar8,(uint)pbVar2,
                    *(int *)(iVar11 + 0xb0),*(byte **)(iVar11 + 0xb8),
-                   (int)(iVar6 + (iVar6 >> 0x1f & 7U)) >> 3,
+                   (int)(iVar7 + (iVar7 >> 0x1f & 7U)) >> 3,
                    (*(int *)(iVar11 + 0x28) - *(int *)(iVar11 + 0x18)) + iVar5,
                    (byte *)((*(int *)(iVar11 + 0x2c) - *(int *)(iVar11 + 0x1c)) + uVar14));
     }
@@ -312,30 +316,28 @@ LAB_006cf8ee:
     local_8 = 0xffffffff;
   }
   else if (uVar10 == 2) {
-    local_28 = FUN_006da080(param_1,param_2,(int)param_3,0,0,(byte *)param_5,iVar5,uVar14,uVar7,
-                            pbVar2,param_13);
+    local_28 = FUN_006da080(param_1,(uint *)param_2,(int)param_3,0,0,(byte *)param_5,iVar5,uVar14,
+                            uVar8,pbVar2,param_13);
   }
   else if (uVar10 == 1) {
-    /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-    if ((param_1[0x74] == 0) || ((*(byte *)((int)param_5 + 0xd) & 3) != 1)) {
+    if ((param_1[0x74] == 0) || ((param_5->field_000D & 3) != 1)) {
       local_20 = *(uint *)(iVar11 + 0x5c);
       if ((*(int *)(iVar11 + 100) == 1) && (local_20 == 0)) {
         local_20 = param_1[0x75];
       }
       local_8 = 5;
-      iVar6 = *(int *)(iVar11 + 0xbc) + 7;
-      FUN_006d8a60(param_2,(int)param_3,(byte *)param_5,iVar5,uVar14,uVar7,(int)pbVar2,
+      iVar7 = *(int *)(iVar11 + 0xbc) + 7;
+      FUN_006d8a60((uint *)param_2,(int)param_3,(byte *)param_5,iVar5,uVar14,uVar8,(int)pbVar2,
                    (undefined *)(-(uint)((param_12 & 0x100) != 0) & local_20),
                    *(uint *)(iVar11 + 0x60),*(AnonShape_006D8A60_CD460E10 **)(iVar11 + 100),
                    *(undefined **)(iVar11 + 0xb0),*(byte **)(iVar11 + 0xb8),
-                   (int)(iVar6 + (iVar6 >> 0x1f & 7U)) >> 3,
+                   (int)(iVar7 + (iVar7 >> 0x1f & 7U)) >> 3,
                    (*(int *)(iVar11 + 0x28) - *(int *)(iVar11 + 0x18)) + iVar5,
                    (*(int *)(iVar11 + 0x2c) - *(int *)(iVar11 + 0x1c)) + uVar14);
     }
     else {
       local_8 = 6;
-      FUN_006d86e0((AnonShape_006D86E0_D6D32C07 *)param_2,(int)param_3,
-                   (AnonShape_006D86E0_768BB816 *)param_5,iVar5,uVar14,uVar7,(uint)pbVar2,
+      FUN_006d86e0(param_2,(int)param_3,param_5,iVar5,uVar14,uVar8,(uint)pbVar2,
                    (byte)*(undefined4 *)(iVar11 + 0x60),(char)*(undefined4 *)(iVar11 + 100));
     }
     goto LAB_006cf8ee;

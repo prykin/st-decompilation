@@ -3,9 +3,13 @@
 
 /* Recovered from embedded debug metadata:
    E:\__titans\Artem\TLO_bspr.cpp
-   TLOBaseTy::LoadImages */
+   TLOBaseTy::LoadImages
+   [STAbiConsistencyApplier] machine_thiscall_arity target=function:-1: prototype=int __thiscall
+   LoadImages(TLOBaseTy * this) Evidence: every machine RET purges exactly 0 explicit stack bytes;
+   current signature describes 4; removed trailing parameter slots have no listing references;
+   ret_sites=004C9DB7 RET | 004CA0F2 RET | 004CA139 RET */
 
-int __thiscall TLOBaseTy::LoadImages(TLOBaseTy *this,void *param_1)
+int __thiscall TLOBaseTy::LoadImages(TLOBaseTy *this)
 
 {
   code *pcVar1;

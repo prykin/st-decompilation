@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* [STSourceProvenanceApplier begin]
    Recovered source file: E:\__titans\ai\ai_tact_d.cpp
@@ -32,11 +34,7 @@ AllocationRecord_00690FC0 * __cdecl FUN_00690fc0(AllocationRecord_00690FC0 *para
     pAVar2 = Library::DKW::LIB::MemAllocClear(0x10c);
     pAVar6 = param_1;
     pAVar8 = pAVar2;
-    for (iVar1 = 0x43; iVar1 != 0; iVar1 = iVar1 + -1) {
-      *(undefined4 *)pAVar8 = *(undefined4 *)pAVar6;
-      pAVar6 = (AllocationRecord_00690FC0 *)&pAVar6->field_0x4;
-      pAVar8 = (AllocationRecord_00690FC0 *)&pAVar8->field_0x4;
-    }
+    memmove(pAVar8, pAVar6, 0x10c); /* compiler REP MOVS byte copy */
     iVar1 = 0;
     pAVar2->field_0014 = 0x10c;
     pAVar2->field_0018 = 2;

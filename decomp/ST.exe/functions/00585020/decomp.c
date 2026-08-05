@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 void __fastcall FUN_00585020(AnonShape_00585020_1C9B1418 *param_1)
 
@@ -101,9 +103,7 @@ void __fastcall FUN_00585020(AnonShape_00585020_1C9B1418 *param_1)
       if ((((-1 < local_10) &&
            (((local_10 < g_worldGrid.sizeX && (-1 < local_8)) && (local_8 < g_worldGrid.sizeY)))) &&
           (((-1 < sVar6 && (sVar6 < g_worldGrid.sizeZ)) &&
-           (pSVar2 = g_worldGrid.cells
-                     [(int)g_worldGrid.planeStride * (int)sVar6 +
-                      (int)g_worldGrid.sizeX * (int)local_8 + (int)local_10].objects[0],
+           (pSVar2 = STGridAt3D(g_worldGrid, local_10, local_8, sVar6).objects[0],
            pSVar2 != nullptr)))) && (pSVar2->value_20 != 0xaa)) {
         thunk_FUN_00584c50(param_1,&pSVar2->vtable);
         thunk_FUN_005860d0(param_1,(int)(short)param_1->field_0041,(int)(short)param_1->field_0043,
@@ -229,9 +229,7 @@ void __fastcall FUN_00585020(AnonShape_00585020_1C9B1418 *param_1)
       if (((-1 < local_10) &&
           ((((local_10 < g_worldGrid.sizeX && (-1 < local_8)) && (local_8 < g_worldGrid.sizeY)) &&
            ((-1 < sVar6 && (sVar6 < g_worldGrid.sizeZ)))))) &&
-         ((pSVar2 = g_worldGrid.cells
-                    [(int)g_worldGrid.planeStride * (int)sVar6 +
-                     (int)g_worldGrid.sizeX * (int)local_8 + (int)local_10].objects[0],
+         ((pSVar2 = STGridAt3D(g_worldGrid, local_10, local_8, sVar6).objects[0],
           pSVar2 != nullptr && (pSVar2->value_20 != 0xaa)))) {
         thunk_FUN_00584c50(param_1,&pSVar2->vtable);
       }

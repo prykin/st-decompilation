@@ -53,7 +53,10 @@ public class STPrototypeAnalyzer extends GhidraScript {
         "\\[(?:STPrototype|STPrototypeRepair)Applier\\] Propagated " +
         "(return|parameter(?: ([0-9]+))?)\\.");
     private static final String TAG = "RECOVERED_PROTOTYPE";
-    private static final int MAX_TYPE_PROPAGATION_PASSES = 8;
+    // Wrapper/thunk ladders in the linked image are deeper than eight calls.  This is a cheap
+    // machine-only fixed point and avoids turning each additional level into an expensive outer
+    // pipeline pass which reruns every decompiler-backed structural analyzer.
+    private static final int MAX_TYPE_PROPAGATION_PASSES = 32;
 
     private final Map<TargetKey, Evidence> evidence = new TreeMap<>();
     private final Map<TargetKey, Set<TargetKey>> boundaryEdges = new TreeMap<>();
@@ -385,8 +388,17 @@ public class STPrototypeAnalyzer extends GhidraScript {
             if (function == null) continue;
             Parameter target = "return".equals(key.kind) ? function.getReturn() :
                 explicitParameter(function, key.ordinal);
-            if (target == null || typeLength(candidate) !=
-                    effectiveLength(target.getFormalDataType())) continue;
+            if (target == null) continue;
+            boolean compatible = typeLength(candidate) ==
+                effectiveLength(target.getFormalDataType());
+            // Ghidra models a bare x86 `undefined` return as one byte.  Let the same strict
+            // whole-EAX wrapper proof used by proposal generation participate in the analyzer's
+            // in-memory fixed point.  Otherwise only one wrapper level is discovered per outer
+            // pipeline pass, needlessly rerunning every unrelated whole-program analyzer.
+            if (!compatible)
+                compatible = exactFullAccumulatorWrapperReturn(function, key, target,
+                    candidate, found);
+            if (!compatible) continue;
             int count = found.types.getOrDefault(candidate, 0);
             int strongForType = found.strongTypeSites
                 .getOrDefault(candidate, Set.of()).size();
@@ -789,8 +801,11 @@ public class STPrototypeAnalyzer extends GhidraScript {
             boolean nameConflict = ev.names.size() > 1;
             int typeCount = proposedType.isBlank() ? 0 : ev.types.get(proposedType);
             int nameCount = proposedName.isBlank() ? 0 : ev.names.get(proposedName);
-            boolean compatible = !proposedType.isBlank() && typeLength(proposedType) ==
-                effectiveLength(target.getDataType());
+            boolean machineForwardedReturn = !proposedType.isBlank() &&
+                exactFullAccumulatorWrapperReturn(function, key, target, proposedType, ev);
+            boolean compatible = !proposedType.isBlank() &&
+                (typeLength(proposedType) == effectiveLength(target.getDataType()) ||
+                 machineForwardedReturn);
             boolean safeScriptRepair = !scriptOwned ||
                 scriptRepairImproves(currentType, proposedType);
             boolean typeChange = compatible && !sameType(currentType, proposedType) &&
@@ -823,6 +838,8 @@ public class STPrototypeAnalyzer extends GhidraScript {
             reasons.add("name_evidence=" + ev.names);
             reasons.add("strong_evidence=" + ev.strongCount);
             if (!compatible && !proposedType.isBlank()) reasons.add("storage_width_mismatch");
+            if (machineForwardedReturn)
+                reasons.add("exact_full_eax_wrapper_return");
             if (manual) reasons.add("manual_target_preserved");
             if (protectedOverride)
                 reasons.add("legacy_debug_signature_source_override");
@@ -843,6 +860,56 @@ public class STPrototypeAnalyzer extends GhidraScript {
         result.sort(Comparator.comparing((Proposal row) -> row.address)
             .thenComparing(row -> row.kind).thenComparingInt(row -> row.ordinal));
         return result;
+    }
+
+    /**
+     * Ghidra's bare `undefined` return has length one even on 32-bit x86.  That is a
+     * presentation default, not evidence that only AL is returned.  Permit a semantic
+     * four-byte return to replace it only for the strict transparent-wrapper shape which
+     * the machine propagation pass has already followed: one direct CALL, no control-flow
+     * split after entry, and an untouched full EAX reaching every RET.  This closes the
+     * otherwise permanent width-mismatch gap without widening arbitrary narrow returns.
+     */
+    private boolean exactFullAccumulatorWrapperReturn(Function function, TargetKey key,
+            Parameter target, String proposedType, Evidence value) {
+        if (!"return".equals(key.kind) || typeLength(proposedType) !=
+                currentProgram.getDefaultPointerSize() ||
+                "unknown".equalsIgnoreCase(function.getCallingConventionName()) ||
+                !Undefined.isUndefined(target.getFormalDataType()) ||
+                effectiveLength(target.getFormalDataType()) >=
+                    currentProgram.getDefaultPointerSize() ||
+                value.strongTypeSites.getOrDefault(proposedType, Set.of()).isEmpty() ||
+                function.getBody().getNumAddresses() > 64 || directCalls(function).size() != 1)
+            return false;
+
+        boolean afterCall = false, sawReturn = false;
+        InstructionIterator instructions = currentProgram.getListing()
+            .getInstructions(function.getBody(), true);
+        while (instructions.hasNext()) {
+            Instruction instruction = instructions.next();
+            String mnemonic = instruction.getMnemonicString().toUpperCase(Locale.ROOT);
+            String[] operands = splitOperands(instruction.toString().toUpperCase(Locale.ROOT));
+            if ("CALL".equals(mnemonic)) {
+                if (afterCall) return false;
+                afterCall = true;
+                continue;
+            }
+            if (instruction.getFlowType().isJump()) return false;
+            if ("RET".equals(mnemonic)) {
+                if (!afterCall) return false;
+                sawReturn = true;
+                continue;
+            }
+            if (!afterCall || operands.length == 0) continue;
+            String destination = cleanRegister(operands[0]);
+            if (!"EAX".equals(destination) || !writesRegister(mnemonic)) continue;
+            // MOV EAX,EAX is an identity; every other post-call accumulator write
+            // destroys the forwarded result proven by the call propagation pass.
+            if (!("MOV".equals(mnemonic) && operands.length >= 2 &&
+                    "EAX".equals(cleanRegister(operands[1])) &&
+                    isFullRegister(operands[1]))) return false;
+        }
+        return sawReturn;
     }
 
     private void updateRegisters(Instruction instruction, String mnemonic, String[] operands,
@@ -1786,7 +1853,10 @@ public class STPrototypeAnalyzer extends GhidraScript {
                 int candidateCount = candidate.isBlank() || found == null ? 0 :
                     found.types.getOrDefault(candidate, 0);
                 boolean compatible = !candidate.isBlank() &&
-                    typeLength(candidate) == effectiveLength(target.getFormalDataType());
+                    (typeLength(candidate) == effectiveLength(target.getFormalDataType()) ||
+                     found != null && exactFullAccumulatorWrapperReturn(function,
+                        new TargetKey(function.getEntryPoint(), kind, ordinal), target,
+                        candidate, found));
                 int candidateStrong = candidate.isBlank() || found == null ? 0 :
                     found.strongTypeSites.getOrDefault(candidate, Set.of()).size();
                 boolean enough = found != null &&

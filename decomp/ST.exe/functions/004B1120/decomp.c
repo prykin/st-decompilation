@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* [STSwitchEnumApplier] Switch target param_2 uses
    /SubmarineTitans/Recovered/Enums/Global_sub_004B1120_param_2Enum. Cases:
@@ -54,9 +56,7 @@ FUN_004b1120(int param_1,Global_sub_004B1120_param_2Enum param_2,int *param_3,in
                 if (dVar3 == 0xdc) {
 LAB_004b1226:
                   STFishC::sub_004162B0(local_18,&local_6,&local_8,&local_a);
-                  if (((g_worldGrid.cells
-                        [(int)g_worldGrid.sizeX * (int)local_8 +
-                         (int)local_6 + (int)g_worldGrid.planeStride * (int)local_a].objects[0] ==
+                  if (((STGridAt3D(g_worldGrid, local_6, local_8, local_a).objects[0] ==
                         nullptr) && (local_a < 4)) &&
                      ((iVar2 = FUN_006aced8((int)local_6,(int)local_8,*param_3,*param_4),
                       local_14 < 0 || (iVar2 < local_14)))) {

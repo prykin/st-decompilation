@@ -494,16 +494,7 @@ LAB_0054f98b:
       local_28 = local_18;
       puVar19 = local_8;
       pAVar11 = pSVar21->field_003D;
-      for (uVar9 = local_18 >> 2; uVar9 != 0; uVar9 = uVar9 - 1) {
-        *(uint *)pAVar11 = *puVar19;
-        puVar19 = puVar19 + 1;
-        pAVar11 = (AnonPointee_STPlaySystemC_003D *)&pAVar11->field_0004;
-      }
-      for (uVar9 = local_18 & 3; uVar9 != 0; uVar9 = uVar9 - 1) {
-        *(char *)pAVar11 = (char)*puVar19;
-        puVar19 = (uint *)((int)puVar19 + 1);
-        pAVar11 = (AnonPointee_STPlaySystemC_003D *)&pAVar11->field_0x1;
-      }
+      memmove(pAVar11, puVar19, local_18); /* compiler REP MOVS byte copy */
 LAB_0054fbb7:
       pAVar11 = pSVar21->field_003D;
       uVar9 = pSVar21->field_0041;

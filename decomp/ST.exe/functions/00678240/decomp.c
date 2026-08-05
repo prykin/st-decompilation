@@ -79,7 +79,7 @@ _EnumMines(int param_1,short param_2,char param_3,byte *param_4,short param_5,sh
       iVar3 = 1;
       local_14 = 1;
       if ((param_4 != nullptr) && (*param_4 != 0)) {
-        (*this->vtable->vfunc_74)(local_28);
+        (*this->vtable->vfunc_74)((short)local_28);
         pbVar10 = local_28;
         pbVar6 = param_4;
         do {

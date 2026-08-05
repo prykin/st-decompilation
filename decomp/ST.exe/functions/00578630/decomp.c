@@ -26,8 +26,6 @@ int __thiscall STCrabC::GetMessage(STCrabC *this,STMessage *message)
   STSprGameObjC_field_0259State SVar11;
   STSprGameObjC_field_0259State *pSVar12;
   byte *pbVar13;
-  /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
-  int unaff_EDI;
   STSprGameObjC_field_0259State *pSVar14;
   byte *pbVar15;
   InternalExceptionFrame local_80;
@@ -175,8 +173,7 @@ int __thiscall STCrabC::GetMessage(STCrabC *this,STMessage *message)
     pSVar14 = &this_00->field_0259;
     memmove(pSVar14, pSVar12, 0x28); /* compiler REP MOVS byte copy */
     iVar7 = 0;
-    /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
-    Bad((STCrabC *)this_00,unaff_EDI);
+    Bad((STCrabC *)this_00);
     if (((((*(int *)&this_00->field_0x26d < 0) ||
           ((int)g_worldGrid.sizeX <= *(int *)&this_00->field_0x26d)) ||
          (*(int *)&this_00->field_0x271 < 0)) ||

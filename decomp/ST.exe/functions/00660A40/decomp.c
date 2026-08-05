@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 undefined4 __thiscall FUN_00660a40(void *this,short param_1,short param_2,short param_3)
 
@@ -8,13 +10,9 @@ undefined4 __thiscall FUN_00660a40(void *this,short param_1,short param_2,short 
   *(undefined4 *)((int)this + 0xa7) = 0;
   if (((((-1 < param_1) && (param_1 < g_worldGrid.sizeX)) && (-1 < param_2)) &&
       ((param_2 < g_worldGrid.sizeY && (-1 < param_3)))) && (param_3 < g_worldGrid.sizeZ)) {
-    if (g_worldGrid.cells
-        [(int)g_worldGrid.planeStride * (int)param_3 + (int)g_worldGrid.sizeX * (int)param_2 +
-         (int)param_1].objects[0] != nullptr) {
+    if (STGridAt3D(g_worldGrid, param_1, param_2, param_3).objects[0] != nullptr) {
       local_8 = *(undefined4 *)
-                 &g_worldGrid.cells
-                  [(int)g_worldGrid.planeStride * (int)param_3 +
-                   (int)g_worldGrid.sizeX * (int)param_2 + (int)param_1].objects[0]->field_0x18;
+                 &STGridAt3D(g_worldGrid, param_1, param_2, param_3).objects[0]->field_0x18;
       if ((*(ushort *)((int)this + 0x7d) != 0xfffe) &&
          (g_allPlayers_007FA174 != nullptr)) {
         this_00 = thunk_FUN_0042b760(*(char *)((int)this + 0x24),*(ushort *)((int)this + 0x7d));

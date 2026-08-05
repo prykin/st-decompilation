@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 undefined4 __cdecl
 FUN_00675950(int param_1,int param_2,short param_3,short *param_4,short *param_5,short *param_6,
@@ -44,9 +46,7 @@ FUN_00675950(int param_1,int param_2,short param_3,short *param_4,short *param_5
           sVar8 = (short)iVar6;
           iVar2 = thunk_FUN_004961b0(sVar7,sVar8,sVar5);
           if ((iVar2 != 0) &&
-             (g_worldGrid.cells
-              [(int)g_worldGrid.planeStride * (int)sVar5 + (int)g_worldGrid.sizeX * (int)sVar8 +
-               (int)sVar7].objects[param_7] == nullptr)) {
+             (STGridAt3D(g_worldGrid, sVar7, sVar8, sVar5).objects[param_7] == nullptr)) {
             *param_4 = sVar7;
             *param_5 = sVar8;
             *param_6 = sVar5;

@@ -25,8 +25,6 @@ uint __thiscall STGroupBoatC::GrpPatrol(STGroupBoatC *this,int param_1)
   uint uVar11;
   short *psVar12;
   Global_sub_006C8EC0_param_3Enum GVar13;
-  /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
-  int unaff_EDI;
   int iVar15;
   short *psVar16;
   undefined4 local_6c;
@@ -327,8 +325,7 @@ joined_r0x0049bc58:
   }
   DArrayDestroy(this->field_0103);
   this->field_0103 = nullptr;
-  /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
-  ReMakePatrolPoints(this,unaff_EDI);
+  ReMakePatrolPoints(this);
   pDVar7 = Library::DKW::TBL::DArrayCreate(nullptr,(uint)this->field_0027,0x16,1);
   this->field_022E = pDVar7;
   uVar11 = 0;

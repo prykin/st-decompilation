@@ -21,7 +21,7 @@ int __thiscall STManRub3C::GetMessage(STManRub3C *this,STMessage *message)
   byte *local_14;
   uint local_10;
   STManRub3C *local_c;
-  ushort *local_8;
+  AnonShape_0062CCA0_BAB34A07 *local_8;
 
   local_8 = nullptr;
   local_58.previous = g_currentExceptionFrame;
@@ -42,9 +42,10 @@ int __thiscall STManRub3C::GetMessage(STManRub3C *this,STMessage *message)
   SVar1 = message->id;
   if (SVar1 == MESS_ID_CREATE) {
     if (g_cMf32_00806754 != nullptr) {
-      local_8 = Library::Ourlib::MFAOBJ::mfAObjLoad(g_cMf32_00806754,PTR_s_RUBBISH_3_0079d080,0,0);
+      local_8 = (AnonShape_0062CCA0_BAB34A07 *)
+                Library::Ourlib::MFAOBJ::mfAObjLoad(g_cMf32_00806754,PTR_s_RUBBISH_3_0079d080,0,0);
     }
-    if ((local_8 == nullptr) || (*(int *)(local_8 + 6) != 2)) {
+    if ((local_8 == nullptr) || (local_8->field_000C != 2)) {
       local_c->field_001C = 0;
       local_c->field_0028 = 1;
       local_c->field_0024 = 1;

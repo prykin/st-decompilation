@@ -7,8 +7,6 @@ void __fastcall FUN_0041f3b0(STSprGameObjC *param_1)
   uint uVar3;
   uint uVar4;
   STSprGameObjC_field_0259State SVar5;
-  /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
-  int *unaff_EDI;
 
   iVar2 = param_1->field_0221;
   if (iVar2 == -1) {
@@ -23,8 +21,7 @@ void __fastcall FUN_0041f3b0(STSprGameObjC *param_1)
       return;
     }
     if (param_1->field_0225 == 0) {
-      /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
-      STSprGameObjC::LoadLifeFrame(param_1,unaff_EDI);
+      STSprGameObjC::LoadLifeFrame(param_1);
       iVar2 = STT3DSprC::sub_004ACD30((STT3DSprC *)&param_1->field_01D5,'\x01');
       param_1->field_0225 = iVar2 + -1;
     }

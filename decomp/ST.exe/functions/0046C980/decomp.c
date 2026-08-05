@@ -7,9 +7,15 @@
 
    [STSwitchEnumApplier] Switch target field_0508 uses
    /SubmarineTitans/Recovered/Enums/STBoatC_field_0508State. Cases:
-   CASE_0=0;CASE_1=1;CASE_2=2;CASE_3=3;CASE_4=4;CASE_5=5;CASE_6=6;CASE_7=7 */
+   CASE_0=0;CASE_1=1;CASE_2=2;CASE_3=3;CASE_4=4;CASE_5=5;CASE_6=6;CASE_7=7
+   [STAbiConsistencyApplier] machine_thiscall_arity target=function:-1: prototype=int __thiscall
+   BackBuild(STBoatC * this, int * param_1) Evidence: every machine RET purges exactly 4 explicit
+   stack bytes; current signature describes 12; removed trailing parameter slots have no listing
+   references; ret_sites=0046C9BB RET 0x4 | 0046C9E0 RET 0x4 | 0046C9F6 RET 0x4 | 0046CAC7 RET 0x4 |
+   0046CB14 RET 0x4 | 0046CBB5 RET 0x4 | 0046CC01 RET 0x4 | 0046CC0B RET 0x4 | 0046CD77 RET 0x4 |
+   0046CDD6 RET 0x4 */
 
-int __thiscall STBoatC::BackBuild(STBoatC *this,int *param_1,undefined4 param_2,undefined4 param_3)
+int __thiscall STBoatC::BackBuild(STBoatC *this,int *param_1)
 
 {
   code *pcVar1;

@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* [STPrototypeApplier] Propagated return.
    Evidence: 005EF7A0 returns return of FUN_005ef4b0 @ 005EF8CD | 005EF7A0 returns return of
@@ -17,9 +19,7 @@ bool __thiscall FUN_005ef7a0(void *this,short param_1,short param_2,short param_
     if (((((-1 < sVar1) && (sVar1 < g_worldGrid.sizeX)) && (-1 < param_2)) &&
         (((param_2 < g_worldGrid.sizeY && (-1 < param_3)) &&
          ((param_3 < g_worldGrid.sizeZ &&
-          (g_worldGrid.cells
-           [(int)g_worldGrid.planeStride * (int)param_3 + (int)g_worldGrid.sizeX * (int)param_2 +
-            (int)sVar1].objects[0] != nullptr)))))) ||
+          (STGridAt3D(g_worldGrid, sVar1, param_2, param_3).objects[0] != nullptr)))))) ||
        (_param_1 = (STWorldObject *)DumpClassC::WritePtr(sVar1,param_2,param_3,0,this),
        _param_1 != nullptr)) goto cf_common_exit_005EF8D0;
     *(char *)((int)this + 0x252) = *(char *)((int)this + 0x252) + '\x01';
@@ -34,9 +34,7 @@ bool __thiscall FUN_005ef7a0(void *this,short param_1,short param_2,short param_
       _param_1 = nullptr;
     }
     else {
-      _param_1 = g_worldGrid.cells
-                 [(int)g_worldGrid.planeStride * (int)sVar2 + (int)g_worldGrid.sizeX * (int)sVar3 +
-                  (int)sVar1].objects[0];
+      _param_1 = STGridAt3D(g_worldGrid, sVar1, sVar3, sVar2).objects[0];
     }
     if (_param_1 != this) goto cf_common_exit_005EF8D0;
   }

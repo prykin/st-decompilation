@@ -1,4 +1,4 @@
-FUN_005d9f80:
+CreateSID:
 005D9F80  53                        PUSH EBX
 005D9F81  56                        PUSH ESI
 005D9F82  68 D8 1D 00 00            PUSH 0x1dd8

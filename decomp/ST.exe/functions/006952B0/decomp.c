@@ -47,12 +47,7 @@ CGenerate::FUN_006952b0(CGenerate *this,AnonShape_006952B0_7A982E30 *param_1,byt
   Library::MSVCRT::FUN_0072e6b0(*(DWORD *)param_1);
   pAVar3 = param_1;
   pAVar4 = &this->aggregate_001C;
-  for (iVar2 = 0x8c; iVar2 != 0; iVar2 = iVar2 + -1) {
-    *(undefined4 *)pAVar4 = *(undefined4 *)pAVar3;
-    pAVar3 = (AnonShape_006952B0_7A982E30 *)&pAVar3->field_0x4;
-    pAVar4 = (AnonShape_006952B0_7A982E30 *)&pAVar4->field_0x4;
-  }
-  *(undefined2 *)pAVar4 = *(undefined2 *)pAVar3;
+  memmove(pAVar4, pAVar3, 0x232); /* compiler REP MOVS byte copy */
   iVar2 = CreateMap(this);
   sub_0069FF90(this);
   if (iVar2 != 0) {

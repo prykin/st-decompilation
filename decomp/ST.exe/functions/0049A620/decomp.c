@@ -18,8 +18,6 @@ undefined4 __thiscall STGroupBoatC::GrpMove(STGroupBoatC *this,int param_1)
   undefined4 uVar4;
   uint uVar5;
   uint uVar6;
-  /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
-  int unaff_EDI;
   InternalExceptionFrame local_64;
   uint local_20;
   undefined2 local_1c;
@@ -55,8 +53,7 @@ undefined4 __thiscall STGroupBoatC::GrpMove(STGroupBoatC *this,int param_1)
     local_14->field_0065 = 0;
     local_14->field_0041 = (int)*(short *)&local_14->field_0xdf;
     local_14->field_030E = *(undefined4 *)&local_14->field_0xe3;
-    /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
-    array = (DArrayTy *)STGroupC::GetGroupContent((STGroupC *)local_14,unaff_EDI);
+    array = (DArrayTy *)STGroupC::GetGroupContent((STGroupC *)local_14);
     InitWay(this_00,array,this_00->field_003D,this_00->field_0041,this_00->field_0045);
     DArrayDestroy(array);
     local_20 = g_playSystem_00802A38->field_00E4;

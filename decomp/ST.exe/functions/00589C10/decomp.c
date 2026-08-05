@@ -24,8 +24,6 @@ int __thiscall STOctopusC::GetMessage(STOctopusC *this,STMessage *message)
   uint uVar9;
   byte *puVar10;
   byte *pbVar11;
-  /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
-  int unaff_EDI;
   byte *puVar12;
   AnonShape_00589C10_CECA1FB4 *pAVar13;
   byte *pbVar14;
@@ -156,11 +154,7 @@ int __thiscall STOctopusC::GetMessage(STOctopusC *this,STMessage *message)
     }
     puVar10 = (byte *)&this_00->field_0x285;
     pAVar13 = local_c;
-    for (iVar6 = 10; iVar6 != 0; iVar6 = iVar6 + -1) {
-      *(undefined4 *)pAVar13 = *puVar10;
-      puVar10 = (byte *)(puVar10 + 1);
-      pAVar13 = (AnonShape_00589C10_CECA1FB4 *)&pAVar13->field_0x4;
-    }
+    memmove(pAVar13, puVar10, 0x28); /* compiler REP MOVS byte copy */
     *(undefined4 *)&local_c->field_0xc = 2;
     *(undefined4 *)&local_c->field_0x28 = *(undefined4 *)&this_00->field_0x245;
     *(undefined4 *)&local_c->field_0x2c = *(undefined4 *)&this_00->field_0x249;
@@ -249,8 +243,7 @@ int __thiscall STOctopusC::GetMessage(STOctopusC *this,STMessage *message)
     puVar12 = (byte *)&this_00->field_0x285;
     memmove(puVar12, puVar10, 0x28); /* compiler REP MOVS byte copy */
     iVar6 = 0;
-    /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
-    Bad((STOctopusC *)this_00,unaff_EDI);
+    Bad((STOctopusC *)this_00);
     if (((((*(int *)&this_00->field_0x299 < 0) ||
           ((int)g_worldGrid.sizeX <= *(int *)&this_00->field_0x299)) ||
          (*(int *)&this_00->field_0x29d < 0)) ||

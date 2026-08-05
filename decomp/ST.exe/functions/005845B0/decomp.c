@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 undefined4 __cdecl
 FUN_005845b0(int param_1,uint param_2,int param_3,int param_4,int param_5,int param_6,int *param_7,
@@ -81,14 +83,10 @@ LAB_005846f7:
          (((sVar7 < 0 || (g_worldGrid.sizeX <= sVar7)) ||
           ((((sVar8 < 0 ||
              (((g_worldGrid.sizeY <= sVar8 || (sVar9 < 0)) || (g_worldGrid.sizeZ <= sVar9)))) ||
-            (g_worldGrid.cells
-             [(int)g_worldGrid.planeStride * (int)sVar9 + (int)g_worldGrid.sizeX * (int)sVar8 +
-              (int)sVar7].objects[0] == nullptr)) &&
+            (STGridAt3D(g_worldGrid, sVar7, sVar8, sVar9).objects[0] == nullptr)) &&
            ((((g_worldGrid.sizeX <= sVar7 || (sVar8 < 0)) ||
              ((g_worldGrid.sizeY <= sVar8 || ((sVar9 < 0 || (g_worldGrid.sizeZ <= sVar9)))))) ||
-            (g_worldGrid.cells
-             [(int)g_worldGrid.planeStride * (int)sVar9 + (int)g_worldGrid.sizeX * (int)sVar8 +
-              (int)sVar7].objects[1] == nullptr)))))))) {
+            (STGridAt3D(g_worldGrid, sVar7, sVar8, sVar9).objects[1] == nullptr)))))))) {
         *param_7 = iVar6;
         *param_8 = iVar3;
         *param_9 = iVar5;

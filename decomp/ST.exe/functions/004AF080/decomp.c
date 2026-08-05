@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 undefined4 __cdecl
 FUN_004af080(uint param_1,int param_2,int *param_3,int *param_4,int *param_5,int param_6,int param_7
@@ -79,15 +81,11 @@ FUN_004af080(uint param_1,int param_2,int *param_3,int *param_4,int *param_5,int
 LAB_004af1d5:
                 *(undefined1 *)(iVar22 + iVar19 + iVar9 + (int)psVar8) = 3;
               }
-              else if (g_pathingGrid.cells
-                       [(int)sVar16 * (int)g_pathingGrid.planeStride +
-                        (int)sVar7 * (int)g_pathingGrid.sizeX + (int)sVar21] == 0) {
+              else if (STGridAt3D(g_pathingGrid, sVar21, sVar7, sVar16) == 0) {
                 *(undefined1 *)(iVar22 + iVar19 + iVar9 + (int)psVar8) = 0;
               }
               else {
-                if (g_pathingGrid.cells
-                    [(int)sVar16 * (int)g_pathingGrid.planeStride +
-                     (int)sVar7 * (int)g_pathingGrid.sizeX + (int)sVar21] == -1) goto LAB_004af1d5;
+                if (STGridAt3D(g_pathingGrid, sVar21, sVar7, sVar16) == -1) goto LAB_004af1d5;
                 *(undefined1 *)(iVar22 + iVar19 + iVar9 + (int)psVar8) = 1;
               }
             }

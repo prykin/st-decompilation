@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 int __thiscall FUN_00614ee0(void *this,int param_1,int param_2,int param_3,int param_4)
 
@@ -27,9 +29,7 @@ int __thiscall FUN_00614ee0(void *this,int param_1,int param_2,int param_3,int p
        ((g_worldGrid.sizeY <= sVar3 || (sVar2 < 0)))) ||
       ((g_worldGrid.sizeZ <= sVar2 ||
        ((this_00 = (STFishC *)
-                   g_worldGrid.cells
-                   [(int)g_worldGrid.planeStride * (int)sVar2 + (int)g_worldGrid.sizeX * (int)sVar3
-                    + (int)sVar1].objects[0], this_00 == nullptr ||
+                   STGridAt3D(g_worldGrid, sVar1, sVar3, sVar2).objects[0], this_00 == nullptr ||
         (this_00->field_0018 != *(int *)((int)this + 0x2d1))))))) &&
      (iVar4 = STPlaySystemC::sub_006E62D0
                         (g_playSystem_00802A38,*(AnonShape_005EFAE0_B406B78B **)((int)this + 0x2d1),

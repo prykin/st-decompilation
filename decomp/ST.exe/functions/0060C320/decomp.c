@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 int __fastcall FUN_0060c320(void *param_1)
 
@@ -126,9 +128,7 @@ int __fastcall FUN_0060c320(void *param_1)
                 pSVar17 = nullptr;
               }
               else {
-                pSVar17 = g_worldGrid.cells
-                          [(int)g_worldGrid.planeStride * (int)sVar14 +
-                           (int)g_worldGrid.sizeX * (int)sVar12 + (int)sVar18].objects[0];
+                pSVar17 = STGridAt3D(g_worldGrid, sVar18, sVar12, sVar14).objects[0];
               }
               if (((pSVar17 != nullptr) &&
                   (iVar10 = (*pSVar17->vtable[5].slots_00_28[0])(), iVar16 = local_40, iVar10 != 0))

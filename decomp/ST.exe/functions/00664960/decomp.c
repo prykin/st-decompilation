@@ -72,8 +72,6 @@ void __fastcall AiFltClassTy::sub_00664960(AiFltClassTy *param_1)
   /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
   undefined2 extraout_var_16;
   undefined4 uVar17;
-  /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
-  int unaff_ESI;
   int iVar18;
   uint *puVar19;
   uint *puVar20;
@@ -1638,8 +1636,7 @@ LAB_0066705a:
 cf_common_exit_00667066:
   if (((param_1->field_0284 != nullptr) && (param_1->field_0176 != '\0')) &&
      ((param_1->field_00EB & param_1->field_017B) != 0)) {
-    /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
-    GoToRepair(param_1,unaff_ESI);
+    GoToRepair(param_1);
   }
   return;
 }

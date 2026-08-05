@@ -12,18 +12,17 @@
 int __thiscall BehPanelTy::GetMessage(BehPanelTy *this,STMessage *message)
 
 {
-  AnonPointee_BehPanelTy_0000 *pAVar1;
+  BehPanelTyVTable *pBVar1;
   STMessageId SVar2;
   BehPanelTy *this_00;
   char cVar3;
   int iVar4;
   char *pcVar5;
   LPSTR pCVar6;
-  int iVar7;
-  byte bVar9;
-  code *pcVar10;
-  undefined4 uVar11;
-  undefined4 uVar12;
+  byte bVar8;
+  code *pcVar9;
+  int iVar10;
+  int iVar11;
   InternalExceptionFrame local_70;
   uint local_2c [7];
   uint local_f;
@@ -37,9 +36,9 @@ int __thiscall BehPanelTy::GetMessage(BehPanelTy *this,STMessage *message)
   this_00 = local_8;
   if (iVar4 != 0) {
     g_currentExceptionFrame = local_70.previous;
-    iVar7 = ReportDebugMessage("E:\\__titans\\Andrey\\behpanel.cpp",0xf3,0,iVar4,"%s"
-                               ,"BehPanelTy::GetMessage");
-    if (iVar7 != 0) {
+    iVar10 = ReportDebugMessage("E:\\__titans\\Andrey\\behpanel.cpp",0xf3,0,iVar4,
+                                "%s","BehPanelTy::GetMessage");
+    if (iVar10 != 0) {
       STDebugBreak(); /* noreturn in standalone pseudocode */
     }
     RaiseInternalException(iVar4,0,"E:\\__titans\\Andrey\\behpanel.cpp",0xf3);
@@ -49,16 +48,15 @@ int __thiscall BehPanelTy::GetMessage(BehPanelTy *this,STMessage *message)
   SVar1 = message->id;
   if (SVar1 < 0xb20f) {
     if (SVar1 == 0xb20e) {
-      pAVar1 = this_00->field_0000;
-      uVar12 = 1;
-      uVar11 = 0;
-      pcVar10 = thunk_FUN_0052a320;
+      pBVar1 = this_00->vtable;
+      iVar11 = 1;
+      iVar10 = 0;
+      pcVar9 = thunk_FUN_0052a320;
       iVar4 = 0;
       pcVar5 = thunk_FUN_00529590((&this_00->field_0x1af)[(message->arg0).words.high],
                                   this_00->field_01AB);
       pCVar6 = thunk_FUN_00571240(pcVar5,iVar4);
-      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-      (*(code *)pAVar1->field_0008)(message,6,pCVar6,pcVar10,uVar11,uVar12);
+      (*pBVar1->PaintBut)((PanelTy *)this_00,(int)message,6,pCVar6,pcVar9,iVar10,iVar11);
       g_currentExceptionFrame = local_70.previous;
       return 0;
     }
@@ -67,16 +65,15 @@ int __thiscall BehPanelTy::GetMessage(BehPanelTy *this,STMessage *message)
         g_currentExceptionFrame = local_70.previous;
         return 0;
       }
-      pAVar1 = this_00->field_0000;
-      uVar12 = 1;
-      uVar11 = 0;
-      pcVar10 = thunk_FUN_0052a320;
+      pBVar1 = this_00->vtable;
+      iVar11 = 1;
+      iVar10 = 0;
+      pcVar9 = thunk_FUN_0052a320;
       iVar4 = 0;
       pcVar5 = thunk_FUN_00529590((&this_00->field_0x1af)[(message->arg0).words.high],
                                   this_00->field_01AB);
       pCVar6 = thunk_FUN_00571240(pcVar5,iVar4);
-      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-      (*(code *)pAVar1->field_0008)(message,1,pCVar6,pcVar10,uVar11,uVar12);
+      (*pBVar1->PaintBut)((PanelTy *)this_00,(int)message,1,pCVar6,pcVar9,iVar10,iVar11);
       g_currentExceptionFrame = local_70.previous;
       return 0;
     }
@@ -89,8 +86,7 @@ int __thiscall BehPanelTy::GetMessage(BehPanelTy *this,STMessage *message)
       CursorClassTy::sub_0054B630
                 (g_cursorClass_00802A30,(uint)(byte)(&this_00->field_0x1af)[(message->arg0).u32],0);
       this_00->field_0028 = 0xbfff;
-      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-      (*(code *)this_00->field_0000->field_0000)(&this_00->field_0x18);
+      this_00->GetMessage((STMessage *)&this_00->field_0x18);
       g_currentExceptionFrame = local_70.previous;
       return 0;
     }
@@ -140,19 +136,19 @@ int __thiscall BehPanelTy::GetMessage(BehPanelTy *this,STMessage *message)
   default:
     goto switchD_004ee68c_caseD_c0a2;
   case 0xc0af:
-    bVar9 = this_00->field_0x1bb == '\x03';
+    bVar8 = this_00->field_0x1bb == '\x03';
     pcVar5 = "BUT_BLOCK";
     break;
   case 0xc0b0:
-    bVar9 = this_00->field_0x1bc == '\x03';
+    bVar8 = this_00->field_0x1bc == '\x03';
     pcVar5 = "BUT_BHOLD";
     break;
   case 0xc0b1:
-    bVar9 = this_00->field_01BD == '\x03';
+    bVar8 = this_00->field_01BD == '\x03';
     pcVar5 = "BUT_BAGR";
   }
   pCVar6 = thunk_FUN_00571240(pcVar5,0);
-  PaintBBut(this_00,(AnonShape_004EE350_18D491EA *)message,pCVar6,bVar9);
+  PaintBBut(this_00,(AnonShape_004EE350_18D491EA *)message,pCVar6,bVar8);
 switchD_004ee68c_caseD_c0a2:
   g_currentExceptionFrame = local_70.previous;
   return 0;

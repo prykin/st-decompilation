@@ -137,6 +137,7 @@ void __thiscall InfocPanelTy::PaintInfoc(InfocPanelTy *this)
     pcVar8 = pcVar10 + -uVar9;
     pcVar10 = &this_00->field_018D;
     memmove(pcVar10, pcVar8, uVar9); /* compiler REP MOVS byte copy */
+    uVar7 = 0;
   }
   else {
     wsprintfA(&this_00->field_018D,"%6d",

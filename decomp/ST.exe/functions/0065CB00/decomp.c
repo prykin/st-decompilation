@@ -33,12 +33,9 @@ AllocationRecord_0065CB00 * __cdecl FUN_0065cb00(AllocationRecord_0065CB00 *para
     local_8 = Library::DKW::LIB::MemAllocClear(0x49f);
     pAVar5 = param_1;
     pAVar8 = local_8;
-    for (iVar1 = 0x127; iVar1 != 0; iVar1 = iVar1 + -1) {
-      *(undefined4 *)pAVar8 = *(undefined4 *)pAVar5;
-      pAVar5 = (AllocationRecord_0065CB00 *)((int)&pAVar5->field_0001 + 3);
-      pAVar8 = (AnonShape_0065CB00_C527AFF0 *)((int)&pAVar8->field_0001 + 3);
-    }
-    *(undefined2 *)pAVar8 = *(undefined2 *)pAVar5;
+    memmove(pAVar8, pAVar5, 0x49e); /* compiler REP MOVS byte copy */
+    pAVar8 = (AnonShape_0065CB00_C527AFF0 *)((byte *)pAVar8 + 0x49c);
+    pAVar5 = (AllocationRecord_0065CB00 *)((byte *)pAVar5 + 0x49c);
     *(undefined1 *)((int)&pAVar8->field_0001 + 1) = *(undefined1 *)((int)&pAVar5->field_0001 + 1);
     local_8->field_0001 = 0x49f;
     local_8->field_0005 = 2;

@@ -17,9 +17,9 @@ import ghidra.app.script.GhidraScript;
 import ghidra.program.model.address.Address;
 import ghidra.program.model.data.DataType;
 import ghidra.program.model.data.DataTypeManager;
+import ghidra.program.model.data.DefaultDataType;
 import ghidra.program.model.data.Pointer;
 import ghidra.program.model.data.PointerDataType;
-import ghidra.program.model.data.Undefined1DataType;
 import ghidra.program.model.listing.Function;
 import ghidra.program.model.listing.Function.FunctionUpdateType;
 import ghidra.program.model.listing.FunctionTag;
@@ -108,6 +108,7 @@ public class STAbiConsistencyApplier extends GhidraScript {
         if (customStorage && typePaths.length != storages.length)
             throw new IllegalArgumentException("parameter type/storage count mismatch");
         DataType returnType = requireType(returnPath);
+        String previousReturnType = typeSpec(function.getReturnType());
         List<Variable> parameters = new ArrayList<>();
         for (int index = 0; index < typePaths.length; index++) {
             DataType type = requireType(typePaths[index]);
@@ -131,22 +132,48 @@ public class STAbiConsistencyApplier extends GhidraScript {
                 "preserved", "stale or manually changed signature"));
             return;
         }
-        if (function.getSignatureSource() == SourceType.USER_DEFINED && !hasTag(function, TAG)) {
+        boolean exactDebugArityRepair =
+            "machine_thiscall_arity".equals(row.get("repair_kind")) &&
+            hasTag(function, "RECOVERED_DEBUG_NAME") &&
+            "__thiscall".equals(function.getCallingConventionName());
+        if (function.getSignatureSource() == SourceType.USER_DEFINED &&
+                !hasTag(function, TAG) && !exactDebugArityRepair) {
             report.add(new Report(addr(function.getEntryPoint()), row.get("repair_kind"),
                 "preserved", "USER_DEFINED signature"));
             return;
         }
         ReturnParameterImpl returned = customStorage ?
             new ReturnParameterImpl(returnType,
-                function.getReturn().getVariableStorage(), true, currentProgram) :
+                customReturnStorage(function, returnType), true, currentProgram) :
             new ReturnParameterImpl(returnType, currentProgram);
         function.updateFunction(convention, returned, parameters,
             customStorage ? FunctionUpdateType.CUSTOM_STORAGE :
                 FunctionUpdateType.DYNAMIC_STORAGE_FORMAL_PARAMS, true,
             SourceType.ANALYSIS);
+        if ("/undefined".equals(returnPath))
+            function.setReturn(DefaultDataType.dataType,
+                VariableStorage.UNASSIGNED_STORAGE, SourceType.DEFAULT);
         function.setVarArgs(varargs);
         function.setSignatureSource(SourceType.ANALYSIS);
-        finish(function, row, "prototype=" + function.getSignature().getPrototypeString(true));
+        finish(function, row, "prototype=" + function.getSignature().getPrototypeString(true) +
+            " previous_return_type=" + previousReturnType);
+    }
+
+    private VariableStorage customReturnStorage(Function function,
+            DataType returnType) throws Exception {
+        VariableStorage current = function.getReturn().getVariableStorage();
+        int length = returnType.getLength();
+        if (length <= 0) return VariableStorage.UNASSIGNED_STORAGE;
+        if (current != null && !current.isUnassignedStorage() &&
+                current.size() == length) return current;
+        if (length == currentProgram.getDefaultPointerSize()) {
+            if (currentProgram.getRegister("EAX") == null)
+                throw new IllegalArgumentException("EAX register is unavailable");
+            return new VariableStorage(currentProgram,
+                currentProgram.getRegister("EAX"));
+        }
+        throw new IllegalArgumentException(
+            "cannot derive custom return storage for " + returnType.getPathName());
     }
 
     private void applyTarget(Function function, Map<String, String> row) throws Exception {
@@ -156,7 +183,10 @@ public class STAbiConsistencyApplier extends GhidraScript {
             explicitParameter(function, ordinal);
         if (target == null) { conflict(row, "target parameter missing"); return; }
         DataType proposed = requireType(row.get("proposed_type"));
-        if (proposed.isEquivalent(target.getFormalDataType())) {
+        boolean forceUnsizedReturn =
+            "machine_thiscall_unsized_return_migration".equals(row.get("repair_kind"));
+        if (proposed.isEquivalent(target.getFormalDataType()) && !forceUnsizedReturn) {
+            ensureLifecycleMetadata(function, row);
             report.add(new Report(addr(function.getEntryPoint()), row.get("repair_kind"),
                 "unchanged", kind + " already has " + proposed.getPathName()));
             return;
@@ -169,7 +199,12 @@ public class STAbiConsistencyApplier extends GhidraScript {
                 "preserved", "stale or manual " + kind + " baseline"));
             return;
         }
-        if ("return".equals(kind)) function.setReturnType(proposed, SourceType.ANALYSIS);
+        if ("return".equals(kind)) {
+            if ("/undefined".equals(row.get("proposed_type")))
+                function.setReturn(DefaultDataType.dataType,
+                    VariableStorage.UNASSIGNED_STORAGE, SourceType.DEFAULT);
+            else function.setReturnType(proposed, SourceType.ANALYSIS);
+        }
         else {
             target.setDataType(proposed, SourceType.ANALYSIS);
             String proposedName = unt(row.get("proposed_name"));
@@ -187,12 +222,34 @@ public class STAbiConsistencyApplier extends GhidraScript {
         String key = COMMENT_MARKER + " " + row.get("repair_kind") +
             " target=" + target + ":";
         String line = key + " " + detail +
+            ("stack_parameter_width".equals(row.get("repair_kind")) ?
+                " previous_type=" + row.get("expected_target_type") : "") +
             " Evidence: " + unt(row.get("evidence"));
         if (old == null || old.isBlank()) function.setComment(line);
         else if (!old.contains(key))
             function.setComment(old + "\n" + line);
         report.add(new Report(addr(function.getEntryPoint()), row.get("repair_kind"),
             "applied", detail));
+    }
+
+    /** Persist the pre-apply generic width so a later analyzer version can safely undo
+     * an automation-owned narrowing whose proof no longer qualifies. */
+    private void ensureLifecycleMetadata(Function function, Map<String, String> row) {
+        if (!"stack_parameter_width".equals(row.get("repair_kind"))) return;
+        String old = function.getComment();
+        if (old == null || old.isBlank()) return;
+        String target = row.get("target_kind") + ":" + row.get("target_ordinal");
+        String key = COMMENT_MARKER + " stack_parameter_width target=" + target + ":";
+        int start = old.indexOf(key);
+        if (start < 0) return;
+        int end = old.indexOf('\n', start);
+        if (end < 0) end = old.length();
+        String block = old.substring(start, end);
+        if (block.contains("previous_type=")) return;
+        String updated = old.substring(0, start + key.length()) +
+            " previous_type=" + row.get("expected_target_type") +
+            old.substring(start + key.length());
+        function.setComment(updated);
     }
 
     private boolean fullPrototypeMatches(Function function, DataType returned, String convention,
@@ -227,12 +284,11 @@ public class STAbiConsistencyApplier extends GhidraScript {
             DataType base = requireType(specification.substring("pointer:".length()));
             return new PointerDataType(base, currentProgram.getDefaultPointerSize(), dataTypes);
         }
-        // Ghidra's unsized DefaultDataType reports the path "/undefined",
-        // although a Function parameter/return storage slot still has one byte.
-        // Preserve that baseline while a full-prototype repair changes an
-        // unrelated parameter.
+        // Preserve Ghidra's unsized DefaultDataType itself.  Replacing it with
+        // undefined1 changes return semantics: the decompiler starts inventing AL
+        // forwarding and extraout_AL values in functions whose return is unknown.
         if ("/undefined".equals(specification))
-            return Undefined1DataType.dataType;
+            return DefaultDataType.dataType;
         DataType type = dataTypes.getDataType(specification);
         if (type == null) throw new IllegalArgumentException("Missing data type: " + specification);
         return type;

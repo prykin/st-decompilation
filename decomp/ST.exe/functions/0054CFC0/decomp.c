@@ -3,9 +3,13 @@
 
 /* Recovered from embedded debug metadata:
    E:\__titans\Andrey\tplaysys.cpp
-   STPlaySystemC::InitSystem */
+   STPlaySystemC::InitSystem
+   [STAbiConsistencyApplier] machine_thiscall_arity target=function:-1: prototype=undefined4
+   __thiscall InitSystem(STPlaySystemC * this) Evidence: every machine RET purges exactly 0 explicit
+   stack bytes; current signature describes 4; removed trailing parameter slots have no listing
+   references; ret_sites=0054D0CD RET | 0054D116 RET */
 
-undefined4 __thiscall STPlaySystemC::InitSystem(STPlaySystemC *this,int param_1)
+undefined4 __thiscall STPlaySystemC::InitSystem(STPlaySystemC *this)
 
 {
   uint *puVar1;

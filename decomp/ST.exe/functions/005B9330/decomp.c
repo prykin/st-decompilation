@@ -103,8 +103,7 @@ switchD_005b939a_default:
       }
     }
     else {
-      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-      (**(code **)(this_00->field_0000 + 8))();
+      this_00->CloseSprBut();
     }
   }
   switch(message->id) {

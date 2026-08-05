@@ -7,9 +7,14 @@
 
    [STSwitchEnumApplier] Switch target field_06C3 uses
    /SubmarineTitans/Recovered/Enums/STBoatC_field_06C3State. Cases:
-   CASE_0=0;CASE_1=1;CASE_2=2;CASE_3=3;CASE_4=4;CASE_5=5;CASE_6=6 */
+   CASE_0=0;CASE_1=1;CASE_2=2;CASE_3=3;CASE_4=4;CASE_5=5;CASE_6=6
+   [STAbiConsistencyApplier] machine_thiscall_arity target=function:-1: prototype=int __thiscall
+   BackDismant(STBoatC * this, int * param_1) Evidence: every machine RET purges exactly 4 explicit
+   stack bytes; current signature describes 12; removed trailing parameter slots have no listing
+   references; ret_sites=0047FBD4 RET 0x4 | 0047FBE0 RET 0x4 | 0047FC0A RET 0x4 | 0047FD01 RET 0x4 |
+   0047FD11 RET 0x4 | 0047FD3E RET 0x4 */
 
-int __thiscall STBoatC::BackDismant(STBoatC *this,int *param_1,undefined4 param_2,void *param_3)
+int __thiscall STBoatC::BackDismant(STBoatC *this,int *param_1)
 
 {
   short sVar1;
@@ -17,10 +22,6 @@ int __thiscall STBoatC::BackDismant(STBoatC *this,int *param_1,undefined4 param_
   short sVar3;
   code *pcVar4;
   int iVar5;
-  /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
-  int *unaff_ESI;
-  /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
-  undefined4 unaff_EDI;
 
   this->field_00B7 = 0;
   switch(this->field_06C3) {
@@ -45,9 +46,7 @@ int __thiscall STBoatC::BackDismant(STBoatC *this,int *param_1,undefined4 param_
     }
     else {
       /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
-      param_1 = (int *)g_worldGrid.cells
-                       [(int)g_worldGrid.planeStride * (int)sVar2 +
-                        (int)g_worldGrid.sizeX * (int)sVar3 + (int)sVar1].objects[0];
+      param_1 = (int *)STGridAt3D(g_worldGrid, sVar1, sVar3, sVar2).objects[0];
     }
     /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
     if ((((AnonShape_004B9D90_4F3151F9 *)param_1 == nullptr) ||
@@ -69,9 +68,8 @@ int __thiscall STBoatC::BackDismant(STBoatC *this,int *param_1,undefined4 param_
     }
     iVar5 = this->vfunc_D8();
     return (-(uint)(iVar5 != 0) & 0xfffffffd) + 2;
-  /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
   case CASE_5:
-    iVar5 = Dismant(this,(int *)0x2,unaff_EDI,unaff_ESI);
+    iVar5 = Dismant(this,(int *)0x2);
     return iVar5;
   default:
     iVar5 = ReportDebugMessage("E:\\__titans\\wlad\\To_boat.cpp",0x3b30,0,0,"%s",
@@ -93,9 +91,7 @@ int __thiscall STBoatC::BackDismant(STBoatC *this,int *param_1,undefined4 param_
     }
     else {
       /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
-      param_1 = (int *)g_worldGrid.cells
-                       [(int)g_worldGrid.planeStride * (int)sVar2 +
-                        (int)g_worldGrid.sizeX * (int)sVar3 + (int)sVar1].objects[0];
+      param_1 = (int *)STGridAt3D(g_worldGrid, sVar1, sVar3, sVar2).objects[0];
     }
     /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
     if ((((AnonShape_004B9D90_4F3151F9 *)param_1 == nullptr) ||

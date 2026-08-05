@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* [STSourceProvenanceApplier begin]
    Recovered source file: E:\__titans\ai\ai_plr_d.cpp
@@ -35,12 +37,9 @@ AllocationRecord_0067D1D0 * __cdecl FUN_0067d1d0(AllocationRecord_0067D1D0 *para
     local_8 = Library::DKW::LIB::MemAllocClear(299);
     pAVar6 = param_1;
     pAVar8 = local_8;
-    for (iVar1 = 0x4a; iVar1 != 0; iVar1 = iVar1 + -1) {
-      *(undefined4 *)pAVar8 = *(undefined4 *)pAVar6;
-      pAVar6 = (AllocationRecord_0067D1D0 *)&pAVar6->field_0x4;
-      pAVar8 = (AnonShape_0067D1D0_21940C5B *)&pAVar8->field_0x4;
-    }
-    *(undefined2 *)pAVar8 = *(undefined2 *)pAVar6;
+    memmove(pAVar8, pAVar6, 0x12a); /* compiler REP MOVS byte copy */
+    pAVar8 = (AnonShape_0067D1D0_21940C5B *)((byte *)pAVar8 + 0x128);
+    pAVar6 = (AllocationRecord_0067D1D0 *)((byte *)pAVar6 + 0x128);
     pAVar8->field_0x2 = pAVar6->field_0x2;
     *(undefined4 *)&local_8->field_0x14 = 299;
     local_8->field_0x18 = 2;

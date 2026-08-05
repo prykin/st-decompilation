@@ -1,4 +1,4 @@
-FUN_004f0460:
+CreateBldObjPanel:
 004F0460  53                        PUSH EBX
 004F0461  56                        PUSH ESI
 004F0462  68 96 02 00 00            PUSH 0x296

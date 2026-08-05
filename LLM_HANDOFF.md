@@ -40,14 +40,44 @@ have been checked.
 
 ## Latest accepted run
 
+The current authoritative corpus has an additional headless maintenance refresh
+on top of the full pipeline run described below. Its export receipt is `passed`
+with semantic hash
+`fa3e3af6abbc608dff2f9ce9bb33b0e445d601d97dd2e6b2efd32c7a1c4d06e3`
+and manifest hash
+`aec5bfaf69cdcb19f01273da0f7da83bdb957adb495ed492d6be48fa68c76d97`.
+The focused class-layout, pointer-shape, ABI-consistency, and indirect-call
+cycles all reached zero mutations before export. Relative to the prior accepted
+baseline, typed physical vtable slots increased by 320, raw indirect-call debt
+fell by 204, return-width artifacts by 11, unresolved register inputs by 296,
+and undefined types by 28. The gate reports zero hard regressions and six
+warning-only stage transitions.
+
+The refresh recovers the panel factory vptr stores as
+`BldBoatPanelTyVTable`, `BldObjPanelTyVTable`, `IntercomPanelTyVTable`, and
+`PlayPanelTyVTable`; the former `PTR_GetMessage_*`/`undefined ***` forms are no
+longer present. The `0040CDB0` cleanup chain now uses an `STGameObjC *` and
+`FreeAndNull(&object->field_009F)` followed by named generated fields. A generic
+interprocedural receiver rule repaired `005F0A30` from the undersized
+`STBoatC *` view to `STSprGameObjC *`; an EBP-context ABI rule removed the fake
+fastcall ECX/EDX parameters at `00753FD0` and `00754185`, after which
+pointer-shape recovery installed their fixed-offset context records.
+
+`004AE0B0` still emits one harmless decompiler warning. The original binary has
+four dword switch targets at `004AED14..004AED23`, followed immediately by byte
+lookup data. Ghidra mistakes bytes `00 01 03 03` for a fifth target
+`03030100`. This is queued as a general adjacent jump/lookup-table boundary
+recovery; it is not binary corruption and must not be hidden by an
+address-specific warning suppression.
+
 The authoritative latest `full-export` was run
-`4867017fb370a0802379c1423802ed0fe344458e33d9f23d615cabf33ce464c3`.
+`8538b1d383ad26576d5461f823403092b4baa8e1b85900d2273457d261b6e4e6`.
 Its tracked accepted projection is the source of truth; ignored run archives
 are disposable diagnostics and need not be retained. The run completed in
-`01:07:42`, with semantic hash
-`b4ff58aa651c9d831d379bb42c64eab0a4bbf1e28b5d1399b816bb6bd5ea35f0`
+`01:02:32`, with semantic hash
+`f0f858cf3aabc4032bbadce4171569b8d07d5f142fa4be7f2da906d020795e46`
 and manifest hash
-`5461dccee17f32be6153b177f76feeda6638b68ed4a3d3a4fe8b8cae79864ef3`.
+`c50f69731d4b65aa723f0d10b4d195aa11b1dfea6a99c2daf8b866f628c55a90`.
 
 Ghidra's load preflight accepted all 87 Java scripts with zero build failures.
 The export receipt is `passed`; the gate reports zero hard regressions, 10,392
@@ -57,6 +87,29 @@ fixture baseline is verified, all 2,409 accepted typed vtable slots are intact,
 and the broad gate reports zero hard regressions and three stage-transition
 warnings. The
 Program semantic hash equals the accepted receipt.
+
+The latest layer fixes a generic pointer-arithmetic error in
+`STPointerShapeAnalyzer`: decompiler `T * + n` offsets are now scaled by the
+current rendered pointee width unless an integer cast proves byte arithmetic.
+Corrected broad geometry remains review-only, while a closed local returned by
+one call, consumed by an internal generic-pointer parameter, and used at fixed
+offsets may receive a consumer-local record view. The first pass enabled four
+targets and performed seven type/local operations; the confirming pass reports
+`target_apply=0`, `anonymous_types=0`, and `failures=0`. The loader consumers at
+`005F10D0`, `0062CCA0`, and `00630430` now read an `int field_000C` rather than
+`*(int *)(local_8 + 6)`. The heterogeneous `mfAObjLoad` producer was not
+specialized: its proposed neutral `byte *` ABI remains preserved behind the
+existing USER_DEFINED baseline.
+
+Exporter normalization now recognizes exact structural pointer advances in
+fixed `REP MOVS` loops and exact three-term row-major grid expressions. The
+accepted corpus folds the 133-byte and 608-byte record copies at `00648620` and
+`006684E0`, and contains 437 `STGridAt3D` calls across 160 functions. The logic
+version change intentionally recomputed all 5,712 quality/idiom analyses once,
+but reused 10,387 of 10,392 Ghidra function decompilations. Relative to the
+previous corpus, anonymous-shape occurrences fell by six, casted generic fields
+by eight, generic field names by 32, and undefined types by 14. The export gate
+passed with zero hard regressions and three improving stage-transition warnings.
 
 The run accepted recursive linked-pointee recovery. The machine prefilter
 decompiled 269 of 1,878 owner functions, found four rooted candidates and kept
@@ -101,10 +154,10 @@ presentation/lifetime debt and must not be hidden by a whole-local type cast.
 ## Accepted checkpoint history
 
 Commit `39097bd736` is the historical safety rollback checkpoint, not the
-current repository HEAD. Current HEAD is `177312b8e7`; the working tree after
-it contains the validated function-pointer-parameter generic-type fix,
-headless analysis drain, allocation-record recovery, and run-local analyzer-epoch
-repair. Its accepted Program/corpus is the `4867017f...` run above. The rejected dispatch
+current repository HEAD. Current HEAD is `1f3485e8e423`; the working tree after
+it contains the accepted element-scaled pointer, consumer-local loader-view,
+structural-copy, and row-major grid normalization layer. Its accepted
+Program/corpus is the `8538b1d3...` run above. The rejected dispatch
 experiment is not present in
 that Program, scripts, generated recovery output, or corpus. Its ignored run
 archives, analyzer cache, semantic marker, and untracked Ghidra database
@@ -621,6 +674,32 @@ boundary proves it.
 ## Historical suggested commit title
 
 `feat(recovery): refine generated layouts and recursive local lifetimes`
+
+## Callee-cleaned stack-arity recovery
+
+A standalone headless fixed-point pass added a general
+`machine_stack_arity_expansion` rule to `STAbiConsistencyAnalyzer`. It does not
+special-case a class, function, or address. Automatic expansion requires a
+non-manual 32-bit `__thiscall`/`__stdcall` function, one unanimous positive
+`RET n`, a current signature shorter than that purge, complete reads of every
+incoming byte before any overlapping listing write, and at least one newly
+exposed exact x87 double slot. Caller decompilation is deliberately excluded as
+circular evidence. A dword loaded once and dereferenced at two or more distinct
+`FLOAT PTR` offsets becomes `float *`; other new dwords remain generic.
+
+Two proposals applied and the confirming pass emitted zero proposals:
+
+- `006E25D0`: 4 declared bytes versus `RET 0x24`; recovered `int *`, `float *`,
+  three `double` arguments, and a final dword flag;
+- `0074FE47`: 4 declared bytes versus `RET 0x0c`; recovered one trailing
+  `double`.
+
+The fresh export reused 10,369 of 10,392 function entries and 5,690 of 5,712
+body analyses. In `006DDD50`, six formerly identical-looking calls now expose
+their distinct floating arguments, proving that the old rendering was an ABI
+projection failure rather than recursion or compiler inlining. The standalone
+export regression gate passed with zero hard errors; receipt manifest is
+`2a5edcbb62e38bdf8254bebac41b9247613daa3a658e2e7bbd10903597b48594`.
 
 ## Lifecycle regression and final-pass speed fix
 

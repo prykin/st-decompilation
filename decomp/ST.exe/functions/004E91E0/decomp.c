@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* [STPrototypeRepairApplier] Propagated parameter 1.
    Evidence: 00479600 -> 004E91E0 @ 004797EC */
@@ -79,9 +81,7 @@ undefined4 __thiscall FUN_004e91e0(void *this,STBoatC *param_1)
                    (sVar9 = (short)iVar10, sVar9 < 0)) ||
                   ((g_worldGrid.sizeY <= sVar9 || (sVar11 < 0)))) ||
                  ((g_worldGrid.sizeZ <= sVar11 ||
-                  (g_worldGrid.cells
-                   [(int)sVar9 * (int)g_worldGrid.sizeX + (int)g_worldGrid.planeStride * (int)sVar11
-                    + (int)sVar3].objects[0] == nullptr)))) {
+                  (STGridAt3D(g_worldGrid, sVar3, sVar9, sVar11).objects[0] == nullptr)))) {
                 *(int *)((int)this + 0x4e4) = iVar5;
                 *(int *)((int)this + 0x4e8) = iVar10;
                 *(int *)((int)this + 0x4ec) = *(int *)(iVar12 + 0x5b8) + 1;

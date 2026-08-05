@@ -20,8 +20,6 @@ undefined4 __thiscall STPlaySystemC::Life(STPlaySystemC *this)
   uint uVar8;
   DWORD *pDVar9;
   int *piVar10;
-  /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
-  void *unaff_EDI;
   bool bVar12;
   uint uVar13;
   InternalExceptionFrame local_a8;
@@ -68,8 +66,7 @@ undefined4 __thiscall STPlaySystemC::Life(STPlaySystemC *this)
   if (DAT_00808784 == 0) {
     if (DAT_0080877e == '\0') {
       PrepareMail(this_00);
-      /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
-      SendMail(this_00,unaff_EDI);
+      SendMail(this_00);
       if (((this_00->field_0038 != '\0') && (g_popUp_008016D8 != nullptr)) &&
          (g_popUp_008016D8->field_009C == '\0')) {
         uVar13 = 8;
@@ -78,8 +75,7 @@ undefined4 __thiscall STPlaySystemC::Life(STPlaySystemC *this)
       }
       if (this_00->field_0028 != 0) {
         SystemClassTy::Life((SystemClassTy *)this_00);
-        /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
-        PlaySystemTy::SendClientMail((PlaySystemTy *)this_00,(int)unaff_EDI);
+        PlaySystemTy::SendClientMail((PlaySystemTy *)this_00);
       }
       goto LAB_0054e02c;
     }
@@ -100,8 +96,7 @@ undefined4 __thiscall STPlaySystemC::Life(STPlaySystemC *this)
                  *(int *)(s_FrmPanelTy__GetMessage_007c2ae0 + (uint)DAT_0080733b * 0x18 + 4);
             sub_00550190(this_00);
             PrepareMail(this_00);
-            /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
-            SendMail(this_00,unaff_EDI);
+            SendMail(this_00);
             SystemClassTy::Life((SystemClassTy *)this_00);
             this_00->field_0028 = 0;
           }
@@ -409,8 +404,7 @@ undefined4 __thiscall STPlaySystemC::Life(STPlaySystemC *this)
   }
   else {
     PrepareMail(this_00);
-    /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
-    SendMail(this_00,unaff_EDI);
+    SendMail(this_00);
     if (this_00->field_0028 != 0) {
       SystemClassTy::Life((SystemClassTy *)this_00);
     }

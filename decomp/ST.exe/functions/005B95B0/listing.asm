@@ -1,4 +1,4 @@
-FUN_005b95b0:
+CreateMMsg:
 005B95B0  53                        PUSH EBX
 005B95B1  56                        PUSH ESI
 005B95B2  68 AA 1E 00 00            PUSH 0x1eaa

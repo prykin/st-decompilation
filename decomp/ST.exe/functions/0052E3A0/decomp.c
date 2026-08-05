@@ -18,14 +18,14 @@ OptPanelTy * __cdecl CreateOptPanel(void)
     sub_006E5FB0(this);
     this->field_005C = 0;
     this->field_0060 = 0xffffffff;
-    *(undefined4 *)&this->field_0x64 = 4;
+    this->field_0064 = 4;
     this->field_0068 = 0;
     this->field_0172 = CASE_2;
-    *(undefined4 *)&this->field_0x178 = 0;
-    this->field_0000 = &PTR_GetMessage_0079ad10;
+    this->field_0178 = 0;
+    this->vtable = &OptPanelTyVTable;
     this->field_003C = 0xc;
     this->field_0044 = 0x9c;
-    *(undefined4 *)&this->field_0x40 = 0x128;
+    this->field_0040 = 0x128;
     this->field_0048 = 0xb4;
     this->field_0180 = nullptr;
     this->field_017C = nullptr;
@@ -38,9 +38,9 @@ OptPanelTy * __cdecl CreateOptPanel(void)
     this->field_0194 = nullptr;
     this->field_0198 = nullptr;
     this->field_01A4 = CASE_1;
-    this->field_01AD = 0;
-    this->field_01B1 = 0;
-    memset(&this->field_01B5, 0, 0x28); /* compiler bulk-zero initialization */
+    this->field_01AD[0] = 0;
+    this->field_01AD[1] = 0;
+    memset(this->field_01B5, 0, 0x28); /* compiler bulk-zero initialization */
     this->field_01DD = (HANDLE)0x0;
     this->field_01E1 = 0;
     this->field_01AC = 0;

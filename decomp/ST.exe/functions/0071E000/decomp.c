@@ -10,7 +10,7 @@ ButtonClassTy * __cdecl CreateButton(void)
   pBVar1 = (ButtonClassTy *)FUN_006b04d0(0x1ec);
   if (pBVar1 != nullptr) {
     FUN_0072b700((undefined4 *)pBVar1);
-    pBVar1->field_0000 = 0x79e288;
+    pBVar1->vtable = &ButtonClassTyVTable;
     *(undefined4 *)&pBVar1->field_0x1d4 = 1;
     *(undefined4 *)&pBVar1->field_0x174 = 0;
     return pBVar1;

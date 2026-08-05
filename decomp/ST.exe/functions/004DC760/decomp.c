@@ -51,7 +51,7 @@ undefined4 __fastcall FUN_004dc760(TLOBaseTy *param_1)
   }
   else if (TVar1 == CASE_2) {
     iVar5 = 0x1e;
-    iVar3 = thunk_FUN_004b79c0(*(char *)&param_1->field_0024,param_1->field_0018);
+    iVar3 = thunk_FUN_004b79c0(*(char *)&param_1->field_0024,(int)param_1->field_0018);
     if (iVar3 == 0) {
       iVar5 = 0x78;
     }

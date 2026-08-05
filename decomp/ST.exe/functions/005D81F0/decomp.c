@@ -3,9 +3,16 @@
 
 /* Recovered from embedded debug metadata:
    E:\__titans\Start\sid_obj.cpp
-   SIDTy::NoneSID */
+   SIDTy::NoneSID
+   [STAbiConsistencyApplier] machine_thiscall_arity target=function:-1: prototype=undefined1
+   __thiscall NoneSID(SIDTy * this) Evidence: every machine RET purges exactly 0 explicit stack
+   bytes; current signature describes 4; removed trailing parameter slots have no listing
+   references; ret_sites=005D831F RET | 005D8387 RET | 005D83CB RET
+   [STAbiConsistencyApplier] machine_thiscall_unsized_return_migration target=return:-1:
+   return=/undefined Evidence: legacy ABI applier materialized the unsized return as undefined1
+   while changing only function arity; restore Ghidra DefaultDataType */
 
-void __thiscall SIDTy::NoneSID(SIDTy *this,void *param_1)
+void __thiscall SIDTy::NoneSID(SIDTy *this)
 
 {
   code *pcVar1;

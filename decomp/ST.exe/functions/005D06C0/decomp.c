@@ -63,8 +63,7 @@ void __thiscall SettMapMTy::ChangePlayerCiv(SettMapMTy *this,uint param_1,char p
             bVar7 = uVar6 < pSVar5->count;
           } while ((int)uVar6 < (int)pSVar5->count);
         }
-        /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-        (*(code *)local_8->field_0000->field_002C)();
+        local_8->SetListCtrls();
         pSVar2->field_2121 = pSVar2->field_2121 + 1;
       }
       g_currentExceptionFrame = local_4c.previous;

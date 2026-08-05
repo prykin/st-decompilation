@@ -33,8 +33,8 @@ FUN_0056a2a0(void *this,cMf32 *param_1,char *param_2,int param_3,undefined4 *par
           uVar1 = param_1->field_0000;
           if (iVar3 < 0) {
             if ((*(uint *)(*(int *)(uVar1 + 4) + 8) & 0x100000) == 0) {
-              uVar6 = FUN_006c1390(puVar4,0,0x48,DAT_0080730a,0,0,1);
-              *(undefined4 *)((int)pvVar2 + 0xe07) = uVar6;
+              iVar3 = FUN_006c1390(puVar4,0,0x48,DAT_0080730a,0,0,1);
+              *(int *)((int)pvVar2 + 0xe07) = iVar3;
             }
             else {
               iVar3 = Library::DKW::SND::FUN_006c2530(uVar1,(DWORD)puVar4,0,0x48,DAT_0080730a,0,0,1);

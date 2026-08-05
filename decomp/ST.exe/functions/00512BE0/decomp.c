@@ -49,12 +49,12 @@ void __thiscall HelpPanelTy::sub_00512BE0(HelpPanelTy *this,int param_1)
   undefined4 local_6fc;
   undefined4 local_6f8;
   undefined4 local_6f4;
-  undefined4 local_6e4;
+  ushort *local_6e4;
   int local_6e0;
   undefined4 local_68c;
   int local_688 [26];
   undefined4 local_620;
-  undefined4 local_564;
+  ushort *local_564;
   int local_560;
   undefined4 local_50c;
   undefined4 local_508;

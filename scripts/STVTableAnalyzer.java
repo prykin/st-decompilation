@@ -56,6 +56,7 @@ public class STVTableAnalyzer extends GhidraScript {
     private static final Pattern FULL_REGISTER = Pattern.compile(
         "^(?:EAX|EBX|ECX|EDX|ESI|EDI|EBP|ESP)$");
     private static final String CONSTRUCTOR_TAG = "RECOVERED_CONSTRUCTOR";
+    private static final String OBJECT_FACTORY_TAG = "RECOVERED_OBJECT_FACTORY";
 
     private Listing listing;
     private Memory memory;
@@ -82,6 +83,7 @@ public class STVTableAnalyzer extends GhidraScript {
             throw new IllegalArgumentException("Unsupported pointer size: " + pointerSize);
 
         Map<Address, StartEvidence> starts = findCandidateStarts();
+        addImmediateVptrStores(starts);
         List<Candidate> candidates = buildCandidates(starts);
         indexFinalStrongVptrStores(candidates);
         for (Candidate candidate : candidates) classify(candidate);
@@ -139,6 +141,48 @@ public class STVTableAnalyzer extends GhidraScript {
             }
         }
         return result;
+    }
+
+    /**
+     * Ghidra does not always materialize a Reference for `MOV [object], imm32`.
+     * Decode those stores directly and attach them to an otherwise valid read-only
+     * callable run.  The immediate and destination shape are exact machine evidence;
+     * no symbol spelling or image-specific address is involved.
+     */
+    private void addImmediateVptrStores(Map<Address, StartEvidence> starts) throws Exception {
+        ghidra.program.model.listing.InstructionIterator instructions =
+            listing.getInstructions(true);
+        while (instructions.hasNext()) {
+            monitor.checkCancelled();
+            Instruction instruction = instructions.next();
+            if (!"MOV".equalsIgnoreCase(instruction.getMnemonicString())) continue;
+            String[] operands = splitOperands(instruction.toString());
+            if (operands.length < 2 || memoryOperand(operands[0]) == null) continue;
+            Long value = immediate(operands[1]);
+            if (value == null) continue;
+            Address table;
+            try { table = addressSpace.getAddress(value); }
+            catch (IllegalArgumentException exception) { continue; }
+            MemoryBlock block = memory.getBlock(table);
+            if (block == null || !block.isInitialized() || !block.isRead() ||
+                    block.isWrite() || block.isExecute() ||
+                    !hasCallableSlots(table, MIN_STRONG_SLOTS, true)) continue;
+            Function function = listing.getFunctionContaining(instruction.getAddress());
+            if (function == null) continue;
+            StartEvidence evidence = starts.computeIfAbsent(table,
+                ignored -> new StartEvidence());
+            if (evidence.references.stream().anyMatch(reference ->
+                    reference.address.equals(instruction.getAddress()))) continue;
+            Long objectOffset = objectStoreOffset(function, instruction);
+            // Without an exact object-relative destination this may be a callback table,
+            // registry, or arbitrary function-pointer constant.  ReferenceManager-backed
+            // evidence retains its historical review behavior; the new raw-instruction
+            // path is intentionally limited to proven physical vptr stores.
+            if (objectOffset == null) continue;
+            evidence.references.add(new CodeReference(instruction.getAddress(), function,
+                instruction.toString(), true, ownerOf(function), objectOffset,
+                hasTag(function, OBJECT_FACTORY_TAG) && objectOffset != null));
+        }
     }
 
     private List<Candidate> buildCandidates(Map<Address, StartEvidence> starts) throws Exception {
@@ -234,7 +278,9 @@ public class STVTableAnalyzer extends GhidraScript {
         }
         else if (!constructorOwner.isEmpty()) {
             candidate.owner = constructorOwner;
-            candidate.reason = "unique_constructor_vptr_anchor";
+            candidate.reason = candidate.evidence.references.stream().anyMatch(reference ->
+                reference.factoryAnchor && constructorOwner.equals(reference.owner)) ?
+                "unique_factory_result_vptr_anchor" : "unique_constructor_vptr_anchor";
             // A derived table normally contains inherited methods owned by base classes.
             // Mixed base/derived slot namespaces do not contradict the exact table installed
             // by this constructor; only a strong unanimous foreign owner is demoted above.
@@ -313,6 +359,9 @@ public class STVTableAnalyzer extends GhidraScript {
                     if (addr(tableAddress).equalsIgnoreCase(matcher.group(1))) return owner;
             }
         }
+
+        if (hasTag(function, OBJECT_FACTORY_TAG) && reference.factoryAnchor &&
+                owner.equals(pointedTypeName(function.getReturnType()))) return owner;
 
         String ownerLeaf = owner;
         int separator = ownerLeaf.lastIndexOf("::");
@@ -404,8 +453,22 @@ public class STVTableAnalyzer extends GhidraScript {
             candidate.owner = owners.get(0);
             candidate.proposedName = tableName(candidate.owner, candidate.address);
             candidate.ownerConflict = false;
-            candidate.confidence = "medium";
-            candidate.reason = "derived_owner_from_rare_override";
+            boolean exactFactoryResultVptr = candidate.hasPrimaryVptrStore() &&
+                candidate.evidence.references.stream().anyMatch(reference ->
+                    reference.strong && reference.factoryAnchor &&
+                    reference.thisOffset != null && reference.thisOffset.longValue() == 0);
+            if (exactFactoryResultVptr) {
+                // The table is installed at offset zero of the exact object returned by a
+                // central-registry factory.  With one rare named override owner and one
+                // common inherited owner, the rare owner is the derived physical class.
+                candidate.apply = true;
+                candidate.confidence = "high";
+                candidate.reason = "derived_owner_from_factory_result_vptr_and_rare_override";
+            }
+            else {
+                candidate.confidence = "medium";
+                candidate.reason = "derived_owner_from_rare_override";
+            }
         }
     }
 
@@ -497,6 +560,10 @@ public class STVTableAnalyzer extends GhidraScript {
             Parameter parameter = function.getParameter(0);
             String typeOwner = pointedTypeName(parameter.getDataType());
             if (!typeOwner.isEmpty()) return typeOwner;
+        }
+        if (hasTag(function, OBJECT_FACTORY_TAG)) {
+            String resultOwner = pointedTypeName(function.getReturnType());
+            if (!resultOwner.isEmpty()) return resultOwner;
         }
         return "";
     }
@@ -603,15 +670,22 @@ public class STVTableAnalyzer extends GhidraScript {
             Function function = listing.getFunctionContaining(from);
             if (instruction == null || function == null) continue;
             boolean strong = isVptrStore(instruction, reference);
+            Long objectOffset = strong ? objectStoreOffset(function, instruction) : null;
             result.references.add(new CodeReference(from, function, instruction.toString(), strong,
-                ownerOf(function), strong ? thisStoreOffset(function, instruction) : null));
+                ownerOf(function), objectOffset,
+                strong && hasTag(function, OBJECT_FACTORY_TAG) && objectOffset != null));
         }
         return result;
     }
 
+    private Long objectStoreOffset(Function function, Instruction target) {
+        Long offset = thisStoreOffset(function, target);
+        return offset != null ? offset : factoryReturnedStoreOffset(function, target);
+    }
+
     private Long thisStoreOffset(Function function, Instruction target) {
         Map<String, Long> aliases = new HashMap<>();
-        aliases.put("ECX", 0L);
+        if ("__thiscall".equals(function.getCallingConventionName())) aliases.put("ECX", 0L);
         ghidra.program.model.listing.InstructionIterator iterator =
             listing.getInstructions(function.getBody(), true);
         while (iterator.hasNext()) {
@@ -635,6 +709,54 @@ public class STVTableAnalyzer extends GhidraScript {
                 continue;
             }
             updateThisAliases(mnemonic, operands, aliases);
+        }
+        return null;
+    }
+
+    /**
+     * A recovered object factory can install the primary table through a callee-saved
+     * allocation-result register rather than ECX.  Accept the store only when the same
+     * base register is copied intact into EAX and reaches a straight-line RET.  Calls,
+     * branches, or a clobber of either register reject the anchor.
+     */
+    private Long factoryReturnedStoreOffset(Function function, Instruction target) {
+        // The exact registry/allocator analysis tags factories before their concrete return
+        // class is known.  Requiring an already typed return here created a circular
+        // dependency: an untyped factory could not prove its vptr, and the missing vptr owner
+        // prevented the factory return from becoming typed.  The returned-register proof
+        // below is sufficient machine evidence even while the public ABI is still void *.
+        if (!hasTag(function, OBJECT_FACTORY_TAG)) return null;
+        String[] targetOperands = splitOperands(target.toString());
+        MemoryOperand destination = targetOperands.length == 0 ? null :
+            memoryOperand(targetOperands[0]);
+        if (destination == null) return null;
+        String objectRegister = destination.register;
+        boolean copiedToAccumulator = "EAX".equals(objectRegister);
+        boolean afterTarget = false;
+        ghidra.program.model.listing.InstructionIterator iterator =
+            listing.getInstructions(function.getBody(), true);
+        while (iterator.hasNext()) {
+            Instruction instruction = iterator.next();
+            if (!afterTarget) {
+                afterTarget = instruction.getAddress().equals(target.getAddress());
+                continue;
+            }
+            String mnemonic = instruction.getMnemonicString().toUpperCase(Locale.ROOT);
+            String[] operands = splitOperands(instruction.toString());
+            if (instruction.getFlowType().isJump() || "CALL".equals(mnemonic)) return null;
+            if ("RET".equals(mnemonic))
+                return copiedToAccumulator ? destination.displacement : null;
+            if (operands.length == 0) continue;
+            String written = fullRegister(operands[0]);
+            if ("MOV".equals(mnemonic) && operands.length >= 2 &&
+                    "EAX".equals(written) &&
+                    objectRegister.equals(fullRegister(operands[1]))) {
+                copiedToAccumulator = true;
+                continue;
+            }
+            if (!copiedToAccumulator && objectRegister.equals(written) ||
+                    copiedToAccumulator && "EAX".equals(written))
+                return null;
         }
         return null;
     }
@@ -731,7 +853,7 @@ public class STVTableAnalyzer extends GhidraScript {
                 "slot_count\tnamed_slot_count\t" +
                 "confidence\treason\tstrong_vptr_refs\tall_code_refs\tslot_owners\t" +
                 "constructor_owners\tvptr_writer_owners\tprimary_vptr_store\t" +
-                "this_vptr_offsets\trelated_tables\ttable_address\n");
+                "this_vptr_offsets\tvptr_store_sites\trelated_tables\ttable_address\n");
             for (Candidate candidate : candidates) {
                 out.write((candidate.apply ? "1" : "0") + "\t" +
                     (candidate.layoutApply() ? "1" : "0") + "\t" +
@@ -746,6 +868,7 @@ public class STVTableAnalyzer extends GhidraScript {
                     tsv(String.join(" | ", candidate.vptrWriterOwners)) + "\t" +
                     (candidate.hasPrimaryVptrStore() ? "1" : "0") + "\t" +
                     tsv(candidate.thisVptrOffsets()) + "\t" +
+                    tsv(candidate.evidence.vptrStoreSites()) + "\t" +
                     tsv(String.join(" | ", candidate.relatedTables)) + "\t" +
                     addr(candidate.address) + "\n");
             }
@@ -770,6 +893,7 @@ public class STVTableAnalyzer extends GhidraScript {
                 q(String.join(" | ", candidate.vptrWriterOwners)) +
                 ",\"primary_vptr_store\":" + candidate.hasPrimaryVptrStore() +
                 ",\"this_vptr_offsets\":" + q(candidate.thisVptrOffsets()) +
+                ",\"vptr_store_sites\":" + q(candidate.evidence.vptrStoreSites()) +
                 ",\"related_tables\":" +
                 q(String.join(" | ", candidate.relatedTables)) + "}");
         }
@@ -929,20 +1053,27 @@ public class STVTableAnalyzer extends GhidraScript {
             }
             return String.join(" | ", result);
         }
+        String vptrStoreSites() {
+            return references.stream().filter(reference -> reference.strong)
+                .map(reference -> addr(reference.address)).distinct().sorted()
+                .collect(java.util.stream.Collectors.joining(" | "));
+        }
     }
     private static class CodeReference {
         final Address address;
         final Function function;
         final String instruction;
         final boolean strong;
+        final boolean factoryAnchor;
         final String owner;
         final Long thisOffset;
         CodeReference(Address address, Function function, String instruction, boolean strong,
-                String owner, Long thisOffset) {
+                String owner, Long thisOffset, boolean factoryAnchor) {
             this.address = address;
             this.function = function;
             this.instruction = instruction;
             this.strong = strong;
+            this.factoryAnchor = factoryAnchor;
             this.owner = owner;
             this.thisOffset = thisOffset;
         }

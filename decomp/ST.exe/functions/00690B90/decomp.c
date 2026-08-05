@@ -21,8 +21,6 @@ int __thiscall AiTactClassTy::GetMessage(AiTactClassTy *this,STMessage *message)
   uint uVar6;
   undefined4 *puVar7;
   AiTactClassTy_field_00A5Element *element_00a5;
-  /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
-  int unaff_EDI;
   bool bVar8;
   InternalExceptionFrame local_58;
   AiTactClassTy *local_14;
@@ -55,8 +53,7 @@ int __thiscall AiTactClassTy::GetMessage(AiTactClassTy *this,STMessage *message)
         }
         else {
           sub_00690AB0(local_14);
-          /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
-          ExecClaim(this_00,unaff_EDI);
+          ExecClaim(this_00);
         }
       }
       else if (SVar1 == MESS_ID_CREATE) {

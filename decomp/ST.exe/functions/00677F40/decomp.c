@@ -67,7 +67,7 @@ _EnumArt(short param_1,byte *param_2,short param_3,short param_4,short param_5,s
       iVar3 = 1;
       local_14 = 1;
       if ((param_2 != nullptr) && (*param_2 != 0)) {
-        (*this->vtable->vfunc_74)(local_28);
+        (*this->vtable->vfunc_74)((short)local_28);
         pbVar7 = local_28;
         pbVar5 = param_2;
         do {

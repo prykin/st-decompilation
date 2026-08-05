@@ -3,12 +3,17 @@
    Evidence: 00673160 -> 0072E620 @ 0067316B
 
    [STPrototypeApplier] Propagated parameter 1.
-   Evidence: 00673160 -> 0072E620 @ 0067316B */
+   Evidence: 00673160 -> 0072E620 @ 0067316B
 
-void __cdecl FUN_00673160(char *str1,char *str2)
+   [STPrototypeApplier] Propagated return.
+   Evidence: 00673160 returns return of Library::MSVCRT::__strcmpi @ 00673174 */
+
+int __cdecl FUN_00673160(char *str1,char *str2)
 
 {
-  Library::MSVCRT::__strcmpi(str1,str2);
-  return;
+  int iVar1;
+
+  iVar1 = Library::MSVCRT::__strcmpi(str1,str2);
+  return iVar1;
 }
 

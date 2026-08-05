@@ -7,9 +7,13 @@
 
    [STPrototypeApplier] Propagated return.
    Evidence: 00579170 returns return of FUN_004961b0 @ 0057927A | 00579170 returns return of
-   FUN_004961b0 @ 00579284 */
+   FUN_004961b0 @ 00579284
+   [STAbiConsistencyApplier] machine_thiscall_arity target=function:-1: prototype=bool __thiscall
+   Bad(STCrabC * this) Evidence: every machine RET purges exactly 0 explicit stack bytes; current
+   signature describes 4; removed trailing parameter slots have no listing references;
+   ret_sites=0057927A RET | 00579284 RET */
 
-bool __thiscall STCrabC::Bad(STCrabC *this,int param_1)
+bool __thiscall STCrabC::Bad(STCrabC *this)
 
 {
   code *pcVar1;

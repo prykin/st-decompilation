@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 void __fastcall FUN_00581200(int param_1)
 
@@ -90,9 +92,7 @@ void __fastcall FUN_00581200(int param_1)
           ((-1 < (short)local_10 &&
            (((short)local_10 < g_worldGrid.sizeY && (sVar16 = (short)local_18, -1 < sVar16)))))) &&
          ((sVar16 < g_worldGrid.sizeZ &&
-          ((pSVar4 = g_worldGrid.cells
-                     [(int)sVar16 * (int)g_worldGrid.planeStride +
-                      (int)g_worldGrid.sizeX * (int)(short)local_10 + (int)sVar13].objects[0],
+          ((pSVar4 = STGridAt3D(g_worldGrid, sVar13, local_10, sVar16).objects[0],
            pSVar4 != nullptr &&
            (((((pSVar4->value_20 == 1000 || (pSVar4->value_20 == 0x14)) &&
               (iVar12 = (*pSVar4->vtable[5].slots_00_28[0])(), pAVar8 = local_c, iVar12 != 0)) &&
@@ -172,9 +172,7 @@ LAB_00581545:
               ((sVar16 = (short)local_10, sVar16 < 0 || (g_worldGrid.sizeY <= sVar16)))))) ||
             (sVar9 = (short)local_18, sVar9 < 0)) ||
            ((g_worldGrid.sizeZ <= sVar9 ||
-            (pSVar4 = g_worldGrid.cells
-                      [(int)sVar9 * (int)g_worldGrid.planeStride +
-                       (int)g_worldGrid.sizeX * (int)sVar16 + (int)sVar13].objects[0],
+            (pSVar4 = STGridAt3D(g_worldGrid, sVar13, sVar16, sVar9).objects[0],
             pSVar4 == nullptr)))))) ||
          ((((pSVar4->value_20 != 1000 && (pSVar4->value_20 != 0x14)) ||
            ((iVar12 = (*pSVar4->vtable[5].slots_00_28[0])(), iVar12 == 0 ||

@@ -105,8 +105,7 @@ void __thiscall SettMapMTy::sub_005C29B0(SettMapMTy *this,char param_1)
       uVar18 = 0x694d;
     }
     local_18->field_002D = uVar18;
-    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-    (*(code *)local_18->field_0000->field_0000)(&local_18->field_0x1d);
+    local_18->GetMessage((STMessage *)&local_18->field_0x1d);
     return;
   }
   local_18->field_1E26 = param_1;
@@ -229,7 +228,7 @@ void __thiscall SettMapMTy::sub_005C29B0(SettMapMTy *this,char param_1)
   this_01->field_1F4B = puVar9;
   SVar1 = this_01->field_1E26;
   if (((SVar1 == 6) || (SVar1 == CASE_7)) || (SVar1 == 0xe)) {
-    this_01->field_21E3 = 1;
+    this_01->field_0x21e3 = 1;
     iVar5 = 1;
     puVar12 = (undefined4 *)(this_01->field_005D + 0x28);
     uVar22 = FUN_006b4fe0(this_01->field_005D);
@@ -434,14 +433,14 @@ void __thiscall SettMapMTy::sub_005C29B0(SettMapMTy *this,char param_1)
     }
   }
   SVar1 = this_01->field_1E26;
-  this_01->field_21E1 = 1;
-  this_01->field_21E5 = 1;
+  this_01->field_0x21e1 = 1;
+  this_01->field_0x21e5 = 1;
   if ((((SVar1 == 0xd) || (SVar1 == CASE_F)) || ((SVar1 == 0xe || (SVar1 == CASE_10)))) &&
      (this_01->field_1E27 == 0x11)) {
-    this_01->field_21E4 = 1;
-    this_01->field_21E6 = 1;
+    this_01->field_0x21e4 = 1;
+    this_01->field_0x21e6 = 1;
     if (SVar1 != 0xe) {
-      this_01->field_21E2 = 1;
+      this_01->field_0x21e2 = 1;
     }
   }
   SpriteClassTy::InitSprite
@@ -650,9 +649,8 @@ void __thiscall SettMapMTy::sub_005C29B0(SettMapMTy *this,char param_1)
   FUN_006b2330(g_ddxContext_008075A8,puVar13,0x31,0x40407f,pAVar16->field_0004,pAVar16->field_0008,
                (ushort *)pAVar16);
   Library::DKW::DDX::FUN_006b3640((int *)g_ddxContext_008075A8,*puVar13,0xffffffff,0x112,0x149);
-  /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-  (*(code *)this_01->field_0000->field_0018)(1);
-  if (this_01->field_21E2 != '\0') {
+  this_01->CreateCtrls('\x01');
+  if (this_01->field_0x21e2 != '\0') {
     FUN_006b2330(g_ddxContext_008075A8,&local_8,0x32,0x4042d2,0xf9,0x121,
                  (ushort *)&this_01->field_1A5B->field_0140);
     Library::DKW::DDX::FUN_006b3640((int *)g_ddxContext_008075A8,local_8,0xffffffff,10,0xb4);
@@ -709,7 +707,7 @@ void __thiscall SettMapMTy::sub_005C29B0(SettMapMTy *this,char param_1)
       local_8 = 0xffffffff;
     }
   }
-  if (this_01->field_21E5 == '\0') {
+  if (this_01->field_0x21e5 == '\0') {
     FUN_006b3af0((int *)g_ddxContext_008075A8,*puVar13);
   }
   else {
@@ -761,7 +759,7 @@ void __thiscall SettMapMTy::sub_005C29B0(SettMapMTy *this,char param_1)
       local_8 = 0xffffffff;
     }
   }
-  if (this_01->field_21E1 == '\0') {
+  if (this_01->field_0x21e1 == '\0') {
     if (this_01->field_1C6F != 0xffffffff) {
       FUN_006b3af0((int *)this_01->field_1CB3,this_01->field_1C6F);
     }
@@ -842,7 +840,7 @@ void __thiscall SettMapMTy::sub_005C29B0(SettMapMTy *this,char param_1)
       local_8 = 0xffffffff;
     }
   }
-  if (this_01->field_21E3 != '\0') {
+  if (this_01->field_0x21e3 != '\0') {
     FUN_006b2330(g_ddxContext_008075A8,&local_8,0x32,0x403099,0xf9,0x123,
                  (ushort *)&this_01->field_1A5B->field_0140);
     Library::DKW::DDX::FUN_006b3640((int *)g_ddxContext_008075A8,local_8,0xffffffff,10,0xb4);

@@ -18,16 +18,13 @@ int __thiscall STBoatC::Recharge(STBoatC *this,int param_1)
   int iVar8;
   int iVar9;
   int iVar10;
-  /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
-  int unaff_EDI;
 
   if ((param_1 == 0) || (param_1 == 1)) {
     memset(&this->field_02CC, 0, 0x5c); /* compiler bulk-zero initialization */
     this->field_02C4 = 0;
     iVar9 = TLOBaseTy::sub_004D6DF0((TLOBaseTy *)this);
-    /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
     if ((iVar9 == 0) ||
-       ((iVar9 = CheckForReplenisher(this,unaff_EDI), iVar9 == 1 &&
+       ((iVar9 = CheckForReplenisher(this), iVar9 == 1 &&
         (iVar9 = thunk_FUN_004d6f70((int *)this), iVar9 == 1)))) {
       this->field_0631 = 0;
       *(undefined4 *)&this->field_0x62d = 0;
@@ -59,9 +56,7 @@ int __thiscall STBoatC::Recharge(STBoatC *this,int param_1)
       if (g_worldGrid.sizeZ <= sVar4) {
         return 0;
       }
-      pSVar5 = g_worldGrid.cells
-               [(int)g_worldGrid.planeStride * (int)sVar4 + (int)g_worldGrid.sizeX * (int)sVar3 +
-                (int)sVar2].objects[0];
+      pSVar5 = STGridAt3D(g_worldGrid, sVar2, sVar3, sVar4).objects[0];
       if (pSVar5 == nullptr) {
         return 0;
       }
@@ -111,9 +106,8 @@ LAB_0047926a:
     switch(iVar9) {
     case 0:
       iVar9 = TLOBaseTy::sub_004D6DF0((TLOBaseTy *)this);
-      /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
       if ((iVar9 != 0) &&
-         ((iVar9 = CheckForReplenisher(this,unaff_EDI), iVar9 != 1 ||
+         ((iVar9 = CheckForReplenisher(this), iVar9 != 1 ||
           (iVar9 = thunk_FUN_004d6f70((int *)this), iVar9 != 1)))) {
         sVar2 = this->field_061D;
         sVar3 = this->field_0621;
@@ -121,9 +115,7 @@ LAB_0047926a:
         if (((-1 < sVar2) &&
             (((sVar2 < g_worldGrid.sizeX && (-1 < sVar4)) && (sVar4 < g_worldGrid.sizeY)))) &&
            (((-1 < sVar3 && (sVar3 < g_worldGrid.sizeZ)) &&
-            ((pSVar5 = g_worldGrid.cells
-                       [(int)g_worldGrid.planeStride * (int)sVar3 +
-                        (int)g_worldGrid.sizeX * (int)sVar4 + (int)sVar2].objects[0],
+            ((pSVar5 = STGridAt3D(g_worldGrid, sVar2, sVar4, sVar3).objects[0],
              pSVar5 != nullptr &&
              ((*(int *)&pSVar5->field_0x18 == this->field_0623 &&
               (iVar9 = (*pSVar5->vtable[5].slots_00_28[2])(), iVar9 != 0)))))))) {
@@ -164,9 +156,8 @@ LAB_0047885b:
       break;
     case 1:
       iVar9 = TLOBaseTy::sub_004D6DF0((TLOBaseTy *)this);
-      /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
       if ((iVar9 != 0) &&
-         ((iVar9 = CheckForReplenisher(this,unaff_EDI), iVar9 != 1 ||
+         ((iVar9 = CheckForReplenisher(this), iVar9 != 1 ||
           (iVar9 = thunk_FUN_004d6f70((int *)this), iVar9 != 1)))) {
         sVar2 = this->field_061D;
         sVar3 = this->field_0621;
@@ -174,9 +165,7 @@ LAB_0047885b:
         if (((-1 < sVar2) &&
             (((sVar2 < g_worldGrid.sizeX && (-1 < sVar4)) && (sVar4 < g_worldGrid.sizeY)))) &&
            (((-1 < sVar3 && (sVar3 < g_worldGrid.sizeZ)) &&
-            ((pSVar5 = g_worldGrid.cells
-                       [(int)g_worldGrid.planeStride * (int)sVar3 +
-                        (int)g_worldGrid.sizeX * (int)sVar4 + (int)sVar2].objects[0],
+            ((pSVar5 = STGridAt3D(g_worldGrid, sVar2, sVar4, sVar3).objects[0],
              pSVar5 != nullptr &&
              ((*(int *)&pSVar5->field_0x18 == this->field_0623 &&
               (iVar9 = (*pSVar5->vtable[5].slots_00_28[2])(), iVar9 != 0)))))))) {
@@ -231,9 +220,8 @@ cf_common_exit_00478E51:
       return 2;
     }
     iVar9 = TLOBaseTy::sub_004D6DF0((TLOBaseTy *)this);
-    /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
     if ((iVar9 == 0) ||
-       ((iVar9 = CheckForReplenisher(this,unaff_EDI), iVar9 == 1 &&
+       ((iVar9 = CheckForReplenisher(this), iVar9 == 1 &&
         (iVar9 = thunk_FUN_004d6f70((int *)this), iVar9 == 1)))) goto cf_common_exit_00478E51;
     sVar2 = this->field_061D;
     sVar3 = this->field_0621;
@@ -241,9 +229,7 @@ cf_common_exit_00478E51:
     if (((-1 < sVar2) &&
         (((((sVar2 < g_worldGrid.sizeX && (-1 < sVar4)) && (sVar4 < g_worldGrid.sizeY)) &&
           ((-1 < sVar3 && (sVar3 < g_worldGrid.sizeZ)))) &&
-         (pSVar5 = g_worldGrid.cells
-                   [(int)g_worldGrid.planeStride * (int)sVar3 + (int)g_worldGrid.sizeX * (int)sVar4
-                    + (int)sVar2].objects[0], pSVar5 != nullptr)))) &&
+         (pSVar5 = STGridAt3D(g_worldGrid, sVar2, sVar4, sVar3).objects[0], pSVar5 != nullptr)))) &&
        ((*(int *)&pSVar5->field_0x18 == this->field_0623 &&
         (iVar9 = (*pSVar5->vtable[5].slots_00_28[2])(), iVar9 != 0)))) {
       iVar9 = SubmarineTitans::Recovered::HiddenThis::AnonReceiver_00493610::thunk_FUN_00493610
@@ -305,9 +291,7 @@ LAB_00478b1a:
       if ((((sVar2 < 0) || (g_worldGrid.sizeX <= sVar2)) || (sVar4 < 0)) ||
          ((((g_worldGrid.sizeY <= sVar4 || (sVar3 < 0)) ||
            ((g_worldGrid.sizeZ <= sVar3 ||
-            ((pSVar5 = g_worldGrid.cells
-                       [(int)g_worldGrid.planeStride * (int)sVar3 +
-                        (int)g_worldGrid.sizeX * (int)sVar4 + (int)sVar2].objects[0],
+            ((pSVar5 = STGridAt3D(g_worldGrid, sVar2, sVar4, sVar3).objects[0],
              pSVar5 == nullptr || (*(int *)&pSVar5->field_0x18 != this->field_0623)))))
            ) || (iVar9 = (*pSVar5->vtable[5].slots_00_28[2])(), iVar9 == 0)))) {
         if (this->field_0619 == 0) {
@@ -364,9 +348,7 @@ LAB_00478ff2:
       if ((((((-1 < sVar2) && (sVar2 < g_worldGrid.sizeX)) && (-1 < sVar4)) &&
            ((sVar4 < g_worldGrid.sizeY && (-1 < sVar3)))) &&
           ((sVar3 < g_worldGrid.sizeZ &&
-           ((pSVar5 = g_worldGrid.cells
-                      [(int)g_worldGrid.planeStride * (int)sVar3 +
-                       (int)g_worldGrid.sizeX * (int)sVar4 + (int)sVar2].objects[0],
+           ((pSVar5 = STGridAt3D(g_worldGrid, sVar2, sVar4, sVar3).objects[0],
             pSVar5 != nullptr && (*(int *)&pSVar5->field_0x18 == this->field_0623))))))
          && (iVar9 = (*pSVar5->vtable[5].slots_00_28[2])(), iVar9 != 0)) {
         this->field_0631 = 4;
@@ -380,9 +362,8 @@ LAB_00478ff2:
       goto joined_r0x00478b59;
     case 1:
       iVar9 = TLOBaseTy::sub_004D6DF0((TLOBaseTy *)this);
-      /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
       if ((iVar9 == 0) ||
-         ((iVar9 = CheckForReplenisher(this,unaff_EDI), iVar9 == 1 &&
+         ((iVar9 = CheckForReplenisher(this), iVar9 == 1 &&
           (iVar9 = thunk_FUN_004d6f70((int *)this), iVar9 == 1)))) {
         sub_004602B0(this);
         goto cf_common_exit_00478E51;
@@ -393,9 +374,7 @@ LAB_00478ff2:
       if (((((-1 < sVar2) && (sVar2 < g_worldGrid.sizeX)) && (-1 < sVar4)) &&
           ((sVar4 < g_worldGrid.sizeY && (-1 < sVar3)))) &&
          (((sVar3 < g_worldGrid.sizeZ &&
-           ((pSVar5 = g_worldGrid.cells
-                      [(int)g_worldGrid.planeStride * (int)sVar3 +
-                       (int)g_worldGrid.sizeX * (int)sVar4 + (int)sVar2].objects[0],
+           ((pSVar5 = STGridAt3D(g_worldGrid, sVar2, sVar4, sVar3).objects[0],
             pSVar5 != nullptr && (*(int *)&pSVar5->field_0x18 == this->field_0623))))
           && (iVar9 = (*pSVar5->vtable[5].slots_00_28[2])(), iVar9 != 0)))) {
         return 2;

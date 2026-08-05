@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* [STPrototypeApplier] Propagated parameter 0.
    Evidence: 00476CE0 -> 00492B20 @ 00476D5E; STBoatC::Capture this; stable alias EBX | 00476CE0 ->
@@ -55,9 +57,7 @@ undefined4 __fastcall FUN_00492b20(STBoatC *param_1)
       sVar7 = local_c[0] + 1;
       if ((((-1 < local_8) && (local_8 < g_worldGrid.sizeX)) && (-1 < local_6)) &&
          (((local_6 < g_worldGrid.sizeY && (-1 < sVar7)) && (sVar7 < g_worldGrid.sizeZ)))) {
-        if ((-1 < g_pathingGrid.cells
-                  [(int)sVar7 * (int)g_pathingGrid.planeStride +
-                   (int)g_pathingGrid.sizeX * (int)local_6 + (int)local_8]) &&
+        if ((-1 < STGridAt3D(g_pathingGrid, local_8, local_6, sVar7)) &&
            (g_pathingScratchGrid.cells
             [(local_c[0] + 1) * (int)g_pathingGrid.planeStride +
              (int)g_pathingGrid.sizeX * (int)local_6 + (int)local_8] != 0)) {
@@ -86,9 +86,7 @@ undefined4 __fastcall FUN_00492b20(STBoatC *param_1)
                    (sVar3 = (short)iVar6, -1 < sVar3)) &&
                   (((sVar3 < g_worldGrid.sizeY && (sVar10 = local_c[0] + 1, -1 < sVar10)) &&
                    ((sVar10 < g_worldGrid.sizeZ &&
-                    ((-1 < g_pathingGrid.cells
-                           [(int)sVar10 * (int)g_pathingGrid.planeStride +
-                            (int)sVar3 * (int)g_pathingGrid.sizeX + (int)sVar7] && (iVar9 != 0))))))
+                    ((-1 < STGridAt3D(g_pathingGrid, sVar7, sVar3, sVar10) && (iVar9 != 0))))))
                   )) && (iVar9 < local_10)) {
                 param_1->field_0603 = sVar7;
                 param_1->field_0605 = sVar3;

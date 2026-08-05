@@ -13,7 +13,7 @@ AiPlrClassTy * __thiscall AiPlrClassTy::AiPlrClassTy(AiPlrClassTy *this)
 
   sub_006E60E0(this);
   thunk_FUN_0064cc90(&this->vtable_at_1c);
-  this->vtable = (AiPlrClassTyVTable_at_1C *)&AiPlrClassTyVTable;
+  this->vtable = &AiPlrClassTyVTable;
   this->vtable_at_1c = &AiPlrClassTyVTable_at_1C;
   if (this == nullptr) {
     puVar2 = nullptr;

@@ -283,6 +283,8 @@ public class STIndirectCallAnalyzer extends GhidraScript {
                 Synthetic synthetic = trusted ? null : syntheticSignature(target, structure);
                 FunctionPointerFamily family = target == null ? null :
                     targetFamilies.get(addr(target.getEntryPoint()));
+                Pointer recovered = trusted ? strongerGeneratedPointer(
+                    structure, component, pointer, target) : null;
                 if (generated && !trusted && synthetic == null &&
                         family == null) {
                     rows.add(new Row(true, "revert_generated_slot", structure.getPathName(),
@@ -295,21 +297,29 @@ public class STIndirectCallAnalyzer extends GhidraScript {
                         "generated indirect ABI no longer has sufficient machine evidence"));
                     continue;
                 }
-                boolean apply = trusted || synthetic != null || family != null;
+                boolean apply = recovered != null || trusted || synthetic != null ||
+                    family != null;
                 rows.add(new Row(apply, "vtable_slot", structure.getPathName(),
                     component.getOffset(), name(component), typeSpec(component.getDataType()),
                     safeText(component.getComment()), structure.getPathName(), name(component), 0, 0,
                     target == null ? "" : addr(target.getEntryPoint()),
                     target == null ? "" : target.getName(true),
-                    trusted ? "target" : synthetic != null ? synthetic.mode :
+                    recovered != null ? "generated_family" :
+                        trusted ? "target" : synthetic != null ? synthetic.mode :
                         family != null ? "family_target" : "",
-                    synthetic == null ? "" : synthetic.receiverType,
+                    recovered != null ? typeSpec(recovered) :
+                        synthetic == null ? "" : synthetic.receiverType,
                     synthetic == null ? -1 : synthetic.stackParameters,
                     synthetic == null ? "" : synthetic.parameterTypes,
                     synthetic == null ? "" : synthetic.returnType,
-                    trusted ? "high" : synthetic != null ? "layout" :
+                    recovered != null ? "high" : trusted ? "high" :
+                        synthetic != null ? "layout" :
                         family != null ? "family" : "review",
-                    trusted ? "slot target has a reviewed function signature" :
+                    recovered != null ?
+                        "an automation-owned receiver-aware function-pointer ABI is " +
+                            "strictly stronger than the reviewed target signature; " +
+                            "preserving generated family " + typeSpec(recovered) :
+                        trusted ? "slot target has a reviewed function signature" :
                         synthetic != null ? synthetic.evidence :
                         family != null ?
                             family.occurrences + " independently typed vtable " +
@@ -319,6 +329,73 @@ public class STIndirectCallAnalyzer extends GhidraScript {
                             "slot target lacks consistent indirect ABI evidence"));
             }
         }
+    }
+
+    /**
+     * A recovered target function can temporarily lose its receiver or return ABI while
+     * prototype propagation is converging.  Never let that weaker Listing signature erase
+     * a receiver-aware indirect-call family.  Prefer the component already installed; if a
+     * previous pass has downgraded it, recover the deterministic owner-specific generated
+     * definition still present in the data-type manager.
+     */
+    private Pointer strongerGeneratedPointer(Structure table,
+            DataTypeComponent component, Pointer current, Function target) {
+        if (target == null) return null;
+        if (generatedIndirectPointer(component, current) &&
+                strongerThanTarget(current, target)) return current;
+        String address = addr(target.getEntryPoint()).toUpperCase(Locale.ROOT);
+        String owner = table.getName().replaceFirst(
+            "(?i)VTable(?:_at_[0-9A-F]+)?$", "");
+        String prefix = "icall_" + address + "_";
+        String suffix = "_for_" + sanitize(owner);
+        Iterator<DataType> iterator =
+            currentProgram.getDataTypeManager().getAllDataTypes();
+        Pointer agreed = null;
+        while (iterator.hasNext()) {
+            DataType value = iterator.next();
+            if (!(value instanceof FunctionDefinition definition) ||
+                    !definition.getName().startsWith(prefix) ||
+                    !definition.getName().endsWith(suffix) ||
+                    !safeText(definition.getComment()).contains(APPLIER_MARKER)) continue;
+            Pointer candidate = currentProgram.getDataTypeManager().getPointer(definition);
+            if (!strongerThanTarget(candidate, target)) continue;
+            if (agreed != null && !agreed.isEquivalent(candidate)) return null;
+            agreed = candidate;
+        }
+        return agreed;
+    }
+
+    private boolean strongerThanTarget(Pointer pointer, Function target) {
+        if (!(pointer.getDataType() instanceof FunctionDefinition definition) ||
+                target == null) return false;
+        String existingConvention = safeText(definition.getCallingConventionName());
+        String targetConvention = safeText(target.getCallingConventionName());
+        boolean existingReceiver = "__thiscall".equals(existingConvention) &&
+            definition.getArguments().length > 0 &&
+            definition.getArguments()[0].getDataType() instanceof Pointer;
+        boolean targetReceiver = "__thiscall".equals(targetConvention) &&
+            target.getParameterCount() > 0 &&
+            target.getParameter(0).getDataType() instanceof Pointer;
+        boolean strongerConvention = concreteConvention(existingConvention) &&
+            !concreteConvention(targetConvention);
+        boolean strongerParameters = definition.getArguments().length >
+            target.getParameterCount();
+        boolean strongerReturn = concreteWidth(definition.getReturnType()) >
+            concreteWidth(target.getReturnType());
+        return (existingReceiver && !targetReceiver) || strongerConvention ||
+            strongerParameters || strongerReturn;
+    }
+
+    private boolean concreteConvention(String convention) {
+        return convention != null && !convention.isBlank() &&
+            !"unknown".equalsIgnoreCase(convention) &&
+            !"default".equalsIgnoreCase(convention);
+    }
+
+    private int concreteWidth(DataType type) {
+        if (type == null || type instanceof VoidDataType) return 0;
+        String name = type.getName().toLowerCase(Locale.ROOT);
+        return name.startsWith("undefined") ? 0 : Math.max(0, type.getLength());
     }
 
     /**

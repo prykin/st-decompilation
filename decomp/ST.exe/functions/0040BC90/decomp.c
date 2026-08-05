@@ -8,7 +8,7 @@ int __thiscall
 FUN_0040bc90(void *this,uint param_1,short *param_2,short *param_3,short *param_4,char param_5)
 
 {
-  RecoveredRecord_STBoatC_0040AE40 *pRVar1;
+  STGameObjC *pSVar1;
   int iVar2;
   short *psVar3;
   uint uVar4;
@@ -29,8 +29,8 @@ FUN_0040bc90(void *this,uint param_1,short *param_2,short *param_3,short *param_
   short *local_8;
 
   local_28 = this;
-  pRVar1 = (RecoveredRecord_STBoatC_0040AE40 *)thunk_FUN_00423e70(this,param_1);
-  if (pRVar1 != nullptr) {
+  pSVar1 = thunk_FUN_00423e70(this,(ushort)param_1);
+  if (pSVar1 != nullptr) {
     local_8 = Library::DKW::LIB::MemAlloc
                         ((int)g_pathingGrid.sizeZ * (int)g_pathingGrid.sizeY *
                          (int)g_pathingGrid.sizeX * 2);
@@ -47,30 +47,30 @@ FUN_0040bc90(void *this,uint param_1,short *param_2,short *param_3,short *param_
       psVar7 = (short *)((int)psVar7 + 1);
       psVar3 = (short *)((int)psVar3 + 1);
     }
-    local_24 = pRVar1->field_0047 + -2;
+    local_24 = pSVar1->field_0047 + -2;
     if (local_24 < 0) {
       local_24 = 0;
     }
-    local_20 = pRVar1->field_0049 + -2;
+    local_20 = pSVar1->field_0049 + -2;
     if (local_20 < 0) {
       local_20 = 0;
     }
     /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
-    param_1 = (int)pRVar1->field_004B - 2;
+    param_1 = (int)pSVar1->field_004B - 2;
     if ((int)param_1 < 0) {
       /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
       param_1 = 0;
     }
     iVar2 = (int)g_pathingGrid.sizeX;
-    local_10 = pRVar1->field_0047 + 2;
+    local_10 = pSVar1->field_0047 + 2;
     if (iVar2 <= local_10) {
       local_10 = iVar2 + -1;
     }
-    iVar9 = pRVar1->field_0049 + 2;
+    iVar9 = pSVar1->field_0049 + 2;
     if (g_pathingGrid.sizeY <= iVar9) {
       iVar9 = g_pathingGrid.sizeY + -1;
     }
-    local_c = pRVar1->field_004B + 2;
+    local_c = pSVar1->field_004B + 2;
     if (g_pathingGrid.sizeZ <= local_c) {
       local_c = g_pathingGrid.sizeZ + -1;
     }
@@ -87,7 +87,8 @@ FUN_0040bc90(void *this,uint param_1,short *param_2,short *param_3,short *param_
               iVar2 = local_24;
               do {
                 if ((*psVar7 == 0) &&
-                   (iVar9 = thunk_FUN_00497920(pRVar1,iVar2,local_1c,param_1), iVar9 == 0)) {
+                   (iVar9 = thunk_FUN_00497920((RecoveredRecord_STBoatC_0040AE40 *)pSVar1,iVar2,
+                                               local_1c,param_1), iVar9 == 0)) {
                   *psVar7 = -3;
                 }
                 iVar2 = iVar2 + 1;
@@ -105,8 +106,8 @@ FUN_0040bc90(void *this,uint param_1,short *param_2,short *param_3,short *param_
         param_1 = param_1 + 1;
       } while ((int)param_1 <= local_c);
     }
-    local_8[(int)pRVar1->field_004B * (int)g_pathingGrid.planeStride +
-            (int)pRVar1->field_0049 * (int)g_pathingGrid.sizeX + (int)pRVar1->field_0047] = 0;
+    local_8[(int)pSVar1->field_004B * (int)g_pathingGrid.planeStride +
+            (int)pSVar1->field_0049 * (int)g_pathingGrid.sizeX + (int)pSVar1->field_0047] = 0;
     iVar2 = (int)param_2 +
             (int)g_pathingGrid.sizeX * (int)param_3 + (int)g_pathingGrid.planeStride * (int)param_4;
     if (local_8[iVar2] == -3) {
@@ -118,22 +119,22 @@ FUN_0040bc90(void *this,uint param_1,short *param_2,short *param_3,short *param_
     }
     psVar3 = Library::DKW::WAY::FUN_006a9190
                        ((int)local_8,(int)g_pathingGrid.sizeX,(int)g_pathingGrid.sizeY,
-                        (int)g_pathingGrid.sizeZ,(short *)(int)pRVar1->field_0047,
-                        (short *)(int)pRVar1->field_0049,(short *)(int)pRVar1->field_004B,param_2,
+                        (int)g_pathingGrid.sizeZ,(short *)(int)pSVar1->field_0047,
+                        (short *)(int)pSVar1->field_0049,(short *)(int)pSVar1->field_004B,param_2,
                         param_3,param_4,0,&local_2c,nullptr,nullptr,uVar4);
     psVar7 = local_8;
     if (psVar3 == nullptr) {
       iVar2 = FUN_006ab090((int)local_8,(int)g_pathingGrid.sizeX,(int)g_pathingGrid.sizeY,
                            (int)g_pathingGrid.sizeZ,(int)param_2,(int)param_3,(int)param_4,
-                           (int)pRVar1->field_0047,(int)pRVar1->field_0049,(int)pRVar1->field_004B);
+                           (int)pSVar1->field_0047,(int)pSVar1->field_0049,(int)pSVar1->field_004B);
       if (iVar2 != 0) {
         FUN_006a5e90(psVar7);
         RaiseInternalException
                   (-2,g_overwriteContext_007ED77C,"E:\\__titans\\wlad\\Grpway3d.cpp",0x173);
         return -2;
       }
-      sVar6 = psVar7[((int)pRVar1->field_004B * (int)g_pathingGrid.sizeY + (int)pRVar1->field_0049)
-                     * (int)g_pathingGrid.sizeX + (int)pRVar1->field_0047];
+      sVar6 = psVar7[((int)pSVar1->field_004B * (int)g_pathingGrid.sizeY + (int)pSVar1->field_0049)
+                     * (int)g_pathingGrid.sizeX + (int)pSVar1->field_0047];
     }
     else {
       sVar6 = psVar3[3] + 1;

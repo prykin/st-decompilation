@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* [STMethodOwnerApplier] Structural method owner recovered as STDestC.
    Evidence: this_call_owners=[STDestC]; agreed_this_calls=1; incoming_this_accesses=8;
@@ -18,39 +20,23 @@ undefined4 __thiscall STDestC::sub_00603120(STDestC *this)
   if (((((sVar3 < 0) || (g_worldGrid.sizeX <= sVar3)) || (sVar4 < 0)) ||
       (((g_worldGrid.sizeY <= sVar4 || (sVar1 < 0)) ||
        ((g_worldGrid.sizeZ <= sVar1 ||
-        ((g_worldGrid.cells
-          [(int)g_worldGrid.planeStride * (int)sVar1 + (int)g_worldGrid.sizeX * (int)sVar4 +
-           (int)sVar3].objects[0] == nullptr ||
-         (g_worldGrid.cells
-          [(int)g_worldGrid.planeStride * (int)sVar1 + (int)g_worldGrid.sizeX * (int)sVar4 +
-           (int)sVar3].objects[0]->value_20 != 1000)))))))) &&
+        ((STGridAt3D(g_worldGrid, sVar3, sVar4, sVar1).objects[0] == nullptr ||
+         (STGridAt3D(g_worldGrid, sVar3, sVar4, sVar1).objects[0]->value_20 != 1000)))))))) &&
      ((this->field_0245 != 0 ||
       ((((((((short)(sVar3 + 1) < 0 || (g_worldGrid.sizeX <= (short)(sVar3 + 1))) || (sVar4 < 0)) ||
           ((g_worldGrid.sizeY <= sVar4 || (sVar1 < 0)))) || (g_worldGrid.sizeZ <= sVar1)) ||
-        ((g_worldGrid.cells
-          [(int)g_worldGrid.planeStride * (int)sVar1 + (int)g_worldGrid.sizeX * (int)sVar4 +
-           (int)(short)(sVar3 + 1)].objects[0] == nullptr ||
-         (g_worldGrid.cells
-          [(int)g_worldGrid.planeStride * (int)sVar1 + (int)g_worldGrid.sizeX * (int)sVar4 +
-           (int)(short)(sVar3 + 1)].objects[0]->value_20 != 1000)))) &&
+        ((STGridAt3D(g_worldGrid, sVar3 + 1, sVar4, sVar1).objects[0] == nullptr ||
+         (STGridAt3D(g_worldGrid, sVar3 + 1, sVar4, sVar1).objects[0]->value_20 != 1000)))) &&
        (((((sVar4 = sVar4 + 1, sVar3 < 0 ||
            (((g_worldGrid.sizeX <= sVar3 || (sVar4 < 0)) || (g_worldGrid.sizeY <= sVar4)))) ||
           (((sVar1 < 0 || (g_worldGrid.sizeZ <= sVar1)) ||
-           (g_worldGrid.cells
-            [(int)g_worldGrid.planeStride * (int)sVar1 + (int)g_worldGrid.sizeX * (int)sVar4 +
-             (int)sVar3].objects[0] == nullptr)))) ||
-         (g_worldGrid.cells
-          [(int)g_worldGrid.planeStride * (int)sVar1 + (int)g_worldGrid.sizeX * (int)sVar4 +
-           (int)sVar3].objects[0]->value_20 != 1000)) &&
+           (STGridAt3D(g_worldGrid, sVar3, sVar4, sVar1).objects[0] == nullptr)))) ||
+         (STGridAt3D(g_worldGrid, sVar3, sVar4, sVar1).objects[0]->value_20 != 1000)) &&
         ((((sVar3 = sVar3 + 1, sVar3 < 0 || (g_worldGrid.sizeX <= sVar3)) ||
           ((sVar4 < 0 ||
            (((g_worldGrid.sizeY <= sVar4 || (sVar1 < 0)) || (g_worldGrid.sizeZ <= sVar1)))))) ||
-         ((g_worldGrid.cells
-           [(int)g_worldGrid.planeStride * (int)sVar1 + (int)g_worldGrid.sizeX * (int)sVar4 +
-            (int)sVar3].objects[0] == nullptr ||
-          (g_worldGrid.cells
-           [(int)g_worldGrid.planeStride * (int)sVar1 + (int)g_worldGrid.sizeX * (int)sVar4 +
-            (int)sVar3].objects[0]->value_20 != 1000)))))))))))) {
+         ((STGridAt3D(g_worldGrid, sVar3, sVar4, sVar1).objects[0] == nullptr ||
+          (STGridAt3D(g_worldGrid, sVar3, sVar4, sVar1).objects[0]->value_20 != 1000)))))))))))) {
     if (this->field_03A6 != '\0') {
       this->field_03A6 = 0;
     }

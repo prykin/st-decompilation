@@ -21,8 +21,6 @@ int __thiscall VisibleClassTy::GetMessage(VisibleClassTy *this,STMessage *messag
   uint uVar6;
   uint uVar7;
   VisibleClassTy_field_0110DArray *pVVar8;
-  /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
-  void *unaff_EDI;
   ushort *puVar9;
   byte *pbVar10;
   bool bVar11;
@@ -84,8 +82,7 @@ int __thiscall VisibleClassTy::GetMessage(VisibleClassTy *this,STMessage *messag
       }
       else if (SVar1 == MESS_ID_NONE) {
         if (local_14->field_0114 != 0) {
-          /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
-          VisHoleExec(local_14,unaff_EDI);
+          VisHoleExec(local_14);
         }
       }
       else if (SVar1 == MESS_ID_CREATE) {

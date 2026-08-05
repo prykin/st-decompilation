@@ -12,6 +12,7 @@ STGroupBoatC::GetPatrolTask(STGroupBoatC *this,int param_1,uint param_2,uint par
   code *pcVar1;
   int iVar2;
   uint uVar3;
+  STGameObjC *pSVar4;
   DArrayTy *array;
   undefined4 local_2c;
   int local_26;
@@ -81,14 +82,14 @@ STGroupBoatC::GetPatrolTask(STGroupBoatC *this,int param_1,uint param_2,uint par
     array = this->field_022E;
   }
   else {
-    iVar2 = thunk_FUN_00423e70(this,param_2);
-    if ((int)*(short *)(iVar2 + 0x47) != *(int *)(iVar2 + 199)) {
+    pSVar4 = thunk_FUN_00423e70(this,(ushort)param_2);
+    if ((int)pSVar4->field_0047 != pSVar4->field_00C7) {
       return 0;
     }
-    if ((int)*(short *)(iVar2 + 0x49) != *(int *)(iVar2 + 0xcb)) {
+    if ((int)pSVar4->field_0049 != pSVar4->field_00CB) {
       return 0;
     }
-    if ((int)*(short *)(iVar2 + 0x4b) != *(int *)(iVar2 + 0xcf)) {
+    if ((int)pSVar4->field_004B != pSVar4->field_00CF) {
       return 0;
     }
     if (this->field_023E == 0) {

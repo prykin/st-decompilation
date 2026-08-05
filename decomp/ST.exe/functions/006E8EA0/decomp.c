@@ -21,7 +21,7 @@ ST3DSMAPContext::sub_006E8EA0(ST3DSMAPContext *this,AnonShape_006E8EA0_96B71903 
   int local_1c;
   int local_18;
   int local_14;
-  undefined4 local_10;
+  float local_10;
   undefined4 local_c;
   undefined4 local_8;
 
@@ -45,10 +45,10 @@ ST3DSMAPContext::sub_006E8EA0(ST3DSMAPContext *this,AnonShape_006E8EA0_96B71903 
       local_14 = *(int *)(iVar1 + 8);
     }
   }
-  local_10 = param_1->field_0008;
+  local_10 = (float)param_1->field_0008;
   local_c = param_1->field_000C;
   local_8 = param_1->field_0010;
-  sub_006E25D0(this,&local_40);
+  sub_006E25D0(this,&local_40,&local_10,0.0,0.0,0.0,0);
   iVar1 = this->field_02F0;
   if ((iVar1 == 100) && (this->field_02F4 == 100)) {
     local_20 = -(int)param_1->field_001C;

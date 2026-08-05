@@ -7,8 +7,6 @@ void __thiscall FUN_0041dd00(void *this,int param_1)
   float fVar1;
   undefined4 uVar2;
   int iVar3;
-  /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
-  int *unaff_ESI;
   float fVar4;
   float fVar5;
 
@@ -80,8 +78,7 @@ void __thiscall FUN_0041dd00(void *this,int param_1)
       return;
     }
   }
-  /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
-  STSprGameObjC::LoadActFrame(this,unaff_ESI);
+  STSprGameObjC::LoadActFrame(this);
   if (((0 < *(int *)((int)this + 0x105)) && (*(uint *)((int)this + 0x24) == (uint)DAT_0080874d)) &&
      (*(int *)((int)this + 0x20) != 0x14)) {
     ST3DSMAPContext::sub_006E6710

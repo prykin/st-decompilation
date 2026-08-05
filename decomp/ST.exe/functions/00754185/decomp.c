@@ -1,99 +1,86 @@
-#include "../../pseudocode_runtime.h"
 
+/* WARNING: Unknown calling convention */
+/* [STAbiConsistencyApplier] ebp_context_register target=function:-1: prototype=void
+   FUN_00754185(void * context) previous_return_type=/undefined Evidence: incoming EBP is
+   dereferenced before any EBP definition; all current explicit parameters are generic ECX/EDX
+   words; ECX/EDX are overwritten or preserved without semantic incoming use; return=/void;
+   caller_return_uses=0, ignored=1 */
 
-void __fastcall FUN_00754185(undefined4 param_1,undefined4 param_2)
+void FUN_00754185(AnonShape_00754185_34BF31BE *context)
 
 {
-  int *piVar1;
+  uint *puVar1;
   undefined1 uVar2;
   undefined1 *puVar3;
-  uint uVar4;
-  int iVar5;
-  /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
-  int extraout_ECX;
+  int iVar4;
+  uint uVar5;
   int iVar6;
   /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
-  undefined4 extraout_ECX_00;
-  undefined4 uVar7;
-  /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
-  undefined4 extraout_ECX_01;
-  /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
-  undefined4 extraout_EDX;
-  undefined4 uVar8;
-  /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
-  int unaff_EBP;
-  uint uVar9;
-  undefined2 *puVar10;
+  int extraout_ECX;
+  int iVar7;
+  uint uVar8;
+  undefined2 *puVar9;
+  int *piVar10;
   undefined1 *puVar11;
-  undefined8 uVar12;
 
-  /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
-  puVar10 = (undefined2 *)(unaff_EBP + 0x81d0);
-  for (iVar5 = 0x2000; iVar5 != 0; iVar5 = iVar5 + -1) {
-    *puVar10 = 0x4000;
-    puVar10 = puVar10 + 1;
+  puVar9 = (undefined2 *)&context[0x19f].field_0x20;
+  for (iVar6 = 0x2000; iVar6 != 0; iVar6 = iVar6 + -1) {
+    *puVar9 = 0x4000;
+    puVar9 = puVar9 + 1;
   }
-  /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
-  puVar10 = (undefined2 *)(unaff_EBP + 0x21ce);
-  for (iVar5 = 0x3001; iVar5 != 0; iVar5 = iVar5 + -1) {
-    *puVar10 = 0x4000;
-    puVar10 = puVar10 + 1;
+  puVar9 = (undefined2 *)&context[0x6c].field_0xe;
+  for (iVar6 = 0x3001; iVar6 != 0; iVar6 = iVar6 + -1) {
+    *puVar9 = 0x4000;
+    puVar9 = puVar9 + 1;
   }
-  /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
-  memset((undefined1 *)(unaff_EBP + 0xd0), 0, 0x83f0); /* compiler bulk-zero initialization */
-  *(undefined2 *)(unaff_EBP + 0x4c) = 1;
-  *(int *)(unaff_EBP + 0x48) = unaff_EBP + 0x50;
-  *(undefined2 *)(unaff_EBP + 0x4e) = 0;
-  *(undefined4 *)(unaff_EBP + 0x40) = 0;
-  /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
-  puVar11 = (undefined1 *)(unaff_EBP + 0x1fd3);
-  iVar5 = 0xfd;
+  piVar10 = &context[2].field_0030;
+  for (iVar6 = 0x20fc; iVar6 != 0; iVar6 = iVar6 + -1) {
+    *(undefined1 *)piVar10 = 0;
+    piVar10 = (int *)((int)piVar10 + 1);
+  }
+  context->field_004C = 1;
+  context->field_0048 = (int)(context + 1);
+  context->field_004E = 0;
+  context->field_0040 = 0;
+  puVar11 = (undefined1 *)((int)&context[0x65].field_0040 + 3);
+  iVar6 = 0xfd;
   do {
     while( true ) {
-      /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
-      piVar1 = (int *)(unaff_EBP + 0x20);
-      *piVar1 = *piVar1 + -1;
-      if (*piVar1 != 0) break;
-      uVar12 = FUN_00753fd0(iVar5,param_2);
-      param_2 = (undefined4)((ulonglong)uVar12 >> 0x20);
-      /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
-      iVar5 = extraout_ECX;
+      puVar3 = &context->field_0x20;
+      *(int *)puVar3 = *(int *)puVar3 + -1;
+      if (*(int *)puVar3 != 0) break;
+      iVar4 = FUN_00753fd0((AnonShape_00753FD0_4E1BB8DD *)context);
       /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
       iVar6 = extraout_ECX;
-      if ((int)uVar12 == 0) goto LAB_007541f2;
+      /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
+      iVar7 = extraout_ECX;
+      if (iVar4 == 0) goto LAB_007541f2;
     }
-    /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
-    puVar3 = *(undefined1 **)(unaff_EBP + 0x18);
-    *(int *)(unaff_EBP + 0x18) = *(int *)(unaff_EBP + 0x18) + 1;
+    puVar3 = (undefined1 *)context->field_0018;
+    context->field_0018 = context->field_0018 + 1;
     *puVar11 = *puVar3;
     puVar11 = puVar11 + 1;
-    iVar5 = iVar5 + -1;
-    iVar6 = 0;
-  } while (iVar5 != 0);
-/* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
+    iVar6 = iVar6 + -1;
+    iVar7 = 0;
+  } while (iVar6 != 0);
 LAB_007541f2:
-  *(int *)(unaff_EBP + 0x30) = 0xfd - iVar6;
-  uVar9 = 0;
+  context->field_0030 = 0xfd - iVar7;
+  uVar8 = 0;
   FUN_007540ac();
-/* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
 LAB_00754208:
-  uVar4 = *(uint *)(unaff_EBP + 0x2c);
-  /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
-  if (*(int *)(unaff_EBP + 0x30) < (int)uVar4) {
-    /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
-    uVar4 = *(uint *)(unaff_EBP + 0x30);
-    *(uint *)(unaff_EBP + 0x2c) = uVar4;
+  uVar5 = context->field_002C;
+  if (context->field_0030 < (int)uVar5) {
+    uVar5 = context->field_0030;
+    context->field_002C = uVar5;
   }
-  /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
-  if ((uVar4 < 2) || ((uVar4 < 3 && (0xff < *(uint *)(unaff_EBP + 0x34))))) {
-    *(undefined4 *)(unaff_EBP + 0x2c) = 1;
+  if ((uVar5 < 2) || ((uVar5 < 3 && (0xff < context->field_0034)))) {
+    context->field_002C = 1;
     FUN_00754047();
     FUN_0075405f();
   }
   else {
     FUN_00754047();
-    /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
-    if ((*(uint *)(unaff_EBP + 0x2c) < 6) && (*(uint *)(unaff_EBP + 0x34) < 0x100)) {
+    if ((context->field_002C < 6) && (context->field_0034 < 0x100)) {
       FUN_00754047();
       FUN_00754047();
       FUN_00754047();
@@ -102,8 +89,7 @@ LAB_00754208:
     else {
       FUN_00754047();
       FUN_0075405f();
-      /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
-      if (*(uint *)(unaff_EBP + 0x2c) < 10) {
+      if (context->field_002C < 10) {
         FUN_0075405f();
       }
       else {
@@ -112,57 +98,42 @@ LAB_00754208:
       }
     }
   }
-  /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
-  piVar1 = (int *)(unaff_EBP + 0x40);
-  iVar5 = *piVar1;
-  *piVar1 = *piVar1 - *(int *)(unaff_EBP + 0x2c);
-  /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
-  if (SBORROW4(iVar5,*(int *)(unaff_EBP + 0x2c)) != *piVar1 < 0) {
+  piVar10 = &context->field_0040;
+  iVar6 = *piVar10;
+  *piVar10 = *piVar10 - context->field_002C;
+  if (SBORROW4(iVar6,context->field_002C) != *piVar10 < 0) {
     do {
-      *(int *)(unaff_EBP + 0x40) = *(int *)(unaff_EBP + 0x40) + 0x10;
-    /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
-    } while (*(int *)(unaff_EBP + 0x40) < 0);
+      context->field_0040 = context->field_0040 + 0x10;
+    } while (context->field_0040 < 0);
   }
   do {
     FUN_0075415c();
-    /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
-    uVar7 = extraout_ECX_00;
-    /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
-    uVar8 = extraout_EDX;
     do {
-      /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
-      piVar1 = (int *)(unaff_EBP + 0x20);
-      *piVar1 = *piVar1 + -1;
-      if (*piVar1 != 0) {
-        /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
-        puVar11 = *(undefined1 **)(unaff_EBP + 0x18);
-        *(int *)(unaff_EBP + 0x18) = *(int *)(unaff_EBP + 0x18) + 1;
+      puVar11 = &context->field_0x20;
+      *(int *)puVar11 = *(int *)puVar11 + -1;
+      if (*(int *)puVar11 != 0) {
+        puVar11 = (undefined1 *)context->field_0018;
+        context->field_0018 = context->field_0018 + 1;
         uVar2 = *puVar11;
-        *(undefined1 *)(unaff_EBP + 0xd0 + uVar9) = uVar2;
-        if (uVar9 < 0xfc) {
-          *(undefined1 *)(unaff_EBP + 0x20d0 + uVar9) = uVar2;
+        *(undefined1 *)((int)&context[2].field_0030 + uVar8) = uVar2;
+        if (uVar8 < 0xfc) {
+          (&context[0x69].field_0x0)[uVar8] = uVar2;
         }
         goto LAB_00754308;
       }
-      uVar12 = FUN_00753fd0(uVar7,uVar8);
-      uVar8 = (undefined4)((ulonglong)uVar12 >> 0x20);
-      /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
-      uVar7 = extraout_ECX_01;
-    } while ((int)uVar12 != 0);
-    *(int *)(unaff_EBP + 0x30) = *(int *)(unaff_EBP + 0x30) + -1;
+      iVar6 = FUN_00753fd0((AnonShape_00753FD0_4E1BB8DD *)context);
+    } while (iVar6 != 0);
+    context->field_0030 = context->field_0030 + -1;
 LAB_00754308:
-    uVar9 = uVar9 + 1 & 0x1fff;
-    /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
-    piVar1 = (int *)(unaff_EBP + 0x2c);
-    *piVar1 = *piVar1 + -1;
-    if (*piVar1 == 0) break;
+    uVar8 = uVar8 + 1 & 0x1fff;
+    puVar1 = &context->field_002C;
+    *puVar1 = *puVar1 - 1;
+    if (*puVar1 == 0) break;
     FUN_00754068();
   } while( true );
   FUN_007540ac();
-  /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
-  if (*(short *)(unaff_EBP + 0x30) < 1) {
-    /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
-    if ((*(byte *)(unaff_EBP + 0x3f) & 0x80) == 0) {
+  if ((short)context->field_0030 < 1) {
+    if ((context->field_003F & 0x80) == 0) {
       FUN_00754047();
       FUN_00754047();
       FUN_0075405f();

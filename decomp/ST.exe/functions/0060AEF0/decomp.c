@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 int __fastcall FUN_0060aef0(void *param_1)
 
@@ -168,9 +170,7 @@ int __fastcall FUN_0060aef0(void *param_1)
             }
             else {
               pSVar20 = (STFishC *)
-                        g_worldGrid.cells
-                        [(int)g_worldGrid.planeStride * (int)sVar11 +
-                         (int)g_worldGrid.sizeX * (int)sVar17 + (int)sVar18].objects[0];
+                        STGridAt3D(g_worldGrid, sVar18, sVar17, sVar11).objects[0];
             }
             if ((pSVar20 != nullptr) &&
                (iVar12 = pSVar20->vfunc_F0(), iVar12 != 0)) {

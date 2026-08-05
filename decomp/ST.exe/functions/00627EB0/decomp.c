@@ -26,7 +26,7 @@ int __thiscall STParticleC::GetMessage(STParticleC *this,STMessage *message)
   int iVar6;
   uint uVar7;
   int iVar8;
-  undefined4 *puVar9;
+  byte *puVar9;
   STParticleC *pSVar10;
   VisibleClassTy *pVVar11;
   bool bVar12;
@@ -86,15 +86,10 @@ int __thiscall STParticleC::GetMessage(STParticleC *this,STMessage *message)
       g_currentExceptionFrame = local_7c.previous;
       return 0;
     }
-    puVar9 = (message->arg0).ptr;
+    puVar9 = (byte *)((message->arg0).ptr);
     if (puVar9[3] != 2) {
       pSVar10 = local_10;
-      for (iVar6 = 0x11; iVar6 != 0; iVar6 = iVar6 + -1) {
-        *(undefined4 *)pSVar10 = *puVar9;
-        puVar9 = puVar9 + 1;
-        pSVar10 = (STParticleC *)&pSVar10->field_0x4;
-      }
-      *(undefined2 *)pSVar10 = *(undefined2 *)puVar9;
+      memmove(pSVar10, puVar9, 0x46); /* compiler REP MOVS byte copy */
       sub_00629F90(local_10,local_10,g_playSystem_00802A38->field_00E4);
       InitVisibelFlight(this_00,(uint)(byte)this_00->field_00D6);
       if (this_00->field_003C != 0) {

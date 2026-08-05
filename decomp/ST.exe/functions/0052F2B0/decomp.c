@@ -109,8 +109,8 @@ void __thiscall OptPanelTy::SwitchOptPanel(OptPanelTy *this,char param_1)
     }
     bVar5 = local_8 != 0;
     if (g_infocPanel_00801698 != nullptr) {
-      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-      local_8 = (*(code *)g_infocPanel_00801698->field_0000->field_001C)(0);
+      local_8 = (*g_infocPanel_00801698->vtable->SetPanel)
+                          ((SpecPanelTy *)g_infocPanel_00801698,'\0');
     }
     bVar6 = local_8 != 0;
     if (g_tradePanel_00802A44 != nullptr) {
@@ -118,23 +118,19 @@ void __thiscall OptPanelTy::SwitchOptPanel(OptPanelTy *this,char param_1)
     }
     bVar7 = local_8 != 0;
     if (g_behPanel_00801678 != nullptr) {
-      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-      local_8 = (*(code *)g_behPanel_00801678->field_0000[2].field_0004)(0);
+      local_8 = (*g_behPanel_00801678->vtable->SetPanel)((SpecPanelTy *)g_behPanel_00801678,'\0');
     }
     bVar8 = local_8 != 0;
     if (g_sAMPanel_008016EC != nullptr) {
-      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-      local_8 = (**(code **)&g_sAMPanel_008016EC->field_0000[1].field_0x8)(0);
+      local_8 = (*g_sAMPanel_008016EC->vtable->SetPanel)((SpecPanelTy *)g_sAMPanel_008016EC,'\0');
     }
     bVar9 = local_8 != 0;
     if (g_upgPanel_00802A48 != nullptr) {
-      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-      local_8 = (*(code *)g_upgPanel_00802A48->field_0000->field_001C)(0);
+      local_8 = (*g_upgPanel_00802A48->vtable->SetPanel)((SpecPanelTy *)g_upgPanel_00802A48,'\0');
     }
     bVar10 = local_8 != 0;
     if (g_frmPanel_0080168C != nullptr) {
-      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-      local_8 = (*(code *)g_frmPanel_0080168C->field_0000->field_001C)(0);
+      local_8 = (*g_frmPanel_0080168C->vtable->SetPanel)((SpecPanelTy *)g_frmPanel_0080168C,'\0');
     }
     bVar11 = local_8 != 0;
     if (g_prodPanel_00801680 != nullptr) {

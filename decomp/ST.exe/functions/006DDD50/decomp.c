@@ -47,7 +47,7 @@ void __fastcall ST3DSMAPContext::sub_006DDD50(ST3DSMAPContext *param_1)
   int local_a0 [4];
   int local_90;
   int local_8c;
-  undefined4 local_88;
+  float local_88;
   undefined4 local_84;
   undefined4 local_80;
   int local_7c [2];
@@ -124,7 +124,7 @@ void __fastcall ST3DSMAPContext::sub_006DDD50(ST3DSMAPContext *param_1)
         local_44 = pRVar15;
       }
       temp_5f0ea6b32c = local_44->next;
-      local_88 = 0;
+      local_88 = 0.0;
       local_84 = 0;
       local_80 = 0;
       /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
@@ -133,7 +133,11 @@ void __fastcall ST3DSMAPContext::sub_006DDD50(ST3DSMAPContext *param_1)
       local_cc = &stack0xfffffed4;
       for (pRVar16 = temp_5f0ea6b32c; pRVar16 != nullptr;
           pRVar16 = pRVar16->next) {
-        sub_006E25D0(param_1,local_7c);
+        sub_006E25D0(param_1,local_7c,&local_88,
+                     (double)(int)*(short *)&pRVar16->field_0x4 * param_1->field_00C8,
+                     (double)(int)*(short *)&pRVar16->field_0x6 * param_1->field_00C8,
+                     (double)(int)((int)pRVar16->field_0008 - (uint)pRVar16->field_0048) *
+                     param_1->field_00D0,1);
         *(int *)&pRVar16->field_0x44 = local_74;
       }
       sub_006DD530(param_1,local_ec,&local_40,(float *)(local_68 + 0x10));
@@ -300,20 +304,20 @@ void __fastcall ST3DSMAPContext::sub_006DDD50(ST3DSMAPContext *param_1)
       }
     }
     else if (param_1->field_0124 == 2) {
-      local_88 = 0;
+      local_88 = 0.0;
       local_84 = 0;
       local_80 = 0;
-      sub_006E25D0(param_1,local_7c);
+      sub_006E25D0(param_1,local_7c,&local_88,0.0,0.0,param_1->field_00D0 * _DAT_0079dff0,0);
       iVar14 = local_74;
-      sub_006E25D0(param_1,local_7c);
+      sub_006E25D0(param_1,local_7c,&local_88,0.0,0.0,param_1->field_00D0 * _DAT_0079df68,0);
       iVar2 = local_74;
-      sub_006E25D0(param_1,local_7c);
+      sub_006E25D0(param_1,local_7c,&local_88,0.0,0.0,param_1->field_00D0 * _DAT_0079b128,0);
       iVar3 = local_74;
-      sub_006E25D0(param_1,local_7c);
+      sub_006E25D0(param_1,local_7c,&local_88,0.0,0.0,param_1->field_00D0 + param_1->field_00D0,0);
       iVar4 = local_74;
-      sub_006E25D0(param_1,local_7c);
+      sub_006E25D0(param_1,local_7c,&local_88,0.0,0.0,param_1->field_00D0,0);
       iVar5 = local_74;
-      sub_006E25D0(param_1,local_7c);
+      sub_006E25D0(param_1,local_7c,&local_88,0.0,0.0,0.0,0);
       iVar20 = (local_74 - iVar5) / 10;
       puVar15 = (undefined1 *)param_1->field_000C;
       puVar21 = param_1->field_0014;

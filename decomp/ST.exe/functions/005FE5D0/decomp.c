@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* [STAbiConsistencyApplier] full_eax_return: return=/int Evidence: all observed callers consume
    full EAX (1), none consume AL/AX, and every RET path defines full EAX; sites=005FFF60 @ 0060000F
@@ -106,9 +108,7 @@ int __thiscall FUN_005fe5d0(void *this,int param_1,undefined2 *param_2,int param
              ((((((-1 < sVar9 && (sVar9 < g_worldGrid.sizeX)) && (-1 < sVar10)) &&
                 ((sVar10 < g_worldGrid.sizeY && (-1 < sVar11)))) &&
                ((sVar11 < g_worldGrid.sizeZ &&
-                (g_worldGrid.cells
-                 [(int)g_worldGrid.planeStride * (int)sVar11 + (int)g_worldGrid.sizeX * (int)sVar10
-                  + (int)sVar9].objects[0] != nullptr)))) ||
+                (STGridAt3D(g_worldGrid, sVar9, sVar10, sVar11).objects[0] != nullptr)))) ||
               (uVar5 = thunk_FUN_00496250(local_10,local_14,local_18), -1 < (int)uVar5)))) {
             local_c = 0;
           }

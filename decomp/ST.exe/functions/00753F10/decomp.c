@@ -1,38 +1,33 @@
 
 int __cdecl
-FUN_00753f10(undefined4 param_1,undefined4 param_2,int param_3,undefined4 param_4,undefined4 param_5
-            ,undefined4 param_6)
+FUN_00753f10(undefined4 param_1,int param_2,int param_3,undefined4 param_4,undefined4 param_5,
+            undefined4 param_6)
 
 {
-  undefined4 *puVar1;
+  AnonShape_00754185_34BF31BE *context;
   int _Value;
-  /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
-  undefined4 extraout_ECX;
-  undefined8 uVar2;
-  undefined1 *puVar3;
+  undefined1 *puVar1;
 
-  puVar3 = &stack0xfffffffc;
-  uVar2 = thunk_FUN_006a3be0(0xc1d2);
-  puVar1 = (undefined4 *)uVar2;
-  if (puVar1 == nullptr) {
+  puVar1 = &stack0xfffffffc;
+  context = (AnonShape_00754185_34BF31BE *)thunk_FUN_006a3be0(0xc1d2);
+  if (context == nullptr) {
     _Value = -2;
   }
   else {
-    *puVar1 = param_1;
-    puVar1[3] = param_4;
-    puVar1[1] = param_2;
-    puVar1[6] = param_2;
-    puVar1[4] = param_5;
-    puVar1[7] = param_5;
-    puVar1[2] = param_3;
-    puVar1[8] = param_3 + 1;
-    puVar1[5] = param_6;
-    puVar1[9] = param_6;
-    puVar1[0xf] = 0;
-    /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
-    FUN_00754185(extraout_ECX,(int)((ulonglong)uVar2 >> 0x20));
-    _Value = puVar1[0xf];
-    Library::MSVCRT::thunk_FUN_006a4950(*(undefined4 **)(puVar3 + -4));
+    *(undefined4 *)context = param_1;
+    *(undefined4 *)&context->field_0xc = param_4;
+    *(int *)&context->field_0x4 = param_2;
+    context->field_0018 = param_2;
+    *(undefined4 *)&context->field_0x10 = param_5;
+    *(undefined4 *)&context->field_0x1c = param_5;
+    *(int *)&context->field_0x8 = param_3;
+    *(int *)&context->field_0x20 = param_3 + 1;
+    *(undefined4 *)&context->field_0x14 = param_6;
+    *(undefined4 *)&context->field_0x24 = param_6;
+    *(undefined4 *)&context->field_0x3c = 0;
+    FUN_00754185(context);
+    _Value = *(int *)&context->field_0x3c;
+    Library::MSVCRT::thunk_FUN_006a4950(*(int **)(puVar1 + -4));
   }
   if ((_Value < 0) && (g_currentExceptionFrame != nullptr)) {
                     /* WARNING: Subroutine does not return */

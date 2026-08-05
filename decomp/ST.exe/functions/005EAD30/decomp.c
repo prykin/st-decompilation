@@ -14,13 +14,14 @@ WaitTy * __cdecl CreateWait(void)
   undefined4 *puVar2;
   SpriteClassTy *this_00;
   undefined4 *puVar3;
+  uint *puVar4;
   int local_8;
 
   this = (WaitTy *)FUN_006b04d0(0x1b04);
   if (this != nullptr) {
     sub_006E5FB0(this);
-    this->field_0000 = (AnonPointee_WaitTy_0000 *)&VTable_0079C018;
-    *(undefined4 *)&this->field_0x18 = 0;
+    this->vtable = (WaitTyVTable *)&VTable_0079C018;
+    this->field_0018 = 0;
     this->field_005D = nullptr;
     memset(&this->field_0x1d, 0, 0x20); /* compiler bulk-zero initialization */
     iVar1 = 0;
@@ -36,9 +37,9 @@ WaitTy * __cdecl CreateWait(void)
       this_00 = (SpriteClassTy *)&this_00[3].field_0048;
       local_8 = local_8 + -1;
     } while (local_8 != 0);
-    this->field_0000 = (AnonPointee_WaitTy_0000 *)&MMObjTyVTable;
+    this->vtable = (WaitTyVTable *)&MMObjTyVTable;
     this->field_0065 = 2;
-    this->field_0x9a = 0;
+    this->field_009A = 0;
     memset(&this->field_0x66, 0, 0x34); /* compiler bulk-zero initialization */
     iVar1 = 0;
     local_8 = 0xd;
@@ -55,7 +56,7 @@ WaitTy * __cdecl CreateWait(void)
     this->field_1A60 = 1;
     this->field_1A64 = 1;
     this->field_1A68 = 1;
-    this->field_0000 = (AnonPointee_WaitTy_0000 *)&VTable_0079C24C;
+    this->vtable = &WaitTyVTable;
     this->field_1A74 = 0;
     this->field_1A6C = 0;
     this->field_1A70 = 0;
@@ -68,10 +69,10 @@ WaitTy * __cdecl CreateWait(void)
     this->field_1A77 = 0;
     this->field_1A7B = 0;
     this->field_1A83 = nullptr;
-    puVar2 = &this->field_1A94;
+    puVar4 = this->field_1A94;
     for (iVar1 = 0x16; iVar1 != 0; iVar1 = iVar1 + -1) {
-      *puVar2 = 0xffffffff;
-      puVar2 = puVar2 + 1;
+      *puVar4 = 0xffffffff;
+      puVar4 = puVar4 + 1;
     }
     this->field_1AF0 = nullptr;
     this->field_1AF4 = 0;

@@ -28,8 +28,6 @@ int __thiscall STSprGameObjC::GetMessage(STSprGameObjC *this,STMessage *message)
   int iVar5;
   uint uVar6;
   undefined1 *puVar7;
-  /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
-  int *unaff_EDI;
   bool bVar8;
   InternalExceptionFrame local_54;
   STGameObjC *local_10;
@@ -157,11 +155,9 @@ int __thiscall STSprGameObjC::GetMessage(STSprGameObjC *this,STMessage *message)
   }
   if (SVar2 == MESS_STSPRGAMEOBJC_0109) {
     if (*(int *)&this_00->field_0x21d == 1) {
-      /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
-      LoadActFrame((STSprGameObjC *)this_00,unaff_EDI);
+      LoadActFrame((STSprGameObjC *)this_00);
     }
-    /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
-    LoadLifeFrame((STSprGameObjC *)this_00,unaff_EDI);
+    LoadLifeFrame((STSprGameObjC *)this_00);
     g_currentExceptionFrame = local_54.previous;
     return 0;
   }

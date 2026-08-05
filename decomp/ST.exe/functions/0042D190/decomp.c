@@ -19,8 +19,6 @@ STAllPlayersC::ResetActivityFromObjs
   STGameObjC *pSVar3;
   int iVar4;
   uint index;
-  /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
-  int unaff_EDI;
   char objPtr;
   ushort uVar5;
   STAllPlayersC_GetObjPtr_param_3Enum SVar6;
@@ -41,8 +39,7 @@ LAB_0042d1f8:
         if ((((ushort)param_4 != 0xffff) &&
             (pSVar3 = GetObjPtr(this,objPtr,(ushort)param_4,CASE_1), pSVar3 != nullptr))
            && (pSVar3->vfunc_E8(0), param_5 != 0)) {
-          /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
-          STGameObjC::ResetSelfCheckFlag(pSVar3,unaff_EDI);
+          STGameObjC::ResetSelfCheckFlag(pSVar3);
         }
         index = index + 1;
       } while ((int)index < (int)dVar1);
@@ -90,8 +87,7 @@ LAB_0042d270:
       if (param_5 == 0) {
         return;
       }
-      /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
-      STGameObjC::ResetSelfCheckFlag(pSVar3,unaff_EDI);
+      STGameObjC::ResetSelfCheckFlag(pSVar3);
       return;
     }
     /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
@@ -109,8 +105,7 @@ LAB_0042d270:
     pSVar3->vfunc_E8(0);
 LAB_0042d2c3:
     if (param_5 != 0) {
-      /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
-      STGameObjC::ResetSelfCheckFlag(pSVar3,unaff_EDI);
+      STGameObjC::ResetSelfCheckFlag(pSVar3);
       return;
     }
   }

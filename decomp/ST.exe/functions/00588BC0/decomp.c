@@ -99,12 +99,7 @@ int __thiscall STMBombC::GetMessage(STMBombC *this,STMessage *message)
     }
     puVar10 = (byte *)&this_00->field_0x27c;
     pAVar13 = local_14;
-    for (iVar6 = 10; iVar6 != 0; iVar6 = iVar6 + -1) {
-      *(undefined4 *)pAVar13 = *puVar10;
-      puVar10 = (byte *)(puVar10 + 1);
-      pAVar13 = (AnonShape_00588BC0_84BDD66C *)&pAVar13->field_0x4;
-    }
-    *(undefined2 *)pAVar13 = *(undefined2 *)puVar10;
+    memmove(pAVar13, puVar10, 0x2a); /* compiler REP MOVS byte copy */
     *(undefined4 *)&local_14->field_0xc = 2;
     *(STSprGameObjC_field_0231State *)&local_14->field_0x2a = this_00->field_0231;
     *(undefined4 *)&local_14->field_0x2e = *(undefined4 *)&this_00->field_0x235;

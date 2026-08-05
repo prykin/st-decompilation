@@ -334,10 +334,21 @@ public class STAbiRegressionGate extends GhidraScript {
             currentVtableSlots();
         int mismatches = 0;
         int erased = 0;
+        Set<String> checkedPhysicalSlots = new HashSet<>();
         for (BaselineVtable table : baseline.vtables) {
             monitor.checkCancelled();
-            Map<Integer, FunctionDefinition> current = currentTables.get(table.identity());
+            Map<Integer, FunctionDefinition> current = table.address.isBlank() ?
+                currentTables.get(table.identity()) : null;
             if (current == null) {
+                // Addressed vtable identities may legitimately be repartitioned when a new
+                // exact vptr store proves that an accepted function-pointer run actually
+                // contained several adjacent tables.  Their slot ABI is still protected
+                // below by the physical pointer address; only path-only legacy identities
+                // require the original structure identity to remain present.
+                if (!table.address.isBlank()) {
+                    current = Map.of();
+                }
+                else {
                 int typed = 0;
                 for (String type : table.components.values())
                     if (baseline.definitions.containsKey(pointedType(type))) typed++;
@@ -347,14 +358,21 @@ public class STAbiRegressionGate extends GhidraScript {
                     table.path + " typed_slots=" + typed, "<missing>",
                     "Accepted vtable identity is absent from the current data type manager");
                 continue;
+                }
             }
             for (Map.Entry<Integer, String> slot : table.components.entrySet()) {
                 Abi accepted = baseline.definitions.get(pointedType(slot.getValue()));
                 if (accepted == null) continue;
+                String physical = table.address.isBlank() ? "" :
+                    physicalSlotIdentity(table.address, slot.getKey());
+                if (!physical.isBlank() && !checkedPhysicalSlots.add(physical)) continue;
                 typedSlotsChecked++;
                 String subject = String.format(Locale.ROOT, "vtable:%s@%X",
                     table.identity(), slot.getKey());
-                FunctionDefinition definition = current.get(slot.getKey());
+                Map<Integer, FunctionDefinition> physicalTable = physical.isBlank() ? null :
+                    currentTables.get(physical);
+                FunctionDefinition definition = physicalTable == null ?
+                    current.get(slot.getKey()) : physicalTable.get(0);
                 if (definition == null) {
                     erased++;
                     mismatch(subject, "typed_slot_erasure", accepted.descriptor(),
@@ -401,10 +419,25 @@ public class STAbiRegressionGate extends GhidraScript {
                 ignored -> new TreeMap<>());
             for (DataTypeComponent component : structure.getComponents()) {
                 FunctionDefinition definition = functionDefinition(component.getDataType());
-                if (definition != null) slots.putIfAbsent(component.getOffset(), definition);
+                if (definition == null) continue;
+                slots.putIfAbsent(component.getOffset(), definition);
+                if (!address.isBlank())
+                    result.computeIfAbsent(physicalSlotIdentity(address,
+                        component.getOffset()), ignored -> new TreeMap<>())
+                        .putIfAbsent(0, definition);
             }
         }
         return result;
+    }
+
+    private String physicalSlotIdentity(String tableAddress, int offset) {
+        if (tableAddress == null || tableAddress.isBlank()) return "";
+        try {
+            long value = Long.parseUnsignedLong(tableAddress, 16) +
+                Integer.toUnsignedLong(offset);
+            return "slot:" + String.format(Locale.ROOT, "%08X", value);
+        }
+        catch (NumberFormatException exception) { return ""; }
     }
 
     private List<BaselineVtable> mergeBaselineVtables(List<BaselineVtable> tables,

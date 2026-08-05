@@ -1,4 +1,4 @@
-FUN_005e6570:
+CreateMTest:
 005E6570  53                        PUSH EBX
 005E6571  56                        PUSH ESI
 005E6572  68 B4 00 00 00            PUSH 0xb4

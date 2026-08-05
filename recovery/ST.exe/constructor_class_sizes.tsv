@@ -2,4 +2,6 @@ apply	owner	size	size_hex	confidence	reason	evidence_functions	table_addresses	a
 1	ChooseMapTy	8388	0x20C4	high	unique_returned_allocation_size	005B2790	0079C088	005B279B
 1	FSGSTy	8387	0x20C3	high	unique_returned_allocation_size	005AA2C0	0079C02C	005AA2CB
 1	PrividerTy	7326	0x1C9E	high	unique_returned_allocation_size	005BD2E0	0079C0C4	005BD2EB
+1	SettMapMTy	8773	0x2245	high	unique_returned_allocation_size	005D4B40	0079C124	005D4B4B
+1	SettMapTy	8700	0x21FC	high	unique_returned_allocation_size	005D77A0	0079C160	005D77AB
 1	WaitTy	6916	0x1B04	high	unique_returned_allocation_size	005EAD30	0079C24C	005EAD3B
