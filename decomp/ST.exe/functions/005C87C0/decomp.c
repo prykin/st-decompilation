@@ -42,8 +42,7 @@ void __thiscall SettMapTy::PaintSC(SettMapTy *this)
         uVar7 = 0;
         do {
           if (bVar8) {
-            /* ST_PSEUDO[dynamic_array_indexing]: expected DArrayAt<T>(pDVar4, uVar7) (runtime stride) */
-            pcVar6 = (char *)(pDVar4->elementSize * uVar7 + (int)pDVar4->data);
+            pcVar6 = DArrayAt<char>(pDVar4, uVar7);
           }
           else {
             pcVar6 = nullptr;

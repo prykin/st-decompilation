@@ -161,8 +161,7 @@ cf_common_exit_0050E007:
           }
           bVar5 = (char)local_c + 1;
           pcVar17 = pcVar17 + 1;
-          /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-          local_c = CONCAT31(local_c._1_3_,bVar5);
+          local_c = STReplaceLowByte((uint32_t)(local_c), (uint8_t)(bVar5));
         } while (bVar5 < 6);
         sub_004F1610(this_00,'\0');
         CursorClassTy::sub_0054A8D0(g_cursorClass_00802A30);
@@ -312,8 +311,7 @@ cf_common_exit_0050E007:
         }
         bVar5 = (char)local_c + 1;
         pcVar17 = pcVar17 + 1;
-        /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-        local_c = CONCAT31(local_c._1_3_,bVar5);
+        local_c = STReplaceLowByte((uint32_t)(local_c), (uint8_t)(bVar5));
       } while (bVar5 < 6);
       sub_004F1610(this_00,'\0');
       CursorClassTy::sub_0054A8D0(g_cursorClass_00802A30);

@@ -24,7 +24,7 @@ undefined4 __thiscall TLOBaseTy::sub_004B9A40(TLOBaseTy *this)
      ((TVar1 != CASE_43 || (this->field_04D0 == CASE_2)))) {
     dVar2 = this->slot_2C();
     /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
-    thunk_FUN_004b7710(CONCAT31((int3)((uint)extraout_ECX >> 8),*(undefined1 *)&this->field_0024),
+    thunk_FUN_004b7710(STReplaceLowByte((uint32_t)(extraout_ECX), (uint8_t)(*(undefined1 *)&this->field_0024)),
                        dVar2);
   }
   TVar1 = this->field_05AC;

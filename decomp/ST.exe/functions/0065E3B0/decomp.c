@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 int __fastcall FUN_0065e3b0(AnonShape_0065DA10_8B0AA883 *param_1,undefined4 param_2)
 
@@ -18,8 +20,7 @@ int __fastcall FUN_0065e3b0(AnonShape_0065DA10_8B0AA883 *param_1,undefined4 para
       bVar4 = array->count != 0;
       do {
         if (bVar4) {
-          /* ST_PSEUDO[dynamic_array_indexing]: expected DArrayAt<T>(array, uVar3) (runtime stride) */
-          puVar1 = (ushort *)(array->elementSize * uVar3 + (int)array->data);
+          puVar1 = DArrayAt<ushort>(array, uVar3);
         }
         else {
           puVar1 = nullptr;

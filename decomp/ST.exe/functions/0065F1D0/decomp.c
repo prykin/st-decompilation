@@ -56,8 +56,7 @@ int __thiscall AiFltClassTy::AppendZone(AiFltClassTy *this,short *param_1)
     local_14 = (int)param_1[4];
     do {
       if (local_c < local_24) {
-        /* ST_PSEUDO[dynamic_array_indexing]: expected DArrayAt<T>(local_28, local_c) (runtime stride) */
-        psVar9 = (short *)(local_28->elementSize * local_c + (int)local_28->data);
+        psVar9 = DArrayAt<short>(local_28, local_c);
       }
       else {
         psVar9 = nullptr;

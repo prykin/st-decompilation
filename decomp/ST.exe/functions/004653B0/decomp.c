@@ -58,7 +58,7 @@ LAB_00465581:
       sVar2 = (*this->vtable->vfunc_10)
                         (this->field_0041,this->field_0043,CONCAT22(uVar7,this->field_0045),
                          this->field_0034,this->field_0036,
-                         CONCAT22((short)((uint)pSVar5 >> 0x10),this->field_0038));
+                         STReplaceLowWord((uint32_t)(pSVar5), (uint16_t)(this->field_0038)));
       uVar4 = sub_004176C0(this,sVar2);
       uVar4 = sub_00417910(this,(short)uVar4);
       if (uVar4 != 0xffffffff) {
@@ -115,14 +115,13 @@ LAB_00465581:
       this->field_0832 = 0;
     }
     if (this->field_0832 == 0) {
-      /* ST_PSEUDO[unresolved_register_input,packed_or_unaligned_piece]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention; expected named packed member, bit extract/compose, or unaligned load */
-      iVar3 = CONCAT22((short)((uint)in_EDX >> 0x10),this->field_0049 * 0xc9) + 100;
-      /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
+      /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
+      iVar3 = STReplaceLowWord((uint32_t)(in_EDX), (uint16_t)(this->field_0049 * 0xc9)) + 100;
       sVar2 = (*this->vtable->vfunc_10)
                         (this->field_0041,this->field_0043,
-                         CONCAT22((short)((uint)iVar3 >> 0x10),this->field_0045),
+                         STReplaceLowWord((uint32_t)(iVar3), (uint16_t)(this->field_0045)),
                          this->field_0047 * 0xc9 + 100,(short)iVar3,
-                         CONCAT22((short)((uint)pSVar5 >> 0x10),this->field_004B * 200) + 100);
+                         STReplaceLowWord((uint32_t)(pSVar5), (uint16_t)(this->field_004B * 200)) + 100);
       uVar4 = sub_004176C0(this,sVar2);
       uVar4 = sub_00417910(this,(short)uVar4);
       if (uVar4 != 0xffffffff) {

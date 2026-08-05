@@ -35,7 +35,8 @@ undefined4 __cdecl FUN_004b2d10(byte param_1,int param_2,int param_3,int param_4
   }
   else {
     uVar4 = LookupRecordByte(param_1);
-    local_24 = *(int *)(&DAT_007e3f20 + ((uVar4 & 0xffU) + param_2 * 3) * 4);
+    uVar4 = (int)(byte)uVar4;
+    local_24 = *(int *)(&DAT_007e3f20 + (uVar4 + param_2 * 3) * 4);
   }
   local_34 = 0;
   if (DAT_007951b0 / 0xc9 < 1) {

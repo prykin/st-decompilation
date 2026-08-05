@@ -201,6 +201,30 @@ keeps the low 24 value bits and places the low eight tag bits in bits 24–31.
 This is a presentation normalization, not evidence for a semantic name of the
 packed key or the function consuming it.
 
+An exact same-base low-piece update is also rendered as
+`STReplaceLowByte`, `STReplaceLowWord`, or `STReplaceLowByte16`. For example,
+`CONCAT31((int3)((uint)value >> 8), low)` is the ordinary operation “preserve
+the upper 24 bits of `value` and replace its low byte”. The exporter performs
+this fold only when the high piece is syntactically derived from that same
+simple base. An `extraout_*`, unrelated high half, or ambiguous expression is
+left visible.
+
+There is a stronger database-level case. If every callee `RET` path defines the
+same exact `AL`/`AX` width and complete caller CFG coverage either consumes only
+that width or kills `EAX`, `STAbiConsistencyAnalyzer` recovers a real
+`byte`/`ushort` return. A source-level call then yields the complete narrow
+scalar even if Ghidra preserves the machine partial-write spelling:
+
+```c
+temporary._0_1_ = LookupRecordByte(index);
+```
+
+For an unambiguous callee name whose return width matches the selected piece,
+the exporter emits `temporary = LookupRecordByte(index);`. It does not perform
+this rewrite for a wide, pointer, aggregate, undefined, or name-colliding
+callee. This is why `LookupRecordByte` itself now ends with the ordinary
+`return records[index].field;`, rather than `CONCAT31(recordIndex >> 7, field)`.
+
 The exporter also recreates `decomp_quality_summary.json` and
 `decomp_quality_issues.jsonl`. Unlike the focused idiom catalogue, this second
 layer inventories all `functions/**/decomp.c` bodies and includes valid-but-poor
@@ -260,6 +284,11 @@ The readable form needs a helper or a typed wrapper, for example:
 ```c
 DArrayAt<DArrayElementHeader>(array, index)
 ```
+
+The same exact fold applies when Ghidra uses the runtime-stride expression only
+as an address and casts it to an already rendered concrete pointer type. This
+does not make `DArrayTy` a static C array: `elementSize` remains runtime state,
+and the template argument is only the consumer's existing typed view.
 
 When `STDArrayElementApplier` has installed an exact per-owner-field descriptor
 whose `data` member points to a recovered element record, the exporter performs

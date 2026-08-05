@@ -46,10 +46,10 @@ AiTactClassTy::HelpOrganize(AiTactClassTy *this,AnonShape_00690650_F810CDF4 *par
   AiTactClassTy *local_c;
   uint local_8;
 
-  /* ST_PSEUDO[unresolved_register_input,packed_or_unaligned_piece]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention; expected named packed member, bit extract/compose, or unaligned load */
-  local_10 = CONCAT22((short)((uint)in_EAX >> 0x10),param_1->field_0016);
-  /* ST_PSEUDO[unresolved_register_input,packed_or_unaligned_piece]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention; expected named packed member, bit extract/compose, or unaligned load */
-  local_20 = CONCAT22((short)((uint)unaff_EDI >> 0x10),param_1->field_001A);
+  /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
+  local_10 = STReplaceLowWord((uint32_t)(in_EAX), (uint16_t)(param_1->field_0016));
+  /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
+  local_20 = STReplaceLowWord((uint32_t)(unaff_EDI), (uint16_t)(param_1->field_001A));
   bVar1 = param_1->field_0018;
   /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
   _local_14 = CONCAT31(uStack_13,bVar1);
@@ -64,8 +64,7 @@ AiTactClassTy::HelpOrganize(AiTactClassTy *this,AnonShape_00690650_F810CDF4 *par
     return;
   }
   bVar2 = *(byte *)&this->field_0024;
-  /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-  local_8 = CONCAT31(local_8._1_3_,bVar2);
+  local_8 = STReplaceLowByte((uint32_t)(local_8), (uint8_t)(bVar2));
   if (DAT_00808a8f != '\0') {
     bVar13 = g_bulkInitializedRecords_008087C7[bVar2].field_0023 !=
              g_bulkInitializedRecords_008087C7[bVar1].field_0023;

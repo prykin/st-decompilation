@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 /* [STSourceProvenanceApplier begin]
@@ -183,8 +185,7 @@ LAB_00428e95:
   } while ((int)piVar14 < 0x7f4dc5);
   /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
   local_2c._1_3_ = (undefined3)((uint)local_2c >> 8);
-  /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-  local_2c = CONCAT31(local_2c._1_3_,2);
+  local_2c = STReplaceLowByte((uint32_t)(local_2c), (uint8_t)(2));
   local_a4 = 0;
   local_9 = 1;
   local_40 = nullptr;
@@ -216,9 +217,8 @@ LAB_00428e95:
           }
           uVar12 = 0;
           while( true ) {
-            /* ST_PSEUDO[dynamic_array_indexing]: expected DArrayAt<T>(local_44, uVar12) (runtime stride) */
             if ((local_44->count <= uVar12) ||
-               (piVar14 = (int *)(local_44->elementSize * uVar12 + (int)local_44->data),
+               (piVar14 = DArrayAt<int>(local_44, uVar12),
                piVar14 == nullptr)) goto LAB_004292e2;
             if (pRVar3->field_0028 == *piVar14) break;
             uVar12 = uVar12 + 1;
@@ -322,9 +322,7 @@ LAB_00429475:
             }
           }
           if (*(uint *)&pAVar4->field_0x18 < local_44->count) {
-            /* ST_PSEUDO[dynamic_array_indexing]: expected DArrayAt<T>(local_44, *(uint *)&pAVar4->field_0x18) (runtime stride) */
-            pvVar8 = (void *)(local_44->elementSize * *(uint *)&pAVar4->field_0x18 +
-                             (int)local_44->data);
+            pvVar8 = DArrayAt<void>(local_44, *(uint *)&pAVar4->field_0x18);
           }
           else {
             pvVar8 = nullptr;
@@ -682,8 +680,7 @@ LAB_00429d7d:
     array = local_44;
     local_44->iteratorIndex = 0;
     while (uVar12 = array->iteratorIndex, uVar12 < array->count) {
-      /* ST_PSEUDO[dynamic_array_indexing]: expected DArrayAt<T>(array, uVar12) (runtime stride) */
-      pvVar8 = (void *)(array->elementSize * uVar12 + (int)array->data);
+      pvVar8 = DArrayAt<void>(array, uVar12);
       array->iteratorIndex = uVar12 + 1;
       if (pvVar8 == nullptr) break;
       FUN_006a5e90(*(short **)((int)pvVar8 + 4));
@@ -691,8 +688,7 @@ LAB_00429d7d:
     DArrayDestroy(array);
     local_9 = local_9 << 1;
     local_40 = (int *)((int)local_40 + 1);
-    /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-    local_2c = CONCAT31(local_2c._1_3_,(byte)local_2c << 2);
+    local_2c = STReplaceLowByte((uint32_t)(local_2c), (uint8_t)((byte)local_2c << 2));
     if (3 < (int)local_40) {
       if (pSVar7 != nullptr) {
         ST3DSMAPContext::sub_006DBCF0(pSVar7);

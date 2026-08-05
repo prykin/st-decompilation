@@ -37,12 +37,10 @@ void __thiscall MMsgTy::CloseSprBut(MMsgTy *this)
         *(undefined4 *)((int)&this_00->field_0127 + uVar2 * 0x1fb) = this_00->field_0061;
         *(uint *)((int)&this_00->field_0123 + uVar2 * 0x1fb) = ((local_c & 0xff) + 1) * 100;
         if (*(int *)(&this_00->field_0xbc + uVar2 * 0x1fb) != 0) {
-          /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-          local_c = CONCAT31(local_c._1_3_,(char)local_c + '\x01');
+          local_c = STReplaceLowByte((uint32_t)(local_c), (uint8_t)((char)local_c + '\x01'));
         }
         bVar4 = bVar4 + 1;
-        /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-        local_8 = CONCAT31(local_8._1_3_,bVar4);
+        local_8 = STReplaceLowByte((uint32_t)(local_8), (uint8_t)(bVar4));
       } while (bVar4 < this_00->field_009A);
     }
     local_8 = local_8 & 0xffffff00;
@@ -53,8 +51,7 @@ void __thiscall MMsgTy::CloseSprBut(MMsgTy *this)
           FUN_006b3af0(*(int **)((int)&this_00->field_01BC + (local_8 & 0xff) * 0x1fb),uVar2);
         }
         bVar5 = bVar5 + 1;
-        /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-        local_8 = CONCAT31(local_8._1_3_,bVar5);
+        local_8 = STReplaceLowByte((uint32_t)(local_8), (uint8_t)(bVar5));
       } while (bVar5 < this_00->field_009A);
     }
     HidePanel(this_00,1,1,1);

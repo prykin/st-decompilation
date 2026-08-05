@@ -204,10 +204,8 @@ cf_common_exit_00476DBA:
   if (SVar1 == CASE_2) {
     if (this->field_0615 == 0) {
       iVar16 = (ushort)(this->field_060D * 200) + 300;
-      /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-      iVar6 = CONCAT22((short)((uint)iVar16 >> 0x10),this->field_060B + 1) * 0xc9;
-      /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-      iVar13 = CONCAT22((short)((uint)iVar6 >> 0x10),this->field_0609 + 1);
+      iVar6 = STReplaceLowWord((uint32_t)(iVar16), (uint16_t)(this->field_060B + 1)) * 0xc9;
+      iVar13 = STReplaceLowWord((uint32_t)(iVar6), (uint16_t)(this->field_0609 + 1));
       /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
       uVar5 = (*this->vtable->vfunc_10)
                         (this->field_0041,this->field_0043,
@@ -376,12 +374,10 @@ cf_common_exit_00477B2E:
         return (-(uint)(iVar6 != 0) & 0xfffffffd) + 2;
       }
       if (this->field_0615 == 0) {
-        /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-        iVar6 = CONCAT22((short)((uint)this >> 0x10),this->field_0605 * 0xc9) + 100;
-        /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
+        iVar6 = STReplaceLowWord((uint32_t)(this), (uint16_t)(this->field_0605 * 0xc9)) + 100;
         uVar5 = (*this->vtable->vfunc_10)
                           (this->field_0041,this->field_0043,
-                           CONCAT22((short)((uint)iVar6 >> 0x10),this->field_0045),
+                           STReplaceLowWord((uint32_t)(iVar6), (uint16_t)(this->field_0045)),
                            this->field_0603 * 0xc9 + 100,(short)iVar6,
                            (ushort)(this->field_0607 * 200) + 100);
         this->field_060F = uVar5;
@@ -412,7 +408,7 @@ cf_common_exit_00477B2E:
       if (this->field_0615 == 3) {
         local_8 = STJellyGunC::sub_00415ED0((STJellyGunC *)this,&local_c,&local_10);
         /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
-        uVar15 = CONCAT31((int3)((uint)extraout_EDX >> 8),this->field_02BF);
+        uVar15 = STReplaceLowByte((uint32_t)(extraout_EDX), (uint8_t)(this->field_02BF));
         /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
         param_1 = 0;
         if (this->field_02BF != '\0') {
@@ -533,7 +529,7 @@ cf_common_exit_00477B2E:
     uVar8 = LookupRecordByte(*(char *)&pSVar7->field_0024);
     iVar6 = (*pSVar7->vtable->vfunc_2C)();
     local_64.arg0.ptr = &local_40;
-    local_40 = *(undefined4 *)(&DAT_007e1374 + ((uVar8 & 0xffU) + iVar6 * 3) * 4);
+    local_40 = *(undefined4 *)(&DAT_007e1374 + ((uint)(byte)uVar8 + iVar6 * 3) * 4);
     local_38 = 0xff;
     local_3c = 0;
     local_2c = 1;

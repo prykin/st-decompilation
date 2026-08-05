@@ -11,64 +11,63 @@
 void FUN_004e68a0(byte *param_1,undefined1 *param_2,uint param_3,undefined4 *param_4)
 
 {
-  byte bVar1;
-  int *piVar2;
-  undefined *puVar3;
+  int *piVar1;
+  undefined *puVar2;
+  byte bVar3;
   bool bVar4;
   undefined1 uVar5;
-  uint uVar6;
   /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
   undefined3 extraout_var;
+  int iVar6;
   int iVar7;
-  int iVar8;
   /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
   undefined3 extraout_var_00;
-  int iVar9;
-  undefined1 *puVar10;
-  int *piVar11;
+  int iVar8;
+  undefined1 *puVar9;
+  int *piVar10;
 
   memset(param_4, 0, 0x1e); /* compiler bulk-zero initialization */
-  uVar6 = LookupRecordByte((char)param_1);
-  iVar9 = (uVar6 & 0xff) - 1;
+  bVar3 = LookupRecordByte((char)param_1);
+  iVar8 = bVar3 - 1;
   bVar4 = thunk_FUN_004e5c40(param_1,(uint)param_2);
   /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
   if (CONCAT31(extraout_var,bVar4) == 0) {
-    piVar2 = (int *)(&PTR_DAT_007c0dc8)[iVar9];
-    puVar10 = (undefined1 *)*piVar2;
-    if (puVar10 != nullptr) {
-      iVar7 = 0;
-      piVar11 = piVar2;
-      while ((puVar10 != param_2 || (*(byte *)(piVar11 + 1) != param_3))) {
-        puVar10 = *(undefined1 **)((int)piVar11 + 0x19);
-        piVar11 = (int *)((int)piVar11 + 0x19);
-        iVar7 = iVar7 + 1;
-        if (puVar10 == nullptr) {
+    piVar1 = (int *)(&PTR_DAT_007c0dc8)[iVar8];
+    puVar9 = (undefined1 *)*piVar1;
+    if (puVar9 != nullptr) {
+      iVar6 = 0;
+      piVar10 = piVar1;
+      while ((puVar9 != param_2 || (*(byte *)(piVar10 + 1) != param_3))) {
+        puVar9 = *(undefined1 **)((int)piVar10 + 0x19);
+        piVar10 = (int *)((int)piVar10 + 0x19);
+        iVar6 = iVar6 + 1;
+        if (puVar9 == nullptr) {
           return;
         }
       }
       /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
       param_3 = 0;
-      if (*(int *)(iVar7 * 0x19 + 5 + (int)piVar2) != 0) {
+      if (*(int *)(iVar6 * 0x19 + 5 + (int)piVar1) != 0) {
         /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
         param_2 = (undefined1 *)((int)param_4 + 5);
-        iVar7 = iVar7 * 0x19 + 5;
+        iVar6 = iVar6 * 0x19 + 5;
         do {
           if (3 < (int)param_3) {
             return;
           }
-          puVar3 = (&PTR_DAT_007c0dc8)[iVar9];
-          bVar1 = puVar3[iVar7 + 4];
-          iVar8 = thunk_FUN_004e60d0((int)param_1,*(int *)(puVar3 + iVar7));
-          if (iVar8 < (int)(uint)bVar1) {
-            *(uint *)(param_2 + -5) = (uint)CONCAT12(bVar1,*(undefined2 *)(puVar3 + iVar7));
-            iVar8 = LookupRecordByte((char)param_1);
-            param_2[-1] = (char)iVar8;
-            bVar4 = thunk_FUN_004e5c40(param_1,*(uint *)((&PTR_DAT_007c0dc8)[iVar9] + iVar7));
+          puVar2 = (&PTR_DAT_007c0dc8)[iVar8];
+          bVar3 = puVar2[iVar6 + 4];
+          iVar7 = thunk_FUN_004e60d0((int)param_1,*(int *)(puVar2 + iVar6));
+          if (iVar7 < (int)(uint)bVar3) {
+            *(uint *)(param_2 + -5) = (uint)CONCAT12(bVar3,*(undefined2 *)(puVar2 + iVar6));
+            bVar3 = LookupRecordByte((char)param_1);
+            param_2[-1] = bVar3;
+            bVar4 = thunk_FUN_004e5c40(param_1,*(uint *)((&PTR_DAT_007c0dc8)[iVar8] + iVar6));
             /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
             if ((CONCAT31(extraout_var_00,bVar4) == 0) ||
-               (iVar8 = thunk_FUN_004e60d0((int)param_1,*(int *)((&PTR_DAT_007c0dc8)[iVar9] + iVar7)
+               (iVar7 = thunk_FUN_004e60d0((int)param_1,*(int *)((&PTR_DAT_007c0dc8)[iVar8] + iVar6)
                                           ),
-               iVar8 != (byte)(&PTR_DAT_007c0dc8)[iVar9][iVar7 + 4] - 1)) {
+               iVar7 != (byte)(&PTR_DAT_007c0dc8)[iVar8][iVar6 + 4] - 1)) {
               uVar5 = 0;
             }
             else {
@@ -78,10 +77,10 @@ void FUN_004e68a0(byte *param_1,undefined1 *param_2,uint param_3,undefined4 *par
             /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
             param_2 = param_2 + 6;
           }
-          iVar7 = iVar7 + 5;
+          iVar6 = iVar6 + 5;
           /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
           param_3 = param_3 + 1;
-        } while (*(int *)((&PTR_DAT_007c0dc8)[iVar9] + iVar7) != 0);
+        } while (*(int *)((&PTR_DAT_007c0dc8)[iVar8] + iVar6) != 0);
       }
     }
   }

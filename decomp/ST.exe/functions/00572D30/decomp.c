@@ -45,8 +45,7 @@ undefined4 __thiscall FUN_00572d30(void *this,BYTE *param_1,BYTE *param_2)
         local_1c[1] = 0;
         local_14 = 0;
         uVar4 = thunk_FUN_00571dc0();
-        /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-        local_1c[0] = CONCAT31(local_1c[0]._1_3_,(char)uVar4);
+        local_1c[0] = STReplaceLowByte((uint32_t)(local_1c[0]), (uint8_t)((char)uVar4));
         UVar5 = GetDriveTypeA((LPCSTR)local_1c);
         if (UVar5 != 5) {
           uVar4 = 0xffffffff;

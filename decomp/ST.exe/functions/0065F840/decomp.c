@@ -41,8 +41,7 @@ uint * FUN_0065f840(DArrayTy *param_1,uint param_2,int param_3)
           return &array->flags;
         }
         if (uVar4 < uVar2) {
-          /* ST_PSEUDO[dynamic_array_indexing]: expected DArrayAt<T>(param_1, uVar4) (runtime stride) */
-          puVar3 = (undefined4 *)(param_1->elementSize * uVar4 + (int)param_1->data);
+          puVar3 = DArrayAt<undefined4>(param_1, uVar4);
         }
         else {
           puVar3 = nullptr;

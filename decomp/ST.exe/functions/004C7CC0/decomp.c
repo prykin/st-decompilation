@@ -29,64 +29,65 @@ TLOBaseTy::FUN_004c7cc0
   int iVar2;
   TLOBaseTyVTable *pTVar3;
   bool bVar4;
-  int iVar5;
+  byte bVar5;
+  int iVar6;
   int uVar9;
   int local_EAX_1031;
-  AnonPointee_TLOBaseTy_0607 *pAVar6;
-  int *piVar7;
-  uint uVar10;
-  int iVar11;
-  byte *puVar12;
+  AnonPointee_TLOBaseTy_0607 *pAVar7;
+  int *piVar8;
+  uint uVar11;
+  int iVar12;
   byte *puVar13;
+  byte *puVar14;
 
   if ((int)param_3 < 0) {
-    iVar5 = (param_3 ^ (int)param_3 >> 0x1f) - ((int)param_3 >> 0x1f);
+    iVar6 = (param_3 ^ (int)param_3 >> 0x1f) - ((int)param_3 >> 0x1f);
     if ((this->field_03D4 != 0) && (this->field_0607 != nullptr)) {
       do {
         iVar1 = this->field_03D4;
         bVar4 = false;
-        iVar11 = iVar1 + -1;
-        if (-1 < iVar11) {
-          piVar7 = (int *)(iVar11 * 0x27 + (int)this->field_0607);
+        iVar12 = iVar1 + -1;
+        if (-1 < iVar12) {
+          piVar8 = (int *)(iVar12 * 0x27 + (int)this->field_0607);
 LAB_004c7d1c:
-          if ((*piVar7 != param_1) || (piVar7[1] != param_2)) goto LAB_004c7d2b;
+          if ((*piVar8 != param_1) || (piVar8[1] != param_2)) goto LAB_004c7d2b;
           bVar4 = true;
-          puVar13 = (byte *)(iVar11 * 0x27 + (int)this->field_0607);
-          iVar2 = puVar13[2];
-          if (iVar2 <= iVar5) {
-            iVar5 = iVar5 - iVar2;
-            if (iVar11 < iVar1 + -1) {
-              uVar10 = ((iVar1 - iVar11) + -1) * 0x27;
-              puVar12 = (byte *)((iVar11 + 1) * 0x27 + (int)this->field_0607);
-              memmove(puVar13, puVar12, uVar10); /* compiler REP MOVS byte copy */
+          puVar14 = (byte *)(iVar12 * 0x27 + (int)this->field_0607);
+          iVar2 = puVar14[2];
+          if (iVar2 <= iVar6) {
+            iVar6 = iVar6 - iVar2;
+            if (iVar12 < iVar1 + -1) {
+              uVar11 = ((iVar1 - iVar12) + -1) * 0x27;
+              puVar13 = (byte *)((iVar12 + 1) * 0x27 + (int)this->field_0607);
+              memmove(puVar14, puVar13, uVar11); /* compiler REP MOVS byte copy */
             }
             this->field_03D4 = this->field_03D4 + -1;
             goto LAB_004c7d8c;
           }
-          piVar7 = (int *)(iVar11 * 0x27 + 8 + (int)this->field_0607);
-          *piVar7 = *piVar7 - iVar5;
+          piVar8 = (int *)(iVar12 * 0x27 + 8 + (int)this->field_0607);
+          *piVar8 = *piVar8 - iVar6;
           goto cf_common_exit_004C8287;
         }
 LAB_004c7d8c:
-        if (iVar5 == 0) goto cf_common_exit_004C8287;
+        if (iVar6 == 0) goto cf_common_exit_004C8287;
       } while (bVar4);
     }
-    if (((iVar5 != 0) && (*(int *)&this->field_0x361 == param_1)) &&
+    if (((iVar6 != 0) && (*(int *)&this->field_0x361 == param_1)) &&
        (*(uint *)&this->field_0x369 == param_2)) {
-      if (*(int *)&this->field_0x36d < iVar5) {
-        iVar5 = *(int *)&this->field_0x36d;
+      if (*(int *)&this->field_0x36d < iVar6) {
+        iVar6 = *(int *)&this->field_0x36d;
       }
-      iVar5 = *(int *)&this->field_0x36d - iVar5;
-      *(int *)&this->field_0x36d = iVar5;
-      if (iVar5 == 0) {
+      iVar6 = *(int *)&this->field_0x36d - iVar6;
+      *(int *)&this->field_0x36d = iVar6;
+      if (iVar6 == 0) {
         *(int *)&this->field_0x365 = *(int *)&this->field_0x361;
-        iVar5 = sub_004C90C0(this);
-        if (iVar5 == 0) {
+        iVar6 = sub_004C90C0(this);
+        if (iVar6 == 0) {
           *(undefined4 *)&this->field_0x36d = 1;
         }
         else {
-          iVar5 = LookupRecordByte(*(char *)&this->field_0024);
-          if (((char)iVar5 != '\x03') && (this->field_03A8 != 0)) {
+          bVar5 = LookupRecordByte(*(char *)&this->field_0024);
+          if ((bVar5 != 3) && (this->field_03A8 != 0)) {
             thunk_FUN_004d87b0(*(char *)&this->field_0024,this->field_03A8);
           }
           if (this->field_03AC != 0) {
@@ -104,21 +105,21 @@ LAB_004c7d8c:
     }
   }
   else {
-    iVar5 = sub_004C7860(this,param_1,param_2,param_3,0,0);
-    if (iVar5 != 0) {
-      iVar5 = sub_004C7860(this,param_1,param_2,param_3,1,0);
-      if ((iVar5 == 0) || (iVar5 = thunk_FUN_004c7c20(this), iVar5 == 0)) {
+    iVar6 = sub_004C7860(this,param_1,param_2,param_3,0,0);
+    if (iVar6 != 0) {
+      iVar6 = sub_004C7860(this,param_1,param_2,param_3,1,0);
+      if ((iVar6 == 0) || (iVar6 = thunk_FUN_004c7c20(this), iVar6 == 0)) {
         if (param_4 != 0) {
-          iVar5 = sub_004C9370(this,param_1,param_2,-1);
+          iVar6 = sub_004C9370(this,param_1,param_2,-1);
           if ((*(int *)&this->field_0x361 == param_1) && (*(uint *)&this->field_0x369 == param_2)) {
-            iVar5 = iVar5 + *(int *)&this->field_0x36d;
+            iVar6 = iVar6 + *(int *)&this->field_0x36d;
           }
-          if ((int)(iVar5 + param_3) < 100) {
+          if ((int)(iVar6 + param_3) < 100) {
             if (this->field_03D8 <= this->field_03D4 + 1) {
-              iVar5 = this->field_03D8 + 0x14;
-              this->field_03D8 = iVar5;
-              pAVar6 = Library::DKW::LIB::MemRealloc(this->field_0607,iVar5 * 0x27);
-              this->field_0607 = pAVar6;
+              iVar6 = this->field_03D8 + 0x14;
+              this->field_03D8 = iVar6;
+              pAVar7 = Library::DKW::LIB::MemRealloc(this->field_0607,iVar6 * 0x27);
+              this->field_0607 = pAVar7;
             }
             *(int *)(this->field_03D4 * 0x27 + (int)this->field_0607) = param_1;
             *(uint *)(this->field_03D4 * 0x27 + 4 + (int)this->field_0607) = param_2;
@@ -126,12 +127,12 @@ LAB_004c7d8c:
             *(uint *)(this->field_03D4 * 0x27 + 0xc + (int)this->field_0607) = param_5;
             *(undefined4 *)(this->field_03D4 * 0x27 + 0x10 + (int)this->field_0607) = param_6;
             *(int *)(this->field_03D4 * 0x27 + 0x14 + (int)this->field_0607) = param_7;
-            puVar13 = (byte *)(this->field_03D4 * 0x27 + 0x18 + (int)this->field_0607);
-            *puVar13 = 0;
-            puVar13[1] = 0;
-            puVar13[2] = 0;
-            *(undefined2 *)(puVar13 + 3) = 0;
-            *(undefined1 *)((int)puVar13 + 0xe) = 0;
+            puVar14 = (byte *)(this->field_03D4 * 0x27 + 0x18 + (int)this->field_0607);
+            *puVar14 = 0;
+            puVar14[1] = 0;
+            puVar14[2] = 0;
+            *(undefined2 *)(puVar14 + 3) = 0;
+            *(undefined1 *)((int)puVar14 + 0xe) = 0;
             if (param_8 != nullptr) {
               Library::MSVCRT::_strncpy
                         ((char *)(this->field_03D4 * 0x27 + 0x18 + (int)this->field_0607),param_8,
@@ -147,8 +148,8 @@ LAB_004c7d8c:
           *(int *)&this->field_0x361 = param_1;
           *(uint *)&this->field_0x369 = param_2;
           this->field_038C = g_playSystem_00802A38->field_00E4;
-          uVar10 = thunk_FUN_004c7730(this,param_1,param_2);
-          this->field_0390 = uVar10;
+          uVar11 = thunk_FUN_004c7730(this,param_1,param_2);
+          this->field_0390 = uVar11;
           this->field_0394 = 0;
           this->field_03CC = 0;
           *(undefined4 *)&this->field_0x36d = 0;
@@ -205,13 +206,13 @@ LAB_004c7d8c:
         if (*(int *)&this->field_0x361 == 5) {
           sub_004CC880(this,3);
           uVar9 = LookupRecordByte(*(char *)&this->field_023D);
-          if (*(int *)(&DAT_00796230 + ((uVar9 & 0xffU) + this->field_0235 * 3) * 4) != 0) {
+          if (*(int *)(&DAT_00796230 + ((uint)(byte)uVar9 + this->field_0235 * 3) * 4) != 0) {
             pTVar3 = this->vtable;
             local_EAX_1031 = LookupRecordByte(*(char *)&this->field_023D);
             (*pTVar3->vfunc_90)(this,3,(short)*(undefined4 *)
                                                (&DAT_00796230 +
-                                               ((local_EAX_1031 & 0xffU) + this->field_0235 * 3) * 4
-                                               ));
+                                               ((uint)(byte)local_EAX_1031 + this->field_0235 * 3) *
+                                               4));
           }
         }
         else if (*(int *)&this->field_0x361 == 6) {
@@ -226,9 +227,9 @@ cf_common_exit_004C8287:
   }
   return 0;
 LAB_004c7d2b:
-  iVar11 = iVar11 + -1;
-  piVar7 = (int *)((int)piVar7 + -0x27);
-  if (iVar11 < 0) goto LAB_004c7d8c;
+  iVar12 = iVar12 + -1;
+  piVar8 = (int *)((int)piVar8 + -0x27);
+  if (iVar12 < 0) goto LAB_004c7d8c;
   goto LAB_004c7d1c;
 }
 

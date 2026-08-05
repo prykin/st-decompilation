@@ -12,8 +12,7 @@ void __fastcall FUN_004ccad0(AnonShape_004CCAD0_262475FB *param_1)
   param_1->field_0265 = param_1->field_0265 & 0xfffffffd;
   param_1->field_026D = 0;
   if (param_1->field_05AC == 0x50) {
-    /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-    thunk_FUN_004b70d0(CONCAT31((int3)((uint)uVar1 >> 8),param_1->field_0x24),0x28);
+    thunk_FUN_004b70d0(STReplaceLowByte((uint32_t)(uVar1), (uint8_t)(param_1->field_0x24)),0x28);
   }
   if ((param_1->field_05AC == 0x6f) || (param_1->field_05AC == 0x73)) {
     thunk_FUN_004eccc0((int *)param_1);

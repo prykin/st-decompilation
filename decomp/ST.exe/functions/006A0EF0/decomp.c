@@ -1,7 +1,12 @@
 
 /* WARNING: Removing unreachable block (ram,0x006a1015) */
+/* [STAbiConsistencyApplier] narrow_accumulator_return target=return:-1: return=/ushort Evidence:
+   all resolved direct callers consume only AX or kill the result; narrow_uses=2, ignored=0, full=0,
+   unknown=0; reverse CFG traversal from every RET finds the same exact low-accumulator definition
+   width on every path; sites=006A1100 @ 006A11B0 -> read as AX on every CFG path | 006A19D0 @
+   006A1A07 -> read as AX on every CFG path */
 
-undefined4 __cdecl
+ushort __cdecl
 FUN_006a0ef0(int *param_1,int param_2,int param_3,int param_4,int param_5,ushort *param_6)
 
 {
@@ -62,7 +67,6 @@ FUN_006a0ef0(int *param_1,int param_2,int param_3,int param_4,int param_5,ushort
     local_c = local_c + 2;
     local_8 = local_8 + 1;
   } while ((int)local_c < 0x7df86c);
-  /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-  return CONCAT22((short)((uint)local_c >> 0x10),(undefined2)local_10);
+  return (ushort)local_10;
 }
 

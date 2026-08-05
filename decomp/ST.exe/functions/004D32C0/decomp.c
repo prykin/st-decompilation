@@ -100,12 +100,12 @@ undefined4 __fastcall FUN_004d32c0(TLOBaseTy *param_1)
           } while (iVar10 != 0);
           if (g_manBasis_00811784 != nullptr) {
             local_EAX_406 = LookupRecordByte(*(char *)&param_1->field_0024);
+            local_EAX_406 = (int)(byte)local_EAX_406;
             /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
             thunk_FUN_005f23d0(g_manBasis_00811784,param_1->field_025D,param_1->field_0261,
                                param_1->field_0265,
-                               CONCAT31((int3)((uint)extraout_EDX >> 8),
-                                        *(undefined1 *)&param_1->field_002C),param_1->field_0259,
-                               local_EAX_406 & 0xff);
+                               STReplaceLowByte((uint32_t)(extraout_EDX), (uint8_t)(*(undefined1 *)&param_1->field_002C)),param_1->field_0259,
+                               local_EAX_406);
           }
         }
         else if ((param_1->field_02EC == CASE_3) && (param_1->field_02DC == 0)) {
@@ -239,14 +239,11 @@ undefined4 __fastcall FUN_004d32c0(TLOBaseTy *param_1)
               local_14 = local_14 + 1;
             } while ((int)local_14 < param_1->field_0261 + iVar10);
           }
-          /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-          iVar10 = thunk_FUN_004b7520(CONCAT31((int3)((uint)param_1->field_0259 >> 8),
-                                               *(undefined1 *)&param_1->field_0024),
+          iVar10 = thunk_FUN_004b7520(STReplaceLowByte((uint32_t)(param_1->field_0259), (uint8_t)(*(undefined1 *)&param_1->field_0024)),
                                       param_1->field_0259);
           if (iVar10 != 0) {
             dVar2 = param_1->slot_2C();
-            /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-            thunk_FUN_004b7710(CONCAT31((int3)(dVar2 >> 8),*(undefined1 *)&param_1->field_0024),
+            thunk_FUN_004b7710(STReplaceLowByte((uint32_t)(dVar2), (uint8_t)(*(undefined1 *)&param_1->field_0024)),
                                dVar2);
           }
           if ((99 < *(int *)&param_1->field_0x2a8) && (param_1->field_02E8 == 0)) {
@@ -259,9 +256,8 @@ undefined4 __fastcall FUN_004d32c0(TLOBaseTy *param_1)
             uVar8 = extraout_var_00;
             if (iVar10 != 0) {
               /* ST_PSEUDO[return_width_artifact,raw_pointer_offset]: candidate call-output artifact: verify return width, clobbers, or x87 state; candidate structure field after proof; otherwise retain buffer arithmetic */
-              thunk_FUN_004353b0(CONCAT31((int3)((uint)local_18 >> 8),
-                                          *(undefined1 *)&param_1->field_0024),
-                                 CONCAT22((short)((uint)iVar10 >> 0x10),param_1->field_0032),
+              thunk_FUN_004353b0(STReplaceLowByte((uint32_t)(local_18), (uint8_t)(*(undefined1 *)&param_1->field_0024)),
+                                 STReplaceLowWord((uint32_t)(iVar10), (uint16_t)(param_1->field_0032)),
                                  CONCAT22(extraout_var_02,*(undefined2 *)(local_18 + 0x32)));
               /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
               uVar8 = extraout_var_01;
@@ -570,9 +566,7 @@ cf_error_exit_004D428D:
     if ((param_1->field_02EC == CASE_2) && ((param_1->field_01F1 & 0x4000) != 0)) {
       if ((*(int *)&param_1->field_0x2a8 < 100) &&
          ((*(int *)&param_1->field_0x2a4 == 0 && (*(int *)&param_1->field_0x2a0 == 0)))) {
-        /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-        iVar10 = thunk_FUN_004b7520(CONCAT31((int3)((uint)param_1->field_0259 >> 8),
-                                             *(undefined1 *)&param_1->field_0024),
+        iVar10 = thunk_FUN_004b7520(STReplaceLowByte((uint32_t)(param_1->field_0259), (uint8_t)(*(undefined1 *)&param_1->field_0024)),
                                     param_1->field_0259);
         if (iVar10 == 0) {
 LAB_004d43f5:
@@ -586,15 +580,17 @@ LAB_004d43f5:
         *(undefined4 *)&param_1->field_0x2b8 = uVar4;
         uVar2 = LookupRecordByte(*(char *)&param_1->field_0024);
         local_14 = *(uint *)(&DAT_007e3dc0 +
-                            ((uVar2 & 0xffU) + *(int *)&param_1->field_0x368 * 3) * 4);
+                            ((uint)(byte)uVar2 + *(int *)&param_1->field_0x368 * 3) * 4);
         if (DAT_0080c51e != 0) {
           uVar12 = 0;
           iVar10 = 0;
           do {
             uVar6 = LookupRecordByte(*(char *)&param_1->field_0024);
-            if (uVar12 < *(uint *)(&DAT_007e3dc0 + ((uVar6 & 0xffU) + iVar10) * 4)) {
+            uVar6 = (int)(byte)uVar6;
+            if (uVar12 < *(uint *)(&DAT_007e3dc0 + (uVar6 + iVar10) * 4)) {
               local_EAX_4514 = LookupRecordByte(*(char *)&param_1->field_0024);
-              uVar12 = *(uint *)(&DAT_007e3dc0 + ((local_EAX_4514 & 0xffU) + iVar10) * 4);
+              local_EAX_4514 = (int)(byte)local_EAX_4514;
+              uVar12 = *(uint *)(&DAT_007e3dc0 + (local_EAX_4514 + iVar10) * 4);
             }
             iVar10 = iVar10 + 3;
           } while (iVar10 < 0xc6);
@@ -732,14 +728,14 @@ LAB_004d43f5:
               if (param_1->field_0024 == (byte *)(uint)(byte)param_1->field_0010->field_112D) {
                 thunk_FUN_0052af50(0,(float)param_1->field_01F9,(float)param_1->field_01FD);
                 local_EAX_5536 = LookupRecordByte(*(char *)&param_1->field_0024);
-                uVar12 = local_EAX_5536 & 0xff;
-                if (uVar12 == 1) {
+                local_EAX_5536 = (int)(byte)local_EAX_5536;
+                if (local_EAX_5536 == 1) {
                   param_1->vfunc_90(6,0x62);
                 }
-                else if (uVar12 == 2) {
+                else if (local_EAX_5536 == 2) {
                   param_1->vfunc_90(6,99);
                 }
-                else if (uVar12 == 3) {
+                else if (local_EAX_5536 == 3) {
                   param_1->vfunc_90(6,100);
                 }
               }
@@ -855,9 +851,10 @@ LAB_004d43f5:
       }
       iVar10 = 0;
       local_EAX_6643 = LookupRecordByte(*(char *)&param_1->field_0024);
+      local_EAX_6643 = (int)(byte)local_EAX_6643;
       thunk_FUN_0062b830((int)param_1->field_0041,(int)param_1->field_0043,(int)param_1->field_0045,
-                         param_1->field_0259,(int *)param_1,0xffffffff,0xffffffff,
-                         local_EAX_6643 & 0xff,iVar10);
+                         param_1->field_0259,(int *)param_1,0xffffffff,0xffffffff,local_EAX_6643,
+                         iVar10);
     }
     else {
       iVar10 = thunk_FUN_004ac910(puVar11,'\x06');

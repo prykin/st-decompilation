@@ -82,8 +82,8 @@ FUN_004c5350(void *this,int param_1,int *param_2,int param_3,int param_4,undefin
   if (param_7 == 0) goto LAB_004c5515;
   bVar1 = *(byte *)(this_00 + 9);
   bVar2 = *(byte *)((int)this + 0x24);
-  /* ST_PSEUDO[stack_slot_reuse,packed_or_unaligned_piece]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable; expected named packed member, bit extract/compose, or unaligned load */
-  param_7 = CONCAT31(param_7._1_3_,bVar1);
+  /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
+  param_7 = STReplaceLowByte((uint32_t)(param_7), (uint8_t)(bVar1));
   /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
   _local_10 = CONCAT31(uStack_f,bVar2);
   if (DAT_00808a8f == '\0') {

@@ -1128,10 +1128,8 @@ LAB_00468493:
             if (iVar5 == 0xb) {
               if (this->field_04D9 == 0) {
                 iVar7 = (ushort)(this->field_04A9 * 200) + 300;
-                /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-                iVar5 = CONCAT22((short)((uint)iVar7 >> 0x10),this->field_04A7 + 1) * 0xc9;
-                /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-                iVar21 = CONCAT22((short)((uint)iVar5 >> 0x10),this->field_04A5 + 1);
+                iVar5 = STReplaceLowWord((uint32_t)(iVar7), (uint16_t)(this->field_04A7 + 1)) * 0xc9;
+                iVar21 = STReplaceLowWord((uint32_t)(iVar5), (uint16_t)(this->field_04A5 + 1));
                 /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
                 uVar4 = (*this->vtable->vfunc_10)
                                   (this->field_0041,this->field_0043,
@@ -1257,14 +1255,13 @@ LAB_00468493:
                 *(int *)&this->field_0x4d1 = iVar5;
                 if (0x45 < iVar5) {
                   if (this->field_04D9 == 0) {
-                    /* ST_PSEUDO[unresolved_register_input,packed_or_unaligned_piece]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention; expected named packed member, bit extract/compose, or unaligned load */
-                    iVar7 = CONCAT22((short)((uint)in_EDX >> 0x10),this->field_04C7 * 0xc9) + 100;
-                    /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
+                    /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
+                    iVar7 = STReplaceLowWord((uint32_t)(in_EDX), (uint16_t)(this->field_04C7 * 0xc9)) + 100;
                     uVar4 = (*this->vtable->vfunc_10)
                                       (this->field_0041,this->field_0043,
-                                       CONCAT22((short)((uint)iVar7 >> 0x10),this->field_0045),
+                                       STReplaceLowWord((uint32_t)(iVar7), (uint16_t)(this->field_0045)),
                                        this->field_04C5 * 0xc9 + 100,(short)iVar7,
-                                       CONCAT22((short)((uint)iVar5 >> 0x10),this->field_04C9 * 200)
+                                       STReplaceLowWord((uint32_t)(iVar5), (uint16_t)(this->field_04C9 * 200))
                                        + 100);
                     this->field_04CB = uVar4;
                     this->field_04D9 = 1;

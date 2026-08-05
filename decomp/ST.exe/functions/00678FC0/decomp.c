@@ -30,16 +30,14 @@ void __thiscall AiPlrClassTy::sub_00678FC0(AiPlrClassTy *this)
       }
       do {
         if (uVar9 < dVar8) {
-          /* ST_PSEUDO[dynamic_array_indexing]: expected DArrayAt<T>(pDVar7, uVar9) (runtime stride) */
-          piVar5 = (int *)(pDVar7->elementSize * uVar9 + (int)pDVar7->data);
+          piVar5 = DArrayAt<int>(pDVar7, uVar9);
         }
         else {
           piVar5 = nullptr;
         }
         uVar1 = uVar9 + 1;
         if (uVar1 < dVar8) {
-          /* ST_PSEUDO[dynamic_array_indexing]: expected DArrayAt<T>(pDVar7, uVar1) (runtime stride) */
-          piVar3 = (int *)(pDVar7->elementSize * uVar1 + (int)pDVar7->data);
+          piVar3 = DArrayAt<int>(pDVar7, uVar1);
         }
         else {
           piVar3 = nullptr;
@@ -51,8 +49,7 @@ LAB_00679056:
           }
           else {
             if (uVar1 < dVar8) {
-              /* ST_PSEUDO[dynamic_array_indexing]: expected DArrayAt<T>(pDVar7, uVar1) (runtime stride) */
-              piVar5 = (int *)(pDVar7->elementSize * uVar1 + (int)pDVar7->data);
+              piVar5 = DArrayAt<int>(pDVar7, uVar1);
             }
             else {
               piVar5 = nullptr;
@@ -71,8 +68,7 @@ LAB_00679087:
           }
           else {
             if (uVar9 < dVar8) {
-              /* ST_PSEUDO[dynamic_array_indexing]: expected DArrayAt<T>(pDVar7, uVar9) (runtime stride) */
-              piVar5 = (int *)(pDVar7->elementSize * uVar9 + (int)pDVar7->data);
+              piVar5 = DArrayAt<int>(pDVar7, uVar9);
             }
             else {
               piVar5 = nullptr;

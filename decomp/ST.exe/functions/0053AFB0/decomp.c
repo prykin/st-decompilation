@@ -110,8 +110,7 @@ int __thiscall PlayPanelTy::GetMessage(PlayPanelTy *this,STMessage *message)
               do {
                 uVar8 = local_8 & 0xff;
                 bVar13 = bVar13 + 1;
-                /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-                local_8 = CONCAT31(local_8._1_3_,bVar13);
+                local_8 = STReplaceLowByte((uint32_t)(local_8), (uint8_t)(bVar13));
                 (&DAT_00808af7)[uVar8 * 0x9c] = 1;
               } while (bVar13 < DAT_00808aaf);
             }
@@ -137,8 +136,7 @@ int __thiscall PlayPanelTy::GetMessage(PlayPanelTy *this,STMessage *message)
                 do {
                   iVar7 = (local_8 & 0xff) * 0x9c;
                   bVar3 = (&DAT_00808af4)[iVar7];
-                  /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-                  local_c = (ushort *)CONCAT31(local_c._1_3_,bVar3);
+                  local_c = (ushort *)STReplaceLowByte((uint32_t)(local_c), (uint8_t)(bVar3));
                   if (DAT_00808a8f == '\0') {
                     if (bVar3 == DAT_0080874d) {
 LAB_0053b42f:
@@ -170,8 +168,7 @@ LAB_0053b42f:
                   }
                   (&DAT_00808af7)[iVar7] = bVar14;
                   bVar13 = bVar13 + 1;
-                  /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-                  local_8 = CONCAT31(local_8._1_3_,bVar13);
+                  local_8 = STReplaceLowByte((uint32_t)(local_8), (uint8_t)(bVar13));
                 } while (bVar13 < DAT_00808aaf);
               }
             }
@@ -199,8 +196,7 @@ LAB_0053b42f:
               do {
                 iVar7 = (local_8 & 0xff) * 0x9c;
                 bVar3 = (&DAT_00808af4)[iVar7];
-                /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-                local_c = (ushort *)CONCAT31(local_c._1_3_,bVar3);
+                local_c = (ushort *)STReplaceLowByte((uint32_t)(local_c), (uint8_t)(bVar3));
                 if (DAT_00808a8f == '\0') {
                   if (bVar3 == DAT_0080874d) {
 LAB_0053b2ea:
@@ -232,8 +228,7 @@ LAB_0053b2ea:
                 }
                 bVar13 = bVar13 + 1;
                 (&DAT_00808af7)[iVar7] = '\x01' - bVar14;
-                /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-                local_8 = CONCAT31(local_8._1_3_,bVar13);
+                local_8 = STReplaceLowByte((uint32_t)(local_8), (uint8_t)(bVar13));
               } while (bVar13 < DAT_00808aaf);
             }
           }
@@ -346,8 +341,7 @@ LAB_0053b2ea:
       }
       else {
         bVar13 = (char)message->id - 0x2f;
-        /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-        local_c = (ushort *)CONCAT31(local_c._1_3_,bVar13);
+        local_c = (ushort *)STReplaceLowByte((uint32_t)(local_c), (uint8_t)(bVar13));
         uVar8 = (uint)((&DAT_00808af7)[(this_00->field_01C9 + (uint)bVar13) * 0x9c] == '\0');
       }
       pbVar11 = (byte *)FUN_0070b3a0((AnonShape_GLOBAL_0081175C_57F682DD *)this_00->field_01D9,uVar8
@@ -380,8 +374,7 @@ LAB_0053b2ea:
       if ((bVar14) && (DAT_00808783 != '\x01')) {
         iVar7 = (this_00->field_01C9 + (uint)(byte)((char)message->id + 1)) * 0x9c;
         bVar13 = (&DAT_00808af4)[iVar7];
-        /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-        local_10 = CONCAT31(local_10._1_3_,bVar13);
+        local_10 = STReplaceLowByte((uint32_t)(local_10), (uint8_t)(bVar13));
         if ((DAT_00808a8f == '\0') &&
            (((((&DAT_00808af5)[iVar7] != '\0' && (DAT_0080874d != 0xff)) && (bVar13 != 0xff)) &&
             (DAT_0080874d != bVar13)))) {
@@ -445,8 +438,7 @@ LAB_0053b2ea:
     case 0xb515:
     case 0xb516:
       piVar16 = (message->arg1).ptr;
-      /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-      local_10 = CONCAT31(local_10._1_3_,(char)message->id - 0xf);
+      local_10 = STReplaceLowByte((uint32_t)(local_10), (uint8_t)((char)message->id - 0xf));
       local_c = (ushort *)(*piVar16 - this_00->field_003C);
       if (this_00->field_005C == 0) {
         iVar7 = this_00->field_0048;
@@ -466,8 +458,7 @@ LAB_0053b2ea:
       if ((message->arg0).words.low != 0) {
         iVar7 = (this_00->field_01C9 + (local_10 & 0xff)) * 0x9c;
         bVar13 = (&DAT_00808af4)[iVar7];
-        /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-        local_10 = CONCAT31(local_10._1_3_,bVar13);
+        local_10 = STReplaceLowByte((uint32_t)(local_10), (uint8_t)(bVar13));
         if (((DAT_0080874d != 0xff) && (bVar13 != 0xff)) && (DAT_0080874d != bVar13)) {
           iVar12 = -1;
           uVar8 = (uint)DAT_0080874d;
@@ -538,8 +529,7 @@ LAB_0053b2ea:
     case MESS_PLAYPANELTY_B526:
       puVar2 = &this_00->field_0x18;
       bVar13 = (char)message->id - 0x1f;
-      /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-      local_10 = CONCAT31(local_10._1_3_,bVar13);
+      local_10 = STReplaceLowByte((uint32_t)(local_10), (uint8_t)(bVar13));
       iVar7 = this_00->field_01C9 + (uint)bVar13;
       (&DAT_00808af7)[iVar7 * 0x9c] = (&DAT_00808af7)[iVar7 * 0x9c] == '\0';
       this_00->field_0028 = 5;

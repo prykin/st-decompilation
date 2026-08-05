@@ -172,10 +172,8 @@ int __thiscall STBoatC::Build(STBoatC *this,uint param_1)
           (g_bulkInitializedRecords_008087C7[(int)pSVar5[1].vtable].field_0022 < 8)))) {
         bVar26 = *(byte *)&pSVar5[1].vtable;
         bVar1 = *(byte *)&this->field_0024;
-        /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-        local_10 = (undefined4 *)CONCAT31(local_10._1_3_,bVar26);
-        /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-        local_1c = CONCAT31(local_1c._1_3_,bVar1);
+        local_10 = (undefined4 *)STReplaceLowByte((uint32_t)(local_10), (uint8_t)(bVar26));
+        local_1c = STReplaceLowByte((uint32_t)(local_1c), (uint8_t)(bVar1));
         if (DAT_00808a8f == '\0') {
           if (bVar26 == bVar1) {
 LAB_0046b5ac:
@@ -249,10 +247,8 @@ LAB_0046b5ac:
     if (SVar4 == CASE_2) {
       if (this->field_050C == 0) {
         iVar9 = (ushort)(this->field_0500 * 200) + 100;
-        /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-        iVar13 = CONCAT22((short)((uint)iVar9 >> 0x10),this->field_04DF + 1) * 0xc9;
-        /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-        iVar24 = CONCAT22((short)((uint)iVar13 >> 0x10),this->field_04DD + 1);
+        iVar13 = STReplaceLowWord((uint32_t)(iVar9), (uint16_t)(this->field_04DF + 1)) * 0xc9;
+        iVar24 = STReplaceLowWord((uint32_t)(iVar13), (uint16_t)(this->field_04DD + 1));
         /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
         uVar7 = (*this->vtable->vfunc_10)
                           (this->field_0041,this->field_0043,
@@ -573,12 +569,10 @@ cf_common_exit_0046C04E:
     }
     if (SVar4 == CASE_6) {
       if (this->field_050C == 0) {
-        /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-        iVar13 = CONCAT22((short)((uint)pSVar14 >> 0x10),this->field_04FE * 0xc9) + 100;
-        /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
+        iVar13 = STReplaceLowWord((uint32_t)(pSVar14), (uint16_t)(this->field_04FE * 0xc9)) + 100;
         uVar7 = (*this->vtable->vfunc_10)
                           (this->field_0041,this->field_0043,
-                           CONCAT22((short)((uint)iVar13 >> 0x10),this->field_0045),
+                           STReplaceLowWord((uint32_t)(iVar13), (uint16_t)(this->field_0045)),
                            this->field_04FC * 0xc9 + 100,(short)iVar13,
                            (ushort)(this->field_0500 * 200) + 100);
         this->field_0506 = uVar7;

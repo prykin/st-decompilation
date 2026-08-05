@@ -30,19 +30,16 @@ PopUpTy::OutProc(PopUpTy *this,int *param_1,int param_2,undefined4 param_3,int p
          (local_10->field_0090 != nullptr)) {
         bVar4 = 0xff;
         bVar2 = 0;
-        /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-        local_c = CONCAT31(local_c._1_3_,0xff);
+        local_c = STReplaceLowByte((uint32_t)(local_c), (uint8_t)(0xff));
         local_8 = local_8 & 0xffffff00;
         do {
           if (local_10->entries[local_8 & 0xff] == param_2) {
-            /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-            local_c = CONCAT31(local_c._1_3_,bVar2);
+            local_c = STReplaceLowByte((uint32_t)(local_c), (uint8_t)(bVar2));
             bVar4 = bVar2;
             break;
           }
           bVar2 = bVar2 + 1;
-          /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-          local_8 = CONCAT31(local_8._1_3_,bVar2);
+          local_8 = STReplaceLowByte((uint32_t)(local_8), (uint8_t)(bVar2));
         } while (bVar2 < 0xf);
         if (bVar4 != 0xff) {
           Library::DKW::DDX::FUN_006b4680

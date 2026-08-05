@@ -18,7 +18,6 @@ int __cdecl FUN_006a1070(ushort param_1)
     }
     iVar1 = iVar1 + 1;
   } while ((short)iVar1 < 0xf);
-  /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-  return CONCAT22((short)((uint)iVar1 >> 0x10),0xffff);
+  return STReplaceLowWord((uint32_t)(iVar1), (uint16_t)(0xffff));
 }
 

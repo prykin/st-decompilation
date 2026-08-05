@@ -16,14 +16,14 @@
 int __thiscall STParticleC::sub_00629E60(STParticleC *this,int param_1)
 
 {
-  uint uVar1;
+  byte bVar1;
   int iVar2;
 
   iVar2 = -1;
   if (param_1 != 0) {
     this->field_0040 = 1;
-    uVar1 = sub_0062B4A0(this);
-    this->field_00D6 = (char)uVar1;
+    bVar1 = sub_0062B4A0(this);
+    this->field_00D6 = bVar1;
   }
   if (this->field_00D6 != '\0') {
     switch(this->field_00C2) {

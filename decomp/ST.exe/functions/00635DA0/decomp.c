@@ -60,8 +60,7 @@ undefined4 __cdecl FUN_00635da0(int param_1,int param_2,int param_3)
        (uVar3 = (uint)pVVar2->field_004C[param_2 + uVar3 * pVVar2->field_0030], uVar3 == 0)) {
       return 0;
     }
-    /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-    return CONCAT31((int3)(uVar3 >> 8),1);
+    return STReplaceLowByte((uint32_t)(uVar3), (uint8_t)(1));
   }
   return uVar3;
 }

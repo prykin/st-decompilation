@@ -199,8 +199,7 @@ LAB_005722ed:
         if (iVar8 != 0) {
           local_18 = 0;
           local_14 = 0;
-          /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-          _local_1c = CONCAT31((int3)((uint)DAT_007ca690 >> 8),*(undefined1 *)((int)this + 0x640));
+          _local_1c = STReplaceLowByte((uint32_t)(DAT_007ca690), (uint8_t)(*(undefined1 *)((int)this + 0x640)));
           UVar5 = GetDriveTypeA(&local_1c);
           if (UVar5 == 5) {
             uVar6 = 0xffffffff;

@@ -30,8 +30,7 @@ void __thiscall AiPlrClassTy::sub_0067A240(AiPlrClassTy *this,undefined *param_1
       do {
         if (((pDVar4 != nullptr) && (-1 < (int)uVar5)) && ((int)uVar5 < (int)uVar1)) {
           if (uVar5 < uVar1) {
-            /* ST_PSEUDO[dynamic_array_indexing]: expected DArrayAt<T>(pDVar4, uVar5) (runtime stride) */
-            puVar2 = (undefined4 *)(pDVar4->elementSize * uVar5 + (int)pDVar4->data);
+            puVar2 = DArrayAt<undefined4>(pDVar4, uVar5);
           }
           else {
             puVar2 = nullptr;

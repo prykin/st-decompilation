@@ -300,8 +300,7 @@ STGroupBoatC::sub_00498D20
     if (0 < (int)data) {
       do {
         if (uVar7 < pDVar3->count) {
-          /* ST_PSEUDO[dynamic_array_indexing]: expected DArrayAt<T>(pDVar3, uVar7) (runtime stride) */
-          puVar2 = (undefined4 *)(pDVar3->elementSize * uVar7 + (int)pDVar3->data);
+          puVar2 = DArrayAt<undefined4>(pDVar3, uVar7);
         }
         else {
           puVar2 = nullptr;

@@ -155,9 +155,8 @@ LAB_0049e794:
     DArrayDestroy(pDVar6);
   }
   else {
-    /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
     STAllPlayersC::RegisterPGPair
-              (g_allPlayers_007FA174,CONCAT31((int3)(local_14 >> 8),pSVar2->field_0024),
+              (g_allPlayers_007FA174,STReplaceLowByte((uint32_t)(local_14), (uint8_t)(pSVar2->field_0024)),
                &local_10->flags,&local_c->flags);
 LAB_0049e790:
     if (pDVar6 != nullptr) goto LAB_0049e794;

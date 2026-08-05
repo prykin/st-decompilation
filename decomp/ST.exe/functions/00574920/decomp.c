@@ -75,8 +75,7 @@ FUN_00574920(AnonShape_00574920_7507981E *param_1,int param_2,int param_3,undefi
           pDVar2 = param_1->field_0451;
           uVar10 = pDVar2->iteratorIndex;
           if (uVar10 < pDVar2->count) {
-            /* ST_PSEUDO[dynamic_array_indexing]: expected DArrayAt<T>(pDVar2, uVar10) (runtime stride) */
-            piVar12 = (int *)(pDVar2->elementSize * uVar10 + (int)pDVar2->data);
+            piVar12 = DArrayAt<int>(pDVar2, uVar10);
             pDVar2->iteratorIndex = uVar10 + 1;
           }
           else {
@@ -119,8 +118,7 @@ FUN_00574920(AnonShape_00574920_7507981E *param_1,int param_2,int param_3,undefi
               pDVar2 = param_1->field_0451;
               uVar10 = pDVar2->iteratorIndex;
               if (uVar10 < pDVar2->count) {
-                /* ST_PSEUDO[dynamic_array_indexing]: expected DArrayAt<T>(pDVar2, uVar10) (runtime stride) */
-                piVar12 = (int *)(pDVar2->elementSize * uVar10 + (int)pDVar2->data);
+                piVar12 = DArrayAt<int>(pDVar2, uVar10);
                 pDVar2->iteratorIndex = uVar10 + 1;
               }
               else {
@@ -151,8 +149,7 @@ LAB_00574b4a:
                   pDVar2 = param_1->field_0451;
                   uVar10 = pDVar2->iteratorIndex;
                   if (uVar10 < pDVar2->count) {
-                    /* ST_PSEUDO[dynamic_array_indexing]: expected DArrayAt<T>(pDVar2, uVar10) (runtime stride) */
-                    pvVar5 = (void *)(pDVar2->elementSize * uVar10 + (int)pDVar2->data);
+                    pvVar5 = DArrayAt<void>(pDVar2, uVar10);
                     pDVar2->iteratorIndex = uVar10 + 1;
                   }
                   else {

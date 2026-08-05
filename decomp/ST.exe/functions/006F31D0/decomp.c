@@ -370,9 +370,8 @@ LAB_006f3a60:
                       pbVar17 = FUN_006cfe10(local_34,(int)local_18);
                     }
                     uVar2 = *(ushort *)(local_2c[0x29] + 2 + local_4c * 4);
-                    /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
                     local_44 = (AnonShape_006F31D0_0BFF23DC *)
-                               CONCAT22((short)(local_4c >> 0x10),uVar2);
+                               STReplaceLowWord((uint32_t)(local_4c), (uint16_t)(uVar2));
                     if ((uVar2 & 0x100) == 0) {
                       if ((uVar2 & 0x10) == 0) {
                         if ((local_3c == 0) || ((uVar2 & 8) != 0)) {

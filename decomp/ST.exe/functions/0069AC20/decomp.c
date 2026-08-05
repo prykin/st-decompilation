@@ -18,8 +18,7 @@ int FUN_0069ac20(int param_1,int param_2,int param_3,DArrayTy *param_4)
     if (0 < (int)dVar1) {
       while( true ) {
         if (uVar4 < param_4->count) {
-          /* ST_PSEUDO[dynamic_array_indexing]: expected DArrayAt<T>(param_4, uVar4) (runtime stride) */
-          psVar3 = (short *)(param_4->elementSize * uVar4 + (int)param_4->data);
+          psVar3 = DArrayAt<short>(param_4, uVar4);
         }
         else {
           psVar3 = nullptr;

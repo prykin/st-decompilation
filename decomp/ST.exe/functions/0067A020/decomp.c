@@ -30,8 +30,7 @@ AiPlrClassTy::sub_0067A020(AiPlrClassTy *this,AnonShape_0068FD00_A5257008 *param
       do {
         if (((pDVar3 != nullptr) && (-1 < (int)uVar4)) && ((int)uVar4 < (int)uVar1)) {
           if (uVar4 < uVar1) {
-            /* ST_PSEUDO[dynamic_array_indexing]: expected DArrayAt<T>(pDVar3, uVar4) (runtime stride) */
-            puVar2 = (undefined4 *)(pDVar3->elementSize * uVar4 + (int)pDVar3->data);
+            puVar2 = DArrayAt<undefined4>(pDVar3, uVar4);
           }
           else {
             puVar2 = nullptr;

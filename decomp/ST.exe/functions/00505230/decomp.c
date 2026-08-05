@@ -72,21 +72,18 @@ void __thiscall CPanelTy::PaintMunition(CPanelTy *this,int param_1)
       case 4:
       case 5:
         goto cf_continue_loop_00505716;
-      /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
       case 2:
-        local_14 = CONCAT31(local_14._1_3_,1);
+        local_14 = STReplaceLowByte((uint32_t)(local_14), (uint8_t)(1));
         break;
       case 3:
         goto switchD_005052d8_caseD_5;
       case 6:
         goto switchD_005052d8_caseD_4;
-      /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
       case 7:
-        local_14 = CONCAT31(local_14._1_3_,5);
+        local_14 = STReplaceLowByte((uint32_t)(local_14), (uint8_t)(5));
         break;
-      /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
       case 8:
-        local_14 = CONCAT31(local_14._1_3_,2);
+        local_14 = STReplaceLowByte((uint32_t)(local_14), (uint8_t)(2));
         break;
       default:
         goto switchD_005052d8_default;
@@ -100,20 +97,17 @@ void __thiscall CPanelTy::PaintMunition(CPanelTy *this,int param_1)
     case 7:
     case 8:
       goto cf_continue_loop_00505716;
-    /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
     case 4:
 switchD_005052d8_caseD_4:
-      local_14 = CONCAT31(local_14._1_3_,3);
+      local_14 = STReplaceLowByte((uint32_t)(local_14), (uint8_t)(3));
       break;
-    /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
     case 5:
 switchD_005052d8_caseD_5:
-      local_14 = CONCAT31(local_14._1_3_,4);
+      local_14 = STReplaceLowByte((uint32_t)(local_14), (uint8_t)(4));
       break;
-    /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
     default:
 switchD_005052d8_default:
-      local_14 = CONCAT31(local_14._1_3_,local_6);
+      local_14 = STReplaceLowByte((uint32_t)(local_14), (uint8_t)(local_6));
     }
 LAB_0050530c:
     local_24 = pCVar9;
@@ -285,8 +279,7 @@ switchD_00505324_default:
         DibPut((AnonShape_006B5B10_E0D06CF1 *)pCVar2->field_0194,param_1 + 0x4d + uVar8 * 4,local_20
                ,'\x01',pbVar5);
         bVar7 = (byte)local_18 + 1;
-        /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-        local_18 = CONCAT31(local_18._1_3_,bVar7);
+        local_18 = STReplaceLowByte((uint32_t)(local_18), (uint8_t)(bVar7));
         uVar8 = (uint)bVar7;
       } while (uVar8 < local_1c);
     }

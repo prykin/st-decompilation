@@ -48,8 +48,7 @@ void __cdecl FUN_00575460(AnonShape_00575460_06C413C6 *param_1)
           do {
             uVar2 = array->iteratorIndex;
             if (array->count <= uVar2) goto LAB_0057554f;
-            /* ST_PSEUDO[dynamic_array_indexing]: expected DArrayAt<T>(array, uVar2) (runtime stride) */
-            puVar6 = (undefined4 *)(array->elementSize * uVar2 + (int)array->data);
+            puVar6 = DArrayAt<undefined4>(array, uVar2);
             array->iteratorIndex = uVar2 + 1;
             if (puVar6 == nullptr) goto LAB_0057554f;
           } while (*value != (void *)*puVar6);

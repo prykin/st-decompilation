@@ -126,20 +126,17 @@ undefined4 __thiscall STGroupBoatC::GrpAttack(STGroupBoatC *this,int param_1)
       }
       pDVar7 = Library::DKW::TBL::DArrayCreate(nullptr,1,4,1);
       pSVar13->field_020E = pDVar7;
-      /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-      local_c = CONCAT22((short)((uint)pDVar7 >> 0x10),pSVar13->field_00F3);
+      local_c = STReplaceLowWord((uint32_t)(pDVar7), (uint16_t)(pSVar13->field_00F3));
       iVar6 = (int)pSVar13->field_00F3;
       local_18 = 0;
       if (iVar6 < pSVar13->field_00F9 + iVar6) {
         do {
           sVar5 = pSVar13->field_00F5;
-          /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-          local_14 = CONCAT22((short)((uint)iVar6 >> 0x10),sVar5);
+          local_14 = STReplaceLowWord((uint32_t)(iVar6), (uint16_t)(sVar5));
           iVar6 = local_c;
           if ((int)sVar5 < (int)pSVar13->field_00FB + (int)sVar5) {
             do {
-              /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-              local_10 = CONCAT22((short)((uint)iVar6 >> 0x10),pSVar13->field_00F7);
+              local_10 = STReplaceLowWord((uint32_t)(iVar6), (uint16_t)(pSVar13->field_00F7));
               iVar6 = (int)pSVar13->field_00F7;
               if (iVar6 < pSVar13->field_00FD + iVar6) {
                 do {

@@ -175,12 +175,10 @@ switchD_00474a47_caseD_2:
       }
     }
     if (this->field_05C4 == 1) {
-      /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-      iVar10 = CONCAT22((short)((uint)pSVar11 >> 0x10),*(short *)&this->field_0x5ac * 0xc9) + 100;
-      /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
+      iVar10 = STReplaceLowWord((uint32_t)(pSVar11), (uint16_t)(*(short *)&this->field_0x5ac * 0xc9)) + 100;
       uVar5 = (*this->vtable->vfunc_10)
                         (this->field_0041,this->field_0043,
-                         CONCAT22((short)((uint)iVar10 >> 0x10),this->field_0045),
+                         STReplaceLowWord((uint32_t)(iVar10), (uint16_t)(this->field_0045)),
                          this->field_05AA * 0xc9 + 100,(short)iVar10,
                          (ushort)(*(short *)&this->field_0x5ae * 200) + 100);
       this->field_05C8 = uVar5;

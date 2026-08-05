@@ -21,8 +21,7 @@ undefined4 __fastcall FUN_006646e0(int param_1)
     bVar3 = dVar1 != 0;
     do {
       if (bVar3) {
-        /* ST_PSEUDO[dynamic_array_indexing]: expected DArrayAt<T>(array, index) (runtime stride) */
-        puVar2 = (uint *)(array->elementSize * index + (int)array->data);
+        puVar2 = DArrayAt<uint>(array, index);
       }
       else {
         puVar2 = nullptr;

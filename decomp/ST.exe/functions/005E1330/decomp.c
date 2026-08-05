@@ -299,8 +299,7 @@ void __thiscall MTaskTy::PlayScript(MTaskTy *this)
               piVar19 = piVar19 + 1;
               iVar9 = iVar9 + -1;
             } while (iVar9 != 0);
-            /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-            local_90 = CONCAT31((int3)((uint)local_90 >> 8),bVar8);
+            local_90 = STReplaceLowByte((uint32_t)(local_90), (uint8_t)(bVar8));
             local_80 = (DArrayTy *)(uint)bVar8;
             if (local_80 == (DArrayTy *)0x2) {
               if ((DAT_00807340 == 1) || (DAT_00807340 == 3)) {
@@ -475,8 +474,7 @@ LAB_005e22f4:
               }
               pDVar17 = Library::DKW::TBL::SArrayCreate(nullptr,10,10);
               g_startSystem_0081176C->field_0548 = &pDVar17->flags;
-              /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-              local_ec = CONCAT31(local_ec._1_3_,(this_01->field_06C7 != '\x01') + -1) & 0xffffff02;
+              local_ec = STReplaceLowByte((uint32_t)(local_ec), (uint8_t)((this_01->field_06C7 != '\x01') + -1)) & 0xffffff02;
               LoadResourceString(0x2347,g_module_00807618);
               wsprintfA((LPSTR)local_c38,"&%1d %s:");
               Library::DKW::TBL::FUN_006b5aa0(g_startSystem_0081176C->field_0548,(char *)local_c38);
@@ -771,8 +769,7 @@ LAB_005e24c5:
                     FUN_006b5570(pDVar17);
                   }
                   bVar8 = (char)local_7c + 1;
-                  /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-                  local_7c = CONCAT31(local_7c._1_3_,bVar8);
+                  local_7c = STReplaceLowByte((uint32_t)(local_7c), (uint8_t)(bVar8));
                 } while (bVar8 < 3);
                 FUN_006b2330(g_ddxContext_008075A8,&local_13c,*(uint *)((int)piVar22 + 5),0x403db4,
                              *(int *)((int)piVar22 + 0x22),*(uint *)((int)piVar22 + 0x26),
@@ -1839,8 +1836,7 @@ LAB_005e195d:
           goto LAB_005e34e0;
         }
         do {
-          /* ST_PSEUDO[dynamic_array_indexing]: expected DArrayAt<T>(pDVar17, uVar31) (runtime stride) */
-          pSVar27 = (SpriteClassTy *)(pDVar17->elementSize * uVar31 + (int)pDVar17->data);
+          pSVar27 = DArrayAt<SpriteClassTy>(pDVar17, uVar31);
 LAB_005e34e0:
           if ((pSVar27->field_0004 != -1) &&
              ((*(char *)&pSVar27[1].vtable == '\x01' || (*(char *)&pSVar27[1].vtable == '\x03')))) {

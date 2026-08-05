@@ -114,15 +114,13 @@ LAB_005c1806:
   if (pAVar4->field_0004 < 2) {
     uVar2 = pAVar4->field_0000;
     cVar8 = -1;
-    /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-    local_c = CONCAT31(local_c._1_3_,0xff);
+    local_c = STReplaceLowByte((uint32_t)(local_c), (uint8_t)(0xff));
     if (1 < uVar2) {
       cVar8 = DAT_0080c846;
       if (uVar2 != 2) {
         cVar8 = *(char *)((int)&DAT_0080c83a + uVar2 + 2);
       }
-      /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-      local_c = CONCAT31(local_c._1_3_,cVar8);
+      local_c = STReplaceLowByte((uint32_t)(local_c), (uint8_t)(cVar8));
     }
     if (cVar8 != -1) {
       switch(local_c & 0xff) {

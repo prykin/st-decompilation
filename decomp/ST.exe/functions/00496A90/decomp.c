@@ -19,8 +19,7 @@ uint FUN_00496a90(int param_1,int param_2,int param_3,undefined4 param_4,int par
   if (0 < (int)dVar1) {
     do {
       if (uVar4 < pDVar5->count) {
-        /* ST_PSEUDO[dynamic_array_indexing]: expected DArrayAt<T>(pDVar5, uVar4) (runtime stride) */
-        piVar3 = (int *)(pDVar5->elementSize * uVar4 + (int)pDVar5->data);
+        piVar3 = DArrayAt<int>(pDVar5, uVar4);
       }
       else {
         piVar3 = nullptr;

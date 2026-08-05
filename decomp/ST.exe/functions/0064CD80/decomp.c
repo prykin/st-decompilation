@@ -90,8 +90,7 @@ int __thiscall AiEventClassTy::InitData(AiEventClassTy *this,int *param_1)
       bVar15 = pDVar4->count != 0;
       do {
         if (bVar15) {
-          /* ST_PSEUDO[dynamic_array_indexing]: expected DArrayAt<T>(pDVar4, uVar11) (runtime stride) */
-          pvVar13 = (void *)(pDVar4->elementSize * uVar11 + (int)pDVar4->data);
+          pvVar13 = DArrayAt<void>(pDVar4, uVar11);
         }
         else {
           pvVar13 = nullptr;

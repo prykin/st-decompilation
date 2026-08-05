@@ -110,8 +110,7 @@ LAB_0067b724:
                       }
                       else {
                         if (local_c < uVar5) {
-                          /* ST_PSEUDO[dynamic_array_indexing]: expected DArrayAt<T>(pDVar8, local_c) (runtime stride) */
-                          puVar6 = (undefined4 *)(pDVar8->elementSize * local_c + (int)pDVar8->data);
+                          puVar6 = DArrayAt<undefined4>(pDVar8, local_c);
                         }
                         else {
                           puVar6 = nullptr;

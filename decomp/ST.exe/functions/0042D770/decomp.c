@@ -35,8 +35,7 @@ uint FUN_0042d770(char param_1,int *param_2)
   *param_2 = (int)pDVar4;
   dVar1 = array->count;
   if (dVar1 == 0) {
-    /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-    return CONCAT22((short)((uint)pDVar4 >> 0x10),0xffff);
+    return STReplaceLowWord((uint32_t)(pDVar4), (uint16_t)(0xffff));
   }
   pDVar4 = Library::DKW::TBL::DArrayCreate(nullptr,0,2,1);
   local_14 = 0;
@@ -48,9 +47,8 @@ uint FUN_0042d770(char param_1,int *param_2)
         objPtr = STAllPlayersC::GetObjPtr(local_24,param_1,(ushort)local_c,CASE_1);
         iVar5 = thunk_FUN_00493cd0(objPtr);
         pDVar4 = local_10;
-        /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
         if ((iVar5 == 0) &&
-           (local_28 = CONCAT22((short)((uint)objPtr >> 0x10),objPtr->field_0030),
+           (local_28 = STReplaceLowWord((uint32_t)(objPtr), (uint16_t)(objPtr->field_0030)),
            objPtr->field_0030 != -1)) {
           local_1c = iVar5;
           Library::DKW::TBL::DArrayAppend(local_10,&local_28);

@@ -11,9 +11,8 @@ AnonShape_00683780_11EA4E23 * __cdecl FUN_0067fca0(uint param_1)
   int *piVar1;
   AnonShape_00683780_11EA4E23 *pAVar2;
 
-  /* ST_PSEUDO[dynamic_array_indexing]: expected DArrayAt<T>(g_array_00848A38, param_1) (runtime stride) */
   if (((g_array_00848A38->count <= param_1) ||
-      (piVar1 = (int *)(g_array_00848A38->elementSize * param_1 + (int)g_array_00848A38->data),
+      (piVar1 = DArrayAt<int>(g_array_00848A38, param_1),
       piVar1 == nullptr)) ||
      (pAVar2 = (AnonShape_00683780_11EA4E23 *)*piVar1, pAVar2 == nullptr)
      ) {

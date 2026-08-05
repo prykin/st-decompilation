@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 int __fastcall FUN_0065dc00(AiFltClassTy *param_1,undefined4 param_2,uint param_3,char param_4)
 
@@ -31,8 +33,7 @@ int __fastcall FUN_0065dc00(AiFltClassTy *param_1,undefined4 param_2,uint param_
     if (0 < (int)dVar2) {
       do {
         if (uVar6 < dVar2) {
-          /* ST_PSEUDO[dynamic_array_indexing]: expected DArrayAt<T>(array, uVar6) (runtime stride) */
-          puVar3 = (ushort *)(array->elementSize * uVar6 + (int)array->data);
+          puVar3 = DArrayAt<ushort>(array, uVar6);
         }
         else {
           puVar3 = nullptr;

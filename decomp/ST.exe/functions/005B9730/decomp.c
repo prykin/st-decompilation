@@ -42,8 +42,7 @@ PrividerTy::OutListProc
       bVar4 = bVar2;
       if (local_c->entries[local_8 & 0xff] == param_2) break;
       bVar2 = bVar2 + 1;
-      /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-      local_8 = CONCAT31(local_8._1_3_,bVar2);
+      local_8 = STReplaceLowByte((uint32_t)(local_8), (uint8_t)(bVar2));
       bVar4 = 0xff;
     } while (bVar2 < 0x16);
     if (bVar4 != 0xff) {

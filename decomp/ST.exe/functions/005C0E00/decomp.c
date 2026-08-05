@@ -65,8 +65,7 @@ void __thiscall MReportTy::SetCtrl(MReportTy *this)
         local_10 = &DAT_0080c522;
         pDVar2 = (&local_c->field_0347)[(byte)local_c->field_006A];
         if (local_c->field_006B < pDVar2->count) {
-          /* ST_PSEUDO[dynamic_array_indexing]: expected DArrayAt<T>(pDVar2, local_c->field_006B) (runtime stride) */
-          puVar6 = (byte *)(pDVar2->elementSize * local_c->field_006B + (int)pDVar2->data);
+          puVar6 = DArrayAt<byte>(pDVar2, local_c->field_006B);
         }
         else {
           puVar6 = nullptr;

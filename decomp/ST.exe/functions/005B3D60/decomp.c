@@ -284,8 +284,7 @@ void __thiscall MainMenuTy::SetMode(MainMenuTy *this,char param_1,int param_2)
       do {
         uVar13 = local_8 & 0xff;
         bVar7 = bVar7 + 1;
-        /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-        local_8 = CONCAT31(local_8._1_3_,bVar7);
+        local_8 = STReplaceLowByte((uint32_t)(local_8), (uint8_t)(bVar7));
         *(undefined4 *)((int)&this_00->field_00C9 + uVar13 * 0x1fb) = 0x200;
         *(undefined4 *)((int)&this_00->field_00CD + uVar13 * 0x1fb) = 0;
       } while (bVar7 < this_00->field_009A);
@@ -364,8 +363,7 @@ LAB_005b44f1:
       *(uint *)((int)&this_00->field_0123 + uVar13 * 0x1fb) = uVar13 * 0x96;
       (&this_00->field_00BB)[uVar13 * 0x1fb] = 1;
       bVar7 = (char)local_8 + 1;
-      /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-      local_8 = CONCAT31(local_8._1_3_,bVar7);
+      local_8 = STReplaceLowByte((uint32_t)(local_8), (uint8_t)(bVar7));
     } while (bVar7 < this_00->field_009A);
   }
   this_00->field_0065 = 3;

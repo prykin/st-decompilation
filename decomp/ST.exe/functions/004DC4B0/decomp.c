@@ -19,8 +19,9 @@ FUN_004dc4b0(void *this,TLOBaseTy_sub_004CAFC0_param_1Enum param_1,int param_2,u
   int iVar4;
 
   uVar2 = LookupRecordByte(*(char *)((int)this + 0x23d));
+  uVar2 = (int)(byte)uVar2;
   iVar1 = *(int *)((int)this + 0x245);
-  iVar4 = (uVar2 & 0xffU) - 1;
+  iVar4 = uVar2 + -1;
   if ((0xc < (int)param_1) && ((int)param_1 < 0xf)) {
     switch(*(undefined4 *)((int)this + 0x4d0)) {
     /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */

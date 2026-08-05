@@ -107,8 +107,7 @@ void __thiscall SettMapTy::DoneSettMap(SettMapTy *this)
         bVar8 = pDVar6->count != 0;
         do {
           if (bVar8) {
-            /* ST_PSEUDO[dynamic_array_indexing]: expected DArrayAt<T>(pDVar6, uVar7) (runtime stride) */
-            pvVar4 = (void *)(pDVar6->elementSize * uVar7 + (int)pDVar6->data);
+            pvVar4 = DArrayAt<void>(pDVar6, uVar7);
           }
           else {
             pvVar4 = nullptr;

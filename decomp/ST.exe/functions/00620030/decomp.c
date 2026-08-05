@@ -16,9 +16,8 @@ undefined4 __thiscall FUN_00620030(void *this,int param_1,int param_2,int param_
      (index = *(int *)(*(int *)((int)this + 0xc5) + 0xc) - 1, -1 < (int)index)) {
     do {
       array = *(DArrayTy **)((int)this + 0xc5);
-      /* ST_PSEUDO[dynamic_array_indexing]: expected DArrayAt<T>(array, index) (runtime stride) */
       if ((index < array->count) &&
-         (piVar1 = (int *)(array->elementSize * index + (int)array->data), piVar1 != nullptr)) {
+         (piVar1 = DArrayAt<int>(array, index), piVar1 != nullptr)) {
         if ((param_2 < piVar1[2] + -3) ||
            (((piVar1[2] + 3 < param_2 || (uVar2 = local_8, param_3 < piVar1[3] + -3)) ||
             (piVar1[3] + 3 < param_3)))) {

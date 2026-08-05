@@ -24,13 +24,13 @@ undefined4 __fastcall FUN_004d7270(AnonShape_004D7270_8F0A3C37 *param_1)
         thunk_FUN_00637c50(local_EAX_94,uVar4,iVar1);
       }
       uVar3 = LookupRecordByte(param_1->field_023D);
-      if (*(int *)(&DAT_00796230 + ((uVar3 & 0xffU) + param_1->field_0235 * 3) * 4) != 0) {
+      if (*(int *)(&DAT_00796230 + ((uint)(byte)uVar3 + param_1->field_0235 * 3) * 4) != 0) {
         iVar1 = *(int *)param_1;
         local_EAX_171 = LookupRecordByte(param_1->field_023D);
         /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
         (**(code **)(iVar1 + 0x90))
                   (3,*(undefined4 *)
-                      (&DAT_00796230 + ((local_EAX_171 & 0xffU) + param_1->field_0235 * 3) * 4));
+                      (&DAT_00796230 + ((uint)(byte)local_EAX_171 + param_1->field_0235 * 3) * 4));
       }
     }
   }

@@ -18,8 +18,7 @@ undefined4 __thiscall FUN_00664650(void *this,int param_1)
       bVar3 = dVar1 != 0;
       do {
         if (bVar3) {
-          /* ST_PSEUDO[dynamic_array_indexing]: expected DArrayAt<T>(array, index) (runtime stride) */
-          piVar2 = (int *)(array->elementSize * index + (int)array->data);
+          piVar2 = DArrayAt<int>(array, index);
         }
         else {
           piVar2 = nullptr;

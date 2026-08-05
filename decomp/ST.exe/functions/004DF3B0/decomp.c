@@ -27,8 +27,7 @@ undefined4 __fastcall FUN_004df3b0(TLOBaseTy *param_1)
         param_1->field_04DC = uVar2;
         TLOBaseTy::RotateSpr(param_1,0);
         dVar4 = param_1->slot_2C();
-        /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-        thunk_FUN_004b76d0(CONCAT31((int3)(dVar4 >> 8),*(undefined1 *)&param_1->field_0024),dVar4);
+        thunk_FUN_004b76d0(STReplaceLowByte((uint32_t)(dVar4), (uint8_t)(*(undefined1 *)&param_1->field_0024)),dVar4);
         if (param_1->field_0024 == (byte *)(uint)(byte)param_1->field_0010->field_112D) {
           thunk_FUN_004d8b70((char)param_1->field_0024);
         }
@@ -63,8 +62,7 @@ undefined4 __fastcall FUN_004df3b0(TLOBaseTy *param_1)
         param_1->field_04D0 = CASE_0;
         TLOBaseTy::RotateSpr(param_1,0);
         dVar4 = param_1->slot_2C();
-        /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-        thunk_FUN_004b7710(CONCAT31((int3)(dVar4 >> 8),*(undefined1 *)&param_1->field_0024),dVar4);
+        thunk_FUN_004b7710(STReplaceLowByte((uint32_t)(dVar4), (uint8_t)(*(undefined1 *)&param_1->field_0024)),dVar4);
         if (param_1->field_0024 == (byte *)(uint)(byte)param_1->field_0010->field_112D) {
           thunk_FUN_004d8b70((char)param_1->field_0024);
         }
@@ -78,8 +76,7 @@ undefined4 __fastcall FUN_004df3b0(TLOBaseTy *param_1)
       thunk_FUN_004c2c10((AnonShape_004C2C10_59B6D93C *)param_1);
       param_1->vfunc_90(3,0x26b);
       dVar4 = param_1->slot_2C();
-      /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-      thunk_FUN_004b7710(CONCAT31((int3)(dVar4 >> 8),*(undefined1 *)&param_1->field_0024),dVar4);
+      thunk_FUN_004b7710(STReplaceLowByte((uint32_t)(dVar4), (uint8_t)(*(undefined1 *)&param_1->field_0024)),dVar4);
       if (param_1->field_0024 == (byte *)(uint)(byte)param_1->field_0010->field_112D) {
         thunk_FUN_004d8b70((char)param_1->field_0024);
         return 0;

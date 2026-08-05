@@ -117,16 +117,14 @@ int __thiscall MReportTy::GetMessage(MReportTy *this,STMessage *message)
           if (pDVar7 != nullptr) {
             uVar17 = local_10->field_006B;
             if (uVar17 < pDVar7->count) {
-              /* ST_PSEUDO[dynamic_array_indexing]: expected DArrayAt<T>(pDVar7, uVar17) (runtime stride) */
-              pvVar15 = (void *)(pDVar7->elementSize * uVar17 + (int)pDVar7->data);
+              pvVar15 = DArrayAt<void>(pDVar7, uVar17);
             }
             else {
               pvVar15 = nullptr;
             }
             if (pvVar15 != nullptr) {
               if (uVar17 < pDVar7->count) {
-                /* ST_PSEUDO[dynamic_array_indexing]: expected DArrayAt<T>(pDVar7, uVar17) (runtime stride) */
-                piVar20 = (int *)(pDVar7->elementSize * uVar17 + (int)pDVar7->data);
+                piVar20 = DArrayAt<int>(pDVar7, uVar17);
               }
               else {
                 piVar20 = nullptr;
@@ -174,8 +172,7 @@ int __thiscall MReportTy::GetMessage(MReportTy *this,STMessage *message)
       pDVar7 = (&local_10->field_0347)[(byte)local_10->field_006A];
       if ((pDVar7 != nullptr) &&
          (uVar17 = (uint)(message->arg0).words.low, uVar17 < pDVar7->count)) {
-        /* ST_PSEUDO[dynamic_array_indexing]: expected DArrayAt<T>(pDVar7, uVar17) (runtime stride) */
-        piVar20 = (int *)(pDVar7->elementSize * uVar17 + (int)pDVar7->data);
+        piVar20 = DArrayAt<int>(pDVar7, uVar17);
       }
       if (piVar20 != nullptr) {
         ccFntTy::SetSurf(local_10->field_0087,(message->arg1).i32,0,0,0,0,0);
@@ -249,10 +246,8 @@ switchD_005c1b14_caseD_5:
         uVar2 = (message->arg1).words.low;
         uVar3 = (message->arg1).words.high;
         local_8 = nullptr;
-        /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-        local_18 = CONCAT22(local_18._2_2_,uVar2);
-        /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-        local_14 = CONCAT22(local_14._2_2_,uVar3);
+        local_18 = STReplaceLowWord((uint32_t)(local_18), (uint16_t)(uVar2));
+        local_14 = STReplaceLowWord((uint32_t)(local_14), (uint16_t)(uVar3));
         if ((local_10->field_0067 != '\0') && (local_10->field_0069 != '\0')) {
           piVar19 = &local_10->field_0357;
           local_c = 9;

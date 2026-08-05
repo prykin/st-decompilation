@@ -74,8 +74,7 @@ MMsgTy::SetMessage(MMsgTy *this,UINT param_1,char param_2,undefined4 *param_3,un
           puVar11 = (byte *)(&this_00->field_0x1a87 + uVar10 * 0x27);
           memmove(puVar11, puVar6, 0x27); /* compiler REP MOVS byte copy */
           bVar2 = (char)local_8 + 1;
-          /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-          local_8 = CONCAT31(local_8._1_3_,bVar2);
+          local_8 = STReplaceLowByte((uint32_t)(local_8), (uint8_t)(bVar2));
         } while (bVar2 < this_00->field_009A);
       }
       this_00->field_1CD0 = param_1;
@@ -117,8 +116,7 @@ MMsgTy::SetMessage(MMsgTy *this,UINT param_1,char param_2,undefined4 *param_3,un
         do {
           uVar10 = local_8 & 0xff;
           bVar2 = bVar2 + 1;
-          /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-          local_8 = CONCAT31(local_8._1_3_,bVar2);
+          local_8 = STReplaceLowByte((uint32_t)(local_8), (uint8_t)(bVar2));
           *(undefined4 *)(&this_00->field_0xbc + uVar10 * 0x1fb) = 0;
           (&this_00->field_0xe1)[uVar10 * 0x1fb] = 1;
         } while (bVar2 < this_00->field_009A);
@@ -320,12 +318,10 @@ LAB_005b8415:
           *(undefined4 *)((int)&this_00->field_0127 + uVar10 * 0x1fb) = this_00->field_0061;
           *(uint *)((int)&this_00->field_0123 + uVar10 * 0x1fb) = ((local_c & 0xff) + 1) * 100;
           if (*(int *)(&this_00->field_0x1a87 + uVar10 * 0x27) != 0) {
-            /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-            local_c = CONCAT31(local_c._1_3_,(char)local_c + '\x01');
+            local_c = STReplaceLowByte((uint32_t)(local_c), (uint8_t)((char)local_c + '\x01'));
           }
           bVar2 = bVar2 + 1;
-          /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-          local_8 = CONCAT31(local_8._1_3_,bVar2);
+          local_8 = STReplaceLowByte((uint32_t)(local_8), (uint8_t)(bVar2));
         } while (bVar2 < this_00->field_009A);
       }
       if (this_00->field_0065 == '\x02') {
@@ -361,8 +357,7 @@ LAB_005b8415:
               FUN_006b3af0(*(int **)((int)&this_00->field_024D + iVar3),uVar10);
             }
             bVar2 = (char)local_8 + 1;
-            /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-            local_8 = CONCAT31(local_8._1_3_,bVar2);
+            local_8 = STReplaceLowByte((uint32_t)(local_8), (uint8_t)(bVar2));
           } while (bVar2 < this_00->field_009A);
           g_currentExceptionFrame = local_78.previous;
           return 1;

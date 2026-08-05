@@ -4,9 +4,9 @@ uint __fastcall FUN_0044ce40(STAllPlayersC *param_1)
 {
   DArrayTy *array;
   dword dVar1;
-  STGameObjC *pSVar2;
-  undefined4 uVar3;
-  int iVar4;
+  byte bVar2;
+  STGameObjC *pSVar3;
+  undefined4 uVar4;
   uint uVar5;
   short sVar6;
   uint index;
@@ -23,10 +23,10 @@ uint __fastcall FUN_0044ce40(STAllPlayersC *param_1)
       DArrayGetElement(array,index,local_c);
       /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
       if ((local_c._0_2_ != 0xffff) &&
-         (pSVar2 = STAllPlayersC::GetObjPtr(local_8,DAT_0080874d,local_c._0_2_,CASE_1),
-         pSVar2 != nullptr)) {
-        uVar3 = (*pSVar2->vtable->vfunc_2C)();
-        switch(uVar3) {
+         (pSVar3 = STAllPlayersC::GetObjPtr(local_8,DAT_0080874d,local_c._0_2_,CASE_1),
+         pSVar3 != nullptr)) {
+        uVar4 = (*pSVar3->vtable->vfunc_2C)();
+        switch(uVar4) {
         case 1:
         case 2:
         case 3:
@@ -121,20 +121,19 @@ uint __fastcall FUN_0044ce40(STAllPlayersC *param_1)
     if (uVar5 != 0) {
       sVar6 = (short)(uVar5 >> 0x10);
       if (sVar6 == 0) {
-        if (((short)uVar5 != 0) && (iVar4 = LookupRecordByte(DAT_0080874d), (char)iVar4 == '\x03'))
-        {
+        if (((short)uVar5 != 0) && (bVar2 = LookupRecordByte(DAT_0080874d), bVar2 == 3)) {
           return 0x2000000;
         }
       }
       else if ((short)uVar5 != 0) {
-        iVar4 = LookupRecordByte(DAT_0080874d);
-        return (-(uint)((char)iVar4 != '\x03') & 0xfe002000) + 0x2000000;
+        bVar2 = LookupRecordByte(DAT_0080874d);
+        return (-(uint)(bVar2 != 3) & 0xfe002000) + 0x2000000;
       }
-      if ((sVar6 != 0) && (iVar4 = LookupRecordByte(DAT_0080874d), (char)iVar4 != '\x03')) {
+      if ((sVar6 != 0) && (bVar2 = LookupRecordByte(DAT_0080874d), bVar2 != 3)) {
         return 0x2000;
       }
-      iVar4 = LookupRecordByte(DAT_0080874d);
-      if ((char)iVar4 == '\x03') {
+      bVar2 = LookupRecordByte(DAT_0080874d);
+      if (bVar2 == 3) {
         if (uVar5 < 0x100001) {
           if (uVar5 != 0x100000) {
             if (uVar5 < 0x40001) {

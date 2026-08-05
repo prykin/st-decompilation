@@ -35,12 +35,12 @@ FUN_0065eb70(void *this,uint param_1,int param_2,uint *param_3,uint param_4,uint
         DAT_00811900 = 0;
         /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
         if ((char)param_7 == '\b') {
-          /* ST_PSEUDO[stack_slot_reuse,packed_or_unaligned_piece]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable; expected named packed member, bit extract/compose, or unaligned load */
-          param_7 = CONCAT31(param_7._1_3_,cVar5);
+          /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
+          param_7 = STReplaceLowByte((uint32_t)(param_7), (uint8_t)(cVar5));
         }
         else if (((char)param_7 < '\0') || ('\b' < (char)param_7)) {
-          /* ST_PSEUDO[stack_slot_reuse,packed_or_unaligned_piece]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable; expected named packed member, bit extract/compose, or unaligned load */
-          param_7 = CONCAT31(param_7._1_3_,0xff);
+          /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
+          param_7 = STReplaceLowByte((uint32_t)(param_7), (uint8_t)(0xff));
         }
         _EnumPlObj(param_1,param_4,param_5,param_6,(char)param_7,0,0,0,-1,-1,-1,thunk_FUN_0065e860,
                    local_c,nullptr);

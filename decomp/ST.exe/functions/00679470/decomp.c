@@ -61,8 +61,7 @@ LAB_00679519:
     }
     else {
       if (index < pDVar1->count) {
-        /* ST_PSEUDO[dynamic_array_indexing]: expected DArrayAt<T>(pDVar1, index) (runtime stride) */
-        puVar5 = (undefined4 *)(pDVar1->elementSize * index + (int)pDVar1->data);
+        puVar5 = DArrayAt<undefined4>(pDVar1, index);
       }
       else {
         puVar5 = nullptr;

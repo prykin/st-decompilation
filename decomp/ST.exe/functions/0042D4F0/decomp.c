@@ -21,8 +21,7 @@ STAllPlayersC::ResetActivityFromTmp
   uint uVar5;
 
   if (param_2 == 0) {
-    /* ST_PSEUDO[flattened_global_record_array]: expected typedRecordArray[index].field after inferred base/stride proof */
-    iVar2 = param_1 * 0xa62 + 0x7f4f83;
+    iVar2 = STRecordByteAddress(g_packedRecords_A62x8, param_1, 0x163);
   }
   else {
     if (param_2 != 1) {
@@ -33,8 +32,7 @@ STAllPlayersC::ResetActivityFromTmp
       }
       STDebugBreak(); /* noreturn in standalone pseudocode */
     }
-    /* ST_PSEUDO[flattened_global_record_array]: expected typedRecordArray[index].field after inferred base/stride proof */
-    iVar2 = param_1 * 0xa62 + 0x7f4fd3;
+    iVar2 = STRecordByteAddress(g_packedRecords_A62x8, param_1, 0x1B3);
   }
   piVar3 = (int *)(param_3 * 0x10 + iVar2);
   iVar2 = *piVar3;
@@ -64,14 +62,12 @@ cf_common_exit_0042D5BC:
       }
       STDebugBreak(); /* noreturn in standalone pseudocode */
     }
-/* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
 LAB_0042d5e8:
-    uVar5 = CONCAT22((short)((uint)param_4 >> 0x10),(short)piVar3[2]);
+    uVar5 = STReplaceLowWord((uint32_t)(param_4), (uint16_t)((short)piVar3[2]));
     pDVar4 = nullptr;
   }
-  /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
   ResetActivityFromObjs
-            (this,CONCAT31((int3)((uint)iVar2 >> 8),(char)piVar3[1]),iVar2,pDVar4,uVar5,param_4);
+            (this,STReplaceLowByte((uint32_t)(iVar2), (uint8_t)((char)piVar3[1])),iVar2,pDVar4,uVar5,param_4);
 LAB_0042d5ff:
   if (param_3 == 0) {
     if (param_2 == 0) {

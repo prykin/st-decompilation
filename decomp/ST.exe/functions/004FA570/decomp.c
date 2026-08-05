@@ -23,8 +23,7 @@ void __thiscall CPanelTy::ShiftControls(CPanelTy *this,int param_1,int param_2)
   uint local_c;
   CPanelTy *local_8;
 
-  /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-  local_c = CONCAT31(local_c._1_3_,param_1 == 0);
+  local_c = STReplaceLowByte((uint32_t)(local_c), (uint8_t)(param_1 == 0));
   if (param_1 == 0) {
     if (param_2 == this->field_0138) {
       return;

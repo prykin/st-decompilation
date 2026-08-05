@@ -135,8 +135,7 @@ void __thiscall CPanelTy::Update1Panel(CPanelTy *this)
     if (!bVar18) {
       PaintDeep(this_00,1);
       bVar5 = (DAT_0080874e == '\x03') + 2;
-      /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-      local_8 = CONCAT31(local_8._1_3_,bVar5);
+      local_8 = STReplaceLowByte((uint32_t)(local_8), (uint8_t)(bVar5));
       if (bVar5 < 0xb) {
         if (-1 < (int)this_00->field_0148[bVar5]) {
           Library::DKW::DDX::FUN_006b3640
@@ -172,8 +171,7 @@ void __thiscall CPanelTy::Update1Panel(CPanelTy *this)
         uVar7 = pDVar1->count;
         do {
           if (local_c < local_8) {
-            /* ST_PSEUDO[dynamic_array_indexing]: expected DArrayAt<T>(local_16, local_c) (runtime stride) */
-            piVar9 = (int *)(local_16->elementSize * local_c + (int)local_16->data);
+            piVar9 = DArrayAt<int>(local_16, local_c);
           }
           else {
             piVar9 = nullptr;
@@ -185,8 +183,7 @@ void __thiscall CPanelTy::Update1Panel(CPanelTy *this)
               goto LAB_004ff6e4;
             }
             do {
-              /* ST_PSEUDO[dynamic_array_indexing]: expected DArrayAt<T>(pDVar1, uVar12) (runtime stride) */
-              piVar10 = (int *)(pDVar1->elementSize * uVar12 + (int)pDVar1->data);
+              piVar10 = DArrayAt<int>(pDVar1, uVar12);
 LAB_004ff6e4:
               if (*piVar10 == *piVar9) {
                 local_10 = 0;
@@ -321,11 +318,9 @@ LAB_004ff87a:
     FUN_006b4170((AnonShape_006B5B10_E0D06CF1 *)this_00->field_0184,0,0x3b,0x31,7,0x21,0);
     bVar5 = this_00->field_0xb86;
     cVar13 = (char)(((uint)bVar5 * 0x21) / 100);
-    /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-    local_8 = CONCAT31(local_8._1_3_,cVar13);
+    local_8 = STReplaceLowByte((uint32_t)(local_8), (uint8_t)(cVar13));
     if ((bVar5 != 0) && (cVar13 == '\0')) {
-      /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-      local_8 = CONCAT31(local_8._1_3_,1);
+      local_8 = STReplaceLowByte((uint32_t)(local_8), (uint8_t)(1));
     }
     if (bVar5 < 0x46) {
       iVar6 = (-(uint)(bVar5 < 0x14) & 5) + 5;
@@ -372,8 +367,7 @@ cf_common_exit_004FFB91:
   if (!bVar18) {
     PaintDeep(this_00,1);
     bVar5 = (DAT_0080874e == '\x03') + 2;
-    /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-    local_8 = CONCAT31(local_8._1_3_,bVar5);
+    local_8 = STReplaceLowByte((uint32_t)(local_8), (uint8_t)(bVar5));
     if (bVar5 < 0xb) {
       if (-1 < (int)this_00->field_0148[bVar5]) {
         Library::DKW::DDX::FUN_006b3640

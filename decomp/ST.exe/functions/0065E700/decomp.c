@@ -30,8 +30,7 @@ FUN_0065e700(AnonReceiver_0065ED90 *param_1,undefined4 param_2,int *param_3,int 
     bVar3 = array->count != 0;
     do {
       if (bVar3) {
-        /* ST_PSEUDO[dynamic_array_indexing]: expected DArrayAt<T>(array, uVar2) (runtime stride) */
-        puVar1 = (ushort *)(array->elementSize * uVar2 + (int)array->data);
+        puVar1 = DArrayAt<ushort>(array, uVar2);
       }
       else {
         puVar1 = nullptr;

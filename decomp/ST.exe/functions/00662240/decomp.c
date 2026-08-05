@@ -362,8 +362,7 @@ LAB_00663af0:
           do {
             pDVar16 = local_10;
             if (bVar24) {
-              /* ST_PSEUDO[dynamic_array_indexing]: expected DArrayAt<T>(local_8, (int)local_10) (runtime stride) */
-              puVar17 = (ushort *)(local_8->elementSize * (int)local_10 + (int)local_8->data);
+              puVar17 = DArrayAt<ushort>(local_8, (int)local_10);
             }
             else {
               puVar17 = nullptr;
@@ -681,8 +680,7 @@ LAB_0066263e:
          (uVar20 = 0, 0 < (int)uVar23)) {
         do {
           if (uVar20 < uVar23) {
-            /* ST_PSEUDO[dynamic_array_indexing]: expected DArrayAt<T>(local_8, uVar20) (runtime stride) */
-            puVar17 = (ushort *)(local_8->elementSize * uVar20 + (int)local_8->data);
+            puVar17 = DArrayAt<ushort>(local_8, uVar20);
           }
           else {
             puVar17 = nullptr;
@@ -828,8 +826,7 @@ LAB_00663076:
          (local_14 = nullptr, 0 < (int)pSVar18)) {
         do {
           if (local_14 < pSVar18) {
-            /* ST_PSEUDO[dynamic_array_indexing]: expected DArrayAt<T>(local_8, (int)local_14) (runtime stride) */
-            puVar17 = (ushort *)(local_8->elementSize * (int)local_14 + (int)local_8->data);
+            puVar17 = DArrayAt<ushort>(local_8, (int)local_14);
           }
           else {
             puVar17 = nullptr;
@@ -978,8 +975,7 @@ switchD_00662d3e_caseD_a4:
       bVar24 = dVar8 != 0;
 LAB_00662dbb:
       if (bVar24) {
-        /* ST_PSEUDO[dynamic_array_indexing]: expected DArrayAt<T>(local_8, (int)local_24) (runtime stride) */
-        puVar17 = (ushort *)(local_8->elementSize * (int)local_24 + (int)local_8->data);
+        puVar17 = DArrayAt<ushort>(local_8, (int)local_24);
       }
       else {
         puVar17 = nullptr;
@@ -1156,8 +1152,7 @@ LAB_00663325:
       bVar24 = uVar23 != 0;
       while( true ) {
         if (bVar24) {
-          /* ST_PSEUDO[dynamic_array_indexing]: expected DArrayAt<T>(pDVar16, uVar20) (runtime stride) */
-          pvVar15 = (void *)(pDVar16->elementSize * uVar20 + (int)pDVar16->data);
+          pvVar15 = DArrayAt<void>(pDVar16, uVar20);
         }
         else {
           pvVar15 = nullptr;
@@ -1321,8 +1316,7 @@ LAB_006636da:
       bVar24 = dVar8 != 0;
       do {
         if (bVar24) {
-          /* ST_PSEUDO[dynamic_array_indexing]: expected DArrayAt<T>(local_10, uVar23) (runtime stride) */
-          puVar17 = (ushort *)(local_10->elementSize * uVar23 + (int)local_10->data);
+          puVar17 = DArrayAt<ushort>(local_10, uVar23);
         }
         else {
           puVar17 = nullptr;
@@ -1418,14 +1412,12 @@ LAB_0066380d:
           bVar24 = pDVar16->count != 0;
           do {
             if (bVar24) {
-              /* ST_PSEUDO[dynamic_array_indexing]: expected DArrayAt<T>(pDVar16, uVar23) (runtime stride) */
-              puVar17 = (ushort *)(pDVar16->elementSize * uVar23 + (int)pDVar16->data);
+              puVar17 = DArrayAt<ushort>(pDVar16, uVar23);
             }
             else {
               puVar17 = nullptr;
             }
-            /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-            local_28 = CONCAT22((short)((uint)puVar17 >> 0x10),*puVar17);
+            local_28 = STReplaceLowWord((uint32_t)(puVar17), (uint16_t)(*puVar17));
             pSVar18 = STAllPlayersC::GetObjPtr
                                 (g_allPlayers_007FA174,*(char *)&local_c->field_0024,*puVar17,CASE_1
                                 );

@@ -76,10 +76,8 @@ LAB_0047d831:
   if (iVar9 == 0) {
     if (this->field_06A5 == 0) {
       iVar6 = (ushort)(this->field_068F * 200) + 0xfa;
-      /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-      iVar9 = CONCAT22((short)((uint)iVar6 >> 0x10),this->field_068D + 1) * 0xc9;
-      /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-      iVar11 = CONCAT22((short)((uint)iVar9 >> 0x10),this->field_068B + 1);
+      iVar9 = STReplaceLowWord((uint32_t)(iVar6), (uint16_t)(this->field_068D + 1)) * 0xc9;
+      iVar11 = STReplaceLowWord((uint32_t)(iVar9), (uint16_t)(this->field_068B + 1));
       /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
       uVar5 = (*this->vtable->vfunc_10)
                         (this->field_0041,this->field_0043,

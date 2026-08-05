@@ -68,8 +68,7 @@ LAB_004604c9:
                   uVar4 = param_1->field_0018;
                   *(undefined4 *)((int)this + 0x471) = uVar4;
                   sVar1 = *(short *)((int)this + 0x4b);
-                  /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-                  uVar4 = CONCAT22((short)((uint)uVar4 >> 0x10),sVar1);
+                  uVar4 = STReplaceLowWord((uint32_t)(uVar4), (uint16_t)(sVar1));
                   if (sVar1 == 0) {
                     iVar3 = *(int *)this;
                     *(undefined2 *)((int)this + 0x469) = 1;
@@ -80,8 +79,7 @@ LAB_004604c9:
 LAB_00460581:
                     iVar6 = (**(code **)(iVar3 + 0x18))
                                       (CONCAT22(uVar5,*(undefined2 *)((int)this + 0x47)),
-                                       CONCAT22((short)((uint)uVar4 >> 0x10),
-                                                *(undefined2 *)((int)this + 0x49)),uVar10);
+                                       STReplaceLowWord((uint32_t)(uVar4), (uint16_t)(*(undefined2 *)((int)this + 0x49))),uVar10);
                     if (iVar6 != 1) break;
                     iVar7 = (int)*(short *)((int)this + 0x49);
                     *(undefined4 *)((int)this + 0x82e) = 1;
@@ -112,16 +110,13 @@ LAB_00460581:
                     /* ST_PSEUDO[raw_indirect_call,packed_or_unaligned_piece]: expected typed vtable/callback call with explicit __thiscall receiver; expected named packed member, bit extract/compose, or unaligned load */
                     iVar6 = (**(code **)(*(int *)this + 0x18))
                                       (CONCAT22(uVar5,*(undefined2 *)((int)this + 0x47)),
-                                       CONCAT22((short)((uint)iVar3 >> 0x10),
-                                                *(undefined2 *)((int)this + 0x49)),
+                                       STReplaceLowWord((uint32_t)(iVar3), (uint16_t)(*(undefined2 *)((int)this + 0x49))),
                                        CONCAT22(uVar5,sVar1 + *(short *)((int)this + 0x4b)));
                     if (iVar6 != 1) {
                       sVar1 = *(short *)((int)this + 0x469);
                       iVar3 = *(int *)this;
                       *(short *)((int)this + 0x469) = -sVar1;
-                      /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-                      uVar4 = CONCAT22((short)((uint)iVar6 >> 0x10),
-                                       -sVar1 + *(short *)((int)this + 0x4b));
+                      uVar4 = STReplaceLowWord((uint32_t)(iVar6), (uint16_t)(-sVar1 + *(short *)((int)this + 0x4b)));
                       /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
                       uVar5 = extraout_var_00;
                       uVar10 = uVar4;

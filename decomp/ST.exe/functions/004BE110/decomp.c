@@ -1,11 +1,11 @@
 
-uint __fastcall FUN_004be110(int param_1)
+byte __fastcall FUN_004be110(int param_1)
 
 {
-  uint uVar1;
+  byte bVar1;
 
   /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-  uVar1 = LookupRecordByte(*(char *)(param_1 + 0x23d));
-  return uVar1 & 0xff;
+  bVar1 = LookupRecordByte(*(char *)(param_1 + 0x23d));
+  return bVar1;
 }
 

@@ -77,8 +77,7 @@ _EnumPlObj(undefined4 param_1,uint param_2,uint param_3,byte *param_4,char param
         goto LAB_00676e12;
       }
       do {
-        /* ST_PSEUDO[dynamic_array_indexing]: expected DArrayAt<T>(local_1c, uVar10) (runtime stride) */
-        puVar4 = (undefined4 *)(local_1c->elementSize * uVar10 + (int)local_1c->data);
+        puVar4 = DArrayAt<undefined4>(local_1c, uVar10);
 LAB_00676e12:
         this = (STFishC *)*puVar4;
         if ((this != nullptr) && (iVar3 = (*this->vtable->vfunc_F8)(), iVar3 != 0)) {

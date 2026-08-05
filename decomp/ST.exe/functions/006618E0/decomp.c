@@ -67,14 +67,12 @@ void __thiscall AiFltClassTy::GoToRepair(AiFltClassTy *this)
           if (0 < (int)local_8->count) {
             do {
               if (local_14 < local_8->count) {
-                /* ST_PSEUDO[dynamic_array_indexing]: expected DArrayAt<T>(local_8, local_14) (runtime stride) */
-                puVar6 = (ushort *)(local_8->elementSize * local_14 + (int)local_8->data);
+                puVar6 = DArrayAt<ushort>(local_8, local_14);
               }
               else {
                 puVar6 = nullptr;
               }
-              /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-              local_24 = CONCAT22((short)((uint)puVar6 >> 0x10),*puVar6);
+              local_24 = STReplaceLowWord((uint32_t)(puVar6), (uint16_t)(*puVar6));
               this_00 = STAllPlayersC::GetObjPtr
                                   (g_allPlayers_007FA174,*(char *)&pAVar3->field_0024,*puVar6,CASE_1
                                   );

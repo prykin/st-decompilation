@@ -30,8 +30,7 @@ uint __cdecl FUN_0067fdf0(int *param_1,byte *param_2)
     return uVar2;
   }
   if ((uint)uVar1 < g_array_00848A38->count) {
-    /* ST_PSEUDO[dynamic_array_indexing]: expected DArrayAt<T>(g_array_00848A38, uVar1) (runtime stride) */
-    puVar3 = (undefined4 *)(g_array_00848A38->elementSize * uVar1 + (int)g_array_00848A38->data);
+    puVar3 = DArrayAt<undefined4>(g_array_00848A38, uVar1);
   }
   else {
     puVar3 = nullptr;

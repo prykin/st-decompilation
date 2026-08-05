@@ -16,10 +16,11 @@ int __thiscall AiFltClassTy::GetMessage(AiFltClassTy *this,STMessage *message)
   undefined4 *puVar2;
   code *pcVar3;
   AiFltClassTy *this_00;
-  int iVar4;
-  uint uVar5;
+  ushort uVar4;
+  int iVar5;
+  uint uVar6;
   STGroupBoatC *this_01;
-  int iVar6;
+  int iVar7;
   /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
   undefined4 extraout_EDX;
   /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
@@ -32,17 +33,17 @@ int __thiscall AiFltClassTy::GetMessage(AiFltClassTy *this,STMessage *message)
   local_54.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_54;
   local_10 = this;
-  iVar4 = Library::MSVCRT::__setjmp3(local_54.jumpBuffer,0);
+  iVar5 = Library::MSVCRT::__setjmp3(local_54.jumpBuffer,0);
   this_00 = local_10;
-  if (iVar4 != 0) {
+  if (iVar5 != 0) {
     g_currentExceptionFrame = local_54.previous;
-    iVar6 = ReportDebugMessage("E:\\__titans\\ai\\ai_flt.cpp",0xeca,0,iVar4,
+    iVar7 = ReportDebugMessage("E:\\__titans\\ai\\ai_flt.cpp",0xeca,0,iVar5,
                                "AiFltClassTy::GetMessage error mess->id == %lX Name=%d",message->id,
                                local_10->field_0018);
-    if (iVar6 != 0) {
+    if (iVar7 != 0) {
       STDebugBreak(); /* noreturn in standalone pseudocode */
     }
-    RaiseInternalException(iVar4,0,"E:\\__titans\\ai\\ai_flt.cpp",0xecb);
+    RaiseInternalException(iVar5,0,"E:\\__titans\\ai\\ai_flt.cpp",0xecb);
     return 0xffff;
   }
   local_10->field_0280 = g_playSystem_00802A38->field_00E4;
@@ -83,18 +84,18 @@ int __thiscall AiFltClassTy::GetMessage(AiFltClassTy *this,STMessage *message)
           this_00->field_001C = this_00->field_0086;
         }
         if (puVar2[3] == 0) {
-          uVar5 = thunk_FUN_00435850(*(char *)&this_00->field_0024,1,nullptr);
-          this_00->field_007D = (short)uVar5;
+          uVar4 = thunk_FUN_00435850(*(char *)&this_00->field_0024,1,nullptr);
+          this_00->field_007D = uVar4;
           sub_0065D6A0(this_00);
-          uVar5 = this_00->field_001C * 0x41c64e6d + 0x3039;
-          this_00->field_001C = uVar5;
-          this_00->field_008B = (uVar5 >> 0x10 & 7) + 8;
-          uVar5 = this_00->field_001C * 0x41c64e6d + 0x3039;
-          this_00->field_001C = uVar5;
-          this_00->field_01FB = (uVar5 >> 0x10) % 0x1a + 0x19;
-          uVar5 = this_00->field_001C * 0x41c64e6d + 0x3039;
-          this_00->field_001C = uVar5;
-          this_00->field_0203 = (uVar5 >> 0x10) % 0x1a + 0x19;
+          uVar6 = this_00->field_001C * 0x41c64e6d + 0x3039;
+          this_00->field_001C = uVar6;
+          this_00->field_008B = (uVar6 >> 0x10 & 7) + 8;
+          uVar6 = this_00->field_001C * 0x41c64e6d + 0x3039;
+          this_00->field_001C = uVar6;
+          this_00->field_01FB = (uVar6 >> 0x10) % 0x1a + 0x19;
+          uVar6 = this_00->field_001C * 0x41c64e6d + 0x3039;
+          this_00->field_001C = uVar6;
+          this_00->field_0203 = (uVar6 >> 0x10) % 0x1a + 0x19;
           thunk_FUN_00676c40(this_00->field_020B,thunk_FUN_00660d10);
           this_00->field_0170 = *(short *)&this_00->field_022F->field_0xc;
           this_00->field_0127 = *(undefined2 *)&this_00->field_0223->field_0xc;

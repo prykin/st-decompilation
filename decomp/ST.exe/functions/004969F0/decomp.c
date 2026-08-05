@@ -24,8 +24,7 @@ void FUN_004969f0(int param_1,int param_2,int param_3,int param_4,uint param_5,u
 
   if (-1 < (int)param_7) {
     if (param_7 < g_array_007FB270->count) {
-      /* ST_PSEUDO[dynamic_array_indexing]: expected DArrayAt<T>(g_array_007FB270, param_7) (runtime stride) */
-      piVar1 = (int *)(g_array_007FB270->elementSize * param_7 + (int)g_array_007FB270->data);
+      piVar1 = DArrayAt<int>(g_array_007FB270, param_7);
     }
     else {
       piVar1 = nullptr;

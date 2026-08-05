@@ -43,9 +43,13 @@ have been checked.
 The current authoritative corpus has an additional headless maintenance refresh
 on top of the full pipeline run described below. Its export receipt is `passed`
 with semantic hash
-`fa3e3af6abbc608dff2f9ce9bb33b0e445d601d97dd2e6b2efd32c7a1c4d06e3`
+`0aa19733c1cb376feeafda39164eaeb8896391dc3139bf32d2f6d15848861b64`
 and manifest hash
-`aec5bfaf69cdcb19f01273da0f7da83bdb957adb495ed492d6be48fa68c76d97`.
+`ecc79ec081898c089c116b323d817bed1c1f6954993b214df24abe8946f489c2`.
+It contains 10,392 function entries, 5,712 bodies, zero failed bodies, and 2,729
+typed physical-vtable slots. Both the broad export gate and the ABI gate pass;
+the latter verifies all 95 class vptrs and nine fixture functions with zero
+errors or warnings.
 The focused class-layout, pointer-shape, ABI-consistency, and indirect-call
 cycles all reached zero mutations before export. Relative to the prior accepted
 baseline, typed physical vtable slots increased by 320, raw indirect-call debt
@@ -69,6 +73,44 @@ lookup data. Ghidra mistakes bytes `00 01 03 03` for a fifth target
 `03030100`. This is queued as a general adjacent jump/lookup-table boundary
 recovery; it is not binary corruption and must not be hidden by an
 address-specific warning suppression.
+
+The latest cross-cutting pass recovered seven strict narrow accumulator
+returns. Automatic application requires the same exact `AL`/`AX` definition on
+every callee return path and complete caller CFG coverage with only matching
+narrow reads or explicit `EAX` kills. `LookupRecordByte` is now a real `byte`
+function: 364 callers consume `AL`, one kills the result, and none requires or
+leaves an unresolved full `EAX`. Its former
+`CONCAT31(recordIndex >> 7, record.field)` body now exports as a direct byte
+field return. Exact partial call assignments are folded only for unambiguous
+callees whose recovered return width matches the selected piece.
+
+The exporter also normalizes exact same-base low-byte/word replacement,
+runtime-stride typed DArray addresses, and interior addresses in generated
+fixed-stride global record arrays. The corpus contains 697 low-piece helper
+calls, 434 `DArrayAt<T>` views, and 71 `STRecordByteAddress` views. Relative to
+the retained baseline, `dynamic_array_indexing` improved 318 to 76,
+`flattened_global_record_array` 92 to 36, and
+`packed_or_unaligned_piece` 1,402 to 1,051. These helpers assert address/bit
+identity only; they do not invent a semantic field name.
+
+`STLocalLifetimeAnalyzer` now compares recursively unwrapped equivalent
+typedef/pointer types before recording conflicts. This removes the large false
+`LPSTR`/`CHAR *`/`char *` cluster: proposals are 458 with 36 automatic rows and
+175 conflicts, down from 605 proposals and 328 conflicts. Remaining
+`int`/`uint` and `bool`/`byte` disagreements remain review-only. Anonymous
+shapes are intentionally unchanged at 4,829 occurrences in 1,330 functions;
+geometry alone still cannot establish cross-owner identity. Undefined types
+stand at 16,289 occurrences in 3,577 functions and remain the next evidence-led
+recovery surface rather than a bulk-retagging target.
+
+The most promising audited anonymous family is
+`AnonShape_006B5B10_E0D06CF1`: 671 rendered uses, a 16-byte three-field layout,
+and repeated first-parameter flow through `DibPut`/DKW WGR routines associated
+with `dibcopy.c`. It is probably a raster/DIB descriptor, but no independent
+named datatype anchor exists yet and the neighboring class fields also carry
+real integer/`ushort *` alternatives. Keep it anonymous until a general
+source-family plus exact direct-call-flow rule can prove one producer/owner and
+complete layout; do not rename it from frequency or geometry alone.
 
 The authoritative latest `full-export` was run
 `8538b1d383ad26576d5461f823403092b4baa8e1b85900d2273457d261b6e4e6`.

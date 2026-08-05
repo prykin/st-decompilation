@@ -47,8 +47,7 @@ joined_r0x005f19be:
     }
     pDVar1 = local_14->field_003C;
     if (local_c < pDVar1->count) {
-      /* ST_PSEUDO[dynamic_array_indexing]: expected DArrayAt<T>(pDVar1, local_c) (runtime stride) */
-      psVar6 = (short *)(pDVar1->elementSize * local_c + (int)pDVar1->data);
+      psVar6 = DArrayAt<short>(pDVar1, local_c);
     }
     else {
       psVar6 = nullptr;

@@ -69,14 +69,13 @@ undefined4 __thiscall FUN_006264d0(void *this,int *param_1,int param_2)
   }
   iVar5 = param_2 * 6;
   sVar7 = *(short *)(&DAT_007d046c + iVar5) + *(short *)((int)this + 0x2c2);
-  /* ST_PSEUDO[unresolved_register_input,packed_or_unaligned_piece]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention; expected named packed member, bit extract/compose, or unaligned load */
-  local_20 = CONCAT22((short)((uint)unaff_EBX >> 0x10),sVar7);
+  /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
+  local_20 = STReplaceLowWord((uint32_t)(unaff_EBX), (uint16_t)(sVar7));
   sVar12 = *(short *)(&DAT_007d046e + iVar5) + *(short *)((int)this + 0x2c6);
-  /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-  local_54 = CONCAT22((short)((uint)puVar13 >> 0x10),sVar12);
+  local_54 = STReplaceLowWord((uint32_t)(puVar13), (uint16_t)(sVar12));
   sVar10 = *(short *)(&DAT_007d0470 + iVar5) + *(short *)((int)this + 0x2ca);
-  /* ST_PSEUDO[unresolved_register_input,packed_or_unaligned_piece]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention; expected named packed member, bit extract/compose, or unaligned load */
-  local_40 = CONCAT22((short)((uint)unaff_ESI >> 0x10),sVar10);
+  /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
+  local_40 = STReplaceLowWord((uint32_t)(unaff_ESI), (uint16_t)(sVar10));
   if (param_1 == nullptr) {
     return 0;
   }

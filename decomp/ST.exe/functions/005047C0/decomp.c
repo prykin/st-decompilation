@@ -41,8 +41,7 @@ uint __thiscall CPanelTy::PaintPerRes(CPanelTy *this,int param_1)
         DibPut((AnonShape_006B5B10_E0D06CF1 *)this_00->field_0194,param_1 + 0xb + uVar7 * 4,0x5c,
                '\x01',pbVar3);
         bVar5 = (byte)local_8 + 1;
-        /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-        local_8 = CONCAT31(local_8._1_3_,bVar5);
+        local_8 = STReplaceLowByte((uint32_t)(local_8), (uint8_t)(bVar5));
         uVar7 = (uint)bVar5;
         uVar4 = local_10;
       } while (uVar7 < local_10);

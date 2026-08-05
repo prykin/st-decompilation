@@ -370,7 +370,7 @@ cf_common_exit_0047405D:
       /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
       uVar4 = (*this->vtable->vfunc_10)
                         (this->field_0041,this->field_0043,
-                         CONCAT22((short)((uint)iVar10 >> 0x10),this->field_0045),
+                         STReplaceLowWord((uint32_t)(iVar10), (uint16_t)(this->field_0045)),
                          this->field_0588 * 0xc9 + 100,(short)iVar10,
                          CONCAT22(extraout_var_00,this->field_058C * 200) + 100);
       this->field_059E = uVar4;
@@ -413,7 +413,7 @@ cf_common_exit_0047405D:
     if (this->field_059A == 3) {
       local_24 = STJellyGunC::sub_00415ED0((STJellyGunC *)this,&local_2c,&local_28);
       /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
-      uVar7 = CONCAT31((int3)((uint)extraout_ECX >> 8),this->field_02BF);
+      uVar7 = STReplaceLowByte((uint32_t)(extraout_ECX), (uint8_t)(this->field_02BF));
       local_1c = 0;
       /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
       uVar4 = extraout_var_15;
@@ -538,7 +538,7 @@ switchD_004734db_caseD_2:
       /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
       uVar4 = (*this->vtable->vfunc_10)
                         (this->field_0041,this->field_0043,
-                         CONCAT22((short)((uint)iVar10 >> 0x10),this->field_0045),
+                         STReplaceLowWord((uint32_t)(iVar10), (uint16_t)(this->field_0045)),
                          this->field_005B * 0xc9 + 100,(short)iVar10,
                          CONCAT22(uVar13,this->field_005F * 200) + 100);
       this->field_059E = uVar4;

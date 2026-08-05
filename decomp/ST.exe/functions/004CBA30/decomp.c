@@ -7,10 +7,10 @@
 undefined4 __thiscall TLOBaseTy::sub_004CBA30(TLOBaseTy *this)
 
 {
-  uint uVar1;
+  byte bVar1;
 
-  uVar1 = LookupRecordByte(*(char *)&this->field_023D);
-  if (*(int *)(&DAT_00790d30 + ((uVar1 & 0xff) + this->field_0235 * 3) * 4) != 0) {
+  bVar1 = LookupRecordByte(*(char *)&this->field_023D);
+  if (*(int *)(&DAT_00790d30 + ((uint)bVar1 + this->field_0235 * 3) * 4) != 0) {
     if (DAT_0080732c != 0) {
       thunk_FUN_004ad0e0(&this->field_01D5,0xc);
       thunk_FUN_004ad0e0(&this->field_01D5,7);

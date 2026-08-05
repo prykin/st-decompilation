@@ -47,12 +47,10 @@ int __thiscall STBoatC::BackUnLoadRC(STBoatC *this,STBoatC *param_1)
       return -(uint)(iVar4 != 0);
     }
     if (iVar4 == 3) {
-      /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-      iVar4 = CONCAT22((short)((uint)this >> 0x10),this->field_053E * 0xc9) + 100;
-      /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
+      iVar4 = STReplaceLowWord((uint32_t)(this), (uint16_t)(this->field_053E * 0xc9)) + 100;
       uVar2 = (*this->vtable->vfunc_10)
                         (this->field_0041,this->field_0043,
-                         CONCAT22((short)((uint)iVar4 >> 0x10),this->field_0045),
+                         STReplaceLowWord((uint32_t)(iVar4), (uint16_t)(this->field_0045)),
                          this->field_053C * 0xc9 + 100,(short)iVar4,
                          (ushort)(this->field_0540 * 200) + 100);
       this->field_0542 = uVar2;
@@ -109,12 +107,10 @@ int __thiscall STBoatC::BackUnLoadRC(STBoatC *this,STBoatC *param_1)
     this->field_054C = CASE_6;
   case CASE_6:
     if (this->field_0550 == 0) {
-      /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-      iVar4 = CONCAT22((short)((uint)pSVar5 >> 0x10),this->field_053E * 0xc9) + 100;
-      /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
+      iVar4 = STReplaceLowWord((uint32_t)(pSVar5), (uint16_t)(this->field_053E * 0xc9)) + 100;
       uVar2 = (*this->vtable->vfunc_10)
                         (this->field_0041,this->field_0043,
-                         CONCAT22((short)((uint)iVar4 >> 0x10),this->field_0045),
+                         STReplaceLowWord((uint32_t)(iVar4), (uint16_t)(this->field_0045)),
                          this->field_053C * 0xc9 + 100,(short)iVar4,
                          (ushort)(this->field_0540 * 200) + 100);
       this->field_0542 = uVar2;

@@ -23,7 +23,7 @@ int __thiscall FUN_00605b60(void *this,uint param_1,uint param_2,int *param_3,in
   undefined4 local_7c;
   undefined4 local_78 [5];
   undefined1 *local_64;
-  uint local_5c;
+  int local_5c;
   uint local_58;
   uint local_54;
   uint local_50;
@@ -36,18 +36,18 @@ int __thiscall FUN_00605b60(void *this,uint param_1,uint param_2,int *param_3,in
   int local_30;
   int local_2c;
   int *local_28;
-  uint local_24;
+  int local_24;
   uint local_20;
   undefined4 local_1c;
   uint local_18;
-  uint local_14;
+  int local_14;
   undefined4 *local_10;
   uint local_c;
   int local_8;
 
   /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
   local_EAX_24 = LookupRecordByte(in_stack_00000020);
-  local_24 = local_EAX_24 & 0xff;
+  local_24 = (int)(byte)local_EAX_24;
   local_c = (uint)param_3 & 0xffff;
   uVar5 = (uint)param_3 >> 0x10;
   local_18 = param_2 & 0xffff;

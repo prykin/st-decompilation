@@ -39,9 +39,7 @@ void __thiscall FSGSTy::DelPlayer(FSGSTy *this,byte *param_1)
       pDVar2 = this_00->field_1EA6;
       uVar7 = pDVar2->count;
       if (*(ushort *)&this_00->field_0x31 < uVar7) {
-        /* ST_PSEUDO[dynamic_array_indexing]: expected DArrayAt<T>(pDVar2, (uint)*(ushort *)&this_00->field_0x31) (runtime stride) */
-        local_8 = (undefined4 *)
-                  (pDVar2->elementSize * (uint)*(ushort *)&this_00->field_0x31 + (int)pDVar2->data);
+        local_8 = DArrayAt<undefined4>(pDVar2, (uint)*(ushort *)&this_00->field_0x31);
       }
       else {
         local_8 = nullptr;

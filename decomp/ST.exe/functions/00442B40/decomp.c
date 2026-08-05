@@ -60,8 +60,7 @@ undefined4 STAllPlayersC::_SubMDObject(undefined4 *param_1,uint param_2)
     local_10 = 0;
     do {
       if (uVar4 == *(int *)((int)local_2c + local_10)) {
-        /* ST_PSEUDO[flattened_global_record_array]: expected typedRecordArray[index].field after inferred base/stride proof */
-        pDVar2 = *(DArrayTy **)(local_10 + 0x7f4e2f + objPtr * 0xa62);
+        pDVar2 = *(DArrayTy **)(local_10 + STRecordByteAddress(g_packedRecords_A62x8, objPtr, 0xF));
         uVar1 = (ushort)pDVar2->count;
         if (uVar1 != 0) {
           STFishC::sub_004162B0((STFishC *)this,(short *)((int)&param_2 + 2),&local_6,&local_8);

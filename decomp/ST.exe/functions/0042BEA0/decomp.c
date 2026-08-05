@@ -52,8 +52,7 @@ STAllPlayersC::AddObjToTmp2
     return 0xaffe0001;
   }
   if (param_2 == 0) {
-    /* ST_PSEUDO[flattened_global_record_array]: expected typedRecordArray[index].field after inferred base/stride proof */
-    local_14 = param_1 * 0xa62 + 0x7f4f83;
+    local_14 = STRecordByteAddress(g_packedRecords_A62x8, param_1, 0x163);
     if (param_3 == 0) {
       thunk_FUN_0043fc50(CASE_1,0);
       GVar5 = CASE_2;
@@ -62,8 +61,7 @@ LAB_0042bf8b:
     }
   }
   else if (param_2 == 1) {
-    /* ST_PSEUDO[flattened_global_record_array]: expected typedRecordArray[index].field after inferred base/stride proof */
-    local_14 = param_1 * 0xa62 + 0x7f4fd3;
+    local_14 = STRecordByteAddress(g_packedRecords_A62x8, param_1, 0x1B3);
     if (param_3 == 0) {
       thunk_FUN_0043fc50(CASE_4,0);
       GVar5 = CASE_5;

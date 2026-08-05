@@ -31,8 +31,7 @@ STAllPlayersC::DelObjFromTmps
     /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
     if (param_2 == 0x1a4) {
       iVar8 = 0;
-      /* ST_PSEUDO[flattened_global_record_array]: expected typedRecordArray[index].field after inferred base/stride proof */
-      iVar6 = param_1 * 0xa62 + 0x7f4fd3;
+      iVar6 = STRecordByteAddress(g_packedRecords_A62x8, param_1, 0x1B3);
       do {
         puVar1 = (undefined4 *)(iVar8 * 0x10 + iVar6);
         if (((*(int *)(iVar8 * 0x10 + iVar6) == 0x1a4) && (puVar1[1] == (int)param_3)) &&
@@ -60,8 +59,7 @@ STAllPlayersC::DelObjFromTmps
     if (param_2 == 0x14) {
       /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
       param_2 = 0;
-      /* ST_PSEUDO[flattened_global_record_array]: expected typedRecordArray[index].field after inferred base/stride proof */
-      iVar6 = param_1 * 0xa62 + 0x7f4f83;
+      iVar6 = STRecordByteAddress(g_packedRecords_A62x8, param_1, 0x163);
       do {
         puVar1 = (undefined4 *)(param_2 * 0x10 + iVar6);
         if ((*(int *)(param_2 * 0x10 + iVar6) == 0x3c) && (puVar1[1] == (int)param_3)) {
@@ -108,8 +106,7 @@ STAllPlayersC::DelObjFromTmps
     /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
     if (param_2 == 0x5a) {
       iVar8 = 0;
-      /* ST_PSEUDO[flattened_global_record_array]: expected typedRecordArray[index].field after inferred base/stride proof */
-      iVar6 = param_1 * 0xa62 + 0x7f4fd3;
+      iVar6 = STRecordByteAddress(g_packedRecords_A62x8, param_1, 0x1B3);
       do {
         puVar1 = (undefined4 *)(iVar8 * 0x10 + iVar6);
         if (((*(int *)(iVar8 * 0x10 + iVar6) == 0x5a) && (puVar1[1] == (int)param_3)) &&
@@ -136,8 +133,7 @@ STAllPlayersC::DelObjFromTmps
     /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
     if (param_2 == 0x172) {
       iVar8 = 0;
-      /* ST_PSEUDO[flattened_global_record_array]: expected typedRecordArray[index].field after inferred base/stride proof */
-      iVar6 = param_1 * 0xa62 + 0x7f4fd3;
+      iVar6 = STRecordByteAddress(g_packedRecords_A62x8, param_1, 0x1B3);
       do {
         puVar1 = (undefined4 *)(iVar8 * 0x10 + iVar6);
         if (((*(int *)(iVar8 * 0x10 + iVar6) == 0x172) && (puVar1[1] == (int)param_3)) &&
@@ -166,8 +162,7 @@ STAllPlayersC::DelObjFromTmps
     /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
     if (param_2 == 0x1b8) {
       iVar8 = 0;
-      /* ST_PSEUDO[flattened_global_record_array]: expected typedRecordArray[index].field after inferred base/stride proof */
-      iVar6 = param_1 * 0xa62 + 0x7f4fd3;
+      iVar6 = STRecordByteAddress(g_packedRecords_A62x8, param_1, 0x1B3);
       do {
         puVar1 = (undefined4 *)(iVar8 * 0x10 + iVar6);
         if (((*(int *)(iVar8 * 0x10 + iVar6) == 0x1b8) && (puVar1[1] == (int)param_3)) &&
@@ -194,8 +189,7 @@ STAllPlayersC::DelObjFromTmps
     /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
     if (param_2 == 0x1ae) {
       iVar8 = 0;
-      /* ST_PSEUDO[flattened_global_record_array]: expected typedRecordArray[index].field after inferred base/stride proof */
-      iVar6 = param_1 * 0xa62 + 0x7f4f83;
+      iVar6 = STRecordByteAddress(g_packedRecords_A62x8, param_1, 0x163);
       do {
         puVar1 = (undefined4 *)(iVar8 * 0x10 + iVar6);
         if (((*(int *)(iVar8 * 0x10 + iVar6) == 0x1ae) && (puVar1[1] == (int)param_3)) &&
@@ -223,8 +217,7 @@ STAllPlayersC::DelObjFromTmps
   else if ((999 < param_2) && (param_2 < 0x3ea)) {
     /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
     param_2 = 0;
-    /* ST_PSEUDO[flattened_global_record_array]: expected typedRecordArray[index].field after inferred base/stride proof */
-    iVar6 = param_1 * 0xa62 + 0x7f4fd3;
+    iVar6 = STRecordByteAddress(g_packedRecords_A62x8, param_1, 0x1B3);
     do {
       puVar1 = (undefined4 *)(param_2 * 0x10 + iVar6);
       if ((*(int *)(param_2 * 0x10 + iVar6) == 0x19a) && (puVar1[1] == (int)param_3)) {

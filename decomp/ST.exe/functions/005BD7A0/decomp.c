@@ -217,16 +217,14 @@ void __thiscall MReportTy::InitMReport(MReportTy *this,undefined1 param_1)
           do {
             pDVar10 = *local_c;
             if (uVar13 < pDVar10->count) {
-              /* ST_PSEUDO[dynamic_array_indexing]: expected DArrayAt<T>(pDVar10, uVar13) (runtime stride) */
-              puVar18 = (uint *)(pDVar10->elementSize * uVar13 + (int)pDVar10->data);
+              puVar18 = DArrayAt<uint>(pDVar10, uVar13);
             }
             else {
               puVar18 = nullptr;
             }
             uVar14 = uVar13 + 1;
             if (uVar14 < pDVar10->count) {
-              /* ST_PSEUDO[dynamic_array_indexing]: expected DArrayAt<T>(pDVar10, uVar14) (runtime stride) */
-              puVar15 = (uint *)(pDVar10->elementSize * uVar14 + (int)pDVar10->data);
+              puVar15 = DArrayAt<uint>(pDVar10, uVar14);
             }
             else {
               puVar15 = nullptr;

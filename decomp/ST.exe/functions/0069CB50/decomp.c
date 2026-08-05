@@ -131,8 +131,7 @@ uint __fastcall CGenerate::sub_0069CB50(int *param_1)
       if (0 < (int)uVar14) {
         do {
           if (uVar9 < pDVar3->count) {
-            /* ST_PSEUDO[dynamic_array_indexing]: expected DArrayAt<T>(pDVar3, uVar9) (runtime stride) */
-            piVar4 = (int *)(pDVar3->elementSize * uVar9 + (int)pDVar3->data);
+            piVar4 = DArrayAt<int>(pDVar3, uVar9);
           }
           else {
             piVar4 = nullptr;
@@ -192,8 +191,7 @@ uint __fastcall CGenerate::sub_0069CB50(int *param_1)
               uVar14 = (int)uVar14 % (int)dVar2;
               pDVar3 = pAVar15->field_000C;
               if (uVar14 < pDVar3->count) {
-                /* ST_PSEUDO[dynamic_array_indexing]: expected DArrayAt<T>(pDVar3, uVar14) (runtime stride) */
-                piVar4 = (int *)(pDVar3->elementSize * uVar14 + (int)pDVar3->data);
+                piVar4 = DArrayAt<int>(pDVar3, uVar14);
               }
               else {
                 piVar4 = nullptr;
@@ -251,8 +249,7 @@ uint __fastcall CGenerate::sub_0069CB50(int *param_1)
       if (0 < (int)local_13c) {
         do {
           if (uVar14 < pDVar3->count) {
-            /* ST_PSEUDO[dynamic_array_indexing]: expected DArrayAt<T>(pDVar3, uVar14) (runtime stride) */
-            piVar4 = (int *)(pDVar3->elementSize * uVar14 + (int)pDVar3->data);
+            piVar4 = DArrayAt<int>(pDVar3, uVar14);
           }
           else {
             piVar4 = nullptr;
@@ -318,8 +315,7 @@ uint __fastcall CGenerate::sub_0069CB50(int *param_1)
               do {
                 uVar14 = local_e4;
                 if (bVar18) {
-                  /* ST_PSEUDO[dynamic_array_indexing]: expected DArrayAt<T>(pDVar3, local_e4) (runtime stride) */
-                  piVar4 = (int *)(pDVar3->elementSize * local_e4 + (int)pDVar3->data);
+                  piVar4 = DArrayAt<int>(pDVar3, local_e4);
                 }
                 else {
                   piVar4 = nullptr;
@@ -657,8 +653,7 @@ LAB_0069d7b2:
       if (0 < (int)local_13c) {
         do {
           if (uVar14 < local_138->count) {
-            /* ST_PSEUDO[dynamic_array_indexing]: expected DArrayAt<T>(local_138, uVar14) (runtime stride) */
-            piVar4 = (int *)(local_138->elementSize * uVar14 + (int)local_138->data);
+            piVar4 = DArrayAt<int>(local_138, uVar14);
           }
           else {
             piVar4 = nullptr;
@@ -721,8 +716,7 @@ LAB_0069d7b2:
               uVar14 = (int)uVar14 % (int)dVar2;
               pDVar3 = pAVar15->field_000C;
               if (uVar14 < pDVar3->count) {
-                /* ST_PSEUDO[dynamic_array_indexing]: expected DArrayAt<T>(pDVar3, uVar14) (runtime stride) */
-                piVar4 = (int *)(pDVar3->elementSize * uVar14 + (int)pDVar3->data);
+                piVar4 = DArrayAt<int>(pDVar3, uVar14);
               }
               else {
                 piVar4 = nullptr;
@@ -828,8 +822,7 @@ LAB_0069d7b2:
       bVar18 = local_138->count != 0;
       do {
         if (bVar18) {
-          /* ST_PSEUDO[dynamic_array_indexing]: expected DArrayAt<T>(pDVar3, uVar14) (runtime stride) */
-          pvVar7 = (void *)(pDVar3->elementSize * uVar14 + (int)pDVar3->data);
+          pvVar7 = DArrayAt<void>(pDVar3, uVar14);
         }
         else {
           pvVar7 = nullptr;

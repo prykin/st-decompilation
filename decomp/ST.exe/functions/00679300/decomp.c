@@ -44,8 +44,7 @@ int __thiscall AiPlrClassTy::CloseTactByTitle(AiPlrClassTy *this,byte *param_1)
   pDVar1 = pAVar3->field_0695;
   if ((pDVar1 != nullptr) && ((int)index < (int)pDVar1->count)) {
     if (index < pDVar1->count) {
-      /* ST_PSEUDO[dynamic_array_indexing]: expected DArrayAt<T>(pDVar1, index) (runtime stride) */
-      puVar5 = (undefined4 *)(pDVar1->elementSize * index + (int)pDVar1->data);
+      puVar5 = DArrayAt<undefined4>(pDVar1, index);
     }
     else {
       puVar5 = nullptr;

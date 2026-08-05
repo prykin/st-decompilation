@@ -231,9 +231,8 @@ LAB_004eda0d:
       auStack_870[iVar7 * 0x5f] = uVar11;
       auStack_870[iVar7 * 0x5f + 1] = 0x3c;
     }
-/* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
 LAB_004eda47:
-    local_10 = CONCAT31(local_10._1_3_,bVar6 + 1);
+    local_10 = STReplaceLowByte((uint32_t)(local_10), (uint8_t)(bVar6 + 1));
     if (5 < (byte)(bVar6 + 1)) {
       local_58 = this_00->field_0008;
       local_1c = local_994;

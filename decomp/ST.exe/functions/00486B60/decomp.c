@@ -4,8 +4,8 @@ void __thiscall FUN_00486b60(void *this,undefined1 *param_1)
 {
   undefined1 *puVar1;
   undefined1 uVar2;
-  int iVar3;
-  uint uVar4;
+  byte bVar3;
+  int iVar4;
   undefined4 uVar5;
   int iVar6;
   int *local_c;
@@ -15,16 +15,16 @@ void __thiscall FUN_00486b60(void *this,undefined1 *param_1)
   puVar1 = param_1;
   *param_1 = 1;
   /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-  iVar3 = (**(code **)(*(int *)this + 8))();
-  if (iVar3 == 1) {
+  iVar4 = (**(code **)(*(int *)this + 8))();
+  if (iVar4 == 1) {
     puVar1[1] = 1;
   }
   else {
     puVar1[1] = 0;
   }
   puVar1[2] = 1;
-  iVar3 = thunk_FUN_00493cd0(this);
-  if (iVar3 == 0) {
+  iVar4 = thunk_FUN_00493cd0(this);
+  if (iVar4 == 0) {
     puVar1[0x1d] = 1;
   }
   else {
@@ -37,8 +37,8 @@ void __thiscall FUN_00486b60(void *this,undefined1 *param_1)
   uVar2 = (**(code **)(*(int *)this + 0xc4))();
   puVar1[0x1c] = uVar2;
   *(undefined4 *)(puVar1 + 3) = *(undefined4 *)((int)this + 0x6f7);
-  iVar3 = thunk_FUN_004e8030(*(int *)((int)this + 0x6f7));
-  puVar1[7] = (char)iVar3;
+  iVar4 = thunk_FUN_004e8030(*(int *)((int)this + 0x6f7));
+  puVar1[7] = (char)iVar4;
   *(undefined4 *)(puVar1 + 8) = *(undefined4 *)((int)this + 0x18);
   *(undefined4 *)(puVar1 + 0xc) = *(undefined4 *)((int)this + 0x6fb);
   *(undefined4 *)(puVar1 + 0x10) = *(undefined4 *)((int)this + 0x6ff);
@@ -59,15 +59,15 @@ void __thiscall FUN_00486b60(void *this,undefined1 *param_1)
         /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
         uVar5 = (**(code **)(*local_c + 0x2c))();
         *(undefined4 *)(puVar1 + 0x1e) = uVar5;
-        iVar3 = local_c[8];
-        if (iVar3 == 0x14) {
-          iVar3 = thunk_FUN_004e8030(*(int *)((int)this + 0x6f7));
-          puVar1[0x22] = (char)iVar3;
+        iVar4 = local_c[8];
+        if (iVar4 == 0x14) {
+          iVar4 = thunk_FUN_004e8030(*(int *)((int)this + 0x6f7));
+          puVar1[0x22] = (char)iVar4;
           /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
           uVar2 = (**(code **)(*local_c + 0x7c))();
           puVar1[0x23] = uVar2;
         }
-        else if ((iVar3 == 0x172) || (iVar3 == 0x1a4)) {
+        else if ((iVar4 == 0x172) || (iVar4 == 0x1a4)) {
           /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
           uVar2 = (**(code **)(*local_c + 0xc))();
           puVar1[0x22] = uVar2;
@@ -99,17 +99,17 @@ void __thiscall FUN_00486b60(void *this,undefined1 *param_1)
     break;
   default:
     *(undefined2 *)(puVar1 + 0x1e) = *(undefined2 *)((int)this + 0x79a);
-    uVar4 = LookupRecordByte(*(char *)((int)this + 0x24));
-    if ((uVar4 & 0xff) == 1) {
-      iVar3 = *(int *)((int)this + 0x24);
+    bVar3 = LookupRecordByte(*(char *)((int)this + 0x24));
+    if (bVar3 == 1) {
+      iVar4 = *(int *)((int)this + 0x24);
       iVar6 = 6;
 LAB_00486cfc:
-      uVar5 = thunk_FUN_004e60d0(iVar3,iVar6);
+      uVar5 = thunk_FUN_004e60d0(iVar4,iVar6);
       *(short *)(puVar1 + 0x22) = (short)uVar5;
     }
     else {
-      if ((uVar4 & 0xff) == 2) {
-        iVar3 = *(int *)((int)this + 0x24);
+      if (bVar3 == 2) {
+        iVar4 = *(int *)((int)this + 0x24);
         iVar6 = 0x83;
         goto LAB_00486cfc;
       }

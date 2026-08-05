@@ -149,8 +149,7 @@ SubmarineTitans::Recovered::HiddenThis::AnonReceiver_004167A0::FUN_00418030
           do {
             sVar11 = this_00->field_004B + (short)local_1c;
             sVar3 = this_00->field_0047 + (short)local_10;
-            /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-            local_50 = (short *)(CONCAT22((short)((uint)psVar15 >> 0x10),this_00->field_0049) +
+            local_50 = (short *)(STReplaceLowWord((uint32_t)(psVar15), (uint16_t)(this_00->field_0049)) +
                                 local_30);
             sVar13 = (short)local_50;
             if (((sVar3 < 0) || (g_worldGrid.sizeX <= sVar3)) ||
@@ -286,8 +285,7 @@ LAB_0041862b:
   uVar5 = (int)sVar3 - (int)this_00->field_0041;
   sVar11 = puVar7[5] * 0xc9 + 100;
   uVar12 = (int)uVar5 >> 0x1f;
-  /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-  local_c = (short *)(CONCAT22((short)((uint)local_9c.previous >> 0x10),puVar7[6] * 200) + 100);
+  local_c = (short *)(STReplaceLowWord((uint32_t)(local_9c.previous), (uint16_t)(puVar7[6] * 200)) + 100);
   local_54 = (short *)((uVar5 ^ uVar12) - uVar12);
   local_15 = 0;
   uVar5 = (int)sVar11 - (int)this_00->field_0043;
@@ -298,8 +296,7 @@ LAB_0041862b:
   uVar12 = (int)uVar5 >> 0x1f;
   local_10 = (short *)((uVar5 ^ uVar12) - uVar12);
   if (local_10 == nullptr) {
-    /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-    local_14 = (short *)CONCAT31(local_14._1_3_,this_00->field_0061);
+    local_14 = (short *)STReplaceLowByte((uint32_t)(local_14), (uint8_t)(this_00->field_0061));
   }
   else {
     bVar1 = 2 < (int)local_10 / (int)local_54;
@@ -311,12 +308,10 @@ LAB_0041862b:
       bVar2 = false;
     }
     if ((local_54 == nullptr || bVar1) && (bVar2)) {
-      /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-      local_14 = (short *)CONCAT31(local_14._1_3_,this_00->field_0062);
+      local_14 = (short *)STReplaceLowByte((uint32_t)(local_14), (uint8_t)(this_00->field_0062));
     }
     else {
-      /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-      local_14 = (short *)CONCAT31(local_14._1_3_,this_00->field_0061);
+      local_14 = (short *)STReplaceLowByte((uint32_t)(local_14), (uint8_t)(this_00->field_0061));
     }
   }
   iVar4 = sub_00415B30(this_00,this_00->field_0041,this_00->field_0043,this_00->field_0045,sVar3,

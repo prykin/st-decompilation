@@ -111,13 +111,13 @@ cf_error_exit_004CC50A:
   }
   if (*(int *)&param_1->field_0x43c == 2) {
     local_EAX_774 = LookupRecordByte(param_1->field_023D);
-    if (*(int *)(&DAT_00795f18 + ((local_EAX_774 & 0xffU) + param_1->field_0235 * 3) * 4) != 0) {
+    if (*(int *)(&DAT_00795f18 + ((uint)(byte)local_EAX_774 + param_1->field_0235 * 3) * 4) != 0) {
       iVar4 = *(int *)param_1;
       local_EAX_824 = LookupRecordByte(param_1->field_023D);
       /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
       (**(code **)(iVar4 + 0x90))
                 (3,*(undefined4 *)
-                    (&DAT_00795f18 + ((local_EAX_824 & 0xffU) + param_1->field_0235 * 3) * 4));
+                    (&DAT_00795f18 + ((uint)(byte)local_EAX_824 + param_1->field_0235 * 3) * 4));
     }
   }
 cf_common_exit_004CC6D2:

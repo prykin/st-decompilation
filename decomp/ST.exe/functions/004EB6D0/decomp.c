@@ -2,15 +2,16 @@
 undefined4 __thiscall FUN_004eb6d0(void *this,int param_1,int param_2,int param_3,int param_4)
 
 {
-  int iVar1;
-  int uVar2;
+  byte bVar1;
+  int iVar2;
   uint uVar3;
+  int uVar2;
 
   if (param_4 == 0) {
     return 0;
   }
-  iVar1 = LookupRecordByte(*(char *)((int)this + 0x24));
-  if ((char)iVar1 == '\x03') {
+  bVar1 = LookupRecordByte(*(char *)((int)this + 0x24));
+  if (bVar1 == 3) {
     if (param_2 == 0xdd) {
       if (param_1 == 2) {
         uVar3 = thunk_FUN_004e41c0(*(int *)((int)this + 0x24));
@@ -24,8 +25,8 @@ undefined4 __thiscall FUN_004eb6d0(void *this,int param_1,int param_2,int param_
         if (param_1 != 3) {
           return 0;
         }
-        iVar1 = thunk_FUN_004d89b0(*(char *)((int)this + 0x24));
-        if (iVar1 < param_3) {
+        iVar2 = thunk_FUN_004d89b0(*(char *)((int)this + 0x24));
+        if (iVar2 < param_3) {
           return 0;
         }
         thunk_FUN_004d8940(*(char *)((int)this + 0x24),param_3);
@@ -48,8 +49,8 @@ undefined4 __thiscall FUN_004eb6d0(void *this,int param_1,int param_2,int param_
         if (param_1 != 3) {
           return 0;
         }
-        iVar1 = thunk_FUN_004e4410(*(byte **)((int)this + 0x24));
-        if (iVar1 < param_3) {
+        iVar2 = thunk_FUN_004e4410(*(byte **)((int)this + 0x24));
+        if (iVar2 < param_3) {
           return 0;
         }
         thunk_FUN_004e43c0(*(int *)((int)this + 0x24),param_3);
@@ -60,8 +61,8 @@ undefined4 __thiscall FUN_004eb6d0(void *this,int param_1,int param_2,int param_
   }
   if (param_2 == 0xdd) {
     if (param_1 == 2) {
-      iVar1 = thunk_FUN_004d8870(*(char *)((int)this + 0x24));
-      if (iVar1 < param_3 / param_4) {
+      iVar2 = thunk_FUN_004d8870(*(char *)((int)this + 0x24));
+      if (iVar2 < param_3 / param_4) {
         return 0;
       }
       thunk_FUN_004d88f0(*(char *)((int)this + 0x24),param_3);
@@ -70,8 +71,8 @@ undefined4 __thiscall FUN_004eb6d0(void *this,int param_1,int param_2,int param_
     if (param_1 != 3) {
       return 0;
     }
-    iVar1 = thunk_FUN_004d89b0(*(char *)((int)this + 0x24));
-    if (iVar1 < param_3) {
+    iVar2 = thunk_FUN_004d89b0(*(char *)((int)this + 0x24));
+    if (iVar2 < param_3) {
       return 0;
     }
     thunk_FUN_004d8940(*(char *)((int)this + 0x24),param_3);
@@ -81,8 +82,8 @@ undefined4 __thiscall FUN_004eb6d0(void *this,int param_1,int param_2,int param_
       return 0;
     }
     if (param_1 == 2) {
-      iVar1 = thunk_FUN_004d8870(*(char *)((int)this + 0x24));
-      if (iVar1 < param_3 / param_4) {
+      iVar2 = thunk_FUN_004d8870(*(char *)((int)this + 0x24));
+      if (iVar2 < param_3 / param_4) {
         return 0;
       }
       thunk_FUN_004d8a30(*(char *)((int)this + 0x24),param_3);
@@ -93,8 +94,8 @@ LAB_004eb93e:
     if (param_1 != 3) {
       return 0;
     }
-    iVar1 = thunk_FUN_004d8af0(*(char *)((int)this + 0x24));
-    if (iVar1 < param_3) {
+    iVar2 = thunk_FUN_004d8af0(*(char *)((int)this + 0x24));
+    if (iVar2 < param_3) {
       return 0;
     }
     thunk_FUN_004d8a80(*(char *)((int)this + 0x24),param_3);
@@ -105,18 +106,18 @@ cf_common_exit_004EB94E:
   if (*(uint *)((int)this + 0x24) == (uint)*(byte *)(*(int *)((int)this + 0x10) + 0x112d)) {
     thunk_FUN_004d8b70((char)*(uint *)((int)this + 0x24));
     uVar2 = LookupRecordByte(*(char *)((int)this + 0x24));
-    uVar3 = uVar2 & 0xff;
-    if (uVar3 == 1) {
+    uVar2 = (int)(byte)uVar2;
+    if (uVar2 == 1) {
       /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
       (**(code **)(*(int *)this + 0x90))(6,0x6e);
     }
     else {
-      if (uVar3 == 2) {
+      if (uVar2 == 2) {
         /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
         (**(code **)(*(int *)this + 0x90))(6,0x6f);
         return 0;
       }
-      if (uVar3 == 3) {
+      if (uVar2 == 3) {
         /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
         (**(code **)(*(int *)this + 0x90))(6,0x70);
         return 0;

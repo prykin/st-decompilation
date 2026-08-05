@@ -19,9 +19,9 @@ void __fastcall FUN_0067b260(int param_1)
     while (index = index - 1, -1 < (int)index) {
       /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
       array = *(DArrayTy **)(param_1 + 0x6a1);
-      /* ST_PSEUDO[dynamic_array_indexing]: expected DArrayAt<T>(array, index) (runtime stride) */
+      /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
       if ((((index < array->count) &&
-           (pcVar1 = (char *)(array->elementSize * index + (int)array->data), pcVar1 != nullptr)
+           (pcVar1 = DArrayAt<char>(array, index), pcVar1 != nullptr)
            ) && ((short)*pcVar1 == *(short *)(param_1 + 0x660))) && (pcVar1[7] == '\0')) {
         DArrayRemoveAt(array,index);
       }

@@ -68,7 +68,8 @@ FUN_004b2520(uint param_1,int param_2,int param_3,int param_4,int param_5,undefi
   }
   else {
     uVar7 = LookupRecordByte((byte)param_1);
-    local_2c = *(int *)(&DAT_007e3f20 + ((uVar7 & 0xffU) + param_2 * 3) * 4);
+    uVar7 = (int)(byte)uVar7;
+    local_2c = *(int *)(&DAT_007e3f20 + (uVar7 + param_2 * 3) * 4);
 /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
 LAB_004b266b:
     uVar11 = g_worldGrid._0_4_;

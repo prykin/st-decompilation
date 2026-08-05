@@ -53,12 +53,10 @@ STAllPlayersC::CalibrateTmp
                0x3075);
   }
   if (param_2 == 0) {
-    /* ST_PSEUDO[flattened_global_record_array]: expected typedRecordArray[index].field after inferred base/stride proof */
-    local_18 = *(DArrayTy **)(param_3 * 0x10 + 0x7f4f8d + param_1 * 0xa62);
+    local_18 = *(DArrayTy **)(param_3 * 0x10 + STRecordByteAddress(g_packedRecords_A62x8, param_1, 0x16D));
   }
   else if (param_2 == 1) {
-    /* ST_PSEUDO[flattened_global_record_array]: expected typedRecordArray[index].field after inferred base/stride proof */
-    local_18 = *(DArrayTy **)(param_3 * 0x10 + 0x7f4fdd + param_1 * 0xa62);
+    local_18 = *(DArrayTy **)(param_3 * 0x10 + STRecordByteAddress(g_packedRecords_A62x8, param_1, 0x1BD));
   }
   else {
     iVar2 = ReportDebugMessage("E:\\__titans\\wlad\\to_allpl.cpp",0x3079,0,0,"%s",

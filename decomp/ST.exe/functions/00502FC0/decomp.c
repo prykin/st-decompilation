@@ -81,8 +81,7 @@ void __thiscall CPanelTy::Update2PanelSI(CPanelTy *this)
                                             this_00->field_02B6,1);
               DibPut(this_00->field_018C,(local_8 & 0xff) * 4 + 0x3f,0x87,'\x01',pbVar6);
               bVar4 = (byte)local_8 + 1;
-              /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-              local_8 = CONCAT31(local_8._1_3_,bVar4);
+              local_8 = STReplaceLowByte((uint32_t)(local_8), (uint8_t)(bVar4));
             } while (bVar4 < (byte)this_00->field_0BCD);
           }
           if ((byte)local_8 < 0x14) {
@@ -150,8 +149,7 @@ switchD_005030a2_caseD_1a:
       pbVar6 = (byte *)FUN_0070b3a0((AnonShape_GLOBAL_0081175C_57F682DD *)this_00->field_02B6,3);
       DibPut(this_00->field_018C,(local_8 & 0xff) * 4 + 0x3f,0x87,'\x01',pbVar6);
       bVar4 = (byte)local_8 + 1;
-      /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-      local_8 = CONCAT31(local_8._1_3_,bVar4);
+      local_8 = STReplaceLowByte((uint32_t)(local_8), (uint8_t)(bVar4));
     } while (bVar4 < (byte)this_00->field_0BB6 >> 1);
   }
   if ((byte)local_8 < 0x14) {

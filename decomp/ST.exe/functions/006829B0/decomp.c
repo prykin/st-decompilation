@@ -27,8 +27,7 @@ void FUN_006829b0(void)
   case 1:
     local_c = 6;
     iVar1 = thunk_FUN_0067ed20(DAT_00857528);
-    /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-    local_b = (float)CONCAT22(local_b._2_2_,(short)iVar1);
+    local_b = (float)STReplaceLowWord((uint32_t)(local_b), (uint16_t)((short)iVar1));
     thunk_FUN_00682370((undefined4 *)&local_c);
     thunk_FUN_006827a0();
     return;

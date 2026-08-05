@@ -36,12 +36,10 @@ void __thiscall CPanelTy::PaintMineInf(CPanelTy *this,int param_1)
     DibPut((AnonShape_006B5B10_E0D06CF1 *)local_10->field_0194,param_1,0x50,'\x01',
            (byte *)local_10->field_09D9[5]);
     if (pCVar2->field_0BF5 == CASE_38) {
-      /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-      local_c = (undefined1 *)CONCAT31(local_c._1_3_,2);
+      local_c = (undefined1 *)STReplaceLowByte((uint32_t)(local_c), (uint8_t)(2));
     }
     else {
-      /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-      local_c = (undefined1 *)CONCAT31(local_c._1_3_,pCVar2->field_0BF5 == CASE_4F);
+      local_c = (undefined1 *)STReplaceLowByte((uint32_t)(local_c), (uint8_t)(pCVar2->field_0BF5 == CASE_4F));
     }
     pbVar4 = (byte *)FUN_0070b3a0((AnonShape_GLOBAL_0081175C_57F682DD *)pCVar2->field_02D2,
                                   (uint)local_c & 0xff);

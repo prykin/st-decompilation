@@ -51,8 +51,8 @@ STAllPlayersC::GetCursorType
       if (g_packedRecords_A62x8[uVar4].field333_0x167 != uVar4) {
         return 0;
       }
-      /* ST_PSEUDO[unresolved_register_input,packed_or_unaligned_piece]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention; expected named packed member, bit extract/compose, or unaligned load */
-      sVar3 = thunk_FUN_00435b90(CONCAT31((int3)((uint)in_EDX >> 8),DAT_0080874d),
+      /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
+      sVar3 = thunk_FUN_00435b90(STReplaceLowByte((uint32_t)(in_EDX), (uint8_t)(DAT_0080874d)),
                                  (DArrayTy *)g_packedRecords_A62x8[uVar4].field335_0x16d,param_1,
                                  (int *)param_2,param_3,param_4);
       return sVar3;

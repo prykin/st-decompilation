@@ -545,9 +545,7 @@ LAB_006842d6:
                       pcVar7 = Library::MSVCRT::_strncpy
                                          ((char *)(&DAT_00811aa4 + iVar10 * 0xac5),(char *)pbVar14,
                                           0x3f);
-                      /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-                      local_bc = CONCAT22((short)((uint)pcVar7 >> 0x10),
-                                          *(undefined2 *)(iVar2 + 0x472));
+                      local_bc = STReplaceLowWord((uint32_t)(pcVar7), (uint16_t)(*(undefined2 *)(iVar2 + 0x472)));
                       /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
                       local_d0 = *(int *)(PTR_008489cc->field_000F + 0xc) + 1;
                       iVar10 = thunk_FUN_006838b0((int *)(iVar2 + 0x46e),'\x02',(byte *)&local_d0,

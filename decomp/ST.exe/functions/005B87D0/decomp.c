@@ -134,8 +134,7 @@ MMsgTy::SetPanel(MMsgTy *this,UINT param_1,int param_2,int param_3,UINT param_4)
             }
           }
           bVar3 = (char)local_8 + 1;
-          /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-          local_8 = CONCAT31(local_8._1_3_,bVar3);
+          local_8 = STReplaceLowByte((uint32_t)(local_8), (uint8_t)(bVar3));
         } while (bVar3 < this_00->field_009A);
       }
       bVar3 = 0;
@@ -146,12 +145,10 @@ MMsgTy::SetPanel(MMsgTy *this,UINT param_1,int param_2,int param_3,UINT param_4)
           *(undefined4 *)((int)&this_00->field_0127 + uVar10 * 0x1fb) = this_00->field_0061;
           *(uint *)((int)&this_00->field_0123 + uVar10 * 0x1fb) = ((local_c & 0xff) + 1) * 100;
           if (*(int *)(&this_00->field_0xbc + uVar10 * 0x1fb) != 0) {
-            /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-            local_c = CONCAT31(local_c._1_3_,(char)local_c + '\x01');
+            local_c = STReplaceLowByte((uint32_t)(local_c), (uint8_t)((char)local_c + '\x01'));
           }
           bVar3 = bVar3 + 1;
-          /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-          local_8 = CONCAT31(local_8._1_3_,bVar3);
+          local_8 = STReplaceLowByte((uint32_t)(local_8), (uint8_t)(bVar3));
         } while (bVar3 < this_00->field_009A);
       }
       memset(&this_00->field_0x1c82, 0, 0x1a); /* compiler bulk-zero initialization */

@@ -92,8 +92,7 @@ void __thiscall STAllPlayersC::RestoreTmp(STAllPlayersC *this,int param_1)
   DArrayTy *local_c;
   uint local_8;
 
-  /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-  local_8 = CONCAT31(local_8._1_3_,DAT_0080874d);
+  local_8 = STReplaceLowByte((uint32_t)(local_8), (uint8_t)(DAT_0080874d));
   local_c = nullptr;
   local_24 = 0;
   local_70.previous = g_currentExceptionFrame;
@@ -119,10 +118,8 @@ void __thiscall STAllPlayersC::RestoreTmp(STAllPlayersC *this,int param_1)
   }
   this_00 = local_2c;
   pSVar4 = (STGameObjC *)(int)(char)local_8;
-  /* ST_PSEUDO[flattened_global_record_array]: expected typedRecordArray[index].field after inferred base/stride proof */
-  iVar3 = *(int *)(param_1 * 0x10 + 0x7f5027 + (int)pSVar4 * 0xa62);
-  /* ST_PSEUDO[flattened_global_record_array]: expected typedRecordArray[index].field after inferred base/stride proof */
-  pAVar1 = (AnonShape_00439100_AC816B12 *)(param_1 * 0x10 + 0x7f5027 + (int)pSVar4 * 0xa62);
+  iVar3 = *(int *)(param_1 * 0x10 + STRecordByteAddress(g_packedRecords_A62x8, (int)pSVar4, 0x207));
+  pAVar1 = (AnonShape_00439100_AC816B12 *)(param_1 * 0x10 + STRecordByteAddress(g_packedRecords_A62x8, (int)pSVar4, 0x207));
   local_28 = pAVar1;
   local_20 = pSVar4;
   if (iVar3 < 0x19b) {
@@ -144,8 +141,7 @@ void __thiscall STAllPlayersC::RestoreTmp(STAllPlayersC *this,int param_1)
             iVar3 = extraout_EAX_01;
 LAB_00439c32:
             cVar12 = pAVar1->field_0x4;
-            /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-            uVar5 = CONCAT22((short)((uint)iVar3 >> 0x10),*(undefined2 *)pAVar1->field_000A->data);
+            uVar5 = STReplaceLowWord((uint32_t)(iVar3), (uint16_t)(*(undefined2 *)pAVar1->field_000A->data));
           }
           else {
             if (iVar3 != 0) {
@@ -453,8 +449,7 @@ LAB_00439469:
         }
 LAB_00439566:
         cVar12 = pAVar1->field_0x4;
-        /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-        uVar5 = CONCAT22((short)((uint)pSVar6 >> 0x10),*(undefined2 *)pAVar1->field_000A->data);
+        uVar5 = STReplaceLowWord((uint32_t)(pSVar6), (uint16_t)(*(undefined2 *)pAVar1->field_000A->data));
       }
       AddObjToTmp(this_00,(char)local_8,0,0,cVar12,uVar5);
       g_packedRecords_A62x8[(int)pSVar4].field332_0x163 = 0x3c;
@@ -572,10 +567,8 @@ LAB_00439986:
       /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
       uVar10 = extraout_ECX_00;
     }
-    /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-    uVar7 = CONCAT22((short)((uint)iVar3 >> 0x10),pSVar6->field_0032);
-    /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-    uVar8 = CONCAT31((int3)((uint)uVar10 >> 8),*(undefined1 *)&pSVar6->field_0024);
+    uVar7 = STReplaceLowWord((uint32_t)(iVar3), (uint16_t)(pSVar6->field_0032));
+    uVar8 = STReplaceLowByte((uint32_t)(uVar10), (uint8_t)(*(undefined1 *)&pSVar6->field_0024));
     uVar13 = pSVar6->field_0020;
 LAB_0043a470:
     iVar3 = 1;
@@ -655,8 +648,7 @@ LAB_0043a320:
         }
         /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
         uVar7 = CONCAT22(uVar11,pSVar6->field_0032);
-        /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-        uVar8 = CONCAT31((int3)((uint)uVar10 >> 8),*(undefined1 *)&pSVar6->field_0024);
+        uVar8 = STReplaceLowByte((uint32_t)(uVar10), (uint8_t)(*(undefined1 *)&pSVar6->field_0024));
         uVar13 = pSVar6->field_0020;
         goto LAB_0043a470;
       }
@@ -721,8 +713,7 @@ LAB_0043a459:
 /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
 LAB_0043a463:
       uVar7 = CONCAT22(uVar11,pSVar6->field_0032);
-      /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-      uVar8 = CONCAT31((int3)((uint)iVar3 >> 8),*(undefined1 *)&pSVar6->field_0024);
+      uVar8 = STReplaceLowByte((uint32_t)(iVar3), (uint8_t)(*(undefined1 *)&pSVar6->field_0024));
       uVar13 = pSVar6->field_0020;
       goto LAB_0043a470;
     }
@@ -808,7 +799,7 @@ LAB_0043a177:
         /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
         uVar7 = CONCAT22(extraout_var_03,*(undefined2 *)&pAVar1->field_0x8);
         /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
-        uVar8 = CONCAT31((int3)((uint)extraout_EDX >> 8),pAVar1->field_0x4);
+        uVar8 = STReplaceLowByte((uint32_t)(extraout_EDX), (uint8_t)(pAVar1->field_0x4));
         uVar13 = local_20->field_0020;
         iVar3 = 0;
       }
@@ -824,7 +815,7 @@ LAB_0043a177:
         /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
         uVar7 = CONCAT22(extraout_var_12,*(undefined2 *)&pAVar1->field_0x8);
         /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
-        uVar8 = CONCAT31((int3)((uint)extraout_EAX_03 >> 8),pAVar1->field_0x4);
+        uVar8 = STReplaceLowByte((uint32_t)(extraout_EAX_03), (uint8_t)(pAVar1->field_0x4));
         uVar13 = local_20->field_0020;
         iVar3 = 0;
       }
@@ -849,7 +840,7 @@ LAB_0043a177:
         /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
         uVar7 = CONCAT22(extraout_var_00,*(undefined2 *)&pAVar1->field_0x8);
         /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
-        uVar8 = CONCAT31((int3)((uint)extraout_ECX_02 >> 8),pAVar1->field_0x4);
+        uVar8 = STReplaceLowByte((uint32_t)(extraout_ECX_02), (uint8_t)(pAVar1->field_0x4));
         uVar13 = local_20->field_0020;
         iVar3 = 0;
       }
@@ -880,7 +871,7 @@ LAB_0043a177:
         /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
         uVar7 = CONCAT22(extraout_var_11,*(undefined2 *)&pAVar1->field_0x8);
         /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
-        uVar8 = CONCAT31((int3)((uint)extraout_EAX_02 >> 8),pAVar1->field_0x4);
+        uVar8 = STReplaceLowByte((uint32_t)(extraout_EAX_02), (uint8_t)(pAVar1->field_0x4));
         uVar13 = local_20->field_0020;
         iVar3 = 0;
       }
@@ -903,7 +894,7 @@ LAB_0043a177:
         /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
         uVar7 = CONCAT22(extraout_var,*(undefined2 *)&pAVar1->field_0x8);
         /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
-        uVar8 = CONCAT31((int3)((uint)extraout_ECX_01 >> 8),pAVar1->field_0x4);
+        uVar8 = STReplaceLowByte((uint32_t)(extraout_ECX_01), (uint8_t)(pAVar1->field_0x4));
         uVar13 = local_20->field_0020;
         iVar3 = 0;
       }
@@ -915,7 +906,7 @@ cf_common_exit_0043A47C:
   if (((local_24 == 1) &&
       (uVar5 = CONCAT22((short)((uint)&local_14 >> 0x10),*(undefined2 *)&local_28->field_0x8),
       iVar3 = GetCamPoint((short)*(undefined4 *)local_28,
-                          CONCAT31((int3)(uVar5 >> 8),local_28->field_0x4),local_28->field_000A,
+                          STReplaceLowByte((uint32_t)(uVar5), (uint8_t)(local_28->field_0x4)),local_28->field_000A,
                           uVar5,&local_18,&local_14,&local_10,&local_1c), iVar3 == 0)) &&
      (iVar3 = Library::Ourlib::ST3DSPR::SprInRect
                         (g_sT3DSMAPContext_00807598,local_1c,DAT_00807410,DAT_00807414,DAT_00807418,

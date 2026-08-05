@@ -128,8 +128,7 @@ LAB_00462320:
           psVar1 = (short *)((int)this + 0x804);
           psVar2 = (short *)((int)this + 0x802);
           sVar7 = *(short *)&local_c->vtable;
-          /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-          local_10 = CONCAT22((short)((uint)local_c >> 0x10),sVar7);
+          local_10 = STReplaceLowWord((uint32_t)(local_c), (uint16_t)(sVar7));
           if ((((((-1 < sVar7) && (sVar7 < g_worldGrid.sizeX)) && (-1 < sVar6)) &&
                ((sVar6 < g_worldGrid.sizeY && (-1 < sVar9)))) && (sVar9 < g_worldGrid.sizeZ)) &&
              (((local_14 = (STFishC *)
@@ -141,10 +140,8 @@ LAB_00462320:
             bVar4 = *(byte *)((int)this + 0x24);
             /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
             local_10._1_3_ = (undefined3)((uint)local_10 >> 8);
-            /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-            local_10 = CONCAT31(local_10._1_3_,bVar3);
-            /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-            local_28 = CONCAT31(local_28._1_3_,bVar4);
+            local_10 = STReplaceLowByte((uint32_t)(local_10), (uint8_t)(bVar3));
+            local_28 = STReplaceLowByte((uint32_t)(local_28), (uint8_t)(bVar4));
             if (DAT_00808a8f == '\0') {
               if (bVar3 == bVar4) {
 LAB_00462c49:
@@ -225,10 +222,8 @@ cf_common_exit_00462E32:
                (g_bulkInitializedRecords_008087C7[(int)pSVar23[1].vtable].field_0022 < 8)))))) {
             bVar3 = *(byte *)&pSVar23[1].vtable;
             bVar4 = *(byte *)((int)this + 0x24);
-            /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-            local_10 = CONCAT31(local_10._1_3_,bVar3);
-            /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-            local_c = (STFishC *)CONCAT31(local_c._1_3_,bVar4);
+            local_10 = STReplaceLowByte((uint32_t)(local_10), (uint8_t)(bVar3));
+            local_c = (STFishC *)STReplaceLowByte((uint32_t)(local_c), (uint8_t)(bVar4));
             if (DAT_00808a8f == '\0') {
               if (bVar3 == bVar4) {
 LAB_00462a36:
@@ -418,10 +413,8 @@ LAB_00462a36:
                     (g_bulkInitializedRecords_008087C7[(int)pSVar23[1].vtable].field_0022 < 8)))) {
             bVar3 = *(byte *)&pSVar23[1].vtable;
             bVar4 = *(byte *)((int)this + 0x24);
-            /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-            local_10 = CONCAT31(local_10._1_3_,bVar3);
-            /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-            local_c = (STFishC *)CONCAT31(local_c._1_3_,bVar4);
+            local_10 = STReplaceLowByte((uint32_t)(local_10), (uint8_t)(bVar3));
+            local_c = (STFishC *)STReplaceLowByte((uint32_t)(local_c), (uint8_t)(bVar4));
             if (DAT_00808a8f == '\0') {
               if (bVar3 == bVar4) {
 LAB_00463442:
@@ -498,10 +491,8 @@ LAB_00463442:
                         (g_bulkInitializedRecords_008087C7[pSVar14->field_0024].field_0022 < 8)))) {
             bVar3 = *(byte *)&pSVar14->field_0024;
             bVar4 = *(byte *)((int)this + 0x24);
-            /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-            local_10 = CONCAT31(local_10._1_3_,bVar3);
-            /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-            local_c = (STFishC *)CONCAT31(local_c._1_3_,bVar4);
+            local_10 = STReplaceLowByte((uint32_t)(local_10), (uint8_t)(bVar3));
+            local_c = (STFishC *)STReplaceLowByte((uint32_t)(local_c), (uint8_t)(bVar4));
             if (DAT_00808a8f == '\0') {
               if (bVar3 == bVar4) {
 LAB_00462fde:
@@ -537,8 +528,7 @@ LAB_00462fde:
                 (dVar13 = pSVar14->slot_2C(), uVar20 = extraout_var_02,
                 uVar16 = extraout_var_00, dVar13 == 0x60)))) {
               sVar9 = *(short *)((int)this + 0xd7);
-              /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-              local_24 = CONCAT22((short)(dVar13 >> 0x10),sVar9);
+              local_24 = STReplaceLowWord((uint32_t)(dVar13), (uint16_t)(sVar9));
               sVar6 = *(short *)((int)this + 0xdb);
               /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
               local_1c = CONCAT22(uVar16,sVar6);
@@ -858,8 +848,7 @@ cf_common_exit_00464526:
             psVar2 = (short *)((int)this + 0x802);
             local_c = (STFishC *)((int)this + 0x800);
             sVar7 = *(short *)&local_c->vtable;
-            /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-            local_10 = CONCAT22((short)((uint)local_c >> 0x10),sVar7);
+            local_10 = STReplaceLowWord((uint32_t)(local_c), (uint16_t)(sVar7));
             if (*(int *)((int)this + 0x7fc) == 3) {
               if ((((-1 < sVar7) && (sVar7 < g_worldGrid.sizeX)) &&
                   ((-1 < sVar6 && ((sVar6 < g_worldGrid.sizeY && (-1 < sVar9)))))) &&
@@ -1066,8 +1055,7 @@ cf_common_exit_00464889:
         psVar2 = (short *)((int)this + 0x802);
         local_c = (STFishC *)((int)this + 0x800);
         sVar7 = *(short *)&local_c->vtable;
-        /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-        local_10 = CONCAT22((short)((uint)local_c >> 0x10),sVar7);
+        local_10 = STReplaceLowWord((uint32_t)(local_c), (uint16_t)(sVar7));
         if (*(int *)((int)this + 0x7fc) == 3) {
           if (((sVar7 < 0) || (g_worldGrid.sizeX <= sVar7)) ||
              ((sVar6 < 0 ||

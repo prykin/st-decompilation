@@ -16,10 +16,10 @@ void __thiscall TLOBaseTy::sub_00419D30(TLOBaseTy *this,int param_1)
   /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
   undefined2 extraout_var_01;
 
-  /* ST_PSEUDO[unresolved_register_input,packed_or_unaligned_piece]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention; expected named packed member, bit extract/compose, or unaligned load */
+  /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
   STAllPlayersC::_ChangeMD
             (g_allPlayers_007FA174,0,(int *)this->field_0024,
-             CONCAT22((short)((uint)in_EAX >> 0x10),this->field_0032));
+             STReplaceLowWord((uint32_t)(in_EAX), (uint16_t)(this->field_0032)));
   /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
   STAllPlayersC::_ChangeDock(0,(int *)this->field_0024,CONCAT22(extraout_var_00,this->field_0032));
   /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */

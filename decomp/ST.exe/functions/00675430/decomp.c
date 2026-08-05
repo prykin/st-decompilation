@@ -11,66 +11,68 @@
    at 00675476 @ 0067547B | 00675430 returns partial register write at 0067547C @ 00675481 |
    00675430 returns partial register write at 00675482 @ 00675487 | 00675430 returns partial
    register write at 006754A8 @ 006754AD | 00675430 returns partial register write at 006754AE @
-   006754B3 | 00675430 returns partial register write at 006754BB @ 006754C0 */
+   006754B3 | 00675430 returns partial register write at 006754BB @ 006754C0
+   [STAbiConsistencyApplier] narrow_accumulator_return target=return:-1: return=/ushort Evidence:
+   all resolved direct callers consume only AX or kill the result; narrow_uses=2, ignored=0, full=0,
+   unknown=0; reverse CFG traversal from every RET finds the same exact low-accumulator definition
+   width on every path; sites=0067C180 @ 0067C3FD -> read as AX on every CFG path | 0067C180 @
+   0067C5B1 -> read as AX on every CFG path */
 
-uint __cdecl FUN_00675430(Global_sub_00675430_param_1Enum param_1)
+ushort __cdecl FUN_00675430(Global_sub_00675430_param_1Enum param_1)
 
 {
-  undefined2 uVar2;
-  Global_sub_00675430_param_1Enum GVar1;
-
   if (param_1 < 0x101) {
     if (param_1 == 0x100) {
       return 0x32;
     }
-    uVar2 = (undefined2)(param_1 - CASE_1 >> 0x10);
-    GVar1 = param_1 - CASE_1;
     switch(param_1) {
-    /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
     case CASE_1:
     case CASE_2:
-      return CONCAT22(uVar2,0x1e);
-    /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
+      return 0x1e;
     case CASE_4:
-      return CONCAT22(uVar2,0x5f);
-    /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
+      return 0x5f;
     case CASE_8:
-      return CONCAT22(uVar2,100);
-    /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
+      return 100;
     case CASE_10:
-      return CONCAT22(uVar2,0x46);
-    /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
+      return 0x46;
     case CASE_20:
-      return CONCAT22(uVar2,0x28);
-    /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
+      return 0x28;
     case CASE_40:
-      return CONCAT22(uVar2,0x5a);
-    /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
+      return 0x5a;
     case CASE_80:
-      return CONCAT22(uVar2,0x6e);
+      return 0x6e;
+    }
+  }
+  else if (param_1 < 0x100001) {
+    if (param_1 == 0x100000) {
+      return 10;
+    }
+    if (param_1 < 0x40001) {
+      if (param_1 == 0x40000) {
+        return 0x3c;
+      }
+      if (param_1 == 0x10000) {
+        return 10;
+      }
+      if (param_1 == 0x20000) {
+        return 10;
+      }
+    }
+    else if (param_1 == 0x80000) {
+      return 0x50;
     }
   }
   else {
-    GVar1 = param_1;
-    if (param_1 < 0x100001) {
-      if (param_1 == 0x100000) {
-/* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-cf_common_exit_006754A8:
-        return CONCAT22((short)(param_1 >> 0x10),10);
-      }
-      if (param_1 < 0x40001) {
-        if (param_1 == 0x40000) {
-          return 0x4003c;
-        }
-        if ((param_1 == 0x10000) || (param_1 == 0x20000)) goto cf_common_exit_006754A8;
-      }
-      else if (param_1 == 0x80000) {
-        return 0x80050;
-      }
+    if (param_1 == 0x200000) {
+      return 10;
     }
-    else if (((param_1 == 0x200000) || (param_1 == 0x400000)) || (param_1 == 0x800000))
-    goto cf_common_exit_006754A8;
+    if (param_1 == 0x400000) {
+      return 10;
+    }
+    if (param_1 == 0x800000) {
+      return 10;
+    }
   }
-  return GVar1 & 0xffff0000;
+  return 0;
 }
 

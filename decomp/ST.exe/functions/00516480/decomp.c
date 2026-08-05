@@ -85,15 +85,13 @@ void __thiscall HelpPanelTy::TTreeProc(HelpPanelTy *this,uint param_1,char param
     local_c = 0x33;
   }
   else if (param_1 == 2) {
-    /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-    local_8 = (byte *)CONCAT31(local_8._1_3_,1);
+    local_8 = (byte *)STReplaceLowByte((uint32_t)(local_8), (uint8_t)(1));
     resourceId = 0x5605;
     local_10 = (undefined4 *)&DAT_007c2df0;
     local_c = 0x39;
   }
   else {
-    /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-    local_8 = (byte *)CONCAT31(local_8._1_3_,2);
+    local_8 = (byte *)STReplaceLowByte((uint32_t)(local_8), (uint8_t)(2));
     resourceId = 0x5606;
     local_10 = &DAT_007c30d8;
     local_c = 0x46;

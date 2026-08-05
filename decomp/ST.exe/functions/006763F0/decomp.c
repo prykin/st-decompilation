@@ -46,8 +46,7 @@ int __cdecl _GetEmbrGrpTobjGrpExch(uint param_1,int param_2,int param_3)
         goto LAB_00676470;
       }
       do {
-        /* ST_PSEUDO[dynamic_array_indexing]: expected DArrayAt<T>(array, uVar6) (runtime stride) */
-        puVar3 = (ushort *)(array->elementSize * uVar6 + (int)array->data);
+        puVar3 = DArrayAt<ushort>(array, uVar6);
 LAB_00676470:
         pSVar4 = STAllPlayersC::GetObjPtr(g_allPlayers_007FA174,(char)param_1,*puVar3,CASE_1);
         if (pSVar4 != nullptr) {

@@ -2,7 +2,8 @@
 undefined4 __fastcall FUN_004c91a0(TLOBaseTy *param_1)
 
 {
-  int iVar1;
+  byte bVar1;
+  int iVar2;
 
   if ((param_1->field_03D4 != 0) && (param_1->field_0607 != nullptr)) {
     param_1->field_03D4 = 0;
@@ -10,10 +11,10 @@ undefined4 __fastcall FUN_004c91a0(TLOBaseTy *param_1)
   if (*(int *)&param_1->field_0x361 != 0) {
     *(undefined4 *)&param_1->field_0x36d = 1;
     *(int *)&param_1->field_0x365 = *(int *)&param_1->field_0x361;
-    iVar1 = TLOBaseTy::sub_004C90C0(param_1);
-    if (iVar1 != 0) {
-      iVar1 = LookupRecordByte(*(char *)&param_1->field_0024);
-      if (((char)iVar1 != '\x03') && (param_1->field_0398 != 0)) {
+    iVar2 = TLOBaseTy::sub_004C90C0(param_1);
+    if (iVar2 != 0) {
+      bVar1 = LookupRecordByte(*(char *)&param_1->field_0024);
+      if ((bVar1 != 3) && (param_1->field_0398 != 0)) {
         thunk_FUN_004d87b0(*(char *)&param_1->field_0024,
                            (param_1->field_0394 * param_1->field_0398) / 100);
       }

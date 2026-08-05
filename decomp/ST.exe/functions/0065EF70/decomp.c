@@ -27,8 +27,7 @@ undefined4 __fastcall FUN_0065ef70(AnonShape_0065EF70_E78A8204 *param_1)
       local_8 = (AnonShape_0065EF70_EB9B857D *)param_1;
       do {
         if (bVar8) {
-          /* ST_PSEUDO[dynamic_array_indexing]: expected DArrayAt<T>(pDVar3, local_1c) (runtime stride) */
-          psVar6 = (short *)(pDVar3->elementSize * local_1c + (int)pDVar3->data);
+          psVar6 = DArrayAt<short>(pDVar3, local_1c);
           bVar5 = 0;
           pbVar7 = &g_bulkInitializedRecords_008087C7[0].field_0022;
         }

@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* [STPrototypeRepairApplier] Propagated parameter 1.
    Evidence: 00675EA0 -> 00675DC0 @ 00675F34
@@ -26,8 +28,7 @@ void __cdecl FUN_00675dc0(uint param_1,DArrayTy *param_2)
         goto LAB_00675dfe;
       }
       do {
-        /* ST_PSEUDO[dynamic_array_indexing]: expected DArrayAt<T>(param_2, uVar5) (runtime stride) */
-        puVar2 = (ushort *)(param_2->elementSize * uVar5 + (int)param_2->data);
+        puVar2 = DArrayAt<ushort>(param_2, uVar5);
 LAB_00675dfe:
         pSVar3 = STAllPlayersC::GetObjPtr(g_allPlayers_007FA174,(char)param_1,*puVar2,CASE_1);
         if (((pSVar3 != nullptr) && (iVar4 = (*pSVar3->vtable->vfunc_2C)(), iVar4 == 0x78)

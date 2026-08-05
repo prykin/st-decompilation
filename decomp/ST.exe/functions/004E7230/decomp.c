@@ -6,7 +6,7 @@ void FUN_004e7230(int param_1,int param_2,undefined4 *param_3,undefined4 *param_
 {
   int *piVar1;
   int iVar2;
-  uint uVar3;
+  byte bVar3;
   int iVar4;
   int iVar5;
   uint *puVar6;
@@ -17,12 +17,12 @@ void FUN_004e7230(int param_1,int param_2,undefined4 *param_3,undefined4 *param_
   iVar5 = 0;
   memset(param_4, 0, 0x1c); /* compiler bulk-zero initialization */
   if ((((-1 < param_1) && (param_1 < 8)) && (-1 < param_2)) && (param_2 < 3)) {
-    uVar3 = LookupRecordByte((char)param_1);
+    bVar3 = LookupRecordByte((char)param_1);
     /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
     param_1 = 0;
     /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
     param_2 = 0;
-    iVar4 = iVar4 + ((uVar3 & 0xff) - 1) * 3;
+    iVar4 = iVar4 + (bVar3 - 1) * 3;
     if (0 < *(int *)(&DAT_007995bc + iVar4 * 0x195)) {
       puVar6 = (uint *)(&DAT_007995bc + iVar4 * 0x195);
       iVar4 = (int)param_3 - (int)param_4;

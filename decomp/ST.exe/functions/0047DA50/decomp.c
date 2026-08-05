@@ -57,7 +57,7 @@ int __thiscall STBoatC::BackAnnih(STBoatC *this,int *param_1)
     /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
     uVar4 = (*this->vtable->vfunc_10)
                       (this->field_0041,this->field_0043,
-                       CONCAT22((short)((uint)iVar8 >> 0x10),this->field_0045),
+                       STReplaceLowWord((uint32_t)(iVar8), (uint16_t)(this->field_0045)),
                        this->field_0691 * 0xc9 + 100,(short)iVar8,
                        CONCAT22(extraout_var,this->field_0695 * 200) + 100);
     this->field_069B = uVar4;

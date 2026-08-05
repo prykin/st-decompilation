@@ -354,9 +354,7 @@ LAB_005cee1a:
                 bVar27 = local_34 != nullptr;
                 do {
                   if (bVar27) {
-                    /* ST_PSEUDO[dynamic_array_indexing]: expected DArrayAt<T>(PTR_0080c502, (int)local_10) (runtime stride) */
-                    pvVar17 = (void *)(PTR_0080c502->elementSize * (int)local_10 +
-                                      (int)PTR_0080c502->data);
+                    pvVar17 = DArrayAt<void>(PTR_0080c502, (int)local_10);
                   }
                   else {
                     pvVar17 = nullptr;
@@ -807,8 +805,7 @@ LAB_005ce8fe:
             bVar27 = uVar20 != 0;
             do {
               if (bVar27) {
-                /* ST_PSEUDO[dynamic_array_indexing]: expected DArrayAt<T>(pDVar13, uVar19) (runtime stride) */
-                puVar8 = (uint *)(pDVar13->elementSize * uVar19 + (int)pDVar13->data);
+                puVar8 = DArrayAt<uint>(pDVar13, uVar19);
               }
               else {
                 puVar8 = nullptr;

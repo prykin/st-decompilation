@@ -2,7 +2,7 @@
 int FUN_004e6f00(int param_1)
 
 {
-  uint uVar1;
+  byte bVar1;
   int iVar2;
   int iVar3;
   uint uVar4;
@@ -15,10 +15,10 @@ int FUN_004e6f00(int param_1)
   local_c = 0;
   local_8 = 0;
   if ((-1 < param_1) && (param_1 < 8)) {
-    uVar1 = LookupRecordByte((char)param_1);
+    bVar1 = LookupRecordByte((char)param_1);
     uVar4 = 0;
     do {
-      if ((&PTR_DAT_007bfc04)[(uVar1 & 0xff) - 1] + uVar4 != nullptr) {
+      if ((&PTR_DAT_007bfc04)[bVar1 - 1] + uVar4 != nullptr) {
         iVar2 = thunk_FUN_004e60d0(param_1,iVar3);
         if ((int)(uint)*(byte *)((int)&DAT_00798fd8 + iVar3) <= iVar2) {
           local_c = local_c + 1;

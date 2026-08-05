@@ -53,8 +53,7 @@ void __thiscall FUN_006315d0(void *this,int param_1,int param_2,int param_3,int 
       bVar11 = uVar6 != 0;
       do {
         if (bVar11) {
-          /* ST_PSEUDO[dynamic_array_indexing]: expected DArrayAt<T>(local_8, uVar9) (runtime stride) */
-          psVar3 = (short *)(local_8->elementSize * uVar9 + (int)local_8->data);
+          psVar3 = DArrayAt<short>(local_8, uVar9);
         }
         else {
           psVar3 = nullptr;
@@ -70,8 +69,7 @@ LAB_00631713:
                 return;
               }
               if (uVar9 < uVar6) {
-                /* ST_PSEUDO[dynamic_array_indexing]: expected DArrayAt<T>(local_8, uVar9) (runtime stride) */
-                puVar4 = (undefined4 *)(local_8->elementSize * uVar9 + (int)local_8->data);
+                puVar4 = DArrayAt<undefined4>(local_8, uVar9);
               }
               else {
                 puVar4 = nullptr;

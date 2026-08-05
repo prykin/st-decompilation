@@ -283,10 +283,9 @@ cf_error_exit_004318A9:
         iVar2 = CheckTmps(playerId,0,pSVar4->field_0020,*(char *)&pSVar4->field_0024,nullptr
                           ,sVar8);
         if (iVar2 < 1) {
-/* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
 cf_error_exit_00431A49:
           AddObjToTmp2(this,playerId,0,0,pSVar4->field_0020,
-                       CONCAT31((int3)((uint)iVar2 >> 8),*(undefined1 *)&pSVar4->field_0024),local_8
+                       STReplaceLowByte((uint32_t)(iVar2), (uint8_t)(*(undefined1 *)&pSVar4->field_0024)),local_8
                       );
         }
         else {
@@ -424,9 +423,8 @@ LAB_00431ec7:
           PushTV(playerId,1);
           /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
           uVar6 = extraout_ECX_00;
-/* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
 LAB_00431ed1:
-          uVar5 = CONCAT31((int3)((uint)uVar6 >> 8),*(undefined1 *)&pSVar4->field_0024);
+          uVar5 = STReplaceLowByte((uint32_t)(uVar6), (uint8_t)(*(undefined1 *)&pSVar4->field_0024));
           uVar7 = pSVar4->field_0020;
 LAB_00431edd:
           AddObjToTmp2(this,playerId,1,0,uVar7,uVar5,local_8);
@@ -457,9 +455,8 @@ LAB_00431da2:
             ResetActivityFromTmp(this,playerId,1,1,0);
             /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
             uVar6 = extraout_EDX_00;
-/* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
 LAB_00431dba:
-            uVar5 = CONCAT31((int3)((uint)uVar6 >> 8),*(undefined1 *)&pSVar4->field_0024);
+            uVar5 = STReplaceLowByte((uint32_t)(uVar6), (uint8_t)(*(undefined1 *)&pSVar4->field_0024));
             uVar7 = pSVar4->field_0020;
             goto LAB_00431edd;
           }
@@ -559,9 +556,8 @@ LAB_004321f3:
           PushTV(playerId,1);
           /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
           iVar2 = extraout_EAX_01;
-/* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
 LAB_004321fd:
-          uVar5 = CONCAT31((int3)((uint)iVar2 >> 8),*(undefined1 *)&pSVar4->field_0024);
+          uVar5 = STReplaceLowByte((uint32_t)(iVar2), (uint8_t)(*(undefined1 *)&pSVar4->field_0024));
           uVar7 = pSVar4->field_0020;
 LAB_00432209:
           AddObjToTmp2(this,playerId,1,0,uVar7,uVar5,local_8);
@@ -592,9 +588,8 @@ LAB_004320ce:
             ResetActivityFromTmp(this,playerId,1,1,0);
             /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
             uVar6 = extraout_ECX_02;
-/* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
 LAB_004320e6:
-            uVar5 = CONCAT31((int3)((uint)uVar6 >> 8),*(undefined1 *)&pSVar4->field_0024);
+            uVar5 = STReplaceLowByte((uint32_t)(uVar6), (uint8_t)(*(undefined1 *)&pSVar4->field_0024));
             uVar7 = pSVar4->field_0020;
             goto LAB_00432209;
           }
@@ -816,9 +811,8 @@ LAB_0043288b:
           PushTV(playerId,1);
           /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
           uVar6 = extraout_ECX_04;
-/* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
 LAB_00432895:
-          uVar5 = CONCAT31((int3)((uint)uVar6 >> 8),*(undefined1 *)&pSVar4->field_0024);
+          uVar5 = STReplaceLowByte((uint32_t)(uVar6), (uint8_t)(*(undefined1 *)&pSVar4->field_0024));
           uVar7 = pSVar4->field_0020;
 LAB_004328a1:
           AddObjToTmp2(this,playerId,1,0,uVar7,uVar5,local_8);
@@ -849,9 +843,8 @@ LAB_00432766:
             ResetActivityFromTmp(this,playerId,1,1,0);
             /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
             uVar6 = extraout_EDX_02;
-/* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
 LAB_0043277e:
-            uVar5 = CONCAT31((int3)((uint)uVar6 >> 8),*(undefined1 *)&pSVar4->field_0024);
+            uVar5 = STReplaceLowByte((uint32_t)(uVar6), (uint8_t)(*(undefined1 *)&pSVar4->field_0024));
             uVar7 = pSVar4->field_0020;
             goto LAB_004328a1;
           }
@@ -951,9 +944,8 @@ LAB_00432bb7:
           PushTV(playerId,1);
           /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
           iVar2 = extraout_EAX_02;
-/* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
 LAB_00432bc1:
-          uVar5 = CONCAT31((int3)((uint)iVar2 >> 8),*(undefined1 *)&pSVar4->field_0024);
+          uVar5 = STReplaceLowByte((uint32_t)(iVar2), (uint8_t)(*(undefined1 *)&pSVar4->field_0024));
           uVar7 = pSVar4->field_0020;
 LAB_00432bcd:
           AddObjToTmp2(this,playerId,1,0,uVar7,uVar5,local_8);
@@ -984,9 +976,8 @@ LAB_00432a92:
             ResetActivityFromTmp(this,playerId,1,1,0);
             /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
             uVar6 = extraout_ECX_06;
-/* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
 LAB_00432aaa:
-            uVar5 = CONCAT31((int3)((uint)uVar6 >> 8),*(undefined1 *)&pSVar4->field_0024);
+            uVar5 = STReplaceLowByte((uint32_t)(uVar6), (uint8_t)(*(undefined1 *)&pSVar4->field_0024));
             uVar7 = pSVar4->field_0020;
             goto LAB_00432bcd;
           }
@@ -1157,10 +1148,9 @@ cf_error_exit_00432EAE:
         iVar2 = CheckTmps(playerId,0,pSVar4->field_0020,*(char *)&pSVar4->field_0024,nullptr
                           ,sVar8);
         if (iVar2 < 1) {
-/* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
 cf_error_exit_00433050:
           AddObjToTmp2(this,playerId,0,0,pSVar4->field_0020,
-                       CONCAT31((int3)((uint)iVar2 >> 8),*(undefined1 *)&pSVar4->field_0024),local_8
+                       STReplaceLowByte((uint32_t)(iVar2), (uint8_t)(*(undefined1 *)&pSVar4->field_0024)),local_8
                       );
         }
         else {

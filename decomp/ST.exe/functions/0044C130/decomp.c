@@ -75,8 +75,7 @@ STAllPlayersC::GetTOBJImage
   case CASE_28:
     local_c = nullptr;
     local_154[0] = '\0';
-    /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-    local_8 = CONCAT31(local_8._1_3_,0x1d);
+    local_8 = STReplaceLowByte((uint32_t)(local_8), (uint8_t)(0x1d));
     /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
     param_2 = 0;
     STBoatC::GetVisualInfo(param_1,SVar2,0xe,&local_c,local_154,(undefined1 *)&local_8,&param_2);
@@ -88,8 +87,7 @@ STAllPlayersC::GetTOBJImage
     }
     local_c = nullptr;
     local_154[0] = '\0';
-    /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-    local_8 = CONCAT31(local_8._1_3_,0x1d);
+    local_8 = STReplaceLowByte((uint32_t)(local_8), (uint8_t)(0x1d));
     /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
     param_2 = 0;
     STBoatC::GetVisualInfo(param_1,SVar2,0xd,&local_c,local_154,(undefined1 *)&local_8,&param_2);
@@ -101,8 +99,7 @@ STAllPlayersC::GetTOBJImage
     }
     local_c = nullptr;
     local_154[0] = '\0';
-    /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-    local_8 = CONCAT31(local_8._1_3_,0x1d);
+    local_8 = STReplaceLowByte((uint32_t)(local_8), (uint8_t)(0x1d));
     /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
     param_2 = 0;
     STBoatC::GetVisualInfo(param_1,SVar2,0xc,&local_c,local_154,(undefined1 *)&local_8,&param_2);
@@ -193,8 +190,7 @@ STAllPlayersC::GetTOBJImage
     do {
       local_c = nullptr;
       local_154[0] = '\0';
-      /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-      local_8 = CONCAT31(local_8._1_3_,0x1d);
+      local_8 = STReplaceLowByte((uint32_t)(local_8), (uint8_t)(0x1d));
       /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
       param_2 = 0;
       thunk_FUN_004c2950(param_1,SVar2,GVar7,&local_c,local_154,(undefined1 *)&local_8,&param_2);
@@ -220,8 +216,7 @@ STAllPlayersC::GetTOBJImage
   case CASE_E2:
     local_c = nullptr;
     local_154[0] = '\0';
-    /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-    local_8 = CONCAT31(local_8._1_3_,0x1d);
+    local_8 = STReplaceLowByte((uint32_t)(local_8), (uint8_t)(0x1d));
     /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
     param_2 = 0;
     thunk_FUN_00580910(param_1,SVar2,0xe,&local_c,local_154,(undefined1 *)&local_8,&param_2);
@@ -244,8 +239,7 @@ STAllPlayersC::GetTOBJImage
   case CASE_FB:
     local_c = nullptr;
     local_154[0] = '\0';
-    /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-    local_8 = CONCAT31(local_8._1_3_,0x1d);
+    local_8 = STReplaceLowByte((uint32_t)(local_8), (uint8_t)(0x1d));
     /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
     param_2 = 0;
     thunk_FUN_0057a140(param_1,SVar2,0xe,&local_c,local_154,(undefined1 *)&local_8,&param_2);
@@ -253,8 +247,7 @@ STAllPlayersC::GetTOBJImage
   case CASE_FD:
     local_c = nullptr;
     local_154[0] = '\0';
-    /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-    local_8 = CONCAT31(local_8._1_3_,0x1d);
+    local_8 = STReplaceLowByte((uint32_t)(local_8), (uint8_t)(0x1d));
     /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
     param_2 = 0;
     thunk_FUN_005ec740(param_1,SVar2,0xe,&local_c,local_154,(undefined1 *)&local_8,&param_2);
@@ -262,8 +255,7 @@ STAllPlayersC::GetTOBJImage
   case CASE_FE:
     local_c = nullptr;
     local_154[0] = '\0';
-    /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-    local_8 = CONCAT31(local_8._1_3_,0x1d);
+    local_8 = STReplaceLowByte((uint32_t)(local_8), (uint8_t)(0x1d));
     /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
     param_2 = 0;
     thunk_FUN_005fcf50(param_1,SVar2,0xe,&local_c,local_154,(undefined1 *)&local_8,&param_2);

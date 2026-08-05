@@ -90,8 +90,7 @@ int __thiscall TLOBaseTy::fireFindCheckTarget(TLOBaseTy *this,int param_1,int pa
     _local_34 = CONCAT22(uStack_32,local_60->field_0043);
   }
   if (&stack0x00000000 != (undefined1 *)0x30) {
-    /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-    local_30 = CONCAT22(local_30._2_2_,local_60->field_0045);
+    local_30 = STReplaceLowWord((uint32_t)(local_30), (uint16_t)(local_60->field_0045));
   }
   local_10 = ppTVar15;
   if (*(int *)(&DAT_00792a90 + (param_1 + local_60->field_0235 * 2) * 4) == 1) {
@@ -154,12 +153,10 @@ int __thiscall TLOBaseTy::fireFindCheckTarget(TLOBaseTy *this,int param_1,int pa
                             *(int *)((int)local_10 + 0x281)) {
                           *(uint *)((int)local_10 + 0x295) = g_playSystem_00802A38->field_00E4;
                           if ((param_2 == 0) || (this_00->field_0255 == 0)) goto LAB_004c4080;
-                          /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
                           sVar6 = (*this_00->vtable->vfunc_10)
                                             (*(short *)&local_8->field_0x41,
                                              *(short *)&local_8->field_0x43,
-                                             CONCAT22((short)((uint)_local_34 >> 0x10),
-                                                      *(undefined2 *)&local_8->field_0x45),
+                                             STReplaceLowWord((uint32_t)(_local_34), (uint16_t)(*(undefined2 *)&local_8->field_0x45)),
                                              (short)_local_2c,(short)_local_34,local_30);
                           iVar8 = ((sVar6 + 0xb4) % 0x168) / 0xf;
                           uVar10 = (int)*(uint *)(&DAT_007be8c8 +

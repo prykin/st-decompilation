@@ -9,10 +9,10 @@ FUN_004c7260(void *this,Global_sub_004C7260_param_1Enum param_1,int param_2,unde
 
 {
   int iVar1;
-  uint uVar2;
+  byte bVar2;
   int iVar3;
 
-  uVar2 = LookupRecordByte(*(char *)((int)this + 0x23d));
+  bVar2 = LookupRecordByte(*(char *)((int)this + 0x23d));
   *param_6 = 0;
   *param_5 = 0;
   *param_4 = 0;
@@ -38,7 +38,7 @@ FUN_004c7260(void *this,Global_sub_004C7260_param_1Enum param_1,int param_2,unde
     iVar3 = *(int *)(&DAT_007e29f0 + (iVar3 + *(int *)((int)this + 0x239)) * 4) -
             (*(int *)((int)this + 0x241) *
             *(int *)(&DAT_007e29f0 + (iVar3 + *(int *)((int)this + 0x239)) * 4)) /
-            *(int *)(&DAT_007e417c + (iVar3 + ((uVar2 & 0xff) - 1)) * 4);
+            *(int *)(&DAT_007e417c + (iVar3 + (bVar2 - 1)) * 4);
     *param_5 = iVar3;
     if ((*(int *)(&DAT_007e29f0 +
                  (*(int *)((int)this + 0x235) * 3 + *(int *)((int)this + 0x239)) * 4) != 0) &&

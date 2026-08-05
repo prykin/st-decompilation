@@ -34,9 +34,9 @@ FUN_0065e070(int param_1,undefined4 param_2,uint param_3,uint param_4,uint param
   memset(local_4c, 0, 0x20); /* compiler bulk-zero initialization */
   iVar9 = 0;
   local_14 = 0;
-  /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-  thunk_FUN_0044e260(CONCAT31((int3)((uint)local_4c >> 8),*(undefined1 *)(param_1 + 0x24)),
-                     CONCAT22((short)((uint)param_2 >> 0x10),uVar2),param_3,local_4c);
+  /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
+  thunk_FUN_0044e260(STReplaceLowByte((uint32_t)(local_4c), (uint8_t)(*(undefined1 *)(param_1 + 0x24))),
+                     STReplaceLowWord((uint32_t)(param_2), (uint16_t)(uVar2)),param_3,local_4c);
   /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
   cVar3 = *(char *)(param_1 + 0x81);
   if ((cVar3 < '\0') || ('\a' < cVar3)) {
@@ -60,8 +60,7 @@ FUN_0065e070(int param_1,undefined4 param_2,uint param_3,uint param_4,uint param
         bVar13 = local_1c->count != 0;
         do {
           if (bVar13) {
-            /* ST_PSEUDO[dynamic_array_indexing]: expected DArrayAt<T>(local_1c, local_18) (runtime stride) */
-            puVar4 = (ushort *)(local_1c->elementSize * local_18 + (int)local_1c->data);
+            puVar4 = DArrayAt<ushort>(local_1c, local_18);
           }
           else {
             puVar4 = nullptr;

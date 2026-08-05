@@ -129,8 +129,7 @@ LAB_00629242:
   if (ppuVar13 == nullptr) {
     return 0xffffffff;
   }
-  /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-  local_18 = CONCAT31(local_18._1_3_,*(undefined1 *)&this->field_0014);
+  local_18 = STReplaceLowByte((uint32_t)(local_18), (uint8_t)(*(undefined1 *)&this->field_0014));
   local_70.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_70;
   local_1c = this;

@@ -9,14 +9,14 @@ undefined4 __thiscall FUN_004e15f0(void *this,uint param_1)
 
 {
   int iVar1;
-  uint uVar2;
-  uint uVar3;
+  byte bVar2;
+  byte bVar3;
 
   if (*(int *)((int)this + 0x24) != *(int *)((int)this + 0x23d)) {
-    uVar2 = LookupRecordByte((char)*(int *)((int)this + 0x23d));
+    bVar2 = LookupRecordByte((char)*(int *)((int)this + 0x23d));
     iVar1 = *(int *)((int)this + 0x235);
-    uVar3 = LookupRecordByte(*(char *)((int)this + 0x24));
-    if ((&DAT_007e1984)[(uVar3 & 0xff) + (iVar1 * 3 + (uVar2 & 0xff)) * 3] == '\0') {
+    bVar3 = LookupRecordByte(*(char *)((int)this + 0x24));
+    if ((&DAT_007e1984)[(uint)bVar3 + (iVar1 * 3 + (uint)bVar2) * 3] == '\0') {
       return 0;
     }
   }

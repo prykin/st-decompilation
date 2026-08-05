@@ -31,8 +31,7 @@ undefined4 FUN_0042c300(char param_1,uint param_2,int param_3,char param_4,uint 
   iVar3 = 0;
   /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
   if (param_2 == 0) {
-    /* ST_PSEUDO[flattened_global_record_array]: expected typedRecordArray[index].field after inferred base/stride proof */
-    iVar3 = param_1 * 0xa62 + 0x7f4f83;
+    iVar3 = STRecordByteAddress(g_packedRecords_A62x8, param_1, 0x163);
     if (param_3 == 0) {
       thunk_FUN_0043fc50(CASE_1,0);
       GVar4 = CASE_2;
@@ -48,8 +47,7 @@ undefined4 FUN_0042c300(char param_1,uint param_2,int param_3,char param_4,uint 
                  0x28f);
       goto LAB_0042c3a0;
     }
-    /* ST_PSEUDO[flattened_global_record_array]: expected typedRecordArray[index].field after inferred base/stride proof */
-    iVar3 = param_1 * 0xa62 + 0x7f4fd3;
+    iVar3 = STRecordByteAddress(g_packedRecords_A62x8, param_1, 0x1B3);
     if (param_3 == 0) {
       thunk_FUN_0043fc50(CASE_4,0);
       GVar4 = CASE_5;

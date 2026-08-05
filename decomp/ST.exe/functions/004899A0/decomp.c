@@ -136,10 +136,9 @@ LAB_0048a37f:
                 if ((iVar7 == 0) ||
                    (uVar5 = (int)(short)local_c - (int)this->field_0045, uVar12 = (int)uVar5 >> 0x1f
                    , (int)(((uVar5 ^ uVar12) - uVar12) * 10) / iVar7 < 4)) {
-                  /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
                   uVar3 = (*this->vtable->vfunc_10)
                                     (this->field_0041,this->field_0043,
-                                     CONCAT22((short)((uint)local_10 >> 0x10),this->field_0045),
+                                     STReplaceLowWord((uint32_t)(local_10), (uint16_t)(this->field_0045)),
                                      (short)local_14,(short)local_10,local_c);
                   /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
                   local_24 = CONCAT22(extraout_var,uVar3);
@@ -154,9 +153,7 @@ LAB_0048a37f:
                       sStack_3e = (short)((uint)*puVar6 >> 0x10);
                       sVar13 = this->field_0043 - sStack_3e;
                       sVar14 = this->field_0041 + local_40;
-                      /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-                      local_28 = CONCAT22((short)((uint)puVar6 >> 0x10),
-                                          this->field_0045 + *(short *)(puVar6 + 1));
+                      local_28 = STReplaceLowWord((uint32_t)(puVar6), (uint16_t)(this->field_0045 + *(short *)(puVar6 + 1)));
                       sStack_3e = *local_30;
                       local_40 = 0;
                       puVar6 = (undefined4 *)thunk_FUN_0041dc40(local_50,0,0,(short)local_24);
@@ -263,10 +260,9 @@ LAB_00489eb0:
               if ((iVar11 == 0) ||
                  (uVar5 = (int)(short)local_c - (int)this->field_0045, uVar12 = (int)uVar5 >> 0x1f,
                  (int)(((uVar5 ^ uVar12) - uVar12) * 10) / iVar11 < 4)) {
-                /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
                 uVar3 = (*this->vtable->vfunc_10)
                                   (this->field_0041,this->field_0043,
-                                   CONCAT22((short)((uint)local_10 >> 0x10),this->field_0045),
+                                   STReplaceLowWord((uint32_t)(local_10), (uint16_t)(this->field_0045)),
                                    (short)local_14,(short)local_10,local_c);
                 /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
                 local_24 = CONCAT22(extraout_var_00,uVar3);
@@ -281,9 +277,7 @@ LAB_00489eb0:
                     sStack_3e = (short)((uint)*puVar6 >> 0x10);
                     sVar13 = this->field_0043 - sStack_3e;
                     sVar14 = this->field_0041 + local_40;
-                    /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-                    local_28 = CONCAT22((short)((uint)puVar6 >> 0x10),
-                                        this->field_0045 + *(short *)(puVar6 + 1));
+                    local_28 = STReplaceLowWord((uint32_t)(puVar6), (uint16_t)(this->field_0045 + *(short *)(puVar6 + 1)));
                     sStack_3e = *local_30;
                     local_40 = 0;
                     puVar6 = (undefined4 *)thunk_FUN_0041dc40(local_60,0,0,(short)local_24);

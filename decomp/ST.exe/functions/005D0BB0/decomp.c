@@ -73,8 +73,7 @@ SettMapMTy::ChangePlayerTeam(SettMapMTy *this,uint param_1,uint param_2,uint par
         }
         if (param_3 != 0xff) {
           bVar10 = element_1f84->state;
-          /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-          local_8 = CONCAT31(local_8._1_3_,bVar10);
+          local_8 = STReplaceLowByte((uint32_t)(local_8), (uint8_t)(bVar10));
           if ((bVar10 != 0xff) && (param_3 != bVar10)) {
             if (element_1f84->field_0004 == '\x04') {
               /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */

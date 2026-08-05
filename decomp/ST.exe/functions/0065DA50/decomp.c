@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* [STHiddenThisApplier] Anonymous hidden receiver recovered as
    /SubmarineTitans/Recovered/HiddenThis/AnonReceiver_0065DA50.
@@ -34,7 +36,7 @@ SubmarineTitans::Recovered::HiddenThis::AnonReceiver_0065DA50::FUN_0065da50
     }
     /* ST_PSEUDO[return_width_artifact,stack_slot_reuse]: candidate call-output artifact: verify return width, clobbers, or x87 state; compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
     if (((param_2 != '\b') && ((param_2 < '\0' || (cVar7 = param_2, '\b' < param_2)))) ||
-       (param_2 = cVar7, uVar6 = CONCAT31((int3)((uint)extraout_EDX >> 8),param_2), param_2 < '\0'))
+       (param_2 = cVar7, uVar6 = STReplaceLowByte((uint32_t)(extraout_EDX), (uint8_t)(param_2)), param_2 < '\0'))
     {
       if (param_1 != 0) {
         uVar2 = STGroupC::GetTOBJQty((STGroupC *)this_00,param_1);
@@ -55,8 +57,7 @@ SubmarineTitans::Recovered::HiddenThis::AnonReceiver_0065DA50::FUN_0065da50
       if (0 < (int)dVar3) {
         do {
           if (uVar2 < dVar3) {
-            /* ST_PSEUDO[dynamic_array_indexing]: expected DArrayAt<T>(array, uVar2) (runtime stride) */
-            puVar4 = (ushort *)(array->elementSize * uVar2 + (int)array->data);
+            puVar4 = DArrayAt<ushort>(array, uVar2);
           }
           else {
             puVar4 = nullptr;

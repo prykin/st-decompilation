@@ -161,8 +161,7 @@ void __thiscall BldBoatPanelTy::InitBldBoatPanel(BldBoatPanelTy *this)
       auStack_2b0[uVar9 * 0x1c + 1] = uVar10;
 switchD_004eed0b_default:
       bVar2 = (char)local_8 + 1;
-      /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-      local_8 = CONCAT31(local_8._1_3_,bVar2);
+      local_8 = STReplaceLowByte((uint32_t)(local_8), (uint8_t)(bVar2));
       uVar9 = (uint)bVar2;
     } while ((int)uVar9 < local_10);
   }

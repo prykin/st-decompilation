@@ -27,10 +27,8 @@ int __thiscall FUN_005cbbe0(void *this,AnonShape_005CBBE0_2D1CAA09 *param_1)
       return (int)pcVar2;
     case 4:
       pDVar1 = param_1->field_0050;
-      /* ST_PSEUDO[dynamic_array_indexing]: expected DArrayAt<T>(pDVar1, (uint)(byte)param_1->field_0x5) (runtime stride) */
       if (((uint)(byte)param_1->field_0x5 < pDVar1->count) &&
-         (pvVar3 = (void *)(pDVar1->elementSize * (uint)(byte)param_1->field_0x5 + (int)pDVar1->data
-                           ), pvVar3 != nullptr)) {
+         (pvVar3 = DArrayAt<void>(pDVar1, (uint)(byte)param_1->field_0x5), pvVar3 != nullptr)) {
         return (int)pvVar3 + 0x40;
       }
       pcVar2 = LoadResourceString(10000,g_module_00807618);

@@ -171,8 +171,7 @@ cf_continue_loop_006721A4:
                   (-2,g_overwriteContext_007ED77C,"E:\\__titans\\ai\\ai_interp.cpp",0x559);
       }
       local_2c = 3;
-      /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-      local_2b = (float)CONCAT22(local_2b._2_2_,(short)iVar3);
+      local_2b = (float)STReplaceLowWord((uint32_t)(local_2b), (uint16_t)((short)iVar3));
     }
     else {
       RaiseInternalException

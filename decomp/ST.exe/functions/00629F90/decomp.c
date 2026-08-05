@@ -16,13 +16,12 @@ STParticleC::sub_00629F90(STParticleC *this,STParticleC *param_1,undefined4 para
   int iVar2;
   short sVar3;
   byte bVar4;
-  uint uVar5;
-  int iVar6;
+  int iVar5;
   /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
   unkbyte10 extraout_ST0;
   /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
   unkbyte10 extraout_ST0_00;
-  longlong lVar7;
+  longlong lVar6;
 
   this->field_00D2 = param_1->field_0042;
   this->field_0046 = param_1->field_0020;
@@ -35,27 +34,27 @@ STParticleC::sub_00629F90(STParticleC *this,STParticleC *param_1,undefined4 para
   this->field_0056 = param_1->field_0024;
   this->field_005A = param_1->field_0028;
   if (this->field_0040 != '\0') {
-    uVar5 = sub_0062B4A0(this);
-    this->field_00D6 = (char)uVar5;
+    bVar4 = sub_0062B4A0(this);
+    this->field_00D6 = bVar4;
   }
   fsin((float10)param_1->field_002C * (float10)_DAT_0079d064 * (float10)_DAT_0079d060);
-  lVar7 = Library::MSVCRT::__ftol();
+  lVar6 = Library::MSVCRT::__ftol();
   /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
   fcos(extraout_ST0);
-  this->field_008A = (int)lVar7;
-  lVar7 = Library::MSVCRT::__ftol();
-  iVar6 = (int)lVar7;
-  this->field_008E = iVar6;
-  if (iVar6 < 0) {
-    this->field_008E = -iVar6;
+  this->field_008A = (int)lVar6;
+  lVar6 = Library::MSVCRT::__ftol();
+  iVar5 = (int)lVar6;
+  this->field_008E = iVar5;
+  if (iVar5 < 0) {
+    this->field_008E = -iVar5;
   }
   fsin((float10)param_1->field_0030 * (float10)_DAT_0079d064 * (float10)_DAT_0079d060);
-  lVar7 = Library::MSVCRT::__ftol();
+  lVar6 = Library::MSVCRT::__ftol();
   /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
   fcos(extraout_ST0_00);
-  this->field_0092 = (int)lVar7;
-  lVar7 = Library::MSVCRT::__ftol();
-  this->field_0096 = (int)lVar7;
+  this->field_0092 = (int)lVar6;
+  lVar6 = Library::MSVCRT::__ftol();
+  this->field_0096 = (int)lVar6;
   this->field_009A = param_1->field_0034;
   this->field_00A2 = 5;
   if (param_1->field_0038 == 0) {
@@ -64,38 +63,38 @@ STParticleC::sub_00629F90(STParticleC *this,STParticleC *param_1,undefined4 para
   else {
     this->field_00A6 = param_1->field_0038;
   }
-  iVar6 = this->field_0046;
+  iVar5 = this->field_0046;
   this->field_00AA = param_2;
   this->field_00AE = param_2;
-  sVar3 = (short)(iVar6 >> 0x1f);
-  if (iVar6 < 0) {
-    iVar6 = (short)(((short)(iVar6 / 0xc9) + sVar3) - (short)((longlong)iVar6 * 0x28c1979 >> 0x3f))
+  sVar3 = (short)(iVar5 >> 0x1f);
+  if (iVar5 < 0) {
+    iVar5 = (short)(((short)(iVar5 / 0xc9) + sVar3) - (short)((longlong)iVar5 * 0x28c1979 >> 0x3f))
             + -1;
   }
   else {
-    iVar6 = (int)(short)(((short)(iVar6 / 0xc9) + sVar3) -
-                        (short)((longlong)iVar6 * 0x28c1979 >> 0x3f));
+    iVar5 = (int)(short)(((short)(iVar5 / 0xc9) + sVar3) -
+                        (short)((longlong)iVar5 * 0x28c1979 >> 0x3f));
   }
   iVar2 = this->field_004A;
-  this->field_005E = iVar6;
+  this->field_005E = iVar5;
   sVar3 = (short)(iVar2 >> 0x1f);
   if (iVar2 < 0) {
-    iVar6 = (short)(((short)(iVar2 / 0xc9) + sVar3) - (short)((longlong)iVar2 * 0x28c1979 >> 0x3f))
+    iVar5 = (short)(((short)(iVar2 / 0xc9) + sVar3) - (short)((longlong)iVar2 * 0x28c1979 >> 0x3f))
             + -1;
   }
   else {
-    iVar6 = (int)(short)(((short)(iVar2 / 0xc9) + sVar3) -
+    iVar5 = (int)(short)(((short)(iVar2 / 0xc9) + sVar3) -
                         (short)((longlong)iVar2 * 0x28c1979 >> 0x3f));
   }
   iVar2 = this->field_004E;
-  this->field_0062 = iVar6;
+  this->field_0062 = iVar5;
   if (iVar2 < 0) {
-    iVar6 = (short)(iVar2 / 200) + -1;
+    iVar5 = (short)(iVar2 / 200) + -1;
   }
   else {
-    iVar6 = (int)(short)(iVar2 / 200);
+    iVar5 = (int)(short)(iVar2 / 200);
   }
-  this->field_0066 = iVar6;
+  this->field_0066 = iVar5;
   cVar1 = param_1->field_0041;
   this->field_00C0 = cVar1;
   if (cVar1 == '\0') {
@@ -117,20 +116,20 @@ STParticleC::sub_00629F90(STParticleC *this,STParticleC *param_1,undefined4 para
   case 2:
   case 8:
   case 0x40:
-    iVar6 = DAT_007d09d4;
+    iVar5 = DAT_007d09d4;
     break;
   default:
     goto cf_common_exit_0062A1E3;
   case 4:
-    iVar6 = *(int *)(&DAT_007d0a00 + (uint)*(byte *)&this->field_0014 * 4);
+    iVar5 = *(int *)(&DAT_007d0a00 + (uint)*(byte *)&this->field_0014 * 4);
     break;
   case 0x10:
-    iVar6 = *(int *)(&DAT_007d0af0 + (uint)*(byte *)&param_1->field_0014 * 8);
+    iVar5 = *(int *)(&DAT_007d0af0 + (uint)*(byte *)&param_1->field_0014 * 8);
     break;
   case 0x80:
-    iVar6 = DAT_007d08b8;
+    iVar5 = DAT_007d08b8;
   }
-  bVar4 = (byte)(iVar6 / 2);
+  bVar4 = (byte)(iVar5 / 2);
 LAB_0062a1dd:
   this->field_00BE = bVar4;
 cf_common_exit_0062A1E3:

@@ -33,8 +33,7 @@ FUN_00697af0(void *this,AnonShape_00697AF0_A94F4D28 *param_1,int *param_2,int *p
       do {
         pvVar5 = nullptr;
         if (uVar7 < uVar2) {
-          /* ST_PSEUDO[dynamic_array_indexing]: expected DArrayAt<T>(pDVar1, uVar7) (runtime stride) */
-          pvVar5 = (void *)(pDVar1->elementSize * uVar7 + (int)pDVar1->data);
+          pvVar5 = DArrayAt<void>(pDVar1, uVar7);
         }
         if (*(char *)((int)pvVar5 + 1) == '\0') {
           iVar6 = *(int *)((int)pvVar5 + 2) / *(int *)((int)this + 0x5833);

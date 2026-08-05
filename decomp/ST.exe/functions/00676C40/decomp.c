@@ -22,16 +22,14 @@ void __cdecl FUN_00676c40(DArrayTy *param_1,callback_00676C40_p1 *param_2)
       }
       do {
         if (uVar5 < uVar3) {
-          /* ST_PSEUDO[dynamic_array_indexing]: expected DArrayAt<T>(param_1, uVar5) (runtime stride) */
-          arg_2 = (void *)(param_1->elementSize * uVar5 + (int)param_1->data);
+          arg_2 = DArrayAt<void>(param_1, uVar5);
         }
         else {
           arg_2 = nullptr;
         }
         uVar1 = uVar5 + 1;
         if (uVar1 < uVar3) {
-          /* ST_PSEUDO[dynamic_array_indexing]: expected DArrayAt<T>(param_1, uVar1) (runtime stride) */
-          arg_1 = (void *)(param_1->elementSize * uVar1 + (int)param_1->data);
+          arg_1 = DArrayAt<void>(param_1, uVar1);
         }
         else {
           arg_1 = nullptr;

@@ -180,8 +180,7 @@ LAB_005aecc2:
         local_758[uVar5 * 0x1c] = uVar5 + 1;
         cVar8 = cVar8 + '\x01';
         local_758[uVar5 * 0x1c + 1] = 0;
-        /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-        local_8 = CONCAT31(local_8._1_3_,cVar8);
+        local_8 = STReplaceLowByte((uint32_t)(local_8), (uint8_t)(cVar8));
         local_758[uVar5 * 0x1c + 3] = uVar5 * 0x7c + 0x112;
         uVar6 = local_8 & 0xff;
         local_758[uVar5 * 0x1c + 5] = 0x7a;

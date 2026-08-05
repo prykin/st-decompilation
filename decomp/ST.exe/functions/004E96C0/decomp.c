@@ -5,8 +5,7 @@ undefined4 __thiscall FUN_004e96c0(void *this,int *param_1)
   int iVar1;
   int uVar2;
   int local_EAX_378;
-  uint uVar3;
-  undefined4 uVar4;
+  undefined4 uVar3;
 
   if (*(int **)((int)this + 0x4d8) != param_1) {
     return 0;
@@ -35,7 +34,7 @@ undefined4 __thiscall FUN_004e96c0(void *this,int *param_1)
         uVar2 = LookupRecordByte((char)param_1[9]);
         /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
         iVar1 = (**(code **)(*param_1 + 0x2c))();
-        iVar1 = *(int *)(&DAT_007e37b0 + ((uVar2 & 0xffU) + iVar1 * 3) * 4);
+        iVar1 = *(int *)(&DAT_007e37b0 + ((uint)(byte)uVar2 + iVar1 * 3) * 4);
       }
     }
     else {
@@ -53,23 +52,23 @@ undefined4 __thiscall FUN_004e96c0(void *this,int *param_1)
     if (DAT_00811798 == nullptr) {
       if (*(uint *)((int)this + 0x24) == (uint)*(byte *)(*(int *)((int)this + 0x10) + 0x112d)) {
         local_EAX_378 = LookupRecordByte(*(char *)((int)this + 0x23d));
-        uVar3 = local_EAX_378 & 0xff;
-        if (uVar3 == 1) {
+        local_EAX_378 = (int)(byte)local_EAX_378;
+        if (local_EAX_378 == 1) {
           iVar1 = *(int *)this;
-          uVar4 = 0x218;
+          uVar3 = 0x218;
         }
         else {
-          if (uVar3 == 2) {
+          if (local_EAX_378 == 2) {
             /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
             (**(code **)(*(int *)this + 0x90))(4,0x2de);
             goto cf_common_exit_004E987A;
           }
-          if (uVar3 != 3) goto cf_common_exit_004E987A;
+          if (local_EAX_378 != 3) goto cf_common_exit_004E987A;
           iVar1 = *(int *)this;
-          uVar4 = 0x405;
+          uVar3 = 0x405;
         }
         /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-        (**(code **)(iVar1 + 0x90))(4,uVar4);
+        (**(code **)(iVar1 + 0x90))(4,uVar3);
       }
     }
     else {

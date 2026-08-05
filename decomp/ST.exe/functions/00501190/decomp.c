@@ -42,21 +42,18 @@ void __thiscall CPanelTy::PaintBCapacity(CPanelTy *this)
         pbVar5 = (byte *)FUN_0070b3a0((AnonShape_GLOBAL_0081175C_57F682DD *)pCVar2->field_02B6,1);
         DibPut(pCVar2->field_018C,iVar4 + 3 + (local_8 & 0xff) * 4,0x53,'\x01',pbVar5);
         bVar3 = (byte)local_8 + 1;
-        /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-        local_8 = CONCAT31(local_8._1_3_,bVar3);
+        local_8 = STReplaceLowByte((uint32_t)(local_8), (uint8_t)(bVar3));
       } while (bVar3 < (byte)pCVar2->field_0BB6);
     }
     uVar7 = local_8 & 0xff;
-    /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-    local_c = CONCAT31(local_c._1_3_,(byte)local_8);
+    local_c = STReplaceLowByte((uint32_t)(local_c), (uint8_t)((byte)local_8));
     local_14 = uVar7;
     if (uVar7 < (byte)pCVar2->field_0BB7 + uVar7) {
       do {
         pbVar5 = (byte *)FUN_0070b3a0((AnonShape_GLOBAL_0081175C_57F682DD *)pCVar2->field_02B6,5);
         DibPut(pCVar2->field_018C,iVar4 + 3 + uVar7 * 4,0x53,'\x01',pbVar5);
         bVar3 = (byte)local_c + 1;
-        /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-        local_c = CONCAT31(local_c._1_3_,bVar3);
+        local_c = STReplaceLowByte((uint32_t)(local_c), (uint8_t)(bVar3));
         uVar7 = (uint)bVar3;
       } while ((int)uVar7 < (int)((byte)pCVar2->field_0BB7 + local_14));
     }

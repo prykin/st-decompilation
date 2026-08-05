@@ -94,8 +94,7 @@ void __thiscall HelpPanelTy::ChangeTree(HelpPanelTy *this,int *param_1,int param
         if (*piVar12 == iVar10) {
           local_d0[local_10 & 0xff] = iVar10;
           iVar10 = piVar12[1];
-          /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-          local_10 = CONCAT31(local_10._1_3_,(byte)local_10 + '\x01');
+          local_10 = STReplaceLowByte((uint32_t)(local_10), (uint8_t)((byte)local_10 + '\x01'));
           local_24 = local_c;
         }
         iVar7 = iVar7 + -1;
@@ -139,8 +138,7 @@ void __thiscall HelpPanelTy::ChangeTree(HelpPanelTy *this,int *param_1,int param
                 goto LAB_00513233;
               }
               bVar6 = bVar6 + 1;
-              /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-              local_28 = CONCAT31(local_28._1_3_,bVar6);
+              local_28 = STReplaceLowByte((uint32_t)(local_28), (uint8_t)(bVar6));
             } while (bVar6 < (byte)local_10);
             bVar5 = false;
           }
@@ -170,9 +168,8 @@ LAB_00513233:
     array = (DArrayTy *)local_20->field_01B3;
     uVar9 = param_2 + 1;
     uVar13 = array->count;
-    /* ST_PSEUDO[dynamic_array_indexing]: expected DArrayAt<T>(array, uVar9) (runtime stride) */
     while (((uVar9 < uVar13 &&
-            (pvVar8 = (void *)(array->elementSize * uVar9 + (int)array->data), pvVar8 != nullptr
+            (pvVar8 = DArrayAt<void>(array, uVar9), pvVar8 != nullptr
             )) && (*(byte *)((int)piVar12 + 0x11) < *(byte *)((int)pvVar8 + 0x11)))) {
       DArrayRemoveAt(array,uVar9);
       array = (DArrayTy *)this_00->field_01B3;

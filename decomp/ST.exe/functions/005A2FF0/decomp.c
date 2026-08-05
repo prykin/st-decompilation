@@ -55,16 +55,14 @@ void __thiscall FSGSTy::SetChannelList(FSGSTy *this,int param_1,undefined4 *para
         if (dVar7 != 1) {
           do {
             if (uVar8 < dVar7) {
-              /* ST_PSEUDO[dynamic_array_indexing]: expected DArrayAt<T>(pDVar4, uVar8) (runtime stride) */
-              _Str1 = (char *)(pDVar4->elementSize * uVar8 + (int)pDVar4->data);
+              _Str1 = DArrayAt<char>(pDVar4, uVar8);
             }
             else {
               _Str1 = nullptr;
             }
             uVar1 = uVar8 + 1;
             if (uVar1 < dVar7) {
-              /* ST_PSEUDO[dynamic_array_indexing]: expected DArrayAt<T>(pDVar4, uVar1) (runtime stride) */
-              _Str2 = (char *)(pDVar4->elementSize * uVar1 + (int)pDVar4->data);
+              _Str2 = DArrayAt<char>(pDVar4, uVar1);
             }
             else {
               _Str2 = nullptr;

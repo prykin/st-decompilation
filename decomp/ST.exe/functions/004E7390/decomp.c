@@ -9,7 +9,7 @@ void FUN_004e7390(byte *param_1,uint param_2,uint param_3,int param_4)
 {
   int *piVar1;
   bool bVar2;
-  uint uVar3;
+  byte bVar3;
   int *piVar4;
   int iVar5;
   uint uVar6;
@@ -29,7 +29,7 @@ void FUN_004e7390(byte *param_1,uint param_2,uint param_3,int param_4)
   char *local_8;
 
   if ((-1 < (int)param_1) && ((int)param_1 < 8)) {
-    uVar3 = LookupRecordByte((char)param_1);
+    bVar3 = LookupRecordByte((char)param_1);
     memset(&DAT_00801020, 0, 0x30c); /* compiler bulk-zero initialization */
     iVar5 = 0;
     memset(&DAT_00800bd0, 0, 0x30c); /* compiler bulk-zero initialization */
@@ -68,7 +68,7 @@ void FUN_004e7390(byte *param_1,uint param_2,uint param_3,int param_4)
       bVar2 = false;
       if (iVar14 <= iVar5) break;
       local_8 = &DAT_00801024 + iVar5 * 5;
-      piVar1 = (int *)(&PTR_DAT_007c0dc8)[(uVar3 & 0xff) - 1];
+      piVar1 = (int *)(&PTR_DAT_007c0dc8)[bVar3 - 1];
       local_14 = iVar5;
       do {
         if (*piVar1 != 0) {

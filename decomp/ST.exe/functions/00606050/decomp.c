@@ -29,7 +29,7 @@ STExplosion::sub_00606050
   undefined4 local_70 [5];
   uint local_5c;
   int local_58;
-  uint local_54;
+  int local_54;
   int local_50;
   int local_4c;
   int local_48;
@@ -42,10 +42,10 @@ STExplosion::sub_00606050
   byte local_2f;
   uint *local_2e;
   int local_28;
-  uint local_24;
+  int local_24;
   int local_20;
   int local_1c;
-  uint local_18;
+  int local_18;
   int local_14;
   byte *local_10;
   int local_c;
@@ -54,13 +54,13 @@ STExplosion::sub_00606050
   iVar5 = 0;
   local_5 = '\0';
   local_EAX_29 = LookupRecordByte((char)param_8);
-  local_18 = local_EAX_29 & 0xff;
+  local_18 = (int)(byte)local_EAX_29;
   if (param_4 == 0x21) {
     this->field_02B7 = param_7;
   }
   local_74 = thunk_FUN_00606a50((Global_sub_00606A50_param_1Enum)param_5);
   local_14 = thunk_FUN_00607ee0(param_4,&local_10,&local_78,&local_28,&local_1c,&local_24);
-  if (0 < (int)local_24) {
+  if (0 < local_24) {
     local_18 = local_24;
   }
   if ((param_4 == 0x15) || (param_4 == 9)) {

@@ -118,8 +118,7 @@ void FUN_00413af0(void *param_1,DArrayTy *param_2,int param_3,int param_4,int pa
     if (*(short *)((int)param_1 + 0x27) != 0) {
       do {
         if (local_28 < param_2->count) {
-          /* ST_PSEUDO[dynamic_array_indexing]: expected DArrayAt<T>(param_2, local_28) (runtime stride) */
-          puVar8 = (ushort *)(param_2->elementSize * local_28 + (int)param_2->data);
+          puVar8 = DArrayAt<ushort>(param_2, local_28);
         }
         else {
           puVar8 = nullptr;
@@ -227,8 +226,7 @@ void FUN_00413af0(void *param_1,DArrayTy *param_2,int param_3,int param_4,int pa
     if (*(short *)((int)param_1 + 0x27) != 0) {
       do {
         if (local_28 < param_2->count) {
-          /* ST_PSEUDO[dynamic_array_indexing]: expected DArrayAt<T>(param_2, local_28) (runtime stride) */
-          puVar8 = (ushort *)(param_2->elementSize * local_28 + (int)param_2->data);
+          puVar8 = DArrayAt<ushort>(param_2, local_28);
         }
         else {
           puVar8 = nullptr;

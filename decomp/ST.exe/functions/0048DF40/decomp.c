@@ -18,10 +18,10 @@ void __fastcall FUN_0048df40(STBoatC *param_1,undefined4 param_2)
   int iVar2;
 
   sVar1 = param_1->field_04E1 + 1;
-  /* ST_PSEUDO[unresolved_register_input,packed_or_unaligned_piece]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention; expected named packed member, bit extract/compose, or unaligned load */
+  /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
   iVar2 = STBoatC::sub_0048DFD0
                     (param_1,param_1->field_04DD,param_1->field_04DF,sVar1,param_1->field_04DD,
-                     param_1->field_04DF,(int *)CONCAT22((short)((uint)in_EAX >> 0x10),sVar1),2,
+                     param_1->field_04DF,(int *)STReplaceLowWord((uint32_t)(in_EAX), (uint16_t)(sVar1)),2,
                      &param_1->field_04FC,&param_1->field_04FE,&param_1->field_0500);
   if (iVar2 == 0) {
     param_1->field_04FC = param_1->field_04DD;

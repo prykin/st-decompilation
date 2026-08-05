@@ -44,8 +44,7 @@ void __thiscall CPanelTy::PaintBEnergy(CPanelTy *this)
           pbVar4 = (byte *)FUN_0070b3a0((AnonShape_GLOBAL_0081175C_57F682DD *)pCVar2->field_02B6,3);
           DibPut(pCVar2->field_018C,iVar3 + 3 + (local_8 & 0xff) * 4,0x53,'\x01',pbVar4);
           bVar6 = bVar6 + 1;
-          /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-          local_8 = CONCAT31(local_8._1_3_,bVar6);
+          local_8 = STReplaceLowByte((uint32_t)(local_8), (uint8_t)(bVar6));
         } while (bVar6 < (byte)pCVar2->field_0BCD);
       }
     }

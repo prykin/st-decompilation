@@ -109,10 +109,8 @@ void __thiscall STAllPlayersC::ActivateTV(STAllPlayersC *this,char param_1,int p
       pAVar9 = pAVar10;
     }
   }
-  /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-  uVar8 = CONCAT22((short)((uint)pAVar9 >> 0x10),*(undefined2 *)&pAVar10->field_0008);
-  /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-  SetActivityToObjs(this,CONCAT31((int3)(uVar8 >> 8),*(undefined1 *)&pAVar10->field_0004),
+  uVar8 = STReplaceLowWord((uint32_t)(pAVar9), (uint16_t)(*(undefined2 *)&pAVar10->field_0008));
+  SetActivityToObjs(this,STReplaceLowByte((uint32_t)(uVar8), (uint8_t)(*(undefined1 *)&pAVar10->field_0004)),
                     pAVar10->field_0000,*(DArrayTy **)((int)&pAVar10->field_0008 + 2),uVar8);
   SelfCheckObjControl(this);
   if (param_2 == 0) {

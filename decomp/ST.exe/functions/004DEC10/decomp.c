@@ -51,8 +51,7 @@ undefined4 __fastcall FUN_004dec10(TLOBaseTy *param_1)
         param_1->field_04D0 = CASE_0;
         TLOBaseTy::RotateSpr(param_1,0);
         dVar2 = param_1->slot_2C();
-        /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-        thunk_FUN_004b7710(CONCAT31((int3)(dVar2 >> 8),*(undefined1 *)&param_1->field_0024),dVar2);
+        thunk_FUN_004b7710(STReplaceLowByte((uint32_t)(dVar2), (uint8_t)(*(undefined1 *)&param_1->field_0024)),dVar2);
         if (param_1->field_0024 == (byte *)(uint)(byte)param_1->field_0010->field_112D) {
           thunk_FUN_004d8b70((char)param_1->field_0024);
         }
@@ -68,8 +67,7 @@ undefined4 __fastcall FUN_004dec10(TLOBaseTy *param_1)
       TLOBaseTy::RotateSpr(param_1,0);
       param_1->field_04D8 = g_playSystem_00802A38->field_00E4;
       dVar2 = param_1->slot_2C();
-      /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-      thunk_FUN_004b76d0(CONCAT31((int3)(dVar2 >> 8),*(undefined1 *)&param_1->field_0024),dVar2);
+      thunk_FUN_004b76d0(STReplaceLowByte((uint32_t)(dVar2), (uint8_t)(*(undefined1 *)&param_1->field_0024)),dVar2);
       if (param_1->field_0024 == (byte *)(uint)(byte)param_1->field_0010->field_112D) {
         thunk_FUN_004d8b70((char)param_1->field_0024);
       }

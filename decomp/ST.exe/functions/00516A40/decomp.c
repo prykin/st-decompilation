@@ -53,8 +53,7 @@ void __thiscall HelpPanelTy::TechProc(HelpPanelTy *this,uint param_1,byte param_
   uint local_c;
   uint local_8;
 
-  /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-  local_c = CONCAT31(local_c._1_3_,1);
+  local_c = STReplaceLowByte((uint32_t)(local_c), (uint8_t)(1));
   local_8 = 0;
   local_44 = this;
   local_3c = (byte *)FUN_0070b3a0((AnonShape_GLOBAL_0081175C_57F682DD *)this->field_0248,4);
@@ -101,8 +100,7 @@ void __thiscall HelpPanelTy::TechProc(HelpPanelTy *this,uint param_1,byte param_
   uVar5 = 0;
   do {
     if ((&PTR_DAT_007bfc04)[uVar5][param_1] != '\0') {
-      /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-      local_c = CONCAT31(local_c._1_3_,(char)local_c + (char)uVar5);
+      local_c = STReplaceLowByte((uint32_t)(local_c), (uint8_t)((char)local_c + (char)uVar5));
       break;
     }
     uVar5 = uVar5 + 1;

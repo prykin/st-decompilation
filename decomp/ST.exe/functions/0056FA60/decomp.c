@@ -654,8 +654,7 @@ cf_common_exit_0057073B:
       iVar12 = 0;
       uVar25 = PTR_00806740->iteratorIndex;
       if (uVar25 < PTR_00806740->count) {
-        /* ST_PSEUDO[dynamic_array_indexing]: expected DArrayAt<T>(PTR_00806740, uVar25) (runtime stride) */
-        puVar16 = (byte *)(PTR_00806740->elementSize * uVar25 + (int)PTR_00806740->data);
+        puVar16 = DArrayAt<byte>(PTR_00806740, uVar25);
         PTR_00806740->iteratorIndex = uVar25 + 1;
       }
       else {
@@ -711,8 +710,7 @@ cf_common_exit_0057073B:
           uVar25 = local_c->iteratorIndex;
           if ((message->arg1).u32 == 0) {
             if (uVar25 < local_c->count) {
-              /* ST_PSEUDO[dynamic_array_indexing]: expected DArrayAt<T>(local_c, uVar25) (runtime stride) */
-              pcVar15 = (char *)(local_c->elementSize * uVar25 + (int)local_c->data);
+              pcVar15 = DArrayAt<char>(local_c, uVar25);
               local_c->iteratorIndex = uVar25 + 1;
             }
             else {
@@ -729,8 +727,7 @@ cf_common_exit_0057073B:
           }
           else {
             if (uVar25 < local_c->count) {
-              /* ST_PSEUDO[dynamic_array_indexing]: expected DArrayAt<T>(local_c, uVar25) (runtime stride) */
-              local_8 = (byte *)(local_c->elementSize * uVar25 + (int)local_c->data);
+              local_8 = DArrayAt<byte>(local_c, uVar25);
               local_c->iteratorIndex = uVar25 + 1;
             }
             else {
@@ -772,8 +769,7 @@ LAB_00570ab6:
                 else {
                   uVar25 = local_c->iteratorIndex;
                   if (uVar25 < local_c->count) {
-                    /* ST_PSEUDO[dynamic_array_indexing]: expected DArrayAt<T>(local_c, uVar25) (runtime stride) */
-                    local_8 = (byte *)(local_c->elementSize * uVar25 + (int)local_c->data);
+                    local_8 = DArrayAt<byte>(local_c, uVar25);
                     local_c->iteratorIndex = uVar25 + 1;
                   }
                   else {

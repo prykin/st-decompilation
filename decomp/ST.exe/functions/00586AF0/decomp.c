@@ -187,17 +187,17 @@ LAB_00587844:
                DAT_0081170c) / iVar7) * iVar9 * 4;
       *(int *)((int)param_1 + 0x26b) = (int)uVar8 / 0x19640 + *(int *)((int)param_1 + 0x26b);
     }
-    /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-    local_48 = CONCAT22((short)(uVar8 >> 0x10),*(short *)((int)param_1 + 0x41));
-    /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-    local_4c = CONCAT22((short)((uint)iVar9 >> 0x10),*(short *)((int)param_1 + 0x43));
+    /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
+    local_48 = STReplaceLowWord((uint32_t)(uVar8), (uint16_t)(*(short *)((int)param_1 + 0x41)));
+    /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
+    local_4c = STReplaceLowWord((uint32_t)(iVar9), (uint16_t)(*(short *)((int)param_1 + 0x43)));
     /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
     local_10 = (*(int *)((int)param_1 + 0x263) >> 2) +
                ((int)(*(int *)((int)param_1 + 0x235) +
                      (*(int *)((int)param_1 + 0x235) >> 0x1f & 0xffffU)) >> 0x10) +
                (int)*(short *)((int)param_1 + 0x41);
-    /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-    local_40 = CONCAT22(local_40._2_2_,*(short *)((int)param_1 + 0x45));
+    /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
+    local_40 = STReplaceLowWord((uint32_t)(local_40), (uint16_t)(*(short *)((int)param_1 + 0x45)));
     /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
     local_14 = (*(int *)((int)param_1 + 0x267) >> 2) +
                ((int)(*(int *)((int)param_1 + 0x239) +
@@ -360,10 +360,8 @@ LAB_00587dde:
             iVar7 = param_1[4];
             bVar1 = *(byte *)&pSVar17[1].vtable;
             bVar2 = *(byte *)(param_1 + 9);
-            /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-            local_4c = CONCAT31(local_4c._1_3_,bVar1);
-            /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-            local_48 = CONCAT31(local_48._1_3_,bVar2);
+            local_4c = STReplaceLowByte((uint32_t)(local_4c), (uint8_t)(bVar1));
+            local_48 = STReplaceLowByte((uint32_t)(local_48), (uint8_t)(bVar2));
             if (*(char *)(iVar7 + 0x146f) == '\0') {
               if (bVar1 == bVar2) {
 LAB_00587f89:
@@ -504,10 +502,8 @@ LAB_005882af:
           iVar7 = param_1[4];
           bVar1 = *(byte *)&pSVar17[1].vtable;
           bVar2 = *(byte *)(param_1 + 9);
-          /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-          local_4c = CONCAT31(local_4c._1_3_,bVar1);
-          /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-          local_48 = CONCAT31(local_48._1_3_,bVar2);
+          local_4c = STReplaceLowByte((uint32_t)(local_4c), (uint8_t)(bVar1));
+          local_48 = STReplaceLowByte((uint32_t)(local_48), (uint8_t)(bVar2));
           if (*(char *)(iVar7 + 0x146f) == '\0') {
             if (bVar1 == bVar2) {
 LAB_005882a0:
@@ -613,8 +609,7 @@ LAB_005882a0:
                      (*(int *)((int)param_1 + 0x235) >> 0x1f & 0xffffU)) >> 0x10) + iVar9;
     /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
     sVar15 = *(short *)((int)param_1 + 0x43);
-    /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-    local_4c = CONCAT22((short)((uint)local_10 >> 0x10),sVar15);
+    local_4c = STReplaceLowWord((uint32_t)(local_10), (uint16_t)(sVar15));
     local_44 = (STGameObjC *)(int)sVar15;
     /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
     local_14 = (int)&local_44->vtable +
@@ -622,8 +617,7 @@ LAB_005882a0:
                      (*(int *)((int)param_1 + 0x239) >> 0x1f & 0xffffU)) >> 0x10);
     /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
     sVar16 = *(short *)((int)param_1 + 0x45);
-    /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-    local_40 = CONCAT22((short)((uint)local_14 >> 0x10),sVar16);
+    local_40 = STReplaceLowWord((uint32_t)(local_14), (uint16_t)(sVar16));
     local_48 = (int)sVar16;
     /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
     local_18 = ((int)(*(int *)((int)param_1 + 0x25b) + (*(int *)((int)param_1 + 0x25b) >> 0x1f & 3U)
@@ -763,10 +757,8 @@ LAB_00587323:
         iVar7 = param_1[4];
         bVar1 = *(byte *)&pSVar17[1].vtable;
         bVar2 = *(byte *)(param_1 + 9);
-        /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-        local_4c = CONCAT31(local_4c._1_3_,bVar1);
-        /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-        local_48 = CONCAT31(local_48._1_3_,bVar2);
+        local_4c = STReplaceLowByte((uint32_t)(local_4c), (uint8_t)(bVar1));
+        local_48 = STReplaceLowByte((uint32_t)(local_48), (uint8_t)(bVar2));
         if (*(char *)(iVar7 + 0x146f) == '\0') {
           if (bVar1 == bVar2) {
             iVar7 = 0;
@@ -902,10 +894,8 @@ LAB_00587648:
         iVar9 = param_1[4];
         bVar1 = *(byte *)&pSVar17[1].vtable;
         bVar2 = *(byte *)(param_1 + 9);
-        /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-        local_4c = CONCAT31(local_4c._1_3_,bVar1);
-        /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-        local_48 = CONCAT31(local_48._1_3_,bVar2);
+        local_4c = STReplaceLowByte((uint32_t)(local_4c), (uint8_t)(bVar1));
+        local_48 = STReplaceLowByte((uint32_t)(local_48), (uint8_t)(bVar2));
         if (*(char *)(iVar9 + 0x146f) == '\0') {
           if (bVar1 == bVar2) {
             iVar9 = 0;

@@ -46,8 +46,7 @@ void __thiscall CPanelTy::PaintDeep(CPanelTy *this,int param_1)
   else {
     cVar3 = (DAT_0080874e == '\x03') + '\x02';
   }
-  /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-  local_8 = CONCAT31(local_8._1_3_,cVar3);
+  local_8 = STReplaceLowByte((uint32_t)(local_8), (uint8_t)(cVar3));
   if (*local_c != '\0') {
     local_70.previous = g_currentExceptionFrame;
     g_currentExceptionFrame = &local_70;

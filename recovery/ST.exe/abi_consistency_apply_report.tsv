@@ -1,3 +1,8 @@
 function_address	repair_kind	status	detail
-006E25D0	machine_stack_arity_expansion	applied	prototype=int __thiscall sub_006E25D0(ST3DSMAPContext * this, int * param_2, float * param_3, double param_4, double param_5, double param_6, undefined4 param_7) previous_return_type=/int
-0074FE47	machine_stack_arity_expansion	applied	prototype=int __stdcall FUN_0074fe47(AnonShape_0074FE47_5517BCCF * param_1, double param_2) previous_return_type=/int
+00435850	narrow_accumulator_return	applied	return=/ushort
+004406C0	narrow_accumulator_return	applied	return=/byte
+006191A0	narrow_accumulator_return	applied	return=/byte
+006226C0	narrow_accumulator_return	applied	return=/byte
+0062B4A0	narrow_accumulator_return	applied	return=/byte
+00675430	narrow_accumulator_return	applied	return=/ushort
+006A0EF0	narrow_accumulator_return	applied	return=/ushort

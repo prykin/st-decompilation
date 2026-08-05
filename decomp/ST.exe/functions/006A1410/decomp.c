@@ -54,8 +54,7 @@ FUN_006a1410(int *param_1,int param_2,int param_3,int param_4,int param_5,undefi
       } while ((int)(iVar4 - (local_10 >> 8 & 0xf)) < iVar3);
     }
     if ((local_10 & 0x1000) != 0) {
-      /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-      local_c = CONCAT22(local_c._2_2_,1);
+      local_c = STReplaceLowWord((uint32_t)(local_c), (uint16_t)(1));
       puVar1 = (undefined4 *)((int)param_1 + (*param_1 * param_3 + param_2) * 6 + 8);
       *puVar1 = local_c;
       *(undefined2 *)(puVar1 + 1) = 0x1100;
@@ -67,8 +66,7 @@ FUN_006a1410(int *param_1,int param_2,int param_3,int param_4,int param_5,undefi
     if (param_5 == 0) {
       /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
       local_c._2_2_ = (undefined2)(local_14 >> 0x10);
-      /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-      local_c = CONCAT22(local_c._2_2_,1);
+      local_c = STReplaceLowWord((uint32_t)(local_c), (uint16_t)(1));
     }
     else if (param_5 == 1) {
       local_c = local_14 & 0xffff;

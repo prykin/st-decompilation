@@ -151,8 +151,7 @@ LAB_0050254c:
       bVar9 = (char)local_c + 1;
       local_8 = local_8 + 0x27;
       local_14 = local_14 + 1;
-      /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-      local_c = (uint *)CONCAT31(local_c._1_3_,bVar9);
+      local_c = (uint *)STReplaceLowByte((uint32_t)(local_c), (uint8_t)(bVar9));
     } while (bVar9 < 6);
     local_5c = this_00->field_0008;
     local_20 = local_bb0;

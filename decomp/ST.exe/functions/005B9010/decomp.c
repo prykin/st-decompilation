@@ -44,8 +44,7 @@ void __thiscall MMsgTy::StatePanel(MMsgTy *this,int param_1)
           FUN_006e6080(this_00,2,(&this_00->field_0066)[uVar4],(undefined4 *)&this_00->field_0x1d);
         }
         bVar3 = (char)local_8 + 1;
-        /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-        local_8 = CONCAT31(local_8._1_3_,bVar3);
+        local_8 = STReplaceLowByte((uint32_t)(local_8), (uint8_t)(bVar3));
       } while (bVar3 < this_00->field_009A);
     }
     g_currentExceptionFrame = local_50.previous;

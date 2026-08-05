@@ -172,10 +172,9 @@ int __thiscall STBoatC::Defence(STBoatC *this,int param_1)
         return 2;
       case 9:
         thunk_FUN_00416270(pSVar7,(undefined2 *)&local_14,&local_18,&local_1c);
-        /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
         sVar5 = (*this->vtable->vfunc_10)
                           (this->field_0041,this->field_0043,
-                           CONCAT22((short)((uint)local_18 >> 0x10),this->field_0045),
+                           STReplaceLowWord((uint32_t)(local_18), (uint16_t)(this->field_0045)),
                            (short)local_14,(short)local_18,local_1c);
         uVar10 = sub_004176C0(this,sVar5);
         sub_00417910(this,(short)uVar10);
@@ -277,10 +276,9 @@ int __thiscall STBoatC::Defence(STBoatC *this,int param_1)
           break;
         case 9:
           thunk_FUN_00416270(pSVar7,(undefined2 *)&local_14,&local_18,&local_1c);
-          /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
           sVar5 = (*this->vtable->vfunc_10)
                             (this->field_0041,this->field_0043,
-                             CONCAT22((short)((uint)local_18 >> 0x10),this->field_0045),
+                             STReplaceLowWord((uint32_t)(local_18), (uint16_t)(this->field_0045)),
                              (short)local_14,(short)local_18,local_1c);
           uVar10 = sub_004176C0(this,sVar5);
           sub_00417910(this,(short)uVar10);
@@ -372,10 +370,9 @@ switchD_00461334_caseD_1:
             return 2;
           case 9:
             thunk_FUN_00416270(pSVar7,(undefined2 *)&local_14,&local_18,&local_1c);
-            /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
             sVar5 = (*this->vtable->vfunc_10)
                               (this->field_0041,this->field_0043,
-                               CONCAT22((short)((uint)local_18 >> 0x10),this->field_0045),
+                               STReplaceLowWord((uint32_t)(local_18), (uint16_t)(this->field_0045)),
                                (short)local_14,(short)local_18,local_1c);
             uVar10 = sub_004176C0(this,sVar5);
             sub_00417910(this,(short)uVar10);
@@ -661,10 +658,9 @@ LAB_00460fac:
       break;
     case 9:
       thunk_FUN_00416270(pSVar7,(undefined2 *)&local_14,&local_18,&local_1c);
-      /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
       sVar5 = (*this->vtable->vfunc_10)
                         (this->field_0041,this->field_0043,
-                         CONCAT22((short)((uint)local_18 >> 0x10),this->field_0045),(short)local_14,
+                         STReplaceLowWord((uint32_t)(local_18), (uint16_t)(this->field_0045)),(short)local_14,
                          (short)local_18,local_1c);
       uVar10 = sub_004176C0(this,sVar5);
       sub_00417910(this,(short)uVar10);

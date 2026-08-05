@@ -121,8 +121,7 @@ void __thiscall HelpPanelTy::InitHelpPanel(HelpPanelTy *this)
             goto LAB_00510f80;
           }
           do {
-            /* ST_PSEUDO[dynamic_array_indexing]: expected DArrayAt<T>(pDVar5, uVar18) (runtime stride) */
-            pvVar6 = (void *)(pDVar5->elementSize * uVar18 + (int)pDVar5->data);
+            pvVar6 = DArrayAt<void>(pDVar5, uVar18);
 LAB_00510f80:
             if (((*(char *)((int)pvVar6 + 8) == *(char *)(puVar14 + 2)) &&
                 (*(int *)((int)pvVar6 + 9) == *(int *)((int)puVar14 + 9))) &&
@@ -159,16 +158,14 @@ LAB_00510fa9:
     if (uVar18 != 1) {
       do {
         if (uVar16 < uVar18) {
-          /* ST_PSEUDO[dynamic_array_indexing]: expected DArrayAt<T>(pDVar5, uVar16) (runtime stride) */
-          pUVar19 = (UINT *)(pDVar5->elementSize * uVar16 + (int)pDVar5->data);
+          pUVar19 = DArrayAt<UINT>(pDVar5, uVar16);
         }
         else {
           pUVar19 = nullptr;
         }
         local_8 = uVar16 + 1;
         if (local_8 < uVar18) {
-          /* ST_PSEUDO[dynamic_array_indexing]: expected DArrayAt<T>(pDVar5, local_8) (runtime stride) */
-          pUVar15 = (UINT *)(pDVar5->elementSize * local_8 + (int)pDVar5->data);
+          pUVar15 = DArrayAt<UINT>(pDVar5, local_8);
         }
         else {
           pUVar15 = nullptr;

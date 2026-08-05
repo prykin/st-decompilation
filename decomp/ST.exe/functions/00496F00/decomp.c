@@ -17,8 +17,7 @@ undefined4 FUN_00496f00(int param_1)
     bVar5 = uVar1 != 0;
     while( true ) {
       if (bVar5) {
-        /* ST_PSEUDO[dynamic_array_indexing]: expected DArrayAt<T>(g_array_007FB270, uVar4) (runtime stride) */
-        pvVar3 = (void *)(g_array_007FB270->elementSize * uVar4 + (int)g_array_007FB270->data);
+        pvVar3 = DArrayAt<void>(g_array_007FB270, uVar4);
       }
       else {
         pvVar3 = nullptr;

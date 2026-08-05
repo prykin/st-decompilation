@@ -14,17 +14,16 @@ undefined4 __thiscall TLOBaseTy::sub_004C4550(TLOBaseTy *this,int *param_1)
   int iVar3;
   int uVar4;
   int local_EAX_1150;
-  uint uVar5;
   int local_EAX_1394;
   void *this_00;
-  undefined4 *puVar6;
+  undefined4 *puVar4;
+  short sVar5;
+  short sVar6;
   short sVar7;
-  short sVar8;
-  short sVar9;
-  int *piVar10;
+  int *piVar8;
+  int iVar9;
+  byte **ppbVar10;
   int iVar11;
-  byte **ppbVar12;
-  int iVar13;
   undefined4 local_c0 [2];
   undefined4 local_b8 [2];
   byte *local_b0 [5];
@@ -63,53 +62,50 @@ undefined4 __thiscall TLOBaseTy::sub_004C4550(TLOBaseTy *this,int *param_1)
   uint local_8;
 
   piVar2 = param_1;
-  sVar7 = 0;
+  sVar5 = 0;
   local_c = 0;
   local_8 = 0;
   iVar3 = (int)param_1 + this->field_0235 * 2;
   local_10 = 0;
-  iVar11 = *(int *)(&DAT_00792a90 + iVar3 * 4);
-  if (iVar11 == 1) {
-    iVar11 = (int)param_1 * 0x80;
+  iVar9 = *(int *)(&DAT_00792a90 + iVar3 * 4);
+  if (iVar9 == 1) {
+    iVar9 = (int)param_1 * 0x80;
     if ((&this->field_0291)[(int)param_1 * 0x20] != nullptr) {
       if ((&DAT_00792ca0)[iVar3 * 3] == 0xb1) {
-        ppbVar12 = local_b0;
+        ppbVar10 = local_b0;
         for (iVar3 = 10; iVar3 != 0; iVar3 = iVar3 + -1) {
-          *ppbVar12 = nullptr;
-          ppbVar12 = ppbVar12 + 1;
+          *ppbVar10 = nullptr;
+          ppbVar10 = ppbVar10 + 1;
         }
-        *(undefined4 *)(&this->field_0x29d + iVar11) = 1;
-        *(undefined2 *)ppbVar12 = 0;
+        *(undefined4 *)(&this->field_0x29d + iVar9) = 1;
+        *(undefined2 *)ppbVar10 = 0;
         local_b0[1] = this->field_0024;
         local_b0[3] = (byte *)0x1;
         local_b0[0] = (byte *)0x168;
         local_b0[2] = (byte *)0x1;
         if (&stack0x00000000 != &DAT_0000000c) {
-          /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-          local_c = CONCAT22(local_c._2_2_,this->field_0041);
+          local_c = STReplaceLowWord((uint32_t)(local_c), (uint16_t)(this->field_0041));
         }
         if (&stack0x00000000 != (undefined1 *)0x8) {
-          /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-          local_8 = CONCAT22(local_8._2_2_,this->field_0043);
+          local_8 = STReplaceLowWord((uint32_t)(local_8), (uint16_t)(this->field_0043));
         }
         if (&stack0x00000000 != (undefined1 *)0x10) {
-          /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-          local_10 = CONCAT22(local_10._2_2_,this->field_0045);
+          local_10 = STReplaceLowWord((uint32_t)(local_10), (uint16_t)(this->field_0045));
         }
         local_9c = (short)local_c;
-        local_96 = *(undefined2 *)(&this->field_0x2a5 + iVar11);
+        local_96 = *(undefined2 *)(&this->field_0x2a5 + iVar9);
         local_9a = (short)local_8;
         local_94 = *(undefined2 *)(&this->field_02A9 + (int)param_1 * 0x20);
         local_98 = (undefined2)local_10;
-        local_92 = *(undefined2 *)(&this->field_0x2ad + iVar11);
+        local_92 = *(undefined2 *)(&this->field_0x2ad + iVar9);
         STPlaySystemC::CreateGameObject(g_playSystem_00802A38,0x168,0,0,local_b0,0);
         return 0;
       }
-      *(undefined4 *)(&this->field_0x29d + iVar11) = 1;
-      ppbVar12 = local_84;
+      *(undefined4 *)(&this->field_0x29d + iVar9) = 1;
+      ppbVar10 = local_84;
       for (iVar3 = 0x16; iVar3 != 0; iVar3 = iVar3 + -1) {
-        *ppbVar12 = nullptr;
-        ppbVar12 = ppbVar12 + 1;
+        *ppbVar10 = nullptr;
+        ppbVar10 = ppbVar10 + 1;
       }
       local_18 = *(int *)(&DAT_007932d0 + ((int)param_1 + this->field_0235 * 2) * 0x16);
       if (local_18 == 0) {
@@ -126,22 +122,19 @@ undefined4 __thiscall TLOBaseTy::sub_004C4550(TLOBaseTy *this,int *param_1)
       }
       else {
         if (&stack0x00000000 != &DAT_0000000c) {
-          /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-          local_c = CONCAT22(local_c._2_2_,this->field_0041);
+          local_c = STReplaceLowWord((uint32_t)(local_c), (uint16_t)(this->field_0041));
         }
         if (&stack0x00000000 != (undefined1 *)0x8) {
-          /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-          local_8 = CONCAT22(local_8._2_2_,this->field_0043);
+          local_8 = STReplaceLowWord((uint32_t)(local_8), (uint16_t)(this->field_0043));
         }
         if (&stack0x00000000 != (undefined1 *)0x10) {
-          /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-          local_10 = CONCAT22(local_10._2_2_,this->field_0045);
+          local_10 = STReplaceLowWord((uint32_t)(local_10), (uint16_t)(this->field_0045));
         }
       }
-      local_64 = *(short *)(&this->field_0x2a5 + iVar11);
+      local_64 = *(short *)(&this->field_0x2a5 + iVar9);
       local_58 = 0;
       local_62 = *(short *)(&this->field_02A9 + (int)param_1 * 0x20);
-      local_60 = *(short *)(&this->field_0x2ad + iVar11);
+      local_60 = *(short *)(&this->field_0x2ad + iVar9);
       local_5e = (undefined2)this->field_0259;
       local_57 = this->field_0018;
       local_53 = this->field_0032;
@@ -151,38 +144,38 @@ undefined4 __thiscall TLOBaseTy::sub_004C4550(TLOBaseTy *this,int *param_1)
       local_84[0] = (byte *)0x28;
       local_14 = 0;
       iVar3 = local_18;
-      piVar10 = param_1;
+      piVar8 = param_1;
       if (0 < local_18) {
-        iVar13 = 0;
+        iVar11 = 0;
         do {
-          if (((int)piVar10 < 1) || (local_14 == *(int *)(&this->field_0x2c1 + iVar11))) {
-            iVar3 = ((int)piVar10 + this->field_0235 * 2) * 0x16;
+          if (((int)piVar8 < 1) || (local_14 == *(int *)(&this->field_0x2c1 + iVar9))) {
+            iVar3 = ((int)piVar8 + this->field_0235 * 2) * 0x16;
             if (*(int *)(&DAT_007932d0 + iVar3) != 0) {
-              puVar6 = (undefined4 *)
+              puVar4 = (undefined4 *)
                        thunk_FUN_0041dc40(local_b8,(short)*(undefined4 *)
-                                                           (&DAT_007932d4 + iVar3 + iVar13),
-                                          *(ushort *)((int)(&DAT_007932d4 + iVar3 + iVar13) + 4),
+                                                           (&DAT_007932d4 + iVar3 + iVar11),
+                                          *(ushort *)((int)(&DAT_007932d4 + iVar3 + iVar11) + 4),
                                           -(short)this->field_0259);
-              local_2c = (short)*puVar6;
-              sStack_2a = (short)((uint)*puVar6 >> 0x10);
-              local_28 = *(short *)(puVar6 + 1);
+              local_2c = (short)*puVar4;
+              sStack_2a = (short)((uint)*puVar4 >> 0x10);
+              local_28 = *(short *)(puVar4 + 1);
               local_6a = local_2c + (short)local_c;
               local_68 = sStack_2a + (short)local_8;
               local_66 = local_28 + (short)local_10;
               iVar3 = (int)param_1 + this->field_0235 * 2;
-              local_20 = *(undefined2 *)(&DAT_007932d8 + iVar13 + iVar3 * 0x16);
+              local_20 = *(undefined2 *)(&DAT_007932d8 + iVar11 + iVar3 * 0x16);
               local_24 = (STJellyManC *)
-                         (*(uint *)(&DAT_007932d4 + iVar3 * 0x16 + iVar13) & 0xffff0000);
-              puVar6 = (undefined4 *)thunk_FUN_0041dc40(local_c0,0,0,-(short)this->field_0259);
-              local_2c = (short)*puVar6;
-              sStack_2a = (short)((uint)*puVar6 >> 0x10);
-              local_64 = local_2c + *(short *)(&this->field_0x2a5 + iVar11);
+                         (*(uint *)(&DAT_007932d4 + iVar3 * 0x16 + iVar11) & 0xffff0000);
+              puVar4 = (undefined4 *)thunk_FUN_0041dc40(local_c0,0,0,-(short)this->field_0259);
+              local_2c = (short)*puVar4;
+              sStack_2a = (short)((uint)*puVar4 >> 0x10);
+              local_64 = local_2c + *(short *)(&this->field_0x2a5 + iVar9);
               local_62 = *(short *)(&this->field_02A9 + (int)piVar2 * 0x20) + sStack_2a;
-              local_60 = *(short *)(&this->field_0x2ad + iVar11) + *(short *)(puVar6 + 1);
+              local_60 = *(short *)(&this->field_0x2ad + iVar9) + *(short *)(puVar4 + 1);
             }
             iVar1 = (int)param_1 + this->field_0235 * 2;
             if ((*(int *)(&DAT_00793e28 + iVar1 * 4) == 0) ||
-               (iVar3 = local_18, piVar10 = param_1, *(int *)(&this->field_0x2c5 + iVar11) != 0)) {
+               (iVar3 = local_18, piVar8 = param_1, *(int *)(&this->field_0x2c5 + iVar9) != 0)) {
               iVar3 = (&DAT_00792ca0)[local_14 + iVar1 * 3];
               if (iVar3 == 0xab) {
                 thunk_FUN_00586240((int)local_6a,(int)local_68,(int)local_66,
@@ -213,79 +206,79 @@ undefined4 __thiscall TLOBaseTy::sub_004C4550(TLOBaseTy *this,int *param_1)
                 }
                 STPlaySystemC::CreateGameObject(g_playSystem_00802A38,iVar3,0,0,local_84,0);
               }
-              *(int *)(&this->field_0x2c5 + iVar11) = *(int *)(&this->field_0x2c5 + iVar11) + -1;
-              *(uint *)(&this->field_0x2c9 + iVar11) = g_playSystem_00802A38->field_00E4;
+              *(int *)(&this->field_0x2c5 + iVar9) = *(int *)(&this->field_0x2c5 + iVar9) + -1;
+              *(uint *)(&this->field_0x2c9 + iVar9) = g_playSystem_00802A38->field_00E4;
               iVar3 = local_18;
-              piVar10 = param_1;
+              piVar8 = param_1;
             }
           }
           local_14 = local_14 + 1;
-          iVar13 = iVar13 + 6;
+          iVar11 = iVar11 + 6;
         } while (local_14 < iVar3);
       }
-      if ((0 < (int)piVar10) &&
-         (iVar13 = *(int *)(&this->field_0x2c1 + iVar11) + 1,
-         *(int *)(&this->field_0x2c1 + iVar11) = iVar13, iVar3 <= iVar13)) {
-        *(undefined4 *)(&this->field_0x2c1 + iVar11) = 0;
+      if ((0 < (int)piVar8) &&
+         (iVar11 = *(int *)(&this->field_0x2c1 + iVar9) + 1,
+         *(int *)(&this->field_0x2c1 + iVar9) = iVar11, iVar3 <= iVar11)) {
+        *(undefined4 *)(&this->field_0x2c1 + iVar9) = 0;
       }
     }
   }
-  else if (iVar11 == 2) {
+  else if (iVar9 == 2) {
     *(undefined4 *)(&this->field_0x29d + (int)param_1 * 0x80) = 1;
     switch((&DAT_00792ca0)[((int)param_1 + this->field_0235 * 2) * 3]) {
     case 0xa3:
       iVar3 = (int)param_1 * 0x20;
+      iVar9 = (int)param_1 * 0x80;
       iVar11 = (int)param_1 * 0x80;
-      iVar13 = (int)param_1 * 0x80;
       /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
-      param_1 = (int *)(&this->field_0x2a5 + iVar11);
+      param_1 = (int *)(&this->field_0x2a5 + iVar9);
       STAllPlayersC::sub_004DB160
                 (g_allPlayers_007FA174,(int)this->field_0024,0xa8,
-                 (int *)(&this->field_0x2a5 + iVar11),&this->field_02A9 + iVar3,
-                 (int *)(&this->field_0x2ad + iVar13),&local_1c);
+                 (int *)(&this->field_0x2a5 + iVar9),&this->field_02A9 + iVar3,
+                 (int *)(&this->field_0x2ad + iVar11),&local_1c);
       thunk_FUN_00584a30(this->field_04E0[0],this->field_04E0[1],this->field_04E0[2],
                          *param_1 * 0xc9 + 100,(&this->field_02A9)[iVar3] * 0xc9 + 100,
                          this->field_0024,local_1c,this->field_0018,this->field_0032);
       local_EAX_1394 = LookupRecordByte(DAT_0080874d);
-      uVar5 = local_EAX_1394 & 0xff;
-      if (uVar5 == 1) {
+      local_EAX_1394 = (int)(byte)local_EAX_1394;
+      if (local_EAX_1394 == 1) {
         this->vfunc_90(6,0x9e);
         return 0;
       }
-      if (uVar5 == 2) {
+      if (local_EAX_1394 == 2) {
         this->vfunc_90(6,0x9f);
         return 0;
       }
-      if (uVar5 == 3) {
+      if (local_EAX_1394 == 3) {
         this->vfunc_90(6,0xa0);
         return 0;
       }
       break;
     case 0xa8:
       iVar3 = (int)param_1 * 0x20;
-      iVar13 = (int)param_1 * 0x80;
       iVar11 = (int)param_1 * 0x80;
+      iVar9 = (int)param_1 * 0x80;
       /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
-      param_1 = (int *)(&this->field_0x2a5 + iVar13);
+      param_1 = (int *)(&this->field_0x2a5 + iVar11);
       STAllPlayersC::sub_004DB160
                 (g_allPlayers_007FA174,(int)this->field_0024,0xa8,
-                 (int *)(&this->field_0x2a5 + iVar13),&this->field_02A9 + iVar3,
-                 (int *)(&this->field_0x2ad + iVar11),&local_1c);
+                 (int *)(&this->field_0x2a5 + iVar11),&this->field_02A9 + iVar3,
+                 (int *)(&this->field_0x2ad + iVar9),&local_1c);
       thunk_FUN_006405f0(0xa8,this->field_0024,this->field_0018,this->field_0032,
                          (ushort)this->field_04E0[0],(ushort)this->field_04E0[1],
                          (ushort)this->field_04E0[2],(short)*param_1 * 0xc9 + 100,
                          (short)(&this->field_02A9)[iVar3] * 0xc9 + 100,(ushort)local_1c);
       uVar4 = LookupRecordByte(DAT_0080874d);
-      uVar5 = uVar4 & 0xff;
-      if (uVar5 == 1) {
+      uVar4 = (int)(byte)uVar4;
+      if (uVar4 == 1) {
         this->vfunc_90(6,0x98);
         return 0;
       }
-      if (uVar5 == 2) {
+      if (uVar4 == 2) {
         this->vfunc_90(6,0x99);
         return 0;
       }
-      if (uVar5 == 3) {
+      if (uVar4 == 3) {
         this->vfunc_90(6,0x9a);
         return 0;
       }
@@ -306,35 +299,35 @@ undefined4 __thiscall TLOBaseTy::sub_004C4550(TLOBaseTy *this,int *param_1)
       break;
     case 0xbe:
       iVar3 = (int)param_1 * 0x20;
+      iVar9 = (int)param_1 * 0x80;
       iVar11 = (int)param_1 * 0x80;
-      iVar13 = (int)param_1 * 0x80;
       /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
-      param_1 = (int *)(&this->field_0x2a5 + iVar11);
+      param_1 = (int *)(&this->field_0x2a5 + iVar9);
       STAllPlayersC::sub_004DB160
                 (g_allPlayers_007FA174,(int)this->field_0024,0xa8,
-                 (int *)(&this->field_0x2a5 + iVar11),&this->field_02A9 + iVar3,
-                 (int *)(&this->field_0x2ad + iVar13),&local_1c);
+                 (int *)(&this->field_0x2a5 + iVar9),&this->field_02A9 + iVar3,
+                 (int *)(&this->field_0x2ad + iVar11),&local_1c);
       thunk_FUN_006405f0(0xbe,this->field_0024,this->field_0018,this->field_0032,
                          (ushort)this->field_04E0[0],(ushort)this->field_04E0[1],
                          (ushort)this->field_04E0[2],(short)*param_1 * 0xc9 + 100,
                          (short)(&this->field_02A9)[iVar3] * 0xc9 + 100,(ushort)local_1c);
       local_EAX_1150 = LookupRecordByte(DAT_0080874d);
-      uVar5 = local_EAX_1150 & 0xff;
-      if (uVar5 == 1) {
+      local_EAX_1150 = (int)(byte)local_EAX_1150;
+      if (local_EAX_1150 == 1) {
         this->vfunc_90(6,0x9b);
         return 0;
       }
-      if (uVar5 == 2) {
+      if (local_EAX_1150 == 2) {
         this->vfunc_90(6,0x9c);
         return 0;
       }
-      if (uVar5 == 3) {
+      if (local_EAX_1150 == 3) {
         this->vfunc_90(6,0x9d);
         return 0;
       }
     }
   }
-  else if (iVar11 == 3) {
+  else if (iVar9 == 3) {
     if ((&DAT_00792ca0)[iVar3 * 3] == 0xbc) {
       if (&stack0x00000000 != &DAT_0000000c) {
         local_c = (uint)(ushort)this->field_0041;
@@ -343,7 +336,7 @@ undefined4 __thiscall TLOBaseTy::sub_004C4550(TLOBaseTy *this,int *param_1)
         local_8 = (uint)(ushort)this->field_0043;
       }
       if (&stack0x00000000 != (undefined1 *)0x10) {
-        sVar7 = this->field_0045;
+        sVar5 = this->field_0045;
       }
       if ((AnonShape_005EFAE0_B406B78B *)this->field_04D0 != nullptr) {
         iVar3 = STPlaySystemC::sub_006E62D0
@@ -355,41 +348,41 @@ undefined4 __thiscall TLOBaseTy::sub_004C4550(TLOBaseTy *this,int *param_1)
           return 0;
         }
         iVar3 = ((int)piVar2 + this->field_0235 * 2) * 0x16;
-        local_10 = (int)*(short *)(&DAT_007932d8 + iVar3) + (int)sVar7;
-        sVar7 = (short)(local_10 >> 0x1f);
+        local_10 = (int)*(short *)(&DAT_007932d8 + iVar3) + (int)sVar5;
+        sVar5 = (short)(local_10 >> 0x1f);
         if (local_10 < 0) {
-          local_14 = (short)(((short)(local_10 / 200) + sVar7) -
+          local_14 = (short)(((short)(local_10 / 200) + sVar5) -
                             (short)((longlong)local_10 * 0x51eb851f >> 0x3f)) + -1;
         }
         else {
-          local_14 = (int)(short)(((short)(local_10 / 200) + sVar7) -
+          local_14 = (int)(short)(((short)(local_10 / 200) + sVar5) -
                                  (short)((longlong)local_10 * 0x51eb851f >> 0x3f));
         }
         /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
         param_1 = (int *)((int)(short)local_8 + (int)*(short *)(&DAT_007932d6 + iVar3));
-        sVar7 = (short)((int)param_1 >> 0x1f);
+        sVar5 = (short)((int)param_1 >> 0x1f);
         if ((int)param_1 < 0) {
-          sVar7 = (((short)((int)param_1 / 0xc9) + sVar7) -
+          sVar5 = (((short)((int)param_1 / 0xc9) + sVar5) -
                   (short)((longlong)(int)param_1 * 0x28c1979 >> 0x3f)) + -1;
         }
         else {
-          sVar7 = ((short)((int)param_1 / 0xc9) + sVar7) -
+          sVar5 = ((short)((int)param_1 / 0xc9) + sVar5) -
                   (short)((longlong)(int)param_1 * 0x28c1979 >> 0x3f);
         }
         local_18 = (int)*(short *)(&DAT_007932d4 + iVar3) + (int)(short)local_c;
-        sVar8 = (short)(local_18 >> 0x1f);
+        sVar6 = (short)(local_18 >> 0x1f);
         if (local_18 < 0) {
-          sVar8 = (((short)(local_18 / 0xc9) + sVar8) -
+          sVar6 = (((short)(local_18 / 0xc9) + sVar6) -
                   (short)((longlong)local_18 * 0x28c1979 >> 0x3f)) + -1;
         }
         else {
-          sVar8 = ((short)(local_18 / 0xc9) + sVar8) -
+          sVar6 = ((short)(local_18 / 0xc9) + sVar6) -
                   (short)((longlong)local_18 * 0x28c1979 >> 0x3f);
         }
-        if ((((sVar8 < 0) || (g_worldGrid.sizeX <= sVar8)) || (sVar7 < 0)) ||
-           (((g_worldGrid.sizeY <= sVar7 || (sVar9 = (short)local_14, sVar9 < 0)) ||
-            ((g_worldGrid.sizeZ <= sVar9 ||
-             (STGridAt3D(g_worldGrid, sVar8, sVar7, sVar9).objects[1] == nullptr)))))) {
+        if ((((sVar6 < 0) || (g_worldGrid.sizeX <= sVar6)) || (sVar5 < 0)) ||
+           (((g_worldGrid.sizeY <= sVar5 || (sVar7 = (short)local_14, sVar7 < 0)) ||
+            ((g_worldGrid.sizeZ <= sVar7 ||
+             (STGridAt3D(g_worldGrid, sVar6, sVar5, sVar7).objects[1] == nullptr)))))) {
           STJellyManC::Error(local_24,local_18,param_1,local_10);
           *(undefined4 *)(&this->field_0x29d + (int)piVar2 * 0x80) = 1;
           *(int *)(&this->field_0x2c5 + (int)piVar2 * 0x80) =

@@ -48,7 +48,7 @@ uint FUN_006c6be0(AnonShape_006C6BE0_5C8BBC13 *param_1)
           *(uint *)&pAVar2->field_0x56 = uVar3 | 1;
           *(int *)&pAVar2->field_0x5a = iVar4;
           if (iVar4 == 0) {
-            *(uint *)&pAVar2->field_0x56 = CONCAT31((int3)(uVar3 >> 8),(char)(uVar3 | 1)) | 8;
+            *(uint *)&pAVar2->field_0x56 = STReplaceLowByte((uint32_t)(uVar3), (uint8_t)((char)(uVar3 | 1))) | 8;
             return 0xffffffff;
           }
           if (iVar4 < 1) {

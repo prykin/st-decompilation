@@ -229,8 +229,7 @@ LAB_0056959b:
       if (iVar4 <= *(int *)(&DAT_007c9788 + iVar8)) {
         bVar3 = (byte)iVar4;
       }
-      /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-      local_18 = CONCAT31(local_18._1_3_,bVar3);
+      local_18 = STReplaceLowByte((uint32_t)(local_18), (uint8_t)(bVar3));
       if (*(int *)(&DAT_007c978c + iVar8) <= (int)(uint)bVar3) {
         g_currentExceptionFrame = local_64.previous;
         return;

@@ -68,10 +68,9 @@ undefined4 __thiscall FUN_004b6e30(void *this,int param_1,Global_sub_004B6E30_pa
       iVar3 = iVar3 + 4;
     } while (iVar3 < 0x18);
     iVar2 = *(int *)((int)this + 0x24);
-    *(undefined4 *)(iVar4 + 0x7f579a + iVar2 * 0xa62) = 0;
+    *(undefined4 *)(iVar4 + STRecordByteAddress(g_packedRecords_A62x8, iVar2, 0x97A)) = 0;
   }
-  /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-  thunk_FUN_004b7750(CONCAT31((int3)((uint)iVar2 >> 8),*(undefined1 *)((int)this + 0x24)));
+  thunk_FUN_004b7750(STReplaceLowByte((uint32_t)(iVar2), (uint8_t)(*(undefined1 *)((int)this + 0x24))));
   return 0;
 }
 

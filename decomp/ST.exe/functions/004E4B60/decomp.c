@@ -6,18 +6,18 @@
 undefined4 __fastcall FUN_004e4b60(STMineSetC *param_1)
 
 {
-  uint uVar1;
-  uint uVar2;
+  byte bVar1;
+  byte bVar2;
   int iVar3;
 
   switch(param_1->field_0245) {
   case CASE_0:
     if ((param_1->field_05AC == 0x36) || (param_1->field_05AC == 0x5d)) {
       if (param_1->field_0024 != param_1->field_023D) {
-        uVar1 = LookupRecordByte((char)param_1->field_023D);
+        bVar1 = LookupRecordByte((char)param_1->field_023D);
         iVar3 = param_1->field_0235;
-        uVar2 = LookupRecordByte(*(char *)&param_1->field_0024);
-        if ((&DAT_007e1984)[(uVar2 & 0xff) + (iVar3 * 3 + (uVar1 & 0xff)) * 3] == '\0') {
+        bVar2 = LookupRecordByte(*(char *)&param_1->field_0024);
+        if ((&DAT_007e1984)[(uint)bVar2 + (iVar3 * 3 + (uint)bVar1) * 3] == '\0') {
           return 0;
         }
       }

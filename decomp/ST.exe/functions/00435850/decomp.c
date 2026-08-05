@@ -1,8 +1,13 @@
 
 /* [STAbiConsistencyApplier] stack_parameter_width: parameter=/char Evidence: entry-use width=/char;
-   unmasked_dword_reads=0; evidence=00435858 MOVSX ESI,byte ptr [EBP + 0x8] */
+   unmasked_dword_reads=0; evidence=00435858 MOVSX ESI,byte ptr [EBP + 0x8]
+   [STAbiConsistencyApplier] narrow_accumulator_return target=return:-1: return=/ushort Evidence:
+   all resolved direct callers consume only AX or kill the result; narrow_uses=2, ignored=1, full=0,
+   unknown=0; reverse CFG traversal from every RET finds the same exact low-accumulator definition
+   width on every path; sites=004455C0 @ 00445752 -> read as AX on every CFG path | 0054C740 @
+   0054C8A3 -> killed on every CFG path | 00667D90 @ 00667E6B -> read as AX on every CFG path */
 
-uint FUN_00435850(char param_1,int param_2,int *param_3)
+ushort FUN_00435850(char param_1,int param_2,int *param_3)
 
 {
   dword index;
@@ -44,7 +49,6 @@ uint FUN_00435850(char param_1,int param_2,int *param_3)
   if (param_3 != nullptr) {
     *param_3 = _param_1;
   }
-  /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-  return CONCAT22((short)((uint)param_3 >> 0x10),(short)uVar1);
+  return (ushort)uVar1;
 }
 

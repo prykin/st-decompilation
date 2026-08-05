@@ -9,8 +9,10 @@ import java.io.File;
 import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.Path;
+import java.util.ArrayDeque;
 import java.util.ArrayList;
 import java.util.Comparator;
+import java.util.HashMap;
 import java.util.HashSet;
 import java.util.LinkedHashSet;
 import java.util.List;
@@ -47,6 +49,8 @@ import ghidra.program.model.symbol.SourceType;
 
 public class STAbiConsistencyAnalyzer extends GhidraScript {
     private static final int CALL_USE_SCAN_LIMIT = 8;
+    private static final int COMPLETE_CALL_USE_SCAN_LIMIT = 32;
+    private static final int COMPLETE_CALL_USE_NODE_LIMIT = 256;
     private static final int POINTER_RETURN_SCAN_LIMIT = 32;
     private static final int RETURN_DEFINITION_SCAN_LIMIT = 12;
     private static final int PARAMETER_MASK_SCAN_LIMIT = 8;
@@ -97,6 +101,7 @@ public class STAbiConsistencyAnalyzer extends GhidraScript {
             if (addX87DoubleParameterRepair(function, rows)) continue;
             if (addMachineThiscallArityRepair(function, rows)) continue;
             addUnsafeUnknownConventionReturnRevert(function, rows);
+            addNarrowAccumulatorReturnRepair(function, rows);
             addReturnWidthRepair(function, rows);
             addParameterWidthRepairs(function, rows);
             addParameterScalarRoleRepairs(function, rows);
@@ -138,7 +143,10 @@ public class STAbiConsistencyAnalyzer extends GhidraScript {
                 ReturnUse aggregate = returnUses.computeIfAbsent(called.getEntryPoint(),
                     ignored -> new ReturnUse());
                 if (use.width >= 4) aggregate.full++;
-                else if (use.width > 0) aggregate.narrow++;
+                else if (use.width > 0) {
+                    aggregate.narrow++;
+                    aggregate.narrowWidths.add(use.width);
+                }
                 else {
                     if (use.evidence.startsWith("killed:")) aggregate.ignored++;
                     else aggregate.unknown++;
@@ -154,7 +162,11 @@ public class STAbiConsistencyAnalyzer extends GhidraScript {
         Instruction instruction = listing.getInstructionAfter(call.getAddress());
         for (int count = 0; count < CALL_USE_SCAN_LIMIT && instruction != null &&
                 caller.getBody().contains(instruction.getAddress()); count++) {
-            int input = accumulatorWidth(instruction.getInputObjects());
+            if (independentAccumulatorDefinition(instruction))
+                return new RegisterUse(0, "killed: " +
+                    instruction.getMnemonicString().toUpperCase(Locale.ROOT) +
+                    " " + instruction);
+            int input = semanticAccumulatorInputWidth(instruction);
             if (input > 0)
                 return new RegisterUse(input, instruction.getMnemonicString().toUpperCase(Locale.ROOT) +
                     " " + instruction.toString());
@@ -180,6 +192,43 @@ public class STAbiConsistencyAnalyzer extends GhidraScript {
             else if (name.equals("AL") || name.equals("AH")) width = Math.max(width, 1);
         }
         return width;
+    }
+
+    /** A mask such as `AND EAX,0xff` consumes only the low byte even though
+     * Ghidra reports EAX as the input register. This is the compiler's ordinary
+     * zero-extension idiom and is exact width evidence, not a full-EAX use. */
+    private int semanticAccumulatorInputWidth(Instruction instruction) {
+        int raw = accumulatorWidth(instruction.getInputObjects());
+        if (raw < 4) return raw;
+        String mnemonic = instruction.getMnemonicString().toUpperCase(Locale.ROOT);
+        if (!Set.of("AND", "TEST").contains(mnemonic) ||
+                instruction.getNumOperands() < 2 ||
+                !instruction.getDefaultOperandRepresentation(0)
+                    .trim().equalsIgnoreCase("EAX")) return raw;
+        Scalar mask = instruction.getScalar(1);
+        if (mask == null) return raw;
+        long value = mask.getUnsignedValue();
+        if ((value & ~0xffL) == 0) return 1;
+        if ((value & ~0xffffL) == 0) return 2;
+        return raw;
+    }
+
+    /** Some x86 read-modify-write spellings do not depend on the old EAX
+     * value. They kill a callee return even though Ghidra lists EAX among the
+     * inputs. Keep this list to exact algebraic identities only. */
+    private boolean independentAccumulatorDefinition(Instruction instruction) {
+        if (instruction.getNumOperands() < 2 ||
+                !instruction.getDefaultOperandRepresentation(0)
+                    .trim().equalsIgnoreCase("EAX")) return false;
+        String mnemonic = instruction.getMnemonicString().toUpperCase(Locale.ROOT);
+        String second = instruction.getDefaultOperandRepresentation(1).trim();
+        if (Set.of("XOR", "SUB", "SBB").contains(mnemonic) &&
+                second.equalsIgnoreCase("EAX")) return true;
+        Scalar scalar = instruction.getScalar(1);
+        if (scalar == null) return false;
+        long value = scalar.getUnsignedValue() & 0xffffffffL;
+        return ("OR".equals(mnemonic) && value == 0xffffffffL) ||
+            ("AND".equals(mnemonic) && value == 0);
     }
 
     private void addKnownRepairs(List<Row> rows) throws Exception {
@@ -613,6 +662,194 @@ public class STAbiConsistencyAnalyzer extends GhidraScript {
             "", "/int", "high", "all observed callers consume full EAX (" + use.full +
             "), none consume AL/AX, and every RET path defines full EAX; sites=" +
             String.join(" | ", use.sites)));
+    }
+
+    /**
+     * Recover an AL/AX source-level return only when both sides of the ABI agree.
+     * Every resolved direct caller must either consume the same narrow register
+     * width or explicitly kill the result, and reverse CFG traversal from every
+     * RET must encounter a write of that exact low accumulator width on every
+     * predecessor path before any wider write. A narrow source load alone is
+     * deliberately insufficient.
+     */
+    private void addNarrowAccumulatorReturnRepair(Function function, List<Row> rows) {
+        Parameter returned = function.getReturn();
+        if (manual(function.getSignatureSource()) || manual(returned.getSource()) ||
+                !genericDword(returned.getFormalDataType())) return;
+        ReturnUse use = returnUses.get(function.getEntryPoint());
+        if (use == null || use.full != 0 || use.narrow < 2 ||
+                use.narrowWidths.size() != 1) return;
+        CallerWidthAudit audit = completeCallerWidthAudit(function);
+        if (audit == null || audit.narrowCalls < 2) return;
+        int width = audit.width;
+        if ((width != 1 && width != 2) ||
+                exactReturnAccumulatorWidth(function) != width) return;
+        String proposed = width == 1 ? "/byte" : "/ushort";
+        rows.add(Row.target(function, "narrow_accumulator_return", true,
+            "return", -1, returned, "", proposed, "high",
+            "all resolved direct callers consume only " +
+            (width == 1 ? "AL" : "AX") + " or kill the result; narrow_uses=" +
+            audit.narrowCalls + ", ignored=" + audit.killedCalls +
+            ", full=0, unknown=0; reverse CFG traversal from every RET finds " +
+            "the same exact low-accumulator definition width on every path; sites=" +
+            String.join(" | ", audit.sites)));
+    }
+
+    /** Audit every CFG path following every resolved direct call. A call is
+     * accepted only when every path reaches an EAX read of one unanimous width
+     * or an explicit EAX kill before the scan bound. */
+    private CallerWidthAudit completeCallerWidthAudit(Function target) {
+        CallerWidthAudit aggregate = new CallerWidthAudit();
+        FunctionIterator callers = currentProgram.getFunctionManager().getFunctions(true);
+        while (callers.hasNext()) {
+            Function caller = callers.next();
+            if (caller.isExternal()) continue;
+            InstructionIterator instructions = listing.getInstructions(caller.getBody(), true);
+            while (instructions.hasNext()) {
+                Instruction call = instructions.next();
+                if (!"CALL".equalsIgnoreCase(call.getMnemonicString())) continue;
+                Function called = resolveThunk(directCalledFunction(call));
+                if (called == null || !called.equals(target)) continue;
+                RegisterUse use = completeAccumulatorUse(caller, call);
+                if (use.width < 0) return null;
+                if (use.width == 0) aggregate.killedCalls++;
+                else {
+                    if (aggregate.width != 0 && aggregate.width != use.width) return null;
+                    aggregate.width = use.width;
+                    aggregate.narrowCalls++;
+                }
+                if (aggregate.sites.size() < 24)
+                    aggregate.sites.add(addr(caller.getEntryPoint()) + " @ " +
+                        addr(call.getAddress()) + " -> " + use.evidence);
+            }
+        }
+        return aggregate.width == 0 ? null : aggregate;
+    }
+
+    /** -1 is unresolved, zero is killed on every path, otherwise the exact
+     * unanimous accumulator read width. */
+    private RegisterUse completeAccumulatorUse(Function caller, Instruction call) {
+        Address start = call.getFallThrough();
+        if (start == null || !caller.getBody().contains(start))
+            return new RegisterUse(-1, "unknown: no in-function fallthrough");
+        ArrayDeque<WidthScanState> pending = new ArrayDeque<>();
+        pending.add(new WidthScanState(start, 0));
+        Set<Address> visited = new HashSet<>();
+        Set<Integer> widths = new HashSet<>();
+        int killed = 0, nodes = 0;
+        while (!pending.isEmpty()) {
+            WidthScanState state = pending.removeFirst();
+            if (!visited.add(state.address)) continue;
+            if (state.distance >= COMPLETE_CALL_USE_SCAN_LIMIT ||
+                    ++nodes > COMPLETE_CALL_USE_NODE_LIMIT)
+                return new RegisterUse(-1, "unknown: CFG scan limit");
+            Instruction cursor = listing.getInstructionAt(state.address);
+            if (cursor == null || !caller.getBody().contains(cursor.getAddress()))
+                return new RegisterUse(-1, "unknown: missing instruction");
+            if (independentAccumulatorDefinition(cursor)) {
+                killed++;
+                continue;
+            }
+            int input = semanticAccumulatorInputWidth(cursor);
+            if (input > 0) {
+                widths.add(input);
+                continue;
+            }
+            String mnemonic = cursor.getMnemonicString().toUpperCase(Locale.ROOT);
+            if (accumulatorWidth(cursor.getResultObjects()) > 0 ||
+                    "CALL".equals(mnemonic)) {
+                killed++;
+                continue;
+            }
+            if (cursor.getFlowType().isTerminal())
+                return new RegisterUse(-1,
+                    "unknown: terminal before explicit accumulator kill");
+            int successors = 0;
+            Address fallThrough = cursor.getFallThrough();
+            if (fallThrough != null && caller.getBody().contains(fallThrough)) {
+                pending.addLast(new WidthScanState(fallThrough, state.distance + 1));
+                successors++;
+            }
+            if (cursor.getFlowType().isJump()) {
+                for (Address flow : cursor.getFlows()) {
+                    if (!caller.getBody().contains(flow)) continue;
+                    pending.addLast(new WidthScanState(flow, state.distance + 1));
+                    successors++;
+                }
+            }
+            if (successors == 0)
+                return new RegisterUse(-1, "unknown: no successor");
+        }
+        if (widths.size() > 1)
+            return new RegisterUse(-1, "unknown: mixed accumulator widths " + widths);
+        if (widths.isEmpty())
+            return killed > 0 ? new RegisterUse(0, "killed on every CFG path") :
+                new RegisterUse(-1, "unknown: empty CFG audit");
+        int width = widths.iterator().next();
+        return new RegisterUse(width, "read as " +
+            (width == 1 ? "AL" : width == 2 ? "AX" : "EAX") +
+            (killed == 0 ? " on every CFG path" : "; remaining paths kill EAX"));
+    }
+
+    private int exactReturnAccumulatorWidth(Function function) {
+        Map<Address, Set<Address>> predecessors = new HashMap<>();
+        List<Instruction> returns = new ArrayList<>();
+        InstructionIterator instructions = listing.getInstructions(function.getBody(), true);
+        while (instructions.hasNext()) {
+            Instruction instruction = instructions.next();
+            String mnemonic = instruction.getMnemonicString().toUpperCase(Locale.ROOT);
+            if (mnemonic.startsWith("RET")) returns.add(instruction);
+            Address fallThrough = instruction.getFallThrough();
+            if (fallThrough != null && function.getBody().contains(fallThrough))
+                predecessors.computeIfAbsent(fallThrough, ignored -> new HashSet<>())
+                    .add(instruction.getAddress());
+            for (Address flow : instruction.getFlows())
+                if (flow != null && function.getBody().contains(flow))
+                    predecessors.computeIfAbsent(flow, ignored -> new HashSet<>())
+                        .add(instruction.getAddress());
+        }
+        if (returns.isEmpty()) return 0;
+        Integer agreed = null;
+        for (Instruction returned : returns) {
+            Set<Integer> widths = new HashSet<>();
+            Set<Address> visited = new HashSet<>();
+            ArrayDeque<Address> pending = new ArrayDeque<>(
+                predecessors.getOrDefault(returned.getAddress(), Set.of()));
+            if (pending.isEmpty()) return 0;
+            while (!pending.isEmpty()) {
+                Address address = pending.removeFirst();
+                if (!visited.add(address)) continue;
+                Instruction instruction = listing.getInstructionAt(address);
+                if (instruction == null) return 0;
+                int width = lowAccumulatorDefinitionWidth(instruction);
+                if (width < 0) return 0;
+                if (width > 0) {
+                    widths.add(width);
+                    continue;
+                }
+                Set<Address> prior = predecessors.get(address);
+                if (prior == null || prior.isEmpty()) return 0;
+                pending.addAll(prior);
+            }
+            if (widths.size() != 1) return 0;
+            int width = widths.iterator().next();
+            if (agreed != null && agreed != width) return 0;
+            agreed = width;
+        }
+        return agreed == null ? 0 : agreed;
+    }
+
+    private int lowAccumulatorDefinitionWidth(Instruction instruction) {
+        int result = 0;
+        for (Object object : instruction.getResultObjects()) {
+            if (!(object instanceof Register register)) continue;
+            String name = register.getName().toUpperCase(Locale.ROOT);
+            if (Set.of("EAX", "RAX").contains(name)) result = Math.max(result, 4);
+            else if ("AX".equals(name)) result = Math.max(result, 2);
+            else if ("AL".equals(name)) result = Math.max(result, 1);
+            else if ("AH".equals(name)) return -1;
+        }
+        return result;
     }
 
     /**
@@ -2049,12 +2286,13 @@ public class STAbiConsistencyAnalyzer extends GhidraScript {
             for (String kind : List.of("known_setjmp3", "known_load_resource_string",
                     "ebp_context_register",
                     "x87_double_parameter_slots", "x87_stack_storage_migration",
-                    "full_eax_return", "stack_parameter_width",
+                    "full_eax_return", "narrow_accumulator_return",
+                    "stack_parameter_width",
                     "stack_parameter_scalar_role", "pointer_return_element_width"))
                 out.write(kind + ": " + rows.stream().filter(row ->
                     row.repairKind.equals(kind)).count() + "\n");
             out.write("note=USER_DEFINED and IMPORTED target types are never selected for automatic repair.\n");
-            out.write("note_returns=Full-EAX repairs require full-width caller use and a full EAX definition on every RET path.\n");
+            out.write("note_returns=Full-EAX repairs require full-width caller use and a full EAX definition on every RET path. AL/AX repairs require a unanimous bounded CFG caller-use audit, including exact zero-extension masks, and an exact low-accumulator definition on every callee RET path.\n");
             out.write("note_parameters=Narrow stack parameters require consistent MOVSX/MOVZX or an immediate AND mask and no unmasked dword reads.\n");
             out.write("note_x87_doubles=An exact x87 double-width EBP read before any overlapping stack write may merge adjacent generic dwords; one generic qword may also be retyped when its exact halves are stored into an independently typed double class field. Stack byte count is preserved.\n");
             out.write("note_stack_arity_expansion=A truncated non-manual __thiscall/__stdcall signature may expand to an exact unanimous RET purge only when every incoming byte is read before overlap and the missing suffix contains an exact x87 double slot; callers are not evidence.\n");
@@ -2085,8 +2323,14 @@ public class STAbiConsistencyAnalyzer extends GhidraScript {
 
     private static class ReturnUse {
         int full, narrow, ignored, unknown;
+        final Set<Integer> narrowWidths = new HashSet<>();
         final List<String> sites = new ArrayList<>();
     }
+    private static class CallerWidthAudit {
+        int width, narrowCalls, killedCalls;
+        final List<String> sites = new ArrayList<>();
+    }
+    private record WidthScanState(Address address, int distance) { }
     private static class ScalarRoleEvidence {
         long frameOffset;
         int directReads;

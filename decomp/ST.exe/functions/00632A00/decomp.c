@@ -92,8 +92,7 @@ void __thiscall STTeamLissagC::InitVisibelSystem(STTeamLissagC *this)
         do {
           pDVar1 = pSVar6->field_0000;
           if (local_1c < pDVar1->count) {
-            /* ST_PSEUDO[dynamic_array_indexing]: expected DArrayAt<T>(pDVar1, local_1c) (runtime stride) */
-            piVar7 = (int *)(pDVar1->elementSize * local_1c + (int)pDVar1->data);
+            piVar7 = DArrayAt<int>(pDVar1, local_1c);
           }
           else {
             piVar7 = nullptr;

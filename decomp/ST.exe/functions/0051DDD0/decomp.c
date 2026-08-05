@@ -292,12 +292,10 @@ int __thiscall HelpPanelTy::GetMessage(HelpPanelTy *this,STMessage *message)
         }
         local_18 = *(uint *)&pcVar4->field_0x8a;
         if (DAT_0080874e == '\x03') {
-          /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-          local_14 = CONCAT31(local_14._1_3_,5);
+          local_14 = STReplaceLowByte((uint32_t)(local_14), (uint8_t)(5));
         }
         else {
-          /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-          local_14 = CONCAT31(local_14._1_3_,(-(DAT_0080874e != '\x01') & 6U) + 1);
+          local_14 = STReplaceLowByte((uint32_t)(local_14), (uint8_t)((-(DAT_0080874e != '\x01') & 6U) + 1));
         }
         Library::DKW::WGR::FUN_006b55f0
                   ((AnonShape_006B5B10_E0D06CF1 *)this_00->field_0068,0,0x21,0x16,
@@ -531,16 +529,13 @@ int __thiscall HelpPanelTy::GetMessage(HelpPanelTy *this,STMessage *message)
         bVar22 = (message->arg0).words.high == 1;
         local_18 = *local_8;
         if (DAT_0080874e == '\x03') {
-          /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-          local_1c = (uint *)CONCAT31(local_1c._1_3_,!bVar22);
+          local_1c = (uint *)STReplaceLowByte((uint32_t)(local_1c), (uint8_t)(!bVar22));
         }
         else if (DAT_0080874e == '\x01') {
-          /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-          local_1c = (uint *)CONCAT31(local_1c._1_3_,1);
+          local_1c = (uint *)STReplaceLowByte((uint32_t)(local_1c), (uint8_t)(1));
         }
         else {
-          /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-          local_1c = (uint *)CONCAT31(local_1c._1_3_,bVar22 + '\a');
+          local_1c = (uint *)STReplaceLowByte((uint32_t)(local_1c), (uint8_t)(bVar22 + '\a'));
         }
         iVar8 = (message->arg1).words.high + 0x16;
         Library::DKW::WGR::FUN_006b55f0
@@ -587,12 +582,10 @@ int __thiscall HelpPanelTy::GetMessage(HelpPanelTy *this,STMessage *message)
                        (uint)*(byte *)((int)pUVar7 + 0x11) * 0x14 + 10,-1,(uint)local_1c & 0xff);
         if ((this_00->field_01A1 == 0) && (*(byte *)((int)pUVar7 + 0x11) != 0)) {
           if (DAT_0080874e == '\x03') {
-            /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-            local_1c = (uint *)CONCAT31(local_1c._1_3_,0x29);
+            local_1c = (uint *)STReplaceLowByte((uint32_t)(local_1c), (uint8_t)(0x29));
           }
           else {
-            /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-            local_1c = (uint *)CONCAT31(local_1c._1_3_,(-(DAT_0080874e != '\x01') & 0x43U) + 0x10);
+            local_1c = (uint *)STReplaceLowByte((uint32_t)(local_1c), (uint8_t)((-(DAT_0080874e != '\x01') & 0x43U) + 0x10));
           }
           iVar15 = (uint)*(byte *)((int)pUVar7 + 0x11) * 0x14;
           local_10 = (undefined4 *)((uint)local_1c & 0xff);

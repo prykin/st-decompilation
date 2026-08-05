@@ -124,8 +124,7 @@ int __thiscall STAlgaC::GetMessage(STAlgaC *this,STMessage *message)
           do {
             uVar14 = local_14->iteratorIndex;
             if (uVar14 < local_14->count) {
-              /* ST_PSEUDO[dynamic_array_indexing]: expected DArrayAt<T>(local_14, uVar14) (runtime stride) */
-              piVar20 = (int *)(local_14->elementSize * uVar14 + (int)local_14->data);
+              piVar20 = DArrayAt<int>(local_14, uVar14);
               local_14->iteratorIndex = uVar14 + 1;
             }
             else {

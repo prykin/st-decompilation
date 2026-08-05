@@ -52,8 +52,7 @@ void CreatePlaySystem(void)
       do {
         thunk_FUN_00435850((char)local_8,1,nullptr);
         bVar3 = bVar3 + 1;
-        /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-        local_8 = CONCAT31(local_8._1_3_,bVar3);
+        local_8 = STReplaceLowByte((uint32_t)(local_8), (uint8_t)(bVar3));
       } while (bVar3 < 8);
     }
     CreateAi();

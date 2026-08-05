@@ -121,8 +121,7 @@ undefined4 __thiscall STAllPlayersC::_AddMDPairs(STAllPlayersC *this,char param_
         local_c = (DArrayTy *)GetTOBJList(pSVar2,param_1,local_6c[local_14],0,-1);
         local_48 = local_c->count;
         if (local_48 != 0) {
-          /* ST_PSEUDO[flattened_global_record_array]: expected typedRecordArray[index].field after inferred base/stride proof */
-          local_8 = *(DArrayTy **)(iVar6 + 0x7f4e2f + param_1 * 0xa62);
+          local_8 = *(DArrayTy **)(iVar6 + STRecordByteAddress(g_packedRecords_A62x8, param_1, 0xF));
           local_18 = 0;
           if (0 < (int)local_48) {
             do {
@@ -182,8 +181,8 @@ undefined4 __thiscall STAllPlayersC::_AddMDPairs(STAllPlayersC *this,char param_
       do {
         iVar6 = local_14;
         if (SVar13 == local_6c[local_14]) {
-          iVar4 = LookupRecordByte(param_1);
-          if ((char)iVar4 == '\x03') {
+          bVar3 = LookupRecordByte(param_1);
+          if (bVar3 == 3) {
             SVar14 = 0x60;
           }
           else {
@@ -212,8 +211,7 @@ undefined4 __thiscall STAllPlayersC::_AddMDPairs(STAllPlayersC *this,char param_
                          (int)g_pathingGrid.sizeY,(int)g_pathingGrid.sizeZ,(int)local_40,
                          (int)local_3e,(int)local_3c,-1,-1,-1);
             local_18 = 0;
-            /* ST_PSEUDO[flattened_global_record_array]: expected typedRecordArray[index].field after inferred base/stride proof */
-            local_8 = *(DArrayTy **)(local_14 * 4 + 0x7f4e2f + param_1 * 0xa62);
+            local_8 = *(DArrayTy **)(local_14 * 4 + STRecordByteAddress(g_packedRecords_A62x8, param_1, 0xF));
             iVar6 = local_14;
             SVar13 = local_58;
             if (0 < (int)local_48) {

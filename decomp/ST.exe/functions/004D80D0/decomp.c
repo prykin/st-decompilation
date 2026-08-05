@@ -2,7 +2,6 @@
 undefined4 FUN_004d80d0(char param_1,int param_2)
 
 {
-  /* ST_PSEUDO[flattened_global_record_array]: expected typedRecordArray[index].field after inferred base/stride proof */
-  return *(undefined4 *)(param_2 * 0x44 + 0x7f55fa + param_1 * 0xa62);
+  return *(undefined4 *)(param_2 * 0x44 + STRecordByteAddress(g_packedRecords_A62x8, param_1, 0x7DA));
 }
 

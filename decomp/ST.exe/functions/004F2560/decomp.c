@@ -107,8 +107,7 @@ void __thiscall CPanelTy::PaintWeap(CPanelTy *this,int param_1)
       piVar11[3] = 0xc;
       UVar8 = thunk_FUN_00524fe0(local_18->field_0020);
       piVar11[6] = UVar8;
-      /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-      local_c = CONCAT31(local_c._1_3_,(char)local_c + '\x01');
+      local_c = STReplaceLowByte((uint32_t)(local_c), (uint8_t)((char)local_c + '\x01'));
     }
     piVar11 = (int *)(local_24 + (local_c & 0xff) * 0x1c);
     *piVar11 = iVar6 + local_28;
@@ -117,8 +116,7 @@ void __thiscall CPanelTy::PaintWeap(CPanelTy *this,int param_1)
     piVar11[3] = local_10->field_0008;
     UVar8 = thunk_FUN_00524fe0(local_18->field_0020);
     piVar11[6] = UVar8;
-    /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-    local_c = CONCAT31(local_c._1_3_,(char)local_c + '\x01');
+    local_c = STReplaceLowByte((uint32_t)(local_c), (uint8_t)((char)local_c + '\x01'));
   }
   pAVar13 = local_18;
   GVar3 = local_18->field_001E;
@@ -228,8 +226,7 @@ LAB_004f27ff:
     piVar11[3] = 0xc;
     UVar8 = thunk_FUN_00524fe0(local_18->field_001E);
     piVar11[6] = UVar8;
-    /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-    local_c = CONCAT31(local_c._1_3_,(char)local_c + '\x01');
+    local_c = STReplaceLowByte((uint32_t)(local_c), (uint8_t)((char)local_c + '\x01'));
     pAVar13 = local_18;
   }
   switch(pAVar13->field_001E) {

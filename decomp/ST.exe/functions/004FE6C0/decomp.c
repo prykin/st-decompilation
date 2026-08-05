@@ -35,8 +35,7 @@ void __thiscall CPanelTy::PaintEnergy(CPanelTy *this,int param_1)
     local_8 = this->field_018C;
     bVar8 = this->field_0B7F;
   }
-  /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-  local_c = CONCAT31(local_c._1_3_,bVar8);
+  local_c = STReplaceLowByte((uint32_t)(local_c), (uint8_t)(bVar8));
   if (bVar8 < 0x65) {
     local_54.previous = g_currentExceptionFrame;
     g_currentExceptionFrame = &local_54;

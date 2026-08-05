@@ -25,8 +25,7 @@ void __thiscall STManBasisC::sub_005F2330(STManBasisC *this)
       do {
         pDVar2 = this->field_003C;
         if (uVar4 < pDVar2->count) {
-          /* ST_PSEUDO[dynamic_array_indexing]: expected DArrayAt<T>(pDVar2, uVar4) (runtime stride) */
-          pvVar3 = (void *)(pDVar2->elementSize * uVar4 + (int)pDVar2->data);
+          pvVar3 = DArrayAt<void>(pDVar2, uVar4);
         }
         else {
           pvVar3 = nullptr;

@@ -199,8 +199,7 @@ void __fastcall AiFltClassTy::sub_00664960(AiFltClassTy *param_1)
       local_c = 0;
       local_4c = *(uint *)&param_1->field_022F->field_0xc;
       if (0 < (int)local_4c) {
-        /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-        iVar11 = (int)CONCAT11(local_3c._1_1_,(undefined1)local_3c);
+        iVar11 = (int)STReplaceLowByte16((uint32_t)(local_3c), (uint8_t)((undefined1)local_3c));
         do {
           if (local_c < local_4c) {
             psVar10 = (short *)(param_1->field_022F->field_0008 * local_c +
@@ -217,8 +216,7 @@ void __fastcall AiFltClassTy::sub_00664960(AiFltClassTy *param_1)
           local_48 = (STGameObjC *)
                      (CONCAT11(local_3c._3_1_,local_3c._2_1_) + -1 +
                      (int)CONCAT11(uStack_33,uStack_34));
-          /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-          iVar11 = (int)CONCAT11(local_3c._1_1_,(undefined1)local_3c);
+          iVar11 = (int)STReplaceLowByte16((uint32_t)(local_3c), (uint8_t)((undefined1)local_3c));
           local_10 = (DArrayTy *)(int)psVar10[3];
           local_58 = (int)psVar10[4];
           local_54 = iVar16 + -1 + local_58;
@@ -310,7 +308,7 @@ void __fastcall AiFltClassTy::sub_00664960(AiFltClassTy *param_1)
     case 0xe:
       thunk_FUN_00675950(CONCAT13(local_3c._3_1_,
                                   CONCAT12(local_3c._2_1_,
-                                           CONCAT11(local_3c._1_1_,(undefined1)local_3c))),
+                                           STReplaceLowByte16((uint32_t)(local_3c), (uint8_t)((undefined1)local_3c)))),
                          CONCAT13(uStack_37,
                                   CONCAT12(uStack_38,CONCAT11(local_3c._3_1_,local_3c._2_1_))),
                          CONCAT11(uStack_37,uStack_38),(short *)&local_3c,
@@ -328,7 +326,7 @@ void __fastcall AiFltClassTy::sub_00664960(AiFltClassTy *param_1)
             psVar10 = nullptr;
           }
           /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-          if ((((CONCAT11(local_3c._1_1_,(undefined1)local_3c) == *psVar10) &&
+          if ((((STReplaceLowByte16((uint32_t)(local_3c), (uint8_t)((undefined1)local_3c)) == *psVar10) &&
                (CONCAT11(local_3c._3_1_,local_3c._2_1_) == psVar10[1])) &&
               (CONCAT11(uStack_37,uStack_38) == psVar10[2])) &&
              (((CONCAT11(uStack_31,uStack_32) == psVar10[5] &&
@@ -672,12 +670,11 @@ LAB_00665eba:
                 param_1->field_009B = 0x1f8;
               }
               else {
-                /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
                 iVar11 = thunk_FUN_0065e9a0(param_1,*(short **)&param_1->field_0xc7,
                                             (short *)&param_1->field_0x195,
                                             *(uint *)&param_1->field_0xcb,
                                             *(uint *)&param_1->field_0xcf,&param_1->field_0xd5,
-                                            CONCAT31((int3)(uVar13 >> 8),param_1->field_0xd3),1);
+                                            STReplaceLowByte((uint32_t)(uVar13), (uint8_t)(param_1->field_0xd3)),1);
                 if (iVar11 != 0) goto cf_common_join_00667047;
                 iVar11 = param_1->field_00EF;
                 if (((iVar11 == 0x200) || (iVar11 == 0x400)) &&
@@ -1121,8 +1118,7 @@ joined_r0x00666ceb:
           if (0 < (int)uVar13) {
             do {
               if (local_c < uVar13) {
-                /* ST_PSEUDO[dynamic_array_indexing]: expected DArrayAt<T>(local_10, local_c) (runtime stride) */
-                puVar15 = (ushort *)(local_10->elementSize * local_c + (int)local_10->data);
+                puVar15 = DArrayAt<ushort>(local_10, local_c);
               }
               else {
                 puVar15 = nullptr;
@@ -1151,9 +1147,10 @@ joined_r0x00666ceb:
               case 0xb2:
                 if (this_00->field_0024 != this_00->field_023D) {
                   uVar12 = LookupRecordByte((char)this_00->field_023D);
-                  local_4c = ((uVar12 & 0xffU) + this_00->field_0235 * 3) * 3;
+                  local_4c = ((uint)(byte)uVar12 + this_00->field_0235 * 3) * 3;
                   local_EAX_9844 = LookupRecordByte(*(char *)&this_00->field_0024);
-                  if ((&DAT_007e1984)[(local_EAX_9844 & 0xffU) + local_4c] == '\0') break;
+                  local_EAX_9844 = (int)(byte)local_EAX_9844;
+                  if ((&DAT_007e1984)[local_EAX_9844 + local_4c] == '\0') break;
                 }
                 if ((local_48->field_0245 == 0) && (99 < local_48->field_04EC)) {
                   thunk_FUN_004d8e70(local_48,(int)*(short *)&param_1->field_0xc7,

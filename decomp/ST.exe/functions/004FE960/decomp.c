@@ -85,11 +85,9 @@ LAB_004fea77:
         FUN_006b4170((AnonShape_006B5B10_E0D06CF1 *)this_00->field_0184,0,0x3b,0x31,7,0x21,0);
         bVar1 = this_00->field_0xb86;
         cVar8 = (char)(((uint)bVar1 * 0x21) / 100);
-        /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-        local_8 = CONCAT31(local_8._1_3_,cVar8);
+        local_8 = STReplaceLowByte((uint32_t)(local_8), (uint8_t)(cVar8));
         if ((bVar1 != 0) && (cVar8 == '\0')) {
-          /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-          local_8 = CONCAT31(local_8._1_3_,1);
+          local_8 = STReplaceLowByte((uint32_t)(local_8), (uint8_t)(1));
         }
         if (bVar1 < 0x46) {
           iVar3 = (-(uint)(bVar1 < 0x14) & 5) + 5;

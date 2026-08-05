@@ -64,8 +64,8 @@ FUN_00484020(void *this,short param_1,short *param_2,short *param_3,short *param
   }
   sVar3 = *(short *)((int)this + 0x800);
   sVar4 = *(short *)((int)this + 0x802);
-  /* ST_PSEUDO[stack_slot_reuse,packed_or_unaligned_piece]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable; expected named packed member, bit extract/compose, or unaligned load */
-  _param_1 = CONCAT22((short)((uint)this >> 0x10),sVar4);
+  /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
+  _param_1 = STReplaceLowWord((uint32_t)(this), (uint16_t)(sVar4));
   sVar1 = *(short *)((int)this + 0x804);
   if (((((((sVar3 < 0) || (g_worldGrid.sizeX <= sVar3)) || (sVar4 < 0)) ||
         ((g_worldGrid.sizeY <= sVar4 || (sVar1 < 0)))) || (g_worldGrid.sizeZ <= sVar1)) ||

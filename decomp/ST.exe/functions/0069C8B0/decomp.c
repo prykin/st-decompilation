@@ -60,8 +60,7 @@ LAB_0069ca03:
             local_44[0] = local_24;
             uVar6 = Library::DKW::TBL::DArrayAppend(array,local_44);
             if ((uint)uVar6 < array->count) {
-              /* ST_PSEUDO[dynamic_array_indexing]: expected DArrayAt<T>(array, uVar6) (runtime stride) */
-              pvVar2 = (void *)(array->elementSize * uVar6 + (int)array->data);
+              pvVar2 = DArrayAt<void>(array, uVar6);
             }
             else {
               pvVar2 = nullptr;
@@ -79,9 +78,8 @@ LAB_0069ca03:
               if (*(int *)(iVar1 + *local_c * 0xe + 2) == local_24) {
                 if (uVar5 == 0xffffffff) {
                   uVar5 = uVar7;
-                  /* ST_PSEUDO[dynamic_array_indexing]: expected DArrayAt<T>(array, uVar7) (runtime stride) */
                   if (((uVar7 < array->count) &&
-                      (pvVar2 = (void *)(array->elementSize * uVar7 + (int)array->data),
+                      (pvVar2 = DArrayAt<void>(array, uVar7),
                       pvVar2 != nullptr)) &&
                      (uVar3 = thunk_FUN_0069c710(iVar1,param_1,(int)pvVar2), -1 < (int)uVar3)) {
                     *(uint *)(param_3 + 10 + iVar1) = uVar7;

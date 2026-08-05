@@ -21,8 +21,7 @@ FUN_006da660(undefined4 param_1,undefined4 param_2,char *param_3,byte *param_4,i
     local_8 = param_7;
     cVar2 = *param_3;
     param_3 = param_3 + 1;
-    /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-    uVar9 = CONCAT31((int3)(uVar9 >> 8),cVar2);
+    uVar9 = STReplaceLowByte((uint32_t)(uVar9), (uint8_t)(cVar2));
     if (cVar2 != '\0') {
       pbVar10 = param_4 + 1;
       bVar4 = (byte)param_6 & 7;

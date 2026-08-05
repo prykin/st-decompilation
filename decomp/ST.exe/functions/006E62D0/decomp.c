@@ -28,8 +28,7 @@ STPlaySystemC::sub_006E62D0(STPlaySystemC *this,AnonShape_005EFAE0_B406B78B *par
     if (pDVar1->count <= uVar2) {
       return 0xfffffffc;
     }
-    /* ST_PSEUDO[dynamic_array_indexing]: expected DArrayAt<T>(pDVar1, uVar2) (runtime stride) */
-    pvVar4 = (void *)(pDVar1->elementSize * uVar2 + (int)pDVar1->data);
+    pvVar4 = DArrayAt<void>(pDVar1, uVar2);
     pDVar1->iteratorIndex = uVar2 + 1;
     if (pvVar4 == nullptr) break;
     iVar3 = *(int *)((int)pvVar4 + 4);

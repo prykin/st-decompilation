@@ -56,8 +56,7 @@ FUN_0065e450(AnonShape_0065E360_B94C37CB *param_1,undefined4 param_2,
   if (0 < (int)GVar4) {
     do {
       if (param_3 < GVar4) {
-        /* ST_PSEUDO[dynamic_array_indexing]: expected DArrayAt<T>(array, param_3) (runtime stride) */
-        puVar5 = (ushort *)(array->elementSize * param_3 + (int)array->data);
+        puVar5 = DArrayAt<ushort>(array, param_3);
       }
       else {
         puVar5 = nullptr;
@@ -82,7 +81,8 @@ LAB_0065e58d:
           uVar6 = LookupRecordByte((char)this->field_023D);
           iVar3 = this->field_0235;
           uVar7 = LookupRecordByte(*(char *)&this->field_0024);
-          if ((&DAT_007e1984)[(uVar7 & 0xffU) + ((uVar6 & 0xffU) + iVar3 * 3) * 3] != '\0')
+          uVar7 = (int)(byte)uVar7;
+          if ((&DAT_007e1984)[uVar7 + ((uint)(byte)uVar6 + iVar3 * 3) * 3] != '\0')
           goto LAB_0065e58d;
 LAB_0065e5a7:
           bVar1 = 0;

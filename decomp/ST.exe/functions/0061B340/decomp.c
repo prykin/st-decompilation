@@ -144,8 +144,7 @@ STJumpMineC::sub_0061B340
           bVar2 = *(byte *)&this->field_0051;
           /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
           _local_c = CONCAT31(uStack_b,bVar1);
-          /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-          local_10 = CONCAT31(local_10._1_3_,bVar2);
+          local_10 = STReplaceLowByte((uint32_t)(local_10), (uint8_t)(bVar2));
           if (DAT_00808a8f == '\0') {
             if (bVar1 == bVar2) {
 LAB_0061b627:
@@ -223,8 +222,7 @@ LAB_0061b627:
       }
       bVar1 = *(byte *)&pSVar4[1].vtable;
       bVar2 = *(byte *)&this->field_0051;
-      /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-      local_10 = CONCAT31(local_10._1_3_,bVar1);
+      local_10 = STReplaceLowByte((uint32_t)(local_10), (uint8_t)(bVar1));
       /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
       _local_c = CONCAT31(uStack_b,bVar2);
       if (DAT_00808a8f == '\0') {

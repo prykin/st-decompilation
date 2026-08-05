@@ -128,8 +128,7 @@ void __thiscall PrividerTy::NonePrivider(PrividerTy *this)
                 local_27 = 0;
                 iVar8 = FUN_00725910(&DAT_0080f33a,"*.DKD",0,thunk_FUN_005db030,&local_2c,0
                                     );
-                /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-                local_c = CONCAT31(local_c._1_3_,(iVar8 != -0x70) + '\x01');
+                local_c = STReplaceLowByte((uint32_t)(local_c), (uint8_t)((iVar8 != -0x70) + '\x01'));
                 local_14 = (-(uint)(*pcVar11 != '\x02') & 2) + 0xd;
                 break;
               case '\x05':
@@ -140,16 +139,14 @@ void __thiscall PrividerTy::NonePrivider(PrividerTy *this)
                 local_33 = *(undefined4 *)((int)psVar6 + 7);
                 iVar8 = FUN_00725910(&DAT_0080f33a,"*.DKD",0,thunk_FUN_005db030,&local_38,0
                                     );
-                /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-                local_c = CONCAT31(local_c._1_3_,iVar8 == -0x70);
+                local_c = STReplaceLowByte((uint32_t)(local_c), (uint8_t)(iVar8 == -0x70));
                 local_14 = 0x10;
               }
             }
             else if ((char)*local_18 != '\x03') goto LAB_005bb532;
             pCVar5 = g_cursorClass_00802A30;
             if ((char)*local_18 == '\x03') {
-              /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-              local_c = CONCAT31(local_c._1_3_,2);
+              local_c = STReplaceLowByte((uint32_t)(local_c), (uint8_t)(2));
             }
             while ((local_c & 0xff) != 1) {
               if ((local_c & 0xff) == 2) {
@@ -178,8 +175,7 @@ void __thiscall PrividerTy::NonePrivider(PrividerTy *this)
                 UVar13 = 0x2523;
                 goto LAB_005bb2c6;
               }
-              /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-              local_c = CONCAT31(local_c._1_3_,2);
+              local_c = STReplaceLowByte((uint32_t)(local_c), (uint8_t)(2));
             }
             thunk_FUN_005b6350(this_01,0x6121,local_14,0x11);
             DAT_0080877e = 0;

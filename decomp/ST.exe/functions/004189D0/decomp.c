@@ -69,12 +69,9 @@ undefined4 __thiscall STGameObjC::MoveStep(STGameObjC *this)
         iVar5 = this->field_009B;
         puVar3 = this->field_0097;
         puVar1 = puVar3 + iVar5 * 4;
-        /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-        local_10 = CONCAT22((short)((uint)iVar5 >> 0x10),puVar3[iVar5 * 4 + -4]);
-        /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-        local_c = CONCAT22((short)((uint)puVar3 >> 0x10),puVar1[-3]);
-        /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-        local_8 = CONCAT22((short)((uint)puVar1 >> 0x10),puVar1[-2]);
+        local_10 = STReplaceLowWord((uint32_t)(iVar5), (uint16_t)(puVar3[iVar5 * 4 + -4]));
+        local_c = STReplaceLowWord((uint32_t)(puVar3), (uint16_t)(puVar1[-3]));
+        local_8 = STReplaceLowWord((uint32_t)(puVar1), (uint16_t)(puVar1[-2]));
         this->field_00E4 = 0;
         this->field_00E3 = 0;
         sub_004167A0(this);

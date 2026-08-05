@@ -112,12 +112,10 @@ int __thiscall STBoatC::Dismant(STBoatC *this,int *param_1)
       sVar5 = this->field_06AB;
       /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
       local_c = (undefined4 *)CONCAT22(extraout_var,this->field_06AD);
-      /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-      local_10 = CONCAT22(local_10._2_2_,sVar5);
+      local_10 = STReplaceLowWord((uint32_t)(local_10), (uint16_t)(sVar5));
       local_8 = 0;
       sVar16 = this->field_06AD + 1;
-      /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-      local_14 = CONCAT22(local_14._2_2_,this->field_06A9);
+      local_14 = STReplaceLowWord((uint32_t)(local_14), (uint16_t)(this->field_06A9));
       do {
         local_18 = 0;
         sVar14 = (short)local_8 + this->field_06A9;
@@ -313,10 +311,8 @@ LAB_0047e0a4:
       if (SVar1 == CASE_3) {
         if (this->field_06C7 == 0) {
           iVar9 = (ushort)(this->field_06B7 * 200) + 100;
-          /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-          iVar8 = CONCAT22((short)((uint)iVar9 >> 0x10),this->field_06AB + 1) * 0xc9;
-          /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-          iVar20 = CONCAT22((short)((uint)iVar8 >> 0x10),this->field_06A9 + 1);
+          iVar8 = STReplaceLowWord((uint32_t)(iVar9), (uint16_t)(this->field_06AB + 1)) * 0xc9;
+          iVar20 = STReplaceLowWord((uint32_t)(iVar8), (uint16_t)(this->field_06A9 + 1));
           /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
           uVar4 = (*this->vtable->vfunc_10)
                             (this->field_0041,this->field_0043,
@@ -460,14 +456,13 @@ LAB_0047edd5:
         if (SVar1 != CASE_4) {
           if (SVar1 == CASE_5) {
             if (this->field_06C7 == 0) {
-              /* ST_PSEUDO[unresolved_register_input,packed_or_unaligned_piece]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention; expected named packed member, bit extract/compose, or unaligned load */
-              iVar8 = CONCAT22((short)((uint)in_EDX >> 0x10),this->field_06B5 * 0xc9) + 100;
-              /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
+              /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
+              iVar8 = STReplaceLowWord((uint32_t)(in_EDX), (uint16_t)(this->field_06B5 * 0xc9)) + 100;
               uVar4 = (*this->vtable->vfunc_10)
                                 (this->field_0041,this->field_0043,
-                                 CONCAT22((short)((uint)iVar8 >> 0x10),this->field_0045),
+                                 STReplaceLowWord((uint32_t)(iVar8), (uint16_t)(this->field_0045)),
                                  this->field_06B3 * 0xc9 + 100,(short)iVar8,
-                                 CONCAT22((short)((uint)this >> 0x10),this->field_06B7 * 200) + 100);
+                                 STReplaceLowWord((uint32_t)(this), (uint16_t)(this->field_06B7 * 200)) + 100);
               this->field_06BD = uVar4;
               this->field_06C7 = 1;
             }
@@ -655,9 +650,8 @@ LAB_0047edd5:
         if (this->field_06B9 != 1) {
           sVar5 = this->field_06AD + 1;
           this->field_06C3 = CASE_6;
-          /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
           sub_0048DFD0(this,this->field_06A9,this->field_06AB,sVar5,this->field_06A9,
-                       this->field_06AB,(int *)CONCAT22((short)((uint)param_1 >> 0x10),sVar5),1,
+                       this->field_06AB,(int *)STReplaceLowWord((uint32_t)(param_1), (uint16_t)(sVar5)),1,
                        &this->field_06B3,&this->field_06B5,&this->field_06B7);
           sub_00481520(this,(int)this->field_06B3,(int)this->field_06B5,(int)this->field_06B7);
           iVar8 = sub_0045FF50(this,0);

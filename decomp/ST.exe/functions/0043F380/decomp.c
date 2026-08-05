@@ -57,8 +57,7 @@ FUN_0043f380(char param_1,byte *param_2,short param_3,short param_4,short param_
   if (iVar3 <= _param_5) {
     /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
     _param_5 = _param_5 - iVar3;
-    /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-    iVar3 = CONCAT22((short)((uint)iVar3 >> 0x10),g_worldGrid.sizeX);
+    iVar3 = STReplaceLowWord((uint32_t)(iVar3), (uint16_t)(g_worldGrid.sizeX));
     /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
     _param_5 = _param_5 + 1;
     iVar8 = local_c;
@@ -108,8 +107,7 @@ LAB_0043f4cd:
               iVar8 = iVar8 + -1;
               iVar3 = iVar3 + 8;
             } while (iVar8 != 0);
-            /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-            iVar3 = CONCAT22((short)((uint)pSVar5 >> 0x10),g_worldGrid.sizeX);
+            iVar3 = STReplaceLowWord((uint32_t)(pSVar5), (uint16_t)(g_worldGrid.sizeX));
             iVar8 = local_c;
             iVar10 = local_8;
           }
@@ -120,7 +118,6 @@ LAB_0043f4cd:
       _param_5 = _param_5 + -1;
     } while (_param_5 != 0);
   }
-  /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-  return CONCAT22((short)((uint)iVar3 >> 0x10),param_6);
+  return STReplaceLowWord((uint32_t)(iVar3), (uint16_t)(param_6));
 }
 

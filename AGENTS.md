@@ -59,6 +59,11 @@ Original binaries are local under ignored `bin/` and must not be committed.
   incoming EBP range, and an independently typed machine-width anchor such as
   an x87 `double ptr` slot. Caller pseudocode is downstream evidence and must
   not be used to prove the missing arity.
+- A narrow `AL`/`AX` return requires the same exact low-accumulator definition
+  on every callee return path plus complete caller CFG coverage in which every
+  path consumes only that width or explicitly kills `EAX`. Export may replace
+  Ghidra's `value._0_N_ = call()` spelling only when the rendered callee name is
+  unambiguous and its concrete database return width exactly matches `N`.
 - Packed/unaligned fields and overlapping unions are intentional. Never align or
   merge them merely to improve decompiler spelling.
 - Integer promotion in comparisons does not invalidate a proven narrow storage

@@ -12,7 +12,7 @@ void FUN_004e70f0(int param_1,int param_2,int param_3,uint *param_4)
   int *piVar1;
   int iVar2;
   int iVar3;
-  uint uVar4;
+  byte bVar4;
   int iVar5;
   uint *puVar6;
 
@@ -20,10 +20,10 @@ void FUN_004e70f0(int param_1,int param_2,int param_3,uint *param_4)
   if ((((-1 < param_1) && (param_1 < 8)) && (-1 < param_2)) && (param_2 < 3)) {
     *param_4 = 0xffffffff;
     *(undefined4 *)param_3 = 0xffffffff;
-    uVar4 = LookupRecordByte((char)param_1);
+    bVar4 = LookupRecordByte((char)param_1);
     /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
     param_1 = 0;
-    iVar2 = param_2 + ((uVar4 & 0xff) - 1) * 3;
+    iVar2 = param_2 + (bVar4 - 1) * 3;
     if (0 < *(int *)(&DAT_007995bc + iVar2 * 0x195)) {
       puVar6 = (uint *)(&DAT_007995bc + iVar2 * 0x195);
       while (param_1 < 0x51) {

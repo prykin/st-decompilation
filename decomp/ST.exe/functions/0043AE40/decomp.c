@@ -74,7 +74,7 @@ STAllPlayersC::SetActivePanel(STAllPlayersC *this,uint *param_1,int param_2,int 
       }
       /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
       if (((param_3 == 1) &&
-          (iVar6 = GetCamPoint(0x3c,CONCAT31((int3)((uint)piVar1 >> 8),(char)piVar1[1]),
+          (iVar6 = GetCamPoint(0x3c,STReplaceLowByte((uint32_t)(piVar1), (uint8_t)((char)piVar1[1])),
                                *(DArrayTy **)((int)piVar1 + 10),
                                CONCAT22((short)((uint)&local_c >> 0x10),(short)piVar1[2]),&local_10,
                                &local_c,&local_8,(uint *)&param_1), iVar6 == 0)) &&
@@ -108,7 +108,7 @@ STAllPlayersC::SetActivePanel(STAllPlayersC *this,uint *param_1,int param_2,int 
         /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
         if (((param_3 == 1) &&
             (uVar8 = CONCAT22((short)((uint)&local_c >> 0x10),*(undefined2 *)(iVar6 + 8)),
-            iVar6 = GetCamPoint(0x3c,CONCAT31((int3)(uVar8 >> 8),*(undefined1 *)(iVar6 + 4)),
+            iVar6 = GetCamPoint(0x3c,STReplaceLowByte((uint32_t)(uVar8), (uint8_t)(*(undefined1 *)(iVar6 + 4))),
                                 *(DArrayTy **)(iVar6 + 10),uVar8,&local_10,&local_c,&local_8,
                                 (uint *)&param_1), iVar6 == 0)) &&
            (iVar6 = Library::Ourlib::ST3DSPR::SprInRect
@@ -191,7 +191,7 @@ LAB_0043aee4:
         /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
         if (((param_3 == 1) &&
             (uVar8 = CONCAT22((short)((uint)&local_c >> 0x10),(short)piVar1[2]),
-            iVar6 = GetCamPoint(0x19a,CONCAT31((int3)(uVar8 >> 8),(char)piVar1[1]),
+            iVar6 = GetCamPoint(0x19a,STReplaceLowByte((uint32_t)(uVar8), (uint8_t)((char)piVar1[1])),
                                 *(DArrayTy **)((int)piVar1 + 10),uVar8,&local_10,&local_c,&local_8,
                                 (uint *)&param_1), iVar6 == 0)) &&
            (iVar6 = Library::Ourlib::ST3DSPR::SprInRect
@@ -284,7 +284,7 @@ cf_common_exit_0043B294:
       /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
       if (((param_3 == 1) &&
           (uVar8 = CONCAT22((short)((uint)&local_c >> 0x10),(short)piVar1[2]),
-          iVar6 = GetCamPoint(0x19a,CONCAT31((int3)(uVar8 >> 8),(char)piVar1[1]),
+          iVar6 = GetCamPoint(0x19a,STReplaceLowByte((uint32_t)(uVar8), (uint8_t)((char)piVar1[1])),
                               *(DArrayTy **)((int)piVar1 + 10),uVar8,&local_10,&local_c,&local_8,
                               (uint *)&param_1), iVar6 == 0)) &&
          (iVar6 = Library::Ourlib::ST3DSPR::SprInRect

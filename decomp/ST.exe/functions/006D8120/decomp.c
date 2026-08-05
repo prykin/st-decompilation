@@ -71,8 +71,7 @@ uint __cdecl FUN_006d8120(AnonShape_006D8120_534053F7 *param_1)
               pbVar10 = (byte *)(uint)bVar2;
               pbVar17 = pbVar1;
               if (0xbf < bVar2) {
-                /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-                uVar14 = CONCAT31((int3)(uVar14 >> 8),bVar2) & 0xffffff3f;
+                uVar14 = STReplaceLowByte((uint32_t)(uVar14), (uint8_t)(bVar2)) & 0xffffff3f;
                 bVar19 = pbVar1 < pbVar13;
                 /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
                 if ((!bVar19) &&

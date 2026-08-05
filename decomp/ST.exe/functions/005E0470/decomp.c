@@ -109,8 +109,7 @@ void __thiscall MTaskTy::DoneMTask(MTaskTy *this)
         goto LAB_005e0672;
       }
       do {
-        /* ST_PSEUDO[dynamic_array_indexing]: expected DArrayAt<T>(pDVar3, uVar7) (runtime stride) */
-        this_02 = (SpriteClassTy *)(pDVar3->elementSize * uVar7 + (int)pDVar3->data);
+        this_02 = DArrayAt<SpriteClassTy>(pDVar3, uVar7);
 LAB_005e0672:
         SpriteClassTy::CloseSprite(this_02);
         if (*(int *)((int)&this_02[1].field_0008 + 1) != 0) {
@@ -132,8 +131,7 @@ LAB_005e0672:
         goto LAB_005e06d9;
       }
       do {
-        /* ST_PSEUDO[dynamic_array_indexing]: expected DArrayAt<T>(pDVar3, uVar7) (runtime stride) */
-        pAVar4 = (AnonShape_005E10A0_819783CC *)(pDVar3->elementSize * uVar7 + (int)pDVar3->data);
+        pAVar4 = DArrayAt<AnonShape_005E10A0_819783CC>(pDVar3, uVar7);
 LAB_005e06d9:
         TTaskItemClose(this_00,pAVar4);
         pDVar3 = this_00->field_0647;
@@ -152,8 +150,7 @@ LAB_005e06d9:
         goto LAB_005e072b;
       }
       do {
-        /* ST_PSEUDO[dynamic_array_indexing]: expected DArrayAt<T>(pDVar3, uVar7) (runtime stride) */
-        pAVar4 = (AnonShape_005E10A0_819783CC *)(pDVar3->elementSize * uVar7 + (int)pDVar3->data);
+        pAVar4 = DArrayAt<AnonShape_005E10A0_819783CC>(pDVar3, uVar7);
 LAB_005e072b:
         TTaskItemClose(this_00,pAVar4);
         pDVar3 = this_00->field_064F;

@@ -2,11 +2,11 @@
 void __thiscall FUN_004ebcb0(void *this,int param_1,int param_2)
 
 {
-  int iVar1;
+  byte bVar1;
   int iVar2;
 
-  iVar1 = thunk_FUN_004e1490(this);
-  if ((iVar1 != 0) && (*(int *)((int)this + 0x5b8) < g_worldGrid.sizeZ + -1)) {
+  iVar2 = thunk_FUN_004e1490(this);
+  if ((iVar2 != 0) && (*(int *)((int)this + 0x5b8) < g_worldGrid.sizeZ + -1)) {
     *(int *)((int)this + 0x508) = param_1;
     *(undefined4 *)((int)this + 0x4d0) = 3;
     *(int *)((int)this + 0x50c) = param_2;
@@ -15,10 +15,10 @@ void __thiscall FUN_004ebcb0(void *this,int param_1,int param_2)
     *(undefined4 *)((int)this + 0x4ec) = 0;
     TLOBaseTy::RotateSpr(this,0);
     if (*(int *)((int)this + 0x5ac) == 0x52) {
-      iVar1 = *(int *)this;
-      iVar2 = LookupRecordByte(*(char *)((int)this + 0x23d));
+      iVar2 = *(int *)this;
+      bVar1 = LookupRecordByte(*(char *)((int)this + 0x23d));
       /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-      (**(code **)(iVar1 + 0x90))(3,(-(uint)((char)iVar2 != '\x02') & 0xffffff3b) + 0x35e);
+      (**(code **)(iVar2 + 0x90))(3,(-(uint)(bVar1 != 2) & 0xffffff3b) + 0x35e);
       return;
     }
     if (*(int *)((int)this + 0x5ac) == 0x5f) {

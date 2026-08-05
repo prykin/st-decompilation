@@ -58,8 +58,7 @@ _EnumRCCont(short param_1,short param_2,byte *param_3,short param_4,short param_
   }
   do {
     if (uVar8 < pDVar7->count) {
-      /* ST_PSEUDO[dynamic_array_indexing]: expected DArrayAt<T>(pDVar7, uVar8) (runtime stride) */
-      puVar4 = (undefined4 *)(pDVar7->elementSize * uVar8 + (int)pDVar7->data);
+      puVar4 = DArrayAt<undefined4>(pDVar7, uVar8);
     }
     else {
       puVar4 = nullptr;

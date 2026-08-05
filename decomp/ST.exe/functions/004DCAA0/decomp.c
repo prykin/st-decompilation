@@ -15,12 +15,10 @@ FUN_004dcaa0(void *this,TLOBaseTy_sub_004CAFC0_param_1Enum param_1,int param_2,u
 {
   int iVar1;
   int iVar2;
-  uint uVar3;
-  int iVar4;
+  byte bVar3;
 
-  uVar3 = LookupRecordByte(*(char *)((int)this + 0x23d));
+  bVar3 = LookupRecordByte(*(char *)((int)this + 0x23d));
   iVar1 = *(int *)((int)this + 0x245);
-  iVar4 = (uVar3 & 0xff) - 1;
   iVar2 = *(int *)((int)this + 0x4d0);
   if (iVar2 != 0) {
     if (iVar2 == 1) {
@@ -33,9 +31,9 @@ FUN_004dcaa0(void *this,TLOBaseTy_sub_004CAFC0_param_1Enum param_1,int param_2,u
     }
   }
   *param_3 = *(uint *)((&PTR_DAT_007b5170)[iVar1] +
-                      (param_2 + (iVar4 + *(int *)((int)this + 0x235) * 3) * 4) * 8);
+                      (param_2 + ((bVar3 - 1) + *(int *)((int)this + 0x235) * 3) * 4) * 8);
   *param_4 = *(uint *)((&PTR_DAT_007b5170)[iVar1] +
-                      (param_2 + (iVar4 + *(int *)((int)this + 0x235) * 3) * 4) * 8 + 4);
+                      (param_2 + ((bVar3 - 1) + *(int *)((int)this + 0x235) * 3) * 4) * 8 + 4);
   return;
 }
 

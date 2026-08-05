@@ -103,8 +103,7 @@ LAB_00698a36:
               bVar10 = uVar6 != 0;
               do {
                 if (bVar10) {
-                  /* ST_PSEUDO[dynamic_array_indexing]: expected DArrayAt<T>(pDVar5, uVar3) (runtime stride) */
-                  pbVar4 = (byte *)(pDVar5->elementSize * uVar3 + (int)pDVar5->data);
+                  pbVar4 = DArrayAt<byte>(pDVar5, uVar3);
                 }
                 else {
                   pbVar4 = nullptr;
@@ -133,8 +132,7 @@ LAB_00698a36:
                 bVar10 = pDVar5->count != 0;
                 do {
                   if (bVar10) {
-                    /* ST_PSEUDO[dynamic_array_indexing]: expected DArrayAt<T>(pDVar5, local_2c) (runtime stride) */
-                    pbVar4 = (byte *)(pDVar5->elementSize * local_2c + (int)pDVar5->data);
+                    pbVar4 = DArrayAt<byte>(pDVar5, local_2c);
                   }
                   else {
                     pbVar4 = nullptr;

@@ -12,12 +12,12 @@ void __thiscall TLOBaseTy::sub_004C96E0(TLOBaseTy *this)
 
 {
   TLOBaseTy_field_0245State TVar1;
-  uint uVar2;
+  byte bVar2;
   int iVar3;
 
-  uVar2 = LookupRecordByte(*(char *)&this->field_023D);
+  bVar2 = LookupRecordByte(*(char *)&this->field_023D);
   TVar1 = this->field_0245;
-  iVar3 = (((uVar2 & 0xff) - 1) + this->field_0235 * 3) * 0xc;
+  iVar3 = ((bVar2 - 1) + this->field_0235 * 3) * 0xc;
   this->field_05EF = *(char **)((&PTR_PTR_007bb198)[TVar1] + iVar3);
   this->field_05F3 = *(undefined4 *)((&PTR_PTR_007bb198)[TVar1] + iVar3 + 4);
   this->field_05F7 = *(char **)((&PTR_PTR_007bb198)[TVar1] + iVar3 + 8);

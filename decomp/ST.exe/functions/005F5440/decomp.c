@@ -27,9 +27,8 @@ void __fastcall FUN_005f5440(AnonShape_005F5440_D27C3BDE *param_1)
     if (0 < (int)dVar1) {
       do {
         pDVar2 = param_1->field_0169;
-        /* ST_PSEUDO[dynamic_array_indexing]: expected DArrayAt<T>(pDVar2, local_c) (runtime stride) */
         if (((local_c < pDVar2->count) &&
-            (pcVar7 = (char *)(pDVar2->elementSize * local_c + (int)pDVar2->data),
+            (pcVar7 = DArrayAt<char>(pDVar2, local_c),
             pcVar7 != nullptr)) && (*pcVar7 == '\x01')) {
           if (*(int *)(pcVar7 + 0x1f) == -1) {
             thunk_FUN_005f4a30((int)pcVar7,pcVar7[1],0);

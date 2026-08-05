@@ -9,12 +9,12 @@ FUN_004cfff0(void *this,TLOBaseTy_sub_004CAFC0_param_1Enum param_1,int param_2,i
 {
   int iVar1;
   int iVar2;
-  uint uVar3;
+  byte bVar3;
   int iVar4;
 
-  uVar3 = LookupRecordByte(*(char *)((int)this + 0x23d));
+  bVar3 = LookupRecordByte(*(char *)((int)this + 0x23d));
   iVar1 = *(int *)((int)this + 0x245);
-  iVar4 = (uVar3 & 0xff) - 1;
+  iVar4 = bVar3 - 1;
   if (param_1 == CASE_9) {
     iVar2 = *(int *)((int)this + 0x4d0);
   }

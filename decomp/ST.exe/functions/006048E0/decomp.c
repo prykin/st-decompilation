@@ -16,8 +16,7 @@ int __fastcall FUN_006048e0(AnonShape_006048E0_C1705B76 *param_1)
     while (index = index - 1, -1 < (int)index) {
       pDVar1 = param_1->field_0215;
       if (index < pDVar1->count) {
-        /* ST_PSEUDO[dynamic_array_indexing]: expected DArrayAt<T>(pDVar1, index) (runtime stride) */
-        pvVar2 = (void *)(pDVar1->elementSize * index + (int)pDVar1->data);
+        pvVar2 = DArrayAt<void>(pDVar1, index);
       }
       else {
         pvVar2 = nullptr;

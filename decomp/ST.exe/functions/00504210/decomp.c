@@ -61,9 +61,8 @@ void __thiscall CPanelTy::UpdateStackPanel(CPanelTy *this,uint param_1)
       local_18 = pAVar11;
       pcVar7[0] = pAVar10->field_0x0;
       pcVar7[1] = uVar2;
-      /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
       STAllPlayersC::GetPanelInfo
-                (g_allPlayers_007FA174,CONCAT31((int3)(param_1 >> 8),(char)param_1 + '\x0e'),pAVar11
+                (g_allPlayers_007FA174,STReplaceLowByte((uint32_t)(param_1), (uint8_t)((char)param_1 + '\x0e')),pAVar11
                 );
       pAVar11 = local_c;
       local_1c = local_1c & 0xffffff00;
@@ -100,8 +99,7 @@ void __thiscall CPanelTy::UpdateStackPanel(CPanelTy *this,uint param_1)
             *local_14 = this_00->field_0038;
             thunk_FUN_004f1c80(this_00,param_1,local_1c);
             bVar9 = ((char)param_1 == '\0') + 9;
-            /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-            local_18 = (AnonShape_0043BEB0_1C00EC12 *)CONCAT31(local_18._1_3_,bVar9);
+            local_18 = (AnonShape_0043BEB0_1C00EC12 *)STReplaceLowByte((uint32_t)(local_18), (uint8_t)(bVar9));
             bVar5 = local_5;
             if (bVar9 < 0xb) {
               if (-1 < (int)this_00->field_0148[bVar9]) {
@@ -116,8 +114,7 @@ void __thiscall CPanelTy::UpdateStackPanel(CPanelTy *this,uint param_1)
           local_14 = local_14 + 1;
           local_20 = local_20 + 0xb;
           local_c = (AnonShape_0043BEB0_1C00EC12 *)&local_c->field_000B;
-          /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-          local_1c = CONCAT31(local_1c._1_3_,bVar9);
+          local_1c = STReplaceLowByte((uint32_t)(local_1c), (uint8_t)(bVar9));
           local_10 = local_10 + 1;
         } while (bVar9 < bVar5);
       }

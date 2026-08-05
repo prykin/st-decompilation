@@ -31,9 +31,8 @@ void __thiscall JumpManagC::CheckSystrm(JumpManagC *this)
     if (0 < (int)pDVar2->count) {
       bVar7 = pDVar2->count != 0;
       do {
-        /* ST_PSEUDO[dynamic_array_indexing]: expected DArrayAt<T>(pDVar2, uVar6) (runtime stride) */
         if ((bVar7) &&
-           (pvVar5 = (void *)(pDVar2->elementSize * uVar6 + (int)pDVar2->data),
+           (pvVar5 = DArrayAt<void>(pDVar2, uVar6),
            pvVar5 != nullptr)) {
           if (*(int *)((int)pvVar5 + 0x18) == 0) {
             iVar4 = -2;

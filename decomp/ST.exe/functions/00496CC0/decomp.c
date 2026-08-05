@@ -40,8 +40,7 @@ void FUN_00496cc0(int param_1,int param_2,uint param_3,undefined4 param_4,uint p
   }
   else if (param_3 != 0) {
     if (uVar2 < g_array_007FB270->count) {
-      /* ST_PSEUDO[dynamic_array_indexing]: expected DArrayAt<T>(g_array_007FB270, uVar2) (runtime stride) */
-      pvVar3 = (void *)(g_array_007FB270->elementSize * uVar2 + (int)g_array_007FB270->data);
+      pvVar3 = DArrayAt<void>(g_array_007FB270, uVar2);
     }
     else {
       pvVar3 = nullptr;

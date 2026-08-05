@@ -18,8 +18,7 @@ undefined4 __cdecl FUN_006e3450(DArrayTy *param_1,int param_2,int *param_3,undef
     if (param_1->count <= uVar1) {
       return 0xfffffffc;
     }
-    /* ST_PSEUDO[dynamic_array_indexing]: expected DArrayAt<T>(param_1, uVar1) (runtime stride) */
-    pvVar2 = (void *)(param_1->elementSize * uVar1 + (int)param_1->data);
+    pvVar2 = DArrayAt<void>(param_1, uVar1);
     param_1->iteratorIndex = uVar1 + 1;
     if (pvVar2 == nullptr) break;
     if (*(int *)(*(int *)((int)pvVar2 + 4) + 8) == param_2) {

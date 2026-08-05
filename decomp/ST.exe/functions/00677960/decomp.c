@@ -48,8 +48,7 @@ _EnumRCField(short param_1,short param_2,short param_3,short param_4,short param
   if (-1 < (int)uVar6) {
     do {
       if (uVar6 < g_array_007FA15C->count) {
-        /* ST_PSEUDO[dynamic_array_indexing]: expected DArrayAt<T>(g_array_007FA15C, uVar6) (runtime stride) */
-        puVar3 = (undefined4 *)(g_array_007FA15C->elementSize * uVar6 + (int)g_array_007FA15C->data);
+        puVar3 = DArrayAt<undefined4>(g_array_007FA15C, uVar6);
       }
       else {
         puVar3 = nullptr;

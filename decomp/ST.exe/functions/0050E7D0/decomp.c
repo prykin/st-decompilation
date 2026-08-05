@@ -202,8 +202,7 @@ void __thiscall CPanelTy::SetControlObjSI(CPanelTy *this,char param_1)
     bVar15 = (char)local_18 + 1;
     local_1c = local_1c + 0x27;
     local_8 = local_8 + 1;
-    /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-    local_18 = CONCAT31(local_18._1_3_,bVar15);
+    local_18 = STReplaceLowByte((uint32_t)(local_18), (uint8_t)(bVar15));
   } while (bVar15 < 4);
   local_60 = this_00->field_0008;
   local_24 = local_84c;
@@ -367,8 +366,7 @@ LAB_0050edc5:
                                0);
             this_00->field_0A15[uVar10] = uVar14;
             bVar15 = (Global_sub_00525EF0_param_2Enum)local_8 + 1;
-            /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-            local_8 = (Global_sub_00529590_param_1Enum *)CONCAT31(local_8._1_3_,bVar15);
+            local_8 = (Global_sub_00529590_param_1Enum *)STReplaceLowByte((uint32_t)(local_8), (uint8_t)(bVar15));
           } while (bVar15 < 4);
           g_currentExceptionFrame = local_10c.previous;
           return;

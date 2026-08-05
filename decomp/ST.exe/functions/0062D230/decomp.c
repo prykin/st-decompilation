@@ -17,9 +17,9 @@ uint __thiscall FUN_0062d230(void *this,int *param_1)
     index = 0;
     if (0 < (int)uVar1) {
       bVar3 = uVar1 != 0;
-      /* ST_PSEUDO[dynamic_array_indexing]: expected DArrayAt<T>(array, index) (runtime stride) */
+      /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
       while ((((!bVar3 ||
-               (pvVar2 = (void *)(array->elementSize * index + (int)array->data),
+               (pvVar2 = DArrayAt<void>(array, index),
                pvVar2 == nullptr)) || (*(int *)((int)pvVar2 + 4) != param_1[1])) ||
              (((*(int *)((int)pvVar2 + 8) != param_1[2] ||
                (*(int *)((int)pvVar2 + 0xc) != param_1[3])) ||

@@ -46,8 +46,7 @@ LAB_006615ff:
       bVar5 = pDVar2->count != 0;
       do {
         if (bVar5) {
-          /* ST_PSEUDO[dynamic_array_indexing]: expected DArrayAt<T>(pDVar2, uVar3) (runtime stride) */
-          puVar4 = (uint *)(pDVar2->elementSize * uVar3 + (int)pDVar2->data);
+          puVar4 = DArrayAt<uint>(pDVar2, uVar3);
         }
         else {
           puVar4 = nullptr;

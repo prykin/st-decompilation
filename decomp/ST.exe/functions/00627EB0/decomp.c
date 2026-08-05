@@ -23,13 +23,14 @@ int __thiscall STParticleC::GetMessage(STParticleC *this,STMessage *message)
   short sVar4;
   float fVar5;
   STParticleC *this_00;
-  int iVar6;
-  uint uVar7;
+  byte bVar6;
+  int iVar7;
   int iVar8;
   byte *puVar9;
   STParticleC *pSVar10;
   VisibleClassTy *pVVar11;
-  bool bVar12;
+  uint uVar12;
+  bool bVar13;
   InternalExceptionFrame local_7c;
   int local_38;
   int local_34;
@@ -48,16 +49,16 @@ int __thiscall STParticleC::GetMessage(STParticleC *this,STMessage *message)
   local_7c.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_7c;
   local_10 = this;
-  iVar6 = Library::MSVCRT::__setjmp3(local_7c.jumpBuffer,0);
+  iVar7 = Library::MSVCRT::__setjmp3(local_7c.jumpBuffer,0);
   this_00 = local_10;
-  if (iVar6 != 0) {
+  if (iVar7 != 0) {
     g_currentExceptionFrame = local_7c.previous;
-    iVar8 = ReportDebugMessage("E:\\__titans\\nick\\to_Part.Cpp",0x218,0,iVar6,"%s",
+    iVar8 = ReportDebugMessage("E:\\__titans\\nick\\to_Part.Cpp",0x218,0,iVar7,"%s",
                                "STParticleC::GetMessage");
     if (iVar8 != 0) {
       STDebugBreak(); /* noreturn in standalone pseudocode */
     }
-    RaiseInternalException(iVar6,0,"E:\\__titans\\nick\\to_Part.Cpp",0x21a);
+    RaiseInternalException(iVar7,0,"E:\\__titans\\nick\\to_Part.Cpp",0x21a);
     return 0xffff;
   }
   SVar2 = message->id;
@@ -134,17 +135,17 @@ int __thiscall STParticleC::GetMessage(STParticleC *this,STMessage *message)
     return 0;
   }
   if ((local_10->field_00D6 == '\0') && (local_10->field_0040 != '\0')) {
-    uVar7 = sub_0062B4A0(local_10);
-    this_00->field_00D6 = (char)uVar7;
-    if ((char)uVar7 != '\0') {
+    bVar6 = sub_0062B4A0(local_10);
+    this_00->field_00D6 = bVar6;
+    if (bVar6 != 0) {
       sub_00629E60(this_00,0);
     }
   }
   switch(this_00->field_00C2) {
   case CASE_1:
-    iVar6 = this_00->field_003C + -1;
-    this_00->field_003C = iVar6;
-    if (0 < iVar6) {
+    iVar7 = this_00->field_003C + -1;
+    this_00->field_003C = iVar7;
+    if (0 < iVar7) {
       g_currentExceptionFrame = local_7c.previous;
       return 0;
     }
@@ -177,25 +178,25 @@ int __thiscall STParticleC::GetMessage(STParticleC *this,STMessage *message)
       g_currentExceptionFrame = local_7c.previous;
       return 0;
     }
-    iVar6 = this_00->field_004E;
-    sVar4 = (short)(iVar6 >> 0x1f);
-    if (iVar6 < 0) {
-      local_c = (float)((short)(((short)(iVar6 / 200) + sVar4) -
-                               (short)((longlong)iVar6 * 0x51eb851f >> 0x3f)) + -1);
+    iVar7 = this_00->field_004E;
+    sVar4 = (short)(iVar7 >> 0x1f);
+    if (iVar7 < 0) {
+      local_c = (float)((short)(((short)(iVar7 / 200) + sVar4) -
+                               (short)((longlong)iVar7 * 0x51eb851f >> 0x3f)) + -1);
     }
     else {
-      local_c = (float)(int)(short)(((short)(iVar6 / 200) + sVar4) -
-                                   (short)((longlong)iVar6 * 0x51eb851f >> 0x3f));
+      local_c = (float)(int)(short)(((short)(iVar7 / 200) + sVar4) -
+                                   (short)((longlong)iVar7 * 0x51eb851f >> 0x3f));
     }
-    iVar6 = this_00->field_004A;
-    sVar4 = (short)(iVar6 >> 0x1f);
-    if (iVar6 < 0) {
-      iVar6 = (short)(((short)(iVar6 / 0xc9) + sVar4) - (short)((longlong)iVar6 * 0x28c1979 >> 0x3f)
+    iVar7 = this_00->field_004A;
+    sVar4 = (short)(iVar7 >> 0x1f);
+    if (iVar7 < 0) {
+      iVar7 = (short)(((short)(iVar7 / 0xc9) + sVar4) - (short)((longlong)iVar7 * 0x28c1979 >> 0x3f)
                      ) + -1;
     }
     else {
-      iVar6 = (int)(short)(((short)(iVar6 / 0xc9) + sVar4) -
-                          (short)((longlong)iVar6 * 0x28c1979 >> 0x3f));
+      iVar7 = (int)(short)(((short)(iVar7 / 0xc9) + sVar4) -
+                          (short)((longlong)iVar7 * 0x28c1979 >> 0x3f));
     }
     iVar8 = this_00->field_0046;
     sVar4 = (short)(iVar8 >> 0x1f);
@@ -209,34 +210,34 @@ int __thiscall STParticleC::GetMessage(STParticleC *this,STMessage *message)
     }
     if (((DAT_0080874d == -1) || (g_visibleClass_00802A88->field_00F8 == 0)) ||
        ((VisibleClassTy::sub_00558C00
-                   (g_visibleClass_00802A88,g_visibleClass_00802A88->field_010C,iVar8,iVar6,
+                   (g_visibleClass_00802A88,g_visibleClass_00802A88->field_010C,iVar8,iVar7,
                     &local_1c,&local_20), (int)local_c < 0 ||
         (local_24 = local_1c, local_28 = local_20, 4 < (int)local_c)))) goto LAB_006282e0;
 LAB_00628286:
     if (((local_24 < 0) || (pVVar11->field_0030 <= local_24)) ||
        ((g_centeredOffsets5[(int)local_c] + local_28 < 0 ||
         (pVVar11->field_0034 <= g_centeredOffsets5[(int)local_c] + local_28)))) {
-      bVar12 = false;
+      bVar13 = false;
     }
     else {
-      bVar12 = true;
+      bVar13 = true;
     }
-    if ((bVar12) && (pVVar11->field_004C != nullptr)) {
-      bVar12 = pVVar11->field_004C
+    if ((bVar13) && (pVVar11->field_004C != nullptr)) {
+      bVar13 = pVVar11->field_004C
                [local_24 + (g_centeredOffsets5[(int)local_c] + local_28) * pVVar11->field_0030] != 0
       ;
     }
     else {
-      bVar12 = true;
+      bVar13 = true;
     }
     break;
   case CASE_2:
-    iVar6 = sub_0062A370(this_00,g_playSystem_00802A38->field_00E4);
-    if (iVar6 < 1) {
+    iVar7 = sub_0062A370(this_00,g_playSystem_00802A38->field_00E4);
+    if (iVar7 < 1) {
       sub_00629830(this_00);
-      uVar7 = sub_0062B4A0(this_00);
-      this_00->field_00D6 = (char)uVar7;
-      if ((char)uVar7 == '\0') {
+      bVar6 = sub_0062B4A0(this_00);
+      this_00->field_00D6 = bVar6;
+      if (bVar6 == 0) {
         InitVisibelDeton(this_00,0);
         if (-1 < (int)this_00->field_00C6) {
           Library::Ourlib::ST3DSMAP::SprClose(g_sT3DSMAPContext_00807598,this_00->field_00C6);
@@ -247,7 +248,7 @@ LAB_00628286:
         InitVisibelDeton(this_00,1);
       }
       this_00->field_00C2 = CASE_3;
-      if (iVar6 != -1) {
+      if (iVar7 != -1) {
         g_currentExceptionFrame = local_7c.previous;
         return 0;
       }
@@ -255,25 +256,25 @@ LAB_00628286:
       g_currentExceptionFrame = local_7c.previous;
       return 0;
     }
-    uVar7 = g_playSystem_00802A38->field_00E4 - this_00->field_00AA;
+    uVar12 = g_playSystem_00802A38->field_00E4 - this_00->field_00AA;
     if ((this_00->field_00D6 != '\0') && ((g_playSystem_00802A38->field_00E4 & 1) == 0)) {
       if ((this_00->field_0014 & 0xff00) == 0x400) {
-        iVar6 = this_00->field_004E;
-        if (this_00->field_005A + 5 <= iVar6) goto LAB_0062838a;
+        iVar7 = this_00->field_004E;
+        if (this_00->field_005A + 5 <= iVar7) goto LAB_0062838a;
       }
       else {
-        iVar6 = this_00->field_004E;
+        iVar7 = this_00->field_004E;
       }
       TraksClassTy::TraksCreate
-                (g_traksClass_00802A7C,1,0,0,this_00->field_0046,this_00->field_004A,iVar6,0,0,0,0,0
+                (g_traksClass_00802A7C,1,0,0,this_00->field_0046,this_00->field_004A,iVar7,0,0,0,0,0
                  ,0,-1,0,0);
     }
 LAB_0062838a:
-    if (uVar7 < 0x19) {
+    if (uVar12 < 0x19) {
 LAB_006283bd:
       this_00->field_00B2 = this_00->field_00B2 + 1;
     }
-    else if (uVar7 < 0x2d) {
+    else if (uVar12 < 0x2d) {
       if ((g_playSystem_00802A38->field_00E4 & 1) == 0) goto LAB_006283bd;
     }
     else if (g_playSystem_00802A38->field_00E4 % 3 == 0) goto LAB_006283bd;
@@ -299,25 +300,25 @@ LAB_006283bd:
       g_currentExceptionFrame = local_7c.previous;
       return 0;
     }
-    iVar6 = this_00->field_004E;
-    sVar4 = (short)(iVar6 >> 0x1f);
-    if (iVar6 < 0) {
-      local_c = (float)((short)(((short)(iVar6 / 200) + sVar4) -
-                               (short)((longlong)iVar6 * 0x51eb851f >> 0x3f)) + -1);
+    iVar7 = this_00->field_004E;
+    sVar4 = (short)(iVar7 >> 0x1f);
+    if (iVar7 < 0) {
+      local_c = (float)((short)(((short)(iVar7 / 200) + sVar4) -
+                               (short)((longlong)iVar7 * 0x51eb851f >> 0x3f)) + -1);
     }
     else {
-      local_c = (float)(int)(short)(((short)(iVar6 / 200) + sVar4) -
-                                   (short)((longlong)iVar6 * 0x51eb851f >> 0x3f));
+      local_c = (float)(int)(short)(((short)(iVar7 / 200) + sVar4) -
+                                   (short)((longlong)iVar7 * 0x51eb851f >> 0x3f));
     }
-    iVar6 = this_00->field_004A;
-    sVar4 = (short)(iVar6 >> 0x1f);
-    if (iVar6 < 0) {
-      iVar6 = (short)(((short)(iVar6 / 0xc9) + sVar4) - (short)((longlong)iVar6 * 0x28c1979 >> 0x3f)
+    iVar7 = this_00->field_004A;
+    sVar4 = (short)(iVar7 >> 0x1f);
+    if (iVar7 < 0) {
+      iVar7 = (short)(((short)(iVar7 / 0xc9) + sVar4) - (short)((longlong)iVar7 * 0x28c1979 >> 0x3f)
                      ) + -1;
     }
     else {
-      iVar6 = (int)(short)(((short)(iVar6 / 0xc9) + sVar4) -
-                          (short)((longlong)iVar6 * 0x28c1979 >> 0x3f));
+      iVar7 = (int)(short)(((short)(iVar7 / 0xc9) + sVar4) -
+                          (short)((longlong)iVar7 * 0x28c1979 >> 0x3f));
     }
     iVar8 = this_00->field_0046;
     sVar4 = (short)(iVar8 >> 0x1f);
@@ -331,16 +332,16 @@ LAB_006283bd:
     }
     if ((((DAT_0080874d != -1) && (g_visibleClass_00802A88->field_00F8 != 0)) &&
         (VisibleClassTy::sub_00558C00
-                   (g_visibleClass_00802A88,g_visibleClass_00802A88->field_010C,iVar8,iVar6,
+                   (g_visibleClass_00802A88,g_visibleClass_00802A88->field_010C,iVar8,iVar7,
                     &local_24,&local_28), -1 < (int)local_c)) && ((int)local_c < 5))
     goto LAB_00628286;
 LAB_006282e0:
-    bVar12 = true;
+    bVar13 = true;
     break;
   case CASE_3:
-    iVar6 = this_00->field_00B2 + 1;
-    this_00->field_00B2 = iVar6;
-    if ((((this_00->field_00BF != '\0') && (iVar6 == 0xf)) && (this_00->field_00D6 != '\0')) &&
+    iVar7 = this_00->field_00B2 + 1;
+    this_00->field_00B2 = iVar7;
+    if ((((this_00->field_00BF != '\0') && (iVar7 == 0xf)) && (this_00->field_00D6 != '\0')) &&
        (-1 < (int)this_00->field_00C6)) {
       ST3DSMAPContext::sub_006E9CB0(g_sT3DSMAPContext_00807598,(uint *)this_00->field_00C6,1);
     }
@@ -348,12 +349,12 @@ LAB_006282e0:
        (-1 < (int)this_00->field_00C6)) {
       ST3DSMAPContext::sub_006E9D40(g_sT3DSMAPContext_00807598,(uint *)this_00->field_00C6,0);
     }
-    if (((this_00->field_00B2 == 5) && (iVar6 = thunk_FUN_0062b300((int)this_00), iVar6 != 0)) &&
+    if (((this_00->field_00B2 == 5) && (iVar7 = thunk_FUN_0062b300((int)this_00), iVar7 != 0)) &&
        (this_00->field_0076 != 2)) {
       thunk_FUN_0062af90(this_00,this_00->field_0046,this_00->field_004A,this_00->field_004E);
     }
-    uVar7 = this_00->field_00B2;
-    if (this_00->field_00BA <= (int)uVar7) {
+    uVar12 = this_00->field_00B2;
+    if (this_00->field_00BA <= (int)uVar12) {
       sub_0062A860(this_00);
       this_00->field_00C2 = CASE_0;
       g_currentExceptionFrame = local_7c.previous;
@@ -363,8 +364,8 @@ LAB_006282e0:
       g_currentExceptionFrame = local_7c.previous;
       return 0;
     }
-    if ((int)uVar7 < this_00->field_00B6) {
-      ST3DSMAPContext::sub_006EA270(g_sT3DSMAPContext_00807598,this_00->field_00C6,0,uVar7);
+    if ((int)uVar12 < this_00->field_00B6) {
+      ST3DSMAPContext::sub_006EA270(g_sT3DSMAPContext_00807598,this_00->field_00C6,0,uVar12);
       local_c = (float)this_00->field_0046 * _DAT_007904f8 * _DAT_007904f0;
       this_00->field_006A = local_c;
       local_8 = (float)this_00->field_004A * _DAT_007904f8 * _DAT_007904f0;
@@ -376,25 +377,25 @@ LAB_006282e0:
                  fVar5 + _DAT_007904fc);
       pVVar11 = g_visibleClass_00802A88;
       if (g_visibleClass_00802A88 != nullptr) {
-        iVar6 = this_00->field_004E;
-        sVar4 = (short)(iVar6 >> 0x1f);
-        if (iVar6 < 0) {
-          local_c = (float)((short)(((short)(iVar6 / 200) + sVar4) -
-                                   (short)((longlong)iVar6 * 0x51eb851f >> 0x3f)) + -1);
+        iVar7 = this_00->field_004E;
+        sVar4 = (short)(iVar7 >> 0x1f);
+        if (iVar7 < 0) {
+          local_c = (float)((short)(((short)(iVar7 / 200) + sVar4) -
+                                   (short)((longlong)iVar7 * 0x51eb851f >> 0x3f)) + -1);
         }
         else {
-          local_c = (float)(int)(short)(((short)(iVar6 / 200) + sVar4) -
-                                       (short)((longlong)iVar6 * 0x51eb851f >> 0x3f));
+          local_c = (float)(int)(short)(((short)(iVar7 / 200) + sVar4) -
+                                       (short)((longlong)iVar7 * 0x51eb851f >> 0x3f));
         }
-        iVar6 = this_00->field_004A;
-        sVar4 = (short)(iVar6 >> 0x1f);
-        if (iVar6 < 0) {
-          iVar6 = (short)(((short)(iVar6 / 0xc9) + sVar4) -
-                         (short)((longlong)iVar6 * 0x28c1979 >> 0x3f)) + -1;
+        iVar7 = this_00->field_004A;
+        sVar4 = (short)(iVar7 >> 0x1f);
+        if (iVar7 < 0) {
+          iVar7 = (short)(((short)(iVar7 / 0xc9) + sVar4) -
+                         (short)((longlong)iVar7 * 0x28c1979 >> 0x3f)) + -1;
         }
         else {
-          iVar6 = (int)(short)(((short)(iVar6 / 0xc9) + sVar4) -
-                              (short)((longlong)iVar6 * 0x28c1979 >> 0x3f));
+          iVar7 = (int)(short)(((short)(iVar7 / 0xc9) + sVar4) -
+                              (short)((longlong)iVar7 * 0x28c1979 >> 0x3f));
         }
         iVar8 = this_00->field_0046;
         if (iVar8 < 0) {
@@ -405,29 +406,29 @@ LAB_006282e0:
         }
         if ((((DAT_0080874d == -1) || (g_visibleClass_00802A88->field_00F8 == 0)) ||
             (VisibleClassTy::sub_00558C00
-                       (g_visibleClass_00802A88,g_visibleClass_00802A88->field_010C,iVar8,iVar6,
+                       (g_visibleClass_00802A88,g_visibleClass_00802A88->field_010C,iVar8,iVar7,
                         &local_2c,&local_30), (int)local_c < 0)) || (4 < (int)local_c)) {
-          bVar12 = true;
+          bVar13 = true;
         }
         else {
           if (((local_2c < 0) || (pVVar11->field_0030 <= local_2c)) ||
              ((g_centeredOffsets5[(int)local_c] + local_30 < 0 ||
               (pVVar11->field_0034 <= g_centeredOffsets5[(int)local_c] + local_30)))) {
-            bVar12 = false;
+            bVar13 = false;
           }
           else {
-            bVar12 = true;
+            bVar13 = true;
           }
-          if ((bVar12) && (pVVar11->field_004C != nullptr)) {
-            bVar12 = pVVar11->field_004C
+          if ((bVar13) && (pVVar11->field_004C != nullptr)) {
+            bVar13 = pVVar11->field_004C
                      [local_2c + (g_centeredOffsets5[(int)local_c] + local_30) * pVVar11->field_0030
                      ] != 0;
           }
           else {
-            bVar12 = true;
+            bVar13 = true;
           }
         }
-        if (bVar12) {
+        if (bVar13) {
           if (this_00->field_00C1 == '\0') {
             Library::Ourlib::ST3DSMAP::SprShow(g_sT3DSMAPContext_00807598,this_00->field_00C6,0);
             this_00->field_00C1 = 1;
@@ -443,8 +444,8 @@ LAB_006282e0:
       g_currentExceptionFrame = local_7c.previous;
       return 0;
     }
-    iVar6 = this_00->field_00B2;
-    if (iVar6 < 0xf) {
+    iVar7 = this_00->field_00B2;
+    if (iVar7 < 0xf) {
       g_currentExceptionFrame = local_7c.previous;
       return 0;
     }
@@ -477,25 +478,25 @@ LAB_006282e0:
       g_currentExceptionFrame = local_7c.previous;
       return 0;
     }
-    iVar6 = this_00->field_004E;
-    sVar4 = (short)(iVar6 >> 0x1f);
-    if (iVar6 < 0) {
-      local_c = (float)((short)(((short)(iVar6 / 200) + sVar4) -
-                               (short)((longlong)iVar6 * 0x51eb851f >> 0x3f)) + -1);
+    iVar7 = this_00->field_004E;
+    sVar4 = (short)(iVar7 >> 0x1f);
+    if (iVar7 < 0) {
+      local_c = (float)((short)(((short)(iVar7 / 200) + sVar4) -
+                               (short)((longlong)iVar7 * 0x51eb851f >> 0x3f)) + -1);
     }
     else {
-      local_c = (float)(int)(short)(((short)(iVar6 / 200) + sVar4) -
-                                   (short)((longlong)iVar6 * 0x51eb851f >> 0x3f));
+      local_c = (float)(int)(short)(((short)(iVar7 / 200) + sVar4) -
+                                   (short)((longlong)iVar7 * 0x51eb851f >> 0x3f));
     }
-    iVar6 = this_00->field_004A;
-    sVar4 = (short)(iVar6 >> 0x1f);
-    if (iVar6 < 0) {
-      iVar6 = (short)(((short)(iVar6 / 0xc9) + sVar4) - (short)((longlong)iVar6 * 0x28c1979 >> 0x3f)
+    iVar7 = this_00->field_004A;
+    sVar4 = (short)(iVar7 >> 0x1f);
+    if (iVar7 < 0) {
+      iVar7 = (short)(((short)(iVar7 / 0xc9) + sVar4) - (short)((longlong)iVar7 * 0x28c1979 >> 0x3f)
                      ) + -1;
     }
     else {
-      iVar6 = (int)(short)(((short)(iVar6 / 0xc9) + sVar4) -
-                          (short)((longlong)iVar6 * 0x28c1979 >> 0x3f));
+      iVar7 = (int)(short)(((short)(iVar7 / 0xc9) + sVar4) -
+                          (short)((longlong)iVar7 * 0x28c1979 >> 0x3f));
     }
     iVar8 = this_00->field_0046;
     sVar4 = (short)(iVar8 >> 0x1f);
@@ -509,26 +510,26 @@ LAB_006282e0:
     }
     if ((((DAT_0080874d == -1) || (g_visibleClass_00802A88->field_00F8 == 0)) ||
         (VisibleClassTy::sub_00558C00
-                   (g_visibleClass_00802A88,g_visibleClass_00802A88->field_010C,iVar8,iVar6,
+                   (g_visibleClass_00802A88,g_visibleClass_00802A88->field_010C,iVar8,iVar7,
                     &local_34,&local_38), (int)local_c < 0)) || (4 < (int)local_c)) {
-      bVar12 = true;
+      bVar13 = true;
     }
     else {
       if (((local_34 < 0) || (pVVar11->field_0030 <= local_34)) ||
          ((g_centeredOffsets5[(int)local_c] + local_38 < 0 ||
           (pVVar11->field_0034 <= g_centeredOffsets5[(int)local_c] + local_38)))) {
-        bVar12 = false;
+        bVar13 = false;
       }
       else {
-        bVar12 = true;
+        bVar13 = true;
       }
-      if ((bVar12) && (pVVar11->field_004C != nullptr)) {
-        bVar12 = pVVar11->field_004C
+      if ((bVar13) && (pVVar11->field_004C != nullptr)) {
+        bVar13 = pVVar11->field_004C
                  [(g_centeredOffsets5[(int)local_c] + local_38) * pVVar11->field_0030 + local_34] !=
                  0;
       }
       else {
-        bVar12 = true;
+        bVar13 = true;
       }
     }
     cVar1 = this_00->field_00C1;
@@ -538,7 +539,7 @@ LAB_006282e0:
   }
   cVar1 = this_00->field_00C1;
 joined_r0x00628af1:
-  if (bVar12) {
+  if (bVar13) {
     if (cVar1 == '\0') {
       Library::Ourlib::ST3DSMAP::SprShow(g_sT3DSMAPContext_00807598,this_00->field_00C6,0);
       this_00->field_00C1 = 1;
@@ -557,11 +558,11 @@ switchD_006280c4_default:
   return 0;
 switchD_006288e6_caseD_0:
   if (*(byte *)&this_00->field_0014 < 4) {
-    ST3DSMAPContext::sub_006EA270(g_sT3DSMAPContext_00807598,this_00->field_00C6,1,iVar6 + 3);
+    ST3DSMAPContext::sub_006EA270(g_sT3DSMAPContext_00807598,this_00->field_00C6,1,iVar7 + 3);
     g_currentExceptionFrame = local_7c.previous;
     return 0;
   }
-  ST3DSMAPContext::sub_006EA270(g_sT3DSMAPContext_00807598,this_00->field_00C6,1,iVar6 - 0xf);
+  ST3DSMAPContext::sub_006EA270(g_sT3DSMAPContext_00807598,this_00->field_00C6,1,iVar7 - 0xf);
   g_currentExceptionFrame = local_7c.previous;
   return 0;
 }

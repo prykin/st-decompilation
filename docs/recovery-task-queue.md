@@ -224,13 +224,57 @@ The accepted corpus contains the following concrete debt:
 
 | Issue | Occurrences | Functions | Next evidence source |
 | --- | ---: | ---: | --- |
-| `undefined_type` | 16,277 | 3,580 | definitions, consumers, ABI-width families |
-| `raw_pointer_offset` | 2,816 | 1,111 | cross-function pointer families and complete records |
+| `undefined_type` | 16,289 | 3,577 | definitions, consumers, ABI-width families |
+| `raw_pointer_offset` | 2,802 | 1,094 | cross-function pointer families and complete records |
 | `raw_indirect_call` | 1,888 | 774 | stored callback targets and physical vtable slots |
-| `packed_or_unaligned_piece` | 1,390 | 292 | exact packed members or explicit unaligned helpers |
-| `return_width_artifact` | 1,066 | 144 | whole-CFG EAX and caller-consumer evidence |
-| `unresolved_register_input` | 470 | 132 | boundary ABI, SEH/setjmp, and true live-ins |
-| `dynamic_array_indexing` | 318 | 185 | per-owner DArray element descriptors |
+| `packed_or_unaligned_piece` | 1,051 | 215 | exact packed members or explicit unaligned helpers |
+| `return_width_artifact` | 1,062 | 142 | whole-CFG EAX and caller-consumer evidence |
+| `unresolved_register_input` | 472 | 132 | boundary ABI, SEH/setjmp, and true live-ins |
+| `dynamic_array_indexing` | 76 | 39 | per-owner DArray element descriptors |
+| `flattened_global_record_array` | 36 | 17 | exact member identity inside proven record arrays |
+
+### Q-041 Closed narrow returns and exact address/piece presentation
+
+Status: implemented and accepted. Seven non-manual functions received a
+machine-proven `byte`/`ushort` return after complete reverse callee CFG and
+forward caller-use CFG audits. `LookupRecordByte` has 364 low-byte consumers,
+one explicit result kill, and no full-width or unresolved caller path; its old
+`CONCAT31` return is now an ordinary byte field return. The confirming ABI pass
+emits zero proposals.
+
+The same layer adds exact exporter folds for same-base low-piece composition,
+runtime-stride typed DArray addresses, and interior addresses in generated
+fixed-stride global record arrays. The accepted corpus contains 697 low-piece
+helpers, 434 `DArrayAt<T>` address/index views, and 71 record-address views.
+Compared with the retained pre-export baseline, dynamic-array debt fell by 242,
+flattened-record debt by 56, packed-piece debt by 351, and raw pointer offsets
+by 16. The export gate passes with no hard regression; four remaining warnings
+are nonblocking stage-transition counts.
+
+Local-lifetime type comparison now treats equivalent typedef/pointer spellings
+as the same anchor family. Proposals fell from 605 to 458 and conflicts from
+328 to 175, eliminating 152 `LPSTR`/`CHAR *`/`char *` alias conflicts without
+weakening genuine signedness or value-domain conflicts.
+
+### Q-042 Name source-family buffer descriptors without geometry merging
+
+Status: next candidate, audited only. The largest anonymous family is
+`AnonShape_006B5B10_E0D06CF1` (671 rendered occurrences). It is a 16-byte
+three-field view used by `DibPut` and the `DKW/WGR` routines whose recovered
+source includes `dibcopy.c`. That is strong evidence for one raster/DIB
+descriptor family, but there is not yet an independent named datatype anchor;
+the current type-family analyzer therefore correctly reports
+`no_named_layout_match` and enables nothing.
+
+A safe generalization should derive a semantic family only from a dominant
+recovered source basename plus exact direct-call parameter flow across several
+named functions, then require complete layout agreement and one physical
+producer/owner. It must not promote every class field passed to the drawing
+helpers: current class-layout reports also contain real `int`, `ushort *`, and
+owner-local pointee alternatives. The remaining local-lifetime conflicts are
+likewise real domain questions (predominantly `int`/`uint` and `bool`/`byte`),
+not typedef aliases; settle them from definitions, comparisons, and stores
+before reducing the broad `undefined_type` count.
 
 Generic field/data names are a later semantic-naming layer. They must not drive
 layout or ABI changes merely because their raw occurrence counts are larger.

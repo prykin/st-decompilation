@@ -269,7 +269,7 @@ switchD_0057988b_default:
                 uVar7 = CONCAT22(sVar5 >> 0xf,*(undefined2 *)((int)this + 0x45));
                 /* ST_PSEUDO[raw_indirect_call,packed_or_unaligned_piece]: expected typed vtable/callback call with explicit __thiscall receiver; expected named packed member, bit extract/compose, or unaligned load */
                 sVar4 = (**(code **)(*(int *)this + 0x10))
-                                  (CONCAT22((short)((uint)iVar3 >> 0x10),sVar4),
+                                  (STReplaceLowWord((uint32_t)(iVar3), (uint16_t)(sVar4)),
                                    CONCAT22(sVar4 >> 0xf,sVar5),uVar7,local_14,local_18,uVar7);
                 uVar1 = (int)(short)((sVar4 / 0x2d + 3) - (short)((int)sVar4 / -0x4c000000)) &
                         0x80000007;

@@ -57,9 +57,7 @@ int __fastcall FUN_00416400(STJellyGunC *param_1)
     sVar6 = *psVar1 * 0xc9 + 100;
     sVar8 = psVar1[1] * 0xc9 + 100;
     uVar5 = (int)sVar6 - (int)local_24[0];
-    /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-    local_c = CONCAT22((short)((uint)iVar4 >> 0x10),
-                       *(short *)(*(int *)&param_1->field_0x97 + 4 + iVar4 * 8) * 200) + 100;
+    local_c = STReplaceLowWord((uint32_t)(iVar4), (uint16_t)(*(short *)(*(int *)&param_1->field_0x97 + 4 + iVar4 * 8) * 200)) + 100;
     uVar7 = (int)uVar5 >> 0x1f;
     local_14 = (uVar5 ^ uVar7) - uVar7;
     uVar5 = (int)sVar8 - (int)local_20[0];
@@ -81,8 +79,7 @@ int __fastcall FUN_00416400(STJellyGunC *param_1)
         bVar2 = param_1->field_0x61;
       }
     }
-    /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-    _local_10 = CONCAT31((int3)((uint)iVar4 >> 8),bVar2);
+    _local_10 = STReplaceLowByte((uint32_t)(iVar4), (uint8_t)(bVar2));
     iVar4 = sub_00415B30(param_1,local_24[0],local_20[0],local_1c[0],sVar6,sVar8,(short)local_c,
                          bVar2);
     if (iVar4 != 0) {

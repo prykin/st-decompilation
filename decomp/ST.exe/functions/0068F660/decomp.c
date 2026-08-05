@@ -27,8 +27,7 @@ void __thiscall AiTactClassTy::GiveObjByGrpNum(AiTactClassTy *this,DArrayTy *par
     if ((param_1 != nullptr) && (index = param_1->count, index != 0)) {
       while (index = index - 1, -1 < (int)index) {
         if (index < param_1->count) {
-          /* ST_PSEUDO[dynamic_array_indexing]: expected DArrayAt<T>(param_1, index) (runtime stride) */
-          puVar4 = (ushort *)(param_1->elementSize * index + (int)param_1->data);
+          puVar4 = DArrayAt<ushort>(param_1, index);
         }
         else {
           puVar4 = nullptr;

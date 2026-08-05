@@ -60,8 +60,7 @@ void __thiscall SettMapSTy::SetListCtrls(SettMapSTy *this)
           pcVar10 = nullptr;
         }
         else {
-          /* ST_PSEUDO[dynamic_array_indexing]: expected DArrayAt<T>(pDVar1, uVar8) (runtime stride) */
-          pcVar10 = (char *)(pDVar1->elementSize * uVar8 + (int)pDVar1->data);
+          pcVar10 = DArrayAt<char>(pDVar1, uVar8);
         }
         pAVar2 = (&pSVar5->field_0000)[iVar6 + iVar9];
         pSVar5->field_0031 = 0;

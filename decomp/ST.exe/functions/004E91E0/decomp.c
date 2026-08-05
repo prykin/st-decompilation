@@ -47,7 +47,7 @@ undefined4 __thiscall FUN_004e91e0(void *this,STBoatC *param_1)
       else {
         uVar6 = LookupRecordByte(*(char *)&param_1->field_0024);
         dVar8 = param_1->slot_2C();
-        iVar4 = *(int *)(&DAT_007e37b0 + ((uVar6 & 0xffU) + dVar8 * 3) * 4);
+        iVar4 = *(int *)(&DAT_007e37b0 + ((uint)(byte)uVar6 + dVar8 * 3) * 4);
       }
     }
     else {

@@ -268,10 +268,8 @@ cf_common_exit_0046E811:
       if (SVar1 == CASE_4) {
         if (this->field_0550 == 0) {
           iVar8 = (ushort)(this->field_0530 * 200) + 300;
-          /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-          iVar6 = CONCAT22((short)((uint)iVar8 >> 0x10),this->field_052E + 1) * 0xc9;
-          /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-          iVar24 = CONCAT22((short)((uint)iVar6 >> 0x10),this->field_052C + 1);
+          iVar6 = STReplaceLowWord((uint32_t)(iVar8), (uint16_t)(this->field_052E + 1)) * 0xc9;
+          iVar24 = STReplaceLowWord((uint32_t)(iVar6), (uint16_t)(this->field_052C + 1));
           /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
           uVar5 = (*this->vtable->vfunc_10)
                             (this->field_0041,this->field_0043,
@@ -397,12 +395,10 @@ cf_common_exit_0046E811:
           this->field_0548 = iVar6;
           if (0x45 < iVar6) {
             if (this->field_0550 == 0) {
-              /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-              iVar6 = CONCAT22((short)((uint)iVar6 >> 0x10),this->field_053E * 0xc9) + 100;
-              /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
+              iVar6 = STReplaceLowWord((uint32_t)(iVar6), (uint16_t)(this->field_053E * 0xc9)) + 100;
               uVar5 = (*this->vtable->vfunc_10)
                                 (this->field_0041,this->field_0043,
-                                 CONCAT22((short)((uint)iVar6 >> 0x10),this->field_0045),
+                                 STReplaceLowWord((uint32_t)(iVar6), (uint16_t)(this->field_0045)),
                                  this->field_053C * 0xc9 + 100,(short)iVar6,
                                  (ushort)(this->field_0540 * 200) + 100);
               this->field_0542 = uVar5;

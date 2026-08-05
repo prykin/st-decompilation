@@ -295,9 +295,8 @@ undefined4 __thiscall STGroupBoatC::DistributeTargets(STGroupBoatC *this,uint *p
         } while ((int)uVar11 < (int)local_14);
       }
       pDVar15 = local_30;
-      /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
       STAllPlayersC::RegisterPGPair
-                (g_allPlayers_007FA174,CONCAT31((int3)(local_14 >> 8),this_00->field_0024),
+                (g_allPlayers_007FA174,STReplaceLowByte((uint32_t)(local_14), (uint8_t)(this_00->field_0024)),
                  &pDVar7->flags,&local_30->flags);
       if (pDVar7 != nullptr) {
         DArrayDestroy(pDVar7);

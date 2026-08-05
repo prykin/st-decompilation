@@ -26,17 +26,17 @@ undefined4 __thiscall STBoatC::sub_0045F6C0(STBoatC *this)
 
   iVar11 = 0;
   uVar6 = LookupRecordByte(*(char *)&this->field_0024);
-  uVar7 = uVar6 & 0xff;
-  if (uVar7 == 1) {
+  uVar6 = (int)(byte)uVar6;
+  if (uVar6 == 1) {
     iVar11 = this->field_0024;
     iVar12 = 5;
   }
-  else if (uVar7 == 2) {
+  else if (uVar6 == 2) {
     iVar11 = this->field_0024;
     iVar12 = 0x82;
   }
   else {
-    if (uVar7 != 3) goto LAB_0045f710;
+    if (uVar6 != 3) goto LAB_0045f710;
     iVar11 = this->field_0024;
     iVar12 = 0x6d;
   }
@@ -91,10 +91,9 @@ LAB_0045f710:
       bVar3 = true;
     }
     if ((!bVar2) || (!bVar3)) {
-      /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
       sVar5 = (*this->vtable->vfunc_10)
                         (this->field_0041,this->field_0043,
-                         CONCAT22((short)((uint)iVar12 >> 0x10),this->field_0045),arg_4,arg_5,arg_6);
+                         STReplaceLowWord((uint32_t)(iVar12), (uint16_t)(this->field_0045)),arg_4,arg_5,arg_6);
       uVar7 = sub_004176C0(this,sVar5);
       if ((short)uVar7 != this->field_006C) {
         thunk_FUN_00417740(this,this->field_006C,(short)uVar7);

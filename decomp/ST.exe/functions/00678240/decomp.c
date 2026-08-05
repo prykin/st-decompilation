@@ -66,8 +66,7 @@ _EnumMines(int param_1,short param_2,char param_3,byte *param_4,short param_5,sh
   }
   do {
     if (uVar9 < pDVar8->count) {
-      /* ST_PSEUDO[dynamic_array_indexing]: expected DArrayAt<T>(pDVar8, uVar9) (runtime stride) */
-      puVar4 = (undefined4 *)(pDVar8->elementSize * uVar9 + (int)pDVar8->data);
+      puVar4 = DArrayAt<undefined4>(pDVar8, uVar9);
     }
     else {
       puVar4 = nullptr;

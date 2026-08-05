@@ -367,8 +367,7 @@ void __thiscall CursorClassTy::TakeCmdToRun(CursorClassTy *this,int param_1)
       puVar10 = &local_f4;
       /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
       local_e8._1_3_ = (undefined3)this_00->field_00F7;
-      /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-      local_e8 = CONCAT31(local_e8._1_3_,(char)((ulonglong)lVar13 >> 0x18));
+      local_e8 = STReplaceLowByte((uint32_t)(local_e8), (uint8_t)((char)((ulonglong)lVar13 >> 0x18)));
       local_e4 = (undefined1)((uint)this_00->field_00F7 >> 0x18);
       goto LAB_0054a196;
     }
@@ -780,8 +779,7 @@ void __thiscall CursorClassTy::TakeCmdToRun(CursorClassTy *this,int param_1)
     puVar10 = &local_108;
     /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
     local_fc._1_3_ = (undefined3)this_00->field_00F7;
-    /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-    local_fc = CONCAT31(local_fc._1_3_,(char)((ulonglong)lVar13 >> 0x18));
+    local_fc = STReplaceLowByte((uint32_t)(local_fc), (uint8_t)((char)((ulonglong)lVar13 >> 0x18)));
     local_f8 = (undefined1)((uint)this_00->field_00F7 >> 0x18);
 LAB_0054a196:
     puVar14 = (byte *)0x18;

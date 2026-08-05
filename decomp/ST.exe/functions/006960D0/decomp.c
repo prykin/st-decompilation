@@ -32,9 +32,8 @@ uint __thiscall FUN_006960d0(void *this,uint param_1,int param_2)
       uVar4 = 0;
       if (0 < (int)uVar1) {
         bVar7 = uVar1 != 0;
-        /* ST_PSEUDO[dynamic_array_indexing]: expected DArrayAt<T>(pDVar2, uVar4) (runtime stride) */
         while (((!bVar7 ||
-                (piVar5 = (int *)(pDVar2->elementSize * uVar4 + (int)pDVar2->data),
+                (piVar5 = DArrayAt<int>(pDVar2, uVar4),
                 piVar5 == nullptr)) || (*piVar5 != param_2))) {
           uVar4 = uVar4 + 1;
           bVar7 = uVar4 < uVar1;

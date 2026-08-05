@@ -42,9 +42,8 @@ int __thiscall STManBasisC::sub_005F21D0(STManBasisC *this)
     if (0 < (int)dVar1) {
       do {
         pDVar3 = this->field_003C;
-        /* ST_PSEUDO[dynamic_array_indexing]: expected DArrayAt<T>(pDVar3, uVar6) (runtime stride) */
         if (((uVar6 < pDVar3->count) &&
-            (psVar5 = (short *)(pDVar3->elementSize * uVar6 + (int)pDVar3->data),
+            (psVar5 = DArrayAt<short>(pDVar3, uVar6),
             psVar5 != nullptr)) && (*(int *)(psVar5 + 0xc) != -1)) {
           thunk_FUN_005f1700((uint)*(byte *)(psVar5 + 3),(int)*(short *)((int)psVar5 + 7),0,
                              (int)(short)(*psVar5 * 0xc9 + 100),(int)(short)(psVar5[1] * 0xc9 + 100)

@@ -94,14 +94,14 @@ int __thiscall TLOBaseTy::SetState(TLOBaseTy *this,int param_1,int param_2)
       TVar3 = this_01->field_0245;
       if (TVar3 == CASE_1) {
         local_EAX_497 = LookupRecordByte(*(char *)&this_01->field_023D);
-        if (*(int *)(&DAT_007955d0 + ((local_EAX_497 & 0xffU) + this_01->field_0235 * 3) * 4) != 0)
-        {
+        if (*(int *)(&DAT_007955d0 + ((uint)(byte)local_EAX_497 + this_01->field_0235 * 3) * 4) != 0
+           ) {
           pTVar4 = this_01->vtable;
           uVar10 = LookupRecordByte(*(char *)&this_01->field_023D);
           (*pTVar4->vfunc_90)(this_01,3,
                               (short)*(undefined4 *)
                                       (&DAT_007955d0 +
-                                      ((uVar10 & 0xffU) + this_01->field_0235 * 3) * 4));
+                                      ((uint)(byte)uVar10 + this_01->field_0235 * 3) * 4));
         }
       }
       else if (TVar3 == CASE_2) {

@@ -462,9 +462,8 @@ void __thiscall STGroupBoatC::RechargeNewCmd(STGroupBoatC *this)
       } while (uVar11 < local_18);
     }
     pDVar8 = local_c;
-    /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
     STAllPlayersC::RegisterPGPair
-              (g_allPlayers_007FA174,CONCAT31((int3)(local_18 >> 8),this_00->field_0024),
+              (g_allPlayers_007FA174,STReplaceLowByte((uint32_t)(local_18), (uint8_t)(this_00->field_0024)),
                &local_10->flags,&local_c->flags);
     if (local_10 != nullptr) {
       DArrayDestroy(local_10);
@@ -558,9 +557,8 @@ LAB_004a1878:
       } while (uVar11 < local_18);
     }
     pDVar8 = local_c;
-    /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
     STAllPlayersC::RegisterPGPair
-              (g_allPlayers_007FA174,CONCAT31((int3)(local_18 >> 8),this_00->field_0024),
+              (g_allPlayers_007FA174,STReplaceLowByte((uint32_t)(local_18), (uint8_t)(this_00->field_0024)),
                &local_10->flags,&local_c->flags);
     /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
     SVar10 = extraout_ECX_05;
@@ -649,9 +647,8 @@ LAB_004a1a74:
       } while (uVar11 < local_18);
     }
     pDVar8 = local_c;
-    /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
     STAllPlayersC::RegisterPGPair
-              (g_allPlayers_007FA174,CONCAT31((int3)(local_18 >> 8),this_00->field_0024),
+              (g_allPlayers_007FA174,STReplaceLowByte((uint32_t)(local_18), (uint8_t)(this_00->field_0024)),
                &local_10->flags,&local_c->flags);
     /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
     SVar10 = extraout_ECX_08;
@@ -744,7 +741,7 @@ LAB_004a1a74:
       /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
       STAllPlayersC::RegisterPGPair
                 (g_allPlayers_007FA174,
-                 CONCAT31((int3)((uint)extraout_ECX_18 >> 8),this_00->field_0024),&local_10->flags,
+                 STReplaceLowByte((uint32_t)(extraout_ECX_18), (uint8_t)(this_00->field_0024)),&local_10->flags,
                  &local_c->flags);
       /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
       SVar10 = extraout_ECX_19;
@@ -846,9 +843,8 @@ LAB_004a1ede:
       if (local_10 == nullptr) goto LAB_004a1ede;
     }
     else {
-      /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
       STAllPlayersC::RegisterPGPair
-                (g_allPlayers_007FA174,CONCAT31((int3)(SVar10 >> 8),this_00->field_0024),
+                (g_allPlayers_007FA174,STReplaceLowByte((uint32_t)(SVar10), (uint8_t)(this_00->field_0024)),
                  &local_10->flags,&pDVar8->flags);
     }
     if (local_10 != nullptr) {
@@ -936,9 +932,8 @@ LAB_004a20d0:
       if (local_10 == nullptr) goto LAB_004a20d0;
     }
     else {
-      /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
       STAllPlayersC::RegisterPGPair
-                (g_allPlayers_007FA174,CONCAT31((int3)(uVar12 >> 8),this_00->field_0024),
+                (g_allPlayers_007FA174,STReplaceLowByte((uint32_t)(uVar12), (uint8_t)(this_00->field_0024)),
                  &local_10->flags,&local_c->flags);
     }
     if (local_10 != nullptr) {
@@ -1195,9 +1190,8 @@ LAB_004a26f5:
       if (local_10 == nullptr) goto LAB_004a26f5;
     }
     else {
-      /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
       STAllPlayersC::RegisterPGPair
-                (g_allPlayers_007FA174,CONCAT31((int3)(uVar12 >> 8),this_00->field_0024),
+                (g_allPlayers_007FA174,STReplaceLowByte((uint32_t)(uVar12), (uint8_t)(this_00->field_0024)),
                  &local_10->flags,&pDVar8->flags);
     }
     if (local_10 != nullptr) {
@@ -1212,8 +1206,7 @@ LAB_004a26f5:
     uVar11 = 0;
     local_b8 = g_playSystem_00802A38->field_00E4;
     local_b0 = *(undefined2 *)&this_00->field_0x2f2;
-    /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-    uVar12 = CONCAT22((short)((uint)g_playSystem_00802A38 >> 0x10),local_b0);
+    uVar12 = STReplaceLowWord((uint32_t)(g_playSystem_00802A38), (uint16_t)(local_b0));
     local_b4 = *(undefined2 *)&this_00->field_0x2ee;
     local_ae = *(undefined4 *)&this_00->field_0x2f4;
     local_1c = local_b8;
@@ -1260,9 +1253,8 @@ LAB_004a2897:
       } while ((int)uVar12 < (int)local_14);
     }
     pDVar8 = local_c;
-    /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
     STAllPlayersC::RegisterPGPair
-              (g_allPlayers_007FA174,CONCAT31((int3)(uVar12 >> 8),this_00->field_0024),
+              (g_allPlayers_007FA174,STReplaceLowByte((uint32_t)(uVar12), (uint8_t)(this_00->field_0024)),
                &local_10->flags,&local_c->flags);
     if (local_10 != nullptr) {
       DArrayDestroy(local_10);
@@ -1385,9 +1377,8 @@ LAB_004a2bcf:
   }
   if (local_10 != nullptr) {
     if (local_c != nullptr) {
-      /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
       STAllPlayersC::RegisterPGPair
-                (g_allPlayers_007FA174,CONCAT31((int3)((uint)local_c >> 8),this_00->field_0024),
+                (g_allPlayers_007FA174,STReplaceLowByte((uint32_t)(local_c), (uint8_t)(this_00->field_0024)),
                  &local_10->flags,&local_c->flags);
       goto cf_common_exit_004A2C5D;
     }

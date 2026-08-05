@@ -61,8 +61,7 @@ int STGroupBoatC::Way3DGrpDistribTgt
         do {
           uVar1 = *(uint *)(uVar8 + 0x18 + (int)DAT_007f4d04);
           if (uVar1 < param_2->count) {
-            /* ST_PSEUDO[dynamic_array_indexing]: expected DArrayAt<T>(param_2, uVar1) (runtime stride) */
-            puVar4 = (ushort *)(param_2->elementSize * uVar1 + (int)param_2->data);
+            puVar4 = DArrayAt<ushort>(param_2, uVar1);
           }
           else {
             puVar4 = nullptr;
@@ -119,8 +118,7 @@ int STGroupBoatC::Way3DGrpDistribTgt
     else if (param_1->field_0027 != 0) {
       do {
         if (uVar8 < param_2->count) {
-          /* ST_PSEUDO[dynamic_array_indexing]: expected DArrayAt<T>(param_2, uVar8) (runtime stride) */
-          puVar4 = (ushort *)(param_2->elementSize * uVar8 + (int)param_2->data);
+          puVar4 = DArrayAt<ushort>(param_2, uVar8);
         }
         else {
           puVar4 = nullptr;

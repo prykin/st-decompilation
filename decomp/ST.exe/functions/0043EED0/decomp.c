@@ -52,8 +52,7 @@ STAllPlayersC::GetTOBJListFromDArr
   if (0 < local_10) {
     do {
       uVar1 = *(ushort *)(param_2->field_001C + iVar4 * 2);
-      /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-      local_8 = CONCAT22((short)((uint)param_2->field_001C >> 0x10),uVar1);
+      local_8 = STReplaceLowWord((uint32_t)(param_2->field_001C), (uint16_t)(uVar1));
       if (uVar1 != 0xffff) {
         this_01 = GetObjPtr(this_00,(char)param_1,uVar1,CASE_1);
         if (this_01 == nullptr) {

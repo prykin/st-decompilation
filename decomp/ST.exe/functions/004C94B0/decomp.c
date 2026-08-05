@@ -51,7 +51,7 @@ undefined4 __thiscall TLOBaseTy::procResult(TLOBaseTy *this)
       local_8 = 1;
       uVar2 = LookupRecordByte(*(char *)&local_c->field_023D);
       this_00->field_0241 =
-           *(int *)(&DAT_007e4178 + ((uVar2 & 0xffU) + this_00->field_0235 * 3) * 4);
+           *(int *)(&DAT_007e4178 + ((uint)(byte)uVar2 + this_00->field_0235 * 3) * 4);
       sub_004CC900(this_00);
       g_currentExceptionFrame = local_50.previous;
       return 1;

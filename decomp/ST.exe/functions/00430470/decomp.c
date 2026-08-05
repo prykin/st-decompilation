@@ -52,8 +52,7 @@ undefined4 __thiscall STAllPlayersC::RegisterTorpedo(STAllPlayersC *this,int par
     Library::DKW::TBL::DArrayPut(g_array_007FA130,index_00,&param_1);
     DAT_007fa134 = DAT_007fa134 + 1;
     g_currentExceptionFrame = local_4c.previous;
-    /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-    return CONCAT22((short)((uint)DAT_007fa134 >> 0x10),(short)index_00);
+    return STReplaceLowWord((uint32_t)(DAT_007fa134), (uint16_t)((short)index_00));
   }
   g_currentExceptionFrame = local_4c.previous;
   iVar2 = ReportDebugMessage("E:\\__titans\\wlad\\to_allpl.cpp",0x7f6,0,errorCode,

@@ -66,8 +66,7 @@ undefined4 FUN_00497370(int param_1,int param_2,uint param_3,uint param_4,void *
     local_1c = &stack0xffffff90;
     do {
       if (local_34 < pDVar14->count) {
-        /* ST_PSEUDO[dynamic_array_indexing]: expected DArrayAt<T>(pDVar14, local_34) (runtime stride) */
-        puVar12 = (uint *)(pDVar14->elementSize * local_34 + (int)pDVar14->data);
+        puVar12 = DArrayAt<uint>(pDVar14, local_34);
       }
       else {
         puVar12 = nullptr;

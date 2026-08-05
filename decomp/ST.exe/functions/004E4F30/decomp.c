@@ -6,9 +6,10 @@ undefined4 __fastcall FUN_004e4f30(STMineSetC *param_1)
 
 {
   int iVar1;
+  byte bVar2;
   int local_EAX_85;
   int local_EAX_124;
-  int iVar2;
+  int iVar3;
   int uVar2;
   int uVar3;
 
@@ -21,26 +22,27 @@ undefined4 __fastcall FUN_004e4f30(STMineSetC *param_1)
   }
   if (param_1->field_0024 != param_1->field_023D) {
     local_EAX_85 = LookupRecordByte((char)param_1->field_023D);
-    iVar2 = param_1->field_0235;
+    iVar3 = param_1->field_0235;
     local_EAX_124 = LookupRecordByte(*(char *)&param_1->field_0024);
-    if ((&DAT_007e1984)[(local_EAX_124 & 0xffU) + ((local_EAX_85 & 0xffU) + iVar2 * 3) * 3] == '\0')
+    local_EAX_124 = (int)(byte)local_EAX_124;
+    if ((&DAT_007e1984)[local_EAX_124 + ((uint)(byte)local_EAX_85 + iVar3 * 3) * 3] == '\0')
     goto LAB_004e4ffe;
   }
   if ((param_1->field_05AC != 0x5d) ||
-     (iVar2 = thunk_FUN_004e60d0(param_1->field_0024,0x46), iVar2 != 0)) {
+     (iVar3 = thunk_FUN_004e60d0(param_1->field_0024,0x46), iVar3 != 0)) {
     thunk_FUN_0041cff0(param_1,*(int *)(&DAT_00798fbc + param_1->field_0239 * 4));
     param_1->field_04E0 = 1;
   }
 LAB_004e4ffe:
   if (param_1->field_05AC == 0x5d) {
-    iVar2 = 0x4a;
+    iVar3 = 0x4a;
   }
   else if ((param_1->field_05AC == 0x3d) &&
-          (iVar2 = LookupRecordByte(*(char *)&param_1->field_0024), (char)iVar2 == '\x01')) {
-    iVar2 = 0x12;
+          (bVar2 = LookupRecordByte(*(char *)&param_1->field_0024), bVar2 == 1)) {
+    iVar3 = 0x12;
   }
   else {
-    iVar2 = 0;
+    iVar3 = 0;
   }
   if (param_1->field_04E4 != 0) {
     STMineSetC::sub_0041D2B0(param_1);
@@ -50,11 +52,12 @@ LAB_004e4ffe:
     uVar2 = LookupRecordByte((char)param_1->field_023D);
     iVar1 = param_1->field_0235;
     uVar3 = LookupRecordByte(*(char *)&param_1->field_0024);
-    if ((&DAT_007e1984)[(uVar3 & 0xffU) + ((uVar2 & 0xffU) + iVar1 * 3) * 3] == '\0') {
+    uVar3 = (int)(byte)uVar3;
+    if ((&DAT_007e1984)[uVar3 + ((uint)(byte)uVar2 + iVar1 * 3) * 3] == '\0') {
       return 0;
     }
   }
-  if ((iVar2 != 0) && (iVar2 = thunk_FUN_004e60d0(param_1->field_0024,iVar2), iVar2 == 0)) {
+  if ((iVar3 != 0) && (iVar3 = thunk_FUN_004e60d0(param_1->field_0024,iVar3), iVar3 == 0)) {
     return 0;
   }
   STMineSetC::sub_0041D1A0(param_1,10);

@@ -7,23 +7,22 @@ info	body_function_count	5712	5712	0	ok	policy=per-address nondecreasing
 info	new_library_body_exclusions	0	0	0	ok	-
 info	covered_executable_bytes	2825113	2825113	0	ok	policy=nondecreasing
 info	unclaimed_meaningful_bytes	98872	98872	0	ok	policy=nonincreasing
-info	typed_vtable_slots	2409	2729	320	improved	Exact per-slot type erasure is the hard regression criterion
+info	typed_vtable_slots	2729	2729	0	ok	Exact per-slot type erasure is the hard regression criterion
 info	dispatch_vtable_count	1	1	0	ok	Physical vtable layouts and polymorphic dispatch interfaces are counted separately
 info	typed_vtable_slot_erasure	0	0	0	ok	-
 info	function_addresses_removed	0	0	0	ok	-
 info	semantic_name_downgrades	0	0	0	ok	-
-warning	quality:anonymous_shape_type	4824	4829	5	stage_transition	A later recovery stage may expose more named layout debt without losing structure; changed_functions=<detail unavailable>
-warning	quality:casted_generic_field	4865	4815	-50	stage_transition	A later recovery stage may expose more named layout debt without losing structure; changed_functions=<detail unavailable>
-info	quality:dynamic_array_indexing	319	318	-1	improved	policy=nonincreasing; blocking=false
-info	quality:flattened_global_record_array	92	92	0	ok	policy=nonincreasing; blocking=false
-warning	quality:generic_data_symbol	15890	15865	-25	stage_transition	A later recovery stage may expose more named layout debt without losing structure; changed_functions=<detail unavailable>
-warning	quality:generic_field_name	60482	60584	102	stage_transition	A later recovery stage may expose more named layout debt without losing structure; changed_functions=<detail unavailable>
-warning	quality:generic_global_aggregate	154	155	1	regressed	policy=nonincreasing; blocking=false; increased_functions=<detail unavailable>
-warning	quality:packed_or_unaligned_piece	1394	1402	8	regressed	policy=nonincreasing; blocking=false; increased_functions=006DE570+8 | 006101B0+6 | 00415160-4 | 00428E50+4 | 0040D540-3 | 00413AF0-3 | 005D5560-3 | 006406D0+2 | 004137F0-1 | 00424E10-1 | 005449B0+1 | 005C8A40-1
-info	quality:raw_indirect_call	2092	1888	-204	improved	policy=nonincreasing; blocking=true
-info	quality:raw_pointer_offset	2827	2818	-9	improved	policy=nonincreasing; blocking=false
-info	quality:return_width_artifact	1077	1066	-11	improved	policy=nonincreasing; blocking=true
-warning	quality:stack_slot_reuse	4297	4298	1	regressed	policy=nonincreasing; blocking=false; increased_functions=006CEF60+1
+warning	quality:casted_generic_field	4815	4826	11	stage_transition	A later recovery stage may expose more named layout debt without losing structure; changed_functions=<detail unavailable>
+info	quality:dynamic_array_indexing	318	76	-242	improved	policy=nonincreasing; blocking=false
+info	quality:flattened_global_record_array	92	36	-56	improved	policy=nonincreasing; blocking=false
+warning	quality:generic_data_symbol	15865	15861	-4	stage_transition	A later recovery stage may expose more named layout debt without losing structure; changed_functions=<detail unavailable>
+warning	quality:generic_field_name	60584	60599	15	stage_transition	A later recovery stage may expose more named layout debt without losing structure; changed_functions=<detail unavailable>
+info	quality:generic_global_aggregate	155	155	0	ok	policy=nonincreasing; blocking=false
+info	quality:packed_or_unaligned_piece	1402	1051	-351	improved	policy=nonincreasing; blocking=false
+info	quality:raw_indirect_call	1888	1888	0	ok	policy=nonincreasing; blocking=true
+info	quality:raw_pointer_offset	2818	2802	-16	improved	policy=nonincreasing; blocking=false
+info	quality:return_width_artifact	1066	1062	-4	improved	policy=nonincreasing; blocking=true
+info	quality:stack_slot_reuse	4298	4297	-1	improved	policy=nonincreasing; blocking=false
 info	quality:string_based_aggregate_address	7	7	0	ok	policy=nonincreasing; blocking=false
-info	quality:undefined_type	16305	16287	-18	improved	policy=nonincreasing; blocking=false
-info	quality:unresolved_register_input	766	482	-284	improved	policy=nonincreasing; blocking=true
+warning	quality:undefined_type	16287	16289	2	regressed	policy=nonincreasing; blocking=false; increased_functions=<detail unavailable>
+info	quality:unresolved_register_input	482	472	-10	improved	policy=nonincreasing; blocking=true

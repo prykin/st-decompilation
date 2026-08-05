@@ -23,8 +23,7 @@ void __cdecl FUN_0067d0a0(AnonShape_0067D0A0_8092D907 *param_1)
       bVar6 = pDVar1->count != 0;
       do {
         if (bVar6) {
-          /* ST_PSEUDO[dynamic_array_indexing]: expected DArrayAt<T>(pDVar1, uVar4) (runtime stride) */
-          piVar2 = (int *)(pDVar1->elementSize * uVar4 + (int)pDVar1->data);
+          piVar2 = DArrayAt<int>(pDVar1, uVar4);
         }
         else {
           piVar2 = nullptr;

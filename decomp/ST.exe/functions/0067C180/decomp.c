@@ -27,19 +27,19 @@ void __thiscall AiPlrClassTy::Offensive(AiPlrClassTy *this)
   IMAGE_DOS_HEADER *pIVar8;
   undefined4 *puVar9;
   dword dVar10;
-  uint uVar11;
-  DArrayTy *pDVar12;
-  ushort *puVar13;
-  uint uVar14;
+  DArrayTy *pDVar11;
+  ushort *puVar12;
+  uint uVar13;
   /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
   uint extraout_EDX;
+  uint uVar14;
   bool bVar15;
   InternalExceptionFrame local_80;
   undefined4 local_3c;
   short local_38 [6];
   undefined4 local_2c;
   IMAGE_DOS_HEADER *local_28;
-  undefined2 local_24;
+  ushort local_24;
   AiPlrClassTy *local_20;
   int local_1c;
   int local_18;
@@ -64,17 +64,16 @@ void __thiscall AiPlrClassTy::Offensive(AiPlrClassTy *this)
           array = Library::DKW::TBL::DArrayCreate(nullptr,5,0x10,5);
           local_c = array;
           sub_0067A240(this_00,thunk_FUN_0067ba50,array);
-          uVar11 = array->count;
-          uVar14 = 0;
+          uVar14 = array->count;
+          uVar13 = 0;
           iVar4 = 0;
-          bVar15 = uVar11 != 0;
+          bVar15 = uVar14 != 0;
           local_10 = 0;
           local_1c = 0;
-          if (0 < (int)uVar11) {
+          if (0 < (int)uVar14) {
             do {
               if (bVar15) {
-                /* ST_PSEUDO[dynamic_array_indexing]: expected DArrayAt<T>(array, uVar14) (runtime stride) */
-                psVar5 = (short *)(array->elementSize * uVar14 + (int)array->data);
+                psVar5 = DArrayAt<short>(array, uVar13);
               }
               else {
                 psVar5 = nullptr;
@@ -83,13 +82,13 @@ void __thiscall AiPlrClassTy::Offensive(AiPlrClassTy *this)
                 iVar4 = iVar4 + psVar5[1];
                 local_10 = local_10 + *(int *)(psVar5 + 2);
               }
-              uVar11 = array->count;
-              uVar14 = uVar14 + 1;
-              bVar15 = uVar14 < uVar11;
+              uVar14 = array->count;
+              uVar13 = uVar13 + 1;
+              bVar15 = uVar13 < uVar14;
               local_1c = iVar4;
-            } while ((int)uVar14 < (int)uVar11);
+            } while ((int)uVar13 < (int)uVar14);
           }
-          if ((((this_00->field_0677 <= local_1c) && (0 < (int)uVar11)) && (0 < local_1c)) &&
+          if ((((this_00->field_0677 <= local_1c) && (0 < (int)uVar14)) && (0 < local_1c)) &&
              ((0 < local_10 &&
               (iVar4 = thunk_FUN_0042a990(*(char *)&this_00->field_0640), local_18 = iVar4,
               iVar4 != 0)))) {
@@ -150,8 +149,7 @@ void __thiscall AiPlrClassTy::Offensive(AiPlrClassTy *this)
                     local_2c = pSVar1->vfunc_D4();
                     /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
                     local_28 = thunk_FUN_00674fb0((int)local_3c._2_2_);
-                    uVar11 = thunk_FUN_00675430((Global_sub_00675430_param_1Enum)local_28);
-                    local_24 = (undefined2)uVar11;
+                    local_24 = thunk_FUN_00675430((Global_sub_00675430_param_1Enum)local_28);
                     Library::DKW::TBL::DArrayAppend(this_00->field_06AD,&local_3c);
                     iVar4 = local_18;
                   }
@@ -176,23 +174,23 @@ LAB_0067c61b:
       }
       else {
         /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
-        uVar11 = extraout_EDX;
-        if ((iVar4 == 0) || (uVar11 = local_20->field_0685 + iVar4, uVar11 <= local_20->field_06FE))
+        uVar14 = extraout_EDX;
+        if ((iVar4 == 0) || (uVar14 = local_20->field_0685 + iVar4, uVar14 <= local_20->field_06FE))
         {
           local_20->field_0685 = local_20->field_06FE;
-          thunk_FUN_0067be20((int)local_20,uVar11,local_20->field_06AD);
+          thunk_FUN_0067be20((int)local_20,uVar14,local_20->field_06AD);
           iVar4 = thunk_FUN_0067bd50(this_00->field_06AD);
-          pDVar12 = Library::DKW::TBL::DArrayCreate(nullptr,5,0x10,5);
-          local_c = pDVar12;
-          sub_0067A240(this_00,thunk_FUN_0067ba50,pDVar12);
-          iVar4 = iVar4 + pDVar12->count;
+          pDVar11 = Library::DKW::TBL::DArrayCreate(nullptr,5,0x10,5);
+          local_c = pDVar11;
+          sub_0067A240(this_00,thunk_FUN_0067ba50,pDVar11);
+          iVar4 = iVar4 + pDVar11->count;
           if (iVar4 == 0) {
             sub_0067C110(this_00);
             array = local_c;
           }
           else {
             array = local_c;
-            if (0 < (int)pDVar12->count) {
+            if (0 < (int)pDVar11->count) {
               if ((int)this_00->field_06AD->count < iVar4) {
                 iVar4 = thunk_FUN_0042a990(*(char *)&this_00->field_0640);
                 local_18 = iVar4;
@@ -201,7 +199,7 @@ LAB_0067c61b:
                   if (0 < *(int *)(iVar4 + 0xc)) {
                     bVar15 = *(int *)(iVar4 + 0xc) != 0;
                     do {
-                      uVar11 = local_8;
+                      uVar14 = local_8;
                       if (bVar15) {
                         /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
                         puVar9 = (undefined4 *)
@@ -213,8 +211,8 @@ LAB_0067c61b:
                       pSVar1 = (STFishC *)*puVar9;
                       if (((pSVar1 != nullptr) &&
                           (iVar7 = (*pSVar1->vtable->vfunc_F8)(), iVar4 = local_18, iVar7 != 0)) &&
-                         (puVar13 = thunk_FUN_0067bd00(this_00->field_06AD,uVar11), iVar4 = local_18
-                         , puVar13 == nullptr)) {
+                         (puVar12 = thunk_FUN_0067bd00(this_00->field_06AD,uVar14), iVar4 = local_18
+                         , puVar12 == nullptr)) {
                         uVar3 = (undefined2)local_8;
                         memset(&local_3c, 0, 0x1c); /* compiler bulk-zero initialization */
                         /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
@@ -226,13 +224,12 @@ LAB_0067c61b:
                         local_2c = pSVar1->vfunc_D4();
                         /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
                         local_28 = thunk_FUN_00674fb0((int)local_3c._2_2_);
-                        uVar11 = thunk_FUN_00675430((Global_sub_00675430_param_1Enum)local_28);
-                        local_24 = (undefined2)uVar11;
+                        local_24 = thunk_FUN_00675430((Global_sub_00675430_param_1Enum)local_28);
                         Library::DKW::TBL::DArrayAppend(this_00->field_06AD,&local_3c);
                         iVar4 = local_18;
-                        uVar11 = local_8;
+                        uVar14 = local_8;
                       }
-                      local_8 = uVar11 + 1;
+                      local_8 = uVar14 + 1;
                       bVar15 = local_8 < *(uint *)(iVar4 + 0xc);
                     } while ((int)local_8 < (int)*(uint *)(iVar4 + 0xc));
                   }

@@ -24,14 +24,15 @@ TLOBaseTy::sub_004CAFC0
 
 {
   uint uVar2;
+  byte bVar3;
   int uVar1;
-  int iVar3;
   int iVar4;
   TLOBaseTy_field_05ACState TVar5;
   TLOBaseTy_field_0245State TVar6;
 
   uVar1 = LookupRecordByte(*(char *)&this->field_023D);
-  iVar3 = (uVar1 & 0xffU) - 1;
+  uVar1 = (int)(byte)uVar1;
+  iVar4 = uVar1 + -1;
   TVar5 = this->field_05AC;
   if (TVar5 == CASE_32) {
     sub_004CFA00(this,param_1,param_2,(int *)param_3,(int *)param_4);
@@ -118,9 +119,9 @@ TLOBaseTy::sub_004CAFC0
         break;
       case CASE_1:
         *param_3 = *(uint *)((&PTR_DAT_007b8310)[TVar6] +
-                            (param_2 + (iVar3 + this->field_0235 * 3) * 4) * 8);
+                            (param_2 + (iVar4 + this->field_0235 * 3) * 4) * 8);
         *param_4 = *(uint *)((&PTR_DAT_007b8310)[TVar6] +
-                            (param_2 + (iVar3 + this->field_0235 * 3) * 4) * 8 + 4);
+                            (param_2 + (iVar4 + this->field_0235 * 3) * 4) * 8 + 4);
       }
     }
     if (this->field_05AC != CASE_70) {
@@ -153,7 +154,7 @@ TLOBaseTy::sub_004CAFC0
       if (this->field_04E0[0x10] == 0) {
 cf_common_exit_004CB489:
         uVar2 = *(uint *)((&PTR_DAT_007b8310)[TVar6] +
-                         (param_2 + (iVar3 + this->field_0235 * 3) * 4) * 8);
+                         (param_2 + (iVar4 + this->field_0235 * 3) * 4) * 8);
         *param_4 = uVar2;
         *param_3 = uVar2;
         return;
@@ -170,14 +171,14 @@ cf_common_exit_004CB489:
     case CASE_5A:
       if (this->field_04D0 != CASE_0) {
         *param_3 = *(uint *)((&PTR_DAT_007b8310)[TVar6] +
-                            (param_2 + (iVar3 + this->field_0235 * 3) * 4) * 8);
+                            (param_2 + (iVar4 + this->field_0235 * 3) * 4) * 8);
         *param_4 = *(uint *)((&PTR_DAT_007b8310)[TVar6] +
-                            (param_2 + (iVar3 + this->field_0235 * 3) * 4) * 8 + 4);
+                            (param_2 + (iVar4 + this->field_0235 * 3) * 4) * 8 + 4);
         return;
       }
 cf_common_exit_004CB504:
       uVar2 = *(uint *)((&PTR_DAT_007b8310)[TVar6] +
-                       (param_2 + (iVar3 + this->field_0235 * 3) * 4) * 8);
+                       (param_2 + (iVar4 + this->field_0235 * 3) * 4) * 8);
       *param_4 = uVar2;
       *param_3 = uVar2;
       return;
@@ -206,16 +207,16 @@ switchD_004cb5c6_caseD_0:
       case CASE_4:
 switchD_004cb5c6_caseD_4:
         uVar2 = *(uint *)((&PTR_DAT_007b8310)[TVar6] +
-                         (param_2 + (iVar3 + this->field_0235 * 3) * 4) * 8 + 4);
+                         (param_2 + (iVar4 + this->field_0235 * 3) * 4) * 8 + 4);
         *param_4 = uVar2;
         *param_3 = uVar2;
         return;
       case CASE_5:
 switchD_004cb5c6_caseD_5:
         *param_3 = *(uint *)((&PTR_DAT_007b8310)[TVar6] +
-                            (param_2 + (iVar3 + this->field_0235 * 3) * 4) * 8 + 4);
+                            (param_2 + (iVar4 + this->field_0235 * 3) * 4) * 8 + 4);
         *param_4 = *(uint *)((&PTR_DAT_007b8310)[TVar6] +
-                            (param_2 + (iVar3 + this->field_0235 * 3) * 4) * 8);
+                            (param_2 + (iVar4 + this->field_0235 * 3) * 4) * 8);
         return;
       default:
         goto cf_common_exit_004CB6D2;
@@ -239,27 +240,26 @@ switchD_004cb5c6_caseD_5:
       }
     }
     *param_3 = *(uint *)((&PTR_DAT_007b8310)[TVar6] +
-                        (param_2 + (iVar3 + this->field_0235 * 3) * 4) * 8);
+                        (param_2 + (iVar4 + this->field_0235 * 3) * 4) * 8);
     *param_4 = *(uint *)((&PTR_DAT_007b8310)[TVar6] +
-                        (param_2 + (iVar3 + this->field_0235 * 3) * 4) * 8 + 4);
+                        (param_2 + (iVar4 + this->field_0235 * 3) * 4) * 8 + 4);
     return;
   case CASE_D:
     break;
   case CASE_E:
     goto switchD_004cb1d7_caseD_e;
   }
-  if ((TVar5 == CASE_4F) &&
-     (iVar4 = LookupRecordByte(*(char *)&this->field_023D), (char)iVar4 == '\x02')) {
+  if ((TVar5 == CASE_4F) && (bVar3 = LookupRecordByte(*(char *)&this->field_023D), bVar3 == 2)) {
     *param_4 = 0;
     *param_3 = 0;
     return;
   }
 switchD_004cb1d7_caseD_e:
   if ((this->field_05AC == CASE_4F) &&
-     (iVar4 = LookupRecordByte(*(char *)&this->field_023D), (char)iVar4 == '\x02')) {
+     (bVar3 = LookupRecordByte(*(char *)&this->field_023D), bVar3 == 2)) {
     if (this->field_04D0 != CASE_1) {
       uVar2 = *(uint *)((&PTR_DAT_007b5170)[TVar6] +
-                       (param_2 + (iVar3 + this->field_0235 * 3) * 4) * 8);
+                       (param_2 + (iVar4 + this->field_0235 * 3) * 4) * 8);
       *param_4 = uVar2;
       *param_3 = uVar2;
       return;
@@ -274,22 +274,22 @@ switchD_004cb1d7_caseD_e:
       case CASE_1:
 switchD_004cb2cd_caseD_1:
         *param_3 = *(uint *)((&PTR_DAT_007b5170)[TVar6] +
-                            (param_2 + (iVar3 + this->field_0235 * 3) * 4) * 8);
+                            (param_2 + (iVar4 + this->field_0235 * 3) * 4) * 8);
         *param_4 = *(uint *)((&PTR_DAT_007b5170)[TVar6] +
-                            (param_2 + (iVar3 + this->field_0235 * 3) * 4) * 8 + 4);
+                            (param_2 + (iVar4 + this->field_0235 * 3) * 4) * 8 + 4);
         return;
       case CASE_2:
 switchD_004cb2cd_caseD_2:
         uVar2 = *(uint *)((&PTR_DAT_007b5170)[TVar6] +
-                         (param_2 + (iVar3 + this->field_0235 * 3) * 4) * 8 + 4);
+                         (param_2 + (iVar4 + this->field_0235 * 3) * 4) * 8 + 4);
         *param_4 = uVar2;
         *param_3 = uVar2;
         return;
       case CASE_3:
         *param_3 = *(uint *)((&PTR_DAT_007b5170)[TVar6] +
-                            (param_2 + (iVar3 + this->field_0235 * 3) * 4) * 8 + 4);
+                            (param_2 + (iVar4 + this->field_0235 * 3) * 4) * 8 + 4);
         *param_4 = *(uint *)((&PTR_DAT_007b5170)[TVar6] +
-                            (param_2 + (iVar3 + this->field_0235 * 3) * 4) * 8);
+                            (param_2 + (iVar4 + this->field_0235 * 3) * 4) * 8);
         return;
       default:
 cf_common_exit_004CB6D2:
@@ -304,7 +304,7 @@ switchD_004cb1d7_caseD_8:
       case CASE_2:
 switchD_004cb2cd_caseD_0:
         uVar2 = *(uint *)((&PTR_DAT_007b5170)[TVar6] +
-                         (param_2 + (iVar3 + this->field_0235 * 3) * 4) * 8);
+                         (param_2 + (iVar4 + this->field_0235 * 3) * 4) * 8);
         *param_4 = uVar2;
         *param_3 = uVar2;
         return;
@@ -314,9 +314,9 @@ switchD_004cb2cd_caseD_0:
         goto switchD_004cb2cd_caseD_2;
       case CASE_5:
         *param_3 = *(uint *)((&PTR_DAT_007b5170)[TVar6] +
-                            (param_2 + (iVar3 + this->field_0235 * 3) * 4) * 8 + 4);
+                            (param_2 + (iVar4 + this->field_0235 * 3) * 4) * 8 + 4);
         *param_4 = *(uint *)((&PTR_DAT_007b5170)[TVar6] +
-                            (param_2 + (iVar3 + this->field_0235 * 3) * 4) * 8);
+                            (param_2 + (iVar4 + this->field_0235 * 3) * 4) * 8);
         return;
       default:
         goto cf_common_exit_004CB6D2;
@@ -324,9 +324,9 @@ switchD_004cb2cd_caseD_0:
     }
   }
   *param_3 = *(uint *)((&PTR_DAT_007b5170)[TVar6] +
-                      (param_2 + (iVar3 + this->field_0235 * 3) * 4) * 8);
+                      (param_2 + (iVar4 + this->field_0235 * 3) * 4) * 8);
   *param_4 = *(uint *)((&PTR_DAT_007b5170)[TVar6] +
-                      (param_2 + (iVar3 + this->field_0235 * 3) * 4) * 8 + 4);
+                      (param_2 + (iVar4 + this->field_0235 * 3) * 4) * 8 + 4);
   return;
 }
 

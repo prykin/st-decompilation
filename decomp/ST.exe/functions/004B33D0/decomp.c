@@ -17,13 +17,13 @@ int FUN_004b33d0(uint param_1,int *param_2)
 
 {
   uint uVar1;
-  byte bVar2;
-  char cVar3;
+  char cVar2;
   STWorldObject *this;
-  code *pcVar4;
-  DArrayTy *pDVar5;
-  STFishC *pSVar6;
-  DArrayTy *pDVar7;
+  code *pcVar3;
+  DArrayTy *pDVar4;
+  STFishC *pSVar5;
+  DArrayTy *pDVar6;
+  byte bVar7;
   short sVar8;
   int iVar9;
   DArrayTy *pDVar10;
@@ -316,20 +316,19 @@ LAB_004b3895:
           pbVar23 = pbVar24;
           uVar21 = pDVar10->iteratorIndex;
           if (uVar21 < pDVar10->count) {
-            /* ST_PSEUDO[dynamic_array_indexing]: expected DArrayAt<T>(pDVar10, uVar21) (runtime stride) */
-            pbVar11 = (byte *)(pDVar10->elementSize * uVar21 + (int)pDVar10->data);
+            pbVar11 = DArrayAt<byte>(pDVar10, uVar21);
             pDVar10->iteratorIndex = uVar21 + 1;
           }
           else {
             pbVar11 = nullptr;
           }
           if (pbVar11 == nullptr) break;
-          bVar2 = *pbVar11;
+          bVar7 = *pbVar11;
           pbVar24 = pbVar23;
           /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-          if ((((((bVar2 & 1) != 0) && ((bVar2 & 4) == 0)) && (*(int *)(pbVar11 + 5) == iVar9)) &&
+          if ((((((bVar7 & 1) != 0) && ((bVar7 & 4) == 0)) && (*(int *)(pbVar11 + 5) == iVar9)) &&
               (pbVar24 = pbVar11, pbVar23 != nullptr)) &&
-             ((pDVar10 = local_a4, (bVar2 & 0x20) < (*pbVar23 & 0x20) ||
+             ((pDVar10 = local_a4, (bVar7 & 0x20) < (*pbVar23 & 0x20) ||
               ((pbVar24 = pbVar23, ((*pbVar23 ^ *pbVar11) & 0x20) == 0 &&
                (*(int *)(pbVar11 + 0x15) < *(int *)(pbVar23 + 0x15))))))) {
             pbVar24 = pbVar11;
@@ -366,8 +365,7 @@ switchD_004b38f0_caseD_3a:
         while( true ) {
           uVar21 = pDVar10->iteratorIndex;
           if (uVar21 < pDVar10->count) {
-            /* ST_PSEUDO[dynamic_array_indexing]: expected DArrayAt<T>(pDVar10, uVar21) (runtime stride) */
-            pbVar23 = (byte *)(pDVar10->elementSize * uVar21 + (int)pDVar10->data);
+            pbVar23 = DArrayAt<byte>(pDVar10, uVar21);
             pDVar10->iteratorIndex = uVar21 + 1;
           }
           else {
@@ -417,16 +415,14 @@ switchD_004b38f0_caseD_3a:
             do {
               pDVar10 = local_a4;
               if (uVar18 < uVar21) {
-                /* ST_PSEUDO[dynamic_array_indexing]: expected DArrayAt<T>(pDVar22, uVar18) (runtime stride) */
-                pbVar24 = (byte *)(pDVar22->elementSize * uVar18 + (int)pDVar22->data);
+                pbVar24 = DArrayAt<byte>(pDVar22, uVar18);
               }
               else {
                 pbVar24 = nullptr;
               }
               uVar1 = uVar18 + 1;
               if (uVar1 < uVar21) {
-                /* ST_PSEUDO[dynamic_array_indexing]: expected DArrayAt<T>(pDVar22, uVar1) (runtime stride) */
-                pbVar23 = (byte *)(pDVar22->elementSize * uVar1 + (int)pDVar22->data);
+                pbVar23 = DArrayAt<byte>(pDVar22, uVar1);
               }
               else {
                 pbVar23 = nullptr;
@@ -445,16 +441,15 @@ switchD_004b38f0_caseD_3a:
         } while (local_50 != 0);
       }
       pDVar10->iteratorIndex = 0;
-      iVar9 = LookupRecordByte(recordIndex);
-      local_134 = (-(uint)((char)iVar9 != '\x03') & 0xffffffdb) + 0x60;
+      bVar7 = LookupRecordByte(recordIndex);
+      local_134 = (-(uint)(bVar7 != 3) & 0xffffffdb) + 0x60;
       *(undefined4 *)(param_2[3] + 4) = 0;
       iVar9 = DArrayGetNext((DArrayTy *)param_2[3],(byte *)local_108);
       while (-1 < iVar9) {
         if (local_108[0] == local_134) {
           uVar21 = pDVar10->iteratorIndex;
           if (uVar21 < pDVar10->count) {
-            /* ST_PSEUDO[dynamic_array_indexing]: expected DArrayAt<T>(pDVar10, uVar21) (runtime stride) */
-            pbVar24 = (byte *)(pDVar10->elementSize * uVar21 + (int)pDVar10->data);
+            pbVar24 = DArrayAt<byte>(pDVar10, uVar21);
             pDVar10->iteratorIndex = uVar21 + 1;
           }
           else {
@@ -653,16 +648,16 @@ LAB_004b4689:
       puVar27 = local_27c;
       pDVar10 = local_22c;
       pDVar22 = local_184;
-      pDVar5 = local_a4;
+      pDVar4 = local_a4;
       GVar15 = local_a0;
       iVar9 = local_9c;
       iVar26 = local_98;
       iVar20 = local_94;
-      pSVar6 = local_58;
-      pDVar7 = local_20;
-      while (local_27c = puVar27, local_22c = pDVar10, local_184 = pDVar22, local_a4 = pDVar5,
+      pSVar5 = local_58;
+      pDVar6 = local_20;
+      while (local_27c = puVar27, local_22c = pDVar10, local_184 = pDVar22, local_a4 = pDVar4,
             local_a0 = GVar15, local_9c = iVar9, local_98 = iVar26, local_94 = iVar20,
-            local_58 = pSVar6, local_20 = pDVar7, -1 < iVar12) {
+            local_58 = pSVar5, local_20 = pDVar6, -1 < iVar12) {
         if (*(int *)(&DAT_00791d68 + GVar15 * 4) == 1) {
           uVar21 = 0;
           do {
@@ -692,13 +687,13 @@ LAB_004b4689:
         puVar27 = local_27c;
         pDVar10 = local_22c;
         pDVar22 = local_184;
-        pDVar5 = local_a4;
+        pDVar4 = local_a4;
         GVar15 = local_a0;
         iVar9 = local_9c;
         iVar26 = local_98;
         iVar20 = local_94;
-        pSVar6 = local_58;
-        pDVar7 = local_20;
+        pSVar5 = local_58;
+        pDVar6 = local_20;
       }
       iVar26 = 0;
       g_array_007FA150->iteratorIndex = 0;
@@ -829,11 +824,11 @@ LAB_004b49b4:
                     bVar28 = true;
 LAB_004b4bd1:
                     if (bVar28) {
-                      iVar26 = LookupRecordByte(recordIndex);
+                      bVar7 = LookupRecordByte(recordIndex);
                       pDVar22 = local_184;
                       pDVar10 = local_22c;
                       local_270 = 0;
-                      if ((char)iVar26 == '\x03') {
+                      if (bVar7 == 3) {
                         if (local_4c[3] != 0) {
                           if ((local_184 == nullptr) || (local_184->count == 0)) {
                             local_270 = 1;
@@ -877,9 +872,8 @@ LAB_004b4bd1:
                         iVar9 = local_118;
                       }
 LAB_004b4c78:
-                      if (((local_270 == 0) ||
-                          (iVar26 = LookupRecordByte(recordIndex), (char)iVar26 == '\x03')) &&
-                         (local_10c != 0)) {
+                      if (((local_270 == 0) || (bVar7 = LookupRecordByte(recordIndex), bVar7 == 3))
+                         && (local_10c != 0)) {
                         if (local_124 != 0) {
                           uVar21 = 0;
                           do {
@@ -986,14 +980,14 @@ LAB_004b4f35:
                           if (local_4c[4] != 0) goto cf_common_join_004B5648;
                           if (((iVar26 == 1) || (iVar26 == 6)) || ((iVar26 == 2 || (iVar26 == 3))))
                           {
-                            iVar26 = LookupRecordByte(recordIndex);
-                            GVar15 = (-(uint)((char)iVar26 != '\x03') & 0xffffffd6) + 100;
+                            bVar7 = LookupRecordByte(recordIndex);
+                            GVar15 = (-(uint)(bVar7 != 3) & 0xffffffd6) + 100;
                             if (local_270 == 0) {
                               if (local_108[0] == GVar15) goto cf_common_join_004B5648;
 LAB_004b5614:
                               if (((local_270 != 0) &&
-                                  (iVar26 = LookupRecordByte(recordIndex), (char)iVar26 != '\x03'))
-                                 || (*(int *)(&DAT_00791d68 + local_108[0] * 4) == iVar9)) {
+                                  (bVar7 = LookupRecordByte(recordIndex), bVar7 != 3)) ||
+                                 (*(int *)(&DAT_00791d68 + local_108[0] * 4) == iVar9)) {
                                 local_a0 = local_108[0];
                                 local_90 = local_f8;
                                 local_9c = local_11c;
@@ -1570,30 +1564,30 @@ LAB_004b432d:
                 if ((uVar21 < 8) &&
                    ((g_playSystem_00802A38 == nullptr ||
                     (g_bulkInitializedRecords_008087C7[uVar21].field_0022 < 8)))) {
-                  bVar2 = *(byte *)&local_58->field_0024;
+                  bVar7 = *(byte *)&local_58->field_0024;
                   if (g_appClass_00806728->field_146F == '\0') {
-                    if (bVar2 == recordIndex) {
+                    if (bVar7 == recordIndex) {
                       iVar26 = 0;
                     }
                     else {
-                      uVar21 = (uint)bVar2;
+                      uVar21 = (uint)bVar7;
                       uVar18 = param_1 & 0xff;
-                      cVar3 = (&g_appClass_00806728->field_0x142f)[uVar18 + uVar21 * 8];
+                      cVar2 = (&g_appClass_00806728->field_0x142f)[uVar18 + uVar21 * 8];
                       puVar27 = local_27c;
-                      if ((cVar3 == '\0') &&
+                      if ((cVar2 == '\0') &&
                          ((&g_appClass_00806728->field_0x142f)[uVar21 + uVar18 * 8] == '\0')) {
                         iVar26 = -2;
                       }
-                      else if ((cVar3 == '\x01') &&
+                      else if ((cVar2 == '\x01') &&
                               ((&g_appClass_00806728->field_0x142f)[uVar21 + uVar18 * 8] == '\0')) {
                         iVar26 = -1;
                       }
-                      else if ((cVar3 == '\0') &&
+                      else if ((cVar2 == '\0') &&
                               ((&g_appClass_00806728->field_0x142f)[uVar21 + uVar18 * 8] == '\x01'))
                       {
                         iVar26 = 1;
                       }
-                      else if ((cVar3 == '\x01') &&
+                      else if ((cVar2 == '\x01') &&
                               ((&g_appClass_00806728->field_0x142f)[uVar21 + uVar18 * 8] == '\x01'))
                       {
                         iVar26 = 2;
@@ -1606,7 +1600,7 @@ LAB_004b432d:
                   }
                   else {
                     bVar28 = (&g_appClass_00806728->field_0x11ca)[(param_1 & 0xff) * 0x51] !=
-                             (&g_appClass_00806728->field_0x11ca)[(uint)bVar2 * 0x51];
+                             (&g_appClass_00806728->field_0x11ca)[(uint)bVar7 * 0x51];
                   }
                   if (bVar28) {
                     *(ushort *)(puVar27 + iVar9 * 2) =
@@ -1632,8 +1626,7 @@ LAB_004b463a:
 LAB_004b56e4:
     uVar21 = pDVar10->iteratorIndex;
     if (uVar21 < pDVar10->count) {
-      /* ST_PSEUDO[dynamic_array_indexing]: expected DArrayAt<T>(pDVar10, uVar21) (runtime stride) */
-      piVar16 = (int *)(pDVar10->elementSize * uVar21 + (int)pDVar10->data);
+      piVar16 = DArrayAt<int>(pDVar10, uVar21);
       pDVar10->iteratorIndex = uVar21 + 1;
     }
     else {

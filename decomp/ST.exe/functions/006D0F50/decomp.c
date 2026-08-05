@@ -40,9 +40,7 @@ void FUN_006d0f50(AnonShape_006D0F50_D22E7C78 *param_1,int param_2,uint *param_3
               else {
                 if ((byte)uVar6 != (byte)param_9) {
                   if ((byte)uVar6 == param_8) {
-                    /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-                    uVar6 = CONCAT31((int3)(uVar6 >> 8),
-                                     *(undefined1 *)(param_7 + (uint)*(byte *)param_1));
+                    uVar6 = STReplaceLowByte((uint32_t)(uVar6), (uint8_t)(*(undefined1 *)(param_7 + (uint)*(byte *)param_1)));
                   }
                   *(byte *)param_1 = (byte)uVar6;
                 }

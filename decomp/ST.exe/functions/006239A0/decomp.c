@@ -16,17 +16,18 @@
 undefined4 __thiscall STMineSetC::sub_006239A0(STMineSetC *this)
 
 {
-  VisibleClassTy *this_00;
   uint uVar1;
+  VisibleClassTy *this_00;
+  byte bVar2;
   AnonReceiver_00636260 *this_01;
-  int iVar2;
-  undefined4 uVar3;
-  int iVar4;
+  int iVar3;
+  undefined4 uVar4;
+  int iVar5;
   /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
   undefined2 extraout_var;
-  longlong lVar5;
-  int *piVar6;
+  longlong lVar6;
   int *piVar7;
+  int *piVar8;
   int local_1c;
   int local_18;
   int local_14;
@@ -39,8 +40,8 @@ undefined4 __thiscall STMineSetC::sub_006239A0(STMineSetC *this)
   case CASE_0:
     return 1;
   case CASE_1:
-    iVar2 = sub_00624920(this,this->field_02EE,&local_c,&local_10,&local_14);
-    if (0 < iVar2) {
+    iVar3 = sub_00624920(this,this->field_02EE,&local_c,&local_10,&local_14);
+    if (0 < iVar3) {
       this->field_0054 = (short)this->field_02C2;
       this->field_0056 = (short)this->field_02C6;
       this->field_0058 = (short)this->field_02CA;
@@ -55,13 +56,13 @@ undefined4 __thiscall STMineSetC::sub_006239A0(STMineSetC *this)
       return 0;
     }
     if (this->field_0353 == '\0') {
-      uVar1 = sub_006226C0(this,(int)this->field_0047,(int)this->field_0049);
-      this->field_0353 = (char)uVar1;
+      bVar2 = sub_006226C0(this,(int)this->field_0047,(int)this->field_0049);
+      this->field_0353 = bVar2;
     }
     thunk_FUN_00624000(this);
     if (this->field_0353 != '\0') {
-      iVar2 = LoadImagMineSet(this,1);
-      if (iVar2 == 0) {
+      iVar3 = LoadImagMineSet(this,1);
+      if (iVar3 == 0) {
         sub_00622670(this);
       }
       if (this->field_0363 == nullptr) {
@@ -82,16 +83,16 @@ undefined4 __thiscall STMineSetC::sub_006239A0(STMineSetC *this)
     sub_00625730(this);
     thunk_FUN_00627790(this);
     this->field_02AE = CASE_4;
-    iVar2 = thunk_FUN_00627d90(1);
-    uVar3 = thunk_FUN_00627db0(this,this->field_02C2,this->field_02C6,iVar2);
+    iVar3 = thunk_FUN_00627d90(1);
+    uVar4 = thunk_FUN_00627db0(this,this->field_02C2,this->field_02C6,iVar3);
     /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
     STAllPlayersC::UnRegisterMine
-              (g_allPlayers_007FA174,CONCAT31((int3)((uint)uVar3 >> 8),(char)this->field_0262),
+              (g_allPlayers_007FA174,STReplaceLowByte((uint32_t)(uVar4), (uint8_t)((char)this->field_0262)),
                CONCAT22(extraout_var,this->field_0032),this);
     sub_0041D2B0(this);
-    iVar2 = thunk_FUN_00495ff0(this->field_0047,this->field_0049,this->field_004B,this->field_008E,
+    iVar3 = thunk_FUN_00495ff0(this->field_0047,this->field_0049,this->field_004B,this->field_008E,
                                (AnonShape_00495FF0_59081BDD *)this);
-    if (iVar2 == 0) {
+    if (iVar3 == 0) {
       this->field_0314 = this->field_0314 + -1;
     }
     if (this->field_02BA < 0) {
@@ -158,17 +159,17 @@ LAB_00623d08:
     return local_8;
   }
   if (g_visibleClass_00802A88 != nullptr) {
-    lVar5 = Library::MSVCRT::__ftol();
-    iVar2 = (int)lVar5;
+    lVar6 = Library::MSVCRT::__ftol();
+    iVar3 = (int)lVar6;
     if ((DAT_0080874d != -1) && (this_00->field_00F8 != 0)) {
-      piVar7 = &local_1c;
-      piVar6 = &local_18;
-      lVar5 = Library::MSVCRT::__ftol();
-      iVar4 = (int)lVar5;
-      lVar5 = Library::MSVCRT::__ftol();
-      VisibleClassTy::sub_00558C00(this_00,this_00->field_010C,(int)lVar5,iVar4,piVar6,piVar7);
-      if ((((-1 < iVar2) && (((iVar2 < 5 && (-1 < local_18)) && (local_18 < this_00->field_0030))))
-          && (((local_1c = g_centeredOffsets5[iVar2] + local_1c, -1 < local_1c &&
+      piVar8 = &local_1c;
+      piVar7 = &local_18;
+      lVar6 = Library::MSVCRT::__ftol();
+      iVar5 = (int)lVar6;
+      lVar6 = Library::MSVCRT::__ftol();
+      VisibleClassTy::sub_00558C00(this_00,this_00->field_010C,(int)lVar6,iVar5,piVar7,piVar8);
+      if ((((-1 < iVar3) && (((iVar3 < 5 && (-1 < local_18)) && (local_18 < this_00->field_0030))))
+          && (((local_1c = g_centeredOffsets5[iVar3] + local_1c, -1 < local_1c &&
                (local_1c < this_00->field_0034)) && (this_00->field_004C != nullptr)))) &&
          (this_00->field_004C[local_18 + local_1c * this_00->field_0030] == 0)) {
         if (this->field_02E9 == '\0') {

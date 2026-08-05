@@ -38,8 +38,7 @@ void __thiscall CPanelTy::SwitchTV(CPanelTy *this,int param_1)
   else {
     local_8 = &this->field_0B63;
   }
-  /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-  local_c = CONCAT31(local_c._1_3_,param_1 == 0);
+  local_c = STReplaceLowByte((uint32_t)(local_c), (uint8_t)(param_1 == 0));
   local_58.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_58;
   local_10 = this;

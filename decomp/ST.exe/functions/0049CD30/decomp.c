@@ -129,9 +129,8 @@ LAB_0049cf10:
       } while (uVar11 < local_14);
     }
     array = local_10;
-    /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
     STAllPlayersC::RegisterPGPair
-              (g_allPlayers_007FA174,CONCAT31((int3)(uVar11 >> 8),pSVar4->field_0024),
+              (g_allPlayers_007FA174,STReplaceLowByte((uint32_t)(uVar11), (uint8_t)(pSVar4->field_0024)),
                &array_00->flags,&local_10->flags);
     if (array_00 != nullptr) {
       DArrayDestroy(array_00);

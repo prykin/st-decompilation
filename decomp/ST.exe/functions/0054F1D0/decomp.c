@@ -417,8 +417,7 @@ cf_common_exit_0054F76E:
           bVar7 = pSVar21->field_00BB + 1;
           pSVar21->field_00BB = bVar7;
           g_currentExceptionFrame = local_78.previous;
-          /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-          return (undefined4 *)CONCAT31((int3)(DVar12 >> 8),bVar7);
+          return (undefined4 *)STReplaceLowByte((uint32_t)(DVar12), (uint8_t)(bVar7));
         }
         pSVar21->field_00A7 = pSVar21->field_00AB;
         pSVar21->field_00AB = pSVar21->field_00AF;
@@ -428,8 +427,7 @@ cf_common_exit_0054F76E:
         pSVar21->field_00B7 = DVar12;
         if (DAT_0080735e == '\0') {
           g_currentExceptionFrame = local_78.previous;
-          /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-          return (undefined4 *)CONCAT31((int3)(DVar12 >> 8),DAT_0080735e);
+          return (undefined4 *)STReplaceLowByte((uint32_t)(DVar12), (uint8_t)(DAT_0080735e));
         }
         uVar9 = DVar12 - pSVar21->field_00A7;
         if (3000 < uVar9 / 5) {

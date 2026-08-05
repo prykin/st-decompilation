@@ -14,9 +14,8 @@ ushort * __cdecl FUN_0067bd00(DArrayTy *param_1,uint param_2)
   if (0 < (int)uVar1) {
     bVar4 = uVar1 != 0;
     do {
-      /* ST_PSEUDO[dynamic_array_indexing]: expected DArrayAt<T>(param_1, uVar3) (runtime stride) */
       if (((bVar4) &&
-          (puVar2 = (ushort *)(param_1->elementSize * uVar3 + (int)param_1->data),
+          (puVar2 = DArrayAt<ushort>(param_1, uVar3),
           puVar2 != nullptr)) && (*puVar2 == param_2)) {
         return puVar2;
       }

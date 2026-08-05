@@ -54,9 +54,7 @@ _EnumArt(short param_1,byte *param_2,short param_3,short param_4,short param_5,s
   }
   do {
     if (local_10 < g_array_007FA154->count) {
-      /* ST_PSEUDO[dynamic_array_indexing]: expected DArrayAt<T>(g_array_007FA154, local_10) (runtime stride) */
-      puVar4 = (undefined4 *)
-               (g_array_007FA154->elementSize * local_10 + (int)g_array_007FA154->data);
+      puVar4 = DArrayAt<undefined4>(g_array_007FA154, local_10);
     }
     else {
       puVar4 = nullptr;

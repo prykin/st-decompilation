@@ -5,25 +5,26 @@ void __thiscall FUN_004be6c0(void *this,undefined4 *param_1)
 
 {
   short sVar1;
-  undefined1 uVar2;
+  byte bVar2;
+  undefined1 uVar3;
   int uVar4;
-  undefined4 uVar3;
+  undefined4 uVar5;
   int local_EAX_571;
-  int iVar4;
   int iVar6;
+  int iVar8;
 
   memset(param_1, 0, 0x36); /* compiler bulk-zero initialization */
   *(undefined1 *)param_1 = 1;
   *(undefined1 *)((int)param_1 + 1) = *(undefined1 *)((int)this + 0x21d);
-  iVar4 = LookupRecordByte(*(char *)((int)this + 0x23d));
-  *(char *)((int)param_1 + 7) = (char)iVar4;
+  bVar2 = LookupRecordByte(*(char *)((int)this + 0x23d));
+  *(byte *)((int)param_1 + 7) = bVar2;
   if (((*(byte *)((int)this + 0x1d1) & 4) == 0) && (*(int *)((int)this + 0x420) == 0)) {
-    uVar2 = 1;
+    uVar3 = 1;
   }
   else {
-    uVar2 = 0;
+    uVar3 = 0;
   }
-  *(undefined1 *)((int)param_1 + 0x1d) = uVar2;
+  *(undefined1 *)((int)param_1 + 0x1d) = uVar3;
   switch(*(undefined4 *)((int)this + 0x245)) {
   case 0:
   case 1:
@@ -37,11 +38,11 @@ void __thiscall FUN_004be6c0(void *this,undefined4 *param_1)
     *(undefined1 *)((int)param_1 + 2) = 1;
   }
   /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-  uVar2 = (**(code **)(*(int *)this + 0x7c))();
-  *(undefined1 *)((int)param_1 + 0x1b) = uVar2;
+  uVar3 = (**(code **)(*(int *)this + 0x7c))();
+  *(undefined1 *)((int)param_1 + 0x1b) = uVar3;
   /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-  uVar2 = (**(code **)(*(int *)this + 0xc4))();
-  *(undefined1 *)(param_1 + 7) = uVar2;
+  uVar3 = (**(code **)(*(int *)this + 0xc4))();
+  *(undefined1 *)(param_1 + 7) = uVar3;
   *(undefined4 *)((int)param_1 + 3) = *(undefined4 *)((int)this + 0x5ac);
   param_1[2] = *(undefined4 *)((int)this + 0x18);
   Library::MSVCRT::_strncpy((char *)(param_1 + 3),(char *)((int)this + 0x5c4),0xe);
@@ -56,24 +57,25 @@ void __thiscall FUN_004be6c0(void *this,undefined4 *param_1)
   if (sVar1 == 0xa0) {
     *(undefined2 *)((int)param_1 + 0x1e) = 0x9f;
   }
-  iVar4 = (&DAT_00792ca0)[*(int *)((int)this + 0x235) * 6];
-  if (((iVar4 == 0x96) || (iVar4 == 0x97)) || (iVar4 == 0x98)) {
+  iVar6 = (&DAT_00792ca0)[*(int *)((int)this + 0x235) * 6];
+  if (((iVar6 == 0x96) || (iVar6 == 0x97)) || (iVar6 == 0x98)) {
     uVar4 = LookupRecordByte(*(char *)((int)this + 0x24));
-    if ((uVar4 & 0xffU) == 1) {
-      iVar4 = 6;
+    uVar4 = (int)(byte)uVar4;
+    if (uVar4 == 1) {
+      iVar6 = 6;
       goto LAB_004be7f7;
     }
-    if ((uVar4 & 0xffU) != 2) goto LAB_004be80a;
-    iVar6 = *(int *)((int)this + 0x24);
-    iVar4 = 0x83;
+    if (uVar4 != 2) goto LAB_004be80a;
+    iVar8 = *(int *)((int)this + 0x24);
+    iVar6 = 0x83;
 LAB_004be7fb:
-    uVar3 = thunk_FUN_004e60d0(iVar6,iVar4);
-    *(short *)((int)param_1 + 0x22) = (short)uVar3;
+    uVar5 = thunk_FUN_004e60d0(iVar8,iVar6);
+    *(short *)((int)param_1 + 0x22) = (short)uVar5;
   }
-  else if (iVar4 == 0xa0) {
-    iVar4 = 0xb;
+  else if (iVar6 == 0xa0) {
+    iVar6 = 0xb;
 LAB_004be7f7:
-    iVar6 = *(int *)((int)this + 0x24);
+    iVar8 = *(int *)((int)this + 0x24);
     goto LAB_004be7fb;
   }
 LAB_004be80a:
@@ -105,24 +107,25 @@ LAB_004be80a:
   if (sVar1 == 0xa0) {
     *(undefined2 *)(param_1 + 8) = 0x9f;
   }
-  iVar4 = (&DAT_00792cac)[*(int *)((int)this + 0x235) * 6];
-  if (((iVar4 == 0x96) || (iVar4 == 0x97)) || (iVar4 == 0x98)) {
+  iVar6 = (&DAT_00792cac)[*(int *)((int)this + 0x235) * 6];
+  if (((iVar6 == 0x96) || (iVar6 == 0x97)) || (iVar6 == 0x98)) {
     local_EAX_571 = LookupRecordByte(*(char *)((int)this + 0x24));
-    if ((local_EAX_571 & 0xffU) == 1) {
-      iVar4 = 6;
+    local_EAX_571 = (int)(byte)local_EAX_571;
+    if (local_EAX_571 == 1) {
+      iVar6 = 6;
       goto LAB_004be918;
     }
-    if ((local_EAX_571 & 0xffU) != 2) goto LAB_004be92b;
-    iVar6 = *(int *)((int)this + 0x24);
-    iVar4 = 0x83;
+    if (local_EAX_571 != 2) goto LAB_004be92b;
+    iVar8 = *(int *)((int)this + 0x24);
+    iVar6 = 0x83;
 LAB_004be91c:
-    uVar3 = thunk_FUN_004e60d0(iVar6,iVar4);
-    *(short *)(param_1 + 9) = (short)uVar3;
+    uVar5 = thunk_FUN_004e60d0(iVar8,iVar6);
+    *(short *)(param_1 + 9) = (short)uVar5;
   }
-  else if (iVar4 == 0xa0) {
-    iVar4 = 0xb;
+  else if (iVar6 == 0xa0) {
+    iVar6 = 0xb;
 LAB_004be918:
-    iVar6 = *(int *)((int)this + 0x24);
+    iVar8 = *(int *)((int)this + 0x24);
     goto LAB_004be91c;
   }
 LAB_004be92b:

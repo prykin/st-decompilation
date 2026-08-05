@@ -100,8 +100,7 @@ undefined4 __thiscall STGroupBoatC::GrpDismant(STGroupBoatC *this,int param_1)
     local_2e = *(undefined2 *)&pSVar6->field_0x2f0;
     local_34 = g_playSystem_00802A38->field_00E4;
     local_2c = *(undefined2 *)&pSVar6->field_0x2f2;
-    /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-    uVar12 = CONCAT22((short)((uint)g_playSystem_00802A38 >> 0x10),local_2c);
+    uVar12 = STReplaceLowWord((uint32_t)(g_playSystem_00802A38), (uint16_t)(local_2c));
     local_30 = *(undefined2 *)&pSVar6->field_0x2ee;
     local_2a = *(undefined4 *)&pSVar6->field_0x2f4;
     array_00 = local_14;
@@ -152,9 +151,8 @@ LAB_004a02d6:
       } while (uVar12 < local_10);
     }
     array = local_c;
-    /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
     STAllPlayersC::RegisterPGPair
-              (g_allPlayers_007FA174,CONCAT31((int3)(uVar12 >> 8),pSVar6->field_0024),
+              (g_allPlayers_007FA174,STReplaceLowByte((uint32_t)(uVar12), (uint8_t)(pSVar6->field_0024)),
                &array_00->flags,&local_c->flags);
     if (array_00 != nullptr) {
       DArrayDestroy(array_00);

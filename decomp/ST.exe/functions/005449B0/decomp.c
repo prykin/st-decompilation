@@ -1508,9 +1508,8 @@ LAB_00547c2d:
         g_currentExceptionFrame = local_e0.previous;
         return 0;
       }
-      /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
       STAllPlayersC::PointPick
-                (g_allPlayers_007FA174,(uint *)CONCAT31((int3)((uint)iVar17 >> 8),DAT_0080874d),
+                (g_allPlayers_007FA174,(uint *)STReplaceLowByte((uint32_t)(iVar17), (uint8_t)(DAT_0080874d)),
                  iVar8 - iVar17,iVar22 - iVar9,0);
       g_currentExceptionFrame = local_e0.previous;
       return 0;
@@ -2279,10 +2278,9 @@ switchD_00546ac9_caseD_a505:
         }
         if (SVar4 != MESS_CURSORCLASSTY_A502) {
           if (this_00->field_04A2 == 0) {
-            /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
             STAllPlayersC::FramePick
                       (g_allPlayers_007FA174,
-                       CONCAT31((int3)((uint)this_00->field_00E7 >> 8),DAT_0080874d),
+                       STReplaceLowByte((uint32_t)(this_00->field_00E7), (uint8_t)(DAT_0080874d)),
                        this_00->field_00DF,this_00->field_00E3,this_00->field_00E7,
                        this_00->field_00EB,(uint)(SVar4 == MESS_CURSORCLASSTY_A507));
           }

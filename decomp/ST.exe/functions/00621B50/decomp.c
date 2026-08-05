@@ -25,9 +25,9 @@ int __thiscall STMineSetC::GetMessage(STMineSetC *this,STMessage *message)
   code *pcVar7;
   bool bVar8;
   STMineSetC *this_00;
-  int iVar9;
-  STMineSetC_field_02AEState SVar10;
-  uint uVar11;
+  byte bVar9;
+  int iVar10;
+  STMineSetC_field_02AEState SVar11;
   STMineSetC_sub_00626B50_param_1Enum SVar12;
   int iVar13;
   byte *puVar14;
@@ -42,20 +42,20 @@ int __thiscall STMineSetC::GetMessage(STMineSetC *this,STMessage *message)
   STMineSetC *local_8;
 
   local_8 = this;
-  iVar9 = STSprGameObjC::GetMessage((STSprGameObjC *)this,message);
-  if (iVar9 == 0xffff) {
+  iVar10 = STSprGameObjC::GetMessage((STSprGameObjC *)this,message);
+  if (iVar10 == 0xffff) {
     return 0xffff;
   }
   local_60.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_60;
-  iVar9 = Library::MSVCRT::__setjmp3(local_60.jumpBuffer,0);
+  iVar10 = Library::MSVCRT::__setjmp3(local_60.jumpBuffer,0);
   this_00 = local_8;
-  if (iVar9 != 0) {
+  if (iVar10 != 0) {
     g_currentExceptionFrame = local_60.previous;
-    iVar13 = ReportDebugMessage("E:\\__titans\\nick\\to_mine_set.cpp",0x174,0,iVar9,
+    iVar13 = ReportDebugMessage("E:\\__titans\\nick\\to_mine_set.cpp",0x174,0,iVar10,
                                 "%s","STMineSetC::GetMessage");
     if (iVar13 == 0) {
-      RaiseInternalException(iVar9,0,"E:\\__titans\\nick\\to_mine_set.cpp",0x176);
+      RaiseInternalException(iVar10,0,"E:\\__titans\\nick\\to_mine_set.cpp",0x176);
       return 0xffff;
     }
     STDebugBreak(); /* noreturn in standalone pseudocode */
@@ -141,38 +141,38 @@ int __thiscall STMineSetC::GetMessage(STMineSetC *this,STMessage *message)
        (0x1194 < g_playSystem_00802A38->field_00E4 - local_8->field_035F)) {
       thunk_FUN_00627390(local_8);
     }
-    iVar9 = sub_006239A0(this_00);
-    if (iVar9 == 0) {
+    iVar10 = sub_006239A0(this_00);
+    if (iVar10 == 0) {
       if ((this_00->field_02AE == CASE_2) && (this_00->field_0353 == '\0')) {
-        uVar11 = sub_006226C0(this_00,(int)this_00->field_0047,(int)this_00->field_0049);
-        this_00->field_0353 = (char)uVar11;
-        if ((char)uVar11 != '\0') {
+        bVar9 = sub_006226C0(this_00,(int)this_00->field_0047,(int)this_00->field_0049);
+        this_00->field_0353 = bVar9;
+        if (bVar9 != 0) {
           LoadImagMineSet(this_00,0);
           thunk_FUN_004ad460(&this_00->field_01D5,1);
         }
       }
     }
     else {
-      if ((((this_00->field_0314 == '\0') && (SVar10 = this_00->field_02AE, SVar10 != CASE_2)) &&
-          (SVar10 != CASE_3)) && ((SVar10 != CASE_4 && (SVar10 != CASE_5)))) {
-        SVar10 = sub_00627400(this_00,SVar10);
-        this_00->field_02AE = SVar10;
+      if ((((this_00->field_0314 == '\0') && (SVar11 = this_00->field_02AE, SVar11 != CASE_2)) &&
+          (SVar11 != CASE_3)) && ((SVar11 != CASE_4 && (SVar11 != CASE_5)))) {
+        SVar11 = sub_00627400(this_00,SVar11);
+        this_00->field_02AE = SVar11;
       }
-      SVar10 = this_00->field_02AE;
-      if (((SVar10 != CASE_2) && (SVar10 != CASE_3)) && ((SVar10 != CASE_4 && (SVar10 != CASE_5))))
+      SVar11 = this_00->field_02AE;
+      if (((SVar11 != CASE_2) && (SVar11 != CASE_3)) && ((SVar11 != CASE_4 && (SVar11 != CASE_5))))
       {
         if (this_00->field_0353 == '\0') {
-          uVar11 = sub_006226C0(this_00,(int)this_00->field_0047,(int)this_00->field_0049);
-          this_00->field_0353 = (char)uVar11;
-          if (((char)uVar11 != '\0') && (this_00->field_02BA < 0)) {
+          bVar9 = sub_006226C0(this_00,(int)this_00->field_0047,(int)this_00->field_0049);
+          this_00->field_0353 = bVar9;
+          if ((bVar9 != 0) && (this_00->field_02BA < 0)) {
             LoadImagMineSet(this_00,0);
             thunk_FUN_004ad460(&this_00->field_01D5,1);
           }
         }
         else if ((g_playSystem_00802A38->field_00E4 & 3) == 0) {
-          uVar11 = sub_006226C0(this_00,(int)this_00->field_0047,(int)this_00->field_0049);
-          this_00->field_0353 = (char)uVar11;
-          if (((char)uVar11 == '\0') && (this_00->field_02E9 != '\0')) {
+          bVar9 = sub_006226C0(this_00,(int)this_00->field_0047,(int)this_00->field_0049);
+          this_00->field_0353 = bVar9;
+          if ((bVar9 == 0) && (this_00->field_02E9 != '\0')) {
             thunk_FUN_004ad430((STT3DSprC *)&this_00->field_01D5);
             this_00->field_02E9 = 0;
           }
@@ -188,7 +188,7 @@ int __thiscall STMineSetC::GetMessage(STMineSetC *this,STMessage *message)
            ((((g_playSystem_00802A38->field_00E4 % 5 == 0 &&
               (0x19 < g_playSystem_00802A38->field_00E4 - this_00->field_0346)) &&
              ((this_00->field_02AE == CASE_0 || (this_00->field_02AE == CASE_1)))) &&
-            (iVar9 = sub_00625730(this_00), iVar9 != 0)))) {
+            (iVar10 = sub_00625730(this_00), iVar10 != 0)))) {
           this_00->field_02AE = CASE_2;
           this_00->field_030F =
                *(int *)(&DAT_007d02a4 + (uint)this_00->field_02AD * 4) +
@@ -203,7 +203,7 @@ int __thiscall STMineSetC::GetMessage(STMineSetC *this,STMessage *message)
       this_00->field_0355 = 1;
     }
     if ((this_00->field_0363 != nullptr) &&
-       (iVar9 = thunk_FUN_006372e0((int *)this_00->field_0363), iVar9 != 0)) {
+       (iVar10 = thunk_FUN_006372e0((int *)this_00->field_0363), iVar10 != 0)) {
       thunk_FUN_006366d0((AnonShape_006366D0_80B1100F *)this_00->field_0363);
       Library::MSVCRT::FUN_0072e2b0(this_00->field_0363);
       this_00->field_0363 = nullptr;
@@ -240,27 +240,27 @@ int __thiscall STMineSetC::GetMessage(STMineSetC *this,STMessage *message)
         pSVar15 = STGridAt3D(g_worldGrid, sVar2, sVar4, sVar3).objects[local_14];
       }
       if ((pSVar15 == nullptr) &&
-         (iVar9 = DumpClassC::WritePtr
-                            (sVar2,sVar4,sVar3,this_00->field_008E,
-                             (RecoveredRecord_DumpClassC_00495EC0 *)this_00), iVar9 == 0)) {
+         (iVar10 = DumpClassC::WritePtr
+                             (sVar2,sVar4,sVar3,this_00->field_008E,
+                              (RecoveredRecord_DumpClassC_00495EC0 *)this_00), iVar10 == 0)) {
         this_00->field_0314 = this_00->field_0314 + '\x01';
-        iVar9 = local_1c;
+        iVar10 = local_1c;
       }
       else {
-        iVar9 = 0;
+        iVar10 = 0;
       }
-      if (iVar9 == 0) {
+      if (iVar10 == 0) {
         sub_00622670(this_00);
       }
     }
     memset(&this_00->field_0x231, 0, 0x2d); /* compiler bulk-zero initialization */
     if (this_00->field_0353 != '\0') {
-      iVar9 = thunk_FUN_004ad650((STT3DSprC *)&this_00->field_01D5);
-      this_00->field_02BA = iVar9;
+      iVar10 = thunk_FUN_004ad650((STT3DSprC *)&this_00->field_01D5);
+      this_00->field_02BA = iVar10;
     }
     this_00->field_0363 = nullptr;
-    iVar9 = STAllPlayersC::RegisterMine(g_allPlayers_007FA174,this_00->field_0032,this_00);
-    if (iVar9 == 0) {
+    iVar10 = STAllPlayersC::RegisterMine(g_allPlayers_007FA174,this_00->field_0032,this_00);
+    if (iVar10 == 0) {
       g_currentExceptionFrame = local_60.previous;
       return 0;
     }
@@ -279,8 +279,8 @@ int __thiscall STMineSetC::GetMessage(STMineSetC *this,STMessage *message)
     local_8->field_0286 = local_8->field_027A;
     local_8->field_028A = local_8->field_027E;
   }
-  iVar9 = sub_00622BA0(local_8);
-  if (iVar9 == 0) {
+  iVar10 = sub_00622BA0(local_8);
+  if (iVar10 == 0) {
     sub_00622670(this_00);
     g_currentExceptionFrame = local_60.previous;
     return 0;
@@ -290,15 +290,15 @@ int __thiscall STMineSetC::GetMessage(STMineSetC *this,STMessage *message)
     this_00->field_0034 = this_00->field_0041;
     this_00->field_0036 = this_00->field_0043;
     this_00->field_0038 = this_00->field_0045;
-    iVar9 = thunk_FUN_00624570(this_00,CASE_1,this_00->field_02C2,this_00->field_02C6,
-                               this_00->field_02CA);
-    if (iVar9 == 0) goto cf_common_exit_00621D24;
+    iVar10 = thunk_FUN_00624570(this_00,CASE_1,this_00->field_02C2,this_00->field_02C6,
+                                this_00->field_02CA);
+    if (iVar10 == 0) goto cf_common_exit_00621D24;
     this_00->field_02EE = 1;
   }
   else {
-    iVar9 = thunk_FUN_00624570(this_00,CASE_2,(int)this_00->field_003A,(int)this_00->field_003C,
-                               (int)this_00->field_003E);
-    if (iVar9 == 0) goto cf_common_exit_00621D24;
+    iVar10 = thunk_FUN_00624570(this_00,CASE_2,(int)this_00->field_003A,(int)this_00->field_003C,
+                                (int)this_00->field_003E);
+    if (iVar10 == 0) goto cf_common_exit_00621D24;
     this_00->field_02EE = 2;
   }
   this_00->field_02AE = CASE_1;
@@ -308,8 +308,8 @@ cf_common_exit_00621D24:
     this_00->field_02AE = CASE_1;
     this_00->field_0353 = 1;
     LoadImagMineSet(this_00,0);
-    iVar9 = STAllPlayersC::RegisterMine(g_allPlayers_007FA174,0xffff,this_00);
-    if (iVar9 != 0) {
+    iVar10 = STAllPlayersC::RegisterMine(g_allPlayers_007FA174,0xffff,this_00);
+    if (iVar10 != 0) {
       sub_00622670(this_00);
     }
     thunk_FUN_00627700((AnonShape_00627700_6F319351 *)this_00);

@@ -373,8 +373,7 @@ int __thiscall STBoatC::GetMessage(STBoatC *this,STMessage *message)
       this_00->field_0826 = pSVar20->field_0008;
       dVar14 = this_00->slot_2C();
       /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
-      thunk_FUN_004b7710(CONCAT31((int3)((uint)extraout_ECX_00 >> 8),
-                                  *(undefined1 *)&this_00->field_0024),dVar14);
+      thunk_FUN_004b7710(STReplaceLowByte((uint32_t)(extraout_ECX_00), (uint8_t)(*(undefined1 *)&this_00->field_0024)),dVar14);
       /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
       if (this_00->field_0024 == (uint)*(byte *)(this_00->field_0010 + 0x112d)) {
         thunk_FUN_004d8b70((char)this_00->field_0024);
@@ -585,20 +584,20 @@ LAB_00459e30:
         *(int *)pSVar20 = *(int *)pSVar20 - iVar13;
       }
       uVar15 = LookupRecordByte(*(char *)&this_00->field_0024);
-      uVar16 = uVar15 & 0xff;
-      if (uVar16 == 1) {
+      uVar15 = (int)(byte)uVar15;
+      if (uVar15 == 1) {
         iVar13 = this_00->field_0024;
         iVar29 = 4;
 LAB_00459e71:
         local_c = thunk_FUN_004e60d0(iVar13,iVar29);
       }
       else {
-        if (uVar16 == 2) {
+        if (uVar15 == 2) {
           iVar13 = this_00->field_0024;
           iVar29 = 0x81;
           goto LAB_00459e71;
         }
-        if (uVar16 == 3) {
+        if (uVar15 == 3) {
           iVar13 = this_00->field_0024;
           iVar29 = 0x65;
           goto LAB_00459e71;
@@ -664,20 +663,20 @@ LAB_00459eaa:
       return 0;
     }
     local_EAX_44850 = LookupRecordByte(*(char *)&this_00->field_0024);
-    uVar16 = local_EAX_44850 & 0xff;
-    if (uVar16 == 1) {
+    local_EAX_44850 = (int)(byte)local_EAX_44850;
+    if (local_EAX_44850 == 1) {
       iVar13 = this_00->field_0024;
       iVar29 = 0x2d;
 LAB_00459d8b:
       local_c = thunk_FUN_004e60d0(iVar13,iVar29);
     }
     else {
-      if (uVar16 == 2) {
+      if (local_EAX_44850 == 2) {
         iVar13 = this_00->field_0024;
         iVar29 = 0x2d;
         goto LAB_00459d8b;
       }
-      if (uVar16 == 3) {
+      if (local_EAX_44850 == 3) {
         iVar13 = this_00->field_0024;
         iVar29 = 0x6a;
         goto LAB_00459d8b;
@@ -860,8 +859,7 @@ LAB_00459f59:
       sub_0048DBA0(this_00);
       sVar39 = this_00->field_0671;
       sVar4 = this_00->field_0673;
-      /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-      local_7c = (AnonShape_0060EA30_DCEB68AD *)CONCAT22(local_7c._2_2_,sVar39);
+      local_7c = (AnonShape_0060EA30_DCEB68AD *)STReplaceLowWord((uint32_t)(local_7c), (uint16_t)(sVar39));
       sVar5 = this_00->field_066F;
       if (((((sVar5 < 0) || (g_worldGrid.sizeX <= sVar5)) || (sVar39 < 0)) ||
           ((g_worldGrid.sizeY <= sVar39 || (sVar4 < 0)))) || (g_worldGrid.sizeZ <= sVar4)) {
@@ -1028,7 +1026,7 @@ LAB_00459f59:
     /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
     STAllPlayersC::UnRegisterObject
               (g_allPlayers_007FA174,*(char *)&this_00->field_0024,
-               CONCAT22((short)((uint)uVar17 >> 0x10),this_00->field_0030),
+               STReplaceLowWord((uint32_t)(uVar17), (uint16_t)(this_00->field_0030)),
                CONCAT22(extraout_var_07,this_00->field_0032),(int *)this_00,this_00->field_0826);
     thunk_FUN_00489950((int)this_00);
     if (this_00->field_047B != nullptr) {
@@ -1386,8 +1384,7 @@ LAB_00450e28:
       STT3DSprC::StartShow((STT3DSprC *)&this_00->field_01D5,8,g_playSystem_00802A38->field_00E4);
       this_00->field_0455 = 1;
       dVar14 = this_00->slot_2C();
-      /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-      thunk_FUN_004b7710(CONCAT31((int3)(dVar14 >> 8),*(undefined1 *)&this_00->field_0024),dVar14);
+      thunk_FUN_004b7710(STReplaceLowByte((uint32_t)(dVar14), (uint8_t)(*(undefined1 *)&this_00->field_0024)),dVar14);
       /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
       uVar16 = (uint)*(byte *)(this_00->field_0010 + 0x112d);
       if (this_00->field_0024 == uVar16) {
@@ -7126,8 +7123,7 @@ cf_error_exit_0045AEE3:
     this_00->field_001C = uVar16;
     local_d4 = (uVar16 >> 0x10) % 0x13;
     dVar14 = this_00->slot_2C();
-    /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-    thunk_FUN_004b76d0(CONCAT31((int3)(dVar14 >> 8),*(undefined1 *)&this_00->field_0024),dVar14);
+    thunk_FUN_004b76d0(STReplaceLowByte((uint32_t)(dVar14), (uint8_t)(*(undefined1 *)&this_00->field_0024)),dVar14);
     /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
     if (this_00->field_0024 == (uint)*(byte *)(this_00->field_0010 + 0x112d)) {
       thunk_FUN_004d8b70((char)this_00->field_0024);
@@ -7214,10 +7210,9 @@ cf_error_exit_0045AEE3:
     }
     thunk_FUN_00417e70(this_00,sVar39);
     uVar17 = thunk_FUN_00417ee0(this_00,0x5a);
-    /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
     STAllPlayersC::RegisterObject
               (g_allPlayers_007FA174,*(char *)&this_00->field_0024,
-               CONCAT22((short)((uint)uVar17 >> 0x10),*(undefined2 *)(dVar14 + 0x2a)),0xffff,
+               STReplaceLowWord((uint32_t)(uVar17), (uint16_t)(*(undefined2 *)(dVar14 + 0x2a))),0xffff,
                (int *)this_00,0,0);
     this_00->field_045D = CASE_13;
     this_00->field_0510 = *(undefined2 *)(dVar14 + 0x1c);
@@ -7245,7 +7240,7 @@ cf_error_exit_0045AEE3:
     local_d4 = DAT_008073fc * 5;
     dVar18 = this_00->slot_2C();
     /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
-    thunk_FUN_004b76d0(CONCAT31((int3)((uint)extraout_ECX >> 8),*(undefined1 *)&this_00->field_0024)
+    thunk_FUN_004b76d0(STReplaceLowByte((uint32_t)(extraout_ECX), (uint8_t)(*(undefined1 *)&this_00->field_0024))
                        ,dVar18);
     /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
     if (this_00->field_0024 == (uint)*(byte *)(this_00->field_0010 + 0x112d)) {

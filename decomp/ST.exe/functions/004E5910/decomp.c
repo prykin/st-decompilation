@@ -12,8 +12,7 @@ int FUN_004e5910(int param_1,uint param_2)
 
 {
   if ((((-1 < param_1) && (param_1 < 8)) && (0 < (int)param_2)) && ((int)param_2 < 0x9b)) {
-    /* ST_PSEUDO[flattened_global_record_array]: expected typedRecordArray[index].field after inferred base/stride proof */
-    return (uint)((*(byte *)(param_1 * 0xa62 + 0x7f510b + ((int)(param_2 ^ 7) >> 3)) >>
+    return (uint)((*(byte *)(STRecordByteAddress(g_packedRecords_A62x8, param_1, 0x2EB) + ((int)(param_2 ^ 7) >> 3)) >>
                    ((param_2 ^ 7) & 7) & 1) != 0);
   }
   return 0;

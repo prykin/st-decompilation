@@ -37,9 +37,8 @@ void __thiscall AiPlrClassTy::sub_0067BFD0(AiPlrClassTy *this,DArrayTy *param_1,
     local_c = this;
     do {
       uVar5 = local_8;
-      /* ST_PSEUDO[dynamic_array_indexing]: expected DArrayAt<T>(param_1, local_8) (runtime stride) */
       if ((((bVar6) &&
-           (puVar3 = (ushort *)(param_1->elementSize * local_8 + (int)param_1->data),
+           (puVar3 = DArrayAt<ushort>(param_1, local_8),
            puVar3 != nullptr)) && (*puVar3 != 0)) &&
          ((puVar1 = (ushort *)thunk_FUN_0067bc80(param_2,*(uint *)(puVar3 + 4)),
           puVar1 != nullptr ||

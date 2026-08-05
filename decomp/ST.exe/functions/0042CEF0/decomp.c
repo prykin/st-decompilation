@@ -118,7 +118,7 @@ LAB_0042d011:
       return;
     }
   }
-  *(undefined4 *)(iVar2 * 0x10 + uVar5 * 0xa62 + 0x7f5027) = 0;
+  *(undefined4 *)(iVar2 * 0x10 + STRecordByteAddress(g_packedRecords_A62x8, uVar5, 0x207)) = 0;
   return;
 }
 

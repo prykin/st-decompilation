@@ -80,8 +80,7 @@ void __thiscall SettMapSTy::PrepPlList(SettMapSTy *this)
       bVar14 = pDVar6->count != 0;
       do {
         if (bVar14) {
-          /* ST_PSEUDO[dynamic_array_indexing]: expected DArrayAt<T>(pDVar6, uVar10) (runtime stride) */
-          pvVar5 = (void *)(pDVar6->elementSize * uVar10 + (int)pDVar6->data);
+          pvVar5 = DArrayAt<void>(pDVar6, uVar10);
         }
         else {
           pvVar5 = nullptr;
@@ -213,8 +212,7 @@ LAB_005d5350:
     bVar14 = uVar10 != 0;
     do {
       if (bVar14) {
-        /* ST_PSEUDO[dynamic_array_indexing]: expected DArrayAt<T>(pDVar6, uVar9) (runtime stride) */
-        pvVar5 = (void *)(pDVar6->elementSize * uVar9 + (int)pDVar6->data);
+        pvVar5 = DArrayAt<void>(pDVar6, uVar9);
       }
       else {
         pvVar5 = nullptr;

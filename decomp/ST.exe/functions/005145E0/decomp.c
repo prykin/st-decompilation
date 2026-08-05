@@ -28,8 +28,7 @@ void __thiscall HelpPanelTy::FwdBut(HelpPanelTy *this)
       uVar5 = local_8->field_01CF + 1;
       local_8->field_01CF = uVar5;
       if (uVar5 < pDVar1->count) {
-        /* ST_PSEUDO[dynamic_array_indexing]: expected DArrayAt<T>(pDVar1, uVar5) (runtime stride) */
-        puVar6 = (undefined1 *)(pDVar1->elementSize * uVar5 + (int)pDVar1->data);
+        puVar6 = DArrayAt<undefined1>(pDVar1, uVar5);
       }
       else {
         puVar6 = nullptr;

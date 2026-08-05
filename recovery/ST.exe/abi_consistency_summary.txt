@@ -9,11 +9,12 @@ ebp_context_register: 0
 x87_double_parameter_slots: 0
 x87_stack_storage_migration: 0
 full_eax_return: 0
+narrow_accumulator_return: 0
 stack_parameter_width: 0
 stack_parameter_scalar_role: 0
 pointer_return_element_width: 0
 note=USER_DEFINED and IMPORTED target types are never selected for automatic repair.
-note_returns=Full-EAX repairs require full-width caller use and a full EAX definition on every RET path.
+note_returns=Full-EAX repairs require full-width caller use and a full EAX definition on every RET path. AL/AX repairs require a unanimous bounded CFG caller-use audit, including exact zero-extension masks, and an exact low-accumulator definition on every callee RET path.
 note_parameters=Narrow stack parameters require consistent MOVSX/MOVZX or an immediate AND mask and no unmasked dword reads.
 note_x87_doubles=An exact x87 double-width EBP read before any overlapping stack write may merge adjacent generic dwords; one generic qword may also be retyped when its exact halves are stored into an independently typed double class field. Stack byte count is preserved.
 note_stack_arity_expansion=A truncated non-manual __thiscall/__stdcall signature may expand to an exact unanimous RET purge only when every incoming byte is read before overlap and the missing suffix contains an exact x87 double slot; callers are not evidence.

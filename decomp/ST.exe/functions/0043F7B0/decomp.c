@@ -123,8 +123,8 @@ LAB_0043f9fa:
                  (param_2 != piVar3)) {
                 if (param_9 == 0) {
                   bVar1 = *(byte *)(piVar3 + 9);
-                  /* ST_PSEUDO[stack_slot_reuse,packed_or_unaligned_piece]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable; expected named packed member, bit extract/compose, or unaligned load */
-                  param_8 = CONCAT31(param_8._1_3_,bVar1);
+                  /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
+                  param_8 = STReplaceLowByte((uint32_t)(param_8), (uint8_t)(bVar1));
                   if (DAT_00808a8f == '\0') {
                     if (bVar1 == bVar5) {
 LAB_0043fad9:

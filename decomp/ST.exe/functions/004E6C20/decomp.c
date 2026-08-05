@@ -4,7 +4,7 @@ int FUN_004e6c20(int param_1,int param_2)
 {
   int iVar1;
   int iVar2;
-  uint uVar3;
+  byte bVar3;
   int iVar4;
   int iVar5;
 
@@ -12,9 +12,9 @@ int FUN_004e6c20(int param_1,int param_2)
     return 0;
   }
   iVar4 = 1;
-  uVar3 = LookupRecordByte((char)param_1);
+  bVar3 = LookupRecordByte((char)param_1);
   iVar5 = 0;
-  iVar1 = param_2 + -0x32 + ((uVar3 & 0xff) - 1) * 0x42;
+  iVar1 = param_2 + -0x32 + (bVar3 - 1) * 0x42;
   iVar2 = iVar1 * 3;
   if ((&DAT_007c0e4c)[iVar1 * 3] != '\0') {
     while (iVar5 < 3) {

@@ -8,8 +8,7 @@ void __thiscall FUN_006729b0(void *this,byte param_1)
 {
   uint uVar1;
 
-  /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-  uVar1 = FUN_006c8950(CONCAT22((short)((uint)this >> 0x10),(undefined2)DAT_007d2d24),1,param_1);
+  uVar1 = FUN_006c8950(STReplaceLowWord((uint32_t)(this), (uint16_t)((undefined2)DAT_007d2d24)),1,param_1);
   DAT_007d2d24 = uVar1 & 0xffff;
   return;
 }

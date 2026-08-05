@@ -38,9 +38,7 @@ void __thiscall FSGSTy::AddPlayer(FSGSTy *this,undefined4 *param_1)
       FUN_006e6080(local_c,2,local_c->field_1B20,(undefined4 *)&local_c->field_0x1d);
       array = this_00->field_1EA6;
       if ((uint)*(ushort *)&this_00->field_0x31 < array->count) {
-        /* ST_PSEUDO[dynamic_array_indexing]: expected DArrayAt<T>(array, (uint)*(ushort *)&this_00->field_0x31) (runtime stride) */
-        local_8 = (undefined4 *)
-                  (array->elementSize * (uint)*(ushort *)&this_00->field_0x31 + (int)array->data);
+        local_8 = DArrayAt<undefined4>(array, (uint)*(ushort *)&this_00->field_0x31);
       }
       else {
         local_8 = nullptr;

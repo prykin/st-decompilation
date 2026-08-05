@@ -20,9 +20,8 @@ void __fastcall FUN_006366d0(AnonShape_006366D0_80B1100F *param_1)
     if (0 < (int)dVar1) {
       do {
         pDVar2 = param_1->field_002C;
-        /* ST_PSEUDO[dynamic_array_indexing]: expected DArrayAt<T>(pDVar2, uVar5) (runtime stride) */
         if (((uVar5 < pDVar2->count) &&
-            (pvVar4 = (void *)(pDVar2->elementSize * uVar5 + (int)pDVar2->data),
+            (pvVar4 = DArrayAt<void>(pDVar2, uVar5),
             pvVar4 != nullptr)) && (uVar3 = *(uint *)((int)pvVar4 + 4), -1 < (int)uVar3)) {
           Library::Ourlib::ST3DSMAP::SprClose(g_sT3DSMAPContext_00807598,uVar3);
         }

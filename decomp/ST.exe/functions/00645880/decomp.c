@@ -10,11 +10,11 @@ void __cdecl FUN_00645880(RecoveredRecord_STBoatC_00645880 *param_1)
 {
   ushort uVar1;
   int local_EAX_69;
-  uint uVar3;
   int uVar2;
-  undefined4 uVar4;
-  int iVar5;
-  uint *puVar6;
+  undefined4 uVar3;
+  int iVar4;
+  uint *puVar5;
+  uint uVar6;
   Global_sub_00645D30_param_2Enum GVar7;
   undefined4 local_c4;
   uint local_c0;
@@ -56,10 +56,10 @@ void __cdecl FUN_00645880(RecoveredRecord_STBoatC_00645880 *param_1)
   uint local_29;
   undefined1 local_6;
 
-  uVar3 = param_1->field_0004;
+  uVar6 = param_1->field_0004;
   memset(local_5c, 0, 0x58); /* compiler bulk-zero initialization */
-  iVar5 = 0;
-  switch(uVar3) {
+  iVar4 = 0;
+  switch(uVar6) {
   case 0x96:
   case 0x97:
   case 0x98:
@@ -115,7 +115,7 @@ void __cdecl FUN_00645880(RecoveredRecord_STBoatC_00645880 *param_1)
     local_40 = param_1->field_0010;
     local_36 = param_1->field_001A;
     local_3c = param_1->field_0014;
-    local_34 = (uint)(uVar3 != 0xb0);
+    local_34 = (uint)(uVar6 != 0xb0);
     local_38 = param_1->field_0018;
     local_5c[0] = 0x15e;
     local_5c[3] = 1;
@@ -124,11 +124,11 @@ void __cdecl FUN_00645880(RecoveredRecord_STBoatC_00645880 *param_1)
     return;
   case 0xb5:
     uVar1 = param_1->field_0020;
-    puVar6 = local_98;
-    memset(puVar6, 0, 0x38); /* compiler bulk-zero initialization */
-    puVar6 = (undefined4 *)((byte *)puVar6 + 0x38);
-    uVar3 = param_1->field_001C;
-    *(undefined2 *)puVar6 = 0;
+    puVar5 = local_98;
+    memset(puVar5, 0, 0x38); /* compiler bulk-zero initialization */
+    puVar5 = (undefined4 *)((byte *)puVar5 + 0x38);
+    uVar6 = param_1->field_001C;
+    *(undefined2 *)puVar5 = 0;
     local_98[1] = param_1->field_0000;
     local_7c = (int)(short)param_1->field_0012;
     local_80 = (int)(short)param_1->field_0010;
@@ -141,35 +141,35 @@ void __cdecl FUN_00645880(RecoveredRecord_STBoatC_00645880 *param_1)
     local_98[3] = 1;
     local_68 = 300;
     local_6c = 4;
-    local_64 = uVar3;
+    local_64 = uVar6;
     local_60 = uVar1;
     g_playSystem_00802A38->vfunc_08(0x150,0,0,(short)local_98,0);
     return;
   }
   local_EAX_69 = LookupRecordByte((char)param_1->field_0000);
-  uVar3 = local_EAX_69 & 0xff;
-  if (uVar3 == 1) {
-    iVar5 = thunk_FUN_004e60d0(param_1->field_0000,0x3c);
-    if ((0 < iVar5) || (iVar5 = thunk_FUN_004e60d0(param_1->field_0000,0x9a), 0 < iVar5))
+  local_EAX_69 = (int)(byte)local_EAX_69;
+  if (local_EAX_69 == 1) {
+    iVar4 = thunk_FUN_004e60d0(param_1->field_0000,0x3c);
+    if ((0 < iVar4) || (iVar4 = thunk_FUN_004e60d0(param_1->field_0000,0x9a), 0 < iVar4))
     goto LAB_00645950;
   }
   else {
-    if (uVar3 == 2) {
-      iVar5 = thunk_FUN_004e60d0(param_1->field_0000,0x91);
-      if (iVar5 < 1) {
-        uVar3 = param_1->field_0000;
-        iVar5 = 0x41;
+    if (local_EAX_69 == 2) {
+      iVar4 = thunk_FUN_004e60d0(param_1->field_0000,0x91);
+      if (iVar4 < 1) {
+        uVar6 = param_1->field_0000;
+        iVar4 = 0x41;
 LAB_00645914:
-        iVar5 = thunk_FUN_004e60d0(uVar3,iVar5);
-        if (iVar5 < 1) goto cf_common_exit_00645953;
+        iVar4 = thunk_FUN_004e60d0(uVar6,iVar4);
+        if (iVar4 < 1) goto cf_common_exit_00645953;
       }
     }
     else {
-      if (uVar3 != 3) goto cf_common_exit_00645953;
-      iVar5 = thunk_FUN_004e60d0(param_1->field_0000,0x4b);
-      if (iVar5 < 1) {
-        uVar3 = param_1->field_0000;
-        iVar5 = 0x4c;
+      if (local_EAX_69 != 3) goto cf_common_exit_00645953;
+      iVar4 = thunk_FUN_004e60d0(param_1->field_0000,0x4b);
+      if (iVar4 < 1) {
+        uVar6 = param_1->field_0000;
+        iVar4 = 0x4c;
         goto LAB_00645914;
       }
     }
@@ -191,17 +191,18 @@ cf_common_exit_00645953:
   local_5c[3] = 1;
   local_5c[2] = 1;
   uVar2 = LookupRecordByte((char)local_5c[1]);
-  if ((uVar2 & 0xffU) == 1) {
+  uVar2 = (int)(byte)uVar2;
+  if (uVar2 == 1) {
     GVar7 = param_1->field_0004;
-    uVar3 = param_1->field_0000;
+    uVar6 = param_1->field_0000;
   }
   else {
-    if ((uVar2 & 0xffU) != 2) goto LAB_006459df;
+    if (uVar2 != 2) goto LAB_006459df;
     GVar7 = param_1->field_0004;
-    uVar3 = param_1->field_0000;
+    uVar6 = param_1->field_0000;
   }
-  uVar4 = thunk_FUN_00645d30(uVar3,GVar7);
-  local_30 = (undefined1)uVar4;
+  uVar3 = thunk_FUN_00645d30(uVar6,GVar7);
+  local_30 = (undefined1)uVar3;
 LAB_006459df:
   local_2f = param_1->field_001C;
   local_2b = param_1->field_0020;

@@ -45,6 +45,7 @@ import ghidra.program.model.address.AddressSetView;
 import ghidra.program.model.data.DataType;
 import ghidra.program.model.data.DataTypeComponent;
 import ghidra.program.model.data.DataTypeManager;
+import ghidra.program.model.data.Array;
 import ghidra.program.model.data.Enum;
 import ghidra.program.model.data.Pointer;
 import ghidra.program.model.data.Structure;
@@ -87,7 +88,11 @@ public class STDecompExport extends GhidraScript {
     // Bump only when normalize/catalogue semantics change. Hashing this entire source file
     // made an unrelated manifest or I/O edit rescan all 5,000+ bodies.
     private static final String FUNCTION_ANALYSIS_LOGIC_ID =
-        "st-function-analysis-v3-structural-copy-grid";
+        "st-function-analysis-v6-narrow-returns-low-pieces-darray-record-address";
+    private static final Pattern NARROW_RETURN_PIECE_ASSIGNMENT = Pattern.compile(
+        "(?<variable>[A-Za-z_$][A-Za-z0-9_$]*)\\._0_(?<width>[12])_\\s*=\\s*" +
+        "(?<callee>[A-Za-z_$][A-Za-z0-9_$]*(?:::[A-Za-z_$][A-Za-z0-9_$]*)*)" +
+        "\\s*\\(");
     private static final Pattern INT3_ASSIGNMENT = Pattern.compile(
         "^(\\s*)([A-Za-z_][A-Za-z0-9_]*)\\s*=\\s*\\(code \\*\\)swi\\(3\\);\\s*$");
     private static final Pattern ASSIGNED_INDIRECT_CALL = Pattern.compile(
@@ -206,6 +211,22 @@ public class STDecompExport extends GhidraScript {
     private static final Pattern DARRAY_ELEMENT_ADDRESS = Pattern.compile(
         "\\b([A-Za-z_][A-Za-z0-9_]*)->elementSize\\s*\\*\\s*([^+;]+?)\\s*\\+\\s*" +
         "(?:\\(int\\)\\s*)?\\1->data\\b");
+    private static final Pattern DARRAY_TYPED_ELEMENT_ADDRESS = Pattern.compile(
+        "\\((?<type>[A-Za-z_$][A-Za-z0-9_$: ]*)\\s*\\*\\)\\s*\\(\\s*" +
+        "(?<array>[A-Za-z_$][A-Za-z0-9_$]*)->elementSize\\s*\\*\\s*" +
+        "(?<index>[^+;]+?)\\s*\\+\\s*\\(int\\)\\s*\\k<array>->data\\s*\\)",
+        Pattern.MULTILINE);
+    private static final String SIMPLE_RECORD_INDEX =
+        "(?:\\([^()\\r\\n]+\\)\\s*)*[A-Za-z_$][A-Za-z0-9_$]*" +
+        "(?:(?:->|\\.)[A-Za-z_$][A-Za-z0-9_$]*|\\[[^]\\r\\n]+\\])*";
+    private static final Pattern GLOBAL_RECORD_ADDRESS_FORWARD = Pattern.compile(
+        "(?<index>" + SIMPLE_RECORD_INDEX + ")\\s*\\*\\s*" +
+        "(?<stride>0x[0-9A-Fa-f]+|[0-9]+)\\s*\\+\\s*" +
+        "(?<address>0x[0-9A-Fa-f]+)");
+    private static final Pattern GLOBAL_RECORD_ADDRESS_REVERSE = Pattern.compile(
+        "(?<address>0x[0-9A-Fa-f]+)\\s*\\+\\s*" +
+        "(?<index>" + SIMPLE_RECORD_INDEX + ")\\s*\\*\\s*" +
+        "(?<stride>0x[0-9A-Fa-f]+|[0-9]+)");
     private static final Pattern SIMPLE_POINTER_DECLARATION = Pattern.compile(
         "(?m)^(?<indent>[ \\t]*)(?<type>[A-Za-z_$][A-Za-z0-9_$: ]*)" +
         "\\s*(?<stars>\\*+)\\s*(?<name>[A-Za-z_$][A-Za-z0-9_$]*)\\s*;$");
@@ -291,6 +312,8 @@ public class STDecompExport extends GhidraScript {
     private final Map<String, QualityAggregate> qualityAggregates = new TreeMap<>();
     private Map<String, DArrayDescriptor> darrayDescriptors = Map.of();
     private Set<Long> globalRecordStrides = Set.of();
+    private List<GlobalRecordDescriptor> globalRecordDescriptors = List.of();
+    private Map<String, Integer> narrowReturnWidths = Map.of();
     private Map<String, List<RenderedCallableDependency>> renderedCallableMembers;
     private String functionAnalysisSourceHash = "";
 
@@ -320,7 +343,10 @@ public class STDecompExport extends GhidraScript {
         symbols = currentProgram.getSymbolTable();
         functionAnalysisSourceHash = sha256Text(FUNCTION_ANALYSIS_LOGIC_ID);
         darrayDescriptors = recoveredDArrayDescriptors();
-        globalRecordStrides = recoveredGlobalRecordStrides();
+        globalRecordDescriptors = recoveredGlobalRecordDescriptors();
+        globalRecordStrides = globalRecordDescriptors.stream()
+            .map(GlobalRecordDescriptor::stride).collect(java.util.stream.Collectors.toUnmodifiableSet());
+        narrowReturnWidths = recoveredNarrowReturnWidths();
         Path outputDirectory = outputRoot.toPath().toAbsolutePath().normalize();
         Path finalProgramRoot =
             outputDirectory.resolve(safeFileName(currentProgram.getName()));
@@ -1036,19 +1062,29 @@ public class STDecompExport extends GhidraScript {
         NormalizedCode bulkZero = normalizeBulkZeroLoops(legacyBulkCopy.code);
         NormalizedCode bulkCopy = normalizeBulkCopyLoops(bulkZero.code);
         NormalizedCode darrayAliases = normalizeDArrayElementAliases(bulkCopy.code);
+        NormalizedCode darrayAddresses =
+            normalizeDArrayElementAddresses(darrayAliases.code);
         NormalizedCode virtualCalls =
-            normalizeExplicitThisVirtualCalls(darrayAliases.code);
+            normalizeExplicitThisVirtualCalls(darrayAddresses.code);
         NormalizedCode affineCancellation =
             normalizeAffineSelfCancellation(virtualCalls.code);
         NormalizedCode gridIndexing =
             normalizeGridCellIndexing(affineCancellation.code);
-        code = gridIndexing.code;
+        NormalizedCode recordAddresses =
+            normalizeGlobalRecordAddresses(gridIndexing.code);
+        NormalizedCode narrowReturns =
+            normalizeNarrowReturnPieceAssignments(recordAddresses.code);
+        NormalizedCode lowPieces =
+            normalizeLowPieceCompositions(narrowReturns.code);
+        code = lowPieces.code;
         String[] lines = code.split("\\R", -1);
         List<String> output = new ArrayList<>();
         int replacements = legacyBulkCopy.replacements +
             bulkZero.replacements + bulkCopy.replacements +
-            darrayAliases.replacements + virtualCalls.replacements +
-            affineCancellation.replacements + gridIndexing.replacements;
+            darrayAliases.replacements + darrayAddresses.replacements +
+            virtualCalls.replacements + affineCancellation.replacements +
+            gridIndexing.replacements + recordAddresses.replacements +
+            narrowReturns.replacements + lowPieces.replacements;
         for (int index = 0; index < lines.length; index++) {
             Matcher assignment = INT3_ASSIGNMENT.matcher(lines[index]);
             if (!assignment.matches() || index + 1 >= lines.length) {
@@ -1097,6 +1133,255 @@ public class STDecompExport extends GhidraScript {
         }
         matcher.appendTail(output);
         return new NormalizedCode(output.toString(), replacements);
+    }
+
+    /** Exact runtime-stride element address. The descriptor remains generic;
+     * only the consumer's already rendered pointee type becomes a template view. */
+    private NormalizedCode normalizeDArrayElementAddresses(String code) {
+        Matcher matcher = DARRAY_TYPED_ELEMENT_ADDRESS.matcher(code);
+        StringBuffer output = new StringBuffer();
+        int replacements = 0;
+        while (matcher.find()) {
+            String type = matcher.group("type").trim();
+            String array = matcher.group("array");
+            String index = oneLine(matcher.group("index"));
+            if (type.isBlank() || index.isBlank() || index.contains(",")) {
+                matcher.appendReplacement(output,
+                    Matcher.quoteReplacement(matcher.group()));
+                continue;
+            }
+            matcher.appendReplacement(output, Matcher.quoteReplacement(
+                "DArrayAt<" + type + ">(" + array + ", " + index + ")"));
+            replacements++;
+        }
+        matcher.appendTail(output);
+        return new NormalizedCode(output.toString(), replacements);
+    }
+
+    /** Fold an absolute interior address only when it lies in a generated,
+     * exact-stride global record array and the multiplied stride agrees. */
+    private NormalizedCode normalizeGlobalRecordAddresses(String code) {
+        RewriteAccumulator rewrite = new RewriteAccumulator(code);
+        ReplacementFunction replacement = matcher -> {
+            Long stride = fingerprintImmediate(matcher.group("stride"));
+            Long address = fingerprintImmediate(matcher.group("address"));
+            if (stride == null || address == null) return null;
+            for (GlobalRecordDescriptor descriptor : globalRecordDescriptors) {
+                long end = descriptor.base + descriptor.stride * descriptor.count;
+                if (stride != descriptor.stride || address < descriptor.base ||
+                        address >= end) continue;
+                long offset = (address - descriptor.base) % descriptor.stride;
+                // An address in a later physical record is equivalent to an
+                // adjusted index, not to the original expression; retain it.
+                if (address - descriptor.base >= descriptor.stride) return null;
+                return "STRecordByteAddress(" + descriptor.name + ", " +
+                    oneLine(matcher.group("index")) + ", 0x" +
+                    Long.toHexString(offset).toUpperCase(Locale.ROOT) + ")";
+            }
+            return null;
+        };
+        rewrite.replace(GLOBAL_RECORD_ADDRESS_FORWARD, replacement);
+        rewrite.replace(GLOBAL_RECORD_ADDRESS_REVERSE, replacement);
+        return new NormalizedCode(rewrite.code, rewrite.replacements);
+    }
+
+    /**
+     * Once the database ABI says that a callee returns a byte or word, its source-level
+     * result is that complete scalar.  Ghidra may still preserve the machine fact that
+     * only AL/AX was written by assigning the call to {@code value._0_1_} or
+     * {@code value._0_2_}.  That spelling is neither C nor the recovered source ABI.
+     * Fold only a one-line direct call whose rendered name is unambiguous across the
+     * entire program and whose piece width exactly matches the callee return width.
+     */
+    private NormalizedCode normalizeNarrowReturnPieceAssignments(String code) {
+        String normalized = code;
+        int replacements = 0;
+        int search = 0;
+        while (true) {
+            Matcher matcher = NARROW_RETURN_PIECE_ASSIGNMENT.matcher(normalized);
+            if (!matcher.find(search)) break;
+            int width = Integer.parseInt(matcher.group("width"));
+            if (!Integer.valueOf(width).equals(
+                    narrowReturnWidths.get(matcher.group("callee")))) {
+                search = matcher.end();
+                continue;
+            }
+            int open = matcher.end() - 1;
+            int close = matchingParenthesis(normalized, open);
+            if (close < 0) {
+                search = matcher.end();
+                continue;
+            }
+            int after = close + 1;
+            while (after < normalized.length() &&
+                    Character.isWhitespace(normalized.charAt(after))) after++;
+            if (after >= normalized.length() ||
+                    ";,)".indexOf(normalized.charAt(after)) < 0) {
+                search = close + 1;
+                continue;
+            }
+            String replacement = matcher.group("variable") + " = " +
+                matcher.group("callee") + normalized.substring(open, close + 1);
+            normalized = normalized.substring(0, matcher.start()) + replacement +
+                normalized.substring(close + 1);
+            replacements++;
+            search = matcher.start() + replacement.length();
+        }
+        return new NormalizedCode(normalized, replacements);
+    }
+
+    /** Name collisions are accepted only when every function with that rendered name
+     * has the same concrete narrow return width. Wide, void, undefined, aggregate, and
+     * pointer returns deliberately poison the short name. */
+    private Map<String, Integer> recoveredNarrowReturnWidths() {
+        Map<String, Integer> widths = new HashMap<>();
+        FunctionIterator iterator = listing.getFunctions(true);
+        while (iterator.hasNext()) {
+            Function function = iterator.next();
+            int width = concreteNarrowScalarWidth(function.getReturnType());
+            mergeRenderedReturnWidth(widths, function.getName(), width);
+            mergeRenderedReturnWidth(widths, function.getName(true), width);
+        }
+        widths.entrySet().removeIf(entry -> entry.getValue() <= 0);
+        return Map.copyOf(widths);
+    }
+
+    private void mergeRenderedReturnWidth(Map<String, Integer> widths, String name, int width) {
+        if (name == null || name.isBlank()) return;
+        Integer existing = widths.get(name);
+        if (existing == null) widths.put(name, width);
+        else if (existing != width) widths.put(name, -1);
+    }
+
+    private int concreteNarrowScalarWidth(DataType type) {
+        while (type instanceof TypeDef typeDef) type = typeDef.getBaseDataType();
+        if (type == null || type instanceof Pointer || type instanceof Array ||
+                type instanceof Structure) return 0;
+        String name = type.getName().toLowerCase(Locale.ROOT);
+        if (name.contains("undefined") || name.equals("void")) return 0;
+        int length = type.getLength();
+        return length == 1 || length == 2 ? length : 0;
+    }
+
+    /** Replace Ghidra's exact CONCAT spelling for preservation of the high
+     * bytes with an ordinary low-byte/low-word update. Unknown extraout/uStack
+     * high pieces intentionally remain visible. */
+    private NormalizedCode normalizeLowPieceCompositions(String code) {
+        String normalized = code;
+        int replacements = 0;
+        for (String operation : List.of("CONCAT31", "CONCAT22", "CONCAT11")) {
+            int search = 0;
+            while (true) {
+                int start = normalized.indexOf(operation + "(", search);
+                if (start < 0) break;
+                int open = start + operation.length();
+                int close = matchingParenthesis(normalized, open);
+                if (close < 0) break;
+                List<String> arguments = splitTopLevelArguments(
+                    normalized.substring(open + 1, close));
+                if (arguments.size() != 2) {
+                    search = close + 1;
+                    continue;
+                }
+                String base = lowPieceBase(operation, arguments.get(0));
+                if (base == null) {
+                    search = close + 1;
+                    continue;
+                }
+                String helper = operation.equals("CONCAT31") ? "STReplaceLowByte" :
+                    operation.equals("CONCAT22") ? "STReplaceLowWord" :
+                    "STReplaceLowByte16";
+                String replacement = helper + "((uint32_t)(" + base + "), " +
+                    (operation.equals("CONCAT22") ? "(uint16_t)(" : "(uint8_t)(") +
+                    oneLine(arguments.get(1)) + "))";
+                normalized = normalized.substring(0, start) + replacement +
+                    normalized.substring(close + 1);
+                replacements++;
+                search = start + replacement.length();
+            }
+        }
+        return new NormalizedCode(normalized, replacements);
+    }
+
+    private String lowPieceBase(String operation, String highArgument) {
+        String high = highArgument.trim();
+        String piece = operation.equals("CONCAT31") ? "_1_3_" :
+            operation.equals("CONCAT22") ? "_2_2_" : "_1_1_";
+        Matcher field = Pattern.compile("^(.+)\\." + Pattern.quote(piece) + "$")
+            .matcher(high);
+        if (field.matches() && simplePieceBase(field.group(1)))
+            return field.group(1).trim();
+
+        String compact = high.replaceAll("\\s+", "");
+        String shift = operation.equals("CONCAT22") ? "(?:16|0x10)" : "(?:8|0x8)";
+        for (Pattern pattern : List.of(
+                Pattern.compile("^\\((?:int3|short|char)\\)\\(\\(uint\\)(.+)>>" +
+                    shift + "\\)$"),
+                Pattern.compile("^\\((?:int3|short|char)\\)\\((.+)>>" +
+                    shift + "\\)$"),
+                Pattern.compile("^\\(uint\\)(.+)>>" + shift + "$"),
+                Pattern.compile("^(.+)>>" + shift + "$"))) {
+            Matcher matcher = pattern.matcher(compact);
+            if (matcher.matches() && simplePieceBase(matcher.group(1)))
+                return matcher.group(1);
+        }
+        return null;
+    }
+
+    private boolean simplePieceBase(String value) {
+        return value != null && value.matches(
+            "[A-Za-z_$][A-Za-z0-9_$]*(?:(?:->|\\.)[A-Za-z_$][A-Za-z0-9_$]*|" +
+            "\\[[^]\\r\\n]+\\])*");
+    }
+
+    private int matchingParenthesis(String text, int open) {
+        if (open < 0 || open >= text.length() || text.charAt(open) != '(') return -1;
+        int depth = 0;
+        boolean string = false, character = false, escaped = false;
+        for (int index = open; index < text.length(); index++) {
+            char ch = text.charAt(index);
+            if (string || character) {
+                if (escaped) { escaped = false; continue; }
+                if (ch == '\\') { escaped = true; continue; }
+                if (string && ch == '"') string = false;
+                else if (character && ch == '\'') character = false;
+                continue;
+            }
+            if (ch == '"') { string = true; continue; }
+            if (ch == '\'') { character = true; continue; }
+            if (ch == '(') depth++;
+            else if (ch == ')' && --depth == 0) return index;
+        }
+        return -1;
+    }
+
+    private List<String> splitTopLevelArguments(String text) {
+        List<String> result = new ArrayList<>();
+        int parentheses = 0, brackets = 0;
+        boolean string = false, character = false, escaped = false;
+        int start = 0;
+        for (int index = 0; index < text.length(); index++) {
+            char ch = text.charAt(index);
+            if (string || character) {
+                if (escaped) { escaped = false; continue; }
+                if (ch == '\\') { escaped = true; continue; }
+                if (string && ch == '"') string = false;
+                else if (character && ch == '\'') character = false;
+                continue;
+            }
+            if (ch == '"') { string = true; continue; }
+            if (ch == '\'') { character = true; continue; }
+            if (ch == '(') parentheses++;
+            else if (ch == ')') parentheses--;
+            else if (ch == '[') brackets++;
+            else if (ch == ']') brackets--;
+            else if (ch == ',' && parentheses == 0 && brackets == 0) {
+                result.add(text.substring(start, index).trim());
+                start = index + 1;
+            }
+        }
+        result.add(text.substring(start).trim());
+        return result;
     }
 
     /**
@@ -1991,21 +2276,28 @@ public class STDecompExport extends GhidraScript {
         return result;
     }
 
-    private Set<Long> recoveredGlobalRecordStrides() {
-        Set<Long> result = new TreeSet<>();
-        Iterator<DataType> iterator =
-            currentProgram.getDataTypeManager().getAllDataTypes();
+    private List<GlobalRecordDescriptor> recoveredGlobalRecordDescriptors() {
+        List<GlobalRecordDescriptor> result = new ArrayList<>();
+        DataIterator iterator = listing.getDefinedData(true);
         while (iterator.hasNext()) {
-            DataType type = iterator.next();
-            String description = nullToEmpty(type.getDescription());
-            if (!(type instanceof Structure structure) ||
-                    !description.contains(
-                        "[STGlobalRecordApplier] Generated packed global record"))
-                continue;
-            int length = structure.getLength();
-            if (length >= 0x40) result.add((long)length);
+            Data data = iterator.next();
+            DataType type = data.getDataType();
+            while (type instanceof TypeDef typedef) type = typedef.getBaseDataType();
+            if (!(type instanceof Array array)) continue;
+            DataType element = array.getDataType();
+            while (element instanceof TypeDef typedef) element = typedef.getBaseDataType();
+            if (!(element instanceof Structure structure) || structure.getLength() < 0x40 ||
+                    !nullToEmpty(structure.getDescription()).contains(
+                        "[STGlobalRecordApplier] Generated packed global record")) continue;
+            Symbol symbol = symbols.getPrimarySymbol(data.getAddress());
+            String name = symbol == null ? "" : symbol.getName();
+            if (!name.matches("[A-Za-z_$][A-Za-z0-9_$]*")) continue;
+            long base = data.getAddress().getOffset();
+            result.add(new GlobalRecordDescriptor(name, base,
+                structure.getLength(), array.getNumElements()));
         }
-        return Set.copyOf(result);
+        result.sort(Comparator.comparingLong(GlobalRecordDescriptor::base));
+        return List.copyOf(result);
     }
 
     private boolean containsRecoveredGlobalRecordStride(String line) {
@@ -4171,17 +4463,33 @@ public class STDecompExport extends GhidraScript {
             "#ifndef ST_PSEUDOCODE_RUNTIME_H\n" +
             "#define ST_PSEUDOCODE_RUNTIME_H\n\n" +
             "/* Standalone corpus code has no debugger continuation path. */\n" +
+            "#include <stddef.h>\n" +
             "#include <stdint.h>\n" +
             "#include <stdlib.h>\n" +
             "#include <string.h>\n" +
             "static inline uint32_t STPackTagged24(uint32_t tag, uint32_t value) {\n" +
             "    return (value & 0x00ffffffu) | ((tag & 0xffu) << 24);\n" +
             "}\n" +
+            "static inline uint32_t STReplaceLowByte(uint32_t original, uint8_t low) {\n" +
+            "    return (original & 0xffffff00u) | (uint32_t)low;\n" +
+            "}\n" +
+            "static inline uint32_t STReplaceLowWord(uint32_t original, uint16_t low) {\n" +
+            "    return (original & 0xffff0000u) | (uint32_t)low;\n" +
+            "}\n" +
+            "static inline uint16_t STReplaceLowByte16(uint16_t original, uint8_t low) {\n" +
+            "    return (uint16_t)((original & 0xff00u) | (uint16_t)low);\n" +
+            "}\n" +
             "#if defined(__cplusplus)\n" +
             "template <typename Element, typename Array>\n" +
             "static inline Element *DArrayAt(Array *array, uint32_t index) {\n" +
             "    return reinterpret_cast<Element *>(\n" +
             "        reinterpret_cast<uint8_t *>(array->data) + array->elementSize * index);\n" +
+            "}\n" +
+            "template <typename Record, size_t Count, typename Index>\n" +
+            "static inline uintptr_t STRecordByteAddress(Record (&records)[Count], Index index,\n" +
+            "        uint32_t byteOffset) {\n" +
+            "    return reinterpret_cast<uintptr_t>(\n" +
+            "        &records[static_cast<int>(index)]) + byteOffset;\n" +
             "}\n" +
             "template <typename Grid, typename X, typename Y, typename Z>\n" +
             "static inline auto &STGridAt3D(Grid &grid, X x, Y y, Z z) {\n" +
@@ -5037,6 +5345,8 @@ public class STDecompExport extends GhidraScript {
     private record DArrayAliasNormalization(String code, int replacements) { }
     private record DArrayIntervalNormalization(String code, int replacements) { }
     private record DArrayElementField(long offset, int width, String name) { }
+    private record GlobalRecordDescriptor(String name, long base, long stride,
+        long count) { }
     private record TypedAlias(String name, String elementName) { }
     private record FieldRewrite(String code, int replacements) { }
     private record StatementWindow(String text, int endIndex) { }

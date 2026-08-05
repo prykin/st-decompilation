@@ -70,8 +70,7 @@ AiFltClassTy::sub_0065FA60(AiFltClassTy *this,int param_1,int param_2,short *par
       local_18 = local_10->count;
       while (index = local_18 - 1, -1 < (int)index) {
         if (index < array->count) {
-          /* ST_PSEUDO[dynamic_array_indexing]: expected DArrayAt<T>(array, index) (runtime stride) */
-          puVar3 = (undefined4 *)(array->elementSize * index + (int)array->data);
+          puVar3 = DArrayAt<undefined4>(array, index);
         }
         else {
           puVar3 = nullptr;

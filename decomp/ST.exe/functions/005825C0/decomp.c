@@ -144,10 +144,8 @@ LAB_005829f4:
         iVar10 = this->field_0010;
         bVar2 = *(byte *)&pSVar7[1].vtable;
         bVar3 = *(byte *)&this->field_0024;
-        /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-        local_1c = CONCAT31(local_1c._1_3_,bVar2);
-        /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-        local_28 = CONCAT31(local_28._1_3_,bVar3);
+        local_1c = STReplaceLowByte((uint32_t)(local_1c), (uint8_t)(bVar2));
+        local_28 = STReplaceLowByte((uint32_t)(local_28), (uint8_t)(bVar3));
         if (*(char *)(iVar10 + 0x146f) == '\0') {
           if (bVar2 == bVar3) {
 LAB_00582bb0:

@@ -694,8 +694,7 @@ void __thiscall CPanelTy::InitCPanel(CPanelTy *this)
           FUN_006b28c0(g_ddxContext_008075A8,(uint)*ppuVar16,1);
         }
         bVar2 = bVar2 + 1;
-        /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-        local_1c = (uint *)CONCAT31(local_1c._1_3_,bVar2);
+        local_1c = (uint *)STReplaceLowByte((uint32_t)(local_1c), (uint8_t)(bVar2));
         uVar14 = (uint)bVar2;
       } while (uVar14 < (-(uint)(DAT_00807348 != '\0') & 2) + 9);
     }

@@ -18,7 +18,6 @@ int __thiscall AiPlrClassTy::sub_0067BEF0(AiPlrClassTy *this)
     return iVar1;
   }
   this->field_068D = 0x100;
-  /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-  return CONCAT22((short)((uint)iVar1 >> 0x10),0x100);
+  return STReplaceLowWord((uint32_t)(iVar1), (uint16_t)(0x100));
 }
 

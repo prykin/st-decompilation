@@ -114,8 +114,7 @@ short * __cdecl LoadLand(cMf32 *param_1,char *text)
           do {
             uVar12 = local_c->iteratorIndex;
             if (uVar12 < local_8) {
-              /* ST_PSEUDO[dynamic_array_indexing]: expected DArrayAt<T>(local_c, uVar12) (runtime stride) */
-              piVar8 = (int *)(local_c->elementSize * uVar12 + (int)local_c->data);
+              piVar8 = DArrayAt<int>(local_c, uVar12);
               local_c->iteratorIndex = uVar12 + 1;
             }
             else {

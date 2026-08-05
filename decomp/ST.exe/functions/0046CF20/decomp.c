@@ -33,14 +33,13 @@ uint __thiscall STBoatC::CreateGame(STBoatC *this,int *param_1)
 
   uVar8 = 2;
   if (this->field_0528 == 0) {
-    /* ST_PSEUDO[unresolved_register_input,packed_or_unaligned_piece]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention; expected named packed member, bit extract/compose, or unaligned load */
-    iVar6 = CONCAT22((short)((uint)in_EDX >> 0x10),this->field_0512 * 0xc9) + 100;
-    /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
+    /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
+    iVar6 = STReplaceLowWord((uint32_t)(in_EDX), (uint16_t)(this->field_0512 * 0xc9)) + 100;
     uVar5 = (*this->vtable->vfunc_10)
                       (this->field_0041,this->field_0043,
-                       CONCAT22((short)((uint)iVar6 >> 0x10),this->field_0045),
+                       STReplaceLowWord((uint32_t)(iVar6), (uint16_t)(this->field_0045)),
                        this->field_0510 * 0xc9 + 100,(short)iVar6,
-                       CONCAT22((short)((uint)this >> 0x10),this->field_0514 * 200) + 100);
+                       STReplaceLowWord((uint32_t)(this), (uint16_t)(this->field_0514 * 200)) + 100);
     this->field_0522 = uVar5;
     this->field_0528 = 1;
   }

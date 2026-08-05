@@ -117,9 +117,8 @@ undefined4 __thiscall STGroupBoatC::GrpGuard(STGroupBoatC *this,int param_1)
         local_2c = local_2c + 1;
       } while ((int)local_2c < (int)local_20);
     }
-    /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
     STAllPlayersC::RegisterPGPair
-              (g_allPlayers_007FA174,CONCAT31((int3)(local_20 >> 8),pSVar2->field_0024),
+              (g_allPlayers_007FA174,STReplaceLowByte((uint32_t)(local_20), (uint8_t)(pSVar2->field_0024)),
                &local_8->flags,&array->flags);
     DArrayDestroy(local_8);
     if (array != nullptr) {

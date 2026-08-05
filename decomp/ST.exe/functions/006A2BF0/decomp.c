@@ -26,8 +26,7 @@ uint __cdecl FUN_006a2bf0(int param_1,int param_2,uint param_3,int param_4,uint 
         }
         uVar1 = (uint)(byte)((byte)uVar2 | 0x10) << 8;
       }
-      /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-      return (uint)CONCAT11((char)(uVar1 >> 8),(undefined1)param_5);
+      return (uint)STReplaceLowByte16((uint32_t)(uVar1), (uint8_t)((undefined1)param_5));
     }
     if (param_1 == 2) {
       /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */

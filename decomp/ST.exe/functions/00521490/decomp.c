@@ -74,8 +74,7 @@ int __thiscall InfocPanelTy::GetMessage(InfocPanelTy *this,STMessage *message)
             break;
           }
           bVar7 = (char)local_8 + 1;
-          /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-          local_8 = CONCAT31(local_8._1_3_,bVar7);
+          local_8 = STReplaceLowByte((uint32_t)(local_8), (uint8_t)(bVar7));
         } while (bVar7 < 0xc);
       }
       iVar11 = this_00->field_0178;
@@ -126,8 +125,7 @@ int __thiscall InfocPanelTy::GetMessage(InfocPanelTy *this,STMessage *message)
     iVar11 = this_00->field_003C;
     bVar7 = (&this_00->field_01AB)[*piVar2];
     uVar12 = (DAT_0080874e != '\x03') - 1 & 0x11;
-    /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-    local_c = CONCAT31(local_c._1_3_,bVar7);
+    local_c = STReplaceLowByte((uint32_t)(local_c), (uint8_t)(bVar7));
     iVar3 = piVar2[4];
     iVar6 = DAT_00806734;
     if (this_00->field_005C != 0) {

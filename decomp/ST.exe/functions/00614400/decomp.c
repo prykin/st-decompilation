@@ -102,8 +102,7 @@ void __thiscall FUN_00614400(void *this,AnonShape_00614400_1B90EA7E *param_1)
        (g_bulkInitializedRecords_008087C7[(int)pSVar6[1].vtable].field_0022 < 8)))))) {
     bVar1 = *(byte *)&pSVar6[1].vtable;
     bVar2 = *(byte *)((int)this + 0x1d9);
-    /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-    local_8 = CONCAT31(local_8._1_3_,bVar1);
+    local_8 = STReplaceLowByte((uint32_t)(local_8), (uint8_t)(bVar1));
     /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
     _local_c = CONCAT31(uStack_b,bVar2);
     if (DAT_00808a8f == '\0') {

@@ -16,8 +16,7 @@ void __thiscall FUN_00617aa0(void *this,int param_1)
       bVar2 = array->count != 0;
       do {
         if (bVar2) {
-          /* ST_PSEUDO[dynamic_array_indexing]: expected DArrayAt<T>(array, index) (runtime stride) */
-          pvVar1 = (void *)(array->elementSize * index + (int)array->data);
+          pvVar1 = DArrayAt<void>(array, index);
         }
         else {
           pvVar1 = nullptr;

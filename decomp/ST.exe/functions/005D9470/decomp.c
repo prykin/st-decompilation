@@ -368,8 +368,7 @@ LAB_005d97ca:
     }
     if ((SVar5 < MESS_SHARED_6980) || (MESS_SIDTY_6981 < SVar5)) goto cf_common_exit_005D9CCB;
     piVar7 = (message->arg1).ptr;
-    /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-    local_c = CONCAT31(local_c._1_3_,(char)message->id + 0x81);
+    local_c = STReplaceLowByte((uint32_t)(local_c), (uint8_t)((char)message->id + 0x81));
     local_20 = *piVar7 + -0xe1;
     local_18 = piVar7[2];
     local_1c = piVar7[1] - 0x1a9;

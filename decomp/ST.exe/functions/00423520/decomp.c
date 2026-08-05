@@ -53,8 +53,7 @@ uint __thiscall STGroupC::GetTOBJQty(STGroupC *this,int param_1)
       } while ((int)uVar6 < (int)local_14);
     }
     g_currentExceptionFrame = local_58.previous;
-    /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-    return CONCAT22((short)((uint)local_58.previous >> 0x10),(undefined2)local_8);
+    return STReplaceLowWord((uint32_t)(local_58.previous), (uint16_t)((undefined2)local_8));
   }
   g_currentExceptionFrame = local_58.previous;
   iVar5 = ReportDebugMessage("E:\\__titans\\wlad\\tc_grp.cpp",0x6b,0,iVar3,"%s",

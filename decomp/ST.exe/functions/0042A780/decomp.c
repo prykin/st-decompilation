@@ -22,8 +22,7 @@ void __cdecl FUN_0042a780(int *param_1)
         do {
           uVar1 = array->iteratorIndex;
           if (array->count <= uVar1) goto LAB_0042a7e7;
-          /* ST_PSEUDO[dynamic_array_indexing]: expected DArrayAt<T>(array, uVar1) (runtime stride) */
-          piVar3 = (int *)(array->elementSize * uVar1 + (int)array->data);
+          piVar3 = DArrayAt<int>(array, uVar1);
           array->iteratorIndex = uVar1 + 1;
           if (piVar3 == nullptr) goto LAB_0042a7e7;
         } while (*(int *)(iVar2 + 0x40) != *piVar3);

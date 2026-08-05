@@ -16,9 +16,8 @@ int __cdecl FUN_0067bd50(DArrayTy *param_1)
   if (0 < (int)uVar1) {
     bVar5 = uVar1 != 0;
     do {
-      /* ST_PSEUDO[dynamic_array_indexing]: expected DArrayAt<T>(param_1, uVar4) (runtime stride) */
       if ((bVar5) &&
-         (pvVar3 = (void *)(param_1->elementSize * uVar4 + (int)param_1->data),
+         (pvVar3 = DArrayAt<void>(param_1, uVar4),
          pvVar3 != nullptr)) {
         iVar2 = iVar2 + *(short *)((int)pvVar3 + 0x1a);
       }

@@ -10,7 +10,8 @@ undefined4 __fastcall FUN_004e9050(TLOBaseTy *param_1)
 
   if (param_1->field_05AC != CASE_37) goto LAB_004e914a;
   uVar2 = LookupRecordByte(*(char *)&param_1->field_0024);
-  if ((uVar2 & 0xffU) == 1) {
+  uVar2 = (int)(byte)uVar2;
+  if (uVar2 == 1) {
     pbVar4 = param_1->field_0024;
     iVar2 = 0x21;
 LAB_004e9090:
@@ -18,7 +19,7 @@ LAB_004e9090:
     uVar3 = (uint)(iVar2 != 0);
   }
   else {
-    if ((uVar2 & 0xffU) == 2) {
+    if (uVar2 == 2) {
       pbVar4 = param_1->field_0024;
       iVar2 = 0x8c;
       goto LAB_004e9090;

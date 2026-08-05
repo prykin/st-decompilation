@@ -218,8 +218,7 @@ uint * __cdecl CreateArbList(cMf32 *param_1,int param_2)
           bVar17 = uVar10 != 0;
           do {
             if (bVar17) {
-              /* ST_PSEUDO[dynamic_array_indexing]: expected DArrayAt<T>(local_10, uVar9) (runtime stride) */
-              pvVar6 = (void *)(local_10->elementSize * uVar9 + (int)local_10->data);
+              pvVar6 = DArrayAt<void>(local_10, uVar9);
             }
             else {
               pvVar6 = nullptr;

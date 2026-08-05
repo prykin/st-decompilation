@@ -180,9 +180,7 @@ void __thiscall AiEventClassTy::GetMessage(AiEventClassTy *this,STMessage *messa
           do {
             uVar32 = local_14;
             if (bVar35) {
-              /* ST_PSEUDO[dynamic_array_indexing]: expected DArrayAt<T>(pDVar12, local_14) (runtime stride) */
-              pAVar28 = (AnonShape_00652810_4F58F813 *)
-                        (pDVar12->elementSize * local_14 + (int)pDVar12->data);
+              pAVar28 = DArrayAt<AnonShape_00652810_4F58F813>(pDVar12, local_14);
             }
             else {
               pAVar28 = nullptr;
@@ -4779,8 +4777,7 @@ LAB_00654386:
                                   local_10 = pAVar14;
                                   if (0 < (int)pAVar14) {
                                     pDVar12 = &local_34;
-                                    /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-                                    local_1a0 = CONCAT31(local_1a0._1_3_,iVar7 == 0x565);
+                                    local_1a0 = STReplaceLowByte((uint32_t)(local_1a0), (uint8_t)(iVar7 == 0x565));
                                     local_c = (DArrayTy *)pAVar14;
                                     do {
                                       local_c = (DArrayTy *)pAVar14;
@@ -4990,38 +4987,23 @@ LAB_00654386:
                                                   flags),0xc,(short *)local_158,(short *)local_154,
                                                   (short *)local_150,0xfffe,0xffffffff,nullptr,
                                                   100,1,0,0);
-                                          /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-                                          __CreateObjPl(this_00,CONCAT22((short)((uint)local_150 >>
-                                                                                0x10),
-                                                                         (short)pDVar25->flags),1,
+                                          __CreateObjPl(this_00,STReplaceLowWord((uint32_t)(local_150), (uint16_t)((short)pDVar25->flags)),1,
                                                         (short *)local_158,(short *)local_154,
                                                         (short *)local_150,0xfffe,0xffffffff,
                                                         nullptr,100,1,0,0);
-                                          /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-                                          __CreateObjPl(this_00,CONCAT22((short)((uint)local_150 >>
-                                                                                0x10),
-                                                                         (short)pDVar25->flags),1,
+                                          __CreateObjPl(this_00,STReplaceLowWord((uint32_t)(local_150), (uint16_t)((short)pDVar25->flags)),1,
                                                         (short *)local_158,(short *)local_154,
                                                         (short *)local_150,0xfffe,0xffffffff,
                                                         nullptr,100,1,0,0);
-                                          /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-                                          __CreateObjPl(this_00,CONCAT22((short)((uint)local_150 >>
-                                                                                0x10),
-                                                                         (short)pDVar25->flags),2,
+                                          __CreateObjPl(this_00,STReplaceLowWord((uint32_t)(local_150), (uint16_t)((short)pDVar25->flags)),2,
                                                         (short *)local_158,(short *)local_154,
                                                         (short *)local_150,0xfffe,0xffffffff,
                                                         nullptr,100,1,0,0);
-                                          /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-                                          __CreateObjPl(this_00,CONCAT22((short)((uint)local_150 >>
-                                                                                0x10),
-                                                                         (short)pDVar25->flags),3,
+                                          __CreateObjPl(this_00,STReplaceLowWord((uint32_t)(local_150), (uint16_t)((short)pDVar25->flags)),3,
                                                         (short *)local_158,(short *)local_154,
                                                         (short *)local_150,0xfffe,0xffffffff,
                                                         nullptr,100,1,0,0);
-                                          /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-                                          __CreateObjPl(this_00,CONCAT22((short)((uint)local_150 >>
-                                                                                0x10),
-                                                                         (short)pDVar25->flags),6,
+                                          __CreateObjPl(this_00,STReplaceLowWord((uint32_t)(local_150), (uint16_t)((short)pDVar25->flags)),6,
                                                         (short *)local_158,(short *)local_154,
                                                         (short *)local_150,0xfffe,0xffffffff,
                                                         nullptr,100,1,0,0);
@@ -5040,24 +5022,15 @@ LAB_00654386:
                                                   flags),0xc,(short *)local_158,(short *)local_154,
                                                   (short *)local_150,0xfffe,0xffffffff,nullptr,
                                                   100,1,0,0);
-                                          /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-                                          __CreateObjPl(this_00,CONCAT22((short)((uint)local_150 >>
-                                                                                0x10),
-                                                                         (short)pDVar25->flags),1,
+                                          __CreateObjPl(this_00,STReplaceLowWord((uint32_t)(local_150), (uint16_t)((short)pDVar25->flags)),1,
                                                         (short *)local_158,(short *)local_154,
                                                         (short *)local_150,0xfffe,0xffffffff,
                                                         nullptr,100,1,0,0);
-                                          /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-                                          __CreateObjPl(this_00,CONCAT22((short)((uint)local_150 >>
-                                                                                0x10),
-                                                                         (short)pDVar25->flags),1,
+                                          __CreateObjPl(this_00,STReplaceLowWord((uint32_t)(local_150), (uint16_t)((short)pDVar25->flags)),1,
                                                         (short *)local_158,(short *)local_154,
                                                         (short *)local_150,0xfffe,0xffffffff,
                                                         nullptr,100,1,0,0);
-                                          /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-                                          __CreateObjPl(this_00,CONCAT22((short)((uint)local_150 >>
-                                                                                0x10),
-                                                                         (short)pDVar25->flags),2,
+                                          __CreateObjPl(this_00,STReplaceLowWord((uint32_t)(local_150), (uint16_t)((short)pDVar25->flags)),2,
                                                         (short *)local_158,(short *)local_154,
                                                         (short *)local_150,0xfffe,0xffffffff,
                                                         nullptr,100,1,0,0);
@@ -5081,38 +5054,23 @@ LAB_00655324:
                                                       ,0x18,(short *)local_158,(short *)local_154,
                                                       (short *)local_150,0xfffe,0xffffffff,
                                                       nullptr,100,1,0,0);
-                                        /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-                                        __CreateObjPl(this_00,CONCAT22((short)((uint)local_150 >>
-                                                                              0x10),
-                                                                       (short)pDVar25->flags),0xd,
+                                        __CreateObjPl(this_00,STReplaceLowWord((uint32_t)(local_150), (uint16_t)((short)pDVar25->flags)),0xd,
                                                       (short *)local_158,(short *)local_154,
                                                       (short *)local_150,0xfffe,0xffffffff,
                                                       nullptr,100,1,0,0);
-                                        /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-                                        __CreateObjPl(this_00,CONCAT22((short)((uint)local_150 >>
-                                                                              0x10),
-                                                                       (short)pDVar25->flags),0xd,
+                                        __CreateObjPl(this_00,STReplaceLowWord((uint32_t)(local_150), (uint16_t)((short)pDVar25->flags)),0xd,
                                                       (short *)local_158,(short *)local_154,
                                                       (short *)local_150,0xfffe,0xffffffff,
                                                       nullptr,100,1,0,0);
-                                        /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-                                        __CreateObjPl(this_00,CONCAT22((short)((uint)local_150 >>
-                                                                              0x10),
-                                                                       (short)pDVar25->flags),0xe,
+                                        __CreateObjPl(this_00,STReplaceLowWord((uint32_t)(local_150), (uint16_t)((short)pDVar25->flags)),0xe,
                                                       (short *)local_158,(short *)local_154,
                                                       (short *)local_150,0xfffe,0xffffffff,
                                                       nullptr,100,1,0,0);
-                                        /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-                                        __CreateObjPl(this_00,CONCAT22((short)((uint)local_150 >>
-                                                                              0x10),
-                                                                       (short)pDVar25->flags),0xf,
+                                        __CreateObjPl(this_00,STReplaceLowWord((uint32_t)(local_150), (uint16_t)((short)pDVar25->flags)),0xf,
                                                       (short *)local_158,(short *)local_154,
                                                       (short *)local_150,0xfffe,0xffffffff,
                                                       nullptr,100,1,0,0);
-                                        /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-                                        __CreateObjPl(this_00,CONCAT22((short)((uint)local_150 >>
-                                                                              0x10),
-                                                                       (short)pDVar25->flags),0x12,
+                                        __CreateObjPl(this_00,STReplaceLowWord((uint32_t)(local_150), (uint16_t)((short)pDVar25->flags)),0x12,
                                                       (short *)local_158,(short *)local_154,
                                                       (short *)local_150,0xfffe,0xffffffff,
                                                       nullptr,100,1,0,0);
@@ -5131,24 +5089,15 @@ LAB_00655324:
                                                       ,0x18,(short *)local_158,(short *)local_154,
                                                       (short *)local_150,0xfffe,0xffffffff,
                                                       nullptr,100,1,0,0);
-                                        /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-                                        __CreateObjPl(this_00,CONCAT22((short)((uint)local_150 >>
-                                                                              0x10),
-                                                                       (short)pDVar25->flags),0xd,
+                                        __CreateObjPl(this_00,STReplaceLowWord((uint32_t)(local_150), (uint16_t)((short)pDVar25->flags)),0xd,
                                                       (short *)local_158,(short *)local_154,
                                                       (short *)local_150,0xfffe,0xffffffff,
                                                       nullptr,100,1,0,0);
-                                        /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-                                        __CreateObjPl(this_00,CONCAT22((short)((uint)local_150 >>
-                                                                              0x10),
-                                                                       (short)pDVar25->flags),0xd,
+                                        __CreateObjPl(this_00,STReplaceLowWord((uint32_t)(local_150), (uint16_t)((short)pDVar25->flags)),0xd,
                                                       (short *)local_158,(short *)local_154,
                                                       (short *)local_150,0xfffe,0xffffffff,
                                                       nullptr,100,1,0,0);
-                                        /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-                                        __CreateObjPl(this_00,CONCAT22((short)((uint)local_150 >>
-                                                                              0x10),
-                                                                       (short)pDVar25->flags),0xe,
+                                        __CreateObjPl(this_00,STReplaceLowWord((uint32_t)(local_150), (uint16_t)((short)pDVar25->flags)),0xe,
                                                       (short *)local_158,(short *)local_154,
                                                       (short *)local_150,0xfffe,0xffffffff,
                                                       nullptr,100,1,0,0);
@@ -5162,52 +5111,31 @@ LAB_00655324:
                                                       ,0x19,(short *)local_158,(short *)local_154,
                                                       (short *)local_150,0xfffe,0xffffffff,
                                                       nullptr,100,1,0,0);
-                                        /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-                                        __CreateObjPl(this_00,CONCAT22((short)((uint)local_150 >>
-                                                                              0x10),
-                                                                       (short)pDVar25->flags),0x19,
+                                        __CreateObjPl(this_00,STReplaceLowWord((uint32_t)(local_150), (uint16_t)((short)pDVar25->flags)),0x19,
                                                       (short *)local_158,(short *)local_154,
                                                       (short *)local_150,0xfffe,0xffffffff,
                                                       nullptr,100,1,0,0);
-                                        /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-                                        __CreateObjPl(this_00,CONCAT22((short)((uint)local_150 >>
-                                                                              0x10),
-                                                                       (short)pDVar25->flags),0x19,
+                                        __CreateObjPl(this_00,STReplaceLowWord((uint32_t)(local_150), (uint16_t)((short)pDVar25->flags)),0x19,
                                                       (short *)local_158,(short *)local_154,
                                                       (short *)local_150,0xfffe,0xffffffff,
                                                       nullptr,100,1,0,0);
-                                        /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-                                        __CreateObjPl(this_00,CONCAT22((short)((uint)local_150 >>
-                                                                              0x10),
-                                                                       (short)pDVar25->flags),0x1e,
+                                        __CreateObjPl(this_00,STReplaceLowWord((uint32_t)(local_150), (uint16_t)((short)pDVar25->flags)),0x1e,
                                                       (short *)local_158,(short *)local_154,
                                                       (short *)local_150,0xfffe,0xffffffff,
                                                       nullptr,100,1,0,0);
-                                        /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-                                        __CreateObjPl(this_00,CONCAT22((short)((uint)local_150 >>
-                                                                              0x10),
-                                                                       (short)pDVar25->flags),0x1e,
+                                        __CreateObjPl(this_00,STReplaceLowWord((uint32_t)(local_150), (uint16_t)((short)pDVar25->flags)),0x1e,
                                                       (short *)local_158,(short *)local_154,
                                                       (short *)local_150,0xfffe,0xffffffff,
                                                       nullptr,100,1,0,0);
-                                        /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-                                        __CreateObjPl(this_00,CONCAT22((short)((uint)local_150 >>
-                                                                              0x10),
-                                                                       (short)pDVar25->flags),0x1e,
+                                        __CreateObjPl(this_00,STReplaceLowWord((uint32_t)(local_150), (uint16_t)((short)pDVar25->flags)),0x1e,
                                                       (short *)local_158,(short *)local_154,
                                                       (short *)local_150,0xfffe,0xffffffff,
                                                       nullptr,100,1,0,0);
-                                        /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-                                        __CreateObjPl(this_00,CONCAT22((short)((uint)local_150 >>
-                                                                              0x10),
-                                                                       (short)pDVar25->flags),0x20,
+                                        __CreateObjPl(this_00,STReplaceLowWord((uint32_t)(local_150), (uint16_t)((short)pDVar25->flags)),0x20,
                                                       (short *)local_158,(short *)local_154,
                                                       (short *)local_150,0xfffe,0xffffffff,
                                                       nullptr,100,1,0,0);
-                                        /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-                                        __CreateObjPl(this_00,CONCAT22((short)((uint)local_150 >>
-                                                                              0x10),
-                                                                       (short)pDVar25->flags),0x22,
+                                        __CreateObjPl(this_00,STReplaceLowWord((uint32_t)(local_150), (uint16_t)((short)pDVar25->flags)),0x22,
                                                       (short *)local_158,(short *)local_154,
                                                       (short *)local_150,0xfffe,0xffffffff,
                                                       nullptr,100,1,0,0);
@@ -5218,17 +5146,11 @@ LAB_00655324:
                                                       ,0x19,(short *)local_158,(short *)local_154,
                                                       (short *)local_150,0xfffe,0xffffffff,
                                                       nullptr,100,1,0,0);
-                                        /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-                                        __CreateObjPl(this_00,CONCAT22((short)((uint)local_150 >>
-                                                                              0x10),
-                                                                       (short)pDVar25->flags),0x19,
+                                        __CreateObjPl(this_00,STReplaceLowWord((uint32_t)(local_150), (uint16_t)((short)pDVar25->flags)),0x19,
                                                       (short *)local_158,(short *)local_154,
                                                       (short *)local_150,0xfffe,0xffffffff,
                                                       nullptr,100,1,0,0);
-                                        /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-                                        __CreateObjPl(this_00,CONCAT22((short)((uint)local_150 >>
-                                                                              0x10),
-                                                                       (short)pDVar25->flags),0x19,
+                                        __CreateObjPl(this_00,STReplaceLowWord((uint32_t)(local_150), (uint16_t)((short)pDVar25->flags)),0x19,
                                                       (short *)local_158,(short *)local_154,
                                                       (short *)local_150,0xfffe,0xffffffff,
                                                       nullptr,100,1,0,0);
@@ -5240,38 +5162,23 @@ LAB_00655324:
                                                       ,0x19,(short *)local_158,(short *)local_154,
                                                       (short *)local_150,0xfffe,0xffffffff,
                                                       nullptr,100,1,0,0);
-                                        /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-                                        __CreateObjPl(this_00,CONCAT22((short)((uint)local_150 >>
-                                                                              0x10),
-                                                                       (short)pDVar25->flags),0x19,
+                                        __CreateObjPl(this_00,STReplaceLowWord((uint32_t)(local_150), (uint16_t)((short)pDVar25->flags)),0x19,
                                                       (short *)local_158,(short *)local_154,
                                                       (short *)local_150,0xfffe,0xffffffff,
                                                       nullptr,100,1,0,0);
-                                        /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-                                        __CreateObjPl(this_00,CONCAT22((short)((uint)local_150 >>
-                                                                              0x10),
-                                                                       (short)pDVar25->flags),0x19,
+                                        __CreateObjPl(this_00,STReplaceLowWord((uint32_t)(local_150), (uint16_t)((short)pDVar25->flags)),0x19,
                                                       (short *)local_158,(short *)local_154,
                                                       (short *)local_150,0xfffe,0xffffffff,
                                                       nullptr,100,1,0,0);
-                                        /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-                                        __CreateObjPl(this_00,CONCAT22((short)((uint)local_150 >>
-                                                                              0x10),
-                                                                       (short)pDVar25->flags),0x1e,
+                                        __CreateObjPl(this_00,STReplaceLowWord((uint32_t)(local_150), (uint16_t)((short)pDVar25->flags)),0x1e,
                                                       (short *)local_158,(short *)local_154,
                                                       (short *)local_150,0xfffe,0xffffffff,
                                                       nullptr,100,1,0,0);
-                                        /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-                                        __CreateObjPl(this_00,CONCAT22((short)((uint)local_150 >>
-                                                                              0x10),
-                                                                       (short)pDVar25->flags),0x1e,
+                                        __CreateObjPl(this_00,STReplaceLowWord((uint32_t)(local_150), (uint16_t)((short)pDVar25->flags)),0x1e,
                                                       (short *)local_158,(short *)local_154,
                                                       (short *)local_150,0xfffe,0xffffffff,
                                                       nullptr,100,1,0,0);
-                                        /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-                                        __CreateObjPl(this_00,CONCAT22((short)((uint)local_150 >>
-                                                                              0x10),
-                                                                       (short)pDVar25->flags),0x1e,
+                                        __CreateObjPl(this_00,STReplaceLowWord((uint32_t)(local_150), (uint16_t)((short)pDVar25->flags)),0x1e,
                                                       (short *)local_158,(short *)local_154,
                                                       (short *)local_150,0xfffe,0xffffffff,
                                                       nullptr,100,1,0,0);
@@ -5342,21 +5249,15 @@ LAB_00655324:
                                       break;
                                     case (DArrayTy *)0xdf:
                                       if (local_158 == nullptr) {
-                                        /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-                                        thunk_FUN_004b7140(CONCAT31((int3)((uint)uVar26 >> 8),
-                                                                    (char)pDVar25->flags),
+                                        thunk_FUN_004b7140(STReplaceLowByte((uint32_t)(uVar26), (uint8_t)((char)pDVar25->flags)),
                                                            (int)local_154);
                                       }
                                       else if ((int)local_158 < 1) {
-                                        /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-                                        thunk_FUN_004b70d0(CONCAT31((int3)((uint)local_158 >> 8),
-                                                                    (char)pDVar25->flags),
+                                        thunk_FUN_004b70d0(STReplaceLowByte((uint32_t)(local_158), (uint8_t)((char)pDVar25->flags)),
                                                            (int)local_154);
                                       }
                                       else {
-                                        /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-                                        thunk_FUN_004b7080(CONCAT31((int3)((uint)uVar8 >> 8),
-                                                                    (char)pDVar25->flags),
+                                        thunk_FUN_004b7080(STReplaceLowByte((uint32_t)(uVar8), (uint8_t)((char)pDVar25->flags)),
                                                            (int)local_154);
                                       }
                                       break;
@@ -5495,11 +5396,8 @@ LAB_00655871:
                                     uVar17 = uVar32;
                                     if ((int)local_144 < 0) {
                                       local_c = (DArrayTy *)0xfffe;
-/* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
 LAB_00655972:
-                                      iVar36 = __CreateObjPl(this_00,CONCAT22((short)((uint)
-                                                  local_158 >> 0x10),
-                                                  *(undefined2 *)&local_10->vtable),(short)local_15c
+                                      iVar36 = __CreateObjPl(this_00,STReplaceLowWord((uint32_t)(local_158), (uint16_t)(*(undefined2 *)&local_10->vtable)),(short)local_15c
                                                   ,(short *)local_158,(short *)local_154,
                                                   (short *)local_150,(uint)local_c,(uint)local_14c,
                                                   local_148,local_140,local_13c,(int)local_138,
@@ -5581,12 +5479,10 @@ LAB_006559e3:
                                           else {
                                             pdVar18 = nullptr;
                                           }
-                                          /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
                                           STAllPlayersC::DestroyObjectMsg
                                                     (g_allPlayers_007FA174,
                                                      *(char *)&local_10->vtable,
-                                                     CONCAT22((short)((uint)pDVar12 >> 0x10),
-                                                              (short)*pdVar18),CASE_1,local_15c);
+                                                     STReplaceLowWord((uint32_t)(pDVar12), (uint16_t)((short)*pdVar18)),CASE_1,local_15c);
                                           uVar31 = uVar31 + 1;
                                           uVar17 = local_8->count;
                                           pDVar12 = local_8;
@@ -5642,19 +5538,15 @@ LAB_006559e3:
                                         uVar8 = extraout_EDX_02;
                                         do {
                                           if (bVar35) {
-                                            /* ST_PSEUDO[dynamic_array_indexing]: expected DArrayAt<T>(pDVar12, uVar32) (runtime stride) */
-                                            puVar19 = (undefined2 *)
-                                                      (pDVar12->elementSize * uVar32 +
-                                                      (int)pDVar12->data);
+                                            puVar19 = DArrayAt<undefined2>(pDVar12, uVar32);
                                           }
                                           else {
                                             puVar19 = nullptr;
                                           }
-                                          /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
                                           STAllPlayersC::DestroyObjectMsg
                                                     (g_allPlayers_007FA174,
                                                      *(char *)&local_10->vtable,
-                                                     CONCAT22((short)((uint)uVar8 >> 0x10),*puVar19)
+                                                     STReplaceLowWord((uint32_t)(uVar8), (uint16_t)(*puVar19))
                                                      ,CASE_1,local_134);
                                           uVar32 = uVar32 + 1;
                                           bVar35 = uVar32 < pDVar12->count;

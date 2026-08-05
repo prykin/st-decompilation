@@ -231,9 +231,7 @@ LAB_005e470e:
               goto LAB_005e48f3;
             }
             do {
-              /* ST_PSEUDO[dynamic_array_indexing]: expected DArrayAt<T>(pDVar10, uVar18) (runtime stride) */
-              pAVar16 = (AnonShape_005E10A0_819783CC *)
-                        (pDVar10->elementSize * uVar18 + (int)pDVar10->data);
+              pAVar16 = DArrayAt<AnonShape_005E10A0_819783CC>(pDVar10, uVar18);
 LAB_005e48f3:
               TTaskItemClose(this_00,pAVar16);
               pDVar10 = this_00->field_064F;
@@ -250,9 +248,7 @@ LAB_005e48f3:
               goto LAB_005e492f;
             }
             do {
-              /* ST_PSEUDO[dynamic_array_indexing]: expected DArrayAt<T>(pDVar10, uVar18) (runtime stride) */
-              pAVar16 = (AnonShape_005E10A0_819783CC *)
-                        (pDVar10->elementSize * uVar18 + (int)pDVar10->data);
+              pAVar16 = DArrayAt<AnonShape_005E10A0_819783CC>(pDVar10, uVar18);
 LAB_005e492f:
               TTaskItemClose(this_00,pAVar16);
               pDVar10 = this_00->field_0647;
@@ -269,8 +265,7 @@ LAB_005e492f:
               goto LAB_005e496b;
             }
             do {
-              /* ST_PSEUDO[dynamic_array_indexing]: expected DArrayAt<T>(pDVar10, uVar18) (runtime stride) */
-              this_01 = (SpriteClassTy *)(pDVar10->elementSize * uVar18 + (int)pDVar10->data);
+              this_01 = DArrayAt<SpriteClassTy>(pDVar10, uVar18);
 LAB_005e496b:
               SpriteClassTy::CloseSprite(this_01);
               if (*(int *)((int)&this_01[1].field_0008 + 1) != 0) {
@@ -363,15 +358,12 @@ LAB_005e496b:
         local_1c = (AnonShape_005E4570_1DAE8C90 *)(&local_18->field_0x683 + *local_c * 0xc);
         pAVar3 = *(AnonShape_006B5B10_E0D06CF1 **)local_1c;
         local_8 = (AnonShape_005E4570_F1672769 *)pAVar3->field_0008;
-        /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-        local_20 = CONCAT31(local_20._1_3_,(-(local_1c->field_000A != '\x01') & 0xecU) + 0x2c);
+        local_20 = STReplaceLowByte((uint32_t)(local_20), (uint8_t)((-(local_1c->field_000A != '\x01') & 0xecU) + 0x2c));
         if (local_c[1] == 3) {
-          /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-          local_14 = (uint *)CONCAT31(local_14._1_3_,(-(local_1c->field_0x8 != '\x01') & 0xfeU) + 3);
+          local_14 = (uint *)STReplaceLowByte((uint32_t)(local_14), (uint8_t)((-(local_1c->field_0x8 != '\x01') & 0xfeU) + 3));
         }
         else {
-          /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-          local_14 = (uint *)(CONCAT31(local_14._1_3_,(local_1c->field_0x8 != '\x01') + -1) &
+          local_14 = (uint *)(STReplaceLowByte((uint32_t)(local_14), (uint8_t)((local_1c->field_0x8 != '\x01') + -1)) &
                              0xffffff02);
         }
         local_10 = pAVar3[1].field_0004;

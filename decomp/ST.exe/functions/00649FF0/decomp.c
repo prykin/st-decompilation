@@ -119,8 +119,7 @@ FUN_00649ff0(uint *param_1,undefined4 *param_2,undefined4 *param_3,int *param_4)
     if (uVar7 != 0) {
       while (uVar7 = uVar7 - 1, -1 < (int)uVar7) {
         if (uVar7 < array->count) {
-          /* ST_PSEUDO[dynamic_array_indexing]: expected DArrayAt<T>(array, uVar7) (runtime stride) */
-          pcVar4 = (char *)(array->elementSize * uVar7 + (int)array->data);
+          pcVar4 = DArrayAt<char>(array, uVar7);
         }
         else {
           pcVar4 = nullptr;
@@ -142,9 +141,9 @@ FUN_00649ff0(uint *param_1,undefined4 *param_2,undefined4 *param_3,int *param_4)
         if (0 < (int)uVar7) {
           bVar13 = uVar7 != 0;
           do {
-            /* ST_PSEUDO[dynamic_array_indexing]: expected DArrayAt<T>(array, uVar8) (runtime stride) */
+            /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
             if (((bVar13) &&
-                (pvVar5 = (void *)(array->elementSize * uVar8 + (int)array->data),
+                (pvVar5 = DArrayAt<void>(array, uVar8),
                 pvVar5 != nullptr)) &&
                ((*(int *)((int)pvVar5 + 0x108) < 0 &&
                 ((puVar2 = *(uint **)((int)pvVar5 + 0x110), (int)local_c <= (int)puVar2 &&
@@ -164,9 +163,8 @@ FUN_00649ff0(uint *param_1,undefined4 *param_2,undefined4 *param_3,int *param_4)
             uVar8 = uVar8 + 1;
             bVar13 = uVar8 < uVar7;
           } while ((int)uVar8 < (int)uVar7);
-          /* ST_PSEUDO[dynamic_array_indexing]: expected DArrayAt<T>(array, uVar9) (runtime stride) */
           if (((-1 < (int)uVar9) && (uVar9 < uVar7)) &&
-             (pvVar5 = (void *)(array->elementSize * uVar9 + (int)array->data),
+             (pvVar5 = DArrayAt<void>(array, uVar9),
              pvVar5 != nullptr)) {
             uVar7 = 0xffffffff;
             pcVar4 = (char *)((int)pvVar5 + 0x114);
@@ -201,9 +199,9 @@ FUN_00649ff0(uint *param_1,undefined4 *param_2,undefined4 *param_3,int *param_4)
         if (0 < (int)uVar7) {
           bVar13 = uVar7 != 0;
           do {
-            /* ST_PSEUDO[dynamic_array_indexing]: expected DArrayAt<T>(array, uVar8) (runtime stride) */
+            /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
             if (((bVar13) &&
-                (pvVar5 = (void *)(array->elementSize * uVar8 + (int)array->data),
+                (pvVar5 = DArrayAt<void>(array, uVar8),
                 pvVar5 != nullptr)) &&
                ((*(uint *)((int)pvVar5 + 0x108) == local_c &&
                 ((puVar2 = *(uint **)((int)pvVar5 + 0x110), (int)local_18 <= (int)puVar2 &&
@@ -223,9 +221,8 @@ FUN_00649ff0(uint *param_1,undefined4 *param_2,undefined4 *param_3,int *param_4)
             uVar8 = uVar8 + 1;
             bVar13 = uVar8 < uVar7;
           } while ((int)uVar8 < (int)uVar7);
-          /* ST_PSEUDO[dynamic_array_indexing]: expected DArrayAt<T>(array, uVar9) (runtime stride) */
           if (((-1 < (int)uVar9) && (uVar9 < uVar7)) &&
-             (pvVar5 = (void *)(array->elementSize * uVar9 + (int)array->data),
+             (pvVar5 = DArrayAt<void>(array, uVar9),
              pvVar5 != nullptr)) {
             uVar7 = 0xffffffff;
             pcVar4 = (char *)((int)pvVar5 + 0x114);

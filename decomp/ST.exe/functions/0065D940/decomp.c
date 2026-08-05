@@ -22,8 +22,7 @@ void __thiscall FUN_0065d940(void *this,DArrayTy *param_1,int param_2)
       bVar3 = param_1->count != 0;
       do {
         if (bVar3) {
-          /* ST_PSEUDO[dynamic_array_indexing]: expected DArrayAt<T>(param_1, uVar2) (runtime stride) */
-          puVar1 = (ushort *)(param_1->elementSize * uVar2 + (int)param_1->data);
+          puVar1 = DArrayAt<ushort>(param_1, uVar2);
         }
         else {
           puVar1 = nullptr;

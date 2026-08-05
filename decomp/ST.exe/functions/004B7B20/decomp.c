@@ -20,8 +20,9 @@ FUN_004b7b20(void *this,TLOBaseTy_sub_004CAFC0_param_1Enum param_1,int param_2,u
   int iVar5;
 
   uVar3 = LookupRecordByte(*(char *)((int)this + 0x23d));
+  uVar3 = (int)(byte)uVar3;
   iVar1 = *(int *)((int)this + 0x245);
-  iVar5 = (uVar3 & 0xffU) - 1;
+  iVar5 = uVar3 + -1;
   if (param_1 == CASE_C) {
     *param_3 = *(uint *)((&PTR_DAT_007b8310)[iVar1] +
                         (param_2 + (iVar5 + *(int *)((int)this + 0x235) * 3) * 4) * 8);

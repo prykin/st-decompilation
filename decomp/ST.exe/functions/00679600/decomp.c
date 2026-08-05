@@ -34,8 +34,7 @@ void __fastcall FUN_00679600(AnonShape_00679600_B8E418A8 *param_1)
   uVar7 = param_1->field_05D7;
   if ((uVar4 != uVar7) && (uVar4 != 0xff)) {
     cVar2 = (char)uVar4;
-    /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-    local_10 = (byte *)CONCAT31(local_10._1_3_,cVar2);
+    local_10 = (byte *)STReplaceLowByte((uint32_t)(local_10), (uint8_t)(cVar2));
     /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
     _local_c = CONCAT31(uStack_b,(char)uVar7);
     if (DAT_00808a8f == '\0') {

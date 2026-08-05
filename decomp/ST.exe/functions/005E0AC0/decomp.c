@@ -53,8 +53,7 @@ void __thiscall MTaskTy::NoneMTask(MTaskTy *this)
         goto LAB_005e0b38;
       }
       do {
-        /* ST_PSEUDO[dynamic_array_indexing]: expected DArrayAt<T>(pDVar6, uVar9) (runtime stride) */
-        pAVar10 = (AnonShape_005E10A0_819783CC *)(pDVar6->elementSize * uVar9 + (int)pDVar6->data);
+        pAVar10 = DArrayAt<AnonShape_005E10A0_819783CC>(pDVar6, uVar9);
 LAB_005e0b38:
         if (((-1 < *(int *)pAVar10) && (pAVar10->field_003A != 0)) && (pAVar10->field_0031 != 0)) {
           if ((*(uint *)&pAVar10->field_0x1c - 3 < *(uint *)&pAVar10->field_0x10) &&
@@ -107,8 +106,7 @@ LAB_005e0b38:
         goto LAB_005e0ca3;
       }
       do {
-        /* ST_PSEUDO[dynamic_array_indexing]: expected DArrayAt<T>(pDVar6, uVar9) (runtime stride) */
-        pAVar10 = (AnonShape_005E10A0_819783CC *)(pDVar6->elementSize * uVar9 + (int)pDVar6->data);
+        pAVar10 = DArrayAt<AnonShape_005E10A0_819783CC>(pDVar6, uVar9);
 LAB_005e0ca3:
         if (((-1 < (int)*(uint *)pAVar10) && (*(int *)&pAVar10->field_0x10 != 0)) &&
            (*(uint *)&pAVar10->field_0x28 <
@@ -137,8 +135,7 @@ LAB_005e0ca3:
         goto LAB_005e0d20;
       }
       do {
-        /* ST_PSEUDO[dynamic_array_indexing]: expected DArrayAt<T>(pDVar6, local_8) (runtime stride) */
-        this_01 = (SpriteClassTy *)(pDVar6->elementSize * local_8 + (int)pDVar6->data);
+        this_01 = DArrayAt<SpriteClassTy>(pDVar6, local_8);
 LAB_005e0d20:
         uVar5 = local_8;
         uVar9 = this_01->field_0004;

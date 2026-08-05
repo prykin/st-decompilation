@@ -49,8 +49,7 @@ void __thiscall CPanelTy::PlayBrief(CPanelTy *this)
       if (local_10->field_024F < uVar9) {
         do {
           if (this_00->field_024F < uVar9) {
-            /* ST_PSEUDO[dynamic_array_indexing]: expected DArrayAt<T>(pDVar4, this_00->field_024F) (runtime stride) */
-            puVar11 = (undefined1 *)(pDVar4->elementSize * this_00->field_024F + (int)pDVar4->data);
+            puVar11 = DArrayAt<undefined1>(pDVar4, this_00->field_024F);
           }
           else {
             puVar11 = nullptr;

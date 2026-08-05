@@ -24,16 +24,14 @@ void __thiscall FUN_005508f0(void *this,int param_1)
   cVar7 = -1;
   uVar3 = (uint)DAT_00808aaf;
   uVar1 = 0;
-  /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-  local_c = CONCAT31(local_c._1_3_,0xff);
+  local_c = STReplaceLowByte((uint32_t)(local_c), (uint8_t)(0xff));
   local_5 = 0;
   if (uVar3 != 0) {
     pcVar5 = &DAT_00808af6;
     do {
       if ((*(int *)(pcVar5 + -6) == param_1) && (*pcVar5 == '\x01')) {
         cVar7 = pcVar5[-2];
-        /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-        local_c = CONCAT31(local_c._1_3_,cVar7);
+        local_c = STReplaceLowByte((uint32_t)(local_c), (uint8_t)(cVar7));
         break;
       }
       uVar1 = uVar1 + 1;

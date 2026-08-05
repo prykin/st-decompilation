@@ -184,15 +184,13 @@ switchD_005c8bd0_caseD_611f:
         pDVar21 = this_00->field_1E2F;
         uVar19 = (uint)(message->arg0).words.low;
         if (uVar19 < pDVar21->count) {
-          /* ST_PSEUDO[dynamic_array_indexing]: expected DArrayAt<T>(pDVar21, uVar19) (runtime stride) */
-          pvVar13 = (void *)(pDVar21->elementSize * uVar19 + (int)pDVar21->data);
+          pvVar13 = DArrayAt<void>(pDVar21, uVar19);
         }
         else {
           pvVar13 = nullptr;
         }
         cVar10 = *(char *)((int)pvVar13 + 0x104);
-        /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-        local_c = (DArrayTy *)CONCAT31(local_c._1_3_,cVar10);
+        local_c = (DArrayTy *)STReplaceLowByte((uint32_t)(local_c), (uint8_t)(cVar10));
         if (cVar10 != -1) {
           switch(cVar10) {
           case '\0':
@@ -320,8 +318,7 @@ cf_common_join_005C8ECC:
         pDVar21 = this_00->field_1E2F;
         uVar19 = (uint)(message->arg0).words.low;
         if (uVar19 < pDVar21->count) {
-          /* ST_PSEUDO[dynamic_array_indexing]: expected DArrayAt<T>(pDVar21, uVar19) (runtime stride) */
-          puVar18 = (uint *)(pDVar21->elementSize * uVar19 + (int)pDVar21->data);
+          puVar18 = DArrayAt<uint>(pDVar21, uVar19);
         }
         else {
           puVar18 = nullptr;
@@ -417,11 +414,9 @@ cf_common_join_005C8ECC:
           this_00->field_002D = 5;
           FUN_006e6080(this_00,2,uVar19,(undefined4 *)&this_00->field_0x1d);
           break;
-        /* ST_PSEUDO[dynamic_array_indexing,packed_or_unaligned_piece]: expected DArrayAt<T>(array, index) (runtime elementSize cannot be a static C array); expected named packed member, bit extract/compose, or unaligned load */
+        /* ST_PSEUDO[dynamic_array_indexing]: expected DArrayAt<T>(array, index) (runtime elementSize cannot be a static C array) */
         case 4:
-          DAT_00808a90 = CONCAT31(DAT_00808a90._1_3_,
-                                  *(undefined1 *)
-                                   (pDVar21->elementSize * uVar19 + 0x104 + (int)pDVar21->data));
+          DAT_00808a90 = STReplaceLowByte((uint32_t)(DAT_00808a90), (uint8_t)(*(undefined1 *) (pDVar21->elementSize * uVar19 + 0x104 + (int)pDVar21->data)));
           uVar19 = this_00->field_2125[4];
           this_00->field_002D = 5;
           FUN_006e6080(this_00,2,uVar19,(undefined4 *)&this_00->field_0x1d);
@@ -493,8 +488,7 @@ cf_common_join_005C8ECC:
         local_c = pDVar21;
         if (pDVar21->count != 0) {
           do {
-            /* ST_PSEUDO[dynamic_array_indexing]: expected DArrayAt<T>(pDVar21, (int)local_8) (runtime stride) */
-            pcVar15 = (char *)(pDVar21->elementSize * (int)local_8 + (int)pDVar21->data);
+            pcVar15 = DArrayAt<char>(pDVar21, (int)local_8);
             if (pcVar15 != nullptr) {
               this_00->field_1F37 = local_8;
               uVar19 = 0xffffffff;
@@ -903,8 +897,7 @@ joined_r0x005c996c:
         do {
           pDVar21 = this_00->field_1F7C;
           if (local_8 < (DArrayTy *)pDVar21->count) {
-            /* ST_PSEUDO[dynamic_array_indexing]: expected DArrayAt<T>(pDVar21, (int)local_8) (runtime stride) */
-            pvVar13 = (void *)(pDVar21->elementSize * (int)local_8 + (int)pDVar21->data);
+            pvVar13 = DArrayAt<void>(pDVar21, (int)local_8);
           }
           else {
             pvVar13 = nullptr;

@@ -150,8 +150,7 @@ void __thiscall BldObjPanelTy::InitBldObjPanel(BldObjPanelTy *this)
       auStack_320[uVar8 * 0x1c + 1] = uVar9;
 switchD_004f0850_default:
       bVar2 = (char)local_8 + 1;
-      /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-      local_8 = CONCAT31(local_8._1_3_,bVar2);
+      local_8 = STReplaceLowByte((uint32_t)(local_8), (uint8_t)(bVar2));
       uVar8 = (uint)bVar2;
     } while ((int)uVar8 < local_10);
   }

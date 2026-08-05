@@ -186,8 +186,7 @@ LAB_00509a02:
       bVar11 = (char)local_10 + 1;
       local_c = local_c + 0x27;
       local_1c = local_1c + 1;
-      /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-      local_10 = CONCAT31(local_10._1_3_,bVar11);
+      local_10 = STReplaceLowByte((uint32_t)(local_10), (uint8_t)(bVar11));
     } while (bVar11 < 6);
     local_60 = this_00->field_0008;
     local_24 = local_b44;
@@ -355,8 +354,7 @@ LAB_00509ddd:
             bVar11 = (char)local_c + 1;
             iVar5 = iVar5 + 1;
             local_8 = local_8 + 1;
-            /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-            local_c = (undefined1 *)CONCAT31(local_c._1_3_,bVar11);
+            local_c = (undefined1 *)STReplaceLowByte((uint32_t)(local_c), (uint8_t)(bVar11));
           } while (bVar11 < 6);
           g_currentExceptionFrame = local_10c.previous;
           return;

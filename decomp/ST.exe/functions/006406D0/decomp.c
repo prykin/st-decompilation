@@ -369,14 +369,15 @@ LAB_00642c6e:
       }
       thunk_FUN_00417ff0(this_00,bVar7);
       uVar16 = LookupRecordByte((char)this_00->field_0024);
-      if ((uVar16 & 0xffU) == 1) {
+      uVar16 = (int)(byte)uVar16;
+      if (uVar16 == 1) {
         iVar10 = thunk_FUN_004e60d0(this_00->field_0024,0x99);
         if (iVar10 != 0) {
           this_00->field_0x61 = ((byte)this_00->field_0x61 >> 1) + this_00->field_0x61;
         }
       }
-      else if (((uVar16 & 0xffU) == 2) &&
-              (iVar10 = thunk_FUN_004e60d0(this_00->field_0024,0x96), iVar10 != 0)) {
+      else if ((uVar16 == 2) && (iVar10 = thunk_FUN_004e60d0(this_00->field_0024,0x96), iVar10 != 0)
+              ) {
         this_00->field_0x61 = ((byte)this_00->field_0x61 >> 1) + this_00->field_0x61;
       }
       break;
@@ -868,12 +869,10 @@ switchD_00640c2d_caseD_a2:
   }
   if (this_00->field_0x27d == '\0') goto cf_common_exit_00642C8B;
   local_80 = (int)*(short *)&this_00->field_0x41;
-  /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-  local_10 = CONCAT22(local_10._2_2_,*(undefined2 *)&this_00->field_0x49);
+  local_10 = STReplaceLowWord((uint32_t)(local_10), (uint16_t)(*(undefined2 *)&this_00->field_0x49));
   sVar9 = *(short *)&this_00->field_0x47;
   local_7c = (int)*(short *)&this_00->field_0x43;
-  /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-  local_84 = CONCAT22(local_84._2_2_,*(undefined2 *)&this_00->field_0x4b);
+  local_84 = STReplaceLowWord((uint32_t)(local_84), (uint16_t)(*(undefined2 *)&this_00->field_0x4b));
   local_78 = (int)*(short *)&this_00->field_0x45;
   iVar10 = STJellyGunC::sub_00415ED0((STJellyGunC *)this_00,&local_a4,&local_9c);
   if (iVar10 == -1) {

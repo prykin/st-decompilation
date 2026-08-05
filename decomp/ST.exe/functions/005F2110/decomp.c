@@ -39,9 +39,8 @@ undefined4 __thiscall STManBasisC::sub_005F2110(STManBasisC *this,undefined4 *pa
     if (0 < (int)pDVar2->count) {
       do {
         pDVar2 = this->field_003C;
-        /* ST_PSEUDO[dynamic_array_indexing]: expected DArrayAt<T>(pDVar2, uVar5) (runtime stride) */
         if ((uVar5 < pDVar2->count) &&
-           (pvVar3 = (void *)(pDVar2->elementSize * uVar5 + (int)pDVar2->data),
+           (pvVar3 = DArrayAt<void>(pDVar2, uVar5),
            pvVar3 != nullptr)) {
           *(undefined4 *)((int)pvVar3 + 0x18) = 0xffffffff;
         }

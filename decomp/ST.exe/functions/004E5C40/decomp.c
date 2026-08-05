@@ -9,8 +9,7 @@ bool FUN_004e5c40(byte *param_1,uint param_2)
 {
   if ((((-1 < (int)param_1) && ((int)param_1 < 8)) && (0 < (int)param_2)) && ((int)param_2 < 0x9b))
   {
-    /* ST_PSEUDO[flattened_global_record_array]: expected typedRecordArray[index].field after inferred base/stride proof */
-    return (*(byte *)((int)param_1 * 0xa62 + 0x7f511f + ((int)(param_2 ^ 7) >> 3)) >>
+    return (*(byte *)(STRecordByteAddress(g_packedRecords_A62x8, (int)param_1, 0x2FF) + ((int)(param_2 ^ 7) >> 3)) >>
             ((param_2 ^ 7) & 7) & 1) != 0;
   }
   return false;

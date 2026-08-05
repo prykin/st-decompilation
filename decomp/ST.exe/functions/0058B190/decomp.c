@@ -300,10 +300,9 @@ LAB_0058b6f6:
     *param_1 = sVar9;
     *param_2 = sVar10;
     *param_3 = (short)local_c;
-    /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
     sVar2 = (*this->vtable->vfunc_10)
                       (this->field_0041,this->field_0043,
-                       CONCAT22((short)((uint)local_c >> 0x10),this->field_0045),sVar9,sVar10,
+                       STReplaceLowWord((uint32_t)(local_c), (uint16_t)(this->field_0045)),sVar9,sVar10,
                        local_c);
     *param_4 = sVar2 / 0x2d - (short)((int)sVar2 / -0x4c000000);
     sub_0058AF70(this,sVar9,sVar10,(short)local_c);

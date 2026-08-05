@@ -61,8 +61,7 @@ STAllPlayersC::AddObjToTmp
     STDebugBreak(); /* noreturn in standalone pseudocode */
   }
   if (param_2 == 0) {
-    /* ST_PSEUDO[flattened_global_record_array]: expected typedRecordArray[index].field after inferred base/stride proof */
-    local_10 = param_1 * 0xa62 + 0x7f4f83;
+    local_10 = STRecordByteAddress(g_packedRecords_A62x8, param_1, 0x163);
     if (param_3 != 0) goto LAB_0042bc00;
     thunk_FUN_0043fc50(CASE_1,0);
     GVar7 = CASE_2;
@@ -74,8 +73,7 @@ STAllPlayersC::AddObjToTmp
                  0x1f8);
       goto LAB_0042bc00;
     }
-    /* ST_PSEUDO[flattened_global_record_array]: expected typedRecordArray[index].field after inferred base/stride proof */
-    local_10 = param_1 * 0xa62 + 0x7f4fd3;
+    local_10 = STRecordByteAddress(g_packedRecords_A62x8, param_1, 0x1B3);
     if (param_3 != 0) goto LAB_0042bc00;
     thunk_FUN_0043fc50(CASE_4,0);
     GVar7 = CASE_5;

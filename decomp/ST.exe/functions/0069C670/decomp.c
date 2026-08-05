@@ -15,9 +15,8 @@ void FUN_0069c670(DArrayTy *param_1,int param_2,uint param_3)
   dVar1 = param_1->count;
   /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
   for (; (int)param_3 < (int)dVar1; param_3 = param_3 + 1) {
-    /* ST_PSEUDO[dynamic_array_indexing]: expected DArrayAt<T>(param_1, param_3) (runtime stride) */
     if ((param_3 < param_1->count) &&
-       (pvVar6 = (void *)(param_1->elementSize * param_3 + (int)param_1->data),
+       (pvVar6 = DArrayAt<void>(param_1, param_3),
        pvVar6 != nullptr)) {
       iVar2 = *(int *)(*(int *)((int)pvVar6 + 0xc) + 0xc);
       uVar5 = 0;

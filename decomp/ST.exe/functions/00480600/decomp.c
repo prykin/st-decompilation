@@ -195,8 +195,7 @@ LAB_00480bfa:
           if ((iVar2 < 0) || ((int)PTR_00806724->entryCount / 2 <= iVar2)) {
             /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
             bVar20 = *(byte *)((int)param_1 + 0x24);
-            /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-            local_8 = CONCAT31(local_8._1_3_,bVar20);
+            local_8 = STReplaceLowByte((uint32_t)(local_8), (uint8_t)(bVar20));
             if (DAT_00808a8f == '\0') {
               if (DAT_0080874d == bVar20) {
 LAB_00480a79:
@@ -227,9 +226,8 @@ LAB_00480a79:
                        g_bulkInitializedRecords_008087C7[DAT_0080874d].field_0023;
             }
             if (bVar11) {
-/* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
 LAB_00480b80:
-              local_c = (undefined4 *)CONCAT31(local_c._1_3_,bVar20);
+              local_c = (undefined4 *)STReplaceLowByte((uint32_t)(local_c), (uint8_t)(bVar20));
               if (iVar2 < PTR_00806724->entryCount + -1) {
                 *(int *)((int)param_1 + 0x74a) = iVar2 + 1;
               }
@@ -248,8 +246,7 @@ LAB_00480b80:
               }
             }
             else {
-              /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-              local_c = (undefined4 *)CONCAT31(local_c._1_3_,bVar20);
+              local_c = (undefined4 *)STReplaceLowByte((uint32_t)(local_c), (uint8_t)(bVar20));
               if (DAT_00808a8f == '\0') {
                 if (bVar20 == DAT_0080874d) {
 LAB_00480b30:
@@ -327,8 +324,7 @@ LAB_00480c7f:
                  (int)PTR_00806724->field_002C);
       /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
       bVar20 = *(byte *)((int)param_1 + 0x24);
-      /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-      local_8 = CONCAT31(local_8._1_3_,bVar20);
+      local_8 = STReplaceLowByte((uint32_t)(local_8), (uint8_t)(bVar20));
       if (DAT_00808a8f == '\0') {
         if (DAT_0080874d == bVar20) {
 LAB_00480d55:
@@ -358,8 +354,7 @@ LAB_00480d55:
                  g_bulkInitializedRecords_008087C7[DAT_0080874d].field_0023;
       }
       if (!bVar11) {
-        /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-        local_10 = CONCAT31(local_10._1_3_,bVar20);
+        local_10 = STReplaceLowByte((uint32_t)(local_10), (uint8_t)(bVar20));
         if (DAT_00808a8f == '\0') {
           if (bVar20 == DAT_0080874d) {
 LAB_00480e0f:
@@ -407,8 +402,7 @@ LAB_00480e0f:
           goto LAB_00480f12;
         }
       }
-      /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-      local_10 = CONCAT31(local_10._1_3_,bVar20);
+      local_10 = STReplaceLowByte((uint32_t)(local_10), (uint8_t)(bVar20));
       /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
       if (*(int *)((int)param_1 + 0x746) == 0) {
         STT3DSprC::sub_004ACE60(this,'\x0e');

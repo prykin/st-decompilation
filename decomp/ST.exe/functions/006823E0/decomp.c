@@ -96,8 +96,7 @@ void __cdecl FUN_006823e0(int param_1,float *param_2)
                          0x18c);
             }
             local_10 = 3;
-            /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-            local_f = (float)CONCAT22(local_f._2_2_,(short)iVar7);
+            local_f = (float)STReplaceLowWord((uint32_t)(local_f), (uint16_t)((short)iVar7));
           }
           thunk_FUN_00682370((undefined4 *)&local_10);
           FreeAndNull(&param_2);

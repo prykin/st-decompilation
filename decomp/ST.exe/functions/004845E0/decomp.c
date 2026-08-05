@@ -107,8 +107,7 @@ STGameObjC::FUN_004845e0(STGameObjC *this,STGameObjC_sub_004845E0_param_1Enum pa
       bVar1 = *(byte *)&this->field_0024;
       /* ST_PSEUDO[stack_slot_reuse,packed_or_unaligned_piece]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable; expected named packed member, bit extract/compose, or unaligned load */
       param_2 = (int *)CONCAT13(bVar1,param_2._0_3_);
-      /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-      local_8 = CONCAT31(local_8._1_3_,bVar1);
+      local_8 = STReplaceLowByte((uint32_t)(local_8), (uint8_t)(bVar1));
       if (DAT_00808a8f == '\0') {
         if (bVar7 == bVar1) {
 LAB_004857a5:
@@ -137,10 +136,10 @@ LAB_004857a5:
                 g_bulkInitializedRecords_008087C7[bVar7].field_0023;
       }
       if (bVar8) goto LAB_0048589a;
-      /* ST_PSEUDO[stack_slot_reuse,packed_or_unaligned_piece]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable; expected named packed member, bit extract/compose, or unaligned load */
-      param_2 = (int *)CONCAT31(param_2._1_3_,bVar1);
-      /* ST_PSEUDO[stack_slot_reuse,packed_or_unaligned_piece]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable; expected named packed member, bit extract/compose, or unaligned load */
-      param_1 = CONCAT31(param_1._1_3_,bVar7);
+      /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
+      param_2 = (int *)STReplaceLowByte((uint32_t)(param_2), (uint8_t)(bVar1));
+      /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
+      param_1 = STReplaceLowByte((uint32_t)(param_1), (uint8_t)(bVar7));
       if (DAT_00808a8f == '\0') {
         if (bVar1 == bVar7) {
 LAB_0048586d:
@@ -173,9 +172,9 @@ LAB_0048586d:
         iVar4 = (**(code **)(*this_00 + 0xec))();
         return (-(ushort)(iVar4 != 1) & 0xfffd) + 3;
       }
-/* ST_PSEUDO[stack_slot_reuse,packed_or_unaligned_piece]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable; expected named packed member, bit extract/compose, or unaligned load */
+/* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
 LAB_0048589a:
-      param_1 = CONCAT31(param_1._1_3_,bVar7);
+      param_1 = STReplaceLowByte((uint32_t)(param_1), (uint8_t)(bVar7));
       iVar4 = thunk_FUN_0041d350(this_00,this->field_0024);
       return (-(ushort)(iVar4 != 1) & 0xfff9) + 7;
     }
@@ -197,10 +196,10 @@ LAB_0048589a:
         }
         bVar7 = *(byte *)(this_00 + 9);
         bVar1 = *(byte *)&this->field_0024;
-        /* ST_PSEUDO[stack_slot_reuse,packed_or_unaligned_piece]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable; expected named packed member, bit extract/compose, or unaligned load */
-        param_2 = (int *)CONCAT31(param_2._1_3_,bVar7);
-        /* ST_PSEUDO[stack_slot_reuse,packed_or_unaligned_piece]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable; expected named packed member, bit extract/compose, or unaligned load */
-        param_1 = CONCAT31(param_1._1_3_,bVar1);
+        /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
+        param_2 = (int *)STReplaceLowByte((uint32_t)(param_2), (uint8_t)(bVar7));
+        /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
+        param_1 = STReplaceLowByte((uint32_t)(param_1), (uint8_t)(bVar1));
         if (DAT_00808a8f != '\0') {
           iVar4 = (uint)bVar1 * 9;
           goto LAB_00486163;
@@ -275,10 +274,10 @@ LAB_00485f6a:
           }
           bVar7 = *(byte *)(this_00 + 9);
           bVar1 = *(byte *)&this->field_0024;
-          /* ST_PSEUDO[stack_slot_reuse,packed_or_unaligned_piece]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable; expected named packed member, bit extract/compose, or unaligned load */
-          param_2 = (int *)CONCAT31(param_2._1_3_,bVar7);
-          /* ST_PSEUDO[stack_slot_reuse,packed_or_unaligned_piece]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable; expected named packed member, bit extract/compose, or unaligned load */
-          param_1 = CONCAT31(param_1._1_3_,bVar1);
+          /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
+          param_2 = (int *)STReplaceLowByte((uint32_t)(param_2), (uint8_t)(bVar7));
+          /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
+          param_1 = STReplaceLowByte((uint32_t)(param_1), (uint8_t)(bVar1));
           if (DAT_00808a8f == '\0') {
             if (bVar7 == bVar1) {
 LAB_00485f1f:
@@ -320,10 +319,10 @@ LAB_00485f1f:
         }
         bVar7 = *(byte *)(this_00 + 9);
         bVar1 = *(byte *)&this->field_0024;
-        /* ST_PSEUDO[stack_slot_reuse,packed_or_unaligned_piece]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable; expected named packed member, bit extract/compose, or unaligned load */
-        param_2 = (int *)CONCAT31(param_2._1_3_,bVar7);
-        /* ST_PSEUDO[stack_slot_reuse,packed_or_unaligned_piece]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable; expected named packed member, bit extract/compose, or unaligned load */
-        param_1 = CONCAT31(param_1._1_3_,bVar1);
+        /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
+        param_2 = (int *)STReplaceLowByte((uint32_t)(param_2), (uint8_t)(bVar7));
+        /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
+        param_1 = STReplaceLowByte((uint32_t)(param_1), (uint8_t)(bVar1));
         if (DAT_00808a8f == '\0') {
           if (bVar7 == bVar1) {
 LAB_0048602b:
@@ -382,10 +381,10 @@ LAB_00485caa:
         if (((iVar4 == 0xc) || (iVar4 == 0x18)) || (iVar4 == 0x19)) {
           bVar7 = *(byte *)(this_00 + 9);
           bVar1 = *(byte *)&this->field_0024;
-          /* ST_PSEUDO[stack_slot_reuse,packed_or_unaligned_piece]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable; expected named packed member, bit extract/compose, or unaligned load */
-          param_2 = (int *)CONCAT31(param_2._1_3_,bVar7);
-          /* ST_PSEUDO[stack_slot_reuse,packed_or_unaligned_piece]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable; expected named packed member, bit extract/compose, or unaligned load */
-          param_1 = CONCAT31(param_1._1_3_,bVar1);
+          /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
+          param_2 = (int *)STReplaceLowByte((uint32_t)(param_2), (uint8_t)(bVar7));
+          /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
+          param_1 = STReplaceLowByte((uint32_t)(param_1), (uint8_t)(bVar1));
           if (DAT_00808a8f == '\0') {
             if (bVar7 == bVar1) goto LAB_00485d4a;
             uVar5 = (uint)bVar7;
@@ -413,10 +412,10 @@ LAB_00486163:
         if (iVar4 == 9) {
           bVar7 = *(byte *)(this_00 + 9);
           bVar1 = *(byte *)&this->field_0024;
-          /* ST_PSEUDO[stack_slot_reuse,packed_or_unaligned_piece]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable; expected named packed member, bit extract/compose, or unaligned load */
-          param_2 = (int *)CONCAT31(param_2._1_3_,bVar7);
-          /* ST_PSEUDO[stack_slot_reuse,packed_or_unaligned_piece]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable; expected named packed member, bit extract/compose, or unaligned load */
-          param_1 = CONCAT31(param_1._1_3_,bVar1);
+          /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
+          param_2 = (int *)STReplaceLowByte((uint32_t)(param_2), (uint8_t)(bVar7));
+          /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
+          param_1 = STReplaceLowByte((uint32_t)(param_1), (uint8_t)(bVar1));
           if (DAT_00808a8f != '\0') {
             bVar8 = g_bulkInitializedRecords_008087C7[bVar1].field_0023 !=
                     g_bulkInitializedRecords_008087C7[bVar7].field_0023;
@@ -472,10 +471,10 @@ LAB_004859d8:
           if ((iVar4 != 0x24) && (iVar4 != 0x25)) {
             bVar7 = *(byte *)(this_00 + 9);
             bVar1 = *(byte *)&this->field_0024;
-            /* ST_PSEUDO[stack_slot_reuse,packed_or_unaligned_piece]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable; expected named packed member, bit extract/compose, or unaligned load */
-            param_2 = (int *)CONCAT31(param_2._1_3_,bVar7);
-            /* ST_PSEUDO[stack_slot_reuse,packed_or_unaligned_piece]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable; expected named packed member, bit extract/compose, or unaligned load */
-            param_1 = CONCAT31(param_1._1_3_,bVar1);
+            /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
+            param_2 = (int *)STReplaceLowByte((uint32_t)(param_2), (uint8_t)(bVar7));
+            /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
+            param_1 = STReplaceLowByte((uint32_t)(param_1), (uint8_t)(bVar1));
             if (DAT_00808a8f == '\0') {
               if (bVar7 == bVar1) {
 LAB_00485c58:
@@ -521,10 +520,10 @@ LAB_00485c58:
           }
           bVar7 = *(byte *)(this_00 + 9);
           bVar1 = *(byte *)&this->field_0024;
-          /* ST_PSEUDO[stack_slot_reuse,packed_or_unaligned_piece]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable; expected named packed member, bit extract/compose, or unaligned load */
-          param_2 = (int *)CONCAT31(param_2._1_3_,bVar7);
-          /* ST_PSEUDO[stack_slot_reuse,packed_or_unaligned_piece]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable; expected named packed member, bit extract/compose, or unaligned load */
-          param_1 = CONCAT31(param_1._1_3_,bVar1);
+          /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
+          param_2 = (int *)STReplaceLowByte((uint32_t)(param_2), (uint8_t)(bVar7));
+          /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
+          param_1 = STReplaceLowByte((uint32_t)(param_1), (uint8_t)(bVar1));
           if (DAT_00808a8f == '\0') {
             if (bVar7 == bVar1) goto LAB_00485d4a;
             uVar5 = (uint)bVar7;
@@ -544,10 +543,10 @@ LAB_00485c58:
         }
         bVar7 = *(byte *)(this_00 + 9);
         bVar1 = *(byte *)&this->field_0024;
-        /* ST_PSEUDO[stack_slot_reuse,packed_or_unaligned_piece]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable; expected named packed member, bit extract/compose, or unaligned load */
-        param_2 = (int *)CONCAT31(param_2._1_3_,bVar7);
-        /* ST_PSEUDO[stack_slot_reuse,packed_or_unaligned_piece]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable; expected named packed member, bit extract/compose, or unaligned load */
-        param_1 = CONCAT31(param_1._1_3_,bVar1);
+        /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
+        param_2 = (int *)STReplaceLowByte((uint32_t)(param_2), (uint8_t)(bVar7));
+        /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
+        param_1 = STReplaceLowByte((uint32_t)(param_1), (uint8_t)(bVar1));
         if (DAT_00808a8f == '\0') {
           if (bVar7 == bVar1) {
 LAB_00485b29:
@@ -694,8 +693,7 @@ cf_common_exit_00484B10:
       bVar1 = *(byte *)&this->field_0024;
       /* ST_PSEUDO[stack_slot_reuse,packed_or_unaligned_piece]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable; expected named packed member, bit extract/compose, or unaligned load */
       param_2 = (int *)CONCAT13(bVar1,param_2._0_3_);
-      /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-      local_8 = CONCAT31(local_8._1_3_,bVar1);
+      local_8 = STReplaceLowByte((uint32_t)(local_8), (uint8_t)(bVar1));
       if (DAT_00808a8f == '\0') {
         if (bVar7 == bVar1) {
 LAB_00484943:
@@ -724,8 +722,8 @@ LAB_00484943:
                 g_bulkInitializedRecords_008087C7[bVar7].field_0023;
       }
       if (bVar8) goto LAB_00484a28;
-      /* ST_PSEUDO[stack_slot_reuse,packed_or_unaligned_piece]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable; expected named packed member, bit extract/compose, or unaligned load */
-      param_2 = (int *)CONCAT31(param_2._1_3_,bVar1);
+      /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
+      param_2 = (int *)STReplaceLowByte((uint32_t)(param_2), (uint8_t)(bVar1));
       if (DAT_00808a8f == '\0') {
         if (bVar1 == bVar7) {
 LAB_00484a0b:
@@ -756,18 +754,18 @@ LAB_00484a0b:
       if (!bVar8) {
         return 2;
       }
-/* ST_PSEUDO[stack_slot_reuse,packed_or_unaligned_piece]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable; expected named packed member, bit extract/compose, or unaligned load */
+/* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
 LAB_00484a28:
-      param_1 = CONCAT31(param_1._1_3_,bVar7);
+      param_1 = STReplaceLowByte((uint32_t)(param_1), (uint8_t)(bVar7));
       iVar4 = thunk_FUN_0041d350(this_00,this->field_0024);
       return (-(ushort)(iVar4 != 1) & 0xfffa) + 7;
     }
     bVar7 = *(byte *)(this_00 + 9);
     bVar1 = *(byte *)&this->field_0024;
-    /* ST_PSEUDO[stack_slot_reuse,packed_or_unaligned_piece]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable; expected named packed member, bit extract/compose, or unaligned load */
-    param_2 = (int *)CONCAT31(param_2._1_3_,bVar7);
-    /* ST_PSEUDO[stack_slot_reuse,packed_or_unaligned_piece]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable; expected named packed member, bit extract/compose, or unaligned load */
-    param_1 = CONCAT31(param_1._1_3_,bVar1);
+    /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
+    param_2 = (int *)STReplaceLowByte((uint32_t)(param_2), (uint8_t)(bVar7));
+    /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
+    param_1 = STReplaceLowByte((uint32_t)(param_1), (uint8_t)(bVar1));
     if (DAT_00808a8f != '\0') {
       bVar8 = g_bulkInitializedRecords_008087C7[bVar1].field_0023 !=
               g_bulkInitializedRecords_008087C7[bVar7].field_0023;
@@ -1013,10 +1011,10 @@ LAB_004853d2:
     }
     bVar7 = *(byte *)(this_00 + 9);
     bVar1 = *(byte *)&this->field_0024;
-    /* ST_PSEUDO[stack_slot_reuse,packed_or_unaligned_piece]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable; expected named packed member, bit extract/compose, or unaligned load */
-    param_2 = (int *)CONCAT31(param_2._1_3_,bVar7);
-    /* ST_PSEUDO[stack_slot_reuse,packed_or_unaligned_piece]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable; expected named packed member, bit extract/compose, or unaligned load */
-    param_1 = CONCAT31(param_1._1_3_,bVar1);
+    /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
+    param_2 = (int *)STReplaceLowByte((uint32_t)(param_2), (uint8_t)(bVar7));
+    /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
+    param_1 = STReplaceLowByte((uint32_t)(param_1), (uint8_t)(bVar1));
     if (DAT_00808a8f != '\0') {
       bVar8 = g_bulkInitializedRecords_008087C7[bVar1].field_0023 !=
               g_bulkInitializedRecords_008087C7[bVar7].field_0023;
@@ -1161,10 +1159,10 @@ LAB_00485002:
     if (this_00[8] == 0x14) {
       bVar7 = *(byte *)(this_00 + 9);
       bVar1 = *(byte *)&this->field_0024;
-      /* ST_PSEUDO[stack_slot_reuse,packed_or_unaligned_piece]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable; expected named packed member, bit extract/compose, or unaligned load */
-      param_2 = (int *)CONCAT31(param_2._1_3_,bVar7);
-      /* ST_PSEUDO[stack_slot_reuse,packed_or_unaligned_piece]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable; expected named packed member, bit extract/compose, or unaligned load */
-      param_1 = CONCAT31(param_1._1_3_,bVar1);
+      /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
+      param_2 = (int *)STReplaceLowByte((uint32_t)(param_2), (uint8_t)(bVar7));
+      /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
+      param_1 = STReplaceLowByte((uint32_t)(param_1), (uint8_t)(bVar1));
       if (DAT_00808a8f == '\0') {
         if (bVar7 == bVar1) {
 LAB_00484e9f:

@@ -17,8 +17,7 @@ uint FUN_00497030(int param_1,int param_2,int param_3,int param_4,int param_5)
   }
   do {
     if (uVar5 < uVar1) {
-      /* ST_PSEUDO[dynamic_array_indexing]: expected DArrayAt<T>(g_array_007FB270, uVar5) (runtime stride) */
-      piVar4 = (int *)(g_array_007FB270->elementSize * uVar5 + (int)g_array_007FB270->data);
+      piVar4 = DArrayAt<int>(g_array_007FB270, uVar5);
     }
     else {
       piVar4 = nullptr;

@@ -6,16 +6,16 @@ undefined4 __fastcall FUN_004e1490(STBoatC *param_1)
 
 {
   int iVar1;
-  uint uVar2;
-  uint uVar3;
+  byte bVar2;
+  byte bVar3;
   undefined4 uVar4;
 
   uVar4 = 0;
   if (param_1->field_0024 != param_1->field_023D) {
-    uVar2 = LookupRecordByte((char)param_1->field_023D);
+    bVar2 = LookupRecordByte((char)param_1->field_023D);
     iVar1 = *(int *)&param_1->field_0x235;
-    uVar3 = LookupRecordByte(*(char *)&param_1->field_0024);
-    if ((&DAT_007e1984)[(uVar3 & 0xff) + (iVar1 * 3 + (uVar2 & 0xff)) * 3] == '\0') {
+    bVar3 = LookupRecordByte(*(char *)&param_1->field_0024);
+    if ((&DAT_007e1984)[(uint)bVar3 + (iVar1 * 3 + (uint)bVar2) * 3] == '\0') {
       return 0;
     }
   }

@@ -1209,6 +1209,15 @@ the same persistent Listing variable and that variable/type is manual, imported,
 or owned by a hashed recovery pass. This connects return ABI to a recovered
 layout; it never creates a structure from a return cast.
 
+`STAbiConsistencyAnalyzer` additionally accepts a narrow `AL`/`AX` return only
+after two closed proofs agree. Reverse CFG traversal from every callee `RET`
+must encounter the same exact low-accumulator definition before any wider
+definition. At every resolved direct callsite, bounded forward CFG traversal
+must then either read only that same low width or explicitly kill `EAX`; a
+full-width or unresolved path vetoes the proposal. Exact `AND`/`TEST EAX` masks
+for `0xff`/`0xffff` count as narrow consumption. This rule recovers machine
+width, not a semantic enum or class-specific value domain.
+
 `STGlobalAggregateAnalyzer` writes a broad indexed-global audit. It recognizes both
 ordinary SIB operands and compiler sequences which materialize a record stride first
 (`SHL`/power-of-two `IMUL`, followed by `[scaled_register + global]`). It also
@@ -1309,6 +1318,11 @@ both `Node *` and `Node **` remains a conflict. It does not use arithmetic shape
 or names to guess signedness. Physical register/stack reuse is not itself
 evidence: competing anchors, edited/stale generated layouts, and a dynamic local
 which reattaches anywhere except its original machine address are rejected.
+Typedef aliases and recursively unwrapped pointer spellings are compared by
+datatype equivalence before being declared conflicting. Thus `LPSTR`, `CHAR *`,
+and `char *` do not create three false lifetime families, while signedness or
+domain disagreements such as `int` versus `uint` and `bool` versus `byte`
+remain review-only.
 
 The pipeline runs one whole-program local-lifetime pass. If that pass mutates a
 function, subsequent staircase passes decompile only the exact changed function
@@ -1811,7 +1825,7 @@ a new conflict is what requires another iteration.
 | `STControlFlowLabelAnalyzer/Applier` | Give structural names to real decompiler goto targets. |
 | `STLibraryAnalyzer/Applier` | Classify linked CRT, DKW, and internal Ourlib implementations. |
 | `STExportRegressionGate` | Compare a fresh corpus with the prior central-index snapshot, report per-function quality deltas, reject exact structural/critical regressions, and write a reproducible export receipt. |
-| `STDecompExport` | Transactionally stage and promote the address-stable, dependency-fingerprinted LLM corpus so a failed long export cannot partially overwrite the accepted tree; export resolved thunk/call relations and executable coverage gaps; inline proven immutable strings; normalize terminal traps, compiler bulk-zero and `REP MOVS` loops (including exact structural field-based pointer advances) while reproducing observable live-out state, exact recovered row-major three-dimensional grid indexing through `STGridAt3D`, exact same-base affine cancellation, guarded partial-AL returns, exact C++ virtual-call sugar, and exact recovered DArray element lifetimes without persistently typing reused SSA storage; catalogue stage-aware pseudocode and quality debt. |
+| `STDecompExport` | Transactionally stage and promote the address-stable, dependency-fingerprinted LLM corpus so a failed long export cannot partially overwrite the accepted tree; export resolved thunk/call relations and executable coverage gaps; inline proven immutable strings; normalize terminal traps, compiler bulk-zero and `REP MOVS` loops (including exact structural field-based pointer advances) while reproducing observable live-out state, exact recovered row-major three-dimensional grid indexing through `STGridAt3D`, exact same-base affine cancellation, ABI-proven narrow-return piece assignments, exact low-byte/word composition, exact generated global-record interior addresses, exact C++ virtual-call sugar, and exact recovered DArray element lifetimes/addresses without persistently typing reused SSA storage; catalogue stage-aware pseudocode and quality debt. |
 
 ## Git and Ghidra database hygiene
 

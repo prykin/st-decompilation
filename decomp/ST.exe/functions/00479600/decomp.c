@@ -654,13 +654,11 @@ LAB_0047acdc:
               goto LAB_0047b2dc;
             }
             if (*(int *)&this->field_0x667 == 0) {
-              /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-              iVar10 = CONCAT22((short)((uint)this >> 0x10),*(short *)&this->field_0x659 * 0xc9) +
+              iVar10 = STReplaceLowWord((uint32_t)(this), (uint16_t)(*(short *)&this->field_0x659 * 0xc9)) +
                        100;
-              /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
               uVar7 = (*this->vtable->vfunc_10)
                                 (this->field_0041,this->field_0043,
-                                 CONCAT22((short)((uint)iVar10 >> 0x10),this->field_0045),
+                                 STReplaceLowWord((uint32_t)(iVar10), (uint16_t)(this->field_0045)),
                                  *(short *)&this->field_0x657 * 0xc9 + 100,(short)iVar10,
                                  (ushort)(this->field_065B * 200) + 100);
               *(undefined2 *)&this->field_0x661 = uVar7;
@@ -778,8 +776,7 @@ LAB_0047acdc:
               }
             }
             sVar8 = this->field_0643;
-            /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-            iVar10 = CONCAT22((short)((uint)iVar10 >> 0x10),sVar8);
+            iVar10 = STReplaceLowWord((uint32_t)(iVar10), (uint16_t)(sVar8));
             sVar19 = this->field_0647;
             sVar16 = this->field_0645;
             if (((((sVar8 < 0) || (g_worldGrid.sizeX <= sVar8)) || (sVar16 < 0)) ||
@@ -794,10 +791,9 @@ LAB_0047acdc:
                (iVar10 = *(int *)&local_8->field_0x18, iVar10 != this->field_0649)) {
 LAB_0047b1c5:
               sVar8 = this->field_0647 + 1;
-              /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
               iVar10 = sub_0048DFD0(this,this->field_0643,this->field_0645,sVar8,this->field_0643,
                                     this->field_0645,
-                                    (int *)CONCAT22((short)((uint)iVar10 >> 0x10),sVar8),2,
+                                    (int *)STReplaceLowWord((uint32_t)(iVar10), (uint16_t)(sVar8)),2,
                                     (short *)&this->field_0x651,(short *)&this->field_0x653,
                                     (short *)&this->field_0x655);
 joined_r0x0047b202:
@@ -826,10 +822,9 @@ joined_r0x0047b202:
               }
               if (*(int *)&local_8[0x1d].field_0x18 == 0) {
                 sVar8 = this->field_0647 + 1;
-                /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
                 iVar10 = sub_0048DFD0(this,this->field_0643,this->field_0645,sVar8,this->field_0643,
                                       this->field_0645,
-                                      (int *)CONCAT22((short)((uint)local_8 >> 0x10),sVar8),2,
+                                      (int *)STReplaceLowWord((uint32_t)(local_8), (uint16_t)(sVar8)),2,
                                       (short *)&this->field_0x651,(short *)puVar3,(short *)puVar2);
                 goto joined_r0x0047b202;
               }
@@ -844,10 +839,8 @@ cf_common_exit_0047ADB5:
           }
           if (*(int *)&this->field_0x667 == 0) {
             iVar11 = (ushort)(this->field_063D * 200) + 300;
-            /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-            iVar10 = CONCAT22((short)((uint)iVar11 >> 0x10),this->field_063B + 1) * 0xc9;
-            /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-            iVar14 = CONCAT22((short)((uint)iVar10 >> 0x10),this->field_0639 + 1);
+            iVar10 = STReplaceLowWord((uint32_t)(iVar11), (uint16_t)(this->field_063B + 1)) * 0xc9;
+            iVar14 = STReplaceLowWord((uint32_t)(iVar10), (uint16_t)(this->field_0639 + 1));
             /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
             uVar7 = (*this->vtable->vfunc_10)
                               (this->field_0041,this->field_0043,

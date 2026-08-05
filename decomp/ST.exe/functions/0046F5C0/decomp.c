@@ -357,10 +357,8 @@ LAB_00470071:
     if (SVar2 == CASE_4) {
       if (*(int *)&this->field_0x584 == 0) {
         iVar8 = (ushort)(this->field_0558 * 200) + 300;
-        /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-        iVar6 = CONCAT22((short)((uint)iVar8 >> 0x10),this->field_0556 + 1) * 0xc9;
-        /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-        iVar11 = CONCAT22((short)((uint)iVar6 >> 0x10),(short)this->field_0568 + this->field_0554);
+        iVar6 = STReplaceLowWord((uint32_t)(iVar8), (uint16_t)(this->field_0556 + 1)) * 0xc9;
+        iVar11 = STReplaceLowWord((uint32_t)(iVar6), (uint16_t)((short)this->field_0568 + this->field_0554));
         /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
         uVar5 = (*this->vtable->vfunc_10)
                           (this->field_0041,this->field_0043,
@@ -599,12 +597,10 @@ LAB_004707ad:
     this->field_057C = iVar6;
     if (iVar6 < 0x1e) goto cf_common_exit_004707B7;
     if (*(int *)&this->field_0x584 == 0) {
-      /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-      iVar6 = CONCAT22((short)((uint)iVar6 >> 0x10),this->field_056E * 0xc9) + 100;
-      /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
+      iVar6 = STReplaceLowWord((uint32_t)(iVar6), (uint16_t)(this->field_056E * 0xc9)) + 100;
       uVar5 = (*this->vtable->vfunc_10)
                         (this->field_0041,this->field_0043,
-                         CONCAT22((short)((uint)iVar6 >> 0x10),this->field_0045),
+                         STReplaceLowWord((uint32_t)(iVar6), (uint16_t)(this->field_0045)),
                          this->field_056C * 0xc9 + 100,(short)iVar6,
                          (ushort)(this->field_0570 * 200) + 100);
       this->field_0572 = uVar5;
@@ -718,9 +714,8 @@ LAB_004707ad:
        )) {
 cf_common_exit_00470B14:
       this->field_0580 = CASE_7;
-      /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
       sub_0048DFD0(this,this->field_0047,this->field_0049,this->field_004B,this->field_0047,
-                   this->field_0049,(int *)CONCAT22((short)((uint)pSVar16 >> 0x10),this->field_004B)
+                   this->field_0049,(int *)STReplaceLowWord((uint32_t)(pSVar16), (uint16_t)(this->field_004B))
                    ,3,(short *)&this->field_0x55e,(short *)&this->field_0x560,
                    (short *)&this->field_0x562);
     }

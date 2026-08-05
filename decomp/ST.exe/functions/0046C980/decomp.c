@@ -45,10 +45,9 @@ int __thiscall STBoatC::BackBuild(STBoatC *this,int *param_1)
     if (iVar5 == 3) {
       /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
       iVar5 = CONCAT22(uVar2,this->field_04FE * 0xc9) + 100;
-      /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
       uVar2 = (*this->vtable->vfunc_10)
                         (this->field_0041,this->field_0043,
-                         CONCAT22((short)((uint)iVar5 >> 0x10),this->field_0045),
+                         STReplaceLowWord((uint32_t)(iVar5), (uint16_t)(this->field_0045)),
                          this->field_04FC * 0xc9 + 100,(short)iVar5,
                          (ushort)(this->field_0500 * 200) + 100);
       this->field_0506 = uVar2;
@@ -109,12 +108,12 @@ cf_error_exit_0046CBE2:
     break;
   case CASE_6:
     if (this->field_050C == 0) {
-      /* ST_PSEUDO[unresolved_register_input,packed_or_unaligned_piece]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention; expected named packed member, bit extract/compose, or unaligned load */
-      iVar5 = CONCAT22((short)((uint)in_EDX >> 0x10),this->field_04FE * 0xc9) + 100;
+      /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
+      iVar5 = STReplaceLowWord((uint32_t)(in_EDX), (uint16_t)(this->field_04FE * 0xc9)) + 100;
       /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
       uVar2 = (*this->vtable->vfunc_10)
                         (this->field_0041,this->field_0043,
-                         CONCAT22((short)((uint)iVar5 >> 0x10),this->field_0045),
+                         STReplaceLowWord((uint32_t)(iVar5), (uint16_t)(this->field_0045)),
                          this->field_04FC * 0xc9 + 100,(short)iVar5,
                          CONCAT22(uVar2,this->field_0500 * 200) + 100);
       this->field_0506 = uVar2;

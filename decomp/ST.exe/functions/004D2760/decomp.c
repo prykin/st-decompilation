@@ -42,14 +42,11 @@ undefined4 __fastcall FUN_004d2760(TLOBaseTy *param_1)
         pTVar3 = local_8;
       } while (iVar4 < (int)&local_8->vtable + param_1->field_0261);
     }
-    /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-    iVar4 = thunk_FUN_004b7520(CONCAT31((int3)((uint)pTVar3 >> 8),
-                                        *(undefined1 *)&param_1->field_0024),param_1->field_0259);
+    iVar4 = thunk_FUN_004b7520(STReplaceLowByte((uint32_t)(pTVar3), (uint8_t)(*(undefined1 *)&param_1->field_0024)),param_1->field_0259);
     if (iVar4 != 0) {
       dVar1 = param_1->slot_2C();
       /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
-      thunk_FUN_004b7710(CONCAT31((int3)((uint)extraout_ECX >> 8),
-                                  *(undefined1 *)&param_1->field_0024),dVar1);
+      thunk_FUN_004b7710(STReplaceLowByte((uint32_t)(extraout_ECX), (uint8_t)(*(undefined1 *)&param_1->field_0024)),dVar1);
     }
     TLOBaseTy::sub_0041D590(param_1);
   }

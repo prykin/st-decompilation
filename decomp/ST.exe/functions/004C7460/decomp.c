@@ -7,7 +7,7 @@
 undefined4 __thiscall TLOBaseTy::sub_004C7460(TLOBaseTy *this)
 
 {
-  int iVar1;
+  byte bVar1;
   AnonPointee_TLOBaseTy_0607 *pAVar2;
   int iVar3;
   int iVar4;
@@ -73,9 +73,9 @@ undefined4 __thiscall TLOBaseTy::sub_004C7460(TLOBaseTy *this)
       iVar4 = this->field_0607->field_0000;
     }
     if (*(int *)(&DAT_00794d70 + iVar4 * 4) != -1) {
-      iVar1 = LookupRecordByte(*(char *)&this->field_0024);
+      bVar1 = LookupRecordByte(*(char *)&this->field_0024);
       iVar3 = local_8;
-      if ((char)iVar1 == '\x03') {
+      if (bVar1 == 3) {
         iVar3 = 0;
       }
       thunk_FUN_004d76e0(*(char *)&this->field_0024,*(int *)(&DAT_00794d70 + iVar4 * 4),

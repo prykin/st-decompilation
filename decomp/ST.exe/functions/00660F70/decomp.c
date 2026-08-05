@@ -109,8 +109,7 @@ switchD_0066104e_caseD_9:
           if ((0x31 < *local_8) && (*local_8 < 0x74)) {
             /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
             sVar10 = *(short *)((int)param_1 + 0xe);
-            /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-            uVar11 = CONCAT22((short)((uint)local_8 >> 0x10),sVar10);
+            uVar11 = STReplaceLowWord((uint32_t)(local_8), (uint16_t)(sVar10));
             /* ST_PSEUDO[return_width_artifact,raw_pointer_offset]: candidate call-output artifact: verify return width, clobbers, or x87 state; candidate structure field after proof; otherwise retain buffer arithmetic */
             if ((sVar10 < 0) ||
                ((((short)param_1[4] < 0 || (*(short *)((int)param_1 + 0x12) < 0)) ||

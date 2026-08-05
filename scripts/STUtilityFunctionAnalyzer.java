@@ -124,11 +124,14 @@ public class STUtilityFunctionAnalyzer extends GhidraScript {
             new String[] { "/WinDef.h/UINT", "/WinDef.h/HINSTANCE" },
             new String[] { "resourceId", "module" },
             "loads a Win32 string resource into the process ring buffer and returns its address");
-        addDiscovered(result, occupied, discoverIndexedRecordByteLookup(),
-            "indexed_record_byte_lookup", "LookupRecordByte", "__stdcall", "/int",
+        Function indexedRecordByte = discoverIndexedRecordByteLookup();
+        addDiscovered(result, occupied, indexedRecordByte,
+            "indexed_record_byte_lookup", "LookupRecordByte", "__stdcall",
+            indexedRecordByte == null ? "/int" :
+                typeSpec(indexedRecordByte.getReturnType()),
             new String[] { "/char" }, new String[] { "recordIndex" },
             "maps a guarded byte-sized index to the first byte of a fixed-stride record; " +
-                "the explicit 0xff guard clears AL and returns zero");
+                "return width is owned by the CFG-complete ABI consistency pass");
 
         if (!darrayPointer.isBlank()) {
             Function removeAt = discoverDArrayRemoveAt(decompiler);

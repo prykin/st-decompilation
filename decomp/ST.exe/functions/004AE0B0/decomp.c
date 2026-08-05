@@ -14,22 +14,23 @@ FUN_004ae0b0(short param_1,int param_2,int param_3,Global_sub_004AE0B0_param_4En
 {
   STWorldObject *pSVar1;
   int *piVar2;
-  short sVar3;
+  byte bVar3;
   short sVar4;
-  int iVar5;
+  short sVar5;
   int iVar6;
-  dword dVar7;
-  uint *puVar8;
-  uint uVar9;
-  int iVar10;
-  DArrayTy *pDVar11;
-  uint uVar12;
-  short sVar13;
+  int iVar7;
+  dword dVar8;
+  uint *puVar9;
+  uint uVar10;
+  int iVar11;
+  DArrayTy *pDVar12;
+  uint uVar13;
   short sVar14;
   short sVar15;
-  int iVar16;
+  short sVar16;
   int iVar17;
-  uint uVar18;
+  int iVar18;
+  uint uVar19;
   /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
   short in_stack_00000006;
   undefined4 local_24;
@@ -40,95 +41,95 @@ FUN_004ae0b0(short param_1,int param_2,int param_3,Global_sub_004AE0B0_param_4En
   short local_8;
   short local_6;
 
-  iVar10 = 1;
+  iVar11 = 1;
   local_24 = 0;
-  iVar16 = 1;
+  iVar17 = 1;
   local_18 = 0;
   local_c = 0;
   if (*(int *)(&DAT_00791d68 + param_4 * 4) == 0) {
-    iVar16 = 1;
-    iVar10 = 1;
+    iVar17 = 1;
+    iVar11 = 1;
   }
   else if (*(int *)(&DAT_00791d68 + param_4 * 4) == 1) {
-    iVar16 = 2;
-    iVar10 = 2;
+    iVar17 = 2;
+    iVar11 = 2;
   }
   /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
-  if (((((in_stack_00000006 < 0) || (iVar10 = iVar10 + _param_1, g_worldGrid.sizeX < iVar10)) ||
-       (param_2 < 0)) || ((iVar16 = iVar16 + param_2, g_worldGrid.sizeY < iVar16 || (param_3 < 0))))
+  if (((((in_stack_00000006 < 0) || (iVar11 = iVar11 + _param_1, g_worldGrid.sizeX < iVar11)) ||
+       (param_2 < 0)) || ((iVar17 = iVar17 + param_2, g_worldGrid.sizeY < iVar17 || (param_3 < 0))))
      || ((int)g_worldGrid.sizeZ < param_3 + 1)) {
 cf_break_loop_004AE25B:
     local_20 = 0;
     goto LAB_004aecb2;
   }
   local_20 = 1;
-  for (iVar17 = _param_1; iVar6 = param_2, iVar17 < iVar10; iVar17 = iVar17 + 1) {
-    for (; iVar6 < iVar16; iVar6 = iVar6 + 1) {
-      iVar5 = param_3;
+  for (iVar18 = _param_1; iVar7 = param_2, iVar18 < iVar11; iVar18 = iVar18 + 1) {
+    for (; iVar7 < iVar17; iVar7 = iVar7 + 1) {
+      iVar6 = param_3;
       if (param_3 < param_3 + 1) {
         do {
-          sVar13 = (short)iVar17;
-          if (sVar13 < 0) goto cf_break_loop_004AE25B;
-          sVar3 = (short)iVar6;
-          sVar14 = (short)iVar5;
-          if ((((sVar13 < g_worldGrid.sizeX) && (-1 < sVar3)) &&
-              ((sVar3 < g_worldGrid.sizeY &&
-               (((-1 < sVar14 && (sVar14 < g_worldGrid.sizeZ)) &&
-                (STGridAt3D(g_worldGrid, sVar13, sVar3, sVar14).objects[0] != nullptr)))))) ||
-             (((sVar13 < 0 || (g_worldGrid.sizeX <= sVar13)) ||
-              ((sVar3 < 0 ||
-               (((g_worldGrid.sizeY <= sVar3 || (sVar14 < 0)) ||
-                ((g_worldGrid.sizeZ <= sVar14 ||
-                 (STGridAt3D(g_pathingGrid, sVar13, sVar3, sVar14) != 0))))))))))
+          sVar14 = (short)iVar18;
+          if (sVar14 < 0) goto cf_break_loop_004AE25B;
+          sVar4 = (short)iVar7;
+          sVar15 = (short)iVar6;
+          if ((((sVar14 < g_worldGrid.sizeX) && (-1 < sVar4)) &&
+              ((sVar4 < g_worldGrid.sizeY &&
+               (((-1 < sVar15 && (sVar15 < g_worldGrid.sizeZ)) &&
+                (STGridAt3D(g_worldGrid, sVar14, sVar4, sVar15).objects[0] != nullptr)))))) ||
+             (((sVar14 < 0 || (g_worldGrid.sizeX <= sVar14)) ||
+              ((sVar4 < 0 ||
+               (((g_worldGrid.sizeY <= sVar4 || (sVar15 < 0)) ||
+                ((g_worldGrid.sizeZ <= sVar15 ||
+                 (STGridAt3D(g_pathingGrid, sVar14, sVar4, sVar15) != 0))))))))))
           goto cf_break_loop_004AE25B;
-          iVar5 = iVar5 + 1;
-        } while (iVar5 < param_3 + 1);
+          iVar6 = iVar6 + 1;
+        } while (iVar6 < param_3 + 1);
       }
     }
   }
   local_18 = 1;
-  sVar13 = (short)param_3;
-  iVar17 = _param_1;
+  sVar14 = (short)param_3;
+  iVar18 = _param_1;
   if (0 < param_3) {
-    for (; iVar17 < iVar10; iVar17 = iVar17 + 1) {
-      if (param_2 < iVar16) {
-        sVar14 = sVar13 + -1;
-        iVar6 = param_2;
+    for (; iVar18 < iVar11; iVar18 = iVar18 + 1) {
+      if (param_2 < iVar17) {
+        sVar15 = sVar14 + -1;
+        iVar7 = param_2;
         do {
-          sVar3 = (short)iVar17;
-          if ((-1 < sVar3) &&
-             ((((((sVar4 = (short)iVar6, sVar3 < g_worldGrid.sizeX && (-1 < sVar4)) &&
-                 (sVar4 < g_worldGrid.sizeY)) && ((-1 < sVar14 && (sVar14 < g_worldGrid.sizeZ)))) &&
-               (STGridAt3D(g_worldGrid, sVar3, sVar4, sVar14).objects[0] != nullptr)) ||
-              (((-1 < sVar3 && (sVar3 < g_worldGrid.sizeX)) &&
-               ((-1 < sVar4 &&
-                ((((sVar4 < g_worldGrid.sizeY && (-1 < sVar14)) && (sVar14 < g_worldGrid.sizeZ)) &&
-                 (STGridAt3D(g_pathingGrid, sVar3, sVar4, sVar14) != -1)))))))))) {
+          sVar4 = (short)iVar18;
+          if ((-1 < sVar4) &&
+             ((((((sVar5 = (short)iVar7, sVar4 < g_worldGrid.sizeX && (-1 < sVar5)) &&
+                 (sVar5 < g_worldGrid.sizeY)) && ((-1 < sVar15 && (sVar15 < g_worldGrid.sizeZ)))) &&
+               (STGridAt3D(g_worldGrid, sVar4, sVar5, sVar15).objects[0] != nullptr)) ||
+              (((-1 < sVar4 && (sVar4 < g_worldGrid.sizeX)) &&
+               ((-1 < sVar5 &&
+                ((((sVar5 < g_worldGrid.sizeY && (-1 < sVar15)) && (sVar15 < g_worldGrid.sizeZ)) &&
+                 (STGridAt3D(g_pathingGrid, sVar4, sVar5, sVar15) != -1)))))))))) {
             local_18 = 0;
             goto LAB_004ae37e;
           }
-          iVar6 = iVar6 + 1;
-        } while (iVar6 < iVar16);
+          iVar7 = iVar7 + 1;
+        } while (iVar7 < iVar17);
       }
     }
   }
 LAB_004ae37e:
   if (((param_9 == 0) ||
-      (iVar17 = LookupRecordByte((char)param_5), sVar14 = g_worldGrid.sizeX, (char)iVar17 == '\x03')
-      ) && ((sVar14 = g_worldGrid.sizeX, local_18 != 0 && (local_18 = 0, param_3 < 4)))) {
+      (bVar3 = LookupRecordByte((char)param_5), sVar15 = g_worldGrid.sizeX, bVar3 == 3)) &&
+     ((sVar15 = g_worldGrid.sizeX, local_18 != 0 && (local_18 = 0, param_3 < 4)))) {
     local_18 = 1;
-    for (local_c = _param_1; local_c < iVar10; local_c = local_c + 1) {
-      if (param_2 < iVar16) {
-        iVar17 = param_2;
+    for (local_c = _param_1; local_c < iVar11; local_c = local_c + 1) {
+      if (param_2 < iVar17) {
+        iVar18 = param_2;
         do {
-          iVar6 = thunk_FUN_004961b0((short)local_c,(short)iVar17,sVar13 + 1);
-          sVar14 = g_worldGrid.sizeX;
-          if (iVar6 == 0) {
+          iVar7 = thunk_FUN_004961b0((short)local_c,(short)iVar18,sVar14 + 1);
+          sVar15 = g_worldGrid.sizeX;
+          if (iVar7 == 0) {
             local_18 = 0;
             goto LAB_004ae41c;
           }
-          iVar17 = iVar17 + 1;
-        } while (iVar17 < iVar16);
+          iVar18 = iVar18 + 1;
+        } while (iVar18 < iVar17);
       }
     }
   }
@@ -142,22 +143,22 @@ LAB_004ae41c:
     local_c = 0;
     local_10 = (STFishC *)thunk_FUN_004d85e0(_param_1,param_2,param_3);
     if (local_10 != nullptr) {
-      dVar7 = local_10->slot_2C();
+      dVar8 = local_10->slot_2C();
                     /* WARNING (jumptable): Sanity check requires truncation of jumptable */
                     /* WARNING: Could not find normalized switch variable to match jumptable */
       switch((&BYTE_004aecec)[param_4]) {
       case 0:
-        if (dVar7 == 0xdc) {
+        if (dVar8 == 0xdc) {
           local_c = 1;
         }
         break;
       case 1:
-        if (dVar7 == 0xdd) {
+        if (dVar8 == 0xdd) {
           local_c = 1;
         }
         break;
       case 2:
-        if (dVar7 == 0xde) {
+        if (dVar8 == 0xde) {
           local_c = 1;
         }
       }
@@ -165,212 +166,212 @@ LAB_004ae41c:
     break;
   default:
     local_c = 1;
-    for (iVar17 = _param_1; iVar6 = param_2, iVar17 < iVar10; iVar17 = iVar17 + 1) {
-      for (; iVar6 < iVar16; iVar6 = iVar6 + 1) {
-        iVar5 = param_3;
+    for (iVar18 = _param_1; iVar7 = param_2, iVar18 < iVar11; iVar18 = iVar18 + 1) {
+      for (; iVar7 < iVar17; iVar7 = iVar7 + 1) {
+        iVar6 = param_3;
         if (param_3 < param_3 + 1) {
           do {
-            sVar3 = (short)iVar17;
-            if (((sVar3 < 0) || (sVar14 <= sVar3)) ||
-               ((sVar4 = (short)iVar6, sVar4 < 0 ||
-                (((g_worldGrid.sizeY <= sVar4 || (sVar15 = (short)iVar5, sVar15 < 0)) ||
-                 (g_worldGrid.sizeZ <= sVar15)))))) {
+            sVar4 = (short)iVar18;
+            if (((sVar4 < 0) || (sVar15 <= sVar4)) ||
+               ((sVar5 = (short)iVar7, sVar5 < 0 ||
+                (((g_worldGrid.sizeY <= sVar5 || (sVar16 = (short)iVar6, sVar16 < 0)) ||
+                 (g_worldGrid.sizeZ <= sVar16)))))) {
               local_10 = nullptr;
             }
             else {
               local_10 = (STFishC *)
                          g_worldGrid.cells
-                         [(int)sVar4 * (int)sVar14 + (int)sVar15 * (int)g_worldGrid.planeStride +
-                          (int)sVar3].objects[1];
+                         [(int)sVar5 * (int)sVar15 + (int)sVar16 * (int)g_worldGrid.planeStride +
+                          (int)sVar4].objects[1];
             }
             if (((local_10 != nullptr) && (*(int *)&local_10->field_0x20 != 0xbe)) ||
-               (puVar8 = thunk_FUN_004d85e0(iVar17,iVar6,iVar5), puVar8 != nullptr))
+               (puVar9 = thunk_FUN_004d85e0(iVar18,iVar7,iVar6), puVar9 != nullptr))
             goto cf_break_loop_004AEC96;
-            iVar5 = iVar5 + 1;
+            iVar6 = iVar6 + 1;
             local_10 = nullptr;
-            sVar14 = g_worldGrid.sizeX;
-          } while (iVar5 < param_3 + 1);
+            sVar15 = g_worldGrid.sizeX;
+          } while (iVar6 < param_3 + 1);
         }
       }
     }
     if (((int)param_4 < 0x54) || (0x5a < (int)param_4)) {
       if (param_4 == 100) {
-        pDVar11 = *(DArrayTy **)&g_packedRecords_A62x8[param_5].field_0x9d6;
-        if ((pDVar11 != nullptr) && (uVar18 = 0, 0 < (int)pDVar11->count)) {
+        pDVar12 = *(DArrayTy **)&g_packedRecords_A62x8[param_5].field_0x9d6;
+        if ((pDVar12 != nullptr) && (uVar19 = 0, 0 < (int)pDVar12->count)) {
           do {
-            DArrayGetElement(pDVar11,uVar18,&local_10);
+            DArrayGetElement(pDVar12,uVar19,&local_10);
             STFishC::sub_004162B0(local_10,(short *)((int)&param_9 + 2),&local_6,&local_8);
             /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
             if ((((param_9._2_2_ != _param_1) || ((local_6 != param_2 || (local_8 != param_3)))) &&
-                (uVar9 = param_9._2_2_ - _param_1, uVar12 = (int)uVar9 >> 0x1f,
-                (int)((uVar9 ^ uVar12) - uVar12) < 0x10)) &&
-               (uVar9 = local_6 - param_2 >> 0x1f, (int)((local_6 - param_2 ^ uVar9) - uVar9) < 0x10
-               )) goto cf_break_loop_004AEC96;
-            pDVar11 = *(DArrayTy **)&g_packedRecords_A62x8[param_5].field_0x9d6;
-            uVar18 = uVar18 + 1;
-          } while ((int)uVar18 < (int)pDVar11->count);
+                (uVar10 = param_9._2_2_ - _param_1, uVar13 = (int)uVar10 >> 0x1f,
+                (int)((uVar10 ^ uVar13) - uVar13) < 0x10)) &&
+               (uVar10 = local_6 - param_2 >> 0x1f,
+               (int)((local_6 - param_2 ^ uVar10) - uVar10) < 0x10)) goto cf_break_loop_004AEC96;
+            pDVar12 = *(DArrayTy **)&g_packedRecords_A62x8[param_5].field_0x9d6;
+            uVar19 = uVar19 + 1;
+          } while ((int)uVar19 < (int)pDVar12->count);
         }
       }
       else if (param_4 == 0x4d) {
-        pDVar11 = *(DArrayTy **)&g_packedRecords_A62x8[param_5].field_0x9e2;
+        pDVar12 = *(DArrayTy **)&g_packedRecords_A62x8[param_5].field_0x9e2;
         /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
         param_10 = (int *)&g_packedRecords_A62x8[param_5].field_0x9e2;
-        if (pDVar11 != nullptr) {
-          iVar10 = DAT_00795118 / 0xc9;
-          uVar18 = 0;
-          if (0 < (int)pDVar11->count) {
+        if (pDVar12 != nullptr) {
+          iVar11 = DAT_00795118 / 0xc9;
+          uVar19 = 0;
+          if (0 < (int)pDVar12->count) {
             do {
-              DArrayGetElement(pDVar11,uVar18,&local_10);
+              DArrayGetElement(pDVar12,uVar19,&local_10);
               STFishC::sub_004162B0(local_10,(short *)((int)&param_9 + 2),&local_6,&local_8);
               /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
               if ((((param_9._2_2_ != _param_1) || (local_6 != param_2)) || (local_8 != param_3)) &&
-                 ((uVar9 = param_9._2_2_ - _param_1, uVar12 = (int)uVar9 >> 0x1f,
-                  (int)((uVar9 ^ uVar12) - uVar12) <= iVar10 &&
-                  (uVar9 = local_6 - param_2 >> 0x1f,
-                  (int)((local_6 - param_2 ^ uVar9) - uVar9) <= iVar10))))
+                 ((uVar10 = param_9._2_2_ - _param_1, uVar13 = (int)uVar10 >> 0x1f,
+                  (int)((uVar10 ^ uVar13) - uVar13) <= iVar11 &&
+                  (uVar10 = local_6 - param_2 >> 0x1f,
+                  (int)((local_6 - param_2 ^ uVar10) - uVar10) <= iVar11))))
               goto cf_break_loop_004AEC96;
-              uVar18 = uVar18 + 1;
-              pDVar11 = (DArrayTy *)*param_10;
-            } while ((int)uVar18 < (int)pDVar11->count);
+              uVar19 = uVar19 + 1;
+              pDVar12 = (DArrayTy *)*param_10;
+            } while ((int)uVar19 < (int)pDVar12->count);
           }
         }
       }
       else if (param_4 == 0x43) {
-        pDVar11 = *(DArrayTy **)&g_packedRecords_A62x8[param_5].field_0x9ee;
+        pDVar12 = *(DArrayTy **)&g_packedRecords_A62x8[param_5].field_0x9ee;
         /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
         param_10 = (int *)&g_packedRecords_A62x8[param_5].field_0x9ee;
-        if (pDVar11 != nullptr) {
-          iVar10 = DAT_007950f0 / 0xc9;
-          uVar18 = 0;
-          if (0 < (int)pDVar11->count) {
+        if (pDVar12 != nullptr) {
+          iVar11 = DAT_007950f0 / 0xc9;
+          uVar19 = 0;
+          if (0 < (int)pDVar12->count) {
             do {
-              DArrayGetElement(pDVar11,uVar18,&local_10);
+              DArrayGetElement(pDVar12,uVar19,&local_10);
               STFishC::sub_004162B0(local_10,(short *)((int)&param_9 + 2),&local_6,&local_8);
               /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
               if ((((param_9._2_2_ != _param_1) || (local_6 != param_2)) || (local_8 != param_3)) &&
-                 ((uVar9 = param_9._2_2_ - _param_1, uVar12 = (int)uVar9 >> 0x1f,
-                  (int)((uVar9 ^ uVar12) - uVar12) <= iVar10 &&
-                  (uVar9 = local_6 - param_2 >> 0x1f,
-                  (int)((local_6 - param_2 ^ uVar9) - uVar9) <= iVar10))))
+                 ((uVar10 = param_9._2_2_ - _param_1, uVar13 = (int)uVar10 >> 0x1f,
+                  (int)((uVar10 ^ uVar13) - uVar13) <= iVar11 &&
+                  (uVar10 = local_6 - param_2 >> 0x1f,
+                  (int)((local_6 - param_2 ^ uVar10) - uVar10) <= iVar11))))
               goto cf_break_loop_004AEC96;
-              uVar18 = uVar18 + 1;
-              pDVar11 = (DArrayTy *)*param_10;
-            } while ((int)uVar18 < (int)pDVar11->count);
+              uVar19 = uVar19 + 1;
+              pDVar12 = (DArrayTy *)*param_10;
+            } while ((int)uVar19 < (int)pDVar12->count);
           }
         }
       }
       else if (param_4 == 0x73) {
-        pDVar11 = *(DArrayTy **)&g_packedRecords_A62x8[param_5].field_0x9f2;
+        pDVar12 = *(DArrayTy **)&g_packedRecords_A62x8[param_5].field_0x9f2;
         /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
         param_10 = (int *)&g_packedRecords_A62x8[param_5].field_0x9f2;
-        if (pDVar11 != nullptr) {
-          iVar10 = DAT_007951b0 / 0xc9;
-          uVar18 = 0;
-          if (0 < (int)pDVar11->count) {
+        if (pDVar12 != nullptr) {
+          iVar11 = DAT_007951b0 / 0xc9;
+          uVar19 = 0;
+          if (0 < (int)pDVar12->count) {
             do {
-              DArrayGetElement(pDVar11,uVar18,&local_10);
+              DArrayGetElement(pDVar12,uVar19,&local_10);
               STFishC::sub_004162B0(local_10,(short *)((int)&param_9 + 2),&local_6,&local_8);
               /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
               if ((((param_9._2_2_ != _param_1) || (local_6 != param_2)) || (local_8 != param_3)) &&
-                 ((uVar9 = param_9._2_2_ - _param_1, uVar12 = (int)uVar9 >> 0x1f,
-                  (int)((uVar9 ^ uVar12) - uVar12) <= iVar10 &&
-                  (uVar9 = local_6 - param_2 >> 0x1f,
-                  (int)((local_6 - param_2 ^ uVar9) - uVar9) <= iVar10))))
+                 ((uVar10 = param_9._2_2_ - _param_1, uVar13 = (int)uVar10 >> 0x1f,
+                  (int)((uVar10 ^ uVar13) - uVar13) <= iVar11 &&
+                  (uVar10 = local_6 - param_2 >> 0x1f,
+                  (int)((local_6 - param_2 ^ uVar10) - uVar10) <= iVar11))))
               goto cf_break_loop_004AEC96;
-              uVar18 = uVar18 + 1;
-              pDVar11 = (DArrayTy *)*param_10;
-            } while ((int)uVar18 < (int)pDVar11->count);
+              uVar19 = uVar19 + 1;
+              pDVar12 = (DArrayTy *)*param_10;
+            } while ((int)uVar19 < (int)pDVar12->count);
           }
         }
       }
       else if (param_4 == 0x65) {
-        pDVar11 = *(DArrayTy **)&g_packedRecords_A62x8[param_5].field_0x9e6;
+        pDVar12 = *(DArrayTy **)&g_packedRecords_A62x8[param_5].field_0x9e6;
         /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
         param_10 = (int *)&g_packedRecords_A62x8[param_5].field_0x9e6;
-        if (pDVar11 != nullptr) {
-          iVar10 = DAT_00795178 / 0xc9;
-          uVar18 = 0;
-          if (0 < (int)pDVar11->count) {
+        if (pDVar12 != nullptr) {
+          iVar11 = DAT_00795178 / 0xc9;
+          uVar19 = 0;
+          if (0 < (int)pDVar12->count) {
             do {
-              DArrayGetElement(pDVar11,uVar18,&local_10);
+              DArrayGetElement(pDVar12,uVar19,&local_10);
               STFishC::sub_004162B0(local_10,(short *)((int)&param_9 + 2),&local_6,&local_8);
               /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
               if ((((param_9._2_2_ != _param_1) || (local_6 != param_2)) || (local_8 != param_3)) &&
-                 ((uVar9 = param_9._2_2_ - _param_1, uVar12 = (int)uVar9 >> 0x1f,
-                  (int)((uVar9 ^ uVar12) - uVar12) <= iVar10 &&
-                  (uVar9 = local_6 - param_2 >> 0x1f,
-                  (int)((local_6 - param_2 ^ uVar9) - uVar9) <= iVar10))))
+                 ((uVar10 = param_9._2_2_ - _param_1, uVar13 = (int)uVar10 >> 0x1f,
+                  (int)((uVar10 ^ uVar13) - uVar13) <= iVar11 &&
+                  (uVar10 = local_6 - param_2 >> 0x1f,
+                  (int)((local_6 - param_2 ^ uVar10) - uVar10) <= iVar11))))
               goto cf_break_loop_004AEC96;
-              uVar18 = uVar18 + 1;
-              pDVar11 = (DArrayTy *)*param_10;
-            } while ((int)uVar18 < (int)pDVar11->count);
+              uVar19 = uVar19 + 1;
+              pDVar12 = (DArrayTy *)*param_10;
+            } while ((int)uVar19 < (int)pDVar12->count);
           }
         }
       }
     }
     else {
       local_c = 0;
-      if (((((param_2 + -1 < 0) || (param_1 < 0)) || (sVar14 <= param_1)) ||
-          (((sVar3 = (short)(param_2 + -1), sVar3 < 0 || (g_worldGrid.sizeY <= sVar3)) ||
-           ((sVar13 < 0 ||
-            ((g_worldGrid.sizeZ <= sVar13 ||
+      if (((((param_2 + -1 < 0) || (param_1 < 0)) || (sVar15 <= param_1)) ||
+          (((sVar4 = (short)(param_2 + -1), sVar4 < 0 || (g_worldGrid.sizeY <= sVar4)) ||
+           ((sVar14 < 0 ||
+            ((g_worldGrid.sizeZ <= sVar14 ||
              (pSVar1 = g_worldGrid.cells
-                       [(int)sVar13 * (int)g_worldGrid.planeStride + (int)sVar14 * (int)sVar3 +
+                       [(int)sVar14 * (int)g_worldGrid.planeStride + (int)sVar15 * (int)sVar4 +
                         (int)param_1].objects[0], pSVar1 == nullptr)))))))) ||
-         (((iVar10 = pSVar1->GetObjectTypeId(), iVar10 != 0x53 ||
+         (((iVar11 = pSVar1->GetObjectTypeId(), iVar11 != 0x53 ||
            ((param_10 != nullptr && (*(int **)&pSVar1->field_0x18 != param_10)))) &&
-          (((iVar10 = pSVar1->GetObjectTypeId(), sVar14 = g_worldGrid.sizeX,
-            iVar10 < 0x54 ||
-            (iVar10 = pSVar1->GetObjectTypeId(), sVar14 = g_worldGrid.sizeX,
-            0x5a < iVar10)) ||
+          (((iVar11 = pSVar1->GetObjectTypeId(), sVar15 = g_worldGrid.sizeX,
+            iVar11 < 0x54 ||
+            (iVar11 = pSVar1->GetObjectTypeId(), sVar15 = g_worldGrid.sizeX,
+            0x5a < iVar11)) ||
            ((param_10 != nullptr && (*(int **)&pSVar1[0x29].field_0xf != param_10)))))))) {
-        sVar3 = (short)param_2;
+        sVar4 = (short)param_2;
         if (((_param_1 + -1 < 0) ||
-            ((((sVar4 = (short)(_param_1 + -1), sVar4 < 0 || (sVar14 <= sVar4)) || (sVar3 < 0)) ||
-             (((g_worldGrid.sizeY <= sVar3 || (sVar13 < 0)) ||
-              ((g_worldGrid.sizeZ <= sVar13 ||
+            ((((sVar5 = (short)(_param_1 + -1), sVar5 < 0 || (sVar15 <= sVar5)) || (sVar4 < 0)) ||
+             (((g_worldGrid.sizeY <= sVar4 || (sVar14 < 0)) ||
+              ((g_worldGrid.sizeZ <= sVar14 ||
                (pSVar1 = g_worldGrid.cells
-                         [(int)sVar13 * (int)g_worldGrid.planeStride + (int)sVar3 * (int)sVar14 +
-                          (int)sVar4].objects[0], pSVar1 == nullptr)))))))) ||
-           (((iVar10 = pSVar1->GetObjectTypeId(), piVar2 = param_10, iVar10 != 0x53
+                         [(int)sVar14 * (int)g_worldGrid.planeStride + (int)sVar4 * (int)sVar15 +
+                          (int)sVar5].objects[0], pSVar1 == nullptr)))))))) ||
+           (((iVar11 = pSVar1->GetObjectTypeId(), piVar2 = param_10, iVar11 != 0x53
              || ((param_10 != nullptr && (*(int **)&pSVar1->field_0x18 != param_10)))) &&
-            (((iVar10 = pSVar1->GetObjectTypeId(), sVar14 = g_worldGrid.sizeX,
-              iVar10 < 0x54 ||
-              (iVar10 = pSVar1->GetObjectTypeId(), sVar14 = g_worldGrid.sizeX,
-              0x5a < iVar10)) ||
+            (((iVar11 = pSVar1->GetObjectTypeId(), sVar15 = g_worldGrid.sizeX,
+              iVar11 < 0x54 ||
+              (iVar11 = pSVar1->GetObjectTypeId(), sVar15 = g_worldGrid.sizeX,
+              0x5a < iVar11)) ||
              ((piVar2 != nullptr && (*(int **)&pSVar1[0x29].field_0xf != piVar2)))))))) {
           /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
-          if (((_param_1 + 1 < (int)sVar14) &&
-              ((((((sVar4 = (short)(_param_1 + 1), -1 < sVar4 && (sVar4 < sVar14)) && (-1 < sVar3))
-                 && ((sVar3 < g_worldGrid.sizeY && (-1 < sVar13)))) && (sVar13 < g_worldGrid.sizeZ))
+          if (((_param_1 + 1 < (int)sVar15) &&
+              ((((((sVar5 = (short)(_param_1 + 1), -1 < sVar5 && (sVar5 < sVar15)) && (-1 < sVar4))
+                 && ((sVar4 < g_worldGrid.sizeY && (-1 < sVar14)))) && (sVar14 < g_worldGrid.sizeZ))
                && (pSVar1 = g_worldGrid.cells
-                            [(int)sVar13 * (int)g_worldGrid.planeStride + (int)sVar3 * (int)sVar14 +
-                             (int)sVar4].objects[0], pSVar1 != nullptr)))) &&
-             (((iVar10 = pSVar1->GetObjectTypeId(), piVar2 = param_10,
-               iVar10 == 0x53 &&
+                            [(int)sVar14 * (int)g_worldGrid.planeStride + (int)sVar4 * (int)sVar15 +
+                             (int)sVar5].objects[0], pSVar1 != nullptr)))) &&
+             (((iVar11 = pSVar1->GetObjectTypeId(), piVar2 = param_10,
+               iVar11 == 0x53 &&
                ((param_10 == nullptr || (*(int **)&pSVar1->field_0x18 == param_10)))) ||
-              ((iVar10 = pSVar1->GetObjectTypeId(), sVar14 = g_worldGrid.sizeX,
-               0x53 < iVar10 &&
-               ((iVar10 = pSVar1->GetObjectTypeId(), sVar14 = g_worldGrid.sizeX,
-                iVar10 < 0x5b &&
+              ((iVar11 = pSVar1->GetObjectTypeId(), sVar15 = g_worldGrid.sizeX,
+               0x53 < iVar11 &&
+               ((iVar11 = pSVar1->GetObjectTypeId(), sVar15 = g_worldGrid.sizeX,
+                iVar11 < 0x5b &&
                 ((piVar2 == nullptr || (*(int **)&pSVar1[0x29].field_0xf == piVar2)))))))))) {
             local_c = 1;
           }
           /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
           else if (((param_2 + 1 < (int)g_worldGrid.sizeY) &&
-                   (((-1 < param_1 && (param_1 < sVar14)) &&
-                    (sVar3 = (short)(param_2 + 1), -1 < sVar3)))) &&
-                  ((((sVar3 < g_worldGrid.sizeY && (-1 < sVar13)) &&
-                    ((sVar13 < g_worldGrid.sizeZ &&
+                   (((-1 < param_1 && (param_1 < sVar15)) &&
+                    (sVar4 = (short)(param_2 + 1), -1 < sVar4)))) &&
+                  ((((sVar4 < g_worldGrid.sizeY && (-1 < sVar14)) &&
+                    ((sVar14 < g_worldGrid.sizeZ &&
                      (pSVar1 = g_worldGrid.cells
-                               [(int)sVar13 * (int)g_worldGrid.planeStride +
-                                (int)sVar14 * (int)sVar3 + (int)param_1].objects[0],
+                               [(int)sVar14 * (int)g_worldGrid.planeStride +
+                                (int)sVar15 * (int)sVar4 + (int)param_1].objects[0],
                      pSVar1 != nullptr)))) &&
-                   (((iVar10 = pSVar1->GetObjectTypeId(), piVar2 = param_10,
-                     iVar10 == 0x53 &&
+                   (((iVar11 = pSVar1->GetObjectTypeId(), piVar2 = param_10,
+                     iVar11 == 0x53 &&
                      ((param_10 == nullptr || (*(int **)&pSVar1->field_0x18 == param_10)))) ||
-                    (((iVar10 = pSVar1->GetObjectTypeId(), 0x53 < iVar10 &&
-                      (iVar10 = pSVar1->GetObjectTypeId(), iVar10 < 0x5b)) &&
+                    (((iVar11 = pSVar1->GetObjectTypeId(), 0x53 < iVar11 &&
+                      (iVar11 = pSVar1->GetObjectTypeId(), iVar11 < 0x5b)) &&
                      ((piVar2 == nullptr || (*(int **)&pSVar1[0x29].field_0xf == piVar2))))))))))
           {
             local_c = 1;

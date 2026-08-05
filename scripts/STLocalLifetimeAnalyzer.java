@@ -250,8 +250,8 @@ public class STLocalLifetimeAnalyzer extends GhidraScript {
             Evidence anchor = selected.anchors.stream()
                 .sorted(Evidence.ORDER).findFirst().orElse(null);
             if (anchor == null) continue;
-            boolean different = !selected.specification.equals(
-                currentSpecification);
+            boolean different = !equivalentLifetimeSpecifications(
+                selected.specification, currentSpecification);
             boolean isolate = merged && isolationEligible(selected) &&
                 requiresIsolation(entry.getKey(), selected.specification,
                     decisions);
@@ -288,7 +288,8 @@ public class STLocalLifetimeAnalyzer extends GhidraScript {
             if (sibling.getKey() == group) continue;
             Decision decision = sibling.getValue();
             if (decision.selected == null ||
-                    !decision.selected.specification.equals(specification))
+                    !equivalentLifetimeSpecifications(
+                        decision.selected.specification, specification))
                 return true;
         }
         return false;
@@ -759,12 +760,49 @@ public class STLocalLifetimeAnalyzer extends GhidraScript {
     private void addEvidence(Map<String, TypeEvidence> evidence, DataType type,
             int weight, String source, Evidence anchor) {
         String specification = typeSpecification(type);
-        TypeEvidence value = evidence.computeIfAbsent(specification,
-            ignored -> new TypeEvidence(specification));
+        TypeEvidence value = evidence.get(specification);
+        if (value == null) {
+            for (TypeEvidence existing : evidence.values()) {
+                DataType existingType = resolveTypeSpecification(existing.specification);
+                if (existingType != null && equivalentLifetimeType(existingType, type)) {
+                    value = existing;
+                    break;
+                }
+            }
+        }
+        if (value == null) {
+            value = new TypeEvidence(specification);
+            evidence.put(specification, value);
+        }
         if (!value.anchorKeys.add(anchor.key())) return;
         value.score += weight;
         value.sources.add(source);
         value.anchors.add(anchor);
+    }
+
+    /** Typedef spelling is not a competing SSA type. Keep the first stable
+     * nominal spelling, but merge evidence when the recursively unwrapped data
+     * types are genuinely equivalent. Signed/unsigned and bool/byte primitives
+     * remain distinct and therefore review-only. */
+    private boolean equivalentLifetimeType(DataType left, DataType right) {
+        if (left == null || right == null) return false;
+        if (left.isEquivalent(right) || right.isEquivalent(left)) return true;
+        DataType leftBase = untypedef(left), rightBase = untypedef(right);
+        if (leftBase instanceof Pointer leftPointer &&
+                rightBase instanceof Pointer rightPointer)
+            return equivalentLifetimeType(leftPointer.getDataType(),
+                rightPointer.getDataType());
+        return leftBase != null && rightBase != null &&
+            (leftBase.isEquivalent(rightBase) || rightBase.isEquivalent(leftBase));
+    }
+
+    private boolean equivalentLifetimeSpecifications(String left, String right) {
+        if (left == null || right == null) return false;
+        if (left.equals(right)) return true;
+        DataType leftType = resolveTypeSpecification(left);
+        DataType rightType = resolveTypeSpecification(right);
+        return leftType != null && rightType != null &&
+            equivalentLifetimeType(leftType, rightType);
     }
 
     private Evidence anchor(Object op, String kind, int operand,

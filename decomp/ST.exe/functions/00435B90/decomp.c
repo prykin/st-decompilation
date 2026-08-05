@@ -102,8 +102,8 @@ short FUN_00435b90(uint param_1,DArrayTy *param_2,Global_sub_00435B90_param_3Enu
       } while ((int)param_4 < (int)dVar3);
     }
     bVar1 = *(byte *)(arg_2 + 9);
-    /* ST_PSEUDO[stack_slot_reuse,packed_or_unaligned_piece]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable; expected named packed member, bit extract/compose, or unaligned load */
-    param_3 = CONCAT31(param_3._1_3_,bVar1);
+    /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
+    param_3 = STReplaceLowByte((uint32_t)(param_3), (uint8_t)(bVar1));
     if (DAT_00808a8f == '\0') {
       if (bVar1 == objPtr) {
 LAB_004366b0:

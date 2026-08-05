@@ -69,7 +69,7 @@ int __thiscall MainMenuTy::GetMessage(MainMenuTy *this,STMessage *message)
     iVar4 = -2;
     iVar6 = 2;
     /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
-    uVar5 = CONCAT31((int3)((uint)extraout_EDX >> 8),(char)message->id + 0x81);
+    uVar5 = STReplaceLowByte((uint32_t)(extraout_EDX), (uint8_t)((char)message->id + 0x81));
     break;
   case 3:
     iVar4 = -2;
@@ -82,7 +82,7 @@ int __thiscall MainMenuTy::GetMessage(MainMenuTy *this,STMessage *message)
 LAB_005b4c5f:
     iVar6 = 0;
     /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
-    uVar5 = CONCAT31((int3)((uint)extraout_ECX >> 8),(char)message->id + 0x81);
+    uVar5 = STReplaceLowByte((uint32_t)(extraout_ECX), (uint8_t)((char)message->id + 0x81));
     break;
   default:
     goto switchD_005b4c27_default;

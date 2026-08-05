@@ -71,8 +71,7 @@ void __thiscall CPanelTy::sub_004F1610(CPanelTy *this,char param_1)
         local_18 = 1;
         SystemClassTy::SendMessage((SystemClassTy *)this->field_000C,2,iVar6,(int)local_30);
         bVar3 = (char)local_8 + 1;
-        /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-        local_8 = CONCAT31(local_8._1_3_,bVar3);
+        local_8 = STReplaceLowByte((uint32_t)(local_8), (uint8_t)(bVar3));
       } while (bVar3 < local_38);
     }
   }

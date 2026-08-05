@@ -215,8 +215,7 @@ STAllPlayersC::PutOnPlaceGuardBoats
     local_18 = g_playSystem_00802A38->field_00E4;
     /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
     local_14 = CONCAT22(sVar2,sVar3);
-    /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-    local_10 = CONCAT22(local_10._2_2_,param_4);
+    local_10 = STReplaceLowWord((uint32_t)(local_10), (uint16_t)(param_4));
     objPtr = (char)param_1;
     local_1c = dVar11;
     local_20 = dVar11;
@@ -717,8 +716,7 @@ LAB_00448bc0:
                 sVar4 = (short)iVar5;
                 if (psVar13[2] == 0) {
                   sVar9 = sVar4 + 3 + sVar2;
-                  /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-                  local_c = CONCAT22(local_c._2_2_,sVar9);
+                  local_c = STReplaceLowWord((uint32_t)(local_c), (uint16_t)(sVar9));
                   sVar10 = ((sVar3 - sVar4) - *psVar13) + -2;
                   /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
                   local_c = CONCAT22(psVar13[1],sVar9);

@@ -83,9 +83,8 @@ LAB_00483342:
                  thunk_FUN_0041dc40(local_30,(short)*(undefined4 *)((int)local_c + -2),
                                     *(ushort *)((int)local_c + 2),(short)local_18);
         sStack_26 = (short)((uint)*puVar5 >> 0x10);
-        /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-        local_1c = CONCAT22((short)((uint)puVar5 >> 0x10),
-                            *(short *)((int)param_1 + 0x45) + *(short *)(puVar5 + 1));
+        /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
+        local_1c = STReplaceLowWord((uint32_t)(puVar5), (uint16_t)(*(short *)((int)param_1 + 0x45) + *(short *)(puVar5 + 1)));
         /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
         sVar1 = *(short *)((int)param_1 + 0x43) - sStack_26;
         /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */

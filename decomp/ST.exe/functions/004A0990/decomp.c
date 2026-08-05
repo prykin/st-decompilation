@@ -162,9 +162,8 @@ LAB_004a0c2b:
   }
   else {
     if (array != nullptr) {
-      /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
       STAllPlayersC::RegisterPGPair
-                (g_allPlayers_007FA174,CONCAT31((int3)((uint)pSVar9 >> 8),pSVar2->field_0024),
+                (g_allPlayers_007FA174,STReplaceLowByte((uint32_t)(pSVar9), (uint8_t)(pSVar2->field_0024)),
                  &local_10->flags,&array->flags);
       goto LAB_004a0c2b;
     }

@@ -15,8 +15,8 @@ int __thiscall STJumpMineC::GetMessage(STJumpMineC *this,STMessage *message)
   STMessageId SVar1;
   code *pcVar2;
   STJumpMineC *this_00;
-  int iVar3;
-  uint uVar4;
+  byte bVar3;
+  int iVar4;
   int iVar5;
   byte *puVar6;
   byte *puVar7;
@@ -29,14 +29,14 @@ int __thiscall STJumpMineC::GetMessage(STJumpMineC *this,STMessage *message)
   local_58.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_58;
   local_8 = this;
-  iVar3 = Library::MSVCRT::__setjmp3(local_58.jumpBuffer,0);
+  iVar4 = Library::MSVCRT::__setjmp3(local_58.jumpBuffer,0);
   this_00 = local_8;
-  if (iVar3 != 0) {
+  if (iVar4 != 0) {
     g_currentExceptionFrame = local_58.previous;
-    iVar5 = ReportDebugMessage("E:\\__titans\\nick\\to_jump_mine.cpp",0xad,0,iVar3,
+    iVar5 = ReportDebugMessage("E:\\__titans\\nick\\to_jump_mine.cpp",0xad,0,iVar4,
                                "%s","STJumpMineC::GetMessage");
     if (iVar5 == 0) {
-      RaiseInternalException(iVar3,0,"E:\\__titans\\nick\\to_jump_mine.cpp",0xaf);
+      RaiseInternalException(iVar4,0,"E:\\__titans\\nick\\to_jump_mine.cpp",0xaf);
       return 0xffff;
     }
     STDebugBreak(); /* noreturn in standalone pseudocode */
@@ -51,12 +51,12 @@ int __thiscall STJumpMineC::GetMessage(STJumpMineC *this,STMessage *message)
       return 0;
     }
     if (SVar1 == MESS_ID_NONE) {
-      iVar3 = sub_00619C70(local_8);
-      if (iVar3 != 0) {
+      iVar4 = sub_00619C70(local_8);
+      if (iVar4 != 0) {
         if (this_00->field_0150 == '\0') {
-          uVar4 = sub_006191A0(this_00,(int)this_00->field_00C9,(int)this_00->field_00CB);
-          this_00->field_0150 = (char)uVar4;
-          if ((char)uVar4 != '\0') {
+          bVar3 = sub_006191A0(this_00,(int)this_00->field_00C9,(int)this_00->field_00CB);
+          this_00->field_0150 = bVar3;
+          if (bVar3 != 0) {
             LoadImagJMine(this_00,1);
           }
           if (this_00->field_0150 == '\0') {
@@ -76,7 +76,7 @@ int __thiscall STJumpMineC::GetMessage(STJumpMineC *this,STMessage *message)
         puVar6 = (byte *)&this_00->field_0x20;
         memset(puVar6, 0, 0x2d); /* compiler bulk-zero initialization */
         puVar6 = (byte *)((byte *)puVar6 + 0x2c);
-        iVar3 = 0;
+        iVar4 = 0;
         this_00->field_001C = this_00->field_014C;
         if ((this_00->field_0150 != '\0') && (this_00->field_0093 != CASE_5)) {
           LoadImagJMine(this_00,1);
@@ -92,26 +92,26 @@ int __thiscall STJumpMineC::GetMessage(STJumpMineC *this,STMessage *message)
         puVar7 = (byte *)&local_8->field_0x4d;
         memmove(puVar7, puVar6, 0x42); /* compiler REP MOVS byte copy */
         local_8->field_001C = DAT_00808754;
-        iVar3 = sub_006193E0(local_8);
-        if (iVar3 == 0) {
+        iVar4 = sub_006193E0(local_8);
+        if (iVar4 == 0) {
 LAB_00618ce0:
           sub_006192E0(this_00);
           g_currentExceptionFrame = local_58.previous;
           return 0;
         }
-        iVar3 = thunk_FUN_0061bdb0(this_00,CASE_0,this_00->field_00E7,this_00->field_00EB,
+        iVar4 = thunk_FUN_0061bdb0(this_00,CASE_0,this_00->field_00E7,this_00->field_00EB,
                                    this_00->field_00EF);
-        if (iVar3 == 0) {
-          iVar3 = thunk_FUN_0061bdb0(this_00,CASE_1,this_00->field_00E7,this_00->field_00EB,
+        if (iVar4 == 0) {
+          iVar4 = thunk_FUN_0061bdb0(this_00,CASE_1,this_00->field_00E7,this_00->field_00EB,
                                      this_00->field_00EF);
-          if (iVar3 == 0) goto LAB_00618ce0;
+          if (iVar4 == 0) goto LAB_00618ce0;
           this_00->field_0093 = CASE_1;
         }
         else {
           this_00->field_0093 = CASE_4;
         }
-        uVar4 = sub_006191A0(this_00,(int)this_00->field_00C9,(int)this_00->field_00CB);
-        this_00->field_0150 = (char)uVar4;
+        bVar3 = sub_006191A0(this_00,(int)this_00->field_00C9,(int)this_00->field_00CB);
+        this_00->field_0150 = bVar3;
         if ((void *)this_00->field_007D != nullptr) {
           thunk_FUN_00617a20((void *)this_00->field_007D,this_00->field_008B,this_00->field_0018,
                              this_00);
@@ -138,8 +138,8 @@ LAB_00618ce0:
   }
   else if (SVar1 == MESS_ID_ALLCREATE) {
     if (((local_8->field_007D != 0) &&
-        (iVar3 = STPlaySystemC::sub_006E62D0
-                           (g_playSystem_00802A38,local_8->field_0079,(int *)&local_14), iVar3 != -4
+        (iVar4 = STPlaySystemC::sub_006E62D0
+                           (g_playSystem_00802A38,local_8->field_0079,(int *)&local_14), iVar4 != -4
         )) && (this_00->field_007D = local_14, local_14 != nullptr)) {
       thunk_FUN_00617a20(local_14,this_00->field_008B,this_00->field_0018,this_00);
     }

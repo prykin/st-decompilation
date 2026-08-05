@@ -27,8 +27,7 @@ FUN_007098a0(AnonShape_007098A0_B7562D88 *param_1,char param_2,byte *param_3,int
     if (pDVar3->count <= uVar4) {
       return 0;
     }
-    /* ST_PSEUDO[dynamic_array_indexing]: expected DArrayAt<T>(pDVar3, uVar4) (runtime stride) */
-    pcVar8 = (char *)(pDVar3->elementSize * uVar4 + (int)pDVar3->data);
+    pcVar8 = DArrayAt<char>(pDVar3, uVar4);
     pDVar3->iteratorIndex = uVar4 + 1;
     if (pcVar8 == nullptr) {
       return 0;

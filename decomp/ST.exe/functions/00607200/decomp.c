@@ -19,7 +19,7 @@ FUN_00607200(void *this,int param_1,int param_2,int param_3,Global_sub_00606CD0_
   uint local_10c [20];
   STMessage local_bc;
   int local_9c [8];
-  uint local_7c;
+  int local_7c;
   int local_78;
   int local_74;
   int local_70;
@@ -27,7 +27,7 @@ FUN_00607200(void *this,int param_1,int param_2,int param_3,Global_sub_00606CD0_
   undefined4 local_68 [5];
   uint local_54;
   Global_sub_00606CD0_param_1Enum local_50;
-  uint local_4c;
+  int local_4c;
   int local_48;
   int local_44;
   int local_40;
@@ -42,13 +42,13 @@ FUN_00607200(void *this,int param_1,int param_2,int param_3,Global_sub_00606CD0_
   int local_1c;
   uint *local_18;
   int local_14;
-  uint local_10;
+  int local_10;
   int local_c;
   int local_8;
 
   /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
   local_EAX_23 = LookupRecordByte(in_stack_00000020);
-  local_10 = local_EAX_23 & 0xff;
+  local_10 = (int)(byte)local_EAX_23;
   local_14 = thunk_FUN_00606cd0(param_4,&local_6c,&local_78,&local_1c,&local_7c);
   uVar1 = *(int *)((int)this + 0x1c) * 0x41c64e6d + 0x3039;
   *(uint *)((int)this + 0x1c) = uVar1;
@@ -106,10 +106,10 @@ LAB_0060731e:
   if (0 < local_1c) {
     puVar3 = local_10c + local_8;
     do {
-      uVar1 = local_10;
+      iVar6 = local_10;
       if (local_8 == local_c) break;
       *puVar3 = 0;
-      if (uVar1 == 1) {
+      if (iVar6 == 1) {
         uVar1 = *(int *)((int)this + 0x1c) * 0x41c64e6d + 0x3039;
         *(uint *)((int)this + 0x1c) = uVar1;
         /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
@@ -118,14 +118,14 @@ LAB_0060740b:
         *puVar3 = uVar1;
       }
       else {
-        if (uVar1 == 2) {
+        if (iVar6 == 2) {
           uVar1 = *(int *)((int)this + 0x1c) * 0x41c64e6d + 0x3039;
           *(uint *)((int)this + 0x1c) = uVar1;
           /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
           uVar1 = (uint)CONCAT11(2,(char)((uVar1 >> 0x10) % 9) + '\a');
           goto LAB_0060740b;
         }
-        if (uVar1 == 3) {
+        if (iVar6 == 3) {
           uVar1 = *(int *)((int)this + 0x1c) * 0x41c64e6d + 0x3039;
           *(uint *)((int)this + 0x1c) = uVar1;
           if ((uVar1 & 0x30000) != 0) {

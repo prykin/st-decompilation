@@ -15,10 +15,8 @@ undefined4 __cdecl FUN_00553060(int param_1)
     if (0 < (int)uVar1) {
       bVar4 = uVar1 != 0;
       do {
-        /* ST_PSEUDO[dynamic_array_indexing]: expected DArrayAt<T>(g_array_00802A4C, uVar3) (runtime stride) */
         if ((((bVar4) &&
-             (psVar2 = (short *)(g_array_00802A4C->elementSize * uVar3 + (int)g_array_00802A4C->data
-                                ), psVar2 != nullptr)) && (*(int *)(psVar2 + 1) != 0)) &&
+             (psVar2 = DArrayAt<short>(g_array_00802A4C, uVar3), psVar2 != nullptr)) && (*(int *)(psVar2 + 1) != 0)) &&
            (*psVar2 == param_1)) {
           return *(undefined4 *)(psVar2 + 1);
         }

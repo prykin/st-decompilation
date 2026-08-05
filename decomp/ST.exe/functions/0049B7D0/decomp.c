@@ -335,8 +335,7 @@ joined_r0x0049bc58:
     do {
       DArrayGetElement((DArrayTy *)this->field_0029,uVar11,&local_18);
       if ((short)local_18 != -1) {
-        /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-        local_68[0] = CONCAT22(local_68[0]._2_2_,(short)local_18);
+        local_68[0] = STReplaceLowWord((uint32_t)(local_68[0]), (uint16_t)((short)local_18));
         Library::DKW::TBL::DArrayAppend(this->field_022E,&local_6c);
       }
       uVar11 = uVar11 + 1;

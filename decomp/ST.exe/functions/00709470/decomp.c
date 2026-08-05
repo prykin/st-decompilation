@@ -73,8 +73,7 @@ ST3DSMAPContext::sub_00709470
         iVar3 = *piVar8;
         if ((iVar3 != 0) && (0 < *(short *)(iVar3 + 0x12))) {
           sVar2 = *(short *)(iVar3 + 0x14);
-          /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-          local_10 = CONCAT22((short)((uint)piVar8 >> 0x10),sVar2);
+          local_10 = STReplaceLowWord((uint32_t)(piVar8), (uint16_t)(sVar2));
           if (0 < sVar2) {
             iVar10 = (int)*(short *)(iVar3 + 0xe);
             if (iVar10 < iVar13) {

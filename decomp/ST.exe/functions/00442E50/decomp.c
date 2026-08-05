@@ -141,8 +141,7 @@ LAB_00442f1f:
     piVar6 = local_d0;
     do {
       if (param_2 == *piVar6) {
-        /* ST_PSEUDO[flattened_global_record_array]: expected typedRecordArray[index].field after inferred base/stride proof */
-        local_84 = *(DArrayTy **)(iVar5 * 4 + 0x7f4e2f + param_1 * 0xa62);
+        local_84 = *(DArrayTy **)(iVar5 * 4 + STRecordByteAddress(g_packedRecords_A62x8, param_1, 0xF));
         break;
       }
       iVar5 = iVar5 + 1;
@@ -329,8 +328,7 @@ LAB_0044326c:
             }
             uVar11 = (undefined2)((uint)pSVar10 >> 0x10);
             if (local_40 == nullptr) goto cf_common_join_004435CD;
-            /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-            local_8 = CONCAT22((short)((uint)local_40 >> 0x10),*(undefined2 *)&local_40->field_0x32);
+            local_8 = STReplaceLowWord((uint32_t)(local_40), (uint16_t)(*(undefined2 *)&local_40->field_0x32));
             uVar13 = 0;
             if (0 < (int)local_3c) {
               do {
@@ -639,8 +637,7 @@ LAB_004434a2:
                STGridAt3D(g_worldGrid, iVar5, local_14c, local_14a).objects[0];
   }
   if (local_40 != nullptr) {
-    /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-    local_8 = CONCAT22((short)((uint)iVar5 >> 0x10),*(undefined2 *)&local_40->field_0x32);
+    local_8 = STReplaceLowWord((uint32_t)(iVar5), (uint16_t)(*(undefined2 *)&local_40->field_0x32));
     uVar13 = 0;
     if (0 < (int)local_2c) {
       do {

@@ -102,8 +102,7 @@ int __thiscall AiPlrClassTy::GetMessage(AiPlrClassTy *this,STMessage *message)
             memset(local_38, 0, 0x20); /* compiler bulk-zero initialization */
             iVar5 = 0;
             local_38[4] = 0x5deb;
-            /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-            local_24 = CONCAT22(local_24._2_2_,*(undefined2 *)&this_00->field_05D7);
+            local_24 = STReplaceLowWord((uint32_t)(local_24), (uint16_t)(*(undefined2 *)&this_00->field_05D7));
             if (this_00 == nullptr) {
               local_20 = nullptr;
             }
@@ -154,8 +153,7 @@ int __thiscall AiPlrClassTy::GetMessage(AiPlrClassTy *this,STMessage *message)
         if (DAT_008117bc != nullptr) {
           memset(local_38, 0, 0x20); /* compiler bulk-zero initialization */
           local_38[4] = 0x5dec;
-          /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-          local_24 = CONCAT22(local_24._2_2_,*(undefined2 *)&this_00->field_05D7);
+          local_24 = STReplaceLowWord((uint32_t)(local_24), (uint16_t)(*(undefined2 *)&this_00->field_05D7));
           if (this_00 == nullptr) {
             local_20 = nullptr;
           }
@@ -179,8 +177,7 @@ int __thiscall AiPlrClassTy::GetMessage(AiPlrClassTy *this,STMessage *message)
         bVar16 = pDVar8->count != 0;
         do {
           if (bVar16) {
-            /* ST_PSEUDO[dynamic_array_indexing]: expected DArrayAt<T>(pDVar8, uVar10) (runtime stride) */
-            piVar14 = (int *)(pDVar8->elementSize * uVar10 + (int)pDVar8->data);
+            piVar14 = DArrayAt<int>(pDVar8, uVar10);
           }
           else {
             piVar14 = nullptr;

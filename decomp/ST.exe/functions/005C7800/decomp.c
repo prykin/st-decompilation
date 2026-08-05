@@ -129,14 +129,12 @@ LAB_005c7a2c:
     _DAT_00854009 = (uVar6 & 1) + 6;
   }
   DAT_0085400d = this->field_1F5F;
-  /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-  DAT_00853ffc = CONCAT31(DAT_00853ffc._1_3_,(char)this->field_1F58);
+  DAT_00853ffc = STReplaceLowByte((uint32_t)(DAT_00853ffc), (uint8_t)((char)this->field_1F58));
 LAB_005c7ae0:
   wsprintfA(&DAT_00853de4,"%s%s%s");
   pDVar4 = this->field_1F7C;
   if ((DAT_00853ffc & 0xff) < pDVar4->count) {
-    /* ST_PSEUDO[dynamic_array_indexing]: expected DArrayAt<T>(pDVar4, (DAT_00853ffc & 0xff)) (runtime stride) */
-    pcVar14 = (char *)(pDVar4->elementSize * (DAT_00853ffc & 0xff) + (int)pDVar4->data);
+    pcVar14 = DArrayAt<char>(pDVar4, (DAT_00853ffc & 0xff));
   }
   else {
     pcVar14 = nullptr;

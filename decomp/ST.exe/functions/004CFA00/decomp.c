@@ -20,15 +20,15 @@ TLOBaseTy::sub_004CFA00
 {
   TLOBaseTy_field_0245State TVar1;
   TLOBaseTy_field_04D0State TVar2;
-  int iVar3;
-  uint uVar4;
+  byte bVar3;
+  int iVar4;
   int iVar5;
 
-  iVar3 = LookupRecordByte(*(char *)&this->field_023D);
-  iVar3 = (-(uint)((char)iVar3 != '\x01') & 0xfffffffd) + 0x13;
-  uVar4 = LookupRecordByte(*(char *)&this->field_023D);
+  bVar3 = LookupRecordByte(*(char *)&this->field_023D);
+  iVar4 = (-(uint)(bVar3 != 1) & 0xfffffffd) + 0x13;
+  bVar3 = LookupRecordByte(*(char *)&this->field_023D);
   TVar1 = this->field_0245;
-  iVar5 = (uVar4 & 0xff) - 1;
+  iVar5 = bVar3 - 1;
   switch(param_1) {
   case CASE_8:
   case CASE_9:
@@ -44,21 +44,21 @@ TLOBaseTy::sub_004CFA00
     iVar5 = *(int *)((&PTR_DAT_007b5170)[TVar1] + (param_2 + (iVar5 + this->field_0235 * 3) * 4) * 8
                     );
     *param_3 = iVar5;
-    *param_4 = iVar5 + iVar3;
+    *param_4 = iVar5 + iVar4;
     return;
   }
   if (TVar2 == CASE_4) {
     iVar5 = *(int *)((&PTR_DAT_007b5170)[TVar1] + (param_2 + (iVar5 + this->field_0235 * 3) * 4) * 8
                     );
-    *param_3 = iVar5 + iVar3;
-    *param_4 = iVar5 + iVar3;
+    *param_3 = iVar5 + iVar4;
+    *param_4 = iVar5 + iVar4;
     return;
   }
   if (TVar2 == CASE_5) {
     iVar5 = *(int *)((&PTR_DAT_007b5170)[TVar1] + (param_2 + (iVar5 + this->field_0235 * 3) * 4) * 8
                     );
     *param_4 = iVar5;
-    *param_3 = iVar5 + iVar3;
+    *param_3 = iVar5 + iVar4;
     return;
   }
   *param_3 = *(int *)((&PTR_DAT_007b5170)[TVar1] +

@@ -34,12 +34,12 @@ undefined4 __fastcall FUN_004e0830(TLOBaseTy *param_1)
 
 {
   TLOBaseTy_field_05ACState TVar1;
-  STAppC *pSVar2;
-  byte *pbVar3;
-  short sVar4;
-  int iVar5;
-  int iVar6;
-  uint uVar7;
+  int iVar2;
+  STAppC *pSVar3;
+  byte *pbVar4;
+  byte bVar5;
+  short sVar6;
+  int iVar7;
   uint uVar8;
   int uVar10;
   TLOBaseTyVTable *pTVar9;
@@ -70,20 +70,20 @@ undefined4 __fastcall FUN_004e0830(TLOBaseTy *param_1)
           case CASE_39:
 switchD_004e08b2_caseD_39:
             pTVar9 = param_1->vtable;
-            iVar5 = LookupRecordByte(*(char *)&param_1->field_023D);
-            (*pTVar9->vfunc_90)(param_1,3,(-(ushort)((char)iVar5 != '\x02') & 0xff3a) + 0x2e9);
+            bVar5 = LookupRecordByte(*(char *)&param_1->field_023D);
+            (*pTVar9->vfunc_90)(param_1,3,(-(ushort)(bVar5 != 2) & 0xff3a) + 0x2e9);
             break;
           case CASE_3B:
 switchD_004e08b2_caseD_3b:
             pTVar9 = param_1->vtable;
-            iVar5 = LookupRecordByte(*(char *)&param_1->field_023D);
-            (*pTVar9->vfunc_90)(param_1,3,(-(ushort)((char)iVar5 != '\x02') & 0xff3a) + 0x2f6);
+            bVar5 = LookupRecordByte(*(char *)&param_1->field_023D);
+            (*pTVar9->vfunc_90)(param_1,3,(-(ushort)(bVar5 != 2) & 0xff3a) + 0x2f6);
             break;
           case CASE_4F:
 switchD_004e08b2_caseD_4f:
             pTVar9 = param_1->vtable;
-            iVar5 = LookupRecordByte(*(char *)&param_1->field_023D);
-            (*pTVar9->vfunc_90)(param_1,3,(-(ushort)((char)iVar5 != '\x02') & 0xff32) + 0x34f);
+            bVar5 = LookupRecordByte(*(char *)&param_1->field_023D);
+            (*pTVar9->vfunc_90)(param_1,3,(-(ushort)(bVar5 != 2) & 0xff32) + 0x34f);
             break;
           case CASE_5E:
 switchD_004e08b2_caseD_5e:
@@ -112,8 +112,8 @@ LAB_004e0a1f:
             goto switchD_004e08b2_caseD_4f;
           case CASE_52:
             pTVar9 = param_1->vtable;
-            iVar5 = LookupRecordByte(*(char *)&param_1->field_023D);
-            (*pTVar9->vfunc_90)(param_1,3,(-(ushort)((char)iVar5 != '\x02') & 0xff3b) + 0x35c);
+            bVar5 = LookupRecordByte(*(char *)&param_1->field_023D);
+            (*pTVar9->vfunc_90)(param_1,3,(-(ushort)(bVar5 != 2) & 0xff3b) + 0x35c);
             break;
           case CASE_5E:
             goto switchD_004e08b2_caseD_5e;
@@ -133,16 +133,16 @@ LAB_004e0a1f:
     }
     if (param_1->field_04E0[1] == 0) {
       if (param_1->field_05AC == CASE_4F) {
-        iVar5 = LookupRecordByte(*(char *)&param_1->field_0024);
-        iVar6 = 0xe;
-        if ((char)iVar5 != '\x02') goto LAB_004e0a4f;
+        bVar5 = LookupRecordByte(*(char *)&param_1->field_0024);
+        iVar7 = 0xe;
+        if (bVar5 != 2) goto LAB_004e0a4f;
       }
       else {
 LAB_004e0a4f:
-        iVar6 = 0xc;
+        iVar7 = 0xc;
       }
-      if ((*(int *)(&param_1->field_01F5->field_0x18 + iVar6 * 0x24) ==
-           *(int *)(&param_1->field_01F5->field_0x14 + iVar6 * 0x24)) &&
+      if ((*(int *)(&param_1->field_01F5->field_0x18 + iVar7 * 0x24) ==
+           *(int *)(&param_1->field_01F5->field_0x14 + iVar7 * 0x24)) &&
          (param_1->field_04E0[2] == 0)) {
         param_1->field_04D0 = CASE_0;
         TLOBaseTy::RotateSpr(param_1,1);
@@ -154,42 +154,42 @@ LAB_004e0a4f:
   switch(param_1->field_04D0) {
   case CASE_2:
     uVar11 = param_1->field_05B4;
-    iVar5 = uVar11 + 2;
-    if ((int)uVar11 < iVar5) {
+    iVar7 = uVar11 + 2;
+    if ((int)uVar11 < iVar7) {
       uVar19 = param_1->field_05B0;
       do {
         if ((int)uVar19 < (int)(uVar19 + 2)) {
           sVar13 = *(short *)&param_1->field_05B8 + 1;
-          uVar7 = uVar19;
+          uVar8 = uVar19;
           do {
-            sVar4 = (short)uVar7;
-            if (((sVar4 < 0) || (g_worldGrid.sizeX <= sVar4)) ||
+            sVar6 = (short)uVar8;
+            if (((sVar6 < 0) || (g_worldGrid.sizeX <= sVar6)) ||
                ((sVar12 = (short)uVar11, sVar12 < 0 ||
                 ((((g_worldGrid.sizeY <= sVar12 || (sVar13 < 0)) || (g_worldGrid.sizeZ <= sVar13))
-                 || (STGridAt3D(g_worldGrid, sVar4, sVar12, sVar13).objects[0] ==
+                 || (STGridAt3D(g_worldGrid, sVar6, sVar12, sVar13).objects[0] ==
                      nullptr)))))) {
-              param_1->field_04E0[4] = uVar7;
-              iVar5 = param_1->field_05B8;
+              param_1->field_04E0[4] = uVar8;
+              iVar7 = param_1->field_05B8;
               param_1->field_04E0[3] = 1;
               param_1->field_04E0[5] = uVar11;
-              param_1->field_04E0[6] = iVar5 + 1;
+              param_1->field_04E0[6] = iVar7 + 1;
               if (DAT_00800bcc == nullptr) {
                 thunk_FUN_004cf430();
               }
               thunk_FUN_004d0970(DAT_00800bcc,param_1->field_04E0[4],param_1->field_04E0[5],
                                  param_1->field_04E0[6]);
               param_1->field_04D0 = CASE_3;
-              iVar5 = param_1->field_05B4;
+              iVar7 = param_1->field_05B4;
               param_1->field_04E0[7] = param_1->field_05B0 * 0xc9 + 0xdc;
-              iVar6 = param_1->field_05B8;
-              param_1->field_04E0[8] = iVar5 * 0xc9 + 100;
-              param_1->field_04E0[9] = iVar6 * 0xc9 - 0x28;
+              iVar2 = param_1->field_05B8;
+              param_1->field_04E0[8] = iVar7 * 0xc9 + 100;
+              param_1->field_04E0[9] = iVar2 * 0xc9 - 0x28;
               thunk_FUN_004ec0f0((AnonShape_004EC0F0_C371FA68 *)param_1);
               TLOBaseTy::RotateSpr(param_1,0);
               if (param_1->field_05AC == CASE_52) {
                 pTVar9 = param_1->vtable;
-                iVar5 = LookupRecordByte(*(char *)&param_1->field_023D);
-                (*pTVar9->vfunc_90)(param_1,3,(-(ushort)((char)iVar5 != '\x02') & 0xff3b) + 0x35e);
+                bVar5 = LookupRecordByte(*(char *)&param_1->field_023D);
+                (*pTVar9->vfunc_90)(param_1,3,(-(ushort)(bVar5 != 2) & 0xff3b) + 0x35e);
                 goto switchD_004e0aad_default;
               }
               if (param_1->field_05AC != CASE_5F) goto switchD_004e0aad_default;
@@ -197,20 +197,20 @@ LAB_004e0a4f:
               uVar23 = 0x3b1;
               goto LAB_004e0f14;
             }
-            uVar7 = uVar7 + 1;
-          } while ((int)uVar7 < (int)(uVar19 + 2));
+            uVar8 = uVar8 + 1;
+          } while ((int)uVar8 < (int)(uVar19 + 2));
         }
         uVar11 = uVar11 + 1;
-      } while ((int)uVar11 < iVar5);
+      } while ((int)uVar11 < iVar7);
     }
     break;
   case CASE_3:
-    iVar5 = thunk_FUN_004ac910(&param_1->field_01D5,'\x0e');
-    if (((int)param_1->field_01F5->field_020C <= iVar5) && (param_1->field_04DC != 0)) {
-      pSVar2 = param_1->field_0010;
-      pbVar3 = param_1->field_0024;
+    iVar7 = thunk_FUN_004ac910(&param_1->field_01D5,'\x0e');
+    if (((int)param_1->field_01F5->field_020C <= iVar7) && (param_1->field_04DC != 0)) {
+      pSVar3 = param_1->field_0010;
+      pbVar4 = param_1->field_0024;
       param_1->field_04E0[10] = 0;
-      if (pbVar3 == (byte *)(uint)(byte)pSVar2->field_112D) {
+      if (pbVar4 == (byte *)(uint)(byte)pSVar3->field_112D) {
         thunk_FUN_0052af50(0,(float)param_1->field_01F9,(float)param_1->field_01FD);
       }
       param_1->field_04D0 = CASE_4;
@@ -227,7 +227,7 @@ LAB_004e0a4f:
     uVar11 = param_1->field_04E0[6];
     uVar19 = param_1->field_04E0[5];
     uVar24 = 0x5a;
-    uVar7 = param_1->field_04E0[4];
+    uVar8 = param_1->field_04E0[4];
     pcVar20 = nullptr;
     uVar18 = (ushort)param_1->field_04E0[9];
     uVar17 = (ushort)param_1->field_04E0[8];
@@ -236,23 +236,23 @@ LAB_004e0a4f:
     uVar14 = param_1->field_04DC;
     cVar22 = *(char *)&param_1->field_0024;
     param_1->field_04E0[3] = 0;
-    uVar8 = LookupRecordByte(cVar22);
-    thunk_FUN_005fd1b0(param_1->field_0024,uVar8 & 0xff,uVar14,uVar15,uVar16,uVar17,uVar18,uVar7,
+    bVar5 = LookupRecordByte(cVar22);
+    thunk_FUN_005fd1b0(param_1->field_0024,(uint)bVar5,uVar14,uVar15,uVar16,uVar17,uVar18,uVar8,
                        uVar19,uVar11,pcVar20,piVar21,uVar24);
     if (param_1->field_0024 == (byte *)(uint)(byte)param_1->field_0010->field_112D) {
       thunk_FUN_0052af50(0,(float)param_1->field_01F9,(float)param_1->field_01FD);
       uVar10 = LookupRecordByte(*(char *)&param_1->field_0024);
-      uVar11 = uVar10 & 0xff;
-      if (uVar11 == 1) {
+      uVar10 = (int)(byte)uVar10;
+      if (uVar10 == 1) {
         pTVar9 = param_1->vtable;
         uVar23 = 0x6b;
 LAB_004e0de2:
         (*pTVar9->vfunc_90)(param_1,6,uVar23);
       }
-      else if (uVar11 == 2) {
+      else if (uVar10 == 2) {
         param_1->vfunc_90(6,0x6c);
       }
-      else if (uVar11 == 3) {
+      else if (uVar10 == 3) {
         pTVar9 = param_1->vtable;
         uVar23 = 0x6d;
         goto LAB_004e0de2;
@@ -276,8 +276,8 @@ LAB_004e0f14:
     pTVar9 = param_1->vtable;
     goto LAB_004e0e15;
   case CASE_5:
-    iVar5 = thunk_FUN_004ac910(&param_1->field_01D5,'\x0e');
-    if (iVar5 == param_1->field_01F5->field_020C) {
+    iVar7 = thunk_FUN_004ac910(&param_1->field_01D5,'\x0e');
+    if (iVar7 == param_1->field_01F5->field_020C) {
       param_1->field_04D0 = CASE_0;
       param_1->field_04DC = 0;
       param_1->field_04E0[10] = 0;
@@ -296,14 +296,14 @@ LAB_004e0f14:
     cVar22 = *(char *)&param_1->field_023D;
     pTVar9 = param_1->vtable;
 LAB_004e0e15:
-    iVar5 = LookupRecordByte(cVar22);
-    (*pTVar9->vfunc_90)(param_1,3,(-(ushort)((char)iVar5 != '\x02') & 0xff3b) + 0x35f);
+    bVar5 = LookupRecordByte(cVar22);
+    (*pTVar9->vfunc_90)(param_1,3,(-(ushort)(bVar5 != 2) & 0xff3b) + 0x35f);
   }
 switchD_004e0aad_default:
   if ((param_1->field_05AC == CASE_61) && (param_1->field_04E0[0] != 0)) {
-    iVar5 = thunk_FUN_004e4180((int)param_1->field_0024);
+    iVar7 = thunk_FUN_004e4180((int)param_1->field_0024);
     uVar11 = thunk_FUN_004e41c0((int)param_1->field_0024);
-    if (((int)uVar11 < iVar5) &&
+    if (((int)uVar11 < iVar7) &&
        (param_1->field_04E0[0x12] + param_1->field_04E0[0x11] <= g_playSystem_00802A38->field_00E4))
     {
       param_1->field_04E0[0x11] = g_playSystem_00802A38->field_00E4;

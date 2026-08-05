@@ -423,19 +423,15 @@ LAB_004fd533:
     case 0xb21a:
     case 0xb21c:
       if (local_44->field_0BF5 != CASE_6D) break;
-      /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-      local_c = (int *)CONCAT31(local_c._1_3_,1);
+      local_c = (int *)STReplaceLowByte((uint32_t)(local_c), (uint8_t)(1));
       piVar21 = (message->arg1).ptr;
       switch((message->arg0).u32) {
-      /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
       case 0:
-        local_c = (int *)CONCAT31(local_c._1_3_,1);
+        local_c = (int *)STReplaceLowByte((uint32_t)(local_c), (uint8_t)(1));
         break;
-      /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
       case 1:
       case 3:
-        local_c = (int *)CONCAT31(local_c._1_3_,
-                                  (&local_44->field_0xc0f)[SVar1 - 0xb21a >> 1] != '\x03');
+        local_c = (int *)STReplaceLowByte((uint32_t)(local_c), (uint8_t)((&local_44->field_0xc0f)[SVar1 - 0xb21a >> 1] != '\x03'));
         break;
       /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
       case 2:
@@ -968,10 +964,8 @@ LAB_004fbe73:
     }
     if (SVar1 == MESS_SHARED_0060) {
       local_8 = 0;
-      /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-      local_1c = (char *)CONCAT22(local_1c._2_2_,(message->arg1).words.low);
-      /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-      local_40 = CONCAT22(local_40._2_2_,(message->arg1).words.high);
+      local_1c = (char *)STReplaceLowWord((uint32_t)(local_1c), (uint16_t)((message->arg1).words.low));
+      local_40 = STReplaceLowWord((uint32_t)(local_40), (uint16_t)((message->arg1).words.high));
       if (local_44->field_023F == CASE_1) {
         local_c = &local_44->field_0204;
         local_18 = 0;
@@ -1151,10 +1145,9 @@ LAB_004fbaa0:
               /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
               uVar27 = extraout_EDX_14;
               break;
-            /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
             case 0xd:
             case 0xe:
-              UpdateStackPanel(this_00,CONCAT31((int3)((uint)uVar27 >> 8),bVar15 - 0xd));
+              UpdateStackPanel(this_00,STReplaceLowByte((uint32_t)(uVar27), (uint8_t)(bVar15 - 0xd)));
               /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
               uVar27 = extraout_EDX_15;
             }
@@ -1225,8 +1218,7 @@ LAB_004fbaa0:
           *(undefined1 *)((int)this_00->field_0B1F + uVar7 + 0x30) = 0;
         }
         bVar15 = bVar15 + 1;
-        /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-        local_c = (int *)CONCAT31(local_c._1_3_,bVar15);
+        local_c = (int *)STReplaceLowByte((uint32_t)(local_c), (uint8_t)(bVar15));
       } while (bVar15 < 0x14);
       if (this_00->field_023F == CASE_3) {
         bVar2 = false;

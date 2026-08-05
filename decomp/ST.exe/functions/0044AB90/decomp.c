@@ -45,8 +45,7 @@ int STAllPlayersC::CheckTmps
   local_10 = nullptr;
   local_8 = nullptr;
   if (tempGroup == 0) {
-    /* ST_PSEUDO[flattened_global_record_array]: expected typedRecordArray[index].field after inferred base/stride proof */
-    iVar6 = playerId * 0xa62 + 0x7f4f83;
+    iVar6 = STRecordByteAddress(g_packedRecords_A62x8, playerId, 0x163);
   }
   else {
     if (tempGroup != 1) {
@@ -57,8 +56,7 @@ int STAllPlayersC::CheckTmps
       }
       STDebugBreak(); /* noreturn in standalone pseudocode */
     }
-    /* ST_PSEUDO[flattened_global_record_array]: expected typedRecordArray[index].field after inferred base/stride proof */
-    iVar6 = playerId * 0xa62 + 0x7f4fd3;
+    iVar6 = STRecordByteAddress(g_packedRecords_A62x8, playerId, 0x1B3);
   }
   if (0x19a < objectType) {
     if (((objectType == 0x1a4) || (objectType == 0x1ae)) || (objectType == 0x1b8))

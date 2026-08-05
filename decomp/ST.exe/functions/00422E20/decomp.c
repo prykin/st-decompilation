@@ -36,10 +36,8 @@ void __thiscall FUN_00422e20(void *this,byte param_1)
       if (*(int *)((int)this + 0x20) == 0x14) {
         iVar1 = 0;
         do {
-          /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
           thunk_FUN_0042c300(DAT_0080874d,0,iVar1,*(char *)((int)this + 0x24),
-                             CONCAT22((short)((uint)uVar2 >> 0x10),*(undefined2 *)((int)this + 0x32)
-                                     ));
+                             STReplaceLowWord((uint32_t)(uVar2), (uint16_t)(*(undefined2 *)((int)this + 0x32))));
           iVar1 = iVar1 + 1;
           /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
           uVar2 = extraout_ECX_02;
@@ -48,10 +46,8 @@ void __thiscall FUN_00422e20(void *this,byte param_1)
       else {
         iVar1 = 0;
         do {
-          /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
           thunk_FUN_0042c300(DAT_0080874d,1,iVar1,*(char *)((int)this + 0x24),
-                             CONCAT22((short)((uint)uVar2 >> 0x10),*(undefined2 *)((int)this + 0x32)
-                                     ));
+                             STReplaceLowWord((uint32_t)(uVar2), (uint16_t)(*(undefined2 *)((int)this + 0x32))));
           iVar1 = iVar1 + 1;
           /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
           uVar2 = extraout_ECX_03;

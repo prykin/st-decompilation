@@ -17,8 +17,7 @@ int __thiscall FUN_00696d00(void *this,AnonShape_00696D00_CB3CB395 *param_1,uint
       bVar5 = pDVar1->count != 0;
       while( true ) {
         if (bVar5) {
-          /* ST_PSEUDO[dynamic_array_indexing]: expected DArrayAt<T>(pDVar1, uVar4) (runtime stride) */
-          puVar3 = (uint *)(pDVar1->elementSize * uVar4 + (int)pDVar1->data);
+          puVar3 = DArrayAt<uint>(pDVar1, uVar4);
         }
         else {
           puVar3 = nullptr;

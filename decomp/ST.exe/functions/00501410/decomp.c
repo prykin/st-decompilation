@@ -28,11 +28,9 @@ void __thiscall CPanelTy::PaintBRLife(CPanelTy *this,int param_1)
     FUN_006b4170(local_c->field_018C,0,param_1 + 0x35,0x70,7,0x21,0);
     bVar1 = pCVar3->field_0BC8;
     cVar7 = (char)(((uint)bVar1 * 0x21) / 100);
-    /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-    local_8 = CONCAT31(local_8._1_3_,cVar7);
+    local_8 = STReplaceLowByte((uint32_t)(local_8), (uint8_t)(cVar7));
     if ((bVar1 != 0) && (cVar7 == '\0')) {
-      /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-      local_8 = CONCAT31(local_8._1_3_,1);
+      local_8 = STReplaceLowByte((uint32_t)(local_8), (uint8_t)(1));
     }
     if (bVar1 < 0x46) {
       iVar4 = (-(uint)(bVar1 < 0x14) & 5) + 5;

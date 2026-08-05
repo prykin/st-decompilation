@@ -8,8 +8,8 @@ undefined4 __fastcall FUN_004dd880(AnonShape_004DDCC0_33DEB43E *param_1)
 
 {
   AnonShape_004DDCC0_33DEB43E *pAVar1;
-  uint uVar2;
-  uint uVar3;
+  byte bVar2;
+  byte bVar3;
   int iVar4;
   int iVar5;
   int iVar6;
@@ -36,11 +36,10 @@ undefined4 __fastcall FUN_004dd880(AnonShape_004DDCC0_33DEB43E *param_1)
     piVar8 = piVar8 + 1;
   }
   if (*(int *)&param_1->field_0024 != *(int *)&param_1->field_0x23d) {
-    uVar2 = LookupRecordByte((char)*(int *)&param_1->field_0x23d);
+    bVar2 = LookupRecordByte((char)*(int *)&param_1->field_0x23d);
     iVar6 = *(int *)&param_1->field_0x235;
-    uVar3 = LookupRecordByte(param_1->field_0024);
-    if ((&DAT_007e1984)[(uVar3 & 0xff) + ((uVar2 & 0xff) + iVar6 * 3) * 3] == '\0')
-    goto LAB_004dda3a;
+    bVar3 = LookupRecordByte(param_1->field_0024);
+    if ((&DAT_007e1984)[(uint)bVar3 + ((uint)bVar2 + iVar6 * 3) * 3] == '\0') goto LAB_004dda3a;
   }
   if (*(int *)&param_1[1].field_0xd8 == 0x34) {
     local_24 = 1;

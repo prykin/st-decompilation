@@ -156,10 +156,9 @@ cf_common_exit_00472A1F:
       case 9:
 LAB_00472a3a:
         thunk_FUN_00416270(pSVar5,(undefined2 *)&local_14,&local_18,&local_1c);
-        /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
         sVar3 = (*this->vtable->vfunc_10)
                           (this->field_0041,this->field_0043,
-                           CONCAT22((short)((uint)local_18 >> 0x10),this->field_0045),
+                           STReplaceLowWord((uint32_t)(local_18), (uint16_t)(this->field_0045)),
                            (short)local_14,(short)local_18,local_1c);
         uVar9 = sub_004176C0(this,sVar3);
         sub_00417910(this,(short)uVar9);
@@ -648,10 +647,9 @@ LAB_0047233a:
     break;
   case 9:
     thunk_FUN_00416270(pSVar5,(undefined2 *)&local_14,&local_18,&local_1c);
-    /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
     sVar3 = (*this->vtable->vfunc_10)
                       (this->field_0041,this->field_0043,
-                       CONCAT22((short)((uint)local_18 >> 0x10),this->field_0045),(short)local_14,
+                       STReplaceLowWord((uint32_t)(local_18), (uint16_t)(this->field_0045)),(short)local_14,
                        (short)local_18,local_1c);
     uVar9 = sub_004176C0(this,sVar3);
     sub_00417910(this,(short)uVar9);

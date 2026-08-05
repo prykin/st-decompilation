@@ -114,12 +114,11 @@ int __thiscall STBoatC::UnLoadObj(STBoatC *this,int param_1)
     }
     /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
     iVar9 = CONCAT22(extraout_var,*(short *)&this->field_0x5d2 * 0xc9) + 100;
-    /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
     sVar4 = (*this->vtable->vfunc_10)
                       (this->field_0041,this->field_0043,
-                       CONCAT22((short)((uint)iVar9 >> 0x10),this->field_0045),
+                       STReplaceLowWord((uint32_t)(iVar9), (uint16_t)(this->field_0045)),
                        *(short *)&this->field_0x5d0 * 0xc9 + 100,(short)iVar9,
-                       CONCAT22((short)((uint)iVar5 >> 0x10),*(short *)&this->field_0x5d4 * 200) +
+                       STReplaceLowWord((uint32_t)(iVar5), (uint16_t)(*(short *)&this->field_0x5d4 * 200)) +
                        100);
     this->field_05DA = sVar4;
     uVar6 = sub_004176C0(this,sVar4);

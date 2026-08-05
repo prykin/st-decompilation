@@ -6,34 +6,37 @@
 
    [STSwitchEnumApplier] Switch target field_02AD uses
    /SubmarineTitans/Recovered/Enums/STMineSetC_field_02ADState. Cases:
-   CASE_0=0;CASE_1=1;CASE_2=2;CASE_3=3;CASE_A6=166;CASE_A7=167;CASE_AF=175;CASE_BD=189 */
+   CASE_0=0;CASE_1=1;CASE_2=2;CASE_3=3;CASE_A6=166;CASE_A7=167;CASE_AF=175;CASE_BD=189
+   [STAbiConsistencyApplier] narrow_accumulator_return target=return:-1: return=/byte Evidence: all
+   resolved direct callers consume only AL or kill the result; narrow_uses=4, ignored=0, full=0,
+   unknown=0; reverse CFG traversal from every RET finds the same exact low-accumulator definition
+   width on every path; sites=00621B50 @ 00621F89 -> read as AL on every CFG path | 00621B50 @
+   00621FD8 -> read as AL on every CFG path | 00621B50 @ 00622101 -> read as AL on every CFG path |
+   006239A0 @ 00623A6C -> read as AL on every CFG path */
 
-uint __thiscall STMineSetC::sub_006226C0(STMineSetC *this,uint param_1,int param_2)
+byte __thiscall STMineSetC::sub_006226C0(STMineSetC *this,uint param_1,int param_2)
 
 {
   AnonPointee_STMineSetC_0211 *pAVar1;
   VisibleClassTy *pVVar2;
-  STMineSetC_field_02AEState SVar3;
-  /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
-  STMineSetC_field_02AEState extraout_EAX;
+  uint uVar3;
   int iVar4;
   STMineSetC *local_8;
 
-  SVar3 = this->field_02AE;
   local_8 = this;
-  if (((SVar3 == CASE_0) || (SVar3 == CASE_1)) &&
-     (SVar3 = (STMineSetC_field_02AEState)DAT_0080874d, this->field_0024 != SVar3)) {
+  if (((this->field_02AE == CASE_0) || (this->field_02AE == CASE_1)) &&
+     (uVar3 = (uint)DAT_0080874d, this->field_0024 != uVar3)) {
     switch(this->field_02AD) {
     case CASE_0:
     case CASE_2:
-      SVar3 = sub_0041D6C0(this,SVar3);
-      if (SVar3 == CASE_0) {
+      iVar4 = sub_0041D6C0(this,uVar3);
+      if (iVar4 == 0) {
         return 0;
       }
       break;
     case CASE_1:
-      SVar3 = thunk_FUN_0041d620(this,SVar3);
-      if (SVar3 == CASE_0) {
+      iVar4 = thunk_FUN_0041d620(this,uVar3);
+      if (iVar4 == 0) {
         return 0;
       }
       break;
@@ -42,37 +45,23 @@ uint __thiscall STMineSetC::sub_006226C0(STMineSetC *this,uint param_1,int param
     }
   }
   pAVar1 = this->field_0211;
-  if ((((int)pAVar1->field_0048 <= (int)param_1) && ((int)param_1 <= (int)pAVar1->field_0058)) &&
-     ((SVar3 = param_2, (int)pAVar1->field_0044 <= param_2 && (param_2 <= (int)pAVar1->field_0054)))
-     ) {
-    /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
-    param_1 = FUN_006ddbd0();
-    pVVar2 = g_visibleClass_00802A88;
-    SVar3 = param_1;
-    /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
-    if ((param_1 == CASE_0) || (g_visibleClass_00802A88 == nullptr))
-    goto cf_common_exit_006227F9;
-    /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-    SVar3 = CONCAT31((int3)(param_1 >> 8),DAT_0080874d);
-    iVar4 = (int)this->field_004B;
-    /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
-    if ((DAT_0080874d == 0xff) ||
-       ((((((SVar3 = CASE_0, g_visibleClass_00802A88->field_00F8 == 0 ||
+  /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
+  if (((((int)param_1 < (int)pAVar1->field_0048) || ((int)pAVar1->field_0058 < (int)param_1)) ||
+      ((param_2 < (int)pAVar1->field_0044 || ((int)pAVar1->field_0054 < param_2)))) ||
+     (((param_1 = FUN_006ddbd0(), pVVar2 = g_visibleClass_00802A88, param_1 != 0 &&
+       (g_visibleClass_00802A88 != nullptr)) &&
+      ((iVar4 = (int)this->field_004B, DAT_0080874d != 0xff &&
+       ((((((g_visibleClass_00802A88->field_00F8 != 0 &&
             (VisibleClassTy::sub_00558C00
                        (g_visibleClass_00802A88,g_visibleClass_00802A88->field_010C,
                         (int)this->field_0047,(int)this->field_0049,&param_2,(int *)&local_8),
-            SVar3 = extraout_EAX, iVar4 < 0)) || (4 < iVar4)) ||
-          ((param_2 < 0 || (pVVar2->field_0030 <= param_2)))) ||
-         ((SVar3 = (int)&local_8->vtable + g_centeredOffsets5[iVar4], (int)SVar3 < 0 ||
-          ((pVVar2->field_0034 <= (int)SVar3 || (pVVar2->field_004C == nullptr)))))) ||
-        (SVar3 = (STMineSetC_field_02AEState)
-                 pVVar2->field_004C[param_2 + SVar3 * pVVar2->field_0030], SVar3 != CASE_0))))
-    goto cf_common_exit_006227F9;
+            -1 < iVar4)) && (iVar4 < 5)) && ((-1 < param_2 && (param_2 < pVVar2->field_0030)))) &&
+         ((iVar4 = (int)&local_8->vtable + g_centeredOffsets5[iVar4], -1 < iVar4 &&
+          ((iVar4 < pVVar2->field_0034 && (pVVar2->field_004C != nullptr)))))) &&
+        (pVVar2->field_004C[param_2 + iVar4 * pVVar2->field_0030] == 0)))))))) {
+    /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
+    param_1 = 0;
   }
-  /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
-  param_1 = 0;
-/* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-cf_common_exit_006227F9:
-  return CONCAT31((int3)(SVar3 >> 8),(undefined1)param_1);
+  return (byte)param_1;
 }
 

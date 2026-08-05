@@ -4,8 +4,9 @@
 undefined4 __thiscall FUN_0060bdd0(void *this,undefined4 *param_1)
 
 {
-  int iVar1;
-  int **ppiVar2;
+  byte bVar1;
+  int iVar2;
+  int **ppiVar3;
   int *local_58 [6];
   undefined4 local_40;
   int local_38 [3];
@@ -18,10 +19,10 @@ undefined4 __thiscall FUN_0060bdd0(void *this,undefined4 *param_1)
   undefined4 local_c;
   undefined4 local_8;
 
-  ppiVar2 = local_58;
-  for (iVar1 = 8; iVar1 != 0; iVar1 = iVar1 + -1) {
-    *ppiVar2 = nullptr;
-    ppiVar2 = ppiVar2 + 1;
+  ppiVar3 = local_58;
+  for (iVar2 = 8; iVar2 != 0; iVar2 = iVar2 + -1) {
+    *ppiVar3 = nullptr;
+    ppiVar3 = ppiVar3 + 1;
   }
   memset(local_38, 0, 0x1c); /* compiler bulk-zero initialization */
   local_58[3] = (int *)0x4;
@@ -32,14 +33,14 @@ undefined4 __thiscall FUN_0060bdd0(void *this,undefined4 *param_1)
     local_38[2] = *(undefined4 *)((int)this + 0x1d9);
     local_38[0] = DAT_007e67b0;
     local_38[1] = 0x42;
-    iVar1 = LookupRecordByte(*(char *)(param_1 + 9));
-    if ((char)iVar1 == '\x03') {
-      iVar1 = thunk_FUN_004e60d0(param_1[9],0x6a);
+    bVar1 = LookupRecordByte(*(char *)(param_1 + 9));
+    if (bVar1 == 3) {
+      iVar2 = thunk_FUN_004e60d0(param_1[9],0x6a);
     }
     else {
-      iVar1 = thunk_FUN_004e60d0(param_1[9],0x2d);
+      iVar2 = thunk_FUN_004e60d0(param_1[9],0x2d);
     }
-    if (iVar1 != 0) {
+    if (iVar2 != 0) {
       local_38[0] = local_38[0] - ((int)(local_38[0] + (local_38[0] >> 0x1f & 3U)) >> 2);
     }
     local_2c = *(undefined2 *)((int)this + 0x205);

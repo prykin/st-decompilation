@@ -16,8 +16,7 @@ void FUN_00496e40(int param_1,int param_2,undefined4 param_3,int param_4)
   index = thunk_FUN_00496a90(param_1,param_2,0,param_3,param_4,&param_4);
   if (-1 < (int)index) {
     if (index < g_array_007FB270->count) {
-      /* ST_PSEUDO[dynamic_array_indexing]: expected DArrayAt<T>(g_array_007FB270, index) (runtime stride) */
-      pvVar3 = (void *)(g_array_007FB270->elementSize * index + (int)g_array_007FB270->data);
+      pvVar3 = DArrayAt<void>(g_array_007FB270, index);
     }
     else {
       pvVar3 = nullptr;

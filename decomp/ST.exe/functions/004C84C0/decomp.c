@@ -34,18 +34,19 @@ undefined4 __fastcall FUN_004c84c0(TLOBaseTy *param_1)
   int iVar2;
   code *pcVar3;
   bool bVar4;
-  int iVar5;
-  undefined4 uVar6;
-  int iVar7;
+  byte bVar5;
+  int iVar6;
+  undefined4 uVar7;
+  int iVar8;
   int uVar10;
   int local_EAX_683;
   int local_EAX_749;
   int local_EAX_801;
-  dword dVar8;
-  uint uVar9;
+  dword dVar9;
   uint uVar11;
-  undefined4 *puVar12;
-  AnonPointee_TLOBaseTy_0607 *pAVar13;
+  uint uVar12;
+  undefined4 *puVar13;
+  AnonPointee_TLOBaseTy_0607 *pAVar14;
   int local_14;
   int local_10;
   int local_c;
@@ -55,56 +56,56 @@ undefined4 __fastcall FUN_004c84c0(TLOBaseTy *param_1)
     if (param_1->field_03D4 == 0) {
       return 0;
     }
-    pAVar13 = param_1->field_0607;
-    if (pAVar13 == nullptr) {
+    pAVar14 = param_1->field_0607;
+    if (pAVar14 == nullptr) {
       return 0;
     }
-    iVar5 = TLOBaseTy::sub_004C7860
-                      (param_1,pAVar13->field_0000,pAVar13->field_0004,pAVar13->field_0008,1,0);
-    if (iVar5 == 0) {
+    iVar6 = TLOBaseTy::sub_004C7860
+                      (param_1,pAVar14->field_0000,pAVar14->field_0004,pAVar14->field_0008,1,0);
+    if (iVar6 == 0) {
       return 0;
     }
-    iVar5 = thunk_FUN_004c7c20(param_1);
-    if (iVar5 == 0) {
+    iVar6 = thunk_FUN_004c7c20(param_1);
+    if (iVar6 == 0) {
       return 0;
     }
-    pAVar13 = param_1->field_0607;
+    pAVar14 = param_1->field_0607;
     TLOBaseTy::thunk_FUN_004c7cc0
-              (param_1,pAVar13->field_0000,pAVar13->field_0004,pAVar13->field_0008,0,
-               pAVar13->field_000C,pAVar13->field_0010,pAVar13->field_0014,(char *)(pAVar13 + 1));
+              (param_1,pAVar14->field_0000,pAVar14->field_0004,pAVar14->field_0008,0,
+               pAVar14->field_000C,pAVar14->field_0010,pAVar14->field_0014,(char *)(pAVar14 + 1));
     if (1 < param_1->field_03D4) {
-      uVar9 = param_1->field_03D4 * 0x27 - 0x27;
-      puVar12 = (undefined4 *)((int)&param_1->field_0607[1].field_000C + 3);
-      pAVar13 = param_1->field_0607;
-      for (uVar11 = uVar9 >> 2; uVar11 != 0; uVar11 = uVar11 - 1) {
-        pAVar13->field_0000 = *puVar12;
-        puVar12 = puVar12 + 1;
-        pAVar13 = (AnonPointee_TLOBaseTy_0607 *)&pAVar13->field_0004;
+      uVar11 = param_1->field_03D4 * 0x27 - 0x27;
+      puVar13 = (undefined4 *)((int)&param_1->field_0607[1].field_000C + 3);
+      pAVar14 = param_1->field_0607;
+      for (uVar12 = uVar11 >> 2; uVar12 != 0; uVar12 = uVar12 - 1) {
+        pAVar14->field_0000 = *puVar13;
+        puVar13 = puVar13 + 1;
+        pAVar14 = (AnonPointee_TLOBaseTy_0607 *)&pAVar14->field_0004;
       }
-      for (uVar9 = uVar9 & 3; uVar9 != 0; uVar9 = uVar9 - 1) {
-        *(undefined1 *)&pAVar13->field_0000 = *(undefined1 *)puVar12;
-        puVar12 = (undefined4 *)((int)puVar12 + 1);
-        pAVar13 = (AnonPointee_TLOBaseTy_0607 *)((int)&pAVar13->field_0000 + 1);
+      for (uVar11 = uVar11 & 3; uVar11 != 0; uVar11 = uVar11 - 1) {
+        *(undefined1 *)&pAVar14->field_0000 = *(undefined1 *)puVar13;
+        puVar13 = (undefined4 *)((int)puVar13 + 1);
+        pAVar14 = (AnonPointee_TLOBaseTy_0607 *)((int)&pAVar14->field_0000 + 1);
       }
     }
     param_1->field_03D4 = param_1->field_03D4 + -1;
     return 0;
   }
   if (((*(int *)&param_1->field_0x361 == 5) &&
-      (iVar5 = param_1->vfunc_7C(), iVar5 == 100)) || (99 < param_1->field_0394))
+      (iVar6 = param_1->vfunc_7C(), iVar6 == 100)) || (99 < param_1->field_0394))
   {
-    iVar5 = TLOBaseTy::procResult(param_1);
-    if (iVar5 == 0) {
+    iVar6 = TLOBaseTy::procResult(param_1);
+    if (iVar6 == 0) {
       return 0;
     }
-    iVar5 = *(int *)&param_1->field_0x36d + -1;
-    *(int *)&param_1->field_0x36d = iVar5;
-    if (iVar5 < 1) {
+    iVar6 = *(int *)&param_1->field_0x36d + -1;
+    *(int *)&param_1->field_0x36d = iVar6;
+    if (iVar6 < 1) {
       *(undefined4 *)&param_1->field_0x365 = *(undefined4 *)&param_1->field_0x361;
-      iVar5 = TLOBaseTy::sub_004C90C0(param_1);
-      if ((iVar5 == 0) &&
-         (iVar5 = ReportDebugMessage("E:\\__titans\\Artem\\TLO_bproc.cpp",0x19f,0,0,
-                                     "%s","What's that ?"), iVar5 != 0)) {
+      iVar6 = TLOBaseTy::sub_004C90C0(param_1);
+      if ((iVar6 == 0) &&
+         (iVar6 = ReportDebugMessage("E:\\__titans\\Artem\\TLO_bproc.cpp",0x19f,0,0,
+                                     "%s","What's that ?"), iVar6 != 0)) {
         STDebugBreak(); /* noreturn in standalone pseudocode */
       }
       *(undefined4 *)&param_1->field_0x36d = 0;
@@ -132,11 +133,11 @@ undefined4 __fastcall FUN_004c84c0(TLOBaseTy *param_1)
     return 0;
   }
   if (*(int *)&param_1->field_0x361 == 5) {
-    uVar11 = (uint)param_1->field_0390 / 100;
-    if (uVar11 == 0) {
-      uVar11 = 1;
+    uVar12 = (uint)param_1->field_0390 / 100;
+    if (uVar12 == 0) {
+      uVar12 = 1;
     }
-    if (g_playSystem_00802A38->field_00E4 < param_1->field_038C + uVar11) {
+    if (g_playSystem_00802A38->field_00E4 < param_1->field_038C + uVar12) {
       return 0;
     }
     param_1->field_038C = g_playSystem_00802A38->field_00E4;
@@ -145,19 +146,19 @@ undefined4 __fastcall FUN_004c84c0(TLOBaseTy *param_1)
     param_1->field_03C4 = 0;
     param_1->field_03BC = 0;
     param_1->field_03B8 = 0;
-    iVar5 = *(int *)(&DAT_007e29f0 + (param_1->field_0235 * 3 + param_1->field_0239) * 4) / 100;
+    iVar6 = *(int *)(&DAT_007e29f0 + (param_1->field_0235 * 3 + param_1->field_0239) * 4) / 100;
     if (*(int *)(&DAT_007e29f0 + (param_1->field_0235 * 3 + param_1->field_0239) * 4) != 0) {
-      if (iVar5 == 0) {
-        iVar5 = 1;
+      if (iVar6 == 0) {
+        iVar6 = 1;
       }
-      iVar7 = thunk_FUN_004d7b90(*(char *)&param_1->field_0024,DAT_00794d84);
-      if (iVar7 < iVar5) {
+      iVar8 = thunk_FUN_004d7b90(*(char *)&param_1->field_0024,DAT_00794d84);
+      if (iVar8 < iVar6) {
         param_1->field_03BC = 1;
         goto LAB_004c8806;
       }
       thunk_FUN_004d7e50(*(char *)&param_1->field_0024,
                          *(int *)(&DAT_00794d70 + *(int *)&param_1->field_0x361 * 4),
-                         (int)param_1->field_0018,iVar5);
+                         (int)param_1->field_0018,iVar6);
     }
     if (param_1->field_0024 == (byte *)(uint)(byte)param_1->field_0010->field_112D) {
       thunk_FUN_004d8b70((char)param_1->field_0024);
@@ -165,17 +166,17 @@ undefined4 __fastcall FUN_004c84c0(TLOBaseTy *param_1)
     uVar10 = LookupRecordByte(*(char *)&param_1->field_023D);
     param_1->field_0241 =
          param_1->field_0241 +
-         *(int *)(&DAT_007e4178 + ((uVar10 & 0xffU) + param_1->field_0235 * 3) * 4) / 100;
+         *(int *)(&DAT_007e4178 + ((uint)(byte)uVar10 + param_1->field_0235 * 3) * 4) / 100;
     local_EAX_683 = LookupRecordByte(*(char *)&param_1->field_023D);
     param_1->field_05D7 =
          (param_1->field_0241 * 100) /
-         *(int *)(&DAT_007e4178 + ((local_EAX_683 & 0xffU) + param_1->field_0235 * 3) * 4);
+         *(int *)(&DAT_007e4178 + ((uint)(byte)local_EAX_683 + param_1->field_0235 * 3) * 4);
     local_EAX_749 = LookupRecordByte(*(char *)&param_1->field_023D);
-    if (*(int *)(&DAT_007e4178 + ((local_EAX_749 & 0xffU) + param_1->field_0235 * 3) * 4) <=
+    if (*(int *)(&DAT_007e4178 + ((uint)(byte)local_EAX_749 + param_1->field_0235 * 3) * 4) <=
         param_1->field_0241) {
       local_EAX_801 = LookupRecordByte(*(char *)&param_1->field_023D);
       param_1->field_0241 =
-           *(int *)(&DAT_007e4178 + ((local_EAX_801 & 0xffU) + param_1->field_0235 * 3) * 4);
+           *(int *)(&DAT_007e4178 + ((uint)(byte)local_EAX_801 + param_1->field_0235 * 3) * 4);
     }
 LAB_004c8806:
     thunk_FUN_004c7260(param_1,*(Global_sub_004C7260_param_1Enum *)&param_1->field_0x361,
@@ -184,25 +185,25 @@ LAB_004c8806:
     TLOBaseTy::sub_004C7460(param_1);
     return 0;
   }
-  uVar11 = (uint)param_1->field_0390 / 100;
-  if (uVar11 == 0) {
-    uVar11 = 1;
+  uVar12 = (uint)param_1->field_0390 / 100;
+  if (uVar12 == 0) {
+    uVar12 = 1;
   }
-  dVar8 = param_1->slot_2C();
-  iVar5 = thunk_FUN_004b72e0(*(char *)&param_1->field_0024,dVar8);
-  if ((iVar5 == 0) ||
-     (iVar5 = thunk_FUN_004b79c0(*(char *)&param_1->field_0024,(int)param_1->field_0018), iVar5 != 0
+  dVar9 = param_1->slot_2C();
+  iVar6 = thunk_FUN_004b72e0(*(char *)&param_1->field_0024,dVar9);
+  if ((iVar6 == 0) ||
+     (iVar6 = thunk_FUN_004b79c0(*(char *)&param_1->field_0024,(int)param_1->field_0018), iVar6 != 0
      )) {
-    iVar5 = 0;
+    iVar6 = 0;
   }
   else {
-    iVar5 = 1;
+    iVar6 = 1;
   }
-  param_1->field_03B8 = iVar5;
-  if ((iVar5 != 0) && (uVar11 = uVar11 << 2, DAT_00811798 != nullptr)) {
+  param_1->field_03B8 = iVar6;
+  if ((iVar6 != 0) && (uVar12 = uVar12 << 2, DAT_00811798 != nullptr)) {
     thunk_FUN_00621580(DAT_00811798,param_1->field_0024,5);
   }
-  if (g_playSystem_00802A38->field_00E4 < param_1->field_038C + uVar11) {
+  if (g_playSystem_00802A38->field_00E4 < param_1->field_038C + uVar12) {
     return 0;
   }
   param_1->field_038C = g_playSystem_00802A38->field_00E4;
@@ -215,25 +216,25 @@ LAB_004c8806:
   local_8 = 0;
   local_10 = 0;
   local_14 = 0;
-  iVar5 = 0;
+  iVar6 = 0;
   if (*(int *)(&DAT_00794d70 + *(int *)&param_1->field_0x361 * 4) == -1) {
 LAB_004c8bf2:
     param_1->field_0394 = param_1->field_0394 + 1;
     if (*(int *)(&DAT_00794d70 + *(int *)&param_1->field_0x361 * 4) != -1) {
-      param_1->field_03A8 = param_1->field_03A8 + iVar5;
+      param_1->field_03A8 = param_1->field_03A8 + iVar6;
       param_1->field_03B0 = param_1->field_03B0 + local_8;
       param_1->field_03AC = param_1->field_03AC + local_10;
       param_1->field_03B4 = param_1->field_03B4 + local_c;
-      iVar7 = LookupRecordByte(*(char *)&param_1->field_0024);
-      if ((char)iVar7 == '\x03') {
-        if (iVar5 != 0) {
-          thunk_FUN_004e4330((int)param_1->field_0024,iVar5);
+      bVar5 = LookupRecordByte(*(char *)&param_1->field_0024);
+      if (bVar5 == 3) {
+        if (iVar6 != 0) {
+          thunk_FUN_004e4330((int)param_1->field_0024,iVar6);
         }
       }
-      else if (iVar5 != 0) {
+      else if (iVar6 != 0) {
         thunk_FUN_004d7c10(*(char *)&param_1->field_0024,
                            *(int *)(&DAT_00794d70 + *(int *)&param_1->field_0x361 * 4),
-                           (int)param_1->field_0018,iVar5);
+                           (int)param_1->field_0018,iVar6);
       }
       if (local_10 != 0) {
         thunk_FUN_004d7d30(*(char *)&param_1->field_0024,
@@ -260,13 +261,13 @@ LAB_004c8bf2:
     }
   }
   else {
-    iVar5 = param_1->field_0398;
-    if (99 < iVar5) {
-      local_14 = iVar5 / 100;
+    iVar6 = param_1->field_0398;
+    if (99 < iVar6) {
+      local_14 = iVar6 / 100;
     }
-    iVar7 = param_1->field_039C;
-    if (99 < iVar7) {
-      local_10 = iVar7 / 100;
+    iVar8 = param_1->field_039C;
+    if (99 < iVar8) {
+      local_10 = iVar8 / 100;
     }
     iVar1 = param_1->field_03A0;
     if (99 < iVar1) {
@@ -276,10 +277,10 @@ LAB_004c8bf2:
     if (99 < iVar2) {
       local_c = iVar2 / 100;
     }
-    if (iVar5 % 100 != 0) {
+    if (iVar6 % 100 != 0) {
       local_14 = local_14 + 1;
     }
-    if (iVar7 % 100 != 0) {
+    if (iVar8 % 100 != 0) {
       local_10 = local_10 + 1;
     }
     if (iVar1 % 100 != 0) {
@@ -288,11 +289,11 @@ LAB_004c8bf2:
     if (iVar2 % 100 != 0) {
       local_c = local_c + 1;
     }
-    if (iVar5 < param_1->field_03A8 + local_14) {
-      local_14 = iVar5 - param_1->field_03A8;
+    if (iVar6 < param_1->field_03A8 + local_14) {
+      local_14 = iVar6 - param_1->field_03A8;
     }
-    if (iVar7 < param_1->field_03AC + local_10) {
-      local_10 = iVar7 - param_1->field_03AC;
+    if (iVar8 < param_1->field_03AC + local_10) {
+      local_10 = iVar8 - param_1->field_03AC;
     }
     if (iVar1 < local_8 + param_1->field_03B0) {
       local_8 = iVar1 - param_1->field_03B0;
@@ -300,40 +301,40 @@ LAB_004c8bf2:
     if (iVar2 < local_c + param_1->field_03B4) {
       local_c = iVar2 - param_1->field_03B4;
     }
-    iVar5 = LookupRecordByte(*(char *)&param_1->field_0024);
-    if ((char)iVar5 == '\x03') {
+    bVar5 = LookupRecordByte(*(char *)&param_1->field_0024);
+    if (bVar5 == 3) {
       if ((local_14 != 0) &&
-         (uVar11 = thunk_FUN_004e41c0((int)param_1->field_0024), (int)uVar11 < local_14)) {
+         (uVar12 = thunk_FUN_004e41c0((int)param_1->field_0024), (int)uVar12 < local_14)) {
         bVar4 = false;
         param_1->field_03C8 = 1;
       }
     }
     else if ((local_14 != 0) &&
-            (iVar5 = thunk_FUN_004d7b10(*(char *)&param_1->field_0024,
+            (iVar6 = thunk_FUN_004d7b10(*(char *)&param_1->field_0024,
                                         *(int *)(&DAT_00794d70 + *(int *)&param_1->field_0x361 * 4))
-            , iVar5 < local_14)) {
+            , iVar6 < local_14)) {
       bVar4 = false;
       param_1->field_03C8 = 1;
     }
     if ((local_10 != 0) &&
-       (iVar5 = thunk_FUN_004d7b50(*(char *)&param_1->field_0024,
+       (iVar6 = thunk_FUN_004d7b50(*(char *)&param_1->field_0024,
                                    *(int *)(&DAT_00794d70 + *(int *)&param_1->field_0x361 * 4)),
-       iVar5 < local_10)) {
+       iVar6 < local_10)) {
       bVar4 = false;
       param_1->field_03C4 = 1;
     }
     if ((local_8 != 0) &&
-       (iVar5 = thunk_FUN_004d7b90(*(char *)&param_1->field_0024,
+       (iVar6 = thunk_FUN_004d7b90(*(char *)&param_1->field_0024,
                                    *(int *)(&DAT_00794d70 + *(int *)&param_1->field_0x361 * 4)),
-       iVar5 < local_8)) {
+       iVar6 < local_8)) {
       bVar4 = false;
       param_1->field_03BC = 1;
     }
     if ((local_c == 0) ||
-       (iVar5 = thunk_FUN_004d7bd0(*(char *)&param_1->field_0024,
+       (iVar6 = thunk_FUN_004d7bd0(*(char *)&param_1->field_0024,
                                    *(int *)(&DAT_00794d70 + *(int *)&param_1->field_0x361 * 4)),
-       local_c <= iVar5)) {
-      iVar5 = local_14;
+       local_c <= iVar6)) {
+      iVar6 = local_14;
       if (bVar4) goto LAB_004c8bf2;
     }
     else {
@@ -347,9 +348,8 @@ LAB_004c8bf2:
         thunk_FUN_00621580(DAT_00811798,param_1->field_0024,2);
       }
       if (param_1->field_03C8 != 0) {
-        iVar5 = LookupRecordByte(*(char *)&param_1->field_0024);
-        thunk_FUN_00621580(DAT_00811798,param_1->field_0024,
-                           (-(uint)((char)iVar5 != '\x03') & 0xfffffffd) + 6);
+        bVar5 = LookupRecordByte(*(char *)&param_1->field_0024);
+        thunk_FUN_00621580(DAT_00811798,param_1->field_0024,(-(uint)(bVar5 != 3) & 0xfffffffd) + 6);
       }
       if (param_1->field_03C0 != 0) {
         thunk_FUN_00621580(DAT_00811798,param_1->field_0024,7);

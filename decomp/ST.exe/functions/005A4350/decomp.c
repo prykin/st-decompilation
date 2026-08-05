@@ -344,9 +344,8 @@ int __thiscall FSGSTy::GetMessage(FSGSTy *this,STMessage *message)
         switch(this_00->field_1A5F) {
         case CASE_6:
           local_30 = 0x10000;
-        /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
         case CASE_3:
-          local_30 = CONCAT31(local_30._1_3_,1);
+          local_30 = STReplaceLowByte((uint32_t)(local_30), (uint8_t)(1));
         /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
         case CASE_5:
           local_30._0_2_ = CONCAT11(1,(undefined1)local_30);
@@ -827,8 +826,7 @@ LAB_005a6e50:
               if (pDVar25 != nullptr) {
                 uVar35 = (uint)(message->arg0).words.low;
                 if (uVar35 < pDVar25->count) {
-                  /* ST_PSEUDO[dynamic_array_indexing]: expected DArrayAt<T>(pDVar25, uVar35) (runtime stride) */
-                  local_8 = (uint *)(pDVar25->elementSize * uVar35 + (int)pDVar25->data);
+                  local_8 = DArrayAt<uint>(pDVar25, uVar35);
                 }
                 else {
                   local_8 = nullptr;
@@ -874,9 +872,7 @@ LAB_005a6e50:
               if (pDVar25 != nullptr) {
                 uVar35 = (uint)(message->arg0).words.low;
                 if (uVar35 < pDVar25->count) {
-                  /* ST_PSEUDO[dynamic_array_indexing]: expected DArrayAt<T>(pDVar25, uVar35) (runtime stride) */
-                  local_c = (AnonShape_005A4350_59BACD18 *)
-                            (pDVar25->elementSize * uVar35 + (int)pDVar25->data);
+                  local_c = DArrayAt<AnonShape_005A4350_59BACD18>(pDVar25, uVar35);
                 }
                 else {
                   local_c = nullptr;
@@ -885,18 +881,15 @@ LAB_005a6e50:
                   uVar35 = *(uint *)(local_c + 2);
                   if ((uVar35 & 0x40) == 0) {
                     if ((uVar35 & 0x18) == 0) {
-                      /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-                      local_10 = (uint *)(CONCAT31(local_10._1_3_,-((uVar35 & 2) != 0)) & 0xffffff05
+                      local_10 = (uint *)(STReplaceLowByte((uint32_t)(local_10), (uint8_t)(-((uVar35 & 2) != 0))) & 0xffffff05
                                          );
                     }
                     else {
-                      /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-                      local_10 = (uint *)CONCAT31(local_10._1_3_,3);
+                      local_10 = (uint *)STReplaceLowByte((uint32_t)(local_10), (uint8_t)(3));
                     }
                   }
                   else {
-                    /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-                    local_10 = (uint *)CONCAT31(local_10._1_3_,4);
+                    local_10 = (uint *)STReplaceLowByte((uint32_t)(local_10), (uint8_t)(4));
                   }
                   pbVar41 = (byte *)FUN_0070b3a0((AnonShape_GLOBAL_0081175C_57F682DD *)
                                                  this_00->field_1A87,(uint)local_10 & 0xff);
@@ -960,8 +953,7 @@ LAB_005a6e50:
             pDVar25 = this_00->field_1EAA;
             if (pDVar25 != nullptr) {
               if ((message->arg0).u32 < pDVar25->count) {
-                /* ST_PSEUDO[dynamic_array_indexing]: expected DArrayAt<T>(pDVar25, (message->arg0).u32) (runtime stride) */
-                pcVar39 = (char *)(pDVar25->elementSize * (message->arg0).u32 + (int)pDVar25->data);
+                pcVar39 = DArrayAt<char>(pDVar25, (message->arg0).u32);
               }
               else {
                 pcVar39 = nullptr;
@@ -1026,8 +1018,7 @@ LAB_005a6e50:
           }
           pDVar25 = this_00->field_1EA6;
           if (uVar35 < pDVar25->count) {
-            /* ST_PSEUDO[dynamic_array_indexing]: expected DArrayAt<T>(pDVar25, uVar35) (runtime stride) */
-            pcVar39 = (char *)(pDVar25->elementSize * uVar35 + (int)pDVar25->data);
+            pcVar39 = DArrayAt<char>(pDVar25, uVar35);
           }
           else {
             pcVar39 = nullptr;
@@ -1301,8 +1292,7 @@ joined_r0x005a8b8f:
         if (uVar35 == 0) break;
         pDVar25 = this_00->field_1EA6;
         if (uVar35 < pDVar25->count) {
-          /* ST_PSEUDO[dynamic_array_indexing]: expected DArrayAt<T>(pDVar25, uVar35) (runtime stride) */
-          pvVar38 = (void *)(pDVar25->elementSize * uVar35 + (int)pDVar25->data);
+          pvVar38 = DArrayAt<void>(pDVar25, uVar35);
         }
         else {
           pvVar38 = nullptr;
@@ -1579,9 +1569,7 @@ LAB_005a7656:
         }
         else {
           if (this_00->field_1ECA < PTR_0080c502->count) {
-            /* ST_PSEUDO[dynamic_array_indexing]: expected DArrayAt<T>(PTR_0080c502, this_00->field_1ECA) (runtime stride) */
-            pcVar39 = (char *)(PTR_0080c502->elementSize * this_00->field_1ECA +
-                              (int)PTR_0080c502->data);
+            pcVar39 = DArrayAt<char>(PTR_0080c502, this_00->field_1ECA);
           }
           else {
             pcVar39 = nullptr;
@@ -1922,9 +1910,7 @@ cf_common_exit_005A7F3B:
               FUN_006e6080(this_00,2,this_00->field_1B20,(undefined4 *)puVar1);
               pDVar25 = this_00->field_1EA6;
               if ((uint)*(ushort *)&this_00->field_0x31 < pDVar25->count) {
-                /* ST_PSEUDO[dynamic_array_indexing]: expected DArrayAt<T>(pDVar25, (uint)*(ushort *)&this_00->field_0x31) (runtime stride) */
-                pvVar38 = (void *)(pDVar25->elementSize * (uint)*(ushort *)&this_00->field_0x31 +
-                                  (int)pDVar25->data);
+                pvVar38 = DArrayAt<void>(pDVar25, (uint)*(ushort *)&this_00->field_0x31);
               }
               else {
                 pvVar38 = nullptr;
@@ -2243,8 +2229,7 @@ cf_common_exit_005A5634:
               goto LAB_005a5859;
             }
             do {
-              /* ST_PSEUDO[dynamic_array_indexing]: expected DArrayAt<T>(pDVar25, (int)local_8) (runtime stride) */
-              pcVar39 = (char *)(pDVar25->elementSize * (int)local_8 + (int)pDVar25->data);
+              pcVar39 = DArrayAt<char>(pDVar25, (int)local_8);
 LAB_005a5859:
               if (pcVar39 != nullptr) {
                 this_00->field_20BB = *(undefined4 *)(pcVar39 + 0x90);
@@ -2465,8 +2450,7 @@ cf_common_exit_005A52AA:
     case 0x6920:
     case 0x6921:
       bVar34 = (char)message->id - 0x13;
-      /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-      local_c = (AnonShape_005A4350_59BACD18 *)CONCAT31(local_c._1_3_,bVar34);
+      local_c = (AnonShape_005A4350_59BACD18 *)STReplaceLowByte((uint32_t)(local_c), (uint8_t)(bVar34));
       if ((this_00->field_1EE3 <= (uint)bVar34) || (this_00->field_1EDB == nullptr)) break;
       iVar46 = (uint)bVar34 * 0x24;
       iVar21 = -1;

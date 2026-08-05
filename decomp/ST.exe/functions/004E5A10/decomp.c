@@ -5,8 +5,7 @@ void FUN_004e5a10(int param_1,uint param_2)
   byte *pbVar1;
 
   if ((((-1 < param_1) && (param_1 < 8)) && (0 < (int)param_2)) && ((int)param_2 < 0x9b)) {
-    /* ST_PSEUDO[flattened_global_record_array]: expected typedRecordArray[index].field after inferred base/stride proof */
-    pbVar1 = (byte *)(param_1 * 0xa62 + 0x7f510b + ((int)(param_2 ^ 7) >> 3));
+    pbVar1 = (byte *)(STRecordByteAddress(g_packedRecords_A62x8, param_1, 0x2EB) + ((int)(param_2 ^ 7) >> 3));
     *pbVar1 = *pbVar1 | '\x01' << ((param_2 ^ 7) & 7);
   }
   return;

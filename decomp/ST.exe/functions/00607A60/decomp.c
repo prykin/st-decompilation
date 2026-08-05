@@ -18,7 +18,7 @@ int __thiscall FUN_00607a60(void *this,int param_1,int param_2,int param_3)
   STMessage local_80;
   undefined4 local_60 [5];
   int local_4c;
-  uint local_44;
+  int local_44;
   int local_40;
   int local_3c;
   int local_38;
@@ -29,14 +29,14 @@ int __thiscall FUN_00607a60(void *this,int param_1,int param_2,int param_3)
   byte local_1f;
   int local_1e;
   undefined4 *local_18;
-  uint local_14;
+  int local_14;
   int *local_10;
   int local_c;
   int local_8;
 
   /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
   local_EAX_23 = LookupRecordByte(in_stack_00000020);
-  local_14 = local_EAX_23 & 0xff;
+  local_14 = (int)(byte)local_EAX_23;
   uVar3 = *(int *)((int)this + 0x1c) * 0x41c64e6d + 0x3039;
   *(uint *)((int)this + 0x1c) = uVar3;
   iVar4 = (uVar3 >> 0x10) % 0xb + 9;
@@ -70,7 +70,7 @@ int __thiscall FUN_00607a60(void *this,int param_1,int param_2,int param_3)
     iVar4 = iVar1;
     piVar5 = piVar5 + 1;
   } while (local_8 < 0x14);
-  if (((int)local_14 < 2) || (2 < (int)local_14)) {
+  if ((local_14 < 2) || (2 < local_14)) {
     local_14 = 1;
   }
   local_8 = 0;

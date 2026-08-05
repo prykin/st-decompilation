@@ -18,8 +18,7 @@ int FUN_006e4540(DArrayTy *param_1,int param_2)
     if (param_1->count <= uVar1) {
       return iVar2;
     }
-    /* ST_PSEUDO[dynamic_array_indexing]: expected DArrayAt<T>(param_1, uVar1) (runtime stride) */
-    pvVar3 = (void *)(param_1->elementSize * uVar1 + (int)param_1->data);
+    pvVar3 = DArrayAt<void>(param_1, uVar1);
     param_1->iteratorIndex = uVar1 + 1;
     if (pvVar3 == nullptr) {
       return iVar2;

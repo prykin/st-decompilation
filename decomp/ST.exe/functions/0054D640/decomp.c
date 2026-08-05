@@ -281,9 +281,7 @@ undefined4 __thiscall STPlaySystemC::Life(STPlaySystemC *this)
                 bVar12 = uVar13 != 0;
                 do {
                   if (bVar12) {
-                    /* ST_PSEUDO[dynamic_array_indexing]: expected DArrayAt<T>(g_array_0080C4FE, uVar8) (runtime stride) */
-                    piVar10 = (int *)(g_array_0080C4FE->elementSize * uVar8 +
-                                     (int)g_array_0080C4FE->data);
+                    piVar10 = DArrayAt<int>(g_array_0080C4FE, uVar8);
                   }
                   else {
                     piVar10 = nullptr;
@@ -307,9 +305,7 @@ undefined4 __thiscall STPlaySystemC::Life(STPlaySystemC *this)
                 bVar12 = uVar13 != 0;
                 do {
                   if (bVar12) {
-                    /* ST_PSEUDO[dynamic_array_indexing]: expected DArrayAt<T>(g_array_0080C4FE, uVar8) (runtime stride) */
-                    piVar10 = (int *)(g_array_0080C4FE->elementSize * uVar8 +
-                                     (int)g_array_0080C4FE->data);
+                    piVar10 = DArrayAt<int>(g_array_0080C4FE, uVar8);
                   }
                   else {
                     piVar10 = nullptr;

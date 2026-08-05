@@ -97,8 +97,7 @@ LAB_004b03a2:
                  ((g_playSystem_00802A38 == nullptr ||
                   (g_bulkInitializedRecords_008087C7[local_c->field_0024].field_0022 < 8)))) {
                 bVar1 = *(byte *)&local_c->field_0024;
-                /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-                local_28 = (char *)CONCAT31(local_28._1_3_,bVar1);
+                local_28 = (char *)STReplaceLowByte((uint32_t)(local_28), (uint8_t)(bVar1));
                 if (g_appClass_00806728->field_146F == '\0') {
                   if (bVar1 == (byte)param_1) {
 LAB_004b04c9:

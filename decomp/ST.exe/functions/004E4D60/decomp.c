@@ -5,8 +5,8 @@
 undefined4 __fastcall FUN_004e4d60(AnonShape_004E4D60_C16F78E8 *param_1)
 
 {
-  uint uVar1;
-  uint uVar2;
+  byte bVar1;
+  byte bVar2;
   int iVar3;
 
   if ((param_1->field_0245 == 0) && ((param_1->field_05AC == 0x36 || (param_1->field_05AC == 0x5d)))
@@ -16,10 +16,10 @@ undefined4 __fastcall FUN_004e4d60(AnonShape_004E4D60_C16F78E8 *param_1)
       param_1->field_04DC = 0;
     }
     if (*(int *)&param_1->field_0x24 != param_1->field_023D) {
-      uVar1 = LookupRecordByte((char)param_1->field_023D);
+      bVar1 = LookupRecordByte((char)param_1->field_023D);
       iVar3 = param_1->field_0235;
-      uVar2 = LookupRecordByte(param_1->field_0x24);
-      if ((&DAT_007e1984)[(uVar2 & 0xff) + ((uVar1 & 0xff) + iVar3 * 3) * 3] == '\0') {
+      bVar2 = LookupRecordByte(param_1->field_0x24);
+      if ((&DAT_007e1984)[(uint)bVar2 + ((uint)bVar1 + iVar3 * 3) * 3] == '\0') {
         return 0;
       }
     }

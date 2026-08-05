@@ -91,9 +91,7 @@ AiEventClassTy::__CreateObjPl
       local_28[1] = 0;
       local_1c[0] = 7;
       local_1c[1] = 0;
-      /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-      local_20 = CONCAT22((short)((uint)param_3 >> 0x10),
-                          (short)g_bulkInitializedRecords_008087C7[uVar5].field_0024 + -3);
+      local_20 = STReplaceLowWord((uint32_t)(param_3), (uint16_t)((short)g_bulkInitializedRecords_008087C7[uVar5].field_0024 + -3));
       /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
       local_30 = CONCAT22((short)(uVar5 * 9 >> 0x10),
                           (short)g_bulkInitializedRecords_008087C7[uVar5].field_0028 + -3);

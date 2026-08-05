@@ -21,8 +21,9 @@ FUN_004ec700(void *this,Global_sub_004EC700_param_1Enum param_1,int param_2,uint
   int iVar5;
 
   uVar3 = LookupRecordByte(*(char *)((int)this + 0x23d));
+  uVar3 = (int)(byte)uVar3;
   iVar1 = *(int *)((int)this + 0x245);
-  iVar5 = (uVar3 & 0xffU) - 1;
+  iVar5 = uVar3 + -1;
   switch(param_1) {
   case CASE_7:
   case CASE_D:

@@ -53,9 +53,8 @@ LAB_004b77c4:
             if (pDVar7->count != 0) {
               do {
                 DArrayGetElement(pDVar7,index,local_28);
-                /* ST_PSEUDO[flattened_global_record_array]: expected typedRecordArray[index].field after inferred base/stride proof */
-                if (*(int *)(iVar2 * 0xa62 + 0x7f579a + local_24 * 4) <
-                    *(int *)(iVar2 * 0xa62 + 0x7f579a + local_18 * 4)) {
+                if (*(int *)(STRecordByteAddress(g_packedRecords_A62x8, iVar2, 0x97A) + local_24 * 4) <
+                    *(int *)(STRecordByteAddress(g_packedRecords_A62x8, iVar2, 0x97A) + local_18 * 4)) {
                   Library::DKW::TBL::FUN_006b11d0
                             (*(uint **)&g_packedRecords_A62x8[iVar2].field_0x992,index,&local_1c);
                   iVar3 = iVar3 + local_14;

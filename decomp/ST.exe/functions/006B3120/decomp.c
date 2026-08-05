@@ -34,7 +34,7 @@ int FUN_006b3120(uint *param_1,uint *param_2)
       *param_2 = uVar1 | 0x20;
       if ((((uVar1 & 0x40000001) != 0x40000001) || (param_2[10] != param_2[6])) ||
          (param_2[0xb] != param_2[7])) {
-        *param_2 = CONCAT31((int3)(uVar1 >> 8),(char)(uVar1 | 0x20)) | 4;
+        *param_2 = STReplaceLowByte((uint32_t)(uVar1), (uint8_t)((char)(uVar1 | 0x20))) | 4;
       }
       param_2[10] = param_2[6];
       param_2[0xb] = param_2[7];

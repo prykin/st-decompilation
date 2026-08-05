@@ -58,8 +58,7 @@ byte * FUN_006f4fe0(byte *param_1,int param_2,uint *param_3,int param_4,int para
               goto LAB_006f51af;
             }
             bVar2 = *pbVar10;
-            /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-            param_9 = (byte *)CONCAT31((int3)((uint)param_9 >> 8),bVar2);
+            param_9 = (byte *)STReplaceLowByte((uint32_t)(param_9), (uint8_t)(bVar2));
             pbVar10 = pbVar10 + 1;
             *param_1 = bVar2;
             param_3 = (uint *)((int)param_3 + 2);
@@ -74,8 +73,7 @@ byte * FUN_006f4fe0(byte *param_1,int param_2,uint *param_3,int param_4,int para
         else {
           param_6 = pbVar10 + 1;
           bVar2 = *pbVar10;
-          /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-          param_9 = (byte *)CONCAT31((int3)((uint)param_9 >> 8),bVar2);
+          param_9 = (byte *)STReplaceLowByte((uint32_t)(param_9), (uint8_t)(bVar2));
           iVar9 = iVar9 - (uVar4 & 0x3f);
           uVar5 = uVar4 & 0x3f;
           do {
@@ -198,8 +196,7 @@ LAB_006f51af:
             param_3 = puVar7;
           }
           bVar2 = *param_6;
-          /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-          param_9 = (byte *)CONCAT31((int3)((uint)param_9 >> 8),bVar2);
+          param_9 = (byte *)STReplaceLowByte((uint32_t)(param_9), (uint8_t)(bVar2));
           param_6 = param_6 + 1;
           *param_1 = bVar2;
           puVar7 = (uint *)((int)param_3 + 2);
@@ -211,8 +208,7 @@ LAB_006f51af:
       }
       uVar5 = uVar5 & 0x3f;
       pbVar10 = param_6 + 1;
-      /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-      param_9 = (byte *)CONCAT31((int3)((uint)param_9 >> 8),*param_6);
+      param_9 = (byte *)STReplaceLowByte((uint32_t)(param_9), (uint8_t)(*param_6));
       iVar9 = iVar9 - uVar5;
       param_3 = puVar7;
     }

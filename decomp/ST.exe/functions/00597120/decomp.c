@@ -98,8 +98,7 @@ void __thiscall FSGSTy::NoneFSGS(FSGSTy *this)
            (pDVar14 = this_02->field_1EA6, pDVar14 != nullptr)) {
           if (1 < pDVar14->count) {
             do {
-              /* ST_PSEUDO[dynamic_array_indexing]: expected DArrayAt<T>(pDVar14, uVar15) (runtime stride) */
-              pvVar11 = (void *)(pDVar14->elementSize * uVar15 + (int)pDVar14->data);
+              pvVar11 = DArrayAt<void>(pDVar14, uVar15);
               if (pvVar11 != nullptr) {
                 CFsgsConnection::PingPlayer
                           ((CFsgsConnection *)&DAT_00802a90,this_02->field_1EAE,

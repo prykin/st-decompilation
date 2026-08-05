@@ -23,11 +23,12 @@ undefined4 __thiscall TLOBaseTy::sub_004CEB00(TLOBaseTy *this,int param_1)
 {
   char cVar1;
   TLOBaseTy_field_05ACState TVar2;
-  short sVar3;
-  int iVar4;
-  int uVar7;
+  byte bVar3;
+  short sVar4;
   int iVar5;
-  short sVar6;
+  int uVar7;
+  int iVar6;
+  short sVar7;
   uint uVar8;
   short sVar10;
   TLOBaseTyVTable *pTVar11;
@@ -75,8 +76,8 @@ undefined4 __thiscall TLOBaseTy::sub_004CEB00(TLOBaseTy *this,int param_1)
       return 0;
     case CASE_40:
     case CASE_49:
-      iVar5 = thunk_FUN_004ac910(&this->field_01D5,'\x0e');
-      if (iVar5 != this->field_01F5->field_020C) {
+      iVar6 = thunk_FUN_004ac910(&this->field_01D5,'\x0e');
+      if (iVar6 != this->field_01F5->field_020C) {
         return local_10;
       }
 switchD_004ceb68_caseD_32:
@@ -85,8 +86,8 @@ switchD_004ceb68_caseD_32:
       return local_10;
     }
   case CASE_2:
-    iVar5 = thunk_FUN_004b31c0((int *)this->field_0024,0);
-    if (iVar5 == 0) {
+    iVar6 = thunk_FUN_004b31c0((int *)this->field_0024,0);
+    if (iVar6 == 0) {
       if (DAT_00811798 == nullptr) {
         return local_10;
       }
@@ -108,16 +109,16 @@ switchD_004ceb68_caseD_32:
         sVar10 = *(short *)&this->field_05B8 + 1;
         local_8 = local_18;
         do {
-          sVar3 = (short)local_8;
-          if ((((sVar3 < 0) || (g_worldGrid.sizeX <= sVar3)) || (sVar6 = (short)local_c, sVar6 < 0))
-             || (((g_worldGrid.sizeY <= sVar6 || (sVar10 < 0)) ||
+          sVar4 = (short)local_8;
+          if ((((sVar4 < 0) || (g_worldGrid.sizeX <= sVar4)) || (sVar7 = (short)local_c, sVar7 < 0))
+             || (((g_worldGrid.sizeY <= sVar7 || (sVar10 < 0)) ||
                  ((g_worldGrid.sizeZ <= sVar10 ||
-                  (STGridAt3D(g_worldGrid, sVar3, sVar6, sVar10).objects[0] == nullptr)))))) {
+                  (STGridAt3D(g_worldGrid, sVar4, sVar7, sVar10).objects[0] == nullptr)))))) {
             this->field_04E0[0] = local_8;
-            iVar5 = this->field_05B8;
+            iVar6 = this->field_05B8;
             this->field_04DC = 1;
             this->field_04E0[1] = local_c;
-            this->field_04E0[2] = iVar5 + 1;
+            this->field_04E0[2] = iVar6 + 1;
             if (DAT_00800bcc == nullptr) {
               thunk_FUN_004cf430();
             }
@@ -132,8 +133,8 @@ switchD_004ceb68_caseD_32:
               return local_10;
             }
             if (TVar2 == CASE_32) {
-              iVar5 = LookupRecordByte(*(char *)&this->field_023D);
-              if ((char)iVar5 != '\x02') {
+              bVar3 = LookupRecordByte(*(char *)&this->field_023D);
+              if (bVar3 != 2) {
                 this->vfunc_90(3,0x1f9);
                 return local_10;
               }
@@ -159,24 +160,24 @@ switchD_004ceb68_caseD_32:
       }
     } while( true );
   case CASE_3:
-    if ((this->field_05AC == CASE_32) || (iVar5 = 1, this->field_05AC == CASE_5C)) {
-      iVar5 = 2;
+    if ((this->field_05AC == CASE_32) || (iVar6 = 1, this->field_05AC == CASE_5C)) {
+      iVar6 = 2;
     }
-    iVar4 = thunk_FUN_004ac910(&this->field_01D5,'\t');
-    if ((*(int *)&this->field_01F5->field_0x154 + iVar5 <= iVar4) &&
+    iVar5 = thunk_FUN_004ac910(&this->field_01D5,'\t');
+    if ((*(int *)&this->field_01F5->field_0x154 + iVar6 <= iVar5) &&
        ((*(uint *)&this->field_05FF->field_0x1c & 0x4000) == 0)) {
       thunk_FUN_004d0310(this);
     }
-    iVar5 = thunk_FUN_004ac910(&this->field_01D5,'\x0e');
-    if (iVar5 != this->field_01F5->field_020C) {
+    iVar6 = thunk_FUN_004ac910(&this->field_01D5,'\x0e');
+    if (iVar6 != this->field_01F5->field_020C) {
       return local_10;
     }
     thunk_FUN_004d0a80(DAT_00800bcc,this->field_04E0[0],this->field_04E0[1],this->field_04E0[2]);
-    iVar5 = 0x11;
+    iVar6 = 0x11;
     ppbVar13 = local_6c;
     while( true ) {
-      if (iVar5 == 0) break;
-      iVar5 = iVar5 + -1;
+      if (iVar6 == 0) break;
+      iVar6 = iVar6 + -1;
       *ppbVar13 = nullptr;
       ppbVar13 = ppbVar13 + 1;
     }
@@ -236,17 +237,17 @@ switchD_004ceb68_caseD_32:
     goto cf_common_exit_004CF029;
     thunk_FUN_0052af50(0,(float)this->field_01F9,(float)this->field_01FD);
     uVar7 = LookupRecordByte(*(char *)&this->field_0024);
-    uVar8 = uVar7 & 0xff;
-    if (uVar8 == 1) {
+    uVar7 = (int)(byte)uVar7;
+    if (uVar7 == 1) {
       pTVar11 = this->vtable;
       arg_2 = 0x65;
     }
     else {
-      if (uVar8 == 2) {
+      if (uVar7 == 2) {
         this->vfunc_90(6,0x66);
         goto cf_common_exit_004CF029;
       }
-      if (uVar8 != 3) goto cf_common_exit_004CF029;
+      if (uVar7 != 3) goto cf_common_exit_004CF029;
       pTVar11 = this->vtable;
       arg_2 = 0x67;
     }
@@ -271,8 +272,8 @@ cf_common_exit_004CF029:
         this->vfunc_90(3,0x39c);
       }
       else if (TVar2 == CASE_32) {
-        iVar5 = LookupRecordByte(*(char *)&this->field_023D);
-        if ((char)iVar5 == '\x02') {
+        bVar3 = LookupRecordByte(*(char *)&this->field_023D);
+        if (bVar3 == 2) {
           this->vfunc_90(3,0x2c2);
         }
         else {
@@ -294,8 +295,8 @@ switchD_004cf07f_caseD_40:
     }
     break;
   case CASE_5:
-    iVar5 = thunk_FUN_004ac910(&this->field_01D5,'\x0e');
-    if (iVar5 != this->field_01F5->field_020C) {
+    iVar6 = thunk_FUN_004ac910(&this->field_01D5,'\x0e');
+    if (iVar6 != this->field_01F5->field_020C) {
       return local_10;
     }
     this->field_03D0 = 5;

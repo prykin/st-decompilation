@@ -75,12 +75,10 @@ void __fastcall FUN_00581200(int param_1)
   }
   /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
   sVar13 = *(short *)(param_1 + 0x1ed) + (short)iVar10;
-  /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-  local_28 = CONCAT22((short)((uint)iVar14 >> 0x10),sVar13);
+  local_28 = STReplaceLowWord((uint32_t)(iVar14), (uint16_t)(sVar13));
   /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
   sVar16 = *(short *)(param_1 + 0x1f1) + (short)iVar12;
-  /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-  local_2c = CONCAT22((short)((uint)param_1 >> 0x10),sVar16);
+  local_2c = STReplaceLowWord((uint32_t)(param_1), (uint16_t)(sVar16));
   local_10 = (int)sVar16;
   local_c = (AnonShape_00581200_BFD82E5E *)param_1;
   if ((((sVar13 <= iVar11) && (local_10 <= local_24)) && ((int)local_40 <= (int)sVar13)) &&

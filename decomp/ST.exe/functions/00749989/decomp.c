@@ -26,8 +26,7 @@ undefined4 FUN_00749989(char *param_1)
       pcVar5 = pcVar5 + 1;
     } while (bVar6);
     if (bVar6) {
-      /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-      return CONCAT22((short)((uint)pcVar4 >> 0x10),0xffff);
+      return STReplaceLowWord((uint32_t)(pcVar4), (uint16_t)(0xffff));
     }
     iVar1 = 0x10;
     bVar6 = true;

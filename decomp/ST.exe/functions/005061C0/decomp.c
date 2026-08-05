@@ -292,14 +292,11 @@ switchD_00506214_caseD_2:
       FUN_006b4170((AnonShape_006B5B10_E0D06CF1 *)this_00->field_0194,0,GVar15 + 0x36,0x5d,7,0x21,0);
       GVar15 = local_8;
       bVar3 = this_00->field_0C24;
-      /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-      local_1c = (byte *)CONCAT31(local_1c._1_3_,bVar3);
+      local_1c = (byte *)STReplaceLowByte((uint32_t)(local_1c), (uint8_t)(bVar3));
       cVar13 = (char)(((uint)bVar3 * 0x21) / 100);
-      /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-      local_10 = (Global_sub_00526BA0_param_1Enum *)CONCAT31(local_10._1_3_,cVar13);
+      local_10 = (Global_sub_00526BA0_param_1Enum *)STReplaceLowByte((uint32_t)(local_10), (uint8_t)(cVar13));
       if ((bVar3 != 0) && (cVar13 == '\0')) {
-        /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-        local_10 = (Global_sub_00526BA0_param_1Enum *)CONCAT31(local_10._1_3_,1);
+        local_10 = (Global_sub_00526BA0_param_1Enum *)STReplaceLowByte((uint32_t)(local_10), (uint8_t)(1));
       }
       if (bVar3 < 0x46) {
         iVar4 = (-(uint)(bVar3 < 0x14) & 5) + 5;
@@ -371,11 +368,9 @@ LAB_005070be:
     GVar15 = local_8;
     bVar3 = this_00->field_0C24;
     cVar13 = (char)(((uint)bVar3 * 0x21) / 100);
-    /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-    local_1c = (byte *)CONCAT31(local_1c._1_3_,cVar13);
+    local_1c = (byte *)STReplaceLowByte((uint32_t)(local_1c), (uint8_t)(cVar13));
     if ((bVar3 != 0) && (cVar13 == '\0')) {
-      /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-      local_1c = (byte *)CONCAT31(local_1c._1_3_,1);
+      local_1c = (byte *)STReplaceLowByte((uint32_t)(local_1c), (uint8_t)(1));
     }
     if (bVar3 < 0x46) {
       iVar4 = (-(uint)(bVar3 < 0x14) & 5) + 5;
@@ -444,14 +439,11 @@ LAB_005070be:
         FUN_006b4170((AnonShape_006B5B10_E0D06CF1 *)this_00->field_0194,0,iVar11 + 0x36,iVar4,7,0x21
                      ,0);
         bVar3 = (&this_00->field_0C24)[local_8];
-        /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-        local_14 = CONCAT31(local_14._1_3_,bVar3);
+        local_14 = STReplaceLowByte((uint32_t)(local_14), (uint8_t)(bVar3));
         cVar13 = (char)(((uint)bVar3 * 0x21) / 100);
-        /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-        local_18 = CONCAT31(local_18._1_3_,cVar13);
+        local_18 = STReplaceLowByte((uint32_t)(local_18), (uint8_t)(cVar13));
         if ((bVar3 != 0) && (cVar13 == '\0')) {
-          /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-          local_18 = CONCAT31(local_18._1_3_,1);
+          local_18 = STReplaceLowByte((uint32_t)(local_18), (uint8_t)(1));
         }
         if (bVar3 < 0x46) {
           local_1c = (byte *)((-(uint)(bVar3 < 0x14) & 5) + 5);
@@ -543,8 +535,7 @@ LAB_005070be:
           DibPut((AnonShape_006B5B10_E0D06CF1 *)this_00->field_0194,iVar4 + 6 + (local_8 & 0xff) * 4
                  ,0x75,'\x01',pbVar6);
           bVar3 = (undefined1)local_8 + 1;
-          /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-          local_8 = CONCAT31(local_8._1_3_,bVar3);
+          local_8 = STReplaceLowByte((uint32_t)(local_8), (uint8_t)(bVar3));
         } while (bVar3 < this_00->field_0C29);
       }
       if ((byte)(undefined1)local_8 < 0x28) {
@@ -602,8 +593,7 @@ LAB_005070be:
         DibPut((AnonShape_006B5B10_E0D06CF1 *)this_00->field_0194,
                iVar11 + 0x70 + (local_8 & 0xff) * 4,0x54,'\x01',pbVar6);
         bVar3 = (undefined1)local_8 + 1;
-        /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-        local_8 = CONCAT31(local_8._1_3_,bVar3);
+        local_8 = STReplaceLowByte((uint32_t)(local_8), (uint8_t)(bVar3));
       } while (bVar3 < (byte)this_00->field_0C3A);
     }
     if ((byte)(undefined1)local_8 < 0xf) {
@@ -623,8 +613,7 @@ LAB_005070be:
         DibPut((AnonShape_006B5B10_E0D06CF1 *)this_00->field_0194,
                iVar11 + 0x70 + (local_8 & 0xff) * 4,0x5f,'\x01',pbVar6);
         bVar3 = (undefined1)local_8 + 1;
-        /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-        local_8 = CONCAT31(local_8._1_3_,bVar3);
+        local_8 = STReplaceLowByte((uint32_t)(local_8), (uint8_t)(bVar3));
       } while (bVar3 < (byte)this_00->field_0C3B);
     }
     if ((byte)(undefined1)local_8 < 0xf) {
@@ -646,8 +635,7 @@ LAB_005070be:
         DibPut((AnonShape_006B5B10_E0D06CF1 *)this_00->field_0194,iVar11 + 0xb + (int)pbVar6 * 4,
                0x76,'\x01',pbVar10);
         bVar3 = (undefined1)local_8 + 1;
-        /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-        local_8 = CONCAT31(local_8._1_3_,bVar3);
+        local_8 = STReplaceLowByte((uint32_t)(local_8), (uint8_t)(bVar3));
         pbVar6 = (byte *)(uint)bVar3;
       } while (pbVar6 < local_1c);
     }
@@ -766,11 +754,9 @@ LAB_00507784:
     GVar15 = local_8;
     bVar3 = this_00->field_0C24;
     cVar13 = (char)(((uint)bVar3 * 0x21) / 100);
-    /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-    local_1c = (byte *)CONCAT31(local_1c._1_3_,cVar13);
+    local_1c = (byte *)STReplaceLowByte((uint32_t)(local_1c), (uint8_t)(cVar13));
     if ((bVar3 != 0) && (cVar13 == '\0')) {
-      /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-      local_1c = (byte *)CONCAT31(local_1c._1_3_,1);
+      local_1c = (byte *)STReplaceLowByte((uint32_t)(local_1c), (uint8_t)(1));
     }
     if (bVar3 < 0x46) {
       iVar4 = (-(uint)(bVar3 < 0x14) & 5) + 5;

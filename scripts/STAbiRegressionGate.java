@@ -654,8 +654,9 @@ public class STAbiRegressionGate extends GhidraScript {
             }
             int newCount = count(after, token);
             String key = metricKey(rule.id, rule.address, metric);
-            Integer acceptedCount = initializeMetricBaseline ? newCount :
-                acceptedMetricCounts.get(key);
+            Integer acceptedCount;
+            if (initializeMetricBaseline) acceptedCount = Integer.valueOf(newCount);
+            else acceptedCount = acceptedMetricCounts.get(key);
             metricSamples.add(new MetricSample(rule.id, rule.address, metric, newCount,
                 sha256Text(after)));
             if (acceptedCount == null) {

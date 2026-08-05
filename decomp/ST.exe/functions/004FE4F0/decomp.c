@@ -36,8 +36,7 @@ void __thiscall CPanelTy::PaintLife(CPanelTy *this,int param_1)
     local_14 = (AnonShape_006B5B10_E0D06CF1 *)this->field_0184;
     bVar3 = this->field_0B7E;
   }
-  /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-  local_c = CONCAT31(local_c._1_3_,bVar3);
+  local_c = STReplaceLowByte((uint32_t)(local_c), (uint8_t)(bVar3));
   if (param_1 == 0) {
     local_5 = this->field_0C53;
   }
@@ -54,11 +53,9 @@ void __thiscall CPanelTy::PaintLife(CPanelTy *this,int param_1)
     if (iVar4 == 0) {
       bVar3 = (byte)local_c;
       cVar6 = (char)(((local_c & 0xff) * 7) / 10);
-      /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-      local_10 = CONCAT31(local_10._1_3_,cVar6);
+      local_10 = STReplaceLowByte((uint32_t)(local_10), (uint8_t)(cVar6));
       if (((byte)local_c != 0) && (cVar6 == '\0')) {
-        /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-        local_10 = CONCAT31(local_10._1_3_,1);
+        local_10 = STReplaceLowByte((uint32_t)(local_10), (uint8_t)(1));
       }
       if ((byte)local_c < 0x46) {
         iVar4 = (-(uint)((byte)local_c < 0x14) & 6) + 6;

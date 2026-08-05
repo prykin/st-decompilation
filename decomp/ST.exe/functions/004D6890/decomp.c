@@ -3,25 +3,26 @@ void __thiscall FUN_004d6890(void *this,AnonShape_004D6890_0C7826D6 *param_1)
 
 {
   undefined4 uVar1;
-  undefined1 uVar2;
-  int iVar3;
-  AnonShape_004D6890_0C7826D6 *pAVar4;
+  byte bVar2;
+  undefined1 uVar3;
+  int iVar4;
+  AnonShape_004D6890_0C7826D6 *pAVar5;
 
-  pAVar4 = param_1;
-  for (iVar3 = 0xd; iVar3 != 0; iVar3 = iVar3 + -1) {
-    *(undefined4 *)pAVar4 = 0;
-    pAVar4 = (AnonShape_004D6890_0C7826D6 *)((int)&pAVar4->field_0003 + 1);
+  pAVar5 = param_1;
+  for (iVar4 = 0xd; iVar4 != 0; iVar4 = iVar4 + -1) {
+    *(undefined4 *)pAVar5 = 0;
+    pAVar5 = (AnonShape_004D6890_0C7826D6 *)((int)&pAVar5->field_0003 + 1);
   }
-  *(undefined2 *)pAVar4 = 0;
-  iVar3 = LookupRecordByte(*(char *)((int)this + 0x24));
-  param_1->field_0007 = (char)iVar3;
+  *(undefined2 *)pAVar5 = 0;
+  bVar2 = LookupRecordByte(*(char *)((int)this + 0x24));
+  param_1->field_0007 = bVar2;
   *(undefined1 *)param_1 = 1;
-  uVar2 = *(undefined1 *)((int)this + 0x21d);
+  uVar3 = *(undefined1 *)((int)this + 0x21d);
   param_1->field_0002 = 2;
-  param_1->field_0001 = uVar2;
+  param_1->field_0001 = uVar3;
   /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-  uVar2 = (**(code **)(*(int *)this + 0x7c))();
-  param_1->field_001B = uVar2;
+  uVar3 = (**(code **)(*(int *)this + 0x7c))();
+  param_1->field_001B = uVar3;
   param_1->field_0003 = *(undefined4 *)((int)this + 0x259);
   uVar1 = *(undefined4 *)((int)this + 0x18);
   param_1->field_0008 = (short)uVar1;

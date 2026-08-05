@@ -32,8 +32,7 @@ MTaskTy::OutGlassATxtProc
         goto LAB_005df7f3;
       }
       do {
-        /* ST_PSEUDO[dynamic_array_indexing]: expected DArrayAt<T>(param_8, uVar5) (runtime stride) */
-        local_8 = (int *)(param_8->elementSize * uVar5 + (int)param_8->data);
+        local_8 = DArrayAt<int>(param_8, uVar5);
 LAB_005df7f3:
       } while ((*local_8 != param_2) && (uVar5 = uVar5 + 1, uVar5 < uVar1));
     }

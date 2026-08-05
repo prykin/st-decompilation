@@ -95,7 +95,7 @@ LAB_00494766:
       }
       else if (*piVar6 == 0) {
         /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
-        thunk_FUN_004407a0(bVar5,CONCAT31((int3)((uint)extraout_EDX >> 8),param_1->field_0024),
+        thunk_FUN_004407a0(bVar5,STReplaceLowByte((uint32_t)(extraout_EDX), (uint8_t)(param_1->field_0024)),
                            CONCAT22(extraout_var,param_1->field_0032));
         *piVar6 = 1;
       }

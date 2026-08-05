@@ -21,9 +21,8 @@ void __thiscall JumpManagC::sub_00618AD0(JumpManagC *this)
     if (0 < (int)pDVar3->count) {
       bVar5 = pDVar3->count != 0;
       do {
-        /* ST_PSEUDO[dynamic_array_indexing]: expected DArrayAt<T>(pDVar3, uVar4) (runtime stride) */
         if (((bVar5) &&
-            (pvVar2 = (void *)(pDVar3->elementSize * uVar4 + (int)pDVar3->data),
+            (pvVar2 = DArrayAt<void>(pDVar3, uVar4),
             pvVar2 != nullptr)) && (iVar1 = *(int *)((int)pvVar2 + 0x18), iVar1 != 0)) {
           *(undefined4 *)(iVar1 + 0x7d) = 0;
           *(undefined4 *)(iVar1 + 0x8b) = 0;

@@ -118,7 +118,7 @@ STAllPlayersC::PointPick(STAllPlayersC *this,uint *objectIds,int param_2,int par
             /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
             uVar5 = CONCAT22(extraout_var_11,*(undefined2 *)((int)piVar2 + 0x32));
             /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
-            uVar6 = CONCAT31((int3)((uint)extraout_EAX_00 >> 8),(char)piVar2[9]);
+            uVar6 = STReplaceLowByte((uint32_t)(extraout_EAX_00), (uint8_t)((char)piVar2[9]));
             iVar3 = piVar2[8];
             goto cf_common_exit_0043440E;
           }
@@ -143,7 +143,7 @@ STAllPlayersC::PointPick(STAllPlayersC *this,uint *objectIds,int param_2,int par
             /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
             uVar5 = CONCAT22(extraout_var,*(undefined2 *)((int)piVar2 + 0x32));
             /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
-            uVar6 = CONCAT31((int3)((uint)extraout_ECX >> 8),(char)piVar2[9]);
+            uVar6 = STReplaceLowByte((uint32_t)(extraout_ECX), (uint8_t)((char)piVar2[9]));
             iVar3 = piVar2[8];
             goto cf_common_exit_0043440E;
           }
@@ -213,8 +213,7 @@ LAB_004345b4:
       }
       /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
       uVar5 = CONCAT22(uVar8,*(undefined2 *)((int)piVar2 + 0x32));
-      /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-      uVar6 = CONCAT31((int3)((uint)uVar7 >> 8),(char)piVar2[9]);
+      uVar6 = STReplaceLowByte((uint32_t)(uVar7), (uint8_t)((char)piVar2[9]));
       iVar3 = piVar2[8];
 cf_common_exit_0043440E:
       AddObjToTmp2(this,playerId,0,0,iVar3,uVar6,uVar5);
@@ -279,10 +278,9 @@ LAB_00434c88:
         PushTV(playerId,1);
         /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
         iVar3 = extraout_EAX_02;
-/* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
 LAB_00434c92:
         AddObjToTmp(this,playerId,1,0,(char)piVar2[9],
-                    CONCAT22((short)((uint)iVar3 >> 0x10),*(undefined2 *)((int)piVar2 + 0x32)));
+                    STReplaceLowWord((uint32_t)(iVar3), (uint16_t)(*(undefined2 *)((int)piVar2 + 0x32))));
       }
       g_packedRecords_A62x8[playerId].field390_0x1b3 = 0x19a;
     }
@@ -315,7 +313,7 @@ LAB_00434c92:
         CalibrateTmp(this,playerId,1,1,objectIds,(int *)&local_8,nullptr,nullptr);
         /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
         ResetActivityFromObjs
-                  (this,CONCAT31((int3)((uint)extraout_EDX_03 >> 8),(char)piVar2[9]),0x19a,local_8,0
+                  (this,STReplaceLowByte((uint32_t)(extraout_EDX_03), (uint8_t)((char)piVar2[9])),0x19a,local_8,0
                    ,0);
         DArrayDestroy(local_8);
         /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
@@ -391,7 +389,7 @@ cf_common_exit_00434CB8:
                 CalibrateTmp(this,playerId,0,1,objectIds,(int *)&local_8,nullptr,nullptr);
                 /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
                 ResetActivityFromObjs
-                          (this,CONCAT31((int3)((uint)extraout_EAX >> 8),(char)piVar2[9]),0x3c,
+                          (this,STReplaceLowByte((uint32_t)(extraout_EAX), (uint8_t)((char)piVar2[9])),0x3c,
                            local_8,0,0);
                 DArrayDestroy(local_8);
                 /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
@@ -568,7 +566,7 @@ cf_common_exit_00434CBD:
     uVar8 = extraout_var_13;
 /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
 LAB_00434768:
-    AddObjToTmp2(this,playerId,1,0,piVar2[8],CONCAT31((int3)((uint)iVar3 >> 8),(char)piVar2[9]),
+    AddObjToTmp2(this,playerId,1,0,piVar2[8],STReplaceLowByte((uint32_t)(iVar3), (uint8_t)((char)piVar2[9])),
                  CONCAT22(uVar8,*(undefined2 *)((int)piVar2 + 0x32)));
     SelfCheckObjControl(this);
     return;
@@ -629,7 +627,7 @@ LAB_00434895:
   uVar8 = extraout_var_04;
 /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
 LAB_004348d7:
-  AddObjToTmp2(this,playerId,1,0,piVar2[8],CONCAT31((int3)((uint)uVar7 >> 8),(char)piVar2[9]),
+  AddObjToTmp2(this,playerId,1,0,piVar2[8],STReplaceLowByte((uint32_t)(uVar7), (uint8_t)((char)piVar2[9])),
                CONCAT22(uVar8,*(undefined2 *)((int)piVar2 + 0x32)));
   SelfCheckObjControl(this);
   return;

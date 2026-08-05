@@ -40,8 +40,7 @@ uint __fastcall FUN_00567060(int param_1)
         local_10 = 1;
       }
       bVar1 = (char)local_8 + 1;
-      /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-      local_8 = CONCAT31(local_8._1_3_,bVar1);
+      local_8 = STReplaceLowByte((uint32_t)(local_8), (uint8_t)(bVar1));
     } while (bVar1 < 2);
     return local_10;
   }

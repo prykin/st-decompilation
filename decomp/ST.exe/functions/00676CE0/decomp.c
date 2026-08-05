@@ -25,16 +25,14 @@ void __cdecl FUN_00676ce0(DArrayTy *param_1,undefined *param_2)
       }
       do {
         if (uVar7 < uVar3) {
-          /* ST_PSEUDO[dynamic_array_indexing]: expected DArrayAt<T>(param_1, uVar7) (runtime stride) */
-          pvVar6 = (void *)(param_1->elementSize * uVar7 + (int)param_1->data);
+          pvVar6 = DArrayAt<void>(param_1, uVar7);
         }
         else {
           pvVar6 = nullptr;
         }
         uVar1 = uVar7 + 1;
         if (uVar1 < uVar3) {
-          /* ST_PSEUDO[dynamic_array_indexing]: expected DArrayAt<T>(param_1, uVar1) (runtime stride) */
-          pvVar4 = (void *)(param_1->elementSize * uVar1 + (int)param_1->data);
+          pvVar4 = DArrayAt<void>(param_1, uVar1);
         }
         else {
           pvVar4 = nullptr;

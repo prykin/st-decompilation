@@ -52,14 +52,12 @@ uint * __thiscall FUN_0068e4f0(void *this,int param_1)
           iVar2 = extraout_EDX_00;
           do {
             if (bVar7) {
-              /* ST_PSEUDO[dynamic_array_indexing]: expected DArrayAt<T>(array_00, uVar5) (runtime stride) */
-              puVar3 = (undefined2 *)(array_00->elementSize * uVar5 + (int)array_00->data);
+              puVar3 = DArrayAt<undefined2>(array_00, uVar5);
             }
             else {
               puVar3 = nullptr;
             }
-            /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-            local_c = CONCAT22((short)((uint)iVar2 >> 0x10),*puVar3);
+            local_c = STReplaceLowWord((uint32_t)(iVar2), (uint16_t)(*puVar3));
             Library::DKW::TBL::DArrayAppend(array,&local_c);
             uVar5 = uVar5 + 1;
             bVar7 = uVar5 < array_00->count;

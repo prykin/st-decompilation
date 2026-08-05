@@ -79,13 +79,11 @@ int __thiscall TLOBaseTy::fireProc(TLOBaseTy *this)
                   _local_10 = CONCAT22(uStack_e,this_00->field_0043);
                 }
                 if (&stack0x00000000 != &DAT_0000000c) {
-                  /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-                  local_c = CONCAT22(local_c._2_2_,this_00->field_0045);
+                  local_c = STReplaceLowWord((uint32_t)(local_c), (uint16_t)(this_00->field_0045));
                 }
-                /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
                 sVar3 = (*this_00->vtable->vfunc_10)
                                   (pAVar1->field_0041,pAVar1->field_0043,
-                                   CONCAT22((short)((uint)_local_14 >> 0x10),pAVar1->field_0045),
+                                   STReplaceLowWord((uint32_t)(_local_14), (uint16_t)(pAVar1->field_0045)),
                                    (short)_local_14,(short)_local_10,local_c);
                 iVar4 = (sVar3 + 0xb4) % 0x168;
                 if (puVar8[-2] == 8) {

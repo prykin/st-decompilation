@@ -68,8 +68,7 @@ PlrDataPack(AllocationRecord_0067D3B0 *param_1,undefined4 *param_2,int param_3,u
         bVar21 = pDVar7->count != 0;
         do {
           if (bVar21) {
-            /* ST_PSEUDO[dynamic_array_indexing]: expected DArrayAt<T>(pDVar7, uVar17) (runtime stride) */
-            piVar18 = (int *)(pDVar7->elementSize * uVar17 + (int)pDVar7->data);
+            piVar18 = DArrayAt<int>(pDVar7, uVar17);
           }
           else {
             piVar18 = nullptr;
@@ -95,8 +94,7 @@ PlrDataPack(AllocationRecord_0067D3B0 *param_1,undefined4 *param_2,int param_3,u
         bVar21 = pDVar7->count != 0;
         do {
           if (bVar21) {
-            /* ST_PSEUDO[dynamic_array_indexing]: expected DArrayAt<T>(pDVar7, uVar17) (runtime stride) */
-            piVar18 = (int *)(pDVar7->elementSize * uVar17 + (int)pDVar7->data);
+            piVar18 = DArrayAt<int>(pDVar7, uVar17);
           }
           else {
             piVar18 = nullptr;
@@ -147,8 +145,7 @@ PlrDataPack(AllocationRecord_0067D3B0 *param_1,undefined4 *param_2,int param_3,u
       bVar21 = pDVar7->count != 0;
       do {
         if (bVar21) {
-          /* ST_PSEUDO[dynamic_array_indexing]: expected DArrayAt<T>(pDVar7, local_14) (runtime stride) */
-          puVar11 = (byte *)(pDVar7->elementSize * local_14 + (int)pDVar7->data);
+          puVar11 = DArrayAt<byte>(pDVar7, local_14);
         }
         else {
           puVar11 = nullptr;
