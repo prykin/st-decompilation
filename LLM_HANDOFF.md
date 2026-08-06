@@ -60,12 +60,17 @@ metric; declarations are not independent ABI failures.
 bodies have zero residual Ghidra `._offset_width_` syntax. The generated C++17
 runtime makes 34,795 exact operations expressible through scalar/calling-
 convention aliases, opaque `code`, `STPiece`, `STLiteralPiece`, `STField`, and
-width-checked composition/carry helpers. This is not a source generator: every
-body still needs declaration/translation-unit assembly, 3,894 signatures retain
+width-checked composition/carry helpers. The exporter itself is not a source
+generator, but `tools/st_source_tree.py` now supplies the missing offline
+assembly layer. It verifies the passed receipt/manifest and emits all 5,712
+bodies as 318 C++17 translation units under `src/ST.exe`, with 1,044 bodies in
+proven original paths and address-stable `st::fn_ADDRESS` identities. The full
+generated declaration header passes Clang syntax checking. Full object
+compilation still exposes the real remaining debt: 3,894 signatures retain
 undefined semantic types, 1,001 global `__thiscall` functions lack a proven
 owner, 773 bodies contain raw indirect calls, and 232 bodies retain unresolved
-register/high values. The detailed table is `docs/compile-readiness.md` and the
-machine-readable rows are `decomp/ST.exe/compile_readiness_*.json*`.
+register/high values. See `docs/compile-readiness.md`,
+`docs/source-tree-generation.md`, and `src/ST.exe/audit/`.
 
 The previously ugly call in global `__thiscall` function `00717910` now renders
 its proven member load as
@@ -731,11 +736,13 @@ Expected next `full-export` results:
 
 ## Next automation boundary
 
-The next major boundary is deterministic source/declaration assembly from the
-exported type, global, function, import, and address-authoritative call graphs.
-All 5,712 bodies are now textually representable, but none is a standalone
-translation unit. Ownerless `__thiscall` functions must receive generated
-free-function ABI wrappers until a class is independently proven.
+Deterministic source/declaration assembly is implemented. All 5,712 bodies now
+belong to standalone generated translation units, and ownerless `__thiscall`
+uses an explicit address-stable free-function ABI rather than an invented
+class. The next boundary is compiler-diagnostic reduction: materialize exact
+anonymous `field_0x...` views, keep pointer/scalar word roles distinct, lower
+only proven virtual member sugar, and repair weak prototypes at their Ghidra
+source.
 
 Database-level recovery should then prioritize 1,885 raw indirect calls in 773
 bodies, 558 consumed return-width artifacts in 138 bodies, and 472 unresolved

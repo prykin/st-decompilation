@@ -34,12 +34,12 @@ sites, not unique source objects.
 
 | Class | Functions | Body share | Occurrences | State | What remains |
 | --- | ---: | ---: | ---: | --- | --- |
-| Translation-unit/declaration assembly | 5,712 | 100.00% | 5,712 | generator required | Emit headers, globals, prototypes, namespaces, and dependency order from the exported JSON/type graph. |
+| Translation-unit/declaration assembly | 5,712 | 100.00% | 5,712 | assembled | `tools/st_source_tree.py` emits 318 deterministic TUs plus dependency-ordered headers; full object compilation remains. |
 | Default `FUN_ADDRESS` names | 4,157 | 72.78% | 4,157 | valid but semantic debt | Stable fallback names compile; recover original names only from evidence. |
 | Undefined function signatures | 3,894 | 68.17% | 3,894 | runtime-compatible, semantically incomplete | Recover return and parameter meaning at ABI boundaries. |
 | Undefined scalar spelling | 3,658 | 64.04% | 18,595 | compatibility implemented | Width is preserved by aliases, including exact 3/6-byte containers; signedness, enum, pointer, and semantic type remain. |
 | Typed byte-offset field view | 1,145 | 20.05% | 9,924 | compatibility implemented | `STField<T>(base, offset)` preserves the exact access until owner/layout proof supplies a named member. |
-| Ownerless `__thiscall` | 1,001 | 17.52% | 1,001 | partially automated | Prove a receiver class/complete record or emit a free-function ABI wrapper. |
+| Ownerless `__thiscall` | 1,001 | 17.52% | 1,001 | source ABI emitted | `st::fn_ADDRESS` retains the explicit ECX receiver until a class is proven. |
 | Opaque `code *` callback type | 793 | 13.88% | 1,936 | compatibility implemented | Install the exact callback/vtable-slot `FunctionDefinition`. |
 | Raw indirect call | 773 | 13.53% | 1,885 | semantic debt | Recover receiver, calling convention, argument count, and return type. |
 | Unresolved register/high value | 232 | 4.06% | 1,450 | semantic debt | Repair boundary ABI, return width, x87 result, SEH/setjmp live-in, or SSA lifetime. |
@@ -134,11 +134,11 @@ physical-vtable disagreement as review-only.
 
 ## Ordered path to an actual build
 
-1. Generate a deterministic declaration/type dependency graph and one build
-   harness from `types.jsonl`, `globals.jsonl`, `functions.json`, imports, and
-   `call_relations.jsonl`; never parse names as identity.
-2. Emit address-stable free-function wrappers for ownerless `__thiscall` until a
-   receiver is proven. This lets assembly proceed without inventing classes.
+1. **Implemented:** generate a deterministic declaration/type dependency graph
+   and object-build harness from `types.jsonl`, `globals.jsonl`,
+   `functions.json`, imports, and `call_relations.jsonl`.
+2. **Implemented:** emit address-stable `st::fn_ADDRESS` free functions,
+   including explicit receiver ABI for ownerless `__thiscall`.
 3. Recover the 1,885 raw indirect calls from stored targets and physical vtable
    slots; unresolved `code *` remains an explicit portability boundary.
 4. Split undefined debt by role (signature, field, local, return, pointer target)
@@ -156,6 +156,10 @@ physical-vtable disagreement as review-only.
 10. Restructure labels and replace compatibility shims only after the generated
     source compiles and behavior-facing ABI tests exist.
 
-The next major implementation should therefore be the declaration/source
-assembly generator. More local decompiler spelling fixes can improve readability,
-but they cannot cross the missing-translation-unit boundary.
+`tools/st_source_tree.py` now crosses the missing-translation-unit boundary:
+all 5,712 bodies are placed in 318 generated C++ translation units, 1,044 under
+proven original paths. Its complete generated declaration header passes a
+C++17 syntax probe. Full object compilation is the new measurable boundary;
+current errors expose anonymous `field_0x...` storage views, pointer/word role
+conflicts, virtual member-call sugar, and weak prototypes. See
+`docs/source-tree-generation.md` and `src/ST.exe/audit/`.

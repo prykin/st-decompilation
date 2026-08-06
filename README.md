@@ -39,6 +39,7 @@ files under [`recovery/ST.exe/`](recovery/ST.exe/).
 | `ghidra/` | Verified packed Ghidra Program checkpoint tracked through Git LFS. |
 | `proj/` | Ignored local expanded Ghidra working project, hydrated from `ghidra/`. |
 | `scripts/` | Ghidra Java analyzers, review/apply scripts, and the LLM corpus exporter. |
+| `tools/` | Offline deterministic consumers of an accepted corpus, including source-tree assembly. |
 | `config/` | Versioned data-driven regression policy consumed by the recovery scripts. |
 | `recovery/` | Reviewable TSV proposals, conflicts, summaries, and apply reports. |
 | `decomp/` | Address-stable text export of functions, types, globals, strings, and call graphs. |
@@ -147,6 +148,15 @@ Ghidra-only syntax, compatibility-runtime uses, unresolved ABI values, missing
 declaration assembly, and semantic type debt. The current corpus statistics,
 implemented compatibility boundary, and ordered path to a real build are in
 [`docs/compile-readiness.md`](docs/compile-readiness.md).
+
+The accepted corpus can now be assembled offline into `src/ST.exe` with
+`python3 tools/st_source_tree.py`. The generator verifies the passed export
+receipt and manifest, emits dependency-ordered types/declarations and
+address-stable `st::fn_ADDRESS` implementations, reconstructs every proven
+original source path, and records unresolved assembly decisions without
+guessing. It does not mutate Ghidra and the generated object target does not yet
+fully compile or link. See
+[`docs/source-tree-generation.md`](docs/source-tree-generation.md).
 
 ABI-changing automation is guarded before the first Program mutation and again
 at dependency barriers by `STAbiRegressionGate`. Its durable sentinels and exact

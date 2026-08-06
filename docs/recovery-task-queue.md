@@ -258,6 +258,23 @@ contains 10,392 function records and 5,712 bodies, and passes both export and
 ABI gates. The next major boundary is a deterministic declaration/translation-
 unit generator; see `docs/compile-readiness.md`.
 
+### Q-045 Assemble the accepted corpus into a deterministic source tree
+
+Status: implemented offline. `tools/st_source_tree.py` verifies the passed
+receipt and exact manifest hash, renders exported datatype paths in dependency
+order, declares referenced globals/imports, assigns every internal function the
+stable free symbol `st::fn_ADDRESS`, carries external identities from
+`call_relations.jsonl`, and atomically emits `src/ST.exe`.
+
+The current tree contains all 5,712 bodies in 318 translation units. Embedded
+and recovered debug evidence places 1,044 bodies under original paths; 4,668
+remain in deterministic owner/address fallback units. The complete generated
+header passes Clang C++17 syntax checking. Full object compilation is not yet a
+success criterion: its diagnostics now form the next address-stable queue for
+anonymous byte fields, pointer/scalar role conflicts, virtual member sugar, and
+weak prototypes. The generator never mutates Ghidra or fabricates image-backed
+global definitions. See `docs/source-tree-generation.md`.
+
 ### Q-041 Closed narrow returns and exact address/piece presentation
 
 Status: implemented and accepted. Seven non-manual functions received a

@@ -1,0 +1,1102 @@
+#include "st/generated.hpp"
+// Generated translation unit: source/recovered/by_owner/STBHEShellC.cpp
+
+// 005F3440 STBHEShellC::STBHEShellC
+#line 1 "decomp/ST.exe/functions/005F3440/decomp.c"
+/* [STConstructorApplier] Recovered constructor candidate.
+   VTable: 0079C584 (store 005F3453)
+   Evidence: final_vptr=0079C584; returns_this=true; calls_before=1; field_writes_after=0;
+   incoming_edx_uses=0; incoming_stack_parameter_uses=0; table_confidence=high
+
+   [STPrototypeApplier] Propagated return.
+   Evidence: 005F3440 returns STBHEShellC::STBHEShellC this @ 005F345F */
+
+STBHEShellC * __thiscall st::fn_005F3440(STBHEShellC *this)
+
+{
+
+  st::fn_006E60E0(this);
+  this->vtable = &STBHEShellCVTable;
+  memset(&this->field_0x4d, 0, 0x128); /* compiler bulk-zero initialization */
+  return this;
+}
+
+// 005F3470 STBHEShellC::sub_005F3470
+#line 1 "decomp/ST.exe/functions/005F3470/decomp.c"
+/* [STMethodOwnerApplier] Structural method owner recovered as STBHEShellC.
+   Evidence: this_call_owners=[STBHEShellC]; agreed_this_calls=2; incoming_this_accesses=1;
+   incoming_edx_uses=0; incoming_stack_parameter_uses=0; direct_non_thunk_callers=0;
+   incoming_ecx_receiver_callers=0; attributed_named_callers=1; owner_evidence_coverage=adequate
+
+   [STReturnSemanticsApplier] ignored_eax_void.
+   Evidence: all observed direct callers ignore the return register (ignored=2, used=0, unknown=0),
+   and decompilation contains no value return */
+
+void __thiscall st::fn_005F3470(STBHEShellC *this)
+
+{
+  undefined4 local_24 [3];
+  undefined4 local_18;
+  undefined4 local_14;
+  undefined4 local_10;
+
+  local_10 = this->field_0008;
+  local_18 = 0;
+  local_14 = 10;
+  st::fn_006E60A0(this,local_24);
+  return;
+}
+
+// 005F34B0 STBHEShellC::sub_005F34B0
+#line 1 "decomp/ST.exe/functions/005F34B0/decomp.c"
+/* [STMethodOwnerApplier] Structural method owner recovered as STBHEShellC.
+   Evidence: this_call_owners=[STBHEShellC]; agreed_this_calls=1; incoming_this_accesses=13;
+   incoming_edx_uses=0; incoming_stack_parameter_uses=0; direct_non_thunk_callers=0;
+   incoming_ecx_receiver_callers=0; attributed_named_callers=1; owner_evidence_coverage=adequate */
+
+void __thiscall st::fn_005F34B0(STBHEShellC *this)
+
+{
+  this->field_009B = this->field_0069;
+  this->field_00A7 = this->field_0069;
+  this->field_0093 = this->field_0061;
+  this->field_0097 = this->field_0065;
+  this->field_009F = this->field_0061;
+  this->field_00A3 = this->field_0065;
+  this->field_0087 = 1;
+  this->field_00AB = 0;
+  this->field_00AF = 0x14;
+  this->field_008F = 0xffffffff;
+  return;
+}
+
+// 005F35F0 STBHEShellC::sub_005F35F0
+#line 1 "decomp/ST.exe/functions/005F35F0/decomp.c"
+/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
+/* [STHiddenThisApplier] Anonymous hidden receiver recovered as
+   /SubmarineTitans/Recovered/HiddenThis/AnonReceiver_005F35F0.
+   Evidence: incoming_receiver_captures=1; receiver_accesses=21; incoming_edx_uses=0; calls=4;
+   ecx_pointer_setup=3; ecx_scalar_setup=0; caller_cleanup_calls=0; callee_ret_pop=[4];
+   expected_stack=4; receiver_family_members=4
+
+   [STMethodOwnerApplier] Structural method owner recovered as STBHEShellC.
+   Evidence: this_call_owners=[STBHEShellC]; agreed_this_calls=2; incoming_this_accesses=21;
+   incoming_edx_uses=0; incoming_stack_parameter_uses=1; direct_non_thunk_callers=0;
+   incoming_ecx_receiver_callers=0; attributed_named_callers=1; owner_evidence_coverage=adequate */
+
+undefined4 __thiscall st::fn_005F35F0(STBHEShellC *this,int param_1)
+
+{
+  uint *puVar1;
+  AnonShape_005F35F0_EF2A6FDB *pAVar2;
+  int iVar3;
+  ushort *puVar4;
+  InternalExceptionFrame local_54;
+  undefined4 local_10;
+  undefined **local_c;
+  AnonShape_005F35F0_EF2A6FDB *local_8;
+
+  local_10 = 0;
+  local_c = &PTR_s_adcbo_007ce5a0;
+  local_54.previous = g_currentExceptionFrame;
+  g_currentExceptionFrame = &local_54;
+  local_8 = (AnonShape_005F35F0_EF2A6FDB *)this;
+  iVar3 = st::fn_0072D7F0(local_54.jumpBuffer,0);
+  pAVar2 = local_8;
+  if (iVar3 == 0) {
+    if (param_1 == 1) {
+      puVar4 = st::fn_00709AF0
+                         (DAT_00806774,CASE_1D,local_c[local_8->field_0087],0xffffffff,0,1,0,
+                          nullptr);
+      puVar1 = &pAVar2->field_008F;
+      st::fn_006E8660
+                (g_sT3DSMAPContext_00807598,(int *)puVar1,1,0,STField<uint>(puVar4,9),
+                 STField<uint>(puVar4,0xd),0x5a,0x45,0);
+      st::fn_006E98E0
+                (g_sT3DSMAPContext_00807598,*puVar1,0,*(int *)puVar4,STField<int>(puVar4,0x21),1);
+      st::fn_006EA270(g_sT3DSMAPContext_00807598,*puVar1,0,pAVar2->field_00AB);
+      pAVar2->field_0171 = puVar4;
+      if (DAT_00807326 != '\0') {
+        st::fn_006E9520
+                  (g_sT3DSMAPContext_00807598,*puVar1,0,0x403170,(uint)pAVar2);
+      }
+    }
+    else {
+      puVar1 = &local_8->field_008F;
+      if (-1 < (int)local_8->field_008F) {
+        st::fn_006E9520
+                  (g_sT3DSMAPContext_00807598,local_8->field_008F,0,0,(uint)local_8);
+        st::fn_006E8BA0(g_sT3DSMAPContext_00807598,*puVar1);
+      }
+      puVar4 = st::fn_00709AF0
+                         (DAT_00806774,CASE_1D,"expl_i13",0xffffffff,0,1,0,
+                          nullptr);
+      st::fn_006E8660
+                (g_sT3DSMAPContext_00807598,(int *)puVar1,3,0,STField<uint>(puVar4,9),
+                 STField<uint>(puVar4,0xd),0x5a,0x45,0);
+      st::fn_006E98E0
+                (g_sT3DSMAPContext_00807598,*puVar1,0,*(int *)puVar4,STField<int>(puVar4,0x21),1);
+      st::fn_006EA270(g_sT3DSMAPContext_00807598,*puVar1,0,pAVar2->field_00AB);
+      puVar4 = st::fn_00709AF0
+                         (DAT_00806764,CASE_1D,"expl_s0",0xffffffff,0,1,0,nullptr
+                         );
+      st::fn_006E98E0
+                (g_sT3DSMAPContext_00807598,*puVar1,2,*(int *)puVar4,STField<int>(puVar4,0x21),1);
+      st::fn_006EA270(g_sT3DSMAPContext_00807598,*puVar1,2,pAVar2->field_00C0);
+      st::fn_006E9D40(g_sT3DSMAPContext_00807598,(uint *)*puVar1,2);
+    }
+    st::fn_006EA960
+              (g_sT3DSMAPContext_00807598,pAVar2->field_008F,
+               (float)pAVar2->field_0093 * _DAT_007904f8 * _DAT_007904f0,
+               (float)pAVar2->field_0097 * _DAT_007904f8 * _DAT_007904f0,
+               (float)pAVar2->field_009B * _DAT_007904f8 * _DAT_007904f0 + _DAT_007904fc);
+    st::fn_006EAAA0(g_sT3DSMAPContext_00807598,pAVar2->field_008F,0);
+    pAVar2->field_00C4 = 1;
+    g_currentExceptionFrame = local_54.previous;
+    return 1;
+  }
+  g_currentExceptionFrame = local_54.previous;
+  return local_10;
+}
+
+// 005F3BF0 STBHEShellC::sub_005F3BF0
+#line 1 "decomp/ST.exe/functions/005F3BF0/decomp.c"
+/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
+/* [STMethodOwnerApplier] Structural method owner recovered as STBHEShellC.
+   Evidence: this_call_owners=[STBHEShellC]; agreed_this_calls=3; incoming_this_accesses=12;
+   incoming_edx_uses=2; incoming_stack_parameter_uses=32; direct_non_thunk_callers=0;
+   incoming_ecx_receiver_callers=0; attributed_named_callers=1; owner_evidence_coverage=adequate */
+
+undefined4 __thiscall
+st::fn_005F3BF0(STBHEShellC *this,int param_1,int param_2,undefined4 param_3,char param_4)
+
+{
+  double dVar1;
+  float fVar2;
+  AnonPointee_STBHEShellC_00F3 *pAVar3;
+  int iVar4;
+  int iVar5;
+  uint uVar6;
+  int iVar7;
+  longlong lVar8;
+  longlong lVar9;
+  float local_20 [2];
+  int local_18;
+  float local_14;
+  int local_10;
+  int local_c;
+  undefined4 local_8;
+
+  local_8 = 0;
+  /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
+  if (param_4 == '\0') {
+    this->field_00D1 = (short)this->field_0093;
+    this->field_00D3 = (short)this->field_0097;
+    this->field_00D5 = *(short *)&this->field_009B;
+    iVar4 = 900 - *(short *)&this->field_009B;
+    this->field_00DF = 0x14;
+    this->field_00E7 = 1;
+    this->field_00EF = iVar4;
+    this->field_00FB = g_playSystem_00802A38->field_00E4;
+    if (0 < iVar4) {
+      this->field_00C9 = 0;
+      return 1;
+    }
+    iVar4 = st::fn_0040473C(this,param_1,param_2,param_3,'\x01');
+    if (iVar4 != 0) {
+      this->field_00C9 = 1;
+      this->field_0104 = CASE_1;
+      local_8 = 1;
+    }
+  }
+  /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
+  else if (param_4 == '\x01') {
+    iVar4 = st::fn_006ACED8(this->field_0093,this->field_0097,param_1,param_2);
+    this->field_00EF = iVar4;
+    local_14 = (float)iVar4;
+    if (iVar4 < 0x1f7) {
+      this->field_00F7 = (this->field_00DF * this->field_00DF * 10000) / 0x1f6;
+      iVar5 = this->field_009B;
+      lVar8 = st::fn_0072E288();
+      uVar6 = (int)lVar8 + 1;
+      fVar2 = (float)(int)local_14 / (float)(int)(uVar6 * 2);
+      local_14 = (fVar2 * fVar2) / (float)(int)local_14;
+      dVar1 = (double)(fVar2 / local_14 + _DAT_00790784);
+      st::fn_0072E150(SUB84(dVar1,0),(uint)((ulonglong)dVar1 >> 0x20));
+      lVar8 = st::fn_0072E288();
+      local_10 = (int)lVar8;
+      if (this->field_00EF != 0) {
+        this->field_00D1 = (short)this->field_0093;
+        this->field_00FF = uVar6;
+        this->field_00D3 = (short)this->field_0097;
+        this->field_00D5 = *(short *)&this->field_009B;
+        this->field_00E3 = this->field_00DF;
+        lVar8 = st::fn_0072E288();
+        this->field_00CD = (int)lVar8;
+        lVar8 = st::fn_0072E288();
+        local_18 = -this->field_00DF;
+        iVar5 = st::fn_00405B19((float)local_10,(float)(int)this->field_00DF,
+                                   (float)(0x4b0 - iVar5),(float)local_18,local_20);
+        if (iVar5 != 0) {
+          lVar9 = st::fn_0072E288();
+          this->field_00DF = (int)lVar9;
+          lVar9 = st::fn_0072E288();
+          this->field_00EB = (int)lVar9;
+          this->field_00D7 = ((param_1 - this->field_00D1) * (int)lVar8) / iVar4;
+          this->field_00DB = ((param_2 - this->field_00D3) * (int)lVar8) / iVar4;
+          uVar6 = g_playSystem_00802A38->field_00E4;
+          this->field_00C9 = 1;
+          this->field_00FB = uVar6;
+          this->field_00E7 = local_10;
+          this->field_00F3 = (AnonPointee_STBHEShellC_00F3 *)(iVar4 / 2);
+          return 1;
+        }
+      }
+    }
+    else {
+      iVar5 = this->field_00DF;
+      iVar4 = (iVar5 * iVar5 * 10000) / iVar4;
+      this->field_00F7 = iVar4;
+      if (iVar5 * iVar5 != 0) {
+        this->field_00E3 = iVar5;
+        this->field_00D1 = (short)this->field_0093;
+        this->field_00D3 = (short)this->field_0097;
+        this->field_00D5 = *(short *)&this->field_009B;
+        uVar6 = (int)(0x1eab90 / (longlong)(iVar5 * 0x1b9f)) + 1;
+        iVar4 = iVar4 * uVar6;
+        this->field_00FF = uVar6;
+        local_c = iVar5 * 0x1b9f;
+        pAVar3 = (AnonPointee_STBHEShellC_00F3 *)((int)(local_c * uVar6) / 10000);
+        local_10 = ((local_c / 100) * (local_c / 100)) / ((int)pAVar3 * 2);
+        iVar7 = (int)((ulonglong)((longlong)iVar4 * -0x68db8bad) >> 0x20);
+        local_18 = (iVar7 >> 0xc) - (iVar7 >> 0x1f);
+        iVar4 = st::fn_00405B19((float)local_c / (float)local_10,(float)iVar5,
+                                   (float)((int)pAVar3 +
+                                          (-(int)*(short *)&this->field_009B -
+                                          (int)(iVar4 * uVar6) / 20000) + 0x44c),(float)local_18,
+                                   local_20);
+        if (iVar4 != 0) {
+          lVar8 = st::fn_0072E288();
+          this->field_00DF = (int)lVar8;
+          lVar8 = st::fn_0072E288();
+          this->field_00EB = (int)lVar8;
+          this->field_00D7 = ((param_1 - this->field_00D1) * local_10) / (int)local_14;
+          this->field_00DB = ((param_2 - this->field_00D3) * local_10) / (int)local_14;
+          uVar6 = g_playSystem_00802A38->field_00E4;
+          this->field_00C9 = 1;
+          this->field_00FB = uVar6;
+          this->field_00E7 = local_10;
+          this->field_00F3 = pAVar3;
+          return 1;
+        }
+      }
+    }
+  }
+  /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
+  else if ((param_4 == '\x02') && (iVar4 = this->field_00EF, iVar4 != 0)) {
+    uVar6 = this->field_00FF;
+    this->field_00C9 = 2;
+    if (uVar6 < g_playSystem_00802A38->field_00E4) {
+      this->field_00FB = g_playSystem_00802A38->field_00E4 - uVar6;
+      if (0x1f6 < iVar4) {
+        this->field_00D5 = 0x44c;
+        iVar5 = this->field_00E3 * 0x1b9f;
+        this->field_00DF = iVar5;
+        this->field_00E3 = iVar5;
+        this->field_00D7 = ((param_1 - this->field_00D1) * iVar5) / iVar4;
+        this->field_00DB = ((param_2 - this->field_00D3) * iVar5) / iVar4;
+        return 1;
+      }
+      this->field_00DF = this->field_00F7 * uVar6;
+      iVar5 = this->field_00CD;
+      this->field_00D5 = 0x4b0 - (short)((this->field_00F7 * uVar6 * uVar6) / 20000);
+      this->field_00E3 = iVar5;
+      this->field_00D7 = ((param_1 - this->field_00D1) * iVar5) / iVar4;
+      this->field_00DB = ((param_2 - this->field_00D3) * iVar5) / iVar4;
+      return 1;
+    }
+  }
+  return local_8;
+}
+
+// 005F4370 STBHEShellC::sub_005F4370
+#line 1 "decomp/ST.exe/functions/005F4370/decomp.c"
+/* [STMethodOwnerApplier] Structural method owner recovered as STBHEShellC.
+   Evidence: this_call_owners=[STBHEShellC]; agreed_this_calls=3; incoming_this_accesses=22;
+   incoming_edx_uses=0; incoming_stack_parameter_uses=12; direct_non_thunk_callers=0;
+   incoming_ecx_receiver_callers=0; attributed_named_callers=1; owner_evidence_coverage=adequate */
+
+uint __thiscall
+st::fn_005F4370(STBHEShellC *this,int *param_1,int *param_2,int *param_3,int param_4)
+
+{
+  uint uVar1;
+  int iVar2;
+  int iVar3;
+  int iVar4;
+
+  uVar1 = 0xffffffff;
+  /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
+  if (param_4 == 0) {
+    *param_1 = (int)this->field_00D1;
+    *param_2 = (int)this->field_00D3;
+    iVar2 = (g_playSystem_00802A38->field_00E4 - this->field_00FB) * this->field_00DF;
+    *param_3 = this->field_00D5 + iVar2;
+    uVar1 = (uint)(this->field_00EF <= iVar2);
+  }
+  else {
+    /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
+    if (param_4 == 1) {
+      iVar4 = g_playSystem_00802A38->field_00E4 - this->field_00FB;
+      iVar2 = this->field_00E7;
+      iVar3 = iVar4 * iVar4;
+      *param_3 = (this->field_00DF * iVar3) / 20000 + (this->field_00EB * iVar3 * iVar4) / 30000 +
+                 this->field_00E3 * iVar4 + (int)this->field_00D5;
+      *param_1 = (this->field_00D7 * iVar3) / 20000 + (int)this->field_00D1;
+      *param_2 = (this->field_00DB * iVar3) / 20000 + (int)this->field_00D3;
+      if (0x1f6 < this->field_00EF) {
+        return (uint)((int)((int)&this->field_00F3[-1].field_00FB + 2) <= (iVar2 * iVar3) / 20000);
+      }
+      return (uint)(iVar4 == this->field_00E7);
+    }
+    /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
+    if (param_4 == 2) {
+      iVar2 = g_playSystem_00802A38->field_00E4 - this->field_00FB;
+      *param_1 = (this->field_00D7 * iVar2) / 10000 + (int)this->field_00D1;
+      *param_2 = (this->field_00DB * iVar2) / 10000 + (int)this->field_00D3;
+      *param_3 = ((this->field_00DF * iVar2) / 10000 - (this->field_00F7 * iVar2 * iVar2) / 20000) +
+                 (int)this->field_00D5;
+      return (uint)(this->field_00EF <= (this->field_00E3 * iVar2) / 10000);
+    }
+  }
+  return uVar1;
+}
+
+// 005F4680 STBHEShellC::sub_005F4680
+#line 1 "decomp/ST.exe/functions/005F4680/decomp.c"
+/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
+/* [STMethodOwnerApplier] Structural method owner recovered as STBHEShellC.
+   Evidence: this_call_owners=[STBHEShellC]; agreed_this_calls=1; incoming_this_accesses=33;
+   incoming_edx_uses=0; incoming_stack_parameter_uses=0; direct_non_thunk_callers=0;
+   incoming_ecx_receiver_callers=0; attributed_named_callers=1; owner_evidence_coverage=adequate */
+
+void __thiscall st::fn_005F4680(STBHEShellC *this)
+
+{
+  short sVar1;
+  VisibleClassTy *pVVar2;
+  int iVar3;
+  int iVar4;
+  int iVar5;
+  int local_10;
+  int local_c;
+  int local_8;
+
+  if ((int)this->field_008F < 0) {
+    st::fn_004055BA(this,this->field_0087);
+  }
+  pVVar2 = g_visibleClass_00802A88;
+  if (g_visibleClass_00802A88 != nullptr) {
+    iVar5 = this->field_009B;
+    sVar1 = (short)(iVar5 >> 0x1f);
+    if (iVar5 < 0) {
+      local_8 = (short)(((short)(iVar5 / 200) + sVar1) -
+                       (short)((longlong)iVar5 * 0x51eb851f >> 0x3f)) + -1;
+    }
+    else {
+      local_8 = (int)(short)(((short)(iVar5 / 200) + sVar1) -
+                            (short)((longlong)iVar5 * 0x51eb851f >> 0x3f));
+    }
+    iVar5 = this->field_0097;
+    sVar1 = (short)(iVar5 >> 0x1f);
+    if (iVar5 < 0) {
+      iVar5 = (short)(((short)(iVar5 / 0xc9) + sVar1) - (short)((longlong)iVar5 * 0x28c1979 >> 0x3f)
+                     ) + -1;
+    }
+    else {
+      iVar5 = (int)(short)(((short)(iVar5 / 0xc9) + sVar1) -
+                          (short)((longlong)iVar5 * 0x28c1979 >> 0x3f));
+    }
+    iVar3 = this->field_0093;
+    sVar1 = (short)(iVar3 >> 0x1f);
+    if (iVar3 < 0) {
+      iVar3 = (short)(((short)(iVar3 / 0xc9) + sVar1) - (short)((longlong)iVar3 * 0x28c1979 >> 0x3f)
+                     ) + -1;
+    }
+    else {
+      iVar3 = (int)(short)(((short)(iVar3 / 0xc9) + sVar1) -
+                          (short)((longlong)iVar3 * 0x28c1979 >> 0x3f));
+    }
+    if ((((((DAT_0080874d != -1) && (g_visibleClass_00802A88->field_00F8 != 0)) &&
+          (st::fn_00403F53
+                     (g_visibleClass_00802A88,g_visibleClass_00802A88->field_010C,iVar3,iVar5,
+                      &local_c,&local_10), -1 < local_8)) && ((local_8 < 5 && (-1 < local_c)))) &&
+        ((local_c < pVVar2->field_0030 &&
+         ((local_10 = g_centeredOffsets5[local_8] + local_10, -1 < local_10 &&
+          (local_10 < pVVar2->field_0034)))))) &&
+       ((pVVar2->field_004C != nullptr &&
+        (pVVar2->field_004C[local_c + local_10 * pVVar2->field_0030] == 0)))) {
+      if (this->field_00C4 == '\0') {
+        return;
+      }
+      st::fn_006EAB60(g_sT3DSMAPContext_00807598,this->field_008F);
+      this->field_00C4 = 0;
+      return;
+    }
+    iVar5 = this->field_00AB + 1;
+    this->field_00AB = iVar5;
+    if (this->field_00AF <= iVar5) {
+      this->field_00AB = 0;
+    }
+    st::fn_006EA960
+              (g_sT3DSMAPContext_00807598,this->field_008F,
+               (float)this->field_0093 * _DAT_007904f8 * _DAT_007904f0,
+               (float)this->field_0097 * _DAT_007904f8 * _DAT_007904f0,
+               (float)(int)this->field_009B * _DAT_007904f8 * _DAT_007904f0 + _DAT_007904fc);
+    st::fn_006EA270(g_sT3DSMAPContext_00807598,this->field_008F,0,this->field_00AB);
+    local_8 = st::fn_006ACF0D(this->field_009F,this->field_00A3,this->field_00A7,this->field_0093,
+                           this->field_0097,this->field_009B);
+    if (local_8 == 0) {
+      iVar5 = this->field_0093;
+      iVar3 = this->field_0097;
+      iVar4 = this->field_009B;
+    }
+    else {
+      iVar5 = ((this->field_009F - this->field_0093) * 0x28) / local_8 + this->field_0093;
+      iVar3 = ((this->field_00A3 - this->field_0097) * 0x28) / local_8 + this->field_0097;
+      iVar4 = ((this->field_00A7 - this->field_009B) * 0x28) / local_8 + this->field_009B;
+    }
+    st::fn_00401433(g_traksClass_00802A7C,1,1,0,iVar5,iVar3,iVar4,0,0,0,0,0,0,-1,0,0);
+    if (this->field_00C4 == '\0') {
+      st::fn_006EAAA0(g_sT3DSMAPContext_00807598,this->field_008F,0);
+      this->field_00C4 = 1;
+      return;
+    }
+  }
+  return;
+}
+
+// 005F4C50 STBHEShellC::sub_005F4C50
+#line 1 "decomp/ST.exe/functions/005F4C50/decomp.c"
+/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
+/* [STMethodOwnerApplier] Structural method owner recovered as STBHEShellC.
+   Evidence: this_call_owners=[STBHEShellC]; agreed_this_calls=1; incoming_this_accesses=27;
+   incoming_edx_uses=0; incoming_stack_parameter_uses=30; direct_non_thunk_callers=0;
+   incoming_ecx_receiver_callers=0; attributed_named_callers=1; owner_evidence_coverage=adequate */
+
+undefined4 __thiscall
+st::fn_005F4C50
+          (STBHEShellC *this,float param_1,int param_2,int param_3,int param_4,int param_5,
+          int param_6)
+
+{
+  int iVar1;
+  STBHEShellC_field_0169DArray *pSVar2;
+  STBHEShellC_field_0169Element *element_0169;
+  undefined4 *puVar4;
+  uint uVar5;
+  int iVar6;
+  int iVar7;
+  longlong lVar8;
+  undefined1 local_2c [6];
+  int local_26;
+  undefined4 local_22;
+  undefined4 local_1e;
+  int local_1a;
+  int local_16;
+  undefined4 local_12;
+  undefined4 local_d;
+  float local_8;
+
+  iVar6 = param_4;
+  local_8 = _DAT_0079c5a4 / (float)param_5;
+  this->field_0109 = param_5;
+  this->field_010D = param_4;
+  this->field_0111 = (int)param_1;
+  this->field_0115 = param_2;
+  this->field_0119 = param_3;
+  this->field_0121 = -0x1e;
+  this->field_011D = 0x14;
+  this->field_0125 = 7;
+  if (0 < param_4) {
+    iVar7 = 0;
+    puVar4 = &this->field_0149;
+    do {
+      puVar4[-4] = this->field_011D;
+      *puVar4 = this->field_0119;
+      iVar1 = iVar7 / this->field_0121;
+      iVar7 = iVar7 + -0x96;
+      puVar4[4] = iVar1 + g_playSystem_00802A38->field_00E4 + param_6;
+      /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
+      param_4 = param_4 + -1;
+      puVar4 = puVar4 + 1;
+    } while (param_4 != 0);
+  }
+  if (this->field_0169 != nullptr) {
+    st::fn_006AE110((DArrayTy *)this->field_0169);
+  }
+  pSVar2 = (STBHEShellC_field_0169DArray *)
+           st::fn_006AE290(nullptr,iVar6 * param_5,0x23,10);
+  this->field_0169 = pSVar2;
+  /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
+  if ((pSVar2 != nullptr) && (param_4 = 0, 0 < this->field_010D)) {
+    do {
+      /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
+      param_1 = 0.0;
+      /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
+      param_3 = 0;
+      iVar6 = this->field_0109 * param_4;
+      if (0 < this->field_0109) {
+        do {
+          puVar4 = (undefined4 *)local_2c;
+          memset(puVar4, 0, 0x23); /* compiler bulk-zero initialization */
+          puVar4 = (undefined4 *)((byte *)puVar4 + 0x20);
+          /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
+          if (param_4 == 0) {
+            fcos((float10)param_1);
+            lVar8 = st::fn_0072E288();
+            iVar7 = (int)lVar8;
+            fsin((float10)param_1);
+            local_1a = iVar7;
+            lVar8 = st::fn_0072E288();
+            local_16 = (int)lVar8;
+            /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
+            param_1 = param_1 + local_8;
+          }
+          else {
+            pSVar2 = this->field_0169;
+            if ((uint)(iVar6 - param_5) < pSVar2->count) {
+              element_0169 = DArrayAt<STBHEShellC_field_0169Element>(pSVar2, iVar6 - param_5);
+            }
+            else {
+              element_0169 = nullptr;
+            }
+            iVar7 = element_0169->field_0012;
+            local_16 = element_0169->field_0016;
+            local_1a = iVar7;
+          }
+          STPiece<2,4>(local_2c) = ((&this->field_0139)[param_4] * iVar7) / 10000 + this->field_0111;
+          local_26 = ((&this->field_0139)[param_4] * local_16) / 10000 + this->field_0115;
+          local_12 = DAT_007ce5ec;
+          local_22 = this->field_0119;
+          local_1e = 0;
+          local_2c[1] = 3;
+          local_d = 0xffffffff;
+          uVar5 = (uint)((&this->field_0159)[param_4] != 0);
+          if (this->field_0103 != '\0') {
+            st::fn_00403247((int)local_2c,3,uVar5);
+          }
+          local_2c[0] = uVar5 == 0;
+          st::fn_006AE1C0((DArrayTy *)this->field_0169,local_2c);
+          /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
+          param_3 = param_3 + 1;
+          iVar6 = iVar6 + 1;
+        } while (param_3 < this->field_0109);
+      }
+      /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
+      param_4 = param_4 + 1;
+    } while (param_4 < this->field_010D);
+  }
+  if (this->field_0169 == nullptr) {
+    return 0;
+  }
+  return 1;
+}
+
+// 005F4FA0 STBHEShellC::sub_005F4FA0
+#line 1 "decomp/ST.exe/functions/005F4FA0/decomp.c"
+/* [STMethodOwnerApplier] Structural method owner recovered as STBHEShellC.
+   Evidence: this_call_owners=[STBHEShellC]; agreed_this_calls=1; incoming_this_accesses=15;
+   incoming_edx_uses=0; incoming_stack_parameter_uses=0; direct_non_thunk_callers=0;
+   incoming_ecx_receiver_callers=0; attributed_named_callers=1; owner_evidence_coverage=adequate */
+
+int __thiscall st::fn_005F4FA0(STBHEShellC *this)
+
+{
+  STBHEShellC_field_0169DArray *pSVar1;
+  int iVar2;
+  int iVar3;
+  bool bVar4;
+  int iVar5;
+  short sVar6;
+  uint uVar7;
+  char *pcVar8;
+  longlong lVar9;
+  int local_20;
+  short local_18;
+  short local_14;
+  int local_c;
+  int local_8;
+
+  local_c = 0;
+  bVar4 = false;
+  iVar5 = 0;
+  if ((this->field_0169 != nullptr) &&
+     (local_8 = 0, 0 < this->field_010D)) {
+    do {
+      uVar7 = local_8 * this->field_0109;
+      if (g_playSystem_00802A38->field_00E4 < (uint)(&this->field_0159)[local_8]) {
+        local_c = 1;
+      }
+      else {
+        (&this->field_0139)[local_8] = (&this->field_0139)[local_8] + this->field_0125;
+        iVar5 = (&this->field_0149)[local_8] + this->field_0121;
+        (&this->field_0149)[local_8] = iVar5;
+        if ((local_8 == 0) && (iVar5 = iVar5 / 200, iVar5 != this->field_0129)) {
+          this->field_0129 = iVar5;
+          st::fn_00401285(this,iVar5,this->field_0139);
+        }
+        local_20 = 0;
+        if (0 < this->field_0109) {
+          do {
+            pSVar1 = this->field_0169;
+            /* ST_PSEUDO[dynamic_array_indexing]: expected DArrayAt<T>(array, index) (runtime elementSize cannot be a static C array) */
+            if (((uVar7 < pSVar1->count) &&
+                (pcVar8 = &pSVar1->data->field_0000 + pSVar1->elementSize * uVar7,
+                pcVar8 != nullptr)) && (*pcVar8 != '\x02')) {
+              *(int *)(pcVar8 + 2) =
+                   (*(int *)(pcVar8 + 0x12) * (&this->field_0139)[local_8]) / 10000 +
+                   this->field_0111;
+              iVar5 = *(int *)(pcVar8 + 2);
+              *(int *)(pcVar8 + 6) =
+                   (*(int *)(pcVar8 + 0x16) * (&this->field_0139)[local_8]) / 10000 +
+                   this->field_0115;
+              iVar2 = (&this->field_0149)[local_8];
+              *(int *)(pcVar8 + 10) = iVar2;
+              sVar6 = (short)(iVar5 >> 0x1f);
+              if (iVar5 < 0) {
+                local_18 = (((short)(iVar5 / 0xc9) + sVar6) -
+                           (short)((longlong)iVar5 * 0x28c1979 >> 0x3f)) + -1;
+              }
+              else {
+                local_18 = ((short)(iVar5 / 0xc9) + sVar6) -
+                           (short)((longlong)iVar5 * 0x28c1979 >> 0x3f);
+              }
+              iVar3 = *(int *)(pcVar8 + 6);
+              sVar6 = (short)(iVar3 >> 0x1f);
+              if (iVar3 < 0) {
+                local_14 = (((short)(iVar3 / 0xc9) + sVar6) -
+                           (short)((longlong)iVar3 * 0x28c1979 >> 0x3f)) + -1;
+              }
+              else {
+                local_14 = ((short)(iVar3 / 0xc9) + sVar6) -
+                           (short)((longlong)iVar3 * 0x28c1979 >> 0x3f);
+              }
+              sVar6 = (short)(iVar2 >> 0x1f);
+              if (iVar2 < 0) {
+                sVar6 = (((short)(iVar2 / 200) + sVar6) -
+                        (short)((longlong)iVar2 * 0x51eb851f >> 0x3f)) + -1;
+              }
+              else {
+                sVar6 = ((short)(iVar2 / 200) + sVar6) -
+                        (short)((longlong)iVar2 * 0x51eb851f >> 0x3f);
+              }
+              if ((((iVar5 < 0) || (g_worldGrid.sizeX <= iVar5)) ||
+                  ((*(int *)(pcVar8 + 6) < 0 ||
+                   (((int)g_worldGrid.sizeY <= *(int *)(pcVar8 + 6) || (iVar2 < 0)))))) ||
+                 (iVar5 = st::fn_00404D3B(local_18,local_14,sVar6), iVar5 == 0)) {
+                st::fn_006E3210
+                          (g_sT3DSMAPContext_00807598,
+                           (*(int *)(pcVar8 + 2) * g_sT3DSMAPContext_00807598->field_0380) / 0xc9,
+                           (*(int *)(pcVar8 + 6) * g_sT3DSMAPContext_00807598->field_0380) / 0xc9);
+                lVar9 = st::fn_0072E288();
+                if (*(int *)(pcVar8 + 10) < (int)(short)lVar9) {
+                  *pcVar8 = '\x02';
+                  if (-1 < (int)*(uint *)(pcVar8 + 0x1f)) {
+                    st::fn_006E8BA0
+                              (g_sT3DSMAPContext_00807598,*(uint *)(pcVar8 + 0x1f));
+                    *(uint *)(pcVar8 + 0x1f) = 0xffffffff;
+                  }
+                  goto LAB_005f528b;
+                }
+              }
+              if (*pcVar8 == '\0') {
+                if ((*(uint *)(pcVar8 + 0x1f) == 0xffffffff) && (this->field_0103 != '\0')) {
+                  st::fn_00403247((int)pcVar8,pcVar8[1],0);
+                }
+                *pcVar8 = '\x01';
+              }
+              if ((local_c == 0) && (*pcVar8 != '\x02')) {
+                local_c = 1;
+              }
+              if (((local_8 == 0) && (!bVar4)) && (*pcVar8 != '\x02')) {
+                bVar4 = true;
+              }
+            }
+LAB_005f528b:
+            local_20 = local_20 + 1;
+            uVar7 = uVar7 + 1;
+          } while (local_20 < this->field_0109);
+        }
+      }
+      local_8 = local_8 + 1;
+      iVar5 = local_c;
+    } while (local_8 < this->field_010D);
+  }
+  return iVar5;
+}
+
+// 005F53A0 STBHEShellC::sub_005F53A0
+#line 1 "decomp/ST.exe/functions/005F53A0/decomp.c"
+/* [STMethodOwnerApplier] Structural method owner recovered as STBHEShellC.
+   Evidence: this_call_owners=[STBHEShellC]; agreed_this_calls=1; incoming_this_accesses=4;
+   incoming_edx_uses=0; incoming_stack_parameter_uses=0; direct_non_thunk_callers=0;
+   incoming_ecx_receiver_callers=0; attributed_named_callers=1; owner_evidence_coverage=adequate */
+
+void __thiscall st::fn_005F53A0(STBHEShellC *this)
+
+{
+  dword dVar1;
+  STBHEShellC_field_0169DArray *pSVar2;
+  char *pcVar3;
+  uint uVar4;
+
+  if (this->field_0169 != nullptr) {
+    dVar1 = this->field_0169->count;
+    uVar4 = 0;
+    if (0 < (int)dVar1) {
+      do {
+        pSVar2 = this->field_0169;
+        /* ST_PSEUDO[dynamic_array_indexing]: expected DArrayAt<T>(array, index) (runtime elementSize cannot be a static C array) */
+        if (((uVar4 < pSVar2->count) &&
+            (pcVar3 = &pSVar2->data->field_0000 + pSVar2->elementSize * uVar4, pcVar3 != nullptr
+            )) && (-1 < (int)*(uint *)(pcVar3 + 0x1f))) {
+          st::fn_006E8BA0(g_sT3DSMAPContext_00807598,*(uint *)(pcVar3 + 0x1f));
+          *(uint *)(pcVar3 + 0x1f) = 0xffffffff;
+        }
+        uVar4 = uVar4 + 1;
+      } while ((int)uVar4 < (int)dVar1);
+    }
+    st::fn_006AE110((DArrayTy *)this->field_0169);
+    this->field_0169 = nullptr;
+  }
+  return;
+}
+
+// 005F5700 STBHEShellC::sub_005F5700
+#line 1 "decomp/ST.exe/functions/005F5700/decomp.c"
+/* [STMethodOwnerApplier] Structural method owner recovered as STBHEShellC.
+   Evidence: this_call_owners=[STBHEShellC]; agreed_this_calls=1; incoming_this_accesses=14;
+   incoming_edx_uses=18; incoming_stack_parameter_uses=12; direct_non_thunk_callers=0;
+   incoming_ecx_receiver_callers=0; attributed_named_callers=1; owner_evidence_coverage=adequate */
+
+int __thiscall st::fn_005F5700(STBHEShellC *this,int param_1,int param_2)
+
+{
+  int iVar1;
+  STWorldObject *this_00;
+  short sVar2;
+  int iVar3;
+  short sVar4;
+  int iVar5;
+  int iVar6;
+  short sVar7;
+  short sVar8;
+  int local_1c;
+  int local_14;
+  int local_10;
+  int local_c;
+  undefined4 local_8;
+
+  iVar3 = param_1;
+  local_c = 0;
+  iVar1 = this->field_0111;
+  sVar2 = (short)(iVar1 >> 0x1f);
+  if (iVar1 < 0) {
+    local_14 = (short)(((short)(iVar1 / 0xc9) + sVar2) -
+                      (short)((longlong)iVar1 * 0x28c1979 >> 0x3f)) + -1;
+  }
+  else {
+    local_14 = (int)(short)(((short)(iVar1 / 0xc9) + sVar2) -
+                           (short)((longlong)iVar1 * 0x28c1979 >> 0x3f));
+  }
+  iVar1 = this->field_0115;
+  sVar2 = (short)(iVar1 >> 0x1f);
+  if (iVar1 < 0) {
+    local_1c = (short)(((short)(iVar1 / 0xc9) + sVar2) -
+                      (short)((longlong)iVar1 * 0x28c1979 >> 0x3f)) + -1;
+  }
+  else {
+    local_1c = (int)(short)(((short)(iVar1 / 0xc9) + sVar2) -
+                           (short)((longlong)iVar1 * 0x28c1979 >> 0x3f));
+  }
+  iVar1 = param_2 / 0xc9;
+  iVar6 = local_1c - (iVar1 + 1);
+  local_10 = local_14 - (iVar1 + 1);
+  local_1c = iVar1 + 2 + local_1c;
+  local_14 = iVar1 + 2 + local_14;
+  if (iVar6 < 0) {
+    iVar6 = 0;
+  }
+  if (local_10 < 0) {
+    local_10 = 0;
+  }
+  if (g_worldGrid.sizeY < local_1c) {
+    local_1c = (int)g_worldGrid.sizeY;
+  }
+  if (g_worldGrid.sizeX < local_14) {
+    local_14 = (int)g_worldGrid.sizeX;
+  }
+  if ((4 < param_1) || (sVar2 = g_worldGrid.sizeX, param_1 < 0)) {
+    return 0;
+  }
+  do {
+    iVar1 = local_10;
+    if (local_1c <= iVar6) {
+      return local_c;
+    }
+    for (; iVar1 < local_14; iVar1 = iVar1 + 1) {
+      sVar4 = (short)iVar1;
+      if ((((-1 < sVar4) && (sVar4 < sVar2)) && (sVar7 = (short)iVar6, -1 < sVar7)) &&
+         (((sVar7 < g_worldGrid.sizeY && (sVar8 = (short)iVar3, -1 < sVar8)) &&
+          ((sVar8 < g_worldGrid.sizeZ &&
+           (this_00 = g_worldGrid.cells
+                      [(int)sVar7 * (int)sVar2 + (int)g_worldGrid.planeStride * (int)sVar8 +
+                       (int)sVar4].objects[0], this_00 != nullptr)))))) {
+        st::fn_004031E3(this_00,(undefined2 *)((int)&local_8 + 2),(int *)((int)&param_1 + 2),
+                           &local_8);
+        if (*(int *)&this_00[1].field_0x8 == 1) {
+          iVar5 = st::fn_006ACED8((int)STPiece<2,2>(local_8),(int)STPiece<2,2>(param_1),this->field_0111,
+                               this->field_0115);
+          if (param_2 <= iVar5) {
+            iVar5 = st::fn_006ACED8(STPiece<2,2>(local_8) + 100,(int)STPiece<2,2>(param_1),this->field_0111,
+                                 this->field_0115);
+            if (param_2 <= iVar5) {
+              iVar5 = st::fn_006ACED8((int)STPiece<2,2>(local_8),STPiece<2,2>(param_1) + 100,this->field_0111,
+                                   this->field_0115);
+              if (param_2 <= iVar5) {
+                iVar5 = st::fn_006ACED8(STPiece<2,2>(local_8) + 100,STPiece<2,2>(param_1) + 100,this->field_0111,
+                                     this->field_0115);
+                if (param_2 <= iVar5) goto cf_continue_loop_005F5985;
+              }
+            }
+          }
+        }
+        else {
+          iVar5 = st::fn_006ACED8((int)STPiece<2,2>(local_8),(int)STPiece<2,2>(param_1),this->field_0111,
+                               this->field_0115);
+          if (param_2 <= iVar5) goto cf_continue_loop_005F5985;
+        }
+        local_c = local_c + 1;
+        st::fn_00403E22(this->field_0051,(int)(this->field_007D << 2) / (8 - iVar3),(int)this_00,
+                           (short)this->field_0081,this->field_0085,0xb5,0x110);
+      }
+cf_continue_loop_005F5985:
+      sVar2 = g_worldGrid.sizeX;
+    }
+    iVar6 = iVar6 + 1;
+  } while( true );
+}
+
+// 005F5A90 STBHEShellC::sub_005F5A90
+#line 1 "decomp/ST.exe/functions/005F5A90/decomp.c"
+/* [STPrototypeRepairApplier] Propagated return.
+   Evidence: 005F5A90 returns used as parameter 2 of STPlaySystemC::SaveObjData @ 005F3098
+
+   [STMethodOwnerApplier] Structural method owner recovered as STBHEShellC.
+   Evidence: this_call_owners=[STBHEShellC]; agreed_this_calls=1; incoming_this_accesses=3;
+   incoming_edx_uses=0; incoming_stack_parameter_uses=2; direct_non_thunk_callers=0;
+   incoming_ecx_receiver_callers=0; attributed_named_callers=1; owner_evidence_coverage=adequate */
+
+byte * __thiscall st::fn_005F5A90(STBHEShellC *this,int *param_1)
+
+{
+  byte *pbVar1;
+  byte *pbVar2;
+  byte *puVar5;
+  byte *pbVar6;
+  byte *local_c;
+  uint local_8;
+
+  pbVar1 = st::fn_006AAC70(0x128);
+  this->field_016D = this->field_001C;
+  puVar5 = (byte *)&this->field_0x4d;
+  pbVar6 = pbVar1;
+  memmove(pbVar6, puVar5, 0x128); /* compiler REP MOVS byte copy */
+  pbVar1[0xc] = 2;
+  pbVar1[0xd] = 0;
+  pbVar1[0xe] = 0;
+  pbVar1[0xf] = 0;
+  if (this->field_0169 != nullptr) {
+    local_c = (byte *)st::fn_006B0020(&this->field_0169->flags,(int *)&local_8);
+    pbVar2 = st::fn_006ACF50(pbVar1,local_8 + 300);
+    *(uint *)(pbVar2 + 0x128) = local_8;
+    pbVar6 = local_c;
+    pbVar1 = pbVar2 + 300;
+    memmove(pbVar1, pbVar6, local_8); /* compiler REP MOVS byte copy */
+    if (local_c != nullptr) {
+      st::fn_006AB060(&local_c);
+    }
+    *param_1 = local_8 + 0x128;
+    return pbVar2;
+  }
+  *param_1 = 0x128;
+  return pbVar1;
+}
+
+// 005F5B80 STBHEShellC::sub_005F5B80
+#line 1 "decomp/ST.exe/functions/005F5B80/decomp.c"
+/* [STMethodOwnerApplier] Structural method owner recovered as STBHEShellC.
+   Evidence: this_call_owners=[STBHEShellC]; agreed_this_calls=1; incoming_this_accesses=5;
+   incoming_edx_uses=0; incoming_stack_parameter_uses=2; direct_non_thunk_callers=0;
+   incoming_ecx_receiver_callers=0; attributed_named_callers=1; owner_evidence_coverage=adequate */
+
+int __thiscall st::fn_005F5B80(STBHEShellC *this,undefined4 *param_1)
+
+{
+  dword dVar1;
+  STBHEShellC_field_0169DArray *pSVar2;
+  int iVar3;
+  char *pcVar4;
+  byte *puVar5;
+  uint uVar6;
+  byte *puVar7;
+
+  puVar5 = (byte *)(param_1);
+  puVar7 = (byte *)&this->field_0x4d;
+  memmove(puVar7, puVar5, 0x128); /* compiler REP MOVS byte copy */
+  iVar3 = 0x128;
+  if (this->field_0169 != nullptr) {
+    pSVar2 = (STBHEShellC_field_0169DArray *)st::fn_006B0060(nullptr,param_1 + 0x4b);
+    this->field_0169 = pSVar2;
+    iVar3 = param_1[0x4a] + 300;
+  }
+  this->field_008F = 0xffffffff;
+  if (this->field_0169 != nullptr) {
+    dVar1 = this->field_0169->count;
+    uVar6 = 0;
+    if (0 < (int)dVar1) {
+      do {
+        pSVar2 = this->field_0169;
+        /* ST_PSEUDO[dynamic_array_indexing]: expected DArrayAt<T>(array, index) (runtime elementSize cannot be a static C array) */
+        if ((uVar6 < pSVar2->count) &&
+           (pcVar4 = &pSVar2->data->field_0000 + pSVar2->elementSize * uVar6, pcVar4 != nullptr)
+           ) {
+          *(uint *)(pcVar4 + 0x1f) = 0xffffffff;
+        }
+        uVar6 = uVar6 + 1;
+      } while ((int)uVar6 < (int)dVar1);
+    }
+  }
+  return iVar3;
+}
+
+// 005F5C40 STBHEShellC::sub_005F5C40
+#line 1 "decomp/ST.exe/functions/005F5C40/decomp.c"
+/* [STPrototypeApplier] Propagated parameter 3.
+   Evidence: 005F5C40 -> 00568DD0 @ 005F5CC6
+
+   [STMethodOwnerApplier] Structural method owner recovered as STBHEShellC.
+   Evidence: this_call_owners=[STBHEShellC]; agreed_this_calls=2; incoming_this_accesses=1;
+   incoming_edx_uses=0; incoming_stack_parameter_uses=3; direct_non_thunk_callers=0;
+   incoming_ecx_receiver_callers=0; attributed_named_callers=2; owner_evidence_coverage=adequate */
+
+void __thiscall st::fn_005F5C40(STBHEShellC *this,int param_1,int param_2,int soundId)
+
+{
+  short sVar1;
+  SoundPosition local_10;
+
+  sVar1 = (short)(param_1 >> 0x1f);
+  if (param_1 < 0) {
+    local_10.x = (short)(((short)(param_1 / 0xc9) + sVar1) -
+                        (short)((longlong)param_1 * 0x28c1979 >> 0x3f)) + -1;
+  }
+  else {
+    local_10.x = (int)(short)(((short)(param_1 / 0xc9) + sVar1) -
+                             (short)((longlong)param_1 * 0x28c1979 >> 0x3f));
+  }
+  sVar1 = (short)(param_2 >> 0x1f);
+  if (param_2 < 0) {
+    local_10.y = (short)(((short)(param_2 / 0xc9) + sVar1) -
+                        (short)((longlong)param_2 * 0x28c1979 >> 0x3f)) + -1;
+  }
+  else {
+    local_10.y = (int)(short)(((short)(param_2 / 0xc9) + sVar1) -
+                             (short)((longlong)param_2 * 0x28c1979 >> 0x3f));
+  }
+  local_10.unknown = (int)this->field_0018;
+  st::fn_00404BD8((SoundClassTy *)&g_sound,SOUND_MODE_2,nullptr,soundId,&local_10,0);
+  return;
+}
+
+// 005F5D10 STBHEShellC::sub_005F5D10
+#line 1 "decomp/ST.exe/functions/005F5D10/decomp.c"
+/* [STMethodOwnerApplier] Structural method owner recovered as STBHEShellC.
+   Evidence: this_call_owners=[STBHEShellC]; agreed_this_calls=1; incoming_this_accesses=11;
+   incoming_edx_uses=0; incoming_stack_parameter_uses=3; direct_non_thunk_callers=0;
+   incoming_ecx_receiver_callers=0; attributed_named_callers=1; owner_evidence_coverage=adequate */
+
+void __thiscall st::fn_005F5D10(STBHEShellC *this,int param_1)
+
+{
+  int iVar1;
+  undefined4 local_c;
+  short local_8;
+  short local_6;
+
+  if (param_1 != 0) {
+    if (param_1 == 1) {
+      this->field_0093 = this->field_0040;
+      this->field_0097 = this->field_0044;
+      this->field_009B = this->field_0048;
+      this->field_0034 = 0;
+LAB_005f5d4b:
+      st::fn_00404E0D(this,this->field_0040,this->field_0044,this->field_0048);
+      this->field_0104 = CASE_3;
+      return;
+    }
+    if (param_1 == 2) {
+      if ((int *)this->field_0034 != nullptr) {
+        /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+        iVar1 = (**(code **)(*(int *)this->field_0034 + 0xe0))
+                          (this->field_0038,(int)&param_1 + 2,&local_6,&local_8,&local_c);
+        if (iVar1 == 0) {
+          this->field_0040 = (int)STPiece<2,2>(param_1);
+          this->field_0093 = (int)STPiece<2,2>(param_1);
+          this->field_0044 = (int)local_6;
+          this->field_0048 = (int)local_8;
+          this->field_0097 = (int)local_6;
+          this->field_009B = (int)local_8;
+          this->field_003C = local_c;
+          goto LAB_005f5d4b;
+        }
+      }
+      this->field_0104 = CASE_5;
+    }
+  }
+  this->field_0104 = CASE_5;
+  return;
+}
+
+// 005F5E30 STBHEShellC::sub_005F5E30
+#line 1 "decomp/ST.exe/functions/005F5E30/decomp.c"
+/* [STMethodOwnerApplier] Structural method owner recovered as STBHEShellC.
+   Evidence: this_call_owners=[STBHEShellC]; agreed_this_calls=1; incoming_this_accesses=19;
+   incoming_edx_uses=0; incoming_stack_parameter_uses=3; direct_non_thunk_callers=0;
+   incoming_ecx_receiver_callers=0; attributed_named_callers=1; owner_evidence_coverage=adequate */
+
+void __thiscall
+st::fn_005F5E30(STBHEShellC *this,int param_1,int param_2,undefined4 param_3)
+
+{
+  this->field_009F = this->field_0093;
+  this->field_00A3 = this->field_0097;
+  this->field_0093 = param_1;
+  this->field_0097 = param_2;
+  this->field_00A7 = this->field_009B;
+  this->field_0087 = 3;
+  this->field_009B = param_3;
+  this->field_00AF = 0x1e;
+  this->field_00B3 = 0xb;
+  this->field_00BC = 0x14;
+  this->field_00B7 = 0;
+  this->field_00C0 = 0;
+  this->field_00AB = 0;
+  if (this->field_0103 != '\0') {
+    st::fn_004055BA(this,3);
+  }
+  st::fn_0040264E(this,this->field_0093,this->field_0097,0x48a);
+  return;
+}
+

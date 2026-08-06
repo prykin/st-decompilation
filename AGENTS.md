@@ -39,6 +39,11 @@ Original binaries are local under ignored `bin/` and must not be committed.
   recursive quality audit. Use the stable function address and issue kind when
   selecting the next automation cluster; do not infer corpus quality from one
   large `decomp.c` example.
+- `tools/st_source_tree.py` is the only writer for generated `src/ST.exe`.
+  Run it only against a `passed` receipt; do not hand-edit its generated tree.
+  Internal source identity is `st::fn_ADDRESS`, while recovered names and paths
+  remain provenance. Treat `src/ST.exe/audit/` and compiler diagnostics as a
+  review queue, never as permission to add arbitrary casts or zero-filled stubs.
 - `compile_readiness_summary.json` and `compile_readiness_issues.jsonl` separate
   syntactic/runtime compatibility, missing source/declaration assembly, and
   semantic recovery debt. Compatibility helpers make exact pseudocode

@@ -1,0 +1,30 @@
+#include "st/generated.hpp"
+// Generated translation unit: source/recovered/by_owner/STTmMineC.cpp
+
+// 0063DDB0 STTmMineC::FUN_0063ddb0
+#line 1 "decomp/ST.exe/functions/0063DDB0/decomp.c"
+void __thiscall st::fn_0063DDB0(STTmMineC *this,int param_1)
+
+{
+  dword dVar1;
+  STTmMineC_field_0336DArray *pSVar2;
+  uint uVar3;
+
+  if (this->field_0336 != nullptr) {
+    dVar1 = this->field_0336->count;
+    uVar3 = 0;
+    if (0 < (int)dVar1) {
+      do {
+        pSVar2 = this->field_0336;
+        /* ST_PSEUDO[dynamic_array_indexing]: expected DArrayAt<T>(array, index) (runtime elementSize cannot be a static C array) */
+        if ((uVar3 < pSVar2->count) &&
+           (&pSVar2->data->field_0000 + pSVar2->elementSize * uVar3 != nullptr)) {
+          st::fn_00403274(this,uVar3,param_1);
+        }
+        uVar3 = uVar3 + 1;
+      } while ((int)uVar3 < (int)dVar1);
+    }
+  }
+  return;
+}
+

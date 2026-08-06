@@ -46,5 +46,13 @@ decomp/.*.export-*/
 decomp/.*.previous-*/
 decomp/*/.function_analysis_cache.tsv
 
+# Transactional source-tree generator staging/rollback directories.
+src/.*.source-staging-*/
+src/.*.source-previous-*/
+
 # Local Java/Ghidra script compilation output.
 *.class
+
+# Local Python bytecode from offline corpus tools.
+__pycache__/
+*.py[cod]

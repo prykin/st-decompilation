@@ -1,0 +1,77 @@
+#include "st/generated.hpp"
+// Generated translation unit: source/recovered/by_owner/SubmarineTitans__Recovered__HiddenThis__AnonReceiver_00416270.cpp
+
+// 005FAA10 SubmarineTitans::Recovered::HiddenThis::AnonReceiver_00416270::FUN_005faa10
+#line 1 "decomp/ST.exe/functions/005FAA10/decomp.c"
+/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
+/* [STHiddenThisApplier] Anonymous hidden receiver recovered as
+   /SubmarineTitans/Recovered/HiddenThis/AnonReceiver_00416270.
+   Evidence: incoming_receiver_captures=1; receiver_accesses=9; incoming_edx_uses=0; calls=1;
+   ecx_pointer_setup=1; ecx_scalar_setup=0; caller_cleanup_calls=0; callee_ret_pop=[4];
+   expected_stack=4; receiver_family_members=4; single_call_corroborated_by_receiver_family */
+
+undefined4 __thiscall
+st::fn_005FAA10
+          (AnonReceiver_00416270 *this,int param_1)
+
+{
+  AnonShape_005FAA10_427149EB *pAVar1;
+  int iVar2;
+  ushort *puVar3;
+  uint uVar4;
+  uint uVar5;
+  uint uVar6;
+  uint uVar7;
+  InternalExceptionFrame local_54;
+  AnonShape_005FAA10_427149EB *local_10;
+  undefined4 local_c;
+  uint local_8;
+
+  local_c = 0;
+  local_54.previous = g_currentExceptionFrame;
+  g_currentExceptionFrame = &local_54;
+  local_10 = (AnonShape_005FAA10_427149EB *)this;
+  iVar2 = st::fn_0072D7F0(local_54.jumpBuffer,0);
+  pAVar1 = local_10;
+  if (iVar2 != 0) {
+    g_currentExceptionFrame = local_54.previous;
+    return local_c;
+  }
+  if (local_10->field_02E6 != 0) {
+    if (param_1 == 1) {
+      puVar3 = st::fn_00709AF0
+                         (DAT_00806774,CASE_1D,"rubb3",0xffffffff,0,1,0,nullptr);
+      uVar5 = STField<uint>(puVar3,0xd);
+      uVar4 = STField<uint>(puVar3,9);
+      uVar7 = 8;
+      uVar6 = 8;
+    }
+    else {
+      puVar3 = st::fn_00709AF0
+                         (DAT_00806774,CASE_1D,"bulb_tel",0xffffffff,0,1,0,
+                          nullptr);
+      uVar5 = STField<uint>(puVar3,0xd);
+      uVar4 = STField<uint>(puVar3,9);
+      uVar7 = 0x2f;
+      uVar6 = 0x5a;
+    }
+    st::fn_006E8660(pAVar1->field_0211,(int *)&local_8,1,0,uVar4,uVar5,uVar6,uVar7,0);
+    st::fn_006E98E0
+              (pAVar1->field_0211,local_8,0,*(int *)puVar3,STField<int>(puVar3,0x21),1);
+    st::fn_006EA270(pAVar1->field_0211,local_8,0,0);
+    iVar2 = pAVar1->field_02E6;
+    st::fn_006EA960
+              (pAVar1->field_0211,local_8,
+               (float)*(int *)(iVar2 + 0x14) * _DAT_007904f8 * _DAT_007904f0,
+               (float)*(int *)(iVar2 + 0x18) * _DAT_007904f8 * _DAT_007904f0,
+               (float)*(int *)(iVar2 + 0x1c) * _DAT_007904f8 * _DAT_007904f0 + _DAT_007904fc);
+    st::fn_006E9EF0(pAVar1->field_0211,local_8,0,1,0,0,30000);
+    st::fn_006EAAA0(pAVar1->field_0211,local_8,0);
+    *(uint *)(pAVar1->field_02E6 + 4) = local_8;
+    g_currentExceptionFrame = local_54.previous;
+    return 1;
+  }
+  g_currentExceptionFrame = local_54.previous;
+  return local_c;
+}
+

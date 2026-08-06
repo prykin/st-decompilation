@@ -1,0 +1,158 @@
+#include "st/generated.hpp"
+// Generated translation unit: source/original/ai/Ai_lex.cpp
+
+// 00672B60 FUN_00672b60
+#line 1 "decomp/ST.exe/functions/00672B60/decomp.c"
+/* [STSourceProvenanceApplier begin]
+   Recovered source file: E:\__titans\ai\Ai_lex.c
+   Diagnostic line evidence: 231 | 253 (metadata/report site, not the function definition)
+   [STSourceProvenanceApplier end]
+
+   [STPrototypeApplier] Propagated parameter 1.
+   Evidence: 006736F0 -> 00672B60 @ 00673B35 */
+
+int st::fn_00672B60(char *param_1,AnonShape_GLOBAL_0081194C_4D1525E6 *param_2)
+
+{
+  char cVar1;
+  int *piVar2;
+  int exceptionCode;
+  char *pcVar3;
+  uint uVar4;
+  uint uVar5;
+  short *psVar6;
+  InternalExceptionFrame local_60;
+  int *local_1c;
+  int local_18;
+  short *local_14;
+  short *local_10;
+  short *local_c;
+  short *local_8;
+
+  local_c = nullptr;
+  local_10 = nullptr;
+  local_14 = nullptr;
+  local_8 = nullptr;
+  if (DAT_00811958 == nullptr) {
+    DAT_00857540 = 0;
+    DAT_00811908 = 0;
+    DAT_007d2d24 = 0x600;
+  }
+  local_1c = st::fn_006AAC10(0x30);
+  if (local_1c == nullptr) {
+    return -2;
+  }
+  local_60.previous = g_currentExceptionFrame;
+  g_currentExceptionFrame = &local_60;
+  exceptionCode = st::fn_0072D7F0(local_60.jumpBuffer,0);
+  if (exceptionCode != 0) {
+    g_currentExceptionFrame = local_60.previous;
+    st::fn_006A5E90(local_c);
+    st::fn_006A5E90(local_10);
+    st::fn_006A5E90(local_14);
+    if (DAT_0085753c == nullptr) {
+      st::fn_006A5E90(local_8);
+    }
+    piVar2 = local_1c;
+    st::fn_006A5E90((short *)local_1c[6]);
+    st::fn_006A5E90((short *)piVar2[0xb]);
+    st::fn_006A5E90((short *)piVar2[7]);
+    st::fn_006A5E90((short *)piVar2);
+    st::fn_006A5E40(exceptionCode,0,"E:\\__titans\\ai\\Ai_lex.c",0xfd);
+    return exceptionCode;
+  }
+  if (DAT_0085755c == nullptr) {
+    local_c = st::fn_006AAC70(0x401);
+    *(undefined1 *)local_c = 0;
+  }
+  if (DAT_00857528 == nullptr) {
+    local_10 = st::fn_006AAC70(0x401);
+    *(char *)local_10 = '\0';
+  }
+  if (DAT_00811948 == nullptr) {
+    local_14 = st::fn_006AAC70(0x401);
+    *(char *)local_14 = '\0';
+  }
+  if (DAT_0085753c == nullptr) {
+    local_8 = st::fn_006AAC70(0x105);
+    *(char *)local_8 = '\0';
+  }
+  else {
+    local_8 = (short *)DAT_0085753c;
+  }
+  piVar2 = local_1c;
+  local_1c[1] = DAT_00857560;
+  local_1c[2] = (int)PTR_0081194c;
+  pcVar3 = st::fn_006C49B0((char *)DAT_00857528);
+  piVar2[6] = (int)pcVar3;
+  pcVar3 = st::fn_006C49B0((char *)DAT_00811948);
+  piVar2[0xb] = (int)pcVar3;
+  pcVar3 = st::fn_006C49B0(DAT_0085753c);
+  piVar2[7] = (int)pcVar3;
+  PTR_0081194c = param_2;
+  local_18 = 0;
+  if (param_1 != nullptr) {
+    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+    local_18 = (**(code **)param_2)(param_1);
+    if (local_18 == 0) {
+      st::fn_006A5E40
+                (-10,g_overwriteContext_007ED77C,"E:\\__titans\\ai\\Ai_lex.c",0xe7);
+    }
+    else {
+      uVar4 = 0xffffffff;
+      do {
+        pcVar3 = param_1;
+        if (uVar4 == 0) break;
+        uVar4 = uVar4 - 1;
+        pcVar3 = param_1 + 1;
+        cVar1 = *param_1;
+        param_1 = pcVar3;
+      } while (cVar1 != '\0');
+      uVar4 = ~uVar4;
+      pcVar3 = pcVar3 + -uVar4;
+      psVar6 = local_8;
+      for (uVar5 = uVar4 >> 2; uVar5 != 0; uVar5 = uVar5 - 1) {
+        *(undefined4 *)psVar6 = *(undefined4 *)pcVar3;
+        pcVar3 = pcVar3 + 4;
+        psVar6 = (short *)((int)psVar6 + 4);
+      }
+      for (uVar4 = uVar4 & 3; uVar4 != 0; uVar4 = uVar4 - 1) {
+        *(char *)psVar6 = *pcVar3;
+        pcVar3 = pcVar3 + 1;
+        psVar6 = (short *)((int)psVar6 + 1);
+      }
+    }
+  }
+  if (DAT_0085755c == nullptr) {
+    DAT_0085755c = local_c;
+  }
+  if (DAT_00857528 == nullptr) {
+    DAT_00857528 = local_10;
+  }
+  if (DAT_00811948 == nullptr) {
+    DAT_00811948 = local_14;
+  }
+  if (DAT_0085753c == nullptr) {
+    DAT_0085753c = (char *)local_8;
+  }
+  DAT_00857560 = local_18;
+  g_currentExceptionFrame = local_60.previous;
+  piVar2[9] = DAT_00857548;
+  piVar2[10] = DAT_0085754c;
+  piVar2[8] = DAT_00857554;
+  piVar2[3] = DAT_007d2d24;
+  piVar2[4] = DAT_007d2d18;
+  piVar2[5] = DAT_00811954;
+  *piVar2 = 0;
+  DAT_007d2d24 = DAT_007d2d24 & 0xffffff6d | 1;
+  DAT_00811914 = 1;
+  DAT_00857558 = 0;
+  DAT_00857554 = 0;
+  DAT_0081190c = 0;
+  DAT_00811954 = DAT_007d2d18;
+  DAT_007d2d18 = 0x84e;
+  *piVar2 = (int)DAT_00811958;
+  DAT_00811958 = piVar2;
+  return 0;
+}
+

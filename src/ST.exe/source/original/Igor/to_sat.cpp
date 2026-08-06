@@ -1,0 +1,348 @@
+#include "st/generated.hpp"
+// Generated translation unit: source/original/Igor/to_sat.cpp
+
+// 0058C560 FUN_0058c560
+#line 1 "decomp/ST.exe/functions/0058C560/decomp.c"
+/* [STSourceProvenanceApplier begin]
+   Recovered source file: E:\__titans\Igor\to_sat.cpp
+   Diagnostic line evidence: 283 (metadata/report site, not the function definition)
+   [STSourceProvenanceApplier end] */
+
+void __thiscall st::fn_0058C560(void *this,int param_1,int param_2)
+
+{
+  int iVar2;
+  int iVar3;
+  short sVar4;
+
+  iVar2 = STField<int>(this,0x231);
+  STField<int>(this,0x249) = param_1;
+  STField<int>(this,0x24d) = param_2;
+  if (iVar2 == 1) {
+    STField<undefined4>(this,0x231) = 2;
+    STField<int>(this,0x239) = PTR_00806724->entryCount + -1;
+    STField<undefined4>(this,0x235) = 1;
+    STField<undefined4>(this,0x23d) = 0x4b6;
+    iVar2 = st::fn_006ACED8(STField<int>(this,0x251) << 7,STField<int>(this,0x255) << 7,
+                         param_1 << 7,param_2 << 7);
+    if (iVar2 != 0) {
+      STField<undefined4>(this,0x271) = 0x3e2;
+      iVar3 = ((STField<int>(this,0x251) - STField<int>(this,0x249)) * 0x8000) / iVar2;
+      STField<undefined4>(this,0x265) = 0;
+      STField<undefined4>(this,0x261) = 0;
+      STField<int>(this,0x259) = iVar3;
+      iVar2 = ((STField<int>(this,0x255) - STField<int>(this,0x24d)) * 0x8000) / iVar2;
+      sVar4 = (short)((uint)(iVar3 * 0x4b6) >> 8) + 100 + STField<short>(this,0x249) * 0xc9;
+      STField<short>(this,0x41) = sVar4;
+      STField<int>(this,0x25d) = iVar2;
+      STField<int>(this,0x269) = (int)sVar4;
+      sVar4 = (short)((uint)(iVar2 * 0x4b6) >> 8) + 100 + STField<short>(this,0x24d) * 0xc9;
+      STField<short>(this,0x43) = sVar4;
+      STField<int>(this,0x26d) = (int)sVar4;
+    }
+  }
+  else {
+    if (iVar2 == 0) {
+      STField<undefined4>(this,0x231) = 3;
+      return;
+    }
+    if (iVar2 == 2) {
+      iVar2 = st::fn_006AD4D0("E:\\__titans\\Igor\\to_sat.cpp",0x11b,0,0,"%s",
+                                 "For Artem : already has athe target");
+      if (iVar2 != 0) {
+        STDebugBreak(); /* noreturn in standalone pseudocode */
+      }
+    }
+  }
+  return;
+}
+
+// 0058C760 STSatC::GetMessage
+#line 1 "decomp/ST.exe/functions/0058C760/decomp.c"
+/* Recovered from embedded debug metadata:
+   E:\__titans\Igor\to_sat.cpp
+   STSatC::GetMessage
+
+   [STMessageHandlerApplier] Recovered common GetMessage envelope/signature.
+   Evidence: family_entries=004022B1|0058C760; family_names=STSatC::GetMessage; ret4=9;
+   direct_offsets={10:2,14:3,18:1,1c:0} */
+
+int __thiscall st::fn_0058C760(STSatC *this,STMessage *message)
+
+{
+  STMessageId SVar1;
+  dword dVar2;
+  undefined1 uVar4;
+  undefined1 uVar5;
+  undefined1 uVar6;
+  byte bVar7;
+  byte bVar8;
+  byte bVar9;
+  STSprGameObjC *this_00;
+  int iVar10;
+  int iVar11;
+  uint uVar12;
+  short sVar13;
+  AnonShape_0058C760_4470B7C6 *pAVar14;
+  byte *puVar15;
+  byte *pbVar16;
+  byte *puVar17;
+  AnonShape_0058C760_5C56630E *pAVar18;
+  byte *pbVar19;
+  InternalExceptionFrame local_80;
+  void *local_3c;
+  AnonShape_GLOBAL_00806724_3210464F *local_38;
+  int local_34;
+  undefined4 local_30;
+  undefined4 local_2c;
+  undefined4 local_28;
+  undefined4 local_24;
+  AnonShape_0058C760_4470B7C6 *local_20;
+  STSprGameObjC *local_1c;
+  byte *local_18;
+  byte *local_14;
+  uint local_10;
+  AnonShape_0058C760_5C56630E *local_c;
+  uint local_8;
+
+  if ((this->field_0231 == 7) && (message->id != MESS_SHARED_0003)) {
+    return 0;
+  }
+  local_80.previous = g_currentExceptionFrame;
+  g_currentExceptionFrame = &local_80;
+  local_1c = (STSprGameObjC *)this;
+  iVar10 = st::fn_0072D7F0(local_80.jumpBuffer,0);
+  this_00 = local_1c;
+  if (iVar10 != 0) {
+    g_currentExceptionFrame = local_80.previous;
+    iVar11 = st::fn_006AD4D0("E:\\__titans\\Igor\\to_sat.cpp",0x1fd,0,iVar10,"%s",
+                                "STSatC::GetMessage");
+    if (iVar11 == 0) {
+      st::fn_006A5E40(iVar10,0,"E:\\__titans\\Igor\\to_sat.cpp",0x1fe);
+      return 0xffff;
+    }
+    STDebugBreak(); /* noreturn in standalone pseudocode */
+  }
+  st::fn_00404F07(local_1c,message);
+  SVar1 = message->id;
+  if (SVar1 < MESS_TORPHIT) {
+    if (SVar1 == MESS_SHARED_010F) {
+      local_18 = (byte *)st::fn_004018D4((STT3DSprC *)&this_00->field_01D5,&local_8);
+      local_14 = (byte *)st::fn_0040119A((STAllPlayersC *)this_00,(int *)&local_10);
+      local_c = st::fn_006AAC70(local_10 + 0x7c + local_8);
+      if (((local_18 != nullptr) && (local_14 != nullptr)) &&
+         (local_c != nullptr)) {
+        puVar15 = (byte *)&this_00->field_0x275;
+        pAVar18 = local_c;
+        memmove(pAVar18, puVar15, 0x26); /* compiler REP MOVS byte copy */
+        *(undefined4 *)&local_c->field_0xc = 2;
+        local_c->field_0026 = this_00->field_0231;
+        *(undefined4 *)&local_c->field_0x2a = *(undefined4 *)&this_00->field_0x235;
+        *(undefined4 *)&local_c->field_0x2e = *(undefined4 *)&this_00->field_0x239;
+        local_c->field_0032 = *(undefined4 *)&this_00->field_0x23d;
+        local_c->field_0036 = *(undefined4 *)((int)&this_00->field_023E + 3);
+        *(undefined4 *)&local_c->field_0x3a = *(undefined4 *)((int)&this_00->field_0244 + 1);
+        *(undefined4 *)&local_c->field_0x3e = *(undefined4 *)&this_00->field_0x249;
+        uVar4 = this_00->field_024E;
+        uVar5 = this_00->field_024F;
+        uVar6 = this_00->field_0x250;
+        local_c->field_0x42 = this_00->field_0x24d;
+        local_c->field_0x43 = uVar4;
+        local_c->field_0x44 = uVar5;
+        local_c->field_0x45 = uVar6;
+        *(undefined4 *)&local_c->field_0x46 = *(undefined4 *)&this_00->field_0x251;
+        *(undefined4 *)&local_c->field_0x4a = *(undefined4 *)&this_00->field_0x255;
+        local_c->field_004E = this_00->field_0259;
+        *(undefined4 *)&local_c->field_0x52 = *(undefined4 *)&this_00->field_0x25d;
+        *(undefined4 *)&local_c->field_0x56 = *(undefined4 *)&this_00->field_0x261;
+        *(undefined4 *)&local_c->field_0x5a = *(undefined4 *)&this_00->field_0x265;
+        *(undefined4 *)&local_c->field_0x5e = *(undefined4 *)&this_00->field_0x269;
+        *(undefined4 *)&local_c->field_0x62 = *(undefined4 *)&this_00->field_0x26d;
+        *(undefined4 *)&local_c->field_0x66 = *(undefined4 *)&this_00->field_0x271;
+        *(undefined2 *)&local_c->field_0x6a = *(undefined2 *)&this_00->field_0x41;
+        *(undefined2 *)&local_c->field_0x6c = *(undefined2 *)&this_00->field_0x43;
+        *(undefined2 *)&local_c->field_0x6e = *(undefined2 *)&this_00->field_0x45;
+        *(undefined4 *)&local_c->field_0x70 = 0;
+        local_c->field_0074 = local_8;
+        pbVar16 = local_18;
+        pAVar18 = local_c + 1;
+        for (uVar12 = local_8 >> 2; uVar12 != 0; uVar12 = uVar12 - 1) {
+          bVar7 = pbVar16[1];
+          bVar8 = pbVar16[2];
+          bVar9 = pbVar16[3];
+          pAVar18->field_0x0 = pbVar16[0];
+          pAVar18->field_0x1 = bVar7;
+          pAVar18->field_0x2 = bVar8;
+          pAVar18->field_0x3 = bVar9;
+          pbVar16 = pbVar16 + 4;
+          pAVar18 = (AnonShape_0058C760_5C56630E *)&pAVar18->field_0x4;
+        }
+        for (uVar12 = local_8 & 3; uVar12 != 0; uVar12 = uVar12 - 1) {
+          *(byte *)pAVar18 = *pbVar16;
+          pbVar16 = pbVar16 + 1;
+          pAVar18 = (AnonShape_0058C760_5C56630E *)&pAVar18->field_0x1;
+        }
+        *(uint *)(&local_c[1].field_0x0 + local_8) = local_10;
+        pbVar16 = local_14;
+        pbVar19 = &local_c[1].field_0x4 + local_8;
+        memmove(pbVar19, pbVar16, local_10); /* compiler REP MOVS byte copy */
+        st::fn_004025F9
+                  (g_playSystem_00802A38,(int *)this_00->field_0018,(byte *)local_c,
+                   (AnonShape_0060EA30_DCEB68AD *)(local_10 + 0x7c + local_8));
+        st::fn_006AB060(&local_18);
+        st::fn_006AB060(&local_14);
+        st::fn_006AB060(&local_c);
+        g_currentExceptionFrame = local_80.previous;
+        return 0;
+      }
+    }
+    else {
+      if (SVar1 == MESS_ID_NONE) {
+        st::fn_00403D41((AnonShape_0058BD90_DCBCF849 *)this_00);
+        g_currentExceptionFrame = local_80.previous;
+        return 0;
+      }
+      if (SVar1 == MESS_ID_CREATE) {
+        dVar2 = (message->arg0).u32;
+        this_00->field_0231 = 7;
+        uVar12 = *(uint *)(dVar2 + 0xc);
+        if (uVar12 < 2) {
+          *(undefined4 *)&this_00->field_0x239 = 0;
+          puVar15 = (byte *)((message->arg0).ptr);
+          puVar17 = (byte *)&this_00->field_0x275;
+          memmove(puVar17, puVar15, 0x26); /* compiler REP MOVS byte copy */
+          puVar15 = (byte *)(&this_00->field_01D5);
+          iVar10 = st::fn_00404183((STT3DSprC *)puVar15,0xe,DAT_00806774,&DAT_007cbaa8,0x1d);
+          if (iVar10 != 0) {
+            st::fn_006A5E40
+                      (-1,g_overwriteContext_007ED77C,"E:\\__titans\\Igor\\to_sat.cpp",0x158);
+          }
+          st::fn_00405AA6(puVar15,'\x0e');
+          st::fn_00405240((STT3DSprC *)puVar15,0xe,g_playSystem_00802A38->field_00E4);
+          st::fn_00403107(this_00,*(ushort *)&this_00->field_0x289,*(short *)&this_00->field_0x28d,
+                       *(ushort *)&this_00->field_0x291);
+          sVar13 = *(short *)&this_00->field_0x41;
+          *(int *)((int)&this_00->field_0244 + 1) = (int)PTR_00806724->field_002C;
+          this_00->field_0231 = CASE_0;
+          if (sVar13 < 0) {
+            iVar10 = (short)((sVar13 / 0xc9 + (sVar13 >> 0xf)) -
+                            (short)((longlong)(int)sVar13 * 0x28c1979 >> 0x3f)) + -1;
+          }
+          else {
+            iVar10 = (int)(short)((sVar13 / 0xc9 + (sVar13 >> 0xf)) -
+                                 (short)((longlong)(int)sVar13 * 0x28c1979 >> 0x3f));
+          }
+          *(int *)&this_00->field_0x251 = iVar10;
+          sVar13 = *(short *)&this_00->field_0x43;
+          if (sVar13 < 0) {
+            iVar10 = (short)((sVar13 / 0xc9 + (sVar13 >> 0xf)) -
+                            (short)((longlong)(int)sVar13 * 0x28c1979 >> 0x3f)) + -1;
+          }
+          else {
+            iVar10 = (int)(short)((sVar13 / 0xc9 + (sVar13 >> 0xf)) -
+                                 (short)((longlong)(int)sVar13 * 0x28c1979 >> 0x3f));
+          }
+          *(int *)&this_00->field_0x255 = iVar10;
+          st::fn_00401064((STT3DSprC *)puVar15,'\x0e',0);
+        }
+        else if (uVar12 == 2) {
+          local_20 = (message->arg0).ptr;
+          pAVar14 = local_20;
+          puVar15 = (byte *)&this_00->field_0x275;
+          memmove(puVar15, pAVar14, 0x26); /* compiler REP MOVS byte copy */
+          local_8 = *(uint *)&local_20[1].field_0x4;
+          st::fn_0040551F
+                    ((STAllPlayersC *)this_00,(undefined4 *)(&local_20[1].field_0xc + local_8));
+          pAVar14 = local_20;
+          this_00->field_0231 = local_20->field_0026;
+          *(undefined4 *)&this_00->field_0x235 = local_20->field_002A;
+          *(undefined4 *)&this_00->field_0x239 = local_20->field_002E;
+          *(undefined4 *)&this_00->field_0x23d = local_20->field_0032;
+          *(undefined4 *)((int)&this_00->field_023E + 3) = local_20->field_0036;
+          *(undefined4 *)((int)&this_00->field_0244 + 1) = local_20->field_003A;
+          *(undefined4 *)&this_00->field_0x249 = local_20->field_003E;
+          *(undefined4 *)&this_00->field_0x24d = local_20->field_0042;
+          *(undefined4 *)&this_00->field_0x251 = local_20->field_0046;
+          *(undefined4 *)&this_00->field_0x255 = local_20->field_004A;
+          this_00->field_0259 = local_20->field_004E;
+          *(undefined4 *)&this_00->field_0x25d = local_20->field_0052;
+          *(undefined4 *)&this_00->field_0x261 = local_20->field_0056;
+          *(undefined4 *)&this_00->field_0x265 = local_20->field_005A;
+          *(undefined4 *)&this_00->field_0x269 = local_20->field_005E;
+          *(undefined4 *)&this_00->field_0x26d = local_20->field_0062;
+          *(undefined4 *)&this_00->field_0x271 = local_20->field_0066;
+          *(undefined2 *)&this_00->field_0x41 = local_20->field_006A;
+          *(undefined2 *)&this_00->field_0x43 = *(undefined2 *)&local_20->field_0x6c;
+          *(undefined2 *)&this_00->field_0x45 = local_20->field_006E;
+          local_3c = st::fn_006AAC70(0x44);
+          if (local_3c != nullptr) {
+            iVar10 = 0;
+            do {
+              *(int **)(iVar10 + (int)local_3c) = DAT_00806774;
+              iVar10 = iVar10 + 4;
+            } while (iVar10 < 0x44);
+            if (((*(int *)&this_00->field_0x239 < 1) ||
+                (PTR_00806724 == nullptr)) ||
+               (PTR_00806724 == (AnonShape_GLOBAL_00806724_3210464F *)0xffffffd0)) {
+              local_38 = nullptr;
+            }
+            else {
+              local_38 = PTR_00806724 + *(int *)&this_00->field_0x239;
+            }
+            local_34 = (int)PTR_00806724->field_002C;
+            local_30 = DAT_008073cc;
+            local_2c = 0;
+            local_28 = 0;
+            local_24 = 0;
+            st::fn_00404CA5
+                      ((STT3DSprC *)&this_00->field_01D5,(int *)&local_3c,
+                       (AnonShape_004AD790_77673787 *)&pAVar14[1].field_0x8);
+            st::fn_006AB060(&local_3c);
+          }
+        }
+        iVar10 = *(int *)&this_00->field_0x289;
+        sVar13 = (short)(iVar10 >> 0x1f);
+        if (iVar10 < 0) {
+          sVar13 = (((short)(iVar10 / 0xc9) + sVar13) -
+                   (short)((longlong)iVar10 * 0x28c1979 >> 0x3f)) + -1;
+        }
+        else {
+          sVar13 = ((short)(iVar10 / 0xc9) + sVar13) - (short)((longlong)iVar10 * 0x28c1979 >> 0x3f);
+        }
+        iVar10 = *(int *)&this_00->field_0x28d;
+        *(short *)&this_00->field_0x47 = sVar13;
+        sVar13 = (short)(iVar10 >> 0x1f);
+        if (iVar10 < 0) {
+          *(undefined2 *)&this_00->field_0x4b = 4;
+          *(short *)&this_00->field_0x49 =
+               (((short)(iVar10 / 0xc9) + sVar13) - (short)((longlong)iVar10 * 0x28c1979 >> 0x3f)) +
+               -1;
+          g_currentExceptionFrame = local_80.previous;
+          return 0;
+        }
+        *(undefined2 *)&this_00->field_0x4b = 4;
+        *(short *)&this_00->field_0x49 =
+             ((short)(iVar10 / 0xc9) + sVar13) - (short)((longlong)iVar10 * 0x28c1979 >> 0x3f);
+        g_currentExceptionFrame = local_80.previous;
+        return 0;
+      }
+      if (SVar1 == MESS_SHARED_0003) {
+        st::fn_004021D5((STT3DSprC *)&this_00->field_01D5);
+        g_currentExceptionFrame = local_80.previous;
+        return 0;
+      }
+    }
+  }
+  else if (SVar1 == MESS_STOCTOPUSC_0112) {
+    st::fn_00402A90((STT3DSprC *)&this_00->field_01D5);
+  }
+  else if (SVar1 == MESS_STSPRGAMEOBJC_0113) {
+    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+    (**(code **)this_00->field_01D5)();
+    g_currentExceptionFrame = local_80.previous;
+    return 0;
+  }
+  g_currentExceptionFrame = local_80.previous;
+  return 0;
+}
+

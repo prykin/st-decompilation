@@ -1,0 +1,263 @@
+#include "st/generated.hpp"
+// Generated translation unit: source/original/ai/ai_boss.cpp
+
+// 00647DC0 AiBossClassTy::InitData
+#line 1 "decomp/ST.exe/functions/00647DC0/decomp.c"
+/* Recovered from embedded debug metadata:
+   E:\__titans\ai\ai_boss.cpp
+   AiBossClassTy::InitData */
+
+int __thiscall st::fn_00647DC0(AiBossClassTy *this,undefined4 *param_1)
+
+{
+  int iVar2;
+  int iVar3;
+  byte *puVar4;
+  byte *puVar5;
+  InternalExceptionFrame local_4c;
+  AiBossClassTy *local_8;
+
+  local_4c.previous = g_currentExceptionFrame;
+  g_currentExceptionFrame = &local_4c;
+  local_8 = this;
+  iVar2 = st::fn_0072D7F0(local_4c.jumpBuffer,0);
+  if (iVar2 == 0) {
+    if (local_8 == nullptr) {
+      puVar5 = nullptr;
+    }
+    else {
+      puVar5 = (byte *)&local_8->field_0x5d3;
+    }
+    puVar4 = (byte *)(param_1);
+    memmove(puVar5, puVar4, 0x85); /* compiler REP MOVS byte copy */
+    local_8->field_05D8 = 1;
+    st::fn_004054B1
+              ((AiEventClassTy *)&local_8->vtable_at_1c,
+               (int *)(local_8->field_0619 + 0x84 + (int)param_1));
+    g_currentExceptionFrame = local_4c.previous;
+    return 0;
+  }
+  g_currentExceptionFrame = local_4c.previous;
+  st::fn_00401528(local_8);
+  iVar3 = st::fn_006AD4D0("E:\\__titans\\ai\\ai_boss.cpp",0x29,0,iVar2,"%s",
+                             "AiBossClassTy::InitData");
+  if (iVar3 != 0) {
+    STDebugBreak(); /* noreturn in standalone pseudocode */
+  }
+  st::fn_006A5E40(iVar2,0,"E:\\__titans\\ai\\ai_boss.cpp",0x2a);
+  return iVar2;
+}
+
+// 00647EF0 AiBossClassTy::PrepareToSave
+#line 1 "decomp/ST.exe/functions/00647EF0/decomp.c"
+/* Recovered from embedded debug metadata:
+   E:\__titans\ai\ai_boss.cpp
+   AiBossClassTy::PrepareToSave
+
+   [STPrototypeApplier] Propagated return.
+   Evidence: 00647EF0 returns used as parameter 2 of STPlaySystemC::SaveObjData @ 0064811E */
+
+byte * __thiscall st::fn_00647EF0(AiBossClassTy *this,uint *param_1)
+
+{
+  AiBossClassTy *pAVar2;
+  int errorCode;
+  int iVar3;
+  byte *pbVar4;
+  AllocationRecord_00648620 *pAVar5;
+  InternalExceptionFrame local_58;
+  AiBossClassTy *local_14;
+  uint local_10;
+  AllocationRecord_00648620 *local_c;
+  undefined4 *local_8;
+
+  local_c = nullptr;
+  local_8 = nullptr;
+  local_58.previous = g_currentExceptionFrame;
+  g_currentExceptionFrame = &local_58;
+  local_14 = this;
+  errorCode = st::fn_0072D7F0(local_58.jumpBuffer,0);
+  pAVar2 = local_14;
+  if (errorCode == 0) {
+    local_8 = st::fn_00401D11((AiEventClassTy *)&local_14->vtable_at_1c,&local_10);
+    if (pAVar2 == nullptr) {
+      pAVar5 = nullptr;
+    }
+    else {
+      pAVar5 = (AllocationRecord_00648620 *)&pAVar2->field_0x5d3;
+    }
+    local_c = st::fn_00405A24(pAVar5,local_8,local_10,param_1);
+    *(undefined1 *)local_c = 1;
+    if (local_8 != nullptr) {
+      st::fn_006AB060(&local_8);
+    }
+    g_currentExceptionFrame = local_58.previous;
+    return (byte *)local_c;
+  }
+  g_currentExceptionFrame = local_58.previous;
+  if (local_8 != nullptr) {
+    st::fn_006AB060(&local_8);
+  }
+  if (local_c != nullptr) {
+    st::fn_006AB060(&local_c);
+  }
+  iVar3 = st::fn_006AD4D0("E:\\__titans\\ai\\ai_boss.cpp",0x4c,0,errorCode,"%s",
+                             "AiBossClassTy::PrepareToSave");
+  if (iVar3 != 0) {
+    STDebugBreak(); /* noreturn in standalone pseudocode */
+  }
+  st::fn_006A5E40(errorCode,0,"E:\\__titans\\ai\\ai_boss.cpp",0x4d);
+  return nullptr;
+}
+
+// 00648030 AiBossClassTy::GetMessage
+#line 1 "decomp/ST.exe/functions/00648030/decomp.c"
+/* Recovered from embedded debug metadata:
+   E:\__titans\ai\ai_boss.cpp
+   AiBossClassTy::GetMessage
+
+   [STMessageHandlerApplier] Recovered common GetMessage envelope/signature.
+   Evidence: family_entries=00403792|00648030; family_names=AiBossClassTy::GetMessage; ret4=2;
+   direct_offsets={10:2,14:1,18:1,1c:2} */
+
+int __thiscall st::fn_00648030(AiBossClassTy *this,STMessage *message)
+
+{
+  STMessageId SVar1;
+  AiBossClassTy *this_00;
+  int iVar3;
+  AiPlrClassTy *this_01;
+  int iVar4;
+  uint uVar5;
+  uint uVar6;
+  byte *pbVar7;
+  byte *puVar8;
+  char *pcVar9;
+  char cVar10;
+  byte *puVar11;
+  char *pcVar12;
+  InternalExceptionFrame local_54;
+  AiBossClassTy *local_10;
+  byte *local_c;
+  uint local_8;
+
+  local_54.previous = g_currentExceptionFrame;
+  g_currentExceptionFrame = &local_54;
+  local_10 = this;
+  iVar3 = st::fn_0072D7F0(local_54.jumpBuffer,0);
+  this_00 = local_10;
+  if (iVar3 != 0) {
+    g_currentExceptionFrame = local_54.previous;
+    iVar4 = st::fn_006AD4D0("E:\\__titans\\ai\\ai_boss.cpp",0xde,0,iVar3,
+                               "AiBossClassTy::GetMessage error mess->id == %lX Name=%d",message->id,
+                               local_10->field_0018);
+    if (iVar4 == 0) {
+      st::fn_006A5E40(iVar3,0,"E:\\__titans\\ai\\ai_boss.cpp",0xdf);
+      return 0xffff;
+    }
+    STDebugBreak(); /* noreturn in standalone pseudocode */
+  }
+  uVar5 = g_playSystem_00802A38->field_00E4;
+  local_10->field_0658 = uVar5;
+  SVar1 = message->id;
+  if (SVar1 < MESS_TORPHIT) {
+    if (SVar1 == MESS_SHARED_010F) {
+      local_8 = 0;
+      local_c = st::fn_00403341(local_10,&local_8);
+      st::fn_00401078(g_playSystem_00802A38,PTR_s_AIBOSS_0079d614,local_c,local_8,0xc);
+      if (local_c != nullptr) {
+        st::fn_006AB060(&local_c);
+      }
+    }
+    else if (SVar1 == MESS_ID_NONE) {
+      st::fn_00401BE0((AiEventClassTy *)&local_10->vtable_at_1c,message);
+    }
+    else if (SVar1 == MESS_ID_CREATE) {
+      puVar8 = (byte *)((message->arg0).ptr);
+      if (puVar8 == nullptr) {
+        st::fn_006A5E40
+                  (-6,g_overwriteContext_007ED77C,"E:\\__titans\\ai\\ai_boss.cpp",0x61);
+      }
+      st::fn_00403774(this_00,puVar8);
+      DAT_008117bc = this_00;
+      st::fn_00401F69();
+    }
+    else if (SVar1 == MESS_SHARED_0003) {
+      st::fn_0040281F();
+      st::fn_00401528(this_00);
+      DAT_008117bc = nullptr;
+    }
+  }
+  else if (SVar1 < 0x5ded) {
+    if ((0x5dcf < SVar1) || ((0x5dc4 < SVar1 && (SVar1 < 0x5dc7)))) {
+      if (SVar1 == MESS_SHARED_5DD5) {
+        if (uVar5 < local_10->field_0629 + 5) goto LAB_00648291;
+        local_10->field_0629 = uVar5;
+      }
+      st::fn_00401BE0((AiEventClassTy *)&local_10->vtable_at_1c,message);
+      if (g_allPlayers_007FA174 != nullptr) {
+        cVar10 = '\0';
+        pbVar7 = &g_bulkInitializedRecords_008087C7[0].field_0022;
+        do {
+          if ((*pbVar7 != 0xff) &&
+             (this_01 = st::fn_00401DC5(cVar10), this_01 != nullptr)) {
+            this_01->st::fn_00401BE0(message);
+          }
+          pbVar7 = pbVar7 + 0x51;
+          cVar10 = cVar10 + '\x01';
+        } while ((int)pbVar7 < 0x808a71);
+      }
+    }
+  }
+  else if (SVar1 == MESS_AIBOSSCLASSTY_7106) {
+    st::fn_00401B8B((uint)DAT_0080874d);
+    if (g_playSystem_00802A38 == nullptr) {
+      DAT_0080c83a = 0;
+    }
+    else {
+      DAT_0080c83a = g_playSystem_00802A38->field_00E4 / 0x19;
+    }
+    puVar8 = (byte *)(&DAT_008087b6);
+    puVar11 = (byte *)(&DAT_0080c967);
+    memmove(puVar11, puVar8, 0x1999); /* compiler REP MOVS byte copy */
+    st::fn_00404197();
+    uVar5 = 0xffffffff;
+    pcVar9 = &DAT_0080ef1e;
+    do {
+      pcVar12 = pcVar9;
+      if (uVar5 == 0) break;
+      uVar5 = uVar5 - 1;
+      pcVar12 = pcVar9 + 1;
+      cVar10 = *pcVar9;
+      pcVar9 = pcVar12;
+    } while (cVar10 != '\0');
+    uVar5 = ~uVar5;
+    pcVar9 = pcVar12 + -uVar5;
+    pcVar12 = (char *)&DAT_0080c52e;
+    memmove(pcVar12, pcVar9, uVar5); /* compiler REP MOVS byte copy */
+    uVar6 = 0;
+    uVar5 = 0xffffffff;
+    pcVar9 = (char *)&DAT_0080c3c3;
+    do {
+      pcVar12 = pcVar9;
+      if (uVar5 == 0) break;
+      uVar5 = uVar5 - 1;
+      pcVar12 = pcVar9 + 1;
+      cVar10 = *pcVar9;
+      pcVar9 = pcVar12;
+    } while (cVar10 != '\0');
+    uVar5 = ~uVar5;
+    pcVar9 = pcVar12 + -uVar5;
+    pcVar12 = (char *)&DAT_0080c736;
+    memmove(pcVar12, pcVar9, uVar5); /* compiler REP MOVS byte copy */
+    if (DAT_008087a0 == '\b') {
+      st::fn_00405CF4();
+    }
+    DAT_0080c52a = DAT_0080c52a + 1;
+  }
+LAB_00648291:
+  st::fn_006E5FD0(this_00,message);
+  g_currentExceptionFrame = local_54.previous;
+  return 0;
+}
+
