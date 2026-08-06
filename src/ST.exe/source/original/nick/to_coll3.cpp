@@ -2,7 +2,7 @@
 // Generated translation unit: source/original/nick/to_coll3.cpp
 
 // 005F5F20 STColl3C::GetMessage
-#line 1 "decomp/ST.exe/functions/005F5F20/decomp.c"
+#line 4 "decomp/ST.exe/functions/005F5F20/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\nick\to_coll3.cpp
    STColl3C::GetMessage
@@ -216,7 +216,7 @@ switchD_005f6301_caseD_110:
 }
 
 // 005F6AF0 STColl3C::LoadImagSpr
-#line 1 "decomp/ST.exe/functions/005F6AF0/decomp.c"
+#line 4 "decomp/ST.exe/functions/005F6AF0/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\nick\to_coll3.cpp
    STColl3C::LoadImagSpr */
@@ -243,17 +243,17 @@ undefined4 __thiscall st::fn_005F6AF0(STColl3C *this,int param_1)
     this_00 = &local_8->vtable_at_1d5;
     if (param_1 == 0) {
       st::fn_00404183
-                ((STT3DSprC *)this_00,8,DAT_00806774,"Expb12" + local_8->field_02CD * 0x39,
+                ((STT3DSprC *)this_00,8,PTR_00806774,"Expb12" + local_8->field_02CD * 0x39,
                  0x1d);
       st::fn_00404183
-                ((STT3DSprC *)this_00,9,DAT_00806764,
+                ((STT3DSprC *)this_00,9,PTR_00806764,
                  "expl_bbt0" + this_01->field_02CD * 0x39,0x1d);
       st::fn_00404183
-                ((STT3DSprC *)this_00,10,DAT_00806774,
+                ((STT3DSprC *)this_00,10,PTR_00806774,
                  "expmask3" + this_01->field_02CD * 0x39,0x1d);
       st::fn_004022D4(this_00,'\n');
       st::fn_00405240((STT3DSprC *)this_00,10,g_playSystem_00802A38->field_00E4);
-      st::fn_004044EE((STT3DSprC *)this_00,DAT_008032b8,0x10);
+      st::fn_004044EE((STT3DSprC *)this_00,PTR_008032b8,0x10);
       st::fn_00405240((STT3DSprC *)this_00,8,g_playSystem_00802A38->field_00E4);
       st::fn_00403233((STT3DSprC *)this_00,'\n');
       iVar2 = st::fn_004052CC((STT3DSprC *)this_00);
@@ -261,13 +261,13 @@ undefined4 __thiscall st::fn_005F6AF0(STColl3C *this,int param_1)
       g_currentExceptionFrame = local_50.previous;
       return local_c;
     }
-    iVar2 = st::fn_00404183((STT3DSprC *)this_00,0xe,DAT_00806774,"coll3",0x1d);
+    iVar2 = st::fn_00404183((STT3DSprC *)this_00,0xe,PTR_00806774,"coll3",0x1d);
     if (iVar2 == 0) {
       st::fn_004023C4(this_00,DAT_007ce78c,DAT_007ce790);
       st::fn_00405240((STT3DSprC *)this_00,0xe,g_playSystem_00802A38->field_00E4);
       st::fn_00401AAA(this_01,0x18);
       iVar2 = st::fn_00404183
-                        ((STT3DSprC *)this_00,0xc,DAT_00806774,
+                        ((STT3DSprC *)this_00,0xc,PTR_00806774,
                          (&PTR_s_col3l0_007ce6e0)[this_01->field_0235],0x1d);
       if (iVar2 != 0) {
         return local_c;
@@ -299,7 +299,7 @@ undefined4 __thiscall st::fn_005F6AF0(STColl3C *this,int param_1)
 }
 
 // 005F94C0 STColl3C::CreateAddSpr
-#line 1 "decomp/ST.exe/functions/005F94C0/decomp.c"
+#line 4 "decomp/ST.exe/functions/005F94C0/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\nick\to_coll3.cpp
    STColl3C::CreateAddSpr */

@@ -179,7 +179,7 @@ int __thiscall CPanelTy::GetMessage(CPanelTy *this,STMessage *message)
       iVar5 = piVar21[2] + -0x17;
       iVar11 = 0;
       puVar23 = (uint *)&DAT_007c2310;
-      puVar9 = (uint *)LoadResourceString(SVar1 - 0x6265,g_module_00807618);
+      puVar9 = (uint *)LoadResourceString(SVar1 - 0x6265,g_hINSTANCE_00807618);
       puVar9 = thunk_FUN_00540c40(this_00->field_01B8,puVar9,puVar23,iVar5);
       ccFntTy::WrStr(this_00->field_01B8,puVar9,iVar11,iVar30,uVar7);
       puVar6 = this_00->field_0148[5];
@@ -692,8 +692,8 @@ cf_common_exit_004FD1D2:
       case 0:
       case 2:
       case 10:
-        if ((g_prodPanel_00801684 == nullptr) || (g_prodPanel_00801684->field_0172 == 2))
-        {
+        if ((g_bldObjPanel_00801684 == nullptr) ||
+           (g_bldObjPanel_00801684->field_0172 == 2)) {
           piVar21 = (int *)0x1;
         }
         else {
@@ -716,22 +716,22 @@ cf_common_exit_004FD1D2:
       case 6:
       case 8:
       case 9:
-        if ((g_prodPanel_008016E8 == nullptr) || (g_prodPanel_008016E8->field_0172 == 2))
-        {
+        if ((g_researchPanel_008016E8 == nullptr) ||
+           (g_researchPanel_008016E8->field_0172 == 2)) {
           piVar21 = (int *)0x1;
         }
         else {
           piVar21 = nullptr;
         }
-        if ((g_prodPanel_0080167C != nullptr) && (g_prodPanel_0080167C->field_0172 != 2))
-        {
+        if ((g_bldBoatPanel_0080167C != nullptr) &&
+           (g_bldBoatPanel_0080167C->field_0172 != 2)) {
           piVar21 = nullptr;
         }
         if ((g_infocPanel_00801698 != nullptr) &&
            (g_infocPanel_00801698->field_0172 != 2)) {
           piVar21 = nullptr;
         }
-        pFVar18 = (FrmPanelTy *)g_prodPanel_00801680;
+        pFVar18 = (FrmPanelTy *)g_bldLabPanel_00801680;
         if ((g_tradePanel_00802A44 != nullptr) &&
            (g_tradePanel_00802A44->field_0172 != 2)) {
           piVar21 = nullptr;
@@ -757,8 +757,8 @@ LAB_004fbe73:
             }
             if ((*local_1c != '\0') &&
                ((((short)local_8 != 2 ||
-                 ((((g_prodPanel_00801684 == nullptr ||
-                    (g_prodPanel_00801684->field_0172 == 2)) &&
+                 ((((g_bldObjPanel_00801684 == nullptr ||
+                    (g_bldObjPanel_00801684->field_0172 == 2)) &&
                    ((g_behPanel_00801678 == nullptr ||
                     (g_behPanel_00801678->field_0172 == 2)))) &&
                   ((((g_sAMPanel_008016EC == nullptr ||
@@ -768,16 +768,16 @@ LAB_004fbe73:
                    ((g_frmPanel_0080168C == nullptr ||
                     (g_frmPanel_0080168C->field_0172 == 2)))))))) &&
                 (((short)local_8 != 6 ||
-                 ((((((g_prodPanel_008016E8 == nullptr ||
-                      (g_prodPanel_008016E8->field_0172 == 2)) &&
-                     ((g_prodPanel_0080167C == nullptr ||
-                      (g_prodPanel_0080167C->field_0172 == 2)))) &&
+                 ((((((g_researchPanel_008016E8 == nullptr ||
+                      (g_researchPanel_008016E8->field_0172 == 2)) &&
+                     ((g_bldBoatPanel_0080167C == nullptr ||
+                      (g_bldBoatPanel_0080167C->field_0172 == 2)))) &&
                     ((g_infocPanel_00801698 == nullptr ||
                      (g_infocPanel_00801698->field_0172 == 2)))) &&
                    ((g_tradePanel_00802A44 == nullptr ||
                     (g_tradePanel_00802A44->field_0172 == 2)))) &&
-                  ((g_prodPanel_00801680 == nullptr ||
-                   (g_prodPanel_00801680->field_0172 == 2)))))))))) {
+                  ((g_bldLabPanel_00801680 == nullptr ||
+                   (g_bldLabPanel_00801680->field_0172 == 2)))))))))) {
               local_2c = (&local_44->field_003C)[iVar5] + 7;
               local_24 = 0xe;
               local_20 = 0x1b;
@@ -821,8 +821,8 @@ LAB_004fbe73:
             local_c = (int *)0xff;
             if (*local_1c != '\0') {
               if ((short)local_8 == 3) {
-                if ((((((g_prodPanel_00801684 != nullptr) &&
-                       (g_prodPanel_00801684->field_0172 != 2)) ||
+                if ((((((g_bldObjPanel_00801684 != nullptr) &&
+                       (g_bldObjPanel_00801684->field_0172 != 2)) ||
                       ((g_behPanel_00801678 != nullptr &&
                        (g_behPanel_00801678->field_0172 != 2)))) ||
                      ((g_sAMPanel_008016EC != nullptr &&
@@ -841,16 +841,16 @@ LAB_004fbe73:
                 }
               }
               if ((short)local_8 == 5) {
-                if (((((g_prodPanel_008016E8 != nullptr) &&
-                      (g_prodPanel_008016E8->field_0172 != 2)) ||
-                     ((g_prodPanel_0080167C != nullptr &&
-                      (g_prodPanel_0080167C->field_0172 != 2)))) ||
+                if (((((g_researchPanel_008016E8 != nullptr) &&
+                      (g_researchPanel_008016E8->field_0172 != 2)) ||
+                     ((g_bldBoatPanel_0080167C != nullptr &&
+                      (g_bldBoatPanel_0080167C->field_0172 != 2)))) ||
                     ((g_infocPanel_00801698 != nullptr &&
                      (g_infocPanel_00801698->field_0172 != 2)))) ||
                    (((g_tradePanel_00802A44 != nullptr &&
                      (g_tradePanel_00802A44->field_0172 != 2)) ||
-                    ((g_prodPanel_00801680 != nullptr &&
-                     (g_prodPanel_00801680->field_0172 != 2)))))) break;
+                    ((g_bldLabPanel_00801680 != nullptr &&
+                     (g_bldLabPanel_00801680->field_0172 != 2)))))) break;
                 iVar5 = local_44->field_00A8 + 0xb;
                 if ((iVar5 < (int)local_18) &&
                    ((((int)local_18 < local_44->field_00A8 + 0x41 &&
@@ -974,8 +974,8 @@ LAB_004fbe73:
           switch(local_18) {
           case 0:
           case 1:
-            if (((((g_prodPanel_00801684 != nullptr) &&
-                  (g_prodPanel_00801684->field_0172 == 2)) &&
+            if (((((g_bldObjPanel_00801684 != nullptr) &&
+                  (g_bldObjPanel_00801684->field_0172 == 2)) &&
                  (g_behPanel_00801678 != nullptr)) &&
                 (((g_behPanel_00801678->field_0172 == 2 &&
                   (g_upgPanel_00802A48 != nullptr)) &&
@@ -990,16 +990,16 @@ LAB_004fbe73:
             break;
           case 3:
           case 4:
-            if (((g_prodPanel_008016E8 != nullptr) &&
-                (g_prodPanel_008016E8->field_0172 == 2)) &&
-               ((g_prodPanel_0080167C != nullptr &&
-                (((g_prodPanel_0080167C->field_0172 == 2 &&
+            if (((g_researchPanel_008016E8 != nullptr) &&
+                (g_researchPanel_008016E8->field_0172 == 2)) &&
+               ((g_bldBoatPanel_0080167C != nullptr &&
+                (((g_bldBoatPanel_0080167C->field_0172 == 2 &&
                   (g_infocPanel_00801698 != nullptr)) &&
                  (g_infocPanel_00801698->field_0172 == 2)))))) {
               if (DAT_0080874e == '\x03') {
 LAB_004fba8d:
-                if ((g_prodPanel_00801680 != nullptr) &&
-                   (g_prodPanel_00801680->field_0172 == 2)) {
+                if ((g_bldLabPanel_00801680 != nullptr) &&
+                   (g_bldLabPanel_00801680->field_0172 == 2)) {
 LAB_004fbaa0:
                   piVar21 = local_c;
                 }
@@ -1152,21 +1152,21 @@ LAB_004fbaa0:
             }
           }
           else {
-            if ((bVar15 == 5) && (g_prodPanel_008016E8 != nullptr)) {
+            if ((bVar15 == 5) && (g_researchPanel_008016E8 != nullptr)) {
               /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-              (*(code *)g_prodPanel_008016E8->field_0000->field_001C)();
+              (*(code *)g_researchPanel_008016E8->field_0000->field_001C)();
               /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
               uVar27 = extraout_EDX_00;
             }
-            if ((bVar15 == 6) && (g_prodPanel_0080167C != nullptr)) {
+            if ((bVar15 == 6) && (g_bldBoatPanel_0080167C != nullptr)) {
               /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-              (*(code *)g_prodPanel_0080167C->field_0000->field_001C)();
+              (*(code *)g_bldBoatPanel_0080167C->field_0000->field_001C)();
               /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
               uVar27 = extraout_EDX_01;
             }
-            if ((bVar15 == 7) && (g_prodPanel_00801684 != nullptr)) {
+            if ((bVar15 == 7) && (g_bldObjPanel_00801684 != nullptr)) {
               /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-              (*(code *)g_prodPanel_00801684->field_0000->field_001C)();
+              (*(code *)g_bldObjPanel_00801684->field_0000->field_001C)();
               /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
               uVar27 = extraout_EDX_02;
             }
@@ -1186,9 +1186,9 @@ LAB_004fbaa0:
               /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
               uVar27 = extraout_EDX_05;
             }
-            if ((bVar15 == 0xb) && (g_prodPanel_00801680 != nullptr)) {
+            if ((bVar15 == 0xb) && (g_bldLabPanel_00801680 != nullptr)) {
               /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-              (*(code *)g_prodPanel_00801680->field_0000->field_001C)();
+              (*(code *)g_bldLabPanel_00801680->field_0000->field_001C)();
               /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
               uVar27 = extraout_EDX_06;
             }
@@ -1265,7 +1265,7 @@ LAB_004fbaa0:
               uVar7 = 6;
               pcVar26 = thunk_FUN_00526100(nullptr,0);
               puVar6 = Library::Ourlib::MFRLOAD::mfRLoad
-                                 (DAT_00806794,CASE_1F,pcVar26,uVar7,bVar15,iVar5,iVar11,puVar31);
+                                 (PTR_00806794,CASE_1F,pcVar26,uVar7,bVar15,iVar5,iVar11,puVar31);
               puVar25[-3] = puVar6;
               puVar20[-2] = (char)*puVar6;
               *puVar20 = 3;
@@ -1287,7 +1287,7 @@ LAB_004fbaa0:
                 uVar7 = 6;
                 pcVar26 = thunk_FUN_00526100(nullptr,0);
                 puVar6 = Library::Ourlib::MFRLOAD::mfRLoad
-                                   (DAT_00806794,CASE_1F,pcVar26,uVar7,bVar15,iVar5,iVar11,puVar31);
+                                   (PTR_00806794,CASE_1F,pcVar26,uVar7,bVar15,iVar5,iVar11,puVar31);
                 puVar25[-0x12] = puVar6;
                 puVar20[-0xc] = (char)*puVar6;
                 *puVar20 = 3;

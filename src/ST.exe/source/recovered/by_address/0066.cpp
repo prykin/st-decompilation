@@ -2,7 +2,7 @@
 // Generated translation unit: source/recovered/by_address/0066.cpp
 
 // 00660010 FUN_00660010
-#line 1 "decomp/ST.exe/functions/00660010/decomp.c"
+#line 4 "decomp/ST.exe/functions/00660010/decomp.c"
 undefined4 __fastcall st::fn_00660010(AiFltClassTy *param_1)
 
 {
@@ -69,7 +69,7 @@ LAB_00660050:
 }
 
 // 00660420 FUN_00660420
-#line 1 "decomp/ST.exe/functions/00660420/decomp.c"
+#line 4 "decomp/ST.exe/functions/00660420/decomp.c"
 undefined4 __thiscall st::fn_00660420(void *this,undefined4 param_1)
 
 {
@@ -92,7 +92,7 @@ undefined4 __thiscall st::fn_00660420(void *this,undefined4 param_1)
 }
 
 // 006604B0 FUN_006604b0
-#line 1 "decomp/ST.exe/functions/006604B0/decomp.c"
+#line 4 "decomp/ST.exe/functions/006604B0/decomp.c"
 undefined4 __fastcall st::fn_006604B0(AiFltClassTy *param_1,undefined4 param_2,undefined4 param_3)
 
 {
@@ -122,7 +122,7 @@ undefined4 __fastcall st::fn_006604B0(AiFltClassTy *param_1,undefined4 param_2,u
 }
 
 // 00660540 FUN_00660540
-#line 1 "decomp/ST.exe/functions/00660540/decomp.c"
+#line 4 "decomp/ST.exe/functions/00660540/decomp.c"
 /* [STPrototypeApplier] Propagated parameter 2.
    Evidence: 00664960 -> 00660540 @ 006653F2; MOVSX at 006653E0 establishes signed source width 2
 
@@ -178,7 +178,7 @@ st::fn_00660540(void *this,undefined4 param_1,short param_2,short param_3,short 
 }
 
 // 00660620 FUN_00660620
-#line 1 "decomp/ST.exe/functions/00660620/decomp.c"
+#line 4 "decomp/ST.exe/functions/00660620/decomp.c"
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
 undefined4 __fastcall
@@ -224,7 +224,7 @@ st::fn_00660620(AnonShape_00660620_6BCED4D7 *param_1,undefined4 param_2,uint par
 }
 
 // 00660700 FUN_00660700
-#line 1 "decomp/ST.exe/functions/00660700/decomp.c"
+#line 4 "decomp/ST.exe/functions/00660700/decomp.c"
 undefined4 __thiscall
 st::fn_00660700(void *this,short param_1,short param_2,short param_3,int param_4,int param_5,
             int param_6)
@@ -311,7 +311,7 @@ st::fn_00660700(void *this,short param_1,short param_2,short param_3,int param_4
 }
 
 // 00660910 FUN_00660910
-#line 1 "decomp/ST.exe/functions/00660910/decomp.c"
+#line 4 "decomp/ST.exe/functions/00660910/decomp.c"
 undefined4 __thiscall st::fn_00660910(void *this,short param_1,short param_2,short param_3)
 
 {
@@ -349,7 +349,7 @@ undefined4 __thiscall st::fn_00660910(void *this,short param_1,short param_2,sho
 }
 
 // 00660A40 FUN_00660a40
-#line 1 "decomp/ST.exe/functions/00660A40/decomp.c"
+#line 4 "decomp/ST.exe/functions/00660A40/decomp.c"
 undefined4 __thiscall st::fn_00660A40(void *this,short param_1,short param_2,short param_3)
 
 {
@@ -376,7 +376,7 @@ undefined4 __thiscall st::fn_00660A40(void *this,short param_1,short param_2,sho
 }
 
 // 00660B50 FUN_00660b50
-#line 1 "decomp/ST.exe/functions/00660B50/decomp.c"
+#line 4 "decomp/ST.exe/functions/00660B50/decomp.c"
 /* [STPrototypeApplier] Propagated parameter 1.
    Evidence: 00664960 -> 00660B50 @ 00666DA3; MOVSX at 00666D98 establishes signed source width 2
 
@@ -433,7 +433,7 @@ st::fn_00660B50(AnonShape_00660620_6BCED4D7 *param_1,int param_2,short param_3,s
 }
 
 // 00660D10 FUN_00660d10
-#line 1 "decomp/ST.exe/functions/00660D10/decomp.c"
+#line 4 "decomp/ST.exe/functions/00660D10/decomp.c"
 int __cdecl st::fn_00660D10(int param_1,int param_2)
 
 {
@@ -442,7 +442,7 @@ int __cdecl st::fn_00660D10(int param_1,int param_2)
 }
 
 // 00660D40 FUN_00660d40
-#line 1 "decomp/ST.exe/functions/00660D40/decomp.c"
+#line 4 "decomp/ST.exe/functions/00660D40/decomp.c"
 void __fastcall st::fn_00660D40(AnonShape_00660D40_E58DF1E6 *param_1)
 
 {
@@ -539,7 +539,7 @@ void __fastcall st::fn_00660D40(AnonShape_00660D40_E58DF1E6 *param_1)
 }
 
 // 006616B0 FUN_006616b0
-#line 1 "decomp/ST.exe/functions/006616B0/decomp.c"
+#line 4 "decomp/ST.exe/functions/006616B0/decomp.c"
 void __thiscall st::fn_006616B0(void *this,uint param_1,uint param_2)
 
 {
@@ -588,7 +588,7 @@ void __thiscall st::fn_006616B0(void *this,uint param_1,uint param_2)
 }
 
 // 00661790 FUN_00661790
-#line 1 "decomp/ST.exe/functions/00661790/decomp.c"
+#line 4 "decomp/ST.exe/functions/00661790/decomp.c"
 void __thiscall st::fn_00661790(void *this,undefined4 param_1,int param_2)
 
 {
@@ -623,7 +623,7 @@ void __thiscall st::fn_00661790(void *this,undefined4 param_1,int param_2)
 }
 
 // 00664600 FUN_00664600
-#line 1 "decomp/ST.exe/functions/00664600/decomp.c"
+#line 4 "decomp/ST.exe/functions/00664600/decomp.c"
 undefined4 __thiscall st::fn_00664600(void *this,uint param_1)
 
 {
@@ -638,7 +638,7 @@ undefined4 __thiscall st::fn_00664600(void *this,uint param_1)
 }
 
 // 00664650 FUN_00664650
-#line 1 "decomp/ST.exe/functions/00664650/decomp.c"
+#line 4 "decomp/ST.exe/functions/00664650/decomp.c"
 undefined4 __thiscall st::fn_00664650(void *this,int param_1)
 
 {
@@ -675,7 +675,7 @@ undefined4 __thiscall st::fn_00664650(void *this,int param_1)
 }
 
 // 006646E0 FUN_006646e0
-#line 1 "decomp/ST.exe/functions/006646E0/decomp.c"
+#line 4 "decomp/ST.exe/functions/006646E0/decomp.c"
 undefined4 __fastcall st::fn_006646E0(int param_1)
 
 {
@@ -715,7 +715,7 @@ undefined4 __fastcall st::fn_006646E0(int param_1)
 }
 
 // 00668150 CreateAiFlt
-#line 1 "decomp/ST.exe/functions/00668150/decomp.c"
+#line 4 "decomp/ST.exe/functions/00668150/decomp.c"
 /* [STUnclaimedCodeApplier] Exact function entry recovered from thunk_target.
    Evidence: P:007CA9B4>00401136
 
@@ -737,7 +737,7 @@ AiFltClassTy * __cdecl st::fn_00668150(void)
 }
 
 // 00668670 FUN_00668670
-#line 1 "decomp/ST.exe/functions/00668670/decomp.c"
+#line 4 "decomp/ST.exe/functions/00668670/decomp.c"
 /* [STReturnSemanticsApplier] ignored_eax_void.
    Evidence: all observed direct callers ignore the return register (ignored=3, used=0, unknown=0),
    and decompilation contains no value return */
@@ -765,7 +765,7 @@ void __cdecl st::fn_00668670(int param_1)
 }
 
 // 006686C0 FUN_006686c0
-#line 1 "decomp/ST.exe/functions/006686C0/decomp.c"
+#line 4 "decomp/ST.exe/functions/006686C0/decomp.c"
 void __cdecl st::fn_006686C0(int *param_1)
 
 {
@@ -777,7 +777,7 @@ void __cdecl st::fn_006686C0(int *param_1)
 }
 
 // 006686F0 FUN_006686f0
-#line 1 "decomp/ST.exe/functions/006686F0/decomp.c"
+#line 4 "decomp/ST.exe/functions/006686F0/decomp.c"
 /* [STSwitchEnumApplier] Switch target param_1 uses
    /SubmarineTitans/Recovered/Enums/Global_sub_006686F0_param_1Enum. Cases:
    CASE_320=800;CASE_321=801;CASE_384=900;CASE_385=901;CASE_386=902;CASE_387=903;CASE_388=904;CASE_389=905;CASE_38A=906;CASE_38C=908;CASE_38D=909;CASE_38E=910;CASE_38F=911;CASE_7D1=2001;CASE_7D2=2002;CASE_7D3=2003;CASE_7D4=2004;CASE_7D6=2006;CASE_7D7=2007;CASE_7DA=2010;CASE_7DC=2012;CASE_7DD=2013;CASE_7DE=2014;CASE_7E4=2020;CASE_7E5=2021;CASE_7E6=2022;CASE_7E7=2023;CASE_7E8=2024;CASE_7E9=2025;CASE_7EA=2026;CASE_7EB=2027;CASE_7EC=2028;CASE_7ED=2029;CASE_7EE=2030;CASE_7EF=2031;CASE_7F0=2032;CASE_7F2=2034;CASE_7F3=2035;CASE_7F4=2036;CASE_7F5=2037;CASE_7F6=2038;CASE_7F7=2039;CASE_7F8=2040;CASE_7F9=2041;CASE_7FA=2042;CASE_7FB=2043;CASE_7FC=2044;CASE_80C=2060;CASE_80D=2061;CASE_80E=2062;CASE_80F=2063;CASE_810=2064;CASE_816=2070;CASE_817=2071;CASE_818=2072;CASE_819=2073;CASE_81A=2074;CASE_81B=2075;CASE_81C=2076;CASE_81D=2077;CASE_82A=2090;CASE_82B=2091;CASE_82C=2092;CASE_82D=2093;CASE_82E=2094;CASE_82F=2095;CASE_830=2096;CASE_831=2097;CASE_848=2120;CASE_849=2121;CASE_84A=2122;CASE_84B=2123;CASE_84C=2124;CASE_84D=2125
@@ -933,7 +933,7 @@ cf_common_exit_00668754:
 }
 
 // 00668A30 FUN_00668a30
-#line 1 "decomp/ST.exe/functions/00668A30/decomp.c"
+#line 4 "decomp/ST.exe/functions/00668A30/decomp.c"
 undefined4 __cdecl st::fn_00668A30(int param_1)
 
 {
@@ -944,7 +944,7 @@ undefined4 __cdecl st::fn_00668A30(int param_1)
 }
 
 // 00668A70 FUN_00668a70
-#line 1 "decomp/ST.exe/functions/00668A70/decomp.c"
+#line 4 "decomp/ST.exe/functions/00668A70/decomp.c"
 undefined4 __cdecl st::fn_00668A70(int param_1)
 
 {
@@ -955,7 +955,7 @@ undefined4 __cdecl st::fn_00668A70(int param_1)
 }
 
 // 00668AA0 FUN_00668aa0
-#line 1 "decomp/ST.exe/functions/00668AA0/decomp.c"
+#line 4 "decomp/ST.exe/functions/00668AA0/decomp.c"
 /* [STSwitchEnumApplier] Switch target param_1 uses
    /SubmarineTitans/Recovered/Enums/Global_sub_00668AA0_param_1Enum. Cases:
    CASE_0=0;CASE_1=1;CASE_2=2;CASE_3=3;CASE_4=4;CASE_5=5;CASE_6=6;CASE_7=7;CASE_8=8;CASE_9=9;CASE_A=10;CASE_B=11;CASE_7F6=2038;CASE_7F7=2039;CASE_7F8=2040;CASE_7F9=2041;CASE_7FA=2042;CASE_7FB=2043;CASE_80E=2062;CASE_80F=2063;CASE_810=2064;CASE_819=2073;CASE_81B=2075;CASE_81C=2076;CASE_81D=2077;CASE_82A=2090;CASE_82B=2091;CASE_82C=2092;CASE_82E=2094;CASE_82F=2095
@@ -1333,7 +1333,7 @@ LAB_0066ac1d:
 }
 
 // 0066AC80 FUN_0066ac80
-#line 1 "decomp/ST.exe/functions/0066AC80/decomp.c"
+#line 4 "decomp/ST.exe/functions/0066AC80/decomp.c"
 /* [STAbiConsistencyApplier] stack_parameter_width target=parameter:0: previous_type=/undefined4
    parameter=/char Evidence: entry-use width=/char; unmasked_dword_reads=0; evidence=0066AC86 MOV
    ECX,dword ptr [EBP + 0x8]; first-use mask or exact narrow callee formal

@@ -2,7 +2,7 @@
 // Generated translation unit: source/original/nick/to_cont.cpp
 
 // 005FB640 STContainerC::GetMessage
-#line 1 "decomp/ST.exe/functions/005FB640/decomp.c"
+#line 4 "decomp/ST.exe/functions/005FB640/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\nick\to_cont.cpp
    STContainerC::GetMessage

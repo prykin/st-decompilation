@@ -2,7 +2,7 @@
 // Generated translation unit: source/recovered/by_owner/MMObjTy.cpp
 
 // 005B6430 MMObjTy::GetMessage
-#line 1 "decomp/ST.exe/functions/005B6430/decomp.c"
+#line 4 "decomp/ST.exe/functions/005B6430/decomp.c"
 /* [STVirtualMethodApplier] Recovered from virtual table slot family.
    Tables: 0079C008
    Entries: 00401280

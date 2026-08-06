@@ -2,7 +2,7 @@
 // Generated translation unit: source/recovered/by_address/004B.cpp
 
 // 004B0250 FUN_004b0250
-#line 1 "decomp/ST.exe/functions/004B0250/decomp.c"
+#line 4 "decomp/ST.exe/functions/004B0250/decomp.c"
 undefined4 __cdecl
 st::fn_004B0250(uint param_1,int param_2,int *param_3,int *param_4,int *param_5,int param_6,int param_7
             )
@@ -99,7 +99,7 @@ LAB_004b03a2:
                   (g_bulkInitializedRecords_008087C7[local_c->field_0024].field_0022 < 8)))) {
                 bVar1 = *(byte *)&local_c->field_0024;
                 local_28 = (char *)STReplaceLowByte((uint32_t)(local_28), (uint8_t)(bVar1));
-                if (g_appClass_00806728->field_146F == '\0') {
+                if (g_app_00806728->field_146F == '\0') {
                   if (bVar1 == (byte)param_1) {
 LAB_004b04c9:
                     iVar9 = 0;
@@ -107,25 +107,25 @@ LAB_004b04c9:
                   else {
                     uVar3 = (uint)bVar1;
                     uVar13 = param_1 & 0xff;
-                    cVar2 = (&g_appClass_00806728->field_0x142f)[uVar13 + uVar3 * 8];
+                    cVar2 = (&g_app_00806728->field_0x142f)[uVar13 + uVar3 * 8];
                     if ((cVar2 == '\0') &&
                        (psVar11 = local_8,
-                       (&g_appClass_00806728->field_0x142f)[uVar3 + uVar13 * 8] == '\0')) {
+                       (&g_app_00806728->field_0x142f)[uVar3 + uVar13 * 8] == '\0')) {
                       iVar9 = -2;
                     }
                     else if ((cVar2 == '\x01') &&
                             (psVar11 = local_8,
-                            (&g_appClass_00806728->field_0x142f)[uVar3 + uVar13 * 8] == '\0')) {
+                            (&g_app_00806728->field_0x142f)[uVar3 + uVar13 * 8] == '\0')) {
                       iVar9 = -1;
                     }
                     else if ((cVar2 == '\0') &&
                             (psVar11 = local_8,
-                            (&g_appClass_00806728->field_0x142f)[uVar3 + uVar13 * 8] == '\x01')) {
+                            (&g_app_00806728->field_0x142f)[uVar3 + uVar13 * 8] == '\x01')) {
                       iVar9 = 1;
                     }
                     else {
                       if ((cVar2 != '\x01') ||
-                         ((&g_appClass_00806728->field_0x142f)[uVar3 + uVar13 * 8] != '\x01'))
+                         ((&g_app_00806728->field_0x142f)[uVar3 + uVar13 * 8] != '\x01'))
                       goto LAB_004b04c9;
                       iVar9 = 2;
                     }
@@ -133,16 +133,16 @@ LAB_004b04c9:
                   bVar17 = iVar9 < 0;
                 }
                 else {
-                  bVar17 = (&g_appClass_00806728->field_0x11ca)[(param_1 & 0xff) * 0x51] !=
-                           (&g_appClass_00806728->field_0x11ca)[(uint)bVar1 * 0x51];
+                  bVar17 = (&g_app_00806728->field_0x11ca)[(param_1 & 0xff) * 0x51] !=
+                           (&g_app_00806728->field_0x11ca)[(uint)bVar1 * 0x51];
                 }
                 if (bVar17) {
                   *(undefined1 *)((int)psVar11 + iVar15 + (int)local_10) = 4;
                   dVar5 = local_c->slot_2C();
-                  if (((&STGroupBoatCVTable.vfunc_04)[dVar5] ==
+                  if (((&st_global_00790728.vfunc_04)[dVar5] ==
                        (icall_004A0EE0_FUN_004a0ee0_for_STGroupBoatC *)0x2) ||
                      ((dVar5 = local_c->slot_2C(), dVar5 == 0x78 &&
-                      ((&STGroupBoatCVTable.vfunc_04)[*(int *)&local_c->field_0x259] ==
+                      ((&st_global_00790728.vfunc_04)[*(int *)&local_c->field_0x259] ==
                        (icall_004A0EE0_FUN_004a0ee0_for_STGroupBoatC *)0x2)))) {
                     st::fn_006AE1C0(local_2c,&local_c);
                   }
@@ -150,10 +150,10 @@ LAB_004b04c9:
                 }
               }
               dVar5 = local_c->slot_2C();
-              if (((&STGroupBoatCVTable.vfunc_04)[dVar5] ==
+              if (((&st_global_00790728.vfunc_04)[dVar5] ==
                    (icall_004A0EE0_FUN_004a0ee0_for_STGroupBoatC *)0x2) ||
                  ((dVar5 = local_c->slot_2C(), dVar5 == 0x78 &&
-                  ((&STGroupBoatCVTable.vfunc_04)[*(int *)&local_c->field_0x259] ==
+                  ((&st_global_00790728.vfunc_04)[*(int *)&local_c->field_0x259] ==
                    (icall_004A0EE0_FUN_004a0ee0_for_STGroupBoatC *)0x2)))) {
                 *(undefined1 *)((int)psVar11 + iVar15 + (int)local_10) = 6;
                 st::fn_006AE1C0(local_2c,&local_c);
@@ -388,7 +388,7 @@ LAB_004b0a79:
 }
 
 // 004B0F20 FUN_004b0f20
-#line 1 "decomp/ST.exe/functions/004B0F20/decomp.c"
+#line 4 "decomp/ST.exe/functions/004B0F20/decomp.c"
 /* [STPrototypeApplier] Propagated parameter 2.
    Evidence: 004CDFD0 -> 004B0F20 @ 004CE028; FUN_004cdfd0 parameter param_2 | 0064D270 -> 004B0F20
    @ 0064D6D4; AiEventClassTy::__CreateObjPl parameter param_3; MOVSX at 0064D5DF establishes signed
@@ -469,7 +469,7 @@ st::fn_004B0F20(int param_1,int param_2,int param_3,int param_4,int param_5,uint
 }
 
 // 004B1040 FUN_004b1040
-#line 1 "decomp/ST.exe/functions/004B1040/decomp.c"
+#line 4 "decomp/ST.exe/functions/004B1040/decomp.c"
 /* [STPrototypeApplier] Propagated parameter 2.
    Evidence: 0064D270 -> 004B1040 @ 0064D679; AiEventClassTy::__CreateObjPl parameter param_3; MOVSX
    at 0064D5DF establishes signed source width 2
@@ -533,7 +533,7 @@ st::fn_004B1040(int param_1,int param_2,int param_3,int param_4,int param_5,uint
 }
 
 // 004B1120 FUN_004b1120
-#line 1 "decomp/ST.exe/functions/004B1120/decomp.c"
+#line 4 "decomp/ST.exe/functions/004B1120/decomp.c"
 /* [STSwitchEnumApplier] Switch target param_2 uses
    /SubmarineTitans/Recovered/Enums/Global_sub_004B1120_param_2Enum. Cases:
    CASE_38=56;CASE_39=57;CASE_4F=79;CASE_5E=94;CASE_61=97 */
@@ -570,7 +570,7 @@ st::fn_004B1120(int param_1,Global_sub_004B1120_param_2Enum param_2,int *param_3
   local_10 = st::fn_00402829((short)*param_3,*param_4,*param_5,param_2,param_1,nullptr,
                                 nullptr,nullptr,0,piVar5);
   if (local_10 == 0) {
-    if ((&STGroupBoatCVTable.vfunc_04)[param_2] ==
+    if ((&st_global_00790728.vfunc_04)[param_2] ==
         (icall_004A0EE0_FUN_004a0ee0_for_STGroupBoatC *)0x1) {
       param_7 = 0;
       /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
@@ -748,7 +748,7 @@ LAB_004b150e:
 }
 
 // 004B1690 FUN_004b1690
-#line 1 "decomp/ST.exe/functions/004B1690/decomp.c"
+#line 4 "decomp/ST.exe/functions/004B1690/decomp.c"
 undefined4 __cdecl st::fn_004B1690(int param_1,int param_2,int param_3,int param_4,int param_5)
 
 {
@@ -936,7 +936,7 @@ LAB_004b1b6e:
 }
 
 // 004B1CF0 FUN_004b1cf0
-#line 1 "decomp/ST.exe/functions/004B1CF0/decomp.c"
+#line 4 "decomp/ST.exe/functions/004B1CF0/decomp.c"
 int __cdecl st::fn_004B1CF0(int param_1,int *param_2,int *param_3,int *param_4)
 
 {
@@ -1023,7 +1023,7 @@ int __cdecl st::fn_004B1CF0(int param_1,int *param_2,int *param_3,int *param_4)
 }
 
 // 004B1FB0 FUN_004b1fb0
-#line 1 "decomp/ST.exe/functions/004B1FB0/decomp.c"
+#line 4 "decomp/ST.exe/functions/004B1FB0/decomp.c"
 /* [STSwitchEnumApplier] Switch target param_1 uses
    /SubmarineTitans/Recovered/Enums/Global_sub_004B1FB0_param_1Enum. Cases:
    CASE_5E=94;CASE_61=97;CASE_DC=220;CASE_DD=221;CASE_DE=222 */
@@ -1131,7 +1131,7 @@ st::fn_004B1FB0(Global_sub_004B1FB0_param_1Enum param_1,int *param_2,int *param_
 }
 
 // 004B2390 FUN_004b2390
-#line 1 "decomp/ST.exe/functions/004B2390/decomp.c"
+#line 4 "decomp/ST.exe/functions/004B2390/decomp.c"
 /* [STPrototypeApplier] Propagated parameter 4.
    Evidence: 004B2520 -> 004B2390 @ 004B25DA | 004B2520 -> 004B2390 @ 004B2996 | 004B2520 ->
    004B2390 @ 004B29F2 | 004B2520 -> 004B2390 @ 004B2A8B | 004B2520 -> 004B2390 @ 004B2ADB
@@ -1178,7 +1178,7 @@ st::fn_004B2390(uint param_1,int param_2,int param_3,int param_4,int *param_5,in
 }
 
 // 004B2520 FUN_004b2520
-#line 1 "decomp/ST.exe/functions/004B2520/decomp.c"
+#line 4 "decomp/ST.exe/functions/004B2520/decomp.c"
 /* [STPrototypeApplier] Propagated parameter 4.
    Evidence: 00479600 -> 004B2520 @ 0047B46E; /STBoatC+0x647; MOVSX at 0047B452 establishes signed
    source width 2 | 004B2520 -> 004B2390 @ 004B25DA */
@@ -1433,7 +1433,7 @@ cf_common_exit_004B2601:
 }
 
 // 004B2D10 FUN_004b2d10
-#line 1 "decomp/ST.exe/functions/004B2D10/decomp.c"
+#line 4 "decomp/ST.exe/functions/004B2D10/decomp.c"
 undefined4 __cdecl st::fn_004B2D10(byte param_1,int param_2,int param_3,int param_4)
 
 {
@@ -1519,7 +1519,7 @@ undefined4 __cdecl st::fn_004B2D10(byte param_1,int param_2,int param_3,int para
                     (g_bulkInitializedRecords_008087C7[(int)this[1].vtable].field_0022 < 8)))) &&
                (iVar6 = this->GetObjectTypeId(), iVar6 == 0x73)) {
               bVar1 = *(byte *)&this[1].vtable;
-              if (g_appClass_00806728->field_146F == '\0') {
+              if (g_app_00806728->field_146F == '\0') {
                 if (bVar1 == param_1) {
 LAB_004b2fd4:
                   iVar6 = 0;
@@ -1527,22 +1527,22 @@ LAB_004b2fd4:
                 else {
                   uVar3 = (uint)bVar1;
                   uVar5 = (uint)param_1;
-                  cVar2 = (&g_appClass_00806728->field_0x142f)[uVar5 + uVar3 * 8];
+                  cVar2 = (&g_app_00806728->field_0x142f)[uVar5 + uVar3 * 8];
                   if ((cVar2 == '\0') &&
-                     ((&g_appClass_00806728->field_0x142f)[uVar3 + uVar5 * 8] == '\0')) {
+                     ((&g_app_00806728->field_0x142f)[uVar3 + uVar5 * 8] == '\0')) {
                     iVar6 = -2;
                   }
                   else if ((cVar2 == '\x01') &&
-                          ((&g_appClass_00806728->field_0x142f)[uVar3 + uVar5 * 8] == '\0')) {
+                          ((&g_app_00806728->field_0x142f)[uVar3 + uVar5 * 8] == '\0')) {
                     iVar6 = -1;
                   }
                   else if ((cVar2 == '\0') &&
-                          ((&g_appClass_00806728->field_0x142f)[uVar3 + uVar5 * 8] == '\x01')) {
+                          ((&g_app_00806728->field_0x142f)[uVar3 + uVar5 * 8] == '\x01')) {
                     iVar6 = 1;
                   }
                   else {
                     if ((cVar2 != '\x01') ||
-                       ((&g_appClass_00806728->field_0x142f)[uVar3 + uVar5 * 8] != '\x01'))
+                       ((&g_app_00806728->field_0x142f)[uVar3 + uVar5 * 8] != '\x01'))
                     goto LAB_004b2fd4;
                     iVar6 = 2;
                   }
@@ -1550,8 +1550,8 @@ LAB_004b2fd4:
                 bVar8 = iVar6 < 0;
               }
               else {
-                bVar8 = (&g_appClass_00806728->field_0x11ca)[(uint)param_1 * 0x51] !=
-                        (&g_appClass_00806728->field_0x11ca)[(uint)bVar1 * 0x51];
+                bVar8 = (&g_app_00806728->field_0x11ca)[(uint)param_1 * 0x51] !=
+                        (&g_app_00806728->field_0x11ca)[(uint)bVar1 * 0x51];
               }
               if ((bVar8) && (local_24 <= *(int *)&this[0x22].field_0x8)) {
                 local_24 = *(int *)&this[0x22].field_0x8 - local_24;
@@ -1583,7 +1583,7 @@ LAB_004b2fd4:
 }
 
 // 004B31C0 FUN_004b31c0
-#line 1 "decomp/ST.exe/functions/004B31C0/decomp.c"
+#line 4 "decomp/ST.exe/functions/004B31C0/decomp.c"
 undefined4 __cdecl st::fn_004B31C0(int *param_1,int param_2)
 
 {
@@ -1649,7 +1649,7 @@ undefined4 __cdecl st::fn_004B31C0(int *param_1,int param_2)
 }
 
 // 004B6D20 FUN_004b6d20
-#line 1 "decomp/ST.exe/functions/004B6D20/decomp.c"
+#line 4 "decomp/ST.exe/functions/004B6D20/decomp.c"
 undefined4 __fastcall st::fn_004B6D20(int param_1)
 
 {
@@ -1667,7 +1667,7 @@ undefined4 __fastcall st::fn_004B6D20(int param_1)
 }
 
 // 004B6D70 FUN_004b6d70
-#line 1 "decomp/ST.exe/functions/004B6D70/decomp.c"
+#line 4 "decomp/ST.exe/functions/004B6D70/decomp.c"
 undefined4 __fastcall st::fn_004B6D70(int param_1,undefined4 param_2)
 
 {
@@ -1702,7 +1702,7 @@ undefined4 __fastcall st::fn_004B6D70(int param_1,undefined4 param_2)
 }
 
 // 004B6E30 FUN_004b6e30
-#line 1 "decomp/ST.exe/functions/004B6E30/decomp.c"
+#line 4 "decomp/ST.exe/functions/004B6E30/decomp.c"
 /* [STSwitchEnumApplier] Switch target param_2 uses
    /SubmarineTitans/Recovered/Enums/Global_sub_004B6E30_param_2Enum. Cases:
    CASE_0=0;CASE_1=1;CASE_2=2;CASE_3=3;CASE_4=4;CASE_5=5 */
@@ -1779,7 +1779,7 @@ undefined4 __thiscall st::fn_004B6E30(void *this,int param_1,Global_sub_004B6E30
 }
 
 // 004B6FC0 FUN_004b6fc0
-#line 1 "decomp/ST.exe/functions/004B6FC0/decomp.c"
+#line 4 "decomp/ST.exe/functions/004B6FC0/decomp.c"
 undefined4 st::fn_004B6FC0(char param_1)
 
 {
@@ -1826,7 +1826,7 @@ int st::fn_004B7080(uint param_1,int param_2)
 }
 
 // 004B70D0 FUN_004b70d0
-#line 1 "decomp/ST.exe/functions/004B70D0/decomp.c"
+#line 4 "decomp/ST.exe/functions/004B70D0/decomp.c"
 /* [STPrototypeRepairApplier] Propagated parameter 0.
    Evidence: 004B6D70 -> 004B70D0 @ 004B6DCF | 004CCAD0 -> 004B70D0 @ 004CCB19 | 00652810 ->
    004B70D0 @ 00655571 */
@@ -1869,7 +1869,7 @@ int st::fn_004B7140(uint param_1,int param_2)
 }
 
 // 004B71C0 FUN_004b71c0
-#line 1 "decomp/ST.exe/functions/004B71C0/decomp.c"
+#line 4 "decomp/ST.exe/functions/004B71C0/decomp.c"
 undefined4 st::fn_004B71C0(char param_1)
 
 {
@@ -1891,7 +1891,7 @@ int st::fn_004B71F0(uint param_1,int param_2)
 }
 
 // 004B7240 FUN_004b7240
-#line 1 "decomp/ST.exe/functions/004B7240/decomp.c"
+#line 4 "decomp/ST.exe/functions/004B7240/decomp.c"
 int st::fn_004B7240(uint param_1,int param_2)
 
 {
@@ -1911,7 +1911,7 @@ int st::fn_004B7240(uint param_1,int param_2)
 }
 
 // 004B72B0 FUN_004b72b0
-#line 1 "decomp/ST.exe/functions/004B72B0/decomp.c"
+#line 4 "decomp/ST.exe/functions/004B72B0/decomp.c"
 undefined4 st::fn_004B72B0(char param_1)
 
 {
@@ -1919,7 +1919,7 @@ undefined4 st::fn_004B72B0(char param_1)
 }
 
 // 004B72E0 FUN_004b72e0
-#line 1 "decomp/ST.exe/functions/004B72E0/decomp.c"
+#line 4 "decomp/ST.exe/functions/004B72E0/decomp.c"
 undefined4 st::fn_004B72E0(char param_1,int param_2)
 
 {
@@ -1938,7 +1938,7 @@ undefined4 st::fn_004B72E0(char param_1,int param_2)
 }
 
 // 004B7350 FUN_004b7350
-#line 1 "decomp/ST.exe/functions/004B7350/decomp.c"
+#line 4 "decomp/ST.exe/functions/004B7350/decomp.c"
 /* [STSwitchEnumApplier] Switch target param_2 uses
    /SubmarineTitans/Recovered/Enums/Global_sub_004B7350_param_2Enum. Cases:
    CASE_32=50;CASE_33=51;CASE_34=52;CASE_35=53;CASE_36=54;CASE_37=55;CASE_38=56;CASE_39=57;CASE_3A=58;CASE_3B=59;CASE_3C=60;CASE_3D=61;CASE_3E=62;CASE_3F=63;CASE_40=64;CASE_41=65;CASE_42=66;CASE_43=67;CASE_44=68;CASE_45=69;CASE_46=70;CASE_47=71;CASE_48=72;CASE_49=73;CASE_4A=74;CASE_4B=75;CASE_4C=76;CASE_4D=77;CASE_4E=78;CASE_4F=79;CASE_50=80;CASE_51=81;CASE_52=82;CASE_53=83;CASE_54=84;CASE_55=85;CASE_56=86;CASE_57=87;CASE_58=88;CASE_59=89;CASE_5A=90;CASE_5B=91;CASE_5C=92;CASE_5D=93;CASE_5E=94;CASE_5F=95;CASE_60=96;CASE_61=97;CASE_62=98;CASE_63=99;CASE_64=100;CASE_65=101;CASE_66=102;CASE_67=103;CASE_68=104;CASE_69=105;CASE_6A=106;CASE_6B=107;CASE_6C=108;CASE_6D=109;CASE_6E=110;CASE_6F=111;CASE_70=112;CASE_71=113;CASE_72=114;CASE_73=115;CASE_78=120
@@ -2032,7 +2032,7 @@ undefined4 st::fn_004B7350(uint param_1,Global_sub_004B7350_param_2Enum param_2)
 }
 
 // 004B7520 FUN_004b7520
-#line 1 "decomp/ST.exe/functions/004B7520/decomp.c"
+#line 4 "decomp/ST.exe/functions/004B7520/decomp.c"
 /* [STSwitchEnumApplier] Switch target param_2 uses
    /SubmarineTitans/Recovered/Enums/Global_sub_004B7520_param_2Enum. Cases:
    CASE_32=50;CASE_33=51;CASE_34=52;CASE_35=53;CASE_36=54;CASE_37=55;CASE_38=56;CASE_39=57;CASE_3A=58;CASE_3B=59;CASE_3C=60;CASE_3D=61;CASE_3E=62;CASE_3F=63;CASE_40=64;CASE_41=65;CASE_42=66;CASE_43=67;CASE_44=68;CASE_45=69;CASE_46=70;CASE_47=71;CASE_48=72;CASE_49=73;CASE_4A=74;CASE_4B=75;CASE_4C=76;CASE_4D=77;CASE_4E=78;CASE_4F=79;CASE_50=80;CASE_51=81;CASE_52=82;CASE_53=83;CASE_54=84;CASE_55=85;CASE_56=86;CASE_57=87;CASE_58=88;CASE_59=89;CASE_5A=90;CASE_5B=91;CASE_5C=92;CASE_5D=93;CASE_5E=94;CASE_5F=95;CASE_60=96;CASE_61=97;CASE_62=98;CASE_63=99;CASE_64=100;CASE_65=101;CASE_66=102;CASE_67=103;CASE_68=104;CASE_69=105;CASE_6A=106;CASE_6B=107;CASE_6C=108;CASE_6D=109;CASE_6E=110;CASE_6F=111;CASE_70=112;CASE_71=113;CASE_72=114;CASE_73=115;CASE_78=120
@@ -2169,7 +2169,7 @@ void st::fn_004B7710(uint param_1,int param_2)
 }
 
 // 004B7750 FUN_004b7750
-#line 1 "decomp/ST.exe/functions/004B7750/decomp.c"
+#line 4 "decomp/ST.exe/functions/004B7750/decomp.c"
 /* [STPrototypeApplier] Propagated parameter 0.
    Evidence: 004B6E30 -> 004B7750 @ 004B6F30; unproven partial register write at 004B6F26 | 004B7750
    -> 004B7350 @ 004B7836 | 004B7750 -> 004B7520 @ 004B77F5 */
@@ -2271,7 +2271,7 @@ cf_continue_loop_004B78A7:
 }
 
 // 004B79C0 FUN_004b79c0
-#line 1 "decomp/ST.exe/functions/004B79C0/decomp.c"
+#line 4 "decomp/ST.exe/functions/004B79C0/decomp.c"
 undefined4 st::fn_004B79C0(char param_1,int param_2)
 
 {
@@ -2302,7 +2302,7 @@ undefined4 st::fn_004B79C0(char param_1,int param_2)
 }
 
 // 004B7A60 FUN_004b7a60
-#line 1 "decomp/ST.exe/functions/004B7A60/decomp.c"
+#line 4 "decomp/ST.exe/functions/004B7A60/decomp.c"
 void __fastcall st::fn_004B7A60(int param_1)
 
 {
@@ -2312,7 +2312,7 @@ void __fastcall st::fn_004B7A60(int param_1)
 }
 
 // 004B7A80 FUN_004b7a80
-#line 1 "decomp/ST.exe/functions/004B7A80/decomp.c"
+#line 4 "decomp/ST.exe/functions/004B7A80/decomp.c"
 undefined4 st::fn_004B7A80(void)
 
 {
@@ -2320,7 +2320,7 @@ undefined4 st::fn_004B7A80(void)
 }
 
 // 004B7AA0 FUN_004b7aa0
-#line 1 "decomp/ST.exe/functions/004B7AA0/decomp.c"
+#line 4 "decomp/ST.exe/functions/004B7AA0/decomp.c"
 undefined4 __fastcall st::fn_004B7AA0(TLOBaseTy *param_1)
 
 {
@@ -2342,7 +2342,7 @@ undefined4 __fastcall st::fn_004B7AA0(TLOBaseTy *param_1)
 }
 
 // 004B7B20 FUN_004b7b20
-#line 1 "decomp/ST.exe/functions/004B7B20/decomp.c"
+#line 4 "decomp/ST.exe/functions/004B7B20/decomp.c"
 /* [STPrototypeApplier] Propagated parameter 3.
    Evidence: 004CAFC0 -> 004B7B20 @ 004CB1A3
 
@@ -2406,7 +2406,7 @@ st::fn_004B7B20(void *this,TLOBaseTy_sub_004CAFC0_param_1Enum param_1,int param_
 }
 
 // 004B7D00 FUN_004b7d00
-#line 1 "decomp/ST.exe/functions/004B7D00/decomp.c"
+#line 4 "decomp/ST.exe/functions/004B7D00/decomp.c"
 /* [STPrototypeRepairApplier] Propagated parameter 1.
    Evidence: 0047C050 -> 004B7D00 @ 0047C971 */
 
@@ -2425,7 +2425,7 @@ undefined4 __thiscall st::fn_004B7D00(void *this,STBoatC *param_1)
 }
 
 // 004B7D50 FUN_004b7d50
-#line 1 "decomp/ST.exe/functions/004B7D50/decomp.c"
+#line 4 "decomp/ST.exe/functions/004B7D50/decomp.c"
 /* [STPrototypeRepairApplier] Propagated parameter 1.
    Evidence: 0047CF20 -> 004B7D50 @ 0047CFB6 */
 
@@ -2442,7 +2442,7 @@ bool __thiscall st::fn_004B7D50(void *this,STBoatC *param_1)
 }
 
 // 004B7D90 FUN_004b7d90
-#line 1 "decomp/ST.exe/functions/004B7D90/decomp.c"
+#line 4 "decomp/ST.exe/functions/004B7D90/decomp.c"
 /* [STAbiConsistencyApplier] full_eax_return: return=/int Evidence: all observed callers consume
    full EAX (1), none consume AL/AX, and every RET path defines full EAX; sites=005F07A0 @ 005F08AD
    -> TEST TEST EAX,EAX */
@@ -2463,7 +2463,7 @@ int __fastcall st::fn_004B7D90(int *param_1)
 }
 
 // 004B7DE0 FUN_004b7de0
-#line 1 "decomp/ST.exe/functions/004B7DE0/decomp.c"
+#line 4 "decomp/ST.exe/functions/004B7DE0/decomp.c"
 bool __fastcall st::fn_004B7DE0(int *param_1)
 
 {
@@ -2480,7 +2480,7 @@ bool __fastcall st::fn_004B7DE0(int *param_1)
 }
 
 // 004B7E30 FUN_004b7e30
-#line 1 "decomp/ST.exe/functions/004B7E30/decomp.c"
+#line 4 "decomp/ST.exe/functions/004B7E30/decomp.c"
 undefined4 __thiscall st::fn_004B7E30(void *this,int param_1,int param_2,int param_3)
 
 {
@@ -2515,7 +2515,7 @@ undefined4 __thiscall st::fn_004B7E30(void *this,int param_1,int param_2,int par
 }
 
 // 004B8C00 FUN_004b8c00
-#line 1 "decomp/ST.exe/functions/004B8C00/decomp.c"
+#line 4 "decomp/ST.exe/functions/004B8C00/decomp.c"
 int __fastcall st::fn_004B8C00(AnonShape_004B8C00_93076312 *param_1)
 
 {
@@ -2542,7 +2542,7 @@ int __fastcall st::fn_004B8C00(AnonShape_004B8C00_93076312 *param_1)
 }
 
 // 004B8C80 FUN_004b8c80
-#line 1 "decomp/ST.exe/functions/004B8C80/decomp.c"
+#line 4 "decomp/ST.exe/functions/004B8C80/decomp.c"
 undefined4 __fastcall st::fn_004B8C80(TLOBaseTy *param_1)
 
 {
@@ -2630,7 +2630,7 @@ undefined4 __fastcall st::fn_004B8C80(TLOBaseTy *param_1)
       iVar6 = st::fn_004042AF(puVar1,'\x04');
       if (iVar6 == *(int *)(&DAT_007cdf5a + iVar5 * 0x32)) {
         iVar5 = st::fn_00404183
-                          ((STT3DSprC *)puVar1,5,DAT_00806764,"expl_bbt0" + iVar5 * 0x32,
+                          ((STT3DSprC *)puVar1,5,PTR_00806764,"expl_bbt0" + iVar5 * 0x32,
                            0x1d);
         if (iVar5 != 0) {
           return 0xffff;
@@ -2867,7 +2867,7 @@ cf_common_join_004B92EE:
 }
 
 // 004B9920 FUN_004b9920
-#line 1 "decomp/ST.exe/functions/004B9920/decomp.c"
+#line 4 "decomp/ST.exe/functions/004B9920/decomp.c"
 undefined4 __fastcall st::fn_004B9920(AnonShape_004B9920_1D6BF5BA *param_1)
 
 {
@@ -2914,7 +2914,7 @@ undefined4 __fastcall st::fn_004B9920(AnonShape_004B9920_1D6BF5BA *param_1)
 }
 
 // 004B9BB0 FUN_004b9bb0
-#line 1 "decomp/ST.exe/functions/004B9BB0/decomp.c"
+#line 4 "decomp/ST.exe/functions/004B9BB0/decomp.c"
 /* [STPrototypeApplier] Propagated parameter 2.
    Evidence: raw retained-width parameter lifetime: width=2, reads=1, sites=004B9C6C MOV AX,word ptr
    [EBP + 0xc] */
@@ -2962,7 +2962,7 @@ undefined4 __thiscall st::fn_004B9BB0(void *this,int param_1,ushort param_2,unde
 }
 
 // 004B9CF0 FUN_004b9cf0
-#line 1 "decomp/ST.exe/functions/004B9CF0/decomp.c"
+#line 4 "decomp/ST.exe/functions/004B9CF0/decomp.c"
 /* [STPrototypeApplier] Propagated parameter 0.
    Evidence: 0047DF00 -> 004B9CF0 @ 0047E45E | 0047DF00 -> 004B9CF0 @ 0047EAF1
 
@@ -2978,7 +2978,7 @@ uint __fastcall st::fn_004B9CF0(AnonShape_004B9D90_4F3151F9 *param_1)
 }
 
 // 004B9D20 FUN_004b9d20
-#line 1 "decomp/ST.exe/functions/004B9D20/decomp.c"
+#line 4 "decomp/ST.exe/functions/004B9D20/decomp.c"
 /* [STPrototypeApplier] Propagated parameter 1.
    Evidence: 0047FAD0 -> 004B9D20 @ 0047FCC0; STBoatC::BackDismant this; stable alias ESI */
 
@@ -2994,7 +2994,7 @@ undefined4 __thiscall st::fn_004B9D20(void *this,STBoatC *param_1)
 }
 
 // 004B9D90 FUN_004b9d90
-#line 1 "decomp/ST.exe/functions/004B9D90/decomp.c"
+#line 4 "decomp/ST.exe/functions/004B9D90/decomp.c"
 undefined4 __fastcall st::fn_004B9D90(AnonShape_004B9D90_4F3151F9 *param_1)
 
 {
@@ -3100,7 +3100,7 @@ LAB_004b9e45:
 }
 
 // 004BE110 FUN_004be110
-#line 1 "decomp/ST.exe/functions/004BE110/decomp.c"
+#line 4 "decomp/ST.exe/functions/004BE110/decomp.c"
 byte __fastcall st::fn_004BE110(int param_1)
 
 {
@@ -3112,7 +3112,7 @@ byte __fastcall st::fn_004BE110(int param_1)
 }
 
 // 004BE180 FUN_004be180
-#line 1 "decomp/ST.exe/functions/004BE180/decomp.c"
+#line 4 "decomp/ST.exe/functions/004BE180/decomp.c"
 void __thiscall st::fn_004BE180(void *this,undefined4 param_1)
 
 {
@@ -3121,7 +3121,7 @@ void __thiscall st::fn_004BE180(void *this,undefined4 param_1)
 }
 
 // 004BE1A0 FUN_004be1a0
-#line 1 "decomp/ST.exe/functions/004BE1A0/decomp.c"
+#line 4 "decomp/ST.exe/functions/004BE1A0/decomp.c"
 undefined4 __fastcall st::fn_004BE1A0(int *param_1)
 
 {
@@ -3138,7 +3138,7 @@ undefined4 __fastcall st::fn_004BE1A0(int *param_1)
 }
 
 // 004BE1D0 FUN_004be1d0
-#line 1 "decomp/ST.exe/functions/004BE1D0/decomp.c"
+#line 4 "decomp/ST.exe/functions/004BE1D0/decomp.c"
 uint __fastcall st::fn_004BE1D0(int param_1)
 
 {
@@ -3163,7 +3163,7 @@ void st::fn_004BE200(void)
 }
 
 // 004BE240 FUN_004be240
-#line 1 "decomp/ST.exe/functions/004BE240/decomp.c"
+#line 4 "decomp/ST.exe/functions/004BE240/decomp.c"
 void __thiscall st::fn_004BE240(void *this,char *param_1)
 
 {
@@ -3190,7 +3190,7 @@ void __thiscall st::fn_004BE240(void *this,char *param_1)
 }
 
 // 004BE290 FUN_004be290
-#line 1 "decomp/ST.exe/functions/004BE290/decomp.c"
+#line 4 "decomp/ST.exe/functions/004BE290/decomp.c"
 void __thiscall st::fn_004BE290(void *this,char *param_1)
 
 {
@@ -3229,7 +3229,7 @@ void __thiscall st::fn_004BE290(void *this,char *param_1)
 }
 
 // 004BE320 FUN_004be320
-#line 1 "decomp/ST.exe/functions/004BE320/decomp.c"
+#line 4 "decomp/ST.exe/functions/004BE320/decomp.c"
 undefined4 __thiscall st::fn_004BE320(void *this,undefined4 *param_1)
 
 {
@@ -3240,7 +3240,7 @@ undefined4 __thiscall st::fn_004BE320(void *this,undefined4 *param_1)
 }
 
 // 004BE350 CreateTLOBase
-#line 1 "decomp/ST.exe/functions/004BE350/decomp.c"
+#line 4 "decomp/ST.exe/functions/004BE350/decomp.c"
 /* [STUnclaimedCodeApplier] Exact function entry recovered from thunk_target.
    Evidence: P:007CA7DC>00403B84
 
@@ -3262,7 +3262,7 @@ TLOBaseTy * __cdecl st::fn_004BE350(void)
 }
 
 // 004BE380 FUN_004be380
-#line 1 "decomp/ST.exe/functions/004BE380/decomp.c"
+#line 4 "decomp/ST.exe/functions/004BE380/decomp.c"
 int __fastcall st::fn_004BE380(AnonShape_004BE380_4A62E49E *param_1)
 
 {
@@ -3274,7 +3274,7 @@ int __fastcall st::fn_004BE380(AnonShape_004BE380_4A62E49E *param_1)
 }
 
 // 004BE3D0 FUN_004be3d0
-#line 1 "decomp/ST.exe/functions/004BE3D0/decomp.c"
+#line 4 "decomp/ST.exe/functions/004BE3D0/decomp.c"
 void __thiscall st::fn_004BE3D0(void *this,int param_1)
 
 {
@@ -3289,7 +3289,7 @@ void __thiscall st::fn_004BE3D0(void *this,int param_1)
 }
 
 // 004BE470 FUN_004be470
-#line 1 "decomp/ST.exe/functions/004BE470/decomp.c"
+#line 4 "decomp/ST.exe/functions/004BE470/decomp.c"
 void __thiscall st::fn_004BE470(void *this,int param_1)
 
 {
@@ -3308,7 +3308,7 @@ void __thiscall st::fn_004BE470(void *this,int param_1)
 }
 
 // 004BE6C0 FUN_004be6c0
-#line 1 "decomp/ST.exe/functions/004BE6C0/decomp.c"
+#line 4 "decomp/ST.exe/functions/004BE6C0/decomp.c"
 void __thiscall st::fn_004BE6C0(void *this,undefined4 *param_1)
 
 {

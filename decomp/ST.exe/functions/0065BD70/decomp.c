@@ -195,7 +195,7 @@ int __thiscall AiEventClassTy::sub_0065BD70(AiEventClassTy *this,STMessage *mess
         this->field_054F = uVar11;
 LAB_0065c021:
         (*pSVar4->vtable->vfunc_74)((short)local_1c);
-        Library::DKW::TBL::FUN_006b6020(&this->field_05B3->flags,0,local_1c);
+        Library::DKW::TBL::FUN_006b6020(this->field_05B3,0,local_1c);
       }
     }
     goto LAB_0065c03e;
@@ -223,7 +223,7 @@ LAB_0065c021:
       uVar5 = (*pSVar4->vtable->vfunc_138)();
       this->field_054F = uVar5;
       (*pSVar4->vtable->vfunc_74)((short)local_1c);
-      Library::DKW::TBL::FUN_006b6020(&this->field_05B3->flags,0,local_1c);
+      Library::DKW::TBL::FUN_006b6020(this->field_05B3,0,local_1c);
     }
     wVar7 = (pSVar2->arg1).words.low;
     if (((-1 < (short)wVar7) && ((short)wVar7 < 8)) &&
@@ -255,7 +255,7 @@ LAB_0065c021:
       this->field_0543 = (int)STPiece<2,2>(message);
       this->field_054B = (int)local_6;
       (*pSVar4->vtable->vfunc_74)((short)local_1c);
-      Library::DKW::TBL::FUN_006b6020(&this->field_05B3->flags,0,local_1c);
+      Library::DKW::TBL::FUN_006b6020(this->field_05B3,0,local_1c);
     }
     wVar7 = (pSVar2->arg1).words.low;
     if ((((short)wVar7 < 0) || (7 < (short)wVar7)) ||
@@ -408,7 +408,7 @@ LAB_0065c4bb:
     pcVar9 = (char *)((message->arg1).u32 + 0x92);
     uVar11 = 0;
   }
-  Library::DKW::TBL::FUN_006b6020(&pDVar10->flags,uVar11,pcVar9);
+  Library::DKW::TBL::FUN_006b6020(pDVar10,uVar11,pcVar9);
 cf_common_exit_0065C65B:
   this->field_05A7 = g_playSystem_00802A38->field_00E4 / 0x19;
   this->field_05AB = g_playSystem_00802A38->field_00E4;

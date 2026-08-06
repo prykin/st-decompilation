@@ -2,7 +2,7 @@
 // Generated translation unit: source/recovered/by_owner/SubmarineTitans__Recovered__HiddenThis__AnonReceiver_006F31D0.cpp
 
 // 006F31D0 SubmarineTitans::Recovered::HiddenThis::AnonReceiver_006F31D0::sub_006F31D0
-#line 1 "decomp/ST.exe/functions/006F31D0/decomp.c"
+#line 4 "decomp/ST.exe/functions/006F31D0/decomp.c"
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 /* [STHiddenThisApplier] Anonymous hidden receiver recovered as
    /SubmarineTitans/Recovered/HiddenThis/AnonReceiver_006F31D0.

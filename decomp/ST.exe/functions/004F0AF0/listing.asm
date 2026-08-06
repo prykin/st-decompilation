@@ -1,4 +1,4 @@
-FUN_004f0af0:
+BldObjPanelTy::ShiftControls:
 004F0AF0  55                        PUSH EBP
 004F0AF1  8B EC                     MOV EBP,ESP
 004F0AF3  56                        PUSH ESI

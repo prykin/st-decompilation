@@ -2,7 +2,7 @@
 // Generated translation unit: source/recovered/by_owner/AppClassTy.cpp
 
 // 006E34C0 AppClassTy::AppClassTy
-#line 1 "decomp/ST.exe/functions/006E34C0/decomp.c"
+#line 4 "decomp/ST.exe/functions/006E34C0/decomp.c"
 /* [STConstructorApplier] Recovered constructor candidate.
    VTable: 0079E16C (store 006E34CC)
    Evidence: final_vptr=0079E16C; returns_this=true; calls_before=0; field_writes_after=12;
@@ -12,7 +12,7 @@ AppClassTy * __thiscall
 st::fn_006E34C0(AppClassTy *this,undefined4 param_1,undefined4 param_2)
 
 {
-  this->vtable = &AppClassTyVTable;
+  this->vtable = &st_global_0079E16C;
   DAT_00856d6c = param_1;
   this->field_0008 = param_2;
   this->field_001C = 0;

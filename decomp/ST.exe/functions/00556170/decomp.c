@@ -57,9 +57,9 @@ void __thiscall TraksClassTy::PrepareAfterSave(TraksClassTy *this,ushort *param_
           element_0024 = nullptr;
         }
         if (element_0024 == nullptr) break;
-        piVar7 = DAT_00806764;
+        piVar7 = PTR_00806764;
         if (*(int *)(&DAT_007c900c + element_0024->field_0000 * 0x18) != 1) {
-          piVar7 = DAT_00806774;
+          piVar7 = PTR_00806774;
         }
         puVar11 = nullptr;
         iVar10 = 0;

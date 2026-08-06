@@ -524,7 +524,7 @@ cf_common_join_005C8ECC:
       this_00->field_2179 = message->id - 0x653f;
       this_00->field_2191 = 0x6500;
       this_00->field_1E2F->count = 0;
-      pcVar15 = LoadResourceString(0x234e,g_module_00807618);
+      pcVar15 = LoadResourceString(0x234e,g_hINSTANCE_00807618);
       uVar19 = 0xffffffff;
       do {
         pcVar23 = pcVar15;
@@ -541,7 +541,7 @@ cf_common_join_005C8ECC:
       uVar20 = 0;
       this_00->field_1F37 = 0;
       Library::DKW::TBL::DArrayAppend(this_00->field_1E2F,&this_00->field_0x1e33);
-      pcVar15 = LoadResourceString(0x234c,g_module_00807618);
+      pcVar15 = LoadResourceString(0x234c,g_hINSTANCE_00807618);
       uVar19 = 0xffffffff;
       do {
         pcVar23 = pcVar15;
@@ -558,7 +558,7 @@ cf_common_join_005C8ECC:
       uVar20 = 0;
       this_00->field_1F37 = 1;
       Library::DKW::TBL::DArrayAppend(this_00->field_1E2F,&this_00->field_0x1e33);
-      pcVar15 = LoadResourceString(0x234f,g_module_00807618);
+      pcVar15 = LoadResourceString(0x234f,g_hINSTANCE_00807618);
       uVar19 = 0xffffffff;
       do {
         pcVar23 = pcVar15;
@@ -639,7 +639,7 @@ joined_r0x005c964b:
         wsprintfA(puVar1,"%d",200);
         Library::DKW::TBL::DArrayAppend(this_00->field_1E2F,puVar1);
         this_00->field_1F37 = 0xffffffff;
-        pcVar15 = LoadResourceString(0x1f55,g_module_00807618);
+        pcVar15 = LoadResourceString(0x1f55,g_hINSTANCE_00807618);
         uVar19 = 0xffffffff;
         do {
           pcVar23 = pcVar15;
@@ -688,17 +688,17 @@ joined_r0x005c964b:
         puVar1 = &this_00->field_0x1e33;
         this_00->field_1E2F->count = 0;
         this_00->field_1F37 = 0;
-        pcVar15 = LoadResourceString(0x1f57,g_module_00807618);
+        pcVar15 = LoadResourceString(0x1f57,g_hINSTANCE_00807618);
         wsprintfA(puVar1,"%s %d",pcVar15,uVar26);
         Library::DKW::TBL::DArrayAppend(this_00->field_1E2F,puVar1);
         this_00->field_1F37 = 1;
         uVar26 = 2;
-        pcVar15 = LoadResourceString(0x1f57,g_module_00807618);
+        pcVar15 = LoadResourceString(0x1f57,g_hINSTANCE_00807618);
         wsprintfA(puVar1,"%s %d",pcVar15,uVar26);
         Library::DKW::TBL::DArrayAppend(this_00->field_1E2F,puVar1);
         this_00->field_1F37 = 2;
         uVar26 = 3;
-        pcVar15 = LoadResourceString(0x1f57,g_module_00807618);
+        pcVar15 = LoadResourceString(0x1f57,g_hINSTANCE_00807618);
         wsprintfA(puVar1,"%s %d",pcVar15,uVar26);
         Library::DKW::TBL::DArrayAppend(this_00->field_1E2F,puVar1);
         this_00->field_21A9 = this_00->field_1E2F->count;
@@ -720,7 +720,7 @@ joined_r0x005c964b:
         this_00->field_2179 = message->id - 0x68ff;
         this_00->field_2191 = 0x6500;
         this_00->field_1E2F->count = 0;
-        pcVar15 = LoadResourceString(0x234b,g_module_00807618);
+        pcVar15 = LoadResourceString(0x234b,g_hINSTANCE_00807618);
         uVar19 = 0xffffffff;
         do {
           pcVar23 = pcVar15;
@@ -737,7 +737,7 @@ joined_r0x005c964b:
         uVar20 = 0;
         this_00->field_1F37 = 0;
         Library::DKW::TBL::DArrayAppend(this_00->field_1E2F,&this_00->field_0x1e33);
-        pcVar15 = LoadResourceString(0x234c,g_module_00807618);
+        pcVar15 = LoadResourceString(0x234c,g_hINSTANCE_00807618);
         uVar19 = 0xffffffff;
         do {
           pcVar23 = pcVar15;
@@ -755,7 +755,7 @@ joined_r0x005c964b:
         this_00->field_1F37 = 1;
         Library::DKW::TBL::DArrayAppend(this_00->field_1E2F,&this_00->field_0x1e33);
         if ((DAT_00807dd1 & 0xffff0000) != 0xd0dd0000) {
-          pcVar15 = LoadResourceString(0x234d,g_module_00807618);
+          pcVar15 = LoadResourceString(0x234d,g_hINSTANCE_00807618);
           uVar19 = 0xffffffff;
           do {
             pcVar23 = pcVar15;
@@ -848,7 +848,7 @@ joined_r0x005c964b:
       if (local_8 != nullptr) {
         iVar12 = 2;
         do {
-          pcVar15 = LoadResourceString(0x2354,g_module_00807618);
+          pcVar15 = LoadResourceString(0x2354,g_hINSTANCE_00807618);
           wsprintfA(&this_00->field_0x1e33,"%d %s",iVar12,pcVar15);
           this_00->field_1F37 = iVar12;
           Library::DKW::TBL::DArrayAppend(this_00->field_1E2F,&this_00->field_0x1e33);
@@ -940,7 +940,7 @@ joined_r0x005c996c:
     this_00->field_2179 = message->id - 0x68ff;
     this_00->field_2191 = 0x6500;
     this_00->field_1E2F->count = 0;
-    pcVar15 = LoadResourceString(0x2355,g_module_00807618);
+    pcVar15 = LoadResourceString(0x2355,g_hINSTANCE_00807618);
     uVar19 = 0xffffffff;
     do {
       pcVar23 = pcVar15;
@@ -957,7 +957,7 @@ joined_r0x005c996c:
     uVar20 = 0;
     this_00->field_1F37 = 0;
     Library::DKW::TBL::DArrayAppend(this_00->field_1E2F,&this_00->field_0x1e33);
-    pcVar15 = LoadResourceString(0x234c,g_module_00807618);
+    pcVar15 = LoadResourceString(0x234c,g_hINSTANCE_00807618);
     uVar19 = 0xffffffff;
     do {
       pcVar23 = pcVar15;
@@ -974,7 +974,7 @@ joined_r0x005c996c:
     uVar20 = 0;
     this_00->field_1F37 = 1;
     Library::DKW::TBL::DArrayAppend(this_00->field_1E2F,&this_00->field_0x1e33);
-    pcVar15 = LoadResourceString(0x2356,g_module_00807618);
+    pcVar15 = LoadResourceString(0x2356,g_hINSTANCE_00807618);
     uVar19 = 0xffffffff;
     do {
       pcVar23 = pcVar15;
@@ -1006,7 +1006,7 @@ LAB_005c9c8a:
       this_00->field_2179 = message->id - 0x68ff;
       this_00->field_2191 = 0x6500;
       this_00->field_1E2F->count = 0;
-      pcVar15 = LoadResourceString(0x234e,g_module_00807618);
+      pcVar15 = LoadResourceString(0x234e,g_hINSTANCE_00807618);
       uVar19 = 0xffffffff;
       do {
         pcVar23 = pcVar15;
@@ -1023,7 +1023,7 @@ LAB_005c9c8a:
       uVar20 = 0;
       this_00->field_1F37 = 0;
       Library::DKW::TBL::DArrayAppend(this_00->field_1E2F,&this_00->field_0x1e33);
-      pcVar15 = LoadResourceString(0x234c,g_module_00807618);
+      pcVar15 = LoadResourceString(0x234c,g_hINSTANCE_00807618);
       uVar19 = 0xffffffff;
       do {
         pcVar23 = pcVar15;
@@ -1040,7 +1040,7 @@ LAB_005c9c8a:
       uVar20 = 0;
       this_00->field_1F37 = 1;
       Library::DKW::TBL::DArrayAppend(this_00->field_1E2F,&this_00->field_0x1e33);
-      pcVar15 = LoadResourceString(0x234f,g_module_00807618);
+      pcVar15 = LoadResourceString(0x234f,g_hINSTANCE_00807618);
       uVar19 = 0xffffffff;
       do {
         pcVar23 = pcVar15;
@@ -1071,7 +1071,7 @@ LAB_005c9c8a:
       this_00->field_2179 = message->id - 0x68ff;
       this_00->field_2191 = 0x6500;
       this_00->field_1E2F->count = 0;
-      pcVar15 = LoadResourceString(0x234e,g_module_00807618);
+      pcVar15 = LoadResourceString(0x234e,g_hINSTANCE_00807618);
       uVar19 = 0xffffffff;
       do {
         pcVar23 = pcVar15;
@@ -1088,7 +1088,7 @@ LAB_005c9c8a:
       uVar20 = 0;
       this_00->field_1F37 = 0;
       Library::DKW::TBL::DArrayAppend(this_00->field_1E2F,&this_00->field_0x1e33);
-      pcVar15 = LoadResourceString(0x234c,g_module_00807618);
+      pcVar15 = LoadResourceString(0x234c,g_hINSTANCE_00807618);
       uVar19 = 0xffffffff;
       do {
         pcVar23 = pcVar15;
@@ -1105,7 +1105,7 @@ LAB_005c9c8a:
       uVar20 = 0;
       this_00->field_1F37 = 1;
       Library::DKW::TBL::DArrayAppend(this_00->field_1E2F,&this_00->field_0x1e33);
-      pcVar15 = LoadResourceString(0x234f,g_module_00807618);
+      pcVar15 = LoadResourceString(0x234f,g_hINSTANCE_00807618);
       uVar19 = 0xffffffff;
       do {
         pcVar23 = pcVar15;
@@ -1264,7 +1264,7 @@ LAB_005c9e75:
       }
       goto LAB_005ca619;
     case MESS_SHARED_6980:
-      pcVar15 = LoadResourceString(0x2354,g_module_00807618);
+      pcVar15 = LoadResourceString(0x2354,g_hINSTANCE_00807618);
       wsprintfA((LPSTR)local_98,"%d %s",(uint)this_00->field_1F5C,pcVar15);
       goto LAB_005ca73b;
     case MESS_SIDTY_6981:
@@ -1303,7 +1303,7 @@ LAB_005ca619:
       resourceId = 0x234f;
     }
 LAB_005ca70e:
-    pcVar15 = LoadResourceString(resourceId,g_module_00807618);
+    pcVar15 = LoadResourceString(resourceId,g_hINSTANCE_00807618);
 LAB_005ca71b:
     uVar19 = 0xffffffff;
     do {
@@ -1360,7 +1360,7 @@ LAB_005ca73b:
     uVar19 = ((message->arg0).words.low != 1) + 5;
     iVar17 = -1;
     iVar12 = -1;
-    puVar18 = (uint *)LoadResourceString(0x234a,g_module_00807618);
+    puVar18 = (uint *)LoadResourceString(0x234a,g_hINSTANCE_00807618);
     ccFntTy::WrStr(g_startSystem_0081176C->field_0030,puVar18,iVar12,iVar17,uVar19);
     if ((message->arg0).words.low != 3) break;
 LAB_005ca964:
@@ -1465,12 +1465,12 @@ LAB_005cab38:
     }
     iVar17 = -1;
     iVar12 = -1;
-    puVar18 = (uint *)LoadResourceString(local_20,g_module_00807618);
+    puVar18 = (uint *)LoadResourceString(local_20,g_hINSTANCE_00807618);
     ccFntTy::WrStr(g_startSystem_0081176C->field_0034,puVar18,iVar12,iVar17,uVar19);
     break;
   case 0x6586:
     if (DAT_00808a97 == -1) {
-      pcVar15 = LoadResourceString(0x1f55,g_module_00807618);
+      pcVar15 = LoadResourceString(0x1f55,g_hINSTANCE_00807618);
       uVar19 = 0xffffffff;
       do {
         pcVar23 = pcVar15;
@@ -1501,12 +1501,12 @@ LAB_005cab38:
     break;
   case 0x6587:
     if (DAT_00808a9b == 0xff) {
-      pcVar15 = LoadResourceString(0x1f59,g_module_00807618);
+      pcVar15 = LoadResourceString(0x1f59,g_hINSTANCE_00807618);
       wsprintfA((LPSTR)&DAT_0080f33a,"%s",pcVar15);
     }
     else {
       iVar12 = DAT_00808a9b + 1;
-      pcVar15 = LoadResourceString(0x1f57,g_module_00807618);
+      pcVar15 = LoadResourceString(0x1f57,g_hINSTANCE_00807618);
       wsprintfA((LPSTR)&DAT_0080f33a,"%s %d",pcVar15,iVar12);
     }
     ccFntTy::SetSurf(g_startSystem_0081176C->field_0034,this_00->field_1E1E,0,local_1c,local_18,

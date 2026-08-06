@@ -11,7 +11,7 @@ void __fastcall FUN_0063f340(AnonShape_0063F340_151E9E14 *param_1)
   puVar3 = param_1->field_0347;
   if (puVar3 == nullptr) {
     puVar3 = Library::Ourlib::MFRLOAD::mfRLoad
-                       (DAT_00806774,CASE_1D,"expl_nb0",0xffffffff,0,1,0,nullptr);
+                       (PTR_00806774,CASE_1D,"expl_nb0",0xffffffff,0,1,0,nullptr);
     param_1->field_0347 = puVar3;
     param_1->field_033E = *(int *)puVar3 + -7;
     if (puVar3 == nullptr) {

@@ -12,7 +12,7 @@ void FUN_00495e50(void)
   else {
     psVar1 = nullptr;
   }
-  thunk_FUN_00575640(DAT_00806750,(undefined4 *)g_pathingGrid.cells,psVar1);
+  thunk_FUN_00575640(PTR_00806750,(undefined4 *)g_pathingGrid.cells,psVar1);
   return;
 }
 

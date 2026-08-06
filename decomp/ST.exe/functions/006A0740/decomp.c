@@ -43,7 +43,7 @@ int __thiscall CGenerate::SaveMap(CGenerate *this)
   if (iVar2 == 0) {
     local_8 = 0;
   }
-  pcVar3 = LoadResourceString(0x232b,g_module_00807618);
+  pcVar3 = LoadResourceString(0x232b,g_hINSTANCE_00807618);
   uVar4 = 0xffffffff;
   do {
     pcVar6 = pcVar3;
@@ -68,8 +68,7 @@ int __thiscall CGenerate::SaveMap(CGenerate *this)
   }
   this_00->field_000C[4] = 0x20;
   iVar2 = Library::Ourlib::MFSTMAP::mfTMapSave
-                    ((undefined2 *)this_00->field_000C,(int)this_00->field_0018,"3D_MAP",
-                     '\0');
+                    ((short *)this_00->field_000C,(int)this_00->field_0018,"3D_MAP",'\0');
   if (iVar2 != 0) {
     local_8 = 0;
   }

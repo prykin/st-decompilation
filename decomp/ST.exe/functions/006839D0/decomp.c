@@ -43,7 +43,7 @@ int __cdecl FUN_006839d0(int param_1,int *param_2,ushort param_3,int param_4)
       cVar1 = (&DAT_00813bc8)[param_4 + DAT_008488b0 * 0x2b14];
       switch(cVar1) {
       case '\x01':
-        thunk_FUN_006838b0(param_2,cVar1,(byte *)(&DAT_00811aec)[DAT_008488b0 * 0xac5 + local_c],
+        thunk_FUN_006838b0(param_2,cVar1,(byte *)(&PTR_00811aec)[DAT_008488b0 * 0xac5 + local_c],
                            iVar3);
         local_c = local_c + 1;
         break;

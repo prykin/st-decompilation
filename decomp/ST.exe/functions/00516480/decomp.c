@@ -103,13 +103,13 @@ void __thiscall HelpPanelTy::TTreeProc(HelpPanelTy *this,uint param_1,char param
   }
   iVar13 = -1;
   iVar5 = -1;
-  puVar7 = (uint *)LoadResourceString(0x55f4,g_module_00807618);
+  puVar7 = (uint *)LoadResourceString(0x55f4,g_hINSTANCE_00807618);
   ccFntTy::WrStr(this_00->field_01E4,puVar7,iVar5,iVar13,uVar6);
   ccFntTy::SetSurf(this_00->field_01E0,(int)this_00->field_0068,0,0x21,0x2a,0x19c,0xf);
   uVar6 = (DAT_0080874e != 3) - 1 & 5;
   iVar13 = -1;
   iVar5 = -1;
-  puVar7 = (uint *)LoadResourceString(resourceId,g_module_00807618);
+  puVar7 = (uint *)LoadResourceString(resourceId,g_hINSTANCE_00807618);
   ccFntTy::WrStr(this_00->field_01E0,puVar7,iVar5,iVar13,uVar6);
   pAVar2 = this_00->field_0218;
   uVar6 = pAVar2->field_0014;

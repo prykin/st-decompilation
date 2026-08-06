@@ -42,10 +42,10 @@ void __thiscall UpgPanelTy::InitUpgPanel(UpgPanelTy *this)
     SpecPanelTy::InitPanel
               ((SpecPanelTy *)this_00,pCVar3,iVar2,uVar5,iVar6,iVar9,UVar10,uVar11,uVar12);
     puVar4 = Library::Ourlib::MFRLOAD::mfRLoad
-                       (DAT_00806794,CASE_B,&DAT_007c20a0,0xffffffff,0,1,0,nullptr);
+                       (PTR_00806794,CASE_B,&DAT_007c20a0,0xffffffff,0,1,0,nullptr);
     this_00->field_03EB = puVar4;
     puVar4 = Library::Ourlib::MFRLOAD::mfRLoad
-                       (DAT_00806794,CASE_B,&DAT_007c38c8,0xffffffff,0,1,0,nullptr);
+                       (PTR_00806794,CASE_B,&DAT_007c38c8,0xffffffff,0,1,0,nullptr);
     this_00->field_03EF = puVar4;
     puVar13 = nullptr;
     iVar6 = 0;
@@ -54,7 +54,7 @@ void __thiscall UpgPanelTy::InitUpgPanel(UpgPanelTy *this)
     uVar7 = 0xffffffff;
     pCVar3 = thunk_FUN_00571240("FRAMES",0);
     puVar4 = Library::Ourlib::MFRLOAD::mfRLoad
-                       (DAT_00806794,CASE_B,pCVar3,uVar7,bVar8,iVar2,iVar6,puVar13);
+                       (PTR_00806794,CASE_B,pCVar3,uVar7,bVar8,iVar2,iVar6,puVar13);
     this_00->field_03F3 = puVar4;
     g_currentExceptionFrame = local_4c.previous;
     return;

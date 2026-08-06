@@ -76,7 +76,7 @@ SpecPanelTy::InitPanel
     uVar10 = 0;
     iVar16 = -1;
     iVar4 = -2;
-    resourceString = (uint *)LoadResourceString(param_6,g_module_00807618);
+    resourceString = (uint *)LoadResourceString(param_6,g_hINSTANCE_00807618);
     ccFntTy::WrStr(pSVar3->field_0189,resourceString,iVar4,iVar16,uVar10);
     uVar18 = 1;
     pAVar1 = pSVar3->field_0000;

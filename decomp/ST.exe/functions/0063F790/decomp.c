@@ -145,7 +145,7 @@ int __fastcall FUN_0063f790(AnonShape_0063F790_F83B8A8C *param_1)
         /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
         Library::Ourlib::ST3DSMAP::FUN_006e9720
                   ((void *)param_1->field_0211,uVar9,
-                   (uint)*(byte *)((int)param_1->field_037F + 0x15) * 0x100 + DAT_008032b8);
+                   (uint)(PTR_008032b8 + (uint)*(byte *)((int)param_1->field_037F + 0x15) * 0x80));
       }
     }
   }

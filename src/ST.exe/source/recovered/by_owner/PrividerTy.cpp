@@ -2,7 +2,7 @@
 // Generated translation unit: source/recovered/by_owner/PrividerTy.cpp
 
 // 005BB9F0 PrividerTy::sub_005BB9F0
-#line 1 "decomp/ST.exe/functions/005BB9F0/decomp.c"
+#line 4 "decomp/ST.exe/functions/005BB9F0/decomp.c"
 /* [STMethodOwnerApplier] Structural method owner recovered as PrividerTy.
    Evidence: this_call_owners=[PrividerTy]; agreed_this_calls=1; incoming_this_accesses=7;
    incoming_edx_uses=0; incoming_stack_parameter_uses=0; direct_non_thunk_callers=0;

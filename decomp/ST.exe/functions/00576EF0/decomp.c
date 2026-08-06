@@ -8,7 +8,7 @@
 undefined4 __thiscall GameSystemC::InitSystem(GameSystemC *this)
 
 {
-  AnonPointee_ST3DSMAPContext_0280 *pAVar2;
+  short *psVar2;
   GameSystemC *pGVar3;
   int iVar4;
   AnonShape_006DBCA0_EF06575F *pAVar5;
@@ -25,7 +25,7 @@ undefined4 __thiscall GameSystemC::InitSystem(GameSystemC *this)
   local_8 = this;
   iVar4 = Library::MSVCRT::__setjmp3(local_4c.jumpBuffer,0);
   if (iVar4 == 0) {
-    DAT_00806750 = (AnonPointee_ST3DSMAPContext_0280 *)LoadLand(g_cMf32_00806754,"3D_MAP");
+    PTR_00806750 = LoadLand(g_cMf32_00806754,"3D_MAP");
     pAVar5 = (AnonShape_006DBCA0_EF06575F *)FUN_006b04d0(0x4f2);
     if (pAVar5 == nullptr) {
       pSVar6 = nullptr;
@@ -33,10 +33,10 @@ undefined4 __thiscall GameSystemC::InitSystem(GameSystemC *this)
     else {
       pSVar6 = (ST3DSMAPContext *)FUN_006dbca0(pAVar5);
     }
-    pAVar2 = DAT_00806750;
+    psVar2 = PTR_00806750;
     g_sT3DSMAPContext_00807598 = pSVar6;
-    pSVar6->field_0280 = DAT_00806750;
-    iVar4 = (int)*(short *)pAVar2 / 2;
+    pSVar6->field_0280 = (AnonPointee_ST3DSMAPContext_0280 *)PTR_00806750;
+    iVar4 = (int)*psVar2 / 2;
     pSVar6->field_0284 = iVar4;
     pSVar6->field_0288 = iVar4 * iVar4;
     SystemClassTy::InitSystem((SystemClassTy *)local_8);

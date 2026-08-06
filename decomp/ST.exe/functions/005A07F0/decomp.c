@@ -48,8 +48,8 @@ void __thiscall FSGSTy::sub_005A07F0(FSGSTy *this)
     StartSystemTy::sub_006E56B0(this->field_000C,this->field_1AC8);
   }
   this->field_1AC8 = 0;
-  if ((DArrayTy *)this->field_1EA2 != nullptr) {
-    FUN_006b5570((DArrayTy *)this->field_1EA2);
+  if (this->field_1EA2 != nullptr) {
+    FUN_006b5570(this->field_1EA2);
   }
   this->field_1EA2 = nullptr;
   if (this->field_1AE8 != nullptr) {

@@ -43,7 +43,7 @@ void __thiscall StartSystemTy::AddToChat(StartSystemTy *this,int param_1)
       local_10 = pDVar2;
       SystemClassTy::SendMessage((SystemClassTy *)local_c,2,local_c->field_0550,(int)local_34);
       local_14 = (uint)uStack_1e;
-      if ((int)(DAT_0080c4fa[2] - 5) <= (int)local_14) {
+      if ((int)(g_dArray_0080C4FA->elementSize - 5) <= (int)local_14) {
         local_5 = '\x01';
       }
       wsprintfA((LPSTR)&DAT_0080f33a,"&0%s:",param_1);
@@ -66,7 +66,7 @@ void __thiscall StartSystemTy::AddToChat(StartSystemTy *this,int param_1)
           do {
             text = *(char **)(pDVar3->growCapacity + iVar5 * 4);
 LAB_005dd982:
-            Library::DKW::TBL::FUN_006b5aa0(DAT_0080c4fa,text);
+            Library::DKW::TBL::FUN_006b5aa0(&g_dArray_0080C4FA->flags,text);
             iVar5 = iVar5 + 1;
           } while (iVar5 < (int)pDVar3->elementSize);
         }
@@ -76,18 +76,18 @@ LAB_005dd982:
       FUN_006b5570(pDVar2);
       local_24 = 0x28;
       local_20 = 1;
-      uStack_1e = (ushort)DAT_0080c4fa[2];
+      uStack_1e = (ushort)g_dArray_0080C4FA->elementSize;
       SystemClassTy::SendMessage((SystemClassTy *)this_00,2,this_00->field_0550,(int)local_34);
       local_24 = 0x22;
       local_20 = 0;
       if (local_5 == '\0') {
         uStack_1e = (short)local_14;
       }
-      else if ((int)DAT_0080c4fa[2] < 6) {
+      else if ((int)g_dArray_0080C4FA->elementSize < 6) {
         uStack_1e = 0;
       }
       else {
-        uStack_1e = (short)DAT_0080c4fa[2] + -5;
+        uStack_1e = (short)g_dArray_0080C4FA->elementSize + -5;
       }
       SystemClassTy::SendMessage((SystemClassTy *)this_00,2,this_00->field_0550,(int)local_34);
       local_24 = 0x20;

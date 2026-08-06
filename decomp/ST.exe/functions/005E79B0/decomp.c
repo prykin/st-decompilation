@@ -64,7 +64,7 @@ void __thiscall WaitTy::PaintWait(WaitTy *this,char param_1)
     pcVar6 = g_startSystem_0081176C->field_0030;
     uVar5 = 0xffffffff;
     uVar4 = 0xfffffffe;
-    resourceString = (uint *)LoadResourceString(0x26ae,g_module_00807618);
+    resourceString = (uint *)LoadResourceString(0x26ae,g_hINSTANCE_00807618);
     StartServTy::WrTextDDX(this_02,0,0xe9,0x14,0x14c,0x18,resourceString,uVar4,uVar5,pcVar6,uVar7);
     g_currentExceptionFrame = local_4c.previous;
     return;

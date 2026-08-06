@@ -83,7 +83,7 @@ MReportTy::PaintBut(MReportTy *this,STMessage *param_1,UINT param_2,int param_3,
                  (byte)_local_10);
     if (((param_4 == '\0') && (param_2 != 0)) || ((param_4 != '\0' && (param_5 != nullptr)))) {
       if (param_4 == '\0') {
-        param_5 = (uint *)LoadResourceString(param_2,g_module_00807618);
+        param_5 = (uint *)LoadResourceString(param_2,g_hINSTANCE_00807618);
       }
       local_18 = param_5;
       ccFntTy::SetSurf(local_c->field_0083,(int)pAVar5,0,0,0,0,0);
@@ -110,7 +110,7 @@ MReportTy::PaintBut(MReportTy *this,STMessage *param_1,UINT param_2,int param_3,
     Library::DKW::DDX::FUN_006b48e0
               ((int)g_dDXContext_0080759C,*SVar3.i32,*(int *)(SVar3.u32 + 4),
                (AnonPointee_MReportTy_0073 *)pAVar5,0,0,0,(uint)local_8,(int)pbVar4,
-               (int)&local_c->field_0xa3,0x4c,0x10000ff);
+               (ushort *)&local_c->field_00A3,0x4c,0x10000ff);
     g_currentExceptionFrame = local_64.previous;
     return;
   }

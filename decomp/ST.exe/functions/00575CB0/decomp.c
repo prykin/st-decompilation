@@ -182,7 +182,7 @@ LAB_005761b9:
             local_8 = (AnonShape_00575CB0_0408A0C4 *)&local_10->field_0x6;
             local_58 = 0;
             puVar11 = Library::Ourlib::MFRLOAD::mfRLoad
-                                (DAT_00806764,CASE_1D,(char *)local_8,0xffffffff,0,0,0,
+                                (PTR_00806764,CASE_1D,(char *)local_8,0xffffffff,0,0,0,
                                  nullptr);
             if (puVar11 == nullptr) {
               RaiseInternalException
@@ -201,7 +201,7 @@ LAB_005761b9:
             }
             else {
               puVar11 = Library::Ourlib::MFRLOAD::mfRLoad
-                                  (DAT_00806764,CASE_1D,puVar26,0xffffffff,0,0,0,nullptr);
+                                  (PTR_00806764,CASE_1D,puVar26,0xffffffff,0,0,0,nullptr);
               if (puVar11 == nullptr) {
                 RaiseInternalException
                           (-4,g_overwriteContext_007ED77C,"E:\\__titans\\Object\\To_alga.cpp",
@@ -278,7 +278,7 @@ LAB_00576308:
               ST3DSMAPContext::sub_006EA270
                         (g_sT3DSMAPContext_00807598,local_c,1,(int)local_34 % piVar20[3]);
               Library::Ourlib::ST3DSMAP::SprSetShadowTbl
-                        (g_sT3DSMAPContext_00807598,local_c,DAT_008032c0);
+                        (g_sT3DSMAPContext_00807598,local_c,PTR_008032c0);
               ST3DSMAPContext::sub_006EA6D0(g_sT3DSMAPContext_00807598,local_c,1,1);
             }
             iVar8 = local_3c->field_0008 - piVar20[6];

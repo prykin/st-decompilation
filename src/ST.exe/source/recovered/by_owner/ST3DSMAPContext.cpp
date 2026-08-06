@@ -2,7 +2,7 @@
 // Generated translation unit: source/recovered/by_owner/ST3DSMAPContext.cpp
 
 // 006DBAB0 ST3DSMAPContext::sub_006DBAB0
-#line 1 "decomp/ST.exe/functions/006DBAB0/decomp.c"
+#line 4 "decomp/ST.exe/functions/006DBAB0/decomp.c"
 /* [STPrototypeApplier] Propagated parameter 0.
    Evidence: 006DBCF0 -> 006DBAB0 @ 006DBCF3; ST3DSMAPContext::sub_006DBCF0 this
 
@@ -91,7 +91,7 @@ void __thiscall st::fn_006DBAB0(ST3DSMAPContext *this)
 }
 
 // 006DBCF0 ST3DSMAPContext::sub_006DBCF0
-#line 1 "decomp/ST.exe/functions/006DBCF0/decomp.c"
+#line 4 "decomp/ST.exe/functions/006DBCF0/decomp.c"
 /* [STReturnSemanticsApplier] ignored_eax_void.
    Evidence: all observed direct callers ignore the return register (ignored=8, used=0), and
    decompilation contains no value return
@@ -116,7 +116,7 @@ void __thiscall st::fn_006DBCF0(ST3DSMAPContext *this)
 }
 
 // 006DBD20 ST3DSMAPContext::sub_006DBD20
-#line 1 "decomp/ST.exe/functions/006DBD20/decomp.c"
+#line 4 "decomp/ST.exe/functions/006DBD20/decomp.c"
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 /* [STReturnSemanticsApplier] ignored_eax_void.
    Evidence: all observed direct callers ignore the return register (ignored=3, used=0), and
@@ -230,7 +230,7 @@ st::fn_006DBD20
 }
 
 // 006DC050 ST3DSMAPContext::sub_006DC050
-#line 1 "decomp/ST.exe/functions/006DC050/decomp.c"
+#line 4 "decomp/ST.exe/functions/006DC050/decomp.c"
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 /* [STReturnSemanticsApplier] ignored_eax_void.
    Evidence: all observed direct callers ignore the return register (ignored=8, used=0), and
@@ -334,7 +334,7 @@ st::fn_006DC050
 }
 
 // 006DD530 ST3DSMAPContext::sub_006DD530
-#line 1 "decomp/ST.exe/functions/006DD530/decomp.c"
+#line 4 "decomp/ST.exe/functions/006DD530/decomp.c"
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 /* [STReturnSemanticsApplier] ignored_eax_void.
    Evidence: all observed direct callers ignore the return register (ignored=8, used=0), and
@@ -378,7 +378,7 @@ st::fn_006DD530(ST3DSMAPContext *this,float *param_1,float *param_2,float *param
 }
 
 // 006DD610 ST3DSMAPContext::sub_006DD610
-#line 1 "decomp/ST.exe/functions/006DD610/decomp.c"
+#line 4 "decomp/ST.exe/functions/006DD610/decomp.c"
 /* [STPrototypeApplier] Propagated parameter 2.
    Evidence: 00428E50 -> 006DD610 @ 0042922F; zeroed full register at 00429216 | 00691690 ->
    006DD610 @ 006917E9; zeroed full register at 006917A2
@@ -414,7 +414,7 @@ st::fn_006DD610(ST3DSMAPContext *this,uint param_2,double param_3,double param_4
 }
 
 // 006DD790 ST3DSMAPContext::sub_006DD790
-#line 1 "decomp/ST.exe/functions/006DD790/decomp.c"
+#line 4 "decomp/ST.exe/functions/006DD790/decomp.c"
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 /* [STReturnSemanticsApplier] ignored_eax_void.
    Evidence: all observed direct callers ignore the return register (ignored=6, used=0), and
@@ -442,7 +442,7 @@ void __thiscall st::fn_006DD790(ST3DSMAPContext *this,float param_1)
 }
 
 // 006DD800 ST3DSMAPContext::sub_006DD800
-#line 1 "decomp/ST.exe/functions/006DD800/decomp.c"
+#line 4 "decomp/ST.exe/functions/006DD800/decomp.c"
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 /* [STMethodOwnerApplier] Structural method owner recovered as ST3DSMAPContext.
    Evidence: this_call_owners=[ST3DSMAPContext]; agreed_this_calls=3; incoming_this_accesses=6;
@@ -466,7 +466,7 @@ void __thiscall st::fn_006DD800(ST3DSMAPContext *this,float param_1)
 }
 
 // 006DD870 ST3DSMAPContext::sub_006DD870
-#line 1 "decomp/ST.exe/functions/006DD870/decomp.c"
+#line 4 "decomp/ST.exe/functions/006DD870/decomp.c"
 /* [STPrototypeApplier] Propagated parameter 0.
    Evidence: 006DD790 -> 006DD870 @ 006DD7E3; ST3DSMAPContext::sub_006DD790 this; stable alias ESI |
    006DD800 -> 006DD870 @ 006DD853; ST3DSMAPContext::sub_006DD800 this; stable alias ESI | 006DDAE0
@@ -561,7 +561,7 @@ void __thiscall st::fn_006DD870(ST3DSMAPContext *this)
 }
 
 // 006DDA90 ST3DSMAPContext::sub_006DDA90
-#line 1 "decomp/ST.exe/functions/006DDA90/decomp.c"
+#line 4 "decomp/ST.exe/functions/006DDA90/decomp.c"
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 /* [STMethodOwnerApplier] Structural method owner recovered as ST3DSMAPContext.
    Evidence: this_call_owners=[ST3DSMAPContext]; agreed_this_calls=1; incoming_this_accesses=2;
@@ -585,15 +585,18 @@ void __thiscall st::fn_006DDA90(ST3DSMAPContext *this,float param_1,float param_
 }
 
 // 006DDAE0 ST3DSMAPContext::sub_006DDAE0
-#line 1 "decomp/ST.exe/functions/006DDAE0/decomp.c"
+#line 4 "decomp/ST.exe/functions/006DDAE0/decomp.c"
 /* [STMethodOwnerApplier] Structural method owner recovered as ST3DSMAPContext.
    Evidence: this_call_owners=[ST3DSMAPContext]; agreed_this_calls=1; incoming_this_accesses=7;
    incoming_edx_uses=0; incoming_stack_parameter_uses=4; direct_non_thunk_callers=1;
-   incoming_ecx_receiver_callers=0; attributed_named_callers=1; owner_evidence_coverage=adequate */
+   incoming_ecx_receiver_callers=0; attributed_named_callers=1; owner_evidence_coverage=adequate
+
+   [STPrototypeApplier] Propagated parameter 4.
+   Evidence: 0056DB80 -> 006DDAE0 @ 0056E440; data at 008032C8 */
 
 void __thiscall
 st::fn_006DDAE0
-          (ST3DSMAPContext *this,int param_1,int param_2,int param_3,undefined4 *param_4)
+          (ST3DSMAPContext *this,int param_1,int param_2,int param_3,ushort *param_4)
 
 {
   byte *pbVar1;
@@ -613,13 +616,13 @@ st::fn_006DDAE0
   } while (iVar2 < 0x100);
   pbVar1 = this->field_0154 + 0x100;
   for (iVar2 = (uVar3 & 0xffffff) << 6; iVar2 != 0; iVar2 = iVar2 + -1) {
-    *(undefined4 *)pbVar1 = *param_4;
-    param_4 = (undefined4 *)((int)param_4 + 4);
+    *(undefined4 *)pbVar1 = *(undefined4 *)param_4;
+    param_4 = param_4 + 2;
     pbVar1 = pbVar1 + 4;
   }
   for (iVar2 = 0; iVar2 != 0; iVar2 = iVar2 + -1) {
-    *pbVar1 = *(byte *)param_4;
-    param_4 = (undefined4 *)((int)param_4 + 1);
+    *pbVar1 = (byte)*param_4;
+    param_4 = (ushort *)((int)param_4 + 1);
     pbVar1 = pbVar1 + 1;
   }
   st::fn_006DD870(this);
@@ -628,7 +631,7 @@ st::fn_006DDAE0
 }
 
 // 006DDB70 ST3DSMAPContext::sub_006DDB70
-#line 1 "decomp/ST.exe/functions/006DDB70/decomp.c"
+#line 4 "decomp/ST.exe/functions/006DDB70/decomp.c"
 /* [STMethodOwnerApplier] Structural method owner recovered as ST3DSMAPContext.
    Evidence: this_call_owners=[ST3DSMAPContext]; agreed_this_calls=1; incoming_this_accesses=6;
    incoming_edx_uses=0; incoming_stack_parameter_uses=0; direct_non_thunk_callers=2;
@@ -649,7 +652,7 @@ void __thiscall st::fn_006DDB70(ST3DSMAPContext *this)
 }
 
 // 006DDBB0 ST3DSMAPContext::sub_006DDBB0
-#line 1 "decomp/ST.exe/functions/006DDBB0/decomp.c"
+#line 4 "decomp/ST.exe/functions/006DDBB0/decomp.c"
 /* [STPrototypeApplier] Propagated parameter 0.
    Evidence: 0056DB80 -> 006DDBB0 @ 0056E453
 
@@ -668,7 +671,7 @@ void __thiscall st::fn_006DDBB0(ST3DSMAPContext *this)
 }
 
 // 006DDBE0 ST3DSMAPContext::sub_006DDBE0
-#line 1 "decomp/ST.exe/functions/006DDBE0/decomp.c"
+#line 4 "decomp/ST.exe/functions/006DDBE0/decomp.c"
 /* [STPrototypeApplier] Propagated parameter 0.
    Evidence: 004A8920 -> 006DDBE0 @ 004A89ED
 
@@ -739,7 +742,7 @@ void __thiscall st::fn_006DDBE0(ST3DSMAPContext *this)
 }
 
 // 006DDD50 ST3DSMAPContext::sub_006DDD50
-#line 1 "decomp/ST.exe/functions/006DDD50/decomp.c"
+#line 4 "decomp/ST.exe/functions/006DDD50/decomp.c"
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 /* [STPrototypeRepairApplier] Propagated parameter 0.
    Evidence: 005745E0 -> 006DDD50 @ 005746B4; data at 0080760C | 005745E0 -> 006DDD50 @ 005746CF;
@@ -1109,7 +1112,7 @@ cf_common_join_006DE503:
 }
 
 // 006DE9C0 ST3DSMAPContext::sub_006DE9C0
-#line 1 "decomp/ST.exe/functions/006DE9C0/decomp.c"
+#line 4 "decomp/ST.exe/functions/006DE9C0/decomp.c"
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 /* [STPrototypeApplier] Propagated parameter 0.
    Evidence: 006E1460 -> 006DE9C0 @ 006E1A6B; ST3DSMAPContext::sub_006E1460 this; stable alias ESI |
@@ -2149,7 +2152,7 @@ LAB_006defd4:
 }
 
 // 006E1050 ST3DSMAPContext::sub_006E1050
-#line 1 "decomp/ST.exe/functions/006E1050/decomp.c"
+#line 4 "decomp/ST.exe/functions/006E1050/decomp.c"
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 /* [STMethodOwnerApplier] Structural method owner recovered as ST3DSMAPContext.
    Evidence: this_call_owners=[ST3DSMAPContext]; agreed_this_calls=1; incoming_this_accesses=52;
@@ -2257,7 +2260,7 @@ void __fastcall st::fn_006E1050(ST3DSMAPContext *param_1)
 }
 
 // 006E1320 ST3DSMAPContext::sub_006E1320
-#line 1 "decomp/ST.exe/functions/006E1320/decomp.c"
+#line 4 "decomp/ST.exe/functions/006E1320/decomp.c"
 /* [STReturnSemanticsApplier] ignored_eax_void.
    Evidence: all observed direct callers ignore the return register (ignored=2, used=0, unknown=0),
    and decompilation contains no value return
@@ -2307,7 +2310,7 @@ st::fn_006E1320
 }
 
 // 006E1460 ST3DSMAPContext::sub_006E1460
-#line 1 "decomp/ST.exe/functions/006E1460/decomp.c"
+#line 4 "decomp/ST.exe/functions/006E1460/decomp.c"
 /* [STMethodOwnerApplier] Structural method owner recovered as ST3DSMAPContext.
    Evidence: this_call_owners=[ST3DSMAPContext]; agreed_this_calls=1; incoming_this_accesses=124;
    incoming_edx_uses=0; incoming_stack_parameter_uses=87; direct_non_thunk_callers=2;
@@ -2642,7 +2645,7 @@ st::fn_006E1460(ST3DSMAPContext *this,double param_2,double param_3)
 }
 
 // 006E1C20 ST3DSMAPContext::sub_006E1C20
-#line 1 "decomp/ST.exe/functions/006E1C20/decomp.c"
+#line 4 "decomp/ST.exe/functions/006E1C20/decomp.c"
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 /* [STMethodOwnerApplier] Structural method owner recovered as ST3DSMAPContext.
    Evidence: this_call_owners=[ST3DSMAPContext]; agreed_this_calls=5; incoming_this_accesses=13;
@@ -2712,7 +2715,7 @@ st::fn_006E1C20
 }
 
 // 006E25D0 ST3DSMAPContext::sub_006E25D0
-#line 1 "decomp/ST.exe/functions/006E25D0/decomp.c"
+#line 4 "decomp/ST.exe/functions/006E25D0/decomp.c"
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 /* [STMethodOwnerApplier] Structural method owner recovered as ST3DSMAPContext.
    Evidence: this_call_owners=[ST3DSMAPContext]; agreed_this_calls=19; incoming_this_accesses=32;
@@ -2788,7 +2791,7 @@ st::fn_006E25D0
 }
 
 // 006E2970 ST3DSMAPContext::sub_006E2970
-#line 1 "decomp/ST.exe/functions/006E2970/decomp.c"
+#line 4 "decomp/ST.exe/functions/006E2970/decomp.c"
 /* [STReturnSemanticsApplier] ignored_eax_void.
    Evidence: all observed direct callers ignore the return register (ignored=2, used=0), and
    decompilation contains no value return
@@ -2828,7 +2831,7 @@ st::fn_006E2970
 }
 
 // 006E2D00 ST3DSMAPContext::sub_006E2D00
-#line 1 "decomp/ST.exe/functions/006E2D00/decomp.c"
+#line 4 "decomp/ST.exe/functions/006E2D00/decomp.c"
 /* [STMethodOwnerApplier] Structural method owner recovered as ST3DSMAPContext.
    Evidence: this_call_owners=[ST3DSMAPContext]; agreed_this_calls=1; incoming_this_accesses=3;
    incoming_edx_uses=0; incoming_stack_parameter_uses=2; direct_non_thunk_callers=2;
@@ -2845,7 +2848,7 @@ ushort __thiscall st::fn_006E2D00(ST3DSMAPContext *this,int param_1,int param_2)
 }
 
 // 006E3210 ST3DSMAPContext::sub_006E3210
-#line 1 "decomp/ST.exe/functions/006E3210/decomp.c"
+#line 4 "decomp/ST.exe/functions/006E3210/decomp.c"
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 /* [STMethodOwnerApplier] Structural method owner recovered as ST3DSMAPContext.
    Evidence: this_call_owners=[ST3DSMAPContext]; agreed_this_calls=2; incoming_this_accesses=8;
@@ -2897,7 +2900,7 @@ float10 __thiscall st::fn_006E3210(ST3DSMAPContext *param_1,int param_2,int para
 }
 
 // 006E3310 ST3DSMAPContext::sub_006E3310
-#line 1 "decomp/ST.exe/functions/006E3310/decomp.c"
+#line 4 "decomp/ST.exe/functions/006E3310/decomp.c"
 /* [STMethodOwnerApplier] Structural method owner recovered as ST3DSMAPContext.
    Evidence: this_call_owners=[ST3DSMAPContext]; agreed_this_calls=3; incoming_this_accesses=7;
    incoming_edx_uses=2; incoming_stack_parameter_uses=15; direct_non_thunk_callers=4;
@@ -2954,7 +2957,7 @@ st::fn_006E3310
 }
 
 // 006E6400 ST3DSMAPContext::sub_006E6400
-#line 1 "decomp/ST.exe/functions/006E6400/decomp.c"
+#line 4 "decomp/ST.exe/functions/006E6400/decomp.c"
 /* [STMethodOwnerApplier] Structural method owner recovered as ST3DSMAPContext.
    Evidence: this_call_owners=[ST3DSMAPContext]; agreed_this_calls=1; incoming_this_accesses=10;
    incoming_edx_uses=0; incoming_stack_parameter_uses=4; direct_non_thunk_callers=1;
@@ -2982,7 +2985,7 @@ st::fn_006E6400
 }
 
 // 006E6500 ST3DSMAPContext::sub_006E6500
-#line 1 "decomp/ST.exe/functions/006E6500/decomp.c"
+#line 4 "decomp/ST.exe/functions/006E6500/decomp.c"
 /* [STMethodOwnerApplier] Structural method owner recovered as ST3DSMAPContext.
    Evidence: this_call_owners=[ST3DSMAPContext]; agreed_this_calls=4; incoming_this_accesses=8;
    incoming_edx_uses=0; incoming_stack_parameter_uses=1; direct_non_thunk_callers=3;
@@ -3006,7 +3009,7 @@ void __thiscall st::fn_006E6500(ST3DSMAPContext *this,undefined4 *param_1)
 }
 
 // 006E6710 ST3DSMAPContext::sub_006E6710
-#line 1 "decomp/ST.exe/functions/006E6710/decomp.c"
+#line 4 "decomp/ST.exe/functions/006E6710/decomp.c"
 /* [STPrototypeApplier] Propagated parameter 3.
    Evidence: 0041CE40 -> 006E6710 @ 0041CEFD | 0041CFF0 -> 006E6710 @ 0041D0B4 | 0041D1A0 ->
    006E6710 @ 0041D264 | 0041D3E0 -> 006E6710 @ 0041D4A4 | 0041DD00 -> 006E6710 @ 0041DE41 |
@@ -3052,7 +3055,7 @@ LAB_006e674e:
 }
 
 // 006E6780 ST3DSMAPContext::sub_006E6780
-#line 1 "decomp/ST.exe/functions/006E6780/decomp.c"
+#line 4 "decomp/ST.exe/functions/006E6780/decomp.c"
 /* [STMethodOwnerApplier] Structural method owner recovered as ST3DSMAPContext.
    Evidence: this_call_owners=[ST3DSMAPContext]; agreed_this_calls=6; incoming_this_accesses=1;
    incoming_edx_uses=0; incoming_stack_parameter_uses=1; direct_non_thunk_callers=9;
@@ -3080,7 +3083,7 @@ void __thiscall st::fn_006E6780(ST3DSMAPContext *this,int param_1)
 }
 
 // 006E68C0 ST3DSMAPContext::sub_006E68C0
-#line 1 "decomp/ST.exe/functions/006E68C0/decomp.c"
+#line 4 "decomp/ST.exe/functions/006E68C0/decomp.c"
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 /* [STMethodOwnerApplier] Structural method owner recovered as ST3DSMAPContext.
    Evidence: this_call_owners=[ST3DSMAPContext]; agreed_this_calls=3; incoming_this_accesses=6;
@@ -3173,7 +3176,7 @@ LAB_006e6a01:
 }
 
 // 006E6AF0 ST3DSMAPContext::sub_006E6AF0
-#line 1 "decomp/ST.exe/functions/006E6AF0/decomp.c"
+#line 4 "decomp/ST.exe/functions/006E6AF0/decomp.c"
 /* [STHiddenThisApplier] Anonymous hidden receiver recovered as
    /SubmarineTitans/Recovered/HiddenThis/AnonReceiver_006E6AF0.
    Evidence: incoming_receiver_captures=1; receiver_accesses=3; incoming_edx_uses=0; calls=5;
@@ -3484,7 +3487,7 @@ LAB_006e6f08:
 }
 
 // 006E6FB0 ST3DSMAPContext::sub_006E6FB0
-#line 1 "decomp/ST.exe/functions/006E6FB0/decomp.c"
+#line 4 "decomp/ST.exe/functions/006E6FB0/decomp.c"
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 /* [STPrototypeApplier] Propagated parameter 1.
    Evidence: 006E6FB0 -> 006B5B10 @ 006E77B4 | 006E6FB0 -> 006B5B10 @ 006E809F | 006E6FB0 ->
@@ -4180,7 +4183,7 @@ LAB_006e7ff9:
 }
 
 // 006E8580 ST3DSMAPContext::sub_006E8580
-#line 1 "decomp/ST.exe/functions/006E8580/decomp.c"
+#line 4 "decomp/ST.exe/functions/006E8580/decomp.c"
 /* [STMethodOwnerApplier] Structural method owner recovered as ST3DSMAPContext.
    Evidence: this_call_owners=[ST3DSMAPContext]; agreed_this_calls=1; incoming_this_accesses=6;
    incoming_edx_uses=0; incoming_stack_parameter_uses=1; direct_non_thunk_callers=1;
@@ -4208,7 +4211,7 @@ void __thiscall st::fn_006E8580(ST3DSMAPContext *this,int *param_1)
 }
 
 // 006E8630 ST3DSMAPContext::sub_006E8630
-#line 1 "decomp/ST.exe/functions/006E8630/decomp.c"
+#line 4 "decomp/ST.exe/functions/006E8630/decomp.c"
 /* [STMethodOwnerApplier] Structural method owner recovered as ST3DSMAPContext.
    Evidence: this_call_owners=[ST3DSMAPContext]; agreed_this_calls=2; incoming_this_accesses=1;
    incoming_edx_uses=0; incoming_stack_parameter_uses=1; direct_non_thunk_callers=2;
@@ -4222,7 +4225,7 @@ void __thiscall st::fn_006E8630(ST3DSMAPContext *this,undefined4 param_1)
 }
 
 // 006E8640 ST3DSMAPContext::sub_006E8640
-#line 1 "decomp/ST.exe/functions/006E8640/decomp.c"
+#line 4 "decomp/ST.exe/functions/006E8640/decomp.c"
 /* [STPrototypeApplier] Propagated parameter 1.
    Evidence: 00533D10 -> 006E8640 @ 00534E78 | 005776D0 -> 006E8640 @ 00577B98
 
@@ -4240,7 +4243,7 @@ void __thiscall st::fn_006E8640(ST3DSMAPContext *this,char *text,char *param_2)
 }
 
 // 006E8660 ST3DSMAPContext::sub_006E8660
-#line 1 "decomp/ST.exe/functions/006E8660/decomp.c"
+#line 4 "decomp/ST.exe/functions/006E8660/decomp.c"
 /* [STMethodOwnerApplier] Structural method owner recovered as ST3DSMAPContext.
    Evidence: this_call_owners=[ST3DSMAPContext]; agreed_this_calls=31; incoming_this_accesses=10;
    incoming_edx_uses=0; incoming_stack_parameter_uses=10; direct_non_thunk_callers=34;
@@ -4333,7 +4336,7 @@ st::fn_006E8660
 }
 
 // 006E88C0 ST3DSMAPContext::sub_006E88C0
-#line 1 "decomp/ST.exe/functions/006E88C0/decomp.c"
+#line 4 "decomp/ST.exe/functions/006E88C0/decomp.c"
 /* [STPrototypeApplier] Propagated parameter 9.
    Evidence: 0061DFE0 -> 006E88C0 @ 0061E082; unproven partial register write at 0061E054 | 0061E7F0
    -> 006E88C0 @ 0061EDAF; literal 172 at 0061ED7C
@@ -4382,7 +4385,7 @@ st::fn_006E88C0
 }
 
 // 006E8EA0 ST3DSMAPContext::sub_006E8EA0
-#line 1 "decomp/ST.exe/functions/006E8EA0/decomp.c"
+#line 4 "decomp/ST.exe/functions/006E8EA0/decomp.c"
 /* [STMethodOwnerApplier] Structural method owner recovered as ST3DSMAPContext.
    Evidence: this_call_owners=[ST3DSMAPContext]; agreed_this_calls=2; incoming_this_accesses=7;
    incoming_edx_uses=0; incoming_stack_parameter_uses=1; direct_non_thunk_callers=2;
@@ -4454,7 +4457,7 @@ st::fn_006E8EA0(ST3DSMAPContext *this,AnonShape_006E8EA0_96B71903 *param_1)
 }
 
 // 006E9000 ST3DSMAPContext::sub_006E9000
-#line 1 "decomp/ST.exe/functions/006E9000/decomp.c"
+#line 4 "decomp/ST.exe/functions/006E9000/decomp.c"
 /* [STPrototypeApplier] Propagated parameter 2.
    Evidence: raw retained-width parameter lifetime: width=2, reads=1, sites=006E903A MOV AX,word ptr
    [EBP + 0xc]
@@ -4500,7 +4503,7 @@ st::fn_006E9000
 }
 
 // 006E91D0 ST3DSMAPContext::sub_006E91D0
-#line 1 "decomp/ST.exe/functions/006E91D0/decomp.c"
+#line 4 "decomp/ST.exe/functions/006E91D0/decomp.c"
 /* [STReturnSemanticsApplier] ignored_eax_void.
    Evidence: all observed direct callers ignore the return register (ignored=2, used=0), and
    decompilation contains no value return
@@ -4525,7 +4528,7 @@ void __thiscall st::fn_006E91D0(ST3DSMAPContext *this,int *param_1)
 }
 
 // 006E98E0 ST3DSMAPContext::sub_006E98E0
-#line 1 "decomp/ST.exe/functions/006E98E0/decomp.c"
+#line 4 "decomp/ST.exe/functions/006E98E0/decomp.c"
 /* [STPrototypeApplier] Propagated parameter 3.
    Evidence: 00556170 -> 006E98E0 @ 00556296; MOVSX at 00556284 establishes signed source width 2 |
    00556760 -> 006E98E0 @ 00556AD6; MOVSX at 00556AC1 establishes signed source width 2
@@ -4586,7 +4589,7 @@ st::fn_006E98E0
 }
 
 // 006E9CB0 ST3DSMAPContext::sub_006E9CB0
-#line 1 "decomp/ST.exe/functions/006E9CB0/decomp.c"
+#line 4 "decomp/ST.exe/functions/006E9CB0/decomp.c"
 /* [STMethodOwnerApplier] Structural method owner recovered as ST3DSMAPContext.
    Evidence: this_call_owners=[ST3DSMAPContext]; agreed_this_calls=3; incoming_this_accesses=2;
    incoming_edx_uses=0; incoming_stack_parameter_uses=2; direct_non_thunk_callers=5;
@@ -4622,7 +4625,7 @@ uint * __thiscall st::fn_006E9CB0(ST3DSMAPContext *this,uint *param_1,uint param
 }
 
 // 006E9D40 ST3DSMAPContext::sub_006E9D40
-#line 1 "decomp/ST.exe/functions/006E9D40/decomp.c"
+#line 4 "decomp/ST.exe/functions/006E9D40/decomp.c"
 /* [STMethodOwnerApplier] Structural method owner recovered as ST3DSMAPContext.
    Evidence: this_call_owners=[ST3DSMAPContext]; agreed_this_calls=8; incoming_this_accesses=2;
    incoming_edx_uses=0; incoming_stack_parameter_uses=2; direct_non_thunk_callers=10;
@@ -4658,7 +4661,7 @@ uint * __thiscall st::fn_006E9D40(ST3DSMAPContext *this,uint *param_1,uint param
 }
 
 // 006E9EF0 ST3DSMAPContext::sub_006E9EF0
-#line 1 "decomp/ST.exe/functions/006E9EF0/decomp.c"
+#line 4 "decomp/ST.exe/functions/006E9EF0/decomp.c"
 /* [STReturnSemanticsApplier] ignored_eax_void.
    Evidence: all observed direct callers ignore the return register (ignored=5, used=0), and
    decompilation contains no value return
@@ -4746,7 +4749,7 @@ st::fn_006E9EF0
 }
 
 // 006EA270 ST3DSMAPContext::sub_006EA270
-#line 1 "decomp/ST.exe/functions/006EA270/decomp.c"
+#line 4 "decomp/ST.exe/functions/006EA270/decomp.c"
 /* [STPrototypeRepairApplier] Propagated parameter 3.
    Evidence: 00556760 -> 006EA270 @ 00556B06 | 006377B0 -> 006EA270 @ 00637831 | 00637930 ->
    006EA270 @ 006379CD
@@ -4780,7 +4783,7 @@ st::fn_006EA270(ST3DSMAPContext *this,uint param_1,uint param_2,uint param_3)
 }
 
 // 006EA5E0 ST3DSMAPContext::sub_006EA5E0
-#line 1 "decomp/ST.exe/functions/006EA5E0/decomp.c"
+#line 4 "decomp/ST.exe/functions/006EA5E0/decomp.c"
 /* [STMethodOwnerApplier] Structural method owner recovered as ST3DSMAPContext.
    Evidence: this_call_owners=[ST3DSMAPContext]; agreed_this_calls=2; incoming_this_accesses=2;
    incoming_edx_uses=0; incoming_stack_parameter_uses=3; direct_non_thunk_callers=5;
@@ -4818,7 +4821,7 @@ st::fn_006EA5E0(ST3DSMAPContext *this,uint param_1,int param_2,int param_3)
 }
 
 // 006EA6D0 ST3DSMAPContext::sub_006EA6D0
-#line 1 "decomp/ST.exe/functions/006EA6D0/decomp.c"
+#line 4 "decomp/ST.exe/functions/006EA6D0/decomp.c"
 /* [STReturnSemanticsApplier] ignored_eax_void.
    Evidence: all observed direct callers ignore the return register (ignored=3, used=0), and
    decompilation contains no value return
@@ -4873,7 +4876,7 @@ st::fn_006EA6D0(ST3DSMAPContext *this,uint param_1,int param_2,int param_3)
 }
 
 // 006EA800 ST3DSMAPContext::sub_006EA800
-#line 1 "decomp/ST.exe/functions/006EA800/decomp.c"
+#line 4 "decomp/ST.exe/functions/006EA800/decomp.c"
 /* [STReturnSemanticsApplier] ignored_eax_void.
    Evidence: all observed direct callers ignore the return register (ignored=3, used=0), and
    decompilation contains no value return
@@ -4915,7 +4918,7 @@ st::fn_006EA800(ST3DSMAPContext *this,uint param_1,int param_2,int param_3)
 }
 
 // 006EA8A0 ST3DSMAPContext::sub_006EA8A0
-#line 1 "decomp/ST.exe/functions/006EA8A0/decomp.c"
+#line 4 "decomp/ST.exe/functions/006EA8A0/decomp.c"
 /* [STReturnSemanticsApplier] ignored_eax_void.
    Evidence: all observed direct callers ignore the return register (ignored=4, used=0), and
    decompilation contains no value return
@@ -4923,11 +4926,14 @@ st::fn_006EA800(ST3DSMAPContext *this,uint param_1,int param_2,int param_3)
    [STMethodOwnerApplier] Structural method owner recovered as ST3DSMAPContext.
    Evidence: this_call_owners=[ST3DSMAPContext]; agreed_this_calls=4; incoming_this_accesses=2;
    incoming_edx_uses=0; incoming_stack_parameter_uses=4; direct_non_thunk_callers=3;
-   incoming_ecx_receiver_callers=0; attributed_named_callers=3; owner_evidence_coverage=adequate */
+   incoming_ecx_receiver_callers=0; attributed_named_callers=3; owner_evidence_coverage=adequate
+
+   [STPrototypeApplier] Propagated parameter 4.
+   Evidence: 006364B0 -> 006EA8A0 @ 006365B8; data at 008032B8 */
 
 void __thiscall
 st::fn_006EA8A0
-          (ST3DSMAPContext *this,uint param_1,int param_2,uint param_3,uint param_4)
+          (ST3DSMAPContext *this,uint param_1,int param_2,uint param_3,ushort *param_4)
 
 {
   uint *puVar1;
@@ -4948,7 +4954,7 @@ st::fn_006EA8A0
       pbVar2 = (byte *)(puVar1[0x29] + 3 + param_2 * 4);
       *pbVar2 = *pbVar2 | 1;
       puVar1[0x26] = param_3;
-      puVar1[0x27] = param_4;
+      puVar1[0x27] = (uint)param_4;
     }
     if ((puVar1[2] == 0) && ((*puVar1 & 0x10001) != 0)) {
       *puVar1 = *puVar1 & 0xff87ffff | 4;
@@ -4962,7 +4968,7 @@ st::fn_006EA8A0
 }
 
 // 006EB310 ST3DSMAPContext::sub_006EB310
-#line 1 "decomp/ST.exe/functions/006EB310/decomp.c"
+#line 4 "decomp/ST.exe/functions/006EB310/decomp.c"
 /* [STMethodOwnerApplier] Structural method owner recovered as ST3DSMAPContext.
    Evidence: this_call_owners=[ST3DSMAPContext]; agreed_this_calls=1; incoming_this_accesses=2;
    incoming_edx_uses=0; incoming_stack_parameter_uses=1; direct_non_thunk_callers=1;
@@ -4979,7 +4985,7 @@ uint __thiscall st::fn_006EB310(ST3DSMAPContext *this,uint param_1)
 }
 
 // 006EB350 ST3DSMAPContext::sub_006EB350
-#line 1 "decomp/ST.exe/functions/006EB350/decomp.c"
+#line 4 "decomp/ST.exe/functions/006EB350/decomp.c"
 /* [STMethodOwnerApplier] Structural method owner recovered as ST3DSMAPContext.
    Evidence: this_call_owners=[ST3DSMAPContext]; agreed_this_calls=4; incoming_this_accesses=1;
    incoming_edx_uses=0; incoming_stack_parameter_uses=6; direct_non_thunk_callers=3;
@@ -5053,7 +5059,7 @@ st::fn_006EB350(ST3DSMAPContext *this,int param_1,int param_2,int param_3,int pa
 }
 
 // 00709470 ST3DSMAPContext::sub_00709470
-#line 1 "decomp/ST.exe/functions/00709470/decomp.c"
+#line 4 "decomp/ST.exe/functions/00709470/decomp.c"
 /* [STPrototypeApplier] Propagated parameter 5.
    Evidence: 0044C130 -> 00709470 @ 0044C2AB; literal 255 at 0044C29C | 0044C130 -> 00709470 @
    0044C48C; literal 255 at 0044C47D | 00709670 -> 00709470 @ 0070976B; FUN_00709670 parameter
@@ -5203,7 +5209,7 @@ st::fn_00709470
 }
 
 // 00717870 ST3DSMAPContext::sub_00717870
-#line 1 "decomp/ST.exe/functions/00717870/decomp.c"
+#line 4 "decomp/ST.exe/functions/00717870/decomp.c"
 /* [STPrototypeApplier] Propagated parameter 0.
    Evidence: 00558840 -> 00717870 @ 005588CB
 
@@ -5231,7 +5237,7 @@ void __thiscall st::fn_00717870(ST3DSMAPContext *this)
 }
 
 // 007178C0 ST3DSMAPContext::sub_007178C0
-#line 1 "decomp/ST.exe/functions/007178C0/decomp.c"
+#line 4 "decomp/ST.exe/functions/007178C0/decomp.c"
 /* [STMethodOwnerApplier] Structural method owner recovered as ST3DSMAPContext.
    Evidence: this_call_owners=[ST3DSMAPContext]; agreed_this_calls=1; incoming_this_accesses=4;
    incoming_edx_uses=0; incoming_stack_parameter_uses=7; direct_non_thunk_callers=1;

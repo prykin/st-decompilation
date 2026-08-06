@@ -2,7 +2,7 @@
 // Generated translation unit: source/original/ai/ai_creat.cpp
 
 // 00648AB0 LoadStrategData
-#line 1 "decomp/ST.exe/functions/00648AB0/decomp.c"
+#line 4 "decomp/ST.exe/functions/00648AB0/decomp.c"
 /* [STSourceProvenanceApplier begin]
    Recovered source file: E:\__titans\ai\ai_creat.cpp
    Diagnostic line evidence: 41 | 55 | 58 (metadata/report site, not the function definition)
@@ -51,7 +51,7 @@ ushort * __cdecl st::fn_00648AB0(int param_1,char *param_2,int *param_3)
 }
 
 // 00648C10 StartStrateg
-#line 1 "decomp/ST.exe/functions/00648C10/decomp.c"
+#line 4 "decomp/ST.exe/functions/00648C10/decomp.c"
 /* [STSourceProvenanceApplier begin]
    Recovered source file: E:\__titans\ai\ai_creat.cpp
    Diagnostic line evidence: 73 | 95 | 97 (metadata/report site, not the function definition)
@@ -123,7 +123,7 @@ void __cdecl st::fn_00648C10(AnonShape_00648C10_30A1BBFD *strategData,uint param
 }
 
 // 00648E70 CreateArbiter
-#line 1 "decomp/ST.exe/functions/00648E70/decomp.c"
+#line 4 "decomp/ST.exe/functions/00648E70/decomp.c"
 /* [STSourceProvenanceApplier begin]
    Recovered source file: E:\__titans\ai\ai_creat.cpp
    Diagnostic line evidence: 130 | 141 | 143 (metadata/report site, not the function definition)
@@ -172,7 +172,7 @@ int __cdecl st::fn_00648E70(int param_1,char *param_2)
 }
 
 // 00648FE0 CreateAi
-#line 1 "decomp/ST.exe/functions/00648FE0/decomp.c"
+#line 4 "decomp/ST.exe/functions/00648FE0/decomp.c"
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 /* [STSourceProvenanceApplier begin]
    Recovered source file: E:\__titans\ai\ai_creat.cpp
@@ -365,7 +365,7 @@ LAB_00649255:
 }
 
 // 006494C0 CreatePlrDataForWS
-#line 1 "decomp/ST.exe/functions/006494C0/decomp.c"
+#line 4 "decomp/ST.exe/functions/006494C0/decomp.c"
 /* [STSourceProvenanceApplier begin]
    Recovered source file: E:\__titans\ai\ai_creat.cpp
    Diagnostic line evidence: 307 | 313 | 314 (metadata/report site, not the function definition)
@@ -538,7 +538,7 @@ undefined4 * st::fn_006494C0(void)
 }
 
 // 00649790 CreatePlrDataForBO
-#line 1 "decomp/ST.exe/functions/00649790/decomp.c"
+#line 4 "decomp/ST.exe/functions/00649790/decomp.c"
 /* [STSourceProvenanceApplier begin]
    Recovered source file: E:\__titans\ai\ai_creat.cpp
    Diagnostic line evidence: 353 | 359 | 360 (metadata/report site, not the function definition)
@@ -711,7 +711,7 @@ undefined4 * st::fn_00649790(void)
 }
 
 // 00649A60 CreatePlrData
-#line 1 "decomp/ST.exe/functions/00649A60/decomp.c"
+#line 4 "decomp/ST.exe/functions/00649A60/decomp.c"
 /* [STSourceProvenanceApplier begin]
    Recovered source file: E:\__titans\ai\ai_creat.cpp
    Diagnostic line evidence: 373 | 376 | 377 (metadata/report site, not the function definition)
@@ -757,7 +757,7 @@ undefined4 * __cdecl st::fn_00649A60(int param_1)
 }
 
 // 00649B90 CreateBossData
-#line 1 "decomp/ST.exe/functions/00649B90/decomp.c"
+#line 4 "decomp/ST.exe/functions/00649B90/decomp.c"
 /* [STSourceProvenanceApplier begin]
    Recovered source file: E:\__titans\ai\ai_creat.cpp
    Diagnostic line evidence: 417 | 423 | 424 (metadata/report site, not the function definition)
@@ -946,7 +946,7 @@ undefined4 * st::fn_00649B90(void)
 }
 
 // 00649EB0 CreateDefaultBossData
-#line 1 "decomp/ST.exe/functions/00649EB0/decomp.c"
+#line 4 "decomp/ST.exe/functions/00649EB0/decomp.c"
 /* [STSourceProvenanceApplier begin]
    Recovered source file: E:\__titans\ai\ai_creat.cpp
    Diagnostic line evidence: 449 | 450 (metadata/report site, not the function definition)

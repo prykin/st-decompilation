@@ -2,7 +2,7 @@
 // Generated translation unit: source/original/Start/fsgs_obj.cpp
 
 // 00594B90 FSGSTy::OutChSlProc
-#line 1 "decomp/ST.exe/functions/00594B90/decomp.c"
+#line 4 "decomp/ST.exe/functions/00594B90/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\Start\fsgs_obj.cpp
    FSGSTy::OutChSlProc
@@ -59,7 +59,7 @@ st::fn_00594B90(FSGSTy *this,AnonShape_GLOBAL_0080759C_9638EF10 *param_1,undefin
 }
 
 // 00594D40 FSGSTy::OutTRGlProc
-#line 1 "decomp/ST.exe/functions/00594D40/decomp.c"
+#line 4 "decomp/ST.exe/functions/00594D40/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\Start\fsgs_obj.cpp
    FSGSTy::OutTRGlProc
@@ -104,7 +104,7 @@ st::fn_00594D40(FSGSTy *this,int param_1,MMMObjTy *param_2,MMMObjTy *param_3,int
       pcVar5 = g_startSystem_0081176C->field_0034;
       uVar4 = 0xffffffff;
       uVar3 = 0xfffffffe;
-      resourceString = (uint *)st::fn_006B0140(param_8,g_module_00807618);
+      resourceString = (uint *)st::fn_006B0140(param_8,g_hINSTANCE_00807618);
       st::fn_00404C2D
                 (this_00,0,param_4,param_5,param_6,0x15,resourceString,uVar3,uVar4,pcVar5,uVar6);
       g_currentExceptionFrame = local_48.previous;
@@ -122,7 +122,7 @@ st::fn_00594D40(FSGSTy *this,int param_1,MMMObjTy *param_2,MMMObjTy *param_3,int
 }
 
 // 00594EB0 FSGSTy::OutTRGlProc
-#line 1 "decomp/ST.exe/functions/00594EB0/decomp.c"
+#line 4 "decomp/ST.exe/functions/00594EB0/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\Start\fsgs_obj.cpp
    FSGSTy::OutTRGlProc
@@ -176,7 +176,7 @@ st::fn_00594EB0(FSGSTy *this,AnonShape_GLOBAL_0080759C_9638EF10 *param_1,MMMObjT
       pcVar6 = g_startSystem_0081176C->field_0034;
       uVar5 = 0xffffffff;
       uVar4 = 0xffffffff;
-      puVar2 = (uint *)st::fn_006B0140(0x2616,g_module_00807618);
+      puVar2 = (uint *)st::fn_006B0140(0x2616,g_hINSTANCE_00807618);
       st::fn_00404C2D
                 (this_01,0,(int)(param_4 + 10),param_5 + 0xf8,0xe6,0x19,puVar2,uVar4,uVar5,pcVar6,
                  uVar7);
@@ -194,7 +194,7 @@ st::fn_00594EB0(FSGSTy *this,AnonShape_GLOBAL_0080759C_9638EF10 *param_1,MMMObjT
       pcVar6 = g_startSystem_0081176C->field_0034;
       uVar5 = 0xffffffff;
       uVar4 = 0;
-      puVar2 = (uint *)st::fn_006B0140(0x2569,g_module_00807618);
+      puVar2 = (uint *)st::fn_006B0140(0x2569,g_hINSTANCE_00807618);
       this_00 = (StartServTy *)(param_5 + -0x57 + param_7);
       st::fn_00404C2D
                 (this_00,0,(int)(param_4 + 10),(int)this_00,(int)local_8,0xf,puVar2,uVar4,uVar5,
@@ -205,7 +205,7 @@ st::fn_00594EB0(FSGSTy *this,AnonShape_GLOBAL_0080759C_9638EF10 *param_1,MMMObjT
       pcVar6 = g_startSystem_0081176C->field_0034;
       uVar5 = 0xffffffff;
       uVar4 = 0;
-      puVar2 = (uint *)st::fn_006B0140(0x2550,g_module_00807618);
+      puVar2 = (uint *)st::fn_006B0140(0x2550,g_hINSTANCE_00807618);
       st::fn_00404C2D
                 (param_4,0,(int)(param_4 + 10),param_5 + -0x2f + param_7,(int)local_8,0xf,puVar2,
                  uVar4,uVar5,pcVar6,uVar7);
@@ -215,7 +215,7 @@ st::fn_00594EB0(FSGSTy *this,AnonShape_GLOBAL_0080759C_9638EF10 *param_1,MMMObjT
       pcVar6 = g_startSystem_0081176C->field_0034;
       uVar5 = 0xffffffff;
       uVar4 = 0xffffffff;
-      puVar2 = (uint *)st::fn_006B0140(0x2566,g_module_00807618);
+      puVar2 = (uint *)st::fn_006B0140(0x2566,g_hINSTANCE_00807618);
       st::fn_00404C2D
                 (this_02,0,(int)(param_4 + 0x78),param_5 + 0x155,0xa0,0x19,puVar2,uVar4,uVar5,pcVar6
                  ,uVar7);
@@ -240,7 +240,7 @@ st::fn_00594EB0(FSGSTy *this,AnonShape_GLOBAL_0080759C_9638EF10 *param_1,MMMObjT
 }
 
 // 005952B0 FSGSTy::OutSGlProc
-#line 1 "decomp/ST.exe/functions/005952B0/decomp.c"
+#line 4 "decomp/ST.exe/functions/005952B0/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\Start\fsgs_obj.cpp
    FSGSTy::OutSGlProc
@@ -286,7 +286,7 @@ st::fn_005952B0(FSGSTy *this,AnonShape_GLOBAL_0080759C_9638EF10 *param_1,MMMObjT
       pcVar7 = g_startSystem_0081176C->field_0034;
       uVar6 = 0xffffffff;
       uVar5 = 0;
-      puVar3 = (uint *)st::fn_006B0140(0x256f,g_module_00807618);
+      puVar3 = (uint *)st::fn_006B0140(0x256f,g_hINSTANCE_00807618);
       st::fn_00404C2D
                 (this_00,0,iVar2,param_5 + 10,param_6 + -0x14,0x14,puVar3,uVar5,uVar6,pcVar7,uVar8);
       st::fn_006C6850((int)param_1,iVar2,param_5 + 0x1e,param_6 + -0x14,0x8e,
@@ -295,7 +295,7 @@ st::fn_005952B0(FSGSTy *this,AnonShape_GLOBAL_0080759C_9638EF10 *param_1,MMMObjT
       pcVar7 = g_startSystem_0081176C->field_0034;
       uVar6 = 0xffffffff;
       uVar5 = 0;
-      puVar3 = (uint *)st::fn_006B0140(0x256b,g_module_00807618);
+      puVar3 = (uint *)st::fn_006B0140(0x256b,g_hINSTANCE_00807618);
       st::fn_00404C2D
                 (this_01,0,iVar2,param_5 + 0xb4,param_6 + -0x14,0x14,puVar3,uVar5,uVar6,pcVar7,uVar8
                 );
@@ -305,7 +305,7 @@ st::fn_005952B0(FSGSTy *this,AnonShape_GLOBAL_0080759C_9638EF10 *param_1,MMMObjT
       pcVar7 = g_startSystem_0081176C->field_0034;
       uVar6 = 0xffffffff;
       uVar5 = 0;
-      puVar3 = (uint *)st::fn_006B0140(0x256c,g_module_00807618);
+      puVar3 = (uint *)st::fn_006B0140(0x256c,g_hINSTANCE_00807618);
       st::fn_00404C2D
                 (this_02,0,iVar2,param_5 + 0xe1,param_6 + -0x14,0x14,puVar3,uVar5,uVar6,pcVar7,uVar8
                 );
@@ -317,7 +317,7 @@ st::fn_005952B0(FSGSTy *this,AnonShape_GLOBAL_0080759C_9638EF10 *param_1,MMMObjT
       pcVar7 = g_startSystem_0081176C->field_0034;
       uVar6 = 0xffffffff;
       uVar5 = 0;
-      puVar3 = (uint *)st::fn_006B0140(0x256d,g_module_00807618);
+      puVar3 = (uint *)st::fn_006B0140(0x256d,g_hINSTANCE_00807618);
       st::fn_00404C2D
                 ((StartServTy *)(param_5 + 0x11a),0,iVar2,param_5 + 0x11a,(int)(local_8 + -10),0x14,
                  puVar3,uVar5,uVar6,pcVar7,uVar8);
@@ -355,7 +355,7 @@ st::fn_005952B0(FSGSTy *this,AnonShape_GLOBAL_0080759C_9638EF10 *param_1,MMMObjT
 }
 
 // 005956C0 FSGSTy::OutLadProc
-#line 1 "decomp/ST.exe/functions/005956C0/decomp.c"
+#line 4 "decomp/ST.exe/functions/005956C0/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\Start\fsgs_obj.cpp
    FSGSTy::OutLadProc
@@ -404,7 +404,7 @@ st::fn_005956C0(FSGSTy *this,int param_1,MMMObjTy *param_2,MMMObjTy *param_3,int
     pcVar7 = g_startSystem_0081176C->field_0034;
     uVar6 = 0xffffffff;
     uVar5 = 0xffffffff;
-    puVar3 = (uint *)st::fn_006B0140(0x25a7,g_module_00807618);
+    puVar3 = (uint *)st::fn_006B0140(0x25a7,g_hINSTANCE_00807618);
     st::fn_00404C2D(this_00,0,param_4,iVar2,0x2d,0x23,puVar3,uVar5,uVar6,pcVar7,uVar8);
     local_8 = param_5 + -1 + param_7;
     st::fn_006C53B0
@@ -414,7 +414,7 @@ st::fn_005956C0(FSGSTy *this,int param_1,MMMObjTy *param_2,MMMObjTy *param_3,int
     pcVar7 = g_startSystem_0081176C->field_0034;
     uVar6 = 0xffffffff;
     uVar5 = 0xffffffff;
-    puVar3 = (uint *)st::fn_006B0140(0x25a8,g_module_00807618);
+    puVar3 = (uint *)st::fn_006B0140(0x25a8,g_hINSTANCE_00807618);
     st::fn_00404C2D(this_01,0,param_4 + 0x2d,iVar2,0xeb,0x23,puVar3,uVar5,uVar6,pcVar7,uVar8);
     st::fn_006C53B0
               (param_1,param_4 + 0x118,param_5 + 0x78,param_4 + 0x118,local_8,
@@ -423,7 +423,7 @@ st::fn_005956C0(FSGSTy *this,int param_1,MMMObjTy *param_2,MMMObjTy *param_3,int
     pcVar7 = g_startSystem_0081176C->field_0034;
     uVar6 = 0xffffffff;
     uVar5 = 0xffffffff;
-    puVar3 = (uint *)st::fn_006B0140(0x25a9,g_module_00807618);
+    puVar3 = (uint *)st::fn_006B0140(0x25a9,g_hINSTANCE_00807618);
     st::fn_00404C2D
               (this_02,0,param_4 + 0x118,iVar2,0x46,0x23,puVar3,uVar5,uVar6,pcVar7,uVar8);
     st::fn_006C53B0
@@ -433,7 +433,7 @@ st::fn_005956C0(FSGSTy *this,int param_1,MMMObjTy *param_2,MMMObjTy *param_3,int
     pcVar7 = g_startSystem_0081176C->field_0034;
     uVar6 = 0xffffffff;
     uVar5 = 0xffffffff;
-    puVar3 = (uint *)st::fn_006B0140(0x25aa,g_module_00807618);
+    puVar3 = (uint *)st::fn_006B0140(0x25aa,g_hINSTANCE_00807618);
     st::fn_00404C2D
               (this_03,0,param_4 + 0x15e,iVar2,0x91,0x23,puVar3,uVar5,uVar6,pcVar7,uVar8);
     st::fn_006C53B0
@@ -443,7 +443,7 @@ st::fn_005956C0(FSGSTy *this,int param_1,MMMObjTy *param_2,MMMObjTy *param_3,int
     pcVar7 = g_startSystem_0081176C->field_0034;
     uVar6 = 0xffffffff;
     uVar5 = 0xffffffff;
-    puVar3 = (uint *)st::fn_006B0140(0x25ab,g_module_00807618);
+    puVar3 = (uint *)st::fn_006B0140(0x25ab,g_hINSTANCE_00807618);
     st::fn_00404C2D
               (this_04,0,param_4 + 0x1ef,iVar2,0x46,0x23,puVar3,uVar5,uVar6,pcVar7,uVar8);
     st::fn_006C53B0
@@ -453,7 +453,7 @@ st::fn_005956C0(FSGSTy *this,int param_1,MMMObjTy *param_2,MMMObjTy *param_3,int
     pcVar7 = g_startSystem_0081176C->field_0034;
     uVar6 = 0xffffffff;
     uVar5 = 0xffffffff;
-    puVar3 = (uint *)st::fn_006B0140(0x25ac,g_module_00807618);
+    puVar3 = (uint *)st::fn_006B0140(0x25ac,g_hINSTANCE_00807618);
     st::fn_00404C2D
               (this_05,0,param_4 + 0x235,iVar2,0x32,0x23,puVar3,uVar5,uVar6,pcVar7,uVar8);
     st::fn_006C53B0
@@ -463,7 +463,7 @@ st::fn_005956C0(FSGSTy *this,int param_1,MMMObjTy *param_2,MMMObjTy *param_3,int
     pcVar7 = g_startSystem_0081176C->field_0034;
     uVar6 = 0xffffffff;
     uVar5 = 0xffffffff;
-    puVar3 = (uint *)st::fn_006B0140(0x25ad,g_module_00807618);
+    puVar3 = (uint *)st::fn_006B0140(0x25ad,g_hINSTANCE_00807618);
     st::fn_00404C2D
               (this_06,0,param_4 + 0x267,iVar2,(int)&param_6[-1].field_0x1e5c,0x23,puVar3,uVar5,
                uVar6,pcVar7,uVar8);
@@ -472,7 +472,7 @@ st::fn_005956C0(FSGSTy *this,int param_1,MMMObjTy *param_2,MMMObjTy *param_3,int
     uVar8 = 2;
     uVar6 = 0xffffffff;
     uVar5 = 0xffffffff;
-    puVar3 = (uint *)st::fn_006B0140(0x25ae,g_module_00807618);
+    puVar3 = (uint *)st::fn_006B0140(0x25ae,g_hINSTANCE_00807618);
     st::fn_00404C2D
               (this_07,0,param_4 + 10,(int)local_c,0x96,0x14,puVar3,uVar5,uVar6,pcVar7,uVar8);
     iVar2 = param_5 + 0x32;
@@ -487,7 +487,7 @@ st::fn_005956C0(FSGSTy *this,int param_1,MMMObjTy *param_2,MMMObjTy *param_3,int
     pcVar7 = g_startSystem_0081176C->field_0034;
     uVar6 = 0xffffffff;
     uVar5 = 0xffffffff;
-    puVar3 = (uint *)st::fn_006B0140(0x25af,g_module_00807618);
+    puVar3 = (uint *)st::fn_006B0140(0x25af,g_hINSTANCE_00807618);
     st::fn_00404C2D
               (local_c,0,param_4 + 0xa5,(int)local_c,0x96,0x14,puVar3,uVar5,uVar6,pcVar7,uVar8);
     st::fn_006C6470
@@ -513,7 +513,7 @@ st::fn_005956C0(FSGSTy *this,int param_1,MMMObjTy *param_2,MMMObjTy *param_3,int
     pcVar7 = g_startSystem_0081176C->field_0034;
     uVar6 = 0xffffffff;
     uVar5 = 0xffffffff;
-    puVar3 = (uint *)st::fn_006B0140(0x25b0,g_module_00807618);
+    puVar3 = (uint *)st::fn_006B0140(0x25b0,g_hINSTANCE_00807618);
     st::fn_00404C2D
               (local_c,0,param_4 + 0x1f9,(int)local_c,0x96,0x14,puVar3,uVar5,uVar6,pcVar7,uVar8);
     st::fn_006C6850(param_1,param_4 + 0x1f9,iVar2,0x96,0x19,g_startSystem_0081176C->field_0140);
@@ -521,7 +521,7 @@ st::fn_005956C0(FSGSTy *this,int param_1,MMMObjTy *param_2,MMMObjTy *param_3,int
     pcVar7 = g_startSystem_0081176C->field_0034;
     uVar6 = 0xffffffff;
     uVar5 = 0xffffffff;
-    puVar3 = (uint *)st::fn_006B0140(0x25b1,g_module_00807618);
+    puVar3 = (uint *)st::fn_006B0140(0x25b1,g_hINSTANCE_00807618);
     st::fn_00404C2D
               (this_08,0,param_4 + 0x294,iVar2,0x41,0x19,puVar3,uVar5,uVar6,pcVar7,uVar8);
     st::fn_006C6470
@@ -544,7 +544,7 @@ st::fn_005956C0(FSGSTy *this,int param_1,MMMObjTy *param_2,MMMObjTy *param_3,int
 }
 
 // 00595E40 FSGSTy::InitFSGS
-#line 1 "decomp/ST.exe/functions/00595E40/decomp.c"
+#line 4 "decomp/ST.exe/functions/00595E40/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\Start\fsgs_obj.cpp
    FSGSTy::InitFSGS */
@@ -612,13 +612,13 @@ void __thiscall st::fn_00595E40(FSGSTy *this,byte param_1)
   g_startSystem_0081176C->field_002C = puVar4;
   this_01->field_005D = g_startSystem_0081176C->field_002C;
   puVar4 = st::fn_00709AF0
-                     (DAT_00806784,CASE_B,"SET_ACC",0xffffffff,0,1,0,nullptr);
+                     (PTR_00806784,CASE_B,"SET_ACC",0xffffffff,0,1,0,nullptr);
   this_01->field_1A83 = puVar4;
   puVar4 = st::fn_00709AF0
-                     (DAT_00806784,CASE_B,"FILE_LIST",0xffffffff,0,1,0,nullptr);
+                     (PTR_00806784,CASE_B,"FILE_LIST",0xffffffff,0,1,0,nullptr);
   this_01->field_1A87 = puVar4;
   puVar4 = st::fn_00709AF0
-                     (DAT_00806784,CASE_B,&DAT_007cc07c,0xffffffff,0,1,0,nullptr);
+                     (PTR_00806784,CASE_B,&DAT_007cc07c,0xffffffff,0,1,0,nullptr);
   this_01->field_1A8B = puVar4;
   st::fn_006BC360(this_01->field_005D,local_450,nullptr);
   this_01->field_1A5B->field_0140 = 0xf;
@@ -632,7 +632,7 @@ void __thiscall st::fn_00595E40(FSGSTy *this,byte param_1)
   this_01->field_1F3F = 2;
   this_01->field_1F7F = this_01->field_005D;
   this_01->field_1F93 = 0;
-  this_01->field_1F8F = DAT_008032ac;
+  this_01->field_1F8F = PTR_008032ac;
   this_01->field_1F87 = 0xf;
   this_01->field_1F8B = 1;
   this_01->field_1F83 = 0x4d;
@@ -701,7 +701,7 @@ void __thiscall st::fn_00595E40(FSGSTy *this,byte param_1)
             ((SpriteClassTy *)&this_01->field_1B28,(int *)g_ddxContext_008075A8,0x31,'\a',
              nullptr,0,0);
   /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-  (**(code **)(this_01->field_1B28 + 4))(DAT_00806784,7,0,"MM_SLDUP",0xffffffff);
+  (**(code **)(this_01->field_1B28 + 4))(PTR_00806784,7,0,"MM_SLDUP",0xffffffff);
   this_01->field_1B30 = 0;
   if (this_01->field_1B2C != 0xffffffff) {
     st::fn_006B3AF0((int *)this_01->field_1B70,this_01->field_1B2C);
@@ -710,7 +710,7 @@ void __thiscall st::fn_00595E40(FSGSTy *this,byte param_1)
             ((SpriteClassTy *)&this_01->field_1BB9,(int *)g_ddxContext_008075A8,0x31,'\a',
              nullptr,0,0);
   /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-  (**(code **)(this_01->field_1BB9 + 4))(DAT_00806784,7,0,"MM_SLDDN",0xffffffff);
+  (**(code **)(this_01->field_1BB9 + 4))(PTR_00806784,7,0,"MM_SLDDN",0xffffffff);
   this_01->field_1BC1 = 0;
   if (this_01->field_1BBD != 0xffffffff) {
     st::fn_006B3AF0((int *)this_01->field_1C01,this_01->field_1BBD);
@@ -719,7 +719,7 @@ void __thiscall st::fn_00595E40(FSGSTy *this,byte param_1)
             ((SpriteClassTy *)&this_01->field_1C4A,(int *)g_ddxContext_008075A8,0x31,'\a',
              nullptr,0,0);
   /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-  (**(code **)(this_01->field_1C4A + 4))(DAT_00806784,7,0,"MM_SLDT",0xffffffff);
+  (**(code **)(this_01->field_1C4A + 4))(PTR_00806784,7,0,"MM_SLDT",0xffffffff);
   this_01->field_1C52 = 0;
   if (this_01->field_1C4E != 0xffffffff) {
     st::fn_006B3AF0((int *)this_01->field_1C92,this_01->field_1C4E);
@@ -728,7 +728,7 @@ void __thiscall st::fn_00595E40(FSGSTy *this,byte param_1)
             ((SpriteClassTy *)&this_01->field_1CDB,(int *)g_ddxContext_008075A8,0x31,'\a',
              nullptr,0,0);
   /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-  (**(code **)(this_01->field_1CDB + 4))(DAT_00806784,7,0,"MM_SLDUP",0xffffffff);
+  (**(code **)(this_01->field_1CDB + 4))(PTR_00806784,7,0,"MM_SLDUP",0xffffffff);
   this_01->field_1CE3 = 0;
   if (this_01->field_1CDF != 0xffffffff) {
     st::fn_006B3AF0((int *)this_01->field_1D23,this_01->field_1CDF);
@@ -737,7 +737,7 @@ void __thiscall st::fn_00595E40(FSGSTy *this,byte param_1)
             ((SpriteClassTy *)&this_01->field_1D6C,(int *)g_ddxContext_008075A8,0x31,'\a',
              nullptr,0,0);
   /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-  (**(code **)(this_01->field_1D6C + 4))(DAT_00806784,7,0,"MM_SLDDN",0xffffffff);
+  (**(code **)(this_01->field_1D6C + 4))(PTR_00806784,7,0,"MM_SLDDN",0xffffffff);
   this_01->field_1D74 = 0;
   if (this_01->field_1D70 != 0xffffffff) {
     st::fn_006B3AF0((int *)this_01->field_1DB4,this_01->field_1D70);
@@ -746,7 +746,7 @@ void __thiscall st::fn_00595E40(FSGSTy *this,byte param_1)
             ((SpriteClassTy *)&this_01->field_1DFD,(int *)g_ddxContext_008075A8,0x31,'\a',
              nullptr,0,0);
   /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-  (**(code **)(this_01->field_1DFD + 4))(DAT_00806784,7,0,"MM_SLDT",0xffffffff);
+  (**(code **)(this_01->field_1DFD + 4))(PTR_00806784,7,0,"MM_SLDT",0xffffffff);
   this_01->field_1E05 = 0;
   if (this_01->field_1E01 != 0xffffffff) {
     st::fn_006B3AF0((int *)this_01->field_1E45,this_01->field_1E01);
@@ -817,7 +817,7 @@ LAB_00596510:
 }
 
 // 005967F0 FSGSTy::DoneFSGS
-#line 1 "decomp/ST.exe/functions/005967F0/decomp.c"
+#line 4 "decomp/ST.exe/functions/005967F0/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\Start\fsgs_obj.cpp
    FSGSTy::DoneFSGS */
@@ -971,7 +971,7 @@ void __thiscall st::fn_005967F0(FSGSTy *this)
 }
 
 // 00596CC0 FSGSTy::PaintFSGS
-#line 1 "decomp/ST.exe/functions/00596CC0/decomp.c"
+#line 4 "decomp/ST.exe/functions/00596CC0/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\Start\fsgs_obj.cpp
    FSGSTy::PaintFSGS
@@ -1143,7 +1143,7 @@ switchD_00596d3d_default:
 }
 
 // 00597120 FSGSTy::NoneFSGS
-#line 1 "decomp/ST.exe/functions/00597120/decomp.c"
+#line 4 "decomp/ST.exe/functions/00597120/decomp.c"
 /* WARNING: Removing unreachable block (ram,0x00597a13) */
 /* Recovered from embedded debug metadata:
    E:\__titans\Start\fsgs_obj.cpp
@@ -1407,7 +1407,7 @@ void __thiscall st::fn_00597120(FSGSTy *this)
       else {
         uVar18 = 0;
         pcVar17 = &DAT_008016a0;
-        resourceString = st::fn_006B0140(0x254d,g_module_00807618);
+        resourceString = st::fn_006B0140(0x254d,g_hINSTANCE_00807618);
         st::fn_00405542(&DAT_00802a90,resourceString,pcVar17,uVar18);
         this_02->field_1A62 = 0;
       }
@@ -1604,7 +1604,7 @@ joined_r0x00597872:
 }
 
 // 00597E70 FSGSTy::SetState
-#line 1 "decomp/ST.exe/functions/00597E70/decomp.c"
+#line 4 "decomp/ST.exe/functions/00597E70/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\Start\fsgs_obj.cpp
    FSGSTy::SetState
@@ -1750,7 +1750,7 @@ void __thiscall st::fn_00597E70(FSGSTy *this,byte param_1)
     uVar14 = 2;
     iVar7 = -1;
     iVar8 = -1;
-    resourceString = (uint *)st::fn_006B0140(0x254e,g_module_00807618);
+    resourceString = (uint *)st::fn_006B0140(0x254e,g_hINSTANCE_00807618);
     st::fn_00711B70(this_00->field_1A73,resourceString,iVar8,iVar7,uVar14,iVar11,iVar12);
     st::fn_006B3430((int *)g_ddxContext_008075A8,this_00->field_1ABC);
     st::fn_006B35D0((int *)g_ddxContext_008075A8,this_00->field_1ABC);
@@ -2459,7 +2459,7 @@ switchD_00597fa6_caseD_9:
 }
 
 // 005999C0 FSGSTy::PrepBkgMess
-#line 1 "decomp/ST.exe/functions/005999C0/decomp.c"
+#line 4 "decomp/ST.exe/functions/005999C0/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\Start\fsgs_obj.cpp
    FSGSTy::PrepBkgMess */
@@ -2533,7 +2533,7 @@ void __thiscall st::fn_005999C0(FSGSTy *this,char param_1)
 }
 
 // 00599BE0 FSGSTy::PaintLogLogin
-#line 1 "decomp/ST.exe/functions/00599BE0/decomp.c"
+#line 4 "decomp/ST.exe/functions/00599BE0/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\Start\fsgs_obj.cpp
    FSGSTy::PaintLogLogin */
@@ -2577,21 +2577,21 @@ void __thiscall st::fn_00599BE0(FSGSTy *this)
     uVar8 = 2;
     iVar9 = -1;
     iVar4 = 0;
-    puVar6 = (uint *)st::fn_006B0140(0x254f,g_module_00807618);
+    puVar6 = (uint *)st::fn_006B0140(0x254f,g_hINSTANCE_00807618);
     st::fn_007119C0(pFVar3->field_1A73,puVar6,iVar4,iVar9,uVar8);
     st::fn_006B5EE0((RecoveredSourceFamily_dibcopy *)pFVar3->field_1AC0,0,0x18,0x5b,0x188,0x1b,0xf,0xd);
     st::fn_00710A90(pFVar3->field_1A73,(int)pFVar3->field_1AC0,0,0x19,0x7f,0xb4,0x14);
     uVar8 = 2;
     iVar9 = -1;
     iVar4 = 0;
-    puVar6 = (uint *)st::fn_006B0140(0x2550,g_module_00807618);
+    puVar6 = (uint *)st::fn_006B0140(0x2550,g_hINSTANCE_00807618);
     st::fn_007119C0(pFVar3->field_1A73,puVar6,iVar4,iVar9,uVar8);
     st::fn_006B5EE0((RecoveredSourceFamily_dibcopy *)pFVar3->field_1AC0,0,0x18,0x92,0xb6,0x16,0xf,0xd);
     st::fn_00710A90(pFVar3->field_1A73,(int)pFVar3->field_1AC0,0,0x104,0x93,0x96,0x14);
     uVar8 = 2;
     iVar9 = -1;
     iVar4 = 0;
-    puVar6 = (uint *)st::fn_006B0140(0x2551,g_module_00807618);
+    puVar6 = (uint *)st::fn_006B0140(0x2551,g_hINSTANCE_00807618);
     st::fn_007119C0(pFVar3->field_1A73,puVar6,iVar4,iVar9,uVar8);
     st::fn_006C7570((RecoveredSourceFamily_dibcopy *)pFVar3->field_1AC0,0,0xe6,0x93,(undefined4 *)0x16,
                  0x14,2,0xf);
@@ -2611,7 +2611,7 @@ void __thiscall st::fn_00599BE0(FSGSTy *this)
 }
 
 // 00599E90 FSGSTy::PaintLogNew
-#line 1 "decomp/ST.exe/functions/00599E90/decomp.c"
+#line 4 "decomp/ST.exe/functions/00599E90/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\Start\fsgs_obj.cpp
    FSGSTy::PaintLogNew */
@@ -2655,49 +2655,49 @@ void __thiscall st::fn_00599E90(FSGSTy *this)
     uVar8 = 2;
     iVar9 = -1;
     iVar4 = 0;
-    puVar6 = (uint *)st::fn_006B0140(0x254f,g_module_00807618);
+    puVar6 = (uint *)st::fn_006B0140(0x254f,g_hINSTANCE_00807618);
     st::fn_007119C0(pFVar3->field_1A73,puVar6,iVar4,iVar9,uVar8);
     st::fn_006B5EE0((RecoveredSourceFamily_dibcopy *)pFVar3->field_1AC0,0,0x18,0x2e,0x188,0x1b,0xf,0xd);
     st::fn_00710A90(pFVar3->field_1A73,(int)pFVar3->field_1AC0,0,0x19,0x48,0xb4,0x14);
     uVar8 = 2;
     iVar9 = -1;
     iVar4 = 0;
-    puVar6 = (uint *)st::fn_006B0140(0x2550,g_module_00807618);
+    puVar6 = (uint *)st::fn_006B0140(0x2550,g_hINSTANCE_00807618);
     st::fn_007119C0(pFVar3->field_1A73,puVar6,iVar4,iVar9,uVar8);
     st::fn_006B5EE0((RecoveredSourceFamily_dibcopy *)pFVar3->field_1AC0,0,0x18,0x5b,0xb6,0x16,0xf,0xd);
     st::fn_00710A90(pFVar3->field_1A73,(int)pFVar3->field_1AC0,0,0xeb,0x48,0xb4,0x14);
     uVar8 = 2;
     iVar9 = -1;
     iVar4 = 0;
-    puVar6 = (uint *)st::fn_006B0140(0x2554,g_module_00807618);
+    puVar6 = (uint *)st::fn_006B0140(0x2554,g_hINSTANCE_00807618);
     st::fn_007119C0(pFVar3->field_1A73,puVar6,iVar4,iVar9,uVar8);
     st::fn_006B5EE0((RecoveredSourceFamily_dibcopy *)pFVar3->field_1AC0,0,0xea,0x5b,0xb6,0x16,0xf,0xd);
     st::fn_00710A90(pFVar3->field_1A73,(int)pFVar3->field_1AC0,0,0x19,0x70,0x6e,0x14);
     uVar8 = 2;
     iVar9 = -1;
     iVar4 = 0;
-    puVar6 = (uint *)st::fn_006B0140(0x2557,g_module_00807618);
+    puVar6 = (uint *)st::fn_006B0140(0x2557,g_hINSTANCE_00807618);
     st::fn_007119C0(pFVar3->field_1A73,puVar6,iVar4,iVar9,uVar8);
     st::fn_006B5EE0((RecoveredSourceFamily_dibcopy *)pFVar3->field_1AC0,0,0x18,0x83,0x70,0x16,0xf,0xd);
     st::fn_00710A90(pFVar3->field_1A73,(int)pFVar3->field_1AC0,0,0xa5,0x70,0x6e,0x14);
     uVar8 = 2;
     iVar9 = -1;
     iVar4 = 0;
-    puVar6 = (uint *)st::fn_006B0140(0x2558,g_module_00807618);
+    puVar6 = (uint *)st::fn_006B0140(0x2558,g_hINSTANCE_00807618);
     st::fn_007119C0(pFVar3->field_1A73,puVar6,iVar4,iVar9,uVar8);
     st::fn_006B5EE0((RecoveredSourceFamily_dibcopy *)pFVar3->field_1AC0,0,0xa4,0x83,0x70,0x16,0xf,0xd);
     st::fn_00710A90(pFVar3->field_1A73,(int)pFVar3->field_1AC0,0,0x131,0x70,0x6e,0x14);
     uVar8 = 2;
     iVar9 = -1;
     iVar4 = 0;
-    puVar6 = (uint *)st::fn_006B0140(0x2559,g_module_00807618);
+    puVar6 = (uint *)st::fn_006B0140(0x2559,g_hINSTANCE_00807618);
     st::fn_007119C0(pFVar3->field_1A73,puVar6,iVar4,iVar9,uVar8);
     st::fn_006B5EE0((RecoveredSourceFamily_dibcopy *)pFVar3->field_1AC0,0,0x130,0x83,0x70,0x16,0xf,0xd);
     st::fn_00710A90(pFVar3->field_1A73,(int)pFVar3->field_1AC0,0,0x19,0x98,0x186,0x14);
     uVar8 = 2;
     iVar9 = -1;
     iVar4 = 0;
-    puVar6 = (uint *)st::fn_006B0140(0x255a,g_module_00807618);
+    puVar6 = (uint *)st::fn_006B0140(0x255a,g_hINSTANCE_00807618);
     st::fn_007119C0(pFVar3->field_1A73,puVar6,iVar4,iVar9,uVar8);
     st::fn_006B5EE0((RecoveredSourceFamily_dibcopy *)pFVar3->field_1AC0,0,0x18,0xab,0x188,0x4d,0xf,0xd);
     st::fn_006B3430((int *)g_ddxContext_008075A8,pFVar3->field_1ABC);
@@ -2716,7 +2716,7 @@ void __thiscall st::fn_00599E90(FSGSTy *this)
 }
 
 // 0059A320 FSGSTy::PaintLogPsw
-#line 1 "decomp/ST.exe/functions/0059A320/decomp.c"
+#line 4 "decomp/ST.exe/functions/0059A320/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\Start\fsgs_obj.cpp
    FSGSTy::PaintLogPsw */
@@ -2760,28 +2760,28 @@ void __thiscall st::fn_0059A320(FSGSTy *this)
     uVar8 = 2;
     iVar9 = -1;
     iVar4 = 0;
-    puVar6 = (uint *)st::fn_006B0140(0x254f,g_module_00807618);
+    puVar6 = (uint *)st::fn_006B0140(0x254f,g_hINSTANCE_00807618);
     st::fn_007119C0(pFVar3->field_1A73,puVar6,iVar4,iVar9,uVar8);
     st::fn_006B5EE0((RecoveredSourceFamily_dibcopy *)pFVar3->field_1AC0,0,0x18,0x3d,0x188,0x1b,0xf,0xd);
     st::fn_00710A90(pFVar3->field_1A73,(int)pFVar3->field_1AC0,0,0x19,0x61,0xb4,0x14);
     uVar8 = 2;
     iVar9 = -1;
     iVar4 = 0;
-    puVar6 = (uint *)st::fn_006B0140(0x2556,g_module_00807618);
+    puVar6 = (uint *)st::fn_006B0140(0x2556,g_hINSTANCE_00807618);
     st::fn_007119C0(pFVar3->field_1A73,puVar6,iVar4,iVar9,uVar8);
     st::fn_006B5EE0((RecoveredSourceFamily_dibcopy *)pFVar3->field_1AC0,0,0x18,0x74,0xb6,0x16,0xf,0xd);
     st::fn_00710A90(pFVar3->field_1A73,(int)pFVar3->field_1AC0,0,0x19,0x89,0xb4,0x14);
     uVar8 = 2;
     iVar9 = -1;
     iVar4 = 0;
-    puVar6 = (uint *)st::fn_006B0140(0x2555,g_module_00807618);
+    puVar6 = (uint *)st::fn_006B0140(0x2555,g_hINSTANCE_00807618);
     st::fn_007119C0(pFVar3->field_1A73,puVar6,iVar4,iVar9,uVar8);
     st::fn_006B5EE0((RecoveredSourceFamily_dibcopy *)pFVar3->field_1AC0,0,0x18,0x9c,0xb6,0x16,0xf,0xd);
     st::fn_00710A90(pFVar3->field_1A73,(int)pFVar3->field_1AC0,0,0x19,0xb1,0xb4,0x14);
     uVar8 = 2;
     iVar9 = -1;
     iVar4 = 0;
-    puVar6 = (uint *)st::fn_006B0140(0x2554,g_module_00807618);
+    puVar6 = (uint *)st::fn_006B0140(0x2554,g_hINSTANCE_00807618);
     st::fn_007119C0(pFVar3->field_1A73,puVar6,iVar4,iVar9,uVar8);
     st::fn_006B5EE0((RecoveredSourceFamily_dibcopy *)pFVar3->field_1AC0,0,0x18,0xc4,0xb6,0x16,0xf,0xd);
     st::fn_006B3430((int *)g_ddxContext_008075A8,pFVar3->field_1ABC);
@@ -2800,7 +2800,7 @@ void __thiscall st::fn_0059A320(FSGSTy *this)
 }
 
 // 0059A640 FSGSTy::PaintGameNew
-#line 1 "decomp/ST.exe/functions/0059A640/decomp.c"
+#line 4 "decomp/ST.exe/functions/0059A640/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\Start\fsgs_obj.cpp
    FSGSTy::PaintGameNew */
@@ -2844,21 +2844,21 @@ void __thiscall st::fn_0059A640(FSGSTy *this)
     uVar8 = 2;
     iVar9 = -1;
     iVar4 = 0;
-    puVar6 = (uint *)st::fn_006B0140(0x256b,g_module_00807618);
+    puVar6 = (uint *)st::fn_006B0140(0x256b,g_hINSTANCE_00807618);
     st::fn_007119C0(pFVar3->field_1A73,puVar6,iVar4,iVar9,uVar8);
     st::fn_006B5EE0((RecoveredSourceFamily_dibcopy *)pFVar3->field_1AC0,0,0x18,0x5b,0x188,0x1b,0xf,0xd);
     st::fn_00710A90(pFVar3->field_1A73,(int)pFVar3->field_1AC0,0,0x19,0x7f,0xb4,0x14);
     uVar8 = 2;
     iVar9 = -1;
     iVar4 = 0;
-    puVar6 = (uint *)st::fn_006B0140(0x2550,g_module_00807618);
+    puVar6 = (uint *)st::fn_006B0140(0x2550,g_hINSTANCE_00807618);
     st::fn_007119C0(pFVar3->field_1A73,puVar6,iVar4,iVar9,uVar8);
     st::fn_006B5EE0((RecoveredSourceFamily_dibcopy *)pFVar3->field_1AC0,0,0x18,0x92,0xb6,0x16,0xf,0xd);
     st::fn_00710A90(pFVar3->field_1A73,(int)pFVar3->field_1AC0,0,0x19,0xb1,0xb4,0x14);
     uVar8 = 2;
     iVar9 = -1;
     iVar4 = 0;
-    puVar6 = (uint *)st::fn_006B0140(0x256d,g_module_00807618);
+    puVar6 = (uint *)st::fn_006B0140(0x256d,g_hINSTANCE_00807618);
     st::fn_007119C0(pFVar3->field_1A73,puVar6,iVar4,iVar9,uVar8);
     st::fn_006C7570((RecoveredSourceFamily_dibcopy *)pFVar3->field_1AC0,0,0x19,0xc5,(undefined4 *)0x186
                  ,0x19,4,0xf);
@@ -2880,7 +2880,7 @@ void __thiscall st::fn_0059A640(FSGSTy *this)
 }
 
 // 0059A910 FSGSTy::PaintInfo
-#line 1 "decomp/ST.exe/functions/0059A910/decomp.c"
+#line 4 "decomp/ST.exe/functions/0059A910/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\Start\fsgs_obj.cpp
    FSGSTy::PaintInfo */
@@ -2924,7 +2924,7 @@ void __thiscall st::fn_0059A910(FSGSTy *this)
     uVar8 = 2;
     iVar9 = -1;
     iVar4 = 0;
-    puVar6 = (uint *)st::fn_006B0140(0x254f,g_module_00807618);
+    puVar6 = (uint *)st::fn_006B0140(0x254f,g_hINSTANCE_00807618);
     st::fn_007119C0(pFVar3->field_1A73,puVar6,iVar4,iVar9,uVar8);
     st::fn_006B5EE0((RecoveredSourceFamily_dibcopy *)pFVar3->field_1AC0,0,0x18,0x2e,0x188,0x16,0xf,0xd);
     st::fn_00710A90(pFVar3->field_1A73,(int)pFVar3->field_1AC0,0,0x1e,0x2e,0x17c,0x14);
@@ -2933,117 +2933,117 @@ void __thiscall st::fn_0059A910(FSGSTy *this)
     uVar8 = 2;
     iVar9 = -1;
     iVar4 = 0;
-    puVar6 = (uint *)st::fn_006B0140(0x2557,g_module_00807618);
+    puVar6 = (uint *)st::fn_006B0140(0x2557,g_hINSTANCE_00807618);
     st::fn_007119C0(pFVar3->field_1A73,puVar6,iVar4,iVar9,uVar8);
     st::fn_006B5EE0((RecoveredSourceFamily_dibcopy *)pFVar3->field_1AC0,0,0x18,0x56,0x70,0x16,0xf,0xd);
     st::fn_00710A90(pFVar3->field_1A73,(int)pFVar3->field_1AC0,0,0xa5,0x43,0x6e,0x14);
     uVar8 = 2;
     iVar9 = -1;
     iVar4 = 0;
-    puVar6 = (uint *)st::fn_006B0140(0x2558,g_module_00807618);
+    puVar6 = (uint *)st::fn_006B0140(0x2558,g_hINSTANCE_00807618);
     st::fn_007119C0(pFVar3->field_1A73,puVar6,iVar4,iVar9,uVar8);
     st::fn_006B5EE0((RecoveredSourceFamily_dibcopy *)pFVar3->field_1AC0,0,0xa4,0x56,0x70,0x16,0xf,0xd);
     st::fn_00710A90(pFVar3->field_1A73,(int)pFVar3->field_1AC0,0,0x131,0x43,0x6e,0x14);
     uVar8 = 2;
     iVar9 = -1;
     iVar4 = 0;
-    puVar6 = (uint *)st::fn_006B0140(0x2559,g_module_00807618);
+    puVar6 = (uint *)st::fn_006B0140(0x2559,g_hINSTANCE_00807618);
     st::fn_007119C0(pFVar3->field_1A73,puVar6,iVar4,iVar9,uVar8);
     st::fn_006B5EE0((RecoveredSourceFamily_dibcopy *)pFVar3->field_1AC0,0,0x130,0x56,0x70,0x16,0xf,0xd);
     st::fn_00710A90(pFVar3->field_1A73,(int)pFVar3->field_1AC0,0,0x19,0x6b,0x186,0x14);
     uVar8 = 2;
     iVar9 = -1;
     iVar4 = 0;
-    puVar6 = (uint *)st::fn_006B0140(0x255a,g_module_00807618);
+    puVar6 = (uint *)st::fn_006B0140(0x255a,g_hINSTANCE_00807618);
     st::fn_007119C0(pFVar3->field_1A73,puVar6,iVar4,iVar9,uVar8);
     st::fn_006B5EE0((RecoveredSourceFamily_dibcopy *)pFVar3->field_1AC0,0,0x18,0x7e,0x188,0x4d,0xf,0xd);
     st::fn_00710A90(pFVar3->field_1A73,(int)pFVar3->field_1AC0,0,0x19,0xcf,0x186,0x14);
     uVar8 = 0;
     iVar9 = -1;
     iVar4 = -1;
-    puVar6 = (uint *)st::fn_006B0140(0x259d,g_module_00807618);
+    puVar6 = (uint *)st::fn_006B0140(0x259d,g_hINSTANCE_00807618);
     st::fn_007119C0(pFVar3->field_1A73,puVar6,iVar4,iVar9,uVar8);
     st::fn_00710A90(pFVar3->field_1A73,(int)pFVar3->field_1AC0,0,0x19,0xde,0x50,0x14);
     uVar8 = 2;
     iVar9 = -1;
     iVar4 = 0;
-    puVar6 = (uint *)st::fn_006B0140(0x259f,g_module_00807618);
+    puVar6 = (uint *)st::fn_006B0140(0x259f,g_hINSTANCE_00807618);
     st::fn_007119C0(pFVar3->field_1A73,puVar6,iVar4,iVar9,uVar8);
     st::fn_006B5EE0((RecoveredSourceFamily_dibcopy *)pFVar3->field_1AC0,0,0x18,0xf2,0x52,0x14,0xf,0xd);
     st::fn_00710A90(pFVar3->field_1A73,(int)pFVar3->field_1AC0,0,0x7d,0xde,0x50,0x14);
     uVar8 = 2;
     iVar9 = -1;
     iVar4 = 0;
-    puVar6 = (uint *)st::fn_006B0140(0x25a0,g_module_00807618);
+    puVar6 = (uint *)st::fn_006B0140(0x25a0,g_hINSTANCE_00807618);
     st::fn_007119C0(pFVar3->field_1A73,puVar6,iVar4,iVar9,uVar8);
     st::fn_006B5EE0((RecoveredSourceFamily_dibcopy *)pFVar3->field_1AC0,0,0x7c,0xf2,0x52,0x14,0xf,0xd);
     st::fn_00710A90(pFVar3->field_1A73,(int)pFVar3->field_1AC0,0,0xe1,0xde,0x50,0x14);
     uVar8 = 2;
     iVar9 = -1;
     iVar4 = 0;
-    puVar6 = (uint *)st::fn_006B0140(0x25a5,g_module_00807618);
+    puVar6 = (uint *)st::fn_006B0140(0x25a5,g_hINSTANCE_00807618);
     st::fn_007119C0(pFVar3->field_1A73,puVar6,iVar4,iVar9,uVar8);
     st::fn_006B5EE0((RecoveredSourceFamily_dibcopy *)pFVar3->field_1AC0,0,0xe0,0xf2,0x52,0x14,0xf,0xd);
     st::fn_00710A90(pFVar3->field_1A73,(int)pFVar3->field_1AC0,0,0x145,0xde,0x50,0x14);
     uVar8 = 2;
     iVar9 = -1;
     iVar4 = 0;
-    puVar6 = (uint *)st::fn_006B0140(0x25a1,g_module_00807618);
+    puVar6 = (uint *)st::fn_006B0140(0x25a1,g_hINSTANCE_00807618);
     st::fn_007119C0(pFVar3->field_1A73,puVar6,iVar4,iVar9,uVar8);
     st::fn_006B5EE0((RecoveredSourceFamily_dibcopy *)pFVar3->field_1AC0,0,0x144,0xf2,0x52,0x14,0xf,0xd);
     st::fn_00710A90(pFVar3->field_1A73,(int)pFVar3->field_1AC0,0,0x19,0x106,0x50,0x14);
     uVar8 = 2;
     iVar9 = -1;
     iVar4 = 0;
-    puVar6 = (uint *)st::fn_006B0140(0x25a4,g_module_00807618);
+    puVar6 = (uint *)st::fn_006B0140(0x25a4,g_hINSTANCE_00807618);
     st::fn_007119C0(pFVar3->field_1A73,puVar6,iVar4,iVar9,uVar8);
     st::fn_006B5EE0((RecoveredSourceFamily_dibcopy *)pFVar3->field_1AC0,0,0x18,0x11a,0x52,0x19,0xf,0xd);
     st::fn_00710A90(pFVar3->field_1A73,(int)pFVar3->field_1AC0,0,0x7d,0x106,0x50,0x14);
     uVar8 = 2;
     iVar9 = -1;
     iVar4 = 0;
-    puVar6 = (uint *)st::fn_006B0140(0x25a3,g_module_00807618);
+    puVar6 = (uint *)st::fn_006B0140(0x25a3,g_hINSTANCE_00807618);
     st::fn_007119C0(pFVar3->field_1A73,puVar6,iVar4,iVar9,uVar8);
     st::fn_006B5EE0((RecoveredSourceFamily_dibcopy *)pFVar3->field_1AC0,0,0x7c,0x11a,0x52,0x19,0xf,0xd);
     st::fn_00710A90(pFVar3->field_1A73,(int)pFVar3->field_1AC0,0,0xe1,0x106,0xb4,0x14);
     uVar8 = 2;
     iVar9 = -1;
     iVar4 = 0;
-    puVar6 = (uint *)st::fn_006B0140(0x25a2,g_module_00807618);
+    puVar6 = (uint *)st::fn_006B0140(0x25a2,g_hINSTANCE_00807618);
     st::fn_007119C0(pFVar3->field_1A73,puVar6,iVar4,iVar9,uVar8);
     st::fn_006B5EE0((RecoveredSourceFamily_dibcopy *)pFVar3->field_1AC0,0,0xe0,0x11a,0xb6,0x19,0xf,0xd);
     st::fn_00710A90(pFVar3->field_1A73,(int)pFVar3->field_1AC0,0,0x19,0x13d,0x186,0x14);
     uVar8 = 0;
     iVar9 = -1;
     iVar4 = -1;
-    puVar6 = (uint *)st::fn_006B0140(0x259e,g_module_00807618);
+    puVar6 = (uint *)st::fn_006B0140(0x259e,g_hINSTANCE_00807618);
     st::fn_007119C0(pFVar3->field_1A73,puVar6,iVar4,iVar9,uVar8);
     st::fn_00710A90(pFVar3->field_1A73,(int)pFVar3->field_1AC0,0,0x19,0x14c,0x50,0x14);
     uVar8 = 2;
     iVar9 = -1;
     iVar4 = 0;
-    puVar6 = (uint *)st::fn_006B0140(0x259f,g_module_00807618);
+    puVar6 = (uint *)st::fn_006B0140(0x259f,g_hINSTANCE_00807618);
     st::fn_007119C0(pFVar3->field_1A73,puVar6,iVar4,iVar9,uVar8);
     st::fn_006B5EE0((RecoveredSourceFamily_dibcopy *)pFVar3->field_1AC0,0,0x18,0x160,0x52,0x14,0xf,0xd);
     st::fn_00710A90(pFVar3->field_1A73,(int)pFVar3->field_1AC0,0,0x7d,0x14c,0x50,0x14);
     uVar8 = 2;
     iVar9 = -1;
     iVar4 = 0;
-    puVar6 = (uint *)st::fn_006B0140(0x25a0,g_module_00807618);
+    puVar6 = (uint *)st::fn_006B0140(0x25a0,g_hINSTANCE_00807618);
     st::fn_007119C0(pFVar3->field_1A73,puVar6,iVar4,iVar9,uVar8);
     st::fn_006B5EE0((RecoveredSourceFamily_dibcopy *)pFVar3->field_1AC0,0,0x7c,0x160,0x52,0x14,0xf,0xd);
     st::fn_00710A90(pFVar3->field_1A73,(int)pFVar3->field_1AC0,0,0xe1,0x14c,0x50,0x14);
     uVar8 = 2;
     iVar9 = -1;
     iVar4 = 0;
-    puVar6 = (uint *)st::fn_006B0140(0x25a5,g_module_00807618);
+    puVar6 = (uint *)st::fn_006B0140(0x25a5,g_hINSTANCE_00807618);
     st::fn_007119C0(pFVar3->field_1A73,puVar6,iVar4,iVar9,uVar8);
     st::fn_006B5EE0((RecoveredSourceFamily_dibcopy *)pFVar3->field_1AC0,0,0xe0,0x160,0x52,0x14,0xf,0xd);
     st::fn_00710A90(pFVar3->field_1A73,(int)pFVar3->field_1AC0,0,0x145,0x14c,0x50,0x14);
     uVar8 = 2;
     iVar9 = -1;
     iVar4 = 0;
-    puVar6 = (uint *)st::fn_006B0140(0x25a1,g_module_00807618);
+    puVar6 = (uint *)st::fn_006B0140(0x25a1,g_hINSTANCE_00807618);
     st::fn_007119C0(pFVar3->field_1A73,puVar6,iVar4,iVar9,uVar8);
     st::fn_006B5EE0((RecoveredSourceFamily_dibcopy *)pFVar3->field_1AC0,0,0x144,0x160,0x52,0x14,0xf,0xd
                 );
@@ -3063,7 +3063,7 @@ void __thiscall st::fn_0059A910(FSGSTy *this)
 }
 
 // 0059B2C0 FSGSTy::PaintLadder
-#line 1 "decomp/ST.exe/functions/0059B2C0/decomp.c"
+#line 4 "decomp/ST.exe/functions/0059B2C0/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\Start\fsgs_obj.cpp
    FSGSTy::PaintLadder
@@ -3184,7 +3184,7 @@ void __thiscall st::fn_0059B2C0(FSGSTy *this)
 }
 
 // 0059B740 FSGSTy::CloseButtons
-#line 1 "decomp/ST.exe/functions/0059B740/decomp.c"
+#line 4 "decomp/ST.exe/functions/0059B740/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\Start\fsgs_obj.cpp
    FSGSTy::CloseButtons */
@@ -3223,7 +3223,7 @@ void __thiscall st::fn_0059B740(FSGSTy *this)
 }
 
 // 0059C520 FSGSTy::CreateCtrls
-#line 1 "decomp/ST.exe/functions/0059C520/decomp.c"
+#line 4 "decomp/ST.exe/functions/0059C520/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\Start\fsgs_obj.cpp
    FSGSTy::CreateCtrls
@@ -3299,7 +3299,7 @@ void __thiscall st::fn_0059C520(FSGSTy *this)
 }
 
 // 0059C700 FSGSTy::LoginCtrls
-#line 1 "decomp/ST.exe/functions/0059C700/decomp.c"
+#line 4 "decomp/ST.exe/functions/0059C700/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\Start\fsgs_obj.cpp
    FSGSTy::LoginCtrls */
@@ -3401,7 +3401,7 @@ void __thiscall st::fn_0059C700(FSGSTy *this)
 }
 
 // 0059C9F0 FSGSTy::NewIDCtrls
-#line 1 "decomp/ST.exe/functions/0059C9F0/decomp.c"
+#line 4 "decomp/ST.exe/functions/0059C9F0/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\Start\fsgs_obj.cpp
    FSGSTy::NewIDCtrls */
@@ -3539,7 +3539,7 @@ void __thiscall st::fn_0059C9F0(FSGSTy *this)
 }
 
 // 0059CEE0 FSGSTy::PswCtrls
-#line 1 "decomp/ST.exe/functions/0059CEE0/decomp.c"
+#line 4 "decomp/ST.exe/functions/0059CEE0/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\Start\fsgs_obj.cpp
    FSGSTy::PswCtrls */
@@ -3647,7 +3647,7 @@ void __thiscall st::fn_0059CEE0(FSGSTy *this)
 }
 
 // 0059D240 FSGSTy::LicCtrls
-#line 1 "decomp/ST.exe/functions/0059D240/decomp.c"
+#line 4 "decomp/ST.exe/functions/0059D240/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\Start\fsgs_obj.cpp
    FSGSTy::LicCtrls */
@@ -3822,7 +3822,7 @@ void __thiscall st::fn_0059D240(FSGSTy *this)
 }
 
 // 0059D720 FSGSTy::InfoCtrls
-#line 1 "decomp/ST.exe/functions/0059D720/decomp.c"
+#line 4 "decomp/ST.exe/functions/0059D720/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\Start\fsgs_obj.cpp
    FSGSTy::InfoCtrls
@@ -3970,7 +3970,7 @@ LAB_0059d780:
 }
 
 // 0059DB20 FSGSTy::ChatCtrls
-#line 1 "decomp/ST.exe/functions/0059DB20/decomp.c"
+#line 4 "decomp/ST.exe/functions/0059DB20/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\Start\fsgs_obj.cpp
    FSGSTy::ChatCtrls */
@@ -4376,7 +4376,7 @@ void __thiscall st::fn_0059DB20(FSGSTy *this)
 }
 
 // 0059E7F0 FSGSTy::NewGameCtrls
-#line 1 "decomp/ST.exe/functions/0059E7F0/decomp.c"
+#line 4 "decomp/ST.exe/functions/0059E7F0/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\Start\fsgs_obj.cpp
    FSGSTy::NewGameCtrls */
@@ -4481,7 +4481,7 @@ void __thiscall st::fn_0059E7F0(FSGSTy *this)
 }
 
 // 0059EB00 FSGSTy::JoinGameCtrls
-#line 1 "decomp/ST.exe/functions/0059EB00/decomp.c"
+#line 4 "decomp/ST.exe/functions/0059EB00/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\Start\fsgs_obj.cpp
    FSGSTy::JoinGameCtrls */
@@ -4728,7 +4728,7 @@ void __thiscall st::fn_0059EB00(FSGSTy *this)
 }
 
 // 0059F260 FSGSTy::LadderCtrls
-#line 1 "decomp/ST.exe/functions/0059F260/decomp.c"
+#line 4 "decomp/ST.exe/functions/0059F260/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\Start\fsgs_obj.cpp
    FSGSTy::LadderCtrls */
@@ -4850,7 +4850,7 @@ void __thiscall st::fn_0059F260(FSGSTy *this)
 }
 
 // 0059F670 FSGSTy::DeleteCtrls
-#line 1 "decomp/ST.exe/functions/0059F670/decomp.c"
+#line 4 "decomp/ST.exe/functions/0059F670/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\Start\fsgs_obj.cpp
    FSGSTy::DeleteCtrls
@@ -5353,7 +5353,7 @@ switchD_0059f6f7_default:
 }
 
 // 005A0DC0 FSGSTy::ConnectProc
-#line 1 "decomp/ST.exe/functions/005A0DC0/decomp.c"
+#line 4 "decomp/ST.exe/functions/005A0DC0/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\Start\fsgs_obj.cpp
    FSGSTy::ConnectProc */
@@ -5400,11 +5400,11 @@ void __thiscall st::fn_005A0DC0(FSGSTy *this,int param_1,int param_2)
       st::fn_00710A90(pFVar4->field_1A73,(int)pFVar4->field_1AC0,0,0,0x16,0x1b8,0xf0);
       if (param_1 < param_2) {
         iVar5 = (param_1 * 100) / param_2;
-        pcVar7 = st::fn_006B0140(0x2571,g_module_00807618);
+        pcVar7 = st::fn_006B0140(0x2571,g_hINSTANCE_00807618);
         st::external_00000080((LPSTR)&DAT_0080f33a,"%s%d%%",pcVar7,iVar5);
       }
       else {
-        pcVar7 = st::fn_006B0140(0x2570,g_module_00807618);
+        pcVar7 = st::fn_006B0140(0x2570,g_hINSTANCE_00807618);
         uVar10 = 0xffffffff;
         do {
           pcVar11 = pcVar7;
@@ -5436,7 +5436,7 @@ void __thiscall st::fn_005A0DC0(FSGSTy *this,int param_1,int param_2)
 }
 
 // 005A0FF0 FSGSTy::DoLogon
-#line 1 "decomp/ST.exe/functions/005A0FF0/decomp.c"
+#line 4 "decomp/ST.exe/functions/005A0FF0/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\Start\fsgs_obj.cpp
    FSGSTy::DoLogon */
@@ -5497,7 +5497,7 @@ void __thiscall st::fn_005A0FF0(FSGSTy *this)
 }
 
 // 005A1160 FSGSTy::CheckUpdate
-#line 1 "decomp/ST.exe/functions/005A1160/decomp.c"
+#line 4 "decomp/ST.exe/functions/005A1160/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\Start\fsgs_obj.cpp
    FSGSTy::CheckUpdate */
@@ -5584,7 +5584,7 @@ void __thiscall st::fn_005A1160(FSGSTy *this)
   uVar7 = 2;
   iVar12 = -1;
   iVar4 = -2;
-  resourceString = (uint *)st::fn_006B0140(0x25bd,g_module_00807618);
+  resourceString = (uint *)st::fn_006B0140(0x25bd,g_hINSTANCE_00807618);
   st::fn_00711B70(this_01->field_1A73,resourceString,iVar4,iVar12,uVar7,iVar13,iVar14);
   st::fn_006B35D0((int *)g_ddxContext_008075A8,this_01->field_1ABC);
   pSVar10 = &local_2c;
@@ -5612,7 +5612,7 @@ void __thiscall st::fn_005A1160(FSGSTy *this)
 }
 
 // 005A1430 FSGSTy::Download
-#line 1 "decomp/ST.exe/functions/005A1430/decomp.c"
+#line 4 "decomp/ST.exe/functions/005A1430/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\Start\fsgs_obj.cpp
    FSGSTy::Download */
@@ -5656,8 +5656,8 @@ void __thiscall st::fn_005A1430(FSGSTy *this,undefined4 param_1,undefined4 param
         puVar4 = (undefined4 *)((int)puVar4 + 1);
       }
       st::fn_00710A90(pFVar3->field_1A73,(int)pFVar3->field_1AC0,0,0,0x16,0x1b8,0xf0);
-      pcVar5 = st::fn_006B0140(0x25bb,g_module_00807618);
-      pcVar6 = st::fn_006B0140(0x25ba,g_module_00807618);
+      pcVar5 = st::fn_006B0140(0x25bb,g_hINSTANCE_00807618);
+      pcVar6 = st::fn_006B0140(0x25ba,g_hINSTANCE_00807618);
       st::external_00000080((LPSTR)&DAT_0080f33a,"%s %d%%\n(%d %s)",pcVar6,param_1,param_2,pcVar5);
       st::fn_00711B70(pFVar3->field_1A73,&DAT_0080f33a,-2,-1,2,-1,-1);
       st::fn_006B35D0((int *)g_ddxContext_008075A8,pFVar3->field_1ABC);
@@ -5676,7 +5676,7 @@ void __thiscall st::fn_005A1430(FSGSTy *this,undefined4 param_1,undefined4 param
 }
 
 // 005A1630 FSGSTy::Finished
-#line 1 "decomp/ST.exe/functions/005A1630/decomp.c"
+#line 4 "decomp/ST.exe/functions/005A1630/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\Start\fsgs_obj.cpp
    FSGSTy::Finished */
@@ -5750,7 +5750,7 @@ void __thiscall st::fn_005A1630(FSGSTy *this,int param_1)
       uVar7 = 2;
       iVar9 = -1;
       iVar4 = -2;
-      resourceString = (uint *)st::fn_006B0140(0x25b9,g_module_00807618);
+      resourceString = (uint *)st::fn_006B0140(0x25b9,g_hINSTANCE_00807618);
       st::fn_00711B70(this_02->field_1A73,resourceString,iVar4,iVar9,uVar7,iVar10,iVar11);
       st::fn_006B35D0((int *)g_ddxContext_008075A8,this_02->field_1ABC);
       pSVar2 = this_02->field_1A5B;
@@ -5785,7 +5785,7 @@ void __thiscall st::fn_005A1630(FSGSTy *this,int param_1)
 }
 
 // 005A1920 FSGSTy::SetBanner
-#line 1 "decomp/ST.exe/functions/005A1920/decomp.c"
+#line 4 "decomp/ST.exe/functions/005A1920/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\Start\fsgs_obj.cpp
    FSGSTy::SetBanner */
@@ -5995,7 +5995,7 @@ LAB_005a1cfd:
 }
 
 // 005A1F00 FSGSTy::AddMessage
-#line 1 "decomp/ST.exe/functions/005A1F00/decomp.c"
+#line 4 "decomp/ST.exe/functions/005A1F00/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\Start\fsgs_obj.cpp
    FSGSTy::AddMessage
@@ -6202,7 +6202,7 @@ LAB_005a2188:
 }
 
 // 005A2380 FSGSTy::AddPlayer
-#line 1 "decomp/ST.exe/functions/005A2380/decomp.c"
+#line 4 "decomp/ST.exe/functions/005A2380/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\Start\fsgs_obj.cpp
    FSGSTy::AddPlayer */
@@ -6334,7 +6334,7 @@ LAB_005a2562:
 }
 
 // 005A26C0 FSGSTy::DelPlayer
-#line 1 "decomp/ST.exe/functions/005A26C0/decomp.c"
+#line 4 "decomp/ST.exe/functions/005A26C0/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\Start\fsgs_obj.cpp
    FSGSTy::DelPlayer */
@@ -6502,7 +6502,7 @@ LAB_005a28ee:
 }
 
 // 005A2A60 FSGSTy::ChangePlayer
-#line 1 "decomp/ST.exe/functions/005A2A60/decomp.c"
+#line 4 "decomp/ST.exe/functions/005A2A60/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\Start\fsgs_obj.cpp
    FSGSTy::ChangePlayer
@@ -6591,7 +6591,7 @@ LAB_005a2b1c:
 }
 
 // 005A2C10 FSGSTy::ChangePlayerPing
-#line 1 "decomp/ST.exe/functions/005A2C10/decomp.c"
+#line 4 "decomp/ST.exe/functions/005A2C10/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\Start\fsgs_obj.cpp
    FSGSTy::ChangePlayerPing */
@@ -6651,7 +6651,7 @@ LAB_005a2c91:
 }
 
 // 005A2D70 FSGSTy::JoinChannel
-#line 1 "decomp/ST.exe/functions/005A2D70/decomp.c"
+#line 4 "decomp/ST.exe/functions/005A2D70/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\Start\fsgs_obj.cpp
    FSGSTy::JoinChannel
@@ -6739,7 +6739,7 @@ void __thiscall st::fn_005A2D70(FSGSTy *this)
 }
 
 // 005A2FF0 FSGSTy::SetChannelList
-#line 1 "decomp/ST.exe/functions/005A2FF0/decomp.c"
+#line 4 "decomp/ST.exe/functions/005A2FF0/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\Start\fsgs_obj.cpp
    FSGSTy::SetChannelList */
@@ -6846,7 +6846,7 @@ void __thiscall st::fn_005A2FF0(FSGSTy *this,int param_1,undefined4 *param_2)
 }
 
 // 005A32F0 FSGSTy::CreateGame
-#line 1 "decomp/ST.exe/functions/005A32F0/decomp.c"
+#line 4 "decomp/ST.exe/functions/005A32F0/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\Start\fsgs_obj.cpp
    FSGSTy::CreateGame */
@@ -6937,7 +6937,7 @@ cf_common_exit_005A33FB:
 }
 
 // 005A3540 FSGSTy::SetGameList
-#line 1 "decomp/ST.exe/functions/005A3540/decomp.c"
+#line 4 "decomp/ST.exe/functions/005A3540/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\Start\fsgs_obj.cpp
    FSGSTy::SetGameList */
@@ -7117,7 +7117,7 @@ LAB_005a36ee:
 }
 
 // 005A3AB0 FSGSTy::SetInfo
-#line 1 "decomp/ST.exe/functions/005A3AB0/decomp.c"
+#line 4 "decomp/ST.exe/functions/005A3AB0/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\Start\fsgs_obj.cpp
    FSGSTy::SetInfo */
@@ -7179,21 +7179,21 @@ LAB_005a3b63:
         pbVar3 = st::fn_00403EC7("Profile\\Age",param_2,param_3);
         this_01 = local_14;
         if (pbVar3 != nullptr) {
-          st::fn_006B6020(&local_14->field_1AF8->flags,0,(char *)pbVar3);
+          st::fn_006B6020(local_14->field_1AF8,0,(char *)pbVar3);
           *(DArrayTy **)&this_01->field_0x31 = this_01->field_1AF8;
           this_01->field_002D = 0x33;
           st::fn_006E6080(this_01,2,this_01->field_1AD8,(undefined4 *)&this_01->field_0x1d);
         }
         pbVar3 = st::fn_00403EC7("Profile\\Sex",param_2,param_3);
         if (pbVar3 != nullptr) {
-          st::fn_006B6020(&this_01->field_1AFC->flags,0,(char *)pbVar3);
+          st::fn_006B6020(this_01->field_1AFC,0,(char *)pbVar3);
           this_01->field_002D = 0x33;
           *(DArrayTy **)&this_01->field_0x31 = this_01->field_1AFC;
           st::fn_006E6080(this_01,2,this_01->field_1ADC,(undefined4 *)&this_01->field_0x1d);
         }
         pbVar3 = st::fn_00403EC7("Profile\\Location",param_2,param_3);
         if (pbVar3 != nullptr) {
-          st::fn_006B6020(&this_01->field_1B00->flags,0,(char *)pbVar3);
+          st::fn_006B6020(this_01->field_1B00,0,(char *)pbVar3);
           this_01->field_002D = 0x33;
           *(DArrayTy **)&this_01->field_0x31 = this_01->field_1B00;
           st::fn_006E6080(this_01,2,this_01->field_1AE0,(undefined4 *)&this_01->field_0x1d);
@@ -7278,7 +7278,7 @@ LAB_005a3b63:
 }
 
 // 005A40F0 FSGSTy::SetLadder
-#line 1 "decomp/ST.exe/functions/005A40F0/decomp.c"
+#line 4 "decomp/ST.exe/functions/005A40F0/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\Start\fsgs_obj.cpp
    FSGSTy::SetLadder */
@@ -7365,7 +7365,7 @@ st::fn_005A40F0(FSGSTy *this,undefined4 param_1,uint param_2,int param_3,undefin
 }
 
 // 005A4350 FSGSTy::GetMessage
-#line 1 "decomp/ST.exe/functions/005A4350/decomp.c"
+#line 4 "decomp/ST.exe/functions/005A4350/decomp.c"
 /* WARNING: Removing unreachable block (ram,0x005a58e7) */
 /* WARNING: Removing unreachable block (ram,0x005a5b40) */
 /* WARNING: Removing unreachable block (ram,0x005a5f43) */
@@ -8140,7 +8140,7 @@ LAB_005a6d57:
         uVar35 = 2;
         iVar46 = -1;
         iVar21 = -2;
-        puVar24 = (uint *)st::fn_006B0140(0x25be,g_module_00807618);
+        puVar24 = (uint *)st::fn_006B0140(0x25be,g_hINSTANCE_00807618);
         st::fn_00711B70(this_00->field_1A73,puVar24,iVar21,iVar46,uVar35,iVar48,iVar49);
         st::fn_006B35D0((int *)g_ddxContext_008075A8,this_00->field_1ABC);
         st::external_00000080((LPSTR)&DAT_0080f33a,"%s%s%s",&DAT_00807680,PTR_s_UPDATES__0079c020,
@@ -8223,7 +8223,7 @@ LAB_005a6e50:
                     uVar35 = (-(uint)((message->arg0).words.high != 0) & 0xfffffffe) + 2;
                     iVar46 = -1;
                     iVar21 = 0;
-                    puVar24 = (uint *)st::fn_006B0140(0x2567,g_module_00807618);
+                    puVar24 = (uint *)st::fn_006B0140(0x2567,g_hINSTANCE_00807618);
                     st::fn_007119C0(this_00->field_1A73,puVar24,iVar21,iVar46,uVar35);
                   }
                 }
@@ -8457,7 +8457,7 @@ LAB_005a6e50:
                                         pFVar8->elementSize * (message->arg0).u32),
                      puVar24 != nullptr)) {
               bVar44 = false;
-              st::fn_006B6020(&this_00->field_1AE8->flags,0,(char *)(puVar24 + 0xb));
+              st::fn_006B6020(this_00->field_1AE8,0,(char *)(puVar24 + 0xb));
               this_00->field_002D = 0x33;
               *(DArrayTy **)&this_00->field_0x31 = this_00->field_1AE8;
               st::fn_006E6080(this_00,2,this_00->field_1AC4,(undefined4 *)&this_00->field_0x1d);
@@ -8469,7 +8469,7 @@ LAB_005a6e50:
               uVar35 = 2;
               iVar46 = -1;
               iVar21 = -1;
-              puVar31 = (uint *)st::fn_006B0140(0x2572,g_module_00807618);
+              puVar31 = (uint *)st::fn_006B0140(0x2572,g_hINSTANCE_00807618);
               st::fn_007119C0(this_00->field_1A73,puVar31,iVar21,iVar46,uVar35);
               st::fn_00710A90(this_00->field_1A73,this_00->field_1E8E,0,10,0x11,0x14a,0x11);
               st::fn_007119C0(this_00->field_1A73,puVar24 + 7,0,-1,0);
@@ -8477,14 +8477,14 @@ LAB_005a6e50:
               uVar35 = 2;
               iVar46 = -1;
               iVar21 = -1;
-              puVar31 = (uint *)st::fn_006B0140(0x2347,g_module_00807618);
+              puVar31 = (uint *)st::fn_006B0140(0x2347,g_hINSTANCE_00807618);
               st::fn_007119C0(this_00->field_1A73,puVar31,iVar21,iVar46,uVar35);
               st::fn_00710A90(this_00->field_1A73,this_00->field_1E8E,0,10,0x33,0x14a,0x11);
               uVar35 = 0;
               iVar46 = -1;
               iVar21 = 0;
               if (*(char *)(puVar24 + 0x1f) == '\0') {
-                puVar31 = (uint *)st::fn_006B0140(0x2573,g_module_00807618);
+                puVar31 = (uint *)st::fn_006B0140(0x2573,g_hINSTANCE_00807618);
               }
               else {
                 puVar31 = (uint *)((int)puVar24 + 0x83);
@@ -8494,7 +8494,7 @@ LAB_005a6e50:
               uVar35 = 2;
               iVar46 = -1;
               iVar21 = -1;
-              puVar31 = (uint *)st::fn_006B0140(0x2344,g_module_00807618);
+              puVar31 = (uint *)st::fn_006B0140(0x2344,g_hINSTANCE_00807618);
               st::fn_007119C0(this_00->field_1A73,puVar31,iVar21,iVar46,uVar35);
               if (*(char *)(puVar24 + 0x1f) != '\0') {
                 st::fn_00710A90(this_00->field_1A73,this_00->field_1E8E,0,10,0x55,0x14a,0x11);
@@ -8506,11 +8506,11 @@ LAB_005a6e50:
               uVar35 = 2;
               iVar46 = -1;
               iVar21 = -1;
-              puVar31 = (uint *)st::fn_006B0140(0x2345,g_module_00807618);
+              puVar31 = (uint *)st::fn_006B0140(0x2345,g_hINSTANCE_00807618);
               st::fn_007119C0(this_00->field_1A73,puVar31,iVar21,iVar46,uVar35);
               if (*(char *)(puVar24 + 0x1f) != '\0') {
                 st::fn_00710A90(this_00->field_1A73,this_00->field_1E8E,0,10,0x77,0x14a,0x11);
-                pcVar39 = st::fn_006B0140(0x2574,g_module_00807618);
+                pcVar39 = st::fn_006B0140(0x2574,g_hINSTANCE_00807618);
                 st::external_00000080((LPSTR)&DAT_0080f33a,"%d %s",
                           (int)(char)STField<undefined1>(puVar24,0x7d),pcVar39);
                 st::fn_007119C0(this_00->field_1A73,&DAT_0080f33a,0,-1,0);
@@ -8520,7 +8520,7 @@ LAB_005a6e50:
                          nullptr,0,0,0x15e,0x8c,0x10000ff);
             }
             if (bVar44) {
-              st::fn_006B6020(&this_00->field_1AE8->flags,0,&DAT_008016a0);
+              st::fn_006B6020(this_00->field_1AE8,0,&DAT_008016a0);
               this_00->field_002D = 0x33;
               *(DArrayTy **)&this_00->field_0x31 = this_00->field_1AE8;
               st::fn_006E6080(this_00,2,this_00->field_1AC4,(undefined4 *)&this_00->field_0x1d);
@@ -8532,25 +8532,25 @@ LAB_005a6e50:
               uVar35 = 2;
               iVar46 = -1;
               iVar21 = -1;
-              puVar24 = (uint *)st::fn_006B0140(0x2572,g_module_00807618);
+              puVar24 = (uint *)st::fn_006B0140(0x2572,g_hINSTANCE_00807618);
               st::fn_007119C0(this_00->field_1A73,puVar24,iVar21,iVar46,uVar35);
               st::fn_00710A90(this_00->field_1A73,this_00->field_1E8E,0,0,0x22,0x15e,0x11);
               uVar35 = 2;
               iVar46 = -1;
               iVar21 = -1;
-              puVar24 = (uint *)st::fn_006B0140(0x2347,g_module_00807618);
+              puVar24 = (uint *)st::fn_006B0140(0x2347,g_hINSTANCE_00807618);
               st::fn_007119C0(this_00->field_1A73,puVar24,iVar21,iVar46,uVar35);
               st::fn_00710A90(this_00->field_1A73,this_00->field_1E8E,0,0,0x44,0x15e,0x11);
               uVar35 = 2;
               iVar46 = -1;
               iVar21 = -1;
-              puVar24 = (uint *)st::fn_006B0140(0x2344,g_module_00807618);
+              puVar24 = (uint *)st::fn_006B0140(0x2344,g_hINSTANCE_00807618);
               st::fn_007119C0(this_00->field_1A73,puVar24,iVar21,iVar46,uVar35);
               st::fn_00710A90(this_00->field_1A73,this_00->field_1E8E,0,0,0x66,0x15e,0x11);
               uVar35 = 2;
               iVar46 = -1;
               iVar21 = -1;
-              puVar24 = (uint *)st::fn_006B0140(0x2345,g_module_00807618);
+              puVar24 = (uint *)st::fn_006B0140(0x2345,g_hINSTANCE_00807618);
               st::fn_007119C0(this_00->field_1A73,puVar24,iVar21,iVar46,uVar35);
               st::fn_006B4680
                         ((int *)g_dDXContext_0080759C,0x1a4,0x7d,(BITMAPINFO *)this_00->field_1E8E,
@@ -8581,20 +8581,20 @@ LAB_005a6e50:
       }
       switch(SVar6) {
       case MESS_SHARED_C0A2:
-        if ((int)this_00->field_1EA2->field_0008 < 1) {
+        if ((int)this_00->field_1EA2->elementSize < 1) {
           pcVar39 = nullptr;
         }
         else {
-          pcVar39 = *(char **)this_00->field_1EA2->field_0014;
+          pcVar39 = *(char **)this_00->field_1EA2->growCapacity;
         }
         bVar44 = st::fn_0040224D(pcVar39);
         /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
         if (CONCAT31(extraout_var,bVar44) == 0) {
-          if ((int)this_00->field_1EA2->field_0008 < 1) {
+          if ((int)this_00->field_1EA2->elementSize < 1) {
             pcVar39 = nullptr;
           }
           else {
-            pcVar39 = *(char **)this_00->field_1EA2->field_0014;
+            pcVar39 = *(char **)this_00->field_1EA2->growCapacity;
           }
           st::external_00000107((CFsgsConnection *)&DAT_00802a90,pcVar39);
         }
@@ -8615,9 +8615,9 @@ LAB_005a8b12:
             } while (iVar21 < (int)pDVar25->elementSize);
           }
         }
-        st::fn_006B6020((uint *)this_00->field_1EA2,0,&DAT_008016a0);
+        st::fn_006B6020(this_00->field_1EA2,0,&DAT_008016a0);
         this_00->field_002D = 0x33;
-        *(AnonPointee_FSGSTy_1EA2 **)&this_00->field_0x31 = this_00->field_1EA2;
+        *(DArrayTy **)&this_00->field_0x31 = this_00->field_1EA2;
         goto LAB_005a8c85;
       case MESS_SHARED_C0A3:
         pDVar25 = this_00->field_1AE8;
@@ -8661,16 +8661,16 @@ joined_r0x005a8b8f:
         else {
           pvVar38 = nullptr;
         }
-        if ((int)this_00->field_1EA2->field_0008 < 1) {
+        if ((int)this_00->field_1EA2->elementSize < 1) {
           uVar26 = 0;
         }
         else {
-          uVar26 = *(undefined4 *)this_00->field_1EA2->field_0014;
+          uVar26 = *(undefined4 *)this_00->field_1EA2->growCapacity;
         }
         st::external_00000080((LPSTR)&DAT_0080f33a,"%s %s ",uVar26,pvVar38);
-        st::fn_006B6020((uint *)this_00->field_1EA2,0,(char *)&DAT_0080f33a);
+        st::fn_006B6020(this_00->field_1EA2,0,(char *)&DAT_0080f33a);
         this_00->field_002D = 0x33;
-        *(AnonPointee_FSGSTy_1EA2 **)&this_00->field_0x31 = this_00->field_1EA2;
+        *(DArrayTy **)&this_00->field_0x31 = this_00->field_1EA2;
 LAB_005a8c85:
         st::fn_006E6080(this_00,2,this_00->field_1B10,(undefined4 *)&this_00->field_0x1d);
         break;
@@ -8839,7 +8839,7 @@ LAB_005a8c85:
       }
       iVar46 = -1;
       iVar21 = -1;
-      puVar24 = (uint *)st::fn_006B0140(0x2565,g_module_00807618);
+      puVar24 = (uint *)st::fn_006B0140(0x2565,g_hINSTANCE_00807618);
       st::fn_007119C0(this_00->field_1A73,puVar24,iVar21,iVar46,uVar35);
       goto LAB_005a754e;
     case MESS_SHARED_6980|MESS_SHARED_0005:
@@ -8915,7 +8915,7 @@ LAB_005a7656:
         break;
       case MESS_SHARED_0005:
         if (this_00->field_1EC6 == -1) {
-          pcVar39 = st::fn_006B0140(0x235c,g_module_00807618);
+          pcVar39 = st::fn_006B0140(0x235c,g_hINSTANCE_00807618);
           uVar35 = 0xffffffff;
           do {
             pcVar27 = pcVar39;
@@ -9007,7 +9007,7 @@ LAB_005a7656:
         puVar24 = &DAT_0080f33a;
       }
       else {
-        puVar24 = (uint *)st::fn_006B0140((UINT)local_8,g_module_00807618);
+        puVar24 = (uint *)st::fn_006B0140((UINT)local_8,g_hINSTANCE_00807618);
       }
       st::fn_007119C0(this_00->field_1A73,puVar24,-1,-1,(uint)local_c);
       wVar5 = (message->arg0).words.low;
@@ -9156,7 +9156,7 @@ LAB_005a7c26:
       }
       iVar46 = -1;
       iVar21 = -1;
-      puVar24 = (uint *)st::fn_006B0140((UINT)local_8,g_module_00807618);
+      puVar24 = (uint *)st::fn_006B0140((UINT)local_8,g_hINSTANCE_00807618);
       st::fn_007119C0(this_00->field_1A73,puVar24,iVar21,iVar46,uVar35);
 LAB_005a7c92:
       st::fn_006B35D0((int *)g_ddxContext_008075A8,this_00->field_1ABC);
@@ -9211,7 +9211,7 @@ cf_common_exit_005A7F3B:
         this_00->field_1F4B = iVar21;
         this_00->field_1FB3->count = 0;
         this_00->field_20BB = 1;
-        pcVar39 = st::fn_006B0140(0x25b4,g_module_00807618);
+        pcVar39 = st::fn_006B0140(0x25b4,g_hINSTANCE_00807618);
         uVar35 = 0xffffffff;
         do {
           pcVar27 = pcVar39;
@@ -9228,7 +9228,7 @@ cf_common_exit_005A7F3B:
         uVar32 = 0;
         st::fn_006AE1C0((DArrayTy *)this_00->field_1FB3,&this_00->field_0x1fb7);
         this_00->field_20BB = 2;
-        pcVar39 = st::fn_006B0140(0x25b5,g_module_00807618);
+        pcVar39 = st::fn_006B0140(0x25b5,g_hINSTANCE_00807618);
         uVar35 = 0xffffffff;
         do {
           pcVar27 = pcVar39;
@@ -9290,13 +9290,13 @@ cf_common_exit_005A7F3B:
                   else {
                     uVar26 = **(undefined4 **)(iVar21 + 0x14);
                   }
-                  pcVar39 = st::fn_006B0140(0x2568,g_module_00807618);
+                  pcVar39 = st::fn_006B0140(0x2568,g_hINSTANCE_00807618);
                   st::external_00000080((LPSTR)&DAT_0080f33a,"%s %s %s",pcVar39,pvVar38,uVar26);
                   st::external_00000107
                             ((CFsgsConnection *)&DAT_00802a90,(char *)&DAT_0080f33a);
-                  st::fn_006B6020((uint *)this_00->field_1EA2,0,&DAT_008016a0);
+                  st::fn_006B6020(this_00->field_1EA2,0,&DAT_008016a0);
                   this_00->field_002D = 0x33;
-                  *(AnonPointee_FSGSTy_1EA2 **)&this_00->field_0x31 = this_00->field_1EA2;
+                  *(DArrayTy **)&this_00->field_0x31 = this_00->field_1EA2;
                   st::fn_006E6080(this_00,2,this_00->field_1B10,(undefined4 *)puVar1);
                 }
               }
@@ -9441,7 +9441,7 @@ cf_common_exit_005A5634:
           this_00->field_1FB3->count = 0;
           if (this_00->field_1A5F == CASE_8) {
             this_00->field_20BB = 0;
-            pcVar39 = st::fn_006B0140(0x235c,g_module_00807618);
+            pcVar39 = st::fn_006B0140(0x235c,g_hINSTANCE_00807618);
             uVar35 = 0xffffffff;
             do {
               pcVar27 = pcVar39;
@@ -9459,7 +9459,7 @@ cf_common_exit_005A5634:
             st::fn_006AE1C0((DArrayTy *)this_00->field_1FB3,&this_00->field_0x1fb7);
           }
           this_00->field_20BB = 0x100;
-          pcVar39 = st::fn_006B0140(0x2341,g_module_00807618);
+          pcVar39 = st::fn_006B0140(0x2341,g_hINSTANCE_00807618);
           uVar35 = 0xffffffff;
           do {
             pcVar27 = pcVar39;
@@ -9476,7 +9476,7 @@ cf_common_exit_005A5634:
           uVar32 = 0;
           st::fn_006AE1C0((DArrayTy *)this_00->field_1FB3,&this_00->field_0x1fb7);
           this_00->field_20BB = 0x501;
-          pcVar39 = st::fn_006B0140(0x2342,g_module_00807618);
+          pcVar39 = st::fn_006B0140(0x2342,g_hINSTANCE_00807618);
           uVar35 = 0xffffffff;
           do {
             pcVar27 = pcVar39;
@@ -9493,7 +9493,7 @@ cf_common_exit_005A5634:
           uVar32 = 0;
           st::fn_006AE1C0((DArrayTy *)this_00->field_1FB3,&this_00->field_0x1fb7);
           this_00->field_20BB = 0x200;
-          pcVar39 = st::fn_006B0140(0x235a,g_module_00807618);
+          pcVar39 = st::fn_006B0140(0x235a,g_hINSTANCE_00807618);
           uVar35 = 0xffffffff;
           do {
             pcVar27 = pcVar39;
@@ -9510,7 +9510,7 @@ cf_common_exit_005A5634:
           uVar32 = 0;
           st::fn_006AE1C0((DArrayTy *)this_00->field_1FB3,&this_00->field_0x1fb7);
           this_00->field_20BB = 0x400;
-          pcVar39 = st::fn_006B0140(0x235b,g_module_00807618);
+          pcVar39 = st::fn_006B0140(0x235b,g_hINSTANCE_00807618);
           uVar35 = 0xffffffff;
           do {
             pcVar27 = pcVar39;
@@ -9527,7 +9527,7 @@ cf_common_exit_005A5634:
           uVar32 = 0;
           st::fn_006AE1C0((DArrayTy *)this_00->field_1FB3,&this_00->field_0x1fb7);
           this_00->field_20BB = 0x502;
-          pcVar39 = st::fn_006B0140(0x235d,g_module_00807618);
+          pcVar39 = st::fn_006B0140(0x235d,g_hINSTANCE_00807618);
           uVar35 = 0xffffffff;
           do {
             pcVar27 = pcVar39;
@@ -9568,7 +9568,7 @@ cf_common_exit_005A5634:
           this_00->field_1F4B = iVar21;
           this_00->field_1FB3->count = 0;
           this_00->field_20BB = 0xffffffff;
-          pcVar39 = st::fn_006B0140(0x235c,g_module_00807618);
+          pcVar39 = st::fn_006B0140(0x235c,g_hINSTANCE_00807618);
           uVar35 = 0xffffffff;
           do {
             pcVar27 = pcVar39;
@@ -9662,7 +9662,7 @@ joined_r0x005a5b89:
       this_00->field_1F4B = iVar21;
       this_00->field_1FB3->count = 0;
       this_00->field_20BB = 0;
-      pcVar39 = st::fn_006B0140(0x25bf,g_module_00807618);
+      pcVar39 = st::fn_006B0140(0x25bf,g_hINSTANCE_00807618);
       uVar35 = 0xffffffff;
       do {
         pcVar27 = pcVar39;
@@ -9679,7 +9679,7 @@ joined_r0x005a5b89:
       uVar32 = 0;
       st::fn_006AE1C0((DArrayTy *)this_00->field_1FB3,&this_00->field_0x1fb7);
       this_00->field_20BB = 1;
-      pcVar39 = st::fn_006B0140(0x25c0,g_module_00807618);
+      pcVar39 = st::fn_006B0140(0x25c0,g_hINSTANCE_00807618);
       uVar35 = 0xffffffff;
       do {
         pcVar27 = pcVar39;
@@ -9696,7 +9696,7 @@ joined_r0x005a5b89:
       uVar32 = 0;
       st::fn_006AE1C0((DArrayTy *)this_00->field_1FB3,&this_00->field_0x1fb7);
       this_00->field_20BB = 2;
-      pcVar39 = st::fn_006B0140(0x25c1,g_module_00807618);
+      pcVar39 = st::fn_006B0140(0x25c1,g_hINSTANCE_00807618);
       uVar35 = 0xffffffff;
       do {
         pcVar27 = pcVar39;
@@ -10249,7 +10249,7 @@ LAB_005a50be:
       uVar35 = 2;
       iVar46 = -1;
       iVar21 = -1;
-      puVar24 = (uint *)st::fn_006B0140(0x25b6,g_module_00807618);
+      puVar24 = (uint *)st::fn_006B0140(0x25b6,g_hINSTANCE_00807618);
       st::fn_00711B70(this_00->field_1A73,puVar24,iVar21,iVar46,uVar35,iVar48,iVar49);
       st::fn_006B35D0((int *)g_ddxContext_008075A8,this_00->field_1ABC);
       st::external_00000108((CFsgsConnection *)&DAT_00802a90,"st.inf");

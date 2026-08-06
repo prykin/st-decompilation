@@ -43,7 +43,7 @@ int __thiscall AiEventClassTy::InitData(AiEventClassTy *this,int *param_1)
     pAVar2->field_05B3 = pDVar4;
     uVar11 = 0;
     do {
-      Library::DKW::TBL::FUN_006b6020(&pAVar2->field_05B3->flags,uVar11,&DAT_008016a0);
+      Library::DKW::TBL::FUN_006b6020(pAVar2->field_05B3,uVar11,&DAT_008016a0);
       uVar11 = uVar11 + 1;
     } while ((int)uVar11 < 4);
     if (pAVar2->field_008C == '\0') {

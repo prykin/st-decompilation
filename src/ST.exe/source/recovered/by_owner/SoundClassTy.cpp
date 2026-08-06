@@ -2,7 +2,7 @@
 // Generated translation unit: source/recovered/by_owner/SoundClassTy.cpp
 
 // 00568DD0 SoundClassTy::PlaySound
-#line 1 "decomp/ST.exe/functions/00568DD0/decomp.c"
+#line 4 "decomp/ST.exe/functions/00568DD0/decomp.c"
 /* Inferred SoundClassTy method.
 
    Central sound playback dispatcher.

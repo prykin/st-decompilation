@@ -223,7 +223,7 @@ LAB_0058c38c:
     param_1->field_0231 = 5;
     STT3DSprC::StopShow((STT3DSprC *)puVar1,0xe);
     thunk_FUN_004ad5e0((STT3DSprC *)puVar1);
-    STT3DSprC::LoadSequence((STT3DSprC *)puVar1,8,DAT_00806774,"explsna",0x1d);
+    STT3DSprC::LoadSequence((STT3DSprC *)puVar1,8,PTR_00806774,"explsna",0x1d);
     STT3DSprC::StartShow((STT3DSprC *)puVar1,8,g_playSystem_00802A38->field_00E4);
     param_1->field_0045 = param_1->field_0045 + 0x12;
     param_1->field_0231 = 6;

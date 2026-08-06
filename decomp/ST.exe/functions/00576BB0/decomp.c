@@ -23,7 +23,7 @@ void CreateBaseSystem(void)
       g_baseSystem_00811638 = nullptr;
     }
     else {
-      g_baseSystem_00811638 = BaseSystemC::BaseSystemC(this,g_appClass_00806728);
+      g_baseSystem_00811638 = BaseSystemC::BaseSystemC(this,g_app_00806728);
     }
     if (g_baseSystem_00811638 == nullptr) {
       RaiseInternalException(-1,g_overwriteContext_007ED77C,"E:\\__titans\\tsystem.cpp",0x38);

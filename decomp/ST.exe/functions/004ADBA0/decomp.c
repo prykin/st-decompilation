@@ -68,11 +68,11 @@ STT3DSprC::RestoreSpr(STT3DSprC *this,int *param_1,AnonShape_004AD790_77673787 *
   if (param_1[1] != 0) {
     sub_004ACE30(this_00,param_1[1],param_1[2]);
   }
-  if (param_1[3] != 0) {
-    sub_004ACEF0(this_00,param_1[3]);
+  if ((ushort *)param_1[3] != nullptr) {
+    sub_004ACEF0(this_00,(ushort *)param_1[3]);
   }
-  if (param_1[4] != 0) {
-    sub_004ACF20(this_00,param_1[4],param_1[5]);
+  if ((ushort *)param_1[4] != nullptr) {
+    sub_004ACF20(this_00,(ushort *)param_1[4],param_1[5]);
   }
   local_10 = (AnonShape_004ADBA0_0D812343 *)&param_2[1].field_0x4;
   iVar6 = this_00->field_0014;

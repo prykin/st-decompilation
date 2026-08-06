@@ -69,7 +69,7 @@ undefined4 __thiscall STPlaySystemC::Life(STPlaySystemC *this)
       if (((this_00->field_0038 != '\0') && (g_popUp_008016D8 != nullptr)) &&
          (g_popUp_008016D8->field_009C == '\0')) {
         uVar13 = 8;
-        pcVar4 = LoadResourceString(0x4275,g_module_00807618);
+        pcVar4 = LoadResourceString(0x4275,g_hINSTANCE_00807618);
         thunk_FUN_0052d320(g_popUp_008016D8,pcVar4,uVar13);
       }
       if (this_00->field_0028 != 0) {
@@ -262,7 +262,7 @@ undefined4 __thiscall STPlaySystemC::Life(STPlaySystemC *this)
                 pcVar4 = &DAT_00808af6;
                 do {
                   if ((*(int *)(pcVar4 + -6) == local_18) && (*pcVar4 != '\0')) {
-                    pcVar3 = LoadResourceString(0x426f,g_module_00807618);
+                    pcVar3 = LoadResourceString(0x426f,g_hINSTANCE_00807618);
                     wsprintfA((LPSTR)&DAT_0080f33a,"%s %s",pcVar4 + -0x46,pcVar3);
                     if (g_popUp_008016D8 != nullptr) {
                       thunk_FUN_0052d320(g_popUp_008016D8,(char *)&DAT_0080f33a,8);
@@ -316,7 +316,7 @@ undefined4 __thiscall STPlaySystemC::Life(STPlaySystemC *this)
                       pcVar4 = &DAT_00808af6;
                       do {
                         if ((*(int *)(pcVar4 + -6) == local_18) && (*pcVar4 != '\0')) {
-                          pcVar3 = LoadResourceString(0x426e,g_module_00807618);
+                          pcVar3 = LoadResourceString(0x426e,g_hINSTANCE_00807618);
                           wsprintfA((LPSTR)&DAT_0080f33a,"%s %s",pcVar4 + -0x46,pcVar3);
                           if (g_popUp_008016D8 != nullptr) {
                             thunk_FUN_0052d320(g_popUp_008016D8,(char *)&DAT_0080f33a,8);
@@ -355,13 +355,13 @@ undefined4 __thiscall STPlaySystemC::Life(STPlaySystemC *this)
       }
       if ((g_popUp_008016D8 != nullptr) && (g_popUp_008016D8->field_009C == '\0')) {
         uVar13 = 8;
-        pcVar4 = LoadResourceString(0x426a,g_module_00807618);
+        pcVar4 = LoadResourceString(0x426a,g_hINSTANCE_00807618);
         thunk_FUN_0052d320(g_popUp_008016D8,pcVar4,uVar13);
       }
       if ((g_array_0080C4FE->count == 0) || (59999 < (int)(DVar6 - this_00->field_00BC))) {
         if (g_popUp_008016D8 != nullptr) {
           uVar13 = 8;
-          pcVar4 = LoadResourceString(0x4269,g_module_00807618);
+          pcVar4 = LoadResourceString(0x4269,g_hINSTANCE_00807618);
           thunk_FUN_0052d320(g_popUp_008016D8,pcVar4,uVar13);
         }
         this_00->field_0038 = 0;

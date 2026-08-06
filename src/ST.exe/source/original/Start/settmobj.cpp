@@ -2,7 +2,7 @@
 // Generated translation unit: source/original/Start/settmobj.cpp
 
 // 005CBD00 SettMapMTy::InitSettMap
-#line 1 "decomp/ST.exe/functions/005CBD00/decomp.c"
+#line 4 "decomp/ST.exe/functions/005CBD00/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\Start\settmobj.cpp
    SettMapMTy::InitSettMap */
@@ -184,7 +184,7 @@ void __thiscall st::fn_005CBD00(SettMapMTy *this,char param_1)
 }
 
 // 005CC2D0 SettMapMTy::DoneSettMap
-#line 1 "decomp/ST.exe/functions/005CC2D0/decomp.c"
+#line 4 "decomp/ST.exe/functions/005CC2D0/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\Start\settmobj.cpp
    SettMapMTy::DoneSettMap */
@@ -249,7 +249,7 @@ LAB_005cc360:
 }
 
 // 005CC440 SettMapMTy::CreateCtrls
-#line 1 "decomp/ST.exe/functions/005CC440/decomp.c"
+#line 4 "decomp/ST.exe/functions/005CC440/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\Start\settmobj.cpp
    SettMapMTy::CreateCtrls */
@@ -395,7 +395,7 @@ void __thiscall st::fn_005CC440(SettMapMTy *this,char param_1)
 }
 
 // 005CC840 SettMapMTy::DeleteCtrls
-#line 1 "decomp/ST.exe/functions/005CC840/decomp.c"
+#line 4 "decomp/ST.exe/functions/005CC840/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\Start\settmobj.cpp
    SettMapMTy::DeleteCtrls */
@@ -515,7 +515,7 @@ void __thiscall st::fn_005CC840(SettMapMTy *this)
 }
 
 // 005CCE10 SettMapMTy::SetListCtrls
-#line 1 "decomp/ST.exe/functions/005CCE10/decomp.c"
+#line 4 "decomp/ST.exe/functions/005CCE10/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\Start\settmobj.cpp
    SettMapMTy::SetListCtrls
@@ -739,7 +739,7 @@ joined_r0x005cd0bb:
 }
 
 // 005CD430 SettMapMTy::PrepPlList
-#line 1 "decomp/ST.exe/functions/005CD430/decomp.c"
+#line 4 "decomp/ST.exe/functions/005CD430/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\Start\settmobj.cpp
    SettMapMTy::PrepPlList
@@ -1029,7 +1029,7 @@ code_r0x005cd7da:
 }
 
 // 005CD9A0 SettMapMTy::ChgPlList
-#line 1 "decomp/ST.exe/functions/005CD9A0/decomp.c"
+#line 4 "decomp/ST.exe/functions/005CD9A0/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\Start\settmobj.cpp
    SettMapMTy::ChgPlList
@@ -1099,7 +1099,7 @@ st::fn_005CD9A0
 }
 
 // 005CDB20 SettMapMTy::AddPlList
-#line 1 "decomp/ST.exe/functions/005CDB20/decomp.c"
+#line 4 "decomp/ST.exe/functions/005CDB20/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\Start\settmobj.cpp
    SettMapMTy::AddPlList
@@ -1278,7 +1278,7 @@ LAB_005cdbf4:
 }
 
 // 005CDF60 SettMapMTy::SendPlList
-#line 1 "decomp/ST.exe/functions/005CDF60/decomp.c"
+#line 4 "decomp/ST.exe/functions/005CDF60/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\Start\settmobj.cpp
    SettMapMTy::SendPlList
@@ -1355,7 +1355,7 @@ void __thiscall st::fn_005CDF60(SettMapMTy *this,int param_1)
 }
 
 // 005CE0E0 SettMapMTy::NoneSettMap
-#line 1 "decomp/ST.exe/functions/005CE0E0/decomp.c"
+#line 4 "decomp/ST.exe/functions/005CE0E0/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\Start\settmobj.cpp
    SettMapMTy::NoneSettMap
@@ -2272,7 +2272,7 @@ code_r0x005cf49c:
 }
 
 // 005CFCD0 SettMapMTy::UpdatePing
-#line 1 "decomp/ST.exe/functions/005CFCD0/decomp.c"
+#line 4 "decomp/ST.exe/functions/005CFCD0/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\Start\settmobj.cpp
    SettMapMTy::UpdatePing
@@ -2344,7 +2344,7 @@ void __thiscall st::fn_005CFCD0(SettMapMTy *this,int param_1,undefined4 param_2)
 }
 
 // 005CFE50 SettMapMTy::SendDesc
-#line 1 "decomp/ST.exe/functions/005CFE50/decomp.c"
+#line 4 "decomp/ST.exe/functions/005CFE50/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\Start\settmobj.cpp
    SettMapMTy::SendDesc
@@ -2381,7 +2381,7 @@ void __thiscall st::fn_005CFE50(SettMapMTy *this,int param_1)
 }
 
 // 005CFF40 SettMapMTy::DeletePlayer
-#line 1 "decomp/ST.exe/functions/005CFF40/decomp.c"
+#line 4 "decomp/ST.exe/functions/005CFF40/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\Start\settmobj.cpp
    SettMapMTy::DeletePlayer
@@ -2453,7 +2453,7 @@ void __thiscall st::fn_005CFF40(SettMapMTy *this,int param_1)
 }
 
 // 005D0150 SettMapMTy::CheckPlList
-#line 1 "decomp/ST.exe/functions/005D0150/decomp.c"
+#line 4 "decomp/ST.exe/functions/005D0150/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\Start\settmobj.cpp
    SettMapMTy::CheckPlList
@@ -2747,7 +2747,7 @@ cf_continue_loop_005D0486:
 }
 
 // 005D06C0 SettMapMTy::ChangePlayerCiv
-#line 1 "decomp/ST.exe/functions/005D06C0/decomp.c"
+#line 4 "decomp/ST.exe/functions/005D06C0/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\Start\settmobj.cpp
    SettMapMTy::ChangePlayerCiv
@@ -2827,7 +2827,7 @@ void __thiscall st::fn_005D06C0(SettMapMTy *this,uint param_1,char param_2)
 }
 
 // 005D0850 SettMapMTy::ChangePlayerColor
-#line 1 "decomp/ST.exe/functions/005D0850/decomp.c"
+#line 4 "decomp/ST.exe/functions/005D0850/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\Start\settmobj.cpp
    SettMapMTy::ChangePlayerColor
@@ -2911,7 +2911,7 @@ void __thiscall st::fn_005D0850(SettMapMTy *this,uint param_1,char param_2)
 }
 
 // 005D0A20 SettMapMTy::ChangePlayerState
-#line 1 "decomp/ST.exe/functions/005D0A20/decomp.c"
+#line 4 "decomp/ST.exe/functions/005D0A20/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\Start\settmobj.cpp
    SettMapMTy::ChangePlayerState
@@ -2988,7 +2988,7 @@ void __thiscall st::fn_005D0A20(SettMapMTy *this,uint param_1)
 }
 
 // 005D0BB0 SettMapMTy::ChangePlayerTeam
-#line 1 "decomp/ST.exe/functions/005D0BB0/decomp.c"
+#line 4 "decomp/ST.exe/functions/005D0BB0/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\Start\settmobj.cpp
    SettMapMTy::ChangePlayerTeam
@@ -3127,7 +3127,7 @@ st::fn_005D0BB0(SettMapMTy *this,uint param_1,uint param_2,uint param_3)
 }
 
 // 005D0ED0 SettMapMTy::ChangePlayerList
-#line 1 "decomp/ST.exe/functions/005D0ED0/decomp.c"
+#line 4 "decomp/ST.exe/functions/005D0ED0/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\Start\settmobj.cpp
    SettMapMTy::ChangePlayerList
@@ -3239,7 +3239,7 @@ st::fn_005D0ED0
 }
 
 // 005D1100 SettMapMTy::AddPlayerList
-#line 1 "decomp/ST.exe/functions/005D1100/decomp.c"
+#line 4 "decomp/ST.exe/functions/005D1100/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\Start\settmobj.cpp
    SettMapMTy::AddPlayerList */
@@ -3350,7 +3350,7 @@ LAB_005d1245:
 }
 
 // 005D1400 SettMapMTy::GetMessage
-#line 1 "decomp/ST.exe/functions/005D1400/decomp.c"
+#line 4 "decomp/ST.exe/functions/005D1400/decomp.c"
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 /* Recovered from embedded debug metadata:
    E:\__titans\Start\settmobj.cpp
@@ -3558,7 +3558,7 @@ int __thiscall st::fn_005D1400(SettMapMTy *this,STMessage *message)
         uVar29 = 2;
         iVar41 = -1;
         iVar39 = -1;
-        puVar18 = (uint *)st::fn_006B0140((iVar16 != 1) + 0x2422,g_module_00807618);
+        puVar18 = (uint *)st::fn_006B0140((iVar16 != 1) + 0x2422,g_hINSTANCE_00807618);
         st::fn_007119C0(g_startSystem_0081176C->field_0034,puVar18,iVar39,iVar41,uVar29);
         st::fn_006B35D0((int *)g_ddxContext_008075A8,this_00->field_2200);
       }
@@ -4422,7 +4422,7 @@ LAB_005d28a0:
         }
       }
 LAB_005d28da:
-      st::fn_006B6020(&this_00->field_1A5B->field_0686->flags,0,&DAT_008016a0);
+      st::fn_006B6020(this_00->field_1A5B->field_0686,0,&DAT_008016a0);
       this_00->field_002D = 0x33;
       this_00->field_0031 = this_00->field_1A5B->field_0686;
       st::fn_006E6080(this_00,2,this_00->field_1A5B->field_054C,(undefined4 *)&this_00->field_0x1d);
@@ -4588,7 +4588,7 @@ LAB_005d3188:
           this_00->field_2191 = 0x6500;
           this_00->field_1E2F->count = 0;
           local_10 = (char *)0x1;
-          pcVar28 = st::fn_006B0140(0x23f1,g_module_00807618);
+          pcVar28 = st::fn_006B0140(0x23f1,g_hINSTANCE_00807618);
           uVar29 = 0xffffffff;
           do {
             pcVar33 = pcVar28;
@@ -4609,7 +4609,7 @@ LAB_005d3188:
           }
           this_00->field_1F37 = 1;
           st::fn_006AE1C0((DArrayTy *)this_00->field_1E2F,&this_00->field_0x1e33);
-          pcVar28 = st::fn_006B0140(0x23f0,g_module_00807618);
+          pcVar28 = st::fn_006B0140(0x23f0,g_hINSTANCE_00807618);
           uVar29 = 0xffffffff;
           do {
             pcVar33 = pcVar28;
@@ -4635,7 +4635,7 @@ LAB_005d3188:
             pcVar28 = (char *)(uint)(local_18->field_0x4 != '\x02');
           }
           if (pcVar28 != nullptr) {
-            pcVar28 = st::fn_006B0140(0x23f2,g_module_00807618);
+            pcVar28 = st::fn_006B0140(0x23f2,g_hINSTANCE_00807618);
             uVar29 = 0xffffffff;
             do {
               pcVar33 = pcVar28;
@@ -4699,7 +4699,7 @@ LAB_005d3188:
             } while (-1 < (int)uVar29);
           }
           if (local_5 != '\0') {
-            pcVar28 = st::fn_006B0140(0x1f42,g_module_00807618);
+            pcVar28 = st::fn_006B0140(0x1f42,g_hINSTANCE_00807618);
             uVar29 = 0xffffffff;
             do {
               pcVar33 = pcVar28;
@@ -4717,7 +4717,7 @@ LAB_005d3188:
             this_00->field_1F37 = 2;
             st::fn_006AE1C0((DArrayTy *)this_00->field_1E2F,&this_00->field_0x1e33);
             if (DAT_00808aaa != '\0') {
-              pcVar28 = st::fn_006B0140(0x1f46,g_module_00807618);
+              pcVar28 = st::fn_006B0140(0x1f46,g_hINSTANCE_00807618);
               uVar29 = 0xffffffff;
               do {
                 pcVar33 = pcVar28;
@@ -4737,7 +4737,7 @@ LAB_005d3188:
                         ((DArrayTy *)this_00->field_1E2F,&this_00->field_0x1e33);
             }
           }
-          pcVar28 = st::fn_006B0140(0x1f41,g_module_00807618);
+          pcVar28 = st::fn_006B0140(0x1f41,g_hINSTANCE_00807618);
           uVar29 = 0xffffffff;
           do {
             pcVar33 = pcVar28;
@@ -4758,7 +4758,7 @@ LAB_005d3188:
         else {
           if ((this_00->field_1E26 != CASE_5) || (pAVar26->field_0x4 != '\x04')) {
             if ((DAT_0080877e != '\0') && (this_00->field_1E26 != CASE_5)) {
-              pcVar28 = st::fn_006B0140(8000,g_module_00807618);
+              pcVar28 = st::fn_006B0140(8000,g_hINSTANCE_00807618);
               uVar29 = 0xffffffff;
               do {
                 pcVar33 = pcVar28;
@@ -4782,7 +4782,7 @@ LAB_005d3188:
               bVar38 = local_18->field_0x3 != '\x03';
             }
             if (bVar38) {
-              pcVar28 = st::fn_006B0140(0x1f42,g_module_00807618);
+              pcVar28 = st::fn_006B0140(0x1f42,g_hINSTANCE_00807618);
               uVar29 = 0xffffffff;
               do {
                 pcVar33 = pcVar28;
@@ -4801,7 +4801,7 @@ LAB_005d3188:
               st::fn_006AE1C0
                         ((DArrayTy *)this_00->field_1E2F,&this_00->field_0x1e33);
             }
-            pcVar28 = st::fn_006B0140(0x1f41,g_module_00807618);
+            pcVar28 = st::fn_006B0140(0x1f41,g_hINSTANCE_00807618);
             uVar29 = 0xffffffff;
             do {
               pcVar33 = pcVar28;
@@ -5005,7 +5005,7 @@ LAB_005d32d3:
             do {
               iVar16 = uVar29 + 0x41;
               if (puVar24[uVar29 + 0x41] != '\0') {
-                pcVar28 = st::fn_006B0140(0x1f4a,g_module_00807618);
+                pcVar28 = st::fn_006B0140(0x1f4a,g_hINSTANCE_00807618);
                 st::external_00000080(&this_00->field_0x1e33,"%s%c",pcVar28,iVar16);
                 this_00->field_1F37 = uVar29;
                 st::fn_006AE1C0
@@ -5254,7 +5254,7 @@ LAB_005d38bd:
                    (-((message->arg0).words.low != 0) & 0xfcU) + 0x23,0x67),
        pAVar36->field_0x4 == '\0')) break;
     if (DAT_00808a8f != '\0') {
-      pcVar33 = st::fn_006B0140(0x1f4a,g_module_00807618);
+      pcVar33 = st::fn_006B0140(0x1f4a,g_hINSTANCE_00807618);
       st::external_00000080((LPSTR)&DAT_0080f33a,"%s%c",pcVar33);
       st::fn_00710A90(g_startSystem_0081176C->field_0034,this_00->field_20CC[(int)pcVar28 + 10],0,
                        local_28,local_24,local_20,local_1c);
@@ -5372,7 +5372,7 @@ switchD_005d35aa_default:
 }
 
 // 005D4850 SettMapMTy::RunGame
-#line 1 "decomp/ST.exe/functions/005D4850/decomp.c"
+#line 4 "decomp/ST.exe/functions/005D4850/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\Start\settmobj.cpp
    SettMapMTy::RunGame
@@ -5426,7 +5426,7 @@ void __thiscall st::fn_005D4850(SettMapMTy *this)
 }
 
 // 005D4990 SettMapMTy::PrepareAFT
-#line 1 "decomp/ST.exe/functions/005D4990/decomp.c"
+#line 4 "decomp/ST.exe/functions/005D4990/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\Start\settmobj.cpp
    SettMapMTy::PrepareAFT

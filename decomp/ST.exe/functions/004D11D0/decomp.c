@@ -57,7 +57,7 @@ int __thiscall TLOEmbryoTy::Create(TLOEmbryoTy *this,RecoveredRecord_TLOEmbryoTy
   TLOEmbryoTy *local_2c;
   undefined4 *local_28;
   undefined4 local_24;
-  undefined4 local_1c;
+  ushort *local_1c;
   undefined4 local_10;
   int local_c;
   TLOEmbryoTy *local_8;
@@ -251,25 +251,25 @@ cf_common_join_004D1763:
       puVar14 = (byte *)&param_1->field_0x6f;
       memmove(puVar15, puVar14, 0xb0); /* compiler REP MOVS byte copy */
       local_28 = Library::DKW::LIB::MemAlloc(0x44);
-      local_28[1] = DAT_00806774;
-      local_28[2] = DAT_00806774;
-      *local_28 = DAT_00806774;
-      local_28[0xf] = DAT_00806774;
-      local_28[0x10] = DAT_0080678c;
-      local_28[0xe] = DAT_0080678c;
-      local_28[0xd] = DAT_0080678c;
-      local_28[0xc] = DAT_0080678c;
+      local_28[1] = PTR_00806774;
+      local_28[2] = PTR_00806774;
+      *local_28 = PTR_00806774;
+      local_28[0xf] = PTR_00806774;
+      local_28[0x10] = PTR_0080678c;
+      local_28[0xe] = PTR_0080678c;
+      local_28[0xd] = PTR_0080678c;
+      local_28[0xc] = PTR_0080678c;
       local_28[0xb] = 0;
-      local_28[this_00->field_02F4] = DAT_0080678c;
-      local_28[this_00->field_02F0] = DAT_0080678c;
+      local_28[this_00->field_02F4] = PTR_0080678c;
+      local_28[this_00->field_02F0] = PTR_0080678c;
       if (this_00->field_0370 != 0) {
-        local_28[this_00->field_02F0 + -1] = DAT_0080678c;
+        local_28[this_00->field_02F0 + -1] = PTR_0080678c;
       }
       if (this_00->field_02A0 != 0) {
-        local_28[7] = DAT_00806764;
-        local_28[6] = DAT_00806774;
+        local_28[7] = PTR_00806764;
+        local_28[6] = PTR_00806774;
       }
-      local_1c = DAT_008073cc;
+      local_1c = PTR_008073cc;
       local_24 = 0;
       local_10 = 0;
       STT3DSprC::RestoreSpr
@@ -283,7 +283,7 @@ cf_common_join_004D1763:
         pSVar7 = (STT3DSprC *)thunk_FUN_004ab810(pAVar6);
       }
       this_00->field_035C = pSVar7;
-      iVar4 = STT3DSprC::Init(pSVar7,DAT_008073cc,this_00->field_0300,this_00->field_0304,
+      iVar4 = STT3DSprC::Init(pSVar7,PTR_008073cc,this_00->field_0300,this_00->field_0304,
                               nullptr,this_00->field_02F8,this_00->field_02FC,0x11);
       if (iVar4 != 0) {
         RaiseInternalException
@@ -295,10 +295,10 @@ cf_common_join_004D1763:
         Library::Ourlib::ST3DSMAP::SprSetSplit((void *)this_00->field_0211,uVar9);
       }
       memset(local_28, 0, 0x44); /* compiler bulk-zero initialization */
-      local_28[0xe] = DAT_00806764;
+      local_28[0xe] = PTR_00806764;
       local_24 = 0;
       local_10 = 0;
-      local_1c = 0;
+      local_1c = nullptr;
       STT3DSprC::RestoreSpr
                 (this_00->field_035C,(int *)&local_28,
                  (AnonShape_004AD790_77673787 *)(&param_1->field_0x0 + param_1->field_0133));
@@ -307,10 +307,10 @@ cf_common_join_004D1763:
       local_EAX_1989 = thunk_FUN_004ad650(this_00->field_035C);
       FUN_006ea340((void *)this_00->field_0211,local_EAX_1989,iVar4,uVar9);
       memset(local_28, 0, 0x44); /* compiler bulk-zero initialization */
-      local_28[0xe] = DAT_0080678c;
+      local_28[0xe] = PTR_0080678c;
       local_24 = 0;
       local_10 = 0;
-      local_1c = 0;
+      local_1c = nullptr;
       if (this_00->field_0370 == 0) {
         uVar9 = 0xb;
         local_8 = (TLOEmbryoTy *)&param_1[1].field_0xb;
@@ -324,7 +324,7 @@ cf_common_join_004D1763:
             pSVar7 = (STT3DSprC *)thunk_FUN_004ab810(pAVar6);
           }
           *ppSVar16 = pSVar7;
-          iVar4 = STT3DSprC::Init(pSVar7,DAT_008073cc,this_00->field_0300,this_00->field_0304,
+          iVar4 = STT3DSprC::Init(pSVar7,PTR_008073cc,this_00->field_0300,this_00->field_0304,
                                   nullptr,this_00->field_02F8,this_00->field_02FC,0x11);
           if (iVar4 != 0) {
             RaiseInternalException
@@ -372,14 +372,14 @@ cf_common_join_004D1763:
     pSVar7 = (STT3DSprC *)thunk_FUN_004ab810(pAVar6);
   }
   this_00->field_035C = pSVar7;
-  iVar4 = STT3DSprC::Init(pSVar7,DAT_008073cc,this_00->field_0300,this_00->field_0304,
+  iVar4 = STT3DSprC::Init(pSVar7,PTR_008073cc,this_00->field_0300,this_00->field_0304,
                           nullptr,this_00->field_02F8,this_00->field_02FC,0x11);
   if (iVar4 != 0) {
     RaiseInternalException
               (iVar4,g_overwriteContext_007ED77C,"E:\\__titans\\Artem\\TLO_embryo.cpp",200);
   }
   if (this_00->field_0241 == 0) {
-    iVar4 = STT3DSprC::LoadSequence(this_00->field_035C,0xe,DAT_00806764,"tlo_emb5",0x1d);
+    iVar4 = STT3DSprC::LoadSequence(this_00->field_035C,0xe,PTR_00806764,"tlo_emb5",0x1d);
     if (iVar4 != 0) {
       iVar13 = 0xca;
 LAB_004d1bda:
@@ -392,7 +392,7 @@ LAB_004d1bda:
     uVar9 = thunk_FUN_004ad650(this_00->field_035C);
     Library::Ourlib::ST3DSMAP::SprSetSplit((void *)this_00->field_0211,uVar9);
     iVar4 = STT3DSprC::LoadSequence
-                      (this_00->field_035C,0xe,DAT_00806764,"tlo_emb5_big",0x1d);
+                      (this_00->field_035C,0xe,PTR_00806764,"tlo_emb5_big",0x1d);
     if (iVar4 != 0) {
       iVar13 = 0xcc;
       goto LAB_004d1bda;
@@ -413,7 +413,7 @@ LAB_004d1bda:
     uVar9 = (uVar9 - 1 | 0xfffffffe) + 1;
   }
   wsprintfA(local_88,"%s%1i",(&PTR_s_tlo_embws1_007bf3e8)[this_00->field_036C],uVar9);
-  iVar4 = STT3DSprC::LoadSequence((STT3DSprC *)puVar15,0xe,DAT_0080678c,local_88,0x1d);
+  iVar4 = STT3DSprC::LoadSequence((STT3DSprC *)puVar15,0xe,PTR_0080678c,local_88,0x1d);
   if (iVar4 != 0) {
     RaiseInternalException
               (iVar4,g_overwriteContext_007ED77C,"E:\\__titans\\Artem\\TLO_embryo.cpp",0xd4);
@@ -423,7 +423,7 @@ LAB_004d1bda:
 LAB_004d1fef:
     if (this_00->field_0241 == 0) {
       iVar4 = STT3DSprC::LoadSequence
-                        ((STT3DSprC *)puVar15,(-(iVar4 != 0) & 3U) + 6,DAT_0080678c,
+                        ((STT3DSprC *)puVar15,(-(iVar4 != 0) & 3U) + 6,PTR_0080678c,
                          "tlo_emb2",0x1d);
       if (iVar4 != 0) {
         iVar13 = 0x101;
@@ -432,7 +432,7 @@ LAB_004d1fef:
     }
     else if ((this_00->field_0241 == 1) &&
             (iVar4 = STT3DSprC::LoadSequence
-                               ((STT3DSprC *)puVar15,(-(iVar4 != 0) & 3U) + 6,DAT_0080678c,
+                               ((STT3DSprC *)puVar15,(-(iVar4 != 0) & 3U) + 6,PTR_0080678c,
                                 "tlo_emb3",0x1d), iVar4 != 0)) {
       iVar13 = 0x102;
 LAB_004d204d:
@@ -464,14 +464,14 @@ LAB_004d204d:
         pSVar7 = (STT3DSprC *)thunk_FUN_004ab810(pAVar6);
       }
       *ppSVar16 = pSVar7;
-      iVar4 = STT3DSprC::Init(pSVar7,DAT_008073cc,this_00->field_0300,this_00->field_0304,
+      iVar4 = STT3DSprC::Init(pSVar7,PTR_008073cc,this_00->field_0300,this_00->field_0304,
                               nullptr,this_00->field_02F8,this_00->field_02FC,0x11);
       if (iVar4 != 0) {
         RaiseInternalException
                   (iVar4,g_overwriteContext_007ED77C,"E:\\__titans\\Artem\\TLO_embryo.cpp",
                    0x10d);
       }
-      iVar4 = STT3DSprC::LoadSequence(*ppSVar16,0xe,DAT_0080678c,PTR_s_tlo_emb6_00790c20,0x1d);
+      iVar4 = STT3DSprC::LoadSequence(*ppSVar16,0xe,PTR_0080678c,PTR_s_tlo_emb6_00790c20,0x1d);
       if (iVar4 != 0) {
         RaiseInternalException
                   (iVar4,g_overwriteContext_007ED77C,"E:\\__titans\\Artem\\TLO_embryo.cpp",
@@ -500,7 +500,7 @@ LAB_004d204d:
       this_00->field_02F0 = 0xb;
       if (this_00->field_0241 == 1) {
         iVar4 = STT3DSprC::LoadSequence
-                          ((STT3DSprC *)puVar15,*(byte *)&this_00->field_02F0,DAT_0080678c,
+                          ((STT3DSprC *)puVar15,*(byte *)&this_00->field_02F0,PTR_0080678c,
                            "si_emb6",0x1d);
         if (iVar4 != 0) {
           iVar13 = 0xef;
@@ -512,7 +512,7 @@ LAB_004d1f0b:
       }
       else {
         iVar4 = STT3DSprC::LoadSequence
-                          ((STT3DSprC *)puVar15,*(byte *)&this_00->field_02F0,DAT_0080678c,
+                          ((STT3DSprC *)puVar15,*(byte *)&this_00->field_02F0,PTR_0080678c,
                            "si_emb5",0x1d);
         if (iVar4 != 0) {
           iVar13 = 0xf0;
@@ -542,7 +542,7 @@ LAB_004d1f0b:
     }
     else {
       if (this_00->field_0241 == 0) {
-        iVar4 = STT3DSprC::LoadSequence((STT3DSprC *)puVar15,9,DAT_0080678c,"si_emb1",0x1d);
+        iVar4 = STT3DSprC::LoadSequence((STT3DSprC *)puVar15,9,PTR_0080678c,"si_emb1",0x1d);
         if (iVar4 != 0) {
           RaiseInternalException
                     (iVar4,g_overwriteContext_007ED77C,"E:\\__titans\\Artem\\TLO_embryo.cpp",
@@ -550,7 +550,7 @@ LAB_004d1f0b:
         }
         wsprintfA(local_88,"si_emb1_id%1d",this_00->field_0024);
         iVar4 = STT3DSprC::LoadSequence
-                          ((STT3DSprC *)puVar15,(-(this_00->field_0370 != 0) & 3U) + 5,DAT_0080678c,
+                          ((STT3DSprC *)puVar15,(-(this_00->field_0370 != 0) & 3U) + 5,PTR_0080678c,
                            local_88,0x1d);
         if (iVar4 != 0) {
           iVar13 = 0xdb;
@@ -561,7 +561,7 @@ LAB_004d1df8:
         }
       }
       else if (this_00->field_0241 == 1) {
-        iVar4 = STT3DSprC::LoadSequence((STT3DSprC *)puVar15,9,DAT_0080678c,"si_emb4",0x1d);
+        iVar4 = STT3DSprC::LoadSequence((STT3DSprC *)puVar15,9,PTR_0080678c,"si_emb4",0x1d);
         if (iVar4 != 0) {
           RaiseInternalException
                     (iVar4,g_overwriteContext_007ED77C,"E:\\__titans\\Artem\\TLO_embryo.cpp",
@@ -569,7 +569,7 @@ LAB_004d1df8:
         }
         wsprintfA(local_88,"si_emb4_id%1d",this_00->field_0024);
         iVar4 = STT3DSprC::LoadSequence
-                          ((STT3DSprC *)puVar15,(-(this_00->field_0370 != 0) & 3U) + 5,DAT_0080678c,
+                          ((STT3DSprC *)puVar15,(-(this_00->field_0370 != 0) & 3U) + 5,PTR_0080678c,
                            local_88,0x1d);
         if (iVar4 != 0) {
           iVar13 = 0xe1;

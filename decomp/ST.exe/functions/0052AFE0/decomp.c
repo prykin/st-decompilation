@@ -55,13 +55,13 @@ void __thiscall CPanelTy::sub_0052AFE0(CPanelTy *this,byte param_1,float param_2
   if (this->field_0DB3 == nullptr) {
     iVar5 = 0;
     piVar7 = local_30;
-    local_c = (float)(int)*DAT_00806750 * _DAT_007904f8;
-    local_10 = (float)(int)DAT_00806750[1] * _DAT_007904f8;
+    local_c = (float)(int)*PTR_00806750 * _DAT_007904f8;
+    local_10 = (float)(int)PTR_00806750[1] * _DAT_007904f8;
     fVar2 = _DAT_0079034c;
     do {
-      fVar3 = param_3 - (float)piVar7[1] * (float)(int)DAT_00806750[1] * _DAT_007904f8 *
+      fVar3 = param_3 - (float)piVar7[1] * (float)(int)PTR_00806750[1] * _DAT_007904f8 *
                         _DAT_00790784;
-      fVar4 = param_2 - (float)*piVar7 * (float)(int)*DAT_00806750 * _DAT_007904f8 * _DAT_00790784;
+      fVar4 = param_2 - (float)*piVar7 * (float)(int)*PTR_00806750 * _DAT_007904f8 * _DAT_00790784;
       local_8 = fVar4 * fVar4 + fVar3 * fVar3;
       if (fVar2 < local_8) {
         iVar8 = iVar5;

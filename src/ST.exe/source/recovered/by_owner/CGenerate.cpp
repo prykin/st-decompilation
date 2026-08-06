@@ -2,7 +2,7 @@
 // Generated translation unit: source/recovered/by_owner/CGenerate.cpp
 
 // 006948E0 CGenerate::sub_006948E0
-#line 1 "decomp/ST.exe/functions/006948E0/decomp.c"
+#line 4 "decomp/ST.exe/functions/006948E0/decomp.c"
 /* [STMethodOwnerApplier] Structural method owner recovered as CGenerate.
    Evidence: this_call_owners=[CGenerate]; agreed_this_calls=3; incoming_this_accesses=72;
    incoming_edx_uses=0; incoming_stack_parameter_uses=4; direct_non_thunk_callers=0;
@@ -100,7 +100,7 @@ void __thiscall st::fn_006948E0(CGenerate *this,int param_1)
 }
 
 // 00694B90 CGenerate::sub_00694B90
-#line 1 "decomp/ST.exe/functions/00694B90/decomp.c"
+#line 4 "decomp/ST.exe/functions/00694B90/decomp.c"
 /* [STMethodOwnerApplier] Structural method owner recovered as CGenerate.
    Evidence: this_call_owners=[CGenerate]; agreed_this_calls=1; incoming_this_accesses=4;
    incoming_edx_uses=0; incoming_stack_parameter_uses=0; direct_non_thunk_callers=0;
@@ -125,7 +125,7 @@ void __thiscall st::fn_00694B90(CGenerate *this)
 }
 
 // 00694BE0 CGenerate::sub_00694BE0
-#line 1 "decomp/ST.exe/functions/00694BE0/decomp.c"
+#line 4 "decomp/ST.exe/functions/00694BE0/decomp.c"
 /* [STMethodOwnerApplier] Structural method owner recovered as CGenerate.
    Evidence: this_call_owners=[CGenerate]; agreed_this_calls=1; incoming_this_accesses=4;
    incoming_edx_uses=0; incoming_stack_parameter_uses=0; direct_non_thunk_callers=0;
@@ -146,7 +146,7 @@ void __thiscall st::fn_00694BE0(CGenerate *this)
 }
 
 // 00694C30 CGenerate::sub_00694C30
-#line 1 "decomp/ST.exe/functions/00694C30/decomp.c"
+#line 4 "decomp/ST.exe/functions/00694C30/decomp.c"
 /* [STMethodOwnerApplier] Structural method owner recovered as CGenerate.
    Evidence: this_call_owners=[CGenerate]; agreed_this_calls=1; incoming_this_accesses=8;
    incoming_edx_uses=0; incoming_stack_parameter_uses=0; direct_non_thunk_callers=0;
@@ -167,7 +167,7 @@ void __thiscall st::fn_00694C30(CGenerate *this)
 }
 
 // 00694C80 CGenerate::sub_00694C80
-#line 1 "decomp/ST.exe/functions/00694C80/decomp.c"
+#line 4 "decomp/ST.exe/functions/00694C80/decomp.c"
 /* [STMethodOwnerApplier] Structural method owner recovered as CGenerate.
    Evidence: this_call_owners=[CGenerate]; agreed_this_calls=1; incoming_this_accesses=8;
    incoming_edx_uses=0; incoming_stack_parameter_uses=0; direct_non_thunk_callers=0;
@@ -187,7 +187,7 @@ void __thiscall st::fn_00694C80(CGenerate *this)
 }
 
 // 00694CD0 CGenerate::sub_00694CD0
-#line 1 "decomp/ST.exe/functions/00694CD0/decomp.c"
+#line 4 "decomp/ST.exe/functions/00694CD0/decomp.c"
 /* [STMethodOwnerApplier] Structural method owner recovered as CGenerate.
    Evidence: this_call_owners=[CGenerate]; agreed_this_calls=1; incoming_this_accesses=6;
    incoming_edx_uses=2; incoming_stack_parameter_uses=4; direct_non_thunk_callers=0;
@@ -289,7 +289,7 @@ void __thiscall st::fn_00694CD0(CGenerate *this,AnonShape_00694CD0_AC50FDB9 *par
 }
 
 // 006952B0 CGenerate::FUN_006952b0
-#line 1 "decomp/ST.exe/functions/006952B0/decomp.c"
+#line 4 "decomp/ST.exe/functions/006952B0/decomp.c"
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 /* [STPrototypeRepairApplier] Propagated parameter 1.
    Evidence: 006952B0 -> 006F13F0 @ 0069582E */
@@ -500,7 +500,7 @@ st::fn_006952B0(CGenerate *this,AnonShape_006952B0_7A982E30 *param_1,byte *param
 }
 
 // 00695C10 CGenerate::sub_00695C10
-#line 1 "decomp/ST.exe/functions/00695C10/decomp.c"
+#line 4 "decomp/ST.exe/functions/00695C10/decomp.c"
 /* [STMethodOwnerApplier] Structural method owner recovered as CGenerate.
    Evidence: this_call_owners=[CGenerate]; agreed_this_calls=2; incoming_this_accesses=3;
    incoming_edx_uses=0; incoming_stack_parameter_uses=5; direct_non_thunk_callers=0;
@@ -545,7 +545,7 @@ st::fn_00695C10
 }
 
 // 00695EB0 CGenerate::sub_00695EB0
-#line 1 "decomp/ST.exe/functions/00695EB0/decomp.c"
+#line 4 "decomp/ST.exe/functions/00695EB0/decomp.c"
 /* [STMethodOwnerApplier] Structural method owner recovered as CGenerate.
    Evidence: this_call_owners=[CGenerate]; agreed_this_calls=2; incoming_this_accesses=4;
    incoming_edx_uses=0; incoming_stack_parameter_uses=0; direct_non_thunk_callers=0;
@@ -571,7 +571,7 @@ void __thiscall st::fn_00695EB0(CGenerate *this)
 }
 
 // 00695F20 CGenerate::sub_00695F20
-#line 1 "decomp/ST.exe/functions/00695F20/decomp.c"
+#line 4 "decomp/ST.exe/functions/00695F20/decomp.c"
 /* [STMethodOwnerApplier] Structural method owner recovered as CGenerate.
    Evidence: this_call_owners=[CGenerate]; agreed_this_calls=2; incoming_this_accesses=3;
    incoming_edx_uses=0; incoming_stack_parameter_uses=0; direct_non_thunk_callers=0;
@@ -603,7 +603,7 @@ void __thiscall st::fn_00695F20(CGenerate *this)
 }
 
 // 00695F70 CGenerate::sub_00695F70
-#line 1 "decomp/ST.exe/functions/00695F70/decomp.c"
+#line 4 "decomp/ST.exe/functions/00695F70/decomp.c"
 /* [STMethodOwnerApplier] Structural method owner recovered as CGenerate.
    Evidence: this_call_owners=[CGenerate]; agreed_this_calls=3; incoming_this_accesses=3;
    incoming_edx_uses=0; incoming_stack_parameter_uses=4; direct_non_thunk_callers=0;
@@ -648,7 +648,7 @@ LAB_00696007:
 }
 
 // 00696400 CGenerate::sub_00696400
-#line 1 "decomp/ST.exe/functions/00696400/decomp.c"
+#line 4 "decomp/ST.exe/functions/00696400/decomp.c"
 /* [STMethodOwnerApplier] Structural method owner recovered as CGenerate.
    Evidence: this_call_owners=[CGenerate]; agreed_this_calls=3; incoming_this_accesses=5;
    incoming_edx_uses=1; incoming_stack_parameter_uses=3; direct_non_thunk_callers=0;
@@ -694,7 +694,7 @@ int __thiscall st::fn_00696400(CGenerate *this,int param_1,int param_2)
 }
 
 // 006964F0 CGenerate::sub_006964F0
-#line 1 "decomp/ST.exe/functions/006964F0/decomp.c"
+#line 4 "decomp/ST.exe/functions/006964F0/decomp.c"
 /* [STMethodOwnerApplier] Structural method owner recovered as CGenerate.
    Evidence: this_call_owners=[CGenerate]; agreed_this_calls=1; incoming_this_accesses=6;
    incoming_edx_uses=0; incoming_stack_parameter_uses=4; direct_non_thunk_callers=0;
@@ -797,7 +797,7 @@ void __thiscall st::fn_006964F0(CGenerate *this,uint param_1,int param_2)
 }
 
 // 00696740 CGenerate::sub_00696740
-#line 1 "decomp/ST.exe/functions/00696740/decomp.c"
+#line 4 "decomp/ST.exe/functions/00696740/decomp.c"
 /* [STMethodOwnerApplier] Structural method owner recovered as CGenerate.
    Evidence: this_call_owners=[CGenerate]; agreed_this_calls=3; incoming_this_accesses=1;
    incoming_edx_uses=0; incoming_stack_parameter_uses=1; direct_non_thunk_callers=0;
@@ -827,7 +827,7 @@ void __thiscall st::fn_00696740(CGenerate *this,int param_1)
 }
 
 // 00696790 CGenerate::sub_00696790
-#line 1 "decomp/ST.exe/functions/00696790/decomp.c"
+#line 4 "decomp/ST.exe/functions/00696790/decomp.c"
 /* [STMethodOwnerApplier] Structural method owner recovered as CGenerate.
    Evidence: this_call_owners=[CGenerate]; agreed_this_calls=1; incoming_this_accesses=6;
    incoming_edx_uses=0; incoming_stack_parameter_uses=0; direct_non_thunk_callers=0;
@@ -866,7 +866,7 @@ void __thiscall st::fn_00696790(CGenerate *this)
 }
 
 // 00696810 CGenerate::sub_00696810
-#line 1 "decomp/ST.exe/functions/00696810/decomp.c"
+#line 4 "decomp/ST.exe/functions/00696810/decomp.c"
 /* [STMethodOwnerApplier] Structural method owner recovered as CGenerate.
    Evidence: this_call_owners=[CGenerate]; agreed_this_calls=1; incoming_this_accesses=7;
    incoming_edx_uses=0; incoming_stack_parameter_uses=0; direct_non_thunk_callers=0;
@@ -930,7 +930,7 @@ LAB_006968cf:
 }
 
 // 00696940 CGenerate::sub_00696940
-#line 1 "decomp/ST.exe/functions/00696940/decomp.c"
+#line 4 "decomp/ST.exe/functions/00696940/decomp.c"
 /* [STMethodOwnerApplier] Structural method owner recovered as CGenerate.
    Evidence: this_call_owners=[CGenerate]; agreed_this_calls=1; incoming_this_accesses=7;
    incoming_edx_uses=0; incoming_stack_parameter_uses=2; direct_non_thunk_callers=0;
@@ -1056,7 +1056,7 @@ LAB_00696b1f:
 }
 
 // 00696DC0 CGenerate::sub_00696DC0
-#line 1 "decomp/ST.exe/functions/00696DC0/decomp.c"
+#line 4 "decomp/ST.exe/functions/00696DC0/decomp.c"
 /* [STMethodOwnerApplier] Structural method owner recovered as CGenerate.
    Evidence: this_call_owners=[CGenerate]; agreed_this_calls=1; incoming_this_accesses=2;
    incoming_edx_uses=0; incoming_stack_parameter_uses=4; direct_non_thunk_callers=0;
@@ -1122,7 +1122,7 @@ LAB_00696e1a:
 }
 
 // 006971B0 CGenerate::sub_006971B0
-#line 1 "decomp/ST.exe/functions/006971B0/decomp.c"
+#line 4 "decomp/ST.exe/functions/006971B0/decomp.c"
 /* [STMethodOwnerApplier] Structural method owner recovered as CGenerate.
    Evidence: this_call_owners=[CGenerate]; agreed_this_calls=1; incoming_this_accesses=9;
    incoming_edx_uses=0; incoming_stack_parameter_uses=0; direct_non_thunk_callers=0;
@@ -1220,7 +1220,7 @@ int __thiscall st::fn_006971B0(CGenerate *this)
 }
 
 // 00697390 CGenerate::sub_00697390
-#line 1 "decomp/ST.exe/functions/00697390/decomp.c"
+#line 4 "decomp/ST.exe/functions/00697390/decomp.c"
 /* [STMethodOwnerApplier] Structural method owner recovered as CGenerate.
    Evidence: this_call_owners=[CGenerate]; agreed_this_calls=3; incoming_this_accesses=12;
    incoming_edx_uses=0; incoming_stack_parameter_uses=0; direct_non_thunk_callers=0;
@@ -1340,7 +1340,7 @@ LAB_006974d2:
 }
 
 // 006975F0 CGenerate::sub_006975F0
-#line 1 "decomp/ST.exe/functions/006975F0/decomp.c"
+#line 4 "decomp/ST.exe/functions/006975F0/decomp.c"
 /* [STMethodOwnerApplier] Structural method owner recovered as CGenerate.
    Evidence: this_call_owners=[CGenerate]; agreed_this_calls=1; incoming_this_accesses=8;
    incoming_edx_uses=0; incoming_stack_parameter_uses=0; direct_non_thunk_callers=0;
@@ -1448,7 +1448,7 @@ void __thiscall st::fn_006975F0(CGenerate *this)
 }
 
 // 006978C0 CGenerate::sub_006978C0
-#line 1 "decomp/ST.exe/functions/006978C0/decomp.c"
+#line 4 "decomp/ST.exe/functions/006978C0/decomp.c"
 /* [STMethodOwnerApplier] Structural method owner recovered as CGenerate.
    Evidence: this_call_owners=[CGenerate]; agreed_this_calls=1; incoming_this_accesses=5;
    incoming_edx_uses=0; incoming_stack_parameter_uses=0; direct_non_thunk_callers=0;
@@ -1564,7 +1564,7 @@ uint __thiscall st::fn_006978C0(CGenerate *this)
 }
 
 // 00697C50 CGenerate::sub_00697C50
-#line 1 "decomp/ST.exe/functions/00697C50/decomp.c"
+#line 4 "decomp/ST.exe/functions/00697C50/decomp.c"
 /* [STMethodOwnerApplier] Structural method owner recovered as CGenerate.
    Evidence: this_call_owners=[CGenerate]; agreed_this_calls=4; incoming_this_accesses=4;
    incoming_edx_uses=0; incoming_stack_parameter_uses=4; direct_non_thunk_callers=0;
@@ -1595,7 +1595,7 @@ undefined4 __thiscall st::fn_00697C50(CGenerate *this,int param_1,int param_2,in
 }
 
 // 006988C0 CGenerate::sub_006988C0
-#line 1 "decomp/ST.exe/functions/006988C0/decomp.c"
+#line 4 "decomp/ST.exe/functions/006988C0/decomp.c"
 /* [STMethodOwnerApplier] Structural method owner recovered as CGenerate.
    Evidence: this_call_owners=[CGenerate]; agreed_this_calls=1; incoming_this_accesses=7;
    incoming_edx_uses=0; incoming_stack_parameter_uses=0; direct_non_thunk_callers=0;
@@ -1772,7 +1772,7 @@ LAB_00698a36:
 }
 
 // 00698CA0 CGenerate::sub_00698CA0
-#line 1 "decomp/ST.exe/functions/00698CA0/decomp.c"
+#line 4 "decomp/ST.exe/functions/00698CA0/decomp.c"
 /* [STAbiConsistencyApplier] full_eax_return: return=/int Evidence: all observed callers consume
    full EAX (1), none consume AL/AX, and every RET path defines full EAX; sites=00697390 @ 0069751C
    -> PUSH PUSH EAX
@@ -1823,7 +1823,7 @@ st::fn_00698CA0
 }
 
 // 006991C0 CGenerate::sub_006991C0
-#line 1 "decomp/ST.exe/functions/006991C0/decomp.c"
+#line 4 "decomp/ST.exe/functions/006991C0/decomp.c"
 /* [STMethodOwnerApplier] Structural method owner recovered as CGenerate.
    Evidence: this_call_owners=[CGenerate]; agreed_this_calls=1; incoming_this_accesses=8;
    incoming_edx_uses=0; incoming_stack_parameter_uses=360; direct_non_thunk_callers=0;
@@ -2700,7 +2700,7 @@ LAB_00699f26:
 }
 
 // 0069ADA0 CGenerate::sub_0069ADA0
-#line 1 "decomp/ST.exe/functions/0069ADA0/decomp.c"
+#line 4 "decomp/ST.exe/functions/0069ADA0/decomp.c"
 /* [STMethodOwnerApplier] Structural method owner recovered as CGenerate.
    Evidence: this_call_owners=[CGenerate]; agreed_this_calls=1; incoming_this_accesses=12;
    incoming_edx_uses=2; incoming_stack_parameter_uses=7; direct_non_thunk_callers=0;
@@ -2884,7 +2884,7 @@ void __thiscall st::fn_0069ADA0(CGenerate *this,int param_1,int param_2)
 }
 
 // 0069B190 CGenerate::sub_0069B190
-#line 1 "decomp/ST.exe/functions/0069B190/decomp.c"
+#line 4 "decomp/ST.exe/functions/0069B190/decomp.c"
 /* [STMethodOwnerApplier] Structural method owner recovered as CGenerate.
    Evidence: this_call_owners=[CGenerate]; agreed_this_calls=1; incoming_this_accesses=13;
    incoming_edx_uses=0; incoming_stack_parameter_uses=12; direct_non_thunk_callers=0;
@@ -2994,7 +2994,7 @@ int __thiscall st::fn_0069B190(CGenerate *this,int param_1,int param_2,int param
 }
 
 // 0069B400 CGenerate::sub_0069B400
-#line 1 "decomp/ST.exe/functions/0069B400/decomp.c"
+#line 4 "decomp/ST.exe/functions/0069B400/decomp.c"
 /* [STMethodOwnerApplier] Structural method owner recovered as CGenerate.
    Evidence: this_call_owners=[CGenerate]; agreed_this_calls=1; incoming_this_accesses=5;
    incoming_edx_uses=0; incoming_stack_parameter_uses=16; direct_non_thunk_callers=0;
@@ -3065,7 +3065,7 @@ st::fn_0069B400(CGenerate *this,int param_1,int param_2,int param_3,int param_4,
 }
 
 // 0069BDC0 CGenerate::sub_0069BDC0
-#line 1 "decomp/ST.exe/functions/0069BDC0/decomp.c"
+#line 4 "decomp/ST.exe/functions/0069BDC0/decomp.c"
 /* [STMethodOwnerApplier] Structural method owner recovered as CGenerate.
    Evidence: this_call_owners=[CGenerate]; agreed_this_calls=1; incoming_this_accesses=6;
    incoming_edx_uses=3; incoming_stack_parameter_uses=19; direct_non_thunk_callers=0;
@@ -3291,7 +3291,7 @@ LAB_0069c1df:
 }
 
 // 0069CB50 CGenerate::sub_0069CB50
-#line 1 "decomp/ST.exe/functions/0069CB50/decomp.c"
+#line 4 "decomp/ST.exe/functions/0069CB50/decomp.c"
 /* [STMethodOwnerApplier] Structural method owner recovered as CGenerate.
    Evidence: this_call_owners=[CGenerate]; agreed_this_calls=1; incoming_this_accesses=6;
    incoming_edx_uses=0; incoming_stack_parameter_uses=234; direct_non_thunk_callers=0;
@@ -4184,7 +4184,7 @@ LAB_0069d5f2:
 }
 
 // 0069FF90 CGenerate::sub_0069FF90
-#line 1 "decomp/ST.exe/functions/0069FF90/decomp.c"
+#line 4 "decomp/ST.exe/functions/0069FF90/decomp.c"
 /* [STMethodOwnerApplier] Structural method owner recovered as CGenerate.
    Evidence: this_call_owners=[CGenerate]; agreed_this_calls=9; incoming_this_accesses=1;
    incoming_edx_uses=0; incoming_stack_parameter_uses=0; direct_non_thunk_callers=0;
@@ -4207,7 +4207,7 @@ void __thiscall st::fn_0069FF90(CGenerate *this)
 }
 
 // 006A0150 CGenerate::sub_006A0150
-#line 1 "decomp/ST.exe/functions/006A0150/decomp.c"
+#line 4 "decomp/ST.exe/functions/006A0150/decomp.c"
 /* [STMethodOwnerApplier] Structural method owner recovered as CGenerate.
    Evidence: this_call_owners=[CGenerate]; agreed_this_calls=1; incoming_this_accesses=8;
    incoming_edx_uses=0; incoming_stack_parameter_uses=0; direct_non_thunk_callers=0;
@@ -4236,7 +4236,7 @@ undefined4 __thiscall st::fn_006A0150(CGenerate *this)
 }
 
 // 006A0470 CGenerate::sub_006A0470
-#line 1 "decomp/ST.exe/functions/006A0470/decomp.c"
+#line 4 "decomp/ST.exe/functions/006A0470/decomp.c"
 /* [STMethodOwnerApplier] Structural method owner recovered as CGenerate.
    Evidence: this_call_owners=[CGenerate]; agreed_this_calls=1; incoming_this_accesses=16;
    incoming_edx_uses=0; incoming_stack_parameter_uses=0; direct_non_thunk_callers=0;
@@ -4334,7 +4334,7 @@ LAB_006a05f8:
 }
 
 // 006A09F0 CGenerate::sub_006A09F0
-#line 1 "decomp/ST.exe/functions/006A09F0/decomp.c"
+#line 4 "decomp/ST.exe/functions/006A09F0/decomp.c"
 /* [STMethodOwnerApplier] Structural method owner recovered as CGenerate.
    Evidence: this_call_owners=[CGenerate]; agreed_this_calls=1; incoming_this_accesses=4;
    incoming_edx_uses=0; incoming_stack_parameter_uses=4; direct_non_thunk_callers=0;
@@ -4352,7 +4352,7 @@ void __thiscall st::fn_006A09F0(CGenerate *this,byte *param_1,uint param_2)
 }
 
 // 006A0E30 CGenerate::sub_006A0E30
-#line 1 "decomp/ST.exe/functions/006A0E30/decomp.c"
+#line 4 "decomp/ST.exe/functions/006A0E30/decomp.c"
 /* [STMethodOwnerApplier] Structural method owner recovered as CGenerate.
    Evidence: this_call_owners=[CGenerate]; agreed_this_calls=4; incoming_this_accesses=1;
    incoming_edx_uses=0; incoming_stack_parameter_uses=5; direct_non_thunk_callers=0;

@@ -2,7 +2,7 @@
 // Generated translation unit: source/original/ai/ai_tact_d.cpp
 
 // 00690E90 FUN_00690e90
-#line 1 "decomp/ST.exe/functions/00690E90/decomp.c"
+#line 4 "decomp/ST.exe/functions/00690E90/decomp.c"
 /* [STSourceProvenanceApplier begin]
    Recovered source file: E:\__titans\ai\ai_tact_d.cpp
    Diagnostic line evidence: 33 (metadata/report site, not the function definition)
@@ -45,7 +45,7 @@ undefined4 * __cdecl st::fn_00690E90(char *source,undefined2 param_2,undefined2 
 }
 
 // 00690FC0 FUN_00690fc0
-#line 1 "decomp/ST.exe/functions/00690FC0/decomp.c"
+#line 4 "decomp/ST.exe/functions/00690FC0/decomp.c"
 /* [STSourceProvenanceApplier begin]
    Recovered source file: E:\__titans\ai\ai_tact_d.cpp
    Diagnostic line evidence: 81 (metadata/report site, not the function definition)
@@ -132,7 +132,7 @@ AllocationRecord_00690FC0 * __cdecl st::fn_00690FC0(AllocationRecord_00690FC0 *p
 }
 
 // 00691190 TactDataPack
-#line 1 "decomp/ST.exe/functions/00691190/decomp.c"
+#line 4 "decomp/ST.exe/functions/00691190/decomp.c"
 /* [STSourceProvenanceApplier begin]
    Recovered source file: E:\__titans\ai\ai_tact_d.cpp
    Diagnostic line evidence: 140 | 141 (metadata/report site, not the function definition)

@@ -56,14 +56,14 @@ SubmarineTitans::Recovered::HiddenThis::AnonReceiver_005FDB50::FUN_005fdb50
           this_00 != nullptr)) && (-1 < param_2 || iVar5 != 2)) {
         local_8 = iVar8;
         if ((iVar5 == 1) || (iVar5 == 2)) {
-          iVar5 = STT3DSprC::Init(this_00,DAT_008073cc,0x5a,0x45,nullptr,0xb4,0x8c,0x11);
+          iVar5 = STT3DSprC::Init(this_00,PTR_008073cc,0x5a,0x45,nullptr,0xb4,0x8c,0x11);
           if (iVar5 != 0) {
             RaiseInternalException
                       (-1,g_overwriteContext_007ED77C,"E:\\__titans\\nick\\to_DcBom.cpp",0x13d
                       );
             return 0xffff;
           }
-          iVar5 = STT3DSprC::LoadSequence(this_00,0xd,DAT_00806774,"adcbo",0x1d);
+          iVar5 = STT3DSprC::LoadSequence(this_00,0xd,PTR_00806774,"adcbo",0x1d);
           if (iVar5 != 0) {
             return 0xffff;
           }
@@ -142,16 +142,16 @@ joined_r0x005fe09b:
             uVar4 = *(int *)&this->field_0x1c * 0x41c64e6d + 0x3039;
             *(uint *)&this->field_0x1c = uVar4;
             iVar5 = STT3DSprC::LoadSequence
-                              (this_00,0xd,DAT_00806774,(&PTR_s_Expb24_007ce934)[uVar4 >> 0x10 & 1],
+                              (this_00,0xd,PTR_00806774,(&PTR_s_Expb24_007ce934)[uVar4 >> 0x10 & 1],
                                0x1d);
             if (iVar5 != 0) {
               return 0xffff;
             }
-            iVar5 = STT3DSprC::LoadSequence(this_00,0xf,DAT_00806764,"bulb_n3",0x1d);
+            iVar5 = STT3DSprC::LoadSequence(this_00,0xf,PTR_00806764,"bulb_n3",0x1d);
             if (iVar5 != 0) {
               return 0xffff;
             }
-            iVar5 = STT3DSprC::LoadSequence(this_00,0xe,DAT_00806774,"expmask2",0x1d);
+            iVar5 = STT3DSprC::LoadSequence(this_00,0xe,PTR_00806774,"expmask2",0x1d);
             if (iVar5 != 0) {
               return 0xffff;
             }
@@ -159,7 +159,7 @@ joined_r0x005fe09b:
             *(undefined1 *)(iVar8 + 0x28 + *(int *)&this->field_0x233) = 1;
             thunk_FUN_004ac700(this_00,'\x0f');
             STT3DSprC::StartShow(this_00,0xd,g_playSystem_00802A38->field_00E4);
-            STT3DSprC::sub_004ACF20(this_00,DAT_008032b8,0x10);
+            STT3DSprC::sub_004ACF20(this_00,PTR_008032b8,0x10);
             STT3DSprC::sub_004ACFE0(this_00,'\x0e');
             iVar5 = iVar8 + *(int *)&this->field_0x233;
             local_18 = (int)*(short *)(iVar5 + 6);

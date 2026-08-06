@@ -2,7 +2,7 @@
 // Generated translation unit: source/original/ai/ai_erc.cpp
 
 // 0064A630 FUN_0064a630
-#line 1 "decomp/ST.exe/functions/0064A630/decomp.c"
+#line 4 "decomp/ST.exe/functions/0064A630/decomp.c"
 /* [STSourceProvenanceApplier begin]
    Recovered source file: E:\__titans\ai\ai_erc.cpp
    Diagnostic line evidence: 23 (metadata/report site, not the function definition)
@@ -32,7 +32,7 @@ int * __cdecl st::fn_0064A630(int param_1)
 }
 
 // 0064A6F0 FUN_0064a6f0
-#line 1 "decomp/ST.exe/functions/0064A6F0/decomp.c"
+#line 4 "decomp/ST.exe/functions/0064A6F0/decomp.c"
 /* [STSourceProvenanceApplier begin]
    Recovered source file: E:\__titans\ai\ai_erc.cpp
    Diagnostic line evidence: 37 | 42 (metadata/report site, not the function definition)
@@ -69,7 +69,7 @@ int __cdecl st::fn_0064A6F0(int *param_1,int param_2)
 }
 
 // 0064A830 FUN_0064a830
-#line 1 "decomp/ST.exe/functions/0064A830/decomp.c"
+#line 4 "decomp/ST.exe/functions/0064A830/decomp.c"
 /* [STSourceProvenanceApplier begin]
    Recovered source file: E:\__titans\ai\ai_erc.cpp
    Diagnostic line evidence: 86 (metadata/report site, not the function definition)
@@ -110,7 +110,7 @@ int __cdecl st::fn_0064A830(int *param_1,undefined4 *param_2)
 }
 
 // 0064A970 FUN_0064a970
-#line 1 "decomp/ST.exe/functions/0064A970/decomp.c"
+#line 4 "decomp/ST.exe/functions/0064A970/decomp.c"
 /* WARNING: Type propagation algorithm not settling */
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 /* [STSourceProvenanceApplier begin]

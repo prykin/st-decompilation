@@ -49,7 +49,7 @@ undefined4 __fastcall FUN_004cc370(AnonShape_004CC370_02CE3D17 *param_1)
   goto cf_common_exit_004CC6D2;
   if (iVar4 == 2) {
     iVar4 = STT3DSprC::LoadSequence
-                      ((STT3DSprC *)param_1->field_0603,0xe,DAT_0080678c,PTR_s_tlo_capture_00790c28,
+                      ((STT3DSprC *)param_1->field_0603,0xe,PTR_0080678c,PTR_s_tlo_capture_00790c28,
                        0x1d);
     if (iVar4 != 0) {
       iVar7 = 0x37c;
@@ -58,7 +58,7 @@ undefined4 __fastcall FUN_004cc370(AnonShape_004CC370_02CE3D17 *param_1)
   }
   else if ((iVar4 == 3) || (iVar4 == 4)) {
     iVar4 = STT3DSprC::LoadSequence
-                      ((STT3DSprC *)param_1->field_0603,0xe,DAT_0080678c,PTR_s_tlo_emb6_00790c20,
+                      ((STT3DSprC *)param_1->field_0603,0xe,PTR_0080678c,PTR_s_tlo_emb6_00790c20,
                        0x1d);
     if (iVar4 != 0) {
       iVar7 = 0x37f;
@@ -67,7 +67,7 @@ undefined4 __fastcall FUN_004cc370(AnonShape_004CC370_02CE3D17 *param_1)
   }
   else {
     iVar4 = STT3DSprC::LoadSequence
-                      ((STT3DSprC *)param_1->field_0603,0xe,DAT_00806764,PTR_s_tlo_bubbles_00790c1c,
+                      ((STT3DSprC *)param_1->field_0603,0xe,PTR_00806764,PTR_s_tlo_bubbles_00790c1c,
                        0x1d);
     if (iVar4 != 0) {
       iVar7 = 0x381;

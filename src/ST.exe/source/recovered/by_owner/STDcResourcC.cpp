@@ -2,7 +2,7 @@
 // Generated translation unit: source/recovered/by_owner/STDcResourcC.cpp
 
 // 0057F1D0 STDcResourcC::STDcResourcC
-#line 1 "decomp/ST.exe/functions/0057F1D0/decomp.c"
+#line 4 "decomp/ST.exe/functions/0057F1D0/decomp.c"
 /* [STConstructorApplier] Recovered constructor candidate.
    VTable: 0079B528 (store 0057F1F9)
    Evidence: final_vptr=0079B528; returns_this=true; calls_before=2; field_writes_after=2;
@@ -17,8 +17,8 @@ STDcResourcC * __thiscall st::fn_0057F1D0(STDcResourcC *this)
 
   st::fn_00401933((STGameObjC *)this);
   st::fn_00401316((AnonShape_004AB810_8E5693D5 *)&this->field_01D5);
-  this->field_01D5 = &VTable_0079B688;
-  this->vtable = &STDcResourcCVTable;
+  this->field_01D5 = &st_global_0079B688;
+  this->vtable = &st_global_0079B528;
   memset(&this->field_0231, 0, 0x28); /* compiler bulk-zero initialization */
   this->field_0261 = 0;
   this->field_0259 = -1;
@@ -26,7 +26,7 @@ STDcResourcC * __thiscall st::fn_0057F1D0(STDcResourcC *this)
 }
 
 // 0057F2E0 STDcResourcC::sub_0057F2E0
-#line 1 "decomp/ST.exe/functions/0057F2E0/decomp.c"
+#line 4 "decomp/ST.exe/functions/0057F2E0/decomp.c"
 /* [STMethodOwnerApplier] Structural method owner recovered as STDcResourcC.
    Evidence: this_call_owners=[STDcResourcC]; agreed_this_calls=2; incoming_this_accesses=1;
    incoming_edx_uses=0; incoming_stack_parameter_uses=2; direct_non_thunk_callers=0;
@@ -84,7 +84,7 @@ undefined4 * __thiscall st::fn_0057F2E0(STDcResourcC *this,int param_1,int param
 }
 
 // 0057F3A0 STDcResourcC::sub_0057F3A0
-#line 1 "decomp/ST.exe/functions/0057F3A0/decomp.c"
+#line 4 "decomp/ST.exe/functions/0057F3A0/decomp.c"
 /* [STMethodOwnerApplier] Structural method owner recovered as STDcResourcC.
    Evidence: this_call_owners=[STDcResourcC]; agreed_this_calls=2; incoming_this_accesses=1;
    incoming_edx_uses=6; incoming_stack_parameter_uses=2; direct_non_thunk_callers=0;
@@ -141,7 +141,7 @@ undefined4 * __thiscall st::fn_0057F3A0(STDcResourcC *this,int param_1,int param
 }
 
 // 0057F470 STDcResourcC::sub_0057F470
-#line 1 "decomp/ST.exe/functions/0057F470/decomp.c"
+#line 4 "decomp/ST.exe/functions/0057F470/decomp.c"
 /* [STMethodOwnerApplier] Structural method owner recovered as STDcResourcC.
    Evidence: this_call_owners=[STDcResourcC]; agreed_this_calls=2; incoming_this_accesses=1;
    incoming_edx_uses=0; incoming_stack_parameter_uses=2; direct_non_thunk_callers=0;
@@ -199,7 +199,7 @@ undefined4 * __thiscall st::fn_0057F470(STDcResourcC *this,int param_1,int param
 }
 
 // 005805C0 STDcResourcC::sub_005805C0
-#line 1 "decomp/ST.exe/functions/005805C0/decomp.c"
+#line 4 "decomp/ST.exe/functions/005805C0/decomp.c"
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 /* [STMethodOwnerApplier] Structural method owner recovered as STDcResourcC.
    Evidence: this_call_owners=[STDcResourcC]; agreed_this_calls=1; incoming_this_accesses=6;
@@ -217,10 +217,10 @@ undefined4 __thiscall st::fn_005805C0(STDcResourcC *this)
   bVar2 = 0x1d;
   this_00 = &this->field_01D5;
   text = st::fn_004035D5(this,this->field_025D);
-  iVar1 = st::fn_00404183((STT3DSprC *)this_00,0xe,DAT_00806764,text,bVar2);
+  iVar1 = st::fn_00404183((STT3DSprC *)this_00,0xe,PTR_00806764,text,bVar2);
   if (iVar1 == 0) {
     iVar1 = st::fn_00404183
-                      ((STT3DSprC *)this_00,0xd,DAT_00806764,PTR_s_termsd_007cb0b4,0x1d);
+                      ((STT3DSprC *)this_00,0xd,PTR_00806764,PTR_s_termsd_007cb0b4,0x1d);
     if (iVar1 == 0) {
       st::fn_00405240((STT3DSprC *)this_00,0xe,g_playSystem_00802A38->field_00E4);
       st::fn_004045D9
@@ -237,7 +237,7 @@ undefined4 __thiscall st::fn_005805C0(STDcResourcC *this)
 }
 
 // 00580F20 STDcResourcC::FUN_00580f20
-#line 1 "decomp/ST.exe/functions/00580F20/decomp.c"
+#line 4 "decomp/ST.exe/functions/00580F20/decomp.c"
 /* [STVirtualMethodApplier] Recovered from virtual table slot family.
    Tables: 0079B528
    Entries: 00405894
@@ -253,7 +253,7 @@ dword __thiscall st::fn_00580F20(STDcResourcC *this)
 }
 
 // 005810B0 STDcResourcC::FUN_005810b0
-#line 1 "decomp/ST.exe/functions/005810B0/decomp.c"
+#line 4 "decomp/ST.exe/functions/005810B0/decomp.c"
 /* [STVirtualMethodApplier] Recovered from virtual table slot family.
    Tables: 0079B528
    Entries: 00405817

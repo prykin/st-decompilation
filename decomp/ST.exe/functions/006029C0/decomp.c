@@ -24,16 +24,16 @@ undefined4 FUN_006029c0(void)
       text = (&PTR_s_Dest1_0_007cebec)[local_c->field_0372];
     }
     this = &local_c->field_0x1d5;
-    iVar2 = STT3DSprC::LoadSequence((STT3DSprC *)this,0xe,DAT_00806774,text,0x1d);
+    iVar2 = STT3DSprC::LoadSequence((STT3DSprC *)this,0xe,PTR_00806774,text,0x1d);
     if (iVar2 == 0) {
       thunk_FUN_004ac610(this,'\x0e');
       STT3DSprC::SetCurFase((STT3DSprC *)this,'\x0e',local_c->field_0387);
       STT3DSprC::StartShow((STT3DSprC *)this,0xe,g_playSystem_00802A38->field_00E4);
-      STT3DSprC::sub_004ACEF0((STT3DSprC *)this,DAT_008073cc);
+      STT3DSprC::sub_004ACEF0((STT3DSprC *)this,PTR_008073cc);
       local_c->field_037A = 1;
       if (-1 < local_c->field_0249) {
         iVar2 = STT3DSprC::LoadSequence
-                          ((STT3DSprC *)this,0xc,DAT_00806774,
+                          ((STT3DSprC *)this,0xc,PTR_00806774,
                            (&PTR_s_dest0s0_007cec3c)[local_c->field_0249 + local_c->field_0372 * 8],
                            0x1d);
         if (iVar2 != 0) {

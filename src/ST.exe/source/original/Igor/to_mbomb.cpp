@@ -2,7 +2,7 @@
 // Generated translation unit: source/original/Igor/to_mbomb.cpp
 
 // 00588BC0 STMBombC::GetMessage
-#line 1 "decomp/ST.exe/functions/00588BC0/decomp.c"
+#line 4 "decomp/ST.exe/functions/00588BC0/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\Igor\to_mbomb.cpp
    STMBombC::GetMessage
@@ -36,7 +36,7 @@ int __thiscall st::fn_00588BC0(STMBombC *this,STMessage *message)
   void *local_40;
   undefined4 local_3c;
   undefined4 local_38;
-  undefined4 local_34;
+  ushort *local_34;
   undefined4 local_30;
   undefined4 local_2c;
   undefined4 local_28;
@@ -220,7 +220,7 @@ int __thiscall st::fn_00588BC0(STMBombC *this,STMessage *message)
           }
           *(short *)&this_00->field_0x4b = sVar11;
           iVar8 = st::fn_00404183
-                            ((STT3DSprC *)&this_00->field_01D5,0xe,DAT_00806774,"mmine",
+                            ((STT3DSprC *)&this_00->field_01D5,0xe,PTR_00806774,"mmine",
                              0x1d);
           if (iVar8 != 0) {
             st::fn_006A5E40
@@ -331,13 +331,13 @@ int __thiscall st::fn_00588BC0(STMBombC *this,STMessage *message)
     }
     iVar8 = 0;
     do {
-      *(int **)(iVar8 + (int)local_40) = DAT_00806774;
+      *(int **)(iVar8 + (int)local_40) = PTR_00806774;
       iVar8 = iVar8 + 4;
     } while (iVar8 < 0x44);
-    STField<undefined4>(local_40,0x24) = DAT_00806764;
+    STField<int *>(local_40,0x24) = PTR_00806764;
     local_3c = 0;
     local_38 = 0;
-    local_34 = DAT_008073cc;
+    local_34 = PTR_008073cc;
     local_30 = 0;
     local_2c = 0;
     local_28 = 0;

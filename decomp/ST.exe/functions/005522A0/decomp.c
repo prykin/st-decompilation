@@ -163,7 +163,7 @@ LAB_00552481:
       pCVar4 = thunk_FUN_00571240("BUT_RCTTYPE",0);
       pCVar4 = FUN_006f2c00(pCVar4,iVar8,iVar5);
       puVar6 = Library::Ourlib::MFRLOAD::mfRLoad
-                         (DAT_00806794,CASE_1,pCVar4,uVar9,bVar10,iVar11,iVar13,puVar15);
+                         (PTR_00806794,CASE_1,pCVar4,uVar9,bVar10,iVar11,iVar13,puVar15);
       DibPut((RecoveredSourceFamily_dibcopy *)this_00->field_0068,local_8,iVar3,'\x01',
              (byte *)puVar6);
       if (*(int *)((message->arg0).u32 + 4) == 3) {
@@ -174,7 +174,7 @@ LAB_00552481:
         uVar9 = 0xffffffff;
         pCVar4 = thunk_FUN_00571240("BUT_RCTFTYPE",0);
         puVar6 = Library::Ourlib::MFRLOAD::mfRLoad
-                           (DAT_00806794,CASE_6,pCVar4,uVar9,bVar10,iVar5,iVar8,puVar15);
+                           (PTR_00806794,CASE_6,pCVar4,uVar9,bVar10,iVar5,iVar8,puVar15);
         DibPut((RecoveredSourceFamily_dibcopy *)this_00->field_0068,local_8,iVar3,'\x06',
                (byte *)puVar6);
       }

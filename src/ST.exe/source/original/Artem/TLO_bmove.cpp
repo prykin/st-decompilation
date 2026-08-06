@@ -2,7 +2,7 @@
 // Generated translation unit: source/original/Artem/TLO_bmove.cpp
 
 // 004C6BB0 FUN_004c6bb0
-#line 1 "decomp/ST.exe/functions/004C6BB0/decomp.c"
+#line 4 "decomp/ST.exe/functions/004C6BB0/decomp.c"
 /* [STSourceProvenanceApplier begin]
    Recovered source file: E:\__titans\Artem\TLO_bmove.cpp
    Diagnostic line evidence: 28 (metadata/report site, not the function definition)
@@ -35,7 +35,7 @@ st::fn_004C6BB0(void *this,undefined4 param_1,undefined4 param_2,undefined4 para
 }
 
 // 004C6D00 FUN_004c6d00
-#line 1 "decomp/ST.exe/functions/004C6D00/decomp.c"
+#line 4 "decomp/ST.exe/functions/004C6D00/decomp.c"
 /* [STSourceProvenanceApplier begin]
    Recovered source file: E:\__titans\Artem\TLO_bmove.cpp
    Diagnostic line evidence: 53 | 71 | 79 | 89 (metadata/report site, not the function definition)

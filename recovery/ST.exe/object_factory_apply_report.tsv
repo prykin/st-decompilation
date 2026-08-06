@@ -1,5 +1,5 @@
 kind	address	status	name	detail
-enum	/SubmarineTitans/Recovered/Enums/STObjectTypeId	applied	STObjectTypeId	updated generated registry values
+enum	/SubmarineTitans/Recovered/Enums/STObjectTypeId	unchanged	STObjectTypeId	equivalent enum already present
 factory	0071E000	unchanged	CreateButton	signature=unchanged
 factory	00725520	unchanged	CreateTrackbar	signature=unchanged
 factory	00724D00	unchanged	CreateSlider	signature=unchanged
@@ -45,23 +45,23 @@ factory	00593860	unchanged	CreateCampaign	signature=unchanged
 factory	005B2790	unchanged	CreateChooseMap	signature=unchanged
 factory	005D77A0	unchanged	CreateSettMap	signature=unchanged
 factory	005D4B40	unchanged	CreateSettMapM	signature=unchanged
-factory	005B95B0	applied	CreateMMsg	signature=applied(MMsgTy * __cdecl(void)); name=applied(CreateMMsg)
+factory	005B95B0	unchanged	CreateMMsg	signature=unchanged
 factory	00590AD0	unchanged	CreateMAdv	signature=unchanged
-factory	005D9F80	applied	CreateSID	signature=applied(SIDTy * __cdecl(void)); name=applied(CreateSID)
+factory	005D9F80	unchanged	CreateSID	signature=unchanged
 factory	005BD2E0	unchanged	CreatePrivider	signature=unchanged
-factory	005E6570	applied	CreateMTest	signature=applied(MTestTy * __cdecl(void)); name=applied(CreateMTest)
+factory	005E6570	unchanged	CreateMTest	signature=unchanged
 factory	005EAD30	unchanged	CreateWait	signature=unchanged
 factory	005AA2C0	unchanged	CreateFSGS	signature=unchanged
 factory	005C2620	unchanged	CreateMReport	signature=unchanged
 factory	0052D020	unchanged	CreatePopUp	signature=unchanged
 factory	0053BFF0	unchanged	CreateResearchPanel	signature=unchanged
-factory	004EE8E0	applied	CreateBldBoatPanel	signature=applied(BldBoatPanelTy * __cdecl(void)); name=applied(CreateBldBoatPanel)
+factory	004EE8E0	unchanged	CreateBldBoatPanel	signature=unchanged
 factory	0058E410	unchanged	CreateSTShark	signature=unchanged
-factory	004F0460	applied	CreateBldObjPanel	signature=applied(BldObjPanelTy * __cdecl(void)); name=applied(CreateBldObjPanel)
+factory	004F0460	unchanged	CreateBldObjPanel	signature=unchanged
 factory	004EFA40	unchanged	CreateBldLabPanel	signature=unchanged
-factory	00521840	applied	CreateIntercomPanel	signature=applied(IntercomPanelTy * __cdecl(void)); name=applied(CreateIntercomPanel)
+factory	00521840	unchanged	CreateIntercomPanel	signature=unchanged
 factory	005527D0	unchanged	CreateUpgPanel	signature=unchanged
-factory	00539AA0	applied	CreatePlayPanel	signature=applied(PlayPanelTy * __cdecl(void)); name=applied(CreatePlayPanel)
+factory	00539AA0	unchanged	CreatePlayPanel	signature=unchanged
 factory	00510C50	unchanged	CreateHelpPanel	signature=unchanged
 factory	0050FC70	unchanged	CreateFrmPanel	signature=unchanged
 factory	00566590	unchanged	CreateSoundManager	signature=unchanged

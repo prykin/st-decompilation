@@ -316,7 +316,7 @@ switchD_00590d73_default:
           cVar9 = CASE_FFFFFFFE;
           iVar8 = 0x28;
           iVar16 = 0x8c;
-          puVar6 = (uint *)LoadResourceString(0x23f1,g_module_00807618);
+          puVar6 = (uint *)LoadResourceString(0x23f1,g_hINSTANCE_00807618);
           puVar5 = ccFntTy::CreateTypeSSpr
                              (g_startSystem_0081176C->field_0030,puVar6,iVar16,iVar8,cVar9,uVar10,
                               iVar11,iVar12,iVar13);
@@ -333,7 +333,7 @@ switchD_00590d73_default:
           cVar9 = CASE_FFFFFFFE;
           iVar8 = 0x28;
           iVar16 = 0x8c;
-          puVar6 = (uint *)LoadResourceString(0x23f0,g_module_00807618);
+          puVar6 = (uint *)LoadResourceString(0x23f0,g_hINSTANCE_00807618);
           puVar5 = ccFntTy::CreateTypeSSpr
                              (g_startSystem_0081176C->field_0030,puVar6,iVar16,iVar8,cVar9,uVar10,
                               iVar11,iVar12,iVar13);
@@ -350,7 +350,7 @@ switchD_00590d73_default:
           cVar9 = CASE_FFFFFFFE;
           iVar8 = 0x28;
           iVar16 = 0x8c;
-          puVar6 = (uint *)LoadResourceString(0x23f2,g_module_00807618);
+          puVar6 = (uint *)LoadResourceString(0x23f2,g_hINSTANCE_00807618);
           puVar5 = ccFntTy::CreateTypeSSpr
                              (g_startSystem_0081176C->field_0030,puVar6,iVar16,iVar8,cVar9,uVar10,
                               iVar11,iVar12,iVar13);

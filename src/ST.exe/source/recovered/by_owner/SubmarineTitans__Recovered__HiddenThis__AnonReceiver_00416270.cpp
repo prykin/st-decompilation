@@ -2,7 +2,7 @@
 // Generated translation unit: source/recovered/by_owner/SubmarineTitans__Recovered__HiddenThis__AnonReceiver_00416270.cpp
 
 // 005FAA10 SubmarineTitans::Recovered::HiddenThis::AnonReceiver_00416270::FUN_005faa10
-#line 1 "decomp/ST.exe/functions/005FAA10/decomp.c"
+#line 4 "decomp/ST.exe/functions/005FAA10/decomp.c"
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 /* [STHiddenThisApplier] Anonymous hidden receiver recovered as
    /SubmarineTitans/Recovered/HiddenThis/AnonReceiver_00416270.
@@ -40,7 +40,7 @@ st::fn_005FAA10
   if (local_10->field_02E6 != 0) {
     if (param_1 == 1) {
       puVar3 = st::fn_00709AF0
-                         (DAT_00806774,CASE_1D,"rubb3",0xffffffff,0,1,0,nullptr);
+                         (PTR_00806774,CASE_1D,"rubb3",0xffffffff,0,1,0,nullptr);
       uVar5 = STField<uint>(puVar3,0xd);
       uVar4 = STField<uint>(puVar3,9);
       uVar7 = 8;
@@ -48,7 +48,7 @@ st::fn_005FAA10
     }
     else {
       puVar3 = st::fn_00709AF0
-                         (DAT_00806774,CASE_1D,"bulb_tel",0xffffffff,0,1,0,
+                         (PTR_00806774,CASE_1D,"bulb_tel",0xffffffff,0,1,0,
                           nullptr);
       uVar5 = STField<uint>(puVar3,0xd);
       uVar4 = STField<uint>(puVar3,9);

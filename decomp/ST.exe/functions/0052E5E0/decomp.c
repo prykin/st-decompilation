@@ -74,7 +74,7 @@ void __thiscall OptPanelTy::InitOptPanel(OptPanelTy *this)
     this_00->field_0194 = puVar5;
     pCVar4 = thunk_FUN_00571240("IND_PNT",0);
     puVar5 = Library::Ourlib::MFRLOAD::mfRLoad
-                       (DAT_00806794,CASE_B,pCVar4,uVar12,bVar13,iVar2,iVar17,puVar19);
+                       (PTR_00806794,CASE_B,pCVar4,uVar12,bVar13,iVar2,iVar17,puVar19);
     this_00->field_0198 = puVar5;
     puVar5 = this_00->field_0184 + 0x14;
     iVar2 = 1;
@@ -84,7 +84,7 @@ void __thiscall OptPanelTy::InitOptPanel(OptPanelTy *this)
     this_00->field_01E5 = puVar5;
     pDVar6 = Library::DKW::TBL::SArrayCreate(nullptr,1,1);
     this_00->field_01F1 = pDVar6;
-    Library::DKW::TBL::FUN_006b6020(&pDVar6->flags,0,&DAT_008016a0);
+    Library::DKW::TBL::FUN_006b6020(pDVar6,0,&DAT_008016a0);
     PrepMissObj(this_00);
     SetOptControls(this_00);
     uVar20 = 0;

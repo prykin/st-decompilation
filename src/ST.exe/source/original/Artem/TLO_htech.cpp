@@ -2,7 +2,7 @@
 // Generated translation unit: source/original/Artem/TLO_htech.cpp
 
 // 004D9C80 FUN_004d9c80
-#line 1 "decomp/ST.exe/functions/004D9C80/decomp.c"
+#line 4 "decomp/ST.exe/functions/004D9C80/decomp.c"
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 /* [STSourceProvenanceApplier begin]
    Recovered source file: E:\__titans\Artem\TLO_htech.cpp
@@ -29,7 +29,7 @@ undefined4 __fastcall st::fn_004D9C80(AnonShape_004D9C80_80F657D3 *param_1)
       this = (STT3DSprC *)st::fn_00401316(pAVar1);
     }
     param_1->field_05FF = this;
-    iVar2 = st::fn_0040537B(this,DAT_008073cc,0x5a,0x45,nullptr,0xb4,0x8c,0x11);
+    iVar2 = st::fn_0040537B(this,PTR_008073cc,0x5a,0x45,nullptr,0xb4,0x8c,0x11);
     if (iVar2 != 0) {
       st::fn_006A5E40
                 (iVar2,g_overwriteContext_007ED77C,"E:\\__titans\\Artem\\TLO_htech.cpp",0x3e);
@@ -71,7 +71,7 @@ undefined4 __fastcall st::fn_004D9C80(AnonShape_004D9C80_80F657D3 *param_1)
   if (*(int *)&param_1->field_0x4d0 == 4) {
     st::external_00000080(local_108,"%s","lasbom");
     iVar2 = st::fn_00404183
-                      ((STT3DSprC *)param_1->field_05FF,0xe,DAT_00806774,local_108,0x1d);
+                      ((STT3DSprC *)param_1->field_05FF,0xe,PTR_00806774,local_108,0x1d);
     if (iVar2 != 0) {
       st::fn_006A5E40
                 (iVar2,g_overwriteContext_007ED77C,"E:\\__titans\\Artem\\TLO_htech.cpp",0x57);
@@ -104,7 +104,7 @@ undefined4 __fastcall st::fn_004D9C80(AnonShape_004D9C80_80F657D3 *param_1)
 }
 
 // 004DA230 FUN_004da230
-#line 1 "decomp/ST.exe/functions/004DA230/decomp.c"
+#line 4 "decomp/ST.exe/functions/004DA230/decomp.c"
 /* [STSourceProvenanceApplier begin]
    Recovered source file: E:\__titans\Artem\TLO_htech.cpp
    Diagnostic line evidence: 141 (metadata/report site, not the function definition)
@@ -135,7 +135,7 @@ undefined4 __fastcall st::fn_004DA230(int param_1)
 }
 
 // 004DA2B0 FUN_004da2b0
-#line 1 "decomp/ST.exe/functions/004DA2B0/decomp.c"
+#line 4 "decomp/ST.exe/functions/004DA2B0/decomp.c"
 /* [STSourceProvenanceApplier begin]
    Recovered source file: E:\__titans\Artem\TLO_htech.cpp
    Diagnostic line evidence: 153 (metadata/report site, not the function definition)

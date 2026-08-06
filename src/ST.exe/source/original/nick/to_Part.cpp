@@ -2,7 +2,7 @@
 // Generated translation unit: source/original/nick/to_Part.cpp
 
 // 00627EB0 STParticleC::GetMessage
-#line 1 "decomp/ST.exe/functions/00627EB0/decomp.c"
+#line 4 "decomp/ST.exe/functions/00627EB0/decomp.c"
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 /* Recovered from embedded debug metadata:
    E:\__titans\nick\to_Part.Cpp
@@ -569,7 +569,7 @@ switchD_006288e6_caseD_0:
 }
 
 // 00629070 STParticleC::InitVisibelFlight
-#line 1 "decomp/ST.exe/functions/00629070/decomp.c"
+#line 4 "decomp/ST.exe/functions/00629070/decomp.c"
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 /* Recovered from embedded debug metadata:
    E:\__titans\nick\to_Part.Cpp
@@ -713,7 +713,7 @@ LAB_00629242:
     return 0xffff;
   }
   puVar10 = st::fn_00709AF0
-                      (DAT_00806774,CASE_1D,local_8[local_18 & 0xff],0xffffffff,0,1,0,
+                      (PTR_00806774,CASE_1D,local_8[local_18 & 0xff],0xffffffff,0,1,0,
                        nullptr);
   pSVar8 = local_1c;
   local_1c->field_00B6 = *(int *)puVar10;
@@ -825,7 +825,7 @@ LAB_00629242:
 }
 
 // 006298A0 STParticleC::InitVisibelDeton
-#line 1 "decomp/ST.exe/functions/006298A0/decomp.c"
+#line 4 "decomp/ST.exe/functions/006298A0/decomp.c"
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 /* Recovered from embedded debug metadata:
    E:\__titans\nick\to_Part.Cpp
@@ -876,7 +876,7 @@ undefined4 __thiscall st::fn_006298A0(STParticleC *this,int param_1)
     text = PTR_s_expl_sb0_007d0c40;
   }
   puVar9 = st::fn_00709AF0
-                     (DAT_00806764,CASE_1D,text,0xffffffff,0,1,0,nullptr);
+                     (PTR_00806764,CASE_1D,text,0xffffffff,0,1,0,nullptr);
   pSVar7->field_00B6 = *(int *)puVar9;
   if (param_1 != 0) {
     puVar1 = &pSVar7->field_00C6;
@@ -973,7 +973,7 @@ undefined4 __thiscall st::fn_006298A0(STParticleC *this,int param_1)
     }
     if (*(byte *)&pSVar7->field_0014 < 4) {
       puVar9 = st::fn_00709AF0
-                         (DAT_00806764,CASE_1D,"expl_s1",0xffffffff,0,1,0,nullptr
+                         (PTR_00806764,CASE_1D,"expl_s1",0xffffffff,0,1,0,nullptr
                          );
       if (0xe < (int)pSVar7->field_00B2) {
         local_8 = pSVar7->field_00B2 + 3;
@@ -985,7 +985,7 @@ undefined4 __thiscall st::fn_006298A0(STParticleC *this,int param_1)
     }
     else {
       puVar9 = st::fn_00709AF0
-                         (DAT_00806764,CASE_1D,"expl_s0",0xffffffff,0,1,0,nullptr
+                         (PTR_00806764,CASE_1D,"expl_s0",0xffffffff,0,1,0,nullptr
                          );
       if (0xe < (int)pSVar7->field_00B2) {
         local_8 = pSVar7->field_00B2 - 0xf;

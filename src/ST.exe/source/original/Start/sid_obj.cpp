@@ -2,7 +2,7 @@
 // Generated translation unit: source/original/Start/sid_obj.cpp
 
 // 005D7A50 SIDTy::InitSID
-#line 1 "decomp/ST.exe/functions/005D7A50/decomp.c"
+#line 4 "decomp/ST.exe/functions/005D7A50/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\Start\sid_obj.cpp
    SIDTy::InitSID */
@@ -36,7 +36,7 @@ void __thiscall st::fn_005D7A50(SIDTy *this)
     st::fn_007158A0
               ((SpriteClassTy *)puVar5,(int *)g_ddxContext_008075A8,0x2f,'\a',nullptr,0,0);
     /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-    (**(code **)(*puVar5 + 4))(DAT_00806784,7,0,"MM_SID",0xffffffff);
+    (**(code **)(*puVar5 + 4))(PTR_00806784,7,0,"MM_SID",0xffffffff);
     this_00->field_1A7C = 0x2e;
     this_00->field_1A80 = 0x193;
     this_00->field_1A68 = 0;
@@ -119,7 +119,7 @@ void __thiscall st::fn_005D7A50(SIDTy *this)
               ((SpriteClassTy *)&this_00->field_1B01,(int *)g_ddxContext_008075A8,0x2d,'\a',
                nullptr,0,0);
     /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-    (**(code **)(this_00->field_1B01 + 4))(DAT_00806784,7,0,"SID_SLDUP",0xffffffff);
+    (**(code **)(this_00->field_1B01 + 4))(PTR_00806784,7,0,"SID_SLDUP",0xffffffff);
     this_00->field_1B1D = 0x22b;
     this_00->field_1B21 = 0x1be;
     this_00->field_1B09 = 0;
@@ -130,7 +130,7 @@ void __thiscall st::fn_005D7A50(SIDTy *this)
               ((SpriteClassTy *)&this_00->field_1B92,(int *)g_ddxContext_008075A8,0x2d,'\a',
                nullptr,0,0);
     /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-    (**(code **)(this_00->field_1B92 + 4))(DAT_00806784,7,0,"SID_SLDDN",0xffffffff);
+    (**(code **)(this_00->field_1B92 + 4))(PTR_00806784,7,0,"SID_SLDDN",0xffffffff);
     this_00->field_1BAE = 0x22b;
     this_00->field_1BB2 = 0x211;
     this_00->field_1B9A = 0;
@@ -141,7 +141,7 @@ void __thiscall st::fn_005D7A50(SIDTy *this)
               ((SpriteClassTy *)&this_00->field_1C23,(int *)g_ddxContext_008075A8,0x2d,'\a',
                nullptr,0,0);
     /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-    (**(code **)(this_00->field_1C23 + 4))(DAT_00806784,7,0,"SID_SLDT",0xffffffff);
+    (**(code **)(this_00->field_1C23 + 4))(PTR_00806784,7,0,"SID_SLDT",0xffffffff);
     this_00->field_1C3F = 0x22f;
     this_00->field_1C43 = 0x1d3;
     this_00->field_1C2B = 0;
@@ -150,7 +150,7 @@ void __thiscall st::fn_005D7A50(SIDTy *this)
     }
     pDVar6 = st::fn_006B54F0(nullptr,1,1);
     this_00->field_1CD0 = pDVar6;
-    st::fn_006B6020(&pDVar6->flags,0,&DAT_008016a0);
+    st::fn_006B6020(pDVar6,0,&DAT_008016a0);
     iVar3 = 1;
     puVar4 = this_00->field_1CB8 + 0x14;
     local_EAX_923 = st::fn_006B4FE0((int)this_00->field_1CB8);
@@ -174,7 +174,7 @@ void __thiscall st::fn_005D7A50(SIDTy *this)
 }
 
 // 005D7F80 SIDTy::DoneSID
-#line 1 "decomp/ST.exe/functions/005D7F80/decomp.c"
+#line 4 "decomp/ST.exe/functions/005D7F80/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\Start\sid_obj.cpp
    SIDTy::DoneSID */
@@ -240,7 +240,7 @@ void __thiscall st::fn_005D7F80(SIDTy *this)
 }
 
 // 005D8160 SIDTy::PaintSID
-#line 1 "decomp/ST.exe/functions/005D8160/decomp.c"
+#line 4 "decomp/ST.exe/functions/005D8160/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\Start\sid_obj.cpp
    SIDTy::PaintSID */
@@ -270,7 +270,7 @@ void __thiscall st::fn_005D8160(SIDTy *this)
 }
 
 // 005D81F0 SIDTy::NoneSID
-#line 1 "decomp/ST.exe/functions/005D81F0/decomp.c"
+#line 4 "decomp/ST.exe/functions/005D81F0/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\Start\sid_obj.cpp
    SIDTy::NoneSID
@@ -367,7 +367,7 @@ void __thiscall st::fn_005D81F0(SIDTy *this)
 }
 
 // 005D8450 SIDTy::CreateCtrls
-#line 1 "decomp/ST.exe/functions/005D8450/decomp.c"
+#line 4 "decomp/ST.exe/functions/005D8450/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\Start\sid_obj.cpp
    SIDTy::CreateCtrls */
@@ -633,7 +633,7 @@ void __thiscall st::fn_005D8450(SIDTy *this)
 }
 
 // 005D8A90 SIDTy::DeleteCtrls
-#line 1 "decomp/ST.exe/functions/005D8A90/decomp.c"
+#line 4 "decomp/ST.exe/functions/005D8A90/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\Start\sid_obj.cpp
    SIDTy::DeleteCtrls */
@@ -688,7 +688,7 @@ void __thiscall st::fn_005D8A90(SIDTy *this)
 }
 
 // 005D8BF0 SIDTy::PrepFiles
-#line 1 "decomp/ST.exe/functions/005D8BF0/decomp.c"
+#line 4 "decomp/ST.exe/functions/005D8BF0/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\Start\sid_obj.cpp
    SIDTy::PrepFiles
@@ -991,7 +991,7 @@ LAB_005d9011:
 }
 
 // 005D9250 SIDTy::PaintExplanation
-#line 1 "decomp/ST.exe/functions/005D9250/decomp.c"
+#line 4 "decomp/ST.exe/functions/005D9250/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\Start\sid_obj.cpp
    SIDTy::PaintExplanation
@@ -1048,13 +1048,13 @@ void __thiscall st::fn_005D9250(SIDTy *this)
       uVar8 = 0;
       iVar9 = -1;
       iVar4 = -2;
-      resourceString = (uint *)st::fn_006B0140(0x2521,g_module_00807618);
+      resourceString = (uint *)st::fn_006B0140(0x2521,g_hINSTANCE_00807618);
       this_00 = g_startSystem_0081176C->field_0034;
     }
     else {
       puVar5 = &DAT_00807ddd;
       resourceString = (uint *)&pSVar3->field_1CD4;
-      pcVar6 = st::fn_006B0140(0x2520,g_module_00807618);
+      pcVar6 = st::fn_006B0140(0x2520,g_hINSTANCE_00807618);
       st::external_00000080((LPSTR)resourceString,"&0%s\n&5%s&0?",pcVar6,puVar5);
       this_00 = g_startSystem_0081176C->field_0034;
       iVar11 = -1;
@@ -1079,7 +1079,7 @@ void __thiscall st::fn_005D9250(SIDTy *this)
 }
 
 // 005D9470 SIDTy::GetMessage
-#line 1 "decomp/ST.exe/functions/005D9470/decomp.c"
+#line 4 "decomp/ST.exe/functions/005D9470/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\Start\sid_obj.cpp
    SIDTy::GetMessage
@@ -1394,7 +1394,7 @@ LAB_005d97ca:
           pcVar13 = nullptr;
         }
       }
-      st::fn_006B6020(&pDVar23->flags,0,pcVar13);
+      st::fn_006B6020(pDVar23,0,pcVar13);
       uVar16 = this_00->field_1AF1[1];
       this_00->field_002D = 0x33;
       this_00->field_0031 = this_00->field_1CD0;
@@ -1465,7 +1465,7 @@ LAB_005d97ca:
     uVar16 = ((message->arg0).words.low != 1) + 2;
     iVar25 = -1;
     iVar11 = -1;
-    puVar15 = (uint *)st::fn_006B0140(resourceId,g_module_00807618);
+    puVar15 = (uint *)st::fn_006B0140(resourceId,g_hINSTANCE_00807618);
     st::fn_007119C0(g_startSystem_0081176C->field_0034,puVar15,iVar11,iVar25,uVar16);
   }
   st::fn_006B35D0((int *)g_ddxContext_008075A8,this_00->field_1CB4);

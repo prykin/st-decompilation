@@ -2,7 +2,7 @@
 // Generated translation unit: source/original/ai/ai_interp.cpp
 
 // 0066ACC0 SubmarineTitans::Recovered::HiddenThis::AnonReceiver_0064A970::FUN_0066acc0
-#line 1 "decomp/ST.exe/functions/0066ACC0/decomp.c"
+#line 4 "decomp/ST.exe/functions/0066ACC0/decomp.c"
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 /* [STSourceProvenanceApplier begin]
    Recovered source file: E:\__titans\ai\ai_interp.cpp
@@ -3365,7 +3365,7 @@ cf_common_exit_00670431:
 }
 
 // 00671F10 FUN_00671f10
-#line 1 "decomp/ST.exe/functions/00671F10/decomp.c"
+#line 4 "decomp/ST.exe/functions/00671F10/decomp.c"
 /* [STSourceProvenanceApplier begin]
    Recovered source file: E:\__titans\ai\ai_interp.cpp
    Diagnostic line evidence: 1342 | 1356 | 1369 | 1374 | 1388 | 1392 | 1413 | 1419 (metadata/report

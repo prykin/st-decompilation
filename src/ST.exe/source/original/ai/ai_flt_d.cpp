@@ -2,7 +2,7 @@
 // Generated translation unit: source/original/ai/ai_flt_d.cpp
 
 // 00668180 FUN_00668180
-#line 1 "decomp/ST.exe/functions/00668180/decomp.c"
+#line 4 "decomp/ST.exe/functions/00668180/decomp.c"
 /* [STSourceProvenanceApplier begin]
    Recovered source file: E:\__titans\ai\ai_flt_d.cpp
    Diagnostic line evidence: 42 (metadata/report site, not the function definition)
@@ -78,7 +78,7 @@ st::fn_00668180(char *text,ushort param_2,ushort param_3,ushort param_4,byte par
 }
 
 // 00668330 FUN_00668330
-#line 1 "decomp/ST.exe/functions/00668330/decomp.c"
+#line 4 "decomp/ST.exe/functions/00668330/decomp.c"
 /* [STSourceProvenanceApplier begin]
    Recovered source file: E:\__titans\ai\ai_flt_d.cpp
    Diagnostic line evidence: 78 (metadata/report site, not the function definition)
@@ -148,7 +148,7 @@ AllocationRecord_00668330 * __cdecl st::fn_00668330(AllocationRecord_00668330 *p
 }
 
 // 006684E0 FltDataPack
-#line 1 "decomp/ST.exe/functions/006684E0/decomp.c"
+#line 4 "decomp/ST.exe/functions/006684E0/decomp.c"
 /* [STSourceProvenanceApplier begin]
    Recovered source file: E:\__titans\ai\ai_flt_d.cpp
    Diagnostic line evidence: 117 | 118 (metadata/report site, not the function definition)

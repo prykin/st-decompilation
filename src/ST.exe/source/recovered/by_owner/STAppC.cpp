@@ -2,7 +2,7 @@
 // Generated translation unit: source/recovered/by_owner/STAppC.cpp
 
 // 0056A5F0 STAppC::STAppC
-#line 1 "decomp/ST.exe/functions/0056A5F0/decomp.c"
+#line 4 "decomp/ST.exe/functions/0056A5F0/decomp.c"
 /* [STConstructorApplier] Recovered constructor candidate.
    VTable: 0079B0A8 (store 0056A67D)
    Evidence: final_vptr=0079B0A8; returns_this=true; calls_before=2; field_writes_after=38;
@@ -31,8 +31,8 @@ STAppC * __thiscall st::fn_0056A5F0(STAppC *this,undefined4 param_1)
   this->field_0E37 = 0;
   this->field_0E3F = 0xffffffff;
   this->field_0E3B = 0xffffffff;
-  this->vtable = &STAppCVTable;
-  g_appClass_00806728 = (AppClassTy *)this;
+  this->vtable = &st_global_0079B0A8;
+  g_app_00806728 = (AppClassTy *)this;
   this->field_115A = nullptr;
   DAT_0080673c = 0;
   this->field_115E = 1;
@@ -80,7 +80,7 @@ STAppC * __thiscall st::fn_0056A5F0(STAppC *this,undefined4 param_1)
 }
 
 // 0056E9E0 STAppC::sub_0056E9E0
-#line 1 "decomp/ST.exe/functions/0056E9E0/decomp.c"
+#line 4 "decomp/ST.exe/functions/0056E9E0/decomp.c"
 /* [STMethodOwnerApplier] Structural method owner recovered as STAppC.
    Evidence: this_call_owners=[STAppC]; agreed_this_calls=1; incoming_this_accesses=9;
    incoming_edx_uses=0; incoming_stack_parameter_uses=3; direct_non_thunk_callers=0;
@@ -169,7 +169,7 @@ undefined4 __thiscall st::fn_0056E9E0(STAppC *this,int param_1)
 }
 
 // 0056EBE0 STAppC::sub_0056EBE0
-#line 1 "decomp/ST.exe/functions/0056EBE0/decomp.c"
+#line 4 "decomp/ST.exe/functions/0056EBE0/decomp.c"
 /* WARNING: Removing unreachable block (ram,0x0056ed8b) */
 /* [STMethodOwnerApplier] Structural method owner recovered as STAppC.
    Evidence: this_call_owners=[STAppC]; agreed_this_calls=1; incoming_this_accesses=16;
@@ -296,7 +296,7 @@ void __thiscall st::fn_0056EBE0(STAppC *this)
 }
 
 // 0056EE90 STAppC::sub_0056EE90
-#line 1 "decomp/ST.exe/functions/0056EE90/decomp.c"
+#line 4 "decomp/ST.exe/functions/0056EE90/decomp.c"
 /* [STMethodOwnerApplier] Structural method owner recovered as STAppC.
    Evidence: this_call_owners=[STAppC]; agreed_this_calls=1; incoming_this_accesses=6;
    incoming_edx_uses=0; incoming_stack_parameter_uses=0; direct_non_thunk_callers=0;
@@ -330,7 +330,7 @@ void __thiscall st::fn_0056EE90(STAppC *this)
 }
 
 // 0056EF50 STAppC::sub_0056EF50
-#line 1 "decomp/ST.exe/functions/0056EF50/decomp.c"
+#line 4 "decomp/ST.exe/functions/0056EF50/decomp.c"
 /* [STMethodOwnerApplier] Structural method owner recovered as STAppC.
    Evidence: this_call_owners=[STAppC]; agreed_this_calls=2; incoming_this_accesses=11;
    incoming_edx_uses=0; incoming_stack_parameter_uses=0; direct_non_thunk_callers=0;
@@ -375,7 +375,7 @@ void __thiscall st::fn_0056EF50(STAppC *this)
 }
 
 // 0056F040 STAppC::sub_0056F040
-#line 1 "decomp/ST.exe/functions/0056F040/decomp.c"
+#line 4 "decomp/ST.exe/functions/0056F040/decomp.c"
 /* [STMethodOwnerApplier] Structural method owner recovered as STAppC.
    Evidence: this_call_owners=[STAppC]; agreed_this_calls=2; incoming_this_accesses=21;
    incoming_edx_uses=0; incoming_stack_parameter_uses=0; direct_non_thunk_callers=0;
@@ -452,7 +452,7 @@ void __thiscall st::fn_0056F040(STAppC *this)
 }
 
 // 006E5150 STAppC::sub_006E5150
-#line 1 "decomp/ST.exe/functions/006E5150/decomp.c"
+#line 4 "decomp/ST.exe/functions/006E5150/decomp.c"
 /* [STPrototypeApplier] Propagated parameter 1.
    Evidence: 0056FA60 -> 006E5150 @ 0056FAAB
 
@@ -484,7 +484,7 @@ undefined4 __thiscall st::fn_006E5150(STAppC *this,STMessage *param_1)
 }
 
 // 006E51B0 STAppC::sub_006E51B0
-#line 1 "decomp/ST.exe/functions/006E51B0/decomp.c"
+#line 4 "decomp/ST.exe/functions/006E51B0/decomp.c"
 /* [STPrototypeApplier] Propagated return.
    Evidence: 006E51B0 returns stored into /CampaignTy+0x61 @ 00593058 | 006E51B0 returns stored into
    /ChooseMapTy+0x61 @ 005B0BBB | 006E51B0 returns stored into /FSGSTy+0x61 @ 005A436B | 006E51B0

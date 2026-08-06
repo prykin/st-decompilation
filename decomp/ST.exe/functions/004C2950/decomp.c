@@ -37,7 +37,7 @@ FUN_004c2950(int param_1,int param_2,Global_sub_004C2950_param_3Enum param_3,und
       return;
     }
     wsprintfA(param_5,"%s_cover%1i",*(int *)(PTR_PTR_007bb198 + iVar1 * 0xc + 4),0);
-    *param_4 = DAT_0080678c;
+    *param_4 = PTR_0080678c;
     *param_6 = 0x1d;
     goto LAB_004c2b44;
   case CASE_9:
@@ -45,7 +45,7 @@ FUN_004c2950(int param_1,int param_2,Global_sub_004C2950_param_3Enum param_3,und
       iVar1 = param_1 + -0x97 + param_2 * 3;
       if (*(int *)(PTR_PTR_007bb198 + iVar1 * 0xc) != 0) {
         wsprintfA(param_5,"%s_cover",*(int *)(PTR_PTR_007bb198 + iVar1 * 0xc));
-        *param_4 = DAT_0080678c;
+        *param_4 = PTR_0080678c;
         *param_6 = 0x1d;
         *param_7 = *(STAllPlayersC_GetTOBJImage_param_2Enum *)(PTR_DAT_007b5170 + iVar1 * 0x20);
         return;
@@ -68,7 +68,7 @@ FUN_004c2950(int param_1,int param_2,Global_sub_004C2950_param_3Enum param_3,und
       uVar3 = ~uVar3;
       pcVar5 = pcVar6 + -uVar3;
       memmove(param_5, pcVar5, uVar3); /* compiler REP MOVS byte copy */
-      *param_4 = DAT_0080678c;
+      *param_4 = PTR_0080678c;
       *param_6 = 0x1d;
       *param_7 = *(STAllPlayersC_GetTOBJImage_param_2Enum *)(PTR_DAT_007b8310 + iVar1 * 0x20);
       return;
@@ -80,7 +80,7 @@ FUN_004c2950(int param_1,int param_2,Global_sub_004C2950_param_3Enum param_3,und
       return;
     }
     wsprintfA(param_5,"%s%1i",*(int *)(PTR_PTR_007bb198 + iVar1 * 0xc + 4),0);
-    *param_4 = DAT_0080678c;
+    *param_4 = PTR_0080678c;
     *param_6 = 0x1d;
     if ((param_2 == 0x40) || (param_2 == 0x49)) {
       *param_7 = 0;
@@ -105,7 +105,7 @@ LAB_004c2b44:
       uVar3 = ~uVar3;
       pcVar5 = pcVar6 + -uVar3;
       memmove(param_5, pcVar5, uVar3); /* compiler REP MOVS byte copy */
-      *param_4 = DAT_0080678c;
+      *param_4 = PTR_0080678c;
       *param_6 = 0x1d;
       *param_7 = *(STAllPlayersC_GetTOBJImage_param_2Enum *)(PTR_DAT_007b5170 + iVar1 * 0x20);
       return;

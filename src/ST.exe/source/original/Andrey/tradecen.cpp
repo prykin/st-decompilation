@@ -2,7 +2,7 @@
 // Generated translation unit: source/original/Andrey/tradecen.cpp
 
 // 00550DB0 TradePanelTy::InitTradePanel
-#line 1 "decomp/ST.exe/functions/00550DB0/decomp.c"
+#line 4 "decomp/ST.exe/functions/00550DB0/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\Andrey\tradecen.cpp
    TradePanelTy::InitTradePanel */
@@ -102,10 +102,10 @@ void __thiscall st::fn_00550DB0(TradePanelTy *this)
     pcVar5->field_0058 = 1;
     pcVar5->field_005C = 0;
     puVar6 = st::fn_00709AF0
-                       (DAT_00806794,CASE_B,&DAT_007c204c,0xffffffff,0,1,0,nullptr);
+                       (PTR_00806794,CASE_B,&DAT_007c204c,0xffffffff,0,1,0,nullptr);
     this_00->field_01D1 = puVar6;
     puVar6 = st::fn_00709AF0
-                       (DAT_00806794,CASE_B,&DAT_007c2048,0xffffffff,0,1,0,nullptr);
+                       (PTR_00806794,CASE_B,&DAT_007c2048,0xffffffff,0,1,0,nullptr);
     this_00->field_01D5 = puVar6;
     iVar8 = 1;
     uVar16 = 0xffffffff;
@@ -113,7 +113,7 @@ void __thiscall st::fn_00550DB0(TradePanelTy *this)
     puVar22 = puVar3;
     pCVar4 = st::fn_0040577C("TRADE_RATE",0);
     puVar6 = st::fn_00709AF0
-                       (DAT_00806794,CASE_B,pCVar4,uVar16,(byte)puVar3,iVar8,(int)puVar19,puVar22);
+                       (PTR_00806794,CASE_B,pCVar4,uVar16,(byte)puVar3,iVar8,(int)puVar19,puVar22);
     local_5 = this_00->field_01D0;
     this_00->field_01D9 = puVar6;
     local_1c = this_00->field_005C;
@@ -225,7 +225,7 @@ void __thiscall st::fn_00550DB0(TradePanelTy *this)
 }
 
 // 005512F0 TradePanelTy::DoneTradePanel
-#line 1 "decomp/ST.exe/functions/005512F0/decomp.c"
+#line 4 "decomp/ST.exe/functions/005512F0/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\Andrey\tradecen.cpp
    TradePanelTy::DoneTradePanel */
@@ -283,7 +283,7 @@ void __thiscall st::fn_005512F0(TradePanelTy *this)
 }
 
 // 00551460 TradePanelTy::SetModeControls
-#line 1 "decomp/ST.exe/functions/00551460/decomp.c"
+#line 4 "decomp/ST.exe/functions/00551460/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\Andrey\tradecen.cpp
    TradePanelTy::SetModeControls */
@@ -376,7 +376,7 @@ void __thiscall st::fn_00551460(TradePanelTy *this,char param_1)
 }
 
 // 00551690 TradePanelTy::ShiftControls
-#line 1 "decomp/ST.exe/functions/00551690/decomp.c"
+#line 4 "decomp/ST.exe/functions/00551690/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\Andrey\tradecen.cpp
    TradePanelTy::ShiftControls */
@@ -432,7 +432,7 @@ void __thiscall st::fn_00551690(TradePanelTy *this,int param_1)
 }
 
 // 00551BA0 TradePanelTy::PaintPanel
-#line 1 "decomp/ST.exe/functions/00551BA0/decomp.c"
+#line 4 "decomp/ST.exe/functions/00551BA0/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\Andrey\tradecen.cpp
    TradePanelTy::PaintPanel */
@@ -511,7 +511,7 @@ void __thiscall st::fn_00551BA0(TradePanelTy *this)
       uVar3 = (-(uint)(DAT_0080874e != '\x03') & 0xfffffffc) + 5;
       iVar5 = -1;
       iVar2 = -2;
-      resourceString = (uint *)st::fn_006B0140(0x4e5b,g_module_00807618);
+      resourceString = (uint *)st::fn_006B0140(0x4e5b,g_hINSTANCE_00807618);
       st::fn_00711B70(this_00->field_0189,resourceString,iVar2,iVar5,uVar3,iVar6,iVar8);
     }
     st::fn_004048F4(this_00);
@@ -529,7 +529,7 @@ void __thiscall st::fn_00551BA0(TradePanelTy *this)
 }
 
 // 00551EC0 TradePanelTy::PaintIndicators
-#line 1 "decomp/ST.exe/functions/00551EC0/decomp.c"
+#line 4 "decomp/ST.exe/functions/00551EC0/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\Andrey\tradecen.cpp
    TradePanelTy::PaintIndicators */
@@ -577,7 +577,7 @@ void __thiscall st::fn_00551EC0(TradePanelTy *this)
         uVar6 = 0xffffffff;
         text = st::fn_0040577C("BKG_AMOUNTRC",0);
         puVar5 = st::fn_00709AF0
-                           (DAT_00806794,CASE_1,text,uVar6,bVar7,iVar8,iVar9,puVar10);
+                           (PTR_00806794,CASE_1,text,uVar6,bVar7,iVar8,iVar9,puVar10);
         st::fn_00403229((RecoveredSourceFamily_dibcopy *)pTVar3->field_0068,iVar4 + -3,0x45,'\x01',
                (byte *)puVar5);
         bVar7 = pTVar3->field_01D0;
@@ -615,7 +615,7 @@ void __thiscall st::fn_00551EC0(TradePanelTy *this)
 }
 
 // 005521B0 TradePanelTy::Update
-#line 1 "decomp/ST.exe/functions/005521B0/decomp.c"
+#line 4 "decomp/ST.exe/functions/005521B0/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\Andrey\tradecen.cpp
    TradePanelTy::Update */
@@ -661,7 +661,7 @@ void __thiscall st::fn_005521B0(TradePanelTy *this)
 }
 
 // 005522A0 TradePanelTy::GetMessage
-#line 1 "decomp/ST.exe/functions/005522A0/decomp.c"
+#line 4 "decomp/ST.exe/functions/005522A0/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\Andrey\tradecen.cpp
    TradePanelTy::GetMessage
@@ -824,7 +824,7 @@ LAB_00552481:
       pCVar4 = st::fn_0040577C("BUT_RCTTYPE",0);
       pCVar4 = st::fn_006F2C00(pCVar4,iVar8,iVar5);
       puVar6 = st::fn_00709AF0
-                         (DAT_00806794,CASE_1,pCVar4,uVar9,bVar10,iVar11,iVar13,puVar15);
+                         (PTR_00806794,CASE_1,pCVar4,uVar9,bVar10,iVar11,iVar13,puVar15);
       st::fn_00403229((RecoveredSourceFamily_dibcopy *)this_00->field_0068,local_8,iVar3,'\x01',
              (byte *)puVar6);
       if (*(int *)((message->arg0).u32 + 4) == 3) {
@@ -835,7 +835,7 @@ LAB_00552481:
         uVar9 = 0xffffffff;
         pCVar4 = st::fn_0040577C("BUT_RCTFTYPE",0);
         puVar6 = st::fn_00709AF0
-                           (DAT_00806794,CASE_6,pCVar4,uVar9,bVar10,iVar5,iVar8,puVar15);
+                           (PTR_00806794,CASE_6,pCVar4,uVar9,bVar10,iVar5,iVar8,puVar15);
         st::fn_00403229((RecoveredSourceFamily_dibcopy *)this_00->field_0068,local_8,iVar3,'\x06',
                (byte *)puVar6);
       }

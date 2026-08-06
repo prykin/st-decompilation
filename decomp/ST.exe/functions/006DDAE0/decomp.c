@@ -4,11 +4,14 @@
 /* [STMethodOwnerApplier] Structural method owner recovered as ST3DSMAPContext.
    Evidence: this_call_owners=[ST3DSMAPContext]; agreed_this_calls=1; incoming_this_accesses=7;
    incoming_edx_uses=0; incoming_stack_parameter_uses=4; direct_non_thunk_callers=1;
-   incoming_ecx_receiver_callers=0; attributed_named_callers=1; owner_evidence_coverage=adequate */
+   incoming_ecx_receiver_callers=0; attributed_named_callers=1; owner_evidence_coverage=adequate
+
+   [STPrototypeApplier] Propagated parameter 4.
+   Evidence: 0056DB80 -> 006DDAE0 @ 0056E440; data at 008032C8 */
 
 void __thiscall
 ST3DSMAPContext::sub_006DDAE0
-          (ST3DSMAPContext *this,int param_1,int param_2,int param_3,undefined4 *param_4)
+          (ST3DSMAPContext *this,int param_1,int param_2,int param_3,ushort *param_4)
 
 {
   byte *pbVar1;
@@ -28,13 +31,13 @@ ST3DSMAPContext::sub_006DDAE0
   } while (iVar2 < 0x100);
   pbVar1 = this->field_0154 + 0x100;
   for (iVar2 = (uVar3 & 0xffffff) << 6; iVar2 != 0; iVar2 = iVar2 + -1) {
-    *(undefined4 *)pbVar1 = *param_4;
-    param_4 = (undefined4 *)((int)param_4 + 4);
+    *(undefined4 *)pbVar1 = *(undefined4 *)param_4;
+    param_4 = param_4 + 2;
     pbVar1 = pbVar1 + 4;
   }
   for (iVar2 = 0; iVar2 != 0; iVar2 = iVar2 + -1) {
-    *pbVar1 = *(byte *)param_4;
-    param_4 = (undefined4 *)((int)param_4 + 1);
+    *pbVar1 = (byte)*param_4;
+    param_4 = (ushort *)((int)param_4 + 1);
     pbVar1 = pbVar1 + 1;
   }
   sub_006DD870(this);

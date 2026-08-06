@@ -69,7 +69,7 @@ void __thiscall BldBoatPanelTy::InitBldBoatPanel(BldBoatPanelTy *this)
     STDebugBreak(); /* noreturn in standalone pseudocode */
   }
   iVar8 = 4;
-  g_prodPanel_0080167C = (ProdPanelTy *)local_1c;
+  g_bldBoatPanel_0080167C = (ProdPanelTy *)local_1c;
   puVar11 = &local_1c->field_027A;
   do {
     pDVar3 = Library::DKW::TBL::DArrayCreate(nullptr,10,0x30,5);
@@ -100,10 +100,10 @@ void __thiscall BldBoatPanelTy::InitBldBoatPanel(BldBoatPanelTy *this)
   }
   wsprintfA(text,"BOATS_%d",iVar8);
   puVar6 = Library::Ourlib::MFRLOAD::mfRLoad
-                     (DAT_00806794,CASE_B,text,0xffffffff,0,1,0,nullptr);
+                     (PTR_00806794,CASE_B,text,0xffffffff,0,1,0,nullptr);
   this_00->field_0188 = puVar6;
   puVar6 = Library::Ourlib::MFRLOAD::mfRLoad
-                     (DAT_00806794,CASE_B,"BOATS_D",0xffffffff,0,1,0,nullptr);
+                     (PTR_00806794,CASE_B,"BOATS_D",0xffffffff,0,1,0,nullptr);
   this_00->field_018C = puVar6;
   pCVar5 = thunk_FUN_00571240("BKG_BLDBOATBUT",0);
   ProdPanelTy::InitProdPanel
@@ -177,7 +177,7 @@ switchD_004eed0b_default:
   local_20 = 1;
   local_44 = local_64;
   /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-  (**(code **)(*(int *)this_00->field_000C + 8))(5,this_00 + 1,0,local_74,0);
+  (**(code **)(*(int *)this_00->field_000C + 8))(5,&this_00->field_0292,0,local_74,0);
   g_currentExceptionFrame = local_b8.previous;
   return;
 }

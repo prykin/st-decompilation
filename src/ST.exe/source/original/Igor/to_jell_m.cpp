@@ -2,7 +2,7 @@
 // Generated translation unit: source/original/Igor/to_jell_m.cpp
 
 // 00581AC0 STJellyManC::Error
-#line 1 "decomp/ST.exe/functions/00581AC0/decomp.c"
+#line 4 "decomp/ST.exe/functions/00581AC0/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\Igor\to_jell_m.cpp
    STJellyManC::Error
@@ -32,7 +32,7 @@ st::fn_00581AC0(STJellyManC *this,undefined4 param_1,int *param_2,undefined4 par
 }
 
 // 00581BF0 STJellyManC::GetMessage
-#line 1 "decomp/ST.exe/functions/00581BF0/decomp.c"
+#line 4 "decomp/ST.exe/functions/00581BF0/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\Igor\to_jell_m.cpp
    STJellyManC::GetMessage

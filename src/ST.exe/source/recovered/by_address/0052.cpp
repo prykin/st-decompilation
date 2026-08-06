@@ -2,7 +2,7 @@
 // Generated translation unit: source/recovered/by_address/0052.cpp
 
 // 00521840 CreateIntercomPanel
-#line 1 "decomp/ST.exe/functions/00521840/decomp.c"
+#line 4 "decomp/ST.exe/functions/00521840/decomp.c"
 /* [STUnclaimedCodeApplier] Exact function entry recovered from thunk_target.
    Evidence: P:007CA8FC>00405457
 
@@ -24,7 +24,7 @@ IntercomPanelTy * __cdecl st::fn_00521840(void)
     this->field_0068 = 0;
     this->field_0172 = 2;
     this->field_0178 = 0;
-    this->vtable = &IntercomPanelTyVTable;
+    this->vtable = &st_global_0079AC9C;
     this->field_003C = 0xc;
     this->field_0044 = 0;
     this->field_0040 = 0x2f8;
@@ -42,7 +42,7 @@ IntercomPanelTy * __cdecl st::fn_00521840(void)
 }
 
 // 00521CF0 FUN_00521cf0
-#line 1 "decomp/ST.exe/functions/00521CF0/decomp.c"
+#line 4 "decomp/ST.exe/functions/00521CF0/decomp.c"
 void __fastcall st::fn_00521CF0(AnonShape_00521CF0_154649D2 *param_1)
 
 {
@@ -114,8 +114,8 @@ void __fastcall st::fn_00521CF0(AnonShape_00521CF0_154649D2 *param_1)
         if ((iVar6 == 0) && (uVar10 = 0, g_playSystem_00802A38 != nullptr)) {
           g_playSystem_00802A38->field_00F0 = (uint)(g_playSystem_00802A38->field_00F0 == 0);
           pcVar7 = st::fn_006B0140(0x2747 - (g_playSystem_00802A38->field_00F0 != 0),
-                                      g_module_00807618);
-          pcVar8 = st::fn_006B0140(0x42c3,g_module_00807618);
+                                      g_hINSTANCE_00807618);
+          pcVar8 = st::fn_006B0140(0x42c3,g_hINSTANCE_00807618);
           st::external_00000080((LPSTR)&DAT_0080f33a,"%s %s",pcVar8,pcVar7);
           if (g_popUp_008016D8 != nullptr) {
             if (DAT_0080874d == 0xff) {
@@ -130,8 +130,8 @@ void __fastcall st::fn_00521CF0(AnonShape_00521CF0_154649D2 *param_1)
         if (iVar6 == 0) {
           DAT_0080735e = DAT_0080735e == '\0';
           uVar10 = 0;
-          pcVar7 = st::fn_006B0140(0x2747 - (byte)DAT_0080735e,g_module_00807618);
-          pcVar8 = st::fn_006B0140(0x42c5,g_module_00807618);
+          pcVar7 = st::fn_006B0140(0x2747 - (byte)DAT_0080735e,g_hINSTANCE_00807618);
+          pcVar8 = st::fn_006B0140(0x42c5,g_hINSTANCE_00807618);
           st::external_00000080((LPSTR)&DAT_0080f33a,"%s %s",pcVar8,pcVar7);
           if (g_popUp_008016D8 != nullptr) {
             if (DAT_0080874d == 0xff) {
@@ -150,8 +150,8 @@ void __fastcall st::fn_00521CF0(AnonShape_00521CF0_154649D2 *param_1)
           if (g_int_00811764 != nullptr) {
             st::fn_006B6500(g_int_00811764,DAT_0080733c);
           }
-          pcVar7 = st::fn_006B0140(0x2747 - (DAT_0080733c != 0),g_module_00807618);
-          pcVar8 = st::fn_006B0140(0x42c4,g_module_00807618);
+          pcVar7 = st::fn_006B0140(0x2747 - (DAT_0080733c != 0),g_hINSTANCE_00807618);
+          pcVar8 = st::fn_006B0140(0x42c4,g_hINSTANCE_00807618);
           st::external_00000080((LPSTR)&DAT_0080f33a,"%s %s",pcVar8,pcVar7);
           if (g_popUp_008016D8 != nullptr) {
             if (DAT_0080874d == 0xff) {
@@ -464,7 +464,7 @@ LAB_00522294:
 }
 
 // 00522810 FUN_00522810
-#line 1 "decomp/ST.exe/functions/00522810/decomp.c"
+#line 4 "decomp/ST.exe/functions/00522810/decomp.c"
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
 void st::fn_00522810(char *param_1)
@@ -610,7 +610,7 @@ LAB_00522b59:
 }
 
 // 00523410 FUN_00523410
-#line 1 "decomp/ST.exe/functions/00523410/decomp.c"
+#line 4 "decomp/ST.exe/functions/00523410/decomp.c"
 /* [STSwitchEnumApplier] Switch target param_1 uses
    /SubmarineTitans/Recovered/Enums/Global_sub_00523410_param_1Enum. Cases:
    CASE_1=1;CASE_2=2;CASE_3=3;CASE_4=4;CASE_5=5;CASE_6=6;CASE_7=7;CASE_8=8;CASE_9=9;CASE_A=10;CASE_B=11;CASE_C=12;CASE_D=13;CASE_E=14;CASE_F=15;CASE_10=16;CASE_11=17;CASE_12=18;CASE_13=19;CASE_14=20;CASE_15=21;CASE_16=22;CASE_17=23;CASE_18=24;CASE_19=25;CASE_1A=26;CASE_1B=27;CASE_1C=28;CASE_1D=29;CASE_1E=30;CASE_1F=31;CASE_20=32;CASE_21=33;CASE_22=34;CASE_23=35;CASE_24=36;CASE_25=37;CASE_26=38;CASE_27=39;CASE_28=40;CASE_2B=43;CASE_32=50;CASE_33=51;CASE_34=52;CASE_35=53;CASE_36=54;CASE_37=55;CASE_38=56;CASE_39=57;CASE_3A=58;CASE_3B=59;CASE_3C=60;CASE_3D=61;CASE_3E=62;CASE_3F=63;CASE_40=64;CASE_41=65;CASE_42=66;CASE_43=67;CASE_44=68;CASE_45=69;CASE_46=70;CASE_47=71;CASE_48=72;CASE_49=73;CASE_4A=74;CASE_4B=75;CASE_4C=76;CASE_4D=77;CASE_4E=78;CASE_4F=79;CASE_50=80;CASE_51=81;CASE_52=82;CASE_53=83;CASE_54=84;CASE_55=85;CASE_56=86;CASE_57=87;CASE_58=88;CASE_59=89;CASE_5A=90;CASE_5B=91;CASE_5C=92;CASE_5D=93;CASE_5E=94;CASE_5F=95;CASE_60=96;CASE_61=97;CASE_62=98;CASE_63=99;CASE_64=100;CASE_65=101;CASE_66=102;CASE_67=103;CASE_68=104;CASE_69=105;CASE_6A=106;CASE_6B=107;CASE_6C=108;CASE_6D=109;CASE_6E=110;CASE_6F=111;CASE_70=112;CASE_71=113;CASE_72=114;CASE_73=115;CASE_A6=166;CASE_A7=167;CASE_AF=175;CASE_BD=189;CASE_DD=221;CASE_DE=222;CASE_E0=224;CASE_E6=230;CASE_E7=231;CASE_E8=232;CASE_E9=233;CASE_EA=234;CASE_EB=235;CASE_F2=242;CASE_F3=243;CASE_F4=244;CASE_F5=245;CASE_F6=246;CASE_F7=247;CASE_F8=248;CASE_F9=249;CASE_FA=250;CASE_FB=251;CASE_FD=253;CASE_FE=254
@@ -1755,7 +1755,7 @@ UINT __cdecl st::fn_00523410(Global_sub_00523410_param_1Enum param_1,char param_
 }
 
 // 00524FE0 FUN_00524fe0
-#line 1 "decomp/ST.exe/functions/00524FE0/decomp.c"
+#line 4 "decomp/ST.exe/functions/00524FE0/decomp.c"
 /* [STSwitchEnumApplier] Switch target param_1 uses
    /SubmarineTitans/Recovered/Enums/Global_sub_00524FE0_param_1Enum. Cases:
    CASE_96=150;CASE_97=151;CASE_98=152;CASE_99=153;CASE_9A=154;CASE_9C=156;CASE_9D=157;CASE_9E=158;CASE_9F=159;CASE_A0=160;CASE_A1=161;CASE_A3=163;CASE_A4=164;CASE_A6=166;CASE_A7=167;CASE_A8=168;CASE_A9=169;CASE_AB=171;CASE_AC=172;CASE_AD=173;CASE_AE=174;CASE_AF=175;CASE_B0=176;CASE_B2=178;CASE_B3=179;CASE_B5=181;CASE_B6=182;CASE_B7=183;CASE_B8=184;CASE_BA=186;CASE_BC=188;CASE_BD=189;CASE_BE=190;CASE_BF=191;CASE_C0=192;CASE_C1=193;CASE_DD=221;CASE_DE=222
@@ -1852,7 +1852,7 @@ UINT __cdecl st::fn_00524FE0(Global_sub_00524FE0_param_1Enum param_1)
 }
 
 // 00525290 FUN_00525290
-#line 1 "decomp/ST.exe/functions/00525290/decomp.c"
+#line 4 "decomp/ST.exe/functions/00525290/decomp.c"
 /* [STAbiConsistencyApplier] stack_parameter_width target=parameter:0: parameter=/byte Evidence:
    entry-use width=/byte; unmasked_dword_reads=0; evidence=00525293 MOV EAX,dword ptr [EBP + 0x8];
    first-use mask */
@@ -1864,7 +1864,7 @@ int __cdecl st::fn_00525290(byte param_1)
 }
 
 // 005252C0 FUN_005252c0
-#line 1 "decomp/ST.exe/functions/005252C0/decomp.c"
+#line 4 "decomp/ST.exe/functions/005252C0/decomp.c"
 /* [STSwitchEnumApplier] Switch target param_1 uses
    /SubmarineTitans/Recovered/Enums/Global_sub_005252C0_param_1Enum. Cases:
    CASE_AF=175;CASE_B0=176;CASE_B6=182;CASE_B7=183;CASE_B8=184;CASE_B9=185 */
@@ -1903,7 +1903,7 @@ void __cdecl st::fn_005252C0(Global_sub_005252C0_param_1Enum param_1)
 }
 
 // 00525390 FUN_00525390
-#line 1 "decomp/ST.exe/functions/00525390/decomp.c"
+#line 4 "decomp/ST.exe/functions/00525390/decomp.c"
 /* [STSwitchEnumApplier] Switch target param_1 uses
    /SubmarineTitans/Recovered/Enums/Global_sub_00525390_param_1Enum. Cases:
    CASE_1=1;CASE_2=2;CASE_3=3;CASE_4=4;CASE_5=5;CASE_6=6;CASE_7=7;CASE_8=8;CASE_9=9;CASE_A=10;CASE_B=11;CASE_C=12;CASE_D=13;CASE_E=14;CASE_F=15;CASE_10=16;CASE_11=17;CASE_12=18;CASE_13=19;CASE_14=20;CASE_15=21;CASE_16=22;CASE_17=23;CASE_18=24;CASE_19=25;CASE_1A=26;CASE_1B=27;CASE_1C=28;CASE_1D=29;CASE_1E=30;CASE_1F=31;CASE_20=32;CASE_21=33;CASE_22=34;CASE_23=35;CASE_24=36;CASE_25=37;CASE_26=38;CASE_27=39;CASE_28=40;CASE_29=41;CASE_2A=42;CASE_2B=43;CASE_2C=44;CASE_2D=45;CASE_2E=46;CASE_2F=47;CASE_30=48;CASE_31=49;CASE_32=50;CASE_33=51;CASE_34=52;CASE_35=53;CASE_36=54;CASE_37=55;CASE_38=56;CASE_39=57;CASE_3A=58;CASE_3B=59;CASE_3C=60;CASE_3D=61;CASE_3E=62;CASE_3F=63;CASE_40=64;CASE_41=65;CASE_42=66;CASE_43=67;CASE_44=68;CASE_45=69;CASE_46=70;CASE_47=71;CASE_48=72;CASE_49=73;CASE_4A=74;CASE_4B=75;CASE_4C=76;CASE_4D=77;CASE_4F=79;CASE_50=80;CASE_51=81;CASE_52=82
@@ -2100,7 +2100,7 @@ st::fn_00525390(Global_sub_00525390_param_1Enum param_1,Global_sub_00525390_para
 }
 
 // 00525890 FUN_00525890
-#line 1 "decomp/ST.exe/functions/00525890/decomp.c"
+#line 4 "decomp/ST.exe/functions/00525890/decomp.c"
 /* [STSwitchEnumApplier] Switch target param_1 uses
    /SubmarineTitans/Recovered/Enums/Global_sub_00525890_param_1Enum. Cases:
    CASE_36=54;CASE_37=55;CASE_41=65;CASE_43=67;CASE_45=69;CASE_48=72;CASE_4C=76;CASE_4D=77;CASE_4E=78;CASE_6F=111
@@ -2136,7 +2136,7 @@ undefined4 __cdecl st::fn_00525890(Global_sub_00525890_param_1Enum param_1)
 }
 
 // 005259B0 FUN_005259b0
-#line 1 "decomp/ST.exe/functions/005259B0/decomp.c"
+#line 4 "decomp/ST.exe/functions/005259B0/decomp.c"
 /* [STSwitchEnumApplier] Switch target param_1 uses
    /SubmarineTitans/Recovered/Enums/Global_sub_005259B0_param_1Enum. Cases:
    CASE_96=150;CASE_97=151;CASE_98=152;CASE_99=153;CASE_9A=154;CASE_9C=156;CASE_9D=157;CASE_9E=158;CASE_9F=159;CASE_A0=160;CASE_A3=163;CASE_A4=164;CASE_A6=166;CASE_A7=167;CASE_A8=168;CASE_A9=169;CASE_AB=171;CASE_AC=172;CASE_AD=173;CASE_AE=174;CASE_AF=175;CASE_B0=176;CASE_B2=178;CASE_B3=179;CASE_B5=181;CASE_B6=182;CASE_B7=183;CASE_B8=184;CASE_BA=186;CASE_BC=188;CASE_BD=189;CASE_BE=190;CASE_BF=191;CASE_FF=255
@@ -2224,7 +2224,7 @@ uint __cdecl st::fn_005259B0(Global_sub_005259B0_param_1Enum param_1,ushort para
 }
 
 // 00525CA0 FUN_00525ca0
-#line 1 "decomp/ST.exe/functions/00525CA0/decomp.c"
+#line 4 "decomp/ST.exe/functions/00525CA0/decomp.c"
 /* [STSwitchEnumApplier] Switch target param_1 uses
    /SubmarineTitans/Recovered/Enums/Global_sub_00525CA0_param_1Enum. Cases:
    CASE_96=150;CASE_97=151;CASE_98=152;CASE_99=153;CASE_9A=154;CASE_9C=156;CASE_9D=157;CASE_9E=158;CASE_9F=159;CASE_A0=160;CASE_A1=161;CASE_A3=163;CASE_A4=164;CASE_A6=166;CASE_A7=167;CASE_A8=168;CASE_A9=169;CASE_AB=171;CASE_AC=172;CASE_AD=173;CASE_AE=174;CASE_AF=175;CASE_B0=176;CASE_B2=178;CASE_B3=179;CASE_B5=181;CASE_B6=182;CASE_B7=183;CASE_B8=184;CASE_BA=186;CASE_BC=188;CASE_BD=189;CASE_BE=190;CASE_BF=191;CASE_C0=192;CASE_C1=193
@@ -2317,7 +2317,7 @@ UINT __cdecl st::fn_00525CA0(Global_sub_00525CA0_param_1Enum param_1)
 }
 
 // 00525EF0 FUN_00525ef0
-#line 1 "decomp/ST.exe/functions/00525EF0/decomp.c"
+#line 4 "decomp/ST.exe/functions/00525EF0/decomp.c"
 /* [STSwitchEnumApplier] Switch target param_1 uses
    /SubmarineTitans/Recovered/Enums/Global_sub_00525EF0_param_1Enum. Cases:
    CASE_0=0;CASE_1=1;CASE_2=2;CASE_3=3;CASE_4=4;CASE_5=5
@@ -2393,7 +2393,7 @@ switchD_00525f56_caseD_0:
 }
 
 // 005260B0 FUN_005260b0
-#line 1 "decomp/ST.exe/functions/005260B0/decomp.c"
+#line 4 "decomp/ST.exe/functions/005260B0/decomp.c"
 void __cdecl st::fn_005260B0(int param_1,undefined1 param_2,int param_3)
 
 {
@@ -2413,7 +2413,7 @@ void __cdecl st::fn_005260B0(int param_1,undefined1 param_2,int param_3)
 }
 
 // 00526100 FUN_00526100
-#line 1 "decomp/ST.exe/functions/00526100/decomp.c"
+#line 4 "decomp/ST.exe/functions/00526100/decomp.c"
 char * __cdecl st::fn_00526100(undefined1 *param_1,int param_2)
 
 {
@@ -2766,7 +2766,7 @@ char * __cdecl st::fn_00526100(undefined1 *param_1,int param_2)
 }
 
 // 00526BA0 FUN_00526ba0
-#line 1 "decomp/ST.exe/functions/00526BA0/decomp.c"
+#line 4 "decomp/ST.exe/functions/00526BA0/decomp.c"
 /* [STSwitchEnumApplier] Switch target param_1 uses
    /SubmarineTitans/Recovered/Enums/Global_sub_00526BA0_param_1Enum. Cases:
    CASE_1=1;CASE_2=2;CASE_3=3;CASE_4=4;CASE_5=5;CASE_6=6;CASE_7=7;CASE_8=8;CASE_9=9;CASE_A=10;CASE_B=11;CASE_C=12;CASE_D=13;CASE_E=14;CASE_F=15;CASE_10=16;CASE_11=17;CASE_12=18;CASE_13=19;CASE_14=20;CASE_15=21;CASE_16=22;CASE_17=23;CASE_18=24;CASE_19=25;CASE_1A=26;CASE_1B=27;CASE_1C=28;CASE_1D=29;CASE_1E=30;CASE_1F=31;CASE_20=32;CASE_21=33;CASE_22=34;CASE_23=35;CASE_24=36;CASE_25=37;CASE_26=38;CASE_27=39;CASE_28=40;CASE_2B=43;CASE_32=50;CASE_33=51;CASE_34=52;CASE_35=53;CASE_36=54;CASE_37=55;CASE_38=56;CASE_39=57;CASE_3A=58;CASE_3B=59;CASE_3C=60;CASE_3D=61;CASE_3E=62;CASE_3F=63;CASE_40=64;CASE_41=65;CASE_42=66;CASE_43=67;CASE_44=68;CASE_45=69;CASE_46=70;CASE_47=71;CASE_48=72;CASE_49=73;CASE_4A=74;CASE_4B=75;CASE_4C=76;CASE_4D=77;CASE_4E=78;CASE_4F=79;CASE_50=80;CASE_51=81;CASE_52=82;CASE_53=83;CASE_54=84;CASE_55=85;CASE_56=86;CASE_57=87;CASE_58=88;CASE_59=89;CASE_5A=90;CASE_5B=91;CASE_5C=92;CASE_5D=93;CASE_5E=94;CASE_5F=95;CASE_60=96;CASE_61=97;CASE_62=98;CASE_63=99;CASE_64=100;CASE_65=101;CASE_66=102;CASE_67=103;CASE_68=104;CASE_69=105;CASE_6A=106;CASE_6B=107;CASE_6C=108;CASE_6D=109;CASE_6E=110;CASE_6F=111;CASE_70=112;CASE_71=113;CASE_72=114;CASE_73=115;CASE_FD=253;CASE_FE=254
@@ -2995,7 +2995,7 @@ switchD_00526bcb_caseD_53:
 }
 
 // 005272B0 FUN_005272b0
-#line 1 "decomp/ST.exe/functions/005272B0/decomp.c"
+#line 4 "decomp/ST.exe/functions/005272B0/decomp.c"
 /* [STSwitchEnumApplier] Switch target param_1 uses
    /SubmarineTitans/Recovered/Enums/Global_sub_005272B0_param_1Enum. Cases:
    CASE_1=1;CASE_2=2;CASE_3=3;CASE_4=4;CASE_5=5;CASE_6=6;CASE_7=7;CASE_8=8;CASE_9=9;CASE_A=10;CASE_B=11;CASE_C=12;CASE_D=13;CASE_E=14;CASE_10=16;CASE_11=17;CASE_12=18;CASE_13=19;CASE_14=20;CASE_15=21;CASE_16=22;CASE_17=23;CASE_18=24;CASE_19=25;CASE_1A=26;CASE_1B=27;CASE_1C=28;CASE_1D=29;CASE_1E=30;CASE_1F=31;CASE_20=32;CASE_21=33;CASE_22=34;CASE_23=35;CASE_24=36;CASE_25=37;CASE_26=38;CASE_27=39;CASE_28=40;CASE_29=41;CASE_2A=42;CASE_2B=43;CASE_2C=44;CASE_2D=45;CASE_2F=47;CASE_30=48;CASE_31=49;CASE_32=50;CASE_33=51;CASE_34=52;CASE_35=53;CASE_36=54;CASE_37=55;CASE_38=56;CASE_39=57;CASE_3A=58;CASE_3B=59;CASE_3C=60;CASE_3D=61;CASE_3E=62;CASE_3F=63;CASE_40=64;CASE_41=65;CASE_42=66;CASE_43=67;CASE_44=68;CASE_45=69;CASE_46=70;CASE_47=71;CASE_48=72;CASE_49=73;CASE_4A=74;CASE_4B=75;CASE_4C=76;CASE_4D=77;CASE_4F=79;CASE_50=80;CASE_51=81;CASE_52=82
@@ -3159,7 +3159,7 @@ undefined4 __cdecl st::fn_005272B0(Global_sub_005272B0_param_1Enum param_1)
 }
 
 // 005276E0 FUN_005276e0
-#line 1 "decomp/ST.exe/functions/005276E0/decomp.c"
+#line 4 "decomp/ST.exe/functions/005276E0/decomp.c"
 /* [STSwitchEnumApplier] Switch target param_1 uses
    /SubmarineTitans/Recovered/Enums/Global_sub_005276E0_param_1Enum. Cases:
    CASE_1=1;CASE_2=2;CASE_3=3;CASE_4=4;CASE_5=5;CASE_6=6;CASE_7=7;CASE_8=8;CASE_9=9;CASE_A=10;CASE_B=11;CASE_C=12;CASE_D=13;CASE_E=14;CASE_F=15;CASE_10=16;CASE_11=17;CASE_12=18;CASE_13=19;CASE_14=20;CASE_15=21;CASE_16=22;CASE_17=23;CASE_18=24;CASE_19=25;CASE_1A=26;CASE_1B=27;CASE_1C=28;CASE_1D=29;CASE_1E=30;CASE_1F=31;CASE_20=32;CASE_21=33;CASE_22=34;CASE_23=35;CASE_24=36;CASE_25=37;CASE_26=38;CASE_27=39;CASE_28=40;CASE_29=41;CASE_2A=42;CASE_2B=43;CASE_2C=44;CASE_2D=45;CASE_2E=46;CASE_2F=47;CASE_30=48;CASE_31=49;CASE_32=50;CASE_33=51;CASE_34=52;CASE_35=53;CASE_36=54;CASE_37=55;CASE_38=56;CASE_39=57;CASE_3A=58;CASE_3B=59;CASE_3C=60;CASE_3D=61;CASE_3E=62;CASE_3F=63;CASE_40=64;CASE_41=65;CASE_42=66;CASE_43=67;CASE_44=68;CASE_45=69;CASE_46=70;CASE_47=71;CASE_48=72;CASE_49=73;CASE_4A=74;CASE_4B=75;CASE_4C=76;CASE_4D=77;CASE_4E=78;CASE_4F=79;CASE_50=80;CASE_51=81;CASE_52=82;CASE_53=83;CASE_54=84;CASE_55=85;CASE_56=86;CASE_57=87;CASE_58=88;CASE_59=89;CASE_5A=90;CASE_5B=91;CASE_5C=92;CASE_5D=93;CASE_5E=94;CASE_5F=95;CASE_60=96;CASE_61=97;CASE_62=98;CASE_63=99;CASE_64=100;CASE_65=101;CASE_66=102;CASE_67=103;CASE_68=104;CASE_69=105;CASE_6A=106;CASE_6B=107;CASE_6C=108;CASE_6D=109;CASE_6E=110;CASE_6F=111;CASE_70=112;CASE_71=113;CASE_72=114;CASE_73=115;CASE_74=116;CASE_75=117;CASE_76=118;CASE_77=119;CASE_78=120;CASE_79=121;CASE_7A=122;CASE_7B=123;CASE_7C=124;CASE_7D=125;CASE_7E=126;CASE_7F=127;CASE_80=128;CASE_81=129;CASE_82=130;CASE_83=131;CASE_84=132;CASE_85=133;CASE_86=134;CASE_87=135;CASE_88=136;CASE_89=137;CASE_8A=138;CASE_8B=139;CASE_8C=140;CASE_8D=141;CASE_8E=142;CASE_8F=143;CASE_90=144;CASE_91=145;CASE_92=146;CASE_93=147;CASE_94=148;CASE_95=149;CASE_96=150;CASE_97=151;CASE_98=152;CASE_99=153;CASE_9A=154
@@ -3505,7 +3505,7 @@ uint __cdecl st::fn_005276E0(Global_sub_005276E0_param_1Enum param_1,byte param_
 }
 
 // 00528060 FUN_00528060
-#line 1 "decomp/ST.exe/functions/00528060/decomp.c"
+#line 4 "decomp/ST.exe/functions/00528060/decomp.c"
 /* [STSwitchEnumApplier] Switch target param_1 uses
    /SubmarineTitans/Recovered/Enums/Global_sub_00528060_param_1Enum. Cases:
    CASE_1=1;CASE_2=2;CASE_3=3;CASE_4=4;CASE_5=5;CASE_6=6;CASE_7=7;CASE_8=8;CASE_9=9;CASE_A=10;CASE_B=11;CASE_C=12;CASE_D=13;CASE_E=14;CASE_F=15;CASE_10=16;CASE_11=17;CASE_12=18;CASE_13=19;CASE_14=20;CASE_15=21;CASE_16=22;CASE_17=23;CASE_18=24;CASE_19=25;CASE_1A=26;CASE_1B=27;CASE_1C=28;CASE_1D=29;CASE_1E=30;CASE_1F=31;CASE_20=32;CASE_21=33;CASE_22=34;CASE_23=35;CASE_24=36;CASE_25=37;CASE_26=38;CASE_27=39;CASE_28=40;CASE_29=41;CASE_2A=42;CASE_2B=43;CASE_2C=44;CASE_2D=45;CASE_2E=46;CASE_2F=47;CASE_30=48;CASE_31=49;CASE_32=50;CASE_33=51;CASE_34=52;CASE_35=53;CASE_36=54;CASE_37=55;CASE_38=56;CASE_39=57;CASE_3A=58;CASE_3B=59;CASE_3C=60;CASE_3D=61;CASE_3E=62;CASE_3F=63;CASE_40=64;CASE_41=65;CASE_42=66;CASE_43=67;CASE_44=68;CASE_45=69;CASE_46=70;CASE_47=71;CASE_48=72;CASE_49=73;CASE_4A=74;CASE_4B=75;CASE_4C=76;CASE_4D=77;CASE_4E=78;CASE_4F=79;CASE_50=80;CASE_51=81;CASE_52=82;CASE_53=83;CASE_54=84;CASE_55=85;CASE_56=86;CASE_57=87;CASE_58=88;CASE_59=89;CASE_5A=90;CASE_5B=91;CASE_5C=92;CASE_5D=93;CASE_5E=94;CASE_5F=95;CASE_60=96;CASE_61=97;CASE_62=98;CASE_63=99;CASE_64=100;CASE_65=101;CASE_66=102;CASE_67=103;CASE_68=104;CASE_69=105;CASE_6A=106;CASE_6B=107;CASE_6C=108;CASE_6D=109;CASE_6E=110;CASE_6F=111;CASE_70=112;CASE_71=113;CASE_72=114;CASE_73=115;CASE_74=116;CASE_75=117;CASE_76=118;CASE_77=119;CASE_78=120;CASE_79=121;CASE_7A=122;CASE_7B=123;CASE_7C=124;CASE_7D=125;CASE_7E=126;CASE_7F=127;CASE_80=128;CASE_81=129;CASE_82=130;CASE_83=131;CASE_84=132;CASE_85=133;CASE_86=134;CASE_87=135;CASE_88=136;CASE_89=137;CASE_8A=138;CASE_8B=139;CASE_8C=140;CASE_8D=141;CASE_8E=142;CASE_8F=143;CASE_90=144;CASE_91=145;CASE_92=146;CASE_93=147;CASE_94=148;CASE_95=149;CASE_96=150;CASE_97=151;CASE_98=152;CASE_99=153;CASE_9A=154
@@ -3895,7 +3895,7 @@ UINT __cdecl st::fn_00528060(Global_sub_00528060_param_1Enum param_1,char param_
 }
 
 // 00528A30 FUN_00528a30
-#line 1 "decomp/ST.exe/functions/00528A30/decomp.c"
+#line 4 "decomp/ST.exe/functions/00528A30/decomp.c"
 /* [STSwitchEnumApplier] Switch target param_1 uses
    /SubmarineTitans/Recovered/Enums/Global_sub_00528A30_param_1Enum. Cases:
    CASE_1=1;CASE_2=2;CASE_3=3;CASE_4=4;CASE_5=5;CASE_6=6;CASE_7=7;CASE_8=8;CASE_9=9;CASE_A=10;CASE_B=11;CASE_C=12;CASE_D=13;CASE_E=14;CASE_F=15;CASE_10=16;CASE_11=17;CASE_12=18;CASE_13=19;CASE_14=20;CASE_15=21;CASE_16=22;CASE_17=23;CASE_18=24;CASE_19=25;CASE_1A=26;CASE_1B=27;CASE_1C=28;CASE_1D=29;CASE_1E=30;CASE_1F=31;CASE_20=32;CASE_21=33;CASE_22=34;CASE_23=35;CASE_24=36;CASE_25=37;CASE_26=38;CASE_27=39;CASE_28=40;CASE_29=41;CASE_2A=42;CASE_2B=43;CASE_2C=44;CASE_2D=45;CASE_2E=46;CASE_2F=47;CASE_30=48;CASE_31=49;CASE_32=50;CASE_33=51;CASE_34=52;CASE_35=53;CASE_36=54;CASE_37=55;CASE_38=56;CASE_39=57;CASE_3A=58;CASE_3B=59;CASE_3C=60;CASE_3D=61;CASE_3E=62;CASE_3F=63;CASE_40=64;CASE_41=65;CASE_42=66;CASE_43=67;CASE_44=68;CASE_45=69;CASE_46=70;CASE_47=71;CASE_48=72;CASE_49=73;CASE_4A=74;CASE_4B=75;CASE_4C=76;CASE_4D=77;CASE_4E=78;CASE_4F=79;CASE_50=80;CASE_51=81;CASE_52=82;CASE_53=83;CASE_54=84;CASE_55=85;CASE_56=86;CASE_57=87;CASE_58=88;CASE_59=89;CASE_5A=90;CASE_5B=91;CASE_5C=92;CASE_5D=93;CASE_5E=94;CASE_5F=95;CASE_60=96;CASE_61=97;CASE_62=98;CASE_63=99;CASE_64=100;CASE_65=101;CASE_66=102;CASE_67=103;CASE_68=104;CASE_69=105;CASE_6A=106;CASE_6B=107;CASE_6C=108;CASE_6D=109;CASE_6E=110;CASE_6F=111;CASE_70=112;CASE_71=113;CASE_72=114;CASE_73=115;CASE_74=116;CASE_75=117;CASE_76=118;CASE_77=119;CASE_78=120;CASE_79=121;CASE_7A=122;CASE_7B=123;CASE_7C=124;CASE_7D=125;CASE_7E=126;CASE_7F=127;CASE_80=128;CASE_81=129;CASE_82=130;CASE_83=131;CASE_84=132;CASE_85=133;CASE_86=134;CASE_87=135;CASE_88=136;CASE_89=137;CASE_8A=138;CASE_8B=139;CASE_8C=140;CASE_8D=141;CASE_8E=142;CASE_8F=143;CASE_91=145;CASE_92=146;CASE_93=147;CASE_94=148;CASE_95=149;CASE_96=150;CASE_97=151;CASE_98=152;CASE_99=153;CASE_9A=154
@@ -4268,7 +4268,7 @@ UINT __cdecl st::fn_00528A30(Global_sub_00528A30_param_1Enum param_1,char param_
 }
 
 // 005293C0 FUN_005293c0
-#line 1 "decomp/ST.exe/functions/005293C0/decomp.c"
+#line 4 "decomp/ST.exe/functions/005293C0/decomp.c"
 /* [STAbiConsistencyApplier] stack_parameter_width target=parameter:0: parameter=/byte Evidence:
    entry-use width=/byte; unmasked_dword_reads=0; evidence=005293C3 MOV EAX,dword ptr [EBP + 0x8];
    first-use mask */
@@ -4280,7 +4280,7 @@ undefined4 __cdecl st::fn_005293C0(byte param_1)
 }
 
 // 005293F0 FUN_005293f0
-#line 1 "decomp/ST.exe/functions/005293F0/decomp.c"
+#line 4 "decomp/ST.exe/functions/005293F0/decomp.c"
 /* [STSwitchEnumApplier] Switch target param_1 uses
    /SubmarineTitans/Recovered/Enums/Global_sub_005293F0_param_1Enum. Cases:
    CASE_DC=220;CASE_DD=221;CASE_DE=222;CASE_DF=223;CASE_E0=224;CASE_E1=225;CASE_E2=226;CASE_E3=227
@@ -4315,7 +4315,7 @@ UINT __cdecl st::fn_005293F0(Global_sub_005293F0_param_1Enum param_1)
 }
 
 // 00529480 FUN_00529480
-#line 1 "decomp/ST.exe/functions/00529480/decomp.c"
+#line 4 "decomp/ST.exe/functions/00529480/decomp.c"
 /* [STSwitchEnumApplier] Switch target param_1 uses
    /SubmarineTitans/Recovered/Enums/Global_sub_00529480_param_1Enum. Cases:
    CASE_0=0;CASE_1=1;CASE_2=2;CASE_3=3;CASE_4=4 */
@@ -4342,7 +4342,7 @@ undefined4 __cdecl st::fn_00529480(Global_sub_00529480_param_1Enum param_1)
 }
 
 // 00529500 FUN_00529500
-#line 1 "decomp/ST.exe/functions/00529500/decomp.c"
+#line 4 "decomp/ST.exe/functions/00529500/decomp.c"
 /* [STSwitchEnumApplier] Switch target param_1 uses
    /SubmarineTitans/Recovered/Enums/Global_sub_00529500_param_1Enum. Cases:
    CASE_271D=10013;CASE_271E=10014;CASE_271F=10015;CASE_2731=10033
@@ -4370,7 +4370,7 @@ int __cdecl st::fn_00529500(Global_sub_00529500_param_1Enum param_1)
 }
 
 // 00529590 FUN_00529590
-#line 1 "decomp/ST.exe/functions/00529590/decomp.c"
+#line 4 "decomp/ST.exe/functions/00529590/decomp.c"
 /* [STSwitchEnumApplier] Switch target param_1 uses
    /SubmarineTitans/Recovered/Enums/Global_sub_00529590_param_1Enum. Cases:
    CASE_1=1;CASE_2=2;CASE_3=3;CASE_4=4;CASE_5=5;CASE_6=6;CASE_7=7;CASE_8=8;CASE_9=9;CASE_A=10;CASE_B=11;CASE_C=12;CASE_D=13;CASE_E=14;CASE_F=15;CASE_10=16;CASE_11=17;CASE_12=18;CASE_13=19;CASE_14=20;CASE_15=21;CASE_16=22;CASE_17=23;CASE_18=24;CASE_19=25;CASE_1A=26;CASE_1B=27;CASE_1C=28;CASE_1D=29;CASE_1E=30;CASE_1F=31;CASE_20=32;CASE_21=33;CASE_22=34;CASE_23=35;CASE_24=36;CASE_25=37;CASE_26=38;CASE_27=39;CASE_28=40;CASE_29=41;CASE_2A=42;CASE_2B=43;CASE_2C=44;CASE_2D=45;CASE_2E=46;CASE_2F=47;CASE_30=48;CASE_31=49;CASE_32=50;CASE_33=51;CASE_34=52;CASE_35=53;CASE_36=54;CASE_37=55;CASE_38=56;CASE_39=57;CASE_3A=58;CASE_3B=59;CASE_3C=60;CASE_3D=61;CASE_3E=62;CASE_3F=63;CASE_40=64;CASE_41=65;CASE_42=66;CASE_43=67;CASE_44=68;CASE_45=69;CASE_46=70;CASE_47=71;CASE_48=72;CASE_49=73;CASE_4A=74;CASE_4B=75;CASE_4C=76;CASE_4D=77;CASE_4F=79;CASE_50=80;CASE_51=81;CASE_52=82
@@ -4683,7 +4683,7 @@ switchD_005295a5_caseD_4d:
 }
 
 // 00529D80 FUN_00529d80
-#line 1 "decomp/ST.exe/functions/00529D80/decomp.c"
+#line 4 "decomp/ST.exe/functions/00529D80/decomp.c"
 /* [STSwitchEnumApplier] Switch target param_1 uses
    /SubmarineTitans/Recovered/Enums/Global_sub_00529D80_param_1Enum. Cases:
    CASE_0=0;CASE_1=1;CASE_2=2;CASE_3=3;CASE_4=4;CASE_5=5;CASE_6=6;CASE_7=7;CASE_8=8;CASE_9=9;CASE_A=10;CASE_B=11;CASE_C=12
@@ -4771,7 +4771,7 @@ undefined4 __cdecl st::fn_00529D80(Global_sub_00529D80_param_1Enum param_1,int p
 }
 
 // 00529F90 FUN_00529f90
-#line 1 "decomp/ST.exe/functions/00529F90/decomp.c"
+#line 4 "decomp/ST.exe/functions/00529F90/decomp.c"
 undefined4 __cdecl st::fn_00529F90(int param_1)
 
 {
@@ -4791,7 +4791,7 @@ undefined4 __cdecl st::fn_00529F90(int param_1)
 }
 
 // 00529FE0 FUN_00529fe0
-#line 1 "decomp/ST.exe/functions/00529FE0/decomp.c"
+#line 4 "decomp/ST.exe/functions/00529FE0/decomp.c"
 undefined4 __cdecl st::fn_00529FE0(int param_1)
 
 {
@@ -4813,7 +4813,7 @@ undefined4 __cdecl st::fn_00529FE0(int param_1)
 }
 
 // 0052A030 FUN_0052a030
-#line 1 "decomp/ST.exe/functions/0052A030/decomp.c"
+#line 4 "decomp/ST.exe/functions/0052A030/decomp.c"
 undefined4 __cdecl st::fn_0052A030(int param_1)
 
 {
@@ -4835,7 +4835,7 @@ undefined4 __cdecl st::fn_0052A030(int param_1)
 }
 
 // 0052A080 FUN_0052a080
-#line 1 "decomp/ST.exe/functions/0052A080/decomp.c"
+#line 4 "decomp/ST.exe/functions/0052A080/decomp.c"
 undefined4 __cdecl st::fn_0052A080(int param_1)
 
 {
@@ -4852,7 +4852,7 @@ undefined4 __cdecl st::fn_0052A080(int param_1)
 }
 
 // 0052A0D0 FUN_0052a0d0
-#line 1 "decomp/ST.exe/functions/0052A0D0/decomp.c"
+#line 4 "decomp/ST.exe/functions/0052A0D0/decomp.c"
 undefined4 __cdecl st::fn_0052A0D0(int param_1)
 
 {
@@ -4875,7 +4875,7 @@ undefined4 __cdecl st::fn_0052A0D0(int param_1)
 }
 
 // 0052A140 FUN_0052a140
-#line 1 "decomp/ST.exe/functions/0052A140/decomp.c"
+#line 4 "decomp/ST.exe/functions/0052A140/decomp.c"
 undefined4 __cdecl st::fn_0052A140(int param_1)
 
 {
@@ -4891,7 +4891,7 @@ undefined4 __cdecl st::fn_0052A140(int param_1)
 }
 
 // 0052A190 FUN_0052a190
-#line 1 "decomp/ST.exe/functions/0052A190/decomp.c"
+#line 4 "decomp/ST.exe/functions/0052A190/decomp.c"
 undefined4 __cdecl st::fn_0052A190(int param_1)
 
 {
@@ -4907,7 +4907,7 @@ undefined4 __cdecl st::fn_0052A190(int param_1)
 }
 
 // 0052A1E0 FUN_0052a1e0
-#line 1 "decomp/ST.exe/functions/0052A1E0/decomp.c"
+#line 4 "decomp/ST.exe/functions/0052A1E0/decomp.c"
 undefined4 __cdecl st::fn_0052A1E0(int param_1)
 
 {
@@ -4925,7 +4925,7 @@ undefined4 __cdecl st::fn_0052A1E0(int param_1)
 }
 
 // 0052A230 FUN_0052a230
-#line 1 "decomp/ST.exe/functions/0052A230/decomp.c"
+#line 4 "decomp/ST.exe/functions/0052A230/decomp.c"
 undefined4 __cdecl st::fn_0052A230(int param_1)
 
 {
@@ -4947,7 +4947,7 @@ undefined4 __cdecl st::fn_0052A230(int param_1)
 }
 
 // 0052A280 FUN_0052a280
-#line 1 "decomp/ST.exe/functions/0052A280/decomp.c"
+#line 4 "decomp/ST.exe/functions/0052A280/decomp.c"
 undefined4 __cdecl st::fn_0052A280(int param_1)
 
 {
@@ -4965,7 +4965,7 @@ undefined4 __cdecl st::fn_0052A280(int param_1)
 }
 
 // 0052A2D0 FUN_0052a2d0
-#line 1 "decomp/ST.exe/functions/0052A2D0/decomp.c"
+#line 4 "decomp/ST.exe/functions/0052A2D0/decomp.c"
 undefined4 __cdecl st::fn_0052A2D0(int param_1)
 
 {
@@ -4982,7 +4982,7 @@ undefined4 __cdecl st::fn_0052A2D0(int param_1)
 }
 
 // 0052A320 FUN_0052a320
-#line 1 "decomp/ST.exe/functions/0052A320/decomp.c"
+#line 4 "decomp/ST.exe/functions/0052A320/decomp.c"
 undefined4 __cdecl st::fn_0052A320(int param_1)
 
 {
@@ -5005,7 +5005,7 @@ undefined4 __cdecl st::fn_0052A320(int param_1)
 }
 
 // 0052A390 FUN_0052a390
-#line 1 "decomp/ST.exe/functions/0052A390/decomp.c"
+#line 4 "decomp/ST.exe/functions/0052A390/decomp.c"
 undefined4 __cdecl st::fn_0052A390(int param_1)
 
 {
@@ -5022,7 +5022,7 @@ undefined4 __cdecl st::fn_0052A390(int param_1)
 }
 
 // 0052A3E0 FUN_0052a3e0
-#line 1 "decomp/ST.exe/functions/0052A3E0/decomp.c"
+#line 4 "decomp/ST.exe/functions/0052A3E0/decomp.c"
 undefined4 __cdecl st::fn_0052A3E0(int param_1)
 
 {
@@ -5039,7 +5039,7 @@ undefined4 __cdecl st::fn_0052A3E0(int param_1)
 }
 
 // 0052A430 FUN_0052a430
-#line 1 "decomp/ST.exe/functions/0052A430/decomp.c"
+#line 4 "decomp/ST.exe/functions/0052A430/decomp.c"
 int __cdecl st::fn_0052A430(AnonShape_0052A430_8E4D893F *param_1)
 
 {
@@ -5061,7 +5061,7 @@ int __cdecl st::fn_0052A430(AnonShape_0052A430_8E4D893F *param_1)
 }
 
 // 0052A4D0 FUN_0052a4d0
-#line 1 "decomp/ST.exe/functions/0052A4D0/decomp.c"
+#line 4 "decomp/ST.exe/functions/0052A4D0/decomp.c"
 undefined4 __cdecl st::fn_0052A4D0(int param_1)
 
 {
@@ -5077,7 +5077,7 @@ undefined4 __cdecl st::fn_0052A4D0(int param_1)
 }
 
 // 0052A540 FUN_0052a540
-#line 1 "decomp/ST.exe/functions/0052A540/decomp.c"
+#line 4 "decomp/ST.exe/functions/0052A540/decomp.c"
 undefined4 __cdecl st::fn_0052A540(int param_1)
 
 {
@@ -5099,7 +5099,7 @@ undefined4 __cdecl st::fn_0052A540(int param_1)
 }
 
 // 0052A5C0 FUN_0052a5c0
-#line 1 "decomp/ST.exe/functions/0052A5C0/decomp.c"
+#line 4 "decomp/ST.exe/functions/0052A5C0/decomp.c"
 undefined4 __cdecl st::fn_0052A5C0(int param_1)
 
 {
@@ -5121,7 +5121,7 @@ undefined4 __cdecl st::fn_0052A5C0(int param_1)
 }
 
 // 0052A640 FUN_0052a640
-#line 1 "decomp/ST.exe/functions/0052A640/decomp.c"
+#line 4 "decomp/ST.exe/functions/0052A640/decomp.c"
 undefined4 __cdecl st::fn_0052A640(int param_1)
 
 {
@@ -5143,7 +5143,7 @@ undefined4 __cdecl st::fn_0052A640(int param_1)
 }
 
 // 0052A6C0 FUN_0052a6c0
-#line 1 "decomp/ST.exe/functions/0052A6C0/decomp.c"
+#line 4 "decomp/ST.exe/functions/0052A6C0/decomp.c"
 uint __cdecl st::fn_0052A6C0(int param_1)
 
 {
@@ -5152,7 +5152,7 @@ uint __cdecl st::fn_0052A6C0(int param_1)
 }
 
 // 0052A6F0 FUN_0052a6f0
-#line 1 "decomp/ST.exe/functions/0052A6F0/decomp.c"
+#line 4 "decomp/ST.exe/functions/0052A6F0/decomp.c"
 undefined4 __cdecl st::fn_0052A6F0(int param_1)
 
 {
@@ -5171,7 +5171,7 @@ undefined4 __cdecl st::fn_0052A6F0(int param_1)
 }
 
 // 0052A730 FUN_0052a730
-#line 1 "decomp/ST.exe/functions/0052A730/decomp.c"
+#line 4 "decomp/ST.exe/functions/0052A730/decomp.c"
 undefined4 __cdecl st::fn_0052A730(int param_1)
 
 {
@@ -5190,7 +5190,7 @@ undefined4 __cdecl st::fn_0052A730(int param_1)
 }
 
 // 0052A770 FUN_0052a770
-#line 1 "decomp/ST.exe/functions/0052A770/decomp.c"
+#line 4 "decomp/ST.exe/functions/0052A770/decomp.c"
 undefined4 __cdecl st::fn_0052A770(int param_1)
 
 {
@@ -5209,7 +5209,7 @@ undefined4 __cdecl st::fn_0052A770(int param_1)
 }
 
 // 0052A7B0 FUN_0052a7b0
-#line 1 "decomp/ST.exe/functions/0052A7B0/decomp.c"
+#line 4 "decomp/ST.exe/functions/0052A7B0/decomp.c"
 /* [STAbiConsistencyApplier] full_eax_return: return=/int Evidence: all observed callers consume
    full EAX (1), none consume AL/AX, and every RET path defines full EAX; sites=005522A0 @ 005524FB
    -> PUSH PUSH EAX */
@@ -5253,7 +5253,7 @@ int __cdecl st::fn_0052A7B0(AnonShape_0052A7B0_DD603BF4 *param_1)
 }
 
 // 0052A890 FUN_0052a890
-#line 1 "decomp/ST.exe/functions/0052A890/decomp.c"
+#line 4 "decomp/ST.exe/functions/0052A890/decomp.c"
 char __cdecl st::fn_0052A890(AnonShape_0052A890_F679384E *param_1)
 
 {
@@ -5290,7 +5290,7 @@ char __cdecl st::fn_0052A890(AnonShape_0052A890_F679384E *param_1)
 }
 
 // 0052A970 FUN_0052a970
-#line 1 "decomp/ST.exe/functions/0052A970/decomp.c"
+#line 4 "decomp/ST.exe/functions/0052A970/decomp.c"
 undefined4 * __cdecl st::fn_0052A970(uint param_1,int param_2)
 
 {
@@ -5298,6 +5298,7 @@ undefined4 * __cdecl st::fn_0052A970(uint param_1,int param_2)
   undefined *puVar2;
   char *pcVar3;
   uint uVar4;
+  uint uVar5;
   ushort uVar6;
   char *pcVar7;
 
@@ -5315,6 +5316,7 @@ undefined4 * __cdecl st::fn_0052A970(uint param_1,int param_2)
   pcVar3 = pcVar7 + -uVar4;
   pcVar7 = (char *)&DAT_008016a4;
   memmove(pcVar7, pcVar3, uVar4); /* compiler REP MOVS byte copy */
+  uVar5 = 0;
   if (param_2 != 0) {
     if (param_1 != 0) {
       uVar4 = param_1 & 0x40000000;
@@ -5348,7 +5350,7 @@ undefined4 * __cdecl st::fn_0052A970(uint param_1,int param_2)
       st::external_00000080((LPSTR)&DAT_008016a4,"%s%s",&DAT_008016a4,puVar2);
       return &DAT_008016a4;
     }
-    pcVar3 = st::fn_006B0140(0x2732,g_module_00807618);
+    pcVar3 = st::fn_006B0140(0x2732,g_hINSTANCE_00807618);
     uVar4 = 0xffffffff;
     do {
       pcVar7 = pcVar3;
@@ -5367,7 +5369,7 @@ undefined4 * __cdecl st::fn_0052A970(uint param_1,int param_2)
 }
 
 // 0052AF50 FUN_0052af50
-#line 1 "decomp/ST.exe/functions/0052AF50/decomp.c"
+#line 4 "decomp/ST.exe/functions/0052AF50/decomp.c"
 void __cdecl st::fn_0052AF50(byte param_1,float param_2,float param_3)
 
 {
@@ -5378,7 +5380,7 @@ void __cdecl st::fn_0052AF50(byte param_1,float param_2,float param_3)
 }
 
 // 0052AF90 FUN_0052af90
-#line 1 "decomp/ST.exe/functions/0052AF90/decomp.c"
+#line 4 "decomp/ST.exe/functions/0052AF90/decomp.c"
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
 void __cdecl st::fn_0052AF90(byte param_1,int param_2,int param_3)
@@ -5390,7 +5392,7 @@ void __cdecl st::fn_0052AF90(byte param_1,int param_2,int param_3)
 }
 
 // 0052B670 CreateMoney
-#line 1 "decomp/ST.exe/functions/0052B670/decomp.c"
+#line 4 "decomp/ST.exe/functions/0052B670/decomp.c"
 /* [STUnclaimedCodeApplier] Exact function entry recovered from thunk_target.
    Evidence: P:007CA814>004048BD
 
@@ -5406,7 +5408,7 @@ MoneyTy * __cdecl st::fn_0052B670(void)
   this = (MoneyTy *)st::fn_006B04D0(0xa6);
   if (this != nullptr) {
     st::fn_006E5FB0(this);
-    this->vtable = &MoneyTyVTable;
+    this->vtable = &st_global_0079ACE4;
     this->field_0048 = 0x24;
     this->field_0050 = 0x24;
     this->field_0034 = 0xf;
@@ -5439,7 +5441,7 @@ MoneyTy * __cdecl st::fn_0052B670(void)
 }
 
 // 0052CCE0 FUN_0052cce0
-#line 1 "decomp/ST.exe/functions/0052CCE0/decomp.c"
+#line 4 "decomp/ST.exe/functions/0052CCE0/decomp.c"
 void __cdecl st::fn_0052CCE0(int param_1,undefined *param_2,BYTE param_3)
 
 {
@@ -5610,7 +5612,7 @@ void __cdecl st::fn_0052CCE0(int param_1,undefined *param_2,BYTE param_3)
 }
 
 // 0052D020 CreatePopUp
-#line 1 "decomp/ST.exe/functions/0052D020/decomp.c"
+#line 4 "decomp/ST.exe/functions/0052D020/decomp.c"
 /* [STUnclaimedCodeApplier] Exact function entry recovered from thunk_target.
    Evidence: P:007CA8CC>00402EE1
 
@@ -5647,7 +5649,7 @@ PopUpTy * __cdecl st::fn_0052D020(void)
 }
 
 // 0052D320 FUN_0052d320
-#line 1 "decomp/ST.exe/functions/0052D320/decomp.c"
+#line 4 "decomp/ST.exe/functions/0052D320/decomp.c"
 /* [STPrototypeApplier] Propagated parameter 1.
    Evidence: 00571400 -> 0052D320 @ 00571603 | 00571400 -> 0052D320 @ 00571642 | 00571400 ->
    0052D320 @ 00571654 */
@@ -5667,7 +5669,7 @@ void __thiscall st::fn_0052D320(void *this,char *text,uint param_2)
 }
 
 // 0052E3A0 CreateOptPanel
-#line 1 "decomp/ST.exe/functions/0052E3A0/decomp.c"
+#line 4 "decomp/ST.exe/functions/0052E3A0/decomp.c"
 /* [STUnclaimedCodeApplier] Exact function entry recovered from thunk_target.
    Evidence: P:007CA82C>004038FF
 
@@ -5689,7 +5691,7 @@ OptPanelTy * __cdecl st::fn_0052E3A0(void)
     this->field_0068 = 0;
     this->field_0172 = CASE_2;
     this->field_0178 = 0;
-    this->vtable = &OptPanelTyVTable;
+    this->vtable = &st_global_0079AD10;
     this->field_003C = 0xc;
     this->field_0044 = 0x9c;
     this->field_0040 = 0x128;

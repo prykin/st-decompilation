@@ -28,7 +28,7 @@ void CreatePlaySystem(void)
       g_playSystem_00802A38 = nullptr;
     }
     else {
-      g_playSystem_00802A38 = STPlaySystemC::STPlaySystemC(this,g_appClass_00806728);
+      g_playSystem_00802A38 = STPlaySystemC::STPlaySystemC(this,g_app_00806728);
     }
     if (g_playSystem_00802A38 == nullptr) {
       RaiseInternalException

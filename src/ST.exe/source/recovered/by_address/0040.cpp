@@ -2,7 +2,7 @@
 // Generated translation unit: source/recovered/by_address/0040.cpp
 
 // 00402E14 FUN_00402e14
-#line 1 "decomp/ST.exe/functions/00402E14/decomp.c"
+#line 4 "decomp/ST.exe/functions/00402E14/decomp.c"
 /* [STPrototypeApplier] Propagated parameter 0.
    Evidence: 0064CD80 -> 00402E14 @ 0064CF3E */
 
@@ -26,7 +26,7 @@ void __fastcall st::fn_00402E14(AiEventClassTy *param_1)
 }
 
 // 00405687 FUN_00405687
-#line 1 "decomp/ST.exe/functions/00405687/decomp.c"
+#line 4 "decomp/ST.exe/functions/00405687/decomp.c"
 undefined4 __fastcall st::fn_00405687(int param_1)
 
 {
@@ -44,7 +44,7 @@ undefined4 __fastcall st::fn_00405687(int param_1)
 }
 
 // 0040CC80 FUN_0040cc80
-#line 1 "decomp/ST.exe/functions/0040CC80/decomp.c"
+#line 4 "decomp/ST.exe/functions/0040CC80/decomp.c"
 int __thiscall st::fn_0040CC80(void *this,uint param_1)
 
 {
@@ -101,7 +101,7 @@ LAB_0040cd0a:
 }
 
 // 0040CDB0 FUN_0040cdb0
-#line 1 "decomp/ST.exe/functions/0040CDB0/decomp.c"
+#line 4 "decomp/ST.exe/functions/0040CDB0/decomp.c"
 void __thiscall st::fn_0040CDB0(void *this,uint param_1)
 
 {
@@ -551,7 +551,7 @@ LAB_0040dde1:
 }
 
 // 0040EB90 FUN_0040eb90
-#line 1 "decomp/ST.exe/functions/0040EB90/decomp.c"
+#line 4 "decomp/ST.exe/functions/0040EB90/decomp.c"
 undefined4 st::fn_0040EB90(void)
 
 {
@@ -763,7 +763,7 @@ undefined4 st::fn_0040EB90(void)
 }
 
 // 0040F1D0 FUN_0040f1d0
-#line 1 "decomp/ST.exe/functions/0040F1D0/decomp.c"
+#line 4 "decomp/ST.exe/functions/0040F1D0/decomp.c"
 int __cdecl st::fn_0040F1D0(int *param_1,int *param_2)
 
 {
@@ -777,7 +777,7 @@ int __cdecl st::fn_0040F1D0(int *param_1,int *param_2)
 }
 
 // 0040F220 FUN_0040f220
-#line 1 "decomp/ST.exe/functions/0040F220/decomp.c"
+#line 4 "decomp/ST.exe/functions/0040F220/decomp.c"
 int __cdecl st::fn_0040F220(AnonShape_0040F220_61B59860 *param_1,AnonShape_0040F220_06315B9F *param_2)
 
 {
@@ -792,7 +792,7 @@ int __cdecl st::fn_0040F220(AnonShape_0040F220_61B59860 *param_1,AnonShape_0040F
 }
 
 // 0040F270 FUN_0040f270
-#line 1 "decomp/ST.exe/functions/0040F270/decomp.c"
+#line 4 "decomp/ST.exe/functions/0040F270/decomp.c"
 undefined4
 st::fn_0040F270(int *param_1,int *param_2,int *param_3,int param_4,int param_5,int param_6,int param_7,
             int param_8,int param_9)
@@ -801,7 +801,7 @@ st::fn_0040F270(int *param_1,int *param_2,int *param_3,int param_4,int param_5,i
   int iVar1;
   int iVar2;
   int iVar3;
-  char *pcVar4;
+  int *piVar4;
   uint uVar5;
   int iVar6;
   int iVar7;
@@ -822,13 +822,13 @@ st::fn_0040F270(int *param_1,int *param_2,int *param_3,int param_4,int param_5,i
   local_14 = 30000;
   local_10 = -1;
   local_c = 1;
-  pcVar4 = DAT_007f4d50;
+  piVar4 = PTR_007f4d50;
   if (1 < DAT_007f4d44) {
     do {
-      if ((-1 < local_10) && (local_30 < pcVar4[7])) break;
-      iVar10 = pcVar4[5] + iVar2;
-      iVar9 = pcVar4[4] + iVar1;
-      iVar8 = pcVar4[6] + iVar3;
+      if ((-1 < local_10) && (local_30 < STField<char>(piVar4,7))) break;
+      iVar10 = STField<char>(piVar4,5) + iVar2;
+      iVar9 = (char)piVar4[1] + iVar1;
+      iVar8 = STField<char>(piVar4,6) + iVar3;
       if ((((-1 < iVar8) &&
            ((((iVar8 < DAT_007f4d34 && (-1 < iVar9)) && (iVar9 < DAT_007f4d2c)) &&
             ((-1 < iVar10 && (iVar10 < DAT_007f4d30)))))) &&
@@ -840,18 +840,18 @@ st::fn_0040F270(int *param_1,int *param_2,int *param_3,int param_4,int param_5,i
         iVar8 = st::fn_006AADD0(iVar9,iVar10,iVar8,param_4,param_5,param_6);
         if ((iVar8 < local_14) || ((iVar8 == local_14 && (iVar6 < local_1c)))) {
           local_10 = local_c;
-          local_30 = (int)pcVar4[7];
+          local_30 = (int)STField<char>(piVar4,7);
           local_1c = iVar6;
           local_14 = iVar8;
         }
       }
       local_c = local_c + 1;
-      pcVar4 = pcVar4 + 4;
+      piVar4 = piVar4 + 1;
     } while (local_c < DAT_007f4d44);
     if (-1 < local_10) {
-      *param_1 = DAT_007f4d50[local_10 * 4] + iVar1;
-      *param_2 = DAT_007f4d50[local_10 * 4 + 1] + iVar2;
-      *param_3 = DAT_007f4d50[local_10 * 4 + 2] + iVar3;
+      *param_1 = (char)PTR_007f4d50[local_10] + iVar1;
+      *param_2 = *(char *)((int)PTR_007f4d50 + local_10 * 4 + 1) + iVar2;
+      *param_3 = *(char *)((int)PTR_007f4d50 + local_10 * 4 + 2) + iVar3;
       return 0;
     }
   }
@@ -859,7 +859,7 @@ st::fn_0040F270(int *param_1,int *param_2,int *param_3,int param_4,int param_5,i
 }
 
 // 0040F4D0 FUN_0040f4d0
-#line 1 "decomp/ST.exe/functions/0040F4D0/decomp.c"
+#line 4 "decomp/ST.exe/functions/0040F4D0/decomp.c"
 /* [STReturnSemanticsApplier] ignored_eax_void.
    Evidence: all observed direct callers ignore the return register (ignored=3, used=0), and
    decompilation contains no value return */

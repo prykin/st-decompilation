@@ -97,7 +97,7 @@ LAB_004b03a2:
                   (g_bulkInitializedRecords_008087C7[local_c->field_0024].field_0022 < 8)))) {
                 bVar1 = *(byte *)&local_c->field_0024;
                 local_28 = (char *)STReplaceLowByte((uint32_t)(local_28), (uint8_t)(bVar1));
-                if (g_appClass_00806728->field_146F == '\0') {
+                if (g_app_00806728->field_146F == '\0') {
                   if (bVar1 == (byte)param_1) {
 LAB_004b04c9:
                     iVar9 = 0;
@@ -105,25 +105,25 @@ LAB_004b04c9:
                   else {
                     uVar3 = (uint)bVar1;
                     uVar13 = param_1 & 0xff;
-                    cVar2 = (&g_appClass_00806728->field_0x142f)[uVar13 + uVar3 * 8];
+                    cVar2 = (&g_app_00806728->field_0x142f)[uVar13 + uVar3 * 8];
                     if ((cVar2 == '\0') &&
                        (psVar11 = local_8,
-                       (&g_appClass_00806728->field_0x142f)[uVar3 + uVar13 * 8] == '\0')) {
+                       (&g_app_00806728->field_0x142f)[uVar3 + uVar13 * 8] == '\0')) {
                       iVar9 = -2;
                     }
                     else if ((cVar2 == '\x01') &&
                             (psVar11 = local_8,
-                            (&g_appClass_00806728->field_0x142f)[uVar3 + uVar13 * 8] == '\0')) {
+                            (&g_app_00806728->field_0x142f)[uVar3 + uVar13 * 8] == '\0')) {
                       iVar9 = -1;
                     }
                     else if ((cVar2 == '\0') &&
                             (psVar11 = local_8,
-                            (&g_appClass_00806728->field_0x142f)[uVar3 + uVar13 * 8] == '\x01')) {
+                            (&g_app_00806728->field_0x142f)[uVar3 + uVar13 * 8] == '\x01')) {
                       iVar9 = 1;
                     }
                     else {
                       if ((cVar2 != '\x01') ||
-                         ((&g_appClass_00806728->field_0x142f)[uVar3 + uVar13 * 8] != '\x01'))
+                         ((&g_app_00806728->field_0x142f)[uVar3 + uVar13 * 8] != '\x01'))
                       goto LAB_004b04c9;
                       iVar9 = 2;
                     }
@@ -131,8 +131,8 @@ LAB_004b04c9:
                   bVar17 = iVar9 < 0;
                 }
                 else {
-                  bVar17 = (&g_appClass_00806728->field_0x11ca)[(param_1 & 0xff) * 0x51] !=
-                           (&g_appClass_00806728->field_0x11ca)[(uint)bVar1 * 0x51];
+                  bVar17 = (&g_app_00806728->field_0x11ca)[(param_1 & 0xff) * 0x51] !=
+                           (&g_app_00806728->field_0x11ca)[(uint)bVar1 * 0x51];
                 }
                 if (bVar17) {
                   *(undefined1 *)((int)psVar11 + iVar15 + (int)local_10) = 4;

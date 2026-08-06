@@ -2,7 +2,7 @@
 // Generated translation unit: source/original/Andrey/tintersys.cpp
 
 // 005424A0 InterSystemC::CreateInterfObjects
-#line 1 "decomp/ST.exe/functions/005424A0/decomp.c"
+#line 4 "decomp/ST.exe/functions/005424A0/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\Andrey\tintersys.cpp
    InterSystemC::CreateInterfObjects */
@@ -95,7 +95,7 @@ undefined4 __thiscall st::fn_005424A0(InterSystemC *this)
     pCVar5 = st::fn_0040577C("BUT_FILEOPT",0);
     pCVar5 = st::fn_006F2C00(pCVar5,iVar3,uVar8);
     puVar6 = st::fn_00709AF0
-                       (DAT_00806794,CASE_1,pCVar5,uVar9,bVar10,iVar11,iVar12,puVar13);
+                       (PTR_00806794,CASE_1,pCVar5,uVar9,bVar10,iVar11,iVar12,puVar13);
     local_184[2] = (-(uint)(DAT_0080874e != '\x03') & 5) + 0x26;
     local_174 = *(undefined4 *)(puVar6 + 2);
     local_164 = this_00->field_0014;
@@ -246,7 +246,7 @@ undefined4 __thiscall st::fn_005424A0(InterSystemC *this)
     st::fn_004021C6();
     if ((DAT_0080877e == '\0') && (g_popUp_008016D8 != nullptr)) {
       uVar9 = 8;
-      text = st::fn_006B0140(0x4275,g_module_00807618);
+      text = st::fn_006B0140(0x4275,g_hINSTANCE_00807618);
       st::fn_004014D8(g_popUp_008016D8,text,uVar9);
     }
     g_currentExceptionFrame = local_1c8.previous;
@@ -263,7 +263,7 @@ undefined4 __thiscall st::fn_005424A0(InterSystemC *this)
 }
 
 // 00542D80 CreateInterSystem
-#line 1 "decomp/ST.exe/functions/00542D80/decomp.c"
+#line 4 "decomp/ST.exe/functions/00542D80/decomp.c"
 /* [STSourceProvenanceApplier begin]
    Recovered source file: E:\__titans\Andrey\tintersys.cpp
    Diagnostic line evidence: 202 (metadata/report site, not the function definition)
@@ -288,7 +288,7 @@ void st::fn_00542D80(void)
       g_interSystem_00802A28 = nullptr;
     }
     else {
-      g_interSystem_00802A28 = st::fn_0040475A(this,g_appClass_00806728);
+      g_interSystem_00802A28 = st::fn_0040475A(this,g_app_00806728);
     }
     g_interSystem_00802A28->field_0020 = 0;
     (*g_interSystem_00802A28->vtable->InitSystem)((SystemClassTy *)g_interSystem_00802A28);
@@ -313,7 +313,7 @@ void st::fn_00542D80(void)
 }
 
 // 00542F40 InterSystemC::GetMessage
-#line 1 "decomp/ST.exe/functions/00542F40/decomp.c"
+#line 4 "decomp/ST.exe/functions/00542F40/decomp.c"
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 /* Recovered from embedded debug metadata:
    E:\__titans\Andrey\tintersys.cpp
@@ -457,7 +457,7 @@ switchD_00543107_caseD_b904:
     pCVar5 = st::fn_006F2C00(pCVar5,iVar3,uVar6);
     pBVar7 = (BITMAPINFO *)
              st::fn_00709AF0
-                       (DAT_00806794,CASE_1,pCVar5,uVar4,bVar9,iVar12,iVar11,puVar13);
+                       (PTR_00806794,CASE_1,pCVar5,uVar4,bVar9,iVar12,iVar11,puVar13);
     iVar3 = piVar10[1];
     iVar12 = *piVar10;
     cVar8 = '\x01';
@@ -506,7 +506,7 @@ LAB_00543291:
       pCVar5 = st::fn_006F2C00(pCVar5,iVar3,uVar6);
       pBVar7 = (BITMAPINFO *)
                st::fn_00709AF0
-                         (DAT_00806794,CASE_6,pCVar5,uVar4,bVar9,iVar12,iVar11,puVar13);
+                         (PTR_00806794,CASE_6,pCVar5,uVar4,bVar9,iVar12,iVar11,puVar13);
       iVar12 = *piVar10;
       iVar3 = piVar10[1];
       cVar8 = '\x06';

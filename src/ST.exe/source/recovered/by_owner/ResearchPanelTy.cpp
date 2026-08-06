@@ -2,7 +2,7 @@
 // Generated translation unit: source/recovered/by_owner/ResearchPanelTy.cpp
 
 // 0053C490 ResearchPanelTy::ShiftControls
-#line 1 "decomp/ST.exe/functions/0053C490/decomp.c"
+#line 4 "decomp/ST.exe/functions/0053C490/decomp.c"
 /* [STVirtualMethodApplier] Recovered from virtual table slot family.
    Tables: 0079AD64
    Entries: 00405BF0
@@ -32,7 +32,7 @@ void __thiscall st::fn_0053C490(ResearchPanelTy *this,int param_1)
 }
 
 // 0053C620 ResearchPanelTy::sub_0053C620
-#line 1 "decomp/ST.exe/functions/0053C620/decomp.c"
+#line 4 "decomp/ST.exe/functions/0053C620/decomp.c"
 /* [STMethodOwnerApplier] Structural method owner recovered as ResearchPanelTy.
    Evidence: this_call_owners=[ResearchPanelTy]; agreed_this_calls=1; incoming_this_accesses=19;
    incoming_edx_uses=0; incoming_stack_parameter_uses=0; direct_non_thunk_callers=0;

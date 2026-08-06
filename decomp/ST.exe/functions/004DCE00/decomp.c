@@ -28,7 +28,7 @@ undefined4 __fastcall FUN_004dce00(int *param_1)
       this = (STT3DSprC *)thunk_FUN_004ab810(pAVar2);
     }
     STField<STT3DSprC *>(param_1,0x5ff) = this;
-    iVar3 = STT3DSprC::Init(this,DAT_008073cc,0x5a,0x45,nullptr,0xb4,0x8c,0x11);
+    iVar3 = STT3DSprC::Init(this,PTR_008073cc,0x5a,0x45,nullptr,0xb4,0x8c,0x11);
     if (iVar3 != 0) {
       RaiseInternalException
                 (iVar3,g_overwriteContext_007ED77C,"E:\\__titans\\Artem\\TLO_jump.cpp",0x58);
@@ -43,7 +43,7 @@ undefined4 __fastcall FUN_004dce00(int *param_1)
   if (param_1[0x134] == 1) {
     wsprintfA(local_108,"%s","jmpmine");
     iVar3 = STT3DSprC::LoadSequence
-                      (STField<STT3DSprC *>(param_1,0x5ff),0xe,DAT_00806774,local_108,0x1d);
+                      (STField<STT3DSprC *>(param_1,0x5ff),0xe,PTR_00806774,local_108,0x1d);
     if (iVar3 != 0) {
       RaiseInternalException
                 (iVar3,g_overwriteContext_007ED77C,"E:\\__titans\\Artem\\TLO_jump.cpp",0x61);

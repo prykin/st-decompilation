@@ -2,7 +2,7 @@
 // Generated translation unit: source/original/grig/traks.cpp
 
 // 00555720 TraksClassTy::CreateDate
-#line 1 "decomp/ST.exe/functions/00555720/decomp.c"
+#line 4 "decomp/ST.exe/functions/00555720/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\grig\traks.cpp
    TraksClassTy::CreateDate */
@@ -32,7 +32,7 @@ int __thiscall st::fn_00555720(TraksClassTy *this)
 }
 
 // 00555910 TraksClassTy::DrawTrakSprite
-#line 1 "decomp/ST.exe/functions/00555910/decomp.c"
+#line 4 "decomp/ST.exe/functions/00555910/decomp.c"
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 /* Recovered from embedded debug metadata:
    E:\__titans\grig\traks.cpp
@@ -180,7 +180,7 @@ st::fn_00555910(TraksClassTy *this,RecoveredRecord_TraksClassTy_00555910 *param_
 }
 
 // 00555E80 TraksClassTy::TraksExec
-#line 1 "decomp/ST.exe/functions/00555E80/decomp.c"
+#line 4 "decomp/ST.exe/functions/00555E80/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\grig\traks.cpp
    TraksClassTy::TraksExec */
@@ -255,7 +255,7 @@ void __thiscall st::fn_00555E80(TraksClassTy *this)
 }
 
 // 00555FE0 TraksClassTy::PrepareToSave
-#line 1 "decomp/ST.exe/functions/00555FE0/decomp.c"
+#line 4 "decomp/ST.exe/functions/00555FE0/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\grig\traks.cpp
    TraksClassTy::PrepareToSave
@@ -332,7 +332,7 @@ byte * __thiscall st::fn_00555FE0(TraksClassTy *this,uint *param_1)
 }
 
 // 00556170 TraksClassTy::PrepareAfterSave
-#line 1 "decomp/ST.exe/functions/00556170/decomp.c"
+#line 4 "decomp/ST.exe/functions/00556170/decomp.c"
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 /* Recovered from embedded debug metadata:
    E:\__titans\grig\traks.cpp
@@ -389,9 +389,9 @@ void __thiscall st::fn_00556170(TraksClassTy *this,ushort *param_1)
           element_0024 = nullptr;
         }
         if (element_0024 == nullptr) break;
-        piVar7 = DAT_00806764;
+        piVar7 = PTR_00806764;
         if (*(int *)(&DAT_007c900c + element_0024->field_0000 * 0x18) != 1) {
-          piVar7 = DAT_00806774;
+          piVar7 = PTR_00806774;
         }
         puVar11 = nullptr;
         iVar10 = 0;
@@ -452,7 +452,7 @@ void __thiscall st::fn_00556170(TraksClassTy *this,ushort *param_1)
 }
 
 // 005564C0 TraksClassTy::GetMessage
-#line 1 "decomp/ST.exe/functions/005564C0/decomp.c"
+#line 4 "decomp/ST.exe/functions/005564C0/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\grig\traks.cpp
    TraksClassTy::GetMessage
@@ -540,7 +540,7 @@ int __thiscall st::fn_005564C0(TraksClassTy *this,STMessage *message)
 }
 
 // 00556760 TraksClassTy::TraksCreate
-#line 1 "decomp/ST.exe/functions/00556760/decomp.c"
+#line 4 "decomp/ST.exe/functions/00556760/decomp.c"
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 /* Recovered from embedded debug metadata:
    E:\__titans\grig\traks.cpp
@@ -719,9 +719,9 @@ LAB_0055693a:
     local_1c = 0;
   }
   iVar7 = local_1c;
-  piVar6 = DAT_00806764;
+  piVar6 = PTR_00806764;
   if (*(int *)(&DAT_007c900c + param_1 * 0x18) != 1) {
-    piVar6 = DAT_00806774;
+    piVar6 = PTR_00806774;
   }
   puVar13 = nullptr;
   iVar12 = 0;
@@ -777,7 +777,7 @@ LAB_0055693a:
 }
 
 // 00556DD0 TraksClassTy::TraksCreateCollection
-#line 1 "decomp/ST.exe/functions/00556DD0/decomp.c"
+#line 4 "decomp/ST.exe/functions/00556DD0/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\grig\traks.cpp
    TraksClassTy::TraksCreateCollection */

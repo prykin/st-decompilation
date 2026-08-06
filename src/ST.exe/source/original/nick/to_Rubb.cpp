@@ -2,7 +2,7 @@
 // Generated translation unit: source/original/nick/to_Rubb.cpp
 
 // 0062E740 STRubbishC::GetMessage
-#line 1 "decomp/ST.exe/functions/0062E740/decomp.c"
+#line 4 "decomp/ST.exe/functions/0062E740/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\nick\to_Rubb.cpp
    STRubbishC::GetMessage
@@ -211,7 +211,7 @@ LAB_0062ea02:
 }
 
 // 0062ED90 STRubbishC::RubbishCreatePart
-#line 1 "decomp/ST.exe/functions/0062ED90/decomp.c"
+#line 4 "decomp/ST.exe/functions/0062ED90/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\nick\to_Rubb.cpp
    STRubbishC::RubbishCreatePart */
@@ -282,7 +282,7 @@ int __thiscall st::fn_0062ED90(STRubbishC *this)
 }
 
 // 0062F3B0 STRubbishC::LoadImagSpr
-#line 1 "decomp/ST.exe/functions/0062F3B0/decomp.c"
+#line 4 "decomp/ST.exe/functions/0062F3B0/decomp.c"
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 /* Recovered from embedded debug metadata:
    E:\__titans\nick\to_Rubb.cpp
@@ -350,13 +350,13 @@ LAB_0062f450:
   iVar2 = st::fn_0072D7F0(local_5c.jumpBuffer,0);
   this_00 = local_14;
   if (iVar2 == 0) {
-    iVar2 = st::fn_0040537B(local_14,DAT_008073cc,0x5a,0x45,nullptr,0xb4,0x8c,0x11);
+    iVar2 = st::fn_0040537B(local_14,PTR_008073cc,0x5a,0x45,nullptr,0xb4,0x8c,0x11);
     if (iVar2 != 0) {
       st::fn_006A5E40
                 (-1,g_overwriteContext_007ED77C,"E:\\__titans\\nick\\to_Rubb.cpp",0x17b);
       return 0xffff;
     }
-    iVar2 = st::fn_00404183(this_00,0xe,DAT_00806774,local_8[*param_2],0x1d);
+    iVar2 = st::fn_00404183(this_00,0xe,PTR_00806774,local_8[*param_2],0x1d);
     if (iVar2 == 0) {
       st::fn_00401064(this_00,'\x0e',param_2[6]);
       st::fn_004023C4(this_00,local_10 / 2,local_c / 2 - 0xe);

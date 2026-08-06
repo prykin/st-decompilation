@@ -2,7 +2,7 @@
 // Generated translation unit: source/recovered/by_address/006F.cpp
 
 // 006F02D0 FUN_006f02d0
-#line 1 "decomp/ST.exe/functions/006F02D0/decomp.c"
+#line 4 "decomp/ST.exe/functions/006F02D0/decomp.c"
 undefined4 __cdecl st::fn_006F02D0(int *param_1,int param_2,int param_3,int param_4,int param_5)
 
 {
@@ -46,7 +46,7 @@ undefined4 __cdecl st::fn_006F02D0(int *param_1,int param_2,int param_3,int para
 }
 
 // 006F07E0 FUN_006f07e0
-#line 1 "decomp/ST.exe/functions/006F07E0/decomp.c"
+#line 4 "decomp/ST.exe/functions/006F07E0/decomp.c"
 /* [STReturnSemanticsApplier] ignored_eax_void.
    Evidence: all observed direct callers ignore the return register (ignored=7, used=0), and
    decompilation contains no value return */
@@ -61,7 +61,7 @@ void __cdecl st::fn_006F07E0(int *param_1)
 }
 
 // 006F0E30 FUN_006f0e30
-#line 1 "decomp/ST.exe/functions/006F0E30/decomp.c"
+#line 4 "decomp/ST.exe/functions/006F0E30/decomp.c"
 int __cdecl st::fn_006F0E30(byte *param_1,byte *param_2)
 
 {
@@ -117,7 +117,7 @@ int st::fn_006F0EA0(int param_1)
 }
 
 // 006F1CB0 FUN_006f1cb0
-#line 1 "decomp/ST.exe/functions/006F1CB0/decomp.c"
+#line 4 "decomp/ST.exe/functions/006F1CB0/decomp.c"
 int __thiscall st::fn_006F1CB0(void *this,int param_1)
 
 {
@@ -128,7 +128,7 @@ int __thiscall st::fn_006F1CB0(void *this,int param_1)
 }
 
 // 006F21A0 FUN_006f21a0
-#line 1 "decomp/ST.exe/functions/006F21A0/decomp.c"
+#line 4 "decomp/ST.exe/functions/006F21A0/decomp.c"
 void __thiscall st::fn_006F21A0(void *this,uint param_1)
 
 {
@@ -137,7 +137,7 @@ void __thiscall st::fn_006F21A0(void *this,uint param_1)
 }
 
 // 006F2C00 FUN_006f2c00
-#line 1 "decomp/ST.exe/functions/006F2C00/decomp.c"
+#line 4 "decomp/ST.exe/functions/006F2C00/decomp.c"
 /* [STPrototypeApplier] Propagated parameter 0.
    Evidence: 005540E0 -> 006F2C00 @ 00554257 | 005540E0 -> 006F2C00 @ 00554306 | 005DCC10 ->
    006F2C00 @ 005DCC8B */
@@ -196,7 +196,7 @@ LPSTR __cdecl st::fn_006F2C00(char *text,int param_2,undefined4 param_3)
 }
 
 // 006F2CB0 FUN_006f2cb0
-#line 1 "decomp/ST.exe/functions/006F2CB0/decomp.c"
+#line 4 "decomp/ST.exe/functions/006F2CB0/decomp.c"
 uint __cdecl st::fn_006F2CB0(uint *param_1,char *param_2)
 
 {
@@ -210,7 +210,7 @@ uint __cdecl st::fn_006F2CB0(uint *param_1,char *param_2)
 }
 
 // 006F2CE0 FUN_006f2ce0
-#line 1 "decomp/ST.exe/functions/006F2CE0/decomp.c"
+#line 4 "decomp/ST.exe/functions/006F2CE0/decomp.c"
 int __cdecl st::fn_006F2CE0(byte *param_1,byte *param_2)
 
 {
@@ -221,7 +221,7 @@ int __cdecl st::fn_006F2CE0(byte *param_1,byte *param_2)
 }
 
 // 006F2D10 FUN_006f2d10
-#line 1 "decomp/ST.exe/functions/006F2D10/decomp.c"
+#line 4 "decomp/ST.exe/functions/006F2D10/decomp.c"
 uint __cdecl st::fn_006F2D10(byte *param_1,byte *param_2)
 
 {
@@ -1186,7 +1186,7 @@ cf_continue_loop_006F571D:
 }
 
 // 006F5760 FUN_006f5760
-#line 1 "decomp/ST.exe/functions/006F5760/decomp.c"
+#line 4 "decomp/ST.exe/functions/006F5760/decomp.c"
 /* WARNING: Restarted to delay deadcode elimination for space: stack */
 
 void st::fn_006F5760(undefined1 *param_1,int param_2,uint *param_3,int param_4,int param_5,
@@ -1390,7 +1390,7 @@ LAB_006f58d2:
 }
 
 // 006F5920 FUN_006f5920
-#line 1 "decomp/ST.exe/functions/006F5920/decomp.c"
+#line 4 "decomp/ST.exe/functions/006F5920/decomp.c"
 /* WARNING: Restarted to delay deadcode elimination for space: stack */
 
 uint st::fn_006F5920(byte *param_1,int param_2,uint *param_3,int param_4,int param_5,byte *param_6,
@@ -1625,7 +1625,7 @@ LAB_006f5b32:
 }
 
 // 006F5BD0 FUN_006f5bd0
-#line 1 "decomp/ST.exe/functions/006F5BD0/decomp.c"
+#line 4 "decomp/ST.exe/functions/006F5BD0/decomp.c"
 undefined1
 st::fn_006F5BD0(undefined1 *param_1,int param_2,byte *param_3,int param_4,int param_5,int param_6)
 
@@ -1711,7 +1711,7 @@ LAB_006f5c3f:
 }
 
 // 006F5C60 FUN_006f5c60
-#line 1 "decomp/ST.exe/functions/006F5C60/decomp.c"
+#line 4 "decomp/ST.exe/functions/006F5C60/decomp.c"
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 /* [STReturnSemanticsApplier] ignored_eax_void.
    Evidence: all observed direct callers ignore the return register (ignored=2, used=0, unknown=0),
@@ -1803,7 +1803,7 @@ void st::fn_006F5C60(undefined1 *param_1,int param_2,byte *param_3,int param_4,u
 }
 
 // 006F5D80 FUN_006f5d80
-#line 1 "decomp/ST.exe/functions/006F5D80/decomp.c"
+#line 4 "decomp/ST.exe/functions/006F5D80/decomp.c"
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
 void st::fn_006F5D80(undefined1 *param_1,int param_2,ushort *param_3,int param_4,uint param_5,
@@ -1993,7 +1993,7 @@ LAB_006f5df3:
 }
 
 // 006F6020 FUN_006f6020
-#line 1 "decomp/ST.exe/functions/006F6020/decomp.c"
+#line 4 "decomp/ST.exe/functions/006F6020/decomp.c"
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
 void st::fn_006F6020(undefined1 *param_1,int param_2,ushort *param_3,int param_4,uint param_5,
@@ -2779,7 +2779,7 @@ LAB_006f6770:
 }
 
 // 006F6AE0 FUN_006f6ae0
-#line 1 "decomp/ST.exe/functions/006F6AE0/decomp.c"
+#line 4 "decomp/ST.exe/functions/006F6AE0/decomp.c"
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
 void st::fn_006F6AE0(undefined1 *param_1,int param_2,ushort *param_3,int param_4,uint param_5,
@@ -3037,7 +3037,7 @@ LAB_006f6b90:
 }
 
 // 006F6EA0 FUN_006f6ea0
-#line 1 "decomp/ST.exe/functions/006F6EA0/decomp.c"
+#line 4 "decomp/ST.exe/functions/006F6EA0/decomp.c"
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
 void st::fn_006F6EA0(undefined1 *param_1,int param_2,ushort *param_3,int param_4,uint param_5,
@@ -3334,7 +3334,7 @@ LAB_006f6f50:
 }
 
 // 006F72F0 FUN_006f72f0
-#line 1 "decomp/ST.exe/functions/006F72F0/decomp.c"
+#line 4 "decomp/ST.exe/functions/006F72F0/decomp.c"
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
 void st::fn_006F72F0(byte *param_1,int param_2,ushort *param_3,int param_4,uint param_5,byte *param_6,
@@ -3752,7 +3752,7 @@ LAB_006f73be:
 }
 
 // 006F77E0 FUN_006f77e0
-#line 1 "decomp/ST.exe/functions/006F77E0/decomp.c"
+#line 4 "decomp/ST.exe/functions/006F77E0/decomp.c"
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
 void st::fn_006F77E0(byte *param_1,int param_2,ushort *param_3,int param_4,uint param_5,byte *param_6,
@@ -4180,7 +4180,7 @@ LAB_006f78b6:
 }
 
 // 006F7D10 FUN_006f7d10
-#line 1 "decomp/ST.exe/functions/006F7D10/decomp.c"
+#line 4 "decomp/ST.exe/functions/006F7D10/decomp.c"
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 /* [STReturnSemanticsApplier] ignored_eax_void.
    Evidence: all observed direct callers ignore the return register (ignored=2, used=0, unknown=0),
@@ -4378,7 +4378,7 @@ LAB_006f7d83:
 }
 
 // 006F7FC0 FUN_006f7fc0
-#line 1 "decomp/ST.exe/functions/006F7FC0/decomp.c"
+#line 4 "decomp/ST.exe/functions/006F7FC0/decomp.c"
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
 void st::fn_006F7FC0(undefined1 *param_1,int param_2,ushort *param_3,int param_4,uint param_5,
@@ -4537,7 +4537,7 @@ LAB_006f802d:
 }
 
 // 006F81D0 FUN_006f81d0
-#line 1 "decomp/ST.exe/functions/006F81D0/decomp.c"
+#line 4 "decomp/ST.exe/functions/006F81D0/decomp.c"
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
 void st::fn_006F81D0(undefined1 *param_1,int param_2,byte *param_3,int param_4,ushort *param_5,
@@ -4798,7 +4798,7 @@ LAB_006f827e:
 }
 
 // 006F85A0 FUN_006f85a0
-#line 1 "decomp/ST.exe/functions/006F85A0/decomp.c"
+#line 4 "decomp/ST.exe/functions/006F85A0/decomp.c"
 /* [STReturnSemanticsApplier] ignored_eax_void.
    Evidence: all observed direct callers ignore the return register (ignored=2, used=0, unknown=0),
    and decompilation contains no value return */
@@ -4881,7 +4881,7 @@ void st::fn_006F85A0(undefined1 *param_1,int param_2,byte *param_3,int param_4,b
 }
 
 // 006F8660 FUN_006f8660
-#line 1 "decomp/ST.exe/functions/006F8660/decomp.c"
+#line 4 "decomp/ST.exe/functions/006F8660/decomp.c"
 void st::fn_006F8660(undefined4 *param_1,int param_2,byte *param_3,int param_4,int param_5,uint param_6
                  ,uint param_7,int param_8)
 
@@ -5073,7 +5073,7 @@ LAB_006f86ce:
 }
 
 // 006F88A0 FUN_006f88a0
-#line 1 "decomp/ST.exe/functions/006F88A0/decomp.c"
+#line 4 "decomp/ST.exe/functions/006F88A0/decomp.c"
 /* [STReturnSemanticsApplier] ignored_eax_void.
    Evidence: all observed direct callers ignore the return register (ignored=2, used=0, unknown=0),
    and decompilation contains no value return */
@@ -6453,7 +6453,7 @@ LAB_006f9a4c:
 }
 
 // 006F9AD0 FUN_006f9ad0
-#line 1 "decomp/ST.exe/functions/006F9AD0/decomp.c"
+#line 4 "decomp/ST.exe/functions/006F9AD0/decomp.c"
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
 void st::fn_006F9AD0(byte *param_1,int param_2,ushort *param_3,int param_4,uint param_5,ushort *param_6
@@ -6997,7 +6997,7 @@ LAB_006fa1f3:
 }
 
 // 006FA280 FUN_006fa280
-#line 1 "decomp/ST.exe/functions/006FA280/decomp.c"
+#line 4 "decomp/ST.exe/functions/006FA280/decomp.c"
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
 void st::fn_006FA280(undefined1 *param_1,int param_2,ushort *param_3,int param_4,uint param_5,
@@ -7339,7 +7339,7 @@ LAB_006fa631:
 }
 
 // 006FA7A0 FUN_006fa7a0
-#line 1 "decomp/ST.exe/functions/006FA7A0/decomp.c"
+#line 4 "decomp/ST.exe/functions/006FA7A0/decomp.c"
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
 void st::fn_006FA7A0(undefined1 *param_1,int param_2,ushort *param_3,int param_4,uint param_5,
@@ -7766,7 +7766,7 @@ LAB_006fad74:
 }
 
 // 006FADC0 FUN_006fadc0
-#line 1 "decomp/ST.exe/functions/006FADC0/decomp.c"
+#line 4 "decomp/ST.exe/functions/006FADC0/decomp.c"
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
 void st::fn_006FADC0(undefined1 *param_1,int param_2,ushort *param_3,int param_4,uint param_5,
@@ -8258,7 +8258,7 @@ LAB_006fb415:
 }
 
 // 006FB4A0 FUN_006fb4a0
-#line 1 "decomp/ST.exe/functions/006FB4A0/decomp.c"
+#line 4 "decomp/ST.exe/functions/006FB4A0/decomp.c"
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
 void st::fn_006FB4A0(undefined1 *param_1,int param_2,ushort *param_3,int param_4,uint param_5,
@@ -9718,7 +9718,7 @@ LAB_006fca86:
 }
 
 // 006FCB30 FUN_006fcb30
-#line 1 "decomp/ST.exe/functions/006FCB30/decomp.c"
+#line 4 "decomp/ST.exe/functions/006FCB30/decomp.c"
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
 void st::fn_006FCB30(byte *param_1,int param_2,ushort *param_3,int param_4,uint param_5,byte *param_6,
@@ -10997,7 +10997,7 @@ LAB_006fdbfd:
 }
 
 // 006FDEA0 FUN_006fdea0
-#line 1 "decomp/ST.exe/functions/006FDEA0/decomp.c"
+#line 4 "decomp/ST.exe/functions/006FDEA0/decomp.c"
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
 void st::fn_006FDEA0(undefined1 *param_1,int param_2,ushort *param_3,int param_4,uint param_5,
@@ -11394,7 +11394,7 @@ LAB_006fe395:
 }
 
 // 006FE570 FUN_006fe570
-#line 1 "decomp/ST.exe/functions/006FE570/decomp.c"
+#line 4 "decomp/ST.exe/functions/006FE570/decomp.c"
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
 void st::fn_006FE570(undefined1 *param_1,int param_2,ushort *param_3,int param_4,uint param_5,
@@ -11893,7 +11893,7 @@ LAB_006feca3:
 }
 
 // 006FED50 FUN_006fed50
-#line 1 "decomp/ST.exe/functions/006FED50/decomp.c"
+#line 4 "decomp/ST.exe/functions/006FED50/decomp.c"
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
 void st::fn_006FED50(undefined1 *param_1,int param_2,ushort *param_3,int param_4,uint param_5,
@@ -12464,7 +12464,7 @@ LAB_006ff454:
 }
 
 // 006FF690 FUN_006ff690
-#line 1 "decomp/ST.exe/functions/006FF690/decomp.c"
+#line 4 "decomp/ST.exe/functions/006FF690/decomp.c"
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
 void st::fn_006FF690(undefined1 *param_1,int param_2,ushort *param_3,int param_4,uint param_5,

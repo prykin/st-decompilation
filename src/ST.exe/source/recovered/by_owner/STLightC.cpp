@@ -2,7 +2,7 @@
 // Generated translation unit: source/recovered/by_owner/STLightC.cpp
 
 // 0061D620 STLightC::STLightC
-#line 1 "decomp/ST.exe/functions/0061D620/decomp.c"
+#line 4 "decomp/ST.exe/functions/0061D620/decomp.c"
 /* [STConstructorApplier] Recovered constructor candidate.
    VTable: 0079CED4 (store 0061D628)
    Evidence: final_vptr=0079CED4; returns_this=true; calls_before=1; field_writes_after=0;
@@ -15,12 +15,12 @@ STLightC * __thiscall st::fn_0061D620(STLightC *this)
 
 {
   st::fn_006E60E0(this);
-  this->vtable = &STLightCVTable;
+  this->vtable = &st_global_0079CED4;
   return this;
 }
 
 // 0061D650 STLightC::sub_0061D650
-#line 1 "decomp/ST.exe/functions/0061D650/decomp.c"
+#line 4 "decomp/ST.exe/functions/0061D650/decomp.c"
 /* [STMethodOwnerApplier] Structural method owner recovered as STLightC.
    Evidence: this_call_owners=[STLightC]; agreed_this_calls=1; incoming_this_accesses=5;
    incoming_edx_uses=0; incoming_stack_parameter_uses=0; direct_non_thunk_callers=0;
@@ -44,7 +44,7 @@ void __thiscall st::fn_0061D650(STLightC *this)
 }
 
 // 0061D6D0 STLightC::sub_0061D6D0
-#line 1 "decomp/ST.exe/functions/0061D6D0/decomp.c"
+#line 4 "decomp/ST.exe/functions/0061D6D0/decomp.c"
 /* [STMethodOwnerApplier] Structural method owner recovered as STLightC.
    Evidence: this_call_owners=[STLightC]; agreed_this_calls=2; incoming_this_accesses=1;
    incoming_edx_uses=0; incoming_stack_parameter_uses=0; direct_non_thunk_callers=0;
@@ -70,7 +70,7 @@ int __thiscall st::fn_0061D6D0(STLightC *this)
 }
 
 // 0061D710 STLightC::sub_0061D710
-#line 1 "decomp/ST.exe/functions/0061D710/decomp.c"
+#line 4 "decomp/ST.exe/functions/0061D710/decomp.c"
 /* [STPrototypeApplier] Propagated return.
    Evidence: 0061D710 returns used as parameter 2 of STPlaySystemC::SaveObjData @ 0061D499
 
@@ -198,7 +198,7 @@ byte * __thiscall st::fn_0061D710(STLightC *this,int *param_1)
 }
 
 // 0061D8F0 STLightC::sub_0061D8F0
-#line 1 "decomp/ST.exe/functions/0061D8F0/decomp.c"
+#line 4 "decomp/ST.exe/functions/0061D8F0/decomp.c"
 /* [STMethodOwnerApplier] Structural method owner recovered as STLightC.
    Evidence: this_call_owners=[STLightC]; agreed_this_calls=1; incoming_this_accesses=4;
    incoming_edx_uses=0; incoming_stack_parameter_uses=3; direct_non_thunk_callers=0;
@@ -250,7 +250,7 @@ int __thiscall st::fn_0061D8F0(STLightC *this,undefined4 *param_1)
 }
 
 // 0061D9C0 STLightC::sub_0061D9C0
-#line 1 "decomp/ST.exe/functions/0061D9C0/decomp.c"
+#line 4 "decomp/ST.exe/functions/0061D9C0/decomp.c"
 /* [STPrototypeApplier] Propagated parameter 1.
    Evidence: 0061DB80 -> 0061D9C0 @ 0061DBE3
 
@@ -354,7 +354,7 @@ int __thiscall st::fn_0061D9C0(STLightC *this,ushort *param_1,int *param_2,int p
 }
 
 // 0061E4F0 STLightC::sub_0061E4F0
-#line 1 "decomp/ST.exe/functions/0061E4F0/decomp.c"
+#line 4 "decomp/ST.exe/functions/0061E4F0/decomp.c"
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 /* [STMethodOwnerApplier] Structural method owner recovered as STLightC.
    Evidence: this_call_owners=[STLightC]; agreed_this_calls=1; incoming_this_accesses=22;
@@ -419,7 +419,7 @@ void __thiscall st::fn_0061E4F0(STLightC *this)
 }
 
 // 0061F290 STLightC::sub_0061F290
-#line 1 "decomp/ST.exe/functions/0061F290/decomp.c"
+#line 4 "decomp/ST.exe/functions/0061F290/decomp.c"
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 /* [STMethodOwnerApplier] Structural method owner recovered as STLightC.
    Evidence: this_call_owners=[STLightC]; agreed_this_calls=1; incoming_this_accesses=3;
@@ -524,7 +524,7 @@ undefined4 __thiscall st::fn_0061F290(STLightC *this,int param_1)
 }
 
 // 0061F530 STLightC::sub_0061F530
-#line 1 "decomp/ST.exe/functions/0061F530/decomp.c"
+#line 4 "decomp/ST.exe/functions/0061F530/decomp.c"
 /* [STMethodOwnerApplier] Structural method owner recovered as STLightC.
    Evidence: this_call_owners=[STLightC]; agreed_this_calls=1; incoming_this_accesses=4;
    incoming_edx_uses=0; incoming_stack_parameter_uses=0; direct_non_thunk_callers=0;

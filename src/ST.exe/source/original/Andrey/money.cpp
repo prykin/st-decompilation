@@ -2,7 +2,7 @@
 // Generated translation unit: source/original/Andrey/money.cpp
 
 // 0052BF00 MoneyTy::GetMessage
-#line 1 "decomp/ST.exe/functions/0052BF00/decomp.c"
+#line 4 "decomp/ST.exe/functions/0052BF00/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\Andrey\money.cpp
    MoneyTy::GetMessage
@@ -289,7 +289,7 @@ int __thiscall st::fn_0052BF00(MoneyTy *this,STMessage *message)
       uVar13 = 0xffffffff;
       text = st::fn_0040577C("IND_PNT",0);
       puVar9 = st::fn_00709AF0
-                         (DAT_00806794,CASE_B,text,uVar13,bVar14,iVar7,iVar10,puVar15);
+                         (PTR_00806794,CASE_B,text,uVar13,bVar14,iVar7,iVar10,puVar15);
       this_00->field_0082 = puVar9;
       puVar15 = (undefined4 *)(DAT_0080679c + 0x28);
       iVar7 = 1;

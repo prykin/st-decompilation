@@ -144,7 +144,7 @@ LAB_00629242:
     return 0xffff;
   }
   puVar10 = Library::Ourlib::MFRLOAD::mfRLoad
-                      (DAT_00806774,CASE_1D,local_8[local_18 & 0xff],0xffffffff,0,1,0,
+                      (PTR_00806774,CASE_1D,local_8[local_18 & 0xff],0xffffffff,0,1,0,
                        nullptr);
   pSVar8 = local_1c;
   local_1c->field_00B6 = *(int *)puVar10;

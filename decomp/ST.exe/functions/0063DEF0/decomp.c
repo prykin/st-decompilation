@@ -28,7 +28,7 @@ undefined4 __thiscall STTmMineC::LoadImagNuclear(STTmMineC *this,int param_1)
   if (errorCode == 0) {
     if (local_c->field_033A == -1) {
       puVar3 = Library::Ourlib::MFRLOAD::mfRLoad
-                         (DAT_00806774,CASE_1D,"expl_nb0",0xffffffff,0,1,0,
+                         (PTR_00806774,CASE_1D,"expl_nb0",0xffffffff,0,1,0,
                           nullptr);
       ST3DSMAPContext::sub_006E8660
                 (pSVar2->field_0211,(int *)&local_8,1,0,STField<uint>(puVar3,9),
@@ -49,7 +49,7 @@ undefined4 __thiscall STTmMineC::LoadImagNuclear(STTmMineC *this,int param_1)
     }
     if ((pSVar2->field_0353 == -1) && (param_1 != 0)) {
       puVar3 = Library::Ourlib::MFRLOAD::mfRLoad
-                         (DAT_00806774,CASE_1D,"expl_fla",0xffffffff,0,1,0,
+                         (PTR_00806774,CASE_1D,"expl_fla",0xffffffff,0,1,0,
                           nullptr);
       pSVar2->field_034B = puVar3;
       pSVar2->field_034F = 0;

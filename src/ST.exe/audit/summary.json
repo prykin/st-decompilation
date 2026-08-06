@@ -1,15 +1,15 @@
 {
-  "generator_sha256": "4834016ca3dfa7a32e2ee8386d842ef669e832f2e48c081e7ec9fface25d74be",
+  "generator_sha256": "af9d898e582745206169d42875d723a5a8aaaf27ed38ebf8da6e9a2bf22a9032",
   "input_files": {
-    "call_relations.jsonl": "0d6fe4e788f4192c969a5a1909066dd27f50b24309d3d2a8cfdd64fdbb0f3e6b",
-    "functions.json": "9f906d5603fd9d6a7adb300e500643620497dfa30840b0a63562997056da4999",
-    "globals.jsonl": "4d35b65d7ca0a5bedc50144a68d19f78c2baa95dd70e93f4a17b303531e057cf",
+    "call_relations.jsonl": "b15294904ae21fa2bedf1fcd57dff466586e1da9a855419ecffffbb74d616c19",
+    "functions.json": "e6657fd0a649b27836e472555777541fe562a5366fec98065ada6ca2c64d00d6",
+    "globals.jsonl": "eed4196777fb9b849137306503d7f43d761a8dfac150bddd8b07f73e891436d4",
     "imports.json": "1292ae0f2b3d533808f0452471962f3c57fcf6e7d36043f54df1ab6db32f9092",
-    "manifest.json": "508df8e96ce8daa7057d61db1600acb12cf18f8f9d8968811f20e37ccda45902",
+    "manifest.json": "b2fe6680417bedc6a88a7a20885abc8d29bc40bc9e916dfb7131ff98d57b4450",
     "pseudocode_runtime.h": "86d2d54ce33726bbdcc27e3041ec892cbd728063e6c1de1a984c612cff89ec00",
-    "types.jsonl": "465ce9c2cd19c12fc34a526be05f2c60dc00539726cc3b746db93dc42af72553"
+    "types.jsonl": "5db45c5b37c6a86e63d4a9372cfc5b9a5f0fdafe5e63bcfdac58470d133b69da"
   },
-  "input_manifest_sha256": "508df8e96ce8daa7057d61db1600acb12cf18f8f9d8968811f20e37ccda45902",
+  "input_manifest_sha256": "b2fe6680417bedc6a88a7a20885abc8d29bc40bc9e916dfb7131ff98d57b4450",
   "issue_counts": {
     "ambiguous_direct_call": 20,
     "duplicate_field_name": 3,
@@ -17,9 +17,12 @@
     "host_type_reused": 1,
     "import_prototype_fallback": 3,
     "missing_type_path": 2,
+    "source_member_lifetime_deferred": 50,
+    "source_member_overload_conflict": 6,
+    "source_member_owner_ambiguous": 44,
     "type_name_collision": 3
   },
-  "program_semantic_sha256": "e1f9bb21bfcd91e18401c62060be8cb61a23b40b1aa776942fa539b09a6aadd0",
+  "program_semantic_sha256": "f33ed22b25e17675da07be95de14d2fe1c51d7b35859d86db60756558563a972",
   "schema": "st-source-generation-summary",
   "schema_version": 1,
   "statistics": {
@@ -29,13 +32,17 @@
     "declared_imports": 3,
     "direct_call_or_definition_rewrites": 37352,
     "exported_function_records": 10392,
-    "exported_type_records": 7509,
+    "exported_type_records": 7526,
     "external_call_identities": 263,
     "fallback_global_declarations": 1059,
     "fallback_import_declarations": 3,
     "function_definition_rewrites": 5712,
     "functions_with_recovered_source": 1044,
     "functions_without_recovered_source": 4668,
+    "generated_source_member_wrappers": 1292,
+    "generated_virtual_member_wrappers": 780,
+    "global_type_collision_rewrites": 231,
+    "materialized_gap_field_views": 2664,
     "translation_units": 318
   }
 }

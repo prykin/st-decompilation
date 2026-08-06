@@ -2,7 +2,7 @@
 // Generated translation unit: source/original/Andrey/upginfo.cpp
 
 // 005528B0 UpgPanelTy::InitUpgPanel
-#line 1 "decomp/ST.exe/functions/005528B0/decomp.c"
+#line 4 "decomp/ST.exe/functions/005528B0/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\Andrey\upginfo.cpp
    UpgPanelTy::InitUpgPanel */
@@ -44,10 +44,10 @@ void __thiscall st::fn_005528B0(UpgPanelTy *this)
     st::fn_00403800
               ((SpecPanelTy *)this_00,pCVar3,iVar2,uVar5,iVar6,iVar9,UVar10,uVar11,uVar12);
     puVar4 = st::fn_00709AF0
-                       (DAT_00806794,CASE_B,&DAT_007c20a0,0xffffffff,0,1,0,nullptr);
+                       (PTR_00806794,CASE_B,&DAT_007c20a0,0xffffffff,0,1,0,nullptr);
     this_00->field_03EB = puVar4;
     puVar4 = st::fn_00709AF0
-                       (DAT_00806794,CASE_B,&DAT_007c38c8,0xffffffff,0,1,0,nullptr);
+                       (PTR_00806794,CASE_B,&DAT_007c38c8,0xffffffff,0,1,0,nullptr);
     this_00->field_03EF = puVar4;
     puVar13 = nullptr;
     iVar6 = 0;
@@ -56,7 +56,7 @@ void __thiscall st::fn_005528B0(UpgPanelTy *this)
     uVar7 = 0xffffffff;
     pCVar3 = st::fn_0040577C("FRAMES",0);
     puVar4 = st::fn_00709AF0
-                       (DAT_00806794,CASE_B,pCVar3,uVar7,bVar8,iVar2,iVar6,puVar13);
+                       (PTR_00806794,CASE_B,pCVar3,uVar7,bVar8,iVar2,iVar6,puVar13);
     this_00->field_03F3 = puVar4;
     g_currentExceptionFrame = local_4c.previous;
     return;
@@ -72,7 +72,7 @@ void __thiscall st::fn_005528B0(UpgPanelTy *this)
 }
 
 // 00552A30 UpgPanelTy::DoneUpgPanel
-#line 1 "decomp/ST.exe/functions/00552A30/decomp.c"
+#line 4 "decomp/ST.exe/functions/00552A30/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\Andrey\upginfo.cpp
    UpgPanelTy::DoneUpgPanel */
@@ -108,7 +108,7 @@ void __thiscall st::fn_00552A30(UpgPanelTy *this)
 }
 
 // 00552AF0 UpgPanelTy::ShiftControls
-#line 1 "decomp/ST.exe/functions/00552AF0/decomp.c"
+#line 4 "decomp/ST.exe/functions/00552AF0/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\Andrey\upginfo.cpp
    UpgPanelTy::ShiftControls */
@@ -148,7 +148,7 @@ void __thiscall st::fn_00552AF0(UpgPanelTy *this,int param_1)
 }
 
 // 00552BC0 UpgPanelTy::Update
-#line 1 "decomp/ST.exe/functions/00552BC0/decomp.c"
+#line 4 "decomp/ST.exe/functions/00552BC0/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\Andrey\upginfo.cpp
    UpgPanelTy::Update */
@@ -255,7 +255,7 @@ void __thiscall st::fn_00552BC0(UpgPanelTy *this)
 }
 
 // 00552E40 UpgPanelTy::GetMessage
-#line 1 "decomp/ST.exe/functions/00552E40/decomp.c"
+#line 4 "decomp/ST.exe/functions/00552E40/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\Andrey\upginfo.cpp
    UpgPanelTy::GetMessage

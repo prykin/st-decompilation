@@ -116,7 +116,7 @@ void __thiscall FUN_00621780(void *this,uint param_1)
       break;
     case 8:
       uVar3 = 8;
-      text = LoadResourceString(0x274a,g_module_00807618);
+      text = LoadResourceString(0x274a,g_hINSTANCE_00807618);
       thunk_FUN_0052d320(g_popUp_008016D8,text,uVar3);
       if (DAT_0080874e == '\x01') {
         iVar1 = 0xba;

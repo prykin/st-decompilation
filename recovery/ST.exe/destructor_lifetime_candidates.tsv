@@ -73,10 +73,12 @@ address	function	owner	vtable_slots	deallocates_this	this_field_writes	zeroed_th
 004EDF30	BehPanelTy::ShiftControls	BehPanelTy	0x18	0	2	0	1	0	8
 004EE0A0	BehPanelTy::Update	BehPanelTy	0x20	0	0	0	0	0	11
 004EE4D0	BehPanelTy::GetMessage	BehPanelTy	0x0	0	0	0	0	0	19
+004EEFB0	BldBoatPanelTy::ShiftControls	BldBoatPanelTy	0x18	0	2	0	2	0	2
 004EF020	BldBoatPanelTy::Update	BldBoatPanelTy	0x1C	0	0	0	0	0	6
 004EF6D0	BldBoatPanelTy::GetMessage	BldBoatPanelTy	0x0	0	0	0	0	0	17
 004EFD10	BldLabPanelTy::Update	BldLabPanelTy	0x1C	0	0	0	0	0	6
 004F0210	BldLabPanelTy::GetMessage	BldLabPanelTy	0x0	0	0	0	0	0	12
+004F0AF0	BldObjPanelTy::ShiftControls	BldObjPanelTy	0x18	0	2	0	2	0	2
 004F0B60	BldObjPanelTy::Update	BldObjPanelTy	0x1C	0	0	0	0	0	6
 004F1080	BldObjPanelTy::GetMessage	BldObjPanelTy	0x0	0	0	0	0	0	16
 004FB060	CPanelTy::GetMessage	CPanelTy	0x0	0	1	0	0	0	158
@@ -214,6 +216,7 @@ address	function	owner	vtable_slots	deallocates_this	this_field_writes	zeroed_th
 005DCD90	StartSystemTy::CreateSystemObjects	StartSystemTy	0x14	0	0	0	0	0	1
 005DCDB0	StartSystemTy::DoneSystem	StartSystemTy	0x4	0	4	4	6	1	11
 005DCE90	StartSystemTy::GetMessage	StartSystemTy	0x20	0	0	0	0	0	36
+005E5FB0	MTestTy::GetMessage	MTestTy	0x0	0	1	0	0	0	31
 005E9830	WaitTy::CloseButtons	WaitTy	0x8	0	0	0	0	0	8
 005EA680	WaitTy::GetMessage	WaitTy	0x0	0	1	0	0	0	36
 005EAF10	STArtiafactC::GetMessage	STArtiafactC	0x0	0	0	0	1	0	55

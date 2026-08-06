@@ -2,7 +2,7 @@
 // Generated translation unit: source/recovered/by_owner/STManBasisC.cpp
 
 // 005F1350 STManBasisC::STManBasisC
-#line 1 "decomp/ST.exe/functions/005F1350/decomp.c"
+#line 4 "decomp/ST.exe/functions/005F1350/decomp.c"
 /* [STConstructorApplier] Recovered constructor candidate.
    VTable: 0079C580 (store 005F1363)
    Evidence: final_vptr=0079C580; returns_this=true; calls_before=1; field_writes_after=0;
@@ -18,7 +18,7 @@ STManBasisC * __thiscall st::fn_005F1350(STManBasisC *this)
   ushort **ppuVar2;
 
   st::fn_006E60E0(this);
-  this->vtable = &STManBasisCVTable;
+  this->vtable = &st_global_0079C580;
   ppuVar2 = &this->field_0020;
   for (iVar1 = 10; iVar1 != 0; iVar1 = iVar1 + -1) {
     *ppuVar2 = nullptr;
@@ -28,7 +28,7 @@ STManBasisC * __thiscall st::fn_005F1350(STManBasisC *this)
 }
 
 // 005F14B0 STManBasisC::sub_005F14B0
-#line 1 "decomp/ST.exe/functions/005F14B0/decomp.c"
+#line 4 "decomp/ST.exe/functions/005F14B0/decomp.c"
 /* [STMethodOwnerApplier] Structural method owner recovered as STManBasisC.
    Evidence: this_call_owners=[STManBasisC]; agreed_this_calls=1; incoming_this_accesses=3;
    incoming_edx_uses=0; incoming_stack_parameter_uses=6; direct_non_thunk_callers=0;
@@ -91,7 +91,7 @@ st::fn_005F14B0
 }
 
 // 005F19A0 STManBasisC::sub_005F19A0
-#line 1 "decomp/ST.exe/functions/005F19A0/decomp.c"
+#line 4 "decomp/ST.exe/functions/005F19A0/decomp.c"
 /* [STMethodOwnerApplier] Structural method owner recovered as STManBasisC.
    Evidence: this_call_owners=[STManBasisC]; agreed_this_calls=1; incoming_this_accesses=3;
    incoming_edx_uses=0; incoming_stack_parameter_uses=0; direct_non_thunk_callers=0;
@@ -213,7 +213,7 @@ LAB_005f1c99:
 }
 
 // 005F1FA0 STManBasisC::sub_005F1FA0
-#line 1 "decomp/ST.exe/functions/005F1FA0/decomp.c"
+#line 4 "decomp/ST.exe/functions/005F1FA0/decomp.c"
 /* [STPrototypeApplier] Propagated return.
    Evidence: 005F1FA0 returns used as parameter 2 of STPlaySystemC::SaveObjData @ 005F1236
 
@@ -296,7 +296,7 @@ byte * __thiscall st::fn_005F1FA0(STManBasisC *this,int *param_1)
 }
 
 // 005F2110 STManBasisC::sub_005F2110
-#line 1 "decomp/ST.exe/functions/005F2110/decomp.c"
+#line 4 "decomp/ST.exe/functions/005F2110/decomp.c"
 /* [STMethodOwnerApplier] Structural method owner recovered as STManBasisC.
    Evidence: this_call_owners=[STManBasisC]; agreed_this_calls=1; incoming_this_accesses=7;
    incoming_edx_uses=0; incoming_stack_parameter_uses=1; direct_non_thunk_callers=0;
@@ -348,7 +348,7 @@ undefined4 __thiscall st::fn_005F2110(STManBasisC *this,undefined4 *param_1)
 }
 
 // 005F21D0 STManBasisC::sub_005F21D0
-#line 1 "decomp/ST.exe/functions/005F21D0/decomp.c"
+#line 4 "decomp/ST.exe/functions/005F21D0/decomp.c"
 /* [STMethodOwnerApplier] Structural method owner recovered as STManBasisC.
    Evidence: this_call_owners=[STManBasisC]; agreed_this_calls=1; incoming_this_accesses=4;
    incoming_edx_uses=0; incoming_stack_parameter_uses=0; direct_non_thunk_callers=0;
@@ -406,7 +406,7 @@ int __thiscall st::fn_005F21D0(STManBasisC *this)
 }
 
 // 005F2330 STManBasisC::sub_005F2330
-#line 1 "decomp/ST.exe/functions/005F2330/decomp.c"
+#line 4 "decomp/ST.exe/functions/005F2330/decomp.c"
 /* [STMethodOwnerApplier] Structural method owner recovered as STManBasisC.
    Evidence: this_call_owners=[STManBasisC]; agreed_this_calls=1; incoming_this_accesses=6;
    incoming_edx_uses=0; incoming_stack_parameter_uses=0; direct_non_thunk_callers=0;

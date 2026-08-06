@@ -2,7 +2,7 @@
 // Generated translation unit: source/original/nick/to_Expl.cpp
 
 // 00603740 STExplosion::GetMessage
-#line 1 "decomp/ST.exe/functions/00603740/decomp.c"
+#line 4 "decomp/ST.exe/functions/00603740/decomp.c"
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 /* Recovered from embedded debug metadata:
    E:\__titans\nick\to_Expl.cpp
@@ -324,7 +324,7 @@ int __thiscall st::fn_00603740(STExplosion *this,STMessage *message)
 }
 
 // 006041A0 STExplosionC::CreateGroupPart
-#line 1 "decomp/ST.exe/functions/006041A0/decomp.c"
+#line 4 "decomp/ST.exe/functions/006041A0/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\nick\to_Expl.cpp
    STExplosionC::CreateGroupPart */
@@ -385,7 +385,7 @@ int __thiscall st::fn_006041A0(STExplosionC *this,int param_1)
 }
 
 // 00604A90 STExplosionC::SaveObj
-#line 1 "decomp/ST.exe/functions/00604A90/decomp.c"
+#line 4 "decomp/ST.exe/functions/00604A90/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\nick\to_Expl.cpp
    STExplosionC::SaveObj */
@@ -538,7 +538,7 @@ undefined4 * __thiscall st::fn_00604A90(STExplosionC *this,uint *param_1)
 }
 
 // 006051B0 STExplosionC::LoadImagSpr
-#line 1 "decomp/ST.exe/functions/006051B0/decomp.c"
+#line 4 "decomp/ST.exe/functions/006051B0/decomp.c"
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 /* Recovered from embedded debug metadata:
    E:\__titans\nick\to_Expl.cpp
@@ -588,7 +588,7 @@ st::fn_006051B0(STExplosionC *this,undefined4 param_1,undefined4 param_2,char pa
   }
   if ((param_3 != '\0') && (local_18->field_02AF != nullptr)) {
     local_8 = (&PTR_s_expl_bbt0_007cedc0)[local_c];
-    iVar5 = st::fn_00404183(local_18->field_02AF,0xf,DAT_00806774,local_8,0x1d);
+    iVar5 = st::fn_00404183(local_18->field_02AF,0xf,PTR_00806774,local_8,0x1d);
     if (iVar5 != 0) {
       return 0xffff;
     }
@@ -611,7 +611,7 @@ st::fn_006051B0(STExplosionC *this,undefined4 param_1,undefined4 param_2,char pa
     pSVar4->field_02AF = pSVar7;
   }
   if ((&DAT_007cede8)[local_c] == '\0') {
-    iVar5 = st::fn_0040537B(pSVar4->field_02AF,DAT_008073cc,0x5a,0x45,nullptr,0xb4,0x8c,
+    iVar5 = st::fn_0040537B(pSVar4->field_02AF,PTR_008073cc,0x5a,0x45,nullptr,0xb4,0x8c,
                             0x11);
     if (iVar5 != 0) {
       st::fn_006A5E40
@@ -620,7 +620,7 @@ st::fn_006051B0(STExplosionC *this,undefined4 param_1,undefined4 param_2,char pa
     }
   }
   else {
-    iVar5 = st::fn_0040537B(pSVar4->field_02AF,DAT_008073cc,0x78,0x56,nullptr,0xf0,0xbe,
+    iVar5 = st::fn_0040537B(pSVar4->field_02AF,PTR_008073cc,0x78,0x56,nullptr,0xf0,0xbe,
                             0x11);
     if (iVar5 != 0) {
       st::fn_006A5E40
@@ -630,9 +630,9 @@ st::fn_006051B0(STExplosionC *this,undefined4 param_1,undefined4 param_2,char pa
     st::fn_006E9210
               (g_sT3DSMAPContext_00807598,pSVar4->field_02AF->field_0018);
   }
-  iVar5 = st::fn_00404183(pSVar4->field_02AF,0xd,DAT_00806774,local_8,0x1d);
+  iVar5 = st::fn_00404183(pSVar4->field_02AF,0xd,PTR_00806774,local_8,0x1d);
   if (iVar5 == 0) {
-    iVar5 = st::fn_00404183(pSVar4->field_02AF,0xe,DAT_00806774,local_10,0x1d);
+    iVar5 = st::fn_00404183(pSVar4->field_02AF,0xe,PTR_00806774,local_10,0x1d);
     if (iVar5 != 0) {
       return 0xffff;
     }

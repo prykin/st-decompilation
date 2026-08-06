@@ -2,7 +2,7 @@
 // Generated translation unit: source/original/nick/to_ruinm.cpp
 
 // 00630430 STManRuinC::GetMessage
-#line 1 "decomp/ST.exe/functions/00630430/decomp.c"
+#line 4 "decomp/ST.exe/functions/00630430/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\nick\to_ruinm.cpp
    STManRuinC::GetMessage

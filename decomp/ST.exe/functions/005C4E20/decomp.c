@@ -78,7 +78,7 @@ void __thiscall SettMapTy::PaintSettMap(SettMapTy *this,char param_1)
     pcVar8 = g_startSystem_0081176C->field_0030;
     uVar7 = 0xffffffff;
     uVar6 = 0xfffffffe;
-    resourceString = (uint *)LoadResourceString(0x26b2,g_module_00807618);
+    resourceString = (uint *)LoadResourceString(0x26b2,g_hINSTANCE_00807618);
     StartServTy::WrTextDDX(this_00,0,0xe9,0x14,0x14c,0x18,resourceString,uVar6,uVar7,pcVar8,uVar9);
     g_currentExceptionFrame = local_4c.previous;
     return;

@@ -2,7 +2,7 @@
 // Generated translation unit: source/recovered/by_owner/STPlaySystemC.cpp
 
 // 0054CB40 STPlaySystemC::STPlaySystemC
-#line 1 "decomp/ST.exe/functions/0054CB40/decomp.c"
+#line 4 "decomp/ST.exe/functions/0054CB40/decomp.c"
 /* [STPrototypeApplier] Propagated parameter 1.
    Evidence: 0054C740 -> 0054CB40 @ 0054C78B
 
@@ -15,7 +15,7 @@ STPlaySystemC * __thiscall st::fn_0054CB40(STPlaySystemC *this,AppClassTy *param
 
 {
   st::fn_006E6100((SystemWithNamedObjClassTy *)this,param_1,4);
-  this->vtable = &STPlaySystemCVTable;
+  this->vtable = &st_global_0079AE38;
   this->field_0034 = 0;
   this->field_00E4 = 0;
   this->field_0028 = 0;
@@ -27,7 +27,7 @@ STPlaySystemC * __thiscall st::fn_0054CB40(STPlaySystemC *this,AppClassTy *param
 }
 
 // 0054EBB0 STPlaySystemC::sub_0054EBB0
-#line 1 "decomp/ST.exe/functions/0054EBB0/decomp.c"
+#line 4 "decomp/ST.exe/functions/0054EBB0/decomp.c"
 /* [STMethodOwnerApplier] Structural method owner recovered as STPlaySystemC.
    Evidence: this_call_owners=[STPlaySystemC]; agreed_this_calls=2; incoming_this_accesses=4;
    incoming_edx_uses=0; incoming_stack_parameter_uses=2; direct_non_thunk_callers=0;
@@ -48,7 +48,7 @@ void __thiscall st::fn_0054EBB0(STPlaySystemC *this,char *param_1,uint param_2)
 }
 
 // 00550190 STPlaySystemC::sub_00550190
-#line 1 "decomp/ST.exe/functions/00550190/decomp.c"
+#line 4 "decomp/ST.exe/functions/00550190/decomp.c"
 /* [STMethodOwnerApplier] Structural method owner recovered as STPlaySystemC.
    Evidence: this_call_owners=[STPlaySystemC]; agreed_this_calls=1; incoming_this_accesses=4;
    incoming_edx_uses=0; incoming_stack_parameter_uses=0; direct_non_thunk_callers=0;
@@ -74,7 +74,7 @@ void __thiscall st::fn_00550190(STPlaySystemC *this)
 }
 
 // 005505D0 STPlaySystemC::sub_005505D0
-#line 1 "decomp/ST.exe/functions/005505D0/decomp.c"
+#line 4 "decomp/ST.exe/functions/005505D0/decomp.c"
 /* [STMethodOwnerApplier] Structural method owner recovered as STPlaySystemC.
    Evidence: this_call_owners=[STPlaySystemC]; agreed_this_calls=2; incoming_this_accesses=15;
    incoming_edx_uses=0; incoming_stack_parameter_uses=9; direct_non_thunk_callers=0;
@@ -121,7 +121,7 @@ void __thiscall st::fn_005505D0(STPlaySystemC *this,int param_1,int *param_2)
         if ((DVar2 - this->field_00A7) / 5 < 0x7d1) {
           if (g_popUp_008016D8 != nullptr) {
             uVar4 = 9;
-            pcVar1 = st::fn_006B0140(17000,g_module_00807618);
+            pcVar1 = st::fn_006B0140(17000,g_hINSTANCE_00807618);
             st::fn_004014D8(g_popUp_008016D8,pcVar1,uVar4);
           }
           this->field_00BB = 0;
@@ -136,7 +136,7 @@ void __thiscall st::fn_005505D0(STPlaySystemC *this,int param_1,int *param_2)
             puVar5 = &DAT_00808ab0 + (int)param_2 * 0x27;
             if (((&DAT_00808af0)[(int)param_2 * 0x27] == param_1) &&
                ((&DAT_00808af6)[(int)param_2 * 0x9c] != '\0')) {
-              pcVar1 = st::fn_006B0140(0x426d,g_module_00807618);
+              pcVar1 = st::fn_006B0140(0x426d,g_hINSTANCE_00807618);
               st::external_00000080(local_10c,"%s %s",pcVar1,puVar5);
               if (g_popUp_008016D8 != nullptr) {
                 st::fn_004014D8(g_popUp_008016D8,local_10c,8);
@@ -155,7 +155,7 @@ void __thiscall st::fn_005505D0(STPlaySystemC *this,int param_1,int *param_2)
 }
 
 // 006E57B0 STPlaySystemC::sub_006E57B0
-#line 1 "decomp/ST.exe/functions/006E57B0/decomp.c"
+#line 4 "decomp/ST.exe/functions/006E57B0/decomp.c"
 /* [STMethodOwnerApplier] Structural method owner recovered as STPlaySystemC.
    Evidence: this_call_owners=[STPlaySystemC]; agreed_this_calls=1; incoming_this_accesses=3;
    incoming_edx_uses=0; incoming_stack_parameter_uses=1; direct_non_thunk_callers=1;
@@ -201,7 +201,7 @@ void __thiscall st::fn_006E57B0(STPlaySystemC *this,int param_1)
 }
 
 // 006E62D0 STPlaySystemC::sub_006E62D0
-#line 1 "decomp/ST.exe/functions/006E62D0/decomp.c"
+#line 4 "decomp/ST.exe/functions/006E62D0/decomp.c"
 /* [STMethodOwnerApplier] Structural method owner recovered as STPlaySystemC.
    Evidence: this_call_owners=[STPlaySystemC]; agreed_this_calls=133; incoming_this_accesses=2;
    incoming_edx_uses=0; incoming_stack_parameter_uses=2; direct_non_thunk_callers=89;

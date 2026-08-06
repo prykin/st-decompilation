@@ -210,7 +210,7 @@ LAB_0058e87e:
       local_30.field_0014 = &DAT_00811728;
       local_8->GetMessage(&local_30);
       this->field_023D = 0;
-      iVar5 = STT3DSprC::LoadSequence((STT3DSprC *)this_00,8,DAT_00806764,"expshark",0x1d);
+      iVar5 = STT3DSprC::LoadSequence((STT3DSprC *)this_00,8,PTR_00806764,"expshark",0x1d);
       if (iVar5 != 0) {
         return;
       }

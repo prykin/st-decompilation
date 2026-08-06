@@ -160,7 +160,7 @@ LAB_005c1806:
   }
   Library::DKW::DDX::FUN_006b48e0
             ((int)g_dDXContext_0080759C,pAVar4->field_000C,pAVar4->field_0010,local_8->field_0073,0,
-             iVar5,iVar7,pAVar4->field_0014,pAVar4->field_0018,(int)&local_8->field_0xa3,0x4c,
+             iVar5,iVar7,pAVar4->field_0014,pAVar4->field_0018,(ushort *)&local_8->field_00A3,0x4c,
              0x10000ff);
   g_currentExceptionFrame = local_8c.previous;
   return;

@@ -46,6 +46,7 @@ import ghidra.program.model.listing.Variable;
 import ghidra.program.model.symbol.Namespace;
 import ghidra.program.model.symbol.SourceType;
 import ghidra.program.model.symbol.SymbolTable;
+import ghidra.util.SystemUtilities;
 
 public class STHiddenThisApplier extends GhidraScript {
     private static final String TAG = "RECOVERED_HIDDEN_THIS";
@@ -118,6 +119,7 @@ public class STHiddenThisApplier extends GhidraScript {
         for (Map<String, String> row : tsv.rows) {
             monitor.checkCancelled();
             int reportIndex = report.size();
+            long modificationBefore = currentProgram.getModificationNumber();
             int transaction = currentProgram.startTransaction(
                 "Apply recovered hidden this " + row.get("address"));
             boolean commit = false;
@@ -130,7 +132,10 @@ public class STHiddenThisApplier extends GhidraScript {
             finally {
                 currentProgram.endTransaction(transaction, commit);
             }
-            settleBackgroundAnalysis(row.get("address"));
+            // Disabled, preserved, and already-equal rows cannot have queued analysis. Avoid
+            // asking Ghidra to drain its global queue hundreds of times for no-op proposals.
+            if (currentProgram.getModificationNumber() != modificationBefore)
+                settleBackgroundAnalysis(row.get("address"));
             if (!commit && report.size() > reportIndex) {
                 ReportRow result = report.get(reportIndex);
                 report.set(reportIndex, new ReportRow(result.address, "conflict",
@@ -158,19 +163,35 @@ public class STHiddenThisApplier extends GhidraScript {
             AutoAnalysisManager.getAnalysisManager(currentProgram);
         // isAnalyzing() may become false just before the worker transaction closes, so the
         // wait is intentionally unconditional and followed by a bounded transaction drain.
-        analysis.waitForAnalysis(null, monitor);
+        drainAnalysis(analysis);
         for (int attempt = 0; attempt < 500; attempt++) {
             monitor.checkCancelled();
             TransactionInfo transaction = currentProgram.getCurrentTransactionInfo();
-            if (transaction == null || !onlyAutoAnalysisOpen(transaction)) break;
-            if (analysis.isAnalyzing()) analysis.waitForAnalysis(null, monitor);
+            if (transaction == null || completedTransactionSnapshot(transaction) ||
+                    !onlyAutoAnalysisOpen(transaction)) break;
+            if (analysis.isAnalyzing()) drainAnalysis(analysis);
             else Thread.sleep(10);
         }
         TransactionInfo transaction = currentProgram.getCurrentTransactionInfo();
-        if (transaction != null)
+        if (transaction != null && !completedTransactionSnapshot(transaction))
             throw new IllegalStateException("Program transaction did not drain after hidden-this " +
                 address + ": status=" + transaction.getStatus() +
                 ", open_subtransactions=" + transaction.getOpenSubTransactions());
+    }
+
+    private void drainAnalysis(AutoAnalysisManager analysis) {
+        // Ghidra 12.1.2 waitForAnalysis() persists analyzer timing options after the queue has
+        // drained. Headless scripts are outside a Program transaction here, so that diagnostic
+        // write throws NoTransactionException. The synchronous path drains the same queue
+        // without attempting the OptionsDB write.
+        if (SystemUtilities.isInHeadlessMode()) analysis.startAnalysis(monitor, false);
+        else analysis.waitForAnalysis(null, monitor);
+    }
+
+    private boolean completedTransactionSnapshot(TransactionInfo transaction) {
+        return transaction != null &&
+            transaction.getStatus() == TransactionInfo.Status.COMMITTED &&
+            transaction.getOpenSubTransactions().isEmpty();
     }
 
     private boolean onlyAutoAnalysisOpen(TransactionInfo transaction) {

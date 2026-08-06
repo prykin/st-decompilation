@@ -2,7 +2,7 @@
 // Generated translation unit: source/recovered/by_owner/MReportTy.cpp
 
 // 005C00D0 MReportTy::sub_005C00D0
-#line 1 "decomp/ST.exe/functions/005C00D0/decomp.c"
+#line 4 "decomp/ST.exe/functions/005C00D0/decomp.c"
 /* [STMethodOwnerApplier] Structural method owner recovered as MReportTy.
    Evidence: this_call_owners=[MReportTy]; agreed_this_calls=1; incoming_this_accesses=12;
    incoming_edx_uses=0; incoming_stack_parameter_uses=0; direct_non_thunk_callers=0;
@@ -41,7 +41,7 @@ void __thiscall st::fn_005C00D0(MReportTy *this)
 }
 
 // 005C0190 MReportTy::sub_005C0190
-#line 1 "decomp/ST.exe/functions/005C0190/decomp.c"
+#line 4 "decomp/ST.exe/functions/005C0190/decomp.c"
 /* [STMethodOwnerApplier] Structural method owner recovered as MReportTy.
    Evidence: this_call_owners=[MReportTy]; agreed_this_calls=1; incoming_this_accesses=10;
    incoming_edx_uses=0; incoming_stack_parameter_uses=0; direct_non_thunk_callers=0;
@@ -75,7 +75,7 @@ void __thiscall st::fn_005C0190(MReportTy *this)
 }
 
 // 005C05F0 MReportTy::sub_005C05F0
-#line 1 "decomp/ST.exe/functions/005C05F0/decomp.c"
+#line 4 "decomp/ST.exe/functions/005C05F0/decomp.c"
 /* [STMethodOwnerApplier] Structural method owner recovered as MReportTy.
    Evidence: this_call_owners=[MReportTy]; agreed_this_calls=3; incoming_this_accesses=26;
    incoming_edx_uses=0; incoming_stack_parameter_uses=0; direct_non_thunk_callers=0;

@@ -55,7 +55,7 @@ undefined4 __thiscall STTmMineC::LoadImagSpr(STTmMineC *this,uint param_1,int pa
       return 0xffff;
     }
     puVar6 = Library::Ourlib::MFRLOAD::mfRLoad
-                       (DAT_00806764,CASE_1D,(&PTR_s_blast_p_007d1f68)[*(int *)element_0336],0xffffffff
+                       (PTR_00806764,CASE_1D,(&PTR_s_blast_p_007d1f68)[*(int *)element_0336],0xffffffff
                         ,0,1,0,nullptr);
     pSVar4 = local_10;
     uVar2 = *(uint *)(pcVar5 + 0x38);

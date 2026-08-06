@@ -39,11 +39,11 @@ LAB_005df673:
     g_currentExceptionFrame = &local_4c;
     errorCode = Library::MSVCRT::__setjmp3(local_4c.jumpBuffer,0);
     if (errorCode == 0) {
-      if (local_8[0xb] != 0) {
+      if ((ushort *)local_8[0xb] != nullptr) {
         pAVar2 = (AnonPointee_MReportTy_0073 *)local_8[local_8[4] + 1];
         Library::DKW::DDX::FUN_006b48e0
                   ((int)param_1,param_4,param_5,pAVar2,0,0,0,pAVar2->field_0004,pAVar2->field_0008,
-                   local_8[0xb],0,0x10000ff);
+                   (ushort *)local_8[0xb],0,0x10000ff);
         g_currentExceptionFrame = local_4c.previous;
         return;
       }

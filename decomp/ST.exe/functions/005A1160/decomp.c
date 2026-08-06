@@ -87,7 +87,7 @@ void __thiscall FSGSTy::CheckUpdate(FSGSTy *this)
   uVar7 = 2;
   iVar12 = -1;
   iVar4 = -2;
-  resourceString = (uint *)LoadResourceString(0x25bd,g_module_00807618);
+  resourceString = (uint *)LoadResourceString(0x25bd,g_hINSTANCE_00807618);
   ccFntTy::WrTxt(this_01->field_1A73,resourceString,iVar4,iVar12,uVar7,iVar13,iVar14);
   FUN_006b35d0((int *)g_ddxContext_008075A8,this_01->field_1ABC);
   pSVar10 = &local_2c;

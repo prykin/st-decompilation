@@ -2,7 +2,7 @@
 // Generated translation unit: source/original/Start/startsys.cpp
 
 // 005DAC80 StartSystemTy::GetIP
-#line 1 "decomp/ST.exe/functions/005DAC80/decomp.c"
+#line 4 "decomp/ST.exe/functions/005DAC80/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\Start\startsys.cpp
    StartSystemTy::GetIP */
@@ -66,7 +66,7 @@ void __thiscall st::fn_005DAC80(StartSystemTy *this)
 }
 
 // 005DADF0 StartSystemTy::InitChat
-#line 1 "decomp/ST.exe/functions/005DADF0/decomp.c"
+#line 4 "decomp/ST.exe/functions/005DADF0/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\Start\startsys.cpp
    StartSystemTy::InitChat
@@ -92,10 +92,10 @@ void __thiscall st::fn_005DADF0(StartSystemTy *this)
   local_8 = this;
   errorCode = st::fn_0072D7F0(local_4c.jumpBuffer,0);
   if (errorCode == 0) {
-    if (DAT_0080c4fa != nullptr) {
-      st::fn_006B5570(DAT_0080c4fa);
+    if (g_dArray_0080C4FA != nullptr) {
+      st::fn_006B5570(g_dArray_0080C4FA);
     }
-    DAT_0080c4fa = st::fn_006B54F0(nullptr,100,0x14);
+    g_dArray_0080C4FA = st::fn_006B54F0(nullptr,100,0x14);
     puVar1 = local_8->field_067E;
     if (puVar1 != nullptr) {
       uVar6 = *(uint *)(puVar1 + 10);
@@ -127,7 +127,7 @@ void __thiscall st::fn_005DADF0(StartSystemTy *this)
 }
 
 // 005DB4F0 StartSystemTy::LoadGraph
-#line 1 "decomp/ST.exe/functions/005DB4F0/decomp.c"
+#line 4 "decomp/ST.exe/functions/005DB4F0/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\Start\startsys.cpp
    StartSystemTy::LoadGraph */
@@ -235,7 +235,7 @@ undefined4 __thiscall st::fn_005DB4F0(StartSystemTy *this)
               ((SpriteClassTy *)&pSVar2->field_02F8,(int *)g_ddxContext_008075A8,0x32,'\a',
                nullptr,0,0);
     /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-    (**(code **)(pSVar2->field_02F8 + 4))(DAT_00806784,7,0,"MM_MAP",0xffffffff);
+    (**(code **)(pSVar2->field_02F8 + 4))(PTR_00806784,7,0,"MM_MAP",0xffffffff);
     pSVar2->field_0314 = 1;
     pSVar2->field_0318 = 0;
     pSVar2->field_0300 = 0;
@@ -243,7 +243,7 @@ undefined4 __thiscall st::fn_005DB4F0(StartSystemTy *this)
               ((SpriteClassTy *)&pSVar2->field_038D,(int *)g_ddxContext_008075A8,0x31,'\a',
                nullptr,0,0);
     /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-    (**(code **)(pSVar2->field_038D + 4))(DAT_00806784,7,0,"MM_SLDUP",0xffffffff);
+    (**(code **)(pSVar2->field_038D + 4))(PTR_00806784,7,0,"MM_SLDUP",0xffffffff);
     pSVar2->field_03A9 = 0xe5;
     pSVar2->field_03AD = 0xb8;
     pSVar2->field_0395 = 0;
@@ -254,7 +254,7 @@ undefined4 __thiscall st::fn_005DB4F0(StartSystemTy *this)
               ((SpriteClassTy *)&pSVar2->field_041E,(int *)g_ddxContext_008075A8,0x31,'\a',
                nullptr,0,0);
     /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-    (**(code **)(pSVar2->field_041E + 4))(DAT_00806784,7,0,"MM_SLDDN",0xffffffff);
+    (**(code **)(pSVar2->field_041E + 4))(PTR_00806784,7,0,"MM_SLDDN",0xffffffff);
     pSVar2->field_043A = 0xe5;
     pSVar2->field_043E = 0x1b8;
     pSVar2->field_0426 = 0;
@@ -265,7 +265,7 @@ undefined4 __thiscall st::fn_005DB4F0(StartSystemTy *this)
               ((SpriteClassTy *)&pSVar2->field_04AF,(int *)g_ddxContext_008075A8,0x31,'\a',
                nullptr,0,0);
     /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-    (**(code **)(pSVar2->field_04AF + 4))(DAT_00806784,7,0,"MM_SLDT",0xffffffff);
+    (**(code **)(pSVar2->field_04AF + 4))(PTR_00806784,7,0,"MM_SLDT",0xffffffff);
     pSVar2->field_04CB = 0xeb;
     pSVar2->field_04CF = 0xd8;
     pSVar2->field_04B7 = 0;
@@ -327,12 +327,12 @@ undefined4 __thiscall st::fn_005DB4F0(StartSystemTy *this)
     st::fn_006B3AF0((int *)g_ddxContext_008075A8,*puVar8);
     pDVar9 = st::fn_006B54F0(nullptr,1,1);
     pSVar2->field_0686 = pDVar9;
-    st::fn_006B6020(&pDVar9->flags,0,&DAT_008016a0);
+    st::fn_006B6020(pDVar9,0,&DAT_008016a0);
     st::fn_007158A0
               ((SpriteClassTy *)&pSVar2->field_055C,(int *)g_ddxContext_008075A8,0x31,'\a',
                nullptr,0,0);
     /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-    (**(code **)(pSVar2->field_055C + 4))(DAT_00806784,7,0,"MM_SLDUP",0xffffffff);
+    (**(code **)(pSVar2->field_055C + 4))(PTR_00806784,7,0,"MM_SLDUP",0xffffffff);
     pSVar2->field_0578 = 0x23a;
     pSVar2->field_057C = 500;
     pSVar2->field_0564 = 0;
@@ -340,7 +340,7 @@ undefined4 __thiscall st::fn_005DB4F0(StartSystemTy *this)
               ((SpriteClassTy *)&pSVar2->field_05ED,(int *)g_ddxContext_008075A8,0x31,'\a',
                nullptr,0,0);
     /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-    (**(code **)(pSVar2->field_05ED + 4))(DAT_00806784,7,0,"MM_SLDDN",0xffffffff);
+    (**(code **)(pSVar2->field_05ED + 4))(PTR_00806784,7,0,"MM_SLDDN",0xffffffff);
     iVar3 = 1;
     pSVar2->field_0609 = 0x23a;
     puVar5 = pSVar2->field_02F0 + 0x14;
@@ -385,7 +385,7 @@ undefined4 __thiscall st::fn_005DB4F0(StartSystemTy *this)
 }
 
 // 005DBE50 StartSystemTy::OutBmpProc
-#line 1 "decomp/ST.exe/functions/005DBE50/decomp.c"
+#line 4 "decomp/ST.exe/functions/005DBE50/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\Start\startsys.cpp
    StartSystemTy::OutBmpProc */
@@ -422,7 +422,7 @@ st::fn_005DBE50
 }
 
 // 005DBF40 StartSystemTy::OutBmpProc
-#line 1 "decomp/ST.exe/functions/005DBF40/decomp.c"
+#line 4 "decomp/ST.exe/functions/005DBF40/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\Start\startsys.cpp
    StartSystemTy::OutBmpProc
@@ -447,7 +447,7 @@ st::fn_005DBF40
     if (errorCode == 0) {
       st::fn_006B48E0
                 (param_1,param_4,param_5,param_8,0,0,0,param_8->field_0004,param_8->field_0008,
-                 (int)&g_startSystem_0081176C->field_0x144,0,0x10000ff);
+                 (ushort *)&g_startSystem_0081176C->field_0x144,0,0x10000ff);
       g_currentExceptionFrame = local_48.previous;
       return;
     }
@@ -463,7 +463,7 @@ st::fn_005DBF40
 }
 
 // 005DC050 StartSystemTy::LoadMapData
-#line 1 "decomp/ST.exe/functions/005DC050/decomp.c"
+#line 4 "decomp/ST.exe/functions/005DC050/decomp.c"
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 /* Recovered from embedded debug metadata:
    E:\__titans\Start\startsys.cpp
@@ -591,7 +591,7 @@ LAB_005dc22d:
       pDVar7 = st::fn_006B54F0(nullptr,10,10);
       this_01->field_0548 = &pDVar7->flags;
       puVar5 = &this_01->field_003C;
-      pcVar8 = st::fn_006B0140(0x2347,g_module_00807618);
+      pcVar8 = st::fn_006B0140(0x2347,g_hINSTANCE_00807618);
       st::external_00000080(puVar5,"&2 %s:",pcVar8);
       st::fn_006B5AA0(this_01->field_0548,puVar5);
       st::external_00000080(puVar5,"&0 %s",&DAT_0080c3c3);
@@ -599,11 +599,11 @@ LAB_005dc22d:
       st::fn_006B5AA0(this_01->field_0548,&DAT_007c3b5c);
       uVar9 = _DAT_008087c4 & 0xffff;
       uVar11 = (uint)DAT_008087c2;
-      pcVar8 = st::fn_006B0140(0x2344,g_module_00807618);
+      pcVar8 = st::fn_006B0140(0x2344,g_hINSTANCE_00807618);
       st::external_00000080(puVar5,"&2 %s: &0%d&2x&0%d",pcVar8,uVar11,uVar9);
       st::fn_006B5AA0(this_01->field_0548,puVar5);
       uVar9 = _DAT_008087c4 >> 0x10 & 0xff;
-      pcVar8 = st::fn_006B0140(0x2345,g_module_00807618);
+      pcVar8 = st::fn_006B0140(0x2345,g_hINSTANCE_00807618);
       st::external_00000080(puVar5,"&2 %s: &0%d",pcVar8,uVar9);
       st::fn_006B5AA0(this_01->field_0548,puVar5);
       st::fn_006B5AA0(this_01->field_0548,&DAT_007c3b5c);
@@ -621,7 +621,7 @@ LAB_005dc22d:
       case '\x0f':
       case '\x10':
       case '\x13':
-        pcVar8 = st::fn_006B0140(0x2346,g_module_00807618);
+        pcVar8 = st::fn_006B0140(0x2346,g_hINSTANCE_00807618);
         st::external_00000080(puVar5,"&2 %s:",pcVar8);
         st::fn_006B5AA0(this_01->field_0548,puVar5);
         st::fn_006B5AA0(this_01->field_0548,&DAT_007c3b5c);
@@ -683,7 +683,7 @@ LAB_005dc430:
 }
 
 // 005DC730 StartSystemTy::SetObjectives
-#line 1 "decomp/ST.exe/functions/005DC730/decomp.c"
+#line 4 "decomp/ST.exe/functions/005DC730/decomp.c"
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 /* Recovered from embedded debug metadata:
    E:\__titans\Start\startsys.cpp
@@ -782,7 +782,7 @@ LAB_005dc828:
     pDVar4 = st::fn_006B54F0(nullptr,10,10);
     this_00->field_0548 = &pDVar4->flags;
     puVar5 = &this_00->field_003C;
-    pcVar7 = st::fn_006B0140(0x2347,g_module_00807618);
+    pcVar7 = st::fn_006B0140(0x2347,g_hINSTANCE_00807618);
     st::external_00000080(puVar5,"&2 %s:",pcVar7);
     st::fn_006B5AA0(this_00->field_0548,puVar5);
     st::external_00000080(puVar5,"&0 %s",&DAT_0080c3c3);
@@ -790,15 +790,15 @@ LAB_005dc828:
     st::fn_006B5AA0(this_00->field_0548,&DAT_007c3b5c);
     uVar8 = _DAT_008087c4 & 0xffff;
     uVar10 = (uint)DAT_008087c2;
-    pcVar7 = st::fn_006B0140(0x2344,g_module_00807618);
+    pcVar7 = st::fn_006B0140(0x2344,g_hINSTANCE_00807618);
     st::external_00000080(puVar5,"&2 %s: &0%d&2x&0%d",pcVar7,uVar10,uVar8);
     st::fn_006B5AA0(this_00->field_0548,puVar5);
     uVar8 = _DAT_008087c4 >> 0x10 & 0xff;
-    pcVar7 = st::fn_006B0140(0x2345,g_module_00807618);
+    pcVar7 = st::fn_006B0140(0x2345,g_hINSTANCE_00807618);
     st::external_00000080(puVar5,"&2 %s: &0%d",pcVar7,uVar8);
     st::fn_006B5AA0(this_00->field_0548,puVar5);
     st::fn_006B5AA0(this_00->field_0548,&DAT_007c3b5c);
-    pcVar7 = st::fn_006B0140(0x2346,g_module_00807618);
+    pcVar7 = st::fn_006B0140(0x2346,g_hINSTANCE_00807618);
     st::external_00000080(puVar5,"&2 %s:",pcVar7);
     st::fn_006B5AA0(this_00->field_0548,puVar5);
     st::fn_006B5AA0(this_00->field_0548,&DAT_007c3b5c);
@@ -844,7 +844,7 @@ LAB_005dca07:
 }
 
 // 005DCC10 StartSystemTy::InitSystem
-#line 1 "decomp/ST.exe/functions/005DCC10/decomp.c"
+#line 4 "decomp/ST.exe/functions/005DCC10/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\Start\startsys.cpp
    StartSystemTy::InitSystem */
@@ -903,7 +903,7 @@ undefined4 __thiscall st::fn_005DCC10(StartSystemTy *this)
 }
 
 // 005DCE90 StartSystemTy::GetMessage
-#line 1 "decomp/ST.exe/functions/005DCE90/decomp.c"
+#line 4 "decomp/ST.exe/functions/005DCE90/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\Start\startsys.cpp
    StartSystemTy::GetMessage
@@ -1125,7 +1125,7 @@ switchD_005dd1c0_default:
 }
 
 // 005DD470 StartSystemTy::ChatMessage
-#line 1 "decomp/ST.exe/functions/005DD470/decomp.c"
+#line 4 "decomp/ST.exe/functions/005DD470/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\Start\startsys.cpp
    StartSystemTy::ChatMessage
@@ -1152,7 +1152,8 @@ void __thiscall st::fn_005DD470(StartSystemTy *this,STMessage *param_1)
   int iVar9;
   int iVar10;
   uint uVar11;
-  uint uVar12;
+  DArrayTy *pDVar12;
+  uint uVar13;
   uint *resourceString;
   InternalExceptionFrame local_74;
   undefined4 local_30 [4];
@@ -1184,7 +1185,7 @@ void __thiscall st::fn_005DD470(StartSystemTy *this,STMessage *param_1)
   }
   SVar2 = param_1->id;
   if (SVar2 == MESS_STARTSYSTEMTY_633F) {
-    if ((((local_8->field_067E != nullptr) && (DAT_0080c4fa != 0)) &&
+    if ((((local_8->field_067E != nullptr) && (g_dArray_0080C4FA != nullptr)) &&
         (-1 < (int)local_8->field_0558)) &&
        ((param_1 != nullptr && (dVar4 = (param_1->arg2).u32, dVar4 != 0)))) {
       pcVar5 = local_8->field_0034;
@@ -1196,26 +1197,26 @@ void __thiscall st::fn_005DD470(StartSystemTy *this,STMessage *param_1)
       local_c = *(int *)&pcVar5->field_0x8a;
       st::fn_006B4170(pRVar6,0,0,0,pRVar6->field_0004,pRVar6->field_0008,0xff);
       uVar11 = (uint)(param_1->arg0).words.high;
-      iVar10 = DAT_0080c4fa;
-      uVar12 = uVar11;
+      pDVar12 = g_dArray_0080C4FA;
+      uVar13 = uVar11;
       if ((int)uVar11 < (int)(uVar11 + *(int *)(dVar4 + 0x1e0))) {
         do {
-          if ((int)uVar12 < *(int *)(iVar10 + 8)) {
-            resourceString = *(uint **)(*(int *)(iVar10 + 0x14) + uVar12 * 4);
+          if ((int)uVar13 < (int)pDVar12->elementSize) {
+            resourceString = *(uint **)(pDVar12->growCapacity + uVar13 * 4);
           }
           else {
             resourceString = nullptr;
           }
           if (resourceString != nullptr) {
             st::fn_00710A90(this_00->field_0034,(int)this_00->field_067E,0,0,
-                             (uVar12 - uVar11) * local_c,*(int *)(this_00->field_067E + 2),local_c);
+                             (uVar13 - uVar11) * local_c,*(int *)(this_00->field_067E + 2),local_c);
             st::fn_007119C0(this_00->field_0034,resourceString,0,-1,0);
-            iVar10 = DAT_0080c4fa;
+            pDVar12 = g_dArray_0080C4FA;
           }
-          uVar12 = uVar12 + 1;
+          uVar13 = uVar13 + 1;
           uVar11 = (uint)(param_1->arg0).words.high;
         /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-        } while ((int)uVar12 < (int)(uVar11 + *(int *)(local_10 + 0x1e0)));
+        } while ((int)uVar13 < (int)(uVar11 + *(int *)(local_10 + 0x1e0)));
       }
       st::fn_006B35D0((int *)g_ddxContext_008075A8,this_00->field_0558);
     }
@@ -1223,17 +1224,17 @@ void __thiscall st::fn_005DD470(StartSystemTy *this,STMessage *param_1)
   else {
     if (SVar2 == MESS_BEHPANELTY_C0A0) {
       puVar3 = local_8->field_0682;
-      uVar12 = *(uint *)(puVar3 + 10);
-      if (uVar12 == 0) {
-        uVar12 = ((uint)puVar3[7] * *(int *)(puVar3 + 2) + 0x1f >> 3 & 0x1ffffffc) *
+      uVar13 = *(uint *)(puVar3 + 10);
+      if (uVar13 == 0) {
+        uVar13 = ((uint)puVar3[7] * *(int *)(puVar3 + 2) + 0x1f >> 3 & 0x1ffffffc) *
                  *(int *)(puVar3 + 4);
       }
       puVar8 = (undefined4 *)st::fn_006B4FA0((int *)puVar3);
-      for (uVar11 = uVar12 >> 2; uVar11 != 0; uVar11 = uVar11 - 1) {
+      for (uVar11 = uVar13 >> 2; uVar11 != 0; uVar11 = uVar11 - 1) {
         *puVar8 = 0xffffffff;
         puVar8 = puVar8 + 1;
       }
-      for (uVar12 = uVar12 & 3; uVar12 != 0; uVar12 = uVar12 - 1) {
+      for (uVar13 = uVar13 & 3; uVar13 != 0; uVar13 = uVar13 - 1) {
         *(undefined1 *)puVar8 = 0xff;
         puVar8 = (undefined4 *)((int)puVar8 + 1);
       }
@@ -1243,11 +1244,11 @@ void __thiscall st::fn_005DD470(StartSystemTy *this,STMessage *param_1)
       }
       uVar1 = (param_1->arg1).words.low;
       if ((uVar1 != 0xffff) || ((param_1->arg1).words.high != 0xffff)) {
-        uVar12 = (uint)(param_1->arg1).words.high;
-        st::fn_006B5B10((AnonShape_006E6FB0_BC494FEA *)this_00->field_0682,0,(uint)uVar1,uVar12 + 2,
+        uVar13 = (uint)(param_1->arg1).words.high;
+        st::fn_006B5B10((AnonShape_006E6FB0_BC494FEA *)this_00->field_0682,0,(uint)uVar1,uVar13 + 2,
                      (uint)uVar1,
                      (int)((AnonShape_006E6FB0_BC494FEA *)this_00->field_0682)->field_0008 +
-                     (-5 - uVar12),9,0xd);
+                     (-5 - uVar13),9,0xd);
       }
       st::fn_006B35D0((int *)g_ddxContext_008075A8,this_00->field_0554);
       g_currentExceptionFrame = local_74.previous;
@@ -1270,7 +1271,7 @@ void __thiscall st::fn_005DD470(StartSystemTy *this,STMessage *param_1)
 }
 
 // 005DD850 StartSystemTy::AddToChat
-#line 1 "decomp/ST.exe/functions/005DD850/decomp.c"
+#line 4 "decomp/ST.exe/functions/005DD850/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\Start\startsys.cpp
    StartSystemTy::AddToChat */
@@ -1313,7 +1314,7 @@ void __thiscall st::fn_005DD850(StartSystemTy *this,int param_1)
       local_10 = pDVar2;
       st::fn_006E5970((SystemClassTy *)local_c,2,local_c->field_0550,(int)local_34);
       local_14 = (uint)uStack_1e;
-      if ((int)(DAT_0080c4fa[2] - 5) <= (int)local_14) {
+      if ((int)(g_dArray_0080C4FA->elementSize - 5) <= (int)local_14) {
         local_5 = '\x01';
       }
       st::external_00000080((LPSTR)&DAT_0080f33a,"&0%s:",param_1);
@@ -1336,7 +1337,7 @@ void __thiscall st::fn_005DD850(StartSystemTy *this,int param_1)
           do {
             text = *(char **)(pDVar3->growCapacity + iVar5 * 4);
 LAB_005dd982:
-            st::fn_006B5AA0(DAT_0080c4fa,text);
+            st::fn_006B5AA0(&g_dArray_0080C4FA->flags,text);
             iVar5 = iVar5 + 1;
           } while (iVar5 < (int)pDVar3->elementSize);
         }
@@ -1346,18 +1347,18 @@ LAB_005dd982:
       st::fn_006B5570(pDVar2);
       local_24 = 0x28;
       local_20 = 1;
-      uStack_1e = (ushort)DAT_0080c4fa[2];
+      uStack_1e = (ushort)g_dArray_0080C4FA->elementSize;
       st::fn_006E5970((SystemClassTy *)this_00,2,this_00->field_0550,(int)local_34);
       local_24 = 0x22;
       local_20 = 0;
       if (local_5 == '\0') {
         uStack_1e = (short)local_14;
       }
-      else if ((int)DAT_0080c4fa[2] < 6) {
+      else if ((int)g_dArray_0080C4FA->elementSize < 6) {
         uStack_1e = 0;
       }
       else {
-        uStack_1e = (short)DAT_0080c4fa[2] + -5;
+        uStack_1e = (short)g_dArray_0080C4FA->elementSize + -5;
       }
       st::fn_006E5970((SystemClassTy *)this_00,2,this_00->field_0550,(int)local_34);
       local_24 = 0x20;
@@ -1379,7 +1380,7 @@ LAB_005dd982:
 }
 
 // 005DDC70 StartSystemTy::CreateBinDesc
-#line 1 "decomp/ST.exe/functions/005DDC70/decomp.c"
+#line 4 "decomp/ST.exe/functions/005DDC70/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\Start\startsys.cpp
    StartSystemTy::CreateBinDesc
@@ -1532,7 +1533,7 @@ void __thiscall st::fn_005DDC70(StartSystemTy *this)
 }
 
 // 005DE050 StartSystemTy::PaintBinDesc
-#line 1 "decomp/ST.exe/functions/005DE050/decomp.c"
+#line 4 "decomp/ST.exe/functions/005DE050/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\Start\startsys.cpp
    StartSystemTy::PaintBinDesc
@@ -1612,7 +1613,7 @@ st::fn_005DE050(StartSystemTy *this,AnonShape_005DE050_5BD86458 *param_1)
 }
 
 // 005DE270 StartSystemTy::CreateChatView
-#line 1 "decomp/ST.exe/functions/005DE270/decomp.c"
+#line 4 "decomp/ST.exe/functions/005DE270/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\Start\startsys.cpp
    StartSystemTy::CreateChatView */
@@ -1736,7 +1737,7 @@ void __thiscall st::fn_005DE270(StartSystemTy *this)
 }
 
 // 005DE670 FUN_005de670
-#line 1 "decomp/ST.exe/functions/005DE670/decomp.c"
+#line 4 "decomp/ST.exe/functions/005DE670/decomp.c"
 /* [STSourceProvenanceApplier begin]
    Recovered source file: E:\__titans\Start\startsys.cpp
    Diagnostic line evidence: 1043 | 1045 | 1050 | 1052 | 1054 | 1057 | 1058 | 1061 | 1062
@@ -1908,7 +1909,7 @@ void __fastcall st::fn_005DE670(AnonShape_005DE670_0D4D7A8C *param_1)
 }
 
 // 005DEB90 FUN_005deb90
-#line 1 "decomp/ST.exe/functions/005DEB90/decomp.c"
+#line 4 "decomp/ST.exe/functions/005DEB90/decomp.c"
 /* [STSourceProvenanceApplier begin]
    Recovered source file: E:\__titans\Start\startsys.cpp
    Diagnostic line evidence: 1112 | 1113 | 1114 | 1119 | 1120 | 1121 (metadata/report site, not the

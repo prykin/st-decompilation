@@ -2,7 +2,7 @@
 // Generated translation unit: source/recovered/by_owner/STManRub3C.cpp
 
 // 0062CF00 STManRub3C::STManRub3C
-#line 1 "decomp/ST.exe/functions/0062CF00/decomp.c"
+#line 4 "decomp/ST.exe/functions/0062CF00/decomp.c"
 /* [STConstructorApplier] Recovered constructor candidate.
    VTable: 0079D084 (store 0062CF0B)
    Evidence: final_vptr=0079D084; returns_this=true; calls_before=1; field_writes_after=0;
@@ -13,7 +13,7 @@ STManRub3C * __thiscall st::fn_0062CF00(STManRub3C *this)
 {
 
   st::fn_006E60E0(this);
-  this->vtable = &STManRub3CVTable;
+  this->vtable = &st_global_0079D084;
   if (this != nullptr) {
     memset(&this->field_001C, 0, 0x98); /* compiler bulk-zero initialization */
     return this;
@@ -23,7 +23,7 @@ STManRub3C * __thiscall st::fn_0062CF00(STManRub3C *this)
 }
 
 // 0062CF50 STManRub3C::sub_0062CF50
-#line 1 "decomp/ST.exe/functions/0062CF50/decomp.c"
+#line 4 "decomp/ST.exe/functions/0062CF50/decomp.c"
 /* [STMethodOwnerApplier] Structural method owner recovered as STManRub3C.
    Evidence: this_call_owners=[STManRub3C]; agreed_this_calls=1; incoming_this_accesses=2;
    incoming_edx_uses=0; incoming_stack_parameter_uses=0; direct_non_thunk_callers=0;
@@ -49,7 +49,7 @@ void __thiscall st::fn_0062CF50(STManRub3C *this)
 }
 
 // 0062D670 STManRub3C::sub_0062D670
-#line 1 "decomp/ST.exe/functions/0062D670/decomp.c"
+#line 4 "decomp/ST.exe/functions/0062D670/decomp.c"
 /* [STPrototypeApplier] Propagated return.
    Evidence: 0062D670 returns used as parameter 2 of STPlaySystemC::SaveObjData @ 0062CD19
 
@@ -127,7 +127,7 @@ switchD_0062d6cc_default:
 }
 
 // 0062D840 STManRub3C::sub_0062D840
-#line 1 "decomp/ST.exe/functions/0062D840/decomp.c"
+#line 4 "decomp/ST.exe/functions/0062D840/decomp.c"
 /* [STMethodOwnerApplier] Structural method owner recovered as STManRub3C.
    Evidence: this_call_owners=[STManRub3C]; agreed_this_calls=1; incoming_this_accesses=2;
    incoming_edx_uses=0; incoming_stack_parameter_uses=4; direct_non_thunk_callers=0;
@@ -189,7 +189,7 @@ switchD_0062d881_default:
 }
 
 // 0062DD40 STManRub3C::sub_0062DD40
-#line 1 "decomp/ST.exe/functions/0062DD40/decomp.c"
+#line 4 "decomp/ST.exe/functions/0062DD40/decomp.c"
 /* [STMethodOwnerApplier] Structural method owner recovered as STManRub3C.
    Evidence: this_call_owners=[STManRub3C]; agreed_this_calls=1; incoming_this_accesses=2;
    incoming_edx_uses=0; incoming_stack_parameter_uses=0; direct_non_thunk_callers=0;
@@ -215,7 +215,7 @@ void __thiscall st::fn_0062DD40(STManRub3C *this)
 }
 
 // 0062E130 STManRub3C::sub_0062E130
-#line 1 "decomp/ST.exe/functions/0062E130/decomp.c"
+#line 4 "decomp/ST.exe/functions/0062E130/decomp.c"
 /* [STMethodOwnerApplier] Structural method owner recovered as STManRub3C.
    Evidence: this_call_owners=[STManRub3C]; agreed_this_calls=1; incoming_this_accesses=2;
    incoming_edx_uses=0; incoming_stack_parameter_uses=0; direct_non_thunk_callers=0;

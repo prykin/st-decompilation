@@ -2,7 +2,7 @@
 // Generated translation unit: source/recovered/by_owner/JumpManagC.cpp
 
 // 00617840 JumpManagC::JumpManagC
-#line 1 "decomp/ST.exe/functions/00617840/decomp.c"
+#line 4 "decomp/ST.exe/functions/00617840/decomp.c"
 /* [STConstructorApplier] Recovered constructor candidate.
    VTable: 0079CEBC (store 00617853)
    Evidence: final_vptr=0079CEBC; returns_this=true; calls_before=1; field_writes_after=0;
@@ -16,13 +16,13 @@ JumpManagC * __thiscall st::fn_00617840(JumpManagC *this)
 {
 
   st::fn_006E60E0(this);
-  this->vtable = &JumpManagCVTable;
+  this->vtable = &st_global_0079CEBC;
   memset(&this->field_0x1c, 0, 0x52); /* compiler bulk-zero initialization */
   return this;
 }
 
 // 006179D0 JumpManagC::sub_006179D0
-#line 1 "decomp/ST.exe/functions/006179D0/decomp.c"
+#line 4 "decomp/ST.exe/functions/006179D0/decomp.c"
 /* [STMethodOwnerApplier] Structural method owner recovered as JumpManagC.
    Evidence: this_call_owners=[JumpManagC]; agreed_this_calls=1; incoming_this_accesses=2;
    incoming_edx_uses=0; incoming_stack_parameter_uses=0; direct_non_thunk_callers=0;
@@ -57,7 +57,7 @@ void __thiscall st::fn_006179D0(JumpManagC *this)
 }
 
 // 00617FB0 JumpManagC::sub_00617FB0
-#line 1 "decomp/ST.exe/functions/00617FB0/decomp.c"
+#line 4 "decomp/ST.exe/functions/00617FB0/decomp.c"
 /* [STPrototypeApplier] Propagated return.
    Evidence: 00617FB0 returns used as parameter 2 of STPlaySystemC::SaveObjData @ 006176B2
 
@@ -160,7 +160,7 @@ byte * __thiscall st::fn_00617FB0(JumpManagC *this,int *param_1)
 }
 
 // 00618170 JumpManagC::sub_00618170
-#line 1 "decomp/ST.exe/functions/00618170/decomp.c"
+#line 4 "decomp/ST.exe/functions/00618170/decomp.c"
 /* [STMethodOwnerApplier] Structural method owner recovered as JumpManagC.
    Evidence: this_call_owners=[JumpManagC]; agreed_this_calls=1; incoming_this_accesses=6;
    incoming_edx_uses=0; incoming_stack_parameter_uses=1; direct_non_thunk_callers=0;
@@ -204,7 +204,7 @@ int __thiscall st::fn_00618170(JumpManagC *this,undefined4 *param_1)
 }
 
 // 00618AD0 JumpManagC::sub_00618AD0
-#line 1 "decomp/ST.exe/functions/00618AD0/decomp.c"
+#line 4 "decomp/ST.exe/functions/00618AD0/decomp.c"
 /* [STMethodOwnerApplier] Structural method owner recovered as JumpManagC.
    Evidence: this_call_owners=[JumpManagC]; agreed_this_calls=1; incoming_this_accesses=2;
    incoming_edx_uses=0; incoming_stack_parameter_uses=0; direct_non_thunk_callers=0;

@@ -108,7 +108,7 @@ cf_common_exit_004C6899:
         goto cf_common_exit_004C6899;
       }
       iVar9 = STT3DSprC::LoadSequence
-                        (this->field_002C,0,DAT_0080678c,
+                        (this->field_002C,0,PTR_0080678c,
                          (&PTR_s_tlo_bldmark_si_007ad25c)[(byte)this->field_0010->field_112E],0x1d);
       if (iVar9 != 0) {
         RaiseInternalException
@@ -141,7 +141,7 @@ cf_common_exit_004C6899:
   }
   else if (this->field_0024 == 0) {
     iVar5 = STT3DSprC::LoadSequence
-                      (this->field_002C,0,DAT_0080678c,
+                      (this->field_002C,0,PTR_0080678c,
                        *(char **)(&DAT_007ad250 + (uint)(byte)this->field_0010->field_112E * 4),0x1d
                       );
     if (iVar5 != 0) {

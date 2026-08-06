@@ -34,7 +34,7 @@ ushort * FUN_005f1700(int param_1,int param_2,int param_3,int param_4,int param_
     return local_10;
   }
   puVar3 = Library::Ourlib::MFRLOAD::mfRLoad
-                     (DAT_00806774,CASE_1D,local_c,0xffffffff,0,1,0,nullptr);
+                     (PTR_00806774,CASE_1D,local_c,0xffffffff,0,1,0,nullptr);
   if (param_3 != 0) {
     g_currentExceptionFrame = local_5c.previous;
     return puVar3;

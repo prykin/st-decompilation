@@ -2,7 +2,7 @@
 // Generated translation unit: source/recovered/by_owner/InterSystemC.cpp
 
 // 00542440 InterSystemC::InterSystemC
-#line 1 "decomp/ST.exe/functions/00542440/decomp.c"
+#line 4 "decomp/ST.exe/functions/00542440/decomp.c"
 /* [STConstructorApplier] Recovered constructor candidate.
    VTable: 0079ADB8 (store 00542453)
    Evidence: final_vptr=0079ADB8; returns_this=true; calls_before=1; field_writes_after=3;
@@ -18,7 +18,7 @@ InterSystemC * __thiscall st::fn_00542440(InterSystemC *this,AppClassTy *param_1
 
 {
   st::fn_006E51C0((SystemClassTy *)this,param_1,5);
-  this->vtable = &InterSystemCVTable;
+  this->vtable = &st_global_0079ADB8;
   this->field_0030 = 0;
   this->field_002C = 0;
   this->field_0028 = nullptr;
@@ -26,7 +26,7 @@ InterSystemC * __thiscall st::fn_00542440(InterSystemC *this,AppClassTy *param_1
 }
 
 // 00542480 InterSystemC::CreateSystemObjects
-#line 1 "decomp/ST.exe/functions/00542480/decomp.c"
+#line 4 "decomp/ST.exe/functions/00542480/decomp.c"
 /* [STVirtualMethodApplier] Recovered from virtual table slot family.
    Tables: 0079ADB8
    Entries: 00401DCA
@@ -42,7 +42,7 @@ undefined4 __thiscall st::fn_00542480(InterSystemC *this)
 }
 
 // 00542EC0 InterSystemC::DoneSystem
-#line 1 "decomp/ST.exe/functions/00542EC0/decomp.c"
+#line 4 "decomp/ST.exe/functions/00542EC0/decomp.c"
 /* [STDestructorApplier] Recovered destructor for InterSystemC.
    Evidence: cleanup_only_vtable_method; zeroed_this_fields=4; same_this_calls=2;
    field_cleanup_calls=0; 00542ECE ccFntTy::operator; 00542F14 FUN_006e52d0 */

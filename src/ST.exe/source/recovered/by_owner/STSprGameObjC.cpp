@@ -2,7 +2,7 @@
 // Generated translation unit: source/recovered/by_owner/STSprGameObjC.cpp
 
 // 0041F970 STSprGameObjC::sub_0041F970
-#line 1 "decomp/ST.exe/functions/0041F970/decomp.c"
+#line 4 "decomp/ST.exe/functions/0041F970/decomp.c"
 /* [STMethodOwnerApplier] Structural method owner recovered as STSprGameObjC.
    Evidence: this_call_owners=[STSprGameObjC]; agreed_this_calls=1; incoming_this_accesses=4;
    incoming_edx_uses=0; incoming_stack_parameter_uses=0; direct_non_thunk_callers=0;
@@ -19,7 +19,7 @@ void __thiscall st::fn_0041F970(STSprGameObjC *this)
 }
 
 // 005EC7E0 STSprGameObjC::STSprGameObjC
-#line 1 "decomp/ST.exe/functions/005EC7E0/decomp.c"
+#line 4 "decomp/ST.exe/functions/005EC7E0/decomp.c"
 /* [STConstructorApplier] Recovered constructor candidate.
    VTable: 0079C3EC (store 005EC809)
    Evidence: final_vptr=0079C3EC; returns_this=true; calls_before=2; field_writes_after=3;
@@ -36,8 +36,8 @@ STSprGameObjC * __thiscall st::fn_005EC7E0(STSprGameObjC *this)
 
   st::fn_00401933((STGameObjC *)this);
   st::fn_00401316((AnonShape_004AB810_8E5693D5 *)&this->field_01D5);
-  this->field_01D5 = &VTable_0079C578;
-  this->vtable = &STSprGameObjCVTable;
+  this->field_01D5 = &st_global_0079C578;
+  this->vtable = &st_global_0079C3EC;
   pSVar2 = &this->field_0231;
   for (iVar1 = 0x3d; iVar1 != 0; iVar1 = iVar1 + -1) {
     *pSVar2 = CASE_0;
@@ -51,7 +51,7 @@ STSprGameObjC * __thiscall st::fn_005EC7E0(STSprGameObjC *this)
 }
 
 // 005EF9F0 STSprGameObjC::FUN_005ef9f0
-#line 1 "decomp/ST.exe/functions/005EF9F0/decomp.c"
+#line 4 "decomp/ST.exe/functions/005EF9F0/decomp.c"
 /* [STVirtualMethodApplier] Recovered from virtual table slot family.
    Tables: 0079C3EC
    Entries: 00402365
@@ -67,7 +67,7 @@ dword __thiscall st::fn_005EF9F0(STSprGameObjC *this)
 }
 
 // 005EFA10 STSprGameObjC::FUN_005efa10
-#line 1 "decomp/ST.exe/functions/005EFA10/decomp.c"
+#line 4 "decomp/ST.exe/functions/005EFA10/decomp.c"
 /* [STVirtualMethodApplier] Recovered from virtual table slot family.
    Tables: 0079C3EC
    Entries: 00401B81
@@ -83,7 +83,7 @@ dword __thiscall st::fn_005EFA10(STSprGameObjC *this)
 }
 
 // 005EFAC0 STSprGameObjC::FUN_005efac0
-#line 1 "decomp/ST.exe/functions/005EFAC0/decomp.c"
+#line 4 "decomp/ST.exe/functions/005EFAC0/decomp.c"
 /* [STVirtualMethodApplier] Recovered from virtual table slot family.
    Tables: 0079C3EC
    Entries: 00405D58
@@ -99,7 +99,7 @@ dword __thiscall st::fn_005EFAC0(STSprGameObjC *this)
 }
 
 // 005F0030 STSprGameObjC::FUN_005f0030
-#line 1 "decomp/ST.exe/functions/005F0030/decomp.c"
+#line 4 "decomp/ST.exe/functions/005F0030/decomp.c"
 /* [STVirtualMethodApplier] Recovered from virtual table slot family.
    Tables: 0079C3EC
    Entries: 00403A53
@@ -115,7 +115,7 @@ dword __thiscall st::fn_005F0030(STSprGameObjC *this)
 }
 
 // 005F0220 STSprGameObjC::FUN_005f0220
-#line 1 "decomp/ST.exe/functions/005F0220/decomp.c"
+#line 4 "decomp/ST.exe/functions/005F0220/decomp.c"
 /* [STVirtualMethodApplier] Recovered from virtual table slot family.
    Tables: 0079C3EC
    Entries: 00401091
@@ -131,7 +131,7 @@ dword __thiscall st::fn_005F0220(STSprGameObjC *this)
 }
 
 // 005F0450 STSprGameObjC::FUN_005f0450
-#line 1 "decomp/ST.exe/functions/005F0450/decomp.c"
+#line 4 "decomp/ST.exe/functions/005F0450/decomp.c"
 /* [STReturnSemanticsApplier] leaf_void.
    Evidence: leaf function has RET and never writes EAX/AX/AL/AH
 

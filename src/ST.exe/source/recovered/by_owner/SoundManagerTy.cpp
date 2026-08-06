@@ -2,7 +2,7 @@
 // Generated translation unit: source/recovered/by_owner/SoundManagerTy.cpp
 
 // 00566900 SoundManagerTy::sub_00566900
-#line 1 "decomp/ST.exe/functions/00566900/decomp.c"
+#line 4 "decomp/ST.exe/functions/00566900/decomp.c"
 /* [STMethodOwnerApplier] Structural method owner recovered as SoundManagerTy.
    Evidence: this_call_owners=[SoundManagerTy]; agreed_this_calls=1; incoming_this_accesses=7;
    incoming_edx_uses=0; incoming_stack_parameter_uses=0; direct_non_thunk_callers=0;
@@ -29,7 +29,7 @@ void __thiscall st::fn_00566900(SoundManagerTy *this)
 }
 
 // 00566970 SoundManagerTy::sub_00566970
-#line 1 "decomp/ST.exe/functions/00566970/decomp.c"
+#line 4 "decomp/ST.exe/functions/00566970/decomp.c"
 /* [STMethodOwnerApplier] Structural method owner recovered as SoundManagerTy.
    Evidence: this_call_owners=[SoundManagerTy]; agreed_this_calls=1; incoming_this_accesses=11;
    incoming_edx_uses=0; incoming_stack_parameter_uses=4; direct_non_thunk_callers=0;
@@ -93,7 +93,7 @@ switchD_005669a6_default:
 }
 
 // 00566AA0 SoundManagerTy::sub_00566AA0
-#line 1 "decomp/ST.exe/functions/00566AA0/decomp.c"
+#line 4 "decomp/ST.exe/functions/00566AA0/decomp.c"
 /* [STMethodOwnerApplier] Structural method owner recovered as SoundManagerTy.
    Evidence: this_call_owners=[SoundManagerTy]; agreed_this_calls=1; incoming_this_accesses=10;
    incoming_edx_uses=0; incoming_stack_parameter_uses=0; direct_non_thunk_callers=0;

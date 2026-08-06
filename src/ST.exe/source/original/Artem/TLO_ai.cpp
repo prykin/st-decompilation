@@ -2,7 +2,7 @@
 // Generated translation unit: source/original/Artem/TLO_ai.cpp
 
 // 004B0D10 FUN_004b0d10
-#line 1 "decomp/ST.exe/functions/004B0D10/decomp.c"
+#line 4 "decomp/ST.exe/functions/004B0D10/decomp.c"
 /* [STSourceProvenanceApplier begin]
    Recovered source file: E:\__titans\Artem\TLO_ai.cpp
    Diagnostic line evidence: 787 | 788 (metadata/report site, not the function definition)
@@ -55,7 +55,7 @@ st::fn_004B0D10(uint param_1,int param_2,int *param_3,int *param_4,int *param_5,
       return 1;
     }
   }
-  piVar1 = (&STGroupBoatCVTable.vfunc_04)[param_2];
+  piVar1 = (&st_global_00790728.vfunc_04)[param_2];
   if (piVar1 == nullptr) {
     uVar4 = st::fn_00405C04(param_1,param_2,param_3,param_4,param_5,param_6,param_7,param_8,
                                param_9);

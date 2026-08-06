@@ -345,7 +345,7 @@ void __thiscall OptPanelTy::PrepFiles(OptPanelTy *this,uint param_1)
   local_8 = uVar12;
   if (uVar12 == 0) {
     if (this_01->field_01A4 != CASE_3) goto LAB_0053325d;
-    Library::DKW::TBL::FUN_006b6020(&this_01->field_01F1->flags,0,&DAT_008016a0);
+    Library::DKW::TBL::FUN_006b6020(this_01->field_01F1,0,&DAT_008016a0);
     uVar13 = this_01->field_01B5[1];
     this_01->field_0028 = 0x33;
     *(DArrayTy **)&this_01->field_0x2c = this_01->field_01F1;

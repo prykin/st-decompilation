@@ -32,14 +32,14 @@ undefined4 __thiscall PlayPanelTy::SetPanel(PlayPanelTy *this,char param_1)
       iVar2 = 0;
     }
     else {
-      if (g_prodPanel_008016E8 != nullptr) {
-        ProdPanelTy::SetPanel(g_prodPanel_008016E8,'\0');
+      if (g_researchPanel_008016E8 != nullptr) {
+        ProdPanelTy::SetPanel(g_researchPanel_008016E8,'\0');
       }
-      if (g_prodPanel_0080167C != nullptr) {
-        ProdPanelTy::SetPanel(g_prodPanel_0080167C,'\0');
+      if (g_bldBoatPanel_0080167C != nullptr) {
+        ProdPanelTy::SetPanel(g_bldBoatPanel_0080167C,'\0');
       }
-      if (g_prodPanel_00801684 != nullptr) {
-        ProdPanelTy::SetPanel(g_prodPanel_00801684,'\0');
+      if (g_bldObjPanel_00801684 != nullptr) {
+        ProdPanelTy::SetPanel(g_bldObjPanel_00801684,'\0');
       }
       if (g_infocPanel_00801698 != nullptr) {
         (*g_infocPanel_00801698->vtable->SetPanel)((SpecPanelTy *)g_infocPanel_00801698,'\0');
@@ -59,8 +59,8 @@ undefined4 __thiscall PlayPanelTy::SetPanel(PlayPanelTy *this,char param_1)
       if (g_frmPanel_0080168C != nullptr) {
         (*g_frmPanel_0080168C->vtable->SetPanel)((SpecPanelTy *)g_frmPanel_0080168C,'\0');
       }
-      if (g_prodPanel_00801680 != nullptr) {
-        ProdPanelTy::SetPanel(g_prodPanel_00801680,'\0');
+      if (g_bldLabPanel_00801680 != nullptr) {
+        ProdPanelTy::SetPanel(g_bldLabPanel_00801680,'\0');
       }
       if (g_helpPanel_00801690 != nullptr) {
         /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */

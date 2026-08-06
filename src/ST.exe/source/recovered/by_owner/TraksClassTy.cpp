@@ -2,7 +2,7 @@
 // Generated translation unit: source/recovered/by_owner/TraksClassTy.cpp
 
 // 005556D0 TraksClassTy::TraksClassTy
-#line 1 "decomp/ST.exe/functions/005556D0/decomp.c"
+#line 4 "decomp/ST.exe/functions/005556D0/decomp.c"
 /* [STConstructorApplier] Recovered constructor candidate.
    VTable: 0079AEC0 (store 005556D9)
    Evidence: final_vptr=0079AEC0; returns_this=true; calls_before=1; field_writes_after=2;
@@ -16,7 +16,7 @@ TraksClassTy * __thiscall st::fn_005556D0(TraksClassTy *this)
 {
 
   st::fn_006E60E0(this);
-  this->vtable = &TraksClassTyVTable;
+  this->vtable = &st_global_0079AEC0;
   g_traksClass_00802A7C = this;
   this->field_0024 = nullptr;
   this->field_0828 = -1;
@@ -25,7 +25,7 @@ TraksClassTy * __thiscall st::fn_005556D0(TraksClassTy *this)
 }
 
 // 00555D90 TraksClassTy::sub_00555D90
-#line 1 "decomp/ST.exe/functions/00555D90/decomp.c"
+#line 4 "decomp/ST.exe/functions/00555D90/decomp.c"
 /* [STMethodOwnerApplier] Structural method owner recovered as TraksClassTy.
    Evidence: this_call_owners=[TraksClassTy]; agreed_this_calls=1; incoming_this_accesses=3;
    incoming_edx_uses=0; incoming_stack_parameter_uses=4; direct_non_thunk_callers=0;

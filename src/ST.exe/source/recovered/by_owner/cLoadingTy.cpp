@@ -2,7 +2,7 @@
 // Generated translation unit: source/recovered/by_owner/cLoadingTy.cpp
 
 // 00554A50 cLoadingTy::sub_00554A50
-#line 1 "decomp/ST.exe/functions/00554A50/decomp.c"
+#line 4 "decomp/ST.exe/functions/00554A50/decomp.c"
 /* [STMethodOwnerApplier] Structural method owner recovered as cLoadingTy.
    Evidence: this_call_owners=[cLoadingTy]; agreed_this_calls=1; incoming_this_accesses=2;
    incoming_edx_uses=0; incoming_stack_parameter_uses=0; direct_non_thunk_callers=0;
@@ -19,7 +19,7 @@ void __thiscall st::fn_00554A50(cLoadingTy *this)
 }
 
 // 00555570 cLoadingTy::sub_00555570
-#line 1 "decomp/ST.exe/functions/00555570/decomp.c"
+#line 4 "decomp/ST.exe/functions/00555570/decomp.c"
 /* [STMethodOwnerApplier] Structural method owner recovered as cLoadingTy.
    Evidence: this_call_owners=[cLoadingTy]; agreed_this_calls=4; incoming_this_accesses=1;
    incoming_edx_uses=0; incoming_stack_parameter_uses=0
@@ -51,7 +51,7 @@ void __thiscall st::fn_00555570(cLoadingTy *this)
 }
 
 // 00555680 cLoadingTy::sub_00555680
-#line 1 "decomp/ST.exe/functions/00555680/decomp.c"
+#line 4 "decomp/ST.exe/functions/00555680/decomp.c"
 /* [STMethodOwnerApplier] Structural method owner recovered as cLoadingTy.
    Evidence: this_call_owners=[cLoadingTy]; agreed_this_calls=1; incoming_this_accesses=2;
    incoming_edx_uses=0; incoming_stack_parameter_uses=1; direct_non_thunk_callers=0;

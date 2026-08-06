@@ -170,7 +170,8 @@ undefined4 __thiscall STT3DSprC::StartShow(STT3DSprC *this,byte param_1,uint par
       pcVar6 = thunk_FUN_004ad740;
     }
     Library::Ourlib::ST3DSMAP::SprSetShadow
-              (pSVar1->field_003C,pSVar1->field_0018,pSVar1->field_0034,(uint)pcVar6,(uint)pSVar1);
+              (pSVar1->field_003C,pSVar1->field_0018,(uint)pSVar1->field_0034,(uint)pcVar6,
+               (uint)pSVar1);
   }
 cf_common_exit_004AC330:
   *(uint *)(&pSVar1->field_0020->field_0x1c + iVar2) = param_2;

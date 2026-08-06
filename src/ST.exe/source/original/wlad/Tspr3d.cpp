@@ -2,7 +2,7 @@
 // Generated translation unit: source/original/wlad/Tspr3d.cpp
 
 // 004AB880 STT3DSprC::LoadSequence
-#line 1 "decomp/ST.exe/functions/004AB880/decomp.c"
+#line 4 "decomp/ST.exe/functions/004AB880/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\wlad\Tspr3d.cpp
    STT3DSprC::LoadSequence
@@ -157,7 +157,7 @@ st::fn_004AB880(STT3DSprC *this,byte param_1,int *param_2,char *text,byte param_
 }
 
 // 004ABB30 STT3DSprC::UnLoadSequence
-#line 1 "decomp/ST.exe/functions/004ABB30/decomp.c"
+#line 4 "decomp/ST.exe/functions/004ABB30/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\wlad\Tspr3d.cpp
    STT3DSprC::UnLoadSequence */
@@ -217,7 +217,7 @@ undefined4 __thiscall st::fn_004ABB30(STT3DSprC *this,byte param_1)
 }
 
 // 004ABE40 STT3DSprC::SetCurFase
-#line 1 "decomp/ST.exe/functions/004ABE40/decomp.c"
+#line 4 "decomp/ST.exe/functions/004ABE40/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\wlad\Tspr3d.cpp
    STT3DSprC::SetCurFase
@@ -261,7 +261,7 @@ undefined4 __thiscall st::fn_004ABE40(STT3DSprC *this,char param_1,uint param_2)
 }
 
 // 004ABF00 STT3DSprC::SetCurShad
-#line 1 "decomp/ST.exe/functions/004ABF00/decomp.c"
+#line 4 "decomp/ST.exe/functions/004ABF00/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\wlad\Tspr3d.cpp
    STT3DSprC::SetCurShad
@@ -276,7 +276,7 @@ undefined4 __thiscall st::fn_004ABF00(STT3DSprC *this,char param_1,uint param_2)
   int iVar2;
   undefined4 uVar3;
   uint uVar4;
-  uint uVar5;
+  ushort *puVar5;
   code *pcVar6;
   InternalExceptionFrame local_4c;
   STT3DSprC *local_8;
@@ -305,17 +305,17 @@ undefined4 __thiscall st::fn_004ABF00(STT3DSprC *this,char param_1,uint param_2)
     pSVar1->field_0030 = param_2;
     if (pSVar1->field_0011 == '\0') {
       if (pSVar1->field_0010 == '\0') {
-        uVar5 = pSVar1->field_0034;
+        puVar5 = pSVar1->field_0034;
         uVar4 = pSVar1->field_0018;
         pcVar6 = thunk_FUN_004ad6c0;
       }
       else {
-        uVar5 = pSVar1->field_0034;
+        puVar5 = pSVar1->field_0034;
         uVar4 = pSVar1->field_0018;
         pcVar6 = thunk_FUN_004ad740;
       }
       st::fn_006E9520
-                (pSVar1->field_003C,uVar4,uVar5,(uint)pcVar6,(uint)pSVar1);
+                (pSVar1->field_003C,uVar4,(uint)puVar5,(uint)pcVar6,(uint)pSVar1);
     }
     g_currentExceptionFrame = local_4c.previous;
     return 0;
@@ -325,7 +325,7 @@ undefined4 __thiscall st::fn_004ABF00(STT3DSprC *this,char param_1,uint param_2)
 }
 
 // 004AC040 STT3DSprC::ShowCurFase
-#line 1 "decomp/ST.exe/functions/004AC040/decomp.c"
+#line 4 "decomp/ST.exe/functions/004AC040/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\wlad\Tspr3d.cpp
    STT3DSprC::ShowCurFase */
@@ -374,7 +374,7 @@ undefined4 __thiscall st::fn_004AC040(STT3DSprC *this,char param_1)
 }
 
 // 004AC1A0 STT3DSprC::StartShow
-#line 1 "decomp/ST.exe/functions/004AC1A0/decomp.c"
+#line 4 "decomp/ST.exe/functions/004AC1A0/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\wlad\Tspr3d.cpp
    STT3DSprC::StartShow
@@ -544,7 +544,8 @@ undefined4 __thiscall st::fn_004AC1A0(STT3DSprC *this,byte param_1,uint param_2)
       pcVar6 = thunk_FUN_004ad740;
     }
     st::fn_006E9520
-              (pSVar1->field_003C,pSVar1->field_0018,pSVar1->field_0034,(uint)pcVar6,(uint)pSVar1);
+              (pSVar1->field_003C,pSVar1->field_0018,(uint)pSVar1->field_0034,(uint)pcVar6,
+               (uint)pSVar1);
   }
 cf_common_exit_004AC330:
   *(uint *)(&pSVar1->field_0020->field_0x1c + iVar2) = param_2;
@@ -553,7 +554,7 @@ cf_common_exit_004AC330:
 }
 
 // 004AC410 STT3DSprC::StopShow
-#line 1 "decomp/ST.exe/functions/004AC410/decomp.c"
+#line 4 "decomp/ST.exe/functions/004AC410/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\wlad\Tspr3d.cpp
    STT3DSprC::StopShow */
@@ -611,16 +612,31 @@ undefined4 __thiscall st::fn_004AC410(STT3DSprC *this,byte param_1)
 }
 
 // 004AD1F0 STT3DSprC::Init
-#line 1 "decomp/ST.exe/functions/004AD1F0/decomp.c"
+#line 4 "decomp/ST.exe/functions/004AD1F0/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\wlad\Tspr3d.cpp
    STT3DSprC::Init
 
    [STPrototypeApplier] Propagated parameter 4.
-   Evidence: 0057F580 -> 004AD1F0 @ 0057F632; STDcResourcC::Init this; stable alias EBX */
+   Evidence: 0057F580 -> 004AD1F0 @ 0057F632; STDcResourcC::Init this; stable alias EBX
+
+   [STPrototypeApplier] Propagated parameter 1.
+   Evidence: 0041E530 -> 004AD1F0 @ 0041E9D5; data at 008073CC | 0041E530 -> 004AD1F0 @ 0041EA40;
+   data at 008073CC | 004B9FA0 -> 004AD1F0 @ 004BAA63; data at 008073CC | 004B9FA0 -> 004AD1F0 @
+   004BAB7D; data at 008073CC | 004C6210 -> 004AD1F0 @ 004C6275; data at 008073CC | 004C6210 ->
+   004AD1F0 @ 004C62CC; data at 008073CC | 004CC220 -> 004AD1F0 @ 004CC2B1; data at 008073CC |
+   004D01F0 -> 004AD1F0 @ 004D0241; data at 008073CC | 004D11D0 -> 004AD1F0 @ 004D18FC; data at
+   008073CC | 004D11D0 -> 004AD1F0 @ 004D1A31; data at 008073CC | 004D11D0 -> 004AD1F0 @ 004D1B45;
+   data at 008073CC | 004D11D0 -> 004AD1F0 @ 004D2153; data at 008073CC | 004D9000 -> 004AD1F0 @
+   004D904B; data at 008073CC | 004D9C80 -> 004AD1F0 @ 004D9CD0; data at 008073CC | 004DCE00 ->
+   004AD1F0 @ 004DCE50; data at 008073CC | 004EAA20 -> 004AD1F0 @ 004EAA70; data at 008073CC |
+   004EC050 -> 004AD1F0 @ 004EC097; data at 008073CC | 004ECEA0 -> 004AD1F0 @ 004ECEEB; data at
+   008073CC | 0057F580 -> 004AD1F0 @ 0057F632; data at 008073CC | 005FDB50 -> 004AD1F0 @ 005FDEC3;
+   data at 008073CC | 006132F0 -> 004AD1F0 @ 0061337D; data at 008073CC | 0062F3B0 -> 004AD1F0 @
+   0062F4D9; data at 008073CC */
 
 undefined4 __thiscall
-st::fn_004AD1F0(STT3DSprC *this,undefined4 param_1,uint param_2,uint param_3,STDcResourcC *param_4,
+st::fn_004AD1F0(STT3DSprC *this,ushort *param_1,uint param_2,uint param_3,STDcResourcC *param_4,
                uint param_5,uint param_6,uint param_7)
 
 {
@@ -668,7 +684,7 @@ st::fn_004AD1F0(STT3DSprC *this,undefined4 param_1,uint param_2,uint param_3,STD
 }
 
 // 004AD790 STT3DSprC::SaveSpr
-#line 1 "decomp/ST.exe/functions/004AD790/decomp.c"
+#line 4 "decomp/ST.exe/functions/004AD790/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\wlad\Tspr3d.cpp
    STT3DSprC::SaveSpr */
@@ -858,7 +874,7 @@ undefined4 * __thiscall st::fn_004AD790(STT3DSprC *this,uint *param_1)
 }
 
 // 004ADBA0 STT3DSprC::RestoreSpr
-#line 1 "decomp/ST.exe/functions/004ADBA0/decomp.c"
+#line 4 "decomp/ST.exe/functions/004ADBA0/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\wlad\Tspr3d.cpp
    STT3DSprC::RestoreSpr
@@ -926,11 +942,11 @@ st::fn_004ADBA0(STT3DSprC *this,int *param_1,AnonShape_004AD790_77673787 *param_
   if (param_1[1] != 0) {
     st::fn_0040116D(this_00,param_1[1],param_1[2]);
   }
-  if (param_1[3] != 0) {
-    st::fn_00405CA9(this_00,param_1[3]);
+  if ((ushort *)param_1[3] != nullptr) {
+    st::fn_00405CA9(this_00,(ushort *)param_1[3]);
   }
-  if (param_1[4] != 0) {
-    st::fn_004044EE(this_00,param_1[4],param_1[5]);
+  if ((ushort *)param_1[4] != nullptr) {
+    st::fn_004044EE(this_00,(ushort *)param_1[4],param_1[5]);
   }
   local_10 = (AnonShape_004ADBA0_0D812343 *)&param_2[1].field_0x4;
   iVar6 = this_00->field_0014;

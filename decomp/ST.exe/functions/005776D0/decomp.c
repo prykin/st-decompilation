@@ -89,7 +89,7 @@ int __thiscall GameSystemC::GetMessage(GameSystemC *this,STMessage *message)
           this_01[0x21].objectLock = DAT_00808784;
           Library::Ourlib::ST3DPAUS::FUN_00725760
                     (g_sT3DSMAPContext_00807598,(int)DAT_00808784,
-                     -(uint)(DAT_00808784 != nullptr) & DAT_008032b4);
+                     -(uint)(DAT_00808784 != nullptr) & (uint)PTR_008032b4);
           if (g_pausePanel_008016E0 != nullptr) {
             PausePanelTy::SwitchPausePanel(g_pausePanel_008016E0,(int)DAT_00808784);
             g_currentExceptionFrame = local_8c.previous;
@@ -102,7 +102,7 @@ int __thiscall GameSystemC::GetMessage(GameSystemC *this,STMessage *message)
           DAT_00808784 = (void *)piVar18[1];
           Library::Ourlib::ST3DPAUS::FUN_00725760
                     (g_sT3DSMAPContext_00807598,(int)DAT_00808784,
-                     -(uint)(DAT_00808784 != nullptr) & DAT_008032b4);
+                     -(uint)(DAT_00808784 != nullptr) & (uint)PTR_008032b4);
           g_currentExceptionFrame = local_8c.previous;
           return 0;
         }
@@ -112,7 +112,7 @@ int __thiscall GameSystemC::GetMessage(GameSystemC *this,STMessage *message)
           DAT_00808784 = (void *)piVar18[1];
           Library::Ourlib::ST3DPAUS::FUN_00725760
                     (g_sT3DSMAPContext_00807598,(int)DAT_00808784,
-                     -(uint)(DAT_00808784 != nullptr) & DAT_008032b4);
+                     -(uint)(DAT_00808784 != nullptr) & (uint)PTR_008032b4);
         }
         pvVar3 = (void *)piVar18[1];
         this_01[0x21].objectLock = pvVar3;
@@ -181,7 +181,7 @@ int __thiscall GameSystemC::GetMessage(GameSystemC *this,STMessage *message)
             } while (uVar10 != 0);
           }
         }
-        pcVar13 = LoadResourceString(0x42c2,g_module_00807618);
+        pcVar13 = LoadResourceString(0x42c2,g_hINSTANCE_00807618);
         wsprintfA((LPSTR)&DAT_0080f33a,pcVar13);
         if (g_popUp_008016D8 != nullptr) {
           thunk_FUN_0052d320(g_popUp_008016D8,(char *)&DAT_0080f33a,8);

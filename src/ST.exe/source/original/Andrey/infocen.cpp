@@ -2,7 +2,7 @@
 // Generated translation unit: source/original/Andrey/infocen.cpp
 
 // 0051FF50 InfocPanelTy::InitInfocPanel
-#line 1 "decomp/ST.exe/functions/0051FF50/decomp.c"
+#line 4 "decomp/ST.exe/functions/0051FF50/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\Andrey\infocen.cpp
    InfocPanelTy::InitInfocPanel */
@@ -68,11 +68,11 @@ void __thiscall st::fn_0051FF50(InfocPanelTy *this)
     st::fn_00403800
               ((SpecPanelTy *)this_00,pCVar3,iVar6,uVar8,iVar9,iVar12,UVar13,uVar14,uVar15);
     puVar4 = st::fn_00709AF0
-                       (DAT_00806794,CASE_B,"BUT_CHPLAYER",0xffffffff,0,1,0,
+                       (PTR_00806794,CASE_B,"BUT_CHPLAYER",0xffffffff,0,1,0,
                         nullptr);
     this_00->field_03C4 = puVar4;
     puVar4 = st::fn_00709AF0
-                       (DAT_00806794,CASE_B,"GAME_ALLY",0xffffffff,0,1,0,nullptr);
+                       (PTR_00806794,CASE_B,"GAME_ALLY",0xffffffff,0,1,0,nullptr);
     this_00->field_03C8 = puVar4;
     puVar16 = nullptr;
     iVar9 = 0;
@@ -81,7 +81,7 @@ void __thiscall st::fn_0051FF50(InfocPanelTy *this)
     uVar10 = 0xffffffff;
     pCVar3 = st::fn_0040577C("IND_PNT",0);
     puVar4 = st::fn_00709AF0
-                       (DAT_00806794,CASE_B,pCVar3,uVar10,bVar11,iVar6,iVar9,puVar16);
+                       (PTR_00806794,CASE_B,pCVar3,uVar10,bVar11,iVar6,iVar9,puVar16);
     this_00->field_03CC = puVar4;
     pcVar5 = (ccFntTy *)st::fn_0070CEB0(0x19d,g_cMf32_00806790,"MONEY_FONT",0);
     this_00->field_03D5 = pcVar5;
@@ -206,7 +206,7 @@ void __thiscall st::fn_0051FF50(InfocPanelTy *this)
 }
 
 // 005204D0 InfocPanelTy::DoneInfocPanel
-#line 1 "decomp/ST.exe/functions/005204D0/decomp.c"
+#line 4 "decomp/ST.exe/functions/005204D0/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\Andrey\infocen.cpp
    InfocPanelTy::DoneInfocPanel */
@@ -252,7 +252,7 @@ void __thiscall st::fn_005204D0(InfocPanelTy *this)
 }
 
 // 005205E0 InfocPanelTy::ShiftControls
-#line 1 "decomp/ST.exe/functions/005205E0/decomp.c"
+#line 4 "decomp/ST.exe/functions/005205E0/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\Andrey\infocen.cpp
    InfocPanelTy::ShiftControls */
@@ -297,7 +297,7 @@ void __thiscall st::fn_005205E0(InfocPanelTy *this,int param_1)
 }
 
 // 005206F0 InfocPanelTy::Update
-#line 1 "decomp/ST.exe/functions/005206F0/decomp.c"
+#line 4 "decomp/ST.exe/functions/005206F0/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\Andrey\infocen.cpp
    InfocPanelTy::Update */
@@ -404,7 +404,7 @@ void __thiscall st::fn_005206F0(InfocPanelTy *this)
         uVar12 = 0;
         iVar11 = -1;
         iVar5 = -1;
-        resourceString = (uint *)st::fn_006B0140(resourceId,g_module_00807618);
+        resourceString = (uint *)st::fn_006B0140(resourceId,g_hINSTANCE_00807618);
         st::fn_007119C0(this_00->field_0189,resourceString,iVar5,iVar11,uVar12);
       }
       if (DAT_00808a8f == '\0') {
@@ -474,7 +474,7 @@ LAB_00520987:
 }
 
 // 00520B50 InfocPanelTy::PaintInfocObj
-#line 1 "decomp/ST.exe/functions/00520B50/decomp.c"
+#line 4 "decomp/ST.exe/functions/00520B50/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\Andrey\infocen.cpp
    InfocPanelTy::PaintInfocObj
@@ -535,7 +535,7 @@ st::fn_00520B50
 }
 
 // 00520D10 InfocPanelTy::PaintInfoc
-#line 1 "decomp/ST.exe/functions/00520D10/decomp.c"
+#line 4 "decomp/ST.exe/functions/00520D10/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\Andrey\infocen.cpp
    InfocPanelTy::PaintInfoc */
@@ -781,7 +781,7 @@ void __thiscall st::fn_00520D10(InfocPanelTy *this)
 }
 
 // 00521490 InfocPanelTy::GetMessage
-#line 1 "decomp/ST.exe/functions/00521490/decomp.c"
+#line 4 "decomp/ST.exe/functions/00521490/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\Andrey\infocen.cpp
    InfocPanelTy::GetMessage

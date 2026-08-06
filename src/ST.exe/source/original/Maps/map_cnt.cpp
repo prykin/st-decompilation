@@ -2,7 +2,7 @@
 // Generated translation unit: source/original/Maps/map_cnt.cpp
 
 // 006A2770 FUN_006a2770
-#line 1 "decomp/ST.exe/functions/006A2770/decomp.c"
+#line 4 "decomp/ST.exe/functions/006A2770/decomp.c"
 /* [STSourceProvenanceApplier begin]
    Recovered source file: E:\__titans\Maps\map_cnt.cpp
    Diagnostic line evidence: 767 (metadata/report site, not the function definition)

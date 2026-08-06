@@ -34,7 +34,7 @@ int __thiscall STMBombC::GetMessage(STMBombC *this,STMessage *message)
   void *local_40;
   undefined4 local_3c;
   undefined4 local_38;
-  undefined4 local_34;
+  ushort *local_34;
   undefined4 local_30;
   undefined4 local_2c;
   undefined4 local_28;
@@ -218,7 +218,7 @@ int __thiscall STMBombC::GetMessage(STMBombC *this,STMessage *message)
           }
           *(short *)&this_00->field_0x4b = sVar11;
           iVar8 = STT3DSprC::LoadSequence
-                            ((STT3DSprC *)&this_00->field_01D5,0xe,DAT_00806774,"mmine",
+                            ((STT3DSprC *)&this_00->field_01D5,0xe,PTR_00806774,"mmine",
                              0x1d);
           if (iVar8 != 0) {
             RaiseInternalException
@@ -329,13 +329,13 @@ int __thiscall STMBombC::GetMessage(STMBombC *this,STMessage *message)
     }
     iVar8 = 0;
     do {
-      *(int **)(iVar8 + (int)local_40) = DAT_00806774;
+      *(int **)(iVar8 + (int)local_40) = PTR_00806774;
       iVar8 = iVar8 + 4;
     } while (iVar8 < 0x44);
-    STField<undefined4>(local_40,0x24) = DAT_00806764;
+    STField<int *>(local_40,0x24) = PTR_00806764;
     local_3c = 0;
     local_38 = 0;
-    local_34 = DAT_008073cc;
+    local_34 = PTR_008073cc;
     local_30 = 0;
     local_2c = 0;
     local_28 = 0;

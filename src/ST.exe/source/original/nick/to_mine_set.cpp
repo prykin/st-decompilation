@@ -2,7 +2,7 @@
 // Generated translation unit: source/original/nick/to_mine_set.cpp
 
 // 00621B50 STMineSetC::GetMessage
-#line 1 "decomp/ST.exe/functions/00621B50/decomp.c"
+#line 4 "decomp/ST.exe/functions/00621B50/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\nick\to_mine_set.cpp
    STMineSetC::GetMessage
@@ -323,7 +323,7 @@ cf_common_exit_00621D24:
 }
 
 // 00623170 STMineSetC::LoadImagMineSet
-#line 1 "decomp/ST.exe/functions/00623170/decomp.c"
+#line 4 "decomp/ST.exe/functions/00623170/decomp.c"
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 /* Recovered from embedded debug metadata:
    E:\__titans\nick\to_mine_set.cpp
@@ -362,7 +362,7 @@ undefined4 __thiscall st::fn_00623170(STMineSetC *this,int param_1)
   pSVar2->field_02BA = iVar3;
   if (param_1 == 0) {
     iVar3 = st::fn_00404183
-                      ((STT3DSprC *)this_00,0xe,DAT_00806774,(&PTR_DAT_007d02c4)[pSVar2->field_02AD]
+                      ((STT3DSprC *)this_00,0xe,PTR_00806774,(&PTR_DAT_007d02c4)[pSVar2->field_02AD]
                        ,0x1d);
     if (iVar3 != 0) {
       return local_8;
@@ -376,7 +376,7 @@ undefined4 __thiscall st::fn_00623170(STMineSetC *this,int param_1)
     pSVar2->field_02D2 = iVar3;
     if (pSVar2->field_0352 != '\0') {
       iVar3 = st::fn_00404183
-                        ((STT3DSprC *)this_00,0xc,DAT_00806774,
+                        ((STT3DSprC *)this_00,0xc,PTR_00806774,
                          (&PTR_s_mine0_007d02d4)[pSVar2->field_0262 + (uint)pSVar2->field_02AD * 8],
                          0x1d);
       if (iVar3 != 0) {
@@ -393,7 +393,7 @@ undefined4 __thiscall st::fn_00623170(STMineSetC *this,int param_1)
   }
   else {
     iVar3 = st::fn_00404183
-                      ((STT3DSprC *)this_00,0xe,DAT_00806774,
+                      ((STT3DSprC *)this_00,0xe,PTR_00806774,
                        (&PTR_s_expdeep_007d0354)[pSVar2->field_02AD],0x1d);
     if (iVar3 != 0) {
       return local_8;
@@ -403,7 +403,7 @@ undefined4 __thiscall st::fn_00623170(STMineSetC *this,int param_1)
     st::fn_004030BC((STT3DSprC *)this_00,'\x0e');
     st::fn_00405240((STT3DSprC *)this_00,0xe,g_playSystem_00802A38->field_00E4);
     iVar3 = st::fn_00404183
-                      ((STT3DSprC *)this_00,10,DAT_00806774,(&PTR_DAT_007d0364)[pSVar2->field_02AD],
+                      ((STT3DSprC *)this_00,10,PTR_00806774,(&PTR_DAT_007d0364)[pSVar2->field_02AD],
                        0x1d);
     if (iVar3 != 0) {
       return local_8;
@@ -411,12 +411,12 @@ undefined4 __thiscall st::fn_00623170(STMineSetC *this,int param_1)
     st::fn_00405AA6(this_00,'\n');
     st::fn_00401064((STT3DSprC *)this_00,'\n',pSVar2->field_02E1);
     st::fn_004030BC((STT3DSprC *)this_00,'\n');
-    st::fn_004044EE((STT3DSprC *)this_00,DAT_008032b8,0x10);
+    st::fn_004044EE((STT3DSprC *)this_00,PTR_008032b8,0x10);
     st::fn_00403233((STT3DSprC *)this_00,'\n');
     st::fn_00405240((STT3DSprC *)this_00,10,g_playSystem_00802A38->field_00E4);
     pSVar2->field_02E0 = 1;
     iVar3 = st::fn_00404183
-                      ((STT3DSprC *)this_00,9,DAT_00806764,(&PTR_DAT_007d0374)[pSVar2->field_02AD],
+                      ((STT3DSprC *)this_00,9,PTR_00806764,(&PTR_DAT_007d0374)[pSVar2->field_02AD],
                        0x1d);
     if (iVar3 != 0) {
       return local_8;

@@ -287,7 +287,7 @@ int __thiscall MoneyTy::GetMessage(MoneyTy *this,STMessage *message)
       uVar13 = 0xffffffff;
       text = thunk_FUN_00571240("IND_PNT",0);
       puVar9 = Library::Ourlib::MFRLOAD::mfRLoad
-                         (DAT_00806794,CASE_B,text,uVar13,bVar14,iVar7,iVar10,puVar15);
+                         (PTR_00806794,CASE_B,text,uVar13,bVar14,iVar7,iVar10,puVar15);
       this_00->field_0082 = puVar9;
       puVar15 = (undefined4 *)(DAT_0080679c + 0x28);
       iVar7 = 1;

@@ -2,7 +2,7 @@
 // Generated translation unit: source/recovered/by_owner/SpriteClassTy.cpp
 
 // 00715820 SpriteClassTy::SpriteClassTy
-#line 1 "decomp/ST.exe/functions/00715820/decomp.c"
+#line 4 "decomp/ST.exe/functions/00715820/decomp.c"
 /* [STConstructorApplier] Recovered constructor candidate.
    VTable: 0079E21C (store 00715827)
    Evidence: final_vptr=0079E21C; returns_this=true; calls_before=0; field_writes_after=29;
@@ -11,7 +11,7 @@
 SpriteClassTy * __thiscall st::fn_00715820(SpriteClassTy *this)
 
 {
-  this->vtable = &SpriteClassTyVTable;
+  this->vtable = &st_global_0079E21C;
   this->field_004C = 0xff;
   this->field_0051 = 0;
   this->field_0055 = 0;

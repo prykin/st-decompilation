@@ -91,7 +91,7 @@ MTaskTy::PaintBut(MTaskTy *this,int *param_1,UINT param_2,int param_3,int param_
         }
         iVar10 = -1;
         iVar5 = -1;
-        resourceString = (uint *)LoadResourceString(param_2,g_module_00807618);
+        resourceString = (uint *)LoadResourceString(param_2,g_hINSTANCE_00807618);
         ccFntTy::WrStr(pMVar3->field_0089,resourceString,iVar5,iVar10,uVar9);
       }
       g_currentExceptionFrame = local_5c.previous;

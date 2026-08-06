@@ -2,7 +2,7 @@
 // Generated translation unit: source/original/Andrey/cp_sup.cpp
 
 // 004F1390 CPanelTy::OutProc
-#line 1 "decomp/ST.exe/functions/004F1390/decomp.c"
+#line 4 "decomp/ST.exe/functions/004F1390/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\Andrey\cp_sup.cpp
    CPanelTy::OutProc
@@ -38,7 +38,7 @@ st::fn_004F1390(CPanelTy *this,DDXContext *param_1,undefined4 param_2,undefined4
 }
 
 // 004F1460 CPanelTy::OutProc
-#line 1 "decomp/ST.exe/functions/004F1460/decomp.c"
+#line 4 "decomp/ST.exe/functions/004F1460/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\Andrey\cp_sup.cpp
    CPanelTy::OutProc */
@@ -71,7 +71,7 @@ st::fn_004F1460(CPanelTy *this,int *param_1,undefined4 param_2,undefined4 param_
 }
 
 // 004F1530 CPanelTy::OutProc
-#line 1 "decomp/ST.exe/functions/004F1530/decomp.c"
+#line 4 "decomp/ST.exe/functions/004F1530/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\Andrey\cp_sup.cpp
    CPanelTy::OutProc
@@ -95,7 +95,7 @@ st::fn_004F1530(CPanelTy *this,int param_1,undefined4 param_2,undefined4 param_3
   if (errorCode == 0) {
     st::fn_006B48E0
               (param_1,param_4,param_5,param_8,0,0,0,param_8->field_0004,param_8->field_0008,
-               DAT_008032b4,0,0x10000ff);
+               PTR_008032b4,0,0x10000ff);
     g_currentExceptionFrame = local_48.previous;
     return;
   }
@@ -110,7 +110,7 @@ st::fn_004F1530(CPanelTy *this,int param_1,undefined4 param_2,undefined4 param_3
 }
 
 // 004F1D90 CPanelTy::PaintDamageXY
-#line 1 "decomp/ST.exe/functions/004F1D90/decomp.c"
+#line 4 "decomp/ST.exe/functions/004F1D90/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\Andrey\cp_sup.cpp
    CPanelTy::PaintDamageXY
@@ -149,7 +149,7 @@ st::fn_004F1D90
     uVar6 = 1;
     iVar5 = -1;
     iVar3 = 0;
-    puVar4 = (uint *)st::fn_006B0140(param_5,g_module_00807618);
+    puVar4 = (uint *)st::fn_006B0140(param_5,g_hINSTANCE_00807618);
     st::fn_00711B70(pCVar2->field_01B8,puVar4,iVar3,iVar5,uVar6,iVar7,iVar8);
     st::external_00000080(&pCVar2->field_01E1,"%d",param_4);
     st::fn_00710A90(pCVar2->field_01B8,param_1,0,param_2 + 0x30,param_3,0x11,10);
@@ -160,7 +160,7 @@ st::fn_004F1D90
     uVar6 = 1;
     iVar5 = -1;
     iVar3 = -1;
-    puVar4 = (uint *)st::fn_006B0140(0x36b2,g_module_00807618);
+    puVar4 = (uint *)st::fn_006B0140(0x36b2,g_hINSTANCE_00807618);
     st::fn_00711B70(pCVar2->field_01B8,puVar4,iVar3,iVar5,uVar6,iVar7,iVar8);
     g_currentExceptionFrame = local_4c.previous;
     return;
@@ -176,7 +176,7 @@ st::fn_004F1D90
 }
 
 // 004F1F60 CPanelTy::PaintDamageXY
-#line 1 "decomp/ST.exe/functions/004F1F60/decomp.c"
+#line 4 "decomp/ST.exe/functions/004F1F60/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\Andrey\cp_sup.cpp
    CPanelTy::PaintDamageXY
@@ -215,7 +215,7 @@ st::fn_004F1F60
     uVar6 = 5;
     iVar5 = -1;
     iVar3 = 0;
-    puVar4 = (uint *)st::fn_006B0140(param_5,g_module_00807618);
+    puVar4 = (uint *)st::fn_006B0140(param_5,g_hINSTANCE_00807618);
     st::fn_00711B70(pCVar2->field_01B8,puVar4,iVar3,iVar5,uVar6,iVar7,iVar8);
     st::external_00000080(&pCVar2->field_01E1,"%3d",param_4);
     st::fn_00710A90(pCVar2->field_01BC,param_1,0,param_2 + 0xc,param_3 + 10,0x14,0xf);
@@ -226,7 +226,7 @@ st::fn_004F1F60
     uVar6 = 5;
     iVar5 = -1;
     iVar3 = -1;
-    puVar4 = (uint *)st::fn_006B0140(0x36b2,g_module_00807618);
+    puVar4 = (uint *)st::fn_006B0140(0x36b2,g_hINSTANCE_00807618);
     st::fn_00711B70(pCVar2->field_01B8,puVar4,iVar3,iVar5,uVar6,iVar7,iVar8);
     g_currentExceptionFrame = local_4c.previous;
     return;
@@ -242,7 +242,7 @@ st::fn_004F1F60
 }
 
 // 004F2130 CPanelTy::PaintCostsXY
-#line 1 "decomp/ST.exe/functions/004F2130/decomp.c"
+#line 4 "decomp/ST.exe/functions/004F2130/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\Andrey\cp_sup.cpp
    CPanelTy::PaintCostsXY
@@ -282,7 +282,7 @@ st::fn_004F2130
       uVar5 = 1;
       iVar4 = -1;
       iVar3 = 0;
-      resourceString = (uint *)st::fn_006B0140(0x36b3,g_module_00807618);
+      resourceString = (uint *)st::fn_006B0140(0x36b3,g_hINSTANCE_00807618);
       st::fn_00711B70(pCVar2->field_01B8,resourceString,iVar3,iVar4,uVar5,iVar6,iVar7);
     }
     if (param_4 != 0xffff) {
@@ -309,7 +309,7 @@ st::fn_004F2130
 }
 
 // 004F2350 CPanelTy::PaintCostsXYSI
-#line 1 "decomp/ST.exe/functions/004F2350/decomp.c"
+#line 4 "decomp/ST.exe/functions/004F2350/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\Andrey\cp_sup.cpp
    CPanelTy::PaintCostsXYSI
@@ -352,7 +352,7 @@ st::fn_004F2350
       uVar5 = 5;
       iVar4 = -1;
       iVar3 = -1;
-      resourceString = (uint *)st::fn_006B0140(0x36b3,g_module_00807618);
+      resourceString = (uint *)st::fn_006B0140(0x36b3,g_hINSTANCE_00807618);
       st::fn_00711B70(pCVar2->field_01B8,resourceString,iVar3,iVar4,uVar5,iVar6,iVar7);
     }
     if (param_2 != 0xffff) {
@@ -379,7 +379,7 @@ st::fn_004F2350
 }
 
 // 004F2560 CPanelTy::PaintWeap
-#line 1 "decomp/ST.exe/functions/004F2560/decomp.c"
+#line 4 "decomp/ST.exe/functions/004F2560/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\Andrey\cp_sup.cpp
    CPanelTy::PaintWeap
@@ -547,7 +547,7 @@ LAB_004f27ff:
     uVar7 = 1;
     iVar10 = -1;
     iVar16 = -2;
-    resourceString = (uint *)st::fn_006B0140(0x2715,g_module_00807618);
+    resourceString = (uint *)st::fn_006B0140(0x2715,g_hINSTANCE_00807618);
     st::fn_00711B70(pCVar5->field_01B8,resourceString,iVar16,iVar10,uVar7,iVar18,iVar19);
   }
   local_5 = '\x01';
@@ -631,7 +631,7 @@ LAB_004f27ff:
 }
 
 // 004F2E40 CPanelTy::SetButStruct
-#line 1 "decomp/ST.exe/functions/004F2E40/decomp.c"
+#line 4 "decomp/ST.exe/functions/004F2E40/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\Andrey\cp_sup.cpp
    CPanelTy::SetButStruct
@@ -759,7 +759,7 @@ st::fn_004F2E40
 }
 
 // 004F3130 CPanelTy::CreateBut
-#line 1 "decomp/ST.exe/functions/004F3130/decomp.c"
+#line 4 "decomp/ST.exe/functions/004F3130/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\Andrey\cp_sup.cpp
    CPanelTy::CreateBut
@@ -951,7 +951,7 @@ st::fn_004F3130(CPanelTy *this,byte param_1,undefined4 param_2,int param_3,int p
 }
 
 // 004F3540 CPanelTy::PaintBut
-#line 1 "decomp/ST.exe/functions/004F3540/decomp.c"
+#line 4 "decomp/ST.exe/functions/004F3540/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\Andrey\cp_sup.cpp
    CPanelTy::PaintBut
@@ -1054,7 +1054,7 @@ LAB_004f3636:
 }
 
 // 004F37C0 CPanelTy::PaintBBut
-#line 1 "decomp/ST.exe/functions/004F37C0/decomp.c"
+#line 4 "decomp/ST.exe/functions/004F37C0/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\Andrey\cp_sup.cpp
    CPanelTy::PaintBBut
@@ -1151,7 +1151,7 @@ LAB_004f38ad:
 }
 
 // 004F3A30 CPanelTy::PaintTxtBut
-#line 1 "decomp/ST.exe/functions/004F3A30/decomp.c"
+#line 4 "decomp/ST.exe/functions/004F3A30/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\Andrey\cp_sup.cpp
    CPanelTy::PaintTxtBut
@@ -1239,7 +1239,7 @@ cf_common_join_004F3AC3:
       uVar5 = (*(code *)param_6)(param_2);
       iVar6 = -1;
       iVar4 = -2;
-      resourceString = (uint *)st::fn_006B0140(param_5,g_module_00807618);
+      resourceString = (uint *)st::fn_006B0140(param_5,g_hINSTANCE_00807618);
       st::fn_00711B70(pCVar3->field_01B8,resourceString,iVar4,iVar6,uVar5,iVar7,iVar8);
       if ((param_1 < 0xb) && (-1 < (int)pCVar3->field_0148[uVar2])) {
         st::fn_006B3640
@@ -1261,7 +1261,7 @@ cf_common_join_004F3AC3:
 }
 
 // 004F3CF0 CPanelTy::PaintTxtBut
-#line 1 "decomp/ST.exe/functions/004F3CF0/decomp.c"
+#line 4 "decomp/ST.exe/functions/004F3CF0/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\Andrey\cp_sup.cpp
    CPanelTy::PaintTxtBut
@@ -1359,7 +1359,7 @@ cf_common_join_004F3D83:
       uVar5 = (*(code *)param_6)(param_2);
       iVar6 = -1;
       iVar8 = -2;
-      resourceString = (uint *)st::fn_006B0140(param_5,g_module_00807618);
+      resourceString = (uint *)st::fn_006B0140(param_5,g_hINSTANCE_00807618);
       st::fn_00711B70(g_interSystem_00802A28->field_0024,resourceString,iVar8,iVar6,uVar5,iVar7,iVar9
                     );
       if ((param_1 < 0xb) && (-1 < (int)pCVar3->field_0148[uVar2])) {
@@ -1382,7 +1382,7 @@ cf_common_join_004F3D83:
 }
 
 // 004F3FE0 CPanelTy::PaintLBut
-#line 1 "decomp/ST.exe/functions/004F3FE0/decomp.c"
+#line 4 "decomp/ST.exe/functions/004F3FE0/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\Andrey\cp_sup.cpp
    CPanelTy::PaintLBut */
@@ -1482,7 +1482,7 @@ cf_common_join_004F4070:
 }
 
 // 004F42A0 CPanelTy::PaintTab
-#line 1 "decomp/ST.exe/functions/004F42A0/decomp.c"
+#line 4 "decomp/ST.exe/functions/004F42A0/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\Andrey\cp_sup.cpp
    CPanelTy::PaintTab

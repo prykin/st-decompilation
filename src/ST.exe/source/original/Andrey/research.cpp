@@ -2,7 +2,7 @@
 // Generated translation unit: source/original/Andrey/research.cpp
 
 // 0053C120 ResearchPanelTy::InitResearchPanel
-#line 1 "decomp/ST.exe/functions/0053C120/decomp.c"
+#line 4 "decomp/ST.exe/functions/0053C120/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\Andrey\research.cpp
    ResearchPanelTy::InitResearchPanel */
@@ -60,7 +60,7 @@ void __thiscall st::fn_0053C120(ResearchPanelTy *this)
     return;
   }
   iVar6 = 2;
-  g_prodPanel_008016E8 = (ProdPanelTy *)local_10;
+  g_researchPanel_008016E8 = (ProdPanelTy *)local_10;
   puVar5 = &local_10->field_027A;
   do {
     pDVar3 = st::fn_006AE290(nullptr,0x28,0x30,10);
@@ -75,10 +75,10 @@ void __thiscall st::fn_0053C120(ResearchPanelTy *this)
   puVar4 = st::fn_006F1CE0(g_cMf32_00806790,1,text,piVar10,iVar6);
   this_00->field_0184 = puVar4;
   puVar4 = st::fn_00709AF0
-                     (DAT_00806794,CASE_B,&DAT_007c20a0,0xffffffff,0,1,0,nullptr);
+                     (PTR_00806794,CASE_B,&DAT_007c20a0,0xffffffff,0,1,0,nullptr);
   this_00->field_0188 = puVar4;
   puVar4 = st::fn_00709AF0
-                     (DAT_00806794,CASE_B,&DAT_007c38c8,0xffffffff,0,1,0,nullptr);
+                     (PTR_00806794,CASE_B,&DAT_007c38c8,0xffffffff,0,1,0,nullptr);
   this_00->field_018C = puVar4;
   st::fn_00404241
             ((ProdPanelTy *)this_00,0x2722,0x3f,2,0xc1,0xc,0x85,0x4f,0x68,0xc4,0x4f,0x20,0x13,0x33,
@@ -147,7 +147,7 @@ LAB_0053c30d:
 }
 
 // 0053C500 ResearchPanelTy::Update
-#line 1 "decomp/ST.exe/functions/0053C500/decomp.c"
+#line 4 "decomp/ST.exe/functions/0053C500/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\Andrey\research.cpp
    ResearchPanelTy::Update */
@@ -201,7 +201,7 @@ void __thiscall st::fn_0053C500(ResearchPanelTy *this)
 }
 
 // 0053C820 ResearchPanelTy::PaintUpdBut
-#line 1 "decomp/ST.exe/functions/0053C820/decomp.c"
+#line 4 "decomp/ST.exe/functions/0053C820/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\Andrey\research.cpp
    ResearchPanelTy::PaintUpdBut */
@@ -285,7 +285,7 @@ st::fn_0053C820(ResearchPanelTy *this,AnonShape_004EF320_444F9AB1 *param_1)
 }
 
 // 0053CA80 ResearchPanelTy::GetMessage
-#line 1 "decomp/ST.exe/functions/0053CA80/decomp.c"
+#line 4 "decomp/ST.exe/functions/0053CA80/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\Andrey\research.cpp
    ResearchPanelTy::GetMessage
@@ -354,7 +354,7 @@ int __thiscall st::fn_0053CA80(ResearchPanelTy *this,STMessage *message)
           st::fn_006E56B0(this_00->field_000C,this_00->field_0282);
         }
         this_00->field_0282 = 0;
-        g_prodPanel_008016E8 = nullptr;
+        g_researchPanel_008016E8 = nullptr;
         g_currentExceptionFrame = local_58.previous;
         return 0;
       }

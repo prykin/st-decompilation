@@ -2,7 +2,7 @@
 // Generated translation unit: source/original/ai/ai_boss.cpp
 
 // 00647DC0 AiBossClassTy::InitData
-#line 1 "decomp/ST.exe/functions/00647DC0/decomp.c"
+#line 4 "decomp/ST.exe/functions/00647DC0/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\ai\ai_boss.cpp
    AiBossClassTy::InitData */
@@ -49,7 +49,7 @@ int __thiscall st::fn_00647DC0(AiBossClassTy *this,undefined4 *param_1)
 }
 
 // 00647EF0 AiBossClassTy::PrepareToSave
-#line 1 "decomp/ST.exe/functions/00647EF0/decomp.c"
+#line 4 "decomp/ST.exe/functions/00647EF0/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\ai\ai_boss.cpp
    AiBossClassTy::PrepareToSave
@@ -111,7 +111,7 @@ byte * __thiscall st::fn_00647EF0(AiBossClassTy *this,uint *param_1)
 }
 
 // 00648030 AiBossClassTy::GetMessage
-#line 1 "decomp/ST.exe/functions/00648030/decomp.c"
+#line 4 "decomp/ST.exe/functions/00648030/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\ai\ai_boss.cpp
    AiBossClassTy::GetMessage

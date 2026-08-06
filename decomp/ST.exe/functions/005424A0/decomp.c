@@ -93,7 +93,7 @@ undefined4 __thiscall InterSystemC::CreateInterfObjects(InterSystemC *this)
     pCVar5 = thunk_FUN_00571240("BUT_FILEOPT",0);
     pCVar5 = FUN_006f2c00(pCVar5,iVar3,uVar8);
     puVar6 = Library::Ourlib::MFRLOAD::mfRLoad
-                       (DAT_00806794,CASE_1,pCVar5,uVar9,bVar10,iVar11,iVar12,puVar13);
+                       (PTR_00806794,CASE_1,pCVar5,uVar9,bVar10,iVar11,iVar12,puVar13);
     local_184[2] = (-(uint)(DAT_0080874e != '\x03') & 5) + 0x26;
     local_174 = *(undefined4 *)(puVar6 + 2);
     local_164 = this_00->field_0014;
@@ -244,7 +244,7 @@ undefined4 __thiscall InterSystemC::CreateInterfObjects(InterSystemC *this)
     thunk_FUN_0056a500();
     if ((DAT_0080877e == '\0') && (g_popUp_008016D8 != nullptr)) {
       uVar9 = 8;
-      text = LoadResourceString(0x4275,g_module_00807618);
+      text = LoadResourceString(0x4275,g_hINSTANCE_00807618);
       thunk_FUN_0052d320(g_popUp_008016D8,text,uVar9);
     }
     g_currentExceptionFrame = local_1c8.previous;

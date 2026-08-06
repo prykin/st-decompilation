@@ -2,7 +2,7 @@
 // Generated translation unit: source/recovered/by_owner/SettMapMTy.cpp
 
 // 005B5F00 SettMapMTy::sub_005B5F00
-#line 1 "decomp/ST.exe/functions/005B5F00/decomp.c"
+#line 4 "decomp/ST.exe/functions/005B5F00/decomp.c"
 /* [STMethodOwnerApplier] Structural method owner recovered as SettMapMTy.
    Evidence: this_call_owners=[SettMapMTy]; agreed_this_calls=1; incoming_this_accesses=11;
    incoming_edx_uses=0; incoming_stack_parameter_uses=2; direct_non_thunk_callers=0;
@@ -52,7 +52,7 @@ st::fn_005B5F00(SettMapMTy *this,RecoveredSourceFamily_dibcopy *param_1,int *par
 }
 
 // 005D00B0 SettMapMTy::sub_005D00B0
-#line 1 "decomp/ST.exe/functions/005D00B0/decomp.c"
+#line 4 "decomp/ST.exe/functions/005D00B0/decomp.c"
 /* [STMethodOwnerApplier] Structural method owner recovered as SettMapMTy.
    Evidence: this_call_owners=[SettMapMTy]; agreed_this_calls=4; incoming_this_accesses=1;
    incoming_edx_uses=0; incoming_stack_parameter_uses=2; direct_non_thunk_callers=0;
@@ -94,7 +94,7 @@ st::fn_005D00B0(SettMapMTy *this,AnonShape_005D00B0_9E7CC102 *param_1,uint param
 }
 
 // 005D1380 SettMapMTy::sub_005D1380
-#line 1 "decomp/ST.exe/functions/005D1380/decomp.c"
+#line 4 "decomp/ST.exe/functions/005D1380/decomp.c"
 /* [STMethodOwnerApplier] Structural method owner recovered as SettMapMTy.
    Evidence: this_call_owners=[SettMapMTy]; agreed_this_calls=3; incoming_this_accesses=1;
    incoming_edx_uses=0; incoming_stack_parameter_uses=0; direct_non_thunk_callers=0;

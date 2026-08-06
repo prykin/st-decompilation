@@ -77,7 +77,7 @@ FUN_0057a140(int param_1,Global_sub_0057A140_param_2Enum param_2,int param_3,und
     uVar2 = ~uVar2;
     pcVar4 = pcVar5 + -uVar2;
     memmove(param_5, pcVar4, uVar2); /* compiler REP MOVS byte copy */
-    *param_4 = DAT_0080676c;
+    *param_4 = PTR_0080676c;
   }
 switchD_0057a18b_caseD_ec:
   return;

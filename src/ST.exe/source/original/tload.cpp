@@ -2,7 +2,7 @@
 // Generated translation unit: source/original/tload.cpp
 
 // 00428E50 FUN_00428e50
-#line 1 "decomp/ST.exe/functions/00428E50/decomp.c"
+#line 4 "decomp/ST.exe/functions/00428E50/decomp.c"
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 /* [STSourceProvenanceApplier begin]
    Recovered source file: E:\__titans\tload.cpp
@@ -693,7 +693,7 @@ cf_continue_loop_004296CF:
 }
 
 // 0042A290 LoadLand
-#line 1 "decomp/ST.exe/functions/0042A290/decomp.c"
+#line 4 "decomp/ST.exe/functions/0042A290/decomp.c"
 /* [STSourceProvenanceApplier begin]
    Recovered source file: E:\__titans\tload.cpp
    Diagnostic line evidence: 1166 | 1282 | 1283 (metadata/report site, not the function definition)
@@ -748,12 +748,12 @@ short * __cdecl st::fn_0042A290(cMf32 *param_1,char *text)
     local_1c = pAVar4;
     if (g_cLoading_00802A58 != nullptr) {
       iVar3 = DAT_007f4e00;
-      pcVar5 = st::fn_006B0140(0x2685,g_module_00807618);
+      pcVar5 = st::fn_006B0140(0x2685,g_hINSTANCE_00807618);
       st::external_00000080(local_f4,pcVar5,iVar3);
       st::fn_00403472(g_cLoading_00802A58,CASE_2,0,local_f4);
       if (g_cLoading_00802A58 != nullptr) {
         iVar3 = DAT_007f4e00 / 2;
-        pcVar5 = st::fn_006B0140(0x268c,g_module_00807618);
+        pcVar5 = st::fn_006B0140(0x268c,g_hINSTANCE_00807618);
         st::fn_00404D8B(g_cLoading_00802A58,0,pcVar5,iVar3);
         st::fn_00403472(g_cLoading_00802A58,CASE_0,0,nullptr);
       }
@@ -874,7 +874,7 @@ short * __cdecl st::fn_0042A290(cMf32 *param_1,char *text)
 }
 
 // 0042A860 FUN_0042a860
-#line 1 "decomp/ST.exe/functions/0042A860/decomp.c"
+#line 4 "decomp/ST.exe/functions/0042A860/decomp.c"
 /* [STSourceProvenanceApplier begin]
    Recovered source file: E:\__titans\tload.cpp
    Diagnostic line evidence: 1334 (metadata/report site, not the function definition)
@@ -885,7 +885,7 @@ void st::fn_0042A860(void)
 {
   int iVar1;
   undefined1 *puVar2;
-  undefined1 *puVar3;
+  short *psVar3;
   undefined1 local_448 [1024];
   InternalExceptionFrame local_48;
 
@@ -895,14 +895,14 @@ void st::fn_0042A860(void)
   if (iVar1 == 0) {
     puVar2 = local_448 + 1;
     iVar1 = 0x100;
-    puVar3 = (undefined1 *)(DAT_00806750 + 0xe);
+    psVar3 = PTR_00806750 + 7;
     do {
-      puVar2[-1] = puVar3[-1];
-      *puVar2 = *puVar3;
-      puVar2[1] = puVar3[1];
+      puVar2[-1] = *(undefined1 *)((int)psVar3 + -1);
+      *puVar2 = (char)*psVar3;
+      puVar2[1] = STField<undefined1>(psVar3,1);
       puVar2 = puVar2 + 4;
       iVar1 = iVar1 + -1;
-      puVar3 = puVar3 + 4;
+      psVar3 = psVar3 + 2;
     } while (iVar1 != 0);
     st::fn_006B08F0((AnonShape_GLOBAL_0080759C_9638EF10 *)g_dDXContext_0080759C,(int)local_448,0,0x100);
     g_currentExceptionFrame = local_48.previous;

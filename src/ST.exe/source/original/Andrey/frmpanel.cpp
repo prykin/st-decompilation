@@ -2,7 +2,7 @@
 // Generated translation unit: source/original/Andrey/frmpanel.cpp
 
 // 0050FD60 FrmPanelTy::InitFrmPanel
-#line 1 "decomp/ST.exe/functions/0050FD60/decomp.c"
+#line 4 "decomp/ST.exe/functions/0050FD60/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\Andrey\frmpanel.cpp
    FrmPanelTy::InitFrmPanel */
@@ -215,7 +215,7 @@ void __thiscall st::fn_0050FD60(FrmPanelTy *this)
 }
 
 // 00510250 FrmPanelTy::DoneFrmPanel
-#line 1 "decomp/ST.exe/functions/00510250/decomp.c"
+#line 4 "decomp/ST.exe/functions/00510250/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\Andrey\frmpanel.cpp
    FrmPanelTy::DoneFrmPanel */
@@ -271,7 +271,7 @@ void __thiscall st::fn_00510250(FrmPanelTy *this)
 }
 
 // 00510370 FrmPanelTy::ShiftControls
-#line 1 "decomp/ST.exe/functions/00510370/decomp.c"
+#line 4 "decomp/ST.exe/functions/00510370/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\Andrey\frmpanel.cpp
    FrmPanelTy::ShiftControls */
@@ -334,7 +334,7 @@ void __thiscall st::fn_00510370(FrmPanelTy *this,int param_1)
 }
 
 // 005104B0 FrmPanelTy::Update
-#line 1 "decomp/ST.exe/functions/005104B0/decomp.c"
+#line 4 "decomp/ST.exe/functions/005104B0/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\Andrey\frmpanel.cpp
    FrmPanelTy::Update */
@@ -401,7 +401,7 @@ void __thiscall st::fn_005104B0(FrmPanelTy *this)
 }
 
 // 005105E0 FrmPanelTy::PaintBut
-#line 1 "decomp/ST.exe/functions/005105E0/decomp.c"
+#line 4 "decomp/ST.exe/functions/005105E0/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\Andrey\frmpanel.cpp
    FrmPanelTy::PaintBut */
@@ -474,7 +474,7 @@ st::fn_005105E0(FrmPanelTy *this,AnonShape_005105E0_BBFE3E3B *param_1,char *para
 }
 
 // 005107C0 FrmPanelTy::GetMessage
-#line 1 "decomp/ST.exe/functions/005107C0/decomp.c"
+#line 4 "decomp/ST.exe/functions/005107C0/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\Andrey\frmpanel.cpp
    FrmPanelTy::GetMessage

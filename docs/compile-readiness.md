@@ -34,7 +34,7 @@ sites, not unique source objects.
 
 | Class | Functions | Body share | Occurrences | State | What remains |
 | --- | ---: | ---: | ---: | --- | --- |
-| Translation-unit/declaration assembly | 5,712 | 100.00% | 5,712 | assembled | `tools/st_source_tree.py` emits 318 deterministic TUs plus dependency-ordered headers; full object compilation remains. |
+| Translation-unit/declaration assembly | 5,712 | 100.00% | 5,712 | assembled and audited | `tools/st_source_tree.py` emits 318 deterministic TUs; `tools/st_compile_audit.py` currently passes 54 and maps 4,066 capped errors to function addresses. |
 | Default `FUN_ADDRESS` names | 4,157 | 72.78% | 4,157 | valid but semantic debt | Stable fallback names compile; recover original names only from evidence. |
 | Undefined function signatures | 3,894 | 68.17% | 3,894 | runtime-compatible, semantically incomplete | Recover return and parameter meaning at ABI boundaries. |
 | Undefined scalar spelling | 3,658 | 64.04% | 18,595 | compatibility implemented | Width is preserved by aliases, including exact 3/6-byte containers; signedness, enum, pointer, and semantic type remain. |
@@ -150,9 +150,10 @@ physical-vtable disagreement as review-only.
    global record arrays.
 8. Bound meaningful unclaimed executable ranges, especially probable code,
    orphan code, and the adjacent jump/lookup-table case.
-9. Add compile probes by dependency-closed component, then by recovered source
-   file; use compiler diagnostics as a new address-stable audit, not as license
-   to guess types.
+9. **Partially implemented:** the local compile audit probes every recovered
+   source file/TU independently and emits address-stable diagnostics. Add
+   dependency-closed component probes after the global declaration surface is
+   cleaner; diagnostics never license guessed types.
 10. Restructure labels and replace compatibility shims only after the generated
     source compiles and behavior-facing ABI tests exist.
 
@@ -160,6 +161,20 @@ physical-vtable disagreement as review-only.
 all 5,712 bodies are placed in 318 generated C++ translation units, 1,044 under
 proven original paths. Its complete generated declaration header passes a
 C++17 syntax probe. Full object compilation is the new measurable boundary;
-current errors expose anonymous `field_0x...` storage views, pointer/word role
-conflicts, virtual member-call sugar, and weak prototypes. See
+current errors expose residual overlapping `field_0x...` views, pointer/word
+role conflicts, untyped vtable slots, and weak prototypes. See
 `docs/source-tree-generation.md` and `src/ST.exe/audit/`.
+
+The first source-compilation layer materializes 2,664 exact unnamed-byte views
+actually referenced by statically typed bodies, emits 780 non-virtual member
+wrappers over receiver-aware physical-vtable slots, and exposes 1,292 uniquely
+owned non-virtual `__thiscall` functions as forwarding class methods over their
+address-stable `st::fn_ADDRESS` implementations. It does not alter packed layout
+or synthesize inheritance. It also renames 231 exact address-taken global-object
+uses whose image symbol collides with a C++ type name to `st_global_ADDRESS`,
+without changing the Ghidra symbol. With a fixed 32-error-per-TU Apple Clang
+probe, 54 of 318 units pass; the 4,068 retained errors are dominated by call
+argument types (1,198), scalar/pointer assignment roles (1,014), scalar
+subscripting (626), and undeclared decompiler temporaries (599). Only 38 missing
+record-member diagnostics remain. These capped counts are a comparison baseline,
+not an assertion that later diagnostics in a failed TU do not exist.

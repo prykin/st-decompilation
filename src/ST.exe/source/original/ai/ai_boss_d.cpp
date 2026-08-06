@@ -2,7 +2,7 @@
 // Generated translation unit: source/original/ai/ai_boss_d.cpp
 
 // 00648400 FUN_00648400
-#line 1 "decomp/ST.exe/functions/00648400/decomp.c"
+#line 4 "decomp/ST.exe/functions/00648400/decomp.c"
 /* [STSourceProvenanceApplier begin]
    Recovered source file: E:\__titans\ai\ai_boss_d.cpp
    Diagnostic line evidence: 32 (metadata/report site, not the function definition)
@@ -41,7 +41,7 @@ undefined4 * __cdecl st::fn_00648400(char *text,undefined4 param_2)
 }
 
 // 00648530 FUN_00648530
-#line 1 "decomp/ST.exe/functions/00648530/decomp.c"
+#line 4 "decomp/ST.exe/functions/00648530/decomp.c"
 /* [STSourceProvenanceApplier begin]
    Recovered source file: E:\__titans\ai\ai_boss_d.cpp
    Diagnostic line evidence: 69 (metadata/report site, not the function definition)
@@ -88,7 +88,7 @@ AllocationRecord_00648530 * __cdecl st::fn_00648530(AllocationRecord_00648530 *p
 }
 
 // 00648620 BossDataPack
-#line 1 "decomp/ST.exe/functions/00648620/decomp.c"
+#line 4 "decomp/ST.exe/functions/00648620/decomp.c"
 /* [STSourceProvenanceApplier begin]
    Recovered source file: E:\__titans\ai\ai_boss_d.cpp
    Diagnostic line evidence: 107 | 108 (metadata/report site, not the function definition)
@@ -151,7 +151,7 @@ st::fn_00648620(AllocationRecord_00648620 *param_1,undefined4 *param_2,int param
 }
 
 // 00648780 LoadBossEdit
-#line 1 "decomp/ST.exe/functions/00648780/decomp.c"
+#line 4 "decomp/ST.exe/functions/00648780/decomp.c"
 /* [STSourceProvenanceApplier begin]
    Recovered source file: E:\__titans\ai\ai_boss_d.cpp
    Diagnostic line evidence: 127 | 134 | 136 (metadata/report site, not the function definition)
@@ -199,7 +199,7 @@ undefined4 * __cdecl st::fn_00648780(int param_1,char *param_2)
 }
 
 // 006488C0 SaveBossEdit
-#line 1 "decomp/ST.exe/functions/006488C0/decomp.c"
+#line 4 "decomp/ST.exe/functions/006488C0/decomp.c"
 /* [STSourceProvenanceApplier begin]
    Recovered source file: E:\__titans\ai\ai_boss_d.cpp
    Diagnostic line evidence: 156 | 163 | 166 (metadata/report site, not the function definition)

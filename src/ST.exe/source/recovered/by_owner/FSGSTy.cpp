@@ -2,7 +2,7 @@
 // Generated translation unit: source/recovered/by_owner/FSGSTy.cpp
 
 // 0059B820 FSGSTy::sub_0059B820
-#line 1 "decomp/ST.exe/functions/0059B820/decomp.c"
+#line 4 "decomp/ST.exe/functions/0059B820/decomp.c"
 /* [STMethodOwnerApplier] Structural method owner recovered as FSGSTy.
    Evidence: this_call_owners=[FSGSTy]; agreed_this_calls=1; incoming_this_accesses=78;
    incoming_edx_uses=0; incoming_stack_parameter_uses=0; direct_non_thunk_callers=0;
@@ -206,7 +206,7 @@ switchD_0059b84b_default:
 }
 
 // 0059BE50 FSGSTy::sub_0059BE50
-#line 1 "decomp/ST.exe/functions/0059BE50/decomp.c"
+#line 4 "decomp/ST.exe/functions/0059BE50/decomp.c"
 /* [STMethodOwnerApplier] Structural method owner recovered as FSGSTy.
    Evidence: this_call_owners=[FSGSTy]; agreed_this_calls=1; incoming_this_accesses=55;
    incoming_edx_uses=0; incoming_stack_parameter_uses=0; direct_non_thunk_callers=0;
@@ -416,7 +416,7 @@ LAB_0059c1ca:
 }
 
 // 005A0590 FSGSTy::sub_005A0590
-#line 1 "decomp/ST.exe/functions/005A0590/decomp.c"
+#line 4 "decomp/ST.exe/functions/005A0590/decomp.c"
 /* [STMethodOwnerApplier] Structural method owner recovered as FSGSTy.
    Evidence: this_call_owners=[FSGSTy]; agreed_this_calls=3; incoming_this_accesses=48;
    incoming_edx_uses=0; incoming_stack_parameter_uses=0; direct_non_thunk_callers=0;
@@ -511,7 +511,7 @@ void __thiscall st::fn_005A0590(FSGSTy *this)
 }
 
 // 005A07F0 FSGSTy::sub_005A07F0
-#line 1 "decomp/ST.exe/functions/005A07F0/decomp.c"
+#line 4 "decomp/ST.exe/functions/005A07F0/decomp.c"
 /* [STMethodOwnerApplier] Structural method owner recovered as FSGSTy.
    Evidence: this_call_owners=[FSGSTy]; agreed_this_calls=2; incoming_this_accesses=40;
    incoming_edx_uses=0; incoming_stack_parameter_uses=0; direct_non_thunk_callers=0;
@@ -559,8 +559,8 @@ void __thiscall st::fn_005A07F0(FSGSTy *this)
     st::fn_006E56B0(this->field_000C,this->field_1AC8);
   }
   this->field_1AC8 = 0;
-  if ((DArrayTy *)this->field_1EA2 != nullptr) {
-    st::fn_006B5570((DArrayTy *)this->field_1EA2);
+  if (this->field_1EA2 != nullptr) {
+    st::fn_006B5570(this->field_1EA2);
   }
   this->field_1EA2 = nullptr;
   if (this->field_1AE8 != nullptr) {
@@ -592,7 +592,7 @@ void __thiscall st::fn_005A07F0(FSGSTy *this)
 }
 
 // 005A0A50 FSGSTy::sub_005A0A50
-#line 1 "decomp/ST.exe/functions/005A0A50/decomp.c"
+#line 4 "decomp/ST.exe/functions/005A0A50/decomp.c"
 /* [STMethodOwnerApplier] Structural method owner recovered as FSGSTy.
    Evidence: this_call_owners=[FSGSTy]; agreed_this_calls=2; incoming_this_accesses=13;
    incoming_edx_uses=0; incoming_stack_parameter_uses=0; direct_non_thunk_callers=0;
@@ -629,7 +629,7 @@ void __thiscall st::fn_005A0A50(FSGSTy *this)
 }
 
 // 005A0AF0 FSGSTy::sub_005A0AF0
-#line 1 "decomp/ST.exe/functions/005A0AF0/decomp.c"
+#line 4 "decomp/ST.exe/functions/005A0AF0/decomp.c"
 /* [STMethodOwnerApplier] Structural method owner recovered as FSGSTy.
    Evidence: this_call_owners=[FSGSTy]; agreed_this_calls=2; incoming_this_accesses=29;
    incoming_edx_uses=0; incoming_stack_parameter_uses=0; direct_non_thunk_callers=0;
@@ -695,7 +695,7 @@ void __thiscall st::fn_005A0AF0(FSGSTy *this)
 }
 
 // 005A0C80 FSGSTy::sub_005A0C80
-#line 1 "decomp/ST.exe/functions/005A0C80/decomp.c"
+#line 4 "decomp/ST.exe/functions/005A0C80/decomp.c"
 /* [STMethodOwnerApplier] Structural method owner recovered as FSGSTy.
    Evidence: this_call_owners=[FSGSTy]; agreed_this_calls=2; incoming_this_accesses=23;
    incoming_edx_uses=0; incoming_stack_parameter_uses=0; direct_non_thunk_callers=0;
@@ -749,7 +749,7 @@ void __thiscall st::fn_005A0C80(FSGSTy *this)
 }
 
 // 005A39A0 FSGSTy::sub_005A39A0
-#line 1 "decomp/ST.exe/functions/005A39A0/decomp.c"
+#line 4 "decomp/ST.exe/functions/005A39A0/decomp.c"
 /* [STPrototypeRepairApplier] Propagated parameter 2.
    Evidence: 005A3AB0 -> 005A39A0 @ 005A3D10 | 005A3AB0 -> 005A39A0 @ 005A3D30 | 005A3AB0 ->
    005A39A0 @ 005A3D53 | 005A3AB0 -> 005A39A0 @ 005A3D76 | 005A3AB0 -> 005A39A0 @ 005A3D96 |

@@ -2,7 +2,7 @@
 // Generated translation unit: source/recovered/by_owner/STVolcanoC.cpp
 
 // 00646C90 STVolcanoC::STVolcanoC
-#line 1 "decomp/ST.exe/functions/00646C90/decomp.c"
+#line 4 "decomp/ST.exe/functions/00646C90/decomp.c"
 /* [STConstructorApplier] Recovered constructor candidate.
    VTable: 0079D610 (store 00646C9B)
    Evidence: final_vptr=0079D610; returns_this=true; calls_before=1; field_writes_after=3;
@@ -13,7 +13,7 @@ STVolcanoC * __thiscall st::fn_00646C90(STVolcanoC *this)
 {
 
   st::fn_006E60E0(this);
-  this->vtable = &STVolcanoCVTable;
+  this->vtable = &st_global_0079D610;
   memset(&this->field_0x1c, 0, 0x95); /* compiler bulk-zero initialization */
   this->field_005D = -1;
   this->field_007A = -1;
@@ -22,7 +22,7 @@ STVolcanoC * __thiscall st::fn_00646C90(STVolcanoC *this)
 }
 
 // 00646D40 STVolcanoC::sub_00646D40
-#line 1 "decomp/ST.exe/functions/00646D40/decomp.c"
+#line 4 "decomp/ST.exe/functions/00646D40/decomp.c"
 /* [STMethodOwnerApplier] Structural method owner recovered as STVolcanoC.
    Evidence: this_call_owners=[STVolcanoC]; agreed_this_calls=1; incoming_this_accesses=3;
    incoming_edx_uses=0; incoming_stack_parameter_uses=1; direct_non_thunk_callers=0;
@@ -49,7 +49,7 @@ void __thiscall st::fn_00646D40(STVolcanoC *this,undefined4 *param_1)
 }
 
 // 00646DB0 STVolcanoC::sub_00646DB0
-#line 1 "decomp/ST.exe/functions/00646DB0/decomp.c"
+#line 4 "decomp/ST.exe/functions/00646DB0/decomp.c"
 /* [STMethodOwnerApplier] Structural method owner recovered as STVolcanoC.
    Evidence: this_call_owners=[STVolcanoC]; agreed_this_calls=1; incoming_this_accesses=4;
    incoming_edx_uses=0; incoming_stack_parameter_uses=1; direct_non_thunk_callers=0;
@@ -75,7 +75,7 @@ undefined4 __thiscall st::fn_00646DB0(STVolcanoC *this,undefined4 *param_1)
 }
 
 // 006472B0 STVolcanoC::sub_006472B0
-#line 1 "decomp/ST.exe/functions/006472B0/decomp.c"
+#line 4 "decomp/ST.exe/functions/006472B0/decomp.c"
 /* [STMethodOwnerApplier] Structural method owner recovered as STVolcanoC.
    Evidence: this_call_owners=[STVolcanoC]; agreed_this_calls=1; incoming_this_accesses=14;
    incoming_edx_uses=0; incoming_stack_parameter_uses=0; direct_non_thunk_callers=0;
@@ -106,7 +106,7 @@ undefined4 __thiscall st::fn_006472B0(STVolcanoC *this)
 }
 
 // 006479E0 STVolcanoC::sub_006479E0
-#line 1 "decomp/ST.exe/functions/006479E0/decomp.c"
+#line 4 "decomp/ST.exe/functions/006479E0/decomp.c"
 /* [STMethodOwnerApplier] Structural method owner recovered as STVolcanoC.
    Evidence: this_call_owners=[STVolcanoC]; agreed_this_calls=1; incoming_this_accesses=6;
    incoming_edx_uses=0; incoming_stack_parameter_uses=0; direct_non_thunk_callers=0;

@@ -51,7 +51,7 @@ undefined4 __thiscall STParticleC::InitVisibelDeton(STParticleC *this,int param_
     text = PTR_s_expl_sb0_007d0c40;
   }
   puVar9 = Library::Ourlib::MFRLOAD::mfRLoad
-                     (DAT_00806764,CASE_1D,text,0xffffffff,0,1,0,nullptr);
+                     (PTR_00806764,CASE_1D,text,0xffffffff,0,1,0,nullptr);
   pSVar7->field_00B6 = *(int *)puVar9;
   if (param_1 != 0) {
     puVar1 = &pSVar7->field_00C6;
@@ -148,7 +148,7 @@ undefined4 __thiscall STParticleC::InitVisibelDeton(STParticleC *this,int param_
     }
     if (*(byte *)&pSVar7->field_0014 < 4) {
       puVar9 = Library::Ourlib::MFRLOAD::mfRLoad
-                         (DAT_00806764,CASE_1D,"expl_s1",0xffffffff,0,1,0,nullptr
+                         (PTR_00806764,CASE_1D,"expl_s1",0xffffffff,0,1,0,nullptr
                          );
       if (0xe < (int)pSVar7->field_00B2) {
         local_8 = pSVar7->field_00B2 + 3;
@@ -160,7 +160,7 @@ undefined4 __thiscall STParticleC::InitVisibelDeton(STParticleC *this,int param_
     }
     else {
       puVar9 = Library::Ourlib::MFRLOAD::mfRLoad
-                         (DAT_00806764,CASE_1D,"expl_s0",0xffffffff,0,1,0,nullptr
+                         (PTR_00806764,CASE_1D,"expl_s0",0xffffffff,0,1,0,nullptr
                          );
       if (0xe < (int)pSVar7->field_00B2) {
         local_8 = pSVar7->field_00B2 - 0xf;

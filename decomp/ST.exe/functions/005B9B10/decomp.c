@@ -82,7 +82,7 @@ void __thiscall PrividerTy::InitPrivider(PrividerTy *this,char param_1,char para
               ((SpriteClassTy *)&this_02->field_1A77,(int *)g_ddxContext_008075A8,0x31,'\a',
                nullptr,0,0);
     /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-    (**(code **)(this_02->field_1A77 + 4))(DAT_00806784,7,0,"MM_SLDUP",0xffffffff);
+    (**(code **)(this_02->field_1A77 + 4))(PTR_00806784,7,0,"MM_SLDUP",0xffffffff);
     this_02->field_1A93 = 0x289;
     this_02->field_1A97 = 0x6a;
     this_02->field_1A7F = 0;
@@ -90,7 +90,7 @@ void __thiscall PrividerTy::InitPrivider(PrividerTy *this,char param_1,char para
               ((SpriteClassTy *)&this_02->field_1B08,(int *)g_ddxContext_008075A8,0x31,'\a',
                nullptr,0,0);
     /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-    (**(code **)(this_02->field_1B08 + 4))(DAT_00806784,7,0,"MM_SLDDN",0xffffffff);
+    (**(code **)(this_02->field_1B08 + 4))(PTR_00806784,7,0,"MM_SLDDN",0xffffffff);
     this_02->field_1B24 = 0x289;
     this_02->field_1B28 = 0x176;
     this_02->field_1B10 = 0;
@@ -98,7 +98,7 @@ void __thiscall PrividerTy::InitPrivider(PrividerTy *this,char param_1,char para
               ((SpriteClassTy *)&this_02->field_1B99,(int *)g_ddxContext_008075A8,0x31,'\a',
                nullptr,0,0);
     /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-    (**(code **)(this_02->field_1B99 + 4))(DAT_00806784,7,0,"MM_SLDT",0xffffffff);
+    (**(code **)(this_02->field_1B99 + 4))(PTR_00806784,7,0,"MM_SLDT",0xffffffff);
     iVar2 = 1;
     this_02->field_1BB5 = 0x28e;
     this_02->field_1BB9 = 0x8a;
@@ -156,7 +156,7 @@ void __thiscall PrividerTy::InitPrivider(PrividerTy *this,char param_1,char para
     uVar10 = 2;
     iVar14 = -1;
     iVar2 = -2;
-    puVar7 = (uint *)LoadResourceString(0x26b5,g_module_00807618);
+    puVar7 = (uint *)LoadResourceString(0x26b5,g_hINSTANCE_00807618);
     ccFntTy::WrStr(g_startSystem_0081176C->field_0034,puVar7,iVar2,iVar14,uVar10);
     pAVar6 = this_02->field_1C8E;
     puVar7 = &this_02->field_1C8A;

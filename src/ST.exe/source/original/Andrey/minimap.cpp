@@ -2,7 +2,7 @@
 // Generated translation unit: source/original/Andrey/minimap.cpp
 
 // 0052AB40 CreateMiniMap
-#line 1 "decomp/ST.exe/functions/0052AB40/decomp.c"
+#line 4 "decomp/ST.exe/functions/0052AB40/decomp.c"
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 /* [STSourceProvenanceApplier begin]
    Recovered source file: E:\__titans\Andrey\minimap.cpp

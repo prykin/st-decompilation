@@ -2,7 +2,7 @@
 // Generated translation unit: source/original/ai/ai_script.cpp
 
 // 006802A0 FUN_006802a0
-#line 1 "decomp/ST.exe/functions/006802A0/decomp.c"
+#line 4 "decomp/ST.exe/functions/006802A0/decomp.c"
 /* [STSourceProvenanceApplier begin]
    Recovered source file: E:\__titans\ai\ai_script.cpp
    Diagnostic line evidence: 116 (metadata/report site, not the function definition)
@@ -45,13 +45,18 @@ void __cdecl st::fn_006802A0(int exceptionCode,char *resourceString)
 }
 
 // 00680890 FUN_00680890
-#line 1 "decomp/ST.exe/functions/00680890/decomp.c"
+#line 4 "decomp/ST.exe/functions/00680890/decomp.c"
 /* [STSourceProvenanceApplier begin]
    Recovered source file: E:\__titans\ai\ai_script.cpp
    Diagnostic line evidence: 255 (metadata/report site, not the function definition)
-   [STSourceProvenanceApplier end] */
+   [STSourceProvenanceApplier end]
 
-undefined4 __cdecl st::fn_00680890(byte param_1,byte *param_2,uint param_3,undefined4 *param_4)
+   [STPrototypeApplier] Propagated parameter 3.
+   Evidence: 00680890 -> 006F13F0 @ 006808EB | 006809B0 -> 00680890 @ 006809CF; address of zeroed
+   full register at 006809B9 | 006809F0 -> 00680890 @ 00680A54; address of
+   /SubmarineTitans/Recovered/DArrayTy+0x8 (elementSize) */
+
+undefined4 __cdecl st::fn_00680890(byte param_1,byte *param_2,uint param_3,undefined4 *elementSize)
 
 {
   char cVar1;
@@ -73,21 +78,21 @@ undefined4 __cdecl st::fn_00680890(byte param_1,byte *param_2,uint param_3,undef
   }
   puVar6 = &local_8;
   cVar1 = st::fn_0040240A();
-  st::fn_006F13F0(DAT_008489d0,param_1,pcVar3,param_2,param_3,param_4,cVar1,puVar6);
+  st::fn_006F13F0(DAT_008489d0,param_1,pcVar3,param_2,param_3,elementSize,cVar1,puVar6);
   DAT_00848a0c = DAT_00848a0c + local_8;
   DAT_00848a10 = DAT_00848a10 + 1;
   uVar7 = local_8;
   bVar2 = st::fn_0040240A();
   uVar4 = (uint)bVar2;
   pcVar5 = "M_ANY " + (uint)param_1 * 10;
-  text = st::fn_006B0140(0x1b5a,g_module_00807618);
+  text = st::fn_006B0140(0x1b5a,g_hINSTANCE_00807618);
   st::external_00000080(local_408,text,pcVar5,pcVar3,param_3,uVar4,uVar7);
   st::fn_00402F45(local_408);
   return 1;
 }
 
 // 006809F0 FUN_006809f0
-#line 1 "decomp/ST.exe/functions/006809F0/decomp.c"
+#line 4 "decomp/ST.exe/functions/006809F0/decomp.c"
 /* [STSourceProvenanceApplier begin]
    Recovered source file: E:\__titans\ai\ai_script.cpp
    Diagnostic line evidence: 292 (metadata/report site, not the function definition)
@@ -128,7 +133,7 @@ undefined4 __cdecl st::fn_006809F0(uint *param_1)
 }
 
 // 006823E0 FUN_006823e0
-#line 1 "decomp/ST.exe/functions/006823E0/decomp.c"
+#line 4 "decomp/ST.exe/functions/006823E0/decomp.c"
 /* [STSourceProvenanceApplier begin]
    Recovered source file: E:\__titans\ai\ai_script.cpp
    Diagnostic line evidence: 378 | 386 | 394 | 396 | 405 | 412 (metadata/report site, not the
@@ -267,7 +272,7 @@ void st::fn_006827A0(void)
 }
 
 // 00682850 FUN_00682850
-#line 1 "decomp/ST.exe/functions/00682850/decomp.c"
+#line 4 "decomp/ST.exe/functions/00682850/decomp.c"
 /* [STSourceProvenanceApplier begin]
    Recovered source file: E:\__titans\ai\ai_script.cpp
    Diagnostic line evidence: 464 (metadata/report site, not the function definition)
@@ -330,7 +335,7 @@ void st::fn_00682850(void)
 }
 
 // 00682D70 FUN_00682d70
-#line 1 "decomp/ST.exe/functions/00682D70/decomp.c"
+#line 4 "decomp/ST.exe/functions/00682D70/decomp.c"
 /* [STSourceProvenanceApplier begin]
    Recovered source file: E:\__titans\ai\ai_script.cpp
    Diagnostic line evidence: 594 (metadata/report site, not the function definition)
@@ -360,7 +365,7 @@ void st::fn_00682D70(void)
 }
 
 // 006836C0 FUN_006836c0
-#line 1 "decomp/ST.exe/functions/006836C0/decomp.c"
+#line 4 "decomp/ST.exe/functions/006836C0/decomp.c"
 /* [STSourceProvenanceApplier begin]
    Recovered source file: E:\__titans\ai\ai_script.cpp
    Diagnostic line evidence: 906 (metadata/report site, not the function definition)
@@ -421,7 +426,7 @@ LAB_0068372e:
 }
 
 // 00683780 FUN_00683780
-#line 1 "decomp/ST.exe/functions/00683780/decomp.c"
+#line 4 "decomp/ST.exe/functions/00683780/decomp.c"
 /* [STSourceProvenanceApplier begin]
    Recovered source file: E:\__titans\ai\ai_script.cpp
    Diagnostic line evidence: 926 | 933 (metadata/report site, not the function definition)
@@ -485,7 +490,7 @@ int __cdecl st::fn_00683780(int *param_1,AnonShape_00683780_11EA4E23 *param_2,in
 }
 
 // 006838B0 FUN_006838b0
-#line 1 "decomp/ST.exe/functions/006838B0/decomp.c"
+#line 4 "decomp/ST.exe/functions/006838B0/decomp.c"
 /* [STSourceProvenanceApplier begin]
    Recovered source file: E:\__titans\ai\ai_script.cpp
    Diagnostic line evidence: 958 | 980 (metadata/report site, not the function definition)
@@ -542,7 +547,7 @@ int __cdecl st::fn_006838B0(int *param_1,char param_2,byte *param_3,int param_4)
 }
 
 // 006839D0 FUN_006839d0
-#line 1 "decomp/ST.exe/functions/006839D0/decomp.c"
+#line 4 "decomp/ST.exe/functions/006839D0/decomp.c"
 /* [STSourceProvenanceApplier begin]
    Recovered source file: E:\__titans\ai\ai_script.cpp
    Diagnostic line evidence: 997 | 1014 (metadata/report site, not the function definition)
@@ -585,7 +590,7 @@ int __cdecl st::fn_006839D0(int param_1,int *param_2,ushort param_3,int param_4)
       cVar1 = (&DAT_00813bc8)[param_4 + DAT_008488b0 * 0x2b14];
       switch(cVar1) {
       case '\x01':
-        st::fn_00403EE5(param_2,cVar1,(byte *)(&DAT_00811aec)[DAT_008488b0 * 0xac5 + local_c],
+        st::fn_00403EE5(param_2,cVar1,(byte *)(&PTR_00811aec)[DAT_008488b0 * 0xac5 + local_c],
                            iVar3);
         local_c = local_c + 1;
         break;
@@ -623,7 +628,7 @@ int __cdecl st::fn_006839D0(int param_1,int *param_2,ushort param_3,int param_4)
 }
 
 // 00683C70 FUN_00683c70
-#line 1 "decomp/ST.exe/functions/00683C70/decomp.c"
+#line 4 "decomp/ST.exe/functions/00683C70/decomp.c"
 /* [STSourceProvenanceApplier begin]
    Recovered source file: E:\__titans\ai\ai_script.cpp
    Diagnostic line evidence: 1082 | 1127 | 1128 | 1129 | 1130 | 1131 | 1132 | 1133 | 1137 | 1138 |
@@ -853,7 +858,7 @@ uint * st::fn_00683C70(LPCSTR lpFileName,AnonShape_00683C70_22193481 *param_2,un
       PTR_008489cc = nullptr;
       g_array_008489D4 = nullptr;
       g_dArray_008489D8 = nullptr;
-      DAT_008489dc = nullptr;
+      g_dArray_008489DC = nullptr;
       st::fn_00404CC3();
       st::fn_00405182();
       DAT_007d3fa4 = 1;
@@ -1033,9 +1038,9 @@ cf_common_join_0068A687:
           st::fn_006AE110(g_array_008489D4);
           g_array_008489D4 = nullptr;
         }
-        if (DAT_008489dc != nullptr) {
-          st::fn_006B5570((DArrayTy *)DAT_008489dc);
-          DAT_008489dc = nullptr;
+        if (g_dArray_008489DC != nullptr) {
+          st::fn_006B5570(g_dArray_008489DC);
+          g_dArray_008489DC = nullptr;
         }
         st::fn_00403DE6();
         st::fn_0040193D(&g_int_00848A14);
@@ -2058,9 +2063,9 @@ cf_error_exit_0068A22B:
       st::fn_006AE110(g_array_008489D4);
       g_array_008489D4 = nullptr;
     }
-    if (DAT_008489dc != nullptr) {
-      st::fn_006B5570((DArrayTy *)DAT_008489dc);
-      DAT_008489dc = nullptr;
+    if (g_dArray_008489DC != nullptr) {
+      st::fn_006B5570(g_dArray_008489DC);
+      g_dArray_008489DC = nullptr;
     }
     st::fn_00403DE6();
     st::fn_0040193D(&g_int_00848A14);
@@ -2208,8 +2213,8 @@ switchD_006841b6_caseD_2:
           pcVar7[3] = '\0';
           pcVar7 = pcVar7 + 4;
         }
-        st::fn_0072E340(local_6ec,(char *)(&DAT_00811aec)[DAT_008488b0 * 0xac5],0x103);
-        st::fn_0072E340(local_5d8,(char *)(&DAT_00811af0)[DAT_008488b0 * 0xac5],0x103);
+        st::fn_0072E340(local_6ec,(&PTR_00811aec)[DAT_008488b0 * 0xac5],0x103);
+        st::fn_0072E340(local_5d8,(&PTR_00811af0)[DAT_008488b0 * 0xac5],0x103);
         local_5e8 = (&DAT_00811c80)[DAT_008488b0 * 0xac5];
         local_5e4 = (&DAT_00811c84)[DAT_008488b0 * 0xac5];
         local_5e0 = (&DAT_00811c88)[DAT_008488b0 * 0xac5];
@@ -2769,7 +2774,7 @@ cf_common_join_006895D5:
                     (-0x8c,g_overwriteContext_007ED77C,"E:\\__titans\\ai\\ai_script.cpp",0x72e
                     );
         }
-        PTR_008489c4 = st::fn_004053C1((char *)(&DAT_00811aec)[DAT_008488b0 * 0xac5],
+        PTR_008489c4 = st::fn_004053C1((&PTR_00811aec)[DAT_008488b0 * 0xac5],
                                           *(ushort *)(&DAT_00811c80 + DAT_008488b0 * 0xac5),
                                           *(ushort *)(&DAT_00811c84 + DAT_008488b0 * 0xac5),
                                           *(ushort *)(&DAT_00811c88 + DAT_008488b0 * 0xac5),
@@ -2783,13 +2788,12 @@ cf_common_join_006895D5:
           if (iVar2 == 0) {
             st::fn_00405411(-0x7d,(char *)(&DAT_00811aa4 + DAT_008488b0 * 0xac5));
           }
-          if (DAT_008489dc != nullptr) {
+          if (g_dArray_008489DC != nullptr) {
             st::fn_006A5E40
                       (-0x8c,g_overwriteContext_007ED77C,"E:\\__titans\\ai\\ai_script.cpp",
                        0x85b);
           }
-          DAT_008489dc = (AllocationRecord_0065CD10 *)
-                         st::fn_006B54F0(nullptr,5,5);
+          g_dArray_008489DC = st::fn_006B54F0(nullptr,5,5);
           DAT_008488b0 = DAT_008488b0 + -1;
           goto switchD_006841b6_default;
         }
@@ -2802,7 +2806,7 @@ cf_common_join_006895D5:
             if (DAT_008489d0 != nullptr) {
               st::fn_0040597A(&DAT_008489d0);
             }
-            DAT_008489d0 = st::fn_00402054((byte *)(&DAT_00811aec)[DAT_008488b0 * 0xac5],
+            DAT_008489d0 = st::fn_00402054((byte *)(&PTR_00811aec)[DAT_008488b0 * 0xac5],
                                               (&DAT_00811c80)[DAT_008488b0 * 0xac5]);
             DAT_008488b0 = DAT_008488b0 + -1;
             goto switchD_006841b6_default;
@@ -2846,7 +2850,7 @@ cf_common_join_006895D5:
               if (DAT_008489d0 != nullptr) {
                 st::fn_0040597A(&DAT_008489d0);
               }
-              DAT_008489d0 = st::fn_00405754((byte *)(&DAT_00811aec)[DAT_008488b0 * 0xac5]);
+              DAT_008489d0 = st::fn_00405754((byte *)(&PTR_00811aec)[DAT_008488b0 * 0xac5]);
               DAT_008488b0 = DAT_008488b0 + -1;
             }
             goto switchD_006841b6_default;
@@ -2903,13 +2907,13 @@ cf_common_join_006895D5:
             if (iVar2 == 0) {
               st::fn_00405411(-0x7d,(char *)(&DAT_00811aa4 + DAT_008488b0 * 0xac5));
             }
-            if (DAT_008489dc == nullptr) {
+            if (g_dArray_008489DC == nullptr) {
               st::fn_006A5E40
                         (-0x8e,g_overwriteContext_007ED77C,"E:\\__titans\\ai\\ai_script.cpp",
                          0x86f);
             }
             st::fn_006B5AA0
-                      ((uint *)DAT_008489dc,(char *)(&DAT_00811aec)[DAT_008488b0 * 0xac5]);
+                      (&g_dArray_008489DC->flags,(&PTR_00811aec)[DAT_008488b0 * 0xac5]);
             DAT_008488b0 = DAT_008488b0 + -1;
             goto switchD_006841b6_default;
           }
@@ -2924,7 +2928,7 @@ cf_common_join_006895D5:
             if (DAT_008489d0 != nullptr) {
               st::fn_0040597A(&DAT_008489d0);
             }
-            DAT_008489d0 = st::fn_0040102D((byte *)(&DAT_00811aec)[DAT_008488b0 * 0xac5],
+            DAT_008489d0 = st::fn_0040102D((byte *)(&PTR_00811aec)[DAT_008488b0 * 0xac5],
                                               (&DAT_00811c80)[DAT_008488b0 * 0xac5]);
             DAT_008488b0 = DAT_008488b0 + -1;
             goto switchD_006841b6_default;
@@ -2948,7 +2952,7 @@ cf_common_join_006895D5:
             if (iVar2 == 0) {
               st::fn_00405411(-0x7d,(char *)(&DAT_00811aa4 + DAT_008488b0 * 0xac5));
             }
-            st::fn_00404FE8((char *)(&DAT_00811aec)[DAT_008488b0 * 0xac5],
+            st::fn_00404FE8((&PTR_00811aec)[DAT_008488b0 * 0xac5],
                                (&DAT_00811c80)[DAT_008488b0 * 0xac5],
                                (&DAT_00811c84)[DAT_008488b0 * 0xac5],
                                (&DAT_00811c88)[DAT_008488b0 * 0xac5]);
@@ -2960,23 +2964,23 @@ cf_common_join_006895D5:
       else {
         switch(iVar10) {
         case 0x3f3:
-          if (DAT_008489dc == nullptr) {
+          if (g_dArray_008489DC == nullptr) {
             st::fn_006A5E40
                       (-0x8d,g_overwriteContext_007ED77C,"E:\\__titans\\ai\\ai_script.cpp",
                        0x860);
           }
-          pAVar16 = DAT_008489dc;
+          pAVar16 = (AllocationRecord_0065CD10 *)g_dArray_008489DC;
           if (DAT_008489d0 == nullptr) {
-            DAT_008489dc = nullptr;
+            g_dArray_008489DC = nullptr;
             if (param_3 != nullptr) {
               *param_3 = 9;
             }
             goto cf_common_join_0068A687;
           }
-          st::fn_004024B9((uint *)DAT_008489dc);
-          if (DAT_008489dc != nullptr) {
-            st::fn_006B5570((DArrayTy *)DAT_008489dc);
-            DAT_008489dc = nullptr;
+          st::fn_004024B9(&g_dArray_008489DC->flags);
+          if (g_dArray_008489DC != nullptr) {
+            st::fn_006B5570(g_dArray_008489DC);
+            g_dArray_008489DC = nullptr;
             DAT_008488b0 = DAT_008488b0 + -1;
             goto switchD_006841b6_default;
           }
@@ -2996,7 +3000,7 @@ cf_common_join_006895D5:
                        0x74c);
           }
           DAT_008489b4 = (AllocationRecord_0065CD10 *)
-                         st::fn_0040117C((char *)(&DAT_00811aec)[DAT_008488b0 * 0xac5],
+                         st::fn_0040117C((&PTR_00811aec)[DAT_008488b0 * 0xac5],
                                             (&DAT_00811c80)[DAT_008488b0 * 0xac5]);
           DAT_008488b0 = DAT_008488b0 + -1;
           goto switchD_006841b6_default;
@@ -3039,9 +3043,9 @@ cf_common_join_006895D5:
                        0x6e5);
           }
           DAT_008489b8 = (AllocationRecord_0065CD10 *)
-                         st::fn_00405074((char *)(&DAT_00811aec)[DAT_008488b0 * 0xac5],
+                         st::fn_00405074((&PTR_00811aec)[DAT_008488b0 * 0xac5],
                                             *(undefined2 *)(&DAT_00811c80 + DAT_008488b0 * 0xac5),
-                                            (char *)(&DAT_00811af0)[DAT_008488b0 * 0xac5],
+                                            (&PTR_00811af0)[DAT_008488b0 * 0xac5],
                                             (&DAT_00811c84)[DAT_008488b0 * 0xac5]);
           DAT_008488b0 = DAT_008488b0 + -1;
           goto switchD_006841b6_default;
@@ -3117,7 +3121,7 @@ cf_common_join_006895D5:
                        0x70e);
           }
           DAT_008489c8 = (AllocationRecord_0065CD10 *)
-                         st::fn_0040506A((char *)(&DAT_00811aec)[DAT_008488b0 * 0xac5],
+                         st::fn_0040506A((&PTR_00811aec)[DAT_008488b0 * 0xac5],
                                             *(undefined2 *)(&DAT_00811c80 + DAT_008488b0 * 0xac5),
                                             *(undefined2 *)(&DAT_00811c84 + DAT_008488b0 * 0xac5));
           DAT_008488b0 = DAT_008488b0 + -1;
@@ -3211,7 +3215,7 @@ cf_common_join_006895D5:
         local_118 = (&DAT_00811c94)[DAT_008488b0 * 0x158a];
         local_116 = (&DAT_00811c98)[DAT_008488b0 * 0x158a];
         local_114 = (&DAT_00811c9c)[DAT_008488b0 * 0x2b14];
-        st::fn_0072E340(local_113,(char *)(&DAT_00811aec)[DAT_008488b0 * 0xac5],0xe);
+        st::fn_0072E340(local_113,(&PTR_00811aec)[DAT_008488b0 * 0xac5],0xe);
         st::fn_006AE1C0((DArrayTy *)PTR_008489c4->field_01EB,local_128);
         DAT_008488b0 = DAT_008488b0 + -1;
         goto switchD_006841b6_default;
@@ -3448,25 +3452,25 @@ cf_common_join_006895D5:
                          0x774);
             }
             DAT_008489bc = (AllocationRecord_0065CD10 *)
-                           st::fn_004015E1((char *)(&DAT_00811aec)[DAT_008488b0 * 0xac5]);
+                           st::fn_004015E1((&PTR_00811aec)[DAT_008488b0 * 0xac5]);
             DAT_008488b0 = DAT_008488b0 + -1;
             goto switchD_006841b6_default;
           }
-          if (*(char *)(&DAT_00811aec)[DAT_008488b0 * 0xac5] != '\0') {
+          if (*(&PTR_00811aec)[DAT_008488b0 * 0xac5] != '\0') {
             memset((void *)(*(int *)&DAT_008489b4->field_0x4e + 6), 0, 0x40); /* compiler bulk-zero initialization */
             iVar2 = 0;
             st::fn_0072E340
                       ((char *)(*(int *)&DAT_008489b4->field_0x4e + 6),
-                       (char *)(&DAT_00811aec)[DAT_008488b0 * 0xac5],0x3f);
+                       (&PTR_00811aec)[DAT_008488b0 * 0xac5],0x3f);
             DAT_008488b0 = DAT_008488b0 + -1;
             goto switchD_006841b6_default;
           }
         }
-        else if (*(char *)(&DAT_00811aec)[DAT_008488b0 * 0xac5] != '\0') {
+        else if (*(&PTR_00811aec)[DAT_008488b0 * 0xac5] != '\0') {
           memset((void *)(*(int *)&DAT_008489b8->field_0x106 + 6), 0, 0x40); /* compiler bulk-zero initialization */
           st::fn_0072E340
                     ((char *)(*(int *)&DAT_008489b8->field_0x106 + 6),
-                     (char *)(&DAT_00811aec)[DAT_008488b0 * 0xac5],0x3f);
+                     (&PTR_00811aec)[DAT_008488b0 * 0xac5],0x3f);
           DAT_008488b0 = DAT_008488b0 + -1;
           goto switchD_006841b6_default;
         }
@@ -3614,7 +3618,7 @@ cf_common_join_006895D5:
           pcVar7[3] = '\0';
           pcVar7 = pcVar7 + 4;
         }
-        st::fn_0072E340(local_2c8,(char *)(&DAT_00811aec)[DAT_008488b0 * 0xac5],0x103);
+        st::fn_0072E340(local_2c8,(&PTR_00811aec)[DAT_008488b0 * 0xac5],0x103);
         local_1c4 = *(undefined1 *)(&DAT_00811c80 + DAT_008488b0 * 0xac5);
         local_1c3 = *(undefined1 *)(&DAT_00811c84 + DAT_008488b0 * 0xac5);
         local_1c2 = *(undefined1 *)(&DAT_00811c88 + DAT_008488b0 * 0xac5);
@@ -4665,7 +4669,7 @@ switchD_00685456_default:
 }
 
 // 0068CEC0 FUN_0068cec0
-#line 1 "decomp/ST.exe/functions/0068CEC0/decomp.c"
+#line 4 "decomp/ST.exe/functions/0068CEC0/decomp.c"
 /* WARNING: Removing unreachable block (ram,0x0068d7c3) */
 /* [STSourceProvenanceApplier begin]
    Recovered source file: E:\__titans\ai\ai_script.cpp

@@ -2077,26 +2077,28 @@ function_address	label_address	proposed_name	status	detail
 0060C320	0060C5F5	cf_join_0060C5F5	disabled	apply=0
 0060EF40	0060F230	cf_join_0060F230	disabled	apply=0
 0060F940	0060FE02	cf_join_0060FE02	disabled	apply=0
-006101B0	00610347	cf_common_join_00610347	unchanged	label is already primary
+006101B0	0061033A	cf_join_0061033A	disabled	apply=0
+006101B0	00610341	cf_join_00610341	disabled	apply=0
+006101B0	00610886	cf_join_00610886	disabled	apply=0
 006101B0	00610911	cf_join_00610911	disabled	apply=0
 006101B0	00610969	cf_join_00610969	disabled	apply=0
 006101B0	00610D47	cf_join_00610D47	disabled	apply=0
 006101B0	00610D9F	cf_join_00610D9F	disabled	apply=0
-006101B0	00611039	cf_join_00611039	disabled	apply=0
+006101B0	00611061	cf_join_00611061	disabled	apply=0
 006101B0	00611185	cf_join_00611185	disabled	apply=0
 006101B0	006112A8	cf_join_006112A8	disabled	apply=0
 006101B0	00611304	cf_join_00611304	disabled	apply=0
 006101B0	006115DA	cf_join_006115DA	disabled	apply=0
+006101B0	006115EC	cf_common_exit_006115EC	applied	kind=common_exit; gotos=7; previous=LAB_006115ec
 006101B0	006117E5	cf_join_006117E5	disabled	apply=0
 006101B0	0061190F	cf_join_0061190F	disabled	apply=0
 006101B0	0061196B	cf_join_0061196B	disabled	apply=0
-006101B0	00611C0D	cf_branch_target_00611C0D	disabled	apply=0
 006101B0	00611C0F	cf_common_exit_00611C0F	unchanged	label is already primary
+006101B0	00611C36	cf_join_00611C36	disabled	apply=0
 006101B0	006121E1	cf_common_exit_006121E1	unchanged	label is already primary
 006101B0	006122DD	cf_join_006122DD	disabled	apply=0
 006101B0	006123FD	cf_join_006123FD	disabled	apply=0
 006101B0	00612459	cf_join_00612459	disabled	apply=0
-006101B0	00612727	cf_common_exit_00612727	disabled	apply=0
 006132F0	00613424	cf_join_00613424	disabled	apply=0
 006132F0	0061364B	cf_join_0061364B	disabled	apply=0
 006139A0	00613C8B	cf_join_00613C8B	disabled	apply=0
@@ -2139,7 +2141,6 @@ function_address	label_address	proposed_name	status	detail
 006202B0	0062030E	cf_join_0062030E	disabled	apply=0
 00621780	0062199A	cf_join_0062199A	disabled	apply=0
 00621B50	00621D24	cf_common_exit_00621D24	unchanged	label is already primary
-006226C0	006227F9	cf_common_exit_006227F9	unchanged	label is already primary
 00623600	0062371F	cf_join_0062371F	disabled	apply=0
 00623600	00623863	cf_join_00623863	disabled	apply=0
 00623600	006238C2	cf_join_006238C2	disabled	apply=0
@@ -2428,7 +2429,6 @@ function_address	label_address	proposed_name	status	detail
 00673D20	00674521	cf_common_exit_00674521	unchanged	label is already primary
 00673D20	00674540	cf_common_exit_00674540	unchanged	label is already primary
 00674AF0	00674BC4	cf_common_exit_00674BC4	unchanged	label is already primary
-00675430	006754A8	cf_common_exit_006754A8	unchanged	label is already primary
 00675DC0	00675DFE	cf_join_00675DFE	disabled	apply=0
 00675EA0	00675F12	cf_join_00675F12	disabled	apply=0
 00675FE0	00676053	cf_join_00676053	disabled	apply=0

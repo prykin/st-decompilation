@@ -2,7 +2,7 @@
 // Generated translation unit: source/recovered/by_owner/STArtiafactC.cpp
 
 // 005EBCB0 STArtiafactC::sub_005EBCB0
-#line 1 "decomp/ST.exe/functions/005EBCB0/decomp.c"
+#line 4 "decomp/ST.exe/functions/005EBCB0/decomp.c"
 /* [STMethodOwnerApplier] Structural method owner recovered as STArtiafactC.
    Evidence: this_call_owners=[STArtiafactC]; agreed_this_calls=3; incoming_this_accesses=2;
    incoming_edx_uses=0; incoming_stack_parameter_uses=0; direct_non_thunk_callers=0;
@@ -29,7 +29,7 @@ void __thiscall st::fn_005EBCB0(STArtiafactC *this)
 }
 
 // 005EC620 STArtiafactC::FUN_005ec620
-#line 1 "decomp/ST.exe/functions/005EC620/decomp.c"
+#line 4 "decomp/ST.exe/functions/005EC620/decomp.c"
 /* [STUnclaimedCodeApplier] Exact function entry recovered from thunk_target.
    Evidence: D:0079C39C>00401FEB | P:0079C39C>00401FEB
 
@@ -48,7 +48,7 @@ dword __thiscall st::fn_005EC620(STArtiafactC *this)
 }
 
 // 005EC680 STArtiafactC::FUN_005ec680
-#line 1 "decomp/ST.exe/functions/005EC680/decomp.c"
+#line 4 "decomp/ST.exe/functions/005EC680/decomp.c"
 /* [STVirtualMethodApplier] Recovered from virtual table slot family.
    Tables: 0079C260
    Entries: 0040508D
@@ -64,7 +64,7 @@ dword __thiscall st::fn_005EC680(STArtiafactC *this)
 }
 
 // 005EF490 STArtiafactC::FUN_005ef490
-#line 1 "decomp/ST.exe/functions/005EF490/decomp.c"
+#line 4 "decomp/ST.exe/functions/005EF490/decomp.c"
 /* [STUnclaimedCodeApplier] Exact function entry recovered from thunk_target.
    Evidence: D:0079C388>004040C0 | P:0079C388>004040C0
 
@@ -83,7 +83,7 @@ dword __thiscall st::fn_005EF490(STArtiafactC *this)
 }
 
 // 005F0D00 STArtiafactC::sub_005F0D00
-#line 1 "decomp/ST.exe/functions/005F0D00/decomp.c"
+#line 4 "decomp/ST.exe/functions/005F0D00/decomp.c"
 /* [STMethodOwnerApplier] Structural method owner recovered as STArtiafactC.
    Evidence: this_call_owners=[STArtiafactC]; agreed_this_calls=1; incoming_this_accesses=4;
    incoming_edx_uses=0; incoming_stack_parameter_uses=0; direct_non_thunk_callers=0;

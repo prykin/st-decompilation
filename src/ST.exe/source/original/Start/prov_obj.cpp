@@ -2,7 +2,7 @@
 // Generated translation unit: source/original/Start/prov_obj.cpp
 
 // 005B9730 PrividerTy::OutListProc
-#line 1 "decomp/ST.exe/functions/005B9730/decomp.c"
+#line 4 "decomp/ST.exe/functions/005B9730/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\Start\prov_obj.cpp
    PrividerTy::OutListProc */
@@ -57,7 +57,7 @@ st::fn_005B9730
 }
 
 // 005B9860 MMMObjTy::OutLstProc
-#line 1 "decomp/ST.exe/functions/005B9860/decomp.c"
+#line 4 "decomp/ST.exe/functions/005B9860/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\Start\prov_obj.cpp
    MMMObjTy::OutLstProc
@@ -107,7 +107,7 @@ st::fn_005B9860
       /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
       resourceString =
            (uint *)st::fn_006B0140(0x26b4 - (*(char *)(local_8 + 0x1a5f) != '\x01'),
-                                      g_module_00807618);
+                                      g_hINSTANCE_00807618);
       st::fn_00404C2D
                 (this_00,0,param_4,param_5,param_6,0x15,resourceString,uVar3,uVar4,pcVar5,uVar6);
       g_currentExceptionFrame = local_4c.previous;
@@ -125,7 +125,7 @@ st::fn_005B9860
 }
 
 // 005B99F0 MMMObjTy::OutEdProc
-#line 1 "decomp/ST.exe/functions/005B99F0/decomp.c"
+#line 4 "decomp/ST.exe/functions/005B99F0/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\Start\prov_obj.cpp
    MMMObjTy::OutEdProc
@@ -171,7 +171,7 @@ st::fn_005B99F0(MMMObjTy *this,AnonShape_GLOBAL_0080759C_9638EF10 *param_1,undef
 }
 
 // 005B9B10 PrividerTy::InitPrivider
-#line 1 "decomp/ST.exe/functions/005B9B10/decomp.c"
+#line 4 "decomp/ST.exe/functions/005B9B10/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\Start\prov_obj.cpp
    PrividerTy::InitPrivider */
@@ -253,7 +253,7 @@ void __thiscall st::fn_005B9B10(PrividerTy *this,char param_1,char param_2)
               ((SpriteClassTy *)&this_02->field_1A77,(int *)g_ddxContext_008075A8,0x31,'\a',
                nullptr,0,0);
     /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-    (**(code **)(this_02->field_1A77 + 4))(DAT_00806784,7,0,"MM_SLDUP",0xffffffff);
+    (**(code **)(this_02->field_1A77 + 4))(PTR_00806784,7,0,"MM_SLDUP",0xffffffff);
     this_02->field_1A93 = 0x289;
     this_02->field_1A97 = 0x6a;
     this_02->field_1A7F = 0;
@@ -261,7 +261,7 @@ void __thiscall st::fn_005B9B10(PrividerTy *this,char param_1,char param_2)
               ((SpriteClassTy *)&this_02->field_1B08,(int *)g_ddxContext_008075A8,0x31,'\a',
                nullptr,0,0);
     /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-    (**(code **)(this_02->field_1B08 + 4))(DAT_00806784,7,0,"MM_SLDDN",0xffffffff);
+    (**(code **)(this_02->field_1B08 + 4))(PTR_00806784,7,0,"MM_SLDDN",0xffffffff);
     this_02->field_1B24 = 0x289;
     this_02->field_1B28 = 0x176;
     this_02->field_1B10 = 0;
@@ -269,7 +269,7 @@ void __thiscall st::fn_005B9B10(PrividerTy *this,char param_1,char param_2)
               ((SpriteClassTy *)&this_02->field_1B99,(int *)g_ddxContext_008075A8,0x31,'\a',
                nullptr,0,0);
     /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-    (**(code **)(this_02->field_1B99 + 4))(DAT_00806784,7,0,"MM_SLDT",0xffffffff);
+    (**(code **)(this_02->field_1B99 + 4))(PTR_00806784,7,0,"MM_SLDT",0xffffffff);
     iVar2 = 1;
     this_02->field_1BB5 = 0x28e;
     this_02->field_1BB9 = 0x8a;
@@ -327,7 +327,7 @@ void __thiscall st::fn_005B9B10(PrividerTy *this,char param_1,char param_2)
     uVar10 = 2;
     iVar14 = -1;
     iVar2 = -2;
-    puVar7 = (uint *)st::fn_006B0140(0x26b5,g_module_00807618);
+    puVar7 = (uint *)st::fn_006B0140(0x26b5,g_hINSTANCE_00807618);
     st::fn_007119C0(g_startSystem_0081176C->field_0034,puVar7,iVar2,iVar14,uVar10);
     pAVar6 = this_02->field_1C8E;
     puVar7 = &this_02->field_1C8A;
@@ -487,7 +487,7 @@ void __thiscall st::fn_005B9B10(PrividerTy *this,char param_1,char param_2)
 }
 
 // 005BA560 PrividerTy::DonePrivider
-#line 1 "decomp/ST.exe/functions/005BA560/decomp.c"
+#line 4 "decomp/ST.exe/functions/005BA560/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\Start\prov_obj.cpp
    PrividerTy::DonePrivider */
@@ -594,7 +594,7 @@ void __thiscall st::fn_005BA560(PrividerTy *this)
 }
 
 // 005BA8B0 PrividerTy::PaintPrivider
-#line 1 "decomp/ST.exe/functions/005BA8B0/decomp.c"
+#line 4 "decomp/ST.exe/functions/005BA8B0/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\Start\prov_obj.cpp
    PrividerTy::PaintPrivider */
@@ -643,12 +643,12 @@ void __thiscall st::fn_005BA8B0(PrividerTy *this,char param_1)
   uVar6 = 0xffffffff;
   uVar5 = 0xfffffffe;
   if (pPVar2->field_1A5F == '\x01') {
-    puVar3 = (uint *)st::fn_006B0140(0x26b4,g_module_00807618);
+    puVar3 = (uint *)st::fn_006B0140(0x26b4,g_hINSTANCE_00807618);
     st::fn_00404C2D(this_01,0,0xe9,0x14,0x14c,0x18,puVar3,uVar5,uVar6,pcVar7,uVar8);
     g_currentExceptionFrame = local_4c.previous;
     return;
   }
-  puVar3 = (uint *)st::fn_006B0140(0x26b3,g_module_00807618);
+  puVar3 = (uint *)st::fn_006B0140(0x26b3,g_hINSTANCE_00807618);
   st::fn_00404C2D(this_02,0,0xe9,0x14,0x14c,0x18,puVar3,uVar5,uVar6,pcVar7,uVar8);
   if ((pPVar2->field_1C9A == nullptr) && (param_1 == '\0')) {
     st::fn_00402F13((MMMObjTy *)g_dDXContext_0080759C,
@@ -660,7 +660,7 @@ void __thiscall st::fn_005BA8B0(PrividerTy *this,char param_1)
 }
 
 // 005BAAC0 PrividerTy::SetMode
-#line 1 "decomp/ST.exe/functions/005BAAC0/decomp.c"
+#line 4 "decomp/ST.exe/functions/005BAAC0/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\Start\prov_obj.cpp
    PrividerTy::SetMode */
@@ -788,7 +788,7 @@ void __thiscall st::fn_005BAAC0(PrividerTy *this,char param_1,char param_2)
 }
 
 // 005BAE00 PrividerTy::NonePrivider
-#line 1 "decomp/ST.exe/functions/005BAE00/decomp.c"
+#line 4 "decomp/ST.exe/functions/005BAE00/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\Start\prov_obj.cpp
    PrividerTy::NonePrivider
@@ -1168,7 +1168,7 @@ LAB_005bb532:
 }
 
 // 005BB910 PrividerTy::CloseButtons
-#line 1 "decomp/ST.exe/functions/005BB910/decomp.c"
+#line 4 "decomp/ST.exe/functions/005BB910/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\Start\prov_obj.cpp
    PrividerTy::CloseButtons
@@ -1210,7 +1210,7 @@ void __thiscall st::fn_005BB910(PrividerTy *this,char param_1)
 }
 
 // 005BBA90 PrividerTy::CreateCtrls
-#line 1 "decomp/ST.exe/functions/005BBA90/decomp.c"
+#line 4 "decomp/ST.exe/functions/005BBA90/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\Start\prov_obj.cpp
    PrividerTy::CreateCtrls
@@ -1441,7 +1441,7 @@ LAB_005bbb22:
 }
 
 // 005BC050 PrividerTy::DeleteCtrls
-#line 1 "decomp/ST.exe/functions/005BC050/decomp.c"
+#line 4 "decomp/ST.exe/functions/005BC050/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\Start\prov_obj.cpp
    PrividerTy::DeleteCtrls */
@@ -1633,7 +1633,7 @@ void __thiscall st::fn_005BC050(PrividerTy *this,char param_1)
 }
 
 // 005BC5E0 PrividerTy::GetMessage
-#line 1 "decomp/ST.exe/functions/005BC5E0/decomp.c"
+#line 4 "decomp/ST.exe/functions/005BC5E0/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\Start\prov_obj.cpp
    PrividerTy::GetMessage

@@ -2,7 +2,7 @@
 // Generated translation unit: source/recovered/by_owner/STMineSetC.cpp
 
 // 0041D1A0 STMineSetC::sub_0041D1A0
-#line 1 "decomp/ST.exe/functions/0041D1A0/decomp.c"
+#line 4 "decomp/ST.exe/functions/0041D1A0/decomp.c"
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 /* [STMethodOwnerApplier] Structural method owner recovered as STMineSetC.
    Evidence: this_call_owners=[STMineSetC]; agreed_this_calls=1; incoming_this_accesses=13;
@@ -34,7 +34,7 @@ void __thiscall st::fn_0041D1A0(STMineSetC *this,int param_1)
 }
 
 // 0041D2B0 STMineSetC::sub_0041D2B0
-#line 1 "decomp/ST.exe/functions/0041D2B0/decomp.c"
+#line 4 "decomp/ST.exe/functions/0041D2B0/decomp.c"
 /* [STMethodOwnerApplier] Structural method owner recovered as STMineSetC.
    Evidence: this_call_owners=[STMineSetC]; agreed_this_calls=1; incoming_this_accesses=11;
    incoming_edx_uses=0; incoming_stack_parameter_uses=0; direct_non_thunk_callers=0;
@@ -62,7 +62,7 @@ void __thiscall st::fn_0041D2B0(STMineSetC *this)
 }
 
 // 0041D6C0 STMineSetC::sub_0041D6C0
-#line 1 "decomp/ST.exe/functions/0041D6C0/decomp.c"
+#line 4 "decomp/ST.exe/functions/0041D6C0/decomp.c"
 /* [STAbiConsistencyApplier] full_eax_return: return=/int Evidence: all observed callers consume
    full EAX (2), none consume AL/AX, and every RET path defines full EAX; sites=006226C0 @ 006226FB
    -> TEST TEST EAX,EAX | 00627AA0 @ 00627CA1 -> MOV MOV dword ptr [EBP + -0x4],EAX
@@ -93,7 +93,7 @@ int __thiscall st::fn_0041D6C0(STMineSetC *this,uint param_1)
 }
 
 // 00622600 STMineSetC::STMineSetC
-#line 1 "decomp/ST.exe/functions/00622600/decomp.c"
+#line 4 "decomp/ST.exe/functions/00622600/decomp.c"
 /* [STConstructorApplier] Recovered constructor candidate.
    VTable: 0079CEFC (store 00622629)
    Evidence: final_vptr=0079CEFC; returns_this=true; calls_before=2; field_writes_after=1;
@@ -108,15 +108,15 @@ STMineSetC * __thiscall st::fn_00622600(STMineSetC *this)
 
   st::fn_00401933((STGameObjC *)this);
   st::fn_00401316((AnonShape_004AB810_8E5693D5 *)&this->field_01D5);
-  this->field_01D5 = &VTable_0079D05C;
-  this->vtable = &STMineSetCVTable;
+  this->field_01D5 = &st_global_0079D05C;
+  this->vtable = &st_global_0079CEFC;
   memset(&this->field_0x25e, 0, 0x109); /* compiler bulk-zero initialization */
   this->field_02BA = -1;
   return this;
 }
 
 // 00622670 STMineSetC::sub_00622670
-#line 1 "decomp/ST.exe/functions/00622670/decomp.c"
+#line 4 "decomp/ST.exe/functions/00622670/decomp.c"
 /* [STMethodOwnerApplier] Structural method owner recovered as STMineSetC.
    Evidence: this_call_owners=[STMineSetC]; agreed_this_calls=2; incoming_this_accesses=2;
    incoming_edx_uses=0; incoming_stack_parameter_uses=0; direct_non_thunk_callers=0;
@@ -147,7 +147,7 @@ int __thiscall st::fn_00622670(STMineSetC *this)
 }
 
 // 006226C0 STMineSetC::sub_006226C0
-#line 1 "decomp/ST.exe/functions/006226C0/decomp.c"
+#line 4 "decomp/ST.exe/functions/006226C0/decomp.c"
 /* [STMethodOwnerApplier] Structural method owner recovered as STMineSetC.
    Evidence: this_call_owners=[STMineSetC]; agreed_this_calls=3; incoming_this_accesses=3;
    incoming_edx_uses=0; incoming_stack_parameter_uses=7; direct_non_thunk_callers=0;
@@ -215,7 +215,7 @@ byte __thiscall st::fn_006226C0(STMineSetC *this,uint param_1,int param_2)
 }
 
 // 00622880 STMineSetC::sub_00622880
-#line 1 "decomp/ST.exe/functions/00622880/decomp.c"
+#line 4 "decomp/ST.exe/functions/00622880/decomp.c"
 /* [STMethodOwnerApplier] Structural method owner recovered as STMineSetC.
    Evidence: this_call_owners=[STMineSetC]; agreed_this_calls=1; incoming_this_accesses=17;
    incoming_edx_uses=0; incoming_stack_parameter_uses=0; direct_non_thunk_callers=0;
@@ -252,7 +252,7 @@ void __thiscall st::fn_00622880(STMineSetC *this)
 }
 
 // 00622BA0 STMineSetC::sub_00622BA0
-#line 1 "decomp/ST.exe/functions/00622BA0/decomp.c"
+#line 4 "decomp/ST.exe/functions/00622BA0/decomp.c"
 /* [STMethodOwnerApplier] Structural method owner recovered as STMineSetC.
    Evidence: this_call_owners=[STMineSetC]; agreed_this_calls=1; incoming_this_accesses=71;
    incoming_edx_uses=0; incoming_stack_parameter_uses=0; direct_non_thunk_callers=0;
@@ -380,7 +380,7 @@ undefined4 __thiscall st::fn_00622BA0(STMineSetC *this)
 }
 
 // 006239A0 STMineSetC::sub_006239A0
-#line 1 "decomp/ST.exe/functions/006239A0/decomp.c"
+#line 4 "decomp/ST.exe/functions/006239A0/decomp.c"
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 /* [STSwitchEnumApplier] Switch target field_02AE uses
    /SubmarineTitans/Recovered/Enums/STMineSetC_field_02AEState. Cases:
@@ -573,7 +573,7 @@ switchD_006239c1_default:
 }
 
 // 00624920 STMineSetC::sub_00624920
-#line 1 "decomp/ST.exe/functions/00624920/decomp.c"
+#line 4 "decomp/ST.exe/functions/00624920/decomp.c"
 /* [STSwitchEnumApplier] Switch target param_1 uses
    /SubmarineTitans/Recovered/Enums/Global_sub_00624920_param_1Enum. Cases:
    CASE_0=0;CASE_1=1;CASE_2=2;CASE_3=3
@@ -822,7 +822,7 @@ LAB_00625067:
 }
 
 // 00625730 STMineSetC::sub_00625730
-#line 1 "decomp/ST.exe/functions/00625730/decomp.c"
+#line 4 "decomp/ST.exe/functions/00625730/decomp.c"
 /* [STMethodOwnerApplier] Structural method owner recovered as STMineSetC.
    Evidence: this_call_owners=[STMineSetC]; agreed_this_calls=1; incoming_this_accesses=18;
    incoming_edx_uses=5; incoming_stack_parameter_uses=4; direct_non_thunk_callers=0;
@@ -1199,7 +1199,7 @@ cf_continue_loop_0062607F:
 }
 
 // 00626B50 STMineSetC::sub_00626B50
-#line 1 "decomp/ST.exe/functions/00626B50/decomp.c"
+#line 4 "decomp/ST.exe/functions/00626B50/decomp.c"
 /* [STSwitchEnumApplier] Switch target param_1 uses
    /SubmarineTitans/Recovered/Enums/Global_sub_00626B50_param_1Enum. Cases:
    CASE_0=0;CASE_1=1;CASE_2=2;CASE_3=3
@@ -1238,7 +1238,7 @@ st::fn_00626B50(STMineSetC *this,STMineSetC_sub_00626B50_param_1Enum param_1)
 }
 
 // 00626EA0 STMineSetC::FUN_00626ea0
-#line 1 "decomp/ST.exe/functions/00626EA0/decomp.c"
+#line 4 "decomp/ST.exe/functions/00626EA0/decomp.c"
 /* [STVirtualMethodApplier] Recovered from virtual table slot family.
    Tables: 0079CEFC
    Entries: 004043EA
@@ -1254,7 +1254,7 @@ dword __thiscall st::fn_00626EA0(STMineSetC *this)
 }
 
 // 00626FA0 STMineSetC::FUN_00626fa0
-#line 1 "decomp/ST.exe/functions/00626FA0/decomp.c"
+#line 4 "decomp/ST.exe/functions/00626FA0/decomp.c"
 /* [STVirtualMethodApplier] Recovered from virtual table slot family.
    Tables: 0079CEFC
    Entries: 004052B3
@@ -1270,7 +1270,7 @@ dword __thiscall st::fn_00626FA0(STMineSetC *this)
 }
 
 // 00627400 STMineSetC::sub_00627400
-#line 1 "decomp/ST.exe/functions/00627400/decomp.c"
+#line 4 "decomp/ST.exe/functions/00627400/decomp.c"
 /* [STMethodOwnerApplier] Structural method owner recovered as STMineSetC.
    Evidence: this_call_owners=[STMineSetC]; agreed_this_calls=1; incoming_this_accesses=8;
    incoming_edx_uses=4; incoming_stack_parameter_uses=6; direct_non_thunk_callers=0;

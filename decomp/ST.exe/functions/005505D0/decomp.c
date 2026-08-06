@@ -47,7 +47,7 @@ void __thiscall STPlaySystemC::sub_005505D0(STPlaySystemC *this,int param_1,int 
         if ((DVar2 - this->field_00A7) / 5 < 0x7d1) {
           if (g_popUp_008016D8 != nullptr) {
             uVar4 = 9;
-            pcVar1 = LoadResourceString(17000,g_module_00807618);
+            pcVar1 = LoadResourceString(17000,g_hINSTANCE_00807618);
             thunk_FUN_0052d320(g_popUp_008016D8,pcVar1,uVar4);
           }
           this->field_00BB = 0;
@@ -62,7 +62,7 @@ void __thiscall STPlaySystemC::sub_005505D0(STPlaySystemC *this,int param_1,int 
             puVar5 = &DAT_00808ab0 + (int)param_2 * 0x27;
             if (((&DAT_00808af0)[(int)param_2 * 0x27] == param_1) &&
                ((&DAT_00808af6)[(int)param_2 * 0x9c] != '\0')) {
-              pcVar1 = LoadResourceString(0x426d,g_module_00807618);
+              pcVar1 = LoadResourceString(0x426d,g_hINSTANCE_00807618);
               wsprintfA(local_10c,"%s %s",pcVar1,puVar5);
               if (g_popUp_008016D8 != nullptr) {
                 thunk_FUN_0052d320(g_popUp_008016D8,local_10c,8);

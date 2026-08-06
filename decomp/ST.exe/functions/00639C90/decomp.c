@@ -105,7 +105,7 @@ switchD_00639e3d_caseD_d:
     thunk_FUN_0063c030(this,g_playSystem_00802A38->field_00E4);
     if (STField<uint>(this,0x245) < 2) {
       iVar8 = STT3DSprC::LoadSequence
-                        ((STT3DSprC *)((int)this + 0x1d5),0xd,DAT_00806774,"trmmine",0x1d);
+                        ((STT3DSprC *)((int)this + 0x1d5),0xd,PTR_00806774,"trmmine",0x1d);
       if (iVar8 != 0) {
         return 0xffff;
       }
@@ -115,7 +115,7 @@ switchD_00639e3d_caseD_d:
     else {
       if (STField<uint>(this,0x245) != 2) goto LAB_00639dab;
       iVar8 = STT3DSprC::LoadSequence
-                        ((STT3DSprC *)((int)this + 0x1d5),0xd,DAT_00806774,"vacmine",0x1d);
+                        ((STT3DSprC *)((int)this + 0x1d5),0xd,PTR_00806774,"vacmine",0x1d);
       if (iVar8 != 0) {
         return 0xffff;
       }
@@ -144,9 +144,9 @@ LAB_00639dab:
         return 0;
       }
       pSVar1 = (STT3DSprC *)((int)this + 0x1d5);
-      iVar8 = STT3DSprC::LoadSequence(pSVar1,0xd,DAT_00806774,"exptme",0x1d);
+      iVar8 = STT3DSprC::LoadSequence(pSVar1,0xd,PTR_00806774,"exptme",0x1d);
       if (iVar8 == 0) {
-        iVar8 = STT3DSprC::LoadSequence(pSVar1,0xf,DAT_00806764,"expl_s0",0x1d);
+        iVar8 = STT3DSprC::LoadSequence(pSVar1,0xf,PTR_00806764,"expl_s0",0x1d);
         if (iVar8 == 0) {
           thunk_FUN_004ac700(pSVar1,'\x0f');
           STT3DSprC::StartShow(pSVar1,0xd,g_playSystem_00802A38->field_00E4);
@@ -691,11 +691,11 @@ LAB_0063a728:
     break;
   case 7:
     pSVar1 = (STT3DSprC *)((int)this + 0x1d5);
-    iVar8 = STT3DSprC::LoadSequence(pSVar1,0xd,DAT_00806774,"exptme",0x1d);
+    iVar8 = STT3DSprC::LoadSequence(pSVar1,0xd,PTR_00806774,"exptme",0x1d);
     if (iVar8 != 0) {
       return 0xffff;
     }
-    iVar8 = STT3DSprC::LoadSequence(pSVar1,0xf,DAT_00806764,"expl_s0",0x1d);
+    iVar8 = STT3DSprC::LoadSequence(pSVar1,0xf,PTR_00806764,"expl_s0",0x1d);
     if (iVar8 == 0) {
       thunk_FUN_004ac700(pSVar1,'\x0f');
       thunk_FUN_004ac700(pSVar1,'\r');
@@ -751,7 +751,7 @@ LAB_0063a728:
         uVar17 = 0;
         uVar16 = 0;
       }
-      FUN_006ead40(STField<void *>(this,0x211),iVar8 * 0x100 + DAT_008032cc,uVar16,uVar17,uVar18,
+      FUN_006ead40(STField<void *>(this,0x211),PTR_008032cc + iVar8 * 0x80,uVar16,uVar17,uVar18,
                    fVar19,fVar20,fVar21);
       if (STField<int>(this,0x34f) == 2) {
         iVar8 = STField<int>(this,0x26a);
@@ -880,8 +880,8 @@ LAB_0063a728:
             if (-1 < (int)uVar10) {
               Library::Ourlib::ST3DSMAP::FUN_006e9720
                         (STField<void *>(this,0x211),uVar10,
-                         (uint)*(byte *)((int)STField<uint *>(this,0x37f) + 0x15) * 0x100 +
-                         DAT_008032b8);
+                         (uint)(PTR_008032b8 +
+                               (uint)*(byte *)((int)STField<uint *>(this,0x37f) + 0x15) * 0x80));
               Library::Ourlib::ST3DSMAP::FUN_006e96d0
                         (STField<void *>(this,0x211),*STField<uint *>(this,0x37f));
             }
@@ -895,7 +895,7 @@ LAB_0063a728:
           iVar8 = STField<int>(this,0x34f) + 1;
           STField<int>(this,0x34f) = iVar8;
           FUN_006ead40(STField<void *>(this,0x211),
-                       *(int *)(&DAT_007d1fd4 + iVar8 * 4) * 0x100 + DAT_008032cc,
+                       PTR_008032cc + *(int *)(&DAT_007d1fd4 + iVar8 * 4) * 0x80,
                        **(undefined4 **)(STField<int>(this,0x34b) + 0x21),0x108,0xf7,
                        (float)STField<int>(this,0x2a4) * _DAT_007904f8 * _DAT_007904f0,
                        (float)STField<int>(this,0x2a8) * _DAT_007904f8 * _DAT_007904f0,fVar21);
@@ -933,7 +933,7 @@ LAB_0063a728:
         uVar17 = 0;
         uVar16 = 0;
       }
-      FUN_006ead40(STField<void *>(this,0x211),iVar8 * 0x100 + DAT_008032cc,uVar16,uVar17,uVar18,
+      FUN_006ead40(STField<void *>(this,0x211),PTR_008032cc + iVar8 * 0x80,uVar16,uVar17,uVar18,
                    fVar19,fVar20,fVar21);
       iVar8 = STField<int>(this,0x34f) + 1;
       STField<int>(this,0x34f) = iVar8;
@@ -956,8 +956,8 @@ LAB_0063a728:
         if (-1 < (int)uVar10) {
           Library::Ourlib::ST3DSMAP::FUN_006e9720
                     (STField<void *>(this,0x211),uVar10,
-                     (uint)*(byte *)((int)STField<uint *>(this,0x37f) + 0x15) * 0x100 +
-                     DAT_008032b8);
+                     (uint)(PTR_008032b8 +
+                           (uint)*(byte *)((int)STField<uint *>(this,0x37f) + 0x15) * 0x80));
           Library::Ourlib::ST3DSMAP::FUN_006e96d0
                     (STField<void *>(this,0x211),*STField<uint *>(this,0x37f));
         }

@@ -2,7 +2,7 @@
 // Generated translation unit: source/original/Andrey/behpanel.cpp
 
 // 004ED630 BehPanelTy::InitBehPanel
-#line 1 "decomp/ST.exe/functions/004ED630/decomp.c"
+#line 4 "decomp/ST.exe/functions/004ED630/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\Andrey\behpanel.cpp
    BehPanelTy::InitBehPanel */
@@ -87,7 +87,7 @@ void __thiscall st::fn_004ED630(BehPanelTy *this)
   st::fn_00403800
             ((SpecPanelTy *)this_00,pCVar3,iVar7,uVar11,iVar13,iVar16,UVar17,uVar18,uVar20);
   puVar4 = st::fn_00709AF0
-                     (DAT_00806794,CASE_B,"BUT_MSK_SI",0xffffffff,0,1,0,nullptr);
+                     (PTR_00806794,CASE_B,"BUT_MSK_SI",0xffffffff,0,1,0,nullptr);
   this_00->field_02B8 = puVar4;
   this_00->field_0x1af = 0x2b;
   this_00->field_0x1b0 = 0x2c;
@@ -182,7 +182,7 @@ switchD_004ed72f_default:
       GVar10 = CASE_1;
     }
     puVar4 = st::fn_00709AF0
-                       (DAT_00806794,GVar10,pCVar3,uVar14,bVar6,iVar16,iVar19,puVar21);
+                       (PTR_00806794,GVar10,pCVar3,uVar14,bVar6,iVar16,iVar19,puVar21);
     iVar7 = *(int *)(puVar4 + 4);
     local_994[uVar8 * 0x5f + 4] = *(int *)(puVar4 + 2);
     local_994[uVar8 * 0x5f + 5] = iVar7;
@@ -297,7 +297,7 @@ LAB_004eda47:
 }
 
 // 004EDDF0 BehPanelTy::DoneBehPanel
-#line 1 "decomp/ST.exe/functions/004EDDF0/decomp.c"
+#line 4 "decomp/ST.exe/functions/004EDDF0/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\Andrey\behpanel.cpp
    BehPanelTy::DoneBehPanel */
@@ -349,7 +349,7 @@ void __thiscall st::fn_004EDDF0(BehPanelTy *this)
 }
 
 // 004EDF30 BehPanelTy::ShiftControls
-#line 1 "decomp/ST.exe/functions/004EDF30/decomp.c"
+#line 4 "decomp/ST.exe/functions/004EDF30/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\Andrey\behpanel.cpp
    BehPanelTy::ShiftControls */
@@ -405,7 +405,7 @@ void __thiscall st::fn_004EDF30(BehPanelTy *this,int param_1)
 }
 
 // 004EE0A0 BehPanelTy::Update
-#line 1 "decomp/ST.exe/functions/004EE0A0/decomp.c"
+#line 4 "decomp/ST.exe/functions/004EE0A0/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\Andrey\behpanel.cpp
    BehPanelTy::Update */
@@ -514,7 +514,7 @@ void __thiscall st::fn_004EE0A0(BehPanelTy *this)
 }
 
 // 004EE350 BehPanelTy::PaintBBut
-#line 1 "decomp/ST.exe/functions/004EE350/decomp.c"
+#line 4 "decomp/ST.exe/functions/004EE350/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\Andrey\behpanel.cpp
    BehPanelTy::PaintBBut
@@ -576,7 +576,7 @@ st::fn_004EE350
 }
 
 // 004EE4D0 BehPanelTy::GetMessage
-#line 1 "decomp/ST.exe/functions/004EE4D0/decomp.c"
+#line 4 "decomp/ST.exe/functions/004EE4D0/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\Andrey\behpanel.cpp
    BehPanelTy::GetMessage

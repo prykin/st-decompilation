@@ -40,7 +40,7 @@ CPanelTy::PaintCostsXY
       uVar5 = 1;
       iVar4 = -1;
       iVar3 = 0;
-      resourceString = (uint *)LoadResourceString(0x36b3,g_module_00807618);
+      resourceString = (uint *)LoadResourceString(0x36b3,g_hINSTANCE_00807618);
       ccFntTy::WrTxt(pCVar2->field_01B8,resourceString,iVar3,iVar4,uVar5,iVar6,iVar7);
     }
     if (param_4 != 0xffff) {

@@ -55,11 +55,12 @@ void FUN_005c7800(void)
   Library::DKW::DDX::FUN_006bd740((int *)g_ddxContext_008075A8);
   Library::DKW::DDX::FUN_006c4630
             (g_dDXContext_0080759C,g_dDXContext_0080759C->field_0044,(undefined4 *)&stack0xffffffb8);
-  PTR_00811758 = Library::DKW::DDX::FUN_006c4880
-                           (g_dDXContext_0080759C,0,0,g_nWidth_00806730,DAT_00806734,DAT_00806738);
+  g_tagBITMAPINFO_00811758 =
+       Library::DKW::DDX::FUN_006c4880
+                 (g_dDXContext_0080759C,0,0,g_nWidth_00806730,DAT_00806734,DAT_00806738);
   Library::DKW::DDX::FUN_006c44e0(g_dDXContext_0080759C,(undefined4 *)&stack0xffffffb8);
   FUN_006b5f80((int *)g_ddxContext_008075A8,0,0,g_nWidth_00806730,DAT_00806734);
-  FUN_006b4640(g_dDXContext_0080759C,0,0,PTR_00811758,nullptr);
+  FUN_006b4640(g_dDXContext_0080759C,0,0,g_tagBITMAPINFO_00811758,nullptr);
   Library::DKW::DDX::FUN_006bb370(g_dDXContext_0080759C,0,0);
   if (this->field_1F3F != nullptr) {
     cMf32::delete(this->field_1F3F);
@@ -262,8 +263,8 @@ LAB_005c7ae0:
     }
   }
   (*this->vtable->PrepPlList)((SettMapSTy *)this);
-  if (PTR_00811758 != nullptr) {
-    FreeAndNull(&PTR_00811758);
+  if (g_tagBITMAPINFO_00811758 != nullptr) {
+    FreeAndNull(&g_tagBITMAPINFO_00811758);
   }
   SettMapTy::PaintSettMap(this,'\0');
   if (g_cursorClass_00802A30 != nullptr) {

@@ -271,9 +271,36 @@ and recovered debug evidence places 1,044 bodies under original paths; 4,668
 remain in deterministic owner/address fallback units. The complete generated
 header passes Clang C++17 syntax checking. Full object compilation is not yet a
 success criterion: its diagnostics now form the next address-stable queue for
-anonymous byte fields, pointer/scalar role conflicts, virtual member sugar, and
+anonymous byte fields, pointer/scalar role conflicts, untyped vtable slots, and
 weak prototypes. The generator never mutates Ghidra or fabricates image-backed
 global definitions. See `docs/source-tree-generation.md`.
+
+### Q-046 Establish an address-stable source compilation loop
+
+Status: first layer implemented offline. `tools/st_compile_audit.py` verifies
+the generated source manifest, compiles every translation unit independently,
+and normalizes compiler diagnostics back to stable function addresses. Its
+default output is ignored under `.st-local/`; no compiler path, run timestamp,
+or machine-local diagnostic is added to the deterministic source tree.
+
+`STSourceTreeGenerator` now retains only the exact unnamed-byte record views
+which statically typed code actually names, including indexed/by-value receivers
+and nested pointer-member chains. It also emits non-virtual C++ member wrappers
+for exact receiver-aware primary-vtable slots. These wrappers preserve readable
+`object->method()` spelling while forwarding through the explicit physical
+vtable. Uniquely owned non-virtual `__thiscall` functions receive ordinary
+forwarding class methods over `st::fn_ADDRESS`; they do not synthesize
+inheritance or change packed layout.
+
+The accepted corpus materializes 2,664 byte views, 780 physical-vtable wrappers,
+and 1,292 ordinary source methods. It also resolves 231 exact address-taking
+uses where an image object and a C++ record type share a name. A fixed Apple
+Clang C++17 probe capped at 32 errors per translation unit passes 54 of 318 units
+and maps 4,066 of 4,068
+retained errors to function addresses. Only
+38 missing-member diagnostics remain. The next compile-driven cluster is weak
+call-boundary scalar/pointer typing, led by 1,198 argument mismatches and 1,014
+assignments. Treat the cap as a comparison baseline, not a complete error total.
 
 ### Q-041 Closed narrow returns and exact address/piece presentation
 

@@ -49,7 +49,7 @@ void __thiscall PausePanelTy::InitPausePanel(PausePanelTy *this)
     uVar8 = 0;
     iVar7 = -1;
     iVar2 = -2;
-    resourceString = (uint *)LoadResourceString(0x2716,g_module_00807618);
+    resourceString = (uint *)LoadResourceString(0x2716,g_hINSTANCE_00807618);
     ccFntTy::WrTxt(this_00->field_017C,resourceString,iVar2,iVar7,uVar8,iVar10,iVar11);
     pCVar4 = thunk_FUN_00571240("BUT_MEDIUM",0);
     uVar6 = PanelTy::CreateBut((PanelTy *)this_00,0,1,0x115,0x8b,1,0,1,pCVar4,0xbfff,0xc000,0,0,0,

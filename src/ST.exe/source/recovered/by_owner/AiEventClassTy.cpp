@@ -2,7 +2,7 @@
 // Generated translation unit: source/recovered/by_owner/AiEventClassTy.cpp
 
 // 0065BD70 AiEventClassTy::sub_0065BD70
-#line 1 "decomp/ST.exe/functions/0065BD70/decomp.c"
+#line 4 "decomp/ST.exe/functions/0065BD70/decomp.c"
 /* [STMethodOwnerApplier] Structural method owner recovered as AiEventClassTy.
    Evidence: this_call_owners=[AiEventClassTy]; agreed_this_calls=1; incoming_this_accesses=89;
    incoming_edx_uses=1; incoming_stack_parameter_uses=26
@@ -197,7 +197,7 @@ int __thiscall st::fn_0065BD70(AiEventClassTy *this,STMessage *message,int param
         this->field_054F = uVar11;
 LAB_0065c021:
         (*pSVar4->vtable->vfunc_74)((short)local_1c);
-        st::fn_006B6020(&this->field_05B3->flags,0,local_1c);
+        st::fn_006B6020(this->field_05B3,0,local_1c);
       }
     }
     goto LAB_0065c03e;
@@ -225,7 +225,7 @@ LAB_0065c021:
       uVar5 = (*pSVar4->vtable->vfunc_138)();
       this->field_054F = uVar5;
       (*pSVar4->vtable->vfunc_74)((short)local_1c);
-      st::fn_006B6020(&this->field_05B3->flags,0,local_1c);
+      st::fn_006B6020(this->field_05B3,0,local_1c);
     }
     wVar7 = (pSVar2->arg1).words.low;
     if (((-1 < (short)wVar7) && ((short)wVar7 < 8)) &&
@@ -257,7 +257,7 @@ LAB_0065c021:
       this->field_0543 = (int)STPiece<2,2>(message);
       this->field_054B = (int)local_6;
       (*pSVar4->vtable->vfunc_74)((short)local_1c);
-      st::fn_006B6020(&this->field_05B3->flags,0,local_1c);
+      st::fn_006B6020(this->field_05B3,0,local_1c);
     }
     wVar7 = (pSVar2->arg1).words.low;
     if ((((short)wVar7 < 0) || (7 < (short)wVar7)) ||
@@ -410,7 +410,7 @@ LAB_0065c4bb:
     pcVar9 = (char *)((message->arg1).u32 + 0x92);
     uVar11 = 0;
   }
-  st::fn_006B6020(&pDVar10->flags,uVar11,pcVar9);
+  st::fn_006B6020(pDVar10,uVar11,pcVar9);
 cf_common_exit_0065C65B:
   this->field_05A7 = g_playSystem_00802A38->field_00E4 / 0x19;
   this->field_05AB = g_playSystem_00802A38->field_00E4;

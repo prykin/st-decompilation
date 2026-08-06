@@ -2,7 +2,7 @@
 // Generated translation unit: source/original/sound.cpp
 
 // 00568C50 SoundClassTy::CheckFader
-#line 1 "decomp/ST.exe/functions/00568C50/decomp.c"
+#line 4 "decomp/ST.exe/functions/00568C50/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\sound.cpp
    SoundClassTy::CheckFader */

@@ -2,7 +2,7 @@
 // Generated translation unit: source/original/grig/loading.cpp
 
 // 005540E0 cLoadingTy::new
-#line 1 "decomp/ST.exe/functions/005540E0/decomp.c"
+#line 4 "decomp/ST.exe/functions/005540E0/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\grig\loading.cpp
    cLoadingTy::new
@@ -178,7 +178,7 @@ LAB_00554324:
 }
 
 // 005544E0 cLoadingTy::delete
-#line 1 "decomp/ST.exe/functions/005544E0/decomp.c"
+#line 4 "decomp/ST.exe/functions/005544E0/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\grig\loading.cpp
    cLoadingTy::delete
@@ -220,7 +220,7 @@ void __cdecl st::fn_005544E0(uint *param_1)
 }
 
 // 00554660 cLoadingTy::ShowScr
-#line 1 "decomp/ST.exe/functions/00554660/decomp.c"
+#line 4 "decomp/ST.exe/functions/00554660/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\grig\loading.cpp
    cLoadingTy::ShowScr */
@@ -268,7 +268,7 @@ void __thiscall st::fn_00554660(cLoadingTy *this,int param_1,int param_2)
 }
 
 // 00554800 cLoadingTy::InitParam
-#line 1 "decomp/ST.exe/functions/00554800/decomp.c"
+#line 4 "decomp/ST.exe/functions/00554800/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\grig\loading.cpp
    cLoadingTy::InitParam */
@@ -333,7 +333,7 @@ st::fn_00554800
     pcVar5->field_002C = param_7;
     pcVar2->field_0058 = param_6;
     pcVar2->field_005C = param_7;
-    resourceString = st::fn_006B0140(0x267a,g_module_00807618);
+    resourceString = st::fn_006B0140(0x267a,g_hINSTANCE_00807618);
     iVar6 = st::fn_007111C0(pcVar5->field_0008,resourceString);
     iVar6 = pcVar5->field_002C + iVar6;
     iVar8 = pcVar5->field_0020 / iVar6;
@@ -362,7 +362,7 @@ st::fn_00554800
 }
 
 // 00554AD0 cLoadingTy::DrawLine
-#line 1 "decomp/ST.exe/functions/00554AD0/decomp.c"
+#line 4 "decomp/ST.exe/functions/00554AD0/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\grig\loading.cpp
    cLoadingTy::DrawLine */
@@ -417,7 +417,7 @@ void __thiscall st::fn_00554AD0(cLoadingTy *this,uint *param_1)
 }
 
 // 00554C80 cLoadingTy::DrawLineCR
-#line 1 "decomp/ST.exe/functions/00554C80/decomp.c"
+#line 4 "decomp/ST.exe/functions/00554C80/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\grig\loading.cpp
    cLoadingTy::DrawLineCR
@@ -499,7 +499,7 @@ void __thiscall st::fn_00554C80(cLoadingTy *this,char *resourceString)
 }
 
 // 00554F20 cLoadingTy::SetProcess
-#line 1 "decomp/ST.exe/functions/00554F20/decomp.c"
+#line 4 "decomp/ST.exe/functions/00554F20/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\grig\loading.cpp
    cLoadingTy::SetProcess
@@ -554,7 +554,7 @@ void __thiscall st::fn_00554F20(cLoadingTy *this,int param_1,char *text,int para
 }
 
 // 00555040 cLoadingTy::SetState
-#line 1 "decomp/ST.exe/functions/00555040/decomp.c"
+#line 4 "decomp/ST.exe/functions/00555040/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\grig\loading.cpp
    cLoadingTy::SetState
@@ -606,7 +606,7 @@ st::fn_00555040
   }
   switch(param_1) {
   case CASE_0:
-    pcVar5 = st::fn_006B0140(0x267a,g_module_00807618);
+    pcVar5 = st::fn_006B0140(0x267a,g_hINSTANCE_00807618);
     uVar8 = 0xffffffff;
     do {
       pcVar13 = pcVar5;
@@ -620,7 +620,7 @@ st::fn_00555040
     puVar11 = (uint *)(pcVar13 + -uVar8);
     puVar12 = local_450;
     memmove(puVar12, puVar11, uVar8); /* compiler REP MOVS byte copy */
-    pcVar5 = st::fn_006B0140(0x267e,g_module_00807618);
+    pcVar5 = st::fn_006B0140(0x267e,g_hINSTANCE_00807618);
     uVar8 = 0xffffffff;
     do {
       pcVar13 = pcVar5;
@@ -648,7 +648,7 @@ st::fn_00555040
     g_currentExceptionFrame = local_50.previous;
     return;
   case CASE_1:
-    pcVar5 = st::fn_006B0140(0x267a,g_module_00807618);
+    pcVar5 = st::fn_006B0140(0x267a,g_hINSTANCE_00807618);
     uVar8 = 0xffffffff;
     do {
       pcVar13 = pcVar5;
@@ -662,7 +662,7 @@ st::fn_00555040
     puVar11 = (uint *)(pcVar13 + -uVar8);
     puVar12 = local_450;
     memmove(puVar12, puVar11, uVar8); /* compiler REP MOVS byte copy */
-    pcVar5 = st::fn_006B0140(0x267b,g_module_00807618);
+    pcVar5 = st::fn_006B0140(0x267b,g_hINSTANCE_00807618);
     uVar8 = 0xffffffff;
     do {
       pcVar13 = pcVar5;
@@ -769,7 +769,7 @@ st::fn_00555040
     break;
   case CASE_2:
     local_8->field_003C = -1;
-    pcVar5 = st::fn_006B0140(0x267a,g_module_00807618);
+    pcVar5 = st::fn_006B0140(0x267a,g_hINSTANCE_00807618);
     uVar8 = 0xffffffff;
     do {
       pcVar13 = pcVar5;
@@ -783,7 +783,7 @@ st::fn_00555040
     puVar11 = (uint *)(pcVar13 + -uVar8);
     puVar12 = local_450;
     memmove(puVar12, puVar11, uVar8); /* compiler REP MOVS byte copy */
-    pcVar5 = st::fn_006B0140(0x267c,g_module_00807618);
+    pcVar5 = st::fn_006B0140(0x267c,g_hINSTANCE_00807618);
     uVar8 = 0xffffffff;
     do {
       pcVar13 = pcVar5;
@@ -811,7 +811,7 @@ st::fn_00555040
     goto joined_r0x00555393;
   case CASE_3:
     local_8->field_003C = -1;
-    pcVar5 = st::fn_006B0140(0x267a,g_module_00807618);
+    pcVar5 = st::fn_006B0140(0x267a,g_hINSTANCE_00807618);
     uVar8 = 0xffffffff;
     do {
       pcVar13 = pcVar5;
@@ -825,7 +825,7 @@ st::fn_00555040
     puVar11 = (uint *)(pcVar13 + -uVar8);
     puVar12 = local_450;
     memmove(puVar12, puVar11, uVar8); /* compiler REP MOVS byte copy */
-    pcVar5 = st::fn_006B0140(0x267d,g_module_00807618);
+    pcVar5 = st::fn_006B0140(0x267d,g_hINSTANCE_00807618);
     uVar8 = 0xffffffff;
     do {
       pcVar13 = pcVar5;

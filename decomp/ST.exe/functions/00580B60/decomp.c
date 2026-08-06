@@ -43,7 +43,7 @@ undefined4 * __thiscall STFieldC::CreateField(STFieldC *this,int param_1,int par
     text = "ResSmall";
   }
   puVar4 = Library::Ourlib::MFRLOAD::mfRLoad
-                     (DAT_00806774,CASE_1D,text,0xffffffff,0,1,0,nullptr);
+                     (PTR_00806774,CASE_1D,text,0xffffffff,0,1,0,nullptr);
   if ((puVar4 != nullptr) && ((void *)pSVar2->field_0211 != nullptr)) {
     puVar5 = FUN_006e6460((void *)pSVar2->field_0211,STField<undefined4>(puVar4,0x21),
                           *(int *)puVar4,(short)(STField<int>(puVar4,9) / 2),

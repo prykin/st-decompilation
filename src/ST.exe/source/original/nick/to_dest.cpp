@@ -2,7 +2,7 @@
 // Generated translation unit: source/original/nick/to_dest.cpp
 
 // 00601F80 STDestC::GetMessage
-#line 1 "decomp/ST.exe/functions/00601F80/decomp.c"
+#line 4 "decomp/ST.exe/functions/00601F80/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\nick\to_dest.cpp
    STDestC::GetMessage

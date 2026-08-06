@@ -96,7 +96,7 @@ LAB_004e05d3:
     return 0;
   }
   this = &param_1->field_0x1d5;
-  iVar1 = STT3DSprC::LoadSequence((STT3DSprC *)this,0xb,DAT_0080678c,local_8,0x1d);
+  iVar1 = STT3DSprC::LoadSequence((STT3DSprC *)this,0xb,PTR_0080678c,local_8,0x1d);
   if (iVar1 != 0) {
     RaiseInternalException
               (iVar1,g_overwriteContext_007ED77C,"E:\\__titans\\Artem\\TLO_rc.cpp",0xc3);

@@ -54,7 +54,7 @@ FSGSTy::OutTRGlProc(FSGSTy *this,AnonShape_GLOBAL_0080759C_9638EF10 *param_1,MMM
       pcVar6 = g_startSystem_0081176C->field_0034;
       uVar5 = 0xffffffff;
       uVar4 = 0xffffffff;
-      puVar2 = (uint *)LoadResourceString(0x2616,g_module_00807618);
+      puVar2 = (uint *)LoadResourceString(0x2616,g_hINSTANCE_00807618);
       StartServTy::WrTextDDX
                 (this_01,0,(int)(param_4 + 10),param_5 + 0xf8,0xe6,0x19,puVar2,uVar4,uVar5,pcVar6,
                  uVar7);
@@ -72,7 +72,7 @@ FSGSTy::OutTRGlProc(FSGSTy *this,AnonShape_GLOBAL_0080759C_9638EF10 *param_1,MMM
       pcVar6 = g_startSystem_0081176C->field_0034;
       uVar5 = 0xffffffff;
       uVar4 = 0;
-      puVar2 = (uint *)LoadResourceString(0x2569,g_module_00807618);
+      puVar2 = (uint *)LoadResourceString(0x2569,g_hINSTANCE_00807618);
       this_00 = (StartServTy *)(param_5 + -0x57 + param_7);
       StartServTy::WrTextDDX
                 (this_00,0,(int)(param_4 + 10),(int)this_00,(int)local_8,0xf,puVar2,uVar4,uVar5,
@@ -83,7 +83,7 @@ FSGSTy::OutTRGlProc(FSGSTy *this,AnonShape_GLOBAL_0080759C_9638EF10 *param_1,MMM
       pcVar6 = g_startSystem_0081176C->field_0034;
       uVar5 = 0xffffffff;
       uVar4 = 0;
-      puVar2 = (uint *)LoadResourceString(0x2550,g_module_00807618);
+      puVar2 = (uint *)LoadResourceString(0x2550,g_hINSTANCE_00807618);
       StartServTy::WrTextDDX
                 (param_4,0,(int)(param_4 + 10),param_5 + -0x2f + param_7,(int)local_8,0xf,puVar2,
                  uVar4,uVar5,pcVar6,uVar7);
@@ -93,7 +93,7 @@ FSGSTy::OutTRGlProc(FSGSTy *this,AnonShape_GLOBAL_0080759C_9638EF10 *param_1,MMM
       pcVar6 = g_startSystem_0081176C->field_0034;
       uVar5 = 0xffffffff;
       uVar4 = 0xffffffff;
-      puVar2 = (uint *)LoadResourceString(0x2566,g_module_00807618);
+      puVar2 = (uint *)LoadResourceString(0x2566,g_hINSTANCE_00807618);
       StartServTy::WrTextDDX
                 (this_02,0,(int)(param_4 + 0x78),param_5 + 0x155,0xa0,0x19,puVar2,uVar4,uVar5,pcVar6
                  ,uVar7);

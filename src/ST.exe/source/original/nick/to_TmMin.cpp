@@ -2,7 +2,7 @@
 // Generated translation unit: source/original/nick/to_TmMin.cpp
 
 // 0063D280 STTmMineC::CreatePart
-#line 1 "decomp/ST.exe/functions/0063D280/decomp.c"
+#line 4 "decomp/ST.exe/functions/0063D280/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\nick\to_TmMin.cpp
    STTmMineC::CreatePart */
@@ -75,7 +75,7 @@ uint __thiscall st::fn_0063D280(STTmMineC *this,uint param_1)
 }
 
 // 0063DEF0 STTmMineC::LoadImagNuclear
-#line 1 "decomp/ST.exe/functions/0063DEF0/decomp.c"
+#line 4 "decomp/ST.exe/functions/0063DEF0/decomp.c"
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 /* Recovered from embedded debug metadata:
    E:\__titans\nick\to_TmMin.cpp
@@ -103,7 +103,7 @@ undefined4 __thiscall st::fn_0063DEF0(STTmMineC *this,int param_1)
   if (errorCode == 0) {
     if (local_c->field_033A == -1) {
       puVar3 = st::fn_00709AF0
-                         (DAT_00806774,CASE_1D,"expl_nb0",0xffffffff,0,1,0,
+                         (PTR_00806774,CASE_1D,"expl_nb0",0xffffffff,0,1,0,
                           nullptr);
       st::fn_006E8660
                 (pSVar2->field_0211,(int *)&local_8,1,0,STField<uint>(puVar3,9),
@@ -124,7 +124,7 @@ undefined4 __thiscall st::fn_0063DEF0(STTmMineC *this,int param_1)
     }
     if ((pSVar2->field_0353 == -1) && (param_1 != 0)) {
       puVar3 = st::fn_00709AF0
-                         (DAT_00806774,CASE_1D,"expl_fla",0xffffffff,0,1,0,
+                         (PTR_00806774,CASE_1D,"expl_fla",0xffffffff,0,1,0,
                           nullptr);
       pSVar2->field_034B = puVar3;
       pSVar2->field_034F = 0;
@@ -143,7 +143,7 @@ undefined4 __thiscall st::fn_0063DEF0(STTmMineC *this,int param_1)
 }
 
 // 0063E160 STTmMineC::LoadImagSpr
-#line 1 "decomp/ST.exe/functions/0063E160/decomp.c"
+#line 4 "decomp/ST.exe/functions/0063E160/decomp.c"
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 /* Recovered from embedded debug metadata:
    E:\__titans\nick\to_TmMin.cpp
@@ -198,7 +198,7 @@ undefined4 __thiscall st::fn_0063E160(STTmMineC *this,uint param_1,int param_2)
       return 0xffff;
     }
     puVar6 = st::fn_00709AF0
-                       (DAT_00806764,CASE_1D,(&PTR_s_blast_p_007d1f68)[*(int *)element_0336],0xffffffff
+                       (PTR_00806764,CASE_1D,(&PTR_s_blast_p_007d1f68)[*(int *)element_0336],0xffffffff
                         ,0,1,0,nullptr);
     pSVar4 = local_10;
     uVar2 = *(uint *)(pcVar5 + 0x38);
@@ -233,7 +233,7 @@ undefined4 __thiscall st::fn_0063E160(STTmMineC *this,uint param_1,int param_2)
 }
 
 // 0063F3D0 STTmMineC::LoadImagVacuum
-#line 1 "decomp/ST.exe/functions/0063F3D0/decomp.c"
+#line 4 "decomp/ST.exe/functions/0063F3D0/decomp.c"
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 /* Recovered from embedded debug metadata:
    E:\__titans\nick\to_TmMin.cpp
@@ -262,7 +262,7 @@ undefined4 __thiscall st::fn_0063F3D0(STTmMineC *this,int param_1)
   if (errorCode == 0) {
     if (local_c->field_033A == -1) {
       puVar4 = st::fn_00709AF0
-                         (DAT_00806774,CASE_1D,"expl_vc0",0xffffffff,0,1,0,
+                         (PTR_00806774,CASE_1D,"expl_vc0",0xffffffff,0,1,0,
                           nullptr);
       st::fn_006E8660
                 (pSVar3->field_0211,(int *)&local_8,1,0,STField<uint>(puVar4,9),
@@ -282,7 +282,7 @@ undefined4 __thiscall st::fn_0063F3D0(STTmMineC *this,int param_1)
     }
     if ((pSVar3->field_0353 == -1) && (param_1 != 0)) {
       puVar4 = st::fn_00709AF0
-                         (DAT_00806774,CASE_1D,"expl_fla",0xffffffff,0,1,0,
+                         (PTR_00806774,CASE_1D,"expl_fla",0xffffffff,0,1,0,
                           nullptr);
       pSVar3->field_034B = puVar4;
       pSVar3->field_034F = 0;
@@ -290,7 +290,7 @@ undefined4 __thiscall st::fn_0063F3D0(STTmMineC *this,int param_1)
     puVar1 = &pSVar3->field_0363;
     if ((pSVar3->field_0363 == 0xffffffff) && (param_1 != 0)) {
       puVar4 = st::fn_00709AF0
-                         (DAT_00806774,CASE_1D,"expl_vc1",0xffffffff,0,1,0,
+                         (PTR_00806774,CASE_1D,"expl_vc1",0xffffffff,0,1,0,
                           nullptr);
       pSVar3->field_035F = puVar4;
       st::fn_006E8660

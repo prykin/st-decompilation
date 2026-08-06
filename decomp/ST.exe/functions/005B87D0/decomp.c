@@ -64,7 +64,7 @@ MMsgTy::SetPanel(MMsgTy *this,UINT param_1,int param_2,int param_3,UINT param_4)
           cVar16 = CASE_FFFFFFFE;
           iVar9 = 0x39;
           iVar4 = 0x158;
-          puVar8 = (uint *)LoadResourceString(param_1,g_module_00807618);
+          puVar8 = (uint *)LoadResourceString(param_1,g_hINSTANCE_00807618);
           puVar7 = ccFntTy::CreateTypeSSpr
                              (g_startSystem_0081176C->field_0030,puVar8,iVar4,iVar9,cVar16,uVar10,
                               iVar14,iVar15,iVar18);
@@ -73,8 +73,8 @@ MMsgTy::SetPanel(MMsgTy *this,UINT param_1,int param_2,int param_3,UINT param_4)
           this_00->field_1D90 = 0;
         }
         else {
-          pcVar5 = LoadResourceString(param_4,g_module_00807618);
-          pcVar6 = LoadResourceString(param_1,g_module_00807618);
+          pcVar5 = LoadResourceString(param_4,g_hINSTANCE_00807618);
+          pcVar6 = LoadResourceString(param_1,g_hINSTANCE_00807618);
           wsprintfA((LPSTR)local_478,"%s\n(%s=%li)",pcVar6,pcVar5,param_3);
           iVar4 = this_00->field_1D88;
           uVar22 = 0xffffffff;
@@ -109,7 +109,7 @@ MMsgTy::SetPanel(MMsgTy *this,UINT param_1,int param_2,int param_3,UINT param_4)
             iVar14 = 0x7d;
             iVar4 = *(int *)(&this_00->field_0x174 + uVar10 * 0x1fb);
             iVar9 = uVar10 * 0x1fb;
-            puVar8 = (uint *)LoadResourceString(*local_10,g_module_00807618);
+            puVar8 = (uint *)LoadResourceString(*local_10,g_hINSTANCE_00807618);
             puVar7 = ccFntTy::CreateTypeSSpr
                                (g_startSystem_0081176C->field_0030,puVar8,iVar14,iVar15,cVar16,
                                 uVar17,iVar18,iVar19,iVar20);

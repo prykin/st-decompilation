@@ -776,11 +776,12 @@ public class STVirtualMethodAnalyzer extends GhidraScript {
                     targets.add(addr(context.target.getEntryPoint()));
                 }
                 for (Anchor anchor : family.anchors) shapes.add(anchor.signature.shape);
+                String shapeText = join(shapes);
                 out.write(tsv(family.key) + "\t" + family.component + "\t" + family.slotIndex +
                     "\t" + family.slotOffset + "\t" + tsv(join(tables)) + "\t" +
                     tsv(join(owners)) + "\t" + targets.size() + "\t" +
                     tsv(join(family.namedMethods)) + "\t" + tsv(join(family.namedOwners)) +
-                    "\t" + tsv(join(shapes)) + "\n");
+                    "\t" + tsv(shapeText.isBlank() ? "-" : shapeText) + "\n");
             }
         }
     }

@@ -2,7 +2,7 @@
 // Generated translation unit: source/recovered/by_owner/STManRuinC.cpp
 
 // 00630870 STManRuinC::STManRuinC
-#line 1 "decomp/ST.exe/functions/00630870/decomp.c"
+#line 4 "decomp/ST.exe/functions/00630870/decomp.c"
 /* [STConstructorApplier] Recovered constructor candidate.
    VTable: 0079D19C (store 0063087B)
    Evidence: final_vptr=0079D19C; returns_this=true; calls_before=1; field_writes_after=1;
@@ -13,14 +13,14 @@ STManRuinC * __thiscall st::fn_00630870(STManRuinC *this)
 {
 
   st::fn_006E60E0(this);
-  this->vtable = &STManRuinCVTable;
+  this->vtable = &st_global_0079D19C;
   memset(&this->field_001C, 0, 0x55); /* compiler bulk-zero initialization */
   this->field_0061 = 0xffffffff;
   return this;
 }
 
 // 006308F0 STManRuinC::sub_006308F0
-#line 1 "decomp/ST.exe/functions/006308F0/decomp.c"
+#line 4 "decomp/ST.exe/functions/006308F0/decomp.c"
 /* [STMethodOwnerApplier] Structural method owner recovered as STManRuinC.
    Evidence: this_call_owners=[STManRuinC]; agreed_this_calls=1; incoming_this_accesses=11;
    incoming_edx_uses=0; incoming_stack_parameter_uses=16; direct_non_thunk_callers=0;
@@ -113,7 +113,7 @@ st::fn_006308F0
 }
 
 // 00630AC0 STManRuinC::sub_00630AC0
-#line 1 "decomp/ST.exe/functions/00630AC0/decomp.c"
+#line 4 "decomp/ST.exe/functions/00630AC0/decomp.c"
 /* [STMethodOwnerApplier] Structural method owner recovered as STManRuinC.
    Evidence: this_call_owners=[STManRuinC]; agreed_this_calls=1; incoming_this_accesses=2;
    incoming_edx_uses=0; incoming_stack_parameter_uses=2; direct_non_thunk_callers=0;
@@ -156,7 +156,7 @@ undefined4 __thiscall st::fn_00630AC0(STManRuinC *this,uint param_1)
 }
 
 // 00630BB0 STManRuinC::sub_00630BB0
-#line 1 "decomp/ST.exe/functions/00630BB0/decomp.c"
+#line 4 "decomp/ST.exe/functions/00630BB0/decomp.c"
 /* [STMethodOwnerApplier] Structural method owner recovered as STManRuinC.
    Evidence: this_call_owners=[STManRuinC]; agreed_this_calls=2; incoming_this_accesses=8;
    incoming_edx_uses=0; incoming_stack_parameter_uses=6; direct_non_thunk_callers=0;
@@ -192,7 +192,7 @@ st::fn_00630BB0
 }
 
 // 00630C50 STManRuinC::sub_00630C50
-#line 1 "decomp/ST.exe/functions/00630C50/decomp.c"
+#line 4 "decomp/ST.exe/functions/00630C50/decomp.c"
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 /* [STHiddenThisApplier] Anonymous hidden receiver recovered as
    /SubmarineTitans/Recovered/HiddenThis/AnonReceiver_006308F0.
@@ -250,7 +250,7 @@ st::fn_00630C50
     return local_c;
   }
   puVar4 = st::fn_00709AF0
-                     (DAT_00806774,CASE_1D,local_8[local_10->field_0040],0xffffffff,0,1,0,
+                     (PTR_00806774,CASE_1D,local_8[local_10->field_0040],0xffffffff,0,1,0,
                       nullptr);
   if (param_3 == 0) {
     if (param_2 == 1) {
@@ -313,7 +313,7 @@ st::fn_00630C50
 }
 
 // 00631010 STManRuinC::sub_00631010
-#line 1 "decomp/ST.exe/functions/00631010/decomp.c"
+#line 4 "decomp/ST.exe/functions/00631010/decomp.c"
 /* [STMethodOwnerApplier] Structural method owner recovered as STManRuinC.
    Evidence: this_call_owners=[STManRuinC]; agreed_this_calls=1; incoming_this_accesses=15;
    incoming_edx_uses=0; incoming_stack_parameter_uses=0; direct_non_thunk_callers=0;
@@ -385,7 +385,7 @@ void __thiscall st::fn_00631010(STManRuinC *this)
 }
 
 // 00631190 STManRuinC::FUN_00631190
-#line 1 "decomp/ST.exe/functions/00631190/decomp.c"
+#line 4 "decomp/ST.exe/functions/00631190/decomp.c"
 undefined4 __thiscall
 st::fn_00631190
           (STManRuinC *this,uint param_1,short param_2,short param_3,short param_4,int param_5,
@@ -413,7 +413,7 @@ st::fn_00631190
 }
 
 // 00631220 STManRuinC::sub_00631220
-#line 1 "decomp/ST.exe/functions/00631220/decomp.c"
+#line 4 "decomp/ST.exe/functions/00631220/decomp.c"
 /* [STMethodOwnerApplier] Structural method owner recovered as STManRuinC.
    Evidence: this_call_owners=[STManRuinC]; agreed_this_calls=1; incoming_this_accesses=10;
    incoming_edx_uses=0; incoming_stack_parameter_uses=2; direct_non_thunk_callers=0;
@@ -495,7 +495,7 @@ void __thiscall st::fn_00631220(STManRuinC *this,int *param_1)
 }
 
 // 00631390 STManRuinC::sub_00631390
-#line 1 "decomp/ST.exe/functions/00631390/decomp.c"
+#line 4 "decomp/ST.exe/functions/00631390/decomp.c"
 /* [STMethodOwnerApplier] Structural method owner recovered as STManRuinC.
    Evidence: this_call_owners=[STManRuinC]; agreed_this_calls=1; incoming_this_accesses=10;
    incoming_edx_uses=0; incoming_stack_parameter_uses=1; direct_non_thunk_callers=0;
@@ -540,7 +540,7 @@ uint __thiscall st::fn_00631390(STManRuinC *this,undefined4 *param_1)
 }
 
 // 00631450 STManRuinC::sub_00631450
-#line 1 "decomp/ST.exe/functions/00631450/decomp.c"
+#line 4 "decomp/ST.exe/functions/00631450/decomp.c"
 /* [STMethodOwnerApplier] Structural method owner recovered as STManRuinC.
    Evidence: this_call_owners=[STManRuinC]; agreed_this_calls=1; incoming_this_accesses=5;
    incoming_edx_uses=0; incoming_stack_parameter_uses=0; direct_non_thunk_callers=0;
@@ -579,7 +579,7 @@ undefined4 __thiscall st::fn_00631450(STManRuinC *this)
 }
 
 // 00631510 STManRuinC::sub_00631510
-#line 1 "decomp/ST.exe/functions/00631510/decomp.c"
+#line 4 "decomp/ST.exe/functions/00631510/decomp.c"
 /* [STMethodOwnerApplier] Structural method owner recovered as STManRuinC.
    Evidence: this_call_owners=[STManRuinC]; agreed_this_calls=2; incoming_this_accesses=2;
    incoming_edx_uses=0; incoming_stack_parameter_uses=5; direct_non_thunk_callers=0;
@@ -603,7 +603,7 @@ st::fn_00631510
 }
 
 // 00631560 STManRuinC::sub_00631560
-#line 1 "decomp/ST.exe/functions/00631560/decomp.c"
+#line 4 "decomp/ST.exe/functions/00631560/decomp.c"
 /* [STMethodOwnerApplier] Structural method owner recovered as STManRuinC.
    Evidence: this_call_owners=[STManRuinC]; agreed_this_calls=1; incoming_this_accesses=6;
    incoming_edx_uses=0; incoming_stack_parameter_uses=0; direct_non_thunk_callers=0;
@@ -630,7 +630,7 @@ void __thiscall st::fn_00631560(STManRuinC *this)
 }
 
 // 00631880 STManRuinC::sub_00631880
-#line 1 "decomp/ST.exe/functions/00631880/decomp.c"
+#line 4 "decomp/ST.exe/functions/00631880/decomp.c"
 /* [STMethodOwnerApplier] Structural method owner recovered as STManRuinC.
    Evidence: this_call_owners=[STManRuinC]; agreed_this_calls=1; incoming_this_accesses=3;
    incoming_edx_uses=0; incoming_stack_parameter_uses=2; direct_non_thunk_callers=0;

@@ -24,7 +24,7 @@ void CreateGameSystem(void)
       g_parentSystem_0081163C = nullptr;
     }
     else {
-      g_parentSystem_0081163C = GameSystemC::GameSystemC(this_00,g_appClass_00806728);
+      g_parentSystem_0081163C = GameSystemC::GameSystemC(this_00,g_app_00806728);
     }
     if (g_parentSystem_0081163C == nullptr) {
       RaiseInternalException(-1,g_overwriteContext_007ED77C,"E:\\__titans\\tsystem.cpp",0xb1);

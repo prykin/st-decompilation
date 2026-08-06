@@ -2,7 +2,7 @@
 // Generated translation unit: source/original/nick/to_jbomb_m.cpp
 
 // 00617640 JumpManagC::GetMessage
-#line 1 "decomp/ST.exe/functions/00617640/decomp.c"
+#line 4 "decomp/ST.exe/functions/00617640/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\nick\to_jbomb_m.Cpp
    JumpManagC::GetMessage
@@ -81,7 +81,7 @@ int __thiscall st::fn_00617640(JumpManagC *this,STMessage *message)
 }
 
 // 006178C0 JumpManagC::CheckSystrm
-#line 1 "decomp/ST.exe/functions/006178C0/decomp.c"
+#line 4 "decomp/ST.exe/functions/006178C0/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\nick\to_jbomb_m.Cpp
    JumpManagC::CheckSystrm

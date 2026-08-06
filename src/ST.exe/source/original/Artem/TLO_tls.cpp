@@ -2,7 +2,7 @@
 // Generated translation unit: source/original/Artem/TLO_tls.cpp
 
 // 004EAA20 TLOBaseTy::sub_004EAA20
-#line 1 "decomp/ST.exe/functions/004EAA20/decomp.c"
+#line 4 "decomp/ST.exe/functions/004EAA20/decomp.c"
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 /* [STSourceProvenanceApplier begin]
    Recovered source file: E:\__titans\Artem\TLO_tls.cpp
@@ -34,7 +34,7 @@ undefined4 __fastcall st::fn_004EAA20(AnonShape_004D9C80_80F657D3 *param_1)
       this = (STT3DSprC *)st::fn_00401316(pAVar1);
     }
     param_1->field_05FF = this;
-    iVar2 = st::fn_0040537B(this,DAT_008073cc,0x5a,0x45,nullptr,0xb4,0x8c,0x11);
+    iVar2 = st::fn_0040537B(this,PTR_008073cc,0x5a,0x45,nullptr,0xb4,0x8c,0x11);
     if (iVar2 != 0) {
       st::fn_006A5E40
                 (iVar2,g_overwriteContext_007ED77C,"E:\\__titans\\Artem\\TLO_tls.cpp",0x56);
@@ -66,7 +66,7 @@ undefined4 __fastcall st::fn_004EAA20(AnonShape_004D9C80_80F657D3 *param_1)
     return 0;
   }
   st::external_00000080(local_108,"%s","trmmine");
-  iVar2 = st::fn_00404183((STT3DSprC *)param_1->field_05FF,0xe,DAT_00806774,local_108,0x1d);
+  iVar2 = st::fn_00404183((STT3DSprC *)param_1->field_05FF,0xe,PTR_00806774,local_108,0x1d);
   if (iVar2 != 0) {
     st::fn_006A5E40
               (iVar2,g_overwriteContext_007ED77C,"E:\\__titans\\Artem\\TLO_tls.cpp",99);

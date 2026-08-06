@@ -2,7 +2,7 @@
 // Generated translation unit: source/original/ai/ai_event_d.cpp
 
 // 0065C9E0 FUN_0065c9e0
-#line 1 "decomp/ST.exe/functions/0065C9E0/decomp.c"
+#line 4 "decomp/ST.exe/functions/0065C9E0/decomp.c"
 /* [STSourceProvenanceApplier begin]
    Recovered source file: E:\__titans\ai\ai_event_d.cpp
    Diagnostic line evidence: 33 (metadata/report site, not the function definition)
@@ -43,7 +43,7 @@ undefined4 * __cdecl st::fn_0065C9E0(char *source)
 }
 
 // 0065CB00 FUN_0065cb00
-#line 1 "decomp/ST.exe/functions/0065CB00/decomp.c"
+#line 4 "decomp/ST.exe/functions/0065CB00/decomp.c"
 /* [STSourceProvenanceApplier begin]
    Recovered source file: E:\__titans\ai\ai_event_d.cpp
    Diagnostic line evidence: 76 (metadata/report site, not the function definition)
@@ -137,7 +137,7 @@ AllocationRecord_0065CB00 * __cdecl st::fn_0065CB00(AllocationRecord_0065CB00 *p
 }
 
 // 0065CD10 EventDataPack
-#line 1 "decomp/ST.exe/functions/0065CD10/decomp.c"
+#line 4 "decomp/ST.exe/functions/0065CD10/decomp.c"
 /* [STSourceProvenanceApplier begin]
    Recovered source file: E:\__titans\ai\ai_event_d.cpp
    Diagnostic line evidence: 137 | 138 (metadata/report site, not the function definition)
@@ -278,7 +278,7 @@ AllocationRecord_0065CD10 * __cdecl st::fn_0065CD10(AllocationRecord_0065CD10 *p
 }
 
 // 0065D120 FUN_0065d120
-#line 1 "decomp/ST.exe/functions/0065D120/decomp.c"
+#line 4 "decomp/ST.exe/functions/0065D120/decomp.c"
 /* [STSourceProvenanceApplier begin]
    Recovered source file: E:\__titans\ai\ai_event_d.cpp
    Diagnostic line evidence: 183 (metadata/report site, not the function definition)

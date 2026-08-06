@@ -33,7 +33,7 @@ int __thiscall STSharkC::GetMessage(STSharkC *this,STMessage *message)
   void *local_3c;
   uint local_38;
   int local_34;
-  undefined4 local_30;
+  ushort *local_30;
   undefined4 local_2c;
   undefined4 local_28;
   undefined4 local_24;
@@ -75,7 +75,7 @@ int __thiscall STSharkC::GetMessage(STSharkC *this,STMessage *message)
       *(undefined4 *)&this_00->field_0x23d = 0;
       STT3DSprC::StopShow((STT3DSprC *)puVar13,0xe);
       thunk_FUN_004ad5e0((STT3DSprC *)puVar13);
-      STT3DSprC::LoadSequence((STT3DSprC *)puVar13,8,DAT_00806764,"expshark",0x1d);
+      STT3DSprC::LoadSequence((STT3DSprC *)puVar13,8,PTR_00806764,"expshark",0x1d);
       STT3DSprC::StartShow((STT3DSprC *)puVar13,8,g_playSystem_00802A38->field_00E4);
       *(undefined4 *)&this_00->field_0x257 = 4;
       g_currentExceptionFrame = local_80.previous;
@@ -184,7 +184,7 @@ int __thiscall STSharkC::GetMessage(STSharkC *this,STMessage *message)
         if (iVar8 == 0) {
           puVar13 = (byte *)(&this_00->field_01D5);
           iVar8 = STT3DSprC::LoadSequence
-                            ((STT3DSprC *)puVar13,0xe,DAT_0080676c,"shark1",0x1d);
+                            ((STT3DSprC *)puVar13,0xe,PTR_0080676c,"shark1",0x1d);
           if (iVar8 != 0) {
             RaiseInternalException
                       (-1,g_overwriteContext_007ED77C,"E:\\__titans\\Igor\\To_shark.cpp",0x9f);
@@ -284,7 +284,7 @@ LAB_0058dc72:
       if (local_3c != nullptr) {
         iVar8 = 0;
         do {
-          *(int **)(iVar8 + (int)local_3c) = DAT_0080676c;
+          *(int **)(iVar8 + (int)local_3c) = PTR_0080676c;
           iVar8 = iVar8 + 4;
         } while (iVar8 < 0x44);
         iVar8 = *(int *)((int)&this_00->field_023E + 3);
@@ -299,7 +299,7 @@ LAB_0058dc72:
         local_2c = 0;
         local_28 = 0;
         local_24 = 0;
-        local_30 = DAT_008073cc;
+        local_30 = PTR_008073cc;
         STT3DSprC::RestoreSpr
                   ((STT3DSprC *)&this_00->field_01D5,(int *)&local_3c,
                    (AnonShape_004AD790_77673787 *)((int)puVar13 + 0x62));

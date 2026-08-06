@@ -2,7 +2,7 @@
 // Generated translation unit: source/original/Artem/TLO_base.cpp
 
 // 004B80D0 TLOBaseTy::SetState
-#line 1 "decomp/ST.exe/functions/004B80D0/decomp.c"
+#line 4 "decomp/ST.exe/functions/004B80D0/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\Artem\TLO_base.cpp
    TLOBaseTy::SetState
@@ -389,7 +389,7 @@ int __thiscall st::fn_004B80D0(TLOBaseTy *this,int param_1,int param_2)
 }
 
 // 004B9FA0 TLOBaseTy::GetMessage
-#line 1 "decomp/ST.exe/functions/004B9FA0/decomp.c"
+#line 4 "decomp/ST.exe/functions/004B9FA0/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\Artem\TLO_base.cpp
    TLOBaseTy::GetMessage
@@ -530,8 +530,8 @@ int __thiscall st::fn_004B9FA0(TLOBaseTy *this,STMessage *message)
   undefined4 *local_34;
   uint local_30;
   int local_2c;
-  undefined4 local_28;
-  undefined4 local_24;
+  ushort *local_28;
+  ushort *local_24;
   undefined4 local_20;
   undefined4 local_1c;
   AnonShape_0060EA30_DCEB68AD *local_18;
@@ -1180,38 +1180,38 @@ int __thiscall st::fn_004B9FA0(TLOBaseTy *this,STMessage *message)
           st::fn_00404A11(this_00);
           local_34 = st::fn_006AAC70(0x44);
           pAVar26 = local_c;
-          local_28 = DAT_008073cc;
+          local_28 = PTR_008073cc;
           local_30 = 0;
           local_1c = 0;
-          local_24 = DAT_008032b8;
+          local_24 = PTR_008032b8;
           local_20 = 0;
-          local_34[1] = DAT_00806774;
-          local_34[2] = DAT_00806774;
-          *local_34 = DAT_00806774;
-          local_34[0xf] = DAT_00806774;
-          local_34[0x10] = DAT_0080678c;
-          local_34[0xe] = DAT_0080678c;
-          local_34[0xd] = DAT_0080678c;
-          local_34[0xc] = DAT_0080678c;
-          local_34[0xb] = DAT_0080678c;
+          local_34[1] = PTR_00806774;
+          local_34[2] = PTR_00806774;
+          *local_34 = PTR_00806774;
+          local_34[0xf] = PTR_00806774;
+          local_34[0x10] = PTR_0080678c;
+          local_34[0xe] = PTR_0080678c;
+          local_34[0xd] = PTR_0080678c;
+          local_34[0xc] = PTR_0080678c;
+          local_34[0xb] = PTR_0080678c;
           local_34[10] = 0;
-          local_34[9] = DAT_0080678c;
-          local_34[8] = DAT_0080678c;
-          local_34[7] = DAT_0080678c;
+          local_34[9] = PTR_0080678c;
+          local_34[8] = PTR_0080678c;
+          local_34[7] = PTR_0080678c;
           if (this_00->field_0245 == CASE_1) {
             if (this_00->field_05DF == 5) {
               local_30 = PTR_00806724->entries[this_00->field_04C8];
               local_2c = (int)PTR_00806724->field_002C;
             }
             else {
-              local_34[5] = DAT_00806764;
-              local_34[4] = DAT_00806774;
-              local_34[6] = DAT_00806774;
+              local_34[5] = PTR_00806764;
+              local_34[4] = PTR_00806774;
+              local_34[6] = PTR_00806774;
             }
           }
           if (this_00->field_0245 == CASE_6) {
-            local_34[5] = DAT_0080678c;
-            local_34[4] = DAT_00806764;
+            local_34[5] = PTR_0080678c;
+            local_34[4] = PTR_00806764;
           }
           st::fn_00404CA5
                     ((STT3DSprC *)&this_00->field_01D5,(int *)&local_34,
@@ -1232,7 +1232,7 @@ int __thiscall st::fn_004B9FA0(TLOBaseTy *this,STMessage *message)
               pSVar21 = (STT3DSprC *)st::fn_00401316(pAVar20);
             }
             this_00->field_05FF = (HoloTy *)pSVar21;
-            iVar17 = st::fn_0040537B(pSVar21,DAT_008073cc,0x5a,0x45,nullptr,0xb4,0x8c,
+            iVar17 = st::fn_0040537B(pSVar21,PTR_008073cc,0x5a,0x45,nullptr,0xb4,0x8c,
                                      0x11);
             if (iVar17 != 0) {
               st::fn_006A5E40
@@ -1245,9 +1245,9 @@ int __thiscall st::fn_004B9FA0(TLOBaseTy *this,STMessage *message)
             case CASE_40:
             case CASE_49:
             case CASE_5C:
-              local_34[0xe] = DAT_0080677c;
-              local_34[0xc] = DAT_0080677c;
-              local_34[0xd] = DAT_0080677c;
+              local_34[0xe] = PTR_0080677c;
+              local_34[0xc] = PTR_0080677c;
+              local_34[0xd] = PTR_0080677c;
               break;
             case CASE_45:
             case CASE_4E:
@@ -1256,11 +1256,11 @@ int __thiscall st::fn_004B9FA0(TLOBaseTy *this,STMessage *message)
             case CASE_69:
             case CASE_70:
             case CASE_72:
-              local_34[0xe] = DAT_00806774;
+              local_34[0xe] = PTR_00806774;
             }
             local_30 = 0;
             local_1c = 0;
-            local_28 = 0;
+            local_28 = nullptr;
             st::fn_00404CA5
                       ((STT3DSprC *)this_00->field_05FF,(int *)&local_34,
                        (AnonShape_004AD790_77673787 *)(&local_c->field_0x0 + local_c->field_03E2));
@@ -1279,7 +1279,7 @@ int __thiscall st::fn_004B9FA0(TLOBaseTy *this,STMessage *message)
               pSVar21 = (STT3DSprC *)st::fn_00401316(pAVar20);
             }
             this_00->field_0603 = pSVar21;
-            iVar17 = st::fn_0040537B(pSVar21,DAT_008073cc,this_00->field_0613,this_00->field_0617,
+            iVar17 = st::fn_0040537B(pSVar21,PTR_008073cc,this_00->field_0613,this_00->field_0617,
                                      nullptr,this_00->field_060B,this_00->field_060F,
                                      0x11);
             if (iVar17 != 0) {
@@ -1289,14 +1289,14 @@ int __thiscall st::fn_004B9FA0(TLOBaseTy *this,STMessage *message)
             }
             memset(local_34, 0, 0x44); /* compiler bulk-zero initialization */
             if (this_00->field_043C == 1) {
-              local_34[0xe] = DAT_00806764;
+              local_34[0xe] = PTR_00806764;
             }
             else {
-              local_34[0xe] = DAT_0080678c;
+              local_34[0xe] = PTR_0080678c;
             }
             local_30 = 0;
             local_1c = 0;
-            local_28 = 0;
+            local_28 = nullptr;
             st::fn_00404CA5
                       (this_00->field_0603,(int *)&local_34,
                        (AnonShape_004AD790_77673787 *)(&local_c->field_0x0 + local_c->field_03F2));

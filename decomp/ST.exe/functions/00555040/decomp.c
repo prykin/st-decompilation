@@ -52,7 +52,7 @@ cLoadingTy::SetState
   }
   switch(param_1) {
   case CASE_0:
-    pcVar5 = LoadResourceString(0x267a,g_module_00807618);
+    pcVar5 = LoadResourceString(0x267a,g_hINSTANCE_00807618);
     uVar8 = 0xffffffff;
     do {
       pcVar13 = pcVar5;
@@ -66,7 +66,7 @@ cLoadingTy::SetState
     puVar11 = (uint *)(pcVar13 + -uVar8);
     puVar12 = local_450;
     memmove(puVar12, puVar11, uVar8); /* compiler REP MOVS byte copy */
-    pcVar5 = LoadResourceString(0x267e,g_module_00807618);
+    pcVar5 = LoadResourceString(0x267e,g_hINSTANCE_00807618);
     uVar8 = 0xffffffff;
     do {
       pcVar13 = pcVar5;
@@ -94,7 +94,7 @@ cLoadingTy::SetState
     g_currentExceptionFrame = local_50.previous;
     return;
   case CASE_1:
-    pcVar5 = LoadResourceString(0x267a,g_module_00807618);
+    pcVar5 = LoadResourceString(0x267a,g_hINSTANCE_00807618);
     uVar8 = 0xffffffff;
     do {
       pcVar13 = pcVar5;
@@ -108,7 +108,7 @@ cLoadingTy::SetState
     puVar11 = (uint *)(pcVar13 + -uVar8);
     puVar12 = local_450;
     memmove(puVar12, puVar11, uVar8); /* compiler REP MOVS byte copy */
-    pcVar5 = LoadResourceString(0x267b,g_module_00807618);
+    pcVar5 = LoadResourceString(0x267b,g_hINSTANCE_00807618);
     uVar8 = 0xffffffff;
     do {
       pcVar13 = pcVar5;
@@ -215,7 +215,7 @@ cLoadingTy::SetState
     break;
   case CASE_2:
     local_8->field_003C = -1;
-    pcVar5 = LoadResourceString(0x267a,g_module_00807618);
+    pcVar5 = LoadResourceString(0x267a,g_hINSTANCE_00807618);
     uVar8 = 0xffffffff;
     do {
       pcVar13 = pcVar5;
@@ -229,7 +229,7 @@ cLoadingTy::SetState
     puVar11 = (uint *)(pcVar13 + -uVar8);
     puVar12 = local_450;
     memmove(puVar12, puVar11, uVar8); /* compiler REP MOVS byte copy */
-    pcVar5 = LoadResourceString(0x267c,g_module_00807618);
+    pcVar5 = LoadResourceString(0x267c,g_hINSTANCE_00807618);
     uVar8 = 0xffffffff;
     do {
       pcVar13 = pcVar5;
@@ -257,7 +257,7 @@ cLoadingTy::SetState
     goto joined_r0x00555393;
   case CASE_3:
     local_8->field_003C = -1;
-    pcVar5 = LoadResourceString(0x267a,g_module_00807618);
+    pcVar5 = LoadResourceString(0x267a,g_hINSTANCE_00807618);
     uVar8 = 0xffffffff;
     do {
       pcVar13 = pcVar5;
@@ -271,7 +271,7 @@ cLoadingTy::SetState
     puVar11 = (uint *)(pcVar13 + -uVar8);
     puVar12 = local_450;
     memmove(puVar12, puVar11, uVar8); /* compiler REP MOVS byte copy */
-    pcVar5 = LoadResourceString(0x267d,g_module_00807618);
+    pcVar5 = LoadResourceString(0x267d,g_hINSTANCE_00807618);
     uVar8 = 0xffffffff;
     do {
       pcVar13 = pcVar5;

@@ -2,7 +2,7 @@
 // Generated translation unit: source/original/nick/to_light.cpp
 
 // 0061D190 STLightC::GetMessage
-#line 1 "decomp/ST.exe/functions/0061D190/decomp.c"
+#line 4 "decomp/ST.exe/functions/0061D190/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\nick\to_light.Cpp
    STLightC::GetMessage
@@ -160,7 +160,7 @@ LAB_0061d434:
 }
 
 // 0061DB80 STLightC::LoadNextLight
-#line 1 "decomp/ST.exe/functions/0061DB80/decomp.c"
+#line 4 "decomp/ST.exe/functions/0061DB80/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\nick\to_light.Cpp
    STLightC::LoadNextLight */
@@ -186,7 +186,7 @@ undefined4 __thiscall st::fn_0061DB80(STLightC *this)
   this_00 = local_c;
   if (iVar2 == 0) {
     puVar3 = st::fn_00709AF0
-                       (DAT_00806774,CASE_0,(&PTR_s_light01_007d0164)[local_c->field_003C],
+                       (PTR_00806774,CASE_0,(&PTR_s_light01_007d0164)[local_c->field_003C],
                         0xffffffff,0,1,0,nullptr);
     st::fn_004050D3(this_00,puVar3,(int *)&local_8,0);
     puVar4 = st::fn_006AAC70(this_00->field_0093 << 4);

@@ -8,11 +8,14 @@
    [STMethodOwnerApplier] Structural method owner recovered as ST3DSMAPContext.
    Evidence: this_call_owners=[ST3DSMAPContext]; agreed_this_calls=4; incoming_this_accesses=2;
    incoming_edx_uses=0; incoming_stack_parameter_uses=4; direct_non_thunk_callers=3;
-   incoming_ecx_receiver_callers=0; attributed_named_callers=3; owner_evidence_coverage=adequate */
+   incoming_ecx_receiver_callers=0; attributed_named_callers=3; owner_evidence_coverage=adequate
+
+   [STPrototypeApplier] Propagated parameter 4.
+   Evidence: 006364B0 -> 006EA8A0 @ 006365B8; data at 008032B8 */
 
 void __thiscall
 ST3DSMAPContext::sub_006EA8A0
-          (ST3DSMAPContext *this,uint param_1,int param_2,uint param_3,uint param_4)
+          (ST3DSMAPContext *this,uint param_1,int param_2,uint param_3,ushort *param_4)
 
 {
   uint *puVar1;
@@ -33,7 +36,7 @@ ST3DSMAPContext::sub_006EA8A0
       pbVar2 = (byte *)(puVar1[0x29] + 3 + param_2 * 4);
       *pbVar2 = *pbVar2 | 1;
       puVar1[0x26] = param_3;
-      puVar1[0x27] = param_4;
+      puVar1[0x27] = (uint)param_4;
     }
     if ((puVar1[2] == 0) && ((*puVar1 & 0x10001) != 0)) {
       *puVar1 = *puVar1 & 0xff87ffff | 4;

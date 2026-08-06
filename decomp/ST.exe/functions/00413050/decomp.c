@@ -20,9 +20,9 @@ int FUN_00413050(int param_1,int param_2,int param_3,int param_4,int param_5)
     else {
       iVar1 = *(int *)(&DAT_007a4bf8 + param_5 * 4);
     }
-    param_1 = DAT_007f4d54;
+    param_1 = (int)PTR_007f4d54;
     if (((byte)DAT_007f4d08 & 1) == 0) {
-      param_1 = DAT_007f4d50;
+      param_1 = (int)PTR_007f4d50;
     }
     iVar2 = FUN_00413170(iVar2,param_2,param_3,param_4,&param_1,iVar1);
     if (iVar2 == 0) {

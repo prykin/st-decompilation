@@ -2,7 +2,7 @@
 // Generated translation unit: source/recovered/by_owner/STBHEShellC.cpp
 
 // 005F3440 STBHEShellC::STBHEShellC
-#line 1 "decomp/ST.exe/functions/005F3440/decomp.c"
+#line 4 "decomp/ST.exe/functions/005F3440/decomp.c"
 /* [STConstructorApplier] Recovered constructor candidate.
    VTable: 0079C584 (store 005F3453)
    Evidence: final_vptr=0079C584; returns_this=true; calls_before=1; field_writes_after=0;
@@ -16,13 +16,13 @@ STBHEShellC * __thiscall st::fn_005F3440(STBHEShellC *this)
 {
 
   st::fn_006E60E0(this);
-  this->vtable = &STBHEShellCVTable;
+  this->vtable = &st_global_0079C584;
   memset(&this->field_0x4d, 0, 0x128); /* compiler bulk-zero initialization */
   return this;
 }
 
 // 005F3470 STBHEShellC::sub_005F3470
-#line 1 "decomp/ST.exe/functions/005F3470/decomp.c"
+#line 4 "decomp/ST.exe/functions/005F3470/decomp.c"
 /* [STMethodOwnerApplier] Structural method owner recovered as STBHEShellC.
    Evidence: this_call_owners=[STBHEShellC]; agreed_this_calls=2; incoming_this_accesses=1;
    incoming_edx_uses=0; incoming_stack_parameter_uses=0; direct_non_thunk_callers=0;
@@ -48,7 +48,7 @@ void __thiscall st::fn_005F3470(STBHEShellC *this)
 }
 
 // 005F34B0 STBHEShellC::sub_005F34B0
-#line 1 "decomp/ST.exe/functions/005F34B0/decomp.c"
+#line 4 "decomp/ST.exe/functions/005F34B0/decomp.c"
 /* [STMethodOwnerApplier] Structural method owner recovered as STBHEShellC.
    Evidence: this_call_owners=[STBHEShellC]; agreed_this_calls=1; incoming_this_accesses=13;
    incoming_edx_uses=0; incoming_stack_parameter_uses=0; direct_non_thunk_callers=0;
@@ -71,7 +71,7 @@ void __thiscall st::fn_005F34B0(STBHEShellC *this)
 }
 
 // 005F35F0 STBHEShellC::sub_005F35F0
-#line 1 "decomp/ST.exe/functions/005F35F0/decomp.c"
+#line 4 "decomp/ST.exe/functions/005F35F0/decomp.c"
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 /* [STHiddenThisApplier] Anonymous hidden receiver recovered as
    /SubmarineTitans/Recovered/HiddenThis/AnonReceiver_005F35F0.
@@ -106,7 +106,7 @@ undefined4 __thiscall st::fn_005F35F0(STBHEShellC *this,int param_1)
   if (iVar3 == 0) {
     if (param_1 == 1) {
       puVar4 = st::fn_00709AF0
-                         (DAT_00806774,CASE_1D,local_c[local_8->field_0087],0xffffffff,0,1,0,
+                         (PTR_00806774,CASE_1D,local_c[local_8->field_0087],0xffffffff,0,1,0,
                           nullptr);
       puVar1 = &pAVar2->field_008F;
       st::fn_006E8660
@@ -129,7 +129,7 @@ undefined4 __thiscall st::fn_005F35F0(STBHEShellC *this,int param_1)
         st::fn_006E8BA0(g_sT3DSMAPContext_00807598,*puVar1);
       }
       puVar4 = st::fn_00709AF0
-                         (DAT_00806774,CASE_1D,"expl_i13",0xffffffff,0,1,0,
+                         (PTR_00806774,CASE_1D,"expl_i13",0xffffffff,0,1,0,
                           nullptr);
       st::fn_006E8660
                 (g_sT3DSMAPContext_00807598,(int *)puVar1,3,0,STField<uint>(puVar4,9),
@@ -138,7 +138,7 @@ undefined4 __thiscall st::fn_005F35F0(STBHEShellC *this,int param_1)
                 (g_sT3DSMAPContext_00807598,*puVar1,0,*(int *)puVar4,STField<int>(puVar4,0x21),1);
       st::fn_006EA270(g_sT3DSMAPContext_00807598,*puVar1,0,pAVar2->field_00AB);
       puVar4 = st::fn_00709AF0
-                         (DAT_00806764,CASE_1D,"expl_s0",0xffffffff,0,1,0,nullptr
+                         (PTR_00806764,CASE_1D,"expl_s0",0xffffffff,0,1,0,nullptr
                          );
       st::fn_006E98E0
                 (g_sT3DSMAPContext_00807598,*puVar1,2,*(int *)puVar4,STField<int>(puVar4,0x21),1);
@@ -160,7 +160,7 @@ undefined4 __thiscall st::fn_005F35F0(STBHEShellC *this,int param_1)
 }
 
 // 005F3BF0 STBHEShellC::sub_005F3BF0
-#line 1 "decomp/ST.exe/functions/005F3BF0/decomp.c"
+#line 4 "decomp/ST.exe/functions/005F3BF0/decomp.c"
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 /* [STMethodOwnerApplier] Structural method owner recovered as STBHEShellC.
    Evidence: this_call_owners=[STBHEShellC]; agreed_this_calls=3; incoming_this_accesses=12;
@@ -320,7 +320,7 @@ st::fn_005F3BF0(STBHEShellC *this,int param_1,int param_2,undefined4 param_3,cha
 }
 
 // 005F4370 STBHEShellC::sub_005F4370
-#line 1 "decomp/ST.exe/functions/005F4370/decomp.c"
+#line 4 "decomp/ST.exe/functions/005F4370/decomp.c"
 /* [STMethodOwnerApplier] Structural method owner recovered as STBHEShellC.
    Evidence: this_call_owners=[STBHEShellC]; agreed_this_calls=3; incoming_this_accesses=22;
    incoming_edx_uses=0; incoming_stack_parameter_uses=12; direct_non_thunk_callers=0;
@@ -373,7 +373,7 @@ st::fn_005F4370(STBHEShellC *this,int *param_1,int *param_2,int *param_3,int par
 }
 
 // 005F4680 STBHEShellC::sub_005F4680
-#line 1 "decomp/ST.exe/functions/005F4680/decomp.c"
+#line 4 "decomp/ST.exe/functions/005F4680/decomp.c"
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 /* [STMethodOwnerApplier] Structural method owner recovered as STBHEShellC.
    Evidence: this_call_owners=[STBHEShellC]; agreed_this_calls=1; incoming_this_accesses=33;
@@ -477,7 +477,7 @@ void __thiscall st::fn_005F4680(STBHEShellC *this)
 }
 
 // 005F4C50 STBHEShellC::sub_005F4C50
-#line 1 "decomp/ST.exe/functions/005F4C50/decomp.c"
+#line 4 "decomp/ST.exe/functions/005F4C50/decomp.c"
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 /* [STMethodOwnerApplier] Structural method owner recovered as STBHEShellC.
    Evidence: this_call_owners=[STBHEShellC]; agreed_this_calls=1; incoming_this_accesses=27;
@@ -604,7 +604,7 @@ st::fn_005F4C50
 }
 
 // 005F4FA0 STBHEShellC::sub_005F4FA0
-#line 1 "decomp/ST.exe/functions/005F4FA0/decomp.c"
+#line 4 "decomp/ST.exe/functions/005F4FA0/decomp.c"
 /* [STMethodOwnerApplier] Structural method owner recovered as STBHEShellC.
    Evidence: this_call_owners=[STBHEShellC]; agreed_this_calls=1; incoming_this_accesses=15;
    incoming_edx_uses=0; incoming_stack_parameter_uses=0; direct_non_thunk_callers=0;
@@ -737,7 +737,7 @@ LAB_005f528b:
 }
 
 // 005F53A0 STBHEShellC::sub_005F53A0
-#line 1 "decomp/ST.exe/functions/005F53A0/decomp.c"
+#line 4 "decomp/ST.exe/functions/005F53A0/decomp.c"
 /* [STMethodOwnerApplier] Structural method owner recovered as STBHEShellC.
    Evidence: this_call_owners=[STBHEShellC]; agreed_this_calls=1; incoming_this_accesses=4;
    incoming_edx_uses=0; incoming_stack_parameter_uses=0; direct_non_thunk_callers=0;
@@ -774,7 +774,7 @@ void __thiscall st::fn_005F53A0(STBHEShellC *this)
 }
 
 // 005F5700 STBHEShellC::sub_005F5700
-#line 1 "decomp/ST.exe/functions/005F5700/decomp.c"
+#line 4 "decomp/ST.exe/functions/005F5700/decomp.c"
 /* [STMethodOwnerApplier] Structural method owner recovered as STBHEShellC.
    Evidence: this_call_owners=[STBHEShellC]; agreed_this_calls=1; incoming_this_accesses=14;
    incoming_edx_uses=18; incoming_stack_parameter_uses=12; direct_non_thunk_callers=0;
@@ -889,7 +889,7 @@ cf_continue_loop_005F5985:
 }
 
 // 005F5A90 STBHEShellC::sub_005F5A90
-#line 1 "decomp/ST.exe/functions/005F5A90/decomp.c"
+#line 4 "decomp/ST.exe/functions/005F5A90/decomp.c"
 /* [STPrototypeRepairApplier] Propagated return.
    Evidence: 005F5A90 returns used as parameter 2 of STPlaySystemC::SaveObjData @ 005F3098
 
@@ -935,7 +935,7 @@ byte * __thiscall st::fn_005F5A90(STBHEShellC *this,int *param_1)
 }
 
 // 005F5B80 STBHEShellC::sub_005F5B80
-#line 1 "decomp/ST.exe/functions/005F5B80/decomp.c"
+#line 4 "decomp/ST.exe/functions/005F5B80/decomp.c"
 /* [STMethodOwnerApplier] Structural method owner recovered as STBHEShellC.
    Evidence: this_call_owners=[STBHEShellC]; agreed_this_calls=1; incoming_this_accesses=5;
    incoming_edx_uses=0; incoming_stack_parameter_uses=2; direct_non_thunk_callers=0;
@@ -982,7 +982,7 @@ int __thiscall st::fn_005F5B80(STBHEShellC *this,undefined4 *param_1)
 }
 
 // 005F5C40 STBHEShellC::sub_005F5C40
-#line 1 "decomp/ST.exe/functions/005F5C40/decomp.c"
+#line 4 "decomp/ST.exe/functions/005F5C40/decomp.c"
 /* [STPrototypeApplier] Propagated parameter 3.
    Evidence: 005F5C40 -> 00568DD0 @ 005F5CC6
 
@@ -1021,7 +1021,7 @@ void __thiscall st::fn_005F5C40(STBHEShellC *this,int param_1,int param_2,int so
 }
 
 // 005F5D10 STBHEShellC::sub_005F5D10
-#line 1 "decomp/ST.exe/functions/005F5D10/decomp.c"
+#line 4 "decomp/ST.exe/functions/005F5D10/decomp.c"
 /* [STMethodOwnerApplier] Structural method owner recovered as STBHEShellC.
    Evidence: this_call_owners=[STBHEShellC]; agreed_this_calls=1; incoming_this_accesses=11;
    incoming_edx_uses=0; incoming_stack_parameter_uses=3; direct_non_thunk_callers=0;
@@ -1070,7 +1070,7 @@ LAB_005f5d4b:
 }
 
 // 005F5E30 STBHEShellC::sub_005F5E30
-#line 1 "decomp/ST.exe/functions/005F5E30/decomp.c"
+#line 4 "decomp/ST.exe/functions/005F5E30/decomp.c"
 /* [STMethodOwnerApplier] Structural method owner recovered as STBHEShellC.
    Evidence: this_call_owners=[STBHEShellC]; agreed_this_calls=1; incoming_this_accesses=19;
    incoming_edx_uses=0; incoming_stack_parameter_uses=3; direct_non_thunk_callers=0;

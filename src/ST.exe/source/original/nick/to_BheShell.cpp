@@ -2,7 +2,7 @@
 // Generated translation unit: source/original/nick/to_BheShell.cpp
 
 // 005F27C0 STBHEShellC::GetMessage
-#line 1 "decomp/ST.exe/functions/005F27C0/decomp.c"
+#line 4 "decomp/ST.exe/functions/005F27C0/decomp.c"
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 /* Recovered from embedded debug metadata:
    E:\__titans\nick\to_BheShell.cpp

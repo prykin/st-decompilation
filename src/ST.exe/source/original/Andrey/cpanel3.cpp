@@ -2,7 +2,7 @@
 // Generated translation unit: source/original/Andrey/cpanel3.cpp
 
 // 005040A0 CPanelTy::PaintMap
-#line 1 "decomp/ST.exe/functions/005040A0/decomp.c"
+#line 4 "decomp/ST.exe/functions/005040A0/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\Andrey\cpanel3.cpp
    CPanelTy::PaintMap */
@@ -34,7 +34,7 @@ void __thiscall st::fn_005040A0(CPanelTy *this)
     uVar4 = (-(uint)(DAT_0080874e != '\x03') & 0xfffffffc) + 5;
     iVar5 = -1;
     iVar3 = -2;
-    resourceString = (uint *)st::fn_006B0140(0x2712,g_module_00807618);
+    resourceString = (uint *)st::fn_006B0140(0x2712,g_hINSTANCE_00807618);
     st::fn_00711B70(pCVar2->field_01B8,resourceString,iVar3,iVar5,uVar4,iVar6,iVar7);
     if (-1 < (int)pCVar2->field_0148[4]) {
       st::fn_006B3640
@@ -55,7 +55,7 @@ void __thiscall st::fn_005040A0(CPanelTy *this)
 }
 
 // 00504210 CPanelTy::UpdateStackPanel
-#line 1 "decomp/ST.exe/functions/00504210/decomp.c"
+#line 4 "decomp/ST.exe/functions/00504210/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\Andrey\cpanel3.cpp
    CPanelTy::UpdateStackPanel */
@@ -147,7 +147,7 @@ void __thiscall st::fn_00504210(CPanelTy *this,uint param_1)
             uVar13 = 6;
             pcVar7 = (char *)st::fn_004023B5((undefined1 *)local_c);
             puVar8 = st::fn_00709AF0
-                               (DAT_00806794,CASE_1F,pcVar7,uVar13,bVar5,iVar6,iVar14,puVar15);
+                               (PTR_00806794,CASE_1F,pcVar7,uVar13,bVar5,iVar6,iVar14,puVar15);
             local_14[-0x12] = (uint)puVar8;
             *local_10 = 0;
             *local_14 = this_00->field_0038;

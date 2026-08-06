@@ -2,7 +2,7 @@
 // Generated translation unit: source/recovered/by_address/0076.cpp
 
 // 00760100 FUN_00760100
-#line 1 "decomp/ST.exe/functions/00760100/decomp.c"
+#line 4 "decomp/ST.exe/functions/00760100/decomp.c"
 void st::fn_00760100(AnonShape_00760100_BE153D7B *param_1,int param_2,int *param_3,int param_4)
 
 {
@@ -94,7 +94,7 @@ void st::fn_00760100(AnonShape_00760100_BE153D7B *param_1,int param_2,int *param
 }
 
 // 007602E0 FUN_007602e0
-#line 1 "decomp/ST.exe/functions/007602E0/decomp.c"
+#line 4 "decomp/ST.exe/functions/007602E0/decomp.c"
 /* [STPrototypeApplier] Propagated parameter 1.
    Evidence: 007602E0 -> 006A3BE0 @ 007602E7
 
@@ -111,7 +111,7 @@ int * st::fn_007602E0(undefined4 param_1,uint param_2)
 }
 
 // 00760300 FUN_00760300
-#line 1 "decomp/ST.exe/functions/00760300/decomp.c"
+#line 4 "decomp/ST.exe/functions/00760300/decomp.c"
 /* [STReturnSemanticsApplier] ignored_eax_void.
    Evidence: all observed direct callers ignore the return register (ignored=2, used=0), and
    decompilation contains no value return
@@ -127,7 +127,7 @@ void st::fn_00760300(undefined4 param_1,int *param_2)
 }
 
 // 00760320 FUN_00760320
-#line 1 "decomp/ST.exe/functions/00760320/decomp.c"
+#line 4 "decomp/ST.exe/functions/00760320/decomp.c"
 /* [STPrototypeApplier] Propagated parameter 1.
    Evidence: 00760320 -> 006A3BE0 @ 00760327
 
@@ -144,7 +144,7 @@ int * st::fn_00760320(undefined4 param_1,uint param_2)
 }
 
 // 00760340 FUN_00760340
-#line 1 "decomp/ST.exe/functions/00760340/decomp.c"
+#line 4 "decomp/ST.exe/functions/00760340/decomp.c"
 /* [STPrototypeApplier] Propagated parameter 1.
    Evidence: 00760340 -> 006A4950 @ 00760347 */
 
@@ -156,7 +156,7 @@ void st::fn_00760340(undefined4 param_1,int *param_2)
 }
 
 // 00760360 FUN_00760360
-#line 1 "decomp/ST.exe/functions/00760360/decomp.c"
+#line 4 "decomp/ST.exe/functions/00760360/decomp.c"
 undefined4 st::fn_00760360(undefined4 param_1,undefined4 param_2,undefined4 param_3)
 
 {
@@ -164,7 +164,7 @@ undefined4 st::fn_00760360(undefined4 param_1,undefined4 param_2,undefined4 para
 }
 
 // 00760390 FUN_00760390
-#line 1 "decomp/ST.exe/functions/00760390/decomp.c"
+#line 4 "decomp/ST.exe/functions/00760390/decomp.c"
 undefined4 st::fn_00760390(void)
 
 {
@@ -184,7 +184,7 @@ void st::fn_007603A0(void)
 }
 
 // 007603B0 FUN_007603b0
-#line 1 "decomp/ST.exe/functions/007603B0/decomp.c"
+#line 4 "decomp/ST.exe/functions/007603B0/decomp.c"
 void st::fn_007603B0(int *param_1,AnonShape_007603B0_DAA8AD99 *param_2,int *param_3,int *param_4,
                  int param_5)
 
@@ -347,7 +347,7 @@ void st::fn_007603B0(int *param_1,AnonShape_007603B0_DAA8AD99 *param_2,int *para
 }
 
 // 00760970 FUN_00760970
-#line 1 "decomp/ST.exe/functions/00760970/decomp.c"
+#line 4 "decomp/ST.exe/functions/00760970/decomp.c"
 void st::fn_00760970(int param_1,AnonShape_00760970_DF0E462C *param_2,int *param_3,int *param_4,
                  int param_5)
 
@@ -504,7 +504,7 @@ void st::fn_00760970(int param_1,AnonShape_00760970_DF0E462C *param_2,int *param
 }
 
 // 00760DF0 FUN_00760df0
-#line 1 "decomp/ST.exe/functions/00760DF0/decomp.c"
+#line 4 "decomp/ST.exe/functions/00760DF0/decomp.c"
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
 void st::fn_00760DF0(int param_1,AnonShape_00760DF0_41372EAE *param_2,int *param_3,int *param_4,
@@ -637,7 +637,7 @@ void st::fn_00760DF0(int param_1,AnonShape_00760DF0_41372EAE *param_2,int *param
 }
 
 // 007611C0 FUN_007611c0
-#line 1 "decomp/ST.exe/functions/007611C0/decomp.c"
+#line 4 "decomp/ST.exe/functions/007611C0/decomp.c"
 void st::fn_007611C0(int param_1,AnonShape_007611C0_0B5C7A2E *param_2,int *param_3,int *param_4,
                  int param_5)
 
@@ -747,7 +747,7 @@ void st::fn_007611C0(int param_1,AnonShape_007611C0_0B5C7A2E *param_2,int *param
 }
 
 // 00761550 FUN_00761550
-#line 1 "decomp/ST.exe/functions/00761550/decomp.c"
+#line 4 "decomp/ST.exe/functions/00761550/decomp.c"
 void st::fn_00761550(int *param_1,int param_2,int param_3,int *param_4,int param_5)
 
 {
@@ -821,7 +821,7 @@ void st::fn_00761550(int *param_1,int param_2,int param_3,int *param_4,int param
 }
 
 // 00761770 FUN_00761770
-#line 1 "decomp/ST.exe/functions/00761770/decomp.c"
+#line 4 "decomp/ST.exe/functions/00761770/decomp.c"
 void st::fn_00761770(int param_1,int param_2,int *param_3,int *param_4,int param_5)
 
 {
@@ -834,7 +834,7 @@ void st::fn_00761770(int param_1,int param_2,int *param_3,int *param_4,int param
 }
 
 // 00761960 FUN_00761960
-#line 1 "decomp/ST.exe/functions/00761960/decomp.c"
+#line 4 "decomp/ST.exe/functions/00761960/decomp.c"
 undefined4 __cdecl st::fn_00761960(LPCSTR param_1,LPCSTR param_2)
 
 {
@@ -860,7 +860,7 @@ undefined4 __cdecl st::fn_00761960(LPCSTR param_1,LPCSTR param_2)
 }
 
 // 007619B0 FID_conflict:_remove
-#line 1 "decomp/ST.exe/functions/007619B0/decomp.c"
+#line 4 "decomp/ST.exe/functions/007619B0/decomp.c"
 /* Library Function - Multiple Matches With Different Base Names
     __wremove
     _remove
@@ -892,7 +892,7 @@ int __cdecl st::fn_007619B0(char *_Filename)
 }
 
 // 00761A00 FUN_00761a00
-#line 1 "decomp/ST.exe/functions/00761A00/decomp.c"
+#line 4 "decomp/ST.exe/functions/00761A00/decomp.c"
 /* [STPrototypeApplier] Propagated parameter 0.
    Evidence: 00761A00 -> 007619B0 @ 00761A07
 

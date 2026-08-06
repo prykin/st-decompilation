@@ -22,6 +22,10 @@ Original binaries are local under ignored `bin/` and must not be committed.
   `.st-local/` directory is ignored and must not be committed.
 - `scripts/` contains Ghidra Java scripts, not a Gradle extension. Ghidra compiles
   them on demand with JDK 21.
+- On a direct macOS checkout, hold a system sleep assertion for every long
+  headless Ghidra run. Prefer the validated ignored
+  `.st-local/run-recovery.sh`; otherwise wrap the exact headless command with
+  `caffeinate -dims`. A busy Java process does not itself prevent idle sleep.
 - Analyzers are read-only and write proposals to `recovery/ST.exe/`; appliers
   consume the exact proposal TSV and mutate Ghidra transactionally.
 - Never bulk-enable `apply=0` or related review flags. Preserve `USER_DEFINED`,
@@ -184,6 +188,20 @@ Original binaries are local under ignored `bin/` and must not be committed.
   the cached body. A generated layout change must invalidate functions which
   spell the changed field, but unrelated additions elsewhere in that structure
   must not invalidate every user.
+- Source-tree member syntax must not make the host compiler authoritative for
+  recovered object layout. A receiver-aware physical-vtable slot may receive a
+  non-virtual forwarding member wrapper over the explicit `vtable` field;
+  a uniquely owned non-virtual `__thiscall` may receive a forwarding member
+  wrapper to its address-stable `st::fn_ADDRESS` implementation. Never
+  synthesize C++ `virtual`/inheritance until base layout and ABI are
+  independently proven. Constructors, destructors, ambiguous overloads, and
+  field-name collisions remain audit rows. Materialize an unnamed
+  `field_0xOFFSET` view only for an exact statically typed path/offset use
+  already present in the corpus.
+- Compiler audits are local evidence. Normalize them by function address, keep
+  machine/compiler output under ignored `.st-local/` by default, and compare
+  runs with the same per-TU error limit. A compiler diagnostic is a recovery
+  queue item, not permission to add arbitrary casts, stubs, or semantic types.
 
 ## Validation and hygiene
 

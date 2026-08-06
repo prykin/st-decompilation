@@ -8,9 +8,12 @@
 
    [STReturnSemanticsApplier] ignored_eax_void.
    Evidence: all observed direct callers ignore the return register (ignored=8, used=0), and
-   decompilation contains no value return */
+   decompilation contains no value return
 
-void __thiscall STT3DSprC::sub_004ACEF0(STT3DSprC *this,uint param_1)
+   [STPrototypeApplier] Propagated parameter 1.
+   Evidence: 004ACEF0 -> 006EA680 @ 004ACEFE */
+
+void __thiscall STT3DSprC::sub_004ACEF0(STT3DSprC *this,ushort *param_1)
 
 {
   Library::Ourlib::ST3DSMAP::SprSetShadowTbl(this->field_003C,this->field_0018,param_1);

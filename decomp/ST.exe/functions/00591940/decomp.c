@@ -49,7 +49,7 @@ void __thiscall CampaignTy::PaintCampaign(CampaignTy *this)
   uVar9 = 0xffffffff;
   uVar8 = 0xfffffffe;
   puVar3 = (uint *)LoadResourceString((-(uint)(local_8->field_1FFC != 0) & 0xfffffca8) + 0x26b1,
-                                      g_module_00807618);
+                                      g_hINSTANCE_00807618);
   StartServTy::WrTextDDX(this_00,0,0xe9,0x14,0x14c,0x18,puVar3,uVar8,uVar9,pcVar11,errorCode);
   if (g_startSystem_0081176C->field_0028 == 0) {
     iVar5 = 0;

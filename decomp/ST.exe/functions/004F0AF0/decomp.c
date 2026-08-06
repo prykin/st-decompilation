@@ -1,21 +1,29 @@
 #include "../../pseudocode_runtime.h"
 
 
-void __thiscall FUN_004f0af0(void *this,int param_1)
+/* [STVirtualMethodApplier] Recovered from virtual table slot family.
+   Tables: 0079ABF0
+   Entries: 00401AF0
+   Slots: 0x18
+   Anchor:
+   Evidence: unique_named_method_in_slot_family; unique_owner_for_target;
+   competing_signature_shapes_in_slot_family */
+
+void __thiscall BldObjPanelTy::ShiftControls(BldObjPanelTy *this,int param_1)
 
 {
   short sVar1;
 
-  if (param_1 != STField<int>(this,0x5c)) {
-    ProdPanelTy::ShiftControls(this,param_1);
-    sVar1 = (short)STField<undefined4>(this,0x174);
-    STField<undefined4>(this,0x28) = 0x24;
+  if (param_1 != this->field_005C) {
+    ProdPanelTy::ShiftControls((ProdPanelTy *)this,param_1);
+    sVar1 = (short)this->field_0174;
+    this->field_0028 = 0x24;
     if (param_1 != 0) {
       sVar1 = -sVar1;
     }
-    STField<short>(this,0x2e) = sVar1;
-    if (STField<int>(this,0x292) != 0) {
-      FUN_006e6080(this,2,STField<int>(this,0x292),(undefined4 *)((int)this + 0x18));
+    *(short *)&this->field_0x2e = sVar1;
+    if (this->field_0292 != 0) {
+      FUN_006e6080(this,2,this->field_0292,(undefined4 *)&this->field_0x18);
     }
   }
   return;

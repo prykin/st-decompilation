@@ -38,7 +38,7 @@ void FUN_00413af0(void *param_1,DArrayTy *param_2,int param_3,int param_4,int pa
   DAT_007f4d2c = (int)g_pathingGrid.sizeX;
   DAT_007f4d30 = (int)g_pathingGrid.sizeY;
   DAT_007f4d34 = (int)g_pathingGrid.sizeZ;
-  if ((DAT_007f4d50 == 0) || (ExceptionList = &local_14, DAT_007f4d54 == 0)) {
+  if ((PTR_007f4d50 == nullptr) || (ExceptionList = &local_14, PTR_007f4d54 == nullptr)) {
     ExceptionList = &local_14;
     FUN_00414980(4000);
   }

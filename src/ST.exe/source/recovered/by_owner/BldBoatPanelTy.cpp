@@ -1,8 +1,38 @@
 #include "st/generated.hpp"
 // Generated translation unit: source/recovered/by_owner/BldBoatPanelTy.cpp
 
+// 004EEFB0 BldBoatPanelTy::ShiftControls
+#line 4 "decomp/ST.exe/functions/004EEFB0/decomp.c"
+/* [STVirtualMethodApplier] Recovered from virtual table slot family.
+   Tables: 0079ABA0
+   Entries: 00402914
+   Slots: 0x18
+   Anchor:
+   Evidence: unique_named_method_in_slot_family; unique_owner_for_target;
+   competing_signature_shapes_in_slot_family */
+
+void __thiscall st::fn_004EEFB0(BldBoatPanelTy *this,int param_1)
+
+{
+  short sVar1;
+
+  if (param_1 != this->field_005C) {
+    st::fn_00402B3A((ProdPanelTy *)this,param_1);
+    sVar1 = (short)this->field_0174;
+    this->field_0028 = 0x24;
+    if (param_1 != 0) {
+      sVar1 = -sVar1;
+    }
+    *(short *)&this->field_0x2e = sVar1;
+    if (this->field_0292 != 0) {
+      st::fn_006E6080(this,2,this->field_0292,(undefined4 *)&this->field_0x18);
+    }
+  }
+  return;
+}
+
 // 004EF140 BldBoatPanelTy::sub_004EF140
-#line 1 "decomp/ST.exe/functions/004EF140/decomp.c"
+#line 4 "decomp/ST.exe/functions/004EF140/decomp.c"
 /* [STMethodOwnerApplier] Structural method owner recovered as BldBoatPanelTy.
    Evidence: this_call_owners=[BldBoatPanelTy]; agreed_this_calls=1; incoming_this_accesses=19;
    incoming_edx_uses=0; incoming_stack_parameter_uses=0; direct_non_thunk_callers=0;
@@ -35,11 +65,11 @@ void __thiscall st::fn_004EF140(BldBoatPanelTy *this)
     do {
       this->field_0028 = 0x21;
       st::fn_006E6080(this,2,*puVar6,(undefined4 *)&this->field_0x18);
-      iVar3 = this->field_002C;
+      iVar3 = *(int *)&this->field_0x2c;
       /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
       uVar2 = (uint)((uint)(local_8 + this->field_0199) <
                     *(uint *)((&this->field_027A)[(byte)this->field_0278] + 0xc));
-      this->field_002C = uVar2;
+      *(uint *)&this->field_0x2c = uVar2;
       if (uVar2 == 0) {
         if (iVar3 != 0) goto LAB_004ef270;
 LAB_004ef1cc:
@@ -54,7 +84,7 @@ LAB_004ef270:
       }
       st::fn_006E6080(this,2,uVar8,(undefined4 *)&this->field_0x18);
       /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-      if ((((this->field_002C != 0) &&
+      if ((((*(int *)&this->field_0x2c != 0) &&
            (iVar3 = (&this->field_027A)[(byte)this->field_0278], iVar3 != 0)) &&
           (uVar2 = this->field_0199 + local_8, uVar2 < *(uint *)(iVar3 + 0xc))) &&
          (pGVar4 = (Global_sub_00523410_param_1Enum *)

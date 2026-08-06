@@ -50,7 +50,7 @@ MMMObjTy::OutLstProc
       /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
       resourceString =
            (uint *)LoadResourceString(0x26b4 - (*(char *)(local_8 + 0x1a5f) != '\x01'),
-                                      g_module_00807618);
+                                      g_hINSTANCE_00807618);
       StartServTy::WrTextDDX
                 (this_00,0,param_4,param_5,param_6,0x15,resourceString,uVar3,uVar4,pcVar5,uVar6);
       g_currentExceptionFrame = local_4c.previous;

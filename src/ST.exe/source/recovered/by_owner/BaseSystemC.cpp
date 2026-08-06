@@ -2,7 +2,7 @@
 // Generated translation unit: source/recovered/by_owner/BaseSystemC.cpp
 
 // 00576AA0 BaseSystemC::BaseSystemC
-#line 1 "decomp/ST.exe/functions/00576AA0/decomp.c"
+#line 4 "decomp/ST.exe/functions/00576AA0/decomp.c"
 /* [STConstructorApplier] Recovered constructor candidate.
    VTable: 0079B1B4 (store 00576AB1)
    Evidence: final_vptr=0079B1B4; returns_this=true; calls_before=1; field_writes_after=0;
@@ -18,7 +18,7 @@ BaseSystemC * __thiscall st::fn_00576AA0(BaseSystemC *this,AppClassTy *param_1)
 
 {
   st::fn_006E51C0((SystemClassTy *)this,param_1,0);
-  this->vtable = &BaseSystemCVTable;
+  this->vtable = &st_global_0079B1B4;
   return this;
 }
 

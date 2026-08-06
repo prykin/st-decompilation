@@ -67,14 +67,14 @@ void __thiscall STAppC::DoneApp(STAppC *this)
     g_cMf32_00806758 = nullptr;
     if (g_cMf32_00806760 != nullptr) {
       cMf32::RecMemFree(g_cMf32_00806760,&DAT_0080679c);
-      if (DAT_00806764 != 0) {
-        FUN_0070a300(&DAT_00806764);
+      if (PTR_00806764 != nullptr) {
+        FUN_0070a300((int *)&PTR_00806764);
       }
       cMf32::delete(g_cMf32_00806760);
       g_cMf32_00806760 = nullptr;
     }
-    if (DAT_00806784 != 0) {
-      FUN_0070a300(&DAT_00806784);
+    if (PTR_00806784 != nullptr) {
+      FUN_0070a300((int *)&PTR_00806784);
     }
     if (g_cMf32_00806780 != nullptr) {
       cMf32::delete(g_cMf32_00806780);

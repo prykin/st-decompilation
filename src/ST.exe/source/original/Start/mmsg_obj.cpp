@@ -2,7 +2,7 @@
 // Generated translation unit: source/original/Start/mmsg_obj.cpp
 
 // 005B6B20 MMsgTy::InitMMsg
-#line 1 "decomp/ST.exe/functions/005B6B20/decomp.c"
+#line 4 "decomp/ST.exe/functions/005B6B20/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\Start\mmsg_obj.cpp
    MMsgTy::InitMMsg */
@@ -67,7 +67,7 @@ void __thiscall st::fn_005B6B20(MMsgTy *this)
 }
 
 // 005B6F10 MMsgTy::DoneMMsg
-#line 1 "decomp/ST.exe/functions/005B6F10/decomp.c"
+#line 4 "decomp/ST.exe/functions/005B6F10/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\Start\mmsg_obj.cpp
    MMsgTy::DoneMMsg */
@@ -105,7 +105,7 @@ void __thiscall st::fn_005B6F10(MMsgTy *this)
 }
 
 // 005B6FF0 MMsgTy::HideSprites
-#line 1 "decomp/ST.exe/functions/005B6FF0/decomp.c"
+#line 4 "decomp/ST.exe/functions/005B6FF0/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\Start\mmsg_obj.cpp
    MMsgTy::HideSprites */
@@ -186,7 +186,7 @@ void __thiscall st::fn_005B6FF0(MMsgTy *this)
 }
 
 // 005B7210 MMsgTy::ShowSprites
-#line 1 "decomp/ST.exe/functions/005B7210/decomp.c"
+#line 4 "decomp/ST.exe/functions/005B7210/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\Start\mmsg_obj.cpp
    MMsgTy::ShowSprites
@@ -242,7 +242,7 @@ void __thiscall st::fn_005B7210(MMsgTy *this)
 }
 
 // 005B7340 MMsgTy::PaintMMsg
-#line 1 "decomp/ST.exe/functions/005B7340/decomp.c"
+#line 4 "decomp/ST.exe/functions/005B7340/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\Start\mmsg_obj.cpp
    MMsgTy::PaintMMsg */
@@ -312,7 +312,7 @@ void __thiscall st::fn_005B7340(MMsgTy *this)
 }
 
 // 005B7540 MMsgTy::NoneMMsg
-#line 1 "decomp/ST.exe/functions/005B7540/decomp.c"
+#line 4 "decomp/ST.exe/functions/005B7540/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\Start\mmsg_obj.cpp
    MMsgTy::NoneMMsg */
@@ -579,7 +579,7 @@ LAB_005b7655:
                 cVar16 = CASE_FFFFFFFE;
                 iVar9 = 0x1e;
                 iVar6 = 0x7d;
-                puVar12 = (uint *)st::fn_006B0140(*local_8,g_module_00807618);
+                puVar12 = (uint *)st::fn_006B0140(*local_8,g_hINSTANCE_00807618);
                 puVar8 = st::fn_00713480
                                    (g_startSystem_0081176C->field_0030,puVar12,iVar6,iVar9,cVar16,
                                     uVar7,iVar17,iVar18,iVar19);
@@ -628,7 +628,7 @@ LAB_005b7655:
 }
 
 // 005B7EF0 MMsgTy::SetMessage
-#line 1 "decomp/ST.exe/functions/005B7EF0/decomp.c"
+#line 4 "decomp/ST.exe/functions/005B7EF0/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\Start\mmsg_obj.cpp
    MMsgTy::SetMessage */
@@ -716,7 +716,7 @@ st::fn_005B7EF0(MMsgTy *this,UINT param_1,char param_2,undefined4 *param_3,undef
         cVar13 = CASE_FFFFFFFE;
         iVar8 = 0x39;
         iVar3 = 0x158;
-        puVar7 = (uint *)st::fn_006B0140(param_1,g_module_00807618);
+        puVar7 = (uint *)st::fn_006B0140(param_1,g_hINSTANCE_00807618);
         puVar6 = st::fn_00713480
                            (g_startSystem_0081176C->field_0030,puVar7,iVar3,iVar8,cVar13,uVar10,
                             iVar12,iVar14,iVar15);
@@ -724,8 +724,8 @@ st::fn_005B7EF0(MMsgTy *this,UINT param_1,char param_2,undefined4 *param_3,undef
         (**(code **)(local_10 + 8))(puVar6,uVar17,uVar18);
       }
       else {
-        pcVar4 = st::fn_006B0140(param_7,g_module_00807618);
-        pcVar5 = st::fn_006B0140(param_1,g_module_00807618);
+        pcVar4 = st::fn_006B0140(param_7,g_hINSTANCE_00807618);
+        pcVar5 = st::fn_006B0140(param_1,g_hINSTANCE_00807618);
         st::external_00000080((LPSTR)local_478,"%s\n(%s=%li)",pcVar5,pcVar4,param_6);
         iVar3 = this_00->field_1D88;
         uVar18 = 0xffffffff;
@@ -777,7 +777,7 @@ st::fn_005B7EF0(MMsgTy *this,UINT param_1,char param_2,undefined4 *param_3,undef
         cVar13 = CASE_FFFFFFFE;
         iVar12 = 0x1e;
         iVar8 = 0x7d;
-        puVar7 = (uint *)st::fn_006B0140(this_00->field_04B2,g_module_00807618);
+        puVar7 = (uint *)st::fn_006B0140(this_00->field_04B2,g_hINSTANCE_00807618);
         puVar6 = st::fn_00713480
                            (g_startSystem_0081176C->field_0030,puVar7,iVar8,iVar12,cVar13,uVar10,
                             iVar14,iVar15,iVar16);
@@ -815,7 +815,7 @@ st::fn_005B7EF0(MMsgTy *this,UINT param_1,char param_2,undefined4 *param_3,undef
           cVar13 = CASE_FFFFFFFE;
           iVar12 = 0x1e;
           iVar8 = 0x7d;
-          puVar7 = (uint *)st::fn_006B0140(this_00->field_04B2,g_module_00807618);
+          puVar7 = (uint *)st::fn_006B0140(this_00->field_04B2,g_hINSTANCE_00807618);
           puVar6 = st::fn_00713480
                              (g_startSystem_0081176C->field_0030,puVar7,iVar8,iVar12,cVar13,uVar10,
                               iVar14,iVar15,iVar16);
@@ -856,7 +856,7 @@ st::fn_005B7EF0(MMsgTy *this,UINT param_1,char param_2,undefined4 *param_3,undef
           cVar13 = CASE_FFFFFFFE;
           iVar12 = 0x1e;
           iVar8 = 0x7d;
-          puVar7 = (uint *)st::fn_006B0140(this_00->field_06AD,g_module_00807618);
+          puVar7 = (uint *)st::fn_006B0140(this_00->field_06AD,g_hINSTANCE_00807618);
           puVar6 = st::fn_00713480
                              (g_startSystem_0081176C->field_0030,puVar7,iVar8,iVar12,cVar13,uVar10,
                               iVar14,iVar15,iVar16);
@@ -891,7 +891,7 @@ st::fn_005B7EF0(MMsgTy *this,UINT param_1,char param_2,undefined4 *param_3,undef
           cVar13 = CASE_FFFFFFFE;
           iVar12 = 0x1e;
           iVar8 = 0x7d;
-          puVar7 = (uint *)st::fn_006B0140(this_00->field_04B2,g_module_00807618);
+          puVar7 = (uint *)st::fn_006B0140(this_00->field_04B2,g_hINSTANCE_00807618);
           puVar6 = st::fn_00713480
                              (g_startSystem_0081176C->field_0030,puVar7,iVar8,iVar12,cVar13,uVar10,
                               iVar14,iVar15,iVar16);
@@ -927,7 +927,7 @@ st::fn_005B7EF0(MMsgTy *this,UINT param_1,char param_2,undefined4 *param_3,undef
         cVar13 = CASE_FFFFFFFE;
         iVar12 = 0x1e;
         iVar8 = 0x7d;
-        puVar7 = (uint *)st::fn_006B0140(this_00->field_02B7,g_module_00807618);
+        puVar7 = (uint *)st::fn_006B0140(this_00->field_02B7,g_hINSTANCE_00807618);
         puVar6 = st::fn_00713480
                            (g_startSystem_0081176C->field_0030,puVar7,iVar8,iVar12,cVar13,uVar10,
                             iVar14,iVar15,iVar16);
@@ -1005,7 +1005,7 @@ LAB_005b8415:
 }
 
 // 005B87D0 MMsgTy::SetPanel
-#line 1 "decomp/ST.exe/functions/005B87D0/decomp.c"
+#line 4 "decomp/ST.exe/functions/005B87D0/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\Start\mmsg_obj.cpp
    MMsgTy::SetPanel */
@@ -1069,7 +1069,7 @@ st::fn_005B87D0(MMsgTy *this,UINT param_1,int param_2,int param_3,UINT param_4)
           cVar16 = CASE_FFFFFFFE;
           iVar9 = 0x39;
           iVar4 = 0x158;
-          puVar8 = (uint *)st::fn_006B0140(param_1,g_module_00807618);
+          puVar8 = (uint *)st::fn_006B0140(param_1,g_hINSTANCE_00807618);
           puVar7 = st::fn_00713480
                              (g_startSystem_0081176C->field_0030,puVar8,iVar4,iVar9,cVar16,uVar10,
                               iVar14,iVar15,iVar18);
@@ -1078,8 +1078,8 @@ st::fn_005B87D0(MMsgTy *this,UINT param_1,int param_2,int param_3,UINT param_4)
           this_00->field_1D90 = 0;
         }
         else {
-          pcVar5 = st::fn_006B0140(param_4,g_module_00807618);
-          pcVar6 = st::fn_006B0140(param_1,g_module_00807618);
+          pcVar5 = st::fn_006B0140(param_4,g_hINSTANCE_00807618);
+          pcVar6 = st::fn_006B0140(param_1,g_hINSTANCE_00807618);
           st::external_00000080((LPSTR)local_478,"%s\n(%s=%li)",pcVar6,pcVar5,param_3);
           iVar4 = this_00->field_1D88;
           uVar22 = 0xffffffff;
@@ -1114,7 +1114,7 @@ st::fn_005B87D0(MMsgTy *this,UINT param_1,int param_2,int param_3,UINT param_4)
             iVar14 = 0x7d;
             iVar4 = *(int *)(&this_00->field_0x174 + uVar10 * 0x1fb);
             iVar9 = uVar10 * 0x1fb;
-            puVar8 = (uint *)st::fn_006B0140(*local_10,g_module_00807618);
+            puVar8 = (uint *)st::fn_006B0140(*local_10,g_hINSTANCE_00807618);
             puVar7 = st::fn_00713480
                                (g_startSystem_0081176C->field_0030,puVar8,iVar14,iVar15,cVar16,
                                 uVar17,iVar18,iVar19,iVar20);
@@ -1185,7 +1185,7 @@ st::fn_005B87D0(MMsgTy *this,UINT param_1,int param_2,int param_3,UINT param_4)
 }
 
 // 005B8C70 MMsgTy::HidePanel
-#line 1 "decomp/ST.exe/functions/005B8C70/decomp.c"
+#line 4 "decomp/ST.exe/functions/005B8C70/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\Start\mmsg_obj.cpp
    MMsgTy::HidePanel */
@@ -1295,7 +1295,7 @@ void __thiscall st::fn_005B8C70(MMsgTy *this,int param_1,int param_2,int param_3
 }
 
 // 005B9010 MMsgTy::StatePanel
-#line 1 "decomp/ST.exe/functions/005B9010/decomp.c"
+#line 4 "decomp/ST.exe/functions/005B9010/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\Start\mmsg_obj.cpp
    MMsgTy::StatePanel */
@@ -1355,7 +1355,7 @@ void __thiscall st::fn_005B9010(MMsgTy *this,int param_1)
 }
 
 // 005B9170 MMsgTy::CloseSprBut
-#line 1 "decomp/ST.exe/functions/005B9170/decomp.c"
+#line 4 "decomp/ST.exe/functions/005B9170/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\Start\mmsg_obj.cpp
    MMsgTy::CloseSprBut */
@@ -1423,7 +1423,7 @@ void __thiscall st::fn_005B9170(MMsgTy *this)
 }
 
 // 005B9330 MMsgTy::GetMessage
-#line 1 "decomp/ST.exe/functions/005B9330/decomp.c"
+#line 4 "decomp/ST.exe/functions/005B9330/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\Start\mmsg_obj.cpp
    MMsgTy::GetMessage

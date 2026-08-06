@@ -2,7 +2,7 @@
 // Generated translation unit: source/recovered/by_owner/CPanelTy.cpp
 
 // 004F1610 CPanelTy::sub_004F1610
-#line 1 "decomp/ST.exe/functions/004F1610/decomp.c"
+#line 4 "decomp/ST.exe/functions/004F1610/decomp.c"
 /* [STMethodOwnerApplier] Structural method owner recovered as CPanelTy.
    Evidence: this_call_owners=[CPanelTy]; agreed_this_calls=8; incoming_this_accesses=5;
    incoming_edx_uses=0; incoming_stack_parameter_uses=6; direct_non_thunk_callers=0;
@@ -81,7 +81,7 @@ void __thiscall st::fn_004F1610(CPanelTy *this,char param_1)
 }
 
 // 004F17D0 CPanelTy::sub_004F17D0
-#line 1 "decomp/ST.exe/functions/004F17D0/decomp.c"
+#line 4 "decomp/ST.exe/functions/004F17D0/decomp.c"
 /* [STMethodOwnerApplier] Structural method owner recovered as CPanelTy.
    Evidence: this_call_owners=[CPanelTy]; agreed_this_calls=6; incoming_this_accesses=1;
    incoming_edx_uses=2; incoming_stack_parameter_uses=4; direct_non_thunk_callers=0;
@@ -119,7 +119,7 @@ void __thiscall st::fn_004F17D0(CPanelTy *this,int param_1,byte param_2)
 }
 
 // 004F1950 CPanelTy::sub_004F1950
-#line 1 "decomp/ST.exe/functions/004F1950/decomp.c"
+#line 4 "decomp/ST.exe/functions/004F1950/decomp.c"
 /* [STMethodOwnerApplier] Structural method owner recovered as CPanelTy.
    Evidence: this_call_owners=[CPanelTy]; agreed_this_calls=3; incoming_this_accesses=6;
    incoming_edx_uses=0; incoming_stack_parameter_uses=0; direct_non_thunk_callers=0;
@@ -143,7 +143,7 @@ void __thiscall st::fn_004F1950(CPanelTy *this)
 }
 
 // 004F4570 CPanelTy::sub_004F4570
-#line 1 "decomp/ST.exe/functions/004F4570/decomp.c"
+#line 4 "decomp/ST.exe/functions/004F4570/decomp.c"
 /* [STMethodOwnerApplier] Structural method owner recovered as CPanelTy.
    Evidence: this_call_owners=[CPanelTy]; agreed_this_calls=2; incoming_this_accesses=3;
    incoming_edx_uses=0; incoming_stack_parameter_uses=5; direct_non_thunk_callers=0;
@@ -187,7 +187,7 @@ void __thiscall st::fn_004F4570(CPanelTy *this,char param_1,int param_2,int para
 }
 
 // 004F8020 CPanelTy::sub_004F8020
-#line 1 "decomp/ST.exe/functions/004F8020/decomp.c"
+#line 4 "decomp/ST.exe/functions/004F8020/decomp.c"
 /* [STMethodOwnerApplier] Structural method owner recovered as CPanelTy.
    Evidence: this_call_owners=[CPanelTy]; agreed_this_calls=15; incoming_this_accesses=1;
    incoming_edx_uses=0; incoming_stack_parameter_uses=2; direct_non_thunk_callers=0;
@@ -210,7 +210,7 @@ void __thiscall st::fn_004F8020(CPanelTy *this,char param_1,int param_2)
 }
 
 // 004F9120 CPanelTy::sub_004F9120
-#line 1 "decomp/ST.exe/functions/004F9120/decomp.c"
+#line 4 "decomp/ST.exe/functions/004F9120/decomp.c"
 /* [STMethodOwnerApplier] Structural method owner recovered as CPanelTy.
    Evidence: this_call_owners=[CPanelTy]; agreed_this_calls=2; incoming_this_accesses=1;
    incoming_edx_uses=0; incoming_stack_parameter_uses=3; direct_non_thunk_callers=0;
@@ -238,7 +238,7 @@ void __thiscall st::fn_004F9120(CPanelTy *this,byte param_1,char param_2,undefin
 }
 
 // 004FA3B0 CPanelTy::sub_004FA3B0
-#line 1 "decomp/ST.exe/functions/004FA3B0/decomp.c"
+#line 4 "decomp/ST.exe/functions/004FA3B0/decomp.c"
 /* [STMethodOwnerApplier] Structural method owner recovered as CPanelTy.
    Evidence: this_call_owners=[CPanelTy]; agreed_this_calls=1; incoming_this_accesses=2;
    incoming_edx_uses=0; incoming_stack_parameter_uses=0; direct_non_thunk_callers=0;
@@ -258,7 +258,7 @@ void __thiscall st::fn_004FA3B0(CPanelTy *this)
 }
 
 // 004FA870 CPanelTy::sub_004FA870
-#line 1 "decomp/ST.exe/functions/004FA870/decomp.c"
+#line 4 "decomp/ST.exe/functions/004FA870/decomp.c"
 /* [STSwitchEnumApplier] Switch target param_1 uses
    /SubmarineTitans/Recovered/Enums/Global_sub_004FA870_param_1Enum. Cases:
    CASE_1=1;CASE_2=2;CASE_4=4;CASE_5=5;CASE_E=14;CASE_F=15
@@ -283,25 +283,25 @@ void __thiscall st::fn_004FA870(CPanelTy *this,CPanelTy_sub_004FA870_param_1Enum
   if ((((param_1 == 0) || (CASE_5 < param_1)) && (param_1 != CASE_E)) && (param_1 != CASE_F)) {
     /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
     if (param_1 == CASE_6) {
-      if (g_prodPanel_008016E8 != nullptr) {
+      if (g_researchPanel_008016E8 != nullptr) {
         /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-        (*(code *)g_prodPanel_008016E8->field_0000->field_001C)();
+        (*(code *)g_researchPanel_008016E8->field_0000->field_001C)();
         return;
       }
     }
     /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
     else if (param_1 == CASE_7) {
-      if (g_prodPanel_0080167C != nullptr) {
+      if (g_bldBoatPanel_0080167C != nullptr) {
         /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-        (*(code *)g_prodPanel_0080167C->field_0000->field_001C)();
+        (*(code *)g_bldBoatPanel_0080167C->field_0000->field_001C)();
         return;
       }
     }
     /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
     else if (param_1 == 8) {
-      if (g_prodPanel_00801684 != nullptr) {
+      if (g_bldObjPanel_00801684 != nullptr) {
         /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-        (*(code *)g_prodPanel_00801684->field_0000->field_001C)();
+        (*(code *)g_bldObjPanel_00801684->field_0000->field_001C)();
         return;
       }
     }
@@ -329,9 +329,9 @@ void __thiscall st::fn_004FA870(CPanelTy *this,CPanelTy_sub_004FA870_param_1Enum
     }
     /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
     else if (param_1 == 0xc) {
-      if (g_prodPanel_00801680 != nullptr) {
+      if (g_bldLabPanel_00801680 != nullptr) {
         /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-        (*(code *)g_prodPanel_00801680->field_0000->field_001C)();
+        (*(code *)g_bldLabPanel_00801680->field_0000->field_001C)();
         return;
       }
     }
@@ -386,7 +386,7 @@ void __thiscall st::fn_004FA870(CPanelTy *this,CPanelTy_sub_004FA870_param_1Enum
 }
 
 // 004FAB10 CPanelTy::sub_004FAB10
-#line 1 "decomp/ST.exe/functions/004FAB10/decomp.c"
+#line 4 "decomp/ST.exe/functions/004FAB10/decomp.c"
 /* [STSwitchEnumApplier] Switch target param_1 uses
    /SubmarineTitans/Recovered/Enums/Global_sub_004FAB10_param_1Enum. Cases:
    CASE_1=1;CASE_2=2;CASE_3=3;CASE_4=4;CASE_5=5;CASE_6=6;CASE_7=7;CASE_8=8;CASE_9=9;CASE_A=10;CASE_B=11;CASE_C=12;CASE_E=14;CASE_F=15;CASE_10=16;CASE_11=17;CASE_12=18
@@ -427,16 +427,16 @@ int __thiscall st::fn_004FAB10(CPanelTy *this,CPanelTy_sub_004FAB10_param_1Enum 
   case CASE_F:
     return (uint)(this->field_023F == CASE_1);
   case CASE_6:
-    if (g_prodPanel_008016E8 != nullptr) {
-      return (uint)(g_prodPanel_008016E8->field_0172 != 2);
+    if (g_researchPanel_008016E8 != nullptr) {
+      return (uint)(g_researchPanel_008016E8->field_0172 != 2);
     }
   case CASE_7:
-    if (g_prodPanel_0080167C != nullptr) {
-      return (uint)(g_prodPanel_0080167C->field_0172 != 2);
+    if (g_bldBoatPanel_0080167C != nullptr) {
+      return (uint)(g_bldBoatPanel_0080167C->field_0172 != 2);
     }
   case CASE_8:
-    if (g_prodPanel_00801684 != nullptr) {
-      return (uint)(g_prodPanel_00801684->field_0172 != 2);
+    if (g_bldObjPanel_00801684 != nullptr) {
+      return (uint)(g_bldObjPanel_00801684->field_0172 != 2);
     }
   case CASE_9:
     if (g_infocPanel_00801698 != nullptr) {
@@ -451,8 +451,8 @@ int __thiscall st::fn_004FAB10(CPanelTy *this,CPanelTy_sub_004FAB10_param_1Enum 
       return (uint)(g_behPanel_00801678->field_0172 != 2);
     }
   case CASE_C:
-    if (g_prodPanel_00801680 != nullptr) {
-      return (uint)(g_prodPanel_00801680->field_0172 != 2);
+    if (g_bldLabPanel_00801680 != nullptr) {
+      return (uint)(g_bldLabPanel_00801680->field_0172 != 2);
     }
   case CASE_10:
     if (g_upgPanel_00802A48 != nullptr) {
@@ -477,7 +477,7 @@ switchD_004fab25_caseD_12:
 }
 
 // 004FAD20 CPanelTy::sub_004FAD20
-#line 1 "decomp/ST.exe/functions/004FAD20/decomp.c"
+#line 4 "decomp/ST.exe/functions/004FAD20/decomp.c"
 /* [STMethodOwnerApplier] Structural method owner recovered as CPanelTy.
    Evidence: this_call_owners=[CPanelTy]; agreed_this_calls=2; incoming_this_accesses=2;
    incoming_edx_uses=0; incoming_stack_parameter_uses=0; direct_non_thunk_callers=0;
@@ -503,7 +503,7 @@ void __thiscall st::fn_004FAD20(CPanelTy *this)
 }
 
 // 004FAD60 CPanelTy::sub_004FAD60
-#line 1 "decomp/ST.exe/functions/004FAD60/decomp.c"
+#line 4 "decomp/ST.exe/functions/004FAD60/decomp.c"
 /* [STMethodOwnerApplier] Structural method owner recovered as CPanelTy.
    Evidence: this_call_owners=[CPanelTy]; agreed_this_calls=1; incoming_this_accesses=6;
    incoming_edx_uses=0; incoming_stack_parameter_uses=6; direct_non_thunk_callers=0;
@@ -542,7 +542,7 @@ void __thiscall st::fn_004FAD60(CPanelTy *this,uint *param_1,uint param_2)
 }
 
 // 004FAE90 CPanelTy::sub_004FAE90
-#line 1 "decomp/ST.exe/functions/004FAE90/decomp.c"
+#line 4 "decomp/ST.exe/functions/004FAE90/decomp.c"
 /* [STMethodOwnerApplier] Structural method owner recovered as CPanelTy.
    Evidence: this_call_owners=[CPanelTy]; agreed_this_calls=1; incoming_this_accesses=5;
    incoming_edx_uses=0; incoming_stack_parameter_uses=6; direct_non_thunk_callers=0;
@@ -601,7 +601,7 @@ void __thiscall st::fn_004FAE90(CPanelTy *this,uint *param_1,ushort param_2)
 }
 
 // 004FAFF0 CPanelTy::sub_004FAFF0
-#line 1 "decomp/ST.exe/functions/004FAFF0/decomp.c"
+#line 4 "decomp/ST.exe/functions/004FAFF0/decomp.c"
 /* [STMethodOwnerApplier] Structural method owner recovered as CPanelTy.
    Evidence: this_call_owners=[CPanelTy]; agreed_this_calls=1; incoming_this_accesses=2;
    incoming_edx_uses=0; incoming_stack_parameter_uses=0; direct_non_thunk_callers=0;
@@ -618,7 +618,7 @@ void __thiscall st::fn_004FAFF0(CPanelTy *this)
 }
 
 // 00501A10 CPanelTy::sub_00501A10
-#line 1 "decomp/ST.exe/functions/00501A10/decomp.c"
+#line 4 "decomp/ST.exe/functions/00501A10/decomp.c"
 /* [STMethodOwnerApplier] Structural method owner recovered as CPanelTy.
    Evidence: this_call_owners=[CPanelTy]; agreed_this_calls=2; incoming_this_accesses=31;
    incoming_edx_uses=0; incoming_stack_parameter_uses=0; direct_non_thunk_callers=0;
@@ -701,7 +701,7 @@ void __thiscall st::fn_00501A10(CPanelTy *this)
 }
 
 // 005050B0 CPanelTy::sub_005050B0
-#line 1 "decomp/ST.exe/functions/005050B0/decomp.c"
+#line 4 "decomp/ST.exe/functions/005050B0/decomp.c"
 /* [STSwitchEnumApplier] Switch target param_1 uses
    /SubmarineTitans/Recovered/Enums/Global_sub_005050B0_param_1Enum. Cases:
    CASE_0=0;CASE_1=1;CASE_2=2;CASE_3=3;CASE_4=4;CASE_5=5
@@ -771,7 +771,7 @@ switchD_005050fb_caseD_0:
 }
 
 // 00506040 CPanelTy::sub_00506040
-#line 1 "decomp/ST.exe/functions/00506040/decomp.c"
+#line 4 "decomp/ST.exe/functions/00506040/decomp.c"
 /* [STMethodOwnerApplier] Structural method owner recovered as CPanelTy.
    Evidence: this_call_owners=[CPanelTy]; agreed_this_calls=3; incoming_this_accesses=23;
    incoming_edx_uses=0; incoming_stack_parameter_uses=0; direct_non_thunk_callers=0;
@@ -813,7 +813,7 @@ void __thiscall st::fn_00506040(CPanelTy *this)
 }
 
 // 0052AFE0 CPanelTy::sub_0052AFE0
-#line 1 "decomp/ST.exe/functions/0052AFE0/decomp.c"
+#line 4 "decomp/ST.exe/functions/0052AFE0/decomp.c"
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 /* [STMethodOwnerApplier] Structural method owner recovered as CPanelTy.
    Evidence: this_call_owners=[CPanelTy]; agreed_this_calls=1; incoming_this_accesses=17;
@@ -868,13 +868,13 @@ void __thiscall st::fn_0052AFE0(CPanelTy *this,byte param_1,float param_2,float 
   if (this->field_0DB3 == nullptr) {
     iVar5 = 0;
     piVar7 = local_30;
-    local_c = (float)(int)*DAT_00806750 * _DAT_007904f8;
-    local_10 = (float)(int)DAT_00806750[1] * _DAT_007904f8;
+    local_c = (float)(int)*PTR_00806750 * _DAT_007904f8;
+    local_10 = (float)(int)PTR_00806750[1] * _DAT_007904f8;
     fVar2 = _DAT_0079034c;
     do {
-      fVar3 = param_3 - (float)piVar7[1] * (float)(int)DAT_00806750[1] * _DAT_007904f8 *
+      fVar3 = param_3 - (float)piVar7[1] * (float)(int)PTR_00806750[1] * _DAT_007904f8 *
                         _DAT_00790784;
-      fVar4 = param_2 - (float)*piVar7 * (float)(int)*DAT_00806750 * _DAT_007904f8 * _DAT_00790784;
+      fVar4 = param_2 - (float)*piVar7 * (float)(int)*PTR_00806750 * _DAT_007904f8 * _DAT_00790784;
       local_8 = fVar4 * fVar4 + fVar3 * fVar3;
       if (fVar2 < local_8) {
         iVar8 = iVar5;
@@ -921,7 +921,7 @@ void __thiscall st::fn_0052AFE0(CPanelTy *this,byte param_1,float param_2,float 
 }
 
 // 0052B330 CPanelTy::sub_0052B330
-#line 1 "decomp/ST.exe/functions/0052B330/decomp.c"
+#line 4 "decomp/ST.exe/functions/0052B330/decomp.c"
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 /* [STReturnSemanticsApplier] boolean_return_domain.
    Evidence: all explicit return values are constants in {0,1}: [0, 0, 0, 0, 1, 0]

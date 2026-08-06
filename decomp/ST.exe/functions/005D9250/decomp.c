@@ -57,13 +57,13 @@ void __thiscall SIDTy::PaintExplanation(SIDTy *this)
       uVar8 = 0;
       iVar9 = -1;
       iVar4 = -2;
-      resourceString = (uint *)LoadResourceString(0x2521,g_module_00807618);
+      resourceString = (uint *)LoadResourceString(0x2521,g_hINSTANCE_00807618);
       this_00 = g_startSystem_0081176C->field_0034;
     }
     else {
       puVar5 = &DAT_00807ddd;
       resourceString = (uint *)&pSVar3->field_1CD4;
-      pcVar6 = LoadResourceString(0x2520,g_module_00807618);
+      pcVar6 = LoadResourceString(0x2520,g_hINSTANCE_00807618);
       wsprintfA((LPSTR)resourceString,"&0%s\n&5%s&0?",pcVar6,puVar5);
       this_00 = g_startSystem_0081176C->field_0034;
       iVar11 = -1;

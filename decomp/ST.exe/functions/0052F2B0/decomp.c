@@ -95,16 +95,16 @@ void __thiscall OptPanelTy::SwitchOptPanel(OptPanelTy *this,char param_1)
     }
     goto LAB_0052f60b;
   case CASE_2:
-    if (g_prodPanel_008016E8 != nullptr) {
-      local_8 = ProdPanelTy::SetPanel(g_prodPanel_008016E8,'\0');
+    if (g_researchPanel_008016E8 != nullptr) {
+      local_8 = ProdPanelTy::SetPanel(g_researchPanel_008016E8,'\0');
     }
     bVar3 = local_8 != 0;
-    if (g_prodPanel_0080167C != nullptr) {
-      local_8 = ProdPanelTy::SetPanel(g_prodPanel_0080167C,'\0');
+    if (g_bldBoatPanel_0080167C != nullptr) {
+      local_8 = ProdPanelTy::SetPanel(g_bldBoatPanel_0080167C,'\0');
     }
     bVar4 = local_8 != 0;
-    if (g_prodPanel_00801684 != nullptr) {
-      local_8 = ProdPanelTy::SetPanel(g_prodPanel_00801684,'\0');
+    if (g_bldObjPanel_00801684 != nullptr) {
+      local_8 = ProdPanelTy::SetPanel(g_bldObjPanel_00801684,'\0');
     }
     bVar5 = local_8 != 0;
     if (g_infocPanel_00801698 != nullptr) {
@@ -132,8 +132,8 @@ void __thiscall OptPanelTy::SwitchOptPanel(OptPanelTy *this,char param_1)
       local_8 = (*g_frmPanel_0080168C->vtable->SetPanel)((SpecPanelTy *)g_frmPanel_0080168C,'\0');
     }
     bVar11 = local_8 != 0;
-    if (g_prodPanel_00801680 != nullptr) {
-      local_8 = ProdPanelTy::SetPanel(g_prodPanel_00801680,'\0');
+    if (g_bldLabPanel_00801680 != nullptr) {
+      local_8 = ProdPanelTy::SetPanel(g_bldLabPanel_00801680,'\0');
     }
     bVar12 = local_8 != 0;
     if (g_helpPanel_00801690 != nullptr) {

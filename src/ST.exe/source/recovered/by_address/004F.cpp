@@ -2,7 +2,7 @@
 // Generated translation unit: source/recovered/by_address/004F.cpp
 
 // 004F0460 CreateBldObjPanel
-#line 1 "decomp/ST.exe/functions/004F0460/decomp.c"
+#line 4 "decomp/ST.exe/functions/004F0460/decomp.c"
 /* [STUnclaimedCodeApplier] Exact function entry recovered from thunk_target.
    Evidence: P:007CA8EC>004054A2
 
@@ -21,48 +21,48 @@ BldObjPanelTy * __cdecl st::fn_004F0460(void)
     st::fn_006E5FB0(this);
     this->field_005C = 0;
     this->field_0060 = 0xffffffff;
-    *(undefined4 *)&this->field_0x64 = 4;
+    this->field_0064 = 4;
     this->field_0068 = 0;
-    *(undefined2 *)&this->field_0x172 = 2;
-    *(undefined4 *)&this->field_0x178 = 0;
-    *(undefined4 *)&this->field_0x17c = 0;
+    this->field_0172 = 2;
+    this->field_0178 = 0;
+    this->field_017C = 0;
     this->field_0184 = nullptr;
     this->field_0190 = nullptr;
     this->field_0188 = nullptr;
-    *(undefined4 *)&this->field_0x19d = 0;
-    *(undefined4 *)&this->field_0x180 = 0;
+    this->field_019D = 0;
+    this->field_0180 = 0;
     this->field_01A1 = 0;
-    *(undefined4 *)&this->field_0x1a5 = 0;
-    *(undefined4 *)&this->field_0x1a9 = 0;
-    *(undefined4 *)&this->field_0x1ad = 0;
-    *(undefined4 *)&this->field_0x1b1 = 0;
+    this->field_01A5 = 0;
+    this->field_01A9 = 0;
+    this->field_01AD = 0;
+    this->field_01B1 = 0;
     puVar2 = (undefined4 *)&this->field_01B5;
     memset(puVar2, 0, 0xc3); /* compiler bulk-zero initialization */
     puVar2 = (undefined4 *)((byte *)puVar2 + 0xc0);
     this->field_0199 = 0;
     this->field_0279 = 1;
     this->field_0278 = 0;
-    this->vtable = &BldObjPanelTyVTable;
+    this->vtable = &st_global_0079ABF0;
     this->field_003C = 0xc;
     this->field_0044 = 0;
-    *(undefined4 *)&this->field_0x40 = 0x13d;
-    *(undefined4 *)&this->field_0x48 = 0x78;
-    this->field_0x194 = 0;
-    *(undefined4 *)&this->field_0x195 = 1;
+    this->field_0040 = 0x13d;
+    this->field_0048 = 0x78;
+    this->field_0194 = 0;
+    this->field_0195 = 1;
     this->field_027A = nullptr;
-    *(undefined4 *)&this[1].field_0x10 = 0;
+    this->field_0292 = 0;
     this->field_027E = 0;
-    this[1].vtable = nullptr;
-    *(undefined4 *)&this[1].field_0x4 = 0;
-    this[1].field_0008 = 0;
-    this[1].field_000C = 0;
+    this->field_0282 = 0;
+    this->field_0286 = 0;
+    this->field_028A = 0;
+    this->field_028E = 0;
     return this;
   }
   return nullptr;
 }
 
 // 004F0A60 FUN_004f0a60
-#line 1 "decomp/ST.exe/functions/004F0A60/decomp.c"
+#line 4 "decomp/ST.exe/functions/004F0A60/decomp.c"
 void __fastcall st::fn_004F0A60(AnonShape_004F0A60_A5DE070F *param_1)
 
 {
@@ -86,34 +86,12 @@ void __fastcall st::fn_004F0A60(AnonShape_004F0A60_A5DE070F *param_1)
     puVar1 = puVar1 + 1;
     iVar2 = iVar2 + -1;
   } while (iVar2 != 0);
-  g_prodPanel_00801684 = nullptr;
-  return;
-}
-
-// 004F0AF0 FUN_004f0af0
-#line 1 "decomp/ST.exe/functions/004F0AF0/decomp.c"
-void __thiscall st::fn_004F0AF0(void *this,int param_1)
-
-{
-  short sVar1;
-
-  if (param_1 != STField<int>(this,0x5c)) {
-    st::fn_00402B3A(this,param_1);
-    sVar1 = (short)STField<undefined4>(this,0x174);
-    STField<undefined4>(this,0x28) = 0x24;
-    if (param_1 != 0) {
-      sVar1 = -sVar1;
-    }
-    STField<short>(this,0x2e) = sVar1;
-    if (STField<int>(this,0x292) != 0) {
-      st::fn_006E6080(this,2,STField<int>(this,0x292),(undefined4 *)((int)this + 0x18));
-    }
-  }
+  g_bldObjPanel_00801684 = nullptr;
   return;
 }
 
 // 004F1890 FUN_004f1890
-#line 1 "decomp/ST.exe/functions/004F1890/decomp.c"
+#line 4 "decomp/ST.exe/functions/004F1890/decomp.c"
 /* [STReturnSemanticsApplier] ignored_eax_void.
    Evidence: all observed direct callers ignore the return register (ignored=7, used=0), and
    decompilation contains no value return */
@@ -140,7 +118,7 @@ void __thiscall st::fn_004F1890(void *this,byte param_1)
 }
 
 // 004F19D0 FUN_004f19d0
-#line 1 "decomp/ST.exe/functions/004F19D0/decomp.c"
+#line 4 "decomp/ST.exe/functions/004F19D0/decomp.c"
 /* [STSwitchEnumApplier] Switch target param_2 uses
    /SubmarineTitans/Recovered/Enums/Global_sub_004F19D0_param_2Enum. Cases:
    CASE_1=1;CASE_2=2;CASE_3=3;CASE_4=4;CASE_5=5 */
@@ -223,7 +201,7 @@ st::fn_004F19D0(char param_1,Global_sub_004F19D0_param_2Enum param_2,undefined4 
 }
 
 // 004F1C80 FUN_004f1c80
-#line 1 "decomp/ST.exe/functions/004F1C80/decomp.c"
+#line 4 "decomp/ST.exe/functions/004F1C80/decomp.c"
 /* [STReturnSemanticsApplier] ignored_eax_void.
    Evidence: all observed direct callers ignore the return register (ignored=4, used=0), and
    decompilation contains no value return */
@@ -251,7 +229,7 @@ void __thiscall st::fn_004F1C80(void *this,uint param_1,uint param_2)
 }
 
 // 004F1D20 FUN_004f1d20
-#line 1 "decomp/ST.exe/functions/004F1D20/decomp.c"
+#line 4 "decomp/ST.exe/functions/004F1D20/decomp.c"
 void st::fn_004F1D20(undefined1 *param_1)
 
 {
@@ -271,7 +249,7 @@ void st::fn_004F1D20(undefined1 *param_1)
 }
 
 // 004F4640 FUN_004f4640
-#line 1 "decomp/ST.exe/functions/004F4640/decomp.c"
+#line 4 "decomp/ST.exe/functions/004F4640/decomp.c"
 void __cdecl st::fn_004F4640(int param_1,undefined *param_2,BYTE param_3)
 
 {
@@ -436,7 +414,7 @@ void __cdecl st::fn_004F4640(int param_1,undefined *param_2,BYTE param_3)
 }
 
 // 004F4950 FUN_004f4950
-#line 1 "decomp/ST.exe/functions/004F4950/decomp.c"
+#line 4 "decomp/ST.exe/functions/004F4950/decomp.c"
 void __cdecl st::fn_004F4950(int param_1,undefined *param_2,BYTE param_3)
 
 {
@@ -602,7 +580,7 @@ void __cdecl st::fn_004F4950(int param_1,undefined *param_2,BYTE param_3)
 }
 
 // 004F4C70 FUN_004f4c70
-#line 1 "decomp/ST.exe/functions/004F4C70/decomp.c"
+#line 4 "decomp/ST.exe/functions/004F4C70/decomp.c"
 void __cdecl st::fn_004F4C70(int param_1,undefined *param_2,BYTE param_3)
 
 {
@@ -757,7 +735,7 @@ void __cdecl st::fn_004F4C70(int param_1,undefined *param_2,BYTE param_3)
 }
 
 // 004F4F60 FUN_004f4f60
-#line 1 "decomp/ST.exe/functions/004F4F60/decomp.c"
+#line 4 "decomp/ST.exe/functions/004F4F60/decomp.c"
 /* [STUnclaimedCodeApplier] Exact function entry recovered from thunk_target.
    Evidence: P:007CA81C>004054B6
 
@@ -779,7 +757,7 @@ void * __cdecl st::fn_004F4F60(void)
 }
 
 // 004F4F90 FUN_004f4f90
-#line 1 "decomp/ST.exe/functions/004F4F90/decomp.c"
+#line 4 "decomp/ST.exe/functions/004F4F90/decomp.c"
 /* [STReturnSemanticsApplier] typed_pointer_return.
    Evidence: all 1 value-return path(s) forward Listing variable param_1 with evidence-backed
    structure /SubmarineTitans/Recovered/PointerShapes/AnonShape_004F4F90_2D6E0DDA (current recovered
@@ -794,7 +772,7 @@ AnonShape_004F4F90_2D6E0DDA * __fastcall st::fn_004F4F90(AnonShape_004F4F90_2D6E
   undefined4 uVar4;
 
   st::fn_006E5FB0(param_1);
-  *(VTable_0079AC18 **)param_1 = &VTable_0079AC18;
+  *(VTable_0079AC18 **)param_1 = &st_global_0079AC18;
   *(undefined4 *)&param_1->field_0x134 = 0;
   *(undefined4 *)&param_1->field_0x138 = 0;
   *(undefined4 *)&param_1->field_0x130 = 0;
@@ -1003,7 +981,7 @@ AnonShape_004F4F90_2D6E0DDA * __fastcall st::fn_004F4F90(AnonShape_004F4F90_2D6E
 }
 
 // 004F91A0 FUN_004f91a0
-#line 1 "decomp/ST.exe/functions/004F91A0/decomp.c"
+#line 4 "decomp/ST.exe/functions/004F91A0/decomp.c"
 void __thiscall st::fn_004F91A0(void *this,byte param_1,undefined1 *param_2,int *param_3)
 
 {
@@ -1050,7 +1028,7 @@ void st::fn_004F9260(char param_1)
 }
 
 // 004FAE70 FUN_004fae70
-#line 1 "decomp/ST.exe/functions/004FAE70/decomp.c"
+#line 4 "decomp/ST.exe/functions/004FAE70/decomp.c"
 /* [STReturnSemanticsApplier] leaf_void.
    Evidence: leaf function has RET and never writes EAX/AX/AL/AH */
 

@@ -264,7 +264,7 @@ void __thiscall FSGSTy::NoneFSGS(FSGSTy *this)
       else {
         uVar18 = 0;
         pcVar17 = &DAT_008016a0;
-        resourceString = LoadResourceString(0x254d,g_module_00807618);
+        resourceString = LoadResourceString(0x254d,g_hINSTANCE_00807618);
         thunk_FUN_0055d390(&DAT_00802a90,resourceString,pcVar17,uVar18);
         this_02->field_1A62 = 0;
       }

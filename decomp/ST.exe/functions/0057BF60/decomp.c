@@ -29,7 +29,7 @@ int __thiscall STFishC::GetMessage(STFishC *this,STMessage *message)
   void *local_3c;
   undefined4 local_38;
   undefined4 local_34;
-  undefined4 local_30;
+  ushort *local_30;
   undefined4 local_2c;
   undefined4 local_28;
   undefined4 local_24;
@@ -99,7 +99,7 @@ int __thiscall STFishC::GetMessage(STFishC *this,STMessage *message)
     *(undefined4 *)&this_00->field_0x23b = 5;
     STT3DSprC::StopShow((STT3DSprC *)puVar8,0xe);
     thunk_FUN_004ad5e0((STT3DSprC *)puVar8);
-    STT3DSprC::LoadSequence((STT3DSprC *)puVar8,8,DAT_00806774,"explsna",0x1d);
+    STT3DSprC::LoadSequence((STT3DSprC *)puVar8,8,PTR_00806774,"explsna",0x1d);
     STT3DSprC::StartShow((STT3DSprC *)puVar8,8,g_playSystem_00802A38->field_00E4);
     g_currentExceptionFrame = local_80.previous;
     return 0;
@@ -193,16 +193,16 @@ int __thiscall STFishC::GetMessage(STFishC *this,STMessage *message)
         iVar4 = 0;
         do {
           if (iVar4 == 8) {
-            STField<int *>(local_3c,0x20) = DAT_00806774;
+            STField<int *>(local_3c,0x20) = PTR_00806774;
           }
           else {
-            *(int **)((int)local_3c + iVar4 * 4) = DAT_0080676c;
+            *(int **)((int)local_3c + iVar4 * 4) = PTR_0080676c;
           }
           iVar4 = iVar4 + 1;
         } while (iVar4 < 0x11);
         local_38 = 0;
         local_34 = 0;
-        local_30 = DAT_008073cc;
+        local_30 = PTR_008073cc;
         local_2c = 0;
         local_28 = 0;
         local_24 = 0;
@@ -246,7 +246,7 @@ int __thiscall STFishC::GetMessage(STFishC *this,STMessage *message)
   switch(*(undefined4 *)&this_00->field_0x267) {
   case 0xe7:
     puVar8 = (byte *)(&this_00->field_01D5);
-    iVar4 = STT3DSprC::LoadSequence((STT3DSprC *)puVar8,0xe,DAT_0080676c,"fish1",0x1d);
+    iVar4 = STT3DSprC::LoadSequence((STT3DSprC *)puVar8,0xe,PTR_0080676c,"fish1",0x1d);
     if (iVar4 != 0) {
       RaiseInternalException
                 (-1,g_overwriteContext_007ED77C,"E:\\__titans\\Igor\\To_fish.cpp",0xf6);
@@ -256,7 +256,7 @@ int __thiscall STFishC::GetMessage(STFishC *this,STMessage *message)
     goto switchD_0057c210_default;
   case 0xe8:
     iVar4 = STT3DSprC::LoadSequence
-                      ((STT3DSprC *)&this_00->field_01D5,0xe,DAT_0080676c,"fish_b",0x1d);
+                      ((STT3DSprC *)&this_00->field_01D5,0xe,PTR_0080676c,"fish_b",0x1d);
     if (iVar4 != 0) {
       iVar4 = 0xea;
 cf_error_exit_0057C332:
@@ -266,7 +266,7 @@ cf_error_exit_0057C332:
     break;
   case 0xe9:
     iVar4 = STT3DSprC::LoadSequence
-                      ((STT3DSprC *)&this_00->field_01D5,0xe,DAT_0080676c,"fish_gr",0x1d);
+                      ((STT3DSprC *)&this_00->field_01D5,0xe,PTR_0080676c,"fish_gr",0x1d);
     if (iVar4 != 0) {
       iVar4 = 0xf0;
       goto cf_error_exit_0057C332;
@@ -274,7 +274,7 @@ cf_error_exit_0057C332:
     break;
   case 0xea:
     iVar4 = STT3DSprC::LoadSequence
-                      ((STT3DSprC *)&this_00->field_01D5,0xe,DAT_0080676c,&DAT_007cb008,0x1d);
+                      ((STT3DSprC *)&this_00->field_01D5,0xe,PTR_0080676c,&DAT_007cb008,0x1d);
     if (iVar4 != 0) {
       iVar4 = 0xfd;
       goto cf_error_exit_0057C332;
@@ -282,7 +282,7 @@ cf_error_exit_0057C332:
     break;
   case 0xeb:
     iVar4 = STT3DSprC::LoadSequence
-                      ((STT3DSprC *)&this_00->field_01D5,0xe,DAT_0080676c,&DAT_007cb010,0x1d);
+                      ((STT3DSprC *)&this_00->field_01D5,0xe,PTR_0080676c,&DAT_007cb010,0x1d);
     if (iVar4 != 0) {
       iVar4 = 0x104;
       goto cf_error_exit_0057C332;

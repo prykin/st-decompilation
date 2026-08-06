@@ -26,10 +26,10 @@ void __thiscall StartSystemTy::InitChat(StartSystemTy *this)
   local_8 = this;
   errorCode = Library::MSVCRT::__setjmp3(local_4c.jumpBuffer,0);
   if (errorCode == 0) {
-    if (DAT_0080c4fa != nullptr) {
-      FUN_006b5570(DAT_0080c4fa);
+    if (g_dArray_0080C4FA != nullptr) {
+      FUN_006b5570(g_dArray_0080C4FA);
     }
-    DAT_0080c4fa = Library::DKW::TBL::SArrayCreate(nullptr,100,0x14);
+    g_dArray_0080C4FA = Library::DKW::TBL::SArrayCreate(nullptr,100,0x14);
     puVar1 = local_8->field_067E;
     if (puVar1 != nullptr) {
       uVar6 = *(uint *)(puVar1 + 10);

@@ -22,7 +22,7 @@ undefined4 __cdecl FUN_0067f030(char *text,char *param_2,uint *param_3)
   if (iVar1 == 0) {
     iVar1 = thunk_FUN_0067ef60((byte *)text,(int *)&local_8);
     if ((iVar1 != 0) && (-1 < (int)local_8)) {
-      local_8 = Library::DKW::TBL::FUN_006b6020((uint *)PTR_00848a18,local_8,param_2);
+      local_8 = Library::DKW::TBL::FUN_006b6020(g_dArray_00848A18,local_8,param_2);
       if (param_3 != nullptr) {
         *param_3 = local_8;
       }

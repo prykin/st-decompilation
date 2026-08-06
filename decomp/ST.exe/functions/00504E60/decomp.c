@@ -54,7 +54,7 @@ void __thiscall CPanelTy::PaintIDSObj(CPanelTy *this)
   uVar5 = 0;
   iVar4 = -1;
   iVar3 = -2;
-  resourceString = (uint *)LoadResourceString(resourceId,g_module_00807618);
+  resourceString = (uint *)LoadResourceString(resourceId,g_hINSTANCE_00807618);
   ccFntTy::WrTxt(pCVar2->field_01B8,resourceString,iVar3,iVar4,uVar5,iVar6,iVar7);
 cf_common_exit_00504F81:
   if (-1 < (int)pCVar2->field_0148[5]) {

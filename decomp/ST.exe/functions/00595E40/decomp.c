@@ -68,13 +68,13 @@ void __thiscall FSGSTy::InitFSGS(FSGSTy *this,byte param_1)
   g_startSystem_0081176C->field_002C = puVar4;
   this_01->field_005D = g_startSystem_0081176C->field_002C;
   puVar4 = Library::Ourlib::MFRLOAD::mfRLoad
-                     (DAT_00806784,CASE_B,"SET_ACC",0xffffffff,0,1,0,nullptr);
+                     (PTR_00806784,CASE_B,"SET_ACC",0xffffffff,0,1,0,nullptr);
   this_01->field_1A83 = puVar4;
   puVar4 = Library::Ourlib::MFRLOAD::mfRLoad
-                     (DAT_00806784,CASE_B,"FILE_LIST",0xffffffff,0,1,0,nullptr);
+                     (PTR_00806784,CASE_B,"FILE_LIST",0xffffffff,0,1,0,nullptr);
   this_01->field_1A87 = puVar4;
   puVar4 = Library::Ourlib::MFRLOAD::mfRLoad
-                     (DAT_00806784,CASE_B,&DAT_007cc07c,0xffffffff,0,1,0,nullptr);
+                     (PTR_00806784,CASE_B,&DAT_007cc07c,0xffffffff,0,1,0,nullptr);
   this_01->field_1A8B = puVar4;
   FUN_006bc360(this_01->field_005D,local_450,nullptr);
   this_01->field_1A5B->field_0140 = 0xf;
@@ -88,7 +88,7 @@ void __thiscall FSGSTy::InitFSGS(FSGSTy *this,byte param_1)
   this_01->field_1F3F = 2;
   this_01->field_1F7F = this_01->field_005D;
   this_01->field_1F93 = 0;
-  this_01->field_1F8F = DAT_008032ac;
+  this_01->field_1F8F = PTR_008032ac;
   this_01->field_1F87 = 0xf;
   this_01->field_1F8B = 1;
   this_01->field_1F83 = 0x4d;
@@ -157,7 +157,7 @@ void __thiscall FSGSTy::InitFSGS(FSGSTy *this,byte param_1)
             ((SpriteClassTy *)&this_01->field_1B28,(int *)g_ddxContext_008075A8,0x31,'\a',
              nullptr,0,0);
   /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-  (**(code **)(this_01->field_1B28 + 4))(DAT_00806784,7,0,"MM_SLDUP",0xffffffff);
+  (**(code **)(this_01->field_1B28 + 4))(PTR_00806784,7,0,"MM_SLDUP",0xffffffff);
   this_01->field_1B30 = 0;
   if (this_01->field_1B2C != 0xffffffff) {
     FUN_006b3af0((int *)this_01->field_1B70,this_01->field_1B2C);
@@ -166,7 +166,7 @@ void __thiscall FSGSTy::InitFSGS(FSGSTy *this,byte param_1)
             ((SpriteClassTy *)&this_01->field_1BB9,(int *)g_ddxContext_008075A8,0x31,'\a',
              nullptr,0,0);
   /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-  (**(code **)(this_01->field_1BB9 + 4))(DAT_00806784,7,0,"MM_SLDDN",0xffffffff);
+  (**(code **)(this_01->field_1BB9 + 4))(PTR_00806784,7,0,"MM_SLDDN",0xffffffff);
   this_01->field_1BC1 = 0;
   if (this_01->field_1BBD != 0xffffffff) {
     FUN_006b3af0((int *)this_01->field_1C01,this_01->field_1BBD);
@@ -175,7 +175,7 @@ void __thiscall FSGSTy::InitFSGS(FSGSTy *this,byte param_1)
             ((SpriteClassTy *)&this_01->field_1C4A,(int *)g_ddxContext_008075A8,0x31,'\a',
              nullptr,0,0);
   /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-  (**(code **)(this_01->field_1C4A + 4))(DAT_00806784,7,0,"MM_SLDT",0xffffffff);
+  (**(code **)(this_01->field_1C4A + 4))(PTR_00806784,7,0,"MM_SLDT",0xffffffff);
   this_01->field_1C52 = 0;
   if (this_01->field_1C4E != 0xffffffff) {
     FUN_006b3af0((int *)this_01->field_1C92,this_01->field_1C4E);
@@ -184,7 +184,7 @@ void __thiscall FSGSTy::InitFSGS(FSGSTy *this,byte param_1)
             ((SpriteClassTy *)&this_01->field_1CDB,(int *)g_ddxContext_008075A8,0x31,'\a',
              nullptr,0,0);
   /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-  (**(code **)(this_01->field_1CDB + 4))(DAT_00806784,7,0,"MM_SLDUP",0xffffffff);
+  (**(code **)(this_01->field_1CDB + 4))(PTR_00806784,7,0,"MM_SLDUP",0xffffffff);
   this_01->field_1CE3 = 0;
   if (this_01->field_1CDF != 0xffffffff) {
     FUN_006b3af0((int *)this_01->field_1D23,this_01->field_1CDF);
@@ -193,7 +193,7 @@ void __thiscall FSGSTy::InitFSGS(FSGSTy *this,byte param_1)
             ((SpriteClassTy *)&this_01->field_1D6C,(int *)g_ddxContext_008075A8,0x31,'\a',
              nullptr,0,0);
   /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-  (**(code **)(this_01->field_1D6C + 4))(DAT_00806784,7,0,"MM_SLDDN",0xffffffff);
+  (**(code **)(this_01->field_1D6C + 4))(PTR_00806784,7,0,"MM_SLDDN",0xffffffff);
   this_01->field_1D74 = 0;
   if (this_01->field_1D70 != 0xffffffff) {
     FUN_006b3af0((int *)this_01->field_1DB4,this_01->field_1D70);
@@ -202,7 +202,7 @@ void __thiscall FSGSTy::InitFSGS(FSGSTy *this,byte param_1)
             ((SpriteClassTy *)&this_01->field_1DFD,(int *)g_ddxContext_008075A8,0x31,'\a',
              nullptr,0,0);
   /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-  (**(code **)(this_01->field_1DFD + 4))(DAT_00806784,7,0,"MM_SLDT",0xffffffff);
+  (**(code **)(this_01->field_1DFD + 4))(PTR_00806784,7,0,"MM_SLDT",0xffffffff);
   this_01->field_1E05 = 0;
   if (this_01->field_1E01 != 0xffffffff) {
     FUN_006b3af0((int *)this_01->field_1E45,this_01->field_1E01);

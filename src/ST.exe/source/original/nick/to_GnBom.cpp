@@ -2,7 +2,7 @@
 // Generated translation unit: source/original/nick/to_GnBom.cpp
 
 // 006132F0 STGenBombC::LoadImagSpr
-#line 1 "decomp/ST.exe/functions/006132F0/decomp.c"
+#line 4 "decomp/ST.exe/functions/006132F0/decomp.c"
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 /* Recovered from embedded debug metadata:
    E:\__titans\nick\to_GnBom.cpp
@@ -59,7 +59,7 @@ undefined4 __thiscall st::fn_006132F0(STGenBombC *this,int param_1,int param_2)
     if (this_00 == nullptr) {
       return 0xffffffff;
     }
-    iVar5 = st::fn_0040537B(this_00,DAT_008073cc,0x5a,0x45,nullptr,0xb4,0x8c,0x11);
+    iVar5 = st::fn_0040537B(this_00,PTR_008073cc,0x5a,0x45,nullptr,0xb4,0x8c,0x11);
     if (iVar5 != 0) {
       st::fn_006A5E40
                 (-1,g_overwriteContext_007ED77C,"E:\\__titans\\nick\\to_GnBom.cpp",0x509);
@@ -68,15 +68,15 @@ undefined4 __thiscall st::fn_006132F0(STGenBombC *this,int param_1,int param_2)
   }
   if (param_1 == 0) {
     if (param_2 != 0) goto LAB_0061364b;
-    iVar5 = st::fn_00404183(pSVar4->field_0252,0xd,DAT_00806774,"exptem",0x1d);
+    iVar5 = st::fn_00404183(pSVar4->field_0252,0xd,PTR_00806774,"exptem",0x1d);
     if (iVar5 != 0) {
       return 0xffff;
     }
-    iVar5 = st::fn_00404183(pSVar4->field_0252,0xf,DAT_00806764,"bulb_n5",0x1d);
+    iVar5 = st::fn_00404183(pSVar4->field_0252,0xf,PTR_00806764,"bulb_n5",0x1d);
     if (iVar5 != 0) {
       return 0xffff;
     }
-    iVar5 = st::fn_00404183(pSVar4->field_0252,0xe,DAT_00806774,"expmask2",0x1d);
+    iVar5 = st::fn_00404183(pSVar4->field_0252,0xe,PTR_00806774,"expmask2",0x1d);
     if (iVar5 != 0) {
       return 0xffff;
     }
@@ -95,7 +95,7 @@ undefined4 __thiscall st::fn_006132F0(STGenBombC *this,int param_1,int param_2)
     uVar7 = st::fn_004052CC(pSVar4->field_0252);
     st::fn_006E9350(g_sT3DSMAPContext_00807598,uVar7,uVar11,iVar5);
     pSVar4->field_0250 = 1;
-    st::fn_004044EE(pSVar4->field_0252,DAT_008032b8,0x10);
+    st::fn_004044EE(pSVar4->field_0252,PTR_008032b8,0x10);
     pSVar4->field_0237 = 0;
     st::fn_00401064(pSVar4->field_0252,'\r',0);
     st::fn_004030BC(pSVar4->field_0252,'\r');
@@ -108,7 +108,7 @@ undefined4 __thiscall st::fn_006132F0(STGenBombC *this,int param_1,int param_2)
   else {
     iVar5 = pSVar4->field_01F7;
     if (iVar5 == 0) {
-      iVar5 = st::fn_00404183(pSVar4->field_0252,0xd,DAT_00806774,"den_bmb",0x1d);
+      iVar5 = st::fn_00404183(pSVar4->field_0252,0xd,PTR_00806774,"den_bmb",0x1d);
       if (iVar5 != 0) {
         return 0xffff;
       }
@@ -121,7 +121,7 @@ undefined4 __thiscall st::fn_006132F0(STGenBombC *this,int param_1,int param_2)
         if (iVar5 != 2) goto LAB_00613424;
         text = "den_bmb";
       }
-      iVar5 = st::fn_00404183(pSVar4->field_0252,0xd,DAT_00806774,text,0x1d);
+      iVar5 = st::fn_00404183(pSVar4->field_0252,0xd,PTR_00806774,text,0x1d);
       if (iVar5 != 0) {
         return 0xffff;
       }

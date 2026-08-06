@@ -2,7 +2,7 @@
 // Generated translation unit: source/recovered/by_owner/OpticClassC.cpp
 
 // 004A88C0 OpticClassC::OpticClassC
-#line 1 "decomp/ST.exe/functions/004A88C0/decomp.c"
+#line 4 "decomp/ST.exe/functions/004A88C0/decomp.c"
 /* [STConstructorApplier] Recovered constructor candidate.
    VTable: 00790758 (store 004A88C8)
    Evidence: final_vptr=00790758; returns_this=true; calls_before=1; field_writes_after=1;
@@ -14,14 +14,14 @@ OpticClassC * __thiscall st::fn_004A88C0(OpticClassC *this)
   DWORD DVar1;
 
   st::fn_006E5FB0(this);
-  this->vtable = &OpticClassCVTable;
+  this->vtable = &st_global_00790758;
   DVar1 = st::external_000000DA();
   this->field_0018 = DVar1;
   return this;
 }
 
 // 004AB070 OpticClassC::sub_004AB070
-#line 1 "decomp/ST.exe/functions/004AB070/decomp.c"
+#line 4 "decomp/ST.exe/functions/004AB070/decomp.c"
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 /* [STSwitchEnumApplier] Switch target param_1 uses
    /SubmarineTitans/Recovered/Enums/Global_sub_004AB070_param_1Enum. Cases:

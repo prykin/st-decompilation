@@ -2,7 +2,7 @@
 // Generated translation unit: source/original/Andrey/bldboat.cpp
 
 // 004EEA40 BldBoatPanelTy::InitBldBoatPanel
-#line 1 "decomp/ST.exe/functions/004EEA40/decomp.c"
+#line 4 "decomp/ST.exe/functions/004EEA40/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\Andrey\bldboat.cpp
    BldBoatPanelTy::InitBldBoatPanel */
@@ -71,7 +71,7 @@ void __thiscall st::fn_004EEA40(BldBoatPanelTy *this)
     STDebugBreak(); /* noreturn in standalone pseudocode */
   }
   iVar8 = 4;
-  g_prodPanel_0080167C = (ProdPanelTy *)local_1c;
+  g_bldBoatPanel_0080167C = (ProdPanelTy *)local_1c;
   puVar11 = &local_1c->field_027A;
   do {
     pDVar3 = st::fn_006AE290(nullptr,10,0x30,5);
@@ -102,10 +102,10 @@ void __thiscall st::fn_004EEA40(BldBoatPanelTy *this)
   }
   st::external_00000080(text,"BOATS_%d",iVar8);
   puVar6 = st::fn_00709AF0
-                     (DAT_00806794,CASE_B,text,0xffffffff,0,1,0,nullptr);
+                     (PTR_00806794,CASE_B,text,0xffffffff,0,1,0,nullptr);
   this_00->field_0188 = puVar6;
   puVar6 = st::fn_00709AF0
-                     (DAT_00806794,CASE_B,"BOATS_D",0xffffffff,0,1,0,nullptr);
+                     (PTR_00806794,CASE_B,"BOATS_D",0xffffffff,0,1,0,nullptr);
   this_00->field_018C = puVar6;
   pCVar5 = st::fn_0040577C("BKG_BLDBOATBUT",0);
   st::fn_00404241
@@ -179,13 +179,13 @@ switchD_004eed0b_default:
   local_20 = 1;
   local_44 = local_64;
   /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-  (**(code **)(*(int *)this_00->field_000C + 8))(5,this_00 + 1,0,local_74,0);
+  (**(code **)(*(int *)this_00->field_000C + 8))(5,&this_00->field_0292,0,local_74,0);
   g_currentExceptionFrame = local_b8.previous;
   return;
 }
 
 // 004EF020 BldBoatPanelTy::Update
-#line 1 "decomp/ST.exe/functions/004EF020/decomp.c"
+#line 4 "decomp/ST.exe/functions/004EF020/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\Andrey\bldboat.cpp
    BldBoatPanelTy::Update */
@@ -239,7 +239,7 @@ void __thiscall st::fn_004EF020(BldBoatPanelTy *this)
 }
 
 // 004EF320 BldBoatPanelTy::PaintBldBut
-#line 1 "decomp/ST.exe/functions/004EF320/decomp.c"
+#line 4 "decomp/ST.exe/functions/004EF320/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\Andrey\bldboat.cpp
    BldBoatPanelTy::PaintBldBut */
@@ -337,7 +337,7 @@ LAB_004ef4e9:
 }
 
 // 004EF6D0 BldBoatPanelTy::GetMessage
-#line 1 "decomp/ST.exe/functions/004EF6D0/decomp.c"
+#line 4 "decomp/ST.exe/functions/004EF6D0/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\Andrey\bldboat.cpp
    BldBoatPanelTy::GetMessage

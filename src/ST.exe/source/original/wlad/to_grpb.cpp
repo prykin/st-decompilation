@@ -2,7 +2,7 @@
 // Generated translation unit: source/original/wlad/to_grpb.cpp
 
 // 00497CD0 STGroupBoatC::InitWay
-#line 1 "decomp/ST.exe/functions/00497CD0/decomp.c"
+#line 4 "decomp/ST.exe/functions/00497CD0/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\wlad\to_grpb.cpp
    STGroupBoatC::InitWay */
@@ -52,7 +52,7 @@ st::fn_00497CD0(STGroupBoatC *this,DArrayTy *param_1,int param_2,int param_3,int
 }
 
 // 00497E00 STGroupBoatC::GetMessage
-#line 1 "decomp/ST.exe/functions/00497E00/decomp.c"
+#line 4 "decomp/ST.exe/functions/00497E00/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\wlad\to_grpb.cpp
    STGroupBoatC::GetMessage
@@ -627,7 +627,7 @@ LAB_00498503:
 }
 
 // 00498D20 STGroupBoatC::sub_00498D20
-#line 1 "decomp/ST.exe/functions/00498D20/decomp.c"
+#line 4 "decomp/ST.exe/functions/00498D20/decomp.c"
 /* [STSwitchEnumApplier] Switch target param_1 uses
    /SubmarineTitans/Recovered/Enums/Global_sub_00498D20_param_1Enum. Cases:
    CASE_1=1;CASE_2=2;CASE_3=3;CASE_4=4;CASE_5=5;CASE_6=6;CASE_7=7;CASE_8=8;CASE_9=9;CASE_A=10;CASE_B=11;CASE_C=12;CASE_D=13;CASE_E=14;CASE_F=15;CASE_10=16;CASE_11=17;CASE_12=18;CASE_13=19;CASE_14=20;CASE_15=21;CASE_65=101;CASE_66=102;CASE_67=103;CASE_68=104;CASE_69=105;CASE_6A=106
@@ -1127,7 +1127,7 @@ LAB_00499129:
 }
 
 // 00499750 STGroupBoatC::ReMakePVecAndTgtList
-#line 1 "decomp/ST.exe/functions/00499750/decomp.c"
+#line 4 "decomp/ST.exe/functions/00499750/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\wlad\to_grpb.cpp
    STGroupBoatC::ReMakePVecAndTgtList
@@ -1228,7 +1228,7 @@ undefined4 __thiscall st::fn_00499750(STGroupBoatC *this,DArrayTy *param_1)
 }
 
 // 004999C0 STGroupBoatC::ReMakePVecAndTgtListExt
-#line 1 "decomp/ST.exe/functions/004999C0/decomp.c"
+#line 4 "decomp/ST.exe/functions/004999C0/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\wlad\to_grpb.cpp
    STGroupBoatC::ReMakePVecAndTgtListExt */
@@ -1302,7 +1302,7 @@ st::fn_004999C0(STGroupBoatC *this,char param_1,short param_2)
 }
 
 // 00499B80 STGroupBoatC::MakePVec
-#line 1 "decomp/ST.exe/functions/00499B80/decomp.c"
+#line 4 "decomp/ST.exe/functions/00499B80/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\wlad\to_grpb.cpp
    STGroupBoatC::MakePVec */
@@ -1398,7 +1398,7 @@ undefined4 __thiscall st::fn_00499B80(STGroupBoatC *this)
 }
 
 // 00499DE0 STGroupBoatC::DistributeTargets
-#line 1 "decomp/ST.exe/functions/00499DE0/decomp.c"
+#line 4 "decomp/ST.exe/functions/00499DE0/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\wlad\to_grpb.cpp
    STGroupBoatC::DistributeTargets */
@@ -1711,7 +1711,7 @@ undefined4 __thiscall st::fn_00499DE0(STGroupBoatC *this,uint *param_1)
 }
 
 // 0049A620 STGroupBoatC::GrpMove
-#line 1 "decomp/ST.exe/functions/0049A620/decomp.c"
+#line 4 "decomp/ST.exe/functions/0049A620/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\wlad\to_grpb.cpp
    STGroupBoatC::GrpMove */
@@ -1833,7 +1833,7 @@ cf_common_exit_0049A832:
 }
 
 // 0049A940 STGroupBoatC::GrpMove
-#line 1 "decomp/ST.exe/functions/0049A940/decomp.c"
+#line 4 "decomp/ST.exe/functions/0049A940/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\wlad\to_grpb.cpp
    STGroupBoatC::GrpMove */
@@ -1901,7 +1901,7 @@ undefined4 __thiscall st::fn_0049A940(STGroupBoatC *this,int param_1)
 }
 
 // 0049AAF0 STGroupBoatC::GrpAttack
-#line 1 "decomp/ST.exe/functions/0049AAF0/decomp.c"
+#line 4 "decomp/ST.exe/functions/0049AAF0/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\wlad\to_grpb.cpp
    STGroupBoatC::GrpAttack */
@@ -2232,7 +2232,7 @@ LAB_0049aec9:
 }
 
 // 0049B4C0 STGroupBoatC::GrpGoToDeep
-#line 1 "decomp/ST.exe/functions/0049B4C0/decomp.c"
+#line 4 "decomp/ST.exe/functions/0049B4C0/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\wlad\to_grpb.cpp
    STGroupBoatC::GrpGoToDeep */
@@ -2353,7 +2353,7 @@ LAB_0049b6c1:
 }
 
 // 0049B7D0 STGroupBoatC::GrpPatrol
-#line 1 "decomp/ST.exe/functions/0049B7D0/decomp.c"
+#line 4 "decomp/ST.exe/functions/0049B7D0/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\wlad\to_grpb.cpp
    STGroupBoatC::GrpPatrol
@@ -2729,7 +2729,7 @@ joined_r0x0049bc58:
 }
 
 // 0049C210 STGroupBoatC::GrpLoadRC
-#line 1 "decomp/ST.exe/functions/0049C210/decomp.c"
+#line 4 "decomp/ST.exe/functions/0049C210/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\wlad\to_grpb.cpp
    STGroupBoatC::GrpLoadRC */
@@ -3097,7 +3097,7 @@ undefined4 __thiscall st::fn_0049C210(STGroupBoatC *this,int param_1)
 }
 
 // 0049CD30 STGroupBoatC::GrpBuild
-#line 1 "decomp/ST.exe/functions/0049CD30/decomp.c"
+#line 4 "decomp/ST.exe/functions/0049CD30/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\wlad\to_grpb.cpp
    STGroupBoatC::GrpBuild */
@@ -3286,7 +3286,7 @@ LAB_0049cf10:
 }
 
 // 0049D230 STGroupBoatC::GrpUnLoadRC
-#line 1 "decomp/ST.exe/functions/0049D230/decomp.c"
+#line 4 "decomp/ST.exe/functions/0049D230/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\wlad\to_grpb.cpp
    STGroupBoatC::GrpUnLoadRC */
@@ -3476,7 +3476,7 @@ LAB_0049d3ca:
 }
 
 // 0049D750 STGroupBoatC::GrpRepare
-#line 1 "decomp/ST.exe/functions/0049D750/decomp.c"
+#line 4 "decomp/ST.exe/functions/0049D750/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\wlad\to_grpb.cpp
    STGroupBoatC::GrpRepare */
@@ -3618,7 +3618,7 @@ undefined4 __thiscall st::fn_0049D750(STGroupBoatC *this,int param_1)
 }
 
 // 0049DB40 STGroupBoatC::GrpGuard
-#line 1 "decomp/ST.exe/functions/0049DB40/decomp.c"
+#line 4 "decomp/ST.exe/functions/0049DB40/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\wlad\to_grpb.cpp
    STGroupBoatC::GrpGuard */
@@ -3781,7 +3781,7 @@ undefined4 __thiscall st::fn_0049DB40(STGroupBoatC *this,int param_1)
 }
 
 // 0049DFA0 STGroupBoatC::GrpLoadObj
-#line 1 "decomp/ST.exe/functions/0049DFA0/decomp.c"
+#line 4 "decomp/ST.exe/functions/0049DFA0/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\wlad\to_grpb.cpp
    STGroupBoatC::GrpLoadObj */
@@ -3994,7 +3994,7 @@ LAB_0049e26d:
 }
 
 // 0049E510 STGroupBoatC::GrpUnLoadObj
-#line 1 "decomp/ST.exe/functions/0049E510/decomp.c"
+#line 4 "decomp/ST.exe/functions/0049E510/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\wlad\to_grpb.cpp
    STGroupBoatC::GrpUnLoadObj */
@@ -4193,7 +4193,7 @@ LAB_0049e7c1:
 }
 
 // 0049EA00 STGroupBoatC::SetMine
-#line 1 "decomp/ST.exe/functions/0049EA00/decomp.c"
+#line 4 "decomp/ST.exe/functions/0049EA00/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\wlad\to_grpb.cpp
    STGroupBoatC::SetMine */
@@ -4323,7 +4323,7 @@ LAB_0049eb44:
 }
 
 // 0049ED40 STGroupBoatC::DCBomb
-#line 1 "decomp/ST.exe/functions/0049ED40/decomp.c"
+#line 4 "decomp/ST.exe/functions/0049ED40/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\wlad\to_grpb.cpp
    STGroupBoatC::DCBomb */
@@ -4475,7 +4475,7 @@ undefined4 __thiscall st::fn_0049ED40(STGroupBoatC *this,int param_1)
 }
 
 // 0049F100 STGroupBoatC::Capture
-#line 1 "decomp/ST.exe/functions/0049F100/decomp.c"
+#line 4 "decomp/ST.exe/functions/0049F100/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\wlad\to_grpb.cpp
    STGroupBoatC::Capture */
@@ -4683,7 +4683,7 @@ LAB_0049f3f5:
 }
 
 // 0049F640 STGroupBoatC::Recharge
-#line 1 "decomp/ST.exe/functions/0049F640/decomp.c"
+#line 4 "decomp/ST.exe/functions/0049F640/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\wlad\to_grpb.cpp
    STGroupBoatC::Recharge */
@@ -4792,7 +4792,7 @@ undefined4 __thiscall st::fn_0049F640(STGroupBoatC *this,int param_1)
 }
 
 // 0049F900 STGroupBoatC::Teleport
-#line 1 "decomp/ST.exe/functions/0049F900/decomp.c"
+#line 4 "decomp/ST.exe/functions/0049F900/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\wlad\to_grpb.cpp
    STGroupBoatC::Teleport */
@@ -4908,7 +4908,7 @@ undefined4 __thiscall st::fn_0049F900(STGroupBoatC *this,int param_1)
 }
 
 // 0049FBF0 STGroupBoatC::Bring
-#line 1 "decomp/ST.exe/functions/0049FBF0/decomp.c"
+#line 4 "decomp/ST.exe/functions/0049FBF0/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\wlad\to_grpb.cpp
    STGroupBoatC::Bring */
@@ -5087,7 +5087,7 @@ LAB_0049fe51:
 }
 
 // 004A0040 STGroupBoatC::GrpDismant
-#line 1 "decomp/ST.exe/functions/004A0040/decomp.c"
+#line 4 "decomp/ST.exe/functions/004A0040/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\wlad\to_grpb.cpp
    STGroupBoatC::GrpDismant */
@@ -5284,7 +5284,7 @@ LAB_004a02d6:
 }
 
 // 004A0590 STGroupBoatC::Scout
-#line 1 "decomp/ST.exe/functions/004A0590/decomp.c"
+#line 4 "decomp/ST.exe/functions/004A0590/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\wlad\to_grpb.cpp
    STGroupBoatC::Scout
@@ -5440,7 +5440,7 @@ uint * __thiscall st::fn_004A0590(STGroupBoatC *this,int param_1)
 }
 
 // 004A0990 STGroupBoatC::GrpRepSub
-#line 1 "decomp/ST.exe/functions/004A0990/decomp.c"
+#line 4 "decomp/ST.exe/functions/004A0990/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\wlad\to_grpb.cpp
    STGroupBoatC::GrpRepSub */
@@ -5652,7 +5652,7 @@ LAB_004a0c5b:
 }
 
 // 004A0FA0 STGroupBoatC::RechargeNewCmd
-#line 1 "decomp/ST.exe/functions/004A0FA0/decomp.c"
+#line 4 "decomp/ST.exe/functions/004A0FA0/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\wlad\to_grpb.cpp
    STGroupBoatC::RechargeNewCmd
@@ -7063,7 +7063,7 @@ cf_common_exit_004A2C5D:
 }
 
 // 004A3430 STGroupBoatC::DistributeMD
-#line 1 "decomp/ST.exe/functions/004A3430/decomp.c"
+#line 4 "decomp/ST.exe/functions/004A3430/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\wlad\to_grpb.cpp
    STGroupBoatC::DistributeMD */
@@ -7361,7 +7361,7 @@ LAB_004a35b6:
 }
 
 // 004A3CD0 STGroupBoatC::DistributeDock
-#line 1 "decomp/ST.exe/functions/004A3CD0/decomp.c"
+#line 4 "decomp/ST.exe/functions/004A3CD0/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\wlad\to_grpb.cpp
    STGroupBoatC::DistributeDock */
@@ -7559,7 +7559,7 @@ st::fn_004A3CD0(STGroupBoatC *this,int param_1,DArrayTy *param_2,DArrayTy *param
 }
 
 // 004A4240 STGroupBoatC::ChangeMDNotify
-#line 1 "decomp/ST.exe/functions/004A4240/decomp.c"
+#line 4 "decomp/ST.exe/functions/004A4240/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\wlad\to_grpb.cpp
    STGroupBoatC::ChangeMDNotify */
@@ -7963,7 +7963,7 @@ LAB_004a4aab:
 }
 
 // 004A4D60 STGroupBoatC::ChangeMDNotify
-#line 1 "decomp/ST.exe/functions/004A4D60/decomp.c"
+#line 4 "decomp/ST.exe/functions/004A4D60/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\wlad\to_grpb.cpp
    STGroupBoatC::ChangeMDNotify */
@@ -8047,7 +8047,7 @@ LAB_004a4e27:
 }
 
 // 004A4F10 STGroupBoatC::SaveGrpBData
-#line 1 "decomp/ST.exe/functions/004A4F10/decomp.c"
+#line 4 "decomp/ST.exe/functions/004A4F10/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\wlad\to_grpb.cpp
    STGroupBoatC::SaveGrpBData */
@@ -8852,7 +8852,7 @@ undefined4 * __thiscall st::fn_004A4F10(STGroupBoatC *this,int *param_1)
 }
 
 // 004A67A0 STGroupBoatC::RestoreGrpBData
-#line 1 "decomp/ST.exe/functions/004A67A0/decomp.c"
+#line 4 "decomp/ST.exe/functions/004A67A0/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\wlad\to_grpb.cpp
    STGroupBoatC::RestoreGrpBData */
@@ -9258,7 +9258,7 @@ void __thiscall st::fn_004A67A0(STGroupBoatC *this,undefined4 *param_1)
 }
 
 // 004A7490 STGroupBoatC::ReMakePatrolPoints
-#line 1 "decomp/ST.exe/functions/004A7490/decomp.c"
+#line 4 "decomp/ST.exe/functions/004A7490/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\wlad\to_grpb.cpp
    STGroupBoatC::ReMakePatrolPoints
@@ -9489,7 +9489,7 @@ LAB_004a792e:
 }
 
 // 004A7AF0 STGroupBoatC::GetPatrolTask
-#line 1 "decomp/ST.exe/functions/004A7AF0/decomp.c"
+#line 4 "decomp/ST.exe/functions/004A7AF0/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\wlad\to_grpb.cpp
    STGroupBoatC::GetPatrolTask */
@@ -9593,7 +9593,7 @@ st::fn_004A7AF0(STGroupBoatC *this,int param_1,uint param_2,uint param_3)
 }
 
 // 004A80A0 STGroupBoatC::SetPatrolCmdToBoat
-#line 1 "decomp/ST.exe/functions/004A80A0/decomp.c"
+#line 4 "decomp/ST.exe/functions/004A80A0/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\wlad\to_grpb.cpp
    STGroupBoatC::SetPatrolCmdToBoat
@@ -9662,7 +9662,7 @@ void __thiscall st::fn_004A80A0(STGroupBoatC *this)
 }
 
 // 004A8340 STGroupBoatC::GetDepotForAttack
-#line 1 "decomp/ST.exe/functions/004A8340/decomp.c"
+#line 4 "decomp/ST.exe/functions/004A8340/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\wlad\to_grpb.cpp
    STGroupBoatC::GetDepotForAttack */
@@ -9753,7 +9753,7 @@ st::fn_004A8340
 }
 
 // 004A85B0 STGroupBoatC::StartReceiveOrderSound
-#line 1 "decomp/ST.exe/functions/004A85B0/decomp.c"
+#line 4 "decomp/ST.exe/functions/004A85B0/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\wlad\to_grpb.cpp
    STGroupBoatC::StartReceiveOrderSound
@@ -9805,7 +9805,7 @@ void __thiscall st::fn_004A85B0(STGroupBoatC *this)
 }
 
 // 004A8690 STGroupBoatC::GenSwitch
-#line 1 "decomp/ST.exe/functions/004A8690/decomp.c"
+#line 4 "decomp/ST.exe/functions/004A8690/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\wlad\to_grpb.cpp
    STGroupBoatC::GenSwitch
@@ -9857,7 +9857,7 @@ void __thiscall st::fn_004A8690(STGroupBoatC *this,int param_1)
 }
 
 // 004A87A0 STGroupBoatC::IsAgAtt
-#line 1 "decomp/ST.exe/functions/004A87A0/decomp.c"
+#line 4 "decomp/ST.exe/functions/004A87A0/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\wlad\to_grpb.cpp
    STGroupBoatC::IsAgAtt

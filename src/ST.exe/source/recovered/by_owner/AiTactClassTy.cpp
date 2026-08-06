@@ -2,7 +2,7 @@
 // Generated translation unit: source/recovered/by_owner/AiTactClassTy.cpp
 
 // 0068DC00 AiTactClassTy::AiTactClassTy
-#line 1 "decomp/ST.exe/functions/0068DC00/decomp.c"
+#line 4 "decomp/ST.exe/functions/0068DC00/decomp.c"
 /* [STConstructorApplier] Recovered constructor candidate.
    VTable: 0079D76C (store 0068DC0B)
    Evidence: final_vptr=0079D76C; returns_this=true; calls_before=1; field_writes_after=7;
@@ -13,7 +13,7 @@ AiTactClassTy * __thiscall st::fn_0068DC00(AiTactClassTy *this)
 {
 
   st::fn_006E60E0(this);
-  this->vtable = &AiTactClassTyVTable;
+  this->vtable = &st_global_0079D76C;
   memset(&this->field_0020, 0, 0x10c); /* compiler bulk-zero initialization */
   this->field_0020 = 0x38e;
   this->field_009D = 0xff;
@@ -26,7 +26,7 @@ AiTactClassTy * __thiscall st::fn_0068DC00(AiTactClassTy *this)
 }
 
 // 0068E010 AiTactClassTy::sub_0068E010
-#line 1 "decomp/ST.exe/functions/0068E010/decomp.c"
+#line 4 "decomp/ST.exe/functions/0068E010/decomp.c"
 /* [STMethodOwnerApplier] Structural method owner recovered as AiTactClassTy.
    Evidence: this_call_owners=[AiTactClassTy]; agreed_this_calls=2; incoming_this_accesses=1;
    incoming_edx_uses=0; incoming_stack_parameter_uses=0; direct_non_thunk_callers=0;
@@ -55,7 +55,7 @@ void __thiscall st::fn_0068E010(AiTactClassTy *this)
 }
 
 // 0068E290 AiTactClassTy::sub_0068E290
-#line 1 "decomp/ST.exe/functions/0068E290/decomp.c"
+#line 4 "decomp/ST.exe/functions/0068E290/decomp.c"
 /* [STMethodOwnerApplier] Structural method owner recovered as AiTactClassTy.
    Evidence: this_call_owners=[AiTactClassTy]; agreed_this_calls=3; incoming_this_accesses=1;
    incoming_edx_uses=2; incoming_stack_parameter_uses=1; direct_non_thunk_callers=0;
@@ -95,7 +95,7 @@ int __thiscall st::fn_0068E290(AiTactClassTy *this,short param_1)
 }
 
 // 0068E480 AiTactClassTy::sub_0068E480
-#line 1 "decomp/ST.exe/functions/0068E480/decomp.c"
+#line 4 "decomp/ST.exe/functions/0068E480/decomp.c"
 /* [STMethodOwnerApplier] Structural method owner recovered as AiTactClassTy.
    Evidence: this_call_owners=[AiTactClassTy]; agreed_this_calls=4; incoming_this_accesses=1;
    incoming_edx_uses=2; incoming_stack_parameter_uses=1; direct_non_thunk_callers=0;
@@ -139,7 +139,7 @@ uint __thiscall st::fn_0068E480(AiTactClassTy *this,short param_1)
 }
 
 // 0068E610 AiTactClassTy::sub_0068E610
-#line 1 "decomp/ST.exe/functions/0068E610/decomp.c"
+#line 4 "decomp/ST.exe/functions/0068E610/decomp.c"
 /* [STMethodOwnerApplier] Structural method owner recovered as AiTactClassTy.
    Evidence: this_call_owners=[AiTactClassTy]; agreed_this_calls=1; incoming_this_accesses=2;
    incoming_edx_uses=0; incoming_stack_parameter_uses=1; direct_non_thunk_callers=0;
@@ -181,7 +181,7 @@ int __thiscall st::fn_0068E610(AiTactClassTy *this,int param_1)
 }
 
 // 0068E730 AiTactClassTy::FUN_0068e730
-#line 1 "decomp/ST.exe/functions/0068E730/decomp.c"
+#line 4 "decomp/ST.exe/functions/0068E730/decomp.c"
 undefined4 __thiscall st::fn_0068E730(AiTactClassTy *this,int param_1)
 
 {
@@ -213,7 +213,7 @@ undefined4 __thiscall st::fn_0068E730(AiTactClassTy *this,int param_1)
 }
 
 // 00690230 AiTactClassTy::sub_00690230
-#line 1 "decomp/ST.exe/functions/00690230/decomp.c"
+#line 4 "decomp/ST.exe/functions/00690230/decomp.c"
 /* [STMethodOwnerApplier] Structural method owner recovered as AiTactClassTy.
    Evidence: this_call_owners=[AiTactClassTy]; agreed_this_calls=3; incoming_this_accesses=2;
    incoming_edx_uses=0; incoming_stack_parameter_uses=1; direct_non_thunk_callers=0;
@@ -253,7 +253,7 @@ void __thiscall st::fn_00690230(AiTactClassTy *this,uint *param_1)
 }
 
 // 006902B0 AiTactClassTy::sub_006902B0
-#line 1 "decomp/ST.exe/functions/006902B0/decomp.c"
+#line 4 "decomp/ST.exe/functions/006902B0/decomp.c"
 /* [STMethodOwnerApplier] Structural method owner recovered as AiTactClassTy.
    Evidence: this_call_owners=[AiTactClassTy]; agreed_this_calls=1; incoming_this_accesses=2;
    incoming_edx_uses=0; incoming_stack_parameter_uses=2; direct_non_thunk_callers=0;
@@ -294,7 +294,7 @@ void __thiscall st::fn_006902B0(AiTactClassTy *this,short param_1,uint *param_2)
 }
 
 // 00690A40 AiTactClassTy::sub_00690A40
-#line 1 "decomp/ST.exe/functions/00690A40/decomp.c"
+#line 4 "decomp/ST.exe/functions/00690A40/decomp.c"
 /* [STMethodOwnerApplier] Structural method owner recovered as AiTactClassTy.
    Evidence: this_call_owners=[AiTactClassTy]; agreed_this_calls=1; incoming_this_accesses=6;
    incoming_edx_uses=0; incoming_stack_parameter_uses=0; direct_non_thunk_callers=0;
@@ -315,7 +315,7 @@ void __thiscall st::fn_00690A40(AiTactClassTy *this)
 }
 
 // 00690AB0 AiTactClassTy::sub_00690AB0
-#line 1 "decomp/ST.exe/functions/00690AB0/decomp.c"
+#line 4 "decomp/ST.exe/functions/00690AB0/decomp.c"
 /* [STMethodOwnerApplier] Structural method owner recovered as AiTactClassTy.
    Evidence: this_call_owners=[AiTactClassTy]; agreed_this_calls=1; incoming_this_accesses=9;
    incoming_edx_uses=0; incoming_stack_parameter_uses=0; direct_non_thunk_callers=0;

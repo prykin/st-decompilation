@@ -55,12 +55,12 @@ short * __cdecl LoadLand(cMf32 *param_1,char *text)
     local_1c = pAVar4;
     if (g_cLoading_00802A58 != nullptr) {
       iVar3 = DAT_007f4e00;
-      pcVar5 = LoadResourceString(0x2685,g_module_00807618);
+      pcVar5 = LoadResourceString(0x2685,g_hINSTANCE_00807618);
       wsprintfA(local_f4,pcVar5,iVar3);
       cLoadingTy::SetState(g_cLoading_00802A58,CASE_2,0,local_f4);
       if (g_cLoading_00802A58 != nullptr) {
         iVar3 = DAT_007f4e00 / 2;
-        pcVar5 = LoadResourceString(0x268c,g_module_00807618);
+        pcVar5 = LoadResourceString(0x268c,g_hINSTANCE_00807618);
         cLoadingTy::SetProcess(g_cLoading_00802A58,0,pcVar5,iVar3);
         cLoadingTy::SetState(g_cLoading_00802A58,CASE_0,0,nullptr);
       }

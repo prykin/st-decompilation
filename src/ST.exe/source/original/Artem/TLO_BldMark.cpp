@@ -2,7 +2,7 @@
 // Generated translation unit: source/original/Artem/TLO_BldMark.cpp
 
 // 004C60E0 TLOBldMark::Create
-#line 1 "decomp/ST.exe/functions/004C60E0/decomp.c"
+#line 4 "decomp/ST.exe/functions/004C60E0/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\Artem\TLO_BldMark.cpp
    TLOBldMark::Create */
@@ -35,7 +35,7 @@ int __thiscall st::fn_004C60E0(TLOBldMark *this)
 }
 
 // 004C6210 TLOBldMark::sub_004C6210
-#line 1 "decomp/ST.exe/functions/004C6210/decomp.c"
+#line 4 "decomp/ST.exe/functions/004C6210/decomp.c"
 /* [STSourceProvenanceApplier begin]
    Recovered source file: E:\__titans\Artem\TLO_BldMark.cpp
    Diagnostic line evidence: 72 | 73 | 76 (metadata/report site, not the function definition)
@@ -67,14 +67,14 @@ undefined4 __thiscall st::fn_004C6210(TLOBldMark *this,int param_1,int *param_2)
   }
   this->field_002C = this_00;
   if (*(int *)(&DAT_00791d68 + this->field_001C * 4) == 0) {
-    iVar2 = st::fn_0040537B(this_00,DAT_008073cc,0x5a,0x45,nullptr,0xb4,0x8c,0x11);
+    iVar2 = st::fn_0040537B(this_00,PTR_008073cc,0x5a,0x45,nullptr,0xb4,0x8c,0x11);
     if (iVar2 != 0) {
       st::fn_006A5E40
                 (iVar2,g_overwriteContext_007ED77C,"E:\\__titans\\Artem\\TLO_BldMark.cpp",0x48);
     }
   }
   else if (*(int *)(&DAT_00791d68 + this->field_001C * 4) == 1) {
-    iVar2 = st::fn_0040537B(this_00,DAT_008073cc,0x78,0x56,nullptr,0xf0,0xbe,0x11);
+    iVar2 = st::fn_0040537B(this_00,PTR_008073cc,0x78,0x56,nullptr,0xf0,0xbe,0x11);
     if (iVar2 != 0) {
       st::fn_006A5E40
                 (iVar2,g_overwriteContext_007ED77C,"E:\\__titans\\Artem\\TLO_BldMark.cpp",0x49);
@@ -84,7 +84,7 @@ undefined4 __thiscall st::fn_004C6210(TLOBldMark *this,int param_1,int *param_2)
   }
   st::fn_00402A90(this->field_002C);
   iVar2 = st::fn_00404183
-                    (this->field_002C,0,DAT_0080678c,
+                    (this->field_002C,0,PTR_0080678c,
                      *(char **)(&DAT_007ad250 + (uint)(byte)this->field_0010->field_112E * 4),0x1d);
   if (iVar2 != 0) {
     st::fn_006A5E40
@@ -102,7 +102,7 @@ undefined4 __thiscall st::fn_004C6210(TLOBldMark *this,int param_1,int *param_2)
 }
 
 // 004C6440 TLOBldMark::sub_004C6440
-#line 1 "decomp/ST.exe/functions/004C6440/decomp.c"
+#line 4 "decomp/ST.exe/functions/004C6440/decomp.c"
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 /* [STSourceProvenanceApplier begin]
    Recovered source file: E:\__titans\Artem\TLO_BldMark.cpp
@@ -210,7 +210,7 @@ cf_common_exit_004C6899:
         goto cf_common_exit_004C6899;
       }
       iVar9 = st::fn_00404183
-                        (this->field_002C,0,DAT_0080678c,
+                        (this->field_002C,0,PTR_0080678c,
                          (&PTR_s_tlo_bldmark_si_007ad25c)[(byte)this->field_0010->field_112E],0x1d);
       if (iVar9 != 0) {
         st::fn_006A5E40
@@ -243,7 +243,7 @@ cf_common_exit_004C6899:
   }
   else if (this->field_0024 == 0) {
     iVar5 = st::fn_00404183
-                      (this->field_002C,0,DAT_0080678c,
+                      (this->field_002C,0,PTR_0080678c,
                        *(char **)(&DAT_007ad250 + (uint)(byte)this->field_0010->field_112E * 4),0x1d
                       );
     if (iVar5 != 0) {
@@ -301,7 +301,7 @@ LAB_004c6848:
 }
 
 // 004C6A00 TLOBldMark::GetMessage
-#line 1 "decomp/ST.exe/functions/004C6A00/decomp.c"
+#line 4 "decomp/ST.exe/functions/004C6A00/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\Artem\TLO_BldMark.cpp
    TLOBldMark::GetMessage

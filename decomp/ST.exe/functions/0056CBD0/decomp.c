@@ -43,7 +43,7 @@ STAppC::MainWindowProc
     }
     STDebugBreak(); /* noreturn in standalone pseudocode */
   }
-  iVar2 = AppClassTy::DecodeMessage(g_appClass_00806728,param_2,param_3,param_4);
+  iVar2 = AppClassTy::DecodeMessage(g_app_00806728,param_2,param_3,param_4);
   if ((iVar2 != 0) &&
      (iVar2 = ReportDebugMessage("E:\\__titans\\tapp.cpp",0x330,0,-0x5001fff8,"%s",
                                  "STAppC::MainWindowProc"), iVar2 != 0)) {
@@ -60,7 +60,7 @@ STAppC::MainWindowProc
     case CASE_5:
       memset(local_6c, 0, 0x20); /* compiler bulk-zero initialization */
       local_5c = 0x66;
-      AppClassTy::SendMessage(g_appClass_00806728,3,1,(int)local_6c);
+      AppClassTy::SendMessage(g_app_00806728,3,1,(int)local_6c);
       g_currentExceptionFrame = local_4c.previous;
       return local_8;
     case CASE_F:
@@ -170,9 +170,9 @@ STAppC::MainWindowProc
     FUN_006b5f80((int *)g_ddxContext_008075A8,0,0,g_nWidth_00806730,DAT_00806734);
     Library::DKW::DDX::FUN_006bab60(g_dDXContext_0080759C,0x1000000);
     Library::DKW::DDX::FUN_006bb370(g_dDXContext_0080759C,0,0);
-    g_appClass_00806728->field_4EFA = 0;
-    thunk_FUN_00567180(&g_appClass_00806728->field_0x38,hWnd);
-    FUN_006e3db0((int)&g_appClass_00806728->field_0x113a);
+    g_app_00806728->field_4EFA = 0;
+    thunk_FUN_00567180(&g_app_00806728->field_0x38,hWnd);
+    FUN_006e3db0((int)&g_app_00806728->field_0x113a);
     g_currentExceptionFrame = local_4c.previous;
     return local_8;
   }

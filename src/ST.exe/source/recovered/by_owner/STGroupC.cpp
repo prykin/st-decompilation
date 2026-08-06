@@ -2,7 +2,7 @@
 // Generated translation unit: source/recovered/by_owner/STGroupC.cpp
 
 // 00423EA0 STGroupC::FUN_00423ea0
-#line 1 "decomp/ST.exe/functions/00423EA0/decomp.c"
+#line 4 "decomp/ST.exe/functions/00423EA0/decomp.c"
 /* [STReturnSemanticsApplier] leaf_void.
    Evidence: leaf function has RET and never writes EAX/AX/AL/AH
 
@@ -21,7 +21,7 @@ void __thiscall st::fn_00423EA0(STGroupC *this,undefined4 param_1,undefined4 par
 }
 
 // 004244F0 STGroupC::FUN_004244f0
-#line 1 "decomp/ST.exe/functions/004244F0/decomp.c"
+#line 4 "decomp/ST.exe/functions/004244F0/decomp.c"
 /* [STReturnSemanticsApplier] leaf_void.
    Evidence: leaf function has RET and never writes EAX/AX/AL/AH
 
@@ -40,7 +40,7 @@ void __thiscall st::fn_004244F0(STGroupC *this,undefined4 param_1,undefined4 par
 }
 
 // 00424510 STGroupC::FUN_00424510
-#line 1 "decomp/ST.exe/functions/00424510/decomp.c"
+#line 4 "decomp/ST.exe/functions/00424510/decomp.c"
 /* [STReturnSemanticsApplier] leaf_void.
    Evidence: leaf function has RET and never writes EAX/AX/AL/AH
 

@@ -2,7 +2,7 @@
 // Generated translation unit: source/original/Object/To_alga.cpp
 
 // 00575CB0 STAlgaC::GetMessage
-#line 1 "decomp/ST.exe/functions/00575CB0/decomp.c"
+#line 4 "decomp/ST.exe/functions/00575CB0/decomp.c"
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 /* Recovered from embedded debug metadata:
    E:\__titans\Object\To_alga.cpp
@@ -184,7 +184,7 @@ LAB_005761b9:
             local_8 = (AnonShape_00575CB0_0408A0C4 *)&local_10->field_0x6;
             local_58 = 0;
             puVar11 = st::fn_00709AF0
-                                (DAT_00806764,CASE_1D,(char *)local_8,0xffffffff,0,0,0,
+                                (PTR_00806764,CASE_1D,(char *)local_8,0xffffffff,0,0,0,
                                  nullptr);
             if (puVar11 == nullptr) {
               st::fn_006A5E40
@@ -203,7 +203,7 @@ LAB_005761b9:
             }
             else {
               puVar11 = st::fn_00709AF0
-                                  (DAT_00806764,CASE_1D,puVar26,0xffffffff,0,0,0,nullptr);
+                                  (PTR_00806764,CASE_1D,puVar26,0xffffffff,0,0,0,nullptr);
               if (puVar11 == nullptr) {
                 st::fn_006A5E40
                           (-4,g_overwriteContext_007ED77C,"E:\\__titans\\Object\\To_alga.cpp",
@@ -280,7 +280,7 @@ LAB_00576308:
               st::fn_006EA270
                         (g_sT3DSMAPContext_00807598,local_c,1,(int)local_34 % piVar20[3]);
               st::fn_006EA680
-                        (g_sT3DSMAPContext_00807598,local_c,DAT_008032c0);
+                        (g_sT3DSMAPContext_00807598,local_c,PTR_008032c0);
               st::fn_006EA6D0(g_sT3DSMAPContext_00807598,local_c,1,1);
             }
             iVar8 = local_3c->field_0008 - piVar20[6];

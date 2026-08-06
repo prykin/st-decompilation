@@ -50,7 +50,7 @@ void __thiscall SAMPanelTy::InitSAMPanel(SAMPanelTy *this)
     uVar11 = 0xffffffff;
     pCVar4 = thunk_FUN_00571240("BUT_PRODWEAP",0);
     puVar5 = Library::Ourlib::MFRLOAD::mfRLoad
-                       (DAT_00806794,CASE_B,pCVar4,uVar11,bVar12,iVar3,iVar15,puVar17);
+                       (PTR_00806794,CASE_B,pCVar4,uVar11,bVar12,iVar3,iVar15,puVar17);
     local_c = this_00->field_01B5;
     this_00->field_01B1 = puVar5;
     iVar3 = 0xb4ff;
@@ -80,7 +80,7 @@ void __thiscall SAMPanelTy::InitSAMPanel(SAMPanelTy *this)
         uVar11 = 0;
         iVar7 = -1;
         iVar15 = 0;
-        resourceString = (uint *)LoadResourceString(iVar3 - 0x842b,g_module_00807618);
+        resourceString = (uint *)LoadResourceString(iVar3 - 0x842b,g_hINSTANCE_00807618);
         ccFntTy::WrStr(this_00->field_0189,resourceString,iVar15,iVar7,uVar11);
         DibPut((RecoveredSourceFamily_dibcopy *)this_00->field_0068,0x37,local_8,'\x01',pbVar6);
         ccFntTy::EraseSufr(this_00->field_0189);

@@ -98,7 +98,7 @@ cf_common_join_004F3D83:
       uVar5 = (*(code *)param_6)(param_2);
       iVar6 = -1;
       iVar8 = -2;
-      resourceString = (uint *)LoadResourceString(param_5,g_module_00807618);
+      resourceString = (uint *)LoadResourceString(param_5,g_hINSTANCE_00807618);
       ccFntTy::WrTxt(g_interSystem_00802A28->field_0024,resourceString,iVar8,iVar6,uVar5,iVar7,iVar9
                     );
       if ((param_1 < 0xb) && (-1 < (int)pCVar3->field_0148[uVar2])) {

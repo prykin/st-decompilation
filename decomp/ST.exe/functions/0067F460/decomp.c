@@ -6,10 +6,10 @@ void FUN_0067f460(void)
     DArrayDestroy(g_array_00848A28);
   }
   g_array_00848A28 = nullptr;
-  if (PTR_00848a2c != nullptr) {
-    FUN_006b5570((DArrayTy *)PTR_00848a2c);
+  if (g_dArray_00848A2C != nullptr) {
+    FUN_006b5570(g_dArray_00848A2C);
   }
-  PTR_00848a2c = nullptr;
+  g_dArray_00848A2C = nullptr;
   return;
 }
 

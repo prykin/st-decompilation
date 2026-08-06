@@ -86,7 +86,7 @@ undefined4 __cdecl FUN_004b2d10(byte param_1,int param_2,int param_3,int param_4
                     (g_bulkInitializedRecords_008087C7[(int)this[1].vtable].field_0022 < 8)))) &&
                (iVar6 = this->GetObjectTypeId(), iVar6 == 0x73)) {
               bVar1 = *(byte *)&this[1].vtable;
-              if (g_appClass_00806728->field_146F == '\0') {
+              if (g_app_00806728->field_146F == '\0') {
                 if (bVar1 == param_1) {
 LAB_004b2fd4:
                   iVar6 = 0;
@@ -94,22 +94,22 @@ LAB_004b2fd4:
                 else {
                   uVar3 = (uint)bVar1;
                   uVar5 = (uint)param_1;
-                  cVar2 = (&g_appClass_00806728->field_0x142f)[uVar5 + uVar3 * 8];
+                  cVar2 = (&g_app_00806728->field_0x142f)[uVar5 + uVar3 * 8];
                   if ((cVar2 == '\0') &&
-                     ((&g_appClass_00806728->field_0x142f)[uVar3 + uVar5 * 8] == '\0')) {
+                     ((&g_app_00806728->field_0x142f)[uVar3 + uVar5 * 8] == '\0')) {
                     iVar6 = -2;
                   }
                   else if ((cVar2 == '\x01') &&
-                          ((&g_appClass_00806728->field_0x142f)[uVar3 + uVar5 * 8] == '\0')) {
+                          ((&g_app_00806728->field_0x142f)[uVar3 + uVar5 * 8] == '\0')) {
                     iVar6 = -1;
                   }
                   else if ((cVar2 == '\0') &&
-                          ((&g_appClass_00806728->field_0x142f)[uVar3 + uVar5 * 8] == '\x01')) {
+                          ((&g_app_00806728->field_0x142f)[uVar3 + uVar5 * 8] == '\x01')) {
                     iVar6 = 1;
                   }
                   else {
                     if ((cVar2 != '\x01') ||
-                       ((&g_appClass_00806728->field_0x142f)[uVar3 + uVar5 * 8] != '\x01'))
+                       ((&g_app_00806728->field_0x142f)[uVar3 + uVar5 * 8] != '\x01'))
                     goto LAB_004b2fd4;
                     iVar6 = 2;
                   }
@@ -117,8 +117,8 @@ LAB_004b2fd4:
                 bVar8 = iVar6 < 0;
               }
               else {
-                bVar8 = (&g_appClass_00806728->field_0x11ca)[(uint)param_1 * 0x51] !=
-                        (&g_appClass_00806728->field_0x11ca)[(uint)bVar1 * 0x51];
+                bVar8 = (&g_app_00806728->field_0x11ca)[(uint)param_1 * 0x51] !=
+                        (&g_app_00806728->field_0x11ca)[(uint)bVar1 * 0x51];
               }
               if ((bVar8) && (local_24 <= *(int *)&this[0x22].field_0x8)) {
                 local_24 = *(int *)&this[0x22].field_0x8 - local_24;

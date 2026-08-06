@@ -2,7 +2,7 @@
 // Generated translation unit: source/recovered/by_owner/SubmarineTitans__Recovered__HiddenThis__AnonReceiver_004603B0.cpp
 
 // 004838E0 SubmarineTitans::Recovered::HiddenThis::AnonReceiver_004603B0::FUN_004838e0
-#line 1 "decomp/ST.exe/functions/004838E0/decomp.c"
+#line 4 "decomp/ST.exe/functions/004838E0/decomp.c"
 /* WARNING: Removing unreachable block (ram,0x00483caa) */
 /* [STHiddenThisApplier] Anonymous hidden receiver recovered as
    /SubmarineTitans/Recovered/HiddenThis/AnonReceiver_004603B0.

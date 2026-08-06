@@ -108,7 +108,7 @@ undefined4 __thiscall StartSystemTy::LoadGraph(StartSystemTy *this)
               ((SpriteClassTy *)&pSVar2->field_02F8,(int *)g_ddxContext_008075A8,0x32,'\a',
                nullptr,0,0);
     /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-    (**(code **)(pSVar2->field_02F8 + 4))(DAT_00806784,7,0,"MM_MAP",0xffffffff);
+    (**(code **)(pSVar2->field_02F8 + 4))(PTR_00806784,7,0,"MM_MAP",0xffffffff);
     pSVar2->field_0314 = 1;
     pSVar2->field_0318 = 0;
     pSVar2->field_0300 = 0;
@@ -116,7 +116,7 @@ undefined4 __thiscall StartSystemTy::LoadGraph(StartSystemTy *this)
               ((SpriteClassTy *)&pSVar2->field_038D,(int *)g_ddxContext_008075A8,0x31,'\a',
                nullptr,0,0);
     /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-    (**(code **)(pSVar2->field_038D + 4))(DAT_00806784,7,0,"MM_SLDUP",0xffffffff);
+    (**(code **)(pSVar2->field_038D + 4))(PTR_00806784,7,0,"MM_SLDUP",0xffffffff);
     pSVar2->field_03A9 = 0xe5;
     pSVar2->field_03AD = 0xb8;
     pSVar2->field_0395 = 0;
@@ -127,7 +127,7 @@ undefined4 __thiscall StartSystemTy::LoadGraph(StartSystemTy *this)
               ((SpriteClassTy *)&pSVar2->field_041E,(int *)g_ddxContext_008075A8,0x31,'\a',
                nullptr,0,0);
     /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-    (**(code **)(pSVar2->field_041E + 4))(DAT_00806784,7,0,"MM_SLDDN",0xffffffff);
+    (**(code **)(pSVar2->field_041E + 4))(PTR_00806784,7,0,"MM_SLDDN",0xffffffff);
     pSVar2->field_043A = 0xe5;
     pSVar2->field_043E = 0x1b8;
     pSVar2->field_0426 = 0;
@@ -138,7 +138,7 @@ undefined4 __thiscall StartSystemTy::LoadGraph(StartSystemTy *this)
               ((SpriteClassTy *)&pSVar2->field_04AF,(int *)g_ddxContext_008075A8,0x31,'\a',
                nullptr,0,0);
     /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-    (**(code **)(pSVar2->field_04AF + 4))(DAT_00806784,7,0,"MM_SLDT",0xffffffff);
+    (**(code **)(pSVar2->field_04AF + 4))(PTR_00806784,7,0,"MM_SLDT",0xffffffff);
     pSVar2->field_04CB = 0xeb;
     pSVar2->field_04CF = 0xd8;
     pSVar2->field_04B7 = 0;
@@ -200,12 +200,12 @@ undefined4 __thiscall StartSystemTy::LoadGraph(StartSystemTy *this)
     FUN_006b3af0((int *)g_ddxContext_008075A8,*puVar8);
     pDVar9 = Library::DKW::TBL::SArrayCreate(nullptr,1,1);
     pSVar2->field_0686 = pDVar9;
-    Library::DKW::TBL::FUN_006b6020(&pDVar9->flags,0,&DAT_008016a0);
+    Library::DKW::TBL::FUN_006b6020(pDVar9,0,&DAT_008016a0);
     SpriteClassTy::InitSprite
               ((SpriteClassTy *)&pSVar2->field_055C,(int *)g_ddxContext_008075A8,0x31,'\a',
                nullptr,0,0);
     /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-    (**(code **)(pSVar2->field_055C + 4))(DAT_00806784,7,0,"MM_SLDUP",0xffffffff);
+    (**(code **)(pSVar2->field_055C + 4))(PTR_00806784,7,0,"MM_SLDUP",0xffffffff);
     pSVar2->field_0578 = 0x23a;
     pSVar2->field_057C = 500;
     pSVar2->field_0564 = 0;
@@ -213,7 +213,7 @@ undefined4 __thiscall StartSystemTy::LoadGraph(StartSystemTy *this)
               ((SpriteClassTy *)&pSVar2->field_05ED,(int *)g_ddxContext_008075A8,0x31,'\a',
                nullptr,0,0);
     /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-    (**(code **)(pSVar2->field_05ED + 4))(DAT_00806784,7,0,"MM_SLDDN",0xffffffff);
+    (**(code **)(pSVar2->field_05ED + 4))(PTR_00806784,7,0,"MM_SLDDN",0xffffffff);
     iVar3 = 1;
     pSVar2->field_0609 = 0x23a;
     puVar5 = pSVar2->field_02F0 + 0x14;

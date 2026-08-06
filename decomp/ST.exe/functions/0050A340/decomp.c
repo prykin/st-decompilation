@@ -167,7 +167,7 @@ LAB_0050a4e4:
           uVar6 = thunk_FUN_00529500(resourceId);
           iVar13 = -1;
           iVar5 = -1;
-          puVar11 = (uint *)LoadResourceString(resourceId,g_module_00807618);
+          puVar11 = (uint *)LoadResourceString(resourceId,g_hINSTANCE_00807618);
           ccFntTy::WrStr(this_00->field_01B8,puVar11,iVar5,iVar13,uVar6);
           DibPut((RecoveredSourceFamily_dibcopy *)this_00->field_0194,0x70,0x58,'\x01',pbVar7);
           ccFntTy::EraseSufr(this_00->field_01B8);
@@ -213,7 +213,7 @@ LAB_0050a4e4:
           uVar6 = 5;
           iVar13 = -1;
           iVar5 = -2;
-          pHVar16 = g_module_00807618;
+          pHVar16 = g_hINSTANCE_00807618;
           UVar9 = thunk_FUN_00525290(this_00->field_0C11);
           puVar11 = (uint *)LoadResourceString(UVar9,pHVar16);
           ccFntTy::WrTxt(this_00->field_01B8,puVar11,iVar5,iVar13,uVar6,iVar18,iVar19);
@@ -262,7 +262,7 @@ LAB_0050a4e4:
         } while (iVar5 < 0xb9);
       }
       ccFntTy::SetSurf(this_00->field_01B8,this_00->field_0194,0,0x5c,0x6c,0x7a,0xb);
-      pHVar16 = g_module_00807618;
+      pHVar16 = g_hINSTANCE_00807618;
       UVar9 = thunk_FUN_00523410(*(Global_sub_00523410_param_1Enum *)&this_00->field_0xc12,
                                  this_00->field_0C1A,0);
       pcVar10 = LoadResourceString(UVar9,pHVar16);
@@ -307,7 +307,7 @@ LAB_0050af64:
       uVar6 = 5;
       iVar13 = -1;
       iVar5 = -2;
-      puVar11 = (uint *)LoadResourceString(0x36bd,g_module_00807618);
+      puVar11 = (uint *)LoadResourceString(0x36bd,g_hINSTANCE_00807618);
       ccFntTy::WrTxt(this_00->field_01B8,puVar11,iVar5,iVar13,uVar6,iVar18,iVar19);
       PaintDamageXY(this_00,this_00->field_0194,0x5c,0x50,*(byte *)&this_00->field_0C3D,0x2714);
       pbVar7 = (byte *)FUN_0070b3a0((AnonShape_GLOBAL_0081175C_57F682DD *)this_00->field_02B2,1);
@@ -339,7 +339,7 @@ LAB_0050af64:
       uVar6 = 5;
       iVar13 = -1;
       iVar5 = -2;
-      puVar11 = (uint *)LoadResourceString(0x36bc,g_module_00807618);
+      puVar11 = (uint *)LoadResourceString(0x36bc,g_hINSTANCE_00807618);
       ccFntTy::WrTxt(this_00->field_01B8,puVar11,iVar5,iVar13,uVar6,iVar18,iVar19);
       puVar11 = (uint *)&this_00->field_01E1;
       wsprintfA((LPSTR)puVar11,"%4d",this_00->field_0C3D);
@@ -355,7 +355,7 @@ cf_common_exit_0050B38B:
       uVar6 = 5;
       iVar13 = -1;
       iVar5 = -2;
-      puVar11 = (uint *)LoadResourceString(UVar9,g_module_00807618);
+      puVar11 = (uint *)LoadResourceString(UVar9,g_hINSTANCE_00807618);
       ccFntTy::WrTxt(this_00->field_01B8,puVar11,iVar5,iVar13,uVar6,iVar18,iVar19);
       break;
     case CASE_4:
@@ -375,7 +375,7 @@ cf_common_exit_0050B38B:
     if (this_00->field_0C31 == '\0') {
       ccFntTy::SetSurf(this_00->field_01B8,this_00->field_0194,0,0x24,0x4c,0xa4,0x2b);
       if (this_00->field_0C2F == 0) goto LAB_0050b386;
-      pcVar10 = LoadResourceString(0x273c,g_module_00807618);
+      pcVar10 = LoadResourceString(0x273c,g_hINSTANCE_00807618);
       wsprintfA((LPSTR)&DAT_0080f33a,"%d %s",(uint)(ushort)this_00->field_0C2F,pcVar10);
       ccFntTy::WrTxt(this_00->field_01B8,&DAT_0080f33a,-2,-1,5,-1,-1);
     }
@@ -419,7 +419,7 @@ cf_common_exit_0050B38B:
         } while (iVar5 < 0xb9);
       }
       ccFntTy::SetSurf(this_00->field_01B8,this_00->field_0194,0,0x5c,0x6c,0x7a,0xb);
-      pHVar16 = g_module_00807618;
+      pHVar16 = g_hINSTANCE_00807618;
       UVar9 = thunk_FUN_00523410(*(Global_sub_00523410_param_1Enum *)&this_00->field_0xc12,
                                  this_00->field_0C1A,0);
       pcVar10 = LoadResourceString(UVar9,pHVar16);
@@ -470,7 +470,7 @@ cf_common_exit_0050B38B:
     uVar6 = 2;
     iVar13 = -1;
     iVar5 = -2;
-    puVar11 = (uint *)LoadResourceString(0x271d,g_module_00807618);
+    puVar11 = (uint *)LoadResourceString(0x271d,g_hINSTANCE_00807618);
     ccFntTy::WrTxt(this_00->field_01B8,puVar11,iVar5,iVar13,uVar6,iVar18,iVar19);
     ccFntTy::SetSurf(this_00->field_01B8,this_00->field_0194,0,0x73,0x5d,0x5f,0x17);
     iVar19 = -1;
@@ -478,7 +478,7 @@ cf_common_exit_0050B38B:
     uVar6 = 5;
     iVar13 = -1;
     iVar5 = -2;
-    puVar11 = (uint *)LoadResourceString(0x2721,g_module_00807618);
+    puVar11 = (uint *)LoadResourceString(0x2721,g_hINSTANCE_00807618);
     ccFntTy::WrTxt(this_00->field_01B8,puVar11,iVar5,iVar13,uVar6,iVar18,iVar19);
     puVar11 = (uint *)&this_00->field_01E1;
     wsprintfA((LPSTR)puVar11,"%6d",(uint)(ushort)this_00->field_0C34);
@@ -491,7 +491,7 @@ cf_common_exit_0050B38B:
     uVar6 = 5;
     iVar13 = -1;
     iVar5 = -1;
-    puVar11 = (uint *)LoadResourceString(0x2738,g_module_00807618);
+    puVar11 = (uint *)LoadResourceString(0x2738,g_hINSTANCE_00807618);
     ccFntTy::WrStr(this_00->field_01B8,puVar11,iVar5,iVar13,uVar6);
     pbVar7 = (byte *)FUN_0070b3a0((AnonShape_GLOBAL_0081175C_57F682DD *)this_00->field_02B2,1);
     DibPut((RecoveredSourceFamily_dibcopy *)this_00->field_0194,0x33,0x5b,'\x01',pbVar7);
@@ -547,7 +547,7 @@ cf_common_exit_0050B38B:
     uVar6 = 5;
     iVar13 = -1;
     iVar5 = -1;
-    puVar11 = (uint *)LoadResourceString(0x2725,g_module_00807618);
+    puVar11 = (uint *)LoadResourceString(0x2725,g_hINSTANCE_00807618);
     ccFntTy::WrStr(this_00->field_01B8,puVar11,iVar5,iVar13,uVar6);
     resourceString = &this_00->field_01E1;
     wsprintfA(resourceString,"%d",*(undefined4 *)&this_00->field_0xc12);
@@ -557,7 +557,7 @@ cf_common_exit_0050B38B:
     uVar6 = 5;
     iVar13 = -1;
     iVar5 = -1;
-    puVar11 = (uint *)LoadResourceString(0x2740,g_module_00807618);
+    puVar11 = (uint *)LoadResourceString(0x2740,g_hINSTANCE_00807618);
     ccFntTy::WrStr(this_00->field_01B8,puVar11,iVar5,iVar13,uVar6);
     wsprintfA(resourceString,"%d",this_00->field_0C16);
     ccFntTy::SetSurf(this_00->field_01C4,this_00->field_0194,0,0xa5,0x4f,0x24,0xb);
@@ -631,7 +631,7 @@ LAB_0050b386:
       } while (iVar5 < 0xb9);
     }
     ccFntTy::SetSurf(this_00->field_01B8,this_00->field_0194,0,0x5c,0x69,0x7a,0xb);
-    pHVar16 = g_module_00807618;
+    pHVar16 = g_hINSTANCE_00807618;
     UVar9 = thunk_FUN_00523410(*(Global_sub_00523410_param_1Enum *)&this_00->field_0xc12,
                                this_00->field_0C1A,0);
     pcVar10 = LoadResourceString(UVar9,pHVar16);
@@ -665,7 +665,7 @@ LAB_0050b386:
       ccFntTy::EraseSufr(this_00->field_01C4);
     }
     puVar12 = Library::Ourlib::MFRLOAD::mfRLoad
-                        (DAT_00806794,CASE_1,"BUT_RCTTYPESI04",0xffffffff,0,1,0,
+                        (PTR_00806794,CASE_1,"BUT_RCTTYPESI04",0xffffffff,0,1,0,
                          nullptr);
     DibPut((RecoveredSourceFamily_dibcopy *)this_00->field_0194,0x82,0x56,'\x01',(byte *)puVar12);
     pbVar7 = (byte *)FUN_0070b3a0((AnonShape_GLOBAL_0081175C_57F682DD *)this_00->field_0B1B,0);
@@ -676,7 +676,7 @@ LAB_0050b386:
     uVar6 = 5;
     iVar13 = -1;
     iVar5 = -1;
-    puVar11 = (uint *)LoadResourceString(0x272d,g_module_00807618);
+    puVar11 = (uint *)LoadResourceString(0x272d,g_hINSTANCE_00807618);
     ccFntTy::WrStr(this_00->field_01B8,puVar11,iVar5,iVar13,uVar6);
     wsprintfA(&this_00->field_01E1,"%4d",*(undefined4 *)&this_00->field_0xc12);
     ccFntTy::SetSurf(this_00->field_01C4,this_00->field_0194,0,0x66,0x65,0x24,0xb);
@@ -715,7 +715,7 @@ LAB_0050b386:
     uVar6 = 5;
     iVar13 = -1;
     iVar5 = -1;
-    puVar11 = (uint *)LoadResourceString(0x272b,g_module_00807618);
+    puVar11 = (uint *)LoadResourceString(0x272b,g_hINSTANCE_00807618);
     ccFntTy::WrStr(this_00->field_01B8,puVar11,iVar5,iVar13,uVar6);
     pbVar7 = (byte *)FUN_0070b3a0((AnonShape_GLOBAL_0081175C_57F682DD *)this_00->field_02B2,1);
     DibPut((RecoveredSourceFamily_dibcopy *)this_00->field_0194,0x33,0x50,'\x01',pbVar7);
@@ -741,7 +741,7 @@ LAB_0050b386:
     uVar6 = 5;
     iVar13 = -1;
     iVar5 = -1;
-    puVar11 = (uint *)LoadResourceString(0x272c,g_module_00807618);
+    puVar11 = (uint *)LoadResourceString(0x272c,g_hINSTANCE_00807618);
     ccFntTy::WrStr(this_00->field_01B8,puVar11,iVar5,iVar13,uVar6);
     pbVar7 = (byte *)FUN_0070b3a0((AnonShape_GLOBAL_0081175C_57F682DD *)this_00->field_02B2,1);
     DibPut((RecoveredSourceFamily_dibcopy *)this_00->field_0194,0x33,0x71,'\x01',pbVar7);
@@ -851,7 +851,7 @@ cf_common_exit_0050BD93:
       uVar6 = 5;
       iVar13 = -1;
       iVar5 = -1;
-      puVar11 = (uint *)LoadResourceString(0x36c4 - (pbVar7 < (byte *)0x21),g_module_00807618);
+      puVar11 = (uint *)LoadResourceString(0x36c4 - (pbVar7 < (byte *)0x21),g_hINSTANCE_00807618);
       ccFntTy::WrTxt(this_00->field_01B8,puVar11,iVar5,iVar13,uVar6,iVar18,iVar19);
       DibPut((RecoveredSourceFamily_dibcopy *)this_00->field_0194,0x24,0x4c,'\x01',pbVar8);
       ccFntTy::EraseSufr(this_00->field_01B8);

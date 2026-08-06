@@ -38,7 +38,7 @@ int __thiscall STJellyGunC::GetMessage(STJellyGunC *this,STMessage *message)
   void *local_34;
   undefined4 local_30;
   undefined4 local_2c;
-  undefined4 local_28;
+  ushort *local_28;
   undefined4 local_24;
   undefined4 local_20;
   undefined4 local_1c;
@@ -155,7 +155,7 @@ int __thiscall STJellyGunC::GetMessage(STJellyGunC *this,STMessage *message)
               if (iVar5 == 0) {
                 puVar10 = (byte *)(&this_00->field_01D5);
                 iVar5 = STT3DSprC::LoadSequence
-                                  ((STT3DSprC *)puVar10,0xe,DAT_0080676c,"jellygun",0x1d);
+                                  ((STT3DSprC *)puVar10,0xe,PTR_0080676c,"jellygun",0x1d);
                 if (iVar5 != 0) {
                   RaiseInternalException
                             (-1,g_overwriteContext_007ED77C,"E:\\__titans\\Igor\\to_jelly.cpp"
@@ -172,7 +172,7 @@ int __thiscall STJellyGunC::GetMessage(STJellyGunC *this,STMessage *message)
                   *(undefined4 *)&this_00->field_0x25a = 0;
                   iVar5 = 0;
                 }
-                piVar12 = DAT_0080676c;
+                piVar12 = PTR_0080676c;
                 uVar7 = 0xffffffff;
                 pcVar14 = "jellygun0";
                 do {
@@ -254,18 +254,18 @@ int __thiscall STJellyGunC::GetMessage(STJellyGunC *this,STMessage *message)
           if (local_34 != nullptr) {
             iVar5 = 0;
             do {
-              piVar12 = DAT_00806774;
-              if (((iVar5 == 8) || (iVar5 == 10)) || (piVar12 = DAT_0080676c, iVar5 != 9)) {
+              piVar12 = PTR_00806774;
+              if (((iVar5 == 8) || (iVar5 == 10)) || (piVar12 = PTR_0080676c, iVar5 != 9)) {
                 *(int **)((int)local_34 + iVar5 * 4) = piVar12;
               }
               else {
-                STField<undefined4>(local_34,0x24) = DAT_00806764;
+                STField<int *>(local_34,0x24) = PTR_00806764;
               }
               iVar5 = iVar5 + 1;
             } while (iVar5 < 0x11);
             local_30 = 0;
             local_2c = 0;
-            local_28 = DAT_008073cc;
+            local_28 = PTR_008073cc;
             local_24 = 0;
             local_20 = 0;
             local_1c = 0;

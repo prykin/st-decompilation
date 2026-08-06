@@ -20,28 +20,28 @@ void __thiscall STAppC::CloseGameDBs(STAppC *this)
   g_currentExceptionFrame = &local_48;
   errorCode = Library::MSVCRT::__setjmp3(local_48.jumpBuffer,0);
   if (errorCode == 0) {
-    if (DAT_0080678c != 0) {
-      FUN_0070a300(&DAT_0080678c);
+    if (PTR_0080678c != nullptr) {
+      FUN_0070a300((int *)&PTR_0080678c);
     }
     cMf32::delete(DAT_00806788);
     DAT_00806788 = nullptr;
-    if (DAT_00806794 != 0) {
-      FUN_0070a300(&DAT_00806794);
+    if (PTR_00806794 != nullptr) {
+      FUN_0070a300((int *)&PTR_00806794);
     }
     cMf32::delete(g_cMf32_00806790);
     g_cMf32_00806790 = nullptr;
-    if (DAT_0080677c != 0) {
-      FUN_0070a300(&DAT_0080677c);
+    if (PTR_0080677c != nullptr) {
+      FUN_0070a300((int *)&PTR_0080677c);
     }
     cMf32::delete(DAT_00806778);
     DAT_00806778 = nullptr;
-    if (DAT_00806774 != 0) {
-      FUN_0070a300(&DAT_00806774);
+    if (PTR_00806774 != nullptr) {
+      FUN_0070a300((int *)&PTR_00806774);
     }
     cMf32::delete(PTR_00806770);
     PTR_00806770 = nullptr;
-    if (DAT_0080676c != 0) {
-      FUN_0070a300(&DAT_0080676c);
+    if (PTR_0080676c != nullptr) {
+      FUN_0070a300((int *)&PTR_0080676c);
     }
     cMf32::delete(DAT_00806768);
     DAT_00806768 = nullptr;

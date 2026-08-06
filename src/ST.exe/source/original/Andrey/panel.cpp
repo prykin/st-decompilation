@@ -2,7 +2,7 @@
 // Generated translation unit: source/original/Andrey/panel.cpp
 
 // 005381B0 PanelTy::InitPanel
-#line 1 "decomp/ST.exe/functions/005381B0/decomp.c"
+#line 4 "decomp/ST.exe/functions/005381B0/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\Andrey\panel.cpp
    PanelTy::InitPanel */
@@ -73,7 +73,7 @@ void __thiscall st::fn_005381B0(PanelTy *this)
 }
 
 // 00538390 PanelTy::DonePanel
-#line 1 "decomp/ST.exe/functions/00538390/decomp.c"
+#line 4 "decomp/ST.exe/functions/00538390/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\Andrey\panel.cpp
    PanelTy::DonePanel */
@@ -118,7 +118,7 @@ void __thiscall st::fn_00538390(PanelTy *this)
 }
 
 // 005384A0 PanelTy::GetMessage
-#line 1 "decomp/ST.exe/functions/005384A0/decomp.c"
+#line 4 "decomp/ST.exe/functions/005384A0/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\Andrey\panel.cpp
    PanelTy::GetMessage
@@ -173,7 +173,7 @@ int __thiscall st::fn_005384A0(PanelTy *this,STMessage *message)
 }
 
 // 005385C0 UPanelTy::OutProc
-#line 1 "decomp/ST.exe/functions/005385C0/decomp.c"
+#line 4 "decomp/ST.exe/functions/005385C0/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\Andrey\panel.cpp
    UPanelTy::OutProc */
@@ -206,7 +206,7 @@ st::fn_005385C0(UPanelTy *this,int *param_1,undefined4 param_2,undefined4 param_
 }
 
 // 00538690 PanelTy::CreateBut
-#line 1 "decomp/ST.exe/functions/00538690/decomp.c"
+#line 4 "decomp/ST.exe/functions/00538690/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\Andrey\panel.cpp
    PanelTy::CreateBut
@@ -339,7 +339,7 @@ st::fn_00538690(PanelTy *this,undefined4 param_1,int param_2,int param_3,int par
 }
 
 // 005389E0 PanelTy::PaintBut
-#line 1 "decomp/ST.exe/functions/005389E0/decomp.c"
+#line 4 "decomp/ST.exe/functions/005389E0/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\Andrey\panel.cpp
    PanelTy::PaintBut */
@@ -416,7 +416,7 @@ LAB_00538a14:
 }
 
 // 00538BA0 PanelTy::PaintTxtBut
-#line 1 "decomp/ST.exe/functions/00538BA0/decomp.c"
+#line 4 "decomp/ST.exe/functions/00538BA0/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\Andrey\panel.cpp
    PanelTy::PaintTxtBut
@@ -484,7 +484,7 @@ LAB_00538bd9:
       uVar4 = (*(code *)param_6)(param_1);
       iVar5 = -1;
       iVar3 = -2;
-      resourceString = (uint *)st::fn_006B0140(param_5,g_module_00807618);
+      resourceString = (uint *)st::fn_006B0140(param_5,g_hINSTANCE_00807618);
       st::fn_007119C0(param_4,resourceString,iVar3,iVar5,uVar4);
       st::fn_006B3640
                 ((int *)g_ddxContext_008075A8,pPVar2->field_0060,0xffffffff,pPVar2->field_003C,
@@ -504,7 +504,7 @@ LAB_00538bd9:
 }
 
 // 00538DB0 PanelTy::PaintIBut
-#line 1 "decomp/ST.exe/functions/00538DB0/decomp.c"
+#line 4 "decomp/ST.exe/functions/00538DB0/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\Andrey\panel.cpp
    PanelTy::PaintIBut */
@@ -576,7 +576,7 @@ LAB_00538de2:
   bVar6 = (byte)errorCode;
   text = st::fn_006F2C00(param_2,1,uVar3);
   puVar4 = st::fn_00709AF0
-                     (DAT_00806794,CASE_1,text,uVar5,bVar6,iVar7,(int)puVar8,puVar10);
+                     (PTR_00806794,CASE_1,text,uVar5,bVar6,iVar7,(int)puVar8,puVar10);
   uVar5 = local_c;
   st::fn_00403229((RecoveredSourceFamily_dibcopy *)pPVar2->field_0068,local_8,local_c,'\x01',(byte *)puVar4);
   st::fn_00710A90(g_interSystem_00802A28->field_0024,pPVar2->field_0068,0,local_8,uVar5,
@@ -584,7 +584,7 @@ LAB_00538de2:
   uVar5 = st::fn_00401E88((int)param_1);
   iVar9 = -1;
   iVar7 = -2;
-  resourceString = (uint *)st::fn_006B0140(param_3,g_module_00807618);
+  resourceString = (uint *)st::fn_006B0140(param_3,g_hINSTANCE_00807618);
   st::fn_007119C0(g_interSystem_00802A28->field_0024,resourceString,iVar7,iVar9,uVar5);
   st::fn_006B3640
             ((int *)g_ddxContext_008075A8,pPVar2->field_0060,0xffffffff,pPVar2->field_003C,
@@ -594,7 +594,7 @@ LAB_00538de2:
 }
 
 // 00538FC0 PanelTy::PaintLBut
-#line 1 "decomp/ST.exe/functions/00538FC0/decomp.c"
+#line 4 "decomp/ST.exe/functions/00538FC0/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\Andrey\panel.cpp
    PanelTy::PaintLBut */

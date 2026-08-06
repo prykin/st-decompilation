@@ -88,7 +88,7 @@ MMsgTy::SetMessage(MMsgTy *this,UINT param_1,char param_2,undefined4 *param_3,un
         cVar13 = CASE_FFFFFFFE;
         iVar8 = 0x39;
         iVar3 = 0x158;
-        puVar7 = (uint *)LoadResourceString(param_1,g_module_00807618);
+        puVar7 = (uint *)LoadResourceString(param_1,g_hINSTANCE_00807618);
         puVar6 = ccFntTy::CreateTypeSSpr
                            (g_startSystem_0081176C->field_0030,puVar7,iVar3,iVar8,cVar13,uVar10,
                             iVar12,iVar14,iVar15);
@@ -96,8 +96,8 @@ MMsgTy::SetMessage(MMsgTy *this,UINT param_1,char param_2,undefined4 *param_3,un
         (**(code **)(local_10 + 8))(puVar6,uVar17,uVar18);
       }
       else {
-        pcVar4 = LoadResourceString(param_7,g_module_00807618);
-        pcVar5 = LoadResourceString(param_1,g_module_00807618);
+        pcVar4 = LoadResourceString(param_7,g_hINSTANCE_00807618);
+        pcVar5 = LoadResourceString(param_1,g_hINSTANCE_00807618);
         wsprintfA((LPSTR)local_478,"%s\n(%s=%li)",pcVar5,pcVar4,param_6);
         iVar3 = this_00->field_1D88;
         uVar18 = 0xffffffff;
@@ -149,7 +149,7 @@ MMsgTy::SetMessage(MMsgTy *this,UINT param_1,char param_2,undefined4 *param_3,un
         cVar13 = CASE_FFFFFFFE;
         iVar12 = 0x1e;
         iVar8 = 0x7d;
-        puVar7 = (uint *)LoadResourceString(this_00->field_04B2,g_module_00807618);
+        puVar7 = (uint *)LoadResourceString(this_00->field_04B2,g_hINSTANCE_00807618);
         puVar6 = ccFntTy::CreateTypeSSpr
                            (g_startSystem_0081176C->field_0030,puVar7,iVar8,iVar12,cVar13,uVar10,
                             iVar14,iVar15,iVar16);
@@ -187,7 +187,7 @@ MMsgTy::SetMessage(MMsgTy *this,UINT param_1,char param_2,undefined4 *param_3,un
           cVar13 = CASE_FFFFFFFE;
           iVar12 = 0x1e;
           iVar8 = 0x7d;
-          puVar7 = (uint *)LoadResourceString(this_00->field_04B2,g_module_00807618);
+          puVar7 = (uint *)LoadResourceString(this_00->field_04B2,g_hINSTANCE_00807618);
           puVar6 = ccFntTy::CreateTypeSSpr
                              (g_startSystem_0081176C->field_0030,puVar7,iVar8,iVar12,cVar13,uVar10,
                               iVar14,iVar15,iVar16);
@@ -228,7 +228,7 @@ MMsgTy::SetMessage(MMsgTy *this,UINT param_1,char param_2,undefined4 *param_3,un
           cVar13 = CASE_FFFFFFFE;
           iVar12 = 0x1e;
           iVar8 = 0x7d;
-          puVar7 = (uint *)LoadResourceString(this_00->field_06AD,g_module_00807618);
+          puVar7 = (uint *)LoadResourceString(this_00->field_06AD,g_hINSTANCE_00807618);
           puVar6 = ccFntTy::CreateTypeSSpr
                              (g_startSystem_0081176C->field_0030,puVar7,iVar8,iVar12,cVar13,uVar10,
                               iVar14,iVar15,iVar16);
@@ -263,7 +263,7 @@ MMsgTy::SetMessage(MMsgTy *this,UINT param_1,char param_2,undefined4 *param_3,un
           cVar13 = CASE_FFFFFFFE;
           iVar12 = 0x1e;
           iVar8 = 0x7d;
-          puVar7 = (uint *)LoadResourceString(this_00->field_04B2,g_module_00807618);
+          puVar7 = (uint *)LoadResourceString(this_00->field_04B2,g_hINSTANCE_00807618);
           puVar6 = ccFntTy::CreateTypeSSpr
                              (g_startSystem_0081176C->field_0030,puVar7,iVar8,iVar12,cVar13,uVar10,
                               iVar14,iVar15,iVar16);
@@ -299,7 +299,7 @@ MMsgTy::SetMessage(MMsgTy *this,UINT param_1,char param_2,undefined4 *param_3,un
         cVar13 = CASE_FFFFFFFE;
         iVar12 = 0x1e;
         iVar8 = 0x7d;
-        puVar7 = (uint *)LoadResourceString(this_00->field_02B7,g_module_00807618);
+        puVar7 = (uint *)LoadResourceString(this_00->field_02B7,g_hINSTANCE_00807618);
         puVar6 = ccFntTy::CreateTypeSSpr
                            (g_startSystem_0081176C->field_0030,puVar7,iVar8,iVar12,cVar13,uVar10,
                             iVar14,iVar15,iVar16);

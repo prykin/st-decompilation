@@ -52,7 +52,7 @@ FUN_0055c830(void *this,Global_sub_0055C830_param_1Enum param_1,byte *param_2,un
           pbVar9 = pbVar9 + 1;
         } while (bVar1 != 0);
         if (((~uVar6 < 100) && (DAT_00807360 != '\0')) && (param_1 == CASE_2)) {
-          pcVar4 = LoadResourceString(0x259a,g_module_00807618);
+          pcVar4 = LoadResourceString(0x259a,g_hINSTANCE_00807618);
           wsprintfA(local_688,"%s %s",pbVar8,pcVar4);
 LAB_0055cf74:
           FSGSTy::AddMessage(g_fSGS_0081174C,1,&DAT_008016a0,local_688,5);
@@ -74,7 +74,7 @@ LAB_0055cf74:
           pbVar9 = pbVar9 + 1;
         } while (bVar1 != 0);
         if ((~uVar6 < 100) && (DAT_00807360 != '\0')) {
-          pcVar4 = LoadResourceString(0x259b,g_module_00807618);
+          pcVar4 = LoadResourceString(0x259b,g_hINSTANCE_00807618);
           wsprintfA(local_688,"%s %s",pbVar8,pcVar4);
           goto LAB_0055cf74;
         }
@@ -82,7 +82,7 @@ LAB_0055cf74:
       break;
     case CASE_4:
     case CASE_A:
-      pcVar3 = LoadResourceString((-(uint)(param_1 != CASE_4) & 2) + 0x2575,g_module_00807618);
+      pcVar3 = LoadResourceString((-(uint)(param_1 != CASE_4) & 2) + 0x2575,g_hINSTANCE_00807618);
       uVar6 = 0xffffffff;
       pcVar4 = pcVar3;
       do {
@@ -164,7 +164,7 @@ LAB_0055c9c5:
       }
       break;
     case CASE_6:
-      pcVar4 = LoadResourceString(0x2576,g_module_00807618);
+      pcVar4 = LoadResourceString(0x2576,g_hINSTANCE_00807618);
       pbVar8 = param_4;
       uVar6 = 0xffffffff;
       do {
@@ -184,7 +184,7 @@ LAB_0055c9c5:
       /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
       param_2 = Library::DKW::LIB::MemAlloc(~uVar6 + ~uVar7 + 4);
       if (param_2 != nullptr) {
-        pcVar4 = LoadResourceString(0x2576,g_module_00807618);
+        pcVar4 = LoadResourceString(0x2576,g_hINSTANCE_00807618);
         wsprintfA((LPSTR)param_2,"%s %s",pcVar4,pbVar8);
         if (STField<char>(this,9) != '\0') {
           thunk_FUN_0055bdd0((char *)param_2,param_5);

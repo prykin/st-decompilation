@@ -1023,8 +1023,8 @@ undefined4 __stdcall fn_00401AE1(void);
 undefined __thiscall fn_00401AE6(void * st_this, undefined4 param_1, ushort param_2);
 // 00401AEB CPanelTy::PaintCtrlBoatSI
 void __thiscall fn_00401AEB(CPanelTy * st_this);
-// 00401AF0 thunk_FUN_004f0af0
-undefined __thiscall fn_00401AF0(void * st_this, int param_1);
+// 00401AF0 BldObjPanelTy::ShiftControls
+undefined __thiscall fn_00401AF0(BldObjPanelTy * st_this, int param_1);
 // 00401AF5 thunk_FUN_004e3790
 int __thiscall fn_00401AF5(void * st_this, uint param_1, int param_2, int param_3);
 // 00401AFA STContainerC::sub_005F0D90
@@ -2391,8 +2391,8 @@ undefined4 __stdcall fn_00402905(undefined4 param_1, undefined2 * param_2, undef
 undefined __cdecl fn_0040290A(int param_1, undefined * param_2, BYTE param_3);
 // 0040290F thunk_FUN_004924a0
 void __fastcall fn_0040290F(void * param_1);
-// 00402914 thunk_FUN_004eefb0
-undefined __thiscall fn_00402914(void * st_this, int param_1);
+// 00402914 BldBoatPanelTy::ShiftControls
+undefined __thiscall fn_00402914(BldBoatPanelTy * st_this, int param_1);
 // 00402919 thunk_FUN_0052a540
 undefined4 __cdecl fn_00402919(int param_1);
 // 0040291E thunk_FUN_004b71c0
@@ -3374,7 +3374,7 @@ undefined __thiscall fn_0040333C(STBoatC * st_this, int param_1);
 // 00403341 AiBossClassTy::PrepareToSave
 byte * __thiscall fn_00403341(AiBossClassTy * st_this, uint * param_1);
 // 00403346 thunk_FUN_00680890
-undefined4 __cdecl fn_00403346(byte param_1, byte * param_2, uint param_3, undefined4 * param_4);
+undefined4 __cdecl fn_00403346(byte param_1, byte * param_2, uint param_3, undefined4 * elementSize);
 // 0040334B FSGSTy::PaintLogLogin
 undefined __thiscall fn_0040334B(FSGSTy * st_this);
 // 00403350 thunk_FUN_005547d0
@@ -5082,7 +5082,7 @@ undefined __stdcall fn_004044E4(undefined4 * param_1, char param_2);
 // 004044E9 thunk_FUN_005ebd80
 undefined4 __fastcall fn_004044E9(AnonShape_005EBD80_1A4ED01F * param_1);
 // 004044EE STT3DSprC::sub_004ACF20
-void __thiscall fn_004044EE(STT3DSprC * st_this, int param_1, int param_2);
+void __thiscall fn_004044EE(STT3DSprC * st_this, ushort * param_1, int param_2);
 // 004044F3 thunk_FUN_00449a90
 uint __stdcall fn_004044F3(char param_1, short param_2);
 // 004044F8 thunk_FUN_0060bd30
@@ -5094,7 +5094,7 @@ undefined4 __cdecl fn_00404502(short * param_1);
 // 00404507 thunk_FUN_004732d0
 int __fastcall fn_00404507(int * param_1);
 // 0040450C Library::MSVCRT::thunk_FUN_006a49c0
-undefined __cdecl fn_0040450C(undefined4 * param_1, int param_2);
+undefined __cdecl fn_0040450C(int * param_1, int param_2);
 // 00404511 AiTactClassTy::PrepareToSave
 byte * __thiscall fn_00404511(AiTactClassTy * st_this, uint * param_1);
 // 00404516 SubmarineTitans::Recovered::HiddenThis::AnonReceiver_00601500::thunk_FUN_00601500
@@ -6484,7 +6484,7 @@ uint __thiscall fn_00405371(STGroupBoatC * st_this, int param_1);
 // 00405376 thunk_FUN_00682df0
 void __stdcall fn_00405376(void);
 // 0040537B STT3DSprC::Init
-undefined4 __thiscall fn_0040537B(STT3DSprC * st_this, undefined4 param_1, uint param_2, uint param_3, STDcResourcC * param_4, uint param_5, uint param_6, uint param_7);
+undefined4 __thiscall fn_0040537B(STT3DSprC * st_this, ushort * param_1, uint param_2, uint param_3, STDcResourcC * param_4, uint param_5, uint param_6, uint param_7);
 // 00405380 thunk_FUN_004e96c0
 undefined4 __thiscall fn_00405380(void * st_this, int * param_1);
 // 00405385 CGenerate::thunk_FUN_006952b0
@@ -6639,8 +6639,8 @@ void __thiscall fn_00405510(StartSystemTy * st_this);
 undefined4 __fastcall fn_00405515(TLOBaseTy * param_1);
 // 0040551F STAllPlayersC::RestoreGObjData
 undefined __thiscall fn_0040551F(STAllPlayersC * st_this, undefined4 * param_1);
-// 00405524 SubmarineTitans::Recovered::HiddenThis::AnonReceiver_004EEFB0::thunk_FUN_005c8200
-undefined __thiscall fn_00405524(AnonReceiver_004EEFB0 * st_this);
+// 00405524 SubmarineTitans::Recovered::HiddenThis::AnonReceiver_0053F510::thunk_FUN_005c8200
+undefined __thiscall fn_00405524(AnonReceiver_0053F510 * st_this);
 // 00405529 FSGSTy::ConnectProc
 undefined __thiscall fn_00405529(FSGSTy * st_this, int param_1, int param_2);
 // 00405533 thunk_FUN_0062fe00
@@ -7346,7 +7346,7 @@ ushort * __thiscall fn_00405C9F(STManRuinC * st_this, undefined4 param_1, int pa
 // 00405CA4 STAllPlayersC::GetMessage
 int __thiscall fn_00405CA4(STAllPlayersC * st_this, STMessage * message);
 // 00405CA9 STT3DSprC::sub_004ACEF0
-void __thiscall fn_00405CA9(STT3DSprC * st_this, uint param_1);
+void __thiscall fn_00405CA9(STT3DSprC * st_this, ushort * param_1);
 // 00405CAE thunk_FUN_0067bd00
 ushort * __cdecl fn_00405CAE(DArrayTy * param_1, uint param_2);
 // 00405CB3 thunk_FUN_006511e0
@@ -9117,9 +9117,9 @@ int __thiscall fn_004ACE60(STT3DSprC *st_this,char param_1);
 // 004ACEB0 FUN_004aceb0
 int __thiscall fn_004ACEB0(void *st_this,char param_1);
 // 004ACEF0 STT3DSprC::sub_004ACEF0
-void __thiscall fn_004ACEF0(STT3DSprC *st_this,uint param_1);
+void __thiscall fn_004ACEF0(STT3DSprC *st_this,ushort *param_1);
 // 004ACF20 STT3DSprC::sub_004ACF20
-void __thiscall fn_004ACF20(STT3DSprC *st_this,int param_1,int param_2);
+void __thiscall fn_004ACF20(STT3DSprC *st_this,ushort *param_1,int param_2);
 // 004ACF50 STT3DSprC::sub_004ACF50
 int __thiscall fn_004ACF50(STT3DSprC *st_this,char param_1);
 // 004ACF90 STT3DSprC::sub_004ACF90
@@ -9138,7 +9138,7 @@ void __thiscall fn_004AD150(void *st_this,char param_1);
 void __thiscall fn_004AD1A0(void *st_this,char param_1);
 // 004AD1F0 STT3DSprC::Init
 undefined4 __thiscall
-fn_004AD1F0(STT3DSprC *st_this,undefined4 param_1,uint param_2,uint param_3,STDcResourcC *param_4,
+fn_004AD1F0(STT3DSprC *st_this,ushort *param_1,uint param_2,uint param_3,STDcResourcC *param_4,
                uint param_5,uint param_6,uint param_7);
 // 004AD310 FUN_004ad310
 void __fastcall fn_004AD310(STT3DSprC *param_1);
@@ -10458,8 +10458,8 @@ BldBoatPanelTy * __cdecl fn_004EE8E0(void);
 void __thiscall fn_004EEA40(BldBoatPanelTy *st_this);
 // 004EEF20 FUN_004eef20
 void __fastcall fn_004EEF20(AnonShape_004EEF20_59DE1DA2 *param_1);
-// 004EEFB0 FUN_004eefb0
-void __thiscall fn_004EEFB0(void *st_this,int param_1);
+// 004EEFB0 BldBoatPanelTy::ShiftControls
+void __thiscall fn_004EEFB0(BldBoatPanelTy *st_this,int param_1);
 // 004EF020 BldBoatPanelTy::Update
 void __thiscall fn_004EF020(BldBoatPanelTy *st_this);
 // 004EF140 BldBoatPanelTy::sub_004EF140
@@ -10489,8 +10489,8 @@ BldObjPanelTy * __cdecl fn_004F0460(void);
 void __thiscall fn_004F05C0(BldObjPanelTy *st_this);
 // 004F0A60 FUN_004f0a60
 void __fastcall fn_004F0A60(AnonShape_004F0A60_A5DE070F *param_1);
-// 004F0AF0 FUN_004f0af0
-void __thiscall fn_004F0AF0(void *st_this,int param_1);
+// 004F0AF0 BldObjPanelTy::ShiftControls
+void __thiscall fn_004F0AF0(BldObjPanelTy *st_this,int param_1);
 // 004F0B60 BldObjPanelTy::Update
 void __thiscall fn_004F0B60(BldObjPanelTy *st_this);
 // 004F0C80 BldObjPanelTy::sub_004F0C80
@@ -12983,10 +12983,10 @@ void __thiscall fn_005C6030(SettMapTy *st_this,char param_1);
 void __thiscall fn_005C6D40(SettMapTy *st_this);
 // 005C7800 FUN_005c7800
 void fn_005C7800(void);
-// 005C8200 SubmarineTitans::Recovered::HiddenThis::AnonReceiver_004EEFB0::FUN_005c8200
+// 005C8200 SubmarineTitans::Recovered::HiddenThis::AnonReceiver_0053F510::FUN_005c8200
 void __thiscall
 fn_005C8200
-          (AnonReceiver_004EEFB0 *st_this);
+          (AnonReceiver_0053F510 *st_this);
 // 005C87C0 SettMapTy::PaintSC
 void __thiscall fn_005C87C0(SettMapTy *st_this);
 // 005C8A40 SettMapTy::GetMessage
@@ -15970,9 +15970,9 @@ int __cdecl fn_0067ED20(byte *param_1);
 // 0067EDB0 FUN_0067edb0
 int __cdecl fn_0067EDB0(byte *param_1);
 // 0067EE40 FUN_0067ee40
-AnonNested_AnonShape_GLOBAL_00848A18_1B9B27FE_0014_B23B2AAD * __cdecl fn_0067EE40(int param_1);
+undefined4 __cdecl fn_0067EE40(int param_1);
 // 0067EE70 FUN_0067ee70
-AnonNested_AnonShape_GLOBAL_00848A1C_B6E50991_0014_BB282182 * __cdecl fn_0067EE70(int param_1);
+undefined4 __cdecl fn_0067EE70(int param_1);
 // 0067EEA0 FUN_0067eea0
 char * fn_0067EEA0(byte *param_1);
 // 0067EEE0 FUN_0067eee0
@@ -16076,7 +16076,7 @@ undefined4 * __cdecl fn_00680710(byte *param_1,uint param_2);
 // 006807D0 FUN_006807d0
 void __cdecl fn_006807D0(undefined4 *param_1);
 // 00680890 FUN_00680890
-undefined4 __cdecl fn_00680890(byte param_1,byte *param_2,uint param_3,undefined4 *param_4);
+undefined4 __cdecl fn_00680890(byte param_1,byte *param_2,uint param_3,undefined4 *elementSize);
 // 006809B0 FUN_006809b0
 void __cdecl fn_006809B0(byte *param_1,uint param_2);
 // 006809F0 FUN_006809f0
@@ -16834,7 +16834,7 @@ int * __cdecl fn_006A4910(undefined4 *param_1,uint param_2,uint param_3,char *pa
 // 006A4950 Library::MSVCRT::FUN_006a4950
 undefined __cdecl fn_006A4950(int * param_1);
 // 006A49C0 Library::MSVCRT::FUN_006a49c0
-undefined __cdecl fn_006A49C0(undefined4 * param_1, int param_2);
+undefined __cdecl fn_006A49C0(int * param_1, int param_2);
 // 006A4EF0 FUN_006a4ef0
 void __cdecl fn_006A4EF0(int param_1);
 // 006A4F20 Library::MSVCRT::FUN_006a4f20
@@ -17231,7 +17231,7 @@ int __stdcall fn_006B4680(int * param_1, int param_2, int param_3, BITMAPINFO * 
 int fn_006B48A0(int *param_1,int param_2,int param_3,BITMAPINFO *param_4,uint *param_5,uint param_6
                 );
 // 006B48E0 Library::DKW::DDX::FUN_006b48e0
-int __stdcall fn_006B48E0(int param_1, int param_2, int param_3, AnonPointee_MReportTy_0073 * param_4, int param_5, int param_6, int param_7, uint param_8, int param_9, int param_10, byte param_11, uint param_12);
+int __stdcall fn_006B48E0(int param_1, int param_2, int param_3, AnonPointee_MReportTy_0073 * param_4, int param_5, int param_6, int param_7, uint param_8, int param_9, ushort * param_10, byte param_11, uint param_12);
 // 006B4B20 FUN_006b4b20
 undefined4 fn_006B4B20(int *param_1,AnonShape_006B4B20_3D4F4412 *param_2,int param_3,byte param_4);
 // 006B4FA0 FUN_006b4fa0
@@ -17274,7 +17274,7 @@ void fn_006B5EE0(RecoveredSourceFamily_dibcopy *param_1,int param_2,int param_3,
 // 006B5F80 FUN_006b5f80
 void fn_006B5F80(int *param_1,int param_2,int param_3,int param_4,int param_5);
 // 006B6020 Library::DKW::TBL::FUN_006b6020
-uint __stdcall fn_006B6020(uint * param_1, uint param_2, char * param_3);
+uint __stdcall fn_006B6020(DArrayTy * param_1, uint param_2, char * param_3);
 // 006B60B0 FUN_006b60b0
 char * fn_006B60B0(char *param_1,char *param_2);
 // 006B6110 FUN_006b6110
@@ -18375,7 +18375,7 @@ void __thiscall fn_006DDA90(ST3DSMAPContext *st_this,float param_1,float param_2
 // 006DDAE0 ST3DSMAPContext::sub_006DDAE0
 void __thiscall
 fn_006DDAE0
-          (ST3DSMAPContext *st_this,int param_1,int param_2,int param_3,undefined4 *param_4);
+          (ST3DSMAPContext *st_this,int param_1,int param_2,int param_3,ushort *param_4);
 // 006DDB70 ST3DSMAPContext::sub_006DDB70
 void __thiscall fn_006DDB70(ST3DSMAPContext *st_this);
 // 006DDBB0 ST3DSMAPContext::sub_006DDBB0
@@ -18744,7 +18744,7 @@ void __thiscall fn_006E9720(void * st_this, uint param_1, uint param_2);
 // 006E9770 Library::Ourlib::ST3DSMAP::SprSetColorsTbl
 undefined __thiscall fn_006E9770(void * st_this, uint param_1, uint param_2);
 // 006E97C0 Library::Ourlib::ST3DSMAP::SprSetShadedColorsTbl
-undefined __thiscall fn_006E97C0(void * st_this, uint param_1, uint param_2);
+undefined __thiscall fn_006E97C0(void * st_this, uint param_1, ushort * param_2);
 // 006E9830 Library::Ourlib::ST3DSMAP::SprSetHotSpot
 void __thiscall fn_006E9830(void * st_this, uint param_1, uint param_2, uint param_3);
 // 006E98E0 ST3DSMAPContext::sub_006E98E0
@@ -18791,19 +18791,19 @@ uint __thiscall fn_006EA560(void * st_this, uint param_1, int param_2);
 byte __thiscall
 fn_006EA5E0(ST3DSMAPContext *st_this,uint param_1,int param_2,int param_3);
 // 006EA680 Library::Ourlib::ST3DSMAP::SprSetShadowTbl
-void __thiscall fn_006EA680(void * st_this, uint param_1, uint param_2);
+void __thiscall fn_006EA680(void * st_this, uint param_1, ushort * param_2);
 // 006EA6D0 ST3DSMAPContext::sub_006EA6D0
 void __thiscall
 fn_006EA6D0(ST3DSMAPContext *st_this,uint param_1,int param_2,int param_3);
 // 006EA790 Library::Ourlib::ST3DSMAP::SprSetMShadowTbl
-void __thiscall fn_006EA790(void * st_this, uint param_1, int param_2, int param_3);
+void __thiscall fn_006EA790(void * st_this, uint param_1, ushort * param_2, int param_3);
 // 006EA800 ST3DSMAPContext::sub_006EA800
 void __thiscall
 fn_006EA800(ST3DSMAPContext *st_this,uint param_1,int param_2,int param_3);
 // 006EA8A0 ST3DSMAPContext::sub_006EA8A0
 void __thiscall
 fn_006EA8A0
-          (ST3DSMAPContext *st_this,uint param_1,int param_2,uint param_3,uint param_4);
+          (ST3DSMAPContext *st_this,uint param_1,int param_2,uint param_3,ushort *param_4);
 // 006EA960 Library::Ourlib::ST3DSMAP::SprMove
 undefined __thiscall fn_006EA960(void * st_this, uint param_1, float param_2, float param_3, float param_4);
 // 006EAAA0 Library::Ourlib::ST3DSMAP::SprShow
@@ -18864,7 +18864,7 @@ undefined __cdecl fn_006EFB70(int * param_1);
 // 006EFC50 Library::Ourlib::MFSTMAP::mfTMapCreate
 undefined4 * __cdecl fn_006EFC50(int param_1, int param_2, cMf32 * param_3, int param_4, undefined1 param_5);
 // 006EFDB0 Library::Ourlib::MFSTMAP::mfTMapSave
-int __cdecl fn_006EFDB0(undefined2 * param_1, int param_2, char * text, char param_4);
+int __cdecl fn_006EFDB0(short * param_1, int param_2, char * text, char param_4);
 // 006EFF90 Library::Ourlib::MFSTMAP::mfTMapAddObj
 int __cdecl fn_006EFF90(short * param_1, int param_2, int param_3, int param_4, uint param_5, ushort param_6);
 // 006F01A0 Library::Ourlib::MFSTMAP::mfTMapDelObj
@@ -22953,4 +22953,5172 @@ undefined external_00000119(void);
 undefined external_0000011A(void);
 // EXTERNAL:0000011B
 undefined external_0000011B(void);
+}
+
+inline int AiBossClassTy::InitData(undefined4 *param_1) {
+    return st::fn_00647DC0(this, param_1);
+}
+
+inline byte * AiBossClassTy::PrepareToSave(uint *param_1) {
+    return st::fn_00647EF0(this, param_1);
+}
+
+inline void AiEventClassTy::GetMessage(STMessage *message) {
+    st::fn_00652810(this, message);
+}
+
+inline int AiEventClassTy::InitData(int *param_1) {
+    return st::fn_0064CD80(this, param_1);
+}
+
+inline undefined4 * AiEventClassTy::PrepareToSave(uint *param_1) {
+    return st::fn_0064D000(this, param_1);
+}
+
+inline int AiEventClassTy::_CreateArt(short param_1, short param_2, int param_3, int param_4, undefined4 param_5, char *param_6, char *param_7, undefined4 param_8) {
+    return st::fn_0064DB00(this, param_1, param_2, param_3, param_4, param_5, param_6, param_7, param_8);
+}
+
+inline int AiEventClassTy::_CreateDest(short param_1, short param_2, short param_3, short param_4, short param_5, char *param_6, char *param_7, undefined4 param_8) {
+    return st::fn_0064DDA0(this, param_1, param_2, param_3, param_4, param_5, param_6, param_7, param_8);
+}
+
+inline int AiEventClassTy::_CreateMine(ushort param_1, short param_2, int param_3, int param_4, undefined4 param_5, ushort param_6, char *param_7, undefined4 param_8, undefined4 param_9) {
+    return st::fn_0064DFA0(this, param_1, param_2, param_3, param_4, param_5, param_6, param_7, param_8, param_9);
+}
+
+inline int AiEventClassTy::_CreateRCCont(ushort param_1, short param_2, int param_3, int param_4, undefined4 param_5, undefined4 param_6, char *param_7, int param_8) {
+    return st::fn_0064D890(this, param_1, param_2, param_3, param_4, param_5, param_6, param_7, param_8);
+}
+
+inline int AiEventClassTy::__CreateObjPl(uint param_1, short param_2, short *param_3, short *param_4, short *param_5, uint param_6, uint param_7, char *param_8, undefined4 param_9, undefined4 param_10, int param_11, int param_12) {
+    return st::fn_0064D270(this, param_1, param_2, param_3, param_4, param_5, param_6, param_7, param_8, param_9, param_10, param_11, param_12);
+}
+
+inline int AiEventClassTy::sub_0065BD70(STMessage *message, int param_2) {
+    return st::fn_0065BD70(this, message, param_2);
+}
+
+inline int AiFltClassTy::AppendPoint(short *param_1, int param_2) {
+    return st::fn_0065F660(this, param_1, param_2);
+}
+
+inline int AiFltClassTy::AppendZone(short *param_1) {
+    return st::fn_0065F1D0(this, param_1);
+}
+
+inline int AiFltClassTy::GetAiMess(uint *param_1) {
+    return st::fn_00662240(this, param_1);
+}
+
+inline void AiFltClassTy::GoToRepair() {
+    st::fn_006618E0(this);
+}
+
+inline int AiFltClassTy::InitData(undefined4 *param_1) {
+    return st::fn_0065D2A0(this, param_1);
+}
+
+inline byte * AiFltClassTy::PrepareToSave(uint *param_1) {
+    return st::fn_0065D4B0(this, param_1);
+}
+
+inline void AiFltClassTy::_AddObjFlt(uint objPtr, int param_2) {
+    st::fn_0065D760(this, objPtr, param_2);
+}
+
+inline void AiFltClassTy::sub_0065D6A0() {
+    st::fn_0065D6A0(this);
+}
+
+inline undefined2 AiFltClassTy::sub_0065D9C0() {
+    return st::fn_0065D9C0(this);
+}
+
+inline undefined4 AiFltClassTy::sub_0065F5C0(short *param_1) {
+    return st::fn_0065F5C0(this, param_1);
+}
+
+inline void AiFltClassTy::sub_0065F980() {
+    st::fn_0065F980(this);
+}
+
+inline uint * AiFltClassTy::sub_0065FA60(int param_1, int param_2, short *param_3) {
+    return st::fn_0065FA60(this, param_1, param_2, param_3);
+}
+
+inline void AiFltClassTy::sub_00660F70(uint *param_1, undefined2 param_2) {
+    st::fn_00660F70(this, param_1, param_2);
+}
+
+inline void AiFltClassTy::sub_00661580() {
+    st::fn_00661580(this);
+}
+
+inline void AiFltClassTy::sub_00664760() {
+    st::fn_00664760(this);
+}
+
+inline int AiPlrClassTy::CloseAllTact() {
+    return st::fn_00679470(this);
+}
+
+inline int AiPlrClassTy::CloseTactByTitle(byte *param_1) {
+    return st::fn_00679300(this, param_1);
+}
+
+inline void AiPlrClassTy::ExecTech() {
+    st::fn_0067B520(this);
+}
+
+inline int AiPlrClassTy::InitData(undefined4 *param_1) {
+    return st::fn_00678980(this, param_1);
+}
+
+inline void AiPlrClassTy::Offensive() {
+    st::fn_0067C180(this);
+}
+
+inline byte * AiPlrClassTy::PrepareToSave(uint *param_1) {
+    return st::fn_00678BE0(this, param_1);
+}
+
+inline int AiPlrClassTy::SetTech(int param_1, int param_2, int param_3, char param_4) {
+    return st::fn_0067B3C0(this, param_1, param_2, param_3, param_4);
+}
+
+inline void AiPlrClassTy::sub_00678FC0() {
+    st::fn_00678FC0(this);
+}
+
+inline void AiPlrClassTy::sub_0067A020(AnonShape_0068FD00_A5257008 *param_1, int param_2) {
+    st::fn_0067A020(this, param_1, param_2);
+}
+
+inline void AiPlrClassTy::sub_0067A240(undefined *param_1, DArrayTy *param_2) {
+    st::fn_0067A240(this, param_1, param_2);
+}
+
+inline int AiPlrClassTy::sub_0067BEF0() {
+    return st::fn_0067BEF0(this);
+}
+
+inline int AiPlrClassTy::sub_0067BF30() {
+    return st::fn_0067BF30(this);
+}
+
+inline void AiPlrClassTy::sub_0067BFD0(DArrayTy *param_1, DArrayTy *param_2) {
+    st::fn_0067BFD0(this, param_1, param_2);
+}
+
+inline void AiPlrClassTy::sub_0067C110() {
+    st::fn_0067C110(this);
+}
+
+inline void AiTactClassTy::BackFromRepair(short param_1) {
+    st::fn_0068FB30(this, param_1);
+}
+
+inline void AiTactClassTy::ClaimRestore() {
+    st::fn_0068EA40(this);
+}
+
+inline void AiTactClassTy::ClaimSave() {
+    st::fn_0068E950(this);
+}
+
+inline void AiTactClassTy::ExecClaim() {
+    st::fn_0068EC70(this);
+}
+
+inline undefined4 AiTactClassTy::FUN_0068e730(int param_1) {
+    return st::fn_0068E730(this, param_1);
+}
+
+inline int AiTactClassTy::GetAiMess(AnonShape_0068FD00_A5257008 *param_1) {
+    return st::fn_0068FD00(this, param_1);
+}
+
+inline void AiTactClassTy::GiveObjByClaim(uint *param_1) {
+    st::fn_0068F020(this, param_1);
+}
+
+inline void AiTactClassTy::GiveObjByFltType(uint *param_1) {
+    st::fn_0068F360(this, param_1);
+}
+
+inline void AiTactClassTy::GiveObjByGrpNum(DArrayTy *param_1) {
+    st::fn_0068F660(this, param_1);
+}
+
+inline void AiTactClassTy::HelpOrganize(AnonShape_00690650_F810CDF4 *param_1) {
+    st::fn_00690650(this, param_1);
+}
+
+inline int AiTactClassTy::InitData(undefined4 *param_1) {
+    return st::fn_0068DC80(this, param_1);
+}
+
+inline void AiTactClassTy::InitDistrObj() {
+    st::fn_0068F7E0(this);
+}
+
+inline int AiTactClassTy::PrepareToSave(AnonShape_0068EB30_4F4B480A *param_1, short param_2) {
+    return st::fn_0068EB30(this, param_1, param_2);
+}
+
+inline byte * AiTactClassTy::PrepareToSave(uint *param_1) {
+    return st::fn_0068E050(this, param_1);
+}
+
+inline void AiTactClassTy::sub_0068E010() {
+    st::fn_0068E010(this);
+}
+
+inline int AiTactClassTy::sub_0068E290(short param_1) {
+    return st::fn_0068E290(this, param_1);
+}
+
+inline uint AiTactClassTy::sub_0068E480(short param_1) {
+    return st::fn_0068E480(this, param_1);
+}
+
+inline int AiTactClassTy::sub_0068E610(int param_1) {
+    return st::fn_0068E610(this, param_1);
+}
+
+inline void AiTactClassTy::sub_00690230(uint *param_1) {
+    st::fn_00690230(this, param_1);
+}
+
+inline void AiTactClassTy::sub_006902B0(short param_1, uint *param_2) {
+    st::fn_006902B0(this, param_1, param_2);
+}
+
+inline void AiTactClassTy::sub_00690A40() {
+    st::fn_00690A40(this);
+}
+
+inline void AiTactClassTy::sub_00690AB0() {
+    st::fn_00690AB0(this);
+}
+
+inline int AppClassTy::AddChildSystem(SystemClassTy * parentSystem, SystemClassTy * childSystem, int checkDuplicateId) {
+    return st::fn_006E4960(this, parentSystem, childSystem, checkDuplicateId);
+}
+
+inline int AppClassTy::AddDecodeMessage(undefined4 * param_1) {
+    return st::fn_006E41D0(this, param_1);
+}
+
+inline int AppClassTy::CreateObject(STObjectTypeId param_1, undefined4 param_2) {
+    return st::fn_006E3810(this, param_1, param_2);
+}
+
+inline int AppClassTy::DecodeMessage(STAppC_MainWindowProc_param_2Enum param_1, uint param_2, uint param_3) {
+    return st::fn_006E4370(this, param_1, param_2, param_3);
+}
+
+inline undefined AppClassTy::DeleteObject(int param_1) {
+    return st::fn_006E3970(this, param_1);
+}
+
+inline int AppClassTy::LifeToAllSystem(int param_1) {
+    return st::fn_006E4D70(this, param_1);
+}
+
+inline int AppClassTy::PostMessage(undefined4 * param_1) {
+    return st::fn_006E3AB0(this, param_1);
+}
+
+inline int AppClassTy::PostNextMessage(undefined4 * param_1) {
+    return st::fn_006E3B50(this, param_1);
+}
+
+inline int AppClassTy::SendMessage(uint param_1, int param_2, int param_3) {
+    return st::fn_006E3DD0(this, param_1, param_2, param_3);
+}
+
+inline int AppClassTy::SendMessageToAllChild(int param_1, int param_2) {
+    return st::fn_006E40E0(this, param_1, param_2);
+}
+
+inline int AppClassTy::SendMessageToAllSystemsInArr(int param_1, int param_2) {
+    return st::fn_006E3BF0(this, param_1, param_2);
+}
+
+inline void BehPanelTy::DoneBehPanel() {
+    st::fn_004EDDF0(this);
+}
+
+inline void BehPanelTy::InitBehPanel() {
+    st::fn_004ED630(this);
+}
+
+inline void BehPanelTy::PaintBBut(AnonShape_004EE350_18D491EA *param_1, char *param_2, byte param_3) {
+    st::fn_004EE350(this, param_1, param_2, param_3);
+}
+
+inline void BldBoatPanelTy::InitBldBoatPanel() {
+    st::fn_004EEA40(this);
+}
+
+inline void BldBoatPanelTy::PaintBldBut(AnonShape_004EF320_444F9AB1 *param_1) {
+    st::fn_004EF320(this, param_1);
+}
+
+inline void BldBoatPanelTy::sub_004EF140() {
+    st::fn_004EF140(this);
+}
+
+inline void BldLabPanelTy::InitBldLabPanel() {
+    st::fn_004EFB60(this);
+}
+
+inline void BldLabPanelTy::PaintUpdBut(AnonShape_004EF320_444F9AB1 *param_1) {
+    st::fn_004EFFE0(this, param_1);
+}
+
+inline void BldLabPanelTy::sub_004EFE20() {
+    st::fn_004EFE20(this);
+}
+
+inline void BldObjPanelTy::InitBldObjPanel() {
+    st::fn_004F05C0(this);
+}
+
+inline void BldObjPanelTy::PaintBldBut(AnonShape_004EF320_444F9AB1 *param_1) {
+    st::fn_004F0E60(this, param_1);
+}
+
+inline void BldObjPanelTy::sub_004F0C80() {
+    st::fn_004F0C80(this);
+}
+
+inline undefined4 CGenerate::CreateMap() {
+    return st::fn_006A01D0(this);
+}
+
+inline undefined4 CGenerate::CteateField(int param_1, int param_2, int param_3, int param_4, int param_5, int param_6) {
+    return st::fn_00695A60(this, param_1, param_2, param_3, param_4, param_5, param_6);
+}
+
+inline int CGenerate::FUN_006952b0(AnonShape_006952B0_7A982E30 *param_1, byte *param_2) {
+    return st::fn_006952B0(this, param_1, param_2);
+}
+
+inline int CGenerate::SaveMap() {
+    return st::fn_006A0740(this);
+}
+
+inline undefined4 CGenerate::_saveObj() {
+    return st::fn_006A0960(this);
+}
+
+inline void CGenerate::sub_006948E0(int param_1) {
+    st::fn_006948E0(this, param_1);
+}
+
+inline void CGenerate::sub_00694B90() {
+    st::fn_00694B90(this);
+}
+
+inline void CGenerate::sub_00694BE0() {
+    st::fn_00694BE0(this);
+}
+
+inline void CGenerate::sub_00694C30() {
+    st::fn_00694C30(this);
+}
+
+inline void CGenerate::sub_00694C80() {
+    st::fn_00694C80(this);
+}
+
+inline void CGenerate::sub_00694CD0(AnonShape_00694CD0_AC50FDB9 *param_1) {
+    st::fn_00694CD0(this, param_1);
+}
+
+inline uint CGenerate::sub_00695C10(uint param_1, undefined4 param_2, int param_3, undefined4 param_4, undefined4 param_5) {
+    return st::fn_00695C10(this, param_1, param_2, param_3, param_4, param_5);
+}
+
+inline void CGenerate::sub_00695EB0() {
+    st::fn_00695EB0(this);
+}
+
+inline void CGenerate::sub_00695F20() {
+    st::fn_00695F20(this);
+}
+
+inline uint CGenerate::sub_00695F70(uint param_1, int param_2, int param_3) {
+    return st::fn_00695F70(this, param_1, param_2, param_3);
+}
+
+inline int CGenerate::sub_00696400(int param_1, int param_2) {
+    return st::fn_00696400(this, param_1, param_2);
+}
+
+inline void CGenerate::sub_006964F0(uint param_1, int param_2) {
+    st::fn_006964F0(this, param_1, param_2);
+}
+
+inline void CGenerate::sub_00696740(int param_1) {
+    st::fn_00696740(this, param_1);
+}
+
+inline void CGenerate::sub_00696790() {
+    st::fn_00696790(this);
+}
+
+inline void CGenerate::sub_00696810() {
+    st::fn_00696810(this);
+}
+
+inline void CGenerate::sub_00696940(int param_1) {
+    st::fn_00696940(this, param_1);
+}
+
+inline void CGenerate::sub_00696DC0(int param_1, int param_2) {
+    st::fn_00696DC0(this, param_1, param_2);
+}
+
+inline int CGenerate::sub_006971B0() {
+    return st::fn_006971B0(this);
+}
+
+inline void CGenerate::sub_00697390() {
+    st::fn_00697390(this);
+}
+
+inline void CGenerate::sub_006975F0() {
+    st::fn_006975F0(this);
+}
+
+inline uint CGenerate::sub_006978C0() {
+    return st::fn_006978C0(this);
+}
+
+inline undefined4 CGenerate::sub_00697C50(int param_1, int param_2, int param_3) {
+    return st::fn_00697C50(this, param_1, param_2, param_3);
+}
+
+inline void CGenerate::sub_006988C0() {
+    st::fn_006988C0(this);
+}
+
+inline int CGenerate::sub_00698CA0(int param_1, int param_2, int param_3, int *param_4, int *param_5, undefined4 *param_6) {
+    return st::fn_00698CA0(this, param_1, param_2, param_3, param_4, param_5, param_6);
+}
+
+inline int CGenerate::sub_006991C0(int param_1, int param_2, int param_3, int param_4, uint param_5, int param_6, int param_7, AnonShape_006991C0_D95B9E4A *param_8) {
+    return st::fn_006991C0(this, param_1, param_2, param_3, param_4, param_5, param_6, param_7, param_8);
+}
+
+inline void CGenerate::sub_0069ADA0(int param_1, int param_2) {
+    st::fn_0069ADA0(this, param_1, param_2);
+}
+
+inline int CGenerate::sub_0069B190(int param_1, int param_2, int param_3) {
+    return st::fn_0069B190(this, param_1, param_2, param_3);
+}
+
+inline int CGenerate::sub_0069B400(int param_1, int param_2, int param_3, int param_4, int param_5) {
+    return st::fn_0069B400(this, param_1, param_2, param_3, param_4, param_5);
+}
+
+inline int CGenerate::sub_0069BDC0(int param_1, int param_2, int param_3, int param_4, int param_5, int param_6, RecoveredRecord_CGenerate_0069BDC0 *param_7) {
+    return st::fn_0069BDC0(this, param_1, param_2, param_3, param_4, param_5, param_6, param_7);
+}
+
+inline void CGenerate::sub_0069FF90() {
+    st::fn_0069FF90(this);
+}
+
+inline undefined4 CGenerate::sub_006A0150() {
+    return st::fn_006A0150(this);
+}
+
+inline void CGenerate::sub_006A0470() {
+    st::fn_006A0470(this);
+}
+
+inline void CGenerate::sub_006A09F0(byte *param_1, uint param_2) {
+    st::fn_006A09F0(this, param_1, param_2);
+}
+
+inline void CGenerate::sub_006A0E30(uint param_1, int param_2, int param_3, int param_4) {
+    st::fn_006A0E30(this, param_1, param_2, param_3, param_4);
+}
+
+inline undefined4 CPanelTy::CreateBut(byte param_1, undefined4 param_2, int param_3, int param_4, int param_5, byte param_6, char *text, undefined4 param_8, undefined4 param_9, short param_10, ushort param_11, int param_12, char *param_13, int param_14, undefined4 param_15, undefined4 param_16) {
+    return st::fn_004F3130(this, param_1, param_2, param_3, param_4, param_5, param_6, text, param_8, param_9, param_10, param_11, param_12, param_13, param_14, param_15, param_16);
+}
+
+inline void CPanelTy::DoneCPanel() {
+    st::fn_004F7800(this);
+}
+
+inline int CPanelTy::GetMessage(STMessage *message) {
+    return st::fn_004FB060(this, message);
+}
+
+inline void CPanelTy::InitCPanel() {
+    st::fn_004F5690(this);
+}
+
+inline void CPanelTy::OutProc(int param_1, undefined4 param_2, undefined4 param_3, int param_4, int param_5, undefined4 param_6, undefined4 param_7, AnonPointee_MReportTy_0073 *param_8) {
+    st::fn_004F1530(this, param_1, param_2, param_3, param_4, param_5, param_6, param_7, param_8);
+}
+
+inline void CPanelTy::OutProc(int *param_1, undefined4 param_2, undefined4 param_3, int param_4, int param_5, undefined4 param_6, undefined4 param_7, BITMAPINFO *param_8) {
+    st::fn_004F1460(this, param_1, param_2, param_3, param_4, param_5, param_6, param_7, param_8);
+}
+
+inline void CPanelTy::OutText(char *param_1, undefined4 param_2) {
+    st::fn_004F95B0(this, param_1, param_2);
+}
+
+inline void CPanelTy::OutText(int param_1, int param_2, undefined4 param_3) {
+    st::fn_004F9480(this, param_1, param_2, param_3);
+}
+
+inline void CPanelTy::OutText(int *param_1, undefined4 param_2) {
+    st::fn_004F92B0(this, param_1, param_2);
+}
+
+inline void CPanelTy::PaintArsenal() {
+    st::fn_00505960(this);
+}
+
+inline void CPanelTy::PaintBBut(byte param_1, STMessage *param_2, byte param_3, char *param_4, byte param_5) {
+    st::fn_004F37C0(this, param_1, param_2, param_3, param_4, param_5);
+}
+
+inline void CPanelTy::PaintBCapacity() {
+    st::fn_00501190(this);
+}
+
+inline void CPanelTy::PaintBEnergy() {
+    st::fn_00501000(this);
+}
+
+inline void CPanelTy::PaintBRLife(int param_1) {
+    st::fn_00501410(this, param_1);
+}
+
+inline void CPanelTy::PaintBioSonar() {
+    st::fn_00505DF0(this);
+}
+
+inline void CPanelTy::PaintBut(byte param_1, STMessage *param_2, byte param_3, char *text, undefined *param_5) {
+    st::fn_004F3540(this, param_1, param_2, param_3, text, param_5);
+}
+
+inline void CPanelTy::PaintCostsXY(int param_1, int param_2, int param_3, ushort param_4, ushort param_5, ushort param_6, ushort param_7) {
+    st::fn_004F2130(this, param_1, param_2, param_3, param_4, param_5, param_6, param_7);
+}
+
+inline void CPanelTy::PaintCostsXYSI(int param_1, ushort param_2, ushort param_3, ushort param_4, ushort param_5) {
+    st::fn_004F2350(this, param_1, param_2, param_3, param_4, param_5);
+}
+
+inline void CPanelTy::PaintCtrlBoat() {
+    st::fn_00501590(this);
+}
+
+inline void CPanelTy::PaintCtrlBoatSI() {
+    st::fn_00502990(this);
+}
+
+inline void CPanelTy::PaintCtrlObj(int param_1) {
+    st::fn_005061C0(this, param_1);
+}
+
+inline void CPanelTy::PaintCtrlObjSI() {
+    st::fn_0050A340(this);
+}
+
+inline void CPanelTy::PaintDamageXY(int param_1, int param_2, int param_3, byte param_4, UINT param_5) {
+    st::fn_004F1F60(this, param_1, param_2, param_3, param_4, param_5);
+}
+
+inline void CPanelTy::PaintDamageXY(int param_1, int param_2, uint param_3, byte param_4, UINT param_5) {
+    st::fn_004F1D90(this, param_1, param_2, param_3, param_4, param_5);
+}
+
+inline void CPanelTy::PaintDeep(int param_1) {
+    st::fn_00500520(this, param_1);
+}
+
+inline void CPanelTy::PaintEnergy(int param_1) {
+    st::fn_004FE6C0(this, param_1);
+}
+
+inline void CPanelTy::PaintIDSObj() {
+    st::fn_00504E60(this);
+}
+
+inline void CPanelTy::PaintInfoBoat() {
+    st::fn_004FE960(this);
+}
+
+inline void CPanelTy::PaintInfoObj() {
+    st::fn_004FEE10(this);
+}
+
+inline void CPanelTy::PaintLBut(byte param_1, AnonShape_004F3FE0_1578D6B9 *param_2, byte param_3, char *param_4, char *param_5, undefined *param_6) {
+    st::fn_004F3FE0(this, param_1, param_2, param_3, param_4, param_5, param_6);
+}
+
+inline void CPanelTy::PaintLife(int param_1) {
+    st::fn_004FE4F0(this, param_1);
+}
+
+inline void CPanelTy::PaintMap() {
+    st::fn_005040A0(this);
+}
+
+inline void CPanelTy::PaintMineInf(int param_1) {
+    st::fn_005044B0(this, param_1);
+}
+
+inline void CPanelTy::PaintMunition(int param_1) {
+    st::fn_00505230(this, param_1);
+}
+
+inline void CPanelTy::PaintName(int param_1) {
+    st::fn_004FE370(this, param_1);
+}
+
+inline void CPanelTy::PaintNameRes(int param_1) {
+    st::fn_00504B80(this, param_1);
+}
+
+inline void CPanelTy::PaintNameResSI() {
+    st::fn_00504CF0(this);
+}
+
+inline void CPanelTy::PaintNewDeep() {
+    st::fn_00500BD0(this);
+}
+
+inline uint CPanelTy::PaintPerRes(int param_1) {
+    return st::fn_005047C0(this, param_1);
+}
+
+inline uint CPanelTy::PaintPerResSI() {
+    return st::fn_005049A0(this);
+}
+
+inline uint CPanelTy::PaintSMap() {
+    return st::fn_004F8C80(this);
+}
+
+inline void CPanelTy::PaintTV() {
+    st::fn_004F80A0(this);
+}
+
+inline void CPanelTy::PaintTab(byte param_1, STMessage *param_2, byte param_3, char *text, char *param_5, callback_004F42A0_p6 *param_6) {
+    st::fn_004F42A0(this, param_1, param_2, param_3, text, param_5, param_6);
+}
+
+inline void CPanelTy::PaintWeap(int param_1) {
+    st::fn_004F2560(this, param_1);
+}
+
+inline void CPanelTy::PlayBrief() {
+    st::fn_004F96A0(this);
+}
+
+inline void CPanelTy::PlayBriefing(char *param_1) {
+    st::fn_004F9CD0(this, param_1);
+}
+
+inline void CPanelTy::SetButStruct(AnonShape_004F2E40_DC76A8C6 *param_1, byte param_2, undefined4 param_3, int param_4, int param_5, byte param_6, LPSTR param_7, ushort param_8, ushort param_9, undefined4 param_10, char *param_11) {
+    st::fn_004F2E40(this, param_1, param_2, param_3, param_4, param_5, param_6, param_7, param_8, param_9, param_10, param_11);
+}
+
+inline void CPanelTy::SetCmdBoat(byte param_1) {
+    st::fn_00503BB0(this, param_1);
+}
+
+inline void CPanelTy::SetCmdObj(byte param_1) {
+    st::fn_0050F430(this, param_1);
+}
+
+inline void CPanelTy::SetControlBoat() {
+    st::fn_00502360(this);
+}
+
+inline void CPanelTy::SetControlBoatSI() {
+    st::fn_00503450(this);
+}
+
+inline void CPanelTy::SetControlObj(char param_1) {
+    st::fn_005097E0(this, param_1);
+}
+
+inline void CPanelTy::SetControlObjSI(char param_1) {
+    st::fn_0050E7D0(this, param_1);
+}
+
+inline void CPanelTy::SetNewDeep(byte param_1, byte param_2) {
+    st::fn_005007A0(this, param_1, param_2);
+}
+
+inline undefined4 CPanelTy::ShiftControls(int param_1) {
+    return st::fn_004FA400(this, param_1);
+}
+
+inline void CPanelTy::ShiftControls(int param_1, int param_2) {
+    st::fn_004FA570(this, param_1, param_2);
+}
+
+inline void CPanelTy::SwitchCPanel() {
+    st::fn_004F9ED0(this);
+}
+
+inline void CPanelTy::SwitchTV(int param_1) {
+    st::fn_004FF110(this, param_1);
+}
+
+inline void CPanelTy::Update1Panel() {
+    st::fn_004FF380(this);
+}
+
+inline void CPanelTy::Update2PanelSI() {
+    st::fn_00502FC0(this);
+}
+
+inline void CPanelTy::Update2PanelWB() {
+    st::fn_00501FF0(this);
+}
+
+inline void CPanelTy::Update4PanelSI() {
+    st::fn_0050C620(this);
+}
+
+inline void CPanelTy::Update4PanelWB() {
+    st::fn_00507F60(this);
+}
+
+inline void CPanelTy::Update5Panel() {
+    st::fn_004FFE90(this);
+}
+
+inline void CPanelTy::UpdateStackPanel(uint param_1) {
+    st::fn_00504210(this, param_1);
+}
+
+inline void CPanelTy::sub_004F1610(char param_1) {
+    st::fn_004F1610(this, param_1);
+}
+
+inline void CPanelTy::sub_004F17D0(int param_1, byte param_2) {
+    st::fn_004F17D0(this, param_1, param_2);
+}
+
+inline void CPanelTy::sub_004F1950() {
+    st::fn_004F1950(this);
+}
+
+inline void CPanelTy::sub_004F4570(char param_1, int param_2, int param_3) {
+    st::fn_004F4570(this, param_1, param_2, param_3);
+}
+
+inline void CPanelTy::sub_004F8020(char param_1, int param_2) {
+    st::fn_004F8020(this, param_1, param_2);
+}
+
+inline void CPanelTy::sub_004F9120(byte param_1, char param_2, undefined4 param_3) {
+    st::fn_004F9120(this, param_1, param_2, param_3);
+}
+
+inline void CPanelTy::sub_004FA3B0() {
+    st::fn_004FA3B0(this);
+}
+
+inline void CPanelTy::sub_004FA870(CPanelTy_sub_004FA870_param_1Enum param_1) {
+    st::fn_004FA870(this, param_1);
+}
+
+inline int CPanelTy::sub_004FAB10(CPanelTy_sub_004FAB10_param_1Enum param_1) {
+    return st::fn_004FAB10(this, param_1);
+}
+
+inline void CPanelTy::sub_004FAD20() {
+    st::fn_004FAD20(this);
+}
+
+inline void CPanelTy::sub_004FAD60(uint *param_1, uint param_2) {
+    st::fn_004FAD60(this, param_1, param_2);
+}
+
+inline void CPanelTy::sub_004FAE90(uint *param_1, ushort param_2) {
+    st::fn_004FAE90(this, param_1, param_2);
+}
+
+inline void CPanelTy::sub_004FAFF0() {
+    st::fn_004FAFF0(this);
+}
+
+inline void CPanelTy::sub_00501A10() {
+    st::fn_00501A10(this);
+}
+
+inline int CPanelTy::sub_005050B0(CPanelTy_sub_005050B0_param_1Enum param_1) {
+    return st::fn_005050B0(this, param_1);
+}
+
+inline void CPanelTy::sub_00506040() {
+    st::fn_00506040(this);
+}
+
+inline void CPanelTy::sub_0052AFE0(byte param_1, float param_2, float param_3) {
+    st::fn_0052AFE0(this, param_1, param_2, param_3);
+}
+
+inline bool CPanelTy::sub_0052B330() {
+    return st::fn_0052B330(this);
+}
+
+inline void CampaignTy::AnimationCampaign() {
+    st::fn_005926E0(this);
+}
+
+inline void CampaignTy::DoneCampaign() {
+    st::fn_005916F0(this);
+}
+
+inline void CampaignTy::InitCampaign(undefined4 param_1) {
+    st::fn_00590B40(this, param_1);
+}
+
+inline void CampaignTy::LightPalette() {
+    st::fn_00592340(this);
+}
+
+inline void CampaignTy::NoneCampaign() {
+    st::fn_00591BF0(this);
+}
+
+inline void CampaignTy::PaintCampaign() {
+    st::fn_00591940(this);
+}
+
+inline void CampaignTy::sub_005925A0() {
+    st::fn_005925A0(this);
+}
+
+inline void CampaignTy::sub_00592620() {
+    st::fn_00592620(this);
+}
+
+inline void ChatGlassTy::OutChGlProc(AnonShape_GLOBAL_0080759C_9638EF10 *param_1, undefined4 param_2, undefined4 param_3, int param_4, int param_5, int param_6, int param_7, undefined4 *param_8) {
+    st::fn_005B69F0(this, param_1, param_2, param_3, param_4, param_5, param_6, param_7, param_8);
+}
+
+inline void ChooseMapTy::CreateCtrls(char param_1) {
+    st::fn_005AEAB0(this, param_1);
+}
+
+inline void ChooseMapTy::DeleteCtrls() {
+    st::fn_005AF350(this);
+}
+
+inline void ChooseMapTy::DoneChooseMap() {
+    st::fn_005ACB30(this);
+}
+
+inline void ChooseMapTy::InitChooseMap(ChooseMapTy_field_1A5FState param_1, ChooseMapTy_InitChooseMap_param_2Enum param_2) {
+    st::fn_005AB300(this, param_1, param_2);
+}
+
+inline void ChooseMapTy::NoneChooseMap() {
+    st::fn_005AD390(this);
+}
+
+inline void ChooseMapTy::PaintChooseMap(char param_1) {
+    st::fn_005AD050(this, param_1);
+}
+
+inline void ChooseMapTy::PrepFiles(uint param_1) {
+    st::fn_005AFD00(this, param_1);
+}
+
+inline void ChooseMapTy::ShowDescription(uint param_1) {
+    st::fn_005AE050(this, param_1);
+}
+
+inline void ChooseMapTy::sub_005AE840() {
+    st::fn_005AE840(this);
+}
+
+inline void ChooseMapTy::sub_005AE950() {
+    st::fn_005AE950(this);
+}
+
+inline void ChooseMapTy::sub_005B5BE0(RecoveredSourceFamily_dibcopy *param_1, int *param_2) {
+    st::fn_005B5BE0(this, param_1, param_2);
+}
+
+inline void ComboTy::DoneCombo() {
+    st::fn_005941D0(this);
+}
+
+inline int ComboTy::GetMessage(STMessage *message) {
+    return st::fn_00594440(this, message);
+}
+
+inline void ComboTy::InitCombo(undefined4 *param_1) {
+    st::fn_00593B50(this, param_1);
+}
+
+inline void ComboTy::OutBmpProc(DDXContext *param_1, undefined4 param_2, undefined4 param_3, int param_4, int param_5, undefined4 param_6, undefined4 param_7, int param_8) {
+    st::fn_005939E0(this, param_1, param_2, param_3, param_4, param_5, param_6, param_7, param_8);
+}
+
+inline int ComboTy::sub_005943F0() {
+    return st::fn_005943F0(this);
+}
+
+inline int ControlClassTy::GetMessage(STMessage * message) {
+    return st::fn_0072B780(this, message);
+}
+
+inline void CursorClassTy::AddOpticAcc() {
+    st::fn_005446C0(this);
+}
+
+inline void CursorClassTy::AddSysAcc() {
+    st::fn_005441A0(this);
+}
+
+inline void CursorClassTy::CursDrawInit(int param_1, int param_2, int param_3, int param_4) {
+    st::fn_00543FA0(this, param_1, param_2, param_3, param_4);
+}
+
+inline void CursorClassTy::DelOpticAcc() {
+    st::fn_00544800(this);
+}
+
+inline void CursorClassTy::DelSysAcc() {
+    st::fn_00544460(this);
+}
+
+inline void CursorClassTy::DoneCursor() {
+    st::fn_00543830(this);
+}
+
+inline void CursorClassTy::DrawSprite(int param_1, int param_2) {
+    st::fn_00543C90(this, param_1, param_2);
+}
+
+inline void CursorClassTy::GCGameState(int param_1) {
+    st::fn_0054AEE0(this, param_1);
+}
+
+inline int CursorClassTy::GetMessage(STMessage *message) {
+    return st::fn_005449B0(this, message);
+}
+
+inline void CursorClassTy::InitCursor(undefined4 param_1) {
+    st::fn_00543600(this, param_1);
+}
+
+inline void CursorClassTy::ReInitCursorSpr(int param_1) {
+    st::fn_00543990(this, param_1);
+}
+
+inline undefined4 CursorClassTy::SetGCType(CursorClassTy_SetGCType_param_1Enum param_1, int param_2, int param_3) {
+    return st::fn_0054BF40(this, param_1, param_2, param_3);
+}
+
+inline void CursorClassTy::SetImages(undefined4 param_1, char *text, undefined4 param_3, BITMAPINFO *param_4, uint param_5, int param_6, int param_7) {
+    st::fn_00543AD0(this, param_1, text, param_3, param_4, param_5, param_6, param_7);
+}
+
+inline void CursorClassTy::TakeCmdToRun(int param_1) {
+    st::fn_00548C40(this, param_1);
+}
+
+inline void CursorClassTy::sub_00544940() {
+    st::fn_00544940(this);
+}
+
+inline void CursorClassTy::sub_0054A8D0() {
+    st::fn_0054A8D0(this);
+}
+
+inline void CursorClassTy::sub_0054B540() {
+    st::fn_0054B540(this);
+}
+
+inline void CursorClassTy::sub_0054B630(uint param_1, undefined4 param_2) {
+    st::fn_0054B630(this, param_1, param_2);
+}
+
+inline void CursorClassTy::sub_0054B6D0() {
+    st::fn_0054B6D0(this);
+}
+
+inline void CursorClassTy::sub_0054B700(int param_1) {
+    st::fn_0054B700(this, param_1);
+}
+
+inline long CBaseRenderer::BeginFlush() {
+    return st::fn_0074A143(this);
+}
+
+inline long CBaseRenderer::EndOfStream() {
+    return st::fn_0074A113(this);
+}
+
+inline int EditorClassTy::GetMessage(STMessage * message) {
+    return st::fn_00722410(this, message);
+}
+
+inline int EditorClassTy::SendToSliders(int * param_1) {
+    return st::fn_00721BF0(this, param_1);
+}
+
+inline int EditorClassTy::_Draw(int * param_1) {
+    return st::fn_00720A50(this, param_1);
+}
+
+inline void FSGSTy::AddMessage(byte param_1, byte *param_2, char *param_3, byte param_4) {
+    st::fn_005A1F00(this, param_1, param_2, param_3, param_4);
+}
+
+inline void FSGSTy::AddPlayer(undefined4 *param_1) {
+    st::fn_005A2380(this, param_1);
+}
+
+inline void FSGSTy::ChangePlayer(byte *param_1) {
+    st::fn_005A2A60(this, param_1);
+}
+
+inline void FSGSTy::ChangePlayerPing(undefined4 param_1, int param_2, undefined4 param_3) {
+    st::fn_005A2C10(this, param_1, param_2, param_3);
+}
+
+inline void FSGSTy::ChatCtrls() {
+    st::fn_0059DB20(this);
+}
+
+inline void FSGSTy::CheckUpdate() {
+    st::fn_005A1160(this);
+}
+
+inline void FSGSTy::ConnectProc(int param_1, int param_2) {
+    st::fn_005A0DC0(this, param_1, param_2);
+}
+
+inline void FSGSTy::CreateCtrls() {
+    st::fn_0059C520(this);
+}
+
+inline void FSGSTy::CreateGame(int param_1) {
+    st::fn_005A32F0(this, param_1);
+}
+
+inline void FSGSTy::DelPlayer(byte *param_1) {
+    st::fn_005A26C0(this, param_1);
+}
+
+inline void FSGSTy::DeleteCtrls() {
+    st::fn_0059F670(this);
+}
+
+inline void FSGSTy::DoLogon() {
+    st::fn_005A0FF0(this);
+}
+
+inline void FSGSTy::DoneFSGS() {
+    st::fn_005967F0(this);
+}
+
+inline void FSGSTy::Download(undefined4 param_1, undefined4 param_2) {
+    st::fn_005A1430(this, param_1, param_2);
+}
+
+inline void FSGSTy::Finished(int param_1) {
+    st::fn_005A1630(this, param_1);
+}
+
+inline void FSGSTy::InfoCtrls() {
+    st::fn_0059D720(this);
+}
+
+inline void FSGSTy::InitFSGS(byte param_1) {
+    st::fn_00595E40(this, param_1);
+}
+
+inline void FSGSTy::JoinChannel() {
+    st::fn_005A2D70(this);
+}
+
+inline void FSGSTy::JoinGameCtrls() {
+    st::fn_0059EB00(this);
+}
+
+inline void FSGSTy::LadderCtrls() {
+    st::fn_0059F260(this);
+}
+
+inline void FSGSTy::LicCtrls() {
+    st::fn_0059D240(this);
+}
+
+inline void FSGSTy::LoginCtrls() {
+    st::fn_0059C700(this);
+}
+
+inline void FSGSTy::NewGameCtrls() {
+    st::fn_0059E7F0(this);
+}
+
+inline void FSGSTy::NewIDCtrls() {
+    st::fn_0059C9F0(this);
+}
+
+inline void FSGSTy::NoneFSGS() {
+    st::fn_00597120(this);
+}
+
+inline void FSGSTy::OutChSlProc(AnonShape_GLOBAL_0080759C_9638EF10 *param_1, undefined4 param_2, undefined4 param_3, int param_4, int param_5, int param_6, int param_7, undefined4 *param_8) {
+    st::fn_00594B90(this, param_1, param_2, param_3, param_4, param_5, param_6, param_7, param_8);
+}
+
+inline void FSGSTy::OutLadProc(int param_1, MMMObjTy *param_2, MMMObjTy *param_3, int param_4, int param_5, FSGSTy *param_6, int param_7) {
+    st::fn_005956C0(this, param_1, param_2, param_3, param_4, param_5, param_6, param_7);
+}
+
+inline void FSGSTy::OutSGlProc(AnonShape_GLOBAL_0080759C_9638EF10 *param_1, MMMObjTy *param_2, MMMObjTy *param_3, int param_4, int param_5, int param_6, int param_7, int param_8) {
+    st::fn_005952B0(this, param_1, param_2, param_3, param_4, param_5, param_6, param_7, param_8);
+}
+
+inline void FSGSTy::OutTRGlProc(AnonShape_GLOBAL_0080759C_9638EF10 *param_1, MMMObjTy *param_2, MMMObjTy *param_3, StartServTy *param_4, int param_5, int param_6, int param_7, int param_8) {
+    st::fn_00594EB0(this, param_1, param_2, param_3, param_4, param_5, param_6, param_7, param_8);
+}
+
+inline void FSGSTy::OutTRGlProc(int param_1, MMMObjTy *param_2, MMMObjTy *param_3, int param_4, int param_5, int param_6, int param_7, UINT param_8) {
+    st::fn_00594D40(this, param_1, param_2, param_3, param_4, param_5, param_6, param_7, param_8);
+}
+
+inline void FSGSTy::PaintFSGS(char param_1) {
+    st::fn_00596CC0(this, param_1);
+}
+
+inline void FSGSTy::PaintGameNew() {
+    st::fn_0059A640(this);
+}
+
+inline void FSGSTy::PaintInfo() {
+    st::fn_0059A910(this);
+}
+
+inline void FSGSTy::PaintLadder() {
+    st::fn_0059B2C0(this);
+}
+
+inline void FSGSTy::PaintLogLogin() {
+    st::fn_00599BE0(this);
+}
+
+inline void FSGSTy::PaintLogNew() {
+    st::fn_00599E90(this);
+}
+
+inline void FSGSTy::PaintLogPsw() {
+    st::fn_0059A320(this);
+}
+
+inline void FSGSTy::PrepBkgMess(char param_1) {
+    st::fn_005999C0(this, param_1);
+}
+
+inline void FSGSTy::PswCtrls() {
+    st::fn_0059CEE0(this);
+}
+
+inline void FSGSTy::SetBanner(char *param_1, undefined4 param_2, int param_3, uint param_4, undefined4 *param_5) {
+    st::fn_005A1920(this, param_1, param_2, param_3, param_4, param_5);
+}
+
+inline void FSGSTy::SetChannelList(int param_1, undefined4 *param_2) {
+    st::fn_005A2FF0(this, param_1, param_2);
+}
+
+inline void FSGSTy::SetGameList(int param_1, int *param_2) {
+    st::fn_005A3540(this, param_1, param_2);
+}
+
+inline void FSGSTy::SetInfo(byte *param_1, uint param_2, byte *param_3) {
+    st::fn_005A3AB0(this, param_1, param_2, param_3);
+}
+
+inline void FSGSTy::SetLadder(undefined4 param_1, uint param_2, int param_3, undefined4 *param_4) {
+    st::fn_005A40F0(this, param_1, param_2, param_3, param_4);
+}
+
+inline void FSGSTy::SetState(byte param_1) {
+    st::fn_00597E70(this, param_1);
+}
+
+inline void FSGSTy::sub_0059B820() {
+    st::fn_0059B820(this);
+}
+
+inline void FSGSTy::sub_0059BE50() {
+    st::fn_0059BE50(this);
+}
+
+inline void FSGSTy::sub_005A0590() {
+    st::fn_005A0590(this);
+}
+
+inline void FSGSTy::sub_005A07F0() {
+    st::fn_005A07F0(this);
+}
+
+inline void FSGSTy::sub_005A0A50() {
+    st::fn_005A0A50(this);
+}
+
+inline void FSGSTy::sub_005A0AF0() {
+    st::fn_005A0AF0(this);
+}
+
+inline void FSGSTy::sub_005A0C80() {
+    st::fn_005A0C80(this);
+}
+
+inline void FSGSTy::sub_005A39A0(ccFntTy *param_1, char *text, uint param_3, byte *param_4, int param_5, int param_6, int param_7, int param_8) {
+    st::fn_005A39A0(this, param_1, text, param_3, param_4, param_5, param_6, param_7, param_8);
+}
+
+inline void FrmPanelTy::DoneFrmPanel() {
+    st::fn_00510250(this);
+}
+
+inline void FrmPanelTy::InitFrmPanel() {
+    st::fn_0050FD60(this);
+}
+
+inline void FrmPanelTy::PaintBut(AnonShape_005105E0_BBFE3E3B *param_1, char *param_2) {
+    st::fn_005105E0(this, param_1, param_2);
+}
+
+inline void GameSystemC::sub_00577690() {
+    st::fn_00577690(this);
+}
+
+inline void HelpPanelTy::AddLinks(int *param_1, char param_2, int param_3, int param_4) {
+    st::fn_00515E30(this, param_1, param_2, param_3, param_4);
+}
+
+inline void HelpPanelTy::ArmProc(int param_1, int param_2, char param_3) {
+    st::fn_0051B5A0(this, param_1, param_2, param_3);
+}
+
+inline void HelpPanelTy::BackBut() {
+    st::fn_00513810(this);
+}
+
+inline void HelpPanelTy::BwdBut() {
+    st::fn_00514330(this);
+}
+
+inline void HelpPanelTy::ChangeTree(int *param_1, int param_2) {
+    st::fn_00513030(this, param_1, param_2);
+}
+
+inline void HelpPanelTy::CheckBkView(int param_1, ushort param_2) {
+    st::fn_00511AB0(this, param_1, param_2);
+}
+
+inline void HelpPanelTy::CreateList() {
+    st::fn_005123A0(this);
+}
+
+inline void HelpPanelTy::CreateSlider(int param_1) {
+    st::fn_00512830(this, param_1);
+}
+
+inline void HelpPanelTy::DoneHelpPanel() {
+    st::fn_00511760(this);
+}
+
+inline void HelpPanelTy::DrawDescription(int *param_1, UINT param_2) {
+    st::fn_00515C00(this, param_1, param_2);
+}
+
+inline void HelpPanelTy::DrawObj(int *param_1, STAllPlayersC_GetTOBJImage_param_2Enum *param_2, byte param_3, int param_4) {
+    st::fn_00515650(this, param_1, param_2, param_3, param_4);
+}
+
+inline void HelpPanelTy::DrawTitle(UINT param_1, int param_2, UINT param_3) {
+    st::fn_00515310(this, param_1, param_2, param_3);
+}
+
+inline undefined4 HelpPanelTy::DrawWeapon(int param_1, int *param_2, int param_3, int param_4, byte param_5) {
+    return st::fn_00515900(this, param_1, param_2, param_3, param_4, param_5);
+}
+
+inline void HelpPanelTy::FwdBut() {
+    st::fn_005145E0(this);
+}
+
+inline int HelpPanelTy::GetMessage(STMessage *message) {
+    return st::fn_0051DDD0(this, message);
+}
+
+inline void HelpPanelTy::HomeBut() {
+    st::fn_005135F0(this);
+}
+
+inline void HelpPanelTy::IndexBut() {
+    st::fn_00513A40(this);
+}
+
+inline void HelpPanelTy::InitHelpPanel() {
+    st::fn_00510E30(this);
+}
+
+inline void HelpPanelTy::LinkAct(int param_1, int param_2) {
+    st::fn_005149B0(this, param_1, param_2);
+}
+
+inline void HelpPanelTy::MObjProc() {
+    st::fn_00516300(this);
+}
+
+inline void HelpPanelTy::NatProc(int param_1, char param_2) {
+    st::fn_0051D360(this, param_1, param_2);
+}
+
+inline void HelpPanelTy::NextBut() {
+    st::fn_00513FA0(this);
+}
+
+inline void HelpPanelTy::ObjProc(int param_1, uint param_2, char param_3) {
+    st::fn_0051A100(this, param_1, param_2, param_3);
+}
+
+inline void HelpPanelTy::PrepMissObj() {
+    st::fn_00514F10(this);
+}
+
+inline void HelpPanelTy::PrevBut() {
+    st::fn_00513BC0(this);
+}
+
+inline void HelpPanelTy::PutToSHlp() {
+    st::fn_005134B0(this);
+}
+
+inline void HelpPanelTy::RCProc(int param_1, uint param_2, char param_3) {
+    st::fn_00517A50(this, param_1, param_2, param_3);
+}
+
+inline undefined4 HelpPanelTy::SetPanel(char param_1) {
+    return st::fn_00511FA0(this, param_1);
+}
+
+inline void HelpPanelTy::ShiftControls(int param_1) {
+    st::fn_00511C70(this, param_1);
+}
+
+inline void HelpPanelTy::SpecProc(int param_1, int param_2, char param_3) {
+    st::fn_0051C980(this, param_1, param_2, param_3);
+}
+
+inline void HelpPanelTy::SubProc(int param_1, char param_2) {
+    st::fn_00518C20(this, param_1, param_2);
+}
+
+inline void HelpPanelTy::SwitchOptPanel(int param_1) {
+    st::fn_00511DF0(this, param_1);
+}
+
+inline void HelpPanelTy::TTreeProc(uint param_1, char param_2) {
+    st::fn_00516480(this, param_1, param_2);
+}
+
+inline void HelpPanelTy::TechProc(uint param_1, byte param_2, char param_3) {
+    st::fn_00516A40(this, param_1, param_2, param_3);
+}
+
+inline void HelpPanelTy::TipProc(void *param_1, int param_2, char param_3) {
+    st::fn_0051D540(this, param_1, param_2, param_3);
+}
+
+inline void HelpPanelTy::sub_00512BE0(int param_1) {
+    st::fn_00512BE0(this, param_1);
+}
+
+inline void HelpPanelTy::sub_005148A0(int param_1) {
+    st::fn_005148A0(this, param_1);
+}
+
+inline void HelpPanelTy::sub_00514BC0(HelpPanelTy_sub_00514BC0_param_1Enum param_1, int param_2) {
+    st::fn_00514BC0(this, param_1, param_2);
+}
+
+inline void HelpPanelTy::sub_00515180(char param_1) {
+    st::fn_00515180(this, param_1);
+}
+
+inline void HelpPanelTy::sub_0051DA70() {
+    st::fn_0051DA70(this);
+}
+
+inline void HelpStringTy::OutStr() {
+    st::fn_0051F8F0(this);
+}
+
+inline undefined4 * HoloTy::CalcHologram(uint *param_1, uint param_2, int param_3, int param_4, byte param_5, byte param_6) {
+    return st::fn_005AA880(this, param_1, param_2, param_3, param_4, param_5, param_6);
+}
+
+inline void HoloTy::Done() {
+    st::fn_005AAFB0(this);
+}
+
+inline uint HoloTy::Init(HoloTy_Init_param_1Enum param_1, int param_2, int param_3, int param_4, int param_5, byte param_6, char param_7, uint param_8) {
+    return st::fn_005AACB0(this, param_1, param_2, param_3, param_4, param_5, param_6, param_7, param_8);
+}
+
+inline undefined4 HoloTy::NextFas() {
+    return st::fn_005AB0A0(this);
+}
+
+inline void HoloTy::OutHoloProc(uint param_1) {
+    st::fn_005AA6A0(this, param_1);
+}
+
+inline void InfocPanelTy::DoneInfocPanel() {
+    st::fn_005204D0(this);
+}
+
+inline void InfocPanelTy::InitInfocPanel() {
+    st::fn_0051FF50(this);
+}
+
+inline void InfocPanelTy::PaintInfoc() {
+    st::fn_00520D10(this);
+}
+
+inline void InfocPanelTy::PaintInfocObj(ushort param_1, ushort param_2, int param_3, int param_4) {
+    st::fn_00520B50(this, param_1, param_2, param_3, param_4);
+}
+
+inline int InputClassTy::AddAcc(uint * param_1) {
+    return st::fn_0071C1D0(this, param_1);
+}
+
+inline int InputClassTy::AddToMouse(int param_1, uint param_2) {
+    return st::fn_0071C8C0(this, param_1, param_2);
+}
+
+inline int InputClassTy::Create() {
+    return st::fn_0071B220(this);
+}
+
+inline undefined InputClassTy::DelAcc(byte * param_1) {
+    return st::fn_0071C530(this, param_1);
+}
+
+inline int InputClassTy::Done() {
+    return st::fn_0071B520(this);
+}
+
+inline int InputClassTy::GetMessage(STMessage * message) {
+    return st::fn_0071CA50(this, message);
+}
+
+inline int InputClassTy::None() {
+    return st::fn_0071B9C0(this);
+}
+
+inline undefined4 InterSystemC::CreateInterfObjects() {
+    return st::fn_005424A0(this);
+}
+
+inline void IntercomPanelTy::DoneIntercomPanel() {
+    st::fn_00521B90(this);
+}
+
+inline void IntercomPanelTy::InitIntercomPanel() {
+    st::fn_005219E0(this);
+}
+
+inline void IntercomPanelTy::PreInitIntercomPanel() {
+    st::fn_00521900(this);
+}
+
+inline void IntercomPanelTy::SwitchIntercomPanel(byte param_1) {
+    st::fn_00522D40(this, param_1);
+}
+
+inline void JumpManagC::CheckSystrm() {
+    st::fn_006178C0(this);
+}
+
+inline void JumpManagC::sub_006179D0() {
+    st::fn_006179D0(this);
+}
+
+inline byte * JumpManagC::sub_00617FB0(int *param_1) {
+    return st::fn_00617FB0(this, param_1);
+}
+
+inline int JumpManagC::sub_00618170(undefined4 *param_1) {
+    return st::fn_00618170(this, param_1);
+}
+
+inline void JumpManagC::sub_00618AD0() {
+    st::fn_00618AD0(this);
+}
+
+inline void MAdvTy::DoneMAdv() {
+    st::fn_00590410(this);
+}
+
+inline void MAdvTy::InitMAdv() {
+    st::fn_00590170(this);
+}
+
+inline void MAdvTy::NoneMAdv() {
+    st::fn_005907D0(this);
+}
+
+inline void MAdvTy::PaintMAdv() {
+    st::fn_00590580(this);
+}
+
+inline int MAdvTy::sub_00590860() {
+    return st::fn_00590860(this);
+}
+
+inline void MMMObjTy::OutBSlProc(int param_1, MMMObjTy *param_2, MMMObjTy *param_3, int param_4, int param_5, int param_6, int param_7, undefined4 *param_8) {
+    st::fn_005B68B0(this, param_1, param_2, param_3, param_4, param_5, param_6, param_7, param_8);
+}
+
+inline void MMMObjTy::OutEdProc(AnonShape_GLOBAL_0080759C_9638EF10 *param_1, undefined4 param_2, undefined4 param_3, int param_4, int param_5, int param_6, int param_7, undefined4 *param_8) {
+    st::fn_005B99F0(this, param_1, param_2, param_3, param_4, param_5, param_6, param_7, param_8);
+}
+
+inline void MMMObjTy::OutLstProc(DDXContext *param_1, MMMObjTy *param_2, MMMObjTy *param_3, int param_4, int param_5, int param_6, int param_7, int param_8) {
+    st::fn_005B9860(this, param_1, param_2, param_3, param_4, param_5, param_6, param_7, param_8);
+}
+
+inline void MMMObjTy::OutRGlProc(int param_1, MMMObjTy *param_2, MMMObjTy *param_3, int param_4, int param_5, int param_6, int param_7, undefined4 *param_8) {
+    st::fn_005B67A0(this, param_1, param_2, param_3, param_4, param_5, param_6, param_7, param_8);
+}
+
+inline void MMMObjTy::PaintSlBut(RecoveredRecord_MMMObjTy_005B6560 *param_1, int param_2, byte param_3) {
+    st::fn_005B6560(this, param_1, param_2, param_3);
+}
+
+inline undefined4 MMObjTy::CreateSprBut(undefined4 param_1, undefined4 param_2, undefined4 param_3, undefined4 param_4, undefined4 param_5, undefined4 param_6, undefined4 param_7, undefined4 param_8) {
+    return st::fn_005B5510(this, param_1, param_2, param_3, param_4, param_5, param_6, param_7, param_8);
+}
+
+inline void MMObjTy::InitSprBut(RecoveredRecord_MMObjTy_005B5240 *param_1, char *text, int param_3, int param_4, int param_5, int param_6, undefined4 param_7, undefined4 param_8, undefined4 param_9, undefined4 param_10, uint param_11, char *param_12, int param_13, int param_14, undefined4 param_15, undefined4 param_16, undefined4 param_17, UINT param_18, ccFntTy *param_19, int param_20, int param_21, int param_22, int param_23, int param_24) {
+    st::fn_005B5240(this, param_1, text, param_3, param_4, param_5, param_6, param_7, param_8, param_9, param_10, param_11, param_12, param_13, param_14, param_15, param_16, param_17, param_18, param_19, param_20, param_21, param_22, param_23, param_24);
+}
+
+inline void MMObjTy::PaintButDib(int param_1, int *param_2, int param_3, byte param_4, uint param_5) {
+    st::fn_005B5A30(this, param_1, param_2, param_3, param_4, param_5);
+}
+
+inline void MMObjTy::PaintSprBut(int param_1, uint param_2, int param_3, int param_4, int param_5) {
+    st::fn_005B5690(this, param_1, param_2, param_3, param_4, param_5);
+}
+
+inline void MMsgTy::DoneMMsg() {
+    st::fn_005B6F10(this);
+}
+
+inline void MMsgTy::FUN_005b8f40(undefined4 *param_1) {
+    st::fn_005B8F40(this, param_1);
+}
+
+inline void MMsgTy::HidePanel(int param_1, int param_2, int param_3) {
+    st::fn_005B8C70(this, param_1, param_2, param_3);
+}
+
+inline void MMsgTy::HideSprites() {
+    st::fn_005B6FF0(this);
+}
+
+inline void MMsgTy::InitMMsg() {
+    st::fn_005B6B20(this);
+}
+
+inline void MMsgTy::NoneMMsg() {
+    st::fn_005B7540(this);
+}
+
+inline void MMsgTy::PaintMMsg() {
+    st::fn_005B7340(this);
+}
+
+inline undefined4 MMsgTy::SetMessage(UINT param_1, char param_2, undefined4 *param_3, undefined4 *param_4, undefined4 *param_5, int param_6, UINT param_7) {
+    return st::fn_005B7EF0(this, param_1, param_2, param_3, param_4, param_5, param_6, param_7);
+}
+
+inline undefined4 MMsgTy::SetPanel(UINT param_1, int param_2, int param_3, UINT param_4) {
+    return st::fn_005B87D0(this, param_1, param_2, param_3, param_4);
+}
+
+inline void MMsgTy::ShowSprites() {
+    st::fn_005B7210(this);
+}
+
+inline void MMsgTy::StatePanel(int param_1) {
+    st::fn_005B9010(this, param_1);
+}
+
+inline undefined4 MReportTy::CreateBut(undefined4 param_1, undefined4 param_2, undefined4 param_3, undefined4 param_4, undefined4 param_5, undefined4 param_6, undefined4 param_7, undefined4 param_8) {
+    return st::fn_005C0980(this, param_1, param_2, param_3, param_4, param_5, param_6, param_7, param_8);
+}
+
+inline void MReportTy::DoneMReport() {
+    st::fn_005BE310(this);
+}
+
+inline void MReportTy::InitMReport(undefined1 param_1) {
+    st::fn_005BD7A0(this, param_1);
+}
+
+inline void MReportTy::NoneMReport() {
+    st::fn_005BF860(this);
+}
+
+inline void MReportTy::OutTGlProc(DDXContext *param_1, undefined4 param_2, undefined4 param_3, int param_4, int param_5, int param_6, int param_7, int param_8) {
+    st::fn_005BD4B0(this, param_1, param_2, param_3, param_4, param_5, param_6, param_7, param_8);
+}
+
+inline void MReportTy::PaintBut(STMessage *param_1, UINT param_2, int param_3, char param_4, uint *param_5) {
+    st::fn_005C0B00(this, param_1, param_2, param_3, param_4, param_5);
+}
+
+inline void MReportTy::PaintMReport(char param_1) {
+    st::fn_005BE5B0(this, param_1);
+}
+
+inline void MReportTy::PaintMainScore(int param_1, uint param_2, int param_3) {
+    st::fn_005BFD30(this, param_1, param_2, param_3);
+}
+
+inline void MReportTy::PaintObjScore(int param_1, uint param_2, int param_3, int param_4) {
+    st::fn_005BFF00(this, param_1, param_2, param_3, param_4);
+}
+
+inline void MReportTy::PaintTab(AnonShape_005C1610_B64592CA *param_1) {
+    st::fn_005C1610(this, param_1);
+}
+
+inline void MReportTy::SetCtrl() {
+    st::fn_005C0E00(this);
+}
+
+inline void MReportTy::SetCtrl(int param_1) {
+    st::fn_005C1340(this, param_1);
+}
+
+inline void MReportTy::sub_005C00D0() {
+    st::fn_005C00D0(this);
+}
+
+inline void MReportTy::sub_005C0190() {
+    st::fn_005C0190(this);
+}
+
+inline void MReportTy::sub_005C05F0() {
+    st::fn_005C05F0(this);
+}
+
+inline undefined4 MTaskTy::CreateBut(undefined4 param_1, undefined4 param_2, undefined4 param_3, undefined4 param_4, undefined4 param_5, undefined4 param_6, undefined4 param_7, undefined4 param_8) {
+    return st::fn_005E4180(this, param_1, param_2, param_3, param_4, param_5, param_6, param_7, param_8);
+}
+
+inline undefined4 * MTaskTy::CreateTextSSpr(uint *param_1, int param_2, int param_3, uint param_4, uint param_5, ccFntTy *param_6, int param_7, int param_8, int param_9) {
+    return st::fn_005E3E80(this, param_1, param_2, param_3, param_4, param_5, param_6, param_7, param_8, param_9);
+}
+
+inline void MTaskTy::DoneMTask() {
+    st::fn_005E0470(this);
+}
+
+inline int MTaskTy::GetMessage(STMessage *message) {
+    return st::fn_005E4570(this, message);
+}
+
+inline void MTaskTy::InitMTask(char param_1, undefined1 param_2) {
+    st::fn_005DFA30(this, param_1, param_2);
+}
+
+inline void MTaskTy::NoneMTask() {
+    st::fn_005E0AC0(this);
+}
+
+inline void MTaskTy::OutGlassATxtProc(int *param_1, int param_2, undefined4 param_3, int param_4, int param_5, undefined4 param_6, undefined4 param_7, DArrayTy *param_8) {
+    st::fn_005DF7C0(this, param_1, param_2, param_3, param_4, param_5, param_6, param_7, param_8);
+}
+
+inline void MTaskTy::OutGlassBmpProc(int param_1, undefined4 param_2, undefined4 param_3, int param_4, int param_5, undefined4 param_6, undefined4 param_7, int *param_8) {
+    st::fn_005DF530(this, param_1, param_2, param_3, param_4, param_5, param_6, param_7, param_8);
+}
+
+inline void MTaskTy::OutGlassTxtProc(int *param_1, int param_2, undefined4 param_3, int param_4, int param_5, undefined4 param_6, undefined4 param_7, DArrayTy *param_8) {
+    st::fn_005DF640(this, param_1, param_2, param_3, param_4, param_5, param_6, param_7, param_8);
+}
+
+inline void MTaskTy::PaintBut(int *param_1, UINT param_2, int param_3, int param_4, short param_5) {
+    st::fn_005E4300(this, param_1, param_2, param_3, param_4, param_5);
+}
+
+inline void MTaskTy::PaintMTask() {
+    st::fn_005E09E0(this);
+}
+
+inline void MTaskTy::PlayScript() {
+    st::fn_005E1330(this);
+}
+
+inline void MTaskTy::PrepareTSurf(AnonShape_005E11D0_D0F8BE03 *param_1, char param_2, char param_3) {
+    st::fn_005E11D0(this, param_1, param_2, param_3);
+}
+
+inline void MTaskTy::TTaskItemClose(AnonShape_005E10A0_819783CC *param_1) {
+    st::fn_005E10A0(this, param_1);
+}
+
+inline void MTestTy::DoneMTest() {
+    st::fn_005E5BA0(this);
+}
+
+inline void MTestTy::InitMTest() {
+    st::fn_005E58D0(this);
+}
+
+inline void MTestTy::NoneMTest() {
+    st::fn_005E5E30(this);
+}
+
+inline void MTestTy::PaintMTest() {
+    st::fn_005E5D50(this);
+}
+
+inline int MTestTy::sub_005E5F60() {
+    return st::fn_005E5F60(this);
+}
+
+inline void MainMenuTy::AnimationMainMenu() {
+    st::fn_005B48E0(this);
+}
+
+inline void MainMenuTy::DoneMainMenu() {
+    st::fn_005B2F90(this);
+}
+
+inline void MainMenuTy::InitMainMenu(char param_1) {
+    st::fn_005B2970(this, param_1);
+}
+
+inline void MainMenuTy::LightPalette() {
+    st::fn_005B3B00(this);
+}
+
+inline void MainMenuTy::NoneMainMenu() {
+    st::fn_005B3430(this);
+}
+
+inline void MainMenuTy::PaintMainMenu() {
+    st::fn_005B3160(this);
+}
+
+inline void MainMenuTy::SetMode(char param_1, int param_2) {
+    st::fn_005B3D60(this, param_1, param_2);
+}
+
+inline void MainMenuTy::sub_005B47E0() {
+    st::fn_005B47E0(this);
+}
+
+inline void MainMenuTy::sub_005B4860() {
+    st::fn_005B4860(this);
+}
+
+inline void MoneyTy::sub_0052B760(AnonShape_0052B760_30F4E0D5 *param_1) {
+    st::fn_0052B760(this, param_1);
+}
+
+inline void MoneyTy::sub_0052B8A0() {
+    st::fn_0052B8A0(this);
+}
+
+inline void MoneyTy::sub_0052B8F0() {
+    st::fn_0052B8F0(this);
+}
+
+inline void MoneyTy::sub_0052B940() {
+    st::fn_0052B940(this);
+}
+
+inline void MoneyTy::sub_0052B990() {
+    st::fn_0052B990(this);
+}
+
+inline void MoneyTy::sub_0052BBE0() {
+    st::fn_0052BBE0(this);
+}
+
+inline void MoneyTy::sub_0052BC30(uint param_1, uint param_2, uint param_3, byte param_4, byte param_5, int param_6) {
+    st::fn_0052BC30(this, param_1, param_2, param_3, param_4, param_5, param_6);
+}
+
+inline void MoneyTy::sub_0052BDA0(char param_1, int param_2) {
+    st::fn_0052BDA0(this, param_1, param_2);
+}
+
+inline undefined4 OptPanelTy::CheckFiles(byte *param_1) {
+    return st::fn_00533470(this, param_1);
+}
+
+inline undefined4 OptPanelTy::CreateSlider(int param_1, int param_2, int param_3, int param_4, undefined4 param_5, undefined4 param_6, uint param_7, int param_8) {
+    return st::fn_0052EB50(this, param_1, param_2, param_3, param_4, param_5, param_6, param_7, param_8);
+}
+
+inline void OptPanelTy::DoneOptPanel() {
+    st::fn_0052E8F0(this);
+}
+
+inline void OptPanelTy::InitOptPanel() {
+    st::fn_0052E5E0(this);
+}
+
+inline void OptPanelTy::Notification(char param_1, byte param_2) {
+    st::fn_00533A10(this, param_1, param_2);
+}
+
+inline void OptPanelTy::PaintDblBut(AnonShape_0052EFB0_CC661192 *param_1, char *param_2, UINT param_3, undefined *param_4, undefined *param_5, int param_6) {
+    st::fn_0052EFB0(this, param_1, param_2, param_3, param_4, param_5, param_6);
+}
+
+inline void OptPanelTy::PaintVolume(byte param_1, byte param_2) {
+    st::fn_0052EDF0(this, param_1, param_2);
+}
+
+inline void OptPanelTy::PreInitOptPanel() {
+    st::fn_0052E500(this);
+}
+
+inline void OptPanelTy::PrepAsses() {
+    st::fn_005325B0(this);
+}
+
+inline void OptPanelTy::PrepFiles(uint param_1) {
+    st::fn_00532D50(this, param_1);
+}
+
+inline void OptPanelTy::PrepMissObj() {
+    st::fn_00532A80(this);
+}
+
+inline void OptPanelTy::Question(char param_1) {
+    st::fn_00533880(this, param_1);
+}
+
+inline void OptPanelTy::SetOptControls() {
+    st::fn_0052FB00(this);
+}
+
+inline void OptPanelTy::ShiftControls(int param_1) {
+    st::fn_0052F900(this, param_1);
+}
+
+inline void OptPanelTy::SwitchOptPanel(char param_1) {
+    st::fn_0052F2B0(this, param_1);
+}
+
+inline void OptPanelTy::SwitchOptPanelOff() {
+    st::fn_0052F7E0(this);
+}
+
+inline void OptPanelTy::UpdateObjectives() {
+    st::fn_005380E0(this);
+}
+
+inline void OptPanelTy::sub_00532CE0() {
+    st::fn_00532CE0(this);
+}
+
+inline void OpticClassC::InitOptic() {
+    st::fn_004A8FC0(this);
+}
+
+inline void OpticClassC::ReInitOptic(int param_1) {
+    st::fn_004A9540(this, param_1);
+}
+
+inline undefined4 OpticClassC::sub_004AB070(OpticClassC_sub_004AB070_param_1Enum param_1, float param_2, int param_3, int param_4) {
+    return st::fn_004AB070(this, param_1, param_2, param_3, param_4);
+}
+
+inline undefined4 PanelTy::CreateBut(undefined4 param_1, int param_2, int param_3, int param_4, int param_5, int param_6, byte param_7, LPSTR param_8, undefined4 param_9, undefined4 param_10, short param_11, ushort param_12, undefined4 param_13, char *param_14, undefined4 param_15) {
+    return st::fn_00538690(this, param_1, param_2, param_3, param_4, param_5, param_6, param_7, param_8, param_9, param_10, param_11, param_12, param_13, param_14, param_15);
+}
+
+inline void PanelTy::DonePanel() {
+    st::fn_00538390(this);
+}
+
+inline int PanelTy::GetMessage(STMessage *message) {
+    return st::fn_005384A0(this, message);
+}
+
+inline void PanelTy::InitPanel() {
+    st::fn_005381B0(this);
+}
+
+inline void PanelTy::PaintBut(AnonShape_005389E0_C98BD548 *param_1, byte param_2, char *param_3, undefined *param_4, int param_5, int param_6) {
+    st::fn_005389E0(this, param_1, param_2, param_3, param_4, param_5, param_6);
+}
+
+inline void PanelTy::PaintIBut(AnonShape_00538DB0_574DDCD0 *param_1, char *param_2, UINT param_3, int param_4, int param_5) {
+    st::fn_00538DB0(this, param_1, param_2, param_3, param_4, param_5);
+}
+
+inline void PanelTy::PaintLBut(AnonShape_00538FC0_B5E96243 *param_1, byte param_2, char *param_3, char *param_4, undefined *param_5, int param_6, int param_7) {
+    st::fn_00538FC0(this, param_1, param_2, param_3, param_4, param_5, param_6, param_7);
+}
+
+inline void PanelTy::PaintTxtBut(AnonShape_00538BA0_C95DDA1D *param_1, byte param_2, char *param_3, ccFntTy *param_4, UINT param_5, undefined *param_6, int param_7, int param_8) {
+    st::fn_00538BA0(this, param_1, param_2, param_3, param_4, param_5, param_6, param_7, param_8);
+}
+
+inline void PausePanelTy::DonePausePanel() {
+    st::fn_00539490(this);
+}
+
+inline void PausePanelTy::InitPausePanel() {
+    st::fn_00539280(this);
+}
+
+inline void PausePanelTy::ShiftControls(int param_1) {
+    st::fn_005396E0(this, param_1);
+}
+
+inline void PausePanelTy::SwitchPausePanel(int param_1) {
+    st::fn_005395B0(this, param_1);
+}
+
+inline void PlayPanelTy::DonePlayPanel() {
+    st::fn_0053A380(this);
+}
+
+inline void PlayPanelTy::InitPlayPanel() {
+    st::fn_00539B90(this);
+}
+
+inline void PlayPanelTy::PaintPlayPanel() {
+    st::fn_0053AC00(this);
+}
+
+inline undefined4 PlayPanelTy::SetPanel(char param_1) {
+    return st::fn_0053A820(this, param_1);
+}
+
+inline void PlayPanelTy::ShiftControls(int param_1) {
+    st::fn_0053AA50(this, param_1);
+}
+
+inline void PlayPanelTy::SwitchOptPanel(int param_1) {
+    st::fn_0053A6B0(this, param_1);
+}
+
+inline void PlayPanelTy::sub_0053A540() {
+    st::fn_0053A540(this);
+}
+
+inline void PlaySystemTy::SendClientMail() {
+    st::fn_0054EC20(this);
+}
+
+inline void PopUpTy::AddStr(char *param_1, byte param_2) {
+    st::fn_0052D370(this, param_1, param_2);
+}
+
+inline void PopUpTy::ChangeNumStr() {
+    st::fn_0052D690(this);
+}
+
+inline void PopUpTy::ChangeState() {
+    st::fn_0052D980(this);
+}
+
+inline void PopUpTy::Clear() {
+    st::fn_0052DB90(this);
+}
+
+inline int PopUpTy::GetMessage(STMessage *message) {
+    return st::fn_0052DD20(this, message);
+}
+
+inline void PopUpTy::OutProc(int *param_1, int param_2, undefined4 param_3, int param_4, int param_5, undefined4 param_6, undefined4 param_7, int param_8) {
+    st::fn_0052D0A0(this, param_1, param_2, param_3, param_4, param_5, param_6, param_7, param_8);
+}
+
+inline void PopUpTy::OutStr(byte param_1) {
+    st::fn_0052D200(this, param_1);
+}
+
+inline void PrividerTy::CloseButtons(char param_1) {
+    st::fn_005BB910(this, param_1);
+}
+
+inline void PrividerTy::CreateCtrls(char param_1) {
+    st::fn_005BBA90(this, param_1);
+}
+
+inline void PrividerTy::DeleteCtrls(char param_1) {
+    st::fn_005BC050(this, param_1);
+}
+
+inline void PrividerTy::DonePrivider() {
+    st::fn_005BA560(this);
+}
+
+inline void PrividerTy::InitPrivider(char param_1, char param_2) {
+    st::fn_005B9B10(this, param_1, param_2);
+}
+
+inline void PrividerTy::NonePrivider() {
+    st::fn_005BAE00(this);
+}
+
+inline void PrividerTy::OutListProc(int *param_1, int param_2, undefined4 param_3, int param_4, int param_5, DWORD param_6, DWORD param_7, int param_8) {
+    st::fn_005B9730(this, param_1, param_2, param_3, param_4, param_5, param_6, param_7, param_8);
+}
+
+inline void PrividerTy::PaintPrivider(char param_1) {
+    st::fn_005BA8B0(this, param_1);
+}
+
+inline void PrividerTy::SetMode(char param_1, char param_2) {
+    st::fn_005BAAC0(this, param_1, param_2);
+}
+
+inline void PrividerTy::sub_005BB9F0() {
+    st::fn_005BB9F0(this);
+}
+
+inline int ProdPanelTy::CreateSlider(int param_1, int param_2, int param_3, int param_4, undefined4 param_5, int param_6, undefined4 param_7, undefined4 param_8) {
+    return st::fn_0053F940(this, param_1, param_2, param_3, param_4, param_5, param_6, param_7, param_8);
+}
+
+inline void ProdPanelTy::DoneProdPanel() {
+    st::fn_0053F220(this);
+}
+
+inline int ProdPanelTy::GetMessage(STMessage *message) {
+    return st::fn_005400F0(this, message);
+}
+
+inline void ProdPanelTy::InitProdPanel(UINT param_1, int param_2, uint param_3, int param_4, int param_5, int param_6, int param_7, int param_8, int param_9, int param_10, int param_11, int param_12, int param_13, LPSTR text) {
+    st::fn_0053EF20(this, param_1, param_2, param_3, param_4, param_5, param_6, param_7, param_8, param_9, param_10, param_11, param_12, param_13, text);
+}
+
+inline void ProdPanelTy::PaintTab(AnonShape_0053FCD0_D10A885A *param_1, undefined *param_2) {
+    st::fn_0053FCD0(this, param_1, param_2);
+}
+
+inline void ProdPanelTy::PaintTab(AnonShape_0053FEE0_A49592EB *param_1, undefined *param_2) {
+    st::fn_0053FEE0(this, param_1, param_2);
+}
+
+inline void ProdPanelTy::PreInitProdPanel() {
+    st::fn_0053EE30(this);
+}
+
+inline undefined4 ProdPanelTy::SetPanel(char param_1) {
+    return st::fn_0053F650(this, param_1);
+}
+
+inline void ProdPanelTy::ShiftControls(int param_1) {
+    st::fn_0053F780(this, param_1);
+}
+
+inline void ProdPanelTy::SwitchPanel(int param_1) {
+    st::fn_0053F3A0(this, param_1);
+}
+
+inline int RadioClassTy::GetMessage(STMessage * message) {
+    return st::fn_0071E0E0(this, message);
+}
+
+inline void ResearchPanelTy::InitResearchPanel() {
+    st::fn_0053C120(this);
+}
+
+inline void ResearchPanelTy::PaintUpdBut(AnonShape_004EF320_444F9AB1 *param_1) {
+    st::fn_0053C820(this, param_1);
+}
+
+inline void ResearchPanelTy::sub_0053C620() {
+    st::fn_0053C620(this);
+}
+
+inline void SAMPanelTy::DoneSAMPanel() {
+    st::fn_0053D1A0(this);
+}
+
+inline void SAMPanelTy::InitSAMPanel() {
+    st::fn_0053CEF0(this);
+}
+
+inline void SIDTy::CreateCtrls() {
+    st::fn_005D8450(this);
+}
+
+inline void SIDTy::DeleteCtrls() {
+    st::fn_005D8A90(this);
+}
+
+inline void SIDTy::DoneSID() {
+    st::fn_005D7F80(this);
+}
+
+inline void SIDTy::InitSID() {
+    st::fn_005D7A50(this);
+}
+
+inline void SIDTy::NoneSID() {
+    st::fn_005D81F0(this);
+}
+
+inline void SIDTy::PaintExplanation() {
+    st::fn_005D9250(this);
+}
+
+inline void SIDTy::PaintSID() {
+    st::fn_005D8160(this);
+}
+
+inline void SIDTy::PrepFiles() {
+    st::fn_005D8BF0(this);
+}
+
+inline void STAllPlayersC::ActivateTV(char param_1, int param_2, int objPtr) {
+    st::fn_0044B030(this, param_1, param_2, objPtr);
+}
+
+inline undefined4 STAllPlayersC::AddObjToTmp(char param_1, int param_2, int param_3, char param_4, uint param_5) {
+    return st::fn_0042BB30(this, param_1, param_2, param_3, param_4, param_5);
+}
+
+inline undefined4 STAllPlayersC::AddObjToTmp2(char param_1, int param_2, int param_3, int param_4, uint param_5, uint param_6) {
+    return st::fn_0042BEA0(this, param_1, param_2, param_3, param_4, param_5, param_6);
+}
+
+inline undefined4 STAllPlayersC::AddObjsToGroup(char param_1, ushort param_2, uint *groupContent, undefined2 *param_4) {
+    return st::fn_0042B7D0(this, param_1, param_2, groupContent, param_4);
+}
+
+inline undefined4 STAllPlayersC::AddObjsToTmp(uint param_1, int param_2, int param_3, DArrayTy *param_4) {
+    return st::fn_0042C1C0(this, param_1, param_2, param_3, param_4);
+}
+
+inline void STAllPlayersC::CalibrateTmp(char param_1, int param_2, int param_3, uint *param_4, int *param_5, int *param_6, int *param_7) {
+    st::fn_0044B280(this, param_1, param_2, param_3, param_4, param_5, param_6, param_7);
+}
+
+inline void STAllPlayersC::CmdToPlsObj(void *command) {
+    st::fn_00436F20(this, command);
+}
+
+inline uint STAllPlayersC::CreateBoat(undefined4 *param_1) {
+    return st::fn_004455C0(this, param_1);
+}
+
+inline void STAllPlayersC::DelObjFromSaveTmps(int param_1, char param_2, short param_3) {
+    st::fn_0042CEF0(this, param_1, param_2, param_3);
+}
+
+inline undefined4 STAllPlayersC::DelObjFromTmps(char param_1, int param_2, char param_3, uint param_4) {
+    return st::fn_0042C5F0(this, param_1, param_2, param_3, param_4);
+}
+
+inline undefined4 STAllPlayersC::DelObjsFromTmp(undefined4 param_1, uint param_2, int param_3, DArrayTy *param_4) {
+    return st::fn_0042C4B0(this, param_1, param_2, param_3, param_4);
+}
+
+inline void STAllPlayersC::DeleteGuardBoat(char param_1, short param_2, int param_3) {
+    st::fn_00446520(this, param_1, param_2, param_3);
+}
+
+inline void STAllPlayersC::DeletePGPairs(char param_1) {
+    st::fn_00446910(this, param_1);
+}
+
+inline undefined4 STAllPlayersC::DestroyObjectMsg(char param_1, uint param_2, STAllPlayersC_DestroyObjectMsg_param_3Enum param_3, undefined4 param_4) {
+    return st::fn_00449B60(this, param_1, param_2, param_3, param_4);
+}
+
+inline void STAllPlayersC::DistributeGuardBoats(char param_1) {
+    st::fn_00446F80(this, param_1);
+}
+
+inline byte * STAllPlayersC::FUN_005ec370(uint *param_1) {
+    return st::fn_005EC370(this, param_1);
+}
+
+inline int STAllPlayersC::FUN_005ec850(int *param_1) {
+    return st::fn_005EC850(this, param_1);
+}
+
+inline byte * STAllPlayersC::FUN_005fcad0(uint *param_1) {
+    return st::fn_005FCAD0(this, param_1);
+}
+
+inline byte * STAllPlayersC::FUN_00622990(uint *param_1) {
+    return st::fn_00622990(this, param_1);
+}
+
+inline int STAllPlayersC::FUN_00622ab0(undefined4 *param_1) {
+    return st::fn_00622AB0(this, param_1);
+}
+
+inline void STAllPlayersC::FramePick(uint param_1, int param_2, int param_3, int param_4, int param_5, int param_6) {
+    st::fn_004314E0(this, param_1, param_2, param_3, param_4, param_5, param_6);
+}
+
+inline undefined4 STAllPlayersC::GetActiveCenter(undefined2 *param_1, undefined2 *param_2, undefined2 *param_3) {
+    return st::fn_0042D980(this, param_1, param_2, param_3);
+}
+
+inline short STAllPlayersC::GetCursorType(Global_sub_00435B90_param_3Enum param_1, AnonShape_00435930_AC276C8C *param_2, undefined4 param_3, int *param_4) {
+    return st::fn_00435930(this, param_1, param_2, param_3, param_4);
+}
+
+inline void STAllPlayersC::GetGObjFromBox(char param_1, short param_2, short param_3, short param_4, short param_5, short param_6, short param_7, int *param_8, int *param_9, int *param_10, int *param_11) {
+    st::fn_0042B1F0(this, param_1, param_2, param_3, param_4, param_5, param_6, param_7, param_8, param_9, param_10, param_11);
+}
+
+inline void STAllPlayersC::GetGObjFromZone(char param_1, int param_2, int param_3, int param_4, int param_5, int *param_6, int *param_7) {
+    st::fn_0042AB00(this, param_1, param_2, param_3, param_4, param_5, param_6, param_7);
+}
+
+inline void STAllPlayersC::GetGObjFromZone2(char param_1, int param_2, int param_3, int param_4, int param_5, int *param_6, int *param_7, int *param_8, int *param_9, int *param_10, int *param_11, int *param_12, int *param_13, int *param_14, int *param_15, int *param_16, int *param_17) {
+    st::fn_0042ABE0(this, param_1, param_2, param_3, param_4, param_5, param_6, param_7, param_8, param_9, param_10, param_11, param_12, param_13, param_14, param_15, param_16, param_17);
+}
+
+inline STGameObjC * STAllPlayersC::GetObjPtr(char objPtr, ushort param_2, STAllPlayersC_GetObjPtr_param_3Enum param_3) {
+    return st::fn_0042B620(this, objPtr, param_2, param_3);
+}
+
+inline void STAllPlayersC::GetPanelInfo(undefined4 param_1, AnonShape_0043BEB0_1C00EC12 *param_2) {
+    st::fn_0043BEB0(this, param_1, param_2);
+}
+
+inline ushort * STAllPlayersC::GetScrObjList(int param_1, int param_2, int param_3, int param_4, int param_5, int *param_6) {
+    return st::fn_0044C720(this, param_1, param_2, param_3, param_4, param_5, param_6);
+}
+
+inline uint STAllPlayersC::GetTOBJImage(int param_1, STAllPlayersC_GetTOBJImage_param_2Enum param_2) {
+    return st::fn_0044C130(this, param_1, param_2);
+}
+
+inline uint * STAllPlayersC::GetTOBJList(char param_1, STAllPlayersC_GetTOBJList_param_2Enum param_2, int param_3, char param_4) {
+    return st::fn_0043E780(this, param_1, param_2, param_3, param_4);
+}
+
+inline uint * STAllPlayersC::GetTOBJList(char param_1, byte *param_2) {
+    return st::fn_0043F200(this, param_1, param_2);
+}
+
+inline uint * STAllPlayersC::GetTOBJListFromDArr(uint param_1, AnonShape_0043EED0_93C25F9A *param_2, STAllPlayersC_GetTOBJListFromDArr_param_3Enum param_3, int param_4, char param_5) {
+    return st::fn_0043EED0(this, param_1, param_2, param_3, param_4, param_5);
+}
+
+inline undefined4 STAllPlayersC::IsTorpLive(short param_1, int param_2) {
+    return st::fn_00430620(this, param_1, param_2);
+}
+
+inline void STAllPlayersC::OptimizeGuardBoats(char param_1) {
+    st::fn_00446AA0(this, param_1);
+}
+
+inline void STAllPlayersC::PointPick(uint *objectIds, int param_2, int param_3, int param_4) {
+    st::fn_00433E90(this, objectIds, param_2, param_3, param_4);
+}
+
+inline uint STAllPlayersC::PrepareToCmd(undefined4 *param_1, uint *param_2) {
+    return st::fn_0042DFE0(this, param_1, param_2);
+}
+
+inline void STAllPlayersC::PutOnPlaceGuardBoats(uint param_1, uint param_2, int param_3, short param_4, uint param_5, int param_6, int param_7, DArrayTy *param_8) {
+    st::fn_00448120(this, param_1, param_2, param_3, param_4, param_5, param_6, param_7, param_8);
+}
+
+inline undefined4 STAllPlayersC::RegisterArtefact(ushort param_1, void *param_2) {
+    return st::fn_00449CE0(this, param_1, param_2);
+}
+
+inline undefined4 STAllPlayersC::RegisterBlot(ushort param_1, void *param_2) {
+    return st::fn_0044A8A0(this, param_1, param_2);
+}
+
+inline undefined4 STAllPlayersC::RegisterContainer(ushort param_1, void *param_2) {
+    return st::fn_0044A5B0(this, param_1, param_2);
+}
+
+inline undefined4 STAllPlayersC::RegisterDeposit(ushort param_1, void *param_2) {
+    return st::fn_0044A2C0(this, param_1, param_2);
+}
+
+inline undefined4 STAllPlayersC::RegisterGroup(char param_1, ushort param_2, int param_3) {
+    return st::fn_0042EFD0(this, param_1, param_2, param_3);
+}
+
+inline undefined4 STAllPlayersC::RegisterMine(ushort param_1, void *param_2) {
+    return st::fn_00449FD0(this, param_1, param_2);
+}
+
+inline undefined4 STAllPlayersC::RegisterObject(char param_1, uint param_2, uint param_3, int *param_4, int param_5, int param_6) {
+    return st::fn_0042E210(this, param_1, param_2, param_3, param_4, param_5, param_6);
+}
+
+inline void STAllPlayersC::RegisterPGPair(uint param_1, uint *param_2, uint *param_3) {
+    st::fn_00445A40(this, param_1, param_2, param_3);
+}
+
+inline undefined4 STAllPlayersC::RegisterTorpedo(int param_1, short param_2) {
+    return st::fn_00430470(this, param_1, param_2);
+}
+
+inline void STAllPlayersC::ReplaceObject(char param_1, undefined4 param_2, undefined4 param_3) {
+    st::fn_004354E0(this, param_1, param_2, param_3);
+}
+
+inline void STAllPlayersC::ResetActivityFromObjs(uint param_1, int param_2, DArrayTy *param_3, uint param_4, int param_5) {
+    st::fn_0042D190(this, param_1, param_2, param_3, param_4, param_5);
+}
+
+inline void STAllPlayersC::ResetActivityFromTmp(char param_1, int param_2, int param_3, int param_4) {
+    st::fn_0042D4F0(this, param_1, param_2, param_3, param_4);
+}
+
+inline void STAllPlayersC::RestoreGObjData(undefined4 *param_1) {
+    st::fn_00422210(this, param_1);
+}
+
+inline void STAllPlayersC::RestoreTmp(int param_1) {
+    st::fn_00439100(this, param_1);
+}
+
+inline byte * STAllPlayersC::SaveAllPlData(int *param_1) {
+    return st::fn_00443F30(this, param_1);
+}
+
+inline undefined4 * STAllPlayersC::SaveGObjData(int *param_1) {
+    return st::fn_004210E0(this, param_1);
+}
+
+inline void STAllPlayersC::SaveTmp(int param_1) {
+    st::fn_00438E30(this, param_1);
+}
+
+inline void STAllPlayersC::SelectObjects(STAllPlayersC_SelectObjects_param_1Enum param_1, uint param_2, uint param_3) {
+    st::fn_0044B5F0(this, param_1, param_2, param_3);
+}
+
+inline void STAllPlayersC::SelfCheckObjControl() {
+    st::fn_00435060(this);
+}
+
+inline void STAllPlayersC::SetActivePanel(uint *param_1, int param_2, int param_3) {
+    st::fn_0043AE40(this, param_1, param_2, param_3);
+}
+
+inline void STAllPlayersC::SetActivityToObjs(uint param_1, int param_2, DArrayTy *param_3, uint param_4) {
+    st::fn_0042D370(this, param_1, param_2, param_3, param_4);
+}
+
+inline undefined4 STAllPlayersC::UnRegisterArtefact(uint param_1, AnonShape_00449E60_F2069C78 *param_2) {
+    return st::fn_00449E60(this, param_1, param_2);
+}
+
+inline undefined4 STAllPlayersC::UnRegisterBlot(uint param_1, AnonShape_0044AA20_1EE9340C *param_2) {
+    return st::fn_0044AA20(this, param_1, param_2);
+}
+
+inline undefined4 STAllPlayersC::UnRegisterContainer(uint param_1, AnonShape_0044A730_DBE673B2 *param_2) {
+    return st::fn_0044A730(this, param_1, param_2);
+}
+
+inline undefined4 STAllPlayersC::UnRegisterDeposit(uint param_1, STResourceC *param_2) {
+    return st::fn_0044A440(this, param_1, param_2);
+}
+
+inline undefined4 STAllPlayersC::UnRegisterGroup(char param_1, ushort param_2, int param_3) {
+    return st::fn_0042F140(this, param_1, param_2, param_3);
+}
+
+inline undefined4 STAllPlayersC::UnRegisterMine(uint param_1, uint param_2, STMineSetC *param_3) {
+    return st::fn_0044A150(this, param_1, param_2, param_3);
+}
+
+inline undefined4 STAllPlayersC::UnRegisterObject(char param_1, uint param_2, uint param_3, int *param_4, int param_5) {
+    return st::fn_0042F2B0(this, param_1, param_2, param_3, param_4, param_5);
+}
+
+inline undefined4 STAllPlayersC::UnRegisterTorpedo(short param_1, int param_2) {
+    return st::fn_00430960(this, param_1, param_2);
+}
+
+inline undefined4 STAllPlayersC::_AddMDPairs(char param_1, uint param_2) {
+    return st::fn_00442300(this, param_1, param_2);
+}
+
+inline uint * STAllPlayersC::_AssignDocks(char param_1, DArrayTy *param_2, DArrayTy *param_3) {
+    return st::fn_00440AA0(this, param_1, param_2, param_3);
+}
+
+inline uint * STAllPlayersC::_AssignMDPairs(char param_1, int param_2, DArrayTy *param_3, DArrayTy *param_4, DArrayTy *param_5) {
+    return st::fn_00442E50(this, param_1, param_2, param_3, param_4, param_5);
+}
+
+inline int STAllPlayersC::_ChangeMD(int param_1, int *param_2, uint param_3) {
+    return st::fn_00440860(this, param_1, param_2, param_3);
+}
+
+inline undefined4 STAllPlayersC::_DeleteGuardBoat(char param_1, short param_2, int param_3) {
+    return st::fn_004461B0(this, param_1, param_2, param_3);
+}
+
+inline void STAllPlayersC::_MakeMDPairs(char param_1) {
+    st::fn_00441CE0(this, param_1);
+}
+
+inline void STAllPlayersC::sub_004DB160(int param_1, undefined4 param_2, int *param_3, int *param_4, int *param_5, int *param_6) {
+    st::fn_004DB160(this, param_1, param_2, param_3, param_4, param_5, param_6);
+}
+
+inline undefined4 STAllPlayersC::sub_004EB010(int param_1) {
+    return st::fn_004EB010(this, param_1);
+}
+
+inline void STAppC::ChangeResolution(int param_1) {
+    st::fn_0056D740(this, param_1);
+}
+
+inline void STAppC::CloseGameDBs() {
+    st::fn_0056D580(this);
+}
+
+inline LRESULT STAppC::MainWindowProc(HWND hWnd, STAppC_MainWindowProc_param_2Enum param_2, uint param_3, uint param_4) {
+    return st::fn_0056CBD0(this, hWnd, param_2, param_3, param_4);
+}
+
+inline void STAppC::OpenGameDBs() {
+    st::fn_0056D370(this);
+}
+
+inline void STAppC::ReadCmdPlay(int param_1) {
+    st::fn_00571400(this, param_1);
+}
+
+inline void STAppC::StartGame() {
+    st::fn_0056DB80(this);
+}
+
+inline undefined4 STAppC::sub_0056E9E0(int param_1) {
+    return st::fn_0056E9E0(this, param_1);
+}
+
+inline void STAppC::sub_0056EBE0() {
+    st::fn_0056EBE0(this);
+}
+
+inline void STAppC::sub_0056EE90() {
+    st::fn_0056EE90(this);
+}
+
+inline void STAppC::sub_0056EF50() {
+    st::fn_0056EF50(this);
+}
+
+inline void STAppC::sub_0056F040() {
+    st::fn_0056F040(this);
+}
+
+inline undefined4 STAppC::sub_006E5150(STMessage *param_1) {
+    return st::fn_006E5150(this, param_1);
+}
+
+inline DWORD STAppC::sub_006E51B0() {
+    return st::fn_006E51B0(this);
+}
+
+inline void STArtiafactC::sub_005EBCB0() {
+    st::fn_005EBCB0(this);
+}
+
+inline void STArtiafactC::sub_005F0D00() {
+    st::fn_005F0D00(this);
+}
+
+inline void STBHEShellC::sub_005F3470() {
+    st::fn_005F3470(this);
+}
+
+inline void STBHEShellC::sub_005F34B0() {
+    st::fn_005F34B0(this);
+}
+
+inline undefined4 STBHEShellC::sub_005F35F0(int param_1) {
+    return st::fn_005F35F0(this, param_1);
+}
+
+inline undefined4 STBHEShellC::sub_005F3BF0(int param_1, int param_2, undefined4 param_3, char param_4) {
+    return st::fn_005F3BF0(this, param_1, param_2, param_3, param_4);
+}
+
+inline uint STBHEShellC::sub_005F4370(int *param_1, int *param_2, int *param_3, int param_4) {
+    return st::fn_005F4370(this, param_1, param_2, param_3, param_4);
+}
+
+inline void STBHEShellC::sub_005F4680() {
+    st::fn_005F4680(this);
+}
+
+inline undefined4 STBHEShellC::sub_005F4C50(float param_1, int param_2, int param_3, int param_4, int param_5, int param_6) {
+    return st::fn_005F4C50(this, param_1, param_2, param_3, param_4, param_5, param_6);
+}
+
+inline int STBHEShellC::sub_005F4FA0() {
+    return st::fn_005F4FA0(this);
+}
+
+inline void STBHEShellC::sub_005F53A0() {
+    st::fn_005F53A0(this);
+}
+
+inline int STBHEShellC::sub_005F5700(int param_1, int param_2) {
+    return st::fn_005F5700(this, param_1, param_2);
+}
+
+inline byte * STBHEShellC::sub_005F5A90(int *param_1) {
+    return st::fn_005F5A90(this, param_1);
+}
+
+inline int STBHEShellC::sub_005F5B80(undefined4 *param_1) {
+    return st::fn_005F5B80(this, param_1);
+}
+
+inline void STBHEShellC::sub_005F5C40(int param_1, int param_2, int soundId) {
+    st::fn_005F5C40(this, param_1, param_2, soundId);
+}
+
+inline void STBHEShellC::sub_005F5D10(int param_1) {
+    st::fn_005F5D10(this, param_1);
+}
+
+inline void STBHEShellC::sub_005F5E30(int param_1, int param_2, undefined4 param_3) {
+    st::fn_005F5E30(this, param_1, param_2, param_3);
+}
+
+inline int STBoatC::Annih(undefined4 *param_1) {
+    return st::fn_0047D080(this, param_1);
+}
+
+inline int STBoatC::BackAnnih(int *param_1) {
+    return st::fn_0047DA50(this, param_1);
+}
+
+inline int STBoatC::BackAttack(int *param_1) {
+    return st::fn_004653B0(this, param_1);
+}
+
+inline int STBoatC::BackBring(int *param_1) {
+    return st::fn_0047CF20(this, param_1);
+}
+
+inline int STBoatC::BackBuild(int *param_1) {
+    return st::fn_0046C980(this, param_1);
+}
+
+inline int STBoatC::BackCapture(int *param_1) {
+    return st::fn_00478030(this, param_1);
+}
+
+inline int STBoatC::BackDismant(int *param_1) {
+    return st::fn_0047FAD0(this, param_1);
+}
+
+inline int STBoatC::BackLoadObj(int *param_1) {
+    return st::fn_00474810(this, param_1);
+}
+
+inline int STBoatC::BackLoadRC(STBoatC *param_1) {
+    return st::fn_0046AA50(this, param_1);
+}
+
+inline int STBoatC::BackPatrol(int *param_1) {
+    return st::fn_00465BE0(this, param_1);
+}
+
+inline int STBoatC::BackTeleport(int *param_1) {
+    return st::fn_0047BF70(this, param_1);
+}
+
+inline int STBoatC::BackToDok(int *param_1) {
+    return st::fn_004714D0(this, param_1);
+}
+
+inline int STBoatC::BackUnLoadObj(int *param_1) {
+    return st::fn_00476120(this, param_1);
+}
+
+inline int STBoatC::BackUnLoadRC(STBoatC *param_1) {
+    return st::fn_0046EFD0(this, param_1);
+}
+
+inline int STBoatC::BackWaitLoad(int *param_1) {
+    return st::fn_00475530(this, param_1);
+}
+
+inline undefined4 STBoatC::Bring(STBoatC *param_1) {
+    return st::fn_0047C050(this, param_1);
+}
+
+inline int STBoatC::Build(uint param_1) {
+    return st::fn_0046B100(this, param_1);
+}
+
+inline void STBoatC::CancelLoading(int param_1) {
+    st::fn_00492280(this, param_1);
+}
+
+inline int STBoatC::Capture(int param_1) {
+    return st::fn_00476CE0(this, param_1);
+}
+
+inline undefined4 STBoatC::CheckForReplenisher() {
+    return st::fn_00493340(this);
+}
+
+inline uint STBoatC::CheckPBoxCmd(STBoatC_CheckPBoxCmd_param_1Enum param_1) {
+    return st::fn_0045F400(this, param_1);
+}
+
+inline void STBoatC::CmdToObj(STBoatC_CmdToObj_param_1Enum param_1, uint *param_2) {
+    st::fn_0045EF00(this, param_1, param_2);
+}
+
+inline uint STBoatC::CreateGame(int *param_1) {
+    return st::fn_0046CF20(this, param_1);
+}
+
+inline int STBoatC::DCBomb(int param_1) {
+    return st::fn_00476A10(this, param_1);
+}
+
+inline int STBoatC::Defence(int param_1) {
+    return st::fn_004608B0(this, param_1);
+}
+
+inline int STBoatC::Dismant(int *param_1) {
+    return st::fn_0047DF00(this, param_1);
+}
+
+inline int STBoatC::FUN_004803d0(AnonShape_004803D0_350EB461 *param_1) {
+    return st::fn_004803D0(this, param_1);
+}
+
+inline undefined4 STBoatC::GetCellForLoading(short param_1, short param_2, short param_3, short param_4, short param_5, STBoatC_GetCellForLoading_param_6Enum param_6, undefined2 *param_7, undefined2 *param_8, undefined2 *param_9, short *param_10, short *param_11, undefined2 *param_12) {
+    return st::fn_004919C0(this, param_1, param_2, param_3, param_4, param_5, param_6, param_7, param_8, param_9, param_10, param_11, param_12);
+}
+
+inline undefined4 STBoatC::GetDefenceTarget(STBoatC_GetDefenceTarget_param_1Enum param_1) {
+    return st::fn_004899A0(this, param_1);
+}
+
+inline int STBoatC::Guard(int param_1) {
+    return st::fn_00471AC0(this, param_1);
+}
+
+inline int STBoatC::LoadObj(AnonShape_005EFAE0_B406B78B *param_1) {
+    return st::fn_004732F0(this, param_1);
+}
+
+inline int STBoatC::LoadRC(int *param_1) {
+    return st::fn_00465C60(this, param_1);
+}
+
+inline void STBoatC::NotReadyForLoading(int param_1) {
+    st::fn_00492080(this, param_1);
+}
+
+inline void STBoatC::ReadyForLoading(STFishC *param_1) {
+    st::fn_00491FB0(this, param_1);
+}
+
+inline int STBoatC::Recharge(int param_1) {
+    return st::fn_00478640(this, param_1);
+}
+
+inline void STBoatC::RestoreBoatData(int param_1) {
+    st::fn_004900E0(this, param_1);
+}
+
+inline undefined4 * STBoatC::SaveBoatData(int *param_1) {
+    return st::fn_0048FAC0(this, param_1);
+}
+
+inline int STBoatC::Scout(int param_1) {
+    return st::fn_0047FE10(this, param_1);
+}
+
+inline int STBoatC::SetMine(int *param_1) {
+    return st::fn_004761B0(this, param_1);
+}
+
+inline bool STBoatC::SetNewMD(int param_1, short param_2, short param_3, short param_4, int param_5, undefined4 param_6) {
+    return st::fn_0048D130(this, param_1, param_2, param_3, param_4, param_5, param_6);
+}
+
+inline int STBoatC::Teleport(int param_1) {
+    return st::fn_00479600(this, param_1);
+}
+
+inline int STBoatC::ToDok(int param_1) {
+    return st::fn_0046F5C0(this, param_1);
+}
+
+inline int STBoatC::UnLoadObj(int param_1) {
+    return st::fn_004758E0(this, param_1);
+}
+
+inline int STBoatC::UnLoadRC(int param_1) {
+    return st::fn_0046D450(this, param_1);
+}
+
+inline int STBoatC::WaitLoad(STBoatC *param_1) {
+    return st::fn_004749C0(this, param_1);
+}
+
+inline void STBoatC::_AddDefenceShots(char param_1, short param_2, int param_3) {
+    st::fn_0048CC80(this, param_1, param_2, param_3);
+}
+
+inline void STBoatC::_CheckDefenceShots(int param_1) {
+    st::fn_0048CEA0(this, param_1);
+}
+
+inline void STBoatC::_SetSpeedFireLife() {
+    st::fn_0048A670(this);
+}
+
+inline uint STBoatC::sub_004176C0(short param_1) {
+    return st::fn_004176C0(this, param_1);
+}
+
+inline uint STBoatC::sub_00417910(short param_1) {
+    return st::fn_00417910(this, param_1);
+}
+
+inline undefined4 STBoatC::sub_0045F6C0() {
+    return st::fn_0045F6C0(this);
+}
+
+inline undefined4 STBoatC::sub_0045FF50(int param_1) {
+    return st::fn_0045FF50(this, param_1);
+}
+
+inline int STBoatC::sub_00460260(int param_1) {
+    return st::fn_00460260(this, param_1);
+}
+
+inline void STBoatC::sub_004602B0() {
+    st::fn_004602B0(this);
+}
+
+inline int STBoatC::sub_00460360() {
+    return st::fn_00460360(this);
+}
+
+inline void STBoatC::sub_00481520(int param_1, int param_2, int param_3) {
+    st::fn_00481520(this, param_1, param_2, param_3);
+}
+
+inline void STBoatC::sub_0048D930() {
+    st::fn_0048D930(this);
+}
+
+inline void STBoatC::sub_0048DBA0() {
+    st::fn_0048DBA0(this);
+}
+
+inline undefined4 STBoatC::sub_0048DFD0(short param_1, short param_2, short param_3, short param_4, short param_5, int *param_6, int param_7, short *param_8, short *param_9, short *param_10) {
+    return st::fn_0048DFD0(this, param_1, param_2, param_3, param_4, param_5, param_6, param_7, param_8, param_9, param_10);
+}
+
+inline undefined4 STBoatC::sub_00490570() {
+    return st::fn_00490570(this);
+}
+
+inline void STBoatC::sub_00490CD0(undefined4 param_1, undefined4 param_2, int param_3, int param_4) {
+    st::fn_00490CD0(this, param_1, param_2, param_3, param_4);
+}
+
+inline void STBoatC::sub_00492390() {
+    st::fn_00492390(this);
+}
+
+inline void STBoatC::sub_00492420() {
+    st::fn_00492420(this);
+}
+
+inline undefined4 STBoatC::sub_004926C0(int param_1) {
+    return st::fn_004926C0(this, param_1);
+}
+
+inline int STBoatC::sub_004939B0(short *param_1, short *param_2, short *param_3) {
+    return st::fn_004939B0(this, param_1, param_2, param_3);
+}
+
+inline bool STBoatC::sub_004952E0() {
+    return st::fn_004952E0(this);
+}
+
+inline int STColl3C::CreateAddSpr() {
+    return st::fn_005F94C0(this);
+}
+
+inline undefined4 STColl3C::LoadImagSpr(int param_1) {
+    return st::fn_005F6AF0(this, param_1);
+}
+
+inline int STColl3C::sub_005F66B0() {
+    return st::fn_005F66B0(this);
+}
+
+inline byte * STColl3C::sub_005F66F0(uint *param_1) {
+    return st::fn_005F66F0(this, param_1);
+}
+
+inline int STColl3C::sub_005F68B0(undefined4 *param_1) {
+    return st::fn_005F68B0(this, param_1);
+}
+
+inline int STColl3C::sub_005F6F20(int param_1) {
+    return st::fn_005F6F20(this, param_1);
+}
+
+inline void STColl3C::sub_005F6F60() {
+    st::fn_005F6F60(this);
+}
+
+inline undefined4 STColl3C::sub_005F8650(int param_1, int param_2, int param_3) {
+    return st::fn_005F8650(this, param_1, param_2, param_3);
+}
+
+inline void STColl3C::sub_005F9450() {
+    st::fn_005F9450(this);
+}
+
+inline void STColl3C::sub_005FA070() {
+    st::fn_005FA070(this);
+}
+
+inline undefined4 STColl3C::sub_005FA8B0(int *param_1, int *param_2, int *param_3) {
+    return st::fn_005FA8B0(this, param_1, param_2, param_3);
+}
+
+inline void STContainerC::sub_005F0D90() {
+    st::fn_005F0D90(this);
+}
+
+inline int STContainerC::sub_005FC3E0() {
+    return st::fn_005FC3E0(this);
+}
+
+inline bool STCrabC::Bad() {
+    return st::fn_00579170(this);
+}
+
+inline void STCrabC::SetSprRange(uint param_1) {
+    st::fn_00578560(this, param_1);
+}
+
+inline int STDcResourcC::CreateRes() {
+    return st::fn_0057F6E0(this);
+}
+
+inline undefined4 * STDcResourcC::Init() {
+    return st::fn_0057F580(this);
+}
+
+inline undefined4 * STDcResourcC::sub_0057F2E0(int param_1, int param_2) {
+    return st::fn_0057F2E0(this, param_1, param_2);
+}
+
+inline undefined4 * STDcResourcC::sub_0057F3A0(int param_1, int param_2) {
+    return st::fn_0057F3A0(this, param_1, param_2);
+}
+
+inline undefined4 * STDcResourcC::sub_0057F470(int param_1, int param_2) {
+    return st::fn_0057F470(this, param_1, param_2);
+}
+
+inline undefined4 STDcResourcC::sub_005805C0() {
+    return st::fn_005805C0(this);
+}
+
+inline void STDestC::sub_00602440() {
+    st::fn_00602440(this);
+}
+
+inline void STDestC::sub_006024B0() {
+    st::fn_006024B0(this);
+}
+
+inline byte * STDestC::sub_006025D0(undefined4 *param_1) {
+    return st::fn_006025D0(this, param_1);
+}
+
+inline undefined4 STDestC::sub_00602660(undefined4 *param_1) {
+    return st::fn_00602660(this, param_1);
+}
+
+inline void STDestC::sub_00602BE0() {
+    st::fn_00602BE0(this);
+}
+
+inline undefined4 * STDestC::sub_00602E90() {
+    return st::fn_00602E90(this);
+}
+
+inline undefined4 STDestC::sub_00603120() {
+    return st::fn_00603120(this);
+}
+
+inline void STExplosion::sub_00604120() {
+    st::fn_00604120(this);
+}
+
+inline int STExplosion::sub_00604350() {
+    return st::fn_00604350(this);
+}
+
+inline int STExplosion::sub_00604970() {
+    return st::fn_00604970(this);
+}
+
+inline void STExplosion::sub_00605130() {
+    st::fn_00605130(this);
+}
+
+inline void STExplosion::sub_00605780() {
+    st::fn_00605780(this);
+}
+
+inline int STExplosion::sub_00606050(int param_1, int param_2, int param_3, int param_4, uint *param_5, undefined4 param_6, int param_7, undefined4 param_8, undefined1 param_9) {
+    return st::fn_00606050(this, param_1, param_2, param_3, param_4, param_5, param_6, param_7, param_8, param_9);
+}
+
+inline int STExplosionC::CreateGroupPart(int param_1) {
+    return st::fn_006041A0(this, param_1);
+}
+
+inline undefined4 STExplosionC::LoadImagSpr(undefined4 param_1, undefined4 param_2, char param_3) {
+    return st::fn_006051B0(this, param_1, param_2, param_3);
+}
+
+inline undefined4 * STExplosionC::SaveObj(uint *param_1) {
+    return st::fn_00604A90(this, param_1);
+}
+
+inline undefined4 * STFieldC::CreateField(int param_1, int param_2) {
+    return st::fn_00580B60(this, param_1, param_2);
+}
+
+inline uint STFieldC::CreateField(uint param_1) {
+    return st::fn_006099E0(this, param_1);
+}
+
+inline int STFieldC::FUN_0060c1a0(undefined4 *param_1) {
+    return st::fn_0060C1A0(this, param_1);
+}
+
+inline undefined4 STFieldC::InitSprSistem(int param_1) {
+    return st::fn_00609B90(this, param_1);
+}
+
+inline undefined4 STFieldC::LoadImagSpr(uint param_1) {
+    return st::fn_00609D60(this, param_1);
+}
+
+inline void STFieldC::sub_00609CD0() {
+    st::fn_00609CD0(this);
+}
+
+inline int STFieldC::sub_0060D660(int *param_1) {
+    return st::fn_0060D660(this, param_1);
+}
+
+inline void STFishC::LifeFish() {
+    st::fn_0057CD70(this);
+}
+
+inline void STFishC::sub_004162B0(short *param_1, undefined2 *param_2, undefined2 *param_3) {
+    st::fn_004162B0(this, param_1, param_2, param_3);
+}
+
+inline void STFishC::sub_004162F0(undefined2 *param_1, undefined2 *param_2, undefined2 *param_3) {
+    st::fn_004162F0(this, param_1, param_2, param_3);
+}
+
+inline int STFishC::sub_0057BF20() {
+    return st::fn_0057BF20(this);
+}
+
+inline undefined4 STFishC::sub_0057D5F0(uint param_1) {
+    return st::fn_0057D5F0(this, param_1);
+}
+
+inline undefined4 STFishC::sub_0057D700(uint *param_1, uint *param_2, int *param_3, int *param_4) {
+    return st::fn_0057D700(this, param_1, param_2, param_3, param_4);
+}
+
+inline ushort STGameObjC::FUN_004845e0(STGameObjC_sub_004845E0_param_1Enum param_1, int *param_2) {
+    return st::fn_004845E0(this, param_1, param_2);
+}
+
+inline void STGameObjC::ResetSelfCheckFlag() {
+    st::fn_0041A680(this);
+}
+
+inline void STGameObjC::SetSelfCheckFlag() {
+    st::fn_00419DF0(this);
+}
+
+inline undefined4 STGenBombC::LoadImagSpr(int param_1, int param_2) {
+    return st::fn_006132F0(this, param_1, param_2);
+}
+
+inline uint * STGroupBoatC::Bring(int param_1) {
+    return st::fn_0049FBF0(this, param_1);
+}
+
+inline undefined4 STGroupBoatC::Capture(int param_1) {
+    return st::fn_0049F100(this, param_1);
+}
+
+inline undefined4 STGroupBoatC::DCBomb(int param_1) {
+    return st::fn_0049ED40(this, param_1);
+}
+
+inline void STGroupBoatC::DistributeDock(int param_1, DArrayTy *param_2, DArrayTy *param_3) {
+    st::fn_004A3CD0(this, param_1, param_2, param_3);
+}
+
+inline void STGroupBoatC::DistributeMD(int param_1, DArrayTy *param_2, DArrayTy *param_3, DArrayTy *param_4) {
+    st::fn_004A3430(this, param_1, param_2, param_3, param_4);
+}
+
+inline undefined4 STGroupBoatC::DistributeTargets(uint *param_1) {
+    return st::fn_00499DE0(this, param_1);
+}
+
+inline void STGroupBoatC::GenSwitch(int param_1) {
+    st::fn_004A8690(this, param_1);
+}
+
+inline void STGroupBoatC::GetDepotForAttack(uint param_1, undefined1 *param_2, short *param_3, short *param_4, short *param_5, short *param_6) {
+    st::fn_004A8340(this, param_1, param_2, param_3, param_4, param_5, param_6);
+}
+
+inline uint STGroupBoatC::GetPatrolTask(int param_1, uint param_2, uint param_3) {
+    return st::fn_004A7AF0(this, param_1, param_2, param_3);
+}
+
+inline undefined4 STGroupBoatC::GrpAttack(int param_1) {
+    return st::fn_0049AAF0(this, param_1);
+}
+
+inline undefined4 STGroupBoatC::GrpBuild(int param_1) {
+    return st::fn_0049CD30(this, param_1);
+}
+
+inline undefined4 STGroupBoatC::GrpDismant(int param_1) {
+    return st::fn_004A0040(this, param_1);
+}
+
+inline undefined4 STGroupBoatC::GrpGoToDeep(int param_1) {
+    return st::fn_0049B4C0(this, param_1);
+}
+
+inline undefined4 STGroupBoatC::GrpGuard(int param_1) {
+    return st::fn_0049DB40(this, param_1);
+}
+
+inline undefined4 STGroupBoatC::GrpLoadObj(int param_1) {
+    return st::fn_0049DFA0(this, param_1);
+}
+
+inline undefined4 STGroupBoatC::GrpLoadRC(int param_1) {
+    return st::fn_0049C210(this, param_1);
+}
+
+inline uint STGroupBoatC::GrpPatrol(int param_1) {
+    return st::fn_0049B7D0(this, param_1);
+}
+
+inline undefined4 STGroupBoatC::GrpRepSub(int param_1) {
+    return st::fn_004A0990(this, param_1);
+}
+
+inline undefined4 STGroupBoatC::GrpRepare(int param_1) {
+    return st::fn_0049D750(this, param_1);
+}
+
+inline uint * STGroupBoatC::GrpUnLoadObj(int param_1) {
+    return st::fn_0049E510(this, param_1);
+}
+
+inline undefined4 STGroupBoatC::GrpUnLoadRC(int param_1) {
+    return st::fn_0049D230(this, param_1);
+}
+
+inline undefined4 STGroupBoatC::InitWay(DArrayTy *param_1, int param_2, int param_3, int param_4) {
+    return st::fn_00497CD0(this, param_1, param_2, param_3, param_4);
+}
+
+inline undefined4 STGroupBoatC::IsAgAtt() {
+    return st::fn_004A87A0(this);
+}
+
+inline undefined4 STGroupBoatC::MakePVec() {
+    return st::fn_00499B80(this);
+}
+
+inline undefined4 STGroupBoatC::ReMakePVecAndTgtList(DArrayTy *param_1) {
+    return st::fn_00499750(this, param_1);
+}
+
+inline undefined4 STGroupBoatC::ReMakePVecAndTgtListExt(char param_1, short param_2) {
+    return st::fn_004999C0(this, param_1, param_2);
+}
+
+inline void STGroupBoatC::ReMakePatrolPoints() {
+    st::fn_004A7490(this);
+}
+
+inline undefined4 STGroupBoatC::Recharge(int param_1) {
+    return st::fn_0049F640(this, param_1);
+}
+
+inline void STGroupBoatC::RechargeNewCmd() {
+    st::fn_004A0FA0(this);
+}
+
+inline void STGroupBoatC::RestoreGrpBData(undefined4 *param_1) {
+    st::fn_004A67A0(this, param_1);
+}
+
+inline undefined4 * STGroupBoatC::SaveGrpBData(int *param_1) {
+    return st::fn_004A4F10(this, param_1);
+}
+
+inline uint * STGroupBoatC::Scout(int param_1) {
+    return st::fn_004A0590(this, param_1);
+}
+
+inline undefined4 STGroupBoatC::SetMine(int param_1) {
+    return st::fn_0049EA00(this, param_1);
+}
+
+inline void STGroupBoatC::SetPatrolCmdToBoat() {
+    st::fn_004A80A0(this);
+}
+
+inline void STGroupBoatC::StartReceiveOrderSound() {
+    st::fn_004A85B0(this);
+}
+
+inline undefined4 STGroupBoatC::Teleport(int param_1) {
+    return st::fn_0049F900(this, param_1);
+}
+
+inline STGroupBoatC * STGroupBoatC::sub_004232A0() {
+    return st::fn_004232A0(this);
+}
+
+inline void STGroupBoatC::sub_0049A500(undefined2 *param_1, undefined2 *param_2, undefined2 *param_3) {
+    st::fn_0049A500(this, param_1, param_2, param_3);
+}
+
+inline undefined4 STGroupBoatC::sub_004A7E30(int param_1) {
+    return st::fn_004A7E30(this, param_1);
+}
+
+inline uint STGroupC::AddObj(uint param_1, int param_2) {
+    return st::fn_00423850(this, param_1, param_2);
+}
+
+inline undefined4 STGroupC::AddObjs(DArrayTy *param_1, int param_2) {
+    return st::fn_00423B50(this, param_1, param_2);
+}
+
+inline uint * STGroupC::GetGroupContent() {
+    return st::fn_004233E0(this);
+}
+
+inline int STGroupC::GetMessage(STMessage *message) {
+    return st::fn_00423EC0(this, message);
+}
+
+inline uint * STGroupC::GetTOBJList(int param_1) {
+    return st::fn_00423660(this, param_1);
+}
+
+inline uint STGroupC::GetTOBJQty(int param_1) {
+    return st::fn_00423520(this, param_1);
+}
+
+inline void STGroupC::RestoreGrpData(int param_1) {
+    st::fn_00424360(this, param_1);
+}
+
+inline int STGroupC::SaveGrpData(int *param_1) {
+    return st::fn_004240F0(this, param_1);
+}
+
+inline void STGroupC::SetAVPar(uint param_1) {
+    st::fn_004247B0(this, param_1);
+}
+
+inline void STJellyGunC::LifeGun() {
+    st::fn_005825C0(this);
+}
+
+inline undefined4 STJellyGunC::sub_00415ED0(undefined4 *param_1, int *param_2) {
+    return st::fn_00415ED0(this, param_1, param_2);
+}
+
+inline void STJellyGunC::sub_00582530() {
+    st::fn_00582530(this);
+}
+
+inline int STJellyGunC::sub_00582580() {
+    return st::fn_00582580(this);
+}
+
+inline STJellyGunC_field_0235State STJellyGunC::sub_00583E30() {
+    return st::fn_00583E30(this);
+}
+
+inline undefined4 STJellyGunC::sub_00584060(int *param_1, int *param_2, int *param_3) {
+    return st::fn_00584060(this, param_1, param_2, param_3);
+}
+
+inline undefined4 STJellyGunC::sub_00584380() {
+    return st::fn_00584380(this);
+}
+
+inline void STJellyGunC::sub_005844E0(int param_1, int param_2, int soundId) {
+    st::fn_005844E0(this, param_1, param_2, soundId);
+}
+
+inline undefined4 STJellyManC::Error(undefined4 param_1, int *param_2, undefined4 param_3) {
+    return st::fn_00581AC0(this, param_1, param_2, param_3);
+}
+
+inline undefined4 STJumpMineC::LoadImagJMine(int param_1) {
+    return st::fn_006195E0(this, param_1);
+}
+
+inline byte STJumpMineC::sub_006191A0(uint param_1, int param_2) {
+    return st::fn_006191A0(this, param_1, param_2);
+}
+
+inline int STJumpMineC::sub_006192E0() {
+    return st::fn_006192E0(this);
+}
+
+inline byte * STJumpMineC::sub_00619350(undefined4 *param_1) {
+    return st::fn_00619350(this, param_1);
+}
+
+inline undefined4 STJumpMineC::sub_006193E0() {
+    return st::fn_006193E0(this);
+}
+
+inline void STJumpMineC::sub_00619A20() {
+    st::fn_00619A20(this);
+}
+
+inline int STJumpMineC::sub_00619C70() {
+    return st::fn_00619C70(this);
+}
+
+inline undefined4 STJumpMineC::sub_0061B340(short param_1, short param_2, int param_3, int param_4, int param_5, int param_6, int *param_7) {
+    return st::fn_0061B340(this, param_1, param_2, param_3, param_4, param_5, param_6, param_7);
+}
+
+inline undefined4 STLightC::LoadNextLight() {
+    return st::fn_0061DB80(this);
+}
+
+inline void STLightC::sub_0061D650() {
+    st::fn_0061D650(this);
+}
+
+inline int STLightC::sub_0061D6D0() {
+    return st::fn_0061D6D0(this);
+}
+
+inline byte * STLightC::sub_0061D710(int *param_1) {
+    return st::fn_0061D710(this, param_1);
+}
+
+inline int STLightC::sub_0061D8F0(undefined4 *param_1) {
+    return st::fn_0061D8F0(this, param_1);
+}
+
+inline int STLightC::sub_0061D9C0(ushort *param_1, int *param_2, int param_3) {
+    return st::fn_0061D9C0(this, param_1, param_2, param_3);
+}
+
+inline void STLightC::sub_0061E4F0() {
+    st::fn_0061E4F0(this);
+}
+
+inline undefined4 STLightC::sub_0061F290(int param_1) {
+    return st::fn_0061F290(this, param_1);
+}
+
+inline void STLightC::sub_0061F530() {
+    st::fn_0061F530(this);
+}
+
+inline int STManBasisC::sub_005F14B0(short param_1, short param_2, short param_3, byte param_4, short param_5) {
+    return st::fn_005F14B0(this, param_1, param_2, param_3, param_4, param_5);
+}
+
+inline void STManBasisC::sub_005F19A0() {
+    st::fn_005F19A0(this);
+}
+
+inline byte * STManBasisC::sub_005F1FA0(int *param_1) {
+    return st::fn_005F1FA0(this, param_1);
+}
+
+inline undefined4 STManBasisC::sub_005F2110(undefined4 *param_1) {
+    return st::fn_005F2110(this, param_1);
+}
+
+inline int STManBasisC::sub_005F21D0() {
+    return st::fn_005F21D0(this);
+}
+
+inline void STManBasisC::sub_005F2330() {
+    st::fn_005F2330(this);
+}
+
+inline uint STManRub3C::AddNewColl3(int param_1, int param_2, int param_3, int param_4) {
+    return st::fn_0062DD80(this, param_1, param_2, param_3, param_4);
+}
+
+inline uint STManRub3C::AddNewDock(int param_1, ushort param_2, ushort param_3, ushort param_4, int param_5, ushort param_6, int *param_7) {
+    return st::fn_0062D910(this, param_1, param_2, param_3, param_4, param_5, param_6, param_7);
+}
+
+inline uint STManRub3C::AddNewRub3(int *param_1) {
+    return st::fn_0062CF90(this, param_1);
+}
+
+inline void STManRub3C::sub_0062CF50() {
+    st::fn_0062CF50(this);
+}
+
+inline byte * STManRub3C::sub_0062D670(uint *param_1) {
+    return st::fn_0062D670(this, param_1);
+}
+
+inline int STManRub3C::sub_0062D840(undefined4 *param_1) {
+    return st::fn_0062D840(this, param_1);
+}
+
+inline void STManRub3C::sub_0062DD40() {
+    st::fn_0062DD40(this);
+}
+
+inline void STManRub3C::sub_0062E130() {
+    st::fn_0062E130(this);
+}
+
+inline undefined4 STManRuinC::FUN_00631190(uint param_1, short param_2, short param_3, short param_4, int param_5, undefined4 param_6, int param_7) {
+    return st::fn_00631190(this, param_1, param_2, param_3, param_4, param_5, param_6, param_7);
+}
+
+inline uint STManRuinC::sub_006308F0(int param_1, int param_2, int param_3, int param_4, undefined4 param_5, int param_6) {
+    return st::fn_006308F0(this, param_1, param_2, param_3, param_4, param_5, param_6);
+}
+
+inline undefined4 STManRuinC::sub_00630AC0(uint param_1) {
+    return st::fn_00630AC0(this, param_1);
+}
+
+inline void STManRuinC::sub_00630BB0(short param_1, short param_2, short param_3, undefined4 param_4, int param_5, undefined4 param_6) {
+    st::fn_00630BB0(this, param_1, param_2, param_3, param_4, param_5, param_6);
+}
+
+inline ushort * STManRuinC::sub_00630C50(undefined4 param_1, int param_2, int param_3, int param_4, int param_5) {
+    return st::fn_00630C50(this, param_1, param_2, param_3, param_4, param_5);
+}
+
+inline void STManRuinC::sub_00631010() {
+    st::fn_00631010(this);
+}
+
+inline void STManRuinC::sub_00631220(int *param_1) {
+    st::fn_00631220(this, param_1);
+}
+
+inline uint STManRuinC::sub_00631390(undefined4 *param_1) {
+    return st::fn_00631390(this, param_1);
+}
+
+inline undefined4 STManRuinC::sub_00631450() {
+    return st::fn_00631450(this);
+}
+
+inline uint STManRuinC::sub_00631510(undefined4 param_1, int param_2, int param_3, int param_4, int param_5, int param_6) {
+    return st::fn_00631510(this, param_1, param_2, param_3, param_4, param_5, param_6);
+}
+
+inline void STManRuinC::sub_00631560() {
+    st::fn_00631560(this);
+}
+
+inline uint STManRuinC::sub_00631880(undefined4 *param_1, undefined4 param_2) {
+    return st::fn_00631880(this, param_1, param_2);
+}
+
+inline undefined4 STMineSetC::LoadImagMineSet(int param_1) {
+    return st::fn_00623170(this, param_1);
+}
+
+inline void STMineSetC::sub_0041D1A0(int param_1) {
+    st::fn_0041D1A0(this, param_1);
+}
+
+inline void STMineSetC::sub_0041D2B0() {
+    st::fn_0041D2B0(this);
+}
+
+inline int STMineSetC::sub_0041D6C0(uint param_1) {
+    return st::fn_0041D6C0(this, param_1);
+}
+
+inline int STMineSetC::sub_00622670() {
+    return st::fn_00622670(this);
+}
+
+inline byte STMineSetC::sub_006226C0(uint param_1, int param_2) {
+    return st::fn_006226C0(this, param_1, param_2);
+}
+
+inline void STMineSetC::sub_00622880() {
+    st::fn_00622880(this);
+}
+
+inline undefined4 STMineSetC::sub_00622BA0() {
+    return st::fn_00622BA0(this);
+}
+
+inline undefined4 STMineSetC::sub_006239A0() {
+    return st::fn_006239A0(this);
+}
+
+inline undefined4 STMineSetC::sub_00624920(STMineSetC_sub_00624920_param_1Enum param_1, int *param_2, int *param_3, int *param_4) {
+    return st::fn_00624920(this, param_1, param_2, param_3, param_4);
+}
+
+inline undefined4 STMineSetC::sub_00625730() {
+    return st::fn_00625730(this);
+}
+
+inline void STMineSetC::sub_00626B50(STMineSetC_sub_00626B50_param_1Enum param_1) {
+    st::fn_00626B50(this, param_1);
+}
+
+inline undefined4 STMineSetC::sub_00627400(undefined4 param_1) {
+    return st::fn_00627400(this, param_1);
+}
+
+inline void STOctopusC::Bad() {
+    st::fn_0058A8D0(this);
+}
+
+inline void STOctopusC::SetSprRange(uint param_1) {
+    st::fn_00589B50(this, param_1);
+}
+
+inline undefined4 STOctopusC::sub_0058AF70(short param_1, short param_2, short param_3) {
+    return st::fn_0058AF70(this, param_1, param_2, param_3);
+}
+
+inline undefined4 STOctopusC::sub_0058B190(short *param_1, short *param_2, short *param_3, short *param_4) {
+    return st::fn_0058B190(this, param_1, param_2, param_3, param_4);
+}
+
+inline int STParticleC::GetMessage(STMessage *message) {
+    return st::fn_00627EB0(this, message);
+}
+
+inline undefined4 STParticleC::InitVisibelDeton(int param_1) {
+    return st::fn_006298A0(this, param_1);
+}
+
+inline undefined4 STParticleC::InitVisibelFlight(int param_1) {
+    return st::fn_00629070(this, param_1);
+}
+
+inline void STParticleC::sub_00629830() {
+    st::fn_00629830(this);
+}
+
+inline int STParticleC::sub_00629E60(int param_1) {
+    return st::fn_00629E60(this, param_1);
+}
+
+inline void STParticleC::sub_00629F20() {
+    st::fn_00629F20(this);
+}
+
+inline undefined4 STParticleC::sub_00629F90(STParticleC *param_1, undefined4 param_2) {
+    return st::fn_00629F90(this, param_1, param_2);
+}
+
+inline int STParticleC::sub_0062A370(int param_1) {
+    return st::fn_0062A370(this, param_1);
+}
+
+inline void STParticleC::sub_0062A860() {
+    st::fn_0062A860(this);
+}
+
+inline void STParticleC::sub_0062AEF0(undefined4 *param_1) {
+    st::fn_0062AEF0(this, param_1);
+}
+
+inline byte STParticleC::sub_0062B4A0() {
+    return st::fn_0062B4A0(this);
+}
+
+inline void STPlaySystemC::AddToRep(undefined4 *param_1, uint param_2) {
+    st::fn_0054E950(this, param_1, param_2);
+}
+
+inline int STPlaySystemC::CreateGameObject(int param_1, undefined4 param_2, undefined4 param_3, undefined4 param_4, undefined4 param_5) {
+    return st::fn_0054CC20(this, param_1, param_2, param_3, param_4, param_5);
+}
+
+inline undefined4 * STPlaySystemC::PrepareMail() {
+    return st::fn_0054F1D0(this);
+}
+
+inline int STPlaySystemC::Save(cMf32 *param_1) {
+    return st::fn_0054D2F0(this, param_1);
+}
+
+inline int STPlaySystemC::SaveObjData(char *text, byte *param_2, uint param_3, byte param_4) {
+    return st::fn_0054D550(this, text, param_2, param_3, param_4);
+}
+
+inline int STPlaySystemC::SaveObjData(int *param_1, byte *param_2, AnonShape_0060EA30_DCEB68AD *param_3) {
+    return st::fn_0054D430(this, param_1, param_2, param_3);
+}
+
+inline void STPlaySystemC::SendMail() {
+    st::fn_00550250(this);
+}
+
+inline void STPlaySystemC::SetCtrlCmd(undefined1 param_1, uint param_2, char param_3, uint *param_4, uint param_5, undefined4 *param_6, uint param_7) {
+    st::fn_0054EEE0(this, param_1, param_2, param_3, param_4, param_5, param_6, param_7);
+}
+
+inline void STPlaySystemC::sub_0054EBB0(char *param_1, uint param_2) {
+    st::fn_0054EBB0(this, param_1, param_2);
+}
+
+inline void STPlaySystemC::sub_00550190() {
+    st::fn_00550190(this);
+}
+
+inline void STPlaySystemC::sub_005505D0(int param_1, int *param_2) {
+    st::fn_005505D0(this, param_1, param_2);
+}
+
+inline void STPlaySystemC::sub_006E57B0(int param_1) {
+    st::fn_006E57B0(this, param_1);
+}
+
+inline undefined4 STPlaySystemC::sub_006E62D0(AnonShape_005EFAE0_B406B78B *param_1, int *param_2) {
+    return st::fn_006E62D0(this, param_1, param_2);
+}
+
+inline void STResourceC::SetResource(int param_1, int param_2) {
+    st::fn_0057DFD0(this, param_1, param_2);
+}
+
+inline void STResourceC::sub_005802A0(int param_1, int param_2) {
+    st::fn_005802A0(this, param_1, param_2);
+}
+
+inline void STResourceC::sub_00580D30(int param_1) {
+    st::fn_00580D30(this, param_1);
+}
+
+inline undefined4 STRubbishC::LoadImagSpr(void *param_1, int *param_2, undefined4 param_3, STRubbishC_LoadImagSpr_param_4Enum param_4) {
+    return st::fn_0062F3B0(this, param_1, param_2, param_3, param_4);
+}
+
+inline int STRubbishC::RubbishCreatePart() {
+    return st::fn_0062ED90(this);
+}
+
+inline undefined4 STRubbishC::sub_0062EF00(int param_1, AnonShape_0062FCA0_22A9EE35 *param_2) {
+    return st::fn_0062EF00(this, param_1, param_2);
+}
+
+inline int STRubbishC::sub_0062F900() {
+    return st::fn_0062F900(this);
+}
+
+inline int STRubbishC::sub_0062FCA0(AnonShape_0062FCA0_22A9EE35 *param_1) {
+    return st::fn_0062FCA0(this, param_1);
+}
+
+inline int STRubbishC::sub_0062FEA0(int param_1, int param_2) {
+    return st::fn_0062FEA0(this, param_1, param_2);
+}
+
+inline void STRubbishC::sub_00630260(int param_1, int param_2) {
+    st::fn_00630260(this, param_1, param_2);
+}
+
+inline undefined4 STSharkC::CreateShark(int param_1, int param_2, int param_3, undefined4 param_4, undefined4 param_5, undefined4 param_6, undefined4 param_7, undefined4 param_8, undefined4 param_9) {
+    return st::fn_00590010(this, param_1, param_2, param_3, param_4, param_5, param_6, param_7, param_8, param_9);
+}
+
+inline void STSharkC::LifeShark() {
+    st::fn_0058E570(this);
+}
+
+inline void STSharkC::sub_0058EFE0() {
+    st::fn_0058EFE0(this);
+}
+
+inline int STSharkC::sub_0058F430() {
+    return st::fn_0058F430(this);
+}
+
+inline int STSharkC::sub_0058FF70() {
+    return st::fn_0058FF70(this);
+}
+
+inline undefined4 STSprGameObjC::CheckRay(short param_1, short param_2, short param_3, short param_4, short param_5, short param_6, STSprGameObjC_CheckRay_param_7Enum param_7, int *param_8, int param_9) {
+    return st::fn_0041F9B0(this, param_1, param_2, param_3, param_4, param_5, param_6, param_7, param_8, param_9);
+}
+
+inline void STSprGameObjC::LoadActFrame() {
+    st::fn_00420340(this);
+}
+
+inline void STSprGameObjC::LoadLifeFrame() {
+    st::fn_00420AE0(this);
+}
+
+inline void STSprGameObjC::sub_0041F970() {
+    st::fn_0041F970(this);
+}
+
+inline undefined4 STT3DSprC::Init(ushort *param_1, uint param_2, uint param_3, STDcResourcC *param_4, uint param_5, uint param_6, uint param_7) {
+    return st::fn_004AD1F0(this, param_1, param_2, param_3, param_4, param_5, param_6, param_7);
+}
+
+inline undefined4 STT3DSprC::LoadSequence(byte param_1, int *param_2, char *text, byte param_4) {
+    return st::fn_004AB880(this, param_1, param_2, text, param_4);
+}
+
+inline void STT3DSprC::RestoreSpr(int *param_1, AnonShape_004AD790_77673787 *param_2) {
+    st::fn_004ADBA0(this, param_1, param_2);
+}
+
+inline undefined4 * STT3DSprC::SaveSpr(uint *param_1) {
+    return st::fn_004AD790(this, param_1);
+}
+
+inline undefined4 STT3DSprC::SetCurFase(char param_1, uint param_2) {
+    return st::fn_004ABE40(this, param_1, param_2);
+}
+
+inline undefined4 STT3DSprC::SetCurShad(char param_1, uint param_2) {
+    return st::fn_004ABF00(this, param_1, param_2);
+}
+
+inline undefined4 STT3DSprC::ShowCurFase(char param_1) {
+    return st::fn_004AC040(this, param_1);
+}
+
+inline undefined4 STT3DSprC::StartShow(byte param_1, uint param_2) {
+    return st::fn_004AC1A0(this, param_1, param_2);
+}
+
+inline undefined4 STT3DSprC::StopShow(byte param_1) {
+    return st::fn_004AC410(this, param_1);
+}
+
+inline undefined4 STT3DSprC::UnLoadSequence(byte param_1) {
+    return st::fn_004ABB30(this, param_1);
+}
+
+inline undefined4 STT3DSprC::sub_004ACD30(char param_1) {
+    return st::fn_004ACD30(this, param_1);
+}
+
+inline void STT3DSprC::sub_004ACE30(uint param_1, int entries) {
+    st::fn_004ACE30(this, param_1, entries);
+}
+
+inline int STT3DSprC::sub_004ACE60(char param_1) {
+    return st::fn_004ACE60(this, param_1);
+}
+
+inline void STT3DSprC::sub_004ACEF0(ushort *param_1) {
+    st::fn_004ACEF0(this, param_1);
+}
+
+inline void STT3DSprC::sub_004ACF20(ushort *param_1, int param_2) {
+    st::fn_004ACF20(this, param_1, param_2);
+}
+
+inline int STT3DSprC::sub_004ACF50(char param_1) {
+    return st::fn_004ACF50(this, param_1);
+}
+
+inline int STT3DSprC::sub_004ACF90(char param_1) {
+    return st::fn_004ACF90(this, param_1);
+}
+
+inline int STT3DSprC::sub_004ACFE0(char param_1) {
+    return st::fn_004ACFE0(this, param_1);
+}
+
+inline int STT3DSprC::sub_004AD020(char param_1) {
+    return st::fn_004AD020(this, param_1);
+}
+
+inline void STT3DSprC::sub_004AD070(byte param_1) {
+    st::fn_004AD070(this, param_1);
+}
+
+inline void STT3DSprC::sub_004AD3C0(float param_1, float param_2, float param_3) {
+    st::fn_004AD3C0(this, param_1, param_2, param_3);
+}
+
+inline void STTeamLissagC::InitVisibelSystem() {
+    st::fn_00632A00(this);
+}
+
+inline uint STTmMineC::CreatePart(uint param_1) {
+    return st::fn_0063D280(this, param_1);
+}
+
+inline void STTmMineC::FUN_0063ddb0(int param_1) {
+    st::fn_0063DDB0(this, param_1);
+}
+
+inline undefined4 STTmMineC::LoadImagNuclear(int param_1) {
+    return st::fn_0063DEF0(this, param_1);
+}
+
+inline undefined4 STTmMineC::LoadImagSpr(uint param_1, int param_2) {
+    return st::fn_0063E160(this, param_1, param_2);
+}
+
+inline undefined4 STTmMineC::LoadImagVacuum(int param_1) {
+    return st::fn_0063F3D0(this, param_1);
+}
+
+inline undefined4 STTorpC::ClearDangerous(int param_1, uint param_2) {
+    return st::fn_006452A0(this, param_1, param_2);
+}
+
+inline int STTorpC::IsDangerous(int param_1, uint *param_2) {
+    return st::fn_00645020(this, param_1, param_2);
+}
+
+inline void STTorpC::RestoreTorpData(int param_1) {
+    st::fn_006456C0(this, param_1);
+}
+
+inline byte * STTorpC::SaveTorpData(int *param_1) {
+    return st::fn_00645420(this, param_1);
+}
+
+inline undefined4 STTorpC::SetDangerous(uint param_1, uint *param_2) {
+    return st::fn_006451B0(this, param_1, param_2);
+}
+
+inline undefined4 STVolcanoC::LoadImagVolcano(int param_1) {
+    return st::fn_006474E0(this, param_1);
+}
+
+inline void STVolcanoC::sub_00646D40(undefined4 *param_1) {
+    st::fn_00646D40(this, param_1);
+}
+
+inline undefined4 STVolcanoC::sub_00646DB0(undefined4 *param_1) {
+    return st::fn_00646DB0(this, param_1);
+}
+
+inline undefined4 STVolcanoC::sub_006472B0() {
+    return st::fn_006472B0(this);
+}
+
+inline void STVolcanoC::sub_006479E0() {
+    st::fn_006479E0(this);
+}
+
+inline void SettMapMTy::AddPlList(int param_1) {
+    st::fn_005CDB20(this, param_1);
+}
+
+inline void SettMapMTy::AddPlayerList(int param_1, uint param_2, int param_3, char *param_4) {
+    st::fn_005D1100(this, param_1, param_2, param_3, param_4);
+}
+
+inline void SettMapMTy::ChangePlayerCiv(uint param_1, char param_2) {
+    st::fn_005D06C0(this, param_1, param_2);
+}
+
+inline void SettMapMTy::ChangePlayerColor(uint param_1, char param_2) {
+    st::fn_005D0850(this, param_1, param_2);
+}
+
+inline void SettMapMTy::ChangePlayerList(int param_1, uint param_2, int param_3, char param_4, char *param_5) {
+    st::fn_005D0ED0(this, param_1, param_2, param_3, param_4, param_5);
+}
+
+inline void SettMapMTy::ChangePlayerState(uint param_1) {
+    st::fn_005D0A20(this, param_1);
+}
+
+inline void SettMapMTy::ChangePlayerTeam(uint param_1, uint param_2, uint param_3) {
+    st::fn_005D0BB0(this, param_1, param_2, param_3);
+}
+
+inline void SettMapMTy::CheckPlList() {
+    st::fn_005D0150(this);
+}
+
+inline void SettMapMTy::ChgPlList(undefined4 param_1, undefined4 param_2, undefined4 param_3, undefined4 param_4) {
+    st::fn_005CD9A0(this, param_1, param_2, param_3, param_4);
+}
+
+inline void SettMapMTy::DeletePlayer(int param_1) {
+    st::fn_005CFF40(this, param_1);
+}
+
+inline void SettMapMTy::PrepareAFT(AnonShape_005D4990_5F0525CF *param_1, uint *param_2) {
+    st::fn_005D4990(this, param_1, param_2);
+}
+
+inline void SettMapMTy::RunGame() {
+    st::fn_005D4850(this);
+}
+
+inline void SettMapMTy::SendDesc(int param_1) {
+    st::fn_005CFE50(this, param_1);
+}
+
+inline void SettMapMTy::SendPlList(int param_1) {
+    st::fn_005CDF60(this, param_1);
+}
+
+inline void SettMapMTy::UpdatePing(int param_1, undefined4 param_2) {
+    st::fn_005CFCD0(this, param_1, param_2);
+}
+
+inline void SettMapMTy::sub_005B5F00(RecoveredSourceFamily_dibcopy *param_1, int *param_2) {
+    st::fn_005B5F00(this, param_1, param_2);
+}
+
+inline void SettMapMTy::sub_005C29B0(char param_1) {
+    st::fn_005C29B0(this, param_1);
+}
+
+inline void SettMapMTy::sub_005D00B0(AnonShape_005D00B0_9E7CC102 *param_1, uint param_2) {
+    st::fn_005D00B0(this, param_1, param_2);
+}
+
+inline void SettMapMTy::sub_005D1380() {
+    st::fn_005D1380(this);
+}
+
+inline int SettMapSTy::GetMessage(STMessage *message) {
+    return st::fn_005D5560(this, message);
+}
+
+inline void SettMapSTy::PrepPlList() {
+    st::fn_005D5160(this);
+}
+
+inline void SettMapSTy::SetListCtrls() {
+    st::fn_005D4E90(this);
+}
+
+inline int SettMapTy::GetMessage(STMessage *message) {
+    return st::fn_005C8A40(this, message);
+}
+
+inline void SettMapTy::PaintSC() {
+    st::fn_005C87C0(this);
+}
+
+inline void SettMapTy::PaintSettMap(char param_1) {
+    st::fn_005C4E20(this, param_1);
+}
+
+inline int SliderClassTy::GetMessage(STMessage * message) {
+    return st::fn_007244B0(this, message);
+}
+
+inline int SndUnderAttMenegC::GetMessage(STMessage *message) {
+    return st::fn_0061F660(this, message);
+}
+
+inline void SndUnderAttMenegC::sub_0061FCC0() {
+    st::fn_0061FCC0(this);
+}
+
+inline void SoundClassTy::CheckFader() {
+    st::fn_00568C50(this);
+}
+
+inline void SoundClassTy::PlaySound(SoundPlayMode mode, char *soundName, int soundId, SoundPosition *position, int flags) {
+    st::fn_00568DD0(this, mode, soundName, soundId, position, flags);
+}
+
+inline void SoundManagerTy::sub_00566900() {
+    st::fn_00566900(this);
+}
+
+inline void SoundManagerTy::sub_00566970(int param_1, int param_2) {
+    st::fn_00566970(this, param_1, param_2);
+}
+
+inline void SoundManagerTy::sub_00566AA0() {
+    st::fn_00566AA0(this);
+}
+
+inline void SpecPanelTy::DonePanel() {
+    st::fn_0053E640(this);
+}
+
+inline int SpecPanelTy::GetMessage(STMessage *message) {
+    return st::fn_0053EB70(this, message);
+}
+
+inline void SpecPanelTy::InitPanel(char *text, int param_2, uint param_3, int param_4, int param_5, UINT param_6, undefined4 param_7, undefined4 param_8) {
+    st::fn_0053E3F0(this, text, param_2, param_3, param_4, param_5, param_6, param_7, param_8);
+}
+
+inline undefined4 SpecPanelTy::SetPanel(char param_1) {
+    return st::fn_0053E920(this, param_1);
+}
+
+inline void SpecPanelTy::ShiftControls(int param_1) {
+    st::fn_0053EA50(this, param_1);
+}
+
+inline void SpecPanelTy::SwitchPanel(int param_1) {
+    st::fn_0053E760(this, param_1);
+}
+
+inline undefined4 SpriteClassTy::CloseSprite() {
+    return st::fn_00715AB0(this);
+}
+
+inline undefined4 SpriteClassTy::InitSprite(int * param_1, uint param_2, char param_3, undefined4 * param_4, int param_5, int param_6) {
+    return st::fn_007158A0(this, param_1, param_2, param_3, param_4, param_5, param_6);
+}
+
+inline void StartServTy::WrSarrDDX(int param_1, int param_2, int param_3, int param_4, int param_5, int param_6, uint param_7, uint param_8, ccFntTy *param_9, undefined4 param_10) {
+    st::fn_00540A60(this, param_1, param_2, param_3, param_4, param_5, param_6, param_7, param_8, param_9, param_10);
+}
+
+inline void StartServTy::WrTextDDX(int param_1, int param_2, int param_3, int param_4, int param_5, uint *resourceString, uint param_7, uint param_8, ccFntTy *param_9, uint param_10) {
+    st::fn_00540890(this, param_1, param_2, param_3, param_4, param_5, resourceString, param_7, param_8, param_9, param_10);
+}
+
+inline void StartSystemTy::AddToChat(int param_1) {
+    st::fn_005DD850(this, param_1);
+}
+
+inline void StartSystemTy::ChatMessage(STMessage *param_1) {
+    st::fn_005DD470(this, param_1);
+}
+
+inline void StartSystemTy::CreateBinDesc() {
+    st::fn_005DDC70(this);
+}
+
+inline void StartSystemTy::CreateChatView() {
+    st::fn_005DE270(this);
+}
+
+inline void StartSystemTy::GetIP() {
+    st::fn_005DAC80(this);
+}
+
+inline void StartSystemTy::InitChat() {
+    st::fn_005DADF0(this);
+}
+
+inline undefined4 StartSystemTy::LoadGraph() {
+    return st::fn_005DB4F0(this);
+}
+
+inline void StartSystemTy::LoadMapData(cMf32 *param_1, char param_2) {
+    st::fn_005DC050(this, param_1, param_2);
+}
+
+inline void StartSystemTy::OutBmpProc(int *param_1, undefined4 param_2, undefined4 param_3, int param_4, int param_5, DWORD param_6, DWORD param_7, BITMAPINFO *param_8) {
+    st::fn_005DBE50(this, param_1, param_2, param_3, param_4, param_5, param_6, param_7, param_8);
+}
+
+inline void StartSystemTy::PaintBinDesc(AnonShape_005DE050_5BD86458 *param_1) {
+    st::fn_005DE050(this, param_1);
+}
+
+inline void StartSystemTy::SetObjectives(int param_1, char *param_2, int param_3) {
+    st::fn_005DC730(this, param_1, param_2, param_3);
+}
+
+inline void StartSystemTy::sub_005DA910() {
+    st::fn_005DA910(this);
+}
+
+inline undefined1 StartSystemTy::sub_005DA940(int param_1) {
+    return st::fn_005DA940(this, param_1);
+}
+
+inline void StartSystemTy::sub_005DAB30() {
+    st::fn_005DAB30(this);
+}
+
+inline void StartSystemTy::sub_005DAF20() {
+    st::fn_005DAF20(this);
+}
+
+inline void StartSystemTy::sub_005DB2A0() {
+    st::fn_005DB2A0(this);
+}
+
+inline void StartSystemTy::sub_006E5360(int param_1, int *param_2, undefined4 *param_3) {
+    st::fn_006E5360(this, param_1, param_2, param_3);
+}
+
+inline void StartSystemTy::sub_006E56B0(uint param_1) {
+    st::fn_006E56B0(this, param_1);
+}
+
+inline undefined4 AnonReceiver_00416270::FUN_005faa10(int param_1) {
+    return st::fn_005FAA10(this, param_1);
+}
+
+inline undefined4 AnonReceiver_004167A0::FUN_00418030(short param_1, short param_2, short param_3) {
+    return st::fn_00418030(this, param_1, param_2, param_3);
+}
+
+inline int AnonReceiver_004248D0::FUN_00424e10(int param_1, float param_2, float param_3, float param_4, int param_5, int param_6, int *param_7) {
+    return st::fn_00424E10(this, param_1, param_2, param_3, param_4, param_5, param_6, param_7);
+}
+
+inline undefined4 AnonReceiver_004248D0::FUN_00427bb0(int param_1, int param_2, int param_3) {
+    return st::fn_00427BB0(this, param_1, param_2, param_3);
+}
+
+inline undefined4 AnonReceiver_004248D0::sub_00427090(int param_1, int param_2, int param_3) {
+    return st::fn_00427090(this, param_1, param_2, param_3);
+}
+
+inline undefined4 AnonReceiver_004603B0::FUN_004838e0(RecoveredRecord_STBoatC_004838E0 *param_1) {
+    return st::fn_004838E0(this, param_1);
+}
+
+inline undefined4 AnonReceiver_00493610::FUN_00493610(short *param_1, short *param_2, short *param_3) {
+    return st::fn_00493610(this, param_1, param_2, param_3);
+}
+
+inline void AnonReceiver_0053F510::FUN_005c8200() {
+    st::fn_005C8200(this);
+}
+
+inline void AnonReceiver_0054A9B0::FUN_0054a9b0(float param_1, float param_2, float param_3) {
+    st::fn_0054A9B0(this, param_1, param_2, param_3);
+}
+
+inline void AnonReceiver_00573260::FUN_00573260() {
+    st::fn_00573260(this);
+}
+
+inline undefined4 AnonReceiver_005FDB50::FUN_005fdb50(int param_1, int param_2) {
+    return st::fn_005FDB50(this, param_1, param_2);
+}
+
+inline uint AnonReceiver_00601500::FUN_00601500(int param_1, int param_2, int param_3, int param_4, int param_5, int param_6, int param_7, int param_8, int param_9, ushort param_10, int param_11, int param_12, int param_13) {
+    return st::fn_00601500(this, param_1, param_2, param_3, param_4, param_5, param_6, param_7, param_8, param_9, param_10, param_11, param_12, param_13);
+}
+
+inline int AnonReceiver_0060EF40::FUN_0060ef40(int param_1) {
+    return st::fn_0060EF40(this, param_1);
+}
+
+inline undefined4 AnonReceiver_00636260::FUN_00636260(uint param_1, int param_2, int param_3, int param_4, int param_5, int param_6, int param_7) {
+    return st::fn_00636260(this, param_1, param_2, param_3, param_4, param_5, param_6, param_7);
+}
+
+inline int AnonReceiver_00636260::sub_00636FC0() {
+    return st::fn_00636FC0(this);
+}
+
+inline void AnonReceiver_00644410::FUN_00644410(undefined4 *param_1, int *param_2, int *param_3, int *param_4) {
+    st::fn_00644410(this, param_1, param_2, param_3, param_4);
+}
+
+inline void AnonReceiver_00644410::sub_00645F10(void *param_1, ushort param_2, ushort param_3, short param_4) {
+    st::fn_00645F10(this, param_1, param_2, param_3, param_4);
+}
+
+inline uint * AnonReceiver_0064A970::FUN_0066acc0(char *param_1, int param_2, int *param_3) {
+    return st::fn_0066ACC0(this, param_1, param_2, param_3);
+}
+
+inline int AnonReceiver_0064A970::FUN_00672440(int *param_1, int param_2, short *param_3) {
+    return st::fn_00672440(this, param_1, param_2, param_3);
+}
+
+inline int AnonReceiver_0064A970::sub_00668F50(char *param_1, uint param_2, uint *param_3) {
+    return st::fn_00668F50(this, param_1, param_2, param_3);
+}
+
+inline uint AnonReceiver_0065DA50::FUN_0065da50(int param_1, char param_2) {
+    return st::fn_0065DA50(this, param_1, param_2);
+}
+
+inline int AnonReceiver_0065ED90::FUN_0065ed90(short *param_1, short *param_2, int param_3) {
+    return st::fn_0065ED90(this, param_1, param_2, param_3);
+}
+
+inline undefined4 AnonReceiver_00660180::FUN_00660180(short *param_1, char param_2) {
+    return st::fn_00660180(this, param_1, param_2);
+}
+
+inline undefined4 AnonReceiver_00664540::FUN_00664540(undefined4 *param_1, uint *param_2) {
+    return st::fn_00664540(this, param_1, param_2);
+}
+
+inline uint AnonReceiver_00678E00::FUN_00679120(byte *param_1, int param_2, int param_3, int param_4) {
+    return st::fn_00679120(this, param_1, param_2, param_3, param_4);
+}
+
+inline undefined4 AnonReceiver_00693D00::FUN_00693d00(cMf32 *param_1, undefined4 param_2) {
+    return st::fn_00693D00(this, param_1, param_2);
+}
+
+inline int AnonReceiver_006CEC40::FUN_006d63e0(int *param_1) {
+    return st::fn_006D63E0(this, param_1);
+}
+
+inline bool AnonReceiver_006E1EE0::FUN_006e1ee0(AnonShape_006E1EE0_698AE49A *param_1, undefined4 *param_2, int param_3, int *param_4) {
+    return st::fn_006E1EE0(this, param_1, param_2, param_3, param_4);
+}
+
+inline void AnonReceiver_006F31D0::sub_006F31D0(uint param_1, int param_2, uint param_3, uint param_4) {
+    st::fn_006F31D0(this, param_1, param_2, param_3, param_4);
+}
+
+inline void AnonReceiver_00702510::FUN_00708d10(int param_1, int param_2, byte *param_3, int param_4, int param_5, uint param_6, int param_7, int param_8) {
+    st::fn_00708D10(this, param_1, param_2, param_3, param_4, param_5, param_6, param_7, param_8);
+}
+
+inline int AnonReceiver_00714CE0::FUN_00714ce0(uint param_1) {
+    return st::fn_00714CE0(this, param_1);
+}
+
+inline void AnonReceiver_00727C80::FUN_00727da0(AnonShape_00727DA0_C4265AA0 *param_1, uint param_2, int param_3) {
+    st::fn_00727DA0(this, param_1, param_2, param_3);
+}
+
+inline void AnonReceiver_00727C80::FUN_007282b0(AnonShape_007282B0_AFD740A9 *param_1, uint param_2, int param_3) {
+    st::fn_007282B0(this, param_1, param_2, param_3);
+}
+
+inline void AnonReceiver_00728640::FUN_00728a80(int param_1, int param_2, int param_3) {
+    st::fn_00728A80(this, param_1, param_2, param_3);
+}
+
+inline void ST3DSMAPContext::sub_006DBAB0() {
+    st::fn_006DBAB0(this);
+}
+
+inline void ST3DSMAPContext::sub_006DBCF0() {
+    st::fn_006DBCF0(this);
+}
+
+inline void ST3DSMAPContext::sub_006DBD20(AnonPointee_ST3DSMAPContext_0004 *param_2, uint param_3, undefined4 param_4, int param_5, int param_6, double param_7, double param_8, double param_9, double param_10) {
+    st::fn_006DBD20(this, param_2, param_3, param_4, param_5, param_6, param_7, param_8, param_9, param_10);
+}
+
+inline void ST3DSMAPContext::sub_006DC050(undefined4 param_2, uint param_3, undefined4 param_4, int param_5, int param_6, double param_7, double param_8, double param_9, double param_10, double param_11, double param_12, int param_13) {
+    st::fn_006DC050(this, param_2, param_3, param_4, param_5, param_6, param_7, param_8, param_9, param_10, param_11, param_12, param_13);
+}
+
+inline void ST3DSMAPContext::sub_006DD530(float *param_1, float *param_2, float *param_3) {
+    st::fn_006DD530(this, param_1, param_2, param_3);
+}
+
+inline void ST3DSMAPContext::sub_006DD610(uint param_2, double param_3, double param_4) {
+    st::fn_006DD610(this, param_2, param_3, param_4);
+}
+
+inline void ST3DSMAPContext::sub_006DD790(float param_1) {
+    st::fn_006DD790(this, param_1);
+}
+
+inline void ST3DSMAPContext::sub_006DD800(float param_1) {
+    st::fn_006DD800(this, param_1);
+}
+
+inline void ST3DSMAPContext::sub_006DD870() {
+    st::fn_006DD870(this);
+}
+
+inline void ST3DSMAPContext::sub_006DDA90(float param_1, float param_2) {
+    st::fn_006DDA90(this, param_1, param_2);
+}
+
+inline void ST3DSMAPContext::sub_006DDAE0(int param_1, int param_2, int param_3, ushort *param_4) {
+    st::fn_006DDAE0(this, param_1, param_2, param_3, param_4);
+}
+
+inline void ST3DSMAPContext::sub_006DDB70() {
+    st::fn_006DDB70(this);
+}
+
+inline void ST3DSMAPContext::sub_006DDBB0() {
+    st::fn_006DDBB0(this);
+}
+
+inline void ST3DSMAPContext::sub_006DDBE0() {
+    st::fn_006DDBE0(this);
+}
+
+inline void ST3DSMAPContext::sub_006E1320(double *param_1, double *param_2, int *param_3, int *param_4, int *param_5) {
+    st::fn_006E1320(this, param_1, param_2, param_3, param_4, param_5);
+}
+
+inline undefined4 ST3DSMAPContext::sub_006E1460(double param_2, double param_3) {
+    return st::fn_006E1460(this, param_2, param_3);
+}
+
+inline undefined4 ST3DSMAPContext::sub_006E1C20(float param_1, int param_2, float param_3, float *param_4, float *param_5) {
+    return st::fn_006E1C20(this, param_1, param_2, param_3, param_4, param_5);
+}
+
+inline int ST3DSMAPContext::sub_006E25D0(int *param_2, float *param_3, double param_4, double param_5, double param_6, int param_7) {
+    return st::fn_006E25D0(this, param_2, param_3, param_4, param_5, param_6, param_7);
+}
+
+inline void ST3DSMAPContext::sub_006E2970(float param_1, float param_2, undefined4 param_3, int *param_4, int *param_5) {
+    st::fn_006E2970(this, param_1, param_2, param_3, param_4, param_5);
+}
+
+inline ushort ST3DSMAPContext::sub_006E2D00(int param_1, int param_2) {
+    return st::fn_006E2D00(this, param_1, param_2);
+}
+
+inline float10 ST3DSMAPContext::sub_006E3210(int param_2, int param_3) {
+    return st::fn_006E3210(this, param_2, param_3);
+}
+
+inline int * ST3DSMAPContext::sub_006E3310(int param_1, int *param_2, int param_3, int *param_4) {
+    return st::fn_006E3310(this, param_1, param_2, param_3, param_4);
+}
+
+inline void ST3DSMAPContext::sub_006E6400(undefined4 *param_1, undefined4 param_2, int param_3, undefined4 param_4) {
+    st::fn_006E6400(this, param_1, param_2, param_3, param_4);
+}
+
+inline void ST3DSMAPContext::sub_006E6500(undefined4 *param_1) {
+    st::fn_006E6500(this, param_1);
+}
+
+inline void ST3DSMAPContext::sub_006E6710(float param_1, float param_2, uint param_3, undefined4 param_4, int param_5) {
+    st::fn_006E6710(this, param_1, param_2, param_3, param_4, param_5);
+}
+
+inline void ST3DSMAPContext::sub_006E6780(int param_1) {
+    st::fn_006E6780(this, param_1);
+}
+
+inline undefined4 ST3DSMAPContext::sub_006E68C0(int param_1, int param_2, int *param_3, int *param_4) {
+    return st::fn_006E68C0(this, param_1, param_2, param_3, param_4);
+}
+
+inline void ST3DSMAPContext::sub_006E6AF0(AnonShape_006E6AF0_D2F012A7 *param_1) {
+    st::fn_006E6AF0(this, param_1);
+}
+
+inline void ST3DSMAPContext::sub_006E6FB0(RecoveredSourceFamily_dibcopy *param_1, int param_2, int param_3, int param_4) {
+    st::fn_006E6FB0(this, param_1, param_2, param_3, param_4);
+}
+
+inline void ST3DSMAPContext::sub_006E8580(int *param_1) {
+    st::fn_006E8580(this, param_1);
+}
+
+inline void ST3DSMAPContext::sub_006E8630(undefined4 param_1) {
+    st::fn_006E8630(this, param_1);
+}
+
+inline void ST3DSMAPContext::sub_006E8640(char *text, char *param_2) {
+    st::fn_006E8640(this, text, param_2);
+}
+
+inline undefined4 ST3DSMAPContext::sub_006E8660(int *param_1, uint param_2, uint param_3, uint param_4, uint param_5, uint param_6, uint param_7, uint param_8) {
+    return st::fn_006E8660(this, param_1, param_2, param_3, param_4, param_5, param_6, param_7, param_8);
+}
+
+inline int ST3DSMAPContext::sub_006E88C0(int *param_1, undefined4 param_2, undefined4 param_3, undefined4 param_4, undefined4 param_5, undefined4 param_6, undefined4 param_7, undefined4 param_8, byte param_9, undefined4 param_10, undefined4 param_11, undefined4 param_12) {
+    return st::fn_006E88C0(this, param_1, param_2, param_3, param_4, param_5, param_6, param_7, param_8, param_9, param_10, param_11, param_12);
+}
+
+inline void ST3DSMAPContext::sub_006E8EA0(AnonShape_006E8EA0_96B71903 *param_1) {
+    st::fn_006E8EA0(this, param_1);
+}
+
+inline ushort * ST3DSMAPContext::sub_006E9000(int param_1, ushort param_2, ushort param_3, undefined4 param_4, undefined4 param_5, undefined4 param_6, int param_7) {
+    return st::fn_006E9000(this, param_1, param_2, param_3, param_4, param_5, param_6, param_7);
+}
+
+inline void ST3DSMAPContext::sub_006E91D0(int *param_1) {
+    st::fn_006E91D0(this, param_1);
+}
+
+inline undefined4 ST3DSMAPContext::sub_006E98E0(uint param_1, uint param_2, int param_3, int param_4, int param_5) {
+    return st::fn_006E98E0(this, param_1, param_2, param_3, param_4, param_5);
+}
+
+inline uint * ST3DSMAPContext::sub_006E9CB0(uint *param_1, uint param_2) {
+    return st::fn_006E9CB0(this, param_1, param_2);
+}
+
+inline uint * ST3DSMAPContext::sub_006E9D40(uint *param_1, uint param_2) {
+    return st::fn_006E9D40(this, param_1, param_2);
+}
+
+inline void ST3DSMAPContext::sub_006E9EF0(uint param_1, uint param_2, int param_3, int param_4, uint param_5, ushort param_6) {
+    st::fn_006E9EF0(this, param_1, param_2, param_3, param_4, param_5, param_6);
+}
+
+inline void ST3DSMAPContext::sub_006EA270(uint param_1, uint param_2, uint param_3) {
+    st::fn_006EA270(this, param_1, param_2, param_3);
+}
+
+inline byte ST3DSMAPContext::sub_006EA5E0(uint param_1, int param_2, int param_3) {
+    return st::fn_006EA5E0(this, param_1, param_2, param_3);
+}
+
+inline void ST3DSMAPContext::sub_006EA6D0(uint param_1, int param_2, int param_3) {
+    st::fn_006EA6D0(this, param_1, param_2, param_3);
+}
+
+inline void ST3DSMAPContext::sub_006EA800(uint param_1, int param_2, int param_3) {
+    st::fn_006EA800(this, param_1, param_2, param_3);
+}
+
+inline void ST3DSMAPContext::sub_006EA8A0(uint param_1, int param_2, uint param_3, ushort *param_4) {
+    st::fn_006EA8A0(this, param_1, param_2, param_3, param_4);
+}
+
+inline uint ST3DSMAPContext::sub_006EB310(uint param_1) {
+    return st::fn_006EB310(this, param_1);
+}
+
+inline int ST3DSMAPContext::sub_006EB350(int param_1, int param_2, int param_3, int param_4) {
+    return st::fn_006EB350(this, param_1, param_2, param_3, param_4);
+}
+
+inline uint ST3DSMAPContext::sub_00709470(int *param_1, int param_2, int param_3, int param_4, byte param_5) {
+    return st::fn_00709470(this, param_1, param_2, param_3, param_4, param_5);
+}
+
+inline void ST3DSMAPContext::sub_00717870() {
+    st::fn_00717870(this);
+}
+
+inline void ST3DSMAPContext::sub_007178C0(int param_1, int param_2, int param_3) {
+    st::fn_007178C0(this, param_1, param_2, param_3);
+}
+
+inline int SystemClassTy::FindFirstObject(int param_1, int * param_2) {
+    return st::fn_006E53A0(this, param_1, param_2);
+}
+
+inline int SystemClassTy::GetToAllObjects(undefined4 param_1) {
+    return st::fn_006E5C70(this, param_1);
+}
+
+inline int SystemClassTy::PostMessage(undefined4 * param_1) {
+    return st::fn_006E5810(this, param_1);
+}
+
+inline int SystemClassTy::PostNextMessage(undefined4 * param_1) {
+    return st::fn_006E58B0(this, param_1);
+}
+
+inline int SystemClassTy::_CreateObject(int param_1, undefined4 * param_2, int * param_3, undefined4 param_4) {
+    return st::fn_006E54B0(this, param_1, param_2, param_3, param_4);
+}
+
+inline int TLOBaseTy::AddSprInit() {
+    return st::fn_004CBC10(this);
+}
+
+inline bool TLOBaseTy::FUN_004bea70(int *param_1) {
+    return st::fn_004BEA70(this, param_1);
+}
+
+inline undefined4 TLOBaseTy::FUN_004c7cc0(int param_1, uint param_2, uint param_3, int param_4, uint param_5, undefined4 param_6, int param_7, char *param_8) {
+    return st::fn_004C7CC0(this, param_1, param_2, param_3, param_4, param_5, param_6, param_7, param_8);
+}
+
+inline undefined4 TLOBaseTy::FUN_004cf4e0(undefined4 param_1, undefined4 param_2, undefined4 param_3, undefined4 param_4, undefined4 param_5, char *param_6) {
+    return st::fn_004CF4E0(this, param_1, param_2, param_3, param_4, param_5, param_6);
+}
+
+inline undefined4 TLOBaseTy::FUN_004e2c30(uint param_1) {
+    return st::fn_004E2C30(this, param_1);
+}
+
+inline int TLOBaseTy::LoadImages() {
+    return st::fn_004C9770(this);
+}
+
+inline int TLOBaseTy::ReloadLogoPlane() {
+    return st::fn_004CA3C0(this);
+}
+
+inline int TLOBaseTy::RotateSpr(int param_1) {
+    return st::fn_004CABB0(this, param_1);
+}
+
+inline int TLOBaseTy::SetState(int param_1, int param_2) {
+    return st::fn_004B80D0(this, param_1, param_2);
+}
+
+inline int TLOBaseTy::fireFindCheckTarget(int param_1, int param_2) {
+    return st::fn_004C3C00(this, param_1, param_2);
+}
+
+inline int TLOBaseTy::fireProc() {
+    return st::fn_004C3570(this);
+}
+
+inline undefined4 TLOBaseTy::procResult() {
+    return st::fn_004C94B0(this);
+}
+
+inline undefined4 TLOBaseTy::sub_00417D30() {
+    return st::fn_00417D30(this);
+}
+
+inline void TLOBaseTy::sub_00419D30(int param_1) {
+    st::fn_00419D30(this, param_1);
+}
+
+inline void TLOBaseTy::sub_0041D590() {
+    st::fn_0041D590(this);
+}
+
+inline undefined4 TLOBaseTy::sub_004B7F90(int param_1) {
+    return st::fn_004B7F90(this, param_1);
+}
+
+inline uint TLOBaseTy::sub_004B98E0(int param_1) {
+    return st::fn_004B98E0(this, param_1);
+}
+
+inline undefined4 TLOBaseTy::sub_004B9A40() {
+    return st::fn_004B9A40(this);
+}
+
+inline undefined4 TLOBaseTy::sub_004C2F70() {
+    return st::fn_004C2F70(this);
+}
+
+inline undefined4 TLOBaseTy::sub_004C34A0(int param_1) {
+    return st::fn_004C34A0(this, param_1);
+}
+
+inline undefined4 TLOBaseTy::sub_004C4550(int *param_1) {
+    return st::fn_004C4550(this, param_1);
+}
+
+inline undefined4 TLOBaseTy::sub_004C56B0(void *param_1) {
+    return st::fn_004C56B0(this, param_1);
+}
+
+inline undefined4 TLOBaseTy::sub_004C6C70(undefined4 param_1, undefined4 param_2, undefined4 param_3) {
+    return st::fn_004C6C70(this, param_1, param_2, param_3);
+}
+
+inline undefined4 TLOBaseTy::sub_004C7070(int param_1) {
+    return st::fn_004C7070(this, param_1);
+}
+
+inline undefined4 TLOBaseTy::sub_004C7460() {
+    return st::fn_004C7460(this);
+}
+
+inline int TLOBaseTy::sub_004C7860(int param_1, uint param_2, int param_3, int param_4, int param_5) {
+    return st::fn_004C7860(this, param_1, param_2, param_3, param_4, param_5);
+}
+
+inline int TLOBaseTy::sub_004C90C0() {
+    return st::fn_004C90C0(this);
+}
+
+inline int TLOBaseTy::sub_004C9370(int param_1, int param_2, int param_3) {
+    return st::fn_004C9370(this, param_1, param_2, param_3);
+}
+
+inline void TLOBaseTy::sub_004C96E0() {
+    st::fn_004C96E0(this);
+}
+
+inline undefined4 TLOBaseTy::sub_004CA7B0(uint *param_1, int param_2) {
+    return st::fn_004CA7B0(this, param_1, param_2);
+}
+
+inline void TLOBaseTy::sub_004CAFC0(TLOBaseTy_sub_004CAFC0_param_1Enum param_1, uint param_2, uint *param_3, uint *param_4) {
+    st::fn_004CAFC0(this, param_1, param_2, param_3, param_4);
+}
+
+inline undefined4 TLOBaseTy::sub_004CBA30() {
+    return st::fn_004CBA30(this);
+}
+
+inline void TLOBaseTy::sub_004CBF30() {
+    st::fn_004CBF30(this);
+}
+
+inline undefined4 TLOBaseTy::sub_004CC330() {
+    return st::fn_004CC330(this);
+}
+
+inline undefined4 TLOBaseTy::sub_004CC880(undefined4 param_1) {
+    return st::fn_004CC880(this, param_1);
+}
+
+inline undefined4 TLOBaseTy::sub_004CC900() {
+    return st::fn_004CC900(this);
+}
+
+inline int TLOBaseTy::sub_004CE7D0() {
+    return st::fn_004CE7D0(this);
+}
+
+inline undefined4 TLOBaseTy::sub_004CE860() {
+    return st::fn_004CE860(this);
+}
+
+inline undefined4 TLOBaseTy::sub_004CEB00(int param_1) {
+    return st::fn_004CEB00(this, param_1);
+}
+
+inline void TLOBaseTy::sub_004CFA00(TLOBaseTy_sub_004CFA00_param_1Enum param_1, int param_2, int *param_3, int *param_4) {
+    st::fn_004CFA00(this, param_1, param_2, param_3, param_4);
+}
+
+inline int TLOBaseTy::sub_004D6DF0() {
+    return st::fn_004D6DF0(this);
+}
+
+inline void TLOBaseTy::sub_004DC150() {
+    st::fn_004DC150(this);
+}
+
+inline undefined4 TLOBaseTy::sub_004DE7D0(undefined4 param_1, undefined4 param_2, int param_3) {
+    return st::fn_004DE7D0(this, param_1, param_2, param_3);
+}
+
+inline undefined4 TLOBaseTy::sub_004DF9F0() {
+    return st::fn_004DF9F0(this);
+}
+
+inline undefined4 TLOBaseTy::sub_004E2AD0(int param_1, uint param_2) {
+    return st::fn_004E2AD0(this, param_1, param_2);
+}
+
+inline undefined4 TLOBaseTy::sub_004E3120() {
+    return st::fn_004E3120(this);
+}
+
+inline undefined4 TLOBaseTy::sub_004EA620() {
+    return st::fn_004EA620(this);
+}
+
+inline int TLOBaseTy::teleNone() {
+    return st::fn_004E9CE0(this);
+}
+
+inline int TLOBldMark::Create() {
+    return st::fn_004C60E0(this);
+}
+
+inline undefined4 TLOBldMark::sub_004C61A0() {
+    return st::fn_004C61A0(this);
+}
+
+inline undefined4 TLOBldMark::sub_004C61E0() {
+    return st::fn_004C61E0(this);
+}
+
+inline undefined4 TLOBldMark::sub_004C6210(int param_1, int *param_2) {
+    return st::fn_004C6210(this, param_1, param_2);
+}
+
+inline undefined4 TLOBldMark::sub_004C63F0() {
+    return st::fn_004C63F0(this);
+}
+
+inline undefined4 TLOBldMark::sub_004C6440(float param_1, int param_2, int *param_3, int *param_4, int *param_5) {
+    return st::fn_004C6440(this, param_1, param_2, param_3, param_4, param_5);
+}
+
+inline int TLOEmbryoTy::Create(RecoveredRecord_TLOEmbryoTy_004D11D0 *param_1) {
+    return st::fn_004D11D0(this, param_1);
+}
+
+inline int TLOEmbryoTy::GetMessage(STMessage *message) {
+    return st::fn_004D55B0(this, message);
+}
+
+inline void TLOEmbryoTy::sub_0041C3F0(undefined *param_1) {
+    st::fn_0041C3F0(this, param_1);
+}
+
+inline undefined4 TLOEmbryoTy::sub_004D10A0(int param_1) {
+    return st::fn_004D10A0(this, param_1);
+}
+
+inline int TabClassTy::GetMessage(STMessage * message) {
+    return st::fn_00723420(this, message);
+}
+
+inline void TradePanelTy::DoneTradePanel() {
+    st::fn_005512F0(this);
+}
+
+inline int TradePanelTy::GetMessage(STMessage *message) {
+    return st::fn_005522A0(this, message);
+}
+
+inline void TradePanelTy::InitTradePanel() {
+    st::fn_00550DB0(this);
+}
+
+inline void TradePanelTy::PaintIndicators() {
+    st::fn_00551EC0(this);
+}
+
+inline void TradePanelTy::PaintPanel() {
+    st::fn_00551BA0(this);
+}
+
+inline void TradePanelTy::SetModeControls(char param_1) {
+    st::fn_00551460(this, param_1);
+}
+
+inline void TradePanelTy::ShiftControls(int param_1) {
+    st::fn_00551690(this, param_1);
+}
+
+inline void TradePanelTy::Update() {
+    st::fn_005521B0(this);
+}
+
+inline void TradePanelTy::sub_00551800() {
+    st::fn_00551800(this);
+}
+
+inline void TradePanelTy::sub_00551B10() {
+    st::fn_00551B10(this);
+}
+
+inline undefined4 TradePanelTy::sub_00552160(char param_1, char param_2) {
+    return st::fn_00552160(this, param_1, param_2);
+}
+
+inline int TraksClassTy::CreateDate() {
+    return st::fn_00555720(this);
+}
+
+inline void TraksClassTy::DrawTrakSprite(RecoveredRecord_TraksClassTy_00555910 *param_1) {
+    st::fn_00555910(this, param_1);
+}
+
+inline void TraksClassTy::PrepareAfterSave(ushort *param_1) {
+    st::fn_00556170(this, param_1);
+}
+
+inline byte * TraksClassTy::PrepareToSave(uint *param_1) {
+    return st::fn_00555FE0(this, param_1);
+}
+
+inline uint TraksClassTy::TraksCreate(short param_1, short param_2, uint param_3, int param_4, int param_5, int param_6, short param_7, short param_8, short param_9, short param_10, short param_11, short param_12, int param_13, short param_14, byte param_15) {
+    return st::fn_00556760(this, param_1, param_2, param_3, param_4, param_5, param_6, param_7, param_8, param_9, param_10, param_11, param_12, param_13, param_14, param_15);
+}
+
+inline undefined4 TraksClassTy::TraksCreateCollection(int *param_1) {
+    return st::fn_00556DD0(this, param_1);
+}
+
+inline void TraksClassTy::TraksExec() {
+    st::fn_00555E80(this);
+}
+
+inline uint TraksClassTy::sub_00555D90(undefined4 *param_1) {
+    return st::fn_00555D90(this, param_1);
+}
+
+inline undefined4 UPanelTy::CreateBut(undefined4 param_1, int param_2, int param_3, int param_4, byte param_5, LPSTR param_6, undefined4 param_7, undefined4 param_8, short param_9, ushort param_10, undefined4 param_11, char *param_12, undefined4 param_13, undefined4 param_14) {
+    return st::fn_0053DEA0(this, param_1, param_2, param_3, param_4, param_5, param_6, param_7, param_8, param_9, param_10, param_11, param_12, param_13, param_14);
+}
+
+inline undefined4 UPanelTy::CreateTab(byte param_1, byte param_2, int param_3, int param_4, uint param_5, uint param_6, int param_7, int param_8, undefined4 param_9, undefined4 param_10) {
+    return st::fn_0053E1C0(this, param_1, param_2, param_3, param_4, param_5, param_6, param_7, param_8, param_9, param_10);
+}
+
+inline void UPanelTy::OutProc(int *param_1, undefined4 param_2, undefined4 param_3, int param_4, int param_5, undefined4 param_6, undefined4 param_7, BITMAPINFO *param_8) {
+    st::fn_005385C0(this, param_1, param_2, param_3, param_4, param_5, param_6, param_7, param_8);
+}
+
+inline void UPanelTy::PaintBut(AnonShape_0053D7A0_044B6141 *param_1, byte param_2, char *param_3, undefined *param_4) {
+    st::fn_0053D7A0(this, param_1, param_2, param_3, param_4);
+}
+
+inline void UPanelTy::PaintIBut(AnonShape_0053DAF0_3BDC2979 *param_1, char *param_2, UINT param_3) {
+    st::fn_0053DAF0(this, param_1, param_2, param_3);
+}
+
+inline void UPanelTy::PaintLBut(AnonShape_0053DCC0_5B8C160B *param_1, byte param_2, char *param_3, char *param_4, undefined *param_5) {
+    st::fn_0053DCC0(this, param_1, param_2, param_3, param_4, param_5);
+}
+
+inline void UPanelTy::PaintTxtBut(AnonShape_0053D920_829E6B3B *param_1, byte param_2, char *param_3, ccFntTy *param_4, UINT param_5, undefined *param_6) {
+    st::fn_0053D920(this, param_1, param_2, param_3, param_4, param_5, param_6);
+}
+
+inline void UpgPanelTy::DoneUpgPanel() {
+    st::fn_00552A30(this);
+}
+
+inline void UpgPanelTy::InitUpgPanel() {
+    st::fn_005528B0(this);
+}
+
+inline int ViewerClassTy::GetMessage(STMessage * message) {
+    return st::fn_0071E8B0(this, message);
+}
+
+inline int ViewerClassTy::_Draw() {
+    return st::fn_0071E730(this);
+}
+
+inline void Visible::PrepareAfterSave(ushort *param_1) {
+    st::fn_005585F0(this, param_1);
+}
+
+inline void VisibleClassTy::Init() {
+    st::fn_00557C90(this);
+}
+
+inline void VisibleClassTy::InitData() {
+    st::fn_005578D0(this);
+}
+
+inline byte * VisibleClassTy::PrepareToSave(uint *param_1) {
+    return st::fn_005582A0(this, param_1);
+}
+
+inline void VisibleClassTy::SetZoneAst(int param_1, int param_2, char param_3, uint param_4, int param_5, uint param_6, uint param_7) {
+    st::fn_00559B30(this, param_1, param_2, param_3, param_4, param_5, param_6, param_7);
+}
+
+inline void VisibleClassTy::SetZoneDes(int param_1, int param_2, char param_3, uint param_4, int param_5, undefined4 param_6, uint param_7) {
+    st::fn_005597A0(this, param_1, param_2, param_3, param_4, param_5, param_6, param_7);
+}
+
+inline void VisibleClassTy::SetZoneMin1(int param_1, int param_2, char param_3, uint param_4, int param_5, undefined4 param_6, uint param_7) {
+    st::fn_0055A270(this, param_1, param_2, param_3, param_4, param_5, param_6, param_7);
+}
+
+inline void VisibleClassTy::SetZoneMin2(int param_1, int param_2, char param_3, uint param_4, int param_5, undefined4 param_6, uint param_7) {
+    st::fn_0055A620(this, param_1, param_2, param_3, param_4, param_5, param_6, param_7);
+}
+
+inline void VisibleClassTy::SetZoneTsh(int param_1, int param_2, char param_3, uint param_4, int param_5, undefined4 param_6, uint param_7) {
+    st::fn_00559EC0(this, param_1, param_2, param_3, param_4, param_5, param_6, param_7);
+}
+
+inline uint VisibleClassTy::VisHoleCreate(int param_1, int param_2, undefined *param_3, uint param_4, undefined *param_5, undefined4 param_6) {
+    return st::fn_0055A9D0(this, param_1, param_2, param_3, param_4, param_5, param_6);
+}
+
+inline void VisibleClassTy::VisHoleExec() {
+    st::fn_0055AB50(this);
+}
+
+inline undefined4 VisibleClassTy::sub_0041CDA0(int param_1, int param_2, int param_3, uint param_4) {
+    return st::fn_0041CDA0(this, param_1, param_2, param_3, param_4);
+}
+
+inline void VisibleClassTy::sub_00558140() {
+    st::fn_00558140(this);
+}
+
+inline void VisibleClassTy::sub_00558C00(VisibleClassTy_sub_00558C00_param_1Enum param_1, int param_2, int param_3, int *param_4, int *param_5) {
+    st::fn_00558C00(this, param_1, param_2, param_3, param_4, param_5);
+}
+
+inline void VisibleClassTy::sub_00558DC0(int param_1, int param_2, undefined *param_3, int *param_4, uint param_5, int *param_6, uint param_7) {
+    st::fn_00558DC0(this, param_1, param_2, param_3, param_4, param_5, param_6, param_7);
+}
+
+inline void VisibleClassTy::sub_00559110(int param_1, undefined *param_2, int param_3, uint param_4, int param_5, int param_6, uint param_7) {
+    st::fn_00559110(this, param_1, param_2, param_3, param_4, param_5, param_6, param_7);
+}
+
+inline void VisibleClassTy::sub_005594A0(int param_1, int param_2, char param_3, undefined *param_4, int param_5, undefined4 param_6, uint param_7) {
+    st::fn_005594A0(this, param_1, param_2, param_3, param_4, param_5, param_6, param_7);
+}
+
+inline void VisibleClassTy::sub_00559620(int param_1, int param_2, char param_3, undefined *param_4, int param_5, int param_6, uint param_7) {
+    st::fn_00559620(this, param_1, param_2, param_3, param_4, param_5, param_6, param_7);
+}
+
+inline void VisibleClassTy::sub_005599D0(int param_1, int param_2, char param_3, uint param_4, int param_5, int param_6) {
+    st::fn_005599D0(this, param_1, param_2, param_3, param_4, param_5, param_6);
+}
+
+inline void VisibleClassTy::sub_00559D60(int param_1, int param_2, char param_3, uint param_4, int param_5, uint param_6) {
+    st::fn_00559D60(this, param_1, param_2, param_3, param_4, param_5, param_6);
+}
+
+inline void VisibleClassTy::sub_0055A110(int param_1, int param_2, char param_3, uint param_4, int param_5, int param_6) {
+    st::fn_0055A110(this, param_1, param_2, param_3, param_4, param_5, param_6);
+}
+
+inline void VisibleClassTy::sub_0055A4C0(int param_1, int param_2, char param_3, uint param_4, int param_5, int param_6) {
+    st::fn_0055A4C0(this, param_1, param_2, param_3, param_4, param_5, param_6);
+}
+
+inline void VisibleClassTy::sub_0055A870(int param_1, int param_2, char param_3, uint param_4, int param_5, int param_6) {
+    st::fn_0055A870(this, param_1, param_2, param_3, param_4, param_5, param_6);
+}
+
+inline undefined4 VisibleClassTy::sub_0055AD00(int param_1, int param_2, undefined4 param_3, uint param_4, int param_5) {
+    return st::fn_0055AD00(this, param_1, param_2, param_3, param_4, param_5);
+}
+
+inline undefined4 VisibleClassTy::sub_0055B1C0(int param_1, int param_2, undefined4 param_3, uint param_4) {
+    return st::fn_0055B1C0(this, param_1, param_2, param_3, param_4);
+}
+
+inline void VisibleClassTy::sub_0055B7F0(int param_1, undefined *param_2) {
+    st::fn_0055B7F0(this, param_1, param_2);
+}
+
+inline void VisibleClassTy::sub_0055BB00(byte param_1, short param_2, short param_3, char param_4, uint param_5, byte param_6, undefined4 param_7) {
+    st::fn_0055BB00(this, param_1, param_2, param_3, param_4, param_5, param_6, param_7);
+}
+
+inline void VisibleClassTy::sub_0055BBC0(byte param_1, short param_2, short param_3, char param_4, uint param_5, byte param_6, int param_7) {
+    st::fn_0055BBC0(this, param_1, param_2, param_3, param_4, param_5, param_6, param_7);
+}
+
+inline undefined4 VisibleClassTy::sub_005F1D80(int param_1, int param_2, int param_3) {
+    return st::fn_005F1D80(this, param_1, param_2, param_3);
+}
+
+inline void WaitTy::AddStr(uint *param_1, int param_2) {
+    st::fn_005E7C00(this, param_1, param_2);
+}
+
+inline void WaitTy::CreateCtrls() {
+    st::fn_005E9B50(this);
+}
+
+inline void WaitTy::DeleteCtrls() {
+    st::fn_005E9D70(this);
+}
+
+inline void WaitTy::DoneWait() {
+    st::fn_005E7570(this);
+}
+
+inline void WaitTy::InitWait(undefined4 param_1, undefined4 param_2) {
+    st::fn_005E6770(this, param_1, param_2);
+}
+
+inline void WaitTy::NoneWait() {
+    st::fn_005E84D0(this);
+}
+
+inline void WaitTy::PaintWait(char param_1) {
+    st::fn_005E79B0(this, param_1);
+}
+
+inline void WaitTy::ShowDescription() {
+    st::fn_005E7FE0(this);
+}
+
+inline void WaitTy::sub_005E9970() {
+    st::fn_005E9970(this);
+}
+
+inline void WaitTy::sub_005E9A40() {
+    st::fn_005E9A40(this);
+}
+
+inline void cLoadingTy::DrawLine(uint *param_1) {
+    st::fn_00554AD0(this, param_1);
+}
+
+inline void cLoadingTy::DrawLineCR(char *resourceString) {
+    st::fn_00554C80(this, resourceString);
+}
+
+inline void cLoadingTy::InitParam(int param_1, int param_2, int param_3, int param_4, undefined4 param_5, int param_6, int param_7, int param_8, int param_9) {
+    st::fn_00554800(this, param_1, param_2, param_3, param_4, param_5, param_6, param_7, param_8, param_9);
+}
+
+inline void cLoadingTy::SetProcess(int param_1, char *text, int param_3) {
+    st::fn_00554F20(this, param_1, text, param_3);
+}
+
+inline void cLoadingTy::SetState(cLoadingTy_SetState_param_1Enum param_1, uint param_2, char *param_3) {
+    st::fn_00555040(this, param_1, param_2, param_3);
+}
+
+inline void cLoadingTy::ShowScr(int param_1, int param_2) {
+    st::fn_00554660(this, param_1, param_2);
+}
+
+inline void cLoadingTy::sub_00554A50() {
+    st::fn_00554A50(this);
+}
+
+inline void cLoadingTy::sub_00555570() {
+    st::fn_00555570(this);
+}
+
+inline void cLoadingTy::sub_00555680(char *param_1) {
+    st::fn_00555680(this, param_1);
+}
+
+inline int cMf32::Flush() {
+    return st::fn_006F1220(this);
+}
+
+inline longlong cMf32::KeyRecGet(undefined1 param_1, char * param_2, ushort * param_3) {
+    return st::fn_006F2AF0(this, param_1, param_2, param_3);
+}
+
+inline int cMf32::RecChk(byte param_1, char * param_2) {
+    return st::fn_006F21C0(this, param_1, param_2);
+}
+
+inline undefined4 cMf32::RecDel(byte param_1, char * param_2) {
+    return st::fn_006F17C0(this, param_1, param_2);
+}
+
+inline ushort * cMf32::RecGet(byte param_1, char * text, int * param_3, int param_4) {
+    return st::fn_006F1CE0(this, param_1, text, param_3, param_4);
+}
+
+inline int cMf32::RecGetLen(byte param_1, char * text, int param_3) {
+    return st::fn_006F24A0(this, param_1, text, param_3);
+}
+
+inline int cMf32::RecGetOrigLen(byte param_1, char * param_2, undefined1 * param_3, int param_4) {
+    return st::fn_006F2600(this, param_1, param_2, param_3, param_4);
+}
+
+inline undefined4 * cMf32::RecGetParam(byte param_1, char * param_2, undefined4 * param_3, int param_4) {
+    return st::fn_006F2310(this, param_1, param_2, param_3, param_4);
+}
+
+inline undefined4 * cMf32::RecKeyGetNext(undefined4 * param_1) {
+    return st::fn_006F2860(this, param_1);
+}
+
+inline undefined4 * cMf32::RecKeyGetPrev(undefined4 * param_1) {
+    return st::fn_006F2A10(this, param_1);
+}
+
+inline undefined cMf32::RecMemFree(uint * param_1) {
+    return st::fn_006F20E0(this, param_1);
+}
+
+inline undefined4 * cMf32::RecNameGetNext() {
+    return st::fn_006F2790(this);
+}
+
+inline undefined4 * cMf32::RecNameGetPrev() {
+    return st::fn_006F2940(this);
+}
+
+inline int cMf32::RecPut(byte param_1, char * param_2, byte * param_3, uint param_4, undefined4 * param_5, char param_6, uint * param_7) {
+    return st::fn_006F13F0(this, param_1, param_2, param_3, param_4, param_5, param_6, param_7);
+}
+
+inline uint cMf32::RecPutNoname(undefined4 * param_1, uint param_2) {
+    return st::fn_006F1700(this, param_1, param_2);
+}
+
+inline undefined4 cMf32::RecRen(undefined1 param_1, char * param_2, char * param_3, int param_4) {
+    return st::fn_006F1910(this, param_1, param_2, param_3, param_4);
+}
+
+inline undefined cMf32::ToBeg(undefined4 param_1, undefined4 param_2) {
+    return st::fn_006F12B0(this, param_1, param_2);
+}
+
+inline undefined cMf32::ToEnd(undefined4 param_1, undefined4 param_2) {
+    return st::fn_006F1350(this, param_1, param_2);
+}
+
+inline DWORD cMf32::vmAddrRecGet(byte param_1, char * param_2, int param_3) {
+    return st::fn_006F1B70(this, param_1, param_2, param_3);
+}
+
+inline int cTypingTy::TypingInit(uint * param_1, void * param_2, int param_3, undefined4 param_4, undefined4 param_5, int param_6, int param_7, uint param_8, uint param_9, int param_10, int param_11, int param_12, undefined4 param_13) {
+    return st::fn_00713B00(this, param_1, param_2, param_3, param_4, param_5, param_6, param_7, param_8, param_9, param_10, param_11, param_12, param_13);
+}
+
+inline int cTypingTy::TypingInitSarr(DArrayTy * param_1, void * param_2, int param_3, undefined4 param_4, undefined4 param_5, int param_6, int param_7, uint param_8, uint param_9, int param_10, int param_11, int param_12, undefined4 param_13) {
+    return st::fn_00713F30(this, param_1, param_2, param_3, param_4, param_5, param_6, param_7, param_8, param_9, param_10, param_11, param_12, param_13);
+}
+
+inline undefined4 * ccFntTy::CreateSurf(int param_1, uint param_2, int param_3, int param_4, int param_5, int param_6, int param_7) {
+    return st::fn_00710BA0(this, param_1, param_2, param_3, param_4, param_5, param_6, param_7);
+}
+
+inline undefined4 * ccFntTy::CreateTypeSSpr(uint * param_1, int param_2, int param_3, ccFntTy_CreateTypeSSpr_param_4Enum param_4, uint param_5, int param_6, int param_7, int param_8) {
+    return st::fn_00713480(this, param_1, param_2, param_3, param_4, param_5, param_6, param_7, param_8);
+}
+
+inline int ccFntTy::EraseSufr() {
+    return st::fn_00710F00(this);
+}
+
+inline uint * ccFntTy::FormIndentSarr(DArrayTy * param_1, char * text, uint * param_3, int param_4, int param_5, uint param_6, char * param_7, int param_8) {
+    return st::fn_007126E0(this, param_1, text, param_3, param_4, param_5, param_6, param_7, param_8);
+}
+
+inline char * ccFntTy::FormIndentText(char * param_1, uint * param_2, char * text, uint * param_4, int param_5, char * param_6, int param_7) {
+    return st::fn_00712D30(this, param_1, param_2, text, param_4, param_5, param_6, param_7);
+}
+
+inline uint * ccFntTy::FormSarr(uint * param_1, char * text, int param_3, int param_4, uint param_5, int param_6) {
+    return st::fn_007121F0(this, param_1, text, param_3, param_4, param_5, param_6);
+}
+
+inline char * ccFntTy::FormText(char * param_1, uint * param_2, char * text, int param_4, int param_5) {
+    return st::fn_00712C10(this, param_1, param_2, text, param_4, param_5);
+}
+
+inline char * ccFntTy::GetFittingStr(char * param_1, uint * param_2, uint * param_3, int param_4, undefined4 * param_5) {
+    return st::fn_00713200(this, param_1, param_2, param_3, param_4, param_5);
+}
+
+inline int ccFntTy::GetSurfAsSpr(byte param_1, int param_2, int param_3, int param_4, int param_5) {
+    return st::fn_00710D80(this, param_1, param_2, param_3, param_4, param_5);
+}
+
+inline undefined4 * ccFntTy::Save(undefined4 * param_1) {
+    return st::fn_007108B0(this, param_1);
+}
+
+inline uint * ccFntTy::SepColorStrInSarr(uint * param_1, uint * param_2) {
+    return st::fn_007129D0(this, param_1, param_2);
+}
+
+inline int ccFntTy::SetSurf(int param_1, int param_2, int param_3, uint param_4, int param_5, int param_6) {
+    return st::fn_00710A90(this, param_1, param_2, param_3, param_4, param_5, param_6);
+}
+
+inline int ccFntTy::VisLineSarr(int param_1, int param_2) {
+    return st::fn_00712E60(this, param_1, param_2);
+}
+
+inline int ccFntTy::WrArr(int * param_1, int param_2, int param_3, undefined4 param_4) {
+    return st::fn_00711DA0(this, param_1, param_2, param_3, param_4);
+}
+
+inline int ccFntTy::WrCh(byte * param_1, uint param_2) {
+    return st::fn_007116F0(this, param_1, param_2);
+}
+
+inline int ccFntTy::WrChXY(byte * param_1, int param_2, int param_3, uint param_4) {
+    return st::fn_00711880(this, param_1, param_2, param_3, param_4);
+}
+
+inline int ccFntTy::WrSarr(int param_1, int param_2, int param_3, int param_4, int param_5, undefined4 param_6) {
+    return st::fn_00711F70(this, param_1, param_2, param_3, param_4, param_5, param_6);
+}
+
+inline int ccFntTy::WrStr(uint * resourceString, int param_2, int param_3, uint param_4) {
+    return st::fn_007119C0(this, resourceString, param_2, param_3, param_4);
+}
+
+inline int ccFntTy::WrTxt(uint * resourceString, int param_2, int param_3, uint param_4, int param_5, int param_6) {
+    return st::fn_00711B70(this, resourceString, param_2, param_3, param_4, param_5, param_6);
+}
+
+inline char * ccFntTy::_SarrToTxt(char * param_1, int param_2) {
+    return st::fn_00713080(this, param_1, param_2);
+}
+
+inline uint * ccFntTy::_TxtToSarr(uint * param_1) {
+    return st::fn_00712F80(this, param_1);
 }

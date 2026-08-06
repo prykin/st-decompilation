@@ -103,7 +103,7 @@ undefined4 __thiscall FUN_00721830(void *this,char *param_1)
     }
     FUN_00753050((int)psVar3,STField<int>(this,0x148) + STField<int>(this,0x210),*param_1);
     Library::DKW::TBL::FUN_006b6020
-              (STField<uint *>(this,0x138),
+              (STField<DArrayTy *>(this,0x138),
                STField<int>(this,0x144) + STField<int>(this,0x20c),(char *)psVar3);
     FUN_006a5e90(psVar3);
     FUN_00721080(this,STField<int>(this,0x210) + 1,STField<uint>(this,0x20c));

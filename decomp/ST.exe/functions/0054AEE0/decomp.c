@@ -135,7 +135,7 @@ LAB_0054b366:
       pSVar6->vfunc_68((short)&local_30);
       if (this_00->field_049E != local_30) {
         this_00->field_049E = local_30;
-        module = g_module_00807618;
+        module = g_hINSTANCE_00807618;
         resourceId = thunk_FUN_00523410(local_2c,(char)local_28,0);
         pcVar7 = LoadResourceString(resourceId,module);
         uVar11 = 0xffffffff;

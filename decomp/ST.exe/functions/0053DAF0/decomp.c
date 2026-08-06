@@ -49,7 +49,7 @@ UPanelTy::PaintIBut(UPanelTy *this,AnonShape_0053DAF0_3BDC2979 *param_1,char *pa
     bVar6 = (byte)errorCode;
     text = FUN_006f2c00(param_2,1,uVar3);
     puVar4 = Library::Ourlib::MFRLOAD::mfRLoad
-                       (DAT_00806794,CASE_1,text,uVar5,bVar6,iVar7,(int)puVar8,puVar10);
+                       (PTR_00806794,CASE_1,text,uVar5,bVar6,iVar7,(int)puVar8,puVar10);
     uVar5 = local_8;
     DibPut((RecoveredSourceFamily_dibcopy *)pUVar2->field_0068,local_c,local_8,'\x01',(byte *)puVar4
           );
@@ -58,7 +58,7 @@ UPanelTy::PaintIBut(UPanelTy *this,AnonShape_0053DAF0_3BDC2979 *param_1,char *pa
     uVar5 = thunk_FUN_00529fe0((int)param_1);
     iVar9 = -1;
     iVar7 = -2;
-    resourceString = (uint *)LoadResourceString(param_3,g_module_00807618);
+    resourceString = (uint *)LoadResourceString(param_3,g_hINSTANCE_00807618);
     ccFntTy::WrStr(g_interSystem_00802A28->field_0024,resourceString,iVar7,iVar9,uVar5);
     Library::DKW::DDX::FUN_006b3640
               ((int *)g_ddxContext_008075A8,pUVar2->field_0060,0xffffffff,pUVar2->field_003C,

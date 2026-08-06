@@ -2,7 +2,7 @@
 // Generated translation unit: source/original/Andrey/support.cpp
 
 // 005403C0 PutDDX
-#line 1 "decomp/ST.exe/functions/005403C0/decomp.c"
+#line 4 "decomp/ST.exe/functions/005403C0/decomp.c"
 /* [STSourceProvenanceApplier begin]
    Recovered source file: E:\__titans\Andrey\support.cpp
    Diagnostic line evidence: 20 (metadata/report site, not the function definition)
@@ -45,7 +45,7 @@ void __cdecl st::fn_005403C0(int param_1,int param_2,char param_3,BITMAPINFO *pa
 }
 
 // 005404F0 TransPutDDX
-#line 1 "decomp/ST.exe/functions/005404F0/decomp.c"
+#line 4 "decomp/ST.exe/functions/005404F0/decomp.c"
 /* [STSourceProvenanceApplier begin]
    Recovered source file: E:\__titans\Andrey\support.cpp
    Diagnostic line evidence: 38 (metadata/report site, not the function definition)
@@ -92,7 +92,7 @@ void __cdecl st::fn_005404F0(int param_1,int param_2,char param_3,BITMAPINFO *pa
 }
 
 // 00540620 PutDDXClip
-#line 1 "decomp/ST.exe/functions/00540620/decomp.c"
+#line 4 "decomp/ST.exe/functions/00540620/decomp.c"
 /* [STSourceProvenanceApplier begin]
    Recovered source file: E:\__titans\Andrey\support.cpp
    Diagnostic line evidence: 58 (metadata/report site, not the function definition)
@@ -143,7 +143,7 @@ st::fn_00540620(int param_1,int param_2,int param_3,int param_4,uint param_5,byt
 }
 
 // 00540760 DibPut
-#line 1 "decomp/ST.exe/functions/00540760/decomp.c"
+#line 4 "decomp/ST.exe/functions/00540760/decomp.c"
 /* [STSourceProvenanceApplier begin]
    Recovered source file: E:\__titans\Andrey\support.cpp
    Diagnostic line evidence: 79 (metadata/report site, not the function definition)
@@ -187,7 +187,7 @@ st::fn_00540760(RecoveredSourceFamily_dibcopy *param_1,int param_2,int param_3,c
 }
 
 // 00540890 StartServTy::WrTextDDX
-#line 1 "decomp/ST.exe/functions/00540890/decomp.c"
+#line 4 "decomp/ST.exe/functions/00540890/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\Andrey\support.cpp
    StartServTy::WrTextDDX
@@ -266,7 +266,7 @@ st::fn_00540890
 }
 
 // 00540A60 StartServTy::WrSarrDDX
-#line 1 "decomp/ST.exe/functions/00540A60/decomp.c"
+#line 4 "decomp/ST.exe/functions/00540A60/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\Andrey\support.cpp
    StartServTy::WrSarrDDX
@@ -326,7 +326,7 @@ st::fn_00540A60
 }
 
 // 00540DC0 SetAccelerator
-#line 1 "decomp/ST.exe/functions/00540DC0/decomp.c"
+#line 4 "decomp/ST.exe/functions/00540DC0/decomp.c"
 /* [STSourceProvenanceApplier begin]
    Recovered source file: E:\__titans\Andrey\support.cpp
    Diagnostic line evidence: 231 (metadata/report site, not the function definition)
@@ -466,7 +466,7 @@ st::fn_00540DC0(int param_1,undefined4 param_2,undefined4 param_3,undefined4 par
 }
 
 // 00541030 DelAllAccelerators
-#line 1 "decomp/ST.exe/functions/00541030/decomp.c"
+#line 4 "decomp/ST.exe/functions/00541030/decomp.c"
 /* [STSourceProvenanceApplier begin]
    Recovered source file: E:\__titans\Andrey\support.cpp
    Diagnostic line evidence: 253 (metadata/report site, not the function definition)

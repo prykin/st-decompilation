@@ -87,7 +87,7 @@ void __thiscall PlayPanelTy::InitPlayPanel(PlayPanelTy *this)
     pcVar3->field_0058 = 0;
     pcVar3->field_005C = 0;
     puVar4 = Library::Ourlib::MFRLOAD::mfRLoad
-                       (DAT_00806794,CASE_B,"BUT_CHPLAYER",0xffffffff,0,1,0,
+                       (PTR_00806794,CASE_B,"BUT_CHPLAYER",0xffffffff,0,1,0,
                         nullptr);
     this_00->field_01D1 = puVar4;
     puVar24 = nullptr;
@@ -97,7 +97,7 @@ void __thiscall PlayPanelTy::InitPlayPanel(PlayPanelTy *this)
     uVar17 = 0xffffffff;
     pCVar5 = thunk_FUN_00571240("GAMEB_ALLY",0);
     puVar4 = Library::Ourlib::MFRLOAD::mfRLoad
-                       (DAT_00806794,CASE_B,pCVar5,uVar17,bVar18,iVar8,iVar21,puVar24);
+                       (PTR_00806794,CASE_B,pCVar5,uVar17,bVar18,iVar8,iVar21,puVar24);
     this_00->field_01D5 = puVar4;
     puVar24 = nullptr;
     iVar21 = 0;
@@ -106,7 +106,7 @@ void __thiscall PlayPanelTy::InitPlayPanel(PlayPanelTy *this)
     uVar17 = 0xffffffff;
     pCVar5 = thunk_FUN_00571240("BUT_PRODWEAP",0);
     puVar4 = Library::Ourlib::MFRLOAD::mfRLoad
-                       (DAT_00806794,CASE_B,pCVar5,uVar17,bVar18,iVar8,iVar21,puVar24);
+                       (PTR_00806794,CASE_B,pCVar5,uVar17,bVar18,iVar8,iVar21,puVar24);
     this_00->field_01D9 = puVar4;
     puVar4 = this_00->field_0068;
     uVar17 = *(uint *)(puVar4 + 10);
@@ -149,7 +149,7 @@ void __thiscall PlayPanelTy::InitPlayPanel(PlayPanelTy *this)
     uVar17 = (DAT_0080874e != '\x03') - 1 & 5;
     iVar21 = -1;
     iVar8 = -2;
-    puVar6 = (uint *)LoadResourceString(0x2733,g_module_00807618);
+    puVar6 = (uint *)LoadResourceString(0x2733,g_hINSTANCE_00807618);
     ccFntTy::WrStr(this_00->field_01DD,puVar6,iVar8,iVar21,uVar17);
     PaintPlayPanel(this_00);
     uVar25 = 0;
@@ -300,7 +300,7 @@ void __thiscall PlayPanelTy::InitPlayPanel(PlayPanelTy *this)
         uVar17 = (DAT_0080874e != '\x03') - 1 & 5;
         iVar7 = -1;
         iVar21 = 0;
-        puVar6 = (uint *)LoadResourceString(resourceId,g_module_00807618);
+        puVar6 = (uint *)LoadResourceString(resourceId,g_hINSTANCE_00807618);
         ccFntTy::WrStr(this_00->field_01DD,puVar6,iVar21,iVar7,uVar17);
         iVar8 = iVar8 + 0x5c;
         resourceId = resourceId + 1;

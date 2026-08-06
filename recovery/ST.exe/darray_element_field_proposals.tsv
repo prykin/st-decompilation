@@ -64,8 +64,7 @@ apply	element_type_path	offset	size	proposed_name	proposed_type	evidence_count	r
 1	/SubmarineTitans/Recovered/DArrayElements/MTaskTy_field_0074Element	38	4	field_0026	/undefined4	1	observed_types={/int=9, /uint=6}; semantic_roles={}; role_sites=; source_names={}; sites=005E1330 piVar22+0x26
 1	/SubmarineTitans/Recovered/DArrayElements/MTaskTy_field_0074Element	42	4	field_002A	/int	1	observed_types={/int=13}; semantic_roles={}; role_sites=; source_names={}; sites=005E1330 piVar22+0x2A
 1	/SubmarineTitans/Recovered/DArrayElements/MTaskTy_field_0074Element	46	4	field_002E	/int	1	observed_types={/int=7}; semantic_roles={}; role_sites=; source_names={}; sites=005E1330 piVar22+0x2E
-1	/SubmarineTitans/Recovered/DArrayElements/OptPanelTy_field_02FDElement	0	4	field_0000	/uint	2	observed_types={/uint=5}; semantic_roles={}; role_sites=; source_names={}; sites=005325B0 *puVar13 | 00533D10 *puVar26
-1	/SubmarineTitans/Recovered/DArrayElements/OptPanelTy_field_02FDElement	108	4	field_006C	/uint	1	observed_types={/uint=1}; semantic_roles={}; role_sites=; source_names={}; sites=00533D10 puVar26[27]
+0	/SubmarineTitans/Recovered/DArrayElements/OptPanelTy_field_02FDElement	0	4	field_0000	/uint	1	observed_types={/uint=2}; semantic_roles={}; role_sites=; source_names={}; sites=005325B0 *puVar13
 1	/SubmarineTitans/Recovered/DArrayElements/STBHEShellC_field_0169Element	0	1	field_0000	/char	4	observed_types={/char=10}; semantic_roles={}; role_sites=; source_names={}; sites=005F4C50 *pcVar3 | 005F4FA0 *pcVar8 | 005F53A0 *pcVar3 | 005F5B80 *pcVar4
 1	/SubmarineTitans/Recovered/DArrayElements/STBHEShellC_field_0169Element	1	1	field_0001	/byte	1	observed_types={/byte=2, /char=1}; semantic_roles={}; role_sites=; source_names={}; sites=005F4FA0 pcVar8[1]
 1	/SubmarineTitans/Recovered/DArrayElements/STBHEShellC_field_0169Element	2	4	field_0002	/int	1	observed_types={/int=5}; semantic_roles={}; role_sites=; source_names={}; sites=005F4FA0 pcVar8+0x2

@@ -82,14 +82,14 @@ int __thiscall STPlaySystemC::GetMessage(STPlaySystemC *this,STMessage *message)
               iVar5 = local_8;
             }
             local_8 = iVar5;
-            pcVar11 = LoadResourceString(19000,g_module_00807618);
+            pcVar11 = LoadResourceString(19000,g_hINSTANCE_00807618);
             cLoadingTy::SetProcess(g_cLoading_00802A58,0,pcVar11,iVar5);
           }
           pSVar10 = local_c;
           DAT_00802a3c = 0;
           Library::Ourlib::MFAOBJ::mfAObjEnum
                     (g_cMf32_00806754,PTR_DAT_007c83b0,thunk_FUN_0054ca10,local_c,0);
-          pcVar11 = LoadResourceString(0x4a39,g_module_00807618);
+          pcVar11 = LoadResourceString(0x4a39,g_hINSTANCE_00807618);
           wsprintfA((LPSTR)&DAT_0080f33a,"%d %s",DAT_00802a3c,pcVar11);
           if (g_cLoading_00802A58 != nullptr) {
             cLoadingTy::SetState(g_cLoading_00802A58,CASE_2,0,(char *)&DAT_0080f33a);

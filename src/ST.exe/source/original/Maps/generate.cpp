@@ -2,7 +2,7 @@
 // Generated translation unit: source/original/Maps/generate.cpp
 
 // 006A01D0 CGenerate::CreateMap
-#line 1 "decomp/ST.exe/functions/006A01D0/decomp.c"
+#line 4 "decomp/ST.exe/functions/006A01D0/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\Maps\generate.cpp
    CGenerate::CreateMap */
@@ -106,7 +106,7 @@ undefined4 __thiscall st::fn_006A01D0(CGenerate *this)
 }
 
 // 006A0740 CGenerate::SaveMap
-#line 1 "decomp/ST.exe/functions/006A0740/decomp.c"
+#line 4 "decomp/ST.exe/functions/006A0740/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\Maps\generate.cpp
    CGenerate::SaveMap */
@@ -149,7 +149,7 @@ int __thiscall st::fn_006A0740(CGenerate *this)
   if (iVar2 == 0) {
     local_8 = 0;
   }
-  pcVar3 = st::fn_006B0140(0x232b,g_module_00807618);
+  pcVar3 = st::fn_006B0140(0x232b,g_hINSTANCE_00807618);
   uVar4 = 0xffffffff;
   do {
     pcVar6 = pcVar3;
@@ -174,8 +174,7 @@ int __thiscall st::fn_006A0740(CGenerate *this)
   }
   this_00->field_000C[4] = 0x20;
   iVar2 = st::fn_006EFDB0
-                    ((undefined2 *)this_00->field_000C,(int)this_00->field_0018,"3D_MAP",
-                     '\0');
+                    ((short *)this_00->field_000C,(int)this_00->field_0018,"3D_MAP",'\0');
   if (iVar2 != 0) {
     local_8 = 0;
   }
@@ -200,7 +199,7 @@ int __thiscall st::fn_006A0740(CGenerate *this)
 }
 
 // 006A0960 CGenerate::_saveObj
-#line 1 "decomp/ST.exe/functions/006A0960/decomp.c"
+#line 4 "decomp/ST.exe/functions/006A0960/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\Maps\generate.cpp
    CGenerate::_saveObj */

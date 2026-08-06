@@ -2,7 +2,7 @@
 // Generated translation unit: source/recovered/by_address/005B.cpp
 
 // 005B2790 CreateChooseMap
-#line 1 "decomp/ST.exe/functions/005B2790/decomp.c"
+#line 4 "decomp/ST.exe/functions/005B2790/decomp.c"
 /* [STObjectFactoryApplier] Central object factory for 0x0305 (ST_OBJECT_CHOOSE_MAP).
    Evidence: registry[42] at 007CA870 stores type 0x0305 and executable pointer 00405C8B; allocation
    size 8388 uniquely matches /ChooseMapTy; calls base/helper constructor(s) SpriteClassTy; exact
@@ -22,7 +22,7 @@ ChooseMapTy * __cdecl st::fn_005B2790(void)
   this = (ChooseMapTy *)st::fn_006B04D0(0x20c4);
   if (this != nullptr) {
     st::fn_006E5FB0(this);
-    this->vtable = (ChooseMapTyVTable *)&VTable_0079C018;
+    this->vtable = (ChooseMapTyVTable *)&st_global_0079C018;
     this->field_0018 = 0;
     this->field_005D = nullptr;
     memset(&this->field_0x1d, 0, 0x20); /* compiler bulk-zero initialization */
@@ -39,7 +39,7 @@ ChooseMapTy * __cdecl st::fn_005B2790(void)
       this_00 = (SpriteClassTy *)&this_00[3].field_0048;
       local_8 = local_8 + -1;
     } while (local_8 != 0);
-    this->vtable = (ChooseMapTyVTable *)&MMObjTyVTable;
+    this->vtable = (ChooseMapTyVTable *)&st_global_0079C008;
     this->field_0065 = 2;
     this->field_009A = 0;
     memset(&this->field_0x66, 0, 0x34); /* compiler bulk-zero initialization */
@@ -57,7 +57,7 @@ ChooseMapTy * __cdecl st::fn_005B2790(void)
     st::fn_00715820((SpriteClassTy *)&this->field_1A70);
     st::fn_00715820((SpriteClassTy *)&this->field_1B01);
     st::fn_00715820((SpriteClassTy *)&this->field_1B92);
-    this->vtable = &ChooseMapTyVTable;
+    this->vtable = &st_global_0079C088;
     this->field_1A60 = 1;
     this->field_1A6C = 0;
     puVar4 = this->field_1C23;
@@ -86,7 +86,7 @@ ChooseMapTy * __cdecl st::fn_005B2790(void)
 }
 
 // 005B50E0 CreateMainMenu
-#line 1 "decomp/ST.exe/functions/005B50E0/decomp.c"
+#line 4 "decomp/ST.exe/functions/005B50E0/decomp.c"
 /* [STUnclaimedCodeApplier] Exact function entry recovered from thunk_target.
    Evidence: P:007CA85C>0040409D
 
@@ -136,7 +136,7 @@ MainMenuTy * __cdecl st::fn_005B50E0(void)
       iVar1 = iVar1 + -1;
       puVar3 = (undefined4 *)((int)puVar3 + 0x1fb);
     } while (iVar1 != 0);
-    this->vtable = &MainMenuTyVTable;
+    this->vtable = &st_global_0079C098;
     memset(&this->field_1A7F, 0, 0x28); /* compiler bulk-zero initialization */
     iVar1 = 0;
     memset(this->field_1AA7, 0, 0x28); /* compiler bulk-zero initialization */
@@ -151,7 +151,7 @@ MainMenuTy * __cdecl st::fn_005B50E0(void)
 }
 
 // 005B6350 FUN_005b6350
-#line 1 "decomp/ST.exe/functions/005B6350/decomp.c"
+#line 4 "decomp/ST.exe/functions/005B6350/decomp.c"
 /* [STPrototypeApplier] Propagated parameter 3.
    Evidence: 005B0BA0 -> 005B6350 @ 005B1838 | 005C8A40 -> 005B6350 @ 005C9D64
 
@@ -177,7 +177,7 @@ void __thiscall st::fn_005B6350(void *this,undefined4 param_1,uint param_2,uint 
 }
 
 // 005B6450 FUN_005b6450
-#line 1 "decomp/ST.exe/functions/005B6450/decomp.c"
+#line 4 "decomp/ST.exe/functions/005B6450/decomp.c"
 /* [STPrototypeApplier] Propagated parameter 1.
    Evidence: 00593040 -> 005B6450 @ 0059308C | 005A4350 -> 005B6450 @ 005A43A8 | 005B0BA0 ->
    005B6450 @ 005B0BEF | 005B4BB0 -> 005B6450 @ 005B4C07 | 005B9330 -> 005B6450 @ 005B937A |
@@ -198,7 +198,7 @@ void __thiscall st::fn_005B6450(void *this,STMessage *param_1)
 }
 
 // 005B66E0 FUN_005b66e0
-#line 1 "decomp/ST.exe/functions/005B66E0/decomp.c"
+#line 4 "decomp/ST.exe/functions/005B66E0/decomp.c"
 /* [STPrototypeApplier] Propagated parameter 0.
    Evidence: 005DFA30 -> 005B66E0 @ 005E0239
 
@@ -220,7 +220,7 @@ int __fastcall st::fn_005B66E0(MTaskTy *param_1)
 }
 
 // 005B6730 FUN_005b6730
-#line 1 "decomp/ST.exe/functions/005B6730/decomp.c"
+#line 4 "decomp/ST.exe/functions/005B6730/decomp.c"
 void __thiscall st::fn_005B6730(void *this,uint param_1,char param_2,int param_3)
 
 {
@@ -238,7 +238,7 @@ void __thiscall st::fn_005B6730(void *this,uint param_1,char param_2,int param_3
 }
 
 // 005B8F90 FUN_005b8f90
-#line 1 "decomp/ST.exe/functions/005B8F90/decomp.c"
+#line 4 "decomp/ST.exe/functions/005B8F90/decomp.c"
 void __thiscall st::fn_005B8F90(void *this,uint param_1)
 
 {
@@ -261,7 +261,7 @@ void __thiscall st::fn_005B8F90(void *this,uint param_1)
 }
 
 // 005B95B0 CreateMMsg
-#line 1 "decomp/ST.exe/functions/005B95B0/decomp.c"
+#line 4 "decomp/ST.exe/functions/005B95B0/decomp.c"
 /* [STUnclaimedCodeApplier] Exact function entry recovered from thunk_target.
    Evidence: P:007CA88C>00402AA9
 
@@ -282,8 +282,8 @@ MMsgTy * __cdecl st::fn_005B95B0(void)
   if (this != nullptr) {
     st::fn_006E5FB0(this);
     this->vtable = (MMsgTyVTable *)&VTable_0079C018;
-    *(undefined4 *)&this->field_0x18 = 0;
-    *(undefined4 *)&this->field_0x5d = 0;
+    this->field_0018 = 0;
+    this->field_005D = 0;
     memset(&this->field_0x1d, 0, 0x20); /* compiler bulk-zero initialization */
     iVar1 = 0;
     memset(&this->field_0x3d, 0, 0x20); /* compiler bulk-zero initialization */
@@ -312,8 +312,8 @@ MMsgTy * __cdecl st::fn_005B95B0(void)
     } while (iVar1 != 0);
     st::fn_00715820((SpriteClassTy *)&this->field_0x1cf7);
     st::fn_00715820((SpriteClassTy *)&this->field_1D88);
-    st::fn_00715820((SpriteClassTy *)&this[1].field_0x45);
-    this->vtable = &MMsgTyVTable;
+    st::fn_00715820((SpriteClassTy *)&this->field_0x1e19);
+    this->vtable = &st_global_0079C0A8;
     this->field_1A5F = 0;
     this->field_1CAA = 0;
     this->field_1CA9 = 0;
@@ -329,7 +329,7 @@ MMsgTy * __cdecl st::fn_005B95B0(void)
 }
 
 // 005BBA40 FUN_005bba40
-#line 1 "decomp/ST.exe/functions/005BBA40/decomp.c"
+#line 4 "decomp/ST.exe/functions/005BBA40/decomp.c"
 void __fastcall st::fn_005BBA40(AnonShape_005BB9F0_E38C41BB *param_1)
 
 {
@@ -346,7 +346,7 @@ void __fastcall st::fn_005BBA40(AnonShape_005BB9F0_E38C41BB *param_1)
 }
 
 // 005BD2E0 CreatePrivider
-#line 1 "decomp/ST.exe/functions/005BD2E0/decomp.c"
+#line 4 "decomp/ST.exe/functions/005BD2E0/decomp.c"
 /* [STObjectFactoryApplier] Central object factory for 0x030A (ST_OBJECT_PRIVIDER).
    Evidence: registry[48] at 007CA8A0 stores type 0x030A and executable pointer 004051A0; allocation
    size 7326 uniquely matches /PrividerTy; calls base/helper constructor(s) SpriteClassTy; exact
@@ -366,7 +366,7 @@ PrividerTy * __cdecl st::fn_005BD2E0(void)
   this = (PrividerTy *)st::fn_006B04D0(0x1c9e);
   if (this != nullptr) {
     st::fn_006E5FB0(this);
-    this->vtable = (PrividerTyVTable *)&VTable_0079C018;
+    this->vtable = (PrividerTyVTable *)&st_global_0079C018;
     this->field_0018 = 0;
     this->field_005D = nullptr;
     memset(&this->field_0x1d, 0, 0x20); /* compiler bulk-zero initialization */
@@ -383,7 +383,7 @@ PrividerTy * __cdecl st::fn_005BD2E0(void)
       this_00 = (SpriteClassTy *)&this_00[3].field_0048;
       local_8 = local_8 + -1;
     } while (local_8 != 0);
-    this->vtable = (PrividerTyVTable *)&MMObjTyVTable;
+    this->vtable = (PrividerTyVTable *)&st_global_0079C008;
     this->field_0065 = 2;
     this->field_009A = 0;
     memset(&this->field_0x66, 0, 0x34); /* compiler bulk-zero initialization */
@@ -401,7 +401,7 @@ PrividerTy * __cdecl st::fn_005BD2E0(void)
     st::fn_00715820((SpriteClassTy *)&this->field_1A77);
     st::fn_00715820((SpriteClassTy *)&this->field_1B08);
     st::fn_00715820((SpriteClassTy *)&this->field_1B99);
-    this->vtable = &PrividerTyVTable;
+    this->vtable = &st_global_0079C0C4;
     this->field_1A65 = 1;
     this->field_1A73 = 0;
     this->field_1A61 = 0;

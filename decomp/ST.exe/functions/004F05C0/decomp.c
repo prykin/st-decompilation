@@ -67,7 +67,7 @@ void __thiscall BldObjPanelTy::InitBldObjPanel(BldObjPanelTy *this)
     STDebugBreak(); /* noreturn in standalone pseudocode */
   }
   iVar7 = 5;
-  g_prodPanel_00801684 = (ProdPanelTy *)local_1c;
+  g_bldObjPanel_00801684 = (ProdPanelTy *)local_1c;
   puVar10 = &local_1c->field_027E;
   do {
     pDVar3 = Library::DKW::TBL::DArrayCreate(nullptr,10,0x30,5);
@@ -86,10 +86,10 @@ void __thiscall BldObjPanelTy::InitBldObjPanel(BldObjPanelTy *this)
   puVar5 = cMf32::RecGet(g_cMf32_00806790,1,&this_00->field_006C,nullptr,1);
   this_00->field_027A = puVar5;
   puVar5 = Library::Ourlib::MFRLOAD::mfRLoad
-                     (DAT_00806794,CASE_B,&DAT_007c1910,0xffffffff,0,1,0,nullptr);
+                     (PTR_00806794,CASE_B,&DAT_007c1910,0xffffffff,0,1,0,nullptr);
   this_00->field_0188 = puVar5;
   puVar5 = Library::Ourlib::MFRLOAD::mfRLoad
-                     (DAT_00806794,CASE_B,"OBJSD",0xffffffff,0,1,0,nullptr);
+                     (PTR_00806794,CASE_B,"OBJSD",0xffffffff,0,1,0,nullptr);
   this_00->field_018C = puVar5;
   pCVar4 = thunk_FUN_00571240("BKG_BLDOBJBUT",0);
   ProdPanelTy::InitProdPanel
@@ -166,7 +166,7 @@ switchD_004f0850_default:
   local_20 = 1;
   local_44 = local_64;
   /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-  (**(code **)(*(int *)this_00->field_000C + 8))(5,&this_00[1].field_0x10,0,local_74,0);
+  (**(code **)(*(int *)this_00->field_000C + 8))(5,&this_00->field_0292,0,local_74,0);
   g_currentExceptionFrame = local_b8.previous;
   return;
 }

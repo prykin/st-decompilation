@@ -2,7 +2,7 @@
 // Generated translation unit: source/original/Artem/TLO_tele.cpp
 
 // 004E9CE0 TLOBaseTy::teleNone
-#line 1 "decomp/ST.exe/functions/004E9CE0/decomp.c"
+#line 4 "decomp/ST.exe/functions/004E9CE0/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\Artem\TLO_tele.cpp
    TLOBaseTy::teleNone

@@ -2,7 +2,7 @@
 // Generated translation unit: source/original/Artem/TLO_bfire.cpp
 
 // 004C3570 TLOBaseTy::fireProc
-#line 1 "decomp/ST.exe/functions/004C3570/decomp.c"
+#line 4 "decomp/ST.exe/functions/004C3570/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\Artem\TLO_bfire.cpp
    TLOBaseTy::fireProc */
@@ -198,7 +198,7 @@ LAB_004c3985:
 }
 
 // 004C3C00 TLOBaseTy::fireFindCheckTarget
-#line 1 "decomp/ST.exe/functions/004C3C00/decomp.c"
+#line 4 "decomp/ST.exe/functions/004C3C00/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\Artem\TLO_bfire.cpp
    TLOBaseTy::fireFindCheckTarget */

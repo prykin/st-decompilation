@@ -2,7 +2,7 @@
 // Generated translation unit: source/original/Andrey/optpanel.cpp
 
 // 0052E500 OptPanelTy::PreInitOptPanel
-#line 1 "decomp/ST.exe/functions/0052E500/decomp.c"
+#line 4 "decomp/ST.exe/functions/0052E500/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\Andrey\optpanel.cpp
    OptPanelTy::PreInitOptPanel */
@@ -39,7 +39,7 @@ void __thiscall st::fn_0052E500(OptPanelTy *this)
 }
 
 // 0052E5E0 OptPanelTy::InitOptPanel
-#line 1 "decomp/ST.exe/functions/0052E5E0/decomp.c"
+#line 4 "decomp/ST.exe/functions/0052E5E0/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\Andrey\optpanel.cpp
    OptPanelTy::InitOptPanel */
@@ -113,7 +113,7 @@ void __thiscall st::fn_0052E5E0(OptPanelTy *this)
     this_00->field_0194 = puVar5;
     pCVar4 = st::fn_0040577C("IND_PNT",0);
     puVar5 = st::fn_00709AF0
-                       (DAT_00806794,CASE_B,pCVar4,uVar12,bVar13,iVar2,iVar17,puVar19);
+                       (PTR_00806794,CASE_B,pCVar4,uVar12,bVar13,iVar2,iVar17,puVar19);
     this_00->field_0198 = puVar5;
     puVar5 = this_00->field_0184 + 0x14;
     iVar2 = 1;
@@ -123,7 +123,7 @@ void __thiscall st::fn_0052E5E0(OptPanelTy *this)
     this_00->field_01E5 = puVar5;
     pDVar6 = st::fn_006B54F0(nullptr,1,1);
     this_00->field_01F1 = pDVar6;
-    st::fn_006B6020(&pDVar6->flags,0,&DAT_008016a0);
+    st::fn_006B6020(pDVar6,0,&DAT_008016a0);
     st::fn_0040443A(this_00);
     st::fn_00402851(this_00);
     uVar20 = 0;
@@ -166,7 +166,7 @@ void __thiscall st::fn_0052E5E0(OptPanelTy *this)
 }
 
 // 0052E8F0 OptPanelTy::DoneOptPanel
-#line 1 "decomp/ST.exe/functions/0052E8F0/decomp.c"
+#line 4 "decomp/ST.exe/functions/0052E8F0/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\Andrey\optpanel.cpp
    OptPanelTy::DoneOptPanel */
@@ -268,7 +268,7 @@ void __thiscall st::fn_0052E8F0(OptPanelTy *this)
 }
 
 // 0052EB50 OptPanelTy::CreateSlider
-#line 1 "decomp/ST.exe/functions/0052EB50/decomp.c"
+#line 4 "decomp/ST.exe/functions/0052EB50/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\Andrey\optpanel.cpp
    OptPanelTy::CreateSlider
@@ -387,7 +387,7 @@ st::fn_0052EB50
 }
 
 // 0052EDF0 OptPanelTy::PaintVolume
-#line 1 "decomp/ST.exe/functions/0052EDF0/decomp.c"
+#line 4 "decomp/ST.exe/functions/0052EDF0/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\Andrey\optpanel.cpp
    OptPanelTy::PaintVolume */
@@ -454,7 +454,7 @@ void __thiscall st::fn_0052EDF0(OptPanelTy *this,byte param_1,byte param_2)
 }
 
 // 0052EFB0 OptPanelTy::PaintDblBut
-#line 1 "decomp/ST.exe/functions/0052EFB0/decomp.c"
+#line 4 "decomp/ST.exe/functions/0052EFB0/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\Andrey\optpanel.cpp
    OptPanelTy::PaintDblBut */
@@ -557,7 +557,7 @@ st::fn_0052EFB0
       uVar6 = (*(code *)param_5)(param_1);
       iVar7 = -1;
       iVar3 = 0;
-      resourceString = (uint *)st::fn_006B0140(param_3,g_module_00807618);
+      resourceString = (uint *)st::fn_006B0140(param_3,g_hINSTANCE_00807618);
       st::fn_00711B70(pOVar2->field_0180,resourceString,iVar3,iVar7,uVar6,iVar9,iVar10);
       st::fn_006B3640
                 ((int *)g_ddxContext_008075A8,pOVar2->field_0060,0xffffffff,pOVar2->field_003C,
@@ -577,7 +577,7 @@ st::fn_0052EFB0
 }
 
 // 0052F2B0 OptPanelTy::SwitchOptPanel
-#line 1 "decomp/ST.exe/functions/0052F2B0/decomp.c"
+#line 4 "decomp/ST.exe/functions/0052F2B0/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\Andrey\optpanel.cpp
    OptPanelTy::SwitchOptPanel
@@ -672,16 +672,16 @@ void __thiscall st::fn_0052F2B0(OptPanelTy *this,char param_1)
     }
     goto LAB_0052f60b;
   case CASE_2:
-    if (g_prodPanel_008016E8 != nullptr) {
-      local_8 = st::fn_00401A73(g_prodPanel_008016E8,'\0');
+    if (g_researchPanel_008016E8 != nullptr) {
+      local_8 = st::fn_00401A73(g_researchPanel_008016E8,'\0');
     }
     bVar3 = local_8 != 0;
-    if (g_prodPanel_0080167C != nullptr) {
-      local_8 = st::fn_00401A73(g_prodPanel_0080167C,'\0');
+    if (g_bldBoatPanel_0080167C != nullptr) {
+      local_8 = st::fn_00401A73(g_bldBoatPanel_0080167C,'\0');
     }
     bVar4 = local_8 != 0;
-    if (g_prodPanel_00801684 != nullptr) {
-      local_8 = st::fn_00401A73(g_prodPanel_00801684,'\0');
+    if (g_bldObjPanel_00801684 != nullptr) {
+      local_8 = st::fn_00401A73(g_bldObjPanel_00801684,'\0');
     }
     bVar5 = local_8 != 0;
     if (g_infocPanel_00801698 != nullptr) {
@@ -709,8 +709,8 @@ void __thiscall st::fn_0052F2B0(OptPanelTy *this,char param_1)
       local_8 = (*g_frmPanel_0080168C->vtable->SetPanel)((SpecPanelTy *)g_frmPanel_0080168C,'\0');
     }
     bVar11 = local_8 != 0;
-    if (g_prodPanel_00801680 != nullptr) {
-      local_8 = st::fn_00401A73(g_prodPanel_00801680,'\0');
+    if (g_bldLabPanel_00801680 != nullptr) {
+      local_8 = st::fn_00401A73(g_bldLabPanel_00801680,'\0');
     }
     bVar12 = local_8 != 0;
     if (g_helpPanel_00801690 != nullptr) {
@@ -790,7 +790,7 @@ switchD_0052f30f_default:
 }
 
 // 0052F7E0 OptPanelTy::SwitchOptPanelOff
-#line 1 "decomp/ST.exe/functions/0052F7E0/decomp.c"
+#line 4 "decomp/ST.exe/functions/0052F7E0/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\Andrey\optpanel.cpp
    OptPanelTy::SwitchOptPanelOff */
@@ -835,7 +835,7 @@ void __thiscall st::fn_0052F7E0(OptPanelTy *this)
 }
 
 // 0052F900 OptPanelTy::ShiftControls
-#line 1 "decomp/ST.exe/functions/0052F900/decomp.c"
+#line 4 "decomp/ST.exe/functions/0052F900/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\Andrey\optpanel.cpp
    OptPanelTy::ShiftControls
@@ -922,7 +922,7 @@ void __thiscall st::fn_0052F900(OptPanelTy *this,int param_1)
 }
 
 // 0052FB00 OptPanelTy::SetOptControls
-#line 1 "decomp/ST.exe/functions/0052FB00/decomp.c"
+#line 4 "decomp/ST.exe/functions/0052FB00/decomp.c"
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 /* Recovered from embedded debug metadata:
    E:\__titans\Andrey\optpanel.cpp
@@ -1176,7 +1176,7 @@ LAB_00530592:
     uVar38 = 0;
     iVar17 = -1;
     iVar6 = -2;
-    puVar9 = (uint *)st::fn_006B0140(UVar31,g_module_00807618);
+    puVar9 = (uint *)st::fn_006B0140(UVar31,g_hINSTANCE_00807618);
     st::fn_007119C0(this_00->field_017C,puVar9,iVar6,iVar17,uVar38);
     puVar19 = this_00->field_0190;
 LAB_005305a9:
@@ -1189,7 +1189,7 @@ LAB_005305b4:
     uVar38 = 0;
     iVar17 = -1;
     iVar6 = -2;
-    puVar9 = (uint *)st::fn_006B0140(0x3ea8,g_module_00807618);
+    puVar9 = (uint *)st::fn_006B0140(0x3ea8,g_hINSTANCE_00807618);
     st::fn_007119C0(this_00->field_017C,puVar9,iVar6,iVar17,uVar38);
     st::fn_00710A90(this_00->field_0180,this_00->field_0068,0,0x1d,0x13,0xee,0x6a);
     switch(this_00->field_01AB) {
@@ -1321,11 +1321,11 @@ LAB_0052fd4a:
         pcVar8 = pcVar8 + 1;
         pcVar7 = pcVar7 + 1;
       }
-      pcVar8 = st::fn_006B0140(UVar31,g_module_00807618);
+      pcVar8 = st::fn_006B0140(UVar31,g_hINSTANCE_00807618);
       st::external_00000080(&this_00->field_006C,pcVar8);
       break;
     default:
-      pcVar8 = st::fn_006B0140(this_00->field_01A5,g_module_00807618);
+      pcVar8 = st::fn_006B0140(this_00->field_01A5,g_hINSTANCE_00807618);
       uVar38 = 0xffffffff;
       do {
         pcVar7 = pcVar8;
@@ -1481,11 +1481,11 @@ LAB_0052ff02:
         pcVar8 = pcVar8 + 1;
         pcVar7 = pcVar7 + 1;
       }
-      pcVar8 = st::fn_006B0140(UVar31,g_module_00807618);
+      pcVar8 = st::fn_006B0140(UVar31,g_hINSTANCE_00807618);
       st::external_00000080(&this_00->field_006C,pcVar8);
       break;
     case CASE_A:
-      pcVar8 = st::fn_006B0140(this_00->field_01A5,g_module_00807618);
+      pcVar8 = st::fn_006B0140(this_00->field_01A5,g_hINSTANCE_00807618);
       st::external_00000080(&this_00->field_006C,pcVar8);
     }
     if (DAT_0080874e == '\x03') {
@@ -1500,25 +1500,25 @@ LAB_0052ff02:
     uVar38 = 0;
     iVar17 = -1;
     iVar6 = -2;
-    puVar9 = (uint *)st::fn_006B0140(0x3e8a,g_module_00807618);
+    puVar9 = (uint *)st::fn_006B0140(0x3e8a,g_hINSTANCE_00807618);
     st::fn_007119C0(this_00->field_017C,puVar9,iVar6,iVar17,uVar38);
     st::fn_00710A90(this_00->field_017C,this_00->field_0068,0,0x6b,0x6e,0xa0,0xb);
     uVar38 = (DAT_0080874e != '\x03') - 1 & 5;
     iVar17 = -1;
     iVar6 = -2;
-    puVar9 = (uint *)st::fn_006B0140(0x3ee4,g_module_00807618);
+    puVar9 = (uint *)st::fn_006B0140(0x3ee4,g_hINSTANCE_00807618);
     st::fn_007119C0(this_00->field_017C,puVar9,iVar6,iVar17,uVar38);
     st::fn_00710A90(this_00->field_017C,this_00->field_0068,0,0x1d,0x61,0x4e,0xb);
     uVar38 = (DAT_0080874e != '\x03') - 1 & 5;
     iVar17 = -1;
     iVar6 = -3;
-    puVar9 = (uint *)st::fn_006B0140(0x3eea,g_module_00807618);
+    puVar9 = (uint *)st::fn_006B0140(0x3eea,g_hINSTANCE_00807618);
     st::fn_007119C0(this_00->field_017C,puVar9,iVar6,iVar17,uVar38);
     st::fn_00710A90(this_00->field_017C,this_00->field_0068,0,0x1d,0x77,0x4e,0xb);
     uVar38 = (DAT_0080874e != '\x03') - 1 & 5;
     iVar17 = -1;
     iVar6 = -3;
-    puVar9 = (uint *)st::fn_006B0140(0x3eeb,g_module_00807618);
+    puVar9 = (uint *)st::fn_006B0140(0x3eeb,g_hINSTANCE_00807618);
     st::fn_007119C0(this_00->field_017C,puVar9,iVar6,iVar17,uVar38);
     st::fn_00710A90(this_00->field_017C,this_00->field_0068,0,0x1d,0x84,0x4e,0xb);
     goto LAB_00530554;
@@ -1526,25 +1526,25 @@ LAB_0052ff02:
     uVar38 = 0;
     iVar17 = -1;
     iVar6 = -2;
-    puVar9 = (uint *)st::fn_006B0140(0x3e8b,g_module_00807618);
+    puVar9 = (uint *)st::fn_006B0140(0x3e8b,g_hINSTANCE_00807618);
     st::fn_007119C0(this_00->field_017C,puVar9,iVar6,iVar17,uVar38);
     st::fn_00710A90(this_00->field_017C,this_00->field_0068,0,0x1d,0x61,0x4e,0xb);
     uVar38 = (DAT_0080874e != '\x03') - 1 & 5;
     iVar17 = -1;
     iVar6 = -3;
-    puVar9 = (uint *)st::fn_006B0140(0x3ee9,g_module_00807618);
+    puVar9 = (uint *)st::fn_006B0140(0x3ee9,g_hINSTANCE_00807618);
     st::fn_007119C0(this_00->field_017C,puVar9,iVar6,iVar17,uVar38);
     st::fn_00710A90(this_00->field_017C,this_00->field_0068,0,0x6b,0x6e,0xa0,0xb);
     uVar38 = (DAT_0080874e != '\x03') - 1 & 5;
     iVar17 = -1;
     iVar6 = -2;
-    puVar9 = (uint *)st::fn_006B0140(0x3ee4,g_module_00807618);
+    puVar9 = (uint *)st::fn_006B0140(0x3ee4,g_hINSTANCE_00807618);
     st::fn_007119C0(this_00->field_017C,puVar9,iVar6,iVar17,uVar38);
     st::fn_00710A90(this_00->field_017C,this_00->field_0068,0,0x1d,0x77,0x4e,0xb);
     uVar38 = (DAT_0080874e != '\x03') - 1 & 5;
     iVar17 = -1;
     iVar6 = -3;
-    puVar9 = (uint *)st::fn_006B0140(0x3eeb,g_module_00807618);
+    puVar9 = (uint *)st::fn_006B0140(0x3eeb,g_hINSTANCE_00807618);
     st::fn_007119C0(this_00->field_017C,puVar9,iVar6,iVar17,uVar38);
     st::fn_00710A90(this_00->field_017C,this_00->field_0068,0,0x1d,0x84,0x4e,0xb);
 LAB_00530554:
@@ -1556,19 +1556,19 @@ LAB_00530554:
     uVar38 = 0;
     iVar17 = -1;
     iVar6 = -2;
-    puVar9 = (uint *)st::fn_006B0140(0x3e8c,g_module_00807618);
+    puVar9 = (uint *)st::fn_006B0140(0x3e8c,g_hINSTANCE_00807618);
     st::fn_007119C0(this_00->field_017C,puVar9,iVar6,iVar17,uVar38);
     st::fn_00710A90(this_00->field_017C,this_00->field_0068,0,0x1d,0x15,0x77,0xc);
     uVar38 = 0;
     iVar17 = -1;
     iVar6 = -2;
-    puVar9 = (uint *)st::fn_006B0140(0x3eef,g_module_00807618);
+    puVar9 = (uint *)st::fn_006B0140(0x3eef,g_hINSTANCE_00807618);
     st::fn_007119C0(this_00->field_017C,puVar9,iVar6,iVar17,uVar38);
     st::fn_00710A90(this_00->field_017C,this_00->field_0068,0,0x94,0x15,0x77,0xc);
     uVar38 = 0;
     iVar17 = -1;
     iVar6 = -2;
-    puVar9 = (uint *)st::fn_006B0140(0x3eed,g_module_00807618);
+    puVar9 = (uint *)st::fn_006B0140(0x3eed,g_hINSTANCE_00807618);
     st::fn_007119C0(this_00->field_017C,puVar9,iVar6,iVar17,uVar38);
     st::fn_00710A90(this_00->field_017C,this_00->field_0068,0,0x1d,0x5b,0xf0,0xc);
     uVar38 = 0;
@@ -1586,7 +1586,7 @@ LAB_00530554:
     uVar38 = 0;
     iVar17 = -1;
     iVar6 = -2;
-    puVar9 = (uint *)st::fn_006B0140(0x3e89,g_module_00807618);
+    puVar9 = (uint *)st::fn_006B0140(0x3e89,g_hINSTANCE_00807618);
     st::fn_007119C0(this_00->field_017C,puVar9,iVar6,iVar17,uVar38);
     puVar19 = this_00->field_0194;
     goto LAB_005305a9;
@@ -1594,19 +1594,19 @@ LAB_00530554:
     uVar38 = 0;
     iVar17 = -1;
     iVar6 = -2;
-    puVar9 = (uint *)st::fn_006B0140(0x3e88,g_module_00807618);
+    puVar9 = (uint *)st::fn_006B0140(0x3e88,g_hINSTANCE_00807618);
     st::fn_007119C0(this_00->field_017C,puVar9,iVar6,iVar17,uVar38);
     st::fn_00710A90(this_00->field_017C,this_00->field_0068,0,0x1d,0x6d,0x77,0x11);
     uVar38 = (DAT_0080874e != '\x03') - 1 & 5;
     iVar17 = -1;
     iVar6 = -2;
-    puVar9 = (uint *)st::fn_006B0140(0x3ef9,g_module_00807618);
+    puVar9 = (uint *)st::fn_006B0140(0x3ef9,g_hINSTANCE_00807618);
     st::fn_007119C0(this_00->field_017C,puVar9,iVar6,iVar17,uVar38);
     st::fn_00710A90(this_00->field_017C,this_00->field_0068,0,0x1d,0x7f,0x77,0x11);
     uVar38 = (DAT_0080874e != '\x03') - 1 & 5;
     iVar17 = -1;
     iVar6 = -2;
-    puVar9 = (uint *)st::fn_006B0140(0x3efa,g_module_00807618);
+    puVar9 = (uint *)st::fn_006B0140(0x3efa,g_hINSTANCE_00807618);
     st::fn_007119C0(this_00->field_017C,puVar9,iVar6,iVar17,uVar38);
     st::fn_00403229((RecoveredSourceFamily_dibcopy *)this_00->field_0068,0xaa,0x6f,'\x01',
            (byte *)this_00->field_018C);
@@ -1626,14 +1626,14 @@ LAB_00530554:
     uVar38 = 0;
     iVar17 = -1;
     iVar6 = -2;
-    puVar9 = (uint *)st::fn_006B0140(0x3e94,g_module_00807618);
+    puVar9 = (uint *)st::fn_006B0140(0x3e94,g_hINSTANCE_00807618);
     st::fn_007119C0(this_00->field_017C,puVar9,iVar6,iVar17,uVar38);
     puVar19 = this_00->field_0190;
     pRVar32 = (RecoveredSourceFamily_dibcopy *)this_00->field_0068;
     goto LAB_005305b4;
   }
   iVar17 = -1;
-  puVar9 = (uint *)st::fn_006B0140(UVar31,g_module_00807618);
+  puVar9 = (uint *)st::fn_006B0140(UVar31,g_hINSTANCE_00807618);
   st::fn_007119C0(this_00->field_017C,puVar9,iVar6,iVar17,uVar38);
 cf_common_join_005305BC:
   switch(this_00->field_01A4) {
@@ -2596,7 +2596,7 @@ switchD_005311ec_caseD_3:
 }
 
 // 005325B0 OptPanelTy::PrepAsses
-#line 1 "decomp/ST.exe/functions/005325B0/decomp.c"
+#line 4 "decomp/ST.exe/functions/005325B0/decomp.c"
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 /* Recovered from embedded debug metadata:
    E:\__titans\Andrey\optpanel.cpp
@@ -2714,8 +2714,8 @@ switchD_005326e6_caseD_9:
   g_currentExceptionFrame = local_94.previous;
 LAB_00532758:
   if ((&stack0x00000000 != (undefined1 *)0x12c) &&
-     (pcVar8 = st::fn_006B0140(0x2711,g_module_00807618), pcVar8 != nullptr)) {
-    pcVar8 = st::fn_006B0140(0x2711,g_module_00807618);
+     (pcVar8 = st::fn_006B0140(0x2711,g_hINSTANCE_00807618), pcVar8 != nullptr)) {
+    pcVar8 = st::fn_006B0140(0x2711,g_hINSTANCE_00807618);
     uVar10 = 0xffffffff;
     do {
       pcVar14 = pcVar8;
@@ -2794,7 +2794,7 @@ LAB_00532883:
 }
 
 // 00532A80 OptPanelTy::PrepMissObj
-#line 1 "decomp/ST.exe/functions/00532A80/decomp.c"
+#line 4 "decomp/ST.exe/functions/00532A80/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\Andrey\optpanel.cpp
    OptPanelTy::PrepMissObj
@@ -2883,7 +2883,7 @@ LAB_00532af5:
 }
 
 // 00532D50 OptPanelTy::PrepFiles
-#line 1 "decomp/ST.exe/functions/00532D50/decomp.c"
+#line 4 "decomp/ST.exe/functions/00532D50/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\Andrey\optpanel.cpp
    OptPanelTy::PrepFiles
@@ -3228,7 +3228,7 @@ void __thiscall st::fn_00532D50(OptPanelTy *this,uint param_1)
   local_8 = uVar12;
   if (uVar12 == 0) {
     if (this_01->field_01A4 != CASE_3) goto LAB_0053325d;
-    st::fn_006B6020(&this_01->field_01F1->flags,0,&DAT_008016a0);
+    st::fn_006B6020(this_01->field_01F1,0,&DAT_008016a0);
     uVar13 = this_01->field_01B5[1];
     this_01->field_0028 = 0x33;
     *(DArrayTy **)&this_01->field_0x2c = this_01->field_01F1;
@@ -3282,7 +3282,7 @@ LAB_0053325d:
 }
 
 // 00533470 OptPanelTy::CheckFiles
-#line 1 "decomp/ST.exe/functions/00533470/decomp.c"
+#line 4 "decomp/ST.exe/functions/00533470/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\Andrey\optpanel.cpp
    OptPanelTy::CheckFiles */
@@ -3362,7 +3362,7 @@ LAB_00533500:
 }
 
 // 00533880 OptPanelTy::Question
-#line 1 "decomp/ST.exe/functions/00533880/decomp.c"
+#line 4 "decomp/ST.exe/functions/00533880/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\Andrey\optpanel.cpp
    OptPanelTy::Question */
@@ -3425,7 +3425,7 @@ void __thiscall st::fn_00533880(OptPanelTy *this,char param_1)
 }
 
 // 00533A10 OptPanelTy::Notification
-#line 1 "decomp/ST.exe/functions/00533A10/decomp.c"
+#line 4 "decomp/ST.exe/functions/00533A10/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\Andrey\optpanel.cpp
    OptPanelTy::Notification
@@ -3488,7 +3488,7 @@ void __thiscall st::fn_00533A10(OptPanelTy *this,char param_1,byte param_2)
 }
 
 // 00533D10 OptPanelTy::GetMessage
-#line 1 "decomp/ST.exe/functions/00533D10/decomp.c"
+#line 4 "decomp/ST.exe/functions/00533D10/decomp.c"
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 /* Recovered from embedded debug metadata:
    E:\__titans\Andrey\optpanel.cpp
@@ -3695,7 +3695,7 @@ int __thiscall st::fn_00533D10(OptPanelTy *this,STMessage *message)
                 else {
                   pcVar19 = nullptr;
                 }
-                st::fn_006B6020(&this_00->field_01F1->flags,0,pcVar19);
+                st::fn_006B6020(this_00->field_01F1,0,pcVar19);
                 uVar12 = this_00->field_01B5[1];
                 this_00->field_0028 = 0x33;
                 *(DArrayTy **)&this_00->field_0x2c = this_00->field_01F1;
@@ -3766,7 +3766,7 @@ int __thiscall st::fn_00533D10(OptPanelTy *this,STMessage *message)
               iVar32 = -1;
               iVar29 = 0;
               if (iVar10 == 0) {
-                puVar26 = (uint *)st::fn_006B0140(0x2711,g_module_00807618);
+                puVar26 = (uint *)st::fn_006B0140(0x2711,g_hINSTANCE_00807618);
               }
               else {
                 puVar26 = &DAT_0080f33a;
@@ -6118,7 +6118,7 @@ cf_common_exit_00536FB7:
 }
 
 // 005380E0 OptPanelTy::UpdateObjectives
-#line 1 "decomp/ST.exe/functions/005380E0/decomp.c"
+#line 4 "decomp/ST.exe/functions/005380E0/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\Andrey\optpanel.cpp
    OptPanelTy::UpdateObjectives

@@ -6,7 +6,7 @@ entries: 96
 allocator: 006B04D0
 ABI dispatch: 006E3810@006E386C
 factory signature_apply: 94
-factory name_apply: 7
+factory name_apply: 0
 concrete result owners: 75
 missing function create_apply: 0
 object-type consumers: 0

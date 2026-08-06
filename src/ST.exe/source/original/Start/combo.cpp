@@ -2,7 +2,7 @@
 // Generated translation unit: source/original/Start/combo.cpp
 
 // 005939E0 ComboTy::OutBmpProc
-#line 1 "decomp/ST.exe/functions/005939E0/decomp.c"
+#line 4 "decomp/ST.exe/functions/005939E0/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\Start\combo.cpp
    ComboTy::OutBmpProc
@@ -59,7 +59,7 @@ st::fn_005939E0(ComboTy *this,DDXContext *param_1,undefined4 param_2,undefined4 
 }
 
 // 00593B50 ComboTy::InitCombo
-#line 1 "decomp/ST.exe/functions/00593B50/decomp.c"
+#line 4 "decomp/ST.exe/functions/00593B50/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\Start\combo.cpp
    ComboTy::InitCombo */
@@ -275,7 +275,7 @@ void __thiscall st::fn_00593B50(ComboTy *this,undefined4 *param_1)
 }
 
 // 005941D0 ComboTy::DoneCombo
-#line 1 "decomp/ST.exe/functions/005941D0/decomp.c"
+#line 4 "decomp/ST.exe/functions/005941D0/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\Start\combo.cpp
    ComboTy::DoneCombo */
@@ -348,7 +348,7 @@ void __thiscall st::fn_005941D0(ComboTy *this)
 }
 
 // 00594440 ComboTy::GetMessage
-#line 1 "decomp/ST.exe/functions/00594440/decomp.c"
+#line 4 "decomp/ST.exe/functions/00594440/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\Start\combo.cpp
    ComboTy::GetMessage

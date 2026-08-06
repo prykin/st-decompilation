@@ -2,7 +2,7 @@
 // Generated translation unit: source/recovered/by_owner/StartSystemTy.cpp
 
 // 005DA610 StartSystemTy::StartSystemTy
-#line 1 "decomp/ST.exe/functions/005DA610/decomp.c"
+#line 4 "decomp/ST.exe/functions/005DA610/decomp.c"
 /* [STConstructorApplier] Recovered constructor candidate.
    VTable: 0079C1E8 (store 005DA668)
    Evidence: final_vptr=0079C1E8; returns_this=true; calls_before=7; field_writes_after=31;
@@ -23,7 +23,7 @@ StartSystemTy * __thiscall st::fn_005DA610(StartSystemTy *this,undefined4 param_
   st::fn_00715820((SpriteClassTy *)&this->field_04AF);
   st::fn_00715820((SpriteClassTy *)&this->field_055C);
   st::fn_00715820((SpriteClassTy *)&this->field_05ED);
-  this->vtable = &StartSystemTyVTable;
+  this->vtable = &st_global_0079C1E8;
   g_startSystem_0081176C = this;
   this->field_0028 = DAT_00807332;
   this->field_02EA = 1;
@@ -63,7 +63,7 @@ StartSystemTy * __thiscall st::fn_005DA610(StartSystemTy *this,undefined4 param_
 }
 
 // 005DA910 StartSystemTy::sub_005DA910
-#line 1 "decomp/ST.exe/functions/005DA910/decomp.c"
+#line 4 "decomp/ST.exe/functions/005DA910/decomp.c"
 /* [STMethodOwnerApplier] Structural method owner recovered as StartSystemTy.
    Evidence: this_call_owners=[StartSystemTy]; agreed_this_calls=1; incoming_this_accesses=2;
    incoming_edx_uses=0; incoming_stack_parameter_uses=0
@@ -83,7 +83,7 @@ void __thiscall st::fn_005DA910(StartSystemTy *this)
 }
 
 // 005DA940 StartSystemTy::sub_005DA940
-#line 1 "decomp/ST.exe/functions/005DA940/decomp.c"
+#line 4 "decomp/ST.exe/functions/005DA940/decomp.c"
 /* [STMethodOwnerApplier] Structural method owner recovered as StartSystemTy.
    Evidence: this_call_owners=[StartSystemTy]; agreed_this_calls=2; incoming_this_accesses=1;
    incoming_edx_uses=0; incoming_stack_parameter_uses=1; direct_non_thunk_callers=0;
@@ -115,7 +115,7 @@ undefined1 __thiscall st::fn_005DA940(StartSystemTy *this,int param_1)
 }
 
 // 005DAB30 StartSystemTy::sub_005DAB30
-#line 1 "decomp/ST.exe/functions/005DAB30/decomp.c"
+#line 4 "decomp/ST.exe/functions/005DAB30/decomp.c"
 /* [STMethodOwnerApplier] Structural method owner recovered as StartSystemTy.
    Evidence: this_call_owners=[StartSystemTy]; agreed_this_calls=1; incoming_this_accesses=3;
    incoming_edx_uses=0; incoming_stack_parameter_uses=0
@@ -136,7 +136,7 @@ void __thiscall st::fn_005DAB30(StartSystemTy *this)
 }
 
 // 005DAF20 StartSystemTy::sub_005DAF20
-#line 1 "decomp/ST.exe/functions/005DAF20/decomp.c"
+#line 4 "decomp/ST.exe/functions/005DAF20/decomp.c"
 /* [STMethodOwnerApplier] Structural method owner recovered as StartSystemTy.
    Evidence: this_call_owners=[StartSystemTy]; agreed_this_calls=1; incoming_this_accesses=2;
    incoming_edx_uses=0; incoming_stack_parameter_uses=0
@@ -179,7 +179,7 @@ LAB_005dafab:
 }
 
 // 005DB2A0 StartSystemTy::sub_005DB2A0
-#line 1 "decomp/ST.exe/functions/005DB2A0/decomp.c"
+#line 4 "decomp/ST.exe/functions/005DB2A0/decomp.c"
 /* [STMethodOwnerApplier] Structural method owner recovered as StartSystemTy.
    Evidence: this_call_owners=[StartSystemTy]; agreed_this_calls=1; incoming_this_accesses=22;
    incoming_edx_uses=0; incoming_stack_parameter_uses=0
@@ -262,7 +262,7 @@ void __thiscall st::fn_005DB2A0(StartSystemTy *this)
 }
 
 // 005DCD90 StartSystemTy::CreateSystemObjects
-#line 1 "decomp/ST.exe/functions/005DCD90/decomp.c"
+#line 4 "decomp/ST.exe/functions/005DCD90/decomp.c"
 /* [STVirtualMethodApplier] Recovered from virtual table slot family.
    Tables: 0079C1E8
    Entries: 00402171
@@ -279,7 +279,7 @@ undefined4 __thiscall st::fn_005DCD90(StartSystemTy *this)
 }
 
 // 005DCDB0 StartSystemTy::DoneSystem
-#line 1 "decomp/ST.exe/functions/005DCDB0/decomp.c"
+#line 4 "decomp/ST.exe/functions/005DCDB0/decomp.c"
 /* [STDestructorApplier] Recovered destructor for StartSystemTy.
    Evidence: cleanup_only_vtable_method; zeroed_this_fields=4; same_this_calls=6;
    field_cleanup_calls=1; 005DCDBE FUN_006e56b0; 005DCDD3 FUN_006e56b0; 005DCDEB FUN_006e56b0;
@@ -319,7 +319,7 @@ void __thiscall st::fn_005DCDB0(StartSystemTy *this)
 }
 
 // 006E5360 StartSystemTy::sub_006E5360
-#line 1 "decomp/ST.exe/functions/006E5360/decomp.c"
+#line 4 "decomp/ST.exe/functions/006E5360/decomp.c"
 /* [STMethodOwnerApplier] Structural method owner recovered as StartSystemTy.
    Evidence: this_call_owners=[StartSystemTy]; agreed_this_calls=2; incoming_this_accesses=1;
    incoming_edx_uses=0; incoming_stack_parameter_uses=3 */
@@ -333,7 +333,7 @@ st::fn_006E5360(StartSystemTy *this,int param_1,int *param_2,undefined4 *param_3
 }
 
 // 006E56B0 StartSystemTy::sub_006E56B0
-#line 1 "decomp/ST.exe/functions/006E56B0/decomp.c"
+#line 4 "decomp/ST.exe/functions/006E56B0/decomp.c"
 /* [STMethodOwnerApplier] Structural method owner recovered as StartSystemTy.
    Evidence: this_call_owners=[StartSystemTy]; agreed_this_calls=4; incoming_this_accesses=3;
    incoming_edx_uses=0; incoming_stack_parameter_uses=5 */

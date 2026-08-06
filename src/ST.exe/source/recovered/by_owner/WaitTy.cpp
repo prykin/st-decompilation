@@ -2,7 +2,7 @@
 // Generated translation unit: source/recovered/by_owner/WaitTy.cpp
 
 // 005E9970 WaitTy::sub_005E9970
-#line 1 "decomp/ST.exe/functions/005E9970/decomp.c"
+#line 4 "decomp/ST.exe/functions/005E9970/decomp.c"
 /* [STMethodOwnerApplier] Structural method owner recovered as WaitTy.
    Evidence: this_call_owners=[WaitTy]; agreed_this_calls=1; incoming_this_accesses=13;
    incoming_edx_uses=0; incoming_stack_parameter_uses=0; direct_non_thunk_callers=0;
@@ -38,7 +38,7 @@ void __thiscall st::fn_005E9970(WaitTy *this)
 }
 
 // 005E9A40 WaitTy::sub_005E9A40
-#line 1 "decomp/ST.exe/functions/005E9A40/decomp.c"
+#line 4 "decomp/ST.exe/functions/005E9A40/decomp.c"
 /* [STMethodOwnerApplier] Structural method owner recovered as WaitTy.
    Evidence: this_call_owners=[WaitTy]; agreed_this_calls=2; incoming_this_accesses=13;
    incoming_edx_uses=0; incoming_stack_parameter_uses=0; direct_non_thunk_callers=0;

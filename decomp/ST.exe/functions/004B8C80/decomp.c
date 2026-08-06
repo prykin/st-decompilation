@@ -88,7 +88,7 @@ undefined4 __fastcall FUN_004b8c80(TLOBaseTy *param_1)
       iVar6 = thunk_FUN_004ac910(puVar1,'\x04');
       if (iVar6 == *(int *)(&DAT_007cdf5a + iVar5 * 0x32)) {
         iVar5 = STT3DSprC::LoadSequence
-                          ((STT3DSprC *)puVar1,5,DAT_00806764,"expl_bbt0" + iVar5 * 0x32,
+                          ((STT3DSprC *)puVar1,5,PTR_00806764,"expl_bbt0" + iVar5 * 0x32,
                            0x1d);
         if (iVar5 != 0) {
           return 0xffff;

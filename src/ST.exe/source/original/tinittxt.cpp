@@ -2,7 +2,7 @@
 // Generated translation unit: source/original/tinittxt.cpp
 
 // 005751F0 LandInit
-#line 1 "decomp/ST.exe/functions/005751F0/decomp.c"
+#line 4 "decomp/ST.exe/functions/005751F0/decomp.c"
 /* [STSourceProvenanceApplier begin]
    Recovered source file: E:\__titans\tinittxt.cpp
    Diagnostic line evidence: 352 | 379 | 380 (metadata/report site, not the function definition)

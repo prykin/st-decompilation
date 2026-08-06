@@ -2,7 +2,7 @@
 // Generated translation unit: source/original/Igor/to_sat.cpp
 
 // 0058C560 FUN_0058c560
-#line 1 "decomp/ST.exe/functions/0058C560/decomp.c"
+#line 4 "decomp/ST.exe/functions/0058C560/decomp.c"
 /* [STSourceProvenanceApplier begin]
    Recovered source file: E:\__titans\Igor\to_sat.cpp
    Diagnostic line evidence: 283 (metadata/report site, not the function definition)
@@ -58,7 +58,7 @@ void __thiscall st::fn_0058C560(void *this,int param_1,int param_2)
 }
 
 // 0058C760 STSatC::GetMessage
-#line 1 "decomp/ST.exe/functions/0058C760/decomp.c"
+#line 4 "decomp/ST.exe/functions/0058C760/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\Igor\to_sat.cpp
    STSatC::GetMessage
@@ -93,7 +93,7 @@ int __thiscall st::fn_0058C760(STSatC *this,STMessage *message)
   void *local_3c;
   AnonShape_GLOBAL_00806724_3210464F *local_38;
   int local_34;
-  undefined4 local_30;
+  ushort *local_30;
   undefined4 local_2c;
   undefined4 local_28;
   undefined4 local_24;
@@ -212,7 +212,7 @@ int __thiscall st::fn_0058C760(STSatC *this,STMessage *message)
           puVar17 = (byte *)&this_00->field_0x275;
           memmove(puVar17, puVar15, 0x26); /* compiler REP MOVS byte copy */
           puVar15 = (byte *)(&this_00->field_01D5);
-          iVar10 = st::fn_00404183((STT3DSprC *)puVar15,0xe,DAT_00806774,&DAT_007cbaa8,0x1d);
+          iVar10 = st::fn_00404183((STT3DSprC *)puVar15,0xe,PTR_00806774,&DAT_007cbaa8,0x1d);
           if (iVar10 != 0) {
             st::fn_006A5E40
                       (-1,g_overwriteContext_007ED77C,"E:\\__titans\\Igor\\to_sat.cpp",0x158);
@@ -278,7 +278,7 @@ int __thiscall st::fn_0058C760(STSatC *this,STMessage *message)
           if (local_3c != nullptr) {
             iVar10 = 0;
             do {
-              *(int **)(iVar10 + (int)local_3c) = DAT_00806774;
+              *(int **)(iVar10 + (int)local_3c) = PTR_00806774;
               iVar10 = iVar10 + 4;
             } while (iVar10 < 0x44);
             if (((*(int *)&this_00->field_0x239 < 1) ||
@@ -290,7 +290,7 @@ int __thiscall st::fn_0058C760(STSatC *this,STMessage *message)
               local_38 = PTR_00806724 + *(int *)&this_00->field_0x239;
             }
             local_34 = (int)PTR_00806724->field_002C;
-            local_30 = DAT_008073cc;
+            local_30 = PTR_008073cc;
             local_2c = 0;
             local_28 = 0;
             local_24 = 0;

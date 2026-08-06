@@ -50,7 +50,7 @@ int __thiscall TLOBaseTy::ReloadLogoPlane(TLOBaseTy *this)
         }
       }
       wsprintfA(local_15c,"%s%1i",pTVar4->field_05F3,pTVar4->field_05C0);
-      iVar5 = STT3DSprC::LoadSequence((STT3DSprC *)puVar1,0xd,DAT_0080678c,local_15c,0x1d);
+      iVar5 = STT3DSprC::LoadSequence((STT3DSprC *)puVar1,0xd,PTR_0080678c,local_15c,0x1d);
       if (iVar5 != 0) {
         RaiseInternalException
                   (iVar5,g_overwriteContext_007ED77C,"E:\\__titans\\Artem\\TLO_bspr.cpp",0xd3);
@@ -91,7 +91,7 @@ int __thiscall TLOBaseTy::ReloadLogoPlane(TLOBaseTy *this)
         }
       }
       wsprintfA(local_15c,"%s_cover%1i",pTVar4->field_05F3,pTVar4->field_05C0);
-      iVar5 = STT3DSprC::LoadSequence((STT3DSprC *)puVar1,8,DAT_0080678c,local_15c,0x1d);
+      iVar5 = STT3DSprC::LoadSequence((STT3DSprC *)puVar1,8,PTR_0080678c,local_15c,0x1d);
       if (iVar5 != 0) {
         RaiseInternalException
                   (iVar5,g_overwriteContext_007ED77C,"E:\\__titans\\Artem\\TLO_bspr.cpp",0xea);

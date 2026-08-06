@@ -39,12 +39,12 @@ void __thiscall MainMenuTy::PaintMainMenu(MainMenuTy *this)
       pcVar7 = g_startSystem_0081176C->field_0030;
       uVar6 = 0xffffffff;
       uVar5 = 0xfffffffe;
-      puVar3 = (uint *)LoadResourceString(0x26ac,g_module_00807618);
+      puVar3 = (uint *)LoadResourceString(0x26ac,g_hINSTANCE_00807618);
       StartServTy::WrTextDDX(this_01,0,0xe9,0x14,0x14c,0x18,puVar3,uVar5,uVar6,pcVar7,uVar8);
       uVar6 = DAT_00807dd5 >> 0x10 & 0xff;
       uVar8 = DAT_00807dd5 & 0xffff;
       uVar5 = DAT_00807dd5 >> 0x18;
-      text = LoadResourceString(0x2329,g_module_00807618);
+      text = LoadResourceString(0x2329,g_hINSTANCE_00807618);
       wsprintfA((LPSTR)(pMVar2->field_1A5B + 0x3c),text,uVar5,uVar6,uVar8);
       StartServTy::WrTextDDX
                 ((StartServTy *)g_startSystem_0081176C,0,0,0x240,800,0x18,
@@ -55,7 +55,7 @@ void __thiscall MainMenuTy::PaintMainMenu(MainMenuTy *this)
       pcVar7 = g_startSystem_0081176C->field_0030;
       uVar6 = 0xffffffff;
       uVar5 = 0xfffffffe;
-      puVar3 = (uint *)LoadResourceString(0x26b0,g_module_00807618);
+      puVar3 = (uint *)LoadResourceString(0x26b0,g_hINSTANCE_00807618);
       StartServTy::WrTextDDX(this_00,0,0xe9,0x14,0x14c,0x18,puVar3,uVar5,uVar6,pcVar7,uVar3);
     }
     puVar3 = pMVar2->field_1AA7;

@@ -2,7 +2,7 @@
 // Generated translation unit: source/recovered/by_address/0059.cpp
 
 // 00590130 FUN_00590130
-#line 1 "decomp/ST.exe/functions/00590130/decomp.c"
+#line 4 "decomp/ST.exe/functions/00590130/decomp.c"
 void __thiscall st::fn_00590130(void *this,undefined4 param_1)
 
 {
@@ -11,7 +11,7 @@ void __thiscall st::fn_00590130(void *this,undefined4 param_1)
 }
 
 // 00590150 FUN_00590150
-#line 1 "decomp/ST.exe/functions/00590150/decomp.c"
+#line 4 "decomp/ST.exe/functions/00590150/decomp.c"
 undefined4 st::fn_00590150(void)
 
 {
@@ -19,7 +19,7 @@ undefined4 st::fn_00590150(void)
 }
 
 // 00590AD0 CreateMAdv
-#line 1 "decomp/ST.exe/functions/00590AD0/decomp.c"
+#line 4 "decomp/ST.exe/functions/00590AD0/decomp.c"
 /* [STUnclaimedCodeApplier] Exact function entry recovered from thunk_target.
    Evidence: P:007CA894>0040423C
 
@@ -36,7 +36,7 @@ MAdvTy * __cdecl st::fn_00590AD0(void)
   this = (MAdvTy *)st::fn_006B04D0(0x62);
   if (this != nullptr) {
     st::fn_006E5FB0(this);
-    this->vtable = &MAdvTyVTable;
+    this->vtable = &st_global_0079BFE4;
     memset(&this->field_0x18, 0, 0x20); /* compiler bulk-zero initialization */
     iVar1 = 0;
     memset(&this->field_0x38, 0, 0x20); /* compiler bulk-zero initialization */
@@ -64,7 +64,7 @@ void st::fn_005926A0(int *param_1)
 }
 
 // 00593860 CreateCampaign
-#line 1 "decomp/ST.exe/functions/00593860/decomp.c"
+#line 4 "decomp/ST.exe/functions/00593860/decomp.c"
 /* [STUnclaimedCodeApplier] Exact function entry recovered from thunk_target.
    Evidence: P:007CA86C>00404EB7
 
@@ -114,7 +114,7 @@ CampaignTy * __cdecl st::fn_00593860(void)
       iVar1 = iVar1 + -1;
       puVar3 = (undefined4 *)((int)puVar3 + 0x1fb);
     } while (iVar1 != 0);
-    this->vtable = &CampaignTyVTable;
+    this->vtable = &st_global_0079BFF8;
     memset(&this->field_1A5F, 0, 0xb4); /* compiler bulk-zero initialization */
     iVar1 = 0;
     memset(&this->field_1B13, 0, 0xb4); /* compiler bulk-zero initialization */
@@ -135,7 +135,7 @@ CampaignTy * __cdecl st::fn_00593860(void)
 }
 
 // 005947D0 CreateVisible
-#line 1 "decomp/ST.exe/functions/005947D0/decomp.c"
+#line 4 "decomp/ST.exe/functions/005947D0/decomp.c"
 /* [STUnclaimedCodeApplier] Exact function entry recovered from thunk_target.
    Evidence: P:007CA9D4>00402621
 
@@ -151,7 +151,7 @@ Visible * __cdecl st::fn_005947D0(void)
   this = (Visible *)st::fn_006B04D0(0x118);
   if (this != nullptr) {
     st::fn_006E5FB0(this);
-    this->vtable = &VisibleVTable;
+    this->vtable = &st_global_0079C01C;
     memset(&this->field_0x88, 0, 0x80); /* compiler bulk-zero initialization */
     this->field_010C = 0;
     this->field_0114 = 0;
@@ -164,7 +164,7 @@ Visible * __cdecl st::fn_005947D0(void)
 }
 
 // 00594850 FUN_00594850
-#line 1 "decomp/ST.exe/functions/00594850/decomp.c"
+#line 4 "decomp/ST.exe/functions/00594850/decomp.c"
 void __cdecl st::fn_00594850(int param_1,undefined *param_2,BYTE param_3)
 
 {

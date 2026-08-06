@@ -365,7 +365,7 @@ LAB_00462a36:
               /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
               (*(code *)**(undefined4 **)this)(local_6c);
               STT3DSprC::LoadSequence
-                        ((STT3DSprC *)((int)this + 0x1d5),8,DAT_00806774,"expdstrwd",0x1d);
+                        ((STT3DSprC *)((int)this + 0x1d5),8,PTR_00806774,"expdstrwd",0x1d);
               if (DAT_00811798 != nullptr) {
                 STFishC::sub_004162F0
                           (pSVar14,(undefined2 *)((int)&local_14 + 2),

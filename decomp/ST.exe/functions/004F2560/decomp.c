@@ -168,7 +168,7 @@ LAB_004f27ff:
     uVar7 = 1;
     iVar10 = -1;
     iVar16 = -2;
-    resourceString = (uint *)LoadResourceString(0x2715,g_module_00807618);
+    resourceString = (uint *)LoadResourceString(0x2715,g_hINSTANCE_00807618);
     ccFntTy::WrTxt(pCVar5->field_01B8,resourceString,iVar16,iVar10,uVar7,iVar18,iVar19);
   }
   local_5 = '\x01';

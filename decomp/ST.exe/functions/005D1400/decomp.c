@@ -208,7 +208,7 @@ int __thiscall SettMapMTy::GetMessage(SettMapMTy *this,STMessage *message)
         uVar29 = 2;
         iVar41 = -1;
         iVar39 = -1;
-        puVar18 = (uint *)LoadResourceString((iVar16 != 1) + 0x2422,g_module_00807618);
+        puVar18 = (uint *)LoadResourceString((iVar16 != 1) + 0x2422,g_hINSTANCE_00807618);
         ccFntTy::WrStr(g_startSystem_0081176C->field_0034,puVar18,iVar39,iVar41,uVar29);
         FUN_006b35d0((int *)g_ddxContext_008075A8,this_00->field_2200);
       }
@@ -1072,7 +1072,7 @@ LAB_005d28a0:
         }
       }
 LAB_005d28da:
-      Library::DKW::TBL::FUN_006b6020(&this_00->field_1A5B->field_0686->flags,0,&DAT_008016a0);
+      Library::DKW::TBL::FUN_006b6020(this_00->field_1A5B->field_0686,0,&DAT_008016a0);
       this_00->field_002D = 0x33;
       this_00->field_0031 = this_00->field_1A5B->field_0686;
       FUN_006e6080(this_00,2,this_00->field_1A5B->field_054C,(undefined4 *)&this_00->field_0x1d);
@@ -1238,7 +1238,7 @@ LAB_005d3188:
           this_00->field_2191 = 0x6500;
           this_00->field_1E2F->count = 0;
           local_10 = (char *)0x1;
-          pcVar28 = LoadResourceString(0x23f1,g_module_00807618);
+          pcVar28 = LoadResourceString(0x23f1,g_hINSTANCE_00807618);
           uVar29 = 0xffffffff;
           do {
             pcVar33 = pcVar28;
@@ -1259,7 +1259,7 @@ LAB_005d3188:
           }
           this_00->field_1F37 = 1;
           Library::DKW::TBL::DArrayAppend((DArrayTy *)this_00->field_1E2F,&this_00->field_0x1e33);
-          pcVar28 = LoadResourceString(0x23f0,g_module_00807618);
+          pcVar28 = LoadResourceString(0x23f0,g_hINSTANCE_00807618);
           uVar29 = 0xffffffff;
           do {
             pcVar33 = pcVar28;
@@ -1285,7 +1285,7 @@ LAB_005d3188:
             pcVar28 = (char *)(uint)(local_18->field_0x4 != '\x02');
           }
           if (pcVar28 != nullptr) {
-            pcVar28 = LoadResourceString(0x23f2,g_module_00807618);
+            pcVar28 = LoadResourceString(0x23f2,g_hINSTANCE_00807618);
             uVar29 = 0xffffffff;
             do {
               pcVar33 = pcVar28;
@@ -1349,7 +1349,7 @@ LAB_005d3188:
             } while (-1 < (int)uVar29);
           }
           if (local_5 != '\0') {
-            pcVar28 = LoadResourceString(0x1f42,g_module_00807618);
+            pcVar28 = LoadResourceString(0x1f42,g_hINSTANCE_00807618);
             uVar29 = 0xffffffff;
             do {
               pcVar33 = pcVar28;
@@ -1367,7 +1367,7 @@ LAB_005d3188:
             this_00->field_1F37 = 2;
             Library::DKW::TBL::DArrayAppend((DArrayTy *)this_00->field_1E2F,&this_00->field_0x1e33);
             if (DAT_00808aaa != '\0') {
-              pcVar28 = LoadResourceString(0x1f46,g_module_00807618);
+              pcVar28 = LoadResourceString(0x1f46,g_hINSTANCE_00807618);
               uVar29 = 0xffffffff;
               do {
                 pcVar33 = pcVar28;
@@ -1387,7 +1387,7 @@ LAB_005d3188:
                         ((DArrayTy *)this_00->field_1E2F,&this_00->field_0x1e33);
             }
           }
-          pcVar28 = LoadResourceString(0x1f41,g_module_00807618);
+          pcVar28 = LoadResourceString(0x1f41,g_hINSTANCE_00807618);
           uVar29 = 0xffffffff;
           do {
             pcVar33 = pcVar28;
@@ -1408,7 +1408,7 @@ LAB_005d3188:
         else {
           if ((this_00->field_1E26 != CASE_5) || (pAVar26->field_0x4 != '\x04')) {
             if ((DAT_0080877e != '\0') && (this_00->field_1E26 != CASE_5)) {
-              pcVar28 = LoadResourceString(8000,g_module_00807618);
+              pcVar28 = LoadResourceString(8000,g_hINSTANCE_00807618);
               uVar29 = 0xffffffff;
               do {
                 pcVar33 = pcVar28;
@@ -1432,7 +1432,7 @@ LAB_005d3188:
               bVar38 = local_18->field_0x3 != '\x03';
             }
             if (bVar38) {
-              pcVar28 = LoadResourceString(0x1f42,g_module_00807618);
+              pcVar28 = LoadResourceString(0x1f42,g_hINSTANCE_00807618);
               uVar29 = 0xffffffff;
               do {
                 pcVar33 = pcVar28;
@@ -1451,7 +1451,7 @@ LAB_005d3188:
               Library::DKW::TBL::DArrayAppend
                         ((DArrayTy *)this_00->field_1E2F,&this_00->field_0x1e33);
             }
-            pcVar28 = LoadResourceString(0x1f41,g_module_00807618);
+            pcVar28 = LoadResourceString(0x1f41,g_hINSTANCE_00807618);
             uVar29 = 0xffffffff;
             do {
               pcVar33 = pcVar28;
@@ -1655,7 +1655,7 @@ LAB_005d32d3:
             do {
               iVar16 = uVar29 + 0x41;
               if (puVar24[uVar29 + 0x41] != '\0') {
-                pcVar28 = LoadResourceString(0x1f4a,g_module_00807618);
+                pcVar28 = LoadResourceString(0x1f4a,g_hINSTANCE_00807618);
                 wsprintfA(&this_00->field_0x1e33,"%s%c",pcVar28,iVar16);
                 this_00->field_1F37 = uVar29;
                 Library::DKW::TBL::DArrayAppend
@@ -1904,7 +1904,7 @@ LAB_005d38bd:
                    (-((message->arg0).words.low != 0) & 0xfcU) + 0x23,0x67),
        pAVar36->field_0x4 == '\0')) break;
     if (DAT_00808a8f != '\0') {
-      pcVar33 = LoadResourceString(0x1f4a,g_module_00807618);
+      pcVar33 = LoadResourceString(0x1f4a,g_hINSTANCE_00807618);
       wsprintfA((LPSTR)&DAT_0080f33a,"%s%c",pcVar33);
       ccFntTy::SetSurf(g_startSystem_0081176C->field_0034,this_00->field_20CC[(int)pcVar28 + 10],0,
                        local_28,local_24,local_20,local_1c);

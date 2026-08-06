@@ -2,7 +2,7 @@
 // Generated translation unit: source/recovered/by_owner/STAllPlayersC.cpp
 
 // 0042A940 STAllPlayersC::STAllPlayersC
-#line 1 "decomp/ST.exe/functions/0042A940/decomp.c"
+#line 4 "decomp/ST.exe/functions/0042A940/decomp.c"
 /* [STConstructorApplier] Recovered constructor candidate.
    VTable: 0079059C (store 0042A955)
    Evidence: final_vptr=0079059C; returns_this=true; calls_before=1; field_writes_after=0;
@@ -15,7 +15,7 @@ STAllPlayersC * __thiscall st::fn_0042A940(STAllPlayersC *this)
   int iVar2;
 
   st::fn_006E60E0(this);
-  this->vtable = &STAllPlayersCVTable;
+  this->vtable = &st_global_0079059C;
   pPVar1 = g_packedRecords_A62x8;
   for (iVar2 = 0x14d5; iVar2 != 0; iVar2 = iVar2 + -1) {
     *(undefined4 *)pPVar1 = 0;
@@ -30,7 +30,7 @@ STAllPlayersC * __thiscall st::fn_0042A940(STAllPlayersC *this)
 }
 
 // 004DB160 STAllPlayersC::sub_004DB160
-#line 1 "decomp/ST.exe/functions/004DB160/decomp.c"
+#line 4 "decomp/ST.exe/functions/004DB160/decomp.c"
 /* [STHiddenThisApplier] Anonymous hidden receiver recovered as
    /SubmarineTitans/Recovered/HiddenThis/AnonReceiver_004DB160.
    Evidence: incoming_receiver_captures=1; receiver_accesses=8; incoming_edx_uses=0; calls=3;
@@ -344,7 +344,7 @@ LAB_004db638:
 }
 
 // 004EB010 STAllPlayersC::sub_004EB010
-#line 1 "decomp/ST.exe/functions/004EB010/decomp.c"
+#line 4 "decomp/ST.exe/functions/004EB010/decomp.c"
 /* [STMethodOwnerApplier] Structural method owner recovered as STAllPlayersC.
    Evidence: this_call_owners=[STAllPlayersC]; agreed_this_calls=1; incoming_this_accesses=2;
    incoming_edx_uses=0; incoming_stack_parameter_uses=3; direct_non_thunk_callers=0;
@@ -404,7 +404,7 @@ undefined4 __thiscall st::fn_004EB010(STAllPlayersC *this,int param_1)
 }
 
 // 005EC370 STAllPlayersC::FUN_005ec370
-#line 1 "decomp/ST.exe/functions/005EC370/decomp.c"
+#line 4 "decomp/ST.exe/functions/005EC370/decomp.c"
 /* [STPrototypeApplier] Propagated return.
    Evidence: 005EC370 returns used as parameter 2 of STPlaySystemC::SaveObjData @ 005EB4DA */
 
@@ -476,7 +476,7 @@ byte * __thiscall st::fn_005EC370(STAllPlayersC *this,uint *param_1)
 }
 
 // 005EC850 STAllPlayersC::FUN_005ec850
-#line 1 "decomp/ST.exe/functions/005EC850/decomp.c"
+#line 4 "decomp/ST.exe/functions/005EC850/decomp.c"
 int __thiscall st::fn_005EC850(STAllPlayersC *this,int *param_1)
 
 {
@@ -505,10 +505,10 @@ int __thiscall st::fn_005EC850(STAllPlayersC *this,int *param_1)
   local_24 = st::fn_006AAC70(0x44);
   iVar2 = 0;
   do {
-    *(undefined4 *)(iVar2 + (int)local_24) = DAT_00806774;
+    *(int **)(iVar2 + (int)local_24) = PTR_00806774;
     iVar2 = iVar2 + 4;
   } while (iVar2 < 0x44);
-  STField<undefined4>(local_24,0x24) = DAT_00806764;
+  STField<int *>(local_24,0x24) = PTR_00806764;
   local_20 = 0;
   local_1c = 0;
   local_18 = 0;
@@ -538,7 +538,7 @@ int __thiscall st::fn_005EC850(STAllPlayersC *this,int *param_1)
 }
 
 // 005FCAD0 STAllPlayersC::FUN_005fcad0
-#line 1 "decomp/ST.exe/functions/005FCAD0/decomp.c"
+#line 4 "decomp/ST.exe/functions/005FCAD0/decomp.c"
 /* [STPrototypeApplier] Propagated return.
    Evidence: 005FCAD0 returns used as parameter 2 of STPlaySystemC::SaveObjData @ 005FBC32 */
 
@@ -610,7 +610,7 @@ byte * __thiscall st::fn_005FCAD0(STAllPlayersC *this,uint *param_1)
 }
 
 // 00622990 STAllPlayersC::FUN_00622990
-#line 1 "decomp/ST.exe/functions/00622990/decomp.c"
+#line 4 "decomp/ST.exe/functions/00622990/decomp.c"
 /* [STPrototypeApplier] Propagated return.
    Evidence: 00622990 returns used as parameter 2 of STPlaySystemC::SaveObjData @ 00622246 */
 
@@ -678,7 +678,7 @@ byte * __thiscall st::fn_00622990(STAllPlayersC *this,uint *param_1)
 }
 
 // 00622AB0 STAllPlayersC::FUN_00622ab0
-#line 1 "decomp/ST.exe/functions/00622AB0/decomp.c"
+#line 4 "decomp/ST.exe/functions/00622AB0/decomp.c"
 int __thiscall st::fn_00622AB0(STAllPlayersC *this,undefined4 *param_1)
 
 {
@@ -703,10 +703,10 @@ int __thiscall st::fn_00622AB0(STAllPlayersC *this,undefined4 *param_1)
   local_20 = st::fn_006AAC70(0x44);
   iVar1 = 0;
   do {
-    *(undefined4 *)(iVar1 + (int)local_20) = DAT_00806774;
+    *(int **)(iVar1 + (int)local_20) = PTR_00806774;
     iVar1 = iVar1 + 4;
   } while (iVar1 < 0x44);
-  STField<undefined4>(local_20,0x24) = DAT_00806764;
+  STField<int *>(local_20,0x24) = PTR_00806764;
   local_1c = 0;
   local_18 = 0;
   local_14 = 0;

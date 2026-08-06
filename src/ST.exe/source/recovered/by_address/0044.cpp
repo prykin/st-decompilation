@@ -5,25 +5,9 @@
 #line 1 "decomp/ST.exe/functions/004406C0/decomp.c"
 
 /* [STUtilityFunctionApplier] indexed_record_byte_lookup: maps a guarded byte-sized index to the
-   first byte of a fixed-stride record; the explicit 0xff guard clears AL and returns zero
-   Evidence: body pattern verified
-   [STAbiConsistencyApplier] narrow_accumulator_return target=return:-1: return=/byte Evidence: all
-   resolved direct callers consume only AL or kill the result; narrow_uses=364, ignored=1, full=0,
-   unknown=0; reverse CFG traversal from every RET finds the same exact low-accumulator definition
-   width on every path; sites=00436F20 @ 00437CEC -> read as AL on every CFG path | 0043BEB0 @
-   0043BFD8 -> read as AL on every CFG path | 0043BEB0 @ 0043C187 -> read as AL on every CFG path |
-   00442300 @ 00442404 -> read as AL on every CFG path | 0044CE40 @ 0044CFB4 -> read as AL on every
-   CFG path | 0044CE40 @ 0044CFE1 -> read as AL on every CFG path | 0044CE40 @ 0044D007 -> read as
-   AL on every CFG path | 0044CE40 @ 0044D024 -> read as AL on every CFG path | 0044EE30 @ 00459D62
-   -> read as AL on every CFG path | 0044EE30 @ 00459E45 -> read as AL on every CFG path | 0045F6C0
-   @ 0045F6D7 -> read as AL on every CFG path | 00476CE0 @ 004775B7 -> read as AL on every CFG path
-   | 00486B60 @ 00486CD5 -> read as AL on every CFG path | 00486E20 @ 00486EB7 -> read as AL on
-   every CFG path | 00486E20 @ 00486ECA -> read as AL on every CFG path | 00486E20 @ 00486EEA ->
-   read as AL on every CFG path | 00488890 @ 004888B6 -> read as AL on every CFG path | 00488890 @
-   00488909 -> read as AL on every CFG path | 00488890 @ 004889DB -> read as AL on every CFG path |
-   00488890 @ 00488A19 -> read as AL on every CFG path | 00488890 @ 00488A3E -> read as AL on every
-   CFG path | 00488890 @ 00488A60 -> read as AL on every CFG path | 00488890 @ 00488A73 -> read as
-   AL on every CFG path | 00488890 @ 00488A97 -> read as AL on every CFG path */
+   first byte of a fixed-stride record; return width is owned by the CFG-complete ABI consistency
+   pass
+   Evidence: body pattern verified */
 
 byte st::fn_004406C0(char recordIndex)
 
@@ -35,7 +19,7 @@ byte st::fn_004406C0(char recordIndex)
 }
 
 // 00440700 FUN_00440700
-#line 1 "decomp/ST.exe/functions/00440700/decomp.c"
+#line 4 "decomp/ST.exe/functions/00440700/decomp.c"
 void st::fn_00440700(int param_1)
 
 {
@@ -51,7 +35,7 @@ void st::fn_00440700(int param_1)
 }
 
 // 00440750 FUN_00440750
-#line 1 "decomp/ST.exe/functions/00440750/decomp.c"
+#line 4 "decomp/ST.exe/functions/00440750/decomp.c"
 void st::fn_00440750(int param_1)
 
 {
@@ -67,7 +51,7 @@ void st::fn_00440750(int param_1)
 }
 
 // 004407A0 FUN_004407a0
-#line 1 "decomp/ST.exe/functions/004407A0/decomp.c"
+#line 4 "decomp/ST.exe/functions/004407A0/decomp.c"
 /* [STAbiConsistencyApplier] stack_parameter_width: parameter=/char Evidence: entry-use width=/char;
    unmasked_dword_reads=0; evidence=004407A3 MOVSX EAX,byte ptr [EBP + 0x8] */
 
@@ -95,7 +79,7 @@ void st::fn_004407A0(char param_1,undefined4 param_2,undefined4 param_3)
 }
 
 // 00440820 FUN_00440820
-#line 1 "decomp/ST.exe/functions/00440820/decomp.c"
+#line 4 "decomp/ST.exe/functions/00440820/decomp.c"
 /* [STPrototypeApplier] Propagated parameter 0.
    Evidence: 0042F2B0 -> 00440820 @ 0042FF76; STAllPlayersC::UnRegisterObject parameter param_1 */
 
@@ -113,7 +97,7 @@ void st::fn_00440820(int param_1,undefined4 param_2)
 }
 
 // 00444E70 FUN_00444e70
-#line 1 "decomp/ST.exe/functions/00444E70/decomp.c"
+#line 4 "decomp/ST.exe/functions/00444E70/decomp.c"
 /* [STPrototypeApplier] Propagated parameter 1.
    Evidence: 00430A90 -> 00444E70 @ 00430C1E */
 
@@ -474,7 +458,7 @@ void st::fn_00446A70(void)
 }
 
 // 00449A90 FUN_00449a90
-#line 1 "decomp/ST.exe/functions/00449A90/decomp.c"
+#line 4 "decomp/ST.exe/functions/00449A90/decomp.c"
 /* [STAbiConsistencyApplier] stack_parameter_width: parameter=/char Evidence: entry-use width=/char;
    unmasked_dword_reads=0; evidence=00449A96 MOVSX EAX,byte ptr [EBP + 0x8] */
 
@@ -516,7 +500,7 @@ uint st::fn_00449A90(char param_1,short param_2)
 }
 
 // 0044CC90 FUN_0044cc90
-#line 1 "decomp/ST.exe/functions/0044CC90/decomp.c"
+#line 4 "decomp/ST.exe/functions/0044CC90/decomp.c"
 /* [STPrototypeApplier] Propagated parameter 1.
    Evidence: 00436F20 -> 0044CC90 @ 004372CC | 00436F20 -> 0044CC90 @ 004373FC */
 
@@ -550,7 +534,7 @@ void st::fn_0044CC90(uint param_1,uint *groupContent,undefined4 param_3)
 }
 
 // 0044CD20 FUN_0044cd20
-#line 1 "decomp/ST.exe/functions/0044CD20/decomp.c"
+#line 4 "decomp/ST.exe/functions/0044CD20/decomp.c"
 /* [STPrototypeApplier] Propagated parameter 1.
    Evidence: 00436F20 -> 0044CD20 @ 004372DA | 00436F20 -> 0044CD20 @ 004373EE
 
@@ -622,7 +606,7 @@ void st::fn_0044CDB0(uint param_1,DArrayTy *groupContent,int param_3)
 }
 
 // 0044CE40 FUN_0044ce40
-#line 1 "decomp/ST.exe/functions/0044CE40/decomp.c"
+#line 4 "decomp/ST.exe/functions/0044CE40/decomp.c"
 uint __fastcall st::fn_0044CE40(STAllPlayersC *param_1)
 
 {
@@ -806,7 +790,7 @@ uint __fastcall st::fn_0044CE40(STAllPlayersC *param_1)
 }
 
 // 0044D320 FUN_0044d320
-#line 1 "decomp/ST.exe/functions/0044D320/decomp.c"
+#line 4 "decomp/ST.exe/functions/0044D320/decomp.c"
 /* [STSwitchEnumApplier] Switch target param_1 uses
    /SubmarineTitans/Recovered/Enums/Global_sub_0044D320_param_1Enum. Cases:
    CASE_1=1;CASE_2=2;CASE_4=4;CASE_8=8;CASE_10=16;CASE_28=40
@@ -1441,7 +1425,7 @@ int st::fn_0044E1B0(int param_1)
 }
 
 // 0044E1F0 FUN_0044e1f0
-#line 1 "decomp/ST.exe/functions/0044E1F0/decomp.c"
+#line 4 "decomp/ST.exe/functions/0044E1F0/decomp.c"
 undefined2 st::fn_0044E1F0(int param_1)
 
 {
@@ -1449,7 +1433,7 @@ undefined2 st::fn_0044E1F0(int param_1)
 }
 
 // 0044E220 FUN_0044e220
-#line 1 "decomp/ST.exe/functions/0044E220/decomp.c"
+#line 4 "decomp/ST.exe/functions/0044E220/decomp.c"
 void st::fn_0044E220(void)
 
 {
@@ -1469,7 +1453,7 @@ void st::fn_0044E220(void)
 }
 
 // 0044E260 FUN_0044e260
-#line 1 "decomp/ST.exe/functions/0044E260/decomp.c"
+#line 4 "decomp/ST.exe/functions/0044E260/decomp.c"
 void st::fn_0044E260(uint param_1,uint param_2,uint param_3,int *param_4)
 
 {
@@ -1653,7 +1637,7 @@ LAB_0044e4ef:
 }
 
 // 0044E660 FUN_0044e660
-#line 1 "decomp/ST.exe/functions/0044E660/decomp.c"
+#line 4 "decomp/ST.exe/functions/0044E660/decomp.c"
 /* [STUnclaimedCodeApplier] Exact function entry recovered from thunk_target.
    Evidence: P:007CA804>00404BB5
 
@@ -1675,7 +1659,7 @@ void * __cdecl st::fn_0044E660(void)
 }
 
 // 0044EDE0 FUN_0044ede0
-#line 1 "decomp/ST.exe/functions/0044EDE0/decomp.c"
+#line 4 "decomp/ST.exe/functions/0044EDE0/decomp.c"
 void __thiscall st::fn_0044EDE0(void *this,int param_1)
 
 {

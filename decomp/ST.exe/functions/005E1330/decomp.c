@@ -364,7 +364,7 @@ LAB_005e200a:
                   }
                 }
                 piVar19[1] = (uint)(bVar7 == DAT_00807340);
-                module = g_module_00807618;
+                module = g_hINSTANCE_00807618;
                 piVar19[3] = puVar12[-4];
                 pcVar16 = LoadResourceString(resourceId,module);
                 iVar20 = FUN_00711110(this_01->field_008D,pcVar16);
@@ -472,13 +472,13 @@ LAB_005e22f4:
               pDVar17 = Library::DKW::TBL::SArrayCreate(nullptr,10,10);
               g_startSystem_0081176C->field_0548 = &pDVar17->flags;
               local_ec = STReplaceLowByte((uint32_t)(local_ec), (uint8_t)((this_01->field_06C7 != '\x01') + -1)) & 0xffffff02;
-              LoadResourceString(0x2347,g_module_00807618);
+              LoadResourceString(0x2347,g_hINSTANCE_00807618);
               wsprintfA((LPSTR)local_c38,"&%1d %s:");
               Library::DKW::TBL::FUN_006b5aa0(g_startSystem_0081176C->field_0548,(char *)local_c38);
               wsprintfA((LPSTR)local_c38,"&%1d %s");
               Library::DKW::TBL::FUN_006b5aa0(g_startSystem_0081176C->field_0548,(char *)local_c38);
               Library::DKW::TBL::FUN_006b5aa0(g_startSystem_0081176C->field_0548,&DAT_007c3b5c);
-              LoadResourceString(0x2346,g_module_00807618);
+              LoadResourceString(0x2346,g_hINSTANCE_00807618);
               pDVar17 = local_c38;
               wsprintfA((LPSTR)pDVar17,"&%1d %s:");
               Library::DKW::TBL::FUN_006b5aa0(g_startSystem_0081176C->field_0548,(char *)local_c38);

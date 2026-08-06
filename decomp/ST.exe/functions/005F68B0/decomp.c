@@ -40,7 +40,7 @@ int __thiscall STColl3C::sub_005F68B0(STColl3C *this,undefined4 *param_1)
   local_28 = Library::DKW::LIB::MemAlloc(0x44);
   iVar3 = 0;
   do {
-    *(undefined4 *)(iVar3 + (int)local_28) = DAT_00806774;
+    *(int **)(iVar3 + (int)local_28) = PTR_00806774;
     iVar3 = iVar3 + 4;
   } while (iVar3 < 0x44);
   local_24 = 0;

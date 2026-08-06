@@ -2,7 +2,7 @@
 // Generated translation unit: source/original/wlad/To_dump.cpp
 
 // 00495980 DumpClassC::GetMessage
-#line 1 "decomp/ST.exe/functions/00495980/decomp.c"
+#line 4 "decomp/ST.exe/functions/00495980/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\wlad\To_dump.cpp
    DumpClassC::GetMessage
@@ -45,10 +45,10 @@ LAB_00495c27:
       st::fn_006A5E40(iVar3,0,"E:\\__titans\\wlad\\To_dump.cpp",iVar5);
       return 0xffff;
     }
-    g_pathingGrid.sizeX = *DAT_00806750;
-    g_pathingGrid.sizeY = DAT_00806750[1];
+    g_pathingGrid.sizeX = *PTR_00806750;
+    g_pathingGrid.sizeY = PTR_00806750[1];
     g_pathingGrid.sizeZ = 5;
-    g_pathingGrid.planeStride = *DAT_00806750 * DAT_00806750[1];
+    g_pathingGrid.planeStride = *PTR_00806750 * PTR_00806750[1];
     g_pathingGrid.cells =
          st::fn_006AAC70((int)g_pathingGrid.sizeY * (int)g_pathingGrid.sizeX * 10);
     if (g_pathingGrid.cells == nullptr) {
@@ -158,7 +158,7 @@ LAB_00495c27:
 }
 
 // 00495EC0 DumpClassC::WritePtr
-#line 1 "decomp/ST.exe/functions/00495EC0/decomp.c"
+#line 4 "decomp/ST.exe/functions/00495EC0/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\wlad\To_dump.cpp
    DumpClassC::WritePtr

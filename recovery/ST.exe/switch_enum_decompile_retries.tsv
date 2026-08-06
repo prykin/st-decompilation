@@ -1,4 +1,17 @@
 function_address	function	initial_reason	status
-0044EE30	STBoatC::GetMessage	Exception while decompiling 0044ee30: process: timeout\n	recovered
-005A4350	FSGSTy::GetMessage	Exception while decompiling 005a4350: process: timeout\n	recovered
-00652810	AiEventClassTy::GetMessage	Exception while decompiling 00652810: process: timeout\n	recovered
+0044EE30	STBoatC::GetMessage	Exception while decompiling 0044ee30: process: timeout\n	failed
+004A0FA0	STGroupBoatC::RechargeNewCmd	Exception while decompiling 004a0fa0: process: timeout\n	recovered
+004B33D0	FUN_004b33d0	Exception while decompiling 004b33d0: process: timeout\n	recovered
+004B9FA0	TLOBaseTy::GetMessage	Exception while decompiling 004b9fa0: process: timeout\n	recovered
+004FB060	CPanelTy::GetMessage	Exception while decompiling 004fb060: process: timeout\n	recovered
+0052FB00	OptPanelTy::SetOptControls	Exception while decompiling 0052fb00: process: timeout\n	recovered
+00533D10	OptPanelTy::GetMessage	Exception while decompiling 00533d10: process: timeout\n	recovered
+005449B0	CursorClassTy::GetMessage	Exception while decompiling 005449b0: process: timeout\n	recovered
+005A4350	FSGSTy::GetMessage	Exception while decompiling 005a4350: process: timeout\n	failed
+005C8A40	SettMapTy::GetMessage	Exception while decompiling 005c8a40: process: timeout\n	recovered
+005D1400	SettMapMTy::GetMessage	Exception while decompiling 005d1400: process: timeout\n	recovered
+005E1330	MTaskTy::PlayScript	Exception while decompiling 005e1330: process: timeout\n	recovered
+006406D0	STTorpC::GetMessage	Exception while decompiling 006406d0: process: timeout\n	recovered
+00652810	AiEventClassTy::GetMessage	Exception while decompiling 00652810: process: timeout\n	failed
+0066ACC0	SubmarineTitans::Recovered::HiddenThis::AnonReceiver_0064A970::FUN_0066acc0	Exception while decompiling 0066acc0: process: timeout\n	recovered
+00683C70	FUN_00683c70	Exception while decompiling 00683c70: process: timeout\n	recovered

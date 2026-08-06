@@ -409,7 +409,7 @@ cf_common_exit_005091B9:
              *(int *)((byte *)this_00->field_09D9[10] + 4)) / 2,0x37,'\x01',
              (byte *)this_00->field_09D9[10]);
       uVar9 = (uint)(ushort)this_00->field_0C34;
-      pcVar17 = LoadResourceString(0x2725,g_module_00807618);
+      pcVar17 = LoadResourceString(0x2725,g_hINSTANCE_00807618);
       wsprintfA((LPSTR)&DAT_0080f33a,"&1%s &0%d",pcVar17,uVar9);
       ccFntTy::SetSurf(this_00->field_01B8,this_00->field_0194,0,0x56,0x39,0x6d,0x15);
       ccFntTy::WrTxt(this_00->field_01B8,&DAT_0080f33a,-2,-1,0,-1,-1);

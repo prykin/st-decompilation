@@ -100,10 +100,10 @@ void __thiscall TradePanelTy::InitTradePanel(TradePanelTy *this)
     pcVar5->field_0058 = 1;
     pcVar5->field_005C = 0;
     puVar6 = Library::Ourlib::MFRLOAD::mfRLoad
-                       (DAT_00806794,CASE_B,&DAT_007c204c,0xffffffff,0,1,0,nullptr);
+                       (PTR_00806794,CASE_B,&DAT_007c204c,0xffffffff,0,1,0,nullptr);
     this_00->field_01D1 = puVar6;
     puVar6 = Library::Ourlib::MFRLOAD::mfRLoad
-                       (DAT_00806794,CASE_B,&DAT_007c2048,0xffffffff,0,1,0,nullptr);
+                       (PTR_00806794,CASE_B,&DAT_007c2048,0xffffffff,0,1,0,nullptr);
     this_00->field_01D5 = puVar6;
     iVar8 = 1;
     uVar16 = 0xffffffff;
@@ -111,7 +111,7 @@ void __thiscall TradePanelTy::InitTradePanel(TradePanelTy *this)
     puVar22 = puVar3;
     pCVar4 = thunk_FUN_00571240("TRADE_RATE",0);
     puVar6 = Library::Ourlib::MFRLOAD::mfRLoad
-                       (DAT_00806794,CASE_B,pCVar4,uVar16,(byte)puVar3,iVar8,(int)puVar19,puVar22);
+                       (PTR_00806794,CASE_B,pCVar4,uVar16,(byte)puVar3,iVar8,(int)puVar19,puVar22);
     local_5 = this_00->field_01D0;
     this_00->field_01D9 = puVar6;
     local_1c = this_00->field_005C;

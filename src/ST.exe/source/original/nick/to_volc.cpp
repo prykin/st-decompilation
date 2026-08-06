@@ -2,7 +2,7 @@
 // Generated translation unit: source/original/nick/to_volc.cpp
 
 // 006461E0 STVolcanoC::GetMessage
-#line 1 "decomp/ST.exe/functions/006461E0/decomp.c"
+#line 4 "decomp/ST.exe/functions/006461E0/decomp.c"
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 /* Recovered from embedded debug metadata:
    E:\__titans\nick\to_volc.cpp
@@ -105,7 +105,7 @@ int __thiscall st::fn_006461E0(STVolcanoC *this,STMessage *message)
               return 0;
             }
             puVar6 = st::fn_00709AF0
-                               (DAT_00806764,CASE_1D,"expl_vol",0xffffffff,0,1,0,
+                               (PTR_00806764,CASE_1D,"expl_vol",0xffffffff,0,1,0,
                                 nullptr);
             this_00->field_0061 = puVar6;
             if (puVar6 != nullptr) {
@@ -282,7 +282,7 @@ int __thiscall st::fn_006461E0(STVolcanoC *this,STMessage *message)
 }
 
 // 006474E0 STVolcanoC::LoadImagVolcano
-#line 1 "decomp/ST.exe/functions/006474E0/decomp.c"
+#line 4 "decomp/ST.exe/functions/006474E0/decomp.c"
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 /* Recovered from embedded debug metadata:
    E:\__titans\nick\to_volc.cpp
@@ -312,7 +312,7 @@ undefined4 __thiscall st::fn_006474E0(STVolcanoC *this,int param_1)
   if (errorCode == 0) {
     if ((param_1 == 0) || (param_1 == 2)) {
       puVar3 = st::fn_00709AF0
-                         (DAT_00806764,CASE_1D,"expl_vol",0xffffffff,0,1,0,
+                         (PTR_00806764,CASE_1D,"expl_vol",0xffffffff,0,1,0,
                           nullptr);
       st::fn_006E8660
                 (g_sT3DSMAPContext_00807598,(int *)&local_8,1,0,STField<uint>(puVar3,9),
@@ -330,7 +330,7 @@ undefined4 __thiscall st::fn_006474E0(STVolcanoC *this,int param_1)
       pSVar2->field_0061 = puVar3;
       pSVar2->field_005D = local_8;
       puVar3 = st::fn_00709AF0
-                         (DAT_00806764,CASE_1D,"expl_vob",0xffffffff,0,1,0,
+                         (PTR_00806764,CASE_1D,"expl_vob",0xffffffff,0,1,0,
                           nullptr);
       st::fn_006E8660
                 (g_sT3DSMAPContext_00807598,(int *)&local_c,1,0,STField<uint>(puVar3,9),
@@ -349,7 +349,7 @@ undefined4 __thiscall st::fn_006474E0(STVolcanoC *this,int param_1)
     }
     if ((param_1 != 0) && (pSVar2->field_007A < 0)) {
       puVar3 = st::fn_00709AF0
-                         (DAT_00806764,CASE_1D,"expl_vop",0xffffffff,0,1,0,
+                         (PTR_00806764,CASE_1D,"expl_vop",0xffffffff,0,1,0,
                           nullptr);
       st::fn_006E8660
                 (g_sT3DSMAPContext_00807598,(int *)&local_10,1,0,STField<uint>(puVar3,9),

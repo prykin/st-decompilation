@@ -6,10 +6,25 @@
    STT3DSprC::Init
 
    [STPrototypeApplier] Propagated parameter 4.
-   Evidence: 0057F580 -> 004AD1F0 @ 0057F632; STDcResourcC::Init this; stable alias EBX */
+   Evidence: 0057F580 -> 004AD1F0 @ 0057F632; STDcResourcC::Init this; stable alias EBX
+
+   [STPrototypeApplier] Propagated parameter 1.
+   Evidence: 0041E530 -> 004AD1F0 @ 0041E9D5; data at 008073CC | 0041E530 -> 004AD1F0 @ 0041EA40;
+   data at 008073CC | 004B9FA0 -> 004AD1F0 @ 004BAA63; data at 008073CC | 004B9FA0 -> 004AD1F0 @
+   004BAB7D; data at 008073CC | 004C6210 -> 004AD1F0 @ 004C6275; data at 008073CC | 004C6210 ->
+   004AD1F0 @ 004C62CC; data at 008073CC | 004CC220 -> 004AD1F0 @ 004CC2B1; data at 008073CC |
+   004D01F0 -> 004AD1F0 @ 004D0241; data at 008073CC | 004D11D0 -> 004AD1F0 @ 004D18FC; data at
+   008073CC | 004D11D0 -> 004AD1F0 @ 004D1A31; data at 008073CC | 004D11D0 -> 004AD1F0 @ 004D1B45;
+   data at 008073CC | 004D11D0 -> 004AD1F0 @ 004D2153; data at 008073CC | 004D9000 -> 004AD1F0 @
+   004D904B; data at 008073CC | 004D9C80 -> 004AD1F0 @ 004D9CD0; data at 008073CC | 004DCE00 ->
+   004AD1F0 @ 004DCE50; data at 008073CC | 004EAA20 -> 004AD1F0 @ 004EAA70; data at 008073CC |
+   004EC050 -> 004AD1F0 @ 004EC097; data at 008073CC | 004ECEA0 -> 004AD1F0 @ 004ECEEB; data at
+   008073CC | 0057F580 -> 004AD1F0 @ 0057F632; data at 008073CC | 005FDB50 -> 004AD1F0 @ 005FDEC3;
+   data at 008073CC | 006132F0 -> 004AD1F0 @ 0061337D; data at 008073CC | 0062F3B0 -> 004AD1F0 @
+   0062F4D9; data at 008073CC */
 
 undefined4 __thiscall
-STT3DSprC::Init(STT3DSprC *this,undefined4 param_1,uint param_2,uint param_3,STDcResourcC *param_4,
+STT3DSprC::Init(STT3DSprC *this,ushort *param_1,uint param_2,uint param_3,STDcResourcC *param_4,
                uint param_5,uint param_6,uint param_7)
 
 {

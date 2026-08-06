@@ -2,7 +2,7 @@
 // Generated translation unit: source/original/ai/ai_flt.cpp
 
 // 0065D2A0 AiFltClassTy::InitData
-#line 1 "decomp/ST.exe/functions/0065D2A0/decomp.c"
+#line 4 "decomp/ST.exe/functions/0065D2A0/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\ai\ai_flt.cpp
    AiFltClassTy::InitData */
@@ -85,7 +85,7 @@ int __thiscall st::fn_0065D2A0(AiFltClassTy *this,undefined4 *param_1)
 }
 
 // 0065D4B0 AiFltClassTy::PrepareToSave
-#line 1 "decomp/ST.exe/functions/0065D4B0/decomp.c"
+#line 4 "decomp/ST.exe/functions/0065D4B0/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\ai\ai_flt.cpp
    AiFltClassTy::PrepareToSave
@@ -134,7 +134,7 @@ byte * __thiscall st::fn_0065D4B0(AiFltClassTy *this,uint *param_1)
 }
 
 // 0065D760 AiFltClassTy::_AddObjFlt
-#line 1 "decomp/ST.exe/functions/0065D760/decomp.c"
+#line 4 "decomp/ST.exe/functions/0065D760/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\ai\ai_flt.cpp
    AiFltClassTy::_AddObjFlt
@@ -229,7 +229,7 @@ void __thiscall st::fn_0065D760(AiFltClassTy *this,uint objPtr,int param_2)
 }
 
 // 0065F1D0 AiFltClassTy::AppendZone
-#line 1 "decomp/ST.exe/functions/0065F1D0/decomp.c"
+#line 4 "decomp/ST.exe/functions/0065F1D0/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\ai\ai_flt.cpp
    AiFltClassTy::AppendZone */
@@ -379,7 +379,7 @@ LAB_0065f3c9:
 }
 
 // 0065F660 AiFltClassTy::AppendPoint
-#line 1 "decomp/ST.exe/functions/0065F660/decomp.c"
+#line 4 "decomp/ST.exe/functions/0065F660/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\ai\ai_flt.cpp
    AiFltClassTy::AppendPoint */
@@ -464,7 +464,7 @@ int __thiscall st::fn_0065F660(AiFltClassTy *this,short *param_1,int param_2)
 }
 
 // 00660180 SubmarineTitans::Recovered::HiddenThis::AnonReceiver_00660180::FUN_00660180
-#line 1 "decomp/ST.exe/functions/00660180/decomp.c"
+#line 4 "decomp/ST.exe/functions/00660180/decomp.c"
 /* [STSourceProvenanceApplier begin]
    Recovered source file: E:\__titans\ai\ai_flt.cpp
    Diagnostic line evidence: 1127 (metadata/report site, not the function definition)
@@ -578,7 +578,7 @@ st::fn_00660180
 }
 
 // 006618E0 AiFltClassTy::GoToRepair
-#line 1 "decomp/ST.exe/functions/006618E0/decomp.c"
+#line 4 "decomp/ST.exe/functions/006618E0/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\ai\ai_flt.cpp
    AiFltClassTy::GoToRepair
@@ -754,7 +754,7 @@ LAB_00661a96:
 }
 
 // 00662240 AiFltClassTy::GetAiMess
-#line 1 "decomp/ST.exe/functions/00662240/decomp.c"
+#line 4 "decomp/ST.exe/functions/00662240/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\ai\ai_flt.cpp
    AiFltClassTy::GetAiMess */
@@ -2199,7 +2199,7 @@ cf_continue_loop_00662E52:
 }
 
 // 00667D90 AiFltClassTy::GetMessage
-#line 1 "decomp/ST.exe/functions/00667D90/decomp.c"
+#line 4 "decomp/ST.exe/functions/00667D90/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\ai\ai_flt.cpp
    AiFltClassTy::GetMessage

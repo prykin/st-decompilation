@@ -36,24 +36,24 @@ void __thiscall STTeamLissagC::InitVisibelSystem(STTeamLissagC *this)
       iVar3 = local_18->field_0025;
       if (iVar3 < 4) {
         pcVar8 = (&PTR_s_pics_g_007d1bb4)[iVar3];
-        piVar7 = DAT_00806764;
+        piVar7 = PTR_00806764;
       }
       else {
         pcVar8 = (&PTR_s_pics_g_007d1bb4)[iVar3];
-        piVar7 = DAT_00806774;
+        piVar7 = PTR_00806774;
       }
       local_10 = Library::Ourlib::MFRLOAD::mfRLoad
                            (piVar7,CASE_1D,pcVar8,0xffffffff,0,1,0,nullptr);
       iVar3 = pSVar6->field_0029;
       if (iVar3 < 4) {
         local_14 = Library::Ourlib::MFRLOAD::mfRLoad
-                             (DAT_00806764,CASE_1D,(&PTR_s_pics_g_007d1bb4)[iVar3],0xffffffff,0,1,0,
+                             (PTR_00806764,CASE_1D,(&PTR_s_pics_g_007d1bb4)[iVar3],0xffffffff,0,1,0,
                               nullptr);
         puVar4 = local_8;
       }
       else {
         local_14 = Library::Ourlib::MFRLOAD::mfRLoad
-                             (DAT_00806774,CASE_1D,(&PTR_s_pics_g_007d1bb4)[iVar3],0xffffffff,0,1,0,
+                             (PTR_00806774,CASE_1D,(&PTR_s_pics_g_007d1bb4)[iVar3],0xffffffff,0,1,0,
                               nullptr);
         puVar4 = local_8;
       }
@@ -62,23 +62,23 @@ void __thiscall STTeamLissagC::InitVisibelSystem(STTeamLissagC *this)
       iVar3 = local_18->field_000D;
       if (iVar3 < 4) {
         pcVar8 = (&PTR_s_pics_g_007d1bb4)[iVar3];
-        piVar7 = DAT_00806764;
+        piVar7 = PTR_00806764;
       }
       else {
         pcVar8 = (&PTR_s_pics_g_007d1bb4)[iVar3];
-        piVar7 = DAT_00806774;
+        piVar7 = PTR_00806774;
       }
       puVar4 = Library::Ourlib::MFRLOAD::mfRLoad
                          (piVar7,CASE_1D,pcVar8,0xffffffff,0,1,0,nullptr);
       local_8 = puVar4;
       if (pSVar6->field_0011 == 1) {
         local_10 = Library::Ourlib::MFRLOAD::mfRLoad
-                             (DAT_00806774,CASE_1D,PTR_s_starR_007d1bcc,0xffffffff,0,1,0,
+                             (PTR_00806774,CASE_1D,PTR_s_starR_007d1bcc,0xffffffff,0,1,0,
                               nullptr);
       }
       if (pSVar6->field_0011 == 4) {
         local_10 = Library::Ourlib::MFRLOAD::mfRLoad
-                             (DAT_00806774,CASE_1D,PTR_s_starF_007d1bd0,0xffffffff,0,1,0,
+                             (PTR_00806774,CASE_1D,PTR_s_starF_007d1bd0,0xffffffff,0,1,0,
                               nullptr);
         local_14 = puVar4;
       }

@@ -1086,6 +1086,106 @@
 {"detail": "_BinkClose_4: no matching function definition", "kind": "import_prototype_fallback"}
 {"detail": "/-BAD-", "kind": "missing_type_path"}
 {"detail": "<empty>", "kind": "missing_type_path"}
+{"address": "004158E0", "detail": "004158E0 STGameObjC::STGameObjC", "kind": "source_member_lifetime_deferred"}
+{"address": "0042A940", "detail": "0042A940 STAllPlayersC::STAllPlayersC", "kind": "source_member_lifetime_deferred"}
+{"address": "0044E690", "detail": "0044E690 STBoatC::STBoatC", "kind": "source_member_lifetime_deferred"}
+{"address": "00495920", "detail": "00495920 DumpClassC::DumpClassC", "kind": "source_member_lifetime_deferred"}
+{"address": "00497AF0", "detail": "00497AF0 STGroupBoatC::STGroupBoatC", "kind": "source_member_lifetime_deferred"}
+{"address": "004A88C0", "detail": "004A88C0 OpticClassC::OpticClassC", "kind": "source_member_lifetime_deferred"}
+{"address": "004B7EF0", "detail": "004B7EF0 TLOBaseTy::TLOBaseTy", "kind": "source_member_lifetime_deferred"}
+{"address": "004C60A0", "detail": "004C60A0 TLOBldMark::TLOBldMark", "kind": "source_member_lifetime_deferred"}
+{"address": "004D0920", "detail": "004D0920 TLOFakeTy::TLOFakeTy", "kind": "source_member_lifetime_deferred"}
+{"address": "00542440", "detail": "00542440 InterSystemC::InterSystemC", "kind": "source_member_lifetime_deferred"}
+{"address": "0054CB40", "detail": "0054CB40 STPlaySystemC::STPlaySystemC", "kind": "source_member_lifetime_deferred"}
+{"address": "005556D0", "detail": "005556D0 TraksClassTy::TraksClassTy", "kind": "source_member_lifetime_deferred"}
+{"address": "005577C0", "detail": "005577C0 VisibleClassTy::VisibleClassTy", "kind": "source_member_lifetime_deferred"}
+{"address": "0056A5F0", "detail": "0056A5F0 STAppC::STAppC", "kind": "source_member_lifetime_deferred"}
+{"address": "00576AA0", "detail": "00576AA0 BaseSystemC::BaseSystemC", "kind": "source_member_lifetime_deferred"}
+{"address": "00576DD0", "detail": "00576DD0 GameSystemC::GameSystemC", "kind": "source_member_lifetime_deferred"}
+{"address": "005781C0", "detail": "005781C0 DebugSystemC::DebugSystemC", "kind": "source_member_lifetime_deferred"}
+{"address": "005785E0", "detail": "005785E0 STCrabC::STCrabC", "kind": "source_member_lifetime_deferred"}
+{"address": "0057BD20", "detail": "0057BD20 STFishC::STFishC", "kind": "source_member_lifetime_deferred"}
+{"address": "0057F1D0", "detail": "0057F1D0 STDcResourcC::STDcResourcC", "kind": "source_member_lifetime_deferred"}
+{"address": "005810D0", "detail": "005810D0 STJellyManC::STJellyManC", "kind": "source_member_lifetime_deferred"}
+{"address": "005823D0", "detail": "005823D0 STJellyGunC::STJellyGunC", "kind": "source_member_lifetime_deferred"}
+{"address": "00584970", "detail": "00584970 STLBombC::STLBombC", "kind": "source_member_lifetime_deferred"}
+{"address": "005861F0", "detail": "005861F0 STMBombC::STMBombC", "kind": "source_member_lifetime_deferred"}
+{"address": "00589990", "detail": "00589990 STOctopusC::STOctopusC", "kind": "source_member_lifetime_deferred"}
+{"address": "0058BA30", "detail": "0058BA30 STSatC::STSatC", "kind": "source_member_lifetime_deferred"}
+{"address": "0058D750", "detail": "0058D750 STSharkC::STSharkC", "kind": "source_member_lifetime_deferred"}
+{"address": "005DA610", "detail": "005DA610 StartSystemTy::StartSystemTy", "kind": "source_member_lifetime_deferred"}
+{"address": "005EC7E0", "detail": "005EC7E0 STSprGameObjC::STSprGameObjC", "kind": "source_member_lifetime_deferred"}
+{"address": "005F1350", "detail": "005F1350 STManBasisC::STManBasisC", "kind": "source_member_lifetime_deferred"}
+{"address": "005F3440", "detail": "005F3440 STBHEShellC::STBHEShellC", "kind": "source_member_lifetime_deferred"}
+{"address": "005F6600", "detail": "005F6600 STColl3C::STColl3C", "kind": "source_member_lifetime_deferred"}
+{"address": "006023F0", "detail": "006023F0 STDestC::STDestC", "kind": "source_member_lifetime_deferred"}
+{"address": "00604080", "detail": "00604080 STExplosion::STExplosion", "kind": "source_member_lifetime_deferred"}
+{"address": "00617840", "detail": "00617840 JumpManagC::JumpManagC", "kind": "source_member_lifetime_deferred"}
+{"address": "00619170", "detail": "00619170 STJumpMineC::STJumpMineC", "kind": "source_member_lifetime_deferred"}
+{"address": "0061D620", "detail": "0061D620 STLightC::STLightC", "kind": "source_member_lifetime_deferred"}
+{"address": "00622600", "detail": "00622600 STMineSetC::STMineSetC", "kind": "source_member_lifetime_deferred"}
+{"address": "0062CF00", "detail": "0062CF00 STManRub3C::STManRub3C", "kind": "source_member_lifetime_deferred"}
+{"address": "0062ED10", "detail": "0062ED10 STRubbishC::STRubbishC", "kind": "source_member_lifetime_deferred"}
+{"address": "00630870", "detail": "00630870 STManRuinC::STManRuinC", "kind": "source_member_lifetime_deferred"}
+{"address": "00646C90", "detail": "00646C90 STVolcanoC::STVolcanoC", "kind": "source_member_lifetime_deferred"}
+{"address": "00647AD0", "detail": "00647AD0 AiBossClassTy::AiBossClassTy", "kind": "source_member_lifetime_deferred"}
+{"address": "0065D230", "detail": "0065D230 AiFltClassTy::AiFltClassTy", "kind": "source_member_lifetime_deferred"}
+{"address": "006788B0", "detail": "006788B0 AiPlrClassTy::AiPlrClassTy", "kind": "source_member_lifetime_deferred"}
+{"address": "0068DC00", "detail": "0068DC00 AiTactClassTy::AiTactClassTy", "kind": "source_member_lifetime_deferred"}
+{"address": "006E34C0", "detail": "006E34C0 AppClassTy::AppClassTy", "kind": "source_member_lifetime_deferred"}
+{"address": "006E51C0", "detail": "006E51C0 SystemClassTy::SystemClassTy", "kind": "source_member_lifetime_deferred"}
+{"address": "006E6100", "detail": "006E6100 SystemWithNamedObjClassTy::SystemWithNamedObjClassTy", "kind": "source_member_lifetime_deferred"}
+{"address": "00715820", "detail": "00715820 SpriteClassTy::SpriteClassTy", "kind": "source_member_lifetime_deferred"}
+{"detail": "AppClassTy::AddSystem: 006E4650, 006E47E0", "kind": "source_member_overload_conflict"}
+{"detail": "CPanelTy::OutProc: 004F1390, 0054BE70", "kind": "source_member_overload_conflict"}
+{"detail": "CPanelTy::PaintTxtBut: 004F3A30, 004F3CF0", "kind": "source_member_overload_conflict"}
+{"detail": "ChooseMapTy::OutListProc: 005AB1D0, 005E6640", "kind": "source_member_overload_conflict"}
+{"detail": "STGroupBoatC::GrpMove: 0049A620, 0049A940", "kind": "source_member_overload_conflict"}
+{"detail": "StartSystemTy::OutBmpProc: 005C28C0, 005DBF40", "kind": "source_member_overload_conflict"}
+{"address": "006DD050", "detail": "006DD050 Library::Ourlib::STREND: 0 matching record paths", "kind": "source_member_owner_ambiguous"}
+{"address": "006DD660", "detail": "006DD660 Library::Ourlib::STREND: 0 matching record paths", "kind": "source_member_owner_ambiguous"}
+{"address": "006DD6E0", "detail": "006DD6E0 Library::Ourlib::STREND: 0 matching record paths", "kind": "source_member_owner_ambiguous"}
+{"address": "006E29D0", "detail": "006E29D0 Library::Ourlib::STREND: 0 matching record paths", "kind": "source_member_owner_ambiguous"}
+{"address": "006E2F90", "detail": "006E2F90 Library::Ourlib::STREND: 0 matching record paths", "kind": "source_member_owner_ambiguous"}
+{"address": "006E3100", "detail": "006E3100 Library::Ourlib::STREND: 0 matching record paths", "kind": "source_member_owner_ambiguous"}
+{"address": "006E6200", "detail": "006E6200 Library::Ourlib::SAPP: 0 matching record paths", "kind": "source_member_owner_ambiguous"}
+{"address": "006E6630", "detail": "006E6630 Library::Ourlib::ST3DSMAP: 0 matching record paths", "kind": "source_member_owner_ambiguous"}
+{"address": "006E8BA0", "detail": "006E8BA0 Library::Ourlib::ST3DSMAP: 0 matching record paths", "kind": "source_member_owner_ambiguous"}
+{"address": "006E8C80", "detail": "006E8C80 Library::Ourlib::ST3DSMAP: 0 matching record paths", "kind": "source_member_owner_ambiguous"}
+{"address": "006E8D20", "detail": "006E8D20 Library::Ourlib::ST3DSMAP: 0 matching record paths", "kind": "source_member_owner_ambiguous"}
+{"address": "006E8D90", "detail": "006E8D90 Library::Ourlib::ST3DSMAP: 0 matching record paths", "kind": "source_member_owner_ambiguous"}
+{"address": "006E8DF0", "detail": "006E8DF0 Library::Ourlib::ST3DSMAP: 0 matching record paths", "kind": "source_member_owner_ambiguous"}
+{"address": "006E9210", "detail": "006E9210 Library::Ourlib::ST3DSMAP: 0 matching record paths", "kind": "source_member_owner_ambiguous"}
+{"address": "006E92C0", "detail": "006E92C0 Library::Ourlib::ST3DSMAP: 0 matching record paths", "kind": "source_member_owner_ambiguous"}
+{"address": "006E9350", "detail": "006E9350 Library::Ourlib::ST3DSMAP: 0 matching record paths", "kind": "source_member_owner_ambiguous"}
+{"address": "006E9520", "detail": "006E9520 Library::Ourlib::ST3DSMAP: 0 matching record paths", "kind": "source_member_owner_ambiguous"}
+{"address": "006E96D0", "detail": "006E96D0 Library::Ourlib::ST3DSMAP: 0 matching record paths", "kind": "source_member_owner_ambiguous"}
+{"address": "006E9720", "detail": "006E9720 Library::Ourlib::ST3DSMAP: 0 matching record paths", "kind": "source_member_owner_ambiguous"}
+{"address": "006E9770", "detail": "006E9770 Library::Ourlib::ST3DSMAP: 0 matching record paths", "kind": "source_member_owner_ambiguous"}
+{"address": "006E97C0", "detail": "006E97C0 Library::Ourlib::ST3DSMAP: 0 matching record paths", "kind": "source_member_owner_ambiguous"}
+{"address": "006E9830", "detail": "006E9830 Library::Ourlib::ST3DSMAP: 0 matching record paths", "kind": "source_member_owner_ambiguous"}
+{"address": "006E9AF0", "detail": "006E9AF0 Library::Ourlib::ST3DSMAP: 0 matching record paths", "kind": "source_member_owner_ambiguous"}
+{"address": "006EA050", "detail": "006EA050 Library::Ourlib::ST3DSMAP: 0 matching record paths", "kind": "source_member_owner_ambiguous"}
+{"address": "006EA2F0", "detail": "006EA2F0 Library::Ourlib::ST3DSMAP: 0 matching record paths", "kind": "source_member_owner_ambiguous"}
+{"address": "006EA3E0", "detail": "006EA3E0 Library::Ourlib::ST3DSMAP: 0 matching record paths", "kind": "source_member_owner_ambiguous"}
+{"address": "006EA460", "detail": "006EA460 Library::Ourlib::ST3DSMAP: 0 matching record paths", "kind": "source_member_owner_ambiguous"}
+{"address": "006EA4E0", "detail": "006EA4E0 Library::Ourlib::ST3DSMAP: 0 matching record paths", "kind": "source_member_owner_ambiguous"}
+{"address": "006EA560", "detail": "006EA560 Library::Ourlib::ST3DSMAP: 0 matching record paths", "kind": "source_member_owner_ambiguous"}
+{"address": "006EA680", "detail": "006EA680 Library::Ourlib::ST3DSMAP: 0 matching record paths", "kind": "source_member_owner_ambiguous"}
+{"address": "006EA790", "detail": "006EA790 Library::Ourlib::ST3DSMAP: 0 matching record paths", "kind": "source_member_owner_ambiguous"}
+{"address": "006EA960", "detail": "006EA960 Library::Ourlib::ST3DSMAP: 0 matching record paths", "kind": "source_member_owner_ambiguous"}
+{"address": "006EAAA0", "detail": "006EAAA0 Library::Ourlib::ST3DSMAP: 0 matching record paths", "kind": "source_member_owner_ambiguous"}
+{"address": "006EAB60", "detail": "006EAB60 Library::Ourlib::ST3DSMAP: 0 matching record paths", "kind": "source_member_owner_ambiguous"}
+{"address": "006EABF0", "detail": "006EABF0 Library::Ourlib::ST3DSMAP: 0 matching record paths", "kind": "source_member_owner_ambiguous"}
+{"address": "006EACE0", "detail": "006EACE0 Library::Ourlib::ST3DSMAP: 0 matching record paths", "kind": "source_member_owner_ambiguous"}
+{"address": "006EAD90", "detail": "006EAD90 Library::Ourlib::ST3DSPR: 0 matching record paths", "kind": "source_member_owner_ambiguous"}
+{"address": "006EAFF0", "detail": "006EAFF0 Library::Ourlib::ST3DSPR: 0 matching record paths", "kind": "source_member_owner_ambiguous"}
+{"address": "006EB230", "detail": "006EB230 Library::Ourlib::ST3DSPR: 0 matching record paths", "kind": "source_member_owner_ambiguous"}
+{"address": "007176F0", "detail": "007176F0 Library::Ourlib::STDARK: 0 matching record paths", "kind": "source_member_owner_ambiguous"}
+{"address": "0071B630", "detail": "0071B630 Library::Ourlib::SINPUT: 0 matching record paths", "kind": "source_member_owner_ambiguous"}
+{"address": "00721CD0", "detail": "00721CD0 Library::Ourlib::SEDIT: 0 matching record paths", "kind": "source_member_owner_ambiguous"}
+{"address": "00722070", "detail": "00722070 Library::Ourlib::SEDIT: 0 matching record paths", "kind": "source_member_owner_ambiguous"}
+{"address": "00725760", "detail": "00725760 Library::Ourlib::ST3DPAUS: 0 matching record paths", "kind": "source_member_owner_ambiguous"}
 {"detail": "GUID: selected /guiddef.h/GUID; aliases /GUID, /guiddef.h/GUID", "kind": "type_name_collision"}
 {"detail": "SystemClassTy: selected /SubmarineTitans/Recovered/SystemClassTy; aliases /SystemClassTy, /SubmarineTitans/Recovered/SystemClassTy", "kind": "type_name_collision"}
 {"detail": "ULONG: selected /wtypes.h/ULONG; aliases /WinDef.h/ULONG, /wtypes.h/ULONG", "kind": "type_name_collision"}

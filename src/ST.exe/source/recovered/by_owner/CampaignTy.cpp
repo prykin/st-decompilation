@@ -2,7 +2,7 @@
 // Generated translation unit: source/recovered/by_owner/CampaignTy.cpp
 
 // 005925A0 CampaignTy::sub_005925A0
-#line 1 "decomp/ST.exe/functions/005925A0/decomp.c"
+#line 4 "decomp/ST.exe/functions/005925A0/decomp.c"
 /* [STMethodOwnerApplier] Structural method owner recovered as CampaignTy.
    Evidence: this_call_owners=[CampaignTy]; agreed_this_calls=1; incoming_this_accesses=7;
    incoming_edx_uses=0; incoming_stack_parameter_uses=0; direct_non_thunk_callers=0;
@@ -33,7 +33,7 @@ void __thiscall st::fn_005925A0(CampaignTy *this)
 }
 
 // 00592620 CampaignTy::sub_00592620
-#line 1 "decomp/ST.exe/functions/00592620/decomp.c"
+#line 4 "decomp/ST.exe/functions/00592620/decomp.c"
 /* [STMethodOwnerApplier] Structural method owner recovered as CampaignTy.
    Evidence: this_call_owners=[CampaignTy]; agreed_this_calls=1; incoming_this_accesses=7;
    incoming_edx_uses=0; incoming_stack_parameter_uses=0; direct_non_thunk_callers=0;

@@ -17,7 +17,7 @@ HelpPanelTy	443	disabled	apply=0
 HelpPanelTy	459	disabled	apply=0
 MTaskTy	116	unchanged	element=unchanged /SubmarineTitans/Recovered/DArrayElements/MTaskTy_field_0074Element; descriptor=unchanged /SubmarineTitans/Recovered/DArraySpecializations/MTaskTy_field_0074DArray; verified=17 fields [0x0=field_0000, 0x5=field_0005, 0x9=field_0009, 0xA=field_000A, 0xB=field_000B, 0xD=field_000D, 0xE=field_000E, 0xF=field_000F, 0x14=field_0014, 0x18=field_0018, 0x19=field_0019, 0x1A=field_001A, 0x1E=field_001E, 0x22=field_0022, 0x26=field_0026, 0x2A=field_002A, 0x2E=field_002E]; owner field already specialized
 OptPanelTy	493	disabled	apply=0
-OptPanelTy	765	unchanged	element=unchanged /SubmarineTitans/Recovered/DArrayElements/OptPanelTy_field_02FDElement; descriptor=unchanged /SubmarineTitans/Recovered/DArraySpecializations/OptPanelTy_field_02FDDArray; verified=2 fields [0x0=field_0000, 0x6C=field_006C]; owner field already specialized
+OptPanelTy	765	disabled	apply=0
 STBHEShellC	361	unchanged	element=unchanged /SubmarineTitans/Recovered/DArrayElements/STBHEShellC_field_0169Element; descriptor=unchanged /SubmarineTitans/Recovered/DArraySpecializations/STBHEShellC_field_0169DArray; verified=8 fields [0x0=field_0000, 0x1=field_0001, 0x2=field_0002, 0x6=field_0006, 0xA=field_000A, 0x12=field_0012, 0x16=field_0016, 0x1F=spriteHandle]; owner field already specialized
 STBoatC	1147	disabled	apply=0
 STFieldC	564	unchanged	element=unchanged /SubmarineTitans/Recovered/DArrayElements/STFieldC_field_0234Element; descriptor=unchanged /SubmarineTitans/Recovered/DArraySpecializations/STFieldC_field_0234DArray; verified=3 fields [0x0=field_0000, 0x4=field_0004, 0x3C=field_003C]; owner field already specialized

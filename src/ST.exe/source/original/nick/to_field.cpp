@@ -2,7 +2,7 @@
 // Generated translation unit: source/original/nick/to_field.cpp
 
 // 006099E0 STFieldC::CreateField
-#line 1 "decomp/ST.exe/functions/006099E0/decomp.c"
+#line 4 "decomp/ST.exe/functions/006099E0/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\nick\to_field.cpp
    STFieldC::CreateField */
@@ -69,7 +69,7 @@ uint __thiscall st::fn_006099E0(STFieldC *this,uint param_1)
 }
 
 // 00609B90 STFieldC::InitSprSistem
-#line 1 "decomp/ST.exe/functions/00609B90/decomp.c"
+#line 4 "decomp/ST.exe/functions/00609B90/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\nick\to_field.cpp
    STFieldC::InitSprSistem */
@@ -129,7 +129,7 @@ undefined4 __thiscall st::fn_00609B90(STFieldC *this,int param_1)
 }
 
 // 00609D60 STFieldC::LoadImagSpr
-#line 1 "decomp/ST.exe/functions/00609D60/decomp.c"
+#line 4 "decomp/ST.exe/functions/00609D60/decomp.c"
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 /* Recovered from embedded debug metadata:
    E:\__titans\nick\to_field.cpp
@@ -181,11 +181,11 @@ undefined4 __thiscall st::fn_00609D60(STFieldC *this,uint param_1)
     uVar2 = element_0234->field_0000;
     if (uVar2 < 4) {
       text = (&PTR_s_pics_g_007cf6d0)[uVar2];
-      piVar8 = DAT_00806764;
+      piVar8 = PTR_00806764;
     }
     else {
       text = (&PTR_s_pics_g_007cf6d0)[uVar2];
-      piVar8 = DAT_00806774;
+      piVar8 = PTR_00806774;
     }
     puVar5 = st::fn_00709AF0
                        (piVar8,CASE_1D,text,0xffffffff,0,1,0,nullptr);

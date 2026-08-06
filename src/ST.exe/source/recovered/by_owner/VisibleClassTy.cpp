@@ -2,7 +2,7 @@
 // Generated translation unit: source/recovered/by_owner/VisibleClassTy.cpp
 
 // 0041CDA0 VisibleClassTy::sub_0041CDA0
-#line 1 "decomp/ST.exe/functions/0041CDA0/decomp.c"
+#line 4 "decomp/ST.exe/functions/0041CDA0/decomp.c"
 /* [STMethodOwnerApplier] Structural method owner recovered as VisibleClassTy.
    Evidence: this_call_owners=[VisibleClassTy]; agreed_this_calls=1; incoming_this_accesses=4;
    incoming_edx_uses=0; incoming_stack_parameter_uses=3; direct_non_thunk_callers=0;
@@ -42,7 +42,7 @@ st::fn_0041CDA0(VisibleClassTy *this,int param_1,int param_2,int param_3,uint pa
 }
 
 // 005577C0 VisibleClassTy::VisibleClassTy
-#line 1 "decomp/ST.exe/functions/005577C0/decomp.c"
+#line 4 "decomp/ST.exe/functions/005577C0/decomp.c"
 /* [STConstructorApplier] Recovered constructor candidate.
    VTable: 0079AEEC (store 005577C9)
    Evidence: final_vptr=0079AEEC; returns_this=true; calls_before=1; field_writes_after=21;
@@ -56,7 +56,7 @@ VisibleClassTy * __thiscall st::fn_005577C0(VisibleClassTy *this)
   byte **ppbVar3;
 
   st::fn_006E60E0(this);
-  this->vtable = &VisibleClassTyVTable;
+  this->vtable = &st_global_0079AEEC;
   g_visibleClass_00802A88 = this;
   this->field_0024 = 0;
   this->field_0020 = 0;
@@ -108,7 +108,7 @@ VisibleClassTy * __thiscall st::fn_005577C0(VisibleClassTy *this)
 }
 
 // 00558140 VisibleClassTy::sub_00558140
-#line 1 "decomp/ST.exe/functions/00558140/decomp.c"
+#line 4 "decomp/ST.exe/functions/00558140/decomp.c"
 /* [STMethodOwnerApplier] Structural method owner recovered as VisibleClassTy.
    Evidence: this_call_owners=[VisibleClassTy]; agreed_this_calls=2; incoming_this_accesses=13;
    incoming_edx_uses=0; incoming_stack_parameter_uses=0; direct_non_thunk_callers=0;
@@ -201,7 +201,7 @@ void __thiscall st::fn_00558140(VisibleClassTy *this)
 }
 
 // 00558C00 VisibleClassTy::sub_00558C00
-#line 1 "decomp/ST.exe/functions/00558C00/decomp.c"
+#line 4 "decomp/ST.exe/functions/00558C00/decomp.c"
 /* [STSwitchEnumApplier] Switch target param_1 uses
    /SubmarineTitans/Recovered/Enums/Global_sub_00558C00_param_1Enum. Cases:
    CASE_0=0;CASE_1=1;CASE_2=2;CASE_3=3
@@ -259,7 +259,7 @@ switchD_00558c11_default:
 }
 
 // 00558DC0 VisibleClassTy::sub_00558DC0
-#line 1 "decomp/ST.exe/functions/00558DC0/decomp.c"
+#line 4 "decomp/ST.exe/functions/00558DC0/decomp.c"
 /* [STPrototypeApplier] Propagated parameter 4.
    Evidence: 00558DC0 -> 00558C00 @ 00558F0B | 00558DC0 -> 00558C00 @ 00558F93
 
@@ -399,7 +399,7 @@ st::fn_00558DC0
 }
 
 // 00559110 VisibleClassTy::sub_00559110
-#line 1 "decomp/ST.exe/functions/00559110/decomp.c"
+#line 4 "decomp/ST.exe/functions/00559110/decomp.c"
 /* [STMethodOwnerApplier] Structural method owner recovered as VisibleClassTy.
    Evidence: this_call_owners=[VisibleClassTy]; agreed_this_calls=1; incoming_this_accesses=19;
    incoming_edx_uses=0; incoming_stack_parameter_uses=52; direct_non_thunk_callers=0;
@@ -549,7 +549,7 @@ st::fn_00559110
 }
 
 // 005594A0 VisibleClassTy::sub_005594A0
-#line 1 "decomp/ST.exe/functions/005594A0/decomp.c"
+#line 4 "decomp/ST.exe/functions/005594A0/decomp.c"
 /* [STHiddenThisApplier] Anonymous hidden receiver recovered as
    /SubmarineTitans/Recovered/HiddenThis/AnonReceiver_00558C00.
    Evidence: incoming_receiver_captures=1; receiver_accesses=5; incoming_edx_uses=0; calls=4;
@@ -631,7 +631,7 @@ st::fn_005594A0
 }
 
 // 00559620 VisibleClassTy::sub_00559620
-#line 1 "decomp/ST.exe/functions/00559620/decomp.c"
+#line 4 "decomp/ST.exe/functions/00559620/decomp.c"
 /* [STHiddenThisApplier] Anonymous hidden receiver recovered as
    /SubmarineTitans/Recovered/HiddenThis/AnonReceiver_00558C00.
    Evidence: incoming_receiver_captures=1; receiver_accesses=5; incoming_edx_uses=0; calls=3;
@@ -714,7 +714,7 @@ st::fn_00559620
 }
 
 // 005599D0 VisibleClassTy::sub_005599D0
-#line 1 "decomp/ST.exe/functions/005599D0/decomp.c"
+#line 4 "decomp/ST.exe/functions/005599D0/decomp.c"
 /* [STMethodOwnerApplier] Structural method owner recovered as VisibleClassTy.
    Evidence: this_call_owners=[VisibleClassTy]; agreed_this_calls=1; incoming_this_accesses=3;
    incoming_edx_uses=0; incoming_stack_parameter_uses=21; direct_non_thunk_callers=0;
@@ -792,7 +792,7 @@ st::fn_005599D0
 }
 
 // 00559D60 VisibleClassTy::sub_00559D60
-#line 1 "decomp/ST.exe/functions/00559D60/decomp.c"
+#line 4 "decomp/ST.exe/functions/00559D60/decomp.c"
 /* [STHiddenThisApplier] Anonymous hidden receiver recovered as
    /SubmarineTitans/Recovered/HiddenThis/AnonReceiver_00558C00.
    Evidence: incoming_receiver_captures=1; receiver_accesses=3; incoming_edx_uses=0; calls=3;
@@ -878,7 +878,7 @@ st::fn_00559D60
 }
 
 // 0055A110 VisibleClassTy::sub_0055A110
-#line 1 "decomp/ST.exe/functions/0055A110/decomp.c"
+#line 4 "decomp/ST.exe/functions/0055A110/decomp.c"
 /* [STMethodOwnerApplier] Structural method owner recovered as VisibleClassTy.
    Evidence: this_call_owners=[VisibleClassTy]; agreed_this_calls=1; incoming_this_accesses=3;
    incoming_edx_uses=0; incoming_stack_parameter_uses=21; direct_non_thunk_callers=0;
@@ -956,7 +956,7 @@ st::fn_0055A110
 }
 
 // 0055A4C0 VisibleClassTy::sub_0055A4C0
-#line 1 "decomp/ST.exe/functions/0055A4C0/decomp.c"
+#line 4 "decomp/ST.exe/functions/0055A4C0/decomp.c"
 /* [STMethodOwnerApplier] Structural method owner recovered as VisibleClassTy.
    Evidence: this_call_owners=[VisibleClassTy]; agreed_this_calls=2; incoming_this_accesses=3;
    incoming_edx_uses=0; incoming_stack_parameter_uses=21; direct_non_thunk_callers=0;
@@ -1034,7 +1034,7 @@ st::fn_0055A4C0
 }
 
 // 0055A870 VisibleClassTy::sub_0055A870
-#line 1 "decomp/ST.exe/functions/0055A870/decomp.c"
+#line 4 "decomp/ST.exe/functions/0055A870/decomp.c"
 /* [STMethodOwnerApplier] Structural method owner recovered as VisibleClassTy.
    Evidence: this_call_owners=[VisibleClassTy]; agreed_this_calls=2; incoming_this_accesses=3;
    incoming_edx_uses=0; incoming_stack_parameter_uses=21; direct_non_thunk_callers=0;
@@ -1112,7 +1112,7 @@ st::fn_0055A870
 }
 
 // 0055AD00 VisibleClassTy::sub_0055AD00
-#line 1 "decomp/ST.exe/functions/0055AD00/decomp.c"
+#line 4 "decomp/ST.exe/functions/0055AD00/decomp.c"
 /* [STMethodOwnerApplier] Structural method owner recovered as VisibleClassTy.
    Evidence: this_call_owners=[VisibleClassTy]; agreed_this_calls=2; incoming_this_accesses=5;
    incoming_edx_uses=0; incoming_stack_parameter_uses=8; direct_non_thunk_callers=0;
@@ -1216,7 +1216,7 @@ LAB_0055ae0a:
 }
 
 // 0055B1C0 VisibleClassTy::sub_0055B1C0
-#line 1 "decomp/ST.exe/functions/0055B1C0/decomp.c"
+#line 4 "decomp/ST.exe/functions/0055B1C0/decomp.c"
 /* [STMethodOwnerApplier] Structural method owner recovered as VisibleClassTy.
    Evidence: this_call_owners=[VisibleClassTy]; agreed_this_calls=1; incoming_this_accesses=4;
    incoming_edx_uses=0; incoming_stack_parameter_uses=6; direct_non_thunk_callers=0;
@@ -1291,7 +1291,7 @@ LAB_0055b2ce:
 }
 
 // 0055B7F0 VisibleClassTy::sub_0055B7F0
-#line 1 "decomp/ST.exe/functions/0055B7F0/decomp.c"
+#line 4 "decomp/ST.exe/functions/0055B7F0/decomp.c"
 /* [STMethodOwnerApplier] Structural method owner recovered as VisibleClassTy.
    Evidence: this_call_owners=[VisibleClassTy]; agreed_this_calls=9; incoming_this_accesses=3;
    incoming_edx_uses=0; incoming_stack_parameter_uses=5; direct_non_thunk_callers=0;
@@ -1370,7 +1370,7 @@ void __thiscall st::fn_0055B7F0(VisibleClassTy *this,int param_1,undefined *para
 }
 
 // 0055BB00 VisibleClassTy::sub_0055BB00
-#line 1 "decomp/ST.exe/functions/0055BB00/decomp.c"
+#line 4 "decomp/ST.exe/functions/0055BB00/decomp.c"
 /* [STMethodOwnerApplier] Structural method owner recovered as VisibleClassTy.
    Evidence: this_call_owners=[VisibleClassTy]; agreed_this_calls=6; incoming_this_accesses=2;
    incoming_edx_uses=0; incoming_stack_parameter_uses=7; direct_non_thunk_callers=0;
@@ -1442,7 +1442,7 @@ st::fn_0055BB00
 }
 
 // 0055BBC0 VisibleClassTy::sub_0055BBC0
-#line 1 "decomp/ST.exe/functions/0055BBC0/decomp.c"
+#line 4 "decomp/ST.exe/functions/0055BBC0/decomp.c"
 /* [STMethodOwnerApplier] Structural method owner recovered as VisibleClassTy.
    Evidence: this_call_owners=[VisibleClassTy]; agreed_this_calls=1; incoming_this_accesses=3;
    incoming_edx_uses=0; incoming_stack_parameter_uses=7; direct_non_thunk_callers=0;
@@ -1525,7 +1525,7 @@ st::fn_0055BBC0
 }
 
 // 005F1D80 VisibleClassTy::sub_005F1D80
-#line 1 "decomp/ST.exe/functions/005F1D80/decomp.c"
+#line 4 "decomp/ST.exe/functions/005F1D80/decomp.c"
 /* [STMethodOwnerApplier] Structural method owner recovered as VisibleClassTy.
    Evidence: this_call_owners=[VisibleClassTy]; agreed_this_calls=4; incoming_this_accesses=5;
    incoming_edx_uses=0; incoming_stack_parameter_uses=7; direct_non_thunk_callers=0;

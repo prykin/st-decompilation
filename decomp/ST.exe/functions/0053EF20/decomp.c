@@ -59,7 +59,7 @@ ProdPanelTy::InitProdPanel
     pcVar3->field_005C = 0;
     pCVar4 = thunk_FUN_00571240("FRAMES",0);
     puVar5 = Library::Ourlib::MFRLOAD::mfRLoad
-                       (DAT_00806794,CASE_B,pCVar4,uVar9,bVar10,iVar2,iVar11,puVar12);
+                       (PTR_00806794,CASE_B,pCVar4,uVar9,bVar10,iVar2,iVar11,puVar12);
     this_00->field_0190 = puVar5;
     puVar5 = this_00->field_0068;
     uVar9 = *(uint *)(puVar5 + 10);
@@ -82,7 +82,7 @@ ProdPanelTy::InitProdPanel
     uVar9 = 0;
     iVar11 = -1;
     iVar2 = -2;
-    resourceString = (uint *)LoadResourceString(param_1,g_module_00807618);
+    resourceString = (uint *)LoadResourceString(param_1,g_hINSTANCE_00807618);
     ccFntTy::WrStr(this_00->field_017C,resourceString,iVar2,iVar11,uVar9);
     pCVar4 = thunk_FUN_00571240("BUT_MEDIUM",0);
     uVar6 = PanelTy::CreateBut((PanelTy *)this_00,0,1,param_6,param_7,0,1,1,pCVar4,0xbfff,0xc000,0,0

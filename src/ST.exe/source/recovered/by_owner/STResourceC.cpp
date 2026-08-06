@@ -2,7 +2,7 @@
 // Generated translation unit: source/recovered/by_owner/STResourceC.cpp
 
 // 005802A0 STResourceC::sub_005802A0
-#line 1 "decomp/ST.exe/functions/005802A0/decomp.c"
+#line 4 "decomp/ST.exe/functions/005802A0/decomp.c"
 /* [STMethodOwnerApplier] Structural method owner recovered as STResourceC.
    Evidence: this_call_owners=[STResourceC]; agreed_this_calls=1; incoming_this_accesses=3;
    incoming_edx_uses=0 */
@@ -36,7 +36,7 @@ void __thiscall st::fn_005802A0(STResourceC *this,int param_1,int param_2)
 }
 
 // 00580D30 STResourceC::sub_00580D30
-#line 1 "decomp/ST.exe/functions/00580D30/decomp.c"
+#line 4 "decomp/ST.exe/functions/00580D30/decomp.c"
 /* [STMethodOwnerApplier] Structural method owner recovered as STResourceC.
    Evidence: this_call_owners=[STResourceC]; agreed_this_calls=1; incoming_this_accesses=2;
    incoming_edx_uses=0 */

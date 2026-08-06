@@ -2,7 +2,7 @@
 // Generated translation unit: source/original/snd_mngr.cpp
 
 // 00566600 FUN_00566600
-#line 1 "decomp/ST.exe/functions/00566600/decomp.c"
+#line 4 "decomp/ST.exe/functions/00566600/decomp.c"
 /* [STSourceProvenanceApplier begin]
    Recovered source file: E:\__titans\snd_mngr.cpp
    Diagnostic line evidence: 37 | 50 (metadata/report site, not the function definition)
@@ -168,7 +168,7 @@ LAB_0056681c:
 }
 
 // 00566C20 SoundManagerTy::GetMessage
-#line 1 "decomp/ST.exe/functions/00566C20/decomp.c"
+#line 4 "decomp/ST.exe/functions/00566C20/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\snd_mngr.cpp
    SoundManagerTy::GetMessage

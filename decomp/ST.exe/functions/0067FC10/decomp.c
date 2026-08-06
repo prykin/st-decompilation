@@ -5,23 +5,23 @@ int __cdecl FUN_0067fc10(byte *param_1)
 
 {
   byte bVar1;
-  int iVar2;
+  dword dVar2;
   byte *pbVar3;
   int iVar4;
   byte *pbVar5;
   int iVar6;
   bool bVar7;
 
-  iVar2 = *(int *)(DAT_00848a3c + 8);
+  dVar2 = g_dArray_00848A3C->elementSize;
   iVar6 = 0;
-  if (0 < iVar2) {
-    if (iVar2 < 1) {
+  if (0 < (int)dVar2) {
+    if ((int)dVar2 < 1) {
       pbVar5 = nullptr;
       pbVar3 = param_1;
       goto LAB_0067fc3b;
     }
     do {
-      pbVar5 = *(byte **)(*(int *)(DAT_00848a3c + 0x14) + iVar6 * 4);
+      pbVar5 = *(byte **)(g_dArray_00848A3C->growCapacity + iVar6 * 4);
       pbVar3 = param_1;
 LAB_0067fc3b:
       do {
@@ -45,7 +45,7 @@ LAB_0067fc64:
         return iVar6;
       }
       iVar6 = iVar6 + 1;
-    } while (iVar6 < iVar2);
+    } while (iVar6 < (int)dVar2);
   }
   return -1;
 }

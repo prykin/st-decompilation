@@ -72,7 +72,7 @@ LAB_00538de2:
   bVar6 = (byte)errorCode;
   text = FUN_006f2c00(param_2,1,uVar3);
   puVar4 = Library::Ourlib::MFRLOAD::mfRLoad
-                     (DAT_00806794,CASE_1,text,uVar5,bVar6,iVar7,(int)puVar8,puVar10);
+                     (PTR_00806794,CASE_1,text,uVar5,bVar6,iVar7,(int)puVar8,puVar10);
   uVar5 = local_c;
   DibPut((RecoveredSourceFamily_dibcopy *)pPVar2->field_0068,local_8,local_c,'\x01',(byte *)puVar4);
   ccFntTy::SetSurf(g_interSystem_00802A28->field_0024,pPVar2->field_0068,0,local_8,uVar5,
@@ -80,7 +80,7 @@ LAB_00538de2:
   uVar5 = thunk_FUN_00529fe0((int)param_1);
   iVar9 = -1;
   iVar7 = -2;
-  resourceString = (uint *)LoadResourceString(param_3,g_module_00807618);
+  resourceString = (uint *)LoadResourceString(param_3,g_hINSTANCE_00807618);
   ccFntTy::WrStr(g_interSystem_00802A28->field_0024,resourceString,iVar7,iVar9,uVar5);
   Library::DKW::DDX::FUN_006b3640
             ((int *)g_ddxContext_008075A8,pPVar2->field_0060,0xffffffff,pPVar2->field_003C,

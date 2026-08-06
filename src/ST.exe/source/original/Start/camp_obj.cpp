@@ -2,7 +2,7 @@
 // Generated translation unit: source/original/Start/camp_obj.cpp
 
 // 00590B40 CampaignTy::InitCampaign
-#line 1 "decomp/ST.exe/functions/00590B40/decomp.c"
+#line 4 "decomp/ST.exe/functions/00590B40/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\Start\camp_obj.cpp
    CampaignTy::InitCampaign */
@@ -318,7 +318,7 @@ switchD_00590d73_default:
           cVar9 = CASE_FFFFFFFE;
           iVar8 = 0x28;
           iVar16 = 0x8c;
-          puVar6 = (uint *)st::fn_006B0140(0x23f1,g_module_00807618);
+          puVar6 = (uint *)st::fn_006B0140(0x23f1,g_hINSTANCE_00807618);
           puVar5 = st::fn_00713480
                              (g_startSystem_0081176C->field_0030,puVar6,iVar16,iVar8,cVar9,uVar10,
                               iVar11,iVar12,iVar13);
@@ -335,7 +335,7 @@ switchD_00590d73_default:
           cVar9 = CASE_FFFFFFFE;
           iVar8 = 0x28;
           iVar16 = 0x8c;
-          puVar6 = (uint *)st::fn_006B0140(0x23f0,g_module_00807618);
+          puVar6 = (uint *)st::fn_006B0140(0x23f0,g_hINSTANCE_00807618);
           puVar5 = st::fn_00713480
                              (g_startSystem_0081176C->field_0030,puVar6,iVar16,iVar8,cVar9,uVar10,
                               iVar11,iVar12,iVar13);
@@ -352,7 +352,7 @@ switchD_00590d73_default:
           cVar9 = CASE_FFFFFFFE;
           iVar8 = 0x28;
           iVar16 = 0x8c;
-          puVar6 = (uint *)st::fn_006B0140(0x23f2,g_module_00807618);
+          puVar6 = (uint *)st::fn_006B0140(0x23f2,g_hINSTANCE_00807618);
           puVar5 = st::fn_00713480
                              (g_startSystem_0081176C->field_0030,puVar6,iVar16,iVar8,cVar9,uVar10,
                               iVar11,iVar12,iVar13);
@@ -438,7 +438,7 @@ switchD_00590d73_default:
 }
 
 // 005916F0 CampaignTy::DoneCampaign
-#line 1 "decomp/ST.exe/functions/005916F0/decomp.c"
+#line 4 "decomp/ST.exe/functions/005916F0/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\Start\camp_obj.cpp
    CampaignTy::DoneCampaign */
@@ -529,7 +529,7 @@ void __thiscall st::fn_005916F0(CampaignTy *this)
 }
 
 // 00591940 CampaignTy::PaintCampaign
-#line 1 "decomp/ST.exe/functions/00591940/decomp.c"
+#line 4 "decomp/ST.exe/functions/00591940/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\Start\camp_obj.cpp
    CampaignTy::PaintCampaign
@@ -578,7 +578,7 @@ void __thiscall st::fn_00591940(CampaignTy *this)
   uVar9 = 0xffffffff;
   uVar8 = 0xfffffffe;
   puVar3 = (uint *)st::fn_006B0140((-(uint)(local_8->field_1FFC != 0) & 0xfffffca8) + 0x26b1,
-                                      g_module_00807618);
+                                      g_hINSTANCE_00807618);
   st::fn_00404C2D(this_00,0,0xe9,0x14,0x14c,0x18,puVar3,uVar8,uVar9,pcVar11,errorCode);
   if (g_startSystem_0081176C->field_0028 == 0) {
     iVar5 = 0;
@@ -637,7 +637,7 @@ void __thiscall st::fn_00591940(CampaignTy *this)
 }
 
 // 00591BF0 CampaignTy::NoneCampaign
-#line 1 "decomp/ST.exe/functions/00591BF0/decomp.c"
+#line 4 "decomp/ST.exe/functions/00591BF0/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\Start\camp_obj.cpp
    CampaignTy::NoneCampaign
@@ -926,7 +926,7 @@ LAB_00591d08:
 }
 
 // 00592340 CampaignTy::LightPalette
-#line 1 "decomp/ST.exe/functions/00592340/decomp.c"
+#line 4 "decomp/ST.exe/functions/00592340/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\Start\camp_obj.cpp
    CampaignTy::LightPalette */
@@ -972,7 +972,7 @@ void __thiscall st::fn_00592340(CampaignTy *this)
 }
 
 // 00592470 CampaignTy::CloseButtons
-#line 1 "decomp/ST.exe/functions/00592470/decomp.c"
+#line 4 "decomp/ST.exe/functions/00592470/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\Start\camp_obj.cpp
    CampaignTy::CloseButtons */
@@ -1027,7 +1027,7 @@ void __thiscall st::fn_00592470(CampaignTy *this)
 }
 
 // 005926E0 CampaignTy::AnimationCampaign
-#line 1 "decomp/ST.exe/functions/005926E0/decomp.c"
+#line 4 "decomp/ST.exe/functions/005926E0/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\Start\camp_obj.cpp
    CampaignTy::AnimationCampaign
@@ -1401,7 +1401,7 @@ LAB_00592b82:
 }
 
 // 00593040 CampaignTy::GetMessage
-#line 1 "decomp/ST.exe/functions/00593040/decomp.c"
+#line 4 "decomp/ST.exe/functions/00593040/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\Start\camp_obj.cpp
    CampaignTy::GetMessage

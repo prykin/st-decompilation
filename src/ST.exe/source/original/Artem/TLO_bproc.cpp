@@ -2,7 +2,7 @@
 // Generated translation unit: source/original/Artem/TLO_bproc.cpp
 
 // 004C84C0 FUN_004c84c0
-#line 1 "decomp/ST.exe/functions/004C84C0/decomp.c"
+#line 4 "decomp/ST.exe/functions/004C84C0/decomp.c"
 /* [STSourceProvenanceApplier begin]
    Recovered source file: E:\__titans\Artem\TLO_bproc.cpp
    Diagnostic line evidence: 415 (metadata/report site, not the function definition)
@@ -362,7 +362,7 @@ LAB_004c8bf2:
 }
 
 // 004C94B0 TLOBaseTy::procResult
-#line 1 "decomp/ST.exe/functions/004C94B0/decomp.c"
+#line 4 "decomp/ST.exe/functions/004C94B0/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\Artem\TLO_bproc.cpp
    TLOBaseTy::procResult

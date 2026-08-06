@@ -2,7 +2,7 @@
 // Generated translation unit: source/original/Andrey/playpan.cpp
 
 // 00539B90 PlayPanelTy::InitPlayPanel
-#line 1 "decomp/ST.exe/functions/00539B90/decomp.c"
+#line 4 "decomp/ST.exe/functions/00539B90/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\Andrey\playpan.cpp
    PlayPanelTy::InitPlayPanel */
@@ -89,7 +89,7 @@ void __thiscall st::fn_00539B90(PlayPanelTy *this)
     pcVar3->field_0058 = 0;
     pcVar3->field_005C = 0;
     puVar4 = st::fn_00709AF0
-                       (DAT_00806794,CASE_B,"BUT_CHPLAYER",0xffffffff,0,1,0,
+                       (PTR_00806794,CASE_B,"BUT_CHPLAYER",0xffffffff,0,1,0,
                         nullptr);
     this_00->field_01D1 = puVar4;
     puVar24 = nullptr;
@@ -99,7 +99,7 @@ void __thiscall st::fn_00539B90(PlayPanelTy *this)
     uVar17 = 0xffffffff;
     pCVar5 = st::fn_0040577C("GAMEB_ALLY",0);
     puVar4 = st::fn_00709AF0
-                       (DAT_00806794,CASE_B,pCVar5,uVar17,bVar18,iVar8,iVar21,puVar24);
+                       (PTR_00806794,CASE_B,pCVar5,uVar17,bVar18,iVar8,iVar21,puVar24);
     this_00->field_01D5 = puVar4;
     puVar24 = nullptr;
     iVar21 = 0;
@@ -108,7 +108,7 @@ void __thiscall st::fn_00539B90(PlayPanelTy *this)
     uVar17 = 0xffffffff;
     pCVar5 = st::fn_0040577C("BUT_PRODWEAP",0);
     puVar4 = st::fn_00709AF0
-                       (DAT_00806794,CASE_B,pCVar5,uVar17,bVar18,iVar8,iVar21,puVar24);
+                       (PTR_00806794,CASE_B,pCVar5,uVar17,bVar18,iVar8,iVar21,puVar24);
     this_00->field_01D9 = puVar4;
     puVar4 = this_00->field_0068;
     uVar17 = *(uint *)(puVar4 + 10);
@@ -151,7 +151,7 @@ void __thiscall st::fn_00539B90(PlayPanelTy *this)
     uVar17 = (DAT_0080874e != '\x03') - 1 & 5;
     iVar21 = -1;
     iVar8 = -2;
-    puVar6 = (uint *)st::fn_006B0140(0x2733,g_module_00807618);
+    puVar6 = (uint *)st::fn_006B0140(0x2733,g_hINSTANCE_00807618);
     st::fn_007119C0(this_00->field_01DD,puVar6,iVar8,iVar21,uVar17);
     st::fn_00403242(this_00);
     uVar25 = 0;
@@ -302,7 +302,7 @@ void __thiscall st::fn_00539B90(PlayPanelTy *this)
         uVar17 = (DAT_0080874e != '\x03') - 1 & 5;
         iVar7 = -1;
         iVar21 = 0;
-        puVar6 = (uint *)st::fn_006B0140(resourceId,g_module_00807618);
+        puVar6 = (uint *)st::fn_006B0140(resourceId,g_hINSTANCE_00807618);
         st::fn_007119C0(this_00->field_01DD,puVar6,iVar21,iVar7,uVar17);
         iVar8 = iVar8 + 0x5c;
         resourceId = resourceId + 1;
@@ -323,7 +323,7 @@ void __thiscall st::fn_00539B90(PlayPanelTy *this)
 }
 
 // 0053A380 PlayPanelTy::DonePlayPanel
-#line 1 "decomp/ST.exe/functions/0053A380/decomp.c"
+#line 4 "decomp/ST.exe/functions/0053A380/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\Andrey\playpan.cpp
    PlayPanelTy::DonePlayPanel */
@@ -396,7 +396,7 @@ void __thiscall st::fn_0053A380(PlayPanelTy *this)
 }
 
 // 0053A6B0 PlayPanelTy::SwitchOptPanel
-#line 1 "decomp/ST.exe/functions/0053A6B0/decomp.c"
+#line 4 "decomp/ST.exe/functions/0053A6B0/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\Andrey\playpan.cpp
    PlayPanelTy::SwitchOptPanel */
@@ -464,7 +464,7 @@ void __thiscall st::fn_0053A6B0(PlayPanelTy *this,int param_1)
 }
 
 // 0053A820 PlayPanelTy::SetPanel
-#line 1 "decomp/ST.exe/functions/0053A820/decomp.c"
+#line 4 "decomp/ST.exe/functions/0053A820/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\Andrey\playpan.cpp
    PlayPanelTy::SetPanel */
@@ -496,14 +496,14 @@ undefined4 __thiscall st::fn_0053A820(PlayPanelTy *this,char param_1)
       iVar2 = 0;
     }
     else {
-      if (g_prodPanel_008016E8 != nullptr) {
-        st::fn_00401A73(g_prodPanel_008016E8,'\0');
+      if (g_researchPanel_008016E8 != nullptr) {
+        st::fn_00401A73(g_researchPanel_008016E8,'\0');
       }
-      if (g_prodPanel_0080167C != nullptr) {
-        st::fn_00401A73(g_prodPanel_0080167C,'\0');
+      if (g_bldBoatPanel_0080167C != nullptr) {
+        st::fn_00401A73(g_bldBoatPanel_0080167C,'\0');
       }
-      if (g_prodPanel_00801684 != nullptr) {
-        st::fn_00401A73(g_prodPanel_00801684,'\0');
+      if (g_bldObjPanel_00801684 != nullptr) {
+        st::fn_00401A73(g_bldObjPanel_00801684,'\0');
       }
       if (g_infocPanel_00801698 != nullptr) {
         (*g_infocPanel_00801698->vtable->SetPanel)((SpecPanelTy *)g_infocPanel_00801698,'\0');
@@ -523,8 +523,8 @@ undefined4 __thiscall st::fn_0053A820(PlayPanelTy *this,char param_1)
       if (g_frmPanel_0080168C != nullptr) {
         (*g_frmPanel_0080168C->vtable->SetPanel)((SpecPanelTy *)g_frmPanel_0080168C,'\0');
       }
-      if (g_prodPanel_00801680 != nullptr) {
-        st::fn_00401A73(g_prodPanel_00801680,'\0');
+      if (g_bldLabPanel_00801680 != nullptr) {
+        st::fn_00401A73(g_bldLabPanel_00801680,'\0');
       }
       if (g_helpPanel_00801690 != nullptr) {
         /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
@@ -550,7 +550,7 @@ undefined4 __thiscall st::fn_0053A820(PlayPanelTy *this,char param_1)
 }
 
 // 0053AA50 PlayPanelTy::ShiftControls
-#line 1 "decomp/ST.exe/functions/0053AA50/decomp.c"
+#line 4 "decomp/ST.exe/functions/0053AA50/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\Andrey\playpan.cpp
    PlayPanelTy::ShiftControls
@@ -627,7 +627,7 @@ void __thiscall st::fn_0053AA50(PlayPanelTy *this,int param_1)
 }
 
 // 0053AC00 PlayPanelTy::PaintPlayPanel
-#line 1 "decomp/ST.exe/functions/0053AC00/decomp.c"
+#line 4 "decomp/ST.exe/functions/0053AC00/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\Andrey\playpan.cpp
    PlayPanelTy::PaintPlayPanel */
@@ -701,7 +701,7 @@ void __thiscall st::fn_0053AC00(PlayPanelTy *this)
       uVar7 = (DAT_0080874e != '\x03') - 1 & 5;
       iVar12 = -1;
       iVar11 = -1;
-      resourceString = (uint *)st::fn_006B0140(resourceId,g_module_00807618);
+      resourceString = (uint *)st::fn_006B0140(resourceId,g_hINSTANCE_00807618);
       st::fn_007119C0(pPVar4->field_01DD,resourceString,iVar11,iVar12,uVar7);
       st::fn_00710A90(pPVar4->field_01DD,(int)pPVar4->field_0068,0,0x68,uVar8,0x10e,0xc);
       iVar11 = st::fn_00711110(pPVar4->field_01DD,
@@ -768,7 +768,7 @@ void __thiscall st::fn_0053AC00(PlayPanelTy *this)
 }
 
 // 0053AFB0 PlayPanelTy::GetMessage
-#line 1 "decomp/ST.exe/functions/0053AFB0/decomp.c"
+#line 4 "decomp/ST.exe/functions/0053AFB0/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\Andrey\playpan.cpp
    PlayPanelTy::GetMessage

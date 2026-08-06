@@ -70,14 +70,14 @@ int __thiscall STDcResourcC::CreateRes(STDcResourcC *this)
         goto cf_break_loop_0057FAA5;
         bVar13 = 0x1d;
         pcVar7 = (char *)sub_0057F3A0(this_00,local_c,0);
-        iVar10 = STT3DSprC::LoadSequence(pSVar6,0xe,DAT_00806774,pcVar7,bVar13);
+        iVar10 = STT3DSprC::LoadSequence(pSVar6,0xe,PTR_00806774,pcVar7,bVar13);
         if (iVar10 != 0) goto cf_break_loop_0057FAA5;
         bVar13 = 0x1d;
         pcVar7 = (char *)sub_0057F3A0(this_00,local_c,1);
-        iVar10 = STT3DSprC::LoadSequence(pSVar6,0xd,DAT_00806774,pcVar7,bVar13);
+        iVar10 = STT3DSprC::LoadSequence(pSVar6,0xd,PTR_00806774,pcVar7,bVar13);
         if (iVar10 != 0) goto cf_break_loop_0057FAA5;
         STT3DSprC::StartShow(pSVar6,0xe,g_playSystem_00802A38->field_00E4);
-        STT3DSprC::sub_004ACEF0(pSVar6,DAT_008073cc);
+        STT3DSprC::sub_004ACEF0(pSVar6,PTR_008073cc);
         STT3DSprC::sub_004ACF50(pSVar6,'\r');
         STT3DSprC::StartShow(pSVar6,0xd,g_playSystem_00802A38->field_00E4);
         iVar10 = this_00->field_0249 + local_10;
@@ -112,14 +112,14 @@ int __thiscall STDcResourcC::CreateRes(STDcResourcC *this)
         goto cf_break_loop_0057FAA5;
         bVar13 = 0x1d;
         pcVar7 = (char *)sub_0057F2E0(this_00,local_c,0);
-        iVar10 = STT3DSprC::LoadSequence(pSVar6,0xe,DAT_00806774,pcVar7,bVar13);
+        iVar10 = STT3DSprC::LoadSequence(pSVar6,0xe,PTR_00806774,pcVar7,bVar13);
         if (iVar10 != 0) goto cf_break_loop_0057FAA5;
         bVar13 = 0x1d;
         pcVar7 = (char *)sub_0057F2E0(this_00,local_c,1);
-        iVar10 = STT3DSprC::LoadSequence(pSVar6,0xd,DAT_00806774,pcVar7,bVar13);
+        iVar10 = STT3DSprC::LoadSequence(pSVar6,0xd,PTR_00806774,pcVar7,bVar13);
         if (iVar10 != 0) goto cf_break_loop_0057FAA5;
         STT3DSprC::StartShow(pSVar6,0xe,g_playSystem_00802A38->field_00E4);
-        STT3DSprC::sub_004ACEF0(pSVar6,DAT_008073cc);
+        STT3DSprC::sub_004ACEF0(pSVar6,PTR_008073cc);
         STT3DSprC::sub_004ACF50(pSVar6,'\r');
         STT3DSprC::StartShow(pSVar6,0xd,g_playSystem_00802A38->field_00E4);
         iVar10 = this_00->field_0249 + local_10;
@@ -156,14 +156,14 @@ int __thiscall STDcResourcC::CreateRes(STDcResourcC *this)
         if ((iVar5 < 0) || (pSVar6 = (STT3DSprC *)Init(this_00), pSVar6 != nullptr)) {
           bVar13 = 0x1d;
           pcVar7 = (char *)sub_0057F470(this_00,iVar5,0);
-          iVar10 = STT3DSprC::LoadSequence(pSVar6,0xe,DAT_00806774,pcVar7,bVar13);
+          iVar10 = STT3DSprC::LoadSequence(pSVar6,0xe,PTR_00806774,pcVar7,bVar13);
           if (iVar10 == 0) {
             bVar13 = 0x1d;
             pcVar7 = (char *)sub_0057F470(this_00,iVar5,1);
-            iVar10 = STT3DSprC::LoadSequence(pSVar6,0xd,DAT_00806774,pcVar7,bVar13);
+            iVar10 = STT3DSprC::LoadSequence(pSVar6,0xd,PTR_00806774,pcVar7,bVar13);
             if (iVar10 == 0) {
               STT3DSprC::StartShow(pSVar6,0xe,g_playSystem_00802A38->field_00E4);
-              STT3DSprC::sub_004ACEF0(pSVar6,DAT_008073cc);
+              STT3DSprC::sub_004ACEF0(pSVar6,PTR_008073cc);
               STT3DSprC::sub_004ACF50(pSVar6,'\r');
               STT3DSprC::StartShow(pSVar6,0xd,g_playSystem_00802A38->field_00E4);
               local_14 = this_00->field_0245 + local_c;

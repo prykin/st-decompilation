@@ -2,7 +2,7 @@
 // Generated translation unit: source/recovered/by_owner/STRubbishC.cpp
 
 // 0062ED10 STRubbishC::STRubbishC
-#line 1 "decomp/ST.exe/functions/0062ED10/decomp.c"
+#line 4 "decomp/ST.exe/functions/0062ED10/decomp.c"
 /* [STConstructorApplier] Recovered constructor candidate.
    VTable: 0079D098 (store 0062ED37)
    Evidence: final_vptr=0079D098; returns_this=true; calls_before=1; field_writes_after=8;
@@ -18,7 +18,7 @@ STRubbishC * __thiscall st::fn_0062ED10(STRubbishC *this)
   this->field_01D5 = -1;
   this->field_01D9 = -1;
   this->field_01DD = -1;
-  this->vtable = &STRubbishCVTable;
+  this->vtable = &st_global_0079D098;
   this->field_01E1 = 0;
   this->field_01E5 = 0;
   this->field_01E9 = 0;
@@ -31,7 +31,7 @@ STRubbishC * __thiscall st::fn_0062ED10(STRubbishC *this)
 }
 
 // 0062EF00 STRubbishC::sub_0062EF00
-#line 1 "decomp/ST.exe/functions/0062EF00/decomp.c"
+#line 4 "decomp/ST.exe/functions/0062EF00/decomp.c"
 /* [STPrototypeApplier] Propagated parameter 2.
    Evidence: 0062FCA0 -> 0062EF00 @ 0062FCCF
 
@@ -79,7 +79,7 @@ st::fn_0062EF00(STRubbishC *this,int param_1,AnonShape_0062FCA0_22A9EE35 *param_
 }
 
 // 0062F900 STRubbishC::sub_0062F900
-#line 1 "decomp/ST.exe/functions/0062F900/decomp.c"
+#line 4 "decomp/ST.exe/functions/0062F900/decomp.c"
 /* [STMethodOwnerApplier] Structural method owner recovered as STRubbishC.
    Evidence: this_call_owners=[STRubbishC]; agreed_this_calls=2; incoming_this_accesses=1;
    incoming_edx_uses=0; incoming_stack_parameter_uses=0; direct_non_thunk_callers=0;
@@ -105,7 +105,7 @@ int __thiscall st::fn_0062F900(STRubbishC *this)
 }
 
 // 0062FCA0 STRubbishC::sub_0062FCA0
-#line 1 "decomp/ST.exe/functions/0062FCA0/decomp.c"
+#line 4 "decomp/ST.exe/functions/0062FCA0/decomp.c"
 /* [STMethodOwnerApplier] Structural method owner recovered as STRubbishC.
    Evidence: this_call_owners=[STRubbishC]; agreed_this_calls=1; incoming_this_accesses=4;
    incoming_edx_uses=0; incoming_stack_parameter_uses=2; direct_non_thunk_callers=0;
@@ -168,7 +168,7 @@ int __thiscall st::fn_0062FCA0(STRubbishC *this,AnonShape_0062FCA0_22A9EE35 *par
 }
 
 // 0062FEA0 STRubbishC::sub_0062FEA0
-#line 1 "decomp/ST.exe/functions/0062FEA0/decomp.c"
+#line 4 "decomp/ST.exe/functions/0062FEA0/decomp.c"
 /* [STMethodOwnerApplier] Structural method owner recovered as STRubbishC.
    Evidence: this_call_owners=[STRubbishC]; agreed_this_calls=1; incoming_this_accesses=3;
    incoming_edx_uses=0; incoming_stack_parameter_uses=7; direct_non_thunk_callers=0;
@@ -235,7 +235,7 @@ int __thiscall st::fn_0062FEA0(STRubbishC *this,int param_1,int param_2)
 }
 
 // 00630260 STRubbishC::sub_00630260
-#line 1 "decomp/ST.exe/functions/00630260/decomp.c"
+#line 4 "decomp/ST.exe/functions/00630260/decomp.c"
 /* [STMethodOwnerApplier] Structural method owner recovered as STRubbishC.
    Evidence: this_call_owners=[STRubbishC]; agreed_this_calls=1; incoming_this_accesses=3;
    incoming_edx_uses=0; incoming_stack_parameter_uses=2; direct_non_thunk_callers=0;

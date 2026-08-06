@@ -1567,31 +1567,29 @@ LAB_004b432d:
                    ((g_playSystem_00802A38 == nullptr ||
                     (g_bulkInitializedRecords_008087C7[uVar22].field_0022 < 8)))) {
                   bVar8 = *(byte *)&local_58->field_0024;
-                  if (g_appClass_00806728->field_146F == '\0') {
+                  if (g_app_00806728->field_146F == '\0') {
                     if (bVar8 == recordIndex) {
                       iVar27 = 0;
                     }
                     else {
                       uVar22 = (uint)bVar8;
                       uVar19 = param_1 & 0xff;
-                      cVar3 = (&g_appClass_00806728->field_0x142f)[uVar19 + uVar22 * 8];
+                      cVar3 = (&g_app_00806728->field_0x142f)[uVar19 + uVar22 * 8];
                       puVar28 = local_27c;
                       if ((cVar3 == '\0') &&
-                         ((&g_appClass_00806728->field_0x142f)[uVar22 + uVar19 * 8] == '\0')) {
+                         ((&g_app_00806728->field_0x142f)[uVar22 + uVar19 * 8] == '\0')) {
                         iVar27 = -2;
                       }
                       else if ((cVar3 == '\x01') &&
-                              ((&g_appClass_00806728->field_0x142f)[uVar22 + uVar19 * 8] == '\0')) {
+                              ((&g_app_00806728->field_0x142f)[uVar22 + uVar19 * 8] == '\0')) {
                         iVar27 = -1;
                       }
                       else if ((cVar3 == '\0') &&
-                              ((&g_appClass_00806728->field_0x142f)[uVar22 + uVar19 * 8] == '\x01'))
-                      {
+                              ((&g_app_00806728->field_0x142f)[uVar22 + uVar19 * 8] == '\x01')) {
                         iVar27 = 1;
                       }
                       else if ((cVar3 == '\x01') &&
-                              ((&g_appClass_00806728->field_0x142f)[uVar22 + uVar19 * 8] == '\x01'))
-                      {
+                              ((&g_app_00806728->field_0x142f)[uVar22 + uVar19 * 8] == '\x01')) {
                         iVar27 = 2;
                       }
                       else {
@@ -1601,8 +1599,8 @@ LAB_004b432d:
                     bVar29 = iVar27 < 0;
                   }
                   else {
-                    bVar29 = (&g_appClass_00806728->field_0x11ca)[(param_1 & 0xff) * 0x51] !=
-                             (&g_appClass_00806728->field_0x11ca)[(uint)bVar8 * 0x51];
+                    bVar29 = (&g_app_00806728->field_0x11ca)[(param_1 & 0xff) * 0x51] !=
+                             (&g_app_00806728->field_0x11ca)[(uint)bVar8 * 0x51];
                   }
                   if (bVar29) {
                     *(ushort *)(puVar28 + iVar10 * 2) =

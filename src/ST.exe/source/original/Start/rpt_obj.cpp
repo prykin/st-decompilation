@@ -2,7 +2,7 @@
 // Generated translation unit: source/original/Start/rpt_obj.cpp
 
 // 005BD4B0 MReportTy::OutTGlProc
-#line 1 "decomp/ST.exe/functions/005BD4B0/decomp.c"
+#line 4 "decomp/ST.exe/functions/005BD4B0/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\Start\rpt_obj.cpp
    MReportTy::OutTGlProc
@@ -66,12 +66,12 @@ st::fn_005BD4B0
                    local_8->field_0008 + -4,0x18,0xd);
       st::fn_00710A90(*(ccFntTy **)(iVar6 + 0x83),(int)local_8,0,5,5,local_8->field_0004 + -10,0xf);
       if (*(char *)(iVar6 + 0x67) == '\0') {
-        pcVar4 = st::fn_006B0140(0x2711,g_module_00807618);
+        pcVar4 = st::fn_006B0140(0x2711,g_hINSTANCE_00807618);
       }
       else {
         pcVar4 = (char *)&DAT_0080c736;
       }
-      pcVar5 = st::fn_006B0140(0x2445,g_module_00807618);
+      pcVar5 = st::fn_006B0140(0x2445,g_hINSTANCE_00807618);
       st::external_00000080((LPSTR)&DAT_0080f33a,"&0%s: &2%s",pcVar5,pcVar4);
       st::fn_007119C0(*(ccFntTy **)(iVar6 + 0x83),&DAT_0080f33a,10,-1,0);
       st::fn_00710A90(*(ccFntTy **)(iVar6 + 0x83),(int)local_8,0,5,0x19,local_8->field_0004 + -10,
@@ -82,8 +82,8 @@ st::fn_005BD4B0
       else {
         resourceId = 0x2339 - (DAT_0080c522 != 0);
       }
-      pcVar4 = st::fn_006B0140(resourceId,g_module_00807618);
-      pcVar5 = st::fn_006B0140(0x2337,g_module_00807618);
+      pcVar4 = st::fn_006B0140(resourceId,g_hINSTANCE_00807618);
+      pcVar5 = st::fn_006B0140(0x2337,g_hINSTANCE_00807618);
       st::external_00000080((LPSTR)&DAT_0080f33a,"&0%s &2%s",pcVar5,pcVar4);
       st::fn_007119C0(*(ccFntTy **)(iVar6 + 0x83),&DAT_0080f33a,10,-1,0);
       st::fn_006C5000
@@ -105,7 +105,7 @@ st::fn_005BD4B0
 }
 
 // 005BD7A0 MReportTy::InitMReport
-#line 1 "decomp/ST.exe/functions/005BD7A0/decomp.c"
+#line 4 "decomp/ST.exe/functions/005BD7A0/decomp.c"
 /* WARNING: Type propagation algorithm not settling */
 /* Recovered from embedded debug metadata:
    E:\__titans\Start\rpt_obj.cpp
@@ -198,7 +198,7 @@ void __thiscall st::fn_005BD7A0(MReportTy *this,undefined1 param_1)
   st::fn_00718780
             ((int)local_6a4,0,0x100,0x1a,0x10,(undefined4 *)&g_startSystem_0081176C->field_0x144);
   puVar5 = st::fn_00709AF0
-                     (DAT_00806784,CASE_B,"STATS",0xffffffff,0,1,0,nullptr);
+                     (PTR_00806784,CASE_B,"STATS",0xffffffff,0,1,0,nullptr);
   this_01->field_007F = puVar5;
   puVar5 = st::fn_0070AA50(g_cMf32_00806780,"RPT_IND",0,1);
   this_01->field_006F = puVar5;
@@ -239,11 +239,11 @@ void __thiscall st::fn_005BD7A0(MReportTy *this,undefined1 param_1)
   st::fn_006B4170(pRVar9,0,0,0,0x2e9,0x15e,0xff);
   st::fn_006B5EE0((RecoveredSourceFamily_dibcopy *)this_01->field_0073,0,0x2d,0,700,0x15e,0x18,0xd);
   st::fn_00718780
-            ((int)local_6a4,0,0x100,0x1a,0x10,(undefined4 *)&this_01->field_0xa3);
+            ((int)local_6a4,0,0x100,0x1a,0x10,(undefined4 *)&this_01->field_00A3);
   st::fn_00718780
             ((int)local_6a4,0,0x100,0x2e,0x10,(undefined4 *)&this_01->field_0x1a3);
   memset(&this_01->field_0x2c7, 0, 0x80); /* compiler bulk-zero initialization */
-  this_01->field_0323 = (MReportTy *)&this_01->field_0xa3;
+  this_01->field_0323 = (MReportTy *)&this_01->field_00A3;
   pcVar6 = this_01->field_0087;
   this_01->field_02EF = this_01->field_0008;
   this_01->field_02CF = this_01->field_0008;
@@ -488,7 +488,7 @@ void __thiscall st::fn_005BD7A0(MReportTy *this,undefined1 param_1)
 }
 
 // 005BE310 MReportTy::DoneMReport
-#line 1 "decomp/ST.exe/functions/005BE310/decomp.c"
+#line 4 "decomp/ST.exe/functions/005BE310/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\Start\rpt_obj.cpp
    MReportTy::DoneMReport */
@@ -579,7 +579,7 @@ void __thiscall st::fn_005BE310(MReportTy *this)
 }
 
 // 005BE5B0 MReportTy::PaintMReport
-#line 1 "decomp/ST.exe/functions/005BE5B0/decomp.c"
+#line 4 "decomp/ST.exe/functions/005BE5B0/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\Start\rpt_obj.cpp
    MReportTy::PaintMReport
@@ -668,7 +668,7 @@ void __thiscall st::fn_005BE5B0(MReportTy *this,char param_1)
     uVar12 = 0;
     iVar14 = -1;
     iVar5 = -1;
-    puVar9 = (uint *)st::fn_006B0140(0x2440,g_module_00807618);
+    puVar9 = (uint *)st::fn_006B0140(0x2440,g_hINSTANCE_00807618);
     st::fn_007119C0(this_00->field_0083,puVar9,iVar5,iVar14,uVar12);
     goto LAB_005bf406;
   }
@@ -679,7 +679,7 @@ void __thiscall st::fn_005BE5B0(MReportTy *this,char param_1)
     uVar12 = 0;
     iVar14 = -1;
     iVar5 = -1;
-    puVar9 = (uint *)st::fn_006B0140(0x2440,g_module_00807618);
+    puVar9 = (uint *)st::fn_006B0140(0x2440,g_hINSTANCE_00807618);
     st::fn_007119C0(this_00->field_0083,puVar9,iVar5,iVar14,uVar12);
     local_18 = (RecoveredSourceFamily_dibcopy *)
                st::fn_00710BA0(this_00->field_0083,(int)this_00->field_0073,0,0,0,0x136,0x22,0);
@@ -998,7 +998,7 @@ LAB_005bf156:
       else if (uVar12 == 3) {
         local_8 = 0x23f2;
       }
-      pcVar8 = st::fn_006B0140(local_8,g_module_00807618);
+      pcVar8 = st::fn_006B0140(local_8,g_hINSTANCE_00807618);
       uVar12 = 0xffffffff;
       do {
         pcVar20 = pcVar8;
@@ -1071,7 +1071,7 @@ LAB_005bef6c:
     uVar12 = 2;
     iVar14 = -1;
     iVar5 = -3;
-    puVar9 = (uint *)st::fn_006B0140(UVar22,g_module_00807618);
+    puVar9 = (uint *)st::fn_006B0140(UVar22,g_hINSTANCE_00807618);
     st::fn_007119C0(this_00->field_0083,puVar9,iVar5,iVar14,uVar12);
   }
   iVar5 = 1;
@@ -1101,7 +1101,7 @@ LAB_005bef6c:
   uVar12 = 0;
   iVar14 = -1;
   iVar5 = -1;
-  puVar9 = (uint *)st::fn_006B0140(0x2444,g_module_00807618);
+  puVar9 = (uint *)st::fn_006B0140(0x2444,g_hINSTANCE_00807618);
   st::fn_007119C0(this_00->field_0083,puVar9,iVar5,iVar14,uVar12);
   st::fn_006B4170((RecoveredSourceFamily_dibcopy *)local_c,0,local_c->field_0004 + -0x69,
                (local_c->field_0008 + -0x1c) / 2,0x50,0x1c,0);
@@ -1126,19 +1126,19 @@ LAB_005bef6c:
   st::fn_007119C0(this_00->field_008B,&DAT_0080f33a,-1,-1,8);
   st::fn_006C5000
             (g_dDXContext_0080759C,0x174,0x1a9,(int)local_c,0,0,0,local_c->field_0004,
-             local_c->field_0008,(int)&this_00->field_0xa3,0x4c);
+             local_c->field_0008,(int)&this_00->field_00A3,0x4c);
   st::fn_006AB060(&local_c);
 LAB_005bf406:
   pAVar2 = this_00->field_0073;
   st::fn_006B48E0
             ((int)g_dDXContext_0080759C,0x1a,0x46,pAVar2,0,0,0,pAVar2->field_0004,pAVar2->field_0008
-             ,(int)&this_00->field_0xa3,0x4c,0x10000ff);
+             ,(ushort *)&this_00->field_00A3,0x4c,0x10000ff);
   g_currentExceptionFrame = local_64.previous;
   return;
 }
 
 // 005BF860 MReportTy::NoneMReport
-#line 1 "decomp/ST.exe/functions/005BF860/decomp.c"
+#line 4 "decomp/ST.exe/functions/005BF860/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\Start\rpt_obj.cpp
    MReportTy::NoneMReport */
@@ -1251,7 +1251,7 @@ LAB_005bfb27:
         pAVar2 = *(AnonPointee_MReportTy_0073 **)((int)&this_00->field_0070 + 3);
         st::fn_006B48E0
                   ((int)g_dDXContext_0080759C,0x1a,0x46,pAVar2,0,0,0,pAVar2->field_0004,
-                   pAVar2->field_0008,(int)&this_00->field_0xa3,0x4c,0x10000ff);
+                   pAVar2->field_0008,(ushort *)&this_00->field_0xa3,0x4c,0x10000ff);
         g_currentExceptionFrame = local_50.previous;
         return;
       }
@@ -1325,7 +1325,7 @@ LAB_005bfb27:
 }
 
 // 005BFD30 MReportTy::PaintMainScore
-#line 1 "decomp/ST.exe/functions/005BFD30/decomp.c"
+#line 4 "decomp/ST.exe/functions/005BFD30/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\Start\rpt_obj.cpp
    MReportTy::PaintMainScore */
@@ -1380,7 +1380,7 @@ void __thiscall st::fn_005BFD30(MReportTy *this,int param_1,uint param_2,int par
 }
 
 // 005BFF00 MReportTy::PaintObjScore
-#line 1 "decomp/ST.exe/functions/005BFF00/decomp.c"
+#line 4 "decomp/ST.exe/functions/005BFF00/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\Start\rpt_obj.cpp
    MReportTy::PaintObjScore
@@ -1454,7 +1454,7 @@ st::fn_005BFF00(MReportTy *this,int param_1,uint param_2,int param_3,int param_4
 }
 
 // 005C0980 MReportTy::CreateBut
-#line 1 "decomp/ST.exe/functions/005C0980/decomp.c"
+#line 4 "decomp/ST.exe/functions/005C0980/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\Start\rpt_obj.cpp
    MReportTy::CreateBut */
@@ -1522,7 +1522,7 @@ st::fn_005C0980
 }
 
 // 005C0B00 MReportTy::PaintBut
-#line 1 "decomp/ST.exe/functions/005C0B00/decomp.c"
+#line 4 "decomp/ST.exe/functions/005C0B00/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\Start\rpt_obj.cpp
    MReportTy::PaintBut
@@ -1605,7 +1605,7 @@ st::fn_005C0B00(MReportTy *this,STMessage *param_1,UINT param_2,int param_3,char
                  (byte)_local_10);
     if (((param_4 == '\0') && (param_2 != 0)) || ((param_4 != '\0' && (param_5 != nullptr)))) {
       if (param_4 == '\0') {
-        param_5 = (uint *)st::fn_006B0140(param_2,g_module_00807618);
+        param_5 = (uint *)st::fn_006B0140(param_2,g_hINSTANCE_00807618);
       }
       local_18 = param_5;
       st::fn_00710A90(local_c->field_0083,(int)pAVar5,0,0,0,0,0);
@@ -1632,7 +1632,7 @@ st::fn_005C0B00(MReportTy *this,STMessage *param_1,UINT param_2,int param_3,char
     st::fn_006B48E0
               ((int)g_dDXContext_0080759C,*SVar3.i32,*(int *)(SVar3.u32 + 4),
                (AnonPointee_MReportTy_0073 *)pAVar5,0,0,0,(uint)local_8,(int)pbVar4,
-               (int)&local_c->field_0xa3,0x4c,0x10000ff);
+               (ushort *)&local_c->field_00A3,0x4c,0x10000ff);
     g_currentExceptionFrame = local_64.previous;
     return;
   }
@@ -1647,7 +1647,7 @@ st::fn_005C0B00(MReportTy *this,STMessage *param_1,UINT param_2,int param_3,char
 }
 
 // 005C0E00 MReportTy::SetCtrl
-#line 1 "decomp/ST.exe/functions/005C0E00/decomp.c"
+#line 4 "decomp/ST.exe/functions/005C0E00/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\Start\rpt_obj.cpp
    MReportTy::SetCtrl */
@@ -1795,7 +1795,7 @@ void __thiscall st::fn_005C0E00(MReportTy *this)
 }
 
 // 005C1340 MReportTy::SetCtrl
-#line 1 "decomp/ST.exe/functions/005C1340/decomp.c"
+#line 4 "decomp/ST.exe/functions/005C1340/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\Start\rpt_obj.cpp
    MReportTy::SetCtrl
@@ -1851,7 +1851,7 @@ void __thiscall st::fn_005C1340(MReportTy *this,int param_1)
     st::fn_00718780
               ((int)local_470,0,0x100,0x1a,0x10,(undefined4 *)&g_startSystem_0081176C->field_0x144);
     st::fn_00718780
-              ((int)local_470,0,0x100,0x1a,0x10,(undefined4 *)&pMVar2->field_0xa3);
+              ((int)local_470,0,0x100,0x1a,0x10,(undefined4 *)&pMVar2->field_00A3);
     st::fn_00718780
               ((int)local_470,0,0x100,0x2e,0x10,(undefined4 *)&pMVar2->field_0x1a3);
     st::fn_00403738(0,0,'\x01',(BITMAPINFO *)*puVar8);
@@ -1889,7 +1889,7 @@ void __thiscall st::fn_005C1340(MReportTy *this,int param_1)
 }
 
 // 005C1610 MReportTy::PaintTab
-#line 1 "decomp/ST.exe/functions/005C1610/decomp.c"
+#line 4 "decomp/ST.exe/functions/005C1610/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\Start\rpt_obj.cpp
    MReportTy::PaintTab */
@@ -2049,14 +2049,14 @@ LAB_005c1806:
   }
   st::fn_006B48E0
             ((int)g_dDXContext_0080759C,pAVar4->field_000C,pAVar4->field_0010,local_8->field_0073,0,
-             iVar5,iVar7,pAVar4->field_0014,pAVar4->field_0018,(int)&local_8->field_0xa3,0x4c,
+             iVar5,iVar7,pAVar4->field_0014,pAVar4->field_0018,(ushort *)&local_8->field_00A3,0x4c,
              0x10000ff);
   g_currentExceptionFrame = local_8c.previous;
   return;
 }
 
 // 005C1A90 MReportTy::GetMessage
-#line 1 "decomp/ST.exe/functions/005C1A90/decomp.c"
+#line 4 "decomp/ST.exe/functions/005C1A90/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\Start\rpt_obj.cpp
    MReportTy::GetMessage
@@ -2131,7 +2131,7 @@ int __thiscall st::fn_005C1A90(MReportTy *this,STMessage *message)
           else {
             UVar22 = 0x23f1;
           }
-          pcVar13 = st::fn_006B0140(UVar22,g_module_00807618);
+          pcVar13 = st::fn_006B0140(UVar22,g_hINSTANCE_00807618);
           uVar17 = 0xffffffff;
           do {
             pcVar21 = pcVar13;
@@ -2185,7 +2185,7 @@ int __thiscall st::fn_005C1A90(MReportTy *this,STMessage *message)
                 piVar20 = nullptr;
               }
               iVar12 = *piVar20 + 1;
-              pcVar13 = st::fn_006B0140(0x2445,g_module_00807618);
+              pcVar13 = st::fn_006B0140(0x2445,g_hINSTANCE_00807618);
               st::external_00000080((LPSTR)&DAT_0080f33a,"%s %d",pcVar13,iVar12);
               st::fn_00404881(this_00,message,0,2,'\x01',&DAT_0080f33a);
             }
@@ -2232,7 +2232,7 @@ int __thiscall st::fn_005C1A90(MReportTy *this,STMessage *message)
       if (piVar20 != nullptr) {
         st::fn_00710A90(local_10->field_0087,(message->arg1).i32,0,0,0,0,0);
         iVar12 = *piVar20 + 1;
-        pcVar13 = st::fn_006B0140(0x2445,g_module_00807618);
+        pcVar13 = st::fn_006B0140(0x2445,g_hINSTANCE_00807618);
         st::external_00000080((LPSTR)&DAT_0080f33a,"%s %d",pcVar13,iVar12);
         st::fn_007119C0(this_00->field_0087,&DAT_0080f33a,-1,-1,
                        (uint)((message->arg0).words.high == 1));
@@ -2260,7 +2260,7 @@ switchD_005c1b14_caseD_5:
     else {
       UVar22 = 0x23f1;
     }
-    pcVar13 = st::fn_006B0140(UVar22,g_module_00807618);
+    pcVar13 = st::fn_006B0140(UVar22,g_hINSTANCE_00807618);
     uVar17 = 0xffffffff;
     do {
       pcVar21 = pcVar13;

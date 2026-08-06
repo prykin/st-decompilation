@@ -9,7 +9,7 @@ int __thiscall FUN_005cbbe0(void *this,AnonShape_005CBBE0_2D1CAA09 *param_1)
   UINT resourceId;
   void *pvVar3;
 
-  pcVar2 = LoadResourceString(8000,g_module_00807618);
+  pcVar2 = LoadResourceString(8000,g_hINSTANCE_00807618);
   if (param_1 != nullptr) {
     switch(param_1->field_0x4) {
     case 1:
@@ -17,13 +17,13 @@ int __thiscall FUN_005cbbe0(void *this,AnonShape_005CBBE0_2D1CAA09 *param_1)
          (resourceId = 0x1f5a, *(char *)param_1 == '\0')) {
         resourceId = 0x1f41;
       }
-      pcVar2 = LoadResourceString(resourceId,g_module_00807618);
+      pcVar2 = LoadResourceString(resourceId,g_hINSTANCE_00807618);
       return (int)pcVar2;
     case 2:
-      pcVar2 = LoadResourceString(0x1f42,g_module_00807618);
+      pcVar2 = LoadResourceString(0x1f42,g_hINSTANCE_00807618);
       return (int)pcVar2;
     case 3:
-      pcVar2 = LoadResourceString(0x1f46,g_module_00807618);
+      pcVar2 = LoadResourceString(0x1f46,g_hINSTANCE_00807618);
       return (int)pcVar2;
     case 4:
       pDVar1 = param_1->field_0050;
@@ -31,7 +31,7 @@ int __thiscall FUN_005cbbe0(void *this,AnonShape_005CBBE0_2D1CAA09 *param_1)
          (pvVar3 = DArrayAt<void>(pDVar1, (uint)(byte)param_1->field_0x5), pvVar3 != nullptr)) {
         return (int)pvVar3 + 0x40;
       }
-      pcVar2 = LoadResourceString(10000,g_module_00807618);
+      pcVar2 = LoadResourceString(10000,g_hINSTANCE_00807618);
     }
   }
   return (int)pcVar2;

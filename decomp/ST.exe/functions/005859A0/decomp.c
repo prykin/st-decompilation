@@ -32,7 +32,7 @@ int __thiscall STLBombC::GetMessage(STLBombC *this,STMessage *message)
   void *local_3c;
   AnonShape_GLOBAL_00806724_3210464F *local_38;
   int local_34;
-  undefined4 local_30;
+  ushort *local_30;
   undefined4 local_2c;
   undefined4 local_28;
   undefined4 local_24;
@@ -134,7 +134,7 @@ int __thiscall STLBombC::GetMessage(STLBombC *this,STMessage *message)
           *(undefined4 *)&this_00->field_0x249 = 0x28;
           *(undefined4 *)&this_00->field_0x24d = 0xfffffe70;
           iVar7 = STT3DSprC::LoadSequence
-                            ((STT3DSprC *)&this_00->field_01D5,0xe,DAT_00806774,"lasbom",
+                            ((STT3DSprC *)&this_00->field_01D5,0xe,PTR_00806774,"lasbom",
                              0x1d);
           if (iVar7 != 0) {
             RaiseInternalException
@@ -178,10 +178,10 @@ int __thiscall STLBombC::GetMessage(STLBombC *this,STMessage *message)
           if (local_3c != nullptr) {
             iVar7 = 0;
             do {
-              *(int **)(iVar7 + (int)local_3c) = DAT_00806774;
+              *(int **)(iVar7 + (int)local_3c) = PTR_00806774;
               iVar7 = iVar7 + 4;
             } while (iVar7 < 0x44);
-            STField<undefined4>(local_3c,0x24) = DAT_00806764;
+            STField<int *>(local_3c,0x24) = PTR_00806764;
             iVar7 = *(int *)((int)&this_00->field_023E + 3);
             if (((iVar7 < 1) || (PTR_00806724 == nullptr)) ||
                (PTR_00806724 == (AnonShape_GLOBAL_00806724_3210464F *)0xffffffd0)) {
@@ -191,7 +191,7 @@ int __thiscall STLBombC::GetMessage(STLBombC *this,STMessage *message)
               local_38 = PTR_00806724 + iVar7;
             }
             local_34 = (int)PTR_00806724->field_002C;
-            local_30 = DAT_008073cc;
+            local_30 = PTR_008073cc;
             local_2c = 0;
             local_28 = 0;
             local_24 = 0;

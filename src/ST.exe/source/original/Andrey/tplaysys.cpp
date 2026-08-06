@@ -2,7 +2,7 @@
 // Generated translation unit: source/original/Andrey/tplaysys.cpp
 
 // 0054C740 CreatePlaySystem
-#line 1 "decomp/ST.exe/functions/0054C740/decomp.c"
+#line 4 "decomp/ST.exe/functions/0054C740/decomp.c"
 /* [STSourceProvenanceApplier begin]
    Recovered source file: E:\__titans\Andrey\tplaysys.cpp
    Diagnostic line evidence: 125 | 176 | 177 (metadata/report site, not the function definition)
@@ -30,7 +30,7 @@ void st::fn_0054C740(void)
       g_playSystem_00802A38 = nullptr;
     }
     else {
-      g_playSystem_00802A38 = st::fn_00401FFA(this,g_appClass_00806728);
+      g_playSystem_00802A38 = st::fn_00401FFA(this,g_app_00806728);
     }
     if (g_playSystem_00802A38 == nullptr) {
       st::fn_006A5E40
@@ -86,7 +86,7 @@ void st::fn_0054C740(void)
 }
 
 // 0054CC20 STPlaySystemC::CreateGameObject
-#line 1 "decomp/ST.exe/functions/0054CC20/decomp.c"
+#line 4 "decomp/ST.exe/functions/0054CC20/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\Andrey\tplaysys.cpp
    STPlaySystemC::CreateGameObject */
@@ -144,7 +144,7 @@ st::fn_0054CC20
 }
 
 // 0054CDD0 FUN_0054cdd0
-#line 1 "decomp/ST.exe/functions/0054CDD0/decomp.c"
+#line 4 "decomp/ST.exe/functions/0054CDD0/decomp.c"
 /* [STSourceProvenanceApplier begin]
    Recovered source file: E:\__titans\Andrey\tplaysys.cpp
    Diagnostic line evidence: 296 | 297 (metadata/report site, not the function definition)
@@ -196,7 +196,7 @@ int st::fn_0054CDD0(undefined4 *param_1,int param_2,undefined4 *param_3,int *par
 }
 
 // 0054CFC0 STPlaySystemC::InitSystem
-#line 1 "decomp/ST.exe/functions/0054CFC0/decomp.c"
+#line 4 "decomp/ST.exe/functions/0054CFC0/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\Andrey\tplaysys.cpp
    STPlaySystemC::InitSystem
@@ -281,7 +281,7 @@ undefined4 __thiscall st::fn_0054CFC0(STPlaySystemC *this)
 }
 
 // 0054D180 STPlaySystemC::DoneSystem
-#line 1 "decomp/ST.exe/functions/0054D180/decomp.c"
+#line 4 "decomp/ST.exe/functions/0054D180/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\Andrey\tplaysys.cpp
    STPlaySystemC::DoneSystem */
@@ -339,7 +339,7 @@ void __thiscall st::fn_0054D180(STPlaySystemC *this)
 }
 
 // 0054D2F0 STPlaySystemC::Save
-#line 1 "decomp/ST.exe/functions/0054D2F0/decomp.c"
+#line 4 "decomp/ST.exe/functions/0054D2F0/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\Andrey\tplaysys.cpp
    STPlaySystemC::Save
@@ -393,7 +393,7 @@ int __thiscall st::fn_0054D2F0(STPlaySystemC *this,cMf32 *param_1)
 }
 
 // 0054D430 STPlaySystemC::SaveObjData
-#line 1 "decomp/ST.exe/functions/0054D430/decomp.c"
+#line 4 "decomp/ST.exe/functions/0054D430/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\Andrey\tplaysys.cpp
    STPlaySystemC::SaveObjData
@@ -441,7 +441,7 @@ st::fn_0054D430
 }
 
 // 0054D550 STPlaySystemC::SaveObjData
-#line 1 "decomp/ST.exe/functions/0054D550/decomp.c"
+#line 4 "decomp/ST.exe/functions/0054D550/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\Andrey\tplaysys.cpp
    STPlaySystemC::SaveObjData
@@ -482,7 +482,7 @@ st::fn_0054D550(STPlaySystemC *this,char *text,byte *param_2,uint param_3,byte p
 }
 
 // 0054D640 STPlaySystemC::Life
-#line 1 "decomp/ST.exe/functions/0054D640/decomp.c"
+#line 4 "decomp/ST.exe/functions/0054D640/decomp.c"
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 /* Recovered from embedded debug metadata:
    E:\__titans\Andrey\tplaysys.cpp
@@ -551,7 +551,7 @@ undefined4 __thiscall st::fn_0054D640(STPlaySystemC *this)
       if (((this_00->field_0038 != '\0') && (g_popUp_008016D8 != nullptr)) &&
          (g_popUp_008016D8->field_009C == '\0')) {
         uVar13 = 8;
-        pcVar4 = st::fn_006B0140(0x4275,g_module_00807618);
+        pcVar4 = st::fn_006B0140(0x4275,g_hINSTANCE_00807618);
         st::fn_004014D8(g_popUp_008016D8,pcVar4,uVar13);
       }
       if (this_00->field_0028 != 0) {
@@ -744,7 +744,7 @@ undefined4 __thiscall st::fn_0054D640(STPlaySystemC *this)
                 pcVar4 = &DAT_00808af6;
                 do {
                   if ((*(int *)(pcVar4 + -6) == local_18) && (*pcVar4 != '\0')) {
-                    pcVar3 = st::fn_006B0140(0x426f,g_module_00807618);
+                    pcVar3 = st::fn_006B0140(0x426f,g_hINSTANCE_00807618);
                     st::external_00000080((LPSTR)&DAT_0080f33a,"%s %s",pcVar4 + -0x46,pcVar3);
                     if (g_popUp_008016D8 != nullptr) {
                       st::fn_004014D8(g_popUp_008016D8,(char *)&DAT_0080f33a,8);
@@ -798,7 +798,7 @@ undefined4 __thiscall st::fn_0054D640(STPlaySystemC *this)
                       pcVar4 = &DAT_00808af6;
                       do {
                         if ((*(int *)(pcVar4 + -6) == local_18) && (*pcVar4 != '\0')) {
-                          pcVar3 = st::fn_006B0140(0x426e,g_module_00807618);
+                          pcVar3 = st::fn_006B0140(0x426e,g_hINSTANCE_00807618);
                           st::external_00000080((LPSTR)&DAT_0080f33a,"%s %s",pcVar4 + -0x46,pcVar3);
                           if (g_popUp_008016D8 != nullptr) {
                             st::fn_004014D8(g_popUp_008016D8,(char *)&DAT_0080f33a,8);
@@ -837,13 +837,13 @@ undefined4 __thiscall st::fn_0054D640(STPlaySystemC *this)
       }
       if ((g_popUp_008016D8 != nullptr) && (g_popUp_008016D8->field_009C == '\0')) {
         uVar13 = 8;
-        pcVar4 = st::fn_006B0140(0x426a,g_module_00807618);
+        pcVar4 = st::fn_006B0140(0x426a,g_hINSTANCE_00807618);
         st::fn_004014D8(g_popUp_008016D8,pcVar4,uVar13);
       }
       if ((g_array_0080C4FE->count == 0) || (59999 < (int)(DVar6 - this_00->field_00BC))) {
         if (g_popUp_008016D8 != nullptr) {
           uVar13 = 8;
-          pcVar4 = st::fn_006B0140(0x4269,g_module_00807618);
+          pcVar4 = st::fn_006B0140(0x4269,g_hINSTANCE_00807618);
           st::fn_004014D8(g_popUp_008016D8,pcVar4,uVar13);
         }
         this_00->field_0038 = 0;
@@ -948,7 +948,7 @@ cf_common_join_0054DFAD:
 }
 
 // 0054E4F0 STPlaySystemC::GetMessage
-#line 1 "decomp/ST.exe/functions/0054E4F0/decomp.c"
+#line 4 "decomp/ST.exe/functions/0054E4F0/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\Andrey\tplaysys.cpp
    STPlaySystemC::GetMessage
@@ -1030,14 +1030,14 @@ int __thiscall st::fn_0054E4F0(STPlaySystemC *this,STMessage *message)
               iVar5 = local_8;
             }
             local_8 = iVar5;
-            pcVar11 = st::fn_006B0140(19000,g_module_00807618);
+            pcVar11 = st::fn_006B0140(19000,g_hINSTANCE_00807618);
             st::fn_00404D8B(g_cLoading_00802A58,0,pcVar11,iVar5);
           }
           pSVar10 = local_c;
           DAT_00802a3c = 0;
           st::fn_006F2E40
                     (g_cMf32_00806754,PTR_DAT_007c83b0,thunk_FUN_0054ca10,local_c,0);
-          pcVar11 = st::fn_006B0140(0x4a39,g_module_00807618);
+          pcVar11 = st::fn_006B0140(0x4a39,g_hINSTANCE_00807618);
           st::external_00000080((LPSTR)&DAT_0080f33a,"%d %s",DAT_00802a3c,pcVar11);
           if (g_cLoading_00802A58 != nullptr) {
             st::fn_00403472(g_cLoading_00802A58,CASE_2,0,(char *)&DAT_0080f33a);
@@ -1114,7 +1114,7 @@ int __thiscall st::fn_0054E4F0(STPlaySystemC *this,STMessage *message)
 }
 
 // 0054E950 STPlaySystemC::AddToRep
-#line 1 "decomp/ST.exe/functions/0054E950/decomp.c"
+#line 4 "decomp/ST.exe/functions/0054E950/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\Andrey\tplaysys.cpp
    STPlaySystemC::AddToRep
@@ -1176,7 +1176,7 @@ void __thiscall st::fn_0054E950(STPlaySystemC *this,undefined4 *param_1,uint par
 }
 
 // 0054EC20 PlaySystemTy::SendClientMail
-#line 1 "decomp/ST.exe/functions/0054EC20/decomp.c"
+#line 4 "decomp/ST.exe/functions/0054EC20/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\Andrey\tplaysys.cpp
    PlaySystemTy::SendClientMail
@@ -1284,7 +1284,7 @@ void __thiscall st::fn_0054EC20(PlaySystemTy *this)
 }
 
 // 0054EEE0 STPlaySystemC::SetCtrlCmd
-#line 1 "decomp/ST.exe/functions/0054EEE0/decomp.c"
+#line 4 "decomp/ST.exe/functions/0054EEE0/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\Andrey\tplaysys.cpp
    STPlaySystemC::SetCtrlCmd
@@ -1427,7 +1427,7 @@ st::fn_0054EEE0
 }
 
 // 0054F1D0 STPlaySystemC::PrepareMail
-#line 1 "decomp/ST.exe/functions/0054F1D0/decomp.c"
+#line 4 "decomp/ST.exe/functions/0054F1D0/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\Andrey\tplaysys.cpp
    STPlaySystemC::PrepareMail */
@@ -1588,7 +1588,7 @@ LAB_0054f52c:
             }
             goto LAB_0054f52c;
           case 0x42:
-            pcVar13 = st::fn_006B0140(0x426a,g_module_00807618);
+            pcVar13 = st::fn_006B0140(0x426a,g_hINSTANCE_00807618);
             uVar9 = 0xffffffff;
             do {
               pcVar24 = pcVar13;
@@ -1863,7 +1863,7 @@ cf_common_exit_0054F76E:
         puVar18 = nullptr;
         if (g_popUp_008016D8 != nullptr) {
           uVar9 = 9;
-          pcVar13 = st::fn_006B0140(17000,g_module_00807618);
+          pcVar13 = st::fn_006B0140(17000,g_hINSTANCE_00807618);
           puVar18 = (undefined4 *)st::fn_004014D8(g_popUp_008016D8,pcVar13,uVar9);
         }
         pSVar21->field_00BB = 0;
@@ -1876,7 +1876,7 @@ cf_common_exit_0054F76E:
   }
   if ((DAT_0080735e != '\0') && (g_popUp_008016D8 != nullptr)) {
     uVar9 = 8;
-    pcVar13 = st::fn_006B0140(0x426c,g_module_00807618);
+    pcVar13 = st::fn_006B0140(0x426c,g_hINSTANCE_00807618);
     st::fn_004014D8(g_popUp_008016D8,pcVar13,uVar9);
   }
 LAB_0054f98b:
@@ -1992,7 +1992,7 @@ cf_common_join_0054FAD8:
 }
 
 // 00550250 STPlaySystemC::SendMail
-#line 1 "decomp/ST.exe/functions/00550250/decomp.c"
+#line 4 "decomp/ST.exe/functions/00550250/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\Andrey\tplaysys.cpp
    STPlaySystemC::SendMail

@@ -188,7 +188,7 @@ int __thiscall ChooseMapTy::GetMessage(ChooseMapTy *this,STMessage *message)
       uVar27 = 2;
       iVar26 = -1;
       iVar13 = -1;
-      puVar14 = (uint *)LoadResourceString(resourceId,g_module_00807618);
+      puVar14 = (uint *)LoadResourceString(resourceId,g_hINSTANCE_00807618);
       ccFntTy::WrStr(g_startSystem_0081176C->field_0034,puVar14,iVar13,iVar26,uVar27);
       FUN_006b35d0((int *)g_ddxContext_008075A8,this_01->field_1C87);
       goto cf_common_exit_005B2053;
@@ -573,7 +573,7 @@ LAB_005b1b6c:
       FUN_00715360(g_int_00811764,0,'\x1b',local_6e0,0x451,1,0xffffffff);
     }
 LAB_005b2011:
-    Library::DKW::TBL::FUN_006b6020(&this_01->field_1A5B->field_0686->flags,0,&DAT_008016a0);
+    Library::DKW::TBL::FUN_006b6020(this_01->field_1A5B->field_0686,0,&DAT_008016a0);
     this_01->field_002D = 0x33;
     *(DArrayTy **)&this_01->field_0x31 = this_01->field_1A5B->field_0686;
     FUN_006e6080(this_01,2,this_01->field_1A5B->field_054C,(undefined4 *)&this_01->field_0x1d);

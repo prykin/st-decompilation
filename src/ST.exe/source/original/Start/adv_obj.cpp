@@ -2,7 +2,7 @@
 // Generated translation unit: source/original/Start/adv_obj.cpp
 
 // 00590170 MAdvTy::InitMAdv
-#line 1 "decomp/ST.exe/functions/00590170/decomp.c"
+#line 4 "decomp/ST.exe/functions/00590170/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\Start\adv_obj.cpp
    MAdvTy::InitMAdv */
@@ -78,7 +78,7 @@ void __thiscall st::fn_00590170(MAdvTy *this)
 }
 
 // 00590410 MAdvTy::DoneMAdv
-#line 1 "decomp/ST.exe/functions/00590410/decomp.c"
+#line 4 "decomp/ST.exe/functions/00590410/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\Start\adv_obj.cpp
    MAdvTy::DoneMAdv */
@@ -123,7 +123,7 @@ void __thiscall st::fn_00590410(MAdvTy *this)
 }
 
 // 00590580 MAdvTy::PaintMAdv
-#line 1 "decomp/ST.exe/functions/00590580/decomp.c"
+#line 4 "decomp/ST.exe/functions/00590580/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\Start\adv_obj.cpp
    MAdvTy::PaintMAdv
@@ -169,13 +169,13 @@ void __thiscall st::fn_00590580(MAdvTy *this)
     uVar9 = 0xffffffff;
     if (pMVar2->field_005D == '\0') {
       uVar8 = 0xfffffffe;
-      puVar4 = (uint *)st::fn_006B0140(0x25e4,g_module_00807618);
+      puVar4 = (uint *)st::fn_006B0140(0x25e4,g_hINSTANCE_00807618);
       st::fn_00404C2D(this_02,0,0,0x1b8,800,0x14,puVar4,uVar8,uVar9,pcVar10,uVar11);
       pcVar10 = g_startSystem_0081176C->field_0030;
       uVar8 = 1;
       uVar11 = 0xffffffff;
       uVar9 = 0xffffffff;
-      puVar4 = (uint *)st::fn_006B0140(0x25e8,g_module_00807618);
+      puVar4 = (uint *)st::fn_006B0140(0x25e8,g_hINSTANCE_00807618);
       iVar7 = 0x8c;
       iVar6 = 800;
       iVar5 = 0x1cc;
@@ -185,19 +185,19 @@ void __thiscall st::fn_00590580(MAdvTy *this)
     }
     else {
       uVar8 = 0xffffffff;
-      puVar4 = (uint *)st::fn_006B0140(0x25e5,g_module_00807618);
+      puVar4 = (uint *)st::fn_006B0140(0x25e5,g_hINSTANCE_00807618);
       st::fn_00404C2D(this_00,0,10,10,0x30c,0x32,puVar4,uVar8,uVar9,pcVar10,uVar11);
       pcVar10 = g_startSystem_0081176C->field_0030;
       uVar8 = 1;
       uVar11 = 0xffffffff;
       uVar9 = 0;
-      puVar4 = (uint *)st::fn_006B0140(0x25e6,g_module_00807618);
+      puVar4 = (uint *)st::fn_006B0140(0x25e6,g_hINSTANCE_00807618);
       st::fn_00404C2D(this_01,0,0x10e,0x3c,0x20d,0xfa,puVar4,uVar9,uVar11,pcVar10,uVar8);
       pcVar10 = g_startSystem_0081176C->field_0030;
       uVar8 = 1;
       uVar11 = 0xffffffff;
       uVar9 = 0;
-      puVar4 = (uint *)st::fn_006B0140(0x25e7,g_module_00807618);
+      puVar4 = (uint *)st::fn_006B0140(0x25e7,g_hINSTANCE_00807618);
       iVar7 = 0xe6;
       iVar6 = 0x302;
       iVar5 = 0x172;
@@ -220,7 +220,7 @@ void __thiscall st::fn_00590580(MAdvTy *this)
 }
 
 // 005907D0 MAdvTy::NoneMAdv
-#line 1 "decomp/ST.exe/functions/005907D0/decomp.c"
+#line 4 "decomp/ST.exe/functions/005907D0/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\Start\adv_obj.cpp
    MAdvTy::NoneMAdv */
@@ -250,7 +250,7 @@ void __thiscall st::fn_005907D0(MAdvTy *this)
 }
 
 // 005908B0 MAdvTy::GetMessage
-#line 1 "decomp/ST.exe/functions/005908B0/decomp.c"
+#line 4 "decomp/ST.exe/functions/005908B0/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\Start\adv_obj.cpp
    MAdvTy::GetMessage

@@ -2,7 +2,7 @@
 // Generated translation unit: source/original/Andrey/bldobj.cpp
 
 // 004F05C0 BldObjPanelTy::InitBldObjPanel
-#line 1 "decomp/ST.exe/functions/004F05C0/decomp.c"
+#line 4 "decomp/ST.exe/functions/004F05C0/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\Andrey\bldobj.cpp
    BldObjPanelTy::InitBldObjPanel */
@@ -69,7 +69,7 @@ void __thiscall st::fn_004F05C0(BldObjPanelTy *this)
     STDebugBreak(); /* noreturn in standalone pseudocode */
   }
   iVar7 = 5;
-  g_prodPanel_00801684 = (ProdPanelTy *)local_1c;
+  g_bldObjPanel_00801684 = (ProdPanelTy *)local_1c;
   puVar10 = &local_1c->field_027E;
   do {
     pDVar3 = st::fn_006AE290(nullptr,10,0x30,5);
@@ -88,10 +88,10 @@ void __thiscall st::fn_004F05C0(BldObjPanelTy *this)
   puVar5 = st::fn_006F1CE0(g_cMf32_00806790,1,&this_00->field_006C,nullptr,1);
   this_00->field_027A = puVar5;
   puVar5 = st::fn_00709AF0
-                     (DAT_00806794,CASE_B,&DAT_007c1910,0xffffffff,0,1,0,nullptr);
+                     (PTR_00806794,CASE_B,&DAT_007c1910,0xffffffff,0,1,0,nullptr);
   this_00->field_0188 = puVar5;
   puVar5 = st::fn_00709AF0
-                     (DAT_00806794,CASE_B,"OBJSD",0xffffffff,0,1,0,nullptr);
+                     (PTR_00806794,CASE_B,"OBJSD",0xffffffff,0,1,0,nullptr);
   this_00->field_018C = puVar5;
   pCVar4 = st::fn_0040577C("BKG_BLDOBJBUT",0);
   st::fn_00404241
@@ -168,13 +168,13 @@ switchD_004f0850_default:
   local_20 = 1;
   local_44 = local_64;
   /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-  (**(code **)(*(int *)this_00->field_000C + 8))(5,&this_00[1].field_0x10,0,local_74,0);
+  (**(code **)(*(int *)this_00->field_000C + 8))(5,&this_00->field_0292,0,local_74,0);
   g_currentExceptionFrame = local_b8.previous;
   return;
 }
 
 // 004F0B60 BldObjPanelTy::Update
-#line 1 "decomp/ST.exe/functions/004F0B60/decomp.c"
+#line 4 "decomp/ST.exe/functions/004F0B60/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\Andrey\bldobj.cpp
    BldObjPanelTy::Update */
@@ -228,7 +228,7 @@ void __thiscall st::fn_004F0B60(BldObjPanelTy *this)
 }
 
 // 004F0E60 BldObjPanelTy::PaintBldBut
-#line 1 "decomp/ST.exe/functions/004F0E60/decomp.c"
+#line 4 "decomp/ST.exe/functions/004F0E60/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\Andrey\bldobj.cpp
    BldObjPanelTy::PaintBldBut */
@@ -312,7 +312,7 @@ void __thiscall st::fn_004F0E60(BldObjPanelTy *this,AnonShape_004EF320_444F9AB1 
 }
 
 // 004F1080 BldObjPanelTy::GetMessage
-#line 1 "decomp/ST.exe/functions/004F1080/decomp.c"
+#line 4 "decomp/ST.exe/functions/004F1080/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\Andrey\bldobj.cpp
    BldObjPanelTy::GetMessage

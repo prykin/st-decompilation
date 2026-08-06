@@ -35,7 +35,7 @@ void __thiscall FUN_0063d100(void *this,undefined4 *param_1)
   local_20 = Library::DKW::LIB::MemAlloc(0x44);
   iVar2 = 0;
   do {
-    *(undefined4 *)(iVar2 + (int)local_20) = DAT_00806774;
+    *(int **)(iVar2 + (int)local_20) = PTR_00806774;
     iVar2 = iVar2 + 4;
   } while (iVar2 < 0x44);
   local_1c = 0;

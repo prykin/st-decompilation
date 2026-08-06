@@ -32,6 +32,21 @@ No wall-clock time is written. Repeating the command for the same accepted
 corpus and generator produces byte-identical tracked files. The source manifest
 pins the generator plus every consumed central corpus index by SHA-256.
 
+After generation, run the compiler audit independently:
+
+```sh
+python3 tools/st_compile_audit.py
+```
+
+It verifies every file listed by `source_manifest.json`, invokes the selected
+C++ compiler separately for all 318 translation units, and maps diagnostics
+back to stable function addresses through the generated `#line` directives.
+The default report is local under `.st-local/source-compile-audit/ST.exe/` and
+therefore never enters Git. `--compiler`, `--jobs`, `--error-limit`,
+`--include-warnings`, and `--output` make controlled probes reproducible. The
+JSON report contains no wall-clock timestamp; elapsed time is printed only to
+the console.
+
 ## Output layout
 
 ```text
@@ -84,11 +99,41 @@ has been recovered.
 Image-backed globals are declarations only. The generator never fabricates a
 zero initializer or copies the proprietary image into the repository.
 
+Two source-assembly views preserve facts which readable pseudocode uses but a
+plain POD declaration would otherwise lose:
+
+- when a statically typed receiver uses `field_0xOFFSET` and that exact offset
+  is still one unnamed byte in the exported record, only that path/offset pair
+  is materialized as an `undefined1` member; unrelated storage stays coalesced;
+- when an exact primary-vtable slot has a receiver-aware function definition,
+  its owner record receives a normal non-virtual member wrapper which forwards
+  through the explicit physical `vtable` field. Thus `object->slot()` remains
+  readable without asking the host compiler to invent a vptr, inheritance, or
+  layout;
+- when a non-thunk `__thiscall` has one exact exported structure owner and a
+  matching receiver parameter, that structure receives an ordinary forwarding
+  method over `st::fn_ADDRESS`. Virtual slots keep their dispatch wrappers;
+  constructors, destructors, ambiguous overloads, and field-name collisions
+  stay in `audit/issues.jsonl` rather than being guessed.
+
+Nested field chains and indexed/by-value receivers are resolved only through
+component types already present in `types.jsonl`. Neither mechanism infers a
+semantic field type or changes Ghidra.
+
+Ghidra may legitimately give one vtable record type and its image-backed global
+object the same spelling. Those identifiers occupy different practical roles in
+the decompiler but the object hides the type in C++. For each unique collision,
+the generator keeps the type spelling and gives only exact address-taken object
+uses an address-stable `st_global_ADDRESS` source name. The declaration records
+the original image symbol in a comment. No Ghidra rename or semantic claim is
+made.
+
 ## Validation and present boundary
 
 The generated declaration surface can be checked independently:
 
 ```sh
+python3 tools/test_st_source_tree.py
 clang++ -std=c++17 -fms-extensions \
   -I src/ST.exe/include -x c++ -fsyntax-only \
   -include st/generated.hpp /dev/null
@@ -102,11 +147,14 @@ before layout assertions or a real link are meaningful.
 `CMakeLists.txt` exposes every generated translation unit as an object target.
 It intentionally does not link. A full object build is expected to fail today
 and is now useful evidence rather than a missing-infrastructure failure. The
-remaining diagnostics principally identify:
+current Apple Clang C++17 probe, with a limit of 32 diagnostics per translation
+unit, passes 54 of 318 units and records 4,068 errors, 4,066 of them mapped to a
+function address. The cap makes this a monotonic comparison baseline, not the
+uncapped total of all errors. Remaining diagnostics principally identify:
 
 - unmaterialized `field_0x...` views over anonymous storage;
 - a 32-bit generic word whose pointer/scalar role is still unresolved;
-- virtual-call member sugar without a proven source-level member declaration;
+- vtable slots which still lack a receiver-aware callable definition;
 - weak or conflicting recovered call prototypes;
 - image data whose exact declared type is absent from `globals.jsonl`;
 - ambiguous direct spellings which cannot be joined by name.

@@ -25,7 +25,7 @@ MTaskTy::OutGlassBmpProc
       pAVar1 = (AnonPointee_MReportTy_0073 *)*local_8;
       Library::DKW::DDX::FUN_006b48e0
                 (param_1,param_4,param_5,pAVar1,0,0,0,pAVar1->field_0004,pAVar1->field_0008,
-                 local_8[1],0,0x10000ff);
+                 (ushort *)local_8[1],0,0x10000ff);
       g_currentExceptionFrame = local_4c.previous;
       return;
     }

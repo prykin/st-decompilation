@@ -69,7 +69,7 @@ int __thiscall ResearchPanelTy::GetMessage(ResearchPanelTy *this,STMessage *mess
           StartSystemTy::sub_006E56B0(this_00->field_000C,this_00->field_0282);
         }
         this_00->field_0282 = 0;
-        g_prodPanel_008016E8 = nullptr;
+        g_researchPanel_008016E8 = nullptr;
         g_currentExceptionFrame = local_58.previous;
         return 0;
       }

@@ -2,7 +2,7 @@
 // Generated translation unit: source/original/tapp.cpp
 
 // 0056ADC0 STAppC::InitApp
-#line 1 "decomp/ST.exe/functions/0056ADC0/decomp.c"
+#line 4 "decomp/ST.exe/functions/0056ADC0/decomp.c"
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 /* Recovered from embedded debug metadata:
    E:\__titans\tapp.cpp
@@ -76,8 +76,8 @@ st::fn_0056ADC0(STAppC *this,HINSTANCE param_1,undefined4 param_2,undefined4 par
       break;
     case -0x5001fff6:
       UVar26 = 0;
-      pcVar12 = st::fn_006B0140(0x2648,g_module_00807618);
-      pcVar14 = st::fn_006B0140(0x264b,g_module_00807618);
+      pcVar12 = st::fn_006B0140(0x2648,g_hINSTANCE_00807618);
+      pcVar14 = st::fn_006B0140(0x264b,g_hINSTANCE_00807618);
       st::external_00000081((HWND)0x0,pcVar14,pcVar12,UVar26);
       break;
     default:
@@ -89,8 +89,8 @@ st::fn_0056ADC0(STAppC *this,HINSTANCE param_1,undefined4 param_2,undefined4 par
       break;
     case -0x5001fff3:
       UVar26 = 0;
-      pcVar12 = st::fn_006B0140(0x2648,g_module_00807618);
-      pcVar14 = st::fn_006B0140(0x264c,g_module_00807618);
+      pcVar12 = st::fn_006B0140(0x2648,g_hINSTANCE_00807618);
+      pcVar14 = st::fn_006B0140(0x264c,g_hINSTANCE_00807618);
       st::external_00000081((HWND)0x0,pcVar14,pcVar12,UVar26);
     }
     st::fn_006A5E40(iVar7,0,"E:\\__titans\\tapp.cpp",0x2cc);
@@ -167,7 +167,7 @@ st::fn_0056ADC0(STAppC *this,HINSTANCE param_1,undefined4 param_2,undefined4 par
     puVar2 = &local_c->field_7D1A;
     st::external_00000080((LPSTR)puVar2,"%s%s%s",puVar1,PTR_s_SYSTEM__0079b030,"INTER");
     g_cMf32_00806780 = (cMf32 *)st::fn_006F0EC0(0x345,puVar2,0,0,0);
-    DAT_00806784 = st::fn_007097C0((int)g_cMf32_00806780);
+    PTR_00806784 = st::fn_007097C0((int)g_cMf32_00806780);
     st::external_00000080((LPSTR)puVar2,"%s%s",&pSVar19->field_0x470,PTR_s_TASKS_0079b048);
     g_cMf32_00806798 = (cMf32 *)st::fn_006F0EC0(0x345,puVar2,0,0,0);
     st::external_00000080((LPSTR)puVar2,"%s%s%s",puVar1,PTR_s_SYSTEM__0079b030,PTR_s_STRATEGS_0079b04c);
@@ -1056,7 +1056,7 @@ cf_common_exit_0056C034:
 }
 
 // 0056C750 STAppC::DoneApp
-#line 1 "decomp/ST.exe/functions/0056C750/decomp.c"
+#line 4 "decomp/ST.exe/functions/0056C750/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\tapp.cpp
    STAppC::DoneApp */
@@ -1123,14 +1123,14 @@ void __thiscall st::fn_0056C750(STAppC *this)
     g_cMf32_00806758 = nullptr;
     if (g_cMf32_00806760 != nullptr) {
       st::fn_006F20E0(g_cMf32_00806760,&DAT_0080679c);
-      if (DAT_00806764 != 0) {
-        st::fn_0070A300(&DAT_00806764);
+      if (PTR_00806764 != nullptr) {
+        st::fn_0070A300((int *)&PTR_00806764);
       }
       st::fn_006F1170(g_cMf32_00806760);
       g_cMf32_00806760 = nullptr;
     }
-    if (DAT_00806784 != 0) {
-      st::fn_0070A300(&DAT_00806784);
+    if (PTR_00806784 != nullptr) {
+      st::fn_0070A300((int *)&PTR_00806784);
     }
     if (g_cMf32_00806780 != nullptr) {
       st::fn_006F1170(g_cMf32_00806780);
@@ -1209,7 +1209,7 @@ void __thiscall st::fn_0056C750(STAppC *this)
 }
 
 // 0056CBD0 STAppC::MainWindowProc
-#line 1 "decomp/ST.exe/functions/0056CBD0/decomp.c"
+#line 4 "decomp/ST.exe/functions/0056CBD0/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\tapp.cpp
    STAppC::MainWindowProc
@@ -1252,7 +1252,7 @@ st::fn_0056CBD0
     }
     STDebugBreak(); /* noreturn in standalone pseudocode */
   }
-  iVar2 = st::fn_006E4370(g_appClass_00806728,param_2,param_3,param_4);
+  iVar2 = st::fn_006E4370(g_app_00806728,param_2,param_3,param_4);
   if ((iVar2 != 0) &&
      (iVar2 = st::fn_006AD4D0("E:\\__titans\\tapp.cpp",0x330,0,-0x5001fff8,"%s",
                                  "STAppC::MainWindowProc"), iVar2 != 0)) {
@@ -1269,7 +1269,7 @@ st::fn_0056CBD0
     case CASE_5:
       memset(local_6c, 0, 0x20); /* compiler bulk-zero initialization */
       local_5c = 0x66;
-      st::fn_006E3DD0(g_appClass_00806728,3,1,(int)local_6c);
+      st::fn_006E3DD0(g_app_00806728,3,1,(int)local_6c);
       g_currentExceptionFrame = local_4c.previous;
       return local_8;
     case CASE_F:
@@ -1379,9 +1379,9 @@ st::fn_0056CBD0
     st::fn_006B5F80((int *)g_ddxContext_008075A8,0,0,g_nWidth_00806730,DAT_00806734);
     st::fn_006BAB60(g_dDXContext_0080759C,0x1000000);
     st::fn_006BB370(g_dDXContext_0080759C,0,0);
-    g_appClass_00806728->field_4EFA = 0;
-    st::fn_00402F54(&g_appClass_00806728->field_0x38,hWnd);
-    st::fn_006E3DB0((int)&g_appClass_00806728->field_0x113a);
+    g_app_00806728->field_4EFA = 0;
+    st::fn_00402F54(&g_app_00806728->field_0x38,hWnd);
+    st::fn_006E3DB0((int)&g_app_00806728->field_0x113a);
     g_currentExceptionFrame = local_4c.previous;
     return local_8;
   }
@@ -1391,7 +1391,7 @@ st::fn_0056CBD0
 }
 
 // 0056D1F0 STAppC::CommonFunction
-#line 1 "decomp/ST.exe/functions/0056D1F0/decomp.c"
+#line 4 "decomp/ST.exe/functions/0056D1F0/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\tapp.cpp
    STAppC::CommonFunction
@@ -1445,7 +1445,7 @@ undefined4 __thiscall st::fn_0056D1F0(STAppC *this)
 }
 
 // 0056D370 STAppC::OpenGameDBs
-#line 1 "decomp/ST.exe/functions/0056D370/decomp.c"
+#line 4 "decomp/ST.exe/functions/0056D370/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\tapp.cpp
    STAppC::OpenGameDBs
@@ -1473,19 +1473,19 @@ void __thiscall st::fn_0056D370(STAppC *this)
     puVar4 = &local_8->field_7D1A;
     st::external_00000080((LPSTR)puVar4,"%s%s",puVar1,"NATURE");
     DAT_00806768 = st::fn_006F0EC0(0x345,puVar4,0,0,0);
-    DAT_0080676c = st::fn_007097C0((int)DAT_00806768);
+    PTR_0080676c = st::fn_007097C0((int)DAT_00806768);
     st::external_00000080((LPSTR)puVar4,"%s%s",puVar1,"OTHER");
     PTR_00806770 = (cMf32 *)st::fn_006F0EC0(0x345,puVar4,0,0,0);
-    DAT_00806774 = st::fn_007097C0((int)PTR_00806770);
+    PTR_00806774 = st::fn_007097C0((int)PTR_00806770);
     st::external_00000080((LPSTR)puVar4,"%s%s",puVar1,&DAT_007ca15c);
     DAT_00806778 = st::fn_006F0EC0(0x345,puVar4,0,0,0);
-    DAT_0080677c = st::fn_007097C0((int)DAT_00806778);
+    PTR_0080677c = st::fn_007097C0((int)DAT_00806778);
     st::external_00000080((LPSTR)puVar4,"%s%s",puVar1,"CONTROLG");
     g_cMf32_00806790 = (cMf32 *)st::fn_006F0EC0(0x345,puVar4,0,0,0);
-    DAT_00806794 = st::fn_007097C0((int)g_cMf32_00806790);
+    PTR_00806794 = st::fn_007097C0((int)g_cMf32_00806790);
     st::external_00000080((LPSTR)puVar4,"%s%s",puVar1,"OBJECT");
     DAT_00806788 = st::fn_006F0EC0(0x345,puVar4,0,0,0);
-    DAT_0080678c = st::fn_007097C0((int)DAT_00806788);
+    PTR_0080678c = st::fn_007097C0((int)DAT_00806788);
     g_currentExceptionFrame = local_4c.previous;
     return;
   }
@@ -1500,7 +1500,7 @@ void __thiscall st::fn_0056D370(STAppC *this)
 }
 
 // 0056D580 STAppC::CloseGameDBs
-#line 1 "decomp/ST.exe/functions/0056D580/decomp.c"
+#line 4 "decomp/ST.exe/functions/0056D580/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\tapp.cpp
    STAppC::CloseGameDBs
@@ -1520,28 +1520,28 @@ void __thiscall st::fn_0056D580(STAppC *this)
   g_currentExceptionFrame = &local_48;
   errorCode = st::fn_0072D7F0(local_48.jumpBuffer,0);
   if (errorCode == 0) {
-    if (DAT_0080678c != 0) {
-      st::fn_0070A300(&DAT_0080678c);
+    if (PTR_0080678c != nullptr) {
+      st::fn_0070A300((int *)&PTR_0080678c);
     }
     st::fn_006F1170(DAT_00806788);
     DAT_00806788 = nullptr;
-    if (DAT_00806794 != 0) {
-      st::fn_0070A300(&DAT_00806794);
+    if (PTR_00806794 != nullptr) {
+      st::fn_0070A300((int *)&PTR_00806794);
     }
     st::fn_006F1170(g_cMf32_00806790);
     g_cMf32_00806790 = nullptr;
-    if (DAT_0080677c != 0) {
-      st::fn_0070A300(&DAT_0080677c);
+    if (PTR_0080677c != nullptr) {
+      st::fn_0070A300((int *)&PTR_0080677c);
     }
     st::fn_006F1170(DAT_00806778);
     DAT_00806778 = nullptr;
-    if (DAT_00806774 != 0) {
-      st::fn_0070A300(&DAT_00806774);
+    if (PTR_00806774 != nullptr) {
+      st::fn_0070A300((int *)&PTR_00806774);
     }
     st::fn_006F1170(PTR_00806770);
     PTR_00806770 = nullptr;
-    if (DAT_0080676c != 0) {
-      st::fn_0070A300(&DAT_0080676c);
+    if (PTR_0080676c != nullptr) {
+      st::fn_0070A300((int *)&PTR_0080676c);
     }
     st::fn_006F1170(DAT_00806768);
     DAT_00806768 = nullptr;
@@ -1559,7 +1559,7 @@ void __thiscall st::fn_0056D580(STAppC *this)
 }
 
 // 0056D740 STAppC::ChangeResolution
-#line 1 "decomp/ST.exe/functions/0056D740/decomp.c"
+#line 4 "decomp/ST.exe/functions/0056D740/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\tapp.cpp
    STAppC::ChangeResolution */
@@ -1676,7 +1676,7 @@ void __thiscall st::fn_0056D740(STAppC *this,int param_1)
 }
 
 // 0056DB80 STAppC::StartGame
-#line 1 "decomp/ST.exe/functions/0056DB80/decomp.c"
+#line 4 "decomp/ST.exe/functions/0056DB80/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\tapp.cpp
    STAppC::StartGame */
@@ -1849,19 +1849,19 @@ void __thiscall st::fn_0056DB80(STAppC *this)
     if (g_cMf32_00806760 != nullptr) {
       st::fn_00404039();
       st::fn_006F20E0(g_cMf32_00806760,&DAT_0080679c);
-      if (DAT_00806764 != nullptr) {
-        st::fn_0070A300((int *)&DAT_00806764);
+      if (PTR_00806764 != nullptr) {
+        st::fn_0070A300((int *)&PTR_00806764);
       }
       st::fn_006F1170(g_cMf32_00806760);
       g_cMf32_00806760 = nullptr;
     }
     g_cMf32_00806760 = (cMf32 *)st::fn_006F0EC0(0x345,&local_224,0,0,0);
-    DAT_00806764 = st::fn_007097C0((int)g_cMf32_00806760);
+    PTR_00806764 = st::fn_007097C0((int)g_cMf32_00806760);
     DAT_0080679c = st::fn_0070A9F0(g_cMf32_00806760,"PALETTE",2,1);
     st::fn_00402C43((int)g_cMf32_00806760,0);
     if (pSVar12->field_7D0E == 0) {
       puVar15 = &pSVar12->field_4DA3;
-      pcVar8 = st::fn_006B0140(0x267f,g_module_00807618);
+      pcVar8 = st::fn_006B0140(0x267f,g_hINSTANCE_00807618);
       st::external_00000080(&pSVar12->field_7D1A,"%s %s",pcVar8,puVar15);
       if (g_cLoading_00802A58 != nullptr) {
         st::fn_00401230(g_cLoading_00802A58,&pSVar12->field_7D1A);
@@ -1900,7 +1900,7 @@ void __thiscall st::fn_0056DB80(STAppC *this)
                   (&pSVar12->field_76F6,nullptr,nullptr,local_328,nullptr);
         pbVar14 = local_328;
       }
-      pcVar8 = st::fn_006B0140(0x267f,g_module_00807618);
+      pcVar8 = st::fn_006B0140(0x267f,g_hINSTANCE_00807618);
       st::external_00000080(&pSVar12->field_7D1A,"%s %s",pcVar8,pbVar14);
       if (g_cLoading_00802A58 != nullptr) {
         st::fn_00401230(g_cLoading_00802A58,&pSVar12->field_7D1A);
@@ -1977,21 +1977,21 @@ void __thiscall st::fn_0056DB80(STAppC *this)
                *(char **)(s_FrmPanelTy__GetMessage_007c2ae0 + (uint)DAT_0080733b * 0x18 + 0x10),
                *(char **)(s_FrmPanelTy__GetMessage_007c2ae0 + (uint)DAT_0080733b * 0x18 + 4));
     st::fn_006DDA90(g_sT3DSMAPContext_00807598,0.7,0.95);
-    st::fn_006DDAE0(g_sT3DSMAPContext_00807598,0x10,4,4,DAT_008032c8);
+    st::fn_006DDAE0(g_sT3DSMAPContext_00807598,0x10,4,4,PTR_008032c8);
     if (DAT_00807328 == 0) {
       st::fn_006DDBB0(g_sT3DSMAPContext_00807598);
     }
     pSVar4 = g_sT3DSMAPContext_00807598;
-    uVar2 = DAT_008032c0;
+    puVar7 = PTR_008032c0;
     g_sT3DSMAPContext_00807598->field_0278 = 0x10;
-    pSVar4->field_027C = uVar2;
+    pSVar4->field_027C = puVar7;
     st::fn_006E8630(g_sT3DSMAPContext_00807598,DAT_0080732c);
     st::fn_004013B1();
     st::fn_004052F9();
     st::fn_006F1170(g_cMf32_00806754);
     g_cMf32_00806754 = nullptr;
     if (g_cLoading_00802A58 != nullptr) {
-      pcVar8 = st::fn_006B0140(0x2680,g_module_00807618);
+      pcVar8 = st::fn_006B0140(0x2680,g_hINSTANCE_00807618);
       st::fn_00401230(g_cLoading_00802A58,pcVar8);
       if ((pSVar12->field_115E != '\0') && (pSVar12->field_1163 == '\x03')) {
         st::external_00000050(2000);
@@ -2071,7 +2071,7 @@ void __thiscall st::fn_0056DB80(STAppC *this)
 }
 
 // 0056FA60 STAppC::GetMessage
-#line 1 "decomp/ST.exe/functions/0056FA60/decomp.c"
+#line 4 "decomp/ST.exe/functions/0056FA60/decomp.c"
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 /* Recovered from embedded debug metadata:
    E:\__titans\tapp.cpp
@@ -2891,7 +2891,7 @@ LAB_00570c77:
 }
 
 // 00571400 STAppC::ReadCmdPlay
-#line 1 "decomp/ST.exe/functions/00571400/decomp.c"
+#line 4 "decomp/ST.exe/functions/00571400/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\tapp.cpp
    STAppC::ReadCmdPlay */

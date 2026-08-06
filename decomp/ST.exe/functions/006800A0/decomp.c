@@ -9,110 +9,109 @@ int __cdecl FUN_006800a0(byte *param_1)
 
 {
   byte bVar1;
-  int iVar2;
-  char *pcVar3;
-  int iVar4;
-  byte *pbVar5;
-  AnonNested_AnonShape_GLOBAL_00848A2C_50EB5CD1_0014_282260F2 *pAVar6;
-  AnonNested_AnonShape_GLOBAL_00848A34_1A834A18_0014_B03F56A9 *pAVar7;
-  int iVar8;
-  bool bVar9;
+  dword dVar2;
+  int iVar3;
+  char *pcVar4;
+  int iVar5;
+  byte *pbVar6;
+  byte *pbVar7;
+  bool bVar8;
 
-  iVar2 = thunk_FUN_0067ff00((char *)param_1);
-  if (-1 < iVar2) {
+  iVar3 = thunk_FUN_0067ff00((char *)param_1);
+  if (-1 < iVar3) {
     return 5;
   }
-  iVar2 = thunk_FUN_0067ff50((char *)param_1);
-  if (-1 < iVar2) {
+  iVar3 = thunk_FUN_0067ff50((char *)param_1);
+  if (-1 < iVar3) {
     return 6;
   }
-  iVar2 = thunk_FUN_0067ffa0((char *)param_1);
-  if (-1 < iVar2) {
+  iVar3 = thunk_FUN_0067ffa0((char *)param_1);
+  if (-1 < iVar3) {
     return 7;
   }
-  iVar2 = thunk_FUN_0067fff0((char *)param_1);
-  if (-1 < iVar2) {
+  iVar3 = thunk_FUN_0067fff0((char *)param_1);
+  if (-1 < iVar3) {
     return 8;
   }
-  pcVar3 = thunk_FUN_0067eea0(param_1);
-  if (pcVar3 != nullptr) {
+  pcVar4 = thunk_FUN_0067eea0(param_1);
+  if (pcVar4 != nullptr) {
     return 1;
   }
-  iVar8 = 0;
-  iVar2 = PTR_00848a2c->field_0008;
-  if (0 < iVar2) {
+  iVar3 = 0;
+  dVar2 = g_dArray_00848A2C->elementSize;
+  if (0 < (int)dVar2) {
     do {
-      pbVar5 = param_1;
-      if (iVar8 < iVar2) {
-        pAVar6 = PTR_00848a2c->entries_0014[iVar8];
+      pbVar6 = param_1;
+      if (iVar3 < (int)dVar2) {
+        pbVar7 = *(byte **)(g_dArray_00848A2C->growCapacity + iVar3 * 4);
       }
       else {
-        pAVar6 = nullptr;
+        pbVar7 = nullptr;
       }
       do {
-        bVar1 = *pbVar5;
-        bVar9 = bVar1 < pAVar6->field_0000;
-        if (bVar1 != pAVar6->field_0000) {
+        bVar1 = *pbVar6;
+        bVar8 = bVar1 < *pbVar7;
+        if (bVar1 != *pbVar7) {
 LAB_00680161:
-          iVar4 = (1 - (uint)bVar9) - (uint)(bVar9 != 0);
+          iVar5 = (1 - (uint)bVar8) - (uint)(bVar8 != 0);
           goto LAB_00680166;
         }
         if (bVar1 == 0) break;
-        bVar1 = pbVar5[1];
-        bVar9 = bVar1 < pAVar6->field_0001;
-        if (bVar1 != pAVar6->field_0001) goto LAB_00680161;
-        pAVar6 = pAVar6 + 1;
-        pbVar5 = pbVar5 + 2;
+        bVar1 = pbVar6[1];
+        bVar8 = bVar1 < pbVar7[1];
+        if (bVar1 != pbVar7[1]) goto LAB_00680161;
+        pbVar7 = pbVar7 + 2;
+        pbVar6 = pbVar6 + 2;
       } while (bVar1 != 0);
-      iVar4 = 0;
+      iVar5 = 0;
 LAB_00680166:
-      if (iVar4 == 0) {
-        if (-1 < iVar8) {
+      if (iVar5 == 0) {
+        if (-1 < iVar3) {
           return 2;
         }
         break;
       }
-      iVar8 = iVar8 + 1;
-    } while (iVar8 < iVar2);
+      iVar3 = iVar3 + 1;
+    } while (iVar3 < (int)dVar2);
   }
-  iVar8 = 0;
-  iVar2 = PTR_00848a34->field_0008;
-  if (0 < iVar2) {
+  iVar3 = 0;
+  dVar2 = g_dArray_00848A34->elementSize;
+  if (0 < (int)dVar2) {
     do {
-      pbVar5 = param_1;
-      if (iVar8 < iVar2) {
-        pAVar7 = PTR_00848a34->entries_0014[iVar8];
+      pbVar6 = param_1;
+      if (iVar3 < (int)dVar2) {
+        pbVar7 = *(byte **)(g_dArray_00848A34->growCapacity + iVar3 * 4);
       }
       else {
-        pAVar7 = nullptr;
+        pbVar7 = nullptr;
       }
       do {
-        bVar1 = *pbVar5;
-        bVar9 = bVar1 < pAVar7->field_0000;
-        if (bVar1 != pAVar7->field_0000) {
+        bVar1 = *pbVar6;
+        bVar8 = bVar1 < *pbVar7;
+        if (bVar1 != *pbVar7) {
 LAB_006801cd:
-          iVar4 = (1 - (uint)bVar9) - (uint)(bVar9 != 0);
+          iVar5 = (1 - (uint)bVar8) - (uint)(bVar8 != 0);
           goto LAB_006801d2;
         }
         if (bVar1 == 0) break;
-        bVar1 = pbVar5[1];
-        bVar9 = bVar1 < pAVar7->field_0001;
-        if (bVar1 != pAVar7->field_0001) goto LAB_006801cd;
-        pAVar7 = pAVar7 + 1;
-        pbVar5 = pbVar5 + 2;
+        bVar1 = pbVar6[1];
+        bVar8 = bVar1 < pbVar7[1];
+        if (bVar1 != pbVar7[1]) goto LAB_006801cd;
+        pbVar7 = pbVar7 + 2;
+        pbVar6 = pbVar6 + 2;
       } while (bVar1 != 0);
-      iVar4 = 0;
+      iVar5 = 0;
 LAB_006801d2:
-      if (iVar4 == 0) {
-        if (-1 < iVar8) {
+      if (iVar5 == 0) {
+        if (-1 < iVar3) {
           return 3;
         }
         break;
       }
-      iVar8 = iVar8 + 1;
-    } while (iVar8 < iVar2);
+      iVar3 = iVar3 + 1;
+    } while (iVar3 < (int)dVar2);
   }
-  iVar2 = thunk_FUN_0067fc10(param_1);
-  return (iVar2 < 0) - 1 & 4;
+  iVar3 = thunk_FUN_0067fc10(param_1);
+  return (iVar3 < 0) - 1 & 4;
 }
 

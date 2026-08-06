@@ -2,7 +2,7 @@
 // Generated translation unit: source/recovered/by_address/0050.cpp
 
 // 00501D00 FUN_00501d00
-#line 1 "decomp/ST.exe/functions/00501D00/decomp.c"
+#line 4 "decomp/ST.exe/functions/00501D00/decomp.c"
 void __thiscall
 st::fn_00501D00(void *this,AnonShape_00501D00_3942B646 *param_1,
             RecoveredRecord_CPanelTy_00501D00 *param_2)
@@ -167,7 +167,7 @@ void st::fn_00502330(void)
 }
 
 // 00505070 FUN_00505070
-#line 1 "decomp/ST.exe/functions/00505070/decomp.c"
+#line 4 "decomp/ST.exe/functions/00505070/decomp.c"
 uint __thiscall st::fn_00505070(void *this,byte param_1)
 
 {
@@ -200,7 +200,7 @@ void st::fn_005097B0(void)
 }
 
 // 0050FC70 CreateFrmPanel
-#line 1 "decomp/ST.exe/functions/0050FC70/decomp.c"
+#line 4 "decomp/ST.exe/functions/0050FC70/decomp.c"
 /* [STUnclaimedCodeApplier] Exact function entry recovered from thunk_target.
    Evidence: P:007CA91C>0040579A
 
@@ -225,7 +225,7 @@ FrmPanelTy * __cdecl st::fn_0050FC70(void)
     this->field_017C = 0;
     this->field_0185 = 0;
     this->field_0189 = 0;
-    this->vtable = &FrmPanelTyVTable;
+    this->vtable = &st_global_0079AC1C;
     this->field_003C = 0xc;
     this->field_0044 = 0;
     this->field_0040 = 0x128;

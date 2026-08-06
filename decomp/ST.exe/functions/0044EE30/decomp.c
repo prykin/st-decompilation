@@ -140,7 +140,7 @@ int __thiscall STBoatC::GetMessage(STBoatC *this,STMessage *message)
   undefined4 *local_d0;
   undefined4 local_cc;
   undefined4 local_c8;
-  undefined4 local_c4;
+  ushort *local_c4;
   undefined4 local_c0;
   undefined4 local_bc;
   undefined4 local_b8;
@@ -1243,7 +1243,7 @@ joined_r0x00450a10:
       if (uVar16 == 0) {
         puVar21 = &this_00->field_01D5;
         iVar13 = STT3DSprC::LoadSequence
-                           ((STT3DSprC *)puVar21,0xb,DAT_00806774,"forcef0",0x1d);
+                           ((STT3DSprC *)puVar21,0xb,PTR_00806774,"forcef0",0x1d);
         if (iVar13 != 0) {
           RaiseInternalException
                     (0xffff,g_overwriteContext_007ED77C,"E:\\__titans\\wlad\\To_boat.cpp",
@@ -1341,7 +1341,7 @@ LAB_00450c1e:
         iVar13 = thunk_FUN_004accd0(&this_00->field_01D5,'\b');
         if ((iVar13 == 0) &&
            (iVar13 = STT3DSprC::LoadSequence
-                               ((STT3DSprC *)&this_00->field_01D5,8,DAT_00806774,"expdstrw"
+                               ((STT3DSprC *)&this_00->field_01D5,8,PTR_00806774,"expdstrw"
                                 ,0x1d), iVar13 != 0)) {
           iVar13 = 0x45d;
 LAB_00450e28:
@@ -1352,7 +1352,7 @@ LAB_00450e28:
       }
       else if (iVar13 == 0x15) {
         iVar13 = STT3DSprC::LoadSequence
-                           ((STT3DSprC *)&this_00->field_01D5,8,DAT_00806774,"expdstrw",
+                           ((STT3DSprC *)&this_00->field_01D5,8,PTR_00806774,"expdstrw",
                             0x1d);
         if (iVar13 != 0) {
           iVar13 = 0x462;
@@ -1367,17 +1367,17 @@ LAB_00450e28:
         }
         puVar21 = &this_00->field_01D5;
         STT3DSprC::LoadSequence
-                  ((STT3DSprC *)puVar21,8,DAT_00806774,
+                  ((STT3DSprC *)puVar21,8,PTR_00806774,
                    "expl_bt0" + this_00->field_082A * 0x45,0x1d);
         STT3DSprC::LoadSequence
-                  ((STT3DSprC *)puVar21,9,DAT_00806764,
+                  ((STT3DSprC *)puVar21,9,PTR_00806764,
                    "expl_bbt0" + this_00->field_082A * 0x45,0x1d);
         STT3DSprC::LoadSequence
-                  ((STT3DSprC *)puVar21,10,DAT_00806774,
+                  ((STT3DSprC *)puVar21,10,PTR_00806774,
                    "expmask3" + this_00->field_082A * 0x45,0x1d);
         thunk_FUN_004ac700(puVar21,'\n');
         STT3DSprC::StartShow((STT3DSprC *)puVar21,10,g_playSystem_00802A38->field_00E4);
-        STT3DSprC::sub_004ACF20((STT3DSprC *)puVar21,DAT_008032b8,0x10);
+        STT3DSprC::sub_004ACF20((STT3DSprC *)puVar21,PTR_008032b8,0x10);
         STT3DSprC::sub_004ACFE0((STT3DSprC *)puVar21,'\n');
       }
       STT3DSprC::StartShow((STT3DSprC *)&this_00->field_01D5,8,g_playSystem_00802A38->field_00E4);
@@ -7411,20 +7411,20 @@ cf_error_exit_0045AEE3:
     iVar13 = (message->arg0).i32;
     local_d0 = Library::DKW::LIB::MemAlloc(0x44);
     do {
-      *(int **)(iVar29 + (int)local_d0) = DAT_0080677c;
+      *(int **)(iVar29 + (int)local_d0) = PTR_0080677c;
       iVar29 = iVar29 + 4;
     } while (iVar29 < 0x44);
-    local_d0[2] = DAT_00806774;
-    local_d0[1] = DAT_00806774;
-    *local_d0 = DAT_00806774;
-    local_d0[0xf] = DAT_00806774;
-    local_d0[9] = DAT_00806764;
-    local_d0[8] = DAT_00806774;
-    local_d0[10] = DAT_00806774;
-    local_d0[0xb] = DAT_00806774;
+    local_d0[2] = PTR_00806774;
+    local_d0[1] = PTR_00806774;
+    *local_d0 = PTR_00806774;
+    local_d0[0xf] = PTR_00806774;
+    local_d0[9] = PTR_00806764;
+    local_d0[8] = PTR_00806774;
+    local_d0[10] = PTR_00806774;
+    local_d0[0xb] = PTR_00806774;
     local_cc = 0;
     local_c8 = 0;
-    local_c4 = DAT_008073cc;
+    local_c4 = PTR_008073cc;
     local_c0 = 0;
     local_bc = 0;
     local_b8 = 0;
@@ -7741,7 +7741,7 @@ cf_error_exit_0045AEE3:
   memmove(pcVar33, pcVar34, uVar16); /* compiler REP MOVS byte copy */
   uVar27 = 0;
 switchD_0044fb10_default:
-  iVar13 = STT3DSprC::LoadSequence((STT3DSprC *)&this_00->field_01D5,0xe,DAT_0080677c,local_74,0x1d);
+  iVar13 = STT3DSprC::LoadSequence((STT3DSprC *)&this_00->field_01D5,0xe,PTR_0080677c,local_74,0x1d);
   if (iVar13 != 0) {
     RaiseInternalException
               (0xffff,g_overwriteContext_007ED77C,"E:\\__titans\\wlad\\To_boat.cpp",0x2da);
@@ -7750,7 +7750,7 @@ switchD_0044fb10_default:
   iVar13 = *(int *)((int)this_00->field_06CB + 0x2c);
   if ((((iVar13 == 0xb) || (iVar13 == 0x16)) || (iVar13 == 0x23)) &&
      (iVar13 = STT3DSprC::LoadSequence
-                         ((STT3DSprC *)&this_00->field_01D5,0xd,DAT_0080677c,local_e8,0x1d),
+                         ((STT3DSprC *)&this_00->field_01D5,0xd,PTR_0080677c,local_e8,0x1d),
      iVar13 != 0)) {
     RaiseInternalException
               (0xffff,g_overwriteContext_007ED77C,"E:\\__titans\\wlad\\To_boat.cpp",0x2de);
@@ -7808,7 +7808,7 @@ switchD_0044fb10_default:
   memmove(pcVar33, pcVar34, uVar16); /* compiler REP MOVS byte copy */
 switchD_0044fe4c_default:
   puVar21 = &this_00->field_01D5;
-  iVar13 = STT3DSprC::LoadSequence((STT3DSprC *)puVar21,0xc,DAT_0080677c,local_74,0x1d);
+  iVar13 = STT3DSprC::LoadSequence((STT3DSprC *)puVar21,0xc,PTR_0080677c,local_74,0x1d);
   if (iVar13 != 0) {
     RaiseInternalException
               (0xffff,g_overwriteContext_007ED77C,"E:\\__titans\\wlad\\To_boat.cpp",0x2eb);
@@ -7882,7 +7882,7 @@ LAB_00450050:
     /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
     if (*(int *)(local_78 + 0x45) == 1) {
       iVar13 = STT3DSprC::LoadSequence
-                         ((STT3DSprC *)puVar21,0xb,DAT_00806774,"forcef0",0x1d);
+                         ((STT3DSprC *)puVar21,0xb,PTR_00806774,"forcef0",0x1d);
       if (iVar13 != 0) {
         RaiseInternalException
                   (0xffff,g_overwriteContext_007ED77C,"E:\\__titans\\wlad\\To_boat.cpp",0x31b);

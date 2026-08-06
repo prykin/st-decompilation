@@ -2,7 +2,7 @@
 // Generated translation unit: source/recovered/by_address/0043.cpp
 
 // 00430910 FUN_00430910
-#line 1 "decomp/ST.exe/functions/00430910/decomp.c"
+#line 4 "decomp/ST.exe/functions/00430910/decomp.c"
 undefined4 st::fn_00430910(int param_1)
 
 {
@@ -19,7 +19,7 @@ undefined4 st::fn_00430910(int param_1)
 }
 
 // 004353B0 FUN_004353b0
-#line 1 "decomp/ST.exe/functions/004353B0/decomp.c"
+#line 4 "decomp/ST.exe/functions/004353B0/decomp.c"
 void st::fn_004353B0(uint param_1,uint param_2,uint param_3)
 
 {
@@ -94,7 +94,7 @@ int st::fn_00435820(int param_1,int param_2)
 }
 
 // 00435850 FUN_00435850
-#line 1 "decomp/ST.exe/functions/00435850/decomp.c"
+#line 4 "decomp/ST.exe/functions/00435850/decomp.c"
 /* [STAbiConsistencyApplier] stack_parameter_width: parameter=/char Evidence: entry-use width=/char;
    unmasked_dword_reads=0; evidence=00435858 MOVSX ESI,byte ptr [EBP + 0x8]
    [STAbiConsistencyApplier] narrow_accumulator_return target=return:-1: return=/ushort Evidence:
@@ -149,7 +149,7 @@ ushort st::fn_00435850(char param_1,int param_2,int *param_3)
 }
 
 // 00435B90 FUN_00435b90
-#line 1 "decomp/ST.exe/functions/00435B90/decomp.c"
+#line 4 "decomp/ST.exe/functions/00435B90/decomp.c"
 /* [STSwitchEnumApplier] Switch target param_3 uses
    /SubmarineTitans/Recovered/Enums/Global_sub_00435B90_param_3Enum. Cases:
    CASE_0=0;CASE_2=2;CASE_3=3;CASE_4=4;CASE_5=5;CASE_6=6;CASE_7=7;CASE_8=8;CASE_9=9;CASE_A=10;CASE_D=13;CASE_E=14;CASE_10=16;CASE_11=17;CASE_12=18;CASE_13=19;CASE_18=24;CASE_2B=43;CASE_2D=45;CASE_4D=77;CASE_4E=78
@@ -844,7 +844,7 @@ switchD_00435c5c_caseD_1:
 }
 
 // 0043E420 FUN_0043e420
-#line 1 "decomp/ST.exe/functions/0043E420/decomp.c"
+#line 4 "decomp/ST.exe/functions/0043E420/decomp.c"
 void st::fn_0043E420(undefined4 *param_1,char param_2)
 
 {
@@ -856,7 +856,7 @@ void st::fn_0043E420(undefined4 *param_1,char param_2)
 }
 
 // 0043E460 FUN_0043e460
-#line 1 "decomp/ST.exe/functions/0043E460/decomp.c"
+#line 4 "decomp/ST.exe/functions/0043E460/decomp.c"
 short st::fn_0043E460(char param_1)
 
 {
@@ -889,7 +889,7 @@ short st::fn_0043E460(char param_1)
 }
 
 // 0043E640 FUN_0043e640
-#line 1 "decomp/ST.exe/functions/0043E640/decomp.c"
+#line 4 "decomp/ST.exe/functions/0043E640/decomp.c"
 /* [STSwitchEnumApplier] Switch target param_2 uses
    /SubmarineTitans/Recovered/Enums/Global_sub_0043E640_param_2Enum. Cases:
    CASE_38=56;CASE_39=57;CASE_4F=79;CASE_5E=94 */
@@ -948,7 +948,7 @@ LAB_0043e6d3:
 }
 
 // 0043E9A0 FUN_0043e9a0
-#line 1 "decomp/ST.exe/functions/0043E9A0/decomp.c"
+#line 4 "decomp/ST.exe/functions/0043E9A0/decomp.c"
 /* [STSwitchEnumApplier] Switch target param_2 uses
    /SubmarineTitans/Recovered/Enums/Global_sub_0043E9A0_param_2Enum. Cases:
    CASE_38=56;CASE_39=57;CASE_4F=79;CASE_5E=94 */
@@ -1075,7 +1075,7 @@ LAB_0043eb0f:
 }
 
 // 0043EC20 FUN_0043ec20
-#line 1 "decomp/ST.exe/functions/0043EC20/decomp.c"
+#line 4 "decomp/ST.exe/functions/0043EC20/decomp.c"
 /* [STSwitchEnumApplier] Switch target param_2 uses
    /SubmarineTitans/Recovered/Enums/Global_sub_0043EC20_param_2Enum. Cases:
    CASE_38=56;CASE_39=57;CASE_4F=79;CASE_5E=94 */
@@ -1190,7 +1190,7 @@ LAB_0043eda0:
 }
 
 // 0043F130 FUN_0043f130
-#line 1 "decomp/ST.exe/functions/0043F130/decomp.c"
+#line 4 "decomp/ST.exe/functions/0043F130/decomp.c"
 short st::fn_0043F130(char param_1,byte *param_2)
 
 {
@@ -1250,7 +1250,7 @@ LAB_0043f1a5:
 }
 
 // 0043F380 FUN_0043f380
-#line 1 "decomp/ST.exe/functions/0043F380/decomp.c"
+#line 4 "decomp/ST.exe/functions/0043F380/decomp.c"
 undefined4
 st::fn_0043F380(char param_1,byte *param_2,short param_3,short param_4,short param_5,short param_6,
             short param_7,short param_8)
@@ -1374,7 +1374,7 @@ LAB_0043f4cd:
 }
 
 // 0043F580 FUN_0043f580
-#line 1 "decomp/ST.exe/functions/0043F580/decomp.c"
+#line 4 "decomp/ST.exe/functions/0043F580/decomp.c"
 uint * st::fn_0043F580(char param_1,byte *param_2,short param_3,short param_4,short param_5,
                    short param_6,short param_7,short param_8)
 
@@ -1492,7 +1492,7 @@ LAB_0043f6e8:
 }
 
 // 0043F7B0 FUN_0043f7b0
-#line 1 "decomp/ST.exe/functions/0043F7B0/decomp.c"
+#line 4 "decomp/ST.exe/functions/0043F7B0/decomp.c"
 /* [STPrototypeApplier] Propagated parameter 2.
    Evidence: 0043F7B0 -> 006AE1C0 @ 0043F9F5 | 0043F7B0 -> 006AE1C0 @ 0043FB11 */
 

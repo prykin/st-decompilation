@@ -2,7 +2,7 @@
 // Generated translation unit: source/recovered/by_owner/STColl3C.cpp
 
 // 005F6600 STColl3C::STColl3C
-#line 1 "decomp/ST.exe/functions/005F6600/decomp.c"
+#line 4 "decomp/ST.exe/functions/005F6600/decomp.c"
 /* [STConstructorApplier] Recovered constructor candidate.
    VTable: 0079C5AC (store 005F6618)
    Evidence: final_vptr=0079C5AC; returns_this=true; calls_before=2; field_writes_after=2;
@@ -17,15 +17,15 @@ STColl3C * __thiscall st::fn_005F6600(STColl3C *this)
 
   st::fn_00401933((STGameObjC *)this);
   st::fn_00401316((AnonShape_004AB810_8E5693D5 *)&this->vtable_at_1d5);
-  this->vtable = &STColl3CVTable;
-  this->vtable_at_1d5 = &STColl3CVTable_at_1D5;
+  this->vtable = &st_global_0079C5AC;
+  this->vtable_at_1d5 = &st_global_0079C5A8;
   memset(&this->field_0x231, 0, 0xc2); /* compiler bulk-zero initialization */
   this->field_02B7 = -1;
   return this;
 }
 
 // 005F66B0 STColl3C::sub_005F66B0
-#line 1 "decomp/ST.exe/functions/005F66B0/decomp.c"
+#line 4 "decomp/ST.exe/functions/005F66B0/decomp.c"
 /* [STMethodOwnerApplier] Structural method owner recovered as STColl3C.
    Evidence: this_call_owners=[STColl3C]; agreed_this_calls=2; incoming_this_accesses=1;
    incoming_edx_uses=0; incoming_stack_parameter_uses=0; direct_non_thunk_callers=0;
@@ -51,7 +51,7 @@ int __thiscall st::fn_005F66B0(STColl3C *this)
 }
 
 // 005F66F0 STColl3C::sub_005F66F0
-#line 1 "decomp/ST.exe/functions/005F66F0/decomp.c"
+#line 4 "decomp/ST.exe/functions/005F66F0/decomp.c"
 /* [STPrototypeRepairApplier] Propagated return.
    Evidence: 005F66F0 returns used as parameter 2 of STPlaySystemC::SaveObjData @ 005F62C9
 
@@ -157,7 +157,7 @@ byte * __thiscall st::fn_005F66F0(STColl3C *this,uint *param_1)
 }
 
 // 005F68B0 STColl3C::sub_005F68B0
-#line 1 "decomp/ST.exe/functions/005F68B0/decomp.c"
+#line 4 "decomp/ST.exe/functions/005F68B0/decomp.c"
 /* [STMethodOwnerApplier] Structural method owner recovered as STColl3C.
    Evidence: this_call_owners=[STColl3C]; agreed_this_calls=1; incoming_this_accesses=11;
    incoming_edx_uses=0; incoming_stack_parameter_uses=8; direct_non_thunk_callers=0;
@@ -197,7 +197,7 @@ int __thiscall st::fn_005F68B0(STColl3C *this,undefined4 *param_1)
   local_28 = st::fn_006AAC70(0x44);
   iVar3 = 0;
   do {
-    *(undefined4 *)(iVar3 + (int)local_28) = DAT_00806774;
+    *(int **)(iVar3 + (int)local_28) = PTR_00806774;
     iVar3 = iVar3 + 4;
   } while (iVar3 < 0x44);
   local_24 = 0;
@@ -261,7 +261,7 @@ int __thiscall st::fn_005F68B0(STColl3C *this,undefined4 *param_1)
 }
 
 // 005F6EC0 STColl3C::FUN_005f6ec0
-#line 1 "decomp/ST.exe/functions/005F6EC0/decomp.c"
+#line 4 "decomp/ST.exe/functions/005F6EC0/decomp.c"
 /* [STVirtualMethodApplier] Recovered from virtual table slot family.
    Tables: 0079C5AC
    Entries: 00404737
@@ -277,7 +277,7 @@ dword __thiscall st::fn_005F6EC0(STColl3C *this)
 }
 
 // 005F6F20 STColl3C::sub_005F6F20
-#line 1 "decomp/ST.exe/functions/005F6F20/decomp.c"
+#line 4 "decomp/ST.exe/functions/005F6F20/decomp.c"
 /* [STAbiConsistencyApplier] full_eax_return: return=/int Evidence: all observed callers consume
    full EAX (1), none consume AL/AX, and every RET path defines full EAX; sites=005F5F20 @ 005F6322
    -> TEST TEST EAX,EAX
@@ -301,7 +301,7 @@ int __thiscall st::fn_005F6F20(STColl3C *this,int param_1)
 }
 
 // 005F6F60 STColl3C::sub_005F6F60
-#line 1 "decomp/ST.exe/functions/005F6F60/decomp.c"
+#line 4 "decomp/ST.exe/functions/005F6F60/decomp.c"
 /* [STMethodOwnerApplier] Structural method owner recovered as STColl3C.
    Evidence: this_call_owners=[STColl3C]; agreed_this_calls=1; incoming_this_accesses=15;
    incoming_edx_uses=0; incoming_stack_parameter_uses=0; direct_non_thunk_callers=0;
@@ -934,7 +934,7 @@ cf_common_exit_005F76D2:
 }
 
 // 005F8650 STColl3C::sub_005F8650
-#line 1 "decomp/ST.exe/functions/005F8650/decomp.c"
+#line 4 "decomp/ST.exe/functions/005F8650/decomp.c"
 /* [STMethodOwnerApplier] Structural method owner recovered as STColl3C.
    Evidence: this_call_owners=[STColl3C]; agreed_this_calls=1; incoming_this_accesses=22;
    incoming_edx_uses=16; incoming_stack_parameter_uses=6; direct_non_thunk_callers=0;
@@ -998,7 +998,7 @@ undefined4 __thiscall st::fn_005F8650(STColl3C *this,int param_1,int param_2,int
 }
 
 // 005F9450 STColl3C::sub_005F9450
-#line 1 "decomp/ST.exe/functions/005F9450/decomp.c"
+#line 4 "decomp/ST.exe/functions/005F9450/decomp.c"
 /* [STMethodOwnerApplier] Structural method owner recovered as STColl3C.
    Evidence: this_call_owners=[STColl3C]; agreed_this_calls=1; incoming_this_accesses=7;
    incoming_edx_uses=0; incoming_stack_parameter_uses=0; direct_non_thunk_callers=0;
@@ -1016,7 +1016,7 @@ void __thiscall st::fn_005F9450(STColl3C *this)
 }
 
 // 005FA070 STColl3C::sub_005FA070
-#line 1 "decomp/ST.exe/functions/005FA070/decomp.c"
+#line 4 "decomp/ST.exe/functions/005FA070/decomp.c"
 /* [STMethodOwnerApplier] Structural method owner recovered as STColl3C.
    Evidence: this_call_owners=[STColl3C]; agreed_this_calls=2; incoming_this_accesses=2;
    incoming_edx_uses=0; incoming_stack_parameter_uses=0; direct_non_thunk_callers=0;
@@ -1034,7 +1034,7 @@ void __thiscall st::fn_005FA070(STColl3C *this)
 }
 
 // 005FA8B0 STColl3C::sub_005FA8B0
-#line 1 "decomp/ST.exe/functions/005FA8B0/decomp.c"
+#line 4 "decomp/ST.exe/functions/005FA8B0/decomp.c"
 /* [STMethodOwnerApplier] Structural method owner recovered as STColl3C.
    Evidence: this_call_owners=[STColl3C]; agreed_this_calls=1; incoming_this_accesses=3;
    incoming_edx_uses=0; incoming_stack_parameter_uses=3; direct_non_thunk_callers=0;
@@ -1091,7 +1091,7 @@ undefined4 __thiscall st::fn_005FA8B0(STColl3C *this,int *param_1,int *param_2,i
 }
 
 // 005FB5E0 STColl3C::FUN_005fb5e0
-#line 1 "decomp/ST.exe/functions/005FB5E0/decomp.c"
+#line 4 "decomp/ST.exe/functions/005FB5E0/decomp.c"
 /* [STVirtualMethodApplier] Recovered from virtual table slot family.
    Tables: 0079C5AC
    Entries: 00402649

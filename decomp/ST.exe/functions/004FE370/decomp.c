@@ -51,7 +51,7 @@ void __thiscall CPanelTy::PaintName(CPanelTy *this,int param_1)
         cVar3 = pCVar2->field_0B6A;
         GVar5 = pCVar2->field_0B66;
       }
-      module = g_module_00807618;
+      module = g_hINSTANCE_00807618;
       resourceId = thunk_FUN_00523410(GVar5,cVar3,0);
       resourceString = (uint *)LoadResourceString(resourceId,module);
     }

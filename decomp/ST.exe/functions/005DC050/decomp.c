@@ -128,7 +128,7 @@ LAB_005dc22d:
       pDVar7 = Library::DKW::TBL::SArrayCreate(nullptr,10,10);
       this_01->field_0548 = &pDVar7->flags;
       puVar5 = &this_01->field_003C;
-      pcVar8 = LoadResourceString(0x2347,g_module_00807618);
+      pcVar8 = LoadResourceString(0x2347,g_hINSTANCE_00807618);
       wsprintfA(puVar5,"&2 %s:",pcVar8);
       Library::DKW::TBL::FUN_006b5aa0(this_01->field_0548,puVar5);
       wsprintfA(puVar5,"&0 %s",&DAT_0080c3c3);
@@ -136,11 +136,11 @@ LAB_005dc22d:
       Library::DKW::TBL::FUN_006b5aa0(this_01->field_0548,&DAT_007c3b5c);
       uVar9 = _DAT_008087c4 & 0xffff;
       uVar11 = (uint)DAT_008087c2;
-      pcVar8 = LoadResourceString(0x2344,g_module_00807618);
+      pcVar8 = LoadResourceString(0x2344,g_hINSTANCE_00807618);
       wsprintfA(puVar5,"&2 %s: &0%d&2x&0%d",pcVar8,uVar11,uVar9);
       Library::DKW::TBL::FUN_006b5aa0(this_01->field_0548,puVar5);
       uVar9 = _DAT_008087c4 >> 0x10 & 0xff;
-      pcVar8 = LoadResourceString(0x2345,g_module_00807618);
+      pcVar8 = LoadResourceString(0x2345,g_hINSTANCE_00807618);
       wsprintfA(puVar5,"&2 %s: &0%d",pcVar8,uVar9);
       Library::DKW::TBL::FUN_006b5aa0(this_01->field_0548,puVar5);
       Library::DKW::TBL::FUN_006b5aa0(this_01->field_0548,&DAT_007c3b5c);
@@ -158,7 +158,7 @@ LAB_005dc22d:
       case '\x0f':
       case '\x10':
       case '\x13':
-        pcVar8 = LoadResourceString(0x2346,g_module_00807618);
+        pcVar8 = LoadResourceString(0x2346,g_hINSTANCE_00807618);
         wsprintfA(puVar5,"&2 %s:",pcVar8);
         Library::DKW::TBL::FUN_006b5aa0(this_01->field_0548,puVar5);
         Library::DKW::TBL::FUN_006b5aa0(this_01->field_0548,&DAT_007c3b5c);

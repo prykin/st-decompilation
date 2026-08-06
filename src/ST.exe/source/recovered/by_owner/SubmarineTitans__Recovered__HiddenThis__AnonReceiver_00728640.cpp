@@ -2,7 +2,7 @@
 // Generated translation unit: source/recovered/by_owner/SubmarineTitans__Recovered__HiddenThis__AnonReceiver_00728640.cpp
 
 // 00728A80 SubmarineTitans::Recovered::HiddenThis::AnonReceiver_00728640::FUN_00728a80
-#line 1 "decomp/ST.exe/functions/00728A80/decomp.c"
+#line 4 "decomp/ST.exe/functions/00728A80/decomp.c"
 /* WARNING: Restarted to delay deadcode elimination for space: stack */
 /* [STHiddenThisApplier] Anonymous hidden receiver recovered as
    /SubmarineTitans/Recovered/HiddenThis/AnonReceiver_00728640.

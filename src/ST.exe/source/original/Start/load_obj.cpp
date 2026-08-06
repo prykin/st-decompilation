@@ -2,7 +2,7 @@
 // Generated translation unit: source/original/Start/load_obj.cpp
 
 // 005AB1D0 ChooseMapTy::OutListProc
-#line 1 "decomp/ST.exe/functions/005AB1D0/decomp.c"
+#line 4 "decomp/ST.exe/functions/005AB1D0/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\Start\load_obj.cpp
    ChooseMapTy::OutListProc */
@@ -57,7 +57,7 @@ st::fn_005AB1D0
 }
 
 // 005AB300 ChooseMapTy::InitChooseMap
-#line 1 "decomp/ST.exe/functions/005AB300/decomp.c"
+#line 4 "decomp/ST.exe/functions/005AB300/decomp.c"
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 /* Recovered from embedded debug metadata:
    E:\__titans\Start\load_obj.cpp
@@ -364,7 +364,7 @@ LAB_005ab4e5:
   st::fn_00718780
             ((int)local_86c,0,0x100,0x8b,0x15,(undefined4 *)&this_02->field_1A5B->field_0x144);
   puVar7 = st::fn_00709AF0
-                     (DAT_00806784,CASE_B,"FILE_LIST",0xffffffff,0,1,0,nullptr);
+                     (PTR_00806784,CASE_B,"FILE_LIST",0xffffffff,0,1,0,nullptr);
   this_02->field_1C7F = puVar7;
   puVar7 = st::fn_0070A5A0(g_cMf32_00806780,1,"MM_MAPB",0,1);
   st::fn_00403229((RecoveredSourceFamily_dibcopy *)g_startSystem_0081176C->field_02F0,0,0,'\x01',
@@ -448,7 +448,7 @@ switchD_005ab66b_caseD_6:
                   ((SpriteClassTy *)&this_02->field_1A70,(int *)g_ddxContext_008075A8,0x31,'\a',
                    nullptr,0,0);
         /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-        (**(code **)(this_02->field_1A70 + 4))(DAT_00806784,7,0,"MM_SLDUP",0xffffffff);
+        (**(code **)(this_02->field_1A70 + 4))(PTR_00806784,7,0,"MM_SLDUP",0xffffffff);
         this_02->field_1A8C = 0x2f8;
         this_02->field_1A90 = 0x3c;
         this_02->field_1A78 = 0;
@@ -456,7 +456,7 @@ switchD_005ab66b_caseD_6:
                   ((SpriteClassTy *)&this_02->field_1B01,(int *)g_ddxContext_008075A8,0x31,'\a',
                    nullptr,0,0);
         /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-        (**(code **)(this_02->field_1B01 + 4))(DAT_00806784,7,0,"MM_SLDDN",0xffffffff);
+        (**(code **)(this_02->field_1B01 + 4))(PTR_00806784,7,0,"MM_SLDDN",0xffffffff);
         this_02->field_1B1D = 0x2f8;
         this_02->field_1B21 = 0x1b8;
         this_02->field_1B09 = 0;
@@ -464,7 +464,7 @@ switchD_005ab66b_caseD_6:
                   ((SpriteClassTy *)&this_02->field_1B92,(int *)g_ddxContext_008075A8,0x31,'\a',
                    nullptr,0,0);
         /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-        (**(code **)(this_02->field_1B92 + 4))(DAT_00806784,7,0,"MM_SLDT",0xffffffff);
+        (**(code **)(this_02->field_1B92 + 4))(PTR_00806784,7,0,"MM_SLDT",0xffffffff);
         iVar5 = 1;
         this_02->field_1BAE = 0x2fe;
         this_02->field_1BB2 = 0x5c;
@@ -940,7 +940,7 @@ switchD_005ab66b_caseD_6:
 }
 
 // 005ACB30 ChooseMapTy::DoneChooseMap
-#line 1 "decomp/ST.exe/functions/005ACB30/decomp.c"
+#line 4 "decomp/ST.exe/functions/005ACB30/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\Start\load_obj.cpp
    ChooseMapTy::DoneChooseMap */
@@ -1091,7 +1091,7 @@ void __thiscall st::fn_005ACB30(ChooseMapTy *this)
 }
 
 // 005AD050 ChooseMapTy::PaintChooseMap
-#line 1 "decomp/ST.exe/functions/005AD050/decomp.c"
+#line 4 "decomp/ST.exe/functions/005AD050/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\Start\load_obj.cpp
    ChooseMapTy::PaintChooseMap
@@ -1190,7 +1190,7 @@ void __thiscall st::fn_005AD050(ChooseMapTy *this,char param_1)
   uVar8 = 0;
   uVar6 = 0xffffffff;
   uVar5 = 0xfffffffe;
-  resourceString = (uint *)st::fn_006B0140(resourceId,g_module_00807618);
+  resourceString = (uint *)st::fn_006B0140(resourceId,g_hINSTANCE_00807618);
   st::fn_00404C2D(this_02,0,0xe9,0x14,0x14c,0x18,resourceString,uVar5,uVar6,pcVar7,uVar8);
 switchD_005ad1b8_caseD_6:
   g_currentExceptionFrame = local_4c.previous;
@@ -1198,7 +1198,7 @@ switchD_005ad1b8_caseD_6:
 }
 
 // 005AD390 ChooseMapTy::NoneChooseMap
-#line 1 "decomp/ST.exe/functions/005AD390/decomp.c"
+#line 4 "decomp/ST.exe/functions/005AD390/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\Start\load_obj.cpp
    ChooseMapTy::NoneChooseMap
@@ -1558,7 +1558,7 @@ switchD_005adb01_caseD_c:
 }
 
 // 005ADF10 ChooseMapTy::CloseButtons
-#line 1 "decomp/ST.exe/functions/005ADF10/decomp.c"
+#line 4 "decomp/ST.exe/functions/005ADF10/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\Start\load_obj.cpp
    ChooseMapTy::CloseButtons */
@@ -1604,7 +1604,7 @@ void __thiscall st::fn_005ADF10(ChooseMapTy *this)
 }
 
 // 005AE050 ChooseMapTy::ShowDescription
-#line 1 "decomp/ST.exe/functions/005AE050/decomp.c"
+#line 4 "decomp/ST.exe/functions/005AE050/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\Start\load_obj.cpp
    ChooseMapTy::ShowDescription
@@ -1948,7 +1948,7 @@ LAB_005ae602:
 }
 
 // 005AEAB0 ChooseMapTy::CreateCtrls
-#line 1 "decomp/ST.exe/functions/005AEAB0/decomp.c"
+#line 4 "decomp/ST.exe/functions/005AEAB0/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\Start\load_obj.cpp
    ChooseMapTy::CreateCtrls
@@ -2278,7 +2278,7 @@ LAB_005aef44:
 }
 
 // 005AF350 ChooseMapTy::DeleteCtrls
-#line 1 "decomp/ST.exe/functions/005AF350/decomp.c"
+#line 4 "decomp/ST.exe/functions/005AF350/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\Start\load_obj.cpp
    ChooseMapTy::DeleteCtrls */
@@ -2567,7 +2567,7 @@ void __thiscall st::fn_005AF350(ChooseMapTy *this)
 }
 
 // 005AFD00 ChooseMapTy::PrepFiles
-#line 1 "decomp/ST.exe/functions/005AFD00/decomp.c"
+#line 4 "decomp/ST.exe/functions/005AFD00/decomp.c"
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 /* Recovered from embedded debug metadata:
    E:\__titans\Start\load_obj.cpp
@@ -3296,7 +3296,7 @@ LAB_005b07ac:
 }
 
 // 005B0BA0 ChooseMapTy::GetMessage
-#line 1 "decomp/ST.exe/functions/005B0BA0/decomp.c"
+#line 4 "decomp/ST.exe/functions/005B0BA0/decomp.c"
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 /* Recovered from embedded debug metadata:
    E:\__titans\Start\load_obj.cpp
@@ -3484,7 +3484,7 @@ int __thiscall st::fn_005B0BA0(ChooseMapTy *this,STMessage *message)
       uVar27 = 2;
       iVar26 = -1;
       iVar13 = -1;
-      puVar14 = (uint *)st::fn_006B0140(resourceId,g_module_00807618);
+      puVar14 = (uint *)st::fn_006B0140(resourceId,g_hINSTANCE_00807618);
       st::fn_007119C0(g_startSystem_0081176C->field_0034,puVar14,iVar13,iVar26,uVar27);
       st::fn_006B35D0((int *)g_ddxContext_008075A8,this_01->field_1C87);
       goto cf_common_exit_005B2053;
@@ -3869,7 +3869,7 @@ LAB_005b1b6c:
       st::fn_00715360(g_int_00811764,0,'\x1b',local_6e0,0x451,1,0xffffffff);
     }
 LAB_005b2011:
-    st::fn_006B6020(&this_01->field_1A5B->field_0686->flags,0,&DAT_008016a0);
+    st::fn_006B6020(this_01->field_1A5B->field_0686,0,&DAT_008016a0);
     this_01->field_002D = 0x33;
     *(DArrayTy **)&this_01->field_0x31 = this_01->field_1A5B->field_0686;
     st::fn_006E6080(this_01,2,this_01->field_1A5B->field_054C,(undefined4 *)&this_01->field_0x1d);

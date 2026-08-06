@@ -31,7 +31,7 @@ int __thiscall STCrabC::GetMessage(STCrabC *this,STMessage *message)
   void *local_3c;
   undefined4 local_38;
   undefined4 local_34;
-  undefined4 local_30;
+  ushort *local_30;
   undefined4 local_2c;
   undefined4 local_28;
   undefined4 local_24;
@@ -188,14 +188,14 @@ int __thiscall STCrabC::GetMessage(STCrabC *this,STMessage *message)
       switch(*(undefined4 *)&this_00->field_0x279) {
       case 0xf2:
         iVar7 = STT3DSprC::LoadSequence
-                          ((STT3DSprC *)&this_00->field_01D5,0xe,DAT_0080676c,"crab1l",0x1d
+                          ((STT3DSprC *)&this_00->field_01D5,0xe,PTR_0080676c,"crab1l",0x1d
                           );
         if (iVar7 != 0) {
           RaiseInternalException
                     (-1,g_overwriteContext_007ED77C,"E:\\__titans\\Igor\\to_crab.cpp",0xd2);
         }
         iVar7 = STT3DSprC::LoadSequence
-                          ((STT3DSprC *)&this_00->field_01D5,0xd,DAT_0080676c,"crab1l_m",
+                          ((STT3DSprC *)&this_00->field_01D5,0xd,PTR_0080676c,"crab1l_m",
                            0x1d);
         if (iVar7 != 0) {
           iVar7 = 0xd5;
@@ -206,14 +206,14 @@ cf_error_exit_00578B5D:
         break;
       case 0xf3:
         iVar7 = STT3DSprC::LoadSequence
-                          ((STT3DSprC *)&this_00->field_01D5,0xe,DAT_0080676c,"crab2l",0x1d
+                          ((STT3DSprC *)&this_00->field_01D5,0xe,PTR_0080676c,"crab2l",0x1d
                           );
         if (iVar7 != 0) {
           RaiseInternalException
                     (-1,g_overwriteContext_007ED77C,"E:\\__titans\\Igor\\to_crab.cpp",0xda);
         }
         iVar7 = STT3DSprC::LoadSequence
-                          ((STT3DSprC *)&this_00->field_01D5,0xd,DAT_0080676c,"crab2l_m",
+                          ((STT3DSprC *)&this_00->field_01D5,0xd,PTR_0080676c,"crab2l_m",
                            0x1d);
         if (iVar7 != 0) {
           iVar7 = 0xdd;
@@ -222,14 +222,14 @@ cf_error_exit_00578B5D:
         break;
       case 0xf4:
         iVar7 = STT3DSprC::LoadSequence
-                          ((STT3DSprC *)&this_00->field_01D5,0xe,DAT_0080676c,"crab1b",0x1d
+                          ((STT3DSprC *)&this_00->field_01D5,0xe,PTR_0080676c,"crab1b",0x1d
                           );
         if (iVar7 != 0) {
           RaiseInternalException
                     (-1,g_overwriteContext_007ED77C,"E:\\__titans\\Igor\\to_crab.cpp",0xe2);
         }
         iVar7 = STT3DSprC::LoadSequence
-                          ((STT3DSprC *)&this_00->field_01D5,0xd,DAT_0080676c,"crab1b_m",
+                          ((STT3DSprC *)&this_00->field_01D5,0xd,PTR_0080676c,"crab1b_m",
                            0x1d);
         if (iVar7 != 0) {
           iVar7 = 0xe5;
@@ -238,14 +238,14 @@ cf_error_exit_00578B5D:
         break;
       case 0xf5:
         iVar7 = STT3DSprC::LoadSequence
-                          ((STT3DSprC *)&this_00->field_01D5,0xe,DAT_0080676c,"crab2b",0x1d
+                          ((STT3DSprC *)&this_00->field_01D5,0xe,PTR_0080676c,"crab2b",0x1d
                           );
         if (iVar7 != 0) {
           RaiseInternalException
                     (-1,g_overwriteContext_007ED77C,"E:\\__titans\\Igor\\to_crab.cpp",0xea);
         }
         iVar7 = STT3DSprC::LoadSequence
-                          ((STT3DSprC *)&this_00->field_01D5,0xd,DAT_0080676c,"crab2b_m",
+                          ((STT3DSprC *)&this_00->field_01D5,0xd,PTR_0080676c,"crab2b_m",
                            0x1d);
         if (iVar7 != 0) {
           iVar7 = 0xed;
@@ -254,14 +254,14 @@ cf_error_exit_00578B5D:
         break;
       case 0xf6:
         iVar7 = STT3DSprC::LoadSequence
-                          ((STT3DSprC *)&this_00->field_01D5,0xe,DAT_0080676c,"langus2",
+                          ((STT3DSprC *)&this_00->field_01D5,0xe,PTR_0080676c,"langus2",
                            0x1d);
         if (iVar7 != 0) {
           RaiseInternalException
                     (-1,g_overwriteContext_007ED77C,"E:\\__titans\\Igor\\to_crab.cpp",0xfa);
         }
         iVar7 = STT3DSprC::LoadSequence
-                          ((STT3DSprC *)&this_00->field_01D5,0xd,DAT_0080676c,"langus2m",
+                          ((STT3DSprC *)&this_00->field_01D5,0xd,PTR_0080676c,"langus2m",
                            0x1d);
         if (iVar7 != 0) {
           iVar7 = 0xfd;
@@ -270,14 +270,14 @@ cf_error_exit_00578B5D:
         break;
       case 0xf7:
         iVar7 = STT3DSprC::LoadSequence
-                          ((STT3DSprC *)&this_00->field_01D5,0xe,DAT_0080676c,"langus1",
+                          ((STT3DSprC *)&this_00->field_01D5,0xe,PTR_0080676c,"langus1",
                            0x1d);
         if (iVar7 != 0) {
           RaiseInternalException
                     (-1,g_overwriteContext_007ED77C,"E:\\__titans\\Igor\\to_crab.cpp",0xf2);
         }
         iVar7 = STT3DSprC::LoadSequence
-                          ((STT3DSprC *)&this_00->field_01D5,0xd,DAT_0080676c,"langus1m",
+                          ((STT3DSprC *)&this_00->field_01D5,0xd,PTR_0080676c,"langus1m",
                            0x1d);
         if (iVar7 != 0) {
           iVar7 = 0xf5;
@@ -344,12 +344,12 @@ cf_error_exit_00578B5D:
     if (local_3c != nullptr) {
       iVar7 = 0;
       do {
-        *(int **)(iVar7 + (int)local_3c) = DAT_0080676c;
+        *(int **)(iVar7 + (int)local_3c) = PTR_0080676c;
         iVar7 = iVar7 + 4;
       } while (iVar7 < 0x44);
       local_38 = 0;
       local_34 = 0;
-      local_30 = DAT_008073cc;
+      local_30 = PTR_008073cc;
       local_2c = 0;
       local_28 = 0;
       local_24 = 0;

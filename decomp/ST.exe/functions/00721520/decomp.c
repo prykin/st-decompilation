@@ -96,7 +96,7 @@ void __thiscall FUN_00721520(void *this,int param_1,uint param_2)
           pcVar8 = local_c + (~uVar3 - 1);
           memmove(pcVar8, pcVar7, uVar4); /* compiler REP MOVS byte copy */
           FUN_006b7830(STField<AnonShape_006B7830_769CA2DF *>(this,0x138),uVar6);
-          Library::DKW::TBL::FUN_006b6020(STField<uint *>(this,0x138),uVar6 - 1,local_c);
+          Library::DKW::TBL::FUN_006b6020(STField<DArrayTy *>(this,0x138),uVar6 - 1,local_c);
           FreeAndNull(&local_c);
           FUN_00721080(this,~uVar3 - 1,uVar6 - 1);
           return;
@@ -163,7 +163,7 @@ void __thiscall FUN_00721520(void *this,int param_1,uint param_2)
           pcVar8 = local_c + (~uVar3 - 1);
           memmove(pcVar8, pcVar7, uVar4); /* compiler REP MOVS byte copy */
           FUN_006b7830(STField<AnonShape_006B7830_769CA2DF *>(this,0x138),uVar6 + 1);
-          Library::DKW::TBL::FUN_006b6020(STField<uint *>(this,0x138),uVar6,local_c);
+          Library::DKW::TBL::FUN_006b6020(STField<DArrayTy *>(this,0x138),uVar6,local_c);
           FreeAndNull(&local_c);
           FUN_00721080(this,param_1,param_2);
           return;

@@ -2,7 +2,7 @@
 // Generated translation unit: source/recovered/by_address/005A.cpp
 
 // 005AA2C0 CreateFSGS
-#line 1 "decomp/ST.exe/functions/005AA2C0/decomp.c"
+#line 4 "decomp/ST.exe/functions/005AA2C0/decomp.c"
 /* [STObjectFactoryApplier] Central object factory for 0x030E (ST_OBJECT_FSGS).
    Evidence: registry[51] at 007CA8B8 stores type 0x030E and executable pointer 004038C8; allocation
    size 8387 uniquely matches /FSGSTy; calls base/helper constructor(s) SpriteClassTy; exact derived
@@ -21,7 +21,7 @@ FSGSTy * __cdecl st::fn_005AA2C0(void)
   this = (FSGSTy *)st::fn_006B04D0(0x20c3);
   if (this != nullptr) {
     st::fn_006E5FB0(this);
-    this->vtable = (FSGSTyVTable *)&VTable_0079C018;
+    this->vtable = (FSGSTyVTable *)&st_global_0079C018;
     this->field_0018 = 0;
     this->field_005D = nullptr;
     memset(&this->field_0x1d, 0, 0x20); /* compiler bulk-zero initialization */
@@ -38,7 +38,7 @@ FSGSTy * __cdecl st::fn_005AA2C0(void)
       this_00 = (SpriteClassTy *)&this_00[3].field_0048;
       local_8 = local_8 + -1;
     } while (local_8 != 0);
-    this->vtable = (FSGSTyVTable *)&MMObjTyVTable;
+    this->vtable = (FSGSTyVTable *)&st_global_0079C008;
     this->field_0065 = CASE_2;
     this->field_009A = 0;
     memset(&this->field_0x66, 0, 0x34); /* compiler bulk-zero initialization */
@@ -59,7 +59,7 @@ FSGSTy * __cdecl st::fn_005AA2C0(void)
     st::fn_00715820((SpriteClassTy *)&this->field_1CDB);
     st::fn_00715820((SpriteClassTy *)&this->field_1D6C);
     st::fn_00715820((SpriteClassTy *)&this->field_1DFD);
-    this->vtable = &FSGSTyVTable;
+    this->vtable = &st_global_0079C02C;
     this->field_1A6B = 1;
     this->field_0065 = CASE_1;
     this->field_1A61 = 0;

@@ -2,7 +2,7 @@
 // Generated translation unit: source/recovered/by_owner/ChooseMapTy.cpp
 
 // 005AE840 ChooseMapTy::sub_005AE840
-#line 1 "decomp/ST.exe/functions/005AE840/decomp.c"
+#line 4 "decomp/ST.exe/functions/005AE840/decomp.c"
 /* [STMethodOwnerApplier] Structural method owner recovered as ChooseMapTy.
    Evidence: this_call_owners=[ChooseMapTy]; agreed_this_calls=1; incoming_this_accesses=21;
    incoming_edx_uses=0; incoming_stack_parameter_uses=0; direct_non_thunk_callers=0;
@@ -44,7 +44,7 @@ void __thiscall st::fn_005AE840(ChooseMapTy *this)
 }
 
 // 005AE950 ChooseMapTy::sub_005AE950
-#line 1 "decomp/ST.exe/functions/005AE950/decomp.c"
+#line 4 "decomp/ST.exe/functions/005AE950/decomp.c"
 /* [STMethodOwnerApplier] Structural method owner recovered as ChooseMapTy.
    Evidence: this_call_owners=[ChooseMapTy]; agreed_this_calls=1; incoming_this_accesses=21;
    incoming_edx_uses=0; incoming_stack_parameter_uses=0; direct_non_thunk_callers=0;
@@ -89,7 +89,7 @@ void __thiscall st::fn_005AE950(ChooseMapTy *this)
 }
 
 // 005B5BE0 ChooseMapTy::sub_005B5BE0
-#line 1 "decomp/ST.exe/functions/005B5BE0/decomp.c"
+#line 4 "decomp/ST.exe/functions/005B5BE0/decomp.c"
 /* [STHiddenThisApplier] Anonymous hidden receiver recovered as
    /SubmarineTitans/Recovered/HiddenThis/AnonReceiver_005B5BE0.
    Evidence: incoming_receiver_captures=1; receiver_accesses=11; incoming_edx_uses=0; calls=1;

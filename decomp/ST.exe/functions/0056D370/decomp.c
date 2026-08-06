@@ -28,19 +28,19 @@ void __thiscall STAppC::OpenGameDBs(STAppC *this)
     puVar4 = &local_8->field_7D1A;
     wsprintfA((LPSTR)puVar4,"%s%s",puVar1,"NATURE");
     DAT_00806768 = Library::Ourlib::MF32INT::FUN_006f0ec0(0x345,puVar4,0,0,0);
-    DAT_0080676c = Library::Ourlib::MFRLOAD::mfRLoadCreate((int)DAT_00806768);
+    PTR_0080676c = Library::Ourlib::MFRLOAD::mfRLoadCreate((int)DAT_00806768);
     wsprintfA((LPSTR)puVar4,"%s%s",puVar1,"OTHER");
     PTR_00806770 = (cMf32 *)Library::Ourlib::MF32INT::FUN_006f0ec0(0x345,puVar4,0,0,0);
-    DAT_00806774 = Library::Ourlib::MFRLOAD::mfRLoadCreate((int)PTR_00806770);
+    PTR_00806774 = Library::Ourlib::MFRLOAD::mfRLoadCreate((int)PTR_00806770);
     wsprintfA((LPSTR)puVar4,"%s%s",puVar1,&DAT_007ca15c);
     DAT_00806778 = Library::Ourlib::MF32INT::FUN_006f0ec0(0x345,puVar4,0,0,0);
-    DAT_0080677c = Library::Ourlib::MFRLOAD::mfRLoadCreate((int)DAT_00806778);
+    PTR_0080677c = Library::Ourlib::MFRLOAD::mfRLoadCreate((int)DAT_00806778);
     wsprintfA((LPSTR)puVar4,"%s%s",puVar1,"CONTROLG");
     g_cMf32_00806790 = (cMf32 *)Library::Ourlib::MF32INT::FUN_006f0ec0(0x345,puVar4,0,0,0);
-    DAT_00806794 = Library::Ourlib::MFRLOAD::mfRLoadCreate((int)g_cMf32_00806790);
+    PTR_00806794 = Library::Ourlib::MFRLOAD::mfRLoadCreate((int)g_cMf32_00806790);
     wsprintfA((LPSTR)puVar4,"%s%s",puVar1,"OBJECT");
     DAT_00806788 = Library::Ourlib::MF32INT::FUN_006f0ec0(0x345,puVar4,0,0,0);
-    DAT_0080678c = Library::Ourlib::MFRLOAD::mfRLoadCreate((int)DAT_00806788);
+    PTR_0080678c = Library::Ourlib::MFRLOAD::mfRLoadCreate((int)DAT_00806788);
     g_currentExceptionFrame = local_4c.previous;
     return;
   }

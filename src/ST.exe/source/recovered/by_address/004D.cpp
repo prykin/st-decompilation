@@ -2,7 +2,7 @@
 // Generated translation unit: source/recovered/by_address/004D.cpp
 
 // 004D0670 FUN_004d0670
-#line 1 "decomp/ST.exe/functions/004D0670/decomp.c"
+#line 4 "decomp/ST.exe/functions/004D0670/decomp.c"
 undefined4 __fastcall st::fn_004D0670(int param_1)
 
 {
@@ -87,7 +87,7 @@ undefined4 __fastcall st::fn_004D0670(int param_1)
 }
 
 // 004D08C0 FUN_004d08c0
-#line 1 "decomp/ST.exe/functions/004D08C0/decomp.c"
+#line 4 "decomp/ST.exe/functions/004D08C0/decomp.c"
 undefined4 st::fn_004D08C0(void)
 
 {
@@ -95,7 +95,7 @@ undefined4 st::fn_004D08C0(void)
 }
 
 // 004D08E0 FUN_004d08e0
-#line 1 "decomp/ST.exe/functions/004D08E0/decomp.c"
+#line 4 "decomp/ST.exe/functions/004D08E0/decomp.c"
 undefined4 st::fn_004D08E0(void)
 
 {
@@ -103,7 +103,7 @@ undefined4 st::fn_004D08E0(void)
 }
 
 // 004D0900 FUN_004d0900
-#line 1 "decomp/ST.exe/functions/004D0900/decomp.c"
+#line 4 "decomp/ST.exe/functions/004D0900/decomp.c"
 undefined4 st::fn_004D0900(void)
 
 {
@@ -111,7 +111,7 @@ undefined4 st::fn_004D0900(void)
 }
 
 // 004D0ED0 CreateTLOFake
-#line 1 "decomp/ST.exe/functions/004D0ED0/decomp.c"
+#line 4 "decomp/ST.exe/functions/004D0ED0/decomp.c"
 /* [STUnclaimedCodeApplier] Exact function entry recovered from thunk_target.
    Evidence: P:007CA7F4>0040382D
 
@@ -133,7 +133,7 @@ TLOFakeTy * __cdecl st::fn_004D0ED0(void)
 }
 
 // 004D0F00 FUN_004d0f00
-#line 1 "decomp/ST.exe/functions/004D0F00/decomp.c"
+#line 4 "decomp/ST.exe/functions/004D0F00/decomp.c"
 undefined4 st::fn_004D0F00(void)
 
 {
@@ -150,7 +150,7 @@ undefined4 st::fn_004D0F00(void)
 }
 
 // 004D0F80 FUN_004d0f80
-#line 1 "decomp/ST.exe/functions/004D0F80/decomp.c"
+#line 4 "decomp/ST.exe/functions/004D0F80/decomp.c"
 undefined4 st::fn_004D0F80(void)
 
 {
@@ -158,7 +158,7 @@ undefined4 st::fn_004D0F80(void)
 }
 
 // 004D0FA0 FUN_004d0fa0
-#line 1 "decomp/ST.exe/functions/004D0FA0/decomp.c"
+#line 4 "decomp/ST.exe/functions/004D0FA0/decomp.c"
 undefined4 st::fn_004D0FA0(void)
 
 {
@@ -166,15 +166,15 @@ undefined4 st::fn_004D0FA0(void)
 }
 
 // 004D0FC0 FUN_004d0fc0
-#line 1 "decomp/ST.exe/functions/004D0FC0/decomp.c"
+#line 4 "decomp/ST.exe/functions/004D0FC0/decomp.c"
 undefined4 * __fastcall st::fn_004D0FC0(STGroupBoatC *param_1)
 
 {
 
   st::fn_00401933((STGameObjC *)param_1);
   st::fn_00401316((AnonShape_004AB810_8E5693D5 *)&param_1->field_0x1d5);
-  param_1->vtable = (STGroupBoatCVTable *)&VTable_00798C70;
-  *(VTable_00798C6C **)&param_1->field_0x1d5 = &VTable_00798C6C;
+  param_1->vtable = (STGroupBoatCVTable *)&st_global_00798C70;
+  *(VTable_00798C6C **)&param_1->field_0x1d5 = &st_global_00798C6C;
   *(undefined4 *)&param_1->field_0x2a8 = 0;
   *(undefined4 *)&param_1->field_0x2dc = 0;
   param_1->field_0350 = 0;
@@ -198,7 +198,7 @@ undefined4 * __fastcall st::fn_004D0FC0(STGroupBoatC *param_1)
 }
 
 // 004D2760 FUN_004d2760
-#line 1 "decomp/ST.exe/functions/004D2760/decomp.c"
+#line 4 "decomp/ST.exe/functions/004D2760/decomp.c"
 undefined4 __fastcall st::fn_004D2760(TLOBaseTy *param_1)
 
 {
@@ -439,7 +439,7 @@ undefined4 __fastcall st::fn_004D2760(TLOBaseTy *param_1)
 }
 
 // 004D2FD0 FUN_004d2fd0
-#line 1 "decomp/ST.exe/functions/004D2FD0/decomp.c"
+#line 4 "decomp/ST.exe/functions/004D2FD0/decomp.c"
 undefined4 __fastcall st::fn_004D2FD0(int param_1)
 
 {
@@ -572,7 +572,7 @@ undefined4 __fastcall st::fn_004D2FD0(int param_1)
 }
 
 // 004D3290 FUN_004d3290
-#line 1 "decomp/ST.exe/functions/004D3290/decomp.c"
+#line 4 "decomp/ST.exe/functions/004D3290/decomp.c"
 void __fastcall st::fn_004D3290(int param_1)
 
 {
@@ -582,7 +582,7 @@ void __fastcall st::fn_004D3290(int param_1)
 }
 
 // 004D5470 FUN_004d5470
-#line 1 "decomp/ST.exe/functions/004D5470/decomp.c"
+#line 4 "decomp/ST.exe/functions/004D5470/decomp.c"
 undefined4 __fastcall st::fn_004D5470(int param_1)
 
 {
@@ -659,7 +659,7 @@ undefined4 __fastcall st::fn_004D5470(int param_1)
 }
 
 // 004D6360 FUN_004d6360
-#line 1 "decomp/ST.exe/functions/004D6360/decomp.c"
+#line 4 "decomp/ST.exe/functions/004D6360/decomp.c"
 int __thiscall st::fn_004D6360(void *this,short param_1,short param_2,short param_3)
 
 {
@@ -720,7 +720,7 @@ int __thiscall st::fn_004D6360(void *this,short param_1,short param_2,short para
 }
 
 // 004D6590 FUN_004d6590
-#line 1 "decomp/ST.exe/functions/004D6590/decomp.c"
+#line 4 "decomp/ST.exe/functions/004D6590/decomp.c"
 undefined4 __thiscall
 st::fn_004D6590(void *this,float param_1,short *param_2,short *param_3,short *param_4,
             undefined4 *param_5)
@@ -778,7 +778,7 @@ st::fn_004D6590(void *this,float param_1,short *param_2,short *param_3,short *pa
 }
 
 // 004D6890 FUN_004d6890
-#line 1 "decomp/ST.exe/functions/004D6890/decomp.c"
+#line 4 "decomp/ST.exe/functions/004D6890/decomp.c"
 void __thiscall st::fn_004D6890(void *this,AnonShape_004D6890_0C7826D6 *param_1)
 
 {
@@ -816,7 +816,7 @@ void __thiscall st::fn_004D6890(void *this,AnonShape_004D6890_0C7826D6 *param_1)
 }
 
 // 004D6930 FUN_004d6930
-#line 1 "decomp/ST.exe/functions/004D6930/decomp.c"
+#line 4 "decomp/ST.exe/functions/004D6930/decomp.c"
 void __thiscall st::fn_004D6930(void *this,AnonShape_004D6930_FDF7B020 *param_1)
 
 {
@@ -915,7 +915,7 @@ void __thiscall st::fn_004D6930(void *this,AnonShape_004D6930_FDF7B020 *param_1)
 }
 
 // 004D6BE0 FUN_004d6be0
-#line 1 "decomp/ST.exe/functions/004D6BE0/decomp.c"
+#line 4 "decomp/ST.exe/functions/004D6BE0/decomp.c"
 undefined4 st::fn_004D6BE0(void)
 
 {
@@ -923,7 +923,7 @@ undefined4 st::fn_004D6BE0(void)
 }
 
 // 004D6C00 FUN_004d6c00
-#line 1 "decomp/ST.exe/functions/004D6C00/decomp.c"
+#line 4 "decomp/ST.exe/functions/004D6C00/decomp.c"
 int __fastcall st::fn_004D6C00(int param_1)
 
 {
@@ -932,7 +932,7 @@ int __fastcall st::fn_004D6C00(int param_1)
 }
 
 // 004D6C20 FUN_004d6c20
-#line 1 "decomp/ST.exe/functions/004D6C20/decomp.c"
+#line 4 "decomp/ST.exe/functions/004D6C20/decomp.c"
 undefined4 __fastcall st::fn_004D6C20(int param_1)
 
 {
@@ -944,7 +944,7 @@ undefined4 __fastcall st::fn_004D6C20(int param_1)
 }
 
 // 004D6C50 FUN_004d6c50
-#line 1 "decomp/ST.exe/functions/004D6C50/decomp.c"
+#line 4 "decomp/ST.exe/functions/004D6C50/decomp.c"
 undefined4 __fastcall st::fn_004D6C50(int param_1)
 
 {
@@ -953,7 +953,7 @@ undefined4 __fastcall st::fn_004D6C50(int param_1)
 }
 
 // 004D6C70 FUN_004d6c70
-#line 1 "decomp/ST.exe/functions/004D6C70/decomp.c"
+#line 4 "decomp/ST.exe/functions/004D6C70/decomp.c"
 undefined4 st::fn_004D6C70(void)
 
 {
@@ -961,7 +961,7 @@ undefined4 st::fn_004D6C70(void)
 }
 
 // 004D6C90 FUN_004d6c90
-#line 1 "decomp/ST.exe/functions/004D6C90/decomp.c"
+#line 4 "decomp/ST.exe/functions/004D6C90/decomp.c"
 undefined4 __thiscall st::fn_004D6C90(void *this,undefined4 param_1,int *param_2)
 
 {
@@ -993,7 +993,7 @@ undefined4 __thiscall st::fn_004D6C90(void *this,undefined4 param_1,int *param_2
 }
 
 // 004D6D30 FUN_004d6d30
-#line 1 "decomp/ST.exe/functions/004D6D30/decomp.c"
+#line 4 "decomp/ST.exe/functions/004D6D30/decomp.c"
 void __fastcall st::fn_004D6D30(int *param_1)
 
 {
@@ -1005,7 +1005,7 @@ void __fastcall st::fn_004D6D30(int *param_1)
 }
 
 // 004D6D50 FUN_004d6d50
-#line 1 "decomp/ST.exe/functions/004D6D50/decomp.c"
+#line 4 "decomp/ST.exe/functions/004D6D50/decomp.c"
 void __thiscall st::fn_004D6D50(void *this,undefined4 *param_1)
 
 {
@@ -1020,7 +1020,7 @@ void __thiscall st::fn_004D6D50(void *this,undefined4 *param_1)
 }
 
 // 004D6DC0 CreateTLOEmbryo
-#line 1 "decomp/ST.exe/functions/004D6DC0/decomp.c"
+#line 4 "decomp/ST.exe/functions/004D6DC0/decomp.c"
 /* [STUnclaimedCodeApplier] Exact function entry recovered from thunk_target.
    Evidence: P:007CA7E4>00405498
 
@@ -1043,7 +1043,7 @@ TLOEmbryoTy * __cdecl st::fn_004D6DC0(void)
 }
 
 // 004D6EB0 FUN_004d6eb0
-#line 1 "decomp/ST.exe/functions/004D6EB0/decomp.c"
+#line 4 "decomp/ST.exe/functions/004D6EB0/decomp.c"
 /* [STReturnSemanticsApplier] ignored_eax_void.
    Evidence: all observed direct callers ignore the return register (ignored=2, used=0, unknown=0),
    and decompilation contains no value return */
@@ -1091,7 +1091,7 @@ void __thiscall st::fn_004D6EB0(void *this,int param_1)
 }
 
 // 004D6F70 FUN_004d6f70
-#line 1 "decomp/ST.exe/functions/004D6F70/decomp.c"
+#line 4 "decomp/ST.exe/functions/004D6F70/decomp.c"
 /* [STAbiConsistencyApplier] full_eax_return: return=/int Evidence: all observed callers consume
    full EAX (6), none consume AL/AX, and every RET path defines full EAX; sites=00478640 @ 00478724
    -> CMP CMP EAX,0x1 | 00478640 @ 004788C5 -> CMP CMP EAX,0x1 | 00478640 @ 00478A39 -> CMP CMP
@@ -1122,7 +1122,7 @@ int __fastcall st::fn_004D6F70(int *param_1)
 }
 
 // 004D7010 FUN_004d7010
-#line 1 "decomp/ST.exe/functions/004D7010/decomp.c"
+#line 4 "decomp/ST.exe/functions/004D7010/decomp.c"
 undefined4 __fastcall st::fn_004D7010(int param_1)
 
 {
@@ -1135,7 +1135,7 @@ undefined4 __fastcall st::fn_004D7010(int param_1)
 }
 
 // 004D7040 FUN_004d7040
-#line 1 "decomp/ST.exe/functions/004D7040/decomp.c"
+#line 4 "decomp/ST.exe/functions/004D7040/decomp.c"
 undefined4 __fastcall st::fn_004D7040(int *param_1)
 
 {
@@ -1215,7 +1215,7 @@ undefined4 __fastcall st::fn_004D7040(int *param_1)
 }
 
 // 004D7270 FUN_004d7270
-#line 1 "decomp/ST.exe/functions/004D7270/decomp.c"
+#line 4 "decomp/ST.exe/functions/004D7270/decomp.c"
 undefined4 __fastcall st::fn_004D7270(AnonShape_004D7270_8F0A3C37 *param_1)
 
 {
@@ -1255,7 +1255,7 @@ undefined4 __fastcall st::fn_004D7270(AnonShape_004D7270_8F0A3C37 *param_1)
 }
 
 // 004D7390 FUN_004d7390
-#line 1 "decomp/ST.exe/functions/004D7390/decomp.c"
+#line 4 "decomp/ST.exe/functions/004D7390/decomp.c"
 undefined4 __fastcall st::fn_004D7390(int *param_1)
 
 {
@@ -1264,7 +1264,7 @@ undefined4 __fastcall st::fn_004D7390(int *param_1)
 }
 
 // 004D73B0 FUN_004d73b0
-#line 1 "decomp/ST.exe/functions/004D73B0/decomp.c"
+#line 4 "decomp/ST.exe/functions/004D73B0/decomp.c"
 undefined4 st::fn_004D73B0(char param_1)
 
 {
@@ -1306,7 +1306,7 @@ uint st::fn_004D7430(char param_1)
 }
 
 // 004D7480 FUN_004d7480
-#line 1 "decomp/ST.exe/functions/004D7480/decomp.c"
+#line 4 "decomp/ST.exe/functions/004D7480/decomp.c"
 undefined4
 st::fn_004D7480(char param_1,int param_2,undefined4 param_3,int param_4,int param_5,int param_6,
             int param_7)
@@ -1340,7 +1340,7 @@ st::fn_004D7480(char param_1,int param_2,undefined4 param_3,int param_4,int para
 }
 
 // 004D7570 FUN_004d7570
-#line 1 "decomp/ST.exe/functions/004D7570/decomp.c"
+#line 4 "decomp/ST.exe/functions/004D7570/decomp.c"
 /* [STPrototypeApplier] Propagated parameter 2.
    Evidence: 004749C0 -> 004D7570 @ 0047525A; /STBoatC+0x18 | 004C7460 -> 004D7570 @ 004C74A4;
    /TLOBaseTy+0x18 */
@@ -1391,7 +1391,7 @@ cf_common_exit_004D766D:
 }
 
 // 004D76E0 FUN_004d76e0
-#line 1 "decomp/ST.exe/functions/004D76E0/decomp.c"
+#line 4 "decomp/ST.exe/functions/004D76E0/decomp.c"
 /* [STPrototypeApplier] Propagated parameter 2.
    Evidence: 004C7460 -> 004D76E0 @ 004C7688; /TLOBaseTy+0x18 */
 
@@ -1453,7 +1453,7 @@ st::fn_004D76E0(char param_1,int param_2,int *param_3,int param_4,int param_5,in
 }
 
 // 004D78E0 FUN_004d78e0
-#line 1 "decomp/ST.exe/functions/004D78E0/decomp.c"
+#line 4 "decomp/ST.exe/functions/004D78E0/decomp.c"
 undefined4 st::fn_004D78E0(char param_1)
 
 {
@@ -1567,7 +1567,7 @@ undefined4 st::fn_004D78E0(char param_1)
 }
 
 // 004D7B10 FUN_004d7b10
-#line 1 "decomp/ST.exe/functions/004D7B10/decomp.c"
+#line 4 "decomp/ST.exe/functions/004D7B10/decomp.c"
 undefined4 st::fn_004D7B10(char param_1,int param_2)
 
 {
@@ -1575,7 +1575,7 @@ undefined4 st::fn_004D7B10(char param_1,int param_2)
 }
 
 // 004D7B50 FUN_004d7b50
-#line 1 "decomp/ST.exe/functions/004D7B50/decomp.c"
+#line 4 "decomp/ST.exe/functions/004D7B50/decomp.c"
 undefined4 st::fn_004D7B50(char param_1,int param_2)
 
 {
@@ -1583,7 +1583,7 @@ undefined4 st::fn_004D7B50(char param_1,int param_2)
 }
 
 // 004D7B90 FUN_004d7b90
-#line 1 "decomp/ST.exe/functions/004D7B90/decomp.c"
+#line 4 "decomp/ST.exe/functions/004D7B90/decomp.c"
 undefined4 st::fn_004D7B90(char param_1,int param_2)
 
 {
@@ -1591,7 +1591,7 @@ undefined4 st::fn_004D7B90(char param_1,int param_2)
 }
 
 // 004D7BD0 FUN_004d7bd0
-#line 1 "decomp/ST.exe/functions/004D7BD0/decomp.c"
+#line 4 "decomp/ST.exe/functions/004D7BD0/decomp.c"
 undefined4 st::fn_004D7BD0(char param_1,int param_2)
 
 {
@@ -1599,7 +1599,7 @@ undefined4 st::fn_004D7BD0(char param_1,int param_2)
 }
 
 // 004D7C10 FUN_004d7c10
-#line 1 "decomp/ST.exe/functions/004D7C10/decomp.c"
+#line 4 "decomp/ST.exe/functions/004D7C10/decomp.c"
 undefined4 st::fn_004D7C10(char param_1,int param_2,int param_3,int param_4)
 
 {
@@ -1639,7 +1639,7 @@ undefined4 st::fn_004D7C10(char param_1,int param_2,int param_3,int param_4)
 }
 
 // 004D7D30 FUN_004d7d30
-#line 1 "decomp/ST.exe/functions/004D7D30/decomp.c"
+#line 4 "decomp/ST.exe/functions/004D7D30/decomp.c"
 undefined4 st::fn_004D7D30(char param_1,int param_2,int param_3,int param_4)
 
 {
@@ -1679,7 +1679,7 @@ undefined4 st::fn_004D7D30(char param_1,int param_2,int param_3,int param_4)
 }
 
 // 004D7E50 FUN_004d7e50
-#line 1 "decomp/ST.exe/functions/004D7E50/decomp.c"
+#line 4 "decomp/ST.exe/functions/004D7E50/decomp.c"
 undefined4 st::fn_004D7E50(char param_1,int param_2,int param_3,int param_4)
 
 {
@@ -1719,7 +1719,7 @@ undefined4 st::fn_004D7E50(char param_1,int param_2,int param_3,int param_4)
 }
 
 // 004D7F70 FUN_004d7f70
-#line 1 "decomp/ST.exe/functions/004D7F70/decomp.c"
+#line 4 "decomp/ST.exe/functions/004D7F70/decomp.c"
 undefined4 st::fn_004D7F70(char param_1,int param_2,int param_3,int param_4)
 
 {
@@ -1759,7 +1759,7 @@ undefined4 st::fn_004D7F70(char param_1,int param_2,int param_3,int param_4)
 }
 
 // 004D8080 FUN_004d8080
-#line 1 "decomp/ST.exe/functions/004D8080/decomp.c"
+#line 4 "decomp/ST.exe/functions/004D8080/decomp.c"
 /* [STPrototypeApplier] Propagated return.
    Evidence: 004D8080 returns zeroed full register at 004D80B7 @ 004D80BB */
 
@@ -1772,7 +1772,7 @@ uint st::fn_004D8080(char param_1,int param_2,undefined4 param_3)
 }
 
 // 004D80D0 FUN_004d80d0
-#line 1 "decomp/ST.exe/functions/004D80D0/decomp.c"
+#line 4 "decomp/ST.exe/functions/004D80D0/decomp.c"
 undefined4 st::fn_004D80D0(char param_1,int param_2)
 
 {
@@ -1780,7 +1780,7 @@ undefined4 st::fn_004D80D0(char param_1,int param_2)
 }
 
 // 004D8110 FUN_004d8110
-#line 1 "decomp/ST.exe/functions/004D8110/decomp.c"
+#line 4 "decomp/ST.exe/functions/004D8110/decomp.c"
 undefined4 st::fn_004D8110(undefined4 param_1)
 
 {
@@ -1794,7 +1794,7 @@ undefined4 st::fn_004D8110(undefined4 param_1)
 }
 
 // 004D8190 FUN_004d8190
-#line 1 "decomp/ST.exe/functions/004D8190/decomp.c"
+#line 4 "decomp/ST.exe/functions/004D8190/decomp.c"
 void st::fn_004D8190(void)
 
 {
@@ -1822,7 +1822,7 @@ void st::fn_004D8190(void)
 }
 
 // 004D8230 FUN_004d8230
-#line 1 "decomp/ST.exe/functions/004D8230/decomp.c"
+#line 4 "decomp/ST.exe/functions/004D8230/decomp.c"
 undefined4 st::fn_004D8230(void)
 
 {
@@ -1874,7 +1874,7 @@ int st::fn_004D82B0(int param_1)
 }
 
 // 004D8320 FUN_004d8320
-#line 1 "decomp/ST.exe/functions/004D8320/decomp.c"
+#line 4 "decomp/ST.exe/functions/004D8320/decomp.c"
 undefined4 st::fn_004D8320(undefined4 param_1)
 
 {
@@ -1886,7 +1886,7 @@ undefined4 st::fn_004D8320(undefined4 param_1)
 }
 
 // 004D8360 FUN_004d8360
-#line 1 "decomp/ST.exe/functions/004D8360/decomp.c"
+#line 4 "decomp/ST.exe/functions/004D8360/decomp.c"
 undefined4 st::fn_004D8360(void)
 
 {
@@ -1901,7 +1901,7 @@ undefined4 st::fn_004D8360(void)
 }
 
 // 004D83D0 FUN_004d83d0
-#line 1 "decomp/ST.exe/functions/004D83D0/decomp.c"
+#line 4 "decomp/ST.exe/functions/004D83D0/decomp.c"
 undefined4 st::fn_004D83D0(undefined1 param_1,int param_2,int param_3,uint param_4,int param_5)
 
 {
@@ -2040,7 +2040,7 @@ uint * st::fn_004D85E0(int param_1,int param_2,int param_3)
 }
 
 // 004D86A0 FUN_004d86a0
-#line 1 "decomp/ST.exe/functions/004D86A0/decomp.c"
+#line 4 "decomp/ST.exe/functions/004D86A0/decomp.c"
 undefined4 st::fn_004D86A0(uint param_1,int param_2)
 
 {
@@ -2116,7 +2116,7 @@ int st::fn_004D8800(char param_1,int param_2)
 }
 
 // 004D8870 FUN_004d8870
-#line 1 "decomp/ST.exe/functions/004D8870/decomp.c"
+#line 4 "decomp/ST.exe/functions/004D8870/decomp.c"
 undefined4 st::fn_004D8870(char param_1)
 
 {
@@ -2127,7 +2127,7 @@ undefined4 st::fn_004D8870(char param_1)
 }
 
 // 004D88B0 FUN_004d88b0
-#line 1 "decomp/ST.exe/functions/004D88B0/decomp.c"
+#line 4 "decomp/ST.exe/functions/004D88B0/decomp.c"
 undefined4 st::fn_004D88B0(char param_1,undefined4 param_2)
 
 {
@@ -2178,7 +2178,7 @@ int st::fn_004D8940(char param_1,int param_2)
 }
 
 // 004D89B0 FUN_004d89b0
-#line 1 "decomp/ST.exe/functions/004D89B0/decomp.c"
+#line 4 "decomp/ST.exe/functions/004D89B0/decomp.c"
 undefined4 st::fn_004D89B0(char param_1)
 
 {
@@ -2189,7 +2189,7 @@ undefined4 st::fn_004D89B0(char param_1)
 }
 
 // 004D89F0 FUN_004d89f0
-#line 1 "decomp/ST.exe/functions/004D89F0/decomp.c"
+#line 4 "decomp/ST.exe/functions/004D89F0/decomp.c"
 undefined4 st::fn_004D89F0(char param_1,undefined4 param_2)
 
 {
@@ -2240,7 +2240,7 @@ int st::fn_004D8A80(char param_1,int param_2)
 }
 
 // 004D8AF0 FUN_004d8af0
-#line 1 "decomp/ST.exe/functions/004D8AF0/decomp.c"
+#line 4 "decomp/ST.exe/functions/004D8AF0/decomp.c"
 undefined4 st::fn_004D8AF0(char param_1)
 
 {
@@ -2251,7 +2251,7 @@ undefined4 st::fn_004D8AF0(char param_1)
 }
 
 // 004D8B30 FUN_004d8b30
-#line 1 "decomp/ST.exe/functions/004D8B30/decomp.c"
+#line 4 "decomp/ST.exe/functions/004D8B30/decomp.c"
 undefined4 st::fn_004D8B30(char param_1,undefined4 param_2)
 
 {
@@ -2263,7 +2263,7 @@ undefined4 st::fn_004D8B30(char param_1,undefined4 param_2)
 }
 
 // 004D8B70 FUN_004d8b70
-#line 1 "decomp/ST.exe/functions/004D8B70/decomp.c"
+#line 4 "decomp/ST.exe/functions/004D8B70/decomp.c"
 undefined4 st::fn_004D8B70(char param_1)
 
 {
@@ -2317,7 +2317,7 @@ undefined4 st::fn_004D8B70(char param_1)
 }
 
 // 004D8D00 FUN_004d8d00
-#line 1 "decomp/ST.exe/functions/004D8D00/decomp.c"
+#line 4 "decomp/ST.exe/functions/004D8D00/decomp.c"
 undefined4 __fastcall st::fn_004D8D00(AnonShape_004D8D00_A9D3F7D4 *param_1)
 
 {
@@ -2330,7 +2330,7 @@ undefined4 __fastcall st::fn_004D8D00(AnonShape_004D8D00_A9D3F7D4 *param_1)
 }
 
 // 004D8D40 FUN_004d8d40
-#line 1 "decomp/ST.exe/functions/004D8D40/decomp.c"
+#line 4 "decomp/ST.exe/functions/004D8D40/decomp.c"
 undefined4 __fastcall st::fn_004D8D40(int param_1)
 
 {
@@ -2354,7 +2354,7 @@ undefined4 __fastcall st::fn_004D8D40(int param_1)
 }
 
 // 004D8DB0 FUN_004d8db0
-#line 1 "decomp/ST.exe/functions/004D8DB0/decomp.c"
+#line 4 "decomp/ST.exe/functions/004D8DB0/decomp.c"
 undefined4 __fastcall st::fn_004D8DB0(AnonShape_004D8DB0_597A2A4F *param_1)
 
 {
@@ -2382,7 +2382,7 @@ switchD_004d8dbb_caseD_2:
 }
 
 // 004D8E30 FUN_004d8e30
-#line 1 "decomp/ST.exe/functions/004D8E30/decomp.c"
+#line 4 "decomp/ST.exe/functions/004D8E30/decomp.c"
 undefined4 __fastcall st::fn_004D8E30(TLOBaseTy *param_1)
 
 {
@@ -2395,7 +2395,7 @@ undefined4 __fastcall st::fn_004D8E30(TLOBaseTy *param_1)
 }
 
 // 004D8E70 FUN_004d8e70
-#line 1 "decomp/ST.exe/functions/004D8E70/decomp.c"
+#line 4 "decomp/ST.exe/functions/004D8E70/decomp.c"
 undefined4 __thiscall st::fn_004D8E70(void *this,int param_1,int param_2,undefined4 param_3)
 
 {
@@ -2431,7 +2431,7 @@ undefined4 __thiscall st::fn_004D8E70(void *this,int param_1,int param_2,undefin
 }
 
 // 004D8F80 FUN_004d8f80
-#line 1 "decomp/ST.exe/functions/004D8F80/decomp.c"
+#line 4 "decomp/ST.exe/functions/004D8F80/decomp.c"
 undefined4 __fastcall st::fn_004D8F80(AnonShape_004D8F80_1255A4D6 *param_1)
 
 {
@@ -2451,7 +2451,7 @@ undefined4 __fastcall st::fn_004D8F80(AnonShape_004D8F80_1255A4D6 *param_1)
 }
 
 // 004D9350 FUN_004d9350
-#line 1 "decomp/ST.exe/functions/004D9350/decomp.c"
+#line 4 "decomp/ST.exe/functions/004D9350/decomp.c"
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
 undefined4 __fastcall st::fn_004D9350(TLOBaseTy *param_1)
@@ -2518,7 +2518,7 @@ undefined4 __fastcall st::fn_004D9350(TLOBaseTy *param_1)
 }
 
 // 004D96B0 FUN_004d96b0
-#line 1 "decomp/ST.exe/functions/004D96B0/decomp.c"
+#line 4 "decomp/ST.exe/functions/004D96B0/decomp.c"
 undefined4 st::fn_004D96B0(void)
 
 {
@@ -2532,7 +2532,7 @@ undefined4 st::fn_004D96B0(void)
 }
 
 // 004D9700 FUN_004d9700
-#line 1 "decomp/ST.exe/functions/004D9700/decomp.c"
+#line 4 "decomp/ST.exe/functions/004D9700/decomp.c"
 /* [STPrototypeApplier] Propagated parameter 0.
    Evidence: 004B9A40 -> 004D9700 @ 004B9B20; TLOBaseTy::sub_004B9A40 this; stable alias ESI */
 
@@ -2564,7 +2564,7 @@ undefined4 __fastcall st::fn_004D9700(TLOBaseTy *param_1)
 }
 
 // 004D9790 FUN_004d9790
-#line 1 "decomp/ST.exe/functions/004D9790/decomp.c"
+#line 4 "decomp/ST.exe/functions/004D9790/decomp.c"
 undefined4 __fastcall st::fn_004D9790(AnonShape_004D9790_FC54D6B0 *param_1)
 
 {
@@ -2584,7 +2584,7 @@ undefined4 __fastcall st::fn_004D9790(AnonShape_004D9790_FC54D6B0 *param_1)
 }
 
 // 004D9820 FUN_004d9820
-#line 1 "decomp/ST.exe/functions/004D9820/decomp.c"
+#line 4 "decomp/ST.exe/functions/004D9820/decomp.c"
 undefined4 __fastcall st::fn_004D9820(int *param_1)
 
 {
@@ -2670,7 +2670,7 @@ undefined4 __fastcall st::fn_004D9820(int *param_1)
 }
 
 // 004D9B20 FUN_004d9b20
-#line 1 "decomp/ST.exe/functions/004D9B20/decomp.c"
+#line 4 "decomp/ST.exe/functions/004D9B20/decomp.c"
 undefined4 __fastcall st::fn_004D9B20(int param_1)
 
 {
@@ -2692,7 +2692,7 @@ undefined4 __fastcall st::fn_004D9B20(int param_1)
 }
 
 // 004D9BB0 FUN_004d9bb0
-#line 1 "decomp/ST.exe/functions/004D9BB0/decomp.c"
+#line 4 "decomp/ST.exe/functions/004D9BB0/decomp.c"
 void __fastcall st::fn_004D9BB0(int param_1)
 
 {
@@ -2702,7 +2702,7 @@ void __fastcall st::fn_004D9BB0(int param_1)
 }
 
 // 004D9BD0 FUN_004d9bd0
-#line 1 "decomp/ST.exe/functions/004D9BD0/decomp.c"
+#line 4 "decomp/ST.exe/functions/004D9BD0/decomp.c"
 undefined4 __fastcall st::fn_004D9BD0(AnonShape_004D9BD0_B3B50583 *param_1)
 
 {
@@ -2729,7 +2729,7 @@ undefined4 __fastcall st::fn_004D9BD0(AnonShape_004D9BD0_B3B50583 *param_1)
 }
 
 // 004D9C20 FUN_004d9c20
-#line 1 "decomp/ST.exe/functions/004D9C20/decomp.c"
+#line 4 "decomp/ST.exe/functions/004D9C20/decomp.c"
 undefined4 __fastcall st::fn_004D9C20(TLOBaseTy *param_1)
 
 {
@@ -2742,7 +2742,7 @@ undefined4 __fastcall st::fn_004D9C20(TLOBaseTy *param_1)
 }
 
 // 004D9C60 FUN_004d9c60
-#line 1 "decomp/ST.exe/functions/004D9C60/decomp.c"
+#line 4 "decomp/ST.exe/functions/004D9C60/decomp.c"
 undefined4 st::fn_004D9C60(void)
 
 {
@@ -2750,7 +2750,7 @@ undefined4 st::fn_004D9C60(void)
 }
 
 // 004D9FE0 FUN_004d9fe0
-#line 1 "decomp/ST.exe/functions/004D9FE0/decomp.c"
+#line 4 "decomp/ST.exe/functions/004D9FE0/decomp.c"
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
 undefined4 __fastcall st::fn_004D9FE0(TLOBaseTy *param_1)
@@ -2816,7 +2816,7 @@ undefined4 __fastcall st::fn_004D9FE0(TLOBaseTy *param_1)
 }
 
 // 004DA340 FUN_004da340
-#line 1 "decomp/ST.exe/functions/004DA340/decomp.c"
+#line 4 "decomp/ST.exe/functions/004DA340/decomp.c"
 void __thiscall st::fn_004DA340(void *this,byte *param_1)
 
 {
@@ -2836,7 +2836,7 @@ void __thiscall st::fn_004DA340(void *this,byte *param_1)
 }
 
 // 004DA390 FUN_004da390
-#line 1 "decomp/ST.exe/functions/004DA390/decomp.c"
+#line 4 "decomp/ST.exe/functions/004DA390/decomp.c"
 undefined4 __thiscall st::fn_004DA390(void *this,uint param_1,byte *param_2,int param_3)
 
 {
@@ -3042,7 +3042,7 @@ LAB_004da71f:
 }
 
 // 004DA9C0 FUN_004da9c0
-#line 1 "decomp/ST.exe/functions/004DA9C0/decomp.c"
+#line 4 "decomp/ST.exe/functions/004DA9C0/decomp.c"
 undefined4 __fastcall st::fn_004DA9C0(undefined4 param_1)
 
 {
@@ -3308,7 +3308,7 @@ LAB_004dad15:
 }
 
 // 004DB020 FUN_004db020
-#line 1 "decomp/ST.exe/functions/004DB020/decomp.c"
+#line 4 "decomp/ST.exe/functions/004DB020/decomp.c"
 undefined4 st::fn_004DB020(int param_1,undefined4 param_2)
 
 {
@@ -3325,7 +3325,7 @@ undefined4 st::fn_004DB020(int param_1,undefined4 param_2)
 }
 
 // 004DB0A0 FUN_004db0a0
-#line 1 "decomp/ST.exe/functions/004DB0A0/decomp.c"
+#line 4 "decomp/ST.exe/functions/004DB0A0/decomp.c"
 undefined4 st::fn_004DB0A0(int param_1)
 
 {
@@ -3336,7 +3336,7 @@ undefined4 st::fn_004DB0A0(int param_1)
 }
 
 // 004DB0F0 FUN_004db0f0
-#line 1 "decomp/ST.exe/functions/004DB0F0/decomp.c"
+#line 4 "decomp/ST.exe/functions/004DB0F0/decomp.c"
 undefined4 st::fn_004DB0F0(int param_1)
 
 {
@@ -3351,7 +3351,7 @@ undefined4 st::fn_004DB0F0(int param_1)
 }
 
 // 004DB980 FUN_004db980
-#line 1 "decomp/ST.exe/functions/004DB980/decomp.c"
+#line 4 "decomp/ST.exe/functions/004DB980/decomp.c"
 /* [STAbiConsistencyApplier] stack_parameter_width target=parameter:3: parameter=/byte Evidence:
    entry-use width=/byte; unmasked_dword_reads=0; evidence=004DB9D9 MOV EAX,dword ptr [EBP + 0x14];
    first-use mask */
@@ -3367,7 +3367,7 @@ STWorldObject * st::fn_004DB980(short param_1,short param_2,short param_3,byte p
 }
 
 // 004DBA20 FUN_004dba20
-#line 1 "decomp/ST.exe/functions/004DBA20/decomp.c"
+#line 4 "decomp/ST.exe/functions/004DBA20/decomp.c"
 void __fastcall st::fn_004DBA20(AnonShape_004DBA20_8FF87D0F *param_1)
 
 {
@@ -3383,7 +3383,7 @@ void __fastcall st::fn_004DBA20(AnonShape_004DBA20_8FF87D0F *param_1)
 }
 
 // 004DBA70 FUN_004dba70
-#line 1 "decomp/ST.exe/functions/004DBA70/decomp.c"
+#line 4 "decomp/ST.exe/functions/004DBA70/decomp.c"
 undefined4 __fastcall st::fn_004DBA70(int param_1)
 
 {
@@ -3419,7 +3419,7 @@ undefined4 __fastcall st::fn_004DBA70(int param_1)
 }
 
 // 004DBB10 FUN_004dbb10
-#line 1 "decomp/ST.exe/functions/004DBB10/decomp.c"
+#line 4 "decomp/ST.exe/functions/004DBB10/decomp.c"
 undefined4 __thiscall st::fn_004DBB10(void *this,int param_1)
 
 {
@@ -3432,7 +3432,7 @@ undefined4 __thiscall st::fn_004DBB10(void *this,int param_1)
 }
 
 // 004DBB60 FUN_004dbb60
-#line 1 "decomp/ST.exe/functions/004DBB60/decomp.c"
+#line 4 "decomp/ST.exe/functions/004DBB60/decomp.c"
 undefined4 __thiscall st::fn_004DBB60(void *this,int *param_1,int param_2)
 
 {
@@ -3484,7 +3484,7 @@ undefined4 __thiscall st::fn_004DBB60(void *this,int *param_1,int param_2)
 }
 
 // 004DBCC0 FUN_004dbcc0
-#line 1 "decomp/ST.exe/functions/004DBCC0/decomp.c"
+#line 4 "decomp/ST.exe/functions/004DBCC0/decomp.c"
 /* [STPrototypeApplier] Propagated parameter 1.
    Evidence: 004DBCC0 -> 006E62D0 @ 004DBD2B | 004DBCC0 -> 006E62D0 @ 004DBD92 */
 
@@ -3535,7 +3535,7 @@ undefined4 __thiscall st::fn_004DBCC0(void *this,int *param_1,int param_2)
 }
 
 // 004DBE00 FUN_004dbe00
-#line 1 "decomp/ST.exe/functions/004DBE00/decomp.c"
+#line 4 "decomp/ST.exe/functions/004DBE00/decomp.c"
 /* [STPrototypeApplier] Propagated parameter 1.
    Evidence: 004DBE00 -> 006E62D0 @ 004DBE3B | 004DBE00 -> 006E62D0 @ 004DBEC1 */
 
@@ -3587,7 +3587,7 @@ undefined4 __thiscall st::fn_004DBE00(void *this,int *param_1)
 }
 
 // 004DBF30 FUN_004dbf30
-#line 1 "decomp/ST.exe/functions/004DBF30/decomp.c"
+#line 4 "decomp/ST.exe/functions/004DBF30/decomp.c"
 /* [STPrototypeApplier] Propagated parameter 1.
    Evidence: 004DBF30 -> 006E62D0 @ 004DBF76 | 004DBF30 -> 006E62D0 @ 004DBFF3 | 004DBF30 ->
    006E62D0 @ 004DC042 | 004DBF30 -> 006E62D0 @ 004DC0AD */
@@ -3661,7 +3661,7 @@ undefined4 __thiscall st::fn_004DBF30(void *this,int *param_1)
 }
 
 // 004DC1E0 FUN_004dc1e0
-#line 1 "decomp/ST.exe/functions/004DC1E0/decomp.c"
+#line 4 "decomp/ST.exe/functions/004DC1E0/decomp.c"
 void __fastcall st::fn_004DC1E0(AnonShape_004DC1E0_5260A589 *param_1)
 
 {
@@ -3673,7 +3673,7 @@ void __fastcall st::fn_004DC1E0(AnonShape_004DC1E0_5260A589 *param_1)
 }
 
 // 004DC220 FUN_004dc220
-#line 1 "decomp/ST.exe/functions/004DC220/decomp.c"
+#line 4 "decomp/ST.exe/functions/004DC220/decomp.c"
 undefined4 st::fn_004DC220(void)
 
 {
@@ -3681,7 +3681,7 @@ undefined4 st::fn_004DC220(void)
 }
 
 // 004DC240 FUN_004dc240
-#line 1 "decomp/ST.exe/functions/004DC240/decomp.c"
+#line 4 "decomp/ST.exe/functions/004DC240/decomp.c"
 undefined4 st::fn_004DC240(void)
 
 {
@@ -3689,7 +3689,7 @@ undefined4 st::fn_004DC240(void)
 }
 
 // 004DC260 FUN_004dc260
-#line 1 "decomp/ST.exe/functions/004DC260/decomp.c"
+#line 4 "decomp/ST.exe/functions/004DC260/decomp.c"
 undefined4 __fastcall st::fn_004DC260(TLOBaseTy *param_1)
 
 {
@@ -3749,7 +3749,7 @@ undefined4 __fastcall st::fn_004DC260(TLOBaseTy *param_1)
 }
 
 // 004DC470 FUN_004dc470
-#line 1 "decomp/ST.exe/functions/004DC470/decomp.c"
+#line 4 "decomp/ST.exe/functions/004DC470/decomp.c"
 undefined4 __fastcall st::fn_004DC470(AnonShape_004DC470_71C75079 *param_1)
 
 {
@@ -3760,7 +3760,7 @@ undefined4 __fastcall st::fn_004DC470(AnonShape_004DC470_71C75079 *param_1)
 }
 
 // 004DC4B0 FUN_004dc4b0
-#line 1 "decomp/ST.exe/functions/004DC4B0/decomp.c"
+#line 4 "decomp/ST.exe/functions/004DC4B0/decomp.c"
 /* [STPrototypeApplier] Propagated parameter 3.
    Evidence: 004CAFC0 -> 004DC4B0 @ 004CB15D
 
@@ -3815,7 +3815,7 @@ st::fn_004DC4B0(void *this,TLOBaseTy_sub_004CAFC0_param_1Enum param_1,int param_
 }
 
 // 004DC660 FUN_004dc660
-#line 1 "decomp/ST.exe/functions/004DC660/decomp.c"
+#line 4 "decomp/ST.exe/functions/004DC660/decomp.c"
 undefined4 __fastcall st::fn_004DC660(AnonShape_004DC660_217FA9F0 *param_1)
 
 {
@@ -3840,7 +3840,7 @@ undefined4 __fastcall st::fn_004DC660(AnonShape_004DC660_217FA9F0 *param_1)
 }
 
 // 004DC700 FUN_004dc700
-#line 1 "decomp/ST.exe/functions/004DC700/decomp.c"
+#line 4 "decomp/ST.exe/functions/004DC700/decomp.c"
 /* [STPrototypeApplier] Propagated return.
    Evidence: 004DC700 returns zeroed full register at 004DC705 @ 004DC707 */
 
@@ -3852,7 +3852,7 @@ uint __fastcall st::fn_004DC700(int param_1)
 }
 
 // 004DC720 FUN_004dc720
-#line 1 "decomp/ST.exe/functions/004DC720/decomp.c"
+#line 4 "decomp/ST.exe/functions/004DC720/decomp.c"
 undefined4 __thiscall st::fn_004DC720(void *this,int param_1)
 
 {
@@ -3864,7 +3864,7 @@ undefined4 __thiscall st::fn_004DC720(void *this,int param_1)
 }
 
 // 004DC760 FUN_004dc760
-#line 1 "decomp/ST.exe/functions/004DC760/decomp.c"
+#line 4 "decomp/ST.exe/functions/004DC760/decomp.c"
 undefined4 __fastcall st::fn_004DC760(TLOBaseTy *param_1)
 
 {
@@ -3953,7 +3953,7 @@ undefined4 __fastcall st::fn_004DC760(TLOBaseTy *param_1)
 }
 
 // 004DCAA0 FUN_004dcaa0
-#line 1 "decomp/ST.exe/functions/004DCAA0/decomp.c"
+#line 4 "decomp/ST.exe/functions/004DCAA0/decomp.c"
 /* [STPrototypeApplier] Propagated parameter 3.
    Evidence: 004CAFC0 -> 004DCAA0 @ 004CB0AE
 
@@ -3993,7 +3993,7 @@ st::fn_004DCAA0(void *this,TLOBaseTy_sub_004CAFC0_param_1Enum param_1,int param_
 }
 
 // 004DCB70 FUN_004dcb70
-#line 1 "decomp/ST.exe/functions/004DCB70/decomp.c"
+#line 4 "decomp/ST.exe/functions/004DCB70/decomp.c"
 /* [STPrototypeApplier] Propagated return.
    Evidence: 004DCB70 returns zeroed full register at 004DCBA3 @ 004DCBA5 */
 
@@ -4011,7 +4011,7 @@ uint __fastcall st::fn_004DCB70(AnonShape_004DCB70_1032D92F *param_1)
 }
 
 // 004DCBC0 FUN_004dcbc0
-#line 1 "decomp/ST.exe/functions/004DCBC0/decomp.c"
+#line 4 "decomp/ST.exe/functions/004DCBC0/decomp.c"
 /* [STPrototypeApplier] Propagated return.
    Evidence: 004DCBC0 returns zeroed full register at 004DCBCF @ 004DCBD1 */
 
@@ -4025,7 +4025,7 @@ uint __fastcall st::fn_004DCBC0(AnonShape_004DCCF0_FF75E3FE *param_1)
 }
 
 // 004DCBF0 FUN_004dcbf0
-#line 1 "decomp/ST.exe/functions/004DCBF0/decomp.c"
+#line 4 "decomp/ST.exe/functions/004DCBF0/decomp.c"
 undefined4 __fastcall st::fn_004DCBF0(AnonShape_004DCBF0_C6A0E7DA *param_1)
 
 {
@@ -4048,7 +4048,7 @@ undefined4 __fastcall st::fn_004DCBF0(AnonShape_004DCBF0_C6A0E7DA *param_1)
 }
 
 // 004DCC80 FUN_004dcc80
-#line 1 "decomp/ST.exe/functions/004DCC80/decomp.c"
+#line 4 "decomp/ST.exe/functions/004DCC80/decomp.c"
 undefined4 __fastcall st::fn_004DCC80(int param_1)
 
 {
@@ -4071,7 +4071,7 @@ undefined4 __fastcall st::fn_004DCC80(int param_1)
 }
 
 // 004DCCF0 FUN_004dccf0
-#line 1 "decomp/ST.exe/functions/004DCCF0/decomp.c"
+#line 4 "decomp/ST.exe/functions/004DCCF0/decomp.c"
 undefined4 __fastcall st::fn_004DCCF0(AnonShape_004DCCF0_FF75E3FE *param_1)
 
 {
@@ -4121,7 +4121,7 @@ undefined4 __fastcall st::fn_004DCCF0(AnonShape_004DCCF0_FF75E3FE *param_1)
 }
 
 // 004DD070 FUN_004dd070
-#line 1 "decomp/ST.exe/functions/004DD070/decomp.c"
+#line 4 "decomp/ST.exe/functions/004DD070/decomp.c"
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
 undefined4 __fastcall st::fn_004DD070(AnonShape_004DD070_62E18556 *param_1)
@@ -4163,7 +4163,7 @@ undefined4 __fastcall st::fn_004DD070(AnonShape_004DD070_62E18556 *param_1)
 }
 
 // 004DD240 FUN_004dd240
-#line 1 "decomp/ST.exe/functions/004DD240/decomp.c"
+#line 4 "decomp/ST.exe/functions/004DD240/decomp.c"
 undefined4 st::fn_004DD240(void)
 
 {
@@ -4171,7 +4171,7 @@ undefined4 st::fn_004DD240(void)
 }
 
 // 004DD260 FUN_004dd260
-#line 1 "decomp/ST.exe/functions/004DD260/decomp.c"
+#line 4 "decomp/ST.exe/functions/004DD260/decomp.c"
 undefined4 __fastcall st::fn_004DD260(int param_1)
 
 {
@@ -4187,7 +4187,7 @@ undefined4 __fastcall st::fn_004DD260(int param_1)
 }
 
 // 004DD2B0 FUN_004dd2b0
-#line 1 "decomp/ST.exe/functions/004DD2B0/decomp.c"
+#line 4 "decomp/ST.exe/functions/004DD2B0/decomp.c"
 undefined4 __fastcall st::fn_004DD2B0(int param_1)
 
 {
@@ -4209,7 +4209,7 @@ undefined4 __fastcall st::fn_004DD2B0(int param_1)
 }
 
 // 004DD350 FUN_004dd350
-#line 1 "decomp/ST.exe/functions/004DD350/decomp.c"
+#line 4 "decomp/ST.exe/functions/004DD350/decomp.c"
 /* [STPrototypeApplier] Propagated parameter 0.
    Evidence: 004B9A40 -> 004DD350 @ 004B9AE0; TLOBaseTy::sub_004B9A40 this; stable alias ESI */
 
@@ -4244,7 +4244,7 @@ undefined4 __fastcall st::fn_004DD350(TLOBaseTy *param_1)
 }
 
 // 004DD460 FUN_004dd460
-#line 1 "decomp/ST.exe/functions/004DD460/decomp.c"
+#line 4 "decomp/ST.exe/functions/004DD460/decomp.c"
 undefined4 __fastcall st::fn_004DD460(AnonShape_004DD460_CCB31E51 *param_1)
 
 {
@@ -4262,7 +4262,7 @@ undefined4 __fastcall st::fn_004DD460(AnonShape_004DD460_CCB31E51 *param_1)
 }
 
 // 004DD500 FUN_004dd500
-#line 1 "decomp/ST.exe/functions/004DD500/decomp.c"
+#line 4 "decomp/ST.exe/functions/004DD500/decomp.c"
 undefined4 __fastcall st::fn_004DD500(AnonShape_004DD500_8D93FB74 *param_1,undefined4 param_2)
 
 {
@@ -4275,7 +4275,7 @@ undefined4 __fastcall st::fn_004DD500(AnonShape_004DD500_8D93FB74 *param_1,undef
 }
 
 // 004DD570 FUN_004dd570
-#line 1 "decomp/ST.exe/functions/004DD570/decomp.c"
+#line 4 "decomp/ST.exe/functions/004DD570/decomp.c"
 undefined4 __fastcall st::fn_004DD570(TLOBaseTy *param_1)
 
 {
@@ -4312,7 +4312,7 @@ LAB_004dd5bb:
 }
 
 // 004DD690 FUN_004dd690
-#line 1 "decomp/ST.exe/functions/004DD690/decomp.c"
+#line 4 "decomp/ST.exe/functions/004DD690/decomp.c"
 /* [STPrototypeApplier] Propagated return.
    Evidence: 004DD690 returns zeroed full register at 004DD6A9 @ 004DD6AB */
 
@@ -4327,7 +4327,7 @@ uint __fastcall st::fn_004DD690(int param_1)
 }
 
 // 004DD6C0 FUN_004dd6c0
-#line 1 "decomp/ST.exe/functions/004DD6C0/decomp.c"
+#line 4 "decomp/ST.exe/functions/004DD6C0/decomp.c"
 undefined4 __thiscall st::fn_004DD6C0(void *this,undefined4 param_1)
 
 {
@@ -4339,7 +4339,7 @@ undefined4 __thiscall st::fn_004DD6C0(void *this,undefined4 param_1)
 }
 
 // 004DD700 FUN_004dd700
-#line 1 "decomp/ST.exe/functions/004DD700/decomp.c"
+#line 4 "decomp/ST.exe/functions/004DD700/decomp.c"
 undefined4 __thiscall st::fn_004DD700(void *this,int param_1)
 
 {
@@ -4351,7 +4351,7 @@ undefined4 __thiscall st::fn_004DD700(void *this,int param_1)
 }
 
 // 004DD740 FUN_004dd740
-#line 1 "decomp/ST.exe/functions/004DD740/decomp.c"
+#line 4 "decomp/ST.exe/functions/004DD740/decomp.c"
 undefined4 __fastcall st::fn_004DD740(int param_1)
 
 {
@@ -4363,7 +4363,7 @@ undefined4 __fastcall st::fn_004DD740(int param_1)
 }
 
 // 004DD770 FUN_004dd770
-#line 1 "decomp/ST.exe/functions/004DD770/decomp.c"
+#line 4 "decomp/ST.exe/functions/004DD770/decomp.c"
 /* [STPrototypeApplier] Propagated return.
    Evidence: 004DD770 returns zeroed full register at 004DD7A7 @ 004DD7AB */
 
@@ -4380,7 +4380,7 @@ uint __thiscall st::fn_004DD770(void *this,int param_1)
 }
 
 // 004DD7C0 FUN_004dd7c0
-#line 1 "decomp/ST.exe/functions/004DD7C0/decomp.c"
+#line 4 "decomp/ST.exe/functions/004DD7C0/decomp.c"
 undefined4 __thiscall st::fn_004DD7C0(void *this,int param_1,int param_2)
 
 {
@@ -4394,7 +4394,7 @@ undefined4 __thiscall st::fn_004DD7C0(void *this,int param_1,int param_2)
 }
 
 // 004DD800 FUN_004dd800
-#line 1 "decomp/ST.exe/functions/004DD800/decomp.c"
+#line 4 "decomp/ST.exe/functions/004DD800/decomp.c"
 /* [STPrototypeApplier] Propagated return.
    Evidence: 004DD800 returns zeroed full register at 004DD837 @ 004DD83B */
 
@@ -4411,7 +4411,7 @@ uint __thiscall st::fn_004DD800(void *this,int param_1)
 }
 
 // 004DD850 FUN_004dd850
-#line 1 "decomp/ST.exe/functions/004DD850/decomp.c"
+#line 4 "decomp/ST.exe/functions/004DD850/decomp.c"
 /* [STPrototypeApplier] Propagated return.
    Evidence: 004DD850 returns zeroed full register at 004DD86A @ 004DD86D */
 
@@ -4431,7 +4431,7 @@ uint __fastcall st::fn_004DD850(int param_1)
 }
 
 // 004DD880 FUN_004dd880
-#line 1 "decomp/ST.exe/functions/004DD880/decomp.c"
+#line 4 "decomp/ST.exe/functions/004DD880/decomp.c"
 /* [STPrototypeRepairApplier] Propagated parameter 0.
    Evidence: 004E51B0 -> 004DD880 @ 004E569A */
 
@@ -4545,7 +4545,7 @@ code_r0x004dd9bb:
 }
 
 // 004DDB30 FUN_004ddb30
-#line 1 "decomp/ST.exe/functions/004DDB30/decomp.c"
+#line 4 "decomp/ST.exe/functions/004DDB30/decomp.c"
 undefined4 __thiscall st::fn_004DDB30(void *this,int param_1)
 
 {
@@ -4573,7 +4573,7 @@ undefined4 __thiscall st::fn_004DDB30(void *this,int param_1)
 }
 
 // 004DDBA0 FUN_004ddba0
-#line 1 "decomp/ST.exe/functions/004DDBA0/decomp.c"
+#line 4 "decomp/ST.exe/functions/004DDBA0/decomp.c"
 undefined4 __thiscall st::fn_004DDBA0(void *this,int param_1)
 
 {
@@ -4600,7 +4600,7 @@ undefined4 __thiscall st::fn_004DDBA0(void *this,int param_1)
 }
 
 // 004DDC30 FUN_004ddc30
-#line 1 "decomp/ST.exe/functions/004DDC30/decomp.c"
+#line 4 "decomp/ST.exe/functions/004DDC30/decomp.c"
 undefined4 __thiscall st::fn_004DDC30(void *this,int param_1,int param_2)
 
 {
@@ -4634,7 +4634,7 @@ undefined4 __thiscall st::fn_004DDC30(void *this,int param_1,int param_2)
 }
 
 // 004DDCC0 FUN_004ddcc0
-#line 1 "decomp/ST.exe/functions/004DDCC0/decomp.c"
+#line 4 "decomp/ST.exe/functions/004DDCC0/decomp.c"
 undefined4 __fastcall st::fn_004DDCC0(AnonShape_004DDCC0_33DEB43E *param_1)
 
 {
@@ -4660,7 +4660,7 @@ undefined4 __fastcall st::fn_004DDCC0(AnonShape_004DDCC0_33DEB43E *param_1)
 }
 
 // 004DDD50 FUN_004ddd50
-#line 1 "decomp/ST.exe/functions/004DDD50/decomp.c"
+#line 4 "decomp/ST.exe/functions/004DDD50/decomp.c"
 undefined4 __fastcall st::fn_004DDD50(int *param_1)
 
 {
@@ -4753,7 +4753,7 @@ undefined4 __fastcall st::fn_004DDD50(int *param_1)
 }
 
 // 004DE000 FUN_004de000
-#line 1 "decomp/ST.exe/functions/004DE000/decomp.c"
+#line 4 "decomp/ST.exe/functions/004DE000/decomp.c"
 /* [STPrototypeApplier] Propagated return.
    Evidence: 004DE000 returns zeroed full register at 004DE015 @ 004DE017 */
 
@@ -4766,7 +4766,7 @@ uint __fastcall st::fn_004DE000(int param_1)
 }
 
 // 004DE030 FUN_004de030
-#line 1 "decomp/ST.exe/functions/004DE030/decomp.c"
+#line 4 "decomp/ST.exe/functions/004DE030/decomp.c"
 undefined4 __fastcall st::fn_004DE030(int param_1)
 
 {
@@ -4788,7 +4788,7 @@ undefined4 __fastcall st::fn_004DE030(int param_1)
 }
 
 // 004DE0D0 FUN_004de0d0
-#line 1 "decomp/ST.exe/functions/004DE0D0/decomp.c"
+#line 4 "decomp/ST.exe/functions/004DE0D0/decomp.c"
 /* [STPrototypeApplier] Propagated parameter 0.
    Evidence: 004B9A40 -> 004DE0D0 @ 004B9B50; TLOBaseTy::sub_004B9A40 this; stable alias ESI */
 
@@ -4823,7 +4823,7 @@ undefined4 __fastcall st::fn_004DE0D0(TLOBaseTy *param_1)
 }
 
 // 004DE1E0 FUN_004de1e0
-#line 1 "decomp/ST.exe/functions/004DE1E0/decomp.c"
+#line 4 "decomp/ST.exe/functions/004DE1E0/decomp.c"
 /* [STSwitchEnumApplier] Switch target param_1 uses
    /SubmarineTitans/Recovered/Enums/Global_sub_004DE1E0_param_1Enum. Cases:
    CASE_0=0;CASE_1=1;CASE_2=2;CASE_3=3;CASE_4=4;CASE_5=5;CASE_6=6;CASE_7=7;CASE_8=8;CASE_9=9 */
@@ -4887,7 +4887,7 @@ undefined4 __thiscall st::fn_004DE1E0(void *this,Global_sub_004DE1E0_param_1Enum
 }
 
 // 004DE300 FUN_004de300
-#line 1 "decomp/ST.exe/functions/004DE300/decomp.c"
+#line 4 "decomp/ST.exe/functions/004DE300/decomp.c"
 /* [STSwitchEnumApplier] Switch target param_1 uses
    /SubmarineTitans/Recovered/Enums/Global_sub_004DE300_param_1Enum. Cases:
    CASE_0=0;CASE_1=1;CASE_2=2;CASE_3=3;CASE_4=4;CASE_5=5;CASE_6=6;CASE_7=7 */
@@ -4982,7 +4982,7 @@ int st::fn_004DE410(void *param_1,int param_2,int param_3)
 }
 
 // 004DE4F0 FUN_004de4f0
-#line 1 "decomp/ST.exe/functions/004DE4F0/decomp.c"
+#line 4 "decomp/ST.exe/functions/004DE4F0/decomp.c"
 int __thiscall st::fn_004DE4F0(void *this,int param_1)
 
 {
@@ -5120,7 +5120,7 @@ LAB_004de602:
 }
 
 // 004DE7B0 FUN_004de7b0
-#line 1 "decomp/ST.exe/functions/004DE7B0/decomp.c"
+#line 4 "decomp/ST.exe/functions/004DE7B0/decomp.c"
 undefined4 __fastcall st::fn_004DE7B0(int param_1)
 
 {
@@ -5129,7 +5129,7 @@ undefined4 __fastcall st::fn_004DE7B0(int param_1)
 }
 
 // 004DE820 FUN_004de820
-#line 1 "decomp/ST.exe/functions/004DE820/decomp.c"
+#line 4 "decomp/ST.exe/functions/004DE820/decomp.c"
 undefined4 __fastcall st::fn_004DE820(AnonShape_004DE820_615D04DD *param_1)
 
 {
@@ -5183,7 +5183,7 @@ undefined4 __fastcall st::fn_004DE820(AnonShape_004DE820_615D04DD *param_1)
 }
 
 // 004DEA40 FUN_004dea40
-#line 1 "decomp/ST.exe/functions/004DEA40/decomp.c"
+#line 4 "decomp/ST.exe/functions/004DEA40/decomp.c"
 void __fastcall st::fn_004DEA40(AnonShape_004DEA40_61E7A6D4 *param_1)
 
 {
@@ -5196,7 +5196,7 @@ void __fastcall st::fn_004DEA40(AnonShape_004DEA40_61E7A6D4 *param_1)
 }
 
 // 004DEA90 FUN_004dea90
-#line 1 "decomp/ST.exe/functions/004DEA90/decomp.c"
+#line 4 "decomp/ST.exe/functions/004DEA90/decomp.c"
 /* [STPrototypeRepairApplier] Propagated parameter 1.
    Evidence: 004CAFC0 -> 004DEA90 @ 004CB0F4 */
 
@@ -5235,7 +5235,7 @@ st::fn_004DEA90(void *this,TLOBaseTy_sub_004CAFC0_param_1Enum param_1,int param_
 }
 
 // 004DEBA0 FUN_004deba0
-#line 1 "decomp/ST.exe/functions/004DEBA0/decomp.c"
+#line 4 "decomp/ST.exe/functions/004DEBA0/decomp.c"
 undefined4 __fastcall st::fn_004DEBA0(int param_1)
 
 {
@@ -5245,7 +5245,7 @@ undefined4 __fastcall st::fn_004DEBA0(int param_1)
 }
 
 // 004DEBD0 FUN_004debd0
-#line 1 "decomp/ST.exe/functions/004DEBD0/decomp.c"
+#line 4 "decomp/ST.exe/functions/004DEBD0/decomp.c"
 undefined4 __thiscall st::fn_004DEBD0(void *this,int param_1)
 
 {
@@ -5257,7 +5257,7 @@ undefined4 __thiscall st::fn_004DEBD0(void *this,int param_1)
 }
 
 // 004DEC10 FUN_004dec10
-#line 1 "decomp/ST.exe/functions/004DEC10/decomp.c"
+#line 4 "decomp/ST.exe/functions/004DEC10/decomp.c"
 /* [STSwitchEnumApplier] Switch target field_04D0 uses
    /SubmarineTitans/Recovered/Enums/TLOBaseTy_field_04D0State. Cases:
    CASE_0=0;CASE_1=1;CASE_2=2;CASE_3=3;CASE_4=4;CASE_5=5;CASE_6=6
@@ -5336,7 +5336,7 @@ undefined4 __fastcall st::fn_004DEC10(TLOBaseTy *param_1)
 }
 
 // 004DEEB0 FUN_004deeb0
-#line 1 "decomp/ST.exe/functions/004DEEB0/decomp.c"
+#line 4 "decomp/ST.exe/functions/004DEEB0/decomp.c"
 /* [STPrototypeApplier] Propagated parameter 3.
    Evidence: 004CAFC0 -> 004DEEB0 @ 004CB08B
 
@@ -5375,7 +5375,7 @@ st::fn_004DEEB0(void *this,TLOBaseTy_sub_004CAFC0_param_1Enum param_1,int param_
 }
 
 // 004DEF50 FUN_004def50
-#line 1 "decomp/ST.exe/functions/004DEF50/decomp.c"
+#line 4 "decomp/ST.exe/functions/004DEF50/decomp.c"
 undefined4 __fastcall st::fn_004DEF50(int param_1)
 
 {
@@ -5397,7 +5397,7 @@ undefined4 __fastcall st::fn_004DEF50(int param_1)
 }
 
 // 004DEFF0 FUN_004deff0
-#line 1 "decomp/ST.exe/functions/004DEFF0/decomp.c"
+#line 4 "decomp/ST.exe/functions/004DEFF0/decomp.c"
 /* [STPrototypeApplier] Propagated parameter 0.
    Evidence: 004B9A40 -> 004DEFF0 @ 004B9AF0; TLOBaseTy::sub_004B9A40 this; stable alias ESI */
 
@@ -5432,7 +5432,7 @@ undefined4 __fastcall st::fn_004DEFF0(TLOBaseTy *param_1)
 }
 
 // 004DF100 FUN_004df100
-#line 1 "decomp/ST.exe/functions/004DF100/decomp.c"
+#line 4 "decomp/ST.exe/functions/004DF100/decomp.c"
 undefined4 __fastcall st::fn_004DF100(int param_1)
 
 {
@@ -5454,7 +5454,7 @@ undefined4 __fastcall st::fn_004DF100(int param_1)
 }
 
 // 004DF1A0 FUN_004df1a0
-#line 1 "decomp/ST.exe/functions/004DF1A0/decomp.c"
+#line 4 "decomp/ST.exe/functions/004DF1A0/decomp.c"
 /* [STPrototypeApplier] Propagated parameter 0.
    Evidence: 004B9A40 -> 004DF1A0 @ 004B9B00; TLOBaseTy::sub_004B9A40 this; stable alias ESI */
 
@@ -5489,7 +5489,7 @@ undefined4 __fastcall st::fn_004DF1A0(TLOBaseTy *param_1)
 }
 
 // 004DF2B0 FUN_004df2b0
-#line 1 "decomp/ST.exe/functions/004DF2B0/decomp.c"
+#line 4 "decomp/ST.exe/functions/004DF2B0/decomp.c"
 undefined4 __fastcall st::fn_004DF2B0(AnonShape_004DC660_217FA9F0 *param_1)
 
 {
@@ -5514,7 +5514,7 @@ undefined4 __fastcall st::fn_004DF2B0(AnonShape_004DC660_217FA9F0 *param_1)
 }
 
 // 004DF370 FUN_004df370
-#line 1 "decomp/ST.exe/functions/004DF370/decomp.c"
+#line 4 "decomp/ST.exe/functions/004DF370/decomp.c"
 undefined4 __thiscall st::fn_004DF370(void *this,int param_1)
 
 {
@@ -5526,7 +5526,7 @@ undefined4 __thiscall st::fn_004DF370(void *this,int param_1)
 }
 
 // 004DF3B0 FUN_004df3b0
-#line 1 "decomp/ST.exe/functions/004DF3B0/decomp.c"
+#line 4 "decomp/ST.exe/functions/004DF3B0/decomp.c"
 undefined4 __fastcall st::fn_004DF3B0(TLOBaseTy *param_1)
 
 {
@@ -5615,7 +5615,7 @@ undefined4 __fastcall st::fn_004DF3B0(TLOBaseTy *param_1)
 }
 
 // 004DF6F0 FUN_004df6f0
-#line 1 "decomp/ST.exe/functions/004DF6F0/decomp.c"
+#line 4 "decomp/ST.exe/functions/004DF6F0/decomp.c"
 /* [STPrototypeApplier] Propagated parameter 3.
    Evidence: 004CAFC0 -> 004DF6F0 @ 004CB0D1
 
@@ -5686,7 +5686,7 @@ st::fn_004DF6F0(void *this,TLOBaseTy_sub_004CAFC0_param_1Enum param_1,int param_
 }
 
 // 004DF8C0 FUN_004df8c0
-#line 1 "decomp/ST.exe/functions/004DF8C0/decomp.c"
+#line 4 "decomp/ST.exe/functions/004DF8C0/decomp.c"
 undefined4 __fastcall st::fn_004DF8C0(int param_1)
 
 {
@@ -5696,7 +5696,7 @@ undefined4 __fastcall st::fn_004DF8C0(int param_1)
 }
 
 // 004DF8F0 FUN_004df8f0
-#line 1 "decomp/ST.exe/functions/004DF8F0/decomp.c"
+#line 4 "decomp/ST.exe/functions/004DF8F0/decomp.c"
 undefined4 st::fn_004DF8F0(void)
 
 {
@@ -5704,7 +5704,7 @@ undefined4 st::fn_004DF8F0(void)
 }
 
 // 004DF910 FUN_004df910
-#line 1 "decomp/ST.exe/functions/004DF910/decomp.c"
+#line 4 "decomp/ST.exe/functions/004DF910/decomp.c"
 undefined4 __fastcall st::fn_004DF910(int param_1)
 
 {
@@ -5719,7 +5719,7 @@ undefined4 __fastcall st::fn_004DF910(int param_1)
 }
 
 // 004DF950 FUN_004df950
-#line 1 "decomp/ST.exe/functions/004DF950/decomp.c"
+#line 4 "decomp/ST.exe/functions/004DF950/decomp.c"
 undefined4 __fastcall st::fn_004DF950(int param_1)
 
 {
@@ -5741,7 +5741,7 @@ undefined4 __fastcall st::fn_004DF950(int param_1)
 }
 
 // 004DFB00 FUN_004dfb00
-#line 1 "decomp/ST.exe/functions/004DFB00/decomp.c"
+#line 4 "decomp/ST.exe/functions/004DFB00/decomp.c"
 undefined4 __fastcall st::fn_004DFB00(AnonShape_004DFB00_599AF150 *param_1)
 
 {
@@ -5805,7 +5805,7 @@ int st::fn_004DFB90(uint param_1,int param_2,int param_3)
 }
 
 // 004DFC70 FUN_004dfc70
-#line 1 "decomp/ST.exe/functions/004DFC70/decomp.c"
+#line 4 "decomp/ST.exe/functions/004DFC70/decomp.c"
 int __thiscall st::fn_004DFC70(void *this,int *param_1)
 
 {
@@ -5902,7 +5902,7 @@ LAB_004dfd49:
 }
 
 // 004DFE90 FUN_004dfe90
-#line 1 "decomp/ST.exe/functions/004DFE90/decomp.c"
+#line 4 "decomp/ST.exe/functions/004DFE90/decomp.c"
 undefined4 __fastcall st::fn_004DFE90(int param_1)
 
 {
@@ -5924,7 +5924,7 @@ undefined4 __fastcall st::fn_004DFE90(int param_1)
 }
 
 // 004DFF30 FUN_004dff30
-#line 1 "decomp/ST.exe/functions/004DFF30/decomp.c"
+#line 4 "decomp/ST.exe/functions/004DFF30/decomp.c"
 /* [STPrototypeApplier] Propagated parameter 0.
    Evidence: 004B9A40 -> 004DFF30 @ 004B9B45; TLOBaseTy::sub_004B9A40 this; stable alias ESI */
 

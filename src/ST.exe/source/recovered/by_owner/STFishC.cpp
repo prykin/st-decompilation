@@ -2,7 +2,7 @@
 // Generated translation unit: source/recovered/by_owner/STFishC.cpp
 
 // 004162B0 STFishC::sub_004162B0
-#line 1 "decomp/ST.exe/functions/004162B0/decomp.c"
+#line 4 "decomp/ST.exe/functions/004162B0/decomp.c"
 /* [STMethodOwnerApplier] Structural method owner recovered as STFishC.
    Evidence: this_call_owners=[STFishC]; agreed_this_calls=1; incoming_this_accesses=3;
    incoming_edx_uses=0; incoming_stack_parameter_uses=3
@@ -24,7 +24,7 @@ st::fn_004162B0(STFishC *this,short *param_1,undefined2 *param_2,undefined2 *par
 }
 
 // 004162F0 STFishC::sub_004162F0
-#line 1 "decomp/ST.exe/functions/004162F0/decomp.c"
+#line 4 "decomp/ST.exe/functions/004162F0/decomp.c"
 /* [STMethodOwnerApplier] Structural method owner recovered as STFishC.
    Evidence: this_call_owners=[STFishC]; agreed_this_calls=2; incoming_this_accesses=3;
    incoming_edx_uses=0; incoming_stack_parameter_uses=3; direct_non_thunk_callers=0;
@@ -41,7 +41,7 @@ st::fn_004162F0(STFishC *this,undefined2 *param_1,undefined2 *param_2,undefined2
 }
 
 // 0057BD20 STFishC::STFishC
-#line 1 "decomp/ST.exe/functions/0057BD20/decomp.c"
+#line 4 "decomp/ST.exe/functions/0057BD20/decomp.c"
 /* [STConstructorApplier] Recovered constructor candidate.
    VTable: 0079B3C4 (store 0057BD3C)
    Evidence: final_vptr=0079B3C4; returns_this=true; calls_before=2; field_writes_after=1;
@@ -55,14 +55,14 @@ STFishC * __thiscall st::fn_0057BD20(STFishC *this)
 {
   st::fn_00401933((STGameObjC *)this);
   st::fn_00401316((AnonShape_004AB810_8E5693D5 *)&this->field_01D5);
-  this->field_01D5 = &VTable_0079B524;
-  this->vtable = &STFishCVTable;
+  this->field_01D5 = &st_global_0079B524;
+  this->vtable = &st_global_0079B3C4;
   this->field_023B = 0;
   return this;
 }
 
 // 0057BF20 STFishC::sub_0057BF20
-#line 1 "decomp/ST.exe/functions/0057BF20/decomp.c"
+#line 4 "decomp/ST.exe/functions/0057BF20/decomp.c"
 /* [STMethodOwnerApplier] Structural method owner recovered as STFishC.
    Evidence: this_call_owners=[STFishC]; agreed_this_calls=3; incoming_this_accesses=1;
    incoming_edx_uses=0; incoming_stack_parameter_uses=0; direct_non_thunk_callers=0;
@@ -88,7 +88,7 @@ int __thiscall st::fn_0057BF20(STFishC *this)
 }
 
 // 0057D5F0 STFishC::sub_0057D5F0
-#line 1 "decomp/ST.exe/functions/0057D5F0/decomp.c"
+#line 4 "decomp/ST.exe/functions/0057D5F0/decomp.c"
 /* [STMethodOwnerApplier] Structural method owner recovered as STFishC.
    Evidence: this_call_owners=[STFishC]; agreed_this_calls=1; incoming_this_accesses=9;
    incoming_edx_uses=0 */
@@ -127,7 +127,7 @@ undefined4 __thiscall st::fn_0057D5F0(STFishC *this,uint param_1)
 }
 
 // 0057D700 STFishC::sub_0057D700
-#line 1 "decomp/ST.exe/functions/0057D700/decomp.c"
+#line 4 "decomp/ST.exe/functions/0057D700/decomp.c"
 /* [STMethodOwnerApplier] Structural method owner recovered as STFishC.
    Evidence: this_call_owners=[STFishC]; agreed_this_calls=1; incoming_this_accesses=7;
    incoming_edx_uses=0
@@ -413,7 +413,7 @@ LAB_0057dd0c:
 }
 
 // 0057DFB0 STFishC::FUN_0057dfb0
-#line 1 "decomp/ST.exe/functions/0057DFB0/decomp.c"
+#line 4 "decomp/ST.exe/functions/0057DFB0/decomp.c"
 /* [STVirtualMethodApplier] Recovered from virtual table slot family.
    Tables: 0079B3C4
    Entries: 00405321

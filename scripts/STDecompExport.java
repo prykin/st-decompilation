@@ -89,7 +89,7 @@ public class STDecompExport extends GhidraScript {
     // Bump only when normalize/catalogue semantics change. Hashing this entire source file
     // made an unrelated manifest or I/O edit rescan all 5,000+ bodies.
     private static final String FUNCTION_ANALYSIS_LOGIC_ID =
-        "st-function-analysis-v13-complete-ghidra-scalar-runtime";
+        "st-function-analysis-v14-linear-string-literal-pieces";
     private static final Pattern NARROW_RETURN_PIECE_ASSIGNMENT = Pattern.compile(
         "(?<variable>[A-Za-z_$][A-Za-z0-9_$]*)\\._0_(?<width>[12])_\\s*=\\s*" +
         "(?<callee>[A-Za-z_$][A-Za-z0-9_$]*(?:::[A-Za-z_$][A-Za-z0-9_$]*)*)" +
@@ -208,9 +208,6 @@ public class STDecompExport extends GhidraScript {
     private static final Pattern SIMPLE_PARTIAL_PIECE = Pattern.compile(
         "(?<![A-Za-z0-9_$])(?<base>[A-Za-z_$][A-Za-z0-9_$]*" +
         "(?:(?:->|\\.)[A-Za-z_$][A-Za-z0-9_$]*|\\[[^]\\r\\n]+\\])*)" +
-        "\\._(?<offset>[0-9]+)_(?<width>[0-9]+)_");
-    private static final Pattern STRING_LITERAL_PARTIAL_PIECE = Pattern.compile(
-        "(?<literal>\"(?:\\\\.|[^\"\\\\])*\")" +
         "\\._(?<offset>[0-9]+)_(?<width>[0-9]+)_");
     private static final Pattern EXPLICIT_BYTE_OFFSET_FIELD = Pattern.compile(
         "\\*\\s*\\(\\s*(?<cast>[A-Za-z_$][A-Za-z0-9_$:<> ]*(?:\\s*\\*\\s*)+)\\)" +
@@ -1167,22 +1164,9 @@ public class STDecompExport extends GhidraScript {
     private NormalizedCode normalizePartialPieceSyntax(String code) {
         if (code == null || code.isEmpty() || !code.contains("._"))
             return new NormalizedCode(code, 0);
-        Matcher literalMatcher = STRING_LITERAL_PARTIAL_PIECE.matcher(code);
-        StringBuffer literalOutput = new StringBuffer();
-        int replacements = 0;
-        while (literalMatcher.find()) {
-            int width;
-            try { width = Integer.parseInt(literalMatcher.group("width")); }
-            catch (NumberFormatException ignored) { continue; }
-            if (width < 1 || width > 8) continue;
-            String replacement = "STLiteralPiece<" + literalMatcher.group("offset") + "," +
-                literalMatcher.group("width") + ">(" + literalMatcher.group("literal") + ")";
-            literalMatcher.appendReplacement(literalOutput,
-                Matcher.quoteReplacement(replacement));
-            replacements++;
-        }
-        literalMatcher.appendTail(literalOutput);
-        String literalNormalized = replacements == 0 ? code : literalOutput.toString();
+        NormalizedCode literalPieces = normalizeStringLiteralPartialPieces(code);
+        int replacements = literalPieces.replacements;
+        String literalNormalized = literalPieces.code;
         Matcher matcher = SIMPLE_PARTIAL_PIECE.matcher(literalNormalized);
         StringBuffer output = new StringBuffer();
         while (matcher.find()) {
@@ -1197,6 +1181,79 @@ public class STDecompExport extends GhidraScript {
         }
         matcher.appendTail(output);
         return new NormalizedCode(replacements == 0 ? code : output.toString(), replacements);
+    }
+
+    /**
+     * Parse quoted literals linearly instead of using a repeated-alternation regex.
+     * Java's regex engine consumes one native stack frame per character for patterns
+     * such as {@code "(?:\\.|[^"\\])*"}; resource-sized literals can therefore abort
+     * an otherwise valid whole-corpus export with StackOverflowError.
+     */
+    private NormalizedCode normalizeStringLiteralPartialPieces(String code) {
+        StringBuilder output = new StringBuilder(code.length());
+        int copiedThrough = 0;
+        int replacements = 0;
+        for (int quote = code.indexOf('"'); quote >= 0 && quote < code.length(); ) {
+            int close = closingStringLiteral(code, quote);
+            if (close < 0) break;
+            int suffix = close + 1;
+            if (suffix + 2 > code.length() || !code.startsWith("._", suffix)) {
+                quote = code.indexOf('"', close + 1);
+                continue;
+            }
+            int offsetStart = suffix + 2;
+            int offsetEnd = decimalEnd(code, offsetStart);
+            if (offsetEnd == offsetStart || offsetEnd >= code.length() ||
+                    code.charAt(offsetEnd) != '_') {
+                quote = code.indexOf('"', close + 1);
+                continue;
+            }
+            int widthStart = offsetEnd + 1;
+            int widthEnd = decimalEnd(code, widthStart);
+            if (widthEnd == widthStart || widthEnd >= code.length() ||
+                    code.charAt(widthEnd) != '_') {
+                quote = code.indexOf('"', close + 1);
+                continue;
+            }
+            int width;
+            try { width = Integer.parseInt(code.substring(widthStart, widthEnd)); }
+            catch (NumberFormatException ignored) {
+                quote = code.indexOf('"', close + 1);
+                continue;
+            }
+            if (width < 1 || width > 8) {
+                quote = code.indexOf('"', close + 1);
+                continue;
+            }
+            output.append(code, copiedThrough, quote)
+                .append("STLiteralPiece<")
+                .append(code, offsetStart, offsetEnd).append(',')
+                .append(code, widthStart, widthEnd).append(">(")
+                .append(code, quote, close + 1).append(')');
+            copiedThrough = widthEnd + 1;
+            replacements++;
+            quote = code.indexOf('"', copiedThrough);
+        }
+        if (replacements == 0) return new NormalizedCode(code, 0);
+        output.append(code, copiedThrough, code.length());
+        return new NormalizedCode(output.toString(), replacements);
+    }
+
+    private int closingStringLiteral(String text, int quote) {
+        boolean escaped = false;
+        for (int index = quote + 1; index < text.length(); index++) {
+            char value = text.charAt(index);
+            if (escaped) escaped = false;
+            else if (value == '\\') escaped = true;
+            else if (value == '"') return index;
+        }
+        return -1;
+    }
+
+    private int decimalEnd(String text, int start) {
+        int end = start;
+        while (end < text.length() && Character.isDigit(text.charAt(end))) end++;
+        return end;
     }
 
     /**

@@ -34,6 +34,8 @@ import ghidra.program.model.data.PointerDataType;
 import ghidra.program.model.data.Structure;
 import ghidra.program.model.data.VoidDataType;
 import ghidra.program.model.listing.Function;
+import ghidra.program.model.listing.FunctionTag;
+import ghidra.program.model.symbol.SourceType;
 
 public class STIndirectCallApplier extends GhidraScript {
     private static final String MARKER = "[STIndirectCallApplier]";
@@ -192,12 +194,40 @@ public class STIndirectCallApplier extends GhidraScript {
         boolean targetReceiver = "__thiscall".equals(targetConvention) &&
             target.getParameterCount() > 0 &&
             target.getParameter(0).getDataType() instanceof Pointer;
-        return (existingReceiver && !targetReceiver) ||
+        if ((existingReceiver && !targetReceiver) ||
             (concreteConvention(existingConvention) &&
                 !concreteConvention(targetConvention)) ||
             definition.getArguments().length > target.getParameterCount() ||
             concreteWidth(definition.getReturnType()) >
-                concreteWidth(target.getReturnType());
+                concreteWidth(target.getReturnType())) return true;
+
+        // A generated slot is an independently recovered ABI.  Structural virtual-method
+        // ownership and a useful method name do not make Ghidra's default Listing prototype
+        // authoritative.  Preserve any non-equivalent generated ABI until the target itself has
+        // manual/imported or independently machine-recovered provenance.  Invalidated indirect
+        // evidence is removed through the explicit revert_generated_slot path above.
+        if (generatedIndirectPointer(component) && !hasStrongAbiProvenance(target)) {
+            FunctionDefinitionDataType candidate = new FunctionDefinitionDataType(
+                FUNCTIONS, target.getName(), target.getSignature(), dataTypes);
+            return !definition.isEquivalentSignature(candidate);
+        }
+        return false;
+    }
+
+    private boolean hasStrongAbiProvenance(Function function) {
+        if (function == null) return false;
+        SourceType source = function.getSignatureSource();
+        if (source == SourceType.USER_DEFINED || source == SourceType.IMPORTED) return true;
+        String comment = function.getComment();
+        if (hasTag(function, "RECOVERED_ABI_CONSISTENCY") && comment != null &&
+                comment.contains("[STAbiConsistencyApplier] machine_thiscall_arity ")) return true;
+        return hasTag(function, "RECOVERED_MESSAGE_HANDLER");
+    }
+
+    private boolean hasTag(Function function, String wanted) {
+        for (FunctionTag tag : function.getTags())
+            if (wanted.equals(tag.getName())) return true;
+        return false;
     }
 
     private boolean concreteConvention(String convention) {
@@ -209,7 +239,10 @@ public class STIndirectCallApplier extends GhidraScript {
     private int concreteWidth(DataType type) {
         if (type == null || type instanceof VoidDataType) return 0;
         String name = type.getName().toLowerCase(Locale.ROOT);
-        return name.startsWith("undefined") ? 0 : Math.max(0, type.getLength());
+        // Bare /undefined is Ghidra's unknown one-byte placeholder.  Sized undefinedN values,
+        // however, carry an exact recovered source/return width and must not be treated as if
+        // they contained no ABI information.
+        return name.equals("undefined") ? 0 : Math.max(0, type.getLength());
     }
 
     private boolean unsafeSyntheticVtableMutation(Map<String, String> row) {

@@ -2,7 +2,7 @@
 // Generated translation unit: source/original/Artem/TLO_glsat.cpp
 
 // 004D9000 FUN_004d9000
-#line 1 "decomp/ST.exe/functions/004D9000/decomp.c"
+#line 4 "decomp/ST.exe/functions/004D9000/decomp.c"
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 /* [STSourceProvenanceApplier begin]
    Recovered source file: E:\__titans\Artem\TLO_glsat.cpp
@@ -27,7 +27,7 @@ undefined4 __fastcall st::fn_004D9000(AnonShape_004D9000_7AA66E43 *param_1)
       this = (STT3DSprC *)st::fn_00401316(pAVar1);
     }
     param_1->field_05FF = this;
-    iVar2 = st::fn_0040537B(this,DAT_008073cc,0x5a,0x45,nullptr,0xb4,0x8c,0x11);
+    iVar2 = st::fn_0040537B(this,PTR_008073cc,0x5a,0x45,nullptr,0xb4,0x8c,0x11);
     if (iVar2 != 0) {
       st::fn_006A5E40
                 (iVar2,g_overwriteContext_007ED77C,"E:\\__titans\\Artem\\TLO_glsat.cpp",0x61);
@@ -62,7 +62,7 @@ undefined4 __fastcall st::fn_004D9000(AnonShape_004D9000_7AA66E43 *param_1)
   }
   if (*(int *)&param_1->field_0x4d0 == 4) {
     iVar2 = st::fn_00404183
-                      ((STT3DSprC *)param_1->field_05FF,0xe,DAT_00806774,PTR_DAT_00790c24,0x1d);
+                      ((STT3DSprC *)param_1->field_05FF,0xe,PTR_00806774,PTR_DAT_00790c24,0x1d);
     if (iVar2 != 0) {
       st::fn_006A5E40
                 (iVar2,g_overwriteContext_007ED77C,"E:\\__titans\\Artem\\TLO_glsat.cpp",0x79);
@@ -98,7 +98,7 @@ undefined4 __fastcall st::fn_004D9000(AnonShape_004D9000_7AA66E43 *param_1)
 }
 
 // 004D95A0 FUN_004d95a0
-#line 1 "decomp/ST.exe/functions/004D95A0/decomp.c"
+#line 4 "decomp/ST.exe/functions/004D95A0/decomp.c"
 /* [STSourceProvenanceApplier begin]
    Recovered source file: E:\__titans\Artem\TLO_glsat.cpp
    Diagnostic line evidence: 176 (metadata/report site, not the function definition)
@@ -129,7 +129,7 @@ undefined4 __fastcall st::fn_004D95A0(int param_1)
 }
 
 // 004D9620 FUN_004d9620
-#line 1 "decomp/ST.exe/functions/004D9620/decomp.c"
+#line 4 "decomp/ST.exe/functions/004D9620/decomp.c"
 /* [STSourceProvenanceApplier begin]
    Recovered source file: E:\__titans\Artem\TLO_glsat.cpp
    Diagnostic line evidence: 188 (metadata/report site, not the function definition)

@@ -2,7 +2,7 @@
 // Generated translation unit: source/original/wlad/To_boat.cpp
 
 // 0044E980 STBoatC::GetVisualInfo
-#line 1 "decomp/ST.exe/functions/0044E980/decomp.c"
+#line 4 "decomp/ST.exe/functions/0044E980/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\wlad\To_boat.cpp
    STBoatC::GetVisualInfo
@@ -35,10 +35,11 @@ st::fn_0044E980
   char cVar1;
   int iVar3;
   uint uVar4;
+  uint uVar5;
   char *pcVar6;
   char *pcVar7;
 
-  *param_4 = DAT_0080677c;
+  *param_4 = PTR_0080677c;
   *param_5 = '\0';
   *param_6 = 0x1d;
   *param_7 = 0;
@@ -239,6 +240,7 @@ st::fn_0044E980
   pcVar7 = pcVar6 + -uVar4;
   pcVar6 = param_5;
   memmove(pcVar6, pcVar7, uVar4); /* compiler REP MOVS byte copy */
+  uVar5 = 0;
   if (param_3 != 0xc) {
     return;
   }
@@ -269,7 +271,7 @@ st::fn_0044E980
 }
 
 // 0044EE30 STBoatC::GetMessage
-#line 1 "decomp/ST.exe/functions/0044EE30/decomp.c"
+#line 4 "decomp/ST.exe/functions/0044EE30/decomp.c"
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 /* Recovered from embedded debug metadata:
    E:\__titans\wlad\To_boat.cpp
@@ -409,7 +411,7 @@ int __thiscall st::fn_0044EE30(STBoatC *this,STMessage *message)
   undefined4 *local_d0;
   undefined4 local_cc;
   undefined4 local_c8;
-  undefined4 local_c4;
+  ushort *local_c4;
   undefined4 local_c0;
   undefined4 local_bc;
   undefined4 local_b8;
@@ -1512,7 +1514,7 @@ joined_r0x00450a10:
       if (uVar16 == 0) {
         puVar21 = &this_00->field_01D5;
         iVar13 = st::fn_00404183
-                           ((STT3DSprC *)puVar21,0xb,DAT_00806774,"forcef0",0x1d);
+                           ((STT3DSprC *)puVar21,0xb,PTR_00806774,"forcef0",0x1d);
         if (iVar13 != 0) {
           st::fn_006A5E40
                     (0xffff,g_overwriteContext_007ED77C,"E:\\__titans\\wlad\\To_boat.cpp",
@@ -1610,7 +1612,7 @@ LAB_00450c1e:
         iVar13 = st::fn_00404BE2(&this_00->field_01D5,'\b');
         if ((iVar13 == 0) &&
            (iVar13 = st::fn_00404183
-                               ((STT3DSprC *)&this_00->field_01D5,8,DAT_00806774,"expdstrw"
+                               ((STT3DSprC *)&this_00->field_01D5,8,PTR_00806774,"expdstrw"
                                 ,0x1d), iVar13 != 0)) {
           iVar13 = 0x45d;
 LAB_00450e28:
@@ -1621,7 +1623,7 @@ LAB_00450e28:
       }
       else if (iVar13 == 0x15) {
         iVar13 = st::fn_00404183
-                           ((STT3DSprC *)&this_00->field_01D5,8,DAT_00806774,"expdstrw",
+                           ((STT3DSprC *)&this_00->field_01D5,8,PTR_00806774,"expdstrw",
                             0x1d);
         if (iVar13 != 0) {
           iVar13 = 0x462;
@@ -1636,17 +1638,17 @@ LAB_00450e28:
         }
         puVar21 = &this_00->field_01D5;
         st::fn_00404183
-                  ((STT3DSprC *)puVar21,8,DAT_00806774,
+                  ((STT3DSprC *)puVar21,8,PTR_00806774,
                    "expl_bt0" + this_00->field_082A * 0x45,0x1d);
         st::fn_00404183
-                  ((STT3DSprC *)puVar21,9,DAT_00806764,
+                  ((STT3DSprC *)puVar21,9,PTR_00806764,
                    "expl_bbt0" + this_00->field_082A * 0x45,0x1d);
         st::fn_00404183
-                  ((STT3DSprC *)puVar21,10,DAT_00806774,
+                  ((STT3DSprC *)puVar21,10,PTR_00806774,
                    "expmask3" + this_00->field_082A * 0x45,0x1d);
         st::fn_004022D4(puVar21,'\n');
         st::fn_00405240((STT3DSprC *)puVar21,10,g_playSystem_00802A38->field_00E4);
-        st::fn_004044EE((STT3DSprC *)puVar21,DAT_008032b8,0x10);
+        st::fn_004044EE((STT3DSprC *)puVar21,PTR_008032b8,0x10);
         st::fn_00403233((STT3DSprC *)puVar21,'\n');
       }
       st::fn_00405240((STT3DSprC *)&this_00->field_01D5,8,g_playSystem_00802A38->field_00E4);
@@ -7680,20 +7682,20 @@ cf_error_exit_0045AEE3:
     iVar13 = (message->arg0).i32;
     local_d0 = st::fn_006AAC70(0x44);
     do {
-      *(int **)(iVar29 + (int)local_d0) = DAT_0080677c;
+      *(int **)(iVar29 + (int)local_d0) = PTR_0080677c;
       iVar29 = iVar29 + 4;
     } while (iVar29 < 0x44);
-    local_d0[2] = DAT_00806774;
-    local_d0[1] = DAT_00806774;
-    *local_d0 = DAT_00806774;
-    local_d0[0xf] = DAT_00806774;
-    local_d0[9] = DAT_00806764;
-    local_d0[8] = DAT_00806774;
-    local_d0[10] = DAT_00806774;
-    local_d0[0xb] = DAT_00806774;
+    local_d0[2] = PTR_00806774;
+    local_d0[1] = PTR_00806774;
+    *local_d0 = PTR_00806774;
+    local_d0[0xf] = PTR_00806774;
+    local_d0[9] = PTR_00806764;
+    local_d0[8] = PTR_00806774;
+    local_d0[10] = PTR_00806774;
+    local_d0[0xb] = PTR_00806774;
     local_cc = 0;
     local_c8 = 0;
-    local_c4 = DAT_008073cc;
+    local_c4 = PTR_008073cc;
     local_c0 = 0;
     local_bc = 0;
     local_b8 = 0;
@@ -8010,7 +8012,7 @@ cf_error_exit_0045AEE3:
   memmove(pcVar33, pcVar34, uVar16); /* compiler REP MOVS byte copy */
   uVar27 = 0;
 switchD_0044fb10_default:
-  iVar13 = st::fn_00404183((STT3DSprC *)&this_00->field_01D5,0xe,DAT_0080677c,local_74,0x1d);
+  iVar13 = st::fn_00404183((STT3DSprC *)&this_00->field_01D5,0xe,PTR_0080677c,local_74,0x1d);
   if (iVar13 != 0) {
     st::fn_006A5E40
               (0xffff,g_overwriteContext_007ED77C,"E:\\__titans\\wlad\\To_boat.cpp",0x2da);
@@ -8019,7 +8021,7 @@ switchD_0044fb10_default:
   iVar13 = *(int *)((int)this_00->field_06CB + 0x2c);
   if ((((iVar13 == 0xb) || (iVar13 == 0x16)) || (iVar13 == 0x23)) &&
      (iVar13 = st::fn_00404183
-                         ((STT3DSprC *)&this_00->field_01D5,0xd,DAT_0080677c,local_e8,0x1d),
+                         ((STT3DSprC *)&this_00->field_01D5,0xd,PTR_0080677c,local_e8,0x1d),
      iVar13 != 0)) {
     st::fn_006A5E40
               (0xffff,g_overwriteContext_007ED77C,"E:\\__titans\\wlad\\To_boat.cpp",0x2de);
@@ -8077,7 +8079,7 @@ switchD_0044fb10_default:
   memmove(pcVar33, pcVar34, uVar16); /* compiler REP MOVS byte copy */
 switchD_0044fe4c_default:
   puVar21 = &this_00->field_01D5;
-  iVar13 = st::fn_00404183((STT3DSprC *)puVar21,0xc,DAT_0080677c,local_74,0x1d);
+  iVar13 = st::fn_00404183((STT3DSprC *)puVar21,0xc,PTR_0080677c,local_74,0x1d);
   if (iVar13 != 0) {
     st::fn_006A5E40
               (0xffff,g_overwriteContext_007ED77C,"E:\\__titans\\wlad\\To_boat.cpp",0x2eb);
@@ -8151,7 +8153,7 @@ LAB_00450050:
     /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
     if (*(int *)(local_78 + 0x45) == 1) {
       iVar13 = st::fn_00404183
-                         ((STT3DSprC *)puVar21,0xb,DAT_00806774,"forcef0",0x1d);
+                         ((STT3DSprC *)puVar21,0xb,PTR_00806774,"forcef0",0x1d);
       if (iVar13 != 0) {
         st::fn_006A5E40
                   (0xffff,g_overwriteContext_007ED77C,"E:\\__titans\\wlad\\To_boat.cpp",0x31b);
@@ -8208,7 +8210,7 @@ LAB_00450268:
 }
 
 // 0045EF00 STBoatC::CmdToObj
-#line 1 "decomp/ST.exe/functions/0045EF00/decomp.c"
+#line 4 "decomp/ST.exe/functions/0045EF00/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\wlad\To_boat.cpp
    STBoatC::CmdToObj
@@ -8382,7 +8384,7 @@ cf_common_exit_0045F1A9:
 }
 
 // 0045F400 STBoatC::CheckPBoxCmd
-#line 1 "decomp/ST.exe/functions/0045F400/decomp.c"
+#line 4 "decomp/ST.exe/functions/0045F400/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\wlad\To_boat.cpp
    STBoatC::CheckPBoxCmd
@@ -8453,7 +8455,7 @@ uint __thiscall st::fn_0045F400(STBoatC *this,STBoatC_CheckPBoxCmd_param_1Enum p
 }
 
 // 0045FD30 STBoatC::StopMove
-#line 1 "decomp/ST.exe/functions/0045FD30/decomp.c"
+#line 4 "decomp/ST.exe/functions/0045FD30/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\wlad\To_boat.cpp
    STBoatC::StopMove
@@ -8522,7 +8524,7 @@ undefined4 __thiscall st::fn_0045FD30(STBoatC *this)
 }
 
 // 004608B0 STBoatC::Defence
-#line 1 "decomp/ST.exe/functions/004608B0/decomp.c"
+#line 4 "decomp/ST.exe/functions/004608B0/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\wlad\To_boat.cpp
    STBoatC::Defence */
@@ -9214,7 +9216,7 @@ LAB_00461264:
 }
 
 // 004653B0 STBoatC::BackAttack
-#line 1 "decomp/ST.exe/functions/004653B0/decomp.c"
+#line 4 "decomp/ST.exe/functions/004653B0/decomp.c"
 /* WARNING: Removing unreachable block (ram,0x00465790) */
 /* WARNING: Removing unreachable block (ram,0x004657b4) */
 /* WARNING: Removing unreachable block (ram,0x004657b5) */
@@ -9383,7 +9385,7 @@ LAB_004655df:
 }
 
 // 00465BE0 STBoatC::BackPatrol
-#line 1 "decomp/ST.exe/functions/00465BE0/decomp.c"
+#line 4 "decomp/ST.exe/functions/00465BE0/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\wlad\To_boat.cpp
    STBoatC::BackPatrol */
@@ -9410,7 +9412,7 @@ int __thiscall st::fn_00465BE0(STBoatC *this,int *param_1)
 }
 
 // 00465C60 STBoatC::LoadRC
-#line 1 "decomp/ST.exe/functions/00465C60/decomp.c"
+#line 4 "decomp/ST.exe/functions/00465C60/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\wlad\To_boat.cpp
    STBoatC::LoadRC
@@ -11551,7 +11553,7 @@ switchD_0046878c_caseD_1:
 }
 
 // 0046AA50 STBoatC::BackLoadRC
-#line 1 "decomp/ST.exe/functions/0046AA50/decomp.c"
+#line 4 "decomp/ST.exe/functions/0046AA50/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\wlad\To_boat.cpp
    STBoatC::BackLoadRC
@@ -11759,7 +11761,7 @@ LAB_0046ac10:
 }
 
 // 0046B100 STBoatC::Build
-#line 1 "decomp/ST.exe/functions/0046B100/decomp.c"
+#line 4 "decomp/ST.exe/functions/0046B100/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\wlad\To_boat.cpp
    STBoatC::Build */
@@ -12478,7 +12480,7 @@ cf_common_exit_0046C3C5:
 }
 
 // 0046C980 STBoatC::BackBuild
-#line 1 "decomp/ST.exe/functions/0046C980/decomp.c"
+#line 4 "decomp/ST.exe/functions/0046C980/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\wlad\To_boat.cpp
    STBoatC::BackBuild
@@ -12649,7 +12651,7 @@ cf_error_exit_0046CBE2:
 }
 
 // 0046CF20 STBoatC::CreateGame
-#line 1 "decomp/ST.exe/functions/0046CF20/decomp.c"
+#line 4 "decomp/ST.exe/functions/0046CF20/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\wlad\To_boat.cpp
    STBoatC::CreateGame
@@ -12799,7 +12801,7 @@ LAB_0046d1e2:
 }
 
 // 0046D450 STBoatC::UnLoadRC
-#line 1 "decomp/ST.exe/functions/0046D450/decomp.c"
+#line 4 "decomp/ST.exe/functions/0046D450/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\wlad\To_boat.cpp
    STBoatC::UnLoadRC */
@@ -13540,7 +13542,7 @@ LAB_0046d652:
 }
 
 // 0046EFD0 STBoatC::BackUnLoadRC
-#line 1 "decomp/ST.exe/functions/0046EFD0/decomp.c"
+#line 4 "decomp/ST.exe/functions/0046EFD0/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\wlad\To_boat.cpp
    STBoatC::BackUnLoadRC
@@ -13720,7 +13722,7 @@ cf_error_exit_0046F13E:
 }
 
 // 0046F5C0 STBoatC::ToDok
-#line 1 "decomp/ST.exe/functions/0046F5C0/decomp.c"
+#line 4 "decomp/ST.exe/functions/0046F5C0/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\wlad\To_boat.cpp
    STBoatC::ToDok */
@@ -14530,7 +14532,7 @@ cf_common_exit_004707B7:
 }
 
 // 004714D0 STBoatC::BackToDok
-#line 1 "decomp/ST.exe/functions/004714D0/decomp.c"
+#line 4 "decomp/ST.exe/functions/004714D0/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\wlad\To_boat.cpp
    STBoatC::BackToDok
@@ -14715,7 +14717,7 @@ LAB_0047171f:
 }
 
 // 00471AC0 STBoatC::Guard
-#line 1 "decomp/ST.exe/functions/00471AC0/decomp.c"
+#line 4 "decomp/ST.exe/functions/00471AC0/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\wlad\To_boat.cpp
    STBoatC::Guard */
@@ -15395,7 +15397,7 @@ switchD_00471fe0_caseD_2:
 }
 
 // 004732F0 STBoatC::LoadObj
-#line 1 "decomp/ST.exe/functions/004732F0/decomp.c"
+#line 4 "decomp/ST.exe/functions/004732F0/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\wlad\To_boat.cpp
    STBoatC::LoadObj
@@ -16038,7 +16040,7 @@ LAB_00473b6c:
 }
 
 // 00474810 STBoatC::BackLoadObj
-#line 1 "decomp/ST.exe/functions/00474810/decomp.c"
+#line 4 "decomp/ST.exe/functions/00474810/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\wlad\To_boat.cpp
    STBoatC::BackLoadObj */
@@ -16095,7 +16097,7 @@ int __thiscall st::fn_00474810(STBoatC *this,int *param_1)
 }
 
 // 004749C0 STBoatC::WaitLoad
-#line 1 "decomp/ST.exe/functions/004749C0/decomp.c"
+#line 4 "decomp/ST.exe/functions/004749C0/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\wlad\To_boat.cpp
    STBoatC::WaitLoad
@@ -16416,7 +16418,7 @@ switchD_00474a47_caseD_2:
 }
 
 // 00475530 STBoatC::BackWaitLoad
-#line 1 "decomp/ST.exe/functions/00475530/decomp.c"
+#line 4 "decomp/ST.exe/functions/00475530/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\wlad\To_boat.cpp
    STBoatC::BackWaitLoad */
@@ -16555,7 +16557,7 @@ LAB_00475545:
 }
 
 // 004758E0 STBoatC::UnLoadObj
-#line 1 "decomp/ST.exe/functions/004758E0/decomp.c"
+#line 4 "decomp/ST.exe/functions/004758E0/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\wlad\To_boat.cpp
    STBoatC::UnLoadObj
@@ -16801,7 +16803,7 @@ int __thiscall st::fn_004758E0(STBoatC *this,int param_1)
 }
 
 // 00476120 STBoatC::BackUnLoadObj
-#line 1 "decomp/ST.exe/functions/00476120/decomp.c"
+#line 4 "decomp/ST.exe/functions/00476120/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\wlad\To_boat.cpp
    STBoatC::BackUnLoadObj */
@@ -16836,7 +16838,7 @@ int __thiscall st::fn_00476120(STBoatC *this,int *param_1)
 }
 
 // 004761B0 STBoatC::SetMine
-#line 1 "decomp/ST.exe/functions/004761B0/decomp.c"
+#line 4 "decomp/ST.exe/functions/004761B0/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\wlad\To_boat.cpp
    STBoatC::SetMine
@@ -17002,7 +17004,7 @@ LAB_00476633:
 }
 
 // 00476A10 STBoatC::DCBomb
-#line 1 "decomp/ST.exe/functions/00476A10/decomp.c"
+#line 4 "decomp/ST.exe/functions/00476A10/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\wlad\To_boat.cpp
    STBoatC::DCBomb */
@@ -17084,7 +17086,7 @@ LAB_00476c07:
 }
 
 // 00476CE0 STBoatC::Capture
-#line 1 "decomp/ST.exe/functions/00476CE0/decomp.c"
+#line 4 "decomp/ST.exe/functions/00476CE0/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\wlad\To_boat.cpp
    STBoatC::Capture */
@@ -17632,7 +17634,7 @@ cf_common_exit_0047746B:
 }
 
 // 00478030 STBoatC::BackCapture
-#line 1 "decomp/ST.exe/functions/00478030/decomp.c"
+#line 4 "decomp/ST.exe/functions/00478030/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\wlad\To_boat.cpp
    STBoatC::BackCapture
@@ -17807,7 +17809,7 @@ LAB_0047848a:
 }
 
 // 00478640 STBoatC::Recharge
-#line 1 "decomp/ST.exe/functions/00478640/decomp.c"
+#line 4 "decomp/ST.exe/functions/00478640/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\wlad\To_boat.cpp
    STBoatC::Recharge */
@@ -18225,7 +18227,7 @@ cf_common_exit_00478B83:
 }
 
 // 00479600 STBoatC::Teleport
-#line 1 "decomp/ST.exe/functions/00479600/decomp.c"
+#line 4 "decomp/ST.exe/functions/00479600/decomp.c"
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 /* Recovered from embedded debug metadata:
    E:\__titans\wlad\To_boat.cpp
@@ -19361,7 +19363,7 @@ switchD_00479647_caseD_2:
 }
 
 // 0047BF70 STBoatC::BackTeleport
-#line 1 "decomp/ST.exe/functions/0047BF70/decomp.c"
+#line 4 "decomp/ST.exe/functions/0047BF70/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\wlad\To_boat.cpp
    STBoatC::BackTeleport */
@@ -19398,7 +19400,7 @@ int __thiscall st::fn_0047BF70(STBoatC *this,int *param_1)
 }
 
 // 0047C050 STBoatC::Bring
-#line 1 "decomp/ST.exe/functions/0047C050/decomp.c"
+#line 4 "decomp/ST.exe/functions/0047C050/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\wlad\To_boat.cpp
    STBoatC::Bring */
@@ -19831,7 +19833,7 @@ cf_common_exit_0047C9FE:
 }
 
 // 0047CF20 STBoatC::BackBring
-#line 1 "decomp/ST.exe/functions/0047CF20/decomp.c"
+#line 4 "decomp/ST.exe/functions/0047CF20/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\wlad\To_boat.cpp
    STBoatC::BackBring
@@ -19880,7 +19882,7 @@ int __thiscall st::fn_0047CF20(STBoatC *this,int *param_1)
 }
 
 // 0047D080 STBoatC::Annih
-#line 1 "decomp/ST.exe/functions/0047D080/decomp.c"
+#line 4 "decomp/ST.exe/functions/0047D080/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\wlad\To_boat.cpp
    STBoatC::Annih */
@@ -20154,7 +20156,7 @@ LAB_0047d7e6:
 }
 
 // 0047DA50 STBoatC::BackAnnih
-#line 1 "decomp/ST.exe/functions/0047DA50/decomp.c"
+#line 4 "decomp/ST.exe/functions/0047DA50/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\wlad\To_boat.cpp
    STBoatC::BackAnnih */
@@ -20319,7 +20321,7 @@ LAB_0047ddc3:
 }
 
 // 0047DF00 STBoatC::Dismant
-#line 1 "decomp/ST.exe/functions/0047DF00/decomp.c"
+#line 4 "decomp/ST.exe/functions/0047DF00/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\wlad\To_boat.cpp
    STBoatC::Dismant
@@ -21103,7 +21105,7 @@ cf_common_exit_0047F19A:
 }
 
 // 0047FAD0 STBoatC::BackDismant
-#line 1 "decomp/ST.exe/functions/0047FAD0/decomp.c"
+#line 4 "decomp/ST.exe/functions/0047FAD0/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\wlad\To_boat.cpp
    STBoatC::BackDismant
@@ -21212,7 +21214,7 @@ int __thiscall st::fn_0047FAD0(STBoatC *this,int *param_1)
 }
 
 // 0047FE10 STBoatC::Scout
-#line 1 "decomp/ST.exe/functions/0047FE10/decomp.c"
+#line 4 "decomp/ST.exe/functions/0047FE10/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\wlad\To_boat.cpp
    STBoatC::Scout
@@ -21424,7 +21426,7 @@ LAB_0047ff67:
 }
 
 // 00482450 STBoatC::GetExplosionInfo
-#line 1 "decomp/ST.exe/functions/00482450/decomp.c"
+#line 4 "decomp/ST.exe/functions/00482450/decomp.c"
 /* WARNING: Removing unreachable block (ram,0x0048268f) */
 /* Recovered from embedded debug metadata:
    E:\__titans\wlad\To_boat.cpp
@@ -21548,7 +21550,7 @@ st::fn_00482450
 }
 
 // 004827F0 STBoatC::ExpIsOver
-#line 1 "decomp/ST.exe/functions/004827F0/decomp.c"
+#line 4 "decomp/ST.exe/functions/004827F0/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\wlad\To_boat.cpp
    STBoatC::ExpIsOver */
@@ -21628,7 +21630,7 @@ void __thiscall st::fn_004827F0(STBoatC *this,uint param_1)
 }
 
 // 00482A00 STBoatC::ChangeActivity
-#line 1 "decomp/ST.exe/functions/00482A00/decomp.c"
+#line 4 "decomp/ST.exe/functions/00482A00/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\wlad\To_boat.cpp
    STBoatC::ChangeActivity
@@ -21802,7 +21804,7 @@ void __thiscall st::fn_00482A00(STBoatC *this,int param_1)
 }
 
 // 00488F30 STBoatC::GetInfo16
-#line 1 "decomp/ST.exe/functions/00488F30/decomp.c"
+#line 4 "decomp/ST.exe/functions/00488F30/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\wlad\To_boat.cpp
    STBoatC::GetInfo16
@@ -22082,7 +22084,7 @@ cf_common_join_00489222:
 }
 
 // 004899A0 STBoatC::GetDefenceTarget
-#line 1 "decomp/ST.exe/functions/004899A0/decomp.c"
+#line 4 "decomp/ST.exe/functions/004899A0/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\wlad\To_boat.cpp
    STBoatC::GetDefenceTarget
@@ -22463,7 +22465,7 @@ LAB_0048a2dd:
 }
 
 // 0048A670 STBoatC::_SetSpeedFireLife
-#line 1 "decomp/ST.exe/functions/0048A670/decomp.c"
+#line 4 "decomp/ST.exe/functions/0048A670/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\wlad\To_boat.cpp
    STBoatC::_SetSpeedFireLife
@@ -22560,7 +22562,7 @@ void __thiscall st::fn_0048A670(STBoatC *this)
 }
 
 // 0048CC80 STBoatC::_AddDefenceShots
-#line 1 "decomp/ST.exe/functions/0048CC80/decomp.c"
+#line 4 "decomp/ST.exe/functions/0048CC80/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\wlad\To_boat.cpp
    STBoatC::_AddDefenceShots */
@@ -22639,7 +22641,7 @@ void __thiscall st::fn_0048CC80(STBoatC *this,char param_1,short param_2,int par
 }
 
 // 0048CEA0 STBoatC::_CheckDefenceShots
-#line 1 "decomp/ST.exe/functions/0048CEA0/decomp.c"
+#line 4 "decomp/ST.exe/functions/0048CEA0/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\wlad\To_boat.cpp
    STBoatC::_CheckDefenceShots
@@ -22735,7 +22737,7 @@ LAB_0048d016:
 }
 
 // 0048D130 STBoatC::SetNewMD
-#line 1 "decomp/ST.exe/functions/0048D130/decomp.c"
+#line 4 "decomp/ST.exe/functions/0048D130/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\wlad\To_boat.cpp
    STBoatC::SetNewMD
@@ -22837,7 +22839,7 @@ st::fn_0048D130(STBoatC *this,int param_1,short param_2,short param_3,short para
 }
 
 // 0048FAC0 STBoatC::SaveBoatData
-#line 1 "decomp/ST.exe/functions/0048FAC0/decomp.c"
+#line 4 "decomp/ST.exe/functions/0048FAC0/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\wlad\To_boat.cpp
    STBoatC::SaveBoatData */
@@ -23109,7 +23111,7 @@ undefined4 * __thiscall st::fn_0048FAC0(STBoatC *this,int *param_1)
 }
 
 // 004900E0 STBoatC::RestoreBoatData
-#line 1 "decomp/ST.exe/functions/004900E0/decomp.c"
+#line 4 "decomp/ST.exe/functions/004900E0/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\wlad\To_boat.cpp
    STBoatC::RestoreBoatData */
@@ -23303,7 +23305,7 @@ void __thiscall st::fn_004900E0(STBoatC *this,int param_1)
 }
 
 // 00491070 STBoatC::ReleaseLoad
-#line 1 "decomp/ST.exe/functions/00491070/decomp.c"
+#line 4 "decomp/ST.exe/functions/00491070/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\wlad\To_boat.cpp
    STBoatC::ReleaseLoad */
@@ -23351,7 +23353,7 @@ void __thiscall st::fn_00491070(STBoatC *this,uint param_1)
 }
 
 // 00491240 STBoatC::PrepareForLoading
-#line 1 "decomp/ST.exe/functions/00491240/decomp.c"
+#line 4 "decomp/ST.exe/functions/00491240/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\wlad\To_boat.cpp
    STBoatC::PrepareForLoading
@@ -23466,7 +23468,7 @@ st::fn_00491240
 }
 
 // 00491600 FUN_00491600
-#line 1 "decomp/ST.exe/functions/00491600/decomp.c"
+#line 4 "decomp/ST.exe/functions/00491600/decomp.c"
 /* [STSourceProvenanceApplier begin]
    Recovered source file: E:\__titans\wlad\To_boat.cpp
    Diagnostic line evidence: 20488 (metadata/report site, not the function definition)
@@ -23511,7 +23513,7 @@ void __fastcall st::fn_00491600(AnonShape_00491600_23458133 *param_1)
 }
 
 // 00491720 FUN_00491720
-#line 1 "decomp/ST.exe/functions/00491720/decomp.c"
+#line 4 "decomp/ST.exe/functions/00491720/decomp.c"
 /* [STSourceProvenanceApplier begin]
    Recovered source file: E:\__titans\wlad\To_boat.cpp
    Diagnostic line evidence: 20511 (metadata/report site, not the function definition)
@@ -23617,7 +23619,7 @@ void __fastcall st::fn_00491720(STBoatC *param_1,undefined4 param_2)
 }
 
 // 004919C0 STBoatC::GetCellForLoading
-#line 1 "decomp/ST.exe/functions/004919C0/decomp.c"
+#line 4 "decomp/ST.exe/functions/004919C0/decomp.c"
 /* WARNING: Type propagation algorithm not settling */
 /* Recovered from embedded debug metadata:
    E:\__titans\wlad\To_boat.cpp
@@ -23888,7 +23890,7 @@ cf_continue_loop_00491C1C:
 }
 
 // 00491FB0 STBoatC::ReadyForLoading
-#line 1 "decomp/ST.exe/functions/00491FB0/decomp.c"
+#line 4 "decomp/ST.exe/functions/00491FB0/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\wlad\To_boat.cpp
    STBoatC::ReadyForLoading
@@ -23919,7 +23921,7 @@ void __thiscall st::fn_00491FB0(STBoatC *this,STFishC *param_1)
 }
 
 // 00492080 STBoatC::NotReadyForLoading
-#line 1 "decomp/ST.exe/functions/00492080/decomp.c"
+#line 4 "decomp/ST.exe/functions/00492080/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\wlad\To_boat.cpp
    STBoatC::NotReadyForLoading */
@@ -23977,7 +23979,7 @@ void __thiscall st::fn_00492080(STBoatC *this,int param_1)
 }
 
 // 00492280 STBoatC::CancelLoading
-#line 1 "decomp/ST.exe/functions/00492280/decomp.c"
+#line 4 "decomp/ST.exe/functions/00492280/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\wlad\To_boat.cpp
    STBoatC::CancelLoading */
@@ -24018,7 +24020,7 @@ void __thiscall st::fn_00492280(STBoatC *this,int param_1)
 }
 
 // 00492390 STBoatC::sub_00492390
-#line 1 "decomp/ST.exe/functions/00492390/decomp.c"
+#line 4 "decomp/ST.exe/functions/00492390/decomp.c"
 /* [STSourceProvenanceApplier begin]
    Recovered source file: E:\__titans\wlad\To_boat.cpp
    Diagnostic line evidence: 20736 (metadata/report site, not the function definition)
@@ -24049,7 +24051,7 @@ void __thiscall st::fn_00492390(STBoatC *this)
 }
 
 // 00493340 STBoatC::CheckForReplenisher
-#line 1 "decomp/ST.exe/functions/00493340/decomp.c"
+#line 4 "decomp/ST.exe/functions/00493340/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\wlad\To_boat.cpp
    STBoatC::CheckForReplenisher

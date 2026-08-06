@@ -58,7 +58,7 @@ void __thiscall ResearchPanelTy::InitResearchPanel(ResearchPanelTy *this)
     return;
   }
   iVar6 = 2;
-  g_prodPanel_008016E8 = (ProdPanelTy *)local_10;
+  g_researchPanel_008016E8 = (ProdPanelTy *)local_10;
   puVar5 = &local_10->field_027A;
   do {
     pDVar3 = Library::DKW::TBL::DArrayCreate(nullptr,0x28,0x30,10);
@@ -73,10 +73,10 @@ void __thiscall ResearchPanelTy::InitResearchPanel(ResearchPanelTy *this)
   puVar4 = cMf32::RecGet(g_cMf32_00806790,1,text,piVar10,iVar6);
   this_00->field_0184 = puVar4;
   puVar4 = Library::Ourlib::MFRLOAD::mfRLoad
-                     (DAT_00806794,CASE_B,&DAT_007c20a0,0xffffffff,0,1,0,nullptr);
+                     (PTR_00806794,CASE_B,&DAT_007c20a0,0xffffffff,0,1,0,nullptr);
   this_00->field_0188 = puVar4;
   puVar4 = Library::Ourlib::MFRLOAD::mfRLoad
-                     (DAT_00806794,CASE_B,&DAT_007c38c8,0xffffffff,0,1,0,nullptr);
+                     (PTR_00806794,CASE_B,&DAT_007c38c8,0xffffffff,0,1,0,nullptr);
   this_00->field_018C = puVar4;
   ProdPanelTy::InitProdPanel
             ((ProdPanelTy *)this_00,0x2722,0x3f,2,0xc1,0xc,0x85,0x4f,0x68,0xc4,0x4f,0x20,0x13,0x33,

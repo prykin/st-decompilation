@@ -2,7 +2,7 @@
 // Generated translation unit: source/recovered/by_owner/SubmarineTitans__Recovered__HiddenThis__AnonReceiver_004248D0.cpp
 
 // 00427090 SubmarineTitans::Recovered::HiddenThis::AnonReceiver_004248D0::sub_00427090
-#line 1 "decomp/ST.exe/functions/00427090/decomp.c"
+#line 4 "decomp/ST.exe/functions/00427090/decomp.c"
 /* [STMethodOwnerApplier] Structural method owner recovered as
    SubmarineTitans::Recovered::HiddenThis::AnonReceiver_004248D0.
    Evidence: this_call_owners=[SubmarineTitans::Recovered::HiddenThis::AnonReceiver_004248D0];
@@ -238,7 +238,7 @@ LAB_00427930:
 }
 
 // 00427BB0 SubmarineTitans::Recovered::HiddenThis::AnonReceiver_004248D0::FUN_00427bb0
-#line 1 "decomp/ST.exe/functions/00427BB0/decomp.c"
+#line 4 "decomp/ST.exe/functions/00427BB0/decomp.c"
 /* [STHiddenThisApplier] Anonymous hidden receiver recovered as
    /SubmarineTitans/Recovered/HiddenThis/AnonReceiver_004248D0.
    Evidence: incoming_receiver_captures=1; receiver_accesses=3; incoming_edx_uses=0; calls=5;

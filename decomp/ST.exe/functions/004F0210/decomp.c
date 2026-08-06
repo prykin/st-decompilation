@@ -57,7 +57,7 @@ int __thiscall BldLabPanelTy::GetMessage(BldLabPanelTy *this,STMessage *message)
         DArrayDestroy((DArrayTy *)this_00->field_027A);
       }
       this_00->field_027A = nullptr;
-      g_prodPanel_00801680 = nullptr;
+      g_bldLabPanel_00801680 = nullptr;
       g_currentExceptionFrame = local_4c.previous;
       return 0;
     }

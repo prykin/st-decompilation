@@ -26,7 +26,7 @@ undefined4 __thiscall STJumpMineC::LoadImagJMine(STJumpMineC *this,int param_1)
   if (iVar2 == 0) {
     if (param_1 == 1) {
       puVar3 = Library::Ourlib::MFRLOAD::mfRLoad
-                         (DAT_00806774,CASE_1D,"jmpmine",0xffffffff,0,1,0,nullptr
+                         (PTR_00806774,CASE_1D,"jmpmine",0xffffffff,0,1,0,nullptr
                          );
       pSVar7 = local_8;
       puVar6 = &local_8->field_0097;
@@ -52,7 +52,7 @@ undefined4 __thiscall STJumpMineC::LoadImagJMine(STJumpMineC *this,int param_1)
         Library::Ourlib::ST3DSMAP::SprClose(g_sT3DSMAPContext_00807598,*puVar6);
       }
       puVar3 = Library::Ourlib::MFRLOAD::mfRLoad
-                         (DAT_00806774,CASE_1D,"exptme",0xffffffff,0,1,0,nullptr);
+                         (PTR_00806774,CASE_1D,"exptme",0xffffffff,0,1,0,nullptr);
       ST3DSMAPContext::sub_006E8660
                 (g_sT3DSMAPContext_00807598,(int *)puVar6,3,0,STField<uint>(puVar3,9),
                  STField<uint>(puVar3,0xd),0x5a,0x45,0);
@@ -61,18 +61,18 @@ undefined4 __thiscall STJumpMineC::LoadImagJMine(STJumpMineC *this,int param_1)
       ST3DSMAPContext::sub_006EA270(g_sT3DSMAPContext_00807598,*puVar6,0,pSVar7->field_00AB);
       pSVar7->field_00AF = *(int *)puVar3;
       puVar3 = Library::Ourlib::MFRLOAD::mfRLoad
-                         (DAT_00806774,CASE_1D,"expmask2",0xffffffff,0,1,0,
+                         (PTR_00806774,CASE_1D,"expmask2",0xffffffff,0,1,0,
                           nullptr);
       ST3DSMAPContext::sub_006E98E0
                 (g_sT3DSMAPContext_00807598,*puVar6,1,*(int *)puVar3,STField<int>(puVar3,0x21),1);
       ST3DSMAPContext::sub_006EA270(g_sT3DSMAPContext_00807598,*puVar6,1,pSVar7->field_00BC);
       ST3DSMAPContext::sub_006EA800(g_sT3DSMAPContext_00807598,*puVar6,1,1);
       Library::Ourlib::ST3DSMAP::SprSetMShadowTbl
-                (g_sT3DSMAPContext_00807598,*puVar6,DAT_008032b8,0x10);
+                (g_sT3DSMAPContext_00807598,*puVar6,PTR_008032b8,0x10);
       pSVar7->field_00C0 = *(undefined4 *)puVar3;
       pSVar7->field_00BB = 1;
       puVar3 = Library::Ourlib::MFRLOAD::mfRLoad
-                         (DAT_00806764,CASE_1D,"bulb_n4",0xffffffff,0,1,0,nullptr
+                         (PTR_00806764,CASE_1D,"bulb_n4",0xffffffff,0,1,0,nullptr
                          );
       ST3DSMAPContext::sub_006E98E0
                 (g_sT3DSMAPContext_00807598,*puVar6,2,*(int *)puVar3,STField<int>(puVar3,0x21),1);

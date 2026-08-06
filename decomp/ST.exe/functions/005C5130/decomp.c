@@ -202,8 +202,8 @@ int __thiscall SettMapTy::NoneSettMap(SettMapTy *this)
       this_00->CreateCtrls('\0');
       SVar2 = this_00->field_1E26;
       if (((SVar2 == CASE_6) || (SVar2 == CASE_7)) || (SVar2 == CASE_E)) {
-        SubmarineTitans::Recovered::HiddenThis::AnonReceiver_004EEFB0::thunk_FUN_005c8200
-                  ((AnonReceiver_004EEFB0 *)this_00);
+        SubmarineTitans::Recovered::HiddenThis::AnonReceiver_0053F510::thunk_FUN_005c8200
+                  ((AnonReceiver_0053F510 *)this_00);
       }
       PaintSettMap(this_00,'\0');
       g_currentExceptionFrame = local_50.previous;

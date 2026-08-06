@@ -99,7 +99,7 @@ void __thiscall ChooseMapTy::PaintChooseMap(ChooseMapTy *this,char param_1)
   uVar8 = 0;
   uVar6 = 0xffffffff;
   uVar5 = 0xfffffffe;
-  resourceString = (uint *)LoadResourceString(resourceId,g_module_00807618);
+  resourceString = (uint *)LoadResourceString(resourceId,g_hINSTANCE_00807618);
   StartServTy::WrTextDDX(this_02,0,0xe9,0x14,0x14c,0x18,resourceString,uVar5,uVar6,pcVar7,uVar8);
 switchD_005ad1b8_caseD_6:
   g_currentExceptionFrame = local_4c.previous;

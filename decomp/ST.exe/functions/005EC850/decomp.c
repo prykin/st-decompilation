@@ -29,10 +29,10 @@ int __thiscall STAllPlayersC::FUN_005ec850(STAllPlayersC *this,int *param_1)
   local_24 = Library::DKW::LIB::MemAlloc(0x44);
   iVar2 = 0;
   do {
-    *(undefined4 *)(iVar2 + (int)local_24) = DAT_00806774;
+    *(int **)(iVar2 + (int)local_24) = PTR_00806774;
     iVar2 = iVar2 + 4;
   } while (iVar2 < 0x44);
-  STField<undefined4>(local_24,0x24) = DAT_00806764;
+  STField<int *>(local_24,0x24) = PTR_00806764;
   local_20 = 0;
   local_1c = 0;
   local_18 = 0;

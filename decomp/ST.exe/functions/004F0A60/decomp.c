@@ -24,7 +24,7 @@ void __fastcall FUN_004f0a60(AnonShape_004F0A60_A5DE070F *param_1)
     puVar1 = puVar1 + 1;
     iVar2 = iVar2 + -1;
   } while (iVar2 != 0);
-  g_prodPanel_00801684 = nullptr;
+  g_bldObjPanel_00801684 = nullptr;
   return;
 }
 

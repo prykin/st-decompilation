@@ -406,12 +406,13 @@ public class STSourceProvenanceAnalyzer extends GhidraScript {
                 "diagnostic_lines\tsource_confidence\tsource_reason\tproposed_name\t" +
                 "name_confidence\tname_reason\tfree_name_candidates\n");
             for (Proposal row : rows) {
+                String candidates = String.join(" | ", row.candidates);
                 out.write(bit(row.sourceApply) + "\t" + bit(row.nameApply) + "\t" +
                     row.address + "\t" + tsv(row.oldName) + "\t" + tsv(row.source) + "\t" +
                     tsv(row.lines) + "\t" + row.sourceConfidence + "\t" +
                     tsv(row.sourceReason) + "\t" + tsv(row.proposedName) + "\t" +
                     row.nameConfidence + "\t" + tsv(row.nameReason) + "\t" +
-                    tsv(String.join(" | ", row.candidates)) + "\n");
+                    tsv(candidates.isBlank() ? "-" : candidates) + "\n");
             }
         }
     }

@@ -2,7 +2,7 @@
 // Generated translation unit: source/original/Start/hologram.cpp
 
 // 005AA6A0 HoloTy::OutHoloProc
-#line 1 "decomp/ST.exe/functions/005AA6A0/decomp.c"
+#line 4 "decomp/ST.exe/functions/005AA6A0/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\Start\hologram.cpp
    HoloTy::OutHoloProc */
@@ -89,7 +89,7 @@ switchD_005aa738_default:
 }
 
 // 005AA880 HoloTy::CalcHologram
-#line 1 "decomp/ST.exe/functions/005AA880/decomp.c"
+#line 4 "decomp/ST.exe/functions/005AA880/decomp.c"
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 /* Recovered from embedded debug metadata:
    E:\__titans\Start\hologram.cpp
@@ -255,7 +255,7 @@ LAB_005aab34:
 }
 
 // 005AACB0 HoloTy::Init
-#line 1 "decomp/ST.exe/functions/005AACB0/decomp.c"
+#line 4 "decomp/ST.exe/functions/005AACB0/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\Start\hologram.cpp
    HoloTy::Init
@@ -380,7 +380,7 @@ switchD_005aadcd_default:
 }
 
 // 005AAFB0 HoloTy::Done
-#line 1 "decomp/ST.exe/functions/005AAFB0/decomp.c"
+#line 4 "decomp/ST.exe/functions/005AAFB0/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\Start\hologram.cpp
    HoloTy::Done
@@ -428,7 +428,7 @@ void __thiscall st::fn_005AAFB0(HoloTy *this)
 }
 
 // 005AB0A0 HoloTy::NextFas
-#line 1 "decomp/ST.exe/functions/005AB0A0/decomp.c"
+#line 4 "decomp/ST.exe/functions/005AB0A0/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\Start\hologram.cpp
    HoloTy::NextFas */

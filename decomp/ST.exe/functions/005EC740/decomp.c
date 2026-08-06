@@ -43,7 +43,7 @@ FUN_005ec740(int param_1,undefined4 param_2,int param_3,undefined4 *param_4,char
     uVar2 = ~uVar2;
     pcVar4 = pcVar5 + -uVar2;
     memmove(param_5, pcVar4, uVar2); /* compiler REP MOVS byte copy */
-    *param_4 = DAT_00806774;
+    *param_4 = PTR_00806774;
   }
   return;
 }

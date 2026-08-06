@@ -2,7 +2,7 @@
 // Generated translation unit: source/original/Start/test_obj.cpp
 
 // 005E58D0 MTestTy::InitMTest
-#line 1 "decomp/ST.exe/functions/005E58D0/decomp.c"
+#line 4 "decomp/ST.exe/functions/005E58D0/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\Start\test_obj.cpp
    MTestTy::InitMTest */
@@ -78,7 +78,7 @@ void __thiscall st::fn_005E58D0(MTestTy *this)
 }
 
 // 005E5BA0 MTestTy::DoneMTest
-#line 1 "decomp/ST.exe/functions/005E5BA0/decomp.c"
+#line 4 "decomp/ST.exe/functions/005E5BA0/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\Start\test_obj.cpp
    MTestTy::DoneMTest */
@@ -128,7 +128,7 @@ void __thiscall st::fn_005E5BA0(MTestTy *this)
 }
 
 // 005E5D50 MTestTy::PaintMTest
-#line 1 "decomp/ST.exe/functions/005E5D50/decomp.c"
+#line 4 "decomp/ST.exe/functions/005E5D50/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\Start\test_obj.cpp
    MTestTy::PaintMTest
@@ -166,7 +166,7 @@ void __thiscall st::fn_005E5D50(MTestTy *this)
 }
 
 // 005E5E30 MTestTy::NoneMTest
-#line 1 "decomp/ST.exe/functions/005E5E30/decomp.c"
+#line 4 "decomp/ST.exe/functions/005E5E30/decomp.c"
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 /* Recovered from embedded debug metadata:
    E:\__titans\Start\test_obj.cpp
@@ -219,7 +219,7 @@ void __thiscall st::fn_005E5E30(MTestTy *this)
 }
 
 // 005E5FB0 MTestTy::GetMessage
-#line 1 "decomp/ST.exe/functions/005E5FB0/decomp.c"
+#line 4 "decomp/ST.exe/functions/005E5FB0/decomp.c"
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 /* Recovered from embedded debug metadata:
    E:\__titans\Start\test_obj.cpp

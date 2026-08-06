@@ -2,7 +2,7 @@
 // Generated translation unit: source/original/ai/ai_mdef.cpp
 
 // 00675EA0 _AddObjGrpExch
-#line 1 "decomp/ST.exe/functions/00675EA0/decomp.c"
+#line 4 "decomp/ST.exe/functions/00675EA0/decomp.c"
 /* [STSourceProvenanceApplier begin]
    Recovered source file: E:\__titans\ai\ai_mdef.cpp
    Diagnostic line evidence: 257 | 258 (metadata/report site, not the function definition)
@@ -66,7 +66,7 @@ LAB_00675f12:
 }
 
 // 00675FE0 _AddAllGrpExch
-#line 1 "decomp/ST.exe/functions/00675FE0/decomp.c"
+#line 4 "decomp/ST.exe/functions/00675FE0/decomp.c"
 /* [STSourceProvenanceApplier begin]
    Recovered source file: E:\__titans\ai\ai_mdef.cpp
    Diagnostic line evidence: 280 | 281 (metadata/report site, not the function definition)
@@ -142,7 +142,7 @@ LAB_00676053:
 }
 
 // 00676170 _GetStaffGrpExch
-#line 1 "decomp/ST.exe/functions/00676170/decomp.c"
+#line 4 "decomp/ST.exe/functions/00676170/decomp.c"
 /* [STSourceProvenanceApplier begin]
    Recovered source file: E:\__titans\ai\ai_mdef.cpp
    Diagnostic line evidence: 293 | 294 (metadata/report site, not the function definition)
@@ -188,7 +188,7 @@ uint * __cdecl st::fn_00676170(undefined4 param_1)
 }
 
 // 00676260 _GetEmbrTobjGrpExch
-#line 1 "decomp/ST.exe/functions/00676260/decomp.c"
+#line 4 "decomp/ST.exe/functions/00676260/decomp.c"
 /* [STSourceProvenanceApplier begin]
    Recovered source file: E:\__titans\ai\ai_mdef.cpp
    Diagnostic line evidence: 314 | 315 (metadata/report site, not the function definition)
@@ -272,7 +272,7 @@ LAB_006762e0:
 }
 
 // 006763F0 _GetEmbrGrpTobjGrpExch
-#line 1 "decomp/ST.exe/functions/006763F0/decomp.c"
+#line 4 "decomp/ST.exe/functions/006763F0/decomp.c"
 /* [STSourceProvenanceApplier begin]
    Recovered source file: E:\__titans\ai\ai_mdef.cpp
    Diagnostic line evidence: 336 | 337 (metadata/report site, not the function definition)
@@ -365,7 +365,7 @@ LAB_00676470:
 }
 
 // 00676D80 _EnumPlObj
-#line 1 "decomp/ST.exe/functions/00676D80/decomp.c"
+#line 4 "decomp/ST.exe/functions/00676D80/decomp.c"
 /* [STSourceProvenanceApplier begin]
    Recovered source file: E:\__titans\ai\ai_mdef.cpp
    Diagnostic line evidence: 659 | 661 | 662 (metadata/report site, not the function definition)
@@ -561,7 +561,7 @@ LAB_00677041:
 }
 
 // 00677290 FUN_00677290
-#line 1 "decomp/ST.exe/functions/00677290/decomp.c"
+#line 4 "decomp/ST.exe/functions/00677290/decomp.c"
 /* [STSourceProvenanceApplier begin]
    Recovered source file: E:\__titans\ai\ai_mdef.cpp
    Diagnostic line evidence: 704 (metadata/report site, not the function definition)
@@ -604,7 +604,7 @@ st::fn_00677290(undefined4 param_1,uint param_2,char param_3,short param_4,short
 }
 
 // 006773B0 FUN_006773b0
-#line 1 "decomp/ST.exe/functions/006773B0/decomp.c"
+#line 4 "decomp/ST.exe/functions/006773B0/decomp.c"
 /* [STSourceProvenanceApplier begin]
    Recovered source file: E:\__titans\ai\ai_mdef.cpp
    Diagnostic line evidence: 727 (metadata/report site, not the function definition)
@@ -647,7 +647,7 @@ st::fn_006773B0(undefined4 param_1,uint param_2,char param_3,short param_4,short
 }
 
 // 006774C0 FUN_006774c0
-#line 1 "decomp/ST.exe/functions/006774C0/decomp.c"
+#line 4 "decomp/ST.exe/functions/006774C0/decomp.c"
 /* [STSourceProvenanceApplier begin]
    Recovered source file: E:\__titans\ai\ai_mdef.cpp
    Diagnostic line evidence: 750 (metadata/report site, not the function definition)
@@ -690,7 +690,7 @@ st::fn_006774C0(undefined4 param_1,byte *param_2,char param_3,short param_4,shor
 }
 
 // 006775E0 FUN_006775e0
-#line 1 "decomp/ST.exe/functions/006775E0/decomp.c"
+#line 4 "decomp/ST.exe/functions/006775E0/decomp.c"
 /* [STSourceProvenanceApplier begin]
    Recovered source file: E:\__titans\ai\ai_mdef.cpp
    Diagnostic line evidence: 776 (metadata/report site, not the function definition)
@@ -733,7 +733,7 @@ st::fn_006775E0(undefined4 param_1,uint param_2,uint param_3,byte *param_4,char 
 }
 
 // 00677960 _EnumRCField
-#line 1 "decomp/ST.exe/functions/00677960/decomp.c"
+#line 4 "decomp/ST.exe/functions/00677960/decomp.c"
 /* [STSourceProvenanceApplier begin]
    Recovered source file: E:\__titans\ai\ai_mdef.cpp
    Diagnostic line evidence: 875 | 895 | 896 (metadata/report site, not the function definition)
@@ -820,7 +820,7 @@ st::fn_00677960(short param_1,short param_2,short param_3,short param_4,short pa
 }
 
 // 00677BE0 _EnumRCCont
-#line 1 "decomp/ST.exe/functions/00677BE0/decomp.c"
+#line 4 "decomp/ST.exe/functions/00677BE0/decomp.c"
 /* [STSourceProvenanceApplier begin]
    Recovered source file: E:\__titans\ai\ai_mdef.cpp
    Diagnostic line evidence: 924 | 954 | 955 (metadata/report site, not the function definition)
@@ -948,7 +948,7 @@ LAB_00677cee:
 }
 
 // 00677F40 _EnumArt
-#line 1 "decomp/ST.exe/functions/00677F40/decomp.c"
+#line 4 "decomp/ST.exe/functions/00677F40/decomp.c"
 /* [STSourceProvenanceApplier begin]
    Recovered source file: E:\__titans\ai\ai_mdef.cpp
    Diagnostic line evidence: 993 | 1020 | 1021 (metadata/report site, not the function definition)
@@ -1064,7 +1064,7 @@ LAB_00678036:
 }
 
 // 00678240 _EnumMines
-#line 1 "decomp/ST.exe/functions/00678240/decomp.c"
+#line 4 "decomp/ST.exe/functions/00678240/decomp.c"
 /* [STSourceProvenanceApplier begin]
    Recovered source file: E:\__titans\ai\ai_mdef.cpp
    Diagnostic line evidence: 1055 | 1081 | 1082 (metadata/report site, not the function definition)
@@ -1201,7 +1201,7 @@ LAB_00678362:
 }
 
 // 006785A0 _EnumDest
-#line 1 "decomp/ST.exe/functions/006785A0/decomp.c"
+#line 4 "decomp/ST.exe/functions/006785A0/decomp.c"
 /* [STSourceProvenanceApplier begin]
    Recovered source file: E:\__titans\ai\ai_mdef.cpp
    Diagnostic line evidence: 1113 | 1136 | 1137 (metadata/report site, not the function definition)

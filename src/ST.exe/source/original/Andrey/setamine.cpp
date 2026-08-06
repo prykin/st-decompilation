@@ -2,7 +2,7 @@
 // Generated translation unit: source/original/Andrey/setamine.cpp
 
 // 0053CEF0 SAMPanelTy::InitSAMPanel
-#line 1 "decomp/ST.exe/functions/0053CEF0/decomp.c"
+#line 4 "decomp/ST.exe/functions/0053CEF0/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\Andrey\setamine.cpp
    SAMPanelTy::InitSAMPanel */
@@ -52,7 +52,7 @@ void __thiscall st::fn_0053CEF0(SAMPanelTy *this)
     uVar11 = 0xffffffff;
     pCVar4 = st::fn_0040577C("BUT_PRODWEAP",0);
     puVar5 = st::fn_00709AF0
-                       (DAT_00806794,CASE_B,pCVar4,uVar11,bVar12,iVar3,iVar15,puVar17);
+                       (PTR_00806794,CASE_B,pCVar4,uVar11,bVar12,iVar3,iVar15,puVar17);
     local_c = this_00->field_01B5;
     this_00->field_01B1 = puVar5;
     iVar3 = 0xb4ff;
@@ -82,7 +82,7 @@ void __thiscall st::fn_0053CEF0(SAMPanelTy *this)
         uVar11 = 0;
         iVar7 = -1;
         iVar15 = 0;
-        resourceString = (uint *)st::fn_006B0140(iVar3 - 0x842b,g_module_00807618);
+        resourceString = (uint *)st::fn_006B0140(iVar3 - 0x842b,g_hINSTANCE_00807618);
         st::fn_007119C0(this_00->field_0189,resourceString,iVar15,iVar7,uVar11);
         st::fn_00403229((RecoveredSourceFamily_dibcopy *)this_00->field_0068,0x37,local_8,'\x01',pbVar6);
         st::fn_00710F00(this_00->field_0189);
@@ -119,7 +119,7 @@ void __thiscall st::fn_0053CEF0(SAMPanelTy *this)
 }
 
 // 0053D1A0 SAMPanelTy::DoneSAMPanel
-#line 1 "decomp/ST.exe/functions/0053D1A0/decomp.c"
+#line 4 "decomp/ST.exe/functions/0053D1A0/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\Andrey\setamine.cpp
    SAMPanelTy::DoneSAMPanel */
@@ -166,7 +166,7 @@ void __thiscall st::fn_0053D1A0(SAMPanelTy *this)
 }
 
 // 0053D290 SAMPanelTy::ShiftControls
-#line 1 "decomp/ST.exe/functions/0053D290/decomp.c"
+#line 4 "decomp/ST.exe/functions/0053D290/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\Andrey\setamine.cpp
    SAMPanelTy::ShiftControls */
@@ -220,7 +220,7 @@ void __thiscall st::fn_0053D290(SAMPanelTy *this,int param_1)
 }
 
 // 0053D3B0 SAMPanelTy::Update
-#line 1 "decomp/ST.exe/functions/0053D3B0/decomp.c"
+#line 4 "decomp/ST.exe/functions/0053D3B0/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\Andrey\setamine.cpp
    SAMPanelTy::Update */
@@ -271,7 +271,7 @@ void __thiscall st::fn_0053D3B0(SAMPanelTy *this)
 }
 
 // 0053D4D0 SAMPanelTy::GetMessage
-#line 1 "decomp/ST.exe/functions/0053D4D0/decomp.c"
+#line 4 "decomp/ST.exe/functions/0053D4D0/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\Andrey\setamine.cpp
    SAMPanelTy::GetMessage

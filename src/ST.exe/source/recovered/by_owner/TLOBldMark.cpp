@@ -2,7 +2,7 @@
 // Generated translation unit: source/recovered/by_owner/TLOBldMark.cpp
 
 // 004C60A0 TLOBldMark::TLOBldMark
-#line 1 "decomp/ST.exe/functions/004C60A0/decomp.c"
+#line 4 "decomp/ST.exe/functions/004C60A0/decomp.c"
 /* [STConstructorApplier] Recovered constructor candidate.
    VTable: 00790C04 (store 004C60AA)
    Evidence: final_vptr=00790C04; returns_this=true; calls_before=1; field_writes_after=6;
@@ -15,7 +15,7 @@ TLOBldMark * __thiscall st::fn_004C60A0(TLOBldMark *this)
 
 {
   st::fn_006E5FB0(this);
-  this->vtable = &TLOBldMarkVTable;
+  this->vtable = &st_global_00790C04;
   this->field_002C = nullptr;
   this->field_0024 = 0;
   this->field_0018 = 1;
@@ -26,7 +26,7 @@ TLOBldMark * __thiscall st::fn_004C60A0(TLOBldMark *this)
 }
 
 // 004C61A0 TLOBldMark::sub_004C61A0
-#line 1 "decomp/ST.exe/functions/004C61A0/decomp.c"
+#line 4 "decomp/ST.exe/functions/004C61A0/decomp.c"
 /* [STMethodOwnerApplier] Structural method owner recovered as TLOBldMark.
    Evidence: this_call_owners=[TLOBldMark]; agreed_this_calls=1; incoming_this_accesses=3;
    incoming_edx_uses=0; incoming_stack_parameter_uses=0; direct_non_thunk_callers=0;
@@ -44,7 +44,7 @@ undefined4 __thiscall st::fn_004C61A0(TLOBldMark *this)
 }
 
 // 004C61E0 TLOBldMark::sub_004C61E0
-#line 1 "decomp/ST.exe/functions/004C61E0/decomp.c"
+#line 4 "decomp/ST.exe/functions/004C61E0/decomp.c"
 /* [STMethodOwnerApplier] Structural method owner recovered as TLOBldMark.
    Evidence: this_call_owners=[TLOBldMark]; agreed_this_calls=1; incoming_this_accesses=3;
    incoming_edx_uses=0; incoming_stack_parameter_uses=0; direct_non_thunk_callers=0;
@@ -63,7 +63,7 @@ undefined4 __thiscall st::fn_004C61E0(TLOBldMark *this)
 }
 
 // 004C63F0 TLOBldMark::sub_004C63F0
-#line 1 "decomp/ST.exe/functions/004C63F0/decomp.c"
+#line 4 "decomp/ST.exe/functions/004C63F0/decomp.c"
 /* [STMethodOwnerApplier] Structural method owner recovered as TLOBldMark.
    Evidence: this_call_owners=[TLOBldMark]; agreed_this_calls=1; incoming_this_accesses=6;
    incoming_edx_uses=0; incoming_stack_parameter_uses=0; direct_non_thunk_callers=0;

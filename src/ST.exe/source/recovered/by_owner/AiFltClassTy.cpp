@@ -2,7 +2,7 @@
 // Generated translation unit: source/recovered/by_owner/AiFltClassTy.cpp
 
 // 0065D230 AiFltClassTy::AiFltClassTy
-#line 1 "decomp/ST.exe/functions/0065D230/decomp.c"
+#line 4 "decomp/ST.exe/functions/0065D230/decomp.c"
 /* [STConstructorApplier] Recovered constructor candidate.
    VTable: 0079D6BC (store 0065D23B)
    Evidence: final_vptr=0079D6BC; returns_this=true; calls_before=1; field_writes_after=4;
@@ -13,7 +13,7 @@ AiFltClassTy * __thiscall st::fn_0065D230(AiFltClassTy *this)
 {
 
   st::fn_006E60E0(this);
-  this->vtable = &AiFltClassTyVTable;
+  this->vtable = &st_global_0079D6BC;
   memset(&this->field_0020, 0, 0x260); /* compiler bulk-zero initialization */
   this->field_0284 = nullptr;
   this->field_0020 = 900;
@@ -23,7 +23,7 @@ AiFltClassTy * __thiscall st::fn_0065D230(AiFltClassTy *this)
 }
 
 // 0065D6A0 AiFltClassTy::sub_0065D6A0
-#line 1 "decomp/ST.exe/functions/0065D6A0/decomp.c"
+#line 4 "decomp/ST.exe/functions/0065D6A0/decomp.c"
 /* [STMethodOwnerApplier] Structural method owner recovered as AiFltClassTy.
    Evidence: this_call_owners=[AiFltClassTy]; agreed_this_calls=2; incoming_this_accesses=2;
    incoming_edx_uses=0; incoming_stack_parameter_uses=0; direct_non_thunk_callers=0;
@@ -48,7 +48,7 @@ void __thiscall st::fn_0065D6A0(AiFltClassTy *this)
 }
 
 // 0065D6E0 AiFltClassTy::sub_0065D6E0
-#line 1 "decomp/ST.exe/functions/0065D6E0/decomp.c"
+#line 4 "decomp/ST.exe/functions/0065D6E0/decomp.c"
 /* [STMethodOwnerApplier] Structural method owner recovered as AiFltClassTy.
    Evidence: this_call_owners=[AiFltClassTy]; agreed_this_calls=1; incoming_this_accesses=2;
    incoming_edx_uses=0; incoming_stack_parameter_uses=0; direct_non_thunk_callers=0;
@@ -69,7 +69,7 @@ void __fastcall st::fn_0065D6E0(AnonShape_0065D6E0_0F9074F6 *param_1,undefined4 
 }
 
 // 0065D720 AiFltClassTy::sub_0065D720
-#line 1 "decomp/ST.exe/functions/0065D720/decomp.c"
+#line 4 "decomp/ST.exe/functions/0065D720/decomp.c"
 /* [STMethodOwnerApplier] Structural method owner recovered as AiFltClassTy.
    Evidence: this_call_owners=[AiFltClassTy]; agreed_this_calls=1; incoming_this_accesses=2;
    incoming_edx_uses=0; incoming_stack_parameter_uses=0; direct_non_thunk_callers=0;
@@ -91,7 +91,7 @@ void __fastcall st::fn_0065D720(AnonShape_0065D720_52DE2AAB *param_1,undefined4 
 }
 
 // 0065D9C0 AiFltClassTy::sub_0065D9C0
-#line 1 "decomp/ST.exe/functions/0065D9C0/decomp.c"
+#line 4 "decomp/ST.exe/functions/0065D9C0/decomp.c"
 /* [STMethodOwnerApplier] Structural method owner recovered as AiFltClassTy.
    Evidence: this_call_owners=[AiFltClassTy]; agreed_this_calls=1; incoming_this_accesses=2;
    incoming_edx_uses=0 */
@@ -113,7 +113,7 @@ undefined2 __thiscall st::fn_0065D9C0(AiFltClassTy *this)
 }
 
 // 0065DA10 AiFltClassTy::sub_0065DA10
-#line 1 "decomp/ST.exe/functions/0065DA10/decomp.c"
+#line 4 "decomp/ST.exe/functions/0065DA10/decomp.c"
 /* [STMethodOwnerApplier] Structural method owner recovered as AiFltClassTy.
    Evidence: this_call_owners=[AiFltClassTy]; agreed_this_calls=2; incoming_this_accesses=2;
    incoming_edx_uses=0; incoming_stack_parameter_uses=0; direct_non_thunk_callers=0;
@@ -139,7 +139,7 @@ uint * __fastcall st::fn_0065DA10(AiFltClassTy *param_1,undefined4 param_2)
 }
 
 // 0065E360 AiFltClassTy::sub_0065E360
-#line 1 "decomp/ST.exe/functions/0065E360/decomp.c"
+#line 4 "decomp/ST.exe/functions/0065E360/decomp.c"
 /* [STMethodOwnerApplier] Structural method owner recovered as AiFltClassTy.
    Evidence: this_call_owners=[AiFltClassTy]; agreed_this_calls=2; incoming_this_accesses=2;
    incoming_edx_uses=0; incoming_stack_parameter_uses=1; direct_non_thunk_callers=0;
@@ -165,7 +165,7 @@ uint * __fastcall st::fn_0065E360(AiFltClassTy *param_1,undefined4 param_2,int p
 }
 
 // 0065F5C0 AiFltClassTy::sub_0065F5C0
-#line 1 "decomp/ST.exe/functions/0065F5C0/decomp.c"
+#line 4 "decomp/ST.exe/functions/0065F5C0/decomp.c"
 /* [STMethodOwnerApplier] Structural method owner recovered as AiFltClassTy.
    Evidence: this_call_owners=[AiFltClassTy]; agreed_this_calls=1; incoming_this_accesses=3;
    incoming_edx_uses=0; incoming_stack_parameter_uses=1; direct_non_thunk_callers=0;
@@ -205,7 +205,7 @@ undefined4 __thiscall st::fn_0065F5C0(AiFltClassTy *this,short *param_1)
 }
 
 // 0065F980 AiFltClassTy::sub_0065F980
-#line 1 "decomp/ST.exe/functions/0065F980/decomp.c"
+#line 4 "decomp/ST.exe/functions/0065F980/decomp.c"
 /* [STMethodOwnerApplier] Structural method owner recovered as AiFltClassTy.
    Evidence: this_call_owners=[AiFltClassTy]; agreed_this_calls=1; incoming_this_accesses=4;
    incoming_edx_uses=0; incoming_stack_parameter_uses=0; direct_non_thunk_callers=0;
@@ -238,7 +238,7 @@ void __thiscall st::fn_0065F980(AiFltClassTy *this)
 }
 
 // 0065FA60 AiFltClassTy::sub_0065FA60
-#line 1 "decomp/ST.exe/functions/0065FA60/decomp.c"
+#line 4 "decomp/ST.exe/functions/0065FA60/decomp.c"
 /* [STHiddenThisApplier] Anonymous hidden receiver recovered as
    /SubmarineTitans/Recovered/HiddenThis/AnonReceiver_0065FA60.
    Evidence: incoming_receiver_captures=1; receiver_accesses=4; incoming_edx_uses=0; calls=4;
@@ -332,7 +332,7 @@ st::fn_0065FA60(AiFltClassTy *this,int param_1,int param_2,short *param_3)
 }
 
 // 00660F70 AiFltClassTy::sub_00660F70
-#line 1 "decomp/ST.exe/functions/00660F70/decomp.c"
+#line 4 "decomp/ST.exe/functions/00660F70/decomp.c"
 /* WARNING: Removing unreachable block (ram,0x006611f2) */
 /* [STMethodOwnerApplier] Structural method owner recovered as AiFltClassTy.
    Evidence: this_call_owners=[AiFltClassTy]; agreed_this_calls=1; incoming_this_accesses=26;
@@ -533,7 +533,7 @@ cf_continue_loop_0066137E:
 }
 
 // 00661580 AiFltClassTy::sub_00661580
-#line 1 "decomp/ST.exe/functions/00661580/decomp.c"
+#line 4 "decomp/ST.exe/functions/00661580/decomp.c"
 /* [STMethodOwnerApplier] Structural method owner recovered as AiFltClassTy.
    Evidence: this_call_owners=[AiFltClassTy]; agreed_this_calls=1; incoming_this_accesses=14;
    incoming_edx_uses=0; incoming_stack_parameter_uses=0; direct_non_thunk_callers=0;
@@ -598,7 +598,7 @@ LAB_006615ff:
 }
 
 // 00661800 AiFltClassTy::sub_00661800
-#line 1 "decomp/ST.exe/functions/00661800/decomp.c"
+#line 4 "decomp/ST.exe/functions/00661800/decomp.c"
 /* [STMethodOwnerApplier] Structural method owner recovered as AiFltClassTy.
    Evidence: this_call_owners=[AiFltClassTy]; agreed_this_calls=1; incoming_this_accesses=2;
    incoming_edx_uses=0; incoming_stack_parameter_uses=0; direct_non_thunk_callers=0;
@@ -648,7 +648,7 @@ int __fastcall st::fn_00661800(AnonShape_0065DA10_8B0AA883 *param_1,undefined4 p
 }
 
 // 00661CA0 AiFltClassTy::sub_00661CA0
-#line 1 "decomp/ST.exe/functions/00661CA0/decomp.c"
+#line 4 "decomp/ST.exe/functions/00661CA0/decomp.c"
 /* [STMethodOwnerApplier] Structural method owner recovered as AiFltClassTy.
    Evidence: this_call_owners=[AiFltClassTy]; agreed_this_calls=1; incoming_this_accesses=29;
    incoming_edx_uses=0; incoming_stack_parameter_uses=6; direct_non_thunk_callers=0;
@@ -929,7 +929,7 @@ LAB_00661e5f:
 }
 
 // 00664760 AiFltClassTy::sub_00664760
-#line 1 "decomp/ST.exe/functions/00664760/decomp.c"
+#line 4 "decomp/ST.exe/functions/00664760/decomp.c"
 /* [STMethodOwnerApplier] Structural method owner recovered as AiFltClassTy.
    Evidence: this_call_owners=[AiFltClassTy]; agreed_this_calls=1; incoming_this_accesses=15;
    incoming_edx_uses=0; incoming_stack_parameter_uses=0; direct_non_thunk_callers=0;
@@ -1023,7 +1023,7 @@ void __thiscall st::fn_00664760(AiFltClassTy *this)
 }
 
 // 00664960 AiFltClassTy::sub_00664960
-#line 1 "decomp/ST.exe/functions/00664960/decomp.c"
+#line 4 "decomp/ST.exe/functions/00664960/decomp.c"
 /* WARNING: Type propagation algorithm not settling */
 /* [STMethodOwnerApplier] Structural method owner recovered as AiFltClassTy.
    Evidence: this_call_owners=[AiFltClassTy]; agreed_this_calls=1; incoming_this_accesses=718;

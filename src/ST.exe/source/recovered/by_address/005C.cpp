@@ -2,7 +2,7 @@
 // Generated translation unit: source/recovered/by_address/005C.cpp
 
 // 005C0230 FUN_005c0230
-#line 1 "decomp/ST.exe/functions/005C0230/decomp.c"
+#line 4 "decomp/ST.exe/functions/005C0230/decomp.c"
 void __fastcall st::fn_005C0230(MReportTy *param_1)
 
 {
@@ -119,7 +119,7 @@ void __fastcall st::fn_005C0230(MReportTy *param_1)
 }
 
 // 005C2620 CreateMReport
-#line 1 "decomp/ST.exe/functions/005C2620/decomp.c"
+#line 4 "decomp/ST.exe/functions/005C2620/decomp.c"
 /* [STUnclaimedCodeApplier] Exact function entry recovered from thunk_target.
    Evidence: P:007CA8C4>0040166D
 
@@ -143,7 +143,7 @@ MReportTy * __cdecl st::fn_005C2620(void)
     memset(&this->field_0x3d, 0, 0x20); /* compiler bulk-zero initialization */
     iVar1 = 0;
     DAT_0080879c = 0;
-    this->vtable = &MReportTyVTable;
+    this->vtable = &st_global_0079C0E4;
     memset(&this->field_0x1d, 0, 0x20); /* compiler bulk-zero initialization */
     iVar1 = 0;
     memset(&this->field_0x3d, 0, 0x20); /* compiler bulk-zero initialization */
@@ -184,7 +184,7 @@ MReportTy * __cdecl st::fn_005C2620(void)
 }
 
 // 005C2760 FUN_005c2760
-#line 1 "decomp/ST.exe/functions/005C2760/decomp.c"
+#line 4 "decomp/ST.exe/functions/005C2760/decomp.c"
 void st::fn_005C2760(void)
 
 {
@@ -221,7 +221,7 @@ void st::fn_005C2760(void)
 }
 
 // 005C5CA0 FUN_005c5ca0
-#line 1 "decomp/ST.exe/functions/005C5CA0/decomp.c"
+#line 4 "decomp/ST.exe/functions/005C5CA0/decomp.c"
 void __fastcall st::fn_005C5CA0(AnonShape_005C5CA0_A6776207 *param_1)
 
 {
@@ -314,7 +314,7 @@ void __fastcall st::fn_005C5CA0(AnonShape_005C5CA0_A6776207 *param_1)
 }
 
 // 005C5EB0 FUN_005c5eb0
-#line 1 "decomp/ST.exe/functions/005C5EB0/decomp.c"
+#line 4 "decomp/ST.exe/functions/005C5EB0/decomp.c"
 void __fastcall st::fn_005C5EB0(AnonShape_005C5EB0_D4E7C108 *param_1)
 
 {
@@ -385,7 +385,7 @@ void __fastcall st::fn_005C5EB0(AnonShape_005C5EB0_D4E7C108 *param_1)
 }
 
 // 005C7800 FUN_005c7800
-#line 1 "decomp/ST.exe/functions/005C7800/decomp.c"
+#line 4 "decomp/ST.exe/functions/005C7800/decomp.c"
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
 void st::fn_005C7800(void)
@@ -440,11 +440,12 @@ void st::fn_005C7800(void)
   st::fn_006BD740((int *)g_ddxContext_008075A8);
   st::fn_006C4630
             (g_dDXContext_0080759C,g_dDXContext_0080759C->field_0044,(undefined4 *)&stack0xffffffb8);
-  PTR_00811758 = st::fn_006C4880
-                           (g_dDXContext_0080759C,0,0,g_nWidth_00806730,DAT_00806734,DAT_00806738);
+  g_tagBITMAPINFO_00811758 =
+       st::fn_006C4880
+                 (g_dDXContext_0080759C,0,0,g_nWidth_00806730,DAT_00806734,DAT_00806738);
   st::fn_006C44E0(g_dDXContext_0080759C,(undefined4 *)&stack0xffffffb8);
   st::fn_006B5F80((int *)g_ddxContext_008075A8,0,0,g_nWidth_00806730,DAT_00806734);
-  st::fn_006B4640(g_dDXContext_0080759C,0,0,PTR_00811758,nullptr);
+  st::fn_006B4640(g_dDXContext_0080759C,0,0,g_tagBITMAPINFO_00811758,nullptr);
   st::fn_006BB370(g_dDXContext_0080759C,0,0);
   if (this->field_1F3F != nullptr) {
     st::fn_006F1170(this->field_1F3F);
@@ -647,8 +648,8 @@ LAB_005c7ae0:
     }
   }
   (*this->vtable->PrepPlList)((SettMapSTy *)this);
-  if (PTR_00811758 != nullptr) {
-    st::fn_006AB060(&PTR_00811758);
+  if (g_tagBITMAPINFO_00811758 != nullptr) {
+    st::fn_006AB060(&g_tagBITMAPINFO_00811758);
   }
   st::fn_004049D5(this,'\0');
   if (g_cursorClass_00802A30 != nullptr) {
@@ -668,7 +669,7 @@ LAB_005c7ae0:
 }
 
 // 005CBBE0 FUN_005cbbe0
-#line 1 "decomp/ST.exe/functions/005CBBE0/decomp.c"
+#line 4 "decomp/ST.exe/functions/005CBBE0/decomp.c"
 int __thiscall st::fn_005CBBE0(void *this,AnonShape_005CBBE0_2D1CAA09 *param_1)
 
 {
@@ -677,7 +678,7 @@ int __thiscall st::fn_005CBBE0(void *this,AnonShape_005CBBE0_2D1CAA09 *param_1)
   UINT resourceId;
   void *pvVar3;
 
-  pcVar2 = st::fn_006B0140(8000,g_module_00807618);
+  pcVar2 = st::fn_006B0140(8000,g_hINSTANCE_00807618);
   if (param_1 != nullptr) {
     switch(param_1->field_0x4) {
     case 1:
@@ -685,13 +686,13 @@ int __thiscall st::fn_005CBBE0(void *this,AnonShape_005CBBE0_2D1CAA09 *param_1)
          (resourceId = 0x1f5a, *(char *)param_1 == '\0')) {
         resourceId = 0x1f41;
       }
-      pcVar2 = st::fn_006B0140(resourceId,g_module_00807618);
+      pcVar2 = st::fn_006B0140(resourceId,g_hINSTANCE_00807618);
       return (int)pcVar2;
     case 2:
-      pcVar2 = st::fn_006B0140(0x1f42,g_module_00807618);
+      pcVar2 = st::fn_006B0140(0x1f42,g_hINSTANCE_00807618);
       return (int)pcVar2;
     case 3:
-      pcVar2 = st::fn_006B0140(0x1f46,g_module_00807618);
+      pcVar2 = st::fn_006B0140(0x1f46,g_hINSTANCE_00807618);
       return (int)pcVar2;
     case 4:
       pDVar1 = param_1->field_0050;
@@ -699,14 +700,14 @@ int __thiscall st::fn_005CBBE0(void *this,AnonShape_005CBBE0_2D1CAA09 *param_1)
          (pvVar3 = DArrayAt<void>(pDVar1, (uint)(byte)param_1->field_0x5), pvVar3 != nullptr)) {
         return (int)pvVar3 + 0x40;
       }
-      pcVar2 = st::fn_006B0140(10000,g_module_00807618);
+      pcVar2 = st::fn_006B0140(10000,g_hINSTANCE_00807618);
     }
   }
   return (int)pcVar2;
 }
 
 // 005CCC30 FUN_005ccc30
-#line 1 "decomp/ST.exe/functions/005CCC30/decomp.c"
+#line 4 "decomp/ST.exe/functions/005CCC30/decomp.c"
 void __fastcall st::fn_005CCC30(AnonShape_005CCC30_E8B603E2 *param_1)
 
 {
@@ -732,7 +733,7 @@ void __fastcall st::fn_005CCC30(AnonShape_005CCC30_E8B603E2 *param_1)
 }
 
 // 005CCD00 FUN_005ccd00
-#line 1 "decomp/ST.exe/functions/005CCD00/decomp.c"
+#line 4 "decomp/ST.exe/functions/005CCD00/decomp.c"
 void __fastcall st::fn_005CCD00(AnonShape_005CCD00_F1FA07E9 *param_1)
 
 {

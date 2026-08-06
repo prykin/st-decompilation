@@ -2,7 +2,7 @@
 // Generated translation unit: source/recovered/by_address/0053.cpp
 
 // 005335E0 FUN_005335e0
-#line 1 "decomp/ST.exe/functions/005335E0/decomp.c"
+#line 4 "decomp/ST.exe/functions/005335E0/decomp.c"
 void st::fn_005335E0(void)
 
 {
@@ -192,7 +192,7 @@ void st::fn_005335E0(void)
 }
 
 // 00533B80 FUN_00533b80
-#line 1 "decomp/ST.exe/functions/00533B80/decomp.c"
+#line 4 "decomp/ST.exe/functions/00533B80/decomp.c"
 void __fastcall st::fn_00533B80(RecoveredRecord_STPlaySystemC_00533B80 *param_1)
 
 {
@@ -230,7 +230,7 @@ void __fastcall st::fn_00533B80(RecoveredRecord_STPlaySystemC_00533B80 *param_1)
       iVar4 = -1;
       iVar3 = -1;
       iVar2 = -2;
-      resourceString = (uint *)st::fn_006B0140(resourceId,g_module_00807618);
+      resourceString = (uint *)st::fn_006B0140(resourceId,g_hINSTANCE_00807618);
       st::fn_00711B70(param_1->field_0180,resourceString,iVar2,iVar3,uVar1,iVar4,iVar5);
       st::fn_006B3640
                 ((int *)g_ddxContext_008075A8,param_1->field_0060,0xffffffff,param_1->field_003C,
@@ -248,7 +248,7 @@ void __fastcall st::fn_00533B80(RecoveredRecord_STPlaySystemC_00533B80 *param_1)
 }
 
 // 005391E0 CreatePausePanel
-#line 1 "decomp/ST.exe/functions/005391E0/decomp.c"
+#line 4 "decomp/ST.exe/functions/005391E0/decomp.c"
 /* [STUnclaimedCodeApplier] Exact function entry recovered from thunk_target.
    Evidence: P:007CA854>004021CB
 
@@ -274,7 +274,7 @@ PausePanelTy * __cdecl st::fn_005391E0(void)
     this->field_0060 = 0xffffffff;
     this->field_0064 = 4;
     this->field_0172 = CASE_2;
-    this->vtable = &PausePanelTyVTable;
+    this->vtable = &st_global_0079AD2C;
     this->field_0044 = 0x9c;
     this->field_0040 = 0x174;
     this->field_0048 = 0xa0;
@@ -284,7 +284,7 @@ PausePanelTy * __cdecl st::fn_005391E0(void)
 }
 
 // 00539AA0 CreatePlayPanel
-#line 1 "decomp/ST.exe/functions/00539AA0/decomp.c"
+#line 4 "decomp/ST.exe/functions/00539AA0/decomp.c"
 /* [STUnclaimedCodeApplier] Exact function entry recovered from thunk_target.
    Evidence: P:007CA90C>004018B1
 
@@ -308,7 +308,7 @@ PlayPanelTy * __cdecl st::fn_00539AA0(void)
     this->field_0068 = nullptr;
     this->field_0172 = 2;
     this->field_0178 = 0;
-    this->vtable = &PlayPanelTyVTable;
+    this->vtable = &st_global_0079AD48;
     this->field_0040 = 0x1d0;
     this->field_0048 = 0xdc;
     this->field_0180 = 0;
@@ -328,7 +328,7 @@ PlayPanelTy * __cdecl st::fn_00539AA0(void)
 }
 
 // 0053BFF0 CreateResearchPanel
-#line 1 "decomp/ST.exe/functions/0053BFF0/decomp.c"
+#line 4 "decomp/ST.exe/functions/0053BFF0/decomp.c"
 /* [STUnclaimedCodeApplier] Exact function entry recovered from thunk_target.
    Evidence: P:007CA8D4>00401596
 
@@ -368,7 +368,7 @@ ResearchPanelTy * __cdecl st::fn_0053BFF0(void)
     this->field_0199 = 0;
     this->field_0279 = 1;
     this->field_0278 = 0;
-    this->vtable = &ResearchPanelTyVTable;
+    this->vtable = &st_global_0079AD64;
     this->field_003C = 0x1c7;
     this->field_0044 = 0;
     this->field_0040 = 0x13d;
@@ -384,7 +384,7 @@ ResearchPanelTy * __cdecl st::fn_0053BFF0(void)
 }
 
 // 0053CE10 CreateSAMPanel
-#line 1 "decomp/ST.exe/functions/0053CE10/decomp.c"
+#line 4 "decomp/ST.exe/functions/0053CE10/decomp.c"
 /* [STUnclaimedCodeApplier] Exact function entry recovered from thunk_target.
    Evidence: P:007CAA0C>00405D44
 
@@ -409,7 +409,7 @@ SAMPanelTy * __cdecl st::fn_0053CE10(void)
     this->field_017C = 0;
     this->field_0185 = 0;
     this->field_0189 = nullptr;
-    this->vtable = &SAMPanelTyVTable;
+    this->vtable = &st_global_0079AD8C;
     this->field_003C = 0xc;
     this->field_0044 = 0;
     this->field_0040 = 0x128;
@@ -426,7 +426,7 @@ SAMPanelTy * __cdecl st::fn_0053CE10(void)
 }
 
 // 0053F510 FUN_0053f510
-#line 1 "decomp/ST.exe/functions/0053F510/decomp.c"
+#line 4 "decomp/ST.exe/functions/0053F510/decomp.c"
 /* [STReturnSemanticsApplier] ignored_eax_void.
    Evidence: all observed direct callers ignore the return register (ignored=4, used=0), and
    decompilation contains no value return */

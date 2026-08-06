@@ -17,14 +17,14 @@ void FUN_004ab650(void)
   if (local_8 < _DAT_0079034c) {
     local_8 = 0.0;
   }
-  if ((float)(int)*DAT_00806750 * _DAT_007904f8 < local_8) {
-    local_8 = (float)(int)*DAT_00806750 * _DAT_007904f8;
+  if ((float)(int)*PTR_00806750 * _DAT_007904f8 < local_8) {
+    local_8 = (float)(int)*PTR_00806750 * _DAT_007904f8;
   }
   if (_DAT_008073d4 < _DAT_0079034c) {
     _DAT_008073d4 = _DAT_0079034c;
   }
-  if ((float)(int)DAT_00806750[1] * _DAT_007904f8 < _DAT_008073d4) {
-    _DAT_008073d4 = (float)(int)DAT_00806750[1] * _DAT_007904f8;
+  if ((float)(int)PTR_00806750[1] * _DAT_007904f8 < _DAT_008073d4) {
+    _DAT_008073d4 = (float)(int)PTR_00806750[1] * _DAT_007904f8;
   }
   DAT_008073d0 = local_8;
   lVar2 = Library::MSVCRT::__ftol();

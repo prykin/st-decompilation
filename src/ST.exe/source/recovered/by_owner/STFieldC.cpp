@@ -2,7 +2,7 @@
 // Generated translation unit: source/recovered/by_owner/STFieldC.cpp
 
 // 00609CD0 STFieldC::sub_00609CD0
-#line 1 "decomp/ST.exe/functions/00609CD0/decomp.c"
+#line 4 "decomp/ST.exe/functions/00609CD0/decomp.c"
 /* [STMethodOwnerApplier] Structural method owner recovered as STFieldC.
    Evidence: this_call_owners=[STFieldC]; agreed_this_calls=1; incoming_this_accesses=3;
    incoming_edx_uses=0; incoming_stack_parameter_uses=0; direct_non_thunk_callers=0;
@@ -36,7 +36,7 @@ void __thiscall st::fn_00609CD0(STFieldC *this)
 }
 
 // 0060C1A0 STFieldC::FUN_0060c1a0
-#line 1 "decomp/ST.exe/functions/0060C1A0/decomp.c"
+#line 4 "decomp/ST.exe/functions/0060C1A0/decomp.c"
 int __thiscall st::fn_0060C1A0(STFieldC *this,undefined4 *param_1)
 
 {
@@ -100,7 +100,7 @@ int __thiscall st::fn_0060C1A0(STFieldC *this,undefined4 *param_1)
 }
 
 // 0060D660 STFieldC::sub_0060D660
-#line 1 "decomp/ST.exe/functions/0060D660/decomp.c"
+#line 4 "decomp/ST.exe/functions/0060D660/decomp.c"
 /* [STMethodOwnerApplier] Structural method owner recovered as STFieldC.
    Evidence: this_call_owners=[STFieldC]; agreed_this_calls=1; incoming_this_accesses=9;
    incoming_edx_uses=0; incoming_stack_parameter_uses=4; direct_non_thunk_callers=0;

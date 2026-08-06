@@ -25,7 +25,7 @@ StartSystemTy::OutBmpProc
     if (errorCode == 0) {
       Library::DKW::DDX::FUN_006b48e0
                 (param_1,param_4,param_5,param_8,0,0,0,param_8->field_0004,param_8->field_0008,
-                 (int)&g_startSystem_0081176C->field_0x144,0,0x10000ff);
+                 (ushort *)&g_startSystem_0081176C->field_0x144,0,0x10000ff);
       g_currentExceptionFrame = local_48.previous;
       return;
     }

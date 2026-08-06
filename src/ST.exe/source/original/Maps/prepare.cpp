@@ -2,7 +2,7 @@
 // Generated translation unit: source/original/Maps/prepare.cpp
 
 // 006A2ED0 FUN_006a2ed0
-#line 1 "decomp/ST.exe/functions/006A2ED0/decomp.c"
+#line 4 "decomp/ST.exe/functions/006A2ED0/decomp.c"
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 /* [STSourceProvenanceApplier begin]
    Recovered source file: E:\__titans\Maps\prepare.cpp

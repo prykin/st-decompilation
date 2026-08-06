@@ -79,7 +79,7 @@ void __thiscall TradePanelTy::PaintPanel(TradePanelTy *this)
       uVar3 = (-(uint)(DAT_0080874e != '\x03') & 0xfffffffc) + 5;
       iVar5 = -1;
       iVar2 = -2;
-      resourceString = (uint *)LoadResourceString(0x4e5b,g_module_00807618);
+      resourceString = (uint *)LoadResourceString(0x4e5b,g_hINSTANCE_00807618);
       ccFntTy::WrTxt(this_00->field_0189,resourceString,iVar2,iVar5,uVar3,iVar6,iVar8);
     }
     PaintIndicators(this_00);

@@ -2,7 +2,7 @@
 // Generated translation unit: source/recovered/by_owner/TLOBaseTy.cpp
 
 // 00417D30 TLOBaseTy::sub_00417D30
-#line 1 "decomp/ST.exe/functions/00417D30/decomp.c"
+#line 4 "decomp/ST.exe/functions/00417D30/decomp.c"
 /* [STMethodOwnerApplier] Structural method owner recovered as TLOBaseTy.
    Evidence: this_call_owners=[TLOBaseTy]; agreed_this_calls=1; incoming_this_accesses=6;
    incoming_edx_uses=0; incoming_stack_parameter_uses=0; direct_non_thunk_callers=0;
@@ -40,7 +40,7 @@ undefined4 __thiscall st::fn_00417D30(TLOBaseTy *this)
 }
 
 // 00419D30 TLOBaseTy::sub_00419D30
-#line 1 "decomp/ST.exe/functions/00419D30/decomp.c"
+#line 4 "decomp/ST.exe/functions/00419D30/decomp.c"
 /* [STMethodOwnerApplier] Structural method owner recovered as TLOBaseTy.
    Evidence: this_call_owners=[TLOBaseTy]; agreed_this_calls=1; incoming_this_accesses=7;
    incoming_edx_uses=0; incoming_stack_parameter_uses=1; direct_non_thunk_callers=0;
@@ -73,7 +73,7 @@ void __thiscall st::fn_00419D30(TLOBaseTy *this,int param_1)
 }
 
 // 0041D590 TLOBaseTy::sub_0041D590
-#line 1 "decomp/ST.exe/functions/0041D590/decomp.c"
+#line 4 "decomp/ST.exe/functions/0041D590/decomp.c"
 /* [STMethodOwnerApplier] Structural method owner recovered as TLOBaseTy.
    Evidence: this_call_owners=[TLOBaseTy]; agreed_this_calls=1; incoming_this_accesses=6;
    incoming_edx_uses=0; incoming_stack_parameter_uses=0; direct_non_thunk_callers=0;
@@ -96,7 +96,7 @@ void __thiscall st::fn_0041D590(TLOBaseTy *this)
 }
 
 // 004B7EF0 TLOBaseTy::TLOBaseTy
-#line 1 "decomp/ST.exe/functions/004B7EF0/decomp.c"
+#line 4 "decomp/ST.exe/functions/004B7EF0/decomp.c"
 /* [STConstructorApplier] Recovered constructor candidate.
    VTable: 00790AA0 (store 004B7F47)
    Evidence: final_vptr=00790AA0; returns_this=true; calls_before=2; field_writes_after=3;
@@ -110,7 +110,7 @@ TLOBaseTy * __thiscall st::fn_004B7EF0(TLOBaseTy *this)
 {
   st::fn_00401933((STGameObjC *)this);
   st::fn_00401316((AnonShape_004AB810_8E5693D5 *)&this->field_01D5);
-  this->field_01D5 = &VTable_00790C00;
+  this->field_01D5 = &st_global_00790C00;
   this->field_05EF = nullptr;
   this->field_05F3 = 0;
   this->field_05F7 = nullptr;
@@ -120,7 +120,7 @@ TLOBaseTy * __thiscall st::fn_004B7EF0(TLOBaseTy *this)
   this->field_0251 = 0;
   this->field_061B = nullptr;
   this->field_061F = nullptr;
-  this->vtable = &TLOBaseTyVTable;
+  this->vtable = &st_global_00790AA0;
   this->field_0245 = ~CASE_0;
   this->field_0249 = 0xffffffff;
   this->field_024D = 0xffffffff;
@@ -128,7 +128,7 @@ TLOBaseTy * __thiscall st::fn_004B7EF0(TLOBaseTy *this)
 }
 
 // 004B7F90 TLOBaseTy::sub_004B7F90
-#line 1 "decomp/ST.exe/functions/004B7F90/decomp.c"
+#line 4 "decomp/ST.exe/functions/004B7F90/decomp.c"
 /* [STMethodOwnerApplier] Structural method owner recovered as TLOBaseTy.
    Evidence: this_call_owners=[TLOBaseTy]; agreed_this_calls=2; incoming_this_accesses=3;
    incoming_edx_uses=0; incoming_stack_parameter_uses=3; direct_non_thunk_callers=0;
@@ -187,7 +187,7 @@ cf_common_exit_004B8058:
 }
 
 // 004B98E0 TLOBaseTy::sub_004B98E0
-#line 1 "decomp/ST.exe/functions/004B98E0/decomp.c"
+#line 4 "decomp/ST.exe/functions/004B98E0/decomp.c"
 /* [STMethodOwnerApplier] Structural method owner recovered as TLOBaseTy.
    Evidence: this_call_owners=[TLOBaseTy]; agreed_this_calls=1; incoming_this_accesses=2;
    incoming_edx_uses=0; incoming_stack_parameter_uses=1; direct_non_thunk_callers=0;
@@ -207,7 +207,7 @@ uint __thiscall st::fn_004B98E0(TLOBaseTy *this,int param_1)
 }
 
 // 004B9A40 TLOBaseTy::sub_004B9A40
-#line 1 "decomp/ST.exe/functions/004B9A40/decomp.c"
+#line 4 "decomp/ST.exe/functions/004B9A40/decomp.c"
 /* [STMethodOwnerApplier] Structural method owner recovered as TLOBaseTy.
    Evidence: this_call_owners=[TLOBaseTy]; agreed_this_calls=1; incoming_this_accesses=7;
    incoming_edx_uses=0; incoming_stack_parameter_uses=0; direct_non_thunk_callers=0;
@@ -286,7 +286,7 @@ undefined4 __thiscall st::fn_004B9A40(TLOBaseTy *this)
 }
 
 // 004BE0F0 TLOBaseTy::FUN_004be0f0
-#line 1 "decomp/ST.exe/functions/004BE0F0/decomp.c"
+#line 4 "decomp/ST.exe/functions/004BE0F0/decomp.c"
 /* [STVirtualMethodApplier] Recovered from virtual table slot family.
    Tables: 00790AA0
    Entries: 00403FB2
@@ -302,7 +302,7 @@ dword __thiscall st::fn_004BE0F0(TLOBaseTy *this)
 }
 
 // 004BE140 TLOBaseTy::FUN_004be140
-#line 1 "decomp/ST.exe/functions/004BE140/decomp.c"
+#line 4 "decomp/ST.exe/functions/004BE140/decomp.c"
 /* [STVirtualMethodApplier] Recovered from virtual table slot family.
    Tables: 00790AA0
    Entries: 00404214
@@ -318,7 +318,7 @@ dword __thiscall st::fn_004BE140(TLOBaseTy *this)
 }
 
 // 004BE160 TLOBaseTy::FUN_004be160
-#line 1 "decomp/ST.exe/functions/004BE160/decomp.c"
+#line 4 "decomp/ST.exe/functions/004BE160/decomp.c"
 /* [STVirtualMethodApplier] Recovered from virtual table slot family.
    Tables: 00790AA0
    Entries: 00404F02
@@ -334,7 +334,7 @@ dword __thiscall st::fn_004BE160(TLOBaseTy *this)
 }
 
 // 004BE220 TLOBaseTy::FUN_004be220
-#line 1 "decomp/ST.exe/functions/004BE220/decomp.c"
+#line 4 "decomp/ST.exe/functions/004BE220/decomp.c"
 /* [STVirtualMethodApplier] Recovered from virtual table slot family.
    Tables: 00790AA0
    Entries: 00404DEA
@@ -350,7 +350,7 @@ dword __thiscall st::fn_004BE220(TLOBaseTy *this)
 }
 
 // 004BE450 TLOBaseTy::FUN_004be450
-#line 1 "decomp/ST.exe/functions/004BE450/decomp.c"
+#line 4 "decomp/ST.exe/functions/004BE450/decomp.c"
 /* [STVirtualMethodApplier] Recovered from virtual table slot family.
    Tables: 00790AA0
    Entries: 00401A64
@@ -366,7 +366,7 @@ dword __thiscall st::fn_004BE450(TLOBaseTy *this)
 }
 
 // 004BEA70 TLOBaseTy::FUN_004bea70
-#line 1 "decomp/ST.exe/functions/004BEA70/decomp.c"
+#line 4 "decomp/ST.exe/functions/004BEA70/decomp.c"
 /* [STPrototypeApplier] Propagated return.
    Evidence: 004BEA70 returns return of FUN_0044e1b0 @ 004C10A3 | 004BEA70 returns return of
    FUN_0044e1b0 @ 004C10BE | 004BEA70 returns return of FUN_0044e1b0 @ 004C10DA | 004BEA70 returns
@@ -2148,7 +2148,7 @@ LAB_004c0ae0:
 }
 
 // 004C2F70 TLOBaseTy::sub_004C2F70
-#line 1 "decomp/ST.exe/functions/004C2F70/decomp.c"
+#line 4 "decomp/ST.exe/functions/004C2F70/decomp.c"
 /* [STMethodOwnerApplier] Structural method owner recovered as TLOBaseTy.
    Evidence: this_call_owners=[TLOBaseTy]; agreed_this_calls=1; incoming_this_accesses=4;
    incoming_edx_uses=0; incoming_stack_parameter_uses=0; direct_non_thunk_callers=0;
@@ -2175,7 +2175,7 @@ undefined4 __thiscall st::fn_004C2F70(TLOBaseTy *this)
 }
 
 // 004C34A0 TLOBaseTy::sub_004C34A0
-#line 1 "decomp/ST.exe/functions/004C34A0/decomp.c"
+#line 4 "decomp/ST.exe/functions/004C34A0/decomp.c"
 /* [STMethodOwnerApplier] Structural method owner recovered as TLOBaseTy.
    Evidence: this_call_owners=[TLOBaseTy]; agreed_this_calls=2; incoming_this_accesses=1;
    incoming_edx_uses=9; incoming_stack_parameter_uses=1; direct_non_thunk_callers=0;
@@ -2204,7 +2204,7 @@ undefined4 __thiscall st::fn_004C34A0(TLOBaseTy *this,int param_1)
 }
 
 // 004C4550 TLOBaseTy::sub_004C4550
-#line 1 "decomp/ST.exe/functions/004C4550/decomp.c"
+#line 4 "decomp/ST.exe/functions/004C4550/decomp.c"
 /* [STMethodOwnerApplier] Structural method owner recovered as TLOBaseTy.
    Evidence: this_call_owners=[TLOBaseTy]; agreed_this_calls=1; incoming_this_accesses=6;
    incoming_edx_uses=2; incoming_stack_parameter_uses=33; direct_non_thunk_callers=0;
@@ -2618,7 +2618,7 @@ undefined4 __thiscall st::fn_004C4550(TLOBaseTy *this,int *param_1)
 }
 
 // 004C56B0 TLOBaseTy::sub_004C56B0
-#line 1 "decomp/ST.exe/functions/004C56B0/decomp.c"
+#line 4 "decomp/ST.exe/functions/004C56B0/decomp.c"
 /* [STMethodOwnerApplier] Structural method owner recovered as TLOBaseTy.
    Evidence: this_call_owners=[TLOBaseTy]; agreed_this_calls=1; incoming_this_accesses=10;
    incoming_edx_uses=2; incoming_stack_parameter_uses=6; direct_non_thunk_callers=0;
@@ -2720,7 +2720,7 @@ undefined4 __thiscall st::fn_004C56B0(TLOBaseTy *this,void *param_1)
 }
 
 // 004C6C70 TLOBaseTy::sub_004C6C70
-#line 1 "decomp/ST.exe/functions/004C6C70/decomp.c"
+#line 4 "decomp/ST.exe/functions/004C6C70/decomp.c"
 /* [STMethodOwnerApplier] Structural method owner recovered as TLOBaseTy.
    Evidence: this_call_owners=[TLOBaseTy]; agreed_this_calls=1; incoming_this_accesses=7;
    incoming_edx_uses=0; incoming_stack_parameter_uses=6; direct_non_thunk_callers=0;
@@ -2751,7 +2751,7 @@ st::fn_004C6C70(TLOBaseTy *this,undefined4 param_1,undefined4 param_2,undefined4
 }
 
 // 004C7070 TLOBaseTy::sub_004C7070
-#line 1 "decomp/ST.exe/functions/004C7070/decomp.c"
+#line 4 "decomp/ST.exe/functions/004C7070/decomp.c"
 /* [STMethodOwnerApplier] Structural method owner recovered as TLOBaseTy.
    Evidence: this_call_owners=[TLOBaseTy]; agreed_this_calls=1; incoming_this_accesses=4;
    incoming_edx_uses=0; incoming_stack_parameter_uses=1; direct_non_thunk_callers=0;
@@ -2817,7 +2817,7 @@ LAB_004c7175:
 }
 
 // 004C7460 TLOBaseTy::sub_004C7460
-#line 1 "decomp/ST.exe/functions/004C7460/decomp.c"
+#line 4 "decomp/ST.exe/functions/004C7460/decomp.c"
 /* [STMethodOwnerApplier] Structural method owner recovered as TLOBaseTy.
    Evidence: this_call_owners=[TLOBaseTy]; agreed_this_calls=2; incoming_this_accesses=5;
    incoming_edx_uses=0; incoming_stack_parameter_uses=0; direct_non_thunk_callers=0;
@@ -2905,7 +2905,7 @@ undefined4 __thiscall st::fn_004C7460(TLOBaseTy *this)
 }
 
 // 004C7860 TLOBaseTy::sub_004C7860
-#line 1 "decomp/ST.exe/functions/004C7860/decomp.c"
+#line 4 "decomp/ST.exe/functions/004C7860/decomp.c"
 /* [STMethodOwnerApplier] Structural method owner recovered as TLOBaseTy.
    Evidence: this_call_owners=[TLOBaseTy]; agreed_this_calls=2; incoming_this_accesses=18;
    incoming_edx_uses=0; incoming_stack_parameter_uses=15; direct_non_thunk_callers=0;
@@ -3057,7 +3057,7 @@ cf_common_exit_004C7B08:
 }
 
 // 004C7CC0 TLOBaseTy::FUN_004c7cc0
-#line 1 "decomp/ST.exe/functions/004C7CC0/decomp.c"
+#line 4 "decomp/ST.exe/functions/004C7CC0/decomp.c"
 /* [STSwitchEnumApplier] Switch target field_05AC uses
    /SubmarineTitans/Recovered/Enums/TLOBaseTy_field_05ACState. Cases:
    CASE_32=50;CASE_33=51;CASE_34=52;CASE_35=53;CASE_36=54;CASE_37=55;CASE_38=56;CASE_39=57;CASE_3A=58;CASE_3B=59;CASE_3D=61;CASE_40=64;CASE_41=65;CASE_43=67;CASE_45=69;CASE_48=72;CASE_49=73;CASE_4C=76;CASE_4D=77;CASE_4E=78;CASE_4F=79;CASE_52=82;CASE_54=84;CASE_55=85;CASE_56=86;CASE_57=87;CASE_58=88;CASE_59=89;CASE_5A=90;CASE_5B=91;CASE_5C=92;CASE_5D=93;CASE_5E=94;CASE_5F=95;CASE_60=96;CASE_61=97;CASE_63=99;CASE_64=100;CASE_68=104;CASE_69=105;CASE_6A=106;CASE_6C=108;CASE_6E=110;CASE_6F=111;CASE_70=112;CASE_72=114;CASE_73=115
@@ -3291,7 +3291,7 @@ LAB_004c7d2b:
 }
 
 // 004C90C0 TLOBaseTy::sub_004C90C0
-#line 1 "decomp/ST.exe/functions/004C90C0/decomp.c"
+#line 4 "decomp/ST.exe/functions/004C90C0/decomp.c"
 /* [STMethodOwnerApplier] Structural method owner recovered as TLOBaseTy.
    Evidence: this_call_owners=[TLOBaseTy]; agreed_this_calls=1; incoming_this_accesses=9;
    incoming_edx_uses=0; incoming_stack_parameter_uses=0; direct_non_thunk_callers=0;
@@ -3337,7 +3337,7 @@ LAB_004c9106:
 }
 
 // 004C9370 TLOBaseTy::sub_004C9370
-#line 1 "decomp/ST.exe/functions/004C9370/decomp.c"
+#line 4 "decomp/ST.exe/functions/004C9370/decomp.c"
 /* [STMethodOwnerApplier] Structural method owner recovered as TLOBaseTy.
    Evidence: this_call_owners=[TLOBaseTy]; agreed_this_calls=1; incoming_this_accesses=2;
    incoming_edx_uses=0; incoming_stack_parameter_uses=3; direct_non_thunk_callers=0;
@@ -3367,7 +3367,7 @@ int __thiscall st::fn_004C9370(TLOBaseTy *this,int param_1,int param_2,int param
 }
 
 // 004C96E0 TLOBaseTy::sub_004C96E0
-#line 1 "decomp/ST.exe/functions/004C96E0/decomp.c"
+#line 4 "decomp/ST.exe/functions/004C96E0/decomp.c"
 /* [STMethodOwnerApplier] Structural method owner recovered as TLOBaseTy.
    Evidence: this_call_owners=[TLOBaseTy]; agreed_this_calls=1; incoming_this_accesses=6;
    incoming_edx_uses=0; incoming_stack_parameter_uses=0; direct_non_thunk_callers=0;
@@ -3394,7 +3394,7 @@ void __thiscall st::fn_004C96E0(TLOBaseTy *this)
 }
 
 // 004CA7B0 TLOBaseTy::sub_004CA7B0
-#line 1 "decomp/ST.exe/functions/004CA7B0/decomp.c"
+#line 4 "decomp/ST.exe/functions/004CA7B0/decomp.c"
 /* [STMethodOwnerApplier] Structural method owner recovered as TLOBaseTy.
    Evidence: this_call_owners=[TLOBaseTy]; agreed_this_calls=8; incoming_this_accesses=4;
    incoming_edx_uses=0; incoming_stack_parameter_uses=13; direct_non_thunk_callers=0;
@@ -3535,7 +3535,7 @@ cf_common_exit_004CAAA4:
 }
 
 // 004CAFC0 TLOBaseTy::sub_004CAFC0
-#line 1 "decomp/ST.exe/functions/004CAFC0/decomp.c"
+#line 4 "decomp/ST.exe/functions/004CAFC0/decomp.c"
 /* [STSwitchEnumApplier] Switch target param_1 uses
    /SubmarineTitans/Recovered/Enums/Global_sub_004CAFC0_param_1Enum. Cases:
    CASE_0=0;CASE_1=1;CASE_2=2;CASE_3=3;CASE_4=4;CASE_5=5;CASE_7=7;CASE_8=8;CASE_9=9;CASE_C=12;CASE_D=13;CASE_E=14;CASE_33=51;CASE_35=53;CASE_38=56;CASE_39=57;CASE_45=69;CASE_4E=78;CASE_4F=79;CASE_54=84;CASE_55=85;CASE_56=86;CASE_57=87;CASE_58=88;CASE_59=89;CASE_5A=90;CASE_5E=94;CASE_70=112
@@ -3868,7 +3868,7 @@ switchD_004cb2cd_caseD_0:
 }
 
 // 004CBA30 TLOBaseTy::sub_004CBA30
-#line 1 "decomp/ST.exe/functions/004CBA30/decomp.c"
+#line 4 "decomp/ST.exe/functions/004CBA30/decomp.c"
 /* [STMethodOwnerApplier] Structural method owner recovered as TLOBaseTy.
    Evidence: this_call_owners=[TLOBaseTy]; agreed_this_calls=1; incoming_this_accesses=2;
    incoming_edx_uses=0; incoming_stack_parameter_uses=0; direct_non_thunk_callers=0;
@@ -3893,7 +3893,7 @@ undefined4 __thiscall st::fn_004CBA30(TLOBaseTy *this)
 }
 
 // 004CBF30 TLOBaseTy::sub_004CBF30
-#line 1 "decomp/ST.exe/functions/004CBF30/decomp.c"
+#line 4 "decomp/ST.exe/functions/004CBF30/decomp.c"
 /* [STMethodOwnerApplier] Structural method owner recovered as TLOBaseTy.
    Evidence: this_call_owners=[TLOBaseTy]; agreed_this_calls=1; incoming_this_accesses=3;
    incoming_edx_uses=0; incoming_stack_parameter_uses=0; direct_non_thunk_callers=0;
@@ -3911,7 +3911,7 @@ void __thiscall st::fn_004CBF30(TLOBaseTy *this)
 }
 
 // 004CC330 TLOBaseTy::sub_004CC330
-#line 1 "decomp/ST.exe/functions/004CC330/decomp.c"
+#line 4 "decomp/ST.exe/functions/004CC330/decomp.c"
 /* [STMethodOwnerApplier] Structural method owner recovered as TLOBaseTy.
    Evidence: this_call_owners=[TLOBaseTy]; agreed_this_calls=1; incoming_this_accesses=3;
    incoming_edx_uses=0; incoming_stack_parameter_uses=0; direct_non_thunk_callers=0;
@@ -3929,7 +3929,7 @@ undefined4 __thiscall st::fn_004CC330(TLOBaseTy *this)
 }
 
 // 004CC880 TLOBaseTy::sub_004CC880
-#line 1 "decomp/ST.exe/functions/004CC880/decomp.c"
+#line 4 "decomp/ST.exe/functions/004CC880/decomp.c"
 /* [STMethodOwnerApplier] Structural method owner recovered as TLOBaseTy.
    Evidence: this_call_owners=[TLOBaseTy]; agreed_this_calls=1; incoming_this_accesses=6;
    incoming_edx_uses=0; incoming_stack_parameter_uses=1; direct_non_thunk_callers=0;
@@ -3953,7 +3953,7 @@ undefined4 __thiscall st::fn_004CC880(TLOBaseTy *this,undefined4 param_1)
 }
 
 // 004CC900 TLOBaseTy::sub_004CC900
-#line 1 "decomp/ST.exe/functions/004CC900/decomp.c"
+#line 4 "decomp/ST.exe/functions/004CC900/decomp.c"
 /* [STMethodOwnerApplier] Structural method owner recovered as TLOBaseTy.
    Evidence: this_call_owners=[TLOBaseTy]; agreed_this_calls=1; incoming_this_accesses=11;
    incoming_edx_uses=0; incoming_stack_parameter_uses=0; direct_non_thunk_callers=0;
@@ -3981,7 +3981,7 @@ undefined4 __thiscall st::fn_004CC900(TLOBaseTy *this)
 }
 
 // 004CE7D0 TLOBaseTy::sub_004CE7D0
-#line 1 "decomp/ST.exe/functions/004CE7D0/decomp.c"
+#line 4 "decomp/ST.exe/functions/004CE7D0/decomp.c"
 /* [STMethodOwnerApplier] Structural method owner recovered as TLOBaseTy.
    Evidence: this_call_owners=[TLOBaseTy]; agreed_this_calls=1; incoming_this_accesses=2;
    incoming_edx_uses=0; incoming_stack_parameter_uses=0; direct_non_thunk_callers=0;
@@ -4011,7 +4011,7 @@ int __thiscall st::fn_004CE7D0(TLOBaseTy *this)
 }
 
 // 004CE860 TLOBaseTy::sub_004CE860
-#line 1 "decomp/ST.exe/functions/004CE860/decomp.c"
+#line 4 "decomp/ST.exe/functions/004CE860/decomp.c"
 /* [STMethodOwnerApplier] Structural method owner recovered as TLOBaseTy.
    Evidence: this_call_owners=[TLOBaseTy]; agreed_this_calls=1; incoming_this_accesses=3;
    incoming_edx_uses=0; incoming_stack_parameter_uses=0; direct_non_thunk_callers=0;
@@ -4046,7 +4046,7 @@ undefined4 __thiscall st::fn_004CE860(TLOBaseTy *this)
 }
 
 // 004CEB00 TLOBaseTy::sub_004CEB00
-#line 1 "decomp/ST.exe/functions/004CEB00/decomp.c"
+#line 4 "decomp/ST.exe/functions/004CEB00/decomp.c"
 /* [STMethodOwnerApplier] Structural method owner recovered as TLOBaseTy.
    Evidence: this_call_owners=[TLOBaseTy]; agreed_this_calls=1; incoming_this_accesses=8;
    incoming_edx_uses=2; incoming_stack_parameter_uses=3; direct_non_thunk_callers=0;
@@ -4358,7 +4358,7 @@ switchD_004ceb47_default:
 }
 
 // 004CF4E0 TLOBaseTy::FUN_004cf4e0
-#line 1 "decomp/ST.exe/functions/004CF4E0/decomp.c"
+#line 4 "decomp/ST.exe/functions/004CF4E0/decomp.c"
 undefined4 __thiscall
 st::fn_004CF4E0
           (TLOBaseTy *this,undefined4 param_1,undefined4 param_2,undefined4 param_3,
@@ -4401,7 +4401,7 @@ st::fn_004CF4E0
 }
 
 // 004CFA00 TLOBaseTy::sub_004CFA00
-#line 1 "decomp/ST.exe/functions/004CFA00/decomp.c"
+#line 4 "decomp/ST.exe/functions/004CFA00/decomp.c"
 /* [STSwitchEnumApplier] Switch target param_1 uses
    /SubmarineTitans/Recovered/Enums/Global_sub_004CFA00_param_1Enum. Cases:
    CASE_8=8;CASE_9=9;CASE_D=13;CASE_E=14
@@ -4473,7 +4473,7 @@ switchD_004cfa5c_caseD_a:
 }
 
 // 004D6DF0 TLOBaseTy::sub_004D6DF0
-#line 1 "decomp/ST.exe/functions/004D6DF0/decomp.c"
+#line 4 "decomp/ST.exe/functions/004D6DF0/decomp.c"
 /* [STMethodOwnerApplier] Structural method owner recovered as TLOBaseTy.
    Evidence: this_call_owners=[TLOBaseTy]; agreed_this_calls=1; incoming_this_accesses=6;
    incoming_edx_uses=0; incoming_stack_parameter_uses=0; direct_non_thunk_callers=0;
@@ -4510,7 +4510,7 @@ int __thiscall st::fn_004D6DF0(TLOBaseTy *this)
 }
 
 // 004DC150 TLOBaseTy::sub_004DC150
-#line 1 "decomp/ST.exe/functions/004DC150/decomp.c"
+#line 4 "decomp/ST.exe/functions/004DC150/decomp.c"
 /* [STMethodOwnerApplier] Structural method owner recovered as TLOBaseTy.
    Evidence: this_call_owners=[TLOBaseTy]; agreed_this_calls=1; incoming_this_accesses=7;
    incoming_edx_uses=0; incoming_stack_parameter_uses=0; direct_non_thunk_callers=0;
@@ -4543,7 +4543,7 @@ void __thiscall st::fn_004DC150(TLOBaseTy *this)
 }
 
 // 004DE7D0 TLOBaseTy::sub_004DE7D0
-#line 1 "decomp/ST.exe/functions/004DE7D0/decomp.c"
+#line 4 "decomp/ST.exe/functions/004DE7D0/decomp.c"
 /* [STMethodOwnerApplier] Structural method owner recovered as TLOBaseTy.
    Evidence: this_call_owners=[TLOBaseTy]; agreed_this_calls=1; incoming_this_accesses=2;
    incoming_edx_uses=0; incoming_stack_parameter_uses=1; direct_non_thunk_callers=0;
@@ -4563,7 +4563,7 @@ st::fn_004DE7D0(TLOBaseTy *this,undefined4 param_1,undefined4 param_2,int param_
 }
 
 // 004DF9F0 TLOBaseTy::sub_004DF9F0
-#line 1 "decomp/ST.exe/functions/004DF9F0/decomp.c"
+#line 4 "decomp/ST.exe/functions/004DF9F0/decomp.c"
 /* [STMethodOwnerApplier] Structural method owner recovered as TLOBaseTy.
    Evidence: this_call_owners=[TLOBaseTy]; agreed_this_calls=1; incoming_this_accesses=5;
    incoming_edx_uses=0; incoming_stack_parameter_uses=0; direct_non_thunk_callers=0;
@@ -4600,7 +4600,7 @@ undefined4 __thiscall st::fn_004DF9F0(TLOBaseTy *this)
 }
 
 // 004E2AD0 TLOBaseTy::sub_004E2AD0
-#line 1 "decomp/ST.exe/functions/004E2AD0/decomp.c"
+#line 4 "decomp/ST.exe/functions/004E2AD0/decomp.c"
 /* [STMethodOwnerApplier] Structural method owner recovered as TLOBaseTy.
    Evidence: this_call_owners=[TLOBaseTy]; agreed_this_calls=1; incoming_this_accesses=11;
    incoming_edx_uses=0; incoming_stack_parameter_uses=2; direct_non_thunk_callers=0;
@@ -4663,7 +4663,7 @@ cf_common_exit_004E2B69:
 }
 
 // 004E2C30 TLOBaseTy::FUN_004e2c30
-#line 1 "decomp/ST.exe/functions/004E2C30/decomp.c"
+#line 4 "decomp/ST.exe/functions/004E2C30/decomp.c"
 undefined4 __thiscall st::fn_004E2C30(TLOBaseTy *this,uint param_1)
 
 {
@@ -4849,7 +4849,7 @@ cf_common_exit_004E2FE4:
 }
 
 // 004E3120 TLOBaseTy::sub_004E3120
-#line 1 "decomp/ST.exe/functions/004E3120/decomp.c"
+#line 4 "decomp/ST.exe/functions/004E3120/decomp.c"
 /* [STMethodOwnerApplier] Structural method owner recovered as TLOBaseTy.
    Evidence: this_call_owners=[TLOBaseTy]; agreed_this_calls=1; incoming_this_accesses=9;
    incoming_edx_uses=0; incoming_stack_parameter_uses=0; direct_non_thunk_callers=0;
@@ -4888,7 +4888,7 @@ undefined4 __thiscall st::fn_004E3120(TLOBaseTy *this)
 }
 
 // 004EA620 TLOBaseTy::sub_004EA620
-#line 1 "decomp/ST.exe/functions/004EA620/decomp.c"
+#line 4 "decomp/ST.exe/functions/004EA620/decomp.c"
 /* [STMethodOwnerApplier] Structural method owner recovered as TLOBaseTy.
    Evidence: this_call_owners=[TLOBaseTy]; agreed_this_calls=1; incoming_this_accesses=9;
    incoming_edx_uses=0; incoming_stack_parameter_uses=0; direct_non_thunk_callers=0;

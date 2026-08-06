@@ -33,10 +33,11 @@ STBoatC::GetVisualInfo
   char cVar1;
   int iVar3;
   uint uVar4;
+  uint uVar5;
   char *pcVar6;
   char *pcVar7;
 
-  *param_4 = DAT_0080677c;
+  *param_4 = PTR_0080677c;
   *param_5 = '\0';
   *param_6 = 0x1d;
   *param_7 = 0;
@@ -237,6 +238,7 @@ STBoatC::GetVisualInfo
   pcVar7 = pcVar6 + -uVar4;
   pcVar6 = param_5;
   memmove(pcVar6, pcVar7, uVar4); /* compiler REP MOVS byte copy */
+  uVar5 = 0;
   if (param_3 != 0xc) {
     return;
   }

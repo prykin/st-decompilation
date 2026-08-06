@@ -2,7 +2,7 @@
 // Generated translation unit: source/recovered/by_owner/SubmarineTitans__Recovered__HiddenThis__AnonReceiver_00727C80.cpp
 
 // 00727DA0 SubmarineTitans::Recovered::HiddenThis::AnonReceiver_00727C80::FUN_00727da0
-#line 1 "decomp/ST.exe/functions/00727DA0/decomp.c"
+#line 4 "decomp/ST.exe/functions/00727DA0/decomp.c"
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 /* WARNING: Restarted to delay deadcode elimination for space: stack */
 /* [STHiddenThisApplier] Anonymous hidden receiver recovered as
@@ -220,7 +220,7 @@ st::fn_00727DA0
 }
 
 // 007282B0 SubmarineTitans::Recovered::HiddenThis::AnonReceiver_00727C80::FUN_007282b0
-#line 1 "decomp/ST.exe/functions/007282B0/decomp.c"
+#line 4 "decomp/ST.exe/functions/007282B0/decomp.c"
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 /* [STHiddenThisApplier] Anonymous hidden receiver recovered as
    /SubmarineTitans/Recovered/HiddenThis/AnonReceiver_00727C80.

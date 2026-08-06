@@ -13,8 +13,8 @@
    expected_stack=0; receiver_family_members=12; single_call_corroborated_by_receiver_family */
 
 void __thiscall
-SubmarineTitans::Recovered::HiddenThis::AnonReceiver_004EEFB0::FUN_005c8200
-          (AnonReceiver_004EEFB0 *this)
+SubmarineTitans::Recovered::HiddenThis::AnonReceiver_0053F510::FUN_005c8200
+          (AnonReceiver_0053F510 *this)
 
 {
   byte bVar1;

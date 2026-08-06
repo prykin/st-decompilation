@@ -2,7 +2,7 @@
 // Generated translation unit: source/recovered/by_owner/SubmarineTitans__Recovered__HiddenThis__AnonReceiver_00693D00.cpp
 
 // 00693D00 SubmarineTitans::Recovered::HiddenThis::AnonReceiver_00693D00::FUN_00693d00
-#line 1 "decomp/ST.exe/functions/00693D00/decomp.c"
+#line 4 "decomp/ST.exe/functions/00693D00/decomp.c"
 /* [STPrototypeApplier] Propagated parameter 1.
    Evidence: 00693D00 parameter used as this of cMf32::RecPut @ 00693D63
 

@@ -2,7 +2,7 @@
 // Generated translation unit: source/recovered/by_owner/HelpPanelTy.cpp
 
 // 005148A0 HelpPanelTy::sub_005148A0
-#line 1 "decomp/ST.exe/functions/005148A0/decomp.c"
+#line 4 "decomp/ST.exe/functions/005148A0/decomp.c"
 /* [STHiddenThisApplier] Anonymous hidden receiver recovered as
    /SubmarineTitans/Recovered/HiddenThis/AnonReceiver_005148A0.
    Evidence: incoming_receiver_captures=1; receiver_accesses=2; incoming_edx_uses=0; calls=2;
@@ -63,7 +63,7 @@ LAB_0051490d:
 }
 
 // 00514BC0 HelpPanelTy::sub_00514BC0
-#line 1 "decomp/ST.exe/functions/00514BC0/decomp.c"
+#line 4 "decomp/ST.exe/functions/00514BC0/decomp.c"
 /* [STSwitchEnumApplier] Switch target param_1 uses
    /SubmarineTitans/Recovered/Enums/Global_sub_00514BC0_param_1Enum. Cases:
    CASE_F2=242;CASE_F3=243;CASE_F4=244;CASE_F5=245;CASE_F6=246;CASE_F7=247;CASE_F8=248;CASE_F9=249;CASE_FA=250;CASE_FB=251
@@ -211,7 +211,7 @@ LAB_00514d04:
 }
 
 // 00515180 HelpPanelTy::sub_00515180
-#line 1 "decomp/ST.exe/functions/00515180/decomp.c"
+#line 4 "decomp/ST.exe/functions/00515180/decomp.c"
 /* [STMethodOwnerApplier] Structural method owner recovered as HelpPanelTy.
    Evidence: this_call_owners=[HelpPanelTy]; agreed_this_calls=5; incoming_this_accesses=2;
    incoming_edx_uses=0; incoming_stack_parameter_uses=1; direct_non_thunk_callers=0;
@@ -258,7 +258,7 @@ void __thiscall st::fn_00515180(HelpPanelTy *this,char param_1)
 }
 
 // 0051DA70 HelpPanelTy::sub_0051DA70
-#line 1 "decomp/ST.exe/functions/0051DA70/decomp.c"
+#line 4 "decomp/ST.exe/functions/0051DA70/decomp.c"
 /* [STMethodOwnerApplier] Structural method owner recovered as HelpPanelTy.
    Evidence: this_call_owners=[HelpPanelTy]; agreed_this_calls=1; incoming_this_accesses=8;
    incoming_edx_uses=0; incoming_stack_parameter_uses=0; direct_non_thunk_callers=0;

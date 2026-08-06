@@ -56,7 +56,7 @@ MMObjTy::InitSprBut(MMObjTy *this,RecoveredRecord_MMObjTy_005B5240 *param_1,char
               ((SpriteClassTy *)&param_1->field_0x48,(int *)g_ddxContext_008075A8,param_11,'\a',
                nullptr,0,0);
     /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-    (**(code **)(*(int *)&param_1->field_0x48 + 4))(DAT_00806784,7,0,text,0xffffffff);
+    (**(code **)(*(int *)&param_1->field_0x48 + 4))(PTR_00806784,7,0,text,0xffffffff);
     *(int *)&param_1->field_0x64 = param_3;
     *(int *)&param_1->field_0x68 = param_4;
     *(undefined4 *)&param_1->field_0x50 = 0;
@@ -80,7 +80,7 @@ MMObjTy::InitSprBut(MMObjTy *this,RecoveredRecord_MMObjTy_005B5240 *param_1,char
                 ((SpriteClassTy *)&param_1->field_0x16a,(int *)g_ddxContext_008075A8,param_11 - 1,
                  '\a',nullptr,0,0);
       /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-      (**(code **)(*(int *)&param_1->field_0x16a + 4))(DAT_00806784,7,0,param_12,0xffffffff);
+      (**(code **)(*(int *)&param_1->field_0x16a + 4))(PTR_00806784,7,0,param_12,0xffffffff);
       param_1->field_0186 = param_3 + param_13;
       param_1->field_0172 = 0;
       param_1->field_018A = param_4 + param_14;
@@ -96,7 +96,7 @@ MMObjTy::InitSprBut(MMObjTy *this,RecoveredRecord_MMObjTy_005B5240 *param_1,char
       iVar2 = *(int *)&param_1->field_0xd9;
       uVar7 = 0xffffffff;
       cVar6 = CASE_FFFFFFFE;
-      puVar3 = (uint *)LoadResourceString(param_18,g_module_00807618);
+      puVar3 = (uint *)LoadResourceString(param_18,g_hINSTANCE_00807618);
       puVar4 = ccFntTy::CreateTypeSSpr
                          (param_19,puVar3,param_20,param_21,cVar6,uVar7,param_22,param_23,param_24);
       /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */

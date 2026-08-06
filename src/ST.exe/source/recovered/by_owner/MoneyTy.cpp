@@ -2,7 +2,7 @@
 // Generated translation unit: source/recovered/by_owner/MoneyTy.cpp
 
 // 0052B760 MoneyTy::sub_0052B760
-#line 1 "decomp/ST.exe/functions/0052B760/decomp.c"
+#line 4 "decomp/ST.exe/functions/0052B760/decomp.c"
 /* [STMethodOwnerApplier] Structural method owner recovered as MoneyTy.
    Evidence: this_call_owners=[MoneyTy]; agreed_this_calls=2; incoming_this_accesses=2;
    incoming_edx_uses=0; incoming_stack_parameter_uses=3; direct_non_thunk_callers=0;
@@ -61,7 +61,7 @@ cf_common_exit_0052B7B9:
 }
 
 // 0052B8A0 MoneyTy::sub_0052B8A0
-#line 1 "decomp/ST.exe/functions/0052B8A0/decomp.c"
+#line 4 "decomp/ST.exe/functions/0052B8A0/decomp.c"
 /* [STMethodOwnerApplier] Structural method owner recovered as MoneyTy.
    Evidence: this_call_owners=[MoneyTy]; agreed_this_calls=2; incoming_this_accesses=7;
    incoming_edx_uses=0; incoming_stack_parameter_uses=0; direct_non_thunk_callers=0;
@@ -81,7 +81,7 @@ void __thiscall st::fn_0052B8A0(MoneyTy *this)
 }
 
 // 0052B8F0 MoneyTy::sub_0052B8F0
-#line 1 "decomp/ST.exe/functions/0052B8F0/decomp.c"
+#line 4 "decomp/ST.exe/functions/0052B8F0/decomp.c"
 /* [STMethodOwnerApplier] Structural method owner recovered as MoneyTy.
    Evidence: this_call_owners=[MoneyTy]; agreed_this_calls=2; incoming_this_accesses=7;
    incoming_edx_uses=0; incoming_stack_parameter_uses=0; direct_non_thunk_callers=0;
@@ -101,7 +101,7 @@ void __thiscall st::fn_0052B8F0(MoneyTy *this)
 }
 
 // 0052B940 MoneyTy::sub_0052B940
-#line 1 "decomp/ST.exe/functions/0052B940/decomp.c"
+#line 4 "decomp/ST.exe/functions/0052B940/decomp.c"
 /* [STMethodOwnerApplier] Structural method owner recovered as MoneyTy.
    Evidence: this_call_owners=[MoneyTy]; agreed_this_calls=2; incoming_this_accesses=7;
    incoming_edx_uses=0; incoming_stack_parameter_uses=0; direct_non_thunk_callers=0;
@@ -121,7 +121,7 @@ void __thiscall st::fn_0052B940(MoneyTy *this)
 }
 
 // 0052B990 MoneyTy::sub_0052B990
-#line 1 "decomp/ST.exe/functions/0052B990/decomp.c"
+#line 4 "decomp/ST.exe/functions/0052B990/decomp.c"
 /* [STMethodOwnerApplier] Structural method owner recovered as MoneyTy.
    Evidence: this_call_owners=[MoneyTy]; agreed_this_calls=2; incoming_this_accesses=14;
    incoming_edx_uses=0; incoming_stack_parameter_uses=0; direct_non_thunk_callers=0;
@@ -203,7 +203,7 @@ void __thiscall st::fn_0052B990(MoneyTy *this)
 }
 
 // 0052BBE0 MoneyTy::sub_0052BBE0
-#line 1 "decomp/ST.exe/functions/0052BBE0/decomp.c"
+#line 4 "decomp/ST.exe/functions/0052BBE0/decomp.c"
 /* [STMethodOwnerApplier] Structural method owner recovered as MoneyTy.
    Evidence: this_call_owners=[MoneyTy]; agreed_this_calls=1; incoming_this_accesses=7;
    incoming_edx_uses=0; incoming_stack_parameter_uses=0; direct_non_thunk_callers=0;
@@ -223,7 +223,7 @@ void __thiscall st::fn_0052BBE0(MoneyTy *this)
 }
 
 // 0052BC30 MoneyTy::sub_0052BC30
-#line 1 "decomp/ST.exe/functions/0052BC30/decomp.c"
+#line 4 "decomp/ST.exe/functions/0052BC30/decomp.c"
 /* [STMethodOwnerApplier] Structural method owner recovered as MoneyTy.
    Evidence: this_call_owners=[MoneyTy]; agreed_this_calls=1; incoming_this_accesses=9;
    incoming_edx_uses=0; incoming_stack_parameter_uses=6; direct_non_thunk_callers=0;
@@ -290,7 +290,7 @@ LAB_0052bc8f:
 }
 
 // 0052BDA0 MoneyTy::sub_0052BDA0
-#line 1 "decomp/ST.exe/functions/0052BDA0/decomp.c"
+#line 4 "decomp/ST.exe/functions/0052BDA0/decomp.c"
 /* [STMethodOwnerApplier] Structural method owner recovered as MoneyTy.
    Evidence: this_call_owners=[MoneyTy]; agreed_this_calls=1; incoming_this_accesses=9;
    incoming_edx_uses=0; incoming_stack_parameter_uses=8; direct_non_thunk_callers=0;

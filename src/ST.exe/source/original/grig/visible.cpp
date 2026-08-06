@@ -2,7 +2,7 @@
 // Generated translation unit: source/original/grig/visible.cpp
 
 // 005578D0 VisibleClassTy::InitData
-#line 1 "decomp/ST.exe/functions/005578D0/decomp.c"
+#line 4 "decomp/ST.exe/functions/005578D0/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\grig\visible.cpp
    VisibleClassTy::InitData */
@@ -132,7 +132,7 @@ LAB_00557b44:
 }
 
 // 00557C90 VisibleClassTy::Init
-#line 1 "decomp/ST.exe/functions/00557C90/decomp.c"
+#line 4 "decomp/ST.exe/functions/00557C90/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\grig\visible.cpp
    VisibleClassTy::Init */
@@ -291,7 +291,7 @@ LAB_00557fbb:
 }
 
 // 005582A0 VisibleClassTy::PrepareToSave
-#line 1 "decomp/ST.exe/functions/005582A0/decomp.c"
+#line 4 "decomp/ST.exe/functions/005582A0/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\grig\visible.cpp
    VisibleClassTy::PrepareToSave
@@ -418,7 +418,7 @@ LAB_0055832e:
 }
 
 // 005585F0 Visible::PrepareAfterSave
-#line 1 "decomp/ST.exe/functions/005585F0/decomp.c"
+#line 4 "decomp/ST.exe/functions/005585F0/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\grig\visible.cpp
    Visible::PrepareAfterSave
@@ -525,7 +525,7 @@ void __thiscall st::fn_005585F0(Visible *this,ushort *param_1)
 }
 
 // 00558840 VisibleClassTy::GetMessage
-#line 1 "decomp/ST.exe/functions/00558840/decomp.c"
+#line 4 "decomp/ST.exe/functions/00558840/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\grig\visible.cpp
    VisibleClassTy::GetMessage
@@ -662,7 +662,7 @@ int __thiscall st::fn_00558840(VisibleClassTy *this,STMessage *message)
 }
 
 // 005597A0 VisibleClassTy::SetZoneDes
-#line 1 "decomp/ST.exe/functions/005597A0/decomp.c"
+#line 4 "decomp/ST.exe/functions/005597A0/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\grig\visible.cpp
    VisibleClassTy::SetZoneDes
@@ -766,7 +766,7 @@ st::fn_005597A0
 }
 
 // 00559B30 VisibleClassTy::SetZoneAst
-#line 1 "decomp/ST.exe/functions/00559B30/decomp.c"
+#line 4 "decomp/ST.exe/functions/00559B30/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\grig\visible.cpp
    VisibleClassTy::SetZoneAst
@@ -871,7 +871,7 @@ st::fn_00559B30
 }
 
 // 00559EC0 VisibleClassTy::SetZoneTsh
-#line 1 "decomp/ST.exe/functions/00559EC0/decomp.c"
+#line 4 "decomp/ST.exe/functions/00559EC0/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\grig\visible.cpp
    VisibleClassTy::SetZoneTsh
@@ -974,7 +974,7 @@ st::fn_00559EC0
 }
 
 // 0055A270 VisibleClassTy::SetZoneMin1
-#line 1 "decomp/ST.exe/functions/0055A270/decomp.c"
+#line 4 "decomp/ST.exe/functions/0055A270/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\grig\visible.cpp
    VisibleClassTy::SetZoneMin1
@@ -1074,7 +1074,7 @@ st::fn_0055A270
 }
 
 // 0055A620 VisibleClassTy::SetZoneMin2
-#line 1 "decomp/ST.exe/functions/0055A620/decomp.c"
+#line 4 "decomp/ST.exe/functions/0055A620/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\grig\visible.cpp
    VisibleClassTy::SetZoneMin2
@@ -1174,7 +1174,7 @@ st::fn_0055A620
 }
 
 // 0055A9D0 VisibleClassTy::VisHoleCreate
-#line 1 "decomp/ST.exe/functions/0055A9D0/decomp.c"
+#line 4 "decomp/ST.exe/functions/0055A9D0/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\grig\visible.cpp
    VisibleClassTy::VisHoleCreate */
@@ -1237,7 +1237,7 @@ st::fn_0055A9D0
 }
 
 // 0055AB50 VisibleClassTy::VisHoleExec
-#line 1 "decomp/ST.exe/functions/0055AB50/decomp.c"
+#line 4 "decomp/ST.exe/functions/0055AB50/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\grig\visible.cpp
    VisibleClassTy::VisHoleExec

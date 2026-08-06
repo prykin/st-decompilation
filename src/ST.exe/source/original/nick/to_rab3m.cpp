@@ -2,7 +2,7 @@
 // Generated translation unit: source/original/nick/to_rab3m.cpp
 
 // 0062CCA0 STManRub3C::GetMessage
-#line 1 "decomp/ST.exe/functions/0062CCA0/decomp.c"
+#line 4 "decomp/ST.exe/functions/0062CCA0/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\nick\to_rab3m.cpp
    STManRub3C::GetMessage
@@ -83,7 +83,7 @@ int __thiscall st::fn_0062CCA0(STManRub3C *this,STMessage *message)
 }
 
 // 0062CF90 STManRub3C::AddNewRub3
-#line 1 "decomp/ST.exe/functions/0062CF90/decomp.c"
+#line 4 "decomp/ST.exe/functions/0062CF90/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\nick\to_rab3m.cpp
    STManRub3C::AddNewRub3 */
@@ -149,7 +149,7 @@ uint __thiscall st::fn_0062CF90(STManRub3C *this,int *param_1)
 }
 
 // 0062D910 STManRub3C::AddNewDock
-#line 1 "decomp/ST.exe/functions/0062D910/decomp.c"
+#line 4 "decomp/ST.exe/functions/0062D910/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\nick\to_rab3m.cpp
    STManRub3C::AddNewDock
@@ -262,7 +262,7 @@ st::fn_0062D910
 }
 
 // 0062DD80 STManRub3C::AddNewColl3
-#line 1 "decomp/ST.exe/functions/0062DD80/decomp.c"
+#line 4 "decomp/ST.exe/functions/0062DD80/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\nick\to_rab3m.cpp
    STManRub3C::AddNewColl3 */

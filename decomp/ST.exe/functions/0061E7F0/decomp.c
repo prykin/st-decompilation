@@ -192,7 +192,7 @@ LAB_0061eb1a:
           local_80 = 1;
           ST3DSMAPContext::sub_006E88C0
                     (g_sT3DSMAPContext_00807598,(int *)&local_5a,local_7c,local_78,local_74,local_70
-                     ,local_6c,local_68,local_64,0xac,uVar16,local_2c * 0x200 + DAT_008032d0,
+                     ,local_6c,local_68,local_64,0xac,uVar16,PTR_008032d0 + local_2c * 0x100,
                      0xffffffff);
           Library::Ourlib::ST3DSMAP::SprShow(g_sT3DSMAPContext_00807598,local_5a,0);
           this = g_visibleClass_00802A88;
@@ -332,7 +332,7 @@ LAB_0061eefe:
                          piVar18[2],piVar18[3],piVar18[4],piVar18[5],local_44);
               Library::Ourlib::ST3DSMAP::SprGlowLineSetColors
                         (g_sT3DSMAPContext_00807598,STField<uint>(piVar18,0x26),
-                         STField<undefined4>(piVar18,0x21),local_2c * 0x200 + DAT_008032d0);
+                         STField<undefined4>(piVar18,0x21),PTR_008032d0 + local_2c * 0x100);
               local_28 = local_28 + 1;
               local_8 = local_8 + 1;
             }

@@ -103,7 +103,7 @@ OptPanelTy::PaintDblBut
       uVar6 = (*(code *)param_5)(param_1);
       iVar7 = -1;
       iVar3 = 0;
-      resourceString = (uint *)LoadResourceString(param_3,g_module_00807618);
+      resourceString = (uint *)LoadResourceString(param_3,g_hINSTANCE_00807618);
       ccFntTy::WrTxt(pOVar2->field_0180,resourceString,iVar3,iVar7,uVar6,iVar9,iVar10);
       Library::DKW::DDX::FUN_006b3640
                 ((int *)g_ddxContext_008075A8,pOVar2->field_0060,0xffffffff,pOVar2->field_003C,

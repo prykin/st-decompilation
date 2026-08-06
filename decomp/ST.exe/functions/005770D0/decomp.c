@@ -48,8 +48,8 @@ void __thiscall GameSystemC::DoneSystem(GameSystemC *this)
       g_sT3DSMAPContext_00807598 = nullptr;
     }
     thunk_FUN_00578370();
-    if (DAT_00806750 != 0) {
-      thunk_FUN_0042a780(&DAT_00806750);
+    if (PTR_00806750 != nullptr) {
+      thunk_FUN_0042a780((int *)&PTR_00806750);
     }
     FUN_006e52d0((AnonShape_006E52D0_AF06BCD2 *)pGVar3);
     ShowCursor(1);

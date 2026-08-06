@@ -44,21 +44,21 @@ void __thiscall FSGSTy::PaintLogLogin(FSGSTy *this)
     uVar8 = 2;
     iVar9 = -1;
     iVar4 = 0;
-    puVar6 = (uint *)LoadResourceString(0x254f,g_module_00807618);
+    puVar6 = (uint *)LoadResourceString(0x254f,g_hINSTANCE_00807618);
     ccFntTy::WrStr(pFVar3->field_1A73,puVar6,iVar4,iVar9,uVar8);
     FUN_006b5ee0((RecoveredSourceFamily_dibcopy *)pFVar3->field_1AC0,0,0x18,0x5b,0x188,0x1b,0xf,0xd);
     ccFntTy::SetSurf(pFVar3->field_1A73,(int)pFVar3->field_1AC0,0,0x19,0x7f,0xb4,0x14);
     uVar8 = 2;
     iVar9 = -1;
     iVar4 = 0;
-    puVar6 = (uint *)LoadResourceString(0x2550,g_module_00807618);
+    puVar6 = (uint *)LoadResourceString(0x2550,g_hINSTANCE_00807618);
     ccFntTy::WrStr(pFVar3->field_1A73,puVar6,iVar4,iVar9,uVar8);
     FUN_006b5ee0((RecoveredSourceFamily_dibcopy *)pFVar3->field_1AC0,0,0x18,0x92,0xb6,0x16,0xf,0xd);
     ccFntTy::SetSurf(pFVar3->field_1A73,(int)pFVar3->field_1AC0,0,0x104,0x93,0x96,0x14);
     uVar8 = 2;
     iVar9 = -1;
     iVar4 = 0;
-    puVar6 = (uint *)LoadResourceString(0x2551,g_module_00807618);
+    puVar6 = (uint *)LoadResourceString(0x2551,g_hINSTANCE_00807618);
     ccFntTy::WrStr(pFVar3->field_1A73,puVar6,iVar4,iVar9,uVar8);
     FUN_006c7570((RecoveredSourceFamily_dibcopy *)pFVar3->field_1AC0,0,0xe6,0x93,(undefined4 *)0x16,
                  0x14,2,0xf);

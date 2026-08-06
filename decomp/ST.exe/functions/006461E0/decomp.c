@@ -103,7 +103,7 @@ int __thiscall STVolcanoC::GetMessage(STVolcanoC *this,STMessage *message)
               return 0;
             }
             puVar6 = Library::Ourlib::MFRLOAD::mfRLoad
-                               (DAT_00806764,CASE_1D,"expl_vol",0xffffffff,0,1,0,
+                               (PTR_00806764,CASE_1D,"expl_vol",0xffffffff,0,1,0,
                                 nullptr);
             this_00->field_0061 = puVar6;
             if (puVar6 != nullptr) {

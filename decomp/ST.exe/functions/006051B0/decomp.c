@@ -50,7 +50,7 @@ STExplosionC::LoadImagSpr(STExplosionC *this,undefined4 param_1,undefined4 param
   }
   if ((param_3 != '\0') && (local_18->field_02AF != nullptr)) {
     local_8 = (&PTR_s_expl_bbt0_007cedc0)[local_c];
-    iVar5 = STT3DSprC::LoadSequence(local_18->field_02AF,0xf,DAT_00806774,local_8,0x1d);
+    iVar5 = STT3DSprC::LoadSequence(local_18->field_02AF,0xf,PTR_00806774,local_8,0x1d);
     if (iVar5 != 0) {
       return 0xffff;
     }
@@ -73,7 +73,7 @@ STExplosionC::LoadImagSpr(STExplosionC *this,undefined4 param_1,undefined4 param
     pSVar4->field_02AF = pSVar7;
   }
   if ((&DAT_007cede8)[local_c] == '\0') {
-    iVar5 = STT3DSprC::Init(pSVar4->field_02AF,DAT_008073cc,0x5a,0x45,nullptr,0xb4,0x8c,
+    iVar5 = STT3DSprC::Init(pSVar4->field_02AF,PTR_008073cc,0x5a,0x45,nullptr,0xb4,0x8c,
                             0x11);
     if (iVar5 != 0) {
       RaiseInternalException
@@ -82,7 +82,7 @@ STExplosionC::LoadImagSpr(STExplosionC *this,undefined4 param_1,undefined4 param
     }
   }
   else {
-    iVar5 = STT3DSprC::Init(pSVar4->field_02AF,DAT_008073cc,0x78,0x56,nullptr,0xf0,0xbe,
+    iVar5 = STT3DSprC::Init(pSVar4->field_02AF,PTR_008073cc,0x78,0x56,nullptr,0xf0,0xbe,
                             0x11);
     if (iVar5 != 0) {
       RaiseInternalException
@@ -92,9 +92,9 @@ STExplosionC::LoadImagSpr(STExplosionC *this,undefined4 param_1,undefined4 param
     Library::Ourlib::ST3DSMAP::SprSetSplit
               (g_sT3DSMAPContext_00807598,pSVar4->field_02AF->field_0018);
   }
-  iVar5 = STT3DSprC::LoadSequence(pSVar4->field_02AF,0xd,DAT_00806774,local_8,0x1d);
+  iVar5 = STT3DSprC::LoadSequence(pSVar4->field_02AF,0xd,PTR_00806774,local_8,0x1d);
   if (iVar5 == 0) {
-    iVar5 = STT3DSprC::LoadSequence(pSVar4->field_02AF,0xe,DAT_00806774,local_10,0x1d);
+    iVar5 = STT3DSprC::LoadSequence(pSVar4->field_02AF,0xe,PTR_00806774,local_10,0x1d);
     if (iVar5 != 0) {
       return 0xffff;
     }

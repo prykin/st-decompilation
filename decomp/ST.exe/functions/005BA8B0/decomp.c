@@ -49,12 +49,12 @@ void __thiscall PrividerTy::PaintPrivider(PrividerTy *this,char param_1)
   uVar6 = 0xffffffff;
   uVar5 = 0xfffffffe;
   if (pPVar2->field_1A5F == '\x01') {
-    puVar3 = (uint *)LoadResourceString(0x26b4,g_module_00807618);
+    puVar3 = (uint *)LoadResourceString(0x26b4,g_hINSTANCE_00807618);
     StartServTy::WrTextDDX(this_01,0,0xe9,0x14,0x14c,0x18,puVar3,uVar5,uVar6,pcVar7,uVar8);
     g_currentExceptionFrame = local_4c.previous;
     return;
   }
-  puVar3 = (uint *)LoadResourceString(0x26b3,g_module_00807618);
+  puVar3 = (uint *)LoadResourceString(0x26b3,g_hINSTANCE_00807618);
   StartServTy::WrTextDDX(this_02,0,0xe9,0x14,0x14c,0x18,puVar3,uVar5,uVar6,pcVar7,uVar8);
   if ((pPVar2->field_1C9A == nullptr) && (param_1 == '\0')) {
     MMMObjTy::OutEdProc((MMMObjTy *)g_dDXContext_0080759C,

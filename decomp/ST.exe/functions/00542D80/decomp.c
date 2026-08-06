@@ -25,7 +25,7 @@ void CreateInterSystem(void)
       g_interSystem_00802A28 = nullptr;
     }
     else {
-      g_interSystem_00802A28 = InterSystemC::InterSystemC(this,g_appClass_00806728);
+      g_interSystem_00802A28 = InterSystemC::InterSystemC(this,g_app_00806728);
     }
     g_interSystem_00802A28->field_0020 = 0;
     (*g_interSystem_00802A28->vtable->InitSystem)((SystemClassTy *)g_interSystem_00802A28);

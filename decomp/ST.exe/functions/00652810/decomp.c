@@ -3822,7 +3822,7 @@ switchD_00652b42_switchD:
                                   if (iVar36 == 0) goto cf_common_join_00652A99;
                                   if (iVar7 == 5) {
                                     Library::DKW::TBL::FUN_006b6020
-                                              (&this_00->field_05B3->flags,(uint)pDStack_164,
+                                              (this_00->field_05B3,(uint)pDStack_164,
                                                (char *)local_160);
                                   }
                                 }
@@ -3867,8 +3867,7 @@ switchD_00652b42_switchD:
                               iVar36 = thunk_FUN_0064e9a0((int)&local_16c);
                               if (iVar36 == 0) goto cf_common_join_00652A99;
                               Library::DKW::TBL::FUN_006b6020
-                                        (&this_00->field_05B3->flags,(uint)pDStack_164,
-                                         (char *)local_160);
+                                        (this_00->field_05B3,(uint)pDStack_164,(char *)local_160);
                               break;
                             case 0x528:
                               iVar36 = thunk_FUN_0064eb20((int)&local_16c);

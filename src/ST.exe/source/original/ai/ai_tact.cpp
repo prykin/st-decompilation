@@ -2,7 +2,7 @@
 // Generated translation unit: source/original/ai/ai_tact.cpp
 
 // 0068DC80 AiTactClassTy::InitData
-#line 1 "decomp/ST.exe/functions/0068DC80/decomp.c"
+#line 4 "decomp/ST.exe/functions/0068DC80/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\ai\ai_tact.cpp
    AiTactClassTy::InitData */
@@ -125,7 +125,7 @@ int __thiscall st::fn_0068DC80(AiTactClassTy *this,undefined4 *param_1)
 }
 
 // 0068E050 AiTactClassTy::PrepareToSave
-#line 1 "decomp/ST.exe/functions/0068E050/decomp.c"
+#line 4 "decomp/ST.exe/functions/0068E050/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\ai\ai_tact.cpp
    AiTactClassTy::PrepareToSave
@@ -182,7 +182,7 @@ byte * __thiscall st::fn_0068E050(AiTactClassTy *this,uint *param_1)
 }
 
 // 0068E690 FUN_0068e690
-#line 1 "decomp/ST.exe/functions/0068E690/decomp.c"
+#line 4 "decomp/ST.exe/functions/0068E690/decomp.c"
 /* [STSourceProvenanceApplier begin]
    Recovered source file: E:\__titans\ai\ai_tact.cpp
    Diagnostic line evidence: 263 (metadata/report site, not the function definition)
@@ -211,7 +211,7 @@ undefined4 __thiscall st::fn_0068E690(void *this,int param_1)
 }
 
 // 0068E950 AiTactClassTy::ClaimSave
-#line 1 "decomp/ST.exe/functions/0068E950/decomp.c"
+#line 4 "decomp/ST.exe/functions/0068E950/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\ai\ai_tact.cpp
    AiTactClassTy::ClaimSave */
@@ -256,7 +256,7 @@ void __thiscall st::fn_0068E950(AiTactClassTy *this)
 }
 
 // 0068EA40 AiTactClassTy::ClaimRestore
-#line 1 "decomp/ST.exe/functions/0068EA40/decomp.c"
+#line 4 "decomp/ST.exe/functions/0068EA40/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\ai\ai_tact.cpp
    AiTactClassTy::ClaimRestore */
@@ -297,7 +297,7 @@ void __thiscall st::fn_0068EA40(AiTactClassTy *this)
 }
 
 // 0068EB30 AiTactClassTy::PrepareToSave
-#line 1 "decomp/ST.exe/functions/0068EB30/decomp.c"
+#line 4 "decomp/ST.exe/functions/0068EB30/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\ai\ai_tact.cpp
    AiTactClassTy::PrepareToSave */
@@ -348,7 +348,7 @@ st::fn_0068EB30(AiTactClassTy *this,AnonShape_0068EB30_4F4B480A *param_1,short p
 }
 
 // 0068EC70 AiTactClassTy::ExecClaim
-#line 1 "decomp/ST.exe/functions/0068EC70/decomp.c"
+#line 4 "decomp/ST.exe/functions/0068EC70/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\ai\ai_tact.cpp
    AiTactClassTy::ExecClaim
@@ -541,7 +541,7 @@ void __thiscall st::fn_0068EC70(AiTactClassTy *this)
 }
 
 // 0068F020 AiTactClassTy::GiveObjByClaim
-#line 1 "decomp/ST.exe/functions/0068F020/decomp.c"
+#line 4 "decomp/ST.exe/functions/0068F020/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\ai\ai_tact.cpp
    AiTactClassTy::GiveObjByClaim
@@ -699,7 +699,7 @@ void __thiscall st::fn_0068F020(AiTactClassTy *this,uint *param_1)
 }
 
 // 0068F360 AiTactClassTy::GiveObjByFltType
-#line 1 "decomp/ST.exe/functions/0068F360/decomp.c"
+#line 4 "decomp/ST.exe/functions/0068F360/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\ai\ai_tact.cpp
    AiTactClassTy::GiveObjByFltType
@@ -868,7 +868,7 @@ LAB_0068f516:
 }
 
 // 0068F660 AiTactClassTy::GiveObjByGrpNum
-#line 1 "decomp/ST.exe/functions/0068F660/decomp.c"
+#line 4 "decomp/ST.exe/functions/0068F660/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\ai\ai_tact.cpp
    AiTactClassTy::GiveObjByGrpNum */
@@ -937,7 +937,7 @@ void __thiscall st::fn_0068F660(AiTactClassTy *this,DArrayTy *param_1)
 }
 
 // 0068F7E0 AiTactClassTy::InitDistrObj
-#line 1 "decomp/ST.exe/functions/0068F7E0/decomp.c"
+#line 4 "decomp/ST.exe/functions/0068F7E0/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\ai\ai_tact.cpp
    AiTactClassTy::InitDistrObj */
@@ -985,7 +985,7 @@ void __thiscall st::fn_0068F7E0(AiTactClassTy *this)
 }
 
 // 0068FB30 AiTactClassTy::BackFromRepair
-#line 1 "decomp/ST.exe/functions/0068FB30/decomp.c"
+#line 4 "decomp/ST.exe/functions/0068FB30/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\ai\ai_tact.cpp
    AiTactClassTy::BackFromRepair */
@@ -1043,7 +1043,7 @@ void __thiscall st::fn_0068FB30(AiTactClassTy *this,short param_1)
 }
 
 // 0068FD00 AiTactClassTy::GetAiMess
-#line 1 "decomp/ST.exe/functions/0068FD00/decomp.c"
+#line 4 "decomp/ST.exe/functions/0068FD00/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\ai\ai_tact.cpp
    AiTactClassTy::GetAiMess */
@@ -1225,7 +1225,7 @@ int __thiscall st::fn_0068FD00(AiTactClassTy *this,AnonShape_0068FD00_A5257008 *
 }
 
 // 00690650 AiTactClassTy::HelpOrganize
-#line 1 "decomp/ST.exe/functions/00690650/decomp.c"
+#line 4 "decomp/ST.exe/functions/00690650/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\ai\ai_tact.cpp
    AiTactClassTy::HelpOrganize */
@@ -1401,7 +1401,7 @@ LAB_00690763:
 }
 
 // 00690B90 AiTactClassTy::GetMessage
-#line 1 "decomp/ST.exe/functions/00690B90/decomp.c"
+#line 4 "decomp/ST.exe/functions/00690B90/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\ai\ai_tact.cpp
    AiTactClassTy::GetMessage

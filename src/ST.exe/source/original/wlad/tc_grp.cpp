@@ -2,7 +2,7 @@
 // Generated translation unit: source/original/wlad/tc_grp.cpp
 
 // 004233E0 STGroupC::GetGroupContent
-#line 1 "decomp/ST.exe/functions/004233E0/decomp.c"
+#line 4 "decomp/ST.exe/functions/004233E0/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\wlad\tc_grp.cpp
    STGroupC::GetGroupContent
@@ -68,7 +68,7 @@ uint * __thiscall st::fn_004233E0(STGroupC *this)
 }
 
 // 00423520 STGroupC::GetTOBJQty
-#line 1 "decomp/ST.exe/functions/00423520/decomp.c"
+#line 4 "decomp/ST.exe/functions/00423520/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\wlad\tc_grp.cpp
    STGroupC::GetTOBJQty */
@@ -132,7 +132,7 @@ uint __thiscall st::fn_00423520(STGroupC *this,int param_1)
 }
 
 // 00423660 STGroupC::GetTOBJList
-#line 1 "decomp/ST.exe/functions/00423660/decomp.c"
+#line 4 "decomp/ST.exe/functions/00423660/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\wlad\tc_grp.cpp
    STGroupC::GetTOBJList */
@@ -194,7 +194,7 @@ uint * __thiscall st::fn_00423660(STGroupC *this,int param_1)
 }
 
 // 00423850 STGroupC::AddObj
-#line 1 "decomp/ST.exe/functions/00423850/decomp.c"
+#line 4 "decomp/ST.exe/functions/00423850/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\wlad\tc_grp.cpp
    STGroupC::AddObj */
@@ -339,7 +339,7 @@ uint __thiscall st::fn_00423850(STGroupC *this,uint param_1,int param_2)
 }
 
 // 00423B50 STGroupC::AddObjs
-#line 1 "decomp/ST.exe/functions/00423B50/decomp.c"
+#line 4 "decomp/ST.exe/functions/00423B50/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\wlad\tc_grp.cpp
    STGroupC::AddObjs */
@@ -394,7 +394,7 @@ undefined4 __thiscall st::fn_00423B50(STGroupC *this,DArrayTy *param_1,int param
 }
 
 // 00423EC0 STGroupC::GetMessage
-#line 1 "decomp/ST.exe/functions/00423EC0/decomp.c"
+#line 4 "decomp/ST.exe/functions/00423EC0/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\wlad\tc_grp.cpp
    STGroupC::GetMessage
@@ -485,7 +485,7 @@ int __thiscall st::fn_00423EC0(STGroupC *this,STMessage *message)
 }
 
 // 004240F0 STGroupC::SaveGrpData
-#line 1 "decomp/ST.exe/functions/004240F0/decomp.c"
+#line 4 "decomp/ST.exe/functions/004240F0/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\wlad\tc_grp.cpp
    STGroupC::SaveGrpData */
@@ -582,7 +582,7 @@ int __thiscall st::fn_004240F0(STGroupC *this,int *param_1)
 }
 
 // 00424360 STGroupC::RestoreGrpData
-#line 1 "decomp/ST.exe/functions/00424360/decomp.c"
+#line 4 "decomp/ST.exe/functions/00424360/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\wlad\tc_grp.cpp
    STGroupC::RestoreGrpData */
@@ -644,7 +644,7 @@ void __thiscall st::fn_00424360(STGroupC *this,int param_1)
 }
 
 // 004247B0 STGroupC::SetAVPar
-#line 1 "decomp/ST.exe/functions/004247B0/decomp.c"
+#line 4 "decomp/ST.exe/functions/004247B0/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\wlad\tc_grp.cpp
    STGroupC::SetAVPar */

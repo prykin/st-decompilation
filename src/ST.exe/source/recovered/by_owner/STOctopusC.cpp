@@ -2,7 +2,7 @@
 // Generated translation unit: source/recovered/by_owner/STOctopusC.cpp
 
 // 00589990 STOctopusC::STOctopusC
-#line 1 "decomp/ST.exe/functions/00589990/decomp.c"
+#line 4 "decomp/ST.exe/functions/00589990/decomp.c"
 /* [STConstructorApplier] Recovered constructor candidate.
    VTable: 0079BBB8 (store 005899B9)
    Evidence: final_vptr=0079BBB8; returns_this=true; calls_before=2; field_writes_after=1;
@@ -17,15 +17,15 @@ STOctopusC * __thiscall st::fn_00589990(STOctopusC *this)
 
   st::fn_00401933((STGameObjC *)this);
   st::fn_00401316((AnonShape_004AB810_8E5693D5 *)&this->field_01D5);
-  this->field_01D5 = &VTable_0079BD18;
-  this->vtable = &STOctopusCVTable;
+  this->field_01D5 = &st_global_0079BD18;
+  this->vtable = &st_global_0079BBB8;
   this->field_0249 = 0;
   memset(&this->field_0x285, 0, 0x28); /* compiler bulk-zero initialization */
   return this;
 }
 
 // 0058AF70 STOctopusC::sub_0058AF70
-#line 1 "decomp/ST.exe/functions/0058AF70/decomp.c"
+#line 4 "decomp/ST.exe/functions/0058AF70/decomp.c"
 /* [STMethodOwnerApplier] Structural method owner recovered as STOctopusC.
    Evidence: this_call_owners=[STOctopusC]; agreed_this_calls=1; incoming_this_accesses=41;
    incoming_edx_uses=0; incoming_stack_parameter_uses=3; direct_non_thunk_callers=0;
@@ -93,7 +93,7 @@ st::fn_0058AF70(STOctopusC *this,short param_1,short param_2,short param_3)
 }
 
 // 0058B190 STOctopusC::sub_0058B190
-#line 1 "decomp/ST.exe/functions/0058B190/decomp.c"
+#line 4 "decomp/ST.exe/functions/0058B190/decomp.c"
 /* [STMethodOwnerApplier] Structural method owner recovered as STOctopusC.
    Evidence: this_call_owners=[STOctopusC]; agreed_this_calls=1; incoming_this_accesses=59;
    incoming_edx_uses=17; incoming_stack_parameter_uses=5; direct_non_thunk_callers=0;
@@ -408,7 +408,7 @@ LAB_0058b6f6:
 }
 
 // 0058BA10 STOctopusC::FUN_0058ba10
-#line 1 "decomp/ST.exe/functions/0058BA10/decomp.c"
+#line 4 "decomp/ST.exe/functions/0058BA10/decomp.c"
 /* [STVirtualMethodApplier] Recovered from virtual table slot family.
    Tables: 0079BBB8
    Entries: 00405E93

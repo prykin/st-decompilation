@@ -52,7 +52,7 @@ FUN_00580910(int param_1,Global_sub_00580910_param_2Enum param_2,int param_3,und
     uVar2 = ~uVar2;
     pcVar4 = pcVar5 + -uVar2;
     memmove(param_5, pcVar4, uVar2); /* compiler REP MOVS byte copy */
-    *param_4 = DAT_00806774;
+    *param_4 = PTR_00806774;
   }
 switchD_0058094e_caseD_df:
   return;

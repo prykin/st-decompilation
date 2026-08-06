@@ -154,9 +154,17 @@ The accepted corpus can now be assembled offline into `src/ST.exe` with
 receipt and manifest, emits dependency-ordered types/declarations and
 address-stable `st::fn_ADDRESS` implementations, reconstructs every proven
 original source path, and records unresolved assembly decisions without
-guessing. It does not mutate Ghidra and the generated object target does not yet
-fully compile or link. See
+guessing. Proven physical-vtable slots and uniquely owned non-virtual
+`__thiscall` functions are also exposed as ordinary forwarding class methods;
+the address-stable free function remains the implementation identity and no
+host `virtual` layout or inheritance is synthesized. It does not mutate Ghidra
+and the generated object target does not yet fully compile or link. See
 [`docs/source-tree-generation.md`](docs/source-tree-generation.md).
+
+`python3 tools/st_compile_audit.py` then compiles every generated translation
+unit independently and writes an address-stable diagnostic queue under the
+ignored `.st-local/` profile. Compiler/environment output stays out of the
+committed deterministic tree while build progress remains measurable.
 
 ABI-changing automation is guarded before the first Program mutation and again
 at dependency barriers by `STAbiRegressionGate`. Its durable sentinels and exact

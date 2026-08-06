@@ -15,7 +15,7 @@ undefined4 __thiscall STT3DSprC::SetCurShad(STT3DSprC *this,char param_1,uint pa
   int iVar2;
   undefined4 uVar3;
   uint uVar4;
-  uint uVar5;
+  ushort *puVar5;
   code *pcVar6;
   InternalExceptionFrame local_4c;
   STT3DSprC *local_8;
@@ -44,17 +44,17 @@ undefined4 __thiscall STT3DSprC::SetCurShad(STT3DSprC *this,char param_1,uint pa
     pSVar1->field_0030 = param_2;
     if (pSVar1->field_0011 == '\0') {
       if (pSVar1->field_0010 == '\0') {
-        uVar5 = pSVar1->field_0034;
+        puVar5 = pSVar1->field_0034;
         uVar4 = pSVar1->field_0018;
         pcVar6 = thunk_FUN_004ad6c0;
       }
       else {
-        uVar5 = pSVar1->field_0034;
+        puVar5 = pSVar1->field_0034;
         uVar4 = pSVar1->field_0018;
         pcVar6 = thunk_FUN_004ad740;
       }
       Library::Ourlib::ST3DSMAP::SprSetShadow
-                (pSVar1->field_003C,uVar4,uVar5,(uint)pcVar6,(uint)pSVar1);
+                (pSVar1->field_003C,uVar4,(uint)puVar5,(uint)pcVar6,(uint)pSVar1);
     }
     g_currentExceptionFrame = local_4c.previous;
     return 0;

@@ -2,7 +2,7 @@
 // Generated translation unit: source/recovered/by_owner/STParticleC.cpp
 
 // 00629830 STParticleC::sub_00629830
-#line 1 "decomp/ST.exe/functions/00629830/decomp.c"
+#line 4 "decomp/ST.exe/functions/00629830/decomp.c"
 /* [STMethodOwnerApplier] Structural method owner recovered as STParticleC.
    Evidence: this_call_owners=[STParticleC]; agreed_this_calls=1; incoming_this_accesses=6;
    incoming_edx_uses=0; incoming_stack_parameter_uses=0; direct_non_thunk_callers=0;
@@ -26,7 +26,7 @@ void __thiscall st::fn_00629830(STParticleC *this)
 }
 
 // 00629E60 STParticleC::sub_00629E60
-#line 1 "decomp/ST.exe/functions/00629E60/decomp.c"
+#line 4 "decomp/ST.exe/functions/00629E60/decomp.c"
 /* [STMethodOwnerApplier] Structural method owner recovered as STParticleC.
    Evidence: this_call_owners=[STParticleC]; agreed_this_calls=1; incoming_this_accesses=6;
    incoming_edx_uses=0; incoming_stack_parameter_uses=1; direct_non_thunk_callers=0;
@@ -78,7 +78,7 @@ switchD_00629e96_default:
 }
 
 // 00629F20 STParticleC::sub_00629F20
-#line 1 "decomp/ST.exe/functions/00629F20/decomp.c"
+#line 4 "decomp/ST.exe/functions/00629F20/decomp.c"
 /* [STMethodOwnerApplier] Structural method owner recovered as STParticleC.
    Evidence: this_call_owners=[STParticleC]; agreed_this_calls=1; incoming_this_accesses=2;
    incoming_edx_uses=0; incoming_stack_parameter_uses=0; direct_non_thunk_callers=0;
@@ -103,7 +103,7 @@ void __thiscall st::fn_00629F20(STParticleC *this)
 }
 
 // 00629F90 STParticleC::sub_00629F90
-#line 1 "decomp/ST.exe/functions/00629F90/decomp.c"
+#line 4 "decomp/ST.exe/functions/00629F90/decomp.c"
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 /* [STMethodOwnerApplier] Structural method owner recovered as STParticleC.
    Evidence: this_call_owners=[STParticleC]; agreed_this_calls=1; incoming_this_accesses=37;
@@ -243,7 +243,7 @@ cf_common_exit_0062A1E3:
 }
 
 // 0062A370 STParticleC::sub_0062A370
-#line 1 "decomp/ST.exe/functions/0062A370/decomp.c"
+#line 4 "decomp/ST.exe/functions/0062A370/decomp.c"
 /* [STMethodOwnerApplier] Structural method owner recovered as STParticleC.
    Evidence: this_call_owners=[STParticleC]; agreed_this_calls=1; incoming_this_accesses=33;
    incoming_edx_uses=9; incoming_stack_parameter_uses=5; direct_non_thunk_callers=0;
@@ -392,7 +392,7 @@ int __thiscall st::fn_0062A370(STParticleC *this,int param_1)
 }
 
 // 0062A860 STParticleC::sub_0062A860
-#line 1 "decomp/ST.exe/functions/0062A860/decomp.c"
+#line 4 "decomp/ST.exe/functions/0062A860/decomp.c"
 /* [STMethodOwnerApplier] Structural method owner recovered as STParticleC.
    Evidence: this_call_owners=[STParticleC]; agreed_this_calls=1; incoming_this_accesses=2;
    incoming_edx_uses=0; incoming_stack_parameter_uses=0; direct_non_thunk_callers=0;
@@ -417,7 +417,7 @@ void __thiscall st::fn_0062A860(STParticleC *this)
 }
 
 // 0062AEF0 STParticleC::sub_0062AEF0
-#line 1 "decomp/ST.exe/functions/0062AEF0/decomp.c"
+#line 4 "decomp/ST.exe/functions/0062AEF0/decomp.c"
 /* [STMethodOwnerApplier] Structural method owner recovered as STParticleC.
    Evidence: this_call_owners=[STParticleC]; agreed_this_calls=1; incoming_this_accesses=4;
    incoming_edx_uses=0; incoming_stack_parameter_uses=1; direct_non_thunk_callers=0;
@@ -442,7 +442,7 @@ void __thiscall st::fn_0062AEF0(STParticleC *this,undefined4 *param_1)
 }
 
 // 0062B4A0 STParticleC::sub_0062B4A0
-#line 1 "decomp/ST.exe/functions/0062B4A0/decomp.c"
+#line 4 "decomp/ST.exe/functions/0062B4A0/decomp.c"
 /* [STMethodOwnerApplier] Structural method owner recovered as STParticleC.
    Evidence: this_call_owners=[STParticleC]; agreed_this_calls=2; incoming_this_accesses=3;
    incoming_edx_uses=0; incoming_stack_parameter_uses=0; direct_non_thunk_callers=0;

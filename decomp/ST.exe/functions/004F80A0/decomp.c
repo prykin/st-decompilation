@@ -117,7 +117,7 @@ joined_r0x004f81d1:
           uVar15 = 6;
           text = thunk_FUN_00526100(puVar5,0);
           puVar7 = Library::Ourlib::MFRLOAD::mfRLoad
-                             (DAT_00806794,CASE_1F,text,uVar15,bVar9,iVar4,iVar17,puVar18);
+                             (PTR_00806794,CASE_1F,text,uVar15,bVar9,iVar4,iVar17,puVar18);
           *(ushort **)((int)this_00->field_0308 + uVar12 * 4 + -0x26) = puVar7;
           *local_10 = 1;
           *pcVar6 = '\0';
@@ -204,7 +204,7 @@ joined_r0x004f81d1:
         if (**(short **)local_18 <= (short)(ushort)(byte)(bVar9 + 1)) {
           /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
           puVar7 = Library::Ourlib::MFRLOAD::mfRLoad
-                             (DAT_00806794,CASE_1F,
+                             (PTR_00806794,CASE_1F,
                               *(char **)((int)this_00->field_0308 + uVar12 * 4 + -0x12),6,0,1,0,
                               nullptr);
           *(ushort **)local_18 = puVar7;
@@ -272,7 +272,7 @@ joined_r0x004f81d1:
               uVar12 = 6;
               pcVar6 = (char *)thunk_FUN_004f1d20(local_14);
               puVar7 = Library::Ourlib::MFRLOAD::mfRLoad
-                                 (DAT_00806794,CASE_1F,pcVar6,uVar12,bVar9,iVar4,iVar17,puVar18);
+                                 (PTR_00806794,CASE_1F,pcVar6,uVar12,bVar9,iVar4,iVar17,puVar18);
               piVar11[-0x12] = (int)puVar7;
               pbVar13[0xc] = 1;
               *pbVar13 = 0;

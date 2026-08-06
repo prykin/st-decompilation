@@ -170,8 +170,8 @@ LAB_00510fa9:
           pUVar15 = nullptr;
         }
         if ((pUVar19 != nullptr) && (pUVar15 != nullptr)) {
-          local_14 = LoadResourceString(*pUVar15,g_module_00807618);
-          pcVar7 = LoadResourceString(*pUVar19,g_module_00807618);
+          local_14 = LoadResourceString(*pUVar15,g_hINSTANCE_00807618);
+          pcVar7 = LoadResourceString(*pUVar19,g_hINSTANCE_00807618);
           iVar4 = Library::MSVCRT::__strcmpi(pcVar7,local_14);
           if (0 < iVar4) {
             FUN_006b0cd0((AnonShape_00413AF0_B6B4EE9A *)this_00->field_01BB,uVar16,local_8);
@@ -215,38 +215,38 @@ LAB_00510fa9:
   uVar18 = 0xffffffff;
   pCVar8 = thunk_FUN_00571240("HLPTRACK",0);
   puVar9 = Library::Ourlib::MFRLOAD::mfRLoad
-                     (DAT_00806794,CASE_B,pCVar8,uVar18,bVar25,iVar4,iVar27,puVar14);
+                     (PTR_00806794,CASE_B,pCVar8,uVar18,bVar25,iVar4,iVar27,puVar14);
   this_00->field_0220 = puVar9;
   puVar9 = Library::Ourlib::MFRLOAD::mfRLoad
-                     (DAT_00806794,CASE_B,"BKG_HLPTTREE",0xffffffff,0,1,0,nullptr
+                     (PTR_00806794,CASE_B,"BKG_HLPTTREE",0xffffffff,0,1,0,nullptr
                      );
   this_00->field_0224 = puVar9;
   puVar9 = Library::Ourlib::MFRLOAD::mfRLoad
-                     (DAT_00806794,CASE_B,&DAT_007c20a0,0xffffffff,0,1,0,nullptr);
+                     (PTR_00806794,CASE_B,&DAT_007c20a0,0xffffffff,0,1,0,nullptr);
   this_00->field_0230 = puVar9;
   puVar9 = Library::Ourlib::MFRLOAD::mfRLoad
-                     (DAT_00806794,CASE_B,&DAT_007c38c8,0xffffffff,0,1,0,nullptr);
+                     (PTR_00806794,CASE_B,&DAT_007c38c8,0xffffffff,0,1,0,nullptr);
   this_00->field_0234 = puVar9;
   puVar9 = Library::Ourlib::MFRLOAD::mfRLoad
-                     (DAT_00806794,CASE_B,"HLP_UPG",0xffffffff,0,1,0,nullptr);
+                     (PTR_00806794,CASE_B,"HLP_UPG",0xffffffff,0,1,0,nullptr);
   this_00->field_0228 = puVar9;
   puVar9 = Library::Ourlib::MFRLOAD::mfRLoad
-                     (DAT_00806794,CASE_B,"HLP_UPGD",0xffffffff,0,1,0,nullptr);
+                     (PTR_00806794,CASE_B,"HLP_UPGD",0xffffffff,0,1,0,nullptr);
   this_00->field_022C = puVar9;
   puVar9 = Library::Ourlib::MFRLOAD::mfRLoad
-                     (DAT_00806794,CASE_B,&DAT_007c2048,0xffffffff,0,1,0,nullptr);
+                     (PTR_00806794,CASE_B,&DAT_007c2048,0xffffffff,0,1,0,nullptr);
   this_00->field_0238 = puVar9;
   puVar9 = Library::Ourlib::MFRLOAD::mfRLoad
-                     (DAT_00806794,CASE_B,"HLP_FRAME",0xffffffff,0,1,0,nullptr);
+                     (PTR_00806794,CASE_B,"HLP_FRAME",0xffffffff,0,1,0,nullptr);
   this_00->field_0248 = puVar9;
   puVar9 = Library::Ourlib::MFRLOAD::mfRLoad
-                     (DAT_00806794,CASE_B,"BOATS_R",0xffffffff,0,1,0,nullptr);
+                     (PTR_00806794,CASE_B,"BOATS_R",0xffffffff,0,1,0,nullptr);
   this_00->field_023C = puVar9;
   puVar9 = Library::Ourlib::MFRLOAD::mfRLoad
-                     (DAT_00806794,CASE_B,&DAT_007c1910,0xffffffff,0,1,0,nullptr);
+                     (PTR_00806794,CASE_B,&DAT_007c1910,0xffffffff,0,1,0,nullptr);
   this_00->field_0240 = puVar9;
   puVar9 = Library::Ourlib::MFRLOAD::mfRLoad
-                     (DAT_00806794,CASE_B,"INF_WEAP",0xffffffff,0,1,0,nullptr);
+                     (PTR_00806794,CASE_B,"INF_WEAP",0xffffffff,0,1,0,nullptr);
   pcVar10 = this_00->field_01E4;
   this_00->field_0244 = puVar9;
   if (pcVar10->field_00A0 != 0) {
@@ -287,7 +287,7 @@ LAB_00510fa9:
   uVar18 = 0;
   iVar27 = -1;
   iVar4 = -2;
-  resourceString = (uint *)LoadResourceString(0x2734,g_module_00807618);
+  resourceString = (uint *)LoadResourceString(0x2734,g_hINSTANCE_00807618);
   ccFntTy::WrStr(this_00->field_01E0,resourceString,iVar4,iVar27,uVar18);
   uVar29 = 0;
   uVar28 = 0;

@@ -2,7 +2,7 @@
 // Generated translation unit: source/original/ai/ai_event.cpp
 
 // 0064CD80 AiEventClassTy::InitData
-#line 1 "decomp/ST.exe/functions/0064CD80/decomp.c"
+#line 4 "decomp/ST.exe/functions/0064CD80/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\ai\ai_event.cpp
    AiEventClassTy::InitData */
@@ -45,7 +45,7 @@ int __thiscall st::fn_0064CD80(AiEventClassTy *this,int *param_1)
     pAVar2->field_05B3 = pDVar4;
     uVar11 = 0;
     do {
-      st::fn_006B6020(&pAVar2->field_05B3->flags,uVar11,&DAT_008016a0);
+      st::fn_006B6020(pAVar2->field_05B3,uVar11,&DAT_008016a0);
       uVar11 = uVar11 + 1;
     } while ((int)uVar11 < 4);
     if (pAVar2->field_008C == '\0') {
@@ -121,7 +121,7 @@ int __thiscall st::fn_0064CD80(AiEventClassTy *this,int *param_1)
 }
 
 // 0064D000 AiEventClassTy::PrepareToSave
-#line 1 "decomp/ST.exe/functions/0064D000/decomp.c"
+#line 4 "decomp/ST.exe/functions/0064D000/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\ai\ai_event.cpp
    AiEventClassTy::PrepareToSave */
@@ -166,7 +166,7 @@ undefined4 * __thiscall st::fn_0064D000(AiEventClassTy *this,uint *param_1)
 }
 
 // 0064D270 AiEventClassTy::__CreateObjPl
-#line 1 "decomp/ST.exe/functions/0064D270/decomp.c"
+#line 4 "decomp/ST.exe/functions/0064D270/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\ai\ai_event.cpp
    AiEventClassTy::__CreateObjPl
@@ -384,7 +384,7 @@ st::fn_0064D270
 }
 
 // 0064D890 AiEventClassTy::_CreateRCCont
-#line 1 "decomp/ST.exe/functions/0064D890/decomp.c"
+#line 4 "decomp/ST.exe/functions/0064D890/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\ai\ai_event.cpp
    AiEventClassTy::_CreateRCCont
@@ -468,7 +468,7 @@ st::fn_0064D890
 }
 
 // 0064DB00 AiEventClassTy::_CreateArt
-#line 1 "decomp/ST.exe/functions/0064DB00/decomp.c"
+#line 4 "decomp/ST.exe/functions/0064DB00/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\ai\ai_event.cpp
    AiEventClassTy::_CreateArt */
@@ -549,7 +549,7 @@ st::fn_0064DB00
 }
 
 // 0064DDA0 AiEventClassTy::_CreateDest
-#line 1 "decomp/ST.exe/functions/0064DDA0/decomp.c"
+#line 4 "decomp/ST.exe/functions/0064DDA0/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\ai\ai_event.cpp
    AiEventClassTy::_CreateDest */
@@ -608,7 +608,7 @@ st::fn_0064DDA0
 }
 
 // 0064DFA0 AiEventClassTy::_CreateMine
-#line 1 "decomp/ST.exe/functions/0064DFA0/decomp.c"
+#line 4 "decomp/ST.exe/functions/0064DFA0/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\ai\ai_event.cpp
    AiEventClassTy::_CreateMine */
@@ -691,7 +691,7 @@ st::fn_0064DFA0
 }
 
 // 0064E300 FUN_0064e300
-#line 1 "decomp/ST.exe/functions/0064E300/decomp.c"
+#line 4 "decomp/ST.exe/functions/0064E300/decomp.c"
 /* WARNING: Type propagation algorithm not settling */
 /* [STSourceProvenanceApplier begin]
    Recovered source file: E:\__titans\ai\ai_event.cpp
@@ -776,7 +776,7 @@ uint st::fn_0064E300(int param_1,char *param_2,ushort param_3,char param_4,ushor
 }
 
 // 00652810 AiEventClassTy::GetMessage
-#line 1 "decomp/ST.exe/functions/00652810/decomp.c"
+#line 4 "decomp/ST.exe/functions/00652810/decomp.c"
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 /* [ST_RECOVERY:ai_event_get_message_v1]
    Source: E:\__titans\ai\ai_event.cpp
@@ -4598,7 +4598,7 @@ switchD_00652b42_switchD:
                                   if (iVar36 == 0) goto cf_common_join_00652A99;
                                   if (iVar7 == 5) {
                                     st::fn_006B6020
-                                              (&this_00->field_05B3->flags,(uint)pDStack_164,
+                                              (this_00->field_05B3,(uint)pDStack_164,
                                                (char *)local_160);
                                   }
                                 }
@@ -4643,8 +4643,7 @@ switchD_00652b42_switchD:
                               iVar36 = st::fn_00403CD3((int)&local_16c);
                               if (iVar36 == 0) goto cf_common_join_00652A99;
                               st::fn_006B6020
-                                        (&this_00->field_05B3->flags,(uint)pDStack_164,
-                                         (char *)local_160);
+                                        (this_00->field_05B3,(uint)pDStack_164,(char *)local_160);
                               break;
                             case 0x528:
                               iVar36 = st::fn_004041C4((int)&local_16c);

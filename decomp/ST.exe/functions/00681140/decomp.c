@@ -36,7 +36,7 @@ undefined4 FUN_00681140(void)
   }
   if (*(int *)(&DAT_00811ae8 + iVar3) < 1) {
     pcVar2 = thunk_FUN_0067eea0(PTR_s___EMPTY___0079d734);
-    (&DAT_00811aec)[iVar1 * 0xac5] = pcVar2;
+    (&PTR_00811aec)[iVar1 * 0xac5] = pcVar2;
   }
   if ((int)(&DAT_00811c8c)[iVar1 * 0xac5] < 0) {
     (&DAT_00811c8c)[iVar1 * 0xac5] = 0;

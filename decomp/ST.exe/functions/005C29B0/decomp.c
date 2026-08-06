@@ -206,8 +206,8 @@ void __thiscall SettMapMTy::sub_005C29B0(SettMapMTy *this,char param_1)
   this_01->field_218D = 2;
   this_01->field_216D = 2;
   this_01->field_21AD = g_startSystem_0081176C->field_002C;
-  this_01->field_21C1 = DAT_008032a8;
-  this_01->field_21BD = DAT_008032a4;
+  this_01->field_21C1 = PTR_008032a8;
+  this_01->field_21BD = PTR_008032a4;
   this_01->field_21B5 = 0x1f;
   this_01->field_21B9 = 1;
   this_01->field_21B1 = 0x4d;
@@ -218,13 +218,13 @@ void __thiscall SettMapMTy::sub_005C29B0(SettMapMTy *this,char param_1)
   this_01->field_1E2B = puVar9;
   PTR_0081175c = (AnonShape_GLOBAL_0081175C_57F682DD *)
                  Library::Ourlib::MFRLOAD::mfRLoad
-                           (DAT_00806784,CASE_B,"MAP_GEN",0xffffffff,0,1,0,
+                           (PTR_00806784,CASE_B,"MAP_GEN",0xffffffff,0,1,0,
                             nullptr);
   puVar9 = Library::Ourlib::MFRLOAD::mfRLoad
-                     (DAT_00806784,CASE_B,"SET_ACC",0xffffffff,0,1,0,nullptr);
+                     (PTR_00806784,CASE_B,"SET_ACC",0xffffffff,0,1,0,nullptr);
   this_01->field_1F4F = puVar9;
   puVar9 = Library::Ourlib::MFRLOAD::mfRLoad
-                     (DAT_00806784,CASE_B,"SET_ALLY",0xffffffff,0,1,0,nullptr);
+                     (PTR_00806784,CASE_B,"SET_ALLY",0xffffffff,0,1,0,nullptr);
   this_01->field_1F4B = puVar9;
   SVar1 = this_01->field_1E26;
   if (((SVar1 == 6) || (SVar1 == CASE_7)) || (SVar1 == 0xe)) {
@@ -255,42 +255,42 @@ void __thiscall SettMapMTy::sub_005C29B0(SettMapMTy *this,char param_1)
     uVar20 = 2;
     iVar33 = -1;
     iVar5 = 0;
-    puVar13 = (uint *)LoadResourceString(0x2344,g_module_00807618);
+    puVar13 = (uint *)LoadResourceString(0x2344,g_hINSTANCE_00807618);
     ccFntTy::WrStr(g_startSystem_0081176C->field_0034,puVar13,iVar5,iVar33,uVar20);
     ccFntTy::SetSurf(g_startSystem_0081176C->field_0034,(int)this_01->field_1C67,0,0x10,0x2e,0xea,
                      0x14);
     uVar20 = 2;
     iVar33 = -1;
     iVar5 = 0;
-    puVar13 = (uint *)LoadResourceString(0x2345,g_module_00807618);
+    puVar13 = (uint *)LoadResourceString(0x2345,g_hINSTANCE_00807618);
     ccFntTy::WrStr(g_startSystem_0081176C->field_0034,puVar13,iVar5,iVar33,uVar20);
     ccFntTy::SetSurf(g_startSystem_0081176C->field_0034,(int)this_01->field_1C67,0,0x10,0x56,0xea,
                      0x14);
     uVar20 = 2;
     iVar33 = -1;
     iVar5 = 0;
-    puVar13 = (uint *)LoadResourceString(0x2350,g_module_00807618);
+    puVar13 = (uint *)LoadResourceString(0x2350,g_hINSTANCE_00807618);
     ccFntTy::WrStr(g_startSystem_0081176C->field_0034,puVar13,iVar5,iVar33,uVar20);
     ccFntTy::SetSurf(g_startSystem_0081176C->field_0034,(int)this_01->field_1C67,0,0x10,0x7e,0xea,
                      0x14);
     uVar20 = 2;
     iVar33 = -1;
     iVar5 = 0;
-    puVar13 = (uint *)LoadResourceString(0x2352,g_module_00807618);
+    puVar13 = (uint *)LoadResourceString(0x2352,g_hINSTANCE_00807618);
     ccFntTy::WrStr(g_startSystem_0081176C->field_0034,puVar13,iVar5,iVar33,uVar20);
     ccFntTy::SetSurf(g_startSystem_0081176C->field_0034,(int)this_01->field_1C67,0,0x10,0xa6,0xea,
                      0x14);
     uVar20 = 2;
     iVar33 = -1;
     iVar5 = 0;
-    puVar13 = (uint *)LoadResourceString(0x2351,g_module_00807618);
+    puVar13 = (uint *)LoadResourceString(0x2351,g_hINSTANCE_00807618);
     ccFntTy::WrStr(g_startSystem_0081176C->field_0034,puVar13,iVar5,iVar33,uVar20);
     ccFntTy::SetSurf(g_startSystem_0081176C->field_0034,(int)this_01->field_1C67,0,0x10,0xce,0xea,
                      0x14);
     uVar20 = 2;
     iVar33 = -1;
     iVar5 = 0;
-    puVar13 = (uint *)LoadResourceString(0x2353,g_module_00807618);
+    puVar13 = (uint *)LoadResourceString(0x2353,g_hINSTANCE_00807618);
     ccFntTy::WrStr(g_startSystem_0081176C->field_0034,puVar13,iVar5,iVar33,uVar20);
     pAVar11 = this_01->field_1C67;
     FUN_006b2330(g_ddxContext_008075A8,&this_01->field_1F80,0x31,0x40407f,pAVar11->field_0004,
@@ -350,7 +350,7 @@ void __thiscall SettMapMTy::sub_005C29B0(SettMapMTy *this,char param_1)
                 default:
                   resourceId = 0x4a46;
                 }
-                pcVar24 = LoadResourceString(resourceId,g_module_00807618);
+                pcVar24 = LoadResourceString(resourceId,g_hINSTANCE_00807618);
                 uVar20 = 0xffffffff;
                 do {
                   pcVar25 = pcVar24;
@@ -447,7 +447,7 @@ void __thiscall SettMapMTy::sub_005C29B0(SettMapMTy *this,char param_1)
             ((SpriteClassTy *)&this_01->field_1C6B,(int *)g_ddxContext_008075A8,0x31,'\a',
              nullptr,0,0);
   /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-  (**(code **)(this_01->field_1C6B + 4))(DAT_00806784,7,0,"MM_SLDUP",0xffffffff);
+  (**(code **)(this_01->field_1C6B + 4))(PTR_00806784,7,0,"MM_SLDUP",0xffffffff);
   this_01->field_1C87 = 0x2fa;
   this_01->field_1C8B = 0x3b;
   this_01->field_1C73 = 0;
@@ -455,7 +455,7 @@ void __thiscall SettMapMTy::sub_005C29B0(SettMapMTy *this,char param_1)
             ((SpriteClassTy *)&this_01->field_1CFC,(int *)g_ddxContext_008075A8,0x31,'\a',
              nullptr,0,0);
   /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-  (**(code **)(this_01->field_1CFC + 4))(DAT_00806784,7,0,"MM_SLDDN",0xffffffff);
+  (**(code **)(this_01->field_1CFC + 4))(PTR_00806784,7,0,"MM_SLDDN",0xffffffff);
   this_01->field_1D18 = 0x2fa;
   this_01->field_1D1C = 0x11e;
   this_01->field_1D04 = 0;
@@ -463,7 +463,7 @@ void __thiscall SettMapMTy::sub_005C29B0(SettMapMTy *this,char param_1)
             ((SpriteClassTy *)&this_01->field_1D8D,(int *)g_ddxContext_008075A8,0x31,'\a',
              nullptr,0,0);
   /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-  (**(code **)(this_01->field_1D8D + 4))(DAT_00806784,7,0,"MM_SLDT",0xffffffff);
+  (**(code **)(this_01->field_1D8D + 4))(PTR_00806784,7,0,"MM_SLDT",0xffffffff);
   this_01->field_1DA9 = 0x2ff;
   this_01->field_1DAD = 0x5b;
   this_01->field_1D95 = 0;
@@ -532,7 +532,7 @@ void __thiscall SettMapMTy::sub_005C29B0(SettMapMTy *this,char param_1)
     iVar33 = -3;
     iVar5 = 0xa5;
     puVar29 = (uint *)&DAT_008016a0;
-    puVar13 = (uint *)LoadResourceString(0x256d,g_module_00807618);
+    puVar13 = (uint *)LoadResourceString(0x256d,g_hINSTANCE_00807618);
     puVar13 = thunk_FUN_00540c40(g_startSystem_0081176C->field_0034,puVar13,puVar29,iVar5);
     ccFntTy::WrStr(g_startSystem_0081176C->field_0034,puVar13,iVar33,iVar32,uVar20);
   }
@@ -542,7 +542,7 @@ void __thiscall SettMapMTy::sub_005C29B0(SettMapMTy *this,char param_1)
   iVar33 = -3;
   iVar5 = 0xa5;
   puVar29 = (uint *)&DAT_008016a0;
-  puVar13 = (uint *)LoadResourceString(0x1f4b,g_module_00807618);
+  puVar13 = (uint *)LoadResourceString(0x1f4b,g_hINSTANCE_00807618);
   puVar13 = thunk_FUN_00540c40(g_startSystem_0081176C->field_0034,puVar13,puVar29,iVar5);
   ccFntTy::WrStr(g_startSystem_0081176C->field_0034,puVar13,iVar33,iVar32,uVar20);
   ccFntTy::SetSurf(g_startSystem_0081176C->field_0034,(int)this_01->field_1E1E,0,0x104,0x1b,0xa5,
@@ -552,7 +552,7 @@ void __thiscall SettMapMTy::sub_005C29B0(SettMapMTy *this,char param_1)
   iVar33 = -3;
   iVar5 = 0xa5;
   puVar29 = (uint *)&DAT_008016a0;
-  puVar13 = (uint *)LoadResourceString(0x1f4c,g_module_00807618);
+  puVar13 = (uint *)LoadResourceString(0x1f4c,g_hINSTANCE_00807618);
   puVar13 = thunk_FUN_00540c40(g_startSystem_0081176C->field_0034,puVar13,puVar29,iVar5);
   ccFntTy::WrStr(g_startSystem_0081176C->field_0034,puVar13,iVar33,iVar32,uVar20);
   ccFntTy::SetSurf(g_startSystem_0081176C->field_0034,(int)this_01->field_1E1E,0,8,0x31,0xa5,0x14);
@@ -561,7 +561,7 @@ void __thiscall SettMapMTy::sub_005C29B0(SettMapMTy *this,char param_1)
   iVar33 = -3;
   iVar5 = 0xa5;
   puVar29 = (uint *)&DAT_008016a0;
-  puVar13 = (uint *)LoadResourceString(0x1f4d,g_module_00807618);
+  puVar13 = (uint *)LoadResourceString(0x1f4d,g_hINSTANCE_00807618);
   puVar13 = thunk_FUN_00540c40(g_startSystem_0081176C->field_0034,puVar13,puVar29,iVar5);
   ccFntTy::WrStr(g_startSystem_0081176C->field_0034,puVar13,iVar33,iVar32,uVar20);
   ccFntTy::SetSurf(g_startSystem_0081176C->field_0034,(int)this_01->field_1E1E,0,0x104,0x31,0xa5,
@@ -571,7 +571,7 @@ void __thiscall SettMapMTy::sub_005C29B0(SettMapMTy *this,char param_1)
   iVar33 = -3;
   iVar5 = 0xa5;
   puVar29 = (uint *)&DAT_008016a0;
-  puVar13 = (uint *)LoadResourceString(0x1f4e,g_module_00807618);
+  puVar13 = (uint *)LoadResourceString(0x1f4e,g_hINSTANCE_00807618);
   puVar13 = thunk_FUN_00540c40(g_startSystem_0081176C->field_0034,puVar13,puVar29,iVar5);
   ccFntTy::WrStr(g_startSystem_0081176C->field_0034,puVar13,iVar33,iVar32,uVar20);
   ccFntTy::SetSurf(g_startSystem_0081176C->field_0034,(int)this_01->field_1E1E,0,8,0x47,0xa5,0x14);
@@ -580,7 +580,7 @@ void __thiscall SettMapMTy::sub_005C29B0(SettMapMTy *this,char param_1)
   iVar33 = -3;
   iVar5 = 0xa5;
   puVar29 = (uint *)&DAT_008016a0;
-  puVar13 = (uint *)LoadResourceString(0x1f4f,g_module_00807618);
+  puVar13 = (uint *)LoadResourceString(0x1f4f,g_hINSTANCE_00807618);
   puVar13 = thunk_FUN_00540c40(g_startSystem_0081176C->field_0034,puVar13,puVar29,iVar5);
   ccFntTy::WrStr(g_startSystem_0081176C->field_0034,puVar13,iVar33,iVar32,uVar20);
   ccFntTy::SetSurf(g_startSystem_0081176C->field_0034,(int)this_01->field_1E1E,0,0x104,0x47,0xa5,
@@ -590,7 +590,7 @@ void __thiscall SettMapMTy::sub_005C29B0(SettMapMTy *this,char param_1)
   iVar33 = -3;
   iVar5 = 0xa5;
   puVar29 = (uint *)&DAT_008016a0;
-  puVar13 = (uint *)LoadResourceString(0x1f56,g_module_00807618);
+  puVar13 = (uint *)LoadResourceString(0x1f56,g_hINSTANCE_00807618);
   puVar13 = thunk_FUN_00540c40(g_startSystem_0081176C->field_0034,puVar13,puVar29,iVar5);
   ccFntTy::WrStr(g_startSystem_0081176C->field_0034,puVar13,iVar33,iVar32,uVar20);
   ccFntTy::SetSurf(g_startSystem_0081176C->field_0034,(int)this_01->field_1E1E,0,10,0x5d,100,0x14);
@@ -599,7 +599,7 @@ void __thiscall SettMapMTy::sub_005C29B0(SettMapMTy *this,char param_1)
   iVar33 = -3;
   iVar5 = 100;
   puVar29 = (uint *)&DAT_008016a0;
-  puVar13 = (uint *)LoadResourceString(0x1f51,g_module_00807618);
+  puVar13 = (uint *)LoadResourceString(0x1f51,g_hINSTANCE_00807618);
   puVar13 = thunk_FUN_00540c40(g_startSystem_0081176C->field_0034,puVar13,puVar29,iVar5);
   ccFntTy::WrStr(g_startSystem_0081176C->field_0034,puVar13,iVar33,iVar32,uVar20);
   ccFntTy::SetSurf(g_startSystem_0081176C->field_0034,(int)this_01->field_1E1E,0,0x96,0x5d,0x82,0x14
@@ -609,7 +609,7 @@ void __thiscall SettMapMTy::sub_005C29B0(SettMapMTy *this,char param_1)
   iVar33 = -3;
   iVar5 = 0x82;
   puVar29 = (uint *)&DAT_008016a0;
-  puVar13 = (uint *)LoadResourceString(0x1f58,g_module_00807618);
+  puVar13 = (uint *)LoadResourceString(0x1f58,g_hINSTANCE_00807618);
   puVar13 = thunk_FUN_00540c40(g_startSystem_0081176C->field_0034,puVar13,puVar29,iVar5);
   ccFntTy::WrStr(g_startSystem_0081176C->field_0034,puVar13,iVar33,iVar32,uVar20);
   ccFntTy::SetSurf(g_startSystem_0081176C->field_0034,(int)this_01->field_1E1E,0,0x140,0x5d,0xa0,
@@ -619,7 +619,7 @@ void __thiscall SettMapMTy::sub_005C29B0(SettMapMTy *this,char param_1)
   iVar33 = -3;
   iVar5 = 0xa0;
   puVar29 = (uint *)&DAT_008016a0;
-  puVar13 = (uint *)LoadResourceString(0x1f50,g_module_00807618);
+  puVar13 = (uint *)LoadResourceString(0x1f50,g_hINSTANCE_00807618);
   puVar13 = thunk_FUN_00540c40(g_startSystem_0081176C->field_0034,puVar13,puVar29,iVar5);
   ccFntTy::WrStr(g_startSystem_0081176C->field_0034,puVar13,iVar33,iVar32,uVar20);
   SVar1 = this_01->field_1E26;
@@ -630,7 +630,7 @@ void __thiscall SettMapMTy::sub_005C29B0(SettMapMTy *this,char param_1)
     iVar33 = -3;
     iVar5 = 0xe1;
     puVar29 = (uint *)&DAT_008016a0;
-    puVar13 = (uint *)LoadResourceString(0x1f54,g_module_00807618);
+    puVar13 = (uint *)LoadResourceString(0x1f54,g_hINSTANCE_00807618);
     puVar13 = thunk_FUN_00540c40(g_startSystem_0081176C->field_0034,puVar13,puVar29,iVar5);
     ccFntTy::WrStr(g_startSystem_0081176C->field_0034,puVar13,iVar33,iVar32,uVar20);
     ccFntTy::SetSurf(g_startSystem_0081176C->field_0034,(int)this_01->field_1E1E,0,0x104,0x73,0xdc,
@@ -640,7 +640,7 @@ void __thiscall SettMapMTy::sub_005C29B0(SettMapMTy *this,char param_1)
     iVar33 = -3;
     iVar5 = 0xe1;
     puVar29 = (uint *)&DAT_008016a0;
-    puVar13 = (uint *)LoadResourceString(0x1f53,g_module_00807618);
+    puVar13 = (uint *)LoadResourceString(0x1f53,g_hINSTANCE_00807618);
     puVar13 = thunk_FUN_00540c40(g_startSystem_0081176C->field_0034,puVar13,puVar29,iVar5);
     ccFntTy::WrStr(g_startSystem_0081176C->field_0034,puVar13,iVar33,iVar32,uVar20);
   }

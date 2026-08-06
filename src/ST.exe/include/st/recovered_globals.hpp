@@ -2,24 +2,24 @@
 
 #include "st/recovered_types.hpp"
 
-extern AiBossClassTyVTable AiBossClassTyVTable;
-extern AiBossClassTyVTable_at_1C AiBossClassTyVTable_at_1C;
-extern AiFltClassTyVTable AiFltClassTyVTable;
-extern AiPlrClassTyVTable AiPlrClassTyVTable;
-extern AiPlrClassTyVTable_at_1C AiPlrClassTyVTable_at_1C;
-extern AiTactClassTyVTable AiTactClassTyVTable;
-extern AppClassTyVTable AppClassTyVTable;
+extern AiBossClassTyVTable st_global_0079D658; // image symbol: AiBossClassTyVTable
+extern AiBossClassTyVTable_at_1C st_global_0079D618; // image symbol: AiBossClassTyVTable_at_1C
+extern AiFltClassTyVTable st_global_0079D6BC; // image symbol: AiFltClassTyVTable
+extern AiPlrClassTyVTable st_global_0079D714; // image symbol: AiPlrClassTyVTable
+extern AiPlrClassTyVTable_at_1C st_global_0079D6D4; // image symbol: AiPlrClassTyVTable_at_1C
+extern AiTactClassTyVTable st_global_0079D76C; // image symbol: AiTactClassTyVTable
+extern AppClassTyVTable st_global_0079E16C; // image symbol: AppClassTyVTable
 extern byte BYTE_004aecec;
 extern byte BYTE_004bd2b1;
-extern BaseSystemCVTable BaseSystemCVTable;
-extern BehPanelTyVTable BehPanelTyVTable;
-extern BldBoatPanelTyVTable BldBoatPanelTyVTable;
-extern BldLabPanelTyVTable BldLabPanelTyVTable;
-extern BldObjPanelTyVTable BldObjPanelTyVTable;
-extern ButtonClassTyVTable ButtonClassTyVTable;
-extern CFsgsConnectionVTable CFsgsConnectionVTable;
-extern CampaignTyVTable CampaignTyVTable;
-extern ChooseMapTyVTable ChooseMapTyVTable;
+extern BaseSystemCVTable st_global_0079B1B4; // image symbol: BaseSystemCVTable
+extern BehPanelTyVTable st_global_0079AB74; // image symbol: BehPanelTyVTable
+extern BldBoatPanelTyVTable st_global_0079ABA0; // image symbol: BldBoatPanelTyVTable
+extern BldLabPanelTyVTable st_global_0079ABC8; // image symbol: BldLabPanelTyVTable
+extern BldObjPanelTyVTable st_global_0079ABF0; // image symbol: BldObjPanelTyVTable
+extern ButtonClassTyVTable st_global_0079E288; // image symbol: ButtonClassTyVTable
+extern CFsgsConnectionVTable st_global_0079AEFC; // image symbol: CFsgsConnectionVTable
+extern CampaignTyVTable st_global_0079BFF8; // image symbol: CampaignTyVTable
+extern ChooseMapTyVTable st_global_0079C088; // image symbol: ChooseMapTyVTable
 extern undefined4 DAT_0000000b;
 extern undefined4 DAT_0000000c;
 extern undefined4 DAT_006ce9a0;
@@ -987,8 +987,6 @@ extern undefined4 DAT_007f4d40;
 extern undefined4 DAT_007f4d44;
 extern undefined4 DAT_007f4d48;
 extern undefined4 DAT_007f4d4c;
-extern undefined4 DAT_007f4d50;
-extern undefined4 DAT_007f4d54;
 extern undefined4 DAT_007f4d6c;
 extern undefined4 DAT_007f4d74;
 extern undefined4 DAT_007f4d78;
@@ -1135,19 +1133,6 @@ extern undefined4 DAT_008030d4;
 extern undefined4 DAT_00803140;
 extern undefined4 DAT_00803144;
 extern undefined4 DAT_00803148;
-extern undefined4 DAT_008032a4;
-extern undefined4 DAT_008032a8;
-extern undefined4 DAT_008032ac;
-extern undefined4 DAT_008032b0;
-extern undefined4 DAT_008032b4;
-extern undefined4 DAT_008032b8;
-extern undefined4 DAT_008032bc;
-extern undefined4 DAT_008032c0;
-extern undefined4 DAT_008032c4;
-extern undefined4 DAT_008032c8;
-extern undefined4 DAT_008032cc;
-extern undefined4 DAT_008032d0;
-extern undefined4 DAT_008032d4;
 extern undefined4 DAT_008032e8;
 extern undefined4 DAT_008032ec;
 extern undefined4 DAT_008032f0;
@@ -1207,17 +1192,9 @@ extern undefined4 DAT_00806734;
 extern undefined4 DAT_00806738;
 extern undefined4 DAT_0080673c;
 extern undefined4 DAT_0080674c;
-extern undefined4 DAT_00806750;
-extern undefined4 DAT_00806764;
 extern undefined4 DAT_00806768;
-extern undefined4 DAT_0080676c;
-extern undefined4 DAT_00806774;
 extern undefined4 DAT_00806778;
-extern undefined4 DAT_0080677c;
-extern undefined4 DAT_00806784;
 extern undefined4 DAT_00806788;
-extern undefined4 DAT_0080678c;
-extern undefined4 DAT_00806794;
 extern undefined4 DAT_0080679c;
 extern undefined1 DAT_008067a0;
 extern undefined1 DAT_008067a1;
@@ -1261,7 +1238,6 @@ extern undefined1 DAT_00807362;
 extern undefined1 DAT_00807363;
 extern undefined1 DAT_00807364;
 extern undefined4 DAT_008073c8;
-extern undefined4 DAT_008073cc;
 extern undefined4 DAT_008073d0;
 extern undefined4 DAT_008073d8;
 extern undefined4 DAT_008073dc;
@@ -1371,7 +1347,6 @@ extern undefined4 DAT_0080c4d7;
 extern undefined4 DAT_0080c4f6;
 extern undefined2 DAT_0080c4f7;
 extern undefined1 DAT_0080c4f9;
-extern undefined4 DAT_0080c4fa;
 extern undefined4 DAT_0080c506;
 extern undefined4 DAT_0080c50a;
 extern undefined4 DAT_0080c50e;
@@ -1507,8 +1482,6 @@ extern undefined4 DAT_00811aa0;
 extern undefined4 DAT_00811aa4;
 extern undefined4 DAT_00811ae4;
 extern undefined4 DAT_00811ae8;
-extern undefined4 DAT_00811aec;
-extern undefined4 DAT_00811af0;
 extern undefined4 DAT_00811c7c;
 extern undefined4 DAT_00811c80;
 extern undefined4 DAT_00811c84;
@@ -1549,7 +1522,6 @@ extern undefined4 DAT_008489bc;
 extern undefined4 DAT_008489c0;
 extern undefined4 DAT_008489c8;
 extern undefined4 DAT_008489d0;
-extern undefined4 DAT_008489dc;
 extern undefined1 DAT_008489e0;
 extern undefined4 DAT_00848a00;
 extern undefined4 DAT_00848a04;
@@ -1558,7 +1530,6 @@ extern undefined4 DAT_00848a0c;
 extern undefined4 DAT_00848a10;
 extern undefined4 DAT_00848a20;
 extern undefined4 DAT_00848a24;
-extern undefined4 DAT_00848a3c;
 extern undefined4 DAT_00848a40;
 extern undefined4 DAT_00853a68;
 extern undefined4 DAT_00853b6c;
@@ -1792,7 +1763,6 @@ extern undefined4 DAT_0085713c;
 extern undefined4 DAT_00857148;
 extern undefined4 DAT_00857154;
 extern undefined4 DAT_008571cc;
-extern undefined4 DAT_00857500;
 extern undefined4 DAT_00857504;
 extern undefined4 DAT_00857508;
 extern undefined4 DAT_0085751c;
@@ -1812,46 +1782,67 @@ extern undefined4 DAT_00858e00;
 extern undefined4 DAT_00858e24;
 extern undefined4 DAT_0085a5c4;
 extern undefined4 DAT_0085e000;
-extern DebugSystemCVTable DebugSystemCVTable;
-extern DumpClassCVTable DumpClassCVTable;
+extern DebugSystemCVTable st_global_0079B20C; // image symbol: DebugSystemCVTable
+extern DumpClassCVTable st_global_00790710; // image symbol: DumpClassCVTable
 extern void * ExceptionList;
-extern FSGSTyVTable FSGSTyVTable;
-extern FrmPanelTyVTable FrmPanelTyVTable;
-extern GameSystemCVTable GameSystemCVTable;
+extern FSGSTyVTable st_global_0079C02C; // image symbol: FSGSTyVTable
+extern FrmPanelTyVTable st_global_0079AC1C; // image symbol: FrmPanelTyVTable
+extern GameSystemCVTable st_global_0079B1E0; // image symbol: GameSystemCVTable
 extern HANDLE HANDLE_008118f8;
 extern HWND HWND_00856d78;
-extern HelpStringTyVTable HelpStringTyVTable;
+extern HelpStringTyVTable st_global_0079AC6C; // image symbol: HelpStringTyVTable
 extern IMAGE_DOS_HEADER IMAGE_DOS_HEADER_00400000;
-extern InfocPanelTyVTable InfocPanelTyVTable;
-extern InterSystemCVTable InterSystemCVTable;
-extern IntercomPanelTyVTable IntercomPanelTyVTable;
-extern JumpManagCVTable JumpManagCVTable;
+extern InfocPanelTyVTable st_global_0079AC70; // image symbol: InfocPanelTyVTable
+extern InterSystemCVTable st_global_0079ADB8; // image symbol: InterSystemCVTable
+extern IntercomPanelTyVTable st_global_0079AC9C; // image symbol: IntercomPanelTyVTable
+extern JumpManagCVTable st_global_0079CEBC; // image symbol: JumpManagCVTable
 extern LPVOID LPVOID_008568b0;
-extern ListClassTyVTable ListClassTyVTable;
-extern MAdvTyVTable MAdvTyVTable;
-extern MMObjTyVTable MMObjTyVTable;
-extern MMsgTyVTable MMsgTyVTable;
-extern MReportTyVTable MReportTyVTable;
-extern MTestTyVTable MTestTyVTable;
-extern MainMenuTyVTable MainMenuTyVTable;
-extern MoneyTyVTable MoneyTyVTable;
-extern OptPanelTyVTable OptPanelTyVTable;
-extern OpticClassCVTable OpticClassCVTable;
+extern ListClassTyVTable st_global_0079E2A4; // image symbol: ListClassTyVTable
+extern MAdvTyVTable st_global_0079BFE4; // image symbol: MAdvTyVTable
+extern MMObjTyVTable st_global_0079C008; // image symbol: MMObjTyVTable
+extern MMsgTyVTable st_global_0079C0A8; // image symbol: MMsgTyVTable
+extern MReportTyVTable st_global_0079C0E4; // image symbol: MReportTyVTable
+extern MTestTyVTable st_global_0079C23C; // image symbol: MTestTyVTable
+extern MainMenuTyVTable st_global_0079C098; // image symbol: MainMenuTyVTable
+extern MoneyTyVTable st_global_0079ACE4; // image symbol: MoneyTyVTable
+extern OptPanelTyVTable st_global_0079AD10; // image symbol: OptPanelTyVTable
+extern OpticClassCVTable st_global_00790758; // image symbol: OpticClassCVTable
+extern int * PTR_007f4d50;
+extern int * PTR_007f4d54;
+extern ushort * PTR_008032a4;
+extern ushort * PTR_008032a8;
+extern ushort * PTR_008032ac;
+extern ushort * PTR_008032b0;
+extern ushort * PTR_008032b4;
+extern ushort * PTR_008032b8;
+extern ushort * PTR_008032bc;
+extern ushort * PTR_008032c0;
+extern ushort * PTR_008032c4;
+extern ushort * PTR_008032c8;
+extern ushort * PTR_008032cc;
+extern ushort * PTR_008032d0;
+extern ushort * PTR_008032d4;
 extern AnonShape_GLOBAL_00806724_3210464F * PTR_00806724;
 extern DArrayTy * PTR_00806740;
+extern short * PTR_00806750;
+extern int * PTR_00806764;
+extern int * PTR_0080676c;
 extern cMf32 * PTR_00806770;
+extern int * PTR_00806774;
+extern int * PTR_0080677c;
+extern int * PTR_00806784;
+extern int * PTR_0080678c;
+extern int * PTR_00806794;
+extern ushort * PTR_008073cc;
 extern DArrayTy * PTR_0080c502;
 extern AnonPointee_TLOBaseTy_0607 * PTR_00811718;
 extern AnonPointee_TLOBaseTy_0607 * PTR_0081171c;
-extern tagBITMAPINFO * PTR_00811758;
 extern AnonShape_GLOBAL_0081175C_57F682DD * PTR_0081175c;
 extern AnonShape_GLOBAL_0081194C_4D1525E6 * PTR_0081194c;
+extern char * PTR_00811aec;
+extern char * PTR_00811af0;
 extern AnonShape_GLOBAL_008489C4_F7BABFAC * PTR_008489c4;
 extern AnonShape_GLOBAL_008489CC_CDF8C3F4 * PTR_008489cc;
-extern AnonShape_GLOBAL_00848A18_1B9B27FE * PTR_00848a18;
-extern AnonShape_GLOBAL_00848A1C_B6E50991 * PTR_00848a1c;
-extern AnonShape_GLOBAL_00848A2C_50EB5CD1 * PTR_00848a2c;
-extern AnonShape_GLOBAL_00848A34_1A834A18 * PTR_00848a34;
 extern cMf32 * PTR_00853ff8;
 extern AnonShape_GLOBAL_00854EE8_A19F58CE * PTR_00854ee8;
 extern AnonShape_GLOBAL_00857168_D75747E9 * PTR_00857168;
@@ -2067,168 +2058,168 @@ extern pointer PTR_s_tlo_embws1_007bf3e8;
 extern pointer PTR_s_tlo_sha_ws_007bb1b4;
 extern pointer PTR_thunk_FUN_00673160_007d2d1c;
 extern undefined * PTR_thunk_FUN_00680270_007d3fa8;
-extern PausePanelTyVTable PausePanelTyVTable;
-extern PlayPanelTyVTable PlayPanelTyVTable;
-extern PrividerTyVTable PrividerTyVTable;
-extern ResearchPanelTyVTable ResearchPanelTyVTable;
-extern SAMPanelTyVTable SAMPanelTyVTable;
+extern PausePanelTyVTable st_global_0079AD2C; // image symbol: PausePanelTyVTable
+extern PlayPanelTyVTable st_global_0079AD48; // image symbol: PlayPanelTyVTable
+extern PrividerTyVTable st_global_0079C0C4; // image symbol: PrividerTyVTable
+extern ResearchPanelTyVTable st_global_0079AD64; // image symbol: ResearchPanelTyVTable
+extern SAMPanelTyVTable st_global_0079AD8C; // image symbol: SAMPanelTyVTable
 extern short SHORT_007c88d4;
 extern short SHORT_007ed570;
 extern short SHORT_007ed572;
 extern short SHORT_007ed574;
 extern short SHORT_007ed576;
-extern SIDTyVTable SIDTyVTable;
-extern STAlgaCVTable STAlgaCVTable;
-extern STAllPlayersCVTable STAllPlayersCVTable;
-extern STAppCVTable STAppCVTable;
-extern STArtiafactCVTable STArtiafactCVTable;
-extern STArtiafactCVTable_at_1D5 STArtiafactCVTable_at_1D5;
-extern STBHEShellCVTable STBHEShellCVTable;
-extern STBoatCVTable STBoatCVTable;
-extern STColl3CVTable STColl3CVTable;
-extern STColl3CVTable_at_1D5 STColl3CVTable_at_1D5;
-extern STContainerCVTable STContainerCVTable;
-extern STContainerCVTable_at_1D5 STContainerCVTable_at_1D5;
-extern STCrabCVTable STCrabCVTable;
-extern STDcResourcCVTable STDcResourcCVTable;
-extern STDestCVTable STDestCVTable;
-extern STExplosionVTable STExplosionVTable;
-extern STFishCVTable STFishCVTable;
-extern STGameObjCVTable STGameObjCVTable;
-extern STGroupBoatCVTable STGroupBoatCVTable;
-extern STJellyGunCVTable STJellyGunCVTable;
-extern STJellyManCVTable STJellyManCVTable;
-extern STJumpMineCVTable STJumpMineCVTable;
-extern STLBombCVTable STLBombCVTable;
-extern STLightCVTable STLightCVTable;
-extern STMBombCVTable STMBombCVTable;
-extern STManBasisCVTable STManBasisCVTable;
-extern STManRub3CVTable STManRub3CVTable;
-extern STManRuinCVTable STManRuinCVTable;
-extern STMineSetCVTable STMineSetCVTable;
-extern STOctopusCVTable STOctopusCVTable;
-extern STPlaySystemCVTable STPlaySystemCVTable;
-extern STRubbishCVTable STRubbishCVTable;
-extern STSatCVTable STSatCVTable;
-extern STSharkCVTable STSharkCVTable;
-extern STSprGameObjCVTable STSprGameObjCVTable;
-extern STTorpCVTable STTorpCVTable;
-extern STVolcanoCVTable STVolcanoCVTable;
-extern SettMapMTyVTable SettMapMTyVTable;
-extern SettMapTyVTable SettMapTyVTable;
-extern SoundManagerTyVTable SoundManagerTyVTable;
-extern SpriteClassTyVTable SpriteClassTyVTable;
-extern StartSystemTyVTable StartSystemTyVTable;
-extern SystemClassTyVTable SystemClassTyVTable;
-extern SystemWithNamedObjClassTyVTable SystemWithNamedObjClassTyVTable;
-extern TLOBaseTyVTable TLOBaseTyVTable;
-extern TLOBldMarkVTable TLOBldMarkVTable;
-extern TLOFakeTyVTable TLOFakeTyVTable;
-extern TrackbarClassTyVTable TrackbarClassTyVTable;
-extern TraksClassTyVTable TraksClassTyVTable;
-extern UpgPanelTyVTable UpgPanelTyVTable;
-extern VTable_00790508 VTable_00790508;
-extern VTable_00790700 VTable_00790700;
-extern VTable_00790708 VTable_00790708;
-extern VTable_00790790 VTable_00790790;
-extern VTable_00790C00 VTable_00790C00;
-extern VTable_007976C0 VTable_007976C0;
-extern VTable_00798C6C VTable_00798C6C;
-extern VTable_00798C70 VTable_00798C70;
-extern VTable_0079AC18 VTable_0079AC18;
-extern VTable_0079AC48 VTable_0079AC48;
-extern VTable_0079AE64 VTable_0079AE64;
-extern VTable_0079B398 VTable_0079B398;
-extern VTable_0079B524 VTable_0079B524;
-extern VTable_0079B688 VTable_0079B688;
-extern VTable_0079B8EC VTable_0079B8EC;
-extern VTable_0079BA50 VTable_0079BA50;
-extern VTable_0079BBB4 VTable_0079BBB4;
-extern VTable_0079BD18 VTable_0079BD18;
-extern VTable_0079BE7C VTable_0079BE7C;
-extern VTable_0079BFE0 VTable_0079BFE0;
-extern VTable_0079C018 VTable_0079C018;
-extern VTable_0079C578 VTable_0079C578;
-extern VTable_0079C8A0 VTable_0079C8A0;
-extern VTable_0079CB10 VTable_0079CB10;
-extern VTable_0079CC28 VTable_0079CC28;
-extern VTable_0079CD94 VTable_0079CD94;
-extern VTable_0079D05C VTable_0079D05C;
-extern VTable_0079D1D8 VTable_0079D1D8;
-extern VTable_0079D338 VTable_0079D338;
-extern VTable_0079D33C VTable_0079D33C;
-extern VTable_0079D49C VTable_0079D49C;
-extern VTable_0079D67C VTable_0079D67C;
-extern VTable_0079DAF0 VTable_0079DAF0;
-extern VTable_0079DB04 VTable_0079DB04;
-extern VTable_0079DB28 VTable_0079DB28;
-extern VTable_0079DB3C VTable_0079DB3C;
-extern VTable_0079DB78 VTable_0079DB78;
-extern VTable_0079DC3C VTable_0079DC3C;
-extern VTable_0079DC60 VTable_0079DC60;
-extern VTable_0079DC74 VTable_0079DC74;
-extern VTable_0079DCBC VTable_0079DCBC;
-extern VTable_0079DCF8 VTable_0079DCF8;
-extern VTable_0079DD1C VTable_0079DD1C;
-extern VTable_0079DD34 VTable_0079DD34;
-extern VTable_0079DD9C VTable_0079DD9C;
-extern VTable_0079DDB0 VTable_0079DDB0;
-extern VTable_0079DDEC VTable_0079DDEC;
-extern VTable_0079DE58 VTable_0079DE58;
-extern VTable_0079DE7C VTable_0079DE7C;
-extern VTable_0079DE90 VTable_0079DE90;
-extern VTable_0079DED8 VTable_0079DED8;
-extern VTable_0079E1AC VTable_0079E1AC;
-extern VTable_0079E1B0 VTable_0079E1B0;
-extern VTable_0079E284 VTable_0079E284;
-extern VTable_0079E294 VTable_0079E294;
-extern VTable_0079E298 VTable_0079E298;
-extern VTable_0079E2B4 VTable_0079E2B4;
-extern VTable_0079E2C0 VTable_0079E2C0;
-extern VTable_0079E2C8 VTable_0079E2C8;
-extern VTable_0079E360 VTable_0079E360;
-extern VTable_007A1108 VTable_007A1108;
-extern VTable_007A1128 VTable_007A1128;
-extern VTable_007A1148 VTable_007A1148;
-extern VTable_007A11A0 VTable_007A11A0;
-extern VTable_007A11C8 VTable_007A11C8;
-extern VTable_007A1378 VTable_007A1378;
-extern VTable_007A1390 VTable_007A1390;
-extern VTable_007A13D0 VTable_007A13D0;
-extern VTable_007A1488 VTable_007A1488;
-extern VTable_007A14B0 VTable_007A14B0;
-extern VTable_007A14C8 VTable_007A14C8;
-extern VTable_007A1510 VTable_007A1510;
-extern VTable_007A1550 VTable_007A1550;
-extern VTable_007A1568 VTable_007A1568;
-extern VTable_007A1590 VTable_007A1590;
-extern VTable_007A15A8 VTable_007A15A8;
-extern VTable_007A15E8 VTable_007A15E8;
-extern VTable_007A1740 VTable_007A1740;
-extern VTable_007A1768 VTable_007A1768;
-extern VTable_007A1780 VTable_007A1780;
-extern VTable_007A17C8 VTable_007A17C8;
-extern VTable_007A1808 VTable_007A1808;
-extern VTable_007A1820 VTable_007A1820;
-extern VTable_007A1868 VTable_007A1868;
-extern VTable_007A18C8 VTable_007A18C8;
-extern VTable_007A18F0 VTable_007A18F0;
-extern VTable_007A1908 VTable_007A1908;
-extern VTable_007A1950 VTable_007A1950;
-extern VTable_007A1990 VTable_007A1990;
-extern VTable_007A19A8 VTable_007A19A8;
-extern VTable_007A19F0 VTable_007A19F0;
-extern VTable_007A1C08 VTable_007A1C08;
-extern VTable_007A1C18 VTable_007A1C18;
-extern VTable_007A1C60 VTable_007A1C60;
-extern VTable_007A1CB8 VTable_007A1CB8;
-extern VTable_007A1CC8 VTable_007A1CC8;
-extern VTable_007A1D10 VTable_007A1D10;
-extern VTable_007A1D68 VTable_007A1D68;
-extern VTable_007A1D88 VTable_007A1D88;
-extern VisibleClassTyVTable VisibleClassTyVTable;
-extern VisibleVTable VisibleVTable;
-extern WaitTyVTable WaitTyVTable;
+extern SIDTyVTable st_global_0079C1AC; // image symbol: SIDTyVTable
+extern STAlgaCVTable st_global_0079B188; // image symbol: STAlgaCVTable
+extern STAllPlayersCVTable st_global_0079059C; // image symbol: STAllPlayersCVTable
+extern STAppCVTable st_global_0079B0A8; // image symbol: STAppCVTable
+extern STArtiafactCVTable st_global_0079C260; // image symbol: STArtiafactCVTable
+extern STArtiafactCVTable_at_1D5 st_global_0079C25C; // image symbol: STArtiafactCVTable_at_1D5
+extern STBHEShellCVTable st_global_0079C584; // image symbol: STBHEShellCVTable
+extern STBoatCVTable st_global_007905A0; // image symbol: STBoatCVTable
+extern STColl3CVTable st_global_0079C5AC; // image symbol: STColl3CVTable
+extern STColl3CVTable_at_1D5 st_global_0079C5A8; // image symbol: STColl3CVTable_at_1D5
+extern STContainerCVTable st_global_0079C714; // image symbol: STContainerCVTable
+extern STContainerCVTable_at_1D5 st_global_0079C710; // image symbol: STContainerCVTable_at_1D5
+extern STCrabCVTable st_global_0079B238; // image symbol: STCrabCVTable
+extern STDcResourcCVTable st_global_0079B528; // image symbol: STDcResourcCVTable
+extern STDestCVTable st_global_0079C9B0; // image symbol: STDestCVTable
+extern STExplosionVTable st_global_0079CB14; // image symbol: STExplosionVTable
+extern STFishCVTable st_global_0079B3C4; // image symbol: STFishCVTable
+extern STGameObjCVTable st_global_007900A0; // image symbol: STGameObjCVTable
+extern STGroupBoatCVTable st_global_00790728; // image symbol: STGroupBoatCVTable
+extern STJellyGunCVTable st_global_0079B78C; // image symbol: STJellyGunCVTable
+extern STJellyManCVTable st_global_0079B68C; // image symbol: STJellyManCVTable
+extern STJumpMineCVTable st_global_0079CED0; // image symbol: STJumpMineCVTable
+extern STLBombCVTable st_global_0079B8F0; // image symbol: STLBombCVTable
+extern STLightCVTable st_global_0079CED4; // image symbol: STLightCVTable
+extern STMBombCVTable st_global_0079BA54; // image symbol: STMBombCVTable
+extern STManBasisCVTable st_global_0079C580; // image symbol: STManBasisCVTable
+extern STManRub3CVTable st_global_0079D084; // image symbol: STManRub3CVTable
+extern STManRuinCVTable st_global_0079D19C; // image symbol: STManRuinCVTable
+extern STMineSetCVTable st_global_0079CEFC; // image symbol: STMineSetCVTable
+extern STOctopusCVTable st_global_0079BBB8; // image symbol: STOctopusCVTable
+extern STPlaySystemCVTable st_global_0079AE38; // image symbol: STPlaySystemCVTable
+extern STRubbishCVTable st_global_0079D098; // image symbol: STRubbishCVTable
+extern STSatCVTable st_global_0079BD1C; // image symbol: STSatCVTable
+extern STSharkCVTable st_global_0079BE80; // image symbol: STSharkCVTable
+extern STSprGameObjCVTable st_global_0079C3EC; // image symbol: STSprGameObjCVTable
+extern STTorpCVTable st_global_0079D4AC; // image symbol: STTorpCVTable
+extern STVolcanoCVTable st_global_0079D610; // image symbol: STVolcanoCVTable
+extern SettMapMTyVTable st_global_0079C124; // image symbol: SettMapMTyVTable
+extern SettMapTyVTable st_global_0079C160; // image symbol: SettMapTyVTable
+extern SoundManagerTyVTable st_global_0079B024; // image symbol: SoundManagerTyVTable
+extern SpriteClassTyVTable st_global_0079E21C; // image symbol: SpriteClassTyVTable
+extern StartSystemTyVTable st_global_0079C1E8; // image symbol: StartSystemTyVTable
+extern SystemClassTyVTable st_global_0079E188; // image symbol: SystemClassTyVTable
+extern SystemWithNamedObjClassTyVTable st_global_0079E1B4; // image symbol: SystemWithNamedObjClassTyVTable
+extern TLOBaseTyVTable st_global_00790AA0; // image symbol: TLOBaseTyVTable
+extern TLOBldMarkVTable st_global_00790C04; // image symbol: TLOBldMarkVTable
+extern TLOFakeTyVTable st_global_00797560; // image symbol: TLOFakeTyVTable
+extern TrackbarClassTyVTable st_global_0079E2CC; // image symbol: TrackbarClassTyVTable
+extern TraksClassTyVTable st_global_0079AEC0; // image symbol: TraksClassTyVTable
+extern UpgPanelTyVTable st_global_0079AE90; // image symbol: UpgPanelTyVTable
+extern VTable_00790508 st_global_00790508; // image symbol: VTable_00790508
+extern VTable_00790700 st_global_00790700; // image symbol: VTable_00790700
+extern VTable_00790708 st_global_00790708; // image symbol: VTable_00790708
+extern VTable_00790790 st_global_00790790; // image symbol: VTable_00790790
+extern VTable_00790C00 st_global_00790C00; // image symbol: VTable_00790C00
+extern VTable_007976C0 st_global_007976C0; // image symbol: VTable_007976C0
+extern VTable_00798C6C st_global_00798C6C; // image symbol: VTable_00798C6C
+extern VTable_00798C70 st_global_00798C70; // image symbol: VTable_00798C70
+extern VTable_0079AC18 st_global_0079AC18; // image symbol: VTable_0079AC18
+extern VTable_0079AC48 st_global_0079AC48; // image symbol: VTable_0079AC48
+extern VTable_0079AE64 st_global_0079AE64; // image symbol: VTable_0079AE64
+extern VTable_0079B398 st_global_0079B398; // image symbol: VTable_0079B398
+extern VTable_0079B524 st_global_0079B524; // image symbol: VTable_0079B524
+extern VTable_0079B688 st_global_0079B688; // image symbol: VTable_0079B688
+extern VTable_0079B8EC st_global_0079B8EC; // image symbol: VTable_0079B8EC
+extern VTable_0079BA50 st_global_0079BA50; // image symbol: VTable_0079BA50
+extern VTable_0079BBB4 st_global_0079BBB4; // image symbol: VTable_0079BBB4
+extern VTable_0079BD18 st_global_0079BD18; // image symbol: VTable_0079BD18
+extern VTable_0079BE7C st_global_0079BE7C; // image symbol: VTable_0079BE7C
+extern VTable_0079BFE0 st_global_0079BFE0; // image symbol: VTable_0079BFE0
+extern VTable_0079C018 st_global_0079C018; // image symbol: VTable_0079C018
+extern VTable_0079C578 st_global_0079C578; // image symbol: VTable_0079C578
+extern VTable_0079C8A0 st_global_0079C8A0; // image symbol: VTable_0079C8A0
+extern VTable_0079CB10 st_global_0079CB10; // image symbol: VTable_0079CB10
+extern VTable_0079CC28 st_global_0079CC28; // image symbol: VTable_0079CC28
+extern VTable_0079CD94 st_global_0079CD94; // image symbol: VTable_0079CD94
+extern VTable_0079D05C st_global_0079D05C; // image symbol: VTable_0079D05C
+extern VTable_0079D1D8 st_global_0079D1D8; // image symbol: VTable_0079D1D8
+extern VTable_0079D338 st_global_0079D338; // image symbol: VTable_0079D338
+extern VTable_0079D33C st_global_0079D33C; // image symbol: VTable_0079D33C
+extern VTable_0079D49C st_global_0079D49C; // image symbol: VTable_0079D49C
+extern VTable_0079D67C st_global_0079D67C; // image symbol: VTable_0079D67C
+extern VTable_0079DAF0 st_global_0079DAF0; // image symbol: VTable_0079DAF0
+extern VTable_0079DB04 st_global_0079DB04; // image symbol: VTable_0079DB04
+extern VTable_0079DB28 st_global_0079DB28; // image symbol: VTable_0079DB28
+extern VTable_0079DB3C st_global_0079DB3C; // image symbol: VTable_0079DB3C
+extern VTable_0079DB78 st_global_0079DB78; // image symbol: VTable_0079DB78
+extern VTable_0079DC3C st_global_0079DC3C; // image symbol: VTable_0079DC3C
+extern VTable_0079DC60 st_global_0079DC60; // image symbol: VTable_0079DC60
+extern VTable_0079DC74 st_global_0079DC74; // image symbol: VTable_0079DC74
+extern VTable_0079DCBC st_global_0079DCBC; // image symbol: VTable_0079DCBC
+extern VTable_0079DCF8 st_global_0079DCF8; // image symbol: VTable_0079DCF8
+extern VTable_0079DD1C st_global_0079DD1C; // image symbol: VTable_0079DD1C
+extern VTable_0079DD34 st_global_0079DD34; // image symbol: VTable_0079DD34
+extern VTable_0079DD9C st_global_0079DD9C; // image symbol: VTable_0079DD9C
+extern VTable_0079DDB0 st_global_0079DDB0; // image symbol: VTable_0079DDB0
+extern VTable_0079DDEC st_global_0079DDEC; // image symbol: VTable_0079DDEC
+extern VTable_0079DE58 st_global_0079DE58; // image symbol: VTable_0079DE58
+extern VTable_0079DE7C st_global_0079DE7C; // image symbol: VTable_0079DE7C
+extern VTable_0079DE90 st_global_0079DE90; // image symbol: VTable_0079DE90
+extern VTable_0079DED8 st_global_0079DED8; // image symbol: VTable_0079DED8
+extern VTable_0079E1AC st_global_0079E1AC; // image symbol: VTable_0079E1AC
+extern VTable_0079E1B0 st_global_0079E1B0; // image symbol: VTable_0079E1B0
+extern VTable_0079E284 st_global_0079E284; // image symbol: VTable_0079E284
+extern VTable_0079E294 st_global_0079E294; // image symbol: VTable_0079E294
+extern VTable_0079E298 st_global_0079E298; // image symbol: VTable_0079E298
+extern VTable_0079E2B4 st_global_0079E2B4; // image symbol: VTable_0079E2B4
+extern VTable_0079E2C0 st_global_0079E2C0; // image symbol: VTable_0079E2C0
+extern VTable_0079E2C8 st_global_0079E2C8; // image symbol: VTable_0079E2C8
+extern VTable_0079E360 st_global_0079E360; // image symbol: VTable_0079E360
+extern VTable_007A1108 st_global_007A1108; // image symbol: VTable_007A1108
+extern VTable_007A1128 st_global_007A1128; // image symbol: VTable_007A1128
+extern VTable_007A1148 st_global_007A1148; // image symbol: VTable_007A1148
+extern VTable_007A11A0 st_global_007A11A0; // image symbol: VTable_007A11A0
+extern VTable_007A11C8 st_global_007A11C8; // image symbol: VTable_007A11C8
+extern VTable_007A1378 st_global_007A1378; // image symbol: VTable_007A1378
+extern VTable_007A1390 st_global_007A1390; // image symbol: VTable_007A1390
+extern VTable_007A13D0 st_global_007A13D0; // image symbol: VTable_007A13D0
+extern VTable_007A1488 st_global_007A1488; // image symbol: VTable_007A1488
+extern VTable_007A14B0 st_global_007A14B0; // image symbol: VTable_007A14B0
+extern VTable_007A14C8 st_global_007A14C8; // image symbol: VTable_007A14C8
+extern VTable_007A1510 st_global_007A1510; // image symbol: VTable_007A1510
+extern VTable_007A1550 st_global_007A1550; // image symbol: VTable_007A1550
+extern VTable_007A1568 st_global_007A1568; // image symbol: VTable_007A1568
+extern VTable_007A1590 st_global_007A1590; // image symbol: VTable_007A1590
+extern VTable_007A15A8 st_global_007A15A8; // image symbol: VTable_007A15A8
+extern VTable_007A15E8 st_global_007A15E8; // image symbol: VTable_007A15E8
+extern VTable_007A1740 st_global_007A1740; // image symbol: VTable_007A1740
+extern VTable_007A1768 st_global_007A1768; // image symbol: VTable_007A1768
+extern VTable_007A1780 st_global_007A1780; // image symbol: VTable_007A1780
+extern VTable_007A17C8 st_global_007A17C8; // image symbol: VTable_007A17C8
+extern VTable_007A1808 st_global_007A1808; // image symbol: VTable_007A1808
+extern VTable_007A1820 st_global_007A1820; // image symbol: VTable_007A1820
+extern VTable_007A1868 st_global_007A1868; // image symbol: VTable_007A1868
+extern VTable_007A18C8 st_global_007A18C8; // image symbol: VTable_007A18C8
+extern VTable_007A18F0 st_global_007A18F0; // image symbol: VTable_007A18F0
+extern VTable_007A1908 st_global_007A1908; // image symbol: VTable_007A1908
+extern VTable_007A1950 st_global_007A1950; // image symbol: VTable_007A1950
+extern VTable_007A1990 st_global_007A1990; // image symbol: VTable_007A1990
+extern VTable_007A19A8 st_global_007A19A8; // image symbol: VTable_007A19A8
+extern VTable_007A19F0 st_global_007A19F0; // image symbol: VTable_007A19F0
+extern VTable_007A1C08 st_global_007A1C08; // image symbol: VTable_007A1C08
+extern VTable_007A1C18 st_global_007A1C18; // image symbol: VTable_007A1C18
+extern VTable_007A1C60 st_global_007A1C60; // image symbol: VTable_007A1C60
+extern VTable_007A1CB8 st_global_007A1CB8; // image symbol: VTable_007A1CB8
+extern VTable_007A1CC8 st_global_007A1CC8; // image symbol: VTable_007A1CC8
+extern VTable_007A1D10 st_global_007A1D10; // image symbol: VTable_007A1D10
+extern VTable_007A1D68 st_global_007A1D68; // image symbol: VTable_007A1D68
+extern VTable_007A1D88 st_global_007A1D88; // image symbol: VTable_007A1D88
+extern VisibleClassTyVTable st_global_0079AEEC; // image symbol: VisibleClassTyVTable
+extern VisibleVTable st_global_0079C01C; // image symbol: VisibleVTable
+extern WaitTyVTable st_global_0079C24C; // image symbol: WaitTyVTable
 extern undefined4 _DAT_0000000c;
 extern undefined4 _DAT_007901c0;
 extern undefined4 _DAT_007901e0;
@@ -2614,7 +2605,7 @@ extern undefined4 _DAT_00858e28;
 extern STAllPlayersC * g_allPlayers_007FA174;
 extern AnonShape_006C3FC0_72DDFA27 * g_anonShape_006C3FC0_72DDFA27_008075A0;
 extern AnonShape_GLOBAL_0080759C_9638EF10 * g_anonShape_GLOBAL_0080759C_9638EF10_00854EB8;
-extern AppClassTy * g_appClass_00806728;
+extern AppClassTy * g_app_00806728;
 extern DArrayTy * g_array_007FA130;
 extern DArrayTy * g_array_007FA150;
 extern DArrayTy * g_array_007FA154;
@@ -2634,6 +2625,9 @@ extern DArrayTy * g_array_00848A30;
 extern DArrayTy * g_array_00848A38;
 extern BaseSystemC * g_baseSystem_00811638;
 extern BehPanelTy * g_behPanel_00801678;
+extern ProdPanelTy * g_bldBoatPanel_0080167C;
+extern ProdPanelTy * g_bldLabPanel_00801680;
+extern ProdPanelTy * g_bldObjPanel_00801684;
 extern undefined4 g_bulkInitializedRecords_008087C7;
 extern cLoadingTy * g_cLoading_00802A58;
 extern cMf32 * g_cMf32_00806754;
@@ -2649,7 +2643,14 @@ extern InternalExceptionFrame * g_currentExceptionFrame;
 extern CursorClassTy * g_cursorClass_00802A30;
 extern DArrayTy * g_dArray_0080C4C7;
 extern DArrayTy * g_dArray_0080C4CB;
+extern DArrayTy * g_dArray_0080C4FA;
 extern DArrayTy * g_dArray_008489D8;
+extern DArrayTy * g_dArray_008489DC;
+extern DArrayTy * g_dArray_00848A18;
+extern DArrayTy * g_dArray_00848A1C;
+extern DArrayTy * g_dArray_00848A2C;
+extern DArrayTy * g_dArray_00848A34;
+extern DArrayTy * g_dArray_00848A3C;
 extern DDXContext * g_dDXContext_0080759C;
 extern DDXContext_008075A8 * g_ddxContext_008075A8;
 extern DebugSystemC * g_debugSystem_00811644;
@@ -2660,6 +2661,8 @@ extern undefined4 g_exceptionSourceLine;
 extern FSGSTy * g_fSGS_0081174C;
 extern STFishC * g_fish_00811984;
 extern FrmPanelTy * g_frmPanel_0080168C;
+extern HINSTANCE g_hINSTANCE_00807618;
+extern HINSTANCE__ * g_hINSTANCE_00857500;
 extern HINSTANCE g_hInstance_00856D70;
 extern HANDLE g_hThread_008568C0;
 extern HWND g_hWnd_00806748;
@@ -2678,7 +2681,6 @@ extern IntercomPanelTy * g_intercomPanel_0080169C;
 extern STManBasisC * g_manBasis_00811784;
 extern STManRub3C * g_manRub3_008117A4;
 extern STManRuinC * g_manRuin_008117B0;
-extern HINSTANCE g_module_00807618;
 extern MoneyTy * g_money_008016D4;
 extern int g_nWidth_00806730;
 extern OptPanelTy * g_optPanel_008016DC;
@@ -2693,10 +2695,7 @@ extern PlayPanelTy * g_playPanel_008016E4;
 extern STPlaySystemC * g_playSystem_00802A38;
 extern undefined4 g_playerRelationMatrix;
 extern PopUpTy * g_popUp_008016D8;
-extern ProdPanelTy * g_prodPanel_0080167C;
-extern ProdPanelTy * g_prodPanel_00801680;
-extern ProdPanelTy * g_prodPanel_00801684;
-extern ProdPanelTy * g_prodPanel_008016E8;
+extern ProdPanelTy * g_researchPanel_008016E8;
 extern uint g_resourceStringBufferOffset;
 extern SAMPanelTy * g_sAMPanel_008016EC;
 extern ST3DSMAPContext * g_sT3DSMAPContext_00807598;
@@ -2705,6 +2704,7 @@ extern SNDContext * g_sndContext_0080765C;
 extern undefined4 g_sound;
 extern StartSystemTy * g_startSystem_0081176C;
 extern TLOBldMark * g_tLOBldMark_007FB2AC;
+extern tagBITMAPINFO * g_tagBITMAPINFO_00811758;
 extern tagBITMAPINFO * g_tagBITMAPINFO_00854F74;
 extern TradePanelTy * g_tradePanel_00802A44;
 extern TraksClassTy * g_traksClass_00802A7C;

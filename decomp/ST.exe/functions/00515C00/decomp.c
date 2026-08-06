@@ -43,10 +43,10 @@ void __thiscall HelpPanelTy::DrawDescription(HelpPanelTy *this,int *param_1,UINT
     uVar8 = 3;
     iVar7 = -1;
     iVar3 = -1;
-    resourceString = (uint *)LoadResourceString(0x55f5,g_module_00807618);
+    resourceString = (uint *)LoadResourceString(0x55f5,g_hINSTANCE_00807618);
     ccFntTy::WrStr(this_00->field_01E0,resourceString,iVar3,iVar7,uVar8);
     *param_1 = *param_1 + 0xf;
-    pcVar4 = LoadResourceString(param_2,g_module_00807618);
+    pcVar4 = LoadResourceString(param_2,g_hINSTANCE_00807618);
     uVar8 = 0xffffffff;
     do {
       pcVar6 = pcVar4;

@@ -2,7 +2,7 @@
 // Generated translation unit: source/recovered/by_owner/DumpClassC.cpp
 
 // 00495920 DumpClassC::DumpClassC
-#line 1 "decomp/ST.exe/functions/00495920/decomp.c"
+#line 4 "decomp/ST.exe/functions/00495920/decomp.c"
 /* [STConstructorApplier] Recovered constructor candidate.
    VTable: 00790710 (store 00495928)
    Evidence: final_vptr=00790710; returns_this=true; calls_before=1; field_writes_after=0;
@@ -15,7 +15,7 @@ DumpClassC * __thiscall st::fn_00495920(DumpClassC *this)
 
 {
   st::fn_006E5FB0(this);
-  this->vtable = &DumpClassCVTable;
+  this->vtable = &st_global_00790710;
   return this;
 }
 

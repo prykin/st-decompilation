@@ -207,7 +207,7 @@ int __thiscall OptPanelTy::GetMessage(OptPanelTy *this,STMessage *message)
                 else {
                   pcVar19 = nullptr;
                 }
-                Library::DKW::TBL::FUN_006b6020(&this_00->field_01F1->flags,0,pcVar19);
+                Library::DKW::TBL::FUN_006b6020(this_00->field_01F1,0,pcVar19);
                 uVar12 = this_00->field_01B5[1];
                 this_00->field_0028 = 0x33;
                 *(DArrayTy **)&this_00->field_0x2c = this_00->field_01F1;
@@ -278,7 +278,7 @@ int __thiscall OptPanelTy::GetMessage(OptPanelTy *this,STMessage *message)
               iVar32 = -1;
               iVar29 = 0;
               if (iVar10 == 0) {
-                puVar26 = (uint *)LoadResourceString(0x2711,g_module_00807618);
+                puVar26 = (uint *)LoadResourceString(0x2711,g_hINSTANCE_00807618);
               }
               else {
                 puVar26 = &DAT_0080f33a;

@@ -2,7 +2,7 @@
 // Generated translation unit: source/original/nick/to_basis.cpp
 
 // 005F10D0 STManBasisC::GetMessage
-#line 1 "decomp/ST.exe/functions/005F10D0/decomp.c"
+#line 4 "decomp/ST.exe/functions/005F10D0/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\nick\to_basis.cpp
    STManBasisC::GetMessage

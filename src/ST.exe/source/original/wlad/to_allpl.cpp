@@ -2,7 +2,7 @@
 // Generated translation unit: source/original/wlad/to_allpl.cpp
 
 // 0042AB00 STAllPlayersC::GetGObjFromZone
-#line 1 "decomp/ST.exe/functions/0042AB00/decomp.c"
+#line 4 "decomp/ST.exe/functions/0042AB00/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\wlad\to_allpl.cpp
    STAllPlayersC::GetGObjFromZone
@@ -44,7 +44,7 @@ st::fn_0042AB00
 }
 
 // 0042ABE0 STAllPlayersC::GetGObjFromZone2
-#line 1 "decomp/ST.exe/functions/0042ABE0/decomp.c"
+#line 4 "decomp/ST.exe/functions/0042ABE0/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\wlad\to_allpl.cpp
    STAllPlayersC::GetGObjFromZone2
@@ -256,7 +256,7 @@ joined_r0x0042b01c:
 }
 
 // 0042B1F0 STAllPlayersC::GetGObjFromBox
-#line 1 "decomp/ST.exe/functions/0042B1F0/decomp.c"
+#line 4 "decomp/ST.exe/functions/0042B1F0/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\wlad\to_allpl.cpp
    STAllPlayersC::GetGObjFromBox
@@ -419,7 +419,7 @@ LAB_0042b469:
 }
 
 // 0042B620 STAllPlayersC::GetObjPtr
-#line 1 "decomp/ST.exe/functions/0042B620/decomp.c"
+#line 4 "decomp/ST.exe/functions/0042B620/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\wlad\to_allpl.cpp
    STAllPlayersC::GetObjPtr
@@ -547,7 +547,7 @@ st::fn_0042B620
 }
 
 // 0042B7D0 STAllPlayersC::AddObjsToGroup
-#line 1 "decomp/ST.exe/functions/0042B7D0/decomp.c"
+#line 4 "decomp/ST.exe/functions/0042B7D0/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\wlad\to_allpl.cpp
    STAllPlayersC::AddObjsToGroup
@@ -688,7 +688,7 @@ st::fn_0042B7D0
 }
 
 // 0042BB30 STAllPlayersC::AddObjToTmp
-#line 1 "decomp/ST.exe/functions/0042BB30/decomp.c"
+#line 4 "decomp/ST.exe/functions/0042BB30/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\wlad\to_allpl.cpp
    STAllPlayersC::AddObjToTmp
@@ -812,7 +812,7 @@ LAB_0042bc00:
 }
 
 // 0042BEA0 STAllPlayersC::AddObjToTmp2
-#line 1 "decomp/ST.exe/functions/0042BEA0/decomp.c"
+#line 4 "decomp/ST.exe/functions/0042BEA0/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\wlad\to_allpl.cpp
    STAllPlayersC::AddObjToTmp2 */
@@ -939,7 +939,7 @@ cf_common_exit_0042C072:
 }
 
 // 0042C1C0 STAllPlayersC::AddObjsToTmp
-#line 1 "decomp/ST.exe/functions/0042C1C0/decomp.c"
+#line 4 "decomp/ST.exe/functions/0042C1C0/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\wlad\to_allpl.cpp
    STAllPlayersC::AddObjsToTmp */
@@ -997,7 +997,7 @@ st::fn_0042C1C0
 }
 
 // 0042C300 FUN_0042c300
-#line 1 "decomp/ST.exe/functions/0042C300/decomp.c"
+#line 4 "decomp/ST.exe/functions/0042C300/decomp.c"
 /* [STSourceProvenanceApplier begin]
    Recovered source file: E:\__titans\wlad\to_allpl.cpp
    Diagnostic line evidence: 655 (metadata/report site, not the function definition)
@@ -1088,7 +1088,7 @@ LAB_0042c3a0:
 }
 
 // 0042C4B0 STAllPlayersC::DelObjsFromTmp
-#line 1 "decomp/ST.exe/functions/0042C4B0/decomp.c"
+#line 4 "decomp/ST.exe/functions/0042C4B0/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\wlad\to_allpl.cpp
    STAllPlayersC::DelObjsFromTmp */
@@ -1146,7 +1146,7 @@ st::fn_0042C4B0
 }
 
 // 0042C5F0 STAllPlayersC::DelObjFromTmps
-#line 1 "decomp/ST.exe/functions/0042C5F0/decomp.c"
+#line 4 "decomp/ST.exe/functions/0042C5F0/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\wlad\to_allpl.cpp
    STAllPlayersC::DelObjFromTmps
@@ -1415,7 +1415,7 @@ st::fn_0042C5F0
 }
 
 // 0042CDE0 STAllPlayersC::PushTV
-#line 1 "decomp/ST.exe/functions/0042CDE0/decomp.c"
+#line 4 "decomp/ST.exe/functions/0042CDE0/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\wlad\to_allpl.cpp
    STAllPlayersC::PushTV
@@ -1469,7 +1469,7 @@ undefined4 st::fn_0042CDE0(char param_1,int param_2,int param_3,char param_4,sho
 }
 
 // 0042CEF0 STAllPlayersC::DelObjFromSaveTmps
-#line 1 "decomp/ST.exe/functions/0042CEF0/decomp.c"
+#line 4 "decomp/ST.exe/functions/0042CEF0/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\wlad\to_allpl.cpp
    STAllPlayersC::DelObjFromSaveTmps
@@ -1591,7 +1591,7 @@ LAB_0042d011:
 }
 
 // 0042D190 STAllPlayersC::ResetActivityFromObjs
-#line 1 "decomp/ST.exe/functions/0042D190/decomp.c"
+#line 4 "decomp/ST.exe/functions/0042D190/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\wlad\to_allpl.cpp
    STAllPlayersC::ResetActivityFromObjs
@@ -1703,7 +1703,7 @@ LAB_0042d2c3:
 }
 
 // 0042D370 STAllPlayersC::SetActivityToObjs
-#line 1 "decomp/ST.exe/functions/0042D370/decomp.c"
+#line 4 "decomp/ST.exe/functions/0042D370/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\wlad\to_allpl.cpp
    STAllPlayersC::SetActivityToObjs */
@@ -1785,7 +1785,7 @@ LAB_0042d41b:
 }
 
 // 0042D4F0 STAllPlayersC::ResetActivityFromTmp
-#line 1 "decomp/ST.exe/functions/0042D4F0/decomp.c"
+#line 4 "decomp/ST.exe/functions/0042D4F0/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\wlad\to_allpl.cpp
    STAllPlayersC::ResetActivityFromTmp
@@ -1868,7 +1868,7 @@ LAB_0042d5ff:
 }
 
 // 0042D6B0 STAllPlayersC::RemoveActiveTV
-#line 1 "decomp/ST.exe/functions/0042D6B0/decomp.c"
+#line 4 "decomp/ST.exe/functions/0042D6B0/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\wlad\to_allpl.cpp
    STAllPlayersC::RemoveActiveTV */
@@ -1909,7 +1909,7 @@ void st::fn_0042D6B0(char param_1)
 }
 
 // 0042D980 STAllPlayersC::GetActiveCenter
-#line 1 "decomp/ST.exe/functions/0042D980/decomp.c"
+#line 4 "decomp/ST.exe/functions/0042D980/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\wlad\to_allpl.cpp
    STAllPlayersC::GetActiveCenter */
@@ -2154,7 +2154,7 @@ joined_r0x0042dcbd:
 }
 
 // 0042DFE0 STAllPlayersC::PrepareToCmd
-#line 1 "decomp/ST.exe/functions/0042DFE0/decomp.c"
+#line 4 "decomp/ST.exe/functions/0042DFE0/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\wlad\to_allpl.cpp
    STAllPlayersC::PrepareToCmd */
@@ -2243,7 +2243,7 @@ uint __thiscall st::fn_0042DFE0(STAllPlayersC *this,undefined4 *param_1,uint *pa
 }
 
 // 0042E210 STAllPlayersC::RegisterObject
-#line 1 "decomp/ST.exe/functions/0042E210/decomp.c"
+#line 4 "decomp/ST.exe/functions/0042E210/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\wlad\to_allpl.cpp
    STAllPlayersC::RegisterObject
@@ -2701,7 +2701,7 @@ LAB_0042ebf6:
 }
 
 // 0042EFD0 STAllPlayersC::RegisterGroup
-#line 1 "decomp/ST.exe/functions/0042EFD0/decomp.c"
+#line 4 "decomp/ST.exe/functions/0042EFD0/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\wlad\to_allpl.cpp
    STAllPlayersC::RegisterGroup
@@ -2753,7 +2753,7 @@ st::fn_0042EFD0(STAllPlayersC *this,char param_1,ushort param_2,int param_3)
 }
 
 // 0042F140 STAllPlayersC::UnRegisterGroup
-#line 1 "decomp/ST.exe/functions/0042F140/decomp.c"
+#line 4 "decomp/ST.exe/functions/0042F140/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\wlad\to_allpl.cpp
    STAllPlayersC::UnRegisterGroup
@@ -2806,7 +2806,7 @@ st::fn_0042F140(STAllPlayersC *this,char param_1,ushort param_2,int param_3)
 }
 
 // 0042F2B0 STAllPlayersC::UnRegisterObject
-#line 1 "decomp/ST.exe/functions/0042F2B0/decomp.c"
+#line 4 "decomp/ST.exe/functions/0042F2B0/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\wlad\to_allpl.cpp
    STAllPlayersC::UnRegisterObject
@@ -3295,7 +3295,7 @@ LAB_00430018:
 }
 
 // 00430470 STAllPlayersC::RegisterTorpedo
-#line 1 "decomp/ST.exe/functions/00430470/decomp.c"
+#line 4 "decomp/ST.exe/functions/00430470/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\wlad\to_allpl.cpp
    STAllPlayersC::RegisterTorpedo */
@@ -3360,7 +3360,7 @@ undefined4 __thiscall st::fn_00430470(STAllPlayersC *this,int param_1,short para
 }
 
 // 00430620 STAllPlayersC::IsTorpLive
-#line 1 "decomp/ST.exe/functions/00430620/decomp.c"
+#line 4 "decomp/ST.exe/functions/00430620/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\wlad\to_allpl.cpp
    STAllPlayersC::IsTorpLive */
@@ -3409,7 +3409,7 @@ undefined4 __thiscall st::fn_00430620(STAllPlayersC *this,short param_1,int para
 }
 
 // 00430750 FUN_00430750
-#line 1 "decomp/ST.exe/functions/00430750/decomp.c"
+#line 4 "decomp/ST.exe/functions/00430750/decomp.c"
 /* [STSwitchEnumApplier] Switch target param_1 uses
    /SubmarineTitans/Recovered/Enums/Global_sub_00430750_param_1Enum. Cases:
    CASE_1=1;CASE_2=2;CASE_3=3;CASE_4=4;CASE_5=5;CASE_6=6;CASE_7=7;CASE_8=8;CASE_9=9;CASE_A=10;CASE_B=11;CASE_C=12;CASE_D=13;CASE_E=14;CASE_F=15;CASE_10=16;CASE_11=17;CASE_12=18;CASE_13=19;CASE_14=20;CASE_15=21;CASE_16=22;CASE_17=23;CASE_18=24;CASE_19=25;CASE_1A=26;CASE_1B=27;CASE_1C=28;CASE_1D=29;CASE_1E=30;CASE_1F=31;CASE_20=32;CASE_21=33;CASE_22=34;CASE_23=35;CASE_24=36;CASE_25=37;CASE_26=38;CASE_27=39;CASE_28=40;CASE_96=150;CASE_97=151;CASE_98=152;CASE_99=153;CASE_9A=154;CASE_9B=155;CASE_9C=156;CASE_9D=157;CASE_9E=158;CASE_9F=159;CASE_A0=160;CASE_A1=161;CASE_A3=163;CASE_A4=164;CASE_A5=165;CASE_AB=171;CASE_AC=172;CASE_AD=173;CASE_AE=174;CASE_B4=180;CASE_B6=182;CASE_B7=183;CASE_B8=184;CASE_B9=185;CASE_BA=186;CASE_BF=191
@@ -3509,7 +3509,7 @@ undefined1 st::fn_00430750(Global_sub_00430750_param_1Enum param_1)
 }
 
 // 00430960 STAllPlayersC::UnRegisterTorpedo
-#line 1 "decomp/ST.exe/functions/00430960/decomp.c"
+#line 4 "decomp/ST.exe/functions/00430960/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\wlad\to_allpl.cpp
    STAllPlayersC::UnRegisterTorpedo */
@@ -3553,7 +3553,7 @@ st::fn_00430960(STAllPlayersC *this,short param_1,int param_2)
 }
 
 // 00430A90 STAllPlayersC::GetMessage
-#line 1 "decomp/ST.exe/functions/00430A90/decomp.c"
+#line 4 "decomp/ST.exe/functions/00430A90/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\wlad\to_allpl.cpp
    STAllPlayersC::GetMessage
@@ -3929,7 +3929,7 @@ int __thiscall st::fn_00430A90(STAllPlayersC *this,STMessage *message)
 }
 
 // 004314E0 STAllPlayersC::FramePick
-#line 1 "decomp/ST.exe/functions/004314E0/decomp.c"
+#line 4 "decomp/ST.exe/functions/004314E0/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\wlad\to_allpl.cpp
    STAllPlayersC::FramePick */
@@ -5274,7 +5274,7 @@ cf_error_exit_004334F5:
 }
 
 // 00433E90 STAllPlayersC::PointPick
-#line 1 "decomp/ST.exe/functions/00433E90/decomp.c"
+#line 4 "decomp/ST.exe/functions/00433E90/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\wlad\to_allpl.cpp
    STAllPlayersC::PointPick
@@ -5907,7 +5907,7 @@ LAB_004348d7:
 }
 
 // 00435060 STAllPlayersC::SelfCheckObjControl
-#line 1 "decomp/ST.exe/functions/00435060/decomp.c"
+#line 4 "decomp/ST.exe/functions/00435060/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\wlad\to_allpl.cpp
    STAllPlayersC::SelfCheckObjControl */
@@ -6054,7 +6054,7 @@ LAB_00435287:
 }
 
 // 004354E0 STAllPlayersC::ReplaceObject
-#line 1 "decomp/ST.exe/functions/004354E0/decomp.c"
+#line 4 "decomp/ST.exe/functions/004354E0/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\wlad\to_allpl.cpp
    STAllPlayersC::ReplaceObject
@@ -6182,7 +6182,7 @@ st::fn_004354E0(STAllPlayersC *this,char param_1,undefined4 param_2,undefined4 p
 }
 
 // 00435930 STAllPlayersC::GetCursorType
-#line 1 "decomp/ST.exe/functions/00435930/decomp.c"
+#line 4 "decomp/ST.exe/functions/00435930/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\wlad\to_allpl.cpp
    STAllPlayersC::GetCursorType
@@ -6292,7 +6292,7 @@ st::fn_00435930
 }
 
 // 00436F20 STAllPlayersC::CmdToPlsObj
-#line 1 "decomp/ST.exe/functions/00436F20/decomp.c"
+#line 4 "decomp/ST.exe/functions/00436F20/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\wlad\to_allpl.cpp
    STAllPlayersC::CmdToPlsObj
@@ -7407,7 +7407,7 @@ LAB_00437cb5:
 }
 
 // 00438E30 STAllPlayersC::SaveTmp
-#line 1 "decomp/ST.exe/functions/00438E30/decomp.c"
+#line 4 "decomp/ST.exe/functions/00438E30/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\wlad\to_allpl.cpp
    STAllPlayersC::SaveTmp */
@@ -7515,7 +7515,7 @@ LAB_00438fb0:
 }
 
 // 00439100 STAllPlayersC::RestoreTmp
-#line 1 "decomp/ST.exe/functions/00439100/decomp.c"
+#line 4 "decomp/ST.exe/functions/00439100/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\wlad\to_allpl.cpp
    STAllPlayersC::RestoreTmp */
@@ -8438,7 +8438,7 @@ cf_common_exit_0043A47C:
 }
 
 // 0043AAF0 STAllPlayersC::GetCamPoint
-#line 1 "decomp/ST.exe/functions/0043AAF0/decomp.c"
+#line 4 "decomp/ST.exe/functions/0043AAF0/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\wlad\to_allpl.cpp
    STAllPlayersC::GetCamPoint
@@ -8582,7 +8582,7 @@ LAB_0043acdb:
 }
 
 // 0043AE40 STAllPlayersC::SetActivePanel
-#line 1 "decomp/ST.exe/functions/0043AE40/decomp.c"
+#line 4 "decomp/ST.exe/functions/0043AE40/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\wlad\to_allpl.cpp
    STAllPlayersC::SetActivePanel
@@ -8965,7 +8965,7 @@ cf_common_exit_0043BB49:
 }
 
 // 0043BEB0 STAllPlayersC::GetPanelInfo
-#line 1 "decomp/ST.exe/functions/0043BEB0/decomp.c"
+#line 4 "decomp/ST.exe/functions/0043BEB0/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\wlad\to_allpl.cpp
    STAllPlayersC::GetPanelInfo */
@@ -10457,7 +10457,7 @@ cf_common_exit_0043C94C:
 }
 
 // 0043E4E0 STAllPlayersC::GetObjsList
-#line 1 "decomp/ST.exe/functions/0043E4E0/decomp.c"
+#line 4 "decomp/ST.exe/functions/0043E4E0/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\wlad\to_allpl.cpp
    STAllPlayersC::GetObjsList */
@@ -10516,7 +10516,7 @@ uint * st::fn_0043E4E0(char param_1)
 }
 
 // 0043E780 STAllPlayersC::GetTOBJList
-#line 1 "decomp/ST.exe/functions/0043E780/decomp.c"
+#line 4 "decomp/ST.exe/functions/0043E780/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\wlad\to_allpl.cpp
    STAllPlayersC::GetTOBJList
@@ -10602,7 +10602,7 @@ LAB_0043e85d:
 }
 
 // 0043EED0 STAllPlayersC::GetTOBJListFromDArr
-#line 1 "decomp/ST.exe/functions/0043EED0/decomp.c"
+#line 4 "decomp/ST.exe/functions/0043EED0/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\wlad\to_allpl.cpp
    STAllPlayersC::GetTOBJListFromDArr
@@ -10696,7 +10696,7 @@ LAB_0043efd8:
 }
 
 // 0043F200 STAllPlayersC::GetTOBJList
-#line 1 "decomp/ST.exe/functions/0043F200/decomp.c"
+#line 4 "decomp/ST.exe/functions/0043F200/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\wlad\to_allpl.cpp
    STAllPlayersC::GetTOBJList */
@@ -10774,7 +10774,7 @@ LAB_0043f2b2:
 }
 
 // 00440600 STAllPlayersC::GetNInTmp
-#line 1 "decomp/ST.exe/functions/00440600/decomp.c"
+#line 4 "decomp/ST.exe/functions/00440600/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\wlad\to_allpl.cpp
    STAllPlayersC::GetNInTmp */
@@ -10800,7 +10800,7 @@ uint st::fn_00440600(int param_1,int param_2)
 }
 
 // 00440860 STAllPlayersC::_ChangeMD
-#line 1 "decomp/ST.exe/functions/00440860/decomp.c"
+#line 4 "decomp/ST.exe/functions/00440860/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\wlad\to_allpl.cpp
    STAllPlayersC::_ChangeMD */
@@ -10855,7 +10855,7 @@ int __thiscall st::fn_00440860(STAllPlayersC *this,int param_1,int *param_2,uint
 }
 
 // 00440990 STAllPlayersC::_ChangeDock
-#line 1 "decomp/ST.exe/functions/00440990/decomp.c"
+#line 4 "decomp/ST.exe/functions/00440990/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\wlad\to_allpl.cpp
    STAllPlayersC::_ChangeDock
@@ -10911,7 +10911,7 @@ void st::fn_00440990(undefined4 param_1,int *param_2,uint param_3)
 }
 
 // 00440AA0 STAllPlayersC::_AssignDocks
-#line 1 "decomp/ST.exe/functions/00440AA0/decomp.c"
+#line 4 "decomp/ST.exe/functions/00440AA0/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\wlad\to_allpl.cpp
    STAllPlayersC::_AssignDocks
@@ -11535,7 +11535,7 @@ LAB_00440c19:
 }
 
 // 00441CE0 STAllPlayersC::_MakeMDPairs
-#line 1 "decomp/ST.exe/functions/00441CE0/decomp.c"
+#line 4 "decomp/ST.exe/functions/00441CE0/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\wlad\to_allpl.cpp
    STAllPlayersC::_MakeMDPairs
@@ -11793,7 +11793,7 @@ LAB_00441e92:
 }
 
 // 00442300 STAllPlayersC::_AddMDPairs
-#line 1 "decomp/ST.exe/functions/00442300/decomp.c"
+#line 4 "decomp/ST.exe/functions/00442300/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\wlad\to_allpl.cpp
    STAllPlayersC::_AddMDPairs
@@ -12064,7 +12064,7 @@ undefined4 __thiscall st::fn_00442300(STAllPlayersC *this,char param_1,uint para
 }
 
 // 00442B40 STAllPlayersC::_SubMDObject
-#line 1 "decomp/ST.exe/functions/00442B40/decomp.c"
+#line 4 "decomp/ST.exe/functions/00442B40/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\wlad\to_allpl.cpp
    STAllPlayersC::_SubMDObject */
@@ -12183,7 +12183,7 @@ undefined4 st::fn_00442B40(undefined4 *param_1,uint param_2)
 }
 
 // 00442E50 STAllPlayersC::_AssignMDPairs
-#line 1 "decomp/ST.exe/functions/00442E50/decomp.c"
+#line 4 "decomp/ST.exe/functions/00442E50/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\wlad\to_allpl.cpp
    STAllPlayersC::_AssignMDPairs
@@ -12869,7 +12869,7 @@ LAB_004435c8:
 }
 
 // 00443F30 STAllPlayersC::SaveAllPlData
-#line 1 "decomp/ST.exe/functions/00443F30/decomp.c"
+#line 4 "decomp/ST.exe/functions/00443F30/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\wlad\to_allpl.cpp
    STAllPlayersC::SaveAllPlData
@@ -13572,7 +13572,7 @@ byte * __thiscall st::fn_00443F30(STAllPlayersC *this,int *param_1)
 }
 
 // 004455C0 STAllPlayersC::CreateBoat
-#line 1 "decomp/ST.exe/functions/004455C0/decomp.c"
+#line 4 "decomp/ST.exe/functions/004455C0/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\wlad\to_allpl.cpp
    STAllPlayersC::CreateBoat */
@@ -13677,7 +13677,7 @@ uint __thiscall st::fn_004455C0(STAllPlayersC *this,undefined4 *param_1)
 }
 
 // 004458D0 STAllPlayersC::GetBoatWeaponInfo
-#line 1 "decomp/ST.exe/functions/004458D0/decomp.c"
+#line 4 "decomp/ST.exe/functions/004458D0/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\wlad\to_allpl.cpp
    STAllPlayersC::GetBoatWeaponInfo
@@ -13758,7 +13758,7 @@ st::fn_004458D0
 }
 
 // 00445A40 STAllPlayersC::RegisterPGPair
-#line 1 "decomp/ST.exe/functions/00445A40/decomp.c"
+#line 4 "decomp/ST.exe/functions/00445A40/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\wlad\to_allpl.cpp
    STAllPlayersC::RegisterPGPair
@@ -14021,7 +14021,7 @@ LAB_00445e36:
 }
 
 // 004461B0 STAllPlayersC::_DeleteGuardBoat
-#line 1 "decomp/ST.exe/functions/004461B0/decomp.c"
+#line 4 "decomp/ST.exe/functions/004461B0/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\wlad\to_allpl.cpp
    STAllPlayersC::_DeleteGuardBoat
@@ -14165,7 +14165,7 @@ st::fn_004461B0(STAllPlayersC *this,char param_1,short param_2,int param_3)
 }
 
 // 00446520 STAllPlayersC::DeleteGuardBoat
-#line 1 "decomp/ST.exe/functions/00446520/decomp.c"
+#line 4 "decomp/ST.exe/functions/00446520/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\wlad\to_allpl.cpp
    STAllPlayersC::DeleteGuardBoat
@@ -14328,7 +14328,7 @@ st::fn_00446520(STAllPlayersC *this,char param_1,short param_2,int param_3)
 }
 
 // 00446910 STAllPlayersC::DeletePGPairs
-#line 1 "decomp/ST.exe/functions/00446910/decomp.c"
+#line 4 "decomp/ST.exe/functions/00446910/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\wlad\to_allpl.cpp
    STAllPlayersC::DeletePGPairs */
@@ -14383,7 +14383,7 @@ void __thiscall st::fn_00446910(STAllPlayersC *this,char param_1)
 }
 
 // 00446AA0 STAllPlayersC::OptimizeGuardBoats
-#line 1 "decomp/ST.exe/functions/00446AA0/decomp.c"
+#line 4 "decomp/ST.exe/functions/00446AA0/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\wlad\to_allpl.cpp
    STAllPlayersC::OptimizeGuardBoats
@@ -14578,7 +14578,7 @@ void __thiscall st::fn_00446AA0(STAllPlayersC *this,char param_1)
 }
 
 // 00446F80 STAllPlayersC::DistributeGuardBoats
-#line 1 "decomp/ST.exe/functions/00446F80/decomp.c"
+#line 4 "decomp/ST.exe/functions/00446F80/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\wlad\to_allpl.cpp
    STAllPlayersC::DistributeGuardBoats
@@ -15190,7 +15190,7 @@ LAB_00447348:
 }
 
 // 00448120 STAllPlayersC::PutOnPlaceGuardBoats
-#line 1 "decomp/ST.exe/functions/00448120/decomp.c"
+#line 4 "decomp/ST.exe/functions/00448120/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\wlad\to_allpl.cpp
    STAllPlayersC::PutOnPlaceGuardBoats
@@ -16057,7 +16057,7 @@ LAB_00448bc0:
 }
 
 // 00449B60 STAllPlayersC::DestroyObjectMsg
-#line 1 "decomp/ST.exe/functions/00449B60/decomp.c"
+#line 4 "decomp/ST.exe/functions/00449B60/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\wlad\to_allpl.cpp
    STAllPlayersC::DestroyObjectMsg
@@ -16144,7 +16144,7 @@ st::fn_00449B60
 }
 
 // 00449CE0 STAllPlayersC::RegisterArtefact
-#line 1 "decomp/ST.exe/functions/00449CE0/decomp.c"
+#line 4 "decomp/ST.exe/functions/00449CE0/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\wlad\to_allpl.cpp
    STAllPlayersC::RegisterArtefact */
@@ -16195,7 +16195,7 @@ st::fn_00449CE0(STAllPlayersC *this,ushort param_1,void *param_2)
 }
 
 // 00449E60 STAllPlayersC::UnRegisterArtefact
-#line 1 "decomp/ST.exe/functions/00449E60/decomp.c"
+#line 4 "decomp/ST.exe/functions/00449E60/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\wlad\to_allpl.cpp
    STAllPlayersC::UnRegisterArtefact */
@@ -16248,7 +16248,7 @@ st::fn_00449E60
 }
 
 // 00449FD0 STAllPlayersC::RegisterMine
-#line 1 "decomp/ST.exe/functions/00449FD0/decomp.c"
+#line 4 "decomp/ST.exe/functions/00449FD0/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\wlad\to_allpl.cpp
    STAllPlayersC::RegisterMine */
@@ -16298,7 +16298,7 @@ undefined4 __thiscall st::fn_00449FD0(STAllPlayersC *this,ushort param_1,void *p
 }
 
 // 0044A150 STAllPlayersC::UnRegisterMine
-#line 1 "decomp/ST.exe/functions/0044A150/decomp.c"
+#line 4 "decomp/ST.exe/functions/0044A150/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\wlad\to_allpl.cpp
    STAllPlayersC::UnRegisterMine
@@ -16353,7 +16353,7 @@ st::fn_0044A150(STAllPlayersC *this,uint param_1,uint param_2,STMineSetC *param_
 }
 
 // 0044A2C0 STAllPlayersC::RegisterDeposit
-#line 1 "decomp/ST.exe/functions/0044A2C0/decomp.c"
+#line 4 "decomp/ST.exe/functions/0044A2C0/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\wlad\to_allpl.cpp
    STAllPlayersC::RegisterDeposit */
@@ -16404,7 +16404,7 @@ st::fn_0044A2C0(STAllPlayersC *this,ushort param_1,void *param_2)
 }
 
 // 0044A440 STAllPlayersC::UnRegisterDeposit
-#line 1 "decomp/ST.exe/functions/0044A440/decomp.c"
+#line 4 "decomp/ST.exe/functions/0044A440/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\wlad\to_allpl.cpp
    STAllPlayersC::UnRegisterDeposit
@@ -16459,7 +16459,7 @@ st::fn_0044A440(STAllPlayersC *this,uint param_1,STResourceC *param_2)
 }
 
 // 0044A5B0 STAllPlayersC::RegisterContainer
-#line 1 "decomp/ST.exe/functions/0044A5B0/decomp.c"
+#line 4 "decomp/ST.exe/functions/0044A5B0/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\wlad\to_allpl.cpp
    STAllPlayersC::RegisterContainer */
@@ -16510,7 +16510,7 @@ st::fn_0044A5B0(STAllPlayersC *this,ushort param_1,void *param_2)
 }
 
 // 0044A730 STAllPlayersC::UnRegisterContainer
-#line 1 "decomp/ST.exe/functions/0044A730/decomp.c"
+#line 4 "decomp/ST.exe/functions/0044A730/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\wlad\to_allpl.cpp
    STAllPlayersC::UnRegisterContainer */
@@ -16563,7 +16563,7 @@ st::fn_0044A730
 }
 
 // 0044A8A0 STAllPlayersC::RegisterBlot
-#line 1 "decomp/ST.exe/functions/0044A8A0/decomp.c"
+#line 4 "decomp/ST.exe/functions/0044A8A0/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\wlad\to_allpl.cpp
    STAllPlayersC::RegisterBlot */
@@ -16613,7 +16613,7 @@ undefined4 __thiscall st::fn_0044A8A0(STAllPlayersC *this,ushort param_1,void *p
 }
 
 // 0044AA20 STAllPlayersC::UnRegisterBlot
-#line 1 "decomp/ST.exe/functions/0044AA20/decomp.c"
+#line 4 "decomp/ST.exe/functions/0044AA20/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\wlad\to_allpl.cpp
    STAllPlayersC::UnRegisterBlot */
@@ -16665,7 +16665,7 @@ st::fn_0044AA20(STAllPlayersC *this,uint param_1,AnonShape_0044AA20_1EE9340C *pa
 }
 
 // 0044AB90 STAllPlayersC::CheckTmps
-#line 1 "decomp/ST.exe/functions/0044AB90/decomp.c"
+#line 4 "decomp/ST.exe/functions/0044AB90/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\wlad\to_allpl.cpp
    STAllPlayersC::CheckTmps
@@ -16847,7 +16847,7 @@ LAB_0044ae21:
 }
 
 // 0044AF50 STAllPlayersC::PushTV
-#line 1 "decomp/ST.exe/functions/0044AF50/decomp.c"
+#line 4 "decomp/ST.exe/functions/0044AF50/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\wlad\to_allpl.cpp
    STAllPlayersC::PushTV
@@ -16896,7 +16896,7 @@ void st::fn_0044AF50(char param_1,int param_2)
 }
 
 // 0044B030 STAllPlayersC::ActivateTV
-#line 1 "decomp/ST.exe/functions/0044B030/decomp.c"
+#line 4 "decomp/ST.exe/functions/0044B030/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\wlad\to_allpl.cpp
    STAllPlayersC::ActivateTV
@@ -17027,7 +17027,7 @@ void __thiscall st::fn_0044B030(STAllPlayersC *this,char param_1,int param_2,int
 }
 
 // 0044B280 STAllPlayersC::CalibrateTmp
-#line 1 "decomp/ST.exe/functions/0044B280/decomp.c"
+#line 4 "decomp/ST.exe/functions/0044B280/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\wlad\to_allpl.cpp
    STAllPlayersC::CalibrateTmp
@@ -17156,7 +17156,7 @@ st::fn_0044B280
 }
 
 // 0044B5F0 STAllPlayersC::SelectObjects
-#line 1 "decomp/ST.exe/functions/0044B5F0/decomp.c"
+#line 4 "decomp/ST.exe/functions/0044B5F0/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\wlad\to_allpl.cpp
    STAllPlayersC::SelectObjects
@@ -17496,7 +17496,7 @@ cf_common_exit_0044BD53:
 }
 
 // 0044C130 STAllPlayersC::GetTOBJImage
-#line 1 "decomp/ST.exe/functions/0044C130/decomp.c"
+#line 4 "decomp/ST.exe/functions/0044C130/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\wlad\to_allpl.cpp
    STAllPlayersC::GetTOBJImage
@@ -17771,7 +17771,7 @@ cf_common_exit_0044C477:
 }
 
 // 0044C720 STAllPlayersC::GetScrObjList
-#line 1 "decomp/ST.exe/functions/0044C720/decomp.c"
+#line 4 "decomp/ST.exe/functions/0044C720/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\wlad\to_allpl.cpp
    STAllPlayersC::GetScrObjList */

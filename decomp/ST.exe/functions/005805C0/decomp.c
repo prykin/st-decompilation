@@ -18,10 +18,10 @@ undefined4 __thiscall STDcResourcC::sub_005805C0(STDcResourcC *this)
   bVar2 = 0x1d;
   this_00 = &this->field_01D5;
   text = thunk_FUN_0057f530(this,this->field_025D);
-  iVar1 = STT3DSprC::LoadSequence((STT3DSprC *)this_00,0xe,DAT_00806764,text,bVar2);
+  iVar1 = STT3DSprC::LoadSequence((STT3DSprC *)this_00,0xe,PTR_00806764,text,bVar2);
   if (iVar1 == 0) {
     iVar1 = STT3DSprC::LoadSequence
-                      ((STT3DSprC *)this_00,0xd,DAT_00806764,PTR_s_termsd_007cb0b4,0x1d);
+                      ((STT3DSprC *)this_00,0xd,PTR_00806764,PTR_s_termsd_007cb0b4,0x1d);
     if (iVar1 == 0) {
       STT3DSprC::StartShow((STT3DSprC *)this_00,0xe,g_playSystem_00802A38->field_00E4);
       STT3DSprC::sub_004AD3C0

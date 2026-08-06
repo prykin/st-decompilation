@@ -2,7 +2,7 @@
 // Generated translation unit: source/original/nick/to_jump_mine.cpp
 
 // 00618C00 STJumpMineC::GetMessage
-#line 1 "decomp/ST.exe/functions/00618C00/decomp.c"
+#line 4 "decomp/ST.exe/functions/00618C00/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\nick\to_jump_mine.cpp
    STJumpMineC::GetMessage
@@ -165,7 +165,7 @@ LAB_00618ce0:
 }
 
 // 006195E0 STJumpMineC::LoadImagJMine
-#line 1 "decomp/ST.exe/functions/006195E0/decomp.c"
+#line 4 "decomp/ST.exe/functions/006195E0/decomp.c"
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 /* Recovered from embedded debug metadata:
    E:\__titans\nick\to_jump_mine.cpp
@@ -191,7 +191,7 @@ undefined4 __thiscall st::fn_006195E0(STJumpMineC *this,int param_1)
   if (iVar2 == 0) {
     if (param_1 == 1) {
       puVar3 = st::fn_00709AF0
-                         (DAT_00806774,CASE_1D,"jmpmine",0xffffffff,0,1,0,nullptr
+                         (PTR_00806774,CASE_1D,"jmpmine",0xffffffff,0,1,0,nullptr
                          );
       pSVar7 = local_8;
       puVar6 = &local_8->field_0097;
@@ -217,7 +217,7 @@ undefined4 __thiscall st::fn_006195E0(STJumpMineC *this,int param_1)
         st::fn_006E8BA0(g_sT3DSMAPContext_00807598,*puVar6);
       }
       puVar3 = st::fn_00709AF0
-                         (DAT_00806774,CASE_1D,"exptme",0xffffffff,0,1,0,nullptr);
+                         (PTR_00806774,CASE_1D,"exptme",0xffffffff,0,1,0,nullptr);
       st::fn_006E8660
                 (g_sT3DSMAPContext_00807598,(int *)puVar6,3,0,STField<uint>(puVar3,9),
                  STField<uint>(puVar3,0xd),0x5a,0x45,0);
@@ -226,18 +226,18 @@ undefined4 __thiscall st::fn_006195E0(STJumpMineC *this,int param_1)
       st::fn_006EA270(g_sT3DSMAPContext_00807598,*puVar6,0,pSVar7->field_00AB);
       pSVar7->field_00AF = *(int *)puVar3;
       puVar3 = st::fn_00709AF0
-                         (DAT_00806774,CASE_1D,"expmask2",0xffffffff,0,1,0,
+                         (PTR_00806774,CASE_1D,"expmask2",0xffffffff,0,1,0,
                           nullptr);
       st::fn_006E98E0
                 (g_sT3DSMAPContext_00807598,*puVar6,1,*(int *)puVar3,STField<int>(puVar3,0x21),1);
       st::fn_006EA270(g_sT3DSMAPContext_00807598,*puVar6,1,pSVar7->field_00BC);
       st::fn_006EA800(g_sT3DSMAPContext_00807598,*puVar6,1,1);
       st::fn_006EA790
-                (g_sT3DSMAPContext_00807598,*puVar6,DAT_008032b8,0x10);
+                (g_sT3DSMAPContext_00807598,*puVar6,PTR_008032b8,0x10);
       pSVar7->field_00C0 = *(undefined4 *)puVar3;
       pSVar7->field_00BB = 1;
       puVar3 = st::fn_00709AF0
-                         (DAT_00806764,CASE_1D,"bulb_n4",0xffffffff,0,1,0,nullptr
+                         (PTR_00806764,CASE_1D,"bulb_n4",0xffffffff,0,1,0,nullptr
                          );
       st::fn_006E98E0
                 (g_sT3DSMAPContext_00807598,*puVar6,2,*(int *)puVar3,STField<int>(puVar3,0x21),1);

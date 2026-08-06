@@ -74,8 +74,8 @@ STAppC::InitApp(STAppC *this,HINSTANCE param_1,undefined4 param_2,undefined4 par
       break;
     case -0x5001fff6:
       UVar26 = 0;
-      pcVar12 = LoadResourceString(0x2648,g_module_00807618);
-      pcVar14 = LoadResourceString(0x264b,g_module_00807618);
+      pcVar12 = LoadResourceString(0x2648,g_hINSTANCE_00807618);
+      pcVar14 = LoadResourceString(0x264b,g_hINSTANCE_00807618);
       MessageBoxA((HWND)0x0,pcVar14,pcVar12,UVar26);
       break;
     default:
@@ -87,8 +87,8 @@ STAppC::InitApp(STAppC *this,HINSTANCE param_1,undefined4 param_2,undefined4 par
       break;
     case -0x5001fff3:
       UVar26 = 0;
-      pcVar12 = LoadResourceString(0x2648,g_module_00807618);
-      pcVar14 = LoadResourceString(0x264c,g_module_00807618);
+      pcVar12 = LoadResourceString(0x2648,g_hINSTANCE_00807618);
+      pcVar14 = LoadResourceString(0x264c,g_hINSTANCE_00807618);
       MessageBoxA((HWND)0x0,pcVar14,pcVar12,UVar26);
     }
     RaiseInternalException(iVar7,0,"E:\\__titans\\tapp.cpp",0x2cc);
@@ -165,7 +165,7 @@ STAppC::InitApp(STAppC *this,HINSTANCE param_1,undefined4 param_2,undefined4 par
     puVar2 = &local_c->field_7D1A;
     wsprintfA((LPSTR)puVar2,"%s%s%s",puVar1,PTR_s_SYSTEM__0079b030,"INTER");
     g_cMf32_00806780 = (cMf32 *)Library::Ourlib::MF32INT::FUN_006f0ec0(0x345,puVar2,0,0,0);
-    DAT_00806784 = Library::Ourlib::MFRLOAD::mfRLoadCreate((int)g_cMf32_00806780);
+    PTR_00806784 = Library::Ourlib::MFRLOAD::mfRLoadCreate((int)g_cMf32_00806780);
     wsprintfA((LPSTR)puVar2,"%s%s",&pSVar19->field_0x470,PTR_s_TASKS_0079b048);
     g_cMf32_00806798 = (cMf32 *)Library::Ourlib::MF32INT::FUN_006f0ec0(0x345,puVar2,0,0,0);
     wsprintfA((LPSTR)puVar2,"%s%s%s",puVar1,PTR_s_SYSTEM__0079b030,PTR_s_STRATEGS_0079b04c);

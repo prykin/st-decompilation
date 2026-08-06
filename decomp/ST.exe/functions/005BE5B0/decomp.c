@@ -89,7 +89,7 @@ void __thiscall MReportTy::PaintMReport(MReportTy *this,char param_1)
     uVar12 = 0;
     iVar14 = -1;
     iVar5 = -1;
-    puVar9 = (uint *)LoadResourceString(0x2440,g_module_00807618);
+    puVar9 = (uint *)LoadResourceString(0x2440,g_hINSTANCE_00807618);
     ccFntTy::WrStr(this_00->field_0083,puVar9,iVar5,iVar14,uVar12);
     goto LAB_005bf406;
   }
@@ -100,7 +100,7 @@ void __thiscall MReportTy::PaintMReport(MReportTy *this,char param_1)
     uVar12 = 0;
     iVar14 = -1;
     iVar5 = -1;
-    puVar9 = (uint *)LoadResourceString(0x2440,g_module_00807618);
+    puVar9 = (uint *)LoadResourceString(0x2440,g_hINSTANCE_00807618);
     ccFntTy::WrStr(this_00->field_0083,puVar9,iVar5,iVar14,uVar12);
     local_18 = (RecoveredSourceFamily_dibcopy *)
                ccFntTy::CreateSurf(this_00->field_0083,(int)this_00->field_0073,0,0,0,0x136,0x22,0);
@@ -419,7 +419,7 @@ LAB_005bf156:
       else if (uVar12 == 3) {
         local_8 = 0x23f2;
       }
-      pcVar8 = LoadResourceString(local_8,g_module_00807618);
+      pcVar8 = LoadResourceString(local_8,g_hINSTANCE_00807618);
       uVar12 = 0xffffffff;
       do {
         pcVar20 = pcVar8;
@@ -492,7 +492,7 @@ LAB_005bef6c:
     uVar12 = 2;
     iVar14 = -1;
     iVar5 = -3;
-    puVar9 = (uint *)LoadResourceString(UVar22,g_module_00807618);
+    puVar9 = (uint *)LoadResourceString(UVar22,g_hINSTANCE_00807618);
     ccFntTy::WrStr(this_00->field_0083,puVar9,iVar5,iVar14,uVar12);
   }
   iVar5 = 1;
@@ -522,7 +522,7 @@ LAB_005bef6c:
   uVar12 = 0;
   iVar14 = -1;
   iVar5 = -1;
-  puVar9 = (uint *)LoadResourceString(0x2444,g_module_00807618);
+  puVar9 = (uint *)LoadResourceString(0x2444,g_hINSTANCE_00807618);
   ccFntTy::WrStr(this_00->field_0083,puVar9,iVar5,iVar14,uVar12);
   FUN_006b4170((RecoveredSourceFamily_dibcopy *)local_c,0,local_c->field_0004 + -0x69,
                (local_c->field_0008 + -0x1c) / 2,0x50,0x1c,0);
@@ -547,13 +547,13 @@ LAB_005bef6c:
   ccFntTy::WrStr(this_00->field_008B,&DAT_0080f33a,-1,-1,8);
   Library::DKW::DDX::FUN_006c5000
             (g_dDXContext_0080759C,0x174,0x1a9,(int)local_c,0,0,0,local_c->field_0004,
-             local_c->field_0008,(int)&this_00->field_0xa3,0x4c);
+             local_c->field_0008,(int)&this_00->field_00A3,0x4c);
   FreeAndNull(&local_c);
 LAB_005bf406:
   pAVar2 = this_00->field_0073;
   Library::DKW::DDX::FUN_006b48e0
             ((int)g_dDXContext_0080759C,0x1a,0x46,pAVar2,0,0,0,pAVar2->field_0004,pAVar2->field_0008
-             ,(int)&this_00->field_0xa3,0x4c,0x10000ff);
+             ,(ushort *)&this_00->field_00A3,0x4c,0x10000ff);
   g_currentExceptionFrame = local_64.previous;
   return;
 }

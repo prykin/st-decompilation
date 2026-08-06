@@ -23,7 +23,7 @@ undefined4 __fastcall FUN_004ec050(int param_1)
       this = (STT3DSprC *)thunk_FUN_004ab810(pAVar1);
     }
     *(STT3DSprC **)(param_1 + 0x5ff) = this;
-    exceptionCode = STT3DSprC::Init(this,DAT_008073cc,0x5a,0x45,nullptr,0xb4,0x8c,0x11);
+    exceptionCode = STT3DSprC::Init(this,PTR_008073cc,0x5a,0x45,nullptr,0xb4,0x8c,0x11);
     if (exceptionCode != 0) {
       RaiseInternalException
                 (exceptionCode,g_overwriteContext_007ED77C,

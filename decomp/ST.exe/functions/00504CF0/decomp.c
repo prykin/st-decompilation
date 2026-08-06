@@ -40,7 +40,7 @@ void __thiscall CPanelTy::PaintNameResSI(CPanelTy *this)
     uVar4 = 5;
     iVar6 = -1;
     iVar3 = -2;
-    module = g_module_00807618;
+    module = g_hINSTANCE_00807618;
     resourceId = thunk_FUN_00528060(pCVar2->field_0C31,pCVar2->field_0C32);
     resourceString = (uint *)LoadResourceString(resourceId,module);
     ccFntTy::WrTxt(pCVar2->field_01B8,resourceString,iVar3,iVar6,uVar4,iVar7,iVar8);

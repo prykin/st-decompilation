@@ -2,7 +2,7 @@
 // Generated translation unit: source/recovered/by_owner/MTestTy.cpp
 
 // 005E5F60 MTestTy::sub_005E5F60
-#line 1 "decomp/ST.exe/functions/005E5F60/decomp.c"
+#line 4 "decomp/ST.exe/functions/005E5F60/decomp.c"
 /* [STMethodOwnerApplier] Structural method owner recovered as MTestTy.
    Evidence: this_call_owners=[MTestTy]; agreed_this_calls=1; incoming_this_accesses=6;
    incoming_edx_uses=0; incoming_stack_parameter_uses=0; direct_non_thunk_callers=0;

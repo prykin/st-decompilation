@@ -2,7 +2,7 @@
 // Generated translation unit: source/original/scoreai.cpp
 
 // 0055F410 AiCalcDispositionAreas
-#line 1 "decomp/ST.exe/functions/0055F410/decomp.c"
+#line 4 "decomp/ST.exe/functions/0055F410/decomp.c"
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 /* [STSourceProvenanceApplier begin]
    Recovered source file: E:\__titans\scoreai.cpp
@@ -999,7 +999,7 @@ LAB_0056016e:
 }
 
 // 00561670 FUN_00561670
-#line 1 "decomp/ST.exe/functions/00561670/decomp.c"
+#line 4 "decomp/ST.exe/functions/00561670/decomp.c"
 /* [STSourceProvenanceApplier begin]
    Recovered source file: E:\__titans\scoreai.cpp
    Diagnostic line evidence: 600 (metadata/report site, not the function definition)
@@ -1271,7 +1271,7 @@ LAB_00561bff:
 }
 
 // 00562F50 AiAiCalcMinesFields
-#line 1 "decomp/ST.exe/functions/00562F50/decomp.c"
+#line 4 "decomp/ST.exe/functions/00562F50/decomp.c"
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 /* [STSourceProvenanceApplier begin]
    Recovered source file: E:\__titans\scoreai.cpp
@@ -2263,7 +2263,7 @@ LAB_005637bc:
 }
 
 // 00565820 AiMinesDistribTgts
-#line 1 "decomp/ST.exe/functions/00565820/decomp.c"
+#line 4 "decomp/ST.exe/functions/00565820/decomp.c"
 /* [STSourceProvenanceApplier begin]
    Recovered source file: E:\__titans\scoreai.cpp
    Diagnostic line evidence: 3839 | 3855 (metadata/report site, not the function definition)

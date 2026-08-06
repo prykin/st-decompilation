@@ -2,7 +2,7 @@
 // Generated translation unit: source/original/Andrey/mpopup.cpp
 
 // 0052D0A0 PopUpTy::OutProc
-#line 1 "decomp/ST.exe/functions/0052D0A0/decomp.c"
+#line 4 "decomp/ST.exe/functions/0052D0A0/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\Andrey\mpopup.cpp
    PopUpTy::OutProc */
@@ -63,7 +63,7 @@ st::fn_0052D0A0(PopUpTy *this,int *param_1,int param_2,undefined4 param_3,int pa
 }
 
 // 0052D200 PopUpTy::OutStr
-#line 1 "decomp/ST.exe/functions/0052D200/decomp.c"
+#line 4 "decomp/ST.exe/functions/0052D200/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\Andrey\mpopup.cpp
    PopUpTy::OutStr
@@ -117,7 +117,7 @@ void __thiscall st::fn_0052D200(PopUpTy *this,byte param_1)
 }
 
 // 0052D370 PopUpTy::AddStr
-#line 1 "decomp/ST.exe/functions/0052D370/decomp.c"
+#line 4 "decomp/ST.exe/functions/0052D370/decomp.c"
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 /* Recovered from embedded debug metadata:
    E:\__titans\Andrey\mpopup.cpp
@@ -237,7 +237,7 @@ LAB_0052d48d:
 }
 
 // 0052D690 PopUpTy::ChangeNumStr
-#line 1 "decomp/ST.exe/functions/0052D690/decomp.c"
+#line 4 "decomp/ST.exe/functions/0052D690/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\Andrey\mpopup.cpp
    PopUpTy::ChangeNumStr */
@@ -365,7 +365,7 @@ LAB_0052d7d4:
 }
 
 // 0052D980 PopUpTy::ChangeState
-#line 1 "decomp/ST.exe/functions/0052D980/decomp.c"
+#line 4 "decomp/ST.exe/functions/0052D980/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\Andrey\mpopup.cpp
    PopUpTy::ChangeState */
@@ -451,7 +451,7 @@ LAB_0052da81:
 }
 
 // 0052DB90 PopUpTy::Clear
-#line 1 "decomp/ST.exe/functions/0052DB90/decomp.c"
+#line 4 "decomp/ST.exe/functions/0052DB90/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\Andrey\mpopup.cpp
    PopUpTy::Clear */
@@ -523,7 +523,7 @@ void __thiscall st::fn_0052DB90(PopUpTy *this)
 }
 
 // 0052DD20 PopUpTy::GetMessage
-#line 1 "decomp/ST.exe/functions/0052DD20/decomp.c"
+#line 4 "decomp/ST.exe/functions/0052DD20/decomp.c"
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 /* Recovered from embedded debug metadata:
    E:\__titans\Andrey\mpopup.cpp

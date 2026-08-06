@@ -2,7 +2,7 @@
 // Generated translation unit: source/recovered/by_owner/AiPlrClassTy.cpp
 
 // 006788B0 AiPlrClassTy::AiPlrClassTy
-#line 1 "decomp/ST.exe/functions/006788B0/decomp.c"
+#line 4 "decomp/ST.exe/functions/006788B0/decomp.c"
 /* [STConstructorApplier] Recovered constructor candidate.
    VTable: 0079D714 (store 006788C5)
    Evidence: final_vptr=0079D714; returns_this=true; calls_before=2; field_writes_after=3;
@@ -15,8 +15,8 @@ AiPlrClassTy * __thiscall st::fn_006788B0(AiPlrClassTy *this)
 
   st::fn_006E60E0(this);
   st::fn_00402C2F(&this->vtable_at_1c);
-  this->vtable = &AiPlrClassTyVTable;
-  this->vtable_at_1c = &AiPlrClassTyVTable_at_1C;
+  this->vtable = &st_global_0079D714;
+  this->vtable_at_1c = &st_global_0079D6D4;
   if (this == nullptr) {
     puVar2 = nullptr;
   }
@@ -31,7 +31,7 @@ AiPlrClassTy * __thiscall st::fn_006788B0(AiPlrClassTy *this)
 }
 
 // 00678930 AiPlrClassTy::FUN_00678930
-#line 1 "decomp/ST.exe/functions/00678930/decomp.c"
+#line 4 "decomp/ST.exe/functions/00678930/decomp.c"
 /* [STVirtualMethodApplier] Recovered from virtual table slot family.
    Tables: 0079D6D4
    Entries: 004022ED
@@ -47,7 +47,7 @@ dword __thiscall st::fn_00678930(AiPlrClassTy *this)
 }
 
 // 00678FC0 AiPlrClassTy::sub_00678FC0
-#line 1 "decomp/ST.exe/functions/00678FC0/decomp.c"
+#line 4 "decomp/ST.exe/functions/00678FC0/decomp.c"
 /* [STMethodOwnerApplier] Structural method owner recovered as AiPlrClassTy.
    Evidence: this_call_owners=[AiPlrClassTy]; agreed_this_calls=1; incoming_this_accesses=2;
    incoming_edx_uses=0; incoming_stack_parameter_uses=0; direct_non_thunk_callers=0;
@@ -141,7 +141,7 @@ LAB_00679087:
 }
 
 // 0067A020 AiPlrClassTy::sub_0067A020
-#line 1 "decomp/ST.exe/functions/0067A020/decomp.c"
+#line 4 "decomp/ST.exe/functions/0067A020/decomp.c"
 /* [STHiddenThisApplier] Anonymous hidden receiver recovered as
    /SubmarineTitans/Recovered/HiddenThis/AnonReceiver_006799B0.
    Evidence: incoming_receiver_captures=1; receiver_accesses=2; incoming_edx_uses=0; calls=9;
@@ -197,7 +197,7 @@ st::fn_0067A020(AiPlrClassTy *this,AnonShape_0068FD00_A5257008 *param_1,int para
 }
 
 // 0067A240 AiPlrClassTy::sub_0067A240
-#line 1 "decomp/ST.exe/functions/0067A240/decomp.c"
+#line 4 "decomp/ST.exe/functions/0067A240/decomp.c"
 /* [STMethodOwnerApplier] Structural method owner recovered as AiPlrClassTy.
    Evidence: this_call_owners=[AiPlrClassTy]; agreed_this_calls=2; incoming_this_accesses=2;
    incoming_edx_uses=0; incoming_stack_parameter_uses=2; direct_non_thunk_callers=0;
@@ -247,7 +247,7 @@ void __thiscall st::fn_0067A240(AiPlrClassTy *this,undefined *param_1,DArrayTy *
 }
 
 // 0067BEF0 AiPlrClassTy::sub_0067BEF0
-#line 1 "decomp/ST.exe/functions/0067BEF0/decomp.c"
+#line 4 "decomp/ST.exe/functions/0067BEF0/decomp.c"
 /* [STPrototypeApplier] Propagated parameter 0.
    Evidence: 0067BFD0 -> 0067BEF0 @ 0067C078
 
@@ -271,7 +271,7 @@ int __thiscall st::fn_0067BEF0(AiPlrClassTy *this)
 }
 
 // 0067BF30 AiPlrClassTy::sub_0067BF30
-#line 1 "decomp/ST.exe/functions/0067BF30/decomp.c"
+#line 4 "decomp/ST.exe/functions/0067BF30/decomp.c"
 /* [STPrototypeApplier] Propagated parameter 0.
    Evidence: 0067BFD0 -> 0067BF30 @ 0067C068
 
@@ -291,7 +291,7 @@ int __thiscall st::fn_0067BF30(AiPlrClassTy *this)
 }
 
 // 0067BFD0 AiPlrClassTy::sub_0067BFD0
-#line 1 "decomp/ST.exe/functions/0067BFD0/decomp.c"
+#line 4 "decomp/ST.exe/functions/0067BFD0/decomp.c"
 /* [STMethodOwnerApplier] Structural method owner recovered as AiPlrClassTy.
    Evidence: this_call_owners=[AiPlrClassTy]; agreed_this_calls=2; incoming_this_accesses=1;
    incoming_edx_uses=0; incoming_stack_parameter_uses=4; direct_non_thunk_callers=0;
@@ -361,7 +361,7 @@ void __thiscall st::fn_0067BFD0(AiPlrClassTy *this,DArrayTy *param_1,DArrayTy *p
 }
 
 // 0067C110 AiPlrClassTy::sub_0067C110
-#line 1 "decomp/ST.exe/functions/0067C110/decomp.c"
+#line 4 "decomp/ST.exe/functions/0067C110/decomp.c"
 /* [STMethodOwnerApplier] Structural method owner recovered as AiPlrClassTy.
    Evidence: this_call_owners=[AiPlrClassTy]; agreed_this_calls=2; incoming_this_accesses=2;
    incoming_edx_uses=0; incoming_stack_parameter_uses=0; direct_non_thunk_callers=0;

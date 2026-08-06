@@ -2,7 +2,7 @@
 // Generated translation unit: source/original/wlad/To_optic.cpp
 
 // 004A8920 OpticClassC::GetMessage
-#line 1 "decomp/ST.exe/functions/004A8920/decomp.c"
+#line 4 "decomp/ST.exe/functions/004A8920/decomp.c"
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 /* Recovered from embedded debug metadata:
    E:\__titans\wlad\To_optic.cpp
@@ -172,7 +172,7 @@ switchD_004a8b81_caseD_108:
 }
 
 // 004A8FC0 OpticClassC::InitOptic
-#line 1 "decomp/ST.exe/functions/004A8FC0/decomp.c"
+#line 4 "decomp/ST.exe/functions/004A8FC0/decomp.c"
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 /* Recovered from embedded debug metadata:
    E:\__titans\wlad\To_optic.cpp
@@ -303,7 +303,7 @@ void __thiscall st::fn_004A8FC0(OpticClassC *this)
 }
 
 // 004A9540 OpticClassC::ReInitOptic
-#line 1 "decomp/ST.exe/functions/004A9540/decomp.c"
+#line 4 "decomp/ST.exe/functions/004A9540/decomp.c"
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 /* Recovered from embedded debug metadata:
    E:\__titans\wlad\To_optic.cpp

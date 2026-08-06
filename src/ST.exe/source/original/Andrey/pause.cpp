@@ -2,7 +2,7 @@
 // Generated translation unit: source/original/Andrey/pause.cpp
 
 // 00539280 PausePanelTy::InitPausePanel
-#line 1 "decomp/ST.exe/functions/00539280/decomp.c"
+#line 4 "decomp/ST.exe/functions/00539280/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\Andrey\pause.cpp
    PausePanelTy::InitPausePanel */
@@ -51,7 +51,7 @@ void __thiscall st::fn_00539280(PausePanelTy *this)
     uVar8 = 0;
     iVar7 = -1;
     iVar2 = -2;
-    resourceString = (uint *)st::fn_006B0140(0x2716,g_module_00807618);
+    resourceString = (uint *)st::fn_006B0140(0x2716,g_hINSTANCE_00807618);
     st::fn_00711B70(this_00->field_017C,resourceString,iVar2,iVar7,uVar8,iVar10,iVar11);
     pCVar4 = st::fn_0040577C("BUT_MEDIUM",0);
     uVar6 = st::fn_0040300D((PanelTy *)this_00,0,1,0x115,0x8b,1,0,1,pCVar4,0xbfff,0xc000,0,0,0,
@@ -71,7 +71,7 @@ void __thiscall st::fn_00539280(PausePanelTy *this)
 }
 
 // 00539490 PausePanelTy::DonePausePanel
-#line 1 "decomp/ST.exe/functions/00539490/decomp.c"
+#line 4 "decomp/ST.exe/functions/00539490/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\Andrey\pause.cpp
    PausePanelTy::DonePausePanel */
@@ -117,7 +117,7 @@ void __thiscall st::fn_00539490(PausePanelTy *this)
 }
 
 // 005395B0 PausePanelTy::SwitchPausePanel
-#line 1 "decomp/ST.exe/functions/005395B0/decomp.c"
+#line 4 "decomp/ST.exe/functions/005395B0/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\Andrey\pause.cpp
    PausePanelTy::SwitchPausePanel
@@ -185,7 +185,7 @@ switchD_005395f3_default:
 }
 
 // 005396E0 PausePanelTy::ShiftControls
-#line 1 "decomp/ST.exe/functions/005396E0/decomp.c"
+#line 4 "decomp/ST.exe/functions/005396E0/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\Andrey\pause.cpp
    PausePanelTy::ShiftControls
@@ -235,7 +235,7 @@ void __thiscall st::fn_005396E0(PausePanelTy *this,int param_1)
 }
 
 // 005397F0 PausePanelTy::GetMessage
-#line 1 "decomp/ST.exe/functions/005397F0/decomp.c"
+#line 4 "decomp/ST.exe/functions/005397F0/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\Andrey\pause.cpp
    PausePanelTy::GetMessage

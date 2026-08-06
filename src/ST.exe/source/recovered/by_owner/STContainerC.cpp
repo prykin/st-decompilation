@@ -2,7 +2,7 @@
 // Generated translation unit: source/recovered/by_owner/STContainerC.cpp
 
 // 005F0D90 STContainerC::sub_005F0D90
-#line 1 "decomp/ST.exe/functions/005F0D90/decomp.c"
+#line 4 "decomp/ST.exe/functions/005F0D90/decomp.c"
 /* [STMethodOwnerApplier] Structural method owner recovered as STContainerC.
    Evidence: this_call_owners=[STContainerC]; agreed_this_calls=1; incoming_this_accesses=4;
    incoming_edx_uses=0; incoming_stack_parameter_uses=0; direct_non_thunk_callers=0;
@@ -39,7 +39,7 @@ void __thiscall st::fn_005F0D90(STContainerC *this)
 }
 
 // 005FC3E0 STContainerC::sub_005FC3E0
-#line 1 "decomp/ST.exe/functions/005FC3E0/decomp.c"
+#line 4 "decomp/ST.exe/functions/005FC3E0/decomp.c"
 /* [STMethodOwnerApplier] Structural method owner recovered as STContainerC.
    Evidence: this_call_owners=[STContainerC]; agreed_this_calls=3; incoming_this_accesses=2;
    incoming_edx_uses=0; incoming_stack_parameter_uses=0; direct_non_thunk_callers=0;
@@ -66,7 +66,7 @@ int __thiscall st::fn_005FC3E0(STContainerC *this)
 }
 
 // 005FCD80 STContainerC::FUN_005fcd80
-#line 1 "decomp/ST.exe/functions/005FCD80/decomp.c"
+#line 4 "decomp/ST.exe/functions/005FCD80/decomp.c"
 /* [STVirtualMethodApplier] Recovered from virtual table slot family.
    Tables: 0079C714
    Entries: 0040389B
@@ -82,7 +82,7 @@ dword __thiscall st::fn_005FCD80(STContainerC *this)
 }
 
 // 005FCDA0 STContainerC::FUN_005fcda0
-#line 1 "decomp/ST.exe/functions/005FCDA0/decomp.c"
+#line 4 "decomp/ST.exe/functions/005FCDA0/decomp.c"
 /* [STVirtualMethodApplier] Recovered from virtual table slot family.
    Tables: 0079C714
    Entries: 004038C3
@@ -98,7 +98,7 @@ dword __thiscall st::fn_005FCDA0(STContainerC *this)
 }
 
 // 005FCE30 STContainerC::FUN_005fce30
-#line 1 "decomp/ST.exe/functions/005FCE30/decomp.c"
+#line 4 "decomp/ST.exe/functions/005FCE30/decomp.c"
 /* [STUnclaimedCodeApplier] Exact function entry recovered from thunk_target.
    Evidence: D:0079C84C>00401C21 | P:0079C84C>00401C21
 
@@ -117,7 +117,7 @@ dword __thiscall st::fn_005FCE30(STContainerC *this)
 }
 
 // 005FCE50 STContainerC::FUN_005fce50
-#line 1 "decomp/ST.exe/functions/005FCE50/decomp.c"
+#line 4 "decomp/ST.exe/functions/005FCE50/decomp.c"
 /* [STUnclaimedCodeApplier] Exact function entry recovered from thunk_target.
    Evidence: D:0079C850>004020A9 | P:0079C850>004020A9
 
@@ -136,7 +136,7 @@ dword __thiscall st::fn_005FCE50(STContainerC *this)
 }
 
 // 005FD360 STContainerC::FUN_005fd360
-#line 1 "decomp/ST.exe/functions/005FD360/decomp.c"
+#line 4 "decomp/ST.exe/functions/005FD360/decomp.c"
 /* [STUnclaimedCodeApplier] Exact function entry recovered from thunk_target.
    Evidence: D:0079C83C>00404476 | P:0079C83C>00404476
 

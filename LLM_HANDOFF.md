@@ -20,6 +20,11 @@ script.
 - Recovery output: `<local-home>/st/recovery/ST.exe`.
 - LLM corpus: `<local-home>/st/decomp/ST.exe`.
 - Original executable: `bin/ST.exe` (ignored; never commit).
+- Long direct macOS headless runs must use the ignored
+  `.st-local/run-recovery.sh` or an equivalent `caffeinate -dims` wrapper. Two
+  observed resets followed idle sleep/wake rather than a kernel panic, thermal
+  shutdown, or a Java-initiated shutdown; sustained Ghidra CPU load is not a
+  macOS sleep assertion.
 
 The scripts are ordinary Ghidra Java scripts compiled on demand, not a Gradle
 extension. `STRecoveryLauncher` infers repository paths and orchestrates the
@@ -41,17 +46,17 @@ have been checked.
 ## Latest accepted run
 
 The current authoritative headless export is run
-`6db00d62db47c8e04b682e1ebfc531127d5bbaf2ac060cb19ddf556938f2bf2d`.
+`6eafe6c3ee33ba1a89a5017a69da0a510998dd3fe51f1a612fb77d7657105c01`.
 Its receipt is `passed` with semantic hash
-`e1f9bb21bfcd91e18401c62060be8cb61a23b40b1aa776942fa539b09a6aadd0`
+`f33ed22b25e17675da07be95de14d2fe1c51d7b35859d86db60756558563a972`
 and manifest hash
-`508df8e96ce8daa7057d61db1600acb12cf18f8f9d8968811f20e37ccda45902`.
+`b2fe6680417bedc6a88a7a20885abc8d29bc40bc9e916dfb7131ff98d57b4450`.
 It contains 10,392 function entries, 5,712 bodies, zero failed bodies, and 2,729
 typed physical-vtable slots. Both the broad export gate and the ABI gate pass;
-the latter verifies all 95 class vptrs and nine fixture functions with zero
-errors or warnings. The broad gate also has zero hard regressions and zero
-warnings. The final quality inventory has 4,166 anonymous-shape occurrences,
-18,595 undefined types, 2,240 raw pointer offsets, 1,885 raw indirect calls,
+the latter verifies all 96 class vptrs and nine fixture functions with zero
+errors or warnings. The broad gate has zero hard regressions and four
+stage-transition warnings. The final quality inventory has 4,150 anonymous-
+shape occurrences, 18,579 undefined types, 2,240 raw pointer offsets, 1,885 raw indirect calls,
 558 consumed return-width artifacts, and 472 unresolved register inputs. The
 old declaration-plus-use return count was intentionally replaced by a use-only
 metric; declarations are not independent ABI failures.
@@ -71,6 +76,37 @@ undefined semantic types, 1,001 global `__thiscall` functions lack a proven
 owner, 773 bodies contain raw indirect calls, and 232 bodies retain unresolved
 register/high values. See `docs/compile-readiness.md`,
 `docs/source-tree-generation.md`, and `src/ST.exe/audit/`.
+
+The first compile-driven source layer is implemented without mutating Ghidra.
+`tools/st_compile_audit.py` verifies the generated manifest, compiles all 318
+translation units independently, and writes an address-stable local queue under
+ignored `.st-local/`. `tools/st_source_tree.py` materializes 2,664 exact
+unnamed-byte views which statically typed bodies actually reference, including
+indexed and nested pointer-member chains. It also emits 780 ordinary non-virtual
+member wrappers over exact receiver-aware physical-vtable slots, preserving
+readable `object->method()` syntax without synthesizing a host ABI vptr or
+inheritance. A further 1,292 uniquely owned, non-virtual `__thiscall` functions
+are exposed as ordinary forwarding class methods; their implementation identity
+remains `st::fn_ADDRESS`. Constructors, destructors, ambiguous overloads, and
+field-name collisions remain explicit source-generation audit rows. The
+complete declaration header passes Clang C++17.
+
+The source projection also separates 193 C++ type/value namespace collisions
+such as the image object `FrmPanelTyVTable` and the record type of the same
+name. At the 231 exact address-taking sites currently emitted, only the source-
+level object identifier becomes `st_global_ADDRESS`; the Ghidra symbol and type
+names remain provenance. This removes false local-declaration failures without
+changing the database or object layout.
+
+With Apple Clang and a fixed limit of 32 diagnostics per translation unit, 54
+of 318 units pass and 4,066 of 4,068 retained errors map to a function address.
+Only 38 missing-record-member diagnostics remain. The dominant next clusters
+are call argument types (1,198), scalar/pointer assignment roles (1,014),
+scalar subscripting (626), and undeclared decompiler temporaries (599). These
+are capped comparison counts, not the uncapped total. The source generator was
+also reduced from roughly 100 seconds to roughly 39 seconds by combining its
+code-only rewrite pass; identity counts remain 37,352 direct-call rewrites and
+5,712 definition rewrites.
 
 The previously ugly call in global `__thiscall` function `00717910` now renders
 its proven member load as

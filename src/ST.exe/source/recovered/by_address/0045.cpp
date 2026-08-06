@@ -2,7 +2,7 @@
 // Generated translation unit: source/recovered/by_address/0045.cpp
 
 // 0045F980 FUN_0045f980
-#line 1 "decomp/ST.exe/functions/0045F980/decomp.c"
+#line 4 "decomp/ST.exe/functions/0045F980/decomp.c"
 undefined4 __fastcall st::fn_0045F980(STBoatC *param_1)
 
 {
@@ -111,7 +111,7 @@ switchD_0045fb89_caseD_fffffffb:
 }
 
 // 0045FF10 FUN_0045ff10
-#line 1 "decomp/ST.exe/functions/0045FF10/decomp.c"
+#line 4 "decomp/ST.exe/functions/0045FF10/decomp.c"
 /* [STPrototypeApplier] Propagated parameter 0.
    Evidence: 0049D750 -> 0045FF10 @ 0049D988 */
 
@@ -122,7 +122,7 @@ undefined4 __fastcall st::fn_0045FF10(STGameObjC *objPtr)
 }
 
 // 0045FF30 FUN_0045ff30
-#line 1 "decomp/ST.exe/functions/0045FF30/decomp.c"
+#line 4 "decomp/ST.exe/functions/0045FF30/decomp.c"
 undefined4 __fastcall st::fn_0045FF30(int param_1)
 
 {

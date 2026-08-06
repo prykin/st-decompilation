@@ -79,8 +79,8 @@ void __thiscall CPanelTy::Update1Panel(CPanelTy *this)
   STAllPlayersC::GetPanelInfo
             (g_allPlayers_007FA174,1,(AnonShape_0043BEB0_1C00EC12 *)&this_00->field_0B63);
   if (local_48 != this_00->field_0B63) {
-    if (g_prodPanel_00801684 != nullptr) {
-      ProdPanelTy::SetPanel(g_prodPanel_00801684,'\0');
+    if (g_bldObjPanel_00801684 != nullptr) {
+      ProdPanelTy::SetPanel(g_bldObjPanel_00801684,'\0');
     }
     if (g_behPanel_00801678 != nullptr) {
       (*g_behPanel_00801678->vtable->SetPanel)((SpecPanelTy *)g_behPanel_00801678,'\0');
@@ -100,8 +100,8 @@ void __thiscall CPanelTy::Update1Panel(CPanelTy *this)
     return;
   }
   if (this_00->field_0B80 != local_2b) {
-    if (g_prodPanel_00801684 != nullptr) {
-      ProdPanelTy::SetPanel(g_prodPanel_00801684,'\0');
+    if (g_bldObjPanel_00801684 != nullptr) {
+      ProdPanelTy::SetPanel(g_bldObjPanel_00801684,'\0');
     }
     if (g_behPanel_00801678 != nullptr) {
       (*g_behPanel_00801678->vtable->SetPanel)((SpecPanelTy *)g_behPanel_00801678,'\0');
@@ -149,7 +149,7 @@ void __thiscall CPanelTy::Update1Panel(CPanelTy *this)
                 ((RecoveredSourceFamily_dibcopy *)this_00->field_0184,0,0,0,
                  (byte *)this_00->field_0958,0,0,0,*(int *)(this_00->field_0958 + 2),0x3c);
       dVar19 = this_00->field_0B95->count;
-      pcVar8 = LoadResourceString(0x36b9,g_module_00807618);
+      pcVar8 = LoadResourceString(0x36b9,g_hINSTANCE_00807618);
       wsprintfA(*(LPSTR *)&this_00->field_0x213,"&1%s&0%d",pcVar8,dVar19);
       ccFntTy::SetSurf(this_00->field_01B8,this_00->field_0184,0,2,0xf,
                        *(int *)(this_00->field_0958 + 2) + -4,0x2d);
@@ -208,8 +208,8 @@ LAB_004ff723:
   }
   if (((local_40 != this_00->field_0B6B) || (local_47 != this_00->field_0B64)) ||
      (local_46 != this_00->field_0B65)) {
-    if (g_prodPanel_00801684 != nullptr) {
-      ProdPanelTy::SetPanel(g_prodPanel_00801684,'\0');
+    if (g_bldObjPanel_00801684 != nullptr) {
+      ProdPanelTy::SetPanel(g_bldObjPanel_00801684,'\0');
     }
     if (g_behPanel_00801678 != nullptr) {
       (*g_behPanel_00801678->vtable->SetPanel)((SpecPanelTy *)g_behPanel_00801678,'\0');

@@ -2,7 +2,7 @@
 // Generated translation unit: source/original/ai/Ai_lex.cpp
 
 // 00672B60 FUN_00672b60
-#line 1 "decomp/ST.exe/functions/00672B60/decomp.c"
+#line 4 "decomp/ST.exe/functions/00672B60/decomp.c"
 /* [STSourceProvenanceApplier begin]
    Recovered source file: E:\__titans\ai\Ai_lex.c
    Diagnostic line evidence: 231 | 253 (metadata/report site, not the function definition)

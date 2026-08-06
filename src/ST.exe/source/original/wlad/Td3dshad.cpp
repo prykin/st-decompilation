@@ -2,7 +2,7 @@
 // Generated translation unit: source/original/wlad/Td3dshad.cpp
 
 // 00424E10 SubmarineTitans::Recovered::HiddenThis::AnonReceiver_004248D0::FUN_00424e10
-#line 1 "decomp/ST.exe/functions/00424E10/decomp.c"
+#line 4 "decomp/ST.exe/functions/00424E10/decomp.c"
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 /* [STSourceProvenanceApplier begin]
    Recovered source file: E:\__titans\wlad\Td3dshad.cpp
@@ -1081,7 +1081,7 @@ LAB_00426637:
 }
 
 // 00427F20 FUN_00427f20
-#line 1 "decomp/ST.exe/functions/00427F20/decomp.c"
+#line 4 "decomp/ST.exe/functions/00427F20/decomp.c"
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 /* [STSourceProvenanceApplier begin]
    Recovered source file: E:\__titans\wlad\Td3dshad.cpp

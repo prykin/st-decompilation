@@ -70,7 +70,7 @@ LAB_00515ee1:
             uVar10 = 3;
             iVar9 = -1;
             iVar3 = -1;
-            puVar4 = (uint *)LoadResourceString(0x55f6,g_module_00807618);
+            puVar4 = (uint *)LoadResourceString(0x55f6,g_hINSTANCE_00807618);
             ccFntTy::WrStr(this_00->field_01E0,puVar4,iVar3,iVar9,uVar10);
             local_14 = 0;
             *param_1 = *param_1 + 0xf;
@@ -87,7 +87,7 @@ LAB_00515ee1:
                 ccFntTy::SetSurf(this_00->field_01E0,(int)this_00->field_0218,0,local_18 + 0x5f,
                                  *param_1,0x13d - local_18,0xf);
                 pcVar6 = LoadResourceString(*(UINT *)(uVar7 * 0x11 + this_00->field_01C7),
-                                            g_module_00807618);
+                                            g_hINSTANCE_00807618);
                 uVar7 = 0xffffffff;
                 goto code_r0x00516013;
               }

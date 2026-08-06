@@ -51,17 +51,17 @@ void __thiscall CPanelTy::SwitchCPanel(CPanelTy *this)
           thunk_FUN_004a9b60(local_10->field_011C,local_10->field_0120,local_10->field_0124,
                              local_10->field_0128);
           this_00->field_023F = CASE_6;
-          if (g_prodPanel_008016E8 != nullptr) {
-            ProdPanelTy::SetPanel(g_prodPanel_008016E8,'\0');
+          if (g_researchPanel_008016E8 != nullptr) {
+            ProdPanelTy::SetPanel(g_researchPanel_008016E8,'\0');
           }
-          if (g_prodPanel_0080167C != nullptr) {
-            ProdPanelTy::SetPanel(g_prodPanel_0080167C,'\0');
+          if (g_bldBoatPanel_0080167C != nullptr) {
+            ProdPanelTy::SetPanel(g_bldBoatPanel_0080167C,'\0');
           }
-          if (g_prodPanel_00801684 != nullptr) {
-            ProdPanelTy::SetPanel(g_prodPanel_00801684,'\0');
+          if (g_bldObjPanel_00801684 != nullptr) {
+            ProdPanelTy::SetPanel(g_bldObjPanel_00801684,'\0');
           }
-          if (g_prodPanel_00801680 != nullptr) {
-            ProdPanelTy::SetPanel(g_prodPanel_00801680,'\0');
+          if (g_bldLabPanel_00801680 != nullptr) {
+            ProdPanelTy::SetPanel(g_bldLabPanel_00801680,'\0');
           }
           if (g_infocPanel_00801698 != nullptr) {
             (*g_infocPanel_00801698->vtable->SetPanel)((SpecPanelTy *)g_infocPanel_00801698,'\0');
@@ -101,7 +101,7 @@ void __thiscall CPanelTy::SwitchCPanel(CPanelTy *this)
               uVar9 = 6;
               pcVar4 = thunk_FUN_00526100(nullptr,0);
               puVar5 = Library::Ourlib::MFRLOAD::mfRLoad
-                                 (DAT_00806794,CASE_1F,pcVar4,uVar9,bVar10,iVar3,iVar6,puVar11);
+                                 (PTR_00806794,CASE_1F,pcVar4,uVar9,bVar10,iVar3,iVar6,puVar11);
               puVar8[-3] = puVar5;
               puVar7[-2] = 0;
               *puVar7 = 4;
@@ -123,7 +123,7 @@ void __thiscall CPanelTy::SwitchCPanel(CPanelTy *this)
                 uVar9 = 6;
                 pcVar4 = thunk_FUN_00526100(nullptr,0);
                 puVar5 = Library::Ourlib::MFRLOAD::mfRLoad
-                                   (DAT_00806794,CASE_1F,pcVar4,uVar9,bVar10,iVar3,iVar6,puVar11);
+                                   (PTR_00806794,CASE_1F,pcVar4,uVar9,bVar10,iVar3,iVar6,puVar11);
                 puVar8[-0x12] = puVar5;
                 puVar7[-0xc] = 0;
                 *puVar7 = 4;
@@ -146,17 +146,17 @@ switchD_004f9f52_caseD_3:
         case CASE_4:
           local_10->field_023F = CASE_3;
           thunk_FUN_005252c0(CASE_AF);
-          if (g_prodPanel_008016E8 != nullptr) {
-            ProdPanelTy::SetPanel(g_prodPanel_008016E8,'\0');
+          if (g_researchPanel_008016E8 != nullptr) {
+            ProdPanelTy::SetPanel(g_researchPanel_008016E8,'\0');
           }
-          if (g_prodPanel_0080167C != nullptr) {
-            ProdPanelTy::SetPanel(g_prodPanel_0080167C,'\0');
+          if (g_bldBoatPanel_0080167C != nullptr) {
+            ProdPanelTy::SetPanel(g_bldBoatPanel_0080167C,'\0');
           }
-          if (g_prodPanel_00801684 != nullptr) {
-            ProdPanelTy::SetPanel(g_prodPanel_00801684,'\0');
+          if (g_bldObjPanel_00801684 != nullptr) {
+            ProdPanelTy::SetPanel(g_bldObjPanel_00801684,'\0');
           }
-          if (g_prodPanel_00801680 != nullptr) {
-            ProdPanelTy::SetPanel(g_prodPanel_00801680,'\0');
+          if (g_bldLabPanel_00801680 != nullptr) {
+            ProdPanelTy::SetPanel(g_bldLabPanel_00801680,'\0');
           }
           if (g_infocPanel_00801698 != nullptr) {
             (*g_infocPanel_00801698->vtable->SetPanel)((SpecPanelTy *)g_infocPanel_00801698,'\0');

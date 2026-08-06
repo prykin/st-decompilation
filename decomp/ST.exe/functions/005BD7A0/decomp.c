@@ -93,7 +93,7 @@ void __thiscall MReportTy::InitMReport(MReportTy *this,undefined1 param_1)
   Library::Ourlib::PALETTE::FUN_00718780
             ((int)local_6a4,0,0x100,0x1a,0x10,(undefined4 *)&g_startSystem_0081176C->field_0x144);
   puVar5 = Library::Ourlib::MFRLOAD::mfRLoad
-                     (DAT_00806784,CASE_B,"STATS",0xffffffff,0,1,0,nullptr);
+                     (PTR_00806784,CASE_B,"STATS",0xffffffff,0,1,0,nullptr);
   this_01->field_007F = puVar5;
   puVar5 = FUN_0070aa50(g_cMf32_00806780,"RPT_IND",0,1);
   this_01->field_006F = puVar5;
@@ -134,11 +134,11 @@ void __thiscall MReportTy::InitMReport(MReportTy *this,undefined1 param_1)
   FUN_006b4170(pRVar9,0,0,0,0x2e9,0x15e,0xff);
   FUN_006b5ee0((RecoveredSourceFamily_dibcopy *)this_01->field_0073,0,0x2d,0,700,0x15e,0x18,0xd);
   Library::Ourlib::PALETTE::FUN_00718780
-            ((int)local_6a4,0,0x100,0x1a,0x10,(undefined4 *)&this_01->field_0xa3);
+            ((int)local_6a4,0,0x100,0x1a,0x10,(undefined4 *)&this_01->field_00A3);
   Library::Ourlib::PALETTE::FUN_00718780
             ((int)local_6a4,0,0x100,0x2e,0x10,(undefined4 *)&this_01->field_0x1a3);
   memset(&this_01->field_0x2c7, 0, 0x80); /* compiler bulk-zero initialization */
-  this_01->field_0323 = (MReportTy *)&this_01->field_0xa3;
+  this_01->field_0323 = (MReportTy *)&this_01->field_00A3;
   pcVar6 = this_01->field_0087;
   this_01->field_02EF = this_01->field_0008;
   this_01->field_02CF = this_01->field_0008;

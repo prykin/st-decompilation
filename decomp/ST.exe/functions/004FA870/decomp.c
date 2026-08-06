@@ -25,25 +25,25 @@ void __thiscall CPanelTy::sub_004FA870(CPanelTy *this,CPanelTy_sub_004FA870_para
   if ((((param_1 == 0) || (CASE_5 < param_1)) && (param_1 != CASE_E)) && (param_1 != CASE_F)) {
     /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
     if (param_1 == CASE_6) {
-      if (g_prodPanel_008016E8 != nullptr) {
+      if (g_researchPanel_008016E8 != nullptr) {
         /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-        (*(code *)g_prodPanel_008016E8->field_0000->field_001C)();
+        (*(code *)g_researchPanel_008016E8->field_0000->field_001C)();
         return;
       }
     }
     /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
     else if (param_1 == CASE_7) {
-      if (g_prodPanel_0080167C != nullptr) {
+      if (g_bldBoatPanel_0080167C != nullptr) {
         /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-        (*(code *)g_prodPanel_0080167C->field_0000->field_001C)();
+        (*(code *)g_bldBoatPanel_0080167C->field_0000->field_001C)();
         return;
       }
     }
     /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
     else if (param_1 == 8) {
-      if (g_prodPanel_00801684 != nullptr) {
+      if (g_bldObjPanel_00801684 != nullptr) {
         /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-        (*(code *)g_prodPanel_00801684->field_0000->field_001C)();
+        (*(code *)g_bldObjPanel_00801684->field_0000->field_001C)();
         return;
       }
     }
@@ -71,9 +71,9 @@ void __thiscall CPanelTy::sub_004FA870(CPanelTy *this,CPanelTy_sub_004FA870_para
     }
     /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
     else if (param_1 == 0xc) {
-      if (g_prodPanel_00801680 != nullptr) {
+      if (g_bldLabPanel_00801680 != nullptr) {
         /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-        (*(code *)g_prodPanel_00801680->field_0000->field_001C)();
+        (*(code *)g_bldLabPanel_00801680->field_0000->field_001C)();
         return;
       }
     }

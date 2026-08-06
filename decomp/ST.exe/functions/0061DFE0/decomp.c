@@ -10,7 +10,7 @@ void __fastcall FUN_0061dfe0(STLightC *param_1)
   uint *puVar1;
   uint uVar2;
   STLightC_field_00A3DArray *pSVar3;
-  int iVar4;
+  ushort *puVar4;
   int *piVar5;
   bool bVar6;
   uint local_8;
@@ -18,7 +18,7 @@ void __fastcall FUN_0061dfe0(STLightC *param_1)
   uVar2 = param_1->field_00AC * 0x41c64e6d + 0x3039;
   param_1->field_00AC = uVar2;
   pSVar3 = param_1->field_00A3;
-  iVar4 = ((uVar2 >> 0x10) % 3 + 3) * 0x200 + DAT_008032d0;
+  puVar4 = PTR_008032d0 + ((uVar2 >> 0x10) % 3 + 3) * 0x100;
   if (pSVar3 != nullptr) {
     local_8 = 0;
     if (0 < (int)pSVar3->count) {
@@ -32,7 +32,7 @@ void __fastcall FUN_0061dfe0(STLightC *param_1)
           ST3DSMAPContext::sub_006E88C0
                     (g_sT3DSMAPContext_00807598,(int *)puVar1,piVar5[1],piVar5[2],piVar5[3],
                      piVar5[4],piVar5[5],piVar5[6],piVar5[7],*(byte *)(piVar5 + 8),
-                     STField<undefined4>(piVar5,0x21),iVar4,0xffffffff);
+                     STField<undefined4>(piVar5,0x21),puVar4,0xffffffff);
           if (STField<byte>(piVar5,0x2f) == 0) {
             Library::Ourlib::ST3DSMAP::SprHide(g_sT3DSMAPContext_00807598,*puVar1);
           }

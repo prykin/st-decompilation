@@ -22,6 +22,7 @@ import java.util.regex.Pattern;
 
 import ghidra.app.script.GhidraScript;
 import ghidra.program.model.data.DataType;
+import ghidra.program.model.data.DataTypeComponent;
 import ghidra.program.model.data.DataTypeManager;
 import ghidra.program.model.data.Array;
 import ghidra.program.model.data.FunctionDefinition;
@@ -172,6 +173,11 @@ public class STTypeLifecycleApplier extends GhidraScript {
             else if ("remove".equals(row.get("action"))) {
                 String description = text(type.getDescription());
                 boolean anonymous = disposableAnonymous(type, description);
+                if (hasPhysicalVptrCompanion(type)) {
+                    report.add(new Report("remove", path, "preserved",
+                        "physical vptr companion requires atomic class/vtable retirement"));
+                    return;
+                }
                 if (!(description.contains(VIEW) || derivedView || anonymous) ||
                         type.getParents().size() != 0 ||
                         !(removalProvenance(text(type.getDescription())) || derivedView) ||
@@ -388,6 +394,18 @@ public class STTypeLifecycleApplier extends GhidraScript {
                 description.contains("generated_layout_sha256=") ||
             path.startsWith("/SubmarineTitans/Recovered/HiddenThis/") &&
                 description.contains("[STHiddenThisApplier generated]");
+    }
+
+    /** Revalidate the physical class/vtable pair at mutation time. */
+    private boolean hasPhysicalVptrCompanion(DataType type) {
+        if (!(type instanceof Structure structure) || structure.getLength() < 4)
+            return false;
+        DataTypeComponent component = structure.getComponentAt(0);
+        if (component == null || component.getOffset() != 0 ||
+                !(component.getDataType() instanceof Pointer pointer) ||
+                !(pointer.getDataType() instanceof Structure vtable)) return false;
+        return "vtable".equals(text(component.getFieldName())) &&
+            vtable.getPathName().equals(type.getPathName() + "VTable");
     }
     private File inputFile() throws Exception {
         String[] args = getScriptArgs();

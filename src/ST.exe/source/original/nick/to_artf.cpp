@@ -2,7 +2,7 @@
 // Generated translation unit: source/original/nick/to_artf.cpp
 
 // 005EAF10 STArtiafactC::GetMessage
-#line 1 "decomp/ST.exe/functions/005EAF10/decomp.c"
+#line 4 "decomp/ST.exe/functions/005EAF10/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\nick\to_artf.cpp
    STArtiafactC::GetMessage

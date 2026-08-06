@@ -21,8 +21,8 @@ MMsgTy * __cdecl CreateMMsg(void)
   if (this != nullptr) {
     sub_006E5FB0(this);
     this->vtable = (MMsgTyVTable *)&VTable_0079C018;
-    *(undefined4 *)&this->field_0x18 = 0;
-    *(undefined4 *)&this->field_0x5d = 0;
+    this->field_0018 = 0;
+    this->field_005D = 0;
     memset(&this->field_0x1d, 0, 0x20); /* compiler bulk-zero initialization */
     iVar1 = 0;
     memset(&this->field_0x3d, 0, 0x20); /* compiler bulk-zero initialization */
@@ -51,7 +51,7 @@ MMsgTy * __cdecl CreateMMsg(void)
     } while (iVar1 != 0);
     SpriteClassTy::SpriteClassTy((SpriteClassTy *)&this->field_0x1cf7);
     SpriteClassTy::SpriteClassTy((SpriteClassTy *)&this->field_1D88);
-    SpriteClassTy::SpriteClassTy((SpriteClassTy *)&this[1].field_0x45);
+    SpriteClassTy::SpriteClassTy((SpriteClassTy *)&this->field_0x1e19);
     this->vtable = &MMsgTyVTable;
     this->field_1A5F = 0;
     this->field_1CAA = 0;

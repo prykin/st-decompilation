@@ -1009,7 +1009,7 @@ LAB_0050dfdc:
         uVar7 = 5;
         iVar13 = -1;
         iVar6 = -1;
-        puVar10 = (uint *)LoadResourceString(0x36c4 - (local_14 < 0x21),g_module_00807618);
+        puVar10 = (uint *)LoadResourceString(0x36c4 - (local_14 < 0x21),g_hINSTANCE_00807618);
         ccFntTy::WrTxt(this_00->field_01B8,puVar10,iVar6,iVar13,uVar7,iVar23,iVar24);
         DibPut((RecoveredSourceFamily_dibcopy *)this_00->field_0194,0x24,0x4c,'\x01',pbVar8);
         ccFntTy::EraseSufr(this_00->field_01B8);

@@ -2,7 +2,7 @@
 // Generated translation unit: source/original/Artem/TLO_dock.cpp
 
 // 004D01F0 FUN_004d01f0
-#line 1 "decomp/ST.exe/functions/004D01F0/decomp.c"
+#line 4 "decomp/ST.exe/functions/004D01F0/decomp.c"
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 /* [STSourceProvenanceApplier begin]
    Recovered source file: E:\__titans\Artem\TLO_dock.cpp
@@ -28,7 +28,7 @@ undefined4 __fastcall st::fn_004D01F0(void *param_1)
       this = (STT3DSprC *)st::fn_00401316(pAVar1);
     }
     STField<STT3DSprC *>(param_1,0x5ff) = this;
-    exceptionCode = st::fn_0040537B(this,DAT_008073cc,0x5a,0x45,nullptr,0xb4,0x8c,0x11);
+    exceptionCode = st::fn_0040537B(this,PTR_008073cc,0x5a,0x45,nullptr,0xb4,0x8c,0x11);
     if (exceptionCode != 0) {
       st::fn_006A5E40
                 (exceptionCode,g_overwriteContext_007ED77C,"E:\\__titans\\Artem\\TLO_dock.cpp"
@@ -45,7 +45,7 @@ undefined4 __fastcall st::fn_004D01F0(void *param_1)
 }
 
 // 004D0310 FUN_004d0310
-#line 1 "decomp/ST.exe/functions/004D0310/decomp.c"
+#line 4 "decomp/ST.exe/functions/004D0310/decomp.c"
 /* [STSourceProvenanceApplier begin]
    Recovered source file: E:\__titans\Artem\TLO_dock.cpp
    Diagnostic line evidence: 664 | 666 (metadata/report site, not the function definition)
@@ -80,7 +80,7 @@ undefined4 __fastcall st::fn_004D0310(TLOBaseTy *param_1)
   uVar5 = 0;
   local_8 = 0;
   iVar4 = st::fn_00404183
-                    ((STT3DSprC *)param_1->field_05FF,0xe,DAT_0080677c,
+                    ((STT3DSprC *)param_1->field_05FF,0xe,PTR_0080677c,
                      &DAT_007a9342 + *(int *)&param_1->field_0x369 * 6,0x1d);
   if (iVar4 != 0) {
     st::fn_006A5E40
@@ -91,7 +91,7 @@ undefined4 __fastcall st::fn_004D0310(TLOBaseTy *param_1)
     pbVar2 = param_1->field_0024;
   }
   st::external_00000080(local_48,"%s%1i",&DAT_007a9342 + *(int *)&param_1->field_0x369 * 6,pbVar2);
-  iVar4 = st::fn_00404183((STT3DSprC *)param_1->field_05FF,0xc,DAT_0080677c,local_48,0x1d);
+  iVar4 = st::fn_00404183((STT3DSprC *)param_1->field_05FF,0xc,PTR_0080677c,local_48,0x1d);
   if (iVar4 != 0) {
     st::fn_006A5E40
               (iVar4,g_overwriteContext_007ED77C,"E:\\__titans\\Artem\\TLO_dock.cpp",0x29a);
@@ -109,7 +109,7 @@ undefined4 __fastcall st::fn_004D0310(TLOBaseTy *param_1)
     st::fn_00404264((STT3DSprC *)param_1->field_05FF,0xd);
   }
   else {
-    iVar4 = st::fn_00404183((STT3DSprC *)param_1->field_05FF,0xd,DAT_0080677c,pcVar8,0x1d);
+    iVar4 = st::fn_00404183((STT3DSprC *)param_1->field_05FF,0xd,PTR_0080677c,pcVar8,0x1d);
     if (iVar4 != 0) {
       return 0xffff;
     }
@@ -161,7 +161,7 @@ undefined4 __fastcall st::fn_004D0310(TLOBaseTy *param_1)
 }
 
 // 004D0970 FUN_004d0970
-#line 1 "decomp/ST.exe/functions/004D0970/decomp.c"
+#line 4 "decomp/ST.exe/functions/004D0970/decomp.c"
 /* [STSourceProvenanceApplier begin]
    Recovered source file: E:\__titans\Artem\TLO_dock.cpp
    Diagnostic line evidence: 761 (metadata/report site, not the function definition)
@@ -204,7 +204,7 @@ undefined4 __thiscall st::fn_004D0970(void *this,int param_1,int param_2,int par
 }
 
 // 004D0A80 FUN_004d0a80
-#line 1 "decomp/ST.exe/functions/004D0A80/decomp.c"
+#line 4 "decomp/ST.exe/functions/004D0A80/decomp.c"
 /* [STSourceProvenanceApplier begin]
    Recovered source file: E:\__titans\Artem\TLO_dock.cpp
    Diagnostic line evidence: 773 (metadata/report site, not the function definition)
@@ -261,7 +261,7 @@ undefined4 __thiscall st::fn_004D0A80(void *this,int param_1,int param_2,int par
 }
 
 // 004D0B90 TLOFakeTy::GetMessage
-#line 1 "decomp/ST.exe/functions/004D0B90/decomp.c"
+#line 4 "decomp/ST.exe/functions/004D0B90/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\Artem\TLO_dock.cpp
    TLOFakeTy::GetMessage

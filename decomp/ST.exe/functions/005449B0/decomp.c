@@ -942,18 +942,18 @@ switchD_0054679d_default:
           g_currentExceptionFrame = local_e0.previous;
           return 0;
         }
-        if ((g_prodPanel_008016E8 != nullptr) && (g_prodPanel_008016E8->field_0172 == 1))
-        {
+        if ((g_researchPanel_008016E8 != nullptr) &&
+           (g_researchPanel_008016E8->field_0172 == 1)) {
           g_currentExceptionFrame = local_e0.previous;
           return 0;
         }
-        if ((g_prodPanel_0080167C != nullptr) && (g_prodPanel_0080167C->field_0172 == 1))
-        {
+        if ((g_bldBoatPanel_0080167C != nullptr) &&
+           (g_bldBoatPanel_0080167C->field_0172 == 1)) {
           g_currentExceptionFrame = local_e0.previous;
           return 0;
         }
-        if ((g_prodPanel_00801684 != nullptr) && (g_prodPanel_00801684->field_0172 == 1))
-        {
+        if ((g_bldObjPanel_00801684 != nullptr) &&
+           (g_bldObjPanel_00801684->field_0172 == 1)) {
           g_currentExceptionFrame = local_e0.previous;
           return 0;
         }
@@ -983,8 +983,8 @@ switchD_0054679d_default:
           g_currentExceptionFrame = local_e0.previous;
           return 0;
         }
-        if ((g_prodPanel_00801680 != nullptr) && (g_prodPanel_00801680->field_0172 == 1))
-        {
+        if ((g_bldLabPanel_00801680 != nullptr) &&
+           (g_bldLabPanel_00801680->field_0172 == 1)) {
           g_currentExceptionFrame = local_e0.previous;
           return 0;
         }
@@ -1028,15 +1028,18 @@ switchD_0054679d_default:
         g_currentExceptionFrame = local_e0.previous;
         return 0;
       }
-      if ((g_prodPanel_008016E8 != nullptr) && (g_prodPanel_008016E8->field_0172 == 1)) {
+      if ((g_researchPanel_008016E8 != nullptr) &&
+         (g_researchPanel_008016E8->field_0172 == 1)) {
         g_currentExceptionFrame = local_e0.previous;
         return 0;
       }
-      if ((g_prodPanel_0080167C != nullptr) && (g_prodPanel_0080167C->field_0172 == 1)) {
+      if ((g_bldBoatPanel_0080167C != nullptr) &&
+         (g_bldBoatPanel_0080167C->field_0172 == 1)) {
         g_currentExceptionFrame = local_e0.previous;
         return 0;
       }
-      if ((g_prodPanel_00801684 != nullptr) && (g_prodPanel_00801684->field_0172 == 1)) {
+      if ((g_bldObjPanel_00801684 != nullptr) &&
+         (g_bldObjPanel_00801684->field_0172 == 1)) {
         g_currentExceptionFrame = local_e0.previous;
         return 0;
       }
@@ -1066,7 +1069,8 @@ switchD_0054679d_default:
         g_currentExceptionFrame = local_e0.previous;
         return 0;
       }
-      if ((g_prodPanel_00801680 != nullptr) && (g_prodPanel_00801680->field_0172 == 1)) {
+      if ((g_bldLabPanel_00801680 != nullptr) &&
+         (g_bldLabPanel_00801680->field_0172 == 1)) {
         g_currentExceptionFrame = local_e0.previous;
         return 0;
       }
@@ -1114,11 +1118,11 @@ switchD_0054679d_default:
       case 1:
         if (pAVar5->field_0009 < 0) {
           if ((&stack0x00000000 != (undefined1 *)0x524) &&
-             (pcVar11 = LoadResourceString(pAVar5->field_0001,g_module_00807618),
+             (pcVar11 = LoadResourceString(pAVar5->field_0001,g_hINSTANCE_00807618),
              pcVar11 != nullptr)) {
             UVar14 = local_8->field_0001;
 LAB_005458df:
-            pcVar11 = LoadResourceString(UVar14,g_module_00807618);
+            pcVar11 = LoadResourceString(UVar14,g_hINSTANCE_00807618);
             uVar20 = 0xffffffff;
             do {
               pcVar12 = pcVar11;
@@ -1138,14 +1142,14 @@ LAB_005458df:
         }
         else {
           thunk_FUN_0052a970(*(uint *)(&DAT_00807e66 + pAVar5->field_0009 * 4),1);
-          LoadResourceString(pAVar5->field_0001,g_module_00807618);
+          LoadResourceString(pAVar5->field_0001,g_hINSTANCE_00807618);
           wsprintfA((LPSTR)local_524,"&%d%s\n&%d%s");
         }
         break;
       case 2:
         if (pAVar5->field_0001 == 0) goto switchD_00545816_default;
         if ((&stack0x00000000 != (undefined1 *)0x524) &&
-           (pcVar11 = LoadResourceString(pAVar5->field_0001,g_module_00807618),
+           (pcVar11 = LoadResourceString(pAVar5->field_0001,g_hINSTANCE_00807618),
            pcVar11 != nullptr)) {
           UVar14 = local_8->field_0001;
           goto LAB_005458df;
@@ -1153,15 +1157,15 @@ LAB_005458df:
         break;
       case 3:
         if (pAVar5->field_0005 == 0) {
-          pcVar11 = LoadResourceString(0x36b3,g_module_00807618);
-          pcVar12 = LoadResourceString(pAVar5->field_0001,g_module_00807618);
+          pcVar11 = LoadResourceString(0x36b3,g_hINSTANCE_00807618);
+          pcVar12 = LoadResourceString(pAVar5->field_0001,g_hINSTANCE_00807618);
           pcVar26 = wsprintfA_exref;
           wsprintfA((LPSTR)local_524,"&%d%s\n%s",(message->arg0).words.low,pcVar12,pcVar11);
         }
         else {
-          LoadResourceString(0x36b3,g_module_00807618);
-          LoadResourceString(pAVar5->field_0005,g_module_00807618);
-          LoadResourceString(pAVar5->field_0001,g_module_00807618);
+          LoadResourceString(0x36b3,g_hINSTANCE_00807618);
+          LoadResourceString(pAVar5->field_0005,g_hINSTANCE_00807618);
+          LoadResourceString(pAVar5->field_0001,g_hINSTANCE_00807618);
           pcVar26 = wsprintfA_exref;
           wsprintfA((LPSTR)local_524,"&%d%s\n%s\n%s");
         }
@@ -1180,12 +1184,12 @@ LAB_005458df:
                      (-(uint)(DAT_0080874e != '\x03') & 0xfffffffe) + 6,sVar7);
         }
         if (0 < *(short *)&pAVar5->field_0xf) {
-          LoadResourceString(0x273a,g_module_00807618);
+          LoadResourceString(0x273a,g_hINSTANCE_00807618);
           (*pcVar26)();
         }
         break;
       case 4:
-        pcVar11 = LoadResourceString(pAVar5->field_0001,g_module_00807618);
+        pcVar11 = LoadResourceString(pAVar5->field_0001,g_hINSTANCE_00807618);
         uVar20 = 0xffffffff;
         do {
           pcVar12 = pcVar11;
@@ -1206,7 +1210,7 @@ LAB_005458df:
         }
         wsprintfA((LPSTR)local_524,"&%d%s",(uint)(message->arg0).words.low,&DAT_0080f33a);
         if (local_8->field_0005 != 0) {
-          pcVar11 = LoadResourceString(local_8->field_0005,g_module_00807618);
+          pcVar11 = LoadResourceString(local_8->field_0005,g_hINSTANCE_00807618);
           uVar20 = 0xffffffff;
           do {
             pcVar12 = pcVar11;
@@ -1228,12 +1232,12 @@ LAB_005458df:
         }
         piVar24 = &local_8->field_0009;
         if (local_8->field_0009 != 0) {
-          pcVar11 = LoadResourceString(0x36c2,g_module_00807618);
+          pcVar11 = LoadResourceString(0x36c2,g_hINSTANCE_00807618);
           wsprintfA((LPSTR)local_524,"%s\n%s",local_524,pcVar11);
           iVar8 = 5;
           do {
             if (*piVar24 != CASE_0) {
-              module = g_module_00807618;
+              module = g_hINSTANCE_00807618;
               UVar14 = thunk_FUN_00528060((Global_sub_00528060_param_1Enum)*piVar24,
                                           (char)((uint)*piVar24 >> 0x10));
               pcVar11 = LoadResourceString(UVar14,module);
@@ -1255,7 +1259,7 @@ switchD_00545816_default:
       local_c = 0.0;
     }
     else if ((&stack0x00000000 != (undefined1 *)0x524) &&
-            (pcVar11 = LoadResourceString(UVar14,g_module_00807618), pcVar11 != nullptr)) {
+            (pcVar11 = LoadResourceString(UVar14,g_hINSTANCE_00807618), pcVar11 != nullptr)) {
       UVar14 = this_00->field_04DA;
       goto LAB_005458df;
     }

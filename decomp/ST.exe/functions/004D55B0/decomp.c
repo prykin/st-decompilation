@@ -107,7 +107,7 @@ int __thiscall TLOEmbryoTy::GetMessage(TLOEmbryoTy *this,STMessage *message)
             else {
               pcVar16 = "expl_bt0";
             }
-            iVar5 = STT3DSprC::LoadSequence((STT3DSprC *)puVar13,6,DAT_00806774,pcVar16,0x1d);
+            iVar5 = STT3DSprC::LoadSequence((STT3DSprC *)puVar13,6,PTR_00806774,pcVar16,0x1d);
             if (iVar5 != 0) {
               return 0xffff;
             }
@@ -335,7 +335,7 @@ LAB_004d600f:
     }
     wsprintfA(local_b0,"%s%1i",(&PTR_s_tlo_embws1_007bf3e8)[this_00->field_036C],uVar9);
     puVar13 = &this_00->field_01D5;
-    iVar5 = STT3DSprC::LoadSequence((STT3DSprC *)puVar13,0xe,DAT_0080678c,local_b0,0x1d);
+    iVar5 = STT3DSprC::LoadSequence((STT3DSprC *)puVar13,0xe,PTR_0080678c,local_b0,0x1d);
     if (iVar5 != 0) {
       RaiseInternalException
                 (iVar5,g_overwriteContext_007ED77C,"E:\\__titans\\Artem\\TLO_embryo.cpp",0x43a
@@ -347,7 +347,7 @@ LAB_004d600f:
               ((STT3DSprC *)puVar13,'\x0e',*(uint *)(&DAT_0079104c + this_00->field_0368 * 4));
     STT3DSprC::StartShow((STT3DSprC *)puVar13,0xe,g_playSystem_00802A38->field_00E4);
     iVar5 = STT3DSprC::LoadSequence
-                      ((STT3DSprC *)puVar13,0x10,DAT_0080678c,
+                      ((STT3DSprC *)puVar13,0x10,PTR_0080678c,
                        (&PTR_s_tlo_sha_ws_007bb1b4)[this_00->field_036C],0x1d);
     if (iVar5 != 0) {
       iVar12 = 0x441;
@@ -379,7 +379,7 @@ LAB_004d600f:
       STT3DSprC::StartShow((STT3DSprC *)puVar13,0xc,g_playSystem_00802A38->field_00E4);
     }
     iVar5 = STT3DSprC::LoadSequence
-                      ((STT3DSprC *)puVar13,0x10,DAT_0080678c,
+                      ((STT3DSprC *)puVar13,0x10,PTR_0080678c,
                        (&PTR_s_tlo_sha_ws_007bb1b4)[this_00->field_036C],0x1d);
     if (iVar5 != 0) {
       iVar12 = 0x459;

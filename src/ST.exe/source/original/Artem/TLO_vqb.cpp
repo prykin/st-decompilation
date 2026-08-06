@@ -2,7 +2,7 @@
 // Generated translation unit: source/original/Artem/TLO_vqb.cpp
 
 // 004ECEA0 FUN_004ecea0
-#line 1 "decomp/ST.exe/functions/004ECEA0/decomp.c"
+#line 4 "decomp/ST.exe/functions/004ECEA0/decomp.c"
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 /* [STSourceProvenanceApplier begin]
    Recovered source file: E:\__titans\Artem\TLO_vqb.cpp
@@ -27,7 +27,7 @@ undefined4 __fastcall st::fn_004ECEA0(AnonShape_004D9C80_80F657D3 *param_1)
       this = (STT3DSprC *)st::fn_00401316(pAVar1);
     }
     param_1->field_05FF = this;
-    iVar2 = st::fn_0040537B(this,DAT_008073cc,0x5a,0x45,nullptr,0xb4,0x8c,0x11);
+    iVar2 = st::fn_0040537B(this,PTR_008073cc,0x5a,0x45,nullptr,0xb4,0x8c,0x11);
     if (iVar2 != 0) {
       st::fn_006A5E40
                 (iVar2,g_overwriteContext_007ED77C,"E:\\__titans\\Artem\\TLO_vqb.cpp",0x3f);
@@ -71,7 +71,7 @@ undefined4 __fastcall st::fn_004ECEA0(AnonShape_004D9C80_80F657D3 *param_1)
   }
   if (*(int *)&param_1->field_0x4d0 == 4) {
     iVar2 = st::fn_00404183
-                      ((STT3DSprC *)param_1->field_05FF,0xe,DAT_00806774,"vacmine",0x1d);
+                      ((STT3DSprC *)param_1->field_05FF,0xe,PTR_00806774,"vacmine",0x1d);
     if (iVar2 != 0) {
       st::fn_006A5E40
                 (iVar2,g_overwriteContext_007ED77C,"E:\\__titans\\Artem\\TLO_vqb.cpp",0x58);
@@ -107,7 +107,7 @@ undefined4 __fastcall st::fn_004ECEA0(AnonShape_004D9C80_80F657D3 *param_1)
 }
 
 // 004ED430 FUN_004ed430
-#line 1 "decomp/ST.exe/functions/004ED430/decomp.c"
+#line 4 "decomp/ST.exe/functions/004ED430/decomp.c"
 /* [STSourceProvenanceApplier begin]
    Recovered source file: E:\__titans\Artem\TLO_vqb.cpp
    Diagnostic line evidence: 143 (metadata/report site, not the function definition)
@@ -138,7 +138,7 @@ undefined4 __fastcall st::fn_004ED430(int param_1)
 }
 
 // 004ED4B0 FUN_004ed4b0
-#line 1 "decomp/ST.exe/functions/004ED4B0/decomp.c"
+#line 4 "decomp/ST.exe/functions/004ED4B0/decomp.c"
 /* [STSourceProvenanceApplier begin]
    Recovered source file: E:\__titans\Artem\TLO_vqb.cpp
    Diagnostic line evidence: 155 (metadata/report site, not the function definition)

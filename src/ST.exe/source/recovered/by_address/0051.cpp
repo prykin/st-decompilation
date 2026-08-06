@@ -2,7 +2,7 @@
 // Generated translation unit: source/recovered/by_address/0051.cpp
 
 // 00510C50 CreateHelpPanel
-#line 1 "decomp/ST.exe/functions/00510C50/decomp.c"
+#line 4 "decomp/ST.exe/functions/00510C50/decomp.c"
 /* [STUnclaimedCodeApplier] Exact function entry recovered from thunk_target.
    Evidence: P:007CA914>004014D3
 
@@ -25,7 +25,7 @@ HelpPanelTy * __cdecl st::fn_00510C50(void)
 }
 
 // 00510C80 FUN_00510c80
-#line 1 "decomp/ST.exe/functions/00510C80/decomp.c"
+#line 4 "decomp/ST.exe/functions/00510C80/decomp.c"
 /* [STReturnSemanticsApplier] typed_pointer_return.
    Evidence: all 1 value-return path(s) forward Listing variable param_1 with evidence-backed
    structure /SubmarineTitans/Recovered/PointerShapes/AnonShape_00510C80_2C2DC38C (current recovered
@@ -46,7 +46,7 @@ AnonShape_00510C80_2C2DC38C * __fastcall st::fn_00510C80(AnonShape_00510C80_2C2D
   param_1->field_0068 = 0;
   param_1->field_0172 = 2;
   param_1->field_0178 = 0;
-  *(VTable_0079AC48 **)param_1 = &VTable_0079AC48;
+  *(VTable_0079AC48 **)param_1 = &st_global_0079AC48;
   param_1->field_0040 = 500;
   param_1->field_0048 = 400;
   param_1->field_01A0 = 0;
@@ -93,7 +93,7 @@ AnonShape_00510C80_2C2DC38C * __fastcall st::fn_00510C80(AnonShape_00510C80_2C2D
 }
 
 // 005121F0 FUN_005121f0
-#line 1 "decomp/ST.exe/functions/005121F0/decomp.c"
+#line 4 "decomp/ST.exe/functions/005121F0/decomp.c"
 /* [STSwitchEnumApplier] Switch target param_1 uses
    /SubmarineTitans/Recovered/Enums/Global_sub_005121F0_param_1Enum. Cases:
    CASE_F2=242;CASE_F3=243;CASE_F4=244;CASE_F5=245;CASE_F6=246;CASE_F7=247;CASE_F8=248;CASE_F9=249;CASE_FA=250;CASE_FB=251
@@ -178,7 +178,7 @@ undefined4 __thiscall st::fn_005121F0(void *this,Global_sub_005121F0_param_1Enum
 }
 
 // 0051F860 CreateHelpString
-#line 1 "decomp/ST.exe/functions/0051F860/decomp.c"
+#line 4 "decomp/ST.exe/functions/0051F860/decomp.c"
 /* [STUnclaimedCodeApplier] Exact function entry recovered from thunk_target.
    Evidence: P:007CA84C>004043AE
 
@@ -194,7 +194,7 @@ HelpStringTy * __cdecl st::fn_0051F860(void)
   this = (HelpStringTy *)st::fn_006B04D0(0x132);
   if (this != nullptr) {
     st::fn_006E5FB0(this);
-    this->vtable = &HelpStringTyVTable;
+    this->vtable = &st_global_0079AC6C;
     this->field_011D = 0;
     this->field_011C = 0;
     this->field_0126 = 0;
@@ -209,7 +209,7 @@ HelpStringTy * __cdecl st::fn_0051F860(void)
 }
 
 // 0051FAC0 FUN_0051fac0
-#line 1 "decomp/ST.exe/functions/0051FAC0/decomp.c"
+#line 4 "decomp/ST.exe/functions/0051FAC0/decomp.c"
 /* [STReturnSemanticsApplier] ignored_eax_void.
    Evidence: all observed direct callers ignore the return register (ignored=2, used=0), and
    decompilation contains no value return */
@@ -258,7 +258,7 @@ void __thiscall st::fn_0051FAC0(void *this,char *param_1,byte param_2,char param
 }
 
 // 0051FE40 CreateInfocPanel
-#line 1 "decomp/ST.exe/functions/0051FE40/decomp.c"
+#line 4 "decomp/ST.exe/functions/0051FE40/decomp.c"
 /* [STUnclaimedCodeApplier] Exact function entry recovered from thunk_target.
    Evidence: P:007CA834>00403FCB
 
@@ -284,7 +284,7 @@ InfocPanelTy * __cdecl st::fn_0051FE40(void)
     this->field_017C = 0;
     this->field_0185 = 0;
     this->field_0189 = nullptr;
-    this->vtable = &InfocPanelTyVTable;
+    this->vtable = &st_global_0079AC70;
     this->field_003C = 0x1c7;
     this->field_0044 = 0;
     this->field_0040 = 0x13d;

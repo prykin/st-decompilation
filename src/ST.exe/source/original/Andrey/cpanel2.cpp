@@ -2,7 +2,7 @@
 // Generated translation unit: source/original/Andrey/cpanel2.cpp
 
 // 00501000 CPanelTy::PaintBEnergy
-#line 1 "decomp/ST.exe/functions/00501000/decomp.c"
+#line 4 "decomp/ST.exe/functions/00501000/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\Andrey\cpanel2.cpp
    CPanelTy::PaintBEnergy
@@ -63,7 +63,7 @@ void __thiscall st::fn_00501000(CPanelTy *this)
 }
 
 // 00501190 CPanelTy::PaintBCapacity
-#line 1 "decomp/ST.exe/functions/00501190/decomp.c"
+#line 4 "decomp/ST.exe/functions/00501190/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\Andrey\cpanel2.cpp
    CPanelTy::PaintBCapacity
@@ -144,7 +144,7 @@ void __thiscall st::fn_00501190(CPanelTy *this)
 }
 
 // 00501410 CPanelTy::PaintBRLife
-#line 1 "decomp/ST.exe/functions/00501410/decomp.c"
+#line 4 "decomp/ST.exe/functions/00501410/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\Andrey\cpanel2.cpp
    CPanelTy::PaintBRLife */
@@ -199,7 +199,7 @@ void __thiscall st::fn_00501410(CPanelTy *this,int param_1)
 }
 
 // 00501590 CPanelTy::PaintCtrlBoat
-#line 1 "decomp/ST.exe/functions/00501590/decomp.c"
+#line 4 "decomp/ST.exe/functions/00501590/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\Andrey\cpanel2.cpp
    CPanelTy::PaintCtrlBoat
@@ -331,7 +331,7 @@ switchD_0050179b_caseD_9:
 }
 
 // 00501FF0 CPanelTy::Update2PanelWB
-#line 1 "decomp/ST.exe/functions/00501FF0/decomp.c"
+#line 4 "decomp/ST.exe/functions/00501FF0/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\Andrey\cpanel2.cpp
    CPanelTy::Update2PanelWB
@@ -448,7 +448,7 @@ switchD_0050207d_default:
 }
 
 // 00502360 CPanelTy::SetControlBoat
-#line 1 "decomp/ST.exe/functions/00502360/decomp.c"
+#line 4 "decomp/ST.exe/functions/00502360/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\Andrey\cpanel2.cpp
    CPanelTy::SetControlBoat */
@@ -695,7 +695,7 @@ LAB_00502622:
 }
 
 // 00502990 CPanelTy::PaintCtrlBoatSI
-#line 1 "decomp/ST.exe/functions/00502990/decomp.c"
+#line 4 "decomp/ST.exe/functions/00502990/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\Andrey\cpanel2.cpp
    CPanelTy::PaintCtrlBoatSI
@@ -856,7 +856,7 @@ LAB_00502b3b:
 }
 
 // 00502FC0 CPanelTy::Update2PanelSI
-#line 1 "decomp/ST.exe/functions/00502FC0/decomp.c"
+#line 4 "decomp/ST.exe/functions/00502FC0/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\Andrey\cpanel2.cpp
    CPanelTy::Update2PanelSI
@@ -1021,7 +1021,7 @@ switchD_005030a2_caseD_1a:
 }
 
 // 00503450 CPanelTy::SetControlBoatSI
-#line 1 "decomp/ST.exe/functions/00503450/decomp.c"
+#line 4 "decomp/ST.exe/functions/00503450/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\Andrey\cpanel2.cpp
    CPanelTy::SetControlBoatSI */
@@ -1318,7 +1318,7 @@ switchD_0050389f_default:
 }
 
 // 00503BB0 CPanelTy::SetCmdBoat
-#line 1 "decomp/ST.exe/functions/00503BB0/decomp.c"
+#line 4 "decomp/ST.exe/functions/00503BB0/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\Andrey\cpanel2.cpp
    CPanelTy::SetCmdBoat
@@ -1380,14 +1380,14 @@ void __thiscall st::fn_00503BB0(CPanelTy *this,byte param_1)
     st::fn_00401E15(local_10,'\x01',0);
   }
   this_00->field_012C = 1;
-  if (g_prodPanel_008016E8 != nullptr) {
-    st::fn_00401A73(g_prodPanel_008016E8,'\0');
+  if (g_researchPanel_008016E8 != nullptr) {
+    st::fn_00401A73(g_researchPanel_008016E8,'\0');
   }
-  if (g_prodPanel_0080167C != nullptr) {
-    st::fn_00401A73(g_prodPanel_0080167C,'\0');
+  if (g_bldBoatPanel_0080167C != nullptr) {
+    st::fn_00401A73(g_bldBoatPanel_0080167C,'\0');
   }
-  if (g_prodPanel_00801680 != nullptr) {
-    st::fn_00401A73(g_prodPanel_00801680,'\0');
+  if (g_bldLabPanel_00801680 != nullptr) {
+    st::fn_00401A73(g_bldLabPanel_00801680,'\0');
   }
   if (g_infocPanel_00801698 != nullptr) {
     (*g_infocPanel_00801698->vtable->SetPanel)((SpecPanelTy *)g_infocPanel_00801698,'\0');
@@ -1395,8 +1395,8 @@ void __thiscall st::fn_00503BB0(CPanelTy *this,byte param_1)
   if (g_tradePanel_00802A44 != nullptr) {
     st::fn_00404AF7(g_tradePanel_00802A44,'\0','\0');
   }
-  if (g_prodPanel_00801684 != nullptr) {
-    st::fn_00401A73(g_prodPanel_00801684,'\0');
+  if (g_bldObjPanel_00801684 != nullptr) {
+    st::fn_00401A73(g_bldObjPanel_00801684,'\0');
   }
   if (g_behPanel_00801678 != nullptr) {
     (*g_behPanel_00801678->vtable->SetPanel)((SpecPanelTy *)g_behPanel_00801678,'\0');
@@ -1450,8 +1450,9 @@ void __thiscall st::fn_00503BB0(CPanelTy *this,byte param_1)
     g_currentExceptionFrame = local_54.previous;
     return;
   case 0xe:
-    if ((g_prodPanel_00801684 != nullptr) && (g_prodPanel_00801684->field_0172 == 2)) {
-      st::fn_00401A73(g_prodPanel_00801684,'\x01');
+    if ((g_bldObjPanel_00801684 != nullptr) && (g_bldObjPanel_00801684->field_0172 == 2))
+    {
+      st::fn_00401A73(g_bldObjPanel_00801684,'\x01');
     }
     break;
   case 0x14:

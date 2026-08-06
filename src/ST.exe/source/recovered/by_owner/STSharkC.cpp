@@ -2,7 +2,7 @@
 // Generated translation unit: source/recovered/by_owner/STSharkC.cpp
 
 // 0058D750 STSharkC::STSharkC
-#line 1 "decomp/ST.exe/functions/0058D750/decomp.c"
+#line 4 "decomp/ST.exe/functions/0058D750/decomp.c"
 /* [STConstructorApplier] Recovered constructor candidate.
    VTable: 0079BE80 (store 0058D77B)
    Evidence: final_vptr=0079BE80; returns_this=true; calls_before=2; field_writes_after=3;
@@ -17,8 +17,8 @@ STSharkC * __thiscall st::fn_0058D750(STSharkC *this)
 
   st::fn_00401933((STGameObjC *)this);
   st::fn_00401316((AnonShape_004AB810_8E5693D5 *)&this->field_01D5);
-  this->field_01D5 = &VTable_0079BFE0;
-  this->vtable = &STSharkCVTable;
+  this->field_01D5 = &st_global_0079BFE0;
+  this->vtable = &st_global_0079BE80;
   this->field_0257 = CASE_0;
   memset(&this->field_0x25b, 0, 0x34); /* compiler bulk-zero initialization */
   this->field_023D = 0;
@@ -27,7 +27,7 @@ STSharkC * __thiscall st::fn_0058D750(STSharkC *this)
 }
 
 // 0058EFE0 STSharkC::sub_0058EFE0
-#line 1 "decomp/ST.exe/functions/0058EFE0/decomp.c"
+#line 4 "decomp/ST.exe/functions/0058EFE0/decomp.c"
 /* [STMethodOwnerApplier] Structural method owner recovered as STSharkC.
    Evidence: this_call_owners=[STSharkC]; agreed_this_calls=5; incoming_this_accesses=1;
    incoming_edx_uses=0; incoming_stack_parameter_uses=0; direct_non_thunk_callers=0;
@@ -51,7 +51,7 @@ void __thiscall st::fn_0058EFE0(STSharkC *this)
 }
 
 // 0058F430 STSharkC::sub_0058F430
-#line 1 "decomp/ST.exe/functions/0058F430/decomp.c"
+#line 4 "decomp/ST.exe/functions/0058F430/decomp.c"
 /* [STMethodOwnerApplier] Structural method owner recovered as STSharkC.
    Evidence: this_call_owners=[STSharkC]; agreed_this_calls=1; incoming_this_accesses=11;
    incoming_edx_uses=0
@@ -135,7 +135,7 @@ int __thiscall st::fn_0058F430(STSharkC *this)
 }
 
 // 0058FF70 STSharkC::sub_0058FF70
-#line 1 "decomp/ST.exe/functions/0058FF70/decomp.c"
+#line 4 "decomp/ST.exe/functions/0058FF70/decomp.c"
 /* [STMethodOwnerApplier] Structural method owner recovered as STSharkC.
    Evidence: this_call_owners=[STSharkC]; agreed_this_calls=1; incoming_this_accesses=3;
    incoming_edx_uses=0; incoming_stack_parameter_uses=0; direct_non_thunk_callers=0;

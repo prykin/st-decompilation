@@ -91,7 +91,7 @@ void __thiscall HelpPanelTy::ObjProc(HelpPanelTy *this,int param_1,uint param_2,
       uVar14 = 3;
       iVar12 = -1;
       iVar6 = -1;
-      puVar8 = (uint *)LoadResourceString(0x564a,g_module_00807618);
+      puVar8 = (uint *)LoadResourceString(0x564a,g_hINSTANCE_00807618);
       ccFntTy::WrStr(this_00->field_01E0,puVar8,iVar6,iVar12,uVar14);
       local_8 = local_8 + 0xf;
       UVar7 = 0;
@@ -122,13 +122,13 @@ void __thiscall HelpPanelTy::ObjProc(HelpPanelTy *this,int param_1,uint param_2,
         uVar14 = 3;
         iVar12 = -1;
         iVar6 = -3;
-        puVar8 = (uint *)LoadResourceString(0x5654,g_module_00807618);
+        puVar8 = (uint *)LoadResourceString(0x5654,g_hINSTANCE_00807618);
         ccFntTy::WrStr(this_00->field_01E0,puVar8,iVar6,iVar12,uVar14);
         ccFntTy::SetSurf(this_00->field_01E0,(int)this_00->field_0218,0,0x96,local_8,0x106,0xf);
         uVar14 = (DAT_0080874e != '\x03') - 1 & 5;
         iVar12 = -1;
         iVar6 = 1;
-        puVar8 = (uint *)LoadResourceString(UVar7,g_module_00807618);
+        puVar8 = (uint *)LoadResourceString(UVar7,g_hINSTANCE_00807618);
         ccFntTy::WrStr(this_00->field_01E0,puVar8,iVar6,iVar12,uVar14);
         local_8 = local_8 + 0xf;
       }
@@ -136,7 +136,7 @@ void __thiscall HelpPanelTy::ObjProc(HelpPanelTy *this,int param_1,uint param_2,
       uVar14 = 3;
       iVar12 = -1;
       iVar6 = -3;
-      puVar8 = (uint *)LoadResourceString(0x5656,g_module_00807618);
+      puVar8 = (uint *)LoadResourceString(0x5656,g_hINSTANCE_00807618);
       ccFntTy::WrStr(this_00->field_01E0,puVar8,iVar6,iVar12,uVar14);
       ccFntTy::SetSurf(this_00->field_01E0,(int)this_00->field_0218,0,0x96,local_8,0x106,0xf);
       if (param_2 == 1) {
@@ -151,14 +151,14 @@ void __thiscall HelpPanelTy::ObjProc(HelpPanelTy *this,int param_1,uint param_2,
       uVar14 = (DAT_0080874e != '\x03') - 1 & 5;
       iVar12 = -1;
       iVar6 = 1;
-      puVar8 = (uint *)LoadResourceString(UVar7,g_module_00807618);
+      puVar8 = (uint *)LoadResourceString(UVar7,g_hINSTANCE_00807618);
       ccFntTy::WrStr(this_00->field_01E0,puVar8,iVar6,iVar12,uVar14);
       local_8 = local_8 + 0xf;
       ccFntTy::SetSurf(this_00->field_01E0,(int)this_00->field_0218,0,0,local_8,0x91,0xf);
       uVar14 = 3;
       iVar12 = -1;
       iVar6 = -3;
-      puVar8 = (uint *)LoadResourceString(0x55f7,g_module_00807618);
+      puVar8 = (uint *)LoadResourceString(0x55f7,g_hINSTANCE_00807618);
       ccFntTy::WrStr(this_00->field_01E0,puVar8,iVar6,iVar12,uVar14);
       local_14 = param_1 * 3;
       if (param_2 == 3) {
@@ -236,7 +236,7 @@ void __thiscall HelpPanelTy::ObjProc(HelpPanelTy *this,int param_1,uint param_2,
           uVar14 = 3;
           iVar12 = -1;
           iVar6 = -3;
-          puVar8 = (uint *)LoadResourceString(0x5657,g_module_00807618);
+          puVar8 = (uint *)LoadResourceString(0x5657,g_hINSTANCE_00807618);
           ccFntTy::WrStr(this_00->field_01E0,puVar8,iVar6,iVar12,uVar14);
           local_1c = nullptr;
         }
@@ -244,7 +244,7 @@ void __thiscall HelpPanelTy::ObjProc(HelpPanelTy *this,int param_1,uint param_2,
         uVar14 = (DAT_0080874e != '\x03') - 1 & 5;
         iVar12 = -1;
         iVar6 = 1;
-        module = g_module_00807618;
+        module = g_hINSTANCE_00807618;
         UVar7 = thunk_FUN_00528060(*pGVar1,'\0');
         puVar8 = (uint *)LoadResourceString(UVar7,module);
         ccFntTy::WrStr(this_00->field_01E0,puVar8,iVar6,iVar12,uVar14);
@@ -268,14 +268,14 @@ void __thiscall HelpPanelTy::ObjProc(HelpPanelTy *this,int param_1,uint param_2,
       uVar14 = 3;
       iVar12 = -1;
       iVar6 = -1;
-      puVar8 = (uint *)LoadResourceString(0x564b,g_module_00807618);
+      puVar8 = (uint *)LoadResourceString(0x564b,g_hINSTANCE_00807618);
       ccFntTy::WrStr(this_00->field_01E0,puVar8,iVar6,iVar12,uVar14);
       local_8 = local_8 + 0xf;
       ccFntTy::SetSurf(this_00->field_01E0,(int)this_00->field_0218,0,0x96,local_8,0x106,0xf);
       uVar14 = (DAT_0080874e != '\x03') - 1 & 5;
       iVar12 = -1;
       iVar6 = 1;
-      puVar8 = (uint *)LoadResourceString(0x564c,g_module_00807618);
+      puVar8 = (uint *)LoadResourceString(0x564c,g_hINSTANCE_00807618);
       ccFntTy::WrStr(this_00->field_01E0,puVar8,iVar6,iVar12,uVar14);
       ccFntTy::SetSurf(this_00->field_01E0,(int)this_00->field_0218,0,0,local_8,0x91,0xf);
       iVar12 = local_14;
@@ -286,7 +286,7 @@ void __thiscall HelpPanelTy::ObjProc(HelpPanelTy *this,int param_1,uint param_2,
       uVar14 = (DAT_0080874e != '\x03') - 1 & 5;
       iVar13 = -1;
       iVar6 = 1;
-      puVar8 = (uint *)LoadResourceString(0x564d,g_module_00807618);
+      puVar8 = (uint *)LoadResourceString(0x564d,g_hINSTANCE_00807618);
       ccFntTy::WrStr(this_00->field_01E0,puVar8,iVar6,iVar13,uVar14);
       iVar6 = *(int *)(&DAT_007e3dc0 + param_2 * 4);
       local_1c = (int *)(&DAT_007e3dc0 + param_2 * 4);
@@ -315,21 +315,21 @@ void __thiscall HelpPanelTy::ObjProc(HelpPanelTy *this,int param_1,uint param_2,
       uVar14 = 2;
       iVar13 = -1;
       iVar6 = -3;
-      puVar8 = (uint *)LoadResourceString(local_10,g_module_00807618);
+      puVar8 = (uint *)LoadResourceString(local_10,g_hINSTANCE_00807618);
       ccFntTy::WrStr(this_00->field_01E0,puVar8,iVar6,iVar13,uVar14);
       local_8 = local_8 + 0xf;
       ccFntTy::SetSurf(this_00->field_01E0,(int)this_00->field_0218,0,0x96,local_8,0x106,0xf);
       uVar14 = (DAT_0080874e != '\x03') - 1 & 5;
       iVar13 = -1;
       iVar6 = 1;
-      puVar8 = (uint *)LoadResourceString(0x565a,g_module_00807618);
+      puVar8 = (uint *)LoadResourceString(0x565a,g_hINSTANCE_00807618);
       ccFntTy::WrStr(this_00->field_01E0,puVar8,iVar6,iVar13,uVar14);
       ccFntTy::SetSurf(this_00->field_01E0,(int)this_00->field_0218,0,0,local_8,0x91,0xf);
       uVar14 = 2;
       iVar13 = -1;
       iVar6 = -3;
       puVar8 = (uint *)LoadResourceString(0x273f - (*(int *)(&DAT_00791b18 + iVar12 * 4) != 0),
-                                          g_module_00807618);
+                                          g_hINSTANCE_00807618);
       ccFntTy::WrStr(this_00->field_01E0,puVar8,iVar6,iVar13,uVar14);
       local_8 = local_8 + 0xf;
       iVar6 = param_1 + -0x32;
@@ -363,13 +363,13 @@ void __thiscall HelpPanelTy::ObjProc(HelpPanelTy *this,int param_1,uint param_2,
       uVar14 = (DAT_0080874e != '\x03') - 1 & 5;
       iVar13 = -1;
       iVar6 = 1;
-      puVar8 = (uint *)LoadResourceString(0x564e,g_module_00807618);
+      puVar8 = (uint *)LoadResourceString(0x564e,g_hINSTANCE_00807618);
       ccFntTy::WrStr(this_00->field_01E0,puVar8,iVar6,iVar13,uVar14);
       ccFntTy::SetSurf(this_00->field_01E0,(int)this_00->field_0218,0,0,local_8,0x91,0xf);
       uVar14 = 2;
       iVar13 = -1;
       iVar6 = -3;
-      puVar8 = (uint *)LoadResourceString((param_2 != 3) + 0x273e,g_module_00807618);
+      puVar8 = (uint *)LoadResourceString((param_2 != 3) + 0x273e,g_hINSTANCE_00807618);
       ccFntTy::WrStr(this_00->field_01E0,puVar8,iVar6,iVar13,uVar14);
       local_8 = local_8 + 0xf;
       if (local_9 != '\0') {
@@ -378,7 +378,7 @@ void __thiscall HelpPanelTy::ObjProc(HelpPanelTy *this,int param_1,uint param_2,
         uVar14 = (DAT_0080874e != '\x03') - 1 & 5;
         iVar12 = -1;
         iVar6 = 1;
-        puVar8 = (uint *)LoadResourceString(0x564f,g_module_00807618);
+        puVar8 = (uint *)LoadResourceString(0x564f,g_hINSTANCE_00807618);
         ccFntTy::WrStr(this_00->field_01E0,puVar8,iVar6,iVar12,uVar14);
         ccFntTy::SetSurf(this_00->field_01E0,(int)this_00->field_0218,0,0,local_8,0x91,0xf);
         if (*(int *)((int)&DAT_00792ca0 + local_18) != 0) {
@@ -394,7 +394,7 @@ void __thiscall HelpPanelTy::ObjProc(HelpPanelTy *this,int param_1,uint param_2,
         uVar14 = 2;
         iVar12 = -1;
         iVar6 = -3;
-        puVar8 = (uint *)LoadResourceString(0x273f - bVar10,g_module_00807618);
+        puVar8 = (uint *)LoadResourceString(0x273f - bVar10,g_hINSTANCE_00807618);
         ccFntTy::WrStr(this_00->field_01E0,puVar8,iVar6,iVar12,uVar14);
         local_8 = local_8 + 0xf;
         iVar12 = local_14;
@@ -404,14 +404,14 @@ void __thiscall HelpPanelTy::ObjProc(HelpPanelTy *this,int param_1,uint param_2,
         uVar14 = (DAT_0080874e != '\x03') - 1 & 5;
         iVar13 = -1;
         iVar6 = 1;
-        puVar8 = (uint *)LoadResourceString(0x5650,g_module_00807618);
+        puVar8 = (uint *)LoadResourceString(0x5650,g_hINSTANCE_00807618);
         ccFntTy::WrStr(this_00->field_01E0,puVar8,iVar6,iVar13,uVar14);
         iVar6 = *(int *)(&DAT_007e29f0 + iVar12 * 4);
         ccFntTy::SetSurf(this_00->field_01E0,(int)this_00->field_0218,0,0,local_8,0x91,0xf);
         uVar14 = 2;
         iVar13 = -1;
         iVar12 = -3;
-        puVar8 = (uint *)LoadResourceString(0x273f - (iVar6 != 0),g_module_00807618);
+        puVar8 = (uint *)LoadResourceString(0x273f - (iVar6 != 0),g_hINSTANCE_00807618);
         ccFntTy::WrStr(this_00->field_01E0,puVar8,iVar12,iVar13,uVar14);
         local_8 = local_8 + 0xf;
         iVar12 = local_14;
@@ -420,7 +420,7 @@ void __thiscall HelpPanelTy::ObjProc(HelpPanelTy *this,int param_1,uint param_2,
           uVar14 = (DAT_0080874e != '\x03') - 1 & 5;
           iVar13 = -1;
           iVar12 = 1;
-          puVar8 = (uint *)LoadResourceString(0x5651,g_module_00807618);
+          puVar8 = (uint *)LoadResourceString(0x5651,g_hINSTANCE_00807618);
           ccFntTy::WrStr(this_00->field_01E0,puVar8,iVar12,iVar13,uVar14);
           ccFntTy::SetSurf(this_00->field_01E8,(int)this_00->field_0218,0,0x5f,local_8 - 3,0x16,0x14
                           );
@@ -445,7 +445,7 @@ void __thiscall HelpPanelTy::ObjProc(HelpPanelTy *this,int param_1,uint param_2,
       uVar14 = (DAT_0080874e != '\x03') - 1 & 5;
       iVar13 = -1;
       iVar6 = 1;
-      puVar8 = (uint *)LoadResourceString(0x565b,g_module_00807618);
+      puVar8 = (uint *)LoadResourceString(0x565b,g_hINSTANCE_00807618);
       ccFntTy::WrStr(this_00->field_01E0,puVar8,iVar6,iVar13,uVar14);
       local_10 = 0;
       uVar5 = 0;
@@ -463,7 +463,7 @@ void __thiscall HelpPanelTy::ObjProc(HelpPanelTy *this,int param_1,uint param_2,
       uVar14 = 2;
       iVar12 = -1;
       iVar6 = -3;
-      puVar8 = (uint *)LoadResourceString(local_10,g_module_00807618);
+      puVar8 = (uint *)LoadResourceString(local_10,g_hINSTANCE_00807618);
       ccFntTy::WrStr(this_00->field_01E0,puVar8,iVar6,iVar12,uVar14);
       local_8 = local_8 + 0xf;
       UVar7 = thunk_FUN_00523410(param_1,bVar11,2);

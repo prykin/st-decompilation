@@ -2,7 +2,7 @@
 // Generated translation unit: source/recovered/by_address/005D.cpp
 
 // 005D4B40 CreateSettMapM
-#line 1 "decomp/ST.exe/functions/005D4B40/decomp.c"
+#line 4 "decomp/ST.exe/functions/005D4B40/decomp.c"
 /* [STObjectFactoryApplier] Central object factory for 0x030B (ST_OBJECT_SETT_MAP_M).
    Evidence: registry[44] at 007CA880 stores type 0x030B and executable pointer 00401AFF; allocation
    size 8773 uniquely matches /SettMapMTy; calls base/helper constructor(s) SpriteClassTy; exact
@@ -23,7 +23,7 @@ SettMapMTy * __cdecl st::fn_005D4B40(void)
   this = (SettMapMTy *)st::fn_006B04D0(0x2245);
   if (this != nullptr) {
     st::fn_006E5FB0(this);
-    this->vtable = (SettMapMTyVTable *)&VTable_0079C018;
+    this->vtable = (SettMapMTyVTable *)&st_global_0079C018;
     this->field_0018 = 0;
     this->field_005D = 0;
     memset(&this->field_0x1d, 0, 0x20); /* compiler bulk-zero initialization */
@@ -40,7 +40,7 @@ SettMapMTy * __cdecl st::fn_005D4B40(void)
       this_00 = (SpriteClassTy *)&this_00[3].field_0048;
       local_8 = local_8 + -1;
     } while (local_8 != 0);
-    this->vtable = (SettMapMTyVTable *)&MMObjTyVTable;
+    this->vtable = (SettMapMTyVTable *)&st_global_0079C008;
     this->field_0065 = 2;
     this->field_009A = 0;
     memset(&this->field_0x66, 0, 0x34); /* compiler bulk-zero initialization */
@@ -108,7 +108,7 @@ SettMapMTy * __cdecl st::fn_005D4B40(void)
     this->field_0x1f5d = 1;
     this->field_0x1f5e = 1;
     this->field_1F5F = 1;
-    this->vtable = &SettMapMTyVTable;
+    this->vtable = &st_global_0079C124;
     this->field_21FC = 0;
     this->field_2200 = 0xffffffff;
     this->field_2204 = nullptr;
@@ -136,7 +136,7 @@ SettMapMTy * __cdecl st::fn_005D4B40(void)
 }
 
 // 005D77A0 CreateSettMap
-#line 1 "decomp/ST.exe/functions/005D77A0/decomp.c"
+#line 4 "decomp/ST.exe/functions/005D77A0/decomp.c"
 /* [STObjectFactoryApplier] Central object factory for 0x0306 (ST_OBJECT_SETT_MAP).
    Evidence: registry[43] at 007CA878 stores type 0x0306 and executable pointer 00405745; allocation
    size 8700 uniquely matches /SettMapTy; calls base/helper constructor(s) SpriteClassTy; exact
@@ -156,7 +156,7 @@ SettMapTy * __cdecl st::fn_005D77A0(void)
   this = (SettMapTy *)st::fn_006B04D0(0x21fc);
   if (this != nullptr) {
     st::fn_006E5FB0(this);
-    this->vtable = (SettMapTyVTable *)&VTable_0079C018;
+    this->vtable = (SettMapTyVTable *)&st_global_0079C018;
     this->field_0018 = 0;
     this->field_005D = 0;
     memset(&this->field_0x1d, 0, 0x20); /* compiler bulk-zero initialization */
@@ -173,7 +173,7 @@ SettMapTy * __cdecl st::fn_005D77A0(void)
       this_00 = (SpriteClassTy *)&this_00[3].field_0048;
       local_8 = local_8 + -1;
     } while (local_8 != 0);
-    this->vtable = (SettMapTyVTable *)&MMObjTyVTable;
+    this->vtable = (SettMapTyVTable *)&st_global_0079C008;
     this->field_0065 = 2;
     this->field_009A = 0;
     memset(&this->field_0x66, 0, 0x34); /* compiler bulk-zero initialization */
@@ -238,14 +238,14 @@ SettMapTy * __cdecl st::fn_005D77A0(void)
     this->field_1F5E = 1;
     this->field_1F5F = 1;
     this->field_1F5C = 4;
-    this->vtable = &SettMapTyVTable;
+    this->vtable = &st_global_0079C160;
     return this;
   }
   return nullptr;
 }
 
 // 005D9F80 CreateSID
-#line 1 "decomp/ST.exe/functions/005D9F80/decomp.c"
+#line 4 "decomp/ST.exe/functions/005D9F80/decomp.c"
 /* [STUnclaimedCodeApplier] Exact function entry recovered from thunk_target.
    Evidence: P:007CA89C>0040181B
 
@@ -266,8 +266,8 @@ SIDTy * __cdecl st::fn_005D9F80(void)
   if (this != nullptr) {
     st::fn_006E5FB0(this);
     this->vtable = (SIDTyVTable *)&VTable_0079C018;
-    *(undefined4 *)&this->field_0x18 = 0;
-    *(undefined4 *)&this->field_0x5d = 0;
+    this->field_0018 = 0;
+    this->field_005D = 0;
     memset(&this->field_0x1d, 0, 0x20); /* compiler bulk-zero initialization */
     iVar1 = 0;
     memset(&this->field_0x3d, 0, 0x20); /* compiler bulk-zero initialization */
@@ -283,7 +283,7 @@ SIDTy * __cdecl st::fn_005D9F80(void)
     } while (iVar1 != 0);
     this->vtable = (SIDTyVTable *)&MMObjTyVTable;
     this->field_0065 = 2;
-    this->field_0x9a = 0;
+    this->field_009A = 0;
     memset(&this->field_0x66, 0, 0x34); /* compiler bulk-zero initialization */
     iVar1 = 0xd;
     puVar3 = (undefined4 *)&this->field_0xbc;
@@ -298,7 +298,7 @@ SIDTy * __cdecl st::fn_005D9F80(void)
     st::fn_00715820((SpriteClassTy *)&this->field_1B01);
     st::fn_00715820((SpriteClassTy *)&this->field_1B92);
     st::fn_00715820((SpriteClassTy *)&this->field_1C23);
-    this->vtable = &SIDTyVTable;
+    this->vtable = &st_global_0079C1AC;
     this->field_1A5F = 0;
     this->field_1AF1[0] = 0;
     this->field_1AF1[1] = 0;
@@ -318,7 +318,7 @@ SIDTy * __cdecl st::fn_005D9F80(void)
 }
 
 // 005DA130 FUN_005da130
-#line 1 "decomp/ST.exe/functions/005DA130/decomp.c"
+#line 4 "decomp/ST.exe/functions/005DA130/decomp.c"
 /* [STPrototypeApplier] Propagated parameter 0.
    Evidence: 005DB4F0 -> 005DA130 @ 005DB713 */
 
@@ -438,7 +438,7 @@ void __cdecl st::fn_005DA130(ushort *param_1,undefined *param_2,BYTE param_3)
 }
 
 // 005DA310 FUN_005da310
-#line 1 "decomp/ST.exe/functions/005DA310/decomp.c"
+#line 4 "decomp/ST.exe/functions/005DA310/decomp.c"
 void __cdecl st::fn_005DA310(int param_1,undefined *param_2,BYTE param_3)
 
 {
@@ -597,7 +597,7 @@ void __cdecl st::fn_005DA310(int param_1,undefined *param_2,BYTE param_3)
 }
 
 // 005DA7A0 FUN_005da7a0
-#line 1 "decomp/ST.exe/functions/005DA7A0/decomp.c"
+#line 4 "decomp/ST.exe/functions/005DA7A0/decomp.c"
 undefined4 st::fn_005DA7A0(void)
 
 {
@@ -629,7 +629,7 @@ undefined4 st::fn_005DA7A0(void)
         }
       }
       if (bVar2) {
-        pcVar5 = st::fn_006B0140(0x254b,g_module_00807618);
+        pcVar5 = st::fn_006B0140(0x254b,g_hINSTANCE_00807618);
         pcVar5 = st::fn_006C8170(pcVar5);
         if (pcVar5 != nullptr) {
           iVar3 = *puVar1;
@@ -655,7 +655,7 @@ undefined4 st::fn_005DA7A0(void)
 }
 
 // 005DA980 FUN_005da980
-#line 1 "decomp/ST.exe/functions/005DA980/decomp.c"
+#line 4 "decomp/ST.exe/functions/005DA980/decomp.c"
 undefined4 st::fn_005DA980(int param_1)
 
 {
@@ -696,7 +696,7 @@ void st::fn_005DAA60(void)
 }
 
 // 005DAA90 FUN_005daa90
-#line 1 "decomp/ST.exe/functions/005DAA90/decomp.c"
+#line 4 "decomp/ST.exe/functions/005DAA90/decomp.c"
 undefined4 st::fn_005DAA90(void)
 
 {
@@ -721,7 +721,7 @@ undefined4 st::fn_005DAA90(void)
 }
 
 // 005DAB70 FUN_005dab70
-#line 1 "decomp/ST.exe/functions/005DAB70/decomp.c"
+#line 4 "decomp/ST.exe/functions/005DAB70/decomp.c"
 undefined4 st::fn_005DAB70(int param_1,undefined4 param_2)
 
 {
@@ -783,7 +783,7 @@ void st::fn_005DB010(void)
 }
 
 // 005DB030 FUN_005db030
-#line 1 "decomp/ST.exe/functions/005DB030/decomp.c"
+#line 4 "decomp/ST.exe/functions/005DB030/decomp.c"
 undefined4 __cdecl st::fn_005DB030(byte *param_1,undefined4 param_2,char param_3)
 
 {
@@ -883,7 +883,7 @@ cf_common_exit_005DB1E1:
 }
 
 // 005DDB40 FUN_005ddb40
-#line 1 "decomp/ST.exe/functions/005DDB40/decomp.c"
+#line 4 "decomp/ST.exe/functions/005DDB40/decomp.c"
 undefined4 __fastcall st::fn_005DDB40(int param_1)
 
 {
@@ -984,7 +984,7 @@ undefined4 __fastcall st::fn_005DDB40(int param_1)
 }
 
 // 005DE5B0 FUN_005de5b0
-#line 1 "decomp/ST.exe/functions/005DE5B0/decomp.c"
+#line 4 "decomp/ST.exe/functions/005DE5B0/decomp.c"
 void __cdecl st::fn_005DE5B0(UINT param_1,int param_2)
 
 {
@@ -993,21 +993,21 @@ void __cdecl st::fn_005DE5B0(UINT param_1,int param_2)
   CHAR local_108 [260];
 
   if (param_2 < 0) {
-    pcVar1 = st::fn_006B0140(param_1,g_module_00807618);
+    pcVar1 = st::fn_006B0140(param_1,g_hINSTANCE_00807618);
     st::external_00000080(local_108,"%s",pcVar1);
   }
   else {
-    pcVar1 = st::fn_006B0140(param_1,g_module_00807618);
+    pcVar1 = st::fn_006B0140(param_1,g_hINSTANCE_00807618);
     st::external_00000080(local_108,"%s\n%d",pcVar1,param_2);
   }
   uType = 0x10;
-  pcVar1 = st::fn_006B0140(0x2648,g_module_00807618);
+  pcVar1 = st::fn_006B0140(0x2648,g_hINSTANCE_00807618);
   st::external_00000081(HWND_00856d78,local_108,pcVar1,uType);
   return;
 }
 
 // 005DEFE0 FUN_005defe0
-#line 1 "decomp/ST.exe/functions/005DEFE0/decomp.c"
+#line 4 "decomp/ST.exe/functions/005DEFE0/decomp.c"
 void __cdecl st::fn_005DEFE0(int param_1,undefined *param_2,BYTE param_3)
 
 {
@@ -1154,7 +1154,7 @@ void __cdecl st::fn_005DEFE0(int param_1,undefined *param_2,BYTE param_3)
 }
 
 // 005DF290 FUN_005df290
-#line 1 "decomp/ST.exe/functions/005DF290/decomp.c"
+#line 4 "decomp/ST.exe/functions/005DF290/decomp.c"
 void __cdecl st::fn_005DF290(int param_1,undefined *param_2,BYTE param_3)
 
 {
@@ -1301,7 +1301,7 @@ void __cdecl st::fn_005DF290(int param_1,undefined *param_2,BYTE param_3)
 }
 
 // 005DF930 FUN_005df930
-#line 1 "decomp/ST.exe/functions/005DF930/decomp.c"
+#line 4 "decomp/ST.exe/functions/005DF930/decomp.c"
 void st::fn_005DF930(int param_1,uint param_2,int param_3)
 
 {
@@ -1333,7 +1333,7 @@ void st::fn_005DF930(int param_1,uint param_2,int param_3)
 }
 
 // 005DF9B0 FUN_005df9b0
-#line 1 "decomp/ST.exe/functions/005DF9B0/decomp.c"
+#line 4 "decomp/ST.exe/functions/005DF9B0/decomp.c"
 void st::fn_005DF9B0(int param_1,uint param_2,int param_3)
 
 {

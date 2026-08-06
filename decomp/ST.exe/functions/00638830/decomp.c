@@ -10,7 +10,7 @@ void __cdecl FUN_00638830(undefined4 param_1,int param_2,int param_3,int param_4
   uint local_8;
 
   puVar1 = Library::Ourlib::MFRLOAD::mfRLoad
-                     (DAT_00806774,CASE_1D,"rippleB",0xffffffff,0,1,0,nullptr);
+                     (PTR_00806774,CASE_1D,"rippleB",0xffffffff,0,1,0,nullptr);
   if ((puVar1 != nullptr) && (g_sT3DSMAPContext_00807598 != nullptr)) {
     ST3DSMAPContext::sub_006E8660
               (g_sT3DSMAPContext_00807598,(int *)&local_8,1,0,STField<uint>(puVar1,9),
@@ -19,7 +19,7 @@ void __cdecl FUN_00638830(undefined4 param_1,int param_2,int param_3,int param_4
     ST3DSMAPContext::sub_006E98E0
               (g_sT3DSMAPContext_00807598,local_8,0,*(int *)puVar1,STField<int>(puVar1,0x21),1);
     ST3DSMAPContext::sub_006EA270(g_sT3DSMAPContext_00807598,local_8,0,0);
-    ST3DSMAPContext::sub_006EA8A0(g_sT3DSMAPContext_00807598,local_8,0,2,DAT_008032bc);
+    ST3DSMAPContext::sub_006EA8A0(g_sT3DSMAPContext_00807598,local_8,0,2,PTR_008032bc);
     Library::Ourlib::ST3DSMAP::SprMove
               (g_sT3DSMAPContext_00807598,local_8,(float)param_3 * _DAT_007904f8 * _DAT_007904f0,
                (float)param_4 * _DAT_007904f8 * _DAT_007904f0,

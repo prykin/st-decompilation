@@ -103,7 +103,7 @@ int __thiscall STSprGameObjC::GetMessage(STSprGameObjC *this,STMessage *message)
         g_currentExceptionFrame = local_54.previous;
         return 0;
       }
-      thunk_FUN_004ad4a0(&this_00->field_0x1d5,DAT_00806774,"simmsk");
+      thunk_FUN_004ad4a0(&this_00->field_0x1d5,PTR_00806774,"simmsk");
       thunk_FUN_004ad4f0((int)&this_00->field_0x1d5);
       g_currentExceptionFrame = local_54.previous;
       return 0;
@@ -174,7 +174,7 @@ int __thiscall STSprGameObjC::GetMessage(STSprGameObjC *this,STMessage *message)
       *(undefined4 *)&this_00->field_0x22d = 0;
       if (this_00->field_002C != 0) {
         if (this_00->field_002C == 1) {
-          iVar4 = STT3DSprC::Init((STT3DSprC *)&this_00->field_0x1d5,DAT_008073cc,0x78,0x56,
+          iVar4 = STT3DSprC::Init((STT3DSprC *)&this_00->field_0x1d5,PTR_008073cc,0x78,0x56,
                                   (STDcResourcC *)this_00,0xf0,0xbe,0x11);
           if (iVar4 != 0) {
             RaiseInternalException
@@ -190,7 +190,7 @@ int __thiscall STSprGameObjC::GetMessage(STSprGameObjC *this,STMessage *message)
         g_currentExceptionFrame = local_54.previous;
         return 0;
       }
-      iVar4 = STT3DSprC::Init((STT3DSprC *)&this_00->field_0x1d5,DAT_008073cc,0x5a,0x45,
+      iVar4 = STT3DSprC::Init((STT3DSprC *)&this_00->field_0x1d5,PTR_008073cc,0x5a,0x45,
                               (STDcResourcC *)this_00,0xb4,0x8c,0x11);
       if (iVar4 == 0) {
         g_currentExceptionFrame = local_54.previous;
@@ -437,7 +437,7 @@ LAB_0041ec79:
     }
     *(undefined4 *)&this_00->field_0x22d = 1;
     Library::Ourlib::ST3DSMAP::SprSetShadedColorsTbl
-              (*(void **)&this_00->field_0x211,this_00->field_01ED,DAT_008032c0);
+              (*(void **)&this_00->field_0x211,this_00->field_01ED,PTR_008032c0);
     g_currentExceptionFrame = local_54.previous;
     return 0;
   }
@@ -450,7 +450,7 @@ LAB_0041eccc:
   }
   *(undefined4 *)&this_00->field_0x22d = 0;
   Library::Ourlib::ST3DSMAP::SprSetShadedColorsTbl
-            (*(void **)&this_00->field_0x211,this_00->field_01ED,0);
+            (*(void **)&this_00->field_0x211,this_00->field_01ED,nullptr);
   g_currentExceptionFrame = local_54.previous;
   return 0;
 }

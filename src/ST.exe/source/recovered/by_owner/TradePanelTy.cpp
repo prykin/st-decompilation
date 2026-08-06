@@ -2,7 +2,7 @@
 // Generated translation unit: source/recovered/by_owner/TradePanelTy.cpp
 
 // 00551800 TradePanelTy::sub_00551800
-#line 1 "decomp/ST.exe/functions/00551800/decomp.c"
+#line 4 "decomp/ST.exe/functions/00551800/decomp.c"
 /* [STMethodOwnerApplier] Structural method owner recovered as TradePanelTy.
    Evidence: this_call_owners=[TradePanelTy]; agreed_this_calls=1; incoming_this_accesses=33;
    incoming_edx_uses=0; incoming_stack_parameter_uses=0; direct_non_thunk_callers=0;
@@ -121,7 +121,7 @@ LAB_00551a54:
 }
 
 // 00551B10 TradePanelTy::sub_00551B10
-#line 1 "decomp/ST.exe/functions/00551B10/decomp.c"
+#line 4 "decomp/ST.exe/functions/00551B10/decomp.c"
 /* [STMethodOwnerApplier] Structural method owner recovered as TradePanelTy.
    Evidence: this_call_owners=[TradePanelTy]; agreed_this_calls=2; incoming_this_accesses=7;
    incoming_edx_uses=0; incoming_stack_parameter_uses=0; direct_non_thunk_callers=0;
@@ -144,7 +144,7 @@ void __thiscall st::fn_00551B10(TradePanelTy *this)
 }
 
 // 00552160 TradePanelTy::sub_00552160
-#line 1 "decomp/ST.exe/functions/00552160/decomp.c"
+#line 4 "decomp/ST.exe/functions/00552160/decomp.c"
 /* [STMethodOwnerApplier] Structural method owner recovered as TradePanelTy.
    Evidence: this_call_owners=[TradePanelTy]; agreed_this_calls=12; incoming_this_accesses=1;
    incoming_edx_uses=0; incoming_stack_parameter_uses=2; direct_non_thunk_callers=0;

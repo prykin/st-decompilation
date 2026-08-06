@@ -2,7 +2,7 @@
 // Generated translation unit: source/recovered/by_owner/STTmMineC.cpp
 
 // 0063DDB0 STTmMineC::FUN_0063ddb0
-#line 1 "decomp/ST.exe/functions/0063DDB0/decomp.c"
+#line 4 "decomp/ST.exe/functions/0063DDB0/decomp.c"
 void __thiscall st::fn_0063DDB0(STTmMineC *this,int param_1)
 
 {

@@ -2,7 +2,7 @@
 // Generated translation unit: source/original/Andrey/helppan.cpp
 
 // 00510E30 HelpPanelTy::InitHelpPanel
-#line 1 "decomp/ST.exe/functions/00510E30/decomp.c"
+#line 4 "decomp/ST.exe/functions/00510E30/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\Andrey\helppan.cpp
    HelpPanelTy::InitHelpPanel */
@@ -172,8 +172,8 @@ LAB_00510fa9:
           pUVar15 = nullptr;
         }
         if ((pUVar19 != nullptr) && (pUVar15 != nullptr)) {
-          local_14 = st::fn_006B0140(*pUVar15,g_module_00807618);
-          pcVar7 = st::fn_006B0140(*pUVar19,g_module_00807618);
+          local_14 = st::fn_006B0140(*pUVar15,g_hINSTANCE_00807618);
+          pcVar7 = st::fn_006B0140(*pUVar19,g_hINSTANCE_00807618);
           iVar4 = st::fn_0072E620(pcVar7,local_14);
           if (0 < iVar4) {
             st::fn_006B0CD0((AnonShape_00413AF0_B6B4EE9A *)this_00->field_01BB,uVar16,local_8);
@@ -217,38 +217,38 @@ LAB_00510fa9:
   uVar18 = 0xffffffff;
   pCVar8 = st::fn_0040577C("HLPTRACK",0);
   puVar9 = st::fn_00709AF0
-                     (DAT_00806794,CASE_B,pCVar8,uVar18,bVar25,iVar4,iVar27,puVar14);
+                     (PTR_00806794,CASE_B,pCVar8,uVar18,bVar25,iVar4,iVar27,puVar14);
   this_00->field_0220 = puVar9;
   puVar9 = st::fn_00709AF0
-                     (DAT_00806794,CASE_B,"BKG_HLPTTREE",0xffffffff,0,1,0,nullptr
+                     (PTR_00806794,CASE_B,"BKG_HLPTTREE",0xffffffff,0,1,0,nullptr
                      );
   this_00->field_0224 = puVar9;
   puVar9 = st::fn_00709AF0
-                     (DAT_00806794,CASE_B,&DAT_007c20a0,0xffffffff,0,1,0,nullptr);
+                     (PTR_00806794,CASE_B,&DAT_007c20a0,0xffffffff,0,1,0,nullptr);
   this_00->field_0230 = puVar9;
   puVar9 = st::fn_00709AF0
-                     (DAT_00806794,CASE_B,&DAT_007c38c8,0xffffffff,0,1,0,nullptr);
+                     (PTR_00806794,CASE_B,&DAT_007c38c8,0xffffffff,0,1,0,nullptr);
   this_00->field_0234 = puVar9;
   puVar9 = st::fn_00709AF0
-                     (DAT_00806794,CASE_B,"HLP_UPG",0xffffffff,0,1,0,nullptr);
+                     (PTR_00806794,CASE_B,"HLP_UPG",0xffffffff,0,1,0,nullptr);
   this_00->field_0228 = puVar9;
   puVar9 = st::fn_00709AF0
-                     (DAT_00806794,CASE_B,"HLP_UPGD",0xffffffff,0,1,0,nullptr);
+                     (PTR_00806794,CASE_B,"HLP_UPGD",0xffffffff,0,1,0,nullptr);
   this_00->field_022C = puVar9;
   puVar9 = st::fn_00709AF0
-                     (DAT_00806794,CASE_B,&DAT_007c2048,0xffffffff,0,1,0,nullptr);
+                     (PTR_00806794,CASE_B,&DAT_007c2048,0xffffffff,0,1,0,nullptr);
   this_00->field_0238 = puVar9;
   puVar9 = st::fn_00709AF0
-                     (DAT_00806794,CASE_B,"HLP_FRAME",0xffffffff,0,1,0,nullptr);
+                     (PTR_00806794,CASE_B,"HLP_FRAME",0xffffffff,0,1,0,nullptr);
   this_00->field_0248 = puVar9;
   puVar9 = st::fn_00709AF0
-                     (DAT_00806794,CASE_B,"BOATS_R",0xffffffff,0,1,0,nullptr);
+                     (PTR_00806794,CASE_B,"BOATS_R",0xffffffff,0,1,0,nullptr);
   this_00->field_023C = puVar9;
   puVar9 = st::fn_00709AF0
-                     (DAT_00806794,CASE_B,&DAT_007c1910,0xffffffff,0,1,0,nullptr);
+                     (PTR_00806794,CASE_B,&DAT_007c1910,0xffffffff,0,1,0,nullptr);
   this_00->field_0240 = puVar9;
   puVar9 = st::fn_00709AF0
-                     (DAT_00806794,CASE_B,"INF_WEAP",0xffffffff,0,1,0,nullptr);
+                     (PTR_00806794,CASE_B,"INF_WEAP",0xffffffff,0,1,0,nullptr);
   pcVar10 = this_00->field_01E4;
   this_00->field_0244 = puVar9;
   if (pcVar10->field_00A0 != 0) {
@@ -289,7 +289,7 @@ LAB_00510fa9:
   uVar18 = 0;
   iVar27 = -1;
   iVar4 = -2;
-  resourceString = (uint *)st::fn_006B0140(0x2734,g_module_00807618);
+  resourceString = (uint *)st::fn_006B0140(0x2734,g_hINSTANCE_00807618);
   st::fn_007119C0(this_00->field_01E0,resourceString,iVar4,iVar27,uVar18);
   uVar29 = 0;
   uVar28 = 0;
@@ -339,7 +339,7 @@ LAB_00510fa9:
 }
 
 // 00511760 HelpPanelTy::DoneHelpPanel
-#line 1 "decomp/ST.exe/functions/00511760/decomp.c"
+#line 4 "decomp/ST.exe/functions/00511760/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\Andrey\helppan.cpp
    HelpPanelTy::DoneHelpPanel */
@@ -461,7 +461,7 @@ void __thiscall st::fn_00511760(HelpPanelTy *this)
 }
 
 // 00511AB0 HelpPanelTy::CheckBkView
-#line 1 "decomp/ST.exe/functions/00511AB0/decomp.c"
+#line 4 "decomp/ST.exe/functions/00511AB0/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\Andrey\helppan.cpp
    HelpPanelTy::CheckBkView
@@ -537,7 +537,7 @@ void __thiscall st::fn_00511AB0(HelpPanelTy *this,int param_1,ushort param_2)
 }
 
 // 00511C70 HelpPanelTy::ShiftControls
-#line 1 "decomp/ST.exe/functions/00511C70/decomp.c"
+#line 4 "decomp/ST.exe/functions/00511C70/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\Andrey\helppan.cpp
    HelpPanelTy::ShiftControls
@@ -603,7 +603,7 @@ void __thiscall st::fn_00511C70(HelpPanelTy *this,int param_1)
 }
 
 // 00511DF0 HelpPanelTy::SwitchOptPanel
-#line 1 "decomp/ST.exe/functions/00511DF0/decomp.c"
+#line 4 "decomp/ST.exe/functions/00511DF0/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\Andrey\helppan.cpp
    HelpPanelTy::SwitchOptPanel
@@ -685,7 +685,7 @@ void __thiscall st::fn_00511DF0(HelpPanelTy *this,int param_1)
 }
 
 // 00511FA0 HelpPanelTy::SetPanel
-#line 1 "decomp/ST.exe/functions/00511FA0/decomp.c"
+#line 4 "decomp/ST.exe/functions/00511FA0/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\Andrey\helppan.cpp
    HelpPanelTy::SetPanel */
@@ -711,14 +711,14 @@ undefined4 __thiscall st::fn_00511FA0(HelpPanelTy *this,char param_1)
   if (errorCode == 0) {
     local_8->field_01A0 = param_1;
     if (param_1 != '\0') {
-      if (g_prodPanel_008016E8 != nullptr) {
-        st::fn_00401A73(g_prodPanel_008016E8,'\0');
+      if (g_researchPanel_008016E8 != nullptr) {
+        st::fn_00401A73(g_researchPanel_008016E8,'\0');
       }
-      if (g_prodPanel_0080167C != nullptr) {
-        st::fn_00401A73(g_prodPanel_0080167C,'\0');
+      if (g_bldBoatPanel_0080167C != nullptr) {
+        st::fn_00401A73(g_bldBoatPanel_0080167C,'\0');
       }
-      if (g_prodPanel_00801684 != nullptr) {
-        st::fn_00401A73(g_prodPanel_00801684,'\0');
+      if (g_bldObjPanel_00801684 != nullptr) {
+        st::fn_00401A73(g_bldObjPanel_00801684,'\0');
       }
       if (g_infocPanel_00801698 != nullptr) {
         (*g_infocPanel_00801698->vtable->SetPanel)((SpecPanelTy *)g_infocPanel_00801698,'\0');
@@ -735,8 +735,8 @@ undefined4 __thiscall st::fn_00511FA0(HelpPanelTy *this,char param_1)
       if (g_upgPanel_00802A48 != nullptr) {
         (*g_upgPanel_00802A48->vtable->SetPanel)((SpecPanelTy *)g_upgPanel_00802A48,'\0');
       }
-      if (g_prodPanel_00801680 != nullptr) {
-        st::fn_00401A73(g_prodPanel_00801680,'\0');
+      if (g_bldLabPanel_00801680 != nullptr) {
+        st::fn_00401A73(g_bldLabPanel_00801680,'\0');
       }
       if (g_frmPanel_0080168C != nullptr) {
         (*g_frmPanel_0080168C->vtable->SetPanel)((SpecPanelTy *)g_frmPanel_0080168C,'\0');
@@ -769,7 +769,7 @@ undefined4 __thiscall st::fn_00511FA0(HelpPanelTy *this,char param_1)
 }
 
 // 005123A0 HelpPanelTy::CreateList
-#line 1 "decomp/ST.exe/functions/005123A0/decomp.c"
+#line 4 "decomp/ST.exe/functions/005123A0/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\Andrey\helppan.cpp
    HelpPanelTy::CreateList */
@@ -960,7 +960,7 @@ void __thiscall st::fn_005123A0(HelpPanelTy *this)
 }
 
 // 00512830 HelpPanelTy::CreateSlider
-#line 1 "decomp/ST.exe/functions/00512830/decomp.c"
+#line 4 "decomp/ST.exe/functions/00512830/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\Andrey\helppan.cpp
    HelpPanelTy::CreateSlider */
@@ -1110,7 +1110,7 @@ void __thiscall st::fn_00512830(HelpPanelTy *this,int param_1)
 }
 
 // 00512BE0 HelpPanelTy::sub_00512BE0
-#line 1 "decomp/ST.exe/functions/00512BE0/decomp.c"
+#line 4 "decomp/ST.exe/functions/00512BE0/decomp.c"
 /* [STSourceProvenanceApplier begin]
    Recovered source file: E:\__titans\Andrey\helppan.cpp
    Diagnostic line evidence: 544 (metadata/report site, not the function definition)
@@ -1298,7 +1298,7 @@ void __thiscall st::fn_00512BE0(HelpPanelTy *this,int param_1)
 }
 
 // 00513030 HelpPanelTy::ChangeTree
-#line 1 "decomp/ST.exe/functions/00513030/decomp.c"
+#line 4 "decomp/ST.exe/functions/00513030/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\Andrey\helppan.cpp
    HelpPanelTy::ChangeTree */
@@ -1496,7 +1496,7 @@ LAB_00513233:
 }
 
 // 005134B0 HelpPanelTy::PutToSHlp
-#line 1 "decomp/ST.exe/functions/005134B0/decomp.c"
+#line 4 "decomp/ST.exe/functions/005134B0/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\Andrey\helppan.cpp
    HelpPanelTy::PutToSHlp
@@ -1557,7 +1557,7 @@ void __thiscall st::fn_005134B0(HelpPanelTy *this)
 }
 
 // 005135F0 HelpPanelTy::HomeBut
-#line 1 "decomp/ST.exe/functions/005135F0/decomp.c"
+#line 4 "decomp/ST.exe/functions/005135F0/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\Andrey\helppan.cpp
    HelpPanelTy::HomeBut */
@@ -1651,7 +1651,7 @@ void __thiscall st::fn_005135F0(HelpPanelTy *this)
 }
 
 // 00513810 HelpPanelTy::BackBut
-#line 1 "decomp/ST.exe/functions/00513810/decomp.c"
+#line 4 "decomp/ST.exe/functions/00513810/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\Andrey\helppan.cpp
    HelpPanelTy::BackBut
@@ -1739,7 +1739,7 @@ void __thiscall st::fn_00513810(HelpPanelTy *this)
 }
 
 // 00513A40 HelpPanelTy::IndexBut
-#line 1 "decomp/ST.exe/functions/00513A40/decomp.c"
+#line 4 "decomp/ST.exe/functions/00513A40/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\Andrey\helppan.cpp
    HelpPanelTy::IndexBut */
@@ -1799,7 +1799,7 @@ void __thiscall st::fn_00513A40(HelpPanelTy *this)
 }
 
 // 00513BC0 HelpPanelTy::PrevBut
-#line 1 "decomp/ST.exe/functions/00513BC0/decomp.c"
+#line 4 "decomp/ST.exe/functions/00513BC0/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\Andrey\helppan.cpp
    HelpPanelTy::PrevBut */
@@ -1947,7 +1947,7 @@ LAB_00513e3e:
 }
 
 // 00513FA0 HelpPanelTy::NextBut
-#line 1 "decomp/ST.exe/functions/00513FA0/decomp.c"
+#line 4 "decomp/ST.exe/functions/00513FA0/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\Andrey\helppan.cpp
    HelpPanelTy::NextBut */
@@ -2088,7 +2088,7 @@ LAB_005141e1:
 }
 
 // 00514330 HelpPanelTy::BwdBut
-#line 1 "decomp/ST.exe/functions/00514330/decomp.c"
+#line 4 "decomp/ST.exe/functions/00514330/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\Andrey\helppan.cpp
    HelpPanelTy::BwdBut */
@@ -2191,7 +2191,7 @@ void __thiscall st::fn_00514330(HelpPanelTy *this)
 }
 
 // 005145E0 HelpPanelTy::FwdBut
-#line 1 "decomp/ST.exe/functions/005145E0/decomp.c"
+#line 4 "decomp/ST.exe/functions/005145E0/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\Andrey\helppan.cpp
    HelpPanelTy::FwdBut */
@@ -2294,7 +2294,7 @@ void __thiscall st::fn_005145E0(HelpPanelTy *this)
 }
 
 // 005149B0 HelpPanelTy::LinkAct
-#line 1 "decomp/ST.exe/functions/005149B0/decomp.c"
+#line 4 "decomp/ST.exe/functions/005149B0/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\Andrey\helppan.cpp
    HelpPanelTy::LinkAct
@@ -2401,7 +2401,7 @@ switchD_00514a29_caseD_5:
 }
 
 // 00514F10 HelpPanelTy::PrepMissObj
-#line 1 "decomp/ST.exe/functions/00514F10/decomp.c"
+#line 4 "decomp/ST.exe/functions/00514F10/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\Andrey\helppan.cpp
    HelpPanelTy::PrepMissObj */
@@ -2487,7 +2487,7 @@ LAB_00514f85:
 }
 
 // 00515310 HelpPanelTy::DrawTitle
-#line 1 "decomp/ST.exe/functions/00515310/decomp.c"
+#line 4 "decomp/ST.exe/functions/00515310/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\Andrey\helppan.cpp
    HelpPanelTy::DrawTitle
@@ -2549,7 +2549,7 @@ void __thiscall st::fn_00515310(HelpPanelTy *this,UINT param_1,int param_2,UINT 
   }
   iVar12 = -1;
   iVar5 = -1;
-  puVar7 = (uint *)st::fn_006B0140(param_1,g_module_00807618);
+  puVar7 = (uint *)st::fn_006B0140(param_1,g_hINSTANCE_00807618);
   st::fn_007119C0(pHVar4->field_01E4,puVar7,iVar5,iVar12,uVar6);
   local_8 = uVar10 + 0x14;
   if (param_2 != 0) {
@@ -2566,13 +2566,13 @@ void __thiscall st::fn_00515310(HelpPanelTy *this,UINT param_1,int param_2,UINT 
     uVar6 = 3;
     iVar12 = -1;
     iVar5 = -1;
-    puVar7 = (uint *)st::fn_006B0140(resourceId,g_module_00807618);
+    puVar7 = (uint *)st::fn_006B0140(resourceId,g_hINSTANCE_00807618);
     st::fn_007119C0(pHVar4->field_01E0,puVar7,iVar5,iVar12,uVar6);
     local_8 = uVar10 + 0x23;
   }
   if (param_3 != 0) {
     st::fn_00710A90(pHVar4->field_01E0,(int)pHVar4->field_0068,0,0x21,local_8,0x19c,0xf);
-    pcVar8 = st::fn_006B0140(param_3,g_module_00807618);
+    pcVar8 = st::fn_006B0140(param_3,g_hINSTANCE_00807618);
     uVar10 = 0xffffffff;
     do {
       pcVar11 = pcVar8;
@@ -2614,7 +2614,7 @@ void __thiscall st::fn_00515310(HelpPanelTy *this,UINT param_1,int param_2,UINT 
 }
 
 // 00515650 HelpPanelTy::DrawObj
-#line 1 "decomp/ST.exe/functions/00515650/decomp.c"
+#line 4 "decomp/ST.exe/functions/00515650/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\Andrey\helppan.cpp
    HelpPanelTy::DrawObj
@@ -2699,7 +2699,7 @@ st::fn_00515650
 }
 
 // 00515900 HelpPanelTy::DrawWeapon
-#line 1 "decomp/ST.exe/functions/00515900/decomp.c"
+#line 4 "decomp/ST.exe/functions/00515900/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\Andrey\helppan.cpp
    HelpPanelTy::DrawWeapon
@@ -2763,13 +2763,13 @@ st::fn_00515900
       st::fn_00710A90(local_8->field_01E0,(int)local_8->field_0218,0,param_1,iVar7 + iVar2,
                        0x19c - param_1,0xf);
       if (param_4 == 0) {
-        pHVar10 = g_module_00807618;
+        pHVar10 = g_hINSTANCE_00807618;
         UVar5 = st::fn_00404494(GVar9);
         pcVar6 = st::fn_006B0140(UVar5,pHVar10);
         st::external_00000080((LPSTR)&DAT_0080f33a,"%s",pcVar6);
       }
       else {
-        pHVar10 = g_module_00807618;
+        pHVar10 = g_hINSTANCE_00807618;
         UVar5 = st::fn_00404494(GVar9);
         pcVar6 = st::fn_006B0140(UVar5,pHVar10);
         st::external_00000080((LPSTR)&DAT_0080f33a,"%s (%d)",pcVar6,param_4);
@@ -2800,7 +2800,7 @@ st::fn_00515900
 }
 
 // 00515C00 HelpPanelTy::DrawDescription
-#line 1 "decomp/ST.exe/functions/00515C00/decomp.c"
+#line 4 "decomp/ST.exe/functions/00515C00/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\Andrey\helppan.cpp
    HelpPanelTy::DrawDescription
@@ -2843,10 +2843,10 @@ void __thiscall st::fn_00515C00(HelpPanelTy *this,int *param_1,UINT param_2)
     uVar8 = 3;
     iVar7 = -1;
     iVar3 = -1;
-    resourceString = (uint *)st::fn_006B0140(0x55f5,g_module_00807618);
+    resourceString = (uint *)st::fn_006B0140(0x55f5,g_hINSTANCE_00807618);
     st::fn_007119C0(this_00->field_01E0,resourceString,iVar3,iVar7,uVar8);
     *param_1 = *param_1 + 0xf;
-    pcVar4 = st::fn_006B0140(param_2,g_module_00807618);
+    pcVar4 = st::fn_006B0140(param_2,g_hINSTANCE_00807618);
     uVar8 = 0xffffffff;
     do {
       pcVar6 = pcVar4;
@@ -2874,7 +2874,7 @@ void __thiscall st::fn_00515C00(HelpPanelTy *this,int *param_1,UINT param_2)
 }
 
 // 00515E30 HelpPanelTy::AddLinks
-#line 1 "decomp/ST.exe/functions/00515E30/decomp.c"
+#line 4 "decomp/ST.exe/functions/00515E30/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\Andrey\helppan.cpp
    HelpPanelTy::AddLinks */
@@ -2944,7 +2944,7 @@ LAB_00515ee1:
             uVar10 = 3;
             iVar9 = -1;
             iVar3 = -1;
-            puVar4 = (uint *)st::fn_006B0140(0x55f6,g_module_00807618);
+            puVar4 = (uint *)st::fn_006B0140(0x55f6,g_hINSTANCE_00807618);
             st::fn_007119C0(this_00->field_01E0,puVar4,iVar3,iVar9,uVar10);
             local_14 = 0;
             *param_1 = *param_1 + 0xf;
@@ -2961,7 +2961,7 @@ LAB_00515ee1:
                 st::fn_00710A90(this_00->field_01E0,(int)this_00->field_0218,0,local_18 + 0x5f,
                                  *param_1,0x13d - local_18,0xf);
                 pcVar6 = st::fn_006B0140(*(UINT *)(uVar7 * 0x11 + this_00->field_01C7),
-                                            g_module_00807618);
+                                            g_hINSTANCE_00807618);
                 uVar7 = 0xffffffff;
                 goto code_r0x00516013;
               }
@@ -3034,7 +3034,7 @@ LAB_0051607e:
 }
 
 // 00516300 HelpPanelTy::MObjProc
-#line 1 "decomp/ST.exe/functions/00516300/decomp.c"
+#line 4 "decomp/ST.exe/functions/00516300/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\Andrey\helppan.cpp
    HelpPanelTy::MObjProc
@@ -3101,7 +3101,7 @@ void __thiscall st::fn_00516300(HelpPanelTy *this)
 }
 
 // 00516480 HelpPanelTy::TTreeProc
-#line 1 "decomp/ST.exe/functions/00516480/decomp.c"
+#line 4 "decomp/ST.exe/functions/00516480/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\Andrey\helppan.cpp
    HelpPanelTy::TTreeProc */
@@ -3204,13 +3204,13 @@ void __thiscall st::fn_00516480(HelpPanelTy *this,uint param_1,char param_2)
   }
   iVar13 = -1;
   iVar5 = -1;
-  puVar7 = (uint *)st::fn_006B0140(0x55f4,g_module_00807618);
+  puVar7 = (uint *)st::fn_006B0140(0x55f4,g_hINSTANCE_00807618);
   st::fn_007119C0(this_00->field_01E4,puVar7,iVar5,iVar13,uVar6);
   st::fn_00710A90(this_00->field_01E0,(int)this_00->field_0068,0,0x21,0x2a,0x19c,0xf);
   uVar6 = (DAT_0080874e != 3) - 1 & 5;
   iVar13 = -1;
   iVar5 = -1;
-  puVar7 = (uint *)st::fn_006B0140(resourceId,g_module_00807618);
+  puVar7 = (uint *)st::fn_006B0140(resourceId,g_hINSTANCE_00807618);
   st::fn_007119C0(this_00->field_01E0,puVar7,iVar5,iVar13,uVar6);
   pAVar2 = this_00->field_0218;
   uVar6 = pAVar2->field_0014;
@@ -3288,7 +3288,7 @@ LAB_00516776:
 }
 
 // 00516A40 HelpPanelTy::TechProc
-#line 1 "decomp/ST.exe/functions/00516A40/decomp.c"
+#line 4 "decomp/ST.exe/functions/00516A40/decomp.c"
 /* WARNING: Heritage AFTER dead removal. Example location: s0xffffffec : 0x00517361 */
 /* WARNING: Restarted to delay deadcode elimination for space: stack */
 /* Recovered from embedded debug metadata:
@@ -3404,7 +3404,7 @@ void __thiscall st::fn_00516A40(HelpPanelTy *this,uint param_1,byte param_2,char
   uVar12 = 3;
   iVar17 = -1;
   iVar6 = -3;
-  puVar9 = (uint *)st::fn_006B0140(0x5622,g_module_00807618);
+  puVar9 = (uint *)st::fn_006B0140(0x5622,g_hINSTANCE_00807618);
   st::fn_007119C0(this_00->field_01E0,puVar9,iVar6,iVar17,uVar12);
   st::fn_00710A90(this_00->field_01E0,(int)this_00->field_0218,0,0x96,local_8,0x106,0xf);
   if ((char)local_c == DAT_0080874e) {
@@ -3421,7 +3421,7 @@ void __thiscall st::fn_00516A40(HelpPanelTy *this,uint param_1,byte param_2,char
           uVar12 = (DAT_0080874e != '\x03') - 1 & 5;
           iVar17 = -1;
           iVar6 = 1;
-          puVar9 = (uint *)st::fn_006B0140(0x5d56,g_module_00807618);
+          puVar9 = (uint *)st::fn_006B0140(0x5d56,g_hINSTANCE_00807618);
           st::fn_007119C0(this_00->field_01E0,puVar9,iVar6,iVar17,uVar12);
           iVar6 = 2;
           goto LAB_00516f08;
@@ -3433,7 +3433,7 @@ void __thiscall st::fn_00516A40(HelpPanelTy *this,uint param_1,byte param_2,char
             uVar12 = (DAT_0080874e != '\x03') - 1 & 5;
             iVar17 = -1;
             iVar6 = 1;
-            puVar9 = (uint *)st::fn_006B0140(0x5d55,g_module_00807618);
+            puVar9 = (uint *)st::fn_006B0140(0x5d55,g_hINSTANCE_00807618);
             st::fn_007119C0(this_00->field_01E0,puVar9,iVar6,iVar17,uVar12);
             iVar6 = 1;
             goto LAB_00516eb8;
@@ -3446,7 +3446,7 @@ void __thiscall st::fn_00516A40(HelpPanelTy *this,uint param_1,byte param_2,char
         uVar12 = (DAT_0080874e != '\x03') - 1 & 5;
         iVar17 = -1;
         iVar6 = 1;
-        puVar9 = (uint *)st::fn_006B0140(UVar7,g_module_00807618);
+        puVar9 = (uint *)st::fn_006B0140(UVar7,g_hINSTANCE_00807618);
         st::fn_007119C0(this_00->field_01E0,puVar9,iVar6,iVar17,uVar12);
         iVar6 = 3;
         goto LAB_00516f54;
@@ -3455,7 +3455,7 @@ void __thiscall st::fn_00516A40(HelpPanelTy *this,uint param_1,byte param_2,char
     uVar12 = (DAT_0080874e != '\x03') - 1 & 5;
     iVar17 = -1;
     iVar6 = 1;
-    puVar9 = (uint *)st::fn_006B0140(0x5d52,g_module_00807618);
+    puVar9 = (uint *)st::fn_006B0140(0x5d52,g_hINSTANCE_00807618);
     st::fn_007119C0(this_00->field_01E0,puVar9,iVar6,iVar17,uVar12);
     iVar6 = 1;
   }
@@ -3469,7 +3469,7 @@ void __thiscall st::fn_00516A40(HelpPanelTy *this,uint param_1,byte param_2,char
         uVar12 = (DAT_0080874e != '\x03') - 1 & 5;
         iVar17 = -1;
         iVar6 = 1;
-        puVar9 = (uint *)st::fn_006B0140(0x5d52,g_module_00807618);
+        puVar9 = (uint *)st::fn_006B0140(0x5d52,g_hINSTANCE_00807618);
         st::fn_007119C0(this_00->field_01E0,puVar9,iVar6,iVar17,uVar12);
         iVar6 = 1;
       }
@@ -3479,7 +3479,7 @@ void __thiscall st::fn_00516A40(HelpPanelTy *this,uint param_1,byte param_2,char
           uVar12 = (DAT_0080874e != '\x03') - 1 & 5;
           iVar17 = -1;
           iVar6 = 1;
-          puVar9 = (uint *)st::fn_006B0140(0x5d54,g_module_00807618);
+          puVar9 = (uint *)st::fn_006B0140(0x5d54,g_hINSTANCE_00807618);
           st::fn_007119C0(this_00->field_01E0,puVar9,iVar6,iVar17,uVar12);
           iVar6 = 3;
 LAB_00516eb8:
@@ -3491,7 +3491,7 @@ LAB_00516eb8:
         uVar12 = (DAT_0080874e != '\x03') - 1 & 5;
         iVar17 = -1;
         iVar6 = 1;
-        puVar9 = (uint *)st::fn_006B0140(0x5d53,g_module_00807618);
+        puVar9 = (uint *)st::fn_006B0140(0x5d53,g_hINSTANCE_00807618);
         st::fn_007119C0(this_00->field_01E0,puVar9,iVar6,iVar17,uVar12);
         iVar6 = 3;
       }
@@ -3503,7 +3503,7 @@ LAB_00516f08:
     uVar12 = (DAT_0080874e != '\x03') - 1 & 5;
     iVar17 = -1;
     iVar6 = 1;
-    puVar9 = (uint *)st::fn_006B0140(0x5d56,g_module_00807618);
+    puVar9 = (uint *)st::fn_006B0140(0x5d56,g_hINSTANCE_00807618);
     st::fn_007119C0(this_00->field_01E0,puVar9,iVar6,iVar17,uVar12);
     iVar6 = 2;
   }
@@ -3517,13 +3517,13 @@ LAB_00516f6b:
   uVar12 = 3;
   iVar17 = -1;
   iVar6 = -3;
-  puVar9 = (uint *)st::fn_006B0140(0x5623,g_module_00807618);
+  puVar9 = (uint *)st::fn_006B0140(0x5623,g_hINSTANCE_00807618);
   st::fn_007119C0(this_00->field_01E0,puVar9,iVar6,iVar17,uVar12);
   st::fn_00710A90(this_00->field_01E0,(int)this_00->field_0218,0,0x96,local_8,0x106,0xf);
   uVar12 = (DAT_0080874e != '\x03') - 1 & 5;
   iVar17 = -1;
   iVar6 = 1;
-  pHVar15 = g_module_00807618;
+  pHVar15 = g_hINSTANCE_00807618;
   UVar7 = st::fn_00402789(GVar16);
   puVar9 = (uint *)st::fn_006B0140(UVar7,pHVar15);
   st::fn_007119C0(this_00->field_01E0,puVar9,iVar6,iVar17,uVar12);
@@ -3532,7 +3532,7 @@ LAB_00516f6b:
   uVar12 = 3;
   iVar17 = -1;
   iVar6 = -3;
-  puVar9 = (uint *)st::fn_006B0140(0x55f7,g_module_00807618);
+  puVar9 = (uint *)st::fn_006B0140(0x55f7,g_hINSTANCE_00807618);
   st::fn_007119C0(this_00->field_01E0,puVar9,iVar6,iVar17,uVar12);
   st::fn_00710A90(this_00->field_01E8,(int)this_00->field_0218,0,0x96,local_8 - 3,0x106,0x14);
   local_38 = (uint)param_2;
@@ -3558,7 +3558,7 @@ LAB_00516f6b:
   uVar12 = 3;
   iVar18 = -1;
   iVar17 = -3;
-  puVar9 = (uint *)st::fn_006B0140(0x5624,g_module_00807618);
+  puVar9 = (uint *)st::fn_006B0140(0x5624,g_hINSTANCE_00807618);
   st::fn_007119C0(this_00->field_01E0,puVar9,iVar17,iVar18,uVar12);
   st::fn_00710A90(this_00->field_01E0,(int)this_00->field_0218,0,0x96,local_8,0x106,0xf);
   iVar6 = (*(int *)(&DAT_007e5474 + iVar6) / 0x19) % 0xe10;
@@ -3569,7 +3569,7 @@ LAB_00516f6b:
   uVar12 = 3;
   iVar17 = -1;
   iVar6 = -3;
-  puVar9 = (uint *)st::fn_006B0140(0x5625,g_module_00807618);
+  puVar9 = (uint *)st::fn_006B0140(0x5625,g_hINSTANCE_00807618);
   st::fn_007119C0(this_00->field_01E0,puVar9,iVar6,iVar17,uVar12);
   st::fn_00710A90(this_00->field_01E0,(int)this_00->field_0218,0,0x96,local_8,0x106,0xf);
   UVar7 = 0x5d57;
@@ -3584,7 +3584,7 @@ LAB_00516f6b:
   uVar12 = (DAT_0080874e != '\x03') - 1 & 5;
   iVar17 = -1;
   iVar6 = 1;
-  puVar9 = (uint *)st::fn_006B0140(UVar7,g_module_00807618);
+  puVar9 = (uint *)st::fn_006B0140(UVar7,g_hINSTANCE_00807618);
   st::fn_007119C0(this_00->field_01E0,puVar9,iVar6,iVar17,uVar12);
   local_8 = local_8 + 0xf;
   if ((g_allPlayers_007FA174 != nullptr) &&
@@ -3594,11 +3594,11 @@ LAB_00516f6b:
     uVar12 = 3;
     iVar17 = -1;
     iVar6 = -3;
-    puVar9 = (uint *)st::fn_006B0140(0x5626,g_module_00807618);
+    puVar9 = (uint *)st::fn_006B0140(0x5626,g_hINSTANCE_00807618);
     st::fn_007119C0(this_00->field_01E0,puVar9,iVar6,iVar17,uVar12);
     if (local_10 != 0) {
       st::fn_00710A90(this_00->field_01E0,(int)this_00->field_0218,0,0x96,local_8,0x106,0xf);
-      pHVar15 = g_module_00807618;
+      pHVar15 = g_hINSTANCE_00807618;
       UVar7 = st::fn_00403684(local_10,(char)local_c,0);
       pcVar10 = st::fn_006B0140(UVar7,pHVar15);
       uVar12 = 0xffffffff;
@@ -3639,7 +3639,7 @@ LAB_00516f6b:
     }
     if (local_14 != 0) {
       st::fn_00710A90(this_00->field_01E0,(int)this_00->field_0218,0,0x96,local_8,0x106,0xf);
-      pHVar15 = g_module_00807618;
+      pHVar15 = g_hINSTANCE_00807618;
       UVar7 = st::fn_00403684(local_14,(char)local_c,0);
       pcVar10 = st::fn_006B0140(UVar7,pHVar15);
       uVar12 = 0xffffffff;
@@ -3686,7 +3686,7 @@ LAB_00516f6b:
 }
 
 // 00517A50 HelpPanelTy::RCProc
-#line 1 "decomp/ST.exe/functions/00517A50/decomp.c"
+#line 4 "decomp/ST.exe/functions/00517A50/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\Andrey\helppan.cpp
    HelpPanelTy::RCProc */
@@ -3785,24 +3785,24 @@ void __thiscall st::fn_00517A50(HelpPanelTy *this,int param_1,uint param_2,char 
       uVar18 = 3;
       iVar16 = -1;
       iVar4 = -3;
-      puVar6 = (uint *)st::fn_006B0140(0x5627,g_module_00807618);
+      puVar6 = (uint *)st::fn_006B0140(0x5627,g_hINSTANCE_00807618);
       st::fn_007119C0(this_00->field_01E0,puVar6,iVar4,iVar16,uVar18);
       st::fn_00710A90(this_00->field_01E0,(int)this_00->field_0218,0,0xcd,local_8,0xcf,0xf);
       pAVar12 = local_c;
       uVar18 = (DAT_0080874e != '\x03') - 1 & 5;
       iVar16 = -1;
       iVar4 = 1;
-      puVar6 = (uint *)st::fn_006B0140(local_c->field_0005,g_module_00807618);
+      puVar6 = (uint *)st::fn_006B0140(local_c->field_0005,g_hINSTANCE_00807618);
       st::fn_007119C0(this_00->field_01E0,puVar6,iVar4,iVar16,uVar18);
       local_8 = local_8 + 0xf;
       st::fn_00710A90(this_00->field_01E0,(int)this_00->field_0218,0,0,local_8,200,0xf);
       uVar18 = 3;
       iVar16 = -1;
       iVar4 = -3;
-      puVar6 = (uint *)st::fn_006B0140(0x5628,g_module_00807618);
+      puVar6 = (uint *)st::fn_006B0140(0x5628,g_hINSTANCE_00807618);
       st::fn_007119C0(this_00->field_01E0,puVar6,iVar4,iVar16,uVar18);
       st::fn_00710A90(this_00->field_01E0,(int)this_00->field_0218,0,0xcd,local_8,0xcf,0xf);
-      pHVar19 = g_module_00807618;
+      pHVar19 = g_hINSTANCE_00807618;
       UVar5 = st::fn_00403684(pAVar12->field_0009,bVar15,0);
       pcVar7 = st::fn_006B0140(UVar5,pHVar19);
       uVar18 = 0xffffffff;
@@ -3845,13 +3845,13 @@ void __thiscall st::fn_00517A50(HelpPanelTy *this,int param_1,uint param_2,char 
       uVar18 = 3;
       iVar16 = -1;
       iVar4 = -3;
-      puVar6 = (uint *)st::fn_006B0140(0x5629,g_module_00807618);
+      puVar6 = (uint *)st::fn_006B0140(0x5629,g_hINSTANCE_00807618);
       st::fn_007119C0(this_00->field_01E0,puVar6,iVar4,iVar16,uVar18);
       st::fn_00710A90(this_00->field_01E0,(int)this_00->field_0218,0,0xcd,local_8,0xcf,0xf);
       uVar18 = (DAT_0080874e != '\x03') - 1 & 5;
       iVar16 = -1;
       iVar4 = 1;
-      puVar6 = (uint *)st::fn_006B0140(0x273f - (pAVar12->field_000D != 0),g_module_00807618);
+      puVar6 = (uint *)st::fn_006B0140(0x273f - (pAVar12->field_000D != 0),g_hINSTANCE_00807618);
       st::fn_007119C0(this_00->field_01E0,puVar6,iVar4,iVar16,uVar18);
       local_8 = local_8 + 0xf;
       if (pAVar12->field_000D != 0) {
@@ -3859,10 +3859,10 @@ void __thiscall st::fn_00517A50(HelpPanelTy *this,int param_1,uint param_2,char 
         uVar18 = 3;
         iVar16 = -1;
         iVar4 = -3;
-        puVar6 = (uint *)st::fn_006B0140(0x562a,g_module_00807618);
+        puVar6 = (uint *)st::fn_006B0140(0x562a,g_hINSTANCE_00807618);
         st::fn_007119C0(this_00->field_01E0,puVar6,iVar4,iVar16,uVar18);
         st::fn_00710A90(this_00->field_01E0,(int)this_00->field_0218,0,0xcd,local_8,0xcf,0xf);
-        pHVar19 = g_module_00807618;
+        pHVar19 = g_hINSTANCE_00807618;
         UVar5 = st::fn_00403684(pAVar12->field_000D,bVar15,0);
         pcVar7 = st::fn_006B0140(UVar5,pHVar19);
         uVar18 = 0xffffffff;
@@ -3906,7 +3906,7 @@ void __thiscall st::fn_00517A50(HelpPanelTy *this,int param_1,uint param_2,char 
       uVar18 = 3;
       iVar16 = -1;
       iVar4 = -3;
-      puVar6 = (uint *)st::fn_006B0140(0x562b,g_module_00807618);
+      puVar6 = (uint *)st::fn_006B0140(0x562b,g_hINSTANCE_00807618);
       st::fn_007119C0(this_00->field_01E0,puVar6,iVar4,iVar16,uVar18);
       local_18 = &pAVar12->field_0x19;
       pGVar13 = (Global_sub_00526BA0_param_1Enum *)&pAVar12->field_0x11;
@@ -3915,7 +3915,7 @@ void __thiscall st::fn_00517A50(HelpPanelTy *this,int param_1,uint param_2,char 
         local_14 = pGVar13;
         if (*pGVar13 != 0) {
           st::fn_00710A90(this_00->field_01E0,(int)this_00->field_0218,0,0xcd,local_8,0xcf,0xf);
-          pHVar19 = g_module_00807618;
+          pHVar19 = g_hINSTANCE_00807618;
           UVar5 = st::fn_00403684(*pGVar13,bVar15,0);
           pcVar7 = st::fn_006B0140(UVar5,pHVar19);
           uVar18 = 0xffffffff;
@@ -3959,14 +3959,14 @@ void __thiscall st::fn_00517A50(HelpPanelTy *this,int param_1,uint param_2,char 
           pIVar20 = (InternalExceptionFrame *)0x3;
           iVar16 = -1;
           iVar4 = -3;
-          puVar6 = (uint *)st::fn_006B0140(0x562c,g_module_00807618);
+          puVar6 = (uint *)st::fn_006B0140(0x562c,g_hINSTANCE_00807618);
           st::fn_007119C0(this_00->field_01E0,puVar6,iVar4,iVar16,(uint)pIVar20);
           st::fn_00710A90(this_00->field_01E0,(int)this_00->field_0218,0,0xcd,local_8,0xcf,0xf);
           pIVar20 = (InternalExceptionFrame *)((DAT_0080874e != '\x03') - 1 & 5);
           iVar16 = -1;
           iVar4 = 1;
           puVar6 = (uint *)st::fn_006B0140((-(uint)(*local_18 != '\0') & 0xffffffef) + 0x5641,
-                                              g_module_00807618);
+                                              g_hINSTANCE_00807618);
           st::fn_007119C0(this_00->field_01E0,puVar6,iVar4,iVar16,(uint)pIVar20);
           local_8 = local_8 + 0xf;
           pAVar12 = local_c;
@@ -3980,9 +3980,9 @@ void __thiscall st::fn_00517A50(HelpPanelTy *this,int param_1,uint param_2,char 
       uVar18 = 3;
       iVar16 = -1;
       iVar4 = -3;
-      puVar6 = (uint *)st::fn_006B0140(0x562d,g_module_00807618);
+      puVar6 = (uint *)st::fn_006B0140(0x562d,g_hINSTANCE_00807618);
       st::fn_007119C0(this_00->field_01E0,puVar6,iVar4,iVar16,uVar18);
-      pcVar7 = st::fn_006B0140(*(UINT *)&pAVar12->field_0x1b,g_module_00807618);
+      pcVar7 = st::fn_006B0140(*(UINT *)&pAVar12->field_0x1b,g_hINSTANCE_00807618);
       uVar18 = 0xffffffff;
       do {
         pcVar14 = pcVar7;
@@ -4012,14 +4012,14 @@ void __thiscall st::fn_00517A50(HelpPanelTy *this,int param_1,uint param_2,char 
       uVar18 = 3;
       iVar16 = -1;
       iVar4 = -3;
-      puVar6 = (uint *)st::fn_006B0140(0x562e,g_module_00807618);
+      puVar6 = (uint *)st::fn_006B0140(0x562e,g_hINSTANCE_00807618);
       st::fn_007119C0(this_00->field_01E0,puVar6,iVar4,iVar16,uVar18);
       st::fn_00710A90(this_00->field_01E0,(int)this_00->field_0218,0,0xcd,local_8,0xcf,0xf);
       pAVar12 = local_c;
       uVar18 = (DAT_0080874e != '\x03') - 1 & 5;
       iVar16 = -1;
       iVar4 = 1;
-      puVar6 = (uint *)st::fn_006B0140(0x273f - (local_c->field_001F != 0),g_module_00807618);
+      puVar6 = (uint *)st::fn_006B0140(0x273f - (local_c->field_001F != 0),g_hINSTANCE_00807618);
       st::fn_007119C0(this_00->field_01E0,puVar6,iVar4,iVar16,uVar18);
       local_8 = local_8 + 0xf;
       if (pAVar12->field_001F != 0) {
@@ -4028,10 +4028,10 @@ void __thiscall st::fn_00517A50(HelpPanelTy *this,int param_1,uint param_2,char 
         uVar18 = 3;
         iVar16 = -1;
         iVar4 = -3;
-        puVar6 = (uint *)st::fn_006B0140(0x562a,g_module_00807618);
+        puVar6 = (uint *)st::fn_006B0140(0x562a,g_hINSTANCE_00807618);
         st::fn_007119C0(this_00->field_01E0,puVar6,iVar4,iVar16,uVar18);
         st::fn_00710A90(this_00->field_01E0,(int)this_00->field_0218,0,0xcd,local_8,0xcf,0xf);
-        pHVar19 = g_module_00807618;
+        pHVar19 = g_hINSTANCE_00807618;
         UVar5 = st::fn_00403684(pAVar12->field_001F,bVar15,0);
         pcVar7 = st::fn_006B0140(UVar5,pHVar19);
         uVar18 = 0xffffffff;
@@ -4078,10 +4078,10 @@ void __thiscall st::fn_00517A50(HelpPanelTy *this,int param_1,uint param_2,char 
         uVar18 = 3;
         iVar16 = -1;
         iVar4 = -3;
-        puVar6 = (uint *)st::fn_006B0140(0x562f,g_module_00807618);
+        puVar6 = (uint *)st::fn_006B0140(0x562f,g_hINSTANCE_00807618);
         st::fn_007119C0(this_00->field_01E0,puVar6,iVar4,iVar16,uVar18);
         st::fn_00710A90(this_00->field_01E0,(int)this_00->field_0218,0,0xcd,local_8,0xcf,0xf);
-        pHVar19 = g_module_00807618;
+        pHVar19 = g_hINSTANCE_00807618;
         UVar5 = st::fn_00403684(pAVar12->field_0023,bVar15,0);
         pcVar7 = st::fn_006B0140(UVar5,pHVar19);
         uVar18 = 0xffffffff;
@@ -4139,7 +4139,7 @@ void __thiscall st::fn_00517A50(HelpPanelTy *this,int param_1,uint param_2,char 
 }
 
 // 00518C20 HelpPanelTy::SubProc
-#line 1 "decomp/ST.exe/functions/00518C20/decomp.c"
+#line 4 "decomp/ST.exe/functions/00518C20/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\Andrey\helppan.cpp
    HelpPanelTy::SubProc */
@@ -4236,7 +4236,7 @@ void __thiscall st::fn_00518C20(HelpPanelTy *this,int param_1,char param_2)
       uVar15 = 3;
       iVar13 = -1;
       iVar6 = -1;
-      puVar8 = (uint *)st::fn_006B0140(0x564a,g_module_00807618);
+      puVar8 = (uint *)st::fn_006B0140(0x564a,g_hINSTANCE_00807618);
       st::fn_007119C0(this_00->field_01E0,puVar8,iVar6,iVar13,uVar15);
       local_8 = local_8 + 0xf;
       local_c = 0;
@@ -4261,13 +4261,13 @@ void __thiscall st::fn_00518C20(HelpPanelTy *this,int param_1,char param_2)
         uVar15 = 3;
         iVar13 = -1;
         iVar6 = -3;
-        puVar8 = (uint *)st::fn_006B0140(0x5654,g_module_00807618);
+        puVar8 = (uint *)st::fn_006B0140(0x5654,g_hINSTANCE_00807618);
         st::fn_007119C0(this_00->field_01E0,puVar8,iVar6,iVar13,uVar15);
         st::fn_00710A90(this_00->field_01E0,(int)this_00->field_0218,0,0x96,local_8,0x106,0xf);
         uVar15 = (DAT_0080874e != '\x03') - 1 & 5;
         iVar13 = -1;
         iVar6 = 1;
-        puVar8 = (uint *)st::fn_006B0140(local_c,g_module_00807618);
+        puVar8 = (uint *)st::fn_006B0140(local_c,g_hINSTANCE_00807618);
         st::fn_007119C0(this_00->field_01E0,puVar8,iVar6,iVar13,uVar15);
         local_8 = local_8 + 0xf;
       }
@@ -4275,7 +4275,7 @@ void __thiscall st::fn_00518C20(HelpPanelTy *this,int param_1,char param_2)
       uVar15 = 3;
       iVar13 = -1;
       iVar6 = -3;
-      puVar8 = (uint *)st::fn_006B0140(0x5656,g_module_00807618);
+      puVar8 = (uint *)st::fn_006B0140(0x5656,g_hINSTANCE_00807618);
       st::fn_007119C0(this_00->field_01E0,puVar8,iVar6,iVar13,uVar15);
       st::fn_00710A90(this_00->field_01E0,(int)this_00->field_0218,0,0x96,local_8,0x106,0xf);
       if (local_1c == 1) {
@@ -4290,7 +4290,7 @@ void __thiscall st::fn_00518C20(HelpPanelTy *this,int param_1,char param_2)
       uVar15 = (DAT_0080874e != '\x03') - 1 & 5;
       iVar13 = -1;
       iVar6 = 1;
-      puVar8 = (uint *)st::fn_006B0140(UVar7,g_module_00807618);
+      puVar8 = (uint *)st::fn_006B0140(UVar7,g_hINSTANCE_00807618);
       st::fn_007119C0(this_00->field_01E0,puVar8,iVar6,iVar13,uVar15);
       local_8 = local_8 + 0xf;
       local_14 = nullptr;
@@ -4298,7 +4298,7 @@ void __thiscall st::fn_00518C20(HelpPanelTy *this,int param_1,char param_2)
       uVar15 = 3;
       iVar13 = -1;
       iVar6 = -3;
-      puVar8 = (uint *)st::fn_006B0140(0x55f7,g_module_00807618);
+      puVar8 = (uint *)st::fn_006B0140(0x55f7,g_hINSTANCE_00807618);
       st::fn_007119C0(this_00->field_01E0,puVar8,iVar6,iVar13,uVar15);
       if (cVar5 == '\x03') {
         local_c = *(UINT *)(&DAT_007e09dc + param_1 * 4);
@@ -4378,7 +4378,7 @@ void __thiscall st::fn_00518C20(HelpPanelTy *this,int param_1,char param_2)
           uVar15 = 3;
           iVar13 = -1;
           iVar6 = -3;
-          puVar8 = (uint *)st::fn_006B0140(0x5657,g_module_00807618);
+          puVar8 = (uint *)st::fn_006B0140(0x5657,g_hINSTANCE_00807618);
           st::fn_007119C0(this_00->field_01E0,puVar8,iVar6,iVar13,uVar15);
           local_c = 0;
         }
@@ -4387,7 +4387,7 @@ void __thiscall st::fn_00518C20(HelpPanelTy *this,int param_1,char param_2)
         uVar15 = (DAT_0080874e != '\x03') - 1 & 5;
         iVar13 = -1;
         iVar6 = 1;
-        pHVar12 = g_module_00807618;
+        pHVar12 = g_hINSTANCE_00807618;
         UVar7 = st::fn_00404B29(*local_18,'\0');
         puVar8 = (uint *)st::fn_006B0140(UVar7,pHVar12);
         st::fn_007119C0(this_00->field_01E0,puVar8,iVar6,iVar13,uVar15);
@@ -4411,14 +4411,14 @@ void __thiscall st::fn_00518C20(HelpPanelTy *this,int param_1,char param_2)
       uVar15 = 3;
       iVar13 = -1;
       iVar6 = -1;
-      puVar8 = (uint *)st::fn_006B0140(0x564b,g_module_00807618);
+      puVar8 = (uint *)st::fn_006B0140(0x564b,g_hINSTANCE_00807618);
       st::fn_007119C0(this_00->field_01E0,puVar8,iVar6,iVar13,uVar15);
       local_8 = local_8 + 0xf;
       st::fn_00710A90(this_00->field_01E0,(int)this_00->field_0218,0,0x96,local_8,0x106,0xf);
       uVar15 = (DAT_0080874e != '\x03') - 1 & 5;
       iVar13 = -1;
       iVar6 = 1;
-      puVar8 = (uint *)st::fn_006B0140(0x564c,g_module_00807618);
+      puVar8 = (uint *)st::fn_006B0140(0x564c,g_hINSTANCE_00807618);
       st::fn_007119C0(this_00->field_01E0,puVar8,iVar6,iVar13,uVar15);
       st::fn_00710A90(this_00->field_01E0,(int)this_00->field_0218,0,0,local_8,0x91,0xf);
       st::external_00000080((LPSTR)&DAT_0080f33a,"%d",*(undefined4 *)(&DAT_007dfbac + param_1 * 4));
@@ -4428,7 +4428,7 @@ void __thiscall st::fn_00518C20(HelpPanelTy *this,int param_1,char param_2)
       uVar15 = (DAT_0080874e != '\x03') - 1 & 5;
       iVar13 = -1;
       iVar6 = 1;
-      puVar8 = (uint *)st::fn_006B0140(0x5658,g_module_00807618);
+      puVar8 = (uint *)st::fn_006B0140(0x5658,g_hINSTANCE_00807618);
       st::fn_007119C0(this_00->field_01E0,puVar8,iVar6,iVar13,uVar15);
       piVar10 = &DAT_007dfc70;
       local_c = DAT_007dfc70;
@@ -4456,14 +4456,14 @@ void __thiscall st::fn_00518C20(HelpPanelTy *this,int param_1,char param_2)
       uVar15 = 2;
       iVar13 = -1;
       iVar6 = -3;
-      puVar8 = (uint *)st::fn_006B0140(local_c,g_module_00807618);
+      puVar8 = (uint *)st::fn_006B0140(local_c,g_hINSTANCE_00807618);
       st::fn_007119C0(this_00->field_01E0,puVar8,iVar6,iVar13,uVar15);
       local_8 = local_8 + 0xf;
       st::fn_00710A90(this_00->field_01E0,(int)this_00->field_0218,0,0x96,local_8,0x106,0xf);
       uVar15 = (DAT_0080874e != '\x03') - 1 & 5;
       iVar13 = -1;
       iVar6 = 1;
-      puVar8 = (uint *)st::fn_006B0140(0x564d,g_module_00807618);
+      puVar8 = (uint *)st::fn_006B0140(0x564d,g_hINSTANCE_00807618);
       st::fn_007119C0(this_00->field_01E0,puVar8,iVar6,iVar13,uVar15);
       piVar10 = &DAT_007e04a0;
       local_c = DAT_007e04a0;
@@ -4492,7 +4492,7 @@ void __thiscall st::fn_00518C20(HelpPanelTy *this,int param_1,char param_2)
       uVar15 = 2;
       iVar13 = -1;
       iVar6 = -3;
-      puVar8 = (uint *)st::fn_006B0140(local_c,g_module_00807618);
+      puVar8 = (uint *)st::fn_006B0140(local_c,g_hINSTANCE_00807618);
       st::fn_007119C0(this_00->field_01E0,puVar8,iVar6,iVar13,uVar15);
       local_8 = local_8 + 0xf;
       iVar6 = st::fn_00403F17(this_00,0x96,(int *)&local_8,*(int *)(&DAT_007a8b18 + param_1 * 4),
@@ -4511,13 +4511,13 @@ void __thiscall st::fn_00518C20(HelpPanelTy *this,int param_1,char param_2)
       uVar15 = (DAT_0080874e != '\x03') - 1 & 5;
       iVar13 = -1;
       iVar6 = 1;
-      puVar8 = (uint *)st::fn_006B0140(0x5659,g_module_00807618);
+      puVar8 = (uint *)st::fn_006B0140(0x5659,g_hINSTANCE_00807618);
       st::fn_007119C0(this_00->field_01E0,puVar8,iVar6,iVar13,uVar15);
       st::fn_00710A90(this_00->field_01E0,(int)this_00->field_0218,0,0,local_8,0x91,0xf);
       uVar15 = 2;
       iVar14 = -1;
       iVar13 = -3;
-      pHVar12 = g_module_00807618;
+      pHVar12 = g_hINSTANCE_00807618;
       iVar6 = st::fn_006B0FD0(0x800f10);
       puVar8 = (uint *)st::fn_006B0140(0x273f - (iVar6 != 0),pHVar12);
       st::fn_007119C0(this_00->field_01E0,puVar8,iVar13,iVar14,uVar15);
@@ -4526,13 +4526,13 @@ void __thiscall st::fn_00518C20(HelpPanelTy *this,int param_1,char param_2)
       uVar15 = (DAT_0080874e != '\x03') - 1 & 5;
       iVar13 = -1;
       iVar6 = 1;
-      puVar8 = (uint *)st::fn_006B0140(0x564e,g_module_00807618);
+      puVar8 = (uint *)st::fn_006B0140(0x564e,g_hINSTANCE_00807618);
       st::fn_007119C0(this_00->field_01E0,puVar8,iVar6,iVar13,uVar15);
       st::fn_00710A90(this_00->field_01E0,(int)this_00->field_0218,0,0,local_8,0x91,0xf);
       uVar15 = 2;
       iVar13 = -1;
       iVar6 = -3;
-      puVar8 = (uint *)st::fn_006B0140((cVar5 != '\x03') + 0x273e,g_module_00807618);
+      puVar8 = (uint *)st::fn_006B0140((cVar5 != '\x03') + 0x273e,g_hINSTANCE_00807618);
       st::fn_007119C0(this_00->field_01E0,puVar8,iVar6,iVar13,uVar15);
       local_8 = local_8 + 0xf;
       if (local_d != '\0') {
@@ -4551,13 +4551,13 @@ void __thiscall st::fn_00518C20(HelpPanelTy *this,int param_1,char param_2)
         uVar15 = (DAT_0080874e != '\x03') - 1 & 5;
         iVar13 = -1;
         iVar6 = 1;
-        puVar8 = (uint *)st::fn_006B0140(0x564f,g_module_00807618);
+        puVar8 = (uint *)st::fn_006B0140(0x564f,g_hINSTANCE_00807618);
         st::fn_007119C0(this_00->field_01E0,puVar8,iVar6,iVar13,uVar15);
         st::fn_00710A90(this_00->field_01E0,(int)this_00->field_0218,0,0,local_8,0x91,0xf);
         uVar15 = 2;
         iVar13 = -1;
         iVar6 = -3;
-        puVar8 = (uint *)st::fn_006B0140(0x273f - bVar11,g_module_00807618);
+        puVar8 = (uint *)st::fn_006B0140(0x273f - bVar11,g_hINSTANCE_00807618);
         st::fn_007119C0(this_00->field_01E0,puVar8,iVar6,iVar13,uVar15);
         local_8 = local_8 + 0xf;
       }
@@ -4565,14 +4565,14 @@ void __thiscall st::fn_00518C20(HelpPanelTy *this,int param_1,char param_2)
       uVar15 = (DAT_0080874e != '\x03') - 1 & 5;
       iVar13 = -1;
       iVar6 = 1;
-      puVar8 = (uint *)st::fn_006B0140(0x5650,g_module_00807618);
+      puVar8 = (uint *)st::fn_006B0140(0x5650,g_hINSTANCE_00807618);
       st::fn_007119C0(this_00->field_01E0,puVar8,iVar6,iVar13,uVar15);
       local_c = *(UINT *)(&DAT_007e085c + param_1 * 4);
       st::fn_00710A90(this_00->field_01E0,(int)this_00->field_0218,0,0,local_8,0x91,0xf);
       uVar15 = 2;
       iVar13 = -1;
       iVar6 = -3;
-      puVar8 = (uint *)st::fn_006B0140(0x273f - (local_c != 0),g_module_00807618);
+      puVar8 = (uint *)st::fn_006B0140(0x273f - (local_c != 0),g_hINSTANCE_00807618);
       st::fn_007119C0(this_00->field_01E0,puVar8,iVar6,iVar13,uVar15);
       local_8 = local_8 + 0xf;
       if (local_c != 0) {
@@ -4580,7 +4580,7 @@ void __thiscall st::fn_00518C20(HelpPanelTy *this,int param_1,char param_2)
         uVar15 = (DAT_0080874e != '\x03') - 1 & 5;
         iVar13 = -1;
         iVar6 = 1;
-        puVar8 = (uint *)st::fn_006B0140(0x5651,g_module_00807618);
+        puVar8 = (uint *)st::fn_006B0140(0x5651,g_hINSTANCE_00807618);
         st::fn_007119C0(this_00->field_01E0,puVar8,iVar6,iVar13,uVar15);
         st::fn_00710A90(this_00->field_01E8,(int)this_00->field_0218,0,0x5f,local_8 - 3,0x16,0x14);
         st::external_00000080((LPSTR)&DAT_0080f33a,"%4d",local_c);
@@ -4617,7 +4617,7 @@ void __thiscall st::fn_00518C20(HelpPanelTy *this,int param_1,char param_2)
 }
 
 // 0051A100 HelpPanelTy::ObjProc
-#line 1 "decomp/ST.exe/functions/0051A100/decomp.c"
+#line 4 "decomp/ST.exe/functions/0051A100/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\Andrey\helppan.cpp
    HelpPanelTy::ObjProc */
@@ -4708,7 +4708,7 @@ void __thiscall st::fn_0051A100(HelpPanelTy *this,int param_1,uint param_2,char 
       uVar14 = 3;
       iVar12 = -1;
       iVar6 = -1;
-      puVar8 = (uint *)st::fn_006B0140(0x564a,g_module_00807618);
+      puVar8 = (uint *)st::fn_006B0140(0x564a,g_hINSTANCE_00807618);
       st::fn_007119C0(this_00->field_01E0,puVar8,iVar6,iVar12,uVar14);
       local_8 = local_8 + 0xf;
       UVar7 = 0;
@@ -4739,13 +4739,13 @@ void __thiscall st::fn_0051A100(HelpPanelTy *this,int param_1,uint param_2,char 
         uVar14 = 3;
         iVar12 = -1;
         iVar6 = -3;
-        puVar8 = (uint *)st::fn_006B0140(0x5654,g_module_00807618);
+        puVar8 = (uint *)st::fn_006B0140(0x5654,g_hINSTANCE_00807618);
         st::fn_007119C0(this_00->field_01E0,puVar8,iVar6,iVar12,uVar14);
         st::fn_00710A90(this_00->field_01E0,(int)this_00->field_0218,0,0x96,local_8,0x106,0xf);
         uVar14 = (DAT_0080874e != '\x03') - 1 & 5;
         iVar12 = -1;
         iVar6 = 1;
-        puVar8 = (uint *)st::fn_006B0140(UVar7,g_module_00807618);
+        puVar8 = (uint *)st::fn_006B0140(UVar7,g_hINSTANCE_00807618);
         st::fn_007119C0(this_00->field_01E0,puVar8,iVar6,iVar12,uVar14);
         local_8 = local_8 + 0xf;
       }
@@ -4753,7 +4753,7 @@ void __thiscall st::fn_0051A100(HelpPanelTy *this,int param_1,uint param_2,char 
       uVar14 = 3;
       iVar12 = -1;
       iVar6 = -3;
-      puVar8 = (uint *)st::fn_006B0140(0x5656,g_module_00807618);
+      puVar8 = (uint *)st::fn_006B0140(0x5656,g_hINSTANCE_00807618);
       st::fn_007119C0(this_00->field_01E0,puVar8,iVar6,iVar12,uVar14);
       st::fn_00710A90(this_00->field_01E0,(int)this_00->field_0218,0,0x96,local_8,0x106,0xf);
       if (param_2 == 1) {
@@ -4768,14 +4768,14 @@ void __thiscall st::fn_0051A100(HelpPanelTy *this,int param_1,uint param_2,char 
       uVar14 = (DAT_0080874e != '\x03') - 1 & 5;
       iVar12 = -1;
       iVar6 = 1;
-      puVar8 = (uint *)st::fn_006B0140(UVar7,g_module_00807618);
+      puVar8 = (uint *)st::fn_006B0140(UVar7,g_hINSTANCE_00807618);
       st::fn_007119C0(this_00->field_01E0,puVar8,iVar6,iVar12,uVar14);
       local_8 = local_8 + 0xf;
       st::fn_00710A90(this_00->field_01E0,(int)this_00->field_0218,0,0,local_8,0x91,0xf);
       uVar14 = 3;
       iVar12 = -1;
       iVar6 = -3;
-      puVar8 = (uint *)st::fn_006B0140(0x55f7,g_module_00807618);
+      puVar8 = (uint *)st::fn_006B0140(0x55f7,g_hINSTANCE_00807618);
       st::fn_007119C0(this_00->field_01E0,puVar8,iVar6,iVar12,uVar14);
       local_14 = param_1 * 3;
       if (param_2 == 3) {
@@ -4853,7 +4853,7 @@ void __thiscall st::fn_0051A100(HelpPanelTy *this,int param_1,uint param_2,char 
           uVar14 = 3;
           iVar12 = -1;
           iVar6 = -3;
-          puVar8 = (uint *)st::fn_006B0140(0x5657,g_module_00807618);
+          puVar8 = (uint *)st::fn_006B0140(0x5657,g_hINSTANCE_00807618);
           st::fn_007119C0(this_00->field_01E0,puVar8,iVar6,iVar12,uVar14);
           local_1c = nullptr;
         }
@@ -4861,7 +4861,7 @@ void __thiscall st::fn_0051A100(HelpPanelTy *this,int param_1,uint param_2,char 
         uVar14 = (DAT_0080874e != '\x03') - 1 & 5;
         iVar12 = -1;
         iVar6 = 1;
-        module = g_module_00807618;
+        module = g_hINSTANCE_00807618;
         UVar7 = st::fn_00404B29(*pGVar1,'\0');
         puVar8 = (uint *)st::fn_006B0140(UVar7,module);
         st::fn_007119C0(this_00->field_01E0,puVar8,iVar6,iVar12,uVar14);
@@ -4885,14 +4885,14 @@ void __thiscall st::fn_0051A100(HelpPanelTy *this,int param_1,uint param_2,char 
       uVar14 = 3;
       iVar12 = -1;
       iVar6 = -1;
-      puVar8 = (uint *)st::fn_006B0140(0x564b,g_module_00807618);
+      puVar8 = (uint *)st::fn_006B0140(0x564b,g_hINSTANCE_00807618);
       st::fn_007119C0(this_00->field_01E0,puVar8,iVar6,iVar12,uVar14);
       local_8 = local_8 + 0xf;
       st::fn_00710A90(this_00->field_01E0,(int)this_00->field_0218,0,0x96,local_8,0x106,0xf);
       uVar14 = (DAT_0080874e != '\x03') - 1 & 5;
       iVar12 = -1;
       iVar6 = 1;
-      puVar8 = (uint *)st::fn_006B0140(0x564c,g_module_00807618);
+      puVar8 = (uint *)st::fn_006B0140(0x564c,g_hINSTANCE_00807618);
       st::fn_007119C0(this_00->field_01E0,puVar8,iVar6,iVar12,uVar14);
       st::fn_00710A90(this_00->field_01E0,(int)this_00->field_0218,0,0,local_8,0x91,0xf);
       iVar12 = local_14;
@@ -4903,7 +4903,7 @@ void __thiscall st::fn_0051A100(HelpPanelTy *this,int param_1,uint param_2,char 
       uVar14 = (DAT_0080874e != '\x03') - 1 & 5;
       iVar13 = -1;
       iVar6 = 1;
-      puVar8 = (uint *)st::fn_006B0140(0x564d,g_module_00807618);
+      puVar8 = (uint *)st::fn_006B0140(0x564d,g_hINSTANCE_00807618);
       st::fn_007119C0(this_00->field_01E0,puVar8,iVar6,iVar13,uVar14);
       iVar6 = *(int *)(&DAT_007e3dc0 + param_2 * 4);
       local_1c = (int *)(&DAT_007e3dc0 + param_2 * 4);
@@ -4932,21 +4932,21 @@ void __thiscall st::fn_0051A100(HelpPanelTy *this,int param_1,uint param_2,char 
       uVar14 = 2;
       iVar13 = -1;
       iVar6 = -3;
-      puVar8 = (uint *)st::fn_006B0140(local_10,g_module_00807618);
+      puVar8 = (uint *)st::fn_006B0140(local_10,g_hINSTANCE_00807618);
       st::fn_007119C0(this_00->field_01E0,puVar8,iVar6,iVar13,uVar14);
       local_8 = local_8 + 0xf;
       st::fn_00710A90(this_00->field_01E0,(int)this_00->field_0218,0,0x96,local_8,0x106,0xf);
       uVar14 = (DAT_0080874e != '\x03') - 1 & 5;
       iVar13 = -1;
       iVar6 = 1;
-      puVar8 = (uint *)st::fn_006B0140(0x565a,g_module_00807618);
+      puVar8 = (uint *)st::fn_006B0140(0x565a,g_hINSTANCE_00807618);
       st::fn_007119C0(this_00->field_01E0,puVar8,iVar6,iVar13,uVar14);
       st::fn_00710A90(this_00->field_01E0,(int)this_00->field_0218,0,0,local_8,0x91,0xf);
       uVar14 = 2;
       iVar13 = -1;
       iVar6 = -3;
       puVar8 = (uint *)st::fn_006B0140(0x273f - (*(int *)(&DAT_00791b18 + iVar12 * 4) != 0),
-                                          g_module_00807618);
+                                          g_hINSTANCE_00807618);
       st::fn_007119C0(this_00->field_01E0,puVar8,iVar6,iVar13,uVar14);
       local_8 = local_8 + 0xf;
       iVar6 = param_1 + -0x32;
@@ -4980,13 +4980,13 @@ void __thiscall st::fn_0051A100(HelpPanelTy *this,int param_1,uint param_2,char 
       uVar14 = (DAT_0080874e != '\x03') - 1 & 5;
       iVar13 = -1;
       iVar6 = 1;
-      puVar8 = (uint *)st::fn_006B0140(0x564e,g_module_00807618);
+      puVar8 = (uint *)st::fn_006B0140(0x564e,g_hINSTANCE_00807618);
       st::fn_007119C0(this_00->field_01E0,puVar8,iVar6,iVar13,uVar14);
       st::fn_00710A90(this_00->field_01E0,(int)this_00->field_0218,0,0,local_8,0x91,0xf);
       uVar14 = 2;
       iVar13 = -1;
       iVar6 = -3;
-      puVar8 = (uint *)st::fn_006B0140((param_2 != 3) + 0x273e,g_module_00807618);
+      puVar8 = (uint *)st::fn_006B0140((param_2 != 3) + 0x273e,g_hINSTANCE_00807618);
       st::fn_007119C0(this_00->field_01E0,puVar8,iVar6,iVar13,uVar14);
       local_8 = local_8 + 0xf;
       if (local_9 != '\0') {
@@ -4995,7 +4995,7 @@ void __thiscall st::fn_0051A100(HelpPanelTy *this,int param_1,uint param_2,char 
         uVar14 = (DAT_0080874e != '\x03') - 1 & 5;
         iVar12 = -1;
         iVar6 = 1;
-        puVar8 = (uint *)st::fn_006B0140(0x564f,g_module_00807618);
+        puVar8 = (uint *)st::fn_006B0140(0x564f,g_hINSTANCE_00807618);
         st::fn_007119C0(this_00->field_01E0,puVar8,iVar6,iVar12,uVar14);
         st::fn_00710A90(this_00->field_01E0,(int)this_00->field_0218,0,0,local_8,0x91,0xf);
         if (*(int *)((int)&DAT_00792ca0 + local_18) != 0) {
@@ -5011,7 +5011,7 @@ void __thiscall st::fn_0051A100(HelpPanelTy *this,int param_1,uint param_2,char 
         uVar14 = 2;
         iVar12 = -1;
         iVar6 = -3;
-        puVar8 = (uint *)st::fn_006B0140(0x273f - bVar10,g_module_00807618);
+        puVar8 = (uint *)st::fn_006B0140(0x273f - bVar10,g_hINSTANCE_00807618);
         st::fn_007119C0(this_00->field_01E0,puVar8,iVar6,iVar12,uVar14);
         local_8 = local_8 + 0xf;
         iVar12 = local_14;
@@ -5021,14 +5021,14 @@ void __thiscall st::fn_0051A100(HelpPanelTy *this,int param_1,uint param_2,char 
         uVar14 = (DAT_0080874e != '\x03') - 1 & 5;
         iVar13 = -1;
         iVar6 = 1;
-        puVar8 = (uint *)st::fn_006B0140(0x5650,g_module_00807618);
+        puVar8 = (uint *)st::fn_006B0140(0x5650,g_hINSTANCE_00807618);
         st::fn_007119C0(this_00->field_01E0,puVar8,iVar6,iVar13,uVar14);
         iVar6 = *(int *)(&DAT_007e29f0 + iVar12 * 4);
         st::fn_00710A90(this_00->field_01E0,(int)this_00->field_0218,0,0,local_8,0x91,0xf);
         uVar14 = 2;
         iVar13 = -1;
         iVar12 = -3;
-        puVar8 = (uint *)st::fn_006B0140(0x273f - (iVar6 != 0),g_module_00807618);
+        puVar8 = (uint *)st::fn_006B0140(0x273f - (iVar6 != 0),g_hINSTANCE_00807618);
         st::fn_007119C0(this_00->field_01E0,puVar8,iVar12,iVar13,uVar14);
         local_8 = local_8 + 0xf;
         iVar12 = local_14;
@@ -5037,7 +5037,7 @@ void __thiscall st::fn_0051A100(HelpPanelTy *this,int param_1,uint param_2,char 
           uVar14 = (DAT_0080874e != '\x03') - 1 & 5;
           iVar13 = -1;
           iVar12 = 1;
-          puVar8 = (uint *)st::fn_006B0140(0x5651,g_module_00807618);
+          puVar8 = (uint *)st::fn_006B0140(0x5651,g_hINSTANCE_00807618);
           st::fn_007119C0(this_00->field_01E0,puVar8,iVar12,iVar13,uVar14);
           st::fn_00710A90(this_00->field_01E8,(int)this_00->field_0218,0,0x5f,local_8 - 3,0x16,0x14
                           );
@@ -5062,7 +5062,7 @@ void __thiscall st::fn_0051A100(HelpPanelTy *this,int param_1,uint param_2,char 
       uVar14 = (DAT_0080874e != '\x03') - 1 & 5;
       iVar13 = -1;
       iVar6 = 1;
-      puVar8 = (uint *)st::fn_006B0140(0x565b,g_module_00807618);
+      puVar8 = (uint *)st::fn_006B0140(0x565b,g_hINSTANCE_00807618);
       st::fn_007119C0(this_00->field_01E0,puVar8,iVar6,iVar13,uVar14);
       local_10 = 0;
       uVar5 = 0;
@@ -5080,7 +5080,7 @@ void __thiscall st::fn_0051A100(HelpPanelTy *this,int param_1,uint param_2,char 
       uVar14 = 2;
       iVar12 = -1;
       iVar6 = -3;
-      puVar8 = (uint *)st::fn_006B0140(local_10,g_module_00807618);
+      puVar8 = (uint *)st::fn_006B0140(local_10,g_hINSTANCE_00807618);
       st::fn_007119C0(this_00->field_01E0,puVar8,iVar6,iVar12,uVar14);
       local_8 = local_8 + 0xf;
       UVar7 = st::fn_00403684(param_1,bVar11,2);
@@ -5101,7 +5101,7 @@ void __thiscall st::fn_0051A100(HelpPanelTy *this,int param_1,uint param_2,char 
 }
 
 // 0051B5A0 HelpPanelTy::ArmProc
-#line 1 "decomp/ST.exe/functions/0051B5A0/decomp.c"
+#line 4 "decomp/ST.exe/functions/0051B5A0/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\Andrey\helppan.cpp
    HelpPanelTy::ArmProc */
@@ -5201,7 +5201,7 @@ void __thiscall st::fn_0051B5A0(HelpPanelTy *this,int param_1,int param_2,char p
       uVar6 = 3;
       iVar17 = -1;
       iVar4 = -3;
-      puVar8 = (uint *)st::fn_006B0140(0x55f8,g_module_00807618);
+      puVar8 = (uint *)st::fn_006B0140(0x55f8,g_hINSTANCE_00807618);
       st::fn_007119C0(this_00->field_01E0,puVar8,iVar4,iVar17,uVar6);
       iVar17 = 0;
       iVar4 = st::fn_00405C72(param_1);
@@ -5212,33 +5212,33 @@ void __thiscall st::fn_0051B5A0(HelpPanelTy *this,int param_1,int param_2,char p
             st::fn_00710A90(this_00->field_01E0,(int)this_00->field_0218,0,0x96,local_8,0x106,0xf);
             if ((local_14 == nullptr) || (local_18 == 0)) {
               if (iVar17 == 0) {
-                pcVar9 = st::fn_006B0140(0x565c,g_module_00807618);
+                pcVar9 = st::fn_006B0140(0x565c,g_hINSTANCE_00807618);
                 uVar16 = 2;
-                pcVar10 = st::fn_006B0140(0x564c,g_module_00807618);
+                pcVar10 = st::fn_006B0140(0x564c,g_hINSTANCE_00807618);
                 st::external_00000080((LPSTR)&DAT_0080f33a,"&%d%d &%d%s &%d(%s)",2,local_c,
                           (DAT_0080874e != '\x03') - 1 & 5,pcVar10,uVar16,pcVar9);
               }
               else {
-                pcVar9 = st::fn_006B0140(0x565d,g_module_00807618);
+                pcVar9 = st::fn_006B0140(0x565d,g_hINSTANCE_00807618);
                 uVar16 = 2;
                 iVar4 = iVar17;
-                pcVar10 = st::fn_006B0140(0x564c,g_module_00807618);
+                pcVar10 = st::fn_006B0140(0x564c,g_hINSTANCE_00807618);
                 st::external_00000080((LPSTR)&DAT_0080f33a,"&%d%d &%d%s &%d(%d %s)",2,local_c,
                           (DAT_0080874e != '\x03') - 1 & 5,pcVar10,uVar16,iVar4,pcVar9);
               }
             }
             else if (iVar17 == 0) {
-              pcVar9 = st::fn_006B0140(0x565c,g_module_00807618);
+              pcVar9 = st::fn_006B0140(0x565c,g_hINSTANCE_00807618);
               uVar16 = 2;
-              pcVar10 = st::fn_006B0140(0x564c,g_module_00807618);
+              pcVar10 = st::fn_006B0140(0x564c,g_hINSTANCE_00807618);
               st::external_00000080((LPSTR)&DAT_0080f33a,"&%d%d/%d*%d &%d%s &%d(%s)",2,local_c,local_14
                         ,local_18,(DAT_0080874e != '\x03') - 1 & 5,pcVar10,uVar16,pcVar9);
             }
             else {
-              pcVar9 = st::fn_006B0140(0x565d,g_module_00807618);
+              pcVar9 = st::fn_006B0140(0x565d,g_hINSTANCE_00807618);
               uVar16 = 2;
               iVar4 = iVar17;
-              pcVar10 = st::fn_006B0140(0x564c,g_module_00807618);
+              pcVar10 = st::fn_006B0140(0x564c,g_hINSTANCE_00807618);
               st::external_00000080((LPSTR)&DAT_0080f33a,"&%d%d/%d*%d &%d%s &%d(%d %s)",2,local_c,
                         local_14,local_18,(DAT_0080874e != '\x03') - 1 & 5,pcVar10,uVar16,iVar4,
                         pcVar9);
@@ -5257,14 +5257,14 @@ void __thiscall st::fn_0051B5A0(HelpPanelTy *this,int param_1,int param_2,char p
         uVar6 = 3;
         iVar17 = -1;
         iVar4 = -3;
-        puVar8 = (uint *)st::fn_006B0140(0x5657,g_module_00807618);
+        puVar8 = (uint *)st::fn_006B0140(0x5657,g_hINSTANCE_00807618);
         st::fn_007119C0(this_00->field_01E0,puVar8,iVar4,iVar17,uVar6);
         st::fn_00710A90(this_00->field_01E0,(int)this_00->field_0218,0,0x96,local_8,0x106,0xf);
         piVar13 = local_14;
         uVar6 = (DAT_0080874e != '\x03') - 1 & 5;
         iVar17 = -1;
         iVar4 = 1;
-        pHVar14 = g_module_00807618;
+        pHVar14 = g_hINSTANCE_00807618;
         UVar5 = st::fn_00404B29(*(Global_sub_00528060_param_1Enum *)
                                     ((int)&DAT_007bf67c + (int)local_14),'\0');
         puVar8 = (uint *)st::fn_006B0140(UVar5,pHVar14);
@@ -5291,7 +5291,7 @@ void __thiscall st::fn_0051B5A0(HelpPanelTy *this,int param_1,int param_2,char p
         uVar6 = 3;
         iVar18 = -1;
         iVar17 = -3;
-        puVar8 = (uint *)st::fn_006B0140(0x55f7,g_module_00807618);
+        puVar8 = (uint *)st::fn_006B0140(0x55f7,g_hINSTANCE_00807618);
         st::fn_007119C0(this_00->field_01E0,puVar8,iVar17,iVar18,uVar6);
         st::fn_00710A90(this_00->field_01E8,(int)this_00->field_0218,0,0x96,local_8 - 3,0x106,0x14);
         st::external_00000080((LPSTR)&DAT_0080f33a,"%4d",iVar4);
@@ -5309,7 +5309,7 @@ void __thiscall st::fn_0051B5A0(HelpPanelTy *this,int param_1,int param_2,char p
         local_8 = local_8 + 0x14;
       }
       st::fn_00710A90(this_00->field_01E0,(int)this_00->field_0218,0,0,local_8,0x91,0xf);
-      pcVar9 = st::fn_006B0140(0x5658,g_module_00807618);
+      pcVar9 = st::fn_006B0140(0x5658,g_hINSTANCE_00807618);
       st::external_00000080((LPSTR)&DAT_0080f33a,"%s:",pcVar9);
       st::fn_007119C0(this_00->field_01E0,&DAT_0080f33a,-3,-1,3);
       iVar4 = *(int *)(&DAT_007d1fdc + param_1 * 4);
@@ -5353,21 +5353,21 @@ void __thiscall st::fn_0051B5A0(HelpPanelTy *this,int param_1,int param_2,char p
       uVar6 = (DAT_0080874e != '\x03') - 1 & 5;
       iVar17 = -1;
       iVar4 = 1;
-      puVar8 = (uint *)st::fn_006B0140(UVar5,g_module_00807618);
+      puVar8 = (uint *)st::fn_006B0140(UVar5,g_hINSTANCE_00807618);
       st::fn_007119C0(this_00->field_01E0,puVar8,iVar4,iVar17,uVar6);
       local_8 = local_8 + 0xf;
       st::fn_00710A90(this_00->field_01E0,(int)this_00->field_0218,0,0,local_8,0x91,0xf);
       uVar6 = 3;
       iVar17 = -1;
       iVar4 = -3;
-      puVar8 = (uint *)st::fn_006B0140(0x565e,g_module_00807618);
+      puVar8 = (uint *)st::fn_006B0140(0x565e,g_hINSTANCE_00807618);
       st::fn_007119C0(this_00->field_01E0,puVar8,iVar4,iVar17,uVar6);
       st::fn_00710A90(this_00->field_01E0,(int)this_00->field_0218,0,0x96,local_8,0x106,0xf);
       uVar6 = (DAT_0080874e != '\x03') - 1 & 5;
       iVar17 = -1;
       iVar4 = 1;
       puVar8 = (uint *)st::fn_006B0140(0x273f - (*(int *)("blast_p" + param_1 * 4) != 0)
-                                          ,g_module_00807618);
+                                          ,g_hINSTANCE_00807618);
       st::fn_007119C0(this_00->field_01E0,puVar8,iVar4,iVar17,uVar6);
       piVar13 = local_14;
       local_8 = local_8 + 0xf;
@@ -5378,7 +5378,7 @@ void __thiscall st::fn_0051B5A0(HelpPanelTy *this,int param_1,int param_2,char p
         uVar6 = 3;
         iVar17 = -1;
         iVar4 = -3;
-        puVar8 = (uint *)st::fn_006B0140(0x565f,g_module_00807618);
+        puVar8 = (uint *)st::fn_006B0140(0x565f,g_hINSTANCE_00807618);
         st::fn_007119C0(this_00->field_01E0,puVar8,iVar4,iVar17,uVar6);
         st::fn_00710A90(this_00->field_01E0,(int)this_00->field_0218,0,0x96,local_8,0x106,0xf);
         switch(*(undefined4 *)((int)&DAT_007bf678 + (int)piVar13)) {
@@ -5394,7 +5394,7 @@ void __thiscall st::fn_0051B5A0(HelpPanelTy *this,int param_1,int param_2,char p
         case 4:
           local_c = CASE_4E;
         }
-        pHVar14 = g_module_00807618;
+        pHVar14 = g_hINSTANCE_00807618;
         UVar5 = st::fn_00403684(local_c,cVar15,0);
         pcVar9 = st::fn_006B0140(UVar5,pHVar14);
         uVar6 = 0xffffffff;
@@ -5440,7 +5440,7 @@ void __thiscall st::fn_0051B5A0(HelpPanelTy *this,int param_1,int param_2,char p
       uVar6 = 3;
       iVar17 = -1;
       iVar4 = -3;
-      puVar8 = (uint *)st::fn_006B0140(0x5660,g_module_00807618);
+      puVar8 = (uint *)st::fn_006B0140(0x5660,g_hINSTANCE_00807618);
       st::fn_007119C0(this_00->field_01E0,puVar8,iVar4,iVar17,uVar6);
       local_14 = &DAT_007a8b1c;
       local_c = CASE_1;
@@ -5448,7 +5448,7 @@ void __thiscall st::fn_0051B5A0(HelpPanelTy *this,int param_1,int param_2,char p
         GVar12 = local_c;
         if ((*local_14 == param_1) && (iVar4 = st::fn_00401F5A(local_c), iVar4 == param_2)) {
           st::fn_00710A90(this_00->field_01E0,(int)this_00->field_0218,0,0x96,local_8,0x106,0xf);
-          pHVar14 = g_module_00807618;
+          pHVar14 = g_hINSTANCE_00807618;
           UVar5 = st::fn_00403684(local_c,cVar15,0);
           pcVar9 = st::fn_006B0140(UVar5,pHVar14);
           uVar6 = 0xffffffff;
@@ -5499,7 +5499,7 @@ void __thiscall st::fn_0051B5A0(HelpPanelTy *this,int param_1,int param_2,char p
         GVar12 = local_c;
         if ((*local_14 == param_1) && (iVar4 = st::fn_00401F5A(local_c), iVar4 == param_2)) {
           st::fn_00710A90(this_00->field_01E0,(int)this_00->field_0218,0,0x96,local_8,0x106,0xf);
-          pHVar14 = g_module_00807618;
+          pHVar14 = g_hINSTANCE_00807618;
           UVar5 = st::fn_00403684(local_c,cVar15,0);
           pcVar9 = st::fn_006B0140(UVar5,pHVar14);
           uVar6 = 0xffffffff;
@@ -5554,7 +5554,7 @@ void __thiscall st::fn_0051B5A0(HelpPanelTy *this,int param_1,int param_2,char p
                  (local_14 = piVar13, iVar4 = st::fn_00401F5A(GVar12), iVar4 == param_2)) {
                 st::fn_00710A90(this_00->field_01E0,(int)this_00->field_0218,0,0x96,local_8,0x106,
                                  0xf);
-                pHVar14 = g_module_00807618;
+                pHVar14 = g_hINSTANCE_00807618;
                 UVar5 = st::fn_00403684(local_c,cVar15,0);
                 pcVar9 = st::fn_006B0140(UVar5,pHVar14);
                 uVar6 = 0xffffffff;
@@ -5630,7 +5630,7 @@ void __thiscall st::fn_0051B5A0(HelpPanelTy *this,int param_1,int param_2,char p
 }
 
 // 0051C980 HelpPanelTy::SpecProc
-#line 1 "decomp/ST.exe/functions/0051C980/decomp.c"
+#line 4 "decomp/ST.exe/functions/0051C980/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\Andrey\helppan.cpp
    HelpPanelTy::SpecProc */
@@ -5711,7 +5711,7 @@ void __thiscall st::fn_0051C980(HelpPanelTy *this,int param_1,int param_2,char p
       uVar15 = 3;
       iVar13 = -1;
       iVar5 = -1;
-      puVar7 = (uint *)st::fn_006B0140(0x564a,g_module_00807618);
+      puVar7 = (uint *)st::fn_006B0140(0x564a,g_hINSTANCE_00807618);
       st::fn_007119C0(this_00->field_01E0,puVar7,iVar5,iVar13,uVar15);
       local_8 = local_8 + 0xf;
       if (param_1 == 0xfe) {
@@ -5719,11 +5719,11 @@ void __thiscall st::fn_0051C980(HelpPanelTy *this,int param_1,int param_2,char p
         uVar15 = 3;
         iVar13 = -1;
         iVar5 = -3;
-        puVar7 = (uint *)st::fn_006B0140(0x5661,g_module_00807618);
+        puVar7 = (uint *)st::fn_006B0140(0x5661,g_hINSTANCE_00807618);
         st::fn_007119C0(this_00->field_01E0,puVar7,iVar5,iVar13,uVar15);
         st::fn_00710A90(this_00->field_01E0,(int)this_00->field_0218,0,0x96,local_8,0x106,0xf);
         local_c = (-(uint)(param_2 != 3) & 0xfffffff3) + CASE_5F;
-        pHVar16 = g_module_00807618;
+        pHVar16 = g_hINSTANCE_00807618;
         UVar6 = st::fn_00403684(local_c,bVar12,0);
         pcVar8 = st::fn_006B0140(UVar6,pHVar16);
         uVar15 = 0xffffffff;
@@ -5768,9 +5768,9 @@ void __thiscall st::fn_0051C980(HelpPanelTy *this,int param_1,int param_2,char p
       uVar15 = 3;
       iVar13 = -1;
       iVar5 = -3;
-      puVar7 = (uint *)st::fn_006B0140(0x5655,g_module_00807618);
+      puVar7 = (uint *)st::fn_006B0140(0x5655,g_hINSTANCE_00807618);
       st::fn_007119C0(this_00->field_01E0,puVar7,iVar5,iVar13,uVar15);
-      pHVar16 = g_module_00807618;
+      pHVar16 = g_hINSTANCE_00807618;
       UVar6 = st::fn_00403684(param_1,bVar12,1);
       pcVar8 = st::fn_006B0140(UVar6,pHVar16);
       uVar15 = 0xffffffff;
@@ -5802,7 +5802,7 @@ void __thiscall st::fn_0051C980(HelpPanelTy *this,int param_1,int param_2,char p
       uVar15 = 3;
       iVar13 = -1;
       iVar5 = -3;
-      puVar7 = (uint *)st::fn_006B0140(0x562a,g_module_00807618);
+      puVar7 = (uint *)st::fn_006B0140(0x562a,g_hINSTANCE_00807618);
       st::fn_007119C0(this_00->field_01E0,puVar7,iVar5,iVar13,uVar15);
       st::fn_00710A90(this_00->field_01E0,(int)this_00->field_0218,0,0x96,local_8,0x106,0xf);
       if (param_2 == 1) {
@@ -5814,7 +5814,7 @@ void __thiscall st::fn_0051C980(HelpPanelTy *this,int param_1,int param_2,char p
       else {
         local_c = CASE_1B;
       }
-      pHVar16 = g_module_00807618;
+      pHVar16 = g_hINSTANCE_00807618;
       UVar6 = st::fn_00403684(local_c,bVar12,0);
       pcVar8 = st::fn_006B0140(UVar6,pHVar16);
       uVar15 = 0xffffffff;
@@ -5855,27 +5855,27 @@ void __thiscall st::fn_0051C980(HelpPanelTy *this,int param_1,int param_2,char p
       uVar15 = 3;
       iVar13 = -1;
       iVar5 = -3;
-      puVar7 = (uint *)st::fn_006B0140(0x5662,g_module_00807618);
+      puVar7 = (uint *)st::fn_006B0140(0x5662,g_hINSTANCE_00807618);
       st::fn_007119C0(this_00->field_01E0,puVar7,iVar5,iVar13,uVar15);
       st::fn_00710A90(this_00->field_01E0,(int)this_00->field_0218,0,0x96,local_8,0x106,0xf);
       uVar15 = (DAT_0080874e != '\x03') - 1 & 5;
       iVar13 = -1;
       iVar5 = 1;
       puVar7 = (uint *)st::fn_006B0140((-(uint)(param_1 != 0xfd) & 0xffffffcd) + 0x5663,
-                                          g_module_00807618);
+                                          g_hINSTANCE_00807618);
       st::fn_007119C0(this_00->field_01E0,puVar7,iVar5,iVar13,uVar15);
       local_8 = local_8 + 0xf;
       st::fn_00710A90(this_00->field_01E0,(int)this_00->field_0218,0,0,local_8,0x91,0xf);
       uVar15 = 3;
       iVar13 = -1;
       iVar5 = -3;
-      puVar7 = (uint *)st::fn_006B0140(0x5625,g_module_00807618);
+      puVar7 = (uint *)st::fn_006B0140(0x5625,g_hINSTANCE_00807618);
       st::fn_007119C0(this_00->field_01E0,puVar7,iVar5,iVar13,uVar15);
       st::fn_00710A90(this_00->field_01E0,(int)this_00->field_0218,0,0x96,local_8,0x106,0xf);
       uVar15 = (DAT_0080874e != '\x03') - 1 & 5;
       iVar13 = -1;
       iVar5 = 1;
-      puVar7 = (uint *)st::fn_006B0140(0x5d5a,g_module_00807618);
+      puVar7 = (uint *)st::fn_006B0140(0x5d5a,g_hINSTANCE_00807618);
       st::fn_007119C0(this_00->field_01E0,puVar7,iVar5,iVar13,uVar15);
       local_8 = local_8 + 0xf;
       UVar6 = st::fn_00403684(param_1,bVar12,2);
@@ -5896,7 +5896,7 @@ void __thiscall st::fn_0051C980(HelpPanelTy *this,int param_1,int param_2,char p
 }
 
 // 0051D360 HelpPanelTy::NatProc
-#line 1 "decomp/ST.exe/functions/0051D360/decomp.c"
+#line 4 "decomp/ST.exe/functions/0051D360/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\Andrey\helppan.cpp
    HelpPanelTy::NatProc */
@@ -5966,7 +5966,7 @@ void __thiscall st::fn_0051D360(HelpPanelTy *this,int param_1,char param_2)
 }
 
 // 0051D540 HelpPanelTy::TipProc
-#line 1 "decomp/ST.exe/functions/0051D540/decomp.c"
+#line 4 "decomp/ST.exe/functions/0051D540/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\Andrey\helppan.cpp
    HelpPanelTy::TipProc */
@@ -6056,7 +6056,7 @@ LAB_0051d689:
   st::fn_00403EF9(this_00,0x55f2,0,0);
   uVar10 = local_c;
   if (local_14 != 10000) {
-    pcVar4 = st::fn_006B0140(local_14,g_module_00807618);
+    pcVar4 = st::fn_006B0140(local_14,g_hINSTANCE_00807618);
     uVar9 = 0xffffffff;
     do {
       pcVar12 = pcVar4;
@@ -6095,7 +6095,7 @@ LAB_0051d689:
   uVar11 = (DAT_0080874e != '\x03') - 1 & 5;
   iVar14 = -1;
   iVar8 = 1;
-  puVar6 = (uint *)st::fn_006B0140(0x5c93,g_module_00807618);
+  puVar6 = (uint *)st::fn_006B0140(0x5c93,g_hINSTANCE_00807618);
   st::fn_007119C0(this_00->field_01E0,puVar6,iVar8,iVar14,uVar11);
   local_34[0] = 0x50;
   local_34[2] = local_18;
@@ -6124,7 +6124,7 @@ LAB_0051d689:
 }
 
 // 0051DDD0 HelpPanelTy::GetMessage
-#line 1 "decomp/ST.exe/functions/0051DDD0/decomp.c"
+#line 4 "decomp/ST.exe/functions/0051DDD0/decomp.c"
 /* WARNING: Type propagation algorithm not settling */
 /* Recovered from embedded debug metadata:
    E:\__titans\Andrey\helppan.cpp
@@ -6679,7 +6679,7 @@ int __thiscall st::fn_0051DDD0(HelpPanelTy *this,STMessage *message)
           puVar10 = (undefined4 *)((int)puVar10 + 1);
         }
         st::fn_00710A90(this_00->field_01E4,this_00->field_01EC,0,0,0,0,0);
-        pcVar12 = st::fn_006B0140(local_18,g_module_00807618);
+        pcVar12 = st::fn_006B0140(local_18,g_hINSTANCE_00807618);
         uVar16 = 0xffffffff;
         do {
           pcVar21 = pcVar12;

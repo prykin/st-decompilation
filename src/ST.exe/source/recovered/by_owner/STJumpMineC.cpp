@@ -2,7 +2,7 @@
 // Generated translation unit: source/recovered/by_owner/STJumpMineC.cpp
 
 // 00619170 STJumpMineC::STJumpMineC
-#line 1 "decomp/ST.exe/functions/00619170/decomp.c"
+#line 4 "decomp/ST.exe/functions/00619170/decomp.c"
 /* [STConstructorApplier] Recovered constructor candidate.
    VTable: 0079CED0 (store 00619178)
    Evidence: final_vptr=0079CED0; returns_this=true; calls_before=1; field_writes_after=1;
@@ -15,13 +15,13 @@ STJumpMineC * __thiscall st::fn_00619170(STJumpMineC *this)
 
 {
   st::fn_006E60E0(this);
-  this->vtable = &STJumpMineCVTable;
+  this->vtable = &st_global_0079CED0;
   this->field_0097 = 0xffffffff;
   return this;
 }
 
 // 006191A0 STJumpMineC::sub_006191A0
-#line 1 "decomp/ST.exe/functions/006191A0/decomp.c"
+#line 4 "decomp/ST.exe/functions/006191A0/decomp.c"
 /* [STMethodOwnerApplier] Structural method owner recovered as STJumpMineC.
    Evidence: this_call_owners=[STJumpMineC]; agreed_this_calls=1; incoming_this_accesses=3;
    incoming_edx_uses=0; incoming_stack_parameter_uses=7; direct_non_thunk_callers=0;
@@ -70,7 +70,7 @@ cf_common_exit_00619287:
 }
 
 // 006192E0 STJumpMineC::sub_006192E0
-#line 1 "decomp/ST.exe/functions/006192E0/decomp.c"
+#line 4 "decomp/ST.exe/functions/006192E0/decomp.c"
 /* [STMethodOwnerApplier] Structural method owner recovered as STJumpMineC.
    Evidence: this_call_owners=[STJumpMineC]; agreed_this_calls=2; incoming_this_accesses=1;
    incoming_edx_uses=0; incoming_stack_parameter_uses=0; direct_non_thunk_callers=0;
@@ -96,7 +96,7 @@ int __thiscall st::fn_006192E0(STJumpMineC *this)
 }
 
 // 00619350 STJumpMineC::sub_00619350
-#line 1 "decomp/ST.exe/functions/00619350/decomp.c"
+#line 4 "decomp/ST.exe/functions/00619350/decomp.c"
 /* [STMethodOwnerApplier] Structural method owner recovered as STJumpMineC.
    Evidence: this_call_owners=[STJumpMineC]; agreed_this_calls=1; incoming_this_accesses=2;
    incoming_edx_uses=0; incoming_stack_parameter_uses=1; direct_non_thunk_callers=0;
@@ -126,7 +126,7 @@ byte * __thiscall st::fn_00619350(STJumpMineC *this,undefined4 *param_1)
 }
 
 // 006193E0 STJumpMineC::sub_006193E0
-#line 1 "decomp/ST.exe/functions/006193E0/decomp.c"
+#line 4 "decomp/ST.exe/functions/006193E0/decomp.c"
 /* [STMethodOwnerApplier] Structural method owner recovered as STJumpMineC.
    Evidence: this_call_owners=[STJumpMineC]; agreed_this_calls=1; incoming_this_accesses=18;
    incoming_edx_uses=0; incoming_stack_parameter_uses=0; direct_non_thunk_callers=0;
@@ -186,7 +186,7 @@ undefined4 __thiscall st::fn_006193E0(STJumpMineC *this)
 }
 
 // 00619A20 STJumpMineC::sub_00619A20
-#line 1 "decomp/ST.exe/functions/00619A20/decomp.c"
+#line 4 "decomp/ST.exe/functions/00619A20/decomp.c"
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 /* [STMethodOwnerApplier] Structural method owner recovered as STJumpMineC.
    Evidence: this_call_owners=[STJumpMineC]; agreed_this_calls=1; incoming_this_accesses=19;
@@ -254,7 +254,7 @@ void __thiscall st::fn_00619A20(STJumpMineC *this)
 }
 
 // 00619C70 STJumpMineC::sub_00619C70
-#line 1 "decomp/ST.exe/functions/00619C70/decomp.c"
+#line 4 "decomp/ST.exe/functions/00619C70/decomp.c"
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 /* [STSwitchEnumApplier] Switch target field_0093 uses
    /SubmarineTitans/Recovered/Enums/STJumpMineC_field_0093State. Cases:
@@ -847,7 +847,7 @@ cf_common_exit_0061AB3A:
 }
 
 // 0061B340 STJumpMineC::sub_0061B340
-#line 1 "decomp/ST.exe/functions/0061B340/decomp.c"
+#line 4 "decomp/ST.exe/functions/0061B340/decomp.c"
 /* [STAbiConsistencyApplier] stack_parameter_width: parameter=/short Evidence: entry-use
    width=/short; unmasked_dword_reads=0; evidence=0061B89C MOVSX EAX,word ptr [EBP + 0x8]
 

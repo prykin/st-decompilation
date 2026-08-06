@@ -2,7 +2,7 @@
 // Generated translation unit: source/original/Andrey/cpanel1.cpp
 
 // 004FE370 CPanelTy::PaintName
-#line 1 "decomp/ST.exe/functions/004FE370/decomp.c"
+#line 4 "decomp/ST.exe/functions/004FE370/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\Andrey\cpanel1.cpp
    CPanelTy::PaintName
@@ -53,7 +53,7 @@ void __thiscall st::fn_004FE370(CPanelTy *this,int param_1)
         cVar3 = pCVar2->field_0B6A;
         GVar5 = pCVar2->field_0B66;
       }
-      module = g_module_00807618;
+      module = g_hINSTANCE_00807618;
       resourceId = st::fn_00403684(GVar5,cVar3,0);
       resourceString = (uint *)st::fn_006B0140(resourceId,module);
     }
@@ -78,7 +78,7 @@ void __thiscall st::fn_004FE370(CPanelTy *this,int param_1)
 }
 
 // 004FE4F0 CPanelTy::PaintLife
-#line 1 "decomp/ST.exe/functions/004FE4F0/decomp.c"
+#line 4 "decomp/ST.exe/functions/004FE4F0/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\Andrey\cpanel1.cpp
    CPanelTy::PaintLife
@@ -166,7 +166,7 @@ void __thiscall st::fn_004FE4F0(CPanelTy *this,int param_1)
 }
 
 // 004FE6C0 CPanelTy::PaintEnergy
-#line 1 "decomp/ST.exe/functions/004FE6C0/decomp.c"
+#line 4 "decomp/ST.exe/functions/004FE6C0/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\Andrey\cpanel1.cpp
    CPanelTy::PaintEnergy
@@ -260,7 +260,7 @@ void __thiscall st::fn_004FE6C0(CPanelTy *this,int param_1)
 }
 
 // 004FE960 CPanelTy::PaintInfoBoat
-#line 1 "decomp/ST.exe/functions/004FE960/decomp.c"
+#line 4 "decomp/ST.exe/functions/004FE960/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\Andrey\cpanel1.cpp
    CPanelTy::PaintInfoBoat */
@@ -324,7 +324,7 @@ LAB_004fea77:
   st::fn_00403977(this_00,1);
   if (this_00->field_0B63 == '\x02') {
     dVar10 = this_00->field_0B95->count;
-    pcVar4 = st::fn_006B0140(0x36b9,g_module_00807618);
+    pcVar4 = st::fn_006B0140(0x36b9,g_hINSTANCE_00807618);
     st::external_00000080((LPSTR)&DAT_0080f33a,"&1%s&0%d",pcVar4,dVar10);
     st::fn_00710A90(this_00->field_01B8,this_00->field_0184,0,2,0xf,
                      *(int *)(this_00->field_0958 + 2) + -4,0x2d);
@@ -391,7 +391,7 @@ LAB_004fea77:
 }
 
 // 004FEE10 CPanelTy::PaintInfoObj
-#line 1 "decomp/ST.exe/functions/004FEE10/decomp.c"
+#line 4 "decomp/ST.exe/functions/004FEE10/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\Andrey\cpanel1.cpp
    CPanelTy::PaintInfoObj */
@@ -486,7 +486,7 @@ LAB_004fef26:
 }
 
 // 004FF110 CPanelTy::SwitchTV
-#line 1 "decomp/ST.exe/functions/004FF110/decomp.c"
+#line 4 "decomp/ST.exe/functions/004FF110/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\Andrey\cpanel1.cpp
    CPanelTy::SwitchTV
@@ -544,7 +544,7 @@ void __thiscall st::fn_004FF110(CPanelTy *this,int param_1)
       if (DAT_0080731a != 0) {
         pcVar7 = st::fn_00403607(local_8,1);
         puVar8 = st::fn_00709AF0
-                           (DAT_00806794,CASE_1F,pcVar7,uVar10,bVar5,iVar6,iVar11,puVar12);
+                           (PTR_00806794,CASE_1F,pcVar7,uVar10,bVar5,iVar6,iVar11,puVar12);
         *(ushort **)((int)this_00->field_0308 + uVar9 * 4 + -0x26) = puVar8;
         *(undefined1 *)((int)this_00->field_0308 + (uVar9 - 0x1c)) = 5;
         *(undefined1 *)((int)this_00->field_0308 + (uVar9 - 0x1e)) = 0;
@@ -556,7 +556,7 @@ void __thiscall st::fn_004FF110(CPanelTy *this,int param_1)
       }
       pcVar7 = st::fn_00403607(local_8,0);
       puVar8 = st::fn_00709AF0
-                         (DAT_00806794,CASE_1F,pcVar7,uVar10,bVar5,iVar6,iVar11,puVar12);
+                         (PTR_00806794,CASE_1F,pcVar7,uVar10,bVar5,iVar6,iVar11,puVar12);
       *(ushort **)((int)this_00->field_0308 + uVar9 * 4 + -0x26) = puVar8;
       *(undefined1 *)((int)this_00->field_0308 + (uVar9 - 0x1e)) = 0;
       st::fn_00402CCF(this_00,(byte)uVar3);
@@ -591,7 +591,7 @@ void __thiscall st::fn_004FF110(CPanelTy *this,int param_1)
 }
 
 // 004FF380 CPanelTy::Update1Panel
-#line 1 "decomp/ST.exe/functions/004FF380/decomp.c"
+#line 4 "decomp/ST.exe/functions/004FF380/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\Andrey\cpanel1.cpp
    CPanelTy::Update1Panel
@@ -670,8 +670,8 @@ void __thiscall st::fn_004FF380(CPanelTy *this)
   st::fn_004035BC
             (g_allPlayers_007FA174,1,(AnonShape_0043BEB0_1C00EC12 *)&this_00->field_0B63);
   if (local_48 != this_00->field_0B63) {
-    if (g_prodPanel_00801684 != nullptr) {
-      st::fn_00401A73(g_prodPanel_00801684,'\0');
+    if (g_bldObjPanel_00801684 != nullptr) {
+      st::fn_00401A73(g_bldObjPanel_00801684,'\0');
     }
     if (g_behPanel_00801678 != nullptr) {
       (*g_behPanel_00801678->vtable->SetPanel)((SpecPanelTy *)g_behPanel_00801678,'\0');
@@ -691,8 +691,8 @@ void __thiscall st::fn_004FF380(CPanelTy *this)
     return;
   }
   if (this_00->field_0B80 != local_2b) {
-    if (g_prodPanel_00801684 != nullptr) {
-      st::fn_00401A73(g_prodPanel_00801684,'\0');
+    if (g_bldObjPanel_00801684 != nullptr) {
+      st::fn_00401A73(g_bldObjPanel_00801684,'\0');
     }
     if (g_behPanel_00801678 != nullptr) {
       (*g_behPanel_00801678->vtable->SetPanel)((SpecPanelTy *)g_behPanel_00801678,'\0');
@@ -740,7 +740,7 @@ void __thiscall st::fn_004FF380(CPanelTy *this)
                 ((RecoveredSourceFamily_dibcopy *)this_00->field_0184,0,0,0,
                  (byte *)this_00->field_0958,0,0,0,*(int *)(this_00->field_0958 + 2),0x3c);
       dVar19 = this_00->field_0B95->count;
-      pcVar8 = st::fn_006B0140(0x36b9,g_module_00807618);
+      pcVar8 = st::fn_006B0140(0x36b9,g_hINSTANCE_00807618);
       st::external_00000080(*(LPSTR *)&this_00->field_0x213,"&1%s&0%d",pcVar8,dVar19);
       st::fn_00710A90(this_00->field_01B8,this_00->field_0184,0,2,0xf,
                        *(int *)(this_00->field_0958 + 2) + -4,0x2d);
@@ -799,8 +799,8 @@ LAB_004ff723:
   }
   if (((local_40 != this_00->field_0B6B) || (local_47 != this_00->field_0B64)) ||
      (local_46 != this_00->field_0B65)) {
-    if (g_prodPanel_00801684 != nullptr) {
-      st::fn_00401A73(g_prodPanel_00801684,'\0');
+    if (g_bldObjPanel_00801684 != nullptr) {
+      st::fn_00401A73(g_bldObjPanel_00801684,'\0');
     }
     if (g_behPanel_00801678 != nullptr) {
       (*g_behPanel_00801678->vtable->SetPanel)((SpecPanelTy *)g_behPanel_00801678,'\0');
@@ -970,7 +970,7 @@ cf_common_exit_004FFB91:
 }
 
 // 004FFE90 CPanelTy::Update5Panel
-#line 1 "decomp/ST.exe/functions/004FFE90/decomp.c"
+#line 4 "decomp/ST.exe/functions/004FFE90/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\Andrey\cpanel1.cpp
    CPanelTy::Update5Panel */
@@ -1034,11 +1034,11 @@ void __thiscall st::fn_004FFE90(CPanelTy *this)
   memset((void *)puVar1, 0, 0x32); /* compiler bulk-zero initialization */
   st::fn_004035BC(g_allPlayers_007FA174,5,(AnonShape_0043BEB0_1C00EC12 *)puVar1);
   if (local_44 != this_00->field_0C51) {
-    if (g_prodPanel_008016E8 != nullptr) {
-      st::fn_00401A73(g_prodPanel_008016E8,'\0');
+    if (g_researchPanel_008016E8 != nullptr) {
+      st::fn_00401A73(g_researchPanel_008016E8,'\0');
     }
-    if (g_prodPanel_0080167C != nullptr) {
-      st::fn_00401A73(g_prodPanel_0080167C,'\0');
+    if (g_bldBoatPanel_0080167C != nullptr) {
+      st::fn_00401A73(g_bldBoatPanel_0080167C,'\0');
     }
     if (g_infocPanel_00801698 != nullptr) {
       (*g_infocPanel_00801698->vtable->SetPanel)((SpecPanelTy *)g_infocPanel_00801698,'\0');
@@ -1046,8 +1046,8 @@ void __thiscall st::fn_004FFE90(CPanelTy *this)
     if (g_tradePanel_00802A44 != nullptr) {
       st::fn_00404AF7(g_tradePanel_00802A44,'\0','\0');
     }
-    if (g_prodPanel_00801680 != nullptr) {
-      st::fn_00401A73(g_prodPanel_00801680,'\0');
+    if (g_bldLabPanel_00801680 != nullptr) {
+      st::fn_00401A73(g_bldLabPanel_00801680,'\0');
     }
     st::fn_00401C44(this_00,0);
     st::fn_004034FE(this_00);
@@ -1055,11 +1055,11 @@ void __thiscall st::fn_004FFE90(CPanelTy *this)
     return;
   }
   if (this_00->field_0C6E != local_27) {
-    if (g_prodPanel_008016E8 != nullptr) {
-      st::fn_00401A73(g_prodPanel_008016E8,'\0');
+    if (g_researchPanel_008016E8 != nullptr) {
+      st::fn_00401A73(g_researchPanel_008016E8,'\0');
     }
-    if (g_prodPanel_0080167C != nullptr) {
-      st::fn_00401A73(g_prodPanel_0080167C,'\0');
+    if (g_bldBoatPanel_0080167C != nullptr) {
+      st::fn_00401A73(g_bldBoatPanel_0080167C,'\0');
     }
     if (g_infocPanel_00801698 != nullptr) {
       (*g_infocPanel_00801698->vtable->SetPanel)((SpecPanelTy *)g_infocPanel_00801698,'\0');
@@ -1067,19 +1067,19 @@ void __thiscall st::fn_004FFE90(CPanelTy *this)
     if (g_tradePanel_00802A44 != nullptr) {
       st::fn_00404AF7(g_tradePanel_00802A44,'\0','\0');
     }
-    if (g_prodPanel_00801680 != nullptr) {
-      st::fn_00401A73(g_prodPanel_00801680,'\0');
+    if (g_bldLabPanel_00801680 != nullptr) {
+      st::fn_00401A73(g_bldLabPanel_00801680,'\0');
     }
   }
   cVar2 = this_00->field_0C51;
   if (((cVar2 == '\x01') || (cVar2 == '\x04')) || (cVar2 == '\x03')) {
     if (((local_3c != this_00->field_0C59) || (local_43 != this_00->field_0C52)) ||
        (local_42 != this_00->field_0C53)) {
-      if (g_prodPanel_008016E8 != nullptr) {
-        st::fn_00401A73(g_prodPanel_008016E8,'\0');
+      if (g_researchPanel_008016E8 != nullptr) {
+        st::fn_00401A73(g_researchPanel_008016E8,'\0');
       }
-      if (g_prodPanel_0080167C != nullptr) {
-        st::fn_00401A73(g_prodPanel_0080167C,'\0');
+      if (g_bldBoatPanel_0080167C != nullptr) {
+        st::fn_00401A73(g_bldBoatPanel_0080167C,'\0');
       }
       if (g_infocPanel_00801698 != nullptr) {
         (*g_infocPanel_00801698->vtable->SetPanel)((SpecPanelTy *)g_infocPanel_00801698,'\0');
@@ -1087,8 +1087,8 @@ void __thiscall st::fn_004FFE90(CPanelTy *this)
       if (g_tradePanel_00802A44 != nullptr) {
         st::fn_00404AF7(g_tradePanel_00802A44,'\0','\0');
       }
-      if (g_prodPanel_00801680 != nullptr) {
-        st::fn_00401A73(g_prodPanel_00801680,'\0');
+      if (g_bldLabPanel_00801680 != nullptr) {
+        st::fn_00401A73(g_bldLabPanel_00801680,'\0');
       }
       st::fn_00401C44(this_00,0);
     }
@@ -1195,7 +1195,7 @@ LAB_00500126:
 }
 
 // 00500520 CPanelTy::PaintDeep
-#line 1 "decomp/ST.exe/functions/00500520/decomp.c"
+#line 4 "decomp/ST.exe/functions/00500520/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\Andrey\cpanel1.cpp
    CPanelTy::PaintDeep
@@ -1320,7 +1320,7 @@ LAB_00500689:
 }
 
 // 005007A0 CPanelTy::SetNewDeep
-#line 1 "decomp/ST.exe/functions/005007A0/decomp.c"
+#line 4 "decomp/ST.exe/functions/005007A0/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\Andrey\cpanel1.cpp
    CPanelTy::SetNewDeep
@@ -1487,7 +1487,7 @@ void __thiscall st::fn_005007A0(CPanelTy *this,byte param_1,byte param_2)
 }
 
 // 00500BD0 CPanelTy::PaintNewDeep
-#line 1 "decomp/ST.exe/functions/00500BD0/decomp.c"
+#line 4 "decomp/ST.exe/functions/00500BD0/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\Andrey\cpanel1.cpp
    CPanelTy::PaintNewDeep */

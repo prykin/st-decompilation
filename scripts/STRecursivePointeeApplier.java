@@ -136,7 +136,9 @@ public class STRecursivePointeeApplier extends GhidraScript {
                 (ownerChanged ? "specialized owner root as " :
                     node.changed ? "updated " : "already present ") +
                     node.structure.getPathName() + "; fields=" + fields.size() +
-                    "; length=" + length));
+                    "; length=" + length +
+                    (node.changeReason.isBlank() ? "" :
+                        "; change=" + node.changeReason)));
         }
         catch (PreserveException exception) {
             report.add(new Report(target, "preserved", exception.getMessage()));
@@ -182,31 +184,143 @@ public class STRecursivePointeeApplier extends GhidraScript {
             desired.replaceAtOffset(field.offset, type, field.width,
                 field.name, comment);
         }
-        boolean changed = created || !existing.isEquivalent(desired) ||
-            !samePresentation(existing, desired);
+        // Applying a generated member can hide the raw access which proved it,
+        // while exposing a different alias on the following decompile.  Retain
+        // the monotonic union of fields already installed by this applier.  This
+        // state is never analyzer evidence and cannot make a weak root eligible;
+        // manual/hash-diverged structures were rejected above.
+        if (!created) retainProvenGeneratedFields(existing, desired);
+
+        // Structure.isEquivalent() is deliberately recursive.  Compare the
+        // exact persisted layout instead, including names/comments/type paths.
+        List<String> changeReasons = new ArrayList<>();
+        String presentationDifference = presentationDifference(existing, desired);
+        boolean changed = created || presentationDifference != null;
+        if (created) changeReasons.add("created");
+        else if (presentationDifference != null)
+            changeReasons.add("presentation:" + presentationDifference);
         if (changed) existing.replaceWith(desired);
         String description = MARKER + " Recursive linked-node view; root_identity=" +
             path.substring(path.lastIndexOf('/') + 1) + "; source_views=" + sourceViews +
             HASH_MARKER + layoutHash(existing);
-        if (!text(existing.getDescription()).equals(description)) {
+        // Source-view presentation can legitimately alternate with the raw
+        // decompiler spelling.  It is provenance, not layout.  Refresh it only
+        // when the owned layout itself changed; otherwise retain the already
+        // hash-valid description and report a true fixed point.
+        if ((created || presentationDifference != null) &&
+                !text(existing.getDescription()).equals(description)) {
             existing.setDescription(description);
             changed = true;
+            changeReasons.add("description");
         }
-        return new NodeResult(existing, changed);
+        return new NodeResult(existing, changed, String.join("|", changeReasons));
+    }
+
+    private void retainProvenGeneratedFields(Structure existing,
+            Structure desired) {
+        for (DataTypeComponent old : existing.getDefinedComponents()) {
+            if (old.getOffset() < 0 ||
+                    old.getOffset() + old.getLength() > desired.getLength())
+                continue;
+            DataTypeComponent exact = exactDefinedComponent(desired,
+                old.getOffset());
+            if (exact != null && exact.getLength() == old.getLength()) {
+                int oldStrength = generatedTypeStrength(old.getDataType());
+                int newStrength = generatedTypeStrength(exact.getDataType());
+                boolean currentNameUpgrade =
+                    semanticFieldName(exact.getFieldName()) &&
+                    !semanticFieldName(old.getFieldName());
+                boolean keepOldType = oldStrength >= newStrength &&
+                    !sameComponentType(old.getDataType(), exact.getDataType());
+                boolean keepOldPresentation =
+                    sameComponentType(old.getDataType(), exact.getDataType()) &&
+                    !currentNameUpgrade;
+                if (keepOldType || keepOldPresentation)
+                    desired.replaceAtOffset(old.getOffset(), old.getDataType(),
+                        old.getLength(), old.getFieldName(), old.getComment());
+                continue;
+            }
+            if (overlapsDefinedComponent(desired, old.getOffset(), old.getLength()))
+                throw new IllegalArgumentException(
+                    "new recursive field overlaps retained generated field at 0x" +
+                    Integer.toHexString(old.getOffset()).toUpperCase(Locale.ROOT));
+            desired.replaceAtOffset(old.getOffset(), old.getDataType(),
+                old.getLength(), old.getFieldName(), old.getComment());
+        }
+    }
+
+    private DataTypeComponent exactDefinedComponent(Structure structure,
+            int offset) {
+        for (DataTypeComponent component : structure.getDefinedComponents())
+            if (component.getOffset() == offset) return component;
+        return null;
+    }
+
+    private boolean overlapsDefinedComponent(Structure structure, int offset,
+            int length) {
+        int end = offset + length;
+        for (DataTypeComponent component : structure.getDefinedComponents()) {
+            int otherStart = component.getOffset();
+            int otherEnd = otherStart + component.getLength();
+            if (offset < otherEnd && otherStart < end) return true;
+        }
+        return false;
+    }
+
+    private boolean semanticFieldName(String name) {
+        return name != null && !name.isBlank() &&
+            !name.matches("(?:field|value)_(?:0[xX])?[0-9A-Fa-f]+");
+    }
+
+    private int generatedTypeStrength(DataType type) {
+        type = untypedef(type);
+        if (type == null || Undefined.isUndefined(type)) return 0;
+        if (type instanceof Pointer pointer) {
+            DataType pointed = untypedef(pointer.getDataType());
+            if (pointed == null || Undefined.isUndefined(pointed) ||
+                    Set.of("/void", "/byte", "/char").contains(
+                        pointed.getPathName())) return 1;
+            return 3;
+        }
+        return 2;
     }
 
     private boolean samePresentation(Structure left, Structure right) {
+        return presentationDifference(left, right) == null;
+    }
+
+    private String presentationDifference(Structure left, Structure right) {
+        if (left.getLength() != right.getLength())
+            return "length " + left.getLength() + "->" + right.getLength();
         DataTypeComponent[] a = left.getDefinedComponents();
         DataTypeComponent[] b = right.getDefinedComponents();
-        if (a.length != b.length) return false;
+        if (a.length != b.length)
+            return "component_count " + a.length + "->" + b.length;
         for (int index = 0; index < a.length; index++) {
-            if (a[index].getOffset() != b[index].getOffset() ||
-                    a[index].getLength() != b[index].getLength() ||
-                    !a[index].getDataType().isEquivalent(b[index].getDataType()) ||
-                    !text(a[index].getFieldName()).equals(text(b[index].getFieldName())) ||
-                    !text(a[index].getComment()).equals(text(b[index].getComment()))) return false;
+            if (a[index].getOffset() != b[index].getOffset())
+                return "component_" + index + "_offset " +
+                    a[index].getOffset() + "->" + b[index].getOffset();
+            if (a[index].getLength() != b[index].getLength())
+                return "component_" + index + "_length " +
+                    a[index].getLength() + "->" + b[index].getLength();
+            if (!sameComponentType(a[index].getDataType(), b[index].getDataType()))
+                return "component_" + index + "_type " +
+                    a[index].getDataType().getPathName() + "->" +
+                    b[index].getDataType().getPathName();
+            if (!text(a[index].getFieldName()).equals(text(b[index].getFieldName())))
+                return "component_" + index + "_name";
+            if (!text(a[index].getComment()).equals(text(b[index].getComment())))
+                return "component_" + index + "_comment";
         }
-        return true;
+        return null;
+    }
+
+    private boolean sameComponentType(DataType left, DataType right) {
+        left = untypedef(left);
+        right = untypedef(right);
+        if (left == null || right == null) return left == right;
+        return left.getLength() == right.getLength() &&
+            left.getPathName().equals(right.getPathName());
     }
 
     private void validateGenerated(Structure structure, Set<String> markers,
@@ -414,7 +528,8 @@ public class STRecursivePointeeApplier extends GhidraScript {
 
     private record Field(int offset, int width, String type, String name,
         int evidence, String sources) { }
-    private record NodeResult(Structure structure, boolean changed) { }
+    private record NodeResult(Structure structure, boolean changed,
+        String changeReason) { }
     private record Tsv(List<String> header, List<Map<String, String>> rows) { }
     private record Report(String target, String status, String detail) { }
     private static final class PreserveException extends Exception {

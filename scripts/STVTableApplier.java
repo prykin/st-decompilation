@@ -733,7 +733,7 @@ public class STVTableApplier extends GhidraScript {
                 slot.get("raw_target_address") + " " + unt(slot.get("raw_target_symbol"));
             DataType retained = retainedIndirectCallType(existing, slotOffset,
                 slot.get("raw_target_address"));
-            if (isVoidPointer(fieldType) && retained != null) {
+            if (retained != null && retainIndependentSlotAbi(fieldType, retained, function)) {
                 fieldType = retained;
                 comment += " " + INDIRECT_CALL_MARKER;
             }
@@ -769,6 +769,42 @@ public class STVTableApplier extends GhidraScript {
     private boolean isVoidPointer(DataType type) {
         return type instanceof Pointer pointer &&
             pointer.getDataType() instanceof VoidDataType;
+    }
+
+    /**
+     * A virtual-method tag proves structural ownership and a useful name, but by itself it does
+     * not prove that the target Listing signature is a better ABI than a slot refined from exact
+     * indirect-call evidence.  In particular, a later naming pass must not turn a previously
+     * recovered full-word return or narrow source argument back into Ghidra's generic
+     * undefined/int defaults.  Strong target provenance (manual/imported ABI, the machine ABI
+     * consistency pass, or the exact STMessage envelope) may still replace the generated slot.
+     */
+    private boolean retainIndependentSlotAbi(DataType candidate, DataType retained,
+            Function entry) {
+        if (isVoidPointer(candidate)) return true;
+        FunctionDefinition candidateDefinition = pointedFunction(candidate);
+        FunctionDefinition retainedDefinition = pointedFunction(retained);
+        if (candidateDefinition == null || retainedDefinition == null) return true;
+        if (candidateDefinition.isEquivalentSignature(retainedDefinition)) return false;
+
+        Function signatureFunction = trustedSignatureFunction(entry);
+        return !hasStrongAbiProvenance(signatureFunction);
+    }
+
+    private FunctionDefinition pointedFunction(DataType type) {
+        if (!(type instanceof Pointer pointer) ||
+                !(pointer.getDataType() instanceof FunctionDefinition definition)) return null;
+        return definition;
+    }
+
+    private boolean hasStrongAbiProvenance(Function function) {
+        if (function == null) return false;
+        SourceType source = function.getSignatureSource();
+        if (source == SourceType.USER_DEFINED || source == SourceType.IMPORTED) return true;
+        String comment = function.getComment();
+        if (hasTag(function, "RECOVERED_ABI_CONSISTENCY") && comment != null &&
+                comment.contains("[STAbiConsistencyApplier] machine_thiscall_arity ")) return true;
+        return hasTag(function, MESSAGE_HANDLER_TAG) && isMessageHandlerSignature(function);
     }
 
     private String structureLayoutHash(Structure structure) {

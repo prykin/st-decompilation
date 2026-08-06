@@ -2,7 +2,7 @@
 // Generated translation unit: source/recovered/by_owner/CursorClassTy.cpp
 
 // 00544940 CursorClassTy::sub_00544940
-#line 1 "decomp/ST.exe/functions/00544940/decomp.c"
+#line 4 "decomp/ST.exe/functions/00544940/decomp.c"
 /* [STMethodOwnerApplier] Structural method owner recovered as CursorClassTy.
    Evidence: this_call_owners=[CursorClassTy]; agreed_this_calls=3; incoming_this_accesses=3;
    incoming_edx_uses=0; incoming_stack_parameter_uses=0; direct_non_thunk_callers=0;
@@ -22,7 +22,7 @@ void __thiscall st::fn_00544940(CursorClassTy *this)
 }
 
 // 0054A8D0 CursorClassTy::sub_0054A8D0
-#line 1 "decomp/ST.exe/functions/0054A8D0/decomp.c"
+#line 4 "decomp/ST.exe/functions/0054A8D0/decomp.c"
 /* [STMethodOwnerApplier] Structural method owner recovered as CursorClassTy.
    Evidence: this_call_owners=[CursorClassTy]; agreed_this_calls=1; incoming_this_accesses=15;
    incoming_edx_uses=0; incoming_stack_parameter_uses=0; direct_non_thunk_callers=0;
@@ -61,7 +61,7 @@ void __thiscall st::fn_0054A8D0(CursorClassTy *this)
 }
 
 // 0054B540 CursorClassTy::sub_0054B540
-#line 1 "decomp/ST.exe/functions/0054B540/decomp.c"
+#line 4 "decomp/ST.exe/functions/0054B540/decomp.c"
 /* [STMethodOwnerApplier] Structural method owner recovered as CursorClassTy.
    Evidence: this_call_owners=[CursorClassTy]; agreed_this_calls=23; incoming_this_accesses=20;
    incoming_edx_uses=0; incoming_stack_parameter_uses=0; direct_non_thunk_callers=0;
@@ -106,7 +106,7 @@ void __thiscall st::fn_0054B540(CursorClassTy *this)
 }
 
 // 0054B630 CursorClassTy::sub_0054B630
-#line 1 "decomp/ST.exe/functions/0054B630/decomp.c"
+#line 4 "decomp/ST.exe/functions/0054B630/decomp.c"
 /* [STMethodOwnerApplier] Structural method owner recovered as CursorClassTy.
    Evidence: this_call_owners=[CursorClassTy]; agreed_this_calls=7; incoming_this_accesses=9;
    incoming_edx_uses=0; incoming_stack_parameter_uses=2; direct_non_thunk_callers=0;
@@ -139,7 +139,7 @@ void __thiscall st::fn_0054B630(CursorClassTy *this,uint param_1,undefined4 para
 }
 
 // 0054B6D0 CursorClassTy::sub_0054B6D0
-#line 1 "decomp/ST.exe/functions/0054B6D0/decomp.c"
+#line 4 "decomp/ST.exe/functions/0054B6D0/decomp.c"
 /* [STPrototypeApplier] Propagated parameter 0.
    Evidence: 004F5690 -> 0054B6D0 @ 004F6B6E | 004FB060 -> 0054B6D0 @ 004FB3AF | 004FB060 ->
    0054B6D0 @ 004FB591
@@ -163,7 +163,7 @@ void __thiscall st::fn_0054B6D0(CursorClassTy *this)
 }
 
 // 0054B700 CursorClassTy::sub_0054B700
-#line 1 "decomp/ST.exe/functions/0054B700/decomp.c"
+#line 4 "decomp/ST.exe/functions/0054B700/decomp.c"
 /* [STHiddenThisApplier] Anonymous hidden receiver recovered as
    /SubmarineTitans/Recovered/HiddenThis/AnonReceiver_0054B700.
    Evidence: incoming_receiver_captures=1; receiver_accesses=9; incoming_edx_uses=0; calls=2;

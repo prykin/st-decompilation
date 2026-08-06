@@ -2,7 +2,7 @@
 // Generated translation unit: source/original/tsystem.cpp
 
 // 00576AD0 BaseSystemC::CreateSystemObjects
-#line 1 "decomp/ST.exe/functions/00576AD0/decomp.c"
+#line 4 "decomp/ST.exe/functions/00576AD0/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\tsystem.cpp
    BaseSystemC::CreateSystemObjects */
@@ -41,7 +41,7 @@ undefined4 __thiscall st::fn_00576AD0(BaseSystemC *this)
 }
 
 // 00576BB0 CreateBaseSystem
-#line 1 "decomp/ST.exe/functions/00576BB0/decomp.c"
+#line 4 "decomp/ST.exe/functions/00576BB0/decomp.c"
 /* [STSourceProvenanceApplier begin]
    Recovered source file: E:\__titans\tsystem.cpp
    Diagnostic line evidence: 56 | 64 | 65 (metadata/report site, not the function definition)
@@ -64,7 +64,7 @@ void st::fn_00576BB0(void)
       g_baseSystem_00811638 = nullptr;
     }
     else {
-      g_baseSystem_00811638 = st::fn_00401348(this,g_appClass_00806728);
+      g_baseSystem_00811638 = st::fn_00401348(this,g_app_00806728);
     }
     if (g_baseSystem_00811638 == nullptr) {
       st::fn_006A5E40(-1,g_overwriteContext_007ED77C,"E:\\__titans\\tsystem.cpp",0x38);
@@ -87,7 +87,7 @@ void st::fn_00576BB0(void)
 }
 
 // 00576CE0 DestroyBaseSystem
-#line 1 "decomp/ST.exe/functions/00576CE0/decomp.c"
+#line 4 "decomp/ST.exe/functions/00576CE0/decomp.c"
 /* [STSourceProvenanceApplier begin]
    Recovered source file: E:\__titans\tsystem.cpp
    Diagnostic line evidence: 79 | 80 (metadata/report site, not the function definition)
@@ -126,7 +126,7 @@ void st::fn_00576CE0(void)
 }
 
 // 00576E10 GameSystemC::CreateSystemObjects
-#line 1 "decomp/ST.exe/functions/00576E10/decomp.c"
+#line 4 "decomp/ST.exe/functions/00576E10/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\tsystem.cpp
    GameSystemC::CreateSystemObjects */
@@ -163,7 +163,7 @@ undefined4 __thiscall st::fn_00576E10(GameSystemC *this)
 }
 
 // 00576EF0 GameSystemC::InitSystem
-#line 1 "decomp/ST.exe/functions/00576EF0/decomp.c"
+#line 4 "decomp/ST.exe/functions/00576EF0/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\tsystem.cpp
    GameSystemC::InitSystem */
@@ -171,7 +171,7 @@ undefined4 __thiscall st::fn_00576E10(GameSystemC *this)
 undefined4 __thiscall st::fn_00576EF0(GameSystemC *this)
 
 {
-  AnonPointee_ST3DSMAPContext_0280 *pAVar2;
+  short *psVar2;
   GameSystemC *pGVar3;
   int iVar4;
   AnonShape_006DBCA0_EF06575F *pAVar5;
@@ -188,7 +188,7 @@ undefined4 __thiscall st::fn_00576EF0(GameSystemC *this)
   local_8 = this;
   iVar4 = st::fn_0072D7F0(local_4c.jumpBuffer,0);
   if (iVar4 == 0) {
-    DAT_00806750 = (AnonPointee_ST3DSMAPContext_0280 *)st::fn_00402112(g_cMf32_00806754,"3D_MAP");
+    PTR_00806750 = st::fn_00402112(g_cMf32_00806754,"3D_MAP");
     pAVar5 = (AnonShape_006DBCA0_EF06575F *)st::fn_006B04D0(0x4f2);
     if (pAVar5 == nullptr) {
       pSVar6 = nullptr;
@@ -196,10 +196,10 @@ undefined4 __thiscall st::fn_00576EF0(GameSystemC *this)
     else {
       pSVar6 = (ST3DSMAPContext *)st::fn_006DBCA0(pAVar5);
     }
-    pAVar2 = DAT_00806750;
+    psVar2 = PTR_00806750;
     g_sT3DSMAPContext_00807598 = pSVar6;
-    pSVar6->field_0280 = DAT_00806750;
-    iVar4 = (int)*(short *)pAVar2 / 2;
+    pSVar6->field_0280 = (AnonPointee_ST3DSMAPContext_0280 *)PTR_00806750;
+    iVar4 = (int)*psVar2 / 2;
     pSVar6->field_0284 = iVar4;
     pSVar6->field_0288 = iVar4 * iVar4;
     st::fn_006E51F0((SystemClassTy *)local_8);
@@ -230,7 +230,7 @@ undefined4 __thiscall st::fn_00576EF0(GameSystemC *this)
 }
 
 // 005770D0 GameSystemC::DoneSystem
-#line 1 "decomp/ST.exe/functions/005770D0/decomp.c"
+#line 4 "decomp/ST.exe/functions/005770D0/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\tsystem.cpp
    GameSystemC::DoneSystem
@@ -278,8 +278,8 @@ void __thiscall st::fn_005770D0(GameSystemC *this)
       g_sT3DSMAPContext_00807598 = nullptr;
     }
     st::fn_0040151E();
-    if (DAT_00806750 != 0) {
-      st::fn_00401A50(&DAT_00806750);
+    if (PTR_00806750 != nullptr) {
+      st::fn_00401A50((int *)&PTR_00806750);
     }
     st::fn_006E52D0((AnonShape_006E52D0_AF06BCD2 *)pGVar3);
     st::external_00000096(1);
@@ -297,7 +297,7 @@ void __thiscall st::fn_005770D0(GameSystemC *this)
 }
 
 // 00577280 CreateGameSystem
-#line 1 "decomp/ST.exe/functions/00577280/decomp.c"
+#line 4 "decomp/ST.exe/functions/00577280/decomp.c"
 /* [STSourceProvenanceApplier begin]
    Recovered source file: E:\__titans\tsystem.cpp
    Diagnostic line evidence: 177 | 187 (metadata/report site, not the function definition)
@@ -321,7 +321,7 @@ void st::fn_00577280(void)
       g_parentSystem_0081163C = nullptr;
     }
     else {
-      g_parentSystem_0081163C = st::fn_004014EC(this_00,g_appClass_00806728);
+      g_parentSystem_0081163C = st::fn_004014EC(this_00,g_app_00806728);
     }
     if (g_parentSystem_0081163C == nullptr) {
       st::fn_006A5E40(-1,g_overwriteContext_007ED77C,"E:\\__titans\\tsystem.cpp",0xb1);
@@ -353,7 +353,7 @@ void st::fn_00577280(void)
 }
 
 // 005776D0 GameSystemC::GetMessage
-#line 1 "decomp/ST.exe/functions/005776D0/decomp.c"
+#line 4 "decomp/ST.exe/functions/005776D0/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\tsystem.cpp
    GameSystemC::GetMessage
@@ -442,7 +442,7 @@ int __thiscall st::fn_005776D0(GameSystemC *this,STMessage *message)
           this_01[0x21].objectLock = DAT_00808784;
           st::fn_00725760
                     (g_sT3DSMAPContext_00807598,(int)DAT_00808784,
-                     -(uint)(DAT_00808784 != nullptr) & DAT_008032b4);
+                     -(uint)(DAT_00808784 != nullptr) & (uint)PTR_008032b4);
           if (g_pausePanel_008016E0 != nullptr) {
             st::fn_0040504C(g_pausePanel_008016E0,(int)DAT_00808784);
             g_currentExceptionFrame = local_8c.previous;
@@ -455,7 +455,7 @@ int __thiscall st::fn_005776D0(GameSystemC *this,STMessage *message)
           DAT_00808784 = (void *)piVar18[1];
           st::fn_00725760
                     (g_sT3DSMAPContext_00807598,(int)DAT_00808784,
-                     -(uint)(DAT_00808784 != nullptr) & DAT_008032b4);
+                     -(uint)(DAT_00808784 != nullptr) & (uint)PTR_008032b4);
           g_currentExceptionFrame = local_8c.previous;
           return 0;
         }
@@ -465,7 +465,7 @@ int __thiscall st::fn_005776D0(GameSystemC *this,STMessage *message)
           DAT_00808784 = (void *)piVar18[1];
           st::fn_00725760
                     (g_sT3DSMAPContext_00807598,(int)DAT_00808784,
-                     -(uint)(DAT_00808784 != nullptr) & DAT_008032b4);
+                     -(uint)(DAT_00808784 != nullptr) & (uint)PTR_008032b4);
         }
         pvVar3 = (void *)piVar18[1];
         this_01[0x21].objectLock = pvVar3;
@@ -534,7 +534,7 @@ int __thiscall st::fn_005776D0(GameSystemC *this,STMessage *message)
             } while (uVar10 != 0);
           }
         }
-        pcVar13 = st::fn_006B0140(0x42c2,g_module_00807618);
+        pcVar13 = st::fn_006B0140(0x42c2,g_hINSTANCE_00807618);
         st::external_00000080((LPSTR)&DAT_0080f33a,pcVar13);
         if (g_popUp_008016D8 != nullptr) {
           st::fn_004014D8(g_popUp_008016D8,(char *)&DAT_0080f33a,8);
@@ -720,7 +720,7 @@ LAB_00577956:
 }
 
 // 00578200 DebugSystemC::CreateSystemObjects
-#line 1 "decomp/ST.exe/functions/00578200/decomp.c"
+#line 4 "decomp/ST.exe/functions/00578200/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\tsystem.cpp
    DebugSystemC::CreateSystemObjects */

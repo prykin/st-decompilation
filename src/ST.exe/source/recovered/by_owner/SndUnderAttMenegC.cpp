@@ -2,7 +2,7 @@
 // Generated translation unit: source/recovered/by_owner/SndUnderAttMenegC.cpp
 
 // 0061FCC0 SndUnderAttMenegC::sub_0061FCC0
-#line 1 "decomp/ST.exe/functions/0061FCC0/decomp.c"
+#line 4 "decomp/ST.exe/functions/0061FCC0/decomp.c"
 /* [STMethodOwnerApplier] Structural method owner recovered as SndUnderAttMenegC.
    Evidence: this_call_owners=[SndUnderAttMenegC]; agreed_this_calls=1; incoming_this_accesses=16;
    incoming_edx_uses=0; incoming_stack_parameter_uses=0; direct_non_thunk_callers=0;

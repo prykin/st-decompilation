@@ -2,7 +2,7 @@
 // Generated translation unit: source/original/wlad/Tc_gobj.cpp
 
 // 004189D0 STGameObjC::MoveStep
-#line 1 "decomp/ST.exe/functions/004189D0/decomp.c"
+#line 4 "decomp/ST.exe/functions/004189D0/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\wlad\Tc_gobj.cpp
    STGameObjC::MoveStep
@@ -110,7 +110,7 @@ undefined4 __thiscall st::fn_004189D0(STGameObjC *this)
 }
 
 // 00419DF0 STGameObjC::SetSelfCheckFlag
-#line 1 "decomp/ST.exe/functions/00419DF0/decomp.c"
+#line 4 "decomp/ST.exe/functions/00419DF0/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\wlad\Tc_gobj.cpp
    STGameObjC::SetSelfCheckFlag
@@ -421,7 +421,7 @@ cf_common_exit_00419F6C:
 }
 
 // 0041A680 STGameObjC::ResetSelfCheckFlag
-#line 1 "decomp/ST.exe/functions/0041A680/decomp.c"
+#line 4 "decomp/ST.exe/functions/0041A680/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\wlad\Tc_gobj.cpp
    STGameObjC::ResetSelfCheckFlag
@@ -601,7 +601,7 @@ void __thiscall st::fn_0041A680(STGameObjC *this)
 }
 
 // 0041AF40 STGameObjC::GetMessage
-#line 1 "decomp/ST.exe/functions/0041AF40/decomp.c"
+#line 4 "decomp/ST.exe/functions/0041AF40/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\wlad\Tc_gobj.cpp
    STGameObjC::GetMessage
@@ -1686,7 +1686,7 @@ cf_common_exit_0041BE5F:
 }
 
 // 0041E530 STSprGameObjC::GetMessage
-#line 1 "decomp/ST.exe/functions/0041E530/decomp.c"
+#line 4 "decomp/ST.exe/functions/0041E530/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\wlad\Tc_gobj.cpp
    STSprGameObjC::GetMessage
@@ -1789,7 +1789,7 @@ int __thiscall st::fn_0041E530(STSprGameObjC *this,STMessage *message)
         g_currentExceptionFrame = local_54.previous;
         return 0;
       }
-      st::fn_00405D35(&this_00->field_0x1d5,DAT_00806774,"simmsk");
+      st::fn_00405D35(&this_00->field_0x1d5,PTR_00806774,"simmsk");
       st::fn_0040263F((int)&this_00->field_0x1d5);
       g_currentExceptionFrame = local_54.previous;
       return 0;
@@ -1860,7 +1860,7 @@ int __thiscall st::fn_0041E530(STSprGameObjC *this,STMessage *message)
       *(undefined4 *)&this_00->field_0x22d = 0;
       if (this_00->field_002C != 0) {
         if (this_00->field_002C == 1) {
-          iVar4 = st::fn_0040537B((STT3DSprC *)&this_00->field_0x1d5,DAT_008073cc,0x78,0x56,
+          iVar4 = st::fn_0040537B((STT3DSprC *)&this_00->field_0x1d5,PTR_008073cc,0x78,0x56,
                                   (STDcResourcC *)this_00,0xf0,0xbe,0x11);
           if (iVar4 != 0) {
             st::fn_006A5E40
@@ -1876,7 +1876,7 @@ int __thiscall st::fn_0041E530(STSprGameObjC *this,STMessage *message)
         g_currentExceptionFrame = local_54.previous;
         return 0;
       }
-      iVar4 = st::fn_0040537B((STT3DSprC *)&this_00->field_0x1d5,DAT_008073cc,0x5a,0x45,
+      iVar4 = st::fn_0040537B((STT3DSprC *)&this_00->field_0x1d5,PTR_008073cc,0x5a,0x45,
                               (STDcResourcC *)this_00,0xb4,0x8c,0x11);
       if (iVar4 == 0) {
         g_currentExceptionFrame = local_54.previous;
@@ -2123,7 +2123,7 @@ LAB_0041ec79:
     }
     *(undefined4 *)&this_00->field_0x22d = 1;
     st::fn_006E97C0
-              (*(void **)&this_00->field_0x211,this_00->field_01ED,DAT_008032c0);
+              (*(void **)&this_00->field_0x211,this_00->field_01ED,PTR_008032c0);
     g_currentExceptionFrame = local_54.previous;
     return 0;
   }
@@ -2136,13 +2136,13 @@ LAB_0041eccc:
   }
   *(undefined4 *)&this_00->field_0x22d = 0;
   st::fn_006E97C0
-            (*(void **)&this_00->field_0x211,this_00->field_01ED,0);
+            (*(void **)&this_00->field_0x211,this_00->field_01ED,nullptr);
   g_currentExceptionFrame = local_54.previous;
   return 0;
 }
 
 // 0041F9B0 STSprGameObjC::CheckRay
-#line 1 "decomp/ST.exe/functions/0041F9B0/decomp.c"
+#line 4 "decomp/ST.exe/functions/0041F9B0/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\wlad\Tc_gobj.cpp
    STSprGameObjC::CheckRay
@@ -2484,7 +2484,7 @@ cf_continue_loop_0042004A:
 }
 
 // 00420340 STSprGameObjC::LoadActFrame
-#line 1 "decomp/ST.exe/functions/00420340/decomp.c"
+#line 4 "decomp/ST.exe/functions/00420340/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\wlad\Tc_gobj.cpp
    STSprGameObjC::LoadActFrame
@@ -2895,13 +2895,13 @@ LAB_00420678:
     pcVar12 = pcVar11 + -1;
     memmove(pcVar12, pcVar10, uVar6); /* compiler REP MOVS byte copy */
     this_00 = &this->field_01D5;
-    iVar7 = st::fn_00404183((STT3DSprC *)this_00,0xf,DAT_00806774,local_24,0x1d);
+    iVar7 = st::fn_00404183((STT3DSprC *)this_00,0xf,PTR_00806774,local_24,0x1d);
     if (iVar7 != 0) {
       st::fn_006A5E40
                 (-0x5001fff8,g_overwriteContext_007ED77C,"E:\\__titans\\wlad\\Tc_gobj.cpp",
                  0xc4a);
     }
-    iVar7 = st::fn_00404183((STT3DSprC *)this_00,0,DAT_00806774,local_24,0x1d);
+    iVar7 = st::fn_00404183((STT3DSprC *)this_00,0,PTR_00806774,local_24,0x1d);
     if (iVar7 != 0) {
       st::fn_006A5E40
                 (-0x5001fff8,g_overwriteContext_007ED77C,"E:\\__titans\\wlad\\Tc_gobj.cpp",
@@ -3054,7 +3054,7 @@ switchD_00420436_caseD_2:
 }
 
 // 00420AE0 STSprGameObjC::LoadLifeFrame
-#line 1 "decomp/ST.exe/functions/00420AE0/decomp.c"
+#line 4 "decomp/ST.exe/functions/00420AE0/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\wlad\Tc_gobj.cpp
    STSprGameObjC::LoadLifeFrame
@@ -3536,7 +3536,7 @@ void __thiscall st::fn_00420AE0(STSprGameObjC *this)
   pcVar10 = pcVar9 + -1;
   memmove(pcVar10, pcVar8, uVar5); /* compiler REP MOVS byte copy */
   this_00 = &this->field_01D5;
-  st::fn_00404183((STT3DSprC *)this_00,1,DAT_00806774,local_24,0x1d);
+  st::fn_00404183((STT3DSprC *)this_00,1,PTR_00806774,local_24,0x1d);
   st::fn_006EA5E0(this->field_0211,this->field_01ED,1,0);
   st::fn_00405AA6(this_00,'\x01');
   st::fn_00405240((STT3DSprC *)this_00,1,g_playSystem_00802A38->field_00E4);
@@ -3544,7 +3544,7 @@ void __thiscall st::fn_00420AE0(STSprGameObjC *this)
   if (iVar6 != 3) {
     return;
   }
-  st::fn_00404183((STT3DSprC *)this_00,2,DAT_00806774,local_38,0x1d);
+  st::fn_00404183((STT3DSprC *)this_00,2,PTR_00806774,local_38,0x1d);
   st::fn_006EA5E0(this->field_0211,this->field_01ED,2,0);
   st::fn_00405AA6(this_00,'\x02');
   st::fn_00405240((STT3DSprC *)this_00,2,g_playSystem_00802A38->field_00E4);
@@ -3552,7 +3552,7 @@ void __thiscall st::fn_00420AE0(STSprGameObjC *this)
 }
 
 // 004210E0 STAllPlayersC::SaveGObjData
-#line 1 "decomp/ST.exe/functions/004210E0/decomp.c"
+#line 4 "decomp/ST.exe/functions/004210E0/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\wlad\Tc_gobj.cpp
    STAllPlayersC::SaveGObjData */
@@ -4125,7 +4125,7 @@ LAB_004212f3:
 }
 
 // 00422210 STAllPlayersC::RestoreGObjData
-#line 1 "decomp/ST.exe/functions/00422210/decomp.c"
+#line 4 "decomp/ST.exe/functions/00422210/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\wlad\Tc_gobj.cpp
    STAllPlayersC::RestoreGObjData */

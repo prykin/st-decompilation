@@ -57,7 +57,7 @@ undefined4 __thiscall STGenBombC::LoadImagSpr(STGenBombC *this,int param_1,int p
     if (this_00 == nullptr) {
       return 0xffffffff;
     }
-    iVar5 = STT3DSprC::Init(this_00,DAT_008073cc,0x5a,0x45,nullptr,0xb4,0x8c,0x11);
+    iVar5 = STT3DSprC::Init(this_00,PTR_008073cc,0x5a,0x45,nullptr,0xb4,0x8c,0x11);
     if (iVar5 != 0) {
       RaiseInternalException
                 (-1,g_overwriteContext_007ED77C,"E:\\__titans\\nick\\to_GnBom.cpp",0x509);
@@ -66,15 +66,15 @@ undefined4 __thiscall STGenBombC::LoadImagSpr(STGenBombC *this,int param_1,int p
   }
   if (param_1 == 0) {
     if (param_2 != 0) goto LAB_0061364b;
-    iVar5 = STT3DSprC::LoadSequence(pSVar4->field_0252,0xd,DAT_00806774,"exptem",0x1d);
+    iVar5 = STT3DSprC::LoadSequence(pSVar4->field_0252,0xd,PTR_00806774,"exptem",0x1d);
     if (iVar5 != 0) {
       return 0xffff;
     }
-    iVar5 = STT3DSprC::LoadSequence(pSVar4->field_0252,0xf,DAT_00806764,"bulb_n5",0x1d);
+    iVar5 = STT3DSprC::LoadSequence(pSVar4->field_0252,0xf,PTR_00806764,"bulb_n5",0x1d);
     if (iVar5 != 0) {
       return 0xffff;
     }
-    iVar5 = STT3DSprC::LoadSequence(pSVar4->field_0252,0xe,DAT_00806774,"expmask2",0x1d);
+    iVar5 = STT3DSprC::LoadSequence(pSVar4->field_0252,0xe,PTR_00806774,"expmask2",0x1d);
     if (iVar5 != 0) {
       return 0xffff;
     }
@@ -93,7 +93,7 @@ undefined4 __thiscall STGenBombC::LoadImagSpr(STGenBombC *this,int param_1,int p
     uVar7 = thunk_FUN_004ad650(pSVar4->field_0252);
     Library::Ourlib::ST3DSMAP::SprSetMask(g_sT3DSMAPContext_00807598,uVar7,uVar11,iVar5);
     pSVar4->field_0250 = 1;
-    STT3DSprC::sub_004ACF20(pSVar4->field_0252,DAT_008032b8,0x10);
+    STT3DSprC::sub_004ACF20(pSVar4->field_0252,PTR_008032b8,0x10);
     pSVar4->field_0237 = 0;
     STT3DSprC::SetCurFase(pSVar4->field_0252,'\r',0);
     STT3DSprC::ShowCurFase(pSVar4->field_0252,'\r');
@@ -106,7 +106,7 @@ undefined4 __thiscall STGenBombC::LoadImagSpr(STGenBombC *this,int param_1,int p
   else {
     iVar5 = pSVar4->field_01F7;
     if (iVar5 == 0) {
-      iVar5 = STT3DSprC::LoadSequence(pSVar4->field_0252,0xd,DAT_00806774,"den_bmb",0x1d);
+      iVar5 = STT3DSprC::LoadSequence(pSVar4->field_0252,0xd,PTR_00806774,"den_bmb",0x1d);
       if (iVar5 != 0) {
         return 0xffff;
       }
@@ -119,7 +119,7 @@ undefined4 __thiscall STGenBombC::LoadImagSpr(STGenBombC *this,int param_1,int p
         if (iVar5 != 2) goto LAB_00613424;
         text = "den_bmb";
       }
-      iVar5 = STT3DSprC::LoadSequence(pSVar4->field_0252,0xd,DAT_00806774,text,0x1d);
+      iVar5 = STT3DSprC::LoadSequence(pSVar4->field_0252,0xd,PTR_00806774,text,0x1d);
       if (iVar5 != 0) {
         return 0xffff;
       }

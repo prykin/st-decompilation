@@ -26,7 +26,7 @@ FUN_00649ff0(uint *param_1,undefined4 *param_2,undefined4 *param_3,int *param_4)
   uint local_c;
   DArrayTy *local_8;
 
-  module = g_module_00807618;
+  module = g_hINSTANCE_00807618;
   local_14 = 0;
   memset(&DAT_008117c0, 0, 0x104); /* compiler bulk-zero initialization */
   iVar6 = 0;

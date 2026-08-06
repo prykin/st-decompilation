@@ -2,7 +2,7 @@
 // Generated translation unit: source/original/paltool.cpp
 
 // 0055DBF0 DarkScreen
-#line 1 "decomp/ST.exe/functions/0055DBF0/decomp.c"
+#line 4 "decomp/ST.exe/functions/0055DBF0/decomp.c"
 /* [STSourceProvenanceApplier begin]
    Recovered source file: E:\__titans\paltool.cpp
    Diagnostic line evidence: 29 | 31 (metadata/report site, not the function definition)
@@ -53,7 +53,7 @@ void __cdecl st::fn_0055DBF0(DDXContext *param_1,int param_2,int param_3)
 }
 
 // 0055DCD0 SetPalette
-#line 1 "decomp/ST.exe/functions/0055DCD0/decomp.c"
+#line 4 "decomp/ST.exe/functions/0055DCD0/decomp.c"
 /* [STSourceProvenanceApplier begin]
    Recovered source file: E:\__titans\paltool.cpp
    Diagnostic line evidence: 75 | 77 (metadata/report site, not the function definition)

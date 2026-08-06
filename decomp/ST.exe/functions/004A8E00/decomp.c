@@ -41,13 +41,13 @@ LAB_004a8e4a:
     /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
     param_2 = 0;
   }
-  if (*DAT_00806750 + -1 < param_1) {
+  if (*PTR_00806750 + -1 < param_1) {
     /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
-    param_1 = *DAT_00806750 + -1;
+    param_1 = *PTR_00806750 + -1;
   }
-  if (DAT_00806750[1] + -1 < param_2) {
+  if (PTR_00806750[1] + -1 < param_2) {
     /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
-    param_2 = DAT_00806750[1] + -1;
+    param_2 = PTR_00806750[1] + -1;
   }
   DAT_008073d8 = param_1;
   DAT_008073dc = param_2;

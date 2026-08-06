@@ -2,7 +2,7 @@
 // Generated translation unit: source/recovered/by_owner/STJellyGunC.cpp
 
 // 00415ED0 STJellyGunC::sub_00415ED0
-#line 1 "decomp/ST.exe/functions/00415ED0/decomp.c"
+#line 4 "decomp/ST.exe/functions/00415ED0/decomp.c"
 /* [STPrototypeApplier] Propagated parameter 2.
    Evidence: 004653B0 -> 00415ED0 @ 00465529 | 004653B0 -> 00415ED0 @ 0046570D | 0046C980 ->
    00415ED0 @ 0046CB8D | 0046C980 -> 00415ED0 @ 0046CD4F | 004714D0 -> 00415ED0 @ 004716C6 |
@@ -108,7 +108,7 @@ LAB_004160cd:
 }
 
 // 005823D0 STJellyGunC::STJellyGunC
-#line 1 "decomp/ST.exe/functions/005823D0/decomp.c"
+#line 4 "decomp/ST.exe/functions/005823D0/decomp.c"
 /* [STConstructorApplier] Recovered constructor candidate.
    VTable: 0079B78C (store 005823F9)
    Evidence: final_vptr=0079B78C; returns_this=true; calls_before=2; field_writes_after=8;
@@ -123,8 +123,8 @@ STJellyGunC * __thiscall st::fn_005823D0(STJellyGunC *this)
 
   st::fn_00401933((STGameObjC *)this);
   st::fn_00401316((AnonShape_004AB810_8E5693D5 *)&this->field_01D5);
-  this->field_01D5 = &VTable_0079B8EC;
-  this->vtable = &STJellyGunCVTable;
+  this->field_01D5 = &st_global_0079B8EC;
+  this->vtable = &st_global_0079B78C;
   memset(&this->field_0x256, 0, 0x3e); /* compiler bulk-zero initialization */
   this->field_0241 = 0xff;
   this->field_0231 = 0;
@@ -138,7 +138,7 @@ STJellyGunC * __thiscall st::fn_005823D0(STJellyGunC *this)
 }
 
 // 00582530 STJellyGunC::sub_00582530
-#line 1 "decomp/ST.exe/functions/00582530/decomp.c"
+#line 4 "decomp/ST.exe/functions/00582530/decomp.c"
 /* [STMethodOwnerApplier] Structural method owner recovered as STJellyGunC.
    Evidence: this_call_owners=[STJellyGunC]; agreed_this_calls=3; incoming_this_accesses=2;
    incoming_edx_uses=0; incoming_stack_parameter_uses=0
@@ -162,7 +162,7 @@ void __thiscall st::fn_00582530(STJellyGunC *this)
 }
 
 // 00582580 STJellyGunC::sub_00582580
-#line 1 "decomp/ST.exe/functions/00582580/decomp.c"
+#line 4 "decomp/ST.exe/functions/00582580/decomp.c"
 /* [STMethodOwnerApplier] Structural method owner recovered as STJellyGunC.
    Evidence: this_call_owners=[STJellyGunC]; agreed_this_calls=2; incoming_this_accesses=1;
    incoming_edx_uses=0; incoming_stack_parameter_uses=0
@@ -187,7 +187,7 @@ int __thiscall st::fn_00582580(STJellyGunC *this)
 }
 
 // 00583E30 STJellyGunC::sub_00583E30
-#line 1 "decomp/ST.exe/functions/00583E30/decomp.c"
+#line 4 "decomp/ST.exe/functions/00583E30/decomp.c"
 /* [STMethodOwnerApplier] Structural method owner recovered as STJellyGunC.
    Evidence: this_call_owners=[STJellyGunC]; agreed_this_calls=2; incoming_this_accesses=6;
    incoming_edx_uses=0
@@ -287,7 +287,7 @@ STJellyGunC_field_0235State __thiscall st::fn_00583E30(STJellyGunC *this)
 }
 
 // 00584060 STJellyGunC::sub_00584060
-#line 1 "decomp/ST.exe/functions/00584060/decomp.c"
+#line 4 "decomp/ST.exe/functions/00584060/decomp.c"
 /* [STMethodOwnerApplier] Structural method owner recovered as STJellyGunC.
    Evidence: this_call_owners=[STJellyGunC]; agreed_this_calls=1; incoming_this_accesses=2;
    incoming_edx_uses=0 */
@@ -416,7 +416,7 @@ joined_r0x00584297:
 }
 
 // 00584380 STJellyGunC::sub_00584380
-#line 1 "decomp/ST.exe/functions/00584380/decomp.c"
+#line 4 "decomp/ST.exe/functions/00584380/decomp.c"
 /* [STMethodOwnerApplier] Structural method owner recovered as STJellyGunC.
    Evidence: this_call_owners=[STJellyGunC]; agreed_this_calls=2; incoming_this_accesses=3;
    incoming_edx_uses=0 */
@@ -429,15 +429,15 @@ undefined4 __thiscall st::fn_00584380(STJellyGunC *this)
   undefined4 uVar2;
 
   this_00 = &this->field_01D5;
-  iVar1 = st::fn_00404183((STT3DSprC *)this_00,8,DAT_00806774,"Expb11",0x1d);
+  iVar1 = st::fn_00404183((STT3DSprC *)this_00,8,PTR_00806774,"Expb11",0x1d);
   if (iVar1 == 0) {
     st::fn_00405240((STT3DSprC *)this_00,8,g_playSystem_00802A38->field_00E4);
-    st::fn_00404183((STT3DSprC *)this_00,10,DAT_00806774,"expmask3",0x1d);
+    st::fn_00404183((STT3DSprC *)this_00,10,PTR_00806774,"expmask3",0x1d);
     st::fn_00403233((STT3DSprC *)this_00,'\n');
-    st::fn_004044EE((STT3DSprC *)this_00,DAT_008032b8,0x10);
+    st::fn_004044EE((STT3DSprC *)this_00,PTR_008032b8,0x10);
     st::fn_00405240((STT3DSprC *)this_00,10,g_playSystem_00802A38->field_00E4);
     this->vfunc_D8();
-    iVar1 = st::fn_00404183((STT3DSprC *)this_00,9,DAT_00806764,"bulb_n5",0x1d);
+    iVar1 = st::fn_00404183((STT3DSprC *)this_00,9,PTR_00806764,"bulb_n5",0x1d);
     if (iVar1 == 0) {
       st::fn_00402761((STT3DSprC *)this_00,9);
       uVar2 = st::fn_004022AC((STT3DSprC *)this_00,'\t');
@@ -452,7 +452,7 @@ undefined4 __thiscall st::fn_00584380(STJellyGunC *this)
 }
 
 // 005844E0 STJellyGunC::sub_005844E0
-#line 1 "decomp/ST.exe/functions/005844E0/decomp.c"
+#line 4 "decomp/ST.exe/functions/005844E0/decomp.c"
 /* [STMethodOwnerApplier] Structural method owner recovered as STJellyGunC.
    Evidence: this_call_owners=[STJellyGunC]; agreed_this_calls=2; incoming_this_accesses=1;
    incoming_edx_uses=0; incoming_stack_parameter_uses=3

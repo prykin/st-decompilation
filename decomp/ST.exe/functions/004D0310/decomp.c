@@ -35,7 +35,7 @@ undefined4 __fastcall FUN_004d0310(TLOBaseTy *param_1)
   uVar5 = 0;
   local_8 = 0;
   iVar4 = STT3DSprC::LoadSequence
-                    ((STT3DSprC *)param_1->field_05FF,0xe,DAT_0080677c,
+                    ((STT3DSprC *)param_1->field_05FF,0xe,PTR_0080677c,
                      &DAT_007a9342 + *(int *)&param_1->field_0x369 * 6,0x1d);
   if (iVar4 != 0) {
     RaiseInternalException
@@ -46,7 +46,7 @@ undefined4 __fastcall FUN_004d0310(TLOBaseTy *param_1)
     pbVar2 = param_1->field_0024;
   }
   wsprintfA(local_48,"%s%1i",&DAT_007a9342 + *(int *)&param_1->field_0x369 * 6,pbVar2);
-  iVar4 = STT3DSprC::LoadSequence((STT3DSprC *)param_1->field_05FF,0xc,DAT_0080677c,local_48,0x1d);
+  iVar4 = STT3DSprC::LoadSequence((STT3DSprC *)param_1->field_05FF,0xc,PTR_0080677c,local_48,0x1d);
   if (iVar4 != 0) {
     RaiseInternalException
               (iVar4,g_overwriteContext_007ED77C,"E:\\__titans\\Artem\\TLO_dock.cpp",0x29a);
@@ -64,7 +64,7 @@ undefined4 __fastcall FUN_004d0310(TLOBaseTy *param_1)
     STT3DSprC::StopShow((STT3DSprC *)param_1->field_05FF,0xd);
   }
   else {
-    iVar4 = STT3DSprC::LoadSequence((STT3DSprC *)param_1->field_05FF,0xd,DAT_0080677c,pcVar8,0x1d);
+    iVar4 = STT3DSprC::LoadSequence((STT3DSprC *)param_1->field_05FF,0xd,PTR_0080677c,pcVar8,0x1d);
     if (iVar4 != 0) {
       return 0xffff;
     }

@@ -21,8 +21,8 @@ SIDTy * __cdecl CreateSID(void)
   if (this != nullptr) {
     sub_006E5FB0(this);
     this->vtable = (SIDTyVTable *)&VTable_0079C018;
-    *(undefined4 *)&this->field_0x18 = 0;
-    *(undefined4 *)&this->field_0x5d = 0;
+    this->field_0018 = 0;
+    this->field_005D = 0;
     memset(&this->field_0x1d, 0, 0x20); /* compiler bulk-zero initialization */
     iVar1 = 0;
     memset(&this->field_0x3d, 0, 0x20); /* compiler bulk-zero initialization */
@@ -38,7 +38,7 @@ SIDTy * __cdecl CreateSID(void)
     } while (iVar1 != 0);
     this->vtable = (SIDTyVTable *)&MMObjTyVTable;
     this->field_0065 = 2;
-    this->field_0x9a = 0;
+    this->field_009A = 0;
     memset(&this->field_0x66, 0, 0x34); /* compiler bulk-zero initialization */
     iVar1 = 0xd;
     puVar3 = (undefined4 *)&this->field_0xbc;

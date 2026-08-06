@@ -2,7 +2,7 @@
 // Generated translation unit: source/recovered/by_owner/PlayPanelTy.cpp
 
 // 0053A540 PlayPanelTy::sub_0053A540
-#line 1 "decomp/ST.exe/functions/0053A540/decomp.c"
+#line 4 "decomp/ST.exe/functions/0053A540/decomp.c"
 /* [STMethodOwnerApplier] Structural method owner recovered as PlayPanelTy.
    Evidence: this_call_owners=[PlayPanelTy]; agreed_this_calls=2; incoming_this_accesses=15;
    incoming_edx_uses=0; incoming_stack_parameter_uses=0; direct_non_thunk_callers=0;

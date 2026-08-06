@@ -375,7 +375,7 @@ thunk_address	status	proposed_qualified_name	details
 00401807	disabled	STSprGameObjC::STSprGameObjC	apply=0
 0040180C	disabled	FUN_004ea7a0	apply=0
 00401811	disabled	FUN_0041d620	apply=0
-0040181B	disabled	FUN_005d9f80	apply=0
+0040181B	disabled	CreateSID	apply=0
 00401825	disabled	STAllPlayersC::FUN_00622990	apply=0
 00401834	disabled	CreateSTCrab	apply=0
 00401839	disabled	FUN_004d6c90	apply=0
@@ -400,7 +400,7 @@ thunk_address	status	proposed_qualified_name	details
 004018A2	disabled	FUN_004b0f20	apply=0
 004018A7	disabled	StartStrateg	apply=0
 004018AC	disabled	FUN_00682fb0	apply=0
-004018B1	disabled	FUN_00539aa0	apply=0
+004018B1	disabled	CreatePlayPanel	apply=0
 004018B6	disabled	FUN_00650090	apply=0
 004018BB	disabled	FUN_005efc40	apply=0
 004018C0	disabled	STGroupBoatC::GrpDismant	apply=0
@@ -509,7 +509,7 @@ thunk_address	status	proposed_qualified_name	details
 00401AE1	disabled	FUN_004dd240	apply=0
 00401AE6	disabled	FUN_0060bc80	apply=0
 00401AEB	disabled	CPanelTy::PaintCtrlBoatSI	apply=0
-00401AF0	disabled	FUN_004f0af0	apply=0
+00401AF0	disabled	BldObjPanelTy::ShiftControls	apply=0
 00401AF5	disabled	FUN_004e3790	apply=0
 00401AFA	disabled	STContainerC::sub_005F0D90	apply=0
 00401AFF	disabled	CreateSettMapM	apply=0
@@ -1193,7 +1193,7 @@ thunk_address	status	proposed_qualified_name	details
 00402905	disabled	FUN_0041dbe0	apply=0
 0040290A	disabled	FUN_004f4950	apply=0
 0040290F	disabled	FUN_004924a0	apply=0
-00402914	disabled	FUN_004eefb0	apply=0
+00402914	disabled	BldBoatPanelTy::ShiftControls	apply=0
 00402919	disabled	FUN_0052a540	apply=0
 0040291E	disabled	FUN_004b71c0	apply=0
 00402923	disabled	SubmarineTitans::Recovered::HiddenThis::AnonReceiver_0064A970::FUN_00672440	apply=0
@@ -1270,7 +1270,7 @@ thunk_address	status	proposed_qualified_name	details
 00402A9A	disabled	SettMapTy::PaintSC	apply=0
 00402A9F	disabled	TLOBaseTy::sub_004CEB00	apply=0
 00402AA4	disabled	FUN_004f4f90	apply=0
-00402AA9	disabled	FUN_005b95b0	apply=0
+00402AA9	disabled	CreateMMsg	apply=0
 00402AAE	disabled	FUN_004e76e0	apply=0
 00402AB3	disabled	FUN_006a23a0	apply=0
 00402AB8	disabled	FUN_004df910	apply=0
@@ -1785,7 +1785,7 @@ thunk_address	status	proposed_qualified_name	details
 00403562	disabled	STAppC::CloseGameDBs	apply=0
 00403567	disabled	FUN_004e2ab0	apply=0
 0040356C	disabled	FUN_0069c360	apply=0
-00403571	disabled	FUN_004ee8e0	apply=0
+00403571	disabled	CreateBldBoatPanel	apply=0
 00403576	disabled	FUN_00528a30	apply=0
 0040357B	disabled	FUN_004d8db0	apply=0
 00403580	disabled	FUN_0060a430	apply=0
@@ -2582,7 +2582,7 @@ thunk_address	status	proposed_qualified_name	details
 004045C5	disabled	FUN_00423e30	apply=0
 004045CA	disabled	CGenerate::CreateMap	apply=0
 004045CF	disabled	FUN_00423200	apply=0
-004045D4	disabled	FUN_005e6570	apply=0
+004045D4	disabled	CreateMTest	apply=0
 004045D9	disabled	STT3DSprC::sub_004AD3C0	apply=0
 004045DE	disabled	FUN_0041c340	apply=0
 004045E3	disabled	FUN_00550830	apply=0
@@ -3278,7 +3278,7 @@ thunk_address	status	proposed_qualified_name	details
 00405448	disabled	FUN_004e6e10	apply=0
 0040544D	disabled	FUN_00497000	apply=0
 00405452	disabled	FUN_004233a0	apply=0
-00405457	disabled	FUN_00521840	apply=0
+00405457	disabled	CreateIntercomPanel	apply=0
 0040545C	disabled	FUN_004dc240	apply=0
 00405466	disabled	FUN_004ebda0	apply=0
 0040546B	disabled	STGroupBoatC::Bring	apply=0
@@ -3291,7 +3291,7 @@ thunk_address	status	proposed_qualified_name	details
 00405493	disabled	FUN_00529590	apply=0
 00405498	disabled	CreateTLOEmbryo	apply=0
 0040549D	disabled	FUN_00581bc0	apply=0
-004054A2	disabled	FUN_004f0460	apply=0
+004054A2	disabled	CreateBldObjPanel	apply=0
 004054A7	disabled	BldBoatPanelTy::InitBldBoatPanel	apply=0
 004054AC	disabled	FUN_00651770	apply=0
 004054B1	disabled	AiEventClassTy::InitData	apply=0
@@ -3316,7 +3316,7 @@ thunk_address	status	proposed_qualified_name	details
 00405510	disabled	StartSystemTy::InitChat	apply=0
 00405515	disabled	FUN_004cc040	apply=0
 0040551F	disabled	STAllPlayersC::RestoreGObjData	apply=0
-00405524	disabled	SubmarineTitans::Recovered::HiddenThis::AnonReceiver_004EEFB0::FUN_005c8200	apply=0
+00405524	disabled	SubmarineTitans::Recovered::HiddenThis::AnonReceiver_0053F510::FUN_005c8200	apply=0
 00405529	disabled	FSGSTy::ConnectProc	apply=0
 00405533	disabled	FUN_0062fe00	apply=0
 00405538	disabled	TradePanelTy::DoneTradePanel	apply=0

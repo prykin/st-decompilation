@@ -58,7 +58,7 @@ STManRuinC::sub_00630C50
     return local_c;
   }
   puVar4 = Library::Ourlib::MFRLOAD::mfRLoad
-                     (DAT_00806774,CASE_1D,local_8[local_10->field_0040],0xffffffff,0,1,0,
+                     (PTR_00806774,CASE_1D,local_8[local_10->field_0040],0xffffffff,0,1,0,
                       nullptr);
   if (param_3 == 0) {
     if (param_2 == 1) {

@@ -2,7 +2,7 @@
 // Generated translation unit: source/original/Igor/To_gold.cpp
 
 // 0057DFD0 STResourceC::SetResource
-#line 1 "decomp/ST.exe/functions/0057DFD0/decomp.c"
+#line 4 "decomp/ST.exe/functions/0057DFD0/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\Igor\To_gold.cpp
    STResourceC::SetResource
@@ -45,7 +45,7 @@ cf_common_exit_0057E045:
 }
 
 // 0057E0A0 STDcResourcC::GetMessage
-#line 1 "decomp/ST.exe/functions/0057E0A0/decomp.c"
+#line 4 "decomp/ST.exe/functions/0057E0A0/decomp.c"
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 /* Recovered from embedded debug metadata:
    E:\__titans\Igor\To_gold.cpp
@@ -618,7 +618,7 @@ cf_common_join_0057E9C2:
 }
 
 // 0057F580 STDcResourcC::Init
-#line 1 "decomp/ST.exe/functions/0057F580/decomp.c"
+#line 4 "decomp/ST.exe/functions/0057F580/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\Igor\To_gold.cpp
    STDcResourcC::Init
@@ -670,7 +670,7 @@ undefined4 * __thiscall st::fn_0057F580(STDcResourcC *this)
       this->field_026D = pHVar6;
       *(STT3DSprC **)((int)&pHVar6->field_0000 + this->field_0265 * 4) = this_00;
       this->field_0265 = this->field_0265 + 1;
-      iVar8 = st::fn_0040537B(this_00,DAT_008073cc,0x5a,0x45,this,0xb4,0x8c,0x11);
+      iVar8 = st::fn_0040537B(this_00,PTR_008073cc,0x5a,0x45,this,0xb4,0x8c,0x11);
       if (iVar8 != 0) {
         iVar8 = st::fn_006AD4D0("E:\\__titans\\Igor\\To_gold.cpp",0x203,0,0,"%s",
                                    "STDcResourcC::Init Sprite Error");
@@ -686,7 +686,7 @@ undefined4 * __thiscall st::fn_0057F580(STDcResourcC *this)
 }
 
 // 0057F6E0 STDcResourcC::CreateRes
-#line 1 "decomp/ST.exe/functions/0057F6E0/decomp.c"
+#line 4 "decomp/ST.exe/functions/0057F6E0/decomp.c"
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 /* Recovered from embedded debug metadata:
    E:\__titans\Igor\To_gold.cpp
@@ -756,14 +756,14 @@ int __thiscall st::fn_0057F6E0(STDcResourcC *this)
         goto cf_break_loop_0057FAA5;
         bVar13 = 0x1d;
         pcVar7 = (char *)st::fn_00401744(this_00,local_c,0);
-        iVar10 = st::fn_00404183(pSVar6,0xe,DAT_00806774,pcVar7,bVar13);
+        iVar10 = st::fn_00404183(pSVar6,0xe,PTR_00806774,pcVar7,bVar13);
         if (iVar10 != 0) goto cf_break_loop_0057FAA5;
         bVar13 = 0x1d;
         pcVar7 = (char *)st::fn_00401744(this_00,local_c,1);
-        iVar10 = st::fn_00404183(pSVar6,0xd,DAT_00806774,pcVar7,bVar13);
+        iVar10 = st::fn_00404183(pSVar6,0xd,PTR_00806774,pcVar7,bVar13);
         if (iVar10 != 0) goto cf_break_loop_0057FAA5;
         st::fn_00405240(pSVar6,0xe,g_playSystem_00802A38->field_00E4);
-        st::fn_00405CA9(pSVar6,DAT_008073cc);
+        st::fn_00405CA9(pSVar6,PTR_008073cc);
         st::fn_00403AFD(pSVar6,'\r');
         st::fn_00405240(pSVar6,0xd,g_playSystem_00802A38->field_00E4);
         iVar10 = this_00->field_0249 + local_10;
@@ -798,14 +798,14 @@ int __thiscall st::fn_0057F6E0(STDcResourcC *this)
         goto cf_break_loop_0057FAA5;
         bVar13 = 0x1d;
         pcVar7 = (char *)st::fn_00404FD4(this_00,local_c,0);
-        iVar10 = st::fn_00404183(pSVar6,0xe,DAT_00806774,pcVar7,bVar13);
+        iVar10 = st::fn_00404183(pSVar6,0xe,PTR_00806774,pcVar7,bVar13);
         if (iVar10 != 0) goto cf_break_loop_0057FAA5;
         bVar13 = 0x1d;
         pcVar7 = (char *)st::fn_00404FD4(this_00,local_c,1);
-        iVar10 = st::fn_00404183(pSVar6,0xd,DAT_00806774,pcVar7,bVar13);
+        iVar10 = st::fn_00404183(pSVar6,0xd,PTR_00806774,pcVar7,bVar13);
         if (iVar10 != 0) goto cf_break_loop_0057FAA5;
         st::fn_00405240(pSVar6,0xe,g_playSystem_00802A38->field_00E4);
-        st::fn_00405CA9(pSVar6,DAT_008073cc);
+        st::fn_00405CA9(pSVar6,PTR_008073cc);
         st::fn_00403AFD(pSVar6,'\r');
         st::fn_00405240(pSVar6,0xd,g_playSystem_00802A38->field_00E4);
         iVar10 = this_00->field_0249 + local_10;
@@ -842,14 +842,14 @@ int __thiscall st::fn_0057F6E0(STDcResourcC *this)
         if ((iVar5 < 0) || (pSVar6 = (STT3DSprC *)st::fn_00405911(this_00), pSVar6 != nullptr)) {
           bVar13 = 0x1d;
           pcVar7 = (char *)st::fn_0040185C(this_00,iVar5,0);
-          iVar10 = st::fn_00404183(pSVar6,0xe,DAT_00806774,pcVar7,bVar13);
+          iVar10 = st::fn_00404183(pSVar6,0xe,PTR_00806774,pcVar7,bVar13);
           if (iVar10 == 0) {
             bVar13 = 0x1d;
             pcVar7 = (char *)st::fn_0040185C(this_00,iVar5,1);
-            iVar10 = st::fn_00404183(pSVar6,0xd,DAT_00806774,pcVar7,bVar13);
+            iVar10 = st::fn_00404183(pSVar6,0xd,PTR_00806774,pcVar7,bVar13);
             if (iVar10 == 0) {
               st::fn_00405240(pSVar6,0xe,g_playSystem_00802A38->field_00E4);
-              st::fn_00405CA9(pSVar6,DAT_008073cc);
+              st::fn_00405CA9(pSVar6,PTR_008073cc);
               st::fn_00403AFD(pSVar6,'\r');
               st::fn_00405240(pSVar6,0xd,g_playSystem_00802A38->field_00E4);
               local_14 = this_00->field_0245 + local_c;
@@ -950,7 +950,7 @@ cf_break_loop_0057FAA5:
 }
 
 // 00580B60 STFieldC::CreateField
-#line 1 "decomp/ST.exe/functions/00580B60/decomp.c"
+#line 4 "decomp/ST.exe/functions/00580B60/decomp.c"
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 /* Recovered from embedded debug metadata:
    E:\__titans\Igor\To_gold.cpp
@@ -993,7 +993,7 @@ undefined4 * __thiscall st::fn_00580B60(STFieldC *this,int param_1,int param_2)
     text = "ResSmall";
   }
   puVar4 = st::fn_00709AF0
-                     (DAT_00806774,CASE_1D,text,0xffffffff,0,1,0,nullptr);
+                     (PTR_00806774,CASE_1D,text,0xffffffff,0,1,0,nullptr);
   if ((puVar4 != nullptr) && ((void *)pSVar2->field_0211 != nullptr)) {
     puVar5 = st::fn_006E6460((void *)pSVar2->field_0211,STField<undefined4>(puVar4,0x21),
                           *(int *)puVar4,(short)(STField<int>(puVar4,9) / 2),

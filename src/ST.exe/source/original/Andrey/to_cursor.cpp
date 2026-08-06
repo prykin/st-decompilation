@@ -2,7 +2,7 @@
 // Generated translation unit: source/original/Andrey/to_cursor.cpp
 
 // 00543600 CursorClassTy::InitCursor
-#line 1 "decomp/ST.exe/functions/00543600/decomp.c"
+#line 4 "decomp/ST.exe/functions/00543600/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\Andrey\to_cursor.cpp
    CursorClassTy::InitCursor */
@@ -33,10 +33,10 @@ void __thiscall st::fn_00543600(CursorClassTy *this,undefined4 param_1)
                nullptr,0);
     st::fn_0040376F(this_00,param_1,"CUR_MENU",0x32,nullptr,0,-1,-1);
     puVar4 = st::fn_00709AF0
-                       (DAT_00806784,CASE_B,"INF_DEEPS",0xffffffff,0,1,0,nullptr);
+                       (PTR_00806784,CASE_B,"INF_DEEPS",0xffffffff,0,1,0,nullptr);
     this_00->field_04E3 = puVar4;
     puVar4 = st::fn_00709AF0
-                       (DAT_00806784,CASE_13,"CUR_CONFIRM",0xffffffff,0,1,0,
+                       (PTR_00806784,CASE_13,"CUR_CONFIRM",0xffffffff,0,1,0,
                         nullptr);
     this_00->field_04E7 = puVar4;
     local_8 = st::fn_006F1CE0(g_cMf32_00806780,1,"CURSOR_PAL",nullptr,1);
@@ -64,7 +64,7 @@ void __thiscall st::fn_00543600(CursorClassTy *this,undefined4 param_1)
 }
 
 // 00543830 CursorClassTy::DoneCursor
-#line 1 "decomp/ST.exe/functions/00543830/decomp.c"
+#line 4 "decomp/ST.exe/functions/00543830/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\Andrey\to_cursor.cpp
    CursorClassTy::DoneCursor */
@@ -118,7 +118,7 @@ void __thiscall st::fn_00543830(CursorClassTy *this)
 }
 
 // 00543990 CursorClassTy::ReInitCursorSpr
-#line 1 "decomp/ST.exe/functions/00543990/decomp.c"
+#line 4 "decomp/ST.exe/functions/00543990/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\Andrey\to_cursor.cpp
    CursorClassTy::ReInitCursorSpr */
@@ -175,7 +175,7 @@ void __thiscall st::fn_00543990(CursorClassTy *this,int param_1)
 }
 
 // 00543AD0 CursorClassTy::SetImages
-#line 1 "decomp/ST.exe/functions/00543AD0/decomp.c"
+#line 4 "decomp/ST.exe/functions/00543AD0/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\Andrey\to_cursor.cpp
    CursorClassTy::SetImages
@@ -218,7 +218,7 @@ st::fn_00543AD0
   local_8->field_00A9 = param_1;
   local_8->field_00BD = -param_5;
   /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-  (**(code **)(local_8->field_0018 + 4))(DAT_00806784,7,0,text,0xffffffff);
+  (**(code **)(local_8->field_0018 + 4))(PTR_00806784,7,0,text,0xffffffff);
   /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
   st::fn_006B85D0
             ((uint *)pCVar2->field_00AD,(int)*(short *)(pCVar2->field_0069 + 0x23),
@@ -246,7 +246,7 @@ st::fn_00543AD0
 }
 
 // 00543C90 CursorClassTy::DrawSprite
-#line 1 "decomp/ST.exe/functions/00543C90/decomp.c"
+#line 4 "decomp/ST.exe/functions/00543C90/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\Andrey\to_cursor.cpp
    CursorClassTy::DrawSprite */
@@ -349,7 +349,7 @@ void __thiscall st::fn_00543C90(CursorClassTy *this,int param_1,int param_2)
 }
 
 // 00543FA0 CursorClassTy::CursDrawInit
-#line 1 "decomp/ST.exe/functions/00543FA0/decomp.c"
+#line 4 "decomp/ST.exe/functions/00543FA0/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\Andrey\to_cursor.cpp
    CursorClassTy::CursDrawInit */
@@ -388,7 +388,7 @@ st::fn_00543FA0(CursorClassTy *this,int param_1,int param_2,int param_3,int para
 }
 
 // 005441A0 CursorClassTy::AddSysAcc
-#line 1 "decomp/ST.exe/functions/005441A0/decomp.c"
+#line 4 "decomp/ST.exe/functions/005441A0/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\Andrey\to_cursor.cpp
    CursorClassTy::AddSysAcc */
@@ -486,7 +486,7 @@ void __thiscall st::fn_005441A0(CursorClassTy *this)
 }
 
 // 00544460 CursorClassTy::DelSysAcc
-#line 1 "decomp/ST.exe/functions/00544460/decomp.c"
+#line 4 "decomp/ST.exe/functions/00544460/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\Andrey\to_cursor.cpp
    CursorClassTy::DelSysAcc */
@@ -576,7 +576,7 @@ void __thiscall st::fn_00544460(CursorClassTy *this)
 }
 
 // 005446C0 CursorClassTy::AddOpticAcc
-#line 1 "decomp/ST.exe/functions/005446C0/decomp.c"
+#line 4 "decomp/ST.exe/functions/005446C0/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\Andrey\to_cursor.cpp
    CursorClassTy::AddOpticAcc */
@@ -636,7 +636,7 @@ void __thiscall st::fn_005446C0(CursorClassTy *this)
 }
 
 // 00544800 CursorClassTy::DelOpticAcc
-#line 1 "decomp/ST.exe/functions/00544800/decomp.c"
+#line 4 "decomp/ST.exe/functions/00544800/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\Andrey\to_cursor.cpp
    CursorClassTy::DelOpticAcc */
@@ -696,7 +696,7 @@ void __thiscall st::fn_00544800(CursorClassTy *this)
 }
 
 // 005449B0 CursorClassTy::GetMessage
-#line 1 "decomp/ST.exe/functions/005449B0/decomp.c"
+#line 4 "decomp/ST.exe/functions/005449B0/decomp.c"
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 /* Recovered from embedded debug metadata:
    E:\__titans\Andrey\to_cursor.cpp
@@ -1638,18 +1638,18 @@ switchD_0054679d_default:
           g_currentExceptionFrame = local_e0.previous;
           return 0;
         }
-        if ((g_prodPanel_008016E8 != nullptr) && (g_prodPanel_008016E8->field_0172 == 1))
-        {
+        if ((g_researchPanel_008016E8 != nullptr) &&
+           (g_researchPanel_008016E8->field_0172 == 1)) {
           g_currentExceptionFrame = local_e0.previous;
           return 0;
         }
-        if ((g_prodPanel_0080167C != nullptr) && (g_prodPanel_0080167C->field_0172 == 1))
-        {
+        if ((g_bldBoatPanel_0080167C != nullptr) &&
+           (g_bldBoatPanel_0080167C->field_0172 == 1)) {
           g_currentExceptionFrame = local_e0.previous;
           return 0;
         }
-        if ((g_prodPanel_00801684 != nullptr) && (g_prodPanel_00801684->field_0172 == 1))
-        {
+        if ((g_bldObjPanel_00801684 != nullptr) &&
+           (g_bldObjPanel_00801684->field_0172 == 1)) {
           g_currentExceptionFrame = local_e0.previous;
           return 0;
         }
@@ -1679,8 +1679,8 @@ switchD_0054679d_default:
           g_currentExceptionFrame = local_e0.previous;
           return 0;
         }
-        if ((g_prodPanel_00801680 != nullptr) && (g_prodPanel_00801680->field_0172 == 1))
-        {
+        if ((g_bldLabPanel_00801680 != nullptr) &&
+           (g_bldLabPanel_00801680->field_0172 == 1)) {
           g_currentExceptionFrame = local_e0.previous;
           return 0;
         }
@@ -1724,15 +1724,18 @@ switchD_0054679d_default:
         g_currentExceptionFrame = local_e0.previous;
         return 0;
       }
-      if ((g_prodPanel_008016E8 != nullptr) && (g_prodPanel_008016E8->field_0172 == 1)) {
+      if ((g_researchPanel_008016E8 != nullptr) &&
+         (g_researchPanel_008016E8->field_0172 == 1)) {
         g_currentExceptionFrame = local_e0.previous;
         return 0;
       }
-      if ((g_prodPanel_0080167C != nullptr) && (g_prodPanel_0080167C->field_0172 == 1)) {
+      if ((g_bldBoatPanel_0080167C != nullptr) &&
+         (g_bldBoatPanel_0080167C->field_0172 == 1)) {
         g_currentExceptionFrame = local_e0.previous;
         return 0;
       }
-      if ((g_prodPanel_00801684 != nullptr) && (g_prodPanel_00801684->field_0172 == 1)) {
+      if ((g_bldObjPanel_00801684 != nullptr) &&
+         (g_bldObjPanel_00801684->field_0172 == 1)) {
         g_currentExceptionFrame = local_e0.previous;
         return 0;
       }
@@ -1762,7 +1765,8 @@ switchD_0054679d_default:
         g_currentExceptionFrame = local_e0.previous;
         return 0;
       }
-      if ((g_prodPanel_00801680 != nullptr) && (g_prodPanel_00801680->field_0172 == 1)) {
+      if ((g_bldLabPanel_00801680 != nullptr) &&
+         (g_bldLabPanel_00801680->field_0172 == 1)) {
         g_currentExceptionFrame = local_e0.previous;
         return 0;
       }
@@ -1810,11 +1814,11 @@ switchD_0054679d_default:
       case 1:
         if (pAVar5->field_0009 < 0) {
           if ((&stack0x00000000 != (undefined1 *)0x524) &&
-             (pcVar11 = st::fn_006B0140(pAVar5->field_0001,g_module_00807618),
+             (pcVar11 = st::fn_006B0140(pAVar5->field_0001,g_hINSTANCE_00807618),
              pcVar11 != nullptr)) {
             UVar14 = local_8->field_0001;
 LAB_005458df:
-            pcVar11 = st::fn_006B0140(UVar14,g_module_00807618);
+            pcVar11 = st::fn_006B0140(UVar14,g_hINSTANCE_00807618);
             uVar20 = 0xffffffff;
             do {
               pcVar12 = pcVar11;
@@ -1834,14 +1838,14 @@ LAB_005458df:
         }
         else {
           st::fn_0040535D(*(uint *)(&DAT_00807e66 + pAVar5->field_0009 * 4),1);
-          st::fn_006B0140(pAVar5->field_0001,g_module_00807618);
+          st::fn_006B0140(pAVar5->field_0001,g_hINSTANCE_00807618);
           st::external_00000080((LPSTR)local_524,"&%d%s\n&%d%s");
         }
         break;
       case 2:
         if (pAVar5->field_0001 == 0) goto switchD_00545816_default;
         if ((&stack0x00000000 != (undefined1 *)0x524) &&
-           (pcVar11 = st::fn_006B0140(pAVar5->field_0001,g_module_00807618),
+           (pcVar11 = st::fn_006B0140(pAVar5->field_0001,g_hINSTANCE_00807618),
            pcVar11 != nullptr)) {
           UVar14 = local_8->field_0001;
           goto LAB_005458df;
@@ -1849,15 +1853,15 @@ LAB_005458df:
         break;
       case 3:
         if (pAVar5->field_0005 == 0) {
-          pcVar11 = st::fn_006B0140(0x36b3,g_module_00807618);
-          pcVar12 = st::fn_006B0140(pAVar5->field_0001,g_module_00807618);
+          pcVar11 = st::fn_006B0140(0x36b3,g_hINSTANCE_00807618);
+          pcVar12 = st::fn_006B0140(pAVar5->field_0001,g_hINSTANCE_00807618);
           pcVar26 = wsprintfA_exref;
           st::external_00000080((LPSTR)local_524,"&%d%s\n%s",(message->arg0).words.low,pcVar12,pcVar11);
         }
         else {
-          st::fn_006B0140(0x36b3,g_module_00807618);
-          st::fn_006B0140(pAVar5->field_0005,g_module_00807618);
-          st::fn_006B0140(pAVar5->field_0001,g_module_00807618);
+          st::fn_006B0140(0x36b3,g_hINSTANCE_00807618);
+          st::fn_006B0140(pAVar5->field_0005,g_hINSTANCE_00807618);
+          st::fn_006B0140(pAVar5->field_0001,g_hINSTANCE_00807618);
           pcVar26 = wsprintfA_exref;
           st::external_00000080((LPSTR)local_524,"&%d%s\n%s\n%s");
         }
@@ -1876,12 +1880,12 @@ LAB_005458df:
                      (-(uint)(DAT_0080874e != '\x03') & 0xfffffffe) + 6,sVar7);
         }
         if (0 < *(short *)&pAVar5->field_0xf) {
-          st::fn_006B0140(0x273a,g_module_00807618);
+          st::fn_006B0140(0x273a,g_hINSTANCE_00807618);
           (*pcVar26)();
         }
         break;
       case 4:
-        pcVar11 = st::fn_006B0140(pAVar5->field_0001,g_module_00807618);
+        pcVar11 = st::fn_006B0140(pAVar5->field_0001,g_hINSTANCE_00807618);
         uVar20 = 0xffffffff;
         do {
           pcVar12 = pcVar11;
@@ -1902,7 +1906,7 @@ LAB_005458df:
         }
         st::external_00000080((LPSTR)local_524,"&%d%s",(uint)(message->arg0).words.low,&DAT_0080f33a);
         if (local_8->field_0005 != 0) {
-          pcVar11 = st::fn_006B0140(local_8->field_0005,g_module_00807618);
+          pcVar11 = st::fn_006B0140(local_8->field_0005,g_hINSTANCE_00807618);
           uVar20 = 0xffffffff;
           do {
             pcVar12 = pcVar11;
@@ -1924,12 +1928,12 @@ LAB_005458df:
         }
         piVar24 = &local_8->field_0009;
         if (local_8->field_0009 != 0) {
-          pcVar11 = st::fn_006B0140(0x36c2,g_module_00807618);
+          pcVar11 = st::fn_006B0140(0x36c2,g_hINSTANCE_00807618);
           st::external_00000080((LPSTR)local_524,"%s\n%s",local_524,pcVar11);
           iVar8 = 5;
           do {
             if (*piVar24 != CASE_0) {
-              module = g_module_00807618;
+              module = g_hINSTANCE_00807618;
               UVar14 = st::fn_00404B29((Global_sub_00528060_param_1Enum)*piVar24,
                                           (char)((uint)*piVar24 >> 0x10));
               pcVar11 = st::fn_006B0140(UVar14,module);
@@ -1951,7 +1955,7 @@ switchD_00545816_default:
       local_c = 0.0;
     }
     else if ((&stack0x00000000 != (undefined1 *)0x524) &&
-            (pcVar11 = st::fn_006B0140(UVar14,g_module_00807618), pcVar11 != nullptr)) {
+            (pcVar11 = st::fn_006B0140(UVar14,g_hINSTANCE_00807618), pcVar11 != nullptr)) {
       UVar14 = this_00->field_04DA;
       goto LAB_005458df;
     }
@@ -3087,7 +3091,7 @@ switchD_00546590_caseD_a125:
 }
 
 // 00548C40 CursorClassTy::TakeCmdToRun
-#line 1 "decomp/ST.exe/functions/00548C40/decomp.c"
+#line 4 "decomp/ST.exe/functions/00548C40/decomp.c"
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 /* Recovered from embedded debug metadata:
    E:\__titans\Andrey\to_cursor.cpp
@@ -3968,7 +3972,7 @@ switchD_00548db5_caseD_3:
 }
 
 // 0054AEE0 CursorClassTy::GCGameState
-#line 1 "decomp/ST.exe/functions/0054AEE0/decomp.c"
+#line 4 "decomp/ST.exe/functions/0054AEE0/decomp.c"
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 /* Recovered from embedded debug metadata:
    E:\__titans\Andrey\to_cursor.cpp
@@ -4103,7 +4107,7 @@ LAB_0054b366:
       pSVar6->vfunc_68((short)&local_30);
       if (this_00->field_049E != local_30) {
         this_00->field_049E = local_30;
-        module = g_module_00807618;
+        module = g_hINSTANCE_00807618;
         resourceId = st::fn_00403684(local_2c,(char)local_28,0);
         pcVar7 = st::fn_006B0140(resourceId,module);
         uVar11 = 0xffffffff;
@@ -4185,7 +4189,7 @@ LAB_0054b372:
 }
 
 // 0054BE70 CPanelTy::OutProc
-#line 1 "decomp/ST.exe/functions/0054BE70/decomp.c"
+#line 4 "decomp/ST.exe/functions/0054BE70/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\Andrey\to_cursor.cpp
    CPanelTy::OutProc
@@ -4221,7 +4225,7 @@ st::fn_0054BE70(CPanelTy *this,DDXContext *param_1,undefined4 param_2,undefined4
 }
 
 // 0054BF40 CursorClassTy::SetGCType
-#line 1 "decomp/ST.exe/functions/0054BF40/decomp.c"
+#line 4 "decomp/ST.exe/functions/0054BF40/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\Andrey\to_cursor.cpp
    CursorClassTy::SetGCType

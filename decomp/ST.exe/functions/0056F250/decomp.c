@@ -84,7 +84,7 @@ LAB_0056f325:
       }
       pcVar8 = local_14;
       if ((param_1 == '\0') || (param_1 == '\x03')) {
-        Library::Ourlib::MFSTMAP::mfTMapSave(DAT_00806750,(int)local_14,"3D_MAP",'\x01');
+        Library::Ourlib::MFSTMAP::mfTMapSave(PTR_00806750,(int)local_14,"3D_MAP",'\x01');
         pvVar2 = local_10;
         Library::Ourlib::MFANY::mfAnySave
                   (STField<byte *>(local_10,0x7d12),STField<uint>(local_10,0x7d16),(int)pcVar8,

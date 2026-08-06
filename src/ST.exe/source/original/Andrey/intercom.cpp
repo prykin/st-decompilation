@@ -2,7 +2,7 @@
 // Generated translation unit: source/original/Andrey/intercom.cpp
 
 // 00521900 IntercomPanelTy::PreInitIntercomPanel
-#line 1 "decomp/ST.exe/functions/00521900/decomp.c"
+#line 4 "decomp/ST.exe/functions/00521900/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\Andrey\intercom.cpp
    IntercomPanelTy::PreInitIntercomPanel */
@@ -40,7 +40,7 @@ void __thiscall st::fn_00521900(IntercomPanelTy *this)
 }
 
 // 005219E0 IntercomPanelTy::InitIntercomPanel
-#line 1 "decomp/ST.exe/functions/005219E0/decomp.c"
+#line 4 "decomp/ST.exe/functions/005219E0/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\Andrey\intercom.cpp
    IntercomPanelTy::InitIntercomPanel */
@@ -88,7 +88,7 @@ void __thiscall st::fn_005219E0(IntercomPanelTy *this)
           );
     pDVar8 = st::fn_006B54F0(nullptr,1,1);
     pIVar2->field_0198 = pDVar8;
-    st::fn_006B6020(&pDVar8->flags,0,&DAT_008016a0);
+    st::fn_006B6020(pDVar8,0,&DAT_008016a0);
     g_currentExceptionFrame = local_4c.previous;
     return;
   }
@@ -103,7 +103,7 @@ void __thiscall st::fn_005219E0(IntercomPanelTy *this)
 }
 
 // 00521B90 IntercomPanelTy::DoneIntercomPanel
-#line 1 "decomp/ST.exe/functions/00521B90/decomp.c"
+#line 4 "decomp/ST.exe/functions/00521B90/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\Andrey\intercom.cpp
    IntercomPanelTy::DoneIntercomPanel */
@@ -156,7 +156,7 @@ void __thiscall st::fn_00521B90(IntercomPanelTy *this)
 }
 
 // 00522D40 IntercomPanelTy::SwitchIntercomPanel
-#line 1 "decomp/ST.exe/functions/00522D40/decomp.c"
+#line 4 "decomp/ST.exe/functions/00522D40/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\Andrey\intercom.cpp
    IntercomPanelTy::SwitchIntercomPanel
@@ -222,7 +222,7 @@ LAB_00522dd6:
 }
 
 // 00522E80 IntercomPanelTy::GetMessage
-#line 1 "decomp/ST.exe/functions/00522E80/decomp.c"
+#line 4 "decomp/ST.exe/functions/00522E80/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\Andrey\intercom.cpp
    IntercomPanelTy::GetMessage
@@ -369,7 +369,7 @@ int __thiscall st::fn_00522E80(IntercomPanelTy *this,STMessage *message)
       return 0;
     }
     st::fn_00403120((AnonShape_00521CF0_154649D2 *)this_00);
-    st::fn_006B6020(&this_00->field_0198->flags,0,&DAT_008016a0);
+    st::fn_006B6020(this_00->field_0198,0,&DAT_008016a0);
     this_00->field_0028 = 0x33;
     this_00->field_002C = this_00->field_0198;
     st::fn_006E6080(this_00,2,this_00->field_01A0,(undefined4 *)&this_00->field_0x18);

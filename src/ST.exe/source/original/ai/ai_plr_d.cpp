@@ -2,7 +2,7 @@
 // Generated translation unit: source/original/ai/ai_plr_d.cpp
 
 // 0067CF30 FUN_0067cf30
-#line 1 "decomp/ST.exe/functions/0067CF30/decomp.c"
+#line 4 "decomp/ST.exe/functions/0067CF30/decomp.c"
 /* [STSourceProvenanceApplier begin]
    Recovered source file: E:\__titans\ai\ai_plr_d.cpp
    Diagnostic line evidence: 40 (metadata/report site, not the function definition)
@@ -53,7 +53,7 @@ undefined4 * __cdecl st::fn_0067CF30(char *source,undefined2 param_2,char *param
 }
 
 // 0067D1D0 FUN_0067d1d0
-#line 1 "decomp/ST.exe/functions/0067D1D0/decomp.c"
+#line 4 "decomp/ST.exe/functions/0067D1D0/decomp.c"
 /* [STSourceProvenanceApplier begin]
    Recovered source file: E:\__titans\ai\ai_plr_d.cpp
    Diagnostic line evidence: 119 (metadata/report site, not the function definition)
@@ -148,7 +148,7 @@ AllocationRecord_0067D1D0 * __cdecl st::fn_0067D1D0(AllocationRecord_0067D1D0 *p
 }
 
 // 0067D3B0 PlrDataPack
-#line 1 "decomp/ST.exe/functions/0067D3B0/decomp.c"
+#line 4 "decomp/ST.exe/functions/0067D3B0/decomp.c"
 /* [STSourceProvenanceApplier begin]
    Recovered source file: E:\__titans\ai\ai_plr_d.cpp
    Diagnostic line evidence: 218 | 219 (metadata/report site, not the function definition)
@@ -399,7 +399,7 @@ st::fn_0067D3B0(AllocationRecord_0067D3B0 *param_1,undefined4 *param_2,int param
 }
 
 // 0067D880 LoadPlrEdit
-#line 1 "decomp/ST.exe/functions/0067D880/decomp.c"
+#line 4 "decomp/ST.exe/functions/0067D880/decomp.c"
 /* [STSourceProvenanceApplier begin]
    Recovered source file: E:\__titans\ai\ai_plr_d.cpp
    Diagnostic line evidence: 238 | 245 | 247 (metadata/report site, not the function definition)
@@ -447,7 +447,7 @@ undefined4 * __cdecl st::fn_0067D880(int param_1,char *param_2)
 }
 
 // 0067D9C0 SavePlrEdit
-#line 1 "decomp/ST.exe/functions/0067D9C0/decomp.c"
+#line 4 "decomp/ST.exe/functions/0067D9C0/decomp.c"
 /* [STSourceProvenanceApplier begin]
    Recovered source file: E:\__titans\ai\ai_plr_d.cpp
    Diagnostic line evidence: 267 | 274 | 277 (metadata/report site, not the function definition)
@@ -496,7 +496,7 @@ int __cdecl st::fn_0067D9C0(int param_1,char *param_2,AnonShape_0067D9C0_2E8A225
 }
 
 // 0067DB30 DelPlrEdit
-#line 1 "decomp/ST.exe/functions/0067DB30/decomp.c"
+#line 4 "decomp/ST.exe/functions/0067DB30/decomp.c"
 /* [STSourceProvenanceApplier begin]
    Recovered source file: E:\__titans\ai\ai_plr_d.cpp
    Diagnostic line evidence: 291 | 294 | 295 (metadata/report site, not the function definition)
@@ -532,7 +532,7 @@ int __cdecl st::fn_0067DB30(int param_1,char *param_2)
 }
 
 // 0067DC20 _CreateStgListByRoot
-#line 1 "decomp/ST.exe/functions/0067DC20/decomp.c"
+#line 4 "decomp/ST.exe/functions/0067DC20/decomp.c"
 /* [STSourceProvenanceApplier begin]
    Recovered source file: E:\__titans\ai\ai_plr_d.cpp
    Diagnostic line evidence: 319 | 342 | 344 (metadata/report site, not the function definition)
@@ -638,7 +638,7 @@ uint * __cdecl st::fn_0067DC20(cMf32 *param_1,int param_2,char *param_3,uint par
 }
 
 // 0067DEC0 CreateAssistantList
-#line 1 "decomp/ST.exe/functions/0067DEC0/decomp.c"
+#line 4 "decomp/ST.exe/functions/0067DEC0/decomp.c"
 /* [STSourceProvenanceApplier begin]
    Recovered source file: E:\__titans\ai\ai_plr_d.cpp
    Diagnostic line evidence: 363 | 366 | 368 (metadata/report site, not the function definition)
@@ -678,7 +678,7 @@ uint * __cdecl st::fn_0067DEC0(int param_1,int param_2,uint param_3)
 }
 
 // 0067DFD0 CreateOpponentList
-#line 1 "decomp/ST.exe/functions/0067DFD0/decomp.c"
+#line 4 "decomp/ST.exe/functions/0067DFD0/decomp.c"
 /* [STSourceProvenanceApplier begin]
    Recovered source file: E:\__titans\ai\ai_plr_d.cpp
    Diagnostic line evidence: 385 | 388 | 390 (metadata/report site, not the function definition)
@@ -722,7 +722,7 @@ uint * __cdecl st::fn_0067DFD0(cMf32 *param_1,int param_2,uint param_3)
 }
 
 // 0067E0E0 CreateStrategList
-#line 1 "decomp/ST.exe/functions/0067E0E0/decomp.c"
+#line 4 "decomp/ST.exe/functions/0067E0E0/decomp.c"
 /* [STSourceProvenanceApplier begin]
    Recovered source file: E:\__titans\ai\ai_plr_d.cpp
    Diagnostic line evidence: 407 | 410 | 412 (metadata/report site, not the function definition)
@@ -764,7 +764,7 @@ uint * __cdecl st::fn_0067E0E0(int param_1,int param_2,uint param_3)
 }
 
 // 0067E200 CreateSaveStrategList
-#line 1 "decomp/ST.exe/functions/0067E200/decomp.c"
+#line 4 "decomp/ST.exe/functions/0067E200/decomp.c"
 /* [STSourceProvenanceApplier begin]
    Recovered source file: E:\__titans\ai\ai_plr_d.cpp
    Diagnostic line evidence: 429 | 432 | 434 (metadata/report site, not the function definition)
@@ -806,7 +806,7 @@ uint * __cdecl st::fn_0067E200(int param_1,int param_2,uint param_3)
 }
 
 // 0067E320 GetStrategNameDB
-#line 1 "decomp/ST.exe/functions/0067E320/decomp.c"
+#line 4 "decomp/ST.exe/functions/0067E320/decomp.c"
 /* [STSourceProvenanceApplier begin]
    Recovered source file: E:\__titans\ai\ai_plr_d.cpp
    Diagnostic line evidence: 451 | 455 | 456 (metadata/report site, not the function definition)
@@ -871,7 +871,7 @@ LPSTR __cdecl st::fn_0067E320(int param_1,int param_2)
 }
 
 // 0067E4A0 GetStrategName
-#line 1 "decomp/ST.exe/functions/0067E4A0/decomp.c"
+#line 4 "decomp/ST.exe/functions/0067E4A0/decomp.c"
 /* [STSourceProvenanceApplier begin]
    Recovered source file: E:\__titans\ai\ai_plr_d.cpp
    Diagnostic line evidence: 473 | 474 (metadata/report site, not the function definition)
@@ -906,7 +906,7 @@ LPSTR __cdecl st::fn_0067E4A0(undefined4 param_1,undefined4 param_2)
 }
 
 // 0067E580 GetAssistantNameDB
-#line 1 "decomp/ST.exe/functions/0067E580/decomp.c"
+#line 4 "decomp/ST.exe/functions/0067E580/decomp.c"
 /* [STSourceProvenanceApplier begin]
    Recovered source file: E:\__titans\ai\ai_plr_d.cpp
    Diagnostic line evidence: 488 | 491 | 492 (metadata/report site, not the function definition)
@@ -957,7 +957,7 @@ LPSTR __cdecl st::fn_0067E580(cMf32 *param_1)
 }
 
 // 0067E6B0 GetOpponentNameDB
-#line 1 "decomp/ST.exe/functions/0067E6B0/decomp.c"
+#line 4 "decomp/ST.exe/functions/0067E6B0/decomp.c"
 /* [STSourceProvenanceApplier begin]
    Recovered source file: E:\__titans\ai\ai_plr_d.cpp
    Diagnostic line evidence: 506 | 509 | 510 (metadata/report site, not the function definition)
@@ -1008,7 +1008,7 @@ LPSTR __cdecl st::fn_0067E6B0(cMf32 *param_1)
 }
 
 // 0067E7E0 CreateArbList
-#line 1 "decomp/ST.exe/functions/0067E7E0/decomp.c"
+#line 4 "decomp/ST.exe/functions/0067E7E0/decomp.c"
 /* [STSourceProvenanceApplier begin]
    Recovered source file: E:\__titans\ai\ai_plr_d.cpp
    Diagnostic line evidence: 534 | 581 | 584 (metadata/report site, not the function definition)

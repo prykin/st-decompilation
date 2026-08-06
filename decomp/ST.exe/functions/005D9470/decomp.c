@@ -315,7 +315,7 @@ LAB_005d97ca:
           pcVar13 = nullptr;
         }
       }
-      Library::DKW::TBL::FUN_006b6020(&pDVar23->flags,0,pcVar13);
+      Library::DKW::TBL::FUN_006b6020(pDVar23,0,pcVar13);
       uVar16 = this_00->field_1AF1[1];
       this_00->field_002D = 0x33;
       this_00->field_0031 = this_00->field_1CD0;
@@ -386,7 +386,7 @@ LAB_005d97ca:
     uVar16 = ((message->arg0).words.low != 1) + 2;
     iVar25 = -1;
     iVar11 = -1;
-    puVar15 = (uint *)LoadResourceString(resourceId,g_module_00807618);
+    puVar15 = (uint *)LoadResourceString(resourceId,g_hINSTANCE_00807618);
     ccFntTy::WrStr(g_startSystem_0081176C->field_0034,puVar15,iVar11,iVar25,uVar16);
   }
   FUN_006b35d0((int *)g_ddxContext_008075A8,this_00->field_1CB4);

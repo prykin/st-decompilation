@@ -62,21 +62,21 @@ LAB_005a3b63:
         pbVar3 = thunk_FUN_0055d590("Profile\\Age",param_2,param_3);
         this_01 = local_14;
         if (pbVar3 != nullptr) {
-          Library::DKW::TBL::FUN_006b6020(&local_14->field_1AF8->flags,0,(char *)pbVar3);
+          Library::DKW::TBL::FUN_006b6020(local_14->field_1AF8,0,(char *)pbVar3);
           *(DArrayTy **)&this_01->field_0x31 = this_01->field_1AF8;
           this_01->field_002D = 0x33;
           FUN_006e6080(this_01,2,this_01->field_1AD8,(undefined4 *)&this_01->field_0x1d);
         }
         pbVar3 = thunk_FUN_0055d590("Profile\\Sex",param_2,param_3);
         if (pbVar3 != nullptr) {
-          Library::DKW::TBL::FUN_006b6020(&this_01->field_1AFC->flags,0,(char *)pbVar3);
+          Library::DKW::TBL::FUN_006b6020(this_01->field_1AFC,0,(char *)pbVar3);
           this_01->field_002D = 0x33;
           *(DArrayTy **)&this_01->field_0x31 = this_01->field_1AFC;
           FUN_006e6080(this_01,2,this_01->field_1ADC,(undefined4 *)&this_01->field_0x1d);
         }
         pbVar3 = thunk_FUN_0055d590("Profile\\Location",param_2,param_3);
         if (pbVar3 != nullptr) {
-          Library::DKW::TBL::FUN_006b6020(&this_01->field_1B00->flags,0,(char *)pbVar3);
+          Library::DKW::TBL::FUN_006b6020(this_01->field_1B00,0,(char *)pbVar3);
           this_01->field_002D = 0x33;
           *(DArrayTy **)&this_01->field_0x31 = this_01->field_1B00;
           FUN_006e6080(this_01,2,this_01->field_1AE0,(undefined4 *)&this_01->field_0x1d);

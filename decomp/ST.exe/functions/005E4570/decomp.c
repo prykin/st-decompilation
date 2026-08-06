@@ -404,7 +404,7 @@ LAB_005e496b:
         uVar18 = (uint)local_14 & 0xff;
         iVar22 = -1;
         iVar9 = 0;
-        puVar13 = (uint *)LoadResourceString((UINT)puVar11,g_module_00807618);
+        puVar13 = (uint *)LoadResourceString((UINT)puVar11,g_hINSTANCE_00807618);
         ccFntTy::WrStr(this_00->field_008D,puVar13,iVar9,iVar22,uVar18);
         FUN_006b35d0((int *)g_ddxContext_008075A8,this_00->field_02BD[*local_c + -1]);
       }

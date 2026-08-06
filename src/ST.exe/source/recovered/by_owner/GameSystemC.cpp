@@ -2,7 +2,7 @@
 // Generated translation unit: source/recovered/by_owner/GameSystemC.cpp
 
 // 00576DD0 GameSystemC::GameSystemC
-#line 1 "decomp/ST.exe/functions/00576DD0/decomp.c"
+#line 4 "decomp/ST.exe/functions/00576DD0/decomp.c"
 /* [STPrototypeApplier] Propagated parameter 1.
    Evidence: 00577280 -> 00576DD0 @ 005772CA
 
@@ -18,14 +18,14 @@ GameSystemC * __thiscall st::fn_00576DD0(GameSystemC *this,AppClassTy *param_1)
 
 {
   st::fn_006E51C0((SystemClassTy *)this,param_1,1);
-  this->vtable = &GameSystemCVTable;
+  this->vtable = &st_global_0079B1E0;
   this->field_0430 = 1;
   this->field_0431 = nullptr;
   return this;
 }
 
 // 00577690 GameSystemC::sub_00577690
-#line 1 "decomp/ST.exe/functions/00577690/decomp.c"
+#line 4 "decomp/ST.exe/functions/00577690/decomp.c"
 /* [STMethodOwnerApplier] Structural method owner recovered as GameSystemC.
    Evidence: this_call_owners=[GameSystemC]; agreed_this_calls=2; incoming_this_accesses=4;
    incoming_edx_uses=0; incoming_stack_parameter_uses=0; direct_non_thunk_callers=0;

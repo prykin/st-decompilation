@@ -66,11 +66,11 @@ void __thiscall InfocPanelTy::InitInfocPanel(InfocPanelTy *this)
     SpecPanelTy::InitPanel
               ((SpecPanelTy *)this_00,pCVar3,iVar6,uVar8,iVar9,iVar12,UVar13,uVar14,uVar15);
     puVar4 = Library::Ourlib::MFRLOAD::mfRLoad
-                       (DAT_00806794,CASE_B,"BUT_CHPLAYER",0xffffffff,0,1,0,
+                       (PTR_00806794,CASE_B,"BUT_CHPLAYER",0xffffffff,0,1,0,
                         nullptr);
     this_00->field_03C4 = puVar4;
     puVar4 = Library::Ourlib::MFRLOAD::mfRLoad
-                       (DAT_00806794,CASE_B,"GAME_ALLY",0xffffffff,0,1,0,nullptr);
+                       (PTR_00806794,CASE_B,"GAME_ALLY",0xffffffff,0,1,0,nullptr);
     this_00->field_03C8 = puVar4;
     puVar16 = nullptr;
     iVar9 = 0;
@@ -79,7 +79,7 @@ void __thiscall InfocPanelTy::InitInfocPanel(InfocPanelTy *this)
     uVar10 = 0xffffffff;
     pCVar3 = thunk_FUN_00571240("IND_PNT",0);
     puVar4 = Library::Ourlib::MFRLOAD::mfRLoad
-                       (DAT_00806794,CASE_B,pCVar3,uVar10,bVar11,iVar6,iVar9,puVar16);
+                       (PTR_00806794,CASE_B,pCVar3,uVar10,bVar11,iVar6,iVar9,puVar16);
     this_00->field_03CC = puVar4;
     pcVar5 = (ccFntTy *)ccFntTy::operator_new(0x19d,g_cMf32_00806790,"MONEY_FONT",0);
     this_00->field_03D5 = pcVar5;

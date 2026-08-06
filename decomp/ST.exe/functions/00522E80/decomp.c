@@ -147,7 +147,7 @@ int __thiscall IntercomPanelTy::GetMessage(IntercomPanelTy *this,STMessage *mess
       return 0;
     }
     thunk_FUN_00521cf0((AnonShape_00521CF0_154649D2 *)this_00);
-    Library::DKW::TBL::FUN_006b6020(&this_00->field_0198->flags,0,&DAT_008016a0);
+    Library::DKW::TBL::FUN_006b6020(this_00->field_0198,0,&DAT_008016a0);
     this_00->field_0028 = 0x33;
     this_00->field_002C = this_00->field_0198;
     FUN_006e6080(this_00,2,this_00->field_01A0,(undefined4 *)&this_00->field_0x18);

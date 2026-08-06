@@ -2,7 +2,7 @@
 // Generated translation unit: source/recovered/by_owner/STDestC.cpp
 
 // 006023F0 STDestC::STDestC
-#line 1 "decomp/ST.exe/functions/006023F0/decomp.c"
+#line 4 "decomp/ST.exe/functions/006023F0/decomp.c"
 /* [STConstructorApplier] Recovered constructor candidate.
    VTable: 0079C9B0 (store 00602419)
    Evidence: final_vptr=0079C9B0; returns_this=true; calls_before=2; field_writes_after=0;
@@ -17,14 +17,14 @@ STDestC * __thiscall st::fn_006023F0(STDestC *this)
 
   st::fn_00401933((STGameObjC *)this);
   st::fn_00401316((AnonShape_004AB810_8E5693D5 *)&this->field_01D5);
-  this->field_01D5 = &VTable_0079CB10;
-  this->vtable = &STDestCVTable;
+  this->field_01D5 = &st_global_0079CB10;
+  this->vtable = &st_global_0079C9B0;
   memset(&this->field_0x231, 0, 0x17e); /* compiler bulk-zero initialization */
   return this;
 }
 
 // 00602440 STDestC::sub_00602440
-#line 1 "decomp/ST.exe/functions/00602440/decomp.c"
+#line 4 "decomp/ST.exe/functions/00602440/decomp.c"
 /* [STMethodOwnerApplier] Structural method owner recovered as STDestC.
    Evidence: this_call_owners=[STDestC]; agreed_this_calls=4; incoming_this_accesses=2;
    incoming_edx_uses=0; incoming_stack_parameter_uses=0; direct_non_thunk_callers=0;
@@ -51,7 +51,7 @@ void __thiscall st::fn_00602440(STDestC *this)
 }
 
 // 006024B0 STDestC::sub_006024B0
-#line 1 "decomp/ST.exe/functions/006024B0/decomp.c"
+#line 4 "decomp/ST.exe/functions/006024B0/decomp.c"
 /* [STMethodOwnerApplier] Structural method owner recovered as STDestC.
    Evidence: this_call_owners=[STDestC]; agreed_this_calls=1; incoming_this_accesses=23;
    incoming_edx_uses=0; incoming_stack_parameter_uses=0; direct_non_thunk_callers=0;
@@ -86,7 +86,7 @@ void __thiscall st::fn_006024B0(STDestC *this)
 }
 
 // 006025D0 STDestC::sub_006025D0
-#line 1 "decomp/ST.exe/functions/006025D0/decomp.c"
+#line 4 "decomp/ST.exe/functions/006025D0/decomp.c"
 /* [STPrototypeRepairApplier] Propagated return.
    Evidence: 006025D0 returns used as parameter 2 of STPlaySystemC::SaveObjData @ 006021E2
 
@@ -119,7 +119,7 @@ byte * __thiscall st::fn_006025D0(STDestC *this,undefined4 *param_1)
 }
 
 // 00602660 STDestC::sub_00602660
-#line 1 "decomp/ST.exe/functions/00602660/decomp.c"
+#line 4 "decomp/ST.exe/functions/00602660/decomp.c"
 /* [STMethodOwnerApplier] Structural method owner recovered as STDestC.
    Evidence: this_call_owners=[STDestC]; agreed_this_calls=1; incoming_this_accesses=14;
    incoming_edx_uses=0; incoming_stack_parameter_uses=1; direct_non_thunk_callers=0;
@@ -145,7 +145,7 @@ undefined4 __thiscall st::fn_00602660(STDestC *this,undefined4 *param_1)
 }
 
 // 00602BE0 STDestC::sub_00602BE0
-#line 1 "decomp/ST.exe/functions/00602BE0/decomp.c"
+#line 4 "decomp/ST.exe/functions/00602BE0/decomp.c"
 /* [STMethodOwnerApplier] Structural method owner recovered as STDestC.
    Evidence: this_call_owners=[STDestC]; agreed_this_calls=2; incoming_this_accesses=27;
    incoming_edx_uses=0; incoming_stack_parameter_uses=0; direct_non_thunk_callers=0;
@@ -227,7 +227,7 @@ void __thiscall st::fn_00602BE0(STDestC *this)
 }
 
 // 00602E90 STDestC::sub_00602E90
-#line 1 "decomp/ST.exe/functions/00602E90/decomp.c"
+#line 4 "decomp/ST.exe/functions/00602E90/decomp.c"
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 /* [STHiddenThisApplier] Anonymous hidden receiver recovered as
    /SubmarineTitans/Recovered/HiddenThis/AnonReceiver_00602E90.
@@ -265,7 +265,7 @@ undefined4 * __thiscall st::fn_00602E90(STDestC *this)
       text = (&PTR_s_Dest1_0_007cebec)[local_c->field_0372];
     }
     puVar3 = st::fn_00709AF0
-                       (DAT_00806774,CASE_1D,text,0xffffffff,0,1,0,nullptr);
+                       (PTR_00806774,CASE_1D,text,0xffffffff,0,1,0,nullptr);
     if (puVar3 != nullptr) {
       if (pSVar1->field_0241 == 0) {
         local_8 = st::fn_006E9000
@@ -292,7 +292,7 @@ undefined4 * __thiscall st::fn_00602E90(STDestC *this)
 }
 
 // 00603120 STDestC::sub_00603120
-#line 1 "decomp/ST.exe/functions/00603120/decomp.c"
+#line 4 "decomp/ST.exe/functions/00603120/decomp.c"
 /* [STMethodOwnerApplier] Structural method owner recovered as STDestC.
    Evidence: this_call_owners=[STDestC]; agreed_this_calls=1; incoming_this_accesses=8;
    incoming_edx_uses=0; incoming_stack_parameter_uses=0; direct_non_thunk_callers=0;

@@ -2,7 +2,7 @@
 // Generated translation unit: source/original/Start/wait_obj.cpp
 
 // 005E6640 ChooseMapTy::OutListProc
-#line 1 "decomp/ST.exe/functions/005E6640/decomp.c"
+#line 4 "decomp/ST.exe/functions/005E6640/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\Start\wait_obj.cpp
    ChooseMapTy::OutListProc */
@@ -57,7 +57,7 @@ st::fn_005E6640
 }
 
 // 005E6770 WaitTy::InitWait
-#line 1 "decomp/ST.exe/functions/005E6770/decomp.c"
+#line 4 "decomp/ST.exe/functions/005E6770/decomp.c"
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 /* Recovered from embedded debug metadata:
    E:\__titans\Start\wait_obj.cpp
@@ -463,7 +463,7 @@ void __thiscall st::fn_005E6770(WaitTy *this,undefined4 param_1,undefined4 param
 }
 
 // 005E7570 WaitTy::DoneWait
-#line 1 "decomp/ST.exe/functions/005E7570/decomp.c"
+#line 4 "decomp/ST.exe/functions/005E7570/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\Start\wait_obj.cpp
    WaitTy::DoneWait */
@@ -593,7 +593,7 @@ void __thiscall st::fn_005E7570(WaitTy *this)
 }
 
 // 005E79B0 WaitTy::PaintWait
-#line 1 "decomp/ST.exe/functions/005E79B0/decomp.c"
+#line 4 "decomp/ST.exe/functions/005E79B0/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\Start\wait_obj.cpp
    WaitTy::PaintWait */
@@ -657,7 +657,7 @@ void __thiscall st::fn_005E79B0(WaitTy *this,char param_1)
     pcVar6 = g_startSystem_0081176C->field_0030;
     uVar5 = 0xffffffff;
     uVar4 = 0xfffffffe;
-    resourceString = (uint *)st::fn_006B0140(0x26ae,g_module_00807618);
+    resourceString = (uint *)st::fn_006B0140(0x26ae,g_hINSTANCE_00807618);
     st::fn_00404C2D(this_02,0,0xe9,0x14,0x14c,0x18,resourceString,uVar4,uVar5,pcVar6,uVar7);
     g_currentExceptionFrame = local_4c.previous;
     return;
@@ -673,7 +673,7 @@ void __thiscall st::fn_005E79B0(WaitTy *this,char param_1)
 }
 
 // 005E7C00 WaitTy::AddStr
-#line 1 "decomp/ST.exe/functions/005E7C00/decomp.c"
+#line 4 "decomp/ST.exe/functions/005E7C00/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\Start\wait_obj.cpp
    WaitTy::AddStr
@@ -822,7 +822,7 @@ LAB_005e7d14:
 }
 
 // 005E7FE0 WaitTy::ShowDescription
-#line 1 "decomp/ST.exe/functions/005E7FE0/decomp.c"
+#line 4 "decomp/ST.exe/functions/005E7FE0/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\Start\wait_obj.cpp
    WaitTy::ShowDescription */
@@ -878,8 +878,8 @@ void __thiscall st::fn_005E7FE0(WaitTy *this)
   this_00 = local_8;
   g_startSystem_0081176C->field_0548 = &pDVar7->flags;
   if (local_8->field_1A8F == -1) {
-    pcVar8 = st::fn_006B0140(0x252c,g_module_00807618);
-    pcVar9 = st::fn_006B0140(0x252a,g_module_00807618);
+    pcVar8 = st::fn_006B0140(0x252c,g_hINSTANCE_00807618);
+    pcVar9 = st::fn_006B0140(0x252a,g_hINSTANCE_00807618);
     st::external_00000080((LPSTR)&DAT_0080f33a,"%s (%s)",pcVar9,pcVar8);
     iVar5 = 0;
     puVar11 = &DAT_0080f33a;
@@ -906,19 +906,19 @@ void __thiscall st::fn_005E7FE0(WaitTy *this)
         local_c = 1;
         st::fn_0072E730(&DAT_0080ed16,nullptr,nullptr,local_1a8,nullptr);
         pbVar12 = local_1a8;
-        pcVar8 = st::fn_006B0140(0x252a,g_module_00807618);
+        pcVar8 = st::fn_006B0140(0x252a,g_hINSTANCE_00807618);
         st::external_00000080((LPSTR)&DAT_0080f33a,"%s (%s)",pcVar8,pbVar12);
         st::fn_0040245A(this_00,&DAT_0080f33a,0);
         st::fn_006F1170(pcVar4);
       }
       goto LAB_005e829d;
     }
-    pcVar8 = st::fn_006B0140(0x252b,g_module_00807618);
-    pcVar9 = st::fn_006B0140(0x252a,g_module_00807618);
+    pcVar8 = st::fn_006B0140(0x252b,g_hINSTANCE_00807618);
+    pcVar9 = st::fn_006B0140(0x252a,g_hINSTANCE_00807618);
     st::external_00000080((LPSTR)&DAT_0080f33a,"%s (%s)",pcVar9,pcVar8);
     st::fn_0040245A(this_00,&DAT_0080f33a,0);
     iVar5 = 0;
-    puVar11 = (uint *)st::fn_006B0140(0x252d,g_module_00807618);
+    puVar11 = (uint *)st::fn_006B0140(0x252d,g_hINSTANCE_00807618);
   }
   st::fn_0040245A(this_00,puVar11,iVar5);
 LAB_005e829d:
@@ -948,7 +948,7 @@ LAB_005e829d:
 }
 
 // 005E84D0 WaitTy::NoneWait
-#line 1 "decomp/ST.exe/functions/005E84D0/decomp.c"
+#line 4 "decomp/ST.exe/functions/005E84D0/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\Start\wait_obj.cpp
    WaitTy::NoneWait
@@ -1258,7 +1258,7 @@ LAB_005e8ee0:
                   pbVar11 = st::fn_006AAC10(uVar15);
                   *value = pbVar11;
                   uVar24 = 0;
-                  pcVar12 = st::fn_006B0140(0x252f,g_module_00807618);
+                  pcVar12 = st::fn_006B0140(0x252f,g_hINSTANCE_00807618);
                   st::external_00000080((LPSTR)&DAT_0080f33a,pcVar12,uVar24);
                   st::fn_0040245A(this_01,&DAT_0080f33a,0);
                 }
@@ -1286,7 +1286,7 @@ LAB_005e8ee0:
                     this_01->field_1A7F = this_01->field_1A7F - 1;
                     uVar15 = this_01->field_1A5B->field_06A6;
                     uVar15 = (uVar15 * 100 + this_01->field_1A7F * -100) / uVar15;
-                    pcVar12 = st::fn_006B0140(0x252f,g_module_00807618);
+                    pcVar12 = st::fn_006B0140(0x252f,g_hINSTANCE_00807618);
                     st::external_00000080((LPSTR)&DAT_0080f33a,pcVar12,uVar15);
                     st::fn_0040245A(this_01,&DAT_0080f33a,1);
                   }
@@ -1531,7 +1531,7 @@ LAB_005e91f7:
 }
 
 // 005E9830 WaitTy::CloseButtons
-#line 1 "decomp/ST.exe/functions/005E9830/decomp.c"
+#line 4 "decomp/ST.exe/functions/005E9830/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\Start\wait_obj.cpp
    WaitTy::CloseButtons */
@@ -1577,7 +1577,7 @@ void __thiscall st::fn_005E9830(WaitTy *this)
 }
 
 // 005E9B50 WaitTy::CreateCtrls
-#line 1 "decomp/ST.exe/functions/005E9B50/decomp.c"
+#line 4 "decomp/ST.exe/functions/005E9B50/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\Start\wait_obj.cpp
    WaitTy::CreateCtrls */
@@ -1660,7 +1660,7 @@ void __thiscall st::fn_005E9B50(WaitTy *this)
 }
 
 // 005E9D70 WaitTy::DeleteCtrls
-#line 1 "decomp/ST.exe/functions/005E9D70/decomp.c"
+#line 4 "decomp/ST.exe/functions/005E9D70/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\Start\wait_obj.cpp
    WaitTy::DeleteCtrls */
@@ -1933,7 +1933,7 @@ void __thiscall st::fn_005E9D70(WaitTy *this)
 }
 
 // 005EA680 WaitTy::GetMessage
-#line 1 "decomp/ST.exe/functions/005EA680/decomp.c"
+#line 4 "decomp/ST.exe/functions/005EA680/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\Start\wait_obj.cpp
    WaitTy::GetMessage
@@ -2193,7 +2193,7 @@ int __thiscall st::fn_005EA680(WaitTy *this,STMessage *message)
     st::fn_00715360(g_int_00811764,0,'\x1b',local_4a4,0x451,1,0xffffffff);
   }
 LAB_005eab28:
-  st::fn_006B6020(&this_02->field_1A5B->field_0686->flags,0,&DAT_008016a0);
+  st::fn_006B6020(this_02->field_1A5B->field_0686,0,&DAT_008016a0);
   this_02->field_002D = 0x33;
   *(DArrayTy **)&this_02->field_0x31 = this_02->field_1A5B->field_0686;
   st::fn_006E6080(this_02,2,this_02->field_1A5B->field_054C,(undefined4 *)&this_02->field_0x1d);

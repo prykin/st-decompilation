@@ -2,7 +2,7 @@
 // Generated translation unit: source/recovered/by_owner/TLOEmbryoTy.cpp
 
 // 00419C70 TLOEmbryoTy::sub_00419C70
-#line 1 "decomp/ST.exe/functions/00419C70/decomp.c"
+#line 4 "decomp/ST.exe/functions/00419C70/decomp.c"
 /* [STMethodOwnerApplier] Structural method owner recovered as TLOEmbryoTy.
    Evidence: this_call_owners=[TLOEmbryoTy]; agreed_this_calls=1; incoming_this_accesses=6;
    incoming_edx_uses=0; incoming_stack_parameter_uses=1; direct_non_thunk_callers=0;
@@ -29,7 +29,7 @@ undefined4 __fastcall st::fn_00419C70(int *param_1,undefined4 param_2,int param_
 }
 
 // 00419CF0 TLOEmbryoTy::sub_00419CF0
-#line 1 "decomp/ST.exe/functions/00419CF0/decomp.c"
+#line 4 "decomp/ST.exe/functions/00419CF0/decomp.c"
 /* [STMethodOwnerApplier] Structural method owner recovered as TLOEmbryoTy.
    Evidence: this_call_owners=[TLOEmbryoTy]; agreed_this_calls=1; incoming_this_accesses=2;
    incoming_edx_uses=0; incoming_stack_parameter_uses=1; direct_non_thunk_callers=0;
@@ -49,7 +49,7 @@ void __fastcall st::fn_00419CF0(int *param_1,undefined4 param_2,uint param_3)
 }
 
 // 0041C3F0 TLOEmbryoTy::sub_0041C3F0
-#line 1 "decomp/ST.exe/functions/0041C3F0/decomp.c"
+#line 4 "decomp/ST.exe/functions/0041C3F0/decomp.c"
 /* [STMethodOwnerApplier] Structural method owner recovered as TLOEmbryoTy.
    Evidence: this_call_owners=[TLOEmbryoTy]; agreed_this_calls=1; incoming_this_accesses=27;
    incoming_edx_uses=0; incoming_stack_parameter_uses=1; direct_non_thunk_callers=0;
@@ -104,7 +104,7 @@ void __thiscall st::fn_0041C3F0(TLOEmbryoTy *this,undefined *param_1)
 }
 
 // 004D10A0 TLOEmbryoTy::sub_004D10A0
-#line 1 "decomp/ST.exe/functions/004D10A0/decomp.c"
+#line 4 "decomp/ST.exe/functions/004D10A0/decomp.c"
 /* [STMethodOwnerApplier] Structural method owner recovered as TLOEmbryoTy.
    Evidence: this_call_owners=[TLOEmbryoTy]; agreed_this_calls=1; incoming_this_accesses=7;
    incoming_edx_uses=8; incoming_stack_parameter_uses=1; direct_non_thunk_callers=0;

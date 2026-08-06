@@ -2,7 +2,7 @@
 // Generated translation unit: source/original/Artem/TLO_trade.cpp
 
 // 004EC050 FUN_004ec050
-#line 1 "decomp/ST.exe/functions/004EC050/decomp.c"
+#line 4 "decomp/ST.exe/functions/004EC050/decomp.c"
 /* [STSourceProvenanceApplier begin]
    Recovered source file: E:\__titans\Artem\TLO_trade.cpp
    Diagnostic line evidence: 283 (metadata/report site, not the function definition)
@@ -25,7 +25,7 @@ undefined4 __fastcall st::fn_004EC050(int param_1)
       this = (STT3DSprC *)st::fn_00401316(pAVar1);
     }
     *(STT3DSprC **)(param_1 + 0x5ff) = this;
-    exceptionCode = st::fn_0040537B(this,DAT_008073cc,0x5a,0x45,nullptr,0xb4,0x8c,0x11);
+    exceptionCode = st::fn_0040537B(this,PTR_008073cc,0x5a,0x45,nullptr,0xb4,0x8c,0x11);
     if (exceptionCode != 0) {
       st::fn_006A5E40
                 (exceptionCode,g_overwriteContext_007ED77C,
@@ -38,7 +38,7 @@ undefined4 __fastcall st::fn_004EC050(int param_1)
 }
 
 // 004EC0F0 FUN_004ec0f0
-#line 1 "decomp/ST.exe/functions/004EC0F0/decomp.c"
+#line 4 "decomp/ST.exe/functions/004EC0F0/decomp.c"
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 /* [STSourceProvenanceApplier begin]
    Recovered source file: E:\__titans\Artem\TLO_trade.cpp
@@ -53,7 +53,7 @@ undefined4 __fastcall st::fn_004EC0F0(AnonShape_004EC0F0_C371FA68 *param_1)
   uint uVar3;
 
   iVar1 = st::fn_00404183
-                    ((STT3DSprC *)param_1->field_05FF,0xe,DAT_00806774,
+                    ((STT3DSprC *)param_1->field_05FF,0xe,PTR_00806774,
                      *(char **)(&DAT_007cde6c + param_1->field_050C * 4),0x1d);
   if (iVar1 != 0) {
     st::fn_006A5E40

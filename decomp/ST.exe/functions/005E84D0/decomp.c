@@ -310,7 +310,7 @@ LAB_005e8ee0:
                   pbVar11 = Library::DKW::LIB::MemAllocClear(uVar15);
                   *value = pbVar11;
                   uVar24 = 0;
-                  pcVar12 = LoadResourceString(0x252f,g_module_00807618);
+                  pcVar12 = LoadResourceString(0x252f,g_hINSTANCE_00807618);
                   wsprintfA((LPSTR)&DAT_0080f33a,pcVar12,uVar24);
                   AddStr(this_01,&DAT_0080f33a,0);
                 }
@@ -338,7 +338,7 @@ LAB_005e8ee0:
                     this_01->field_1A7F = this_01->field_1A7F - 1;
                     uVar15 = this_01->field_1A5B->field_06A6;
                     uVar15 = (uVar15 * 100 + this_01->field_1A7F * -100) / uVar15;
-                    pcVar12 = LoadResourceString(0x252f,g_module_00807618);
+                    pcVar12 = LoadResourceString(0x252f,g_hINSTANCE_00807618);
                     wsprintfA((LPSTR)&DAT_0080f33a,pcVar12,uVar15);
                     AddStr(this_01,&DAT_0080f33a,1);
                   }

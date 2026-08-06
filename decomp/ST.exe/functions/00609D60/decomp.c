@@ -52,11 +52,11 @@ undefined4 __thiscall STFieldC::LoadImagSpr(STFieldC *this,uint param_1)
     uVar2 = element_0234->field_0000;
     if (uVar2 < 4) {
       text = (&PTR_s_pics_g_007cf6d0)[uVar2];
-      piVar8 = DAT_00806764;
+      piVar8 = PTR_00806764;
     }
     else {
       text = (&PTR_s_pics_g_007cf6d0)[uVar2];
-      piVar8 = DAT_00806774;
+      piVar8 = PTR_00806774;
     }
     puVar5 = Library::Ourlib::MFRLOAD::mfRLoad
                        (piVar8,CASE_1D,text,0xffffffff,0,1,0,nullptr);

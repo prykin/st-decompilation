@@ -73,6 +73,29 @@ class Issue:
         return result
 
 
+@dataclass(frozen=True)
+class MemberWrapper:
+    owner_path: str
+    owner_name: str
+    member_name: str
+    return_type: str
+    parameter_types: tuple[str, ...]
+    parameters: tuple[str, ...]
+    argument_names: tuple[str, ...]
+
+
+@dataclass(frozen=True)
+class SourceMemberWrapper:
+    owner_path: str
+    owner_name: str
+    member_name: str
+    address: str
+    return_type: str
+    parameter_types: tuple[str, ...]
+    parameters: tuple[str, ...]
+    argument_names: tuple[str, ...]
+
+
 def json_dump(value: Any) -> str:
     return json.dumps(value, ensure_ascii=False, indent=2, sort_keys=True) + "\n"
 
@@ -190,6 +213,28 @@ def transform_code(text: str, transform: Any) -> str:
                    for is_code, piece in code_segments(text))
 
 
+def code_only(text: str) -> str:
+    return "".join(piece for is_code, piece in code_segments(text) if is_code)
+
+
+def rewrite_address_taken_globals(
+    text: str, replacements: Mapping[str, str]
+) -> tuple[str, int]:
+    if not replacements:
+        return text, 0
+    pattern = re.compile(
+        r"&\s*("
+        + "|".join(
+            re.escape(item) for item in sorted(replacements, key=len, reverse=True)
+        )
+        + r")\b"
+    )
+    return pattern.subn(
+        lambda match: "&" + replacements[match.group(1)],
+        text,
+    )
+
+
 class TypeEmitter:
     """Render exact exported data-type paths as one dependency-ordered header."""
 
@@ -204,7 +249,441 @@ class TypeEmitter:
         self.fn_name: dict[str, str] = {}
         self.skipped_paths: set[str] = set()
         self.reported_missing_paths: set[str] = set()
+        self.required_gap_fields: dict[str, set[int]] = defaultdict(set)
+        self.materialized_gap_fields = 0
         self._prepare_names()
+        self.record_paths_by_name: dict[str, set[str]] = defaultdict(set)
+        for record in self.records:
+            if record["class"] not in self.RECORD_KINDS:
+                continue
+            path = str(record["path"])
+            canonical = self.canonical_path.get(path, path)
+            self.record_paths_by_name[self.type_name(path)].add(canonical)
+        self.pointer_fields_by_record_path: dict[str, dict[str, str]] = (
+            defaultdict(dict)
+        )
+        self._prepare_pointer_fields()
+        self.member_wrappers_by_record_path: dict[str, list[MemberWrapper]] = (
+            defaultdict(list)
+        )
+        self._prepare_member_wrappers()
+        self.source_member_wrappers_by_record_path: dict[
+            str, list[SourceMemberWrapper]
+        ] = defaultdict(list)
+
+    def _prepare_pointer_fields(self) -> None:
+        for record in self.records:
+            if record["class"] != "StructureDB":
+                continue
+            owner_path = self.canonical_path.get(
+                str(record["path"]), str(record["path"])
+            )
+            for component in record["detail"]["components"]:
+                field_name = str(component.get("field_name") or "")
+                if not field_name:
+                    continue
+                field_type = self.by_path.get(str(component.get("type") or ""))
+                if field_type is None or field_type["class"] != "PointerDB":
+                    continue
+                target_path = str(field_type["detail"]["points_to"])
+                target = self.by_path.get(target_path)
+                if target is None or target["class"] != "StructureDB":
+                    continue
+                self.pointer_fields_by_record_path[owner_path][field_name] = (
+                    self.canonical_path.get(target_path, target_path)
+                )
+
+    def _prepare_member_wrappers(self) -> None:
+        for record in self.records:
+            if record["class"] != "StructureDB":
+                continue
+            record_path = self.canonical_path.get(
+                str(record["path"]), str(record["path"])
+            )
+            for component in record["detail"]["components"]:
+                if component.get("field_name") != "vtable":
+                    continue
+                pointer = self.by_path.get(str(component.get("type") or ""))
+                if pointer is None or pointer["class"] != "PointerDB":
+                    continue
+                table_path = str(pointer["detail"]["points_to"])
+                table = self.by_path.get(table_path)
+                if table is None or table["class"] != "StructureDB":
+                    continue
+                existing_fields = {
+                    str(item["field_name"])
+                    for item in record["detail"]["components"]
+                    if item.get("field_name")
+                }
+                for slot in table["detail"]["components"]:
+                    member_name = str(slot.get("field_name") or "")
+                    if (not IDENTIFIER_RE.fullmatch(member_name) or
+                            member_name in RESERVED or member_name in existing_fields):
+                        continue
+                    slot_pointer = self.by_path.get(str(slot.get("type") or ""))
+                    if slot_pointer is None or slot_pointer["class"] != "PointerDB":
+                        continue
+                    function = self.by_path.get(
+                        str(slot_pointer["detail"]["points_to"])
+                    )
+                    if function is None or function["class"] != "FunctionDefinitionDB":
+                        continue
+                    detail = function["detail"]
+                    arguments = list(detail.get("arguments", ()))
+                    if not arguments:
+                        continue
+                    receiver = self.by_path.get(str(arguments[0].get("type") or ""))
+                    if receiver is None or receiver["class"] != "PointerDB":
+                        continue
+                    receiver_path = self.canonical_path.get(
+                        str(receiver["detail"]["points_to"]),
+                        str(receiver["detail"]["points_to"]),
+                    )
+                    if receiver_path != record_path:
+                        continue
+                    parameters: list[str] = []
+                    parameter_types: list[str] = []
+                    argument_names: list[str] = []
+                    for index, argument in enumerate(arguments[1:], 1):
+                        argument_name = safe_identifier(
+                            str(argument.get("name") or f"arg_{index}"), "arg"
+                        )
+                        parameter_types.append(
+                            self.type_name(str(argument["type"]))
+                        )
+                        parameters.append(
+                            self.declaration(str(argument["type"]), argument_name)
+                        )
+                        argument_names.append(argument_name)
+                    self.member_wrappers_by_record_path[record_path].append(
+                        MemberWrapper(
+                            owner_path=record_path,
+                            owner_name=self.type_name(record_path),
+                            member_name=member_name,
+                            return_type=self.type_name(str(detail["return_type"])),
+                            parameter_types=tuple(parameter_types),
+                            parameters=tuple(parameters),
+                            argument_names=tuple(argument_names),
+                        )
+                    )
+
+    @staticmethod
+    def _display_type_key(type_text: str) -> str:
+        return re.sub(r"\s+", "", type_text.replace("const ", ""))
+
+    @staticmethod
+    def _signature_return_type(
+        function: Mapping[str, Any], body_declaration: str | None = None
+    ) -> str | None:
+        if body_declaration:
+            marker = " __thiscall "
+            compact = re.sub(r"\s+", " ", body_declaration).strip()
+            if marker in compact:
+                result = compact.split(marker, 1)[0].strip()
+                if result.startswith("noreturn "):
+                    result = result[len("noreturn "):].strip()
+                if result:
+                    return result
+        signature = str(function.get("signature") or "")
+        marker = " __thiscall "
+        if marker not in signature:
+            return None
+        result = signature.split(marker, 1)[0].strip()
+        if result.startswith("noreturn "):
+            result = result[len("noreturn "):].strip()
+        return result or None
+
+    @staticmethod
+    def _body_parameters(
+        body_declaration: str, address: str
+    ) -> list[str] | None:
+        compact = re.sub(r"\s+", " ", body_declaration).strip()
+        symbol = f"fn_{address}"
+        symbol_at = compact.find(symbol)
+        if symbol_at < 0:
+            return None
+        start = compact.find("(", symbol_at + len(symbol))
+        if start < 0:
+            return None
+        depth = 0
+        end = -1
+        for index in range(start, len(compact)):
+            char = compact[index]
+            if char == "(":
+                depth += 1
+            elif char == ")":
+                depth -= 1
+                if depth == 0:
+                    end = index
+                    break
+        if end < 0:
+            return None
+        payload = compact[start + 1:end].strip()
+        if not payload or payload == "void":
+            return []
+        result: list[str] = []
+        item_start = 0
+        paren = bracket = angle = 0
+        for index, char in enumerate(payload):
+            if char == "(":
+                paren += 1
+            elif char == ")":
+                paren -= 1
+            elif char == "[":
+                bracket += 1
+            elif char == "]":
+                bracket -= 1
+            elif char == "<":
+                angle += 1
+            elif char == ">" and angle:
+                angle -= 1
+            elif char == "," and paren == 0 and bracket == 0 and angle == 0:
+                result.append(payload[item_start:index].strip())
+                item_start = index + 1
+        result.append(payload[item_start:].strip())
+        return result
+
+    @staticmethod
+    def _declaration_name(declaration: str) -> tuple[str, tuple[int, int]] | None:
+        function_pointer = re.search(
+            r"\(\s*(?:__[A-Za-z0-9_]+\s+)?\*\s*"
+            r"([A-Za-z_][A-Za-z0-9_]*)\s*\)",
+            declaration,
+        )
+        if function_pointer:
+            return function_pointer.group(1), function_pointer.span(1)
+        array = re.search(
+            r"\b([A-Za-z_][A-Za-z0-9_]*)\s*(?:\[[^\]]*\]\s*)+$",
+            declaration,
+        )
+        if array:
+            return array.group(1), array.span(1)
+        plain = re.search(r"\b([A-Za-z_][A-Za-z0-9_]*)\s*$", declaration)
+        if plain:
+            return plain.group(1), plain.span(1)
+        return None
+
+    def prepare_source_member_wrappers(
+        self,
+        functions: Sequence[Mapping[str, Any]],
+        body_declarations: Mapping[str, str] | None = None,
+    ) -> None:
+        """Expose proven non-virtual ``__thiscall`` owners as C++ methods.
+
+        The address-stable ``st::fn_ADDRESS`` function remains the implementation
+        identity.  These wrappers are a source-assembly view over an already
+        recovered receiver boundary; they never create inheritance, a host vptr,
+        or a new semantic owner.
+        """
+        candidates: dict[
+            tuple[str, str, tuple[str, ...]], list[SourceMemberWrapper]
+        ] = defaultdict(list)
+        data_fields: dict[str, set[str]] = defaultdict(set)
+        for record in self.records:
+            if record["class"] != "StructureDB":
+                continue
+            path = self.canonical_path.get(str(record["path"]), str(record["path"]))
+            data_fields[path].update(
+                str(component.get("field_name") or "")
+                for component in record["detail"]["components"]
+                if component.get("field_name")
+            )
+
+        for function in functions:
+            if (function.get("calling_convention") != "__thiscall" or
+                    function.get("external") or function.get("thunk")):
+                continue
+            namespace = str(function.get("namespace") or "")
+            if not namespace or namespace == "Global":
+                continue
+            owner_name = namespace.rsplit("::", 1)[-1]
+            owner_paths = self.record_paths_by_name.get(owner_name, set())
+            if len(owner_paths) != 1:
+                self.issues.append(Issue(
+                    "source_member_owner_ambiguous",
+                    f"{function.get('address', '')} {namespace}: "
+                    f"{len(owner_paths)} matching record paths",
+                    str(function.get("address") or "").upper(),
+                ))
+                continue
+            owner_path = next(iter(owner_paths))
+            owner_record = self.by_path.get(owner_path)
+            if owner_record is None or owner_record["class"] != "StructureDB":
+                continue
+            method_name = str(function.get("name") or "")
+            if not IDENTIFIER_RE.fullmatch(method_name) or method_name in RESERVED:
+                continue
+            if method_name.lstrip("~") == owner_name:
+                self.issues.append(Issue(
+                    "source_member_lifetime_deferred",
+                    f"{function.get('address', '')} {namespace}::{method_name}",
+                    str(function.get("address") or "").upper(),
+                ))
+                continue
+            if method_name in data_fields[owner_path]:
+                self.issues.append(Issue(
+                    "source_member_field_collision",
+                    f"{function.get('address', '')} {namespace}::{method_name}",
+                    str(function.get("address") or "").upper(),
+                ))
+                continue
+            if "RECOVERED_VIRTUAL_METHOD" in function.get("tags", ()):
+                continue
+            parameters = list(function.get("parameters") or ())
+            if not parameters:
+                continue
+            receiver_type = self._display_type_key(str(parameters[0].get("type") or ""))
+            expected_receiver = self._display_type_key(owner_name + " *")
+            if receiver_type != expected_receiver:
+                self.issues.append(Issue(
+                    "source_member_receiver_mismatch",
+                    f"{function.get('address', '')} {namespace}::{method_name}: "
+                    f"receiver={parameters[0].get('type')!r}",
+                    str(function.get("address") or "").upper(),
+                ))
+                continue
+            address = str(function["address"]).upper()
+            return_type = self._signature_return_type(
+                function,
+                (body_declarations or {}).get(address),
+            )
+            if return_type is None:
+                continue
+            parameter_types: list[str] = []
+            declarations: list[str] = []
+            argument_names: list[str] = []
+            exact_parameters = None
+            parameter_parse_failed = False
+            body_declaration = (body_declarations or {}).get(address)
+            if body_declaration:
+                exact_parameters = self._body_parameters(body_declaration, address)
+            if exact_parameters:
+                for declaration in exact_parameters[1:]:
+                    named = self._declaration_name(declaration)
+                    if named is None:
+                        parameter_parse_failed = True
+                        break
+                    name, span = named
+                    type_text = declaration[:span[0]] + declaration[span[1]:]
+                    parameter_types.append(self._display_type_key(type_text))
+                    declarations.append(declaration)
+                    argument_names.append(name)
+            else:
+                for index, parameter in enumerate(parameters[1:], 1):
+                    type_text = str(parameter.get("type") or "undefined4")
+                    name = safe_identifier(
+                        str(parameter.get("name") or f"param_{index}"), "param"
+                    )
+                    parameter_types.append(self._display_type_key(type_text))
+                    declarations.append(f"{type_text} {name}")
+                    argument_names.append(name)
+            if parameter_parse_failed or len(declarations) != len(argument_names):
+                continue
+            wrapper = SourceMemberWrapper(
+                owner_path=owner_path,
+                owner_name=owner_name,
+                member_name=method_name,
+                address=address,
+                return_type=return_type,
+                parameter_types=tuple(parameter_types),
+                parameters=tuple(declarations),
+                argument_names=tuple(argument_names),
+            )
+            candidates[(owner_path, method_name, wrapper.parameter_types)].append(
+                wrapper
+            )
+
+        virtual_names = {
+            (path, wrapper.member_name)
+            for path, wrappers in self.member_wrappers_by_record_path.items()
+            for wrapper in wrappers
+        }
+        for key, wrappers in sorted(candidates.items()):
+            if (key[0], key[1]) in virtual_names:
+                continue
+            if len(wrappers) != 1:
+                addresses = ", ".join(item.address for item in wrappers)
+                self.issues.append(Issue(
+                    "source_member_overload_conflict",
+                    f"{wrappers[0].owner_name}::{wrappers[0].member_name}: {addresses}",
+                ))
+                continue
+            wrapper = wrappers[0]
+            self.source_member_wrappers_by_record_path[wrapper.owner_path].append(
+                wrapper
+            )
+
+    def _static_record_variables(self, body: str) -> dict[str, set[str]]:
+        variables: dict[str, set[str]] = defaultdict(set)
+        pointer_declaration = re.compile(
+            r"\b([A-Za-z_][A-Za-z0-9_]*)\s+(?:const\s+)?\*+\s*"
+            r"(?:const\s+)?([A-Za-z_][A-Za-z0-9_]*)\b"
+        )
+        for match in pointer_declaration.finditer(body):
+            type_name, variable = match.groups()
+            variables[variable].update(self.record_paths_by_name.get(type_name, ()))
+        value_declaration = re.compile(
+            r"\b([A-Za-z_][A-Za-z0-9_]*)\s+"
+            r"([A-Za-z_][A-Za-z0-9_]*)"
+            r"(?:\s*\[[^;\]\n]+\])?\s*(?=[,;)={])"
+        )
+        for match in value_declaration.finditer(body):
+            type_name, variable = match.groups()
+            variables[variable].update(self.record_paths_by_name.get(type_name, ()))
+        return variables
+
+    def observe_field_accesses(self, body: str) -> None:
+        """Retain exact anonymous-byte members which exported code names.
+
+        Ghidra may render an access through a typed pointer as
+        ``value->field_0x1af`` even though the exported structure still contains
+        one unnamed byte at that offset.  Coalescing every unnamed byte into a
+        storage array then loses a declaration which the body legitimately
+        references.  Recover only the path/offset pairs whose receiver has an
+        explicit static pointer type in the same body.  This is source assembly,
+        not a semantic field-type inference: the materialized view stays one
+        exact byte.
+        """
+        variables = self._static_record_variables(body)
+
+        for match in re.finditer(
+            r"\b([A-Za-z_][A-Za-z0-9_]*)->field_0x([0-9A-Fa-f]+)", body
+        ):
+            variable, raw_offset = match.groups()
+            paths = variables.get(variable, ())
+            if len(paths) != 1:
+                continue
+            self.required_gap_fields[next(iter(paths))].add(int(raw_offset, 16))
+        for match in re.finditer(
+            r"\b([A-Za-z_][A-Za-z0-9_]*)"
+            r"((?:->[A-Za-z_][A-Za-z0-9_]*)+)->"
+            r"field_0x([0-9A-Fa-f]+)", body
+        ):
+            variable, raw_chain, raw_offset = match.groups()
+            paths = variables.get(variable, ())
+            if len(paths) != 1:
+                continue
+            path = next(iter(paths))
+            resolved = True
+            for field_name in raw_chain.split("->")[1:]:
+                target = self.pointer_fields_by_record_path.get(path, {}).get(
+                    field_name
+                )
+                if target is None:
+                    resolved = False
+                    break
+                path = target
+            if resolved:
+                self.required_gap_fields[path].add(int(raw_offset, 16))
+        for match in re.finditer(
+            r"\b([A-Za-z_][A-Za-z0-9_]*)\s*"
+            r"(?:\[[^\]\n]+\])?\.field_0x([0-9A-Fa-f]+)", body
+        ):
+            variable, raw_offset = match.groups()
+            paths = variables.get(variable, ())
+            if len(paths) != 1:
+                continue
+            self.required_gap_fields[next(iter(paths))].add(int(raw_offset, 16))
 
     def _prepare_names(self) -> None:
         named: dict[str, list[dict[str, Any]]] = defaultdict(list)
@@ -573,10 +1052,25 @@ class TypeEmitter:
                 lines.append(f"using {name} = {self.fn_name[record['path']]};")
         lines.extend(["", "#pragma pack(push, 1)", ""])
 
-        for path in self._ordered_definitions():
+        definition_order = self._ordered_definitions()
+        for path in definition_order:
             record = self.by_path[path]
             lines.extend(self._emit_record(record))
         lines.extend(["#pragma pack(pop)", ""])
+        for path in definition_order:
+            for wrapper in self.member_wrappers_by_record_path.get(path, ()):
+                parameters = ", ".join(wrapper.parameters)
+                lines.append(
+                    f"inline {wrapper.return_type} {wrapper.owner_name}::"
+                    f"{wrapper.member_name}({parameters}) {{"
+                )
+                arguments = ", ".join(("this", *wrapper.argument_names))
+                call = f"(vtable->{wrapper.member_name})({arguments})"
+                if wrapper.return_type == "void":
+                    lines.append(f"    {call};")
+                else:
+                    lines.append(f"    return {call};")
+                lines.extend(["}", ""])
         return "\n".join(lines)
 
     def _emit_record(self, record: Mapping[str, Any]) -> list[str]:
@@ -589,6 +1083,8 @@ class TypeEmitter:
         offset = 0
         field_counts: Counter[str] = Counter()
         components = list(record["detail"]["components"])
+        record_path = self.canonical_path.get(str(record["path"]), str(record["path"]))
+        required_gap_fields = self.required_gap_fields.get(record_path, set())
         index = 0
         while index < len(components):
             component = components[index]
@@ -596,13 +1092,32 @@ class TypeEmitter:
             component_length = int(component["length"])
             if (keyword == "struct" and not component.get("field_name") and
                     component.get("type") in {"/undefined", "/-BAD-", ""}):
+                if component_offset in required_gap_fields:
+                    if component_offset > offset:
+                        lines.append(
+                            f"    byte _pad_{offset:04X}[{component_offset - offset}];"
+                        )
+                    lines.append(
+                        f"    undefined1 field_0x{component_offset:x}; "
+                        "// exact unnamed-byte view referenced by exported code"
+                    )
+                    if component_length > 1:
+                        lines.append(
+                            f"    byte _unknown_{component_offset + 1:04X}"
+                            f"[{component_length - 1}];"
+                        )
+                    offset = max(offset, component_offset + component_length)
+                    self.materialized_gap_fields += 1
+                    index += 1
+                    continue
                 end = component_offset + component_length
                 next_index = index + 1
                 while next_index < len(components):
                     candidate = components[next_index]
                     if (candidate.get("field_name") or
                             candidate.get("type") not in {"/undefined", "/-BAD-", ""} or
-                            int(candidate["offset"]) != end):
+                            int(candidate["offset"]) != end or
+                            int(candidate["offset"]) in required_gap_fields):
                         break
                     end += int(candidate["length"])
                     next_index += 1
@@ -657,6 +1172,16 @@ class TypeEmitter:
             lines.append(f"    byte _pad_{offset:04X}[{length - offset}];")
         if not record["detail"]["components"] and length > 0:
             lines.append(f"    byte _storage[{length}];")
+        for wrapper in self.member_wrappers_by_record_path.get(record_path, ()):
+            lines.append(
+                f"    {wrapper.return_type} {wrapper.member_name}"
+                f"({', '.join(wrapper.parameters)});"
+            )
+        for wrapper in self.source_member_wrappers_by_record_path.get(record_path, ()):
+            lines.append(
+                f"    {wrapper.return_type} {wrapper.member_name}"
+                f"({', '.join(wrapper.parameters)});"
+            )
         lines.extend(["};", ""])
         return lines
 
@@ -678,6 +1203,7 @@ class SourceTreeGenerator:
         self.call_relations: list[dict[str, Any]] = []
         self.relations_by_caller: dict[str, list[dict[str, Any]]] = defaultdict(list)
         self.external_signatures: dict[str, set[str]] = defaultdict(set)
+        self.global_type_collisions: dict[str, str] = {}
         self.body_declarations: dict[str, str] = {}
         self.receipt: dict[str, Any] = {}
         self.type_emitter: TypeEmitter | None = None
@@ -738,6 +1264,16 @@ class SourceTreeGenerator:
                 f"functions.json={bodies}"
             )
         self.type_emitter = TypeEmitter(self.types, self.issues)
+        globals_by_name: dict[str, list[dict[str, Any]]] = defaultdict(list)
+        for item in self.globals:
+            globals_by_name[str(item["name"])].append(item)
+        for name, items in globals_by_name.items():
+            if (len(items) != 1 or
+                    name not in self.type_emitter.record_paths_by_name or
+                    not IDENTIFIER_RE.fullmatch(name)):
+                continue
+            address = str(items[0]["address"]).upper()
+            self.global_type_collisions[name] = f"st_global_{address}"
         self.stats["exported_function_records"] = len(self.functions)
         self.stats["exported_type_records"] = len(self.types)
         self.stats["external_call_identities"] = len(self.external_signatures)
@@ -777,14 +1313,13 @@ class SourceTreeGenerator:
         include.mkdir(parents=True)
         runtime = (self.corpus / "pseudocode_runtime.h").read_text(encoding="utf-8")
         (include / "pseudocode_runtime.hpp").write_text(runtime, encoding="utf-8")
-        assert self.type_emitter is not None
-        (include / "recovered_types.hpp").write_text(
-            self.type_emitter.emit(), encoding="utf-8"
-        )
 
-        groups: dict[Path, list[tuple[dict[str, Any], str]]] = defaultdict(list)
+        groups: dict[
+            Path, list[tuple[dict[str, Any], str, int]]
+        ] = defaultdict(list)
         used_globals: set[str] = set()
         used_imports: set[str] = set()
+        assert self.type_emitter is not None
         for function in self.functions:
             if not function.get("body_exported"):
                 continue
@@ -793,12 +1328,41 @@ class SourceTreeGenerator:
             if not body_path.is_file():
                 raise GenerationError(f"missing exported body {body_path}")
             body = body_path.read_text(encoding="utf-8")
+            include_match = re.match(r"^#include[^\n]*\n+", body)
+            body_line_origin = (
+                include_match.group(0).count("\n") + 1 if include_match else 1
+            )
             transformed = self._transform_body(function, body)
-            self.body_declarations[address] = self._body_declaration(address, transformed)
+            transformed_code = code_only(transformed)
+            self.type_emitter.observe_field_accesses(transformed_code)
+            self.body_declarations[address] = self._body_declaration(
+                address, transformed_code
+            )
             group = self._source_group(function)
-            groups[group].append((function, transformed))
-            used_globals.update(self._used_global_names(function, body))
-            used_imports.update(self._used_import_names(transformed))
+            groups[group].append((function, transformed, body_line_origin))
+            used_globals.update(
+                self._used_global_names(function, transformed_code)
+            )
+            used_imports.update(self._used_import_names(transformed_code))
+
+        self.type_emitter.prepare_source_member_wrappers(
+            self.functions, self.body_declarations
+        )
+
+        (include / "recovered_types.hpp").write_text(
+            self.type_emitter.emit(), encoding="utf-8"
+        )
+        self.stats["materialized_gap_field_views"] = (
+            self.type_emitter.materialized_gap_fields
+        )
+        self.stats["generated_virtual_member_wrappers"] = sum(
+            len(items)
+            for items in self.type_emitter.member_wrappers_by_record_path.values()
+        )
+        self.stats["generated_source_member_wrappers"] = sum(
+            len(items)
+            for items in self.type_emitter.source_member_wrappers_by_record_path.values()
+        )
 
         (include / "recovered_globals.hpp").write_text(
             self._emit_globals(used_globals), encoding="utf-8"
@@ -829,11 +1393,14 @@ class SourceTreeGenerator:
                 '#include "st/generated.hpp"\n',
                 f"// Generated translation unit: {relative_include(str(relative))}\n\n",
             ]
-            for function, body in sorted(entries, key=lambda item: item[0]["address"]):
+            for function, body, body_line_origin in sorted(
+                entries, key=lambda item: item[0]["address"]
+            ):
                 address = function["address"].upper()
                 chunks.append(
                     f"// {address} {function['qualified_name']}\n"
-                    f"#line 1 \"decomp/ST.exe/functions/{address}/decomp.c\"\n"
+                    f"#line {body_line_origin} "
+                    f"\"decomp/ST.exe/functions/{address}/decomp.c\"\n"
                     f"{body.rstrip()}\n\n"
                 )
             target.write_text("".join(chunks), encoding="utf-8")
@@ -901,22 +1468,13 @@ class SourceTreeGenerator:
             str(function["name"]),
             safe_identifier(str(function["name"]), "function"),
         ]
+        own_spellings = list(dict.fromkeys(own_candidates))
+        own_pattern = re.compile(
+            r"(?<![A-Za-z0-9_])(?:"
+            + "|".join(re.escape(item) for item in own_spellings)
+            + r")(?=\s*\()"
+        )
         definition_rewritten = False
-
-        def replace_definition(piece: str) -> str:
-            nonlocal definition_rewritten
-            if definition_rewritten:
-                return piece
-            for candidate in dict.fromkeys(own_candidates):
-                pattern = rf"(?<![A-Za-z0-9_]){re.escape(candidate)}(?=\s*\()"
-                result, count = re.subn(pattern, function_symbol(address), piece, count=1)
-                if count:
-                    definition_rewritten = True
-                    self.stats["function_definition_rewrites"] += 1
-                    return result
-            return piece
-
-        body = transform_code(body, replace_definition)
         replacements: dict[str, set[str]] = defaultdict(set)
         for callee in function.get("callees", ()):
             callee_address, label = split_address_label(str(callee))
@@ -949,16 +1507,43 @@ class SourceTreeGenerator:
                 self.stats["ambiguous_direct_calls"] += 1
 
         ordered = sorted(resolved, key=len, reverse=True)
+        call_pattern = (
+            re.compile(
+                r"(?<![A-Za-z0-9_])(?:"
+                + "|".join(re.escape(item) for item in ordered)
+                + r")(?=\s*\()"
+            )
+            if ordered else None
+        )
 
+        global_rewrites: dict[str, str] = {}
+        for item in function.get("referenced_globals", ()):
+            match = re.match(r"^[^ ]+ (.+?)(?: =|$)", str(item))
+            if not match:
+                continue
+            name = match.group(1)
+            replacement = self.global_type_collisions.get(name)
+            if replacement:
+                global_rewrites[name] = replacement
         def replace(piece: str) -> str:
+            nonlocal definition_rewritten
             result = piece
-            for spelling in ordered:
-                escaped = re.escape(spelling)
-                if "::" in spelling:
-                    pattern = rf"(?<![A-Za-z0-9_]){escaped}(?![A-Za-z0-9_])"
-                else:
-                    pattern = rf"(?<![A-Za-z0-9_]){escaped}(?=\s*\()"
-                result, count = re.subn(pattern, resolved[spelling], result)
+            if global_rewrites:
+                result, count = rewrite_address_taken_globals(
+                    result, global_rewrites
+                )
+                self.stats["global_type_collision_rewrites"] += count
+            if not definition_rewritten:
+                result, count = own_pattern.subn(
+                    function_symbol(address), result, count=1
+                )
+                if count:
+                    definition_rewritten = True
+                    self.stats["function_definition_rewrites"] += 1
+            if call_pattern is not None:
+                result, count = call_pattern.subn(
+                    lambda match: resolved[match.group(0)], result
+                )
                 self.stats["direct_call_or_definition_rewrites"] += count
             return result
 
@@ -971,8 +1556,7 @@ class SourceTreeGenerator:
             ))
         return transformed
 
-    def _body_declaration(self, address: str, body: str) -> str:
-        code = "".join(piece for is_code, piece in code_segments(body) if is_code)
+    def _body_declaration(self, address: str, code: str) -> str:
         symbol = function_symbol(address)
         position = code.find(symbol)
         if position < 0:
@@ -985,14 +1569,18 @@ class SourceTreeGenerator:
         declaration = re.sub(r"\bthis\b", "st_this", declaration)
         return declaration
 
-    def _used_global_names(self, function: Mapping[str, Any], body: str) -> set[str]:
-        code = "".join(piece for is_code, piece in code_segments(body) if is_code)
+    def _used_global_names(self, function: Mapping[str, Any], code: str) -> set[str]:
         names: set[str] = set()
         for item in function.get("referenced_globals", ()):
             match = re.match(r"^[^ ]+ (.+?)(?: =|$)", str(item))
             if not match:
                 continue
             name = match.group(1)
+            collision_name = self.global_type_collisions.get(name)
+            if collision_name and re.search(
+                    rf"\b{re.escape(collision_name)}\b", code):
+                names.add(name)
+                continue
             if IDENTIFIER_RE.fullmatch(name) and re.search(rf"\b{re.escape(name)}\b", code):
                 names.add(name)
             overlap = "_" + name
@@ -1001,8 +1589,7 @@ class SourceTreeGenerator:
         names.update(ADDRESS_NAME_RE.findall(code))
         return names
 
-    def _used_import_names(self, body: str) -> set[str]:
-        code = "".join(piece for is_code, piece in code_segments(body) if is_code)
+    def _used_import_names(self, code: str) -> set[str]:
         called = set(re.findall(r"\b([A-Za-z_][A-Za-z0-9_]*)\s*\(", code))
         return called & self.import_spellings
 
@@ -1021,12 +1608,17 @@ class SourceTreeGenerator:
                 self.stats["fallback_global_declarations"] += 1
                 continue
             type_text = str(item["type"])
+            declaration_name = self.global_type_collisions.get(name, name)
+            provenance = (
+                f" // image symbol: {name}"
+                if declaration_name != name else ""
+            )
             if type_text in {"pointer", "word", "byte", "dword", "undefined1", "undefined2", "undefined4", "undefined8", "int", "short", "uint", "ushort", "float", "double"}:
-                lines.append(f"extern {type_text} {name};")
+                lines.append(f"extern {type_text} {declaration_name};{provenance}")
             elif IDENTIFIER_RE.fullmatch(type_text.rstrip(" *")):
-                lines.append(f"extern {type_text} {name};")
+                lines.append(f"extern {type_text} {declaration_name};{provenance}")
             else:
-                lines.append(f"extern undefined4 {name};")
+                lines.append(f"extern undefined4 {declaration_name};{provenance}")
                 self.issues.append(Issue(
                     "global_type_fallback", f"{name}: unsupported display type {type_text!r}"
                 ))
@@ -1111,6 +1703,31 @@ class SourceTreeGenerator:
             lines.append(f"// {address}")
             lines.append(signature + ";")
         lines.extend(["}", ""])
+        assert self.type_emitter is not None
+        for owner_path in sorted(
+            self.type_emitter.source_member_wrappers_by_record_path
+        ):
+            wrappers = self.type_emitter.source_member_wrappers_by_record_path[
+                owner_path
+            ]
+            for wrapper in sorted(
+                wrappers,
+                key=lambda item: (
+                    item.member_name, item.parameter_types, item.address
+                ),
+            ):
+                parameters = ", ".join(wrapper.parameters)
+                lines.append(
+                    f"inline {wrapper.return_type} {wrapper.owner_name}::"
+                    f"{wrapper.member_name}({parameters}) {{"
+                )
+                arguments = ", ".join(("this", *wrapper.argument_names))
+                call = f"st::fn_{wrapper.address}({arguments})"
+                if wrapper.return_type == "void":
+                    lines.append(f"    {call};")
+                else:
+                    lines.append(f"    return {call};")
+                lines.extend(["}", ""])
         return "\n".join(lines)
 
     @staticmethod
@@ -1150,11 +1767,20 @@ This directory is generated by `tools/st_source_tree.py` from the accepted
 - Address-stable implementation name: `st::fn_ADDRESS`
 - Recovered original paths are used only when debug metadata proves them.
 - Unplaced functions are grouped deterministically by owner or address page.
+- Exact anonymous byte views are materialized only when a statically typed body
+  references that record/offset pair.
+- Typed physical-vtable slots receive non-virtual member wrappers; the explicit
+  vtable field and packed recovered layout remain authoritative.
+- Proven non-virtual `__thiscall` owners receive forwarding member methods while
+  `st::fn_ADDRESS` remains the address-stable implementation identity.
 
 The CMake target is an object-only compile boundary. It deliberately does not
 define image-backed globals, resolve imports, invent indirect-call ABIs, or
 silently stub missing game/library behavior. See `audit/summary.json` and
 `audit/issues.jsonl` for the remaining source-assembly debt.
+
+Run `python3 tools/st_compile_audit.py` from the repository root for a local,
+address-stable per-translation-unit compiler audit.
 """
 
     def _write_manifest(self, root: Path) -> None:

@@ -90,7 +90,7 @@ LAB_0051d689:
   DrawTitle(this_00,0x55f2,0,0);
   uVar10 = local_c;
   if (local_14 != 10000) {
-    pcVar4 = LoadResourceString(local_14,g_module_00807618);
+    pcVar4 = LoadResourceString(local_14,g_hINSTANCE_00807618);
     uVar9 = 0xffffffff;
     do {
       pcVar12 = pcVar4;
@@ -129,7 +129,7 @@ LAB_0051d689:
   uVar11 = (DAT_0080874e != '\x03') - 1 & 5;
   iVar14 = -1;
   iVar8 = 1;
-  puVar6 = (uint *)LoadResourceString(0x5c93,g_module_00807618);
+  puVar6 = (uint *)LoadResourceString(0x5c93,g_hINSTANCE_00807618);
   ccFntTy::WrStr(this_00->field_01E0,puVar6,iVar8,iVar14,uVar11);
   local_34[0] = 0x50;
   local_34[2] = local_18;

@@ -2,7 +2,7 @@
 // Generated translation unit: source/original/Start/main_obj.cpp
 
 // 005B2970 MainMenuTy::InitMainMenu
-#line 1 "decomp/ST.exe/functions/005B2970/decomp.c"
+#line 4 "decomp/ST.exe/functions/005B2970/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\Start\main_obj.cpp
    MainMenuTy::InitMainMenu */
@@ -185,7 +185,7 @@ switchD_005b2a8d_default:
 }
 
 // 005B2F90 MainMenuTy::DoneMainMenu
-#line 1 "decomp/ST.exe/functions/005B2F90/decomp.c"
+#line 4 "decomp/ST.exe/functions/005B2F90/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\Start\main_obj.cpp
    MainMenuTy::DoneMainMenu */
@@ -255,7 +255,7 @@ void __thiscall st::fn_005B2F90(MainMenuTy *this)
 }
 
 // 005B3160 MainMenuTy::PaintMainMenu
-#line 1 "decomp/ST.exe/functions/005B3160/decomp.c"
+#line 4 "decomp/ST.exe/functions/005B3160/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\Start\main_obj.cpp
    MainMenuTy::PaintMainMenu
@@ -294,12 +294,12 @@ void __thiscall st::fn_005B3160(MainMenuTy *this)
       pcVar7 = g_startSystem_0081176C->field_0030;
       uVar6 = 0xffffffff;
       uVar5 = 0xfffffffe;
-      puVar3 = (uint *)st::fn_006B0140(0x26ac,g_module_00807618);
+      puVar3 = (uint *)st::fn_006B0140(0x26ac,g_hINSTANCE_00807618);
       st::fn_00404C2D(this_01,0,0xe9,0x14,0x14c,0x18,puVar3,uVar5,uVar6,pcVar7,uVar8);
       uVar6 = DAT_00807dd5 >> 0x10 & 0xff;
       uVar8 = DAT_00807dd5 & 0xffff;
       uVar5 = DAT_00807dd5 >> 0x18;
-      text = st::fn_006B0140(0x2329,g_module_00807618);
+      text = st::fn_006B0140(0x2329,g_hINSTANCE_00807618);
       st::external_00000080((LPSTR)(pMVar2->field_1A5B + 0x3c),text,uVar5,uVar6,uVar8);
       st::fn_00404C2D
                 ((StartServTy *)g_startSystem_0081176C,0,0,0x240,800,0x18,
@@ -310,7 +310,7 @@ void __thiscall st::fn_005B3160(MainMenuTy *this)
       pcVar7 = g_startSystem_0081176C->field_0030;
       uVar6 = 0xffffffff;
       uVar5 = 0xfffffffe;
-      puVar3 = (uint *)st::fn_006B0140(0x26b0,g_module_00807618);
+      puVar3 = (uint *)st::fn_006B0140(0x26b0,g_hINSTANCE_00807618);
       st::fn_00404C2D(this_00,0,0xe9,0x14,0x14c,0x18,puVar3,uVar5,uVar6,pcVar7,uVar3);
     }
     puVar3 = pMVar2->field_1AA7;
@@ -354,7 +354,7 @@ void __thiscall st::fn_005B3160(MainMenuTy *this)
 }
 
 // 005B3430 MainMenuTy::NoneMainMenu
-#line 1 "decomp/ST.exe/functions/005B3430/decomp.c"
+#line 4 "decomp/ST.exe/functions/005B3430/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\Start\main_obj.cpp
    MainMenuTy::NoneMainMenu
@@ -609,7 +609,7 @@ LAB_005b353c:
 }
 
 // 005B3B00 MainMenuTy::LightPalette
-#line 1 "decomp/ST.exe/functions/005B3B00/decomp.c"
+#line 4 "decomp/ST.exe/functions/005B3B00/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\Start\main_obj.cpp
    MainMenuTy::LightPalette */
@@ -655,7 +655,7 @@ void __thiscall st::fn_005B3B00(MainMenuTy *this)
 }
 
 // 005B3C30 MainMenuTy::CloseButtons
-#line 1 "decomp/ST.exe/functions/005B3C30/decomp.c"
+#line 4 "decomp/ST.exe/functions/005B3C30/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\Start\main_obj.cpp
    MainMenuTy::CloseButtons */
@@ -710,7 +710,7 @@ void __thiscall st::fn_005B3C30(MainMenuTy *this)
 }
 
 // 005B3D60 MainMenuTy::SetMode
-#line 1 "decomp/ST.exe/functions/005B3D60/decomp.c"
+#line 4 "decomp/ST.exe/functions/005B3D60/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\Start\main_obj.cpp
    MainMenuTy::SetMode */
@@ -795,7 +795,7 @@ void __thiscall st::fn_005B3D60(MainMenuTy *this,char param_1,int param_2)
     cVar12 = CASE_FFFFFFFE;
     iVar11 = 0x28;
     iVar6 = 0x8c;
-    puVar3 = (uint *)st::fn_006B0140(0x2334,g_module_00807618);
+    puVar3 = (uint *)st::fn_006B0140(0x2334,g_hINSTANCE_00807618);
     puVar8 = st::fn_00713480
                        (g_startSystem_0081176C->field_0030,puVar3,iVar6,iVar11,cVar12,uVar13,iVar14,
                         iVar15,iVar16);
@@ -812,7 +812,7 @@ void __thiscall st::fn_005B3D60(MainMenuTy *this,char param_1,int param_2)
     cVar12 = CASE_FFFFFFFE;
     iVar11 = 0x28;
     iVar6 = 0x8c;
-    puVar3 = (uint *)st::fn_006B0140(0x2335,g_module_00807618);
+    puVar3 = (uint *)st::fn_006B0140(0x2335,g_hINSTANCE_00807618);
     puVar8 = st::fn_00713480
                        (g_startSystem_0081176C->field_0030,puVar3,iVar6,iVar11,cVar12,uVar13,iVar14,
                         iVar15,iVar16);
@@ -829,7 +829,7 @@ void __thiscall st::fn_005B3D60(MainMenuTy *this,char param_1,int param_2)
     cVar12 = CASE_FFFFFFFE;
     iVar11 = 0x28;
     iVar6 = 0x8c;
-    puVar3 = (uint *)st::fn_006B0140(0x2332,g_module_00807618);
+    puVar3 = (uint *)st::fn_006B0140(0x2332,g_hINSTANCE_00807618);
     puVar8 = st::fn_00713480
                        (g_startSystem_0081176C->field_0030,puVar3,iVar6,iVar11,cVar12,uVar13,iVar14,
                         iVar15,iVar16);
@@ -846,7 +846,7 @@ void __thiscall st::fn_005B3D60(MainMenuTy *this,char param_1,int param_2)
     this_00->field_06AD = 0x2333;
     iVar11 = 0x28;
     iVar6 = 0x8c;
-    puVar3 = (uint *)st::fn_006B0140(0x2333,g_module_00807618);
+    puVar3 = (uint *)st::fn_006B0140(0x2333,g_hINSTANCE_00807618);
     puVar8 = st::fn_00713480
                        (g_startSystem_0081176C->field_0030,puVar3,iVar6,iVar11,cVar12,uVar13,iVar14,
                         iVar15,iVar16);
@@ -863,7 +863,7 @@ void __thiscall st::fn_005B3D60(MainMenuTy *this,char param_1,int param_2)
     cVar12 = CASE_FFFFFFFE;
     iVar11 = 0x28;
     iVar6 = 0x8c;
-    puVar3 = (uint *)st::fn_006B0140(0x2336,g_module_00807618);
+    puVar3 = (uint *)st::fn_006B0140(0x2336,g_hINSTANCE_00807618);
     puVar8 = st::fn_00713480
                        (g_startSystem_0081176C->field_0030,puVar3,iVar6,iVar11,cVar12,uVar13,iVar14,
                         iVar15,iVar16);
@@ -889,12 +889,12 @@ void __thiscall st::fn_005B3D60(MainMenuTy *this,char param_1,int param_2)
     pcVar19 = g_startSystem_0081176C->field_0030;
     uVar17 = 0xffffffff;
     uVar13 = 0xfffffffe;
-    puVar3 = (uint *)st::fn_006B0140(0x26ac,g_module_00807618);
+    puVar3 = (uint *)st::fn_006B0140(0x26ac,g_hINSTANCE_00807618);
     st::fn_00404C2D(this_02,0,0xe9,0x14,0x14c,0x18,puVar3,uVar13,uVar17,pcVar19,uVar21);
     uVar21 = DAT_00807dd5 >> 0x10 & 0xff;
     uVar17 = DAT_00807dd5 & 0xffff;
     uVar13 = DAT_00807dd5 >> 0x18;
-    pcVar4 = st::fn_006B0140(0x2329,g_module_00807618);
+    pcVar4 = st::fn_006B0140(0x2329,g_hINSTANCE_00807618);
     st::external_00000080((LPSTR)(this_00->field_1A5B + 0x3c),pcVar4,uVar13,uVar21,uVar17);
     st::fn_00404C2D
               (this_00->field_1A5B + 0x3c,0,0,0x240,800,0x18,(uint *)(this_00->field_1A5B + 0x3c),
@@ -913,7 +913,7 @@ void __thiscall st::fn_005B3D60(MainMenuTy *this,char param_1,int param_2)
     cVar12 = CASE_FFFFFFFE;
     iVar11 = 0x28;
     iVar6 = 0x8c;
-    puVar3 = (uint *)st::fn_006B0140(0x233c,g_module_00807618);
+    puVar3 = (uint *)st::fn_006B0140(0x233c,g_hINSTANCE_00807618);
     puVar8 = st::fn_00713480
                        (g_startSystem_0081176C->field_0030,puVar3,iVar6,iVar11,cVar12,uVar13,iVar14,
                         iVar15,iVar16);
@@ -930,7 +930,7 @@ void __thiscall st::fn_005B3D60(MainMenuTy *this,char param_1,int param_2)
     cVar12 = CASE_FFFFFFFE;
     iVar11 = 0x28;
     iVar6 = 0x8c;
-    puVar3 = (uint *)st::fn_006B0140(0x233d,g_module_00807618);
+    puVar3 = (uint *)st::fn_006B0140(0x233d,g_hINSTANCE_00807618);
     puVar8 = st::fn_00713480
                        (g_startSystem_0081176C->field_0030,puVar3,iVar6,iVar11,cVar12,uVar13,iVar14,
                         iVar15,iVar16);
@@ -947,7 +947,7 @@ void __thiscall st::fn_005B3D60(MainMenuTy *this,char param_1,int param_2)
     cVar12 = CASE_FFFFFFFE;
     iVar11 = 0x28;
     iVar6 = 0x8c;
-    puVar3 = (uint *)st::fn_006B0140(0x233e,g_module_00807618);
+    puVar3 = (uint *)st::fn_006B0140(0x233e,g_hINSTANCE_00807618);
     puVar8 = st::fn_00713480
                        (g_startSystem_0081176C->field_0030,puVar3,iVar6,iVar11,cVar12,uVar13,iVar14,
                         iVar15,iVar16);
@@ -964,7 +964,7 @@ void __thiscall st::fn_005B3D60(MainMenuTy *this,char param_1,int param_2)
     this_00->field_06AD = 0x233f;
     iVar11 = 0x28;
     iVar6 = 0x8c;
-    puVar3 = (uint *)st::fn_006B0140(0x233f,g_module_00807618);
+    puVar3 = (uint *)st::fn_006B0140(0x233f,g_hINSTANCE_00807618);
     puVar8 = st::fn_00713480
                        (g_startSystem_0081176C->field_0030,puVar3,iVar6,iVar11,cVar12,uVar13,iVar14,
                         iVar15,iVar16);
@@ -981,7 +981,7 @@ void __thiscall st::fn_005B3D60(MainMenuTy *this,char param_1,int param_2)
     cVar12 = CASE_FFFFFFFE;
     iVar11 = 0x28;
     iVar6 = 0x8c;
-    puVar3 = (uint *)st::fn_006B0140(0x2359,g_module_00807618);
+    puVar3 = (uint *)st::fn_006B0140(0x2359,g_hINSTANCE_00807618);
     puVar8 = st::fn_00713480
                        (g_startSystem_0081176C->field_0030,puVar3,iVar6,iVar11,cVar12,uVar13,iVar14,
                         iVar15,iVar16);
@@ -1025,7 +1025,7 @@ void __thiscall st::fn_005B3D60(MainMenuTy *this,char param_1,int param_2)
     pcVar19 = g_startSystem_0081176C->field_0030;
     uVar17 = 0xffffffff;
     uVar13 = 0xfffffffe;
-    puVar3 = (uint *)st::fn_006B0140(0x26b0,g_module_00807618);
+    puVar3 = (uint *)st::fn_006B0140(0x26b0,g_hINSTANCE_00807618);
     st::fn_00404C2D(this_01,0,0xe9,0x14,0x14c,0x18,puVar3,uVar13,uVar17,pcVar19,uVar21);
   }
   if (param_2 != 0) {
@@ -1044,7 +1044,7 @@ LAB_005b4465:
     uVar21 = 0;
     uVar17 = 0xffffffff;
     uVar13 = 0xfffffffe;
-    puVar3 = (uint *)st::fn_006B0140(resourceId,g_module_00807618);
+    puVar3 = (uint *)st::fn_006B0140(resourceId,g_hINSTANCE_00807618);
     st::fn_00404C2D(this_03,0,0xe9,0x14,0x14c,0x18,puVar3,uVar13,uVar17,pcVar19,uVar21);
   }
   else if (this_00->field_1EE3 == '\x01') {
@@ -1055,7 +1055,7 @@ LAB_005b4465:
   uVar21 = DAT_00807dd5 >> 0x10 & 0xff;
   uVar17 = DAT_00807dd5 & 0xffff;
   uVar13 = DAT_00807dd5 >> 0x18;
-  pcVar4 = st::fn_006B0140(0x2329,g_module_00807618);
+  pcVar4 = st::fn_006B0140(0x2329,g_hINSTANCE_00807618);
   st::external_00000080((LPSTR)(this_00->field_1A5B + 0x3c),pcVar4,uVar13,uVar21,uVar17);
   st::fn_00404C2D
             (this_00->field_1A5B + 0x3c,0,0,0x240,800,0x18,(uint *)(this_00->field_1A5B + 0x3c),
@@ -1080,7 +1080,7 @@ LAB_005b44f1:
 }
 
 // 005B48E0 MainMenuTy::AnimationMainMenu
-#line 1 "decomp/ST.exe/functions/005B48E0/decomp.c"
+#line 4 "decomp/ST.exe/functions/005B48E0/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\Start\main_obj.cpp
    MainMenuTy::AnimationMainMenu */
@@ -1195,7 +1195,7 @@ void __thiscall st::fn_005B48E0(MainMenuTy *this)
 }
 
 // 005B4BB0 MainMenuTy::GetMessage
-#line 1 "decomp/ST.exe/functions/005B4BB0/decomp.c"
+#line 4 "decomp/ST.exe/functions/005B4BB0/decomp.c"
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 /* Recovered from embedded debug metadata:
    E:\__titans\Start\main_obj.cpp

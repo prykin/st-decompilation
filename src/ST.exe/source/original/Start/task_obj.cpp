@@ -2,7 +2,7 @@
 // Generated translation unit: source/original/Start/task_obj.cpp
 
 // 005DF530 MTaskTy::OutGlassBmpProc
-#line 1 "decomp/ST.exe/functions/005DF530/decomp.c"
+#line 4 "decomp/ST.exe/functions/005DF530/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\Start\task_obj.cpp
    MTaskTy::OutGlassBmpProc */
@@ -27,7 +27,7 @@ st::fn_005DF530
       pAVar1 = (AnonPointee_MReportTy_0073 *)*local_8;
       st::fn_006B48E0
                 (param_1,param_4,param_5,pAVar1,0,0,0,pAVar1->field_0004,pAVar1->field_0008,
-                 local_8[1],0,0x10000ff);
+                 (ushort *)local_8[1],0,0x10000ff);
       g_currentExceptionFrame = local_4c.previous;
       return;
     }
@@ -43,7 +43,7 @@ st::fn_005DF530
 }
 
 // 005DF640 MTaskTy::OutGlassTxtProc
-#line 1 "decomp/ST.exe/functions/005DF640/decomp.c"
+#line 4 "decomp/ST.exe/functions/005DF640/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\Start\task_obj.cpp
    MTaskTy::OutGlassTxtProc
@@ -82,11 +82,11 @@ LAB_005df673:
     g_currentExceptionFrame = &local_4c;
     errorCode = st::fn_0072D7F0(local_4c.jumpBuffer,0);
     if (errorCode == 0) {
-      if (local_8[0xb] != 0) {
+      if ((ushort *)local_8[0xb] != nullptr) {
         pAVar2 = (AnonPointee_MReportTy_0073 *)local_8[local_8[4] + 1];
         st::fn_006B48E0
                   ((int)param_1,param_4,param_5,pAVar2,0,0,0,pAVar2->field_0004,pAVar2->field_0008,
-                   local_8[0xb],0,0x10000ff);
+                   (ushort *)local_8[0xb],0,0x10000ff);
         g_currentExceptionFrame = local_4c.previous;
         return;
       }
@@ -107,7 +107,7 @@ LAB_005df673:
 }
 
 // 005DF7C0 MTaskTy::OutGlassATxtProc
-#line 1 "decomp/ST.exe/functions/005DF7C0/decomp.c"
+#line 4 "decomp/ST.exe/functions/005DF7C0/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\Start\task_obj.cpp
    MTaskTy::OutGlassATxtProc
@@ -146,11 +146,11 @@ LAB_005df7f3:
     g_currentExceptionFrame = &local_4c;
     errorCode = st::fn_0072D7F0(local_4c.jumpBuffer,0);
     if (errorCode == 0) {
-      if (local_8[0xb] != 0) {
+      if ((ushort *)local_8[0xb] != nullptr) {
         pAVar2 = (AnonPointee_MReportTy_0073 *)local_8[1];
         st::fn_006B48E0
                   ((int)param_1,param_4,param_5,pAVar2,0,0,0,pAVar2->field_0004,pAVar2->field_0008,
-                   local_8[0xb],0,0x10000ff);
+                   (ushort *)local_8[0xb],0,0x10000ff);
         g_currentExceptionFrame = local_4c.previous;
         return;
       }
@@ -170,7 +170,7 @@ LAB_005df7f3:
 }
 
 // 005DFA30 MTaskTy::InitMTask
-#line 1 "decomp/ST.exe/functions/005DFA30/decomp.c"
+#line 4 "decomp/ST.exe/functions/005DFA30/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\Start\task_obj.cpp
    MTaskTy::InitMTask */
@@ -317,7 +317,7 @@ void __thiscall st::fn_005DFA30(MTaskTy *this,char param_1,undefined1 param_2)
   pMVar3->field_005D = puVar6;
   pMVar3->field_0080 = 1;
   puVar6 = st::fn_00709AF0
-                     (DAT_00806784,CASE_B,"MT_CHECK",0xffffffff,0,1,0,nullptr);
+                     (PTR_00806784,CASE_B,"MT_CHECK",0xffffffff,0,1,0,nullptr);
   pMVar3->field_0081 = puVar6;
   st::fn_0040329C(&g_sound,0);
   st::fn_006BC360(pMVar3->field_005D,local_5a8,nullptr);
@@ -357,7 +357,7 @@ void __thiscall st::fn_005DFA30(MTaskTy *this,char param_1,undefined1 param_2)
             ((SpriteClassTy *)&pMVar3->field_02D1,(int *)g_ddxContext_008075A8,0x31,'\a',
              nullptr,0,0);
   /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-  (**(code **)(pMVar3->field_02D1 + 4))(DAT_00806784,7,0,"MT_SLDUP",0xffffffff);
+  (**(code **)(pMVar3->field_02D1 + 4))(PTR_00806784,7,0,"MT_SLDUP",0xffffffff);
   pMVar3->field_02ED = 0;
   pMVar3->field_02F1 = 0;
   pMVar3->field_02D9 = 0;
@@ -368,7 +368,7 @@ void __thiscall st::fn_005DFA30(MTaskTy *this,char param_1,undefined1 param_2)
             ((SpriteClassTy *)&pMVar3->field_0362,(int *)g_ddxContext_008075A8,0x31,'\a',
              nullptr,0,0);
   /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-  (**(code **)(pMVar3->field_0362 + 4))(DAT_00806784,7,0,"MT_SLDDN",0xffffffff);
+  (**(code **)(pMVar3->field_0362 + 4))(PTR_00806784,7,0,"MT_SLDDN",0xffffffff);
   pMVar3->field_037E = 0;
   pMVar3->field_0382 = 0;
   pMVar3->field_036A = 0;
@@ -379,7 +379,7 @@ void __thiscall st::fn_005DFA30(MTaskTy *this,char param_1,undefined1 param_2)
             ((SpriteClassTy *)&pMVar3->field_03F3,(int *)g_ddxContext_008075A8,0x31,'\a',
              nullptr,0,0);
   /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-  (**(code **)(pMVar3->field_03F3 + 4))(DAT_00806784,7,0,"MT_SLDT",0xffffffff);
+  (**(code **)(pMVar3->field_03F3 + 4))(PTR_00806784,7,0,"MT_SLDT",0xffffffff);
   pMVar3->field_040F = 0;
   pMVar3->field_0413 = 0;
   pMVar3->field_03FB = 0;
@@ -394,7 +394,7 @@ void __thiscall st::fn_005DFA30(MTaskTy *this,char param_1,undefined1 param_2)
             ((SpriteClassTy *)&pMVar3->field_048C,(int *)g_ddxContext_008075A8,0x31,'\a',
              nullptr,0,0);
   /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-  (**(code **)(pMVar3->field_048C + 4))(DAT_00806784,7,0,"MT_SLDUP",0xffffffff);
+  (**(code **)(pMVar3->field_048C + 4))(PTR_00806784,7,0,"MT_SLDUP",0xffffffff);
   pMVar3->field_04A8 = 0;
   pMVar3->field_04AC = 0;
   pMVar3->field_0494 = 0;
@@ -405,7 +405,7 @@ void __thiscall st::fn_005DFA30(MTaskTy *this,char param_1,undefined1 param_2)
             ((SpriteClassTy *)&pMVar3->field_051D,(int *)g_ddxContext_008075A8,0x31,'\a',
              nullptr,0,0);
   /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-  (**(code **)(pMVar3->field_051D + 4))(DAT_00806784,7,0,"MT_SLDDN",0xffffffff);
+  (**(code **)(pMVar3->field_051D + 4))(PTR_00806784,7,0,"MT_SLDDN",0xffffffff);
   pMVar3->field_0539 = 0;
   pMVar3->field_053D = 0;
   pMVar3->field_0525 = 0;
@@ -416,7 +416,7 @@ void __thiscall st::fn_005DFA30(MTaskTy *this,char param_1,undefined1 param_2)
             ((SpriteClassTy *)&pMVar3->field_05AE,(int *)g_ddxContext_008075A8,0x31,'\a',
              nullptr,0,0);
   /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-  (**(code **)(pMVar3->field_05AE + 4))(DAT_00806784,7,0,"MT_SLDT",0xffffffff);
+  (**(code **)(pMVar3->field_05AE + 4))(PTR_00806784,7,0,"MT_SLDT",0xffffffff);
   pMVar3->field_05CA = 0;
   pMVar3->field_05CE = 0;
   pMVar3->field_05B6 = 0;
@@ -460,7 +460,7 @@ void __thiscall st::fn_005DFA30(MTaskTy *this,char param_1,undefined1 param_2)
 }
 
 // 005E0470 MTaskTy::DoneMTask
-#line 1 "decomp/ST.exe/functions/005E0470/decomp.c"
+#line 4 "decomp/ST.exe/functions/005E0470/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\Start\task_obj.cpp
    MTaskTy::DoneMTask */
@@ -670,7 +670,7 @@ LAB_005e072b:
 }
 
 // 005E09E0 MTaskTy::PaintMTask
-#line 1 "decomp/ST.exe/functions/005E09E0/decomp.c"
+#line 4 "decomp/ST.exe/functions/005E09E0/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\Start\task_obj.cpp
    MTaskTy::PaintMTask
@@ -708,7 +708,7 @@ void __thiscall st::fn_005E09E0(MTaskTy *this)
 }
 
 // 005E0AC0 MTaskTy::NoneMTask
-#line 1 "decomp/ST.exe/functions/005E0AC0/decomp.c"
+#line 4 "decomp/ST.exe/functions/005E0AC0/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\Start\task_obj.cpp
    MTaskTy::NoneMTask */
@@ -942,7 +942,7 @@ LAB_005e0edd:
 }
 
 // 005E10A0 MTaskTy::TTaskItemClose
-#line 1 "decomp/ST.exe/functions/005E10A0/decomp.c"
+#line 4 "decomp/ST.exe/functions/005E10A0/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\Start\task_obj.cpp
    MTaskTy::TTaskItemClose
@@ -1000,7 +1000,7 @@ void __thiscall st::fn_005E10A0(MTaskTy *this,AnonShape_005E10A0_819783CC *param
 }
 
 // 005E11D0 MTaskTy::PrepareTSurf
-#line 1 "decomp/ST.exe/functions/005E11D0/decomp.c"
+#line 4 "decomp/ST.exe/functions/005E11D0/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\Start\task_obj.cpp
    MTaskTy::PrepareTSurf
@@ -1058,7 +1058,7 @@ st::fn_005E11D0(MTaskTy *this,AnonShape_005E11D0_D0F8BE03 *param_1,char param_2,
 }
 
 // 005E1330 MTaskTy::PlayScript
-#line 1 "decomp/ST.exe/functions/005E1330/decomp.c"
+#line 4 "decomp/ST.exe/functions/005E1330/decomp.c"
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 /* Recovered from embedded debug metadata:
    E:\__titans\Start\task_obj.cpp
@@ -1422,7 +1422,7 @@ LAB_005e200a:
                   }
                 }
                 piVar19[1] = (uint)(bVar7 == DAT_00807340);
-                module = g_module_00807618;
+                module = g_hINSTANCE_00807618;
                 piVar19[3] = puVar12[-4];
                 pcVar16 = st::fn_006B0140(resourceId,module);
                 iVar20 = st::fn_00711110(this_01->field_008D,pcVar16);
@@ -1530,13 +1530,13 @@ LAB_005e22f4:
               pDVar17 = st::fn_006B54F0(nullptr,10,10);
               g_startSystem_0081176C->field_0548 = &pDVar17->flags;
               local_ec = STReplaceLowByte((uint32_t)(local_ec), (uint8_t)((this_01->field_06C7 != '\x01') + -1)) & 0xffffff02;
-              st::fn_006B0140(0x2347,g_module_00807618);
+              st::fn_006B0140(0x2347,g_hINSTANCE_00807618);
               st::external_00000080((LPSTR)local_c38,"&%1d %s:");
               st::fn_006B5AA0(g_startSystem_0081176C->field_0548,(char *)local_c38);
               st::external_00000080((LPSTR)local_c38,"&%1d %s");
               st::fn_006B5AA0(g_startSystem_0081176C->field_0548,(char *)local_c38);
               st::fn_006B5AA0(g_startSystem_0081176C->field_0548,&DAT_007c3b5c);
-              st::fn_006B0140(0x2346,g_module_00807618);
+              st::fn_006B0140(0x2346,g_hINSTANCE_00807618);
               pDVar17 = local_c38;
               st::external_00000080((LPSTR)pDVar17,"&%1d %s:");
               st::fn_006B5AA0(g_startSystem_0081176C->field_0548,(char *)local_c38);
@@ -2901,7 +2901,7 @@ LAB_005e34e0:
 }
 
 // 005E3E80 MTaskTy::CreateTextSSpr
-#line 1 "decomp/ST.exe/functions/005E3E80/decomp.c"
+#line 4 "decomp/ST.exe/functions/005E3E80/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\Start\task_obj.cpp
    MTaskTy::CreateTextSSpr */
@@ -2998,7 +2998,7 @@ st::fn_005E3E80
 }
 
 // 005E4180 MTaskTy::CreateBut
-#line 1 "decomp/ST.exe/functions/005E4180/decomp.c"
+#line 4 "decomp/ST.exe/functions/005E4180/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\Start\task_obj.cpp
    MTaskTy::CreateBut */
@@ -3065,7 +3065,7 @@ st::fn_005E4180(MTaskTy *this,undefined4 param_1,undefined4 param_2,undefined4 p
 }
 
 // 005E4300 MTaskTy::PaintBut
-#line 1 "decomp/ST.exe/functions/005E4300/decomp.c"
+#line 4 "decomp/ST.exe/functions/005E4300/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\Start\task_obj.cpp
    MTaskTy::PaintBut
@@ -3156,7 +3156,7 @@ st::fn_005E4300(MTaskTy *this,int *param_1,UINT param_2,int param_3,int param_4,
         }
         iVar10 = -1;
         iVar5 = -1;
-        resourceString = (uint *)st::fn_006B0140(param_2,g_module_00807618);
+        resourceString = (uint *)st::fn_006B0140(param_2,g_hINSTANCE_00807618);
         st::fn_007119C0(pMVar3->field_0089,resourceString,iVar5,iVar10,uVar9);
       }
       g_currentExceptionFrame = local_5c.previous;
@@ -3174,7 +3174,7 @@ st::fn_005E4300(MTaskTy *this,int *param_1,UINT param_2,int param_3,int param_4,
 }
 
 // 005E4570 MTaskTy::GetMessage
-#line 1 "decomp/ST.exe/functions/005E4570/decomp.c"
+#line 4 "decomp/ST.exe/functions/005E4570/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\Start\task_obj.cpp
    MTaskTy::GetMessage
@@ -3578,7 +3578,7 @@ LAB_005e496b:
         uVar18 = (uint)local_14 & 0xff;
         iVar22 = -1;
         iVar9 = 0;
-        puVar13 = (uint *)st::fn_006B0140((UINT)puVar11,g_module_00807618);
+        puVar13 = (uint *)st::fn_006B0140((UINT)puVar11,g_hINSTANCE_00807618);
         st::fn_007119C0(this_00->field_008D,puVar13,iVar9,iVar22,uVar18);
         st::fn_006B35D0((int *)g_ddxContext_008075A8,this_00->field_02BD[*local_c + -1]);
       }

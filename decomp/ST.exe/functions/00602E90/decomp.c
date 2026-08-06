@@ -38,7 +38,7 @@ undefined4 * __thiscall STDestC::sub_00602E90(STDestC *this)
       text = (&PTR_s_Dest1_0_007cebec)[local_c->field_0372];
     }
     puVar3 = Library::Ourlib::MFRLOAD::mfRLoad
-                       (DAT_00806774,CASE_1D,text,0xffffffff,0,1,0,nullptr);
+                       (PTR_00806774,CASE_1D,text,0xffffffff,0,1,0,nullptr);
     if (puVar3 != nullptr) {
       if (pSVar1->field_0241 == 0) {
         local_8 = ST3DSMAPContext::sub_006E9000

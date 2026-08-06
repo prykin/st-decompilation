@@ -56,7 +56,7 @@ void __thiscall MReportTy::SetCtrl(MReportTy *this,int param_1)
     Library::Ourlib::PALETTE::FUN_00718780
               ((int)local_470,0,0x100,0x1a,0x10,(undefined4 *)&g_startSystem_0081176C->field_0x144);
     Library::Ourlib::PALETTE::FUN_00718780
-              ((int)local_470,0,0x100,0x1a,0x10,(undefined4 *)&pMVar2->field_0xa3);
+              ((int)local_470,0,0x100,0x1a,0x10,(undefined4 *)&pMVar2->field_00A3);
     Library::Ourlib::PALETTE::FUN_00718780
               ((int)local_470,0,0x100,0x2e,0x10,(undefined4 *)&pMVar2->field_0x1a3);
     PutDDX(0,0,'\x01',(BITMAPINFO *)*puVar8);

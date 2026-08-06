@@ -74,9 +74,9 @@ undefined4 __fastcall FUN_004d32c0(TLOBaseTy *param_1)
                     ((STT3DSprC *)puVar11,'\x0e',
                      *(uint *)(&DAT_0079104c + *(int *)&param_1->field_0x368 * 4));
           STT3DSprC::StartShow((STT3DSprC *)puVar11,0xe,g_playSystem_00802A38->field_00E4);
-          STT3DSprC::sub_004ACEF0((STT3DSprC *)puVar11,DAT_008073cc);
+          STT3DSprC::sub_004ACEF0((STT3DSprC *)puVar11,PTR_008073cc);
           iVar10 = STT3DSprC::LoadSequence
-                             ((STT3DSprC *)puVar11,0x10,DAT_0080678c,
+                             ((STT3DSprC *)puVar11,0x10,PTR_0080678c,
                               (&PTR_s_tlo_sha_ws_007bb1b4)[*(int *)&param_1->field_0x36c],0x1d);
           if (iVar10 != 0) {
             RaiseInternalException
@@ -127,7 +127,7 @@ undefined4 __fastcall FUN_004d32c0(TLOBaseTy *param_1)
                            (*(int *)&param_1->field_0x368 * 3 + *(int *)&param_1->field_0x36c) * 0xc
                            ) != nullptr) &&
                (iVar10 = STT3DSprC::LoadSequence
-                                   ((STT3DSprC *)&param_1->field_01D5,0xe,DAT_0080678c,
+                                   ((STT3DSprC *)&param_1->field_01D5,0xe,PTR_0080678c,
                                     *(char **)(PTR_PTR_007bb198 +
                                               (*(int *)&param_1->field_0x368 * 3 +
                                               *(int *)&param_1->field_0x36c) * 0xc),0x1d),
@@ -144,7 +144,7 @@ undefined4 __fastcall FUN_004d32c0(TLOBaseTy *param_1)
                                 (*(int *)&param_1->field_0x368 * 3 + *(int *)&param_1->field_0x36c)
                                 * 0xc + 4),param_1->field_026D);
               iVar10 = STT3DSprC::LoadSequence
-                                 ((STT3DSprC *)&param_1->field_01D5,0xd,DAT_0080678c,local_7c,0x1d);
+                                 ((STT3DSprC *)&param_1->field_01D5,0xd,PTR_0080678c,local_7c,0x1d);
               if (iVar10 != 0) {
                 RaiseInternalException
                           (iVar10,g_overwriteContext_007ED77C,
@@ -169,7 +169,7 @@ undefined4 __fastcall FUN_004d32c0(TLOBaseTy *param_1)
                           (*(int *)&param_1->field_0x368 * 3 + *(int *)&param_1->field_0x36c) * 0xc
                           + 8) != nullptr) {
               iVar10 = STT3DSprC::LoadSequence
-                                 ((STT3DSprC *)puVar11,0xc,DAT_0080678c,
+                                 ((STT3DSprC *)puVar11,0xc,PTR_0080678c,
                                   *(char **)(PTR_PTR_007bb198 +
                                             (*(int *)&param_1->field_0x368 * 3 +
                                             *(int *)&param_1->field_0x36c) * 0xc + 8),0x1d);
@@ -186,9 +186,9 @@ undefined4 __fastcall FUN_004d32c0(TLOBaseTy *param_1)
               STT3DSprC::SetCurFase((STT3DSprC *)puVar11,'\f',uVar12);
               STT3DSprC::StartShow((STT3DSprC *)puVar11,0xc,g_playSystem_00802A38->field_00E4);
             }
-            STT3DSprC::sub_004ACEF0((STT3DSprC *)puVar11,DAT_008073cc);
+            STT3DSprC::sub_004ACEF0((STT3DSprC *)puVar11,PTR_008073cc);
             iVar10 = STT3DSprC::LoadSequence
-                               ((STT3DSprC *)puVar11,0x10,DAT_0080678c,
+                               ((STT3DSprC *)puVar11,0x10,PTR_0080678c,
                                 (&PTR_s_tlo_sha_ws_007bb1b4)[*(int *)&param_1->field_0x36c],0x1d);
             if (iVar10 != 0) {
               RaiseInternalException
@@ -288,7 +288,7 @@ undefined4 __fastcall FUN_004d32c0(TLOBaseTy *param_1)
         if (param_1->field_0241 == 0) {
           iVar10 = STT3DSprC::LoadSequence
                              ((STT3DSprC *)&param_1->field_01D5,
-                              (-(*(int *)&param_1->field_0x370 != 0) & 3U) + 6,DAT_0080678c,
+                              (-(*(int *)&param_1->field_0x370 != 0) & 3U) + 6,PTR_0080678c,
                               "si_emb3",0x1d);
           if (iVar10 != 0) {
             RaiseInternalException
@@ -298,7 +298,7 @@ undefined4 __fastcall FUN_004d32c0(TLOBaseTy *param_1)
           wsprintfA(local_7c,"si_emb3_id%1d",param_1->field_0024);
           iVar10 = STT3DSprC::LoadSequence
                              ((STT3DSprC *)&param_1->field_01D5,
-                              (-(*(int *)&param_1->field_0x370 != 0) & 3U) + 5,DAT_0080678c,local_7c
+                              (-(*(int *)&param_1->field_0x370 != 0) & 3U) + 5,PTR_0080678c,local_7c
                               ,0x1d);
           if (iVar10 != 0) {
             iVar7 = 0x2d1;
@@ -311,7 +311,7 @@ LAB_004d3b23:
         else if (param_1->field_0241 == 1) {
           iVar10 = STT3DSprC::LoadSequence
                              ((STT3DSprC *)&param_1->field_01D5,
-                              (-(*(int *)&param_1->field_0x370 != 0) & 3U) + 6,DAT_0080678c,
+                              (-(*(int *)&param_1->field_0x370 != 0) & 3U) + 6,PTR_0080678c,
                               "si_emb2",0x1d);
           if (iVar10 != 0) {
             RaiseInternalException
@@ -321,7 +321,7 @@ LAB_004d3b23:
           wsprintfA(local_7c,"si_emb2_id%1d",param_1->field_0024);
           iVar10 = STT3DSprC::LoadSequence
                              ((STT3DSprC *)&param_1->field_01D5,
-                              (-(*(int *)&param_1->field_0x370 != 0) & 3U) + 5,DAT_0080678c,local_7c
+                              (-(*(int *)&param_1->field_0x370 != 0) & 3U) + 5,PTR_0080678c,local_7c
                               ,0x1d);
           if (iVar10 != 0) {
             iVar7 = 0x2d7;
@@ -487,7 +487,7 @@ LAB_004d3f76:
             if (*(int *)&param_1->field_0x370 == 0) {
               if (iVar10 == 0) {
                 iVar10 = STT3DSprC::LoadSequence
-                                   ((STT3DSprC *)puVar11,*(byte *)&param_1->field_02F0,DAT_0080678c,
+                                   ((STT3DSprC *)puVar11,*(byte *)&param_1->field_02F0,PTR_0080678c,
                                     "tlo_emb2",0x1d);
                 if (iVar10 != 0) {
                   iVar7 = 0x342;
@@ -497,7 +497,7 @@ LAB_004d3f76:
               else if ((iVar10 == 1) &&
                       (iVar10 = STT3DSprC::LoadSequence
                                           ((STT3DSprC *)puVar11,*(byte *)&param_1->field_02F0,
-                                           DAT_0080678c,"tlo_emb3",0x1d), iVar10 != 0)) {
+                                           PTR_0080678c,"tlo_emb3",0x1d), iVar10 != 0)) {
                 iVar7 = 0x343;
 cf_error_exit_004D428D:
                 RaiseInternalException
@@ -507,7 +507,7 @@ cf_error_exit_004D428D:
             }
             else if (iVar10 == 0) {
               iVar10 = STT3DSprC::LoadSequence
-                                 ((STT3DSprC *)puVar11,*(byte *)&param_1->field_02F0,DAT_0080678c,
+                                 ((STT3DSprC *)puVar11,*(byte *)&param_1->field_02F0,PTR_0080678c,
                                   "si_emb3",0x1d);
               if (iVar10 != 0) {
                 RaiseInternalException
@@ -517,7 +517,7 @@ cf_error_exit_004D428D:
               wsprintfA(local_7c,"si_emb3_id%1d",param_1->field_0024);
               iVar10 = STT3DSprC::LoadSequence
                                  ((STT3DSprC *)puVar11,*(char *)&param_1->field_02F0 - 1,
-                                  DAT_0080678c,local_7c,0x1d);
+                                  PTR_0080678c,local_7c,0x1d);
               if (iVar10 != 0) {
                 iVar7 = 0x336;
                 goto cf_error_exit_004D428D;
@@ -525,7 +525,7 @@ cf_error_exit_004D428D:
             }
             else if (iVar10 == 1) {
               iVar10 = STT3DSprC::LoadSequence
-                                 ((STT3DSprC *)puVar11,*(byte *)&param_1->field_02F0,DAT_0080678c,
+                                 ((STT3DSprC *)puVar11,*(byte *)&param_1->field_02F0,PTR_0080678c,
                                   "si_emb2",0x1d);
               if (iVar10 != 0) {
                 RaiseInternalException
@@ -535,7 +535,7 @@ cf_error_exit_004D428D:
               wsprintfA(local_7c,"si_emb2_id%1d",param_1->field_0024);
               iVar10 = STT3DSprC::LoadSequence
                                  ((STT3DSprC *)puVar11,*(char *)&param_1->field_02F0 - 1,
-                                  DAT_0080678c,local_7c,0x1d);
+                                  PTR_0080678c,local_7c,0x1d);
               if (iVar10 != 0) {
                 iVar7 = 0x33c;
                 goto cf_error_exit_004D428D;
@@ -867,7 +867,7 @@ LAB_004d43f5:
         else {
           text = "expl_bbt0";
         }
-        iVar10 = STT3DSprC::LoadSequence((STT3DSprC *)puVar11,7,DAT_00806764,text,0x1d);
+        iVar10 = STT3DSprC::LoadSequence((STT3DSprC *)puVar11,7,PTR_00806764,text,0x1d);
         if (iVar10 != 0) {
           return 0xffff;
         }

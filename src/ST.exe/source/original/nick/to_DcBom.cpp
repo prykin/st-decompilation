@@ -2,7 +2,7 @@
 // Generated translation unit: source/original/nick/to_DcBom.cpp
 
 // 005FDB50 SubmarineTitans::Recovered::HiddenThis::AnonReceiver_005FDB50::FUN_005fdb50
-#line 1 "decomp/ST.exe/functions/005FDB50/decomp.c"
+#line 4 "decomp/ST.exe/functions/005FDB50/decomp.c"
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 /* [STSourceProvenanceApplier begin]
    Recovered source file: E:\__titans\nick\to_DcBom.cpp
@@ -58,14 +58,14 @@ st::fn_005FDB50
           this_00 != nullptr)) && (-1 < param_2 || iVar5 != 2)) {
         local_8 = iVar8;
         if ((iVar5 == 1) || (iVar5 == 2)) {
-          iVar5 = st::fn_0040537B(this_00,DAT_008073cc,0x5a,0x45,nullptr,0xb4,0x8c,0x11);
+          iVar5 = st::fn_0040537B(this_00,PTR_008073cc,0x5a,0x45,nullptr,0xb4,0x8c,0x11);
           if (iVar5 != 0) {
             st::fn_006A5E40
                       (-1,g_overwriteContext_007ED77C,"E:\\__titans\\nick\\to_DcBom.cpp",0x13d
                       );
             return 0xffff;
           }
-          iVar5 = st::fn_00404183(this_00,0xd,DAT_00806774,"adcbo",0x1d);
+          iVar5 = st::fn_00404183(this_00,0xd,PTR_00806774,"adcbo",0x1d);
           if (iVar5 != 0) {
             return 0xffff;
           }
@@ -144,16 +144,16 @@ joined_r0x005fe09b:
             uVar4 = *(int *)&this->field_0x1c * 0x41c64e6d + 0x3039;
             *(uint *)&this->field_0x1c = uVar4;
             iVar5 = st::fn_00404183
-                              (this_00,0xd,DAT_00806774,(&PTR_s_Expb24_007ce934)[uVar4 >> 0x10 & 1],
+                              (this_00,0xd,PTR_00806774,(&PTR_s_Expb24_007ce934)[uVar4 >> 0x10 & 1],
                                0x1d);
             if (iVar5 != 0) {
               return 0xffff;
             }
-            iVar5 = st::fn_00404183(this_00,0xf,DAT_00806764,"bulb_n3",0x1d);
+            iVar5 = st::fn_00404183(this_00,0xf,PTR_00806764,"bulb_n3",0x1d);
             if (iVar5 != 0) {
               return 0xffff;
             }
-            iVar5 = st::fn_00404183(this_00,0xe,DAT_00806774,"expmask2",0x1d);
+            iVar5 = st::fn_00404183(this_00,0xe,PTR_00806774,"expmask2",0x1d);
             if (iVar5 != 0) {
               return 0xffff;
             }
@@ -161,7 +161,7 @@ joined_r0x005fe09b:
             *(undefined1 *)(iVar8 + 0x28 + *(int *)&this->field_0x233) = 1;
             st::fn_004022D4(this_00,'\x0f');
             st::fn_00405240(this_00,0xd,g_playSystem_00802A38->field_00E4);
-            st::fn_004044EE(this_00,DAT_008032b8,0x10);
+            st::fn_004044EE(this_00,PTR_008032b8,0x10);
             st::fn_00403233(this_00,'\x0e');
             iVar5 = iVar8 + *(int *)&this->field_0x233;
             local_18 = (int)*(short *)(iVar5 + 6);

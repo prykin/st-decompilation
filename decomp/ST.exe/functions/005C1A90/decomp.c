@@ -75,7 +75,7 @@ int __thiscall MReportTy::GetMessage(MReportTy *this,STMessage *message)
           else {
             UVar22 = 0x23f1;
           }
-          pcVar13 = LoadResourceString(UVar22,g_module_00807618);
+          pcVar13 = LoadResourceString(UVar22,g_hINSTANCE_00807618);
           uVar17 = 0xffffffff;
           do {
             pcVar21 = pcVar13;
@@ -129,7 +129,7 @@ int __thiscall MReportTy::GetMessage(MReportTy *this,STMessage *message)
                 piVar20 = nullptr;
               }
               iVar12 = *piVar20 + 1;
-              pcVar13 = LoadResourceString(0x2445,g_module_00807618);
+              pcVar13 = LoadResourceString(0x2445,g_hINSTANCE_00807618);
               wsprintfA((LPSTR)&DAT_0080f33a,"%s %d",pcVar13,iVar12);
               PaintBut(this_00,message,0,2,'\x01',&DAT_0080f33a);
             }
@@ -176,7 +176,7 @@ int __thiscall MReportTy::GetMessage(MReportTy *this,STMessage *message)
       if (piVar20 != nullptr) {
         ccFntTy::SetSurf(local_10->field_0087,(message->arg1).i32,0,0,0,0,0);
         iVar12 = *piVar20 + 1;
-        pcVar13 = LoadResourceString(0x2445,g_module_00807618);
+        pcVar13 = LoadResourceString(0x2445,g_hINSTANCE_00807618);
         wsprintfA((LPSTR)&DAT_0080f33a,"%s %d",pcVar13,iVar12);
         ccFntTy::WrStr(this_00->field_0087,&DAT_0080f33a,-1,-1,
                        (uint)((message->arg0).words.high == 1));
@@ -204,7 +204,7 @@ switchD_005c1b14_caseD_5:
     else {
       UVar22 = 0x23f1;
     }
-    pcVar13 = LoadResourceString(UVar22,g_module_00807618);
+    pcVar13 = LoadResourceString(UVar22,g_hINSTANCE_00807618);
     uVar17 = 0xffffffff;
     do {
       pcVar21 = pcVar13;

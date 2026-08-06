@@ -2,7 +2,7 @@
 // Generated translation unit: source/recovered/by_address/0046.cpp
 
 // 004601F0 FUN_004601f0
-#line 1 "decomp/ST.exe/functions/004601F0/decomp.c"
+#line 4 "decomp/ST.exe/functions/004601F0/decomp.c"
 int __thiscall st::fn_004601F0(void *this,int param_1)
 
 {
@@ -22,7 +22,7 @@ int __thiscall st::fn_004601F0(void *this,int param_1)
 }
 
 // 004602E0 FUN_004602e0
-#line 1 "decomp/ST.exe/functions/004602E0/decomp.c"
+#line 4 "decomp/ST.exe/functions/004602E0/decomp.c"
 void __thiscall st::fn_004602E0(void *this,int param_1)
 
 {
@@ -40,7 +40,7 @@ void __thiscall st::fn_004602E0(void *this,int param_1)
 }
 
 // 004603B0 FUN_004603b0
-#line 1 "decomp/ST.exe/functions/004603B0/decomp.c"
+#line 4 "decomp/ST.exe/functions/004603B0/decomp.c"
 /* [STPrototypeApplier] Propagated parameter 1.
    Evidence: 004603B0 parameter used as this of STTorpC::ClearDangerous @ 004604BD | 004603B0
    parameter used as this of STTorpC::ClearDangerous @ 00460546 | 004603B0 parameter used as this of
@@ -238,7 +238,7 @@ LAB_00460581:
 }
 
 // 004620F0 FUN_004620f0
-#line 1 "decomp/ST.exe/functions/004620F0/decomp.c"
+#line 4 "decomp/ST.exe/functions/004620F0/decomp.c"
 int __fastcall st::fn_004620F0(STBoatC *param_1)
 
 {
@@ -261,7 +261,7 @@ int __fastcall st::fn_004620F0(STBoatC *param_1)
 }
 
 // 00462180 FUN_00462180
-#line 1 "decomp/ST.exe/functions/00462180/decomp.c"
+#line 4 "decomp/ST.exe/functions/00462180/decomp.c"
 int __thiscall st::fn_00462180(void *this,int param_1)
 
 {
@@ -626,7 +626,7 @@ LAB_00462a36:
               /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
               (*(code *)**(undefined4 **)this)(local_6c);
               st::fn_00404183
-                        ((STT3DSprC *)((int)this + 0x1d5),8,DAT_00806774,"expdstrwd",0x1d);
+                        ((STT3DSprC *)((int)this + 0x1d5),8,PTR_00806774,"expdstrwd",0x1d);
               if (DAT_00811798 != nullptr) {
                 st::fn_00405F0B
                           (pSVar14,(undefined2 *)((int)&local_14 + 2),
@@ -1502,7 +1502,7 @@ cf_common_exit_0046351C:
 }
 
 // 004658D0 FUN_004658d0
-#line 1 "decomp/ST.exe/functions/004658D0/decomp.c"
+#line 4 "decomp/ST.exe/functions/004658D0/decomp.c"
 int __thiscall st::fn_004658D0(void *this,int param_1)
 
 {
@@ -1598,7 +1598,7 @@ switchD_0046590f_caseD_2:
 }
 
 // 0046D400 FUN_0046d400
-#line 1 "decomp/ST.exe/functions/0046D400/decomp.c"
+#line 4 "decomp/ST.exe/functions/0046D400/decomp.c"
 void __fastcall st::fn_0046D400(int *param_1,undefined4 param_2)
 
 {

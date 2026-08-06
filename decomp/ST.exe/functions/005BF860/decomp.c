@@ -113,7 +113,7 @@ LAB_005bfb27:
         pAVar2 = *(AnonPointee_MReportTy_0073 **)((int)&this_00->field_0070 + 3);
         Library::DKW::DDX::FUN_006b48e0
                   ((int)g_dDXContext_0080759C,0x1a,0x46,pAVar2,0,0,0,pAVar2->field_0004,
-                   pAVar2->field_0008,(int)&this_00->field_0xa3,0x4c,0x10000ff);
+                   pAVar2->field_0008,(ushort *)&this_00->field_0xa3,0x4c,0x10000ff);
         g_currentExceptionFrame = local_50.previous;
         return;
       }

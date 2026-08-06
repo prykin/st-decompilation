@@ -267,7 +267,7 @@ LAB_005b7655:
                 cVar16 = CASE_FFFFFFFE;
                 iVar9 = 0x1e;
                 iVar6 = 0x7d;
-                puVar12 = (uint *)LoadResourceString(*local_8,g_module_00807618);
+                puVar12 = (uint *)LoadResourceString(*local_8,g_hINSTANCE_00807618);
                 puVar8 = ccFntTy::CreateTypeSSpr
                                    (g_startSystem_0081176C->field_0030,puVar12,iVar6,iVar9,cVar16,
                                     uVar7,iVar17,iVar18,iVar19);

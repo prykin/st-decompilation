@@ -56,8 +56,8 @@ void __thiscall WaitTy::ShowDescription(WaitTy *this)
   this_00 = local_8;
   g_startSystem_0081176C->field_0548 = &pDVar7->flags;
   if (local_8->field_1A8F == -1) {
-    pcVar8 = LoadResourceString(0x252c,g_module_00807618);
-    pcVar9 = LoadResourceString(0x252a,g_module_00807618);
+    pcVar8 = LoadResourceString(0x252c,g_hINSTANCE_00807618);
+    pcVar9 = LoadResourceString(0x252a,g_hINSTANCE_00807618);
     wsprintfA((LPSTR)&DAT_0080f33a,"%s (%s)",pcVar9,pcVar8);
     iVar5 = 0;
     puVar11 = &DAT_0080f33a;
@@ -84,19 +84,19 @@ void __thiscall WaitTy::ShowDescription(WaitTy *this)
         local_c = 1;
         Library::MSVCRT::FUN_0072e730(&DAT_0080ed16,nullptr,nullptr,local_1a8,nullptr);
         pbVar12 = local_1a8;
-        pcVar8 = LoadResourceString(0x252a,g_module_00807618);
+        pcVar8 = LoadResourceString(0x252a,g_hINSTANCE_00807618);
         wsprintfA((LPSTR)&DAT_0080f33a,"%s (%s)",pcVar8,pbVar12);
         AddStr(this_00,&DAT_0080f33a,0);
         cMf32::delete(pcVar4);
       }
       goto LAB_005e829d;
     }
-    pcVar8 = LoadResourceString(0x252b,g_module_00807618);
-    pcVar9 = LoadResourceString(0x252a,g_module_00807618);
+    pcVar8 = LoadResourceString(0x252b,g_hINSTANCE_00807618);
+    pcVar9 = LoadResourceString(0x252a,g_hINSTANCE_00807618);
     wsprintfA((LPSTR)&DAT_0080f33a,"%s (%s)",pcVar9,pcVar8);
     AddStr(this_00,&DAT_0080f33a,0);
     iVar5 = 0;
-    puVar11 = (uint *)LoadResourceString(0x252d,g_module_00807618);
+    puVar11 = (uint *)LoadResourceString(0x252d,g_hINSTANCE_00807618);
   }
   AddStr(this_00,puVar11,iVar5);
 LAB_005e829d:

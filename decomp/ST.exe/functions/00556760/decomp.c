@@ -179,9 +179,9 @@ LAB_0055693a:
     local_1c = 0;
   }
   iVar7 = local_1c;
-  piVar6 = DAT_00806764;
+  piVar6 = PTR_00806764;
   if (*(int *)(&DAT_007c900c + param_1 * 0x18) != 1) {
-    piVar6 = DAT_00806774;
+    piVar6 = PTR_00806774;
   }
   puVar13 = nullptr;
   iVar12 = 0;

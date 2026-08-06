@@ -92,7 +92,7 @@ void __thiscall CPanelTy::UpdateStackPanel(CPanelTy *this,uint param_1)
             uVar13 = 6;
             pcVar7 = (char *)thunk_FUN_004f1d20((undefined1 *)local_c);
             puVar8 = Library::Ourlib::MFRLOAD::mfRLoad
-                               (DAT_00806794,CASE_1F,pcVar7,uVar13,bVar5,iVar6,iVar14,puVar15);
+                               (PTR_00806794,CASE_1F,pcVar7,uVar13,bVar5,iVar6,iVar14,puVar15);
             local_14[-0x12] = (uint)puVar8;
             *local_10 = 0;
             *local_14 = this_00->field_0038;

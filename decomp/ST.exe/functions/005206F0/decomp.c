@@ -107,7 +107,7 @@ void __thiscall InfocPanelTy::Update(InfocPanelTy *this)
         uVar12 = 0;
         iVar11 = -1;
         iVar5 = -1;
-        resourceString = (uint *)LoadResourceString(resourceId,g_module_00807618);
+        resourceString = (uint *)LoadResourceString(resourceId,g_hINSTANCE_00807618);
         ccFntTy::WrStr(this_00->field_0189,resourceString,iVar5,iVar11,uVar12);
       }
       if (DAT_00808a8f == '\0') {

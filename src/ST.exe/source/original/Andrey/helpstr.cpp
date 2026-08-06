@@ -2,7 +2,7 @@
 // Generated translation unit: source/original/Andrey/helpstr.cpp
 
 // 0051F8F0 HelpStringTy::OutStr
-#line 1 "decomp/ST.exe/functions/0051F8F0/decomp.c"
+#line 4 "decomp/ST.exe/functions/0051F8F0/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\Andrey\helpstr.cpp
    HelpStringTy::OutStr
@@ -61,7 +61,7 @@ void __thiscall st::fn_0051F8F0(HelpStringTy *this)
 }
 
 // 0051FBA0 HelpStringTy::GetMessage
-#line 1 "decomp/ST.exe/functions/0051FBA0/decomp.c"
+#line 4 "decomp/ST.exe/functions/0051FBA0/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\Andrey\helpstr.cpp
    HelpStringTy::GetMessage

@@ -326,14 +326,14 @@ source_target	destination_target	site
 00424620|parameter|Stack[0x4]:4	0042B620|parameter|Stack[0x8]:2	00424620 C call -> STAllPlayersC::GetObjPtr
 004247B0|parameter|Stack[0x4]:4	0042B620|parameter|Stack[0x8]:2	004247B0 C call -> STAllPlayersC::GetObjPtr
 004248A0|parameter|Stack[0x4]:4	0044CC90|parameter|Stack[0xc]:4	004248A0 C call -> FUN_0044cc90
-00424E10|parameter|ECX:4 (auto)	006E25D0|parameter|ECX:4 (auto)	00424E10 C call -> ST3DSMAPContext::sub_006E25D0
-00424E10|parameter|ECX:4 (auto)	006E25D0|parameter|ECX:4 (auto)	00424E10 C call -> ST3DSMAPContext::sub_006E25D0
-00424E10|parameter|ECX:4 (auto)	006E25D0|parameter|ECX:4 (auto)	00424E10 C call -> ST3DSMAPContext::sub_006E25D0
-00424E10|parameter|ECX:4 (auto)	006E25D0|parameter|ECX:4 (auto)	00424E10 C call -> ST3DSMAPContext::sub_006E25D0
-00424E10|parameter|ECX:4 (auto)	006E25D0|parameter|ECX:4 (auto)	00424E10 C call -> ST3DSMAPContext::sub_006E25D0
-00424E10|parameter|ECX:4 (auto)	006E25D0|parameter|ECX:4 (auto)	00424E10 C call -> ST3DSMAPContext::sub_006E25D0
-00424E10|parameter|ECX:4 (auto)	006E25D0|parameter|ECX:4 (auto)	00424E10 C call -> ST3DSMAPContext::sub_006E25D0
-00424E10|parameter|ECX:4 (auto)	006E25D0|parameter|ECX:4 (auto)	00424E10 C call -> ST3DSMAPContext::sub_006E25D0
+00424E10|parameter|ECX:4 (auto)	006E25D0|parameter|ECX:4	00424E10 C call -> ST3DSMAPContext::sub_006E25D0
+00424E10|parameter|ECX:4 (auto)	006E25D0|parameter|ECX:4	00424E10 C call -> ST3DSMAPContext::sub_006E25D0
+00424E10|parameter|ECX:4 (auto)	006E25D0|parameter|ECX:4	00424E10 C call -> ST3DSMAPContext::sub_006E25D0
+00424E10|parameter|ECX:4 (auto)	006E25D0|parameter|ECX:4	00424E10 C call -> ST3DSMAPContext::sub_006E25D0
+00424E10|parameter|ECX:4 (auto)	006E25D0|parameter|ECX:4	00424E10 C call -> ST3DSMAPContext::sub_006E25D0
+00424E10|parameter|ECX:4 (auto)	006E25D0|parameter|ECX:4	00424E10 C call -> ST3DSMAPContext::sub_006E25D0
+00424E10|parameter|ECX:4 (auto)	006E25D0|parameter|ECX:4	00424E10 C call -> ST3DSMAPContext::sub_006E25D0
+00424E10|parameter|ECX:4 (auto)	006E25D0|parameter|ECX:4	00424E10 C call -> ST3DSMAPContext::sub_006E25D0
 00424E10|parameter|ECX:4 (auto)	004248D0|parameter|ECX:4 (auto)	00424E10 C call -> sub_004248D0
 00424E10|local|Stack[-0xa0]:4	004248D0|parameter|Stack[0x4]:4	00424E10 C call -> sub_004248D0
 00424E10|local|Stack[-0xa8]:4	006ACF50|parameter|Stack[0x4]:4	00424E10 C call -> Library::DKW::LIB::MemRealloc
@@ -463,21 +463,21 @@ source_target	destination_target	site
 00427BB0|parameter|ECX:4 (auto)	00427090|parameter|ECX:4 (auto)	00427BB0 C call -> SubmarineTitans::Recovered::HiddenThis::AnonReceiver_004248D0::sub_00427090
 00427BB0|local|Stack[-0x8]:4	00427090|parameter|Stack[0x4]:4	00427BB0 C call -> SubmarineTitans::Recovered::HiddenThis::AnonReceiver_004248D0::sub_00427090
 00427BB0|parameter|Stack[0xc]:4	00427090|parameter|Stack[0xc]:4	00427BB0 C call -> SubmarineTitans::Recovered::HiddenThis::AnonReceiver_004248D0::sub_00427090
-00427F20|parameter|ECX:4 (auto)	006E25D0|parameter|ECX:4 (auto)	00427F20 C call -> ST3DSMAPContext::sub_006E25D0
+00427F20|parameter|ECX:4 (auto)	006E25D0|parameter|ECX:4	00427F20 C call -> ST3DSMAPContext::sub_006E25D0
 00427F20|local|Stack[-0x54]:1	006E25D0|parameter|Stack[0x4]:4	00427F20 C call -> ST3DSMAPContext::sub_006E25D0
-00427F20|parameter|ECX:4 (auto)	006E25D0|parameter|ECX:4 (auto)	00427F20 C call -> ST3DSMAPContext::sub_006E25D0
+00427F20|parameter|ECX:4 (auto)	006E25D0|parameter|ECX:4	00427F20 C call -> ST3DSMAPContext::sub_006E25D0
 00427F20|local|Stack[-0x54]:1	006E25D0|parameter|Stack[0x4]:4	00427F20 C call -> ST3DSMAPContext::sub_006E25D0
-00427F20|parameter|ECX:4 (auto)	006E25D0|parameter|ECX:4 (auto)	00427F20 C call -> ST3DSMAPContext::sub_006E25D0
+00427F20|parameter|ECX:4 (auto)	006E25D0|parameter|ECX:4	00427F20 C call -> ST3DSMAPContext::sub_006E25D0
 00427F20|local|Stack[-0x54]:1	006E25D0|parameter|Stack[0x4]:4	00427F20 C call -> ST3DSMAPContext::sub_006E25D0
-00427F20|parameter|ECX:4 (auto)	006E25D0|parameter|ECX:4 (auto)	00427F20 C call -> ST3DSMAPContext::sub_006E25D0
+00427F20|parameter|ECX:4 (auto)	006E25D0|parameter|ECX:4	00427F20 C call -> ST3DSMAPContext::sub_006E25D0
 00427F20|local|Stack[-0x54]:1	006E25D0|parameter|Stack[0x4]:4	00427F20 C call -> ST3DSMAPContext::sub_006E25D0
-00427F20|parameter|ECX:4 (auto)	006E25D0|parameter|ECX:4 (auto)	00427F20 C call -> ST3DSMAPContext::sub_006E25D0
+00427F20|parameter|ECX:4 (auto)	006E25D0|parameter|ECX:4	00427F20 C call -> ST3DSMAPContext::sub_006E25D0
 00427F20|local|Stack[-0x54]:1	006E25D0|parameter|Stack[0x4]:4	00427F20 C call -> ST3DSMAPContext::sub_006E25D0
-00427F20|parameter|ECX:4 (auto)	006E25D0|parameter|ECX:4 (auto)	00427F20 C call -> ST3DSMAPContext::sub_006E25D0
+00427F20|parameter|ECX:4 (auto)	006E25D0|parameter|ECX:4	00427F20 C call -> ST3DSMAPContext::sub_006E25D0
 00427F20|local|Stack[-0x54]:1	006E25D0|parameter|Stack[0x4]:4	00427F20 C call -> ST3DSMAPContext::sub_006E25D0
-00427F20|parameter|ECX:4 (auto)	006E25D0|parameter|ECX:4 (auto)	00427F20 C call -> ST3DSMAPContext::sub_006E25D0
+00427F20|parameter|ECX:4 (auto)	006E25D0|parameter|ECX:4	00427F20 C call -> ST3DSMAPContext::sub_006E25D0
 00427F20|local|Stack[-0x54]:1	006E25D0|parameter|Stack[0x4]:4	00427F20 C call -> ST3DSMAPContext::sub_006E25D0
-00427F20|parameter|ECX:4 (auto)	006E25D0|parameter|ECX:4 (auto)	00427F20 C call -> ST3DSMAPContext::sub_006E25D0
+00427F20|parameter|ECX:4 (auto)	006E25D0|parameter|ECX:4	00427F20 C call -> ST3DSMAPContext::sub_006E25D0
 00427F20|local|Stack[-0x54]:1	006E25D0|parameter|Stack[0x4]:4	00427F20 C call -> ST3DSMAPContext::sub_006E25D0
 00427F20|parameter|ECX:4 (auto)	00427BB0|parameter|ECX:4 (auto)	00427F20 C call -> SubmarineTitans::Recovered::HiddenThis::AnonReceiver_004248D0::FUN_00427bb0
 00427F20|parameter|ECX:4 (auto)	00427BB0|parameter|ECX:4 (auto)	00427F20 C call -> SubmarineTitans::Recovered::HiddenThis::AnonReceiver_004248D0::FUN_00427bb0
@@ -490,6 +490,14 @@ source_target	destination_target	site
 00428B20|parameter|Stack[0x4]:4	006B0290|parameter|Stack[0x14]:4	00428B20 C call -> FUN_006b0290
 00428B20|parameter|Stack[0x8]:4	006B0290|parameter|Stack[0x18]:4	00428B20 C call -> FUN_006b0290
 00428E50|local|Stack[-0xc4]:4	006DC050|parameter|Stack[0x14]:4	00428E50 C call -> ST3DSMAPContext::sub_006DC050
+00428E50|local|Stack[-0xd4]:4	006E25D0|parameter|Stack[0x8]:4	00428E50 C call -> ST3DSMAPContext::sub_006E25D0
+00428E50|local|Stack[-0xd4]:4	006E25D0|parameter|Stack[0x8]:4	00428E50 C call -> ST3DSMAPContext::sub_006E25D0
+00428E50|local|Stack[-0xd4]:4	006E25D0|parameter|Stack[0x8]:4	00428E50 C call -> ST3DSMAPContext::sub_006E25D0
+00428E50|local|Stack[-0xd4]:4	006E25D0|parameter|Stack[0x8]:4	00428E50 C call -> ST3DSMAPContext::sub_006E25D0
+00428E50|local|Stack[-0xb4]:8	006E25D0|parameter|Stack[0xc]:8	00428E50 C call -> ST3DSMAPContext::sub_006E25D0
+00428E50|local|Stack[-0xd4]:4	006E25D0|parameter|Stack[0x8]:4	00428E50 C call -> ST3DSMAPContext::sub_006E25D0
+00428E50|local|Stack[-0xd4]:4	006E25D0|parameter|Stack[0x8]:4	00428E50 C call -> ST3DSMAPContext::sub_006E25D0
+00428E50|local|Stack[-0xb4]:8	006E25D0|parameter|Stack[0x14]:8	00428E50 C call -> ST3DSMAPContext::sub_006E25D0
 00428E50|local|Stack[-0x40]:4	006DD610|parameter|Stack[0x4]:4	00428E50 C call -> ST3DSMAPContext::sub_006DD610
 00428E50|local|Stack[-0xe8]:4	00428B20|parameter|Stack[0x8]:4	00428E50 C call -> FUN_00428b20
 00428E50|local|Stack[-0xc4]:4	00428B20|parameter|Stack[0xc]:4	00428E50 C call -> FUN_00428b20
@@ -4007,6 +4015,7 @@ source_target	destination_target	site
 004B8C80|local|Stack[-0x2c]:1	006E60A0|parameter|Stack[0x4]:4	004B8C80 C call -> sub_006E60A0
 004B8C80|parameter|ECX:4	004CBF70|parameter|ECX:4	004B8C80 C call -> FUN_004cbf70
 004B8C80|parameter|ECX:4	0062B830|parameter|Stack[0x14]:4	004B8C80 C call -> FUN_0062b830
+004B8C80|local|EAX:4	0062B830|parameter|Stack[0x20]:4	004B8C80 C call -> FUN_0062b830
 004B8C80|parameter|ECX:4	004C4550|parameter|ECX:4 (auto)	004B8C80 C call -> TLOBaseTy::sub_004C4550
 004B8C80|parameter|ECX:4	004C9770|parameter|ECX:4 (auto)	004B8C80 C call -> TLOBaseTy::LoadImages
 004B8C80|parameter|ECX:4	004C9770|parameter|ECX:4 (auto)	004B8C80 C call -> TLOBaseTy::LoadImages
@@ -4053,6 +4062,7 @@ source_target	destination_target	site
 004B9D90|parameter|ECX:4	004E9930|parameter|ECX:4	004B9D90 C call -> FUN_004e9930
 004B9FA0|local|Stack[-0x80]:4	0041E530|parameter|ECX:4 (auto)	004B9FA0 C call -> STSprGameObjC::GetMessage
 004B9FA0|parameter|Stack[0x4]:4	0041E530|parameter|Stack[0x4]:4	004B9FA0 C call -> STSprGameObjC::GetMessage
+004B9FA0|local|EAX:4	005F23D0|parameter|Stack[0x18]:4	004B9FA0 C call -> FUN_005f23d0
 004B9FA0|local|EAX:4	006EA190|parameter|Stack[0x4]:4	004B9FA0 C call -> FUN_006ea190
 004B9FA0|local|EAX:4	006EA340|parameter|Stack[0x4]:4	004B9FA0 C call -> FUN_006ea340
 004B9FA0|local|EAX:4	006EA340|parameter|Stack[0x4]:4	004B9FA0 C call -> FUN_006ea340
@@ -4063,6 +4073,7 @@ source_target	destination_target	site
 004B9FA0|local|Stack[-0x54]:4	004E60D0|parameter|Stack[0x4]:4	004B9FA0 C call -> FUN_004e60d0
 004B9FA0|local|Stack[-0x54]:4	004B9BB0|parameter|Stack[0x8]:2	004B9FA0 C call -> FUN_004b9bb0
 004B9FA0|local|Stack[-0x50]:4	004B9BB0|parameter|Stack[0xc]:2	004B9FA0 C call -> FUN_004b9bb0
+004B9FA0|local|EAX:4	0062B830|parameter|Stack[0x20]:4	004B9FA0 C call -> FUN_0062b830
 004B9FA0|local|Stack[-0x7c]:1	006E60A0|parameter|Stack[0x4]:4	004B9FA0 C call -> sub_006E60A0
 004B9FA0|local|Stack[-0x18]:4	004DBB10|parameter|Stack[0x4]:4	004B9FA0 C call -> FUN_004dbb10
 004B9FA0|local|Stack[-0x18]:4	004DBB60|parameter|Stack[0x4]:4	004B9FA0 C call -> FUN_004dbb60
@@ -4495,6 +4506,7 @@ source_target	destination_target	site
 004D2FD0|local|Stack[-0xc]:4	006AAC70|parameter|Stack[0x4]:4	004D2FD0 C call -> Library::DKW::LIB::MemAlloc
 004D2FD0|local|Stack[-0x8]:4	0054D430|parameter|Stack[0x8]:4	004D2FD0 C call -> STPlaySystemC::SaveObjData
 004D2FD0|local|Stack[-0xc]:4	0054D430|parameter|Stack[0xc]:4	004D2FD0 C call -> STPlaySystemC::SaveObjData
+004D32C0|local|EAX:4	005F23D0|parameter|Stack[0x18]:4	004D32C0 C call -> FUN_005f23d0
 004D32C0|local|Stack[-0x7c]:1	004AB880|parameter|Stack[0xc]:4	004D32C0 C call -> STT3DSprC::LoadSequence
 004D32C0|parameter|ECX:4	0041C5A0|parameter|ECX:4 (auto)	004D32C0 C call -> sub_0041C5A0
 004D32C0|parameter|ECX:4	00417D30|parameter|ECX:4 (auto)	004D32C0 C call -> TLOBaseTy::sub_00417D30
@@ -4511,6 +4523,7 @@ source_target	destination_target	site
 004D32C0|local|Stack[-0xc]:4	004D7E50|parameter|Stack[0x10]:4	004D32C0 C call -> FUN_004d7e50
 004D32C0|local|Stack[-0x10]:4	004D7F70|parameter|Stack[0x10]:4	004D32C0 C call -> FUN_004d7f70
 004D32C0|parameter|ECX:4	0062B830|parameter|Stack[0x14]:4	004D32C0 C call -> FUN_0062b830
+004D32C0|local|EAX:4	0062B830|parameter|Stack[0x20]:4	004D32C0 C call -> FUN_0062b830
 004D32C0|parameter|ECX:4	006E60A0|parameter|ECX:4 (auto)	004D32C0 C call -> sub_006E60A0
 004D32C0|local|Stack[-0x3c]:1	006E60A0|parameter|Stack[0x4]:4	004D32C0 C call -> sub_006E60A0
 004D32C0|parameter|ECX:4	004D5470|parameter|ECX:4	004D32C0 C call -> FUN_004d5470
@@ -4709,6 +4722,7 @@ source_target	destination_target	site
 004E2C30|parameter|Stack[0x4]:4	004E5F20|parameter|Stack[0x8]:4	004E2C30 C call -> FUN_004e5f20
 004E2C30|parameter|Stack[0x4]:4	004E60D0|parameter|Stack[0x8]:4	004E2C30 C call -> FUN_004e60d0
 004E2C30|local|Stack[-0x10]:4	004E6140|parameter|Stack[0x8]:4	004E2C30 C call -> FUN_004e6140
+004E2C30|local|EAX:4	004E6E10|parameter|Stack[0x4]:4	004E2C30 C call -> FUN_004e6e10
 004E2C30|parameter|Stack[0x4]:4	004E6E10|parameter|Stack[0x8]:4	004E2C30 C call -> FUN_004e6e10
 004E2C30|parameter|ECX:4 (auto)	004CABB0|parameter|ECX:4 (auto)	004E2C30 C call -> TLOBaseTy::RotateSpr
 004E3120|parameter|ECX:4 (auto)	004CABB0|parameter|ECX:4 (auto)	004E3120 C call -> TLOBaseTy::RotateSpr
@@ -9476,17 +9490,16 @@ source_target	destination_target	site
 006101B0|parameter|ECX:4	00615AD0|parameter|ECX:4	006101B0 C call -> FUN_00615ad0
 006101B0|parameter|ECX:4	0060ECE0|parameter|ECX:4 (auto)	006101B0 C call -> FUN_0060ece0
 006101B0|parameter|ECX:4	0060EF40|parameter|ECX:4 (auto)	006101B0 C call -> SubmarineTitans::Recovered::HiddenThis::AnonReceiver_0060EF40::FUN_0060ef40
-006101B0|parameter|ECX:4	0060ECE0|parameter|ECX:4 (auto)	006101B0 C call -> FUN_0060ece0
 006101B0|parameter|ECX:4	0060EC00|parameter|ECX:4	006101B0 C call -> FUN_0060ec00
+006101B0|parameter|ECX:4	0060ECE0|parameter|ECX:4 (auto)	006101B0 C call -> FUN_0060ece0
 006101B0|parameter|ECX:4	00617560|parameter|ECX:4 (auto)	006101B0 C call -> FUN_00617560
 006101B0|parameter|ECX:4	006139A0|parameter|ECX:4 (auto)	006101B0 C call -> FUN_006139a0
-006101B0|parameter|ECX:4	0060EC00|parameter|ECX:4	006101B0 C call -> FUN_0060ec00
 006101B0|local|Stack[-0x10]:4	00601500|parameter|Stack[0x4]:4	006101B0 C call -> SubmarineTitans::Recovered::HiddenThis::AnonReceiver_00601500::FUN_00601500
 006101B0|local|Stack[-0x14]:4	00601500|parameter|Stack[0x8]:4	006101B0 C call -> SubmarineTitans::Recovered::HiddenThis::AnonReceiver_00601500::FUN_00601500
 006101B0|local|Stack[-0x18]:4	00601500|parameter|Stack[0xc]:4	006101B0 C call -> SubmarineTitans::Recovered::HiddenThis::AnonReceiver_00601500::FUN_00601500
-006101B0|local|Stack[-0x8]:4	00601500|parameter|Stack[0x30]:4	006101B0 C call -> SubmarineTitans::Recovered::HiddenThis::AnonReceiver_00601500::FUN_00601500
 006101B0|parameter|ECX:4	0060EC00|parameter|ECX:4	006101B0 C call -> FUN_0060ec00
 006101B0|parameter|ECX:4	00615FD0|parameter|ECX:4 (auto)	006101B0 C call -> FUN_00615fd0
+006101B0|parameter|ECX:4	0060EC00|parameter|ECX:4	006101B0 C call -> FUN_0060ec00
 006101B0|parameter|ECX:4	006164E0|parameter|ECX:4 (auto)	006101B0 C call -> FUN_006164e0
 006101B0|parameter|ECX:4	006173A0|parameter|ECX:4 (auto)	006101B0 C call -> FUN_006173a0
 006101B0|local|Stack[-0x10]:4	00601500|parameter|Stack[0x4]:4	006101B0 C call -> SubmarineTitans::Recovered::HiddenThis::AnonReceiver_00601500::FUN_00601500
@@ -9498,7 +9511,6 @@ source_target	destination_target	site
 006101B0|local|Stack[-0x10]:4	00601500|parameter|Stack[0x4]:4	006101B0 C call -> SubmarineTitans::Recovered::HiddenThis::AnonReceiver_00601500::FUN_00601500
 006101B0|local|Stack[-0x14]:4	00601500|parameter|Stack[0x8]:4	006101B0 C call -> SubmarineTitans::Recovered::HiddenThis::AnonReceiver_00601500::FUN_00601500
 006101B0|local|Stack[-0x18]:4	00601500|parameter|Stack[0xc]:4	006101B0 C call -> SubmarineTitans::Recovered::HiddenThis::AnonReceiver_00601500::FUN_00601500
-006101B0|local|Stack[-0x8]:4	00601500|parameter|Stack[0x30]:4	006101B0 C call -> SubmarineTitans::Recovered::HiddenThis::AnonReceiver_00601500::FUN_00601500
 006101B0|parameter|ECX:4	0060EC00|parameter|ECX:4	006101B0 C call -> FUN_0060ec00
 006101B0|parameter|ECX:4	00615FD0|parameter|ECX:4 (auto)	006101B0 C call -> FUN_00615fd0
 006101B0|parameter|ECX:4	00613140|parameter|ECX:4 (auto)	006101B0 C call -> FUN_00613140
@@ -13308,8 +13320,10 @@ source_target	destination_target	site
 006DBD20|parameter|Stack[0x14]:4	006DD660|parameter|Stack[0x10]:4	006DBD20 C call -> Library::Ourlib::STREND::FUN_006dd660
 006DBD20|parameter|ECX:4	006DD6E0|parameter|ECX:4 (auto)	006DBD20 C call -> Library::Ourlib::STREND::FUN_006dd6e0
 006DBD20|parameter|ECX:4	006DD610|parameter|ECX:4	006DBD20 C call -> ST3DSMAPContext::sub_006DD610
-006DBD20|parameter|ECX:4	006E25D0|parameter|ECX:4 (auto)	006DBD20 C call -> ST3DSMAPContext::sub_006E25D0
-006DBD20|parameter|ECX:4	006E25D0|parameter|ECX:4 (auto)	006DBD20 C call -> ST3DSMAPContext::sub_006E25D0
+006DBD20|parameter|ECX:4	006E25D0|parameter|ECX:4	006DBD20 C call -> ST3DSMAPContext::sub_006E25D0
+006DBD20|local|Stack[-0x20]:4	006E25D0|parameter|Stack[0x8]:4	006DBD20 C call -> ST3DSMAPContext::sub_006E25D0
+006DBD20|parameter|ECX:4	006E25D0|parameter|ECX:4	006DBD20 C call -> ST3DSMAPContext::sub_006E25D0
+006DBD20|local|Stack[-0x20]:4	006E25D0|parameter|Stack[0x8]:4	006DBD20 C call -> ST3DSMAPContext::sub_006E25D0
 006DC050|parameter|ECX:4	006DBD20|parameter|ECX:4	006DC050 C call -> ST3DSMAPContext::sub_006DBD20
 006DC050|parameter|Stack[0x4]:4	006DBD20|parameter|Stack[0x4]:4	006DC050 C call -> ST3DSMAPContext::sub_006DBD20
 006DC050|parameter|Stack[0x8]:4	006DBD20|parameter|Stack[0x8]:4	006DC050 C call -> ST3DSMAPContext::sub_006DBD20
@@ -13321,14 +13335,15 @@ source_target	destination_target	site
 006DC050|parameter|Stack[0x28]:8	006DBD20|parameter|Stack[0x28]:8	006DC050 C call -> ST3DSMAPContext::sub_006DBD20
 006DC050|parameter|Stack[0x30]:8	006DBD20|parameter|Stack[0x30]:8	006DC050 C call -> ST3DSMAPContext::sub_006DBD20
 006DC320|parameter|ECX:4	00717380|parameter|ECX:4	006DC320 C call -> FUN_00717380
-006DC320|parameter|ECX:4	006E25D0|parameter|ECX:4 (auto)	006DC320 C call -> ST3DSMAPContext::sub_006E25D0
-006DC320|parameter|ECX:4	006E25D0|parameter|ECX:4 (auto)	006DC320 C call -> ST3DSMAPContext::sub_006E25D0
-006DC320|parameter|ECX:4	006E25D0|parameter|ECX:4 (auto)	006DC320 C call -> ST3DSMAPContext::sub_006E25D0
-006DC320|parameter|ECX:4	006E25D0|parameter|ECX:4 (auto)	006DC320 C call -> ST3DSMAPContext::sub_006E25D0
-006DC320|parameter|ECX:4	006E25D0|parameter|ECX:4 (auto)	006DC320 C call -> ST3DSMAPContext::sub_006E25D0
-006DC320|parameter|ECX:4	006E25D0|parameter|ECX:4 (auto)	006DC320 C call -> ST3DSMAPContext::sub_006E25D0
-006DC320|parameter|ECX:4	006E25D0|parameter|ECX:4 (auto)	006DC320 C call -> ST3DSMAPContext::sub_006E25D0
-006DC320|parameter|ECX:4	006E25D0|parameter|ECX:4 (auto)	006DC320 C call -> ST3DSMAPContext::sub_006E25D0
+006DC320|parameter|ECX:4	006E25D0|parameter|ECX:4	006DC320 C call -> ST3DSMAPContext::sub_006E25D0
+006DC320|parameter|ECX:4	006E25D0|parameter|ECX:4	006DC320 C call -> ST3DSMAPContext::sub_006E25D0
+006DC320|parameter|ECX:4	006E25D0|parameter|ECX:4	006DC320 C call -> ST3DSMAPContext::sub_006E25D0
+006DC320|local|Stack[-0x8]:4	006E25D0|parameter|Stack[0x14]:8	006DC320 C call -> ST3DSMAPContext::sub_006E25D0
+006DC320|parameter|ECX:4	006E25D0|parameter|ECX:4	006DC320 C call -> ST3DSMAPContext::sub_006E25D0
+006DC320|parameter|ECX:4	006E25D0|parameter|ECX:4	006DC320 C call -> ST3DSMAPContext::sub_006E25D0
+006DC320|parameter|ECX:4	006E25D0|parameter|ECX:4	006DC320 C call -> ST3DSMAPContext::sub_006E25D0
+006DC320|parameter|ECX:4	006E25D0|parameter|ECX:4	006DC320 C call -> ST3DSMAPContext::sub_006E25D0
+006DC320|parameter|ECX:4	006E25D0|parameter|ECX:4	006DC320 C call -> ST3DSMAPContext::sub_006E25D0
 006DC320|parameter|ECX:4	006E1C20|parameter|ECX:4 (auto)	006DC320 C call -> ST3DSMAPContext::sub_006E1C20
 006DC320|parameter|ECX:4	006E1C20|parameter|ECX:4 (auto)	006DC320 C call -> ST3DSMAPContext::sub_006E1C20
 006DC320|parameter|ECX:4	006E1C20|parameter|ECX:4 (auto)	006DC320 C call -> ST3DSMAPContext::sub_006E1C20
@@ -13343,7 +13358,7 @@ source_target	destination_target	site
 006DDAE0|parameter|ECX:4 (auto)	006DD870|parameter|ECX:4 (auto)	006DDAE0 C call -> ST3DSMAPContext::sub_006DD870
 006DDAE0|parameter|ECX:4 (auto)	006DDB70|parameter|ECX:4 (auto)	006DDAE0 C call -> ST3DSMAPContext::sub_006DDB70
 006DDBE0|local|Stack[-0x2c]:4	006CE6C0|parameter|Stack[0x4]:4	006DDBE0 C call -> FUN_006ce6c0
-006DDD50|parameter|ECX:4	006E25D0|parameter|ECX:4 (auto)	006DDD50 C call -> ST3DSMAPContext::sub_006E25D0
+006DDD50|parameter|ECX:4	006E25D0|parameter|ECX:4	006DDD50 C call -> ST3DSMAPContext::sub_006E25D0
 006DDD50|local|Stack[-0x7c]:1	006E25D0|parameter|Stack[0x4]:4	006DDD50 C call -> ST3DSMAPContext::sub_006E25D0
 006DDD50|parameter|ECX:4	006DD530|parameter|ECX:4 (auto)	006DDD50 C call -> ST3DSMAPContext::sub_006DD530
 006DDD50|local|Stack[-0xec]:1	006DD530|parameter|Stack[0x4]:4	006DDD50 C call -> ST3DSMAPContext::sub_006DD530
@@ -13385,26 +13400,30 @@ source_target	destination_target	site
 006DDD50|parameter|ECX:4	00727DA0|parameter|ECX:4 (auto)	006DDD50 C call -> SubmarineTitans::Recovered::HiddenThis::AnonReceiver_00727C80::FUN_00727da0
 006DDD50|local|HASH:5f4598f33d:4	00727DA0|parameter|Stack[0x4]:4	006DDD50 C call -> SubmarineTitans::Recovered::HiddenThis::AnonReceiver_00727C80::FUN_00727da0
 006DDD50|local|Stack[-0x3c]:4	00727DA0|parameter|Stack[0xc]:4	006DDD50 C call -> SubmarineTitans::Recovered::HiddenThis::AnonReceiver_00727C80::FUN_00727da0
-006DDD50|parameter|ECX:4	006E25D0|parameter|ECX:4 (auto)	006DDD50 C call -> ST3DSMAPContext::sub_006E25D0
+006DDD50|parameter|ECX:4	006E25D0|parameter|ECX:4	006DDD50 C call -> ST3DSMAPContext::sub_006E25D0
 006DDD50|local|Stack[-0x7c]:1	006E25D0|parameter|Stack[0x4]:4	006DDD50 C call -> ST3DSMAPContext::sub_006E25D0
-006DDD50|parameter|ECX:4	006E25D0|parameter|ECX:4 (auto)	006DDD50 C call -> ST3DSMAPContext::sub_006E25D0
+006DDD50|parameter|ECX:4	006E25D0|parameter|ECX:4	006DDD50 C call -> ST3DSMAPContext::sub_006E25D0
 006DDD50|local|Stack[-0x7c]:1	006E25D0|parameter|Stack[0x4]:4	006DDD50 C call -> ST3DSMAPContext::sub_006E25D0
-006DDD50|parameter|ECX:4	006E25D0|parameter|ECX:4 (auto)	006DDD50 C call -> ST3DSMAPContext::sub_006E25D0
+006DDD50|parameter|ECX:4	006E25D0|parameter|ECX:4	006DDD50 C call -> ST3DSMAPContext::sub_006E25D0
 006DDD50|local|Stack[-0x7c]:1	006E25D0|parameter|Stack[0x4]:4	006DDD50 C call -> ST3DSMAPContext::sub_006E25D0
-006DDD50|parameter|ECX:4	006E25D0|parameter|ECX:4 (auto)	006DDD50 C call -> ST3DSMAPContext::sub_006E25D0
+006DDD50|parameter|ECX:4	006E25D0|parameter|ECX:4	006DDD50 C call -> ST3DSMAPContext::sub_006E25D0
 006DDD50|local|Stack[-0x7c]:1	006E25D0|parameter|Stack[0x4]:4	006DDD50 C call -> ST3DSMAPContext::sub_006E25D0
-006DDD50|parameter|ECX:4	006E25D0|parameter|ECX:4 (auto)	006DDD50 C call -> ST3DSMAPContext::sub_006E25D0
+006DDD50|parameter|ECX:4	006E25D0|parameter|ECX:4	006DDD50 C call -> ST3DSMAPContext::sub_006E25D0
 006DDD50|local|Stack[-0x7c]:1	006E25D0|parameter|Stack[0x4]:4	006DDD50 C call -> ST3DSMAPContext::sub_006E25D0
-006DDD50|parameter|ECX:4	006E25D0|parameter|ECX:4 (auto)	006DDD50 C call -> ST3DSMAPContext::sub_006E25D0
+006DDD50|parameter|ECX:4	006E25D0|parameter|ECX:4	006DDD50 C call -> ST3DSMAPContext::sub_006E25D0
 006DDD50|local|Stack[-0x7c]:1	006E25D0|parameter|Stack[0x4]:4	006DDD50 C call -> ST3DSMAPContext::sub_006E25D0
-006DE570|parameter|ECX:4 (auto)	006E25D0|parameter|ECX:4 (auto)	006DE570 C call -> ST3DSMAPContext::sub_006E25D0
-006DE570|parameter|ECX:4 (auto)	006E25D0|parameter|ECX:4 (auto)	006DE570 C call -> ST3DSMAPContext::sub_006E25D0
-006DE570|parameter|ECX:4 (auto)	006E25D0|parameter|ECX:4 (auto)	006DE570 C call -> ST3DSMAPContext::sub_006E25D0
-006DE570|parameter|ECX:4 (auto)	006E25D0|parameter|ECX:4 (auto)	006DE570 C call -> ST3DSMAPContext::sub_006E25D0
-006DE570|parameter|ECX:4 (auto)	006E25D0|parameter|ECX:4 (auto)	006DE570 C call -> ST3DSMAPContext::sub_006E25D0
-006DE570|parameter|ECX:4 (auto)	006E25D0|parameter|ECX:4 (auto)	006DE570 C call -> ST3DSMAPContext::sub_006E25D0
-006DE570|parameter|ECX:4 (auto)	006E25D0|parameter|ECX:4 (auto)	006DE570 C call -> ST3DSMAPContext::sub_006E25D0
-006DE570|parameter|ECX:4 (auto)	006E25D0|parameter|ECX:4 (auto)	006DE570 C call -> ST3DSMAPContext::sub_006E25D0
+006DE570|parameter|ECX:4 (auto)	006E25D0|parameter|ECX:4	006DE570 C call -> ST3DSMAPContext::sub_006E25D0
+006DE570|parameter|ECX:4 (auto)	006E25D0|parameter|ECX:4	006DE570 C call -> ST3DSMAPContext::sub_006E25D0
+006DE570|parameter|ECX:4 (auto)	006E25D0|parameter|ECX:4	006DE570 C call -> ST3DSMAPContext::sub_006E25D0
+006DE570|local|Stack[-0x10]:8	006E25D0|parameter|Stack[0xc]:8	006DE570 C call -> ST3DSMAPContext::sub_006E25D0
+006DE570|local|Stack[-0x10]:8	006E25D0|parameter|Stack[0x14]:8	006DE570 C call -> ST3DSMAPContext::sub_006E25D0
+006DE570|parameter|ECX:4 (auto)	006E25D0|parameter|ECX:4	006DE570 C call -> ST3DSMAPContext::sub_006E25D0
+006DE570|local|Stack[-0x10]:8	006E25D0|parameter|Stack[0xc]:8	006DE570 C call -> ST3DSMAPContext::sub_006E25D0
+006DE570|local|Stack[-0x10]:8	006E25D0|parameter|Stack[0x14]:8	006DE570 C call -> ST3DSMAPContext::sub_006E25D0
+006DE570|parameter|ECX:4 (auto)	006E25D0|parameter|ECX:4	006DE570 C call -> ST3DSMAPContext::sub_006E25D0
+006DE570|parameter|ECX:4 (auto)	006E25D0|parameter|ECX:4	006DE570 C call -> ST3DSMAPContext::sub_006E25D0
+006DE570|parameter|ECX:4 (auto)	006E25D0|parameter|ECX:4	006DE570 C call -> ST3DSMAPContext::sub_006E25D0
+006DE570|parameter|ECX:4 (auto)	006E25D0|parameter|ECX:4	006DE570 C call -> ST3DSMAPContext::sub_006E25D0
 006DE9C0|parameter|ECX:4	006E1C20|parameter|ECX:4 (auto)	006DE9C0 C call -> ST3DSMAPContext::sub_006E1C20
 006DE9C0|parameter|ECX:4	006E1C20|parameter|ECX:4 (auto)	006DE9C0 C call -> ST3DSMAPContext::sub_006E1C20
 006DE9C0|parameter|ECX:4	006E1C20|parameter|ECX:4 (auto)	006DE9C0 C call -> ST3DSMAPContext::sub_006E1C20
@@ -13444,33 +13463,39 @@ source_target	destination_target	site
 006DE9C0|parameter|ECX:4	006DE570|parameter|ECX:4 (auto)	006DE9C0 C call -> FUN_006de570
 006DE9C0|parameter|ECX:4	006DE570|parameter|ECX:4 (auto)	006DE9C0 C call -> FUN_006de570
 006DE9C0|parameter|ECX:4	006DDD50|parameter|ECX:4	006DE9C0 C call -> ST3DSMAPContext::sub_006DDD50
-006DE9C0|parameter|ECX:4	006E25D0|parameter|ECX:4 (auto)	006DE9C0 C call -> ST3DSMAPContext::sub_006E25D0
+006DE9C0|parameter|ECX:4	006E25D0|parameter|ECX:4	006DE9C0 C call -> ST3DSMAPContext::sub_006E25D0
 006DE9C0|local|Stack[-0x70]:1	006B0460|parameter|ECX:4	006DE9C0 C call -> FUN_006b0460
 006DE9C0|parameter|ECX:4	00708D10|parameter|ECX:4 (auto)	006DE9C0 C call -> SubmarineTitans::Recovered::HiddenThis::AnonReceiver_00702510::FUN_00708d10
 006DE9C0|local|Stack[-0x54]:4	00708D10|parameter|Stack[0x10]:4	006DE9C0 C call -> SubmarineTitans::Recovered::HiddenThis::AnonReceiver_00702510::FUN_00708d10
 006DE9C0|local|Stack[-0x5c]:4	00708D10|parameter|Stack[0x14]:4	006DE9C0 C call -> SubmarineTitans::Recovered::HiddenThis::AnonReceiver_00702510::FUN_00708d10
 006DE9C0|local|Stack[-0x40]:4	00708D10|parameter|Stack[0x18]:4	006DE9C0 C call -> SubmarineTitans::Recovered::HiddenThis::AnonReceiver_00702510::FUN_00708d10
-006DE9C0|parameter|ECX:4	006E25D0|parameter|ECX:4 (auto)	006DE9C0 C call -> ST3DSMAPContext::sub_006E25D0
+006DE9C0|parameter|ECX:4	006E25D0|parameter|ECX:4	006DE9C0 C call -> ST3DSMAPContext::sub_006E25D0
 006DE9C0|local|Stack[-0x70]:1	006B0460|parameter|ECX:4	006DE9C0 C call -> FUN_006b0460
 006DE9C0|parameter|ECX:4	00708D10|parameter|ECX:4 (auto)	006DE9C0 C call -> SubmarineTitans::Recovered::HiddenThis::AnonReceiver_00702510::FUN_00708d10
 006DE9C0|local|Stack[-0x54]:4	00708D10|parameter|Stack[0x10]:4	006DE9C0 C call -> SubmarineTitans::Recovered::HiddenThis::AnonReceiver_00702510::FUN_00708d10
 006DE9C0|local|Stack[-0x5c]:4	00708D10|parameter|Stack[0x14]:4	006DE9C0 C call -> SubmarineTitans::Recovered::HiddenThis::AnonReceiver_00702510::FUN_00708d10
-006DE9C0|parameter|ECX:4	006E25D0|parameter|ECX:4 (auto)	006DE9C0 C call -> ST3DSMAPContext::sub_006E25D0
+006DE9C0|parameter|ECX:4	006E25D0|parameter|ECX:4	006DE9C0 C call -> ST3DSMAPContext::sub_006E25D0
 006DE9C0|local|Stack[-0x70]:1	006B0460|parameter|ECX:4	006DE9C0 C call -> FUN_006b0460
 006DE9C0|parameter|ECX:4	00708D10|parameter|ECX:4 (auto)	006DE9C0 C call -> SubmarineTitans::Recovered::HiddenThis::AnonReceiver_00702510::FUN_00708d10
 006DE9C0|local|Stack[-0x54]:4	00708D10|parameter|Stack[0x10]:4	006DE9C0 C call -> SubmarineTitans::Recovered::HiddenThis::AnonReceiver_00702510::FUN_00708d10
 006DE9C0|local|Stack[-0x5c]:4	00708D10|parameter|Stack[0x14]:4	006DE9C0 C call -> SubmarineTitans::Recovered::HiddenThis::AnonReceiver_00702510::FUN_00708d10
 006DE9C0|local|Stack[-0x40]:4	00708D10|parameter|Stack[0x18]:4	006DE9C0 C call -> SubmarineTitans::Recovered::HiddenThis::AnonReceiver_00702510::FUN_00708d10
-006DE9C0|parameter|ECX:4	006E25D0|parameter|ECX:4 (auto)	006DE9C0 C call -> ST3DSMAPContext::sub_006E25D0
+006DE9C0|parameter|ECX:4	006E25D0|parameter|ECX:4	006DE9C0 C call -> ST3DSMAPContext::sub_006E25D0
 006DE9C0|local|Stack[-0x70]:1	006B0460|parameter|ECX:4	006DE9C0 C call -> FUN_006b0460
 006DE9C0|parameter|ECX:4	00708D10|parameter|ECX:4 (auto)	006DE9C0 C call -> SubmarineTitans::Recovered::HiddenThis::AnonReceiver_00702510::FUN_00708d10
 006DE9C0|local|Stack[-0x54]:4	00708D10|parameter|Stack[0x10]:4	006DE9C0 C call -> SubmarineTitans::Recovered::HiddenThis::AnonReceiver_00702510::FUN_00708d10
 006DE9C0|local|Stack[-0x5c]:4	00708D10|parameter|Stack[0x14]:4	006DE9C0 C call -> SubmarineTitans::Recovered::HiddenThis::AnonReceiver_00702510::FUN_00708d10
-006E1050|parameter|ECX:4	006E25D0|parameter|ECX:4 (auto)	006E1050 C call -> ST3DSMAPContext::sub_006E25D0
+006E1050|parameter|ECX:4	006E25D0|parameter|ECX:4	006E1050 C call -> ST3DSMAPContext::sub_006E25D0
 006E1050|parameter|ECX:4	006DE9C0|parameter|ECX:4	006E1050 C call -> ST3DSMAPContext::sub_006DE9C0
-006E1320|parameter|ECX:4 (auto)	006E25D0|parameter|ECX:4 (auto)	006E1320 C call -> ST3DSMAPContext::sub_006E25D0
+006E1320|parameter|ECX:4 (auto)	006E25D0|parameter|ECX:4	006E1320 C call -> ST3DSMAPContext::sub_006E25D0
+006E1320|local|Stack[-0x20]:4	006E25D0|parameter|Stack[0x8]:4	006E1320 C call -> ST3DSMAPContext::sub_006E25D0
+006E1320|local|Stack[-0xc]:8	006E25D0|parameter|Stack[0xc]:8	006E1320 C call -> ST3DSMAPContext::sub_006E25D0
+006E1320|local|Stack[-0x14]:8	006E25D0|parameter|Stack[0x14]:8	006E1320 C call -> ST3DSMAPContext::sub_006E25D0
 006E1320|parameter|ECX:4 (auto)	006DD050|parameter|ECX:4	006E1320 C call -> Library::Ourlib::STREND::FUN_006dd050
-006E1320|parameter|ECX:4 (auto)	006E25D0|parameter|ECX:4 (auto)	006E1320 C call -> ST3DSMAPContext::sub_006E25D0
+006E1320|parameter|ECX:4 (auto)	006E25D0|parameter|ECX:4	006E1320 C call -> ST3DSMAPContext::sub_006E25D0
+006E1320|local|Stack[-0x20]:4	006E25D0|parameter|Stack[0x8]:4	006E1320 C call -> ST3DSMAPContext::sub_006E25D0
+006E1320|local|Stack[-0xc]:8	006E25D0|parameter|Stack[0xc]:8	006E1320 C call -> ST3DSMAPContext::sub_006E25D0
+006E1320|local|Stack[-0x14]:8	006E25D0|parameter|Stack[0x14]:8	006E1320 C call -> ST3DSMAPContext::sub_006E25D0
 006E1320|parameter|ECX:4 (auto)	006DD050|parameter|ECX:4	006E1320 C call -> Library::Ourlib::STREND::FUN_006dd050
 006E1320|local|Stack[-0xc]:8	006DD050|parameter|Stack[0x8]:8	006E1320 C call -> Library::Ourlib::STREND::FUN_006dd050
 006E1440|parameter|ECX:4 (auto)	006E1320|parameter|ECX:4 (auto)	006E1440 C call -> ST3DSMAPContext::sub_006E1320
@@ -13500,17 +13525,17 @@ source_target	destination_target	site
 006E1460|parameter|ECX:4	006DE9C0|parameter|ECX:4	006E1460 C call -> ST3DSMAPContext::sub_006DE9C0
 006E1460|parameter|ECX:4	006DDBE0|parameter|ECX:4 (auto)	006E1460 C call -> ST3DSMAPContext::sub_006DDBE0
 006E1460|parameter|ECX:4	006DE9C0|parameter|ECX:4	006E1460 C call -> ST3DSMAPContext::sub_006DE9C0
-006E1C20|parameter|ECX:4 (auto)	006E25D0|parameter|ECX:4 (auto)	006E1C20 C call -> ST3DSMAPContext::sub_006E25D0
+006E1C20|parameter|ECX:4 (auto)	006E25D0|parameter|ECX:4	006E1C20 C call -> ST3DSMAPContext::sub_006E25D0
 006E1DD0|parameter|ECX:4 (auto)	006E2D00|parameter|ECX:4 (auto)	006E1DD0 C call -> ST3DSMAPContext::sub_006E2D00
 006E1DD0|parameter|Stack[0x4]:4	006E2D00|parameter|Stack[0x4]:4	006E1DD0 C call -> ST3DSMAPContext::sub_006E2D00
 006E1DD0|parameter|Stack[0x8]:4	006E2D00|parameter|Stack[0x8]:4	006E1DD0 C call -> ST3DSMAPContext::sub_006E2D00
 006E1DD0|parameter|ECX:4 (auto)	006E29D0|parameter|ECX:4 (auto)	006E1DD0 C call -> Library::Ourlib::STREND::FUN_006e29d0
 006E1DD0|parameter|Stack[0x4]:4	006E29D0|parameter|Stack[0x8]:4	006E1DD0 C call -> Library::Ourlib::STREND::FUN_006e29d0
 006E1DD0|parameter|Stack[0x8]:4	006E29D0|parameter|Stack[0xc]:4	006E1DD0 C call -> Library::Ourlib::STREND::FUN_006e29d0
-006E1EE0|parameter|ECX:4 (auto)	006E25D0|parameter|ECX:4 (auto)	006E1EE0 C call -> ST3DSMAPContext::sub_006E25D0
-006E1EE0|parameter|ECX:4 (auto)	006E25D0|parameter|ECX:4 (auto)	006E1EE0 C call -> ST3DSMAPContext::sub_006E25D0
-006E1EE0|parameter|ECX:4 (auto)	006E25D0|parameter|ECX:4 (auto)	006E1EE0 C call -> ST3DSMAPContext::sub_006E25D0
-006E2970|parameter|ECX:4 (auto)	006E25D0|parameter|ECX:4 (auto)	006E2970 C call -> ST3DSMAPContext::sub_006E25D0
+006E1EE0|parameter|ECX:4 (auto)	006E25D0|parameter|ECX:4	006E1EE0 C call -> ST3DSMAPContext::sub_006E25D0
+006E1EE0|parameter|ECX:4 (auto)	006E25D0|parameter|ECX:4	006E1EE0 C call -> ST3DSMAPContext::sub_006E25D0
+006E1EE0|parameter|ECX:4 (auto)	006E25D0|parameter|ECX:4	006E1EE0 C call -> ST3DSMAPContext::sub_006E25D0
+006E2970|parameter|ECX:4 (auto)	006E25D0|parameter|ECX:4	006E2970 C call -> ST3DSMAPContext::sub_006E25D0
 006E2B60|parameter|ECX:4 (auto)	006E2C30|parameter|ECX:4 (auto)	006E2B60 C call -> FUN_006e2c30
 006E2B60|parameter|ECX:4 (auto)	006E2C30|parameter|ECX:4 (auto)	006E2B60 C call -> FUN_006e2c30
 006E2B60|parameter|ECX:4 (auto)	006E2C30|parameter|ECX:4 (auto)	006E2B60 C call -> FUN_006e2c30
@@ -13594,7 +13619,7 @@ source_target	destination_target	site
 006E8AA0|parameter|Stack[0x4]:4	006E8660|parameter|Stack[0x4]:4	006E8AA0 C call -> ST3DSMAPContext::sub_006E8660
 006E8AA0|parameter|ECX:4 (auto)	006E8B00|parameter|ECX:4 (auto)	006E8AA0 C call -> FUN_006e8b00
 006E8AA0|parameter|Stack[0x8]:4	006E8B00|parameter|Stack[0x8]:4	006E8AA0 C call -> FUN_006e8b00
-006E8EA0|parameter|ECX:4 (auto)	006E25D0|parameter|ECX:4 (auto)	006E8EA0 C call -> ST3DSMAPContext::sub_006E25D0
+006E8EA0|parameter|ECX:4 (auto)	006E25D0|parameter|ECX:4	006E8EA0 C call -> ST3DSMAPContext::sub_006E25D0
 006E8EA0|local|Stack[-0x50]:1	006B0460|parameter|ECX:4	006E8EA0 C call -> FUN_006b0460
 006E9000|parameter|ECX:4 (auto)	006E8EA0|parameter|ECX:4 (auto)	006E9000 C call -> ST3DSMAPContext::sub_006E8EA0
 006E9080|parameter|ECX:4 (auto)	006E9000|parameter|ECX:4 (auto)	006E9080 C call -> ST3DSMAPContext::sub_006E9000
@@ -13660,7 +13685,7 @@ source_target	destination_target	site
 006EC010|local|Stack[-0x88]:4	006CEA60|parameter|Stack[0x18]:4	006EC010 C call -> CopyRows
 006EC010|local|Stack[-0x44]:4	006CEA60|parameter|Stack[0x8]:4	006EC010 C call -> CopyRows
 006EC010|local|Stack[-0x44]:4	006CEA60|parameter|Stack[0x8]:4	006EC010 C call -> CopyRows
-006ECC70|parameter|ECX:4 (auto)	006E25D0|parameter|ECX:4 (auto)	006ECC70 C call -> ST3DSMAPContext::sub_006E25D0
+006ECC70|parameter|ECX:4 (auto)	006E25D0|parameter|ECX:4	006ECC70 C call -> ST3DSMAPContext::sub_006E25D0
 006ECC70|local|Stack[-0x8]:4	006B0460|parameter|ECX:4	006ECC70 C call -> FUN_006b0460
 006ECC70|local|Stack[-0x8]:4	006B0460|parameter|EDX:4	006ECC70 C call -> FUN_006b0460
 006ECC70|parameter|Stack[0x4]:4	006B0460|parameter|Stack[0x4]:4	006ECC70 C call -> FUN_006b0460
@@ -15284,29 +15309,6 @@ source_target	destination_target	site
 00761960|local|Stack[-0x8]:4	00740BF0|parameter|Stack[0x4]:4	00761960 C call -> Library::MSVCRT::__dosmaperr
 007619B0|parameter|Stack[0x4]:4	EXTERNAL:0000006F|parameter|Stack[0x4]:4	007619B0 C call -> KERNEL32.DLL::DeleteFileA
 007619B0|local|Stack[-0x8]:4	00740BF0|parameter|Stack[0x4]:4	007619B0 C call -> Library::MSVCRT::__dosmaperr
-0044EE30|local|Stack[-0xec]:4	0041E530|parameter|ECX:4 (auto)	0044EE30 C call -> STSprGameObjC::GetMessage
-0044EE30|parameter|Stack[0x4]:4	0041E530|parameter|Stack[0x4]:4	0044EE30 C call -> STSprGameObjC::GetMessage
-0044EE30|local|Stack[-0x10]:4	00492510|parameter|ECX:4 (auto)	0044EE30 C call -> FUN_00492510
-0044EE30|local|Stack[-0x24]:4	004B9D90|parameter|ECX:4	0044EE30 C call -> FUN_004b9d90
-0044EE30|local|Stack[-0x24]:4	004B9D20|parameter|ECX:4 (auto)	0044EE30 C call -> FUN_004b9d20
-0044EE30|local|Stack[-0x24]:4	004CF3E0|parameter|ECX:4 (auto)	0044EE30 C call -> FUN_004cf3e0
-0044EE30|local|Stack[-0x7c]:4	006AAC70|parameter|Stack[0x4]:4	0044EE30 C call -> Library::DKW::LIB::MemAlloc
-0044EE30|local|Stack[-0x20]:4	0054D430|parameter|Stack[0x8]:4	0044EE30 C call -> STPlaySystemC::SaveObjData
-0044EE30|local|Stack[-0x7c]:4	0054D430|parameter|Stack[0xc]:4	0044EE30 C call -> STPlaySystemC::SaveObjData
-0044EE30|local|Stack[-0x28]:4	004B9D90|parameter|ECX:4	0044EE30 C call -> FUN_004b9d90
-0044EE30|local|Stack[-0x28]:4	004B9D20|parameter|ECX:4 (auto)	0044EE30 C call -> FUN_004b9d20
-0044EE30|local|Stack[-0x28]:4	004CF3E0|parameter|ECX:4 (auto)	0044EE30 C call -> FUN_004cf3e0
-0044EE30|local|Stack[-0x10]:4	004E2200|parameter|ECX:4 (auto)	0044EE30 C call -> FUN_004e2200
-0044EE30|local|Stack[-0x10]:4	004162F0|parameter|ECX:4 (auto)	0044EE30 C call -> STFishC::sub_004162F0
-0044EE30|local|Stack[-0x60]:4	0042B7D0|parameter|Stack[0x10]:4	0044EE30 C call -> STAllPlayersC::AddObjsToGroup
-0044EE30|local|Stack[-0x50]:4	0042B7D0|parameter|Stack[0x10]:4	0044EE30 C call -> STAllPlayersC::AddObjsToGroup
-0044EE30|local|Stack[-0x1c]:4	0040AE40|parameter|ECX:4 (auto)	0044EE30 C call -> FUN_0040ae40
-0044EE30|local|Stack[-0x1c]:4	0040AE40|parameter|ECX:4 (auto)	0044EE30 C call -> FUN_0040ae40
-0044EE30|local|Stack[-0x74]:1	004AB880|parameter|Stack[0xc]:4	0044EE30 C call -> STT3DSprC::LoadSequence
-0044EE30|local|Stack[-0xe8]:1	004AB880|parameter|Stack[0xc]:4	0044EE30 C call -> STT3DSprC::LoadSequence
-0044EE30|local|Stack[-0x74]:1	004AB880|parameter|Stack[0xc]:4	0044EE30 C call -> STT3DSprC::LoadSequence
-0044EE30|local|Stack[-0xc]:4	004ABE40|parameter|Stack[0x8]:4	0044EE30 C call -> STT3DSprC::SetCurFase
-0044EE30|local|Stack[-0xd4]:4	004ABE40|parameter|Stack[0x8]:4	0044EE30 C call -> STT3DSprC::SetCurFase
 005A4350|local|Stack[-0x20]:4	005B6450|parameter|ECX:4 (auto)	005A4350 C call -> FUN_005b6450
 005A4350|parameter|Stack[0x4]:4	005B6450|parameter|Stack[0x4]:4	005A4350 C call -> FUN_005b6450
 005A4350|local|Stack[-0x54]:4	006B4170|parameter|Stack[0x18]:4	005A4350 C call -> FUN_006b4170
@@ -15358,438 +15360,6 @@ source_target	destination_target	site
 005A4350|local|Stack[-0x300]:1	005B9010|parameter|Stack[0x4]:4	005A4350 C call -> MMsgTy::StatePanel
 005A4350|local|Stack[-0x354]:1	005B9010|parameter|Stack[0x4]:4	005A4350 C call -> MMsgTy::StatePanel
 005A4350|parameter|Stack[0x4]:4	005B6430|parameter|Stack[0x4]:4	005A4350 C call -> MMObjTy::GetMessage
-00652810|parameter|ECX:4 (auto)	0065BD70|parameter|ECX:4 (auto)	00652810 C call -> AiEventClassTy::sub_0065BD70
-00652810|parameter|Stack[0x4]:4	0065BD70|parameter|Stack[0x4]:4	00652810 C call -> AiEventClassTy::sub_0065BD70
-00652810|parameter|Stack[0x4]:4	0065BD70|parameter|Stack[0x4]:4	00652810 C call -> AiEventClassTy::sub_0065BD70
-00652810|local|Stack[-0x15c]:4	0064E300|parameter|Stack[0x8]:4	00652810 C call -> FUN_0064e300
-00652810|local|Stack[-0x158]:4	0064E300|parameter|Stack[0xc]:2	00652810 C call -> FUN_0064e300
-00652810|local|Stack[-0x154]:4	0064E300|parameter|Stack[0x10]:1	00652810 C call -> FUN_0064e300
-00652810|local|Stack[-0x150]:4	0064E300|parameter|Stack[0x14]:2	00652810 C call -> FUN_0064e300
-00652810|local|Stack[-0x14c]:4	0064E300|parameter|Stack[0x18]:1	00652810 C call -> FUN_0064e300
-00652810|local|Stack[-0x148]:4	0064E300|parameter|Stack[0x1c]:4	00652810 C call -> FUN_0064e300
-00652810|local|Stack[-0x15c]:4	0042B760|parameter|Stack[0x8]:2	00652810 C call -> FUN_0042b760
-00652810|local|Stack[-0x15c]:4	0042B760|parameter|Stack[0x8]:2	00652810 C call -> FUN_0042b760
-00652810|local|Stack[-0x15c]:4	0042B760|parameter|Stack[0x8]:2	00652810 C call -> FUN_0042b760
-00652810|local|Stack[-0x17c]:4	0065D940|parameter|ECX:4 (auto)	00652810 C call -> FUN_0065d940
-00652810|local|Stack[-0xc]:4	0065D940|parameter|Stack[0x4]:4	00652810 C call -> FUN_0065d940
-00652810|local|Stack[-0xc]:4	006AE110|parameter|Stack[0x4]:4	00652810 C call -> DArrayDestroy
-00652810|local|Stack[-0x15c]:4	0042B760|parameter|Stack[0x8]:2	00652810 C call -> FUN_0042b760
-00652810|local|Stack[-0x158]:4	00424530|parameter|Stack[0x4]:4	00652810 C call -> FUN_00424530
-00652810|local|Stack[-0x15c]:4	0042B760|parameter|Stack[0x8]:2	00652810 C call -> FUN_0042b760
-00652810|local|Stack[-0x158]:4	00424620|parameter|Stack[0x4]:4	00652810 C call -> FUN_00424620
-00652810|local|Stack[-0x15c]:4	0042B760|parameter|Stack[0x8]:2	00652810 C call -> FUN_0042b760
-00652810|local|Stack[-0x158]:4	00678EF0|parameter|Stack[0x4]:4	00652810 C call -> FUN_00678ef0
-00652810|local|Stack[-0x158]:4	0064D0E0|parameter|Stack[0x8]:4	00652810 C call -> FUN_0064d0e0
-00652810|local|Stack[-0x8]:4	0068E690|parameter|ECX:4 (auto)	00652810 C call -> FUN_0068e690
-00652810|local|Stack[-0x17c]:4	0068E690|parameter|Stack[0x4]:4	00652810 C call -> FUN_0068e690
-00652810|local|Stack[-0x15c]:4	0042B760|parameter|Stack[0x8]:2	00652810 C call -> FUN_0042b760
-00652810|local|Stack[-0x15c]:4	0042B760|parameter|Stack[0x8]:2	00652810 C call -> FUN_0042b760
-00652810|local|Stack[-0x68]:4	00662240|parameter|Stack[0x4]:4	00652810 C call -> AiFltClassTy::GetAiMess
-00652810|local|Stack[-0x15c]:4	0042B760|parameter|Stack[0x8]:2	00652810 C call -> FUN_0042b760
-00652810|local|Stack[-0x68]:4	00662240|parameter|Stack[0x4]:4	00652810 C call -> AiFltClassTy::GetAiMess
-00652810|local|Stack[-0x15c]:4	0042B760|parameter|Stack[0x8]:2	00652810 C call -> FUN_0042b760
-00652810|local|Stack[-0x68]:4	00662240|parameter|Stack[0x4]:4	00652810 C call -> AiFltClassTy::GetAiMess
-00652810|local|Stack[-0x15c]:4	0042B760|parameter|Stack[0x8]:2	00652810 C call -> FUN_0042b760
-00652810|local|Stack[-0x10]:4	00662240|parameter|ECX:4 (auto)	00652810 C call -> AiFltClassTy::GetAiMess
-00652810|local|Stack[-0x68]:4	00662240|parameter|Stack[0x4]:4	00652810 C call -> AiFltClassTy::GetAiMess
-00652810|local|Stack[-0x15c]:4	0042B760|parameter|Stack[0x8]:2	00652810 C call -> FUN_0042b760
-00652810|local|Stack[-0x68]:4	00662240|parameter|Stack[0x4]:4	00652810 C call -> AiFltClassTy::GetAiMess
-00652810|local|Stack[-0x15c]:4	0042B760|parameter|Stack[0x8]:2	00652810 C call -> FUN_0042b760
-00652810|local|Stack[-0x68]:4	00662240|parameter|Stack[0x4]:4	00652810 C call -> AiFltClassTy::GetAiMess
-00652810|local|Stack[-0x15c]:4	0042B760|parameter|Stack[0x8]:2	00652810 C call -> FUN_0042b760
-00652810|local|Stack[-0x68]:4	00662240|parameter|Stack[0x4]:4	00652810 C call -> AiFltClassTy::GetAiMess
-00652810|local|Stack[-0x15c]:4	0042B760|parameter|Stack[0x8]:2	00652810 C call -> FUN_0042b760
-00652810|local|Stack[-0x68]:4	00662240|parameter|Stack[0x4]:4	00652810 C call -> AiFltClassTy::GetAiMess
-00652810|local|Stack[-0x15c]:4	0042B760|parameter|Stack[0x8]:2	00652810 C call -> FUN_0042b760
-00652810|local|Stack[-0x68]:4	00662240|parameter|Stack[0x4]:4	00652810 C call -> AiFltClassTy::GetAiMess
-00652810|local|Stack[-0x15c]:4	0042B760|parameter|Stack[0x8]:2	00652810 C call -> FUN_0042b760
-00652810|local|Stack[-0x68]:4	00662240|parameter|Stack[0x4]:4	00652810 C call -> AiFltClassTy::GetAiMess
-00652810|local|Stack[-0x15c]:4	0042B760|parameter|Stack[0x8]:2	00652810 C call -> FUN_0042b760
-00652810|local|Stack[-0x10]:4	00662240|parameter|ECX:4 (auto)	00652810 C call -> AiFltClassTy::GetAiMess
-00652810|local|Stack[-0x68]:4	00662240|parameter|Stack[0x4]:4	00652810 C call -> AiFltClassTy::GetAiMess
-00652810|local|Stack[-0x15c]:4	0042B760|parameter|Stack[0x8]:2	00652810 C call -> FUN_0042b760
-00652810|local|Stack[-0x68]:4	00662240|parameter|Stack[0x4]:4	00652810 C call -> AiFltClassTy::GetAiMess
-00652810|local|Stack[-0x15c]:4	0042B760|parameter|Stack[0x8]:2	00652810 C call -> FUN_0042b760
-00652810|local|Stack[-0x68]:4	00662240|parameter|Stack[0x4]:4	00652810 C call -> AiFltClassTy::GetAiMess
-00652810|local|Stack[-0x15c]:4	0042B760|parameter|Stack[0x8]:2	00652810 C call -> FUN_0042b760
-00652810|local|Stack[-0x68]:4	00662240|parameter|Stack[0x4]:4	00652810 C call -> AiFltClassTy::GetAiMess
-00652810|local|Stack[-0x15c]:4	0042B760|parameter|Stack[0x8]:2	00652810 C call -> FUN_0042b760
-00652810|local|Stack[-0x68]:4	00662240|parameter|Stack[0x4]:4	00652810 C call -> AiFltClassTy::GetAiMess
-00652810|local|Stack[-0x15c]:4	0042B760|parameter|Stack[0x8]:2	00652810 C call -> FUN_0042b760
-00652810|local|Stack[-0x68]:4	00662240|parameter|Stack[0x4]:4	00652810 C call -> AiFltClassTy::GetAiMess
-00652810|local|Stack[-0x15c]:4	0042B760|parameter|Stack[0x8]:2	00652810 C call -> FUN_0042b760
-00652810|local|Stack[-0x68]:4	00662240|parameter|Stack[0x4]:4	00652810 C call -> AiFltClassTy::GetAiMess
-00652810|local|Stack[-0x15c]:4	0042B760|parameter|Stack[0x8]:2	00652810 C call -> FUN_0042b760
-00652810|local|Stack[-0x68]:4	00662240|parameter|Stack[0x4]:4	00652810 C call -> AiFltClassTy::GetAiMess
-00652810|local|Stack[-0x15c]:4	0042B760|parameter|Stack[0x8]:2	00652810 C call -> FUN_0042b760
-00652810|local|Stack[-0x68]:4	00662240|parameter|Stack[0x4]:4	00652810 C call -> AiFltClassTy::GetAiMess
-00652810|local|Stack[-0x15c]:4	0042B760|parameter|Stack[0x8]:2	00652810 C call -> FUN_0042b760
-00652810|local|Stack[-0x68]:4	00662240|parameter|Stack[0x4]:4	00652810 C call -> AiFltClassTy::GetAiMess
-00652810|local|Stack[-0x15c]:4	0042B760|parameter|Stack[0x8]:2	00652810 C call -> FUN_0042b760
-00652810|local|Stack[-0x68]:4	00662240|parameter|Stack[0x4]:4	00652810 C call -> AiFltClassTy::GetAiMess
-00652810|local|Stack[-0x15c]:4	0042B760|parameter|Stack[0x8]:2	00652810 C call -> FUN_0042b760
-00652810|local|Stack[-0x68]:4	00662240|parameter|Stack[0x4]:4	00652810 C call -> AiFltClassTy::GetAiMess
-00652810|local|Stack[-0x15c]:4	0042B760|parameter|Stack[0x8]:2	00652810 C call -> FUN_0042b760
-00652810|local|Stack[-0x68]:4	00662240|parameter|Stack[0x4]:4	00652810 C call -> AiFltClassTy::GetAiMess
-00652810|local|Stack[-0x15c]:4	0042B760|parameter|Stack[0x8]:2	00652810 C call -> FUN_0042b760
-00652810|local|Stack[-0x68]:4	00662240|parameter|Stack[0x4]:4	00652810 C call -> AiFltClassTy::GetAiMess
-00652810|local|Stack[-0x15c]:4	0042B760|parameter|Stack[0x8]:2	00652810 C call -> FUN_0042b760
-00652810|local|Stack[-0x68]:4	00662240|parameter|Stack[0x4]:4	00652810 C call -> AiFltClassTy::GetAiMess
-00652810|local|Stack[-0x15c]:4	0042B760|parameter|Stack[0x8]:2	00652810 C call -> FUN_0042b760
-00652810|local|Stack[-0x1ef]:1	0072E340|parameter|Stack[0x4]:4	00652810 C call -> Library::MSVCRT::_strncpy
-00652810|local|Stack[-0x144]:4	0072E340|parameter|Stack[0x8]:4	00652810 C call -> Library::MSVCRT::_strncpy
-00652810|local|Stack[-0x10]:4	00662240|parameter|ECX:4 (auto)	00652810 C call -> AiFltClassTy::GetAiMess
-00652810|local|Stack[-0x240]:4	00662240|parameter|Stack[0x4]:4	00652810 C call -> AiFltClassTy::GetAiMess
-00652810|local|Stack[-0x15c]:4	0042B760|parameter|Stack[0x8]:2	00652810 C call -> FUN_0042b760
-00652810|local|Stack[-0x68]:4	00662240|parameter|Stack[0x4]:4	00652810 C call -> AiFltClassTy::GetAiMess
-00652810|local|Stack[-0x158]:4	004E6080|parameter|Stack[0xc]:4	00652810 C call -> FUN_004e6080
-00652810|local|Stack[-0x160]:4	00677F40|parameter|Stack[0x28]:4	00652810 C call -> _EnumArt
-00652810|local|Stack[-0x18c]:4	00580450|parameter|Stack[0x4]:4	00652810 C call -> FUN_00580450
-00652810|local|Stack[-0x190]:4	00580450|parameter|Stack[0x8]:4	00652810 C call -> FUN_00580450
-00652810|local|Stack[-0x184]:4	00580450|parameter|Stack[0xc]:4	00652810 C call -> FUN_00580450
-00652810|local|Stack[-0x154]:4	00580450|parameter|Stack[0x14]:4	00652810 C call -> FUN_00580450
-00652810|local|Stack[-0x160]:4	00677960|parameter|Stack[0x8]:2	00652810 C call -> _EnumRCField
-00652810|local|Stack[-0x15c]:4	00677960|parameter|Stack[0xc]:2	00652810 C call -> _EnumRCField
-00652810|local|Stack[-0x158]:4	00677960|parameter|Stack[0x10]:2	00652810 C call -> _EnumRCField
-00652810|local|Stack[-0x154]:4	00677960|parameter|Stack[0x14]:2	00652810 C call -> _EnumRCField
-00652810|local|Stack[-0x150]:4	00677960|parameter|Stack[0x18]:2	00652810 C call -> _EnumRCField
-00652810|local|Stack[-0x14c]:4	00677960|parameter|Stack[0x1c]:2	00652810 C call -> _EnumRCField
-00652810|local|Stack[-0x15c]:4	00677960|parameter|Stack[0x4]:2	00652810 C call -> _EnumRCField
-00652810|local|Stack[-0x158]:4	00677960|parameter|Stack[0x8]:2	00652810 C call -> _EnumRCField
-00652810|local|Stack[-0x154]:4	00677960|parameter|Stack[0xc]:2	00652810 C call -> _EnumRCField
-00652810|local|Stack[-0x150]:4	00677960|parameter|Stack[0x10]:2	00652810 C call -> _EnumRCField
-00652810|local|Stack[-0x14c]:4	00677960|parameter|Stack[0x14]:2	00652810 C call -> _EnumRCField
-00652810|local|Stack[-0x148]:4	00677960|parameter|Stack[0x18]:2	00652810 C call -> _EnumRCField
-00652810|local|Stack[-0x144]:4	00677960|parameter|Stack[0x1c]:2	00652810 C call -> _EnumRCField
-00652810|local|Stack[-0x160]:4	0064DDA0|parameter|Stack[0x8]:2	00652810 C call -> AiEventClassTy::_CreateDest
-00652810|local|Stack[-0x15c]:4	0064DDA0|parameter|Stack[0xc]:2	00652810 C call -> AiEventClassTy::_CreateDest
-00652810|local|Stack[-0x158]:4	0064DDA0|parameter|Stack[0x10]:2	00652810 C call -> AiEventClassTy::_CreateDest
-00652810|local|Stack[-0x154]:4	0064DDA0|parameter|Stack[0x14]:2	00652810 C call -> AiEventClassTy::_CreateDest
-00652810|local|Stack[-0x150]:4	0064DDA0|parameter|Stack[0x18]:4	00652810 C call -> AiEventClassTy::_CreateDest
-00652810|local|Stack[-0x14c]:4	0064DDA0|parameter|Stack[0x1c]:4	00652810 C call -> AiEventClassTy::_CreateDest
-00652810|local|Stack[-0x148]:4	0064DDA0|parameter|Stack[0x20]:4	00652810 C call -> AiEventClassTy::_CreateDest
-00652810|local|Stack[-0x160]:4	006785A0|parameter|Stack[0x4]:4	00652810 C call -> _EnumDest
-00652810|local|Stack[-0x15c]:4	006785A0|parameter|Stack[0xc]:2	00652810 C call -> _EnumDest
-00652810|local|Stack[-0x158]:4	006785A0|parameter|Stack[0x10]:2	00652810 C call -> _EnumDest
-00652810|local|Stack[-0x154]:4	006785A0|parameter|Stack[0x14]:2	00652810 C call -> _EnumDest
-00652810|local|Stack[-0x150]:4	006785A0|parameter|Stack[0x18]:2	00652810 C call -> _EnumDest
-00652810|local|Stack[-0x14c]:4	006785A0|parameter|Stack[0x1c]:2	00652810 C call -> _EnumDest
-00652810|local|Stack[-0x148]:4	006785A0|parameter|Stack[0x20]:2	00652810 C call -> _EnumDest
-00652810|local|Stack[-0x160]:4	006785A0|parameter|Stack[0x28]:4	00652810 C call -> _EnumDest
-00652810|local|Stack[-0x15c]:4	0064DFA0|parameter|Stack[0x8]:2	00652810 C call -> AiEventClassTy::_CreateMine
-00652810|local|Stack[-0x158]:4	0064DFA0|parameter|Stack[0xc]:4	00652810 C call -> AiEventClassTy::_CreateMine
-00652810|local|Stack[-0x154]:4	0064DFA0|parameter|Stack[0x10]:4	00652810 C call -> AiEventClassTy::_CreateMine
-00652810|local|Stack[-0x150]:4	0064DFA0|parameter|Stack[0x14]:4	00652810 C call -> AiEventClassTy::_CreateMine
-00652810|local|Stack[-0x14c]:4	0064DFA0|parameter|Stack[0x18]:2	00652810 C call -> AiEventClassTy::_CreateMine
-00652810|local|Stack[-0x148]:4	0064DFA0|parameter|Stack[0x1c]:4	00652810 C call -> AiEventClassTy::_CreateMine
-00652810|local|Stack[-0x144]:4	0064DFA0|parameter|Stack[0x20]:4	00652810 C call -> AiEventClassTy::_CreateMine
-00652810|local|Stack[-0x140]:4	0064DFA0|parameter|Stack[0x24]:4	00652810 C call -> AiEventClassTy::_CreateMine
-00652810|local|Stack[-0x15c]:4	00678240|parameter|Stack[0x8]:2	00652810 C call -> _EnumMines
-00652810|local|Stack[-0x158]:4	00678240|parameter|Stack[0xc]:1	00652810 C call -> _EnumMines
-00652810|local|Stack[-0x154]:4	00678240|parameter|Stack[0x10]:4	00652810 C call -> _EnumMines
-00652810|local|Stack[-0x150]:4	00678240|parameter|Stack[0x14]:2	00652810 C call -> _EnumMines
-00652810|local|Stack[-0x14c]:4	00678240|parameter|Stack[0x18]:2	00652810 C call -> _EnumMines
-00652810|local|Stack[-0x148]:4	00678240|parameter|Stack[0x1c]:2	00652810 C call -> _EnumMines
-00652810|local|Stack[-0x144]:4	00678240|parameter|Stack[0x20]:2	00652810 C call -> _EnumMines
-00652810|local|Stack[-0x140]:4	00678240|parameter|Stack[0x24]:2	00652810 C call -> _EnumMines
-00652810|local|Stack[-0x13c]:4	00678240|parameter|Stack[0x28]:2	00652810 C call -> _EnumMines
-00652810|local|Stack[-0x158]:4	00678240|parameter|Stack[0x8]:2	00652810 C call -> _EnumMines
-00652810|local|Stack[-0x154]:4	00678240|parameter|Stack[0xc]:1	00652810 C call -> _EnumMines
-00652810|local|Stack[-0x150]:4	00678240|parameter|Stack[0x10]:4	00652810 C call -> _EnumMines
-00652810|local|Stack[-0x14c]:4	00678240|parameter|Stack[0x14]:2	00652810 C call -> _EnumMines
-00652810|local|Stack[-0x148]:4	00678240|parameter|Stack[0x18]:2	00652810 C call -> _EnumMines
-00652810|local|Stack[-0x144]:4	00678240|parameter|Stack[0x1c]:2	00652810 C call -> _EnumMines
-00652810|local|Stack[-0x140]:4	00678240|parameter|Stack[0x20]:2	00652810 C call -> _EnumMines
-00652810|local|Stack[-0x13c]:4	00678240|parameter|Stack[0x24]:2	00652810 C call -> _EnumMines
-00652810|local|Stack[-0x138]:4	00678240|parameter|Stack[0x28]:2	00652810 C call -> _EnumMines
-00652810|local|Stack[-0x15c]:4	00678240|parameter|Stack[0x30]:4	00652810 C call -> _EnumMines
-00652810|local|Stack[-0x158]:4	004E76E0|parameter|Stack[0xc]:1	00652810 C call -> FUN_004e76e0
-00652810|local|Stack[-0x15c]:4	004E7980|parameter|Stack[0x8]:4	00652810 C call -> FUN_004e7980
-00652810|local|Stack[-0x158]:4	004E7980|parameter|Stack[0xc]:1	00652810 C call -> FUN_004e7980
-00652810|local|Stack[-0x15c]:4	0067B3C0|parameter|Stack[0x4]:4	00652810 C call -> AiPlrClassTy::SetTech
-00652810|local|Stack[-0x158]:4	0067B3C0|parameter|Stack[0x8]:4	00652810 C call -> AiPlrClassTy::SetTech
-00652810|local|Stack[-0x154]:4	0067B3C0|parameter|Stack[0xc]:4	00652810 C call -> AiPlrClassTy::SetTech
-00652810|local|Stack[-0x15c]:4	004E6310|parameter|Stack[0x8]:4	00652810 C call -> FUN_004e6310
-00652810|local|Stack[-0x158]:4	004E6310|parameter|Stack[0xc]:4	00652810 C call -> FUN_004e6310
-00652810|local|Stack[-0x15c]:4	0067B210|parameter|Stack[0x4]:4	00652810 C call -> FUN_0067b210
-00652810|local|Stack[-0x158]:4	0067B210|parameter|Stack[0x8]:4	00652810 C call -> FUN_0067b210
-00652810|local|Stack[-0x15c]:4	004E7390|parameter|Stack[0x8]:4	00652810 C call -> FUN_004e7390
-00652810|local|Stack[-0x158]:4	004E7390|parameter|Stack[0xc]:4	00652810 C call -> FUN_004e7390
-00652810|local|Stack[-0x154]:4	004E7390|parameter|Stack[0x10]:4	00652810 C call -> FUN_004e7390
-00652810|local|Stack[-0x15c]:4	0064D0E0|parameter|Stack[0x8]:4	00652810 C call -> FUN_0064d0e0
-00652810|local|Stack[-0x15c]:4	0065BD20|parameter|Stack[0x4]:1	00652810 C call -> FUN_0065bd20
-00652810|local|Stack[-0x158]:4	0065BD20|parameter|Stack[0x8]:2	00652810 C call -> FUN_0065bd20
-00652810|local|Stack[-0x154]:4	0065BD20|parameter|Stack[0xc]:2	00652810 C call -> FUN_0065bd20
-00652810|local|Stack[-0x150]:4	0065BD20|parameter|Stack[0x10]:2	00652810 C call -> FUN_0065bd20
-00652810|local|Stack[-0x14c]:4	0065BD20|parameter|Stack[0x14]:4	00652810 C call -> FUN_0065bd20
-00652810|local|Stack[-0x15c]:4	00677290|parameter|Stack[0x8]:4	00652810 C call -> FUN_00677290
-00652810|local|Stack[-0x158]:4	00677290|parameter|Stack[0xc]:1	00652810 C call -> FUN_00677290
-00652810|local|Stack[-0x154]:4	00677290|parameter|Stack[0x10]:2	00652810 C call -> FUN_00677290
-00652810|local|Stack[-0x150]:4	00677290|parameter|Stack[0x14]:2	00652810 C call -> FUN_00677290
-00652810|local|Stack[-0x14c]:4	00677290|parameter|Stack[0x18]:2	00652810 C call -> FUN_00677290
-00652810|local|Stack[-0x148]:4	00677290|parameter|Stack[0x1c]:2	00652810 C call -> FUN_00677290
-00652810|local|Stack[-0x144]:4	00677290|parameter|Stack[0x20]:2	00652810 C call -> FUN_00677290
-00652810|local|Stack[-0x140]:4	00677290|parameter|Stack[0x24]:2	00652810 C call -> FUN_00677290
-00652810|local|Stack[-0xc]:4	00675DC0|parameter|Stack[0x8]:4	00652810 C call -> FUN_00675dc0
-00652810|local|Stack[-0xc]:4	006AE110|parameter|Stack[0x4]:4	00652810 C call -> DArrayDestroy
-00652810|local|Stack[-0x15c]:4	006773B0|parameter|Stack[0x8]:4	00652810 C call -> FUN_006773b0
-00652810|local|Stack[-0x158]:4	006773B0|parameter|Stack[0xc]:1	00652810 C call -> FUN_006773b0
-00652810|local|Stack[-0x154]:4	006773B0|parameter|Stack[0x10]:2	00652810 C call -> FUN_006773b0
-00652810|local|Stack[-0x150]:4	006773B0|parameter|Stack[0x14]:2	00652810 C call -> FUN_006773b0
-00652810|local|Stack[-0x14c]:4	006773B0|parameter|Stack[0x18]:2	00652810 C call -> FUN_006773b0
-00652810|local|Stack[-0x148]:4	006773B0|parameter|Stack[0x1c]:2	00652810 C call -> FUN_006773b0
-00652810|local|Stack[-0x144]:4	006773B0|parameter|Stack[0x20]:2	00652810 C call -> FUN_006773b0
-00652810|local|Stack[-0x140]:4	006773B0|parameter|Stack[0x24]:2	00652810 C call -> FUN_006773b0
-00652810|local|Stack[-0xc]:4	00675DC0|parameter|Stack[0x8]:4	00652810 C call -> FUN_00675dc0
-00652810|local|Stack[-0xc]:4	006AE110|parameter|Stack[0x4]:4	00652810 C call -> DArrayDestroy
-00652810|local|Stack[-0x15c]:4	006774C0|parameter|Stack[0x8]:4	00652810 C call -> FUN_006774c0
-00652810|local|Stack[-0x158]:4	006774C0|parameter|Stack[0xc]:1	00652810 C call -> FUN_006774c0
-00652810|local|Stack[-0x154]:4	006774C0|parameter|Stack[0x10]:2	00652810 C call -> FUN_006774c0
-00652810|local|Stack[-0x150]:4	006774C0|parameter|Stack[0x14]:2	00652810 C call -> FUN_006774c0
-00652810|local|Stack[-0x14c]:4	006774C0|parameter|Stack[0x18]:2	00652810 C call -> FUN_006774c0
-00652810|local|Stack[-0x148]:4	006774C0|parameter|Stack[0x1c]:2	00652810 C call -> FUN_006774c0
-00652810|local|Stack[-0x144]:4	006774C0|parameter|Stack[0x20]:2	00652810 C call -> FUN_006774c0
-00652810|local|Stack[-0x140]:4	006774C0|parameter|Stack[0x24]:2	00652810 C call -> FUN_006774c0
-00652810|local|Stack[-0xc]:4	00675DC0|parameter|Stack[0x8]:4	00652810 C call -> FUN_00675dc0
-00652810|local|Stack[-0xc]:4	006AE110|parameter|Stack[0x4]:4	00652810 C call -> DArrayDestroy
-00652810|local|Stack[-0x160]:4	00677F40|parameter|Stack[0x8]:4	00652810 C call -> _EnumArt
-00652810|local|Stack[-0x15c]:4	00677F40|parameter|Stack[0xc]:2	00652810 C call -> _EnumArt
-00652810|local|Stack[-0x158]:4	00677F40|parameter|Stack[0x10]:2	00652810 C call -> _EnumArt
-00652810|local|Stack[-0x154]:4	00677F40|parameter|Stack[0x14]:2	00652810 C call -> _EnumArt
-00652810|local|Stack[-0x150]:4	00677F40|parameter|Stack[0x18]:2	00652810 C call -> _EnumArt
-00652810|local|Stack[-0x14c]:4	00677F40|parameter|Stack[0x1c]:2	00652810 C call -> _EnumArt
-00652810|local|Stack[-0x148]:4	00677F40|parameter|Stack[0x20]:2	00652810 C call -> _EnumArt
-00652810|local|Stack[-0x15c]:4	004AAF60|parameter|Stack[0x4]:4	00652810 C call -> FUN_004aaf60
-00652810|local|Stack[-0x160]:4	006B6020|parameter|Stack[0xc]:4	00652810 C call -> Library::DKW::TBL::FUN_006b6020
-00652810|local|Stack[-0x160]:4	006B6020|parameter|Stack[0xc]:4	00652810 C call -> Library::DKW::TBL::FUN_006b6020
-00652810|local|Stack[-0x15c]:4	004F9120|parameter|Stack[0xc]:4	00652810 C call -> CPanelTy::sub_004F9120
-00652810|local|Stack[-0x15c]:4	004F9260|parameter|Stack[0x4]:1	00652810 C call -> FUN_004f9260
-00652810|local|Stack[-0x15c]:4	0052D320|parameter|Stack[0x4]:4	00652810 C call -> FUN_0052d320
-00652810|local|Stack[-0x15c]:4	0052D320|parameter|Stack[0x4]:4	00652810 C call -> FUN_0052d320
-00652810|local|Stack[-0x154]:4	0051FAC0|parameter|Stack[0x4]:4	00652810 C call -> FUN_0051fac0
-00652810|local|Stack[-0x158]:4	0051FAC0|parameter|Stack[0xc]:1	00652810 C call -> FUN_0051fac0
-00652810|local|Stack[-0x154]:4	0051FAC0|parameter|Stack[0x4]:4	00652810 C call -> FUN_0051fac0
-00652810|local|Stack[-0x158]:4	0051FAC0|parameter|Stack[0xc]:1	00652810 C call -> FUN_0051fac0
-00652810|local|Stack[-0x158]:4	004F9480|parameter|Stack[0x4]:4	00652810 C call -> CPanelTy::OutText
-00652810|local|Stack[-0x15c]:4	004F9480|parameter|Stack[0xc]:4	00652810 C call -> CPanelTy::OutText
-00652810|local|Stack[-0x158]:4	004F95B0|parameter|Stack[0x4]:4	00652810 C call -> CPanelTy::OutText
-00652810|local|Stack[-0x15c]:4	004F95B0|parameter|Stack[0x8]:4	00652810 C call -> CPanelTy::OutText
-00652810|local|Stack[-0x15c]:4	00568DD0|parameter|Stack[0x8]:4	00652810 C call -> SoundClassTy::PlaySound
-00652810|local|Stack[-0x15c]:4	00568DD0|parameter|Stack[0x8]:4	00652810 C call -> SoundClassTy::PlaySound
-00652810|local|Stack[-0x15c]:4	004F9CD0|parameter|Stack[0x4]:4	00652810 C call -> CPanelTy::PlayBriefing
-00652810|local|Stack[-0x15c]:4	004F9CD0|parameter|Stack[0x4]:4	00652810 C call -> CPanelTy::PlayBriefing
-00652810|local|Stack[-0x15c]:4	0055A9D0|parameter|Stack[0x4]:4	00652810 C call -> VisibleClassTy::VisHoleCreate
-00652810|local|Stack[-0x158]:4	0055A9D0|parameter|Stack[0x8]:4	00652810 C call -> VisibleClassTy::VisHoleCreate
-00652810|local|Stack[-0x154]:4	0055A9D0|parameter|Stack[0xc]:4	00652810 C call -> VisibleClassTy::VisHoleCreate
-00652810|local|Stack[-0x150]:4	0055A9D0|parameter|Stack[0x14]:4	00652810 C call -> VisibleClassTy::VisHoleCreate
-00652810|local|Stack[-0x154]:4	004AB530|parameter|Stack[0x4]:4	00652810 C call -> FUN_004ab530
-00652810|local|Stack[-0x158]:4	004AB530|parameter|Stack[0xc]:4	00652810 C call -> FUN_004ab530
-00652810|local|Stack[-0x15c]:4	0052AF90|parameter|Stack[0x4]:1	00652810 C call -> FUN_0052af90
-00652810|local|Stack[-0x158]:4	0052AF90|parameter|Stack[0x8]:4	00652810 C call -> FUN_0052af90
-00652810|local|Stack[-0x154]:4	0052AF90|parameter|Stack[0xc]:4	00652810 C call -> FUN_0052af90
-00652810|local|Stack[-0x384]:1	0072E730|parameter|Stack[0xc]:4	00652810 C call -> Library::MSVCRT::FUN_0072e730
-00652810|local|Stack[-0x384]:1	0072F110|parameter|Stack[0xc]:4	00652810 C call -> Library::MSVCRT::__makepath
-00652810|local|Stack[-0x15c]:4	0072F110|parameter|Stack[0x10]:4	00652810 C call -> Library::MSVCRT::__makepath
-00652810|local|Stack[-0x158]:4	0072E340|parameter|Stack[0x8]:4	00652810 C call -> Library::MSVCRT::_strncpy
-00652810|local|Stack[-0x484]:1	0072E730|parameter|Stack[0xc]:4	00652810 C call -> Library::MSVCRT::FUN_0072e730
-00652810|local|Stack[-0x484]:1	0072F110|parameter|Stack[0xc]:4	00652810 C call -> Library::MSVCRT::__makepath
-00652810|local|Stack[-0x158]:4	0072F110|parameter|Stack[0x10]:4	00652810 C call -> Library::MSVCRT::__makepath
-00652810|local|Stack[-0x158]:4	006B5AA0|parameter|Stack[0x8]:4	00652810 C call -> Library::DKW::TBL::FUN_006b5aa0
-00652810|local|Stack[-0x15c]:4	006C87C0|parameter|Stack[0x8]:4	00652810 C call -> FUN_006c87c0
-00652810|local|Stack[-0x158]:4	006B5AA0|parameter|Stack[0x8]:4	00652810 C call -> Library::DKW::TBL::FUN_006b5aa0
-00652810|local|Stack[-0x15c]:4	006C87C0|parameter|Stack[0x8]:4	00652810 C call -> FUN_006c87c0
-00652810|local|Stack[-0x8]:4	0056A8D0|parameter|Stack[0x8]:1	00652810 C call -> FUN_0056a8d0
-00652810|local|Stack[-0x1a0]:4	0056A8D0|parameter|Stack[0xc]:1	00652810 C call -> FUN_0056a8d0
-00652810|local|Stack[-0x15c]:4	0056AA00|parameter|Stack[0x8]:1	00652810 C call -> FUN_0056aa00
-00652810|local|Stack[-0x158]:4	0064D270|parameter|Stack[0xc]:4	00652810 C call -> AiEventClassTy::__CreateObjPl
-00652810|local|Stack[-0x154]:4	0064D270|parameter|Stack[0x10]:4	00652810 C call -> AiEventClassTy::__CreateObjPl
-00652810|local|Stack[-0x150]:4	0064D270|parameter|Stack[0x14]:4	00652810 C call -> AiEventClassTy::__CreateObjPl
-00652810|local|Stack[-0x158]:4	0064D270|parameter|Stack[0xc]:4	00652810 C call -> AiEventClassTy::__CreateObjPl
-00652810|local|Stack[-0x154]:4	0064D270|parameter|Stack[0x10]:4	00652810 C call -> AiEventClassTy::__CreateObjPl
-00652810|local|Stack[-0x150]:4	0064D270|parameter|Stack[0x14]:4	00652810 C call -> AiEventClassTy::__CreateObjPl
-00652810|local|Stack[-0x158]:4	0064D270|parameter|Stack[0xc]:4	00652810 C call -> AiEventClassTy::__CreateObjPl
-00652810|local|Stack[-0x154]:4	0064D270|parameter|Stack[0x10]:4	00652810 C call -> AiEventClassTy::__CreateObjPl
-00652810|local|Stack[-0x150]:4	0064D270|parameter|Stack[0x14]:4	00652810 C call -> AiEventClassTy::__CreateObjPl
-00652810|local|Stack[-0x158]:4	0064D270|parameter|Stack[0xc]:4	00652810 C call -> AiEventClassTy::__CreateObjPl
-00652810|local|Stack[-0x154]:4	0064D270|parameter|Stack[0x10]:4	00652810 C call -> AiEventClassTy::__CreateObjPl
-00652810|local|Stack[-0x150]:4	0064D270|parameter|Stack[0x14]:4	00652810 C call -> AiEventClassTy::__CreateObjPl
-00652810|local|Stack[-0x158]:4	0064D270|parameter|Stack[0xc]:4	00652810 C call -> AiEventClassTy::__CreateObjPl
-00652810|local|Stack[-0x154]:4	0064D270|parameter|Stack[0x10]:4	00652810 C call -> AiEventClassTy::__CreateObjPl
-00652810|local|Stack[-0x150]:4	0064D270|parameter|Stack[0x14]:4	00652810 C call -> AiEventClassTy::__CreateObjPl
-00652810|local|Stack[-0x158]:4	0064D270|parameter|Stack[0xc]:4	00652810 C call -> AiEventClassTy::__CreateObjPl
-00652810|local|Stack[-0x154]:4	0064D270|parameter|Stack[0x10]:4	00652810 C call -> AiEventClassTy::__CreateObjPl
-00652810|local|Stack[-0x150]:4	0064D270|parameter|Stack[0x14]:4	00652810 C call -> AiEventClassTy::__CreateObjPl
-00652810|local|Stack[-0x158]:4	0064D270|parameter|Stack[0xc]:4	00652810 C call -> AiEventClassTy::__CreateObjPl
-00652810|local|Stack[-0x154]:4	0064D270|parameter|Stack[0x10]:4	00652810 C call -> AiEventClassTy::__CreateObjPl
-00652810|local|Stack[-0x150]:4	0064D270|parameter|Stack[0x14]:4	00652810 C call -> AiEventClassTy::__CreateObjPl
-00652810|local|Stack[-0x158]:4	0064D270|parameter|Stack[0xc]:4	00652810 C call -> AiEventClassTy::__CreateObjPl
-00652810|local|Stack[-0x154]:4	0064D270|parameter|Stack[0x10]:4	00652810 C call -> AiEventClassTy::__CreateObjPl
-00652810|local|Stack[-0x150]:4	0064D270|parameter|Stack[0x14]:4	00652810 C call -> AiEventClassTy::__CreateObjPl
-00652810|local|Stack[-0x158]:4	0064D270|parameter|Stack[0xc]:4	00652810 C call -> AiEventClassTy::__CreateObjPl
-00652810|local|Stack[-0x154]:4	0064D270|parameter|Stack[0x10]:4	00652810 C call -> AiEventClassTy::__CreateObjPl
-00652810|local|Stack[-0x150]:4	0064D270|parameter|Stack[0x14]:4	00652810 C call -> AiEventClassTy::__CreateObjPl
-00652810|local|Stack[-0x158]:4	0064D270|parameter|Stack[0xc]:4	00652810 C call -> AiEventClassTy::__CreateObjPl
-00652810|local|Stack[-0x154]:4	0064D270|parameter|Stack[0x10]:4	00652810 C call -> AiEventClassTy::__CreateObjPl
-00652810|local|Stack[-0x150]:4	0064D270|parameter|Stack[0x14]:4	00652810 C call -> AiEventClassTy::__CreateObjPl
-00652810|local|Stack[-0x158]:4	0064D270|parameter|Stack[0xc]:4	00652810 C call -> AiEventClassTy::__CreateObjPl
-00652810|local|Stack[-0x154]:4	0064D270|parameter|Stack[0x10]:4	00652810 C call -> AiEventClassTy::__CreateObjPl
-00652810|local|Stack[-0x150]:4	0064D270|parameter|Stack[0x14]:4	00652810 C call -> AiEventClassTy::__CreateObjPl
-00652810|local|Stack[-0x158]:4	0064D270|parameter|Stack[0xc]:4	00652810 C call -> AiEventClassTy::__CreateObjPl
-00652810|local|Stack[-0x154]:4	0064D270|parameter|Stack[0x10]:4	00652810 C call -> AiEventClassTy::__CreateObjPl
-00652810|local|Stack[-0x150]:4	0064D270|parameter|Stack[0x14]:4	00652810 C call -> AiEventClassTy::__CreateObjPl
-00652810|local|Stack[-0x158]:4	0064D270|parameter|Stack[0xc]:4	00652810 C call -> AiEventClassTy::__CreateObjPl
-00652810|local|Stack[-0x154]:4	0064D270|parameter|Stack[0x10]:4	00652810 C call -> AiEventClassTy::__CreateObjPl
-00652810|local|Stack[-0x150]:4	0064D270|parameter|Stack[0x14]:4	00652810 C call -> AiEventClassTy::__CreateObjPl
-00652810|local|Stack[-0x158]:4	0064D270|parameter|Stack[0xc]:4	00652810 C call -> AiEventClassTy::__CreateObjPl
-00652810|local|Stack[-0x154]:4	0064D270|parameter|Stack[0x10]:4	00652810 C call -> AiEventClassTy::__CreateObjPl
-00652810|local|Stack[-0x150]:4	0064D270|parameter|Stack[0x14]:4	00652810 C call -> AiEventClassTy::__CreateObjPl
-00652810|local|Stack[-0x158]:4	0064D270|parameter|Stack[0xc]:4	00652810 C call -> AiEventClassTy::__CreateObjPl
-00652810|local|Stack[-0x154]:4	0064D270|parameter|Stack[0x10]:4	00652810 C call -> AiEventClassTy::__CreateObjPl
-00652810|local|Stack[-0x150]:4	0064D270|parameter|Stack[0x14]:4	00652810 C call -> AiEventClassTy::__CreateObjPl
-00652810|local|Stack[-0x158]:4	0064D270|parameter|Stack[0xc]:4	00652810 C call -> AiEventClassTy::__CreateObjPl
-00652810|local|Stack[-0x154]:4	0064D270|parameter|Stack[0x10]:4	00652810 C call -> AiEventClassTy::__CreateObjPl
-00652810|local|Stack[-0x150]:4	0064D270|parameter|Stack[0x14]:4	00652810 C call -> AiEventClassTy::__CreateObjPl
-00652810|local|Stack[-0x158]:4	0064D270|parameter|Stack[0xc]:4	00652810 C call -> AiEventClassTy::__CreateObjPl
-00652810|local|Stack[-0x154]:4	0064D270|parameter|Stack[0x10]:4	00652810 C call -> AiEventClassTy::__CreateObjPl
-00652810|local|Stack[-0x150]:4	0064D270|parameter|Stack[0x14]:4	00652810 C call -> AiEventClassTy::__CreateObjPl
-00652810|local|Stack[-0x158]:4	0064D270|parameter|Stack[0xc]:4	00652810 C call -> AiEventClassTy::__CreateObjPl
-00652810|local|Stack[-0x154]:4	0064D270|parameter|Stack[0x10]:4	00652810 C call -> AiEventClassTy::__CreateObjPl
-00652810|local|Stack[-0x150]:4	0064D270|parameter|Stack[0x14]:4	00652810 C call -> AiEventClassTy::__CreateObjPl
-00652810|local|Stack[-0x158]:4	0064D270|parameter|Stack[0xc]:4	00652810 C call -> AiEventClassTy::__CreateObjPl
-00652810|local|Stack[-0x154]:4	0064D270|parameter|Stack[0x10]:4	00652810 C call -> AiEventClassTy::__CreateObjPl
-00652810|local|Stack[-0x150]:4	0064D270|parameter|Stack[0x14]:4	00652810 C call -> AiEventClassTy::__CreateObjPl
-00652810|local|Stack[-0x158]:4	0064D270|parameter|Stack[0xc]:4	00652810 C call -> AiEventClassTy::__CreateObjPl
-00652810|local|Stack[-0x154]:4	0064D270|parameter|Stack[0x10]:4	00652810 C call -> AiEventClassTy::__CreateObjPl
-00652810|local|Stack[-0x150]:4	0064D270|parameter|Stack[0x14]:4	00652810 C call -> AiEventClassTy::__CreateObjPl
-00652810|local|Stack[-0x158]:4	0064D270|parameter|Stack[0xc]:4	00652810 C call -> AiEventClassTy::__CreateObjPl
-00652810|local|Stack[-0x154]:4	0064D270|parameter|Stack[0x10]:4	00652810 C call -> AiEventClassTy::__CreateObjPl
-00652810|local|Stack[-0x150]:4	0064D270|parameter|Stack[0x14]:4	00652810 C call -> AiEventClassTy::__CreateObjPl
-00652810|local|Stack[-0x158]:4	0064D270|parameter|Stack[0xc]:4	00652810 C call -> AiEventClassTy::__CreateObjPl
-00652810|local|Stack[-0x154]:4	0064D270|parameter|Stack[0x10]:4	00652810 C call -> AiEventClassTy::__CreateObjPl
-00652810|local|Stack[-0x150]:4	0064D270|parameter|Stack[0x14]:4	00652810 C call -> AiEventClassTy::__CreateObjPl
-00652810|local|Stack[-0x158]:4	0064D270|parameter|Stack[0xc]:4	00652810 C call -> AiEventClassTy::__CreateObjPl
-00652810|local|Stack[-0x154]:4	0064D270|parameter|Stack[0x10]:4	00652810 C call -> AiEventClassTy::__CreateObjPl
-00652810|local|Stack[-0x150]:4	0064D270|parameter|Stack[0x14]:4	00652810 C call -> AiEventClassTy::__CreateObjPl
-00652810|local|Stack[-0x158]:4	0064D270|parameter|Stack[0xc]:4	00652810 C call -> AiEventClassTy::__CreateObjPl
-00652810|local|Stack[-0x154]:4	0064D270|parameter|Stack[0x10]:4	00652810 C call -> AiEventClassTy::__CreateObjPl
-00652810|local|Stack[-0x150]:4	0064D270|parameter|Stack[0x14]:4	00652810 C call -> AiEventClassTy::__CreateObjPl
-00652810|local|Stack[-0x158]:4	0064D270|parameter|Stack[0xc]:4	00652810 C call -> AiEventClassTy::__CreateObjPl
-00652810|local|Stack[-0x154]:4	0064D270|parameter|Stack[0x10]:4	00652810 C call -> AiEventClassTy::__CreateObjPl
-00652810|local|Stack[-0x150]:4	0064D270|parameter|Stack[0x14]:4	00652810 C call -> AiEventClassTy::__CreateObjPl
-00652810|local|Stack[-0x158]:4	0064D270|parameter|Stack[0xc]:4	00652810 C call -> AiEventClassTy::__CreateObjPl
-00652810|local|Stack[-0x154]:4	0064D270|parameter|Stack[0x10]:4	00652810 C call -> AiEventClassTy::__CreateObjPl
-00652810|local|Stack[-0x150]:4	0064D270|parameter|Stack[0x14]:4	00652810 C call -> AiEventClassTy::__CreateObjPl
-00652810|local|Stack[-0x158]:4	0064D270|parameter|Stack[0xc]:4	00652810 C call -> AiEventClassTy::__CreateObjPl
-00652810|local|Stack[-0x154]:4	0064D270|parameter|Stack[0x10]:4	00652810 C call -> AiEventClassTy::__CreateObjPl
-00652810|local|Stack[-0x150]:4	0064D270|parameter|Stack[0x14]:4	00652810 C call -> AiEventClassTy::__CreateObjPl
-00652810|local|Stack[-0x158]:4	0064D270|parameter|Stack[0xc]:4	00652810 C call -> AiEventClassTy::__CreateObjPl
-00652810|local|Stack[-0x154]:4	0064D270|parameter|Stack[0x10]:4	00652810 C call -> AiEventClassTy::__CreateObjPl
-00652810|local|Stack[-0x150]:4	0064D270|parameter|Stack[0x14]:4	00652810 C call -> AiEventClassTy::__CreateObjPl
-00652810|local|Stack[-0x158]:4	0064D270|parameter|Stack[0xc]:4	00652810 C call -> AiEventClassTy::__CreateObjPl
-00652810|local|Stack[-0x154]:4	0064D270|parameter|Stack[0x10]:4	00652810 C call -> AiEventClassTy::__CreateObjPl
-00652810|local|Stack[-0x150]:4	0064D270|parameter|Stack[0x14]:4	00652810 C call -> AiEventClassTy::__CreateObjPl
-00652810|local|Stack[-0x158]:4	0064D270|parameter|Stack[0xc]:4	00652810 C call -> AiEventClassTy::__CreateObjPl
-00652810|local|Stack[-0x154]:4	0064D270|parameter|Stack[0x10]:4	00652810 C call -> AiEventClassTy::__CreateObjPl
-00652810|local|Stack[-0x150]:4	0064D270|parameter|Stack[0x14]:4	00652810 C call -> AiEventClassTy::__CreateObjPl
-00652810|local|Stack[-0x158]:4	0064D270|parameter|Stack[0xc]:4	00652810 C call -> AiEventClassTy::__CreateObjPl
-00652810|local|Stack[-0x154]:4	0064D270|parameter|Stack[0x10]:4	00652810 C call -> AiEventClassTy::__CreateObjPl
-00652810|local|Stack[-0x150]:4	0064D270|parameter|Stack[0x14]:4	00652810 C call -> AiEventClassTy::__CreateObjPl
-00652810|local|Stack[-0x158]:4	0064D270|parameter|Stack[0xc]:4	00652810 C call -> AiEventClassTy::__CreateObjPl
-00652810|local|Stack[-0x154]:4	0064D270|parameter|Stack[0x10]:4	00652810 C call -> AiEventClassTy::__CreateObjPl
-00652810|local|Stack[-0x150]:4	0064D270|parameter|Stack[0x14]:4	00652810 C call -> AiEventClassTy::__CreateObjPl
-00652810|local|Stack[-0x158]:4	0064D270|parameter|Stack[0xc]:4	00652810 C call -> AiEventClassTy::__CreateObjPl
-00652810|local|Stack[-0x154]:4	0064D270|parameter|Stack[0x10]:4	00652810 C call -> AiEventClassTy::__CreateObjPl
-00652810|local|Stack[-0x150]:4	0064D270|parameter|Stack[0x14]:4	00652810 C call -> AiEventClassTy::__CreateObjPl
-00652810|local|Stack[-0x158]:4	0064D270|parameter|Stack[0xc]:4	00652810 C call -> AiEventClassTy::__CreateObjPl
-00652810|local|Stack[-0x154]:4	0064D270|parameter|Stack[0x10]:4	00652810 C call -> AiEventClassTy::__CreateObjPl
-00652810|local|Stack[-0x150]:4	0064D270|parameter|Stack[0x14]:4	00652810 C call -> AiEventClassTy::__CreateObjPl
-00652810|local|Stack[-0x158]:4	0064D270|parameter|Stack[0xc]:4	00652810 C call -> AiEventClassTy::__CreateObjPl
-00652810|local|Stack[-0x154]:4	0064D270|parameter|Stack[0x10]:4	00652810 C call -> AiEventClassTy::__CreateObjPl
-00652810|local|Stack[-0x150]:4	0064D270|parameter|Stack[0x14]:4	00652810 C call -> AiEventClassTy::__CreateObjPl
-00652810|local|Stack[-0x158]:4	0064D270|parameter|Stack[0xc]:4	00652810 C call -> AiEventClassTy::__CreateObjPl
-00652810|local|Stack[-0x154]:4	0064D270|parameter|Stack[0x10]:4	00652810 C call -> AiEventClassTy::__CreateObjPl
-00652810|local|Stack[-0x150]:4	0064D270|parameter|Stack[0x14]:4	00652810 C call -> AiEventClassTy::__CreateObjPl
-00652810|local|Stack[-0x158]:4	0064D270|parameter|Stack[0xc]:4	00652810 C call -> AiEventClassTy::__CreateObjPl
-00652810|local|Stack[-0x154]:4	0064D270|parameter|Stack[0x10]:4	00652810 C call -> AiEventClassTy::__CreateObjPl
-00652810|local|Stack[-0x150]:4	0064D270|parameter|Stack[0x14]:4	00652810 C call -> AiEventClassTy::__CreateObjPl
-00652810|local|Stack[-0x158]:4	0064D270|parameter|Stack[0xc]:4	00652810 C call -> AiEventClassTy::__CreateObjPl
-00652810|local|Stack[-0x154]:4	0064D270|parameter|Stack[0x10]:4	00652810 C call -> AiEventClassTy::__CreateObjPl
-00652810|local|Stack[-0x150]:4	0064D270|parameter|Stack[0x14]:4	00652810 C call -> AiEventClassTy::__CreateObjPl
-00652810|local|Stack[-0x158]:4	0064D270|parameter|Stack[0xc]:4	00652810 C call -> AiEventClassTy::__CreateObjPl
-00652810|local|Stack[-0x154]:4	0064D270|parameter|Stack[0x10]:4	00652810 C call -> AiEventClassTy::__CreateObjPl
-00652810|local|Stack[-0x150]:4	0064D270|parameter|Stack[0x14]:4	00652810 C call -> AiEventClassTy::__CreateObjPl
-00652810|local|Stack[-0x154]:4	004D88B0|parameter|Stack[0x8]:4	00652810 C call -> FUN_004d88b0
-00652810|local|Stack[-0x154]:4	004D8800|parameter|Stack[0x8]:4	00652810 C call -> FUN_004d8800
-00652810|local|Stack[-0x154]:4	004D87B0|parameter|Stack[0x8]:4	00652810 C call -> FUN_004d87b0
-00652810|local|Stack[-0x154]:4	004D89F0|parameter|Stack[0x8]:4	00652810 C call -> FUN_004d89f0
-00652810|local|Stack[-0x154]:4	004D8940|parameter|Stack[0x8]:4	00652810 C call -> FUN_004d8940
-00652810|local|Stack[-0x154]:4	004D88F0|parameter|Stack[0x8]:4	00652810 C call -> FUN_004d88f0
-00652810|local|Stack[-0x154]:4	004D8B30|parameter|Stack[0x8]:4	00652810 C call -> FUN_004d8b30
-00652810|local|Stack[-0x154]:4	004D8A80|parameter|Stack[0x8]:4	00652810 C call -> FUN_004d8a80
-00652810|local|Stack[-0x154]:4	004D8A30|parameter|Stack[0x8]:4	00652810 C call -> FUN_004d8a30
-00652810|local|Stack[-0x154]:4	004B7140|parameter|Stack[0x8]:4	00652810 C call -> FUN_004b7140
-00652810|local|Stack[-0x154]:4	004B70D0|parameter|Stack[0x8]:4	00652810 C call -> FUN_004b70d0
-00652810|local|Stack[-0x154]:4	004B7080|parameter|Stack[0x8]:4	00652810 C call -> FUN_004b7080
-00652810|local|Stack[-0x154]:4	004E4440|parameter|Stack[0x8]:4	00652810 C call -> FUN_004e4440
-00652810|local|Stack[-0x154]:4	004E43C0|parameter|Stack[0x8]:4	00652810 C call -> FUN_004e43c0
-00652810|local|Stack[-0x154]:4	004E4380|parameter|Stack[0x8]:4	00652810 C call -> FUN_004e4380
-00652810|local|Stack[-0x154]:4	004E41F0|parameter|Stack[0x8]:4	00652810 C call -> FUN_004e41f0
-00652810|local|Stack[-0x154]:4	004E4330|parameter|Stack[0x8]:4	00652810 C call -> FUN_004e4330
-00652810|local|Stack[-0x154]:4	004E4270|parameter|Stack[0x8]:4	00652810 C call -> FUN_004e4270
-00652810|local|Stack[-0x160]:4	004D8320|parameter|Stack[0x4]:4	00652810 C call -> FUN_004d8320
-00652810|local|Stack[-0x160]:4	0064E5C0|parameter|Stack[0x8]:2	00652810 C call -> FUN_0064e5c0
-00652810|local|Stack[-0x15c]:4	0064E5C0|parameter|Stack[0xc]:2	00652810 C call -> FUN_0064e5c0
-00652810|local|Stack[-0x158]:4	0064E5C0|parameter|Stack[0x10]:4	00652810 C call -> FUN_0064e5c0
-00652810|local|Stack[-0x154]:4	0064E5C0|parameter|Stack[0x14]:4	00652810 C call -> FUN_0064e5c0
-00652810|local|Stack[-0x15c]:4	0064D270|parameter|Stack[0x8]:2	00652810 C call -> AiEventClassTy::__CreateObjPl
-00652810|local|Stack[-0x158]:4	0064D270|parameter|Stack[0xc]:4	00652810 C call -> AiEventClassTy::__CreateObjPl
-00652810|local|Stack[-0x154]:4	0064D270|parameter|Stack[0x10]:4	00652810 C call -> AiEventClassTy::__CreateObjPl
-00652810|local|Stack[-0x150]:4	0064D270|parameter|Stack[0x14]:4	00652810 C call -> AiEventClassTy::__CreateObjPl
-00652810|local|Stack[-0xc]:4	0064D270|parameter|Stack[0x18]:4	00652810 C call -> AiEventClassTy::__CreateObjPl
-00652810|local|Stack[-0x14c]:4	0064D270|parameter|Stack[0x1c]:4	00652810 C call -> AiEventClassTy::__CreateObjPl
-00652810|local|Stack[-0x148]:4	0064D270|parameter|Stack[0x20]:4	00652810 C call -> AiEventClassTy::__CreateObjPl
-00652810|local|Stack[-0x140]:4	0064D270|parameter|Stack[0x24]:4	00652810 C call -> AiEventClassTy::__CreateObjPl
-00652810|local|Stack[-0x13c]:4	0064D270|parameter|Stack[0x28]:4	00652810 C call -> AiEventClassTy::__CreateObjPl
-00652810|local|Stack[-0x138]:4	0064D270|parameter|Stack[0x2c]:4	00652810 C call -> AiEventClassTy::__CreateObjPl
-00652810|local|Stack[-0x134]:4	0064D270|parameter|Stack[0x30]:4	00652810 C call -> AiEventClassTy::__CreateObjPl
-00652810|local|Stack[-0x144]:4	0042B760|parameter|Stack[0x8]:2	00652810 C call -> FUN_0042b760
-00652810|local|Stack[-0x15c]:4	00449B60|parameter|Stack[0x10]:4	00652810 C call -> STAllPlayersC::DestroyObjectMsg
-00652810|local|Stack[-0x8]:4	006AE110|parameter|Stack[0x4]:4	00652810 C call -> DArrayDestroy
-00652810|local|Stack[-0x158]:4	006775E0|parameter|Stack[0x8]:4	00652810 C call -> FUN_006775e0
-00652810|local|Stack[-0x15c]:4	006775E0|parameter|Stack[0xc]:4	00652810 C call -> FUN_006775e0
-00652810|local|Stack[-0x150]:4	006775E0|parameter|Stack[0x10]:4	00652810 C call -> FUN_006775e0
-00652810|local|Stack[-0x14c]:4	006775E0|parameter|Stack[0x18]:2	00652810 C call -> FUN_006775e0
-00652810|local|Stack[-0x148]:4	006775E0|parameter|Stack[0x1c]:2	00652810 C call -> FUN_006775e0
-00652810|local|Stack[-0x144]:4	006775E0|parameter|Stack[0x20]:2	00652810 C call -> FUN_006775e0
-00652810|local|Stack[-0x140]:4	006775E0|parameter|Stack[0x24]:2	00652810 C call -> FUN_006775e0
-00652810|local|Stack[-0x13c]:4	006775E0|parameter|Stack[0x28]:2	00652810 C call -> FUN_006775e0
-00652810|local|Stack[-0x138]:4	006775E0|parameter|Stack[0x2c]:2	00652810 C call -> FUN_006775e0
-00652810|local|Stack[-0x134]:4	00449B60|parameter|Stack[0x10]:4	00652810 C call -> STAllPlayersC::DestroyObjectMsg
-00652810|local|Stack[-0x15c]:4	0064D890|parameter|Stack[0x8]:2	00652810 C call -> AiEventClassTy::_CreateRCCont
-00652810|local|Stack[-0x158]:4	0064D890|parameter|Stack[0xc]:4	00652810 C call -> AiEventClassTy::_CreateRCCont
-00652810|local|Stack[-0x154]:4	0064D890|parameter|Stack[0x10]:4	00652810 C call -> AiEventClassTy::_CreateRCCont
-00652810|local|Stack[-0x150]:4	0064D890|parameter|Stack[0x14]:4	00652810 C call -> AiEventClassTy::_CreateRCCont
-00652810|local|Stack[-0x14c]:4	0064D890|parameter|Stack[0x18]:4	00652810 C call -> AiEventClassTy::_CreateRCCont
-00652810|local|Stack[-0x148]:4	0064D890|parameter|Stack[0x1c]:4	00652810 C call -> AiEventClassTy::_CreateRCCont
-00652810|local|Stack[-0x144]:4	0064D890|parameter|Stack[0x20]:4	00652810 C call -> AiEventClassTy::_CreateRCCont
-00652810|local|Stack[-0x15c]:4	00677BE0|parameter|Stack[0x8]:2	00652810 C call -> _EnumRCCont
-00652810|local|Stack[-0x158]:4	00677BE0|parameter|Stack[0xc]:4	00652810 C call -> _EnumRCCont
-00652810|local|Stack[-0x154]:4	00677BE0|parameter|Stack[0x10]:2	00652810 C call -> _EnumRCCont
-00652810|local|Stack[-0x150]:4	00677BE0|parameter|Stack[0x14]:2	00652810 C call -> _EnumRCCont
-00652810|local|Stack[-0x14c]:4	00677BE0|parameter|Stack[0x18]:2	00652810 C call -> _EnumRCCont
-00652810|local|Stack[-0x148]:4	00677BE0|parameter|Stack[0x1c]:2	00652810 C call -> _EnumRCCont
-00652810|local|Stack[-0x144]:4	00677BE0|parameter|Stack[0x20]:2	00652810 C call -> _EnumRCCont
-00652810|local|Stack[-0x140]:4	00677BE0|parameter|Stack[0x24]:2	00652810 C call -> _EnumRCCont
-00652810|local|Stack[-0x160]:4	0064DB00|parameter|Stack[0x8]:2	00652810 C call -> AiEventClassTy::_CreateArt
-00652810|local|Stack[-0x15c]:4	0064DB00|parameter|Stack[0xc]:4	00652810 C call -> AiEventClassTy::_CreateArt
-00652810|local|Stack[-0x158]:4	0064DB00|parameter|Stack[0x10]:4	00652810 C call -> AiEventClassTy::_CreateArt
-00652810|local|Stack[-0x154]:4	0064DB00|parameter|Stack[0x14]:4	00652810 C call -> AiEventClassTy::_CreateArt
-00652810|local|Stack[-0x150]:4	0064DB00|parameter|Stack[0x18]:4	00652810 C call -> AiEventClassTy::_CreateArt
-00652810|local|Stack[-0x14c]:4	0064DB00|parameter|Stack[0x1c]:4	00652810 C call -> AiEventClassTy::_CreateArt
-00652810|local|Stack[-0x148]:4	0064DB00|parameter|Stack[0x20]:4	00652810 C call -> AiEventClassTy::_CreateArt
-00652810|local|Stack[-0x180]:4	006AE110|parameter|Stack[0x4]:4	00652810 C call -> DArrayDestroy
-00652810|local|Stack[-0x188]:4	0064D0E0|parameter|ECX:4 (auto)	00652810 C call -> FUN_0064d0e0
-00652810|local|Stack[-0x14]:4	0064D0E0|parameter|Stack[0xc]:4	00652810 C call -> FUN_0064d0e0
 0066ACC0|local|Stack[-0x8]:4	00668F50|parameter|Stack[0x4]:4	0066ACC0 C call -> SubmarineTitans::Recovered::HiddenThis::AnonReceiver_0064A970::sub_00668F50
 0066ACC0|local|Stack[-0x8]:4	00668F50|parameter|Stack[0x4]:4	0066ACC0 C call -> SubmarineTitans::Recovered::HiddenThis::AnonReceiver_0064A970::sub_00668F50
 0066ACC0|local|Stack[-0x50]:4	00668F50|parameter|Stack[0xc]:4	0066ACC0 C call -> SubmarineTitans::Recovered::HiddenThis::AnonReceiver_0064A970::sub_00668F50

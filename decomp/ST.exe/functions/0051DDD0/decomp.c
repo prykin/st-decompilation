@@ -555,7 +555,7 @@ int __thiscall HelpPanelTy::GetMessage(HelpPanelTy *this,STMessage *message)
           puVar10 = (undefined4 *)((int)puVar10 + 1);
         }
         ccFntTy::SetSurf(this_00->field_01E4,this_00->field_01EC,0,0,0,0,0);
-        pcVar12 = LoadResourceString(local_18,g_module_00807618);
+        pcVar12 = LoadResourceString(local_18,g_hINSTANCE_00807618);
         uVar16 = 0xffffffff;
         do {
           pcVar21 = pcVar12;

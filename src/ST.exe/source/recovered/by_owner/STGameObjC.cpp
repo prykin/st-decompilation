@@ -2,7 +2,7 @@
 // Generated translation unit: source/recovered/by_owner/STGameObjC.cpp
 
 // 004158E0 STGameObjC::STGameObjC
-#line 1 "decomp/ST.exe/functions/004158E0/decomp.c"
+#line 4 "decomp/ST.exe/functions/004158E0/decomp.c"
 /* [STConstructorApplier] Recovered constructor candidate.
    VTable: 007900A0 (store 004158EC)
    Evidence: final_vptr=007900A0; returns_this=true; calls_before=1; field_writes_after=67;
@@ -15,7 +15,7 @@ STGameObjC * __thiscall st::fn_004158E0(STGameObjC *this)
   undefined4 *puVar2;
 
   st::fn_006E60E0(this);
-  this->vtable = (STGameObjCDispatchVTable *)&STGameObjCVTable;
+  this->vtable = (STGameObjCDispatchVTable *)&st_global_007900A0;
   this->field_0020 = 0;
   this->field_0024 = 0xff;
   this->field_0028 = 1;
@@ -92,7 +92,7 @@ STGameObjC * __thiscall st::fn_004158E0(STGameObjC *this)
 }
 
 // 004845E0 STGameObjC::FUN_004845e0
-#line 1 "decomp/ST.exe/functions/004845E0/decomp.c"
+#line 4 "decomp/ST.exe/functions/004845E0/decomp.c"
 /* [STSwitchEnumApplier] Switch target param_1 uses
    /SubmarineTitans/Recovered/Enums/Global_sub_004845E0_param_1Enum. Cases:
    CASE_0=0;CASE_2=2;CASE_3=3;CASE_4=4;CASE_5=5;CASE_6=6;CASE_7=7;CASE_8=8;CASE_9=9;CASE_A=10;CASE_D=13;CASE_E=14;CASE_10=16;CASE_11=17;CASE_12=18;CASE_13=19;CASE_18=24;CASE_2B=43;CASE_2C=44;CASE_2D=45;CASE_48=72;CASE_4D=77

@@ -10,14 +10,14 @@ void FUN_005782d0(void)
     g_debugSystem_00811644 = nullptr;
   }
   else {
-    g_debugSystem_00811644 = DebugSystemC::DebugSystemC(this,g_appClass_00806728);
+    g_debugSystem_00811644 = DebugSystemC::DebugSystemC(this,g_app_00806728);
   }
   g_debugSystem_00811644->field_0020 = 0;
   iVar1 = (*g_debugSystem_00811644->vtable->InitSystem)((SystemClassTy *)g_debugSystem_00811644);
   if (iVar1 != 0) {
     thunk_FUN_00578370();
   }
-  iVar1 = AppClassTy::AddSystem(g_appClass_00806728,(int *)g_debugSystem_00811644,0);
+  iVar1 = AppClassTy::AddSystem(g_app_00806728,(int *)g_debugSystem_00811644,0);
   if (iVar1 != 0) {
     thunk_FUN_00578370();
     g_debugSystem_00811644->field_0020 = 1;

@@ -2,7 +2,7 @@
 // Generated translation unit: source/recovered/by_owner/ComboTy.cpp
 
 // 005943F0 ComboTy::sub_005943F0
-#line 1 "decomp/ST.exe/functions/005943F0/decomp.c"
+#line 4 "decomp/ST.exe/functions/005943F0/decomp.c"
 /* [STMethodOwnerApplier] Structural method owner recovered as ComboTy.
    Evidence: this_call_owners=[ComboTy]; agreed_this_calls=2; incoming_this_accesses=6;
    incoming_edx_uses=0; incoming_stack_parameter_uses=0; direct_non_thunk_callers=0;

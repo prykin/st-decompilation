@@ -2,7 +2,7 @@
 // Generated translation unit: source/original/Andrey/specpan.cpp
 
 // 0053D7A0 UPanelTy::PaintBut
-#line 1 "decomp/ST.exe/functions/0053D7A0/decomp.c"
+#line 4 "decomp/ST.exe/functions/0053D7A0/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\Andrey\specpan.cpp
    UPanelTy::PaintBut */
@@ -66,7 +66,7 @@ st::fn_0053D7A0(UPanelTy *this,AnonShape_0053D7A0_044B6141 *param_1,byte param_2
 }
 
 // 0053D920 UPanelTy::PaintTxtBut
-#line 1 "decomp/ST.exe/functions/0053D920/decomp.c"
+#line 4 "decomp/ST.exe/functions/0053D920/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\Andrey\specpan.cpp
    UPanelTy::PaintTxtBut
@@ -121,7 +121,7 @@ st::fn_0053D920
       uVar4 = (*(code *)param_6)(param_1);
       iVar5 = -1;
       iVar3 = -2;
-      resourceString = (uint *)st::fn_006B0140(param_5,g_module_00807618);
+      resourceString = (uint *)st::fn_006B0140(param_5,g_hINSTANCE_00807618);
       st::fn_007119C0(param_4,resourceString,iVar3,iVar5,uVar4);
       st::fn_006B3640
                 ((int *)g_ddxContext_008075A8,pUVar2->field_0060,0xffffffff,pUVar2->field_003C,
@@ -141,7 +141,7 @@ st::fn_0053D920
 }
 
 // 0053DAF0 UPanelTy::PaintIBut
-#line 1 "decomp/ST.exe/functions/0053DAF0/decomp.c"
+#line 4 "decomp/ST.exe/functions/0053DAF0/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\Andrey\specpan.cpp
    UPanelTy::PaintIBut */
@@ -190,7 +190,7 @@ st::fn_0053DAF0(UPanelTy *this,AnonShape_0053DAF0_3BDC2979 *param_1,char *param_
     bVar6 = (byte)errorCode;
     text = st::fn_006F2C00(param_2,1,uVar3);
     puVar4 = st::fn_00709AF0
-                       (DAT_00806794,CASE_1,text,uVar5,bVar6,iVar7,(int)puVar8,puVar10);
+                       (PTR_00806794,CASE_1,text,uVar5,bVar6,iVar7,(int)puVar8,puVar10);
     uVar5 = local_8;
     st::fn_00403229((RecoveredSourceFamily_dibcopy *)pUVar2->field_0068,local_c,local_8,'\x01',(byte *)puVar4
           );
@@ -199,7 +199,7 @@ st::fn_0053DAF0(UPanelTy *this,AnonShape_0053DAF0_3BDC2979 *param_1,char *param_
     uVar5 = st::fn_00401E88((int)param_1);
     iVar9 = -1;
     iVar7 = -2;
-    resourceString = (uint *)st::fn_006B0140(param_3,g_module_00807618);
+    resourceString = (uint *)st::fn_006B0140(param_3,g_hINSTANCE_00807618);
     st::fn_007119C0(g_interSystem_00802A28->field_0024,resourceString,iVar7,iVar9,uVar5);
     st::fn_006B3640
               ((int *)g_ddxContext_008075A8,pUVar2->field_0060,0xffffffff,pUVar2->field_003C,
@@ -218,7 +218,7 @@ st::fn_0053DAF0(UPanelTy *this,AnonShape_0053DAF0_3BDC2979 *param_1,char *param_
 }
 
 // 0053DCC0 UPanelTy::PaintLBut
-#line 1 "decomp/ST.exe/functions/0053DCC0/decomp.c"
+#line 4 "decomp/ST.exe/functions/0053DCC0/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\Andrey\specpan.cpp
    UPanelTy::PaintLBut */
@@ -288,7 +288,7 @@ st::fn_0053DCC0(UPanelTy *this,AnonShape_0053DCC0_5B8C160B *param_1,byte param_2
 }
 
 // 0053DEA0 UPanelTy::CreateBut
-#line 1 "decomp/ST.exe/functions/0053DEA0/decomp.c"
+#line 4 "decomp/ST.exe/functions/0053DEA0/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\Andrey\specpan.cpp
    UPanelTy::CreateBut
@@ -440,7 +440,7 @@ st::fn_0053DEA0(UPanelTy *this,undefined4 param_1,int param_2,int param_3,int pa
 }
 
 // 0053E1C0 UPanelTy::CreateTab
-#line 1 "decomp/ST.exe/functions/0053E1C0/decomp.c"
+#line 4 "decomp/ST.exe/functions/0053E1C0/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\Andrey\specpan.cpp
    UPanelTy::CreateTab */
@@ -539,7 +539,7 @@ st::fn_0053E1C0(UPanelTy *this,byte param_1,byte param_2,int param_3,int param_4
 }
 
 // 0053E3F0 SpecPanelTy::InitPanel
-#line 1 "decomp/ST.exe/functions/0053E3F0/decomp.c"
+#line 4 "decomp/ST.exe/functions/0053E3F0/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\Andrey\specpan.cpp
    SpecPanelTy::InitPanel
@@ -615,7 +615,7 @@ st::fn_0053E3F0
     uVar10 = 0;
     iVar16 = -1;
     iVar4 = -2;
-    resourceString = (uint *)st::fn_006B0140(param_6,g_module_00807618);
+    resourceString = (uint *)st::fn_006B0140(param_6,g_hINSTANCE_00807618);
     st::fn_007119C0(pSVar3->field_0189,resourceString,iVar4,iVar16,uVar10);
     uVar18 = 1;
     pAVar1 = pSVar3->field_0000;
@@ -645,7 +645,7 @@ st::fn_0053E3F0
 }
 
 // 0053E640 SpecPanelTy::DonePanel
-#line 1 "decomp/ST.exe/functions/0053E640/decomp.c"
+#line 4 "decomp/ST.exe/functions/0053E640/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\Andrey\specpan.cpp
    SpecPanelTy::DonePanel */
@@ -690,7 +690,7 @@ void __thiscall st::fn_0053E640(SpecPanelTy *this)
 }
 
 // 0053E760 SpecPanelTy::SwitchPanel
-#line 1 "decomp/ST.exe/functions/0053E760/decomp.c"
+#line 4 "decomp/ST.exe/functions/0053E760/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\Andrey\specpan.cpp
    SpecPanelTy::SwitchPanel */
@@ -769,7 +769,7 @@ void __thiscall st::fn_0053E760(SpecPanelTy *this,int param_1)
 }
 
 // 0053E920 SpecPanelTy::SetPanel
-#line 1 "decomp/ST.exe/functions/0053E920/decomp.c"
+#line 4 "decomp/ST.exe/functions/0053E920/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\Andrey\specpan.cpp
    SpecPanelTy::SetPanel */
@@ -820,7 +820,7 @@ undefined4 __thiscall st::fn_0053E920(SpecPanelTy *this,char param_1)
 }
 
 // 0053EA50 SpecPanelTy::ShiftControls
-#line 1 "decomp/ST.exe/functions/0053EA50/decomp.c"
+#line 4 "decomp/ST.exe/functions/0053EA50/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\Andrey\specpan.cpp
    SpecPanelTy::ShiftControls
@@ -870,7 +870,7 @@ void __thiscall st::fn_0053EA50(SpecPanelTy *this,int param_1)
 }
 
 // 0053EB70 SpecPanelTy::GetMessage
-#line 1 "decomp/ST.exe/functions/0053EB70/decomp.c"
+#line 4 "decomp/ST.exe/functions/0053EB70/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\Andrey\specpan.cpp
    SpecPanelTy::GetMessage
@@ -979,7 +979,7 @@ int __thiscall st::fn_0053EB70(SpecPanelTy *this,STMessage *message)
 }
 
 // 0053EE30 ProdPanelTy::PreInitProdPanel
-#line 1 "decomp/ST.exe/functions/0053EE30/decomp.c"
+#line 4 "decomp/ST.exe/functions/0053EE30/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\Andrey\specpan.cpp
    ProdPanelTy::PreInitProdPanel
@@ -1021,7 +1021,7 @@ void __thiscall st::fn_0053EE30(ProdPanelTy *this)
 }
 
 // 0053EF20 ProdPanelTy::InitProdPanel
-#line 1 "decomp/ST.exe/functions/0053EF20/decomp.c"
+#line 4 "decomp/ST.exe/functions/0053EF20/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\Andrey\specpan.cpp
    ProdPanelTy::InitProdPanel
@@ -1080,7 +1080,7 @@ st::fn_0053EF20
     pcVar3->field_005C = 0;
     pCVar4 = st::fn_0040577C("FRAMES",0);
     puVar5 = st::fn_00709AF0
-                       (DAT_00806794,CASE_B,pCVar4,uVar9,bVar10,iVar2,iVar11,puVar12);
+                       (PTR_00806794,CASE_B,pCVar4,uVar9,bVar10,iVar2,iVar11,puVar12);
     this_00->field_0190 = puVar5;
     puVar5 = this_00->field_0068;
     uVar9 = *(uint *)(puVar5 + 10);
@@ -1103,7 +1103,7 @@ st::fn_0053EF20
     uVar9 = 0;
     iVar11 = -1;
     iVar2 = -2;
-    resourceString = (uint *)st::fn_006B0140(param_1,g_module_00807618);
+    resourceString = (uint *)st::fn_006B0140(param_1,g_hINSTANCE_00807618);
     st::fn_007119C0(this_00->field_017C,resourceString,iVar2,iVar11,uVar9);
     pCVar4 = st::fn_0040577C("BUT_MEDIUM",0);
     uVar6 = st::fn_0040300D((PanelTy *)this_00,0,1,param_6,param_7,0,1,1,pCVar4,0xbfff,0xc000,0,0
@@ -1140,7 +1140,7 @@ st::fn_0053EF20
 }
 
 // 0053F220 ProdPanelTy::DoneProdPanel
-#line 1 "decomp/ST.exe/functions/0053F220/decomp.c"
+#line 4 "decomp/ST.exe/functions/0053F220/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\Andrey\specpan.cpp
    ProdPanelTy::DoneProdPanel */
@@ -1202,7 +1202,7 @@ void __thiscall st::fn_0053F220(ProdPanelTy *this)
 }
 
 // 0053F3A0 ProdPanelTy::SwitchPanel
-#line 1 "decomp/ST.exe/functions/0053F3A0/decomp.c"
+#line 4 "decomp/ST.exe/functions/0053F3A0/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\Andrey\specpan.cpp
    ProdPanelTy::SwitchPanel */
@@ -1271,7 +1271,7 @@ void __thiscall st::fn_0053F3A0(ProdPanelTy *this,int param_1)
 }
 
 // 0053F650 ProdPanelTy::SetPanel
-#line 1 "decomp/ST.exe/functions/0053F650/decomp.c"
+#line 4 "decomp/ST.exe/functions/0053F650/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\Andrey\specpan.cpp
    ProdPanelTy::SetPanel */
@@ -1322,7 +1322,7 @@ undefined4 __thiscall st::fn_0053F650(ProdPanelTy *this,char param_1)
 }
 
 // 0053F780 ProdPanelTy::ShiftControls
-#line 1 "decomp/ST.exe/functions/0053F780/decomp.c"
+#line 4 "decomp/ST.exe/functions/0053F780/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\Andrey\specpan.cpp
    ProdPanelTy::ShiftControls
@@ -1395,7 +1395,7 @@ void __thiscall st::fn_0053F780(ProdPanelTy *this,int param_1)
 }
 
 // 0053F940 ProdPanelTy::CreateSlider
-#line 1 "decomp/ST.exe/functions/0053F940/decomp.c"
+#line 4 "decomp/ST.exe/functions/0053F940/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\Andrey\specpan.cpp
    ProdPanelTy::CreateSlider */
@@ -1549,7 +1549,7 @@ st::fn_0053F940
 }
 
 // 0053FCD0 ProdPanelTy::PaintTab
-#line 1 "decomp/ST.exe/functions/0053FCD0/decomp.c"
+#line 4 "decomp/ST.exe/functions/0053FCD0/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\Andrey\specpan.cpp
    ProdPanelTy::PaintTab */
@@ -1625,7 +1625,7 @@ st::fn_0053FCD0(ProdPanelTy *this,AnonShape_0053FCD0_D10A885A *param_1,undefined
 }
 
 // 0053FEE0 ProdPanelTy::PaintTab
-#line 1 "decomp/ST.exe/functions/0053FEE0/decomp.c"
+#line 4 "decomp/ST.exe/functions/0053FEE0/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\Andrey\specpan.cpp
    ProdPanelTy::PaintTab */
@@ -1701,7 +1701,7 @@ st::fn_0053FEE0(ProdPanelTy *this,AnonShape_0053FEE0_A49592EB *param_1,undefined
 }
 
 // 005400F0 ProdPanelTy::GetMessage
-#line 1 "decomp/ST.exe/functions/005400F0/decomp.c"
+#line 4 "decomp/ST.exe/functions/005400F0/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\Andrey\specpan.cpp
    ProdPanelTy::GetMessage

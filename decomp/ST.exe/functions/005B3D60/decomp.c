@@ -85,7 +85,7 @@ void __thiscall MainMenuTy::SetMode(MainMenuTy *this,char param_1,int param_2)
     cVar12 = CASE_FFFFFFFE;
     iVar11 = 0x28;
     iVar6 = 0x8c;
-    puVar3 = (uint *)LoadResourceString(0x2334,g_module_00807618);
+    puVar3 = (uint *)LoadResourceString(0x2334,g_hINSTANCE_00807618);
     puVar8 = ccFntTy::CreateTypeSSpr
                        (g_startSystem_0081176C->field_0030,puVar3,iVar6,iVar11,cVar12,uVar13,iVar14,
                         iVar15,iVar16);
@@ -102,7 +102,7 @@ void __thiscall MainMenuTy::SetMode(MainMenuTy *this,char param_1,int param_2)
     cVar12 = CASE_FFFFFFFE;
     iVar11 = 0x28;
     iVar6 = 0x8c;
-    puVar3 = (uint *)LoadResourceString(0x2335,g_module_00807618);
+    puVar3 = (uint *)LoadResourceString(0x2335,g_hINSTANCE_00807618);
     puVar8 = ccFntTy::CreateTypeSSpr
                        (g_startSystem_0081176C->field_0030,puVar3,iVar6,iVar11,cVar12,uVar13,iVar14,
                         iVar15,iVar16);
@@ -119,7 +119,7 @@ void __thiscall MainMenuTy::SetMode(MainMenuTy *this,char param_1,int param_2)
     cVar12 = CASE_FFFFFFFE;
     iVar11 = 0x28;
     iVar6 = 0x8c;
-    puVar3 = (uint *)LoadResourceString(0x2332,g_module_00807618);
+    puVar3 = (uint *)LoadResourceString(0x2332,g_hINSTANCE_00807618);
     puVar8 = ccFntTy::CreateTypeSSpr
                        (g_startSystem_0081176C->field_0030,puVar3,iVar6,iVar11,cVar12,uVar13,iVar14,
                         iVar15,iVar16);
@@ -136,7 +136,7 @@ void __thiscall MainMenuTy::SetMode(MainMenuTy *this,char param_1,int param_2)
     this_00->field_06AD = 0x2333;
     iVar11 = 0x28;
     iVar6 = 0x8c;
-    puVar3 = (uint *)LoadResourceString(0x2333,g_module_00807618);
+    puVar3 = (uint *)LoadResourceString(0x2333,g_hINSTANCE_00807618);
     puVar8 = ccFntTy::CreateTypeSSpr
                        (g_startSystem_0081176C->field_0030,puVar3,iVar6,iVar11,cVar12,uVar13,iVar14,
                         iVar15,iVar16);
@@ -153,7 +153,7 @@ void __thiscall MainMenuTy::SetMode(MainMenuTy *this,char param_1,int param_2)
     cVar12 = CASE_FFFFFFFE;
     iVar11 = 0x28;
     iVar6 = 0x8c;
-    puVar3 = (uint *)LoadResourceString(0x2336,g_module_00807618);
+    puVar3 = (uint *)LoadResourceString(0x2336,g_hINSTANCE_00807618);
     puVar8 = ccFntTy::CreateTypeSSpr
                        (g_startSystem_0081176C->field_0030,puVar3,iVar6,iVar11,cVar12,uVar13,iVar14,
                         iVar15,iVar16);
@@ -179,12 +179,12 @@ void __thiscall MainMenuTy::SetMode(MainMenuTy *this,char param_1,int param_2)
     pcVar19 = g_startSystem_0081176C->field_0030;
     uVar17 = 0xffffffff;
     uVar13 = 0xfffffffe;
-    puVar3 = (uint *)LoadResourceString(0x26ac,g_module_00807618);
+    puVar3 = (uint *)LoadResourceString(0x26ac,g_hINSTANCE_00807618);
     StartServTy::WrTextDDX(this_02,0,0xe9,0x14,0x14c,0x18,puVar3,uVar13,uVar17,pcVar19,uVar21);
     uVar21 = DAT_00807dd5 >> 0x10 & 0xff;
     uVar17 = DAT_00807dd5 & 0xffff;
     uVar13 = DAT_00807dd5 >> 0x18;
-    pcVar4 = LoadResourceString(0x2329,g_module_00807618);
+    pcVar4 = LoadResourceString(0x2329,g_hINSTANCE_00807618);
     wsprintfA((LPSTR)(this_00->field_1A5B + 0x3c),pcVar4,uVar13,uVar21,uVar17);
     StartServTy::WrTextDDX
               (this_00->field_1A5B + 0x3c,0,0,0x240,800,0x18,(uint *)(this_00->field_1A5B + 0x3c),
@@ -203,7 +203,7 @@ void __thiscall MainMenuTy::SetMode(MainMenuTy *this,char param_1,int param_2)
     cVar12 = CASE_FFFFFFFE;
     iVar11 = 0x28;
     iVar6 = 0x8c;
-    puVar3 = (uint *)LoadResourceString(0x233c,g_module_00807618);
+    puVar3 = (uint *)LoadResourceString(0x233c,g_hINSTANCE_00807618);
     puVar8 = ccFntTy::CreateTypeSSpr
                        (g_startSystem_0081176C->field_0030,puVar3,iVar6,iVar11,cVar12,uVar13,iVar14,
                         iVar15,iVar16);
@@ -220,7 +220,7 @@ void __thiscall MainMenuTy::SetMode(MainMenuTy *this,char param_1,int param_2)
     cVar12 = CASE_FFFFFFFE;
     iVar11 = 0x28;
     iVar6 = 0x8c;
-    puVar3 = (uint *)LoadResourceString(0x233d,g_module_00807618);
+    puVar3 = (uint *)LoadResourceString(0x233d,g_hINSTANCE_00807618);
     puVar8 = ccFntTy::CreateTypeSSpr
                        (g_startSystem_0081176C->field_0030,puVar3,iVar6,iVar11,cVar12,uVar13,iVar14,
                         iVar15,iVar16);
@@ -237,7 +237,7 @@ void __thiscall MainMenuTy::SetMode(MainMenuTy *this,char param_1,int param_2)
     cVar12 = CASE_FFFFFFFE;
     iVar11 = 0x28;
     iVar6 = 0x8c;
-    puVar3 = (uint *)LoadResourceString(0x233e,g_module_00807618);
+    puVar3 = (uint *)LoadResourceString(0x233e,g_hINSTANCE_00807618);
     puVar8 = ccFntTy::CreateTypeSSpr
                        (g_startSystem_0081176C->field_0030,puVar3,iVar6,iVar11,cVar12,uVar13,iVar14,
                         iVar15,iVar16);
@@ -254,7 +254,7 @@ void __thiscall MainMenuTy::SetMode(MainMenuTy *this,char param_1,int param_2)
     this_00->field_06AD = 0x233f;
     iVar11 = 0x28;
     iVar6 = 0x8c;
-    puVar3 = (uint *)LoadResourceString(0x233f,g_module_00807618);
+    puVar3 = (uint *)LoadResourceString(0x233f,g_hINSTANCE_00807618);
     puVar8 = ccFntTy::CreateTypeSSpr
                        (g_startSystem_0081176C->field_0030,puVar3,iVar6,iVar11,cVar12,uVar13,iVar14,
                         iVar15,iVar16);
@@ -271,7 +271,7 @@ void __thiscall MainMenuTy::SetMode(MainMenuTy *this,char param_1,int param_2)
     cVar12 = CASE_FFFFFFFE;
     iVar11 = 0x28;
     iVar6 = 0x8c;
-    puVar3 = (uint *)LoadResourceString(0x2359,g_module_00807618);
+    puVar3 = (uint *)LoadResourceString(0x2359,g_hINSTANCE_00807618);
     puVar8 = ccFntTy::CreateTypeSSpr
                        (g_startSystem_0081176C->field_0030,puVar3,iVar6,iVar11,cVar12,uVar13,iVar14,
                         iVar15,iVar16);
@@ -315,7 +315,7 @@ void __thiscall MainMenuTy::SetMode(MainMenuTy *this,char param_1,int param_2)
     pcVar19 = g_startSystem_0081176C->field_0030;
     uVar17 = 0xffffffff;
     uVar13 = 0xfffffffe;
-    puVar3 = (uint *)LoadResourceString(0x26b0,g_module_00807618);
+    puVar3 = (uint *)LoadResourceString(0x26b0,g_hINSTANCE_00807618);
     StartServTy::WrTextDDX(this_01,0,0xe9,0x14,0x14c,0x18,puVar3,uVar13,uVar17,pcVar19,uVar21);
   }
   if (param_2 != 0) {
@@ -334,7 +334,7 @@ LAB_005b4465:
     uVar21 = 0;
     uVar17 = 0xffffffff;
     uVar13 = 0xfffffffe;
-    puVar3 = (uint *)LoadResourceString(resourceId,g_module_00807618);
+    puVar3 = (uint *)LoadResourceString(resourceId,g_hINSTANCE_00807618);
     StartServTy::WrTextDDX(this_03,0,0xe9,0x14,0x14c,0x18,puVar3,uVar13,uVar17,pcVar19,uVar21);
   }
   else if (this_00->field_1EE3 == '\x01') {
@@ -345,7 +345,7 @@ LAB_005b4465:
   uVar21 = DAT_00807dd5 >> 0x10 & 0xff;
   uVar17 = DAT_00807dd5 & 0xffff;
   uVar13 = DAT_00807dd5 >> 0x18;
-  pcVar4 = LoadResourceString(0x2329,g_module_00807618);
+  pcVar4 = LoadResourceString(0x2329,g_hINSTANCE_00807618);
   wsprintfA((LPSTR)(this_00->field_1A5B + 0x3c),pcVar4,uVar13,uVar21,uVar17);
   StartServTy::WrTextDDX
             (this_00->field_1A5B + 0x3c,0,0,0x240,800,0x18,(uint *)(this_00->field_1A5B + 0x3c),

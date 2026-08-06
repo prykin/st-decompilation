@@ -2,7 +2,7 @@
 // Generated translation unit: source/recovered/by_owner/MMsgTy.cpp
 
 // 005B8F40 MMsgTy::FUN_005b8f40
-#line 1 "decomp/ST.exe/functions/005B8F40/decomp.c"
+#line 4 "decomp/ST.exe/functions/005B8F40/decomp.c"
 void __thiscall st::fn_005B8F40(MMsgTy *this,undefined4 *param_1)
 
 {

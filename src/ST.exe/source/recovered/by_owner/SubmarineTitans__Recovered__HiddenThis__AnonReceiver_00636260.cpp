@@ -2,7 +2,7 @@
 // Generated translation unit: source/recovered/by_owner/SubmarineTitans__Recovered__HiddenThis__AnonReceiver_00636260.cpp
 
 // 00636260 SubmarineTitans::Recovered::HiddenThis::AnonReceiver_00636260::FUN_00636260
-#line 1 "decomp/ST.exe/functions/00636260/decomp.c"
+#line 4 "decomp/ST.exe/functions/00636260/decomp.c"
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 /* [STHiddenThisApplier] Anonymous hidden receiver recovered as
    /SubmarineTitans/Recovered/HiddenThis/AnonReceiver_00636260.
@@ -117,7 +117,7 @@ LAB_006362c5:
 }
 
 // 00636FC0 SubmarineTitans::Recovered::HiddenThis::AnonReceiver_00636260::sub_00636FC0
-#line 1 "decomp/ST.exe/functions/00636FC0/decomp.c"
+#line 4 "decomp/ST.exe/functions/00636FC0/decomp.c"
 /* [STMethodOwnerApplier] Structural method owner recovered as
    SubmarineTitans::Recovered::HiddenThis::AnonReceiver_00636260.
    Evidence: this_call_owners=[SubmarineTitans::Recovered::HiddenThis::AnonReceiver_00636260];

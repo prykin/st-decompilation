@@ -74,7 +74,7 @@ void __thiscall FSGSTy::Finished(FSGSTy *this,int param_1)
       uVar7 = 2;
       iVar9 = -1;
       iVar4 = -2;
-      resourceString = (uint *)LoadResourceString(0x25b9,g_module_00807618);
+      resourceString = (uint *)LoadResourceString(0x25b9,g_hINSTANCE_00807618);
       ccFntTy::WrTxt(this_02->field_1A73,resourceString,iVar4,iVar9,uVar7,iVar10,iVar11);
       FUN_006b35d0((int *)g_ddxContext_008075A8,this_02->field_1ABC);
       pSVar2 = this_02->field_1A5B;

@@ -254,7 +254,7 @@ LAB_00530592:
     uVar38 = 0;
     iVar17 = -1;
     iVar6 = -2;
-    puVar9 = (uint *)LoadResourceString(UVar31,g_module_00807618);
+    puVar9 = (uint *)LoadResourceString(UVar31,g_hINSTANCE_00807618);
     ccFntTy::WrStr(this_00->field_017C,puVar9,iVar6,iVar17,uVar38);
     puVar19 = this_00->field_0190;
 LAB_005305a9:
@@ -267,7 +267,7 @@ LAB_005305b4:
     uVar38 = 0;
     iVar17 = -1;
     iVar6 = -2;
-    puVar9 = (uint *)LoadResourceString(0x3ea8,g_module_00807618);
+    puVar9 = (uint *)LoadResourceString(0x3ea8,g_hINSTANCE_00807618);
     ccFntTy::WrStr(this_00->field_017C,puVar9,iVar6,iVar17,uVar38);
     ccFntTy::SetSurf(this_00->field_0180,this_00->field_0068,0,0x1d,0x13,0xee,0x6a);
     switch(this_00->field_01AB) {
@@ -399,11 +399,11 @@ LAB_0052fd4a:
         pcVar8 = pcVar8 + 1;
         pcVar7 = pcVar7 + 1;
       }
-      pcVar8 = LoadResourceString(UVar31,g_module_00807618);
+      pcVar8 = LoadResourceString(UVar31,g_hINSTANCE_00807618);
       wsprintfA(&this_00->field_006C,pcVar8);
       break;
     default:
-      pcVar8 = LoadResourceString(this_00->field_01A5,g_module_00807618);
+      pcVar8 = LoadResourceString(this_00->field_01A5,g_hINSTANCE_00807618);
       uVar38 = 0xffffffff;
       do {
         pcVar7 = pcVar8;
@@ -559,11 +559,11 @@ LAB_0052ff02:
         pcVar8 = pcVar8 + 1;
         pcVar7 = pcVar7 + 1;
       }
-      pcVar8 = LoadResourceString(UVar31,g_module_00807618);
+      pcVar8 = LoadResourceString(UVar31,g_hINSTANCE_00807618);
       wsprintfA(&this_00->field_006C,pcVar8);
       break;
     case CASE_A:
-      pcVar8 = LoadResourceString(this_00->field_01A5,g_module_00807618);
+      pcVar8 = LoadResourceString(this_00->field_01A5,g_hINSTANCE_00807618);
       wsprintfA(&this_00->field_006C,pcVar8);
     }
     if (DAT_0080874e == '\x03') {
@@ -578,25 +578,25 @@ LAB_0052ff02:
     uVar38 = 0;
     iVar17 = -1;
     iVar6 = -2;
-    puVar9 = (uint *)LoadResourceString(0x3e8a,g_module_00807618);
+    puVar9 = (uint *)LoadResourceString(0x3e8a,g_hINSTANCE_00807618);
     ccFntTy::WrStr(this_00->field_017C,puVar9,iVar6,iVar17,uVar38);
     ccFntTy::SetSurf(this_00->field_017C,this_00->field_0068,0,0x6b,0x6e,0xa0,0xb);
     uVar38 = (DAT_0080874e != '\x03') - 1 & 5;
     iVar17 = -1;
     iVar6 = -2;
-    puVar9 = (uint *)LoadResourceString(0x3ee4,g_module_00807618);
+    puVar9 = (uint *)LoadResourceString(0x3ee4,g_hINSTANCE_00807618);
     ccFntTy::WrStr(this_00->field_017C,puVar9,iVar6,iVar17,uVar38);
     ccFntTy::SetSurf(this_00->field_017C,this_00->field_0068,0,0x1d,0x61,0x4e,0xb);
     uVar38 = (DAT_0080874e != '\x03') - 1 & 5;
     iVar17 = -1;
     iVar6 = -3;
-    puVar9 = (uint *)LoadResourceString(0x3eea,g_module_00807618);
+    puVar9 = (uint *)LoadResourceString(0x3eea,g_hINSTANCE_00807618);
     ccFntTy::WrStr(this_00->field_017C,puVar9,iVar6,iVar17,uVar38);
     ccFntTy::SetSurf(this_00->field_017C,this_00->field_0068,0,0x1d,0x77,0x4e,0xb);
     uVar38 = (DAT_0080874e != '\x03') - 1 & 5;
     iVar17 = -1;
     iVar6 = -3;
-    puVar9 = (uint *)LoadResourceString(0x3eeb,g_module_00807618);
+    puVar9 = (uint *)LoadResourceString(0x3eeb,g_hINSTANCE_00807618);
     ccFntTy::WrStr(this_00->field_017C,puVar9,iVar6,iVar17,uVar38);
     ccFntTy::SetSurf(this_00->field_017C,this_00->field_0068,0,0x1d,0x84,0x4e,0xb);
     goto LAB_00530554;
@@ -604,25 +604,25 @@ LAB_0052ff02:
     uVar38 = 0;
     iVar17 = -1;
     iVar6 = -2;
-    puVar9 = (uint *)LoadResourceString(0x3e8b,g_module_00807618);
+    puVar9 = (uint *)LoadResourceString(0x3e8b,g_hINSTANCE_00807618);
     ccFntTy::WrStr(this_00->field_017C,puVar9,iVar6,iVar17,uVar38);
     ccFntTy::SetSurf(this_00->field_017C,this_00->field_0068,0,0x1d,0x61,0x4e,0xb);
     uVar38 = (DAT_0080874e != '\x03') - 1 & 5;
     iVar17 = -1;
     iVar6 = -3;
-    puVar9 = (uint *)LoadResourceString(0x3ee9,g_module_00807618);
+    puVar9 = (uint *)LoadResourceString(0x3ee9,g_hINSTANCE_00807618);
     ccFntTy::WrStr(this_00->field_017C,puVar9,iVar6,iVar17,uVar38);
     ccFntTy::SetSurf(this_00->field_017C,this_00->field_0068,0,0x6b,0x6e,0xa0,0xb);
     uVar38 = (DAT_0080874e != '\x03') - 1 & 5;
     iVar17 = -1;
     iVar6 = -2;
-    puVar9 = (uint *)LoadResourceString(0x3ee4,g_module_00807618);
+    puVar9 = (uint *)LoadResourceString(0x3ee4,g_hINSTANCE_00807618);
     ccFntTy::WrStr(this_00->field_017C,puVar9,iVar6,iVar17,uVar38);
     ccFntTy::SetSurf(this_00->field_017C,this_00->field_0068,0,0x1d,0x77,0x4e,0xb);
     uVar38 = (DAT_0080874e != '\x03') - 1 & 5;
     iVar17 = -1;
     iVar6 = -3;
-    puVar9 = (uint *)LoadResourceString(0x3eeb,g_module_00807618);
+    puVar9 = (uint *)LoadResourceString(0x3eeb,g_hINSTANCE_00807618);
     ccFntTy::WrStr(this_00->field_017C,puVar9,iVar6,iVar17,uVar38);
     ccFntTy::SetSurf(this_00->field_017C,this_00->field_0068,0,0x1d,0x84,0x4e,0xb);
 LAB_00530554:
@@ -634,19 +634,19 @@ LAB_00530554:
     uVar38 = 0;
     iVar17 = -1;
     iVar6 = -2;
-    puVar9 = (uint *)LoadResourceString(0x3e8c,g_module_00807618);
+    puVar9 = (uint *)LoadResourceString(0x3e8c,g_hINSTANCE_00807618);
     ccFntTy::WrStr(this_00->field_017C,puVar9,iVar6,iVar17,uVar38);
     ccFntTy::SetSurf(this_00->field_017C,this_00->field_0068,0,0x1d,0x15,0x77,0xc);
     uVar38 = 0;
     iVar17 = -1;
     iVar6 = -2;
-    puVar9 = (uint *)LoadResourceString(0x3eef,g_module_00807618);
+    puVar9 = (uint *)LoadResourceString(0x3eef,g_hINSTANCE_00807618);
     ccFntTy::WrStr(this_00->field_017C,puVar9,iVar6,iVar17,uVar38);
     ccFntTy::SetSurf(this_00->field_017C,this_00->field_0068,0,0x94,0x15,0x77,0xc);
     uVar38 = 0;
     iVar17 = -1;
     iVar6 = -2;
-    puVar9 = (uint *)LoadResourceString(0x3eed,g_module_00807618);
+    puVar9 = (uint *)LoadResourceString(0x3eed,g_hINSTANCE_00807618);
     ccFntTy::WrStr(this_00->field_017C,puVar9,iVar6,iVar17,uVar38);
     ccFntTy::SetSurf(this_00->field_017C,this_00->field_0068,0,0x1d,0x5b,0xf0,0xc);
     uVar38 = 0;
@@ -664,7 +664,7 @@ LAB_00530554:
     uVar38 = 0;
     iVar17 = -1;
     iVar6 = -2;
-    puVar9 = (uint *)LoadResourceString(0x3e89,g_module_00807618);
+    puVar9 = (uint *)LoadResourceString(0x3e89,g_hINSTANCE_00807618);
     ccFntTy::WrStr(this_00->field_017C,puVar9,iVar6,iVar17,uVar38);
     puVar19 = this_00->field_0194;
     goto LAB_005305a9;
@@ -672,19 +672,19 @@ LAB_00530554:
     uVar38 = 0;
     iVar17 = -1;
     iVar6 = -2;
-    puVar9 = (uint *)LoadResourceString(0x3e88,g_module_00807618);
+    puVar9 = (uint *)LoadResourceString(0x3e88,g_hINSTANCE_00807618);
     ccFntTy::WrStr(this_00->field_017C,puVar9,iVar6,iVar17,uVar38);
     ccFntTy::SetSurf(this_00->field_017C,this_00->field_0068,0,0x1d,0x6d,0x77,0x11);
     uVar38 = (DAT_0080874e != '\x03') - 1 & 5;
     iVar17 = -1;
     iVar6 = -2;
-    puVar9 = (uint *)LoadResourceString(0x3ef9,g_module_00807618);
+    puVar9 = (uint *)LoadResourceString(0x3ef9,g_hINSTANCE_00807618);
     ccFntTy::WrStr(this_00->field_017C,puVar9,iVar6,iVar17,uVar38);
     ccFntTy::SetSurf(this_00->field_017C,this_00->field_0068,0,0x1d,0x7f,0x77,0x11);
     uVar38 = (DAT_0080874e != '\x03') - 1 & 5;
     iVar17 = -1;
     iVar6 = -2;
-    puVar9 = (uint *)LoadResourceString(0x3efa,g_module_00807618);
+    puVar9 = (uint *)LoadResourceString(0x3efa,g_hINSTANCE_00807618);
     ccFntTy::WrStr(this_00->field_017C,puVar9,iVar6,iVar17,uVar38);
     DibPut((RecoveredSourceFamily_dibcopy *)this_00->field_0068,0xaa,0x6f,'\x01',
            (byte *)this_00->field_018C);
@@ -704,14 +704,14 @@ LAB_00530554:
     uVar38 = 0;
     iVar17 = -1;
     iVar6 = -2;
-    puVar9 = (uint *)LoadResourceString(0x3e94,g_module_00807618);
+    puVar9 = (uint *)LoadResourceString(0x3e94,g_hINSTANCE_00807618);
     ccFntTy::WrStr(this_00->field_017C,puVar9,iVar6,iVar17,uVar38);
     puVar19 = this_00->field_0190;
     pRVar32 = (RecoveredSourceFamily_dibcopy *)this_00->field_0068;
     goto LAB_005305b4;
   }
   iVar17 = -1;
-  puVar9 = (uint *)LoadResourceString(UVar31,g_module_00807618);
+  puVar9 = (uint *)LoadResourceString(UVar31,g_hINSTANCE_00807618);
   ccFntTy::WrStr(this_00->field_017C,puVar9,iVar6,iVar17,uVar38);
 cf_common_join_005305BC:
   switch(this_00->field_01A4) {

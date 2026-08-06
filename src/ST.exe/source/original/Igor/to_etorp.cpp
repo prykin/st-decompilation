@@ -2,7 +2,7 @@
 // Generated translation unit: source/original/Igor/to_etorp.cpp
 
 // 0057A2C0 FUN_0057a2c0
-#line 1 "decomp/ST.exe/functions/0057A2C0/decomp.c"
+#line 4 "decomp/ST.exe/functions/0057A2C0/decomp.c"
 /* [STSourceProvenanceApplier begin]
    Recovered source file: E:\__titans\Igor\to_etorp.cpp
    Diagnostic line evidence: 76 (metadata/report site, not the function definition)
@@ -480,7 +480,7 @@ LAB_0057a96b:
 }
 
 // 0057B350 FUN_0057b350
-#line 1 "decomp/ST.exe/functions/0057B350/decomp.c"
+#line 4 "decomp/ST.exe/functions/0057B350/decomp.c"
 /* [STSourceProvenanceApplier begin]
    Recovered source file: E:\__titans\Igor\to_etorp.cpp
    Diagnostic line evidence: 342 | 349 (metadata/report site, not the function definition)

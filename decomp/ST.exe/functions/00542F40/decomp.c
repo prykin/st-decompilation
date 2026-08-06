@@ -144,7 +144,7 @@ switchD_00543107_caseD_b904:
     pCVar5 = FUN_006f2c00(pCVar5,iVar3,uVar6);
     pBVar7 = (BITMAPINFO *)
              Library::Ourlib::MFRLOAD::mfRLoad
-                       (DAT_00806794,CASE_1,pCVar5,uVar4,bVar9,iVar12,iVar11,puVar13);
+                       (PTR_00806794,CASE_1,pCVar5,uVar4,bVar9,iVar12,iVar11,puVar13);
     iVar3 = piVar10[1];
     iVar12 = *piVar10;
     cVar8 = '\x01';
@@ -193,7 +193,7 @@ LAB_00543291:
       pCVar5 = FUN_006f2c00(pCVar5,iVar3,uVar6);
       pBVar7 = (BITMAPINFO *)
                Library::Ourlib::MFRLOAD::mfRLoad
-                         (DAT_00806794,CASE_6,pCVar5,uVar4,bVar9,iVar12,iVar11,puVar13);
+                         (PTR_00806794,CASE_6,pCVar5,uVar4,bVar9,iVar12,iVar11,puVar13);
       iVar12 = *piVar10;
       iVar3 = piVar10[1];
       cVar8 = '\x06';

@@ -8,6 +8,7 @@ undefined4 * __cdecl FUN_0052a970(uint param_1,int param_2)
   undefined *puVar2;
   char *pcVar3;
   uint uVar4;
+  uint uVar5;
   ushort uVar6;
   char *pcVar7;
 
@@ -25,6 +26,7 @@ undefined4 * __cdecl FUN_0052a970(uint param_1,int param_2)
   pcVar3 = pcVar7 + -uVar4;
   pcVar7 = (char *)&DAT_008016a4;
   memmove(pcVar7, pcVar3, uVar4); /* compiler REP MOVS byte copy */
+  uVar5 = 0;
   if (param_2 != 0) {
     if (param_1 != 0) {
       uVar4 = param_1 & 0x40000000;
@@ -58,7 +60,7 @@ undefined4 * __cdecl FUN_0052a970(uint param_1,int param_2)
       wsprintfA((LPSTR)&DAT_008016a4,"%s%s",&DAT_008016a4,puVar2);
       return &DAT_008016a4;
     }
-    pcVar3 = LoadResourceString(0x2732,g_module_00807618);
+    pcVar3 = LoadResourceString(0x2732,g_hINSTANCE_00807618);
     uVar4 = 0xffffffff;
     do {
       pcVar7 = pcVar3;

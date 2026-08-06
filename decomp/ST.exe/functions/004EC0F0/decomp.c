@@ -15,7 +15,7 @@ undefined4 __fastcall FUN_004ec0f0(AnonShape_004EC0F0_C371FA68 *param_1)
   uint uVar3;
 
   iVar1 = STT3DSprC::LoadSequence
-                    ((STT3DSprC *)param_1->field_05FF,0xe,DAT_00806774,
+                    ((STT3DSprC *)param_1->field_05FF,0xe,PTR_00806774,
                      *(char **)(&DAT_007cde6c + param_1->field_050C * 4),0x1d);
   if (iVar1 != 0) {
     RaiseInternalException

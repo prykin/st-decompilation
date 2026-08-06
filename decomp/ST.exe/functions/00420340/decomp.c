@@ -411,13 +411,13 @@ LAB_00420678:
     pcVar12 = pcVar11 + -1;
     memmove(pcVar12, pcVar10, uVar6); /* compiler REP MOVS byte copy */
     this_00 = &this->field_01D5;
-    iVar7 = STT3DSprC::LoadSequence((STT3DSprC *)this_00,0xf,DAT_00806774,local_24,0x1d);
+    iVar7 = STT3DSprC::LoadSequence((STT3DSprC *)this_00,0xf,PTR_00806774,local_24,0x1d);
     if (iVar7 != 0) {
       RaiseInternalException
                 (-0x5001fff8,g_overwriteContext_007ED77C,"E:\\__titans\\wlad\\Tc_gobj.cpp",
                  0xc4a);
     }
-    iVar7 = STT3DSprC::LoadSequence((STT3DSprC *)this_00,0,DAT_00806774,local_24,0x1d);
+    iVar7 = STT3DSprC::LoadSequence((STT3DSprC *)this_00,0,PTR_00806774,local_24,0x1d);
     if (iVar7 != 0) {
       RaiseInternalException
                 (-0x5001fff8,g_overwriteContext_007ED77C,"E:\\__titans\\wlad\\Tc_gobj.cpp",

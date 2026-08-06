@@ -2,7 +2,7 @@
 // Generated translation unit: source/original/Maps/gen_map.cpp
 
 // 00695A60 CGenerate::CteateField
-#line 1 "decomp/ST.exe/functions/00695A60/decomp.c"
+#line 4 "decomp/ST.exe/functions/00695A60/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\Maps\gen_map.cpp
    CGenerate::CteateField */

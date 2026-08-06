@@ -111,7 +111,7 @@ int __thiscall STTorpC::GetMessage(STTorpC *this,STMessage *message)
   undefined4 local_154;
   undefined4 local_150;
   undefined4 local_14c;
-  int local_148;
+  ushort *local_148;
   undefined4 local_144;
   undefined4 local_140;
   int local_13c [5];
@@ -291,11 +291,11 @@ int __thiscall STTorpC::GetMessage(STTorpC *this,STMessage *message)
       local_158 = Library::DKW::LIB::MemAlloc(0x44);
       iVar11 = 0;
       do {
-        *(int **)(iVar11 + (int)local_158) = DAT_00806774;
+        *(int **)(iVar11 + (int)local_158) = PTR_00806774;
         iVar11 = iVar11 + 4;
       } while (iVar11 < 0x44);
-      STField<int *>(local_158,8) = DAT_00806764;
-      local_148 = DAT_008032b8;
+      STField<int *>(local_158,8) = PTR_00806764;
+      local_148 = PTR_008032b8;
       local_154 = 0;
       local_150 = 0;
       local_14c = 0;
@@ -592,7 +592,7 @@ switchD_00640ad9_caseD_a2:
     memmove(pcVar25, pcVar23, uVar17); /* compiler REP MOVS byte copy */
 switchD_00640c2d_caseD_a2:
     puVar14 = (byte *)(&this_00->field_01D5);
-    iVar10 = STT3DSprC::LoadSequence((STT3DSprC *)puVar14,0,DAT_00806774,local_60,0x1d);
+    iVar10 = STT3DSprC::LoadSequence((STT3DSprC *)puVar14,0,PTR_00806774,local_60,0x1d);
     if (iVar10 != 0) {
       RaiseInternalException
                 (-1,g_overwriteContext_007ED77C,"E:\\__titans\\nick\\to_torp.cpp",0xe1);
@@ -2648,14 +2648,14 @@ LAB_00642561:
     goto LAB_00642561;
   }
   puVar14 = (byte *)(&this_00->field_01D5);
-  iVar10 = STT3DSprC::LoadSequence((STT3DSprC *)puVar14,0,DAT_00806774,local_48,0x1d);
+  iVar10 = STT3DSprC::LoadSequence((STT3DSprC *)puVar14,0,PTR_00806774,local_48,0x1d);
   if (iVar10 != 0) {
     RaiseInternalException
               (-1,g_overwriteContext_007ED77C,"E:\\__titans\\nick\\to_torp.cpp",0x263);
   }
   thunk_FUN_004ac610(puVar14,'\0');
   if ((local_74[0] != '\0') &&
-     (iVar10 = STT3DSprC::LoadSequence((STT3DSprC *)puVar14,2,DAT_00806764,local_74,0x1d),
+     (iVar10 = STT3DSprC::LoadSequence((STT3DSprC *)puVar14,2,PTR_00806764,local_74,0x1d),
      iVar10 == 0)) {
     thunk_FUN_004ac610(puVar14,'\x02');
     uVar15 = STT3DSprC::sub_004ACD30((STT3DSprC *)puVar14,'\x02');
@@ -2664,7 +2664,7 @@ LAB_00642561:
     this_00->field_0x284 = 0;
   }
   if (local_2c[0] != '\0') {
-    iVar10 = STT3DSprC::LoadSequence((STT3DSprC *)puVar14,1,DAT_00806774,local_2c,0x1d);
+    iVar10 = STT3DSprC::LoadSequence((STT3DSprC *)puVar14,1,PTR_00806774,local_2c,0x1d);
     if (iVar10 != 0) {
       RaiseInternalException
                 (-1,g_overwriteContext_007ED77C,"E:\\__titans\\nick\\to_torp.cpp",0x270);
@@ -2683,7 +2683,7 @@ LAB_00642561:
       RaiseInternalException
                 (-1,g_overwriteContext_007ED77C,"E:\\__titans\\nick\\to_torp.cpp",0x277);
     }
-    STT3DSprC::sub_004ACF20((STT3DSprC *)puVar14,DAT_008032b8,0x10);
+    STT3DSprC::sub_004ACF20((STT3DSprC *)puVar14,PTR_008032b8,0x10);
     STT3DSprC::sub_004ACFE0((STT3DSprC *)puVar14,'\x01');
   }
   uVar15 = 0x45;

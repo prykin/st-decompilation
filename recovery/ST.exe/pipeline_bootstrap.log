@@ -12,8 +12,8 @@ No proposal flags are changed by the pipeline. Review-only rows remain disabled.
 == startup ABI validation ==
 [01] STEvidenceLedger.java <- fingerprint | <repo>/recovery
 Computing semantic Program fingerprint...
-Semantic Program fingerprint: e1f9bb21bfcd91e18401c62060be8cb61a23b40b1aa776942fa539b09a6aadd0
-[02] STAbiRegressionGate.java <- <repo>/decomp/ST.exe | <repo>/recovery/ST.exe | <repo>/config | startup | e1f9bb21bfcd91e18401c62060be8cb61a23b40b1aa776942fa539b09a6aadd0
+Semantic Program fingerprint: f33ed22b25e17675da07be95de14d2fe1c51d7b35859d86db60756558563a972
+[02] STAbiRegressionGate.java <- <repo>/recovery/ST.exe/runs/6eafe6c3ee33ba1a89a5017a69da0a510998dd3fe51f1a612fb77d7657105c01/pre_export | <repo>/recovery/ST.exe | <repo>/config | startup | f33ed22b25e17675da07be95de14d2fe1c51d7b35859d86db60756558563a972
 ABI regression gate: phase=startup, typed_vtable_slots=2729, class_vptrs=95, fixture_functions=9, errors=0, warnings=0, report=<local-home>/st/recovery/ST.exe/abi_regression_report.tsv
 
 == critical export ABI stabilization ==
@@ -33,7 +33,7 @@ Return semantics: applied=0, unchanged=0, preserved=0, conflicts=0, disabled=0
 Apply report: <local-home>/st/recovery/ST.exe/return_semantics_apply_report.tsv
 STReturnSemanticsApplier.java state: proposals_enabled=0, proposals_review=0, changed=0, unchanged=0, review=0, conflict=0, error=0
 Export return rollback repairs: mutating rows=0
-[07] STAbiRegressionGate.java <- <repo>/decomp/ST.exe | <repo>/recovery/ST.exe | <repo>/config | export-return-repair
+[07] STAbiRegressionGate.java <- <repo>/recovery/ST.exe/runs/6eafe6c3ee33ba1a89a5017a69da0a510998dd3fe51f1a612fb77d7657105c01/pre_export | <repo>/recovery/ST.exe | <repo>/config | export-return-repair
 ABI regression gate: phase=export-return-repair, typed_vtable_slots=2729, class_vptrs=95, fixture_functions=9, errors=0, warnings=0, report=<local-home>/st/recovery/ST.exe/abi_regression_report.tsv
 [08] STFunctionPointerParameterAnalyzer.java <- <repo>/recovery
 Function-pointer-parameter analysis complete: <local-home>/st/recovery/ST.exe
@@ -53,10 +53,10 @@ STFunctionPointerFieldApplier.java state: proposals_enabled=0, proposals_review=
 Indirect-call analysis complete: <local-home>/st/recovery/ST.exe
 Sites=4221, proposals=2860, apply=2312
 [13] STIndirectCallApplier.java <- <repo>/recovery/ST.exe/indirect_call_proposals.tsv
-Indirect calls: applied=0, unchanged=2312, preserved=0, conflicts=0, disabled=548
+Indirect calls: applied=0, unchanged=2282, preserved=30, conflicts=0, disabled=548
 Apply report: <local-home>/st/recovery/ST.exe/indirect_call_apply_report.tsv
-STIndirectCallApplier.java state: proposals_enabled=2312, proposals_review=548, changed=0, unchanged=2312, review=548, conflict=0, error=0
-[14] STAbiRegressionGate.java <- <repo>/decomp/ST.exe | <repo>/recovery/ST.exe | <repo>/config | export-indirect-pass-1
+STIndirectCallApplier.java state: proposals_enabled=2312, proposals_review=548, changed=0, unchanged=2282, review=578, conflict=0, error=0
+[14] STAbiRegressionGate.java <- <repo>/recovery/ST.exe/runs/6eafe6c3ee33ba1a89a5017a69da0a510998dd3fe51f1a612fb77d7657105c01/pre_export | <repo>/recovery/ST.exe | <repo>/config | export-indirect-pass-1
 ABI regression gate: phase=export-indirect-pass-1, typed_vtable_slots=2729, class_vptrs=95, fixture_functions=9, errors=0, warnings=0, report=<local-home>/st/recovery/ST.exe/abi_regression_report.tsv
 Export indirect ABI stabilization pass 1: mutating rows=0
 
@@ -68,25 +68,27 @@ Candidates=1, likely stale=1, already approved overrides=0, review=0
 == evidence checkpoint ==
 [16] STEvidenceLedger.java <- record | <repo>/recovery
 Computing semantic Program fingerprint...
-Evidence ledger recorded: program modification=3, semantic_sha256=e1f9bb21bfcd91e18401c62060be8cb61a23b40b1aa776942fa539b09a6aadd0, artifacts=92
+Evidence ledger recorded: program modification=3, semantic_sha256=f33ed22b25e17675da07be95de14d2fe1c51d7b35859d86db60756558563a972, artifacts=92
 Persisted analyzer cache entries: 2
 
 == LLM corpus export ==
 [17] STEvidenceLedger.java <- verify | <repo>/recovery
 Computing semantic Program fingerprint...
-Evidence ledger verified: program modification=3, semantic_sha256=e1f9bb21bfcd91e18401c62060be8cb61a23b40b1aa776942fa539b09a6aadd0, artifacts=92
+Evidence ledger verified: program modification=3, semantic_sha256=f33ed22b25e17675da07be95de14d2fe1c51d7b35859d86db60756558563a972, artifacts=92
+Preserving the last accepted export baseline after an unaccepted export: <local-home>/st/recovery/ST.exe/runs/6eafe6c3ee33ba1a89a5017a69da0a510998dd3fe51f1a612fb77d7657105c01/pre_export
 [18] STDecompExport.java <- <repo>/decomp
 Exporting ST.exe to <local-home>/st/decomp/ST.exe via transactional staging
-Functions reused without decompilation: 10392/10392
-Function quality/idiom analyses reused: 5712/5712
+Ignored stale function-analysis cache rows: 5712
+Functions reused without decompilation: 9742/10392
+Function quality/idiom analyses reused: 0/5712
 STDecompExport complete: <local-home>/st/decomp/ST.exe
 [19] STExportRegressionGate.java <- <repo>/decomp/ST.exe | <repo>/recovery/ST.exe/runs/.current/pre_export | <repo>/recovery/ST.exe
-Export regression gate: status=passed, errors=0, warnings=0, report=<local-home>/st/recovery/ST.exe/export_regression_report.tsv
-[20] STAbiRegressionGate.java <- <repo>/decomp/ST.exe | <repo>/recovery/ST.exe | <repo>/config | accepted-refresh | e1f9bb21bfcd91e18401c62060be8cb61a23b40b1aa776942fa539b09a6aadd0
-ABI regression gate: phase=accepted-refresh, typed_vtable_slots=2729, class_vptrs=95, fixture_functions=9, errors=0, warnings=0, report=<local-home>/st/recovery/ST.exe/abi_regression_report.tsv
+Export regression gate: status=passed, errors=0, warnings=4, report=<local-home>/st/recovery/ST.exe/export_regression_report.tsv
+[20] STAbiRegressionGate.java <- <repo>/decomp/ST.exe | <repo>/recovery/ST.exe | <repo>/config | accepted-refresh | f33ed22b25e17675da07be95de14d2fe1c51d7b35859d86db60756558563a972
+ABI regression gate: phase=accepted-refresh, typed_vtable_slots=2729, class_vptrs=96, fixture_functions=9, errors=0, warnings=0, report=<local-home>/st/recovery/ST.exe/abi_regression_report.tsv
 ST recovery pipeline complete.
-Total pipeline time: 00:06:18
+Total pipeline time: 00:19:17
 Pipeline report: <local-home>/st/recovery/ST.exe/pipeline_report.tsv
 Program changed after pipeline: false
-Latest archived run: 6db00d62db47c8e04b682e1ebfc531127d5bbaf2ac060cb19ddf556938f2bf2d
+Latest archived run: f5114ac887c6d9dc0decf6c86f7f96579e4a9e9b23414961a9ff8e62696fe93c
 ST recovery launcher completed.

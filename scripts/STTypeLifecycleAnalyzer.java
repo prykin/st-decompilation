@@ -24,6 +24,7 @@ import java.util.regex.Pattern;
 
 import ghidra.app.script.GhidraScript;
 import ghidra.program.model.data.DataType;
+import ghidra.program.model.data.DataTypeComponent;
 import ghidra.program.model.data.DataTypeManager;
 import ghidra.program.model.data.Array;
 import ghidra.program.model.data.FunctionDefinition;
@@ -120,6 +121,7 @@ public class STTypeLifecycleAnalyzer extends GhidraScript {
             else if (anchors.isEmpty() &&
                     (description.contains(VIEW) || derivedView ||
                         disposableAnonymous(type, description)) &&
+                    !hasPhysicalVptrCompanion(type) &&
                     (removalProvenance(description) || derivedView) && parents == 0 &&
                     functionUses == 0 && listingUses == 0) {
                 rows.add(new Row(true, "remove", type.getPathName(), "", "",
@@ -135,6 +137,8 @@ public class STTypeLifecycleAnalyzer extends GhidraScript {
                 rows.add(new Row(false, "retain", type.getPathName(), "", "",
                     type.getLength(),
                     parents, functionUses, listingUses, description,
+                    hasPhysicalVptrCompanion(type) ?
+                        "physical vptr companion requires atomic class/vtable retirement" :
                     anchors.size() > 1 ? "ambiguous equivalent anchors=" + anchors.size() :
                         "still referenced"));
             }
@@ -154,7 +158,9 @@ public class STTypeLifecycleAnalyzer extends GhidraScript {
                 "Pointer/Array chains inherit " +
                 "view-only retirement without crossing through an owning structure. " +
                 "Non-view deletion is limited to generated anonymous PointerShapes/" +
-                "ClassPointees/HiddenThis types. Equivalent types migrate only when one " +
+                "ClassPointees/HiddenThis types. A structure with an exact offset-zero " +
+                "physical vptr companion is retained until class and vtable can be retired " +
+                "atomically. Equivalent types migrate only when one " +
                 "semantic anchor also shares the discriminator address/case, exact conflict " +
                 "identity, or same-category generated-layout provenance; equal geometry alone " +
                 "never merges semantic identities."),
@@ -342,6 +348,23 @@ public class STTypeLifecycleAnalyzer extends GhidraScript {
                 description.contains("generated_layout_sha256=") ||
             path.startsWith("/SubmarineTitans/Recovered/HiddenThis/") &&
                 description.contains("[STHiddenThisApplier generated]");
+    }
+
+    /**
+     * A physical receiver and its vtable form one ABI object.  Removing only the
+     * receiver erases the accepted class-vptr boundary while the table remains live.
+     * Lifecycle currently has no atomic pair-retirement proof, so retain the pair.
+     */
+    private boolean hasPhysicalVptrCompanion(DataType type) {
+        if (!(type instanceof Structure structure) || structure.getLength() < 4)
+            return false;
+        DataTypeComponent component = structure.getComponentAt(0);
+        if (component == null || component.getOffset() != 0 ||
+                !(component.getDataType() instanceof Pointer pointer) ||
+                !(pointer.getDataType() instanceof Structure vtable)) return false;
+        String fieldName = text(component.getFieldName());
+        return "vtable".equals(fieldName) &&
+            vtable.getPathName().equals(type.getPathName() + "VTable");
     }
     private String replacementBaseline(DataType type) {
         return type == null ? "missing" : type.getLength() + "|" +

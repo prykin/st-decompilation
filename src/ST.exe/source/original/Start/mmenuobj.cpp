@@ -2,7 +2,7 @@
 // Generated translation unit: source/original/Start/mmenuobj.cpp
 
 // 005B5240 MMObjTy::InitSprBut
-#line 1 "decomp/ST.exe/functions/005B5240/decomp.c"
+#line 4 "decomp/ST.exe/functions/005B5240/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\Start\mmenuobj.cpp
    MMObjTy::InitSprBut
@@ -58,7 +58,7 @@ st::fn_005B5240(MMObjTy *this,RecoveredRecord_MMObjTy_005B5240 *param_1,char *te
               ((SpriteClassTy *)&param_1->field_0x48,(int *)g_ddxContext_008075A8,param_11,'\a',
                nullptr,0,0);
     /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-    (**(code **)(*(int *)&param_1->field_0x48 + 4))(DAT_00806784,7,0,text,0xffffffff);
+    (**(code **)(*(int *)&param_1->field_0x48 + 4))(PTR_00806784,7,0,text,0xffffffff);
     *(int *)&param_1->field_0x64 = param_3;
     *(int *)&param_1->field_0x68 = param_4;
     *(undefined4 *)&param_1->field_0x50 = 0;
@@ -82,7 +82,7 @@ st::fn_005B5240(MMObjTy *this,RecoveredRecord_MMObjTy_005B5240 *param_1,char *te
                 ((SpriteClassTy *)&param_1->field_0x16a,(int *)g_ddxContext_008075A8,param_11 - 1,
                  '\a',nullptr,0,0);
       /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-      (**(code **)(*(int *)&param_1->field_0x16a + 4))(DAT_00806784,7,0,param_12,0xffffffff);
+      (**(code **)(*(int *)&param_1->field_0x16a + 4))(PTR_00806784,7,0,param_12,0xffffffff);
       param_1->field_0186 = param_3 + param_13;
       param_1->field_0172 = 0;
       param_1->field_018A = param_4 + param_14;
@@ -98,7 +98,7 @@ st::fn_005B5240(MMObjTy *this,RecoveredRecord_MMObjTy_005B5240 *param_1,char *te
       iVar2 = *(int *)&param_1->field_0xd9;
       uVar7 = 0xffffffff;
       cVar6 = CASE_FFFFFFFE;
-      puVar3 = (uint *)st::fn_006B0140(param_18,g_module_00807618);
+      puVar3 = (uint *)st::fn_006B0140(param_18,g_hINSTANCE_00807618);
       puVar4 = st::fn_00713480
                          (param_19,puVar3,param_20,param_21,cVar6,uVar7,param_22,param_23,param_24);
       /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
@@ -119,7 +119,7 @@ st::fn_005B5240(MMObjTy *this,RecoveredRecord_MMObjTy_005B5240 *param_1,char *te
 }
 
 // 005B5510 MMObjTy::CreateSprBut
-#line 1 "decomp/ST.exe/functions/005B5510/decomp.c"
+#line 4 "decomp/ST.exe/functions/005B5510/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\Start\mmenuobj.cpp
    MMObjTy::CreateSprBut */
@@ -181,7 +181,7 @@ st::fn_005B5510
 }
 
 // 005B5690 MMObjTy::PaintSprBut
-#line 1 "decomp/ST.exe/functions/005B5690/decomp.c"
+#line 4 "decomp/ST.exe/functions/005B5690/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\Start\mmenuobj.cpp
    MMObjTy::PaintSprBut
@@ -310,7 +310,7 @@ switchD_005b56d4_default:
 }
 
 // 005B5A30 MMObjTy::PaintButDib
-#line 1 "decomp/ST.exe/functions/005B5A30/decomp.c"
+#line 4 "decomp/ST.exe/functions/005B5A30/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\Start\mmenuobj.cpp
    MMObjTy::PaintButDib */
@@ -390,7 +390,7 @@ st::fn_005B5A30(MMObjTy *this,int param_1,int *param_2,int param_3,byte param_4,
 }
 
 // 005B6220 MMObjTy::DoneMMObj
-#line 1 "decomp/ST.exe/functions/005B6220/decomp.c"
+#line 4 "decomp/ST.exe/functions/005B6220/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\Start\mmenuobj.cpp
    MMObjTy::DoneMMObj
@@ -451,7 +451,7 @@ void __thiscall st::fn_005B6220(MMObjTy *this)
 }
 
 // 005B6480 MMObjTy::CloseButtons
-#line 1 "decomp/ST.exe/functions/005B6480/decomp.c"
+#line 4 "decomp/ST.exe/functions/005B6480/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\Start\mmenuobj.cpp
    MMObjTy::CloseButtons
@@ -500,7 +500,7 @@ void __thiscall st::fn_005B6480(MMObjTy *this)
 }
 
 // 005B6560 MMMObjTy::PaintSlBut
-#line 1 "decomp/ST.exe/functions/005B6560/decomp.c"
+#line 4 "decomp/ST.exe/functions/005B6560/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\Start\mmenuobj.cpp
    MMMObjTy::PaintSlBut
@@ -578,7 +578,7 @@ switchD_005b65a4_default:
 }
 
 // 005B67A0 MMMObjTy::OutRGlProc
-#line 1 "decomp/ST.exe/functions/005B67A0/decomp.c"
+#line 4 "decomp/ST.exe/functions/005B67A0/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\Start\mmenuobj.cpp
    MMMObjTy::OutRGlProc
@@ -639,7 +639,7 @@ st::fn_005B67A0
 }
 
 // 005B68B0 MMMObjTy::OutBSlProc
-#line 1 "decomp/ST.exe/functions/005B68B0/decomp.c"
+#line 4 "decomp/ST.exe/functions/005B68B0/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\Start\mmenuobj.cpp
    MMMObjTy::OutBSlProc
@@ -694,7 +694,7 @@ st::fn_005B68B0
 }
 
 // 005B69F0 ChatGlassTy::OutChGlProc
-#line 1 "decomp/ST.exe/functions/005B69F0/decomp.c"
+#line 4 "decomp/ST.exe/functions/005B69F0/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\Start\mmenuobj.cpp
    ChatGlassTy::OutChGlProc

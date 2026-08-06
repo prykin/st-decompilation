@@ -2,7 +2,7 @@
 // Generated translation unit: source/original/Maps/DefObj.cpp
 
 // 00692C10 FUN_00692c10
-#line 1 "decomp/ST.exe/functions/00692C10/decomp.c"
+#line 4 "decomp/ST.exe/functions/00692C10/decomp.c"
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 /* [STSwitchEnumApplier] Switch target param_1 uses
    /SubmarineTitans/Recovered/Enums/Global_sub_00692C10_param_1Enum. Cases:

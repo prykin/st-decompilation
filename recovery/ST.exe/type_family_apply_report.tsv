@@ -1,27 +1,3 @@
 function_address	target	status	detail
 004028BA	return:EAX:4	disabled	apply=0
-00403229	parameter:Stack[0x4]:4	applied	pointer:/SubmarineTitans/Recovered/PointerShapes/RecoveredSourceFamily_dibcopy
-00404C0F	parameter:Stack[0x4]:4	applied	pointer:/SubmarineTitans/Recovered/PointerShapes/RecoveredSourceFamily_dibcopy
-00405155	parameter:Stack[0x4]:4	applied	pointer:/SubmarineTitans/Recovered/PointerShapes/RecoveredSourceFamily_dibcopy
 0042B620	return:EAX:4	disabled	apply=0
-00540760	parameter:Stack[0x4]:4	preserved	stale or manually refined target
-005B5BE0	parameter:Stack[0x4]:4	preserved	stale or manually refined target
-005B5F00	parameter:Stack[0x4]:4	preserved	stale or manually refined target
-006B4170	parameter:Stack[0x4]:4	applied	pointer:/SubmarineTitans/Recovered/PointerShapes/RecoveredSourceFamily_dibcopy
-006B55F0	parameter:Stack[0x4]:4	applied	pointer:/SubmarineTitans/Recovered/PointerShapes/RecoveredSourceFamily_dibcopy
-006B5EE0	parameter:Stack[0x4]:4	applied	pointer:/SubmarineTitans/Recovered/PointerShapes/RecoveredSourceFamily_dibcopy
-006B84D0	parameter:Stack[0x4]:4	applied	pointer:/SubmarineTitans/Recovered/PointerShapes/RecoveredSourceFamily_dibcopy
-006C7570	parameter:Stack[0x4]:4	applied	pointer:/SubmarineTitans/Recovered/PointerShapes/RecoveredSourceFamily_dibcopy
-006C7610	parameter:Stack[0x4]:4	applied	pointer:/SubmarineTitans/Recovered/PointerShapes/RecoveredSourceFamily_dibcopy
-006C7F10	parameter:Stack[0x4]:4	applied	pointer:/SubmarineTitans/Recovered/PointerShapes/RecoveredSourceFamily_dibcopy
-006CEF60	parameter:Stack[0xc]:4	applied	pointer:/SubmarineTitans/Recovered/PointerShapes/RecoveredSourceFamily_dibcopy
-006D0680	parameter:Stack[0x4]:4	applied	pointer:/SubmarineTitans/Recovered/PointerShapes/RecoveredSourceFamily_dibcopy
-006D0680	parameter:Stack[0x10]:4	applied	pointer:/SubmarineTitans/Recovered/PointerShapes/RecoveredSourceFamily_dibcopy
-006D0CF0	parameter:Stack[0x10]:4	applied	pointer:/SubmarineTitans/Recovered/PointerShapes/RecoveredSourceFamily_dibcopy
-006D2820	parameter:Stack[0x8]:4	applied	pointer:/SubmarineTitans/Recovered/PointerShapes/RecoveredSourceFamily_dibcopy
-006E6FB0	parameter:Stack[0x4]:4	applied	pointer:/SubmarineTitans/Recovered/PointerShapes/RecoveredSourceFamily_dibcopy
-006E83F0	parameter:Stack[0x4]:4	applied	pointer:/SubmarineTitans/Recovered/PointerShapes/RecoveredSourceFamily_dibcopy
-0070C900	parameter:Stack[0x4]:4	applied	pointer:/SubmarineTitans/Recovered/PointerShapes/RecoveredSourceFamily_dibcopy
-00749841	parameter:Stack[0x4]:4	applied	pointer:/SubmarineTitans/Recovered/PointerShapes/RecoveredSourceFamily_dibcopy
-007527A0	parameter:Stack[0x4]:4	applied	pointer:/SubmarineTitans/Recovered/PointerShapes/RecoveredSourceFamily_dibcopy
-00752CF0	parameter:Stack[0x4]:4	applied	pointer:/SubmarineTitans/Recovered/PointerShapes/RecoveredSourceFamily_dibcopy

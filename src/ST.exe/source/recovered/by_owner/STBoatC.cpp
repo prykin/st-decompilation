@@ -2,7 +2,7 @@
 // Generated translation unit: source/recovered/by_owner/STBoatC.cpp
 
 // 004176C0 STBoatC::sub_004176C0
-#line 1 "decomp/ST.exe/functions/004176C0/decomp.c"
+#line 4 "decomp/ST.exe/functions/004176C0/decomp.c"
 /* [STMethodOwnerApplier] Structural method owner recovered as STBoatC.
    Evidence: this_call_owners=[STBoatC]; agreed_this_calls=3; incoming_this_accesses=1;
    incoming_edx_uses=8 */
@@ -37,7 +37,7 @@ uint __thiscall st::fn_004176C0(STBoatC *this,short param_1)
 }
 
 // 00417910 STBoatC::sub_00417910
-#line 1 "decomp/ST.exe/functions/00417910/decomp.c"
+#line 4 "decomp/ST.exe/functions/00417910/decomp.c"
 /* [STMethodOwnerApplier] Structural method owner recovered as STBoatC.
    Evidence: this_call_owners=[STBoatC]; agreed_this_calls=3; incoming_this_accesses=8;
    incoming_edx_uses=5 */
@@ -86,7 +86,7 @@ cf_common_exit_00417989:
 }
 
 // 0044E690 STBoatC::STBoatC
-#line 1 "decomp/ST.exe/functions/0044E690/decomp.c"
+#line 4 "decomp/ST.exe/functions/0044E690/decomp.c"
 /* [STConstructorApplier] Recovered constructor candidate.
    VTable: 007905A0 (store 0044E6B9)
    Evidence: final_vptr=007905A0; returns_this=true; calls_before=2; field_writes_after=40;
@@ -105,8 +105,8 @@ STBoatC * __thiscall st::fn_0044E690(STBoatC *this)
 
   st::fn_00401933((STGameObjC *)this);
   st::fn_00401316((AnonShape_004AB810_8E5693D5 *)&this->field_01D5);
-  this->field_01D5 = &VTable_00790700;
-  this->vtable = &STBoatCVTable;
+  this->field_01D5 = &st_global_00790700;
+  this->vtable = &st_global_007905A0;
   puVar2 = (undefined4 *)&this->field_0x231;
   memset(puVar2, 0, 0x8f); /* compiler bulk-zero initialization */
   puVar2 = (undefined4 *)((byte *)puVar2 + 0x8c);
@@ -215,7 +215,7 @@ STBoatC * __thiscall st::fn_0044E690(STBoatC *this)
 }
 
 // 0044E960 STBoatC::FUN_0044e960
-#line 1 "decomp/ST.exe/functions/0044E960/decomp.c"
+#line 4 "decomp/ST.exe/functions/0044E960/decomp.c"
 /* [STVirtualMethodApplier] Recovered from virtual table slot family.
    Tables: 007905A0
    Entries: 004034B3
@@ -231,7 +231,7 @@ dword __thiscall st::fn_0044E960(STBoatC *this)
 }
 
 // 0044EDC0 STBoatC::FUN_0044edc0
-#line 1 "decomp/ST.exe/functions/0044EDC0/decomp.c"
+#line 4 "decomp/ST.exe/functions/0044EDC0/decomp.c"
 /* [STVirtualMethodApplier] Recovered from virtual table slot family.
    Tables: 007905A0
    Entries: 00404B33
@@ -247,7 +247,7 @@ dword __thiscall st::fn_0044EDC0(STBoatC *this)
 }
 
 // 0045EEE0 STBoatC::FUN_0045eee0
-#line 1 "decomp/ST.exe/functions/0045EEE0/decomp.c"
+#line 4 "decomp/ST.exe/functions/0045EEE0/decomp.c"
 /* [STVirtualMethodApplier] Recovered from virtual table slot family.
    Tables: 007905A0
    Entries: 00401771
@@ -264,7 +264,7 @@ dword __thiscall st::fn_0045EEE0(STBoatC *this)
 }
 
 // 0045F6C0 STBoatC::sub_0045F6C0
-#line 1 "decomp/ST.exe/functions/0045F6C0/decomp.c"
+#line 4 "decomp/ST.exe/functions/0045F6C0/decomp.c"
 /* [STMethodOwnerApplier] Structural method owner recovered as STBoatC.
    Evidence: this_call_owners=[STBoatC]; agreed_this_calls=1; incoming_this_accesses=10;
    incoming_edx_uses=0 */
@@ -370,7 +370,7 @@ LAB_0045f710:
 }
 
 // 0045FF50 STBoatC::sub_0045FF50
-#line 1 "decomp/ST.exe/functions/0045FF50/decomp.c"
+#line 4 "decomp/ST.exe/functions/0045FF50/decomp.c"
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 /* [STMethodOwnerApplier] Structural method owner recovered as STBoatC.
    Evidence: this_call_owners=[STBoatC]; agreed_this_calls=4; incoming_this_accesses=5;
@@ -455,7 +455,7 @@ switchD_00460024_caseD_1:
 }
 
 // 00460260 STBoatC::sub_00460260
-#line 1 "decomp/ST.exe/functions/00460260/decomp.c"
+#line 4 "decomp/ST.exe/functions/00460260/decomp.c"
 /* [STMethodOwnerApplier] Structural method owner recovered as STBoatC.
    Evidence: this_call_owners=[STBoatC]; agreed_this_calls=10; incoming_this_accesses=2;
    incoming_edx_uses=0; incoming_stack_parameter_uses=1 */
@@ -476,7 +476,7 @@ int __thiscall st::fn_00460260(STBoatC *this,int param_1)
 }
 
 // 004602B0 STBoatC::sub_004602B0
-#line 1 "decomp/ST.exe/functions/004602B0/decomp.c"
+#line 4 "decomp/ST.exe/functions/004602B0/decomp.c"
 /* [STMethodOwnerApplier] Structural method owner recovered as STBoatC.
    Evidence: this_call_owners=[STBoatC]; agreed_this_calls=3; incoming_this_accesses=2;
    incoming_edx_uses=0; incoming_stack_parameter_uses=0 */
@@ -494,7 +494,7 @@ void __thiscall st::fn_004602B0(STBoatC *this)
 }
 
 // 00460360 STBoatC::sub_00460360
-#line 1 "decomp/ST.exe/functions/00460360/decomp.c"
+#line 4 "decomp/ST.exe/functions/00460360/decomp.c"
 /* [STMethodOwnerApplier] Structural method owner recovered as STBoatC.
    Evidence: this_call_owners=[STBoatC]; agreed_this_calls=10; incoming_this_accesses=2;
    incoming_edx_uses=0; incoming_stack_parameter_uses=0 */
@@ -520,7 +520,7 @@ int __thiscall st::fn_00460360(STBoatC *this)
 }
 
 // 004803D0 STBoatC::FUN_004803d0
-#line 1 "decomp/ST.exe/functions/004803D0/decomp.c"
+#line 4 "decomp/ST.exe/functions/004803D0/decomp.c"
 int __thiscall st::fn_004803D0(STBoatC *this,AnonShape_004803D0_350EB461 *param_1)
 
 {
@@ -584,7 +584,7 @@ int __thiscall st::fn_004803D0(STBoatC *this,AnonShape_004803D0_350EB461 *param_
 }
 
 // 00481520 STBoatC::sub_00481520
-#line 1 "decomp/ST.exe/functions/00481520/decomp.c"
+#line 4 "decomp/ST.exe/functions/00481520/decomp.c"
 /* [STMethodOwnerApplier] Structural method owner recovered as STBoatC.
    Evidence: this_call_owners=[STBoatC]; agreed_this_calls=2; incoming_this_accesses=4;
    incoming_edx_uses=0; incoming_stack_parameter_uses=3
@@ -855,7 +855,7 @@ void __thiscall st::fn_00481520(STBoatC *this,int param_1,int param_2,int param_
 }
 
 // 00486A40 STBoatC::FUN_00486a40
-#line 1 "decomp/ST.exe/functions/00486A40/decomp.c"
+#line 4 "decomp/ST.exe/functions/00486A40/decomp.c"
 /* [STVirtualMethodApplier] Recovered from virtual table slot family.
    Tables: 007905A0
    Entries: 004057FE
@@ -871,7 +871,7 @@ dword __thiscall st::fn_00486A40(STBoatC *this)
 }
 
 // 0048D110 STBoatC::FUN_0048d110
-#line 1 "decomp/ST.exe/functions/0048D110/decomp.c"
+#line 4 "decomp/ST.exe/functions/0048D110/decomp.c"
 /* [STVirtualMethodApplier] Recovered from virtual table slot family.
    Tables: 007905A0
    Entries: 00403530
@@ -887,7 +887,7 @@ dword __thiscall st::fn_0048D110(STBoatC *this)
 }
 
 // 0048D930 STBoatC::sub_0048D930
-#line 1 "decomp/ST.exe/functions/0048D930/decomp.c"
+#line 4 "decomp/ST.exe/functions/0048D930/decomp.c"
 /* [STMethodOwnerApplier] Structural method owner recovered as STBoatC.
    Evidence: this_call_owners=[STBoatC]; agreed_this_calls=2; incoming_this_accesses=9;
    incoming_edx_uses=0
@@ -945,7 +945,7 @@ void __thiscall st::fn_0048D930(STBoatC *this)
 }
 
 // 0048DBA0 STBoatC::sub_0048DBA0
-#line 1 "decomp/ST.exe/functions/0048DBA0/decomp.c"
+#line 4 "decomp/ST.exe/functions/0048DBA0/decomp.c"
 /* [STMethodOwnerApplier] Structural method owner recovered as STBoatC.
    Evidence: this_call_owners=[STBoatC]; agreed_this_calls=1; incoming_this_accesses=3;
    incoming_edx_uses=0 */
@@ -976,7 +976,7 @@ void __thiscall st::fn_0048DBA0(STBoatC *this)
 }
 
 // 0048DFD0 STBoatC::sub_0048DFD0
-#line 1 "decomp/ST.exe/functions/0048DFD0/decomp.c"
+#line 4 "decomp/ST.exe/functions/0048DFD0/decomp.c"
 /* WARNING: Type propagation algorithm not settling */
 /* [STHiddenThisApplier] Anonymous hidden receiver recovered as
    /SubmarineTitans/Recovered/HiddenThis/AnonReceiver_0048DFD0.
@@ -1788,7 +1788,7 @@ LAB_0048f4e0:
 }
 
 // 00490570 STBoatC::sub_00490570
-#line 1 "decomp/ST.exe/functions/00490570/decomp.c"
+#line 4 "decomp/ST.exe/functions/00490570/decomp.c"
 /* [STMethodOwnerApplier] Structural method owner recovered as STBoatC.
    Evidence: this_call_owners=[STBoatC]; agreed_this_calls=1; incoming_this_accesses=3;
    incoming_edx_uses=0 */
@@ -1836,7 +1836,7 @@ undefined4 __thiscall st::fn_00490570(STBoatC *this)
 }
 
 // 00490CD0 STBoatC::sub_00490CD0
-#line 1 "decomp/ST.exe/functions/00490CD0/decomp.c"
+#line 4 "decomp/ST.exe/functions/00490CD0/decomp.c"
 /* [STHiddenThisApplier] Anonymous hidden receiver recovered as
    /SubmarineTitans/Recovered/HiddenThis/AnonReceiver_00490CD0.
    Evidence: incoming_receiver_captures=1; receiver_accesses=3; incoming_edx_uses=0; calls=10;
@@ -1880,7 +1880,7 @@ st::fn_00490CD0(STBoatC *this,undefined4 param_1,undefined4 param_2,int param_3,
 }
 
 // 00490E70 STBoatC::FUN_00490e70
-#line 1 "decomp/ST.exe/functions/00490E70/decomp.c"
+#line 4 "decomp/ST.exe/functions/00490E70/decomp.c"
 /* [STVirtualMethodApplier] Recovered from virtual table slot family.
    Tables: 007905A0
    Entries: 0040399F
@@ -1896,7 +1896,7 @@ dword __thiscall st::fn_00490E70(STBoatC *this)
 }
 
 // 00492420 STBoatC::sub_00492420
-#line 1 "decomp/ST.exe/functions/00492420/decomp.c"
+#line 4 "decomp/ST.exe/functions/00492420/decomp.c"
 /* [STMethodOwnerApplier] Structural method owner recovered as STBoatC.
    Evidence: this_call_owners=[STBoatC]; agreed_this_calls=1; incoming_this_accesses=5;
    incoming_edx_uses=0; incoming_stack_parameter_uses=0 */
@@ -1919,7 +1919,7 @@ void __thiscall st::fn_00492420(STBoatC *this)
 }
 
 // 004926C0 STBoatC::sub_004926C0
-#line 1 "decomp/ST.exe/functions/004926C0/decomp.c"
+#line 4 "decomp/ST.exe/functions/004926C0/decomp.c"
 /* [STMethodOwnerApplier] Structural method owner recovered as STBoatC.
    Evidence: this_call_owners=[STBoatC]; agreed_this_calls=1; incoming_this_accesses=5;
    incoming_edx_uses=0 */
@@ -2092,7 +2092,7 @@ undefined4 __thiscall st::fn_004926C0(STBoatC *this,int param_1)
 }
 
 // 004939B0 STBoatC::sub_004939B0
-#line 1 "decomp/ST.exe/functions/004939B0/decomp.c"
+#line 4 "decomp/ST.exe/functions/004939B0/decomp.c"
 /* [STMethodOwnerApplier] Structural method owner recovered as STBoatC.
    Evidence: this_call_owners=[STBoatC]; agreed_this_calls=1; incoming_this_accesses=16;
    incoming_edx_uses=6
@@ -2155,7 +2155,7 @@ int __thiscall st::fn_004939B0(STBoatC *this,short *param_1,short *param_2,short
 }
 
 // 004952C0 STBoatC::FUN_004952c0
-#line 1 "decomp/ST.exe/functions/004952C0/decomp.c"
+#line 4 "decomp/ST.exe/functions/004952C0/decomp.c"
 /* [STVirtualMethodApplier] Recovered from virtual table slot family.
    Tables: 007905A0
    Entries: 00405C4A
@@ -2171,7 +2171,7 @@ dword __thiscall st::fn_004952C0(STBoatC *this)
 }
 
 // 004952E0 STBoatC::sub_004952E0
-#line 1 "decomp/ST.exe/functions/004952E0/decomp.c"
+#line 4 "decomp/ST.exe/functions/004952E0/decomp.c"
 /* [STPrototypeApplier] Propagated return.
    Evidence: 004952E0 returns return of FUN_004b7d50 @ 004953DE
 

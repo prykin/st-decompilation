@@ -13,7 +13,7 @@ void __cdecl FUN_00637ae0(int param_1,int param_2,int param_3)
   uint local_8;
 
   puVar1 = Library::Ourlib::MFRLOAD::mfRLoad
-                     (DAT_00806774,CASE_1D,"star_pp",0xffffffff,0,1,0,nullptr);
+                     (PTR_00806774,CASE_1D,"star_pp",0xffffffff,0,1,0,nullptr);
   if ((puVar1 != nullptr) && (g_sT3DSMAPContext_00807598 != nullptr)) {
     ST3DSMAPContext::sub_006E8660
               (g_sT3DSMAPContext_00807598,(int *)&local_8,1,0,STField<uint>(puVar1,9),

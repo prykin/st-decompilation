@@ -2,7 +2,7 @@
 // Generated translation unit: source/original/Igor/to_oct.cpp
 
 // 00589B50 STOctopusC::SetSprRange
-#line 1 "decomp/ST.exe/functions/00589B50/decomp.c"
+#line 4 "decomp/ST.exe/functions/00589B50/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\Igor\to_oct.cpp
    STOctopusC::SetSprRange */
@@ -33,7 +33,7 @@ void __thiscall st::fn_00589B50(STOctopusC *this,uint param_1)
 }
 
 // 00589C10 STOctopusC::GetMessage
-#line 1 "decomp/ST.exe/functions/00589C10/decomp.c"
+#line 4 "decomp/ST.exe/functions/00589C10/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\Igor\to_oct.cpp
    STOctopusC::GetMessage
@@ -64,7 +64,7 @@ int __thiscall st::fn_00589C10(STOctopusC *this,STMessage *message)
   void *local_44;
   undefined4 local_40;
   undefined4 local_3c;
-  undefined4 local_38;
+  ushort *local_38;
   undefined4 local_34;
   undefined4 local_30;
   undefined4 local_2c;
@@ -290,7 +290,7 @@ int __thiscall st::fn_00589C10(STOctopusC *this,STMessage *message)
     switch(*(undefined4 *)&this_00->field_0x2a5) {
     case 0xf8:
       iVar7 = st::fn_00404183
-                        ((STT3DSprC *)&this_00->field_01D5,0xe,DAT_0080676c,"octopus2",0x1d
+                        ((STT3DSprC *)&this_00->field_01D5,0xe,PTR_0080676c,"octopus2",0x1d
                         );
       if (iVar7 != 0) {
         iVar7 = 0xe9;
@@ -301,7 +301,7 @@ cf_error_exit_0058A005:
       break;
     case 0xf9:
       iVar7 = st::fn_00404183
-                        ((STT3DSprC *)&this_00->field_01D5,0xe,DAT_0080676c,"octopus1",0x1d
+                        ((STT3DSprC *)&this_00->field_01D5,0xe,PTR_0080676c,"octopus1",0x1d
                         );
       if (iVar7 != 0) {
         iVar7 = 0xe4;
@@ -310,7 +310,7 @@ cf_error_exit_0058A005:
       break;
     case 0xfa:
       iVar7 = st::fn_00404183
-                        ((STT3DSprC *)&this_00->field_01D5,0xe,DAT_0080676c,"medusa2",0x1d);
+                        ((STT3DSprC *)&this_00->field_01D5,0xe,PTR_0080676c,"medusa2",0x1d);
       if (iVar7 != 0) {
         iVar7 = 0xf3;
         goto cf_error_exit_0058A005;
@@ -318,7 +318,7 @@ cf_error_exit_0058A005:
       break;
     case 0xfb:
       iVar7 = st::fn_00404183
-                        ((STT3DSprC *)&this_00->field_01D5,0xe,DAT_0080676c,"medusa1",0x1d);
+                        ((STT3DSprC *)&this_00->field_01D5,0xe,PTR_0080676c,"medusa1",0x1d);
       if (iVar7 != 0) {
         iVar7 = 0xee;
         goto cf_error_exit_0058A005;
@@ -380,16 +380,16 @@ cf_error_exit_0058A005:
       iVar7 = 0;
       do {
         if (iVar7 == 8) {
-          STField<undefined4>(local_44,0x20) = DAT_00806774;
+          STField<int *>(local_44,0x20) = PTR_00806774;
         }
         else {
-          *(int **)((int)local_44 + iVar7 * 4) = DAT_0080676c;
+          *(int **)((int)local_44 + iVar7 * 4) = PTR_0080676c;
         }
         iVar7 = iVar7 + 1;
       } while (iVar7 < 0x11);
       local_40 = 0;
       local_3c = 0;
-      local_38 = DAT_008073cc;
+      local_38 = PTR_008073cc;
       local_34 = 0;
       local_30 = 0;
       local_2c = 0;
@@ -412,7 +412,7 @@ LAB_0058a0d0:
 }
 
 // 0058A8D0 STOctopusC::Bad
-#line 1 "decomp/ST.exe/functions/0058A8D0/decomp.c"
+#line 4 "decomp/ST.exe/functions/0058A8D0/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\Igor\to_oct.cpp
    STOctopusC::Bad

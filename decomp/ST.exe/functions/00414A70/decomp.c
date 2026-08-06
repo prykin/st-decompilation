@@ -10,21 +10,21 @@ void FUN_00414a70(int param_1,int param_2)
   int iVar4;
   int iVar5;
   int iVar6;
-  undefined1 *puVar7;
+  int *piVar7;
   uint uVar8;
   int iVar9;
   int iVar10;
-  undefined1 *local_1c;
+  int *local_1c;
   int local_10;
   int local_8;
 
   if (param_1 == 0) {
     local_10 = 0;
-    local_1c = DAT_007f4d50;
+    local_1c = PTR_007f4d50;
   }
   else {
     local_10 = 0x14;
-    local_1c = DAT_007f4d54;
+    local_1c = PTR_007f4d54;
   }
   DAT_007f4d18 = Library::DKW::LIB::MemAlloc(param_2 * 0x18);
   iVar10 = 1;
@@ -176,28 +176,28 @@ LAB_00414ccc:
   }
 cf_break_loop_00414E8A:
   iVar10 = 0;
-  *local_1c = 0;
-  local_1c[1] = 0;
-  local_1c[2] = 0;
-  local_1c[3] = 0;
+  *(undefined1 *)local_1c = 0;
+  STField<undefined1>(local_1c,1) = 0;
+  STField<undefined1>(local_1c,2) = 0;
+  STField<undefined1>(local_1c,3) = 0;
   if (0 < DAT_007f4d44) {
-    puVar7 = local_1c;
+    piVar7 = local_1c;
     iVar1 = 0;
     do {
-      local_1c = puVar7 + 4;
+      local_1c = piVar7 + 1;
       iVar10 = iVar10 + 1;
-      *local_1c = *(undefined1 *)(iVar1 + (int)DAT_007f4d18);
-      puVar7[5] = *(undefined1 *)(iVar1 + 4 + (int)DAT_007f4d18);
-      puVar7[6] = *(undefined1 *)(iVar1 + 8 + (int)DAT_007f4d18);
-      puVar7[7] = *(undefined1 *)(iVar1 + 0x10 + (int)DAT_007f4d18);
-      puVar7 = local_1c;
+      *(undefined1 *)local_1c = *(undefined1 *)(iVar1 + (int)DAT_007f4d18);
+      STField<undefined1>(piVar7,5) = *(undefined1 *)(iVar1 + 4 + (int)DAT_007f4d18);
+      STField<undefined1>(piVar7,6) = *(undefined1 *)(iVar1 + 8 + (int)DAT_007f4d18);
+      STField<undefined1>(piVar7,7) = *(undefined1 *)(iVar1 + 0x10 + (int)DAT_007f4d18);
+      piVar7 = local_1c;
       iVar1 = iVar1 + 0x18;
     } while (iVar10 < DAT_007f4d44);
   }
-  local_1c[4] = 0x7f;
-  local_1c[5] = 0x7f;
-  local_1c[6] = 0x7f;
-  local_1c[7] = 0xff;
+  *(undefined1 *)(local_1c + 1) = 0x7f;
+  STField<undefined1>(local_1c,5) = 0x7f;
+  STField<undefined1>(local_1c,6) = 0x7f;
+  STField<undefined1>(local_1c,7) = 0xff;
   FreeAndNull(&DAT_007f4d18);
   return;
 }

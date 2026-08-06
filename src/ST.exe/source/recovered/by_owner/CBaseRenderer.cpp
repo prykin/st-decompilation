@@ -2,7 +2,7 @@
 // Generated translation unit: source/recovered/by_owner/CBaseRenderer.cpp
 
 // 0074A113 CBaseRenderer::EndOfStream
-#line 1 "decomp/ST.exe/functions/0074A113/decomp.c"
+#line 4 "decomp/ST.exe/functions/0074A113/decomp.c"
 /* Library Function - Single Match
     public: virtual long __thiscall CBaseRenderer::EndOfStream(void)
 
@@ -23,7 +23,7 @@ long __thiscall st::fn_0074A113(CBaseRenderer *this)
 }
 
 // 0074A143 CBaseRenderer::BeginFlush
-#line 1 "decomp/ST.exe/functions/0074A143/decomp.c"
+#line 4 "decomp/ST.exe/functions/0074A143/decomp.c"
 /* Library Function - Single Match
     public: virtual long __thiscall CBaseRenderer::BeginFlush(void)
 

@@ -2,7 +2,7 @@
 // Generated translation unit: source/recovered/by_owner/STT3DSprC.cpp
 
 // 004ACD30 STT3DSprC::sub_004ACD30
-#line 1 "decomp/ST.exe/functions/004ACD30/decomp.c"
+#line 4 "decomp/ST.exe/functions/004ACD30/decomp.c"
 /* [STMethodOwnerApplier] Structural method owner recovered as STT3DSprC.
    Evidence: this_call_owners=[STT3DSprC]; agreed_this_calls=3; incoming_this_accesses=1;
    incoming_edx_uses=0; incoming_stack_parameter_uses=1; direct_non_thunk_callers=0;
@@ -21,7 +21,7 @@ undefined4 __thiscall st::fn_004ACD30(STT3DSprC *this,char param_1)
 }
 
 // 004ACE30 STT3DSprC::sub_004ACE30
-#line 1 "decomp/ST.exe/functions/004ACE30/decomp.c"
+#line 4 "decomp/ST.exe/functions/004ACE30/decomp.c"
 /* [STMethodOwnerApplier] Structural method owner recovered as STT3DSprC.
    Evidence: this_call_owners=[STT3DSprC]; agreed_this_calls=1; incoming_this_accesses=2;
    incoming_edx_uses=0; incoming_stack_parameter_uses=2; direct_non_thunk_callers=0;
@@ -81,7 +81,7 @@ void __thiscall st::fn_004ACE30(STT3DSprC *this,uint param_1,int entries)
 }
 
 // 004ACE60 STT3DSprC::sub_004ACE60
-#line 1 "decomp/ST.exe/functions/004ACE60/decomp.c"
+#line 4 "decomp/ST.exe/functions/004ACE60/decomp.c"
 /* [STMethodOwnerApplier] Structural method owner recovered as STT3DSprC.
    Evidence: this_call_owners=[STT3DSprC]; agreed_this_calls=1; incoming_this_accesses=3;
    incoming_edx_uses=0; incoming_stack_parameter_uses=1; direct_non_thunk_callers=0;
@@ -103,7 +103,7 @@ int __thiscall st::fn_004ACE60(STT3DSprC *this,char param_1)
 }
 
 // 004ACEF0 STT3DSprC::sub_004ACEF0
-#line 1 "decomp/ST.exe/functions/004ACEF0/decomp.c"
+#line 4 "decomp/ST.exe/functions/004ACEF0/decomp.c"
 /* [STMethodOwnerApplier] Structural method owner recovered as STT3DSprC.
    Evidence: this_call_owners=[STT3DSprC]; agreed_this_calls=1; incoming_this_accesses=2;
    incoming_edx_uses=0; incoming_stack_parameter_uses=1; direct_non_thunk_callers=0;
@@ -111,9 +111,12 @@ int __thiscall st::fn_004ACE60(STT3DSprC *this,char param_1)
 
    [STReturnSemanticsApplier] ignored_eax_void.
    Evidence: all observed direct callers ignore the return register (ignored=8, used=0), and
-   decompilation contains no value return */
+   decompilation contains no value return
 
-void __thiscall st::fn_004ACEF0(STT3DSprC *this,uint param_1)
+   [STPrototypeApplier] Propagated parameter 1.
+   Evidence: 004ACEF0 -> 006EA680 @ 004ACEFE */
+
+void __thiscall st::fn_004ACEF0(STT3DSprC *this,ushort *param_1)
 
 {
   st::fn_006EA680(this->field_003C,this->field_0018,param_1);
@@ -121,7 +124,7 @@ void __thiscall st::fn_004ACEF0(STT3DSprC *this,uint param_1)
 }
 
 // 004ACF20 STT3DSprC::sub_004ACF20
-#line 1 "decomp/ST.exe/functions/004ACF20/decomp.c"
+#line 4 "decomp/ST.exe/functions/004ACF20/decomp.c"
 /* [STMethodOwnerApplier] Structural method owner recovered as STT3DSprC.
    Evidence: this_call_owners=[STT3DSprC]; agreed_this_calls=1; incoming_this_accesses=2;
    incoming_edx_uses=0; incoming_stack_parameter_uses=2; direct_non_thunk_callers=0;
@@ -129,9 +132,18 @@ void __thiscall st::fn_004ACEF0(STT3DSprC *this,uint param_1)
 
    [STReturnSemanticsApplier] ignored_eax_void.
    Evidence: all observed direct callers ignore the return register (ignored=13, used=0), and
-   decompilation contains no value return */
+   decompilation contains no value return
 
-void __thiscall st::fn_004ACF20(STT3DSprC *this,int param_1,int param_2)
+   [STPrototypeApplier] Propagated parameter 1.
+   Evidence: 0044EE30 -> 004ACF20 @ 00450DA6; data at 008032B8 | 004ACF20 -> 006EA790 @ 004ACF32 |
+   004C9770 -> 004ACF20 @ 004C9E4E; data at 008032B8 | 00584380 -> 004ACF20 @ 005843EC; data at
+   008032B8 | 00589740 -> 004ACF20 @ 005897AC; data at 008032B8 | 005EC9F0 -> 004ACF20 @ 005ECC44;
+   data at 008032B8 | 005F6AF0 -> 004ACF20 @ 005F6CBA; data at 008032B8 | 005FDB50 -> 004ACF20 @
+   005FDCD2; data at 008032B8 | 006132F0 -> 004ACF20 @ 006135BE; data at 008032B8 | 00623170 ->
+   004ACF20 @ 006233B3; data at 008032B8 | 00639990 -> 004ACF20 @ 00639A80; data at 008032B8 |
+   006406D0 -> 004ACF20 @ 006426CF; data at 008032B8 */
+
+void __thiscall st::fn_004ACF20(STT3DSprC *this,ushort *param_1,int param_2)
 
 {
   st::fn_006EA790(this->field_003C,this->field_0018,param_1,param_2);
@@ -139,7 +151,7 @@ void __thiscall st::fn_004ACF20(STT3DSprC *this,int param_1,int param_2)
 }
 
 // 004ACF50 STT3DSprC::sub_004ACF50
-#line 1 "decomp/ST.exe/functions/004ACF50/decomp.c"
+#line 4 "decomp/ST.exe/functions/004ACF50/decomp.c"
 /* [STMethodOwnerApplier] Structural method owner recovered as STT3DSprC.
    Evidence: this_call_owners=[STT3DSprC]; agreed_this_calls=1; incoming_this_accesses=3;
    incoming_edx_uses=0; incoming_stack_parameter_uses=1; direct_non_thunk_callers=0;
@@ -161,7 +173,7 @@ int __thiscall st::fn_004ACF50(STT3DSprC *this,char param_1)
 }
 
 // 004ACF90 STT3DSprC::sub_004ACF90
-#line 1 "decomp/ST.exe/functions/004ACF90/decomp.c"
+#line 4 "decomp/ST.exe/functions/004ACF90/decomp.c"
 /* [STMethodOwnerApplier] Structural method owner recovered as STT3DSprC.
    Evidence: this_call_owners=[STT3DSprC]; agreed_this_calls=1; incoming_this_accesses=3;
    incoming_edx_uses=0; incoming_stack_parameter_uses=1; direct_non_thunk_callers=0;
@@ -183,7 +195,7 @@ int __thiscall st::fn_004ACF90(STT3DSprC *this,char param_1)
 }
 
 // 004ACFE0 STT3DSprC::sub_004ACFE0
-#line 1 "decomp/ST.exe/functions/004ACFE0/decomp.c"
+#line 4 "decomp/ST.exe/functions/004ACFE0/decomp.c"
 /* [STMethodOwnerApplier] Structural method owner recovered as STT3DSprC.
    Evidence: this_call_owners=[STT3DSprC]; agreed_this_calls=1; incoming_this_accesses=3;
    incoming_edx_uses=0; incoming_stack_parameter_uses=1; direct_non_thunk_callers=0;
@@ -205,7 +217,7 @@ int __thiscall st::fn_004ACFE0(STT3DSprC *this,char param_1)
 }
 
 // 004AD020 STT3DSprC::sub_004AD020
-#line 1 "decomp/ST.exe/functions/004AD020/decomp.c"
+#line 4 "decomp/ST.exe/functions/004AD020/decomp.c"
 /* [STMethodOwnerApplier] Structural method owner recovered as STT3DSprC.
    Evidence: this_call_owners=[STT3DSprC]; agreed_this_calls=1; incoming_this_accesses=3;
    incoming_edx_uses=0; incoming_stack_parameter_uses=1; direct_non_thunk_callers=0;
@@ -227,7 +239,7 @@ int __thiscall st::fn_004AD020(STT3DSprC *this,char param_1)
 }
 
 // 004AD070 STT3DSprC::sub_004AD070
-#line 1 "decomp/ST.exe/functions/004AD070/decomp.c"
+#line 4 "decomp/ST.exe/functions/004AD070/decomp.c"
 /* [STMethodOwnerApplier] Structural method owner recovered as STT3DSprC.
    Evidence: this_call_owners=[STT3DSprC]; agreed_this_calls=1; incoming_this_accesses=4;
    incoming_edx_uses=0; incoming_stack_parameter_uses=1; direct_non_thunk_callers=0;
@@ -248,7 +260,7 @@ void __thiscall st::fn_004AD070(STT3DSprC *this,byte param_1)
 }
 
 // 004AD3C0 STT3DSprC::sub_004AD3C0
-#line 1 "decomp/ST.exe/functions/004AD3C0/decomp.c"
+#line 4 "decomp/ST.exe/functions/004AD3C0/decomp.c"
 /* [STMethodOwnerApplier] Structural method owner recovered as STT3DSprC.
    Evidence: this_call_owners=[STT3DSprC]; agreed_this_calls=1; incoming_this_accesses=5;
    incoming_edx_uses=0; incoming_stack_parameter_uses=5; direct_non_thunk_callers=0;

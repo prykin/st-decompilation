@@ -2,7 +2,7 @@
 // Generated translation unit: source/original/nick/to_torp.cpp
 
 // 006406D0 STTorpC::GetMessage
-#line 1 "decomp/ST.exe/functions/006406D0/decomp.c"
+#line 4 "decomp/ST.exe/functions/006406D0/decomp.c"
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 /* Recovered from embedded debug metadata:
    E:\__titans\nick\to_torp.cpp
@@ -113,7 +113,7 @@ int __thiscall st::fn_006406D0(STTorpC *this,STMessage *message)
   undefined4 local_154;
   undefined4 local_150;
   undefined4 local_14c;
-  int local_148;
+  ushort *local_148;
   undefined4 local_144;
   undefined4 local_140;
   int local_13c [5];
@@ -293,11 +293,11 @@ int __thiscall st::fn_006406D0(STTorpC *this,STMessage *message)
       local_158 = st::fn_006AAC70(0x44);
       iVar11 = 0;
       do {
-        *(int **)(iVar11 + (int)local_158) = DAT_00806774;
+        *(int **)(iVar11 + (int)local_158) = PTR_00806774;
         iVar11 = iVar11 + 4;
       } while (iVar11 < 0x44);
-      STField<int *>(local_158,8) = DAT_00806764;
-      local_148 = DAT_008032b8;
+      STField<int *>(local_158,8) = PTR_00806764;
+      local_148 = PTR_008032b8;
       local_154 = 0;
       local_150 = 0;
       local_14c = 0;
@@ -594,7 +594,7 @@ switchD_00640ad9_caseD_a2:
     memmove(pcVar25, pcVar23, uVar17); /* compiler REP MOVS byte copy */
 switchD_00640c2d_caseD_a2:
     puVar14 = (byte *)(&this_00->field_01D5);
-    iVar10 = st::fn_00404183((STT3DSprC *)puVar14,0,DAT_00806774,local_60,0x1d);
+    iVar10 = st::fn_00404183((STT3DSprC *)puVar14,0,PTR_00806774,local_60,0x1d);
     if (iVar10 != 0) {
       st::fn_006A5E40
                 (-1,g_overwriteContext_007ED77C,"E:\\__titans\\nick\\to_torp.cpp",0xe1);
@@ -2650,14 +2650,14 @@ LAB_00642561:
     goto LAB_00642561;
   }
   puVar14 = (byte *)(&this_00->field_01D5);
-  iVar10 = st::fn_00404183((STT3DSprC *)puVar14,0,DAT_00806774,local_48,0x1d);
+  iVar10 = st::fn_00404183((STT3DSprC *)puVar14,0,PTR_00806774,local_48,0x1d);
   if (iVar10 != 0) {
     st::fn_006A5E40
               (-1,g_overwriteContext_007ED77C,"E:\\__titans\\nick\\to_torp.cpp",0x263);
   }
   st::fn_00405AA6(puVar14,'\0');
   if ((local_74[0] != '\0') &&
-     (iVar10 = st::fn_00404183((STT3DSprC *)puVar14,2,DAT_00806764,local_74,0x1d),
+     (iVar10 = st::fn_00404183((STT3DSprC *)puVar14,2,PTR_00806764,local_74,0x1d),
      iVar10 == 0)) {
     st::fn_00405AA6(puVar14,'\x02');
     uVar15 = st::fn_004022AC((STT3DSprC *)puVar14,'\x02');
@@ -2666,7 +2666,7 @@ LAB_00642561:
     this_00->field_0x284 = 0;
   }
   if (local_2c[0] != '\0') {
-    iVar10 = st::fn_00404183((STT3DSprC *)puVar14,1,DAT_00806774,local_2c,0x1d);
+    iVar10 = st::fn_00404183((STT3DSprC *)puVar14,1,PTR_00806774,local_2c,0x1d);
     if (iVar10 != 0) {
       st::fn_006A5E40
                 (-1,g_overwriteContext_007ED77C,"E:\\__titans\\nick\\to_torp.cpp",0x270);
@@ -2685,7 +2685,7 @@ LAB_00642561:
       st::fn_006A5E40
                 (-1,g_overwriteContext_007ED77C,"E:\\__titans\\nick\\to_torp.cpp",0x277);
     }
-    st::fn_004044EE((STT3DSprC *)puVar14,DAT_008032b8,0x10);
+    st::fn_004044EE((STT3DSprC *)puVar14,PTR_008032b8,0x10);
     st::fn_00403233((STT3DSprC *)puVar14,'\x01');
   }
   uVar15 = 0x45;
@@ -2788,7 +2788,7 @@ switchD_00640fbd_caseD_a2:
 }
 
 // 00645020 STTorpC::IsDangerous
-#line 1 "decomp/ST.exe/functions/00645020/decomp.c"
+#line 4 "decomp/ST.exe/functions/00645020/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\nick\to_torp.cpp
    STTorpC::IsDangerous */
@@ -2851,7 +2851,7 @@ int __thiscall st::fn_00645020(STTorpC *this,int param_1,uint *param_2)
 }
 
 // 006451B0 STTorpC::SetDangerous
-#line 1 "decomp/ST.exe/functions/006451B0/decomp.c"
+#line 4 "decomp/ST.exe/functions/006451B0/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\nick\to_torp.cpp
    STTorpC::SetDangerous
@@ -2896,7 +2896,7 @@ undefined4 __thiscall st::fn_006451B0(STTorpC *this,uint param_1,uint *param_2)
 }
 
 // 006452A0 STTorpC::ClearDangerous
-#line 1 "decomp/ST.exe/functions/006452A0/decomp.c"
+#line 4 "decomp/ST.exe/functions/006452A0/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\nick\to_torp.cpp
    STTorpC::ClearDangerous */
@@ -2948,7 +2948,7 @@ undefined4 __thiscall st::fn_006452A0(STTorpC *this,int param_1,uint param_2)
 }
 
 // 00645420 STTorpC::SaveTorpData
-#line 1 "decomp/ST.exe/functions/00645420/decomp.c"
+#line 4 "decomp/ST.exe/functions/00645420/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\nick\to_torp.cpp
    STTorpC::SaveTorpData
@@ -3082,7 +3082,7 @@ byte * __thiscall st::fn_00645420(STTorpC *this,int *param_1)
 }
 
 // 006456C0 STTorpC::RestoreTorpData
-#line 1 "decomp/ST.exe/functions/006456C0/decomp.c"
+#line 4 "decomp/ST.exe/functions/006456C0/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\nick\to_torp.cpp
    STTorpC::RestoreTorpData */

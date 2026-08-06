@@ -55,8 +55,8 @@ uint __fastcall FUN_00721340(AnonShape_00721340_81196542 *param_1)
       FreeAndNull(&local_8);
       if (param_1->field_0210 + param_1->field_0148 == 0) {
         uVar4 = Library::DKW::TBL::FUN_006b6020
-                          ((uint *)param_1->field_0138,param_1->field_0144 + param_1->field_020C,
-                           PTR_DAT_007f0b04);
+                          ((DArrayTy *)param_1->field_0138,param_1->field_0144 + param_1->field_020C
+                           ,PTR_DAT_007f0b04);
         if (-1 < (int)uVar4) {
           return 0;
         }
@@ -76,8 +76,8 @@ uint __fastcall FUN_00721340(AnonShape_00721340_81196542 *param_1)
         }
         Library::MSVCRT::_strncpy(local_8,local_c,param_1->field_0210 + param_1->field_0148);
         uVar4 = Library::DKW::TBL::FUN_006b6020
-                          ((uint *)param_1->field_0138,param_1->field_0144 + param_1->field_020C,
-                           local_8);
+                          ((DArrayTy *)param_1->field_0138,param_1->field_0144 + param_1->field_020C
+                           ,local_8);
         if (-1 < (int)uVar4) {
           FreeAndNull(&local_8);
           return 0;

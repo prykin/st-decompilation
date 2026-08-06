@@ -11,7 +11,7 @@ void FUN_0042a860(void)
 {
   int iVar1;
   undefined1 *puVar2;
-  undefined1 *puVar3;
+  short *psVar3;
   undefined1 local_448 [1024];
   InternalExceptionFrame local_48;
 
@@ -21,14 +21,14 @@ void FUN_0042a860(void)
   if (iVar1 == 0) {
     puVar2 = local_448 + 1;
     iVar1 = 0x100;
-    puVar3 = (undefined1 *)(DAT_00806750 + 0xe);
+    psVar3 = PTR_00806750 + 7;
     do {
-      puVar2[-1] = puVar3[-1];
-      *puVar2 = *puVar3;
-      puVar2[1] = puVar3[1];
+      puVar2[-1] = *(undefined1 *)((int)psVar3 + -1);
+      *puVar2 = (char)*psVar3;
+      puVar2[1] = STField<undefined1>(psVar3,1);
       puVar2 = puVar2 + 4;
       iVar1 = iVar1 + -1;
-      puVar3 = puVar3 + 4;
+      psVar3 = psVar3 + 2;
     } while (iVar1 != 0);
     FUN_006b08f0((AnonShape_GLOBAL_0080759C_9638EF10 *)g_dDXContext_0080759C,(int)local_448,0,0x100);
     g_currentExceptionFrame = local_48.previous;

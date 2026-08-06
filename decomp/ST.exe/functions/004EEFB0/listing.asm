@@ -1,4 +1,4 @@
-FUN_004eefb0:
+BldBoatPanelTy::ShiftControls:
 004EEFB0  55                        PUSH EBP
 004EEFB1  8B EC                     MOV EBP,ESP
 004EEFB3  56                        PUSH ESI

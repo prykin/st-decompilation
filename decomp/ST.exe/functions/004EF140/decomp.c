@@ -33,11 +33,11 @@ void __thiscall BldBoatPanelTy::sub_004EF140(BldBoatPanelTy *this)
     do {
       this->field_0028 = 0x21;
       FUN_006e6080(this,2,*puVar6,(undefined4 *)&this->field_0x18);
-      iVar3 = this->field_002C;
+      iVar3 = *(int *)&this->field_0x2c;
       /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
       uVar2 = (uint)((uint)(local_8 + this->field_0199) <
                     *(uint *)((&this->field_027A)[(byte)this->field_0278] + 0xc));
-      this->field_002C = uVar2;
+      *(uint *)&this->field_0x2c = uVar2;
       if (uVar2 == 0) {
         if (iVar3 != 0) goto LAB_004ef270;
 LAB_004ef1cc:
@@ -52,7 +52,7 @@ LAB_004ef270:
       }
       FUN_006e6080(this,2,uVar8,(undefined4 *)&this->field_0x18);
       /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-      if ((((this->field_002C != 0) &&
+      if ((((*(int *)&this->field_0x2c != 0) &&
            (iVar3 = (&this->field_027A)[(byte)this->field_0278], iVar3 != 0)) &&
           (uVar2 = this->field_0199 + local_8, uVar2 < *(uint *)(iVar3 + 0xc))) &&
          (pGVar4 = (Global_sub_00523410_param_1Enum *)

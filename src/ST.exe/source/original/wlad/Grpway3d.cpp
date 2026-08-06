@@ -2,7 +2,7 @@
 // Generated translation unit: source/original/wlad/Grpway3d.cpp
 
 // 0040AE40 FUN_0040ae40
-#line 1 "decomp/ST.exe/functions/0040AE40/decomp.c"
+#line 4 "decomp/ST.exe/functions/0040AE40/decomp.c"
 /* [STSourceProvenanceApplier begin]
    Recovered source file: E:\__titans\wlad\Grpway3d.cpp
    Diagnostic line evidence: 275 (metadata/report site, not the function definition)
@@ -431,7 +431,7 @@ LAB_0040b56a:
 }
 
 // 0040BC90 FUN_0040bc90
-#line 1 "decomp/ST.exe/functions/0040BC90/decomp.c"
+#line 4 "decomp/ST.exe/functions/0040BC90/decomp.c"
 /* [STSourceProvenanceApplier begin]
    Recovered source file: E:\__titans\wlad\Grpway3d.cpp
    Diagnostic line evidence: 371 (metadata/report site, not the function definition)
@@ -583,7 +583,7 @@ st::fn_0040BC90(void *this,uint param_1,short *param_2,short *param_3,short *par
 }
 
 // 0040C080 FUN_0040c080
-#line 1 "decomp/ST.exe/functions/0040C080/decomp.c"
+#line 4 "decomp/ST.exe/functions/0040C080/decomp.c"
 /* [STSourceProvenanceApplier begin]
    Recovered source file: E:\__titans\wlad\Grpway3d.cpp
    Diagnostic line evidence: 563 (metadata/report site, not the function definition)
@@ -948,7 +948,7 @@ LAB_0040c875:
 }
 
 // 0040E0F0 FUN_0040e0f0
-#line 1 "decomp/ST.exe/functions/0040E0F0/decomp.c"
+#line 4 "decomp/ST.exe/functions/0040E0F0/decomp.c"
 /* [STSourceProvenanceApplier begin]
    Recovered source file: E:\__titans\wlad\Grpway3d.cpp
    Diagnostic line evidence: 2357 (metadata/report site, not the function definition)
@@ -1267,7 +1267,7 @@ LAB_0040e872:
 }
 
 // 0040FC40 FUN_0040fc40
-#line 1 "decomp/ST.exe/functions/0040FC40/decomp.c"
+#line 4 "decomp/ST.exe/functions/0040FC40/decomp.c"
 /* [STSourceProvenanceApplier begin]
    Recovered source file: E:\__titans\wlad\Grpway3d.cpp
    Diagnostic line evidence: 2635 (metadata/report site, not the function definition)
@@ -1874,7 +1874,7 @@ cf_break_loop_00411005:
 }
 
 // 00411260 FUN_00411260
-#line 1 "decomp/ST.exe/functions/00411260/decomp.c"
+#line 4 "decomp/ST.exe/functions/00411260/decomp.c"
 /* [STSourceProvenanceApplier begin]
    Recovered source file: E:\__titans\wlad\Grpway3d.cpp
    Diagnostic line evidence: 2926 (metadata/report site, not the function definition)
@@ -2210,7 +2210,7 @@ LAB_00411975:
 }
 
 // 00411E50 FUN_00411e50
-#line 1 "decomp/ST.exe/functions/00411E50/decomp.c"
+#line 4 "decomp/ST.exe/functions/00411E50/decomp.c"
 /* [STSourceProvenanceApplier begin]
    Recovered source file: E:\__titans\wlad\Grpway3d.cpp
    Diagnostic line evidence: 3130 (metadata/report site, not the function definition)
@@ -2665,9 +2665,9 @@ int st::fn_00413050(int param_1,int param_2,int param_3,int param_4,int param_5)
     else {
       iVar1 = *(int *)(&DAT_007a4bf8 + param_5 * 4);
     }
-    param_1 = DAT_007f4d54;
+    param_1 = (int)PTR_007f4d54;
     if (((byte)DAT_007f4d08 & 1) == 0) {
-      param_1 = DAT_007f4d50;
+      param_1 = (int)PTR_007f4d50;
     }
     iVar2 = st::fn_00413170(iVar2,param_2,param_3,param_4,&param_1,iVar1);
     if (iVar2 == 0) {
@@ -2697,18 +2697,18 @@ void st::fn_00414980(int param_1)
 {
   uint uVar1;
 
-  st::fn_0040450C(DAT_007f4d50,2);
+  st::fn_0040450C(PTR_007f4d50,2);
   uVar1 = param_1 * 4 + 8;
-  DAT_007f4d50 = st::fn_00401104(uVar1,2,"E:\\__titans\\wlad\\Grpway3d.cpp",0x55d);
-  if (DAT_007f4d50 == nullptr) {
+  PTR_007f4d50 = st::fn_00401104(uVar1,2,"E:\\__titans\\wlad\\Grpway3d.cpp",0x55d);
+  if (PTR_007f4d50 == nullptr) {
     st::fn_006A5E40
               (-2,g_overwriteContext_007ED77C,"E:\\__titans\\wlad\\Grpway3d.cpp",0x55e);
     return;
   }
   st::fn_00414A70(0,param_1);
-  st::fn_0040450C(DAT_007f4d54,2);
-  DAT_007f4d54 = st::fn_00401104(uVar1,2,"E:\\__titans\\wlad\\Grpway3d.cpp",0x566);
-  if (DAT_007f4d54 == nullptr) {
+  st::fn_0040450C(PTR_007f4d54,2);
+  PTR_007f4d54 = st::fn_00401104(uVar1,2,"E:\\__titans\\wlad\\Grpway3d.cpp",0x566);
+  if (PTR_007f4d54 == nullptr) {
     st::fn_006A5E40
               (-2,g_overwriteContext_007ED77C,"E:\\__titans\\wlad\\Grpway3d.cpp",0x567);
     return;
@@ -2718,7 +2718,7 @@ void st::fn_00414980(int param_1)
 }
 
 // 00415160 STGroupBoatC::Way3DGrpDistribTgt
-#line 1 "decomp/ST.exe/functions/00415160/decomp.c"
+#line 4 "decomp/ST.exe/functions/00415160/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\wlad\Grpway3d.cpp
    STGroupBoatC::Way3DGrpDistribTgt */
@@ -2876,7 +2876,7 @@ LAB_00415472:
 }
 
 // 00415590 STGroupBoatC::Way3DGrpGetDistrPoint
-#line 1 "decomp/ST.exe/functions/00415590/decomp.c"
+#line 4 "decomp/ST.exe/functions/00415590/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\wlad\Grpway3d.cpp
    STGroupBoatC::Way3DGrpGetDistrPoint */

@@ -26,14 +26,14 @@ undefined4 __thiscall HelpPanelTy::SetPanel(HelpPanelTy *this,char param_1)
   if (errorCode == 0) {
     local_8->field_01A0 = param_1;
     if (param_1 != '\0') {
-      if (g_prodPanel_008016E8 != nullptr) {
-        ProdPanelTy::SetPanel(g_prodPanel_008016E8,'\0');
+      if (g_researchPanel_008016E8 != nullptr) {
+        ProdPanelTy::SetPanel(g_researchPanel_008016E8,'\0');
       }
-      if (g_prodPanel_0080167C != nullptr) {
-        ProdPanelTy::SetPanel(g_prodPanel_0080167C,'\0');
+      if (g_bldBoatPanel_0080167C != nullptr) {
+        ProdPanelTy::SetPanel(g_bldBoatPanel_0080167C,'\0');
       }
-      if (g_prodPanel_00801684 != nullptr) {
-        ProdPanelTy::SetPanel(g_prodPanel_00801684,'\0');
+      if (g_bldObjPanel_00801684 != nullptr) {
+        ProdPanelTy::SetPanel(g_bldObjPanel_00801684,'\0');
       }
       if (g_infocPanel_00801698 != nullptr) {
         (*g_infocPanel_00801698->vtable->SetPanel)((SpecPanelTy *)g_infocPanel_00801698,'\0');
@@ -50,8 +50,8 @@ undefined4 __thiscall HelpPanelTy::SetPanel(HelpPanelTy *this,char param_1)
       if (g_upgPanel_00802A48 != nullptr) {
         (*g_upgPanel_00802A48->vtable->SetPanel)((SpecPanelTy *)g_upgPanel_00802A48,'\0');
       }
-      if (g_prodPanel_00801680 != nullptr) {
-        ProdPanelTy::SetPanel(g_prodPanel_00801680,'\0');
+      if (g_bldLabPanel_00801680 != nullptr) {
+        ProdPanelTy::SetPanel(g_bldLabPanel_00801680,'\0');
       }
       if (g_frmPanel_0080168C != nullptr) {
         (*g_frmPanel_0080168C->vtable->SetPanel)((SpecPanelTy *)g_frmPanel_0080168C,'\0');

@@ -46,7 +46,7 @@ FSGSTy::OutSGlProc(FSGSTy *this,AnonShape_GLOBAL_0080759C_9638EF10 *param_1,MMMO
       pcVar7 = g_startSystem_0081176C->field_0034;
       uVar6 = 0xffffffff;
       uVar5 = 0;
-      puVar3 = (uint *)LoadResourceString(0x256f,g_module_00807618);
+      puVar3 = (uint *)LoadResourceString(0x256f,g_hINSTANCE_00807618);
       StartServTy::WrTextDDX
                 (this_00,0,iVar2,param_5 + 10,param_6 + -0x14,0x14,puVar3,uVar5,uVar6,pcVar7,uVar8);
       FUN_006c6850((int)param_1,iVar2,param_5 + 0x1e,param_6 + -0x14,0x8e,
@@ -55,7 +55,7 @@ FSGSTy::OutSGlProc(FSGSTy *this,AnonShape_GLOBAL_0080759C_9638EF10 *param_1,MMMO
       pcVar7 = g_startSystem_0081176C->field_0034;
       uVar6 = 0xffffffff;
       uVar5 = 0;
-      puVar3 = (uint *)LoadResourceString(0x256b,g_module_00807618);
+      puVar3 = (uint *)LoadResourceString(0x256b,g_hINSTANCE_00807618);
       StartServTy::WrTextDDX
                 (this_01,0,iVar2,param_5 + 0xb4,param_6 + -0x14,0x14,puVar3,uVar5,uVar6,pcVar7,uVar8
                 );
@@ -65,7 +65,7 @@ FSGSTy::OutSGlProc(FSGSTy *this,AnonShape_GLOBAL_0080759C_9638EF10 *param_1,MMMO
       pcVar7 = g_startSystem_0081176C->field_0034;
       uVar6 = 0xffffffff;
       uVar5 = 0;
-      puVar3 = (uint *)LoadResourceString(0x256c,g_module_00807618);
+      puVar3 = (uint *)LoadResourceString(0x256c,g_hINSTANCE_00807618);
       StartServTy::WrTextDDX
                 (this_02,0,iVar2,param_5 + 0xe1,param_6 + -0x14,0x14,puVar3,uVar5,uVar6,pcVar7,uVar8
                 );
@@ -77,7 +77,7 @@ FSGSTy::OutSGlProc(FSGSTy *this,AnonShape_GLOBAL_0080759C_9638EF10 *param_1,MMMO
       pcVar7 = g_startSystem_0081176C->field_0034;
       uVar6 = 0xffffffff;
       uVar5 = 0;
-      puVar3 = (uint *)LoadResourceString(0x256d,g_module_00807618);
+      puVar3 = (uint *)LoadResourceString(0x256d,g_hINSTANCE_00807618);
       StartServTy::WrTextDDX
                 ((StartServTy *)(param_5 + 0x11a),0,iVar2,param_5 + 0x11a,(int)(local_8 + -10),0x14,
                  puVar3,uVar5,uVar6,pcVar7,uVar8);

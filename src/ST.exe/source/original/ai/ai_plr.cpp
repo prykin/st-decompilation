@@ -2,7 +2,7 @@
 // Generated translation unit: source/original/ai/ai_plr.cpp
 
 // 00678980 AiPlrClassTy::InitData
-#line 1 "decomp/ST.exe/functions/00678980/decomp.c"
+#line 4 "decomp/ST.exe/functions/00678980/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\ai\ai_plr.cpp
    AiPlrClassTy::InitData */
@@ -111,7 +111,7 @@ int __thiscall st::fn_00678980(AiPlrClassTy *this,undefined4 *param_1)
 }
 
 // 00678BE0 AiPlrClassTy::PrepareToSave
-#line 1 "decomp/ST.exe/functions/00678BE0/decomp.c"
+#line 4 "decomp/ST.exe/functions/00678BE0/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\ai\ai_plr.cpp
    AiPlrClassTy::PrepareToSave
@@ -173,7 +173,7 @@ byte * __thiscall st::fn_00678BE0(AiPlrClassTy *this,uint *param_1)
 }
 
 // 00679300 AiPlrClassTy::CloseTactByTitle
-#line 1 "decomp/ST.exe/functions/00679300/decomp.c"
+#line 4 "decomp/ST.exe/functions/00679300/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\ai\ai_plr.cpp
    AiPlrClassTy::CloseTactByTitle */
@@ -246,7 +246,7 @@ LAB_00679378:
 }
 
 // 00679470 AiPlrClassTy::CloseAllTact
-#line 1 "decomp/ST.exe/functions/00679470/decomp.c"
+#line 4 "decomp/ST.exe/functions/00679470/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\ai\ai_plr.cpp
    AiPlrClassTy::CloseAllTact */
@@ -324,7 +324,7 @@ LAB_00679519:
 }
 
 // 0067B3C0 AiPlrClassTy::SetTech
-#line 1 "decomp/ST.exe/functions/0067B3C0/decomp.c"
+#line 4 "decomp/ST.exe/functions/0067B3C0/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\ai\ai_plr.cpp
    AiPlrClassTy::SetTech
@@ -390,7 +390,7 @@ st::fn_0067B3C0(AiPlrClassTy *this,int param_1,int param_2,int param_3,char para
 }
 
 // 0067B520 AiPlrClassTy::ExecTech
-#line 1 "decomp/ST.exe/functions/0067B520/decomp.c"
+#line 4 "decomp/ST.exe/functions/0067B520/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\ai\ai_plr.cpp
    AiPlrClassTy::ExecTech
@@ -608,7 +608,7 @@ LAB_0067b724:
 }
 
 // 0067C180 AiPlrClassTy::Offensive
-#line 1 "decomp/ST.exe/functions/0067C180/decomp.c"
+#line 4 "decomp/ST.exe/functions/0067C180/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\ai\ai_plr.cpp
    AiPlrClassTy::Offensive
@@ -869,7 +869,7 @@ LAB_0067c61b:
 }
 
 // 0067C7E0 AiPlrClassTy::GetMessage
-#line 1 "decomp/ST.exe/functions/0067C7E0/decomp.c"
+#line 4 "decomp/ST.exe/functions/0067C7E0/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\ai\ai_plr.cpp
    AiPlrClassTy::GetMessage

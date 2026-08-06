@@ -2,7 +2,7 @@
 // Generated translation unit: source/recovered/by_owner/SubmarineTitans__Recovered__HiddenThis__AnonReceiver_006CEC40.cpp
 
 // 006D63E0 SubmarineTitans::Recovered::HiddenThis::AnonReceiver_006CEC40::FUN_006d63e0
-#line 1 "decomp/ST.exe/functions/006D63E0/decomp.c"
+#line 4 "decomp/ST.exe/functions/006D63E0/decomp.c"
 /* [STHiddenThisApplier] Anonymous hidden receiver recovered as
    /SubmarineTitans/Recovered/HiddenThis/AnonReceiver_006CEC40.
    Evidence: incoming_receiver_captures=1; receiver_accesses=17; incoming_edx_uses=0; calls=1;

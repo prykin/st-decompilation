@@ -74,7 +74,7 @@ void __thiscall PlayPanelTy::PaintPlayPanel(PlayPanelTy *this)
       uVar7 = (DAT_0080874e != '\x03') - 1 & 5;
       iVar12 = -1;
       iVar11 = -1;
-      resourceString = (uint *)LoadResourceString(resourceId,g_module_00807618);
+      resourceString = (uint *)LoadResourceString(resourceId,g_hINSTANCE_00807618);
       ccFntTy::WrStr(pPVar4->field_01DD,resourceString,iVar11,iVar12,uVar7);
       ccFntTy::SetSurf(pPVar4->field_01DD,(int)pPVar4->field_0068,0,0x68,uVar8,0x10e,0xc);
       iVar11 = FUN_00711110(pPVar4->field_01DD,

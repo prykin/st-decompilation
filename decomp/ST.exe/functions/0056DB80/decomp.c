@@ -173,19 +173,19 @@ void __thiscall STAppC::StartGame(STAppC *this)
     if (g_cMf32_00806760 != nullptr) {
       thunk_FUN_0055d910();
       cMf32::RecMemFree(g_cMf32_00806760,&DAT_0080679c);
-      if (DAT_00806764 != nullptr) {
-        FUN_0070a300((int *)&DAT_00806764);
+      if (PTR_00806764 != nullptr) {
+        FUN_0070a300((int *)&PTR_00806764);
       }
       cMf32::delete(g_cMf32_00806760);
       g_cMf32_00806760 = nullptr;
     }
     g_cMf32_00806760 = (cMf32 *)Library::Ourlib::MF32INT::FUN_006f0ec0(0x345,&local_224,0,0,0);
-    DAT_00806764 = Library::Ourlib::MFRLOAD::mfRLoadCreate((int)g_cMf32_00806760);
+    PTR_00806764 = Library::Ourlib::MFRLOAD::mfRLoadCreate((int)g_cMf32_00806760);
     DAT_0080679c = FUN_0070a9f0(g_cMf32_00806760,"PALETTE",2,1);
     LoadGamePlt((int)g_cMf32_00806760,0);
     if (pSVar12->field_7D0E == 0) {
       puVar15 = &pSVar12->field_4DA3;
-      pcVar8 = LoadResourceString(0x267f,g_module_00807618);
+      pcVar8 = LoadResourceString(0x267f,g_hINSTANCE_00807618);
       wsprintfA(&pSVar12->field_7D1A,"%s %s",pcVar8,puVar15);
       if (g_cLoading_00802A58 != nullptr) {
         cLoadingTy::DrawLineCR(g_cLoading_00802A58,&pSVar12->field_7D1A);
@@ -224,7 +224,7 @@ void __thiscall STAppC::StartGame(STAppC *this)
                   (&pSVar12->field_76F6,nullptr,nullptr,local_328,nullptr);
         pbVar14 = local_328;
       }
-      pcVar8 = LoadResourceString(0x267f,g_module_00807618);
+      pcVar8 = LoadResourceString(0x267f,g_hINSTANCE_00807618);
       wsprintfA(&pSVar12->field_7D1A,"%s %s",pcVar8,pbVar14);
       if (g_cLoading_00802A58 != nullptr) {
         cLoadingTy::DrawLineCR(g_cLoading_00802A58,&pSVar12->field_7D1A);
@@ -301,21 +301,21 @@ void __thiscall STAppC::StartGame(STAppC *this)
                *(char **)(s_FrmPanelTy__GetMessage_007c2ae0 + (uint)DAT_0080733b * 0x18 + 0x10),
                *(char **)(s_FrmPanelTy__GetMessage_007c2ae0 + (uint)DAT_0080733b * 0x18 + 4));
     ST3DSMAPContext::sub_006DDA90(g_sT3DSMAPContext_00807598,0.7,0.95);
-    ST3DSMAPContext::sub_006DDAE0(g_sT3DSMAPContext_00807598,0x10,4,4,DAT_008032c8);
+    ST3DSMAPContext::sub_006DDAE0(g_sT3DSMAPContext_00807598,0x10,4,4,PTR_008032c8);
     if (DAT_00807328 == 0) {
       ST3DSMAPContext::sub_006DDBB0(g_sT3DSMAPContext_00807598);
     }
     pSVar4 = g_sT3DSMAPContext_00807598;
-    uVar2 = DAT_008032c0;
+    puVar7 = PTR_008032c0;
     g_sT3DSMAPContext_00807598->field_0278 = 0x10;
-    pSVar4->field_027C = uVar2;
+    pSVar4->field_027C = puVar7;
     ST3DSMAPContext::sub_006E8630(g_sT3DSMAPContext_00807598,DAT_0080732c);
     thunk_FUN_005782d0();
     CreatePlaySystem();
     cMf32::delete(g_cMf32_00806754);
     g_cMf32_00806754 = nullptr;
     if (g_cLoading_00802A58 != nullptr) {
-      pcVar8 = LoadResourceString(0x2680,g_module_00807618);
+      pcVar8 = LoadResourceString(0x2680,g_hINSTANCE_00807618);
       cLoadingTy::DrawLineCR(g_cLoading_00802A58,pcVar8);
       if ((pSVar12->field_115E != '\0') && (pSVar12->field_1163 == '\x03')) {
         Sleep(2000);

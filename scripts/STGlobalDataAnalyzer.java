@@ -1,6 +1,7 @@
 // Recover conservative types and structural names for generic global data symbols.
-// Evidence comes from use as a typed this receiver or as an argument of a trusted prototype.
-// Read-only: writes global_data_*.{tsv,jsonl,txt}.
+// Evidence comes from use as a typed this receiver, as an argument of a trusted prototype,
+// or from an exact trusted pointer return stored into the global.
+// Read-only: writes global_data_*.tsv/global_data_*.txt.
 // @author OpenAI
 // @category SubmarineTitans.Recovery
 // @menupath Tools.Submarine Titans.Analyze Global Data
@@ -75,6 +76,7 @@ public class STGlobalDataAnalyzer extends GhidraScript {
         List<Proposal> proposals = makeProposals();
         List<PointerAudit> pointerAudit = pointerAudit(proposals);
         writeTsv(directory.resolve("global_data_proposals.tsv"), proposals);
+        writeCallBoundaryAudit(directory.resolve("global_call_boundary_audit.tsv"), proposals);
         writePointerAudit(directory.resolve("global_pointer_audit.tsv"), pointerAudit);
         writePointerSummary(directory.resolve("global_pointer_summary.txt"), pointerAudit);
         writeSummary(directory.resolve("global_data_summary.txt"), proposals,
@@ -124,8 +126,8 @@ public class STGlobalDataAnalyzer extends GhidraScript {
                 typedRegisters.remove("EDX");
                 String returnType = called == null ? "" : constructorPointer(called);
                 boolean constructorResult = !returnType.isBlank();
-                if (returnType.isBlank() && called != null)
-                    returnType = namedStructurePointer(called.getReturnType());
+                if (returnType.isBlank() && called != null && trustedPointerReturn(called))
+                    returnType = concretePointer(called.getReturnType());
                 if (constructorResult)
                     collectConstructorGlobal(function, called, instruction, returnType);
                 if (!returnType.isBlank()) typedRegisters.put("EAX",
@@ -278,9 +280,12 @@ public class STGlobalDataAnalyzer extends GhidraScript {
             String site = addr(containing.getEntryPoint()) + " stores named pointer from " +
                 value.producer + " @ " + addr(instruction.getAddress());
             add(global.address, value.type, "", true, false, site);
-            evidence.get(global.address).typedStores++;
+            Evidence ev = evidence.get(global.address);
+            ev.typedStores++;
+            ev.typedStoreTypes.merge(value.type, 1, Integer::sum);
+            ev.typedStoreSites.add(site);
             if (value.constructorResult)
-                evidence.get(global.address).constructorStores.merge(
+                ev.constructorStores.merge(
                     value.type, 1, Integer::sum);
             return;
         }
@@ -296,17 +301,36 @@ public class STGlobalDataAnalyzer extends GhidraScript {
         return null;
     }
 
-    private String namedStructurePointer(DataType type) {
+    private String concretePointer(DataType type) {
         while (type instanceof TypeDef typedef) type = typedef.getBaseDataType();
         if (!(type instanceof Pointer pointer)) return "";
         type = pointer.getDataType();
         while (type instanceof TypeDef typedef) type = typedef.getBaseDataType();
-        if (!(type instanceof Structure structure) ||
-                structure.getName().startsWith("Anon") ||
-                structure.getPathName().contains("/Recovered/PointerShapes/") ||
-                structure.getPathName().contains("/Recovered/ClassPointees/") ||
-                structure.getPathName().contains("/Recovered/HiddenThis/")) return "";
-        return "pointer:" + structure.getPathName();
+        if (type == null || Undefined.isUndefined(type) ||
+                "/void".equals(type.getPathName())) return "";
+        if (type instanceof Structure structure &&
+                (structure.getName().startsWith("Anon") ||
+                 structure.getPathName().contains("/Recovered/PointerShapes/") ||
+                 structure.getPathName().contains("/Recovered/ClassPointees/") ||
+                 structure.getPathName().contains("/Recovered/HiddenThis/"))) return "";
+        return "pointer:" + type.getPathName();
+    }
+
+    /**
+     * A direct return store is an anchor only when the callee boundary has independent
+     * provenance.  A DEFAULT pointer spelling on an ordinary internal function is often
+     * exactly the weak inference this pass is meant to audit and must not validate itself.
+     */
+    private boolean trustedPointerReturn(Function function) {
+        if (function == null || concretePointer(function.getReturnType()).isBlank()) return false;
+        Parameter returned = function.getReturn();
+        if (returned != null && (returned.getSource() == SourceType.USER_DEFINED ||
+                returned.getSource() == SourceType.IMPORTED)) return true;
+        if (isLibrary(function)) return true;
+        for (FunctionTag tag : function.getTags())
+            if (Set.of("RECOVERED_PROTOTYPE", "RECOVERED_UTILITY_SEMANTICS",
+                    "RECOVERED_CONSTRUCTOR").contains(tag.getName())) return true;
+        return false;
     }
 
     private String constructorPointer(Function function) {
@@ -349,6 +373,12 @@ public class STGlobalDataAnalyzer extends GhidraScript {
                 parameter.getSource() == SourceType.IMPORTED, addressEvidence,
                 addr(containing.getEntryPoint()) + " passed to " + called.getName(true) +
                 " parameter " + parameter.getName() + " @ " + addr(site));
+            Evidence ev = evidence.get(value.address);
+            ev.callBoundaryTypes.merge(type, 1, Integer::sum);
+            ev.callBoundarySites.add(addr(containing.getEntryPoint()) + " -> " +
+                addr(called.getEntryPoint()) + " parameter " + parameter.getOrdinal() +
+                " as " + type + " @ " + addr(site) +
+                (addressEvidence ? " (address-of global)" : " (global value)"));
         }
     }
 
@@ -418,7 +448,9 @@ public class STGlobalDataAnalyzer extends GhidraScript {
                 currentName.matches("(?i)g_[A-Za-z0-9_]+_[0-9a-f]{8}");
             if (!synthetic) continue;
             String constructorType = unique(ev.constructorStores);
-            String proposedType = constructorType.isBlank() ? unique(ev.types) : constructorType;
+            String typedStoreType = unique(ev.typedStoreTypes);
+            String proposedType = !constructorType.isBlank() ? constructorType :
+                !typedStoreType.isBlank() ? typedStoreType : unique(ev.types);
             String currentType = typeSpecification(data.getDataType());
             ContextVote context = dominantLibraryContext(ev);
             boolean contextualAnonymous = context != null &&
@@ -428,8 +460,13 @@ public class STGlobalDataAnalyzer extends GhidraScript {
                     context.family, address, data.getDataType());
             boolean constructorConflict = ev.constructorStores.size() > 1;
             boolean constructorDominates = !constructorType.isBlank() && !constructorConflict;
-            boolean typeConflict = !contextualAnonymous && (constructorConflict ||
-                !constructorDominates && ev.types.size() > 1);
+            boolean typedStoreConflict = ev.typedStoreTypes.size() > 1;
+            boolean typedStoreDominates = constructorType.isBlank() &&
+                !typedStoreType.isBlank() && !typedStoreConflict;
+            boolean anchoredStoreDominates = constructorDominates || typedStoreDominates;
+            boolean typeConflict = !contextualAnonymous &&
+                (constructorConflict || typedStoreConflict ||
+                 !anchoredStoreDominates && ev.types.size() > 1);
             int count = proposedType.isBlank() ? 0 : ev.types.getOrDefault(proposedType, 0);
             int currentTypeCount = ev.types.getOrDefault(currentType, 0);
             boolean currentTypeDominates = currentTypeCount >= 3;
@@ -474,10 +511,10 @@ public class STGlobalDataAnalyzer extends GhidraScript {
                 context.count >= ev.addressEvidence * 16;
             boolean addressEvidenceCompatible =
                 ev.addressEvidence == 0 || contextualAddressSafe ||
-                constructorDominates && proposedType.startsWith("pointer:");
+                anchoredStoreDominates && proposedType.startsWith("pointer:");
             boolean typeApply = !typeConflict && typeChange && smallSafeType &&
                 currentReplaceable && extentCompatible && addressEvidenceCompatible &&
-                (contextualAnonymous || constructorDominates || ev.typedStores >= 1 ||
+                (contextualAnonymous || anchoredStoreDominates || ev.typedStores >= 1 ||
                     ev.strongCount >= 2 || count >= 3);
             String proposedName = unique(ev.names);
             int proposedNameCount = proposedName.isBlank() ? 0 :
@@ -509,6 +546,8 @@ public class STGlobalDataAnalyzer extends GhidraScript {
             reasons.add("strong_semantic_names=" + ev.strongNames);
             reasons.add("strong_evidence=" + ev.strongCount);
             reasons.add("closed_named_pointer_stores=" + ev.typedStores);
+            reasons.add("typed_pointer_return_store_types=" + ev.typedStoreTypes);
+            reasons.add("call_boundary_types=" + ev.callBoundaryTypes);
             reasons.add("constructor_store_types=" + ev.constructorStores);
             reasons.add("library_context_votes=" + ev.libraryContexts);
             if (contextualAnonymous)
@@ -516,6 +555,8 @@ public class STGlobalDataAnalyzer extends GhidraScript {
                     "; context_votes=" + context.count + "/" + context.total);
             if (constructorDominates && ev.types.size() > 1)
                 reasons.add("constructor_store_dominates_weaker_use_types");
+            if (typedStoreDominates && ev.types.size() > 1)
+                reasons.add("trusted_pointer_return_store_dominates_weaker_use_types");
             if (typeConflict) reasons.add("type_conflict");
             if (currentTypeDominates) reasons.add("existing_type_dominates_conflicting_evidence=" +
                 currentTypeCount);
@@ -523,10 +564,10 @@ public class STGlobalDataAnalyzer extends GhidraScript {
                 reasons.add("address_of_pointer_global_compatible=" +
                     ev.addressEvidence + "; context_to_address_quorum=" +
                     context.count + ":" + ev.addressEvidence);
-            else if (ev.addressEvidence > 0 && constructorDominates &&
+            else if (ev.addressEvidence > 0 && anchoredStoreDominates &&
                     proposedType.startsWith("pointer:"))
                 reasons.add(
-                    "address_of_pointer_global_compatible_with_constructor_store=" +
+                    "address_of_pointer_global_compatible_with_trusted_store=" +
                     ev.addressEvidence);
             else if (ev.addressEvidence > 0)
                 reasons.add("address_of_global_requires_review");
@@ -738,8 +779,17 @@ public class STGlobalDataAnalyzer extends GhidraScript {
         return result;
     }
     private String structuralName(String typePath, Address address) {
+        DataType identity = dataTypes.getDataType(typePath);
+        while (identity instanceof TypeDef typedef)
+            identity = typedef.getBaseDataType();
+        // A primitive pointee proves a storage role, not a semantic global identity.
+        // Names such as g_int_* make the corpus noisier and become stale as soon as a
+        // later pass recovers the actual handle/record type.  Retain DAT_* until a
+        // structure identity or independent parameter-name quorum exists.
+        if (!(identity instanceof Structure)) return "";
         String leaf = typePath.substring(typePath.lastIndexOf('/') + 1)
-            .replaceAll("(?i)Ty$", "").replaceAll("C$", "");
+            .replaceAll("(?i)Ty$", "").replaceAll("C$", "")
+            .replaceAll("_+$", "");
         if (leaf.matches("ST[A-Z].*")) leaf = leaf.substring(2);
         leaf = cleanName(leaf);
         return leaf.isBlank() ? "" : "g_" + leaf + "_" + addr(address);
@@ -876,6 +926,37 @@ public class STGlobalDataAnalyzer extends GhidraScript {
                 tsv(String.join(" | ", p.sites)) + "\t" + tsv(p.reason) + "\n");
         }
     }
+
+    private void writeCallBoundaryAudit(Path path, List<Proposal> proposals)
+            throws Exception {
+        Map<Address, Proposal> byAddress = new HashMap<>();
+        for (Proposal proposal : proposals) byAddress.put(proposal.address, proposal);
+        try (BufferedWriter out = Files.newBufferedWriter(path, StandardCharsets.UTF_8)) {
+            out.write("address\tname\tcurrent_type\tcall_boundary_types\t" +
+                "trusted_pointer_return_store_types\tconstructor_store_types\t" +
+                "address_of_uses\tproposed_type\ttype_apply\tcall_boundary_sites\t" +
+                "trusted_store_sites\n");
+            for (Map.Entry<Address, Evidence> entry : evidence.entrySet()) {
+                Evidence ev = entry.getValue();
+                if (ev.callBoundaryTypes.isEmpty() && ev.typedStoreTypes.isEmpty()) continue;
+                Data data = currentProgram.getListing().getDefinedDataAt(entry.getKey());
+                Symbol symbol = currentProgram.getSymbolTable()
+                    .getPrimarySymbol(entry.getKey());
+                if (data == null || symbol == null) continue;
+                Proposal proposal = byAddress.get(entry.getKey());
+                out.write(addr(entry.getKey()) + "\t" + tsv(symbol.getName()) + "\t" +
+                    tsv(typeSpecification(data.getDataType())) + "\t" +
+                    tsv(ev.callBoundaryTypes.toString()) + "\t" +
+                    tsv(ev.typedStoreTypes.toString()) + "\t" +
+                    tsv(ev.constructorStores.toString()) + "\t" +
+                    ev.addressEvidence + "\t" +
+                    tsv(proposal == null ? "" : proposal.proposedType) + "\t" +
+                    bit(proposal != null && proposal.typeApply) + "\t" +
+                    tsv(String.join(" | ", ev.callBoundarySites)) + "\t" +
+                    tsv(String.join(" | ", ev.typedStoreSites)) + "\n");
+            }
+        }
+    }
     private void writeJson(Path path, List<Proposal> rows) throws Exception {
         List<String> lines = new ArrayList<>();
         for (Proposal p : rows) lines.add("{\"type_apply\":" + p.typeApply +
@@ -923,7 +1004,13 @@ public class STGlobalDataAnalyzer extends GhidraScript {
             "type_auto_apply=" + rows.stream().filter(r -> r.typeApply).count(),
             "name_auto_apply=" + rows.stream().filter(r -> r.nameApply).count(),
             "conflicts=" + rows.stream().filter(r -> r.confidence.equals("conflict")).count(),
+            "globals_with_call_boundary_evidence=" + evidence.values().stream()
+                .filter(value -> !value.callBoundaryTypes.isEmpty()).count(),
+            "globals_with_trusted_pointer_return_store=" + evidence.values().stream()
+                .filter(value -> !value.typedStoreTypes.isEmpty()).count(),
             "note=Automatic types require repeated non-address-of evidence and replace only undefined/script-owned data.",
+            "note_pointer_return_store=A trusted concrete pointer return stored into an exact " +
+                "global is an independent type anchor and dominates weaker use-site spellings.",
             "note_constructor_stores=A unique named constructor result stored into a global " +
                 "dominates weaker generic use-site types.",
             "note_names=Automatic names are structural and retain the address suffix.",
@@ -953,8 +1040,10 @@ public class STGlobalDataAnalyzer extends GhidraScript {
     }
     private static class Evidence {
         final Map<String, Integer> types = new TreeMap<>(), names = new TreeMap<>(),
-            constructorStores = new TreeMap<>(), libraryContexts = new TreeMap<>();
-        final Set<String> sites = new TreeSet<>(), strongNames = new TreeSet<>();
+            constructorStores = new TreeMap<>(), typedStoreTypes = new TreeMap<>(),
+            callBoundaryTypes = new TreeMap<>(), libraryContexts = new TreeMap<>();
+        final Set<String> sites = new TreeSet<>(), strongNames = new TreeSet<>(),
+            typedStoreSites = new TreeSet<>(), callBoundarySites = new TreeSet<>();
         int strongCount, addressEvidence, typedStores, libraryContextCalls;
     }
     private record ContextVote(String family, int count, int total) {}

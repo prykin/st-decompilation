@@ -26,7 +26,7 @@ undefined4 FUN_005ec9f0(int param_1)
   if (param_1 == 0) {
     thunk_FUN_004ad380(this,DAT_007cde88,DAT_007cde8c);
     iVar1 = STT3DSprC::LoadSequence
-                      ((STT3DSprC *)this,0xe,DAT_00806774,local_10[local_8->field_02B1],0x1d);
+                      ((STT3DSprC *)this,0xe,PTR_00806774,local_10[local_8->field_02B1],0x1d);
     if (iVar1 != 0) {
       return local_c;
     }
@@ -43,7 +43,7 @@ undefined4 FUN_005ec9f0(int param_1)
     iVar1 = thunk_FUN_004ad650((STT3DSprC *)this);
     local_8->field_02D6 = iVar1;
     if (local_8->field_0235 == '\x01') {
-      STT3DSprC::LoadSequence((STT3DSprC *)this,0xb,DAT_00806774,"forcef0",0x1d);
+      STT3DSprC::LoadSequence((STT3DSprC *)this,0xb,PTR_00806774,"forcef0",0x1d);
       thunk_FUN_004ad670(this,'\x0e');
       thunk_FUN_004ad150(this,'\v');
       thunk_FUN_004ac700(this,'\v');
@@ -54,17 +54,17 @@ undefined4 FUN_005ec9f0(int param_1)
   }
   else {
     STT3DSprC::LoadSequence
-              ((STT3DSprC *)this,8,DAT_00806774,
+              ((STT3DSprC *)this,8,PTR_00806774,
                "expl_bt0" + (uint)local_8->field_02DF * 0x32,0x1d);
     STT3DSprC::LoadSequence
-              ((STT3DSprC *)this,9,DAT_00806764,
+              ((STT3DSprC *)this,9,PTR_00806764,
                "expl_bbt0" + (uint)local_8->field_02DF * 0x32,0x1d);
     STT3DSprC::LoadSequence
-              ((STT3DSprC *)this,10,DAT_00806774,
+              ((STT3DSprC *)this,10,PTR_00806774,
                "expmask3" + (uint)local_8->field_02DF * 0x32,0x1d);
     thunk_FUN_004ac700(this,'\n');
     STT3DSprC::StartShow((STT3DSprC *)this,10,g_playSystem_00802A38->field_00E4);
-    STT3DSprC::sub_004ACF20((STT3DSprC *)this,DAT_008032b8,0x10);
+    STT3DSprC::sub_004ACF20((STT3DSprC *)this,PTR_008032b8,0x10);
     STT3DSprC::StartShow((STT3DSprC *)this,8,g_playSystem_00802A38->field_00E4);
     STT3DSprC::sub_004ACFE0((STT3DSprC *)this,'\n');
     iVar1 = thunk_FUN_004ad650((STT3DSprC *)this);

@@ -2,7 +2,7 @@
 // Generated translation unit: source/recovered/by_owner/STExplosion.cpp
 
 // 00604080 STExplosion::STExplosion
-#line 1 "decomp/ST.exe/functions/00604080/decomp.c"
+#line 4 "decomp/ST.exe/functions/00604080/decomp.c"
 /* [STConstructorApplier] Recovered constructor candidate.
    VTable: 0079CB14 (store 00604098)
    Evidence: final_vptr=0079CB14; returns_this=true; calls_before=1; field_writes_after=8;
@@ -18,7 +18,7 @@ STExplosion * __thiscall st::fn_00604080(STExplosion *this)
   STParticleC **ppSVar2;
 
   st::fn_00401933((STGameObjC *)this);
-  this->vtable = &STExplosionVTable;
+  this->vtable = &st_global_0079CB14;
   this->field_0215 = nullptr;
   ppSVar2 = &this->field_0219;
   for (iVar1 = 0x14; iVar1 != 0; iVar1 = iVar1 + -1) {
@@ -37,7 +37,7 @@ STExplosion * __thiscall st::fn_00604080(STExplosion *this)
 }
 
 // 00604120 STExplosion::sub_00604120
-#line 1 "decomp/ST.exe/functions/00604120/decomp.c"
+#line 4 "decomp/ST.exe/functions/00604120/decomp.c"
 /* [STMethodOwnerApplier] Structural method owner recovered as STExplosion.
    Evidence: this_call_owners=[STExplosion]; agreed_this_calls=1; incoming_this_accesses=2;
    incoming_edx_uses=0; incoming_stack_parameter_uses=0; direct_non_thunk_callers=0;
@@ -56,7 +56,7 @@ void __thiscall st::fn_00604120(STExplosion *this)
 }
 
 // 00604350 STExplosion::sub_00604350
-#line 1 "decomp/ST.exe/functions/00604350/decomp.c"
+#line 4 "decomp/ST.exe/functions/00604350/decomp.c"
 /* [STMethodOwnerApplier] Structural method owner recovered as STExplosion.
    Evidence: this_call_owners=[STExplosion]; agreed_this_calls=1; incoming_this_accesses=3;
    incoming_edx_uses=0; incoming_stack_parameter_uses=0; direct_non_thunk_callers=0;
@@ -191,7 +191,7 @@ int __thiscall st::fn_00604350(STExplosion *this)
 }
 
 // 00604970 STExplosion::sub_00604970
-#line 1 "decomp/ST.exe/functions/00604970/decomp.c"
+#line 4 "decomp/ST.exe/functions/00604970/decomp.c"
 /* [STMethodOwnerApplier] Structural method owner recovered as STExplosion.
    Evidence: this_call_owners=[STExplosion]; agreed_this_calls=1; incoming_this_accesses=3;
    incoming_edx_uses=0; incoming_stack_parameter_uses=0; direct_non_thunk_callers=0;
@@ -235,7 +235,7 @@ int __thiscall st::fn_00604970(STExplosion *this)
 }
 
 // 00605130 STExplosion::sub_00605130
-#line 1 "decomp/ST.exe/functions/00605130/decomp.c"
+#line 4 "decomp/ST.exe/functions/00605130/decomp.c"
 /* [STMethodOwnerApplier] Structural method owner recovered as STExplosion.
    Evidence: this_call_owners=[STExplosion]; agreed_this_calls=1; incoming_this_accesses=12;
    incoming_edx_uses=0; incoming_stack_parameter_uses=0; direct_non_thunk_callers=0;
@@ -260,7 +260,7 @@ void __thiscall st::fn_00605130(STExplosion *this)
 }
 
 // 00605780 STExplosion::sub_00605780
-#line 1 "decomp/ST.exe/functions/00605780/decomp.c"
+#line 4 "decomp/ST.exe/functions/00605780/decomp.c"
 /* [STMethodOwnerApplier] Structural method owner recovered as STExplosion.
    Evidence: this_call_owners=[STExplosion]; agreed_this_calls=1; incoming_this_accesses=3;
    incoming_edx_uses=0; incoming_stack_parameter_uses=0; direct_non_thunk_callers=0;
@@ -278,7 +278,7 @@ void __thiscall st::fn_00605780(STExplosion *this)
 }
 
 // 00606050 STExplosion::sub_00606050
-#line 1 "decomp/ST.exe/functions/00606050/decomp.c"
+#line 4 "decomp/ST.exe/functions/00606050/decomp.c"
 /* [STMethodOwnerApplier] Structural method owner recovered as STExplosion.
    Evidence: this_call_owners=[STExplosion]; agreed_this_calls=1; incoming_this_accesses=4;
    incoming_edx_uses=0; incoming_stack_parameter_uses=40; direct_non_thunk_callers=0;

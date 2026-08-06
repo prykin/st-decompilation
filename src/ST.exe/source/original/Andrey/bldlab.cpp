@@ -2,7 +2,7 @@
 // Generated translation unit: source/original/Andrey/bldlab.cpp
 
 // 004EFB60 BldLabPanelTy::InitBldLabPanel
-#line 1 "decomp/ST.exe/functions/004EFB60/decomp.c"
+#line 4 "decomp/ST.exe/functions/004EFB60/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\Andrey\bldlab.cpp
    BldLabPanelTy::InitBldLabPanel */
@@ -24,7 +24,7 @@ void __thiscall st::fn_004EFB60(BldLabPanelTy *this)
   errorCode = st::fn_0072D7F0(local_4c.jumpBuffer,0);
   this_00 = local_8;
   if (errorCode == 0) {
-    g_prodPanel_00801680 = (ProdPanelTy *)local_8;
+    g_bldLabPanel_00801680 = (ProdPanelTy *)local_8;
     pBVar2 = (BldLabPanelTy_field_027ADArray *)
              st::fn_006AE290(nullptr,0x28,0x30,10);
     this_00->field_027A = pBVar2;
@@ -32,10 +32,10 @@ void __thiscall st::fn_004EFB60(BldLabPanelTy *this)
     puVar3 = st::fn_006F1CE0(g_cMf32_00806790,1,"BKG_BUILDLABW",nullptr,1);
     this_00->field_0184 = puVar3;
     puVar3 = st::fn_00709AF0
-                       (DAT_00806794,CASE_B,&DAT_007c1910,0xffffffff,0,1,0,nullptr);
+                       (PTR_00806794,CASE_B,&DAT_007c1910,0xffffffff,0,1,0,nullptr);
     this_00->field_0188 = puVar3;
     puVar3 = st::fn_00709AF0
-                       (DAT_00806794,CASE_B,"OBJSD",0xffffffff,0,1,0,nullptr);
+                       (PTR_00806794,CASE_B,"OBJSD",0xffffffff,0,1,0,nullptr);
     this_00->field_018C = puVar3;
     st::fn_00404241
               ((ProdPanelTy *)this_00,0x2726,0x3f,2,0xc1,0xc,0x81,99,100,0xc0,99,0x25,0x14,0x31,
@@ -54,7 +54,7 @@ void __thiscall st::fn_004EFB60(BldLabPanelTy *this)
 }
 
 // 004EFD10 BldLabPanelTy::Update
-#line 1 "decomp/ST.exe/functions/004EFD10/decomp.c"
+#line 4 "decomp/ST.exe/functions/004EFD10/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\Andrey\bldlab.cpp
    BldLabPanelTy::Update
@@ -104,7 +104,7 @@ void __thiscall st::fn_004EFD10(BldLabPanelTy *this)
 }
 
 // 004EFFE0 BldLabPanelTy::PaintUpdBut
-#line 1 "decomp/ST.exe/functions/004EFFE0/decomp.c"
+#line 4 "decomp/ST.exe/functions/004EFFE0/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\Andrey\bldlab.cpp
    BldLabPanelTy::PaintUpdBut */
@@ -188,7 +188,7 @@ void __thiscall st::fn_004EFFE0(BldLabPanelTy *this,AnonShape_004EF320_444F9AB1 
 }
 
 // 004F0210 BldLabPanelTy::GetMessage
-#line 1 "decomp/ST.exe/functions/004F0210/decomp.c"
+#line 4 "decomp/ST.exe/functions/004F0210/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\Andrey\bldlab.cpp
    BldLabPanelTy::GetMessage
@@ -245,7 +245,7 @@ int __thiscall st::fn_004F0210(BldLabPanelTy *this,STMessage *message)
         st::fn_006AE110((DArrayTy *)this_00->field_027A);
       }
       this_00->field_027A = nullptr;
-      g_prodPanel_00801680 = nullptr;
+      g_bldLabPanel_00801680 = nullptr;
       g_currentExceptionFrame = local_4c.previous;
       return 0;
     }
